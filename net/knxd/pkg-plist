@@ -70,3 +70,5 @@ libexec/knxd_args
 %%DATADIR%%/EIBConnection.rb
 %%DATADIR%%/EIBD.pas
 %%DATADIR%%/eibclient.php
+@sample etc/knxd.conf.sample
+

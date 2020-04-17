@@ -10,13 +10,8 @@
 #
 # sysrc knxd_enable="YES":	Set to "YES" to enable knxd
 #
-# sysrc knxd_local_address="15.15.1"	Set the bus address of knxd to 0.0.1, make sure this address is free on your KNX bus
+# sysrc knxd_config="%%PREFIX%%/etc/knxd.conf"	The config file to use
 #
-# sysrc knxd_child_address="15.15.2:8"	Give client connecting to knxd this address
-#
-# sysrc knxd_address="ipt:192.168.0.117"	The address of the commercial IP interface knxd should connect to
-#
-# sysrc knxd_
 
 . /etc/rc.subr
 
@@ -26,10 +21,8 @@ rcvar=knxd_enable
 load_rc_config $name
 
 : ${knxd_enable:="NO"}
-: ${knxd_local_address:="15.15.1"}
-: ${knxd_child_address:="15.15.2:8"}
-: ${knxd_address:="ipt:192.168.0.117"}
-: ${knxd_flags="-d -e ${knxd_local_address} -E ${knxd_child_address} -D -T -S -b ${knxd_address} -u /var/run/knxd"}
+: ${knxd_config:="%%PREFIX%%/etc/knxd.conf"}
+: ${knxd_flags="${knxd_config}"}
 
 command="%%PREFIX%%/bin/knxd"
 #command_args=""
