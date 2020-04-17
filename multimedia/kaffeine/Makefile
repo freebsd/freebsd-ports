@@ -3,7 +3,7 @@
 
 PORTNAME=	kaffeine
 DISTVERSION=	2.0.18
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia kde
 MASTER_SITES=	KDE/stable/${PORTNAME}
 
@@ -13,7 +13,7 @@ COMMENT=	Multimedia player based on KDE and VLC
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	v4l_compat>0:multimedia/v4l_compat
+BUILD_DEPENDS=	v4l_compat>=1.18.0:multimedia/v4l_compat
 LIB_DEPENDS=	libvlc.so:multimedia/vlc \
 		libdvbv5.so:multimedia/libv4l
 
@@ -28,6 +28,9 @@ USE_XORG=	xscrnsaver
 
 CPE_VENDOR=	kaffeine
 CPE_PRODUCT=	kaffeine_player
+
+post-patch:
+	@${RM} -r ${WRKSRC}/include
 
 post-build:
 	# Cleanup translated manpages, we don't want them
