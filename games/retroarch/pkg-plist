@@ -3,5 +3,7 @@ bin/retroarch-cg2glsl
 etc/retroarch.cfg
 man/man6/retroarch-cg2glsl.6.gz
 man/man6/retroarch.6.gz
-share/pixmaps/retroarch.svg
 share/applications/retroarch.desktop
+share/doc/retroarch/COPYING
+share/doc/retroarch/README.md
+share/pixmaps/retroarch.svg

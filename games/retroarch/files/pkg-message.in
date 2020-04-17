@@ -1,16 +1,15 @@
 [
 { type: install
   message: <<EOM
-You installed RetroArch: libretro-based entertainment platform.
+RetroArch supports multiple backends for input devices like gamepads:
 
-RetroArch is the lowest tier of the entertainment platform. The middle
-tier is the core, which is usually an interpreter of the computer game
-code. The top tier is the game code itself.
-
-You can run the stack with this command:
-$ retroarch -L some-core-libretro.so some-game.game
-
-Enjoy!
+- evdev/udev: usable with the kernel driver from sysutils/iichid
+  or a userspace driver from e.g. multimedia/webcamd
+  (you have to grant access permissions on the appropriate
+   /dev/input/eventN device to your user account)
+- SDL2, which uses userspace raw USB HID access
+  (you have to grant access permissions on the appropriate
+   /dev/uhidN device to your user account)
 EOM
 }
 ]

@@ -1,0 +1,5 @@
+Collection of libretro core info files.
+These files contain metadata that allows frontends such as RetroArch to
+discover supported games and know what firmware files might be required.
+
+WWW: https://github.com/libretro/libretro-core-info
