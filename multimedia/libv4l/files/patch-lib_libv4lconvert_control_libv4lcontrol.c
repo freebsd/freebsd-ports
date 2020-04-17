@@ -1,6 +1,6 @@
---- lib/libv4lconvert/control/libv4lcontrol.c.orig	2014-07-26 21:33:00.000000000 +0200
-+++ lib/libv4lconvert/control/libv4lcontrol.c	2015-01-11 09:40:05.521158993 +0100
-@@ -361,6 +361,16 @@
+--- lib/libv4lconvert/control/libv4lcontrol.c.orig	2020-04-09 16:29:54 UTC
++++ lib/libv4lconvert/control/libv4lcontrol.c
+@@ -360,6 +360,16 @@ static int v4lcontrol_get_usb_info(struct v4lcontrol_d
  		unsigned short *vendor_id, unsigned short *product_id,
  		int *speed)
  {
@@ -15,9 +15,9 @@
 +	return (0);
 +#else
  	FILE *f;
- 	int i, minor;
+ 	int i, minor_dev;
  	struct stat st;
-@@ -457,6 +467,7 @@
+@@ -456,6 +466,7 @@ static int v4lcontrol_get_usb_info(struct v4lcontrol_d
  		return 0; /* Should never happen */
  
  	return 1;

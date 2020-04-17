@@ -2,7 +2,6 @@
 # $FreeBSD$
 
 PORTNAME?=	v4l-utils
-PORTREVISION=	0
 
 COMMENT=	Video4Linux utilities
 

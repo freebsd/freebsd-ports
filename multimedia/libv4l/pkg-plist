@@ -1,6 +1,7 @@
 include/libdvbv5/atsc_eit.h
 include/libdvbv5/atsc_header.h
 include/libdvbv5/cat.h
+include/libdvbv5/countries.h
 include/libdvbv5/crc32.h
 include/libdvbv5/desc_atsc_service_location.h
 include/libdvbv5/desc_ca.h
@@ -23,6 +24,7 @@ include/libdvbv5/desc_terrestrial_delivery.h
 include/libdvbv5/desc_ts_info.h
 include/libdvbv5/descriptors.h
 include/libdvbv5/dvb-demux.h
+include/libdvbv5/dvb-dev.h
 include/libdvbv5/dvb-fe.h
 include/libdvbv5/dvb-file.h
 include/libdvbv5/dvb-frontend.h
@@ -32,6 +34,7 @@ include/libdvbv5/dvb-scan.h
 include/libdvbv5/dvb-v5-std.h
 include/libdvbv5/eit.h
 include/libdvbv5/header.h
+include/libdvbv5/libdvb-version.h
 include/libdvbv5/mgt.h
 include/libdvbv5/mpeg_es.h
 include/libdvbv5/mpeg_pes.h
