@@ -7,7 +7,7 @@ Make sure to install dependencies with:
   cd %%WWWDIR%% && composer i
 
 Create inital user:
-  su -l www -c "cd %%WWWDIR%% && php bwc setupauth"
+  su -m www -c "cd %%WWWDIR%% && php bwc setupauth"
 
 Make sure you modify %%WWWDIR%%/application/config/config.php to your needs.
 The installed config.php should work with the standard setup already.
