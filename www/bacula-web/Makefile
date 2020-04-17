@@ -2,32 +2,26 @@
 # $FreeBSD$
 
 PORTNAME=	bacula-web
-DISTVERSION=	7.2.0
-PORTREVISION=	2
+DISTVERSIONPREFIX=	v
+DISTVERSION=	8.3.3
+PORTREVISION=	0
 CATEGORIES=	www sysutils
-MASTER_SITES=	http://www.bacula-web.org/files/bacula-web.org/downloads/
+PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
-MAINTAINER=	dvl@FreeBSD.org
+MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Bacula-web provides a summarized output of Bacula jobs
-
-BROKEN=		unfetchable
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/docs/COPYING
 
-USES=		php:web tar:tgz
-USE_PHP=	gd gettext session
+RUN_DEPENDS=	${LOCALBASE}/bin/composer:devel/php-composer@${PHP_FLAVOR}
+
+USES=		php:web,flavors
+USE_PHP=	dom gd gettext session simplexml tokenizer xml xmlwriter
+USE_GITHUB=	yes
 NO_BUILD=	yes
 NO_ARCH=	yes
-NO_WRKSUBDIR=	yes
-
-BACULAWEB_HOME?=${WWWDIR}
-BASE=		${BACULAWEB_HOME:S|${PREFIX}/||}
 SUB_FILES=	pkg-message
-PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP} BASE=${BASE}
-SUB_LIST=	BASE=${BASE}
 
 OPTIONS_DEFINE=		MYSQL PGSQL SQLITE
 OPTIONS_DEFAULT=	PGSQL
@@ -57,11 +51,9 @@ USE_PHP+=		pdo_sqlite
 .endif
 
 do-install:
-	@${ECHO} "Installing in ${BACULAWEB_HOME}"
-	${MKDIR} ${STAGEDIR}${BACULAWEB_HOME}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} application \
-		${STAGEDIR}${BACULAWEB_HOME}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} core ${STAGEDIR}${BACULAWEB_HOME}
-	${INSTALL_DATA} ${WRKSRC}/*.php ${STAGEDIR}${BACULAWEB_HOME}
+	# Maybe we should delete some files
+	${FIND} ${WRKSRC} -name '*.orig' -delete
+	@${ECHO} "Installing in ${WWWDIR}"
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/www/${PORTNAME})
 
 .include <bsd.port.mk>
