@@ -1,4 +1,4 @@
---- electron/spec-main/api-browser-window-spec.ts.orig	2020-02-28 00:07:16 UTC
+--- electron/spec-main/api-browser-window-spec.ts.orig	2020-03-24 05:00:48 UTC
 +++ electron/spec-main/api-browser-window-spec.ts
 @@ -881,7 +881,7 @@ describe('BrowserWindow module', () => {
            w.setPosition(pos[0], pos[1])
@@ -63,7 +63,7 @@
      afterEach(closeAllWindows)
      it('emits an event when window is maximized', (done) => {
        const w = new BrowserWindow({show: false})
-@@ -3195,7 +3195,7 @@ describe('BrowserWindow module', () => {
+@@ -3235,7 +3235,7 @@ describe('BrowserWindow module', () => {
      })
    })
  
