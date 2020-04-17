@@ -1,4 +1,7 @@
+bin/piper-convert
+bin/piper-vamp-simple-server
 bin/sonic-visualiser
+bin/vamp-plugin-load-checker
 share/applications/sonic-visualiser.desktop
 share/applications/x-sonicvisualiser.desktop
 share/applications/x-sonicvisualiser-layer.desktop

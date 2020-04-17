@@ -1,11 +1,34 @@
-Disable building the tests.  They prevent building sonic-visualiser in parallel.
---- sonic-visualiser.pro.orig	2017-02-24 17:52:22 UTC
+--- sonic-visualiser.pro.orig	2020-04-16 19:10:53 UTC
 +++ sonic-visualiser.pro
-@@ -5,7 +5,6 @@ SUBDIRS = sub_dataquay svcore svgui svap
-     # We should build and run the tests on any platform,
-     # but doing it automatically doesn't work so well from
-     # within an IDE on Windows, so remove that from here
--    SUBDIRS += svcore/base/test svcore/data/fileio/test svcore/data/model/test
- }
+@@ -8,11 +8,11 @@ SUBDIRS += \
+ # writing they are only automatically run on non-Windows platforms
+ # (because of the difficulty of getting them running nicely in the
+ # IDE without causing great confusion if a test fails).
+-SUBDIRS += \
+-        sub_test_svcore_base \
+-        sub_test_svcore_system \
+-        sub_test_svcore_data_fileio \
+-        sub_test_svcore_data_model
++#SUBDIRS += \
++#        sub_test_svcore_base \
++#        sub_test_svcore_system \
++#        sub_test_svcore_data_fileio \
++#        sub_test_svcore_data_model
  
- sub_sv.file = sv.pro
+ SUBDIRS += \
+ 	checker \
+@@ -22,10 +22,10 @@ SUBDIRS += \
+ 
+ sub_base.file = base.pro
+         
+-sub_test_svcore_base.file = test-svcore-base.pro
+-sub_test_svcore_system.file = test-svcore-system.pro
+-sub_test_svcore_data_fileio.file = test-svcore-data-fileio.pro
+-sub_test_svcore_data_model.file = test-svcore-data-model.pro
++#sub_test_svcore_base.file = test-svcore-base.pro
++#sub_test_svcore_system.file = test-svcore-system.pro
++#sub_test_svcore_data_fileio.file = test-svcore-data-fileio.pro
++#sub_test_svcore_data_model.file = test-svcore-data-model.pro
+ 
+ sub_server.file = server.pro
+ sub_convert.file = convert.pro

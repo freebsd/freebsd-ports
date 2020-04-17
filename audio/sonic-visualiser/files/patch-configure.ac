@@ -1,8 +1,8 @@
---- configure.ac.orig	2015-10-22 11:26:02 UTC
+--- configure.ac.orig	2019-12-10 09:29:11 UTC
 +++ configure.ac
-@@ -99,8 +99,8 @@ SV_MODULE_OPTIONAL([fishsound],[fishsoun
- SV_MODULE_OPTIONAL([mad],[mad >= 0.15.0],[mad.h],[mad],[mad_decoder_init])
- SV_MODULE_OPTIONAL([id3tag],[id3tag >= 0.15.0],[id3tag.h],[id3tag],[id3_tag_new])
+@@ -127,8 +127,8 @@ SV_MODULE_REQUIRED([mad],[mad >= 0.15.0],[mad.h],[mad]
+ SV_MODULE_REQUIRED([id3tag],[id3tag >= 0.15.0],[id3tag.h],[id3tag],[id3_tag_new])
+ SV_MODULE_REQUIRED([opus],[opusfile],[opus/opusfile.h],[opusfile],[op_read_float])
  
 -# Link in -lX11 if it exists -- this is for the X error handler
 -SV_MODULE_OPTIONAL([X11],[x11 >= 1.0.0],[X11/X.h],[x11],[XGetErrorText])
@@ -11,3 +11,19 @@
  
  AC_SUBST(PERL)
  AC_SUBST(XARGS)
+@@ -154,6 +154,7 @@ AC_CONFIG_FILES([config.pri])
+ 
+ AC_OUTPUT
+ 
++if false; then
+ if test -x repoint ; then
+    if test -d .hg -o -d .git ; then 
+       if ! ./repoint install; then
+@@ -170,6 +171,7 @@ else
+    if ! test -d vamp-plugin-sdk ; then
+       AC_MSG_WARN([No vamp-plugin-sdk directory present, so external components might not have been updated])
+    fi
++fi
+ fi
+ 
+ if ! $QMAKE -r sonic-visualiser.pro; then

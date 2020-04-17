@@ -1,10 +1,10 @@
---- sv.pro.orig	2015-10-22 11:26:02 UTC
+--- sv.pro.orig	2019-12-10 09:29:11 UTC
 +++ sv.pro
-@@ -41,6 +41,7 @@ QT += network xml gui widgets
+@@ -15,6 +15,7 @@ QT += network xml gui widgets svg
  
  TARGET = "Sonic Visualiser"
  linux*:TARGET = sonic-visualiser
 +freebsd*:TARGET = sonic-visualiser
  solaris*:TARGET = sonic-visualiser
  
- DEPENDPATH += . svcore svgui svapp
+ !win32 {
