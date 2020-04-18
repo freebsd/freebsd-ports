@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	SQL-Interp
-PORTVERSION=	1.25
+PORTVERSION=	1.26
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,8 +14,7 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-DBI>=1:databases/p5-DBI \
-		p5-Sub-Exporter>=0:devel/p5-Sub-Exporter
+RUN_DEPENDS=	p5-DBI>=1:databases/p5-DBI
 
 USES=		perl5
 USE_PERL5=	configure
