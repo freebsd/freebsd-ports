@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	octave-forge-io
-PORTVERSION=	2.6.0
+PORTVERSION=	2.6.1
 PORTEPOCH=	1
 CATEGORIES=	math
 
