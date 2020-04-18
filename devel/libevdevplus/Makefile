@@ -9,7 +9,7 @@ MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Easy-to-use event device library in C++
 
 LICENSE=	MIT
-LICENSE_FILES=	${WRKSRC}/LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/uinput.h:devel/evdev-proto
 
