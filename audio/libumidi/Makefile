@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libumidi
-PORTVERSION=	2.1.0
+PORTVERSION=	2.1.1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.selasky.org/hans_petter/distfiles/ \
 		http://home.selasky.org/distfiles/
