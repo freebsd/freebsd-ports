@@ -12,11 +12,13 @@ MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Parallel python execution server
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 DEPRECATED=	Uses deprecated version of python
 EXPIRATION_DATE=	2020-08-15
 
 USES=		python:2.7
 USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
