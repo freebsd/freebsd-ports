@@ -2,7 +2,7 @@
 
 PORTNAME=	pomerium
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.3
+DISTVERSION=	0.7.4
 CATEGORIES=	www
 
 MAINTAINER=	delphij@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules
-GO_TARGET=	./cmd/${PORTNAME}:${PREFIX}/libexec/${PORTNAME}
+GO_TARGET=	./cmd/${PORTNAME}:${PREFIX}/libexec/${PORTNAME} ./cmd/${PORTNAME}-cli:${PREFIX}/bin/${PORTNAME}-cli
 
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
 LD_FLAG_X_PREFIX=	-X ${GO_PKGNAME}/version
@@ -36,7 +36,6 @@ GH_TUPLE=	\
 		cespare:xxhash:v2.1.1:cespare_xxhash/vendor/github.com/cespare/xxhash/v2 \
 		coreos:go-oidc:v2.2.1:coreos_go_oidc/vendor/github.com/coreos/go-oidc \
 		etcd-io:bbolt:v1.3.4:etcd_io_bbolt/vendor/go.etcd.io/bbolt \
-		fatih:color:v1.9.0:fatih_color/vendor/github.com/fatih/color \
 		fsnotify:fsnotify:v1.4.9:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		ghodss:yaml:v1.0.0:ghodss_yaml/vendor/github.com/ghodss/yaml \
 		go-ini:ini:v1.51.1:go_ini_ini/vendor/gopkg.in/ini.v1 \
@@ -72,8 +71,6 @@ GH_TUPLE=	\
 		hashicorp:hcl:v1.0.0:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
 		hashicorp:memberlist:v0.2.0:hashicorp_memberlist/vendor/github.com/hashicorp/memberlist \
 		magiconair:properties:v1.8.1:magiconair_properties/vendor/github.com/magiconair/properties \
-		mattn:go-colorable:v0.1.4:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
-		mattn:go-isatty:v0.0.11:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		matttproud:golang_protobuf_extensions:v1.0.1:matttproud_golang_protobuf_extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
 		miekg:dns:v1.1.27:miekg_dns/vendor/github.com/miekg/dns \
 		mitchellh:hashstructure:v1.0.0:mitchellh_hashstructure/vendor/github.com/mitchellh/hashstructure \
