@@ -1,0 +1,14 @@
+--- configure.ac.orig	2020-04-18 08:12:49 UTC
++++ configure.ac
+@@ -81,10 +81,10 @@ AS_IF([test "x$build_usb" = "xyes"], [
+ ])
+ 
+ AS_IF([test "x$build_usb" = "xyes"], [
+-  PKG_CHECK_MODULES(fuse, fuse, [], [AC_MSG_ERROR([Can't find fuse])])
+   if test $backend = freebsd; then
+     AC_CHECK_LIB(cuse, cuse_dev_create)
+   else
++    PKG_CHECK_MODULES(fuse, fuse, [], [AC_MSG_ERROR([Can't find fuse])])
+     AC_SUBST(CPPFLAGS, "$CPPFLAGS -DFUSE_USE_VERSION=30")
+ fi
+ ])
