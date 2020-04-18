@@ -3,6 +3,7 @@ with your fingertips. List of supported features:
 
 - Raw MIDI.
 - Jack MIDI.
+- MPE support.
 - Import from lyrics sites (chorded lyrics)
 - Import from GuitarPro v3 and v4 format.
 - Import from MusicXML format.
