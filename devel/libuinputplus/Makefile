@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTNAME=	libuInputPlus
+PORTNAME=	${GH_PROJECT:tl}
 PORTVERSION=	0.1.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
@@ -17,6 +17,7 @@ USES=		cmake localbase
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	YukiWorkshop
+GH_PROJECT=	libuInputPlus
 
 USE_LDCONFIG=	yes
 

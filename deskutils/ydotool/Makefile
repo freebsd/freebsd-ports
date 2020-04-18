@@ -2,6 +2,7 @@
 
 PORTNAME=	ydotool
 PORTVERSION=	0.1.8
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	deskutils
 
@@ -13,9 +14,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/uinput.h:devel/evdev-proto
 LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
-		libuInputPlus.so:devel/libuInputPlus \
+		libuInputPlus.so:devel/libuinputplus \
 		libboost_program_options.so:devel/boost-libs \
-		libevdevPlus.so:devel/libevdevPlus
+		libevdevPlus.so:devel/libevdevplus
 
 USES=		cmake localbase
 

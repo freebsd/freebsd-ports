@@ -14541,3 +14541,5 @@ net/luasocket-51|net/luasocket@lua51|2020-04-14|Switched to use flavors
 net/luasocket-53|net/luasocket@lua53|2020-04-14|Switched to use flavors
 security/luasec-51|security/luasec@lua51|2020-04-14|Switched to use flavors
 textproc/luaexpat-51|textproc/luaexpat@lua51|2020-04-14|Switched to use flavors
+devel/libevdevPlus|devel/libevdevplus|2020-04-18|lowercase
+devel/libuIntputPlus|devel/libuinputplus|2020-04-18|lowercase

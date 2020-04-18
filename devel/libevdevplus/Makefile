@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTNAME=	libevdevPlus
+PORTNAME=	${GH_PROJECT:tl}
 PORTVERSION=	0.1.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
@@ -16,6 +16,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/linux/uinput.h:devel/evdev-proto
 USES=	cmake localbase
 
 USE_GITHUB=	yes
+GH_PROJECT=	libevdevPlus
 GH_ACCOUNT=	YukiWorkshop
 
 USE_LDCONFIG=	yes
