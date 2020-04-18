@@ -2,13 +2,16 @@
 
 PORTNAME=	asterisk
 PORTVERSION=	16.9.0
+PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	https://downloads.asterisk.org/pub/telephony/%SUBDIR%/:DEFAULT,g729
+MASTER_SITES=	https://downloads.asterisk.org/pub/telephony/%SUBDIR%/:DEFAULT,g729 \
+		http://www.pjsip.org/release/${PJSIP_VERSION}/:PJSIP
 MASTER_SITE_SUBDIR=	asterisk/ \
 			asterisk/old-releases/ \
 			sounds/releases/:g729
 PKGNAMESUFFIX=	16
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		pjproject-${PJSIP_VERSION}.tar.bz2:PJSIP
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	madpilot@FreeBSD.org
@@ -26,18 +29,18 @@ EXTRACT_ONLY:=	${DISTNAME}${EXTRACT_SUFX}
 
 USES=		bison compiler:c11 cpe gmake gnome iconv libedit localbase \
 		shebangfix sqlite ssl ncurses
-USE_CSTD=	gnu89
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	asterisk
 USE_GITHUB=	nodefault
 
+PJSIP_VERSION=	2.9
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datarootdir=${DATADIR} \
 		--with-ilbc=internal \
 		--with-crypto=${OPENSSLBASE} \
-		--with-pjproject-bundled=no \
-		--with-ssl=${OPENSSLBASE}
+		--with-ssl=${OPENSSLBASE} \
+		--with-externals-cache=${DISTDIR}/${DIST_SUBDIR}
 
 CPE_VENDOR=	digium
 
@@ -163,9 +166,10 @@ OPUS_GH_TUPLE=		traud:asterisk-opus:83e1b458c77e0e287adeca494eeb79edb077b0ff:opu
 PGSQL_CONFIGURE_WITH=	postgres
 PGSQL_USES=		pgsql
 
-PJSIP_CONFIGURE_WITH=	pjproject
+PJSIP_CONFIGURE_WITH=	pjproject pjproject-bundled
 PJSIP_USES=		pkgconfig
-PJSIP_LIB_DEPENDS=	libspeex.so:audio/speex \
+PJSIP_LIB_DEPENDS=	libsrtp2.so:net/libsrtp2 \
+			libspeex.so:audio/speex \
 			libspeexdsp.so:audio/speexdsp
 
 PORTAUDIO_CONFIGURE_WITH=	portaudio
@@ -206,14 +210,6 @@ ASTERISK_GROUP?=	asterisk
 
 USERS=	${ASTERISK_USER}
 GROUPS=	${ASTERISK_GROUP} dahdi
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPJSIP} && ${PORT_OPTIONS:MSRTP}
-LIB_DEPENDS+=	libpj.so:net/pjsip-extsrtp
-.elif ${PORT_OPTIONS:MPJSIP} && ! ${PORT_OPTIONS:MSRTP}
-LIB_DEPENDS+=   libpj.so:net/pjsip
-.endif
 
 .include <bsd.port.pre.mk>
 

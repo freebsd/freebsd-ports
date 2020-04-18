@@ -1,0 +1,11 @@
+--- third-party/pjproject/Makefile.rules.orig	2020-03-12 14:44:05 UTC
++++ third-party/pjproject/Makefile.rules
+@@ -37,7 +37,7 @@ PJPROJECT_CONFIG_OPTS = $(PJPROJECT_CONFIGURE_OPTS) --
+ 	--disable-ipp \
+ 	--disable-libwebrtc \
+ 	--without-external-pa \
+-	--without-external-srtp
++	--with-external-srtp
+ 
+ ifneq ($(AST_DEVMODE),yes)
+     PJPROJECT_CONFIG_OPTS += --disable-resample --disable-g711-codec

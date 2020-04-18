@@ -1,0 +1,11 @@
+--- third-party/pjproject/Makefile.orig	2020-03-12 14:44:05 UTC
++++ third-party/pjproject/Makefile
+@@ -155,7 +155,7 @@ $(PJSIP_LIB_FILES): $(PJLIB_UTIL_LIB_FILES)
+ 
+ pjproject.symbols: $(ALL_LIB_FILES)
+ 	$(ECHO_PREFIX) Generating symbols
+-	$(CMD_PREFIX) $(NM) -Pog $(ALL_LIB_FILES) | $(SED) -n -r -e "s/.+: ([pP][jJ][^ ]+) .+/\1/gp" | sort -u > pjproject.symbols
++	$(CMD_PREFIX) $(NM) -Pog $(ALL_LIB_FILES) | $(SED) -n -r -e "s/^([pP][jJ][^ ]+) .+/\1/gp" | sort -u > pjproject.symbols
+ 
+ source/pjsip-apps/src/asterisk_malloc_debug.c: patches/asterisk_malloc_debug.c
+ 	$(ECHO_PREFIX) Copying $< to $@
