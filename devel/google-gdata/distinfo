@@ -1,5 +1,5 @@
-TIMESTAMP = 1516512627
-SHA256 (nunit.framework.2.63.0.nupkg) = e30f9a88d942d818acd9fbb4d012c7c5b639b2c158d1941d10e34f604fc43b56
-SIZE (nunit.framework.2.63.0.nupkg) = 96089
-SHA256 (google-google-gdata-2.2.0.0-edcd096379_GH0.tar.gz) = 5af2a99345601e175bd14a275bfa00b23cadfee98bfff0f0d966f189a89056d7
-SIZE (google-google-gdata-2.2.0.0-edcd096379_GH0.tar.gz) = 56738927
+TIMESTAMP = 1587167239
+SHA256 (nunit.framework.2.63.0.nupkg) = 582afa06ff95f9e435b7e54d993772ef7affaf5d7d09c97bda062793d1cee829
+SIZE (nunit.framework.2.63.0.nupkg) = 105659
+SHA256 (google-google-gdata-2.2.0.0.20150610-b716bbc_GH0.tar.gz) = 0f50c6657bfc938d40d7ebe2fb706fb2afcc3aa976c8314e46e0df864ff40d04
+SIZE (google-google-gdata-2.2.0.0.20150610-b716bbc_GH0.tar.gz) = 56544271
