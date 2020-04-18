@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	foldingathome
-DISTVERSION=	7.5.1-1
-PORTREVISION=	3
+DISTVERSION=	7.6.8
 CATEGORIES=	biology linux
 MASTER_SITES=	https://download.foldingathome.org/releases/public/release/fahclient/centos-6.7-64bit/v${DISTVERSION:R}/
 PKGNAMEPREFIX=	linux-
-DISTNAME=	fahclient-${DISTVERSION}
+DISTNAME=	fahclient-${DISTVERSION}-1
 EXTRACT_SUFX=	.x86_64.rpm
 
 MAINTAINER=	0mp@FreeBSD.org
