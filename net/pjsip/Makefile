@@ -1,11 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	pjsip
-PORTVERSION=	2.9
-PORTREVISION=	4
+DISTVERSION=	2.10
 CATEGORIES=	net
-MASTER_SITES=	http://www.pjsip.org/release/${PORTVERSION}/
-DISTNAME=	pjproject-${DISTVERSION}
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Multimedia communication library written in C language
@@ -13,12 +10,13 @@ COMMENT=	Multimedia communication library written in C language
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libportaudio.so:audio/portaudio
+LIB_DEPENDS=	libportaudio.so:audio/portaudio \
+		libuuid.so:misc/e2fsprogs-libuuid
 
 USES=		gmake localbase pathfix ssl tar:bz2
+USE_GITHUB=	yes
+GH_PROJECT=	pjproject
 USE_LDCONFIG=	yes
-
-CONFLICTS?=	pjsip-extsrtp
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-external-pa \
@@ -28,9 +26,10 @@ PLIST_SUB=	CONFIGURE_TARGET="${CONFIGURE_TARGET}"
 MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=	AMR DEBUG EXTSRTP FFMPEG G711 G722 G7221 GSM ILBC IPV6 \
-		L16 OPENH264 PJSUA RESAMPLE RESAMPLEDLL SAMPLERATE SDL \
-		SHARED SOUND SPEEX SPEEXAEC V4L VIDEO WEBRTC
-OPTIONS_DEFAULT=G711 G722 G7221 GSM ILBC L16 SHARED SPEEX SPEEXAEC
+		L16 OPENH264 OPUS PJSUA RESAMPLE RESAMPLEDLL SAMPLERATE SDL \
+		SHARED SOUND SPEEX SPEEXAEC V4L VIDEO VPX WEBRTC
+OPTIONS_DEFAULT=G711 G722 G7221 GSM ILBC L16 OPUS SHARED SPEEX SPEEXAEC \
+		VIDEO VPX WEBRTC
 
 EXTSRTP_DESC=	Use libsrtp port (needed to get SRTP support in asterisk pjsip backend)
 G711_DESC=	G.711 codec support
@@ -45,7 +44,7 @@ RESAMPLEDLL_DESC=	Build libresample as shared library
 SHARED_DESC=	Build shared libraries (other ports may depend on this)
 SPEEXAEC_DESC=	Speex Acoustic Echo Canceller/AEC
 V4L_DESC=	Video4Linux2 support
-WEBRTC_DESC=	Build linwebrtc
+WEBRTC_DESC=	Build libwebrtc
 
 OPTIONS_SUB=	yes
 
@@ -71,6 +70,8 @@ IPV6_CFLAGS_OFF=		-DPJ_HAS_IPV6=0
 L16_CONFIGURE_ENABLE=		l16-codec
 OPENH264_CONFIGURE_ENABLE=	openh264
 OPENH264_LIB_DEPENDS=		libopenh264.so:multimedia/openh264
+OPUS_CONFIGURE_ENABLE=		opus
+OPUS_LIB_DEPENDS=		libopus.so:audio/opus
 RESAMPLE_CONFIGURE_ENABLE=	resample
 RESAMPLEDLL_CONFIGURE_ENABLE=	resample-dll
 SAMPLERATE_CONFIGURE_ENABLE=	libsamplerate
@@ -89,6 +90,8 @@ V4L_BUILD_DEPENDS=		v4l_compat>=0:multimedia/v4l_compat
 V4L_CONFIGURE_ENABLE=		v4l2
 V4L_LIB_DEPENDS=		libv4l2.so:multimedia/libv4l
 VIDEO_CONFIGURE_ENABLE=		video
+VPX_CONFIGURE_ENABLE=		vpx
+VPX_LIB_DEPENDS=		libvpx.so:multimedia/libvpx
 WEBRTC_CONFIGURE_OFF=		--disable-libwebrtc
 
 post-patch:

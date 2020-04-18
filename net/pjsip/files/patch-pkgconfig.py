@@ -5,7 +5,7 @@
  	PKG_CONFIG_PATH = os.getenv("PKG_CONFIG_PATH", "").strip()
  	if not PKG_CONFIG_PATH:
 -		PKG_CONFIG_PATH="/usr/local/lib/pkgconfig:/usr/lib/pkgconfig"
-+		PKG_CONFIG_PATH="/usr/local/libdata/pkgconfig"
++		PKG_CONFIG_PATH="%%LOCALBASE%%/libdata/pkgconfig"
  	PKG_CONFIG_PATH = PKG_CONFIG_PATH.replace(";", ":")
  
  	# Parse files
