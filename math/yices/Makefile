@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	gperf:devel/gperf
 LIB_DEPENDS=	libgmp.so:math/gmp
 
-USES=		gmake localbase
+USES=		compiler:c11 gmake localbase
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-pic-gmp=${LOCALBASE}/lib/libgmp.so
 USE_LDCONFIG=	yes
