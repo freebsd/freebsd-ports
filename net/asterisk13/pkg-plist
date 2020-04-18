@@ -318,6 +318,8 @@ include/asterisk/version.h
 include/asterisk/xml.h
 include/asterisk/xmldoc.h
 include/asterisk/xmpp.h
+%%PJSIP%%lib/libasteriskpj.so
+%%PJSIP%%lib/libasteriskpj.so.2
 lib/libasteriskssl.so
 lib/libasteriskssl.so.1
 man/man8/astdb2bdb.8.gz
@@ -380,6 +382,7 @@ sbin/safe_asterisk
 @dir %%DATADIR%%/moh
 @dir %%DATADIR%%/sounds
 @dir %%DATADIR%%/third-party
+%%PJSIP%%@dir %%DATADIR%%/third-party/pjproject
 @owner %%ASTERISK_USER%%
 @group %%ASTERISK_GROUP%%
 @dir %%VARDIR%%/log/asterisk/cdr-csv
