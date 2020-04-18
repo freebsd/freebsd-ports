@@ -111,6 +111,7 @@
     SUBDIR += dojo
     SUBDIR += dojo-shrinksafe
     SUBDIR += dokuwiki
+    SUBDIR += dolibarr
     SUBDIR += domoticz
     SUBDIR += drood
     SUBDIR += drraw

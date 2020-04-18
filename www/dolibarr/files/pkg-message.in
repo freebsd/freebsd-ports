@@ -1,0 +1,21 @@
+[
+{ type: install
+  message: <<EOM
+Dolibarr was installed
+
+1) Create a user and a database for dolibarr to store all
+   its tables in (or choose an existing database).
+
+2) Into web server configuration file you must define webroot to 
+   %%WWWDIR%%/htdocs or add a dolibarr alias to it
+
+3) You should now open a browser and go to:
+
+   http://localhost/dolibarr
+
+   and follow the installer instructions
+
+4) Enjot it
+EOM
+}
+]
