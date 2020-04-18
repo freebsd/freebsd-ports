@@ -13,6 +13,8 @@ CONFLICTS=	ansible-* \
 MASTERDIR=	${.CURDIR}/../ansible
 DISTINFO_FILE=	${.CURDIR}/distinfo
 
+DEPRECATED=	Upstream support ended. Consider upgrading to sysutils/ansible
+
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-sesu
 
 .include "${MASTERDIR}/Makefile"
