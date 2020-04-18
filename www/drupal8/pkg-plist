@@ -216,8 +216,10 @@
 %%WWWDIR%%/core/assets/vendor/ckeditor/plugins/magicline/images/icon-rtl.png
 %%WWWDIR%%/core/assets/vendor/ckeditor/plugins/magicline/images/icon.png
 %%WWWDIR%%/core/assets/vendor/ckeditor/plugins/pastefromgdocs/filter/default.js
+%%WWWDIR%%/core/assets/vendor/ckeditor/plugins/pastefromlibreoffice/filter/default.js
 %%WWWDIR%%/core/assets/vendor/ckeditor/plugins/pastefromword/filter/default.js
 %%WWWDIR%%/core/assets/vendor/ckeditor/plugins/pastetools/filter/common.js
+%%WWWDIR%%/core/assets/vendor/ckeditor/plugins/pastetools/filter/image.js
 %%WWWDIR%%/core/assets/vendor/ckeditor/plugins/showblocks/images/block_address.png
 %%WWWDIR%%/core/assets/vendor/ckeditor/plugins/showblocks/images/block_blockquote.png
 %%WWWDIR%%/core/assets/vendor/ckeditor/plugins/showblocks/images/block_div.png
@@ -2537,6 +2539,7 @@
 %%WWWDIR%%/core/lib/Drupal/Core/TypedData/Validation/RecursiveValidator.php
 %%WWWDIR%%/core/lib/Drupal/Core/TypedData/Validation/TypedDataAwareValidatorTrait.php
 %%WWWDIR%%/core/lib/Drupal/Core/TypedData/Validation/TypedDataMetadata.php
+%%WWWDIR%%/core/lib/Drupal/Core/Update/RemovedPostUpdateNameException.php
 %%WWWDIR%%/core/lib/Drupal/Core/Update/UpdateBackend.php
 %%WWWDIR%%/core/lib/Drupal/Core/Update/UpdateCacheBackendFactory.php
 %%WWWDIR%%/core/lib/Drupal/Core/Update/UpdateCompilerPass.php
@@ -6952,6 +6955,7 @@
 %%WWWDIR%%/core/modules/menu_link_content/src/Plugin/migrate/process/d7/InternalUri.php
 %%WWWDIR%%/core/modules/menu_link_content/src/Plugin/migrate/source/MenuLink.php
 %%WWWDIR%%/core/modules/menu_link_content/src/Plugin/migrate/source/d6/MenuLinkTranslation.php
+%%WWWDIR%%/core/modules/menu_link_content/tests/fixtures/update/drupal-8.menu-link-content-null-data-3056543.php
 %%WWWDIR%%/core/modules/menu_link_content/tests/menu_link_content_dynamic_route/menu_link_content_dynamic_route.info.yml
 %%WWWDIR%%/core/modules/menu_link_content/tests/menu_link_content_dynamic_route/menu_link_content_dynamic_route.routing.yml
 %%WWWDIR%%/core/modules/menu_link_content/tests/menu_link_content_dynamic_route/src/Routes.php
@@ -10150,6 +10154,7 @@
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Update/UpdateScriptTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Update/UpdatesWith7xTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Update/WarmCacheUpdateFrom8dot6Test.php
+%%WWWDIR%%/core/modules/system/tests/src/Functional/UpdateSystem/UpdateRemovedPostUpdateTest.php
 %%WWWDIR%%/core/modules/system/tests/src/FunctionalJavascript/Form/ElementsTableSelectTest.php
 %%WWWDIR%%/core/modules/system/tests/src/FunctionalJavascript/Form/RebuildTest.php
 %%WWWDIR%%/core/modules/system/tests/src/FunctionalJavascript/Form/TriggeringElementTest.php
@@ -10404,6 +10409,7 @@
 %%WWWDIR%%/core/modules/taxonomy/taxonomy.views.inc
 %%WWWDIR%%/core/modules/taxonomy/templates/taxonomy-term.html.twig
 %%WWWDIR%%/core/modules/taxonomy/tests/fixtures/update/core.entity_form_display.taxonomy_term.tags.default.yml
+%%WWWDIR%%/core/modules/taxonomy/tests/fixtures/update/drupal-8.taxonomy-term-null-data-3056543.php
 %%WWWDIR%%/core/modules/taxonomy/tests/fixtures/update/drupal-8.taxonomy-term-publishing-status-ui-2899923.php
 %%WWWDIR%%/core/modules/taxonomy/tests/fixtures/update/drupal-8.views-taxonomy-term-publishing-status-2981887.php
 %%WWWDIR%%/core/modules/taxonomy/tests/fixtures/update/views.view.test_taxonomy_term_view_with_content_translation_status.yml
@@ -10797,6 +10803,8 @@
 %%WWWDIR%%/core/modules/update/tests/modules/update_test/aaa_update_test.sec.8.x-1.2_8.x-2.2.xml
 %%WWWDIR%%/core/modules/update/tests/modules/update_test/aaa_update_test.sec.8.x-2.2_1.x_secure.xml
 %%WWWDIR%%/core/modules/update/tests/modules/update_test/bbb_update_test.1_0.xml
+%%WWWDIR%%/core/modules/update/tests/modules/update_test/bbb_update_test.1_1.xml
+%%WWWDIR%%/core/modules/update/tests/modules/update_test/bbb_update_test.1_2.xml
 %%WWWDIR%%/core/modules/update/tests/modules/update_test/ccc_update_test.1_0.xml
 %%WWWDIR%%/core/modules/update/tests/modules/update_test/config/install/update_test.settings.yml
 %%WWWDIR%%/core/modules/update/tests/modules/update_test/config/schema/update_test.schema.yml
@@ -10843,6 +10851,7 @@
 %%WWWDIR%%/core/modules/update/tests/src/Functional/FileTransferAuthorizeFormTest.php
 %%WWWDIR%%/core/modules/update/tests/src/Functional/UpdateContribTest.php
 %%WWWDIR%%/core/modules/update/tests/src/Functional/UpdateCoreTest.php
+%%WWWDIR%%/core/modules/update/tests/src/Functional/UpdateManagerUpdateTest.php
 %%WWWDIR%%/core/modules/update/tests/src/Functional/UpdateTestBase.php
 %%WWWDIR%%/core/modules/update/tests/src/Functional/UpdateUploadTest.php
 %%WWWDIR%%/core/modules/update/tests/src/Kernel/Migrate/d6/MigrateUpdateConfigsTest.php
@@ -13188,6 +13197,7 @@
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Cache/PhpBackendTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Command/DbDumpTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Common/DrupalCheckIncompatibilityTest.php
+%%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Common/DrupalFlushAllCachesTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Common/DrupalSetMessageTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Common/LegacyFunctionsTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Common/SizeTest.php
