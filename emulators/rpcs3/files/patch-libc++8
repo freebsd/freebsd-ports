@@ -1,4 +1,7 @@
-Drop after FreeBSD 11.3/12.1 EOL. See https://reviews.llvm.org/rL359211
+Drop after FreeBSD 11.3/12.1 EOL.
+
+https://reviews.llvm.org/rL359211
+https://reviews.llvm.org/rL364862
 
 rpcs3/Emu/Io/PadHandler.cpp:191:27: error: no member named 'lerp' in namespace 'std'
                         const float pos = std::lerp(0.13f, 1.f, (mag - dzRange) / (1 - dzRange));
@@ -7,11 +10,44 @@ rpcs3/Emu/Io/PadHandler.cpp:198:27: error: no member named 'lerp' in namespace '
                         const float pos = std::lerp(0.f, 0.13f, mag / dzRange);
                                           ~~~~~^
 
---- rpcs3/Emu/Io/PadHandler.h.orig	2020-03-18 15:28:46 UTC
-+++ rpcs3/Emu/Io/PadHandler.h
-@@ -6,6 +6,33 @@
- #include "pad_config_types.h"
- #include "Utilities/types.h"
+In file included from rpcs3/Emu/System.cpp:9:
+rpcs3/Emu/Cell/PPUOpcodes.h:66:14: error: no member named 'rotr' in namespace 'std'
+        return std::rotr<u64>(~0ull << (~(me - mb) & 63), mb & 63);
+               ~~~~~^
+rpcs3/Emu/Cell/PPUOpcodes.h:66:19: error: unexpected type name 'u64': expected expression
+        return std::rotr<u64>(~0ull << (~(me - mb) & 63), mb & 63);
+                         ^
+rpcs3/Emu/Cell/PPUOpcodes.h:66:30: warning: expression result unused [-Wunused-value]
+        return std::rotr<u64>(~0ull << (~(me - mb) & 63), mb & 63);
+                              ~~~~~ ^  ~~~~~~~~~~~~~~~~~
+rpcs3/Emu/Cell/PPUOpcodes.h:64:15: error: no return statement in constexpr function
+constexpr u64 ppu_rotate_mask(u32 mb, u32 me)
+              ^
+rpcs3/Emu/Cell/PPUOpcodes.h:71:14: error: no member named 'rotr' in namespace 'std'
+        return std::rotr<u32>(inst, 26) & 0x1ffff; // Rotate + mask
+               ~~~~~^
+rpcs3/Emu/Cell/PPUOpcodes.h:71:19: error: unexpected type name 'u32': expected expression
+        return std::rotr<u32>(inst, 26) & 0x1ffff; // Rotate + mask
+                         ^
+rpcs3/Emu/Cell/PPUOpcodes.h:71:24: warning: expression result unused [-Wunused-value]
+        return std::rotr<u32>(inst, 26) & 0x1ffff; // Rotate + mask
+                              ^~~~
+rpcs3/Emu/Cell/PPUOpcodes.h:69:15: error: no return statement in constexpr function
+constexpr u32 ppu_decode(u32 inst)
+              ^
+In file included from rpcs3/Emu/System.cpp:11:
+rpcs3/Emu/Cell/PPUAnalyser.h:992:16: error: no member named 'countr_zero' in namespace 'std'
+                        return std::countr_zero(mask());
+                               ~~~~~^
+rpcs3/Emu/Cell/PPUAnalyser.h:1241:35: error: no member named 'countl_zero' in namespace 'std'
+                                const u64 mix = ~0ull >> std::countl_zero(min ^ max);
+                                                         ~~~~~^
+
+--- Utilities/types.h.orig	2020-04-16 09:59:19 UTC
++++ Utilities/types.h
+@@ -102,6 +102,203 @@ namespace std
+ }
+ #endif
  
 +#if defined(_LIBCPP_VERSION) && _LIBCPP_VERSION < 9000
 +_LIBCPP_BEGIN_NAMESPACE_STD
@@ -37,9 +73,179 @@ rpcs3/Emu/Io/PadHandler.cpp:198:27: error: no member named 'lerp' in namespace '
 +
 +constexpr long double
 +lerp(long double __a, long double __b, long double __t) _NOEXCEPT { return __lerp(__a, __b, __t); }
++
++template <class _Tp>
++using __bitop_unsigned_integer = integral_constant<bool,
++         is_integral<_Tp>::value &&
++         is_unsigned<_Tp>::value &&
++        !is_same<typename remove_cv<_Tp>::type, bool>::value &&
++        !is_same<typename remove_cv<_Tp>::type, signed char>::value &&
++        !is_same<typename remove_cv<_Tp>::type, wchar_t>::value &&
++        !is_same<typename remove_cv<_Tp>::type, char16_t>::value &&
++        !is_same<typename remove_cv<_Tp>::type, char32_t>::value
++    >;
++
++template<class _Tp>
++_LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX11
++_Tp __rotl(_Tp __t, unsigned int __cnt) _NOEXCEPT
++{
++    static_assert(__bitop_unsigned_integer<_Tp>::value, "__rotl requires unsigned");
++    const unsigned int __dig = numeric_limits<_Tp>::digits;
++    if ((__cnt % __dig) == 0)
++        return __t;
++    return (__t << (__cnt % __dig)) | (__t >> (__dig - (__cnt % __dig)));
++}
++
++template<class _Tp>
++_LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX11
++_Tp __rotr(_Tp __t, unsigned int __cnt) _NOEXCEPT
++{
++    static_assert(__bitop_unsigned_integer<_Tp>::value, "__rotr requires unsigned");
++    const unsigned int __dig = numeric_limits<_Tp>::digits;
++    if ((__cnt % __dig) == 0)
++        return __t;
++    return (__t >> (__cnt % __dig)) | (__t << (__dig - (__cnt % __dig)));
++}
++
++template<class _Tp>
++_LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX11
++int __countr_zero(_Tp __t) _NOEXCEPT
++{
++    static_assert(__bitop_unsigned_integer<_Tp>::value, "__countr_zero requires unsigned");
++    if (__t == 0)
++        return numeric_limits<_Tp>::digits;
++
++    if      (sizeof(_Tp) <= sizeof(unsigned int))
++        return __ctz(static_cast<unsigned int>(__t));
++    else if (sizeof(_Tp) <= sizeof(unsigned long))
++        return __ctz(static_cast<unsigned long>(__t));
++    else if (sizeof(_Tp) <= sizeof(unsigned long long))
++        return __ctz(static_cast<unsigned long long>(__t));
++    else
++    {
++        int __ret = 0;
++        int __iter = 0;
++        const unsigned int __ulldigits = numeric_limits<unsigned long long>::digits;
++        while ((__iter = __ctz(static_cast<unsigned long long>(__t))) == __ulldigits)
++        {
++            __ret += __iter;
++            __t >>= __ulldigits;
++        }
++        return __ret + __iter;
++    }
++}
++
++template<class _Tp>
++_LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX11
++int __countl_zero(_Tp __t) _NOEXCEPT
++{
++    static_assert(__bitop_unsigned_integer<_Tp>::value, "__countl_zero requires unsigned");
++    if (__t == 0)
++        return numeric_limits<_Tp>::digits;
++
++    if      (sizeof(_Tp) <= sizeof(unsigned int))
++        return __clz(static_cast<unsigned int>(__t))
++              - (numeric_limits<unsigned int>::digits - numeric_limits<_Tp>::digits);
++    else if (sizeof(_Tp) <= sizeof(unsigned long))
++        return __clz(static_cast<unsigned long>(__t))
++              - (numeric_limits<unsigned long>::digits - numeric_limits<_Tp>::digits);
++    else if (sizeof(_Tp) <= sizeof(unsigned long long))
++        return __clz(static_cast<unsigned long long>(__t))
++              - (numeric_limits<unsigned long long>::digits - numeric_limits<_Tp>::digits);
++    else
++    {
++        int __ret = 0;
++        int __iter = 0;
++        const unsigned int __ulldigits = numeric_limits<unsigned long long>::digits;
++        while (true) {
++            __t = __rotr(__t, __ulldigits);
++            if ((__iter = __countl_zero(static_cast<unsigned long long>(__t))) != __ulldigits)
++                break;
++            __ret += __iter;
++            }
++        return __ret + __iter;
++    }
++}
++
++template<class _Tp>
++_LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX11
++int __countl_one(_Tp __t) _NOEXCEPT
++{
++    static_assert(__bitop_unsigned_integer<_Tp>::value, "__countl_one requires unsigned");
++    return __t != numeric_limits<_Tp>::max()
++        ? __countl_zero(static_cast<_Tp>(~__t))
++        : numeric_limits<_Tp>::digits;
++}
++
++template<class _Tp>
++_LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX11
++int __countr_one(_Tp __t) _NOEXCEPT
++{
++    static_assert(__bitop_unsigned_integer<_Tp>::value, "__countr_one requires unsigned");
++    return __t != numeric_limits<_Tp>::max()
++        ? __countr_zero(static_cast<_Tp>(~__t))
++        : numeric_limits<_Tp>::digits;
++}
++
++template<class _Tp>
++_LIBCPP_INLINE_VISIBILITY constexpr
++enable_if_t<__bitop_unsigned_integer<_Tp>::value, _Tp>
++rotl(_Tp __t, unsigned int __cnt) noexcept
++{
++    return __rotl(__t, __cnt);
++}
++
++template<class _Tp>
++_LIBCPP_INLINE_VISIBILITY constexpr
++enable_if_t<__bitop_unsigned_integer<_Tp>::value, _Tp>
++rotr(_Tp __t, unsigned int __cnt) noexcept
++{
++    return __rotr(__t, __cnt);
++}
++
++template<class _Tp>
++_LIBCPP_INLINE_VISIBILITY constexpr
++enable_if_t<__bitop_unsigned_integer<_Tp>::value, int>
++countl_zero(_Tp __t) noexcept
++{
++    return __countl_zero(__t);
++}
++
++
++template<class _Tp>
++_LIBCPP_INLINE_VISIBILITY constexpr
++enable_if_t<__bitop_unsigned_integer<_Tp>::value, int>
++countl_one(_Tp __t) noexcept
++{
++    return __countl_one(__t);
++}
++
++template<class _Tp>
++_LIBCPP_INLINE_VISIBILITY constexpr
++enable_if_t<__bitop_unsigned_integer<_Tp>::value, int>
++countr_zero(_Tp __t) noexcept
++{
++	return __countr_zero(__t);
++}
++
++template<class _Tp>
++_LIBCPP_INLINE_VISIBILITY constexpr
++enable_if_t<__bitop_unsigned_integer<_Tp>::value, int>
++countr_one(_Tp __t) noexcept
++{
++    return __countr_one(__t);
++}
++
++template<class _Tp>
++_LIBCPP_INLINE_VISIBILITY constexpr
++enable_if_t<__bitop_unsigned_integer<_Tp>::value, int>
++popcount(_Tp __t) noexcept
++{
++    return __popcount(__t);
++}
 +_LIBCPP_END_NAMESPACE_STD
 +#endif
 +
- struct PadDevice
- {
- 	pad_config* config{ nullptr };
+ using schar  = signed char;
+ using uchar  = unsigned char;
+ using ushort = unsigned short;
