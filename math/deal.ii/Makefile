@@ -3,7 +3,7 @@
 PORTNAME=	deal.II
 DISTVERSIONPREFIX=	v
 DISTVERSION=	9.1.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -53,12 +53,12 @@ LAPACK_CMAKE_BOOL=	DEAL_II_WITH_LAPACK
 LAPACK_CMAKE_ON=	-DLAPACK_LINKER_FLAGS:STRING="${LDFLAGS}"
 LAPACK_LIB_DEPENDS=	libopenblas.so:math/openblas
 
+MPI_DESC=		MPI support (math/sundials must be compiled with MPI)
 MPI_USES=		fortran
 MPI_CMAKE_BOOL=		DEAL_II_WITH_MPI
 MPI_CMAKE_ON=		-DMPI_LINKER_FLAGS:STRING="${LDFLAGS}"
 MPI_LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs \
-			libmpi.so:net/openmpi
-MPI_BROKEN=		Could not find any suitable mpi library! (need to investigate)
+			libmpich.so:net/mpich
 
 NETCDF_DESC=		Compile with Netcdf (only with MPI)
 NETCDF_CMAKE_BOOL=	DEAL_II_WITH_NETCDF
