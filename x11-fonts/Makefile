@@ -214,6 +214,7 @@
     SUBDIR += sourcesanspro-ttf
     SUBDIR += sourceserifpro-ttf
     SUBDIR += spleen
+    SUBDIR += steps-mono
     SUBDIR += stix-fonts
     SUBDIR += sudo-font
     SUBDIR += suxus
