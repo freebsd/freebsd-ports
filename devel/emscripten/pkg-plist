@@ -15,9 +15,11 @@ lib/emscripten/cmake/Modules/Platform/Emscripten.cmake
 lib/emscripten/cmake/Modules/TestBigEndian.cmake
 lib/emscripten/em++
 lib/emscripten/em++.py
+lib/emscripten/em-config
 lib/emscripten/em-config.py
 lib/emscripten/emar
 lib/emscripten/emar.py
+lib/emscripten/embuilder
 lib/emscripten/embuilder.py
 lib/emscripten/emcc
 lib/emscripten/emcc.py
@@ -36,6 +38,7 @@ lib/emscripten/emscons
 lib/emscripten/emscons.py
 lib/emscripten/emscripten-version.txt
 lib/emscripten/emscripten.py
+lib/emscripten/emsize
 lib/emscripten/emsize.py
 lib/emscripten/site/.gitignore
 lib/emscripten/site/Makefile
@@ -3116,6 +3119,7 @@ lib/emscripten/tools/clean_webconsole.py
 lib/emscripten/tools/client_mods.py
 lib/emscripten/tools/colored_logger.py
 lib/emscripten/tools/create_dom_pk_codes.py
+lib/emscripten/tools/create_entry_points.py
 lib/emscripten/tools/ctor_evaller.py
 lib/emscripten/tools/debug/autodebugger_c.py
 lib/emscripten/tools/debug/autodebugger_indenter.py
