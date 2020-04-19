@@ -1,5 +1,5 @@
 Alternative LAZ implementation. It supports compilation and usage in JavaScript,
- usage in database contexts such as pgpointcloud and Oracle Point Cloud, and it 
-executes faster than the LASzip codebase.
+ usage in database contexts such as pgpointcloud and Oracle Point Cloud, and it
+ executes faster than the LASzip codebase.
 
 WWW: https://github.com/hobu/laz-perf
