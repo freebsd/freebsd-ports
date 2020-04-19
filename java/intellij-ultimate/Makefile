@@ -4,7 +4,7 @@
 # Based on the java/intellij port
 
 PORTNAME=	intellij-ultimate
-PORTVERSION=	2019.3.3
+PORTVERSION=	2020.1
 CATEGORIES=	java devel
 MASTER_SITES=	https://download-cf.jetbrains.com/idea/
 DISTNAME=	ideaIU-${PORTVERSION}-no-jbr
@@ -34,7 +34,7 @@ NO_ARCH=	yes
 NO_ARCH_IGNORE=	libjansi.so
 NO_BUILD=	yes
 
-WRKSRC=		${WRKDIR}/idea-IU-193.6494.35
+WRKSRC=		${WRKDIR}/idea-IU-201.6668.121
 
 SUB_FILES=	idea idea.desktop pkg-message
 CONFLICTS=	intellij-20*
