@@ -1,0 +1,13 @@
+B.Jumblr is neither a sample slicer nor a step sequencer. From the technical POV
+B.Jumblr is a sequencer pattern-controlled audio delay effect.
+
+The pattern defines at when (vertical) and which (horizontal) piece of the audio
+input stream is sent to the audio output. Use the default diagonal line pattern
+for live playback. Moving a pad one step to the right results in a one step
+delayed playback of the respective piece of the audio input stream. Each pad
+(and thus each piece) can be levelled up or down by mouse wheel scrolling.
+
+In addidion, the user can control the playback progession using the playback
+buttons or the speed dial. This is facilitated via the progression delay.
+
+WWW: https://github.com/sjaehn/BJumblr

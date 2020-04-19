@@ -56,6 +56,7 @@
     SUBDIR += beatslash-lv2
     SUBDIR += beep
     SUBDIR += beets
+    SUBDIR += bjumblr-lv2
     SUBDIR += blop
     SUBDIR += blop-lv2
     SUBDIR += bristol
