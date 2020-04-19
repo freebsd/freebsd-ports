@@ -1,4 +1,4 @@
-#!/usr/bin/env perl -wT
+#!/usr/bin/env -S perl -wT
 
 # $FreeBSD$
 
@@ -7,15 +7,13 @@
 # set of ports, for instance, when in the latter set one of the ports bumped the
 # .so library version.
 #
-# It is best executed with the working directory set to the base of a
-# ports tree, such as /usr/ports.
-#
 # The shebang line above includes -T (taint) to be more distrustful 
 # about the environment, for security reasons, and is considered
 # good Perl practice.
 #
-# You can use either the -l (shaLlow, avoid grandparent dependencies,
-# slower) or -g option (include grandparent dependencies) option.
+# You can use either the
+# -l (shaLlow, avoid grandparent dependencies, slower) or
+# -g option (include grandparent dependencies) option.
 #
 # MAINTAINER=	mandree@FreeBSD.org
 #
@@ -126,7 +124,8 @@ my ($portsdir, $INDEX);
     $INDEX = $opt_i if ($opt_i);
     if (!-f $INDEX) { $INDEX = "$portsdir/INDEX"; }
 
-    die "$INDEX doesn't seem to exist. Please check the value supplied with -i, or use -i /path/to/INDEX." unless(-f $INDEX);
+    die "$INDEX doesn't seem to exist. Please check the value supplied with -i,\n" .
+	    "or use -i /path/to/INDEX, or check your -p PORTSDIR." unless(-f $INDEX);
 }
 usage() unless(@ARGV);
 
@@ -138,6 +137,16 @@ my $TMPDIR = File::Basename::dirname($INDEX);
 if (-d "$TMPDIR/.svn" and not $opt_n and not $opt_c) {
     die "$TMPDIR/.svn exists, cowardly refusing to proceed.\n";
 }
+
+
+# must launder $portsdir (from command line => tainted) first
+if ($portsdir =~ /^([-\@\w.\/]+)$/) {
+    $portsdir = $1; }
+else {
+    die "Portsdir \"$portsdir\" contains unsafe characters. Aborting";
+}
+
+chdir "$portsdir" or die "cannot cd to $portsdir: $!\nAborting";
 
 #
 # Read the index, save some interesting keys
