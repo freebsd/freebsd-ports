@@ -3,7 +3,7 @@
 PORTNAME=	hhsuite
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	biology science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,8 +12,7 @@ COMMENT=	Remote protein homology detection suite
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	openmpi>0:net/openmpi
-RUN_DEPENDS=	openmpi>0:net/openmpi
+LIB_DEPENDS=	libmpi.so:net/openmpi
 
 USES=		cmake compiler:c++11-lang perl5 python shebangfix
 SHEBANG_GLOB=	*.pl *.py

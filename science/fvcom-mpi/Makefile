@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTREVISION=	14
+PORTREVISION=	15
 PKGNAMESUFFIX=	-openmpi
 
 MPIPREFIX=	mpi/openmpi/

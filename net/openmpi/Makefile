@@ -1,11 +1,7 @@
 # $FreeBSD$
 
-# TODO:
-#  - etc/*.sample support
-
 PORTNAME=	openmpi
-PORTVERSION=	1.10.7
-PORTREVISION=	7
+PORTVERSION=	4.0.3
 CATEGORIES=	net parallel
 MASTER_SITES=	http://www.open-mpi.org/software/ompi/v${PORTVERSION:R}/downloads/
 
@@ -15,15 +11,20 @@ COMMENT=	High Performance Message Passing Library
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_armv6=		fails to package: pkg-static: mca_patcher_overwrite.la: No such file or directory
+BROKEN_armv7=		fails to package: pkg-static: mca_patcher_overwrite.la: No such file or directory
+BROKEN_sparc64=		fails to compile on sparc64
+
 LIB_DEPENDS=	libhwloc.so:devel/hwloc \
 		libltdl.so:devel/libltdl \
-		libevent.so:devel/libevent
+		libevent.so:devel/libevent \
+		libmunge.so:security/munge
+
+# :keepla because port uses lt_dlopen
+USES=		fortran gmake libtool:keepla localbase perl5 \
+		pkgconfig shebangfix tar:bzip2
 
 HAS_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
-# :keepla because port uses lt_dlopen
-USES=		compiler:c11 fortran gmake libtool:keepla perl5 pkgconfig \
-		tar:bzip2
 USE_PERL5=	build
 
 MPIBASE?=	mpi
@@ -32,33 +33,45 @@ MPIDIR?=	${MPIBASE}/${PKGBASE}
 PLIST_SUB+=	MPIBASE=${MPIBASE}
 PLIST_SUB+=	MPIDIR=${MPIDIR}
 
+# Workaround for https://github.com/open-mpi/ompi/issues/7516
+CONFIGURE_ENV+=		DISABLE_gds_ds12=1 DISABLE_gds_ds21=1
+
 CONFIGURE_ARGS+=	--prefix=${PREFIX}/${MPIDIR} \
 			--mandir=${PREFIX}/${MPIDIR}/man \
 			--program-prefix= \
-			--with-hwloc=${LOCALBASE} \
-			--with-libltdl=${LOCALBASE} \
+			--with-hwloc=external \
+			--with-libltdl \
 			--enable-mpi-fortran=usempi \
+			--enable-mpi-cxx \
+			--enable-cxx-exceptions \
+			--enable-mpi-thread-multiple \
 			--with-libevent=external \
+			--enable-mca-no-build=verbs,btl_openib,oob_ud \
+			--without-verbs \
 			--with-wrapper-ldflags=-Wl,-rpath=-Wl,-rpath=${LOCALBASE}/lib/gcc${_GCC_VER} \
 			ompi_cv_fortran_ignore_tkr_data=0
 
-LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	${PREFIX}/${MPIDIR}/lib \
 		${PREFIX}/${MPIDIR}/lib/openmpi
 
 MANPREFIX=	${PREFIX}/${MPIDIR}
 
-OPTIONS_DEFINE=	IPV6 SLURM TORQUE VT
+SHEBANG_FILES=	ompi/mca/common/monitoring/profile2mat.pl \
+		ompi/mca/common/monitoring/aggregate_profile.pl
+
+OPTIONS_DEFINE=	DEBUG IPV6 SLURM TORQUE
 TORQUE_DESC=	Enable Torque support
 SLURM_DESC=	Enable SLURM support
-VT_DESC=		Enable VampirTrace support
 OPTIONS_DEFAULT=	SLURM
+OPTIONS_EXCLUDE_i386=	SLURM
 OPTIONS_SUB=	yes
+
+DEBUG_CONFIGURE_ENABLE=	debug
+DEBUG_INSTALL_TARGET_OFF=	install-strip
 
 IPV6_CONFIGURE_ENABLE=	ipv6
 
-TORQUE_CONFIGURE_ON=	--with-tm=${LOCALBASE}
-TORQUE_CONFIGURE_OFF=	--without-tm
+TORQUE_CONFIGURE_WITH=	tm
 TORQUE_LIB_DEPENDS=	libtorque.so:sysutils/torque
 TORQUE_PLIST_FILES=	${MPIDIR}/lib/openmpi/mca_plm_tm.so \
 			${MPIDIR}/lib/openmpi/mca_plm_tm.la \
@@ -77,12 +90,20 @@ SLURM_PLIST_FILES=	${MPIDIR}/lib/openmpi/mca_ess_slurm.la \
 			${MPIDIR}/lib/openmpi/mca_plm_slurm.so \
 			${MPIDIR}/lib/openmpi/mca_ras_slurm.la \
 			${MPIDIR}/lib/openmpi/mca_ras_slurm.so \
+			${MPIDIR}/lib/openmpi/mca_schizo_slurm.la \
+			${MPIDIR}/lib/openmpi/mca_schizo_slurm.so \
 			${MPIDIR}/share/openmpi/help-plm-slurm.txt \
 			${MPIDIR}/share/openmpi/help-ras-slurm.txt
 
-VT_CONFIGURE_OFF=	--enable-contrib-no-build=vt --disable-vt
-VT_USE=			JAVA=yes
-
-BROKEN_sparc64=		Does not compile on sparc64
+post-patch:
+	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/${MPIDIR}/libdata/pkgconfig|g' \
+		${WRKSRC}/ompi/tools/wrappers/Makefile.am \
+		${WRKSRC}/ompi/tools/wrappers/Makefile.in \
+		${WRKSRC}/opal/tools/wrappers/Makefile.am \
+		${WRKSRC}/opal/tools/wrappers/Makefile.in \
+		${WRKSRC}/orte/tools/wrappers/Makefile.am \
+		${WRKSRC}/orte/tools/wrappers/Makefile.in
+	@${REINPLACE_CMD} 's|define MCA_hwloc_external_.*header "|&${LOCALBASE}/include/|' \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>
