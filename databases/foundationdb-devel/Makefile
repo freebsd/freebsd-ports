@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	foundationdb-devel
-DISTVERSION=	7.0.0.a.20190823
-PORTREVISION=	2
+DISTVERSION=	7.0.0.a.20200408
 CATEGORIES=	databases
 
 MAINTAINER=	dch@FreeBSD.org
@@ -20,16 +19,17 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 
 USES=		compiler:c++17-lang cmake mono:build python:build shebangfix ssl
 USE_GITHUB=	yes
-GH_ACCOUNT=	wolfspider
-GH_PROJECT=	foundationdb
-GH_TAGNAME=	bc56b13
+GH_ACCOUNT=	skunkwerks
+GH_PROJECT=	fdb
+GH_TAGNAME=	7608cb9
 
 USE_RC_SUBR=	foundationdb
 
-SHEBANG_FILES=	build/csprojtom4.py build/link-wrapper.sh build/vcxprojtom4.py \
-		bindings/c/generate_asm.py
+SHEBANG_FILES=	bindings/c/generate_asm.py
 
-CFLAGS+=	-Wno-implicit-int-float-conversion
+CMAKE_ARGS=	DLibreSSL_ROOT=${OPENSSLLIB}
+CMAKE_OFF=	USE_DTRACE
+CMAKE_ON=	DISABLE_TLS
 
 USERS=		foundationdb
 GROUPS=		foundationdb
