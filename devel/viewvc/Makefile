@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	viewvc
-DISTVERSION=	1.1.28
+DISTVERSION=	1.2.1
 PORTREVISION=	0
 CATEGORIES=	devel python
 
@@ -37,7 +37,6 @@ MODPYTHON35_RUN_DEPENDS=${APACHE_PKGNAMEPREFIX}mod_python35>=3.5:www/mod_python3
 MODWSGI_RUN_DEPENDS=	${APACHE_PKGNAMEPREFIX}${PYTHON_PKGNAMEPREFIX}mod_wsgi>=4.4.13:www/mod_wsgi4@${PY_FLAVOR}
 MYSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=0:databases/py-MySQLdb@${PY_FLAVOR}
 
-
 .if defined(WITH_SUBVERSION_VER) && ${WITH_SUBVERSION_VER} == LTS
 SVN_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}subversion-lts>=0:devel/py-subversion@${PY_FLAVOR}
 .elif defined(WITH_SUBVERSION_VER) && ${WITH_SUBVERSION_VER} == 19
@@ -67,8 +66,7 @@ post-patch:
 	${REINPLACE_CMD} -e '/"${i}"/d' ${WRKSRC}/viewvc-install
 .endfor
 	${REINPLACE_CMD} -e 's/conf.dist/conf.sample/g' \
-		${WRKSRC}/viewvc-install \
-		${WRKSRC}/bin/standalone.py
+		${WRKSRC}/viewvc-install
 # to much files, use own shebangfix
 	${FIND} ${WRKSRC} -type f | ${GREP} -v -e 'png' -e 'images' \
 		| ${XARGS} ${SED} -i '' \
