@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	php72
-DISTVERSION=	7.2.29
+DISTVERSION=	7.2.30
 PORTREVISION?=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	PHP/distributions
