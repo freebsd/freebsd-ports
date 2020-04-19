@@ -6,7 +6,7 @@ PORTVERSION=	0.4.10.4
 CATEGORIES=	games
 PKGNAMEPREFIX=	freeminer-
 
-MAINTAINER=	amdmi3@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The main game for the Freeminer game engine
 
 LICENSE=	LGPL21

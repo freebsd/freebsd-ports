@@ -6,7 +6,7 @@ PORTVERSION=	0.4.10.4
 PORTREVISION=	8
 CATEGORIES=	games
 
-MAINTAINER=	amdmi3@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source sandbox game inspired by Minecraft
 
 LICENSE=	LGPL21+ GPLv3+ # source mentions GPLv3+, LICENSE.txt LGPL21+
