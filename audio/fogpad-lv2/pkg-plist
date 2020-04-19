@@ -1,0 +1,6 @@
+%%JACK%%bin/fogpad
+lib/lv2/fogpad.lv2/fogpad_dsp.so
+lib/lv2/fogpad.lv2/fogpad_dsp.ttl
+lib/lv2/fogpad.lv2/fogpad_ui.so
+lib/lv2/fogpad.lv2/fogpad_ui.ttl
+lib/lv2/fogpad.lv2/manifest.ttl
