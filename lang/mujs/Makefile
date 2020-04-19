@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mujs
-DISTVERSION=	1.0.6-16
-DISTVERSIONSUFFIX=	-gfe71080
+DISTVERSION=	1.0.7
 CATEGORIES=	lang devel
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
