@@ -1,5 +1,5 @@
-TIMESTAMP = 1583113236
+TIMESTAMP = 1587323053
 SHA256 (apache-ant-1.9.14-bin.tar.gz) = ad6b296a76f0ad433bc6b4ebda41c3275e0dc03f0e9a6c8c299f787a5e4c3fe4
 SIZE (apache-ant-1.9.14-bin.tar.gz) = 5837539
-SHA256 (battleblow-jdk7u-7.251.02.1-jdk7u251-b02.1_GH0.tar.gz) = b709d9e344c4ebbc5bb71646a7e78137ad47f2e17fb61739c7be0420ececc707
-SIZE (battleblow-jdk7u-7.251.02.1-jdk7u251-b02.1_GH0.tar.gz) = 69828420
+SHA256 (battleblow-jdk7u-7.261.02.1-jdk7u261-b02.1_GH0.tar.gz) = 708579df5083d52c6ca56ac09425082e0fe1e2c9f986e33a0e131efb3b8733dc
+SIZE (battleblow-jdk7u-7.261.02.1-jdk7u261-b02.1_GH0.tar.gz) = 69823650
