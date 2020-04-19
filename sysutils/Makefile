@@ -4,6 +4,7 @@
     COMMENT = System utilities
 
     SUBDIR += 3dm
+    SUBDIR += 3mux
     SUBDIR += 44bsd-more
     SUBDIR += 915resolution
     SUBDIR += DTraceToolkit

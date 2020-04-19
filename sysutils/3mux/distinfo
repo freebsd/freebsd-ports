@@ -1,0 +1,15 @@
+TIMESTAMP = 1587067125
+SHA256 (aaronjanse-3mux-v0.1.1_GH0.tar.gz) = 3fa1b9a21c7bbfce1e5765a3a4918719523b9326bebcab7e5df0ca7940d79c26
+SIZE (aaronjanse-3mux-v0.1.1_GH0.tar.gz) = 10331559
+SHA256 (creack-pty-v1.1.7_GH0.tar.gz) = 3d4c2fb501657682f1543313b122089c0981463e3bb55eb17e8edce494e32cd8
+SIZE (creack-pty-v1.1.7_GH0.tar.gz) = 8161
+SHA256 (golang-crypto-056763e48d71_GH0.tar.gz) = 37b3e859de6cff226dace82c84f871892cb498e2e187277579b179c99d56ce9b
+SIZE (golang-crypto-056763e48d71_GH0.tar.gz) = 1727878
+SHA256 (golang-sys-97732733099d_GH0.tar.gz) = 8d60fa6ab0c2b099f2c7d6f8c0a5df177c5c524183a2a38e0e8d2d18cde53532
+SIZE (golang-sys-97732733099d_GH0.tar.gz) = 1350239
+SHA256 (kr-pty-v1.1.8_GH0.tar.gz) = 9258c76d18238fe6c4f5238a777a204f1e88e6e965eb75688daf74d280bebdae
+SIZE (kr-pty-v1.1.8_GH0.tar.gz) = 2118
+SHA256 (mattn-go-runewidth-v0.0.9_GH0.tar.gz) = 4f20a337ad06e071f29535afe9c5207d3e8840c8c86672bbc5f9837c6229c835
+SIZE (mattn-go-runewidth-v0.0.9_GH0.tar.gz) = 16714
+SHA256 (nsf-termbox-go-4d2b513ad8be_GH0.tar.gz) = 60c5f3d4cad903a609e1c2623599d6644440d1c8e671198a99ded85d1c2fdb8b
+SIZE (nsf-termbox-go-4d2b513ad8be_GH0.tar.gz) = 32778
