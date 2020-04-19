@@ -2,8 +2,8 @@
 
 PORTNAME=	ktechlab
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.40.1-74
-DISTVERSIONSUFFIX=	-gd45f0cd0
+DISTVERSION=	0.40.1-77
+DISTVERSIONSUFFIX=	-gd782f78d
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -29,6 +29,6 @@ CXXFLAGS+=	-I${LOCALBASE}/lib/glib-2.0/include
 OPTIONS_DEFINE=	DOCS
 PORTDOCS=	*
 
-PORTSCOUT=	limit:^[0-9\.]*$$
+PORTSCOUT=	limit:^\d+\. # prevent alpha-numeric strings
 
 .include <bsd.port.mk>
