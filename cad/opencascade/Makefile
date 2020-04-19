@@ -24,9 +24,10 @@ RUN_DEPENDS=	bash:shells/bash
 # Check ${WRKSRC}/dox/overview/overview.md
 # and ${WRKSRC}/dox/dev_guides/building
 USES=		alias:10 cmake compiler:c++14-lang dos2unix \
-		gl python shebangfix tk tar:tgz xorg
+		gl python qt:5 qmake shebangfix tk tar:tgz xorg
 USE_XORG=	ice sm x11 xext xi xmu xt
 USE_GL=		gl glu
+USE_QT=		buildtools_build
 
 DOS2UNIX_FILES=	adm/templates/*
 SHEBANG_FILES=	adm/templates/*.sh	\
