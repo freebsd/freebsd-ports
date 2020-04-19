@@ -2,7 +2,7 @@
 
 PORTNAME=	onednn
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3
+DISTVERSION=	1.4
 CATEGORIES=	math # machine-learning
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/

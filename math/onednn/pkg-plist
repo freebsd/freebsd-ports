@@ -2,6 +2,7 @@ include/dnnl.h
 include/dnnl.hpp
 include/dnnl_config.h
 include/dnnl_debug.h
+include/dnnl_threadpool_iface.hpp
 include/dnnl_types.h
 include/dnnl_version.h
 include/mkldnn.h
@@ -17,7 +18,7 @@ lib/cmake/dnnl/dnnl-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/dnnl/dnnl-targets.cmake
 lib/libdnnl.so
 lib/libdnnl.so.1
-lib/libdnnl.so.1.3
+lib/libdnnl.so.1.4
 lib/libmkldnn.so
 lib/libmkldnn.so.1
-lib/libmkldnn.so.1.3
+lib/libmkldnn.so.1.4
