@@ -160,6 +160,7 @@
     SUBDIR += monoid
     SUBDIR += montecarlo_fonts
     SUBDIR += montserrat
+    SUBDIR += mourier
     SUBDIR += moveable-type-fonts
     SUBDIR += nerd-fonts
     SUBDIR += nexfontsel
