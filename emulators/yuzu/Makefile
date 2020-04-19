@@ -1,9 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	yuzu
-PORTVERSION=	s20200415
+PORTVERSION=	s20200418
 PORTREVISION?=	0
 CATEGORIES=	emulators
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	1a2df0a5f389.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/3719
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Nintendo Switch emulator/debugger
@@ -28,19 +31,19 @@ BUILD_DEPENDS=	boost-libs>=1.66:devel/boost-libs \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yuzu-emu
-GH_TAGNAME=	65cbb122e
+GH_TAGNAME=	530580607
 GH_TUPLE=	yuzu-emu:unicorn:1.0.1-153-g73f45735:unicorn/externals/unicorn \
 		DarkLordZach:mbedtls:a280e60:mbedtls/externals/mbedtls \
 		KhronosGroup:SPIRV-Headers:2c51218:SPIRV_Headers/externals/sirit/externals/SPIRV-Headers \
 		KhronosGroup:Vulkan-Headers:v1.2.136:Vulkan_Headers/externals/Vulkan-Headers \
-		MerryMage:dynarmic:r1-1438-gf6ae9e1c:dynarmic/externals/dynarmic \
+		MerryMage:dynarmic:r1-1443-g57b987c1:dynarmic/externals/dynarmic \
 		ReinUsesLisp:sirit:a712959:sirit/externals/sirit \
 		arsenm:sanitizers-cmake:aab6948:sanitizers_cmake/externals/cubeb/cmake/sanitizers-cmake \
 		catchorg:Catch2:v2.3.0:catch/externals/catch \
 		citra-emu:ext-libressl-portable:7d01cb0:libressl/externals/libressl \
 		citra-emu:ext-soundtouch:060181e:soundtouch/externals/soundtouch \
 		facebook:zstd:v1.3.8:zstd/externals/zstd \
-		fmtlib:fmt:6.0.0-56-g4b8f8fac:fmt/externals/fmt \
+		fmtlib:fmt:6.2.0:fmt/externals/fmt \
 		kinetiknz:cubeb:cubeb-0.2-1172-g3ab5075:cubeb/externals/cubeb \
 		lz4:lz4:v1.8.0-8-g4db65c1:lz4/externals/lz4 \
 		madler:zlib:v1.2.11:zlib/externals/zlib/zlib \
