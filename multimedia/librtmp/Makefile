@@ -1,11 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	librtmp
-PORTVERSION=	2.4.20151223
-PORTREVISION=	4
+PORTVERSION=	2.4.20190330
 CATEGORIES=	multimedia net
-MASTER_SITES=	LOCAL/hrs
-DISTNAME=	rtmpdump-2.4.fa8646da
+MASTER_SITES=	https://git.ffmpeg.org/gitweb/rtmpdump.git/snapshot/c5f04a58fc2aeea6296ca7c44ee4734c18401aa3.tar.gz?/
+DISTNAME=	rtmpdump-${PORTVERSION}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	RTMP stream library
@@ -13,12 +12,12 @@ COMMENT=	RTMP stream library
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		pkgconfig tar:bz2 ssl
+USES=		pkgconfig ssl
 USE_LDCONFIG=	yes
 
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
-PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
-WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
+PATCH_WRKSRC=	${WRKDIR}/rtmpdump-c5f04a5
+WRKSRC=		${WRKDIR}/rtmpdump-c5f04a5/${PORTNAME}
 
 .include <bsd.port.mk>
