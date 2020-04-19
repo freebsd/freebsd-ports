@@ -3,13 +3,9 @@
 
 PORTNAME=	cbeams
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.0rc3-52
-DISTVERSIONSUFFIX=	-gda823c2
+DISTVERSION=	1.0.1
 CATEGORIES=	games python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
-# Loosen for the dependencies.
-PATCHFILES=	422477bc4c21a0e8ea95549e699edd0c94faa78d.patch:-p1
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Draw pretty animated colored circles in the terminal
