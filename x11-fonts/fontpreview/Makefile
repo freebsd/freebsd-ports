@@ -1,0 +1,43 @@
+# $FreeBSD$
+
+PORTNAME=	fontpreview
+DISTVERSION=	1.0.6
+CATEGORIES=	x11-fonts graphics
+
+MAINTAINER=	0mp@FreeBSD.org
+COMMENT=	Very customizable and minimal font previewer written in Bash
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+RUN_DEPENDS=	bash:shells/bash \
+		convert:graphics/ImageMagick7 \
+		fzf:textproc/fzf \
+		getopt>0:misc/getopt \
+		sxiv:graphics/sxiv \
+		xdotool:x11/xdotool
+
+USES=		shebangfix
+USE_GITHUB=	yes
+GH_ACCOUNT=	sdushantha
+GH_TAGNAME=	24f4f5e7dba3351844950e681c08bd74f3df2d42
+SHEBANG_FILES=	${PORTNAME}
+
+NO_ARCH=	yes
+NO_BUILD=	yes
+
+PLIST_FILES=	bin/${PORTNAME}
+PORTDOCS=	README.md extra/
+
+OPTIONS_DEFINE=	DOCS
+
+post-patch:
+	@${REINPLACE_CMD} 's|%%GETOPT%%|${LOCALBASE}/bin/getopt|' \
+		${WRKSRC}/${PORTNAME}
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/extra
+	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/extra/* ${STAGEDIR}${DOCSDIR}/extra
+
+.include <bsd.port.mk>

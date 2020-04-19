@@ -1,0 +1,11 @@
+--- fontpreview.orig	2020-04-19 12:00:29 UTC
++++ fontpreview
+@@ -164,7 +164,7 @@ font=$1
+ 
+ 
+ # Parse the arguments
+-options=$(getopt -o hi:o: --long position:,size:,version,search-prompt:,font-size:,bg-color:,fg-color:,preview-text:,input:,output:,help -- "$@")
++options=$(%%GETOPT%% -o hi:o: --long position:,size:,version,search-prompt:,font-size:,bg-color:,fg-color:,preview-text:,input:,output:,help -- "$@")
+ eval set -- "$options"
+ 
+ while true; do
