@@ -7,6 +7,7 @@ CATEGORIES=	emulators
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	1a2df0a5f389.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/3719
+PATCHFILES+=	afcc84a17265.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/3720
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Nintendo Switch emulator/debugger

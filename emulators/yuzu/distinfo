@@ -41,3 +41,5 @@ SHA256 (xiph-opus-v1.3.1-4-gad8fe90d_GH0.tar.gz) = a5169e4de7266dca46f8fe08cdc3b
 SIZE (xiph-opus-v1.3.1-4-gad8fe90d_GH0.tar.gz) = 828993
 SHA256 (1a2df0a5f389.patch) = a2f01b8661b865635231b2add4faf6110220822eacbd62457633e5acfa942096
 SIZE (1a2df0a5f389.patch) = 2636
+SHA256 (afcc84a17265.patch) = ce3b3ad46220571afeb43c7309739163cbe972ea3e1fc5a47872ccb37ae0d81d
+SIZE (afcc84a17265.patch) = 1908
