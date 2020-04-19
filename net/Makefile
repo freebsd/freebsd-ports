@@ -552,7 +552,6 @@
     SUBDIR += openldap24-server
     SUBDIR += openmdns
     SUBDIR += openmpi
-    SUBDIR += openmpi2
     SUBDIR += openmpi3
     SUBDIR += openntpd
     SUBDIR += opennx
