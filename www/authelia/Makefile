@@ -2,7 +2,7 @@
 
 PORTNAME=	authelia
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.14.0
+DISTVERSION=	4.14.1
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -71,7 +71,7 @@ GH_TUPLE=	\
 		tinylib:msgp:v1.1.2:tinylib_msgp/vendor/github.com/tinylib/msgp \
 		tstranex:u2f:v1.0.0:tstranex_u2f/vendor/github.com/tstranex/u2f \
 		valyala:bytebufferpool:v1.0.0:valyala_bytebufferpool/vendor/github.com/valyala/bytebufferpool \
-		valyala:fasthttp:v1.9.0:valyala_fasthttp/vendor/github.com/valyala/fasthttp \
+		valyala:fasthttp:v1.10.0:valyala_fasthttp/vendor/github.com/valyala/fasthttp \
 		xdg:scram:7eeb5667e42c:xdg_scram/vendor/github.com/xdg/scram \
 		xdg:stringprep:v1.0.0:xdg_stringprep/vendor/github.com/xdg/stringprep
 GO_TARGET=	./cmd/${PORTNAME}
