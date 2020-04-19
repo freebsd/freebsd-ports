@@ -4,10 +4,8 @@
 PORTNAME=	terminator
 PORTVERSION=	1.92
 CATEGORIES=	x11 python
-MASTER_SITES=	https://bazaar.launchpad.net/~hellodeargrandma/terminator/python3/tarball/
-DISTNAME=	1852
-EXTRACT_SUFX=
-DIST_SUBDIR=	terminator-python3-bzr
+MASTER_SITES=	https://bazaar.launchpad.net/~hellodeargrandma/terminator/python3/tarball/1852/
+DISTNAME=	terminator-python3-bzr-r1852
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	Multiple GNOME terminals in one window
