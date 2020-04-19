@@ -2,7 +2,7 @@
 
 PORTNAME=	geany-plugin-git-changebar
 PORTVERSION=	${GEANY_VER}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 PATCH_SITES=	https://github.com/geany/geany-plugins/commit/

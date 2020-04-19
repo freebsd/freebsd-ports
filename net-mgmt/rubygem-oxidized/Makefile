@@ -3,7 +3,7 @@
 
 PORTNAME=	oxidized
 PORTVERSION=	0.26.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt rubygems
 MASTER_SITES=	RG
 
@@ -15,7 +15,7 @@ LICENSE=	APACHE20
 RUN_DEPENDS=	rubygem-asetus>=0.1:devel/rubygem-asetus \
 		rubygem-net-ssh>=5:security/rubygem-net-ssh \
 		rubygem-net-telnet>=0.1.1:security/rubygem-net-telnet \
-		rubygem-rugged>=0.21.4:devel/rubygem-rugged \
+		rubygem-rugged>=1.0:devel/rubygem-rugged \
 		rubygem-slop3>=3.5:devel/rubygem-slop3
 
 USES=		gem shebangfix

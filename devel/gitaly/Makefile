@@ -2,7 +2,7 @@
 
 PORTNAME=	gitaly
 DISTVERSION=	12.9.3
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # define dependencies that are required for build and run under MY_DEPENDS
 MY_DEPENDS=	git>=2.22:devel/git \
 		rubygem-bundler>=1.17.3:sysutils/rubygem-bundler \
-		rubygem-rugged>=0.28<1.0:devel/rubygem-rugged \
+		rubygem-rugged>=0.28:devel/rubygem-rugged \
 		rubygem-github-linguist>=7.5<8.0:textproc/rubygem-github-linguist \
 		rubygem-gitlab-markup>=1.7.0<1.8.0:textproc/rubygem-gitlab-markup \
 		rubygem-activesupport60>=6.0.2.2<6.0.2.3:devel/rubygem-activesupport60 \

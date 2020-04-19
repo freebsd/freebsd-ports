@@ -6,13 +6,9 @@
 # Tools/scripts/search_lib_depends_and_bump.sh devel/libgit2
 
 PORTNAME=	libgit2
-PORTVERSION=	0.99.0
+PORTVERSION=	1.0.0
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libgit2/libgit2/releases/download/v${PORTVERSION}/
-
-PATCH_SITES=	https://github.com/libgit2/libgit2/commit/
-PATCHFILES=	3828ea67b97fc56dead976f319792ead3aa7e623.patch:-p1 \
-		6d25dbdc5c3924336f61bc6091df64821acb95f2.patch:-p1
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Portable, pure C implementation of the Git core

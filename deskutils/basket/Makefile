@@ -5,11 +5,8 @@ PORTNAME=	basket
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.49a-46
 DISTVERSIONSUFFIX=	-g60e38c6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	deskutils kde
-
-PATCH_SITES=	https://github.com/basket-notepads/basket/commit/
-PATCHFILES=	094580f207b5ba9f44e9af00834f9c93f06fb440.patch:-p1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Desktop organization tool

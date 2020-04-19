@@ -1,11 +1,13 @@
---- oxidized.gemspec.orig	2019-04-06 14:12:09 UTC
+--- oxidized.gemspec.orig	2020-04-17 05:54:47 UTC
 +++ oxidized.gemspec
-@@ -25,7 +25,7 @@ Gem::Specification.new do |s|
+@@ -25,8 +25,8 @@ Gem::Specification.new do |s|
      if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
        s.add_runtime_dependency(%q<asetus>.freeze, ["~> 0.1"])
        s.add_runtime_dependency(%q<net-ssh>.freeze, ["~> 5"])
 -      s.add_runtime_dependency(%q<net-telnet>.freeze, ["~> 0.1.1"])
+-      s.add_runtime_dependency(%q<rugged>.freeze, ["~> 0.21", ">= 0.21.4"])
 +      s.add_runtime_dependency(%q<net-telnet>.freeze, ["~> 0.1", ">= 0.1.1"])
-       s.add_runtime_dependency(%q<rugged>.freeze, ["~> 0.21", ">= 0.21.4"])
++      s.add_runtime_dependency(%q<rugged>.freeze, ["~> 1.0", ">= 0.21.4"])
        s.add_runtime_dependency(%q<slop>.freeze, ["~> 3.5"])
        s.add_development_dependency(%q<bundler>.freeze, ["~> 2.0"])
+       s.add_development_dependency(%q<git>.freeze, ["~> 1"])

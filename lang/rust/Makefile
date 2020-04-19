@@ -3,7 +3,7 @@
 
 PORTNAME=	rust
 PORTVERSION?=	1.42.0
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	lang
 MASTER_SITES=	https://static.rust-lang.org/dist/:src \
 		LOCAL/tobik/rust:bootstrap \

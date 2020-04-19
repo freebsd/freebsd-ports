@@ -2,7 +2,7 @@
 
 PORTNAME=	gitlab-gollum-rugged_adapter
 PORTVERSION=	0.4.4.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-mime-types>=1.15:misc/rubygem-mime-types \
-		rubygem-rugged>=0.25:devel/rubygem-rugged
+		rubygem-rugged>=1.0:devel/rubygem-rugged
 
 USES=		gem
 USE_RUBY=	yes

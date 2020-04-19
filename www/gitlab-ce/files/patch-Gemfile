@@ -1,4 +1,4 @@
---- Gemfile.orig	2020-03-26 12:19:15 UTC
+--- Gemfile.orig	2020-04-14 21:01:52 UTC
 +++ Gemfile
 @@ -1,6 +1,6 @@
  source 'https://rubygems.org'
@@ -8,6 +8,15 @@
  
  gem 'bootsnap', '~> 1.4.6'
  
+@@ -18,7 +18,7 @@ gem 'default_value_for', '~> 3.3.0'
+ # Supported DBs
+ gem 'pg', '~> 1.1'
+ 
+-gem 'rugged', '~> 0.28'
++gem 'rugged', '~> 1.0'
+ gem 'grape-path-helpers', '~> 1.2'
+ 
+ gem 'faraday', '~> 0.12'
 @@ -93,7 +93,6 @@ gem 'graphql', '~> 1.9.19'
  # https://gitlab.com/gitlab-org/gitlab/issues/31747
  gem 'graphiql-rails', '~> 1.4.10'

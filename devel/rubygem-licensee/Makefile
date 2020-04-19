@@ -3,7 +3,7 @@
 
 PORTNAME=	licensee
 PORTVERSION=	9.7.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,7 @@ COMMENT=	Detects under what license a project is distributed
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	rubygem-rugged>=0.24:devel/rubygem-rugged \
+RUN_DEPENDS=	rubygem-rugged>=1.0:devel/rubygem-rugged \
 		rubygem-octokit>=4.8.0:net/rubygem-octokit
 
 NO_ARCH=	yes

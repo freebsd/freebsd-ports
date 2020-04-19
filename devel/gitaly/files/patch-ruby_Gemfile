@@ -1,7 +1,11 @@
 --- ruby/Gemfile.orig	2020-03-26 12:14:05 UTC
 +++ ruby/Gemfile
-@@ -6,7 +6,7 @@ gem 'bundler', '>= 1.17.3'
- gem 'rugged', '~> 0.28'
+@@ -3,10 +3,10 @@
+ # Require bundler >= 1.16.5 to avoid this bug: https://github.com/bundler/bundler/issues/6537
+ gem 'bundler', '>= 1.17.3'
+
+-gem 'rugged', '~> 0.28'
++gem 'rugged', '~> 1.0'
  gem 'github-linguist', '~> 7.5', require: 'linguist'
  gem 'gitlab-markup', '~> 1.7.0'
 -gem 'activesupport', '6.0.2'

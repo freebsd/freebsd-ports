@@ -4,7 +4,7 @@
 PORTNAME=	julia
 PORTVERSION=	1.0.4
 DISTVERSIONSUFFIX=	-full
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang math
 MASTER_SITES=	https://github.com/JuliaLang/julia/releases/download/v${PORTVERSION}/
 PKGNAMESUFFIX=	10
