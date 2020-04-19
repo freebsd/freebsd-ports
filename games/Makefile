@@ -510,6 +510,7 @@
     SUBDIR += linux-quake4-demo
     SUBDIR += linux-ssamtfe
     SUBDIR += linux-ssamtse
+    SUBDIR += linux-steam-utils
     SUBDIR += linux-unigine-heaven
     SUBDIR += linux-unigine-valley
     SUBDIR += linux-unrealgold

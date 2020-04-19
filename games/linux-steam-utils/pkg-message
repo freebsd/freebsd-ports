@@ -1,0 +1,21 @@
+[
+{ type: install
+  message: <<EOM
+Please note, this is an unofficial wrapper for the Steam client
+and as such it is supported on a best effort basis.
+
+Setup:
+
+1. Create a dedicated FreeBSD non-wheel user account for Steam. Switch to it.
+2. Run `steam-install` to download the Steam bootstrap executable.
+3. Run `steam` to download updates and start Steam.
+
+Limitations:
+
+- Sandbox is disabled for the web browser component.
+- Valve Anti-Cheat doesn't seem to work properly.
+- No controller input, no streaming, no VR.
+- No Proton (Steam Play).
+EOM
+}
+]
