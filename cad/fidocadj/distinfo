@@ -1,4 +1,5 @@
-SHA256 (fidocadj.jar) = 43317930b20af0f2491cb22f03df6cc61f8367ccfffe4c4bbc946390f78235aa
-SIZE (fidocadj.jar) = 689142
-SHA256 (fidocadj_manual_en.pdf) = 148a926d96b7c91afbefcc6af13f0f973601342d9a2dcc8bdc3d4612b1b223d1
-SIZE (fidocadj_manual_en.pdf) = 2570172
+TIMESTAMP = 1586040218
+SHA256 (fidocadj/fidocadj.jar) = 43317930b20af0f2491cb22f03df6cc61f8367ccfffe4c4bbc946390f78235aa
+SIZE (fidocadj/fidocadj.jar) = 689142
+SHA256 (fidocadj/manual_en.pdf) = 8da975735cd4a62350387984fec682d4e6de8c6a261c0422f6d65d8b80857dde
+SIZE (fidocadj/manual_en.pdf) = 2772362
