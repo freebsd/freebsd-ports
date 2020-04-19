@@ -1,0 +1,7 @@
+Advanced gRPC API inspection, with an in-built
+REPL and CLI mode giving you full control and
+understanding. Evans provides an easy interface
+to automating scripting via the CLI mode - ideal
+for continuous integration and other tasks.
+
+WWW: https://github.com/ktr0731/evans
