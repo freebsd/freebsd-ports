@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libkColorPicker.so:graphics/kcolorpicker
 
-USES=		cmake localbase qt:5
+USES=		cmake localbase compiler:c++11-lang qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	ksnip
 USE_QT=		core \

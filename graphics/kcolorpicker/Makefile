@@ -11,7 +11,7 @@ COMMENT=	Qt based Color Picker with popup menu
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake qt:5
+USES=		cmake compiler:c++11-lang qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	ksnip
 USE_QT=		core testlib widgets \
