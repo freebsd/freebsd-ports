@@ -14440,7 +14440,6 @@ russian/gimp-help||2020-03-01|Has expired: Broken
 security/hotssh||2020-03-01|Has expired: Old, uses EOLed python27
 security/zenmap||2020-03-01|Has expired: Old, uses EOLed python27
 x11/py-xdot06|x11/py-xdot|2020-03-01|Has expired: Old, uses EOLed python27
-x11/terminator||2020-03-01|Has expired: Old, uses EOLed python27
 x11-fm/sunflower||2020-03-01|Has expired: Old, uses EOLed python27
 x11-toolkits/hippo-canvas||2020-03-01|Has expired: Old, uses EOLed python27
 x11-toolkits/py-kiwi-gtk||2020-03-01|Has expired: Old, uses EOLed python27
