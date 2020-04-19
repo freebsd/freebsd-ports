@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	lv2>0:audio/lv2 \
 		bash:shells/bash
 
-USES=		gmake gnome pkgconfig shebangfix xorg
+USES=		compiler:c++11-lib gmake gnome pkgconfig shebangfix xorg
 SHEBANG_FILES=	dpf/utils/generate-ttl.sh
 USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmao-org
