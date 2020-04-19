@@ -1,6 +1,4 @@
 bin/signal-cli
-etc/dbus-1/system.d/org.asamk.Signal.conf
-share/dbus-1/services/org.asamk.Signal.service
 share/man/man1/signal-cli.1.gz
 %%DATADIR%%/bin/signal-cli
 %%DATADIR%%/lib/argparse4j-0.8.1.jar

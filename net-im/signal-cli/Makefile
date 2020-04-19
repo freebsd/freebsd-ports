@@ -3,6 +3,7 @@
 PORTNAME=	signal-cli
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.7
+PORTREVISION=	1
 CATEGORIES=	net-im java
 MASTER_SITES=	https://raw.github.com/AsamK/maven/master/releases/org/freedesktop/dbus/dbus-java/2.7.0/:_dbus_java \
 		https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.9.0/:_jackson_annotations \
