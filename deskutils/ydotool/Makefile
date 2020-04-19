@@ -18,7 +18,7 @@ LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
 		libboost_program_options.so:devel/boost-libs \
 		libevdevPlus.so:devel/libevdevplus
 
-USES=		cmake localbase
+USES=		cmake compiler:c++11-lang localbase
 
 CXXFLAGS+=	-I${LOCALBASE}/include/libepoll-shim
 LDFLAGS+=	-L${LOCALBASE}/lib -lepoll-shim
