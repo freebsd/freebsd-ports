@@ -14,8 +14,6 @@ viewvc/bin/wsgi/query.wsgi
 viewvc/bin/wsgi/viewvc.fcgi
 viewvc/bin/wsgi/viewvc.wsgi
 @sample viewvc/cvsgraph.conf.sample
-viewvc/lib/PyFontify.py
-viewvc/lib/PyFontify.pyc
 viewvc/lib/accept.py
 viewvc/lib/accept.pyc
 viewvc/lib/blame.py
@@ -40,8 +38,6 @@ viewvc/lib/idiff.py
 viewvc/lib/idiff.pyc
 viewvc/lib/popen.py
 viewvc/lib/popen.pyc
-viewvc/lib/py2html.py
-viewvc/lib/py2html.pyc
 viewvc/lib/query.py
 viewvc/lib/query.pyc
 viewvc/lib/sapi.py
