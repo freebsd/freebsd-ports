@@ -1,6 +1,6 @@
---- build/gulpfile.vscode.js.orig	2019-12-31 07:38:33 UTC
+--- build/gulpfile.vscode.js.orig	2020-04-16 15:59:11 UTC
 +++ build/gulpfile.vscode.js
-@@ -269,7 +269,7 @@ function packageTask(platform, arch, sourceFolderName,
+@@ -267,7 +267,7 @@ function packageTask(platform, arch, sourceFolderName,
  		let result = all
  			.pipe(util.skipDirectories())
  			.pipe(util.fixWin32DirectoryPermissions())

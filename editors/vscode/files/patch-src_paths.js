@@ -1,4 +1,4 @@
---- src/paths.js.orig	2019-12-10 21:16:00 UTC
+--- src/paths.js.orig	2020-04-16 15:59:11 UTC
 +++ src/paths.js
 @@ -19,7 +19,8 @@ function getAppDataPath(platform) {
  	switch (platform) {
@@ -10,10 +10,3 @@
  		default: throw new Error('Platform not supported');
  	}
  }
-@@ -33,4 +34,4 @@ function getDefaultUserDataPath(platform) {
- }
- 
- exports.getAppDataPath = getAppDataPath;
--exports.getDefaultUserDataPath = getDefaultUserDataPath;
-\ No newline at end of file
-+exports.getDefaultUserDataPath = getDefaultUserDataPath;

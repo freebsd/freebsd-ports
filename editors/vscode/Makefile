@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	vscode
-DISTVERSION=	1.43.2
-PORTREVISION=	1
+DISTVERSION=	1.44.2
 CATEGORIES=	editors
 MASTER_SITES=	https://nodejs.org/dist/v${NODE_VER}/:node_headers \
 		https://github.com/tagattie/FreeBSD-VSCode/releases/download/${DISTVERSION}/:yarn_cache
@@ -22,8 +21,8 @@ ONLY_FOR_ARCHS=	amd64
 BUILD_DEPENDS=	zip:archivers/zip \
 		electron${ELECTRON_VER_MAJOR}:devel/electron${ELECTRON_VER_MAJOR} \
 		rg:textproc/ripgrep \
-		npm:www/npm-node10 \
-		yarn:www/yarn-node10
+		npm-node10>0:www/npm-node10 \
+		yarn-node10>0:www/yarn-node10
 LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-atk \
 		libatspi.so:accessibility/at-spi2-core \
 		libsnappy.so:archivers/snappy \
@@ -62,7 +61,7 @@ USES=		desktop-file-utils gl gmake gnome jpeg pkgconfig \
 USE_GITHUB=	yes
 GH_ACCOUNT=	microsoft
 
-SOURCE_COMMIT_HASH=	fe22a9645b44368865c0ba92e2fb881ff1afce94
+SOURCE_COMMIT_HASH=	ff915844119ce9485abfe8aa9076ec76b5300ddd
 
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
