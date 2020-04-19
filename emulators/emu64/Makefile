@@ -3,6 +3,7 @@
 
 PORTNAME=	emu64
 PORTVERSION=	5.0.18
+PORTREVISION=	1
 CATEGORIES=	emulators
 
 MAINTAINER=	felix@palmen-it.de
