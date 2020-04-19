@@ -3,18 +3,16 @@
 
 PORTNAME=	fidocadj
 PORTVERSION=	0.24.6
-PORTREVISION=	1
-CATEGORIES=	cad
-MASTER_SITES=	SF/${PORTNAME}/:src SF/${PORTNAME}/manuals/:docs
-DISTFILES=	${PORTNAME}.jar:src
+PORTREVISION=	2
+CATEGORIES=	cad java
+# No USE_GITHUB here because GITHUB_EXTRACT_SUFX is hardcoded to .tar.gz
+MASTER_SITES=	https://github.com/DarwinNE/FidoCadJ/releases/download/v${PORTVERSION}/
+DISTFILES=	${PORTNAME}.jar
+DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Easy to use graphical editor for electronics
-
-BROKEN=		unfetchable
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	GPLv3
 
@@ -29,16 +27,14 @@ USE_JAVA=	yes
 
 OPTIONS_DEFINE=	DOCS
 
-DOCS_DISTFILES=	${PORTNAME}_manual_en.pdf:docs
-
-FDCJ_MANUAL=	${PORTNAME}_manual_en.pdf
+DOCS_DISTFILES=	manual_en.pdf
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${MKDIR} ${STAGEDIR}${DATADIR}; \
-	${INSTALL_DATA} ${DISTDIR}/${PORTNAME}.jar ${STAGEDIR}${DATADIR}/
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}.jar ${STAGEDIR}${DATADIR}/
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR} && \
-	${INSTALL_DATA} ${DISTDIR}/${FDCJ_MANUAL} ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${DOCS_DISTFILES} ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
