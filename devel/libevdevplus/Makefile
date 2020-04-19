@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/uinput.h:devel/evdev-proto
 
-USES=	cmake localbase
+USES=	cmake compiler:c++11-lang localbase
 
 USE_GITHUB=	yes
 GH_PROJECT=	libevdevPlus
