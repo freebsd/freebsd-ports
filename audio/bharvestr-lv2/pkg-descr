@@ -1,0 +1,9 @@
+B.Harvestr is an experimental granular synthesizer LV2 plugin.
+
+In contrast to standard synthesis methods which are based on oscillating waves,
+granular synthesis uses micro fragments of audio samples to generate sound.
+Thus, granular synthesis uses the same concept as (the majority of) pitch
+shifters. Granular synthesizers typically generate lots of overlapping grains to
+produce atmospheric sound effects, full soundscapes and pad sounds.
+
+WWW: https://github.com/sjaehn/BHarvestr
