@@ -14547,3 +14547,4 @@ net/pjsip-extsrtp||2020-04-18|Remove slave port not used anymore
 www/py-django-caching-app-plugins||2020-04-18|Doesn't work with Django 1.9+ and Python 3, no longer maintained
 net/openmpi2||2020-04-19|Removed, deprecated by upstream
 www/py-ddgr|www/ddgr|2020-04-19|Duplicate port
+sysutils/py-halite||2020-04-19|Hasexpired: Uses deprecated version of python
