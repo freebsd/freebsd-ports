@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ImageMagick
-DISTVERSION=	7.0.9-20
+DISTVERSION=	7.0.10-6
 CATEGORIES=	graphics perl5
 MASTER_SITES=	https://www.imagemagick.org/download/ \
 		https://www.imagemagick.org/download/releases/ \
@@ -325,8 +325,12 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|@\.@MAGICK_ABI_SUFFIX@|@|g' \
 		${WRKSRC}/PerlMagick/Makefile.PL.in \
 		${WRKSRC}/PerlMagick/quantum/Makefile.PL.in \
+		${WRKSRC}/Magick++/bin/Magick++-config.in \
 		${WRKSRC}/Magick++/lib/Magick++.pc.in \
+		${WRKSRC}/MagickCore/MagickCore-config.in \
 		${WRKSRC}/MagickCore/MagickCore.pc.in \
+		${WRKSRC}/MagickCore/ImageMagick.pc.in \
+		${WRKSRC}/MagickWand/MagickWand-config.in \
 		${WRKSRC}/MagickWand/MagickWand.pc.in
 
 pre-configure:

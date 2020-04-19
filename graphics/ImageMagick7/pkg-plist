@@ -481,7 +481,18 @@ man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-7/images/bluebells_lin.jpg
 %%PORTDOCS%%%%DOCSDIR%%-7/images/bluebells_log.jpg
 %%PORTDOCS%%%%DOCSDIR%%-7/images/button.gif
+%%PORTDOCS%%%%DOCSDIR%%-7/images/color-thresholding-gray.gif
+%%PORTDOCS%%%%DOCSDIR%%-7/images/color-thresholding-hsv-rgb.gif
+%%PORTDOCS%%%%DOCSDIR%%-7/images/color-thresholding-hsv.gif
+%%PORTDOCS%%%%DOCSDIR%%-7/images/color-thresholding-rgb.gif
+%%PORTDOCS%%%%DOCSDIR%%-7/images/color-thresholding.gif
+%%PORTDOCS%%%%DOCSDIR%%-7/images/color-thresholding.jpg
 %%PORTDOCS%%%%DOCSDIR%%-7/images/configure.jpg
+%%PORTDOCS%%%%DOCSDIR%%-7/images/convex-hull-barn-closure.jpg
+%%PORTDOCS%%%%DOCSDIR%%-7/images/convex-hull-barn.jpg
+%%PORTDOCS%%%%DOCSDIR%%-7/images/convex-hull-blocks-closure.png
+%%PORTDOCS%%%%DOCSDIR%%-7/images/convex-hull-blocks.png
+%%PORTDOCS%%%%DOCSDIR%%-7/images/convex-hull.png
 %%PORTDOCS%%%%DOCSDIR%%-7/images/cylinder_shaded.png
 %%PORTDOCS%%%%DOCSDIR%%-7/images/difference.png
 %%PORTDOCS%%%%DOCSDIR%%-7/images/examples.jpg
@@ -1407,6 +1418,7 @@ man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-7/www/clahe.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/cipher.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/color-management.html
+%%PORTDOCS%%%%DOCSDIR%%-7/www/color-thresholding.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/color.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/command-line-options.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/command-line-processing.html
@@ -1418,6 +1430,7 @@ man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-7/www/connected-components.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/contact.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/convert.html
+%%PORTDOCS%%%%DOCSDIR%%-7/www/convex-hull.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/develop.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/display.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/distribute-pixel-cache.html
