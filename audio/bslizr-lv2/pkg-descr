@@ -1,0 +1,5 @@
+The plugin slices a stereo input, amplifies or silences the individual slices
+and send the whole sequence to the output. Although this affects only the audio
+signal, it needs a playback running (Jack transport).
+
+WWW: https://github.com/sjaehn/BSlizr
