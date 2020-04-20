@@ -40,7 +40,6 @@ man/man5/neomuttrc.5.gz
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/neomutt.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/neomutt.mo
 %%PORTDOCS%%%%DOCSDIR%%/CODE_OF_CONDUCT.md
-%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT.md
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.md
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.md
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.md
