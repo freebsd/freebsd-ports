@@ -2,51 +2,44 @@
 # $FreeBSD$
 
 PORTNAME=	oscam
-PORTVERSION=	1.20
-PORTREVISION=	1
+PORTVERSION=	1.20.20200313
 CATEGORIES=	multimedia
-MASTER_SITES=	http://el8.nl/~fbettag/oscam/
+MASTER_SITES=	https://repo.or.cz/oscam.git/snapshot/7f322cc2cd840f4197488a3ead2c3e48b51e8278.tar.gz?/
 
 MAINTAINER=	franz@bett.ag
-COMMENT=	Softcam software to decrypt digital tv channels
+COMMENT=	Softcam software to decrypt digital TV channels
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		compiler gmake ssl tar:bzip2
+LIB_DEPENDS=	libpcsclite.so:devel/pcsc-lite
+
+USES=		gmake localbase ssl
 USE_RC_SUBR=	oscam
-
-.if target(gen-dist)
-FETCH_DEPENDS+=	svn:devel/subversion
-.endif
-SVN_REV=	11062
-SVN_SRC=	http://www.streamboard.tv/svn/oscam/trunk
 
 OPTIONS_DEFINE=	EXAMPLES
 
+MAKE_ARGS=	CC="${CC}" HOSTCC="${CC}" \
+		USE_LIBCRYPTO=1 USE_LIBUSB=1 USE_PCSC=1 USE_SSL=1 \
+		USE_UTF8=1 LIBUSB_LIB=-lusb \
+		OSCAM_BIN="Distribution/oscam" CONF_DIR="${PREFIX}/etc/oscam" \
+		V=1
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-7f322cc
+
 .include <bsd.port.pre.mk>
 
-.if ${SSL_DEFAULT} == base
-BROKEN_FreeBSD_12=	field has incomplete type 'BIGNUM' (aka 'struct bignum_st')
-BROKEN_FreeBSD_13=	field has incomplete type 'BIGNUM' (aka 'struct bignum_st')
-.endif
-
-.if ${CHOSEN_COMPILER_TYPE} == clang
-MAKE_ARGS+=	HOSTCC=clang CC=clang
+.if ${ARCH:Mmips*}
+USE_GCC=	yes
 .endif
 
 do-install:
-	${RM} ${WRKSRC}/Distribution/*.debug
-	${INSTALL_PROGRAM} ${WRKSRC}/Distribution/${PORTNAME}-${PORTVERSION}-* ${STAGEDIR}${PREFIX}/bin/oscam
+	${INSTALL_PROGRAM} ${WRKSRC}/Distribution/oscam ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_MAN} ${WRKSRC}/Distribution/doc/man/*.1 ${STAGEDIR}${PREFIX}/man/man1/
 	${INSTALL_MAN} ${WRKSRC}/Distribution/doc/man/*.5 ${STAGEDIR}${PREFIX}/man/man5/
 
 do-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
 	${INSTALL_DATA} ${WRKSRC}/Distribution/doc/example/* ${STAGEDIR}${EXAMPLESDIR}/
-
-gen-dist:
-	${MKDIR} ${WRKDIR}
-	svn export --force -r ${SVN_REV} ${SVN_SRC} ${WRKSRC}
-	${TAR} -cvy -C ${WRKDIR} -f ${DISTDIR}/${DISTNAME}.tar.bz2 ${DISTNAME}
 
 .include <bsd.port.post.mk>
