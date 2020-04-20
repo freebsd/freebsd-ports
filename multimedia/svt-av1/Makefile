@@ -2,7 +2,7 @@
 
 PORTNAME=	svt-av1
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.1
+DISTVERSION=	0.8.2
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -14,8 +14,7 @@ LICENSE_NAME=	BSD-2-Clause Plus Patent License
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-ONLY_FOR_ARCHS=	amd64
-ONLY_FOR_ARCHS_REASON=	uses x86-64 assembly
+BROKEN_i386=	https://github.com/OpenVisualCloud/SVT-AV1/issues/1231
 
 BUILD_DEPENDS=	nasm:devel/nasm
 
