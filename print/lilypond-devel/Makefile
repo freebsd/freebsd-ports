@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lilypond
-DISTVERSION=	2.19.83
-PORTREVISION=	1
+DISTVERSION=	2.20.0
 CATEGORIES=	print audio
 MASTER_SITES=	http://lilypond.org/download/source/v${DISTVERSION:R}/
 PKGNAMESUFFIX=	-devel
@@ -27,13 +26,29 @@ BUILD_DEPENDS=	pdftexi2dvi:print/texinfo \
 		rsync:net/rsync \
 		texi2html:textproc/texi2html \
 		zip:archivers/zip
-RUN_DEPENDS=	mftrace:print/mftrace \
-		${LOCALBASE}/share/fonts/dejavu/DejaVuSans-Bold.ttf:x11-fonts/dejavu
 LIB_DEPENDS=	libltdl.so:devel/libltdl \
-		libguile.so:lang/guile \
+		libguile.so:lang/guile1 \
 		libgmp.so:math/gmp \
 		libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig
+RUN_DEPENDS=	mftrace:print/mftrace \
+		${LOCALBASE}/share/fonts/dejavu/DejaVuSans-Bold.ttf:x11-fonts/dejavu
+
+USES=		bison:build compiler:gcc-c++11-lib gettext ghostscript gmake \
+		gnome perl5 pkgconfig python:2.7
+USE_CXXSTD=	c++11
+USE_GNOME=	pango
+USE_PERL5=	build
+USE_TEX=	latex texmf
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--with-texgyre-dir=${LOCALBASE}/${TEXMFDISTDIR}/fonts/opentype/public/tex-gyre \
+		--with-python-include=${PYTHON_INCLUDEDIR} --without-urwotf-dir
+CONFIGURE_ENV+=	ac_cv_prog_MAKEINFO="${LOCALBASE}/bin/makeinfo" \
+		FLEX=${FLEX} YACC=${YACC} HOME=${WRKDIR}
+
+MAKEFILE=	GNUmakefile
+ALL_TARGET=	all
 
 INFO=		internals \
 		lilypond-changes \
@@ -47,24 +62,6 @@ INFO=		internals \
 		lilypond-usage \
 		lilypond-web \
 		music-glossary
-
-USES=		bison:build compiler:gcc-c++11-lib gettext ghostscript gmake \
-		gnome perl5 pkgconfig python:2.7
-USE_CXXSTD=	c++11
-USE_TEX=	latex texmf
-USE_PERL5=	build
-USE_GNOME=	pango
-
-MAKEFILE=	GNUmakefile
-
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-texgyre-dir=${LOCALBASE}/${TEXMFDISTDIR}/fonts/opentype/public/tex-gyre \
-		--with-python-include=${PYTHON_INCLUDEDIR} --without-urwotf-dir
-CONFIGURE_ENV+=	ac_cv_prog_MAKEINFO="${LOCALBASE}/bin/makeinfo" \
-		FLEX=${FLEX} YACC=${YACC} HOME=${WRKDIR}
-
-ALL_TARGET=	all
-
 PLIST_SUB=	DISTVERSION=${DISTVERSION}
 
 OPTIONS_DEFINE=	NLS

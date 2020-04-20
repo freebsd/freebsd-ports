@@ -1,6 +1,6 @@
---- config.make.in.orig	2017-02-26 12:08:59 UTC
+--- config.make.in.orig	2020-02-04 16:12:57 UTC
 +++ config.make.in
-@@ -69,7 +69,7 @@ sharedstatedir = @sharedstatedir@
+@@ -73,7 +73,7 @@ sharedstatedir = @sharedstatedir@
  stepmake = @stepmake@
  
  package_datadir = $(datadir)/$(package)

@@ -1,8 +1,8 @@
---- lily/include/lily-guile.hh.orig	2017-02-26 12:08:59 UTC
+--- lily/include/lily-guile.hh.orig	2020-02-04 16:12:57 UTC
 +++ lily/include/lily-guile.hh
-@@ -20,6 +20,8 @@
- #ifndef LILY_GUILE_HH
- #define LILY_GUILE_HH
+@@ -22,6 +22,8 @@
+ 
+ #include "config.hh"
  
 +#include <cstddef>
 +

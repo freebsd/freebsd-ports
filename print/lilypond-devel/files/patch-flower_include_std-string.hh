@@ -1,11 +1,11 @@
---- flower/include/std-string.hh.orig	2017-02-26 12:08:59 UTC
+--- flower/include/std-string.hh.orig	2020-03-01 14:00:51 UTC
 +++ flower/include/std-string.hh
 @@ -38,6 +38,7 @@ using namespace std;
  typedef size_t ssize;
  #define NPOS string::npos
  
 +#if _cplusplus <= 19971L
- string to_string (const string&);
+ string to_string (const string &);
  string to_string (char c, int n = 1);
  string to_string (int i, char const *format = 0);
 @@ -49,6 +50,7 @@ string to_string (unsigned);

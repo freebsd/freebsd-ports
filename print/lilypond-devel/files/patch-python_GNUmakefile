@@ -1,6 +1,6 @@
---- python/GNUmakefile.orig	2017-02-26 12:08:59 UTC
+--- python/GNUmakefile.orig	2020-02-04 16:12:57 UTC
 +++ python/GNUmakefile
-@@ -14,7 +14,6 @@ CONFIG_LDFLAGS=
+@@ -12,7 +12,6 @@ CONFIG_LDFLAGS=
  INSTALLATION_OUT_SUFFIXES=1
  
  INSTALLATION_OUT_FILES=$(OUT_SO_MODULES)

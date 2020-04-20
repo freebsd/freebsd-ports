@@ -277,7 +277,6 @@ share/emacs/site-lisp/lilypond-words.el
 %%DATADIR%%/%%DISTVERSION%%/scm/chord-ignatzek-names.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/chord-name.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/clip-region.scm
-%%DATADIR%%/%%DISTVERSION%%/scm/coverage.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/define-context-properties.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/define-event-classes.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/define-grob-interfaces.scm
