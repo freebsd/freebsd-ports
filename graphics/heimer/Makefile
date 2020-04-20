@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	heimer
-DISTVERSION=	1.15.1
+DISTVERSION=	1.16.0
 CATEGORIES=	graphics
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -11,7 +11,7 @@ LICENSE=	CC-BY-SA-3.0 GPLv3+
 LICENSE_COMB=	multi
 LICENSE_FILE_GPLv3+ =	${WRKSRC}/COPYING
 
-USES=		cmake compiler:c++11-lang qt:5
+USES=		cmake compiler:c++14-lang qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	juzzlin
 GH_PROJECT=	Heimer
