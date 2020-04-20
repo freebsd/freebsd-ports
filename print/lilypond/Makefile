@@ -2,16 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	lilypond
-PORTVERSION=	2.18.2
-PORTREVISION=	10
+DISTVERSION=	2.20.0
 CATEGORIES=	print audio
-MASTER_SITES=	http://download.linuxaudio.org/lilypond/sources/v${PORTVERSION:R}/
+MASTER_SITES=	http://lilypond.org/download/source/v${DISTVERSION:R}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	m.ne@gmx.net
 COMMENT=	GNU music typesetter
 
-LICENSE=	GPLv3+
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	GPLv3
 
 BUILD_DEPENDS=	pdftexi2dvi:print/texinfo \
 		t1ascii:print/t1utils \
@@ -22,36 +20,31 @@ BUILD_DEPENDS=	pdftexi2dvi:print/texinfo \
 		help2man:misc/help2man \
 		pngtopnm:graphics/netpbm \
 		rsync:net/rsync \
-		zip:archivers/zip \
 		texi2html:textproc/texi2html \
-		${LOCALBASE}/share/ghostscript/fonts/c059033l.pfb:print/gsfonts
-LIB_DEPENDS=	libguile.so:lang/guile \
+		zip:archivers/zip
+LIB_DEPENDS=	libltdl.so:devel/libltdl \
+		libguile.so:lang/guile1 \
 		libgmp.so:math/gmp \
-		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
-		libltdl.so:devel/libltdl
+		libfontconfig.so:x11-fonts/fontconfig
 RUN_DEPENDS=	mftrace:print/mftrace \
 		${LOCALBASE}/share/fonts/dejavu/DejaVuSans-Bold.ttf:x11-fonts/dejavu
 
-USES=		bison:build compiler:c++11-lang gettext ghostscript gmake \
-		gnome pkgconfig perl5 python:2.7
-USE_TEX=	latex
-USE_PERL5=	build
+USES=		bison:build compiler:gcc-c++11-lib gettext ghostscript gmake \
+		gnome perl5 pkgconfig python:2.7
+USE_CXXSTD=	c++11
 USE_GNOME=	pango
+USE_PERL5=	build
+USE_TEX=	latex texmf
+
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-ncsb-dir=${LOCALBASE}/share/ghostscript/fonts \
-		--with-python-include=${PYTHON_INCLUDEDIR}
+CONFIGURE_ARGS+=--with-texgyre-dir=${LOCALBASE}/${TEXMFDISTDIR}/fonts/opentype/public/tex-gyre \
+		--with-python-include=${PYTHON_INCLUDEDIR} --without-urwotf-dir
 CONFIGURE_ENV+=	ac_cv_prog_MAKEINFO="${LOCALBASE}/bin/makeinfo" \
-		FLEX=${FLEX} YACC=${YACC}
+		FLEX=${FLEX} YACC=${YACC} HOME=${WRKDIR}
 
 MAKEFILE=	GNUmakefile
-
 ALL_TARGET=	all
-TEST_TARGET=	test  # fails with sig11
-
-NO_CCACHE=	yes
-
-PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 INFO=		internals \
 		lilypond-changes \
@@ -65,20 +58,24 @@ INFO=		internals \
 		lilypond-usage \
 		lilypond-web \
 		music-glossary
+PLIST_SUB=	DISTVERSION=${DISTVERSION}
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
 post-patch:
+	@${FIND} ${WRKSRC} -name "*.cc" | ${XARGS} \
+	    ${REINPLACE_CMD} -e 's|isinf[ ]*(|::isinf(|g' -e 's|isnan|::isnan|g'
 	@${REINPLACE_CMD} -e 's|<FlexLexer.h>|"/usr/include/FlexLexer.h"|' \
-		${WRKSRC}/lily/include/includable-lexer.hh
+	    ${WRKSRC}/lily/include/includable-lexer.hh
+		${SED} -e 's|%%FONTDIR%%|${WRKDIR}/fontconfig/cache/|'  \
+			${FILESDIR}/fonts.conf > ${WRKDIR}/.fonts.conf
 
 post-patch-NLS-off:
-	@${REINPLACE_CMD} -e '/^PO_FILES/s|= |= #|' ${WRKSRC}/${MAKEFILE}.in
+	@${REINPLACE_CMD} -e '/po \\$$/d' ${WRKSRC}/${MAKEFILE}.in
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/lilypond
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lilypond/${PORTVERSION}/python/midi.so
-	@${LN} -fs ${DATADIR}/${PORTVERSION} ${STAGEDIR}${DATADIR}/current
+	(cd ${STAGEDIR}/${DATADIR} && ${LN} -fs ${DISTVERSION} current)
 
 .include <bsd.port.mk>

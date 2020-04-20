@@ -1,11 +1,11 @@
---- stepmake/stepmake/texinfo-vars.make.orig	2013-01-04 06:41:56.000000000 -0700
-+++ stepmake/stepmake/texinfo-vars.make	2013-03-04 18:44:15.000000000 -0700
-@@ -33,7 +33,7 @@
+--- stepmake/stepmake/texinfo-vars.make.orig	2020-03-01 14:00:51 UTC
++++ stepmake/stepmake/texinfo-vars.make
+@@ -31,7 +31,7 @@ DO_TEXI_DEP = ( echo ./$@: $(call scan-texi,$<) > $(ba
  
- DOCUMENTATION_INCLUDES += -I $(top-src-dir)/Documentation
+ TEXINFO_PAPERSIZE_OPTION= $(if $(findstring $(PAPERSIZE),a4),,-t @afourpaper)
  
 -MAKEINFO_FLAGS += --enable-encoding --error-limit=0 $(DOCUMENTATION_INCLUDES)
 +MAKEINFO_FLAGS += --enable-encoding --force $(DOCUMENTATION_INCLUDES)
- MAKEINFO = LANG= $(MAKEINFO_PROGRAM) $(MAKEINFO_FLAGS)
+ MAKEINFO = LANG=C $(MAKEINFO_PROGRAM) $(MAKEINFO_FLAGS)
  
  # texi2html xref map files
