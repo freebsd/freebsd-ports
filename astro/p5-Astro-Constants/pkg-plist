@@ -1,4 +1,5 @@
 %%SITE_PERL%%/Astro/Constants.pm
+%%SITE_PERL%%/Astro/Constants.pm6
 %%SITE_PERL%%/Astro/Constants/CGS.pm
 %%SITE_PERL%%/Astro/Constants/MKS.pm
 %%SITE_PERL%%/Astro/Roadmap.pod
