@@ -1,6 +1,7 @@
 include/uWebSockets/App.h
 include/uWebSockets/AsyncSocket.h
 include/uWebSockets/AsyncSocketData.h
+include/uWebSockets/BloomFilter.h
 include/uWebSockets/HttpContext.h
 include/uWebSockets/HttpContextData.h
 include/uWebSockets/HttpParser.h
