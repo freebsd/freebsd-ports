@@ -2,8 +2,8 @@
 
 PORTNAME=	fogpad
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.0-1
-DISTVERSIONSUFFIX=	-g618cbaf
+DISTVERSION=	1.0.0-3
+DISTVERSIONSUFFIX=	-gc52326b
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 
@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	lv2>0:audio/lv2 \
 		bash:shells/bash
+LIB_DEPENDS=	liblo.so:audio/liblo
 
 USES=		compiler:c++11-lib gmake gnome pkgconfig shebangfix xorg
 SHEBANG_FILES=	dpf/utils/generate-ttl.sh
@@ -27,7 +28,7 @@ USE_XORG=	x11
 
 CXXFLAGS+=	-I${FILESDIR}
 
-MAKE_ARGS=	BUILD_VST2=false BUILD_DSSI=false # VST and DSSI plugins fail to install: https://github.com/linuxmao-org/fogpad-port/issues/2
+MAKE_ARGS=	BUILD_VST2=true BUILD_DSSI=true
 
 OPTIONS_DEFINE=		JACK
 OPTIONS_DEFAULT=	JACK
