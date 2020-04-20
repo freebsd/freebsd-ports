@@ -2,7 +2,7 @@
 
 PORTNAME=	aws-vault
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.3.2
+DISTVERSION=	5.4.0
 CATEGORIES=	security
 
 MAINTAINER=	dmgk@FreeBSD.org
@@ -38,6 +38,7 @@ GO_BUILDFLAGS=	-ldflags="-s -w -X main.Version=${PORTVERSION}"
 
 PLIST_FILES=	bin/${PORTNAME} \
 		etc/bash_completion.d/aws-vault \
+		share/fish/completions/aws-vault.fish \
 		share/zsh/site-functions/_aws-vault
 
 PORTDOCS=	README.md USAGE.md
@@ -46,8 +47,10 @@ OPTIONS_DEFINE=	DOCS
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/fish/completions
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
 	${INSTALL_DATA} ${WRKSRC}/completions/bash/aws-vault ${STAGEDIR}${PREFIX}/etc/bash_completion.d
+	${INSTALL_DATA} ${WRKSRC}/completions/fish/aws-vault.fish ${STAGEDIR}${PREFIX}/share/fish/completions
 	${INSTALL_DATA} ${WRKSRC}/completions/zsh/_aws-vault ${STAGEDIR}${PREFIX}/share/zsh/site-functions
 
 post-install-DOCS-on:
