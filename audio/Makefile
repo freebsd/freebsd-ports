@@ -343,6 +343,7 @@
     SUBDIR += id3v2
     SUBDIR += ifp-line
     SUBDIR += infamous-plugins-lv2
+    SUBDIR += intersect-lv2
     SUBDIR += invada-studio-plugins-lv2
     SUBDIR += ir-lv2
     SUBDIR += jack

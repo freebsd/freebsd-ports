@@ -1,0 +1,6 @@
+Intersect is an LV2 plugin which, given a stereo audio stream, "expands" it to
+three channels. Everything that is present in both input channels will be in the
+center channel of the output, and what is specific to each channel will be in
+the corresponding output channel.
+
+WWW: https://github.com/sboukortt/intersect-lv2
