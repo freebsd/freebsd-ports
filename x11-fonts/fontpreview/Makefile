@@ -2,6 +2,7 @@
 
 PORTNAME=	fontpreview
 DISTVERSION=	1.0.6
+PORTREVISION=	1
 CATEGORIES=	x11-fonts graphics
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -20,7 +21,6 @@ RUN_DEPENDS=	bash:shells/bash \
 USES=		shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	sdushantha
-GH_TAGNAME=	24f4f5e7dba3351844950e681c08bd74f3df2d42
 SHEBANG_FILES=	${PORTNAME}
 
 NO_ARCH=	yes
