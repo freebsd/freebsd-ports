@@ -25,5 +25,6 @@ USE_PERL5=	configure
 MAKE_JOBS_UNSAFE=	yes
 
 CFLAGS_armv7=	-fPIC
+CFLAGS_powerpc=	-fPIC
 
 .include <bsd.port.mk>
