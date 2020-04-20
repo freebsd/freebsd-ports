@@ -2,19 +2,22 @@
 
 PORTNAME=		afni
 DISTVERSIONPREFIX=	AFNI_
-DISTVERSION=		19.1.20
-PORTREVISION=	4
+DISTVERSION=		20.1.01
 CATEGORIES=		science biology graphics perl5 python
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced Functional Neuro Imaging
 
 LICENSE=	GPLv2
 
 BROKEN_sparc64=	Does not compile: "undefined reference to '_mcount'"
 
+CRAN_DEPENDS=	R-cran-lme4>0:math/R-cran-lme4 \
+		R-cran-snow>0:science/R-cran-snow \
+		R-cran-psych>0:math/R-cran-psych
 BUILD_DEPENDS=	gm4:devel/m4 \
-		R:math/R
+		R:math/R \
+		${CRAN_DEPENDS}
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libf2c.so:lang/f2c \
 		libgsl.so:math/gsl \
@@ -22,18 +25,23 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libxml2.so:textproc/libxml2 \
 		libXm.so:x11-toolkits/open-motif \
 		libnetpbm.so:graphics/netpbm
+# Remote execution of suma.  Also needed for glxinfo.
+LIB_PC_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dri.pc:graphics/mesa-dri
 RUN_DEPENDS=	endian:sysutils/endian \
 		mpeg_encode:multimedia/mpeg_encode \
 		qhull:math/qhull5 \
-		R:math/R
+		R:math/R \
+		${CRAN_DEPENDS}
 
-USES=		compiler:openmp gettext gl gmake gnome iconv jpeg:run motif \
-		perl5 python shebangfix tar:xz xorg
+USES=		compiler:openmp gettext gl gmake gnome iconv jpeg:run motif
+USES+=		perl5 python shebangfix tar:xz xorg
 USE_GNOME=	glib20
 USE_GITHUB=	yes
+USE_GL=		gl
 
 SHEBANG_FILES=	scripts_install/* \
-		python_scripts/afni_python/*.py \
+		python_scripts/afnipy/*.py \
+		python_scripts/scripts/*.py \
 		jzosky/*.py \
 		jzosky/lib_RetroTS/*.py \
 		discoraj/ClusterExplorer/*.py \
@@ -70,16 +78,7 @@ CONFLICTS=	im-[0-9]* \
 		open-usp-tukubai-[0-9]*
 
 X11R6_FILES=	coxplot/Makefile \
-		coxplot/Makefile.f2c \
-		3DEdge/src/Makefile \
-		SUMA/SUMA_Makefile \
-		edt_blur.c \
-		suma_datasets.c \
-		SUMA/SUMA_Load_Surface_Object.c \
-		SUMA/SUMA_MiscFunc.c \
-		SUMA/SUMA_ParseCommands.c \
-		SUMA/GLUT/libglut/glut_event.c \
-		SUMA/SUMA_Surface_IO.c
+		coxplot/Makefile.f2c
 
 post-extract:
 .for f in ${X11R6_FILES}
@@ -91,36 +90,23 @@ post-extract:
 	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
 	@${RM} ${WRKSRC}/3DEdge/src/Makefile.orig
 
-# shebangfix misses /bin/python on 10.1
-#	@${REINPLACE_CMD} -e "s|/bin/python|${PYTHON_CMD}|g" \
-#		${WRKSRC}/python_scripts/afni_python/lib_fat_Rfactor.py
-
 pre-configure:
 	@${REINPLACE_CMD} -e "s|-lglib|-lglib-2.0|g" \
 		${WRKSRC}/SUMA/SUMA_Makefile
 	@${REINPLACE_CMD} \
-		-e 's|os\.path\.dirname(sys\.argv\[0\])|"${DATADIR}"|g' \
+		-e 's|os\.path\.dirname(os\.path\.abspath(os\.path\.expanduser(sys\.argv\[0\])))|"${DATADIR}"|g' \
 		${WRKSRC}/pkundu/meica.py
-	@${REINPLACE_CMD} \
-		-e 's|g_info|afni_g_info|g' \
-		${WRKSRC}/rickr/Dimon.c \
-		${WRKSRC}/rickr/Dimon1.c \
-		${WRKSRC}/afni_history_rickr.c \
-		${WRKSRC}/mri_dicom_stuff.c \
-		${WRKSRC}/mri_process_siemens.c \
-		${WRKSRC}/mri_read_dicom.c \
-		${WRKSRC}/to3d.c \
-		${WRKSRC}/mri_dicom_stuff.h
 
 do-install:
 	# AFNI install just dumps everything into one flat directory
-	# Preserve original install dir and make a sacrificial temp copy
+	# ${WRKSRC}/BSD == ${INSTALL_WRKSRC}.
+	# Preserve ${INSTALL_WRKSRC} and make a sacrificial temp copy
 	# to be pruned and rearranged for easy staging
 	@${RM} -r ${INSTALL_TMP}
 	@${CP} -R ${INSTALL_WRKSRC} ${INSTALL_TMP}
 
 	# Clean up and organize files into ${PRESTAGE}, destroying
-	# temp copy in the process
+	# ${INSTALL_TMP} in the process
 	@${RM} -rf ${PRESTAGE}
 	@${MKDIR} ${PRESTAGE}/bin \
 		${PRESTAGE}/scripts \
@@ -128,12 +114,12 @@ do-install:
 		${PRESTAGE}/include \
 		${PRESTAGE}/trash \
 		${PRESTAGE}/doc \
-		${PRESTAGE}/share
+		${PRESTAGE}/share \
+		${PRESTAGE}/pylib
 	@${RM}	${INSTALL_TMP}/libf2c.a
 	@${MV}	${INSTALL_TMP}/meica.libs \
 		${INSTALL_TMP}/shiny \
 		${INSTALL_TMP}/lib_RetroTS \
-		${INSTALL_TMP}/afniInterfaceRT \
 		${INSTALL_TMP}/funstuff \
 		${INSTALL_TMP}/AFNI.*rc \
 		${INSTALL_TMP}/afnigui* \
@@ -142,6 +128,7 @@ do-install:
 		${INSTALL_TMP}/*.so \
 		${PRESTAGE}/lib
 	@${MV}	${INSTALL_TMP}/*.h ${PRESTAGE}/include
+	@${MV}	${INSTALL_TMP}/afnipy ${INSTALL_TMP}/afniRTI ${PRESTAGE}/pylib
 	@${CP}	${WRKDIR}/afni-AFNI_${PORTVERSION}/doc/README/* ${PRESTAGE}/doc
 	@for binary in `${FILE} ${INSTALL_TMP}/* | fgrep 'ELF' | ${AWK} -F ':' ' { print $$1 }'` ; do \
 		${MV} $${binary} ${PRESTAGE}/bin ; \
@@ -157,6 +144,8 @@ do-install:
 		${STAGEDIR}${PREFIX}/etc/mri
 	${INSTALL_PROGRAM} ${PRESTAGE}/bin/* ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${PRESTAGE}/scripts/* ${STAGEDIR}${PREFIX}/bin
+	(cd ${PRESTAGE}/pylib && \
+		${COPYTREE_SHARE} . ${STAGEDIR}${PYTHON_SITELIBDIR})
 	${INSTALL_DATA} ${PRESTAGE}/lib/* ${STAGEDIR}${PREFIX}/lib/afni
 	${INSTALL_DATA} ${PRESTAGE}/include/* ${STAGEDIR}${PREFIX}/include/afni
 	(cd ${PRESTAGE}/share && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
