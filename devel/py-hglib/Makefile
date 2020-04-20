@@ -1,0 +1,22 @@
+# $FreeBSD$
+
+PORTNAME=	hglib
+PORTVERSION=	2.6.1
+CATEGORIES=	devel python
+MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	python-${PORTNAME}-${PORTVERSION}
+
+MAINTAINER=	delphij@FreeBSD.org
+COMMENT=	Library with a fast, convenient interface to Mercurial
+
+LICENSE=	MIT
+
+RUN_DEPENDS+=	hg:devel/mercurial
+
+USES=		python
+USE_PYTHON=	distutils autoplist
+
+NO_ARCH=	yes
+
+.include <bsd.port.mk>
