@@ -3,9 +3,9 @@
 
 PORTNAME=	terminator
 PORTVERSION=	1.92
+PORTREVISION=	1
 CATEGORIES=	x11 python
-MASTER_SITES=	https://bazaar.launchpad.net/~hellodeargrandma/terminator/python3/tarball/1852/
-DISTNAME=	terminator-python3-bzr-r1852
+MASTER_SITES=	https://github.com/gnome-terminator/terminator/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	Multiple GNOME terminals in one window
@@ -31,8 +31,6 @@ bash_CMD=	${SH}
 OPTIONS_DEFINE=		NLS
 OPTIONS_SUB=		yes
 NLS_USES=		gettext
-
-WRKSRC=		${WRKDIR}/~hellodeargrandma/terminator/python3
 
 .include <bsd.port.pre.mk>
 
