@@ -1,0 +1,10 @@
+Spectacle is a real-time spectral analyzer using the short-time Fourier
+transform, available as LV2 audio plugin and JACK client.
+
+features:
+* display the spectrum on logarithmic musical scale
+* control the parameters of the analysis that affect latency and precision
+* have zoom functionality and smooth interpolation
+* identify the value under cursor and the peaks
+
+WWW: https://github.com/jpcima/spectacle

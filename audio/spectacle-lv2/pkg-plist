@@ -1,0 +1,5 @@
+%%JACK%%bin/spectacle
+lib/lv2/spectacle.lv2/manifest.ttl
+lib/lv2/spectacle.lv2/presets.ttl
+lib/lv2/spectacle.lv2/spectacle.so
+lib/lv2/spectacle.lv2/spectacle.ttl
