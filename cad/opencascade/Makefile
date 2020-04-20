@@ -3,7 +3,7 @@
 
 PORTNAME=	opencascade
 PORTVERSION=	7.4.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	cad science
 MASTER_SITES=	LOCAL/thierry
 
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/OCCT_LGPL_EXCEPTION.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig	\
-		libvtksys-${VTKVER}.so:math/vtk8	\
+		libvtksys-${VTKVER}.so:math/vtk6	\
 		libfreetype.so:print/freetype2		\
 		libtbb.so:devel/tbb
 RUN_DEPENDS=	bash:shells/bash
@@ -24,10 +24,9 @@ RUN_DEPENDS=	bash:shells/bash
 # Check ${WRKSRC}/dox/overview/overview.md
 # and ${WRKSRC}/dox/dev_guides/building
 USES=		alias:10 cmake compiler:c++14-lang dos2unix \
-		gl python qt:5 qmake shebangfix tk tar:tgz xorg
+		gl python shebangfix tk tar:tgz xorg
 USE_XORG=	ice sm x11 xext xi xmu xt
 USE_GL=		gl glu
-USE_QT=		buildtools_build
 
 DOS2UNIX_FILES=	adm/templates/*
 SHEBANG_FILES=	adm/templates/*.sh	\
@@ -38,7 +37,7 @@ SHEBANG_FILES=	adm/templates/*.sh	\
 		gendoc
 ENVSH=		adm/templates/env.sh
 
-VTKVER=		8.1
+VTKVER=		6.2
 
 OPTIONS_DEFINE=	DOCS DOXYGEN FFMPEG VIS
 VIS_DESC=	Build Visualizazion module (requires OpenGL, freetype, ftgl and gl2ps)
@@ -123,6 +122,7 @@ post-install:
 	${MV} ${STAGEDIR}${OCCROOT}/bin/DRAWEXE-${PORTVERSION} ${STAGEDIR}${PREFIX}/bin/DRAWEXE
 	(cd ${STAGEDIR}${PREFIX}/bin &&							\
 	${LN} -sf DRAWEXE ${STAGEDIR}${OCCROOT}/bin/DRAWEXE)
+
 post-install-DOXYGEN-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc/overview && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
