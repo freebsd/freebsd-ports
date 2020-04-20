@@ -725,6 +725,7 @@
     SUBDIR += sdl2_mixer
     SUBDIR += sdl_mixer
     SUBDIR += sdl_sound
+    SUBDIR += sfizz
     SUBDIR += sfront
     SUBDIR += shairplay
     SUBDIR += shairport-sync

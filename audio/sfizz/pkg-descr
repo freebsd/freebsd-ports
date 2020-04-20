@@ -1,0 +1,11 @@
+sfizz is a sample-based musical synthesizer.
+
+It features the well-established SFZ instrument format (https://sfzformat.com/)
+at its core, which permits to use existing instrument libraries, or create
+personal instruments with ease.
+
+Not only is sfizz ready-to-use as an instrument plugin of its own, the library
+allows developers to create instruments of their own, taking advantage of the
+abilities of SFZ.
+
+WWW: https://sfz.tools/sfizz/
