@@ -473,6 +473,7 @@
     SUBDIR += lv2
     SUBDIR += lv2file
     SUBDIR += lv2lint
+    SUBDIR += lv2proc
     SUBDIR += lvtk
     SUBDIR += lxmusic
     SUBDIR += mac
