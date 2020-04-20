@@ -40,12 +40,19 @@ LOGGING_DESC=		Enable logging to disk
 EXAMPLES_CMAKE_BOOL=	build_examples
 LOGGING_CMAKE_BOOL=	logging
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} != powerpc
 # workaroud for the clang-10 compiler failure: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=244830
+# on powerpc, llvm 9 crashes with segfault, while 10 works https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=243958
 LLVM_VER=	90
 BUILD_DEPENDS+=	clang${LLVM_VER}:devel/llvm${LLVM_VER}
 CPP=		clang-cpp${LLVM_VER}
 CC=		clang${LLVM_VER}
 CXX=		clang++${LLVM_VER}
+.else
+USES+=		compiler:c++11-lang
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local/include|${PREFIX}/include|' \
