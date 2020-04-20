@@ -2,8 +2,7 @@
 
 PORTNAME=	kak-lsp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.2.1
-PORTREVISION=	8
+DISTVERSION=	8.0.0
 CATEGORIES=	editors
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -18,137 +17,121 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	ul
 
-CARGO_CRATES=	adler32-1.0.3 \
-		aho-corasick-0.6.10 \
-		aho-corasick-0.7.3 \
+CARGO_CRATES=	adler32-1.0.4 \
+		aho-corasick-0.7.6 \
 		ansi_term-0.11.0 \
-		argon2rs-0.2.5 \
-		arrayvec-0.4.10 \
-		atty-0.2.11 \
-		autocfg-0.1.2 \
-		backtrace-0.3.15 \
-		backtrace-sys-0.1.28 \
-		bitflags-1.0.4 \
-		blake2-rfc-0.2.18 \
+		arc-swap-0.4.4 \
+		arrayref-0.3.5 \
+		arrayvec-0.5.1 \
+		atty-0.2.13 \
+		autocfg-0.1.7 \
+		autocfg-1.0.0 \
+		backtrace-0.3.40 \
+		backtrace-sys-0.1.32 \
+		base64-0.10.1 \
+		base64-0.11.0 \
+		bitflags-1.2.1 \
+		blake2b_simd-0.5.9 \
 		boxfnonce-0.1.1 \
-		byteorder-1.3.1 \
-		cc-1.0.35 \
-		cfg-if-0.1.7 \
-		chrono-0.4.6 \
+		byteorder-1.3.2 \
+		c2-chacha-0.2.3 \
+		cc-1.0.48 \
+		cfg-if-0.1.10 \
+		chrono-0.4.10 \
 		clap-2.33.0 \
 		cloudabi-0.0.3 \
-		constant_time_eq-0.1.3 \
+		constant_time_eq-0.1.4 \
 		crc32fast-1.2.0 \
 		crossbeam-0.2.12 \
-		crossbeam-0.6.0 \
-		crossbeam-channel-0.2.6 \
-		crossbeam-channel-0.3.8 \
-		crossbeam-deque-0.6.3 \
-		crossbeam-epoch-0.6.1 \
-		crossbeam-epoch-0.7.1 \
-		crossbeam-utils-0.5.0 \
-		crossbeam-utils-0.6.5 \
+		crossbeam-channel-0.4.2 \
+		crossbeam-utils-0.6.6 \
+		crossbeam-utils-0.7.2 \
 		daemonize-0.4.1 \
-		dirs-1.0.5 \
-		either-1.5.2 \
+		dirs-2.0.2 \
+		dirs-sys-0.3.4 \
+		either-1.5.3 \
 		enum_primitive-0.1.1 \
-		failure-0.1.5 \
-		failure_derive-0.1.5 \
+		failure-0.1.6 \
+		failure_derive-0.1.6 \
 		fuchsia-cprng-0.1.1 \
-		futures-0.1.26 \
+		futures-0.1.29 \
+		getrandom-0.1.13 \
 		glob-0.3.0 \
-		idna-0.1.5 \
-		isatty-0.1.9 \
-		itertools-0.8.0 \
-		itoa-0.4.3 \
-		jsonrpc-core-8.0.1 \
-		lazy_static-1.3.0 \
-		libc-0.2.51 \
-		libflate-0.1.22 \
-		lock_api-0.1.5 \
+		idna-0.2.0 \
+		itertools-0.9.0 \
+		itoa-0.4.4 \
+		jsonrpc-core-14.1.0 \
+		lazy_static-1.4.0 \
+		libc-0.2.69 \
+		libflate-0.1.27 \
 		log-0.3.9 \
-		log-0.4.6 \
-		lsp-types-0.57.1 \
+		log-0.4.8 \
+		lsp-types-0.73.0 \
 		matches-0.1.8 \
-		memchr-2.2.0 \
-		memoffset-0.2.1 \
-		nodrop-0.1.13 \
-		num-derive-0.2.4 \
-		num-integer-0.1.39 \
+		maybe-uninit-2.0.0 \
+		memchr-2.2.1 \
+		num-integer-0.1.41 \
 		num-traits-0.1.43 \
-		num-traits-0.2.6 \
-		num_cpus-1.10.0 \
-		numtoa-0.1.0 \
-		owning_ref-0.4.0 \
-		parking_lot-0.6.4 \
-		parking_lot-0.7.1 \
-		parking_lot_core-0.3.1 \
-		parking_lot_core-0.4.0 \
-		percent-encoding-1.0.1 \
-		proc-macro2-0.4.27 \
-		quote-0.6.12 \
-		rand-0.5.6 \
-		rand-0.6.5 \
-		rand_chacha-0.1.1 \
+		num-traits-0.2.10 \
+		percent-encoding-2.1.0 \
+		ppv-lite86-0.2.6 \
+		proc-macro2-0.4.30 \
+		proc-macro2-1.0.6 \
+		quote-0.6.13 \
+		quote-1.0.2 \
+		rand-0.7.3 \
+		rand_chacha-0.2.1 \
 		rand_core-0.3.1 \
-		rand_core-0.4.0 \
-		rand_hc-0.1.0 \
-		rand_isaac-0.1.1 \
-		rand_jitter-0.1.3 \
+		rand_core-0.4.2 \
+		rand_core-0.5.1 \
+		rand_hc-0.2.0 \
 		rand_os-0.1.3 \
-		rand_pcg-0.1.2 \
-		rand_xorshift-0.1.1 \
 		rdrand-0.4.0 \
-		redox_syscall-0.1.54 \
-		redox_termios-0.1.1 \
-		redox_users-0.3.0 \
-		regex-0.2.11 \
-		regex-1.1.6 \
-		regex-syntax-0.5.6 \
-		regex-syntax-0.6.6 \
-		ropey-1.0.0 \
-		rustc-demangle-0.1.14 \
-		rustc_version-0.2.3 \
-		ryu-0.2.7 \
-		scoped_threadpool-0.1.9 \
-		scopeguard-0.3.3 \
-		semver-0.9.0 \
-		semver-parser-0.7.0 \
-		serde-1.0.90 \
-		serde_derive-1.0.90 \
-		serde_json-1.0.39 \
-		slog-2.4.1 \
+		redox_syscall-0.1.56 \
+		redox_users-0.3.1 \
+		regex-1.3.7 \
+		regex-syntax-0.6.17 \
+		rle-decode-fast-1.0.1 \
+		ropey-1.1.0 \
+		rust-argon2-0.5.1 \
+		rustc-demangle-0.1.16 \
+		ryu-1.0.2 \
+		serde-1.0.106 \
+		serde_derive-1.0.106 \
+		serde_json-1.0.51 \
+		serde_repr-0.1.5 \
+		slog-2.5.2 \
 		slog-async-2.3.0 \
 		slog-kvfilter-0.7.0 \
-		slog-scope-4.1.1 \
-		slog-stdlog-3.0.2 \
-		slog-term-2.4.0 \
-		sloggers-0.3.2 \
-		smallvec-0.6.9 \
-		stable_deref_trait-1.1.1 \
+		slog-scope-4.3.0 \
+		slog-stdlog-3.0.5 \
+		slog-term-2.4.2 \
+		sloggers-0.3.5 \
+		smallvec-0.6.13 \
+		smallvec-1.1.0 \
 		strsim-0.8.0 \
-		syn-0.15.32 \
-		synstructure-0.10.1 \
+		syn-0.15.44 \
+		syn-1.0.11 \
+		synstructure-0.12.3 \
 		take_mut-0.2.2 \
-		term-0.5.2 \
-		termion-1.5.2 \
+		term-0.6.1 \
 		textwrap-0.11.0 \
 		thread_local-0.3.6 \
+		thread_local-1.0.1 \
 		time-0.1.42 \
-		toml-0.5.0 \
-		trackable-0.2.21 \
+		toml-0.5.6 \
+		trackable-0.2.23 \
 		trackable_derive-0.1.2 \
-		ucd-util-0.1.3 \
 		unicode-bidi-0.3.4 \
-		unicode-normalization-0.1.8 \
-		unicode-width-0.1.5 \
+		unicode-normalization-0.1.11 \
+		unicode-width-0.1.7 \
 		unicode-xid-0.1.0 \
-		url-1.7.2 \
-		url_serde-0.2.0 \
-		utf8-ranges-1.0.2 \
+		unicode-xid-0.2.0 \
+		url-2.1.1 \
 		vec_map-0.8.1 \
-		whoami-0.5.0 \
-		winapi-0.3.7 \
+		wasi-0.7.0 \
+		whoami-0.8.1 \
+		winapi-0.3.8 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0
 

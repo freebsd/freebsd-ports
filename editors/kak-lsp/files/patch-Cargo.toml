@@ -1,0 +1,11 @@
+XXX: Never processes requests when built with lto=true ???
+
+--- Cargo.toml.orig	2020-04-19 08:16:48 UTC
++++ Cargo.toml
+@@ -30,5 +30,5 @@ url = { version = "2.1.1", features = ["serde"] }
+ whoami = "0.8.1"
+ 
+ [profile.release]
+-lto = true
++lto = false
+ 
