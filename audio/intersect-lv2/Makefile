@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	intersect
-PORTVERSION=	g20200126
+PORTVERSION=	1.3
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 
@@ -19,7 +19,6 @@ USES=		meson pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	sboukortt
 GH_PROJECT=	intersect-lv2
-GH_TAGNAME=	18a45e46028a9092fcd5f5ae268405e2782ad277
 
 PLIST_FILES=	lib/lv2/intersect.lv2/intersect.so \
 		lib/lv2/intersect.lv2/intersect.ttl \
