@@ -42,9 +42,10 @@ LOGGING_CMAKE_BOOL=	logging
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} != powerpc
+.if ${ARCH} != powerpc && ${ARCH} != powerpc64
 # workaroud for the clang-10 compiler failure: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=244830
 # on powerpc, llvm 9 crashes with segfault, while 10 works https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=243958
+# on powerpc64 elfv1, clang doesn't work at all (no support for elfv1), on elfv2 clang from base works ok
 LLVM_VER=	90
 BUILD_DEPENDS+=	clang${LLVM_VER}:devel/llvm${LLVM_VER}
 CPP=		clang-cpp${LLVM_VER}
