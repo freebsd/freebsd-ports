@@ -12,6 +12,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libImlib2.so:graphics/imlib2
 
+USE_CSTD=	c99
 USE_GITHUB=	yes
 GH_ACCOUNT=	himdel
 
