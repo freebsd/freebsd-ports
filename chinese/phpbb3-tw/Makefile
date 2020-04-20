@@ -13,6 +13,9 @@ DISTNAME=	phpBB-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Traditional Chinese version of phpBB3
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/docs/COPYING
+
 CONFLICTS=	phpbb-tw-[0-2]* phpbb-devel-[0-3]* phpbb-[0-3]*
 
 USES=		zip
@@ -27,6 +30,7 @@ PHPBBURL?=	phpBB3
 
 WRKSRC=		${WRKDIR}/phpBB3
 NO_BUILD=	yes
+NO_ARCH=	yes
 SUB_FILES=	pkg-message
 SUB_LIST=	PHPBBURL="${PHPBBURL}" \
 		PHPBBDIR="${PHPBBDIR}"
