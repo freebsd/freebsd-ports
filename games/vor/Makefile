@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vor
-PORTVERSION=	0.5.7
+PORTVERSION=	0.5.8
 CATEGORIES=	games
 MASTER_SITES=	https://jasonwoof.com/downloads/vor/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -30,6 +30,6 @@ post-install:
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
