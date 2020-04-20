@@ -1,0 +1,4 @@
+liquidsfz is a free and open source sampler that can load and play .sfz files.
+It supports JACK and LV2.
+
+WWW: https://github.com/swesterfeld/liquidsfz

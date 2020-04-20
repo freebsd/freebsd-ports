@@ -458,6 +458,7 @@
     SUBDIR += linux-c7-sdl_mixer
     SUBDIR += linux-laudio
     SUBDIR += linuxsampler
+    SUBDIR += liquidsfz
     SUBDIR += listener
     SUBDIR += lmms
     SUBDIR += logitechmediaserver
