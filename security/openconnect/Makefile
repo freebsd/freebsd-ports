@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openconnect
-PORTVERSION=	8.05
+PORTVERSION=	8.08
 CATEGORIES=	security net-vpn
 MASTER_SITES=	ftp://ftp.infradead.org/pub/openconnect/ \
 		ZI
