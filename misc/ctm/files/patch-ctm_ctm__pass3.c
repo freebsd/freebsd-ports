@@ -1,6 +1,16 @@
 --- ctm/ctm_pass3.c.orig	2018-10-27 15:56:22 UTC
 +++ ctm/ctm_pass3.c
-@@ -35,10 +35,12 @@ Pass3(FILE *fd)
+@@ -31,14 +31,22 @@ settime(const char *name, const struct timeval *times)
+ }
+ 
+ int
++setmodefromchar(const char *name, const u_char *mode)
++{
++	return chmod(name, strtol(mode, NULL, 8));
++}
++
++int
+ Pass3(FILE *fd)
  {
      u_char *p,*q,buf[BUFSIZ];
      MD5_CTX ctx;
@@ -15,7 +25,7 @@
      struct stat st;
      char md5_1[33];
      int match=0;
-@@ -131,7 +133,7 @@ Pass3(FILE *fd)
+@@ -131,7 +139,7 @@ Pass3(FILE *fd)
  	WRONG
      found:
  	for(i=0;(j = sp->List[i]);i++) {
@@ -24,7 +34,7 @@
  		sep = ' ';
  	    else
  		sep = '\n';
-@@ -149,53 +151,98 @@ Pass3(FILE *fd)
+@@ -149,53 +157,99 @@ Pass3(FILE *fd)
  		    break;
  		case CTM_F_Count: GETBYTECNT(cnt,sep); break;
  		case CTM_F_Bytes: GETDATA(trash,cnt); break;
@@ -140,6 +150,7 @@
 +		    WRONG
 +		}
 +		if (settime(name,times)) WRONG
++		if (setmodefromchar(name,mode)) WRONG
 +		continue;
  	    }
 -	    if(cnt != write(i,trash,cnt)) {
@@ -159,7 +170,31 @@
  	if(!strcmp(sp->Key,"FE")) {
  	    ed = popen("ed","w");
  	    if(!ed) {
-@@ -278,6 +325,8 @@ Pass3(FILE *fd)
+@@ -218,6 +272,7 @@ Pass3(FILE *fd)
+ 		WRONG
+ 	    }
+ 	    if (settime(name,times)) WRONG
++	    if (setmodefromchar(name,mode)) WRONG
+ 	    continue;
+ 	}
+ 	if(!strcmp(sp->Key,"FN")) {
+@@ -237,6 +292,7 @@ Pass3(FILE *fd)
+ 	    if (rename(buf,name) == -1)
+ 		WRONG
+ 	    if (settime(name,times)) WRONG
++	    if (setmodefromchar(name,mode)) WRONG
+ 	    continue;
+ 	}
+ 	if(!strcmp(sp->Key,"DM")) {
+@@ -249,6 +305,7 @@ Pass3(FILE *fd)
+ 		WRONG
+ 	    }
+ 	    if (settime(name,times)) WRONG
++	    if (setmodefromchar(name,mode)) WRONG
+ 	    continue;
+ 	}
+ 	if(!strcmp(sp->Key,"FR")) {
+@@ -278,6 +335,8 @@ Pass3(FILE *fd)
  	    }
  	    continue;
  	}
