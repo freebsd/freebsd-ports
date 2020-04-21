@@ -1,0 +1,33 @@
+--- wscript.orig	2019-02-26 17:12:23 UTC
++++ wscript
+@@ -218,7 +218,7 @@ def build(bld):
+     if bld.env.standalone_ldb:
+         if not 'PACKAGE_VERSION' in bld.env:
+             bld.env.PACKAGE_VERSION = VERSION
+-        bld.env.PKGCONFIGDIR = '${LIBDIR}/pkgconfig'
++        bld.env.PKGCONFIGDIR = '%%PKGCONFIGDIR%%'
+         private_library = False
+     else:
+         private_library = True
+@@ -511,11 +511,6 @@ def build(bld):
+                          deps='cmocka ldb',
+                          install=False)
+ 
+-        bld.SAMBA_BINARY('ldb_match_test',
+-                         source='tests/ldb_match_test.c',
+-                         deps='cmocka ldb',
+-                         install=False)
+-
+         if bld.CONFIG_SET('HAVE_LMDB'):
+             bld.SAMBA_BINARY('ldb_mdb_mod_op_test',
+                              source='tests/ldb_mod_op_test.c',
+@@ -583,8 +578,7 @@ def test(ctx):
+                  # we don't want to run ldb_lmdb_size_test (which proves we can
+                  # fit > 4G of data into the DB), it would fill up the disk on
+                  # many of our test instances
+-                 'ldb_mdb_kv_ops_test',
+-                 'ldb_match_test']
++                 'ldb_mdb_kv_ops_test']
+ 
+     for test_exe in test_exes:
+             cmd = os.path.join(Context.g_module.out, test_exe)

@@ -1,0 +1,11 @@
+--- lib/replace/wscript.orig	2019-03-21 10:12:32 UTC
++++ lib/replace/wscript
+@@ -119,7 +119,7 @@ def configure(conf):
+     conf.CHECK_HEADERS('sys/atomic.h stdatomic.h')
+     conf.CHECK_HEADERS('libgen.h')
+ 
+-    if conf.CHECK_CFLAGS('-Wno-format-truncation'):
++    if conf.CHECK_CFLAGS(['-Wno-format-truncation'] + conf.env.WERROR_CFLAGS):
+         conf.define('HAVE_WNO_FORMAT_TRUNCATION', '1')
+ 
+     if conf.CHECK_CFLAGS('-Wno-unused-function'):

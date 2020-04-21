@@ -1,0 +1,204 @@
+'\" t
+.\"     Title: vfs_freebsd
+.\"    Author: [see the "AUTHOR" section]
+.\" Generator: DocBook XSL Stylesheets v1.79.1 <http://docbook.sf.net/>
+.\"      Date: 06/24/2019
+.\"    Manual: System Administration tools
+.\"    Source: Samba 4.10.5
+.\"  Language: English
+.\"
+.TH "VFS_FREEBSD" "8" "06/24/2019" "Samba 4\&.10\&.5" "System Administration tools"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+vfs_freebsd \- FreeBSD\-specific VFS functions
+.SH "SYNOPSIS"
+.HP \w'\ 'u
+vfs objects = freebsd
+.SH "DESCRIPTION"
+.PP
+This VFS module is part of the
+\fBsamba\fR(7)
+suite\&.
+.PP
+The
+vfs_freebsd
+module implements some of the FreeBSD\-specific VFS functions\&.
+.PP
+This module is stackable\&.
+.SH "OPTIONS"
+.PP
+freebsd:extattr mode=[legacy|compat|secure]
+.RS 4
+This parameter defines how the emulation of the Linux attr(5) extended attributes is performed through the FreeBSD native extattr(9) system calls\&.
+.sp
+Currently the
+\fIsecurity\fR,
+\fIsystem\fR,
+\fItrusted\fR
+and
+\fIuser\fR
+extended attribute(xattr) classes are defined in Linux\&. Contrary FreeBSD has only
+\fIUSER\fR
+and
+\fISYSTEM\fR
+extended attribute(extattr) namespaces, so mapping of one set into another isn\*(Aqt straightforward and can be done in different ways\&.
+.sp
+Historically the Samba(7) built\-in xattr mapping implementation simply converted
+\fIsystem\fR
+and
+\fIuser\fR
+xattr into corresponding
+\fISYSTEM\fR
+and
+\fIUSER\fR
+extattr namespaces, dropping the class prefix name with the separating dot and using attribute name only within the mapped namespace\&. It also rejected any other xattr classes, like
+\fIsecurity\fR
+and
+\fItrusted\fR
+as invalid\&. Such behavior in particular broke AD provisioning on UFS2 file systems as essential
+\fIsecurity\&.NTACL\fR
+xattr was rejected as invalid\&.
+.sp
+This module tries to address this problem and provide secure, where it\*(Aqs possible, way to map Linux xattr into FreeBSD\*(Aqs extattr\&.
+.sp
+When
+\fImode\fR
+is set to the
+\fIlegacy (default)\fR
+then modified version of built\-in mapping is used, where
+\fIsystem\fR
+xattr is mapped into SYSTEM namespace, while
+\fIsecure\fR,
+\fItrusted\fR
+and
+\fIuser\fR
+xattr are all mapped into the USER namespace, dropping class prefixes and mix them all together\&. This is the way how Samba FreeBSD ports were patched up to the 4\&.9 version and that created multiple potential security issues\&. This mode is aimed for the compatibility with the legacy installations only and should be avoided in new setups\&.
+.sp
+The
+\fIcompat\fR
+mode is mostly designed for the jailed environments, where it\*(Aqs not possible to write extattrs into the secure SYSTEM namespace, so all four classes are mapped into the USER namespace\&. To preserve information about origin of the extended attribute it is stored together with the class preffix in the
+\fIclass\&.attribute\fR
+format\&.
+.sp
+The
+\fIsecure\fR
+mode is meant for storing extended attributes in a secure manner, so that
+\fIsecurity\fR,
+\fIsystem\fR
+and
+\fItrusted\fR
+are stored in the SYSTEM namespace, which can be modified only by root\&.
+.RE
+.SH ""
+.sp
+.it 1 an-trap
+.nr an-no-space-flag 1
+.nr an-break-flag 1
+.br
+.B Table\ \&1.\ \&Attributes mapping
+.TS
+allbox tab(:);
+lB lB lB lB lB.
+T{
+
+T}:T{
+built\-in
+T}:T{
+legacy
+T}:T{
+compat/jail
+T}:T{
+secure
+T}
+.T&
+lB l l l l
+lB l l l l
+lB l l l l
+lB l l l l.
+T{
+user
+T}:T{
+USER; attribute
+T}:T{
+USER; attribute
+T}:T{
+USER; user\&.attribute
+T}:T{
+USER; user\&.attribute
+T}
+T{
+system
+T}:T{
+SYSTEM; attribute
+T}:T{
+SYSTEM; attribute
+T}:T{
+USER; system\&.attribute
+T}:T{
+SYSTEM; system\&.attribute
+T}
+T{
+trusted
+T}:T{
+FAIL
+T}:T{
+USER; attribute
+T}:T{
+USER; trusted\&.attribute
+T}:T{
+SYSTEM; trusted\&.attribute
+T}
+T{
+security
+T}:T{
+FAIL
+T}:T{
+USER; attribute
+T}:T{
+USER; security\&.attribute
+T}:T{
+SYSTEM; security\&.attribute
+T}
+.TE
+.sp 1
+.SH "EXAMPLES"
+.PP
+Use secure method of setting extended attributes on the share:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+	\fI[sysvol]\fR
+	\m[blue]\fBvfs objects = freebsd\fR\m[]
+	\m[blue]\fBfreebsd:extattr mode = secure\fR\m[]
+.fi
+.if n \{\
+.RE
+.\}
+.SH "VERSION"
+.PP
+This man page is part of version 4\&.10\&.5 of the Samba suite\&.
+.SH "AUTHOR"
+.PP
+The original Samba software and related utilities were created by Andrew Tridgell\&. Samba is now developed by the Samba Team as an Open Source project similar to the way the Linux kernel is developed\&.
+.PP
+This module was written by Timur I\&. Bakeyev
