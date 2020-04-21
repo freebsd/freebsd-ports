@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xerces-c
-PORTVERSION=	3.2.2
+PORTVERSION=	3.2.3
 CATEGORIES=	textproc
 MASTER_SITES=	APACHE/xerces/c/3/sources
 PKGNAMESUFFIX=	3
