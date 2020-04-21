@@ -19,3 +19,5 @@ MeTA1 consists of five main modules of which only one runs as root:
     including DNS for mail routing.
   * qmgr: the queue manager controls the flow of e-mails through the
     SMTP servers and clients.
+
+WWW: http://www.meta1.org/
