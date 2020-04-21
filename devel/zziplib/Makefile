@@ -20,7 +20,6 @@ BUILD_DEPENDS=	zip:archivers/zip
 USES=		libtool pathfix pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	gdraheim
-GH_PROJECT=	zziplib
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
