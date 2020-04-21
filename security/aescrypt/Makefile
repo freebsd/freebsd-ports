@@ -11,8 +11,11 @@ PATCH_SITES=	http://devel.ringlet.net/security/aescrypt/patches/ \
 		http://people.FreeBSD.org/~roam/ports/patches/security/aescrypt/
 PATCHFILES=	aescrypt-0.7-roam-whopper-01.patch.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mauroeldritch@gmail.com
 COMMENT=	Command-line AES encryption/decryption suite
+
+LICENSE=	BSD4CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 GNU_CONFIGURE=	yes
 MAKE_ENV+=	BINGRP=wheel
