@@ -2,6 +2,7 @@
 
 PORTNAME=	rouge
 PORTVERSION=	2.2.1
+PORTREVISION=	1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	2
@@ -13,15 +14,14 @@ LICENSE=	BSD2CLAUSE MIT
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-CONFLICTS_INSTALL=	rubygem-rouge
-
 USES=		gem
 USE_RUBY=	yes
 
 NO_ARCH=	yes
 
-PLIST_FILES=	bin/rougify
+PORTSCOUT=	limit:^2\.
 
-PORTSCOUT=	limit:^2\.*
+post-install:
+	${RM} ${STAGEDIR}${PREFIX}/bin/rougify
 
 .include <bsd.port.mk>
