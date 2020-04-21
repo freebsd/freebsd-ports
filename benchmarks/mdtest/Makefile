@@ -3,7 +3,7 @@
 
 PORTNAME=	mdtest
 PORTVERSION=	1.9.3
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	benchmarks
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20latest/${PORTNAME}-${PORTVERSION}
 
@@ -23,9 +23,9 @@ PORTEXAMPLES=	*
 OPTIONS_DEFINE=	OPENMPI EXAMPLES
 OPENMPI_DESC=	Use Open MPI instead of MPICH2
 
-OPENMPI_BUILD_DEPENDS=		${LOCALBASE}/mpi/openmpi3/bin/mpicc:net/openmpi3
-OPENMPI_RUN_DEPENDS=		${LOCALBASE}/mpi/openmpi3/bin/mpirun:net/openmpi3
-OPENMPI_VARS=			MPICC=${LOCALBASE}/mpi/openmpi3/bin/mpicc
+OPENMPI_BUILD_DEPENDS=		${LOCALBASE}/mpi/openmpi/bin/mpicc:net/openmpi
+OPENMPI_RUN_DEPENDS=		${LOCALBASE}/mpi/openmpi/bin/mpirun:net/openmpi
+OPENMPI_VARS=			MPICC=${LOCALBASE}/mpi/openmpi/bin/mpicc
 
 OPENMPI_BUILD_DEPENDS_OFF=	${LOCALBASE}/bin/mpicc:net/mpich
 OPENMPI_RUN_DEPENDS_OFF=	${LOCALBASE}/bin/mpirun:net/mpich
