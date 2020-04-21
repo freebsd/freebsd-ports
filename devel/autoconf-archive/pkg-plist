@@ -435,6 +435,7 @@
 %%MACRODIR%%/ax_prog_crontab.m4
 %%MACRODIR%%/ax_prog_cxx_for_build.m4
 %%MACRODIR%%/ax_prog_cxx_mpi.m4
+%%MACRODIR%%/ax_prog_date.m4
 %%MACRODIR%%/ax_prog_dotnetcore_version.m4
 %%MACRODIR%%/ax_prog_doxygen.m4
 %%MACRODIR%%/ax_prog_emacs.m4
@@ -498,6 +499,7 @@
 %%MACRODIR%%/ax_python_embed.m4
 %%MACRODIR%%/ax_python_module.m4
 %%MACRODIR%%/ax_python_module_version.m4
+%%MACRODIR%%/ax_r_package.m4
 %%MACRODIR%%/ax_recursive_eval.m4
 %%MACRODIR%%/ax_require_defined.m4
 %%MACRODIR%%/ax_require_one_func.m4
@@ -568,7 +570,3 @@
 %%MACRODIR%%/ax_xtra_classpath.m4
 %%MACRODIR%%/ax_zmq.m4
 %%MACRODIR%%/ax_zoneinfo.m4
-%%DATADIR%%/AUTHORS
-%%DATADIR%%/COPYING
-%%DATADIR%%/COPYING.EXCEPTION
-%%DATADIR%%/README
