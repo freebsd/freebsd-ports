@@ -3,7 +3,7 @@
 
 PORTNAME=	sqlite3
 DISTVERSION=	3.30.1
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://www.sqlite.org/2019/ http://www2.sqlite.org/2019/ http://www3.sqlite.org/2019/
@@ -140,11 +140,12 @@ EDITLINE_PREVENTS=	READLINES READLINEP
 
 OPTIONS_DEFAULT=	FTS4 URI METADATA SECURE_DELETE UNLOCK_NOTIFY THREADS \
 			EXTENSION TS1 UNICODE61 RTREE DBSTAT STSHELL READLINES \
-			FTS3_TOKEN FTS5 DQS
+			FTS3_TOKEN FTS5 DQS JSON1
 # SECURE_DELETE, UNLOCK_NOTIFY, DBSTAT (since 41.0) used by www/firefox et al.
 # RTREE used by graphics/mapnik, databases/spatialite
 # FTS3_TOKEN used by audio/clementine-player, mail/thunderbird, www/seamonkey
 # FTS5 used by sysutils/tracker
+# JSON1 used by net-im/py-matrix-synapse
 
 PLIST_FILES=	bin/sqlite3 include/sqlite3.h include/sqlite3ext.h \
 		lib/libsqlite3.a lib/libsqlite3.so lib/libsqlite3.so.0 \
