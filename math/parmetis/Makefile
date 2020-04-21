@@ -3,7 +3,7 @@
 
 PORTNAME=	ParMetis
 PORTVERSION=	4.0.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	math parallel
 MASTER_SITES=	http://glaros.dtc.umn.edu/gkhome/fetch/sw/parmetis/
 DISTNAME=	${PORTNAME:tl}-${PORTVERSION}
@@ -23,10 +23,10 @@ OPTIONS_DEFINE=	OPENMPI DOCS STATIC
 OPENMPI_DESC=	Use openmpi instead of mpich
 OPTIONS_SUB=	yes
 
-OPENMPI_BUILD_DEPENDS=		${LOCALBASE}/mpi/openmpi3/bin/mpicc:net/openmpi3
-OPENMPI_RUN_DEPENDS=		${LOCALBASE}/mpi/openmpi3/bin/mpirun:net/openmpi3
-OPENMPI_VARS=			MPICC=${LOCALBASE}/mpi/openmpi3/bin/mpicc \
-				MPICXX=${LOCALBASE}/mpi/openmpi3/bin/mpicxx
+OPENMPI_BUILD_DEPENDS=		${LOCALBASE}/mpi/openmpi/bin/mpicc:net/openmpi
+OPENMPI_RUN_DEPENDS=		${LOCALBASE}/mpi/openmpi/bin/mpirun:net/openmpi
+OPENMPI_VARS=			MPICC=${LOCALBASE}/mpi/openmpi/bin/mpicc \
+				MPICXX=${LOCALBASE}/mpi/openmpi/bin/mpicxx
 OPENMPI_BUILD_DEPENDS_OFF=	${LOCALBASE}/bin/mpicc:net/mpich
 OPENMPI_RUN_DEPENDS_OFF=	${LOCALBASE}/bin/mpirun:net/mpich
 OPENMPI_VARS_OFF=		MPICC=${LOCALBASE}/bin/mpicc \
