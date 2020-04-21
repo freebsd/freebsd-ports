@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gobuffalo
-PORTVERSION=	0.16.5
+PORTVERSION=	0.16.8
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -20,7 +20,7 @@ GH_PROJECT=	buffalo
 GH_TUPLE=	\
 		BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/toml \
 		Masterminds:semver:v1.5.0:masterminds_semver/vendor/github.com/Masterminds/semver \
-		Masterminds:semver:v3.0.3:masterminds_semver_1/vendor/github.com/Masterminds/semver/v3 \
+		Masterminds:semver:v3.0.3:masterminds_semver_v3/vendor/github.com/Masterminds/semver/v3 \
 		alexcesaro:quotedprintable:2caba252f4dc:alexcesaro_quotedprintable/vendor/gopkg.in/alexcesaro/quotedprintable.v3 \
 		cockroachdb:cockroach-go:606b3d062051:cockroachdb_cockroach_go/vendor/github.com/cockroachdb/cockroach-go \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
@@ -32,13 +32,13 @@ GH_TUPLE=	\
 		go-sql-driver:mysql:v1.5.0:go_sql_driver_mysql/vendor/github.com/go-sql-driver/mysql \
 		go-yaml:yaml:v2.2.8:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		gobuffalo:attrs:v1.0.0:gobuffalo_attrs/vendor/github.com/gobuffalo/attrs \
-		gobuffalo:buffalo-pop:v2.0.4:gobuffalo_buffalo_pop/vendor/github.com/gobuffalo/buffalo-pop/v2 \
-		gobuffalo:clara:v2.0.2:gobuffalo_clara/vendor/github.com/gobuffalo/clara/v2 \
+		gobuffalo:buffalo-pop:v2.0.4:gobuffalo_buffalo_pop_v2/vendor/github.com/gobuffalo/buffalo-pop/v2 \
+		gobuffalo:clara:v2.0.2:gobuffalo_clara_v2/vendor/github.com/gobuffalo/clara/v2 \
 		gobuffalo:envy:v1.9.0:gobuffalo_envy/vendor/github.com/gobuffalo/envy \
 		gobuffalo:events:v1.4.1:gobuffalo_events/vendor/github.com/gobuffalo/events \
 		gobuffalo:fizz:v1.9.8:gobuffalo_fizz/vendor/github.com/gobuffalo/fizz \
 		gobuffalo:flect:v0.2.1:gobuffalo_flect/vendor/github.com/gobuffalo/flect \
-		gobuffalo:genny:v2.0.6:gobuffalo_genny/vendor/github.com/gobuffalo/genny/v2 \
+		gobuffalo:genny:v2.0.6:gobuffalo_genny_v2/vendor/github.com/gobuffalo/genny/v2 \
 		gobuffalo:github_flavored_markdown:v1.1.0:gobuffalo_github_flavored_markdown/vendor/github.com/gobuffalo/github_flavored_markdown \
 		gobuffalo:helpers:v0.6.1:gobuffalo_helpers/vendor/github.com/gobuffalo/helpers \
 		gobuffalo:here:v0.6.0:gobuffalo_here/vendor/github.com/gobuffalo/here \
@@ -47,12 +47,12 @@ GH_TUPLE=	\
 		gobuffalo:meta:v0.3.0:gobuffalo_meta/vendor/github.com/gobuffalo/meta \
 		gobuffalo:nulls:v0.2.0:gobuffalo_nulls/vendor/github.com/gobuffalo/nulls \
 		gobuffalo:packd:v1.0.0:gobuffalo_packd/vendor/github.com/gobuffalo/packd \
-		gobuffalo:packr:v2.8.0:gobuffalo_packr/vendor/github.com/gobuffalo/packr \
+		gobuffalo:packr:v2.8.0:gobuffalo_packr_v2/vendor/github.com/gobuffalo/packr \
 		gobuffalo:plush:v3.8.3:gobuffalo_plush/vendor/github.com/gobuffalo/plush \
-		gobuffalo:plush:v4.0.0:gobuffalo_plush_1/vendor/github.com/gobuffalo/plush/v4 \
-		gobuffalo:pop:v5.0.11:gobuffalo_pop/vendor/github.com/gobuffalo/pop/v5 \
-		gobuffalo:tags:v3.1.0:gobuffalo_tags/vendor/github.com/gobuffalo/tags/v3 \
-		gobuffalo:validate:v3.1.0:gobuffalo_validate/vendor/github.com/gobuffalo/validate/v3 \
+		gobuffalo:plush:v4.0.0:gobuffalo_plush_v4/vendor/github.com/gobuffalo/plush/v4 \
+		gobuffalo:pop:v5.0.11:gobuffalo_pop_v5/vendor/github.com/gobuffalo/pop/v5 \
+		gobuffalo:tags:v3.1.0:gobuffalo_tags_v3/vendor/github.com/gobuffalo/tags/v3 \
+		gobuffalo:validate:v3.1.0:gobuffalo_validate_v3/vendor/github.com/gobuffalo/validate/v3 \
 		gofrs:uuid:v3.2.0:gofrs_uuid/vendor/github.com/gofrs/uuid \
 		golang:crypto:a0c6ece9d31a:golang_crypto/vendor/golang.org/x/crypto \
 		golang:mod:v0.2.0:golang_mod/vendor/golang.org/x/mod \
@@ -63,16 +63,17 @@ GH_TUPLE=	\
 		golang:tools:8849913b6971:golang_tools/vendor/golang.org/x/tools \
 		golang:xerrors:9bdfabe68543:golang_xerrors/vendor/golang.org/x/xerrors \
 		google:go-cmp:v0.4.0:google_go_cmp/vendor/github.com/google/go-cmp \
+		gorilla:handlers:v1.4.2:gorilla_handlers/vendor/github.com/gorilla/handlers \
 		gorilla:mux:v1.7.4:gorilla_mux/vendor/github.com/gorilla/mux \
 		gorilla:securecookie:v1.1.1:gorilla_securecookie/vendor/github.com/gorilla/securecookie \
 		gorilla:sessions:v1.2.0:gorilla_sessions/vendor/github.com/gorilla/sessions \
 		hashicorp:hcl:v1.0.0:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
 		inconshreveable:mousetrap:v1.0.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
-		jackc:chunkreader:v2.0.1:jackc_chunkreader/vendor/github.com/jackc/chunkreader/v2 \
+		jackc:chunkreader:v2.0.1:jackc_chunkreader_v2/vendor/github.com/jackc/chunkreader/v2 \
 		jackc:pgconn:v1.3.2:jackc_pgconn/vendor/github.com/jackc/pgconn \
 		jackc:pgio:v1.0.0:jackc_pgio/vendor/github.com/jackc/pgio \
 		jackc:pgpassfile:v1.0.0:jackc_pgpassfile/vendor/github.com/jackc/pgpassfile \
-		jackc:pgproto3:v2.0.1:jackc_pgproto3/vendor/github.com/jackc/pgproto3/v2 \
+		jackc:pgproto3:v2.0.1:jackc_pgproto3_v2/vendor/github.com/jackc/pgproto3/v2 \
 		jmoiron:sqlx:v1.2.0:jmoiron_sqlx/vendor/github.com/jmoiron/sqlx \
 		joho:godotenv:v1.3.0:joho_godotenv/vendor/github.com/joho/godotenv \
 		karrick:godirwalk:v1.15.5:karrick_godirwalk/vendor/github.com/karrick/godirwalk \
