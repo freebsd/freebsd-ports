@@ -3,8 +3,7 @@
 
 PORTNAME=	libtorrent-rasterbar
 DISTVERSIONPREFIX=	libtorrent-
-DISTVERSION=	1_2_5
-PORTREVISION=	1
+DISTVERSION=	1_2_6
 CATEGORIES=	net-p2p
 
 MAINTAINER=	yuri@FreeBSD.org
