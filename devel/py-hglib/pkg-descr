@@ -1,0 +1,5 @@
+python-hglib is a library with a fast, convenient interface to
+Mercurial. It uses Mercurial's command server for communication
+with hg.
+
+WWW: https://www.mercurial-scm.org/wiki/PythonHglib
