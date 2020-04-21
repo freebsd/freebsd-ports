@@ -448,6 +448,7 @@
     SUBDIR += rubygem-mime-types-data
     SUBDIR += rubygem-mime-types1
     SUBDIR += rubygem-mimemagic
+    SUBDIR += rubygem-octicons
     SUBDIR += rubygem-rabbit
     SUBDIR += rubygem-vpim
     SUBDIR += rump
