@@ -14,6 +14,7 @@ bin/asciidoc.py
 %%ETCDIR%%/docbook-xsl/text.xsl
 %%ETCDIR%%/docbook-xsl/xhtml.xsl
 @sample %%ETCDIR%%/docbook45.conf.sample
+@sample %%ETCDIR%%/docbook5.conf.sample
 @sample %%ETCDIR%%/filters/code/code-filter.conf.sample
 %%ETCDIR%%/filters/code/code-filter.py
 @sample %%ETCDIR%%/filters/graphviz/graphviz-filter.conf.sample
@@ -23,6 +24,7 @@ bin/asciidoc.py
 @sample %%ETCDIR%%/filters/music/music-filter.conf.sample
 %%ETCDIR%%/filters/music/music2png.py
 @sample %%ETCDIR%%/filters/source/source-highlight-filter.conf.sample
+%%ETCDIR%%/filters/unwraplatex.py
 @sample %%ETCDIR%%/help.conf.sample
 @sample %%ETCDIR%%/html4.conf.sample
 @sample %%ETCDIR%%/html5.conf.sample
@@ -57,6 +59,7 @@ bin/asciidoc.py
 %%ETCDIR%%/javascripts/asciidoc.js
 %%ETCDIR%%/javascripts/slidy.js
 %%ETCDIR%%/javascripts/toc.js
+@sample %%ETCDIR%%/lang-ca.conf.sample
 @sample %%ETCDIR%%/lang-cs.conf.sample
 @sample %%ETCDIR%%/lang-de.conf.sample
 @sample %%ETCDIR%%/lang-el.conf.sample
@@ -75,6 +78,7 @@ bin/asciidoc.py
 @sample %%ETCDIR%%/lang-ru.conf.sample
 @sample %%ETCDIR%%/lang-sv.conf.sample
 @sample %%ETCDIR%%/lang-uk.conf.sample
+@sample %%ETCDIR%%/lang-zh-CN.conf.sample
 @sample %%ETCDIR%%/latex.conf.sample
 @sample %%ETCDIR%%/slidy.conf.sample
 %%ETCDIR%%/stylesheets/asciidoc.css
@@ -91,3 +95,4 @@ bin/asciidoc.py
 %%PYTHON_SITELIBDIR%%/asciidocapi.py
 man/man1/a2x.1.gz
 man/man1/asciidoc.1.gz
+man/man1/testasciidoc.1.gz

@@ -1,0 +1,15 @@
+--- configure.orig	2012-05-14 20:40:27 UTC
++++ configure
+@@ -3977,9 +3977,9 @@ fi
+ 	if test $ver_maj -lt 8; then
+ 		prog_version_ok="no"
+ 	fi
+-	if test $ver_min -lt 4; then
+-		prog_version_ok="no"
+-	fi
++#	if test $ver_min -lt 4; then
++#		prog_version_ok="no"
++#	fi
+ 	if test $ver_rev -lt 0; then
+ 		prog_version_ok="no"
+ 	fi
