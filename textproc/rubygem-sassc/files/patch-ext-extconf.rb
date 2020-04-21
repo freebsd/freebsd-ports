@@ -1,16 +1,10 @@
---- ext/extconf.rb.orig	2019-10-20 13:40:05 UTC
+--- ext/extconf.rb.orig	2020-04-20 21:57:28 UTC
 +++ ext/extconf.rb
-@@ -19,18 +19,6 @@ if enable_config('static-stdlib', false)
-   $LDFLAGS << ' -static-libgcc -static-libstdc++'
- end
+@@ -29,12 +29,6 @@ end
+ # see: https://github.com/sass/sassc-ruby/issues/148
+ enable_lto_by_default = (Gem::Platform.local.os == "darwin" && !ENV['NIX_CC'].nil?)
  
--# Set to false when building binary gems
--if enable_config('march-tune-native', true)
--  $CFLAGS << ' -march=native -mtune=native'
--  $CXXFLAGS << ' -march=native -mtune=native'
--end
--
--if enable_config('lto', true)
+-if enable_config('lto', enable_lto_by_default)
 -  $CFLAGS << ' -flto'
 -  $CXXFLAGS << ' -flto'
 -  $LDFLAGS << ' -flto'
