@@ -1,10 +1,12 @@
 --- tools/Makefile.orig	2019-12-17 14:23:09 UTC
 +++ tools/Makefile
-@@ -15,7 +15,6 @@ SUBDIRS-y += examples
- SUBDIRS-y += hotplug
- SUBDIRS-y += xentrace
- SUBDIRS-$(CONFIG_XCUTILS) += xcutils
--SUBDIRS-$(CONFIG_X86) += firmware
- SUBDIRS-y += console
- SUBDIRS-y += xenmon
- SUBDIRS-y += xenstat
+@@ -50,6 +50,9 @@ endif
+ ifeq ($(CONFIG_RUMP),y)
+ SUBDIRS-y := libs libxc xenstore
+ endif
++ifeq ($(FREEBSD_PORT),y)
++SUBDIRS-y := libs libxc xenstore misc
++endif
+ 
+ # For the sake of linking, set the sys-root
+ ifneq ($(CROSS_COMPILE),)

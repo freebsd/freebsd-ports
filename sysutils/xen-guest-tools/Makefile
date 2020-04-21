@@ -3,7 +3,7 @@
 
 PORTNAME=	xen-guest-tools
 PORTVERSION=	4.13.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	https://downloads.xenproject.org/release/xen/${PORTVERSION}/
 DISTNAME=	xen-${PORTVERSION}
@@ -37,6 +37,7 @@ MAKE_ENV+=	clang=y
 MAKE_ENV+=	CC="${CC}"
 MAKE_ENV+=	CFLAGS="${CFLAGS}"
 MAKE_ENV+=	CPPFLAGS="${CPPFLAGS}"
+MAKE_ENV+=	FREEBSD_PORT=y
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-I${LOCALBASE}/lib
 USE_LDCONFIG=	yes
@@ -57,6 +58,8 @@ PLIST_FILES=	bin/xen-detect \
 		lib/libxentoolcore.so.1
 
 post-patch:
+	${REINPLACE_CMD} -e 's;=xen tools stubdom docs;=tools;' \
+		${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e 's;86|x86_64;86no|x86_64no;' \
 		${WRKSRC}/tools/configure
 
