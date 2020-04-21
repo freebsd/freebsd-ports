@@ -1485,6 +1485,7 @@
 %%WWWDIR%%/apps/files/lib/BackgroundJob/DeleteOrphanedItems.php
 %%WWWDIR%%/apps/files/lib/BackgroundJob/ScanFiles.php
 %%WWWDIR%%/apps/files/lib/Capabilities.php
+%%WWWDIR%%/apps/files/lib/Command/CheckCache.php
 %%WWWDIR%%/apps/files/lib/Command/DeleteOrphanedFiles.php
 %%WWWDIR%%/apps/files/lib/Command/Scan.php
 %%WWWDIR%%/apps/files/lib/Command/TransferOwnership.php
@@ -2171,7 +2172,6 @@
 %%WWWDIR%%/apps/files_sharing/l10n/zh_HK.json
 %%WWWDIR%%/apps/files_sharing/l10n/zh_TW.js
 %%WWWDIR%%/apps/files_sharing/l10n/zh_TW.json
-%%WWWDIR%%/apps/files_sharing/lib/API/Remote.php
 %%WWWDIR%%/apps/files_sharing/lib/Activity.php
 %%WWWDIR%%/apps/files_sharing/lib/AppInfo/Application.php
 %%WWWDIR%%/apps/files_sharing/lib/Cache.php
@@ -2179,6 +2179,7 @@
 %%WWWDIR%%/apps/files_sharing/lib/Command/CleanupRemoteStorages.php
 %%WWWDIR%%/apps/files_sharing/lib/Controller/NotificationController.php
 %%WWWDIR%%/apps/files_sharing/lib/Controller/PersonalSettingsController.php
+%%WWWDIR%%/apps/files_sharing/lib/Controller/RemoteOcsController.php
 %%WWWDIR%%/apps/files_sharing/lib/Controller/Share20OcsController.php
 %%WWWDIR%%/apps/files_sharing/lib/Controller/ShareesController.php
 %%WWWDIR%%/apps/files_sharing/lib/Controllers/ExternalSharesController.php
@@ -6595,6 +6596,7 @@
 %%WWWDIR%%/lib/composer/psr/log/Psr/Log/LoggerInterface.php
 %%WWWDIR%%/lib/composer/psr/log/Psr/Log/LoggerTrait.php
 %%WWWDIR%%/lib/composer/psr/log/Psr/Log/NullLogger.php
+%%WWWDIR%%/lib/composer/psr/log/Psr/Log/Test/DummyTest.php
 %%WWWDIR%%/lib/composer/psr/log/Psr/Log/Test/LoggerInterfaceTest.php
 %%WWWDIR%%/lib/composer/psr/log/Psr/Log/Test/TestLogger.php
 %%WWWDIR%%/lib/composer/psr/log/composer.json
@@ -7801,6 +7803,7 @@
 %%WWWDIR%%/lib/composer/symfony/console/Exception/InvalidArgumentException.php
 %%WWWDIR%%/lib/composer/symfony/console/Exception/InvalidOptionException.php
 %%WWWDIR%%/lib/composer/symfony/console/Exception/LogicException.php
+%%WWWDIR%%/lib/composer/symfony/console/Exception/MissingInputException.php
 %%WWWDIR%%/lib/composer/symfony/console/Exception/NamespaceNotFoundException.php
 %%WWWDIR%%/lib/composer/symfony/console/Exception/RuntimeException.php
 %%WWWDIR%%/lib/composer/symfony/console/Formatter/OutputFormatter.php
