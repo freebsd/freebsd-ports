@@ -93,7 +93,7 @@
     SUBDIR += prestashop
     SUBDIR += py-backtrader
     SUBDIR += py-bitcoin
-    SUBDIR += py-ebaysdk-python
+    SUBDIR += py-ebaysdk
     SUBDIR += py-ofxparse
     SUBDIR += py-pycoin
     SUBDIR += py-python-bitcoinlib
