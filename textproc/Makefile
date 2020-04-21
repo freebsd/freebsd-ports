@@ -1605,6 +1605,7 @@
     SUBDIR += rubygem-rouge
     SUBDIR += rubygem-rouge2
     SUBDIR += rubygem-rouge312
+    SUBDIR += rubygem-rouge317
     SUBDIR += rubygem-rttool
     SUBDIR += rubygem-ruby-augeas
     SUBDIR += rubygem-ruby-xslt
