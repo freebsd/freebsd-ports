@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	broom
-DISTVERSION=	0.5.5
+DISTVERSION=	0.5.6
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -17,7 +17,7 @@ CRAN_DEPENDS=	R-cran-backports>0:math/R-cran-backports \
 		R-cran-purrr>0:devel/R-cran-purrr \
 		R-cran-reshape2>0:devel/R-cran-reshape2 \
 		R-cran-stringr>0:textproc/R-cran-stringr \
-		R-cran-tibble>0:devel/R-cran-tibble \
+		R-cran-tibble>=3.0.0:devel/R-cran-tibble \
 		R-cran-tidyr>0:devel/R-cran-tidyr
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
