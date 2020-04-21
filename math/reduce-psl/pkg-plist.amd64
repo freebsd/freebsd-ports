@@ -26,6 +26,7 @@ man/man1/redpsl.1.gz
 %%DATADIR%%/psl/binding.b
 %%DATADIR%%/psl/bpsl
 %%DATADIR%%/psl/break.b
+%%DATADIR%%/red/brsltnt_bmap.b
 %%DATADIR%%/psl/build.b
 %%DATADIR%%/psl/c-template.b
 %%DATADIR%%/psl/carcdr.b
@@ -92,6 +93,7 @@ man/man1/redpsl.1.gz
 %%DATADIR%%/psl/hash-decls.b
 %%DATADIR%%/psl/hcons.b
 %%DATADIR%%/psl/helferlein.b
+%%DATADIR%%/red/heugcd.b
 %%DATADIR%%/psl/ieee-decls.b
 %%DATADIR%%/psl/if-system.b
 %%DATADIR%%/psl/if.b
