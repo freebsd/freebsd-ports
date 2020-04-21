@@ -1,0 +1,10 @@
+This is the Microsoft Azure Management Core Library for Python
+
+Azure management core library defines extensions to Azure Core that are
+specific to ARM (Azure Resource Management) needed when you use client
+libraries.
+
+As an end user, you don't need to manually install azure-mgmt-core because it
+will be installed automatically when you install other SDKs.
+
+WWW: https://pypi.org/project/azure-mgmt-core/

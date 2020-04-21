@@ -4102,6 +4102,7 @@
     SUBDIR += py-azure-mgmt-containerinstance
     SUBDIR += py-azure-mgmt-containerregistry
     SUBDIR += py-azure-mgmt-containerservice
+    SUBDIR += py-azure-mgmt-core
     SUBDIR += py-azure-mgmt-cosmosdb
     SUBDIR += py-azure-mgmt-datalake-analytics
     SUBDIR += py-azure-mgmt-datalake-store
