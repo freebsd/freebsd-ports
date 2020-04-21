@@ -23,8 +23,9 @@ RUN_DEPENDS=	couchdb2>=0.9.0:databases/couchdb2 \
 		p5-JSON>=2:converters/p5-JSON \
 		p5-Scope-Guard>=0:devel/p5-Scope-Guard
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
