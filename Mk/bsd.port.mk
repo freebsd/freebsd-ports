@@ -1363,6 +1363,9 @@ PKGCOMPATDIR?=		${LOCALBASE}/lib/compat/pkg
 .if defined(USE_LOCAL_MK)
 .include "${PORTSDIR}/Mk/bsd.local.mk"
 .endif
+.for odir in ${OVERLAYS}
+.sinclude "${odir}/Mk/bsd.overlay.mk"
+.endfor
 
 .if defined(USE_XORG) && (!defined(USES) || !${USES:Mxorg})
 DEV_WARNING+=		"Using USE_XORG alone is deprecated, please use USES=xorg"
@@ -1946,6 +1949,9 @@ _FORCE_POST_PATTERNS=	rmdir kldxref mkfontscale mkfontdir fc-cache \
 .if defined(USE_LOCAL_MK)
 .include "${PORTSDIR}/Mk/bsd.local.mk"
 .endif
+.for odir in ${OVERLAYS}
+.sinclude "${odir}/Mk/bsd.overlay.mk"
+.endfor
 
 .if defined(USE_XORG) && (!defined(USES) || ( defined(USES) && !${USES:Mxorg} ))
 DEV_WARNING+=	"Using USE_XORG alone is deprecated, please use USES=xorg"
