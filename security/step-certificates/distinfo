@@ -1,6 +1,6 @@
-TIMESTAMP = 1586506594
-SHA256 (smallstep-certificates-v0.14.2_GH0.tar.gz) = 3d4e93fba5798e3ce6ef45ae2a40a25aa623b84a72f884c7208ee5a1662c8c39
-SIZE (smallstep-certificates-v0.14.2_GH0.tar.gz) = 17540124
+TIMESTAMP = 1587473798
+SHA256 (smallstep-certificates-v0.14.3_GH0.tar.gz) = 742ffe32aea89cb2e3d93a0fc7f33ce07bfe9e1e1b46cff4b417859bcb5e781d
+SIZE (smallstep-certificates-v0.14.3_GH0.tar.gz) = 17540632
 SHA256 (AndreasBriese-bbloom-e2d15f34fcf9_GH0.tar.gz) = e88bd873a2251d70b5d2cbf9dceff24fa25ca5652ac1f99165c303e98df494a1
 SIZE (AndreasBriese-bbloom-e2d15f34fcf9_GH0.tar.gz) = 7704
 SHA256 (Masterminds-goutils-v1.1.0_GH0.tar.gz) = 053a61c4b0d78e6978600c99562f04d053993c428d549a20b627151cf1aabbae
