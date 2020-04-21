@@ -113,7 +113,6 @@
     SUBDIR += qemu-user-static
     SUBDIR += qemu-user-static-devel
     SUBDIR += qemu-utils
-    SUBDIR += qemu30
     SUBDIR += qemu31
     SUBDIR += qemu40
     SUBDIR += qmc2
