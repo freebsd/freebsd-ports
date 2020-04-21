@@ -1,0 +1,18 @@
+BitKeeper is a fast, enterprise-ready, distributed SCM that scales
+up to very large projects and down to tiny ones.
+Features
+ * Simple: An easy to use command line interface.
+ * Scalable: Nested Repositories are submodules done right! Version
+	control collections of repositories.
+ * Flexible: Hybrid mode for binary files that uses a cloud of server for
+	binaries instead of bloating the source repositories.
+ * Accurate: Tracking of file operations like creates, deletes, and renames.
+ * Safe: All file accesses validate checksums for integrity. All file
+	writes include redundancy for error correction.
+ * Dependable: Highly accurate auto-merge that uses the whole history to
+	resolve conflicts. Most other systems use variations of diff3.
+ * Discernable: Source annotations instantly available.
+ * Fast: High performance and scales to very large repositories.
+ * Free: Licensed under the Apache Version 2 license
+
+WWW: http://www.bitkeeper.org/
