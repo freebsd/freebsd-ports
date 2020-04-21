@@ -16,7 +16,7 @@
 +	;;
 +	*BSD)
 +		printf "${BOLDGREEN}Updating bots.d path${RESET}\n"
-+		/usr/bin/sed -i -e 's:include .*nginx/:include :g' ${BOTS_DIR}/* ${CONF_DIR}/*
++		/usr/bin/sed -i "" -e 's:include .*nginx/:include :g' ${BOTS_DIR}/*.conf ${CONF_DIR}/*.conf
 +		;;
 +	esac
  }
