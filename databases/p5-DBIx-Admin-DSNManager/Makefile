@@ -21,8 +21,9 @@ RUN_DEPENDS=	p5-Config-Tiny>=2.12:devel/p5-Config-Tiny \
 TEST_DEPENDS=	p5-Test-Version>=1.002003:devel/p5-Test-Version \
 		p5-Try-Tiny>=0.06:lang/p5-Try-Tiny
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5 tar:tgz
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
