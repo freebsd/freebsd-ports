@@ -19,8 +19,9 @@ RUN_DEPENDS=	p5-Carp-Clan>=6.0:devel/p5-Carp-Clan \
 TEST_DEPENDS=	p5-Cache-Cache>=0:devel/p5-Cache-Cache \
 		p5-DBD-SQLite>=0:databases/p5-DBD-SQLite
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
