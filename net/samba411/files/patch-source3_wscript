@@ -1,14 +1,14 @@
---- source3/wscript.orig	2019-05-07 08:38:21 UTC
+--- source3/wscript.orig	2019-07-09 10:08:41 UTC
 +++ source3/wscript
 @@ -50,6 +50,7 @@ def options(opt):
-     opt.SAMBA3_ADD_OPTION('sendfile-support', default=None)
-     opt.SAMBA3_ADD_OPTION('utmp')
-     opt.SAMBA3_ADD_OPTION('avahi', with_name="enable", without_name="disable")
-+    opt.SAMBA3_ADD_OPTION('dnssd', with_name="enable", without_name="disable")
-     opt.SAMBA3_ADD_OPTION('iconv')
-     opt.SAMBA3_ADD_OPTION('acl-support')
-     opt.SAMBA3_ADD_OPTION('dnsupdate')
-@@ -787,34 +788,39 @@ msg.msg_accrightslen = sizeof(fd);
+     opt.samba_add_onoff_option('sendfile-support', default=None)
+     opt.samba_add_onoff_option('utmp')
+     opt.samba_add_onoff_option('avahi', with_name="enable", without_name="disable")
++    opt.samba_add_onoff_option('dnssd', with_name="enable", without_name="disable")
+     opt.samba_add_onoff_option('iconv')
+     opt.samba_add_onoff_option('acl-support')
+     opt.samba_add_onoff_option('dnsupdate')
+@@ -784,34 +785,39 @@ msg.msg_accrightslen = sizeof(fd);
  
      if Options.options.with_utmp:
          conf.env.with_utmp = True
@@ -64,7 +64,7 @@
                            define='SIZEOF_UTMP_UT_LINE', critical=False)
          if not conf.CONFIG_SET('SIZEOF_UTMP_UT_LINE'):
              conf.env.with_utmp = False
-@@ -836,6 +842,17 @@ msg.msg_accrightslen = sizeof(fd);
+@@ -833,6 +839,17 @@ msg.msg_accrightslen = sizeof(fd);
          conf.SET_TARGET_TYPE('avahi-common', 'EMPTY')
          conf.SET_TARGET_TYPE('avahi-client', 'EMPTY')
  
@@ -82,7 +82,7 @@
      if Options.options.with_iconv:
          conf.env.with_iconv = True
          if not conf.CHECK_FUNCS_IN('iconv_open', 'iconv', headers='iconv.h'):
-@@ -1730,9 +1747,6 @@ main() {
+@@ -1778,9 +1795,6 @@ main() {
      if conf.CONFIG_SET('HAVE_VXFS'):
          default_shared_modules.extend(TO_LIST('vfs_vxfs'))
  

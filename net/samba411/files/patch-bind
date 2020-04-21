@@ -124,7 +124,7 @@
                    enabled=bld.AD_DC_BUILD_IS_ENABLED())
  
 -bld.SAMBA_LIBRARY('dlz_bind9_9',
-+for bind_version in (909, 910, 911, 912, 914, 916):
++for bind_version in (909, 910, 911, 912, 913, 914, 916):
 +    string_version='%d_%d' % (bind_version//100, bind_version % 100)
 +    bld.SAMBA_LIBRARY('dlz_bind%s' % (string_version),
                    source='dlz_bind9.c',

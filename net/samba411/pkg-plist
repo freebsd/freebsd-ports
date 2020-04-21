@@ -12,7 +12,6 @@ bin/nmblookup
 bin/ntlm_auth
 bin/oLschema2ldif
 bin/pdbedit
-bin/pidl
 bin/profiles
 bin/regdiff
 bin/regpatch
@@ -38,6 +37,7 @@ bin/vfstest
 bin/wbinfo
 sbin/eventlogadm
 sbin/nmbd
+%%AD_DC%%sbin/samba_downgrade_db
 sbin/smbd
 sbin/winbindd
 %%AD_DC%%sbin/samba
@@ -224,6 +224,7 @@ lib/samba4/private/libflag-mapping-samba4.so
 lib/samba4/private/libgenrand-samba4.so
 lib/samba4/private/libgensec-samba4.so
 lib/samba4/private/libgpext-samba4.so
+lib/samba4/private/libgpo-samba4.so
 lib/samba4/private/libgse-samba4.so
 %%GSSAPI_BUILTIN%%lib/samba4/private/libgssapi-samba4.so.2
 %%GSSAPI_BUILTIN%%lib/samba4/private/libhcrypto-samba4.so.5
@@ -251,12 +252,12 @@ lib/samba4/private/libndr-samba-samba4.so
 lib/samba4/private/libndr-samba4.so
 lib/samba4/private/libnet-keytab-samba4.so
 lib/samba4/private/libnetif-samba4.so
-lib/samba4/private/libnon-posix-acls-samba4.so
 lib/samba4/private/libnpa-tstream-samba4.so
 lib/samba4/private/libnss-info-samba4.so
 %%AD_DC%%lib/samba4/private/libpac-samba4.so
 lib/samba4/private/libpopt-samba3-cmdline-samba4.so
 lib/samba4/private/libpopt-samba3-samba4.so
+lib/samba4/private/libprinter-driver-samba4.so
 lib/samba4/private/libprinting-migrate-samba4.so
 lib/samba4/private/libregistry-samba4.so
 lib/samba4/private/libreplace-samba4.so
@@ -301,6 +302,7 @@ lib/samba4/private/libxattr-tdb-samba4.so
 %%AD_DC%%%%SAMBA4_MODULEDIR%%/bind9/dlz_bind9_10.so
 %%AD_DC%%%%SAMBA4_MODULEDIR%%/bind9/dlz_bind9_11.so
 %%AD_DC%%%%SAMBA4_MODULEDIR%%/bind9/dlz_bind9_12.so
+%%AD_DC%%%%SAMBA4_MODULEDIR%%/bind9/dlz_bind9_13.so
 %%AD_DC%%%%SAMBA4_MODULEDIR%%/bind9/dlz_bind9_14.so
 %%AD_DC%%%%SAMBA4_MODULEDIR%%/bind9/dlz_bind9_16.so
 %%AD_DC%%%%SAMBA4_MODULEDIR%%/gensec/krb5.so
@@ -367,7 +369,6 @@ lib/samba4/private/libxattr-tdb-samba4.so
 %%AD_DC%%%%SAMBA4_MODULEDIR%%/service/nbtd.so
 %%AD_DC%%%%SAMBA4_MODULEDIR%%/service/ntp_signd.so
 %%AD_DC%%%%SAMBA4_MODULEDIR%%/service/s3fs.so
-%%AD_DC%%%%SAMBA4_MODULEDIR%%/service/web.so
 %%AD_DC%%%%SAMBA4_MODULEDIR%%/service/winbindd.so
 %%AD_DC%%%%SAMBA4_MODULEDIR%%/service/wrepl.so
 %%AD_DC%%%%SAMBA4_MODULEDIR%%/vfs/posix_eadb.so
@@ -437,40 +438,7 @@ lib/samba4/private/libxattr-tdb-samba4.so
 %%PKGCONFIGDIR%%/samdb.pc
 %%PKGCONFIGDIR%%/smbclient.pc
 %%PKGCONFIGDIR%%/wbclient.pc
-@comment Pidl block
-%%DATADIR%%/perl5/Parse/Pidl.pm
-%%DATADIR%%/perl5/Parse/Pidl/CUtil.pm
-%%DATADIR%%/perl5/Parse/Pidl/Compat.pm
-%%DATADIR%%/perl5/Parse/Pidl/Dump.pm
-%%DATADIR%%/perl5/Parse/Pidl/Expr.pm
-%%DATADIR%%/perl5/Parse/Pidl/IDL.pm
-%%DATADIR%%/perl5/Parse/Pidl/NDR.pm
-%%DATADIR%%/perl5/Parse/Pidl/ODL.pm
-%%DATADIR%%/perl5/Parse/Pidl/Samba3/ClientNDR.pm
-%%DATADIR%%/perl5/Parse/Pidl/Samba3/ServerNDR.pm
-%%DATADIR%%/perl5/Parse/Pidl/Samba4.pm
-%%DATADIR%%/perl5/Parse/Pidl/Samba4/COM/Header.pm
-%%DATADIR%%/perl5/Parse/Pidl/Samba4/COM/Proxy.pm
-%%DATADIR%%/perl5/Parse/Pidl/Samba4/COM/Stub.pm
-%%DATADIR%%/perl5/Parse/Pidl/Samba4/Header.pm
-%%DATADIR%%/perl5/Parse/Pidl/Samba4/NDR/Client.pm
-%%DATADIR%%/perl5/Parse/Pidl/Samba4/NDR/Parser.pm
-%%DATADIR%%/perl5/Parse/Pidl/Samba4/NDR/Server.pm
-%%DATADIR%%/perl5/Parse/Pidl/Samba4/Python.pm
-%%DATADIR%%/perl5/Parse/Pidl/Samba4/TDR.pm
-%%DATADIR%%/perl5/Parse/Pidl/Samba4/Template.pm
-%%DATADIR%%/perl5/Parse/Pidl/Typelist.pm
-%%DATADIR%%/perl5/Parse/Pidl/Util.pm
-%%DATADIR%%/perl5/Parse/Pidl/Wireshark/Conformance.pm
-%%DATADIR%%/perl5/Parse/Pidl/Wireshark/NDR.pm
-@dir %%DATADIR%%/perl5/Parse/Pidl/Wireshark
-@dir %%DATADIR%%/perl5/Parse/Pidl/Samba4/NDR
-@dir %%DATADIR%%/perl5/Parse/Pidl/Samba4/COM
-@dir %%DATADIR%%/perl5/Parse/Pidl/Samba4
-@dir %%DATADIR%%/perl5/Parse/Pidl/Samba3
-@dir %%DATADIR%%/perl5/Parse/Pidl
-@dir %%DATADIR%%/perl5/Parse
-@dir %%DATADIR%%/perl5
+@comment Setup files
 %%AD_DC%%%%DATADIR%%/setup/ad-schema/AD_DS_Attributes__Windows_Server_2012_R2.ldf
 %%AD_DC%%%%DATADIR%%/setup/ad-schema/AD_DS_Attributes__Windows_Server_2016.ldf
 %%AD_DC%%%%DATADIR%%/setup/ad-schema/AD_DS_Classes__Windows_Server_2012_R2.ldf
@@ -593,7 +561,6 @@ man/man1/ndrdump.1.gz
 man/man1/nmblookup.1.gz
 man/man1/ntlm_auth.1.gz
 man/man1/oLschema2ldif.1.gz
-man/man1/pidl.1.gz
 man/man1/profiles.1.gz
 man/man1/regdiff.1.gz
 man/man1/regpatch.1.gz
@@ -613,11 +580,6 @@ man/man1/smbtree.1.gz
 man/man1/testparm.1.gz
 man/man1/vfstest.1.gz
 man/man1/wbinfo.1.gz
-man/man3/Parse::Pidl::Dump.3.gz
-man/man3/Parse::Pidl::NDR.3.gz
-man/man3/Parse::Pidl::Util.3.gz
-man/man3/Parse::Pidl::Wireshark::Conformance.3.gz
-man/man3/Parse::Pidl::Wireshark::NDR.3.gz
 man/man5/lmhosts.5.gz
 man/man5/pam_winbind.conf.5.gz
 man/man5/smb.conf.5.gz
@@ -644,6 +606,7 @@ man/man8/net.8.gz
 man/man8/nmbd.8.gz
 man/man8/pam_winbind.8.gz
 man/man8/pdbedit.8.gz
+man/man8/samba_downgrade_db.8.gz
 man/man8/samba-gpupdate.8.gz
 man/man8/samba-regedit.8.gz
 man/man8/samba-tool.8.gz
@@ -872,6 +835,7 @@ man/man8/winbindd.8.gz
 %%PYTHON_SITELIBDIR%%/samba/netcmd/__init__.py
 %%PYTHON_SITELIBDIR%%/samba/netcmd/common.py
 %%PYTHON_SITELIBDIR%%/samba/netcmd/computer.py
+%%PYTHON_SITELIBDIR%%/samba/netcmd/contact.py
 %%PYTHON_SITELIBDIR%%/samba/netcmd/dbcheck.py
 %%PYTHON_SITELIBDIR%%/samba/netcmd/delegation.py
 %%PYTHON_SITELIBDIR%%/samba/netcmd/dns.py
@@ -919,7 +883,6 @@ man/man8/winbindd.8.gz
 %%PYTHON_SITELIBDIR%%/samba/sd_utils.py
 %%PYTHON_SITELIBDIR%%/samba/security.so
 %%PYTHON_SITELIBDIR%%/samba/sites.py
-%%PYTHON_SITELIBDIR%%/samba/smb.so
 %%PYTHON_SITELIBDIR%%/samba/subnets.py
 %%PYTHON_SITELIBDIR%%/samba/subunit/__init__.py
 %%PYTHON_SITELIBDIR%%/samba/subunit/run.py
@@ -934,11 +897,13 @@ man/man8/winbindd.8.gz
 %%PYTHON_SITELIBDIR%%/samba/tests/auth_log_netlogon.py
 %%PYTHON_SITELIBDIR%%/samba/tests/auth_log_pass_change.py
 %%PYTHON_SITELIBDIR%%/samba/tests/auth_log_samlogon.py
+%%PYTHON_SITELIBDIR%%/samba/tests/auth_log_winbind.py
 %%PYTHON_SITELIBDIR%%/samba/tests/auth_log.py
 %%PYTHON_SITELIBDIR%%/samba/tests/auth.py
 %%PYTHON_SITELIBDIR%%/samba/tests/blackbox/__init__.py
 %%PYTHON_SITELIBDIR%%/samba/tests/blackbox/bug13653.py
 %%PYTHON_SITELIBDIR%%/samba/tests/blackbox/check_output.py
+%%PYTHON_SITELIBDIR%%/samba/tests/blackbox/downgradedatabase.py
 %%PYTHON_SITELIBDIR%%/samba/tests/blackbox/ndrdump.py
 %%PYTHON_SITELIBDIR%%/samba/tests/blackbox/netads_json.py
 %%PYTHON_SITELIBDIR%%/samba/tests/blackbox/samba_dnsupdate.py
@@ -947,7 +912,6 @@ man/man8/winbindd.8.gz
 %%PYTHON_SITELIBDIR%%/samba/tests/blackbox/traffic_learner.py
 %%PYTHON_SITELIBDIR%%/samba/tests/blackbox/traffic_replay.py
 %%PYTHON_SITELIBDIR%%/samba/tests/blackbox/traffic_summary.py
-%%PYTHON_SITELIBDIR%%/samba/tests/blackbox/undoguididx.py
 %%PYTHON_SITELIBDIR%%/samba/tests/common.py
 %%PYTHON_SITELIBDIR%%/samba/tests/complex_expressions.py
 %%PYTHON_SITELIBDIR%%/samba/tests/core.py
@@ -970,7 +934,6 @@ man/man8/winbindd.8.gz
 %%PYTHON_SITELIBDIR%%/samba/tests/dcerpc/unix.py
 %%PYTHON_SITELIBDIR%%/samba/tests/dckeytab.py
 %%PYTHON_SITELIBDIR%%/samba/tests/dns_base.py
-%%PYTHON_SITELIBDIR%%/samba/tests/dns_forwarder_helpers/dns_hub.py
 %%PYTHON_SITELIBDIR%%/samba/tests/dns_forwarder_helpers/server.py
 %%PYTHON_SITELIBDIR%%/samba/tests/dns_forwarder.py
 %%PYTHON_SITELIBDIR%%/samba/tests/dns_invalid.py
@@ -1045,18 +1008,24 @@ man/man8/winbindd.8.gz
 %%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/__init__.py
 %%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/base.py
 %%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/computer.py
+%%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/contact.py
 %%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/demote.py
 %%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/dnscmd.py
+%%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/drs_clone_dc_data_lmdb_size.py
+%%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/dsacl.py
 %%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/forest.py
 %%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/fsmo.py
 %%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/gpo.py
 %%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/group.py
 %%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/help.py
+%%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/join_lmdb_size.py
 %%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/join.py
 %%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/ntacl.py
 %%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/ou.py
 %%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/passwordsettings.py
 %%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/processes.py
+%%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/promote_dc_lmdb_size.py
+%%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/provision_lmdb_size.py
 %%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/provision_password_check.py
 %%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/rodc.py
 %%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/schema.py
@@ -1073,6 +1042,7 @@ man/man8/winbindd.8.gz
 %%PYTHON_SITELIBDIR%%/samba/tests/samdb_api.py
 %%PYTHON_SITELIBDIR%%/samba/tests/samdb.py
 %%PYTHON_SITELIBDIR%%/samba/tests/security.py
+%%PYTHON_SITELIBDIR%%/samba/tests/segfault.py
 %%PYTHON_SITELIBDIR%%/samba/tests/smb.py
 %%PYTHON_SITELIBDIR%%/samba/tests/smbd_base.py
 %%PYTHON_SITELIBDIR%%/samba/tests/smbd_fuzztest.py
@@ -1083,15 +1053,14 @@ man/man8/winbindd.8.gz
 %%PYTHON_SITELIBDIR%%/samba/tests/upgrade.py
 %%PYTHON_SITELIBDIR%%/samba/tests/upgradeprovision.py
 %%PYTHON_SITELIBDIR%%/samba/tests/upgradeprovisionneeddc.py
+%%PYTHON_SITELIBDIR%%/samba/tests/usage.py
 %%PYTHON_SITELIBDIR%%/samba/tests/xattr.py
 %%PYTHON_SITELIBDIR%%/samba/third_party/__init__.py
 %%PYTHON_SITELIBDIR%%/samba/upgrade.py
 %%PYTHON_SITELIBDIR%%/samba/upgradehelpers.py
-%%PYTHON_SITELIBDIR%%/samba/web_server/__init__.py
 %%PYTHON_SITELIBDIR%%/samba/uptodateness.py
 %%PYTHON_SITELIBDIR%%/samba/werror.so
 %%PYTHON_SITELIBDIR%%/samba/xattr.py
-@dir %%PYTHON_SITELIBDIR%%/samba/web_server
 @dir %%PYTHON_SITELIBDIR%%/samba/tests/samba_tool
 @dir %%PYTHON_SITELIBDIR%%/samba/tests/dcerpc
 @dir %%PYTHON_SITELIBDIR%%/samba/tests/blackbox
@@ -1105,7 +1074,7 @@ man/man8/winbindd.8.gz
 %%SAMBA4_BUNDLED_CMOCKA%%lib/samba4/private/libcmocka-samba4.so
 %%SAMBA4_BUNDLED_LDB%%%%SAMBA4_PYTHON%%%%PYTHON_SITELIBDIR%%/_ldb_text.py
 %%SAMBA4_BUNDLED_LDB%%%%SAMBA4_PYTHON%%%%PYTHON_SITELIBDIR%%/ldb.so
-%%SAMBA4_BUNDLED_LDB%%%%SAMBA4_PYTHON%%lib/samba4/private/libpyldb-util.so.1
+%%SAMBA4_BUNDLED_LDB%%%%SAMBA4_PYTHON%%lib/samba4/private/libpyldb-util.so.2
 %%SAMBA4_BUNDLED_LDB%%bin/samba-ldbdump
 %%SAMBA4_BUNDLED_LDB%%bin/samba-ldbadd
 %%SAMBA4_BUNDLED_LDB%%bin/samba-ldbdel
@@ -1117,7 +1086,8 @@ man/man8/winbindd.8.gz
 %%SAMBA4_BUNDLED_LDB%%lib/samba4/private/libldb-key-value-samba4.so
 %%SAMBA4_BUNDLED_LDB%%lib/samba4/private/libldb-tdb-err-map-samba4.so
 %%SAMBA4_BUNDLED_LDB%%lib/samba4/private/libldb-tdb-int-samba4.so
-%%SAMBA4_BUNDLED_LDB%%lib/samba4/private/libldb.so.1
+%%SAMBA4_BUNDLED_LDB%%lib/samba4/private/libldb.so.2
+%%AD_DC%%%%SAMBA4_BUNDLED_LDB%%%%SAMBA4_MODULEDIR%%/ldb/count_attrs.so
 %%SAMBA4_BUNDLED_LDB%%%%SAMBA4_MODULEDIR%%/ldb/asq.so
 %%SAMBA4_BUNDLED_LDB%%%%SAMBA4_MODULEDIR%%/ldb/ldb.so
 %%SAMBA4_BUNDLED_LDB%%%%SAMBA4_MODULEDIR%%/ldb/paged_searches.so

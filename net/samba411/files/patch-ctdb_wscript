@@ -10,7 +10,7 @@
  
      opt.add_option('--with-logdir',
                     help=("Path to log directory"),
-@@ -260,7 +263,7 @@ def configure(conf):
+@@ -263,7 +266,7 @@ def configure(conf):
              conf.env['LIBPATH_CEPH-COMMON'] = conf.env['LIBPATH_RADOS'] + '/ceph'
  
          if (conf.CHECK_HEADERS('rados/librados.h', False, False, 'rados') and
@@ -19,7 +19,7 @@
              conf.CHECK_LIB('ceph-common', shlib=True)
              Logs.info('Building with Ceph librados recovery lock support')
              conf.define('HAVE_LIBRADOS', 1)
-@@ -300,8 +303,14 @@ def configure(conf):
+@@ -303,8 +306,14 @@ def configure(conf):
                      conf.env.CTDB_VARDIR,
                      conf.env.CTDB_RUNDIR))
  
@@ -36,20 +36,20 @@
  
      # Allow unified compilation and separate compilation of utilities
      # to find includes
-@@ -679,9 +688,9 @@ def build(bld):
-     if bld.env.HAVE_LIBRADOS:
+@@ -685,9 +694,9 @@ def build(bld):
+             rados_inc = bld.CONFIG_GET('CPPPATH_RADOS') + rados_inc
          bld.SAMBA_BINARY('ctdb_mutex_ceph_rados_helper',
                           source='utils/ceph/ctdb_mutex_ceph_rados_helper.c',
 -			 deps='talloc tevent rados ceph-common',
--			 includes='include',
+-			 includes=rados_inc,
 -			 install_path='${CTDB_HELPER_BINDIR}')
 +                         deps='talloc tevent rados ceph-common',
-+                         includes='include',
++                         includes=rados_inc,
 +                         install_path='${CTDB_HELPER_BINDIR}')
  
      sed_expr1 = 's|/usr/local/var/lib/ctdb|%s|g'  % (bld.env.CTDB_VARDIR)
      sed_expr2 = 's|/usr/local/etc/ctdb|%s|g'      % (bld.env.CTDB_ETCDIR)
-@@ -858,6 +867,9 @@ def build(bld):
+@@ -864,6 +873,9 @@ def build(bld):
      for d in ['volatile', 'persistent', 'state']:
          bld.INSTALL_DIR(os.path.join(bld.env.CTDB_VARDIR, d))
  

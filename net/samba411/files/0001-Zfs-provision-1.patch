@@ -120,7 +120,7 @@ diff --git a/source3/smbd/pysmbd.c b/source3/smbd/pysmbd.c
 index 63fc5d68c33..f5a536ee186 100644
 --- a/source3/smbd/pysmbd.c
 +++ b/source3/smbd/pysmbd.c
-@@ -392,6 +392,20 @@ static SMB_ACL_T make_simple_acl(TALLOC_
+@@ -393,6 +393,20 @@ static SMB_ACL_T make_simple_acl(TALLOC_
  	return acl;
  }
  
@@ -141,7 +141,7 @@ index 63fc5d68c33..f5a536ee186 100644
  /*
    set a simple ACL on a file, as a test
   */
-@@ -437,6 +451,57 @@ static PyObject *py_smbd_set_simple_acl(
+@@ -438,6 +452,57 @@ static PyObject *py_smbd_set_simple_acl(
  	Py_RETURN_NONE;
  }
  
@@ -199,16 +199,16 @@ index 63fc5d68c33..f5a536ee186 100644
  /*
    chown a file
   */
-@@ -536,7 +601,7 @@ static PyObject *py_smbd_unlink(PyObject
+@@ -537,7 +602,7 @@ static PyObject *py_smbd_unlink(PyObject
  }
  
  /*
 -  check if we have ACL support
 +  check if we have POSIX.1e ACL support
   */
- static PyObject *py_smbd_have_posix_acls(PyObject *self)
- {
-@@ -547,6 +612,86 @@ static PyObject *py_smbd_have_posix_acls
+ static PyObject *py_smbd_have_posix_acls(PyObject *self,
+ 		PyObject *Py_UNUSED(ignored))
+@@ -549,6 +614,86 @@ static PyObject *py_smbd_have_posix_acls
  #endif
  }
  
@@ -295,31 +295,35 @@ index 63fc5d68c33..f5a536ee186 100644
  /*
    set the NT ACL on a file
   */
-@@ -881,9 +1026,24 @@ static PyMethodDef py_smbd_methods[] = {
+@@ -883,10 +1028,28 @@ static PyMethodDef py_smbd_methods[] = {
  	{ "have_posix_acls",
  		(PyCFunction)py_smbd_have_posix_acls, METH_NOARGS,
  		NULL },
 +	{ "has_posix_acls",
-+		(PyCFunction)py_smbd_has_posix_acls, METH_VARARGS|METH_KEYWORDS,
++		PY_DISCARD_FUNC_SIG(PyCFunction, py_smbd_has_posix_acls),
++		METH_VARARGS|METH_KEYWORDS,
 +		NULL },
 +	{ "have_nfsv4_acls",
 +		(PyCFunction)py_smbd_have_nfsv4_acls, METH_NOARGS,
 +		NULL },
 +	{ "has_nfsv4_acls",
-+		(PyCFunction)py_smbd_has_nfsv4_acls, METH_VARARGS|METH_KEYWORDS,
++		PY_DISCARD_FUNC_SIG(PyCFunction, py_smbd_has_nfsv4_acls),
++		METH_VARARGS|METH_KEYWORDS,
 +		NULL },
 +	{ "set_nfsv4_defaults",
 +		(PyCFunction)py_smbd_set_nfsv4_defaults, METH_NOARGS,
 +		NULL },
  	{ "set_simple_acl",
- 		(PyCFunction)py_smbd_set_simple_acl, METH_VARARGS|METH_KEYWORDS,
+ 		PY_DISCARD_FUNC_SIG(PyCFunction, py_smbd_set_simple_acl),
+ 		METH_VARARGS|METH_KEYWORDS,
  		NULL },
 +	{ "set_simple_nfsv4_acl",
-+		(PyCFunction)py_smbd_set_simple_nfsv4_acl, METH_VARARGS|METH_KEYWORDS,
++		PY_DISCARD_FUNC_SIG(PyCFunction, py_smbd_set_simple_nfsv4_acl),
++		METH_VARARGS|METH_KEYWORDS,
 +		NULL },
  	{ "set_nt_acl",
- 		(PyCFunction)py_smbd_set_nt_acl, METH_VARARGS|METH_KEYWORDS,
- 		NULL },
+ 		PY_DISCARD_FUNC_SIG(PyCFunction, py_smbd_set_nt_acl),
+ 		METH_VARARGS|METH_KEYWORDS,
 -- 
 2.14.2
 

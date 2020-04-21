@@ -1,6 +1,6 @@
 --- source3/lib/sysquotas_4B.c.orig	2019-01-15 10:07:00 UTC
 +++ source3/lib/sysquotas_4B.c
-@@ -141,7 +141,14 @@ static int sys_quotactl_4B(const char * 
+@@ -140,7 +140,14 @@ static int sys_quotactl_4B(const char * 
  		/* ENOTSUP means quota support is not compiled in. EINVAL
  		 * means that quotas are not configured (commonly).
  		 */
@@ -13,6 +13,6 @@
 +			&& errno != ENOENT
 +#endif
 +		) {
- 			DEBUG(0, ("failed to %s quota for %s ID %u on %s: %s\n",
+ 			DEBUG(5, ("failed to %s quota for %s ID %u on %s: %s\n",
  				    (cmd & QCMD(Q_GETQUOTA, 0)) ? "get" : "set",
  				    (cmd & QCMD(0, GRPQUOTA)) ? "group" : "user",

@@ -10,10 +10,11 @@
                         'vfs_glusterfs',
 --- source3/modules/wscript_build.orig	2019-05-07 08:38:21 UTC
 +++ source3/modules/wscript_build
-@@ -243,6 +243,14 @@ bld.SAMBA3_MODULE('vfs_zfsacl',
-                  internal_module=bld.SAMBA3_IS_STATIC_MODULE('vfs_zfsacl'),
-                  enabled=bld.SAMBA3_IS_ENABLED_MODULE('vfs_zfsacl'))
- 
+@@ -613,3 +613,11 @@ bld.SAMBA3_MODULE('vfs_delay_inject',
+                  init_function='',
+                  internal_module=bld.SAMBA3_IS_STATIC_MODULE('vfs_delay_inject'),
+                  enabled=bld.SAMBA3_IS_ENABLED_MODULE('vfs_delay_inject'))
++
 +bld.SAMBA3_MODULE('vfs_freebsd',
 +                 subsystem='vfs',
 +                 source='vfs_freebsd.c',
@@ -21,9 +22,6 @@
 +                 init_function='',
 +                 internal_module=bld.SAMBA3_IS_STATIC_MODULE('vfs_freebsd'),
 +                 enabled=bld.SAMBA3_IS_ENABLED_MODULE('vfs_freebsd'))
-+
- xdr_buf_hack = 'sed -e "s@^\([ \t]*register int32_t \*buf\);@\\1 = buf;@"'
- 
  bld.SAMBA_GENERATOR('nfs41acl-xdr-c',
 --- source3/modules/vfs_freebsd.c.orig	2019-06-22 11:56:57 UTC
 +++ source3/modules/vfs_freebsd.c

@@ -1,12 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=		ldb
-PORTVERSION=		1.5.6
+PORTVERSION=		2.0.9
 PORTREVISION=		0
 PORTEPOCH=		0
 CATEGORIES=		databases
 MASTER_SITES=		SAMBA
-PKGNAMESUFFIX?=		15
+PKGNAMESUFFIX?=		20
 
 MAINTAINER=		timur@FreeBSD.org
 COMMENT=		LDAP-like embedded database
@@ -25,12 +25,7 @@ LDB_DEPENDS=		talloc>=2.2.0:devel/talloc \
 			cmocka>=1.1.3:sysutils/cmocka \
 			popt>=0:devel/popt
 
-CONFLICTS_INSTALL=	ldb-1.1.* ldb1[2-46]-1.*
-
-#FLAVORS=		default nopython
-#nopython_PKGNAMESUFFIX=	-nopython
-#nopython_CONFLICTS=	ldb
-#default_CONFLICTS=	ldb-nopython
+CONFLICTS_INSTALL=	ldb-1.1.* ldb1[2-9]-1.* ldb2[1-9]-2.*
 
 USES=			compiler pkgconfig waf
 USE_LDCONFIG=		yes
@@ -49,7 +44,7 @@ CONFIGURE_ARGS+=	--bundled-libraries=!talloc,!tevent,!tdb,!popt,!cmocka \
 			--disable-rpath \
 			--without-gettext
 
-OPTIONS_DEFINE=		MANPAGES DEBUG
+OPTIONS_DEFINE=		MANPAGES DEBUG PYTHON3
 MANPAGES_DESC=		Build and install manpages (requires textproc/docbook-xsl)
 
 DEBUG_CONFIGURE_ON=	--verbose --enable-debug
@@ -66,7 +61,7 @@ LDB_BINS=		bin/ldbedit \
 			bin/ldbrename
 
 LDB_LIBS=		lib/libldb.so \
-			lib/libldb.so.1 \
+			lib/libldb.so.2 \
 			lib/ldb/libldb-tdb-int.so \
 			lib/ldb/libldb-tdb-err-map.so \
 			lib/ldb/libldb-key-value.so \
@@ -95,21 +90,10 @@ PLIST_FILES=		include/ldb_version.h \
 			${LDB_LIBS} \
 			${PKGCONFIGDIR}/ldb.pc
 
-.if defined(NO_PYTHON)
-USES+=			python:build,test
-CONFIGURE_ARGS+=	--disable-python
-.else
-USES+=			python:3.4+
-
-PLIST_FILES+=		include/pyldb.h \
-			lib/libpyldb-util.so \
-			lib/libpyldb-util.so.1 \
-			${PYTHON_SITELIBDIR}/ldb.so \
-			${PYTHON_SITELIBDIR}/_ldb_text.py \
-			${PKGCONFIGDIR}/pyldb-util.pc
-.endif
 
 .include <bsd.port.pre.mk>
+
+CONFIGURE_ENV+=		CFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib
 
 .if ! ${PORT_OPTIONS:MMANPAGES}
 CONFIGURE_ENV+=		XSLTPROC="true"
@@ -117,7 +101,20 @@ CONFIGURE_ENV+=		XSLTPROC="true"
 BUILD_DEPENDS+=		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl \
 			xsltproc:textproc/libxslt
 .endif
-CONFIGURE_ENV+=		CFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib
+
+.if ! ${PORT_OPTIONS:MPYTHON3} || defined(NO_PYTHON)
+USES+=			python:2.7+,build,test
+CONFIGURE_ARGS+=	--disable-python
+.else
+USES+=			python:3.4+
+
+PLIST_FILES+=		include/pyldb.h \
+			lib/libpyldb-util.so \
+			lib/libpyldb-util.so.2 \
+			${PYTHON_SITELIBDIR}/ldb.so \
+			${PYTHON_SITELIBDIR}/_ldb_text.py \
+			${PKGCONFIGDIR}/pyldb-util.pc
+.endif
 
 # No fancy color error messages
 .if ${COMPILER_TYPE} == "clang"
@@ -160,7 +157,7 @@ post-install:
 .for lib in ${LDB_BINS} ${LDB_LIBS}
 		${STRIP_CMD} ${STAGEDIR}${PREFIX}/${lib}
 .endfor
-.if !defined(NO_PYTHON)
+.if ${PORT_OPTIONS:MPYTHON3} && !defined(NO_PYTHON)
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpyldb-util.so
 	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/ldb.so
 .endif

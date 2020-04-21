@@ -1,7 +1,7 @@
 # Created by: timur@FreeBSD.org
 # $FreeBSD$
 
-PORTNAME=			${SAMBA4_BASENAME}410
+PORTNAME=			${SAMBA4_BASENAME}411
 PORTVERSION=			${SAMBA4_VERSION}
 PORTREVISION=			0
 CATEGORIES?=			net
@@ -15,16 +15,15 @@ LICENSE=			GPLv3+
 LICENSE_FILE=			${WRKSRC}/COPYING
 
 IGNORE_NONTHREAD_PYTHON=	needs port lang/python${PYTHON_SUFFIX} to be build with THREADS support
-CONFLICTS_INSTALL?=		samba4-4.0.* samba4[1-9]-4.* p5-Parse-Pidl-4.*
+CONFLICTS_INSTALL?=		samba4-4.0.* samba4[1-9]-4.* samba410-4.10.* p5-Parse-Pidl-4.*
 
 USES=				cpe
 
 EXTRA_PATCHES+=			${PATCHDIR}/0001-Zfs-provision-1.patch:-p1
-EXTRA_PATCHES+=			${PATCHDIR}/0001-provision-use-ASCII-quotes.patch:-p1
 
 SAMBA4_BASENAME=		samba
 SAMBA4_PORTNAME=		${SAMBA4_BASENAME}4
-SAMBA4_VERSION=			4.10.14
+SAMBA4_VERSION=			4.11.7
 SAMBA4_DISTNAME=		${SAMBA4_BASENAME}-${SAMBA4_VERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
 
 WRKSRC?=			${WRKDIR}/${DISTNAME}
@@ -218,8 +217,8 @@ PLIST_SUB+=			SAMBA4_BUNDLED_TDB=""
 SUB_LIST+=			SAMBA4_BUNDLED_TDB=""
 .else
 SAMBA4_BUNDLED_LIBS+=		!tdb
-BUILD_DEPENDS+=			tdb>=1.4.0:databases/tdb
-RUN_DEPENDS+=			tdb>=1.4.0:databases/tdb
+BUILD_DEPENDS+=			tdb>=1.4.2:databases/tdb
+RUN_DEPENDS+=			tdb>=1.4.2:databases/tdb
 PLIST_SUB+=			SAMBA4_BUNDLED_TDB="@comment "
 SUB_LIST+=			SAMBA4_BUNDLED_TDB="@comment "
 .endif
@@ -232,8 +231,8 @@ SUB_LIST+=			SAMBA4_BUNDLED_LDB=""
 SAMBA4_MODULEDIR=		${SAMBA4_LIBDIR}/modules
 .else
 SAMBA4_BUNDLED_LIBS+=		!ldb
-BUILD_DEPENDS+=			ldb15>=1.5.4:databases/ldb15
-RUN_DEPENDS+=			ldb15>=1.5.4:databases/ldb15
+BUILD_DEPENDS+=			ldb20>=2.0.8:databases/ldb20
+RUN_DEPENDS+=			ldb20>=2.0.8:databases/ldb20
 PLIST_SUB+=			SAMBA4_BUNDLED_LDB="@comment "
 SUB_LIST+=			SAMBA4_BUNDLED_LDB="@comment "
 SAMBA4_MODULEDIR=		${PREFIX}/lib/shared-modules
@@ -268,7 +267,6 @@ CONFIGURE_ARGS+=		\
 				--enable-pthreadpool \
 				--without-fake-kaserver \
 				--without-systemd \
-				--enable-gnutls \
 				--with-libarchive \
 				--with-acl-support \
 				--with-sendfile-support \
@@ -574,7 +572,7 @@ pre-build-MANDOC-off:
 				source4/torture/man/masktest.1 \
 				source4/torture/man/smbtorture.1 \
 				source4/utils/man/ntlm_auth4.1 \
-				source4/utils/man/oLschema2ldif.1 \
+				source4/utils/oLschema2ldif/oLschema2ldif.1 \
 				lib/tdb/man/tdbdump.8 \
 				lib/tdb/man/tdbbackup.8 \
 				lib/tdb/man/tdbtool.8 \
