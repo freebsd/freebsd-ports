@@ -3,7 +3,7 @@
 
 PORTNAME=	opencoarrays
 DISTVERSION=	2.7.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang parallel
 
 MAINTAINER=	ports@FreeBSD.org
@@ -35,9 +35,9 @@ MPICH_BUILD_DEPENDS=	mpif90:net/mpich
 MPICH_RUN_DEPENDS=	mpif90:net/mpich
 MPICH_CONFIGURE_ENV=	MPI_HOME=${LOCALBASE}
 
-OPENMPI_BUILD_DEPENDS=	${LOCALBASE}/mpi/openmpi3/bin/mpif90:net/openmpi3
-OPENMPI_RUN_DEPENDS=	${LOCALBASE}/mpi/openmpi3/bin/mpif90:net/openmpi3
-OPENMPI_CONFIGURE_ENV=	MPI_HOME=${LOCALBASE}/mpi/openmpi3
+OPENMPI_BUILD_DEPENDS=	${LOCALBASE}/mpi/openmpi/bin/mpif90:net/openmpi
+OPENMPI_RUN_DEPENDS=	${LOCALBASE}/mpi/openmpi/bin/mpif90:net/openmpi
+OPENMPI_CONFIGURE_ENV=	MPI_HOME=${LOCALBASE}/mpi/openmpi
 OPENMPI_CMAKE_ON=	-DMPI_C_COMPILE_OPTIONS="-lpthread" \
 			-DMPI_Fortran_COMPILE_OPTIONS="-lpthread"
 
