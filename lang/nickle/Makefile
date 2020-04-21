@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nickle
-PORTVERSION=	2.85
+PORTVERSION=	2.86
 CATEGORIES=	lang
 MASTER_SITES=	http://www.nickle.org/release/
 
