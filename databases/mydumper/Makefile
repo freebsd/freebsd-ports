@@ -13,9 +13,12 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
-CMAKE_OFF=	BUILD_DOCS WITH_BINLOG
+USES=		cmake:insource compiler:c11 gnome mysql pkgconfig ssl
 USE_GNOME=	glib20
-USES=		cmake:insource gnome mysql pkgconfig
+
+CMAKE_ARGS=	${CMAKE_ARGS_${CHOSEN_COMPILER_TYPE}}
+CMAKE_ARGS_gcc=	-DMYSQL_LIBRARIES_atomic:FILEPATH=${LOCALBASE}/lib/gcc${GCC_DEFAULT}/libatomic.so
+CMAKE_OFF=	BUILD_DOCS WITH_BINLOG
 
 PLIST_FILES=	sbin/mydumper sbin/myloader
 
