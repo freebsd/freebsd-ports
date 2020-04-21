@@ -7,4 +7,5 @@ share/icons/hicolor/32x32/apps/nheko.png
 share/icons/hicolor/48x48/apps/nheko.png
 share/icons/hicolor/512x512/apps/nheko.png
 share/icons/hicolor/64x64/apps/nheko.png
+share/icons/hicolor/scalable/apps/nheko.svg
 share/metainfo/nheko.appdata.xml

@@ -2,8 +2,7 @@
 
 PORTNAME=		mtxclient
 DISTVERSIONPREFIX=	v
-DISTVERSION=		0.2.1
-PORTREVISION=	9
+DISTVERSION=		0.3.0
 CATEGORIES=		net-im
 
 MAINTAINER=	adridg@FreeBSD.org
@@ -19,14 +18,13 @@ LIB_DEPENDS=	libsodium.so:security/libsodium \
 		libboost_date_time.so:devel/boost-libs \
 		libboost_chrono.so:devel/boost-libs \
 		libboost_iostreams.so:devel/boost-libs \
-		libboost_random.so:devel/boost-libs \
 		libboost_regex.so:devel/boost-libs \
 		libboost_system.so:devel/boost-libs \
 		libboost_thread.so:devel/boost-libs \
 		libolm.so:security/olm
 
-USES=		cmake compiler:c++11-lang pkgconfig \
-		localbase:ldflags tar:xz
+USES=		cmake compiler:c++17-lang pkgconfig ssl \
+		tar:xz
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Nheko-Reborn

@@ -26,8 +26,11 @@ include/mtx/events/pinned_events.hpp
 include/mtx/events/power_levels.hpp
 include/mtx/events/redaction.hpp
 include/mtx/events/tag.hpp
+include/mtx/events/tombstone.hpp
 include/mtx/events/topic.hpp
 include/mtx/identifiers.hpp
+include/mtx/log.hpp
+include/mtx/pushrules.hpp
 include/mtx/requests.hpp
 include/mtx/responses.hpp
 include/mtx/responses/common.hpp
@@ -43,9 +46,12 @@ include/mtx/responses/profile.hpp
 include/mtx/responses/register.hpp
 include/mtx/responses/sync.hpp
 include/mtx/responses/version.hpp
+include/mtx/responses/well-known.hpp
+include/mtx/user_interactive.hpp
 include/mtxclient/crypto/client.hpp
 include/mtxclient/crypto/objects.hpp
 include/mtxclient/crypto/types.hpp
+include/mtxclient/crypto/utils.hpp
 include/mtxclient/http/client.hpp
 include/mtxclient/http/errors.hpp
 include/mtxclient/http/session.hpp
@@ -55,4 +61,4 @@ lib/cmake/MatrixClient/MatrixClientConfigVersion.cmake
 lib/cmake/MatrixClient/MatrixClientTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/MatrixClient/MatrixClientTargets.cmake
 lib/libmatrix_client.so
-lib/libmatrix_client.so.0.2.1
+lib/libmatrix_client.so.0.3.0

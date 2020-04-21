@@ -1,12 +1,55 @@
---- CMakeLists.txt.orig	2019-07-13 12:11:29 UTC
+--- CMakeLists.txt.orig	2020-04-21 08:42:46 UTC
 +++ CMakeLists.txt
-@@ -114,6 +114,9 @@ if(NOT MSVC)
-     endif()
+@@ -171,6 +171,9 @@ if(NOT MSVC)
+ 	endif()
  endif()
  
 +# Fix build with Qt 5.13
 +set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DQT_NO_DEPRECATED_WARNINGS=Y")
 +
  if (MSVC)
-   set(
-       CMAKE_CXX_FLAGS
+ 	set(
+ 		CMAKE_CXX_FLAGS
+@@ -391,35 +394,14 @@ set_package_properties(nlohmann_json PROPERTIES
+ 	TYPE REQUIRED
+ 	)
+ 
+-if(USE_BUNDLED_LMDBXX)
+-	hunter_add_package(lmdbxx)
+-	find_package(lmdbxx CONFIG REQUIRED)
+-else()
+-	if(NOT LMDBXX_INCLUDE_DIR)
+-		find_path(LMDBXX_INCLUDE_DIR
+-			NAMES lmdb++.h
+-			PATHS /usr/include
+-			/usr/local/include
+-			$ENV{LIB_DIR}/include
+-			$ENV{LIB_DIR}/include/lmdbxx)
++message(STATUS "Using LMDB: ${LMDBXX_INCLUDE_DIR}")
++add_library(lmdbxx INTERFACE)
++target_include_directories(lmdbxx INTERFACE ${LMDBXX_INCLUDE_DIR})
++add_library(lmdbxx::lmdbxx ALIAS lmdbxx)
+ 
+-	endif()
+-	add_library(lmdbxx INTERFACE)
+-	target_include_directories(lmdbxx INTERFACE ${LMDBXX_INCLUDE_DIR})
+-	add_library(lmdbxx::lmdbxx ALIAS lmdbxx)
+-endif()
+-
+-if(USE_BUNDLED_TWEENY)
+-	include(FetchContent)
+-	FetchContent_Declare(
+-		Tweeny
+-		GIT_REPOSITORY https://github.com/mobius3/tweeny.git
+-		GIT_TAG        6a5033372fe53c4c731c66c8a2d56261746cd85c #v3 <- v3 has unfixed warnings
+-		)
+-	FetchContent_MakeAvailable(Tweeny)
+-else()
+-	find_package(Tweeny REQUIRED)
+-endif()
++message(STATUS "Using Tweeny: ${TWEENY_INCLUDE_DIR}")
++add_library(tweeny INTERFACE)
++target_include_directories(tweeny INTERFACE ${TWEENY_INCLUDE_DIR})
+ 
+ # single instance functionality
+ set(QAPPLICATION_CLASS QApplication CACHE STRING "Inheritance class for SingleApplication")
