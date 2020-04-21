@@ -14549,3 +14549,4 @@ net/openmpi2||2020-04-19|Removed, deprecated by upstream
 www/py-ddgr|www/ddgr|2020-04-19|Duplicate port
 sysutils/py-halite||2020-04-19|Hasexpired: Uses deprecated version of python
 security/suricata5|security/suricata|2020-04-20|Has expired: security/suricata is already at version 5
+finance/py-ebaysdk-python|finance/py-ebaysdk|2020-04-21|Renamed to match Pypy package
