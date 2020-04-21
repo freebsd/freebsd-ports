@@ -22,7 +22,7 @@ BUILD_DEPENDS=	avr-gcc:devel/avr-gcc \
 		bash:shells/bash \
 		${LOCALBASE}/avr/lib/libc.a:devel/avr-libc
 
-USES=		gl gmake pathfix pkgconfig xorg
+USES=		compiler:c11 gl gmake pathfix pkgconfig xorg
 USE_GL=	gl glu glut
 PATHFIX_MAKEFILEIN=	Makefile
 USE_XORG=	xdamage xcb xext xfixes xrandr
