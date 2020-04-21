@@ -1,0 +1,6 @@
+Really Simple Syndication (RSS) is a family of formats that describe 'feeds,'
+specially constructed XML documents that allow an interested person to subscribe
+and receive updates from a particular web service. This portion of the standard
+library provides tooling to read and create these feeds.
+
+WWW: https://github.com/ruby/rss
