@@ -21,8 +21,9 @@ RUN_DEPENDS=	p5-Data-Dump-Streamer>=0:devel/p5-Data-Dump-Streamer \
 		p5-URI>=0:net/p5-URI
 TEST_DEPENDS=	p5-Test-Deep>=0:devel/p5-Test-Deep
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
