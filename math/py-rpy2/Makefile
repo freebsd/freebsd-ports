@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rpy2
-PORTVERSION=	3.2.7
+PORTVERSION=	3.3.1
 CATEGORIES=	math
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,15 +13,14 @@ COMMENT=	Python interface to the R Programming Language
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/gpl-2.0.txt
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.13.1:devel/py-cffi@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.10.0:devel/py-cffi@${PY_FLAVOR}
 LIB_DEPENDS=	libR.so:math/R \
 		libicui18n.so:devel/icu \
 		libpcre.so:devel/pcre
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.13.1:devel/py-cffi@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.10.0:devel/py-cffi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}pytz>=0:devel/py-pytz@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}simplegeneric>=0:devel/py-simplegeneric@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tzlocal>=0:devel/py-tzlocal@${PY_FLAVOR}
 
 USES=		compiler:c11 fortran python:3.6+ readline
