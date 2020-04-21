@@ -72,6 +72,7 @@ lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_credential_validator_accept_everythi
 lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_credential_validator_min_password_length.beam
 lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_credential_validator_password_regexp.beam
 lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_dead_letter.beam
+lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_definitions.beam
 lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_diagnostics.beam
 lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_direct.beam
 lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_disk_monitor.beam
@@ -121,6 +122,7 @@ lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_msg_store_gc.beam
 lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_networking.beam
 lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_node_monitor.beam
 lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_nodes.beam
+lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_os_signal_handler.beam
 lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_parameter_validation.beam
 lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_password.beam
 lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_password_hashing_md5.beam
@@ -207,6 +209,7 @@ lib/rabbitmq_server-%%VERSION%%/plugins/base64url-0.0.1.ez
 lib/rabbitmq_server-%%VERSION%%/plugins/cowboy-2.6.1.ez
 lib/rabbitmq_server-%%VERSION%%/plugins/cowlib-2.7.0.ez
 lib/rabbitmq_server-%%VERSION%%/plugins/credentials_obfuscation-1.1.0.ez
+lib/rabbitmq_server-%%VERSION%%/plugins/gen_batch_server-0.8.2.ez
 lib/rabbitmq_server-%%VERSION%%/plugins/goldrush-0.1.9.ez
 lib/rabbitmq_server-%%VERSION%%/plugins/jose-1.10.1.ez
 lib/rabbitmq_server-%%VERSION%%/plugins/jsx-2.9.0.ez
