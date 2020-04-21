@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libsemigroups
-PORTVERSION=	1.0.7
+PORTVERSION=	1.0.9
 DISTVERSIONPREFIX=	v
 CATEGORIES=	math
 
@@ -11,8 +11,8 @@ COMMENT=	C++ library for semigroups and monoids
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	libfmt>0:devel/libfmt	\
-		HPCombi>0:math/hpcombi
+BUILD_DEPENDS=	HPCombi>0:math/hpcombi
+LIB_DEPENDS=	libfmt.so:devel/libfmt
 
 USE_GITHUB=	yes
 
