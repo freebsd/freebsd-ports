@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rouge
-PORTVERSION=	3.17.0
+PORTVERSION=	3.18.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -18,7 +18,5 @@ USE_RUBY=	yes
 NO_ARCH=	yes
 
 PLIST_FILES=	bin/rougify
-
-CONFLICTS_INSTALL=	rubygem-rouge2
 
 .include <bsd.port.mk>
