@@ -3,7 +3,7 @@
 
 PORTNAME=	scalapack
 PORTVERSION=	2.0.2
-PORTREVISION=	20
+PORTREVISION=	21
 CATEGORIES=	math
 MASTER_SITES=	NL
 DISTFILES=	scalapack-${PORTVERSION}.tgz manpages.tgz
@@ -50,9 +50,9 @@ ATLAS_LIB_DEPENDS=	libatlas.so:math/atlas
 BLAS_LIB_DEPENDS=	libblas.so:math/blas \
 			liblapack.so:math/lapack
 
-OPENMPI_BUILD_DEPENDS=	openmpi3>0:net/openmpi3
-OPENMPI_RUN_DEPENDS=	openmpi3>0:net/openmpi3
-OPENMPI_CMAKE_ON=	-DMPI_BASE_DIR=${LOCALBASE}/mpi/openmpi3
+OPENMPI_BUILD_DEPENDS=	openmpi>0:net/openmpi
+OPENMPI_RUN_DEPENDS=	openmpi>0:net/openmpi
+OPENMPI_CMAKE_ON=	-DMPI_BASE_DIR=${LOCALBASE}/mpi/openmpi
 
 MPICH_BUILD_DEPENDS=	${LOCALBASE}/bin/mpicc:net/mpich
 MPICH_RUN_DEPENDS=	${LOCALBASE}/bin/mpicc:net/mpich
@@ -69,8 +69,8 @@ LAPACK=		-llapack
 .endif
 
 .if ${PORT_OPTIONS:MOPENMPI}
-MPIF77=	${LOCALBASE}/mpi/openmpi3/bin/mpif77
-MPICC=	${LOCALBASE}/mpi/openmpi3/bin/mpicc
+MPIF77=	${LOCALBASE}/mpi/openmpi/bin/mpif77
+MPICC=	${LOCALBASE}/mpi/openmpi/bin/mpicc
 .else
 MPIF77=	${LOCALBASE}/bin/mpif77
 MPICC=	${LOCALBASE}/bin/mpicc
@@ -104,6 +104,14 @@ NOOPT=	-O0
 # USES=fortran already forces FC to a supported fortran compiler;
 # assume mpicc points to a compatible compiler and force that, too.
 CC=	${MPICC}
+
+post-patch:
+	${REINPLACE_CMD} -e 's|MPI_Type_struct|MPI_Type_create_struct|' \
+		${WRKSRC}/BLACS/SRC/igamx2d_.c ${WRKSRC}/BLACS/SRC/cgamn2d_.c \
+		${WRKSRC}/BLACS/SRC/dgamn2d_.c ${WRKSRC}/BLACS/SRC/zgamn2d_.c \
+		${WRKSRC}/BLACS/SRC/sgamn2d_.c ${WRKSRC}/BLACS/SRC/igamn2d_.c \
+		${WRKSRC}/BLACS/SRC/cgamx2d_.c ${WRKSRC}/BLACS/SRC/dgamx2d_.c \
+		${WRKSRC}/BLACS/SRC/zgamx2d_.c ${WRKSRC}/BLACS/SRC/sgamx2d_.c
 
 pre-configure:
 	${CP} -p ${WRKSRC}/Makefile ${WRKSRC}/Makefile.dist
