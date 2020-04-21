@@ -510,6 +510,10 @@ share/pixmaps/solarus-quest-editor.png
 %%DATADIR%%/assets/initial_quest/data/tilesets/castle.tiles.png
 %%DATADIR%%/assets/initial_quest/data/tilesets/house.dat
 %%DATADIR%%/assets/initial_quest/data/tilesets/house.tiles.png
+%%DATADIR%%/assets/initial_quest/data/tilesets/oceanset_inside.dat
+%%DATADIR%%/assets/initial_quest/data/tilesets/oceanset_inside.tiles.png
+%%DATADIR%%/assets/initial_quest/data/tilesets/oceanset_outside.dat
+%%DATADIR%%/assets/initial_quest/data/tilesets/oceanset_outside.tiles.png
 %%DATADIR%%/assets/initial_quest/data/tilesets/outside.dat
 %%DATADIR%%/assets/initial_quest/data/tilesets/outside.tiles.png
 %%DATADIR%%/translations/solarus_editor_es.qm
