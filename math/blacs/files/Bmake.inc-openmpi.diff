@@ -32,7 +32,7 @@
  #  -------------------------------------
 -   MPIdir = /usr/local/mpich
 -   MPILIBdir = $(MPIdir)/lib/
-+   MPIdir = @LOCALBASE@/mpi/openmpi3
++   MPIdir = @LOCALBASE@/mpi/openmpi
 +   MPILIBdir = 
     MPIINCdir = $(MPIdir)/include
 -   MPILIB = $(MPILIBdir)/libmpich.a
@@ -78,14 +78,14 @@
 -   CC             = gcc
 -   CCFLAGS        = -O4
 -   CCLOADER       = $(CC)
-+   F77            = @LOCALBASE@/mpi/openmpi3/bin/mpif77
++   F77            = @LOCALBASE@/mpi/openmpi/bin/mpif77
 +   F77NO_OPTFLAGS = @F77EXTRAFLAGS@
 +   F77FLAGS       = @FFLAGS@
-+   F77LOADER      = @LOCALBASE@/mpi/openmpi3/bin/mpif77
++   F77LOADER      = @LOCALBASE@/mpi/openmpi/bin/mpif77
 +   F77LOADFLAGS   = @FFLAGS@
-+   CC             = @LOCALBASE@/mpi/openmpi3/bin/mpicc
++   CC             = @LOCALBASE@/mpi/openmpi/bin/mpicc
 +   CCFLAGS        = @CFLAGS@
-+   CCLOADER       = @LOCALBASE@/mpi/openmpi3/bin/mpicc
++   CCLOADER       = @LOCALBASE@/mpi/openmpi/bin/mpicc
     CCLOADFLAGS    = 
 -
  #  --------------------------------------------------------------------------

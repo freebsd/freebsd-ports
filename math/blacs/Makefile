@@ -3,7 +3,7 @@
 
 PORTNAME=	blacs
 PORTVERSION=	1.7
-PORTREVISION=	36
+PORTREVISION=	37
 CATEGORIES=	math
 MASTER_SITES=	NETLIB/blacs
 DISTNAME=	BLACS
@@ -26,7 +26,7 @@ OPTIONS_DEFAULT=	DOCS MPICH
 DOCS_DISTFILES=	blacs_install.ps f77blacsqref.ps lawn94.ps \
 		cblacsqref.ps  mpi_prop.ps mpiblacs_issues.ps
 
-OPENMPI_LIB_DEPENDS=	libmpi.so:net/openmpi3
+OPENMPI_LIB_DEPENDS=	libmpi.so:net/openmpi
 OPENMPI_EXTRA_PATCHES=	${FILESDIR}/Bmake.inc-openmpi.diff
 
 MPICH_LIB_DEPENDS=	libmpich.so:net/mpich2
