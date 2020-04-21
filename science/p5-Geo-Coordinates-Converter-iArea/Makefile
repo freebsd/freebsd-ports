@@ -19,8 +19,9 @@ RUN_DEPENDS=	p5-CDB_File>=0.96:databases/p5-CDB_File \
 		p5-File-ShareDir>=1.02:devel/p5-File-ShareDir \
 		p5-Geo-Coordinates-Converter>=0.09:science/p5-Geo-Coordinates-Converter
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
