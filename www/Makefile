@@ -1757,6 +1757,7 @@
     SUBDIR += py-scrapy
     SUBDIR += py-seafdav
     SUBDIR += py-seafobj
+    SUBDIR += py-secure-cookie
     SUBDIR += py-selector
     SUBDIR += py-selenium
     SUBDIR += py-slimit

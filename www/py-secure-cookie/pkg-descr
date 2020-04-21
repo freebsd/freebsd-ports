@@ -1,0 +1,6 @@
+Provides interfaces for secure cookies and sessions in WSGI applications. 
+Secure cookies are cryptographically signed (but not encrypted) to prevent 
+tampering. Sessions are data associated with a given user across requests and 
+responses.
+
+WWW: https://github.com/pallets/secure-cookie
