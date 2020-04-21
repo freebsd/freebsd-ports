@@ -13,6 +13,13 @@ https://docs.microsoft.com/en-us/cli/azure/azure-cli-vm-tutorial
 In this tutorial, you learn all of the steps involved in setting up a virtual
 machine with the Azure CLI. The tutorial also covers output queries, Azure
 resource reuse, and resource cleanup.
+
+Through terminal there is a simple way to sign in using device code:
+
+  $ az login --use-device-code
+
+Then open a browser page at https://aka.ms/devicelogin and enter the
+authorization code displayed in your terminal.
 EOM
 	type: install
 }
