@@ -135,6 +135,8 @@ include/KGantt/KGanttConstraintGraphicsItem
 include/KGantt/KGanttConstraintModel
 include/KGantt/KGanttConstraintProxy
 include/KGantt/KGanttDateTimeGrid
+include/KGantt/KGanttDateTimeTimeLine
+include/KGantt/KGanttDateTimeTimeLineDialog
 include/KGantt/KGanttForwardingProxyModel
 include/KGantt/KGanttGlobal
 include/KGantt/KGanttGraphicsItem
@@ -143,6 +145,7 @@ include/KGantt/KGanttGraphicsView
 include/KGantt/KGanttItemDelegate
 include/KGantt/KGanttLegend
 include/KGantt/KGanttListViewRowController
+include/KGantt/KGanttPenStyleComboBox
 include/KGantt/KGanttProxyModel
 include/KGantt/KGanttStyleOptionGanttItem
 include/KGantt/KGanttSummaryHandlingProxyModel
@@ -150,12 +153,15 @@ include/KGantt/KGanttTreeViewRowController
 include/KGantt/KGanttView
 include/KGantt/kgantt_export.h
 include/KGantt/kganttabstractgrid.h
+include/KGantt/kganttabstractgrid_p.h
 include/KGantt/kganttabstractrowcontroller.h
 include/KGantt/kganttconstraint.h
 include/KGantt/kganttconstraintgraphicsitem.h
 include/KGantt/kganttconstraintmodel.h
 include/KGantt/kganttconstraintproxy.h
 include/KGantt/kganttdatetimegrid.h
+include/KGantt/kganttdatetimetimeline.h
+include/KGantt/kganttdatetimetimelinedialog.h
 include/KGantt/kganttforwardingproxymodel.h
 include/KGantt/kganttglobal.h
 include/KGantt/kganttgraphicsitem.h
@@ -164,6 +170,7 @@ include/KGantt/kganttgraphicsview.h
 include/KGantt/kganttitemdelegate.h
 include/KGantt/kganttlegend.h
 include/KGantt/kganttlistviewrowcontroller.h
+include/KGantt/kganttpenstylecombobox.h
 include/KGantt/kganttproxymodel.h
 include/KGantt/kganttstyleoptionganttitem.h
 include/KGantt/kganttsummaryhandlingproxymodel.h
@@ -189,8 +196,6 @@ lib/libKGantt.so.%%SHLIB_VER%%
 %%QT_MKSPECDIR%%/modules/qt_KGantt.pri
 share/locale/ar/LC_MESSAGES/kchart_qt.qm
 share/locale/ar/LC_MESSAGES/kgantt_qt.qm
-share/locale/ast/LC_MESSAGES/kchart_qt.qm
-share/locale/ast/LC_MESSAGES/kgantt_qt.qm
 share/locale/bg/LC_MESSAGES/kgantt_qt.qm
 share/locale/bs/LC_MESSAGES/kchart_qt.qm
 share/locale/bs/LC_MESSAGES/kgantt_qt.qm
@@ -208,6 +213,10 @@ share/locale/en_GB/LC_MESSAGES/kchart_qt.qm
 share/locale/en_GB/LC_MESSAGES/kgantt_qt.qm
 share/locale/es/LC_MESSAGES/kchart_qt.qm
 share/locale/es/LC_MESSAGES/kgantt_qt.qm
+share/locale/et/LC_MESSAGES/kchart_qt.qm
+share/locale/et/LC_MESSAGES/kgantt_qt.qm
+share/locale/eu/LC_MESSAGES/kchart_qt.qm
+share/locale/eu/LC_MESSAGES/kgantt_qt.qm
 share/locale/fi/LC_MESSAGES/kchart_qt.qm
 share/locale/fi/LC_MESSAGES/kgantt_qt.qm
 share/locale/fr/LC_MESSAGES/kchart_qt.qm
