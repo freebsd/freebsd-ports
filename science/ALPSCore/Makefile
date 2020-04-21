@@ -3,7 +3,7 @@
 PORTNAME=	ALPSCore
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.2.0
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	science
 
 MAINTAINER=	ports@FreeBSD.org
@@ -37,15 +37,15 @@ DOXYGEN_CMAKE_BOOL=	Documentation
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 
 OPENMPI_CMAKE_BOOL=	ENABLE_MPI
-OPENMPI_LIB_DEPENDS=	libmpi.so:net/openmpi3
+OPENMPI_LIB_DEPENDS=	libmpi.so:net/openmpi
 
 PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MOPENMPI}
-CC=	${LOCALBASE}/mpi/openmpi3/bin/mpicc
-CXX=	${LOCALBASE}/mpi/openmpi3/bin/mpicxx
+CC=	${LOCALBASE}/mpi/openmpi/bin/mpicc
+CXX=	${LOCALBASE}/mpi/openmpi/bin/mpicxx
 .endif
 
 post-install-DOXYGEN-on:
