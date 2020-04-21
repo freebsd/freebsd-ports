@@ -1,24 +1,21 @@
 # $FreeBSD$
 
-PORTNAME=	clone
-PORTVERSION=	1.0.7
-PORTREVISION=	5
-CATEGORIES=	sysutils
-MASTER_SITES=	http://cyclaero.com/public/clone/
+PORTNAME=		clone
+DISTVERSIONPREFIX=	v
+DISTVERSION=		1.0.8
+CATEGORIES=		sysutils
 
-MAINTAINER=	cyclaero@gmail.com
-COMMENT=	File tree cloning tool
+MAINTAINER=		cyclaero@gmail.com
+COMMENT=		File tree cloning tool
 
-BROKEN=		unfetchable
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2020-05-05
+LICENSE=		BSD2CLAUSE
 
-LICENSE=	BSD2CLAUSE
+USE_GITHUB=		yes
+GH_ACCOUNT=		cyclaero
+GH_PROJECT=		clone
 
-USES=		compiler:c11
-
-PLIST_FILES=	bin/clone \
-		man/man1/clone.1.gz
+PLIST_FILES=		bin/clone \
+			man/man1/clone.1.gz
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/clone
