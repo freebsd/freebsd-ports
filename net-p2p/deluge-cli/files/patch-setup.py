@@ -1,18 +1,19 @@
---- setup.py.orig	2016-07-20 14:23:28 UTC
+--- setup.py.orig	2019-06-08 20:57:25 UTC
 +++ setup.py
-@@ -215,6 +215,7 @@ except ImportError:
-     build_libtorrent = True
- else:
-     build_libtorrent = False
-+build_libtorrent = False
- 
- if build_libtorrent:
-     got_libtorrent = False
-@@ -515,6 +516,7 @@ if not windows_check() and not osx_check
- 
-     if os.path.exists(desktop_data):
-         _data_files.append(('share/applications', [desktop_data]))
-+    _data_files = []
- 
- entry_points = {
-     "console_scripts": [
+@@ -466,16 +466,6 @@ if not windows_check() and not osx_check():
+                 ['deluge/ui/data/icons/hicolor/scalable/apps/deluge.svg'],
+             ),
+             ('share/pixmaps', ['deluge/ui/data/pixmaps/deluge.png']),
+-            (
+-                'share/man/man1',
+-                [
+-                    'docs/man/deluge.1',
+-                    'docs/man/deluged.1',
+-                    'docs/man/deluge-gtk.1',
+-                    'docs/man/deluge-web.1',
+-                    'docs/man/deluge-console.1',
+-                ],
+-            ),
+         ]
+     )
+     if os.path.isfile(desktop_data):
