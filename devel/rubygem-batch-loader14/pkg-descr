@@ -1,0 +1,4 @@
+BatchLoader provides a generic lazy batching mechanism to avoid N+1 DB queries,
+HTTP queries, etc.
+
+WWW: https://github.com/exAspArk/batch-loader
