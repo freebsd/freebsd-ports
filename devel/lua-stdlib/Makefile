@@ -17,8 +17,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	${LUA_PKGNAMEPREFIX}stdlib-debug>=0:devel/lua-stdlib-debug@${LUA_FLAVOR} \
 		${LUA_PKGNAMEPREFIX}stdlib-normalize>=2.0:devel/lua-stdlib-normalize@${LUA_FLAVOR}
 
-OPTIONS_DEFINE=	DOCS
-
 USES=		lua:module
 
 CONFIGURE_ARGS=	--docdir=${DOCSDIR} LUA=${LUA_CMD}
@@ -30,5 +28,7 @@ GH_PROJECT=	lua-stdlib
 USE_GITHUB=	yes
 
 DOCSDIR=	${LUA_DOCSDIR}
+
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.mk>
