@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Validate_ISPN
-PORTVERSION=	0.6.1
+PORTVERSION=	0.7.0
 CATEGORIES=	textproc pear
 
 MAINTAINER=	dbaio@FreeBSD.org
