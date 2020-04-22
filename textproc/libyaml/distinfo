@@ -1,3 +1,3 @@
-TIMESTAMP = 1554956021
-SHA256 (repacked/yaml-0.2.2.tar.gz) = 4a9100ab61047fd9bd395bcef3ce5403365cafd55c1e0d0299cde14958e47be9
-SIZE (repacked/yaml-0.2.2.tar.gz) = 609359
+TIMESTAMP = 1587538937
+SHA256 (yaml-0.2.4.tar.gz) = d80aeda8747b7c26fbbfd87ab687786e58394a8435ae3970e79cb97882e30557
+SIZE (yaml-0.2.4.tar.gz) = 608448
