@@ -13,8 +13,6 @@ COMMENT=	Easy email delivery and testing for Ruby
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-BROKEN_RUBY24=	yes
-
 RUN_DEPENDS=	rubygem-actionpack60>=${PORTVERSION}:www/rubygem-actionpack60 \
 		rubygem-actionview60>=${PORTVERSION}:devel/rubygem-actionview60 \
 		rubygem-activejob60>=${PORTVERSION}:devel/rubygem-activejob60 \
