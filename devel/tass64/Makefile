@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	tass64
-PORTVERSION=	1.54.1900
+PORTVERSION=	1.55.2200
 CATEGORIES=	devel
-MASTER_SITES=	SF/${PORTNAME}/source
+MASTER_SITES=	SF/tass64/source
 DISTNAME=	64tass-${PORTVERSION}-src
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	6502/65C02/R65C02/W65C02/65CE02/65816/DTV/65EL02 Turbo Assembler
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Multi pass optimizing macro assembler for 65xx series processors
 
 LICENSE=	GPLv2+ LGPL20+ LGPL21+ MIT
 LICENSE_COMB=	multi
@@ -20,8 +20,9 @@ LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-my_getopt
 USES=		gmake zip
 
 MAKE_ARGS=	-w CC="${CC}" CFLAGS="${CFLAGS}" LD="${CC}" LDFLAGS="${LDFLAGS}"
+
 PLIST_FILES=	bin/tass64
-PORTDOCS=	*
+PORTDOCS=	README README.html
 
 OPTIONS_DEFINE=	DOCS
 
@@ -30,8 +31,6 @@ do-install:
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for doc in README README.html
-	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${WRKSRC}/README* ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
