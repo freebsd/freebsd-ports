@@ -60,6 +60,7 @@
     SUBDIR += bruteforceblocker
     SUBDIR += bsdsfv
     SUBDIR += bsmtrace
+    SUBDIR += bsmtrace3
     SUBDIR += bugs
     SUBDIR += bzrtp
     SUBDIR += ca_root_nss

@@ -1,0 +1,10 @@
+[
+{ type: install
+  message: <<EOM
+Please note a sample configuration file for bsmtrace has been installed
+in %%EXAMPLESDIR%%.  This file will not be
+suitable for your own system, but can be used as a reference to get
+started.
+EOM
+}
+]

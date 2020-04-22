@@ -1,0 +1,4 @@
+sbin/bsmtrace
+share/man/man1/bsmtrace.1.gz
+share/man/man5/bsmtrace.conf.5.gz
+%%EXAMPLESDIR%%/bsmtrace.conf
