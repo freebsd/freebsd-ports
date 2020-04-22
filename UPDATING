@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20200422:
+  AFFECTS: users of devel/kuya
+  AUTHOR: brooks@FreeBSD.org
+
+  A tests group has been added and the tests user should be a member
+  of it by default rather than nobody. You should update your password
+  database to match (change the group from 65534 to 977 after updating).
+
 20200418:
   AFFECTS: users of mail/mailman
   AUTHOR: mandree@FreeBSD.org

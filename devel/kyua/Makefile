@@ -23,6 +23,7 @@ USES=		lua pkgconfig
 
 TESTS_USER=	tests
 USERS=		${TESTS_USER}
+GROUPS=		tests
 SUB_FILES=	kyua.conf
 SUB_LIST=	TESTS_USER=${TESTS_USER}
 

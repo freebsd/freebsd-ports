@@ -917,7 +917,7 @@ boinc:*:973:
 radicale:*:974:
 unifi:*:975:
 minetest:*:976:
-# free: 977
+tests:*:977:
 _dnscrypt-proxy:*:978:
 ums:*:979:
 hbase:*:980:
