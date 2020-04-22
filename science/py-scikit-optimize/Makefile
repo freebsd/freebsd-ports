@@ -24,4 +24,9 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
+OPTIONS_DEFINE=	PLOTS
+PLOTS_DESC=	Plotting support
+
+PLOTS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>=2.0.0:math/py-matplotlib@${PY_FLAVOR}
+
 .include <bsd.port.mk>
