@@ -4,4 +4,4 @@ options for setting normalsize at 20pt (default), 17pt, 25pt or 30pt,
 new macros for starting new foils, for special environments like Theorem
 and Proof, simple macros to control the headline and footline.
 
-WWW: http://www.ctan.org/tex-archive/nonfree/macros/latex/contrib/foiltex/
+WWW: https://ctan.org/pkg/foiltex
