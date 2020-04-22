@@ -28,8 +28,8 @@ MAKE_ARGS=	FORMATS="${DOCFORMAT}" \
 		INSTALL_COMPRESSED= \
 		DOCDIR=${STAGEDIR}${PREFIX}/${DOCBASE} \
 		DOCOWN=${SHAREOWN} \
-		DOCGRP=${SHAREGRP}
-MAKE_JOBS_UNSAFE=	yes
+		DOCGRP=${SHAREGRP} \
+		DISPLAY=""
 NO_ARCH=	yes
 
 # To populate correctly the stage directory
