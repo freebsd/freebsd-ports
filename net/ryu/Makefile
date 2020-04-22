@@ -3,7 +3,7 @@
 PORTNAME=	ryu
 PORTVERSION=	4.26
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -20,7 +20,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}eventlet>0:net/py-eventlet@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}paramiko>0:security/py-paramiko@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}netaddr>0:net/py-netaddr@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}oslo.config>=1.15.0:devel/py-oslo.config@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}msgpack>=0.3.0:devel/py-msgpack@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.4.0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ovs>0:devel/py-ovs@${PY_FLAVOR} \
@@ -43,6 +42,12 @@ GH_ACCOUNT=	osrg
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tinyrpc0>0:devel/py-tinyrpc0@${PY_FLAVOR}
 .else
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tinyrpc>0:devel/py-tinyrpc@${PY_FLAVOR}
+.endif
+
+.if ${PYTHON_REL} < 3600
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}oslo.config7>=1.15.0:devel/py-oslo.config7@${PY_FLAVOR}
+.else
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}oslo.config>=1.15.0:devel/py-oslo.config@${PY_FLAVOR}
 .endif
 
 .include <bsd.port.post.mk>
