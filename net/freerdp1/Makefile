@@ -3,7 +3,7 @@
 
 PORTNAME=	freerdp
 PORTVERSION=	1.2.0
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	net comms
 PKGNAMESUFFIX=	1
 
@@ -13,6 +13,8 @@ COMMENT=	Free implementation of Remote Desktop Protocol
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Superseded by the freerdp port/package
+EXPIRATION_DATE=2020-06-06
 BROKEN_FreeBSD_11_powerpc64=	fails to build: ninja: error: build.ninja:315: bad $-escape (literal $ must be written as $$)
 BROKEN_FreeBSD_12_powerpc64=	fails to build: ninja: error: build.ninja:315: bad $-escape (literal $ must be written as $$)
 
