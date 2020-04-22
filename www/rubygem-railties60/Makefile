@@ -13,8 +13,6 @@ COMMENT=	Rails internals bootup, plugins, generators, and rake tasks
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-BROKEN_RUBY24=	yes
-
 RUN_DEPENDS=	rubygem-actionpack60>=${PORTVERSION}:www/rubygem-actionpack60 \
 		rubygem-activesupport60>=${PORTVERSION}:devel/rubygem-activesupport60 \
 		rubygem-method_source>=0:devel/rubygem-method_source \
