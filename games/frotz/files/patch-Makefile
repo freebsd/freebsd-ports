@@ -1,11 +1,37 @@
---- Makefile.orig	2019-12-18 22:55:03 UTC
-+++ Makefile
-@@ -297,7 +297,7 @@ ifneq ($(and $(wildcard $(GIT_DIR)),$(sh
- 		$(NAME)src/doc/*.6 $(NAME)src/doc/frotz.conf* \
- 		$(NAME)src/doc/Xresources  > /dev/null
- else
--        @echo "Not in a git repository or git command not found.  Cannot make a tarball."
-+	@echo "Not in a git repository or git command not found.  Cannot make a tarball."
- endif
- 
- all: $(FROTZ_BIN) $(DFROTZ_BIN) $(SFROTZ_BIN)
+--- Makefile.orig	2020-02-12 08:22:40.000000000 -0800
++++ Makefile	2020-03-30 21:03:40.586161000 -0700
+@@ -108,6 +108,9 @@
+     RANLIB ?= $(shell which ranlib)
+     AR ?= $(shell which ar)
+     PKG_CONFIG ?= pkg-config
++    ifeq ($(shell which $(PKG_CONFIG)),)
++	NO_PKG_CONFIG = yes
++    endif
+     # For now, assume !windows == unix.
+     OS_TYPE ?= unix
+     UNAME_S := $(shell uname -s)
+@@ -122,13 +125,19 @@
+ 	LDFLAGS += -L/opt/local/lib
+ 	CURSES_LDFLAGS += -lcurses
+     else
+-    # If we have pkg-config, that good.  Otherwise maybe warn later.
+-    ifneq (, $(shell which $(PKG_CONFIG)))
+-	CURSES_LDFLAGS += $(shell $(PKG_CONFIG) $(CURSES) --libs)
+-	CURSES_CFLAGS += $(shell $(PKG_CONFIG) $(CURSES) --cflags)
++
++    # If we don't have pkg-config, try something obvious
++    ifdef NO_PKG_CONFIG
++	CURSES_LDFLAGS += -l$(CURSES)
+     else
+-	NO_PKG_CONFIG = yes
++	ifneq ($(shell $(PKG_CONFIG) --exists),)
++	    CURSES_LDFLAGS += $(shell $(PKG_CONFIG) $(CURSES) --libs)
++	    CURSES_CFLAGS += $(shell $(PKG_CONFIG) $(CURSES) --cflags)
++	else
++	    CURSES_LDFLAGS += -l$(CURSES)
++	endif
+     endif
++
+     # NetBSD
+     ifeq ($(UNAME_S),NetBSD)
+ 	NETBSD = yes
