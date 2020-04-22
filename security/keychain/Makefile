@@ -4,8 +4,6 @@
 PORTNAME=	keychain
 PORTVERSION=	2.8.5
 CATEGORIES=	security
-MASTER_SITES=	http://www.funtoo.org/archive/keychain/ \
-		GENTOO
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	User-friendly front-end to ssh-agent(1)
@@ -13,7 +11,9 @@ COMMENT=	User-friendly front-end to ssh-agent(1)
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-USES=		tar:bzip2
+USE_GITHUB=	yes
+GH_ACCOUNT=	funtoo
+
 OPTIONS_DEFINE=	DOCS
 
 NO_BUILD=	yes
