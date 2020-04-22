@@ -13,8 +13,6 @@ COMMENT=	Job class declarations for a variety of queueing backends
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-BROKEN_RUBY24=	yes
-
 RUN_DEPENDS=	rubygem-activesupport60>=${PORTVERSION}:devel/rubygem-activesupport60 \
 		rubygem-globalid-rails60>=0.3.6:databases/rubygem-globalid-rails60
 
