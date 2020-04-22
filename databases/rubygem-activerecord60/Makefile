@@ -13,8 +13,6 @@ COMMENT=	Object-relational mapping layer for Rails MVC Framework
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-BROKEN_RUBY24=	yes
-
 RUN_DEPENDS=	rubygem-activemodel60>=${PORTVERSION}:databases/rubygem-activemodel60 \
 		rubygem-activesupport60>=${PORTVERSION}:devel/rubygem-activesupport60
 
