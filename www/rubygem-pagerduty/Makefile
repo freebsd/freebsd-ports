@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pagerduty
-PORTVERSION=	2.1.3
+PORTVERSION=	3.0.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
