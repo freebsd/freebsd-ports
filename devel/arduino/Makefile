@@ -15,6 +15,9 @@ COMMENT=	Open-source electronics prototyping platform
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
+# Confirmed for ARCHS below. Arm, PowerPC and Sparc untested. (Feedback welcome)
+ONLY_FOR_ARCHS=	amd64 i386
+
 RUN_DEPENDS=	${JAVA_HOME}/jre/lib/ext/RXTXcomm.jar:comms/rxtx \
 		${LOCALBASE}/bin/avrdude:devel/avrdude \
 		${LOCALBASE}/avr/include/avr/io.h:devel/avr-libc
@@ -36,9 +39,6 @@ PLIST_SUB=	ARCH=${ARCH:S|i386||:S|amd64|64|}
 SUB_FILES=	arduino pkg-message
 SUB_LIST=	PORTNAME=${PORTNAME} LINUXBASE=${PREFIX}
 
-# Confirmed for ARCHS below. Arm, PowerPC and Sparc untested. (Feedback welcome)
-ONLY_FOR_ARCHS=	i386 amd64
-
 REINPLACE_ARGS=	-i ""
 
 DESKTOP_ENTRIES=	"Arduino" "Arduino IDE" \
@@ -46,6 +46,7 @@ DESKTOP_ENTRIES=	"Arduino" "Arduino IDE" \
 			"arduino" "Development;IDE;" false
 
 OPTIONS_DEFINE=		ATMEGA644P DOCS EXAMPLES UARDUNO
+OPTIONS_SUB=
 ATMEGA644P_DESC=	ATmega644p patches
 DOCS_DESC=		Install the reference documents
 UARDUNO_DESC=		Kernel module for Arduino Uno USB interface
@@ -64,30 +65,19 @@ EXTRA_PATCHES+=	\
 	${FILESDIR}/extrapatch-hardware-arduino-variants-atmega644p-pins_arduino.h
 .endif
 
-.if empty(PORT_OPTIONS:MDOCS)
-PLIST_SUB+=	REFDOCS="@comment "
-.else
-PLIST_SUB+=	REFDOCS=""
+.if ! empty(PORT_OPTIONS:MDOCS)
 INSLIST+=	reference
 .endif
 
 FIND_EXCLUDES=	! -name *.orig
 
 .if empty(PORT_OPTIONS:MEXAMPLES)
-PLIST_SUB+=	EXAMPLES="@comment "
 FIND_EXCLUDES+=	! -path */examples ! -path */examples/*
 .else
-PLIST_SUB+=	EXAMPLES=""
 INSLIST+=	examples
 .endif
 
 FIND_EXPR=	"${FIND_EXCLUDES} -prune"
-
-.if ${PORT_OPTIONS:MATMEGA644P}
-PLIST_SUB+=	ATMEGA644P=""
-.else
-PLIST_SUB+=	ATMEGA644P="@comment "
-.endif
 
 .if ${PORT_OPTIONS:MATMEGA644P}
 pre-patch:
