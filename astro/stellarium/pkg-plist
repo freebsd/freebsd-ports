@@ -2369,6 +2369,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/textures/saturn_rings_radial.png
 %%DATADIR%%/textures/sedna.png
 %%DATADIR%%/textures/star16x16.png
+%%DATADIR%%/textures/star16x16_rays.png
 %%DATADIR%%/textures/sun.png
 %%DATADIR%%/textures/telescope.png
 %%DATADIR%%/textures/tethys.png
@@ -2432,6 +2433,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/translations/stellarium-planetary-features/ku.qm
 %%DATADIR%%/translations/stellarium-planetary-features/ky.qm
 %%DATADIR%%/translations/stellarium-planetary-features/la.qm
+%%DATADIR%%/translations/stellarium-planetary-features/lb.qm
 %%DATADIR%%/translations/stellarium-planetary-features/lt.qm
 %%DATADIR%%/translations/stellarium-planetary-features/lv.qm
 %%DATADIR%%/translations/stellarium-planetary-features/mk.qm
@@ -2522,6 +2524,7 @@ share/pixmaps/stellarium.xpm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-remotecontrol/ku.qm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-remotecontrol/ky.qm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-remotecontrol/la.qm
+%%SCRIPTS%%%%DATADIR%%/translations/stellarium-remotecontrol/lb.qm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-remotecontrol/lt.qm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-remotecontrol/lv.qm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-remotecontrol/mk.qm
@@ -2612,6 +2615,7 @@ share/pixmaps/stellarium.xpm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-scripts/ku.qm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-scripts/ky.qm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-scripts/la.qm
+%%SCRIPTS%%%%DATADIR%%/translations/stellarium-scripts/lb.qm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-scripts/lt.qm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-scripts/lv.qm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-scripts/mk.qm
@@ -2714,6 +2718,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/translations/stellarium-skycultures/ku.qm
 %%DATADIR%%/translations/stellarium-skycultures/ky.qm
 %%DATADIR%%/translations/stellarium-skycultures/la.qm
+%%DATADIR%%/translations/stellarium-skycultures/lb.qm
 %%DATADIR%%/translations/stellarium-skycultures/lt.qm
 %%DATADIR%%/translations/stellarium-skycultures/lv.qm
 %%DATADIR%%/translations/stellarium-skycultures/mk.qm
@@ -2820,6 +2825,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/translations/stellarium/ku.qm
 %%DATADIR%%/translations/stellarium/ky.qm
 %%DATADIR%%/translations/stellarium/la.qm
+%%DATADIR%%/translations/stellarium/lb.qm
 %%DATADIR%%/translations/stellarium/lt.qm
 %%DATADIR%%/translations/stellarium/lv.qm
 %%DATADIR%%/translations/stellarium/mk.qm
