@@ -470,6 +470,7 @@
     SUBDIR += deployer
     SUBDIR += derelict-sdl2
     SUBDIR += derelict-util
+    SUBDIR += desed
     SUBDIR += desktop-file-utils
     SUBDIR += dev86
     SUBDIR += devhelp

@@ -1,0 +1,13 @@
+Desed is a command line tool with beautiful TUI that provides users with
+a comfortable interface and practical debugger, used to step through complex
+sed scripts.
+
+Some of the notable features include:
+* Preview variable values, both of them
+* See how will a substitute command affect pattern space before it runs
+* Step through sed script, both forward and backwards
+* Place breakpoints and examine program state
+* Hot reload and see what changes as you edit source code
+* Its name is a palindrome
+
+WWW: https://github.com/SoptikHa2/desed
