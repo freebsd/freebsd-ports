@@ -11,7 +11,11 @@
 #define UCHAR uint8_t
 #define LONG int32_t
 #define SHORT int16_t
+#if __FreeBSD__
+#define CHAR char
+#else
 #define CHAR int8_t
+#endif
 #define ULONGLONG uint64_t
 #define LONGLONG int64_t
 #define BOOLEAN uint8_t
