@@ -13,8 +13,6 @@ COMMENT=	Full-stack web application framework
 
 LICENSE=	MIT
 
-BROKEN_RUBY24=	yes
-
 RUN_DEPENDS=	rubygem-actioncable60>=${PORTVERSION}:www/rubygem-actioncable60 \
 		rubygem-actionmailbox60>=${PORTVERSION}:mail/rubygem-actionmailbox60 \
 		rubygem-actionmailer60>=${PORTVERSION}:mail/rubygem-actionmailer60 \
