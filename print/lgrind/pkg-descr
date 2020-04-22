@@ -6,4 +6,4 @@ other packages this is not pure TeX but an external preprocessor. You run e.g.
 to get a complete listing. Options for producing includable files and pro-
 cessing embedded listings in LaTeX texts are provided.
 
-WWW: http://www.ctan.org/pkg/lgrind
+WWW: https://ctan.org/pkg/lgrind
