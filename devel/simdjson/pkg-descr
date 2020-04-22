@@ -1,0 +1,6 @@
+JSON is everywhere on the Internet. Servers spend a lot of time parsing it.
+The simdjson library uses commonly available SIMD instructions and
+microparallel algorithms to parse JSON 2.5 times faster than anything
+else out there.
+
+WWW: https://simdjson.org/
