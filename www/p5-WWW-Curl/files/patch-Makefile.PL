@@ -1,18 +1,24 @@
---- Makefile.PL.orig	2014-02-21 16:08:09 UTC
-+++ Makefile.PL
-@@ -121,13 +121,14 @@ if (!defined($curl_h)) {
+--- Makefile.PL.orig	2014-02-21 08:08:09.000000000 -0800
++++ Makefile.PL	2020-04-20 15:36:35.008798000 -0700
+@@ -100,6 +100,13 @@
+      print "Found curl.h in $curl_h\n";
+      my @syms;
+      my $has_cpp = 0;
++     my @skiplist = qw/
++        CURL_DID_MEMORY_FUNC_TYPEDEFS
++        CURL_STRICTER
++        CURLINC_CURL_H
++        CURL_WIN32
++        CURLOPT
++     /;
+      open(H_IN, "-|", "cpp", $curl_h) and $has_cpp++;
+      unless ($has_cpp) {
+          warn "No working cpp ($!).  Parsing curl.h in Perl";
+@@ -121,6 +128,7 @@
      open (H, "<", $curl_h) or die ("Cannot open $curl_h: ".$!);
      while(<H>) {
          if (/^#define (CURL[A-Za-z0-9_]*)/) {
-+            next if ($1 eq 'CURL_DID_MEMORY_FUNC_TYPEDEFS' || $1 eq 'CURL_STRICTER' || $1 eq 'CURLINC_CURL_H' );
++            next if $1 ~~ @skiplist;
              push @syms, $1;
          }
      }
-     close H;
- 
-     for my $e (sort @syms) {
--       if($e =~ /(OBSOLETE|^CURL_EXTERN|_LAST\z|_LASTENTRY\z)/) {
-+       if($e =~ /(OBSOLETE|^CURL_EXTERN|_LAST\z|_LASTENTRY\z|^CURLINC_|WIN32|CURLOPT)/) {
-           next;
-        }
-        my ($group) = $e =~ m/^([^_]+_)/;
