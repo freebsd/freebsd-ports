@@ -13,8 +13,6 @@ COMMENT=	Action Controller and Action View of Rails MVC Framework
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-BROKEN_RUBY24=	yes
-
 RUN_DEPENDS=	rubygem-actionview60>=${PORTVERSION}:devel/rubygem-actionview60 \
 		rubygem-activesupport60>=${PORTVERSION}:devel/rubygem-activesupport60 \
 		rubygem-rack>=2.0.8,3<3,3:www/rubygem-rack \
