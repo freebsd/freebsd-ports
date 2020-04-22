@@ -10,13 +10,15 @@
 # to enable this service:
 #
 # tailscaled_enable (bool):	Set it to YES to enable tailscaled.
-#			Default is "NO".
+#				Default is "NO".
+# tailscaled_port (number):	Set the port to listen on for incoming VPN packets.
+#				Default is "41641".
 # tailscaled_syslog_output_enable (bool):	Set to enable syslog output.
-#					Default is "NO". See daemon(8).
+#						Default is "NO". See daemon(8).
 # tailscaled_syslog_output_priority (str):	Set syslog priority if syslog enabled.
-#					Default is "info". See daemon(8).
+#						Default is "info". See daemon(8).
 # tailscaled_syslog_output_facility (str):	Set syslog facility if syslog enabled.
-#					Default is "daemon". See daemon(8).
+#						Default is "daemon". See daemon(8).
 
 . /etc/rc.subr
 
@@ -26,6 +28,7 @@ rcvar=tailscaled_enable
 load_rc_config $name
 
 : ${tailscaled_enable:="NO"}
+: ${tailscaled_port:="41641"}
 
 DAEMON=$(/usr/sbin/daemon 2>&1 | grep -q syslog ; echo $?)
 if [ ${DAEMON} -eq 0 ]; then
@@ -48,15 +51,19 @@ else
         tailscaled_syslog_output_flags=""
 fi
 
-pidfile=/var/run/tailscaled.pid
-procname="%%PREFIX%%/bin/tailscaled"
-command="/usr/sbin/daemon"
-command_args="-f ${tailscaled_syslog_output_flags} -p ${pidfile} ${procname}"
+pidfile=/var/run/${name}.pid
+procname="%%PREFIX%%/bin/${name}"
 
-# XXX: Can we have multiple interface?
+# XXX: Can we have multiple interfaces?
 tailscale_tap_dev="tailscale0"
 
+start_cmd="${name}_start"
 stop_postcmd="${name}_poststop"
+
+tailscaled_start()
+{
+	env CACHE_DIRECTORY=/var/db/tailscale /usr/sbin/daemon -f ${tailscaled_syslog_output_flags} -p ${pidfile} ${procname} --port ${tailscaled_port}
+}
 
 tailscaled_poststop()
 {
