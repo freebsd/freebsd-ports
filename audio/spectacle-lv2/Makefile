@@ -18,7 +18,7 @@ BUILD_DEPENDS=	lv2>0:audio/lv2 \
 		xxd:editors/vim-console
 LIB_DEPENDS=	libfftw3f.so:math/fftw3-float
 
-USES=		gmake gnome pkgconfig shebangfix xorg
+USES=		compiler:c++0x gmake gnome pkgconfig shebangfix xorg
 SHEBANG_FILES=	dpf/utils/generate-ttl.sh
 USE_GITHUB=	yes
 GH_ACCOUNT=	jpcima
