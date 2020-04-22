@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jsonnet
-PORTVERSION=	0.9.3
-PORTREVISION=	5
+PORTVERSION=	0.15.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -13,10 +12,11 @@ COMMENT=	JSON data templating language
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USES=		compiler:c++11-lib gmake
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
 
-USES=		compiler:c++11-lib gmake
 USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
 
