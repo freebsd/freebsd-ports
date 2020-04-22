@@ -1,6 +1,6 @@
-TIMESTAMP = 1583873109
-SHA256 (j-keck-zfs-snap-diff-v1.0.1_GH0.tar.gz) = 3087ddd125ed81c60b79e704cde1c8758e16a7274df0fb9bfdd048cbbfbfe2ec
-SIZE (j-keck-zfs-snap-diff-v1.0.1_GH0.tar.gz) = 6899956
+TIMESTAMP = 1587375199
+SHA256 (j-keck-zfs-snap-diff-v1.1.0_GH0.tar.gz) = e1c292e18459ca514ceecaab87e008d424820e150eac7600094dbbe53e33fbb4
+SIZE (j-keck-zfs-snap-diff-v1.1.0_GH0.tar.gz) = 7192474
 SHA256 (BurntSushi-toml-v0.3.1_GH0.tar.gz) = 6593da894578ba510a470735ffbdc88ce88033094dc5a8f4d3957ab87e18803f
 SIZE (BurntSushi-toml-v0.3.1_GH0.tar.gz) = 42077
 SHA256 (j-keck-go-diff-v1.0.0_GH0.tar.gz) = 5a07596dcdee6e089b49309162c8e63bc02400652897a1f529d37f0602868dea
