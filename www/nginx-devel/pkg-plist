@@ -10,10 +10,12 @@
 @sample %%ETCDIR%%/nginx.conf-dist %%ETCDIR%%/nginx.conf
 @sample %%ETCDIR%%/scgi_params-dist %%ETCDIR%%/scgi_params
 @sample %%ETCDIR%%/uwsgi_params-dist %%ETCDIR%%/uwsgi_params
+%%DSO%%%%AJP%%libexec/nginx/ngx_http_ajp_module.so
 %%DSO%%%%ARRAYVAR%%libexec/nginx/ngx_http_array_var_module.so
 %%DSO%%%%AWS_AUTH%%libexec/nginx/ngx_http_aws_auth_module.so
 %%DSO%%%%BROTLI%%libexec/nginx/ngx_http_brotli_filter_module.so
 %%DSO%%%%BROTLI%%libexec/nginx/ngx_http_brotli_static_module.so
+%%DSO%%%%CACHE_PURGE%%libexec/nginx/ngx_http_cache_purge_module.so
 %%DSO%%%%CLOJURE%%libexec/nginx/ngx_http_clojure_module.so
 %%DSO%%%%CT%%libexec/nginx/ngx_http_ssl_ct_module.so
 %%DSO%%%%CT%%libexec/nginx/ngx_ssl_ct_module.so
@@ -56,6 +58,8 @@
 %%DSO%%%%STREAM%%%%NJS%%libexec/nginx/ngx_stream_js_module.so
 %%DSO%%%%STREAM%%libexec/nginx/ngx_stream_module.so
 %%DSO%%%%VOD%%libexec/nginx/ngx_http_vod_module.so
+%%DSO%%%%VTS%%libexec/nginx/ngx_http_vhost_traffic_status_module.so
+%%DSO%%%%WEBSOCKIFY%%libexec/nginx/ngx_http_websockify_module.so
 %%HTTP_PERL%%%%SITE_ARCH%%/auto/nginx/nginx.so
 %%HTTP_PERL%%%%SITE_ARCH%%/nginx.pm
 %%NJS%%sbin/njs
