@@ -2,7 +2,7 @@
 
 PORTNAME=	lazygit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.19
+DISTVERSION=	0.20.2
 CATEGORIES=	devel
 
 MAINTAINER=	meta@FreeBSD.org
@@ -24,8 +24,8 @@ GH_TUPLE=	\
 		fsnotify:fsnotify:v1.4.7:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		go-errors:errors:v1.0.1:go_errors_errors/vendor/github.com/go-errors/errors \
 		go-git:gcfg:v1.5.0:go_git_gcfg/vendor/github.com/go-git/gcfg \
-		go-git:go-billy:v5.0.0:go_git_go_billy/vendor/github.com/go-git/go-billy/v5 \
-		go-git:go-git:v5.0.0:go_git_go_git/vendor/github.com/go-git/go-git/v5 \
+		go-git:go-billy:v5.0.0:go_git_go_billy_v5/vendor/github.com/go-git/go-billy/v5 \
+		go-git:go-git:v5.0.0:go_git_go_git_v5/vendor/github.com/go-git/go-git/v5 \
 		go-ini:ini:v1.51.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
 		go-warnings:warnings:v0.1.2:go_warnings_warnings/vendor/gopkg.in/warnings.v0 \
 		go-yaml:yaml:v2.2.7:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
@@ -51,7 +51,7 @@ GH_TUPLE=	\
 		mgutz:str:v1.2.0:mgutz_str/vendor/github.com/mgutz/str \
 		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
 		mitchellh:mapstructure:v1.1.2:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
-		nicksnyder:go-i18n:v2.0.3:nicksnyder_go_i18n/vendor/github.com/nicksnyder/go-i18n/v2 \
+		nicksnyder:go-i18n:v2.0.3:nicksnyder_go_i18n_v2/vendor/github.com/nicksnyder/go-i18n \
 		onsi:ginkgo:v1.10.3:onsi_ginkgo/vendor/github.com/onsi/ginkgo \
 		onsi:gomega:v1.7.1:onsi_gomega/vendor/github.com/onsi/gomega \
 		pelletier:go-toml:v1.6.0:pelletier_go_toml/vendor/github.com/pelletier/go-toml \
