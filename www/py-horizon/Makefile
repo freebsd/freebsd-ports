@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	horizon
-PORTVERSION=	13.0.1
-PORTREVISION=	4
+PORTVERSION=	17.1.0
 CATEGORIES=	www python
 MASTER_SITES=	https://tarballs.openstack.org/horizon/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,28 +16,34 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=2.0.0:devel/py-pbr@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=2.0.0:devel/py-pbr@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Babel>=2.3.4:devel/py-babel@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}django111>=1.8:www/py-django111@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django22>=1.11:www/py-django22@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Pint>=0.5:devel/py-Pint@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}django-babel>=0.5.1:www/py-django-babel@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-babel>=0.6.2:www/py-django-babel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django_compressor>=2.0:www/py-django_compressor@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-debreach>=1.4.2:www/py-django-debreach@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-pyscss>=2.0.2:www/py-django-pyscss@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}futurist>=1.2.0:devel/py-futurist@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}iso8601>=0.1.11:devel/py-iso8601@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}keystoneauth1>=3.3.0:devel/py-keystoneauth1@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}keystoneauth1>=3.4.0:devel/py-keystoneauth1@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}netaddr>=0.7.18:net/py-netaddr@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}oslo.config>=5.1.0:devel/py-oslo.config@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}oslo.concurrency>=3.25.0:devel/py-oslo.concurrency@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}oslo.config>=5.2.0:devel/py-oslo.config@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oslo.i18n>=3.15.3:devel/py-oslo.i18n@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}oslo.policy>=1.30.0:devel/py-oslo.policy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oslo.serialization>=2.18.0:devel/py-oslo.serialization@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}oslo.upgradecheck>=0.1.1:devel/py-oslo.upgradecheck@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oslo.utils>=3.33.0:devel/py-oslo.utils@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}osprofiler>=1.4.0:devel/py-osprofiler@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}osprofiler>=2.3.0:devel/py-osprofiler@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pymongo>=3.0.2:databases/pymongo@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyscss>=1.3.4:textproc/py-pyscss@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}python-cinderclient>=5.0.0:net/py-python-cinderclient@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-glanceclient>=2.8.0:net/py-python-glanceclient@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}python-keystoneclient>=3.8.0:net/py-python-keystoneclient@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}python-neutronclient>=6.3.0:net/py-python-neutronclient@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}python-keystoneclient>=3.22.0:net/py-python-keystoneclient@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}python-neutronclient>=6.7.0:net/py-python-neutronclient@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-novaclient>=9.1.0:net/py-python-novaclient@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-swiftclient>=3.2.0:databases/py-python-swiftclient@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytz>=2013.6:devel/py-pytz@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}yaml>=3.10.0:devel/py-yaml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}yaml>=3.12.0:devel/py-yaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}semantic_version>=2.3.1:devel/py-semantic_version@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.10.0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}XStatic>=1.0.0:devel/py-XStatic@${PY_FLAVOR} \
@@ -70,8 +75,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=2.0.0:devel/py-pbr@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}XStatic-term.js>=0.0.7.0:devel/py-XStatic-term.js@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}XStatic-tv4>=1.2.7.0:devel/py-XStatic-tv4@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.6+ # Required as devel/py-oslo.upgradecheck supports Python 3.6+ only
 USE_PYTHON=	autoplist distutils
+
 NO_ARCH=	yes
 
 USERS=		horizon
@@ -82,21 +88,17 @@ SUB_LIST=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR}
 
 CONFLICTS_INSTALL=	py??-horizon-*
 
+OPTIONS_DEFAULT=	MEMCACHED
+OPTIONS_RADIO=		CACHE
+OPTIONS_RADIO_CACHE=	MEMCACHED REDIS
+
+MEMCACHED_DESC=		Use memcached as caching backend
+REDIS_DESC=		Use Redis as caching backend
+
+MEMCACHED_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-memcached>0:databases/py-python-memcached@${PY_FLAVOR}
+REDIS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}redis>0:databases/py-redis@${PY_FLAVOR}
+
 post-patch:
 	@${REINPLACE_CMD} -Ee 's|(pyScss)!=1.3.5,|\1|' ${WRKSRC}/requirements.txt
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 3600
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}futurist1>=1.2.0:devel/py-futurist1@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}oslo.concurrency3>=3.25.0:devel/py-oslo.concurrency3@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}oslo.policy2>=1.30.0:devel/py-oslo.policy2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}python-cinderclient5>=3.3.0:net/py-python-cinderclient5@${PY_FLAVOR}
-.else
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}futurist>=1.2.0:devel/py-futurist@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}oslo.concurrency>=3.25.0:devel/py-oslo.concurrency@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}oslo.policy>=1.30.0:devel/py-oslo.policy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}python-cinderclient>=3.3.0:net/py-python-cinderclient@${PY_FLAVOR}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
