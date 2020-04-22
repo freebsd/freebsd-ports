@@ -4690,6 +4690,7 @@
     SUBDIR += py-oslo.concurrency
     SUBDIR += py-oslo.concurrency3
     SUBDIR += py-oslo.config
+    SUBDIR += py-oslo.config7
     SUBDIR += py-oslo.context
     SUBDIR += py-oslo.db
     SUBDIR += py-oslo.db6
@@ -5621,6 +5622,7 @@
     SUBDIR += rubygem-aws-sdk-storagegateway
     SUBDIR += rubygem-aws-sdk-support
     SUBDIR += rubygem-aws-sdk-swf
+    SUBDIR += rubygem-aws-sdk-synthetics
     SUBDIR += rubygem-aws-sdk-textract
     SUBDIR += rubygem-aws-sdk-transcribeservice
     SUBDIR += rubygem-aws-sdk-transcribestreamingservice
