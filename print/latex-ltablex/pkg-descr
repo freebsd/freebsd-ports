@@ -2,4 +2,4 @@ ltablex modifies the tabularx environment to combine the features of the
 tabularx package (auto-sized columns in a fixed width table) with those
 of the longtable package (multi-page tables).
 
-WWW: http://www.ctan.org/tex-archive/macros/latex/contrib/ltablex/
+WWW: https://ctan.org/tex-archive/macros/latex/contrib/ltablex/
