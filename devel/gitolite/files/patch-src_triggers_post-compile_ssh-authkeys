@@ -1,0 +1,34 @@
+From 7db6332d9be1879d97c57c35d53d97c4b15663d5 Mon Sep 17 00:00:00 2001
+From: Gleb Smirnoff <glebius@FreeBSD.org>
+Date: Thu, 13 Feb 2020 09:38:33 -0800
+Subject: [PATCH] When prepending our options to a key, check if key file
+ already has any options.  In this case put comma after end of our options
+ instead of space.
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+To tell key with options against bare key we check if key starts
+with (ecdsa|ssh)-.  At the moment of this commit OpenSSH supports
+the following algorithms “ecdsa-sha2-nistp256”, “ecdsa-sha2-nistp384”,
+“ecdsa-sha2-nistp521”, “ssh-ed25519”, “ssh-dss” or “ssh-rsa”.  If
+a different algorithm to be introduce to OpenSSH in future, this
+code would be broken.  However, adding a full key parser to this
+subroutine seems to be overkill now.
+---
+ src/triggers/post-compile/ssh-authkeys | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/src/triggers/post-compile/ssh-authkeys b/src/triggers/post-compile/ssh-authkeys
+index cd59aec83..6325373d7 100755
+--- src/triggers/post-compile/ssh-authkeys
++++ src/triggers/post-compile/ssh-authkeys
+@@ -137,6 +137,7 @@ sub optionise {
+         return '';
+     }
+     chomp(@line);
+-    return "command=\"$glshell $user" . ( $kfn ? " $f" : "" ) . "\",$auth_options $line[0]";
++    return "command=\"$glshell $user" . ( $kfn ? " $f" : "" ) . "\",$auth_options" .
++        ($line[0] =~ /^(ecdsa|ssh)-/ ? " " : "," ) . $line[0];
+ }
+ 
