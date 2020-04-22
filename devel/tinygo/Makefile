@@ -55,10 +55,12 @@ QEMU_RUN_DEPENDS=	qemu-system-arm:emulators/qemu
 SIMAVR_RUN_DEPENDS=	simavr:devel/simavr
 
 do-build:
-	cd ${WRKSRC} && unset CDPATH && ${GMAKE} llvm-build
-	cd ${WRKSRC} && ${SETENV} \
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
+		HOME=${WRKDIR} \
+		${GMAKE} llvm-build
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 		GO=${GO_CMD} \
-		GOCACHE=${WRKDIR}/.gocache \
+		HOME=${WRKDIR} \
 		PATH=${WRKSRC}/llvm-build/bin:$$PATH \
 		${GMAKE} release
 
