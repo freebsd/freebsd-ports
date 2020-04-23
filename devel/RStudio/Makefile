@@ -5,15 +5,17 @@
 
 PORTNAME=	RStudio
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.5033-2752
-DISTVERSIONSUFFIX=	-g29e90c87a2
+DISTVERSION=	1.2.5042
 CATEGORIES=	devel math java
 MASTER_SITES=	https://s3.amazonaws.com/rstudio-buildtools/dictionaries/:dictionaries \
 		https://s3.amazonaws.com/rstudio-buildtools/:buildtools
 DISTFILES=	core-dictionaries.zip:dictionaries \
 		gin-${GIN_VERSION}.zip:buildtools \
 		gwt-${GWT_VERSION}.zip:buildtools \
-		mathjax-27.zip:buildtools
+		mathjax-26.zip:buildtools
+
+PATCH_SITES=	https://github.com/rstudio/rstudio/commit/
+PATCHFILES+=	33c2c42d40ad97d97ca3907df51059cd2ce76fe3.patch:-p1 # https://github.com/rstudio/rstudio/commit/33c2c42d40ad97d97ca3907df51059cd2ce76fe3
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Integrated development environment (IDE) for R
@@ -33,9 +35,10 @@ LIB_DEPENDS=	libR.so:math/R \
 		libuuid.so:misc/e2fsprogs-libuuid
 
 USES=		cmake desktop-file-utils fortran localbase:ldflags pkgconfig qt:5 shared-mime-info ssl
-USE_QT=		core dbus declarative gui location network opengl printsupport sensors \
+USE_QT=		core dbus declarative gui location network opengl printsupport quickcontrols sensors \
 		sql svg webchannel webengine webkit widgets xml xmlpatterns buildtools_build qmake_build
-USE_JAVA=	13
+USE_JAVA=	yes
+JAVA_VERSION=	8
 JAVA_BUILD=	yes
 USE_GITHUB=	yes
 GH_PROJECT=	${PORTNAME:tl}

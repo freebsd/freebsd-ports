@@ -1,14 +1,15 @@
---- src/cpp/desktop/DesktopMain.cpp.orig	2020-01-23 23:30:24 UTC
+--- src/cpp/desktop/DesktopMain.cpp.orig	2020-04-01 16:16:24 UTC
 +++ src/cpp/desktop/DesktopMain.cpp
-@@ -46,6 +46,7 @@
+@@ -42,6 +42,8 @@
  #include "DesktopNetworkProxyFactory.hpp"
  #include "DesktopActivationOverlay.hpp"
- #include "DesktopSessionServersOverlay.hpp"
-+#include "global-setenv.h"
  
++#include "global-setenv.h"
++
  #ifdef _WIN32
  #include <core/system/RegistryKey.hpp>
-@@ -372,7 +373,7 @@ QString inferDefaultRenderingEngine()
+ #include <Windows.h>
+@@ -367,7 +369,7 @@ QString inferDefaultRenderingEngine()
  
  #endif
  
@@ -17,7 +18,7 @@
  
  QString inferDefaultRenderingEngine()
  {
-@@ -461,6 +462,7 @@ std::string getSessionUrl()
+@@ -426,6 +428,7 @@ void initializeRenderingEngine(std::vector<char*>* pAr
  
  int main(int argc, char* argv[])
  {
