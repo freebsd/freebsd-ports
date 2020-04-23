@@ -2,7 +2,7 @@
 
 PORTNAME=	fselect
 DISTVERSION=	0.6.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	vulcan@wired.sh

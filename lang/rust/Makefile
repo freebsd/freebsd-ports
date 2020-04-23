@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	rust
-PORTVERSION?=	1.42.0
-PORTREVISION?=	2
+PORTVERSION?=	1.43.0
+PORTREVISION?=	0
 CATEGORIES=	lang
-MASTER_SITES=	https://static.rust-lang.org/dist/:src \
+MASTER_SITES=	https://dev-static.rust-lang.org/dist/:src \
 		LOCAL/tobik/rust:bootstrap \
 		https://static.rust-lang.org/dist/:bootstrap
 DISTNAME?=	${PORTNAME}c-${PORTVERSION}-src
@@ -28,7 +28,8 @@ IGNORE_FreeBSD_11_powerpc64=	is missing a bootstrap for FreeBSD 11.x powerpc64
 ONLY_FOR_ARCHS?=	aarch64 amd64 armv6 armv7 i386 powerpc64
 ONLY_FOR_ARCHS_REASON?=	requires prebuilt bootstrap compiler
 
-BUILD_DEPENDS=	cmake:devel/cmake
+BUILD_DEPENDS=	cmake:devel/cmake \
+		libgit2>=1.0.0:devel/libgit2
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libgit2.so:devel/libgit2 \
 		libssh2.so:security/libssh2
@@ -51,16 +52,17 @@ GDB_DESC=	Install ports gdb (necessary for debugging rust programs)
 SOURCES_DESC=	Install source files
 WASM_DESC=	Build the WebAssembly target (wasm32-unknown-unknown)
 
-DOCS_VARS_OFF=		_RUST_BUILD_DOCS=false
 DOCS_VARS=		_RUST_BUILD_DOCS=true
+DOCS_VARS_OFF=		_RUST_BUILD_DOCS=false
 GDB_RUN_DEPENDS=	${LOCALBASE}/bin/gdb:devel/gdb
+WASM_VARS=		_RUST_BUILD_WASM=true \
+			_RUST_TARGETS+=wasm32-unknown-unknown
 WASM_VARS_OFF=		_RUST_BUILD_WASM=false
-WASM_VARS=		_RUST_BUILD_WASM=true
 
 # See WRKSRC/src/stage0.txt for the date and version values.
-BOOTSTRAPS_DATE?=		2020-02-29
-RUST_BOOTSTRAP_VERSION?=	1.41.1
-CARGO_BOOTSTRAP_VERSION?=	0.42.0
+BOOTSTRAPS_DATE?=		2020-03-12
+RUST_BOOTSTRAP_VERSION?=	1.42.0
+CARGO_BOOTSTRAP_VERSION?=	0.43.0
 
 BOOTSTRAPS_SUFFIX?=		${BOOTSTRAPS_SUFFIX_${ARCH}}
 BOOTSTRAPS_SUFFIX_powerpc64?=	-${PPC_ABI:tl}
@@ -71,6 +73,7 @@ CARGO_VENDOR_DIR?=		${WRKSRC}/vendor
 _RUST_ARCH_amd64=	x86_64
 _RUST_ARCH_i386=	i686
 _RUST_TARGET=		${_RUST_ARCH_${ARCH}:U${ARCH}}-unknown-${OPSYS:tl}
+_RUST_TARGETS=		${_RUST_TARGET}
 
 _RUSTC_BOOTSTRAP=	${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}/rustc-${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}-${_RUST_TARGET}
 _RUST_STD_BOOTSTRAP=	${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}/rust-std-${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}-${_RUST_TARGET}
@@ -144,9 +147,7 @@ do-configure:
 	@${ECHO_CMD} 'python="${PYTHON_CMD}"' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'docs=${_RUST_BUILD_DOCS}' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'verbose=2' >> ${WRKSRC}/config.toml
-.if ${PORT_OPTIONS:MWASM}
-	@${ECHO_CMD} 'target=["${_RUST_TARGET}","wasm32-unknown-unknown"]' >> ${WRKSRC}/config.toml
-.endif
+	@${ECHO_CMD} 'target=[${_RUST_TARGETS:@.target.@"${.target.}"@:ts,}]' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} '[install]' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'prefix="${PREFIX}"' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'sysconfdir="${PREFIX}/etc"' >> ${WRKSRC}/config.toml
@@ -161,17 +162,22 @@ do-configure:
 .else
 	@${ECHO_CMD} 'ccache=false' >> ${WRKSRC}/config.toml
 .endif
-	@${ECHO_CMD} '[target.${_RUST_TARGET}]' >> ${WRKSRC}/config.toml
-	@${ECHO_CMD} 'cc="${CC}"' >> ${WRKSRC}/config.toml
-	@${ECHO_CMD} 'cxx="${CXX}"' >> ${WRKSRC}/config.toml
 .if ${ARCH} == armv6
 # fails to link with base ld.bfd: rustc_codegen_llvm.e2557spx-cgu.11:(.text._ZN89_$LT$rustc_target..abi..call..CastTarget$u20$as$u20$rustc_codegen_llvm..abi..LlvmType$GT$9llvm_type17h1296210ab461fc57E+0x54): relocation truncated to fit: R_ARM_CALL against symbol `__aeabi_uldivmod' defined in .text.__aeabi_uldivmod section in /tmp/rustcdnGbao/libcompiler_builtins-ee65b414e4115a8f.rlib(compiler_builtins-ee65b414e4115a8f.compiler_builtins.ay8p39ey-cgu.13.rcgu.o)
 	@${PRINTF} '#!/bin/sh\nexec ${CC} -fuse-ld=lld "$$@"' > ${WRKDIR}/cc-wrapper
 	@${CHMOD} +x ${WRKDIR}/cc-wrapper
+.endif
+.for _target in ${_RUST_TARGETS}
+	@${ECHO_CMD} '[target.${_target}]' >> ${WRKSRC}/config.toml
+	@${ECHO_CMD} 'ar="${AR}"' >> ${WRKSRC}/config.toml
+	@${ECHO_CMD} 'cc="${CC}"' >> ${WRKSRC}/config.toml
+	@${ECHO_CMD} 'cxx="${CXX}"' >> ${WRKSRC}/config.toml
+.if ${ARCH} == armv6
 	@${ECHO_CMD} 'linker="${WRKDIR}/cc-wrapper"' >> ${WRKSRC}/config.toml
 .else
 	@${ECHO_CMD} 'linker="${CC}"' >> ${WRKSRC}/config.toml
 .endif
+.endfor
 	@${ECHO_CMD} '[dist]' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'src-tarball=false' >> ${WRKSRC}/config.toml
 	@${REINPLACE_CMD} 's,%CC%,${CC},g' \

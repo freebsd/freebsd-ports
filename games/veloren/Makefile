@@ -3,7 +3,7 @@
 PORTNAME=	veloren
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	https://veloren.net/icons/favicon/:icon \
 		LOCAL/jbeich:assets
