@@ -12,7 +12,7 @@ COMMENT=	Open neural networks library
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		cmake dos2unix # compiler:c++11-lang
+USES=		cmake compiler dos2unix
 DOS2UNIX_FILES=	CMakeLists.txt
 USE_GITHUB=	yes
 GH_ACCOUNT=	Artelnics
@@ -29,16 +29,26 @@ MPI_BROKEN=		https://github.com/Artelnics/OpenNN/issues/86
 
 OPENMP_CMAKE_BOOL=	__OPENNN_OMP__
 
+.include <bsd.port.pre.mk>
+
+.if ${CHOSEN_COMPILER_TYPE} == gcc
+USE_GCC=	yes
+.else
 # workaround for breakage with clang-10: https://github.com/Artelnics/OpenNN/issues/105
 LLVM_VER=	80
 BUILD_DEPENDS+=	clang${LLVM_VER}:devel/llvm${LLVM_VER}
 CPP=		clang-cpp${LLVM_VER}
 CC=		clang${LLVM_VER}
 CXX=		clang++${LLVM_VER}
+# clang-8 defaults to elfv1 on FreeBSD, to be removed after moving to 9 or newer
+.if ${ARCH} == powerpc64
+CFLAGS+=	-mabi=elfv2
+.endif
+.endif
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/${PORTNAME} && ${INSTALL_DATA} ${WRKSRC}/${PORTNAME}/*.h ${STAGEDIR}${PREFIX}/include/${PORTNAME}
 	${INSTALL_DATA} ${BUILD_WRKSRC}/${PORTNAME}/libopennn.so ${STAGEDIR}${PREFIX}/lib
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libopennn.so
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
