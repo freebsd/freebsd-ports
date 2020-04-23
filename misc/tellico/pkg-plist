@@ -114,6 +114,16 @@ share/doc/HTML/fr/tellico/source-options.png
 share/doc/HTML/fr/tellico/sru-options.png
 share/doc/HTML/fr/tellico/template-options.png
 share/doc/HTML/fr/tellico/z3950-options.png
+share/doc/HTML/it/tellico/advanced.docbook
+share/doc/HTML/it/tellico/configuration.docbook
+share/doc/HTML/it/tellico/details.docbook
+share/doc/HTML/it/tellico/faqs.docbook
+share/doc/HTML/it/tellico/fundamentals.docbook
+share/doc/HTML/it/tellico/hacking.docbook
+share/doc/HTML/it/tellico/importing-exporting.docbook
+share/doc/HTML/it/tellico/index.cache.bz2
+share/doc/HTML/it/tellico/index.docbook
+share/doc/HTML/it/tellico/menus.docbook
 share/doc/HTML/nl/tellico/advanced.docbook
 share/doc/HTML/nl/tellico/configuration.docbook
 share/doc/HTML/nl/tellico/details.docbook
@@ -254,7 +264,6 @@ share/mime/packages/tellico.xml
 %%DATADIR%%/MARC21slim2MODS3.xsl
 %%DATADIR%%/MARC21slimUtils.xsl
 %%DATADIR%%/UNIMARC2MODS3.xsl
-%%DATADIR%%/amazon2tellico.xsl
 %%DATADIR%%/arxiv2tellico.xsl
 %%DATADIR%%/biblioshare2tellico.xsl
 %%DATADIR%%/bibtex-translation.xml
