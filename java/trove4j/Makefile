@@ -4,15 +4,14 @@
 PORTNAME=	trove4j
 PORTVERSION=	3.1a1
 CATEGORIES=	java devel
-MASTER_SITES=	https://bitbucket.org/robeden/trove/downloads/
+MASTER_SITES=	https://bitbucket.org/${PORTNAME}/trove/downloads/
 DISTNAME=	trove-${PORTVERSION}
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	High performance collections API for Java
 
-BROKEN=		unfetchable
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2020-05-05
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USE_JAVA=	yes
 NO_BUILD=	yes
