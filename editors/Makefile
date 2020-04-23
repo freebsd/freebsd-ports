@@ -194,7 +194,6 @@
     SUBDIR += mousepad
     SUBDIR += mp
     SUBDIR += nano
-    SUBDIR += nano-devel
     SUBDIR += ne
     SUBDIR += nedit
     SUBDIR += neovim
