@@ -141,7 +141,7 @@ include/libdap/xdr-datatypes.h
 lib/libdap.a
 lib/libdap.so
 lib/libdap.so.25
-lib/libdap.so.25.2.2
+lib/libdap.so.25.2.3
 lib/libdapclient.a
 lib/libdapclient.so
 lib/libdapclient.so.6
