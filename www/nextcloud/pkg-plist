@@ -1061,12 +1061,14 @@
 %%WWWDIR%%/3rdparty/aws/aws-sdk-php/src/functions.php
 %%WWWDIR%%/3rdparty/aws/aws-sdk-php/src/signer/Exception/signerException.php
 %%WWWDIR%%/3rdparty/aws/aws-sdk-php/src/signer/signerClient.php
+%%WWWDIR%%/3rdparty/bantu/ini-get-wrapper/.gitignore
 %%WWWDIR%%/3rdparty/bantu/ini-get-wrapper/.scrutinizer.yml
 %%WWWDIR%%/3rdparty/bantu/ini-get-wrapper/LICENSE
 %%WWWDIR%%/3rdparty/bantu/ini-get-wrapper/README.md
 %%WWWDIR%%/3rdparty/bantu/ini-get-wrapper/composer.json
 %%WWWDIR%%/3rdparty/bantu/ini-get-wrapper/phpunit.xml.dist
 %%WWWDIR%%/3rdparty/bantu/ini-get-wrapper/src/IniGetWrapper.php
+%%WWWDIR%%/3rdparty/christophwurst/id3parser/.gitignore
 %%WWWDIR%%/3rdparty/christophwurst/id3parser/LICENSE
 %%WWWDIR%%/3rdparty/christophwurst/id3parser/README.md
 %%WWWDIR%%/3rdparty/christophwurst/id3parser/composer.json
@@ -1718,6 +1720,7 @@
 %%WWWDIR%%/3rdparty/guzzlehttp/streams/src/StreamDecoratorTrait.php
 %%WWWDIR%%/3rdparty/guzzlehttp/streams/src/StreamInterface.php
 %%WWWDIR%%/3rdparty/guzzlehttp/streams/src/Utils.php
+%%WWWDIR%%/3rdparty/icewind/searchdav/.gitignore
 %%WWWDIR%%/3rdparty/icewind/searchdav/LICENSE
 %%WWWDIR%%/3rdparty/icewind/searchdav/src/Backend/ISearchBackend.php
 %%WWWDIR%%/3rdparty/icewind/searchdav/src/Backend/SearchPropertyDefinition.php
@@ -1743,6 +1746,7 @@
 %%WWWDIR%%/3rdparty/icewind/searchdav/src/XML/QueryDiscoverResponse.php
 %%WWWDIR%%/3rdparty/icewind/searchdav/src/XML/Scope.php
 %%WWWDIR%%/3rdparty/icewind/searchdav/src/XML/SupportedQueryGrammar.php
+%%WWWDIR%%/3rdparty/icewind/streams/.gitignore
 %%WWWDIR%%/3rdparty/icewind/streams/src/CallbackWrapper.php
 %%WWWDIR%%/3rdparty/icewind/streams/src/CountWrapper.php
 %%WWWDIR%%/3rdparty/icewind/streams/src/Directory.php
@@ -2031,6 +2035,7 @@
 %%WWWDIR%%/3rdparty/microsoft/azure-storage-common/src/Common/Models/SignedIdentifier.php
 %%WWWDIR%%/3rdparty/microsoft/azure-storage-common/src/Common/Models/TransactionalMD5Trait.php
 %%WWWDIR%%/3rdparty/microsoft/azure-storage-common/src/Common/SharedAccessSignatureHelper.php
+%%WWWDIR%%/3rdparty/mtdowling/jmespath.php/.gitignore
 %%WWWDIR%%/3rdparty/mtdowling/jmespath.php/CHANGELOG.md
 %%WWWDIR%%/3rdparty/mtdowling/jmespath.php/LICENSE
 %%WWWDIR%%/3rdparty/mtdowling/jmespath.php/Makefile
@@ -2390,10 +2395,12 @@
 %%WWWDIR%%/3rdparty/patchwork/utf8/src/Patchwork/Utf8/data/to.bestfit949.ser
 %%WWWDIR%%/3rdparty/patchwork/utf8/src/Patchwork/Utf8/data/to.bestfit950.ser
 %%WWWDIR%%/3rdparty/patchwork/utf8/src/Patchwork/Utf8/data/translit_extra.ser
+%%WWWDIR%%/3rdparty/pear/archive_tar/.gitignore
 %%WWWDIR%%/3rdparty/pear/archive_tar/Archive/Tar.php
 %%WWWDIR%%/3rdparty/pear/archive_tar/README.md
 %%WWWDIR%%/3rdparty/pear/archive_tar/composer.json
 %%WWWDIR%%/3rdparty/pear/archive_tar/package.xml
+%%WWWDIR%%/3rdparty/pear/console_getopt/.gitignore
 %%WWWDIR%%/3rdparty/pear/console_getopt/Console/Getopt.php
 %%WWWDIR%%/3rdparty/pear/console_getopt/LICENSE
 %%WWWDIR%%/3rdparty/pear/console_getopt/README.rst
@@ -2406,10 +2413,12 @@
 %%WWWDIR%%/3rdparty/pear/pear-core-minimal/src/PEAR/Error.php
 %%WWWDIR%%/3rdparty/pear/pear-core-minimal/src/PEAR/ErrorStack.php
 %%WWWDIR%%/3rdparty/pear/pear-core-minimal/src/System.php
+%%WWWDIR%%/3rdparty/pear/pear_exception/.gitignore
 %%WWWDIR%%/3rdparty/pear/pear_exception/LICENSE
 %%WWWDIR%%/3rdparty/pear/pear_exception/PEAR/Exception.php
 %%WWWDIR%%/3rdparty/pear/pear_exception/composer.json
 %%WWWDIR%%/3rdparty/pear/pear_exception/package.xml
+%%WWWDIR%%/3rdparty/php-opencloud/openstack/.gitignore
 %%WWWDIR%%/3rdparty/php-opencloud/openstack/.php_cs.dist
 %%WWWDIR%%/3rdparty/php-opencloud/openstack/.scrutinizer.yml
 %%WWWDIR%%/3rdparty/php-opencloud/openstack/CODE_OF_CONDUCT.md
@@ -2593,6 +2602,7 @@
 %%WWWDIR%%/3rdparty/pimple/pimple/src/Pimple/Psr11/ServiceLocator.php
 %%WWWDIR%%/3rdparty/pimple/pimple/src/Pimple/ServiceIterator.php
 %%WWWDIR%%/3rdparty/pimple/pimple/src/Pimple/ServiceProviderInterface.php
+%%WWWDIR%%/3rdparty/psr/container/.gitignore
 %%WWWDIR%%/3rdparty/psr/container/LICENSE
 %%WWWDIR%%/3rdparty/psr/container/README.md
 %%WWWDIR%%/3rdparty/psr/container/composer.json
@@ -3153,6 +3163,7 @@
 %%WWWDIR%%/3rdparty/ralouphie/getallheaders/LICENSE
 %%WWWDIR%%/3rdparty/ralouphie/getallheaders/composer.json
 %%WWWDIR%%/3rdparty/ralouphie/getallheaders/src/getallheaders.php
+%%WWWDIR%%/3rdparty/react/promise/.gitignore
 %%WWWDIR%%/3rdparty/react/promise/LICENSE
 %%WWWDIR%%/3rdparty/react/promise/src/CancellablePromiseInterface.php
 %%WWWDIR%%/3rdparty/react/promise/src/Deferred.php
@@ -3166,6 +3177,7 @@
 %%WWWDIR%%/3rdparty/react/promise/src/UnhandledRejectionException.php
 %%WWWDIR%%/3rdparty/react/promise/src/functions.php
 %%WWWDIR%%/3rdparty/react/promise/src/functions_include.php
+%%WWWDIR%%/3rdparty/sabre/dav/.gitignore
 %%WWWDIR%%/3rdparty/sabre/dav/CHANGELOG.md
 %%WWWDIR%%/3rdparty/sabre/dav/CONTRIBUTING.md
 %%WWWDIR%%/3rdparty/sabre/dav/LICENSE
@@ -3402,6 +3414,7 @@
 %%WWWDIR%%/3rdparty/sabre/dav/lib/DAVACL/Xml/Request/PrincipalMatchReport.php
 %%WWWDIR%%/3rdparty/sabre/dav/lib/DAVACL/Xml/Request/PrincipalPropertySearchReport.php
 %%WWWDIR%%/3rdparty/sabre/dav/lib/DAVACL/Xml/Request/PrincipalSearchPropertySetReport.php
+%%WWWDIR%%/3rdparty/sabre/event/.gitignore
 %%WWWDIR%%/3rdparty/sabre/event/CHANGELOG.md
 %%WWWDIR%%/3rdparty/sabre/event/LICENSE
 %%WWWDIR%%/3rdparty/sabre/event/README.md
@@ -3417,6 +3430,7 @@
 %%WWWDIR%%/3rdparty/sabre/event/lib/Version.php
 %%WWWDIR%%/3rdparty/sabre/event/lib/coroutine.php
 %%WWWDIR%%/3rdparty/sabre/event/phpunit.xml.dist
+%%WWWDIR%%/3rdparty/sabre/http/.gitignore
 %%WWWDIR%%/3rdparty/sabre/http/CHANGELOG.md
 %%WWWDIR%%/3rdparty/sabre/http/LICENSE
 %%WWWDIR%%/3rdparty/sabre/http/README.md
@@ -3444,6 +3458,7 @@
 %%WWWDIR%%/3rdparty/sabre/http/lib/Util.php
 %%WWWDIR%%/3rdparty/sabre/http/lib/Version.php
 %%WWWDIR%%/3rdparty/sabre/http/lib/functions.php
+%%WWWDIR%%/3rdparty/sabre/uri/.gitignore
 %%WWWDIR%%/3rdparty/sabre/uri/CHANGELOG.md
 %%WWWDIR%%/3rdparty/sabre/uri/LICENSE
 %%WWWDIR%%/3rdparty/sabre/uri/README.md
@@ -3451,6 +3466,7 @@
 %%WWWDIR%%/3rdparty/sabre/uri/lib/InvalidUriException.php
 %%WWWDIR%%/3rdparty/sabre/uri/lib/Version.php
 %%WWWDIR%%/3rdparty/sabre/uri/lib/functions.php
+%%WWWDIR%%/3rdparty/sabre/vobject/.gitignore
 %%WWWDIR%%/3rdparty/sabre/vobject/LICENSE
 %%WWWDIR%%/3rdparty/sabre/vobject/README.md
 %%WWWDIR%%/3rdparty/sabre/vobject/composer.json
@@ -3532,6 +3548,7 @@
 %%WWWDIR%%/3rdparty/sabre/vobject/lib/timezonedata/windowszones.php
 %%WWWDIR%%/3rdparty/sabre/vobject/resources/schema/xcal.rng
 %%WWWDIR%%/3rdparty/sabre/vobject/resources/schema/xcard.rng
+%%WWWDIR%%/3rdparty/sabre/xml/.gitignore
 %%WWWDIR%%/3rdparty/sabre/xml/CHANGELOG.md
 %%WWWDIR%%/3rdparty/sabre/xml/LICENSE
 %%WWWDIR%%/3rdparty/sabre/xml/README.md
@@ -3732,6 +3749,7 @@
 %%WWWDIR%%/3rdparty/swiftmailer/swiftmailer/lib/preferences.php
 %%WWWDIR%%/3rdparty/swiftmailer/swiftmailer/lib/swift_required.php
 %%WWWDIR%%/3rdparty/swiftmailer/swiftmailer/lib/swiftmailer_generate_mimes_config.php
+%%WWWDIR%%/3rdparty/symfony/console/.gitignore
 %%WWWDIR%%/3rdparty/symfony/console/Application.php
 %%WWWDIR%%/3rdparty/symfony/console/CHANGELOG.md
 %%WWWDIR%%/3rdparty/symfony/console/Command/Command.php
@@ -3824,6 +3842,7 @@
 %%WWWDIR%%/3rdparty/symfony/event-dispatcher-contracts/LICENSE
 %%WWWDIR%%/3rdparty/symfony/event-dispatcher-contracts/README.md
 %%WWWDIR%%/3rdparty/symfony/event-dispatcher-contracts/composer.json
+%%WWWDIR%%/3rdparty/symfony/event-dispatcher/.gitignore
 %%WWWDIR%%/3rdparty/symfony/event-dispatcher/CHANGELOG.md
 %%WWWDIR%%/3rdparty/symfony/event-dispatcher/Debug/TraceableEventDispatcher.php
 %%WWWDIR%%/3rdparty/symfony/event-dispatcher/Debug/TraceableEventDispatcherInterface.php
@@ -3939,6 +3958,7 @@
 %%WWWDIR%%/3rdparty/symfony/polyfill-util/TestListener.php
 %%WWWDIR%%/3rdparty/symfony/polyfill-util/TestListenerTrait.php
 %%WWWDIR%%/3rdparty/symfony/polyfill-util/composer.json
+%%WWWDIR%%/3rdparty/symfony/process/.gitignore
 %%WWWDIR%%/3rdparty/symfony/process/CHANGELOG.md
 %%WWWDIR%%/3rdparty/symfony/process/Exception/ExceptionInterface.php
 %%WWWDIR%%/3rdparty/symfony/process/Exception/InvalidArgumentException.php
@@ -4037,6 +4057,7 @@
 %%WWWDIR%%/3rdparty/symfony/translation-contracts/TranslatorInterface.php
 %%WWWDIR%%/3rdparty/symfony/translation-contracts/TranslatorTrait.php
 %%WWWDIR%%/3rdparty/symfony/translation-contracts/composer.json
+%%WWWDIR%%/3rdparty/symfony/translation/.gitignore
 %%WWWDIR%%/3rdparty/symfony/translation/CHANGELOG.md
 %%WWWDIR%%/3rdparty/symfony/translation/Catalogue/AbstractOperation.php
 %%WWWDIR%%/3rdparty/symfony/translation/Catalogue/MergeOperation.php
@@ -4173,6 +4194,10 @@
 %%WWWDIR%%/apps-pkg/accessibility/l10n/es.json
 %%WWWDIR%%/apps-pkg/accessibility/l10n/es_AR.js
 %%WWWDIR%%/apps-pkg/accessibility/l10n/es_AR.json
+%%WWWDIR%%/apps-pkg/accessibility/l10n/es_CO.js
+%%WWWDIR%%/apps-pkg/accessibility/l10n/es_CO.json
+%%WWWDIR%%/apps-pkg/accessibility/l10n/et_EE.js
+%%WWWDIR%%/apps-pkg/accessibility/l10n/et_EE.json
 %%WWWDIR%%/apps-pkg/accessibility/l10n/eu.js
 %%WWWDIR%%/apps-pkg/accessibility/l10n/eu.json
 %%WWWDIR%%/apps-pkg/accessibility/l10n/fa.js
@@ -4201,6 +4226,8 @@
 %%WWWDIR%%/apps-pkg/accessibility/l10n/it.json
 %%WWWDIR%%/apps-pkg/accessibility/l10n/ja.js
 %%WWWDIR%%/apps-pkg/accessibility/l10n/ja.json
+%%WWWDIR%%/apps-pkg/accessibility/l10n/ka_GE.js
+%%WWWDIR%%/apps-pkg/accessibility/l10n/ka_GE.json
 %%WWWDIR%%/apps-pkg/accessibility/l10n/ko.js
 %%WWWDIR%%/apps-pkg/accessibility/l10n/ko.json
 %%WWWDIR%%/apps-pkg/accessibility/l10n/lt_LT.js
@@ -5076,7 +5103,6 @@
 %%WWWDIR%%/apps-pkg/dav/lib/Connector/Sabre/ChecksumList.php
 %%WWWDIR%%/apps-pkg/dav/lib/Connector/Sabre/CommentPropertiesPlugin.php
 %%WWWDIR%%/apps-pkg/dav/lib/Connector/Sabre/CopyEtagHeaderPlugin.php
-%%WWWDIR%%/apps-pkg/dav/lib/Connector/Sabre/CustomPropertiesBackend.php
 %%WWWDIR%%/apps-pkg/dav/lib/Connector/Sabre/DavAclPlugin.php
 %%WWWDIR%%/apps-pkg/dav/lib/Connector/Sabre/Directory.php
 %%WWWDIR%%/apps-pkg/dav/lib/Connector/Sabre/DummyGetResponsePlugin.php
@@ -5178,7 +5204,6 @@
 %%WWWDIR%%/apps-pkg/dav/lib/Upload/RootCollection.php
 %%WWWDIR%%/apps-pkg/dav/lib/Upload/UploadFolder.php
 %%WWWDIR%%/apps-pkg/dav/lib/Upload/UploadHome.php
-%%WWWDIR%%/apps-pkg/dav/templates/exception.php
 %%WWWDIR%%/apps-pkg/dav/templates/schedule-response-error.php
 %%WWWDIR%%/apps-pkg/dav/templates/schedule-response-options.php
 %%WWWDIR%%/apps-pkg/dav/templates/schedule-response-success.php
@@ -5748,6 +5773,8 @@
 %%WWWDIR%%/apps-pkg/federation/l10n/tr.json
 %%WWWDIR%%/apps-pkg/federation/l10n/uk.js
 %%WWWDIR%%/apps-pkg/federation/l10n/uk.json
+%%WWWDIR%%/apps-pkg/federation/l10n/vi.js
+%%WWWDIR%%/apps-pkg/federation/l10n/vi.json
 %%WWWDIR%%/apps-pkg/federation/l10n/zh_CN.js
 %%WWWDIR%%/apps-pkg/federation/l10n/zh_CN.json
 %%WWWDIR%%/apps-pkg/federation/l10n/zh_TW.js
@@ -6157,6 +6184,7 @@
 %%WWWDIR%%/apps-pkg/files/templates/recentlist.php
 %%WWWDIR%%/apps-pkg/files/templates/settings-personal.php
 %%WWWDIR%%/apps-pkg/files/templates/simplelist.php
+%%WWWDIR%%/apps-pkg/files_external/3rdparty/.gitignore
 %%WWWDIR%%/apps-pkg/files_external/3rdparty/autoload.php
 %%WWWDIR%%/apps-pkg/files_external/3rdparty/composer.json
 %%WWWDIR%%/apps-pkg/files_external/3rdparty/composer.lock
@@ -6168,10 +6196,12 @@
 %%WWWDIR%%/apps-pkg/files_external/3rdparty/composer/autoload_real.php
 %%WWWDIR%%/apps-pkg/files_external/3rdparty/composer/autoload_static.php
 %%WWWDIR%%/apps-pkg/files_external/3rdparty/composer/installed.json
+%%WWWDIR%%/apps-pkg/files_external/3rdparty/icewind/smb/.gitignore
 %%WWWDIR%%/apps-pkg/files_external/3rdparty/icewind/smb/.php_cs.dist
 %%WWWDIR%%/apps-pkg/files_external/3rdparty/icewind/smb/LICENSE.txt
 %%WWWDIR%%/apps-pkg/files_external/3rdparty/icewind/smb/README.md
 %%WWWDIR%%/apps-pkg/files_external/3rdparty/icewind/smb/composer.json
+%%WWWDIR%%/apps-pkg/files_external/3rdparty/icewind/smb/src/ACL.php
 %%WWWDIR%%/apps-pkg/files_external/3rdparty/icewind/smb/src/AbstractServer.php
 %%WWWDIR%%/apps-pkg/files_external/3rdparty/icewind/smb/src/AbstractShare.php
 %%WWWDIR%%/apps-pkg/files_external/3rdparty/icewind/smb/src/AnonymousAuth.php
@@ -6181,8 +6211,10 @@
 %%WWWDIR%%/apps-pkg/files_external/3rdparty/icewind/smb/src/Exception/AlreadyExistsException.php
 %%WWWDIR%%/apps-pkg/files_external/3rdparty/icewind/smb/src/Exception/AuthenticationException.php
 %%WWWDIR%%/apps-pkg/files_external/3rdparty/icewind/smb/src/Exception/ConnectException.php
+%%WWWDIR%%/apps-pkg/files_external/3rdparty/icewind/smb/src/Exception/ConnectionAbortedException.php
 %%WWWDIR%%/apps-pkg/files_external/3rdparty/icewind/smb/src/Exception/ConnectionException.php
 %%WWWDIR%%/apps-pkg/files_external/3rdparty/icewind/smb/src/Exception/ConnectionRefusedException.php
+%%WWWDIR%%/apps-pkg/files_external/3rdparty/icewind/smb/src/Exception/ConnectionResetException.php
 %%WWWDIR%%/apps-pkg/files_external/3rdparty/icewind/smb/src/Exception/DependencyException.php
 %%WWWDIR%%/apps-pkg/files_external/3rdparty/icewind/smb/src/Exception/Exception.php
 %%WWWDIR%%/apps-pkg/files_external/3rdparty/icewind/smb/src/Exception/FileInUseException.php
@@ -6231,6 +6263,7 @@
 %%WWWDIR%%/apps-pkg/files_external/3rdparty/icewind/smb/src/Wrapped/Server.php
 %%WWWDIR%%/apps-pkg/files_external/3rdparty/icewind/smb/src/Wrapped/Share.php
 %%WWWDIR%%/apps-pkg/files_external/3rdparty/icewind/streams-dummy/composer.json
+%%WWWDIR%%/apps-pkg/files_external/3rdparty/icewind/streams/.gitignore
 %%WWWDIR%%/apps-pkg/files_external/3rdparty/icewind/streams/.travis.yml
 %%WWWDIR%%/apps-pkg/files_external/3rdparty/icewind/streams/LICENCE
 %%WWWDIR%%/apps-pkg/files_external/3rdparty/icewind/streams/README.md
@@ -6800,8 +6833,20 @@
 %%WWWDIR%%/apps-pkg/files_pdfviewer/vendor/pdfjs/web/images/secondaryToolbarButton-rotateCcw@2x.png
 %%WWWDIR%%/apps-pkg/files_pdfviewer/vendor/pdfjs/web/images/secondaryToolbarButton-rotateCw.png
 %%WWWDIR%%/apps-pkg/files_pdfviewer/vendor/pdfjs/web/images/secondaryToolbarButton-rotateCw@2x.png
+%%WWWDIR%%/apps-pkg/files_pdfviewer/vendor/pdfjs/web/images/secondaryToolbarButton-scrollHorizontal.png
+%%WWWDIR%%/apps-pkg/files_pdfviewer/vendor/pdfjs/web/images/secondaryToolbarButton-scrollHorizontal@2x.png
+%%WWWDIR%%/apps-pkg/files_pdfviewer/vendor/pdfjs/web/images/secondaryToolbarButton-scrollVertical.png
+%%WWWDIR%%/apps-pkg/files_pdfviewer/vendor/pdfjs/web/images/secondaryToolbarButton-scrollVertical@2x.png
+%%WWWDIR%%/apps-pkg/files_pdfviewer/vendor/pdfjs/web/images/secondaryToolbarButton-scrollWrapped.png
+%%WWWDIR%%/apps-pkg/files_pdfviewer/vendor/pdfjs/web/images/secondaryToolbarButton-scrollWrapped@2x.png
 %%WWWDIR%%/apps-pkg/files_pdfviewer/vendor/pdfjs/web/images/secondaryToolbarButton-selectTool.png
 %%WWWDIR%%/apps-pkg/files_pdfviewer/vendor/pdfjs/web/images/secondaryToolbarButton-selectTool@2x.png
+%%WWWDIR%%/apps-pkg/files_pdfviewer/vendor/pdfjs/web/images/secondaryToolbarButton-spreadEven.png
+%%WWWDIR%%/apps-pkg/files_pdfviewer/vendor/pdfjs/web/images/secondaryToolbarButton-spreadEven@2x.png
+%%WWWDIR%%/apps-pkg/files_pdfviewer/vendor/pdfjs/web/images/secondaryToolbarButton-spreadNone.png
+%%WWWDIR%%/apps-pkg/files_pdfviewer/vendor/pdfjs/web/images/secondaryToolbarButton-spreadNone@2x.png
+%%WWWDIR%%/apps-pkg/files_pdfviewer/vendor/pdfjs/web/images/secondaryToolbarButton-spreadOdd.png
+%%WWWDIR%%/apps-pkg/files_pdfviewer/vendor/pdfjs/web/images/secondaryToolbarButton-spreadOdd@2x.png
 %%WWWDIR%%/apps-pkg/files_pdfviewer/vendor/pdfjs/web/images/shadow.png
 %%WWWDIR%%/apps-pkg/files_pdfviewer/vendor/pdfjs/web/images/texture.png
 %%WWWDIR%%/apps-pkg/files_pdfviewer/vendor/pdfjs/web/images/toolbarButton-bookmark.png
@@ -7459,6 +7504,7 @@
 %%WWWDIR%%/apps-pkg/files_sharing/lib/ISharedStorage.php
 %%WWWDIR%%/apps-pkg/files_sharing/lib/Listener/LoadAdditionalListener.php
 %%WWWDIR%%/apps-pkg/files_sharing/lib/Listener/LoadSidebarListener.php
+%%WWWDIR%%/apps-pkg/files_sharing/lib/Listener/UserAddedToGroupListener.php
 %%WWWDIR%%/apps-pkg/files_sharing/lib/Listener/UserShareAcceptanceListener.php
 %%WWWDIR%%/apps-pkg/files_sharing/lib/Middleware/OCSShareAPIMiddleware.php
 %%WWWDIR%%/apps-pkg/files_sharing/lib/Middleware/ShareInfoMiddleware.php
@@ -8009,6 +8055,7 @@
 %%WWWDIR%%/apps-pkg/firstrunwizard/js/firstrunwizard.js
 %%WWWDIR%%/apps-pkg/firstrunwizard/js/firstrunwizard.js.map
 %%WWWDIR%%/apps-pkg/firstrunwizard/js/personalsettings.js
+%%WWWDIR%%/apps-pkg/firstrunwizard/l10n/.gitignore
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/af.js
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/af.json
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/ar.js
@@ -9112,14 +9159,24 @@
 %%WWWDIR%%/apps-pkg/photos/img/app.svg
 %%WWWDIR%%/apps-pkg/photos/img/photos.svg
 %%WWWDIR%%/apps-pkg/photos/img/yourphotos.svg
-%%WWWDIR%%/apps-pkg/photos/js/0.js
-%%WWWDIR%%/apps-pkg/photos/js/0.js.map
-%%WWWDIR%%/apps-pkg/photos/js/1.js
-%%WWWDIR%%/apps-pkg/photos/js/1.js.map
-%%WWWDIR%%/apps-pkg/photos/js/2.js
-%%WWWDIR%%/apps-pkg/photos/js/2.js.map
-%%WWWDIR%%/apps-pkg/photos/js/3.js
-%%WWWDIR%%/apps-pkg/photos/js/3.js.map
+%%WWWDIR%%/apps-pkg/photos/js/photos.0.js
+%%WWWDIR%%/apps-pkg/photos/js/photos.0.js.map
+%%WWWDIR%%/apps-pkg/photos/js/photos.1.js
+%%WWWDIR%%/apps-pkg/photos/js/photos.1.js.map
+%%WWWDIR%%/apps-pkg/photos/js/photos.2.js
+%%WWWDIR%%/apps-pkg/photos/js/photos.2.js.map
+%%WWWDIR%%/apps-pkg/photos/js/photos.4.js
+%%WWWDIR%%/apps-pkg/photos/js/photos.4.js.map
+%%WWWDIR%%/apps-pkg/photos/js/photos.5.js
+%%WWWDIR%%/apps-pkg/photos/js/photos.5.js.map
+%%WWWDIR%%/apps-pkg/photos/js/photos.6.js
+%%WWWDIR%%/apps-pkg/photos/js/photos.6.js.map
+%%WWWDIR%%/apps-pkg/photos/js/photos.7.js
+%%WWWDIR%%/apps-pkg/photos/js/photos.7.js.map
+%%WWWDIR%%/apps-pkg/photos/js/photos.8.js
+%%WWWDIR%%/apps-pkg/photos/js/photos.8.js.map
+%%WWWDIR%%/apps-pkg/photos/js/photos.9.js
+%%WWWDIR%%/apps-pkg/photos/js/photos.9.js.map
 %%WWWDIR%%/apps-pkg/photos/js/photos.js
 %%WWWDIR%%/apps-pkg/photos/js/photos.js.map
 %%WWWDIR%%/apps-pkg/photos/l10n/af.js
@@ -11255,6 +11312,8 @@
 %%WWWDIR%%/apps-pkg/theming/l10n/es_UY.json
 %%WWWDIR%%/apps-pkg/theming/l10n/et_EE.js
 %%WWWDIR%%/apps-pkg/theming/l10n/et_EE.json
+%%WWWDIR%%/apps-pkg/theming/l10n/eu.js
+%%WWWDIR%%/apps-pkg/theming/l10n/eu.json
 %%WWWDIR%%/apps-pkg/theming/l10n/fi.js
 %%WWWDIR%%/apps-pkg/theming/l10n/fi.json
 %%WWWDIR%%/apps-pkg/theming/l10n/fr.js
@@ -11406,6 +11465,8 @@
 %%WWWDIR%%/apps-pkg/twofactor_backupcodes/l10n/es_SV.json
 %%WWWDIR%%/apps-pkg/twofactor_backupcodes/l10n/es_UY.js
 %%WWWDIR%%/apps-pkg/twofactor_backupcodes/l10n/es_UY.json
+%%WWWDIR%%/apps-pkg/twofactor_backupcodes/l10n/eu.js
+%%WWWDIR%%/apps-pkg/twofactor_backupcodes/l10n/eu.json
 %%WWWDIR%%/apps-pkg/twofactor_backupcodes/l10n/fi.js
 %%WWWDIR%%/apps-pkg/twofactor_backupcodes/l10n/fi.json
 %%WWWDIR%%/apps-pkg/twofactor_backupcodes/l10n/fr.js
@@ -12551,12 +12612,10 @@
 %%WWWDIR%%/core/doc/admin/_images/authentication-types.png
 %%WWWDIR%%/core/doc/admin/_images/automated_tagging_sample_rule.png
 %%WWWDIR%%/core/doc/admin/_images/code-integrity-admin.png
-%%WWWDIR%%/core/doc/admin/_images/code-integrity-notification.png
 %%WWWDIR%%/core/doc/admin/_images/create_public_share-10.png
 %%WWWDIR%%/core/doc/admin/_images/create_public_share-6.png
 %%WWWDIR%%/core/doc/admin/_images/create_public_share-8.png
 %%WWWDIR%%/core/doc/admin/_images/create_public_share-9.png
-%%WWWDIR%%/core/doc/admin/_images/dropbox-oc.png
 %%WWWDIR%%/core/doc/admin/_images/enable-app.png
 %%WWWDIR%%/core/doc/admin/_images/encryption1.png
 %%WWWDIR%%/core/doc/admin/_images/encryption10.png
@@ -12702,6 +12761,8 @@
 %%WWWDIR%%/core/doc/admin/_sources/file_workflows/retention.rst.txt
 %%WWWDIR%%/core/doc/admin/_sources/gdpr/cookies.rst.txt
 %%WWWDIR%%/core/doc/admin/_sources/gdpr/index.rst.txt
+%%WWWDIR%%/core/doc/admin/_sources/groupware/calendar.rst.txt
+%%WWWDIR%%/core/doc/admin/_sources/groupware/index.rst.txt
 %%WWWDIR%%/core/doc/admin/_sources/index.rst.txt
 %%WWWDIR%%/core/doc/admin/_sources/installation/apps_supported.rst.txt
 %%WWWDIR%%/core/doc/admin/_sources/installation/command_line_installation.rst.txt
@@ -12875,6 +12936,8 @@
 %%WWWDIR%%/core/doc/admin/gdpr/cookies.html
 %%WWWDIR%%/core/doc/admin/gdpr/index.html
 %%WWWDIR%%/core/doc/admin/genindex.html
+%%WWWDIR%%/core/doc/admin/groupware/calendar.html
+%%WWWDIR%%/core/doc/admin/groupware/index.html
 %%WWWDIR%%/core/doc/admin/index.html
 %%WWWDIR%%/core/doc/admin/installation/apps_supported.html
 %%WWWDIR%%/core/doc/admin/installation/command_line_installation.html
@@ -12927,6 +12990,10 @@
 %%WWWDIR%%/core/doc/user/_images/calendar_create.gif
 %%WWWDIR%%/core/doc/user/_images/calendar_dropdown.png
 %%WWWDIR%%/core/doc/user/_images/calendar_editing.png
+%%WWWDIR%%/core/doc/user/_images/calendar_event_invitation_level.png
+%%WWWDIR%%/core/doc/user/_images/calendar_event_menu.png
+%%WWWDIR%%/core/doc/user/_images/calendar_event_reminders.png
+%%WWWDIR%%/core/doc/user/_images/calendar_event_repeat.png
 %%WWWDIR%%/core/doc/user/_images/calendar_new-event_month.gif
 %%WWWDIR%%/core/doc/user/_images/calendar_new-event_week.gif
 %%WWWDIR%%/core/doc/user/_images/calendar_settings.png
@@ -12937,9 +13004,7 @@
 %%WWWDIR%%/core/doc/user/_images/contact_picture.png
 %%WWWDIR%%/core/doc/user/_images/contact_picture_options.png
 %%WWWDIR%%/core/doc/user/_images/contact_picture_set.png
-%%WWWDIR%%/core/doc/user/_images/contact_uploadbutton.png
 %%WWWDIR%%/core/doc/user/_images/contacts_empty.png
-%%WWWDIR%%/core/doc/user/_images/contacts_link.png
 %%WWWDIR%%/core/doc/user/_images/contacts_menu.png
 %%WWWDIR%%/core/doc/user/_images/contacts_popup.png
 %%WWWDIR%%/core/doc/user/_images/create_public_share-6.png
@@ -13588,6 +13653,7 @@
 %%WWWDIR%%/core/templates/update.admin.php
 %%WWWDIR%%/core/templates/update.use-cli.php
 %%WWWDIR%%/core/templates/update.user.php
+%%WWWDIR%%/core/vendor/.gitignore
 %%WWWDIR%%/core/vendor/zxcvbn/LICENSE.txt
 %%WWWDIR%%/core/vendor/zxcvbn/dist/zxcvbn.js
 %%WWWDIR%%/cron.php
@@ -13772,6 +13838,8 @@
 %%WWWDIR%%/lib/l10n/ta_LK.json
 %%WWWDIR%%/lib/l10n/th.js
 %%WWWDIR%%/lib/l10n/th.json
+%%WWWDIR%%/lib/l10n/tk.js
+%%WWWDIR%%/lib/l10n/tk.json
 %%WWWDIR%%/lib/l10n/tr.js
 %%WWWDIR%%/lib/l10n/tr.json
 %%WWWDIR%%/lib/l10n/ug.js
