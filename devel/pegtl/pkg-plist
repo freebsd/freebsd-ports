@@ -35,8 +35,10 @@ include/tao/pegtl/contrib/parse_tree.hpp
 include/tao/pegtl/contrib/parse_tree_to_dot.hpp
 include/tao/pegtl/contrib/raw_string.hpp
 include/tao/pegtl/contrib/remove_first_state.hpp
+include/tao/pegtl/contrib/remove_last_states.hpp
 include/tao/pegtl/contrib/rep_one_min_max.hpp
 include/tao/pegtl/contrib/rep_string.hpp
+include/tao/pegtl/contrib/shuffle_states.hpp
 include/tao/pegtl/contrib/to_string.hpp
 include/tao/pegtl/contrib/tracer.hpp
 include/tao/pegtl/contrib/unescape.hpp

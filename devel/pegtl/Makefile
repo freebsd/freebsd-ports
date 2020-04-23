@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pegtl
-DISTVERSION=	2.8.2
+DISTVERSION=	2.8.3
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
