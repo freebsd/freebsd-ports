@@ -362,6 +362,7 @@
 %%WWWDIR%%/lib/Migration/Version7000Date20190724121137.php
 %%WWWDIR%%/lib/Migration/Version8000Date20200331144101.php
 %%WWWDIR%%/lib/Migration/Version8000Date20200402124456.php
+%%WWWDIR%%/lib/Migration/Version8000Date20200407073807.php
 %%WWWDIR%%/lib/Model/Command.php
 %%WWWDIR%%/lib/Model/CommandMapper.php
 %%WWWDIR%%/lib/Model/Message.php
