@@ -5,7 +5,7 @@ PORTNAME=	rust
 PORTVERSION?=	1.43.0
 PORTREVISION?=	0
 CATEGORIES=	lang
-MASTER_SITES=	https://dev-static.rust-lang.org/dist/:src \
+MASTER_SITES=	https://static.rust-lang.org/dist/:src \
 		LOCAL/tobik/rust:bootstrap \
 		https://static.rust-lang.org/dist/:bootstrap
 DISTNAME?=	${PORTNAME}c-${PORTVERSION}-src
