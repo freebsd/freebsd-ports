@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gmm++
-PORTVERSION=	5.3
+PORTVERSION=	5.4
 CATEGORIES=	math
 MASTER_SITES=	http://download-mirror.savannah.gnu.org/releases/getfem/stable/
 DISTNAME=	${PORTNAME:S/+//g}-${PORTVERSION}
