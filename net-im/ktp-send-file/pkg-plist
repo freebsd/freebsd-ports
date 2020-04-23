@@ -1,5 +1,4 @@
 bin/ktp-send-file
-share/kservices5/ServiceMenus/ktp-send-file.desktop
 share/locale/ar/LC_MESSAGES/ktp-send-file.mo
 share/locale/bs/LC_MESSAGES/ktp-send-file.mo
 share/locale/ca/LC_MESSAGES/ktp-send-file.mo

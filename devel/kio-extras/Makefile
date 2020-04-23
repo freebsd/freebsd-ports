@@ -2,14 +2,14 @@
 
 PORTNAME=	kio-extras
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	devel kde kde-applications # kde kde-applications-plasma
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 library to increase the functionality of KIO
 
 LIB_DEPENDS=	libtag.so:audio/taglib \
-		libHalf.so:graphics/ilmbase
+		libHalf.so:graphics/ilmbase \
+		libkdsoap.so:www/kdsoap
 
 USES=		cmake compiler:c++11-lib gettext gperf kde:5 \
 		pkgconfig qt:5 shared-mime-info shebangfix tar:xz

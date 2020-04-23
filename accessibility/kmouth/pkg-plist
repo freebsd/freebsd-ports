@@ -24,6 +24,11 @@ share/icons/hicolor/32x32/actions/phrase.png
 share/icons/hicolor/32x32/actions/phrasebook.png
 share/icons/hicolor/32x32/apps/kmouth.png
 share/icons/hicolor/48x48/apps/kmouth.png
+%%DATADIR%%/books/ca/ca-courteousness.phrasebook
+%%DATADIR%%/books/ca/ca-greetings.phrasebook
+%%DATADIR%%/books/ca/ca-howareyou.phrasebook
+%%DATADIR%%/books/ca/ca-personal.phrasebook
+%%DATADIR%%/books/ca/ca.desktop
 %%DATADIR%%/books/de/de-courteousness.phrasebook
 %%DATADIR%%/books/de/de-greetings.phrasebook
 %%DATADIR%%/books/de/de-howareyou.phrasebook

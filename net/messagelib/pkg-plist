@@ -104,12 +104,16 @@ include/KF5/MessageViewer/DKIMCheckSignatureJob
 include/KF5/MessageViewer/DKIMHeaderParser
 include/KF5/MessageViewer/DKIMInfo
 include/KF5/MessageViewer/DKIMKeyRecord
+include/KF5/MessageViewer/DKIMManageRulesDialog
+include/KF5/MessageViewer/DKIMManageRulesWidget
 include/KF5/MessageViewer/DKIMManager
+include/KF5/MessageViewer/DKIMManagerAuthenticationServer
 include/KF5/MessageViewer/DKIMManagerKey
 include/KF5/MessageViewer/DKIMManagerKeyDialog
 include/KF5/MessageViewer/DKIMManagerKeyWidget
 include/KF5/MessageViewer/DKIMManagerRules
 include/KF5/MessageViewer/DKIMRule
+include/KF5/MessageViewer/DKIMViewerMenu
 include/KF5/MessageViewer/DKIMWidgetInfo
 include/KF5/MessageViewer/EditorWatcher
 include/KF5/MessageViewer/FileHtmlWriter
@@ -198,6 +202,7 @@ include/KF5/WebEngineViewer/SearchFullHashJob
 include/KF5/WebEngineViewer/UpdateDataBaseInfo
 include/KF5/WebEngineViewer/WebEngineAccessKey
 include/KF5/WebEngineViewer/WebEngineExportHtmlPageJob
+include/KF5/WebEngineViewer/WebEngineExportPdfPageJob
 include/KF5/WebEngineViewer/WebEngineManageScript
 include/KF5/WebEngineViewer/WebEnginePage
 include/KF5/WebEngineViewer/WebEngineScript
@@ -323,11 +328,15 @@ include/KF5/messageviewer/dkimheaderparser.h
 include/KF5/messageviewer/dkiminfo.h
 include/KF5/messageviewer/dkimkeyrecord.h
 include/KF5/messageviewer/dkimmanager.h
+include/KF5/messageviewer/dkimmanagerauthenticationserver.h
 include/KF5/messageviewer/dkimmanagerkey.h
 include/KF5/messageviewer/dkimmanagerkeydialog.h
 include/KF5/messageviewer/dkimmanagerkeywidget.h
 include/KF5/messageviewer/dkimmanagerrules.h
+include/KF5/messageviewer/dkimmanagerulesdialog.h
+include/KF5/messageviewer/dkimmanageruleswidget.h
 include/KF5/messageviewer/dkimrule.h
+include/KF5/messageviewer/dkimviewermenu.h
 include/KF5/messageviewer/dkimwidgetinfo.h
 include/KF5/messageviewer/editorwatcher.h
 include/KF5/messageviewer/filehtmlwriter.h
@@ -428,6 +437,7 @@ include/KF5/webengineviewer/searchfullhashjob.h
 include/KF5/webengineviewer/updatedatabaseinfo.h
 include/KF5/webengineviewer/webengineaccesskey.h
 include/KF5/webengineviewer/webengineexporthtmlpagejob.h
+include/KF5/webengineviewer/webengineexportpdfpagejob.h
 include/KF5/webengineviewer/webenginemanagescript.h
 include/KF5/webengineviewer/webenginepage.h
 include/KF5/webengineviewer/webenginescript.h
@@ -493,7 +503,7 @@ lib/libKF5WebEngineViewer.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_MKSPECDIR%%/modules/qt_TemplateParser.pri
 %%QT_MKSPECDIR%%/modules/qt_WebEngineViewer.pri
 %%QT_PLUGINDIR%%/messageviewer/grantlee/5.0/messageviewer_grantlee_extension.so
-%%QT_PLUGINDIR%%/messageviewer/messageviewer_defaultgrantleeheaderstyleplugin.so
+%%QT_PLUGINDIR%%/messageviewer/headerstyle/messageviewer_defaultgrantleeheaderstyleplugin.so
 share/config.kcfg/customtemplates_kfg.kcfg
 share/config.kcfg/templatesconfiguration_kfg.kcfg
 share/kconf_update/messageviewer.upd

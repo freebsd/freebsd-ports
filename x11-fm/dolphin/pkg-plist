@@ -90,9 +90,11 @@ share/locale/km/LC_MESSAGES/dolphin.mo
 share/locale/ko/LC_MESSAGES/dolphin.mo
 share/locale/ko/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/lt/LC_MESSAGES/dolphin.mo
+share/locale/lt/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/lv/LC_MESSAGES/dolphin.mo
 share/locale/lv/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/ml/LC_MESSAGES/dolphin.mo
+share/locale/ml/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/mr/LC_MESSAGES/dolphin.mo
 share/locale/nb/LC_MESSAGES/dolphin.mo
 share/locale/nds/LC_MESSAGES/dolphin.mo

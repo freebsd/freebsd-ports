@@ -39,6 +39,8 @@ include/KPim/KItinerary/TrainTrip
 include/KPim/KItinerary/Uic9183Block
 include/KPim/KItinerary/Uic9183Parser
 include/KPim/KItinerary/Uic9183TicketLayout
+include/KPim/KItinerary/VdvTicket
+include/KPim/KItinerary/VdvTicketParser
 include/KPim/KItinerary/Vendor0080Block
 include/KPim/KItinerary/Visit
 include/KPim/kitinerary/action.h
@@ -83,8 +85,12 @@ include/KPim/kitinerary/traintrip.h
 include/KPim/kitinerary/uic9183block.h
 include/KPim/kitinerary/uic9183parser.h
 include/KPim/kitinerary/uic9183ticketlayout.h
+include/KPim/kitinerary/vdvticket.h
+include/KPim/kitinerary/vdvticketparser.h
 include/KPim/kitinerary/vendor0080block.h
 include/KPim/kitinerary/visit.h
+include/KPim/kitinerary_version.h
+share/locale/et/LC_MESSAGES/kitinerary.mo
 lib/cmake/KPimItinerary/KPimItineraryConfig.cmake
 lib/cmake/KPimItinerary/KPimItineraryConfigVersion.cmake
 lib/cmake/KPimItinerary/KPimItineraryTargets-%%CMAKE_BUILD_TYPE%%.cmake

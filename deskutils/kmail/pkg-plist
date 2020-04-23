@@ -8,8 +8,6 @@ bin/kmail-refresh-settings
 bin/ktnef
 share/qlogging-categories5/kmail.categories
 share/qlogging-categories5/kmail.renamecategories
-share/qlogging-categories5/ktnefapps.categories
-share/qlogging-categories5/ktnefapps.renamecategories
 lib/libkmailprivate.so.5
 lib/libkmailprivate.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_PLUGINDIR%%/akonadi/config/archivemailagentconfig.so
@@ -173,9 +171,12 @@ share/locale/et/LC_MESSAGES/akonadi_archivemail_agent.mo
 share/locale/et/LC_MESSAGES/akonadi_followupreminder_agent.mo
 share/locale/et/LC_MESSAGES/akonadi_mailfilter_agent.mo
 share/locale/et/LC_MESSAGES/akonadi_sendlater_agent.mo
+share/locale/et/LC_MESSAGES/akonadi_unifiedmailbox_agent.mo
+share/locale/et/LC_MESSAGES/kmail-refresh-settings.mo
 share/locale/et/LC_MESSAGES/kmail.mo
 share/locale/et/LC_MESSAGES/ktnef.mo
 share/locale/eu/LC_MESSAGES/kmail.mo
+share/locale/lt/LC_MESSAGES/kmail-refresh-settings.mo
 share/locale/fa/LC_MESSAGES/kmail.mo
 share/locale/fi/LC_MESSAGES/akonadi_archivemail_agent.mo
 share/locale/fi/LC_MESSAGES/akonadi_followupreminder_agent.mo

@@ -14,7 +14,6 @@ share/icons/hicolor/22x22/apps/bovo.png
 share/icons/hicolor/32x32/apps/bovo.png
 share/icons/hicolor/48x48/apps/bovo.png
 share/icons/hicolor/64x64/apps/bovo.png
-share/kxmlgui5/bovo/bovoui.rc
 share/locale/ar/LC_MESSAGES/bovo.mo
 share/locale/bg/LC_MESSAGES/bovo.mo
 share/locale/bs/LC_MESSAGES/bovo.mo
@@ -45,6 +44,7 @@ share/locale/km/LC_MESSAGES/bovo.mo
 share/locale/ko/LC_MESSAGES/bovo.mo
 share/locale/lt/LC_MESSAGES/bovo.mo
 share/locale/lv/LC_MESSAGES/bovo.mo
+share/locale/ml/LC_MESSAGES/bovo.mo
 share/locale/mr/LC_MESSAGES/bovo.mo
 share/locale/nb/LC_MESSAGES/bovo.mo
 share/locale/nds/LC_MESSAGES/bovo.mo

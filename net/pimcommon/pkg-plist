@@ -24,7 +24,6 @@ include/KF5/PimCommon/LogActivitiesManager
 include/KF5/PimCommon/MigrateApplicationFiles
 include/KF5/PimCommon/MigrateFileInfo
 include/KF5/PimCommon/NetworkManager
-include/KF5/PimCommon/NetworkUtil
 include/KF5/PimCommon/PimCommonSettings
 include/KF5/PimCommon/PimUtil
 include/KF5/PimCommon/PluginUtil
@@ -78,7 +77,6 @@ include/KF5/pimcommon/logactivitiesmanager.h
 include/KF5/pimcommon/migrateapplicationfiles.h
 include/KF5/pimcommon/migratefileinfo.h
 include/KF5/pimcommon/networkmanager.h
-include/KF5/pimcommon/networkutil.h
 include/KF5/pimcommon/pimcommon_export.h
 include/KF5/pimcommon/pimcommonsetting_base.h
 include/KF5/pimcommon/pimcommonsettings.h

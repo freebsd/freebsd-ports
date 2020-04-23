@@ -128,8 +128,6 @@ share/metainfo/org.kde.rocs.appdata.xml
 %%DATADIR%%/kernelapi/document.xml
 %%DATADIR%%/kernelapi/edge.xml
 %%DATADIR%%/kernelapi/node.xml
-%%DATADIR%%/plugin/apidoc/bootstrap-apiview.css
-%%DATADIR%%/plugin/apidoc/bootstrap.css
 %%DATADIR%%/plugin/apidoc/objectApi.html
 %%DATADIR%%/plugin/apidoc/overview.html
 %%DATADIR%%/schemes/kernelapi.xsd

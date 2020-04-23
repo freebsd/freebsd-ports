@@ -44,6 +44,7 @@ share/locale/km/LC_MESSAGES/katomic.mo
 share/locale/ko/LC_MESSAGES/katomic.mo
 share/locale/lt/LC_MESSAGES/katomic.mo
 share/locale/lv/LC_MESSAGES/katomic.mo
+share/locale/ml/LC_MESSAGES/katomic.mo
 share/locale/mr/LC_MESSAGES/katomic.mo
 share/locale/nb/LC_MESSAGES/katomic.mo
 share/locale/nds/LC_MESSAGES/katomic.mo
@@ -65,3 +66,4 @@ share/locale/uk/LC_MESSAGES/katomic.mo
 share/locale/zh_CN/LC_MESSAGES/katomic.mo
 share/locale/zh_TW/LC_MESSAGES/katomic.mo
 share/metainfo/org.kde.katomic.appdata.xml
+share/qlogging-categories5/katomic.categories

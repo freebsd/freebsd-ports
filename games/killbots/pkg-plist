@@ -50,6 +50,7 @@ share/locale/km/LC_MESSAGES/killbots.mo
 share/locale/ko/LC_MESSAGES/killbots.mo
 share/locale/lt/LC_MESSAGES/killbots.mo
 share/locale/lv/LC_MESSAGES/killbots.mo
+share/locale/ml/LC_MESSAGES/killbots.mo
 share/locale/mr/LC_MESSAGES/killbots.mo
 share/locale/nb/LC_MESSAGES/killbots.mo
 share/locale/nds/LC_MESSAGES/killbots.mo
@@ -70,3 +71,4 @@ share/locale/uk/LC_MESSAGES/killbots.mo
 share/locale/zh_CN/LC_MESSAGES/killbots.mo
 share/locale/zh_TW/LC_MESSAGES/killbots.mo
 share/metainfo/org.kde.killbots.appdata.xml
+share/qlogging-categories5/killbots.categories

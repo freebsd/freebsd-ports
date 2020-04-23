@@ -3,8 +3,15 @@ etc/signon-ui/webkit-options.d/api.twitter.com.conf
 etc/signon-ui/webkit-options.d/identi.ca.conf
 etc/signon-ui/webkit-options.d/www.facebook.com.conf
 %%QT_PLUGINDIR%%/kaccounts/ui/owncloud_plugin_kaccounts.so
+%%QT_PLUGINDIR%%/kaccounts/ui/nextcloud_plugin_kaccounts.so
 share/accounts/providers/kde/google.provider
+share/accounts/providers/kde/nextcloud.provider
 share/accounts/providers/kde/owncloud.provider
+share/accounts/services/kde/nextcloud-contacts.service
+share/accounts/services/kde/nextcloud-storage.service
+share/kpackage/genericqml/org.kde.kaccounts.nextcloud/contents/ui/main.qml
+share/kpackage/genericqml/org.kde.kaccounts.nextcloud/metadata.desktop
+share/kpackage/genericqml/org.kde.kaccounts.nextcloud/metadata.json
 share/kpackage/genericqml/org.kde.kaccounts.owncloud/contents/ui/BasicInfo.qml
 share/kpackage/genericqml/org.kde.kaccounts.owncloud/contents/ui/Services.qml
 share/kpackage/genericqml/org.kde.kaccounts.owncloud/contents/ui/main.qml
@@ -45,4 +52,5 @@ share/locale/tr/LC_MESSAGES/kaccounts-providers.mo
 share/locale/uk/LC_MESSAGES/kaccounts-providers.mo
 share/locale/zh_CN/LC_MESSAGES/kaccounts-providers.mo
 share/locale/zh_TW/LC_MESSAGES/kaccounts-providers.mo
+share/metainfo/org.kde.kaccounts.nextcloud.appdata.xml
 share/metainfo/org.kde.kaccounts.owncloud.appdata.xml

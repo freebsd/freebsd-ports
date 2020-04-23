@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2019-03-22 00:18:06 UTC
+--- CMakeLists.txt.orig	2020-03-19 23:24:52 UTC
 +++ CMakeLists.txt
-@@ -80,24 +80,27 @@ set_package_properties("libssh" PROPERTIES
+@@ -81,24 +81,28 @@ set_package_properties("libssh" PROPERTIES
      PURPOSE "Needed to build VNC+SSH tunnel support "
  )
  
@@ -41,6 +41,7 @@
 +          TYPE RUNTIME
 +  )
 +endif()
- 
- # NX support is not ready for KDE 4.2; disabled (uwolfer)
- # macro_optional_find_package(LibNXCL)
++
+ if (EXISTS "${CMAKE_SOURCE_DIR}/.git")
+    add_definitions(-DKF_DISABLE_DEPRECATED_BEFORE_AND_AT=0x060000) 
+ endif()

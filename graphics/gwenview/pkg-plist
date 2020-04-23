@@ -2,7 +2,7 @@ bin/gwenview
 bin/gwenview_importer
 lib/libgwenviewlib.so.4.97.0
 lib/libgwenviewlib.so.5
-%%QT_PLUGINDIR%%/gvpart.so
+%%QT_PLUGINDIR%%/kf5/parts/gvpart.so
 share/applications/org.kde.gwenview.desktop
 %%DATADIR%%/color-schemes/fullscreen.colors
 %%DATADIR%%/cursors/zoom.png
@@ -81,3 +81,4 @@ share/locale/zh_TW/LC_MESSAGES/gwenview.mo
 share/metainfo/org.kde.gwenview.appdata.xml
 share/solid/actions/gwenview_importer.desktop
 share/solid/actions/gwenview_importer_camera.desktop
+share/qlogging-categories5/gwenview.categories

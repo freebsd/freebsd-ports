@@ -11,6 +11,7 @@ share/icons/hicolor/48x48/apps/yakuake.png
 share/icons/hicolor/64x64/apps/yakuake.png
 share/knotifications5/yakuake.notifyrc
 share/locale/ar/LC_MESSAGES/yakuake.mo
+share/locale/ast/LC_MESSAGES/yakuake.mo
 share/locale/bs/LC_MESSAGES/yakuake.mo
 share/locale/ca/LC_MESSAGES/yakuake.mo
 share/locale/ca@valencia/LC_MESSAGES/yakuake.mo
@@ -38,6 +39,7 @@ share/locale/ja/LC_MESSAGES/yakuake.mo
 share/locale/km/LC_MESSAGES/yakuake.mo
 share/locale/ko/LC_MESSAGES/yakuake.mo
 share/locale/lt/LC_MESSAGES/yakuake.mo
+share/locale/ml/LC_MESSAGES/yakuake.mo
 share/locale/mr/LC_MESSAGES/yakuake.mo
 share/locale/nb/LC_MESSAGES/yakuake.mo
 share/locale/nds/LC_MESSAGES/yakuake.mo

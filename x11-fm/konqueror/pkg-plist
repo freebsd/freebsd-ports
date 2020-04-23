@@ -35,7 +35,6 @@ lib/libkwebenginepart.so
 %%QT_PLUGINDIR%%/khtmlsettingsplugin.so
 %%QT_PLUGINDIR%%/khtmlttsplugin.so
 %%QT_PLUGINDIR%%/kimgallery.so
-%%QT_PLUGINDIR%%/konq_aboutpage.so
 %%QT_PLUGINDIR%%/konq_shellcmdplugin.so
 %%QT_PLUGINDIR%%/searchbarplugin.so
 share/akregator/pics/feed.png
@@ -118,10 +117,8 @@ share/kservices5/khtml_behavior.desktop
 share/kservices5/khtml_filter.desktop
 share/kservices5/khtml_general.desktop
 share/kservices5/khtml_java_js.desktop
-share/kservices5/konq_aboutpage.desktop
 share/kservices5/org.kde.konqueror.desktop
 share/kservices5/webenginepart.desktop
-share/kservicetypes5/konqaboutpage.desktop
 share/kwebkitpart/kpartplugins/akregator_konqfeedicon.desktop
 share/kwebkitpart/kpartplugins/akregator_konqfeedicon.rc
 share/kwebkitpart/kpartplugins/autorefresh.desktop

@@ -91,6 +91,7 @@ share/kservices5/korganizer_configplugins.desktop
 share/kservices5/korganizer_configtime.desktop
 share/kservices5/korganizer_configviews.desktop
 share/kservices5/korganizer_part.desktop
+share/kservices5/korganizer_userfeedback.desktop
 share/kservices5/webcal.protocol
 share/kservicetypes5/korganizerpart.desktop
 share/locale/ar/LC_MESSAGES/korgac.mo

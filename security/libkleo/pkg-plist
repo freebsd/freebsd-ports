@@ -15,6 +15,7 @@ include/KF5/Libkleo/Exception
 include/KF5/Libkleo/FileNameRequester
 include/KF5/Libkleo/FileSystemWatcher
 include/KF5/Libkleo/Formatting
+include/KF5/Libkleo/GnuPG
 include/KF5/Libkleo/KConfigBasedKeyFilter
 include/KF5/Libkleo/KDHorizontalLine
 include/KF5/Libkleo/KeyApprovalDialog
@@ -51,6 +52,7 @@ include/KF5/libkleo/exception.h
 include/KF5/libkleo/filenamerequester.h
 include/KF5/libkleo/filesystemwatcher.h
 include/KF5/libkleo/formatting.h
+include/KF5/libkleo/gnupg.h
 include/KF5/libkleo/kconfigbasedkeyfilter.h
 include/KF5/libkleo/kdhorizontalline.h
 include/KF5/libkleo/keyapprovaldialog.h

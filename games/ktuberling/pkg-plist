@@ -1758,6 +1758,7 @@ share/locale/km/LC_MESSAGES/ktuberling.mo
 share/locale/ko/LC_MESSAGES/ktuberling.mo
 share/locale/lt/LC_MESSAGES/ktuberling.mo
 share/locale/lv/LC_MESSAGES/ktuberling.mo
+share/locale/ml/LC_MESSAGES/ktuberling.mo
 share/locale/mr/LC_MESSAGES/ktuberling.mo
 share/locale/nb/LC_MESSAGES/ktuberling.mo
 share/locale/nds/LC_MESSAGES/ktuberling.mo
@@ -1780,3 +1781,4 @@ share/locale/wa/LC_MESSAGES/ktuberling.mo
 share/locale/zh_CN/LC_MESSAGES/ktuberling.mo
 share/locale/zh_TW/LC_MESSAGES/ktuberling.mo
 share/metainfo/org.kde.ktuberling.appdata.xml
+share/qlogging-categories5/ktuberling.categories

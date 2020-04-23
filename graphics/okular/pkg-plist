@@ -1,5 +1,4 @@
 bin/okular
-bin/okularkirigami
 share/qlogging-categories5/okular.categories
 include/okular/core/action.h
 include/okular/core/annotations.h
@@ -57,10 +56,6 @@ lib/libOkular5Core.so.9.0.0
 %%QT_PLUGINDIR%%/okular/generators/okularGenerator_txt.so
 %%QT_PLUGINDIR%%/okular/generators/okularGenerator_xps.so
 %%QT_PLUGINDIR%%/okularpart.so
-%%QT_QMLDIR%%/org/kde/okular/DocumentView.qml
-%%QT_QMLDIR%%/org/kde/okular/libokularplugin.so
-%%QT_QMLDIR%%/org/kde/okular/private/PageView.qml
-%%QT_QMLDIR%%/org/kde/okular/qmldir
 man/ca/man1/okular.1.gz
 man/de/man1/okular.1.gz
 man/es/man1/okular.1.gz
@@ -109,7 +104,6 @@ share/applications/org.kde.mobile.okular_tiff.desktop
 share/applications/org.kde.mobile.okular_txt.desktop
 share/applications/org.kde.mobile.okular_xps.desktop
 share/applications/org.kde.okular.desktop
-share/applications/org.kde.okular.kirigami.desktop
 share/config.kcfg/gssettings.kcfg
 share/config.kcfg/okular.kcfg
 share/config.kcfg/okular_core.kcfg
@@ -1062,7 +1056,6 @@ share/metainfo/org.kde.okular-tiff.metainfo.xml
 share/metainfo/org.kde.okular-txt.metainfo.xml
 share/metainfo/org.kde.okular-xps.metainfo.xml
 share/metainfo/org.kde.okular.appdata.xml
-share/metainfo/org.kde.okular.kirigami.appdata.xml
 %%DATADIR%%/drawingtools.xml
 %%DATADIR%%/icons/hicolor/16x16/apps/okular-fb2.png
 %%DATADIR%%/icons/hicolor/16x16/apps/okular-gv.png

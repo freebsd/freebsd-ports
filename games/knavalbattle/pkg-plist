@@ -47,6 +47,7 @@ share/locale/km/LC_MESSAGES/knavalbattle.mo
 share/locale/ko/LC_MESSAGES/knavalbattle.mo
 share/locale/lt/LC_MESSAGES/knavalbattle.mo
 share/locale/lv/LC_MESSAGES/knavalbattle.mo
+share/locale/ml/LC_MESSAGES/knavalbattle.mo
 share/locale/mr/LC_MESSAGES/knavalbattle.mo
 share/locale/nb/LC_MESSAGES/knavalbattle.mo
 share/locale/nds/LC_MESSAGES/knavalbattle.mo
@@ -68,3 +69,4 @@ share/locale/uk/LC_MESSAGES/knavalbattle.mo
 share/locale/zh_CN/LC_MESSAGES/knavalbattle.mo
 share/locale/zh_TW/LC_MESSAGES/knavalbattle.mo
 share/metainfo/org.kde.knavalbattle.appdata.xml
+share/qlogging-categories5/knavalbattle.categories

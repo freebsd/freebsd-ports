@@ -54,6 +54,7 @@ share/locale/km/LC_MESSAGES/klines.mo
 share/locale/ko/LC_MESSAGES/klines.mo
 share/locale/lt/LC_MESSAGES/klines.mo
 share/locale/lv/LC_MESSAGES/klines.mo
+share/locale/ml/LC_MESSAGES/klines.mo
 share/locale/mr/LC_MESSAGES/klines.mo
 share/locale/nb/LC_MESSAGES/klines.mo
 share/locale/nds/LC_MESSAGES/klines.mo
@@ -75,3 +76,4 @@ share/locale/uk/LC_MESSAGES/klines.mo
 share/locale/zh_CN/LC_MESSAGES/klines.mo
 share/locale/zh_TW/LC_MESSAGES/klines.mo
 share/metainfo/org.kde.klines.appdata.xml
+share/qlogging-categories5/klines.categories

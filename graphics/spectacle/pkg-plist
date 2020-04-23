@@ -9,6 +9,7 @@ share/icons/hicolor/22x22/apps/spectacle.png
 share/icons/hicolor/32x32/apps/spectacle.png
 share/icons/hicolor/48x48/apps/spectacle.png
 share/icons/hicolor/scalable/apps/spectacle.svgz
+share/kconf_update/spectacle_newConfig.upd
 share/kconf_update/spectacle_shortcuts.upd
 share/kglobalaccel/org.kde.spectacle.desktop
 share/knotifications5/spectacle.notifyrc

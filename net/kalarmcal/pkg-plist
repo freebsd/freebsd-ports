@@ -4,11 +4,13 @@ include/KF5/KAlarmCal/KAlarmCal/CollectionAttribute
 include/KF5/KAlarmCal/KAlarmCal/CompatibilityAttribute
 include/KF5/KAlarmCal/KAlarmCal/DateTime
 include/KF5/KAlarmCal/KAlarmCal/EventAttribute
+include/KF5/KAlarmCal/KAlarmCal/Identities
 include/KF5/KAlarmCal/KAlarmCal/KACalendar
 include/KF5/KAlarmCal/KAlarmCal/KADateTime
 include/KF5/KAlarmCal/KAlarmCal/KAEvent
 include/KF5/KAlarmCal/KAlarmCal/KARecurrence
 include/KF5/KAlarmCal/KAlarmCal/Repetition
+include/KF5/KAlarmCal/KAlarmCal/Version
 include/KF5/KAlarmCal/kalarmcal/akonadi.h
 include/KF5/KAlarmCal/kalarmcal/alarmtext.h
 include/KF5/KAlarmCal/kalarmcal/collectionattribute.h

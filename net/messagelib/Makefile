@@ -2,11 +2,7 @@
 
 PORTNAME=	messagelib
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	3
 CATEGORIES=	net kde kde-applications
-
-PATCH_SITES=	https://github.com/KDE/messagelib/commit/
-PATCHFILES=	991eb9c20286bdce2458d7dbc17765dd7b0d7b38.patch:-p1
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Library for handling messages

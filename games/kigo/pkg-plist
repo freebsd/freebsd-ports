@@ -44,6 +44,7 @@ share/locale/km/LC_MESSAGES/kigo.mo
 share/locale/ko/LC_MESSAGES/kigo.mo
 share/locale/lt/LC_MESSAGES/kigo.mo
 share/locale/lv/LC_MESSAGES/kigo.mo
+share/locale/ml/LC_MESSAGES/kigo.mo
 share/locale/mr/LC_MESSAGES/kigo.mo
 share/locale/nb/LC_MESSAGES/kigo.mo
 share/locale/nds/LC_MESSAGES/kigo.mo
@@ -64,3 +65,4 @@ share/locale/uk/LC_MESSAGES/kigo.mo
 share/locale/zh_CN/LC_MESSAGES/kigo.mo
 share/locale/zh_TW/LC_MESSAGES/kigo.mo
 share/metainfo/org.kde.kigo.appdata.xml
+share/qlogging-categories5/kigo.categories

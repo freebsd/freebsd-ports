@@ -1,5 +1,5 @@
 bin/cantor
-bin/cantor_python3server
+bin/cantor_pythonserver
 %%R%%bin/cantor_rserver
 bin/cantor_scripteditor
 etc/xdg/cantor.knsrc
@@ -7,7 +7,7 @@ etc/xdg/cantor_kalgebra.knsrc
 %%LUAJIT%%etc/xdg/cantor_lua.knsrc
 etc/xdg/cantor_maxima.knsrc
 etc/xdg/cantor_octave.knsrc
-etc/xdg/cantor_python3.knsrc
+etc/xdg/cantor_python.knsrc
 etc/xdg/cantor_qalculate.knsrc
 %%R%%etc/xdg/cantor_r.knsrc
 etc/xdg/cantor_sage.knsrc
@@ -35,12 +35,12 @@ include/cantor/session.h
 include/cantor/syntaxhelpobject.h
 include/cantor/textresult.h
 include/cantor/worksheetaccess.h
+lib/cantor_pythonbackend.so
 lib/cmake/Cantor/CantorConfig.cmake
 lib/cmake/Cantor/CantorConfigVersion.cmake
 lib/cmake/Cantor/CantorTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Cantor/CantorTargets.cmake
 lib/libcantor_config.so
-lib/libcantor_pythonbackend.so
 lib/libcantorlibs.so
 lib/libcantorlibs.so.24
 lib/libcantorlibs.so.%%KDE_APPLICATIONS_VERSION%%
@@ -61,7 +61,7 @@ lib/libcantorlibs.so.%%KDE_APPLICATIONS_VERSION%%
 %%LUAJIT%%%%QT_PLUGINDIR%%/cantor/backends/cantor_luabackend.so
 %%QT_PLUGINDIR%%/cantor/backends/cantor_maximabackend.so
 %%QT_PLUGINDIR%%/cantor/backends/cantor_octavebackend.so
-%%QT_PLUGINDIR%%/cantor/backends/cantor_python3backend.so
+%%QT_PLUGINDIR%%/cantor/backends/cantor_pythonbackend.so
 %%QT_PLUGINDIR%%/cantor/backends/cantor_qalculatebackend.so
 %%R%%%%QT_PLUGINDIR%%/cantor/backends/cantor_rbackend.so
 %%QT_PLUGINDIR%%/cantor/backends/cantor_sagebackend.so
@@ -84,7 +84,7 @@ share/config.kcfg/cantor_libs.kcfg
 share/config.kcfg/kalgebrabackend.kcfg
 share/config.kcfg/maximabackend.kcfg
 share/config.kcfg/octavebackend.kcfg
-share/config.kcfg/python3backend.kcfg
+share/config.kcfg/pythonbackend.kcfg
 share/config.kcfg/qalculatebackend.kcfg
 %%R%%share/config.kcfg/rserver.kcfg
 share/config.kcfg/sagebackend.kcfg

@@ -79,3 +79,4 @@ share/locale/uk/LC_MESSAGES/libkmime5.mo
 share/locale/wa/LC_MESSAGES/libkmime5.mo
 share/locale/zh_CN/LC_MESSAGES/libkmime5.mo
 share/locale/zh_TW/LC_MESSAGES/libkmime5.mo
+share/qlogging-categories5/kmime.categories

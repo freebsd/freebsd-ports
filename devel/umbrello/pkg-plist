@@ -42,6 +42,7 @@ share/locale/es/LC_MESSAGES/umbrello.mo
 share/locale/es/LC_MESSAGES/umbrello_kdevphp.mo
 share/locale/es/LC_MESSAGES/umbrello_kdevphp5.mo
 share/locale/et/LC_MESSAGES/umbrello.mo
+share/locale/et/LC_MESSAGES/umbrello_kdevphp.mo
 share/locale/et/LC_MESSAGES/umbrello_kdevphp5.mo
 share/locale/eu/LC_MESSAGES/umbrello.mo
 share/locale/fa/LC_MESSAGES/umbrello.mo
@@ -157,6 +158,7 @@ share/umbrello5/layouts/object-export.desktop
 share/umbrello5/layouts/object-horizontal.desktop
 share/umbrello5/layouts/object-vertical.desktop
 share/umbrello5/layouts/state-export.desktop
+share/umbrello5/layouts/state-horizontal.desktop
 share/umbrello5/layouts/state-vertical.desktop
 share/umbrello5/layouts/usecase-default.desktop
 share/umbrello5/simple4125/sdbcent.mod

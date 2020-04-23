@@ -1,11 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	kdeconnect-kde
-DISTVERSION=	1.4
-PORTREVISION=	1
-CATEGORIES=	deskutils kde
-MASTER_SITES=	KDE/stable/kdeconnect/${DISTVERSION}
-DIST_SUBDIR=	KDE
+DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+CATEGORIES=	deskutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Support for KDE to interface between your phone and your computer
@@ -33,5 +30,7 @@ USE_QT=		concurrent core dbus declarative gui multimedia network \
 		buildtools_build qmake_build
 USE_XORG=	ice sm x11 xext xtst
 USE_LDCONFIG=	${QT_QMLDIR}/org/kde/kdeconnect
+
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.mk>

@@ -76,6 +76,16 @@ share/ktelepathy/styles/WoshiChat.AdiumMessageStyle/Contents/Resources/lib/livep
 share/ktelepathy/styles/WoshiChat.AdiumMessageStyle/Contents/Resources/lib/scrollbar.js
 share/ktelepathy/styles/WoshiChat.AdiumMessageStyle/Contents/Resources/main.css
 share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Info.plist
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Colors/In Blue.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Colors/In Green.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Colors/In Red.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Colors/In Steel.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Colors/In Yellow.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Colors/Out Blue.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Colors/Out Green.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Colors/Out Red.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Colors/Out Steel.css
+share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Colors/Out Yellow.css
 share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Demo.html
 share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Footer.html
 share/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Header.html

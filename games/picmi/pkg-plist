@@ -30,6 +30,7 @@ share/locale/kk/LC_MESSAGES/picmi.mo
 share/locale/ko/LC_MESSAGES/picmi.mo
 share/locale/lt/LC_MESSAGES/picmi.mo
 share/locale/lv/LC_MESSAGES/picmi.mo
+share/locale/ml/LC_MESSAGES/picmi.mo
 share/locale/mr/LC_MESSAGES/picmi.mo
 share/locale/nb/LC_MESSAGES/picmi.mo
 share/locale/nds/LC_MESSAGES/picmi.mo
@@ -69,11 +70,13 @@ share/metainfo/org.kde.picmi.appdata.xml
 %%DATADIR%%/levels/default/elephant.xpm
 %%DATADIR%%/levels/default/halloween.xpm
 %%DATADIR%%/levels/default/hourglass.xpm
+%%DATADIR%%/levels/default/house.xpm
 %%DATADIR%%/levels/default/mobile_phone.xpm
 %%DATADIR%%/levels/default/panda.xpm
 %%DATADIR%%/levels/default/phone.xpm
 %%DATADIR%%/levels/default/picmi.xpm
 %%DATADIR%%/levels/default/pirate_dog.xpm
+%%DATADIR%%/levels/default/pirate_ship.xpm
 %%DATADIR%%/levels/default/policeman.xpm
 %%DATADIR%%/levels/default/robot.xpm
 %%DATADIR%%/levels/default/santa_claus.xpm
@@ -83,3 +86,4 @@ share/metainfo/org.kde.picmi.appdata.xml
 %%DATADIR%%/themes/picmi.desktop
 %%DATADIR%%/themes/picmi.png
 %%DATADIR%%/themes/picmi.svg
+share/qlogging-categories5/picmi.categories
