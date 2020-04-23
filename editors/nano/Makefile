@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	nano
-PORTVERSION=	4.8
+PORTVERSION=	4.9.2
 CATEGORIES=	editors
-MASTER_SITES=	https://www.nano-editor.org/dist/v${PORTVERSION:R}/ GNU
+MASTER_SITES=	https://www.nano-editor.org/dist/v${PORTVERSION:R:R}/ GNU
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Nano's ANOther editor, an enhanced free Pico clone
