@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sbt
-PORTVERSION=	1.3.9
+PORTVERSION=	1.3.10
 CATEGORIES=	devel java
 MASTER_SITES=	https://github.com/sbt/sbt/releases/download/v${PORTVERSION}/
 
