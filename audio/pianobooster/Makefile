@@ -15,7 +15,7 @@ LIB_DEPENDS=	libftgl.so:graphics/ftgl \
 		libjack.so:audio/jack \
 		librtmidi.so:audio/rtmidi
 
-USES=		cmake desktop-file-utils gl pkgconfig qt:5
+USES=		cmake compiler:c++11-lang desktop-file-utils gl pkgconfig qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	captnfab
 GH_PROJECT=	PianoBooster
