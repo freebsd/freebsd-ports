@@ -520,8 +520,6 @@
 %%WWWDIR%%/js/jquery.notifybar.js
 %%WWWDIR%%/js/share.js
 %%WWWDIR%%/js/tablesorte.js
-%%WWWDIR%%/pages/examplepage.php
-%%WWWDIR%%/pages/index.html
 %%WWWDIR%%/readme.html
 %%WWWDIR%%/sample-public-api.txt
 %%WWWDIR%%/sample-public-front-page.txt
@@ -530,6 +528,8 @@
 %%WWWDIR%%/user/config-sample.php
 %%WWWDIR%%/user/index.html
 %%WWWDIR%%/user/languages/index.html
+%%WWWDIR%%/user/pages/examplepage.php
+%%WWWDIR%%/user/pages/index.html
 %%WWWDIR%%/user/plugins/hyphens-in-urls/README.md
 %%WWWDIR%%/user/plugins/hyphens-in-urls/plugin.php
 %%WWWDIR%%/user/plugins/index.html

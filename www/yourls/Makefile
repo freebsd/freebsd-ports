@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	yourls
-PORTVERSION=	1.7.6
+PORTVERSION=	1.7.9
 CATEGORIES=	www
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -19,8 +19,8 @@ NO_BUILD=	yes
 
 SUB_FILES=	pkg-message
 
-GH_ACCOUNT=	${PORTNAME:tu}
-GH_PROJECT=	${PORTNAME:tu}
+GH_ACCOUNT=	YOURLS
+GH_PROJECT=	YOURLS
 USE_GITHUB=	yes
 
 do-install:
