@@ -18,6 +18,8 @@ bin/1dTsort
 bin/1dUpsample
 bin/1d_tool.py
 bin/1dcat
+bin/@djunct_ssw_intermed_edge_imgs
+bin/adjunct_simplify_cost.py
 bin/1ddot
 bin/1deval
 bin/1dfft
