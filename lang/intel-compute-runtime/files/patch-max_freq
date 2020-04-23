@@ -5,27 +5,43 @@
 
 --- shared/source/os_interface/linux/drm_neo.cpp.orig	2020-04-11 07:41:07 UTC
 +++ shared/source/os_interface/linux/drm_neo.cpp
-@@ -24,6 +24,11 @@
+@@ -24,6 +24,13 @@
  #include <fstream>
  #include <linux/limits.h>
  
 +#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
 +#include <sys/param.h>
 +#include <sys/sysctl.h>
++#include <sys/stat.h>
++#include <cstdlib>
 +#endif
 +
  namespace NEO {
  
  namespace IoctlHelper {
-@@ -104,6 +109,16 @@ int Drm::getEnabledPooledEu(int &enabled) {
+@@ -104,6 +111,30 @@ int Drm::getEnabledPooledEu(int &enabled) {
  
  int Drm::getMaxGpuFrequency(int &maxGpuFrequency) {
      maxGpuFrequency = 0;
 +#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
++    struct stat sb;
++    if (fstat(getFileDescriptor(), &sb)) {
++        return 0;
++    }
++    char name[SPECNAMELEN + 1];
++    if (!devname_r(sb.st_rdev, S_IFCHR, name, sizeof(name))) {
++        return 0;
++    }
++    int id;
++    if (!sscanf(name, "drm/%d", &id) && !sscanf(name, "dri/renderD%d", &id)) {
++        return 0;
++    }
++
++    char oid[MAXPATHLEN + 1];
 +    char max_freq[PAGE_SIZE];
 +    size_t len = sizeof(max_freq);
-+
-+    if (sysctlbyname("sys.class.drm.card0.gt_max_freq_mhz", &max_freq, &len, NULL, 0)) {
++    snprintf(oid, sizeof(oid), "sys.class.drm.card%d.gt_max_freq_mhz", id - 128);
++    if (sysctlbyname(oid, &max_freq, &len, NULL, 0)) {
 +        return 0;
 +    }
 +
@@ -34,7 +50,7 @@
      std::string clockSysFsPath = getSysFsPciPath();
  
      clockSysFsPath += "/gt_max_freq_mhz";
-@@ -115,6 +130,7 @@ int Drm::getMaxGpuFrequency(int &maxGpuFrequency) {
+@@ -115,6 +146,7 @@ int Drm::getMaxGpuFrequency(int &maxGpuFrequency) {
  
      ifs >> maxGpuFrequency;
      ifs.close();
