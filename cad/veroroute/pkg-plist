@@ -82,9 +82,9 @@ share/gEDA/sym/veroroute_passive/Capacitor_Film_300.sym
 share/gEDA/sym/veroroute_passive/Crystal.sym
 share/gEDA/sym/veroroute_passive/Resistor.sym
 share/gEDA/sym/veroroute_passive/Resistor_100mil.sym
-share/gEDA/sym/veroroute_passive/Resistor_200mil .sym
+share/gEDA/sym/veroroute_passive/Resistor_200mil.sym
 share/gEDA/sym/veroroute_passive/Resistor_300mil.sym
-share/gEDA/sym/veroroute_passive/Resistor_400mil .sym
+share/gEDA/sym/veroroute_passive/Resistor_400mil.sym
 share/gEDA/sym/veroroute_regulator/LM137.sym
 share/gEDA/sym/veroroute_regulator/LM317.sym
 share/gEDA/sym/veroroute_regulator/LM336.sym
