@@ -4,7 +4,7 @@
 PORTNAME=	ply
 PORTVERSION=	3.11
 CATEGORIES=	devel python
-MASTER_SITES=	http://www.dabeaz.com/ply/
+MASTER_SITES=	https://www.dabeaz.com/ply/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dbaio@FreeBSD.org
