@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	netpbm
-DISTVERSION=	10.90.00
+DISTVERSION=	10.90.01
 CATEGORIES=	graphics
-MASTER_SITES=	https://github.com/t6/netpbm/releases/download/v${DISTVERSION}/ \
-		LOCAL/tobik
+MASTER_SITES=	https://github.com/t6/netpbm/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Toolkit for conversion of images between different formats
