@@ -1099,6 +1099,7 @@
     SUBDIR += py-python-keystoneclient
     SUBDIR += py-python-neutronclient
     SUBDIR += py-python-novaclient
+    SUBDIR += py-python-novaclient16
     SUBDIR += py-python-ntlm
     SUBDIR += py-python-openstackclient
     SUBDIR += py-python-twitter
