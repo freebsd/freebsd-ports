@@ -3,7 +3,7 @@
 
 PORTNAME=	openjfx8
 DISTVERSION=	8u202-b07
-PORTREVISION=	5
+PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	java x11-toolkits devel
 MASTER_SITES=	https://github.com/t6/openjfx/releases/download/release/ \

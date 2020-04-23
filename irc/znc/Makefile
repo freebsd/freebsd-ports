@@ -3,7 +3,7 @@
 
 PORTNAME=	znc
 PORTVERSION=	1.7.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	irc
 MASTER_SITES=	https://znc.in/releases/ \
 		https://znc.in/releases/archive/
