@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	pot
-PORTVERSION=	0.10.4
-PORTREVISION=	1
+PORTVERSION=	0.11.1
+PORTREVISION=	0
 CATEGORIES=	sysutils
 
 MAINTAINER=	pizzamig@FreeBSD.org
@@ -16,7 +16,7 @@ RUN_DEPENDS=	potnet:sysutils/potnet \
 	ncat:security/nmap \
 	${LOCALBASE}/share/freebsd/MANIFESTS/amd64-amd64-11.2-RELEASE:misc/freebsd-release-manifests
 
-USE_RC_SUBR=	pot
+USE_RC_SUBR=	pot pot_early
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	pizzamig

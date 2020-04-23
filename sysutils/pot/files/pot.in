@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 # PROVIDE: pot
-# REQUIRE: NETWORKING syslogd pf
-# BEFORE: ntpdate
+# REQUIRE: NETWORKING LOGIN FILESYSTEM
+# BEFORE: securelevel
 # KEYWORD: shutdown nojail
 
 . /etc/rc.subr
@@ -17,33 +17,16 @@ start_cmd="pot_start"
 stop_cmd="pot_stop"
 restart_cmd="pot_restart"
 status_cmd="pot_status"
-start_precmd="pot_deprecated_start"
-stop_postcmd="pot_deprecated_stop"
 
 load_rc_config $name
 : ${pot_enable:=NO}
-: ${pot_list:=""}
-
-pot_deprecated_start()
-{
-	if [ -n "$pot_list" ]; then
-		echo "pot_list is deprecated! please use pot set-attr to set the start-at-boot attribute to your pot"
-	fi
-}
-
-pot_deprecated_stop()
-{
-	if [ -n "$pot_list" ]; then
-		echo "pot_list is deprecated! please use pot set-attr to set the start-at-boot attribute to your pot"
-	fi
-}
 
 pot_start()
 {
 	local _pname _dyn_pot_list _start
 	_dyn_pot_list=$(%%PREFIX%%/bin/pot ls -q)
 	for _pname in $_dyn_pot_list ; do
-		if _start=$( %%PREFIX%%/bin/pot get-attr -p "$_pname" -A start-at-boot -q ) && [ "$_start" = "YES" ]; then
+		if [ "$( %%PREFIX%%/bin/pot get-attr -p "$_pname" -A start-at-boot -q )" = "YES" ]; then
 			%%PREFIX%%/bin/pot start "$_pname"
 		fi
 	done
@@ -54,7 +37,29 @@ pot_stop()
 	local _pname _dyn_pot_list _start
 	_dyn_pot_list=$(%%PREFIX%%/bin/pot ls -q)
 	for _pname in $_dyn_pot_list ; do
-		if _start=$( %%PREFIX%%/bin/pot get-attr -p "$_pname" -A start-at-boot -q ) && [ "$_start" = "YES" ]; then
+		if [ "$( %%PREFIX%%/bin/pot get-attr -p "$_pname" -A start-at-boot -q )" = "YES" ]; then
+			%%PREFIX%%/bin/pot stop "$_pname"
+		fi
+	done
+}
+
+pot_early_start()
+{
+	local _pname _dyn_pot_list _start
+	_dyn_pot_list=$(%%PREFIX%%/bin/pot ls -q)
+	for _pname in $_dyn_pot_list ; do
+		if [ "$( %%PREFIX%%/bin/pot get-attr -p "$_pname" -A early-start-at-boot -q )" = "YES" ]; then
+			%%PREFIX%%/bin/pot start "$_pname"
+		fi
+	done
+}
+
+pot_early_stop()
+{
+	local _pname _dyn_pot_list _start
+	_dyn_pot_list=$(%%PREFIX%%/bin/pot ls -q)
+	for _pname in $_dyn_pot_list ; do
+		if [ "$( %%PREFIX%%/bin/pot get-attr -p "$_pname" -A early-start-at-boot -q )" = "YES" ]; then
 			%%PREFIX%%/bin/pot stop "$_pname"
 		fi
 	done
@@ -63,17 +68,18 @@ pot_stop()
 pot_restart()
 {
 	pot_stop
-	pot_deprecated_stop
+	pot_early_stop
 	sleep 5
+	pot_early_start
 	pot_start
-	pot_deprecated_start
 }
 
 pot_status()
 {
-	local _pname _dyn_pot_list _start
+	local _pname _dyn_pot_list
 	for _pname in $_dyn_pot_list ; do
-		if _start=$( %%PREFIX%%/bin/pot get-attr -p "$_pname" -A start-at-boot -q ) && [ "$_start" = "YES" ]; then
+		if [ "$( %%PREFIX%%/bin/pot get-attr -p "$_pname" -A early-start-at-boot -q )" = "YES" ] ||
+		   [ "$( %%PREFIX%%/bin/pot get-attr -p "$_pname" -A start-at-boot -q )" = "YES" ]; then
 			if %%PREFIX%%/bin/pot info -qrp "$_pname" ; then
 				echo "pot $_pname is up and running"
 			else

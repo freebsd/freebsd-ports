@@ -1,0 +1,44 @@
+#!/bin/sh
+# $FreeBSD$
+
+# PROVIDE: pot_early
+# REQUIRE: NETWORKING syslogd pf
+# BEFORE: ntpdate
+# KEYWORD: shutdown nojail
+
+. /etc/rc.subr
+
+PATH=$PATH:/usr/local/bin
+name="pot_early"
+desc="Pot containers - early start"
+procname="pot"
+rcvar=pot_enable
+start_cmd="pot_early_start"
+stop_cmd="pot_early_stop"
+
+load_rc_config $name
+: ${pot_enable:=NO}
+
+pot_early_start()
+{
+	local _pname _dyn_pot_list _start
+	_dyn_pot_list=$(%%PREFIX%%/bin/pot ls -q)
+	for _pname in $_dyn_pot_list ; do
+		if [ "$( %%PREFIX%%/bin/pot get-attr -p "$_pname" -A early-start-at-boot -q )" = "YES" ]; then
+			%%PREFIX%%/bin/pot start "$_pname"
+		fi
+	done
+}
+
+pot_early_stop()
+{
+	local _pname _dyn_pot_list _start
+	_dyn_pot_list=$(%%PREFIX%%/bin/pot ls -q)
+	for _pname in $_dyn_pot_list ; do
+		if [ "$( %%PREFIX%%/bin/pot get-attr -p "$_pname" -A early-start-at-boot -q )" = "YES" ]; then
+			%%PREFIX%%/bin/pot stop "$_pname"
+		fi
+	done
+}
+
+run_rc_command "$1"

@@ -28,6 +28,7 @@ bin/pot
 %%DATADIR%%/init.sh
 %%DATADIR%%/list.sh
 %%DATADIR%%/mount-in.sh
+%%DATADIR%%/network.sh
 %%DATADIR%%/prepare.sh
 %%DATADIR%%/prune.sh
 %%DATADIR%%/ps.sh
