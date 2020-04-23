@@ -3,8 +3,7 @@
 
 PORTNAME=	brisk-menu
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.2
-PORTREVISION=	1
+DISTVERSION=	0.6.0
 CATEGORIES=	x11
 
 MAINTAINER=	ericbsd@FreeBSD.org
@@ -21,7 +20,7 @@ USES=		compiler:c11 gnome mate meson ninja pkgconfig gettext
 MESON_ARGS=	--sysconfdir=${PREFIX}/etc
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	GhostBSD
+GH_ACCOUNT=	getsolus
 
 USE_GNOME=	gtk30
 USE_MATE=	menus panel
