@@ -3,7 +3,7 @@
 
 PORTNAME=	cinder
 PORTVERSION=	12.0.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -47,7 +47,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=2.0.0:devel/py-pbr@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-barbicanclient>=4.0.0:net/py-python-barbicanclient@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-glanceclient>=2.8.0:net/py-python-glanceclient@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-keystoneclient>=3.8.0:net/py-python-keystoneclient@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}python-novaclient>=9.1.0:net/py-python-novaclient@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-swiftclient>=3.2.0:databases/py-python-swiftclient@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytz>=2013.6:devel/py-pytz@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.14.2:www/py-requests@${PY_FLAVOR} \
@@ -128,6 +127,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}castellan1>=0.16.0:devel/py-castellan1@${PY
 		${PYTHON_PKGNAMEPREFIX}oslo.db6>=4.27.0:devel/py-oslo.db6@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oslo.messaging10>=5.29.0:devel/py-oslo.messaging10@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oslo.policy2>=1.30.0:devel/py-oslo.policy2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}python-novaclient16>=9.1.0:net/py-python-novaclient16@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}taskflow3>=2.16.0:devel/py-taskflow3@${PY_FLAVOR}
 .else
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}castellan>=0.16.0:devel/py-castellan@${PY_FLAVOR} \
@@ -138,6 +138,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}castellan>=0.16.0:devel/py-castellan@${PY_F
 		${PYTHON_PKGNAMEPREFIX}oslo.db>=4.27.0:devel/py-oslo.db@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oslo.messaging>=5.29.0:devel/py-oslo.messaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oslo.policy>=1.30.0:devel/py-oslo.policy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}python-novaclient>=9.1.0:net/py-python-novaclient@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}taskflow>=2.16.0:devel/py-taskflow@${PY_FLAVOR}
 .endif
 
