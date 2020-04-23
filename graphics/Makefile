@@ -826,6 +826,7 @@
     SUBDIR += py-leather
     SUBDIR += py-mapclassify
     SUBDIR += py-mayavi
+    SUBDIR += py-mcomix
     SUBDIR += py-ming
     SUBDIR += py-mpl-scatter-density
     SUBDIR += py-nwdiag
