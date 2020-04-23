@@ -138,8 +138,18 @@ if [ -n "${USERS}" ]; then
 				/|/nonexistent|/var/empty)
 					;;
 				*)
+					echo "echo \"===> Creating homedir(s)\"" >> "${dp_UG_INSTALL}"
 					group=$(awk -F: -v gid=${gid} '$1 !~ /^#/ && $3 == gid { print $1 }' ${dp_GID_FILES})
-					echo "${dp_INSTALL} -d -g $group -o $login $homedir" >> "${dp_UG_INSTALL}"
+					cat >> "${dp_UG_INSTALL}" <<-blah
+					if [ -n "\${PKG_ROOTDIR}" ] && [ "\${PKG_ROOTDIR}" != "/" ]; then
+					  HOMEDIR="\${PKG_ROOTDIR}/$homedir"
+					  MDBDIR="-N \${PKG_ROOTDIR}/etc/"
+					else
+					  HOMEDIR="$homedir"
+					  MDBDIR=""
+					fi
+					${dp_INSTALL} \${MDBDIR} -d -g $group -o $login \${HOMEDIR}
+					blah
 					;;
 			esac
 		done <<-eot
