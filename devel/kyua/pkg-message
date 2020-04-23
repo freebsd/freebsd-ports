@@ -1,0 +1,15 @@
+[
+{
+	message: <<EOD
+A tests group has been added and the tests user should be a member
+of it by default rather than nobody. You should update your password
+database to match (change the group from 65534 to 977 after updating).
+
+To do it, please run the following command:
+
+pw usermod -n tests -g tests
+EOD,
+	type : upgrade,
+	maximum_version: "0.13_5,3"
+}
+}
