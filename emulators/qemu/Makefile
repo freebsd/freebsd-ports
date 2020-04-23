@@ -3,7 +3,7 @@
 
 PORTNAME=	qemu
 PORTVERSION=	4.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.qemu.org/
 DIST_SUBDIR=	qemu/${PORTVERSION}
@@ -13,6 +13,7 @@ COMMENT?=	QEMU CPU Emulator
 
 LICENSE=	GPLv2
 
+BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
 LIB_DEPENDS?=	libnettle.so:security/nettle \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
@@ -52,8 +53,7 @@ OPTIONS_DEFAULT=X11 GTK3 OPENGL GNUTLS SASL JPEG PNG CDROM_DMA CURL PCAP NCURSES
 OPTIONS_SUB=	yes
 CURL_CONFIGURE_OFF=	--disable-curl
 CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
-DOCS_BUILD_DEPENDS=	texi2html:textproc/texi2html \
-			sphinx-build:textproc/py-sphinx
+DOCS_BUILD_DEPENDS=	texi2html:textproc/texi2html
 DOCS_MAKE_ARGS_OFF=	NOPORTDOCS=1
 DOCS_USES=		makeinfo
 GNUTLS_CONFIGURE_OFF=	--disable-gnutls
