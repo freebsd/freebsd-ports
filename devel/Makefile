@@ -3323,6 +3323,7 @@
     SUBDIR += p5-Test-Able-Runner
     SUBDIR += p5-Test-Aggregate
     SUBDIR += p5-Test-Assertions
+    SUBDIR += p5-Test-Auto
     SUBDIR += p5-Test-Base
     SUBDIR += p5-Test-Benchmark
     SUBDIR += p5-Test-BinaryData

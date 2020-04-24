@@ -1,0 +1,12 @@
+Test::Auto aims to provide, a standard for documenting Perl 5 software projects,
+a framework writing tests, test automation, and documentation generation.
+
+This framework lets you write documentation in test files using pod-like comment
+blocks. By using a particular set of comment blocks (the specification) this
+framework can run certain kinds of tests automatically. For example, we can
+automatically ensure that the package the test is associated with is loadable,
+that the test file comment blocks meet the specification, that any super-classes
+or libraries are loadable, and that the functions, methods, and routines are
+properly documented.
+
+WWW: https://metacpan.org/release/Test-Auto

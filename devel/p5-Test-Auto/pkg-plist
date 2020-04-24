@@ -1,0 +1,15 @@
+bin/testauto
+%%SITE_PERL%%/Test/Auto.pm
+%%SITE_PERL%%/Test/Auto/Data.pm
+%%SITE_PERL%%/Test/Auto/Document.pm
+%%SITE_PERL%%/Test/Auto/Parser.pm
+%%SITE_PERL%%/Test/Auto/Plugin.pm
+%%SITE_PERL%%/Test/Auto/Subtests.pm
+%%SITE_PERL%%/Test/Auto/Try.pm
+%%SITE_PERL%%/Test/Auto/Types.pm
+%%PERL5_MAN3%%/Test::Auto.3.gz
+%%PERL5_MAN3%%/Test::Auto::Document.3.gz
+%%PERL5_MAN3%%/Test::Auto::Parser.3.gz
+%%PERL5_MAN3%%/Test::Auto::Plugin.3.gz
+%%PERL5_MAN3%%/Test::Auto::Subtests.3.gz
+%%PERL5_MAN3%%/Test::Auto::Types.3.gz
