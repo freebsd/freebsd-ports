@@ -1,0 +1,4 @@
+Data::Object::Kind provides methods common across all Data::Object value
+classes.
+
+WWW: https://metacpan.org/release/Data-Object-Kind
