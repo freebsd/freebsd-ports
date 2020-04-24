@@ -11,6 +11,8 @@ COMMENT=	Cross-desktop libraries and common resources
 
 LICENSE=	LGPL3
 
+PORTSCOUT=	limit:^[0-9.]+$$	# ignore master.mint* tags
+
 BUILD_DEPENDS=	vapigen:lang/vala
 LIB_DEPENDS=	libgnomekbdui.so:x11/libgnomekbd
 
