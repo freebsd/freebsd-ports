@@ -12,6 +12,7 @@
 %%SITE_PERL%%/Sisimai/Lhost/AmazonWorkMail.pm
 %%SITE_PERL%%/Sisimai/Lhost/Aol.pm
 %%SITE_PERL%%/Sisimai/Lhost/ApacheJames.pm
+%%SITE_PERL%%/Sisimai/Lhost/Barracuda.pm
 %%SITE_PERL%%/Sisimai/Lhost/Bigfoot.pm
 %%SITE_PERL%%/Sisimai/Lhost/Biglobe.pm
 %%SITE_PERL%%/Sisimai/Lhost/Courier.pm
@@ -25,7 +26,8 @@
 %%SITE_PERL%%/Sisimai/Lhost/Facebook.pm
 %%SITE_PERL%%/Sisimai/Lhost/GMX.pm
 %%SITE_PERL%%/Sisimai/Lhost/GSuite.pm
-%%SITE_PERL%%/Sisimai/Lhost/Google.pm
+%%SITE_PERL%%/Sisimai/Lhost/Gmail.pm
+%%SITE_PERL%%/Sisimai/Lhost/GoogleGroups.pm
 %%SITE_PERL%%/Sisimai/Lhost/IMailServer.pm
 %%SITE_PERL%%/Sisimai/Lhost/InterScanMSS.pm
 %%SITE_PERL%%/Sisimai/Lhost/KDDI.pm
@@ -41,11 +43,11 @@
 %%SITE_PERL%%/Sisimai/Lhost/OpenSMTPD.pm
 %%SITE_PERL%%/Sisimai/Lhost/Outlook.pm
 %%SITE_PERL%%/Sisimai/Lhost/Postfix.pm
+%%SITE_PERL%%/Sisimai/Lhost/PowerMTA.pm
 %%SITE_PERL%%/Sisimai/Lhost/ReceivingSES.pm
 %%SITE_PERL%%/Sisimai/Lhost/SendGrid.pm
 %%SITE_PERL%%/Sisimai/Lhost/Sendmail.pm
 %%SITE_PERL%%/Sisimai/Lhost/SurfControl.pm
-%%SITE_PERL%%/Sisimai/Lhost/UserDefined.pm
 %%SITE_PERL%%/Sisimai/Lhost/V5sendmail.pm
 %%SITE_PERL%%/Sisimai/Lhost/Verizon.pm
 %%SITE_PERL%%/Sisimai/Lhost/X1.pm
@@ -53,6 +55,7 @@
 %%SITE_PERL%%/Sisimai/Lhost/X3.pm
 %%SITE_PERL%%/Sisimai/Lhost/X4.pm
 %%SITE_PERL%%/Sisimai/Lhost/X5.pm
+%%SITE_PERL%%/Sisimai/Lhost/X6.pm
 %%SITE_PERL%%/Sisimai/Lhost/Yahoo.pm
 %%SITE_PERL%%/Sisimai/Lhost/Yandex.pm
 %%SITE_PERL%%/Sisimai/Lhost/Zoho.pm
@@ -129,6 +132,7 @@
 %%PERL5_MAN3%%/Sisimai::Lhost::AmazonWorkMail.3.gz
 %%PERL5_MAN3%%/Sisimai::Lhost::Aol.3.gz
 %%PERL5_MAN3%%/Sisimai::Lhost::ApacheJames.3.gz
+%%PERL5_MAN3%%/Sisimai::Lhost::Barracuda.3.gz
 %%PERL5_MAN3%%/Sisimai::Lhost::Bigfoot.3.gz
 %%PERL5_MAN3%%/Sisimai::Lhost::Biglobe.3.gz
 %%PERL5_MAN3%%/Sisimai::Lhost::Courier.3.gz
@@ -142,7 +146,8 @@
 %%PERL5_MAN3%%/Sisimai::Lhost::Facebook.3.gz
 %%PERL5_MAN3%%/Sisimai::Lhost::GMX.3.gz
 %%PERL5_MAN3%%/Sisimai::Lhost::GSuite.3.gz
-%%PERL5_MAN3%%/Sisimai::Lhost::Google.3.gz
+%%PERL5_MAN3%%/Sisimai::Lhost::Gmail.3.gz
+%%PERL5_MAN3%%/Sisimai::Lhost::GoogleGroups.3.gz
 %%PERL5_MAN3%%/Sisimai::Lhost::IMailServer.3.gz
 %%PERL5_MAN3%%/Sisimai::Lhost::InterScanMSS.3.gz
 %%PERL5_MAN3%%/Sisimai::Lhost::KDDI.3.gz
@@ -158,11 +163,11 @@
 %%PERL5_MAN3%%/Sisimai::Lhost::OpenSMTPD.3.gz
 %%PERL5_MAN3%%/Sisimai::Lhost::Outlook.3.gz
 %%PERL5_MAN3%%/Sisimai::Lhost::Postfix.3.gz
+%%PERL5_MAN3%%/Sisimai::Lhost::PowerMTA.3.gz
 %%PERL5_MAN3%%/Sisimai::Lhost::ReceivingSES.3.gz
 %%PERL5_MAN3%%/Sisimai::Lhost::SendGrid.3.gz
 %%PERL5_MAN3%%/Sisimai::Lhost::Sendmail.3.gz
 %%PERL5_MAN3%%/Sisimai::Lhost::SurfControl.3.gz
-%%PERL5_MAN3%%/Sisimai::Lhost::UserDefined.3.gz
 %%PERL5_MAN3%%/Sisimai::Lhost::V5sendmail.3.gz
 %%PERL5_MAN3%%/Sisimai::Lhost::Verizon.3.gz
 %%PERL5_MAN3%%/Sisimai::Lhost::X1.3.gz
@@ -170,6 +175,7 @@
 %%PERL5_MAN3%%/Sisimai::Lhost::X3.3.gz
 %%PERL5_MAN3%%/Sisimai::Lhost::X4.3.gz
 %%PERL5_MAN3%%/Sisimai::Lhost::X5.3.gz
+%%PERL5_MAN3%%/Sisimai::Lhost::X6.3.gz
 %%PERL5_MAN3%%/Sisimai::Lhost::Yahoo.3.gz
 %%PERL5_MAN3%%/Sisimai::Lhost::Yandex.3.gz
 %%PERL5_MAN3%%/Sisimai::Lhost::Zoho.3.gz
