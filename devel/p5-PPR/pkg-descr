@@ -1,0 +1,13 @@
+The PPR module provides a single regular expression that defines a set of
+independent subpatterns suitable for matching entire Perl documents, as well as
+a wide range of individual syntactic components of Perl (i.e. statements,
+expressions, control blocks, variables, etc.)
+
+The regex does not "parse" Perl (that is, it does not build a syntax tree, like
+the PPI module does). Instead it simply "recognizes" standard Perl constructs,
+or new syntaxes composed from Perl constructs.
+
+Its features and capabilities therefore complement those of the PPI module,
+rather than replacing them. See "Comparison with PPI".
+
+WWW: https://metacpan.org/release/PPR

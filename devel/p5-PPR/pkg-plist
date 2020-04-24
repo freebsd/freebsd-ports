@@ -1,0 +1,4 @@
+%%SITE_PERL%%/PPR.pm
+%%SITE_PERL%%/PPR/X.pm
+%%PERL5_MAN3%%/PPR.3.gz
+%%PERL5_MAN3%%/PPR::X.3.gz
