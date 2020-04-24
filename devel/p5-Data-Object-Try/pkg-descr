@@ -1,0 +1,4 @@
+Data::Object::Try provides an object-oriented interface for performing complex
+try/catch operations.
+
+WWW: https://metacpan.org/release/Data-Object-Role-Tryable
