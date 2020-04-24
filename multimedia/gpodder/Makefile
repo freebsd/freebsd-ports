@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gpodder
-DISTVERSION=	3.10.11
-PORTREVISION=	1
+DISTVERSION=	3.10.15
 CATEGORIES=	multimedia python
 
 MAINTAINER=	rm@FreeBSD.org

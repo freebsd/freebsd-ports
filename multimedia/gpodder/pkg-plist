@@ -236,6 +236,7 @@ share/gpodder/images/podcast-3.png
 share/gpodder/images/podcast-4.png
 share/gpodder/images/podcast-all.png
 share/gpodder/extensions/command_on_download.py
+share/gpodder/extensions/filter.py
 %%GTK3%%share/gpodder/ui/gtk/gpodderexporttolocalfolder.ui
 %%GTK3%%share/gpodder/ui/gtk/menus.ui
 %%GTK3%%share/metainfo/org.gpodder.gpodder.appdata.xml
