@@ -68,6 +68,7 @@
 %%DSO%%%%RTMP%%libexec/nginx/ngx_rtmp_module.so
 %%DSO%%%%SET_MISC%%libexec/nginx/ngx_http_set_misc_module.so
 %%DSO%%%%SHIBBOLETH%%libexec/nginx/ngx_http_shibboleth_module.so
+%%DSO%%%%SLOWFS_CACHE%%libexec/nginx/ngx_http_slowfs_module.so
 %%DSO%%%%SMALL_LIGHT%%libexec/nginx/ngx_http_small_light_module.so
 %%DSO%%%%SRCACHE%%libexec/nginx/ngx_http_srcache_filter_module.so
 %%DSO%%%%STREAM%%%%NJS%%libexec/nginx/ngx_stream_js_module.so
@@ -75,6 +76,7 @@
 %%DSO%%%%VOD%%libexec/nginx/ngx_http_vod_module.so
 %%DSO%%%%VTS%%libexec/nginx/ngx_http_vhost_traffic_status_module.so
 %%DSO%%%%WEBSOCKIFY%%libexec/nginx/ngx_http_websockify_module.so
+%%DSO%%%%XSS%%libexec/nginx/ngx_http_xss_filter_module.so
 %%HTTP_PERL%%%%SITE_ARCH%%/auto/nginx/nginx.so
 %%HTTP_PERL%%%%SITE_ARCH%%/nginx.pm
 %%NJS%%sbin/njs
