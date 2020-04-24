@@ -2055,6 +2055,7 @@
     SUBDIR += p5-Data-Object-Exception
     SUBDIR += p5-Data-Object-Kind
     SUBDIR += p5-Data-Object-Name
+    SUBDIR += p5-Data-Object-Opts
     SUBDIR += p5-Data-ObjectDriver
     SUBDIR += p5-Data-OptList
     SUBDIR += p5-Data-Page-NoTotalEntries
