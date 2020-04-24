@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	execline
-PORTVERSION=	2.5.1.0
+PORTVERSION=	2.6.0.1
 CATEGORIES=	lang shells
 MASTER_SITES=	https://www.skarnet.org/software/${PORTNAME}/
 
@@ -12,7 +12,7 @@ COMMENT=	Lightweight non-interactive sh(1)-like scripting language
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	skalibs>=2.8.0.0:devel/skalibs
+BUILD_DEPENDS=	skalibs>=2.9.2.1:devel/skalibs
 LIB_DEPENDS=	libskarnet.so:devel/skalibs
 
 USES=		gmake
