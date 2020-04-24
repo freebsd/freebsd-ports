@@ -1,9 +1,9 @@
---- external/portaudio/pa_unix_hostapis.c.orig	2015-05-20 01:47:31 UTC
+--- external/portaudio/pa_unix_hostapis.c.orig	2019-11-26 11:48:46 UTC
 +++ external/portaudio/pa_unix_hostapis.c
-@@ -60,6 +60,8 @@ PaUtilHostApiInitializer *paHostApiIniti
-     {
- 		#if defined (linux) && defined (ALSA)
- 			PaAlsa_Initialize,   // ppgb
+@@ -64,6 +64,8 @@ PaUtilHostApiInitializer *paHostApiInitializers[] =
+ 			#elif defined (JACK)
+ 				PaJack_Initialize,
+ 			#endif
 +		#else
 +			PaOSS_Initialize,
  		#endif

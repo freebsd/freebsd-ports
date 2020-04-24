@@ -1,13 +1,14 @@
---- external/portaudio/Makefile.orig	2016-07-26 15:41:19 UTC
+--- external/portaudio/Makefile.orig	2019-11-27 13:52:21 UTC
 +++ external/portaudio/Makefile
-@@ -3,8 +3,9 @@
+@@ -3,8 +3,10 @@
  
  include ../../makefile.defs
  
 +PA_BACKEND ?= pa_linux_alsa.o
++
  OBJECTS = \
--	pa_unix_hostapis.o pa_unix_util.o pa_linux_alsa.o \
-+	pa_unix_hostapis.o pa_unix_util.o $(PA_BACKEND) \
+-	pa_unix_hostapis.o pa_unix_util.o pa_linux_alsa.o pa_jack.o pa_ringbuffer.o \
++	pa_unix_hostapis.o pa_unix_util.o $(PA_BACKEND) pa_jack.o pa_ringbuffer.o \
  	pa_win_hostapis.o pa_win_util.o pa_win_wmme.o pa_win_waveformat.o \
  	pa_front.o pa_debugprint.o pa_cpuload.o \
  	pa_allocation.o pa_process.o pa_converters.o pa_dither.o \
