@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cargo-c
-DISTVERSION=	0.6.3
-PORTREVISION=	2
+DISTVERSION=	0.6.4
 CATEGORIES=	devel
 MASTER_SITES=	CRATESIO
 # XXX Teach USES=cargo to have proper default
@@ -32,17 +31,17 @@ CARGO_CRATES=	adler32-1.0.4 \
 		bitmaps-2.1.0 \
 		bstr-0.2.12 \
 		bytesize-1.0.0 \
-		cargo-0.43.1 \
+		cargo-0.44.0 \
 		cargo-platform-0.1.1 \
 		cbindgen-0.14.1 \
-		cc-1.0.50 \
+		cc-1.0.52 \
 		cfg-if-0.1.10 \
 		clap-2.33.0 \
 		commoncrypto-0.2.0 \
 		commoncrypto-sys-0.2.0 \
 		core-foundation-0.7.0 \
 		core-foundation-sys-0.7.0 \
-		crates-io-0.31.0 \
+		crates-io-0.32.0 \
 		crc32fast-1.2.0 \
 		crossbeam-channel-0.4.2 \
 		crossbeam-utils-0.7.2 \
@@ -58,8 +57,8 @@ CARGO_CRATES=	adler32-1.0.4 \
 		fs2-0.4.3 \
 		fwdansi-1.1.0 \
 		getrandom-0.1.14 \
-		git2-0.11.0 \
-		git2-curl-0.12.0 \
+		git2-0.13.4 \
+		git2-curl-0.14.0 \
 		glob-0.3.0 \
 		globset-0.4.5 \
 		heck-0.3.1 \
@@ -77,7 +76,7 @@ CARGO_CRATES=	adler32-1.0.4 \
 		lazy_static-1.4.0 \
 		lazycell-1.2.1 \
 		libc-0.2.69 \
-		libgit2-sys-0.10.0 \
+		libgit2-sys-0.12.4+1.0.0 \
 		libnghttp2-sys-0.1.3 \
 		libssh2-sys-0.2.16 \
 		libz-sys-1.0.25 \
@@ -106,12 +105,12 @@ CARGO_CRATES=	adler32-1.0.4 \
 		rand_hc-0.2.0 \
 		rand_xoshiro-0.4.0 \
 		redox_syscall-0.1.56 \
-		regex-1.3.6 \
+		regex-1.3.7 \
 		regex-syntax-0.6.17 \
 		remove_dir_all-0.5.2 \
 		rustc-workspace-hack-1.0.0 \
 		rustfix-0.5.1 \
-		ryu-1.0.3 \
+		ryu-1.0.4 \
 		same-file-1.0.6 \
 		schannel-0.1.18 \
 		semver-0.9.0 \
@@ -122,13 +121,13 @@ CARGO_CRATES=	adler32-1.0.4 \
 		serde_json-1.0.51 \
 		shell-escape-0.1.4 \
 		sized-chunks-0.5.3 \
-		smallvec-1.3.0 \
+		smallvec-1.4.0 \
 		socket2-0.3.12 \
 		strip-ansi-escapes-0.1.0 \
 		strsim-0.8.0 \
-		structopt-0.3.13 \
-		structopt-derive-0.4.6 \
-		syn-1.0.17 \
+		structopt-0.3.14 \
+		structopt-derive-0.4.7 \
+		syn-1.0.18 \
 		syn-mid-0.5.0 \
 		tar-0.4.26 \
 		tempfile-3.1.0 \
@@ -152,7 +151,7 @@ CARGO_CRATES=	adler32-1.0.4 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
 		winapi-0.3.8 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
-		winapi-util-0.1.4 \
+		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0
 
 post-patch:
