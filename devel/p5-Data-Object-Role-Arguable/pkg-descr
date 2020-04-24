@@ -1,0 +1,8 @@
+Data::Object::Role::Arguable provides a mechanism for unpacking an argument list
+and creating a data structure suitable for passing to the consumer constructor.
+The argslist routine should return a list of attribute names in the order to be
+parsed. An attribute name maybe prefixed with "@" to denote that all remaining
+items should be assigned to an arrayref, e.g. @options, or "%" to denote that
+all remaining items should be assigned to a hashref, e.g. %options.
+
+WWW: https://metacpan.org/release/Data-Object-Role-Arguable
