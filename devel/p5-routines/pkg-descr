@@ -1,0 +1,11 @@
+The routines pragma is used to provide typeable method and function signtures to
+the calling package, as well as before, after, around, augment and override
+method modifiers.
+
+The registry pragma is used to associate the calling package with Type::Tiny
+type libraries. A $registry variable is made available to the caller to be used
+to access registry objects. The variable is a callback (i.e. coderef) which
+should be called with a single argument, the namespace whose registry object you
+want, otherwise the argument defaults to main.
+
+WWW: https://metacpan.org/release/routines

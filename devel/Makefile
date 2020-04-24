@@ -3661,6 +3661,7 @@
     SUBDIR += p5-pip
     SUBDIR += p5-prefork
     SUBDIR += p5-relative
+    SUBDIR += p5-routines
     SUBDIR += p5-self
     SUBDIR += p5-self-init
     SUBDIR += p5-strictures
