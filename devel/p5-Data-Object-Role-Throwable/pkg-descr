@@ -1,0 +1,4 @@
+Data::Object::Role::Throwable provides mechanisms for throwing the object as an
+exception.
+
+WWW: https://metacpan.org/release/Data-Object-Role-Throwable
