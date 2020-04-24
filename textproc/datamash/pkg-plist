@@ -1,5 +1,7 @@
 bin/datamash
+bin/decorate
 man/man1/datamash.1.gz
+man/man1/decorate.1.gz
 %%DATADIR%%/bash-completion.d/datamash
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/genes.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/genes_h.txt
