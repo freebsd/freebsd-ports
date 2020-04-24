@@ -2,7 +2,7 @@
 
 PORTNAME=	hugo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.69.0
+DISTVERSION=	0.69.2
 CATEGORIES=	www
 PKGNAMEPREFIX=	go
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
@@ -23,7 +23,7 @@ GH_TUPLE=	\
 		BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/toml \
 		PuerkitoBio:purell:v1.1.1:puerkitobio_purell/vendor/github.com/PuerkitoBio/purell \
 		PuerkitoBio:urlesc:de5bf2ad4578:puerkitobio_urlesc/vendor/github.com/PuerkitoBio/urlesc \
-		alecthomas:chroma:v0.7.1:alecthomas_chroma/vendor/github.com/alecthomas/chroma \
+		alecthomas:chroma:v0.7.2:alecthomas_chroma/vendor/github.com/alecthomas/chroma \
 		armon:go-radix:v1.0.0:armon_go_radix/vendor/github.com/armon/go-radix \
 		aws:aws-sdk-go:v1.27.1:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
 		bep:debounce:v1.2.0:bep_debounce/vendor/github.com/bep/debounce \
@@ -42,7 +42,7 @@ GH_TUPLE=	\
 		go-ini:ini:v1.51.1:go_ini_ini/vendor/gopkg.in/ini.v1 \
 		go-yaml:yaml:v2.2.7:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		gobwas:glob:v0.2.3:gobwas_glob/vendor/github.com/gobwas/glob \
-		gohugoio:testmodBuilder:c56af20f2e95:gohugoio_testmodbuilder/vendor/github.com/gohugoio/testmodBuilder/mods \
+		gohugoio:testmodBuilder:c56af20f2e95:gohugoio_testmodbuilder_mods/vendor/github.com/gohugoio/testmodBuilder \
 		golang:appengine:v1.6.0:golang_appengine/vendor/google.golang.org/appengine \
 		golang:image:9130b4cfad52:golang_image/vendor/golang.org/x/image \
 		golang:net:c0dbc17a3553:golang_net/vendor/golang.org/x/net \
@@ -58,7 +58,7 @@ GH_TUPLE=	\
 		google:uuid:v1.1.1:google_uuid/vendor/github.com/google/uuid \
 		google:wire:v0.2.2:google_wire/vendor/github.com/google/wire \
 		googleapis:gax-go:v2.0.2:googleapis_gax_go/vendor/github.com/googleapis/gax-go \
-		googleapis:gax-go:v2.0.4:googleapis_gax_go_1/vendor/github.com/googleapis/gax-go/v2 \
+		googleapis:gax-go:v2.0.4:googleapis_gax_go_v2 \
 		googleapis:google-api-go-client:v0.5.0:googleapis_google_api_go_client/vendor/google.golang.org/api \
 		googleapis:google-cloud-go:v0.39.0:googleapis_google_cloud_go/vendor/cloud.google.com/go \
 		gorilla:websocket:v1.4.1:gorilla_websocket/vendor/github.com/gorilla/websocket \
@@ -81,7 +81,7 @@ GH_TUPLE=	\
 		mitchellh:mapstructure:v1.1.2:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
 		muesli:smartcrop:v0.3.0:muesli_smartcrop/vendor/github.com/muesli/smartcrop \
 		nicksnyder:go-i18n:v1.10.0:nicksnyder_go_i18n/vendor/github.com/nicksnyder/go-i18n \
-		niklasfasching:go-org:v1.0.0:niklasfasching_go_org/vendor/github.com/niklasfasching/go-org \
+		niklasfasching:go-org:v1.1.0:niklasfasching_go_org/vendor/github.com/niklasfasching/go-org \
 		olekukonko:tablewriter:v0.0.4:olekukonko_tablewriter/vendor/github.com/olekukonko/tablewriter \
 		pelletier:go-toml:v1.6.0:pelletier_go_toml/vendor/github.com/pelletier/go-toml \
 		pkg:errors:v0.8.1:pkg_errors/vendor/github.com/pkg/errors \
@@ -97,10 +97,14 @@ GH_TUPLE=	\
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		spf13:viper:v1.6.1:spf13_viper/vendor/github.com/spf13/viper \
 		subosito:gotenv:v1.2.0:subosito_gotenv/vendor/github.com/subosito/gotenv \
-		tdewolff:minify:v2.6.1:tdewolff_minify/vendor/github.com/tdewolff/minify/v2 \
-		tdewolff:parse:v2.3.14:tdewolff_parse/vendor/github.com/tdewolff/parse/v2 \
-		yuin:goldmark-highlighting:d1af22c1126f:yuin_goldmark_highlighting/vendor/github.com/yuin/goldmark-highlighting \
-		yuin:goldmark:v1.1.25:yuin_goldmark/vendor/github.com/yuin/goldmark
+		tdewolff:minify:v2.6.1:tdewolff_minify_v2/vendor/github.com/tdewolff/minify/v2 \
+		tdewolff:parse:v2.3.14:tdewolff_parse_v2/vendor/github.com/tdewolff/parse/v2 \
+		yuin:goldmark-highlighting:60d527fdb691:yuin_goldmark_highlighting/vendor/github.com/yuin/goldmark-highlighting \
+		yuin:goldmark:v1.1.30:yuin_goldmark/vendor/github.com/yuin/goldmark
+
+post-extract:
+	@${RM} -r ${WRKSRC}/vendor/github.com/googleapis/gax-go/v2
+	@${RLN} ${WRKSRC_googleapis_gax_go_v2}/v2 ${WRKSRC}/vendor/github.com/googleapis/gax-go/v2
 
 GO_BUILDFLAGS=	-ldflags="\
 		-s -w \
@@ -130,7 +134,7 @@ PORTMANS=	hugo-config.1 hugo-convert-toJSON.1 hugo-convert-toTOML.1 \
 .include <bsd.port.pre.mk>
 
 SOURCE_DATE_EPOCH_CMD=	date -r $$(grep TIMESTAMP ${DISTINFO_FILE} | ${SED} -e 's/[^0-9]//g') '+%FT%TZ%z'
-COMMIT_ID=		4205844bcecdc9e1e9456e088a49f38b354ed5a6
+COMMIT_ID=		ec9dcf304849ded11cea70ab9ad46e0a0a4615b2
 
 do-build-MANPAGES-on:
 	@cd ${GO_WRKSRC} && ${GO_WRKDIR_BIN}/${PORTNAME} gen man --dir man/man1/
