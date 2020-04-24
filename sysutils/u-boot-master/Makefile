@@ -21,8 +21,8 @@ BUILD_DEPENDS+=	gsed:textproc/gsed \
 		mkimage:sysutils/u-boot-tools
 BUILD_DEPENDS+=	${COMPILER}:devel/${COMPILER}
 
-USES=		bison gmake python:3.7,build shebangfix tar:bz2
-BINARY_ALIAS=	bison=${LOCALBASE}/bin/bison dtc=${LOCALBASE}/bin/dtc sed=gsed swig=swig3.0 python3=python3.7
+USES=		bison gmake python:3.7+,build shebangfix tar:bz2
+BINARY_ALIAS=	bison=${LOCALBASE}/bin/bison dtc=${LOCALBASE}/bin/dtc sed=gsed swig=swig3.0 python3=${PYTHON_CMD}
 
 SHEBANG_FILES=	tools/binman/binman.py arch/arm/mach-rockchip/make_fit_atf.py
 SSP_UNSAFE=	yes
