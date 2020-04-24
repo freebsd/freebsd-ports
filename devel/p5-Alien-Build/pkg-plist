@@ -21,6 +21,7 @@
 %%SITE_PERL%%/Alien/Build/Plugin/Build.pod
 %%SITE_PERL%%/Alien/Build/Plugin/Build/Autoconf.pm
 %%SITE_PERL%%/Alien/Build/Plugin/Build/CMake.pm
+%%SITE_PERL%%/Alien/Build/Plugin/Build/Copy.pm
 %%SITE_PERL%%/Alien/Build/Plugin/Build/MSYS.pm
 %%SITE_PERL%%/Alien/Build/Plugin/Build/Make.pm
 %%SITE_PERL%%/Alien/Build/Plugin/Build/SearchDep.pm
@@ -105,6 +106,7 @@
 %%PERL5_MAN3%%/Alien::Build::Plugin::Build.3.gz
 %%PERL5_MAN3%%/Alien::Build::Plugin::Build::Autoconf.3.gz
 %%PERL5_MAN3%%/Alien::Build::Plugin::Build::CMake.3.gz
+%%PERL5_MAN3%%/Alien::Build::Plugin::Build::Copy.3.gz
 %%PERL5_MAN3%%/Alien::Build::Plugin::Build::MSYS.3.gz
 %%PERL5_MAN3%%/Alien::Build::Plugin::Build::Make.3.gz
 %%PERL5_MAN3%%/Alien::Build::Plugin::Build::SearchDep.3.gz
