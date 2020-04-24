@@ -3,7 +3,7 @@
 
 PORTNAME=	nginx
 PORTVERSION=	1.18.0
-PORTREVISION?=	0
+PORTREVISION?=	1
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	https://nginx.org/download/ \
@@ -22,7 +22,7 @@ BROKEN_mips64=	error ngx_spinlock() or ngx_atomic_cmp_set() are not defined
 
 CONFLICTS_INSTALL=	nginx-devel
 
-PORTSCOUT=	limit:^1\.16\.[0-9]*
+PORTSCOUT=	limit:^1\.18\.[0-9]*
 
 USES=		cpe
 
