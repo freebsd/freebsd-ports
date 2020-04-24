@@ -1,0 +1,4 @@
+Data::Object::Space provides methods for parsing and manipulating package
+namespaces.
+
+WWW: https://metacpan.org/release/Data-Object-Space

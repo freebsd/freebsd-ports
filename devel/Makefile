@@ -2070,6 +2070,7 @@
     SUBDIR += p5-Data-Object-Role-Throwable
     SUBDIR += p5-Data-Object-Role-Tryable
     SUBDIR += p5-Data-Object-RoleHas
+    SUBDIR += p5-Data-Object-Space
     SUBDIR += p5-Data-ObjectDriver
     SUBDIR += p5-Data-OptList
     SUBDIR += p5-Data-Page-NoTotalEntries
