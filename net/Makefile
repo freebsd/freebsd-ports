@@ -1241,6 +1241,7 @@
     SUBDIR += rubygem-fog-dynect
     SUBDIR += rubygem-fog-ecloud
     SUBDIR += rubygem-fog-google
+    SUBDIR += rubygem-fog-google19
     SUBDIR += rubygem-fog-gridscale
     SUBDIR += rubygem-fog-internet-archive
     SUBDIR += rubygem-fog-joyent
