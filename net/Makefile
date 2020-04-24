@@ -1389,6 +1389,7 @@
     SUBDIR += skstream
     SUBDIR += sl2tps
     SUBDIR += slurm
+    SUBDIR += smb4k
     SUBDIR += smcroute
     SUBDIR += smm++
     SUBDIR += sngrep
