@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	s3cmd
-DISTVERSION=	2.0.2
-PORTREVISION=	1
+DISTVERSION=	2.1.0
 CATEGORIES=	net python
 MASTER_SITES=	SF/s3tools/${PORTNAME}/${DISTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,10 +13,11 @@ COMMENT=	Unix-like tools to manipulate stored files from the command line
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>0:devel/py-dateutil@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>0:devel/py-dateutil@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}magic>0:devel/py-magic@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist distutils flavors
+USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
 
