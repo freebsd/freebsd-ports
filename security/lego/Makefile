@@ -2,7 +2,7 @@
 
 PORTNAME=	lego
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.5.0
+DISTVERSION=	3.6.0
 CATEGORIES=	security
 
 MAINTAINER=	matt@matthoran.com
@@ -36,14 +36,14 @@ GH_TUPLE=	\
 		BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/toml \
 		OpenDNS:vegadns2client:a3fa4a771d87:opendns_vegadns2client/vendor/github.com/OpenDNS/vegadns2client \
 		akamai:AkamaiOPEN-edgegrid-golang:v0.9.8:akamai_akamaiopen_edgegrid_golang/vendor/github.com/akamai/AkamaiOPEN-edgegrid-golang \
-		aliyun:alibaba-cloud-sdk-go:07798873deee:aliyun_alibaba_cloud_sdk_go/vendor/github.com/aliyun/alibaba-cloud-sdk-go \
+		aliyun:alibaba-cloud-sdk-go:v1.61.112:aliyun_alibaba_cloud_sdk_go/vendor/github.com/aliyun/alibaba-cloud-sdk-go \
 		aws:aws-sdk-go:v1.23.0:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
 		cenkalti:backoff:v4.0.0:cenkalti_backoff/vendor/github.com/cenkalti/backoff/v4 \
 		census-ecosystem:opencensus-go-exporter-ocagent:v0.4.12:census_ecosystem_opencensus_go_exporter_ocagent/vendor/contrib.go.opencensus.io/exporter/ocagent \
 		census-instrumentation:opencensus-go:v0.22.3:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
 		census-instrumentation:opencensus-proto:v0.2.1:census_instrumentation_opencensus_proto/vendor/github.com/census-instrumentation/opencensus-proto \
 		cloudflare:cloudflare-go:v0.10.2:cloudflare_cloudflare_go/vendor/github.com/cloudflare/cloudflare-go \
-		cpu:goacmedns:v0.0.1:cpu_goacmedns/vendor/github.com/cpu/goacmedns \
+		cpu:goacmedns:v0.0.2:cpu_goacmedns/vendor/github.com/cpu/goacmedns \
 		cpuguy83:go-md2man:f79a8a8ca69d:cpuguy83_go_md2man/vendor/github.com/cpuguy83/go-md2man/v2 \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		dgrijalva:jwt-go:v3.2.0:dgrijalva_jwt_go/vendor/github.com/dgrijalva/jwt-go \
@@ -53,7 +53,7 @@ GH_TUPLE=	\
 		fatih:structs:v1.1.0:fatih_structs/vendor/github.com/fatih/structs \
 		go-errors:errors:v1.0.1:go_errors_errors/vendor/github.com/go-errors/errors \
 		go-resty:resty:v1.12.0:go_resty_resty/vendor/gopkg.in/resty.v1 \
-		go-yaml:yaml:v2.2.2:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
+		go-yaml:yaml:v2.2.8:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		gofrs:uuid:v3.2.0:gofrs_uuid/vendor/github.com/gofrs/uuid \
 		golang:appengine:v1.6.5:golang_appengine/vendor/google.golang.org/appengine \
 		golang:crypto:78000ba7a073:golang_crypto/vendor/golang.org/x/crypto \
@@ -107,7 +107,7 @@ GH_TUPLE=	\
 		stretchr:objx:v0.1.1:stretchr_objx/vendor/github.com/stretchr/objx \
 		stretchr:testify:v1.5.1:stretchr_testify/vendor/github.com/stretchr/testify \
 		timewasted:linode:37e84520dcf7:timewasted_linode/vendor/github.com/timewasted/linode \
-		transip:gotransip:6d8d9179b66f:transip_gotransip/vendor/github.com/transip/gotransip \
+		transip:gotransip:v6.0.2:transip_gotransip/vendor/github.com/transip/gotransip/v6 \
 		uber-go:ratelimit:c15da0234277:uber_go_ratelimit/vendor/go.uber.org/ratelimit \
 		urfave:cli:v1.22.1:urfave_cli/vendor/github.com/urfave/cli \
 		vultr:govultr:v0.1.4:vultr_govultr/vendor/github.com/vultr/govultr
