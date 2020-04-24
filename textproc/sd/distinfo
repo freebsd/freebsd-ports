@@ -1,4 +1,4 @@
-TIMESTAMP = 1586636647
+TIMESTAMP = 1587687411
 SHA256 (rust/crates/aho-corasick-0.7.10.tar.gz) = 8716408b8bc624ed7f65d223ddb9ac2d044c0547b6fa4b0d554f3a9540496ada
 SIZE (rust/crates/aho-corasick-0.7.10.tar.gz) = 111039
 SHA256 (rust/crates/ansi_term-0.11.0.tar.gz) = ee49baf6cb617b853aa8d93bf420db2383fab46d314482ca2803b40d5fde979b
@@ -151,5 +151,5 @@ SHA256 (rust/crates/winapi-i686-pc-windows-gnu-0.4.0.tar.gz) = ac3b87c63620426dd
 SIZE (rust/crates/winapi-i686-pc-windows-gnu-0.4.0.tar.gz) = 2918815
 SHA256 (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = 712e227841d057c1ee1cd2fb22fa7e5a5461ae8e48fa2ca79ec42cfc1931183f
 SIZE (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = 2947998
-SHA256 (chmln-sd-v0.7.3_GH0.tar.gz) = 8f8168b849c5da26fdd81b6de3497613631c66ba4f7ab4e86e5adf94ac925dd0
-SIZE (chmln-sd-v0.7.3_GH0.tar.gz) = 14639
+SHA256 (chmln-sd-v0.7.4_GH0.tar.gz) = 94064871151b472b72ed8ace353182a9d0cbba7a961921a37a27d382eb613426
+SIZE (chmln-sd-v0.7.4_GH0.tar.gz) = 14713
