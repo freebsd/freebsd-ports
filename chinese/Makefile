@@ -66,6 +66,7 @@
     SUBDIR += moettf
     SUBDIR += muni
     SUBDIR += oicq
+    SUBDIR += open-huninn-font
     SUBDIR += opencc
     SUBDIR += opendesktop-fonts
     SUBDIR += oto
