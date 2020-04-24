@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	rainloop
-PORTVERSION=	1.13.0
+PORTVERSION=	1.14.0
 CATEGORIES=	mail www
 MASTER_SITES=	https://github.com/RainLoop/rainloop-webmail/releases/download/v${PORTVERSION}/
 
-MAINTAINER=	loic.blot@unix-experience.fr
+MAINTAINER=	yasu@utahime.org
 COMMENT?=	Modern and interactive webmail
 
 .if !defined(PKGNAMESUFFIX)
