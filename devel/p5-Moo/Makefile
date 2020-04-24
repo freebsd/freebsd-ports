@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Moo
-PORTVERSION=	2.003006
+PORTVERSION=	2.004000
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:HAARG
@@ -13,6 +13,7 @@ COMMENT=	Minimalist Object Orientation (with Moose compatibility)
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Class-Method-Modifiers>=1.10:devel/p5-Class-Method-Modifiers \
