@@ -7,19 +7,12 @@ bin/s6-envdir
 bin/s6-envuidgid
 bin/s6-fdholder-daemon
 bin/s6-fdholder-delete
-bin/s6-fdholder-deletec
 bin/s6-fdholder-getdump
-bin/s6-fdholder-getdumpc
 bin/s6-fdholder-list
-bin/s6-fdholder-listc
 bin/s6-fdholder-retrieve
-bin/s6-fdholder-retrievec
 bin/s6-fdholder-setdump
-bin/s6-fdholder-setdumpc
 bin/s6-fdholder-store
-bin/s6-fdholder-storec
 bin/s6-fdholder-transferdump
-bin/s6-fdholder-transferdumpc
 bin/s6-fdholderd
 bin/s6-fghack
 bin/s6-ftrig-listen
@@ -64,6 +57,7 @@ bin/ucspilogd
 @sample %%ETCDIR%%/s6-svscan/env/PATH.sample
 @sample %%ETCDIR%%/s6-svscan/finish.sample
 include/s6/accessrules.h
+include/s6/compat.h
 include/s6/config.h
 include/s6/ftrigr.h
 include/s6/ftrigw.h
@@ -72,9 +66,8 @@ include/s6/s6-supervise.h
 include/s6/s6.h
 include/s6/s6lock.h
 lib/libs6.so
-lib/libs6.so.2.8
-lib/libs6.so.2.8.0
-lib/libs6.so.2.8.0.0
+lib/libs6.so.2.9
+lib/libs6.so.2.9.1.0
 lib/s6/libs6.a
 libexec/s6lockd-helper
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
@@ -94,20 +87,13 @@ libexec/s6lockd-helper
 %%PORTDOCS%%%%DOCSDIR%%/s6-envuidgid.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-fdholder-daemon.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-fdholder-delete.html
-%%PORTDOCS%%%%DOCSDIR%%/s6-fdholder-deletec.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-fdholder-errorcodes.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-fdholder-getdump.html
-%%PORTDOCS%%%%DOCSDIR%%/s6-fdholder-getdumpc.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-fdholder-list.html
-%%PORTDOCS%%%%DOCSDIR%%/s6-fdholder-listc.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-fdholder-retrieve.html
-%%PORTDOCS%%%%DOCSDIR%%/s6-fdholder-retrievec.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-fdholder-setdump.html
-%%PORTDOCS%%%%DOCSDIR%%/s6-fdholder-setdumpc.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-fdholder-store.html
-%%PORTDOCS%%%%DOCSDIR%%/s6-fdholder-storec.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-fdholder-transferdump.html
-%%PORTDOCS%%%%DOCSDIR%%/s6-fdholder-transferdumpc.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-fdholderd.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-fghack.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-ftrig-listen.html
@@ -149,7 +135,6 @@ libexec/s6lockd-helper
 %%PORTDOCS%%%%DOCSDIR%%/scandir.html
 %%PORTDOCS%%%%DOCSDIR%%/servicedir.html
 %%PORTDOCS%%%%DOCSDIR%%/socket-activation.html
-%%PORTDOCS%%%%DOCSDIR%%/systemd.html
 %%PORTDOCS%%%%DOCSDIR%%/ucspilogd.html
 %%PORTDOCS%%%%DOCSDIR%%/upgrade.html
 %%PORTDOCS%%%%DOCSDIR%%/why.html

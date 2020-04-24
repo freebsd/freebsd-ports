@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	s6
-PORTVERSION=	2.8.0.0
+PORTVERSION=	2.9.1.0
 CATEGORIES=	sysutils
 MASTER_SITES=	https://www.skarnet.org/software/${PORTNAME}/
 
@@ -12,7 +12,7 @@ COMMENT=	Skarnet.org supervision suite
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	execline>=2.5.0.1:lang/execline
+BUILD_DEPENDS=	execline>=2.6.0.1:lang/execline
 LIB_DEPENDS=	libskarnet.so:devel/skalibs
 RUN_DEPENDS=	execlineb:lang/execline
 
