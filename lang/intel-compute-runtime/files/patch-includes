@@ -15,16 +15,15 @@ runtime/tbx/tbx_sockets_imp.cpp:107:9: error: unknown type name 'sockaddr_in'; d
 struct sockaddr {
        ^
 
---- shared/source/os_interface/linux/drm_neo.cpp.orig	2020-02-28 16:16:42 UTC
+--- shared/source/os_interface/linux/drm_neo.cpp.orig	2020-04-17 18:43:38 UTC
 +++ shared/source/os_interface/linux/drm_neo.cpp
-@@ -17,10 +17,10 @@
+@@ -19,9 +19,9 @@
  #include "shared/source/os_interface/os_interface.h"
  #include "shared/source/utilities/directory.h"
  
 +#include <climits>
  #include <cstdio>
  #include <cstring>
- #include <fstream>
 -#include <linux/limits.h>
  
  namespace NEO {

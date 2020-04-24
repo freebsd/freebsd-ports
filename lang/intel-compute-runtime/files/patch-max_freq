@@ -3,11 +3,11 @@
   $ clinfo | fgrep clock
     Max clock frequency                             0MHz
 
---- shared/source/os_interface/linux/drm_neo.cpp.orig	2020-04-11 07:41:07 UTC
-+++ shared/source/os_interface/linux/drm_neo.cpp
-@@ -24,6 +24,13 @@
+--- shared/source/os_interface/linux/drm_query.cpp.orig	2020-04-17 18:43:38 UTC
++++ shared/source/os_interface/linux/drm_query.cpp
+@@ -11,10 +11,41 @@
+ 
  #include <fstream>
- #include <linux/limits.h>
  
 +#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
 +#include <sys/param.h>
@@ -18,10 +18,7 @@
 +
  namespace NEO {
  
- namespace IoctlHelper {
-@@ -104,6 +111,30 @@ int Drm::getEnabledPooledEu(int &enabled) {
- 
- int Drm::getMaxGpuFrequency(int &maxGpuFrequency) {
+ int Drm::getMaxGpuFrequency(HardwareInfo &hwInfo, int &maxGpuFrequency) {
      maxGpuFrequency = 0;
 +#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
 +    struct stat sb;
@@ -50,7 +47,7 @@
      std::string clockSysFsPath = getSysFsPciPath();
  
      clockSysFsPath += "/gt_max_freq_mhz";
-@@ -115,6 +146,7 @@ int Drm::getMaxGpuFrequency(int &maxGpuFrequency) {
+@@ -26,6 +57,7 @@ int Drm::getMaxGpuFrequency(HardwareInfo &hwInfo, int 
  
      ifs >> maxGpuFrequency;
      ifs.close();
