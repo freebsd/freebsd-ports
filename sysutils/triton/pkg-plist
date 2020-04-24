@@ -1,11 +1,15 @@
 include/triton/aarch64.spec
 include/triton/aarch64Cpu.hpp
-include/triton/aarch64OperandProperties.hpp
 include/triton/aarch64Semantics.hpp
 include/triton/aarch64Specifications.hpp
 include/triton/api.hpp
 include/triton/archEnums.hpp
 include/triton/architecture.hpp
+include/triton/arm32.spec
+include/triton/arm32Cpu.hpp
+include/triton/arm32Semantics.hpp
+include/triton/arm32Specifications.hpp
+include/triton/armOperandProperties.hpp
 include/triton/ast.hpp
 include/triton/astContext.hpp
 include/triton/astEnums.hpp
@@ -17,6 +21,8 @@ include/triton/bitsVector.hpp
 include/triton/callbacks.hpp
 include/triton/callbacksEnums.hpp
 include/triton/comparableFunctor.hpp
+include/triton/config.hpp
+include/triton/config.hpp.in
 include/triton/coreUtils.hpp
 include/triton/cpuInterface.hpp
 include/triton/cpuSize.hpp
