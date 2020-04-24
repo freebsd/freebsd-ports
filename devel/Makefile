@@ -2075,6 +2075,7 @@
     SUBDIR += p5-Data-Object-Struct
     SUBDIR += p5-Data-Object-Try
     SUBDIR += p5-Data-Object-Types
+    SUBDIR += p5-Data-Object-Vars
     SUBDIR += p5-Data-ObjectDriver
     SUBDIR += p5-Data-OptList
     SUBDIR += p5-Data-Page-NoTotalEntries

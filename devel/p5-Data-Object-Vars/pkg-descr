@@ -1,0 +1,4 @@
+Data::Object::Role::Stashable provides methods for stashing data within the
+object.
+
+WWW: https://metacpan.org/release/Data-Object-Vars
