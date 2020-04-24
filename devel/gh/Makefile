@@ -2,7 +2,7 @@
 
 PORTNAME=	gh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.4
+DISTVERSION=	0.7.0
 CATEGORIES=	devel
 
 MAINTAINER=	vulcan@wired.sh
@@ -19,7 +19,7 @@ GH_ACCOUNT=	cli
 GH_PROJECT=	cli
 GH_TUPLE=	AlecAivazis:survey:v2.0.7:alecaivazis_survey/vendor/github.com/AlecAivazis/survey/v2 \
 		alecthomas:chroma:34d9c7143bf5:alecthomas_chroma/vendor/github.com/alecthomas/chroma \
-		briandowns:spinner:v1.9.0:briandowns_spinner/vendor/github.com/briandowns/spinner \
+		briandowns:spinner:bf6cf7ae6727:briandowns_spinner/vendor/github.com/briandowns/spinner \
 		charmbracelet:glamour:301d3bcf3058:charmbracelet_glamour/vendor/github.com/charmbracelet/glamour \
 		cpuguy83:go-md2man:v2.0.0:cpuguy83_go_md2man/vendor/github.com/cpuguy83/go-md2man/v2 \
 		danwakefield:fnmatch:cbb64ac3d964:danwakefield_fnmatch/vendor/github.com/danwakefield/fnmatch \
@@ -31,6 +31,7 @@ GH_TUPLE=	AlecAivazis:survey:v2.0.7:alecaivazis_survey/vendor/github.com/AlecAiv
 		golang:net:46282727080f:golang_net/vendor/golang.org/x/net \
 		golang:sys:d5e6a3e2c0ae:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
+		google:go-cmp:v0.2.0:google_go_cmp/vendor/github.com/google/go-cmp \
 		google:goterm:fc88cf888a3f:google_goterm/vendor/github.com/google/goterm \
 		google:shlex:e7afc7fbc510:google_shlex/vendor/github.com/google/shlex \
 		hashicorp:go-version:v1.2.0:hashicorp_go_version/vendor/github.com/hashicorp/go-version \
@@ -65,12 +66,14 @@ GO_BUILDFLAGS=	-ldflags "\
 		-X github.com/${GH_ACCOUNT}/${GH_PROJECT}/command.BuildDate=${_BUILD_DATE}"
 
 PLIST_FILES=	bin/${PORTNAME} \
-		etc/bash_completion.d/${PORTNAME}.bash \
+		etc/bash_completion.d/${PORTNAME} \
 		share/fish/completions/${PORTNAME}.fish \
-		share/zsh/site_functions/_${PORTNAME}
-PORTDOCS=	README.md
+		share/zsh/site-functions/_${PORTNAME}
+PORTDOCS=	${DOCS:T}
 
 OPTIONS_DEFINE=	DOCS
+
+DOCS=		README.md docs/gh-vs-hub.md docs/releasing.md docs/source.md
 
 post-build:
 .for shell in bash fish zsh
@@ -80,17 +83,17 @@ post-build:
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
 	${INSTALL_DATA} ${WRKSRC}/bash \
-		${STAGEDIR}${PREFIX}/etc/bash_completion.d/${PORTNAME}.bash
+		${STAGEDIR}${PREFIX}/etc/bash_completion.d/${PORTNAME}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/fish/completions
 	${INSTALL_DATA} ${WRKSRC}/fish \
 		${STAGEDIR}${PREFIX}/share/fish/completions/${PORTNAME}.fish
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site_functions
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
 	${INSTALL_DATA} ${WRKSRC}/zsh \
-		${STAGEDIR}${PREFIX}/share/zsh/site_functions/_${PORTNAME}
+		${STAGEDIR}${PREFIX}/share/zsh/site-functions/_${PORTNAME}
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
 
 do-test:
 	@cd ${GO_WRKSRC} && ${SETENV} ${GO_ENV} ${GO_CMD} test ./...
