@@ -2057,6 +2057,7 @@
     SUBDIR += p5-Data-Object-Name
     SUBDIR += p5-Data-Object-Opts
     SUBDIR += p5-Data-Object-Plugin
+    SUBDIR += p5-Data-Object-Role
     SUBDIR += p5-Data-ObjectDriver
     SUBDIR += p5-Data-OptList
     SUBDIR += p5-Data-Page-NoTotalEntries
