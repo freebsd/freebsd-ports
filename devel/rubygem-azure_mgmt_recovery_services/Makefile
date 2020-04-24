@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	azure_mgmt_recovery_services
-PORTVERSION=	0.17.3
+PORTVERSION=	0.18.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
