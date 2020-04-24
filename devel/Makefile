@@ -4610,7 +4610,6 @@
     SUBDIR += py-libcst
     SUBDIR += py-libioc
     SUBDIR += py-libiocage
-    SUBDIR += py-liblarch
     SUBDIR += py-libpeas
     SUBDIR += py-libtaxii
     SUBDIR += py-libtmux
