@@ -1,0 +1,5 @@
+Data::Object::Data provides methods for parsing and extracting pod-like sections
+from any file or package. The pod-like syntax allows for using these sections
+anywhere in the source code and having Perl properly ignoring them.
+
+WWW: https://metacpan.org/release/Data-Object-Data

@@ -2051,6 +2051,7 @@
     SUBDIR += p5-Data-Object-Cast
     SUBDIR += p5-Data-Object-Class
     SUBDIR += p5-Data-Object-ClassHas
+    SUBDIR += p5-Data-Object-Data
     SUBDIR += p5-Data-ObjectDriver
     SUBDIR += p5-Data-OptList
     SUBDIR += p5-Data-Page-NoTotalEntries
