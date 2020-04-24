@@ -1,0 +1,10 @@
+Data::Object::Role::Proxyable provides a wrapper around the AUTOLOAD routine
+which processes calls to routines which don't exist. Adding a build_proxy method
+to the consuming class acts as a hook into routine dispatching, which processes
+calls to routines which don't exist. The build_proxy routine is called as a
+method and receives $self, $package, $method, and any arguments passed to the
+method as a list of arguments, e.g. @args. The build_proxy method must return a
+routine (i.e. a callback) or the undefined value which results in a "method
+missing" error.
+
+WWW: https://metacpan.org/release/Data-Object-Role-Proxyable
