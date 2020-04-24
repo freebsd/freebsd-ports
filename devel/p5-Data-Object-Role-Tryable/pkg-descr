@@ -1,0 +1,5 @@
+Data::Object::Role::Tryable provides a wrapper around the Data::Object::Try
+class which provides an object-oriented interface for performing complex
+try/catch operations.
+
+WWW: https://metacpan.org/release/Data-Object-Role-Tryable
