@@ -1,0 +1,4 @@
+Data::Object::Cast provides functions for casting native data types to objects
+and the reverse.
+
+WWW: https://metacpan.org/release/Data-Object-Cast
