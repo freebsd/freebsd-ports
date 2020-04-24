@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	asdf
-PORTVERSION=	2.5.2
+PORTVERSION=	2.6.0
 CATEGORIES=	science python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonschema>=2.3<4:devel/py-jsonschema@${PY_F
 		${PYTHON_PKGNAMEPREFIX}semantic_version>=2.8:devel/py-semantic_version@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>=3.10:devel/py-yaml@${PY_FLAVOR}
 
-USES=		python:3.3+ shebangfix
+USES=		python:3.5+ shebangfix
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
