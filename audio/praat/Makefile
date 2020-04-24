@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=		6.1.13
 CATEGORIES=		audio science
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Phonetics by Computer
 
 LICENSE=	GPLv2
