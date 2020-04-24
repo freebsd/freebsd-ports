@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Keyword/Simple.pm
+%%SITE_ARCH%%/auto/Keyword/Simple/Simple.so
+%%PERL5_MAN3%%/Keyword::Simple.3.gz

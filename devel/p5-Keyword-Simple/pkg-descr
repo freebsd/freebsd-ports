@@ -1,0 +1,6 @@
+Keyword::Simple lets you implement new keywords in pure Perl. To do this, you
+need to write a module and call Keyword::Simple::define in your import method.
+Any keywords defined this way will be available in the lexical scope that's
+currently being compiled.
+
+WWW: https://metacpan.org/release/Keyword-Simple

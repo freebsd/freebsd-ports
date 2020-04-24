@@ -2610,6 +2610,7 @@
     SUBDIR += p5-Jonk
     SUBDIR += p5-Keyword-Declare
     SUBDIR += p5-Keyword-Pluggable
+    SUBDIR += p5-Keyword-Simple
     SUBDIR += p5-LV
     SUBDIR += p5-Lexical-Alias
     SUBDIR += p5-Lexical-Import
