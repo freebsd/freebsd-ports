@@ -1,0 +1,18 @@
+Keyword::Declare implements a new Perl keyword: keyword, which you can use to
+specify other new keywords.
+
+Normally, to define new keywords in Perl, you either have to write them in XS
+(shiver!) or use a module like Keyword::Simple or Keyword::API. Using any of
+these approaches requires you to grab all the source code after the keyword,
+manually parse out the components of the keyword's syntax, construct the
+replacement source code, and then substitute it for the original source code you
+just parsed.
+
+Using Keyword::Declare, you define a new keyword by specifying its name and a
+parameter list corresponding to the syntactic components that must follow the
+keyword. You then use those parameters to construct and return the replacement
+source code. The module takes care of setting up the keyword, and of the
+associated syntax parsing, and of inserting the replacement source code in the
+correct place.
+
+WWW: https://metacpan.org/release/Keyword-Declare
