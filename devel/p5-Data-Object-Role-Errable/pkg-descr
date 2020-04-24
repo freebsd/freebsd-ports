@@ -1,0 +1,7 @@
+Data::Object::Role::Errable provides a mechanism for handling errors
+(exceptions). It's a more structured approach to being "throwable". The idea is
+that any object that consumes this role can set an error which automatically
+throws an exception which if trapped includes the state (object as thrown) in
+the exception context.
+
+WWW: https://metacpan.org/release/Data-Object-Role-Errable
