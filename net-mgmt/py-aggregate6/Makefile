@@ -13,8 +13,8 @@ COMMENT=	Compress an unsorted list of IPv4 and IPv6 prefixes
 LICENSE=	BSD2CLAUSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}radix>=0.10.0:net/py-radix@${PY_FLAVOR}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	\
-		${PYTHON_PKGNAMEPREFIX}coverage>0:devel/py-coverage@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${PY_FLAVOR}
 
