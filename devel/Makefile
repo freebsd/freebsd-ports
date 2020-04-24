@@ -2066,6 +2066,7 @@
     SUBDIR += p5-Data-Object-Role-Immutable
     SUBDIR += p5-Data-Object-Role-Pluggable
     SUBDIR += p5-Data-Object-Role-Proxyable
+    SUBDIR += p5-Data-Object-Role-Stashable
     SUBDIR += p5-Data-ObjectDriver
     SUBDIR += p5-Data-OptList
     SUBDIR += p5-Data-Page-NoTotalEntries
