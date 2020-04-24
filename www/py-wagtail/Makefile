@@ -28,10 +28,12 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup460>=4.5.1<4.6.1:www/py-beautif
 		${PYTHON_PKGNAMEPREFIX}unidecode>=0.04.14<2.0:converters/py-unidecode@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}willow>=1.3<1.4:graphics/py-willow@${PY_FLAVOR}
 
-USES=		python:3.5+ shebangfix
+USES=		cpe python:3.5+ shebangfix
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
+
+CPE_VENDOR=	torchbox
 
 SHEBANG_FILES=	wagtail/project_template/manage.py
 
