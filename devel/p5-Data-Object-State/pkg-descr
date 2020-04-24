@@ -1,0 +1,7 @@
+Data::Object::State provides an abstract base class for creating singleton
+classes. This package is derived from Moo and makes consumers Moo classes (with
+all that that entails). This package also injects a BUILD method which is
+responsible for hooking into the build process and returning the appropriate
+state.
+
+WWW: https://metacpan.org/release/Data-Object-State
