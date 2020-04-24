@@ -13,7 +13,7 @@ COMMENT=	Another Python SQLite Wrapper
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	sqlite3>=${PORTVERSION:R}:databases/sqlite3
+BUILD_DEPENDS=	sqlite3>=${PORTVERSION:R},1:databases/sqlite3
 
 USES=		localbase python sqlite:3
 USE_PYTHON=	autoplist concurrent distutils
