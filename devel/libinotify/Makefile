@@ -3,7 +3,7 @@
 
 PORTNAME=	libinotify
 PORTVERSION=	20180201
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -19,6 +19,7 @@ GH_ACCOUNT=	libinotify-kqueue
 GH_PROJECT=	libinotify-kqueue
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-skip-subfiles=smbfs,fusefs
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
