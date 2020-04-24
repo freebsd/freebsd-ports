@@ -1,0 +1,5 @@
+Data::Object::Role::Buildable provides methods for hooking into object
+construction of the consuming class, e.g. handling single-arg object
+construction.
+
+WWW: https://metacpan.org/release/Data-Object-Role-Buildable
