@@ -1,12 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	obs-streamfx
-DISTVERSION=	0.8.0b1
-PORTREVISION=	1
+DISTVERSION=	0.8.0b2
 CATEGORIES=	multimedia
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	aafddeda7fffc7261a72401a591098567c43e81b.patch:-p1 # https://github.com/Xaymar/obs-StreamFX/pull/165
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	OBS Studio Plugin: Modern effects

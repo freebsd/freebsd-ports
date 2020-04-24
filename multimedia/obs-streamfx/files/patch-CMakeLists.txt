@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2020-04-08 22:29:18 UTC
+--- CMakeLists.txt.orig	2020-04-24 03:39:40 UTC
 +++ CMakeLists.txt
-@@ -88,13 +88,13 @@ else()
+@@ -92,13 +92,13 @@ else()
  endif()
  
  # Detect Architecture
@@ -21,7 +21,7 @@
  
  # All Warnings, Extra Warnings, Pedantic
  if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
-@@ -179,7 +179,7 @@ else()
+@@ -183,7 +183,7 @@ else()
  	set(CMAKE_PACKAGE_SUFFIX_OVERRIDE "" CACHE STRING "Override for the suffix.")
  
  	if(UNIX)
@@ -30,7 +30,20 @@
  	endif()
  
  	if(NOT ${PropertyPrefix}OBS_DOWNLOAD)
-@@ -990,8 +990,8 @@ else()
+@@ -502,9 +502,9 @@ if((CMAKE_C_COMPILER_ID STREQUAL "GNU")
+ 	OR (CMAKE_C_COMPILER_ID STREQUAL "Clang")
+ 	OR (CMAKE_CXX_COMPILER_ID STREQUAL "Clang"))
+ 	if(CMAKE_CXX_COMPILER_VERSION VERSION_LESS 9.0)
+-		list(APPEND PROJECT_LIBRARIES
+-			"stdc++fs"
+-		)
++		#list(APPEND PROJECT_LIBRARIES
++		#	"stdc++fs"
++		#)
+ 	endif()
+ endif()
+ 
+@@ -1031,8 +1031,8 @@ else()
  	else()
  		install(
  			TARGETS ${PROJECT_NAME}
@@ -41,7 +54,7 @@
  		)
  		if(MSVC)
  			install(
-@@ -1003,7 +1003,7 @@ else()
+@@ -1044,7 +1044,7 @@ else()
  	
  		install(
  			DIRECTORY "data/"
