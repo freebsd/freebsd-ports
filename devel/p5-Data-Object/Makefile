@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Data-Object
-PORTVERSION=	0.99
+PORTVERSION=	2.03
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,17 +10,18 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Data Type Objects for Perl 5
 
-LICENSE=	ART10 GPLv1+
-LICENSE_COMB=	dual
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE=	APACHE20
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Function-Parameters>=2.001003:devel/p5-Function-Parameters \
-		p5-Import-Into>=1.002005:devel/p5-Import-Into \
-		p5-Moo>=2.000001:devel/p5-Moo \
-		p5-Role-Tiny>=2.000006:devel/p5-Role-Tiny \
-		p5-Try-Tiny>=0.30:lang/p5-Try-Tiny \
-		p5-Type-Tiny>=1.000005:devel/p5-Type-Tiny
+RUN_DEPENDS=	p5-Data-Object-Cast>=0.01:devel/p5-Data-Object-Cast \
+		p5-Data-Object-Class>=2.02:devel/p5-Data-Object-Class \
+		p5-Data-Object-ClassHas>=2.01:devel/p5-Data-Object-ClassHas \
+		p5-Data-Object-Kind>=0.01:devel/p5-Data-Object-Kind \
+		p5-Data-Object-Role-Buildable>=0.03:devel/p5-Data-Object-Role-Buildable \
+		p5-Data-Object-Role-Dumpable>=2.01:devel/p5-Data-Object-Role-Dumpable \
+		p5-Data-Object-Role-Proxyable>=2.03:devel/p5-Data-Object-Role-Proxyable \
+		p5-Data-Object-Role-Throwable>=2.01:devel/p5-Data-Object-Role-Throwable \
+		p5-Data-Object-Types>=0.04:devel/p5-Data-Object-Types
 
 USES=		perl5
 USE_PERL5=	configure
