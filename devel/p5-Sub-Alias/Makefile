@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Sub-Alias
-PORTVERSION=	0.03
-PORTREVISION=	1
+PORTVERSION=	1.0.0
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,12 +14,11 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Devel-BeginLift>=0:devel/p5-Devel-BeginLift \
-		p5-Devel-Declare>=0:devel/p5-Devel-Declare \
-		p5-Sub-Exporter>=0:devel/p5-Sub-Exporter
+RUN_DEPENDS=	p5-Keyword-Declare>=0:devel/p5-Keyword-Declare
+
+USES=		perl5
+USE_PERL5=	modbuildtiny
 
 NO_ARCH=	yes
-USES=		perl5
-USE_PERL5=	configure
 
 .include <bsd.port.mk>
