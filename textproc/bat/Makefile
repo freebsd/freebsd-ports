@@ -30,15 +30,17 @@ CARGO_CRATES=	adler32-1.0.4 \
 		anymap-0.12.1 \
 		arrayref-0.3.6 \
 		arrayvec-0.5.1 \
-		assert_cmd-0.12.0 \
+		assert_cmd-1.0.1 \
 		atty-0.2.14 \
 		autocfg-1.0.0 \
-		backtrace-0.3.45 \
-		backtrace-sys-0.1.34 \
+		backtrace-0.3.46 \
+		backtrace-sys-0.1.36 \
 		base64-0.10.1 \
 		base64-0.11.0 \
 		bincode-1.2.1 \
 		bindgen-0.50.1 \
+		bit-set-0.5.1 \
+		bit-vec-0.5.1 \
 		bitflags-1.2.1 \
 		blake2b_simd-0.5.10 \
 		block-buffer-0.7.3 \
@@ -46,7 +48,7 @@ CARGO_CRATES=	adler32-1.0.4 \
 		bstr-0.2.12 \
 		byte-tools-0.3.1 \
 		byteorder-1.3.4 \
-		cc-1.0.50 \
+		cc-1.0.52 \
 		cexpr-0.3.6 \
 		cfg-if-0.1.10 \
 		chrono-0.4.11 \
@@ -58,12 +60,12 @@ CARGO_CRATES=	adler32-1.0.4 \
 		content_inspector-0.2.4 \
 		crc32fast-1.2.0 \
 		crossbeam-utils-0.7.2 \
-		deunicode-1.1.0 \
 		difference-2.0.0 \
 		digest-0.8.1 \
 		dirs-2.0.2 \
 		dirs-sys-0.3.4 \
 		doc-comment-0.3.3 \
+		dtoa-0.4.5 \
 		either-1.5.3 \
 		encode_unicode-0.3.6 \
 		encoding-0.2.33 \
@@ -75,40 +77,40 @@ CARGO_CRATES=	adler32-1.0.4 \
 		encoding_index_tests-0.1.4 \
 		env_logger-0.6.2 \
 		error-chain-0.12.2 \
-		escargot-0.5.0 \
 		failure-0.1.7 \
 		fake-simd-0.1.2 \
+		fancy-regex-0.3.3 \
 		flate2-1.0.14 \
 		fnv-1.0.6 \
 		fuchsia-cprng-0.1.1 \
 		fxhash-0.2.1 \
 		generic-array-0.12.3 \
 		getrandom-0.1.14 \
-		git2-0.13.0 \
+		git2-0.13.3 \
 		glob-0.3.0 \
 		globset-0.4.5 \
-		hermit-abi-0.1.8 \
+		hermit-abi-0.1.11 \
 		humantime-1.3.0 \
 		idna-0.1.5 \
 		idna-0.2.0 \
+		indexmap-1.3.2 \
 		itertools-0.8.2 \
 		itoa-0.4.5 \
 		jobserver-0.1.21 \
 		kernel32-sys-0.2.2 \
+		kstring-0.1.0 \
 		lazy_static-1.4.0 \
 		lazycell-1.2.1 \
-		libc-0.2.68 \
-		libgit2-sys-0.12.0+0.99.0 \
+		libc-0.2.69 \
+		libgit2-sys-0.12.4+1.0.0 \
 		libloading-0.5.2 \
 		libz-sys-1.0.25 \
 		line-wrap-0.1.1 \
 		linked-hash-map-0.5.2 \
-		liquid-0.19.0 \
-		liquid-compiler-0.19.0 \
-		liquid-derive-0.19.0 \
-		liquid-error-0.19.0 \
-		liquid-interpreter-0.19.0 \
-		liquid-value-0.19.1 \
+		liquid-0.20.0 \
+		liquid-core-0.20.0 \
+		liquid-derive-0.20.0 \
+		liquid-lib-0.20.0 \
 		log-0.4.8 \
 		maplit-1.0.2 \
 		matches-0.1.8 \
@@ -117,6 +119,7 @@ CARGO_CRATES=	adler32-1.0.4 \
 		nom-4.2.3 \
 		num-integer-0.1.42 \
 		num-traits-0.2.11 \
+		once_cell-1.3.1 \
 		onig-5.0.0 \
 		onig_sys-69.2.0 \
 		opaque-debug-0.2.3 \
@@ -128,15 +131,15 @@ CARGO_CRATES=	adler32-1.0.4 \
 		pest_generator-2.1.3 \
 		pest_meta-2.1.3 \
 		pkg-config-0.3.17 \
-		plist-0.4.2 \
+		plist-0.5.5 \
 		predicates-1.0.4 \
 		predicates-core-1.0.0 \
 		predicates-tree-1.0.0 \
-		proc-macro-hack-0.5.14 \
+		proc-macro-hack-0.5.15 \
 		proc-macro2-0.4.30 \
-		proc-macro2-1.0.9 \
-		proc-quote-0.2.2 \
-		proc-quote-impl-0.2.2 \
+		proc-macro2-1.0.10 \
+		proc-quote-0.3.2 \
+		proc-quote-impl-0.3.2 \
 		quick-error-1.2.3 \
 		quote-0.6.13 \
 		quote-1.0.3 \
@@ -146,7 +149,7 @@ CARGO_CRATES=	adler32-1.0.4 \
 		rdrand-0.4.0 \
 		redox_syscall-0.1.56 \
 		redox_users-0.3.4 \
-		regex-1.3.5 \
+		regex-1.3.7 \
 		regex-syntax-0.6.17 \
 		remove_dir_all-0.5.2 \
 		rust-argon2-0.7.0 \
@@ -154,26 +157,28 @@ CARGO_CRATES=	adler32-1.0.4 \
 		ryu-1.0.3 \
 		safemem-0.3.3 \
 		same-file-1.0.6 \
-		serde-1.0.105 \
-		serde_derive-1.0.105 \
-		serde_json-1.0.48 \
+		semver-0.9.0 \
+		semver-parser-0.7.0 \
+		serde-1.0.106 \
+		serde_derive-1.0.106 \
+		serde_json-1.0.51 \
+		serde_yaml-0.8.11 \
 		sha-1-0.8.2 \
 		shell-words-0.1.0 \
 		shlex-0.1.1 \
-		smallvec-1.2.0 \
+		smallvec-1.3.0 \
 		strsim-0.8.0 \
-		syn-0.15.44 \
 		syn-1.0.17 \
-		syntect-3.3.0 \
+		syntect-4.1.1 \
 		tempdir-0.3.7 \
 		term_size-0.3.1 \
 		termcolor-1.1.0 \
-		termios-0.3.1 \
+		termios-0.3.2 \
 		textwrap-0.11.0 \
 		thread_local-1.0.1 \
-		time-0.1.42 \
+		time-0.1.43 \
 		treeline-0.1.0 \
-		typenum-1.11.2 \
+		typenum-1.12.0 \
 		ucd-trie-0.1.3 \
 		unicode-bidi-0.3.4 \
 		unicode-normalization-0.1.12 \
@@ -187,6 +192,7 @@ CARGO_CRATES=	adler32-1.0.4 \
 		vec_map-0.8.1 \
 		version_check-0.1.5 \
 		version_check-0.9.1 \
+		wait-timeout-0.2.0 \
 		walkdir-2.3.1 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
 		which-2.0.1 \
@@ -195,13 +201,14 @@ CARGO_CRATES=	adler32-1.0.4 \
 		winapi-0.3.8 \
 		winapi-build-0.1.1 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
-		winapi-util-0.1.3 \
+		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		xml-rs-0.8.0 \
+		xml-rs-0.8.2 \
 		yaml-rust-0.4.3
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/bat
 	find ${WRKDIR}/target -name "bat.1" -exec cp {} ${WRKSRC}/doc/bat.1 \;
 	${INSTALL_MAN} ${WRKSRC}/doc/bat.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+
 .include <bsd.port.mk>
