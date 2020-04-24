@@ -30,6 +30,7 @@ lib/liteide/plugins/liblitetty.so
 lib/liteide/plugins/libmarkdown.so
 lib/liteide/plugins/libquickopen.so
 lib/liteide/plugins/librustedit.so
+lib/liteide/plugins/libterminal.so
 lib/liteide/plugins/libwelcome.so
 share/applications/liteide.desktop
 share/icons/hicolor/128x128/apps/liteide.png
@@ -108,8 +109,8 @@ share/icons/hicolor/64x64/apps/liteide.png
 %%DATADIR%%/liteeditor/color/sublime-bold.xml
 %%DATADIR%%/liteeditor/color/sublime.xml
 %%DATADIR%%/liteeditor/color/visualstudio.xml
-%%DATADIR%%/liteeditor/kate/alert_indent.xml
 %%DATADIR%%/liteeditor/kate/alert.xml
+%%DATADIR%%/liteeditor/kate/alert_indent.xml
 %%DATADIR%%/liteeditor/kate/awk.xml
 %%DATADIR%%/liteeditor/kate/bash.xml
 %%DATADIR%%/liteeditor/kate/c.xml
@@ -117,6 +118,7 @@ share/icons/hicolor/64x64/apps/liteide.png
 %%DATADIR%%/liteeditor/kate/cpp.xml
 %%DATADIR%%/liteeditor/kate/css.xml
 %%DATADIR%%/liteeditor/kate/go.xml
+%%DATADIR%%/liteeditor/kate/gohtml.xml
 %%DATADIR%%/liteeditor/kate/gomod.xml
 %%DATADIR%%/liteeditor/kate/gopresent.xml
 %%DATADIR%%/liteeditor/kate/html.xml
