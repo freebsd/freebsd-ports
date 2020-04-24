@@ -161,7 +161,7 @@ GTK3_VARS=	${GTK_VARS}
 JAVA_BUILD_DEPENDS=	ant:devel/apache-ant \
 			${JAVAJARDIR}/commons-codec.jar:java/apache-commons-codec \
 			${JAVAJARDIR}/commons-httpclient.jar:java/apache-commons-httpclient \
-			${JAVAJARDIR}/commons-lang.jar:java/apache-commons-lang \
+			${JAVAJARDIR}/commons-lang3.jar:java/apache-commons-lang3 \
 			${JAVAJARDIR}/commons-logging.jar:java/apache-commons-logging \
 			${JAVAJARDIR}/junit.jar:java/junit \
 			${JAVAJARDIR}/bsh.jar:lang/bsh
@@ -170,7 +170,7 @@ JAVA_CONFIGURE_ON=	--with-ant-home=${LOCALBASE}/share/java/apache-ant \
 			--with-beanshell-jar=${JAVAJARDIR}/bsh.jar \
 			--with-commons-codec-jar=${JAVAJARDIR}/commons-codec.jar \
 			--with-commons-httpclient-jar=${JAVAJARDIR}/commons-httpclient.jar \
-			--with-commons-lang-jar=${JAVAJARDIR}/commons-lang.jar \
+			--with-commons-lang-jar=${JAVAJARDIR}/commons-lang3.jar \
 			--with-commons-logging-jar=${JAVAJARDIR}/commons-logging.jar \
 			--with-jdk-home="${JAVA_HOME}" \
 			--with-junit=${JAVAJARDIR}/junit.jar \
