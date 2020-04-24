@@ -1,0 +1,6 @@
+Data::Object::Attributes provides options for defining class attributes.
+Specifically, this package wraps the has attribute keyword and adds shortcuts
+and enhancements. If no directives are specified, the attribute is declared as
+read-write and optional.
+
+WWW: https://metacpan.org/release/Data-Object-Attributes

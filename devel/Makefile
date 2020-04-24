@@ -2047,6 +2047,7 @@
     SUBDIR += p5-Data-Munge
     SUBDIR += p5-Data-Object
     SUBDIR += p5-Data-Object-Args
+    SUBDIR += p5-Data-Object-Attributes
     SUBDIR += p5-Data-ObjectDriver
     SUBDIR += p5-Data-OptList
     SUBDIR += p5-Data-Page-NoTotalEntries
