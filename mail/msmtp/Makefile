@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	msmtp
-PORTVERSION=	1.8.8
+PORTVERSION=	1.8.10
 CATEGORIES=	mail
 MASTER_SITES=	https://marlam.de/msmtp/releases/
 
