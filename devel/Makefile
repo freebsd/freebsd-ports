@@ -2063,6 +2063,7 @@
     SUBDIR += p5-Data-Object-Role-Dumpable
     SUBDIR += p5-Data-Object-Role-Errable
     SUBDIR += p5-Data-Object-Role-Formulatable
+    SUBDIR += p5-Data-Object-Role-Immutable
     SUBDIR += p5-Data-ObjectDriver
     SUBDIR += p5-Data-OptList
     SUBDIR += p5-Data-Page-NoTotalEntries
