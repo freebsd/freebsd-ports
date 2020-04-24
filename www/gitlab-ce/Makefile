@@ -3,7 +3,7 @@
 
 PORTNAME=	gitlab-ce
 PORTVERSION=	12.9.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -84,7 +84,7 @@ MY_DEPENDS=	git>=2.22.2:devel/git \
 	rubygem-mini_magick>0:graphics/rubygem-mini_magick \
 	rubygem-fog-aws>=3.5<4.0:net/rubygem-fog-aws \
 	rubygem-fog-core210=2.1.0:devel/rubygem-fog-core210 \
-	rubygem-fog-google>=1.9<1.10:net/rubygem-fog-google \
+	rubygem-fog-google19>=1.9<1.10:net/rubygem-fog-google19 \
 	rubygem-fog-local>=0.6<1.0:net/rubygem-fog-local \
 	rubygem-fog-openstack>=1.0<2.0:net/rubygem-fog-openstack \
 	rubygem-fog-rackspace>=0.1.1<1.2.0:net/rubygem-fog-rackspace \
