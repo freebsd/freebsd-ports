@@ -8,7 +8,7 @@ CATEGORIES=	audio windowmaker
 MASTER_SITES=	https://www.dockapps.net/download/
 
 MAINTAINER=	blackend@FreeBSD.org
-COMMENT=	Audio mixer for the WindowMaker dock
+COMMENT=	Audio mixer for the Window Maker dock
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
