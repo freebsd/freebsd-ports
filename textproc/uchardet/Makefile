@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	uchardet
-PORTVERSION=	0.0.6
+DISTVERSION=	0.0.7
 CATEGORIES=	textproc
 MASTER_SITES=	https://www.freedesktop.org/software/${PORTNAME}/releases/
 
