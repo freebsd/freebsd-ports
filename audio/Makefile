@@ -851,6 +851,7 @@
     SUBDIR += wmix
     SUBDIR += wmmp
     SUBDIR += wmrecord
+    SUBDIR += wmsmixer
     SUBDIR += workman
     SUBDIR += wxguitar
     SUBDIR += x42-plugins-lv2
