@@ -1,0 +1,4 @@
+Data::Object::Role::Formulatable provides a mechanism for automatically
+inflating objects from constructor arguments.
+
+WWW: https://metacpan.org/release/Data-Object-Role-Formulatable
