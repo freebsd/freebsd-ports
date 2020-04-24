@@ -3,6 +3,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/fdp-es/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/filtering-bridges/docbook.css
+%%DOCSDIR%%/%%DOCLANG%%/articles/fonts/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-questions/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/leap-seconds/docbook.css

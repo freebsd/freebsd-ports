@@ -469,7 +469,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/boot-kernel.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/boot-shutdown.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/boot.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall-final-warning.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall-fetching-distribution.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall-hardware.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall-install-trouble.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall-partitioning.html
