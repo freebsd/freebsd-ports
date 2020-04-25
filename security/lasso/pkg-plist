@@ -172,5 +172,5 @@ include/lasso/xml/xml_enc.h
 lib/liblasso.a
 lib/liblasso.so
 lib/liblasso.so.3
-lib/liblasso.so.3.13.0
+lib/liblasso.so.3.13.1
 libdata/pkgconfig/lasso.pc

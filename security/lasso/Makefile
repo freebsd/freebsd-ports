@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lasso
-PORTVERSION=	2.6.0
+PORTVERSION=	2.6.1
 CATEGORIES=	security
 MASTER_SITES=	https://dev.entrouvert.org/releases/lasso/
 
@@ -29,6 +29,7 @@ OPTIONS_SUB=	yes
 PERL_CONFIGURE_ENABLE=	perl
 PERL_USES=	perl5
 PYTHON_CONFIGURE_ENABLE=python
+INSTALL_TARGET=install-strip
 
 post-patch:
 	@${REINPLACE_CMD} -E 's,(xmlsec1-openssl >= 1\.2\.6) openssl,\1,' \
