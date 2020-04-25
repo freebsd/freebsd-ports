@@ -15,7 +15,7 @@
     SUBDIR += abduco
     SUBDIR += abgx360
     SUBDIR += abgx360gui
-    SUBDIR += accounts-qml-modul
+    SUBDIR += accounts-qml-module
     SUBDIR += accountsservice
     SUBDIR += acerhdf-kmod
     SUBDIR += acpi_call
