@@ -934,6 +934,7 @@
     SUBDIR += py-passlib
     SUBDIR += py-pbkdf2
     SUBDIR += py-pgpdump
+    SUBDIR += py-pgpy
     SUBDIR += py-plaso
     SUBDIR += py-potr
     SUBDIR += py-pyaes
