@@ -1,6 +1,6 @@
-TIMESTAMP = 1587508725
-SHA256 (rust/crates/desed-1.1.1.tar.gz) = 40f345c84e6fcb2cfd32c9b263580670081a469d4ad406101c6cf4835cdb76a4
-SIZE (rust/crates/desed-1.1.1.tar.gz) = 1426999
+TIMESTAMP = 1587773728
+SHA256 (rust/crates/desed-1.1.4.tar.gz) = daf0b43ad8653adb5dd1dcf5a185621e74c292a6d1fa7fa1c977a7e753a6b51c
+SIZE (rust/crates/desed-1.1.4.tar.gz) = 1428487
 SHA256 (rust/crates/ansi_term-0.11.0.tar.gz) = ee49baf6cb617b853aa8d93bf420db2383fab46d314482ca2803b40d5fde979b
 SIZE (rust/crates/ansi_term-0.11.0.tar.gz) = 17087
 SHA256 (rust/crates/arc-swap-0.4.5.tar.gz) = d663a8e9a99154b5fb793032533f6328da35e23aac63d5c152279aa8ba356825
