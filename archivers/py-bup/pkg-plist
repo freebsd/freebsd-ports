@@ -4,6 +4,7 @@ lib/bup/bup/_helpers.so
 lib/bup/bup/_release.py
 lib/bup/bup/bloom.py
 lib/bup/bup/client.py
+lib/bup/bup/compat.py
 lib/bup/bup/csetup.py
 lib/bup/bup/drecurse.py
 lib/bup/bup/gc.py
@@ -17,6 +18,7 @@ lib/bup/bup/metadata.py
 lib/bup/bup/midx.py
 lib/bup/bup/options.py
 lib/bup/bup/path.py
+lib/bup/bup/repo.py
 lib/bup/bup/rm.py
 lib/bup/bup/shquote.py
 lib/bup/bup/ssh.py
@@ -33,6 +35,7 @@ lib/bup/cmd/bup-fsck
 lib/bup/cmd/bup-ftp
 lib/bup/cmd/bup-fuse
 lib/bup/cmd/bup-gc
+lib/bup/cmd/bup-get
 lib/bup/cmd/bup-help
 lib/bup/cmd/bup-import-duplicity
 lib/bup/cmd/bup-import-rdiff-backup
@@ -47,7 +50,6 @@ lib/bup/cmd/bup-memtest
 lib/bup/cmd/bup-meta
 lib/bup/cmd/bup-midx
 lib/bup/cmd/bup-mux
-lib/bup/cmd/bup-newliner
 lib/bup/cmd/bup-on
 lib/bup/cmd/bup-on--server
 lib/bup/cmd/bup-prune-older
@@ -73,6 +75,7 @@ lib/bup/web/static/styles.css
 %%PORTDOCS%%%%MANDIR%%/man1/bup-ftp.1.gz
 %%PORTDOCS%%%%MANDIR%%/man1/bup-fuse.1.gz
 %%PORTDOCS%%%%MANDIR%%/man1/bup-gc.1.gz
+%%PORTDOCS%%%%MANDIR%%/man1/bup-get.1.gz
 %%PORTDOCS%%%%MANDIR%%/man1/bup-help.1.gz
 %%PORTDOCS%%%%MANDIR%%/man1/bup-import-duplicity.1.gz
 %%PORTDOCS%%%%MANDIR%%/man1/bup-import-rdiff-backup.1.gz
@@ -86,7 +89,6 @@ lib/bup/web/static/styles.css
 %%PORTDOCS%%%%MANDIR%%/man1/bup-meta.1.gz
 %%PORTDOCS%%%%MANDIR%%/man1/bup-midx.1.gz
 %%PORTDOCS%%%%MANDIR%%/man1/bup-mux.1.gz
-%%PORTDOCS%%%%MANDIR%%/man1/bup-newliner.1.gz
 %%PORTDOCS%%%%MANDIR%%/man1/bup-on.1.gz
 %%PORTDOCS%%%%MANDIR%%/man1/bup-prune-older.1.gz
 %%PORTDOCS%%%%MANDIR%%/man1/bup-random.1.gz
@@ -108,6 +110,7 @@ lib/bup/web/static/styles.css
 %%PORTDOCS%%%%DOCSDIR%%/bup-ftp.html
 %%PORTDOCS%%%%DOCSDIR%%/bup-fuse.html
 %%PORTDOCS%%%%DOCSDIR%%/bup-gc.html
+%%PORTDOCS%%%%DOCSDIR%%/bup-get.html
 %%PORTDOCS%%%%DOCSDIR%%/bup-help.html
 %%PORTDOCS%%%%DOCSDIR%%/bup-import-duplicity.html
 %%PORTDOCS%%%%DOCSDIR%%/bup-import-rdiff-backup.html
@@ -121,7 +124,6 @@ lib/bup/web/static/styles.css
 %%PORTDOCS%%%%DOCSDIR%%/bup-meta.html
 %%PORTDOCS%%%%DOCSDIR%%/bup-midx.html
 %%PORTDOCS%%%%DOCSDIR%%/bup-mux.html
-%%PORTDOCS%%%%DOCSDIR%%/bup-newliner.html
 %%PORTDOCS%%%%DOCSDIR%%/bup-on.html
 %%PORTDOCS%%%%DOCSDIR%%/bup-prune-older.html
 %%PORTDOCS%%%%DOCSDIR%%/bup-random.html

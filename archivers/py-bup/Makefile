@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bup
-PORTVERSION=	0.29.3
+PORTVERSION=	0.30
 CATEGORIES=	archivers python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -17,9 +17,10 @@ EXPIRATION_DATE=	2020-08-15
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pylibacl>=0:security/py-pylibacl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xattr>=0:devel/py-xattr@${PY_FLAVOR} \
-		git>=1.5.3.1:devel/git \
+		git>=1.5.6:devel/git \
 		par2cmdline>=0.4:archivers/par2cmdline
-BUILD_DEPENDS=	bash:shells/bash git>=1.5.3.1:devel/git
+BUILD_DEPENDS=	bash:shells/bash \
+		git>=1.5.6:devel/git
 
 USES=		python:2.7 gmake
 
