@@ -1,0 +1,7 @@
+U-Boot loader and related files for the Pine64 RockPro64.
+
+To install this bootloader on an sdcard just do:
+dd if=/usr/local/share/u-boot/u-boot-rockpro64/idbloader.img of=/path/to/sdcarddevice seek=64 bs=512 conv=sync
+dd if=/usr/local/share/u-boot/u-boot-rockpro64/u-boot.itb of=/path/to/sdcarddevice seek=16384 bs=512 conv=sync
+
+WWW: https://www.denx.de/wiki/U-Boot
