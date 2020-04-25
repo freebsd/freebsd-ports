@@ -1,6 +1,13 @@
---- rblcheck.c.orig	Thu Nov  8 14:05:27 2001
-+++ rblcheck.c	Wed May  1 08:19:16 2002
-@@ -28,8 +28,10 @@
+--- rblcheck.c	2002-11-16 21:32:39 UTC
++++ rblcheck.c	2020-03-19 11:45:01 EST
+@@ -21,15 +21,15 @@
+ **
+ */
+ 
+-#include "config.h"
+-
+ #include <stdio.h>
+ #include <string.h>
  #include <sys/types.h>
  #include <netinet/in.h>
  #include <arpa/nameser.h>
@@ -11,7 +18,7 @@
  
  /*-- PORTABILITY ------------------------------------------------------------*/
  
-@@ -184,7 +186,7 @@
+@@ -184,23 +184,26 @@ struct rbl * togglesite( char * sitename
   * domain. If "txt" is non-zero, we perform a TXT record lookup. We
   * return the text returned from a TXT match, or an empty string, on
   * a successful match, or NULL on an unsuccessful match. */
@@ -20,9 +27,16 @@
  {
  	char * domain;
  	char * result = NULL;
-@@ -195,12 +197,15 @@
- 	const u_char * cend;
- 	const u_char * rend;
+ 	u_char fixedans[ PACKETSZ ];
+ 	u_char * answer;
+-	const u_char * cp;
+-	u_char * rp;
+-	const u_char * cend;
+-	const u_char * rend;
++	const char * cp;
++	char * rp;
++	const char * cend;
++	const char * rend;
  	int len;
 +	u_char *p;
 +	int i, j;
@@ -37,8 +51,12 @@
  
  	/* Make our DNS query. */
  	res_init();
-@@ -242,8 +247,8 @@
- 	cp = answer + sizeof( HEADER );
+@@ -239,11 +242,11 @@ char * rblcheck( int a, int b, int c, in
+ 	}
+ 
+ 	/* Skip the header and the address we queried. */
+-	cp = answer + sizeof( HEADER );
++	cp = (const char *)answer + sizeof(HEADER);
  	while( *cp != '\0' )
  	{
 -		a = *cp++;
@@ -48,7 +66,7 @@
  			cp++;
  	}
  
-@@ -258,8 +263,8 @@
+@@ -258,8 +261,8 @@ char * rblcheck( int a, int b, int c, in
  	cp += ( NS_INT16SZ * 2 ) + NS_INT32SZ;
  
  	/* Get the length and end of the buffer. */
@@ -59,7 +77,7 @@
  
  	/* Iterate over any multiple answers we might have. In
  	   this context, it's unlikely, but anyway. */
-@@ -267,10 +272,10 @@
+@@ -267,10 +270,10 @@ char * rblcheck( int a, int b, int c, in
  	rend = result + RESULT_SIZE - 1;
  	while( cp < cend && rp < rend )
  	{
@@ -74,7 +92,7 @@
  			{
  				if( *cp == '\n' || *cp == '"' ||
  				  *cp == '\\' )
-@@ -289,22 +294,39 @@
+@@ -289,22 +292,38 @@ char * rblcheck( int a, int b, int c, in
   * RBL listing, handling output of results if necessary. */
  int full_rblcheck( char * addr )
  {
@@ -86,7 +104,6 @@
  	char * response;
  	struct rbl * ptr;
 +	int fail;
-+	int c;
  
  	for( ptr = rblsites; ptr != NULL; ptr = ptr->next )
  	{

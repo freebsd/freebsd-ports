@@ -1,9 +1,3 @@
 bin/rbl
 bin/rblcheck
 etc/rblcheckrc.sample
-%%PORTDOCS%%share/doc/rblcheck/AUTHORS
-%%PORTDOCS%%share/doc/rblcheck/COPYING
-%%PORTDOCS%%share/doc/rblcheck/ChangeLog
-%%PORTDOCS%%share/doc/rblcheck/INSTALL
-%%PORTDOCS%%share/doc/rblcheck/NEWS
-%%PORTDOCS%%share/doc/rblcheck/README
