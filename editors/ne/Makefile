@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	ne
-PORTVERSION=	3.2.1
+PORTVERSION=	3.3.0
 CATEGORIES=	editors
 MASTER_SITES=	http://ne.di.unimi.it/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Nice and powerful editor
 
 LICENSE=	GPLv3
