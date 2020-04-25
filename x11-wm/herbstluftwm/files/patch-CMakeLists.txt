@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2020-04-11 08:01:07 UTC
+--- CMakeLists.txt.orig	2020-04-20 22:03:58 UTC
 +++ CMakeLists.txt
 @@ -20,13 +20,13 @@ include(ccache)
  
@@ -16,10 +16,19 @@
  set(DOCDIR ${DATADIR}/doc/herbstluftwm)
  set(LICENSEDIR ${DOCDIR}
      CACHE PATH "Install path for license file")
+@@ -36,7 +36,7 @@ set(ZSHCOMPLETIONDIR ${DATADIR}/zsh/site-functions
+     CACHE PATH "Install path for zsh completions file")
+ set(FISHCOMPLETIONDIR ${DATADIR}/fish/vendor_completions.d
+     CACHE PATH "Install path for fish completions file")
+-set(BASHCOMPLETIONDIR ${DATADIR}/bash-completion/completions
++set(BASHCOMPLETIONDIR ${CMAKE_INSTALL_PREFIX}/etc/bash_completion.d
+     CACHE PATH "Install path for bash completions file")
+ 
+ ## do the actual work
 @@ -47,7 +47,6 @@ add_subdirectory(share)
  
  ## install everything that was not installed from subdirectories
- install(FILES BUGS NEWS INSTALL DESTINATION ${DOCDIR})
+ install(FILES BUGS NEWS DESTINATION ${DOCDIR})
 -install(FILES LICENSE DESTINATION ${LICENSEDIR})
  install(DIRECTORY scripts/ DESTINATION ${DOCDIR}/examples USE_SOURCE_PERMISSIONS)
  
