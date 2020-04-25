@@ -16,8 +16,6 @@ LICENSE_COMB=	dual
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/COPYING-BSD
 
-BROKEN=		fails to build
-
 # A partial dependencies list can be found at:
 # http://wiki.scilab.org/Dependencies_of_Scilab_5.X
 LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
