@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	rsync:net/rsync
 
-USES=		cmake gettext kde:5 qt:5 samba tar:bzip2
+USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 samba tar:bzip2
 USE_GITHUB=	yes
 GH_ACCOUNT=	KDE
 
