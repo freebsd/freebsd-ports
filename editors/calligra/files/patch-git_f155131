@@ -1,0 +1,99 @@
+From f155131434718951e1c4517eedce15a1a9d142a2 Mon Sep 17 00:00:00 2001
+From: David Faure <faure@kde.org>
+Date: Fri, 24 Apr 2020 20:42:09 +0200
+Subject: Fix QCommandLineParser warnings.
+
+KAboutData::setupCommandLine already adds these options, since KF 5.7
+(which is required here so no problem).
+Doing it twice didn't use to warn, but Qt now warns about this.
+---
+ braindump/src/main.cpp                 | 3 ---
+ extras/calligra/main.cpp               | 2 --
+ extras/converter/calligraconverter.cpp | 2 --
+ gemini/main.cpp                        | 2 --
+ gemini/thumbnailhelper.cpp             | 2 --
+ libs/main/KoApplication.cpp            | 2 --
+ 6 files changed, 13 deletions(-)
+
+diff --git a/braindump/src/main.cpp b/braindump/src/main.cpp
+index 5fd3fb4..aed544f 100644
+--- braindump/src/main.cpp
++++ braindump/src/main.cpp
+@@ -58,9 +58,6 @@ int main(int argc, char **argv)
+     KAboutData::setApplicationData(about);
+ 
+     QCommandLineParser parser;
+-
+-    parser.addVersionOption();
+-    parser.addHelpOption();
+     about.setupCommandLine(&parser);
+ 
+     parser.process(app);
+diff --git a/extras/calligra/main.cpp b/extras/calligra/main.cpp
+index fcdc19b..7c633f5 100644
+--- extras/calligra/main.cpp
++++ extras/calligra/main.cpp
+@@ -186,8 +186,6 @@ int main( int argc, char **argv )
+ 
+     QCommandLineParser parser;
+     aboutData.setupCommandLine(&parser);
+-    parser.addHelpOption();
+-    parser.addVersionOption();
+ 
+     parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("apps"), i18n("Lists names of all available Calligra applications")));
+     parser.addPositionalArgument(QStringLiteral("[FILE(S)]"), i18n("Files to open"));
+diff --git a/extras/converter/calligraconverter.cpp b/extras/converter/calligraconverter.cpp
+index cfd604c..3a2cdbf 100644
+--- extras/converter/calligraconverter.cpp
++++ extras/converter/calligraconverter.cpp
+@@ -167,8 +167,6 @@ int main(int argc, char **argv)
+ 
+     QCommandLineParser parser;
+     aboutData.setupCommandLine(&parser);
+-    parser.addHelpOption();
+-    parser.addVersionOption();
+ 
+     parser.addPositionalArgument(QStringLiteral("in"), i18n("Input file"));
+     parser.addPositionalArgument(QStringLiteral("out"), i18n("Output file"));
+diff --git a/gemini/main.cpp b/gemini/main.cpp
+index 9187b66..8cb6df7 100644
+--- gemini/main.cpp
++++ gemini/main.cpp
+@@ -62,8 +62,6 @@ int main( int argc, char** argv )
+ 
+     QCommandLineParser parser;
+     aboutData.setupCommandLine(&parser);
+-    parser.addHelpOption();
+-    parser.addVersionOption();
+ 
+     parser.addPositionalArgument(QStringLiteral("[file(s)]"), i18n("Document to open"));
+     parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("vkb"), i18n("Use the virtual keyboard")));
+diff --git a/gemini/thumbnailhelper.cpp b/gemini/thumbnailhelper.cpp
+index a552cd6..0d878bf 100644
+--- gemini/thumbnailhelper.cpp
++++ gemini/thumbnailhelper.cpp
+@@ -68,8 +68,6 @@ int main( int argc, char** argv )
+ 
+     QCommandLineParser parser;
+     aboutData.setupCommandLine(&parser);
+-    parser.addHelpOption();
+-    parser.addVersionOption();
+ 
+     parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("in"), i18n("Document to thumbnail"), QStringLiteral("local-url")));
+     parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("out"), i18n("The full path for the thumbnail file"), QStringLiteral("local-url")));
+diff --git a/libs/main/KoApplication.cpp b/libs/main/KoApplication.cpp
+index a8416e0..856e8e6 100644
+--- libs/main/KoApplication.cpp
++++ libs/main/KoApplication.cpp
+@@ -207,8 +207,6 @@ bool KoApplication::start()
+     // process commandline parameters
+     QCommandLineParser parser;
+     aboutData.setupCommandLine(&parser);
+-    parser.addHelpOption();
+-    parser.addVersionOption();
+ 
+     parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("print"), i18n("Only print and exit")));
+     parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("template"), i18n("Open a new document based on the given template (desktopfile name)")));
+-- 
+cgit v1.1
+
