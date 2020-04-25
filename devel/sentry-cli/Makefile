@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sentry-cli
-DISTVERSION=	1.52.1
-PORTREVISION=	2
+DISTVERSION=	1.52.3
 CATEGORIES=	devel
 
 MAINTAINER=	vulcan@wired.sh
@@ -14,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libgit2.so:devel/libgit2
 
-USES=		cargo ssl
+USES=		cargo ssl:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	getsentry
 
