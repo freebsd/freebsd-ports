@@ -11,6 +11,7 @@ EXPIRATION_DATE=	2020-09-15
 
 MASTERDIR=	${.CURDIR}/../../www/chromium
 
+BROKEN=		fails to extract
 BROKEN_FreeBSD_11_powerpc64=	fails to compile: safe_math_clang_gcc_impl.h:132:45: '__builtin_subcb' was not declared in this scope
 BROKEN_FreeBSD_12_powerpc64=	fails to compile: safe_math_clang_gcc_impl.h:132:45: '__builtin_subcb' was not declared in this scope
 
