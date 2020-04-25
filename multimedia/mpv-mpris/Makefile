@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mpv-mpris
-DISTVERSION=	0.4
+DISTVERSION=	0.5
 CATEGORIES=	multimedia
 
 MAINTAINER=	tcberner@FreeBSD.org
