@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	wine-mono
-DISTVERSION=	4.9.4
+DISTVERSION=	5.0.0
+DISTVERSIONSUFFIX=-x86
 CATEGORIES=	emulators
 MASTER_SITES=	http://dl.winehq.org/wine/wine-mono/${DISTVERSION}/
 PKGNAMESUFFIX=	-devel
@@ -20,11 +21,11 @@ CONFLICTS_INSTALL=	wine-mono-[0-9]*
 NO_BUILD=	yes
 PLIST_SUB+=	MONO_VERSION="${DISTVERSION}"
 DATADIR=	${PREFIX}/share/wine
-PLIST_FILES=	${DATADIR}/mono/wine-mono-${DISTVERSION}.msi
+PLIST_FILES=	${DATADIR}/mono/${DISTNAME}.msi
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/mono
-	${INSTALL_DATA} ${DISTDIR}/wine-mono-${DISTVERSION}.msi \
+	${INSTALL_DATA} ${DISTDIR}/${DISTNAME}.msi \
 		${STAGEDIR}${DATADIR}/mono
 
 .include <bsd.port.mk>
