@@ -1,7 +1,17 @@
+- FreeBSD and NetBSD powerpc* targets don't abbreviate to ppc*
 - ARM uses compiler intrinsics, so don't require GNU as
 
 --- build/cmake/aom_configure.cmake.orig	2020-02-07 16:59:05 UTC
 +++ build/cmake/aom_configure.cmake
+@@ -74,7 +74,7 @@ if(NOT AOM_TARGET_CPU)
+     set(AOM_TARGET_CPU "${cpu_lowercase}")
+   elseif("${cpu_lowercase}" MATCHES "aarch64")
+     set(AOM_TARGET_CPU "arm64")
+-  elseif("${cpu_lowercase}" MATCHES "^ppc")
++  elseif("${cpu_lowercase}" MATCHES "^ppc|^powerpc")
+     set(AOM_TARGET_CPU "ppc")
+   else()
+     message(WARNING "The architecture ${CMAKE_SYSTEM_PROCESSOR} is not "
 @@ -162,17 +162,6 @@ elseif("${AOM_TARGET_CPU}" MATCHES "arm")
        set(AS_EXECUTABLE as)
      endif()
