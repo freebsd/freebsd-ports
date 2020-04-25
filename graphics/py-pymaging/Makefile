@@ -2,6 +2,7 @@
 
 PORTNAME=	pymaging
 PORTVERSION=	g20130908
+PORTREVISION=	1
 CATEGORIES=	graphics python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -17,5 +18,7 @@ USE_PYTHON=	autoplist distutils
 USE_GITHUB=	yes
 GH_ACCOUNT=	ojii
 GH_TAGNAME=	596a08f
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

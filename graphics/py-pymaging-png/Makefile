@@ -1,6 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pymaging-png
+PORTREVISION=	1
 PORTVERSION=	g20130727
 CATEGORIES=	graphics python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,5 +21,7 @@ USE_PYTHON=	autoplist distutils
 USE_GITHUB=	yes
 GH_ACCOUNT=	ojii
 GH_TAGNAME=	83d85c4
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
