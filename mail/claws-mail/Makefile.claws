@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTVERSION=	3.17.4
+PORTVERSION=	3.17.5
 CATEGORIES?=	mail
 MASTER_SITES=	http://www.claws-mail.org/download.php?file=releases/
 
@@ -21,10 +21,12 @@ CLAWS_PLUGINS=	acpi_notifier \
 		bogofilter \
 		bsfilter \
 		clamd \
+		dillo \
 		fancy \
 		fetchinfo \
 		gdata \
 		libravatar \
+		litehtml_viewer \
 		mailmbox \
 		managesieve \
 		newmail \
