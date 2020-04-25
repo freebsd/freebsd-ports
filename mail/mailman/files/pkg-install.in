@@ -59,22 +59,18 @@ POST-INSTALL)
 
   move_newsyslog_conf
 
- # fix up permissions - this is under investigation; pkg or libarchive
-  # goof up the group writable and/or setgid bits
+  # fix up permissions - this should normally be handled by pkg(8)
+  # already, but can remain here for --no-scripts installs,
+  # and for corner cases such as the archive directories.
   /usr/bin/find "%%MAILMANDIR%%/qfiles" -maxdepth 1 -type d -exec \
     /bin/chmod u+rwx,g+rwsx,o-w "{}" +
 
-  # deliberately skip "%%MAILMANDIR%%" itself below:
-  /bin/chmod 02775 \
+  /bin/chmod 0755 \
     "%%MAILMANDIR%%/archives" \
-    "%%MAILMANDIR%%/archives/public" \
     "%%MAILMANDIR%%/bin" \
     "%%MAILMANDIR%%/cgi-bin" \
     "%%MAILMANDIR%%/cron" \
-    "%%MAILMANDIR%%/data" \
     "%%MAILMANDIR%%/icons" \
-    "%%MAILMANDIR%%/lists" \
-    "%%MAILMANDIR%%/locks" \
     "%%MAILMANDIR%%/mail" \
     "%%MAILMANDIR%%/Mailman" \
     "%%MAILMANDIR%%/Mailman/Archiver" \
@@ -86,37 +82,38 @@ POST-INSTALL)
     "%%MAILMANDIR%%/Mailman/Logging" \
     "%%MAILMANDIR%%/Mailman/MTA" \
     "%%MAILMANDIR%%/Mailman/Queue" \
-    "%%MAILMANDIR%%/pythonlib" \
     "%%MAILMANDIR%%/scripts" \
-    "%%MAILMANDIR%%/spam" \
     "%%MAILMANDIR%%/tests" \
     "%%MAILMANDIR%%/tests/bounces" \
     "%%MAILMANDIR%%/tests/msgs"
+
+  # deliberately skip "%%MAILMANDIR%%" itself below:
+  /bin/chmod 02775 \
+    "%%MAILMANDIR%%/archives/public" \
+    "%%MAILMANDIR%%/data" \
+    "%%MAILMANDIR%%/lists" \
+    "%%MAILMANDIR%%/locks" \
+    "%%MAILMANDIR%%/pythonlib" \
+    "%%MAILMANDIR%%/spam" \
   # this can be 2770 or 2771 but should not be stomped over
   test -d "%%MAILMANDIR%%/archives/private" \
   || /usr/bin/install -m 02771 -g "%%GROUP%%" \
       -d "%%MAILMANDIR%%/archives/private"
 
-  /bin/chmod u+rwx,g+srwx      "%%MAILMANDIR%%/archives/private"
+  /bin/chmod u+rwx,g+srwx,o-rw "%%MAILMANDIR%%/archives/private"
   /bin/chmod u+rwx,g+srwx,o+rx "%%MAILMANDIR%%/logs"
 
   if [ "NLS" = "%%NLS%%" ] ; then
 	  /usr/bin/find "%%MAILMANDIR%%/messages" -type d \
-     			-exec chown "%%GROUP%%" '{}' + \
+     			-exec chgrp "%%GROUP%%" '{}' + \
      			-exec chmod 0755 '{}' +
   fi
 
   /usr/bin/find "%%MAILMANDIR%%/templates" -type d \
-    -exec chmod 02775 '{}' +
+    -exec chmod 0755 '{}' +
 
-  # if .sample files were not moved to destination...
-  # (pkg install --no-scripts) ... fix up
-
-  # cp -n will not overwrite destination file, -p preserves permissions/owner etc.
-  /usr/bin/find "%%MAILMANDIR%%/templates" -type f -name '*.sample' \
-    -exec /bin/sh -c 'f={};cp -np ${f} ${f%.sample}' \;
-
-  test -s %%MAILMANDIR%%/Mailman/mm_cfg.py || cp -p %%MAILMANDIR%%/Mailman/mm_cfg.py.dist %%MAILMANDIR%%/Mailman/mm_cfg.py
+  test -s %%MAILMANDIR%%/Mailman/mm_cfg.py \
+  || cp -p %%MAILMANDIR%%/Mailman/mm_cfg.py.dist %%MAILMANDIR%%/Mailman/mm_cfg.py
 
   # This is subject to the EXAMPLES port option:
   test -r ${PKG_PREFIX}/share/examples/mailman.newsyslog.sample &&

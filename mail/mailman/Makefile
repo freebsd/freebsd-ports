@@ -3,7 +3,7 @@
 
 PORTNAME=	mailman
 DISTVERSION=	2.1.30
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	GNU \
 		SF/${PORTNAME}/Mailman%202.1%20%28stable%29/${PORTVERSION} \
@@ -237,6 +237,7 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 	${ECHO} "This marker file ensures that Python's upgrade-site-packages handles ${PKGNAME}." >${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/mailman-info.txt
 	${INSTALL_SCRIPT} ${PKGINSTALL} ${STAGEDIR}${MAILMANDIR}/bin/FreeBSD-post-install
-	${FIND} ${STAGEDIR}${MAILMANDIR}/templates -type f -exec ${MV} '{}' '{}.sample' \;
+	${MKDIR} ${STAGEDIR}${MAILMANDIR}/templates/site/en
+	${INSTALL_DATA} ${FILESDIR}/templates_site_README.txt ${STAGEDIR}${MAILMANDIR}/templates/site/README.txt
 
 .include <bsd.port.mk>

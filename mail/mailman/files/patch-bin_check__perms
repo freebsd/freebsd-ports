@@ -7,19 +7,24 @@ permissions.
 
 -- Matthias Andree (mandree@FreeBSD.org, 2020-04-14)
 
---- bin/check_perms.orig	2020-04-13 17:08:14 UTC
-+++ bin/check_perms
-@@ -143,6 +143,9 @@ def checkwalk(arg, dirname, names):
+--- bin/check_perms.orig	2020-04-13 19:08:14.000000000 +0200
++++ bin/check_perms	2020-04-25 17:50:19.448831000 +0200
+@@ -143,6 +143,14 @@ def checkwalk(arg, dirname, names):
          elif (os.path.commonprefix((path, mm_cfg.QUEUE_DIR))
                == mm_cfg.QUEUE_DIR):
              targetperms = QFILEPERMS
-+        elif path == mm_cfg.PREFIX or '/messages' in path:
++        elif (path == mm_cfg.PREFIX or os.path.split(path)[1] in
++              ('archives', 'bin', 'cgi-bin', 'cron', 'icons', 'mail', 'scripts',)
++              or '/messages' in path
++              or '/templates' in path
++              or '/tests' in path
++              or '/Mailman' in path):
 +            # don't require LC_MESSAGES to be group writable
 +            targetperms = DIRPERMS & ~S_IWGRP & ~S_ISGID
          else:
              targetperms = DIRPERMS
          octperms = oct(targetperms)
-@@ -195,7 +195,7 @@
+@@ -192,7 +200,7 @@ def checkall():
              if e.errno <> errno.ENOENT: raise
              print C_('WARNING: directory does not exist: %(d)s')
              continue
