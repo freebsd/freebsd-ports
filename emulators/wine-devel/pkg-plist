@@ -2201,6 +2201,7 @@ lib/wine/fakedlls/psapi.dll
 lib/wine/fakedlls/pstorec.dll
 lib/wine/fakedlls/qasf.dll
 lib/wine/fakedlls/qcap.dll
+lib/wine/fakedlls/qdvd.dll
 lib/wine/fakedlls/qedit.dll
 lib/wine/fakedlls/qmgr.dll
 lib/wine/fakedlls/qmgrprxy.dll
@@ -2711,7 +2712,7 @@ lib/wine/libvulkan-1.def
 lib/wine/libwbemuuid.a
 lib/wine/libwebservices.def
 lib/wine/libwer.def
-lib/wine/libwindowscodecs.def
+lib/wine/libwindowscodecs.a
 lib/wine/libwindowscodecsext.def
 lib/wine/libwinecrt0.a
 lib/wine/libwined3d.def
@@ -2917,6 +2918,7 @@ lib/wine/psapi.dll.so
 lib/wine/pstorec.dll.so
 lib/wine/qasf.dll.so
 lib/wine/qcap.dll.so
+lib/wine/qdvd.dll.so
 lib/wine/qedit.dll.so
 lib/wine/qmgr.dll.so
 lib/wine/qmgrprxy.dll.so
@@ -3290,6 +3292,7 @@ share/applications/wine.desktop
 %%DATADIR%%/nls/sortdefault.nls
 %%DATADIR%%/winebus.inf
 %%DATADIR%%/winehid.inf
+%%DATADIR%%/wineusb.inf
 %%PORTDOCS%%%%DOCSDIR%%/ANNOUNCE
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/README
