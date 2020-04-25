@@ -855,6 +855,8 @@
     SUBDIR += py-pygooglechart
     SUBDIR += py-pygraphviz
     SUBDIR += py-pyinsane2
+    SUBDIR += py-pymaging
+    SUBDIR += py-pymaging-png
     SUBDIR += py-pyocr
     SUBDIR += py-pypillowfight
     SUBDIR += py-pyproj
