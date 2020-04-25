@@ -13,7 +13,7 @@ LICENSE=	GPLv2+ LGPL21+ MPL11
 LICENSE_COMB=	dual
 LICENSE_FILE_MPL11=	${WRKSRC}/COPYING
 
-USES=		cmake pathfix tar:xz
+USES=		cmake compiler:c++11-lang pathfix tar:xz
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DCMAKE_INSTALL_MANDIR:PATH=${MANPREFIX}/man
