@@ -3,7 +3,7 @@
 
 PORTNAME=	terminator
 PORTVERSION=	1.92
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 python
 MASTER_SITES=	https://github.com/gnome-terminator/terminator/releases/download/v${PORTVERSION}/
 
@@ -31,6 +31,8 @@ bash_CMD=	${SH}
 OPTIONS_DEFINE=		NLS
 OPTIONS_SUB=		yes
 NLS_USES=		gettext
+
+NO_ARCH=	yes
 
 .include <bsd.port.pre.mk>
 
