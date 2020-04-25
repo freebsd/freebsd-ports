@@ -1,0 +1,7 @@
+[
+{ message: <<EOM
+SECURITY NOTE: ocserv 1.0.1 currently cannot isolate workers processes
+on FreeBSD, it only supports Linux's seccomp, but not FreeBSD's capsicum.
+EOM
+}
+]

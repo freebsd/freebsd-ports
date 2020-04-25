@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ocserv
-PORTVERSION=	0.12.4
-PORTREVISION=	2
+PORTVERSION=	1.0.1
 CATEGORIES=	net net-vpn security
 MASTER_SITES=	ftp://ftp.infradead.org/pub/ocserv/
 
@@ -24,7 +23,7 @@ LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
 		libtasn1.so:security/libtasn1 \
 		libnettle.so:security/nettle \
 		liboath.so:security/oath-toolkit \
-		libpcl.so:devel/libpcl
+		libpcl.so:devel/pcl
 
 USES=		autoreconf cpe gperf libtool localbase ncurses \
 		pathfix pkgconfig readline tar:xz
@@ -53,25 +52,28 @@ GSSAPI_CONFIGURE_OFF=	--without-gssapi
 RADIUS_LIB_DEPENDS=	libradcli.so:net/radcli
 RADIUS_CONFIGURE_OFF=	--without-radius
 
+.include <bsd.port.pre.mk>
+
 post-patch:
-	@${REINPLACE_CMD} 's|/usr/bin/ocserv-fw|${LOCALBASE}/bin/ocserv-fw|g' \
-		${WRKSRC}/src/main-user.c \
-		${WRKSRC}/doc/sample.config
-	@${REINPLACE_CMD} 's|/usr/bin/ocserv\\-fw|${LOCALBASE}/bin/ocserv\\-fw|g' \
+	${REINPLACE_CMD} 's|/usr/bin/ocserv-fw|${PREFIX}/bin/ocserv-fw|g' \
+		${WRKSRC}/src/main-user.c
+	${REINPLACE_CMD} 's|/usr/bin/ocserv\\-fw|${PREFIX}/bin/ocserv\\-fw|g' \
 		${WRKSRC}/doc/ocserv.8
+.if "${PREFIX}" != "" && "${PREFIX}" != "/" && "${PREFIX}" != "/usr"
+	${REINPLACE_CMD} -E 's|^(#define DEFAULT_CFG_FILE ")(/etc/ocserv/ocserv.conf")|\1${PREFIX}\2|' ${WRKSRC}/src/config.c
+.endif
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/ocserv
-	@${MKDIR} ${STAGEDIR}/var/run/ocserv
-	${INSTALL_DATA} ${FILESDIR}/ocserv.conf ${STAGEDIR}${PREFIX}/etc/ocserv/conf.sample
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/ocserv ${STAGEDIR}/var/run/ocserv
+	${INSTALL_DATA} ${FILESDIR}/ocserv.conf ${STAGEDIR}${PREFIX}/etc/ocserv/ocserv.conf.sample
 	${INSTALL_MAN} ${WRKSRC}/doc/*.8 ${STAGEDIR}${MANPREFIX}/man/man8
 
 post-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 post-install-EXAMPLES-on:
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
