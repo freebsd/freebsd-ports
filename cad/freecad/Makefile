@@ -2,7 +2,7 @@
 
 PORTNAME=	FreeCAD
 DISTVERSION=	0.18.4
-PORTREVISION=	6
+PORTREVISION=	7
 # use these for bugfixes/snapshots
 # DISTVERSION=	0.18-16093 # git rev-list --count
 # DISTVERSIONSUFFIX=	-g690774c0e
@@ -24,12 +24,13 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libCoin.so:graphics/Coin \
 		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff \
-		libvtkFiltersTexture-6.2.so:math/vtk6 \
+		libvtkFiltersTexture-8.1.so:math/vtk8 \
 		libTKernel.so:cad/opencascade \
 		libxerces-c.so:textproc/xerces-c3 \
 		libboost_thread.so:devel/boost-libs \
 		libarea.so:devel/libarea \
 		libmed.so:french/med \
+		libmpi.so:net/openmpi \
 		libshiboken2.cpython-${PYTHON_SUFFIX}${PYTHON_ABIVER}.so:devel/shiboken2@${PY_FLAVOR} \
 		libhdf5.so:science/hdf5
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pivy>0:graphics/py-pivy@${PY_FLAVOR} \
@@ -47,6 +48,7 @@ USE_LDCONFIG=	yes
 DOS2UNIX_GLOB=	*.txt *.h *.cpp *.py *.qss *.csv *.pov *.stp *.ui *.wrl *.WRL
 
 CMAKE_ARGS+=	-DOCC_INCLUDE_DIR="${LOCALBASE}/include/OpenCASCADE" \
+		-DOPENMPI_INCLUDE_DIRS="${LOCALBASE}/mpi/openmpi/include" \
 		-DBUILD_QT5="ON" \
 		-DPYTHON_LIBRARY="${PYTHONBASE}/lib/libpython${PYTHON_VER}${PYTHON_ABIVER}.so" \
 		-DPYTHON_INCLUDE_DIR="${PYTHON_INCLUDEDIR}" \
