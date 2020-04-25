@@ -2,7 +2,7 @@
 
 PORTNAME=	vegeta
 DISTVERSIONPREFIX=	v
-DISTVERSION=	12.8.0
+DISTVERSION=	12.8.3
 CATEGORIES=	benchmarks www
 
 MAINTAINER=	egypcio@FreeBSD.org
@@ -30,7 +30,6 @@ GH_TUPLE=	alecthomas:jsonschema:f2c9385:jsonschema/vendor/github.com/alecthomas/
 		golang:net:c394268:net/vendor/golang.org/x/net \
 		golang:text:v0.3.0:text/vendor/golang.org/x/text
 
-GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
 GO_BUILDFLAGS=	-tags=netgo \
 		-ldflags '-s -w -extldflags "-static" -X main.Version=${DISTVERSION}'
 
