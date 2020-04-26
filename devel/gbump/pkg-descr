@@ -1,0 +1,8 @@
+Gbump is a Git tag semantic version bumper.
+
+It will print the current semver version if any and the bumped version.
+If the option -q (quiet) is used it will only print the bumped version.
+If the option -t (tag) is used then it will create a git tag with the
+bumped version.
+
+WWW: https://github.com/nbari/gbump

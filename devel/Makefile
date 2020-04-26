@@ -710,6 +710,7 @@
     SUBDIR += gauche-readline
     SUBDIR += gaul
     SUBDIR += gb
+    SUBDIR += gbump
     SUBDIR += gcc-arm-embedded
     SUBDIR += gcc-msp430-ti-toolchain
     SUBDIR += gccmakedep
