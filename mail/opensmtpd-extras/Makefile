@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	opensmtpd-extras
-PORTVERSION?=	6.6.0
+PORTVERSION?=	6.7.1
 PORTREVISION?=	0
 PORTEPOCH?=	1
 CATEGORIES+=	mail
@@ -22,8 +22,6 @@ USES+=		autoreconf ssl libtool
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${OPENSSLLIB}
 CFLAGS+=	-I${OPENSSLINC}
-
-WRKSRC=		${WRKDIR}/OpenSMTPD-extras-${PORTVERSION}
 
 CONFIGURE_ARGS+=	--sysconfdir="${PREFIX}/etc/mail" \
 			--with-libevent=${LOCALBASE} \
