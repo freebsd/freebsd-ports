@@ -17,14 +17,10 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Tk>=800.015:x11-toolkits/p5-Tk
 
+USES=		perl5
+USE_PERL5=	configure
+
 ALL_TARGETS=	pure_install
 NO_ARCH=	yes
-USE_PERL5=	configure
-USES=		perl5
-
-post-patch:
-	@${REINPLACE_CMD} -e \
-		'/Tk\/demos\/widtrib\/cursor.pl/ s|cursor.pl|cursorcontrol.pl|' \
-		${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
