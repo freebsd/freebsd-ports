@@ -4,7 +4,7 @@
 PORTNAME=	drive
 PORTVERSION=	0.3.9.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	net
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -23,25 +23,25 @@ PLIST_FILES=	bin/drive
 GH_ACCOUNT=	odeke-em
 GH_TAGNAME=	b868c96
 GH_TUPLE=	boltdb:bolt:v1.3.1:boltdb_bolt/vendor/github.com/boltdb/bolt \
-		census-instrumentation:opencensus-go:v0.22.2:census_instrumentation_opencensus/vendor/go.opencensus.io \
-		cheggaaa:pb:v3.0.3:cheggaaa_pb/vendor/github.com/cheggaaa/pb \
-		fatih:color:v1.8.0:fatih_color/vendor/github.com/fatih/color \
-		golang:crypto:53104e6:golang_crypto/vendor/golang.org/x/crypto \
-		golang:groupcache:215e871:golang_groupcache/vendor/github.com/golang/groupcache \
-		golang:net:c0dbc17:golang_net/vendor/golang.org/x/net \
-		golang:oauth2:858c2ad:golang_oauth2/vendor/golang.org/x/oauth2 \
-		golang:protobuf:v1.3.2:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:a1369af:golang_sys/vendor/golang.org/x/sys \
-		golang:text:929e72c:golang_text/vendor/golang.org/x/text \
-		google:go-genproto:f3c370f:google_go_genproto/vendor/google.golang.org/genproto \
-		google:google-api-go-client:v0.15.0:google_googleapigoclient/vendor/google.golang.org/api \
-		googleapis:google-cloud-go:v0.50.0:googleapis_googlecloudgo/vendor/cloud.google.com/go \
+		census-instrumentation:opencensus-go:v0.22.3:census_instrumentation_opencensus/vendor/go.opencensus.io \
+		cheggaaa:pb:v3.0.4:cheggaaa_pb/vendor/github.com/cheggaaa/pb \
+		fatih:color:v1.9.0:fatih_color/vendor/github.com/fatih/color \
+		golang:crypto:4bdfaf4:golang_crypto/vendor/golang.org/x/crypto \
+		golang:groupcache:8c9f03a:golang_groupcache/vendor/github.com/golang/groupcache \
+		golang:net:e086a09:golang_net/vendor/golang.org/x/net \
+		golang:oauth2:bf48bf1:golang_oauth2/vendor/golang.org/x/oauth2 \
+		golang:protobuf:v1.3.5:golang_protobuf/vendor/github.com/golang/protobuf \
+		golang:sys:1957bb5:golang_sys/vendor/golang.org/x/sys \
+		golang:text:06d492a:golang_text/vendor/golang.org/x/text \
+		google:go-genproto:bca184e:google_go_genproto/vendor/google.golang.org/genproto \
+		google:google-api-go-client:v0.22.0:google_googleapigoclient/vendor/google.golang.org/api \
+		googleapis:google-cloud-go:v0.56.0:googleapis_googlecloudgo/vendor/cloud.google.com/go \
 		googleapis:gax-go:v2.0.5:googleapis_gaxgo/vendor/github.com/googleapis/gax-go \
-		grpc:grpc-go:v1.26.0:grpc_grpc_go/vendor/google.golang.org/grpc \
-		hashicorp:golang-lru:v0.5.3:hashicorp_golang_lru/vendor/github.com/hashicorp/golang-lru \
-		mattn:go-colorable:v0.1.4:mattn_gocolorable/vendor/github.com/mattn/go-colorable \
-		mattn:go-isatty:v0.0.11:mattn_goisatty/vendor/github.com/mattn/go-isatty \
-		mattn:go-runewidth:v0.0.7:mattn_gorunewidth/vendor/github.com/mattn/go-runewidth \
+		grpc:grpc-go:v1.29.1:grpc_grpc_go/vendor/google.golang.org/grpc \
+		hashicorp:golang-lru:v0.5.4:hashicorp_golang_lru/vendor/github.com/hashicorp/golang-lru \
+		mattn:go-colorable:v0.1.6:mattn_gocolorable/vendor/github.com/mattn/go-colorable \
+		mattn:go-isatty:v0.0.12:mattn_goisatty/vendor/github.com/mattn/go-isatty \
+		mattn:go-runewidth:v0.0.9:mattn_gorunewidth/vendor/github.com/mattn/go-runewidth \
 		mxk:go-flowrate:cca7078:mxk_goflowrate/vendor/github.com/mxk/go-flowrate \
 		odeke-em:cache:baf8e43:odekeem_cache/vendor/github.com/odeke-em/cache \
 		odeke-em:cli-spinner:610063b:odekeem_clispinner/vendor/github.com/odeke-em/cli-spinner \
@@ -56,7 +56,7 @@ GH_TUPLE=	boltdb:bolt:v1.3.1:boltdb_bolt/vendor/github.com/boltdb/bolt \
 		odeke-em:pretty-words:9d37a7f:odekeem_prettywords/vendor/github.com/odeke-em/pretty-words \
 		odeke-em:semalim:9c88bf5:odekeem_semalim/vendor/github.com/odeke-em/semalim \
 		odeke-em:statos:292960a:odekeem_statos/vendor/github.com/odeke-em/statos \
-		skratchdot:open-golang:79abb63:skratchdot_opengolang/vendor/github.com/skratchdot/open-golang \
+		skratchdot:open-golang:eef8423:skratchdot_opengolang/vendor/github.com/skratchdot/open-golang \
 		VividCortex:ewma:v1.1.1:VividCortex_ewma/vendor/github.com/VividCortex/ewma
 USE_GITHUB=	yes
 
