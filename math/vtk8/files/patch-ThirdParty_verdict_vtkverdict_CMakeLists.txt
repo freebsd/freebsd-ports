@@ -1,6 +1,6 @@
---- ThirdParty/verdict/vtkverdict/CMakeLists.txt.orig	2017-08-30 20:55:05 UTC
+--- ThirdParty/verdict/vtkverdict/CMakeLists.txt.orig	2019-01-30 17:15:13 UTC
 +++ ThirdParty/verdict/vtkverdict/CMakeLists.txt
-@@ -123,14 +123,14 @@ endif ()
+@@ -128,14 +128,14 @@ endif ()
  # Installation stuff
  #
  IF(NOT verdict_INSTALL_NO_DEVELOPMENT)

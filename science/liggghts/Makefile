@@ -1,8 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	liggghts
-DISTVERSION=	3.8.0
-PORTREVISION=	6
+DISTVERSION=	3.8.0-26
+PORTREVISION=	1
+DISTVERSIONSUFFIX=	-g6e873439
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,7 +18,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libmpi.so:net/openmpi \
 		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff \
-		libvtkViewsCore-8.1.so:math/vtk8
+		libvtkViewsCore-8.2.so:math/vtk8
 
 USES=		compiler:c++17-lang cmake fortran jpeg qt:5 xorg
 USE_GITHUB=	yes
@@ -29,7 +30,7 @@ USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DMPI_C_COMPILER:FILEPATH="${LOCALBASE}/mpi/openmpi/bin/mpicc" \
 		-DMPI_CXX_COMPILER:FILEPATH="${LOCALBASE}/mpi/openmpi/bin/mpicxx" \
-		-DVTK_DIR:FILEPATH="${LOCALBASE}/lib/cmake/vtk-8.1"
+		-DVTK_DIR:FILEPATH="${LOCALBASE}/lib/cmake/vtk-8.2"
 
 WRKSRC_SUBDIR=	src
 

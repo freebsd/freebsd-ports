@@ -54,7 +54,7 @@ QT5_BROKEN=		WITH_QT doesn't do anything, should be used by apps, but apps is al
 
 VTK_DESC=		Build VTK-Visualizations
 VTK_CMAKE_BOOL=		WITH_VTK
-VTK_LIB_DEPENDS=	libvtkCommonCore-8.1.so:math/vtk8
+VTK_LIB_DEPENDS=	libvtkCommonCore-8.2.so:math/vtk8
 VTK_BROKEN=		VTK has missing ompxx symbols: https://gitlab.kitware.com/vtk/vtk/issues/17444
 
 .include <bsd.port.pre.mk>

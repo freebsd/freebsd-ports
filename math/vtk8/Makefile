@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	vtk
-DISTVERSION=	8.1.2
-PORTREVISION=	6
+DISTVERSION=	8.2.0
 CATEGORIES=	math graphics
 MASTER_SITES=	http://www.vtk.org/files/release/${VTK_SHORT_VER}/
 PKGNAMESUFFIX=	8
@@ -122,7 +121,11 @@ USES+=		gl
 USE_GL=		gl glu
 .endif
 
-post-install: # autoplist: thousands of files, complex dependencies on options
+post-install:
+	## 8.2 installs cmake files into a wrong location
+	#@cd ${STAGEDIR}${PREFIX} && \
+	#	${MV} lib/vtk-${VTK_SHORT_VER}/cmake lib/
+	# autoplist: thousands of files, complex dependencies on options
 	@cd ${STAGEDIR}${PREFIX} && \
 		${FIND} * -type f -or -type l >> ${TMPPLIST}
 

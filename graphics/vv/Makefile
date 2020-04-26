@@ -4,7 +4,7 @@ PORTNAME=	vv
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4.0-377
 DISTVERSIONSUFFIX=	-g7c3a1ed4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,7 +22,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libpng.so:graphics/png \
 		libsz.so:science/szip \
 		libtiff.so:graphics/tiff \
-		libvtkIOSQL-8.1.so:math/vtk8
+		libvtkIOSQL-8.2.so:math/vtk8
 
 USES=		cmake compiler:c++11-lang eigen:3 jpeg qt:5 xorg
 USE_GITHUB=	yes
@@ -30,6 +30,8 @@ GH_ACCOUNT=	open-vv
 USE_QT=		core designer gui network sql widgets xml buildtools_build qmake_build
 USE_XORG=	ice sm x11 xext xt
 USE_CXXSTD=	c++11
+
+CMAKE_ARGS=	-DVTK_DIR:PATH=${LOCALBASE}/lib/vtk-8.2/cmake/vtk-8.2
 
 PLIST_FILES=	bin/vv
 
