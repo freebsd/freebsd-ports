@@ -22,8 +22,9 @@ RUN_DEPENDS=	p5-Moose>=0.92:devel/p5-Moose \
 		p5-Tk-Role-HasWidgets>=${PORTVERSION}:x11-toolkits/p5-Tk-Role-HasWidgets \
 		p5-Tk-Sugar>=0:x11-toolkits/p5-Tk-Sugar
 
-NO_ARCH=	yes
-USE_PERL5=	modbuild
 USES=		perl5
+USE_PERL5=	modbuild
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
