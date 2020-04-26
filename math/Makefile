@@ -310,6 +310,7 @@
     SUBDIR += gringo
     SUBDIR += grpn
     SUBDIR += gsl
+    SUBDIR += half
     SUBDIR += hexcalc
     SUBDIR += hipmcl
     SUBDIR += hmat-oss
