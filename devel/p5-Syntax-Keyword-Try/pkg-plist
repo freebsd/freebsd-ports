@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Syntax/Keyword/Try.pm
+%%SITE_ARCH%%/auto/Syntax/Keyword/Try/Try.so
+%%PERL5_MAN3%%/Syntax::Keyword::Try.3.gz

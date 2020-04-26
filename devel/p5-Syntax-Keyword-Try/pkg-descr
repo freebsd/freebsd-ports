@@ -1,0 +1,10 @@
+Syntax::Keyword::Try provides a syntax plugin that implements exception-handling
+semantics in a form familiar to users of other languages, being built on a block
+labeled with the try keyword, followed by at least one of a catch or finally
+block.
+
+As well as providing a handy syntax for this useful behaviour, this module also
+serves to contain a number of code examples for how to implement parser plugins
+and manipulate optrees to provide new syntax and behaviours for perl code.
+
+WWW: https://metacpan.org/release/Syntax-Keyword-Try
