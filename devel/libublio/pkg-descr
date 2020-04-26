@@ -4,4 +4,5 @@ systems don't have a block device cache, giving a very slow read/write rate.
 
 Note that libublio is _not_ thread safe.
 
-WWW: http://mercurial.creo.hu/repos/libublio
+defunct WWW: http://mercurial.creo.hu/repos/libublio
+copy of code:https://github.com/0x09/hfsfuse/blob/master/lib/ublio/

@@ -5,4 +5,4 @@ over a network. PuTTY implements the client end of that session:
 the end at which the session is displayed, rather than the end
 at which it runs.
 
-WWW: http://www.chiark.greenend.org.uk/~sgtatham/putty/
+WWW: https://www.chiark.greenend.org.uk/~sgtatham/putty/
