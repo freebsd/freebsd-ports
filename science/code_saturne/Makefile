@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	code_saturne
-PORTVERSION=	6.0.2
+PORTVERSION=	6.1.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
 CATEGORIES=	science parallel
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -25,6 +24,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	code-saturne
+GH_TAGNAME=	89e7bbf	# Some fixes are needed for atmospheric aerosols
 
 USES=		autoreconf bison fortran gettext gnome gmake iconv libtool	\
 		pyqt:5 python:3.6+ shebangfix
@@ -46,6 +46,7 @@ OPTIONS_DEFINE=		DOCS EXAMPLES BATCH BLAS MPI
 OPTIONS_DEFAULT=	BATCH BLAS MPI METIS
 OPTIONS_RADIO=		METIS
 OPTIONS_RADIO_METIS=	METIS PARMETIS
+BLAS_DESC=		Support of OpenBLAS
 BLAS_USES=		blaslapack
 BLAS_CONFIGURE_ON=	--with-blas=yes --with-blas-lib=${LOCALBASE}/lib --with-blas-libs=-lopenblas
 BLAS_LIB_DEPENDS=	libopenblas.so:math/openblas
@@ -53,8 +54,10 @@ BATCH_DESC=		Use Torque to submit batches
 BATCH_RUN_DEPENDS=	pbs-config:sysutils/torque
 MPI_LIB_DEPENDS=	libmpi.so:net/mpich
 MPI_CONFIGURE_WITH=	mpi
+METIS_DESC=		Support of METIS
 METIS_LIB_DEPENDS=	libmetis.so:math/metis
 METIS_CONFIGURE_ON=	--with-metis-include="${LOCALBASE}/include"
+PARMETIS_DESC=		Support of ParMETIS
 PARMETIS_LIB_DEPENDS=	libparmetis.so:math/parmetis
 PARMETIS_CONFIGURE_ON=	--with-metis-include="${LOCALBASE}/include/parmetis"	\
 			--with-metis-lib="${LOCALBASE}/lib/parmetis"
@@ -89,8 +92,6 @@ DOCS=		AUTHORS ChangeLog README
 .endif
 
 pre-configure:
-	(cd ${WRKSRC} && ${LS} preprocessor/*/*.c src/*/*.c* |	\
-		${GREP} -v user_examples > po/POTFILES.in)
 	${FLEX} -o ${WRKSRC}/src/mei/mei_scanner.c ${WRKSRC}/src/mei/mei_scanner.l
 	${LOCALBASE}/bin/bison --defines=${WRKSRC}/src/mei/mei_parser.h	\
 		-o ${WRKSRC}/src/mei/mei_parser.c ${WRKSRC}/src/mei/mei_parser.y
