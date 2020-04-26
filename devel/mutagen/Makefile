@@ -2,7 +2,7 @@
 
 PORTNAME=	mutagen
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.11.3
+DISTVERSION=	0.11.4
 CATEGORIES=	devel net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -45,7 +45,7 @@ GH_TUPLE=	\
 		mutagen-io:fsevents:10556809b434:mutagen_io_fsevents/vendor/github.com/mutagen-io/fsevents \
 		mutagen-io:gopass:9a121bec1ae7:mutagen_io_gopass/vendor/github.com/mutagen-io/gopass \
 		pion:datachannel:v1.4.14:pion_datachannel/vendor/github.com/pion/datachannel \
-		pion:dtls:v2.0.0-rc.3:pion_dtls/vendor/github.com/pion/dtls/v2 \
+		pion:dtls:v2.0.0-rc.3:pion_dtls_v2/vendor/github.com/pion/dtls/v2 \
 		pion:ice:v0.7.6:pion_ice/vendor/github.com/pion/ice \
 		pion:logging:v0.2.2:pion_logging/vendor/github.com/pion/logging \
 		pion:mdns:v0.0.4:pion_mdns/vendor/github.com/pion/mdns \
@@ -53,12 +53,12 @@ GH_TUPLE=	\
 		pion:rtcp:v1.2.1:pion_rtcp/vendor/github.com/pion/rtcp \
 		pion:rtp:v1.1.4:pion_rtp/vendor/github.com/pion/rtp \
 		pion:sctp:v1.7.4:pion_sctp/vendor/github.com/pion/sctp \
-		pion:sdp:v2.3.1:pion_sdp/vendor/github.com/pion/sdp/v2 \
+		pion:sdp:v2.3.1:pion_sdp_v2/vendor/github.com/pion/sdp/v2 \
 		pion:srtp:v1.2.6:pion_srtp/vendor/github.com/pion/srtp \
 		pion:stun:v0.3.3:pion_stun/vendor/github.com/pion/stun \
 		pion:transport:v0.8.10:pion_transport/vendor/github.com/pion/transport \
 		pion:turn:v1.4.0:pion_turn/vendor/github.com/pion/turn \
-		pion:webrtc:v2.1.18:pion_webrtc/vendor/github.com/pion/webrtc/v2 \
+		pion:webrtc:v2.1.18:pion_webrtc_v2/vendor/github.com/pion/webrtc/v2 \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		shibukawa:extstat:4113c04d0977:shibukawa_extstat/vendor/github.com/shibukawa/extstat \
 		spf13:cobra:b04b5bfc50cb:spf13_cobra/vendor/github.com/spf13/cobra \

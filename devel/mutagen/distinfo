@@ -1,6 +1,6 @@
-TIMESTAMP = 1586625998
-SHA256 (havoc-io-mutagen-v0.11.3_GH0.tar.gz) = 4632adc67fdeb69f738b6a564f3a353314e62cddba97e78aebb8112d8e3c9570
-SIZE (havoc-io-mutagen-v0.11.3_GH0.tar.gz) = 534721
+TIMESTAMP = 1587945088
+SHA256 (havoc-io-mutagen-v0.11.4_GH0.tar.gz) = 2bc4f7374021e91b76a2cafa91f99c120a29bc3aab623fc0ddcc8b8c3a9a097b
+SIZE (havoc-io-mutagen-v0.11.4_GH0.tar.gz) = 534716
 SHA256 (BurntSushi-toml-v0.3.1_GH0.tar.gz) = 6593da894578ba510a470735ffbdc88ce88033094dc5a8f4d3957ab87e18803f
 SIZE (BurntSushi-toml-v0.3.1_GH0.tar.gz) = 42077
 SHA256 (Microsoft-go-winio-v0.4.14_GH0.tar.gz) = 379082e49fb22dfdd9a0ff57f8a6d6d7e97ba30fdc0159ef2f38dc4caa79fd8e
