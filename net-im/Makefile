@@ -36,6 +36,7 @@
     SUBDIR += jabberd
     SUBDIR += jarl
     SUBDIR += jggtrans
+    SUBDIR += jicofo
     SUBDIR += jitsi
     SUBDIR += kaccounts-integration
     SUBDIR += kaccounts-providers

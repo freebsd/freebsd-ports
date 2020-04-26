@@ -1,0 +1,30 @@
+[
+{ type: install
+  message: <<EOM
+Jitsi Conference Focus was installed
+
+1) Configuration file is located at:
+
+   %%ETCDIR%%/jicofo.conf
+
+   Values defined there are used by startup script file
+
+2) Add jicofo_enable="YES" to /etc/rc.conf.
+
+3) If you are using net-im/prosody with jicofo, do not forget import trusted 
+   certificate file
+
+  # keytool -noprompt -keystore %%LOCALBASE%%/etc/ssl/java.pem -importcert -alias prosody -file /path/to/prosody/auth.jitsi.example.com.crt
+
+4) If you want use jicofo on FreeBSD 11.x, please look for apply the
+   following patch file:
+
+   https://reviews.freebsd.org/D14453
+
+   jicofo rc script use ${name}_env_file functionality. It is
+   available on FreeBSD >= 12.x
+
+5) Enjoy it
+EOM
+}
+]

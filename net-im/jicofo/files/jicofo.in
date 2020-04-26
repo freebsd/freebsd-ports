@@ -1,0 +1,87 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: jicofo
+# REQUIRE: NETWORKING SERVERS
+# KEYWORD: shutdown
+#
+# Configuration settings for jicofo in /etc/rc.conf:
+#
+#
+
+. /etc/rc.subr
+
+name="jicofo"
+rcvar=${name}_enable
+
+jicofo_env_file="/usr/local/etc/jicofo.conf"
+jicofo_jar="%%JAVAJARDIR%%/jicofo.jar"
+jicofo_logging_config="%%DATADIR%%/lib/logging.properties"
+
+load_rc_config "${name}"
+
+: ${jicofo_enable="NO"}
+: ${jicofo_flags=""}
+
+command="%%LOCALBASE%%/bin/java"
+pidfile="/var/run/jicofo.pid"
+required_files="${jicofo_env_file} %%LOCALBASE%%/etc/ssl/java.pem"
+
+start_cmd=${name}_start
+stop_cmd=${name}_stop
+status_cmd=${name}_status
+restart_cmd=${name}_restart
+
+jicofo_start()
+{
+	daemon -p ${pidfile} -o /var/log/${name}.log ${command} -Xmx${MAX_MEMORY} \
+                -XX:+HeapDumpOnOutOfMemoryError \
+                -XX:HeapDumpPath=/tmp \
+                -Djava.util.logging.config.file=${jicofo_logging_config} \
+                -Dnet.java.sip.communicator.SC_HOME_DIR_LOCATION=%%LOCALBASE%%/etc/jitsi \
+                -Dnet.java.sip.communicator.SC_HOME_DIR_NAME=jicofo \
+                -Dnet.java.sip.communicator.SC_LOG_DIR_LOCATION=/var/log/ \
+		-Djavax.net.ssl.trustStore=%%LOCALBASE%%/etc/ssl/java.pem \
+                -cp ${jicofo_jar} \
+                org.jitsi.jicofo.Main \
+                --host=${JVB_XMPP_HOST} \
+                --domain=${JVB_XMPP_DOMAIN} \
+                --port=${JVB_XMPP_PORT} \
+                --secret=${JVB_XMPP_SECRET} \
+		--user_domain=${JVB_XMPP_USER_DOMAIN} \
+		--user_name=${JVB_XMPP_USER_NAME} \
+		--user_password=${JVB_XMPP_USER_SECRET} ${jicofo_flags}
+		echo "Started"
+}
+
+jicofo_stop()
+{
+        if [ -f ${pidfile} ]
+        then
+                kill `cat ${pidfile}`
+                rm ${pidfile}
+		echo "Stopped"
+        fi
+}
+
+jicofo_status()
+{
+        # If running, show pid
+        if [ -f ${pidfile} ]
+        then
+                echo "${name} is running as pid" `cat ${pidfile}`
+        else
+                echo "${name} is not running"
+        fi
+}
+
+jicofo_restart()
+{
+	echo "Performing restart"
+	jicofo_stop
+	sleep 5
+	jicofo_start
+}
+
+run_rc_command "$1"
