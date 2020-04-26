@@ -59,6 +59,7 @@
     SUBDIR += dvdstyler
     SUBDIR += emby-server
     SUBDIR += emovix
+    SUBDIR += f3d
     SUBDIR += ffaudioconverter
     SUBDIR += ffdec
     SUBDIR += ffmpeg
