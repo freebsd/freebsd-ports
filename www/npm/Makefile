@@ -3,6 +3,7 @@
 
 PORTNAME=	npm
 PORTVERSION=	6.12.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/sunpoet
 
@@ -14,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/lib/node_modules/npm/LICENSE
 
 RUN_DEPENDS=	gmake:devel/gmake
 
-USES=		cpe python:2.7,run shebangfix tar:xz
+USES=		cpe python:run shebangfix tar:xz
 
 NO_ARCH=	yes
 NO_BUILD=	yes
