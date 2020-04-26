@@ -13,6 +13,9 @@ COMMENT=	Default templates and settings for django-registration
 
 LICENSE=	MIT
 
+DEPRECATED=	No longer maintained, not compatible with newer versions of www/py-django-registration
+EXPIRATION_DATE=	2020-05-25
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django-registration>=0:www/py-django-registration@${PY_FLAVOR}
 
 USES=		python
