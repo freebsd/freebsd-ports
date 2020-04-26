@@ -2,11 +2,12 @@
 
 PORTNAME=	sonarqube
 DISTVERSION=	8.2.0.32929
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel security www java
 MASTER_SITES=	https://binaries.sonarsource.com/Distribution/sonarqube/:m_core \
 		https://binaries.sonarsource.com/Distribution/sonar-csharp-plugin/:m_csharp \
 		https://binaries.sonarsource.com/Distribution/sonar-java-plugin/:m_java \
+		https://binaries.sonarsource.com/Distribution/sonar-javascript-plugin/:m_javascript \
 		https://binaries.sonarsource.com/Distribution/sonar-python-plugin/:m_python \
 		https://binaries.sonarsource.com/Distribution/sonar-scm-git-plugin/:m_scmgit \
 		https://binaries.sonarsource.com/Distribution/sonar-vbnet-plugin/:m_vbnet
@@ -14,6 +15,7 @@ PKGNAMESUFFIX=	-community
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:m_core \
 		sonar-csharp-plugin-${SONARCSHARP_VER}.jar:m_csharp \
 		sonar-java-plugin-${SONARJAVA_VER}.jar:m_java \
+		sonar-javascript-plugin-${SONARJAVASCRIPT_VER}.jar:m_javascript \
 		sonar-python-plugin-${SONARPYTHON_VER}.jar:m_python \
 		sonar-scm-git-plugin-${SONARSCMGIT_VER}.jar:m_scmgit \
 		sonar-vbnet-plugin-${SONARVBNET_VER}.jar:m_vbnet
@@ -50,6 +52,7 @@ TEMP_DIR=	/var/db/${PORTNAME}/temp
 
 SONARCSHARP_VER=	8.6.0.16497
 SONARJAVA_VER=		6.3.0.21585
+SONARJAVASCRIPT_VER=	6.2.1.12157
 SONARPYTHON_VER=	2.8.0.6204
 SONARSCMGIT_VER=	1.11.0.11
 SONARVBNET_VER=		8.6.0.16497
@@ -81,6 +84,7 @@ PLIST_SUB=	APP_NAME=${APP_NAME} \
 		TEMP_DIR=${TEMP_DIR} \
 		SONARCSHARP_VER=${SONARCSHARP_VER} \
 		SONARJAVA_VER=${SONARJAVA_VER} \
+		SONARJAVASCRIPT_VER=${SONARJAVASCRIPT_VER} \
 		SONARPYTHON_VER=${SONARPYTHON_VER} \
 		SONARSCMGIT_VER=${SONARSCMGIT_VER} \
 		SONARVBNET_VER=${SONARVBNET_VER}
@@ -90,6 +94,7 @@ post-extract:
 	${MV} ${WRKSRC}/conf/sonar.properties ${WRKSRC}/conf/sonar.properties.sample
 .for plugin in sonar-csharp-plugin \
     sonar-java-plugin \
+    sonar-javascript-plugin \
     sonar-python-plugin \
     sonar-scm-git-plugin \
     sonar-vbnet-plugin
@@ -97,6 +102,7 @@ post-extract:
 .endfor
 .for plugin in sonar-csharp-plugin-${SONARCSHARP_VER}.jar \
     sonar-java-plugin-${SONARJAVA_VER}.jar \
+    sonar-javascript-plugin-${SONARJAVASCRIPT_VER}.jar \
     sonar-python-plugin-${SONARPYTHON_VER}.jar \
     sonar-scm-git-plugin-${SONARSCMGIT_VER}.jar \
     sonar-vbnet-plugin-${SONARVBNET_VER}.jar
@@ -138,6 +144,7 @@ gen-plist:
 		s:${JAR_VERSION}:%%JAR_VERSION%%:g ; \
 		s:sonar-csharp-plugin-[0-9.]*.jar:sonar-csharp-plugin-%%SONARCSHARP_VER%%.jar:g ; \
 		s:sonar-java-plugin-[0-9.]*.jar:sonar-java-plugin-%%SONARJAVA_VER%%.jar:g ; \
+		s:sonar-javascript-plugin-[0-9.]*.jar:sonar-javascript-plugin-%%SONARJAVASCRIPT_VER%%.jar:g ; \
 		s:sonar-python-plugin-[0-9.]*.jar:sonar-python-plugin-%%SONARPYTHON_VER%%.jar:g ; \
 		s:sonar-scm-git-plugin-[0-9.]*.jar:sonar-scm-git-plugin-%%SONARSCMGIT_VER%%.jar:g ; \
 		s:sonar-vbnet-plugin-[0-9.]*.jar:sonar-vbnet-plugin-%%SONARVBNET_VER%%.jar:g" | \

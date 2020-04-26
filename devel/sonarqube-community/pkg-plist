@@ -1952,7 +1952,7 @@ libexec/sonarqube/extensions/plugins/sonar-go-plugin-1.6.0.719.jar
 libexec/sonarqube/extensions/plugins/sonar-html-plugin-3.2.0.2082.jar
 libexec/sonarqube/extensions/plugins/sonar-jacoco-plugin-1.0.2.475.jar
 libexec/sonarqube/extensions/plugins/sonar-java-plugin-%%SONARJAVA_VER%%.jar
-libexec/sonarqube/extensions/plugins/sonar-javascript-plugin-6.2.0.12043.jar
+libexec/sonarqube/extensions/plugins/sonar-javascript-plugin-%%SONARJAVASCRIPT_VER%%.jar
 libexec/sonarqube/extensions/plugins/sonar-kotlin-plugin-1.5.0.315.jar
 libexec/sonarqube/extensions/plugins/sonar-php-plugin-3.3.0.5166.jar
 libexec/sonarqube/extensions/plugins/sonar-python-plugin-%%SONARPYTHON_VER%%.jar
