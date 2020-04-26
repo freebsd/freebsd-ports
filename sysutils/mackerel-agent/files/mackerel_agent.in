@@ -20,6 +20,14 @@ load_rc_config ${name}
 : ${mackerel_agent_config:=%%ETCDIR%%/mackerel-agent.conf}
 
 command="%%PREFIX%%/bin/mackerel-agent"
-command_args="--conf=${mackerel_agent_config} &"
+required_files="${mackerel_agent_config}"
+command_args="supervise -conf ${mackerel_agent_config} ${mackerel_agent_flags}"
+
+start_cmd=mackerel_agent_start
+
+mackerel_agent_start()
+{
+	/usr/sbin/daemon -cf -S -T mackerel-agent ${command} ${command_args}
+}
 
 run_rc_command "$1"
