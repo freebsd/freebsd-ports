@@ -1,0 +1,5 @@
+TIMESTAMP = 1576119784
+SHA256 (qemu/3.1.0/seanbruno-qemu-bsd-user-3.1.0-e21442a_GH0.tar.gz) = 8396a53fbf6f46f89327bc0b747aca928dc21916f67952f938f6c527ccab8cfd
+SIZE (qemu/3.1.0/seanbruno-qemu-bsd-user-3.1.0-e21442a_GH0.tar.gz) = 16902208
+SHA256 (qemu/3.1.0/qemu-keycodemapdb-10739aa_GH0.tar.gz) = ae43fb1e2b07b78be88a7882306b6e71383eb77472a35d7d78fed21e345d134a
+SIZE (qemu/3.1.0/qemu-keycodemapdb-10739aa_GH0.tar.gz) = 47895

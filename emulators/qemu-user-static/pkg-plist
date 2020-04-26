@@ -1,0 +1,13 @@
+%%64BIT%%bin/qemu-aarch64-static
+bin/qemu-arm-static
+bin/qemu-i386-static
+bin/qemu-mips-static
+%%64BIT%%bin/qemu-mips64-static
+%%64BIT%%bin/qemu-mips64el-static
+bin/qemu-mipsel-static
+bin/qemu-ppc-static
+%%64BIT%%bin/qemu-ppc64-static
+%%64BIT%%bin/qemu-riscv64-static
+bin/qemu-sparc-static
+%%64BIT%%bin/qemu-sparc64-static
+%%64BIT%%bin/qemu-x86_64-static

@@ -20,6 +20,9 @@ USES=		bison compiler:c11 gmake perl5 pkgconfig python:2.7,build
 USE_PERL5=	build
 MAKE_ENV+=	BSD_MAKE="${MAKE}" V=1
 
+DEPRECATED=	Port will be removed in favor of emulators/qemu
+EXPIRATION_DATE=	2020-10-01
+
 ONLY_FOR_ARCHS=		amd64 powerpc powerpc64 # XXX someone wants to debug sparc64 hosts?
 BROKEN_i386=		aarch64 system target is currently broken for i386 hosts, disable for now while dealing with upstream
 
