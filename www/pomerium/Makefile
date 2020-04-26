@@ -2,7 +2,7 @@
 
 PORTNAME=	pomerium
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.4
+DISTVERSION=	0.7.5
 CATEGORIES=	www
 
 MAINTAINER=	delphij@FreeBSD.org
@@ -30,16 +30,16 @@ GH_TUPLE=	\
 		OneOfOne:xxhash:v1.2.7:oneofone_xxhash/vendor/github.com/OneOfOne/xxhash \
 		armon:go-metrics:v0.3.0:armon_go_metrics/vendor/github.com/armon/go-metrics \
 		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
-		census-instrumentation:opencensus-go:v0.22.3:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
 		census-ecosystem:opencensus-go-exporter-jaeger:v0.2.0:census_ecosystem_opencensus_go_exporter_jaeger/vendor/contrib.go.opencensus.io/exporter/jaeger \
 		census-ecosystem:opencensus-go-exporter-prometheus:v0.1.0:census_ecosystem_opencensus_go_exporter_prometheus/vendor/contrib.go.opencensus.io/exporter/prometheus \
-		cespare:xxhash:v2.1.1:cespare_xxhash/vendor/github.com/cespare/xxhash/v2 \
+		census-instrumentation:opencensus-go:v0.22.3:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
+		cespare:xxhash:v2.1.1:cespare_xxhash_v2/vendor/github.com/cespare/xxhash/v2 \
 		coreos:go-oidc:v2.2.1:coreos_go_oidc/vendor/github.com/coreos/go-oidc \
 		etcd-io:bbolt:v1.3.4:etcd_io_bbolt/vendor/go.etcd.io/bbolt \
 		fsnotify:fsnotify:v1.4.9:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		ghodss:yaml:v1.0.0:ghodss_yaml/vendor/github.com/ghodss/yaml \
 		go-ini:ini:v1.51.1:go_ini_ini/vendor/gopkg.in/ini.v1 \
-		go-redis:redis:v7.2.0:go_redis_redis/vendor/github.com/go-redis/redis/v7 \
+		go-redis:redis:v7.2.0:go_redis_redis_v7/vendor/github.com/go-redis/redis/v7 \
 		go-yaml:yaml:v2.2.8:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		gobwas:glob:v0.2.3:gobwas_glob/vendor/github.com/gobwas/glob \
 		golang:appengine:v1.6.5:golang_appengine/vendor/google.golang.org/appengine \
@@ -56,7 +56,7 @@ GH_TUPLE=	\
 		google:btree:v1.0.0:google_btree/vendor/github.com/google/btree \
 		google:go-cmp:v0.4.0:google_go_cmp/vendor/github.com/google/go-cmp \
 		google:go-genproto:fb4a7afc5178:google_go_genproto/vendor/google.golang.org/genproto \
-		googleapis:gax-go:v2.0.5:googleapis_gax_go/vendor/github.com/googleapis/gax-go \
+		googleapis:gax-go:v2.0.5:googleapis_gax_go_v2/vendor/github.com/googleapis/gax-go \
 		googleapis:google-api-go-client:v0.20.0:googleapis_google_api_go_client/vendor/google.golang.org/api \
 		googleapis:google-cloud-go:v0.49.0:googleapis_google_cloud_go/vendor/cloud.google.com/go \
 		gorilla:mux:v1.7.4:gorilla_mux/vendor/github.com/gorilla/mux \
