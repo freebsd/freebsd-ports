@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Exporter-Tiny
-PORTVERSION=	1.002001
+PORTVERSION=	1.002002
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,8 +17,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 TEST_DEPENDS=	p5-Test-Fatal>=0:devel/p5-Test-Fatal \
 		p5-Test-Warnings>=0:devel/p5-Test-Warnings
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
