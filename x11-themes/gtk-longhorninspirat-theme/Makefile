@@ -5,17 +5,14 @@ PORTNAME=	longhorninspirat
 PORTVERSION=	1.0
 PORTREVISION=	9
 CATEGORIES=	x11-themes gnome
-MASTER_SITES=	http://www.users.monornet.hu/linux/gtk2/oldies/
+MASTER_SITES=	http://freebsd.nsu.ru/distfiles/ LOCAL/danfe \
+		https://bsdforge.com/projects/source/x11-themes/gtk-longhorninspirat-theme/
 PKGNAMEPREFIX=	${TYPE}-
 PKGNAMESUFFIX=	-theme
 DISTNAME=	Longhorn_Inspirat
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Port of Windows XP theme Longhorn Inspirat
-
-BROKEN=		unfetchable
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2020-05-05
 
 USES=		tar:bzip2
 NO_BUILD=	yes

@@ -5,7 +5,7 @@ PORTNAME=	aluminumalloy
 PORTVERSION?=	2004.01.04
 PORTREVISION?=	8
 CATEGORIES=	x11-themes gnome
-MASTER_SITES=	http://www.users.monornet.hu/linux/gtk2/oldies/
+MASTER_SITES=	http://freebsd.nsu.ru/distfiles/ LOCAL/danfe
 PKGNAMEPREFIX?=	${TYPE}-
 PKGNAMESUFFIX?=	-${THEME_FLAVOR}-theme
 DISTNAME=	aa_${THEME_FLAVOR}
@@ -13,17 +13,13 @@ DISTNAME=	aa_${THEME_FLAVOR}
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Port of Mac OS X theme Aluminum Alloy (${THEME_FLAVOR} flavor)
 
-BROKEN=		unfetchable
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2020-05-05
-
 TYPE?=		gtk
 THEME_FLAVOR?=	volcanic
 
 THEME_NAME=	AluminumAlloy-${THEME_FLAVOR:tu:C/^(.).*$/\1/g}${THEME_FLAVOR:C/^(.)//}
 WRKSRC=		${WRKDIR}/${THEME_NAME}
 
-USES=	tar:bzip2
+USES=		tar:bzip2
 NO_BUILD=	yes
 
 .if ${TYPE} == gtk

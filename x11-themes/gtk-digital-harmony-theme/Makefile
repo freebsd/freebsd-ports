@@ -5,17 +5,13 @@ PORTNAME=	digital-harmony
 PORTVERSION=	1.1
 PORTREVISION=	8
 CATEGORIES=	x11-themes gnome
-MASTER_SITES=	http://www.users.monornet.hu/linux/gtk2/oldies/
+MASTER_SITES=	http://freebsd.nsu.ru/distfiles/ LOCAL/danfe
 PKGNAMEPREFIX=	${TYPE}-
 PKGNAMESUFFIX=	-theme
 DISTNAME=	Digital-Harmony
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Another popular theme for GNOME desktop
-
-BROKEN=		unfetchable
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2020-05-05
 
 NO_BUILD=	yes
 
