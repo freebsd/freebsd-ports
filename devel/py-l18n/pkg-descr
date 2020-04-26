@@ -1,0 +1,20 @@
+As you may have noticed, l18n is a contraction of i18n and l10n, namely
+'internationalisation' and 'localization'. It basically provides lazy
+translations for names used for localization purposes (e.g. places and
+timezones).
+
+I started writing l18n when I was looking for translations for the pytz library.
+Indeed, on a multi-lingual site where users can select the timezone they are in,
+it's much better if they can select in their language, as in some cases, the
+differences with the english name can be significant, hence the place to look
+for it when it's sorted in alphabetical order.
+
+And as I am lazy, I thought of a way to - almost - automatically fetch the
+translations from the CLDR (Unicode's Common Locale Data Repository) database.
+
+Integrating function to link timezone to country codes, there was no reason not
+to try and provide translations also for the latter. In the near future, I - or
+contributors - may also add currencies or measurement units fetched from the
+CLDR database ...
+
+WWW: https://github.com/tkhyn/l18n

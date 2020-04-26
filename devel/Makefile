@@ -4601,6 +4601,7 @@
     SUBDIR += py-kjbuckets
     SUBDIR += py-knack
     SUBDIR += py-kqueue
+    SUBDIR += py-l18n
     SUBDIR += py-lark-parser
     SUBDIR += py-launchpadlib
     SUBDIR += py-lazr.config
