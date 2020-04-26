@@ -38,6 +38,7 @@
     SUBDIR += jggtrans
     SUBDIR += jicofo
     SUBDIR += jitsi
+    SUBDIR += jitsi-videobridge
     SUBDIR += kaccounts-integration
     SUBDIR += kaccounts-providers
     SUBDIR += kaidan

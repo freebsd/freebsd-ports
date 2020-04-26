@@ -1,0 +1,36 @@
+[
+{ type: install
+  message: <<EOM
+Jitsi Video Bridge was installed
+
+1) Jitsi VideoBridge global configuration file is located at:
+   
+   %%ETCDIR%%/jitsi-videobridge.conf
+
+   Values defined there are used by startup script file
+
+2) Add jitsi_videobridge_enable="YES" to /etc/rc.conf.
+
+3) Additional jitsi-videobridge properties to control the TCP-related 
+   functionality can be defined at:
+
+   %%ETCDIR%%/sip-communicator.properties
+
+   This file not exists by default
+
+4) More about jitsi-videobridge properties at:
+
+   https://github.com/jitsi/jitsi-videobridge/blob/master/doc/tcp.md
+
+5) If you want use jitsi-videobridge on FreeBSD 11.x, please look for apply the
+   following patch file:
+
+   https://reviews.freebsd.org/D14453
+
+   jitsi-videobridge rc script use ${name}_env_file funcitonality. It is 
+   available on FreeBSD >= 12.x
+
+6) Enjoy it
+EOM
+}
+]

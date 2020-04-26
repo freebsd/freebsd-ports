@@ -1,0 +1,4 @@
+@sample %%ETCDIR%%/jitsi-videobridge.conf.sample
+%%JAVAJARDIR%%/jitsi-videobridge.jar
+%%DATADIR%%/lib/logging.properties
+%%DATADIR%%/lib/videobridge.rc
