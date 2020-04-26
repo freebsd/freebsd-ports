@@ -1,6 +1,6 @@
-TIMESTAMP = 1587627050
-SHA256 (authelia-authelia-v4.15.0_GH0.tar.gz) = aff92cb25df43528ec836be80331a99614b6f8fd3d0f2c87019dde718e53d165
-SIZE (authelia-authelia-v4.15.0_GH0.tar.gz) = 1878631
+TIMESTAMP = 1587939026
+SHA256 (authelia-authelia-v4.15.1_GH0.tar.gz) = 1891f6a84284ab0e08419448795cf51dc0ebd2ce8adbeb3f805cd3fbff652043
+SIZE (authelia-authelia-v4.15.1_GH0.tar.gz) = 1879353
 SHA256 (Gurpartap-logrus-stack-89c00d8a28f4_GH0.tar.gz) = 12103c973eb1bc4404b25fc7c0077dae25e0c8ecdd0f58873c57d875e7a9950b
 SIZE (Gurpartap-logrus-stack-89c00d8a28f4_GH0.tar.gz) = 3078
 SHA256 (Workiva-go-datastructures-v1.0.52_GH0.tar.gz) = c023f985d6c496e6259abe5225b221d9d2d2a3528a2dba54571fd6f46f23bda3
