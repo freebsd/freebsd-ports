@@ -18,7 +18,7 @@ EXPIRATION_DATE=	2020-05-25
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django-registration>=0:www/py-django-registration@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.5+
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>
