@@ -2,21 +2,27 @@
 # $FreeBSD$
 
 PORTNAME=	alephone
-PORTVERSION=	20150620
-PORTREVISION=	20
+DISTVERSION=	20190331
 CATEGORIES=	games
-MASTER_SITES=	SF/marathon/Aleph%20One/2015-06-20
-DISTNAME=	AlephOne-${PORTVERSION}
 
 MAINTAINER=	fiziologus@gmail.com
-COMMENT=	The open source version of Bungie's Marathon game
+COMMENT=	Open source version of Bungies Marathon game
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/function.hpp:devel/boost-libs
+LICENSE=	GPLv3
 
-USES=		compiler:c++11-lang gl gmake localbase pkgconfig sdl tar:bzip2 
-USE_CXXSTD=	gnu++98
-USE_SDL=	image net sdl ttf
-USE_GL=		yes
+LIB_DEPENDS=	libexpat.so:textproc/expat2 \
+		libboost_filesystem.so:devel/boost-libs
+
+USES=		autoreconf compiler:c++11-lang gmake localbase \
+		pkgconfig shared-mime-info sdl gl tar:bzip2
+
+USE_SDL=	sdl2 image2 net2 ttf2
+USE_GL=		gl glu
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	Aleph-One-Marathon
+GH_TAGNAME=	release-20190331
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-alsa
 
@@ -24,24 +30,21 @@ PORTDOCS=	*
 
 DATADIR=	${PREFIX}/share/AlephOne
 
-OPTIONS_DEFINE=	MAD FFMPEG OGG SPEEX SMPEG ZZIP PNG CURL SNDFILE DOCS
-OPTIONS_DEFAULT=MAD OGG SPEEX SMPEG ZZIP PNG CURL SNDFILE
+OPTIONS_DEFINE=	MAD FFMPEG OGG SPEEX ZZIP PNG CURL SNDFILE DOCS
+OPTIONS_DEFAULT=MAD FFMPEG OGG SPEEX ZZIP PNG CURL SNDFILE
 
 FFMPEG_DESC=	Use ffmpeg for film export and playback
-SMPEG_DESC=	Use SMPEG for movie playback
 ZZIP_DESC=	Enable zziplib support
 
 MAD_LIB_DEPENDS=	libmad.so:audio/libmad
 MAD_CONFIGURE_WITH=	mad
-FFMPEG_BROKEN=		fails to build with FFMPEG=on
 FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 FFMPEG_CONFIGURE_WITH=	ffmpeg
 OGG_LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis
 OGG_CONFIGURE_WITH=	vorbis
-SPEEX_LIB_DEPENDS=	libspeex.so:audio/speex
+SPEEX_LIB_DEPENDS=	libspeex.so:audio/speex \
+			libspeexdsp.so:audio/speexdsp
 SPEEX_CONFIGURE_WITH=	speex
-SMPEG_LIB_DEPENDS=	libsmpeg.so:multimedia/smpeg
-SMPEG_CONFIGURE_WITH=	smpeg
 ZZIP_LIB_DEPENDS=	libzzip.so:devel/zziplib
 ZZIP_CONFIGURE_WITH=	zzip
 PNG_LIB_DEPENDS=	libpng.so:graphics/png
