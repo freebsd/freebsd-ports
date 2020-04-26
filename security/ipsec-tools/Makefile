@@ -86,26 +86,8 @@ WCPSKEY_EXTRA_PATCHES=	${FILESDIR}/wildcard-psk.diff ${FILESDIR}/wildcard-psk-oa
 REQUIREMOD?=	ipsec
 .endif
 
-# Need to be patched for openssl-1.1.1 (default after 1200080)
-.if ${OPSYS} == FreeBSD
-.  if ${OSVERSION} >= 1200085 && ${SSL_DEFAULT} != openssl
-BUILD_DEPENDS+=	automake>=0:devel/automake
-.  endif
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e "s/-Werror//g ; s/-R$$libdir/-Wl,-rpath=$$libdir/g" ${WRKSRC}/configure
-
-# Need to be patched for openssl-1.1.1 (default after 1200080)
-.if ${OPSYS} == FreeBSD
-.  if ${OSVERSION} >= 1200085 && ${SSL_DEFAULT} != openssl
-post-configure:
-	@${REINPLACE_CMD} -e "s/automake-1.14/automake-1.16/g" ${WRKSRC}/Makefile ${WRKSRC}/*/Makefile \
-				${WRKSRC}/*/*/Makefile
-	@${REINPLACE_CMD} -e "s/aclocal-1.14/aclocal-1.16/g" ${WRKSRC}/Makefile ${WRKSRC}/*/Makefile \
-				${WRKSRC}/*/*/Makefile
-.  endif
-.endif
 
 post-install:
 	@${MKDIR} ${STAGEDIR}/${PREFIX}/etc/racoon
@@ -125,7 +107,6 @@ post-install-DOCS-on:
 
 .if ${OPSYS} == FreeBSD
 .  if ${OSVERSION} >= 1200085 && ${SSL_DEFAULT} != openssl
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-aclocal.m4
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-ipsec-tools
 PLIST_FILES+=	include/racoon/openssl_compat.h
 .  endif

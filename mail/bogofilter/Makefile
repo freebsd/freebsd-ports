@@ -25,10 +25,7 @@ UNICODE_DESC=		Normalize tokens to Unicode (UTF-8) (recommended)
 CONFLICTS_INSTALL?=	bogofilter-sqlite-[0-9]* bogofilter-tc-[0-9]* bogofilter-lmdb-[0-9]* \
 			bogofilter-kc-[0-9]*
 
-# XXX FIXME: autoreconf:build should not be required,
-# but something hoses timestamps on src/tests/Makefile.am
-# but not src/tests/Makefile.in.
-USES+=		autoreconf:build cpe perl5 shebangfix tar:xz
+USES+=		cpe perl5 shebangfix tar:xz
 SHEBANG_FILES=	contrib/randomtrain.sh contrib/scramble.sh \
 		src/tests/unsort.pl contrib/*.pl
 USE_PERL5=	run
@@ -61,7 +58,7 @@ INSTALL_TARGET=	install-strip prefix=${PREFIX} mandir=${MANPREFIX}/man
 post-patch:
 	${REINPLACE_CMD} -e 's/INTEGRITY_TESTS = t.lock1 t.lock3 t.valgrind/INTEGRITY_TESTS = t.lock1/' \
 		-e 's/ENVIRON_TESTS = t.abort/ENVIRON_TESTS =/' \
-		${WRKSRC}/src/tests/Makefile.am
+		${WRKSRC}/src/tests/Makefile.in
 
 post-build:
 	cd ${WRKSRC}/src && ${SETENV} SHELL=${SH} ${MAKE_CMD} ${TEST_TARGET} ${_MAKE_JOBS} SHELL=${SH} \
