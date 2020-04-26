@@ -65,6 +65,7 @@ bin/pmat-list-orphans
 %%SITE_ARCH%%/auto/share/module/Devel-MAT-UI/icons/type-SCALAR.svg
 %%SITE_ARCH%%/auto/share/module/Devel-MAT-UI/icons/type-STASH.svg
 %%SITE_ARCH%%/auto/share/module/Devel-MAT-UI/icons/type-UNDEF.svg
+%%PERL5_MAN1%%/pmat.1.gz
 %%PERL5_MAN3%%/Devel::MAT.3.gz
 %%PERL5_MAN3%%/Devel::MAT::Cmd.3.gz
 %%PERL5_MAN3%%/Devel::MAT::Cmd::Terminal.3.gz
