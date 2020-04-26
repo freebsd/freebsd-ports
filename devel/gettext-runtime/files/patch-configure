@@ -1,11 +1,11 @@
---- configure.orig	2019-05-12 15:08:34 UTC
+--- configure.orig	2020-04-14 04:45:37 UTC
 +++ configure
-@@ -17215,7 +17215,7 @@ if test "x$ac_cv_lib_pthread_pthread_kill" = xyes; the
-              # On Solaris 10 or newer, this test is no longer needed, because
-              # libc contains the fully functional pthread functions.
-              case "$host_os" in
--               solaris | solaris2.1-9 | solaris2.1-9.* | hpux*)
-+               solaris | solaris2.1-9 | solaris2.1-9.* | hpux* | freebsd*)
+@@ -16914,7 +16914,7 @@ if test "x$ac_cv_lib_pthread_pthread_kill" = xyes; the
+            # On Solaris 10 or newer, this test is no longer needed, because
+            # libc contains the fully functional pthread functions.
+            case "$host_os" in
+-             solaris | solaris2.1-9 | solaris2.1-9.* | hpux*)
++             solaris | solaris2.1-9 | solaris2.1-9.* | hpux* | freebsd*)
  
  $as_echo "#define PTHREAD_IN_USE_DETECTION_HARD 1" >>confdefs.h
  

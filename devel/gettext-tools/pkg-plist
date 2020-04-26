@@ -27,7 +27,7 @@ lib/libgettextlib.so
 lib/libgettextpo.a
 lib/libgettextpo.so
 lib/libgettextpo.so.0
-lib/libgettextpo.so.0.5.5
+lib/libgettextpo.so.0.5.6
 lib/libgettextsrc-%%PORTVERSION%%.so
 lib/libgettextsrc.so
 man/man1/autopoint.1.gz
@@ -117,6 +117,7 @@ share/aclocal/progtest.m4
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-c++-gnome/po/ru.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-c++-gnome/po/sk.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-c++-gnome/po/sl.po
+%%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-c++-gnome/po/sq.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-c++-gnome/po/sr.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-c++-gnome/po/sv.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-c++-gnome/po/ta.po
@@ -195,6 +196,7 @@ share/aclocal/progtest.m4
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-c++-kde/po/ru.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-c++-kde/po/sk.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-c++-kde/po/sl.po
+%%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-c++-kde/po/sq.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-c++-kde/po/sr.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-c++-kde/po/sv.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-c++-kde/po/ta.po
@@ -247,6 +249,7 @@ share/aclocal/progtest.m4
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-c++-qt/po/ru.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-c++-qt/po/sk.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-c++-qt/po/sl.po
+%%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-c++-qt/po/sq.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-c++-qt/po/sr.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-c++-qt/po/sv.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-c++-qt/po/ta.po
@@ -298,6 +301,7 @@ share/aclocal/progtest.m4
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-c++-wxwidgets/po/ru.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-c++-wxwidgets/po/sk.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-c++-wxwidgets/po/sl.po
+%%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-c++-wxwidgets/po/sq.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-c++-wxwidgets/po/sr.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-c++-wxwidgets/po/sv.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-c++-wxwidgets/po/ta.po
@@ -349,6 +353,7 @@ share/aclocal/progtest.m4
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-c++/po/ru.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-c++/po/sk.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-c++/po/sl.po
+%%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-c++/po/sq.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-c++/po/sr.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-c++/po/sv.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-c++/po/ta.po
@@ -403,6 +408,7 @@ share/aclocal/progtest.m4
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-c-gnome/po/ru.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-c-gnome/po/sk.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-c-gnome/po/sl.po
+%%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-c-gnome/po/sq.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-c-gnome/po/sr.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-c-gnome/po/sv.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-c-gnome/po/ta.po
@@ -458,6 +464,7 @@ share/aclocal/progtest.m4
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-c-gnome3/po/ru.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-c-gnome3/po/sk.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-c-gnome3/po/sl.po
+%%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-c-gnome3/po/sq.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-c-gnome3/po/sr.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-c-gnome3/po/sv.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-c-gnome3/po/ta.po
@@ -509,6 +516,7 @@ share/aclocal/progtest.m4
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-c/po/ru.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-c/po/sk.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-c/po/sl.po
+%%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-c/po/sq.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-c/po/sr.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-c/po/sv.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-c/po/ta.po
@@ -559,6 +567,7 @@ share/aclocal/progtest.m4
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-clisp/po/ru.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-clisp/po/sk.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-clisp/po/sl.po
+%%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-clisp/po/sq.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-clisp/po/sr.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-clisp/po/sv.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-clisp/po/ta.po
@@ -610,6 +619,7 @@ share/aclocal/progtest.m4
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-csharp-forms/po/ru.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-csharp-forms/po/sk.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-csharp-forms/po/sl.po
+%%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-csharp-forms/po/sq.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-csharp-forms/po/sr.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-csharp-forms/po/sv.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-csharp-forms/po/ta.po
@@ -660,6 +670,7 @@ share/aclocal/progtest.m4
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-csharp/po/ru.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-csharp/po/sk.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-csharp/po/sl.po
+%%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-csharp/po/sq.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-csharp/po/sr.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-csharp/po/sv.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-csharp/po/ta.po
@@ -710,6 +721,7 @@ share/aclocal/progtest.m4
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-gawk/po/ru.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-gawk/po/sk.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-gawk/po/sl.po
+%%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-gawk/po/sq.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-gawk/po/sr.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-gawk/po/sv.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-gawk/po/ta.po
@@ -760,6 +772,7 @@ share/aclocal/progtest.m4
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-guile/po/ru.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-guile/po/sk.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-guile/po/sl.po
+%%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-guile/po/sq.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-guile/po/sr.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-guile/po/sv.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-guile/po/ta.po
@@ -813,6 +826,7 @@ share/aclocal/progtest.m4
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-java-awt/po/ru.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-java-awt/po/sk.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-java-awt/po/sl.po
+%%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-java-awt/po/sq.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-java-awt/po/sr.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-java-awt/po/sv.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-java-awt/po/ta.po
@@ -866,6 +880,7 @@ share/aclocal/progtest.m4
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-java-qtjambi/po/ru.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-java-qtjambi/po/sk.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-java-qtjambi/po/sl.po
+%%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-java-qtjambi/po/sq.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-java-qtjambi/po/sr.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-java-qtjambi/po/sv.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-java-qtjambi/po/ta.po
@@ -919,6 +934,7 @@ share/aclocal/progtest.m4
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-java-swing/po/ru.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-java-swing/po/sk.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-java-swing/po/sl.po
+%%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-java-swing/po/sq.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-java-swing/po/sr.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-java-swing/po/sv.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-java-swing/po/ta.po
@@ -969,6 +985,7 @@ share/aclocal/progtest.m4
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-java/po/ru.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-java/po/sk.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-java/po/sl.po
+%%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-java/po/sq.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-java/po/sr.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-java/po/sv.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-java/po/ta.po
@@ -1019,6 +1036,7 @@ share/aclocal/progtest.m4
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-librep/po/ru.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-librep/po/sk.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-librep/po/sl.po
+%%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-librep/po/sq.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-librep/po/sr.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-librep/po/sv.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-librep/po/ta.po
@@ -1073,6 +1091,7 @@ share/aclocal/progtest.m4
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-objc-gnome/po/ru.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-objc-gnome/po/sk.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-objc-gnome/po/sl.po
+%%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-objc-gnome/po/sq.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-objc-gnome/po/sr.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-objc-gnome/po/sv.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-objc-gnome/po/ta.po
@@ -1127,6 +1146,7 @@ share/aclocal/progtest.m4
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-objc-gnustep/po/ru.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-objc-gnustep/po/sk.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-objc-gnustep/po/sl.po
+%%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-objc-gnustep/po/sq.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-objc-gnustep/po/sr.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-objc-gnustep/po/sv.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-objc-gnustep/po/ta.po
@@ -1178,6 +1198,7 @@ share/aclocal/progtest.m4
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-objc/po/ru.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-objc/po/sk.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-objc/po/sl.po
+%%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-objc/po/sq.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-objc/po/sr.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-objc/po/sv.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-objc/po/ta.po
@@ -1228,6 +1249,7 @@ share/aclocal/progtest.m4
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-pascal/po/ru.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-pascal/po/sk.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-pascal/po/sl.po
+%%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-pascal/po/sq.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-pascal/po/sr.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-pascal/po/sv.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-pascal/po/ta.po
@@ -1279,6 +1301,7 @@ share/aclocal/progtest.m4
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-perl/po/ru.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-perl/po/sk.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-perl/po/sl.po
+%%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-perl/po/sq.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-perl/po/sr.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-perl/po/sv.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-perl/po/ta.po
@@ -1330,6 +1353,7 @@ share/aclocal/progtest.m4
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-php/po/ru.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-php/po/sk.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-php/po/sl.po
+%%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-php/po/sq.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-php/po/sr.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-php/po/sv.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-php/po/ta.po
@@ -1380,6 +1404,7 @@ share/aclocal/progtest.m4
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-python/po/ru.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-python/po/sk.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-python/po/sl.po
+%%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-python/po/sq.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-python/po/sr.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-python/po/sv.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-python/po/ta.po
@@ -1430,6 +1455,7 @@ share/aclocal/progtest.m4
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-sh/po/ru.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-sh/po/sk.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-sh/po/sl.po
+%%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-sh/po/sq.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-sh/po/sr.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-sh/po/sv.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-sh/po/ta.po
@@ -1480,6 +1506,7 @@ share/aclocal/progtest.m4
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-smalltalk/po/ru.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-smalltalk/po/sk.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-smalltalk/po/sl.po
+%%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-smalltalk/po/sq.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-smalltalk/po/sr.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-smalltalk/po/sv.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-smalltalk/po/ta.po
@@ -1530,6 +1557,7 @@ share/aclocal/progtest.m4
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-tcl-tk/po/ru.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-tcl-tk/po/sk.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-tcl-tk/po/sl.po
+%%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-tcl-tk/po/sq.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-tcl-tk/po/sr.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-tcl-tk/po/sv.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-tcl-tk/po/ta.po
@@ -1580,6 +1608,7 @@ share/aclocal/progtest.m4
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-tcl/po/ru.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-tcl/po/sk.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-tcl/po/sl.po
+%%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-tcl/po/sq.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-tcl/po/sr.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-tcl/po/sv.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-tcl/po/ta.po
@@ -1630,6 +1659,7 @@ share/aclocal/progtest.m4
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-ycp/po/ru.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-ycp/po/sk.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-ycp/po/sl.po
+%%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-ycp/po/sq.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-ycp/po/sr.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-ycp/po/sv.po
 %%PORTEXAMPLES%%%%DOCSDIR%%/examples/hello-ycp/po/ta.po
@@ -1701,7 +1731,6 @@ share/aclocal/progtest.m4
 %%DATADIR%%-%%VERSION%%/its/metainfo.loc
 %%DATADIR%%/archive.dir.tar.xz
 %%DATADIR%%/config.rpath
-%%DATADIR%%/gettext.h
 %%DATADIR%%/javaversion.class
 %%DATADIR%%/msgunfmt.tcl
 %%DATADIR%%/po/Makefile.in.in

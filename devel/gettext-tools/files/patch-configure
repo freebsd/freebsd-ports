@@ -1,15 +1,15 @@
---- configure.orig	2019-05-12 15:09:13 UTC
+--- configure.orig	2020-04-14 01:34:46 UTC
 +++ configure
-@@ -19449,7 +19449,7 @@ if test "x$ac_cv_lib_pthread_pthread_kill" = xyes; the
-              # On Solaris 10 or newer, this test is no longer needed, because
-              # libc contains the fully functional pthread functions.
-              case "$host_os" in
--               solaris | solaris2.1-9 | solaris2.1-9.* | hpux*)
-+               solaris | solaris2.1-9 | solaris2.1-9.* | hpux* | freebsd*)
+@@ -19457,7 +19457,7 @@ if test "x$ac_cv_lib_pthread_pthread_kill" = xyes; the
+            # On Solaris 10 or newer, this test is no longer needed, because
+            # libc contains the fully functional pthread functions.
+            case "$host_os" in
+-             solaris | solaris2.1-9 | solaris2.1-9.* | hpux*)
++             solaris | solaris2.1-9 | solaris2.1-9.* | hpux* | freebsd*)
  
  $as_echo "#define PTHREAD_IN_USE_DETECTION_HARD 1" >>confdefs.h
  
-@@ -23751,7 +23751,7 @@ $as_echo "$ac_res" >&6; }
+@@ -24468,7 +24468,7 @@ $as_echo "$ac_res" >&6; }
                                          if { eval "gt_val=\$$gt_func_gnugettext_libc"; test "$gt_val" = "yes"; } \
             || { { eval "gt_val=\$$gt_func_gnugettext_libintl"; test "$gt_val" = "yes"; } \
                  && test "$PACKAGE" != gettext-runtime \

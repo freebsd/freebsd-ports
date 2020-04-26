@@ -5,7 +5,7 @@
 # discretion.
 
 PORTNAME=	gettext-tools
-PORTREVISION=	1
+PORTREVISION=	0
 
 COMMENT=	GNU gettext development and translation tools
 
@@ -34,7 +34,7 @@ WRKSRC_SUBDIR=	gettext-tools
 
 DATADIR=	${PREFIX}/share/gettext
 DOCSDIR=	${PREFIX}/share/doc/gettext
-PLIST_SUB=	PORTVERSION=${PORTVERSION} VERSION=${PORTVERSION:R}
+PLIST_SUB=	PORTVERSION=${PORTVERSION} VERSION=${PORTVERSION}
 
 INFO=		gettext
 
