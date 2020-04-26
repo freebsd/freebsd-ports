@@ -14,8 +14,9 @@ COMMENT=	Interactive prompt module for umph and similar programs
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
