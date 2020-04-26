@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sysbench
-PORTVERSION=	1.0.19
+PORTVERSION=	1.0.20
 CATEGORIES=	benchmarks databases
 
 MAINTAINER=	sunpoet@FreeBSD.org
