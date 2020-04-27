@@ -1,0 +1,10 @@
+pyotp2289 is a pure Python 3 implementation of RFC-2289 -
+"A One-Time Password System"
+
+"The system provides authentication for system access (login) and other
+applications requiring authentication that is secure against passive attacks
+based on replaying captured reusable passwords. OTP evolved from the S/KEY
+(S/KEY is a trademark of Bellcore) One-Time Password System that was released
+by Bellcore."
+
+WWW: https://github.com/blackm0re/pyotp2289
