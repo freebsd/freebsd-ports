@@ -23,6 +23,10 @@ create `media.cubeb.backend` preference. Supported values are: `alsa`,
 `jack`, `pulse`, `pulse-rust`, `sndio`. Currently used backend can be
 inspected on `about:support` page.
 
+Microphone selection only works in `pulse` and `pulse-rust` backends.
+Other backends are limited to `default` which is usually `/dev/dsp`,
+so use virtual_oss to reroute microphones from non-default devices.
+
 ## smb:// issues
 Network group, machine, and share browsing does not work correctly.
 
