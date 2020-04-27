@@ -10,6 +10,7 @@ lib/libpkg.a
 lib/libpkg.so
 lib/libpkg.so.4
 libdata/pkgconfig/pkg.pc
+man/man3/pkg_create.3.gz
 man/man3/pkg_printf.3.gz
 man/man3/pkg_repos.3.gz
 man/man5/pkg-repository.5.gz
