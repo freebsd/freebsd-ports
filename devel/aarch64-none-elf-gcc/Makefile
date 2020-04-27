@@ -2,6 +2,7 @@
 
 PORTNAME=	gcc
 PORTVERSION?=	8.4.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GCC
 PKGNAMEPREFIX?=	aarch64-none-elf-
@@ -66,12 +67,6 @@ CONFIGURE_TARGET=	${ARCH}-unknown-${OPSYS:tl}${OSREL}
 # The following is required for clang to bootstrap gcc.
 .if ${COMPILER_TYPE} == clang
 MAKE_ARGS+=	CXXFLAGS=-fbracket-depth=512
-.endif
-
-.if ${ARCH} == "aarch64"
-PLIST_SUB+=	PLUGINS="@comment plugin does not build"
-.else
-PLIST_SUB+=	PLUGINS=""
 .endif
 
 post-install:
