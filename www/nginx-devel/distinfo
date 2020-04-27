@@ -1,4 +1,4 @@
-TIMESTAMP = 1587764044
+TIMESTAMP = 1588001562
 SHA256 (nginx-1.18.0.tar.gz) = 4c373e7ab5bf91d34a4f11a0c9496561061ba5eee6020db272a17a7228d35f99
 SIZE (nginx-1.18.0.tar.gz) = 1039530
 SHA256 (nginx_mogilefs_module-1.0.4.tar.gz) = 7ac230d30907f013dff8d435a118619ea6168aa3714dba62c6962d350c6295ae
@@ -79,8 +79,8 @@ SHA256 (slact-nchan-v1.2.6_GH0.tar.gz) = 277f35e479f80f04f76b70549d0ec7abdf8f165
 SIZE (slact-nchan-v1.2.6_GH0.tar.gz) = 671808
 SHA256 (wandenberg-nginx-push-stream-module-0.5.4_GH0.tar.gz) = 5253bb8a804ea679e514137a234637298f044c3ef63c053670bf3802ff3535b1
 SIZE (wandenberg-nginx-push-stream-module-0.5.4_GH0.tar.gz) = 183493
-SHA256 (yaoweibin-ngx_http_substitutions_filter_module-v0.6.4_GH0.tar.gz) = ed4ddbcf0c434f4a1e97b61251a63ace759792764bd5cb79ff20efe348db8db3
-SIZE (yaoweibin-ngx_http_substitutions_filter_module-v0.6.4_GH0.tar.gz) = 92230
+SHA256 (yaoweibin-ngx_http_substitutions_filter_module-b8a71ea_GH0.tar.gz) = 08f966328fc1b77e0dbbcacd9532c3905060c20c45b6461b6f2075cd844d0891
+SIZE (yaoweibin-ngx_http_substitutions_filter_module-b8a71ea_GH0.tar.gz) = 94039
 SHA256 (tarantool-nginx_upstream_module-27836e4_GH0.tar.gz) = c098747380444ddc9cf428010578bc6ef70b8c3a77a801c9e01617b05462e57b
 SIZE (tarantool-nginx_upstream_module-27836e4_GH0.tar.gz) = 74010
 SHA256 (Austinb-nginx-upload-module-72ec037_GH0.tar.gz) = c6d4e38ad0712c898cc53721f492f8f73acf2753cc0a0769fa34d4d6ba4e8efd
