@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	s6-rc
-PORTVERSION=	0.5.0.0
+PORTVERSION=	0.5.1.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.skarnet.org/software/${PORTNAME}/
 
