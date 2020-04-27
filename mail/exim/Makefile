@@ -410,7 +410,7 @@ SEDLIST+=	-e 's,XX_PGSQL_[^ ]*_XX,,'
 .endif
 
 .if ! ${PORT_OPTIONS:MPGSQL} && ! ${PORT_OPTIONS:MMYSQL} && !defined(LDAP_LIB_TYPE) && \
-    ! ${PORT_OPTIONS:MBDB}
+    ! ${PORT_OPTIONS:MBDB} && ! ${PORT_OPTIONS:MLMDB}
 SEDLIST+=	-e 's,^(LOOKUP_LIBS=),\# \1,' \
 		-e 's,^(LOOKUP_INCLUDE=),\# \1,'
 .endif
