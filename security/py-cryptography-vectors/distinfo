@@ -1,3 +1,3 @@
-TIMESTAMP = 1585907224
-SHA256 (cryptography_vectors-2.9.tar.gz) = 8c2ecdced5a296c6c26e24a1e8d869d83f0a21ddeb5935ff0a137799f963edc0
-SIZE (cryptography_vectors-2.9.tar.gz) = 35140661
+TIMESTAMP = 1588013524
+SHA256 (cryptography_vectors-2.9.2.tar.gz) = 99ac91c4d89572399b097240809af1b8f67f4bedf43398d290c9b2b3d9f491b4
+SIZE (cryptography_vectors-2.9.2.tar.gz) = 35141183
