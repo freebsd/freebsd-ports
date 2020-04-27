@@ -1,0 +1,3 @@
+pytest-black is a pytest plugin to enable format checking with black.
+
+WWW: https://github.com/shopkeep/pytest-black
