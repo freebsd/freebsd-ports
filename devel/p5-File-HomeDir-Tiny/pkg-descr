@@ -1,0 +1,5 @@
+File::HomeDir::Tiny is useful for the 90% of the time that you only need 10% of
+File::HomeDir's functionality. It depends on no other modules and consists of
+just fourteen lines of code.
+
+WWW: https://metacpan.org/release/File-HomeDir-Tiny
