@@ -1,0 +1,9 @@
+pycountry provides the ISO databases for the standards:
+- 639-3: Languages
+- 3166: Countries
+- 3166-3: Deleted countries
+- 3166-2: Subdivisions of countries
+- 4217: Currencies
+- 15924: Scripts
+
+WWW: https://github.com/flyingcircusio/pycountry

@@ -1324,6 +1324,7 @@
     SUBDIR += py-pyPEG2
     SUBDIR += py-pyahocorasick
     SUBDIR += py-pyaml
+    SUBDIR += py-pycountry
     SUBDIR += py-pyes
     SUBDIR += py-pygccxml
     SUBDIR += py-pygments
