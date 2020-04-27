@@ -1,14 +1,5 @@
 --- src/3rdparty/gn/build/gen.py.orig	2019-11-27 21:12:25 UTC
 +++ src/3rdparty/gn/build/gen.py
-@@ -46,7 +46,7 @@ class Platform(object):
- 
-   @staticmethod
-   def known_platforms():
--    return ['linux', 'darwin', 'msvc', 'aix', 'fuchsia', 'openbsd']
-+    return ['linux', 'darwin', 'msvc', 'aix', 'fuchsia', 'openbsd', 'freebsd']
- 
-   def platform(self):
-     return self._platform
 @@ -69,6 +69,9 @@ class Platform(object):
    def is_aix(self):
      return self._platform == 'aix'
