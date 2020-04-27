@@ -12,7 +12,7 @@ COMMENT=	Horizontally scale Postgresql using sharding and replication
 
 LICENSE=	AGPLv3
 
-USES=		compiler:c11 gmake pgsql:10+ autoreconf readline
+USES=		compiler:c11 gmake pgsql:11+ autoreconf readline
 
 WANT_PGSQL=	lib server
 GNU_CONFIGURE=	yes
