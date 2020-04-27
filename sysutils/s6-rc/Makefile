@@ -6,7 +6,7 @@ PORTVERSION=	0.5.0.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.skarnet.org/software/${PORTNAME}/
 
-MAINTAINER=	moo@arthepsy.eu
+MAINTAINER=	crest@rlwinm.de
 COMMENT=	Skarnet.org service manager
 
 LICENSE=	ISCL
