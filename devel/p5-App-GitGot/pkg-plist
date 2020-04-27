@@ -17,6 +17,7 @@ bin/got-complete
 %%SITE_PERL%%/App/GitGot/Command/move.pm
 %%SITE_PERL%%/App/GitGot/Command/mux.pm
 %%SITE_PERL%%/App/GitGot/Command/push.pm
+%%SITE_PERL%%/App/GitGot/Command/readd.pm
 %%SITE_PERL%%/App/GitGot/Command/remove.pm
 %%SITE_PERL%%/App/GitGot/Command/status.pm
 %%SITE_PERL%%/App/GitGot/Command/tag.pm
@@ -50,6 +51,7 @@ bin/got-complete
 %%PERL5_MAN3%%/App::GitGot::Command::move.3.gz
 %%PERL5_MAN3%%/App::GitGot::Command::mux.3.gz
 %%PERL5_MAN3%%/App::GitGot::Command::push.3.gz
+%%PERL5_MAN3%%/App::GitGot::Command::readd.3.gz
 %%PERL5_MAN3%%/App::GitGot::Command::remove.3.gz
 %%PERL5_MAN3%%/App::GitGot::Command::status.3.gz
 %%PERL5_MAN3%%/App::GitGot::Command::tag.3.gz

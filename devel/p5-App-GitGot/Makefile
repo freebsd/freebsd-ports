@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	App-GitGot
-PORTVERSION=	1.336
+PORTVERSION=	1.337
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,7 +20,7 @@ RUN_DEPENDS=	p5-App-Cmd>=0:devel/p5-App-Cmd \
 		p5-Config-INI>=0:devel/p5-Config-INI \
 		p5-Class-Load>=0:devel/p5-Class-Load \
 		p5-File-Copy-Recursive>=0:devel/p5-File-Copy-Recursive \
-		p5-File-HomeDir>=0:devel/p5-File-HomeDir \
+		p5-File-HomeDir-Tiny>=0:devel/p5-File-HomeDir-Tiny \
 		p5-File-chdir>=0:devel/p5-File-chdir \
 		p5-Git-Wrapper>=0.042:devel/p5-Git-Wrapper \
 		p5-IO-Prompt-Simple>=0:devel/p5-IO-Prompt-Simple \
