@@ -24,6 +24,7 @@ man/de/man1/kbibtex.1.gz
 man/it/man1/kbibtex.1.gz
 man/man1/kbibtex.1.gz
 man/nl/man1/kbibtex.1.gz
+man/sv/man1/kbibtex.1.gz
 man/uk/man1/kbibtex.1.gz
 share/applications/org.kde.kbibtex.desktop
 share/doc/HTML/de/kbibtex/index.cache.bz2
@@ -85,6 +86,8 @@ share/doc/HTML/it/kbibtex/index.cache.bz2
 share/doc/HTML/it/kbibtex/index.docbook
 share/doc/HTML/nl/kbibtex/index.cache.bz2
 share/doc/HTML/nl/kbibtex/index.docbook
+share/doc/HTML/sv/kbibtex/index.cache.bz2
+share/doc/HTML/sv/kbibtex/index.docbook
 share/doc/HTML/uk/kbibtex/add-macro-source.png
 share/doc/HTML/uk/kbibtex/add-macro.png
 share/doc/HTML/uk/kbibtex/config-color.png
