@@ -45,13 +45,14 @@ do-build:
 	cd ${WRKSRC} && ${SETENV} CC="${CC}" LINKER="${CC}" \
 		COMP_FLAGS="${CPPFLAGS} ${CFLAGS}" LINK_FLAGS="${LDFLAGS}" \
 		${SH} build.sh
-	cd ${WRKSRC} && bin/nim c --parallelBuild=${MAKE_JOBS_NUMBER} --nimcache=${WRKSRC}/nimcache koch
+	cd ${WRKSRC} && bin/nim c --parallelBuild=${MAKE_JOBS_NUMBER} \
+		--nimcache=${WRKDIR}/nimcache koch
 	cd ${WRKSRC} && ./koch boot --parallelBuild=${MAKE_JOBS_NUMBER} \
-		-d:release
+		-d:release --nimcache=${WRKDIR}/nimcache
 
 do-build-TOOLS-on:
-	cd ${WRKSRC} && ./koch tools --parallelBuild=${MAKE_JOBS_NUMBER} \
-		-d:release
+	cd ${WRKSRC} && ./koch toolsNoNimble --parallelBuild=${MAKE_JOBS_NUMBER} \
+		-d:release --nimcache=${WRKDIR}/nimcache
 
 do-install:
 	cd ${WRKSRC} && ${SH} install.sh ${STAGEDIR}${PREFIX}
