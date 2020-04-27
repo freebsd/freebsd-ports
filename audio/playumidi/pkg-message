@@ -1,0 +1,21 @@
+playumidi directly opens, writes midi-event data,
+and closes the umidi* device files.
+So, it is necessary to grant the R/W privileges(666)
+to umidi* device file before use playumidi.
+
+Therefore, there is a need to grant permissions to R/W
+prior to use.
+An example of the setting method is shown below.
+
+ 1. Append to devfs.rules (in etc dir.) the following lines.
+   ------------------------------------------
+   [system=10]
+    add path 'umidi*' mode 0666 group wheel
+   ------------------------------------------
+
+ 2.  Append to rc.conf (in etc dir.) the following three lines.
+   ------------------------------------------
+   devfs_enable="YES"
+   ------------------------------------------
+
+ 3.  Reboot FreeBSD (shutdown -r now) 

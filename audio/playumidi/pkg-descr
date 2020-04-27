@@ -1,0 +1,12 @@
+"playumidi" is the "SIMPLE" MIDI file player for USB MIDI device on FreeBSD.
+This software is able to direct control for FreeBSD-umidi device(/dev/umidi*.*)
+in the "uaudio" driver.
+Therefore, You don't need to use the "/dev/sequencer" device or the other
+software when listening the MIDI-file music.
+And, Support for auto-judge MIDI-file XG/GS/GM mode & auto add the
+Tone-Generator ReSet code when the ReSet code isn't exist in a MIDI-file.
+
+WWW: https://ja.osdn.net/projects/playumidi/
+
+- Koine Yuusuke (koinec)
+  koinec@users.osdn.me
