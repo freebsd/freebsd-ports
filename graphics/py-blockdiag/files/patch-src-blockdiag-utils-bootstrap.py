@@ -1,6 +1,6 @@
---- src/blockdiag/utils/bootstrap.py.orig	2014-11-21 02:20:16 UTC
+--- src/blockdiag/utils/bootstrap.py.orig	2020-02-01 09:48:17 UTC
 +++ src/blockdiag/utils/bootstrap.py
-@@ -254,11 +254,7 @@ class Options(object):
+@@ -255,11 +255,7 @@ class Options(object):
  def detectfont(options):
      import glob
      fontdirs = [
@@ -9,7 +9,7 @@
 -        '/System/Library/Fonts',
 -        'c:/windows/fonts',
 -        '/usr/local/share/font-*',
-+        '%%LOCALBASE%%/share/font-*',
++        '/usr/local/share/fonts',
      ]
      fontfiles = [
          'ipagp.ttf',

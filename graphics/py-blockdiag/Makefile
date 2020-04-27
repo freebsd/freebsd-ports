@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	blockdiag
-PORTVERSION=	1.5.4
-PORTREVISION=	1
+PORTVERSION=	2.0.1
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +17,7 @@ RUN_DEPENDS=	${PY_PILLOW} \
 		${PYTHON_PKGNAMEPREFIX}funcparserlib>=0.3.6:devel/py-funcparserlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}webcolors>=0:graphics/py-webcolors@${PY_FLAVOR}
 
-USES=		python:2.7
+USES=		python:3.5+
 USE_PYTHON=	autoplist distutils
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
@@ -27,17 +26,33 @@ EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 PORTDOCS=	README.rst
 PORTEXAMPLES=	*
 
-OPTIONS_DEFINE=	DOCS EXAMPLES IPAFONT PDF
-IPAFONT_DESC=	Use IPA Font as default
-PDF_DESC=	Enable PDF output
-
+OPTIONS_DEFINE=	DOCS EXAMPLES PDF
 OPTIONS_DEFAULT=	PDF
 
-IPAFONT_RUN_DEPENDS=	${LOCALBASE}/share/font/ipa/ipag.otf:japanese/font-ipa
+OPTIONS_RADIO=	FONT
+OPTIONS_RADIO_FONT=	IPA MPLUSIPA VLGOTHIC
+
+IPA_DESC=	Use IPA Font as default
+MPLUSIPA_DESC=	Use M-plus IPA Font as default
+VLGOTHIC_DESC=	Use VLGothic Font as default
+PDF_DESC=	Enable PDF output
+
+IPA_RUN_DEPENDS=	${LOCALBASE}/share/fonts/ipa/ipagp.otf:japanese/font-ipa
+MPLUSIPA_RUN_DEPENDS=	${LOCALBASE}/share/fonts/mplus-ipa/fonts/ipagp.ttf:japanese/font-mplus-ipa
+VLGOTHIC_RUN_DEPENDS=	${LOCALBASE}/share/fonts/vlgothic/VL-PGothic-Regular.ttf:japanese/font-vlgothic
 PDF_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}reportlab>0:print/py-reportlab@${PY_FLAVOR}
 
 post-patch:
 	${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/src/blockdiag/utils/bootstrap.py
+
+post-patch-IPA-on:
+	${REINPLACE_CMD} '/fontfiles = \[/,/\]/{/fontfiles = \[/H;/ipagp\.otf/H;/\]/H;/\]/!d;g;}' ${WRKSRC}/src/blockdiag/utils/bootstrap.py
+
+post-patch-MPLUSIPA-on:
+	${REINPLACE_CMD} '/fontfiles = \[/,/\]/{/fontfiles = \[/H;/ipagp\.ttf/H;/\]/H;/\]/!d;g;}' ${WRKSRC}/src/blockdiag/utils/bootstrap.py
+
+post-patch-VLGOTHIC-on:
+	${REINPLACE_CMD} '/fontfiles = \[/,/\]/{/fontfiles = \[/H;/VL-PGothic-Regular\.ttf/H;/\]/H;/\]/!d;g;}' ${WRKSRC}/src/blockdiag/utils/bootstrap.py
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/man/man1/
