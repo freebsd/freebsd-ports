@@ -3,7 +3,7 @@
 
 PORTNAME=	opencascade
 PORTVERSION=	7.4.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	cad science
 MASTER_SITES=	LOCAL/thierry
 
@@ -39,7 +39,7 @@ SHEBANG_FILES=	adm/templates/*.sh	\
 		gendoc
 ENVSH=		adm/templates/env.sh
 
-VTKVER=		8.1
+VTKVER=		8.2
 
 OPTIONS_DEFINE=	DOCS DOXYGEN FFMPEG VIS
 VIS_DESC=	Build Visualizazion module (requires OpenGL, freetype, ftgl and gl2ps)
@@ -58,7 +58,8 @@ CMAKE_ARGS+=	-DINSTALL_DIR=${OCCROOT}				\
 		-DINSTALL_DIR_TESTS=${OCCROOT}/tests			\
 		-DINSTALL_TEST_CASES:BOOL=ON				\
 		-DUSE_TBB:BOOL=ON					\
-		-DUSE_VTK:BOOL=ON
+		-DUSE_VTK:BOOL=ON \
+		-DVTK_DIR:PATH=${LOCALBASE}/lib/vtk-${VTKVER}/cmake/vtk-${VTKVER}
 
 USE_LDCONFIG=	yes
 

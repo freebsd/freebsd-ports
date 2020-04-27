@@ -2,7 +2,7 @@
 
 PORTNAME=	FreeCAD
 DISTVERSION=	0.18.4
-PORTREVISION=	7
+PORTREVISION=	8
 # use these for bugfixes/snapshots
 # DISTVERSION=	0.18-16093 # git rev-list --count
 # DISTVERSIONSUFFIX=	-g690774c0e
@@ -24,7 +24,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libCoin.so:graphics/Coin \
 		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff \
-		libvtkFiltersTexture-8.1.so:math/vtk8 \
+		libvtkFiltersTexture-8.2.so:math/vtk8 \
 		libTKernel.so:cad/opencascade \
 		libxerces-c.so:textproc/xerces-c3 \
 		libboost_thread.so:devel/boost-libs \
@@ -56,7 +56,8 @@ CMAKE_ARGS+=	-DOCC_INCLUDE_DIR="${LOCALBASE}/include/OpenCASCADE" \
 		-DPYTHON_EXECUTABLE="${PYTHON_CMD}" \
 		-DBUILD_ASSEMBLY="OFF" -DBUILD_FLAT_MESH="ON" \
 		-DPYSIDE2RCCBINARY="${LOCALBASE}/bin/rcc" \
-		-DPYSIDE2UICBINARY="${LOCALBASE}/bin/uic"
+		-DPYSIDE2UICBINARY="${LOCALBASE}/bin/uic" \
+		-DVTK_DIR:PATH=${LOCALBASE}/lib/vtk-8.2/cmake/vtk-8.2
 
 CMAKE_INSTALL_PREFIX=	${PREFIX}/${PORTNAME}
 
