@@ -29,8 +29,7 @@ USE_QT=		core gui sql widgets qmake_build buildtools_build
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DMPI_C_COMPILER:FILEPATH="${LOCALBASE}/mpi/openmpi/bin/mpicc" \
-		-DMPI_CXX_COMPILER:FILEPATH="${LOCALBASE}/mpi/openmpi/bin/mpicxx" \
-		-DVTK_DIR:FILEPATH="${LOCALBASE}/lib/cmake/vtk-8.2"
+		-DMPI_CXX_COMPILER:FILEPATH="${LOCALBASE}/mpi/openmpi/bin/mpicxx"
 
 WRKSRC_SUBDIR=	src
 
