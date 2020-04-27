@@ -261,6 +261,7 @@
     SUBDIR += docker-compose
     SUBDIR += docker-credential-pass
     SUBDIR += docker-machine
+    SUBDIR += docker-registry
     SUBDIR += doctl
     SUBDIR += doinkd
     SUBDIR += dolly

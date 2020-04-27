@@ -1,0 +1,47 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: docker_registry
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# docker_registry_enable (bool):	Set to NO by default.
+#				        Set it to YES to enable docker-registry.
+# docker_registry_config (path):	Set to %%PREFIX%%/etc/docker-registry/config.yml
+#					by default.
+# docker_registry_logfile (path):	Set to /var/log/docker-registry.log
+#					by default.
+# docker_registry_user (string):	Not set by default.
+
+. /etc/rc.subr
+
+name=registry
+rcvar=docker_registry_enable
+
+load_rc_config $name
+
+: ${docker_registry_enable:="NO"}
+: ${docker_registry_logfile:="/var/log/docker-registry.log"}
+: ${docker_registry_config="%%PREFIX%%/etc/docker-registry/config.yml"}
+
+command=%%PREFIX%%/bin/registry
+pidfile=/var/run/docker-registry.pid
+
+command_args="serve $docker_registry_config"
+
+start_cmd="docker_registry_start"
+
+docker_registry_start()
+{
+	opts="-p $pidfile -o $docker_registry_logfile"
+	if [ ! -z $docker_registry_user ]; then
+		opts="$opts -u $docker_registry_user"
+	fi
+	/usr/sbin/daemon $opts $command $command_args
+}
+
+run_rc_command "$1"
