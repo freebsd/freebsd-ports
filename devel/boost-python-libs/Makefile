@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	boost-libs
+PORTREVISION=	1
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 COMMENT=	Framework for interfacing Python and C++
@@ -27,6 +28,14 @@ MAKE_ENV+=	PYTHON_ROOT="${LOCALBASE}"\
 MAKE_ARGS+=	--with-python
 ALL_TARGET=	stage
 
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_VER} == ${PYTHON_DEFAULT}
+PLIST_SUB+=	PY_DEFAULT_ONLY=""
+.else
+PLIST_SUB+=	PY_DEFAULT_ONLY="@comment "
+.endif
+
 pre-build:
 	@${ECHO_CMD} "using python : " ${PYTHON_VER} " : " ${PYTHON_CMD} " : " ${PYTHON_INCLUDEDIR} ";" >> ${WRKSRC}/tools/build/src/site-config.jam
 
@@ -34,6 +43,15 @@ do-install:
 	@cd ${WRKSRC}/stage/lib && ${PAX} -rw -p p libboost* ${STAGEDIR}${PREFIX}/lib
 # For some reasons BJAM forget about the links
 	@cd ${WRKSRC}/stage/ && ${FIND} lib -type l | ${PAX} -rw -p p ${STAGEDIR}${PREFIX}
+# CMake part
+	@cd ${WRKSRC}/stage/lib && ${PAX} -rw -p p cmake/boost_numpy*/*-py${PYTHON_VER}.cmake ${STAGEDIR}${PREFIX}/lib
+	@cd ${WRKSRC}/stage/lib && ${PAX} -rw -p p cmake/boost_python*/*-py${PYTHON_VER}.cmake ${STAGEDIR}${PREFIX}/lib
+.if ${PYTHON_VER} == ${PYTHON_DEFAULT}
+	@cd ${WRKSRC}/stage/lib && ${PAX} -rw -p p cmake/boost_numpy*/*-config*.cmake ${STAGEDIR}${PREFIX}/lib
+	@cd ${WRKSRC}/stage/lib && ${PAX} -rw -p p cmake/boost_python*/*-config*.cmake ${STAGEDIR}${PREFIX}/lib
+.endif
+	@${FIND} ${STAGEDIR}${PREFIX}/lib/cmake -type f -exec \
+		${REINPLACE_CMD} -i '' -e 's,${STAGEDIR},,' {} +
 
 post-install:
 # display pkg-message
@@ -49,4 +67,4 @@ post-install:
 		-e "s|%%PYTHON_VERSION%%|${PYTHON_VERSION}|g" ${PKGMESSAGE}
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libboost_python*.so.${PORTVERSION}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

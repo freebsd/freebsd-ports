@@ -1,3 +1,11 @@
+%%PY_DEFAULT_ONLY%%lib/cmake/boost_numpy-%%BOOST_SHARED_LIB_VER%%/boost_numpy-config-version.cmake
+%%PY_DEFAULT_ONLY%%lib/cmake/boost_numpy-%%BOOST_SHARED_LIB_VER%%/boost_numpy-config.cmake
+lib/cmake/boost_numpy-%%BOOST_SHARED_LIB_VER%%/libboost_numpy-variant-shared-py%%PYTHON_VER%%.cmake
+lib/cmake/boost_numpy-%%BOOST_SHARED_LIB_VER%%/libboost_numpy-variant-static-py%%PYTHON_VER%%.cmake
+%%PY_DEFAULT_ONLY%%lib/cmake/boost_python-%%BOOST_SHARED_LIB_VER%%/boost_python-config-version.cmake
+%%PY_DEFAULT_ONLY%%lib/cmake/boost_python-%%BOOST_SHARED_LIB_VER%%/boost_python-config.cmake
+lib/cmake/boost_python-%%BOOST_SHARED_LIB_VER%%/libboost_python-variant-shared-py%%PYTHON_VER%%.cmake
+lib/cmake/boost_python-%%BOOST_SHARED_LIB_VER%%/libboost_python-variant-static-py%%PYTHON_VER%%.cmake
 lib/libboost_numpy%%PYTHON_SUFFIX%%.a
 lib/libboost_numpy%%PYTHON_SUFFIX%%.so
 lib/libboost_numpy%%PYTHON_SUFFIX%%.so.%%MAJOR_VER%%
