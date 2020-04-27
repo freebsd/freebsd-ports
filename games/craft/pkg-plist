@@ -1,7 +1,4 @@
 bin/craft
-%%SERVER%%bin/craft-server
-%%SERVER%%lib/libcraft-world.so
-%%SERVER%%%%PYTHON_SITELIBDIR%%/craft_world.py
 %%DATADIR%%/shaders/block_fragment.glsl
 %%DATADIR%%/shaders/block_vertex.glsl
 %%DATADIR%%/shaders/line_fragment.glsl
