@@ -173,20 +173,21 @@ post-install:
 	${CP} ${WRKSRC}/rtdata/options/options.lin ${WRKDIR}/rt-config/options
 	(cd ${WRKSRC}/rtdata/ && ${COPYTREE_SHARE} "profiles dcpprofiles" ${WRKDIR}/rt-config )
 	@(set -x ; TMP=$$(${MKTEMP} -d -t ${PORTNAME}) && trap "rc=$$? ; ${RM} -rf \"$$TMP\" ; exit \$$rc" 0 && \
-		( ${SETENV} ${_env} ${STAGEDIR}${PREFIX}/bin/rawtherapee -v ; \
+		( set +e ; ${SETENV} ${_env} ${STAGEDIR}${PREFIX}/bin/rawtherapee -v ; \
 		    echo $$? >&3 ) 3>&3 | ${EGREP} -q "RawTherapee, version ${_check_version:C/_.*//:C/,.*//}|cannot open display:" && \
-		( ${SETENV} ${_env} ${STAGEDIR}${PREFIX}/bin/rawtherapee-cli ; \
+		( set +e ; ${SETENV} ${_env} ${STAGEDIR}${PREFIX}/bin/rawtherapee-cli ; \
 		    echo $$? >&3 ) 3>&3 | ${EGREP} -q "RawTherapee, version ${_check_version:C/_.*//:C/,.*//}" && \
 		expect='0\n0\n' && \
 		onefile=$$(ls "${TESTIMAGES}"/* | head -1) && \
 		if test -d "${TESTIMAGES}" && test -n "$$onefile" -a -r "$$onefile" ; then \
 		  expect='0\n0\n0\n0\n0\n' && \
+		  ( set +e ; \
 		  /usr/bin/time ${SETENV} ${_env} ${STAGEDIR}${PREFIX}/bin/rawtherapee-cli \
 			-o "$$TMP" -q -f -c ${TESTIMAGES} ; echo $$? >&3 ; \
 		  /usr/bin/time ${SETENV} ${_env} ${STAGEDIR}${PREFIX}/bin/rawtherapee-cli \
 			-o "$$TMP" -q -s -Y -c ${TESTIMAGES} ; echo $$? >&3 ; \
 		  /usr/bin/time ${SETENV} ${_env} ${STAGEDIR}${PREFIX}/bin/rawtherapee-cli \
-			-o "$$TMP" -q -s -Y -tz -c ${TESTIMAGES} ; echo $$? >&3 ; \
+			-o "$$TMP" -q -s -Y -tz -c ${TESTIMAGES} ; echo $$? >&3 ) 3>&3 ; \
 		fi ; \
 		ls -Rlbai "${TESTIMAGES}" "$${TMP}" || :; \
 	${PRINTF} "%s" "$$expect" >&4 ) 3>${WRKDIR}/selftest.exitcodes 4>${WRKDIR}/selftest.expect ; \
