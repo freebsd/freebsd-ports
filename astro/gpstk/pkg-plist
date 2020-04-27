@@ -246,8 +246,8 @@ include/gpstk/ord.hpp
 include/gpstk/singleton.hpp
 include/gpstk/stl_helpers.hpp
 lib/libgpstk.so
-lib/libgpstk.so.2.12
-lib/libgpstk.so.2.12.0
+lib/libgpstk.so.%%SHLIB_VER%%
+lib/libgpstk.so.%%PORTVERSION%%
 share/cmake/GPSTK/GPSTKConfig.cmake
 share/cmake/GPSTK/GPSTKConfigVersion.cmake
 share/cmake/GPSTK/GPSTKTargets-%%CMAKE_BUILD_TYPE%%.cmake
