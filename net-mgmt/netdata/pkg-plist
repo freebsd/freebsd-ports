@@ -28,6 +28,7 @@
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/cpu.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/dbengine.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/disks.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/dns_query.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/dnsmasq_dhcp.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/dockerd.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/elasticsearch.conf.sample
@@ -63,6 +64,7 @@
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/portcheck.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/postgres.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/processes.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/pulsar.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/qos.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/ram.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/redis.conf.sample
@@ -82,6 +84,7 @@
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/unbound.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/varnish.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/vcsa.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/vernemq.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/vsphere.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/web_log.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/wmi.conf.sample
@@ -91,7 +94,6 @@
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health_alarm_notify.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health_email_recipients.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/ioping.conf.sample
-@sample(netdata,netdata,0640) lib/netdata/conf.d/mongodb.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/node.d.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/adaptec_raid.conf.sample
@@ -164,6 +166,7 @@
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/web_log.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/statsd.d/example.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/stream.conf.sample
+libexec/netdata/netdata-switch-dashboard.sh
 libexec/netdata/charts.d/ap.chart.sh
 libexec/netdata/charts.d/apcupsd.chart.sh
 libexec/netdata/charts.d/example.chart.sh
