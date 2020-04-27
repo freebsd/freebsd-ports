@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	openssl
-PORTVERSION=	1.1.1g
-PORTEPOCH=	1
+DISTVERSION=	3.0.0-alpha1
 CATEGORIES=	security devel
 MASTER_SITES=	https://www.openssl.org/source/ \
 		ftp://ftp.cert.dfn.de/pub/tools/net/openssl/source/
+PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	TLSv1.3 capable SSL and crypto library
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 CONFLICTS_INSTALL=	libressl-[0-9]* \
 			libressl-devel-[0-9]* \
-			openssl-devel-[0-9]*
+			openssl-[0-9]*
 
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	config
@@ -92,7 +92,7 @@ WEAK-SSL-CIPHERS_DESC=	Weak cipher support (unsafe)
 ZLIB_DESC=	zlib compression support
 
 # Upstream default disabled options
-.for _option in md2 rc5 sctp ssl3 zlib weak-ssl-ciphers
+.for _option in md2 rc5 sctp ssl3 weak-ssl-ciphers zlib
 ${_option:tu}_CONFIGURE_ON=	enable-${_option}
 .endfor
 
@@ -108,7 +108,7 @@ TLS1_1_IMPLIES=	TLS1_2
 
 EC_CONFIGURE_ON=	enable-ec_nistp_64_gcc_128
 I386_CONFIGURE_ON=	386
-MAN3_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-util_process__docs.pl
+MAN3_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-util_find-doc-nits
 SHARED_MAKE_ENV=	SHLIBVER=${OPENSSL_SHLIBVER}
 SHARED_PLIST_SUB=	SHLIBVER=${OPENSSL_SHLIBVER}
 SHARED_USE=		ldconfig=yes
@@ -135,25 +135,34 @@ post-patch:
 		-e 's| install_html_docs$$||' \
 		-e 's|$$(LIBDIR)/pkgconfig|libdata/pkgconfig|g' \
 		${WRKSRC}/Configurations/unix-Makefile.tmpl
-	${REINPLACE_CMD} -e 's|\^GNU ld|GNU|' ${WRKSRC}/Configurations/shared-info.pl
+	${REINPLACE_CMD} 's|\^GNU ld|GNU|' ${WRKSRC}/Configurations/shared-info.pl
+	${REINPLACE_CMD} 's|SHLIB_VERSION=3|SHLIB_VERSION=${OPENSSL_SHLIBVER}|' \
+		${WRKSRC}/VERSION
 
 post-configure:
 	${REINPLACE_CMD} \
-		-e 's|SHLIB_VERSION_NUMBER=1.1|SHLIB_VERSION_NUMBER=${OPENSSL_SHLIBVER}|' \
+		-e 's|^build_docs:.*|build_docs: build_man_docs|' \
 		${WRKSRC}/Makefile
+	( cd ${WRKSRC} ; ${PERL} configdata.pm --dump )
+
+post-configure-MAN3-off:
 	${REINPLACE_CMD} \
-		-e 's|SHLIB_VERSION_NUMBER "1.1"|SHLIB_VERSION_NUMBER "${OPENSSL_SHLIBVER}"|' \
-		${WRKSRC}/include/openssl/opensslv.h
+		-e 's|^build_man_docs:.*|build_man_docs: $$(MANDOCS1) $$(MANDOCS7)|' \
+		-e 's|dummy $$(MANDOCS[37]); do |dummy; do continue |'
+		${WRKSRC}/Makefile
 
 post-install-SHARED-on:
-.for i in libcrypto libssl
-	${INSTALL_DATA} ${WRKSRC}/$i.so.${OPENSSL_SHLIBVER} ${STAGEDIR}${PREFIX}/lib
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/$i.so.${OPENSSL_SHLIBVER}
-	${LN} -sf $i.so.${OPENSSL_SHLIBVER} ${STAGEDIR}${PREFIX}/lib/$i.so
+#.for i in libcrypto libssl
+#	${INSTALL_DATA} ${WRKSRC}/$i.so.${OPENSSL_SHLIBVER} ${STAGEDIR}${PREFIX}/lib
+#	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/$i.so.${OPENSSL_SHLIBVER}
+#	${LN} -sf $i.so.${OPENSSL_SHLIBVER} ${STAGEDIR}${PREFIX}/lib/$i.so
+#.endfor
+.for i in capi devcrypto padlock
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/engines-12/${i}.so
 .endfor
-.for i in capi padlock
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/engines-1.1/${i}.so
-.endfor
+
+post-install-SHARED-off:
+	${RMDIR} ${STAGEDIR}${PREFIX}/lib/engines-12
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/openssl

@@ -22,7 +22,8 @@ NC_DESC=	Install TLS-enabled netcat
 TLS1_3_DESC=	TLSv1.3 support (experimental)
 
 CONFLICTS_INSTALL=	libressl-[0-9]* \
-			openssl-[0-9]*
+			openssl-[0-9]* \
+			openssl-devel-[0-9]*
 
 NC_CONFIGURE_ENABLE=	nc
 

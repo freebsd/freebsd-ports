@@ -10538,7 +10538,6 @@ devel/rubygem-sidekiq-limit_fetch||2018-11-01|Obsolete by www/gitlab-ce 11.4.x u
 textproc/rubygem-github-markup16|textproc/rubygem-github-markup|2018-11-01|Obsolete by www/gitlab-ce 11.4.x upgrade, please use textproc/rubygem-github-markup
 www/rubygem-dropzonejs-rails07|www/rubygem-dropzonejs-rails|2018-11-01|Obsolete by www/gitlab-ce 11.4.x upgrade, please use www/rubygem-dropzonejs-rails
 audio/icecast2|audio/icecast|2018-11-03|Use upstream naming
-security/openssl-devel|security/openssl111|2018-11-04|Use security/openssl111 instead
 irc/netwalker-ircc||2018-11-04|Has expired: Upstream gone, very old code base, use modern irc client instead
 x11-toolkits/qt5-quick|x11-toolkits/qt5-declarative|2018-11-04|Remove unnecessary split
 lang/qt5-qml|x11-toolkits/qt5-declarative|2018-11-04|Remove unnecessary split
