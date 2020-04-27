@@ -1,5 +1,5 @@
 Simplestroke is a simple utility that detects mouse gestures.  It
-currently detects twelve pre-defined mouse gestures and prints the
+currently detects sixteen pre-defined mouse gestures and prints the
 name of the detected gesture to stdout, if any.  The output can then
 e.g. be used in a simple shell script to execute commands.
 
@@ -7,4 +7,4 @@ Example usages could include closing windows in i3 by drawing a Z over
 them or other window manipulations, or pausing your music player by
 drawing a left-to-right line.
 
-WWW: https://github.com/t6/simplestroke/
+WWW: https://github.com/t6/simplestroke
