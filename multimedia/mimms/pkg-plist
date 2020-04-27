@@ -8,4 +8,4 @@ bin/mimms
 %%PYTHON_SITELIBDIR%%/libmimms/libmms.py
 %%PYTHON_SITELIBDIR%%/libmimms/libmms.pyc
 %%PYTHON_SITELIBDIR%%/libmimms/libmms.pyo
-man/man1/mimms.1.gz
+share/man/man1/mimms.1.gz
