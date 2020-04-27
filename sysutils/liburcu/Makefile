@@ -2,21 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	liburcu
-PORTVERSION=	0.10.1
+PORTVERSION=	0.12.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://lttng.org/files/urcu/
 DISTNAME=	userspace-rcu-${PORTVERSION}
 
-MAINTAINER=	mmokhi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Userspace read-copy-update (RCU) data synchronization library
 
 LICENSE=	LGPL21
 
-BROKEN_mips=	Fails to build: undefined reference to `__sync_bool_compare_and_swap_4
-BROKEN_mips64=	Fails to build: undefined reference to `__sync_bool_compare_and_swap_4
-
 PLIST_SUB=	SO_SHORT_VER=6 \
-		SO_VER=6.0.0
+		SO_VER=6.1.0
 
 USES=		pathfix libtool tar:bzip2
 USE_LDCONFIG=	yes
