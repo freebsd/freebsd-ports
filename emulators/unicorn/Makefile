@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	unicorn
-DISTVERSION=	1.0.2-rc2
+DISTVERSION=	1.0.2-rc3
 CATEGORIES=	emulators
 
 MAINTAINER=	antoine@FreeBSD.org
