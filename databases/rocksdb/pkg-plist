@@ -30,6 +30,7 @@ include/rocksdb/db_stress_tool.h
 include/rocksdb/env.h
 include/rocksdb/env_encryption.h
 include/rocksdb/experimental.h
+include/rocksdb/file_checksum.h
 include/rocksdb/file_system.h
 include/rocksdb/filter_policy.h
 include/rocksdb/flush_block_policy.h
@@ -47,6 +48,7 @@ include/rocksdb/perf_context.h
 include/rocksdb/perf_level.h
 include/rocksdb/persistent_cache.h
 include/rocksdb/rate_limiter.h
+include/rocksdb/rocksdb_namespace.h
 include/rocksdb/slice.h
 include/rocksdb/slice_transform.h
 include/rocksdb/snapshot.h
