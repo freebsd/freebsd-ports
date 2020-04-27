@@ -1,9 +1,9 @@
 # Created by: Jean-Sébastien Pédron <dumbbell@FreeBSD.org>
 # $FreeBSD$
 
-PORTVERSION=	1.44.0.${NIGHTLY_DATE:C,-,,g}
+PORTVERSION=	1.45.0.${NIGHTLY_DATE:C,-,,g}
 # Always set PORTREVISION explicitly as otherwise it is inherited from lang/rust
-PORTREVISION=	1
+PORTREVISION=	0
 PKGNAMESUFFIX=	-nightly
 DISTNAME=	rustc-nightly-src
 
@@ -18,10 +18,10 @@ DISTINFO_FILE=	${.CURDIR}/distinfo
 
 # Get latest from top level 'date' key in
 # https://static.rust-lang.org/dist/channel-rust-nightly.toml
-NIGHTLY_DATE=	2020-04-17
+NIGHTLY_DATE=	2020-04-27
 
 # See WRKSRC/src/stage0.txt for this date
-BOOTSTRAPS_DATE=		2020-03-12
+BOOTSTRAPS_DATE=		2020-04-22
 RUST_BOOTSTRAP_VERSION=		beta
 CARGO_BOOTSTRAP_VERSION=	beta
 
