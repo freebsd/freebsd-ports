@@ -6,6 +6,7 @@ GH_TUPLE=	\
 		alessio:shellescape:b115ca0f9053:alessio_shellescape/vendor/github.com/alessio/shellescape \
 		alicebob:gopher-json:5a6b3ba71ee6:alicebob_gopher_json/vendor/github.com/alicebob/gopher-json \
 		alicebob:miniredis:v2.11.1:alicebob_miniredis/vendor/github.com/alicebob/miniredis/v2 \
+		apache:thrift:v0.12.0:apache_thrift/vendor/github.com/apache/thrift \
 		blang:semver:v3.5.1:blang_semver/vendor/github.com/blang/semver \
 		btcsuite:btcutil:v1.0.1:btcsuite_btcutil/vendor/github.com/btcsuite/btcutil \
 		calebcase:tmpfile:v1.0.1:calebcase_tmpfile/vendor/github.com/calebcase/tmpfile \
@@ -23,7 +24,7 @@ GH_TUPLE=	\
 		golang:appengine:v1.6.5:golang_appengine/vendor/google.golang.org/appengine \
 		golang:crypto:bac4c82f6975:golang_crypto/vendor/golang.org/x/crypto \
 		golang:groupcache:215e87163ea7:golang_groupcache/vendor/github.com/golang/groupcache \
-		golang:net:6afb5195e5aa:golang_net/vendor/golang.org/x/net \
+		golang:net:0de0cce0169b:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:bf48bf16ab8d:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.3.3:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sync:cd5d95a43a6e:golang_sync/vendor/golang.org/x/sync \
@@ -46,7 +47,6 @@ GH_TUPLE=	\
 		hashicorp:go-multierror:v1.0.0:hashicorp_go_multierror/vendor/github.com/hashicorp/go-multierror \
 		hashicorp:hcl:v1.0.0:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
 		inconshreveable:mousetrap:v1.0.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
-		jackc:pgx:v3.2.0:jackc_pgx/vendor/github.com/jackc/pgx \
 		jtolds:monkit-hw:141a0da276b3:jtolds_monkit_hw/vendor/github.com/jtolds/monkit-hw/v2 \
 		jtolds:tracetagger:v2.0.0-rc5:jtolds_tracetagger/vendor/github.com/jtolds/tracetagger/v2 \
 		lib:pq:v1.3.0:lib_pq/vendor/github.com/lib/pq \
@@ -60,12 +60,11 @@ GH_TUPLE=	\
 		nsf:jsondiff:7de28ed2b6e3:nsf_jsondiff/vendor/github.com/nsf/jsondiff \
 		nsf:termbox-go:02980233997d:nsf_termbox_go/vendor/github.com/nsf/termbox-go \
 		pelletier:go-toml:v1.2.0:pelletier_go_toml/vendor/github.com/pelletier/go-toml \
-		pkg:errors:v0.8.1:pkg_errors/vendor/github.com/pkg/errors \
+		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
 		shopspring:decimal:408a2507e114:shopspring_decimal/vendor/github.com/shopspring/decimal \
-		skyrings:skyring-common:d1c0bb1cbd5e:skyrings_skyring_common/vendor/github.com/skyrings/skyring-common \
 		spacemonkeygo:errors:9064522e9fd1:spacemonkeygo_errors/vendor/github.com/spacemonkeygo/errors \
-		spacemonkeygo:monkit:v3.0.5:spacemonkeygo_monkit/vendor/github.com/spacemonkeygo/monkit/v3 \
+		spacemonkeygo:monkit:76480079049a:spacemonkeygo_monkit/vendor/github.com/spacemonkeygo/monkit/v3 \
 		spacemonkeygo:monotime:e3f48a95f98a:spacemonkeygo_monotime/vendor/github.com/spacemonkeygo/monotime \
 		spacemonkeygo:spacelog:2296661a0572:spacemonkeygo_spacelog/vendor/github.com/spacemonkeygo/spacelog \
 		spf13:afero:v1.1.2:spf13_afero/vendor/github.com/spf13/afero \
@@ -74,10 +73,11 @@ GH_TUPLE=	\
 		spf13:jwalterweatherman:v1.0.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		spf13:viper:v1.4.0:spf13_viper/vendor/github.com/spf13/viper \
-		storj:common:1ce63718a5c6:storj_common/vendor/storj.io/common \
-		storj:drpc:v0.0.11:storj_drpc/vendor/storj.io/drpc \
-		storj:private:e9d82e7e0c6b:storj_private/vendor/storj.io/private \
-		storj:uplink:76ecb3d2e025:storj_uplink/vendor/storj.io/uplink \
+		storj:common:e54806ee8c56:storj_common/vendor/storj.io/common \
+		storj:drpc:debb458a7474:storj_drpc/vendor/storj.io/drpc \
+		storj:monkit-jaeger:669a3830ea40:storj_monkit_jaeger/vendor/storj.io/monkit-jaeger \
+		storj:private:fe6c6bb80e76:storj_private/vendor/storj.io/private \
+		storj:uplink:8fbdcbad8065:storj_uplink/vendor/storj.io/uplink \
 		stretchr:testify:v1.5.1:stretchr_testify/vendor/github.com/stretchr/testify \
 		stripe:stripe-go:v63.1.1:stripe_stripe_go/vendor/github.com/stripe/stripe-go \
 		uber-go:atomic:v1.6.0:uber_go_atomic/vendor/go.uber.org/atomic \
