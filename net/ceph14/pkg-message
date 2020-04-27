@@ -6,8 +6,9 @@ It comes with a web based dashboard that cannot be build
 into a package but will require the user to install it himself.
 
 To install the dashboard, please execute:
+    sudo pkg install python2
     sudo pkg install npm
-    cd /usr/local/share/ceph/mgr/dashboard/frontend
+    cd ${LOCALBASE}/share/ceph/mgr/dashboard/frontend
     chown -R ceph .
     ls -asl /var/lib/ceph
     chown -R ceph:ceph /var/lib/ceph

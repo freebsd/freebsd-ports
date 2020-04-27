@@ -1,36 +1,32 @@
-git diff src/CMakeLists.txt
-diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
-index 60e261b10e..287ecc6600 100644
-*** src/CMakeLists.txt.org	2019-09-27 10:19:32.501849000 +0200
---- src/CMakeLists.txt	2019-09-27 10:18:05.318965000 +0200
-***************
-*** 58,63 ****
---- 58,68 ----
-    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-varargs")
-    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-gnu-designator")
-    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-missing-braces -Wno-parentheses -Wno-deprecated-register")
-+   if(FREEBSD)
-+     # Need to use the GNU binutils linker to get versioning right.
-+     set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fuse-ld=/usr/local/bin/ld -Wno-unused-command-line-argument")
-+     set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fuse-ld=/usr/local/bin/ld -Wno-unused-command-line-argument")
-+   endif()
-    if(APPLE)
-      set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -undefined dynamic_lookup")
-    endif()
-***************
-*** 516,522 ****
-    INSTALL_RPATH "")
-  install(TARGETS ceph-osd DESTINATION bin)
-  
-! if (WITH_CEPHFS)
-    add_subdirectory(mds)
-    set(ceph_mds_srcs
-      ceph_mds.cc)
---- 521,527 ----
-    INSTALL_RPATH "")
-  install(TARGETS ceph-osd DESTINATION bin)
-  
-! if (WITH_CEPHFS OR FREEBSD)
-    add_subdirectory(mds)
-    set(ceph_mds_srcs
-      ceph_mds.cc)
+--- src/CMakeLists.txt.orig	2020-01-31 17:07:52 UTC
++++ src/CMakeLists.txt
+@@ -58,6 +58,11 @@ elseif(CMAKE_CXX_COMPILER_ID STREQUAL Clang)
+   set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-varargs")
+   set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-gnu-designator")
+   set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-missing-braces -Wno-parentheses -Wno-deprecated-register")
++  if(FREEBSD)
++    # Need to use the GNU binutils linker to get versioning right.
++    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fuse-ld=/usr/local/bin/ld -Wno-unused-command-line-argument")
++    set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fuse-ld=/usr/local/bin/ld -Wno-unused-command-line-argument")
++  endif()
+   if(APPLE)
+     set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -undefined dynamic_lookup")
+   endif()
+@@ -516,7 +521,7 @@ set_target_properties(ceph-osd PROPERTIES
+   INSTALL_RPATH "")
+ install(TARGETS ceph-osd DESTINATION bin)
+ 
+-if (WITH_CEPHFS)
++if (WITH_CEPHFS OR FREEBSD)
+   add_subdirectory(mds)
+   set(ceph_mds_srcs
+     ceph_mds.cc)
+@@ -625,8 +630,6 @@ add_subdirectory(bash_completion)
+ add_subdirectory(client)
+ 
+ if(WITH_LIBCEPHFS)
+-  find_package(PkgConfig QUIET REQUIRED)
+-  pkg_check_modules(CAPNG REQUIRED libcap-ng)
+   set(libcephfs_srcs libcephfs.cc)
+   add_library(cephfs ${CEPH_SHARED} ${libcephfs_srcs})
+   target_link_libraries(cephfs PRIVATE client ceph-common
