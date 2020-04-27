@@ -2,13 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	awesome-vicious
-PORTVERSION=	2.1.3
+PORTVERSION=	2.4.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://git.sysphere.org/vicious/snapshot/ \
-		LOCAL/wg
-DISTNAME=	vicious-${PORTVERSION}
 
-MAINTAINER=	wg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Widgets for the awesome window manager
 
 LICENSE=	GPLv2
@@ -16,8 +14,13 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	awesome:x11-wm/awesome
 
 USES=		tar:xz
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	vicious-widgets
+GH_PROJECT=	vicious
+
 NO_BUILD=	yes
-PORTDOCS=	README TODO CHANGES LICENSE
+PORTDOCS=	README.md TODO Changes.md LICENSE
 
 OPTIONS_DEFINE=	DOCS
 
