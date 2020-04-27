@@ -1,0 +1,7 @@
+jaraco.util contains a number of nominally useful, reusable classes and
+functions.
+
+They're designed to be intuitively named and self-documenting (many with
+extensive doctests).
+
+WWW: https://pypi.org/project/jaraco.util/
