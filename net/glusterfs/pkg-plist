@@ -118,6 +118,7 @@ include/glusterfs/xlator.h
 include/glusterfs/y.tab.h
 %%GLUSTERLIBDIR%%/auth/addr.so
 %%GLUSTERLIBDIR%%/auth/login.so
+%%GLUSTERLIBDIR%%/rpc-transport/rdma.so
 %%GLUSTERLIBDIR%%/rpc-transport/socket.so
 %%GLUSTERLIBDIR%%/xlator/cluster/afr.so
 %%GLUSTERLIBDIR%%/xlator/cluster/dht.so
