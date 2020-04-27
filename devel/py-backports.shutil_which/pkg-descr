@@ -1,0 +1,8 @@
+This package packports Python 3's shutil.which. Usage:
+
+try:
+    from shutil import which
+except ImportError:
+    from backports.shutil_which import which
+
+WWW: https://github.com/minrk/backports.shutil_which
