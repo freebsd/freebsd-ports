@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	blis
-PORTVERSION=	0.6.1
+PORTVERSION=	0.7.0
 CATEGORIES=	math
 
 MAINTAINER=	jmd@FreeBSD.org
