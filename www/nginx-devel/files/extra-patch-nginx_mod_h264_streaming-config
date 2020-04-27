@@ -1,0 +1,41 @@
+--- ../nginx_mod_h264_streaming-2.2.7/config.orig	2020-04-27 12:01:37.153986000 -0400
++++ ../nginx_mod_h264_streaming-2.2.7/config	2020-04-27 12:16:52.832788000 -0400
+@@ -1,26 +1,19 @@
+ ngx_addon_name=ngx_http_h264_streaming_module
+-HTTP_AUX_FILTER_MODULES="$HTTP_AUX_FILTER_MODULES ngx_http_h264_streaming_module"
+-CFLAGS="$CFLAGS -D_LARGEFILE_SOURCE -DBUILDING_NGINX"
+-
+-H264_STREAMING_MODULE_SOURCES="$ngx_addon_dir/src/ngx_http_h264_streaming_module.c \
++ngx_module_name="$ngx_addon_name"
++ngx_module_type=HTTP_AUX_FILTER
++ngx_module_srcs="$ngx_addon_dir/src/ngx_http_h264_streaming_module.c \
+ 			       $ngx_addon_dir/src/moov.c \
+ 			       $ngx_addon_dir/src/mp4_io.c \
+ 			       $ngx_addon_dir/src/mp4_reader.c \
+ 			       $ngx_addon_dir/src/mp4_writer.c \
+ 			       $ngx_addon_dir/src/output_bucket.c \
+ 			       $ngx_addon_dir/src/output_mp4.c"
+-
+-for streaming_module_source in $H264_STREAMING_MODULE_SOURCES
+-do
+-  already_included=NO
+-  for ngx_addon_src in $NGX_ADDON_SRCS
+-  do
+-    if [ "`basename $ngx_addon_src`" = "`basename $streaming_module_source`" ]; then
+-      already_included=YES
+-      break
+-    fi
+-  done
+-  if [ "$already_included" = "NO" ]; then
+-    NGX_ADDON_SRCS="$NGX_ADDON_SRCS $streaming_module_source"
+-  fi
+-done
++ngx_module_deps="$ngx_addon_dir/src/mod_streaming_export.h \
++		$ngx_addon_dir/src/moov.h \
++		$ngx_addon_dir/src/mp4_io.h \
++		$ngx_addon_dir/src/mp4_process.h \
++		$ngx_addon_dir/src/mp4_reader.h \
++		$ngx_addon_dir/src/mp4_writer.h \
++		$ngx_addon_dir/src/output_bucket.h \
++		$ngx_addon_dir/src/output_mp4.h"
++. auto/module
