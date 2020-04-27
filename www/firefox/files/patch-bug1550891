@@ -72,10 +72,10 @@ index 0be9cce0b4bed..89e67483e4c16 100644
  #else
    // Generic Unix: shm_open + shm_unlink
    do {
-@@ -275,6 +282,13 @@ bool SharedMemory::Freeze() {
-     CHROMIUM_LOG(WARNING) << "failed to freeze shm: " << strerror(errno);
+@@ -277,6 +284,14 @@ bool SharedMemory::ReadOnlyCopy(SharedMemory* ro_out) {
      return false;
    }
+   ro_file = mapped_file_;
 +#elif defined(__FreeBSD__)
 +  cap_rights_t rights;
 +  cap_rights_init(&rights, CAP_MMAP_R);
@@ -83,6 +83,7 @@ index 0be9cce0b4bed..89e67483e4c16 100644
 +    CHROMIUM_LOG(WARNING) << "failed to freeze shm: " << strerror(errno);
 +    return false;
 +  }
++  ro_file = mapped_file_;
  #else
    DCHECK(frozen_file_ >= 0);
    DCHECK(mapped_file_ >= 0);
