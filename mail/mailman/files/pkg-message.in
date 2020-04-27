@@ -8,6 +8,7 @@ integrate with Mailman.  If the port's documentation has been installed,
 extensive post-installation instructions may be found in:
 
   %%DOCSDIR%%/FreeBSD-post-install-notes
+  %%DOCSDIR%%/mailman-install.txt (start at section 4)
 
 Note (1): 
 - ESPECIALLY RELEVANT FOR USERS OF THE BINARY PACKAGE -
@@ -34,7 +35,8 @@ to copy or link %%LOCALBASE%%/libexec/namazu.cgi to
 Refer to %%LOCALBASE%%/etc/namazu/namazurc.sample.
 EOM
 }
-{ message: <<EOM
+{ type: install,
+  message: <<EOM
 If you did just install mailman with pkg -I, --no-script or
 --no-install-scripts, you MUST(!) run the post-install script now, as root:
 

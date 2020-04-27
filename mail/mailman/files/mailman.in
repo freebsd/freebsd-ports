@@ -24,7 +24,6 @@
 
 name="mailman"
 rcvar="mailman_enable"
-required_dirs="%%MAILMANDIR%%/lists/mailman"
 command_interpreter="%%PYTHON_CMD%%"
 command="%%MAILMANDIR%%/bin/mailmanctl"
 command_args="start"
@@ -44,8 +43,15 @@ reopen_cmd="${command} reopen"
 mailman_prestart() {
 	### check/fix permissions if desired
 	if checkyesno mailman_fix_perms ; then 
-	    check_startmsgs && echo "Fixing ${name} permissions:"
-	    env LC_ALL=C %%MAILMANDIR%%/bin/check_perms -f ${rc_debug:+-v}
+		check_startmsgs && echo "Fixing ${name} permissions:"
+		env LC_ALL=C %%MAILMANDIR%%/bin/check_perms -f ${rc_debug:+-v}
+	fi
+
+	### check if site list is created
+	if test ! -d "%%MAILMANDIR%%/lists/mailman" ; then
+		err 78 $'The site-wide "mailman" mailing list has not been created.\n\
+  Please review %%DOCSDIR%%/FreeBSD-post-install-notes,\n\
+  and section 4 onward of %%DOCSDIR%%/mailman-install.txt.'
 	fi
 
 	### check if the default configuration is plausible
