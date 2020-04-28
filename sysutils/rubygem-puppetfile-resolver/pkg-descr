@@ -1,0 +1,6 @@
+This library includes all of the code to parse a Puppetfile and then calculate
+a dependency graph to try and resolve all of the module dependencies and
+versions. The resolver can also restrict on Puppet version, for example, only
+Modules which support Puppet 6.
+
+WWW: http://rubygems.org/gems/puppetfile-resolver
