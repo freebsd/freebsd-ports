@@ -17,7 +17,7 @@ LIB_DEPENDS=	libpoppler-qt5.so:graphics/poppler-qt5
 
 USES=		compiler:c++11-lang pkgconfig pyqt:5 python:3.4+ qmake qt:5
 USE_GITHUB=	yes
-GH_ACCOUNT=	wbsoft
+GH_ACCOUNT=	frescobaldi
 USE_PYQT=	gui xml sip_build
 USE_PYTHON=	autoplist distutils
 
