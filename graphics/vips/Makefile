@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vips
-PORTVERSION=	8.8.3
-PORTREVISION=	6
+PORTVERSION=	8.9.2
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/libvips/libvips/releases/download/v${PORTVERSION}/
 
@@ -19,7 +18,7 @@ LIB_DEPENDS=	libgirepository-1.0.so:devel/gobject-introspection \
 		libfreetype.so:print/freetype2 \
 		libexpat.so:textproc/expat2
 
-USES=		compiler:c++11-lang cpe gettext gmake gnome libtool \
+USES=		compiler:c++11-lang cpe gettext gmake gnome libtool localbase \
 		pathfix pkgconfig python shebangfix
 
 SHEBANG_FILES=	tools/vips-${PORTVERSION:R} tools/vipsprofile
@@ -30,18 +29,17 @@ CONFIGURE_ARGS+=	--without-nifti \
 			--without-pdfium \
 			--without-imagequant
 
-INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_SUB=	VERSION="${PORTVERSION:R}"
 
-OPTIONS_DEFINE=		DOCS X11 GSF FFTW ORC LCMS2 OPENEXR HEIF POPPLER LIBRSVG2 MATIO CFITSIO WEBP PANGO TIFF GIF PNG JPEG LIBEXIF
+OPTIONS_DEFINE=		DEBUG DOCS X11 GSF FFTW ORC LCMS2 OPENEXR HEIF POPPLER LIBRSVG2 MATIO CFITSIO WEBP PANGO TIFF GIF PNG JPEG LIBEXIF
 OPTIONS_RADIO=		MAGICK
 OPTIONS_RADIO_MAGICK=	IMAGEMAGICK GRAPHMAGICK
 OPTIONS_DEFAULT=	X11 GSF FFTW ORC LCMS2 OPENEXR HEIF POPPLER LIBRSVG2 MATIO CFITSIO WEBP PANGO TIFF GIF PNG JPEG LIBEXIF IMAGEMAGICK
+
+DEBUG_CONFIGURE_ENABLE=	debug
+DEBUG_INSTALL_TARGET_OFF=	install-strip
 
 DOCS_CONFIGURE_ENABLE=	gtk-doc gtk-doc-html
 DOCS_BUILD_DEPENDS=	gtkdocize:textproc/gtk-doc

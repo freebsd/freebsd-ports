@@ -3,6 +3,7 @@
 
 PORTNAME=	ruby-vips
 PORTVERSION=	2.0.17
+PORTREVISION=	1
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
