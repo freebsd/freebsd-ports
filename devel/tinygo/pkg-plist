@@ -2613,6 +2613,7 @@ tinygo/src/runtime/scheduler_any.go
 tinygo/src/runtime/scheduler_avr.S
 tinygo/src/runtime/scheduler_coroutines.go
 tinygo/src/runtime/scheduler_cortexm.S
+tinygo/src/runtime/scheduler_gba.S
 tinygo/src/runtime/scheduler_none.go
 tinygo/src/runtime/scheduler_tasks.go
 tinygo/src/runtime/scheduler_tinygoriscv.S
