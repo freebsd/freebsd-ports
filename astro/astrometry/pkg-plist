@@ -137,10 +137,9 @@ astrometry/include/astrometry/mathutil.h
 astrometry/include/astrometry/merge-index.h
 astrometry/include/astrometry/multiindex.h
 astrometry/include/astrometry/new-wcs.h
-astrometry/include/astrometry/ngc2000.h
-astrometry/include/astrometry/ngcic-accurate.h
 astrometry/include/astrometry/nomad-fits.h
 astrometry/include/astrometry/nomad.h
+astrometry/include/astrometry/openngc.h
 astrometry/include/astrometry/os-features-config.h
 astrometry/include/astrometry/os-features.h
 astrometry/include/astrometry/permutedsort.h
@@ -180,7 +179,6 @@ astrometry/include/astrometry/simplexy.h
 astrometry/include/astrometry/sip-utils.h
 astrometry/include/astrometry/sip.h
 astrometry/include/astrometry/sip_qfits.h
-astrometry/include/astrometry/solvedclient.h
 astrometry/include/astrometry/solvedfile.h
 astrometry/include/astrometry/solver.h
 astrometry/include/astrometry/starkd.h
@@ -221,7 +219,6 @@ astrometry/lib/python/astrometry/blind/plotann.py
 astrometry/lib/python/astrometry/blind/plotstuff.py
 astrometry/lib/python/astrometry/blind/plotstuff_c.py
 astrometry/lib/python/astrometry/catalogs/__init__.py
-astrometry/lib/python/astrometry/catalogs/ngc2000.py
 astrometry/lib/python/astrometry/libkd/__init__.py
 astrometry/lib/python/astrometry/libkd/spherematch.py
 astrometry/lib/python/astrometry/libkd/spherematch_c.so
@@ -246,7 +243,6 @@ astrometry/lib/python/astrometry/util/EXIF.py
 astrometry/lib/python/astrometry/util/__init__.py
 astrometry/lib/python/astrometry/util/_util.so
 astrometry/lib/python/astrometry/util/addpath.py
-astrometry/lib/python/astrometry/util/casjobs.py
 astrometry/lib/python/astrometry/util/file.py
 astrometry/lib/python/astrometry/util/filetype.py
 astrometry/lib/python/astrometry/util/find_data_file.py

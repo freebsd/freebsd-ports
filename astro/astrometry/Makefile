@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	astrometry
-PORTVERSION=	0.78
+PORTVERSION=	0.80
 CATEGORIES=	astro
 MASTER_SITES=	http://astrometry.net/downloads/
 DISTNAME=	${PORTNAME}.net-${PORTVERSION}
@@ -23,7 +23,7 @@ LIB_DEPENDS=	libcairo.so:graphics/cairo \
 RUN_DEPENDS=	${PYNUMPY}
 
 USES=		gmake jpeg pkgconfig python shebangfix
-SHEBANG_FILES=	bin/* blind/*.py sdss/*.py util/[!c]*.py util/casjobs.py
+SHEBANG_FILES=	bin/* blind/*.py sdss/*.py util/[!c]*.py
 USE_LDCONFIG=	${PREFIX}/${PORTNAME}/lib
 ALL_TARGET=	all extra
 MAKE_ENV=	INSTALL_DIR=${STAGEDIR}${PREFIX}/${PORTNAME} \
