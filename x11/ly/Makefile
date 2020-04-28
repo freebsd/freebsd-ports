@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.0
 CATEGORIES=	x11
 
-MAINTAINER=	0mp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TUI (ncurses-like) display manager for X and Wayland
 
 LICENSE=	WTFPL
