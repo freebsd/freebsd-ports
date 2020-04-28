@@ -3,7 +3,7 @@
 
 PORTNAME=	redisearch
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.27
+DISTVERSION=	1.6.12
 CATEGORIES=	textproc
 
 MAINTAINER=	osa@FreeBSD.org
@@ -14,7 +14,7 @@ LICENSE_NAME=	Redis Source Available License Agreement
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
-USES=		cmake compiler:c++11-lang
+USES=		cmake compiler
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	RediSearch
