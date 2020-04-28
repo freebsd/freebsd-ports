@@ -114,6 +114,10 @@ man/man1/ipetoipe.1.gz
 %%DATADIR%%/%%VERSION%%/icons/mode_label@2x.png
 %%DATADIR%%/%%VERSION%%/icons/mode_label_32x32.png
 %%DATADIR%%/%%VERSION%%/icons/mode_label_32x32@2x.png
+%%DATADIR%%/%%VERSION%%/icons/mode_laser.png
+%%DATADIR%%/%%VERSION%%/icons/mode_laser@2x.png
+%%DATADIR%%/%%VERSION%%/icons/mode_laser_32x32.png
+%%DATADIR%%/%%VERSION%%/icons/mode_laser_32x32@2x.png
 %%DATADIR%%/%%VERSION%%/icons/mode_lines.png
 %%DATADIR%%/%%VERSION%%/icons/mode_marks.png
 %%DATADIR%%/%%VERSION%%/icons/mode_marks@2x.png
