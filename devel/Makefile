@@ -1032,7 +1032,6 @@
     SUBDIR += jsonrpc-glib
     SUBDIR += judy
     SUBDIR += jwasm
-    SUBDIR += k8048
     SUBDIR += kBuild
     SUBDIR += kapptemplate
     SUBDIR += kcachegrind
@@ -3952,6 +3951,7 @@
     SUBDIR += phpunit7
     SUBDIR += phpunit8
     SUBDIR += physfs
+    SUBDIR += pickle
     SUBDIR += picojson
     SUBDIR += picp
     SUBDIR += picprog
