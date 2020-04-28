@@ -11,8 +11,10 @@ COMMENT=	Lightweight prefix-list generator for various routers v4
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-USES=		autoreconf
+USES=		autoreconf compiler:c11
 USE_GITHUB=	yes
+
+MAKE_ARGS+=	CC="${CC}"
 
 GH_ACCOUNT=	bgp
 
