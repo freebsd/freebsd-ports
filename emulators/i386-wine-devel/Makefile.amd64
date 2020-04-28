@@ -26,16 +26,8 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 .if ${OSREL:C/\..*//} == ${osrel}
 PLIST_SUB+=	OSREL${osrel}=""
 PLIST_SUB+=	NOOSREL${osrel}="@comment "
-.if ${PKGNAMESUFFIX} == -devel
-PLIST_SUB+=	DEVEL=""
-PLIST_SUB+=	OSREL${osrel}-DEVEL=""
-.else
-PLIST_SUB+=	DEVEL="@comment "
-PLIST_SUB+=	OSREL${osrel}-DEVEL="@comment "
-.endif
 .else
 PLIST_SUB+=	OSREL${osrel}="@comment "
-PLIST_SUB+=	OSREL${osrel}-DEVEL="@comment "
 PLIST_SUB+=	NOOSREL${osrel}=""
 .endif
 .endfor
