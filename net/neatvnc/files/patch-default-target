@@ -1,0 +1,24 @@
+Revert https://github.com/any1/neatvnc/commit/a43bb5d3d438 in favor of CPUTYPE.
+Not all i386 and amd64 support AVX and not all armv6 support NEON.
+
+https://github.com/any1/wayvnc/issues/34
+
+--- meson.build.orig	2020-02-21 23:04:19 UTC
++++ meson.build
+@@ -19,16 +19,6 @@ if buildtype == 'release' or buildtype == 'plain'
+ 	c_args += '-DNDEBUG'
+ endif
+ 
+-cpu = host_machine.cpu_family()
+-
+-if cpu == 'x86_64'
+-	c_args += '-mavx'
+-elif cpu == 'arm'
+-	c_args += '-mfpu=neon'
+-endif
+-
+-add_project_arguments(c_args, language: 'c')
+-
+ cc = meson.get_compiler('c')
+ 
+ libm = cc.find_library('m', required: false)
