@@ -50,6 +50,7 @@ OPTIONS_DEFINE=	MANPAGES DOCS
 OPTIONS_DEFAULT=MANPAGES
 
 MANPAGES_CONFIGURE_ENABLE=	man
+MANPAGES_CONFIGURE_WITH=	xml-catalog=${LOCALBASE}/share/xml/catalog
 MANPAGES_BUILD_DEPENDS=	docbook-xml>=0:textproc/docbook-xml \
 			docbook-xsl>=0:textproc/docbook-xsl
 MANPAGES_USE=	GNOME=libxslt:build
