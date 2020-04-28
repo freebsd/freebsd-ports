@@ -17,7 +17,6 @@ share/games/plugins/logos/gnuchess.png
 share/games/plugins/xboard/gnuchess.eng
 %%DATADIR%%/gnuchess.ini
 %%DATADIR%%/smallbook.bin
-share/info/gnuchess.info
 %%NLS%%share/locale/da/LC_MESSAGES/gnuchess.mo
 %%NLS%%share/locale/de/LC_MESSAGES/gnuchess.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/gnuchess.mo
