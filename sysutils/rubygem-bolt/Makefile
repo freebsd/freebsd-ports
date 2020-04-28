@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bolt
-PORTVERSION=	1.45.0
+PORTVERSION=	2.7.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -18,12 +18,15 @@ RUN_DEPENDS=	puppet:sysutils/puppet6 \
 		rubygem-concurrent-ruby>=1.0:devel/rubygem-concurrent-ruby \
 		rubygem-docker-api>=1.34:net/rubygem-docker-api \
 		rubygem-hiera-eyaml>=3:sysutils/rubygem-hiera-eyaml \
+		rubygem-jwt>=2.2:www/rubygem-jwt \
 		rubygem-logging>=2.2:devel/rubygem-logging \
 		rubygem-net-scp>=1.2:security/rubygem-net-scp \
 		rubygem-net-ssh>=4.0:security/rubygem-net-ssh \
+		rubygem-net-ssh-krb>=0.5:security/rubygem-net-ssh-krb \
 		rubygem-orchestrator_client>=0.3:net/rubygem-orchestrator_client \
 		rubygem-puppet-resource_api>=0:devel/rubygem-puppet-resource_api \
 		rubygem-puppet-strings>=0:textproc/rubygem-puppet-strings \
+		rubygem-puppetfile-resolver>=0.1:sysutils/rubygem-puppetfile-resolver \
 		rubygem-ruby_smb>=0:net/rubygem-ruby_smb \
 		rubygem-terminal-table>=1.8:textproc/rubygem-terminal-table \
 		rubygem-winrm-fs>=1.3:sysutils/rubygem-winrm-fs \
@@ -35,7 +38,6 @@ USE_RUBY=	yes
 ruby_OLD_CMD+=	/opt/puppetlabs/puppet/bin/ruby
 SHEBANG_FILES=	libexec/*
 
-PLIST_FILES=	bin/bolt \
-		bin/bolt-inventory-pdb
+PLIST_FILES=	bin/bolt
 
 .include <bsd.port.mk>
