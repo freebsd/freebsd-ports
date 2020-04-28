@@ -45,6 +45,7 @@
     SUBDIR += ansible25
     SUBDIR += ansible26
     SUBDIR += ansible27
+    SUBDIR += ansible28
     SUBDIR += anvil
     SUBDIR += apache-mesos
     SUBDIR += apachetop

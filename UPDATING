@@ -6,6 +6,20 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20200428:
+  AFFECTS: users of sysutils/ansible
+  AUTHOR: bofh@FreeBSD.org
+
+  Ansible has been updated to 2.9.7. Please follow the porting guide
+  to update the rulesets:
+
+  https://docs.ansible.com/ansible/devel/porting_guides/porting_guide_2.9.html
+
+  If you wish to stay with 2.8 version, you can switch
+  to new sysutils/ansible28 port, which tracks stable 2.8 branch:
+
+  # pkg set -n ansible:ansible28
+
+20200428:
   AFFECTS: x11-servers/xwayland-devel
   AUTHOR: jbeich@FreeBSD.org
 
