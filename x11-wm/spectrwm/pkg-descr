@@ -12,4 +12,4 @@ Nevertheless dwm was a phenomenal resource and many good ideas and code was
 borrowed from it.  On the other hand xmonad has great defaults, key bindings
 and xinerama support but is crippled by not being written in C.
 
-WWW: https://opensource.conformal.com/wiki/spectrwm
+WWW: https://github.com/conformal/spectrwm
