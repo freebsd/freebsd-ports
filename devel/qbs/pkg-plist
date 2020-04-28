@@ -43,7 +43,7 @@ include/qbs/use_installed_corelib.pri
 lib/libqbscore.prl
 lib/libqbscore.so
 lib/libqbscore.so.1
-lib/libqbscore.so.1.15
+lib/libqbscore.so.1.16
 lib/libqbscore.so.%%SHLIB_VERSION%%
 lib/qbs/plugins/libclangcompilationdbgenerator.so
 lib/qbs/plugins/libiarewgenerator.so
@@ -148,6 +148,8 @@ man/man1/qbs.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-frameworkprobe.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-includeprobe-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-includeprobe.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qml-libraryprobe-members.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qml-libraryprobe.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-pathprobe-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-pathprobe.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-pkgconfigprobe-members.html
@@ -174,6 +176,8 @@ man/man1/qbs.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsconvenienceitems-javaclasscollection.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsconvenienceitems-javajarfile-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsconvenienceitems-javajarfile.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsconvenienceitems-library-members.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsconvenienceitems-library.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsconvenienceitems-loadablemodule-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsconvenienceitems-loadablemodule.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsconvenienceitems-qtapplication-members.html
@@ -186,6 +190,8 @@ man/man1/qbs.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsconvenienceitems-xpcservice.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbslanguageitems-artifact-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbslanguageitems-artifact.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qml-qbslanguageitems-conanfileprobe-members.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qml-qbslanguageitems-conanfileprobe.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbslanguageitems-depends-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbslanguageitems-depends.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbslanguageitems-export-members.html
@@ -243,6 +249,8 @@ man/man1/qbs.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsmodules-exporter-pkgconfig.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsmodules-exporter-qbs-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsmodules-exporter-qbs.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsmodules-freedesktop-members.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsmodules-freedesktop.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsmodules-ib-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsmodules-ib.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsmodules-ico-members.html
@@ -505,7 +513,10 @@ man/man1/qbs.1.gz
 %%DATADIR%%/imports/qbs/Probes/AndroidNdkProbe.qbs
 %%DATADIR%%/imports/qbs/Probes/AndroidSdkProbe.qbs
 %%DATADIR%%/imports/qbs/Probes/BinaryProbe.qbs
+%%DATADIR%%/imports/qbs/Probes/ClBinaryProbe.qbs
+%%DATADIR%%/imports/qbs/Probes/ClangClBinaryProbe.qbs
 %%DATADIR%%/imports/qbs/Probes/ClangClProbe.qbs
+%%DATADIR%%/imports/qbs/Probes/ConanfileProbe.qbs
 %%DATADIR%%/imports/qbs/Probes/FrameworkProbe.qbs
 %%DATADIR%%/imports/qbs/Probes/GccBinaryProbe.qbs
 %%DATADIR%%/imports/qbs/Probes/GccProbe.qbs
@@ -628,6 +639,8 @@ man/man1/qbs.1.gz
 %%DATADIR%%/modules/cpufeatures/cpufeatures.qbs
 %%DATADIR%%/modules/dmg/DMGModule.qbs
 %%DATADIR%%/modules/dmg/dmg.js
+%%DATADIR%%/modules/freedesktop/FreeDesktop.qbs
+%%DATADIR%%/modules/freedesktop/freedesktop.js
 %%DATADIR%%/modules/ib/IBModule.qbs
 %%DATADIR%%/modules/ib/ib.js
 %%DATADIR%%/modules/ico/IcoModule.qbs
