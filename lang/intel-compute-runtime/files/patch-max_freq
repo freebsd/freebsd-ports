@@ -5,14 +5,14 @@
 
 --- shared/source/os_interface/linux/drm_query.cpp.orig	2020-04-17 18:43:38 UTC
 +++ shared/source/os_interface/linux/drm_query.cpp
-@@ -11,10 +11,41 @@
+@@ -11,10 +11,37 @@
  
  #include <fstream>
  
 +#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
 +#include <sys/param.h>
 +#include <sys/sysctl.h>
-+#include <sys/stat.h>
++#include <cstdio>
 +#include <cstdlib>
 +#endif
 +
@@ -21,12 +21,8 @@
  int Drm::getMaxGpuFrequency(HardwareInfo &hwInfo, int &maxGpuFrequency) {
      maxGpuFrequency = 0;
 +#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
-+    struct stat sb;
-+    if (fstat(getFileDescriptor(), &sb)) {
-+        return 0;
-+    }
 +    char name[SPECNAMELEN + 1];
-+    if (!devname_r(sb.st_rdev, S_IFCHR, name, sizeof(name))) {
++    if (!fdevname_r(getFileDescriptor(), name, sizeof(name))) {
 +        return 0;
 +    }
 +    int id;
@@ -47,7 +43,7 @@
      std::string clockSysFsPath = getSysFsPciPath();
  
      clockSysFsPath += "/gt_max_freq_mhz";
-@@ -26,6 +57,7 @@ int Drm::getMaxGpuFrequency(HardwareInfo &hwInfo, int 
+@@ -26,6 +53,7 @@ int Drm::getMaxGpuFrequency(HardwareInfo &hwInfo, int 
  
      ifs >> maxGpuFrequency;
      ifs.close();
