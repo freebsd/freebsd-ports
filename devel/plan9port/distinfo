@@ -1,9 +1,9 @@
-TIMESTAMP = 1564993745
+TIMESTAMP = 1588021911
 SHA256 (plan9port/pgw.tar.bz2) = de3af82012b3380612b56fa0c1a2ed8daf619a0215189fc59eab9919ec47ea15
 SIZE (plan9port/pgw.tar.bz2) = 9406367
 SHA256 (plan9port/roget.tar.bz2) = b24f051354dabe58f1d825e29db386091c84aec98125dbe499adeca51a32a836
 SIZE (plan9port/roget.tar.bz2) = 482956
 SHA256 (plan9port/scat.tgz) = a995f52544a712f2bdb87f531638d4c846224fa9212d034e3bd8e809cb99be1e
 SIZE (plan9port/scat.tgz) = 5145346
-SHA256 (plan9port/9fans-plan9port-20190619-e995a0c101863688d5f14649ae3de45a7c43789c_GH0.tar.gz) = 639e0bb01728ffd7cc1751eeb1bfc7314615d88d6fa7f4cde21033ad97622624
-SIZE (plan9port/9fans-plan9port-20190619-e995a0c101863688d5f14649ae3de45a7c43789c_GH0.tar.gz) = 23439831
+SHA256 (plan9port/9fans-plan9port-20200330-4650064aa757c217fa72f8819a2cf67c689bcdef_GH0.tar.gz) = a19edb9d52690efa0d7bd31dd1b24bbe6abf88c49e7c5be06becc42700eeae6b
+SIZE (plan9port/9fans-plan9port-20200330-4650064aa757c217fa72f8819a2cf67c689bcdef_GH0.tar.gz) = 23436289
