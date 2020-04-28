@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	adodb
-DISTVERSION=	5.20.9
+DISTVERSION=	5.20.17
 CATEGORIES=	databases www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-php5-only/${PORTNAME}-520-for-php5
-PKGNAMESUFFIX=	5
+PKGNAMESUFFIX=	5${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Database library for PHP
@@ -15,7 +15,7 @@ LICENSE_COMB=	dual
 
 CONFLICTS=	adodb-4.*
 
-USES=		php
+USES=		php:flavors
 USE_PHP=	pcre
 
 WRKSRC=		${WRKDIR}/${PORTNAME}5
