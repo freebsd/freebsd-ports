@@ -1,0 +1,3 @@
+Use PostgreSQL as a remote storage database for Prometheus
+
+WWW: https://github.com/timescale/prometheus-postgresql-adapter

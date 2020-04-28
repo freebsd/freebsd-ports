@@ -1,0 +1,45 @@
+#!/bin/sh
+# $FreeBSD$
+#
+# PROVIDE: prometheus_postgresql_adapter
+# REQUIRE: DAEMON NETWORKING
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# prometheus_postgresql_adapter_enable (bool):	Set to NO by default.
+#		Set it to YES to enable adapter.
+# prometheus_postgresql_adapter_flags (string):	Set to "" by default.
+#
+# prometheus_postgresql_adapter_facility (str):	Syslog facility to use
+#		Default: daemon
+# prometheus_postgresql_adapter_priority (str):	Syslog priority to use
+#		Default: info
+
+. /etc/rc.subr
+
+name=prometheus_postgresql_adapter
+rcvar=prometheus_postgresql_adapter_enable
+load_rc_config $name
+
+prometheus_postgresql_adapter_flags=${prometheus_postgresql_adapter_flags:-"-log-level warn"}
+: ${prometheus_postgresql_adapter_enable:=NO}
+: ${prometheus_postgresql_adapter_facility:=daemon}
+: ${prometheus_postgresql_adapter_priority:=info}
+
+# daemon
+procname="%%PREFIX%%/bin/prometheus-postgresql-adapter"
+command=/usr/sbin/daemon
+pidfile="/var/run/${name}.pid"
+start_cmd="prometheus_postgresql_adapter_startcmd"
+
+prometheus_postgresql_adapter_startcmd()
+{
+	echo "Starting ${name}."
+	/usr/sbin/daemon -c -p ${pidfile} /bin/sh -c "${procname} ${prometheus_postgresql_adapter_flags} 2>&1 \
+		| /usr/bin/logger -t ${name} -p ${prometheus_postgresql_adapter_facility}.${prometheus_postgresql_adapter_priority}"
+}
+
+run_rc_command "$1"
