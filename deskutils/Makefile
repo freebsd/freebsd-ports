@@ -238,6 +238,7 @@
     SUBDIR += tpb
     SUBDIR += treeline
     SUBDIR += treesheets
+    SUBDIR += ultralist
     SUBDIR += virt-manager
     SUBDIR += vit
     SUBDIR += when

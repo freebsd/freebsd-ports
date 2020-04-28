@@ -1,0 +1,10 @@
+Ultralist is a task management system for technical people.
+
+It includes a command-line component that is very fast and stays out
+of the way. There is also a beautiful webapp that seamlessly syncs
+with the command-line.
+
+Ultralist is based off of the Getting Things Done system. It has a
+concept of due dates, projects, and contexts.
+
+WWW: https://ultralist.io/
