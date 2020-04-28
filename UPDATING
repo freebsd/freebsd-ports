@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20200428:
+  AFFECTS: x11-servers/xwayland-devel
+  AUTHOR: jbeich@FreeBSD.org
+
+  DRI3 is enabled by default since mesa-libs-18.3.2_4, so you no
+  longer need to define LIBGL_DRI3_ENABLE in ~/.profile or ~/.login.
+
+  See 20200308 entry for more details.
+
 20200422:
   AFFECTS: users of devel/kyua
   AUTHOR: brooks@FreeBSD.org
