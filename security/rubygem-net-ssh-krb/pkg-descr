@@ -1,0 +1,13 @@
+Add Kerberos (password-less) authentication capabilities to Net::SSH, without
+the need for modifying Net::SSH source code.
+
+This is a great way to help get Capistrano to be accepted in mid-to-large size
+enterprises with strict security rules.
+
+No more getting locked out of the network because you mis-typed your password -
+even if your company prohibits public key or host-based authentication. If your
+organization uses Kerberos (many mid-to-large size corporations do), you can
+use this package to get password-less authentication without breaking your
+company's security guidelines.
+
+WWW: http://rubygems.org/gems/net-ssh-krb
