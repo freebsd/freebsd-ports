@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME?=	mysql
-PORTVERSION=	5.6.47
-PORTREVISION?=	1
+PORTVERSION=	5.6.48
+PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	MYSQL/MySQL-5.6
 PKGNAMESUFFIX?=	56-server
@@ -139,8 +139,8 @@ FEDERATED_SUB_LIST_OFF+=	FEDER=""
 USES+=		compiler:gcc-c++11-lib
 USE_CXXSTD=	gnu++11
 .else
-USES+=		compiler:c++11-lang
-USE_CXXSTD=	gnu++98
+USES+=		compiler:c++11-lib
+USE_CXXSTD=	c++11
 .endif
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200057
