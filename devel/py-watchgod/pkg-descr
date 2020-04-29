@@ -1,0 +1,8 @@
+watchgod is a simple, modern file watching and code reload in python.
+
+watchgod is inspired by watchdog, hence the name, but tries to fix some of the
+frustrations I found with watchdog, namely: separate approaches for each OS, an
+inelegant approach to concurrency using threading, challenges around debouncing
+changes and bugs which weren't being fixed.
+
+WWW: https://github.com/samuelcolvin/watchgod

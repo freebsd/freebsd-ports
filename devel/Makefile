@@ -5205,6 +5205,7 @@
     SUBDIR += py-wadllib
     SUBDIR += py-warlock
     SUBDIR += py-watchdog
+    SUBDIR += py-watchgod
     SUBDIR += py-wcwidth
     SUBDIR += py-weakrefmethod
     SUBDIR += py-weblib
