@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-ARP
-PORTVERSION=	1.0.9
+PORTVERSION=	1.0.10
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,11 +12,10 @@ COMMENT=	Perl extension for creating ARP packets
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	p5-Net-Pcap>=0:net/p5-Net-Pcap
+TEST_DEPENDS=	p5-Net-Pcap>=0:net/p5-Net-Pcap
 
 USES=		perl5 tar:tgz
 USE_PERL5=	configure
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Net/ARP/ARP.so
