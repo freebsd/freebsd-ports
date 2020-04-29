@@ -8,7 +8,7 @@ CATEGORIES=	cad java
 MASTER_SITES=	SF/${PORTNAME}/SweetHome3D-source/${DISTNAME}/
 DISTNAME=	SweetHome3D-${PORTVERSION}-src
 
-MAINTAINER=	matthias@petermann-it.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free interior design application
 
 LICENSE=	GPLv2+
