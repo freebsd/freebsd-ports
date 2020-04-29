@@ -3,16 +3,18 @@
 
 PORTNAME=	netdata
 PORTVERSION=	1.20.0
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-mgmt
 
-MAINTAINER=	mmokhi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Scalable distributed realtime performance and health monitoring
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid
+LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid \
+		libuv.so:devel/libuv \
+		libjson-c.so:devel/json-c
 
 RUN_DEPENDS=	bash:shells/bash \
 		curl:ftp/curl \
@@ -48,9 +50,9 @@ SUB_FILES=	${PORTNAME}.conf.sample
 USERS=		netdata
 GROUPS=		netdata
 
-OPTIONS_DEFINE=		CUPS DBENGINE FREEIPMI JSON LTO
+OPTIONS_DEFINE=		CUPS DBENGINE FREEIPMI LTO
 OPTIONS_SUB=		YES
-OPTIONS_DEFAULT=	DBENGINE JSON
+OPTIONS_DEFAULT=	DBENGINE
 OPTIONS_DEFAULT_FreeBSD_12=	LTO
 OPTIONS_DEFAULT_FreeBSD_13=	LTO
 OPTIONS_DEFAULT+=	${OPTIONS_DEFAULT_${OPSYS}_${OSREL:R}}
@@ -62,16 +64,11 @@ CUPS_LIB_DEPENDS=	libcups.so:print/cups
 DBENGINE_DESC=			Enable support for database engine
 DBENGINE_CONFIGURE_ENABLE=	dbengine
 DBENGINE_LIB_DEPENDS=		libJudy.so:devel/judy \
-				liblz4.so:archivers/liblz4 \
-				libuv.so:devel/libuv
+				liblz4.so:archivers/liblz4
 
 FREEIPMI_DESC=			Enable support for freeipmi
 FREEIPMI_CONFIGURE_ENABLE=	plugin-freeipmi
 FREEIPMI_LIB_DEPENDS=		libfreeipmi.so:sysutils/freeipmi
-
-JSON_DESC=		Enable support for json
-JSON_CONFIGURE_ENABLE=	jsonc
-JSON_LIB_DEPENDS=	libjson-c.so:devel/json-c
 
 LTO_DESC=		Use Link-Time Optimization
 LTO_CONFIGURE_ENABLE=	lto
