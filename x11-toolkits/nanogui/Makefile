@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	nanogui
-DISTVERSION=	g20180413
-PORTREVISION=	4
+DISTVERSION=	g20190922
 CATEGORIES=	x11-toolkits
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,8 +17,8 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 USES=		cmake compiler:c++14-lang eigen:3,build,run gl xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	wjakob
-GH_TAGNAME=	885e4fc
-GH_TUPLE=	wjakob:nanovg:ab38df8:nanovg/ext/nanovg
+GH_TAGNAME=	e9ec8a1a9861cf578d9c6e85a6420080aa715c03
+GH_TUPLE=	wjakob:nanovg:50826f7bf0d910962e6aba2c3310ede889726917:wjakob_nanovg/ext/nanovg
 USE_GL=		gl
 USE_XORG=	x11 xcursor xi xinerama xrandr xxf86vm
 USE_LDCONFIG=	yes

@@ -4,7 +4,6 @@ include/nanogui/colorpicker.h
 include/nanogui/colorwheel.h
 include/nanogui/combobox.h
 include/nanogui/common.h
-include/nanogui/compat.h
 include/nanogui/entypo.h
 include/nanogui/fontstash.h
 include/nanogui/formhelper.h
