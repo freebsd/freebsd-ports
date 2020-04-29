@@ -22,6 +22,8 @@ RUN_DEPENDS=	bash:shells/bash \
 
 USES=		autoreconf cpe pathfix pkgconfig:both python shebangfix ssl
 
+BROKEN_SSL=	libressl libressl-devel
+
 USE_GITHUB=	yes
 
 SHEBANG_GLOB=	*
