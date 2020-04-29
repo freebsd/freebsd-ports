@@ -2,6 +2,7 @@
 
 PORTNAME=	compute-runtime
 DISTVERSION=	20.12.16259
+PORTREVISION=	1
 CATEGORIES=	lang
 PKGNAMEPREFIX=	intel-
 
@@ -26,6 +27,12 @@ CMAKE_ARGS=	-DNEO_DRIVER_VERSION:STRING="${DISTVERSIONFULL}"
 PLIST_FILES=	etc/OpenCL/vendors/intel.icd \
 		bin/ocloc \
 		lib/intel-opencl/libigdrcl.so
+
+OPTIONS_DEFINE=	VAAPI
+OPTIONS_DEFAULT=VAAPI
+
+VAAPI_BUILD_DEPENDS=	${LOCALBASE}/include/va/va.h:multimedia/libva
+VAAPI_CMAKE_BOOL_OFF=	DISABLE_LIBVA
 
 post-patch:
 	@${REINPLACE_CMD} -e '/-Werror/d' \
