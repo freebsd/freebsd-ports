@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	azure_sdk
-PORTVERSION=	0.55.0
+PORTVERSION=	0.56.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -57,7 +57,7 @@ RUN_DEPENDS=	rubygem-azure-storage>=0.15.0.preview<0.15:devel/rubygem-azure-stor
 		rubygem-azure_mgmt_cdn>=0.17.3<0.18:devel/rubygem-azure_mgmt_cdn \
 		rubygem-azure_mgmt_cognitive_services>=0.19.1<0.20:devel/rubygem-azure_mgmt_cognitive_services \
 		rubygem-azure_mgmt_commerce>=0.17.1<0.18:devel/rubygem-azure_mgmt_commerce \
-		rubygem-azure_mgmt_compute>=0.19.1<0.20:devel/rubygem-azure_mgmt_compute \
+		rubygem-azure_mgmt_compute>=0.19.2<0.20:devel/rubygem-azure_mgmt_compute \
 		rubygem-azure_mgmt_consumption>=0.18.0<0.19:devel/rubygem-azure_mgmt_consumption \
 		rubygem-azure_mgmt_container_instance>=0.17.4<0.18:devel/rubygem-azure_mgmt_container_instance \
 		rubygem-azure_mgmt_container_registry>=0.18.3<0.19:devel/rubygem-azure_mgmt_container_registry \
@@ -136,8 +136,8 @@ RUN_DEPENDS=	rubygem-azure-storage>=0.15.0.preview<0.15:devel/rubygem-azure-stor
 		rubygem-azure_mgmt_sql>=0.19.0<0.20:devel/rubygem-azure_mgmt_sql \
 		rubygem-azure_mgmt_sqlvirtualmachine>=0.18.1<0.19:devel/rubygem-azure_mgmt_sqlvirtualmachine \
 		rubygem-azure_mgmt_stor_simple8000_series>=0.17.2<0.18:devel/rubygem-azure_mgmt_stor_simple8000_series \
-		rubygem-azure_mgmt_storage>=0.20.1<0.21:devel/rubygem-azure_mgmt_storage \
-		rubygem-azure_mgmt_storagecache>=0.17.1<0.18:devel/rubygem-azure_mgmt_storagecache \
+		rubygem-azure_mgmt_storage>=0.21.0<0.22:devel/rubygem-azure_mgmt_storage \
+		rubygem-azure_mgmt_storagecache>=0.18.0<0.19:devel/rubygem-azure_mgmt_storagecache \
 		rubygem-azure_mgmt_storagesync>=0.18.0<0.19:devel/rubygem-azure_mgmt_storagesync \
 		rubygem-azure_mgmt_stream_analytics>=0.17.2<0.18:devel/rubygem-azure_mgmt_stream_analytics \
 		rubygem-azure_mgmt_subscriptions>=0.18.2<0.19:devel/rubygem-azure_mgmt_subscriptions \
