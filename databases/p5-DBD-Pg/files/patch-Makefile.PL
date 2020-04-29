@@ -17,12 +17,3 @@
       PERL_MALLOC_OK => 1,
       NEEDS_LINKING  => 1,
       NO_META        => 1,
-@@ -339,7 +338,7 @@ MAKE_SPLINT
- 
- fulltest: RELEASE_TESTING=1
- fulltest: AUTHOR_TESTING=1
--fulltest :: $(TEST_TYPE)
-+fulltest: $(TEST_TYPE)
- 	$(NOECHO) $(NOOP)
- 
- MAKE_FULLTEST
