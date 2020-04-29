@@ -1,8 +1,8 @@
-libCEC allows you in combination with the right hardware to control your
-device with your TV remote control utilising your existing HDMI cabling.
-This library is an enabling platform for the CEC bus in HDMI, it allows
-developers to interact with other HDMI devices without having to worry
-about the communication overhead, handshaking, and the various ways of
-sending a message for each vendor.
+libCEC allows you in combination with the right hardware to control your device
+with your TV remote control utilising your existing HDMI cabling. This library
+is an enabling platform for the CEC bus in HDMI, it allows developers to
+interact with other HDMI devices without having to worry about the communication
+overhead, handshaking, and the various ways of sending a message for each
+vendor.
 
-WWW: http://libcec.pulse-eight.com
+WWW: http://libcec.pulse-eight.com/
