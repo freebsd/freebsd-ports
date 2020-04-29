@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	holidays
-PORTVERSION=	8.1.0
+PORTVERSION=	8.2.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
