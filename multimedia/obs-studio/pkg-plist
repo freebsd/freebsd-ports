@@ -972,6 +972,7 @@ share/obs/obs-studio/themes/Acri/radio_unchecked_focus.png
 share/obs/obs-studio/themes/Acri/sizegrip.png
 share/obs/obs-studio/themes/Acri/top_hook.png
 share/obs/obs-studio/themes/Dark.qss
+share/obs/obs-studio/themes/Dark/close.svg
 share/obs/obs-studio/themes/Dark/down.svg
 share/obs/obs-studio/themes/Dark/expand.svg
 share/obs/obs-studio/themes/Dark/locked.svg
@@ -980,6 +981,7 @@ share/obs/obs-studio/themes/Dark/minus.svg
 share/obs/obs-studio/themes/Dark/mute.svg
 share/obs/obs-studio/themes/Dark/no_sources.svg
 share/obs/obs-studio/themes/Dark/plus.svg
+share/obs/obs-studio/themes/Dark/popout.svg
 share/obs/obs-studio/themes/Dark/refresh.svg
 share/obs/obs-studio/themes/Dark/revert.svg
 share/obs/obs-studio/themes/Dark/save.svg

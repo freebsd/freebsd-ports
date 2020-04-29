@@ -1,9 +1,11 @@
---- plugins/CMakeLists.txt.orig	2020-04-03 00:49:42 UTC
+--- plugins/CMakeLists.txt.orig	2020-04-26 23:47:36 UTC
 +++ plugins/CMakeLists.txt
-@@ -46,6 +46,7 @@ elseif("${CMAKE_SYSTEM_NAME}" MATCHES "FreeBSD")
+@@ -46,7 +46,8 @@ elseif("${CMAKE_SYSTEM_NAME}" MATCHES "FreeBSD")
  	add_subdirectory(linux-pulseaudio)
  	add_subdirectory(linux-v4l2)
  	add_subdirectory(linux-jack)
+-	add_subdirectory(linux-alsa)
++	#add_subdirectory(linux-alsa)
 +	add_subdirectory(vlc-video)
  endif()
  
