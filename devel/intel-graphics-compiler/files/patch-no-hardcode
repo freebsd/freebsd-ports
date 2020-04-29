@@ -1,0 +1,13 @@
+ninja: error: '/usr/local/lib/libLLVM-10.so', needed by 'IGC/Release/elf_packager', missing and no known rule to make it
+
+--- IGC/CMakeLists.txt.orig	2020-04-22 09:56:42 UTC
++++ IGC/CMakeLists.txt
+@@ -3275,7 +3275,7 @@ endif()
+ if(LLVM_LINK_LLVM_DYLIB)
+     # LLVM was built and configured in a way that tools (in our case IGC) should be linked
+     # against single LLVM dynamic library.
+-    set(IGC_BUILD__LLVM_LIBS_TO_LINK "/usr/local/lib/libLLVM-${LLVM_VERSION_MAJOR}.so")
++    set(IGC_BUILD__LLVM_LIBS_TO_LINK "LLVM")
+     message(STATUS "[IGC] Link against LLVM dylib ${IGC_BUILD__LLVM_LIBS_TO_LINK}")
+ else()
+     # LLVM was built into multiple libraries (static or shared).
