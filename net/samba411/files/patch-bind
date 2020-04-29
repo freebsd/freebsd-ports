@@ -49,7 +49,7 @@
 +
 +        bind9_dlz = (
 +            '    # For %s\n'
-+            '    %sdatabase %s/bind9/dlz_bind%s.so";'
++            '    %sdatabase "dlopen %s/bind9/dlz_bind%s.so";'
 +        ) % (
 +            bind9_version, bind9_disabled, samba.param.modules_dir(), bind9_dlz_version
 +        )

@@ -965,6 +965,7 @@ man/man8/winbindd.8.gz
 %%PYTHON_SITELIBDIR%%/samba/tests/kcc/kcc_utils.py
 %%PYTHON_SITELIBDIR%%/samba/tests/kcc/ldif_import_export.py
 %%PYTHON_SITELIBDIR%%/samba/tests/krb5_credentials.py
+%%PYTHON_SITELIBDIR%%/samba/tests/ldap_raw.py
 %%PYTHON_SITELIBDIR%%/samba/tests/ldap_referrals.py
 %%PYTHON_SITELIBDIR%%/samba/tests/libsmb.py
 %%PYTHON_SITELIBDIR%%/samba/tests/loadparm.py
