@@ -77,6 +77,8 @@ bin/netron
 %%PYTHON_SITELIBDIR%%/netron/sklearn-metadata.json
 %%PYTHON_SITELIBDIR%%/netron/sklearn.js
 %%PYTHON_SITELIBDIR%%/netron/tar.js
+%%PYTHON_SITELIBDIR%%/netron/tengine-metadata.json
+%%PYTHON_SITELIBDIR%%/netron/tengine.js
 %%PYTHON_SITELIBDIR%%/netron/tf-metadata.json
 %%PYTHON_SITELIBDIR%%/netron/tf-proto.js
 %%PYTHON_SITELIBDIR%%/netron/tf.js
