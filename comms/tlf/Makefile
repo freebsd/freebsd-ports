@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tlf
-PORTVERSION=	1.3.2
+PORTVERSION=	1.4.1
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	comms hamradio
 
@@ -11,6 +11,7 @@ COMMENT=	Amateur Radio curses based logging program
 
 LICENSE=	GPLv2
 
+LIB_DEPENDS=	libargp.so:devel/argp-standalone
 RUN_DEPENDS=	rec:audio/sox \
 		wget:ftp/wget
 
@@ -19,8 +20,8 @@ USE_GITHUB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PANEL_LIB=-lpanel
 USE_GNOME=	glib20
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -largp" \
+		CPPFLAGS=-I${LOCALBASE}/include
 
 OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	HAMLIB FLDIGI DOCS
