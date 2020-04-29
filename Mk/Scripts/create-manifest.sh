@@ -104,6 +104,7 @@ for stage in INSTALL DEINSTALL UPGRADE; do
 		output=${dp_METADIR}/+${prepost:+${prepost}_}${stage}
 		for input in ${files}; do
 			[ -f "${input}" ] && cat ${input} >> ${output}
+			[ -f "${input}.lua" ] && cp ${input}.lua ${dp_METADIR}
 		done
 	done
 done

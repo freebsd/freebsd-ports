@@ -11,6 +11,18 @@ in the release notes and/or placed into UPDATING.
 All ports committers are allowed to commit to this file.
 
 20200414:
+AUTHOR: bapt@FreeBSD.org
+
+  package scripts can now be done in lua, the following are supported:
+
+  - pkg-pre-install.lua
+  - pkg-post-install.lua
+  - pkg-pre-deinstall.lua
+  - pkg-post-deinstall.lua
+
+  see pkg-lua-script(5) for more details.
+
+20200414:
 AUTHOR: mat@FreeBSD.org
 
   USES=lua gained flavors.
