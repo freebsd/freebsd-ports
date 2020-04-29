@@ -1,6 +1,6 @@
---- src/main/analyzer.cc.orig	2020-03-25 14:13:20 UTC
+--- src/main/analyzer.cc.orig	2020-04-23 16:12:51 UTC
 +++ src/main/analyzer.cc
-@@ -95,7 +95,7 @@ class RetryQueue (public)
+@@ -96,7 +96,7 @@ class RetryQueue (public)
      RetryQueue(unsigned interval_ms)
      {
          assert(interval_ms > 0);
@@ -9,7 +9,7 @@
      }
  
      ~RetryQueue()
-@@ -546,7 +546,7 @@ void Analyzer::idle()
+@@ -552,7 +552,7 @@ void Analyzer::idle()
      struct timeval now, increment;
      unsigned int timeout = SnortConfig::get_conf()->daq_config->timeout;
      packet_gettimeofday(&now);

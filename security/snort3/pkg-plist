@@ -43,6 +43,7 @@ include/snort/file_api/file_segment.h
 include/snort/file_api/file_service.h
 include/snort/flow/expect_cache.h
 include/snort/flow/flow.h
+include/snort/flow/flow_data.h
 include/snort/flow/flow_key.h
 include/snort/flow/flow_stash.h
 include/snort/flow/ha.h
@@ -100,6 +101,7 @@ include/snort/main/snort_config.h
 include/snort/main/snort_debug.h
 include/snort/main/snort_types.h
 include/snort/main/thread.h
+include/snort/main/trace.h
 include/snort/managers/codec_manager.h
 include/snort/managers/inspector_manager.h
 include/snort/mime/decode_b64.h
@@ -111,12 +113,12 @@ include/snort/mime/file_mime_log.h
 include/snort/mime/file_mime_paf.h
 include/snort/mime/file_mime_process.h
 include/snort/network_inspectors/appid/appid_api.h
+include/snort/network_inspectors/appid/appid_app_descriptor.h
 include/snort/network_inspectors/appid/appid_dns_session.h
 include/snort/network_inspectors/appid/appid_http_session.h
 include/snort/network_inspectors/appid/appid_session_api.h
 include/snort/network_inspectors/appid/appid_types.h
 include/snort/network_inspectors/appid/application_ids.h
-include/snort/network_inspectors/appid/http_xff_fields.h
 include/snort/network_inspectors/appid/tp_appid_module_api.h
 include/snort/network_inspectors/appid/tp_appid_session_api.h
 include/snort/network_inspectors/appid/tp_appid_types.h
@@ -178,7 +180,6 @@ include/snort/target_based/snort_protocols.h
 include/snort/time/clock_defs.h
 include/snort/time/packet_time.h
 include/snort/time/stopwatch.h
-include/snort/utils/bitop.h
 include/snort/utils/boyer_moore.h
 include/snort/utils/cpp_macros.h
 include/snort/utils/endian.h
