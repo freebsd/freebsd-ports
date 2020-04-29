@@ -768,6 +768,7 @@
     SUBDIR += ods2
     SUBDIR += ohmu
     SUBDIR += omnibackup
+    SUBDIR += onefetch
     SUBDIR += open
     SUBDIR += opencorsairlink
     SUBDIR += openipmi

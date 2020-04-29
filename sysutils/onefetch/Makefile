@@ -1,0 +1,199 @@
+# $FreeBSD$
+
+PORTNAME=	onefetch
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2.2.0
+CATEGORIES=	sysutils devel
+
+MAINTAINER=	vulcan@wired.sh
+COMMENT=	Git repository summary on your terminal
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
+
+LIB_DEPENDS=	libgit2.so:devel/libgit2
+RUN_DEPENDS=	git:devel/git
+
+USES=		cargo
+USE_GITHUB=	yes
+GH_ACCOUNT=	o2sh
+
+CARGO_CRATES=	adler32-1.0.4 \
+		aho-corasick-0.7.6 \
+		ansi_term-0.11.0 \
+		ansi_term-0.12.1 \
+		approx-0.1.1 \
+		arrayref-0.3.5 \
+		arrayvec-0.4.12 \
+		askalono-0.4.0 \
+		atty-0.2.13 \
+		autocfg-0.1.7 \
+		backtrace-0.3.40 \
+		backtrace-sys-0.1.32 \
+		base64-0.10.1 \
+		base64-0.11.0 \
+		bitflags-1.2.1 \
+		blake2b_simd-0.5.8 \
+		block-buffer-0.7.3 \
+		block-padding-0.1.4 \
+		bstr-0.2.8 \
+		byte-tools-0.3.1 \
+		bytecount-0.5.1 \
+		byteorder-1.3.2 \
+		cc-1.0.46 \
+		cfg-if-0.1.10 \
+		cgmath-0.16.1 \
+		clap-2.33.0 \
+		cloudabi-0.0.3 \
+		color_quant-1.0.1 \
+		colored-1.8.0 \
+		constant_time_eq-0.1.4 \
+		crc32fast-1.2.0 \
+		crossbeam-channel-0.3.9 \
+		crossbeam-deque-0.7.1 \
+		crossbeam-epoch-0.7.2 \
+		crossbeam-queue-0.1.2 \
+		crossbeam-utils-0.6.6 \
+		deflate-0.7.20 \
+		digest-0.8.1 \
+		dirs-2.0.2 \
+		dirs-sys-0.3.4 \
+		either-1.5.3 \
+		encoding_rs-0.8.20 \
+		encoding_rs_io-0.1.6 \
+		env_logger-0.6.2 \
+		failure-0.1.6 \
+		failure_derive-0.1.6 \
+		fake-simd-0.1.2 \
+		fnv-1.0.6 \
+		fuchsia-cprng-0.1.1 \
+		generic-array-0.12.3 \
+		getrandom-0.1.13 \
+		gif-0.10.3 \
+		git2-0.7.5 \
+		glob-0.3.0 \
+		globset-0.4.4 \
+		grep-matcher-0.1.3 \
+		grep-searcher-0.1.6 \
+		handlebars-1.1.0 \
+		heck-0.3.1 \
+		humantime-1.3.0 \
+		idna-0.1.5 \
+		ignore-0.4.10 \
+		image-0.22.3 \
+		inflate-0.4.5 \
+		itoa-0.4.4 \
+		jobserver-0.1.17 \
+		jpeg-decoder-0.1.16 \
+		kernel32-sys-0.2.2 \
+		lazy_static-1.4.0 \
+		libc-0.2.65 \
+		libgit2-sys-0.7.11 \
+		libz-sys-1.0.25 \
+		log-0.4.8 \
+		lzw-0.10.0 \
+		maplit-1.0.2 \
+		matches-0.1.8 \
+		memchr-2.2.1 \
+		memmap-0.7.0 \
+		memoffset-0.5.1 \
+		nodrop-0.1.14 \
+		num-derive-0.2.5 \
+		num-integer-0.1.41 \
+		num-iter-0.1.39 \
+		num-rational-0.2.2 \
+		num-traits-0.1.43 \
+		num-traits-0.2.8 \
+		num_cpus-1.10.1 \
+		opaque-debug-0.2.3 \
+		percent-encoding-1.0.1 \
+		pest-2.1.2 \
+		pest_derive-2.1.0 \
+		pest_generator-2.1.1 \
+		pest_meta-2.1.2 \
+		pkg-config-0.3.16 \
+		png-0.15.0 \
+		proc-macro2-0.4.30 \
+		proc-macro2-1.0.6 \
+		quick-error-1.2.2 \
+		quote-0.6.13 \
+		quote-1.0.2 \
+		rand-0.4.6 \
+		rand_core-0.3.1 \
+		rand_core-0.4.2 \
+		rand_os-0.1.3 \
+		rayon-1.2.0 \
+		rayon-core-1.6.0 \
+		rdrand-0.4.0 \
+		redox_syscall-0.1.56 \
+		redox_users-0.3.1 \
+		regex-1.3.1 \
+		regex-syntax-0.6.12 \
+		rgb-0.8.14 \
+		rmp-0.8.8 \
+		rmp-serde-0.13.7 \
+		rust-argon2-0.5.1 \
+		rustc-demangle-0.1.16 \
+		rustc_version-0.2.3 \
+		ryu-1.0.2 \
+		same-file-1.0.5 \
+		scoped_threadpool-0.1.9 \
+		scopeguard-1.0.0 \
+		semver-0.9.0 \
+		semver-parser-0.7.0 \
+		serde-1.0.101 \
+		serde_derive-1.0.101 \
+		serde_json-1.0.41 \
+		sha-1-0.8.1 \
+		smallvec-0.6.10 \
+		strsim-0.8.0 \
+		strum-0.16.0 \
+		strum_macros-0.16.0 \
+		syn-0.15.44 \
+		syn-1.0.5 \
+		synstructure-0.12.1 \
+		term_size-0.3.1 \
+		termcolor-1.0.5 \
+		textwrap-0.11.0 \
+		thread_local-0.3.6 \
+		tiff-0.3.1 \
+		tokei-10.0.1 \
+		toml-0.5.3 \
+		typenum-1.11.2 \
+		ucd-trie-0.1.2 \
+		unicode-bidi-0.3.4 \
+		unicode-normalization-0.1.8 \
+		unicode-segmentation-1.3.0 \
+		unicode-width-0.1.6 \
+		unicode-xid-0.1.0 \
+		unicode-xid-0.2.0 \
+		url-1.7.2 \
+		vcpkg-0.2.7 \
+		vec_map-0.8.1 \
+		walkdir-2.2.9 \
+		wasi-0.7.0 \
+		winapi-0.2.8 \
+		winapi-0.3.8 \
+		winapi-build-0.1.1 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.2 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		wincolor-1.0.2 \
+		winconsole-0.10.0 \
+		zstd-0.4.28+zstd.1.4.3 \
+		zstd-safe-1.4.13+zstd.1.4.3 \
+		zstd-sys-1.4.13+zstd.1.4.3
+
+PLIST_FILES=	bin/${PORTNAME}
+PORTDOCS=	AUTHORS CHANGELOG.md README.md
+
+OPTIONS_DEFINE=	DOCS
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+
+.include <bsd.port.mk>

@@ -1,0 +1,5 @@
+Command-line tool that displays information about your Git repository
+directly on your terminal, supporting almost 50 different programming
+languages.
+
+WWW: https://github.com/o2sh/onefetch
