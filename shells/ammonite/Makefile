@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ammonite
-DISTVERSION=	2.0.4
+DISTVERSION=	2.1.1
 CATEGORIES=	shells java
 MASTER_SITES=	https://github.com/lihaoyi/Ammonite/releases/download/${PORTVERSION}/
 DISTNAME=	2.12-${PORTVERSION}
@@ -15,10 +15,11 @@ COMMENT=	Provides a system shell in the high-level Scala language
 LICENSE=	MIT
 
 USE_JAVA=	yes
-
 JAVA_VERSION=	1.8+
-NO_BUILD=	yes
+
 NO_ARCH=	yes
+NO_BUILD=	yes
+
 PLIST_FILES=	bin/ammonite
 
 do-extract:
