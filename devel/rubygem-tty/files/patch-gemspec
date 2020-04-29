@@ -1,4 +1,4 @@
---- tty.gemspec.orig	2020-01-26 06:12:01 UTC
+--- tty.gemspec.orig	2020-04-29 13:29:55 UTC
 +++ tty.gemspec
 @@ -24,15 +24,15 @@ Gem::Specification.new do |s|
      s.specification_version = 4
@@ -12,9 +12,10 @@
 +      s.add_runtime_dependency(%q<tty-config>.freeze, ["~> 0.3", ">= 0.3.2"])
        s.add_runtime_dependency(%q<tty-cursor>.freeze, ["~> 0.7"])
        s.add_runtime_dependency(%q<tty-editor>.freeze, ["~> 0.5"])
-       s.add_runtime_dependency(%q<tty-file>.freeze, ["~> 0.8.0"])
+-      s.add_runtime_dependency(%q<tty-file>.freeze, ["~> 0.8.0"])
 -      s.add_runtime_dependency(%q<tty-font>.freeze, ["~> 0.4.0"])
 -      s.add_runtime_dependency(%q<tty-logger>.freeze, ["~> 0.2.0"])
++      s.add_runtime_dependency(%q<tty-file>.freeze, ["~> 0.8"])
 +      s.add_runtime_dependency(%q<tty-font>.freeze, ["~> 0.4"])
 +      s.add_runtime_dependency(%q<tty-logger>.freeze, ["~> 0.2"])
        s.add_runtime_dependency(%q<tty-markdown>.freeze, ["~> 0.6.0"])

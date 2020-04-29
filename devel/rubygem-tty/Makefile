@@ -3,7 +3,7 @@
 
 PORTNAME=	tty
 PORTVERSION=	0.10.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -23,7 +23,7 @@ RUN_DEPENDS=	rubygem-bundler>=1.16:sysutils/rubygem-bundler \
 		rubygem-tty-config>=0.3.2<1:devel/rubygem-tty-config \
 		rubygem-tty-cursor>=0.7<1:devel/rubygem-tty-cursor \
 		rubygem-tty-editor>=0.5<1:devel/rubygem-tty-editor \
-		rubygem-tty-file>=0.8.0<0.9:devel/rubygem-tty-file \
+		rubygem-tty-file>=0.8<1:devel/rubygem-tty-file \
 		rubygem-tty-font>=0.4.0<1:devel/rubygem-tty-font \
 		rubygem-tty-logger>=0.2.0<1:devel/rubygem-tty-logger \
 		rubygem-tty-markdown>=0.6.0<0.7:devel/rubygem-tty-markdown \
