@@ -3,7 +3,7 @@
 
 PORTNAME=	critcl
 PORTVERSION=	3.1.18.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	tcltk@FreeBSD.org
@@ -21,6 +21,7 @@ USES+=		tcl
 USE_GITHUB=	yes
 GH_ACCOUNT=	andreas-kupries
 
+MAKE_ENV=	CRITCL_HOME=${WRKDIR}
 TEST_TARGET=	test
 
 PLIST_SUB+=	VER=${PORTVERSION:R} \
@@ -36,7 +37,7 @@ post-patch:
 	${REINPLACE_CMD} -e 's|%%CC%%|${CC}|g' ${WRKSRC}/lib/critcl/Config
 
 do-install:
-	(cd ${WRKSRC} && ${TCLSH} build.tcl install ${STAGEDIR}${PREFIX}/lib)
+	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${TCLSH} build.tcl install ${STAGEDIR}${PREFIX}/lib)
 	${INSTALL_MAN} ${WRKSRC}/embedded/man/files/critcl_*.n	\
 		${STAGEDIR}${MANPREFIX}/man/mann/
 
