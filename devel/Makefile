@@ -4748,6 +4748,7 @@
     SUBDIR += py-oslo.reports
     SUBDIR += py-oslo.reports1
     SUBDIR += py-oslo.rootwrap
+    SUBDIR += py-oslo.rootwrap5
     SUBDIR += py-oslo.serialization
     SUBDIR += py-oslo.service
     SUBDIR += py-oslo.upgradecheck
