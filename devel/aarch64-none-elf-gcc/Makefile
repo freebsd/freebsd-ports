@@ -46,6 +46,8 @@ CONFIGURE_ARGS+=--target=${GCC_TARGET} --disable-nls --enable-languages=c,c++ \
 		--with-as=${LOCALBASE}/bin/${GCC_TARGET}-as \
 		--with-ld=${LOCALBASE}/bin/${GCC_TARGET}-ld
 
+MAKE_ENV+=	PATH=${PATH}:${LOCALBASE}/${GCC_TARGET}/bin
+
 # U-Boot requires libgcc, crossbuild and install it along with the compiler.
 ALL_TARGET=	all-gcc all-target-libgcc
 INSTALL_TARGET=	install-gcc install-target-libgcc
