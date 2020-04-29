@@ -15,7 +15,7 @@
 name="jitsi_videobridge"
 rcvar=${name}_enable
 
-jitsi_videobridge_env_file="%%LOCALBASE%%/etc/jitsi/jitsi-videobridge.conf"
+jitsi_videobridge_env_file="%%LOCALBASE%%/etc/jitsi/videobridge/jitsi-videobridge.conf"
 jitsi_videobridge_jar="%%JAVAJARDIR%%/jitsi-videobridge.jar"
 jitsi_videobridge_logging_config="%%DATADIR%%/lib/logging.properties"
 

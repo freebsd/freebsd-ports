@@ -15,7 +15,7 @@
 name="jicofo"
 rcvar=${name}_enable
 
-jicofo_env_file="/usr/local/etc/jicofo.conf"
+jicofo_env_file="%%LOCALBASE%%/etc/jitsi/jicofo/jicofo.conf"
 jicofo_jar="%%JAVAJARDIR%%/jicofo.jar"
 jicofo_logging_config="%%DATADIR%%/lib/logging.properties"
 

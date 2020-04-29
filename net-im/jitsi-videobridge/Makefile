@@ -2,9 +2,9 @@
 
 PORTNAME=	jitsi
 DISTVERSION=	2.1-183
+PORTREVISION=	1
 CATEGORIES=	net-im java
 PKGNAMESUFFIX=	-videobridge
-#DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	WebRTC compatible video router or SFU

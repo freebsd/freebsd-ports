@@ -2,6 +2,7 @@
 
 PORTNAME=	jicofo
 DISTVERSION=	1.0-555
+PORTREVISION=	1
 CATEGORIES=	net-im java
 
 MAINTAINER=	acm@FreeBSD.org
