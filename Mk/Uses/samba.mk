@@ -23,7 +23,7 @@ IGNORE=		USES=samba has invalid arguments: ${samba_ARGS:Nbuild:Nenv:Nlib:Nrun}
 
 SAMBAPORT=	net/samba${SAMBA_DEFAULT:S/.//}
 SAMBAINCLUDES=	${LOCALBASE}/include/samba4
-.if ${SAMBA_DEFAULT} == 4.10
+.if ${SAMBA_DEFAULT} == 4.10 || ${SAMBA_DEFAULT} == 4.11
 SAMBALIBS=	${LOCALBASE}/lib/samba4
 .else
 IGNORE=		Invalid version of samba: ${SAMBA_DEFAULT}
