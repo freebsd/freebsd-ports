@@ -1,0 +1,3 @@
+Standalone port of Mednafen bSNES to libretro, itself a fork of bsnes 0.59.
+
+WWW: https://github.com/libretro/beetle-bsnes-libretro

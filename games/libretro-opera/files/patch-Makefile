@@ -1,0 +1,10 @@
+--- Makefile.orig	2020-04-28 06:20:25 UTC
++++ Makefile
+@@ -50,7 +50,6 @@ unixcygpath = /$(subst :,,$(call unixpath,$1))
+ 
+ ifneq (,$(findstring unix,$(platform)))
+     AR = ${CC_PREFIX}ar
+-    CC = ${CC_PREFIX}gcc
+ 
+     TARGET := $(TARGET_NAME)_libretro.so
+     fpic := -fPIC

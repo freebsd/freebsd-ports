@@ -239,3 +239,6 @@ msms-*			science/msms		No commercial use, only for use by individuals in scienti
 unifi-devel-*		net-mgmt/unifi-devel	License restrictions, see https://www.ubnt.com/eula/
 netio*			benchmarks/netio	No commercial use: commercial use requires a commercial license
 zerotier-*	net/zerotier	No SaaS or Govt usage: https://github.com/zerotier/ZeroTierOne/blob/master/LICENSE.txt
+libretro-snes9x-*		emulators/libretro-snes9x	Commercial users must seek permission from copyright holders.
+libretro-snes9x-*		emulators/libretro-snes9x2005	Commercial users must seek permission from copyright holders.
+libretro-snes9x-*		emulators/libretro-snes9x2010	Commercial users must seek permission from copyright holders.

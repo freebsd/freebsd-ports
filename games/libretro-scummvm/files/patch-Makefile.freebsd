@@ -1,0 +1,5 @@
+--- Makefile.freebsd.orig	2020-03-17 23:56:43 UTC
++++ Makefile.freebsd
+@@ -0,0 +1,2 @@
++all:
++	cd backends/platform/libretro/build && ${MAKE}
