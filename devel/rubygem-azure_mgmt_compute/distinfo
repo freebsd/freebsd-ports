@@ -1,3 +1,3 @@
-TIMESTAMP = 1585565004
-SHA256 (rubygem/azure_mgmt_compute-0.19.1.gem) = a4051086612da50969583a079bb2347f5c432634ee1e0127cdf736a74c3ae04e
-SIZE (rubygem/azure_mgmt_compute-0.19.1.gem) = 917504
+TIMESTAMP = 1588163993
+SHA256 (rubygem/azure_mgmt_compute-0.19.2.gem) = 25c671fa03900462ce06d651e738e81d27af9fd0ed2d8a1668b5503145d0c321
+SIZE (rubygem/azure_mgmt_compute-0.19.2.gem) = 1044992
