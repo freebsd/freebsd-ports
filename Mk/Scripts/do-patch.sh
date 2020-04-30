@@ -60,6 +60,7 @@ do_patch() {
 patch_from_directory() {
 	local dir="$1"
 	local msg="$2"
+	local patches_applied=""
 
 	if [ -d "${dir}" ]; then
 		cd "${dir}"
@@ -68,7 +69,6 @@ patch_from_directory() {
 
 			${dp_ECHO_MSG} "===>  Applying ${msg} patches for ${dp_PKGNAME}"
 
-			PATCHES_APPLIED=""
 
 			for i in patch-*; do
 				case ${i} in
@@ -80,11 +80,11 @@ patch_from_directory() {
 							${dp_ECHO_MSG} "===>  Applying ${msg} patch ${i}"
 						fi
 						if do_patch ${dp_PATCH_ARGS} < ${i}; then
-							PATCHES_APPLIED="${PATCHES_APPLIED} ${i}"
+							patches_applied="${patches_applied} ${i}"
 						else
 							${dp_ECHO_MSG} "=> ${msg} patch ${i} failed to apply cleanly."
-							if [ -n "${PATCHES_APPLIED}" -a "${dp_PATCH_SILENT}" != "yes" ]; then
-								${dp_ECHO_MSG} "=> Patch(es) ${PATCHES_APPLIED} applied cleanly."
+							if [ -n "${patches_applied}" -a "${dp_PATCH_SILENT}" != "yes" ]; then
+								${dp_ECHO_MSG} "=> Patch(es) ${patches_applied} applied cleanly."
 							fi
 							false
 						fi
