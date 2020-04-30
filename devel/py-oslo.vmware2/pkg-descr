@@ -1,0 +1,4 @@
+The Oslo VMware library provides support for common VMware operations and APIs.
+
+WWW: https://docs.openstack.org/oslo.vmware/latest/
+WWW: https://github.com/openstack/oslo.vmware
