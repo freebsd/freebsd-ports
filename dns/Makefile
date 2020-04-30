@@ -12,7 +12,6 @@
     SUBDIR += bind-tools
     SUBDIR += bind9-devel
     SUBDIR += bind911
-    SUBDIR += bind914
     SUBDIR += bind916
     SUBDIR += bindgraph
     SUBDIR += bundy
@@ -49,7 +48,6 @@
     SUBDIR += dnsjava
     SUBDIR += dnsmasq
     SUBDIR += dnsmax-perl
-    SUBDIR += dnsperf
     SUBDIR += dnsproxy
     SUBDIR += dnsrecon
     SUBDIR += dnsreflector

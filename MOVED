@@ -14552,3 +14552,5 @@ sysutils/DTraceToolkit|sysutils/dtrace-toolkit|2020-04-26|Renamed to match the p
 devel/k8048|devel/pickle|2020-04-28|Project renamed
 net-mgmt/bgpq|net-mgmt/bgpq3|2020-04-30|Has expired: Use net-mgmt/bgpq3 or net-mgmt/bgpq4
 net/boringtun||2020-04-30|Has expired: Status of the project and motivation is unclear
+dns/dnsperf||2020-04-30|Removed, depends on expired dns/bind914, not compatible with dns/bind916
+dns/bind914|dns/bind916|2020-04-30|Has expired: End of life, please migrate to a newer version of BIND9
