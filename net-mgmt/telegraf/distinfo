@@ -1,6 +1,6 @@
-TIMESTAMP = 1586900331
-SHA256 (influxdata-telegraf-v1.14.1_GH0.tar.gz) = 9e40a77d7f58b5b3b2a7a7c6fcd98b0d5939508a55c24bed968d059596f12072
-SIZE (influxdata-telegraf-v1.14.1_GH0.tar.gz) = 1751305
+TIMESTAMP = 1588229321
+SHA256 (influxdata-telegraf-v1.14.2_GH0.tar.gz) = ac529d4110c761e3743bbf942aa7d465f188363aa4fa2a6d2c9c53f108b339b5
+SIZE (influxdata-telegraf-v1.14.2_GH0.tar.gz) = 1752911
 SHA256 (Azure-azure-amqp-common-go-v3.0.0_GH0.tar.gz) = f498d230bba298dbd42d3d904a7d174ad5a5ec2794bdcb2d26467137235dfb9a
 SIZE (Azure-azure-amqp-common-go-v3.0.0_GH0.tar.gz) = 17018
 SHA256 (Azure-azure-event-hubs-go-v3.2.0_GH0.tar.gz) = 266b3dd7596dc1284a0b4b6ce174fc34460cb8123cfe00740fc9815ea253f6e5
