@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bsdstats
-PORTVERSION=	6.2
+PORTVERSION=	7.0
 CATEGORIES=	sysutils
 DISTFILES=
 
@@ -17,28 +17,23 @@ SUB_FILES=	300.statistics bsdstats-send pkg-message
 SUB_LIST+=	VERSION=${PORTVERSION}
 NO_ARCH=	YES
 
-OPTIONS_DEFINE=	TOR
-TOR_DESC=	Submit securely through TOR anonymity network
-
 PLIST_FILES=	bin/bsdstats-send \
 		etc/periodic/monthly/300.statistics
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	TOR
+TOR_DESC=	Submit securely through TOR anonymity network
 
-.if ${PORT_OPTIONS:MTOR}
-RUN_DEPENDS+=	tor:security/tor
-.endif
+TOR_RUN_DEPENDS=	tor:security/tor
 
-pre-install:
-.if ${PORT_OPTIONS:MTOR}
+pre-install-TOR-on:
 	@${REINPLACE_CMD} -e 's|USE_TOR=NO|USE_TOR=YES|' ${WRKDIR}/300.statistics
 	@${REINPLACE_CMD} -e 's|# REQUIRE: LOGIN|# REQUIRE: LOGIN tor|' ${WRKDIR}/bsdstats
 	@${REINPLACE_CMD} -e 's|@@TOR_MESSAGE@@|Statistics will be submitted anonymously through the TOR network|' \
 	    ${WRKDIR}/pkg-message
-.else
+
+pre-install-TOR-off:
 	@${REINPLACE_CMD} -e 's|@@TOR_MESSAGE@@|You can build bsdstats with TOR port option to submit anonymously|' \
 	    ${WRKDIR}/pkg-message
-.endif
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/periodic/monthly
@@ -47,4 +42,4 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/bsdstats-send \
 		${STAGEDIR}${PREFIX}/bin/bsdstats-send
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

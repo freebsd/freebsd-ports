@@ -387,13 +387,20 @@ report_ports() {
         # Use pkgng
         case $(${UNAME}) in
           MidnightBSD)
+            report_uri="/scripts/report_ports.php"
             query_string="${query_string}$( get_mports | ${SED} -E -e 's/\+/%2b/g' -e 's/,/%2c/g' -e 's/^([^ ]+) +([^\/]+)\/.+$/\&port[]=\2:\1/g' | tr -d '\n')"
             ;;
           *)
-            query_string="${query_string}$( pkg info -o "*" | ${SED} -E -e 's/\+/%2b/g' -e 's/,/%2c/g' -e 's/^([^ ]+) +([^\/]+)\/.+$/\&port[]=\2:\1/g' | tr -d '\n')"
+            report_uri="/scripts/report_ports_v2.php"
+            if [ -f %%PREFIX%%/etc/bsdstats.conf -a "0" = "0`grep ^all-ports /usr/local/etc/bsdstats.conf`" ]; then
+              query_string=$( pkg query %n:%v:%o | fgrep -f %%PREFIX%%/etc/bsdstats.conf | awk -F\/ '{print $1}' | sed -E -e 's/\+/%2b/g' -e 's/,/%2c/g' | awk '{printf"&port[]=%s", $1}' )
+            else
+              query_string=$( pkg query %n:%v:%o | awk -F\/ '{print $1}' | sed -E -e 's/\+/%2b/g' -e 's/,/%2c/g' | awk '{printf"&port[]=%s", $1}' )
+            fi
             ;;
         esac
       else
+        report_uri="/scripts/report_ports.php"
     #-----BEGIN LEGACY: to delete when FreeBSD with pkg_ tools is out of support period (!!! don't forget to clarify what does DragonFly use before removing !!!) -----
         # Use obsolete pkg_* tools
         local line
@@ -406,7 +413,7 @@ report_ports() {
     #-----END LEGACY-----
       fi
       echo_begin "Posting port statistics to ${checkin_server_description}"
-      do_http_request_check_status "POST" "/scripts/report_ports.php" \
+      do_http_request_check_status "POST" $report_uri \
         "token=${TOKEN}&key=${KEY}${query_string}" "application/x-www-form-urlencoded" "ports submission"
       echo_end_success
       log "INFO" "Posted port statistics to ${checkin_server_description}"
