@@ -57,7 +57,7 @@ USES+=		compiler:c++11-lang
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local/include|${PREFIX}/include|' \
 		${WRKSRC}/Jamfile
-	@${REINPLACE_CMD} -e 's|python|${PYTHON_CMD}|' \
+	@${REINPLACE_CMD} -e 's|return "python";|return "${PYTHON_CMD}";|' \
 		${WRKSRC}/test/setup_transfer.cpp
 
 post-install:
