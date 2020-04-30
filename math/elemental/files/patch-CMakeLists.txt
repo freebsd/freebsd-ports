@@ -1,0 +1,20 @@
+--- CMakeLists.txt.orig	2017-02-07 01:23:30 UTC
++++ CMakeLists.txt
+@@ -25,6 +25,8 @@ project(Elemental C CXX)
+ set(EL_VERSION_MAJOR 0)
+ set(EL_VERSION_MINOR 87)
+ 
++set(CMAKE_POSITION_INDEPENDENT_CODE ON)
++
+ list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+ list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules")
+ 
+@@ -100,7 +102,7 @@ option(EL_HYBRID "Make use of OpenMP within MPI packin
+ 
+ option(EL_C_INTERFACE "Build C interface" ON)
+ 
+-if(BUILD_SHARED_LIBS AND EL_C_INTERFACE)
++if(FALSE AND BUILD_SHARED_LIBS AND EL_C_INTERFACE) # disable Python
+   # Define PYTHON_SITE_PACKAGES if you want to install the python package
+   # somewhere other than the default system-wide location (e.g., within your
+   # home directory). Alternatively, if you do NOT define PYTHON_SITE_PACKAGES

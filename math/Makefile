@@ -238,6 +238,7 @@
     SUBDIR += eigen2
     SUBDIR += eigen3
     SUBDIR += eispack
+    SUBDIR += elemental
     SUBDIR += elpa
     SUBDIR += emc2
     SUBDIR += ensmallen
