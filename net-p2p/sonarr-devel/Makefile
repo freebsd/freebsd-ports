@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sonarr
-PORTVERSION=	3.0.3.750
+PORTVERSION=	3.0.3.780
 PORTREVISION=	0
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://download.sonarr.tv/v3/phantom-develop/${PORTVERSION}/
