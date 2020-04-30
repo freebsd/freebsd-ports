@@ -1,3 +1,3 @@
-TIMESTAMP = 1587782896
-SHA256 (antirez-redis-6.0.0.20200424-022f094_GH0.tar.gz) = 8c6c4147efbb5b42886152b27ce54272a629be05101264ffd5af992f430a29ad
-SIZE (antirez-redis-6.0.0.20200424-022f094_GH0.tar.gz) = 2204937
+TIMESTAMP = 1588261373
+SHA256 (antirez-redis-6.0.0.20200430-17dfd7c_GH0.tar.gz) = b3cc0dfbe0b5e45b8d52a02fc3cf357fe4a6e9a7b1bfd5b7baab1135c8f0fd18
+SIZE (antirez-redis-6.0.0.20200430-17dfd7c_GH0.tar.gz) = 2224341
