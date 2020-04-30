@@ -11,7 +11,7 @@ To disable parts of reporting, add these lines to /etc/periodic.conf:
 	monthly_statistics_report_ports="NO"
 
 To limit which ports are being submitted:
-	create /usr/local/etc/bsdstats.conf and list ports to report in
+	create %%PREFIX%%/etc/bsdstats.conf and list ports to report in
 	the form ${category}/${portname}, one entry per line. It is also
 	possible to use the special self explanatory keyword "all-ports".
 Example:
