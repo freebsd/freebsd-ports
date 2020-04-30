@@ -1,0 +1,8 @@
+--- configure.ac.orig	2018-11-08 13:08:16 UTC
++++ configure.ac
+@@ -1,4 +1,4 @@
+-AC_INIT([libhomfly], [1.02r5], [mmarco@unizar.es])
++AC_INIT([libhomfly], [1.02r6], [mmarco@unizar.es])
+ AC_CONFIG_AUX_DIR([build-aux])
+ AC_CONFIG_MACRO_DIR([m4])
+ AM_INIT_AUTOMAKE([foreign -Wall])

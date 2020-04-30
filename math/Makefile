@@ -358,6 +358,7 @@
     SUBDIR += libbraiding
     SUBDIR += libccd
     SUBDIR += libflame
+    SUBDIR += libhomfly
     SUBDIR += liblbfgs
     SUBDIR += libmesh
     SUBDIR += libmissing

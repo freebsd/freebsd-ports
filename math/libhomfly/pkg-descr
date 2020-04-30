@@ -1,0 +1,8 @@
+Library to compute the homfly polynomial of a link
+
+This is basically a conversion of the program written by Robert J Jenkins Jr
+into a shared library. It accepts as entry a character string, formatted in the
+same way as the input files that the original code used. The returned value is
+the string that the original program would print on screen.
+
+WWW: https://github.com/miguelmarco/libhomfly
