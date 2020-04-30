@@ -1,0 +1,10 @@
+--- img/Makefile.orig	2020-04-29 13:18:49 UTC
++++ img/Makefile
+@@ -29,6 +29,7 @@ install-pixmaps: $(PIXMAPS)
+ install-icons: $(ICONS)
+ 	for SZ in 16 32 64; do \
+ 		if [ -f xca-$${SZ}x$${SZ}.png ]; then \
++			install -d $(DESTDIR)$(ICONDIR)/$${SZ}x$${SZ}/apps ; \
+ 			install -D -m 0644 xca-$${SZ}x$${SZ}.png $(DESTDIR)$(ICONDIR)/$${SZ}x$${SZ}/apps/$(ICON_NAME).png ; \
+ 		fi ; \
+ 	done

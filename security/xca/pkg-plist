@@ -18,7 +18,10 @@ share/applications/xca.desktop
 %%PORTDOCS%%%%DOCSDIR%%/xca-9.html
 %%PORTDOCS%%%%DOCSDIR%%/xca.html
 share/mime/packages/xca.xml
-share/pixmaps/xca-32x32.xpm
+share/icons/hicolor/16x16/apps/xca.png
+share/icons/hicolor/32x32/apps/xca.png
+share/icons/hicolor/64x64/apps/xca.png
+share/pixmaps/xca.xpm
 %%DATADIR%%/CA.xca
 %%DATADIR%%/TLS_client.xca
 %%DATADIR%%/TLS_server.xca
