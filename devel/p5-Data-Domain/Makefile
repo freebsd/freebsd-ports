@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Data-Domain
-PORTVERSION=	1.06
-PORTREVISION=	1
+PORTVERSION=	1.07
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -24,8 +23,9 @@ RUN_DEPENDS=	p5-Date-Calc>=0:devel/p5-Date-Calc \
 TEST_DEPENDS=	p5-Test-Pod>=1.14:devel/p5-Test-Pod \
 		p5-Test-Pod-Coverage>=1.04:devel/p5-Test-Pod-Coverage
 
-NO_ARCH=	yes
-USE_PERL5=	modbuild
 USES=		perl5
+USE_PERL5=	modbuild
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
