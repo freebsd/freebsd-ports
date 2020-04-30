@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2019-01-11 15:10:33 UTC
+--- CMakeLists.txt.orig	2019-02-23 13:28:34 UTC
 +++ CMakeLists.txt
-@@ -9,12 +9,15 @@ include(CheckIncludeFile)
+@@ -6,12 +6,15 @@ include(TestBigEndian)
  
  option(GENERATE_SRS_SECRET "Generate a random SRS secret if none exists during install" ON)
  option(USE_APPARMOR "Enable AppArmor profile" OFF)
@@ -17,21 +17,21 @@
  set(DOC_DIR "share/doc/${PROJECT_NAME}" CACHE PATH "Path for documentation files")
  mark_as_advanced(CHROOT_DIR SYSCONF_DIR SYSD_UNIT_DIR CONFIG_DIR DOC_DIR)
  
-@@ -22,8 +25,6 @@ find_program(HELP2MAN help2man DOC "path
+@@ -19,8 +22,6 @@ find_program(HELP2MAN help2man DOC "path to help2man e
  find_program(DD dd DOC "path to dd executable")
  find_program(BASE64 base64 DOC "path to base64 executable")
  find_program(OPENSSL openssl DOC "path to OpenSSL executable")
 -find_program(INSSERV insserv DOC "path to insserv executable")
 -find_program(CHKCONFIG chkconfig DOC "path to chkconfig executable")
+ find_program(SYSTEMD systemd)
  find_library(LIBSOCKET socket)
  find_library(LIBNSL nsl)
- 
-@@ -60,26 +61,6 @@ if(HAVE_SYS_TYPES_H)
-     add_definitions(-DHAVE_SYS_TYPES_H)
- endif()
+@@ -65,26 +66,6 @@ endif()
+ check_type_size("unsigned long" SIZEOF_UNSIGNED_LONG)
+ add_definitions(-DSIZEOF_UNSIGNED_LONG=${SIZEOF_UNSIGNED_LONG})
  
 -if(NOT DEFINED INIT_FLAVOR)
--	if(IS_DIRECTORY "${SYSD_UNIT_DIR}" AND EXISTS "/usr/lib/systemd/systemd")
+-    if(SYSTEMD)
 -        message(STATUS "Detected init flavor: systemd")
 -        set(INIT_FLAVOR "systemd" CACHE STRING "Init daemon of this system")
 -    elseif(IS_DIRECTORY "${SYSCONF_DIR}/init" AND EXISTS "/lib/init/upstart-job")
@@ -53,10 +53,10 @@
  add_executable(${PROJECT_NAME} postsrsd.c sha1.c srs2.c)
  enable_testing()
  add_executable(${PROJECT_NAME}_tests tests.c sha1.c srs2.c)
-@@ -92,15 +73,7 @@ endif()
- 
- get_target_property(POSTSRSD ${PROJECT_NAME} LOCATION)
- get_filename_component(POSTSRSD ${POSTSRSD} NAME_WE)
+@@ -95,15 +76,7 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "SunOS")
+     target_link_libraries(${PROJECT_NAME}_tests ${LIBSOCKET} ${LIBNSL})
+ endif()
+ set(POSTSRSD "${PROJECT_NAME}${CMAKE_EXECUTABLE_SUFFIX}")
 -set(APPARMOR_PROFILE "${CMAKE_INSTALL_PREFIX}/sbin/${POSTSRSD}")
 -string(REGEX REPLACE "^/+" "" APPARMOR_PROFILE "${APPARMOR_PROFILE}")
 -string(REPLACE "/" "." APPARMOR_PROFILE "${APPARMOR_PROFILE}")
@@ -69,7 +69,7 @@
  configure_file(init/${PROJECT_NAME}.default.in ${PROJECT_NAME}.default @ONLY)
  
  configure_file(postinstall.cmake.in postinstall.cmake @ONLY)
-@@ -110,7 +83,7 @@ add_custom_command(TARGET ${PROJECT_NAME
+@@ -113,7 +86,7 @@ add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
  	COMMAND ${HELP2MAN} ARGS -s8 -o${PROJECT_NAME}.8 -n "Postfix Sender Rewriting Scheme daemon" -N -h-h -v-v ${CMAKE_CURRENT_BINARY_DIR}/${POSTSRSD}
  	VERBATIM
  )
@@ -78,7 +78,7 @@
  endif()
  
  if(USE_APPARMOR)
-@@ -127,6 +100,8 @@ if(USE_SELINUX)
+@@ -130,6 +103,8 @@ if(USE_SELINUX)
  endif()
  
  install(TARGETS ${PROJECT_NAME} DESTINATION "sbin")
