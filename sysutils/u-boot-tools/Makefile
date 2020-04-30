@@ -14,6 +14,9 @@ LICENSE=	GPLv2
 
 USES=	bison tar:bzip2 gmake python:2.7,build ssl
 
+BROKEN_SSL=	libressl
+BROKEN_SSL_REASON_libressl=	not supported by the upstream
+
 CONFLICTS=	uboot-mkimage
 ALL_TARGET=	tools-only
 MAKE_ARGS=	ARCH=sandbox \
