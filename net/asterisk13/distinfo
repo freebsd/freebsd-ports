@@ -1,6 +1,6 @@
-TIMESTAMP = 1586809087
-SHA256 (asterisk/asterisk-13.32.0.tar.gz) = 5dc68c75c34b58f3363ce4ffe4d952a45c72a5ac873b0c98f48b946dd5abda60
-SIZE (asterisk/asterisk-13.32.0.tar.gz) = 33652378
+TIMESTAMP = 1588265360
+SHA256 (asterisk/asterisk-13.33.0.tar.gz) = 266a6eb5b4287f0bb082af1acd763e18c3aaf4d11154745ba91ea0e26fc49d76
+SIZE (asterisk/asterisk-13.33.0.tar.gz) = 33683712
 SHA256 (asterisk/pjproject-2.9.tar.bz2) = d185ef7855c8ec07191dde92f54b65a7a4b7a6f7bf8c46f7af35ceeb1da2a636
 SIZE (asterisk/pjproject-2.9.tar.bz2) = 5009546
 SHA256 (asterisk/asterisk-core-sounds-en-g729-1.5.tar.gz) = 8b28a59cfa53b59c76e0a191704f0708e3d83acffab8c5e6f25dfc599f0123f9

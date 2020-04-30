@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	asterisk
-PORTVERSION=	13.32.0
-PORTREVISION=	1
+PORTVERSION=	13.33.0
 CATEGORIES=	net
 MASTER_SITES=	https://downloads.asterisk.org/pub/telephony/%SUBDIR%/:DEFAULT,g729 \
 		http://www.pjsip.org/release/${PJSIP_VERSION}/:PJSIP
