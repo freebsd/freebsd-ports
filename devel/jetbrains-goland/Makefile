@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	goland
-PORTVERSION=	2020.1
+PORTVERSION=	2020.1.1
 CATEGORIES=	devel java
 MASTER_SITES=	https://download-cf.jetbrains.com/go/
 PKGNAMEPREFIX=	jetbrains-
@@ -16,7 +16,8 @@ LICENSE_TEXT=	See: https://www.jetbrains.com/store/license.html
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 RUN_DEPENDS=	intellij-fsnotifier>0:java/intellij-fsnotifier \
-		delve>0:devel/delve
+		delve>0:devel/delve \
+		lsof:sysutils/lsof
 
 USES=		python:run shebangfix
 
