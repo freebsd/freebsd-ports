@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	librenms
-PORTVERSION=	1.62.2
+PORTVERSION=	1.63
 PORTEPOCH=	1
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	LOCAL/dvl:vendor
 DISTFILES=	${PORTNAME}-vendor-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}${EXTRACT_SUFX}:vendor
@@ -19,7 +19,7 @@ USES=		python${PY_MYSQL} shebangfix
 # RELEASE_TIMESTAMP is used for a patch inside the vendor code
 # it represents the release date via: git show --pretty='%H|%ct' -s 1.42.01
 # It sits here so you remember to update it with each release
-RELEASE_TIMESTAMP=	1586016242
+RELEASE_TIMESTAMP=	1588045962
 
 # perhaps we also need python-memcache python-mysqldb
 RUN_DEPENDS+=	rrdtool:databases/rrdtool \
@@ -108,6 +108,7 @@ ROOT_DIRS=	LibreNMS app bootstrap config contrib database doc html includes lice
 
 # these are directories which require a generic @DIR entry in pkg-plist
 OTHER_DIRS=	html/js/lang \
+		resources/views/overview/custom \
 		storage/app/public \
 		storage/debugbar \
 		storage/framework/cache/data \
@@ -124,7 +125,8 @@ OTHER_DIRS=	html/js/lang \
 		vendor/laravel/laravel/storage/framework/sessions \
 		vendor/laravel/laravel/storage/framework/testing \
 		vendor/laravel/laravel/storage/framework/views \
-		vendor/laravel/laravel/storage/logs
+		vendor/laravel/laravel/storage/logs \
+		vendor/php-amqplib/php-amqplib/docs
 
 DOCS=		AUTHORS.md CHANGELOG.md CONTRIBUTING.md LICENSE.txt README.md
 PORTDOCS=	*
@@ -192,8 +194,6 @@ post-install:
 
 	@${ECHO_CMD} "@dir(www,www,0775) ${WWWDIR}/logs" >> ${TMPPLIST}
 	@${ECHO_CMD} "@dir(www,www,0775) ${WWWDIR}/bootstrap/cache" >> ${TMPPLIST}
-#	@${ECHO_CMD} "@(www,www,0775) ${WWWDIR}/daily.sh" >> ${TMPPLIST}
-#	@${ECHO_CMD} "@(www,www,0775) ${WWWDIR}/lnms" >> ${TMPPLIST}
 	@${ECHO_CMD} "@dir(www,www,0775) ${WWWDIR}/storage" >> ${TMPPLIST}
 	@${ECHO_CMD} "@dir(www,www,0775) ${WWWDIR}/storage/framework/cache" >> ${TMPPLIST}
 	@${ECHO_CMD} "@dir(www,www,0775) ${WWWDIR}/storage/framework/sessions" >> ${TMPPLIST}
