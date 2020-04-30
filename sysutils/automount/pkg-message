@@ -1,0 +1,12 @@
+[
+{ type: install
+  message: <<EOM
+
+You must run
+
+    service devd restart
+
+to activate the new automount.
+EOM
+}
+]
