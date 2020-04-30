@@ -63,14 +63,6 @@ sbin/munin-run
 %%DATADIR%%/plugins/apache_volume
 %%DATADIR%%/plugins/apc_envunit_
 %%DATADIR%%/plugins/apc_nis
-%%DATADIR%%/plugins/asterisk_channels
-%%DATADIR%%/plugins/asterisk_channelstypes
-%%DATADIR%%/plugins/asterisk_codecs
-%%DATADIR%%/plugins/asterisk_meetme
-%%DATADIR%%/plugins/asterisk_meetmeusers
-%%DATADIR%%/plugins/asterisk_sipchannels
-%%DATADIR%%/plugins/asterisk_sippeers
-%%DATADIR%%/plugins/asterisk_voicemail
 %%DATADIR%%/plugins/bind9
 %%DATADIR%%/plugins/bind9_rndc
 %%DATADIR%%/plugins/cmc_tc_sensor_
