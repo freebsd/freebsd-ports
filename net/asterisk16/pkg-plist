@@ -183,6 +183,7 @@ include/asterisk/dns_resolver.h
 include/asterisk/dns_srv.h
 include/asterisk/dns_test.h
 include/asterisk/dns_tlsa.h
+include/asterisk/dns_txt.h
 include/asterisk/dnsmgr.h
 include/asterisk/doxygen/architecture.h
 include/asterisk/doxygen/licensing.h
