@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ocrmypdf
-DISTVERSION=	9.7.1
+DISTVERSION=	9.8.0
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -33,6 +33,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=4.4.1:devel/py-pytest@${PY_FLAVOR} 
 		${PYTHON_PKGNAMEPREFIX}python-xmp-toolkit>=2.0.1:textproc/py-python-xmp-toolkit@${PY_FLAVOR}
 
 USES=		ghostscript:run python:3.6+ shebangfix
+USE_LOCALE=	en_US.UTF-8
 USE_PYTHON=	autoplist concurrent distutils
 
 SHEBANG_FILES=	src/ocrmypdf/__main__.py \
@@ -41,7 +42,6 @@ SHEBANG_FILES=	src/ocrmypdf/__main__.py \
 		src/ocrmypdf/pdfinfo/__init__.py \
 		tests/spoof/gs_feature_elision.py \
 		tests/spoof/gs_pdfa_failure.py \
-		tests/spoof/tesseract_badutf8.py \
 		tests/spoof/tesseract_big_image_error.py \
 		tests/spoof/tesseract_cache.py \
 		tests/spoof/tesseract_noop.py \
@@ -49,8 +49,6 @@ SHEBANG_FILES=	src/ocrmypdf/__main__.py \
 		tests/spoof/gs_render_failure.py \
 		tests/spoof/gs_raster_failure.py \
 		tests/spoof/tesseract_crash.py
-
-USE_LOCALE=	en_US.UTF-8
 
 NO_ARCH=	yes
 
