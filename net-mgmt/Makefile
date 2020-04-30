@@ -17,7 +17,6 @@
     SUBDIR += arpwatch
     SUBDIR += arts++
     SUBDIR += bandwidthd
-    SUBDIR += bgpq
     SUBDIR += bgpq3
     SUBDIR += bgpq4
     SUBDIR += bgpuma

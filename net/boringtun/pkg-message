@@ -1,8 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-To enable boringtun you need to add the following to /etc/rc.conf:
-   wireguard_impl="boringtun"
-EOM
-}
-]

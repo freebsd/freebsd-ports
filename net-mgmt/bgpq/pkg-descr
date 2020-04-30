@@ -1,8 +1,0 @@
-This program is a lightweight access- and prefix-list generator
-for Cisco routers and GateD/Zebra. Access lists are generated
-based on RADB/RIPE data.
-
-This tool is not so powerful as RAToolSet, but has some
-features missing in RAToolSet, such as optional filtering
-of more specific routes in the same AS or acl string aggregation;
-also, it does not requires Tcl/Tk to be installed.

@@ -14550,3 +14550,5 @@ editors/nano-devel||2020-04-23|Removed: Obsolete now, use editors/nano instead
 devel/py-liblarch||2020-04-25|Removed: uses deprecated version of python; no consumers left
 sysutils/DTraceToolkit|sysutils/dtrace-toolkit|2020-04-26|Renamed to match the package name
 devel/k8048|devel/pickle|2020-04-28|Project renamed
+net-mgmt/bgpq|net-mgmt/bgpq3|2020-04-30|Has expired: Use net-mgmt/bgpq3 or net-mgmt/bgpq4
+net/boringtun||2020-04-30|Has expired: Status of the project and motivation is unclear
