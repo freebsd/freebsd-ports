@@ -20,6 +20,7 @@ sbin/auto-change-nfsd-count
 sbin/auto-change-ownership
 sbin/auto-change-primary-group
 sbin/auto-change-uid
+sbin/auto-check-ports-branch
 sbin/auto-clean-disk
 sbin/auto-clean-pkgsrc
 sbin/auto-clean-ports
@@ -58,6 +59,9 @@ sbin/auto-install-packages
 sbin/auto-install-pkgsrc-tree
 sbin/auto-ipfw-gateway-setup
 sbin/auto-ipmi-install
+sbin/auto-ipmi-remote-access
+sbin/auto-ipmi-remote-power
+sbin/auto-ipmi-remote-status
 sbin/auto-krb-auth-setup
 sbin/auto-ldap-adduser
 sbin/auto-ldap-client-setup
@@ -70,17 +74,20 @@ sbin/auto-nfs-add-share
 sbin/auto-nfs-restart
 sbin/auto-nfs-server-setup
 sbin/auto-octet-to-hex
+sbin/auto-operator-check
 sbin/auto-os-release
 sbin/auto-ostype
 sbin/auto-package-installed
 sbin/auto-passwd-user-expiration
 sbin/auto-password-status
+sbin/auto-pkg-branch
 sbin/auto-pkg-latest
 sbin/auto-pkgsrc-delete-all
 sbin/auto-pkgsrc-dir
 sbin/auto-pkgsrc-prefix
 sbin/auto-pkgsrc-remote-x11
 sbin/auto-pkgsrc-setup
+sbin/auto-ports-branch
 sbin/auto-ports-checkout
 sbin/auto-ports-setup
 sbin/auto-print-make-variable
@@ -112,6 +119,7 @@ sbin/auto-update-system
 sbin/auto-user-admin
 sbin/auto-useradd
 sbin/auto-using-pkgsrc
+sbin/auto-wheel-check
 sbin/auto-wifi-failover
 sbin/auto-xdm-toggle
 %%DATADIR%%/ipfw-rules.sh
