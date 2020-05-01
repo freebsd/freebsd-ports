@@ -1,6 +1,5 @@
 bin/simplescreenrecorder
 man/man1/simplescreenrecorder.1.gz
-share/appdata/simplescreenrecorder.appdata.xml
 share/applications/simplescreenrecorder.desktop
 share/icons/hicolor/128x128/apps/simplescreenrecorder-error.png
 share/icons/hicolor/128x128/apps/simplescreenrecorder-idle.png
@@ -57,6 +56,7 @@ share/icons/hicolor/scalable/apps/simplescreenrecorder-idle.svg
 share/icons/hicolor/scalable/apps/simplescreenrecorder-paused.svg
 share/icons/hicolor/scalable/apps/simplescreenrecorder-recording.svg
 share/icons/hicolor/scalable/apps/simplescreenrecorder.svg
+share/metainfo/simplescreenrecorder.metainfo.xml
 %%DATADIR%%/output-profiles/High%20Quality%20Intermediate.conf
 %%DATADIR%%/output-profiles/Live%20Stream%20%281000kbps%29.conf
 %%DATADIR%%/output-profiles/Live%20Stream%20%282000kbps%29.conf
@@ -69,6 +69,7 @@ share/icons/hicolor/scalable/apps/simplescreenrecorder.svg
 %%DATADIR%%/translations/simplescreenrecorder_el.qm
 %%DATADIR%%/translations/simplescreenrecorder_es.qm
 %%DATADIR%%/translations/simplescreenrecorder_fr.qm
+%%DATADIR%%/translations/simplescreenrecorder_gl.qm
 %%DATADIR%%/translations/simplescreenrecorder_he.qm
 %%DATADIR%%/translations/simplescreenrecorder_hu.qm
 %%DATADIR%%/translations/simplescreenrecorder_id.qm
