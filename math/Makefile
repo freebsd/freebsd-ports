@@ -378,6 +378,7 @@
     SUBDIR += libxlsxwriter
     SUBDIR += libxsmm
     SUBDIR += lidia
+    SUBDIR += linbox
     SUBDIR += linpack
     SUBDIR += lis
     SUBDIR += lll_spect
