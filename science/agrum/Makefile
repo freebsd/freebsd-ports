@@ -10,7 +10,7 @@ COMMENT=	Graphical modeler for Bayesian networks, influence diagrams, etc
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake
+USES=		cmake compiler:c++14-lang
 USE_GITLAB=	yes
 USE_LDCONFIG=	yes
 LLD_UNSAFE=	yes
