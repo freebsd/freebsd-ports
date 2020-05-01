@@ -1,14 +1,5 @@
---- CMakeLists.txt.orig	2018-05-17 14:35:00 UTC
+--- CMakeLists.txt.orig	2019-08-20 07:57:51 UTC
 +++ CMakeLists.txt
-@@ -15,7 +15,7 @@ else ()
-   find_library (PETSC_LIBRARIES NAMES petsc HINTS "${PETSC_DIR}" PATH_SUFFIXES "${PETSC_ARCH}/lib" "lib" NO_DEFAULT_PATH)
-   find_path (PETSC_CONF_DIR petscrules HINTS "${PETSC_DIR}/${PETSC_ARCH}" PATH_SUFFIXES "lib/petsc/conf" "conf" NO_DEFAULT_PATH)
-   mark_as_advanced (PETSC_CONF_DIR)
--  include (${PETSC_CONF_DIR}/PETScConfig.cmake)
-+  include (${PETSC_CONF_DIR}/PETScBuildInternal.cmake)
-   mark_as_advanced (PETSC_CLANGUAGE_Cxx)
- endif ()
- 
 @@ -67,8 +67,8 @@ if (BUILD_STATIC_LIBS)
  endif ()
  
