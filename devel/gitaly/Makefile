@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	gitaly
-DISTVERSION=	12.9.3
-PORTREVISION=	1
+DISTVERSION=	12.9.5
+PORTREVISION=	0
 CATEGORIES=	devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 # define dependencies that are required for build and run under MY_DEPENDS
-MY_DEPENDS=	git>=2.22:devel/git \
+MY_DEPENDS=	git>=2.24.3:devel/git \
 		rubygem-bundler>=1.17.3:sysutils/rubygem-bundler \
 		rubygem-rugged>=0.28:devel/rubygem-rugged \
 		rubygem-github-linguist>=7.5<8.0:textproc/rubygem-github-linguist \
@@ -40,8 +40,8 @@ MAKE_ENV=	GOFLAGS="${GO_BUILDFLAGS}"
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
-# Find this here: https://gitlab.com/gitlab-org/gitaly/tags
-GL_COMMIT=	d6c8a3d730ebb1f00572914e502285fd7729ead3
+# Find this here: https://gitlab.com/gitlab-org/gitaly/-/tags
+GL_COMMIT=	982f91e3c6f073c7c043cded0e29cd42e9a6b951
 
 # for go dependencies
 USE_GITHUB=	nodefault

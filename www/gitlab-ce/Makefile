@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-ce
-PORTVERSION=	12.9.3
-PORTREVISION=	4
+PORTVERSION=	12.9.5
+PORTREVISION=	0
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 # the rubygems of RUN_DEPENDS matches the order of the Gemfile
 # which makes maintaining this long list much easier!
-MY_DEPENDS=	git>=2.22.2:devel/git \
+MY_DEPENDS=	git>=2.24.3:devel/git \
 	gitlab-shell>=12.0.0:devel/gitlab-shell \
 	gitlab-workhorse>=8.25.2:www/gitlab-workhorse \
 	gitaly>=${PORTVERSION}:devel/gitaly \
@@ -113,7 +113,7 @@ MY_DEPENDS=	git>=2.22.2:devel/git \
 	rubygem-rouge317>=3.17.0<3.18:textproc/rubygem-rouge317 \
 	rubygem-truncato>=0.7.11<0.8.0:textproc/rubygem-truncato \
 	rubygem-bootstrap_form>=4.2.0<4.3.0:devel/rubygem-bootstrap_form \
-	rubygem-nokogiri>=1.10.8<1.11.0:textproc/rubygem-nokogiri \
+	rubygem-nokogiri>=1.10.9<1.11.0:textproc/rubygem-nokogiri \
 	rubygem-escape_utils>=1.1<2.0:textproc/rubygem-escape_utils \
 	rubygem-icalendar>=0:devel/rubygem-icalendar \
 	rubygem-diffy>=3.3<4:textproc/rubygem-diffy \
@@ -245,7 +245,7 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 GL_PROJECT=	gitlab-foss
 # Find the here: https://gitlab.com/gitlab-org/gitlab-foss/-/tags
-GL_COMMIT=	571e31b8362a6903c97c5d42f2211151941a7cd3
+GL_COMMIT=	58afee038ec5ae1c6e1887238a0d9b3aba9cfb86
 
 USERS=	git
 GROUPS=	git

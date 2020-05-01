@@ -16186,6 +16186,7 @@
 %%WWWDIR%%/spec/controllers/notification_settings_controller_spec.rb
 %%WWWDIR%%/spec/controllers/oauth/applications_controller_spec.rb
 %%WWWDIR%%/spec/controllers/oauth/authorizations_controller_spec.rb
+%%WWWDIR%%/spec/controllers/oauth/authorized_applications_controller_spec.rb
 %%WWWDIR%%/spec/controllers/oauth/token_info_controller_spec.rb
 %%WWWDIR%%/spec/controllers/omniauth_callbacks_controller_spec.rb
 %%WWWDIR%%/spec/controllers/passwords_controller_spec.rb
@@ -17005,6 +17006,7 @@
 %%WWWDIR%%/spec/features/projects/show/user_sees_last_commit_ci_status_spec.rb
 %%WWWDIR%%/spec/features/projects/show/user_sees_readme_spec.rb
 %%WWWDIR%%/spec/features/projects/show/user_sees_setup_shortcut_buttons_spec.rb
+%%WWWDIR%%/spec/features/projects/show/user_uploads_files_spec.rb
 %%WWWDIR%%/spec/features/projects/snippets/create_snippet_spec.rb
 %%WWWDIR%%/spec/features/projects/snippets/show_spec.rb
 %%WWWDIR%%/spec/features/projects/snippets/user_comments_on_snippet_spec.rb
@@ -21954,6 +21956,7 @@
 %%WWWDIR%%/spec/support/shared_examples/features/navbar_shared_examples.rb
 %%WWWDIR%%/spec/support/shared_examples/features/project_features_apply_to_issuables_shared_examples.rb
 %%WWWDIR%%/spec/support/shared_examples/features/project_list_shared_examples.rb
+%%WWWDIR%%/spec/support/shared_examples/features/project_upload_files_shared_examples.rb
 %%WWWDIR%%/spec/support/shared_examples/features/protected_branches_access_control_ce_shared_examples.rb
 %%WWWDIR%%/spec/support/shared_examples/features/reportable_note_shared_examples.rb
 %%WWWDIR%%/spec/support/shared_examples/features/resolving_discussions_in_issues_shared_examples.rb
