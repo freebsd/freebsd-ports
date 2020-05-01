@@ -1,0 +1,4 @@
+OpenStack library for privilege separation
+
+WWW: https://docs.openstack.org/oslo.privsep/latest/
+WWW: https://github.com/openstack/oslo.privsep
