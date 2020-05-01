@@ -2,7 +2,7 @@
 
 PORTNAME=	step-certificates
 DISTVERSIONPREFIX=v
-DISTVERSION=	0.14.3
+DISTVERSION=	0.14.4
 CATEGORIES=	security
 
 MAINTAINER=	mw@wipp.bayern
@@ -31,14 +31,19 @@ GO_BUILDFLAGS=	-ldflags "-w -X main.Version=${PORTVERSION}"
 
 GH_TUPLE=	\
 		AndreasBriese:bbloom:e2d15f34fcf9:andreasbriese_bbloom/vendor/github.com/AndreasBriese/bbloom \
+		DataDog:zstd:v1.4.1:datadog_zstd/vendor/github.com/DataDog/zstd \
 		Masterminds:goutils:v1.1.0:masterminds_goutils/vendor/github.com/Masterminds/goutils \
 		Masterminds:semver:v3.0.1:masterminds_semver/vendor/github.com/Masterminds/semver/v3 \
 		Masterminds:sprig:v3.0.0:masterminds_sprig/vendor/github.com/Masterminds/sprig/v3 \
 		census-instrumentation:opencensus-go:v0.22.2:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
+		cespare:xxhash:v1.1.0:cespare_xxhash/vendor/github.com/cespare/xxhash \
 		chzyer:readline:2972be24d48e:chzyer_readline/vendor/github.com/chzyer/readline \
 		cpuguy83:go-md2man:v2.0.0:cpuguy83_go_md2man/vendor/github.com/cpuguy83/go-md2man/v2 \
-		dgraph-io:badger:v1.5.3:dgraph_io_badger/vendor/github.com/dgraph-io/badger \
+		dgraph-io:badger:09dd2e1a4195:dgraph_io_badger/vendor/github.com/dgraph-io/badger/v2 \
+		dgraph-io:badger:v1.5.3:dgraph_io_badger_1/vendor/github.com/dgraph-io/badger \
+		dgraph-io:ristretto:8f368f2f2ab3:dgraph_io_ristretto/vendor/github.com/dgraph-io/ristretto \
 		dgryski:go-farm:6a90982ecee2:dgryski_go_farm/vendor/github.com/dgryski/go-farm \
+		dustin:go-humanize:v1.0.0:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
 		etcd-io:bbolt:v1.3.2:etcd_io_bbolt/vendor/go.etcd.io/bbolt \
 		go-chi:chi:v4.0.2:go_chi_chi/vendor/github.com/go-chi/chi \
 		go-sql-driver:mysql:v1.4.1:go_sql_driver_mysql/vendor/github.com/go-sql-driver/mysql \
@@ -48,6 +53,7 @@ GH_TUPLE=	\
 		golang:net:c0dbc17a3553:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:858c2ad4c8b6:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.3.2:golang_protobuf/vendor/github.com/golang/protobuf \
+		golang:snappy:v0.0.1:golang_snappy/vendor/github.com/golang/snappy \
 		golang:sys:b016eb3dc98e:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
 		google:go-cmp:v0.3.1:google_go_cmp/vendor/github.com/google/go-cmp \
@@ -75,12 +81,11 @@ GH_TUPLE=	\
 		shurcooL:sanitized_anchor_name:v1.0.0:shurcool_sanitized_anchor_name/vendor/github.com/shurcooL/sanitized_anchor_name \
 		sirupsen:logrus:v1.4.2:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		smallstep:assert:b99dc1097b15:smallstep_assert/vendor/github.com/smallstep/assert \
-		smallstep:cli:v0.14.2:smallstep_cli/vendor/github.com/smallstep/cli \
-		smallstep:nosql:v0.2.0:smallstep_nosql/vendor/github.com/smallstep/nosql \
+		smallstep:cli:v0.14.3:smallstep_cli/vendor/github.com/smallstep/cli \
+		smallstep:nosql:v0.3.0:smallstep_nosql/vendor/github.com/smallstep/nosql \
 		spf13:cast:v1.3.1:spf13_cast/vendor/github.com/spf13/cast \
 		square:go-jose:v2.4.0:square_go_jose/vendor/gopkg.in/square/go-jose.v2 \
 		urfave:cli:v1.22.2:urfave_cli/vendor/github.com/urfave/cli
-
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/step
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
