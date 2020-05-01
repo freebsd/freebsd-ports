@@ -1,0 +1,14 @@
+This library validates that address are of the form x@y.com. This is the sort
+of validation you would want for a login form on a website.
+
+Key features:
+
+- Good for validating email addresses used for logins/identity.
+- Friendly error messages when validation fails (appropriate to show to end
+  users).
+- (optionally) Checks deliverability: Does the domain name resolve?
+- Supports internationalized domain names and (optionally) internationalized
+  local parts.
+- Normalizes email addresses (super important for internationalized addresses!)
+
+WWW: https://github.com/JoshData/python-email-validator
