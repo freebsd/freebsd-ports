@@ -2325,6 +2325,7 @@
     SUBDIR += twiki-TwistyPlugin
     SUBDIR += twiki-WysiwygPlugin
     SUBDIR += twms
+    SUBDIR += typo3-10
     SUBDIR += typo3-8
     SUBDIR += typo3-9
     SUBDIR += uchiwa

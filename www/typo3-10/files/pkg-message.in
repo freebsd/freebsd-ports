@@ -1,0 +1,24 @@
+[
+{ type: install
+  message: <<EOM
+1) Add the following to your Apache configuration file
+   httpd.conf and restart the web server:
+
+   Alias /typo3 %%PREFIX%%/%%TYPO3WWW%%/%%TYPO3DIR%%/
+   AcceptPathInfo On
+   <Directory %%PREFIX%%/%%TYPO3WWW%%/%%TYPO3DIR%%/>
+      Options Indexes FollowSymLinks
+      AllowOverride None
+      Require all granted
+   </Directory>
+
+2) Visit your TYPO3 site with a browser (i.e.
+   http://your.server.com/typo3/) to continue the
+   installation / upgrade process.
+
+For more information, see the INSTALL DOCUMENTATION:
+
+  https://docs.typo3.org/typo3cms/GettingStartedTutorial/latest/Installation/Index.html
+EOM
+}
+]
