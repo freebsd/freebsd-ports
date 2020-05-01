@@ -20,6 +20,8 @@ USES=		cmake compiler:c++14-lang localbase:ldflags tar:tgz
 USE_LDCONFIG=	yes
 
 CMAKE_ON=	BUILD_SHARED_LIBS
+EXTRA_PATCHES=	${EXTRA_PATCHES_${CHOSEN_COMPILER_TYPE}}
+EXTRA_PATCHES_clang=	${FILESDIR}/extra-patch-CMakeLists.txt
 
 post-extract:
 	@cd ${WRKSRC}/include && ${RM} .DS_Store ._.DS_Store CombBLAS/._CombBLAS.h
