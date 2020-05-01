@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	DateTime-TimeZone
-PORTVERSION=	2.38
+PORTVERSION=	2.39
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
@@ -27,8 +27,9 @@ TEST_DEPENDS=	p5-DateTime>=1.44:devel/p5-DateTime \
 		p5-Test-Requires>0:devel/p5-Test-Requires \
 		p5-Test-Taint>=1.06:devel/p5-Test-Taint
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

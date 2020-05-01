@@ -1,12 +1,3 @@
-%%PERL5_MAN3%%/DateTime::TimeZone.3.gz
-%%PERL5_MAN3%%/DateTime::TimeZone::Catalog.3.gz
-%%PERL5_MAN3%%/DateTime::TimeZone::Floating.3.gz
-%%PERL5_MAN3%%/DateTime::TimeZone::Local.3.gz
-%%PERL5_MAN3%%/DateTime::TimeZone::Local::Unix.3.gz
-%%PERL5_MAN3%%/DateTime::TimeZone::Local::VMS.3.gz
-%%PERL5_MAN3%%/DateTime::TimeZone::OffsetOnly.3.gz
-%%PERL5_MAN3%%/DateTime::TimeZone::OlsonDB.3.gz
-%%PERL5_MAN3%%/DateTime::TimeZone::UTC.3.gz
 %%SITE_PERL%%/DateTime/TimeZone.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Abidjan.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Accra.pm
@@ -76,7 +67,6 @@
 %%SITE_PERL%%/DateTime/TimeZone/America/Fort_Nelson.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Fortaleza.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Glace_Bay.pm
-%%SITE_PERL%%/DateTime/TimeZone/America/Godthab.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Goose_Bay.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Grand_Turk.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Guatemala.pm
@@ -124,6 +114,7 @@
 %%SITE_PERL%%/DateTime/TimeZone/America/North_Dakota/Beulah.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/North_Dakota/Center.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/North_Dakota/New_Salem.pm
+%%SITE_PERL%%/DateTime/TimeZone/America/Nuuk.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Ojinaga.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Panama.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Pangnirtung.pm
@@ -380,3 +371,12 @@
 %%SITE_PERL%%/DateTime/TimeZone/Pacific/Wallis.pm
 %%SITE_PERL%%/DateTime/TimeZone/UTC.pm
 %%SITE_PERL%%/DateTime/TimeZone/WET.pm
+%%PERL5_MAN3%%/DateTime::TimeZone.3.gz
+%%PERL5_MAN3%%/DateTime::TimeZone::Catalog.3.gz
+%%PERL5_MAN3%%/DateTime::TimeZone::Floating.3.gz
+%%PERL5_MAN3%%/DateTime::TimeZone::Local.3.gz
+%%PERL5_MAN3%%/DateTime::TimeZone::Local::Unix.3.gz
+%%PERL5_MAN3%%/DateTime::TimeZone::Local::VMS.3.gz
+%%PERL5_MAN3%%/DateTime::TimeZone::OffsetOnly.3.gz
+%%PERL5_MAN3%%/DateTime::TimeZone::OlsonDB.3.gz
+%%PERL5_MAN3%%/DateTime::TimeZone::UTC.3.gz
