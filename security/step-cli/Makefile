@@ -2,7 +2,7 @@
 
 PORTNAME=	step-cli
 DISTVERSIONPREFIX=v
-DISTVERSION=	0.14.2
+DISTVERSION=	0.14.3
 CATEGORIES=	security
 
 MAINTAINER=	mw@wipp.bayern
@@ -29,6 +29,7 @@ PLIST_FILES=	bin/step \
 GH_TUPLE=	\
 		AndreasBriese:bbloom:e2d15f34fcf9:andreasbriese_bbloom/vendor/github.com/AndreasBriese/bbloom \
 		BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/toml \
+		DataDog:zstd:v1.4.1:datadog_zstd/vendor/github.com/DataDog/zstd \
 		Masterminds:goutils:v1.1.0:masterminds_goutils/vendor/github.com/Masterminds/goutils \
 		Masterminds:semver:v3.0.1:masterminds_semver/vendor/github.com/Masterminds/semver/v3 \
 		Masterminds:sprig:v3.0.0:masterminds_sprig/vendor/github.com/Masterminds/sprig/v3 \
@@ -41,7 +42,8 @@ GH_TUPLE=	\
 		bombsimon:wsl:v2.0.0:bombsimon_wsl/vendor/github.com/bombsimon/wsl/v2 \
 		boombuler:barcode:v1.0.0:boombuler_barcode/vendor/github.com/boombuler/barcode \
 		census-instrumentation:opencensus-go:v0.22.2:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
-		cespare:xxhash:v2.1.1:cespare_xxhash/vendor/github.com/cespare/xxhash/v2 \
+		cespare:xxhash:v1.1.0:cespare_xxhash/vendor/github.com/cespare/xxhash \
+		cespare:xxhash:v2.1.1:cespare_xxhash_1/vendor/github.com/cespare/xxhash/v2 \
 		cheggaaa:pb:v1.0.28:cheggaaa_pb/vendor/gopkg.in/cheggaaa/pb.v1 \
 		chzyer:readline:2972be24d48e:chzyer_readline/vendor/github.com/chzyer/readline \
 		coreos:bbolt:v1.3.3:coreos_bbolt/vendor/github.com/coreos/bbolt \
@@ -53,7 +55,9 @@ GH_TUPLE=	\
 		cpuguy83:go-md2man:v2.0.0:cpuguy83_go_md2man/vendor/github.com/cpuguy83/go-md2man/v2 \
 		creack:pty:v1.1.7:creack_pty/vendor/github.com/creack/pty \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
-		dgraph-io:badger:v1.5.3:dgraph_io_badger/vendor/github.com/dgraph-io/badger \
+		dgraph-io:badger:09dd2e1a4195:dgraph_io_badger/vendor/github.com/dgraph-io/badger/v2 \
+		dgraph-io:badger:v1.5.3:dgraph_io_badger_1/vendor/github.com/dgraph-io/badger \
+		dgraph-io:ristretto:8f368f2f2ab3:dgraph_io_ristretto/vendor/github.com/dgraph-io/ristretto \
 		dgrijalva:jwt-go:v3.2.0:dgrijalva_jwt_go/vendor/github.com/dgrijalva/jwt-go \
 		dgryski:go-farm:6a90982ecee2:dgryski_go_farm/vendor/github.com/dgryski/go-farm \
 		dominikh:go-tools:v0.0.1-2019.2.3:dominikh_go_tools/vendor/honnef.co/go/tools \
@@ -87,6 +91,7 @@ GH_TUPLE=	\
 		golang:net:c0dbc17a3553:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:858c2ad4c8b6:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.3.2:golang_protobuf/vendor/github.com/golang/protobuf \
+		golang:snappy:v0.0.1:golang_snappy/vendor/github.com/golang/snappy \
 		golang:sys:b016eb3dc98e:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
 		golang:time:555d28b269f0:golang_time/vendor/golang.org/x/time \
@@ -169,9 +174,9 @@ GH_TUPLE=	\
 		shurcooL:sanitized_anchor_name:v1.0.0:shurcool_sanitized_anchor_name/vendor/github.com/shurcooL/sanitized_anchor_name \
 		sirupsen:logrus:v1.4.2:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		smallstep:assert:b99dc1097b15:smallstep_assert/vendor/github.com/smallstep/assert \
-		smallstep:certificates:v0.14.2:smallstep_certificates/vendor/github.com/smallstep/certificates \
-		smallstep:certinfo:v1.2.0:smallstep_certinfo/vendor/github.com/smallstep/certinfo \
-		smallstep:nosql:v0.2.0:smallstep_nosql/vendor/github.com/smallstep/nosql \
+		smallstep:certificates:v0.14.4:smallstep_certificates/vendor/github.com/smallstep/certificates \
+		smallstep:certinfo:v1.3.0:smallstep_certinfo/vendor/github.com/smallstep/certinfo \
+		smallstep:nosql:v0.3.0:smallstep_nosql/vendor/github.com/smallstep/nosql \
 		smallstep:truststore:v0.9.3:smallstep_truststore/vendor/github.com/smallstep/truststore \
 		smallstep:zcrypto:fbc32cf76bce:smallstep_zcrypto/vendor/github.com/smallstep/zcrypto \
 		smallstep:zlint:d84eaafe274f:smallstep_zlint/vendor/github.com/smallstep/zlint \
@@ -201,7 +206,10 @@ GH_TUPLE=	\
 		weppos:publicsuffix-go:v0.4.0:weppos_publicsuffix_go/vendor/github.com/weppos/publicsuffix-go \
 		xiang90:probing:43a291ad63a2:xiang90_probing/vendor/github.com/xiang90/probing
 
-GL_TUPLE=	https://gitlab.howett.net:go:plist:77e249a2e2ba6362794925035a31bea61b902a1e:go_plist/vendor/howett.net/plist
+GL_TUPLE=	https://gitlab.howett.net:go:plist:3b63eb3a43b59c776909681ed1fcb412b47d3c9a:go_plist/vendor/howett.net/plist
+
+		# Mirrors for the following packages are not currently known, please look them up and handle these tuples manually:
+		#	::v1.0.0:group_name/vendor/sourcegraph.com/sqs/pbtypes
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
