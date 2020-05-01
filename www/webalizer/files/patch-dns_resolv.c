@@ -1,6 +1,6 @@
 --- dns_resolv.c.orig	2013-02-26 05:37:27 UTC
 +++ dns_resolv.c
-@@ -68,13 +68,21 @@
+@@ -68,21 +68,29 @@
  #include "parser.h"                            /* log parser functions     */
  #include "dns_resolv.h"                        /* our header               */
  
@@ -22,7 +22,19 @@
  
  struct   dns_child child[MAXCHILD];            /* DNS child pipe data      */
  
-@@ -122,7 +130,11 @@ void resolve_dns(struct log_struct *log_
+-DNODEPTR host_table[MAXHASH];                  /* hostname/ip hash table   */
++/* DNODEPTR host_table[MAXHASH]; */
+ 
+-char     buffer[BUFSIZE];                      /* log file record buffer   */
+-char     tmp_buf[BUFSIZE];                     /* used to temp save above  */
+-struct   utsname system_info;                  /* system info structure    */
++static char     buffer[BUFSIZE];               /* log file record buffer   */
++static char     tmp_buf[BUFSIZE];              /* used to temp save above  */
++static struct   utsname system_info;           /* system info structure    */
+ 
+ int      raiseSigChild = 1;
+ 
+@@ -122,7 +130,11 @@ void resolve_dns(struct log_struct *log_rec)
  
     if (debug_mode) fprintf(stderr,"Checking %s...", log_rec->hostname);
  
@@ -34,7 +46,7 @@
     {
        memcpy(&alignedRecord, response.data, sizeof(struct dnsRecord));
        strncpy (log_rec->hostname,
-@@ -131,7 +143,7 @@ void resolve_dns(struct log_struct *log_
+@@ -131,7 +143,7 @@ void resolve_dns(struct log_struct *log_rec)
        log_rec->hostname[MAXHOST-1]=0;
        if (debug_mode)
           fprintf(stderr," found: %s (%ld)\n",
@@ -117,7 +129,7 @@
     return 0;
  
  }
-@@ -720,7 +756,11 @@ static void db_put(char *key, char *valu
+@@ -720,7 +756,11 @@ static void db_put(char *key, char *value, int numeric
           v.size = recSize;
           v.data = recPtr;
  
@@ -210,7 +222,7 @@
  
     if (i) strncpy(str, "Unknown", 8);
     else   strncpy(str, v.data+3, v.size-3);
-@@ -895,7 +961,11 @@ char *geodb_get_cc(DB *db, char *ip, cha
+@@ -895,7 +961,11 @@ char *geodb_get_cc(DB *db, char *ip, char *buf)
     k.data=&addr;
     k.size=sizeof(addr);
  
@@ -222,7 +234,7 @@
     if (!i) memcpy(buf, v.data, 2);
     return buf;
  }
-@@ -906,7 +976,11 @@ char *geodb_get_cc(DB *db, char *ip, cha
+@@ -906,7 +976,11 @@ char *geodb_get_cc(DB *db, char *ip, char *buf)
  
  void geodb_close(DB *db)
  {
