@@ -4,6 +4,7 @@ PORTNAME=	xwayland
 DISTVERSIONPREFIX=	xorg-server-
 DISTVERSION=	1.20.0-641
 DISTVERSIONSUFFIX=	-g${GL_COMMIT:C/(.{12}).*/\1/}
+PORTREVISION=	1
 CATEGORIES=	x11-servers
 PKGNAMESUFFIX=	-devel
 
@@ -43,8 +44,20 @@ MESON_ARGS=	-Dxwayland=true \
 		-Dxvfb=false \
 		-Dudev=false \
 		-Dudev_kms=false \
-		-Ddefault_font_path=${NONEXISTENT}
+		-Ddefault_font_path="${DEFAULT_FONTPATH_LIST:ts,}"
 PLIST_FILES=	bin/Xwayland
+
+# Keep in sync with xorg-server
+FONTPATH_ROOT?=	${LOCALBASE}/share/fonts
+FONTPATHD?=	${PREFIX}/etc/X11/fontpath.d
+DEFAULT_FONTPATH_LIST= \
+	${FONTPATH_ROOT}/misc/	\
+	${FONTPATH_ROOT}/TTF/ \
+	${FONTPATH_ROOT}/OTF/ \
+	${FONTPATH_ROOT}/Type1/ \
+	${FONTPATH_ROOT}/100dpi/ \
+	${FONTPATH_ROOT}/75dpi/ \
+	catalogue:${FONTPATHD}
 
 OPTIONS_DEFINE=	NVIDIA
 
