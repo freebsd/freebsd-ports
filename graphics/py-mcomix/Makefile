@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>=5.2.0:graphics/py-pillow@${PY_FLAVOR}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		gnome python:3.7+ shebangfix
+USES=		gnome python:3.5+ shebangfix
 USE_GNOME=	gtk30 pygobject3
 USE_PYTHON=	flavors
 USE_GITHUB=	yes
