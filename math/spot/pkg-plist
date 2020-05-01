@@ -142,7 +142,6 @@ include/spot/twaalgos/parity.hh
 include/spot/twaalgos/postproc.hh
 include/spot/twaalgos/powerset.hh
 include/spot/twaalgos/product.hh
-include/spot/twaalgos/rabin2parity.hh
 include/spot/twaalgos/randomgraph.hh
 include/spot/twaalgos/randomize.hh
 include/spot/twaalgos/reachiter.hh
