@@ -7,10 +7,7 @@ COMMENT=	Virtual Peer-to-Peer Currency (CLI and Utilities)
 SLAVE_PORT=	yes
 
 OPTIONS_DEFINE=		DEBUG HARDENING TESTS
-OPTIONS_RADIO=
 OPTIONS_DEFAULT=	HARDENING TESTS
-
-PKGHELP=	${NONEXISTENT}
 
 CONFIGURE_ARGS=	--without-daemon \
 		--without-gui \
