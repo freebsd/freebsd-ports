@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	softhsm
-PORTVERSION=	2.5.0
-PORTREVISION=	2
+PORTVERSION=	2.6.1
 CATEGORIES=	security
 MASTER_SITES=	http://dist.opendnssec.org/source/ \
 		http://dist.opendnssec.org/source/testing/
@@ -26,6 +25,9 @@ CONFLICTS=	softhsm-1.*
 USE_LDCONFIG=	yes
 
 LIB_DEPENDS+=		libcppunit.so:devel/cppunit
+MY_DEPENDS+=		p11-kit:security/p11-kit
+BUILD_DEPENDS+=		${MY_DEPENDS}
+RUN_DEPENDS+=		${MY_DEPENDS}
 
 OPTIONS_DEFINE=		SQLITE MIGRATE
 MIGRATE_IMPLIES=	SQLITE
@@ -46,7 +48,7 @@ SQLITE_USES=		sqlite
 MIGRATE_CONFIGURE_WITH=	migrate
 
 CRYP_BOTAN_CONFIGURE_ON=	--with-crypto-backend=botan
-CRYP_BOTAN_LIB_DEPENDS=	libbotan-1.10.so:security/botan110
+CRYP_BOTAN_LIB_DEPENDS=	libbotan-2.so:security/botan2
 
 CRYP_OPEN_CONFIGURE_ON=	--with-crypto-backend=openssl --with-openssl=${OPENSSLBASE}
 
