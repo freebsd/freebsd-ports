@@ -2,8 +2,10 @@
 #
 # MAINTAINER:	portmgr@FreeBSD.org
 actions: []
-post-deinstall-lua: <<EOD
-	file = pkg.prefixed_path("%@")
-	-- ignore the return value and the error
-	ret, err = os.remove(file)
+post-deinstall: <<EOD
+	case "%@" in
+	/*) f="%@" ;;
+	 *) f="%D/%@" ;;
+	esac
+	/bin/rm -f ${PKG_ROOTDIR}/$f 2>/dev/null || /usr/bin/true
 EOD
