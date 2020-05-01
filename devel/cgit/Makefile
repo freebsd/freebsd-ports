@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cgit
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.3
 CATEGORIES=	devel www
 MASTER_SITES=	http://git.zx2c4.com/cgit/snapshot/:cgit \
 		${MASTER_SITES_KERNEL_ORG}:git
@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 TEST_DEPENDS=	msgfmt:devel/gettext-tools
 
-GIT_VERSION=	2.25.0
+GIT_VERSION=	2.25.1
 USES=		cpe gmake iconv perl5 python:3.2+,env shebangfix ssl tar:xz
 CPE_VENDOR=	lars_hjemli
 USE_PERL5=	test
