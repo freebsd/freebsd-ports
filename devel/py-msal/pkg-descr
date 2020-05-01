@@ -1,0 +1,8 @@
+The Microsoft Authentication Library for Python enables applications to
+integrate with the Microsoft identity platform. It allows you to sign in users
+or apps with Microsoft identities (Azure AD, Microsoft Accounts and Azure AD
+B2C accounts) and obtain tokens to call Microsoft APIs such as Microsoft Graph
+or your own APIs registered with the Microsoft identity platform. It is built
+using industry standard OAuth2 and OpenID Connect protocols.
+
+WWW: https://github.com/AzureAD/microsoft-authentication-library-for-python
