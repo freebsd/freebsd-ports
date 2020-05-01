@@ -1,6 +1,6 @@
---- configure.orig	2018-08-08 16:02:31 UTC
+--- configure.orig	2020-04-30 14:11:40 UTC
 +++ configure
-@@ -4661,8 +4661,6 @@ case "${host_os}" in
+@@ -4687,8 +4687,6 @@ case "${host_os}" in
       ;;
       dragonfly*|freebsd*)
       ac_default_prefix=/usr/local
@@ -9,7 +9,38 @@
       ;;
       openbsd*)
       ac_default_prefix=/usr/local
-@@ -20328,6 +20326,8 @@ $as_echo_n "checking for getifaddrs() support... " >&6
+@@ -9230,25 +9228,25 @@ $as_echo "configuring" >&6; }
+ 
+ 		this_host=$(./config.sub $(./config.guess))
+ 		if test "$build" != "$this_host" ; then
+-			PJPROJECT_CONFIGURE_OPTS+=" --build=$build_alias"
++			PJPROJECT_CONFIGURE_OPTS="${PJPROJECT_CONFIGURE_OPTS} --build=$build_alias"
+ 		fi
+ 		if test "$host" != "$this_host" ; then
+-			PJPROJECT_CONFIGURE_OPTS+=" --host=$host_alias"
++			PJPROJECT_CONFIGURE_OPTS="${PJPROJECT_CONFIGURE_OPTS} --host=$host_alias"
+ 		fi
+ 		# This was a copy of the autoconf generated code from the root ./configure.
+ 		# Hopefully, when you read this, the code is still the same.
+ 		if test "${with_ssl+set}" = set; then :
+ 			case $with_ssl in
+ 			n|no)
+-			PJPROJECT_CONFIGURE_OPTS+=" --disable-ssl"
++			PJPROJECT_CONFIGURE_OPTS="${PJPROJECT_CONFIGURE_OPTS} --disable-ssl"
+ 			;;
+ 			y|ye|yes)
+ 			# Not to mention SSL is the default in PJProject and means "autodetect".
+ 			# In Asterisk, "./configure --with-ssl" means "must be present".
+-			PJPROJECT_CONFIGURE_OPTS+=""
++			#PJPROJECT_CONFIGURE_OPTS+=""
+ 			;;
+ 			*)
+-			PJPROJECT_CONFIGURE_OPTS+=" --with-ssl=${with_ssl}"
++			PJPROJECT_CONFIGURE_OPTS="${PJPROJECT_CONFIGURE_OPTS} --with-ssl=${with_ssl}"
+ 			;;
+ 			esac
+ 		fi
+@@ -20351,6 +20349,8 @@ $as_echo_n "checking for getifaddrs() support... " >&6
  
  	cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
@@ -18,7 +49,7 @@
   #include <ifaddrs.h>
  int
  main ()
-@@ -29156,6 +29156,8 @@ fi
+@@ -29510,6 +29510,8 @@ fi
  
  for ver in 5.3 5.2 5.1; do
  
@@ -27,7 +58,7 @@
  if test "x${PBX_LUA}" != "x1" -a "${USE_LUA}" != "no"; then
     pbxlibdir=""
     # if --with-LUA=DIR has been specified, use it.
-@@ -29170,13 +29172,13 @@ if test "x${PBX_LUA}" != "x1" -a "${USE_LUA}" != "no";
+@@ -29524,13 +29526,13 @@ if test "x${PBX_LUA}" != "x1" -a "${USE_LUA}" != "no";
        ast_ext_lib_check_save_CFLAGS="${CFLAGS}"
        CFLAGS="${CFLAGS} "
        as_ac_Lib=`$as_echo "ac_cv_lib_lua${ver}''_luaL_newstate" | $as_tr_sh`
@@ -44,7 +75,7 @@
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -29218,7 +29220,7 @@ fi
+@@ -29572,7 +29574,7 @@ fi
  
     # now check for the header.
     if test "${AST_LUA_FOUND}" = "yes"; then
@@ -53,7 +84,7 @@
        # if --with-LUA=DIR has been specified, use it.
        if test "x${LUA_DIR}" != "x"; then
           LUA_INCLUDE="-I${LUA_DIR}/include"
-@@ -29228,8 +29230,8 @@ fi
+@@ -29582,8 +29584,8 @@ fi
           # check for the header
           ast_ext_lib_check_saved_CPPFLAGS="${CPPFLAGS}"
           CPPFLAGS="${CPPFLAGS} ${LUA_INCLUDE}"
@@ -64,7 +95,7 @@
  if eval test \"x\$"$as_ac_Header"\" = x"yes"; then :
    LUA_HEADER_FOUND=1
  else
-@@ -29256,9 +29258,9 @@ fi
+@@ -29610,9 +29612,9 @@ fi
  
  	if test "x${PBX_LUA}" = "x1" ; then
  		if test x"${LUA_DIR}" = x; then
