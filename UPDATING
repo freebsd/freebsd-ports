@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20200501:
+  AFFECTS: users of www/phpmyfaq
+  AUTHOR: flo@FreeBSD.org
+
+  phpMyFAQ has been updated to 3.0.2, old templates are not compatible with
+  this new version. Please see:
+
+  https://www.phpmyfaq.de/docs/3.0#3.4
+
 20200428:
   AFFECTS: users of sysutils/ansible
   AUTHOR: bofh@FreeBSD.org
