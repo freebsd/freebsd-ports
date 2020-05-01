@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	confget
-PORTVERSION=	2.3.1
+PORTVERSION=	2.3.3
 DISTVERSIONPREFIX=	release-
 CATEGORIES=	textproc
 MASTER_SITES=	https://gitlab.com/confget/confget/-/archive/release/${PORTVERSION}/
