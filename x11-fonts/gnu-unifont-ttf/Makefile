@@ -6,7 +6,7 @@ PKGNAMESUFFIX=	-ttf
 
 COMMENT=	GNU Unicode TrueType font
 
-FONTFILES=	${PORTNAME} ${PORTNAME}_csur ${PORTNAME}_upper
+FONTFILES=	unifont unifont_csur unifont_upper
 FONTSUFFIX=	.ttf
 
 DESCR=		${.CURDIR}/pkg-descr
