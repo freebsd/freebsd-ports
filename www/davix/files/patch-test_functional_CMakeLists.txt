@@ -1,9 +1,9 @@
---- test/functional/CMakeLists.txt.orig	2019-05-08 15:50:42 UTC
+--- test/functional/CMakeLists.txt.orig	2020-04-29 11:37:25 UTC
 +++ test/functional/CMakeLists.txt
-@@ -81,7 +81,7 @@ add_library(test_davix_functional_lib ST
+@@ -78,7 +78,7 @@ add_library(test_davix_functional_lib STATIC ${src_dav
  #target_link_libraries(test_mv libdavix test_davix_functional_lib)
  
- add_executable(davix-tester ${src_tester})
+ add_executable(davix-tester ../TestcaseHandler.cpp davix-tester.cpp)
 -target_link_libraries(davix-tester libdavix test_davix_functional_lib)
 +target_link_libraries(davix-tester libdavix test_davix_functional_lib uuid)
  
