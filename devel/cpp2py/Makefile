@@ -34,6 +34,8 @@ USE_LDCONFIG=	yes
 
 LLVM_VER=	60
 
+PORTSCOUT=	limit:^[0-9\.]*$$
+
 post-install: # remove unnecessary files
 	@cd ${STAGEDIR}${PREFIX} && ${RM} share/cpp2py.modulefile share/cpp2pyvars.sh
 
