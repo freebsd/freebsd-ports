@@ -18,7 +18,7 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 
 USES=		cmake compiler:c++14-lang desktop-file-utils gnome pkgconfig qt:5
 USE_GNOME=	glibmm glib20 libsigc++20
-USE_QT=		buildtools core gui qmake_build svg widgets
+USE_QT=		buildtools core gui linguisttools qmake_build svg widgets
 
 CMAKE_ARGS+=	-DCMAKE_INSTALL_MANDIR:PATH=${MANPREFIX}/man \
 		-DDISABLE_WERROR:BOOL=TRUE
