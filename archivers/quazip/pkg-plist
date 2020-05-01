@@ -14,8 +14,9 @@ include/quazip%%QTVER_SUFFIX%%/quazipfileinfo.h
 include/quazip%%QTVER_SUFFIX%%/quazipnewinfo.h
 include/quazip%%QTVER_SUFFIX%%/unzip.h
 include/quazip%%QTVER_SUFFIX%%/zip.h
+lib/cmake/QuaZip%%QTVER_SUFFIX%%/QuaZip%%QTVER_SUFFIX%%Config.cmake
 lib/libquazip%%QTVER_SUFFIX%%.a
 lib/libquazip%%QTVER_SUFFIX%%.so
 lib/libquazip%%QTVER_SUFFIX%%.so.1
 lib/libquazip%%QTVER_SUFFIX%%.so.1.0.0
-share/cmake/Modules/FindQuaZip%%QTVER_SUFFIX%%.cmake
+libdata/pkgconfig/quazip.pc
