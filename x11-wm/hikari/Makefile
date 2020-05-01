@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	hikari
-DISTVERSION=	1.0.3
+DISTVERSION=	1.1.0
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://hikari.acmelabs.space/releases/
 
@@ -25,20 +25,25 @@ USES=		compiler:c11 gnome pkgconfig xorg
 USE_GNOME=	cairo glib20 pango
 USE_XORG=	pixman
 MAKE_ARGS=	${WITH_DEBUG:DDEBUG=YES}
+SUB_FILES=	${PORTNAME}.desktop
+SUB_LIST=	COMMENT="${COMMENT}"
 PLIST_FILES=	"${MAYBE_SUID}bin/${PORTNAME}" \
 		"${MAYBE_SUID}bin/${PORTNAME}-unlocker" \
 		etc/pam.d/${PORTNAME}-unlocker \
-		share/man/man1/${PORTNAME}.1.gz
+		share/man/man1/${PORTNAME}.1.gz \
+		share/wayland-sessions/${PORTNAME}.desktop
 PORTEXAMPLES=	${PORTNAME}.conf
 
-OPTIONS_DEFINE=		EXAMPLES GAMMA SCREENCOPY SUID X11
-OPTIONS_DEFAULT=	GAMMA SCREENCOPY SUID X11
+OPTIONS_DEFINE=		EXAMPLES GAMMA LAYERSHELL SCREENCOPY SUID X11
+OPTIONS_DEFAULT=	GAMMA LAYERSHELL SCREENCOPY SUID X11
 
 GAMMA_DESC=		Include gammacontrol protocol (required by, e.g., Redshift)
+LAYERSHELL_DESC=	Include layer_shell protocol (required by, e.g., waybar)
 SCREENCOPY_DESC=	Include screenshot protocol (required by, e.g., grim)
 SUID_DESC=		Setuid bit on binaries (required for DRM and PAM)
 
 GAMMA_MAKE_ARGS=	WITH_GAMMACONTROL=YES
+LAYERSHELL_MAKE_ARGS=	WITH_LAYERSHELL=YES
 SCREENCOPY_MAKE_ARGS=	WITH_SCREENCOPY=YES
 SUID_VARS=		MAYBE_SUID="@(,,4755) "
 X11_MAKE_ARGS=		WITH_XWAYLAND=YES
@@ -50,5 +55,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_MAN} ${WRKSRC}/share/examples/hikari/hikari.conf ${STAGEDIR}${EXAMPLESDIR}/hikari.conf
 	${INSTALL_MAN} ${WRKSRC}/share/man/man1/hikari.1 ${STAGEDIR}${MAN1PREFIX}/share/man/man1/
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/wayland-sessions
+	${INSTALL_DATA} ${WRKDIR}/hikari.desktop ${STAGEDIR}${PREFIX}/share/wayland-sessions
 
 .include <bsd.port.mk>
