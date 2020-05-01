@@ -1,6 +1,7 @@
 bin/puppetdb
 %%DATADIR%%/cli/apps/anonymize
 %%DATADIR%%/cli/apps/config-migration
+%%DATADIR%%/cli/apps/delete-reports
 %%DATADIR%%/cli/apps/foreground
 %%DATADIR%%/cli/apps/reload
 %%DATADIR%%/cli/apps/ssl-setup
