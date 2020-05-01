@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bpython
-PORTVERSION=	0.18
-PORTREVISION=	1
+PORTVERSION=	0.19
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP \
 		https://bpython-interpreter.org/releases/
@@ -22,13 +21,13 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}curtsies>=0.1.18:devel/py-curtsies@${PY_FLAV
 		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.5:devel/py-six@${PY_FLAVOR}
 
-OPTIONS_DEFINE=	EXAMPLES NLS
-OPTIONS_SUB=	yes
-
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
+
+OPTIONS_DEFINE=	EXAMPLES NLS
+OPTIONS_SUB=	yes
 
 NLS_USES=	gettext
 
