@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	asana
-PORTVERSION=	0.9.3
+PORTVERSION=	0.10.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby wrapper for the Asana REST API
 
 LICENSE=	MIT
