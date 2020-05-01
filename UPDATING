@@ -505,6 +505,7 @@ you update your ports collection, before attempting any port upgrades.
   # pkg upgrade
 
   For portmaster users:
+  # sh
   # portmaster -o lang/python37 python36
   # REINSTALL="$(pkg info -o py36-\* | awk '{printf "%s ", $2}')"
   # pkg delete -f py36-\*
