@@ -1,9 +1,9 @@
---- CMakeLists.txt.orig	2019-03-29 19:11:40 UTC
+--- CMakeLists.txt.orig	2020-02-11 19:09:00 UTC
 +++ CMakeLists.txt
-@@ -189,7 +189,7 @@ CHECK_INCLUDE_FILE(unistd.h HAVE_UNISTD_
+@@ -258,7 +258,7 @@ CHECK_INCLUDE_FILE(unistd.h HAVE_UNISTD_H)
+ # BUILD_QMCTOOLS   build utility programs
  # MPIP_PROFILE     profile mpi performance
  ######################################################################
- SET(QMC_ADIOS 0 CACHE BOOL "Build with ADIOS")
 -SET(BUILD_UNIT_TESTS 1 CACHE BOOL "Build unit tests")
 +SET(BUILD_UNIT_TESTS 0 CACHE BOOL "Build unit tests")
  SET(BUILD_LMYENGINE_INTERFACE 1 CACHE BOOL "Build LMY engine")

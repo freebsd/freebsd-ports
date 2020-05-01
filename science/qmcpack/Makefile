@@ -2,8 +2,7 @@
 
 PORTNAME=	qmcpack
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.8.0
-PORTREVISION=	5
+DISTVERSION=	3.9.2
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_i386=	undefined reference to `__atomic_load'
 
+BUILD_DEPENDS=	catch>0:devel/catch
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libfftw3.so:math/fftw3 \
 		libhdf5.so:science/hdf5 \
@@ -25,6 +25,8 @@ USES=		cmake compiler:c++11-lang fortran gnome localbase:ldflags pkgconfig pytho
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME:tu}
 USE_GNOME=	libxml2
+
+CXXFLAGS+=	-I${LOCALBASE}/include/catch2
 
 PROGS=		convert4qmc qmc-check-affinity qmc-extract-eshdf-kvectors qmc-get-supercell qmcpack
 PLIST_FILES=	${PROGS:C/^/bin\//}
