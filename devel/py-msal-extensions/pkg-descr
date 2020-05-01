@@ -1,0 +1,12 @@
+The Microsoft Authentication Extensions for Python offers secure mechanisms for
+client applications to perform cross-platform token cache serialization and
+persistence. It gives additional support to the Microsoft Authentication
+Library for Python (MSAL).
+
+MSAL Python supports an in-memory cache by default and provides the
+SerializableTokenCache to perform cache serialization. You can read more about
+this in the MSAL Python documentation. Developers are required to implement
+their own cache persistance across multiple platforms and Microsoft
+Authentication Extensions makes this simpler.
+
+WWW: https://pypi.org/project/msal-extensions/
