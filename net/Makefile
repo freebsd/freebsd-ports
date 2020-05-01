@@ -1069,7 +1069,6 @@
     SUBDIR += py-oauth2
     SUBDIR += py-paho-mqtt
     SUBDIR += py-pamqp
-    SUBDIR += py-pcap
     SUBDIR += py-pcapy
     SUBDIR += py-port-for
     SUBDIR += py-portend

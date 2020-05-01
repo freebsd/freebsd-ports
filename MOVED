@@ -14554,3 +14554,6 @@ net-mgmt/bgpq|net-mgmt/bgpq3|2020-04-30|Has expired: Use net-mgmt/bgpq3 or net-m
 net/boringtun||2020-04-30|Has expired: Status of the project and motivation is unclear
 dns/dnsperf||2020-04-30|Removed, depends on expired dns/bind914, not compatible with dns/bind916
 dns/bind914|dns/bind916|2020-04-30|Has expired: End of life, please migrate to a newer version of BIND9
+net/py-pcap|net/py-pypcap|2020-05-01|Has expired: Broken with python3 please consider using net/py-pypcap
+x11-drivers/xf86-video-tseng||2020-05-01|Has expired: broken
+x11-drivers/xf86-video-s3virge||2020-05-01|Has expired: broken
