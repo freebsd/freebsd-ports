@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	freenit
-PORTVERSION=	0.1.5
+PORTVERSION=	0.1.6
 CATEGORIES=	www devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,14 +10,15 @@ MAINTAINER=	meka@tilda.center
 COMMENT=	REST API framework based on Flask-Smorest
 
 LICENSE=	BSD2CLAUSE
-#LICENSE_FILE=	Not packaged in sdist
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bcrypt>=0:security/py-bcrypt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Flask-Collect>=1.3.2:www/py-flask-collect@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Flask-Cors>=2.1.2:www/py-flask-cors@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}flask-jwt-extended>=3.24.1:www/py-flask-jwt-extended@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}flask-security>=3.0.0:www/py-flask-security@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}flask-smorest>=0.18.2:www/py-flask-smorest@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}flask-smorest>=0.18.2:www/py-flask-smorest@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}email-validator>=0:mail/py-email-validator@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}factory-boy>=0:devel/py-factory-boy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-factoryboy>=0:devel/py-pytest-factoryboy@${PY_FLAVOR} \
