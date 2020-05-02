@@ -1,0 +1,42 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: cassandra
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Be sure to configure full settings in %%ETCDIR%% prior to enabling daemon.
+#
+# Add the following lines to /etc/rc.conf or /etc/.conf.local to
+# enable the Cassandra daemon:
+# cassandra_enable:		Set to "YES" to enable the daemon.
+# cassandra_user: 		The user under which to run the daemon.
+#				Defaults to "cassandra".
+
+. /etc/rc.subr
+
+name=cassandra
+rcvar=cassandra_enable
+desc="Cassandra daemon"
+
+load_rc_config $name
+
+: ${cassandra_enable:=NO}
+: ${cassandra_user:=cassandra}
+
+command=%%PREFIX%%/bin/cassandra
+command_args="-p /var/run/cassandra/cassandra.pid >/dev/null 2>/dev/null"
+start_precmd="${name}_prestart"
+
+procname=%%JAVA_HOME%%/bin/java
+pidfile=/var/run/cassandra/cassandra.pid
+
+cassandra_prestart()
+{
+	export JAVA_HOME=%%JAVA_HOME%%
+	install -d -o ${cassandra_user} /var/run/cassandra
+	install -d -o ${cassandra_user} /var/log/cassandra
+}
+
+run_rc_command "$1"

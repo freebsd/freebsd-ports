@@ -1,0 +1,68 @@
+--- conf/cassandra.yaml.orig	2020-01-30 17:34:31 UTC
++++ conf/cassandra.yaml
+@@ -76,7 +76,7 @@ max_hints_delivery_threads: 2
+ 
+ # Directory where Cassandra should store hints.
+ # If not set, the default directory is $CASSANDRA_HOME/data/hints.
+-# hints_directory: /var/lib/cassandra/hints
++hints_directory: /var/db/cassandra/hints
+ 
+ # How often hints should be flushed from the internal buffers to disk.
+ # Will *not* trigger fsync.
+@@ -203,13 +203,13 @@ partitioner: org.apache.cassandra.dht.Murmur3Partition
+ # directories are specified, Cassandra will spread data evenly across 
+ # them by partitioning the token ranges.
+ # If not set, the default directory is $CASSANDRA_HOME/data/data.
+-# data_file_directories:
+-#     - /var/lib/cassandra/data
++data_file_directories:
++    - /var/db/cassandra/data
+ 
+ # commit log.  when running on magnetic HDD, this should be a
+ # separate spindle than the data directories.
+ # If not set, the default directory is $CASSANDRA_HOME/data/commitlog.
+-# commitlog_directory: /var/lib/cassandra/commitlog
++commitlog_directory: /var/db/cassandra/commitlog
+ 
+ # Enable / disable CDC functionality on a per-node basis. This modifies the logic used
+ # for write path allocation rejection (standard: never reject. cdc: reject Mutation
+@@ -220,7 +220,7 @@ cdc_enabled: false
+ # segment contains mutations for a CDC-enabled table. This should be placed on a
+ # separate spindle than the data directories. If not set, the default directory is
+ # $CASSANDRA_HOME/data/cdc_raw.
+-# cdc_raw_directory: /var/lib/cassandra/cdc_raw
++cdc_raw_directory: /var/db/cassandra/cdc_raw
+ 
+ # Policy for data disk failures:
+ #
+@@ -312,20 +312,12 @@ key_cache_save_period: 14400
+ 
+ # Row cache implementation class name. Available implementations:
+ #
+-# org.apache.cassandra.cache.OHCProvider
+-#   Fully off-heap row cache implementation (default).
+-#
+ # org.apache.cassandra.cache.SerializingCacheProvider
+ #   This is the row cache implementation availabile
+ #   in previous releases of Cassandra.
+-# row_cache_class_name: org.apache.cassandra.cache.OHCProvider
++# row_cache_class_name: org.apache.cassandra.cache.SerializingCacheProvider
+ 
+ # Maximum size of the row cache in memory.
+-# Please note that OHC cache implementation requires some additional off-heap memory to manage
+-# the map structures and some in-flight memory during operations before/after cache entries can be
+-# accounted against the cache capacity. This overhead is usually small compared to the whole capacity.
+-# Do not specify more memory that the system can afford in the worst usual situation and leave some
+-# headroom for OS block level cache. Do never allow your system to swap.
+ #
+ # Default value is 0, to disable row caching.
+ row_cache_size_in_mb: 0
+@@ -372,7 +364,7 @@ counter_cache_save_period: 7200
+ 
+ # saved caches
+ # If not set, the default directory is $CASSANDRA_HOME/data/saved_caches.
+-# saved_caches_directory: /var/lib/cassandra/saved_caches
++saved_caches_directory: /var/db/cassandra/saved_caches
+ 
+ # commitlog_sync may be either "periodic", "group", or "batch." 
+ # 

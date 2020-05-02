@@ -1,0 +1,12 @@
+[
+{ type: install
+  message: <<EOM
+Entries for this machine's hostname may need to be set in /etc/hosts
+if you get a "Local host name unknown" exception on startup
+(see https://issues.apache.org/jira/browse/CASSANDRA-2380):
+
+	::1		localhost localhost.your.domain your-host-name
+	127.0.0.1	localhost localhost.your.domain your-host-name
+EOM
+}
+]

@@ -26,6 +26,8 @@ USE_JAVA=	yes
 USE_ANT=	yes
 USE_RC_SUBR=	cassandra
 
+CONFLICTS=	cassandra4
+
 JAVA_VERSION=	1.8
 JAVA_VENDOR=	openjdk
 

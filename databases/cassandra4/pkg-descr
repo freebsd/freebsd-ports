@@ -1,0 +1,16 @@
+Apache Cassandra is a free and open-source distributed database.
+It is a Java-based, highly scalable, eventually consistent, wide
+column store. Cassandra database clusters are masterless with no
+single point of failure. Replication can be configured across
+multiple data centers.
+
+Originally influenced by Dynamo and BigTable, Cassandra was initially
+developed at and open sourced by Facebook before becoming a top-level
+Apache project.
+
+The CQL query language offers SQL-like data access and management.
+Drivers are available for a number of languages.
+
+This is an ALPHA version! It is not intended for production use.
+
+WWW: https://cassandra.apache.org/

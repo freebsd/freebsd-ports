@@ -1,0 +1,222 @@
+--- build.xml.orig	2020-04-10 22:29:25 UTC
++++ build.xml
+@@ -23,6 +23,7 @@
+     <property file="build.properties" />
+     <property file="build.properties.default" />
+     <property name="debuglevel" value="source,lines,vars"/>
++    <property name="pycmd" value="python"/>
+ 
+     <!-- default version and SCM information -->
+     <property name="base.version" value="4.0-alpha4"/>
+@@ -75,14 +76,14 @@
+     <condition property="version" value="${base.version}">
+       <isset property="release"/>
+     </condition>
+-    <property name="version" value="${base.version}-SNAPSHOT"/>
++    <property name="version" value="${base.version}"/>
+     <property name="version.properties.dir"
+               value="${build.src.resources}/org/apache/cassandra/config/" />
+     <property name="final.name" value="${ant.project.name}-${version}"/>
+ 
+     <!-- details of what version of Maven ANT Tasks to fetch -->
+     <property name="maven-ant-tasks.version" value="2.1.3" />
+-    <property name="maven-ant-tasks.local" value="${user.home}/.m2/repository/org/apache/maven/maven-ant-tasks"/>
++    <property name="maven-ant-tasks.local" value="${localm2}/org/apache/maven/maven-ant-tasks"/>
+     <property name="maven-ant-tasks.url"
+               value="https://repo.maven.apache.org/maven2/org/apache/maven/maven-ant-tasks" />
+     <!-- details of how and which Maven repository we publish to -->
+@@ -241,7 +242,7 @@
+     </path>
+     <path id="cassandra.classpath.test">
+         <file file="${build.dir}/${final.name}.jar"/> <!-- we need the jar for tests and benchmarks (multi-version jar) -->
+-        <fileset dir="${build.lib}">
++        <fileset dir="${stagedlib}">
+             <include name="**/*.jar" />
+             <exclude name="**/*-sources.jar"/>
+             <exclude name="**/ant-*.jar"/>
+@@ -262,6 +263,7 @@
+         bottom="Copyright &amp;copy; 2009-2020 The Apache Software Foundation"
+         useexternalfile="yes" encoding="UTF-8"
+         maxmemory="256m">
++        <arg value="${jdk11-javac-exports}"/>
+         <filesets/>
+       </javadoc>
+     </sequential>
+@@ -379,8 +381,7 @@
+         <artifact:dependencies pathId="wikitext.classpath">
+             <dependency groupId="com.datastax.wikitext" artifactId="wikitext-core-ant" version="1.3"/>
+             <dependency groupId="org.fusesource.wikitext" artifactId="textile-core" version="1.3"/>
+-            <remoteRepository refid="central"/>
+-            <remoteRepository refid="apache"/>
++            <localRepository path="${localm2}"/>
+         </artifact:dependencies>
+         <taskdef classpathref="wikitext.classpath" resource="wikitexttasks.properties" />
+         <wikitext-to-html markupLanguage="Textile">
+@@ -393,6 +394,8 @@
+     <target name="gen-doc" depends="maven-ant-tasks-init" description="Generate documentation" unless="ant.gen-doc.skip">
+         <exec executable="make" osfamily="unix" dir="${doc.dir}">
+             <arg value="html"/>
++            <arg value="PYTHON_CMD=${pycmd}"/>
++            <arg value="PYTHON_VER=${pyver}"/>
+         </exec>
+         <exec executable="cmd" osfamily="dos" dir="${doc.dir}">
+             <arg value="/c"/>
+@@ -435,10 +438,6 @@
+             description="Initialize Maven ANT Tasks">
+       <typedef uri="antlib:org.apache.maven.artifact.ant" classpathref="maven-ant-tasks.classpath" />
+ 
+-      <!-- define the remote repositories we use -->
+-      <artifact:remoteRepository id="central"   url="${artifact.remoteRepository.central}"/>
+-      <artifact:remoteRepository id="apache"    url="${artifact.remoteRepository.apache}"/>
+-
+       <macrodef name="install">
+         <attribute name="pomFile"/>
+         <attribute name="file"/>
+@@ -842,16 +841,14 @@
+                              filesetId="build-dependency-jars"
+                              cacheDependencyRefs="true"
+                              dependencyRefsBuildFile="${build.dir}/build-dependencies.xml">
+-          <remoteRepository refid="central"/>
+-          <remoteRepository refid="apache"/>
++          <localRepository path="${localm2}"/>
+       </artifact:dependencies>
+       <!-- retrieve -source.jar artifacts using the reference-pom with the artifacts that have these -->
+       <artifact:dependencies pomRefId="build-deps-pom-sources"
+                              sourcesFilesetId="build-dependency-sources"
+                              cacheDependencyRefs="true"
+                              dependencyRefsBuildFile="${build.dir}/build-dependencies-sources.xml">
+-          <remoteRepository refid="central"/>
+-          <remoteRepository refid="apache"/>
++          <localRepository path="${localm2}"/>
+       </artifact:dependencies>
+       <copy todir="${build.dir.lib}/jars">
+           <fileset refid="build-dependency-jars"/>
+@@ -864,7 +861,7 @@
+       <!-- code coverage tools -->
+       <artifact:dependencies pomRefId="coverage-deps-pom"
+                              filesetId="coverage-dependency-jars">
+-          <remoteRepository refid="central"/>
++          <localRepository path="${localm2}"/>
+       </artifact:dependencies>
+       <copy todir="${build.dir.lib}/jars">
+           <fileset refid="coverage-dependency-jars"/>
+@@ -893,8 +890,7 @@
+                              sourcesFilesetId="test-dependency-sources"
+                              cacheDependencyRefs="true"
+                              dependencyRefsBuildFile="${build.dir}/test-dependencies.xml">
+-        <remoteRepository refid="apache"/>
+-        <remoteRepository refid="central"/>
++        <localRepository path="${localm2}"/>
+       </artifact:dependencies>
+       <copy todir="${test.lib}/jars">
+         <fileset refid="test-dependency-jars"/>
+@@ -1217,6 +1213,86 @@
+       </copy>
+     </target>
+ 
++    <!-- FreeBSD for staging -->
++    <target name="freebsd-stage" depends="jar"
++            description="Create Cassandra directory structure for staging">
++      <mkdir dir="${dist.dir}"/>
++      <copy todir="${dist.dir}/lib">
++        <fileset dir="${build.lib}">
++          <exclude name="sigar*.jar"/>
++          <exclude name="sigar-bin/*"/>
++          <exclude name="snappy*.jar"/>
++          <exclude name="netty-all*.jar"/>
++          <exclude name="ohc*.jar"/>
++          <exclude name="licenses/snappy*.txt"/>
++          <exclude name="licenses/netty-4*.txt"/>
++          <exclude name="licenses/ohc*.txt"/>
++        </fileset>
++        <fileset dir="${build.dir}">
++          <include name="${final.name}.jar" />
++        </fileset>
++      </copy>
++      <copy todir="${dist.dir}/bin">
++        <fileset dir="bin">
++	  <exclude name="*.bat" />
++	  <exclude name="*.ps1" />
++	  <exclude name="*.orig" />
++	</fileset>
++      </copy>
++      <copy todir="${dist.dir}/conf">
++        <fileset dir="conf">
++          <exclude name="*.ps1" />
++	  <exclude name="*.orig" />
++        </fileset>
++      </copy>
++      <copy todir="${dist.dir}/pylib">
++        <fileset dir="pylib">
++          <include name="**" />
++          <exclude name="**/*.pyc" />
++        </fileset>
++      </copy>
++      <copy todir="${dist.dir}/">
++        <fileset dir="${basedir}">
++          <include name="*.txt" />
++        </fileset>
++      </copy>
++      <copy todir="${dist.dir}/tools/bin">
++        <fileset dir="${basedir}/tools/bin">
++          <exclude name="*.bat" />
++          <exclude name="*.ps1" />
++	  <exclude name="*.orig" />
++        </fileset>
++      </copy>
++      <copy todir="${dist.dir}/tools/">
++        <fileset dir="${basedir}/tools/">
++            <include name="*.yaml"/>
++	</fileset>
++      </copy>
++      <copy todir="${dist.dir}/tools/lib">
++        <fileset dir="${build.dir}/tools/lib/">
++            <include name="*.jar" />
++        </fileset>
++      </copy>
++    </target>
++
++    <target name="freebsd-stage-doc" depends="freebsd-stage,javadoc,gen-doc"
++            description="Create Cassandra directory structure for staging, including docs">
++      <copy todir="${dist.dir}/javadoc">
++        <fileset dir="${javadoc.dir}"/>
++      </copy>
++      <copy todir="${dist.dir}/doc">
++        <fileset dir="doc">
++          <include name="cql3/CQL.html" />
++          <include name="cql3/CQL.css" />
++          <include name="SASI.md" />
++        </fileset>
++      </copy>
++      <copy todir="${dist.dir}/doc/html">
++        <fileset dir="doc" />
++        <globmapper from="build/html/*" to="*"/>
++      </copy>
++    </target>
++    
+     <!-- creates release tarballs -->
+     <target name="artifacts" depends="_artifacts-init"
+             description="Create Cassandra release artifacts">
+@@ -1923,8 +1999,8 @@
+     <exec executable="nproc" outputproperty="cores.count" os="Linux,SunOS,Solaris" failifexecutionfails="false">
+       <arg value="--all"/>
+     </exec>
+-    <!-- support for Mac OS X -->
+-    <exec executable="sysctl" outputproperty="cores.count" os="Mac,Mac OS X,Darwin" failifexecutionfails="false">
++    <!-- support for Mac OS X and FreeBSD -->
++    <exec executable="sysctl" outputproperty="cores.count" os="Mac,Mac OS X,Darwin,FreeBSD" failifexecutionfails="false">
+       <arg value="-n"/>
+       <arg value="hw.ncpu"/>
+     </exec>
+@@ -1944,6 +2020,11 @@
+     <exec executable="sysctl" outputproperty="mem.size" os="Mac,Mac OS X,Darwin" failifexecutionfails="false">
+       <arg value="-n"/>
+       <arg value="hw.memsize"/>
++    </exec>
++    <!-- support for FreeBSD -->
++    <exec executable="sysctl" outputproperty="mem.size" os="FreeBSD" failifexecutionfails="false">
++      <arg value="-n"/>
++      <arg value="hw.physmem"/>
+     </exec>
+     <echo message="Mem size : ${mem.size}"/>
+   </target>

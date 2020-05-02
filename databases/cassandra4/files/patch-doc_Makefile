@@ -1,0 +1,23 @@
+--- doc/Makefile.orig	2020-01-30 17:34:31 UTC
++++ doc/Makefile
+@@ -3,7 +3,7 @@
+ 
+ # You can set these variables from the command line.
+ SPHINXOPTS    =
+-SPHINXBUILD   = sphinx-build
++SPHINXBUILD   = sphinx-build-${PYTHON_VER}
+ PAPER         =
+ BUILDDIR      = build
+ 
+@@ -17,9 +17,9 @@ I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) s
+ YAML_DOC_INPUT=../conf/cassandra.yaml
+ YAML_DOC_OUTPUT=source/configuration/cassandra_config_file.rst
+ 
+-MAKE_CASSANDRA_YAML = python convert_yaml_to_rst.py $(YAML_DOC_INPUT) $(YAML_DOC_OUTPUT)
++MAKE_CASSANDRA_YAML = ${PYTHON_CMD} convert_yaml_to_rst.py $(YAML_DOC_INPUT) $(YAML_DOC_OUTPUT)
+ 
+-GENERATE_NODETOOL_DOCS = python gen-nodetool-docs.py
++GENERATE_NODETOOL_DOCS = ${PYTHON_CMD} gen-nodetool-docs.py
+ 
+ WEB_SITE_PRESENCE_FILE='source/.build_for_website'
+ 
