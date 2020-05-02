@@ -2,7 +2,7 @@
 
 PORTNAME=	iqtree
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.12
+DISTVERSION=	2.0.4
 CATEGORIES=	biology
 
 MAINTAINER=	jrm@FreeBSD.org
@@ -16,6 +16,8 @@ BROKEN_armv6=		fails to compile: unrecognized command line options '-m32' and '-
 BROKEN_armv7=		fails to compile: unrecognized command line options '-m32' and '-msse3'
 BROKEN_powerpc64=	fails to build: GCC version must be at least 4.8!
 
+LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs
+
 USES=		cmake compiler:openmp eigen:3
 USE_GITHUB=	yes
 GH_ACCOUNT=	Cibiv
@@ -27,7 +29,7 @@ PORTEXAMPLES=	example.cf example.nex example.phy models.nex
 OPTIONS_DEFINE=	EXAMPLES
 
 do-install:
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/iqtree ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/iqtree2 ${STAGEDIR}${PREFIX}/bin/iqtree
 
 do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
