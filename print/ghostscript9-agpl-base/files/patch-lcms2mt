@@ -1,0 +1,22 @@
+--- Makefile.in.orig
++++ Makefile.in
+@@ -462,6 +462,8 @@
+ # defines from autoconf; note that we don't use all of these at present.
+ ACDEFS=@DEFS@
+ 
++CFLAGS_VISIBILITY="-fvisibility=hidden"
++
+ CFLAGS=$(CFLAGS_STANDARD) $(GCFLAGS) $(AC_CFLAGS) $(XCFLAGS) @CLUSTER_CFLAGS@
+ CFLAGSAUX=$(CFLAGSAUX_STANDARD) $(GCFLAGSAUX) $(XCFLAGSAUX)
+ 
+--- base/lcms2mt.mak.orig
++++ base/lcms2mt.mak
+@@ -80,7 +80,7 @@
+ 
+ # NB: we can't use the normal $(CC_) here because msvccmd.mak
+ # adds /Za which conflicts with the lcms source.
+-LCMS2_CC=$(CC) $(D_)SHARE_LCMS=$(SHARE_LCMS)$(_D) $(GENOPT) $(CAPOPT) $(CFLAGS) $(LCMS2_CFLAGS) $(I_)$(LCMS2MTSRCDIR)$(D)include $(LCMS2CF_)
++LCMS2_CC=$(CC) $(CFLAGS_VISIBILITY) $(D_)SHARE_LCMS=$(SHARE_LCMS)$(_D) $(GENOPT) $(CAPOPT) $(CFLAGS) $(LCMS2_CFLAGS) $(I_)$(LCMS2MTSRCDIR)$(D)include $(LCMS2CF_)
+ LCMS2O_=$(O_)$(LCMS2OBJ)
+ 
+ # switch in the version of lcms2mt.dev we're actually using
