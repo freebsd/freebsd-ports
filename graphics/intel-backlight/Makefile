@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		intel-backlight
-DISTVERSION=		20180328
+DISTVERSION=		20200418
 CATEGORIES=		graphics
 
 MAINTAINER=		jmd@FreeBSD.org
@@ -20,10 +20,11 @@ LIB_DEPENDS=		libdrm.so:graphics/libdrm \
 USE_GITHUB=		yes
 GH_ACCOUNT=		FreeBSDDesktop
 GH_PROJECT=		intel_backlight_fbsd
-GH_TAGNAME=		15fff57
+GH_TAGNAME=		a6c0e39
 
 PORTEXAMPLES=		asmc_backlight.sh \
-			isl_backlight.sh
+			isl_backlight.sh \
+			acpi-video-intel-backlight.conf
 
 INSTALL_TARGET=		install-strip
 
