@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	emacs
-DISTVERSION=	28.0.50.20200416
+DISTVERSION=	28.0.50.20200501
 PORTEPOCH=	2
 CATEGORIES=	editors
 PKGNAMESUFFIX=	-devel
@@ -28,7 +28,8 @@ USES=		autoreconf:build cpe gmake localbase:ldflags ncurses pkgconfig
 CPE_VENDOR=	gnu
 USE_GITHUB=	yes
 GH_ACCOUNT=	emacs-mirror
-GH_TAGNAME=	e105d01
+GH_TAGNAME=	c59e878
+
 .if ${FLAVOR:U} != nox
 USES+=		desktop-file-utils gnome xorg
 INSTALLS_ICONS=	yes
@@ -163,7 +164,7 @@ LCMS2_CONFIGURE_WITH=		lcms2
 M17N_IMPLIES=			XFT
 M17N_LIB_DEPENDS=		libm17n.so:devel/m17n-lib
 M17N_CONFIGURE_WITH=		m17n-flt
-MAGICK_LIB_DEPENDS=		libMagickCore-6.so:graphics/ImageMagick6
+MAGICK_LIB_DEPENDS=		libMagickCore-7.so:graphics/ImageMagick7
 MAGICK_CONFIGURE_WITH=		imagemagick
 MAILUTILS_LIB_DEPENDS=		libmailutils.so:mail/mailutils
 MAILUTILS_CONFIGURE_WITH=	mailutils
