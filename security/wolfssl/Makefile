@@ -3,8 +3,8 @@
 PORTNAME=	wolfssl
 PORTVERSION=	4.4.0
 CATEGORIES=	security devel
-MASTER_SITES=	https://www.wolfssl.com/
-
+MASTER_SITES=	https://www.wolfssl.com/ \
+		LOCAL/fox
 MAINTAINER=	fox@FreeBSD.org
 COMMENT=	Embedded SSL C-Library
 
