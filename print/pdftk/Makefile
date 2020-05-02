@@ -3,7 +3,7 @@
 
 PORTNAME=	pdftk
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.1.0
+DISTVERSION=	3.1.1
 CATEGORIES=	print java
 MASTER_SITES=	https://repo.maven.apache.org/maven2/:bcprov
 DISTFILES=	${_BCPROV_JAR}:bcprov
@@ -20,7 +20,7 @@ RUN_DEPENDS=	${JAVAJARDIR}/commons-lang3.jar:java/apache-commons-lang3
 USE_ANT=	yes
 USE_GITLAB=	yes
 GL_ACCOUNT=	pdftk-java
-GL_COMMIT=	8c6b884feffa198798053a29dea750011a03d8b9
+GL_COMMIT=	535a84da37c507378d7674f7f61aa8c29e200509
 USE_JAVA=	yes
 ALL_TARGET=	jar
 NO_ARCH=	yes
