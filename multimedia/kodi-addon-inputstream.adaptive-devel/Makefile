@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	inputstream.adaptive
-DISTVERSION=	2.5.5
+DISTVERSION=	2.5.6
 DISTVERSIONSUFFIX=	-Matrix
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	kodi-addon-
