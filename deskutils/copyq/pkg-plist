@@ -12,11 +12,17 @@ man/man1/copyq.1.gz
 share/applications/com.github.hluk.copyq.desktop
 %%DATADIR%%/themes/dark.ini
 %%DATADIR%%/themes/forest.ini
+%%DATADIR%%/themes/items.css
 %%DATADIR%%/themes/light.ini
+%%DATADIR%%/themes/main_window.css
+%%DATADIR%%/themes/menu.css
+%%DATADIR%%/themes/notification.css
 %%DATADIR%%/themes/paper.ini
+%%DATADIR%%/themes/scrollbar.css
 %%DATADIR%%/themes/simple.ini
 %%DATADIR%%/themes/solarized-dark.ini
 %%DATADIR%%/themes/solarized-light.ini
+%%DATADIR%%/themes/tooltip.css
 %%DATADIR%%/themes/wine.ini
 %%DATADIR%%/translations/copyq_ar.qm
 %%DATADIR%%/translations/copyq_cs.qm
