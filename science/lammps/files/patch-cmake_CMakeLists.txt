@@ -1,6 +1,6 @@
---- cmake/CMakeLists.txt.orig	2020-04-03 13:58:20 UTC
+--- cmake/CMakeLists.txt.orig	2020-04-15 20:09:52 UTC
 +++ cmake/CMakeLists.txt
-@@ -62,11 +62,11 @@ if(${CMAKE_CXX_COMPILER_ID} STREQUAL "Intel")
+@@ -57,11 +57,11 @@ if(${CMAKE_CXX_COMPILER_ID} STREQUAL "Intel")
  endif()
  
  if(${CMAKE_CXX_COMPILER_ID} STREQUAL "GNU")
@@ -13,4 +13,4 @@
 +  set(CMAKE_TUNE_DEFAULT "-ffast-math")
  endif()
  
- # we require C++11
+ # we require C++11 without extensions

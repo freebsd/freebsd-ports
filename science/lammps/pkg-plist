@@ -51,8 +51,8 @@ lib/cmake/LAMMPS/LAMMPSConfig.cmake
 lib/cmake/LAMMPS/LAMMPSConfigVersion.cmake
 lib/cmake/LAMMPS/LAMMPS_Targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/LAMMPS/LAMMPS_Targets.cmake
-lib/liblammps.a
-%%NO_MPI%%lib/liblammps_mpi_stubs.a
+lib/liblammps.so
+lib/liblammps.so.0
 libdata/pkgconfig/liblammps.pc
 man/man1/lmp.1.gz
 %%DATADIR%%/potentials/Ag_u3.eam

@@ -2,6 +2,7 @@
 
 PORTNAME=	lammps
 PORTVERSION=	${GH_TAGNAME:C/(stable|patch)_([0-9]{1,2})([A-Z][a-z][a-z])([0-9]{4})/\4.\3.\2/S/Jan/01/S/Feb/02/S/Mar/03/S/Apr/04/S/May/05/S/Jun/06/S/Jul/07/S/Aug/08/S/Sep/09/S/Oct/10/S/Nov/11/S/Dec/12/}
+PORTREVISION=	1
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,15 +14,28 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BROKEN_i386=	undefined reference to `__atomic_load'
 CONFLICTS_BUILD=	ga mpich mpich2 # conflicts with include/error.h from ga, already fixed in the head
 
+LIB_DEPENDS=	libfftw3.so:math/fftw3
+
 USES=		blaslapack:openblas cmake:noninja eigen:3 fortran localbase:ldflags shebangfix
 USE_GITHUB=	yes
 GH_TAGNAME=	patch_15Apr2020
+USE_LDCONFIG=	yes
+
 SHEBANG_GLOB=	*.sh *.bash
 SHEBANG_FILES=	lib/kokkos/bin/nvcc_wrapper
 
+CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_SOURCE_PATH=	${WRKSRC}/cmake
 CMAKE_ARGS=	-DBLA_VENDOR:STRING="OpenBLAS" ${CMAKE_ARGS_${CHOSEN_COMPILER_TYPE}}
 CMAKE_ARGS_gcc=	-DBUILD_OMP:BOOL=false
+
+# enable packages (for a complete list see STANDARD_PACKAGES in cmake/CMakeLists.txt)
+CMAKE_ON+=	PKG_ASPHERE PKG_BODY PKG_CLASS2 PKG_COLLOID PKG_COMPRESS PKG_DIPOLE
+CMAKE_ON+=	PKG_GRANULAR PKG_KSPACE PKG_MANYBODY PKG_MC PKG_MESSAGE PKG_MOLECULE PKG_PERI PKG_POEMS PKG_QEQ
+CMAKE_ON+=	PKG_REPLICA PKG_RIGID PKG_SHOCK PKG_SPIN PKG_SNAP PKG_SRD
+# PKG_MISC is broken: https://github.com/lammps/lammps/issues/2057
+# PKG_KIM is broken: https://github.com/lammps/lammps/issues/2059
+# Packages requiring extra downloades or dependencies: PKG_MSCG PKG_KOKKOS
 
 OPTIONS_DEFINE=		JPEG PNG GZIP FFMPEG VORONOI LATTE
 OPTIONS_DEFINE_clang=	OPENMP
@@ -32,7 +46,7 @@ OPTIONS_DEFAULT_clang=	OPENMP
 OPTIONS_SUB=		yes
 PARALLEL_DESC=		Enable parallelizations:
 
-MPI_CMAKE_BOOL=		BUILD_MPI
+MPI_CMAKE_BOOL=		BUILD_MPI PKG_MPIIO
 MPI_LIB_DEPENDS=	libmpi.so:net/openmpi
 MPI_USES=		compiler:c11
 
@@ -45,6 +59,7 @@ JPEG_USES=		jpeg
 PNG_CMAKE_BOOL=		WITH_PNG
 PNG_LIB_DEPENDS=	libpng.so:graphics/png
 
+GZIP_DESC=		Enable GZIP support
 GZIP_CMAKE_BOOL=	WITH_GZIP
 
 FFMPEG_CMAKE_BOOL=	WITH_FFMPEG
@@ -70,5 +85,8 @@ post-patch:
 
 post-patch-FFMPEG-off:
 	@${REINPLACE_CMD} 's|find_program(FFMPEG_EXECUTABLE|#&|' ${WRKSRC}/cmake/CMakeLists.txt
+
+post-install:
+	@${RM} -r ${STAGEDIR}${PREFIX}/lib/python*
 
 .include <bsd.port.mk>
