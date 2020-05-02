@@ -11,7 +11,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_i386=	undefined reference to `__atomic_load'
-CONFLICTS_BUILD=	ga # conflicts with include/error.h, already fixed in the head
+CONFLICTS_BUILD=	ga mpich mpich2 # conflicts with include/error.h from ga, already fixed in the head
 
 USES=		blaslapack:openblas cmake:noninja eigen:3 fortran localbase:ldflags shebangfix
 USE_GITHUB=	yes
@@ -29,6 +29,7 @@ OPTIONS_GROUP=		PARALLEL
 OPTIONS_GROUP_PARALLEL=	MPI ${OPTIONS_DEFINE_${CHOSEN_COMPILER_TYPE}}
 OPTIONS_DEFAULT=	MPI JPEG PNG GZIP FFMPEG VORONOI LATTE ${OPTIONS_DEFAULT_${CHOSEN_COMPILER_TYPE}}
 OPTIONS_DEFAULT_clang=	OPENMP
+OPTIONS_SUB=		yes
 PARALLEL_DESC=		Enable parallelizations:
 
 MPI_CMAKE_BOOL=		BUILD_MPI
