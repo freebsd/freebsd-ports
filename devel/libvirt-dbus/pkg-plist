@@ -2,6 +2,7 @@ sbin/libvirt-dbus
 man/man8/libvirt-dbus.8.gz
 share/dbus-1/interfaces/org.libvirt.Connect.xml
 share/dbus-1/interfaces/org.libvirt.Domain.xml
+share/dbus-1/interfaces/org.libvirt.DomainSnapshot.xml
 share/dbus-1/interfaces/org.libvirt.Interface.xml
 share/dbus-1/interfaces/org.libvirt.NWFilter.xml
 share/dbus-1/interfaces/org.libvirt.Network.xml
