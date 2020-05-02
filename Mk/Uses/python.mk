@@ -632,7 +632,7 @@ PYNUMPY=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16,1<1.19,1:math/py-numpy@${PY_FLAVOR}
 # Common Python modules that can be needed but only for some versions of Python.
 .if ${PYTHON_REL} < 3500
 PY_PILLOW=	${PYTHON_PKGNAMEPREFIX}pillow6>=6.0.0:graphics/py-pillow6@${PY_FLAVOR}
-PY_TYPING=	${PYTHON_PKGNAMEPREFIX}typing>=3.7.4:devel/py-typing@${PY_FLAVOR}
+PY_TYPING=	${PYTHON_PKGNAMEPREFIX}typing>=3.7.4.1:devel/py-typing@${PY_FLAVOR}
 .else
 PY_PILLOW=	${PYTHON_PKGNAMEPREFIX}pillow>=7.0.0:graphics/py-pillow@${PY_FLAVOR}
 PY_TYPING=
