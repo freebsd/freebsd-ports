@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	taglib
-PORTVERSION=	1.11.1
-PORTREVISION=	3
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.12-beta-1
 CATEGORIES=	audio
-MASTER_SITES=	https://taglib.github.io/releases/
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Library for manipulating ID3 tags and Ogg comments
@@ -15,29 +14,31 @@ LICENSE_COMB=	dual
 LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LGPL
 LICENSE_FILE_MPL11=	${WRKSRC}/COPYING.MPL
 
+TEST_DEPENDS=	cppunit-config:devel/cppunit
+
 USES=		cmake compiler:c++11-lang cpe pathfix
 USE_LDCONFIG=	yes
 
+USE_GITHUB=	yes
+
 CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_Boost \
 		WITH_ASF \
-		WITH_MP4 \
-		BUILD_SHARED_LIBS
+		WITH_MP4
 
-CPE_VENDOR=	scott_wheeler
-
-OPTIONS_DEFINE=	RCC
+OPTIONS_DEFINE=	RCC TEST
 OPTIONS_SUB=	yes
 
 # The official patches for this can be obtained from:
 #   http://darksoft.org/files/rusxmms/patches/
-# however, they do not seem to yet have any for taglib-1.11.1.
-# So instead, use:
-#   https://sourceforge.net/p/qmmp-dev/code/HEAD/tree/trunk/extras/package/win32/contrib/taglib-rusxmms/
 #
 RCC_DESC=		Build with RusXMMS librcc patches (experimental)
 RCC_LIB_DEPENDS=	librcc.so:devel/librcc
 RCC_USES=		localbase:ldflags
 RCC_EXTRA_PATCHES=	${FILESDIR}/extrapatch-rcc
+
+TEST_CMAKE_BOOL=	BUILD_TESTS
+TEST_CMAKE_BOOL_OFF=	BUILD_SHARED_LIBS
+TEST_TARGET=	check
 
 post-patch-RCC-on:
 	@${REINPLACE_CMD} -e 's|-ltag|-ltag -lrcc|g' \
