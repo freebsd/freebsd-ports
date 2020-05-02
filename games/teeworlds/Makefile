@@ -16,6 +16,7 @@ GH_TUPLE=	teeworlds:teeworlds-translation:4ed69dd:translations/datasrc/languages
 		teeworlds:teeworlds-maps:1d3401a:maps/datasrc/maps
 
 USES=		cmake cpe pkgconfig python ssl
+USE_CSTD=	c99
 CPE_VERSION=	${PORTVERSION:C/^0\.//}
 CMAKE_ARGS=	-DPYTHON_EXECUTABLE="${PYTHON_CMD}"
 
