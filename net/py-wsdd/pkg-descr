@@ -1,0 +1,5 @@
+wsdd implements a Web Service Discovery host daemon. This enables (Samba)
+hosts, like your local NAS device, to be found by Web Service Discovery Clients
+like Windows.
+
+WWW: https://github.com/christgau/wsdd

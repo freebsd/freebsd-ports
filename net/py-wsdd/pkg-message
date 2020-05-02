@@ -1,0 +1,8 @@
+[
+{ type: install
+  message: <<EOM
+To run wsdd at startup, you need to add the following to /etc/rc.conf:
+
+    wsdd_enable="YES"
+EOM
+]
