@@ -9,5 +9,5 @@ include/poppler/qt5/poppler-qt5.h
 include/poppler/qt5/poppler-version.h
 lib/libpoppler-qt5.so
 lib/libpoppler-qt5.so.1
-lib/libpoppler-qt5.so.1.23.0
+lib/libpoppler-qt5.so.1.24.0
 libdata/pkgconfig/poppler-qt5.pc

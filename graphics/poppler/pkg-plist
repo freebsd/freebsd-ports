@@ -1,5 +1,6 @@
 include/poppler/Annot.h
 include/poppler/Array.h
+include/poppler/BBoxOutputDev.h
 include/poppler/CMap.h
 include/poppler/CachedFile.h
 include/poppler/CairoFontEngine.h
@@ -130,7 +131,7 @@ include/poppler/splash/SplashXPath.h
 include/poppler/splash/SplashXPathScanner.h
 lib/libpoppler-cpp.so
 lib/libpoppler-cpp.so.0
-lib/libpoppler-cpp.so.0.7.0
+lib/libpoppler-cpp.so.0.8.0
 lib/libpoppler.so
 lib/libpoppler.so.%%SHLIB_VER%%
 lib/libpoppler.so.%%SHLIB_VER%%.0.0
