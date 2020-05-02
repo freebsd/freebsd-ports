@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pycadf
-PORTVERSION=	2.10.0
-PORTREVISION=	1
+PORTVERSION=	3.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}debtcollector>=1.2.0:devel/py-debtcollector@
 		${PYTHON_PKGNAMEPREFIX}pytz>=2013.6:devel/py-pytz@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.10.0:devel/py-six@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
@@ -31,7 +30,7 @@ post-patch:
 
 post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}
-.for service in ceilometer cinder glance neutron nova trove
+.for service in ceilometer cinder glance neutron nova swift trove
 	${INSTALL_DATA} ${WRKSRC}/etc/pycadf/${service}_api_audit_map.conf ${STAGEDIR}${ETCDIR}/${service}_api_audit_map.conf.sample
 .endfor
 

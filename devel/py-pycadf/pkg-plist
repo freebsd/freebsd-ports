@@ -4,4 +4,5 @@
 @sample %%ETCDIR%%/glance_api_audit_map.conf.sample
 @sample %%ETCDIR%%/neutron_api_audit_map.conf.sample
 @sample %%ETCDIR%%/nova_api_audit_map.conf.sample
+@sample %%ETCDIR%%/swift_api_audit_map.conf.sample
 @sample %%ETCDIR%%/trove_api_audit_map.conf.sample
