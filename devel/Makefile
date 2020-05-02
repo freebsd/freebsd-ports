@@ -1079,6 +1079,7 @@
     SUBDIR += kiwix-lib
     SUBDIR += kms-cmake-utils
     SUBDIR += kodi-platform
+    SUBDIR += kokkos
     SUBDIR += kore
     SUBDIR += kronosnet
     SUBDIR += ksql
