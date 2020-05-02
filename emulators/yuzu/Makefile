@@ -5,6 +5,9 @@ PORTVERSION=	s20200427
 PORTREVISION?=	0
 CATEGORIES=	emulators
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	b4d0724a63e0.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/3859
+
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Nintendo Switch emulator/debugger
 

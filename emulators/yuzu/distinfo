@@ -39,3 +39,5 @@ SHA256 (weidai11-cryptopp-CRYPTOPP_7_0_0-23-gf320e7d9_GH0.tar.gz) = 1d6f029b83a2
 SIZE (weidai11-cryptopp-CRYPTOPP_7_0_0-23-gf320e7d9_GH0.tar.gz) = 7209489
 SHA256 (xiph-opus-v1.3.1-4-gad8fe90d_GH0.tar.gz) = a5169e4de7266dca46f8fe08cdc3b9d331c14eaaffc7d9d8abc02d70c4f555da
 SIZE (xiph-opus-v1.3.1-4-gad8fe90d_GH0.tar.gz) = 828993
+SHA256 (b4d0724a63e0.patch) = 23d4e9c5a015fe6d022bc98224d3e2a9e9c0694c526486f544ae82809bfdcd0c
+SIZE (b4d0724a63e0.patch) = 2360
