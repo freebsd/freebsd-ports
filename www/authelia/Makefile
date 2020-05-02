@@ -2,7 +2,7 @@
 
 PORTNAME=	authelia
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.15.1
+DISTVERSION=	4.16.0
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,6 +16,8 @@ USE_GITHUB=	yes
 GH_TUPLE=	\
 		Gurpartap:logrus-stack:89c00d8a28f4:gurpartap_logrus_stack/vendor/github.com/Gurpartap/logrus-stack \
 		Workiva:go-datastructures:v1.0.52:workiva_go_datastructures/vendor/github.com/Workiva/go-datastructures \
+		aletheia-icu:broccoli:c5ac961a357a:aletheia_icu/vendor/aletheia.icu/broccoli \
+		andybalholm:brotli:v1.0.0:andybalholm_brotli/vendor/github.com/andybalholm/brotli \
 		asaskevich:govalidator:f61b66f89f4a:asaskevich_govalidator/vendor/github.com/asaskevich/govalidator \
 		blang:semver:v3.5.1:blang_semver/vendor/github.com/blang/semver \
 		boombuler:barcode:6c824513bacc:boombuler_barcode/vendor/github.com/boombuler/barcode \
@@ -24,7 +26,7 @@ GH_TUPLE=	\
 		dgrijalva:jwt-go:v3.2.0:dgrijalva_jwt_go/vendor/github.com/dgrijalva/jwt-go \
 		duosecurity:duo_api_golang:6c680f768e74:duosecurity_duo_api_golang/vendor/github.com/duosecurity/duo_api_golang \
 		facebookgo:stack:751773369052:facebookgo_stack/vendor/github.com/facebookgo/stack \
-		fasthttp:router:v1.0.3:fasthttp_router/vendor/github.com/fasthttp/router \
+		fasthttp:router:v1.0.4:fasthttp_router/vendor/github.com/fasthttp/router \
 		fasthttp:session:v1.1.8:fasthttp_session/vendor/github.com/fasthttp/session \
 		fsnotify:fsnotify:v1.4.7:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		go-asn1-ber:asn1-ber:v1.3.1:go_asn1_ber_asn1_ber/vendor/github.com/go-asn1-ber/asn1-ber \
@@ -48,6 +50,7 @@ GH_TUPLE=	\
 		otiai10:copy:v1.1.1:otiai10_copy/vendor/github.com/otiai10/copy \
 		pelletier:go-toml:v1.4.0:pelletier_go_toml/vendor/github.com/pelletier/go-toml \
 		philhofer:fwd:v1.0.0:philhofer_fwd/vendor/github.com/philhofer/fwd \
+		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
 		pquerna:otp:v1.2.0:pquerna_otp/vendor/github.com/pquerna/otp \
 		savsgio:dictpool:215dfcb77c2c:savsgio_dictpool/vendor/github.com/savsgio/dictpool \
