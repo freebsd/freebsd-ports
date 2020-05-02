@@ -1,6 +1,5 @@
 libexec/brisk-menu
 share/dbus-1/services/org.mate.panel.applet.BriskMenuFactory.service
-share/glib-2.0/schemas/com.solus-project.brisk-menu.gschema.xml
 share/icons/hicolor/scalable/actions/brisk_system-log-out-symbolic.svg
 share/locale/ar/LC_MESSAGES/brisk-menu.mo
 share/locale/ca/LC_MESSAGES/brisk-menu.mo
