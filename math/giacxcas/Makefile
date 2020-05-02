@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	giacxcas
-DISTVERSION=	1.5.0-69
-PORTREVISION=	1
+DISTVERSION=	1.5.0-87
 CATEGORIES=	math
 MASTER_SITES=	http://www-fourier.ujf-grenoble.fr/~parisse/debian/dists/stable/main/source/:giac \
+		http://cocoa.dima.unige.it/cocoalib/tgz/:cocoa \
 		http://www-fourier.ujf-grenoble.fr/~parisse/giac/freebsd/
 DISTFILES=	giac_${DISTVERSION}${EXTRACT_SUFX}:giac \
-		CoCoALib-0.9950.tgz \
+		CoCoALib-${COCOA_LIB_VERSION}.tgz:cocoa \
 		fltk-giac.tar.gz
 DIST_SUBDIR=	${PORTNAME}
 
@@ -52,6 +52,8 @@ SHEBANG_FILES=	src/pgiac
 INSTALL_TARGET=	install-strip
 INSTALLS_ICONS=	yes
 
+COCOA_LIB_VERSION=	0.99700
+
 CXXFLAGS+=	-I${LOCALBASE}/include
 CPPFLAGS+=	-I${COCOALIB-GIAC}/include \
 		-I${FLTKDEV-GIAC} \
@@ -62,7 +64,7 @@ LDFLAGS+=	-L${COCOALIB-GIAC}/lib \
 
 WRKSRC=		${WRKDIR}/giac-${DISTVERSION:C/-[0-9]*//}
 FLTKDEV-GIAC=	${WRKDIR}/fltk-1.3.0
-COCOALIB-GIAC=	${WRKDIR}/CoCoALib-0.9950
+COCOALIB-GIAC=	${WRKDIR}/CoCoALib-${COCOA_LIB_VERSION}
 
 DATADIR=	${PREFIX}/share/giac
 DOCSDIR=	${PREFIX}/share/doc/giac

@@ -37,6 +37,7 @@ include/giac/input_parser.h
 include/giac/intg.h
 include/giac/intgab.h
 include/giac/isom.h
+include/giac/k_csdk.h
 include/giac/kdisplay.h
 include/giac/lexer_tab_int.h
 include/giac/lin.h
