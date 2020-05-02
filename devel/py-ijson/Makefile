@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ijson
-PORTVERSION=	2.6.1
+PORTVERSION=	3.0.3
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,6 +24,6 @@ YAJL_USES=		localbase:ldflags
 YAJL_VARS_OFF=		NO_ARCH=yes
 
 post-patch-YAJL-off:
-	@${REINPLACE_CMD} -e 's|if yajl_present()|if False|' ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e 's|if embed_yajl or have_yajl|if False|' ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
