@@ -18,6 +18,7 @@ include/geo_simpletags.h
 include/geo_tiffp.h
 include/geokeys.h
 include/geokeys.inc
+include/geokeys_v1_1.inc
 include/geonames.h
 include/geotiff.h
 include/geotiffio.h
@@ -26,7 +27,7 @@ include/xtiffio.h
 lib/libgeotiff.a
 lib/libgeotiff.so
 lib/libgeotiff.so.5
-lib/libgeotiff.so.5.0.0
+lib/libgeotiff.so.5.1.0
 man/man1/applygeo.1.gz
 man/man1/geotifcp.1.gz
 man/man1/listgeo.1.gz
