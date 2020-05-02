@@ -1,3 +1,3 @@
-TIMESTAMP = 1588279152
-SHA256 (varnish-libvmod-digest-libvmod-digest-1.0.2-1793bea9_GH0.tar.gz) = c6b26e3360c32cb2febe1d0ecf8de5fb9992d91cf552728a9cd5a77f46415832
-SIZE (varnish-libvmod-digest-libvmod-digest-1.0.2-1793bea9_GH0.tar.gz) = 18581
+TIMESTAMP = 1588432139
+SHA256 (varnish-libvmod-digest-1.0.2-6-g1793bea_GH0.tar.gz) = 3ff8588fbcda9b676042b62b61bf90bd599c8a3b2b3ab76e7b72374c6bbed6b6
+SIZE (varnish-libvmod-digest-1.0.2-6-g1793bea_GH0.tar.gz) = 18589
