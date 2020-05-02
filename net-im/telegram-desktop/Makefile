@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	telegram-desktop
-DISTVERSION=	2.0.1
+DISTVERSION=	2.1.0
 CATEGORIES=	net-im
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
 DISTNAME=	tdesktop-${DISTVERSION}-full
