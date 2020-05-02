@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libflame
-DISTVERSION=	5.1.0-53
-DISTVERSIONSUFFIX=	-gf4e27a74
+DISTVERSION=	5.2.0
 CATEGORIES=	math
 
 MAINTAINER=	jmd@FreeBSD.org
@@ -17,7 +16,7 @@ ONLY_FOR_ARCHS_REASON=	make system does not support other architectures yet
 BUILD_DEPENDS=	bash:shells/bash
 
 GNU_CONFIGURE=	yes
-USES=		compiler:c11 gmake
+USES=		compiler:c11 gmake python:3.7
 USE_CSTD=	c99
 USE_LDCONFIG=	yes
 
@@ -74,8 +73,8 @@ CONFIGURE_ARGS+=	--disable-autodetect-f77-ldflags \
 			--disable-autodetect-f77-name-mangling
 .endif
 
-post-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/include/libflame
-	${INSTALL_DATA} ${WRKSRC}/include_local/* ${STAGEDIR}/${PREFIX}/include/libflame/
+#post-install:
+#	@${MKDIR} ${STAGEDIR}${PREFIX}/include/libflame
+#	${INSTALL_DATA} ${WRKSRC}/include_local/* ${STAGEDIR}/${PREFIX}/include/libflame/
 
 .include <bsd.port.mk>

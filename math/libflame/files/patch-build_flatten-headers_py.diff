@@ -1,0 +1,8 @@
+--- build/flatten-headers.py.orig	2020-05-02 16:30:41.773805000 -0500
++++ build/flatten-headers.py	2020-05-02 16:30:49.511257000 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python3.7
+ #
+ #  BLIS    
+ #  An object-based framework for developing high-performance BLAS-like
