@@ -163,6 +163,7 @@
     SUBDIR += cre
     SUBDIR += cretan-hubris
     SUBDIR += crimson
+    SUBDIR += crispy-doom
     SUBDIR += criticalmass
     SUBDIR += critterding
     SUBDIR += crossfire-client

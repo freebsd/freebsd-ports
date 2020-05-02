@@ -1,0 +1,50 @@
+--- src/Makefile.am.orig	2020-05-02 15:07:41 UTC
++++ src/Makefile.am
+@@ -5,16 +5,16 @@ execgamesdir = ${bindir}
+ 
+ execgames_PROGRAMS = @PROGRAM_PREFIX@doom     \
+                      @PROGRAM_PREFIX@heretic  \
+-                     @PROGRAM_PREFIX@server
+-EXTRA_PROGRAMS =     @PROGRAM_PREFIX@hexen    \
++                     @PROGRAM_PREFIX@server   \
++                     @PROGRAM_PREFIX@hexen    \
+                      @PROGRAM_PREFIX@strife
+ 
+ noinst_PROGRAMS = @PROGRAM_PREFIX@setup
+ 
+ SETUP_BINARIES = @PROGRAM_PREFIX@doom-setup$(EXEEXT)    \
+-                 @PROGRAM_PREFIX@heretic-setup$(EXEEXT)
+-#                @PROGRAM_PREFIX@hexen-setup$(EXEEXT)   \
+-#                @PROGRAM_PREFIX@strife-setup$(EXEEXT)
++                 @PROGRAM_PREFIX@heretic-setup$(EXEEXT) \
++                 @PROGRAM_PREFIX@hexen-setup$(EXEEXT)   \
++                 @PROGRAM_PREFIX@strife-setup$(EXEEXT)
+ 
+ execgames_SCRIPTS = $(SETUP_BINARIES)
+ 
+@@ -225,9 +225,9 @@ EXTRA_DIST =                        \
+ metainfodir = $(prefix)/share/metainfo
+ metainfo_DATA =                             \
+         @PACKAGE_RDNS@.Doom.metainfo.xml    \
+-        @PACKAGE_RDNS@.Heretic.metainfo.xml
+-#       @PACKAGE_RDNS@.Hexen.metainfo.xml   \
+-#       @PACKAGE_RDNS@.Strife.metainfo.xml
++        @PACKAGE_RDNS@.Heretic.metainfo.xml \
++        @PACKAGE_RDNS@.Hexen.metainfo.xml   \
++        @PACKAGE_RDNS@.Strife.metainfo.xml
+ 
+ @PACKAGE_RDNS@.Doom.metainfo.xml : Doom.metainfo.xml
+ 	cp Doom.metainfo.xml $@
+@@ -244,9 +244,9 @@ metainfo_DATA =                             \
+ appdir = $(prefix)/share/applications
+ app_DATA =                                 \
+            @PACKAGE_RDNS@.Doom.desktop    \
+-           @PACKAGE_RDNS@.Heretic.desktop
+-#          @PACKAGE_RDNS@.Hexen.desktop   \
+-#          @PACKAGE_RDNS@.Strife.desktop
++           @PACKAGE_RDNS@.Heretic.desktop \
++           @PACKAGE_RDNS@.Hexen.desktop   \
++           @PACKAGE_RDNS@.Strife.desktop
+ 
+ @PACKAGE_RDNS@.Doom.desktop : Doom.desktop
+ 	cp Doom.desktop $@
