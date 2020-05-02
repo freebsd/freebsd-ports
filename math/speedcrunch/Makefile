@@ -13,8 +13,6 @@ COMMENT=	Keyboard-oriented desktop scientific calculator
 
 LICENSE=	GPLv2+
 
-BROKEN=		Does not build with Qt5-5.14
-
 BB_ACCOUNT=	heldercorreia
 BB_PROJECT=	${PORTNAME}
 BB_COMMIT=	c0fc9c68d292
