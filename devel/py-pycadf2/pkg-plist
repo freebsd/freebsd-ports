@@ -1,0 +1,7 @@
+@dir %%ETCDIR%%
+@sample %%ETCDIR%%/ceilometer_api_audit_map.conf.sample
+@sample %%ETCDIR%%/cinder_api_audit_map.conf.sample
+@sample %%ETCDIR%%/glance_api_audit_map.conf.sample
+@sample %%ETCDIR%%/neutron_api_audit_map.conf.sample
+@sample %%ETCDIR%%/nova_api_audit_map.conf.sample
+@sample %%ETCDIR%%/trove_api_audit_map.conf.sample
