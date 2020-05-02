@@ -10,7 +10,7 @@ COMMENT=	C++ performance portability programming ecosystem
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake shebangfix
+USES=		cmake compiler:c++11-lang shebangfix
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	bin/nvcc_wrapper
