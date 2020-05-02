@@ -169,7 +169,7 @@ post-patch:
 	@${REINPLACE_CMD} -e '/vsn/s/0.0.1/${BASE64URL_VER}/' ${WRKSRC}/deps/base64url/src/base64url.app.src
 .if ${OSVERSION} < 1200000
 	# Disable LTO required by dependency, not available by default in < 12.x
-	@${REINPLACE_CMD} -e 's/-flto//' ${WRKSRC}/deps/jiffy/rebar.config
+	@${REINPLACE_CMD} -e 's/$$FLTO_FLAG//' ${WRKSRC}/deps/jiffy/rebar.config
 .endif
 
 pre-configure:
