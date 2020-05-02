@@ -1,0 +1,20 @@
+#!/bin/sh
+# $FreeBSD$
+#
+# PROVIDE: akpop3d
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name=akpop3d
+rcvar=akpop3d_enable
+
+command="%%PREFIX%%/bin/${name}"
+command_args="-d -l0"
+
+pidfile="/var/run/${name}.pid"
+
+load_rc_config $name
+run_rc_command "$1"
