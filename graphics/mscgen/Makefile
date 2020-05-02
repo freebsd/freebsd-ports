@@ -3,7 +3,7 @@
 
 PORTNAME=	mscgen
 PORTVERSION=	0.20
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.mcternan.me.uk/mscgen/software/ \
 		http://romain.blogreen.org/distfiles/
@@ -12,26 +12,27 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	Message Sequence Chart Renderer
 
-OPTIONS_DEFINE=	FREETYPE PNG
-OPTIONS_DEFAULT=FREETYPE PNG
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-.include <bsd.port.options.mk>
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+		libtiff.so:graphics/tiff \
+		libwebp.so:graphics/webp
 
-.if ${PORT_OPTIONS:MFREETYPE}
-CONFIGURE_ARGS+=--with-freetype
-LIB_DEPENDS+=	libfreetype.so:print/freetype2
-.else
-CONFIGURE_ARGS+=--without-freetype
-.endif
+USES=		jpeg
 
-.if ${PORT_OPTIONS:MPNG}
-CONFIGURE_ARGS+=--with-png
-LIB_DEPENDS+=	libgd.so:graphics/gd
-.else
-CONFIGURE_ARGS+=--without-png
-.endif
+GNU_CONFIGURE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-GNU_CONFIGURE=	yes
+
+OPTIONS_DEFINE=			FREETYPE PNG
+OPTIONS_DEFAULT=		FREETYPE PNG
+
+FREETYPE_CONFIGURE_WITH=	freetype
+FREETYPE_LIB_DEPENDS=		libfreetype.so:print/freetype2
+
+PNG_CONFIGURE_WITH=		png
+PNG_LIB_DEPENDS=		libgd.so:graphics/gd \
+				libpng16.so:graphics/png
 
 .include <bsd.port.mk>
