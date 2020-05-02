@@ -1,9 +1,10 @@
-net-http-persistent manages persistent connections using Net::HTTP plus a speed
-fix for Ruby 1.8. It's thread-safe too! Using persistent HTTP connections can
-dramatically increase the speed of HTTP. Creating a new HTTP connection for
+net-http-persistent manages persistent connections using Net::HTTP including a
+thread pool for connecting to multiple hosts. Using persistent HTTP connections
+can dramatically increase the speed of HTTP. Creating a new HTTP connection for
 every request involves an extra TCP round-trip and causes TCP congestion
 avoidance negotiation to start over. Net::HTTP supports persistent connections
-with some API methods but does not handle reconnection gracefully.
-Net::HTTP::Persistent supports reconnection and retry according to RFC 2616.
+with some API methods but does not make setting up a single persistent
+connection or managing multiple connections easy. Net::HTTP::Persistent wraps
+Net::HTTP and allows you to focus on how to make HTTP requests.
 
 WWW: https://github.com/drbrain/net-http-persistent
