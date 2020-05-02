@@ -1093,6 +1093,7 @@ lib/calibre/calibre/gui2/viewer/__init__.py
 lib/calibre/calibre/gui2/viewer/annotations.py
 lib/calibre/calibre/gui2/viewer/bookmarks.py
 lib/calibre/calibre/gui2/viewer/convert_book.py
+lib/calibre/calibre/gui2/viewer/highlights.py
 lib/calibre/calibre/gui2/viewer/lookup.py
 lib/calibre/calibre/gui2/viewer/main.py
 lib/calibre/calibre/gui2/viewer/mathjax.py
