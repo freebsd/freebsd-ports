@@ -1,15 +1,6 @@
---- SConstruct.orig	2019-09-28 17:59:47 UTC
+--- SConstruct.orig	2020-02-24 15:50:12 UTC
 +++ SConstruct
-@@ -2,6 +2,8 @@ import os
- 
- # Load environment variables, including some that should be renamed.
- env = Environment(ENV = os.environ)
-+if 'CXX' in os.environ:
-+	env['CXX'] = os.environ['CXX']
- if 'CXXFLAGS' in os.environ:
- 	env.Append(CCFLAGS = os.environ['CXXFLAGS'])
- if 'LDFLAGS' in os.environ:
-@@ -22,7 +24,7 @@ Help(opts.GenerateHelpText(env))
+@@ -24,7 +24,7 @@ Help(opts.GenerateHelpText(env))
  
  flags = ["-std=c++11", "-Wall"]
  if env["mode"] != "debug":
@@ -18,7 +9,7 @@
  if env["mode"] == "debug":
  	flags += ["-g"]
  if env["mode"] == "profile":
-@@ -57,7 +59,7 @@ sky = env.Program("endless-sky", Glob(buildDirectory +
+@@ -59,7 +59,7 @@ sky = env.Program("endless-sky", Glob(buildDirectory +
  
  
  # Install the binary:
@@ -27,7 +18,7 @@
  
  # Install the desktop file:
  env.Install("$DESTDIR$PREFIX/share/applications", "endless-sky.desktop")
-@@ -85,7 +87,7 @@ if env.get("PREFIX").startswith("/usr/"):
+@@ -87,7 +87,7 @@ if env.get("PREFIX").startswith("/usr/"):
  
  # Install the man page.
  env.Command(
@@ -36,7 +27,7 @@
  	"endless-sky.6",
  	"gzip -c $SOURCE > $TARGET")
  
-@@ -98,11 +100,11 @@ def RecursiveInstall(env, target, source):
+@@ -100,11 +100,11 @@ def RecursiveInstall(env, target, source):
  			RecursiveInstall(env, os.path.join(target, name), node.abspath)
  		else:
  			env.Install(target, node)
