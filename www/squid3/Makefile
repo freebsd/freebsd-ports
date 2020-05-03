@@ -26,7 +26,7 @@ COMMENT=	HTTP Caching Proxy
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-CONFLICTS=	squid*-4.*
+CONFLICTS=	squid-* squid-devel-*
 
 BROKEN_powerpc64=	Does not build: error: unrecognizable insn
 
