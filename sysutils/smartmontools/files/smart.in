@@ -16,7 +16,7 @@ smartctl=%%PREFIX%%/sbin/smartctl
 case "${daily_status_smart_devices}" in
 	# XXX AUTO mode selects only regular ad/da disks 
 	[Aa][Uu][Tt][Oo])
-		daily_status_smart_devices="$(sysctl -n kern.disks | sed -E 's/[[:<:]](cd|ar)[0-9]+//g; s/nvd/nvme/g')"
+		daily_status_smart_devices="$(sysctl -n kern.disks | sed -E 's/[[:<:]](cd|ar|vtbd)[0-9]+//g; s/nvd/nvme/g')"
 		;;
 	*)	;;
 esac
