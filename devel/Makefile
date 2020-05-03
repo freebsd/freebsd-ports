@@ -5123,6 +5123,7 @@
     SUBDIR += py-tapi
     SUBDIR += py-tarantool-queue
     SUBDIR += py-tartiflette
+    SUBDIR += py-tartiflette-aiohttp
     SUBDIR += py-taskflow
     SUBDIR += py-taskflow3
     SUBDIR += py-tblib
