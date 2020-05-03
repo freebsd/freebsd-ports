@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	easyrpg-player
-PORTVERSION=	0.6.1
-PORTREVISION=	5
+PORTVERSION=	0.6.2
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -37,7 +36,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	EasyRPG
 GH_PROJECT=	Player
 
-USES=		cmake:insource compiler:c++11-lib localbase:ldflags pkgconfig \
+USES=		cmake:insource compiler:c++14-lang localbase:ldflags pkgconfig \
 		sdl xorg
 CMAKE_ARGS=	-DCMAKE_INSTALL_MANDIR=man \
 		-DPLAYER_AUDIO_BACKEND=SDL2_mixer
