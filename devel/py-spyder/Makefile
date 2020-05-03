@@ -4,7 +4,7 @@
 PORTNAME=	spyder
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.2.7
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	devel science python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -26,7 +26,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}QtAwesome>0:x11-fonts/py-QtAwesome@${PY_FLAV
 		pylint${PYTHON_PKGNAMESUFFIX}>=0.25:devel/pylint@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}parso>=0.1.1:textproc/py-parso@${PY_FLAVOR}
 
-USES=		desktop-file-utils python:3.4+ pyqt:5
+USES=		desktop-file-utils python:3.6+ pyqt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	spyder-ide
 USE_PYTHON=	distutils autoplist noflavors

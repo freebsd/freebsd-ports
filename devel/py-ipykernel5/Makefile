@@ -2,6 +2,7 @@
 
 PORTNAME=	ipykernel
 PORTVERSION=	5.2.1
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipython>=5.0.0:devel/ipython@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tornado>=4.2:www/py-tornado@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}traitlets>=4.1.0:devel/py-traitlets@${PY_FLAVOR}
 
-USES=		python:3.5+
+USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes

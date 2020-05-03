@@ -2,6 +2,7 @@
 
 PORTNAME=	ipyparallel
 PORTVERSION=	6.2.5
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,7 +24,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=2.1:devel/py-dateutil@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}tornado>=4.0:www/py-tornado@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}traitlets>=4.3:devel/py-traitlets@${PY_FLAVOR}
 
-USES=		python:3.5+
+USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
