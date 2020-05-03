@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	simsu
-PORTVERSION=	1.3.8
+PORTVERSION=	1.3.9
 CATEGORIES=	games
 MASTER_SITES=	https://gottcode.org/${PORTNAME}/ \
 		https://mirror.amdmi3.ru/distfiles/
