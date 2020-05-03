@@ -5050,6 +5050,7 @@
     SUBDIR += py-rtslib-fb
     SUBDIR += py-ruamel.ordereddict
     SUBDIR += py-ruamel.yaml
+    SUBDIR += py-ruamel.yaml.clib
     SUBDIR += py-rubymarshal
     SUBDIR += py-rx
     SUBDIR += py-rx1
