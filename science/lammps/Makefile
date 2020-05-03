@@ -2,7 +2,7 @@
 
 PORTNAME=	lammps
 PORTVERSION=	${GH_TAGNAME:C/(stable|patch)_([0-9]{1,2})([A-Z][a-z][a-z])([0-9]{4})/\4.\3.\2/S/Jan/01/S/Feb/02/S/Mar/03/S/Apr/04/S/May/05/S/Jun/06/S/Jul/07/S/Aug/08/S/Sep/09/S/Oct/10/S/Nov/11/S/Dec/12/}
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	science
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -94,6 +94,7 @@ KIM_CMAKE_BOOL=		PKG_KIM
 KIM_CMAKE_ON=		-DDOWNLOAD_KIM:BOOL=OFF
 KIM_LIB_DEPENDS=	libkim-api.so:science/kim-api \
 			libcurl.so:ftp/curl
+KIM_RUN_DEPENDS=	openkim-models>0:science/openkim-models
 
 LATTE_DESC=		latte package based on the liblatte library
 LATTE_CMAKE_BOOL=	PKG_LATTE
