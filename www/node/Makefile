@@ -78,6 +78,10 @@ LIB_DEPENDS+=	libcares.so:dns/c-ares\
 EXTRA_PATCHES=		${PATCHDIR}/extra-patch-common.gypi
 .endif
 
+.if ${ARCH} == armv6 || ${ARCH} == armv7
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-tools_v8__gypfiles_v8.gyp
+.endif
+
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200085
 BROKEN_SSL+=	base
 .endif
