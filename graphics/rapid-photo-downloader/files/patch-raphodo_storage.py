@@ -1,4 +1,4 @@
---- raphodo/storage.py.orig	2019-07-09 21:12:19 UTC
+--- raphodo/storage.py.orig	2020-04-17 01:22:23 UTC
 +++ raphodo/storage.py
 @@ -68,10 +68,9 @@ import xdg
  import gi
@@ -10,7 +10,7 @@
 -from gi.repository import GUdev, UDisks, GLib
 +from gi.repository import GUdev, GLib
  
- from gettext import gettext as _
+ 
  
 @@ -170,7 +169,7 @@ def get_media_dir() -> str:
  
@@ -19,7 +19,7 @@
 -    if sys.platform.startswith('linux'):
 +    if sys.platform.startswith('linux') or sys.platform.startswith('freebsd'):
          media_dir = '/media/{}'.format(get_user_name())
-         run_media_dir = '/run{}'.format(media_dir)
+         run_media_dir = '/run/media'
          distro = get_distro()
 @@ -278,7 +277,7 @@ class ValidMounts():
          self.validMountFolders, e.g. /media/<USER>, etc.
@@ -30,7 +30,7 @@
              raise ("Mounts.setValidMountPoints() not implemented on %s", sys.platform())
          else:
              try:
-@@ -646,7 +645,7 @@ def get_default_file_manager() -> Tuple[Optional[str],
+@@ -649,7 +648,7 @@ def get_default_file_manager() -> Tuple[Optional[str],
  
      _default_file_manager_probed = True
  
@@ -39,7 +39,7 @@
      cmd = shlex.split('xdg-mime query default inode/directory')
      try:
          desktop_file = subprocess.check_output(cmd, universal_newlines=True)  # type: str
-@@ -791,7 +790,7 @@ def validate_download_folder(path: Optional[str],
+@@ -794,7 +793,7 @@ def validate_download_folder(path: Optional[str],
  
      :param path: path to analyze
      :param write_on_waccesss_failure: if os.access reports path is not writable, test
@@ -48,7 +48,7 @@
      :return: Tuple indicating validity and path made absolute
  
      >>> validate_download_folder('/some/bogus/and/ridiculous/path')
-@@ -1008,259 +1007,6 @@ class CameraHotplug(QObject):
+@@ -1041,259 +1040,6 @@ class CameraHotplug(QObject):
                  self.cameraRemoved.emit()
  
  
@@ -308,7 +308,7 @@
  if have_gio:
      class GVolumeMonitor(QObject):
          r"""
-@@ -1577,7 +1323,7 @@ def get_mount_size(mount: QStorageInfo) -> Tuple[int, 
+@@ -1692,7 +1438,7 @@ def get_mount_size(mount: QStorageInfo) -> Tuple[int, 
      """
      Uses GIO to get bytes total and bytes free (available) for the mount that a
      path is in.
