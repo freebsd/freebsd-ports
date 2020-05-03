@@ -1,0 +1,25 @@
+--- CMakeLists.txt.orig	2020-04-29 15:29:06 UTC
++++ CMakeLists.txt
+@@ -211,22 +211,6 @@ IF (USES_IEEEFP_FP)
+ ENDIF()
+ 
+ 
+-# ###### DCCP support #######################################################
+-CHECK_C_SOURCE_RUNS("
+-#include <stdio.h>
+-#include <sys/socket.h>
+-#include <netinet/in.h>
+-
+-int main (int argc, char** argv)
+-{
+-   volatile int proto = IPPROTO_DCCP;
+-   return(0);
+-}"
+-HAVE_DCCP)
+-
+-IF (HAVE_DCCP)
+-   ADD_DEFINITIONS(-DHAVE_DCCP)
+-ENDIF()
+ 
+ 
+ #############################################################################

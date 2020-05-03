@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	netperfmeter
-PORTVERSION=	1.8.4
+PORTVERSION=	1.8.6
 CATEGORIES=	benchmarks
 MASTER_SITES=	https://www.uni-due.de/~be0001/netperfmeter/download/
 
