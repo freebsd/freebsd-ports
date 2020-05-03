@@ -2,14 +2,9 @@ bin/freeswitch
 bin/fs_cli
 bin/fs_encode
 bin/fs_ivrd
+bin/fs_tts
 bin/fsxs
 bin/gentls_cert
-bin/switch_console
-bin/switch_core
-bin/switch_event
-bin/switch_hash
-bin/switch_ivr_originate
-bin/switch_utils
 %%ALL_MODULES%%bin/test_avformat
 %%ALL_MODULES%%bin/test_iks
 %%ALL_MODULES%%bin/test_mod_av
@@ -53,7 +48,6 @@ include/freeswitch/switch_mprintf.h
 include/freeswitch/switch_msrp.h
 include/freeswitch/switch_nat.h
 include/freeswitch/switch_odbc.h
-include/freeswitch/switch_pgsql.h
 include/freeswitch/switch_platform.h
 include/freeswitch/switch_regex.h
 include/freeswitch/switch_resample.h
@@ -70,7 +64,6 @@ include/freeswitch/switch_xml.h
 include/freeswitch/switch_xml_config.h
 include/freeswitch/test/switch_fct.h
 include/freeswitch/test/switch_test.h
-include/freeswitch/tpl.h
 %%ALL_MODULES%%lib/freeswitch/mod/mod_abstraction.so
 %%ALL_MODULES%%lib/freeswitch/mod/mod_alsa.so
 lib/freeswitch/mod/mod_amr.so
@@ -206,6 +199,7 @@ lib/libfreeswitch.a
 lib/libfreeswitch.so
 lib/libfreeswitch.so.1
 lib/libfreeswitch.so.1.0.0
+%%LUA_LIBDIR%%/freeswitch/mod/mod_pgsql.so
 libdata/pkgconfig/freeswitch.pc
 %%DATADIR%%/fonts/FreeMono.ttf
 %%DATADIR%%/fonts/FreeMonoBold.ttf
@@ -444,6 +438,7 @@ libdata/pkgconfig/freeswitch.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rayo/autoload_configs/modules.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rayo/autoload_configs/pocketsphinx.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rayo/autoload_configs/post_load_modules.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rayo/autoload_configs/pre_load_modules.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rayo/autoload_configs/presence_map.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rayo/autoload_configs/rayo.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rayo/autoload_configs/shout.conf.xml
@@ -576,6 +571,7 @@ libdata/pkgconfig/freeswitch.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testing/autoload_configs/modules.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testing/autoload_configs/opus.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testing/autoload_configs/post_load_modules.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testing/autoload_configs/pre_load_modules.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testing/autoload_configs/presence_map.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testing/autoload_configs/shout.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testing/autoload_configs/sofia.conf.xml
@@ -708,6 +704,7 @@ libdata/pkgconfig/freeswitch.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/pocketsphinx.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/portaudio.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/post_load_modules.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/pre_load_modules.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/presence_map.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/python.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/redis.conf.xml

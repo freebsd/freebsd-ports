@@ -2,22 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	freeswitch
-PORTVERSION=	1.8.7
-PORTREVISION=	2
+PORTVERSION=	1.10.2
 CATEGORIES=	net
-MASTER_SITES=	http://files.freeswitch.org/releases/freeswitch/ \
-		http://files.freeswitch.org/releases/sounds/:sounds
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
+MASTER_SITES=	https://files.freeswitch.org/releases/freeswitch/ \
+		https://files.freeswitch.org/releases/sounds/:sounds
+DISTFILES=	${PORTNAME}-${PORTVERSION}.-release${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Multi-protocol soft switch for telephony applications
 
 LICENSE=	MPL11
 
 ONLY_FOR_ARCHS=	amd64
 
+BUILD_DEPENDS=	gdiff:textproc/diffutils
 LIB_DEPENDS=	libsqlite3.so:databases/sqlite3 \
 		libcurl.so:ftp/curl \
+		libavformat.so:multimedia/ffmpeg \
 		libpcre.so:devel/pcre \
 		libspeexdsp.so:audio/speexdsp \
 		libspeex.so:audio/speex \
@@ -25,13 +26,20 @@ LIB_DEPENDS=	libsqlite3.so:databases/sqlite3 \
 		libopus.so:audio/opus \
 		libsndfile.so:audio/libsndfile \
 		libfreetype.so:print/freetype2 \
+		libodbc.so:databases/unixODBC \
 		libpng.so:graphics/png \
 		libjbig.so:graphics/jbigkit \
-		libtiff.so:graphics/tiff
+		libtiff.so:graphics/tiff \
+		libuuid.so:misc/e2fsprogs-libuuid
 
-USES=		gmake iconv jpeg libedit libtool lua:51-52 perl5 pkgconfig shebangfix ssl tar:xz
+USES=		gmake iconv jpeg libedit libtool lua:51-52 perl5 \
+		pkgconfig shebangfix ssl
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	freeswitch
+BINARY_ALIAS=	diff=gdiff
+MAKE_JOBS_UNSAFE=yes
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.-release
 
 SHEBANG_FILES=	scripts/fsxs.in
 
@@ -74,8 +82,7 @@ ALL_MODULES_BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa \
 				${LOCALBASE}/bin/aclocal:devel/automake
 ALL_MODULES_CONFLICTS_BUILD=	apr
 ALL_MODULES_EXTRA_PATCHES=	${FILESDIR}/extrapatch-modules.conf
-ALL_MODULES_LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
-				libopencv_video.so:graphics/opencv \
+ALL_MODULES_LIB_DEPENDS=	libopencv_video.so:graphics/opencv \
 				libopencv_core.so:graphics/opencv-core \
 				libhiredis.so:databases/hiredis \
 				libmemcached.so:databases/libmemcached \
