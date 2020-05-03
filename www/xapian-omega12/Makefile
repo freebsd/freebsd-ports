@@ -17,22 +17,23 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libxapian.so:databases/xapian-core12
 
-CONFLICTS_INSTALL=	xapian-omega
-
-OPTIONS_DEFINE=	DOCS EXAMPLES ICONV
-OPTIONS_DEFAULT=ICONV
-ICONV_DESC=	Enable iconv character set conversion support
-
-PORTSCOUT=	limitw:1,even
+USES=		libtool localbase perl5 shebangfix tar:xz
 
 CONFIGURE_ARGS=	--datarootdir=${DATADIR} --docdir=${DOCSDIR}
 CONFIGURE_ENV=	PCRE_CONFIG=${LOCALBASE}/bin/pcre-config \
 		XAPIAN_CONFIG=${LOCALBASE}/bin/xapian-config
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		libtool localbase perl5 shebangfix tar:xz
+
+CONFLICTS_INSTALL=	xapian-omega
+
+PORTSCOUT=	limitw:1,even
 
 SHEBANG_FILES=	dbi2omega htdig2omega mbox2omega
+
+OPTIONS_DEFINE=	DOCS EXAMPLES ICONV
+OPTIONS_DEFAULT=ICONV
+ICONV_DESC=	Enable iconv character set conversion support
 
 ICONV_CONFIGURE_ON=	ac_cv_search_iconv=${ICONV_LIB}
 ICONV_CONFIGURE_WITH=	iconv
