@@ -1,0 +1,5 @@
+KLIFF is an interatomic potential fitting package that can be used to fit
+physics-motivated (PM) potentials, as well as machine learning potentials such
+as the neural network (NN) models.
+
+WWW: https://github.com/mjwen/kliff
