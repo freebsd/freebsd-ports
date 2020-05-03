@@ -1,0 +1,11 @@
+--- zetaback.in.orig	2019-01-31 22:04:38 UTC
++++ zetaback.in
+@@ -1585,7 +1585,7 @@ sub plan_and_run($$) {
+ 
+     foreach my $diskline (@disklist) {
+       chomp($diskline);
+-      next unless($diskline =~ /^(\S+) \[([^\]]*)\](?: {([^}]*)})?/);
++      next unless($diskline =~ /^(\S+) \[([^\]]*)\](?: \{([^}]*)\})?/);
+       my $diskname = $1;
+       my %snaps;
+       map { $snaps{$_} = 1 } (split(/,/, $2));
