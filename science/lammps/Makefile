@@ -2,7 +2,7 @@
 
 PORTNAME=	lammps
 PORTVERSION=	${GH_TAGNAME:C/(stable|patch)_([0-9]{1,2})([A-Z][a-z][a-z])([0-9]{4})/\4.\3.\2/S/Jan/01/S/Feb/02/S/Mar/03/S/Apr/04/S/May/05/S/Jun/06/S/Jul/07/S/Aug/08/S/Sep/09/S/Oct/10/S/Nov/11/S/Dec/12/}
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	science
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -46,7 +46,7 @@ CMAKE_ON+=	PKG_USER-MANIFOLD PKG_USER-MEAMC PKG_USER-MGPT PKG_USER-MISC PKG_USER
 CMAKE_ON+=	PKG_USER-PHONON PKG_USER-PTM PKG_USER-QTB PKG_USER-REACTION
 CMAKE_ON+=	PKG_USER-REAXC PKG_USER-SDPD PKG_USER-SMD PKG_USER-SMTBQ PKG_USER-SPH PKG_USER-TALLY
 CMAKE_ON+=	PKG_USER-UEF PKG_USER-QMMM PKG_USER-YAFF
-# Packages requiring extra downloades or dependencies: PKG_MSCG PKG_USER-ADIOS2 PKG_USER-NETCDF PKG_USER-QUIP PKG_USER-VTK PKG_KIM PKG_USER-PLUMED PKG_USER-SCAFACOS
+# Packages requiring extra downloades or dependencies: PKG_MSCG PKG_USER-ADIOS2 PKG_USER-NETCDF PKG_USER-QUIP PKG_KIM PKG_USER-PLUMED PKG_USER-SCAFACOS
 
 OPTIONS_DEFINE=		JPEG PNG GZIP FFMPEG
 OPTIONS_GROUP=		PARALLEL PACKAGES
@@ -55,7 +55,7 @@ OPTIONS_SUB=		yes
 PARALLEL_DESC=		Enable parallelizations:
 PACKAGES_DESC=		Enable packages:
 OPTIONS_GROUP_PARALLEL=	MPI OPENMP ${OPTIONS_DEFINE_${CHOSEN_COMPILER_TYPE}}
-OPTIONS_GROUP_PACKAGES=	H5MD KOKKOS VORONOI LATTE
+OPTIONS_GROUP_PACKAGES=	H5MD KOKKOS VORONOI LATTE VTK
 
 MPI_CMAKE_BOOL=		BUILD_MPI PKG_MPIIO
 MPI_LIB_DEPENDS=	libmpi.so:net/openmpi
@@ -91,6 +91,16 @@ VORONOI_LIB_DEPENDS=	libvoro++.so:science/voro++
 LATTE_DESC=		latte package based on the liblatte library
 LATTE_CMAKE_BOOL=	PKG_LATTE
 LATTE_LIB_DEPENDS=	liblatte.so:science/latte
+
+VTK_DESC=		USER-VTK package based on the external vtk package
+VTK_CMAKE_BOOL=		PKG_USER-VTK
+VTK_CMAKE_ON=		-DVTK_DIR:PATH=${LOCALBASE}/lib/vtk-8.2/cmake/vtk-8.2
+VTK_USES=		qt:5 xorg
+VTK_USE=		qt=core,gui,sql,widgets xorg=ice,sm,x11,xext,xt
+VTK_LIB_DEPENDS=	libvtkImagingMath-8.2.so:math/vtk8 \
+			libexpat.so:textproc/expat2 \
+			libfreetype.so:print/freetype2 \
+			libtiff.so:graphics/tiff
 
 PORTSCOUT=	ignore:1 # due to a special version tagging scheme that this project uses portscout fails to find new versions, watching their GitHub release page instead
 
