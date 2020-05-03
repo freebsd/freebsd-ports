@@ -3,6 +3,7 @@ include/liblcf/data.h
 include/liblcf/encoder.h
 include/liblcf/enum_tags.h
 include/liblcf/flag_set.h
+include/liblcf/fwd_struct_impl.h
 include/liblcf/ini.h
 include/liblcf/inireader.h
 include/liblcf/lcf_options.h

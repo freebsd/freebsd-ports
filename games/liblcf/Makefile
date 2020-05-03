@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	liblcf
-PORTVERSION=	0.6.1
-PORTREVISION=	3
+PORTVERSION=	0.6.2
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -18,7 +17,7 @@ LIB_DEPENDS=	libicui18n.so:devel/icu \
 USE_GITHUB=	yes
 GH_ACCOUNT=	EasyRPG
 
-USES=		cmake compiler:c++11-lib pkgconfig shared-mime-info
+USES=		cmake compiler:c++14-lang pkgconfig shared-mime-info
 USE_LDCONFIG=	yes
 CMAKE_ARGS=	-DCMAKE_INSTALL_LIBDIR=lib \
 		-DCMAKE_INSTALL_INCLUDEDIR=include \
