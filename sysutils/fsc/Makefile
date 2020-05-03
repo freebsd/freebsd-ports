@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	fsc
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	sysutils
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	samm@FreeBSD.org
 COMMENT=	FreeBSD Services Control family of utilities
 
 LICENSE=	BSD2CLAUSE
@@ -16,7 +16,7 @@ PLIST_FILES=	bin/fscadm sbin/fscd etc/rc.d/fscd man/man5/fscd.conf.5.gz \
 USE_GITHUB=	yes
 GH_ACCOUNT=	bsdtrhodes
 GH_PROJECT=	freebsd-fscd
-GH_TAGNAME=	ac80298
+GH_TAGNAME=	ef16626
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|' \
