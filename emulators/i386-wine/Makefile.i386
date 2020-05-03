@@ -2,15 +2,9 @@
 # $FreeBSD$
 
 # Use the wine port to do most of the heavy lifting
-SLAVEDIR?=	${.CURDIR}
-MASTERDIR=	${SLAVEDIR}/../wine
-PKGINSTALL=	${SLAVEDIR}/files/pkg-install
-PKGDEINSTALL=	${PKGINSTALL}
+MASTERDIR=	${.CURDIR}/../wine
 
 RUN_DEPENDS=	mesa-dri>0:graphics/mesa-dri
-
-CONFLICTS_INSTALL?=	wine-[0-9]* wine-staging-[0-9]* wine-devel-[0-9]* \
-			i386-wine-staging-[0-9]* i386-wine-devel-[0-9]*
 
 ACTUAL-PACKAGE-DEPENDS=	${DO_NADA}
 WINELIBDIR=	${PREFIX}/lib32
@@ -31,7 +25,7 @@ post-install-script:
 	# Fix pkg-plist references
 	${REINPLACE_CMD} -e 's!lib/!lib32/!g' ${TMPPLIST}
 	# Install bounce script to access the 32-bit executables
-	${INSTALL_SCRIPT} ${SLAVEDIR}/files/binbounce ${STAGEDIR}${PREFIX}/bin/wine
+	${INSTALL_SCRIPT} ${.CURDIR}/files/binbounce ${STAGEDIR}${PREFIX}/bin/wine
 	for i in `${GREP} ^bin ${TMPPLIST} | ${XARGS} -n1 basename` ; do \
 		[ "$${i}" = "wine" ] || ${LN} -f ${STAGEDIR}${PREFIX}/bin/wine ${STAGEDIR}${PREFIX}/bin/$${i} ; \
 		${ECHO_CMD} bin32/$${i} >> ${TMPPLIST} ; \
@@ -68,7 +62,7 @@ post-install-script:
 		fi ; \
 	done
 	# Install nvidia patching script
-	${INSTALL_SCRIPT} ${SLAVEDIR}/files/nvidia.sh ${STAGEDIR}${DATADIR}/patch-nvidia.sh
+	${INSTALL_SCRIPT} ${.CURDIR}/files/nvidia.sh ${STAGEDIR}${DATADIR}/patch-nvidia.sh
 	${ECHO_CMD} ${DATADIR:S|$(PREFIX)/||}/patch-nvidia.sh >> ${TMPPLIST}
 
 .include "${MASTERDIR}/Makefile"
