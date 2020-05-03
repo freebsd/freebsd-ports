@@ -2,7 +2,7 @@
 
 PORTNAME=	lammps
 PORTVERSION=	${GH_TAGNAME:C/(stable|patch)_([0-9]{1,2})([A-Z][a-z][a-z])([0-9]{4})/\4.\3.\2/S/Jan/01/S/Feb/02/S/Mar/03/S/Apr/04/S/May/05/S/Jun/06/S/Jul/07/S/Aug/08/S/Sep/09/S/Oct/10/S/Nov/11/S/Dec/12/}
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	science
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -23,7 +23,7 @@ CONFLICTS_BUILD=	ga mpich mpich2 # conflicts with include/error.h from ga, alrea
 
 LIB_DEPENDS=	libfftw3.so:math/fftw3
 
-USES=		blaslapack:openblas cmake:noninja eigen:3 fortran localbase:ldflags shebangfix
+USES=		blaslapack:openblas cmake:noninja compiler:c++11-lang eigen:3 fortran localbase:ldflags shebangfix
 USE_GITHUB=	yes
 GH_TAGNAME=	patch_15Apr2020
 USE_LDCONFIG=	yes
@@ -46,16 +46,16 @@ CMAKE_ON+=	PKG_USER-MANIFOLD PKG_USER-MEAMC PKG_USER-MGPT PKG_USER-MISC PKG_USER
 CMAKE_ON+=	PKG_USER-PHONON PKG_USER-PTM PKG_USER-QTB PKG_USER-REACTION
 CMAKE_ON+=	PKG_USER-REAXC PKG_USER-SDPD PKG_USER-SMD PKG_USER-SMTBQ PKG_USER-SPH PKG_USER-TALLY
 CMAKE_ON+=	PKG_USER-UEF PKG_USER-QMMM PKG_USER-YAFF
-# Packages requiring extra downloades or dependencies: PKG_MSCG PKG_USER-ADIOS2 PKG_USER-NETCDF PKG_USER-QUIP PKG_KIM PKG_USER-PLUMED PKG_USER-SCAFACOS
+# Packages requiring extra downloades or dependencies: PKG_MSCG PKG_USER-ADIOS2 PKG_USER-NETCDF PKG_USER-QUIP PKG_USER-PLUMED PKG_USER-SCAFACOS
 
 OPTIONS_DEFINE=		JPEG PNG GZIP FFMPEG
 OPTIONS_GROUP=		PARALLEL PACKAGES
-OPTIONS_DEFAULT=	MPI OPENMP JPEG PNG GZIP FFMPEG H5MD KOKKOS VORONOI LATTE ${OPTIONS_DEFAULT_${CHOSEN_COMPILER_TYPE}}
+OPTIONS_DEFAULT=	MPI OPENMP JPEG PNG GZIP FFMPEG H5MD KOKKOS VORONOI KIM LATTE ${OPTIONS_DEFAULT_${CHOSEN_COMPILER_TYPE}}
 OPTIONS_SUB=		yes
 PARALLEL_DESC=		Enable parallelizations:
 PACKAGES_DESC=		Enable packages:
 OPTIONS_GROUP_PARALLEL=	MPI OPENMP ${OPTIONS_DEFINE_${CHOSEN_COMPILER_TYPE}}
-OPTIONS_GROUP_PACKAGES=	H5MD KOKKOS VORONOI LATTE VTK
+OPTIONS_GROUP_PACKAGES=	H5MD KOKKOS VORONOI KIM LATTE VTK
 
 MPI_CMAKE_BOOL=		BUILD_MPI PKG_MPIIO
 MPI_LIB_DEPENDS=	libmpi.so:net/openmpi
@@ -87,6 +87,13 @@ KOKKOS_LIB_DEPENDS=	libkokkoscore.so:devel/kokkos
 VORONOI_DESC=		voro++, Voronoi tessellation package
 VORONOI_CMAKE_BOOL=	PKG_VORONOI
 VORONOI_LIB_DEPENDS=	libvoro++.so:science/voro++
+
+KIM_DESC=		KIM package based on the OpenKim library/repository
+KIM_USES=		pkgconfig
+KIM_CMAKE_BOOL=		PKG_KIM
+KIM_CMAKE_ON=		-DDOWNLOAD_KIM:BOOL=OFF
+KIM_LIB_DEPENDS=	libkim-api.so:science/kim-api \
+			libcurl.so:ftp/curl
 
 LATTE_DESC=		latte package based on the liblatte library
 LATTE_CMAKE_BOOL=	PKG_LATTE
