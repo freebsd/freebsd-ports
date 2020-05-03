@@ -8,6 +8,7 @@ CATEGORIES=	graphics
 
 COMMENT=	Mesa XA state tracker
 
+USES=		xorg
 USE_XORG=	xorgproto
 
 .include <bsd.port.options.mk>

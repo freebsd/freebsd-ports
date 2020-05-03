@@ -3,5 +3,5 @@ include/xa_context.h
 include/xa_tracker.h
 lib/libxatracker.so
 lib/libxatracker.so.2
-lib/libxatracker.so.2.4.0
+lib/libxatracker.so.2.5.0
 libdata/pkgconfig/xatracker.pc

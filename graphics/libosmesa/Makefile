@@ -3,11 +3,11 @@
 
 PORTNAME=	libosmesa
 PORTVERSION=	${MESAVERSION}
-PORTREVISION=	6
 CATEGORIES=	graphics
 
 COMMENT=	Off-Screen Mesa implementation of the OpenGL API
 
+USES=		xorg
 USE_XORG=	xorgproto
 
 .include <bsd.port.options.mk>

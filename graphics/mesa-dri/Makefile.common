@@ -14,7 +14,7 @@
 MESAVERSION=	${MESABASEVERSION}${MESASUBVERSION:C/^(.)/.\1/}
 MESADISTVERSION=${MESABASEVERSION}${MESASUBVERSION:C/^(.)/-\1/}
 
-MESABASEVERSION=	18.3.2
+MESABASEVERSION=	19.0.8
 # if there is a subversion, don't include the '-' between 7.11-rc2.
 MESASUBVERSION=
 
@@ -51,6 +51,7 @@ USES+=		compiler:c++11-lib bison gettext-tools gmake libtool \
 		localbase pathfix pkgconfig python:2.7,build shebangfix tar:xz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--enable-autotools
 
 # only have one port to check with portscout.
 .if ${PORTNAME} != mesa-dri
