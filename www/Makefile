@@ -1417,6 +1417,7 @@
     SUBDIR += py-WebTest
     SUBDIR += py-aioh2
     SUBDIR += py-aiohttp
+    SUBDIR += py-aiohttp-middlewares
     SUBDIR += py-aiohttp-wsgi
     SUBDIR += py-aiohttp2
     SUBDIR += py-aiohttp_cors

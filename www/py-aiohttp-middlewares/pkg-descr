@@ -1,0 +1,11 @@
+aiohttp-middlewares is a collection of useful middlewares for aiohttp.web
+applications.
+
+By default aiohttp.web does not provide many built-in middlewares for standart
+web-development needs such as: handling errors, shielding view handlers, or
+providing CORS headers.
+
+aiohttp-middlewares tries to fix this by providing several middlewares that aims
+to cover most common web-development needs.
+
+WWW: https://github.com/playpauseandstop/aiohttp-middlewares
