@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow
+		${PY_PILLOW}
 RUN_DEPENDS=	mencoder:multimedia/mencoder \
 		mplayer:multimedia/mplayer
 
