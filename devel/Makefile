@@ -1216,6 +1216,7 @@
     SUBDIR += libgpc
     SUBDIR += libgpkg
     SUBDIR += libgrading
+    SUBDIR += libgraphqlparser
     SUBDIR += libgsf
     SUBDIR += libgta
     SUBDIR += libgtop

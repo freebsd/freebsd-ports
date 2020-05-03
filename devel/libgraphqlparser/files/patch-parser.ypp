@@ -1,0 +1,17 @@
+--- parser.ypp.orig	2017-10-16 21:39:41 UTC
++++ parser.ypp
+@@ -7,12 +7,12 @@
+  * of patent rights can be found in the PATENTS file in the same directory.
+  */
+ 
+-%require "3"
++%require "3.0"
+ 
+ %skeleton "lalr1.cc"
+ 
+ %defines
+-%define parser_class_name {GraphQLParserImpl}
++%define api.parser.class {GraphQLParserImpl}
+ 
+ %define api.token.prefix {TOK_}
+ 
