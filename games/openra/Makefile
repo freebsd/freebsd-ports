@@ -2,13 +2,14 @@
 
 PORTNAME=	openra
 DISTVERSIONPREFIX=	release-
-DISTVERSION=	20200202
-PORTREVISION=	3
+DISTVERSION=	20200503
 CATEGORIES=	games
+MASTER_SITES=	https://download.ip2location.com/lite/:ip2location
+DISTFILES=	IP2LOCATION-LITE-DB1.IPV6.BIN.ZIP:ip2location
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	3abcb4772dbd.patch:-p1 # https://github.com/OpenRA/OpenRA/pull/17744
-PATCHFILES+=	f2177f57e6f4.patch:-p1 # https://github.com/OpenRA/OpenRA/pull/17744
+PATCHFILES+=	e13fd693c386.patch:-p1 # https://github.com/OpenRA/OpenRA/pull/17744
+PATCHFILES+=	85096c4ba2fb.patch:-p1 # https://github.com/OpenRA/OpenRA/pull/17744
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Multiplayer re-envisioning of early RTS games by Westwood Studios
@@ -54,6 +55,9 @@ ALL_TARGET=	all
 INSTALL_TARGET=	install install-man-page \
 		install-linux-mime install-linux-shortcuts
 PORTDATA=	*
+
+post-extract:
+	${CP} ${_DISTDIR}/${DISTFILES:C/:.*//:MIP2LOCATION-*} ${WRKSRC}
 
 post-patch:
 	${REINPLACE_CMD} \
