@@ -1,0 +1,4 @@
+pytest-benchmark is a pytest fixture for benchmarking code. It will group the
+tests into rounds that are calibrated to the chosen timer.
+
+WWW: https://github.com/ionelmc/pytest-benchmark
