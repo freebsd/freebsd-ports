@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mysql-connector-java
-PORTVERSION=	5.1.48
+PORTVERSION=	5.1.49
 CATEGORIES=	databases java
 MASTER_SITES=	MYSQL/Connector-J
 PKGNAMESUFFIX=	51
