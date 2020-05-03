@@ -1,5 +1,5 @@
---- src/enums.h.orig	2019-02-18 18:46:22.000000000 -0800
-+++ src/enums.h	2019-04-17 22:22:05.123445000 -0700
+--- src/enums.h.orig	2020-04-19 12:38:51 UTC
++++ src/enums.h
 @@ -9,6 +9,9 @@
  #ifndef SQUID_ENUMS_H
  #define SQUID_ENUMS_H
@@ -8,5 +8,5 @@
 +#undef FD_NONE
 +
  enum fd_type {
-     FD_NONE,
+     FD_NONE_TYPE,
      FD_LOG,
