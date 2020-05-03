@@ -2,16 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	zetaback
-PORTVERSION=	1.0.7
+DISTVERSION=	1.0.7
 CATEGORIES=	sysutils
-MASTER_SITES=	http://mirrors.omniti.com/zetaback/
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Zetaback ZFS backup and recovery management system
 
-BROKEN=		unfetchable
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2020-05-05
+USE_GITHUB=	yes
+GH_ACCOUNT=	omniti-labs
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
