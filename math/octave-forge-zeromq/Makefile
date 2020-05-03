@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	octave-forge-zeromq
-PORTVERSION=	1.5.0
+PORTVERSION=	1.5.1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
