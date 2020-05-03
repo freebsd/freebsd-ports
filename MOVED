@@ -12141,7 +12141,6 @@ net/frr4|net/frr7|2019-04-16|Has expired: Upstream no longer maintained
 mail/pop3proxy||2019-04-17|Has expired: no upstream and does not properly initiate SSL/TLS connections
 devel/go-gocode||2019-04-17|Has expired: Unmaintained upstream and has issues with Go >= 1.10
 audio/raop_play|audio/pulseaudio|2019-04-17|Has expired: Abandonware. Use module-raop-sink from audio/pulseaudio instead
-www/squid-devel||2019-04-18|Removed: devel version no longer necessary
 devel/py-sdl2|devel/py-pysdl2|2019-04-20|Rename to match upstream naming
 www/rubygem-select2-rails3|www/rubygem-select2-rails|2019-04-23|Has expired: Use www/rubygem-select2-rails instead
 www/rubygem-jquery-atwho-rails13|www/rubygem-jquery-atwho-rails|2019-04-23|Has expired: Use www/rubygem-jquery-atwho-rails instead

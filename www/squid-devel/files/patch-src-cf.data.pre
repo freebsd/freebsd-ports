@@ -1,0 +1,13 @@
+--- src/cf.data.pre.orig	2020-04-19 10:50:48 UTC
++++ src/cf.data.pre
+@@ -5322,6 +5322,10 @@ DEFAULT: @DEFAULT_PID_FILE@
+ LOC: Config.pidFilename
+ DOC_START
+ 	A filename to write the process-id to.  To disable, enter "none".
++
++	Note: If you change this setting, you need to set squid_pidfile
++	in /etc/rc.conf to reflect the new value. Please see
++	/usr/local/etc/rc.d/squid for details.
+ DOC_END
+ 
+ NAME: client_netmask
