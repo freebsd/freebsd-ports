@@ -18,10 +18,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	xapian-core>=${PORTVERSION:R}:databases/xapian-core
 LIB_DEPENDS=	libxapian.so:databases/xapian-core
 
-OPTIONS_DEFINE=	DOCS
-
-PORTSCOUT=	limitw:1,even
-
 USES=		compiler:c++11-lang libtool perl5 tar:xz
 
 CONFIGURE_ARGS=	--datarootdir=${DATADIR} \
@@ -44,6 +40,10 @@ LDFLAGS+=	-L${LOCALBASE}/lib/perl5/${PERL_VER}/mach/CORE -lperl
 USE_CXXSTD=	c++11
 
 PORTDOCS=	*
+
+PORTSCOUT=	limitw:1,even
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lstdc++||g' ${WRKSRC}/configure
