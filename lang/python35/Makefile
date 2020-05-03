@@ -19,6 +19,9 @@ COMMENT=	Interpreted object-oriented programming language
 
 LICENSE=	PSFL
 
+DEPRECATED=	Deprecated upstream
+EXPIRATION_DATE=	2020-09-13
+
 USES=		cpe ncurses pathfix pkgconfig readline:port shebangfix ssl tar:xz
 USE_CSTD=	c99
 PATHFIX_MAKEFILEIN=	Makefile.pre.in
