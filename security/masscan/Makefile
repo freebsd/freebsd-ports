@@ -18,6 +18,12 @@ MAKE_ARGS=	SYS=freebsd CC="${CC}" CFLAGS="${CFLAGS}"
 
 PLIST_FILES=	bin/masscan man/man8/masscan.8.gz
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc64 || ${ARCH} == powerpc
+USE_GCC=	any
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/masscan ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/doc/masscan.8 ${STAGEDIR}${MANPREFIX}/man/man8
