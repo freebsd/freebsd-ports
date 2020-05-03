@@ -176,7 +176,6 @@ lib/hyphy/TemplateBatchFiles/SandNSAmbigs.bf
 lib/hyphy/TemplateBatchFiles/SelectionAnalyses/BUSTED.bf
 lib/hyphy/TemplateBatchFiles/SelectionAnalyses/BranchSiteREL.bf
 lib/hyphy/TemplateBatchFiles/SelectionAnalyses/FADE.bf
-lib/hyphy/TemplateBatchFiles/SelectionAnalyses/FEL-contrast.bf
 lib/hyphy/TemplateBatchFiles/SelectionAnalyses/FEL.bf
 lib/hyphy/TemplateBatchFiles/SelectionAnalyses/FUBAR.bf
 lib/hyphy/TemplateBatchFiles/SelectionAnalyses/MEME.bf
@@ -187,6 +186,7 @@ lib/hyphy/TemplateBatchFiles/SelectionAnalyses/RELAX.bf
 lib/hyphy/TemplateBatchFiles/SelectionAnalyses/SLAC.bf
 lib/hyphy/TemplateBatchFiles/SelectionAnalyses/SingleOmega.bf
 lib/hyphy/TemplateBatchFiles/SelectionAnalyses/aBSREL.bf
+lib/hyphy/TemplateBatchFiles/SelectionAnalyses/contrast-fel.bf
 lib/hyphy/TemplateBatchFiles/SelectionAnalyses/modules/grid_compute.ibf
 lib/hyphy/TemplateBatchFiles/SelectionAnalyses/modules/io_functions.ibf
 lib/hyphy/TemplateBatchFiles/SelectionAnalyses/modules/selection_lib.ibf
