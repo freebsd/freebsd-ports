@@ -19,12 +19,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	xapian-core>=${PORTVERSION}:databases/xapian-core
 LIB_DEPENDS=	libxapian.so:databases/xapian-core
 
-CONFLICTS_INSTALL=	xapian-bindings12
-
-OPTIONS_DEFINE=	DOCS
-
-PORTSCOUT=	limitw:1,even
-
 USES=		compiler:c++11-lang libtool lua:module tar:xz
 
 DOCSDIR=	${LUA_DOCSDIR}
@@ -49,6 +43,12 @@ INSTALL_TARGET=	install-strip
 USE_CXXSTD=	c++11
 
 PORTDOCS=	*
+
+CONFLICTS_INSTALL=	xapian-bindings12
+
+PORTSCOUT=	limitw:1,even
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lstdc++||g' ${WRKSRC}/configure
