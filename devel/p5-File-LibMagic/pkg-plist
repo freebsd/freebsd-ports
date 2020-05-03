@@ -1,3 +1,5 @@
 %%SITE_ARCH%%/File/LibMagic.pm
+%%SITE_ARCH%%/File/LibMagic/Constants.pm
 %%SITE_ARCH%%/auto/File/LibMagic/LibMagic.so
 %%PERL5_MAN3%%/File::LibMagic.3.gz
+%%PERL5_MAN3%%/File::LibMagic::Constants.3.gz
