@@ -26,7 +26,7 @@
 +    my $cp = config_get($host, 'compressionprogram');
 +    if ($cp ne "xz" && $cp ne "bzip2" && $cp ne "gzip" && $cp ne "") {
 +	die "zfs_full_backup: unsupported compression program specified\n";
-+    } else ($cp eq "") {
++    } elsif ($cp eq "") {
 +	$cp = "gzip";
 +	my $cl = 1;
 +    } else {
