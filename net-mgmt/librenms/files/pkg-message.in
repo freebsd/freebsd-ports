@@ -1,15 +1,33 @@
 [
 { type: install
   message: <<EOM
-NOTE: setting sql-mode="" is no longer required. You can remove
-it from /usr/local/etc/mysql/my.cnf
 
 You can mostly follow the guide at:
 http://docs.librenms.org/
 
 with the following notes:
 - Installation directory is %%WWWDIR%%
-- The following lines should be added to /etc/crontab:
+
+NOTE: setting sql-mode="" is no longer required. You can remove
+it from /usr/local/etc/mysql/my.cnf
+
+HEADS UP
+
+Polling via cron job is now deprecated. Please use the Dispatcher.
+
+LibreNMS will be dropping support for PHP 7.1 and Python 2 in the next release
+expected May 31 2020.  see https://community.librenms.org/t/dropping-support-for-php-7-1-and-python-2/11851
+
+Your existing crontab entries for the PYPOLLER option will be going away.
+
+You can migrate to the PYSERVICE option of LibreNMS now
+(also known as the Dispatcher Service).
+
+The next release will not include the the PYPOLLER option.
+
+PYROLLER (deprecated) configuration (default):
+
+The following lines should be added to /etc/crontab:
 
 PATH=/etc:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
 33	*/6	*	*	*	www	cd %%WWWDIR%% && %%PHP%% discovery.php -h all >> /dev/null 2>&1
@@ -21,18 +39,49 @@ PATH=/etc:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
 01	*	*	*	*	www	%%PHP%% %%WWWDIR%%/billing-calculate.php >> /dev/null 2>&1
 */5	*	*	*	*	www	%%PHP%% %%WWWDIR%%/check-services.php >> /dev/null 2>&1
 
-For a fresh install, you need to create an APP_KEY:
+PYSERVICE configuration (non-default):
+
+Enable the poller service with this command:
+
+sysrc librenms_enable="YES"
+
+The service will log to /var/log/librems/librenms-service.log
+
+see also https://docs.librenms.org/Extensions/Dispatcher-Service/
+
+When converting from PYPOLLER to the Dispatcher Service (PYSERVICE),
+these steps will help you get started:
+
+* compile with PYSERVICE enabled and PYPOLLER disabled
+* comment out the crontab entries listed above under PYPOLLER
+* populate %%WWWDIR%%/.env with:
+  * APP_KEY - see farther below for how to create
+  * NODE_ID - see just below for how to create
+  * DB_HOST
+  * DB_DATABASE
+  * DB_USERNAME
+  * DB_PASSWORD
+* you can create a NODE_ID with: php -r 'echo uniqid() . "\n";'
+
+When setting up a new install, you need a %%WWWDIR%%/.env file.
+
+You need an APP_KEY.
+
+To create:
 
 cd %%WWWDIR%%
 cp -i .env.example .env
 
 That file will eventually contain secrets.  Make sure it is not world-readable.
 
+When migrating to PYSERVICE (also known as the Dispatcher Service):
+
 It is also a good idea to:
 cd %%WWWDIR%%
 ./validate
 
-You might need to set your database details in that file
+Database connection details are required in that file.
+
 Then run:
 
 php artisan key:generate
@@ -61,7 +110,21 @@ cd %%WWWDIR%%
 
 re: https://docs.librenms.org/#General/Updating/
 
-Make sure your %%WWWDIR%%/.env file is not world-readable.
+HEADS UP HEADS UP HEADS UP HEADS UP HEADS UP HEADS UP HEADS UP HEADS UP 
+
+Polling via cron job is now deprecated. Please use the Dispatcher.
+
+LibreNMS will be dropping support for PHP 7.1 and Python 2 in the next release
+expected May 31 2020.  see https://community.librenms.org/t/dropping-support-for-php-7-1-and-python-2/11851
+
+Your existing crontab entries for the PYPOLLER option will be going away.
+
+You can migrate to the PYSERVICE option of LibreNMS now
+(also known as the Dispatcher Service).
+
+The next release will not include the PYPOLLER option.
+
+For more information, see pkg info --pkg-message librenms
 
 EOM
 }

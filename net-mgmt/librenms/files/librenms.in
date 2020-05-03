@@ -1,0 +1,49 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: librenms
+# REQUIRE: SERVERS
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# librenms_enable:	Set to NO by default.
+#			Set it to YES to enable librenms
+# librenms_user:	The user account used to run the daemon.
+#			Default: %%USER%%
+# librenms_group:	The group account used to run the daemon.
+#			Default: %%GROUP%%
+# librenms_pid:		Path of the pid file.
+#			Default /var/run/librenms/librenms.pid
+#
+# Contributed by: Dries Michiels (driesm.michiels@gmail.com)
+
+. /etc/rc.subr
+
+name=librenms
+rcvar="${name}_enable"
+
+load_rc_config $name
+
+: ${librenms_enable:="NO"}
+: ${librenms_user:="%%USER%%"}
+: ${librenms_group:="%%GROUP%%"}
+: ${librenms_pid:="/var/run/librenms/librenms.pid"}
+
+pidfile="$librenms_pid"
+procname="%%PYTHON%%"
+command="/usr/sbin/daemon"
+
+start_precmd=librenms_precmd
+
+librenms_precmd()
+{
+     [ -f /var/log/$name/$name-service.log ] || install -g $librenms_user -o $librenms_user -m 644 /var/log/$name/$name-service.log
+     [ -f /var/log/$name/$name.log ] || install -g $librenms_user -o $librenms_user -m 644 /var/log/$name/$name.log
+}
+
+command_args="-T $name -o /var/log/$name/$name-service.log -p $pidfile $procname %%WWWDIR%%/librenms-service.py -m"
+
+run_rc_command "$1"
