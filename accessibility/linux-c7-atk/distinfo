@@ -1,7 +1,7 @@
-TIMESTAMP = 1556468753
-SHA256 (centos/atk-2.28.1-1.el7.i686.rpm) = 5d4110591a2c1ef104ab5ab853635bb5161605635e622553bdef720d6c438f4c
-SIZE (centos/atk-2.28.1-1.el7.i686.rpm) = 267648
-SHA256 (centos/atk-2.28.1-1.el7.x86_64.rpm) = 29c5f11d640a91806cccfffd1477812940c123768febed5540c8cf2b2e4ad8e5
-SIZE (centos/atk-2.28.1-1.el7.x86_64.rpm) = 269000
-SHA256 (centos/atk-2.28.1-1.el7.src.rpm) = 3444f24c570b5388d58eba70dec7beae5b66e57ce01f8e8d7a8ef98a8c5536ab
-SIZE (centos/atk-2.28.1-1.el7.src.rpm) = 731935
+TIMESTAMP = 1588506931
+SHA256 (centos/atk-2.28.1-2.el7.i686.rpm) = 8cf865025c4123bbb91d99b6e14151b9255cbf46a6a3fe13acb98445b71d9efb
+SIZE (centos/atk-2.28.1-2.el7.i686.rpm) = 267800
+SHA256 (centos/atk-2.28.1-2.el7.x86_64.rpm) = 942fc4bc5390444c1758043bc5dd4c01c84e3e7c008c1c8ad4a6aefffb5e458d
+SIZE (centos/atk-2.28.1-2.el7.x86_64.rpm) = 268988
+SHA256 (centos/atk-2.28.1-2.el7.src.rpm) = 722e38b119bd945cac8c152f2b824dbadea56f55004502364d80e0a17534223a
+SIZE (centos/atk-2.28.1-2.el7.src.rpm) = 731636

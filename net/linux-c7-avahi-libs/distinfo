@@ -1,7 +1,7 @@
-TIMESTAMP = 1530376345
-SHA256 (centos/avahi-libs-0.6.31-19.el7.i686.rpm) = 4bb7dfe2bbe9d41957e036aac8fa56b83bed503a852b437633c3337e647c7d61
-SIZE (centos/avahi-libs-0.6.31-19.el7.i686.rpm) = 62632
-SHA256 (centos/avahi-libs-0.6.31-19.el7.x86_64.rpm) = c0a060f27d1558b298cb67a451d00b717f14295444153eb84eebd3669cdeef2a
-SIZE (centos/avahi-libs-0.6.31-19.el7.x86_64.rpm) = 62960
-SHA256 (centos/avahi-0.6.31-19.el7.src.rpm) = 0c500b6cd4457bb3004ac764c27019c68e79ccf9fed56b19400f6ba4b4c4ac68
-SIZE (centos/avahi-0.6.31-19.el7.src.rpm) = 1309377
+TIMESTAMP = 1588508277
+SHA256 (centos/avahi-libs-0.6.31-20.el7.i686.rpm) = 780925493e40235f3f0c43a829d3c65d11eefcb78ae1d2e95582822b26861b29
+SIZE (centos/avahi-libs-0.6.31-20.el7.i686.rpm) = 62880
+SHA256 (centos/avahi-libs-0.6.31-20.el7.x86_64.rpm) = 33165ec9cfb3d8bbd9877140ca753449efa0ec7375f8657fd471a53813ecb898
+SIZE (centos/avahi-libs-0.6.31-20.el7.x86_64.rpm) = 63204
+SHA256 (centos/avahi-0.6.31-20.el7.src.rpm) = 935f6d0d27c2e2f16f753615f1133c090252067951e880c47ca3476875fd7a14
+SIZE (centos/avahi-0.6.31-20.el7.src.rpm) = 1310464

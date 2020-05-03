@@ -34,7 +34,7 @@ linux_ARGS=		${LINUX_DEFAULT}
 .endif
 
 .if ${linux_ARGS} == c7
-LINUX_DIST_VER?=	7.7.1908
+LINUX_DIST_VER?=	7.8.2003
 .else
 IGNORE=			Invalid Linux distribution: ${linux_ARGS}
 .endif

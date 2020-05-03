@@ -1,7 +1,7 @@
-TIMESTAMP = 1577702582
-SHA256 (centos/numactl-libs-2.0.12-3.el7_7.1.i686.rpm) = 38d31aa45887ff60928c5635a49d4096148d8d491424325737a1c2f4e175ace1
-SIZE (centos/numactl-libs-2.0.12-3.el7_7.1.i686.rpm) = 30732
-SHA256 (centos/numactl-libs-2.0.12-3.el7_7.1.x86_64.rpm) = ed1a1729183deb7da852317862013770f1fe1ab516c2b9ddd76ce16d3743083e
-SIZE (centos/numactl-libs-2.0.12-3.el7_7.1.x86_64.rpm) = 30580
-SHA256 (centos/numactl-2.0.12-3.el7_7.1.src.rpm) = b51ed0b0ccdc0d659ad9b78730bfed4790201268b6d7669405c999119b26bdae
-SIZE (centos/numactl-2.0.12-3.el7_7.1.src.rpm) = 438680
+TIMESTAMP = 1588508532
+SHA256 (centos/numactl-libs-2.0.12-5.el7.i686.rpm) = b9523805128618886738e5dbc0f5fb44589cdf74fd0064ec4044cf0bf7e77724
+SIZE (centos/numactl-libs-2.0.12-5.el7.i686.rpm) = 30920
+SHA256 (centos/numactl-libs-2.0.12-5.el7.x86_64.rpm) = cadd7d4125ce7b69bb020dc419c87600d4bd6d3ada1eed65c1472fb535b6b770
+SIZE (centos/numactl-libs-2.0.12-5.el7.x86_64.rpm) = 30840
+SHA256 (centos/numactl-2.0.12-5.el7.src.rpm) = e619b576dd85e4321ed5928bdbb085a52c1dd171faafa41a3fb0d9e4b082cac9
+SIZE (centos/numactl-2.0.12-5.el7.src.rpm) = 441807
