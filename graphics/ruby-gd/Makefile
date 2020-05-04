@@ -3,12 +3,11 @@
 
 PORTNAME=	gd
 PORTVERSION=	0.8.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics ruby
 MASTER_SITES=	ftp://ftp.jp.vim.org/pub/distfiles/ruby/ \
 		http://www.mmnt.net/db/0/8/ftp.jp.vim.org/pub/distfiles/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-PKGNAMESUFFIX=	${PKGNAMESUFFIX_XPM}
 DISTNAME=	ruby-GD-0.7.4
 DIST_SUBDIR=	ruby
 
@@ -16,19 +15,21 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Ruby extension library to use Thomas Boutell's gd library
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
-		libgd.so:graphics/gd
+		libgd.so:graphics/gd \
+		libpng.so:graphics/png
 
+USES=		jpeg
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
 RUBY_MODNAME=	${PORTNAME:tl}
 
-CONFIGURE_ARGS=	--with-gd-lib="${LOCALBASE}/lib" \
-		--with-jpeg \
+CONFIGURE_ARGS=	--with-jpeg \
 		--with-ttf \
 		--with-freetype \
-		--enable-gd2_0 \
-		--with-gd-include="${LOCALBASE}/include"
+		--with-z \
+		--with-png \
+		--enable-gd2_0
 
 INSTALL_TARGET=	site-install
 
@@ -38,15 +39,14 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 # Hmm, GREP and TRUE seem to be defined in the bsd.port.post.mk stage.
 .if exists(${LOCALBASE}/bin/gd2topng)
-WITH_X11_CHECK!=	ldd ${LOCALBASE}/bin/gd2topng | grep -w 'libX11\.so' || ${ECHO_CMD}
+GD_X11_CHECK!=	ldd ${LOCALBASE}/bin/gd2topng | grep -w 'libX11\.so' || ${ECHO_CMD}
 .else
-WITH_X11_CHECK=		# empty
+GD_X11_CHECK=		# empty
 .endif
 
-.if !empty(WITH_X11_CHECK)
+.if !empty(GD_X11_CHECK)
 USES=		xorg
 USE_XORG=	xpm x11
-PKGNAMESUFFIX_XPM=	+xpm
 CONFIGURE_ARGS+=	--with-X11-dir="${LOCALBASE}" --with-xpm
 .endif
 
@@ -65,7 +65,6 @@ DOCS_JA=	readme.ja	\
 
 post-patch:
 	${RUBY} -i -pe 'sub %r:/win98/windows/FONTS:, "${LOCALBASE}/share/fonts/TrueType"' ${WRKSRC}/sample/gdtestttf.rb
-	${RUBY} -i -pe 'sub %r:%%GD%%:, "gd"' ${WRKSRC}/extconf.rb
 
 post-configure:
 	${REINPLACE_CMD} -e 's|^V = 0|V = 1|' \
