@@ -1,0 +1,4 @@
+bin/plink
+bin/prettify
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/toy.map
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/toy.ped
