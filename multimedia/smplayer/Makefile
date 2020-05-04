@@ -58,7 +58,6 @@ SUB_FILES=	pkg-message
 post-patch:
 	@${REINPLACE_CMD} -e 's|&& $$(QMAKE) $$(QMAKE_OPTS)||; \
 		s|lrelease|${LRELEASE}|; \
-		s|/share/man|/man|g; \
 		s| make| ${MAKE_CMD}|g' \
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|-O2 -W -Wall -Werror|${CFLAGS}|' \

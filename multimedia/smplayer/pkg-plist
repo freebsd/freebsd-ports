@@ -1,6 +1,5 @@
 bin/simple_web_server
 bin/smplayer
-man/man1/smplayer.1.gz
 share/applications/smplayer.desktop
 share/applications/smplayer_enqueue.desktop
 share/icons/hicolor/128x128/apps/smplayer.png
@@ -12,6 +11,7 @@ share/icons/hicolor/32x32/apps/smplayer.png
 share/icons/hicolor/512x512/apps/smplayer.png
 share/icons/hicolor/64x64/apps/smplayer.png
 share/icons/hicolor/scalable/apps/smplayer.svg
+share/man/man1/smplayer.1.gz
 %%DATADIR%%/input.conf
 %%DATADIR%%/shortcuts/default.keys
 %%DATADIR%%/shortcuts/euskara.keys
