@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	multicat
-PORTVERSION=	2.2
+PORTVERSION=	2.3
 CATEGORIES=	net multimedia
 MASTER_SITES=	https://get.videolan.org/multicat/${PORTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	m.muenz@gmail.com
 COMMENT=	Simple and efficient multicast and transport stream manipulation
 
 LICENSE=	GPLv2+
@@ -17,9 +17,9 @@ BUILD_DEPENDS=	${LOCALBASE}/include/bitstream/mpeg/ts.h:multimedia/bitstream
 USES=		localbase tar:bzip2
 ALL_TARGET=	${PORTNAME}
 
-PORTDOCS=	AUTHORS Changelog NEWS README
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/${PORTNAME}.1.gz
+PORTDOCS=	AUTHORS Changelog NEWS README
 
 OPTIONS_DEFINE=	DOCS
 

@@ -13,4 +13,4 @@ accompanies example.ts) while recording. Other inputs are considered
 "live", and the input clock is simply derived from the reception
 time of the packets.
 
-WWW: http://www.videolan.org/projects/multicat.html
+WWW: https://www.videolan.org/projects/multicat.html

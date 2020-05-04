@@ -1,11 +1,12 @@
---- Makefile.orig	2017-01-31 18:17:02 UTC
+--- Makefile.orig	2018-06-12 15:18:47 UTC
 +++ Makefile
 @@ -1,8 +1,7 @@
  # multicat Makefile
  
- VERSION = 2.2
--CFLAGS += -Wall -Wformat-security -O3 -fomit-frame-pointer -D_FILE_OFFSET_BITS=64 -D_ISOC99_SOURCE -D_BSD_SOURCE
+-VERSION = 2.2
+-CFLAGS += -Wall -Wformat-security -O3 -fomit-frame-pointer -D_FILE_OFFSET_BITS=64 -D_ISOC99_SOURCE -D_BSD_SOURCE -D_DEFAULT_SOURCE
 -CFLAGS += -g
++VERSION = 2.3
 +CFLAGS += -Wall -Wformat-security -D_FILE_OFFSET_BITS=64 -D_ISOC99_SOURCE -D_BSD_SOURCE
  # Comment out the following line for Mac OS X build
  LDLIBS += -lrt -pthread
