@@ -214,6 +214,7 @@
     SUBDIR += paje
     SUBDIR += paraview
     SUBDIR += pcmsolver
+    SUBDIR += plumed
     SUBDIR += pnetcdf
     SUBDIR += pulseview
     SUBDIR += py-DendroPy

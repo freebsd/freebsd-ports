@@ -1,0 +1,8 @@
+PLUMED is an open-source, community-developed library that provides a wide
+range of different methods, which include:
+* enhanced-sampling algorithms
+* free-energy methods
+* tools to analyze the vast amounts of data produced by molecular dynamics (MD)
+  simulations.
+
+WWW: https://www.plumed.org/
