@@ -17,7 +17,7 @@ COMMENT=	Open source Mathematics software
 
 BROKEN=		unfetchable
 DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2020-05-05
+EXPIRATION_DATE=	2020-06-05
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
