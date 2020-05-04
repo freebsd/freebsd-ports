@@ -2,10 +2,9 @@
 
 PORTNAME=	webalizer
 PORTVERSION=	2.23.8
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES+=	www
 MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/:main \
-		ftp://ftp.mrunix.net/pub/webalizer/geodb/:geodb \
 		ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/:main \
 		http://flags.blogpotato.de/zip/:flags
 PKGNAMESUFFIX?=	${WEBALIZER_SUFFIX}${PKGNAMESUFFIX2}
@@ -49,6 +48,7 @@ LARGE_URL_DESC=Enable URLs longer 512 bytes
 
 GEODB_IMPLIES=		BDB
 GEODB_PREVENTS=		BDB1
+GEODB_RUN_DEPENDS=	${LOCALBASE}/share/geolizer/GeoDB.dat:net/webalizer-geodb
 GEOIP_CONFIGURE_ON=	--enable-geoip \
 			--with-geoip-lib=${LOCALBASE}/lib \
 			--with-geoip-inc=${LOCALBASE}/include
@@ -71,9 +71,6 @@ IP_AS_HOSTNAME_CFLAGS=		-DUSE_IP_AS_HOSTNAME
 .if ${PORT_OPTIONS:MGEODB} || ${PORT_OPTIONS:MGEOIP} || make(makesum) || defined(FETCH_ALL)
 DISTFILES+=	webalizer-flags.tgz:main
 .endif
-.if ${PORT_OPTIONS:MGEODB} || make(makesum) || defined(FETCH_ALL)
-DISTFILES+=	webalizer-geodb-20190501.tgz:geodb
-.endif
 
 # slave ports override with languages specific gd
 .if empty(LIB_DEPENDS:Mlibgd*)
@@ -94,7 +91,7 @@ PLIST_SUB+=	WITH_ICONS="@comment "
 
 CONFIGURE_ARGS+=	--enable-dns \
 			--enable-bz2 \
-			--with-geodb=${PREFIX}/share/webalizer \
+			--with-geodb=${PREFIX}/share/geolizer \
 			--sysconfdir=${PREFIX}/etc \
 			--with-gdlib=${LOCALBASE}/lib \
 			--with-gd=${LOCALBASE}/include
@@ -175,9 +172,6 @@ do-install:
 .if ${PORT_OPTIONS:MGEODB} || ${PORT_OPTIONS:MGEOIP}
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/geolizer
 	${INSTALL_DATA} ${WRKDIR}/flags/* ${STAGEDIR}${PREFIX}/share/geolizer/
-.endif
-.if ${PORT_OPTIONS:MGEODB}
-	${INSTALL_DATA} ${WRKDIR}/GeoDB.dat ${STAGEDIR}${PREFIX}/share/geolizer/
 .endif
 
 do-install-DOCS-on:
