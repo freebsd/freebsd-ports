@@ -1,0 +1,37 @@
+#!/bin/sh
+
+# Start or stop cyrus-imapd
+# $FreeBSD$
+
+# PROVIDE: cyrus_imapd imap
+# REQUIRE: DAEMON
+# BEFORE: mail
+# KEYWORD: shutdown
+
+# Define these cyrus_imapd_* variables in one of these files:
+#	/etc/rc.conf
+#	/etc/rc.conf.local
+#	/etc/rc.conf.d/cyrus_imapd
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+[ -z "$cyrus_imapd_enable" ] && cyrus_imapd_enable="NO"	# Enable imapd
+#cyrus_imapd_program="%%PREFIX%%/cyrus/libexec/master"	# Location of imapd
+[ -z "$cyrus_imapd_flags" ] && cyrus_imapd_flags="-d" # Flags to imapd program
+
+. /etc/rc.subr
+
+name="cyrus_imapd"
+rcvar=cyrus_imapd_enable
+command="%%PREFIX%%/cyrus/libexec/master"
+pidfile="/var/run/cyrus-master.pid"
+required_files="%%PREFIX%%/etc/cyrus.conf %%PREFIX%%/etc/imapd.conf"
+stop_postcmd="cyrus_imapd_poststop"
+extra_commands="reload"
+
+cyrus_imapd_poststop() {
+	/bin/rm -f ${pidfile}
+}
+
+load_rc_config $name
+run_rc_command "$1"
