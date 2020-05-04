@@ -33,7 +33,7 @@ USES=		cpe
 USE_GITHUB=	yes
 GH_ACCOUNT=	Perl
 GH_PROJECT=	perl5
-GH_TAGNAME=	v5.31.11-8-gef37f6f5b5
+GH_TAGNAME=	v5.31.11-19-g10bee092c7
 
 # Give a hint of where libperl.so can be found.
 USE_LDCONFIG=	${PREFIX}/${_ARCH_LIB}/CORE
