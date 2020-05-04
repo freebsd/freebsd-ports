@@ -3,7 +3,7 @@
 
 PORTNAME=	Gdtclft
 PORTVERSION=	2.2.5
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	graphics tcl
 MASTER_SITES=	https://BSDforge.com/projects/source/graphics/gdtclft/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -11,7 +11,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	TCL interface to the Thomas Boutell's Gd library
 
-LIB_DEPENDS=	libgd.so:graphics/gd
+LIB_DEPENDS=	libgd.so:graphics/gd \
+		libpng.so:graphics/png
 
 USES=		tcl uidfix
 
