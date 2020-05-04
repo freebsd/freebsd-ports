@@ -29,5 +29,5 @@ lib/libgd.a
 lib/libgd.la
 lib/libgd.so
 lib/libgd.so.6
-lib/libgd.so.6.0.5
+lib/libgd.so.6.0.8
 libdata/pkgconfig/gdlib.pc

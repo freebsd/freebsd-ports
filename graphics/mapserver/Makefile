@@ -3,6 +3,7 @@
 
 PORTNAME=		mapserver
 PORTVERSION=		7.4.4
+PORTREVISION=	1
 CATEGORIES=		graphics www geography
 MASTER_SITES=		https://download.osgeo.org/mapserver/
 

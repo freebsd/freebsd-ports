@@ -3,7 +3,7 @@
 
 PORTNAME=	modlogan
 PORTVERSION=	0.8.13
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	textproc www
 MASTER_SITES=	http://www.mirrorservice.org/sites/www.ibiblio.org/gentoo/distfiles/
 

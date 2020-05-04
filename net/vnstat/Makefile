@@ -3,6 +3,7 @@
 
 PORTNAME=	vnstat
 PORTVERSION=	2.6
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://humdi.net/vnstat/
 

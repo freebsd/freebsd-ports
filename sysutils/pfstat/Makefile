@@ -3,7 +3,7 @@
 
 PORTNAME=	pfstat
 PORTVERSION=	2.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils net
 MASTER_SITES=	https://www.benzedrine.ch/
 

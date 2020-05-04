@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	libgd
-PORTVERSION=	2.2.5
-PORTREVISION=	2
+PORTVERSION=	2.3.0
+PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES+=	graphics
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/gd-${PORTVERSION}/
@@ -19,10 +19,11 @@ CONFLICTS=	bazaar-1.*
 USES=		tar:xz pkgconfig pathfix libtool:keepla shebangfix
 SHEBANG_FILES=	${WRKSRC}/src/bdftogd
 GNU_CONFIGURE=	yes
+SUB_FILES=	gdlib-config
 USE_LDCONFIG=	yes
 TEST_TARGET=	check
 
-OPTIONS_DEFINE=	PNG JPEG WEBP TIFF FREETYPE FONTCONFIG XPM ICONV
+OPTIONS_DEFINE=	PNG JPEG WEBP TIFF FREETYPE FONTCONFIG RAQM XPM ICONV
 OPTIONS_DEFAULT=PNG JPEG WEBP TIFF FREETYPE FONTCONFIG ICONV
 NO_OPTIONS_SORT=yes
 OPTIONS_SUB=	yes
@@ -44,6 +45,10 @@ FREETYPE_CPPFLAGS=	-I${LOCALBASE}/include
 FONTCONFIG_LIB_DEPENDS+=	libfontconfig.so:x11-fonts/fontconfig
 FONTCONFIG_CONFIGURE_OFF=	--with-fontconfig=no
 FONTCONFIG_CPPFLAGS=		-I${LOCALBASE}/include
+RAQM_DESC=	Raqm text layout support
+RAQM_LIB_DEPENDS=	libraqm.so:print/libraqm
+RAQM_CONFIGURE_OFF=	--with-raqm=no
+RAQM_CPPFLAGS=	-I${LOCALBASE}/include
 XPM_USES=	xorg
 XPM_USE=	xorg=xpm,x11
 XPM_CONFIGURE_ON=	--with-x
@@ -104,5 +109,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/src/gdhelpers.h \
 		${STAGEDIR}${PREFIX}/include/
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgd.so.6*
+	${INSTALL_SCRIPT} ${WRKDIR}/gdlib-config \
+		${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.mk>

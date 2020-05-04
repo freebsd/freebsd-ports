@@ -3,7 +3,7 @@
 
 PORTNAME=	repng2jpeg
 PORTVERSION=	1.0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	https://BSDforge.com/projects/source/graphics/repng2jpeg/
 

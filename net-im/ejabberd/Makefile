@@ -2,6 +2,7 @@
 
 PORTNAME=	ejabberd
 PORTVERSION=	20.04
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	ashish@FreeBSD.org

@@ -2,6 +2,7 @@
 
 PORTNAME=	libsixel
 PORTVERSION=	1.8.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/saitoha/libsixel/releases/download/v${PORTVERSION}/

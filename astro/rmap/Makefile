@@ -3,7 +3,7 @@
 
 PORTNAME=	rmap
 PORTVERSION=	1.2
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	astro geography
 MASTER_SITES=	http://rmap.sourceforge.net/
 

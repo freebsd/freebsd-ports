@@ -3,7 +3,7 @@
 
 PORTNAME=	mscgen
 PORTVERSION=	0.20
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.mcternan.me.uk/mscgen/software/ \
 		http://romain.blogreen.org/distfiles/

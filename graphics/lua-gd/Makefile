@@ -3,7 +3,7 @@
 
 PORTNAME=	lua-gd
 PORTVERSION=	2.0.33r2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	http://files.luaforge.net/releases/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}forLua5.1/
 
