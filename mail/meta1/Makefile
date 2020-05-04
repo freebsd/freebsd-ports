@@ -110,8 +110,13 @@ IGNORE=		option SASL2AUTHD needs option SASL2
 TLS_SUFFIX?=	-notls
 .endif
 
+post-patch:
+	${REINPLACE_CMD} -e 's| mapspec_kind;|;|' \
+		${WRKSRC}/include/sm/mapcnf.h
+
 post-configure:
-	@${CP} ${WRKSRC}/misc/sm.check.sh ${WRKSRC}/misc/sm.setup.sh \
+	@${CP} ${WRKSRC}/misc/sm.check.sh \
+		${WRKSRC}/misc/sm.setup.sh \
 		${WRKDIR}/
 	@${REINPLACE_CMD} -e 's|/etc/meta1|${META1CONFDIR}|g' \
 		-e 's|$${SD}/misc|${PREFIX}/bin|' \
