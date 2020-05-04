@@ -1,5 +1,4 @@
 bin/pipewire
-bin/pipewire-media-session
 bin/pw-cli
 bin/pw-dot
 bin/pw-mon
@@ -126,10 +125,9 @@ include/spa-0.2/spa/utils/result.h
 include/spa-0.2/spa/utils/ringbuffer.h
 include/spa-0.2/spa/utils/type-info.h
 include/spa-0.2/spa/utils/type.h
-lib/alsa-lib/libasound_module_pcm_pipewire.so
 lib/libpipewire-0.3.so
 lib/libpipewire-0.3.so.0
-lib/libpipewire-0.3.so.0.302.0
+lib/libpipewire-0.3.so.0.304.0
 lib/pipewire-0.3/libpipewire-module-access.so
 lib/pipewire-0.3/libpipewire-module-adapter.so
 lib/pipewire-0.3/libpipewire-module-client-device.so
@@ -144,7 +142,6 @@ lib/pipewire-0.3/libpipewire-module-spa-device-factory.so
 lib/pipewire-0.3/libpipewire-module-spa-device.so
 lib/pipewire-0.3/libpipewire-module-spa-node-factory.so
 lib/pipewire-0.3/libpipewire-module-spa-node.so
-lib/spa-0.2/alsa/libspa-alsa.so
 lib/spa-0.2/audioconvert/libspa-audioconvert.so
 lib/spa-0.2/audiomixer/libspa-audiomixer.so
 lib/spa-0.2/control/libspa-control.so

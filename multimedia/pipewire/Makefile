@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pipewire
-DISTVERSION=	0.3.2
+DISTVERSION=	0.3.4
 CATEGORIES=	multimedia
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -26,6 +26,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	PipeWire
 
 MESON_ARGS=	-D gstreamer=false \
+		-Dalsa=false -Dpipewire-alsa=false \
 		-D bluez5=false \
 		-D jack=false -D pipewire-jack=false \
 		-D vulkan=false \
