@@ -1,6 +1,15 @@
 --- afterstep/icons.c.orig	1997-03-21 00:09:21 UTC
 +++ afterstep/icons.c
-@@ -779,10 +779,12 @@ void Iconify(ASWindow *tmp_win, int def_
+@@ -10,7 +10,7 @@
+  *
+  * Modifications: Copyright 1995 Bo Yang. No further restrictions,
+  * as long as this copyright notice is preserved.
+- * 
++ */
+ /***********************************************************************
+  *
+  * afterstep icon code
+@@ -779,10 +779,12 @@ void Iconify(ASWindow *tmp_win, int def_x, int def_y)
  	}
      } 
  
