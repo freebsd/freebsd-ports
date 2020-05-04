@@ -23,7 +23,7 @@ index 855214a..1e91d51 100644
  
      log.debug("python2: executable from configuration: %r" % python)
  
-@@ -358,7 +365,10 @@ def virtualenv_python2(env_python, build_env, mozillab
+@@ -365,7 +372,10 @@ def virtualenv_python2(env_python, build_env, mozillab
                  sys.executable, manager.python_path))
              log.info('Reexecuting in the virtualenv')
              if env_python:
@@ -35,7 +35,7 @@ index 855214a..1e91d51 100644
              # One would prefer to use os.execl, but that's completely borked on
              # Windows.
              sys.exit(subprocess.call([python] + sys.argv))
-@@ -460,6 +470,7 @@ option(env='PYTHON3', nargs=1, help='Python 3 interpre
+@@ -468,6 +478,7 @@ option(env='PYTHON3', nargs=1, help='Python 3 interpre
  @imports(_from='mozbuild.pythonutil', _import='find_python3_executable')
  @imports(_from='mozbuild.pythonutil', _import='python_executable_version')
  @imports(_from='six', _import='ensure_text')
@@ -43,7 +43,7 @@ index 855214a..1e91d51 100644
  def virtualenv_python3(env_python, build_env, mozillabuild, mozconfig, help):
      if help:
          return
-@@ -495,6 +506,12 @@ def virtualenv_python3(env_python, build_env, mozillab
+@@ -503,6 +514,12 @@ def virtualenv_python3(env_python, build_env, mozillab
              python = mozconfig['vars']['added']['PYTHON3']
          elif 'PYTHON3' in mozconfig['vars']['modified']:
              python = mozconfig['vars']['modified']['PYTHON3'][1]
@@ -56,7 +56,7 @@ index 855214a..1e91d51 100644
  
      log.debug("python3: executable from configuration: %r" % python)
  
-@@ -575,7 +592,10 @@ def virtualenv_python3(env_python, build_env, mozillab
+@@ -583,7 +600,10 @@ def virtualenv_python3(env_python, build_env, mozillab
                  sys.executable, manager.python_path))
              log.info('Re-executing in the virtualenv')
              if env_python:
@@ -65,6 +65,6 @@ index 855214a..1e91d51 100644
 +                    del os.environ['PYTHON3']
 +                except KeyError:
 +                    pass
-             # One would prefer to use os.execl, but that's completely borked on
-             # Windows.
-             sys.exit(subprocess.call([python] + sys.argv))
+             # Homebrew on macOS will change Python's sys.executable to a custom
+             # value which messes with mach's virtualenv handling code. Override
+             # Homebrew's changes with the correct sys.executable value.
