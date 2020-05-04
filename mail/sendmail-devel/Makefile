@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sendmail
-PORTVERSION=	8.16.0.41
-PORTREVISION=	3
+PORTVERSION=	8.16.0.45
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.sendmail.org/pub/sendmail/snapshots/
 PKGNAMESUFFIX?=	-devel${PKGNAMESUFFIX2}
