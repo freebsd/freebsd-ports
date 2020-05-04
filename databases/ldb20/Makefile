@@ -103,7 +103,7 @@ BUILD_DEPENDS+=		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/do
 .endif
 
 .if ! ${PORT_OPTIONS:MPYTHON3} || defined(NO_PYTHON)
-USES+=			python:2.7+,build,test
+USES+=			python:build,test
 CONFIGURE_ARGS+=	--disable-python
 .else
 USES+=			python:3.4+
