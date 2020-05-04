@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}check-manifest>=0:devel/py-check-manifest@
 		${PYTHON_PKGNAMEPREFIX}pep8>=0:devel/pep8@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyflakes>=0:devel/py-pyflakes@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.5+
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
