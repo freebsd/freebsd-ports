@@ -6,15 +6,26 @@ Please add the following entries in order to boot the xen kernel
 In /etc/sysctl.conf:
 	vm.max_wired=-1
 
+Or if running FreeBSD 13 or newer:
+	vm.max_user_wired=-1
+
 In /etc/ttys:
-	xc0 	"/usr/libexec/getty Pc"         xterm   on  secure
+	xc0 	"/usr/libexec/getty Pc"         xterm   onifconsole  secure
 
 In /boot/loader.conf for a dom0 with 2G memory and 4 vcpus:
 	xen_kernel="/boot/xen"
 	xen_cmdline="dom0_mem=2048M dom0_max_vcpus=4 dom0=pvh com1=115200,8n1 guest_loglvl=all loglvl=all"
 
 Add to the above xen_cmdline in order to activate the serial console:
-	console=com1
+	console=vga,com1
+
+Note that you will have to enable multicons on FreeBSD if you want to get
+output on both the serial and the VGA consoles. The following should be added
+to /boot/loader.conf in that case:
+	boot_multicons="YES"
+	boot_serial="YES"
+	console="comconsole,vidconsole"
+
 EOM
 }
 ]
