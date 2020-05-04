@@ -21,6 +21,7 @@ include/pipewire-0.3/pipewire/extensions/protocol-native.h
 include/pipewire-0.3/pipewire/extensions/session-manager.h
 include/pipewire-0.3/pipewire/extensions/session-manager/impl-interfaces.h
 include/pipewire-0.3/pipewire/extensions/session-manager/interfaces.h
+%%VULKAN%%include/pipewire-0.3/pipewire/extensions/session-manager/introspect-funcs.h
 include/pipewire-0.3/pipewire/extensions/session-manager/introspect.h
 include/pipewire-0.3/pipewire/extensions/session-manager/keys.h
 include/pipewire-0.3/pipewire/factory.h
@@ -125,6 +126,7 @@ include/spa-0.2/spa/utils/result.h
 include/spa-0.2/spa/utils/ringbuffer.h
 include/spa-0.2/spa/utils/type-info.h
 include/spa-0.2/spa/utils/type.h
+%%GSTREAMER%%lib/gstreamer-1.0/libgstpipewire.so
 lib/libpipewire-0.3.so
 lib/libpipewire-0.3.so.0
 lib/libpipewire-0.3.so.0.304.0
@@ -149,5 +151,6 @@ lib/spa-0.2/support/libspa-dbus.so
 lib/spa-0.2/support/libspa-support.so
 lib/spa-0.2/v4l2/libspa-v4l2.so
 lib/spa-0.2/videoconvert/libspa-videoconvert.so
+%%VULKAN%%lib/spa-0.2/vulkan/libspa-vulkan.so
 libdata/pkgconfig/libpipewire-0.3.pc
 libdata/pkgconfig/libspa-0.2.pc

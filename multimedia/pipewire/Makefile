@@ -2,6 +2,7 @@
 
 PORTNAME=	pipewire
 DISTVERSION=	0.3.4
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -19,6 +20,17 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 
 USES=		compiler:c11 gnome meson pkgconfig
 
+OPTIONS_DEFINE=	GSTREAMER VULKAN
+
+GSTREAMER_MESON_TRUE=	gstreamer
+GSTREAMER_LIB_DEPENDS=	libgstreamer-1.0.so:multimedia/gstreamer1 \
+			libgstaudio-1.0.so:multimedia/gstreamer1-plugins
+
+VULKAN_DESC=	Enable Vulkan integration
+VULKAN_MESON_TRUE=	vulkan
+VULKAN_BUILD_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:devel/vulkan-headers
+VULKAN_LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
+
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 
@@ -29,9 +41,10 @@ MESON_ARGS=	-D gstreamer=false \
 		-Dalsa=false -Dpipewire-alsa=false \
 		-D bluez5=false \
 		-D jack=false -D pipewire-jack=false \
-		-D vulkan=false \
 		-D pipewire-pulseaudio=false \
 		-D systemd=false
+
+OPTIONS_SUB=	yes
 
 post-install:
 	${MV} ${STAGEDIR}${ETCDIR}/pipewire.conf ${STAGEDIR}${ETCDIR}/pipewire.conf.sample
