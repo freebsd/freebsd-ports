@@ -1,0 +1,7 @@
+bin/dams
+include/dams.h
+lib/dams/dams.dat
+lib/dams/dams.try
+lib/libdams-4.3.4.so
+lib/libdams.a
+lib/libdams.so

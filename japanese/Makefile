@@ -34,6 +34,7 @@
     SUBDIR += cp5022x-el
     SUBDIR += csrd
     SUBDIR += ctags
+    SUBDIR += dams
     SUBDIR += dbskkd-cdb
     SUBDIR += ddskk
     SUBDIR += devil-fpw
