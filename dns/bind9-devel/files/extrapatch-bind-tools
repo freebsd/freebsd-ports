@@ -1,34 +1,18 @@
 Only select the "tools" part of bind for building.
 
---- Makefile.in.orig	2019-08-12 14:08:48 UTC
-+++ Makefile.in
-@@ -14,7 +14,7 @@ top_builddir =  @top_builddir@
+--- Makefile.am.orig	2020-04-30 06:25:30 UTC
++++ Makefile.am
+@@ -7,5 +7,3 @@ CLEANFILES = bind.keys.h
  
- VERSION=@BIND9_VERSION@
+ bind.keys.h: bind.keys Makefile
+ 	${PERL} ${top_srcdir}/util/bindkeys.pl < ${top_srcdir}/bind.keys > $@
+-
+-dist_sysconf_DATA = bind.keys
+--- bin/Makefile.am.orig	2020-04-30 06:25:30 UTC
++++ bin/Makefile.am
+@@ -1,4 +1,4 @@
+-SUBDIRS = named rndc dig delv dnssec tools nsupdate check confgen tests plugins
++SUBDIRS = dig delv dnssec tools nsupdate
  
--SUBDIRS =	make lib fuzz bin doc
-+SUBDIRS =	lib bin
- TARGETS =
- PREREQS =	bind.keys.h
- 
-@@ -51,7 +51,6 @@ installdirs:
- 	$(SHELL) ${top_srcdir}/mkinstalldirs ${DESTDIR}${mandir}/man1
- 
- install:: installdirs
--	${INSTALL_DATA} ${top_srcdir}/bind.keys ${DESTDIR}${sysconfdir}
- 
- uninstall::
- 	rm -f ${DESTDIR}${sysconfdir}/bind.keys
---- bin/Makefile.in.orig	2019-08-12 14:08:48 UTC
-+++ bin/Makefile.in
-@@ -11,8 +11,8 @@ srcdir =	@srcdir@
- VPATH =		@srcdir@
- top_srcdir =	@top_srcdir@
- 
--SUBDIRS =	named rndc dig delv dnssec tools nsupdate check confgen \
--		@NZD_TOOLS@ @PYTHON_TOOLS@ @PKCS11_TOOLS@ plugins tests
-+SUBDIRS =	dig delv dnssec tools nsupdate \
-+		@NZD_TOOLS@ @PYTHON_TOOLS@
- TARGETS =
- 
- @BIND9_MAKE_RULES@
+ if HAVE_PKCS11
+ SUBDIRS += pkcs11

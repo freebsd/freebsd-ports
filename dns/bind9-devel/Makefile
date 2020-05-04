@@ -46,15 +46,15 @@ RUN_DEPENDS=	bind-tools>0:dns/bind-tools
 .endif
 
 # XXX: remove tar:bz2
-USES=		compiler:c11 cpe libedit libtool pkgconfig ssl tar:bz2
+USES=		autoreconf compiler:c11 cpe libedit libtool pkgconfig ssl tar:bz2
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.17.0a0.2020.03.30
+ISCVERSION=	9.17.0a0.2020.05.02
 # XXX: Remove gitlab
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.isc.org
 GL_ACCOUNT=	isc-projects
 GL_PROJECT=	bind9
-GL_COMMIT=	2df610a882d57fd95221ece4df03c04cd0f702b7
+GL_COMMIT=	a6e6d0c1d5d5add2901abd03050001fbc910ec76
 
 CPE_VENDOR=	isc
 CPE_VERSION=	${ISCVERSION:C/-.*//}
@@ -167,16 +167,13 @@ GEOIP_CONFIGURE_ENABLE=	geoip
 GEOIP_CONFIGURE_WITH=	maxminddb
 GEOIP_LIB_DEPENDS=	libmaxminddb.so:net/libmaxminddb
 
-GSSAPI_BASE_CONFIGURE_ON=	--with-gssapi=${GSSAPIBASEDIR} \
-				KRB5CONFIG="${KRB5CONFIG}"
+GSSAPI_BASE_CONFIGURE_ON=	--with-gssapi="${KRB5CONFIG}"
 GSSAPI_BASE_USES=		gssapi
 
-GSSAPI_HEIMDAL_CONFIGURE_ON=	--with-gssapi=${GSSAPIBASEDIR} \
-				KRB5CONFIG="${KRB5CONFIG}"
+GSSAPI_HEIMDAL_CONFIGURE_ON=	--with-gssapi="${KRB5CONFIG}"
 GSSAPI_HEIMDAL_USES=		gssapi:heimdal
 
-GSSAPI_MIT_CONFIGURE_ON=	--with-gssapi=${GSSAPIBASEDIR} \
-				KRB5CONFIG="${KRB5CONFIG}"
+GSSAPI_MIT_CONFIGURE_ON=	--with-gssapi="${KRB5CONFIG}"
 GSSAPI_MIT_USES=		gssapi:mit
 
 GSSAPI_NONE_CONFIGURE_ON=	--without-gssapi
@@ -243,8 +240,8 @@ post-extract:
 
 # XXX: Remove first REINPLACE_CMD
 post-patch:
-	@${REINPLACE_CMD} -e '/RELEASETYPE=/s#$$#-${GL_COMMIT}#' \
-		${WRKSRC}/version
+	@${REINPLACE_CMD} -e '/^m4_define.*bind_VERSION_EXTRA/s#)#-${GL_COMMIT})#' \
+		${WRKSRC}/configure.ac
 .for FILE in check/named-checkconf.8 named/named.8 nsupdate/nsupdate.1 \
 	rndc/rndc.8
 	@${REINPLACE_CMD} -e 's#/etc/named.conf#${ETCDIR}/named.conf#g' \
@@ -256,8 +253,8 @@ post-patch:
 .if !defined(BIND_TOOLS_SLAVE)
 .  if ${PORTREVISION:N0}
 post-patch-PORTREVISION-on:
-	@${REINPLACE_CMD} -e '/EXTENSIONS/s#=$$#=_${PORTREVISION}#' \
-		${WRKSRC}/version
+	@${REINPLACE_CMD} '/^m4_define.*bind_VERSION_EXTRA/s#)#_${PORTREVISION})#' \
+		${WRKSRC}/configure.ac
 .  endif
 
 post-install:

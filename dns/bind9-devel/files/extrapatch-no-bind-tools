@@ -1,51 +1,30 @@
 Exclude the "tools" from building and installing.
 
---- bin/Makefile.in.orig	2020-03-30 08:17:31 UTC
-+++ bin/Makefile.in
-@@ -11,8 +11,8 @@ srcdir =	@srcdir@
- VPATH =		@srcdir@
- top_srcdir =	@top_srcdir@
+--- bin/Makefile.am.orig	2020-04-30 07:10:53 UTC
++++ bin/Makefile.am
+@@ -1,4 +1,4 @@
+-SUBDIRS = named rndc dig delv dnssec tools nsupdate check confgen tests plugins
++SUBDIRS = named rndc tools check confgen tests plugins
  
--SUBDIRS =	named rndc dig delv dnssec tools nsupdate check confgen \
--		@NZD_TOOLS@ @PYTHON_TOOLS@ @PKCS11_TOOLS@ plugins tests
-+SUBDIRS =	named rndc tools check confgen \
-+		@NZD_TOOLS@ @PKCS11_TOOLS@ plugins tests
- TARGETS =
+ if HAVE_PKCS11
+ SUBDIRS += pkcs11
+--- bin/tools/Makefile.am.orig	2020-04-30 07:08:39 UTC
++++ bin/tools/Makefile.am
+@@ -8,15 +8,10 @@ LDADD =				\
+ 	$(LIBISC_LIBS)		\
+ 	$(LIBDNS_LIBS)
  
- @BIND9_MAKE_RULES@
---- bin/tools/Makefile.in.orig	2020-03-30 08:17:31 UTC
-+++ bin/tools/Makefile.in
-@@ -40,10 +40,7 @@ SUBDIRS =
+-bin_PROGRAMS =			\
+-	arpaname		\
+-	named-rrchecker		\
+-	mdig
++bin_PROGRAMS =
  
- DNSTAPTARGETS =	dnstap-read@EXEEXT@
- NZDTARGETS =	named-nzd2nzf@EXEEXT@
--TARGETS =	arpaname@EXEEXT@ named-journalprint@EXEEXT@ \
--		named-rrchecker@EXEEXT@ nsec3hash@EXEEXT@ \
--		mdig@EXEEXT@ \
--		@DNSTAPTARGETS@ @NZDTARGETS@
-+TARGETS =	@DNSTAPTARGETS@ @NZDTARGETS@
+-sbin_PROGRAMS =			\
+-	named-journalprint	\
+-	nsec3hash
++sbin_PROGRAMS =
  
- DNSTAPSRCS  =	dnstap-read.c
- NZDSRCS  =	named-nzd2nzf.c
-@@ -119,21 +116,6 @@ dnstap:
- 	${INSTALL_DATA} ${srcdir}/dnstap-read.1 ${DESTDIR}${mandir}/man1
- 
- install:: ${TARGETS} installdirs @DNSTAP@ @NZD_TOOLS@
--	${LIBTOOL_MODE_INSTALL} ${INSTALL_PROGRAM} arpaname@EXEEXT@ \
--		${DESTDIR}${bindir}
--	${LIBTOOL_MODE_INSTALL} ${INSTALL_PROGRAM} named-journalprint@EXEEXT@ \
--		${DESTDIR}${sbindir}
--	${LIBTOOL_MODE_INSTALL} ${INSTALL_PROGRAM} named-rrchecker@EXEEXT@ \
--		${DESTDIR}${bindir}
--	${LIBTOOL_MODE_INSTALL} ${INSTALL_PROGRAM} nsec3hash@EXEEXT@ \
--		${DESTDIR}${sbindir}
--	${LIBTOOL_MODE_INSTALL} ${INSTALL_PROGRAM} mdig@EXEEXT@ \
--		${DESTDIR}${bindir}
--	${INSTALL_DATA} ${srcdir}/arpaname.1 ${DESTDIR}${mandir}/man1
--	${INSTALL_DATA} ${srcdir}/named-journalprint.8 ${DESTDIR}${mandir}/man8
--	${INSTALL_DATA} ${srcdir}/named-rrchecker.1 ${DESTDIR}${mandir}/man1
--	${INSTALL_DATA} ${srcdir}/nsec3hash.8 ${DESTDIR}${mandir}/man8
--	${INSTALL_DATA} ${srcdir}/mdig.1 ${DESTDIR}${mandir}/man1
- 
- uninstall::
- 	rm -f ${DESTDIR}${mandir}/man1/mdig.1
+ mdig_CPPFLAGS =			\
+ 	$(AM_CPPFLAGS)		\
+ 	$(LIBBIND9_CFLAGS)
