@@ -1,4 +1,5 @@
 @sample libexec/sonarqube/conf/sonar.properties.sample
+@dir(sonarqube,sonarqube,755) %%DBBASE_DIR%%
 @dir(sonarqube,sonarqube,755) %%DATA_DIR%%
 @dir(sonarqube,sonarqube,755) %%TEMP_DIR%%
 @dir %%APP_DIR%%/elasticsearch/plugins
