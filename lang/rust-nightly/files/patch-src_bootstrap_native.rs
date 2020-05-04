@@ -3,9 +3,9 @@ for building rust-lld.  Attempt to improve reliability of the build
 by not using it.  llvm-config-wrapper is a hack in the first place
 that is only really needed on Windows.
 
---- src/bootstrap/native.rs.orig	2020-02-27 18:39:49 UTC
+--- src/bootstrap/native.rs.orig	2020-05-03 19:47:59 UTC
 +++ src/bootstrap/native.rs
-@@ -467,25 +467,9 @@ impl Step for Lld {
+@@ -488,25 +488,9 @@ impl Step for Lld {
          let mut cfg = cmake::Config::new(builder.src.join("src/llvm-project/lld"));
          configure_cmake(builder, target, &mut cfg, true);
  
@@ -26,9 +26,9 @@ that is only really needed on Windows.
 -        let llvm_config_shim = env::current_exe().unwrap().with_file_name("llvm-config-wrapper");
          cfg.out_dir(&out_dir)
              .profile("Release")
--            .env("LLVM_CONFIG_REAL", llvm_config)
+-            .env("LLVM_CONFIG_REAL", &llvm_config)
 -            .define("LLVM_CONFIG_PATH", llvm_config_shim)
-+            .define("LLVM_CONFIG_PATH", llvm_config)
++            .define("LLVM_CONFIG_PATH", &llvm_config)
              .define("LLVM_INCLUDE_TESTS", "OFF");
  
-         cfg.build();
+         // While we're using this horrible workaround to shim the execution of
