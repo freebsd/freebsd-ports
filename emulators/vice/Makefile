@@ -34,6 +34,7 @@ USE_XORG=	xpm ice sm xext xv xt x11 xmu xxf86vm
 USE_XORG+=	xrender xinerama xi xrandr xcursor xcomposite xdamage xfixes
 HAS_CONFIGURE=	yes
 MAKE_ENV+=	MAKEINFOFLAGS="--no-split"
+CFLAGS+=	-fcommon
 CONFIGURE_ARGS+=	--enable-ipv6 \
 			--enable-external-ffmpeg \
 			--enable-x64 \
