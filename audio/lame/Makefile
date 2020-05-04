@@ -21,7 +21,7 @@ LICENSE_PERMS_PATENTS=	dist-mirror dist-sell no-pkg-mirror no-pkg-sell auto-acce
 # project's best interest and we should continue to not package
 # audio/lame.
 
-USES=		gmake iconv libtool
+USES=		iconv libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-nasm --enable-mp3rtp --disable-gtktest
