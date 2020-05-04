@@ -3,6 +3,7 @@
 
 PORTNAME?=	xorg-server
 PORTVERSION?=	1.20.8
+PORTREVISION?=	1
 PORTEPOCH?=	1
 CATEGORIES=	x11-servers
 MASTER_SITES=	XORG/individual/xserver
@@ -10,6 +11,9 @@ DISTNAME=	xorg-server-${PORTVERSION}
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT?=	X.Org X server and related programs
+
+PATCH_SITES=	https://gitlab.freedesktop.org/xorg/xserver/commit/
+PATCHFILES=	271934db9f3b1297754b29855646e0a4ee01db59.diff:-p1
 
 LICENSE=	MIT
 
@@ -55,15 +59,16 @@ DEFAULT_FONTPATH_LIST= \
 DEFAULT_FONTPATH_CMD=${ECHO_CMD} ${DEFAULT_FONTPATH_LIST} | ${TR} ' ' ,
 PLIST_SUB+=	FONTPATHD="${FONTPATHD:S,^${PREFIX}/,,}"
 
-USES=		compiler:c11 gl gmake perl5 ssl xorg xorg-cat:xserver
+USES=		compiler:c11 cpe gl gmake perl5 ssl xorg xorg-cat:xserver
 USE_PERL5=	build
 USE_GL+=	gl
 USE_XORG+=	pixman xau xdmcp xfont2 xkbfile xorgproto xshmfence xtrans
 CONFIGURE_ARGS+=--without-doxygen --without-xmlto --without-fop \
 		--with-default-font-path="$$(${DEFAULT_FONTPATH_CMD})" \
-		--without-dtrace --with-shared-memory-dir=/tmp \
+		--without-dtrace --disable-config-hal	\
 		--disable-install-setuid --disable-unit-tests
 INSTALL_TARGET=	install-strip
+CPE_VENDOR=	x.org
 
 .if ${SLAVE_PORT} == "no" || ${PORTNAME} == "xephyr" || ${PORTNAME} == "xwayland"
 LIB_DEPENDS+=	libdrm.so:graphics/libdrm \
