@@ -1,0 +1,29 @@
+%%PORTDOCS%%%%DOCSDIR%%/doc.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-multipleServers-full.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-multipleServers-pretty.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-singleServer-basic.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-singleServer-chart.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-singleServer-customSettings.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-singleServer-full.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-singleServer-gauges.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-singleServer-pretty.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-singleServer-progressBar.html
+@owner %%LIBRESPEED_USERNAME%%
+@dir %%WWWDIR%%/backend
+%%WWWDIR%%/backend/empty.php
+%%WWWDIR%%/backend/garbage.php
+%%WWWDIR%%/backend/getIP.php
+@sample %%WWWDIR%%/backend/getIP_ipInfo_apikey.php.sample
+@dir %%WWWDIR%%/results
+%%WWWDIR%%/results/OpenSans-Light.ttf
+%%WWWDIR%%/results/OpenSans-Semibold.ttf
+%%WWWDIR%%/results/idObfuscation.php
+%%WWWDIR%%/results/index.php
+%%WWWDIR%%/results/stats.php
+%%WWWDIR%%/results/telemetry.php
+%%WWWDIR%%/results/telemetry_mysql.sql
+%%WWWDIR%%/results/telemetry_postgresql.sql
+@sample %%WWWDIR%%/results/telemetry_settings.php.sample
+%%WWWDIR%%/favicon.ico
+%%WWWDIR%%/speedtest.js
+%%WWWDIR%%/speedtest_worker.js

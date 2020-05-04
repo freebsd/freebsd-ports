@@ -1,0 +1,5 @@
+LibreSpeed is a very lightweight Speedtest.
+LibreSpeed is implemented in Javascript, using XMLHttpRequest and Web Workers.
+It can be self hosted with the option to store results in a backend database.
+
+WWW: https://github.com/librespeed/speedtest

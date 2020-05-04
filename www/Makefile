@@ -300,6 +300,7 @@
     SUBDIR += libnghttp2
     SUBDIR += libnghttp3
     SUBDIR += libresonic-standalone
+    SUBDIR += librespeed
     SUBDIR += librtcdcpp
     SUBDIR += libwpe
     SUBDIR += libwww
