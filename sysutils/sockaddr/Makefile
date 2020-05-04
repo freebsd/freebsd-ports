@@ -4,7 +4,7 @@ PORTNAME=	sockaddr
 DISTVERSION=	g20180320
 CATEGORIES=	sysutils
 
-MAINTAINER=	seanc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command line utility for querying IP information
 
 LICENSE=	MPL20

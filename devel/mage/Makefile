@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	2.1
 CATEGORIES=	devel
 
-MAINTAINER=	seanc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command-line make-like build tool using Go as input files
 
 BROKEN=		unfetchable
