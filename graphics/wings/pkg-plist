@@ -88,6 +88,7 @@ lib/erlang/lib/wings-%%VERSION%%/ebin/wings_outliner.beam
 lib/erlang/lib/wings-%%VERSION%%/ebin/wings_palette.beam
 lib/erlang/lib/wings-%%VERSION%%/ebin/wings_pb.beam
 lib/erlang/lib/wings-%%VERSION%%/ebin/wings_pick.beam
+lib/erlang/lib/wings-%%VERSION%%/ebin/wings_pick_nif.beam
 lib/erlang/lib/wings-%%VERSION%%/ebin/wings_plugin.beam
 lib/erlang/lib/wings-%%VERSION%%/ebin/wings_pref.beam
 lib/erlang/lib/wings-%%VERSION%%/ebin/wings_pref_dlg.beam
@@ -260,8 +261,6 @@ lib/erlang/lib/wings-%%VERSION%%/icons/wings_icon_256x256.png
 lib/erlang/lib/wings-%%VERSION%%/icons/wings_icon_379x379.png
 lib/erlang/lib/wings-%%VERSION%%/icons/wings_icon_48x48.png
 lib/erlang/lib/wings-%%VERSION%%/patches/README
-lib/erlang/lib/wings-%%VERSION%%/plugins/accel/wings_pick_drv.so
-lib/erlang/lib/wings-%%VERSION%%/plugins/accel/wpc_pick.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/autouv/README
 lib/erlang/lib/wings-%%VERSION%%/plugins/autouv/README-shaders.txt
 lib/erlang/lib/wings-%%VERSION%%/plugins/autouv/auv_mapping.beam
@@ -345,6 +344,7 @@ lib/erlang/lib/wings-%%VERSION%%/plugins/import_export/wpc_bzw.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/import_export/wpc_collada.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/import_export/wpc_gltf.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/import_export/wpc_hlines.beam
+lib/erlang/lib/wings-%%VERSION%%/plugins/import_export/wpc_jscad.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/import_export/wpc_kerky.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/import_export/wpc_lwo.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/import_export/wpc_obj.beam
@@ -368,6 +368,7 @@ lib/erlang/lib/wings-%%VERSION%%/plugins/primitives/wpc_plane.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/primitives/wpc_spiral.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/primitives/wpc_torus.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/primitives/wpc_tt.beam
+lib/erlang/lib/wings-%%VERSION%%/priv/wings_pick_nif.so
 lib/erlang/lib/wings-%%VERSION%%/shaders/alpha_test.fs
 lib/erlang/lib/wings-%%VERSION%%/shaders/ambient_light.fs
 lib/erlang/lib/wings-%%VERSION%%/shaders/area_light.fs
@@ -446,6 +447,7 @@ lib/erlang/lib/wings-%%VERSION%%/src/wings_outliner.erl
 lib/erlang/lib/wings-%%VERSION%%/src/wings_palette.erl
 lib/erlang/lib/wings-%%VERSION%%/src/wings_pb.erl
 lib/erlang/lib/wings-%%VERSION%%/src/wings_pick.erl
+lib/erlang/lib/wings-%%VERSION%%/src/wings_pick_nif.erl
 lib/erlang/lib/wings-%%VERSION%%/src/wings_plugin.erl
 lib/erlang/lib/wings-%%VERSION%%/src/wings_pref.erl
 lib/erlang/lib/wings-%%VERSION%%/src/wings_pref_dlg.erl
@@ -485,8 +487,8 @@ lib/erlang/lib/wings-%%VERSION%%/src/wings_wm.erl
 lib/erlang/lib/wings-%%VERSION%%/src/wpa.erl
 lib/erlang/lib/wings-%%VERSION%%/src/ww_color_ctrl.erl
 lib/erlang/lib/wings-%%VERSION%%/src/ww_color_slider.erl
+lib/erlang/lib/wings-%%VERSION%%/textures/about_wings_art.png
 lib/erlang/lib/wings-%%VERSION%%/textures/areal_ltcmat.bin
-lib/erlang/lib/wings-%%VERSION%%/textures/brand.png
 lib/erlang/lib/wings-%%VERSION%%/textures/brdf_tab.bin
 lib/erlang/lib/wings-%%VERSION%%/textures/grandcanyon.png
 lib/erlang/lib/wings-%%VERSION%%/textures/ip_helper.png

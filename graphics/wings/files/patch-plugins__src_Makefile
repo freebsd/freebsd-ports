@@ -1,9 +1,9 @@
---- plugins_src/Makefile.orig	2019-05-28 09:45:19 UTC
+--- plugins_src/Makefile.orig	2020-05-04 17:00:55 UTC
 +++ plugins_src/Makefile
-@@ -18,7 +18,7 @@ ESRC=.
+@@ -19,7 +19,7 @@ include ../erl.mk
+ ESRC=.
  WINGS_INTL=../intl_tools
  EBIN=../plugins/default
- ERLC=erlc
 -WINGS_TOP=../..
 +WINGS_TOP=..
  

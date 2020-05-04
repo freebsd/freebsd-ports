@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	wings
-PORTVERSION=	2.2.4
+PORTVERSION=	2.2.5
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 DIST_SUBDIR=	erlang
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cmt@FreeBSD.org
 COMMENT=	Polygon mesh modeler written in Erlang
 
 LICENSE=	Wings3D
@@ -40,8 +40,6 @@ DESKTOP_ENTRIES="Wings" \
 		""
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|$$(GCC)|${CC} -I${LOCALBASE}/include -L${LOCALBASE}/lib|g' \
-		${WRKSRC}/plugins_src/accel/Makefile
 	@${REINPLACE_CMD} -e 's,include_lib("wings/,include_lib(",g' \
 		${WRKSRC}/src/*.erl \
 		${WRKSRC}/plugins_src/*.erl \
@@ -51,18 +49,16 @@ post-patch:
 		${WRKSRC}/plugins_src/commands/*.hrl \
 		${WRKSRC}/plugins_src/autouv/*.erl \
 		${WRKSRC}/icons/*.erl
-#	@${FIND} ${WRKSRC} -name "*.orig" -delete
 
 do-install:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} "ebin icons plugins textures shaders patches" \
 		${STAGEDIR}${PREFIX}/lib/erlang/lib/${DISTNAME}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} "src" \
 		${STAGEDIR}${PREFIX}/lib/erlang/lib/${DISTNAME} "-name *\.erl"
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "priv" \
+		${STAGEDIR}${PREFIX}/lib/erlang/lib/${DISTNAME} "-name *\.so"
 	${LN} -sf ${DISTNAME} ${STAGEDIR}${PREFIX}/lib/erlang/lib/${PORTNAME}
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/src/${PORTNAME}.icon ${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.ico
-	${CHMOD} u+w ${STAGEDIR}${PREFIX}/lib/erlang/lib/${DISTNAME}/plugins/accel/*.so
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/erlang/lib/${DISTNAME}/plugins/accel/*.so
-	${CHMOD} u-w ${STAGEDIR}${PREFIX}/lib/erlang/lib/${DISTNAME}/plugins/accel/*.so
 
 .include <bsd.port.mk>
