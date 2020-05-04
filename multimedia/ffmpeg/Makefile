@@ -3,7 +3,7 @@
 
 PORTNAME=	ffmpeg
 PORTVERSION=	4.2.2
-PORTREVISION=	13
+PORTREVISION=	14
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio net
 MASTER_SITES=	https://ffmpeg.org/releases/
@@ -485,7 +485,7 @@ SVTHEVC_PREVENTS_MSG=	${SVTAV1_PREVENTS_MSG}
 # svt-vp9
 SVTVP9_LIB_DEPENDS=	libSvtVp9Enc.so:multimedia/svt-vp9
 SVTVP9_CONFIGURE_ON=	--enable-libsvtvp9
-SVTVP9_PATCH_SITES=	https://github.com/OpenVisualCloud/SVT-VP9/raw/v0.1.0/ffmpeg_plugin/:svtvp9
+SVTVP9_PATCH_SITES=	https://github.com/OpenVisualCloud/SVT-VP9/raw/v0.2.0/ffmpeg_plugin/:svtvp9
 SVTVP9_PATCHFILES=	0001-Add-ability-for-ffmpeg-to-run-svt-vp9.patch:-p1:svtvp9
 .if exists(/usr/bin/ld.lld) && (${/usr/bin/ld:L:tA} != /usr/bin/ld.lld)
 SVTVP9_LDFLAGS=		-fuse-ld=lld
