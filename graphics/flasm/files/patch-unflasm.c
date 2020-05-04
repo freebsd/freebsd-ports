@@ -1,6 +1,15 @@
---- ./unflasm.c.orig	2014-03-18 08:44:06.055828097 +0100
-+++ ./unflasm.c	2014-03-18 08:44:06.060828422 +0100
-@@ -1012,29 +1012,11 @@
+--- unflasm.c.orig	2020-05-02 15:54:36 UTC
++++ unflasm.c
+@@ -29,7 +29,7 @@ static int targetIndent = 0;
+ static long int swfabspos = -1;
+ static long int swfrelpos = -1;
+ 
+-int swfVersion;
++extern int swfVersion;
+ 
+ static int showLiterals;
+ static int nDict = 0;
+@@ -1012,29 +1012,11 @@ static void printActionRecord(byte *p, Action type, un
  			}
  
  		case SWFACTION_SETTARGET:
