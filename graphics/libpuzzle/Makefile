@@ -2,7 +2,7 @@
 
 PORTNAME=	libpuzzle
 PORTVERSION=	0.11
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.pureftpd.org/pub/pure-ftpd/misc/libpuzzle/releases/
 
@@ -14,8 +14,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgd.so:graphics/gd
 
-USES=		autoreconf libtool tar:bzip2
+USES=		autoreconf libtool tar:bzip2 localbase
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	GDLIBCONFIG=/usr/bin/true
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
