@@ -2,8 +2,10 @@ dhcpcd is a DHCP/IPv4LL/IPv6RS/DHCPv6 client.
 It can also act as a network manager, responding to new interfaces,
 listening for carrier up/down events and managing routes.
 
+dhcpcd-9 includes privilege separation; operations which do not require
+root privileges are run in a chroot (/var/chroot/dhcpcd) as the
+unprivileged user _dhcp.
+
 This is an experimental version for testing purposes.
-Notably this new development version includes privilege separation;
-operations which do not require root are run as the user _dhcp.
 
 WWW: https://roy.marples.name/projects/dhcpcd
