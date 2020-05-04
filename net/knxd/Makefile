@@ -31,6 +31,6 @@ CONFIGURE_ARGS?=--disable-systemd --disable-usb \
 		LDFLAGS="-I${LOCALBASE}/include -L/${LOCALBASE}/lib"
 
 post-install:
-	(cd ${WRKSRC} && src/server/knxd_args -d -e 15.15.1 -E 15.15.2:8 -D -T -S -b ipt:192.168.0.117 -u /var/run/knxd > ${STAGEDIR}${PREFIX}/etc/knxd.conf.sample)
+	(cd ${WRKSRC} && src/server/knxd_args -d -e 15.15.1 -E 15.15.2:8 -D -T -S -B single -b ipt:192.168.0.117 -u /var/run/knxd > ${STAGEDIR}${PREFIX}/etc/knxd.conf.sample)
 
 .include <bsd.port.mk>
