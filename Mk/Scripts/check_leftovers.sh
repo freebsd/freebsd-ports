@@ -29,7 +29,8 @@ origin="$1"
 [ $# -eq 1 ] || { echo "Must supply ORIGIN as parameter" >&2; exit 1; }
 [ -n "${PORTSDIR}" ] || { echo "PORTSDIR must be set" >&2; exit 1; }
 
-portdir="${PORTSDIR}/${origin}"
+# May be passed in from environment if using an overlay.
+: ${portdir:="${PORTSDIR}/${origin}"}
 
 # PREFIX/LOCALBASE may be set in env or want default from port.
 if [ -n "${PREFIX}" ]; then
