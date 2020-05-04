@@ -22,6 +22,7 @@ cyrus/libexec/master
 cyrus/libexec/notifyd
 cyrus/libexec/pop3d
 cyrus/libexec/pop3proxyd
+cyrus/libexec/promstatsd
 cyrus/libexec/proxyd
 cyrus/libexec/smmapd
 cyrus/libexec/timsieved
@@ -87,11 +88,12 @@ include/cyrus/command.h
 include/cyrus/crc32.h
 include/cyrus/crc32c.h
 include/cyrus/cyr_lock.h
+include/cyrus/cyr_qsort_r.h
 include/cyrus/cyrusdb.h
-include/cyrus/exitcodes.h
 include/cyrus/glob.h
 include/cyrus/gmtoff.h
 include/cyrus/hash.h
+include/cyrus/hashset.h
 include/cyrus/hashu64.h
 include/cyrus/imapopts.h
 include/cyrus/imapurl.h
@@ -117,7 +119,6 @@ include/cyrus/sqldb.h
 include/cyrus/strarray.h
 include/cyrus/strhash.h
 include/cyrus/stristr.h
-include/cyrus/sysexits.h
 include/cyrus/times.h
 include/cyrus/tok.h
 include/cyrus/vparse.h
@@ -153,4 +154,4 @@ libdata/pkgconfig/libcyrus_imap.pc
 libdata/pkgconfig/libcyrus_min.pc
 libdata/pkgconfig/libcyrus_sieve.pc
 @sample %%EXAMPLESDIR%%/imapd.conf etc/imapd.conf
-@sample %%EXAMPLESDIR%%/normal.conf etc/cyrus.conf
+@sample %%EXAMPLESDIR%%/cyrus.conf etc/cyrus.conf

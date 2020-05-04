@@ -1,12 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	cyrus-imapd
-PORTVERSION=	3.0.13
-PORTREVISION=	2
-#PORTREVISION=	0
+PORTVERSION=	3.2.0
 CATEGORIES=	mail
 MASTER_SITES=	https://github.com/cyrusimap/cyrus-imapd/releases/download/${PORTNAME}-${PORTVERSION}/
-PKGNAMESUFFIX=	30
+PKGNAMESUFFIX=	32
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	Cyrus mail server, supporting POP3 and IMAP4 protocols
@@ -38,10 +36,14 @@ CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
 MAKE_JOBS_UNSAFE=	yes
 
+USES+=		shebangfix
+SHEBANG_FILES=	imap/promdatagen snmp/snmpgen tools/config2header \
+		tools/mkimap
+
 CPE_VENDOR=	cmu
 CPE_PRODUCT=	cyrus_imap_server
 
-OPTIONS_DEFINE=		AUTOCREATE BACKUP CLAMAV HTTP IDLED LDAP LMDB MURDER \
+OPTIONS_DEFINE=		AUTOCREATE BACKUP CLAMAV HTTP IDLED LDAP MURDER \
 			MYSQL NNTP PGSQL REPLICATION SNMP SQLITE SQUAT XAPIAN \
 			DOCS
 OPTIONS_DEFAULT=	AUTOCREATE IDLED SQLITE SQUAT
@@ -69,9 +71,6 @@ IDLED_CONFIGURE_ENABLE=	idled
 LDAP_DESC=		Enable LDAP support (experimental)
 LDAP_USE=		OPENLDAP=yes
 LDAP_CONFIGURE_ON=	--with-ldap=${LOCALBASE}
-LMDB_DESC=		Use LMDB backend
-LMDB_LIB_DEPENDS=	liblmdb.so:databases/lmdb
-LMDB_CONFIGURE_WITH=	lmdb
 MURDER_DESC=		Enable IMAP Murder support
 MURDER_CONFIGURE_ENABLE=murder
 MURDER_MAKE_ENV=	PTHREAD_LIBS="-lpthread"
@@ -189,8 +188,9 @@ post-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${FILESDIR}/imapd.conf \
 		${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/examples/cyrus_conf/normal.conf \
-		${STAGEDIR}${EXAMPLESDIR}
+	${SED} -e 's,/run/cyrus/socket,/var/imap/socket,' \
+		${WRKSRC}/doc/examples/cyrus_conf/normal.conf \
+		> ${STAGEDIR}${EXAMPLESDIR}/cyrus.conf
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/mkimap \
 		${STAGEDIR}${CYRUS_PREFIX}/sbin/mkimap
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/masssievec \
