@@ -959,5 +959,6 @@
     SUBDIR += z3
     SUBDIR += zegrapher
     SUBDIR += zimpl
+    SUBDIR += zn_poly
 
 .include <bsd.port.subdir.mk>
