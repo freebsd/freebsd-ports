@@ -4,7 +4,7 @@
 DISTVERSION=	5.5
 PORTEPOCH=	1
 MASTER_SITES=	LOCAL/salvadore/i386-wine-devel/${DIST_SUBDIR}/
-DISTNAME=	${PKGNAME}
+DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-${DISTVERSION},${PORTEPOCH}
 DIST_SUBDIR=	FreeBSD:${OSREL:C/\..*//}:amd64
 
 LICENSE=        LGPL21 LGPL3
@@ -18,7 +18,7 @@ EXTRACT_AFTER_ARGS=	-C / --exclude +COMPACT_MANIFEST --exclude +MANIFEST \
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
 USE_LDCONFIG32=	${PREFIX}/lib32 ${PREFIX}/lib32/wine
-USES=		tar:txz desktop-file-utils
+USES=		desktop-file-utils tar:txz
 BUNDLE_LIBS=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
