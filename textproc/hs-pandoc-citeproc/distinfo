@@ -1,4 +1,4 @@
-TIMESTAMP = 1582206838
+TIMESTAMP = 1584550845
 SHA256 (cabal/pandoc-citeproc-0.17.tar.gz) = 47a9e7aac348d55eb935bee5ced30529974f4a680d67c38ea68be1d83edaf5b1
 SIZE (cabal/pandoc-citeproc-0.17.tar.gz) = 344353
 SHA256 (cabal/Glob-0.10.0/Glob-0.10.0.tar.gz) = 473355bd6ba0a97902e0edada1acbc0d76cfda77596f0188b2cc0ae34272a324
@@ -105,8 +105,8 @@ SHA256 (cabal/exceptions-0.10.4/exceptions-0.10.4.tar.gz) = 4d0bfb4355cffcd67d30
 SIZE (cabal/exceptions-0.10.4/exceptions-0.10.4.tar.gz) = 20819
 SHA256 (cabal/fail-4.9.0.0/fail-4.9.0.0.tar.gz) = 6d5cdb1a5c539425a9665f740e364722e1d9d6ae37fbc55f30fe3dbbbb91d4a2
 SIZE (cabal/fail-4.9.0.0/fail-4.9.0.0.tar.gz) = 2416
-SHA256 (cabal/file-embed-0.0.11.1/file-embed-0.0.11.1.tar.gz) = a113e7fe528be8204f40d3e9e00d595234e49def6caa133136e8254b659189d6
-SIZE (cabal/file-embed-0.0.11.1/file-embed-0.0.11.1.tar.gz) = 6530
+SHA256 (cabal/file-embed-0.0.11.2/file-embed-0.0.11.2.tar.gz) = a4ca38940a702a5685a2433deb260d3d713dc69ef9c3ac69c9958df08dd3fe2d
+SIZE (cabal/file-embed-0.0.11.2/file-embed-0.0.11.2.tar.gz) = 6493
 SHA256 (cabal/haddock-library-1.8.0/haddock-library-1.8.0.tar.gz) = 7093a70308a548c1fa46c01fe236bc27125311159ad797304e6b0ee893d8b797
 SIZE (cabal/haddock-library-1.8.0/haddock-library-1.8.0.tar.gz) = 30918
 SHA256 (cabal/haddock-library-1.8.0/revision/1.cabal) = 293544a80c3d817a021fec69c430e808914a9d86db0c6bd6e96a386607a66627
@@ -189,6 +189,8 @@ SHA256 (cabal/regex-pcre-builtin-0.95.1.1.8.43/regex-pcre-builtin-0.95.1.1.8.43.
 SIZE (cabal/regex-pcre-builtin-0.95.1.1.8.43/regex-pcre-builtin-0.95.1.1.8.43.tar.gz) = 564650
 SHA256 (cabal/resourcet-1.2.2/resourcet-1.2.2.tar.gz) = 1323425aba3827479eb3588efaf7608b12a083327d64ec814f02863c3673cbe5
 SIZE (cabal/resourcet-1.2.2/resourcet-1.2.2.tar.gz) = 16541
+SHA256 (cabal/resourcet-1.2.2/revision/1.cabal) = 11e4e080011f9f0b1f00af872be3f404dfdecc5cf936842f2426ffa2677666a3
+SIZE (cabal/resourcet-1.2.2/revision/1.cabal) = 1674
 SHA256 (cabal/rfc5051-0.1.0.4/rfc5051-0.1.0.4.tar.gz) = 615daa230eabc781eff1d3ce94c42fc5ba6188dbeb115a233328454b02c1b3d3
 SIZE (cabal/rfc5051-0.1.0.4/rfc5051-0.1.0.4.tar.gz) = 218105
 SHA256 (cabal/safe-0.3.18/safe-0.3.18.tar.gz) = d7775be28af83beeee2fa8921201c6b93358ba6a23a2967d53e5f382a9ec0fed

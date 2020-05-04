@@ -1,0 +1,20 @@
+docdir = %%PREFIX%%/share/doc/ghc-%%GHC_VERSION%%
+htmldir = %%PREFIX%%/share/doc/ghc-%%GHC_VERSION%%
+mandir = %%PREFIX%%/man
+infodir = %%PREFIX%%/info
+DYNAMIC_GHC_PROGRAMS = %%WITH_DYNAMIC%%
+BUILD_PROF_LIBS = %%WITH_PROFILE%%
+HADDOCK_DOCS = YES
+HSCOLOUR_SRCS = %%WITH_DOCS%%
+INTEGER_LIBRARY = %%INTEGER_LIBRARY%%
+# disable xelatex: PR 231438
+BUILD_SPHINX_PDF = NO
+BSD_PATH_TO_HSC2HS = %%HSC2HS%%
+SRC_HC_OPTS += -I%%NCURSESINC%% -L%%NCURSESLIB%% -I%%LOCALBASE%%/include -L%%LOCALBASE%%/lib
+SRC_CC_OPTS += %%CFLAGS%%
+EXTRA_HSC2HS_OPTS += -I%%LOCALBASE%%/include --lflag=-L%%LOCALBASE%%/lib
+EXTRA_LD_OPTS += -L%%LOCALBASE%%/lib
+EXTRA_CABAL_CONFIGURE_FLAGS += --extra-include-dirs=%%LOCALBASE%%/include
+EXTRA_CABAL_CONFIGURE_FLAGS += --extra-lib-dirs=%%LOCALBASE%%/lib
+libraries/terminfo_CONFIGURE_OPTS += --configure-option=--with-curses-includes=%%NCURSESINC%% --configure-option=--with-curses-libraries=%%NCURSESLIB%%
+V = 0

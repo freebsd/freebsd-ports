@@ -21,7 +21,7 @@ BIBUTILS_USE_CABAL=	hs-bibutils-6.8.0.0
 
 EMBED_DATA_DESC=	Embed locale files into the library
 EMBED_DATA_CABAL_FLAGS=	embed_data_files
-EMBED_DATA_USE_CABAL=	file-embed-0.0.11.1
+EMBED_DATA_USE_CABAL=	file-embed-0.0.11.2
 
 UNICODE_COLLATION_DESC=		Use bindings to the Internationl Components for Unicode libraries
 UNICODE_COLLATION_CABAL_FLAGS=	unicode_collation
@@ -106,7 +106,7 @@ USE_CABAL=	Glob-0.10.0_1 \
 		random-1.1_1 \
 		regex-base-0.94.0.0 \
 		regex-pcre-builtin-0.95.1.1.8.43 \
-		resourcet-1.2.2 \
+		resourcet-1.2.2_1 \
 		rfc5051-0.1.0.4 \
 		safe-0.3.18_1 \
 		scientific-0.3.6.2 \

@@ -11,6 +11,8 @@ COMMENT=	Binding to the X11 graphics library
 
 LICENSE=	BSD3CLAUSE
 
+IGNORE=		Haskell libraries are getting pushed out of the ports tree.
+
 USES=		xorg
 USE_CABAL=	data-default
 USE_XORG=	x11 xrandr xext

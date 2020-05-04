@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# must match "executable" line from xmonad-config.cabal
+EXE_NAME=xmonad-config
+
+# xmonad tells us how it want resulting executable to be named
+output_file=$1; shift
+
+CFG_DIR=$HOME/.xmonad
+
+# build the config
+cd $CFG_DIR
+cabal new-configure --enable-optimization --enable-executable-stripping
+cabal new-build
+
+if [ "$output_file" != "" ]; then
+# move resulting binary where it was requested to reside
+find $CFG_DIR/dist-newstyle -type f -perm +111 -name $EXE_NAME \
+     -exec mv '{}' $output_file ';'
+fi

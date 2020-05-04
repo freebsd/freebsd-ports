@@ -11,6 +11,8 @@ COMMENT=	Class for types that can be converted to a hash value
 
 LICENSE=	BSD3CLAUSE
 
+IGNORE=		Haskell libraries are getting pushed out of the ports tree.
+
 FLAGS_DEFINE=			INTEGER_GMP SSE2 SSE41
 FLAGS_DEFAULT=			INTEGER_GMP
 FLAGS_DEFAULT_amd64=		SSE2

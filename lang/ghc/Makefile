@@ -3,7 +3,6 @@
 
 PORTNAME=	ghc
 PORTVERSION=	${GHC_VERSION}
-PORTREVISION=	6
 CATEGORIES=	lang haskell
 MASTER_SITES=	https://www.haskell.org/ghc/dist/${PORTVERSION}/:source \
 		LOCAL/arrowd/:boot \
@@ -74,7 +73,7 @@ PROFILE_SUB_LIST=	WITH_PROFILE="YES"
 PROFILE_SUB_LIST_OFF=	WITH_PROFILE="NO"
 
 GHC_VERSION?=		${GHC_VERSION_DEFAULT}
-GHC_VERSION_DEFAULT=	8.6.5
+GHC_VERSION_DEFAULT=	8.8.3
 GHC_VERSION_MAJOR=	${GHC_VERSION:S/./ /g:[1]}
 GHC_VERSION_MINOR=	${GHC_VERSION:S/./ /g:[2]}
 
@@ -178,6 +177,12 @@ IGNORE=	qemu-user-static isn't able to build lang/ghc, but it builds fine on a r
 
 PLIST_SUB+=	GHC_VERSION=${GHC_VERSION} GHC_LIBDIR=${GHC_LIBDIR_REL}
 
+.if ${GHC_VERSION_MAJOR} <= 8 && ${GHC_VERSION_MINOR} < 8
+WITH_GHC=	--with-ghc
+.else
+WITH_GHC=	GHC
+.endif
+
 .if empty(PORT_OPTIONS:MBOOT)
 BOOT_DIR=	${WRKDIR}/ghc-${BOOT_GHC_VERSION}-boot
 BOOT_GHC=	${BOOT_DIR}/bin/ghc-${BOOT_GHC_VERSION}
@@ -186,10 +191,10 @@ BOOT_HSC2HS=	${BOOT_DIR}/bin/hsc2hs
 
 SLAVE_ENV=	${SETENV} PATH=${BOOT_DIR}/bin:${PATH}
 
-CONFIGURE_ARGS+=	--with-ghc=${BOOT_GHC}
+CONFIGURE_ARGS+=	${WITH_GHC}=${BOOT_GHC}
 .else # MBOOT
 SLAVE_ENV=		# empty
-CONFIGURE_ARGS+=	--with-ghc=${LOCALBASE}/bin/ghc
+CONFIGURE_ARGS+=	${WITH_GHC}=${LOCALBASE}/bin/ghc
 .endif # MBOOT
 
 # override TMPDIR because /tmp often doesn't have enough space

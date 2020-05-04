@@ -74,16 +74,22 @@ LIB_DEPENDS+=	libgmp.so:math/gmp \
 
 DIST_SUBDIR?=	cabal
 
+.  if !defined(USE_GITHUB) && !defined(USE_GITLAB)
 MASTER_SITES?=	https://hackage.haskell.org/package/${PORTNAME}-${PORTVERSION}/ \
 		http://hackage.haskell.org/package/${PORTNAME}-${PORTVERSION}/
 DISTFILES?=	${PORTNAME}-${PORTVERSION}${CABAL_EXTRACT_SUFX}
 EXTRACT_ONLY?=	${PORTNAME}-${PORTVERSION}${CABAL_EXTRACT_SUFX}
+.  endif
 
 _USES_extract=	701:cabal-post-extract
 _USES_patch=	701:cabal-post-patch
 _USES_stage=	751:cabal-post-install-script
 
 BUILD_TARGET?=	${EXECUTABLES:S/^/exe:&/}
+
+.  if defined(USE_LOCALE)
+LOCALE_ENV=	LANG=${USE_LOCALE} LC_ALL=${USE_LOCALE}
+.  endif
 
 _use_cabal=	${USE_CABAL:O:u}
 
@@ -110,7 +116,7 @@ cabal-extract: ${WRKDIR}
 	${RM} -rf ${CABAL_HOME}/.cabal
 	${SETENV} HOME=${CABAL_HOME} cabal new-update
 	cd ${WRKDIR} && \
-		${SETENV} HOME=${CABAL_HOME} cabal get ${PORTNAME}-${PORTVERSION}
+		${SETENV} ${LOCALE_ENV} HOME=${CABAL_HOME} cabal get ${PORTNAME}-${PORTVERSION}
 
 # Fetches and unpacks dependencies sources for a cabal-extract'ed package.
 # Builds them as side-effect.
@@ -119,9 +125,9 @@ cabal-extract-deps:
 	cd ${WRKSRC} && ${SETENV} HOME=${CABAL_HOME} hpack
 .  endif
 	cd ${WRKSRC} && \
-		${SETENV} HOME=${CABAL_HOME} cabal new-configure --flags="${CABAL_FLAGS}" ${CONFIGURE_ARGS}
+		${SETENV} ${LOCALE_ENV} HOME=${CABAL_HOME} cabal new-configure --flags="${CABAL_FLAGS}" ${CONFIGURE_ARGS}
 	cd ${WRKSRC} && \
-		${SETENV} HOME=${CABAL_HOME} cabal new-build --dependencies-only
+		${SETENV} ${LOCALE_ENV} HOME=${CABAL_HOME} cabal new-build --dependencies-only
 
 # Generates USE_CABAL= ... line ready to be pasted into the port based on artifacts of cabal-extract-deps.
 make-use-cabal:

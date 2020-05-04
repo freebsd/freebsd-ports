@@ -1,0 +1,216 @@
+--- hasktags.cabal.orig	2020-05-01 08:36:35 UTC
++++ hasktags.cabal
+@@ -1,106 +1,107 @@
+-Name: hasktags
+-Version: 0.71.2
+-Copyright: The University Court of the University of Glasgow
+-License: BSD3
+-License-File: LICENSE
+-Author: The GHC Team
+-Maintainer:
+- Jack Henahan <jhenahan@me.com>,
+- Marc Weber <marco-oweber@gmx.de>,
+- Marco Túlio Pimenta Gontijo <marcotmarcot@gmail.com>
+-homepage: http://github.com/MarcWeber/hasktags
+-bug-reports: http://github.com/MarcWeber/hasktags/issues
+-Synopsis: Produces ctags "tags" and etags "TAGS" files for Haskell programs
+-Description:
+-  Produces ctags "tags" and etags "TAGS" files for Haskell programs.
+-Category: Development
+-build-type: Simple
+-cabal-version: >=1.10
+-extra-source-files:
+-  README.md,
+-  TODO,
+-  testcases/HUnitBase.lhs
+-  testcases/Repair.lhs
+-  testcases/blockcomment.hs
+-  testcases/constructor.hs
+-  testcases/module.hs
+-  testcases/space.hs
+-  testcases/substring.hs
+-  testcases/tabs.hs
+-  testcases/testcase1.hs
+-  testcases/testcase2.hs
+-  testcases/testcase3.lhs
+-  testcases/testcase4.hs
+-  testcases/testcase8.hs
+-  testcases/twoblockcommentshs.hs
+-  testcases/twoblockcommentslhs.lhs
+-  testcases/twoblockcommentstogether.hs
+-  testcases/typesig.hs
+-  testcases/expected_failures_testing_suite.hs
+-  testcases/testcase9.hs
+-  testcases/testcase10.hs
+-  testcases/testcase11.hs
+-  testcases/simple.hs
+-  testcases/monad-base-control.hs
+-  testcases/16-regression.hs
+-  testcases/9.hs
+-  testcases/9-too.hs
+-
+-Flag debug
+-  Default: False
+-  Description: When set to true tokens will be print at various places. This helps understanding why hasktags does not behave the way it should
+-
+-source-repository head
+-  type: git
+-  location: http://github.com/MarcWeber/hasktags
+-
+-library
+-  default-language:  Haskell2010
+-  hs-source-dirs:    src
+-  ghc-options:       -Wall
+-  exposed-modules:   Hasktags
+-  other-modules:     Tags, DebugShow
+-  build-depends:
+-    utf8-string,
+-    base >= 4 && < 5,
+-    bytestring >= 0.9 && < 0.11,
+-    directory >= 1.2.6 && < 1.4,
+-    filepath,
+-    json >= 0.5 && < 0.10,
+-    microlens-platform >= 0.3.8.0 && < 0.4
+-
+-Executable hasktags
+-    Main-Is: src/Main.hs
+-    Build-Depends:
+-      base,
+-      directory,
+-      filepath,
+-      hasktags,
+-      optparse-applicative,
+-      containers
+-    other-modules: Paths_hasktags
+-    ghc-options: -Wall
+-    default-language: Haskell2010
+-
+-  if flag(debug)
+-    cpp-options: -Ddebug
+-
+-Test-Suite testsuite
+-  Type: exitcode-stdio-1.0
+-  Main-Is: Test.hs
+-  hs-source-dirs: src, tests
+-  Build-Depends:
+-                utf8-string,
+-                base,
+-                bytestring,
+-                directory,
+-                filepath,
+-                json,
+-                HUnit,
+-                microlens-platform
+-  other-modules: Tags, Hasktags, DebugShow
+-  ghc-options: -Wall
+-  default-language: Haskell2010
+-
+-  if flag(debug)
+-    cpp-options: -Ddebug
++Name: hasktags
++Version: 0.71.2
++x-revision: 2
++Copyright: The University Court of the University of Glasgow
++License: BSD3
++License-File: LICENSE
++Author: The GHC Team
++Maintainer:
++ Jack Henahan <jhenahan@me.com>,
++ Marc Weber <marco-oweber@gmx.de>,
++ Marco Túlio Pimenta Gontijo <marcotmarcot@gmail.com>
++homepage: http://github.com/MarcWeber/hasktags
++bug-reports: http://github.com/MarcWeber/hasktags/issues
++Synopsis: Produces ctags "tags" and etags "TAGS" files for Haskell programs
++Description:
++  Produces ctags "tags" and etags "TAGS" files for Haskell programs.
++Category: Development
++build-type: Simple
++cabal-version: >=1.10
++extra-source-files:
++  README.md,
++  TODO,
++  testcases/HUnitBase.lhs
++  testcases/Repair.lhs
++  testcases/blockcomment.hs
++  testcases/constructor.hs
++  testcases/module.hs
++  testcases/space.hs
++  testcases/substring.hs
++  testcases/tabs.hs
++  testcases/testcase1.hs
++  testcases/testcase2.hs
++  testcases/testcase3.lhs
++  testcases/testcase4.hs
++  testcases/testcase8.hs
++  testcases/twoblockcommentshs.hs
++  testcases/twoblockcommentslhs.lhs
++  testcases/twoblockcommentstogether.hs
++  testcases/typesig.hs
++  testcases/expected_failures_testing_suite.hs
++  testcases/testcase9.hs
++  testcases/testcase10.hs
++  testcases/testcase11.hs
++  testcases/simple.hs
++  testcases/monad-base-control.hs
++  testcases/16-regression.hs
++  testcases/9.hs
++  testcases/9-too.hs
++
++Flag debug
++  Default: False
++  Description: When set to true tokens will be print at various places. This helps understanding why hasktags does not behave the way it should
++
++source-repository head
++  type: git
++  location: http://github.com/MarcWeber/hasktags
++
++library
++  default-language:  Haskell2010
++  hs-source-dirs:    src
++  ghc-options:       -Wall
++  exposed-modules:   Hasktags
++  other-modules:     Tags, DebugShow
++  build-depends:
++    utf8-string,
++    base >= 4 && < 5,
++    bytestring >= 0.9 && < 0.11,
++    directory >= 1.2.6 && < 1.4,
++    filepath,
++    json >= 0.5 && < 0.11,
++    microlens-platform >= 0.3.8.0 && < 0.5
++
++Executable hasktags
++    Main-Is: src/Main.hs
++    Build-Depends:
++      base,
++      directory,
++      filepath,
++      hasktags,
++      optparse-applicative,
++      containers
++    other-modules: Paths_hasktags
++    ghc-options: -Wall
++    default-language: Haskell2010
++
++  if flag(debug)
++    cpp-options: -Ddebug
++
++Test-Suite testsuite
++  Type: exitcode-stdio-1.0
++  Main-Is: Test.hs
++  hs-source-dirs: src, tests
++  Build-Depends:
++                utf8-string,
++                base,
++                bytestring,
++                directory,
++                filepath,
++                json,
++                HUnit,
++                microlens-platform
++  other-modules: Tags, Hasktags, DebugShow
++  ghc-options: -Wall
++  default-language: Haskell2010
++
++  if flag(debug)
++    cpp-options: -Ddebug

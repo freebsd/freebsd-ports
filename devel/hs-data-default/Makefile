@@ -10,6 +10,8 @@ COMMENT=	Class for types with a default value
 
 LICENSE=	BSD3CLAUSE
 
+IGNORE=		Haskell libraries are getting pushed out of the ports tree.
+
 USE_CABAL=	data-default-class data-default-instances-base \
 		data-default-instances-containers data-default-instances-dlist \
 		data-default-instances-old-locale

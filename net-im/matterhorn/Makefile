@@ -1,8 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	matterhorn
-PORTVERSION=	50200.7.0
+PORTVERSION=	50200.8.0
 CATEGORIES=	net-im
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Feature-rich Unix terminal client for the Mattermost chat system
@@ -15,115 +16,113 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	matterhorn-chat
 GH_PROJECT=	matterhorn
 
-USE_CABAL=	Cabal-2.4.1.0_2 \
-		HTTP-4000.3.14 \
-		Hclip-3.0.0.4 \
-		QuickCheck-2.13.2 \
-		SHA-1.6.4.4 \
-		StateVar-1.2 \
-		aeson-1.4.5.0 \
+USE_CABAL=	aeson-1.4.7.1_1 \
 		ansi-terminal-0.10.3 \
 		asn1-encoding-0.9.6_1 \
 		asn1-parse-0.9.5 \
-		asn1-types-0.3.3 \
-		aspell-pipe-0.3 \
-		async-2.2.2 \
-		attoparsec-0.13.2.3_1 \
-		base-compat-0.10.5 \
-		base-orphans-0.8.1 \
-		base64-bytestring-1.0.0.2 \
+		asn1-types-0.3.4 \
+		aspell-pipe-0.4 \
+		async-2.2.2_1 \
+		attoparsec-0.13.2.4 \
+		base-compat-0.11.1 \
+		base-compat-batteries-0.11.1 \
+		base-orphans-0.8.2 \
+		base64-bytestring-1.0.0.3 \
 		basement-0.0.11_2 \
-		binary-0.8.7.0 \
+		bifunctors-5.5.7 \
 		blaze-builder-0.4.1.0 \
 		blaze-html-0.9.1.2 \
-		blaze-markup-0.8.2.3 \
-		brick-0.52 \
+		blaze-markup-0.8.2.4 \
+		brick-0.52.1 \
 		brick-skylighting-0.3 \
 		bytestring-builder-0.10.8.2.0 \
+		cabal-doctest-1.0.8_1 \
 		case-insensitive-1.2.1.0 \
 		cereal-0.5.8.1 \
-		cheapskate-0.1.1.1_1 \
+		cheapskate-0.1.1.2_1 \
+		clock-0.8 \
 		colour-2.3.5 \
+		comonad-5.0.6 \
 		config-ini-0.2.4.0_1 \
 		connection-0.3.1_1 \
-		containers-0.6.2.1 \
 		contravariant-1.5.2 \
 		cryptohash-md5-0.11.100.1_4 \
-		cryptohash-sha1-0.11.100.1_4 \
+		cryptohash-sha1-0.11.100.1_5 \
 		cryptonite-0.26 \
 		css-text-0.1.3.0 \
-		data-clist-0.1.2.3 \
+		data-clist-0.1.2.3_1 \
 		data-default-0.7.1.1 \
 		data-default-class-0.1.2.0 \
 		data-default-instances-containers-0.0.1 \
 		data-default-instances-dlist-0.0.1 \
 		data-default-instances-old-locale-0.0.1 \
-		directory-1.3.4.0 \
-		dlist-0.8.0.7 \
+		distributive-0.6.1 \
+		dlist-0.8.0.8 \
 		entropy-0.4.1.5 \
-		exceptions-0.10.3 \
+		exceptions-0.10.4_1 \
 		extensible-exceptions-0.1.1.4 \
-		filepath-1.4.2.1_1 \
 		gitrev-1.3.1 \
 		happy-1.19.12 \
-		hashable-1.2.7.0_1 \
-		haskell-lexer-1.0.2 \
+		hashable-1.3.0.0_1 \
+		haskell-lexer-1.1 \
+		Hclip-3.0.0.4 \
 		hourglass-0.2.12 \
-		hsc2hs-0.68.6 \
+		hsc2hs-0.68.7 \
+		HTTP-4000.3.14_1 \
 		http-media-0.8.0.0_2 \
 		hxt-9.3.1.18 \
 		hxt-charproperties-9.4.0.0 \
 		hxt-regex-xmlschema-9.2.0.3_1 \
 		hxt-unicode-9.0.2.4 \
 		integer-logarithms-1.0.3_2 \
-		mattermost-api-50200.4.0 \
-		megaparsec-7.0.5 \
+		mattermost-api-50200.5.0 \
+		megaparsec-8.0.0 \
 		memory-0.15.0_1 \
-		microlens-0.4.10_1 \
-		microlens-ghc-0.4.10 \
-		microlens-mtl-0.1.11.1 \
-		microlens-platform-0.3.11_1 \
-		microlens-th-0.4.2.3_1 \
+		microlens-0.4.11.2 \
+		microlens-ghc-0.4.12 \
+		microlens-mtl-0.2.0.1 \
+		microlens-platform-0.4.1 \
+		microlens-th-0.4.3.4 \
+		modern-uri-0.3.2.0 \
 		monad-control-1.0.2.3 \
-		mtl-2.2.2 \
-		network-3.0.1.1 \
+		network-3.1.1.1 \
 		network-info-0.2.0.10_1 \
-		network-uri-2.6.1.0_1 \
+		network-uri-2.6.3.0 \
 		old-locale-1.0.0.7_2 \
-		parallel-3.2.2.0_1 \
-		parsec-3.1.14.0 \
-		parser-combinators-1.2.0 \
+		parallel-3.2.2.0_2 \
+		parser-combinators-1.2.1 \
 		pem-0.2.4 \
-		pretty-show-1.9.5 \
-		primitive-0.7.0.0_1 \
-		process-1.6.6.0_1 \
+		pretty-show-1.10 \
+		primitive-0.7.0.1 \
+		profunctors-5.5.2 \
+		QuickCheck-2.14 \
 		random-1.1_1 \
-		regex-base-0.94.0.0 \
+		reflection-2.1.5 \
+		regex-base-0.94.0.0_1 \
 		regex-pcre-builtin-0.95.1.1.8.43 \
 		resource-pool-0.2.3.2 \
-		safe-0.3.17 \
+		safe-0.3.18_1 \
 		scientific-0.3.6.2 \
-		semigroups-0.18.5_1 \
-		skylighting-core-0.8.2.3 \
+		semigroups-0.19.1 \
+		SHA-1.6.4.4 \
+		skylighting-core-0.8.3.4 \
 		socks-0.6.1 \
-		split-0.2.3.3_2 \
-		splitmix-0.0.3_1 \
-		stm-2.5.0.0_1 \
+		split-0.2.3.4 \
+		splitmix-0.0.4 \
+		StateVar-1.2 \
 		stm-delay-0.1.1.1 \
-		streaming-commons-0.2.1.1 \
+		streaming-commons-0.2.1.2 \
 		strict-0.3.2 \
 		syb-0.7.1 \
 		tagged-0.8.6_2 \
 		tagsoup-0.14.8 \
 		temporary-1.3 \
-		text-1.2.4.0 \
 		text-zipper-0.10.1 \
-		th-abstraction-0.2.11.0 \
-		time-compat-1.9.2.2_2 \
+		th-abstraction-0.3.2.0 \
+		time-compat-1.9.3 \
 		timezone-olson-0.1.9 \
 		timezone-series-0.1.9 \
-		tls-1.5.2 \
-		transformers-0.5.6.2 \
+		tls-1.5.4 \
 		transformers-base-0.4.5.2 \
 		transformers-compat-0.6.5 \
 		uniplate-1.6.12_1 \
@@ -131,9 +130,9 @@ USE_CABAL=	Cabal-2.4.1.0_2 \
 		utf8-string-1.0.1.1_3 \
 		uuid-1.3.13_3 \
 		uuid-types-1.0.3_2 \
-		vector-0.12.0.3_2 \
-		vty-5.28 \
-		websockets-0.12.5.3 \
+		vector-0.12.1.2 \
+		vty-5.28.2 \
+		websockets-0.12.7.0 \
 		word-wrap-0.4.1_1 \
 		x509-1.7.5_1 \
 		x509-store-1.6.7_1 \
@@ -141,6 +140,9 @@ USE_CABAL=	Cabal-2.4.1.0_2 \
 		x509-validation-1.6.11 \
 		xdg-basedir-0.2.2 \
 		xss-sanitize-0.3.6 \
-		zlib-0.6.2.1
+		zlib-0.6.2.1_1
+
+post-extract:
+	${RM} ${WRKDIR}/${PORTNAME}-${PORTVERSION}/cabal.project
 
 .include <bsd.port.mk>

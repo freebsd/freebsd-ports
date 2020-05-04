@@ -1,0 +1,18 @@
+--- cpphs.cabal.orig	2018-11-22 13:09:05 UTC
++++ cpphs.cabal
+@@ -1,5 +1,6 @@
+ Name: cpphs
+ Version: 1.20.9
++x-revision: 1
+ Copyright: 2004-2017, Malcolm Wallace
+ License: LGPL
+ License-File: LICENCE-LGPL
+@@ -40,7 +41,7 @@ Library
+         Language.Preprocessor.Cpphs.Tokenise
+ 
+ Executable cpphs
+-    Build-Depends: base>3&&<6, time, directory, polyparse>=1.9
++    Build-Depends: base>=3&&<6, time >=1.5, directory, polyparse>=1.10
+     Main-Is: cpphs.hs
+     Other-Modules:
+         Language.Preprocessor.Cpphs

@@ -10,6 +10,8 @@ COMMENT=	Bindings to the Xft, Xrender and Freetype for Haskell programs
 
 LICENSE=	LGPL21
 
+IGNORE=		Haskell libraries are getting pushed out of the ports tree.
+
 USES=		pkgconfig xorg
 USE_CABAL=	utf8-string>=0.1 X11>=1.2.1
 USE_XORG=	xft xrender

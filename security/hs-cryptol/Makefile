@@ -2,6 +2,7 @@
 
 PORTNAME=	cryptol
 DISTVERSION=	2.8.0
+PORTREVISION=	1
 CATEGORIES=	security lang haskell
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,8 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cabal
 
-USE_CABAL=	\
-		FloatingHex-0.4 \
+USE_CABAL=	FloatingHex-0.4 \
 		GraphSCC-1.0.4 \
 		QuickCheck-2.13.2 \
 		alex-3.2.5 \
@@ -35,11 +35,11 @@ USE_CABAL=	\
 		monad-control-1.0.2.3 \
 		monadLib-3.10_1 \
 		panic-0.4.0.1 \
-		primitive-0.7.0.0_1 \
+		primitive-0.7.0.1 \
 		random-1.1_1 \
 		sbv-8.6 \
 		simple-smt-0.9.4_1 \
-		splitmix-0.0.3_1 \
+		splitmix-0.0.4 \
 		strict-0.3.2 \
 		syb-0.7.1 \
 		tf-random-0.5 \

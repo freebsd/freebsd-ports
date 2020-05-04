@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20200504:
+  AFFECTS: users of x11-wm/hs-xmonad
+  AUTHOR:  arrowd@FreeBSD.org
+
+  From now, it is recommended to use "build script" method to compile XMonad
+  config. See https://github.com/xmonad/xmonad-testing/ for general info and
+  port's pkg-message for concrete steps.
+
 20200503:
   AFFECTS: users of net-mgmt/librenms
   AUTHOR:  dvl@FreeBSD.org
@@ -198,7 +206,7 @@ you update your ports collection, before attempting any port upgrades.
   by default, instead of the older DRI2 interface.  This might cause regressions
   when using the legacy graphics drivers, either through
   graphics/drm-legacy-kmod or the graphics drivers in base.
-  
+
   If you experience issues when running OpenGL applications it is possible
   to force the use of DRI2 by setting the LIBGL_DRI3_DISABLE environment
   variable to 1 before starting any OpenGL application.  The easiest way to

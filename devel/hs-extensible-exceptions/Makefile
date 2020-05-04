@@ -10,6 +10,8 @@ COMMENT=	Extensible exceptions
 
 LICENSE=	BSD3CLAUSE
 
+IGNORE=		Haskell libraries are getting pushed out of the ports tree.
+
 CABAL_SETUP=	Setup.hs
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"

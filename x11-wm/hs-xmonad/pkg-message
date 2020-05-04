@@ -1,0 +1,18 @@
+XMonad is now compiled using Cabal "new-build" mechanism. This means that config
+file should now be compiled using "build" script approach. When EXAMPLES option
+is enabled, the port installs example build script. To migrate your config:
+
+% pkg install hs-cabal-install
+% cp /usr/local/share/examples/xmonad/build ~/.xmonad/build
+% cp /usr/local/share/examples/xmonad/xmonad-config.cabal ~/.xmonad/xmonad-config.cabal
+% cabal new-update
+
+Make sure your config is named ~/.xmonad/config.hs, or change corresponding line
+in the .cabal file. Building the config for the first time requires decent amount
+of time, so it is recommended to manually run the build script before the first
+startup:
+
+% ~/.xmonad/build
+
+It is possible to use devel/stack to build the config, as well as other means.
+See https://github.com/xmonad/xmonad-testing/ for all available options.

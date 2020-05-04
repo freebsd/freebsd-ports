@@ -10,6 +10,8 @@ COMMENT=	Default instances for types in base
 
 LICENSE=	BSD3CLAUSE
 
+IGNORE=		Haskell libraries are getting pushed out of the ports tree.
+
 USE_CABAL=	data-default-class
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"

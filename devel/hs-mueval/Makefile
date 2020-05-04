@@ -3,7 +3,7 @@
 
 PORTNAME=	mueval
 PORTVERSION=	0.9.3
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -13,10 +13,17 @@ LICENSE=	BSD3CLAUSE
 
 USES=		cabal
 
-USE_CABAL=	QuickCheck-2.12.6.1_1 erf-2.0.0.0 exceptions-0.10.0_2 \
-		extensible-exceptions-0.1.1.4 ghc-paths-0.1.0.9_4 hint-0.9.0 \
-		primitive-0.6.4.0_1 random-1.1_1 show-0.6 simple-reflect-0.3.3 \
-		syb-0.7 temporary-1.3 tf-random-0.5 transformers-compat-0.6.2
+USE_CABAL=	QuickCheck-2.13.2 \
+		exceptions-0.10.4 \
+		extensible-exceptions-0.1.1.4 \
+		ghc-paths-0.1.0.12_1 \
+		hint-0.9.0.2 \
+		random-1.1_1 \
+		show-0.6 \
+		simple-reflect-0.3.3 \
+		splitmix-0.0.4 \
+		syb-0.7.1 \
+		temporary-1.3
 
 EXECUTABLES=	mueval mueval-core
 

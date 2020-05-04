@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cpphs
-PORTVERSION=	1.20.8
-PORTREVISION=	7
+PORTVERSION=	1.20.9
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -13,6 +12,6 @@ LICENSE=	LGPL21
 
 USES=		cabal
 
-USE_CABAL=	old-locale-1.0.0.7_2 old-time-1.1.0.3_2 polyparse-1.12.1
+USE_CABAL=	polyparse-1.13
 
 .include <bsd.port.mk>

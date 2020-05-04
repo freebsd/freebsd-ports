@@ -18,7 +18,7 @@ GHC_CMD?=	${LOCALBASE}/bin/ghc
 HADDOCK_CMD?=	${LOCALBASE}/bin/haddock
 HSCOLOUR_CMD?=	${LOCALBASE}/bin/HsColour
 
-GHC_VERSION?=	8.6.5
+GHC_VERSION?=	8.8.3
 
 .if defined(OPTIONSMKINCLUDED)
 IGNORE?=	options fail: bsd.cabal.mk already includes bsd.options.mk
