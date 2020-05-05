@@ -18,16 +18,13 @@ USES=		linux shebangfix
 SHEBANG_FILES=	linux/convert_shrub
 perl_OLD_CMD=	"/bin/env perl"
 
-OPTIONS_DEFINE=	DOCS OMNIBOT
-OMNIBOT_DESC=	Install Omni-Bot for bot support
+OPTIONS_DEFINE=	DOCS
 
 DATADIR=	${PREFIX}/lib/enemyterritory/${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/enemyterritory-${PORTNAME}
 
 CLIENT_PK3=	${PORTNAME}-${PORTVERSION}.pk3
 PLIST_SUB=	CLIENT_PK3="${CLIENT_PK3}"
-
-OMNIBOT_RUN_DEPENDS=	et-omni-bot:games/linux-enemyterritory-omni-bot
 
 do-build:
 .for f in et etded
