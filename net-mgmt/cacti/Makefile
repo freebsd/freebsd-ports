@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cacti
-PORTVERSION=	1.2.11
+PORTVERSION=	1.2.12
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	http://www.cacti.net/downloads/ \
 		ftp://ftpmirror.uk/freebsd-ports/cacti/
@@ -55,6 +55,6 @@ do-install:
 	${MKDIR} ${STAGEDIR}/var/log/cacti
 	${MKDIR} ${STAGEDIR}/var/db/cacti/rra
 	${MKDIR} ${STAGEDIR}/var/db/cacti/scripts
-	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${CACTIDIR} "! -name '.git\*'"
+	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${CACTIDIR} "! -name \.mdl*"
 
 .include <bsd.port.mk>
