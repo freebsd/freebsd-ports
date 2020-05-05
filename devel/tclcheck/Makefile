@@ -5,15 +5,11 @@ PORTNAME=	tclcheck
 PORTVERSION=	1.1.13
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	ftp://catless.ncl.ac.uk/pub/
+MASTER_SITES=	https://BSDforge.com/projects/source/devel/tclcheck/
 DISTNAME=	tclCheck-${PORTVERSION}
 
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Program to check the nesting of parenthesis in tcl scripts
-
-BROKEN=		unfetchable
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2020-05-05
 
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 LICENSE_PERMS=	 dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
