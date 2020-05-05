@@ -17,6 +17,7 @@
 %%DSO%%%%BROTLI%%libexec/nginx/ngx_http_brotli_static_module.so
 %%DSO%%%%CACHE_PURGE%%libexec/nginx/ngx_http_cache_purge_module.so
 %%DSO%%%%CLOJURE%%libexec/nginx/ngx_http_clojure_module.so
+%%DSO%%%%COOKIE_FLAG%%libexec/nginx/ngx_http_cookie_flag_filter_module.so
 %%DSO%%%%CT%%libexec/nginx/ngx_http_ssl_ct_module.so
 %%DSO%%%%CT%%libexec/nginx/ngx_ssl_ct_module.so
 %%DSO%%%%DEVEL_KIT%%libexec/nginx/ndk_http_module.so
