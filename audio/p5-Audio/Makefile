@@ -14,6 +14,9 @@ COMMENT=	Audio manipulation routines for perl
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
+DEPRECATED=	Depends on expired math/p5-Math-GSL
+EXPIRATION_DATE=2020-06-05
+
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Math-GSL>=0:math/p5-Math-GSL
 
