@@ -10183,7 +10183,6 @@ audio/deforaos-mixer||2018-06-07|Has expired: Broken for more than 6 months
 audio/gkrellmss2||2018-06-07|Has expired: Broken for more than 6 months
 audio/abcmidi||2018-06-07|Has expired: Broken for more than 6 months
 benchmarks/netpipe||2018-06-07|Has expired: Broken for more than 6 months
-biology/plink||2018-06-07|Has expired: Broken for more than 6 months
 science/orthanc||2018-06-07|Has expired: Broken for more than 3 months
 science/orthanc-dicomweb||2018-06-07|Removed, depends on expired science/orthanc
 science/orthanc-postgresql||2018-06-07|Removed, depends on expired science/orthanc
