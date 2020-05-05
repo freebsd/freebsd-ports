@@ -1,9 +1,0 @@
-Makes it easy to set the background in rox instead of having to
-having to muck around with the XML API it uses.
-
--f fill the screen with the image
--s scale the image with out stretching it
--c center image and do not scale
--t tile the image
-
-default: -s

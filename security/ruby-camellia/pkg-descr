@@ -1,5 +1,0 @@
-This is a Camellia package for Ruby. Camellia engine is implemented in "C".
-Supported key length : 128bit/192bit/256bit
-Supported modes of operation : ECB/CFB/CBC
-
-WWW: http://info.isl.ntt.co.jp/crypt/eng/camellia/index.html

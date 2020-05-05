@@ -1,6 +1,0 @@
-A filter program, used to generate text to be
-included into C code as #define, provides the conversion
-of newlines and quotes into standard C-code text
-
-
-WWW: http://www.lulli.net/frog/prjsynd.cgi?prj=toh

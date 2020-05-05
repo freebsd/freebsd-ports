@@ -21,7 +21,6 @@
     SUBDIR += checkm
     SUBDIR += clustal-omega
     SUBDIR += clustalw
-    SUBDIR += consed
     SUBDIR += cufflinks
     SUBDIR += cytoscape
     SUBDIR += ddocent
@@ -115,7 +114,6 @@
     SUBDIR += phylip
     SUBDIR += phyml
     SUBDIR += plink
-    SUBDIR += plinkseq
     SUBDIR += primer3
     SUBDIR += prodigal
     SUBDIR += prodigy-lig
@@ -151,7 +149,6 @@
     SUBDIR += seqan1
     SUBDIR += seqio
     SUBDIR += seqtk
-    SUBDIR += seqtools
     SUBDIR += sim4
     SUBDIR += slclust
     SUBDIR += smithwaterman
@@ -159,14 +156,12 @@
     SUBDIR += star
     SUBDIR += stringtie
     SUBDIR += tRNAscan-SE
-    SUBDIR += t_coffee
     SUBDIR += tabixpp
     SUBDIR += tophat
     SUBDIR += treekin
     SUBDIR += treepuzzle
     SUBDIR += trimadap
     SUBDIR += trimmomatic
-    SUBDIR += ugene
     SUBDIR += vcflib
     SUBDIR += vcftools
     SUBDIR += velvet

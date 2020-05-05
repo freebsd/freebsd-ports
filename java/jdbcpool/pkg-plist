@@ -1,8 +1,0 @@
-%%JAVAJARDIR%%/jdbcpool.jar
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/PoolTest.class
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/PoolTest.java
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gsp/JDBCApplication.class
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gsp/JDBCApplication.java
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gsp/README
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gsp/monitor_pool.gsp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gsp/query.gsp

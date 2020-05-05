@@ -1,9 +1,0 @@
-CBB is a personal check book balancing utility for Unix/X.
-
-CBB is intended to be an open, extensible program.  It utilizes a
-simple (tab delimited) data file format and is written entirely in
-Tcl/Tk and Perl and contains no compiled code.  It provides a simple
-interface for users to add their own reports, graphs, and external
-modules without having to modify any of the CBB source.
-
-WWW: http://gna.org/projects/cbb/

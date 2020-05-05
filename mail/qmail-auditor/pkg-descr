@@ -1,7 +1,0 @@
-This software provides an easy and functional way to audit incoming and
-outgoing e-mails from a qmail server. It works by means of qmail-queue
-wrapping. It has a control file which allows selective auditing of sender or
-recipient, as well as whom the messages should be forwarded to. This control
-file allows regular expressions, what increases its flexibility of use.
-
-WWW: http://qmail-auditor.sourceforge.net/

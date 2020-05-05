@@ -1,9 +1,0 @@
-TIMESTAMP = 1535840965
-SHA256 (ugene/ugene-1.31.0.tar.gz) = d1f46306834a292618cc54b31060b69da5b0b18da311a55bf82ab42f5a434320
-SIZE (ugene/ugene-1.31.0.tar.gz) = 20656562
-SHA256 (ugene/QueryDesigner_UserManual.pdf) = 5d232c0de7e9d1fd32b8ee0a78f9f4abe1ab9d6536ec3958c47de29f3096faf4
-SIZE (ugene/QueryDesigner_UserManual.pdf) = 855662
-SHA256 (ugene/UniproUGENE_UserManual.pdf) = ae6aef32a6e92a30ba7c36cdd894a8caf634d678f15da7ad9eab52b6f40b9ed6
-SIZE (ugene/UniproUGENE_UserManual.pdf) = 13443754
-SHA256 (ugene/WorkflowDesigner_UserManual.pdf) = 8cc6630f62c82de42926c14c3d01ebc3c7d85ab7d9ec2a81e55a19740806735c
-SIZE (ugene/WorkflowDesigner_UserManual.pdf) = 29474484

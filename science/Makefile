@@ -22,13 +22,11 @@
     SUBDIR += R-cran-snow
     SUBDIR += R-cran-som
     SUBDIR += R-cran-udunits2
-    SUBDIR += abinit
     SUBDIR += afni
     SUBDIR += agrum
     SUBDIR += aircraft-datcom
     SUBDIR += antioch
     SUBDIR += apbs
-    SUBDIR += atom
     SUBDIR += atompaw
     SUBDIR += avogadro2
     SUBDIR += avogadrolibs
@@ -55,7 +53,6 @@
     SUBDIR += code_saturne
     SUBDIR += colt
     SUBDIR += coordgenlibs
-    SUBDIR += cp2k
     SUBDIR += cp2k-data
     SUBDIR += crf++
     SUBDIR += dalton
@@ -75,7 +72,6 @@
     SUBDIR += erd
     SUBDIR += erkale
     SUBDIR += erkale-pseudopotentials
-    SUBDIR += esys-particle
     SUBDIR += fastcap
     SUBDIR += fasthenry
     SUBDIR += fisicalab
@@ -174,7 +170,6 @@
     SUBDIR += openbabel
     SUBDIR += openkim
     SUBDIR += openkim-models
-    SUBDIR += openmx
     SUBDIR += opensim-core
     SUBDIR += opensph
     SUBDIR += opsin
@@ -204,7 +199,6 @@
     SUBDIR += p5-Geo-BUFR
     SUBDIR += p5-Geo-Coordinates-Converter
     SUBDIR += p5-Geo-Coordinates-Converter-iArea
-    SUBDIR += p5-Geo-ReadGRIB
     SUBDIR += p5-Geo-WebService-Elevation-USGS
     SUBDIR += p5-Mcstas-Tools
     SUBDIR += p5-PerlMol
@@ -287,7 +281,6 @@
     SUBDIR += py-scoria
     SUBDIR += py-spglib
     SUBDIR += py-tensorflow
-    SUBDIR += py-tensorflow-estimator
     SUBDIR += py-veusz
     SUBDIR += py-ws2300
     SUBDIR += pybrain

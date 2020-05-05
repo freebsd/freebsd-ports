@@ -1,7 +1,0 @@
-etrace is a configurable static port network tracing tool, similar to
-traceroute, but supporting ICMP, TCP, UDP and other IP protocols.
-
-etrace has a wealth of options ranging in function from controlling
-output to the detailed construction of trace packets.
-
-WWW: http://www.bindshell.net/tools/etrace

@@ -1,8 +1,0 @@
-%%DATADIR%%/madsonic.war
-%%DATADIR%%/madsonic-booter.jar
-%%FFMPEG%%%%SUBSONIC_HOME%%/transcode/ffmpeg
-%%FLAC%%%%SUBSONIC_HOME%%/transcode/flac
-%%LAME%%%%SUBSONIC_HOME%%/transcode/lame
-@postunexec test -d %%SUBSONIC_HOME%% && (echo "Configuration information and database saved." && echo "If you you are permanently uninstalling this package" && echo "please remove %%SUBSONIC_HOME%% and its contents manually.") | true
-@dir(%%USER%%,%%GROUP%%,750) %%SUBSONIC_HOME%%/transcode
-@dir(%%USER%%,%%GROUP%%,750) %%SUBSONIC_HOME%%

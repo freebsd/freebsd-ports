@@ -41,7 +41,6 @@
     SUBDIR += libbt
     SUBDIR += liberator
     SUBDIR += libktorrent
-    SUBDIR += libpdtp
     SUBDIR += libswift
     SUBDIR += libtorrent
     SUBDIR += libtorrent-rasterbar
@@ -83,7 +82,6 @@
     SUBDIR += shx
     SUBDIR += sonarr
     SUBDIR += sonarr-devel
-    SUBDIR += squall
     SUBDIR += torrent-file-editor
     SUBDIR += torrentcheck
     SUBDIR += torrentsniff

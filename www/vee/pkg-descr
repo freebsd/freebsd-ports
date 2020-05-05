@@ -1,5 +1,0 @@
-vee is a zero configuration, command line blog tool that is written in
-Bourne shell in a single file. It uses vi as the editor, but this can
-be changed out.
-
-WWW: http://www.0x743.com/vee/

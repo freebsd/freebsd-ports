@@ -1,7 +1,0 @@
-The TclOO Package is an implementation of TclOO for Tcl 8.5. It allows users to
-write code against TclOO without using Tcl 8.6, and originally started out as a
-way to progress implementation of TclOO without being tightly bound to the Tcl
-core. The implementation in Tcl 8.6 was later developed from this package's
-source.
-
-WWW: http://core.tcl.tk/tcloo/

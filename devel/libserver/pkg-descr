@@ -1,5 +1,0 @@
-Libserver provides generic multi-process, multi-threaded, and event-driven
-TCP or UNIX-domain servers.  The libraries handle network and concurrency
-tasks.  You write code to service connections.
-
-WWW: http://mammothcheese.ca/

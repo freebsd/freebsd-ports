@@ -36,8 +36,6 @@
     SUBDIR += lftp
     SUBDIR += libfilezilla
     SUBDIR += linux-c7-curl
-    SUBDIR += llnlxdir
-    SUBDIR += llnlxftp
     SUBDIR += mirror
     SUBDIR += multiget
     SUBDIR += ncftp3

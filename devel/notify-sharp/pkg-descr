@@ -1,4 +1,0 @@
-notify-sharp is a C# client implementation for Desktop Notifications, i.e.
-notification-daemon. It is inspired by the libnotify API.
-
-WWW: http://www.ndesk.org/NotifySharp

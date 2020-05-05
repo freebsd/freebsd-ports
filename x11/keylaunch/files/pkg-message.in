@@ -1,8 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-See %%LOCALBASE%%/share/examples/keylaunch/keylaunch.rc for a sample
-configuration.
-EOM
-}
-]

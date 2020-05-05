@@ -1,5 +1,0 @@
-TruthTable is a truth table generator that does the dirty work for you.
-This Java program handles the following operations: Not, And, Or, XOR,
-Implication, and the Biconditional.
-
-WWW: http://www.kinostudios.com/truthtable.php

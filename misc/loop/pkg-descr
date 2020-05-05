@@ -1,6 +1,0 @@
-Prints to stdout a series of numbers from `start' to `end', with
-optional increment and zero-padded field width.  Hex (-x) or octal
-(-o) output formats are available.  Negative numbers are allowed,
-and a negative `increment' does the expected thing.
-
-WWW: http://www.nesbitt.ca/downloads/loop/

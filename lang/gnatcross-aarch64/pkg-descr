@@ -1,4 +1,0 @@
-The gnatcross-aarch64 port builds a C/Ada cross-compiler based on GCC 6
-that targets the FreeBSD/ARM64 operating system.
-
-WWW: http://www.dragonlace.net

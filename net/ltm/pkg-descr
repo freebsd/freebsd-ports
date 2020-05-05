@@ -1,7 +1,0 @@
-Statseeker LTM is a high speed statistical LAN Analyzer that monitors
-Ethernet LAN segments via the bpf(4) interface and displays various
-matrix tables in real time via a ncurses interface.
-
-The LAN Analyzer is a "binary only" distribution.
-
-WWW: https://www.statseeker.com/

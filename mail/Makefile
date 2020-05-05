@@ -42,7 +42,6 @@
     SUBDIR += bulk_mailer
     SUBDIR += c-sig
     SUBDIR += cclient
-    SUBDIR += chk4mail
     SUBDIR += claws-mail
     SUBDIR += claws-mail-address_keeper
     SUBDIR += claws-mail-archiver
@@ -182,7 +181,6 @@
     SUBDIR += libetpan
     SUBDIR += libmilter
     SUBDIR += libpst
-    SUBDIR += librfc822
     SUBDIR += libsieve
     SUBDIR += libspamtest
     SUBDIR += libspf
@@ -203,7 +201,6 @@
     SUBDIR += mailgraph
     SUBDIR += mailhog
     SUBDIR += mailman
-    SUBDIR += mailmgr
     SUBDIR += mailpile
     SUBDIR += mailscanner
     SUBDIR += mailsync
@@ -240,8 +237,6 @@
     SUBDIR += mmh
     SUBDIR += mmr
     SUBDIR += mpop
-    SUBDIR += mreport
-    SUBDIR += msgconvert
     SUBDIR += msglint
     SUBDIR += msmtp
     SUBDIR += mu
@@ -263,7 +258,6 @@
     SUBDIR += notmuch-emacs
     SUBDIR += notmuch-mutt
     SUBDIR += nullmailer
-    SUBDIR += nullpop
     SUBDIR += offlineimap
     SUBDIR += opendkim
     SUBDIR += opendmarc
@@ -379,7 +373,6 @@
     SUBDIR += p5-Mail-IMAPTalk
     SUBDIR += p5-Mail-LMLM
     SUBDIR += p5-Mail-ListDetector
-    SUBDIR += p5-Mail-MailStats
     SUBDIR += p5-Mail-Mbox-MessageParser
     SUBDIR += p5-Mail-MboxParser
     SUBDIR += p5-Mail-Message
@@ -476,7 +469,6 @@
     SUBDIR += popa3d-before-sendmail
     SUBDIR += popcheck
     SUBDIR += popfile
-    SUBDIR += poppassd
     SUBDIR += poppwd
     SUBDIR += popular
     SUBDIR += postfinger
@@ -494,7 +486,6 @@
     SUBDIR += postfixadmin
     SUBDIR += postgrey
     SUBDIR += postsrsd
-    SUBDIR += prayer
     SUBDIR += prepflog
     SUBDIR += procmail
     SUBDIR += proxsmtp
@@ -503,7 +494,6 @@
     SUBDIR += py-aiosmtpd
     SUBDIR += py-alot
     SUBDIR += py-authres
-    SUBDIR += py-cyruslib
     SUBDIR += py-dkimpy
     SUBDIR += py-email-validator
     SUBDIR += py-email_reply_parser
@@ -526,7 +516,6 @@
     SUBDIR += qconfirm
     SUBDIR += qmail
     SUBDIR += qmail-activedir
-    SUBDIR += qmail-auditor
     SUBDIR += qmail-autoresponder
     SUBDIR += qmail-conf
     SUBDIR += qmail-contrib
@@ -540,9 +529,7 @@
     SUBDIR += qmail-tls
     SUBDIR += qmailadmin
     SUBDIR += qmailanalog
-    SUBDIR += qmailmrtg7
     SUBDIR += qmhandle
-    SUBDIR += qmqtool
     SUBDIR += qpopper
     SUBDIR += qsf
     SUBDIR += qsheff
@@ -556,9 +543,7 @@
     SUBDIR += razor-agents
     SUBDIR += rbl-milter
     SUBDIR += rblcheck
-    SUBDIR += relaydb
     SUBDIR += renattach
-    SUBDIR += rftp
     SUBDIR += ripmime
     SUBDIR += rlytest
     SUBDIR += rmilter
@@ -628,7 +613,6 @@
     SUBDIR += smfsav
     SUBDIR += smfsav-devel
     SUBDIR += smtp-cli
-    SUBDIR += smtp-gated
     SUBDIR += smtpfeed
     SUBDIR += smtpmail
     SUBDIR += smtprc
@@ -646,7 +630,6 @@
     SUBDIR += spamdyke
     SUBDIR += spamguard
     SUBDIR += spamilter
-    SUBDIR += spamoracle
     SUBDIR += spampd
     SUBDIR += spamprobe
     SUBDIR += spamstats

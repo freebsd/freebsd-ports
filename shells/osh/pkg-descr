@@ -1,7 +1,0 @@
-Osh is a re-implementation of the old and obsolete shell version,
-which was in standard use up to UNIX 6th Edition and was supplied
-as osh with UNIX 7th Edition.  Its command language is a sparse
-subset of those of modern shells and is mostly common both to sh(1)
-and csh(1).
-
-WWW: http://v6shell.org

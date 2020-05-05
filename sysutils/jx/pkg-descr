@@ -1,9 +1,0 @@
-This is a perl wrapper to "jexec" with more feature.
-
-Script takes system jail id, rc.conf order id, full hostname of jail or
-rc.conf name of jail. If no command for jail is given - run default
-('bash' or other).
-
-No additional software or tools like "jailer" are needed.
-
-WWW: http://legh.ru/jx/

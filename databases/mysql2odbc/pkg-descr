@@ -1,7 +1,0 @@
-The MySQL-ODBC SDK enables you to make MySQL-specific applications
-database-independent without wholesale re-writes of your application code.
-Thus, applications that are written directly to the MySQL call level interface
-now end up being database independent via iODBC (or unixODBC), and usable
-against any ODBC accessible database (including MySQL).
-
-WWW: http://www.iodbc.org/index.php?page=mysql2odbc/index

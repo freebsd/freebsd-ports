@@ -1,7 +1,0 @@
-DMOZ::ParseRDF is an object-oriented module for parsing DMOZ data into
-manageable sub-sections. As of January 8th 2004 the DMOZ content file is
-around 1.3GB in size. The data is free to download and can be used in your
-custom database but please make sure you read the license agreement at
-http://dmoz.org/license.html first.
-
-WWW: https://metacpan.org/release/PAUL/DMOZ-ParseRDF-0.14

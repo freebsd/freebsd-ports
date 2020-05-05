@@ -1,5 +1,0 @@
-libtsnnls is a fast solver for least-squares problems in the
-form Ax = b under the constraint that all entries in the
-solution vector x are non-negative.
-
-WWW: http://www.jasoncantarella.com/webpage/index.php?title=Tsnnls

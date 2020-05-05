@@ -1,8 +1,0 @@
-wmbsdbatt is a WindowMaker dockapp to monitor battery
-usage and temperature through ACPI on FreeBSD.
-It is a rip-off of Florian Krohs' wmbatteries dockapp.
-
-wmbsdbatt was developed and runs on FreeBSD,
-and it is licensed under the terms of the GPL.
-
-WWW: http://mailbox.univie.ac.at/~le/wmbsdbatt/

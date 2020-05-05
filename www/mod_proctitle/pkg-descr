@@ -1,5 +1,0 @@
-This module sets httpd process titles to reflect the request currently
-processed, so they will be visible in top(1) or ps(1). Useful for
-debugging purposes.
-
-WWW: https://github.com/stass/mod_proctitle

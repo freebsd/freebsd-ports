@@ -1,6 +1,0 @@
---- extras/goss.yaml.sample.orig	2017-08-14 20:07:43 UTC
-+++ extras/goss.yaml.sample
-@@ -0,0 +1,3 @@
-+gossfile:
-+  %%PREFIX%%/etc/goss.d/*.yaml: {}
-+

@@ -1,9 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-Read the %%PREFIX%%/share/doc/webreport/INSTALL to configure webreport
-
-Edit the  %%PREFIX%%/etc/webreport.conf
-EOM
-}
-]

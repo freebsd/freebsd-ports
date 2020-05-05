@@ -1,8 +1,0 @@
-MySQL++ is a C++ wrapper for MySQL's C API.
-It is built around STL principles, to make dealing with
-the database as easy as dealing with an STL container.
-
-This port contains the version 3 of the library; see databases/mysql++ and
-databases/mysql++1 for the older versions.
-
-WWW: http://tangentsoft.net/mysql++/

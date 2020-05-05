@@ -105,7 +105,6 @@
     SUBDIR += cs-hyphen
     SUBDIR += cs-mythes
     SUBDIR += csb-aspell
-    SUBDIR += csv2latex
     SUBDIR += csvdiff
     SUBDIR += csvq
     SUBDIR += ctpl
@@ -113,7 +112,6 @@
     SUBDIR += cwtext
     SUBDIR += cy-aspell
     SUBDIR += da-aspell
-    SUBDIR += da-hyphen
     SUBDIR += dadadodo
     SUBDIR += datamash
     SUBDIR += db2latex
@@ -217,7 +215,6 @@
     SUBDIR += gdome2
     SUBDIR += gl-aspell
     SUBDIR += gladtex
-    SUBDIR += glark
     SUBDIR += gmetadom
     SUBDIR += gnugrep
     SUBDIR += goldendict
@@ -257,13 +254,11 @@
     SUBDIR += html-pretty
     SUBDIR += html-xml-utils
     SUBDIR += html2fo
-    SUBDIR += html2tex
     SUBDIR += html2text
     SUBDIR += html2xhtml
     SUBDIR += htmlc
     SUBDIR += htmldoc
     SUBDIR += htmlise
-    SUBDIR += htmlsection
     SUBDIR += htmltolatex
     SUBDIR += humanzip
     SUBDIR += hunspell
@@ -316,7 +311,6 @@
     SUBDIR += json-yaml
     SUBDIR += jtc
     SUBDIR += kdiff3
-    SUBDIR += kenlm
     SUBDIR += kf5-kcodecs
     SUBDIR += kf5-sonnet
     SUBDIR += kf5-syntax-highlighting
@@ -359,7 +353,6 @@
     SUBDIR += libfo
     SUBDIR += libfolia
     SUBDIR += libgepub
-    SUBDIR += libguess
     SUBDIR += libkmfl
     SUBDIR += libkolabxml
     SUBDIR += libkomparediff2
@@ -391,7 +384,6 @@
     SUBDIR += libwps03
     SUBDIR += libxdiff
     SUBDIR += libxml++26
-    SUBDIR += libxml++26-reference
     SUBDIR += libxml2
     SUBDIR += libxml2-reference
     SUBDIR += libxmlbird
@@ -459,7 +451,6 @@
     SUBDIR += nl-hyphen
     SUBDIR += nl-mythes
     SUBDIR += nn-aspell
-    SUBDIR += no-hunspell
     SUBDIR += nunnimcax
     SUBDIR += nuspell
     SUBDIR += nux
@@ -594,7 +585,6 @@
     SUBDIR += p5-Lingua-Stem-Snowball-Se
     SUBDIR += p5-Lingua-StopWords
     SUBDIR += p5-Lingua-Treebank
-    SUBDIR += p5-MARC
     SUBDIR += p5-MARC-Charset
     SUBDIR += p5-MARC-Lint
     SUBDIR += p5-MARC-Record
@@ -1122,12 +1112,10 @@
     SUBDIR += p5-libxml
     SUBDIR += p5-pod2pdf
     SUBDIR += p5-podlators
-    SUBDIR += p5-texcount
     SUBDIR += p5-xmltv
     SUBDIR += pa-aspell
     SUBDIR += pageedit
     SUBDIR += par
-    SUBDIR += pcrs
     SUBDIR += pdfgrep
     SUBDIR += pdfoutline
     SUBDIR += pdfresurrect
@@ -1149,8 +1137,6 @@
     SUBDIR += pear-Numbers_Roman
     SUBDIR += pear-Numbers_Words
     SUBDIR += pear-Spreadsheet_Excel_Writer
-    SUBDIR += pear-Structures_DataGrid_DataSource_RSS
-    SUBDIR += pear-Structures_DataGrid_DataSource_XML
     SUBDIR += pear-Structures_DataGrid_Renderer_CSV
     SUBDIR += pear-Structures_DataGrid_Renderer_XLS
     SUBDIR += pear-Structures_DataGrid_Renderer_XML
@@ -1168,7 +1154,6 @@
     SUBDIR += pecl-yaml
     SUBDIR += peco
     SUBDIR += perl2html
-    SUBDIR += permute
     SUBDIR += php-mecab
     SUBDIR += php72-ctype
     SUBDIR += php72-dom
@@ -1202,7 +1187,6 @@
     SUBDIR += pict
     SUBDIR += plover
     SUBDIR += po4a
-    SUBDIR += pocketreader
     SUBDIR += pod2mdoc
     SUBDIR += popup
     SUBDIR += popup-stacks
@@ -1363,7 +1347,6 @@
     SUBDIR += py-rss2gen
     SUBDIR += py-rst2html5
     SUBDIR += py-scour
-    SUBDIR += py-sgrep
     SUBDIR += py-simplebayes
     SUBDIR += py-snowballstemmer
     SUBDIR += py-sparqlwrapper
@@ -1456,7 +1439,6 @@
     SUBDIR += ro-hunspell
     SUBDIR += ro-hyphen
     SUBDIR += ro-mythes
-    SUBDIR += rss2html
     SUBDIR += rtf2html
     SUBDIR += rtfreader
     SUBDIR += ruby-escape
@@ -1465,7 +1447,6 @@
     SUBDIR += ruby-rd-mode.el
     SUBDIR += ruby-rdtool
     SUBDIR += ruby-rttool
-    SUBDIR += ruby-xmlparser
     SUBDIR += rubygem-actionpack-xml_parser-rails5
     SUBDIR += rubygem-actionpack-xml_parser-rails52
     SUBDIR += rubygem-actionpack-xml_parser1-rails4
@@ -1728,7 +1709,6 @@
     SUBDIR += stardict3
     SUBDIR += sv-aspell
     SUBDIR += sv-hunspell
-    SUBDIR += sv-hyphen
     SUBDIR += sv-mythes
     SUBDIR += svn2cl
     SUBDIR += sw-aspell
@@ -1736,13 +1716,11 @@
     SUBDIR += syck
     SUBDIR += ta-aspell
     SUBDIR += tagsoup
-    SUBDIR += tclExpat
     SUBDIR += te-aspell
     SUBDIR += te-hunspell
     SUBDIR += teckit
     SUBDIR += templates_parser
     SUBDIR += tet-aspell
-    SUBDIR += tex2im
     SUBDIR += texi2db
     SUBDIR += texi2html
     SUBDIR += texi2mdoc
@@ -1762,7 +1740,6 @@
     SUBDIR += tn-hunspell
     SUBDIR += tnef2txt
     SUBDIR += tokyodystopia
-    SUBDIR += topic
     SUBDIR += tr-aspell
     SUBDIR += trang
     SUBDIR += translate-toolkit
@@ -1795,7 +1772,6 @@
     SUBDIR += urlview
     SUBDIR += utf8proc
     SUBDIR += uz-aspell
-    SUBDIR += uz-hunspell
     SUBDIR += vbindiff
     SUBDIR += ve-hunspell
     SUBDIR += wa-aspell
@@ -1839,7 +1815,6 @@
     SUBDIR += xmlgen
     SUBDIR += xmlindent
     SUBDIR += xmlppm
-    SUBDIR += xmlprpr
     SUBDIR += xmlroff
     SUBDIR += xmlstarlet
     SUBDIR += xmlto

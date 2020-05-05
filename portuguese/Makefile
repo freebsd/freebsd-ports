@@ -7,7 +7,6 @@
     SUBDIR += aspell-pt_PT
     SUBDIR += hunspell
     SUBDIR += hyphen
-    SUBDIR += irpf-pt_BR
     SUBDIR += libreoffice
     SUBDIR += libreoffice-pt_BR
     SUBDIR += mythes

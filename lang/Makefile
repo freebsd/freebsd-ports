@@ -7,7 +7,6 @@
     SUBDIR += J
     SUBDIR += abcl
     SUBDIR += adacontrol
-    SUBDIR += afnix
     SUBDIR += alchemist.el
     SUBDIR += algol68g
     SUBDIR += angelscript
@@ -52,7 +51,6 @@
     SUBDIR += duktape
     SUBDIR += duktape-lib
     SUBDIR += ecl
-    SUBDIR += elan
     SUBDIR += elixir
     SUBDIR += elixir-mode.el
     SUBDIR += elk
@@ -106,7 +104,6 @@
     SUBDIR += ghc
     SUBDIR += gjs
     SUBDIR += gnat_util
-    SUBDIR += gnatcross-aarch64
     SUBDIR += gnatcross-binutils-aarch64
     SUBDIR += gnatcross-sysroot-aarch64
     SUBDIR += gnatdroid-armv7
@@ -129,14 +126,10 @@
     SUBDIR += harbour
     SUBDIR += haskell-mode.el
     SUBDIR += hla
-    SUBDIR += hope
     SUBDIR += hs-brainfuck
     SUBDIR += hs-unlambda
     SUBDIR += huc
-    SUBDIR += hugs
     SUBDIR += icc
-    SUBDIR += ici
-    SUBDIR += icon
     SUBDIR += intel-compute-runtime
     SUBDIR += intercal
     SUBDIR += io
@@ -202,7 +195,6 @@
     SUBDIR += neko
     SUBDIR += nesasm
     SUBDIR += newlisp
-    SUBDIR += newlisp-devel
     SUBDIR += nhc98
     SUBDIR += nickle
     SUBDIR += nim
@@ -215,11 +207,9 @@
     SUBDIR += ocaml-autoconf
     SUBDIR += ocaml-camlidl
     SUBDIR += ocaml-nox11
-    SUBDIR += ohugs
     SUBDIR += onyx
     SUBDIR += oo2c
     SUBDIR += opencoarrays
-    SUBDIR += opendylan
     SUBDIR += ott
     SUBDIR += owl-lisp
     SUBDIR += p5-Data-JavaScript
@@ -262,7 +252,6 @@
     SUBDIR += petite-chez
     SUBDIR += pfe
     SUBDIR += pharo
-    SUBDIR += phc
     SUBDIR += php-mode.el
     SUBDIR += php72
     SUBDIR += php72-extensions
@@ -347,7 +336,6 @@
     SUBDIR += spl
     SUBDIR += squeak
     SUBDIR += squirrel
-    SUBDIR += starlogo
     SUBDIR += swi-pl
     SUBDIR += tcbasic
     SUBDIR += tcc
@@ -370,8 +358,6 @@
     SUBDIR += visualworks
     SUBDIR += voc
     SUBDIR += yabasic
-    SUBDIR += yap
-    SUBDIR += yap-devel
     SUBDIR += yorick
     SUBDIR += ypsilon
     SUBDIR += zig

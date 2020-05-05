@@ -1,3 +1,0 @@
-This is ratmenu, a simple program that allows you to create X menus from the
-shell, where each menu item will run a command. ratmenu is intended for use
-with ratpoison, but can be used with any other window manager.

@@ -1,9 +1,0 @@
-bin/slurm
-share/slurm/blue.theme
-share/slurm/cyan.theme
-share/slurm/foo.theme
-share/slurm/black.theme
-man/man1/slurm.1.gz
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/KEYS
-%%PORTDOCS%%%%DOCSDIR%%/FAQ

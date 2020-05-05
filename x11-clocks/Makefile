@@ -29,7 +29,6 @@
     SUBDIR += rclock
     SUBDIR += t3d
     SUBDIR += tclock
-    SUBDIR += tktz
     SUBDIR += wmbday
     SUBDIR += wmbinclock
     SUBDIR += wmblueclock
@@ -45,6 +44,5 @@
     SUBDIR += xfce4-stopwatch-plugin
     SUBDIR += xfce4-time-out-plugin
     SUBDIR += xfce4-timer-plugin
-    SUBDIR += xtimer
 
 .include <bsd.port.subdir.mk>

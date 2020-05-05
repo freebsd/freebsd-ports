@@ -1,7 +1,0 @@
-Mono.Zeroconf is a cross platform Zero Configuration Networking library
-for Mono and .NET. It provides a unified API for performing the most
-common zeroconf operations on a variety of platforms and subsystems: all
-the operating systems supported by Mono and both the Avahi
-and Bonjour/mDNSResponder transports.
-
-WWW: http://www.mono-project.com/Mono.Zeroconf

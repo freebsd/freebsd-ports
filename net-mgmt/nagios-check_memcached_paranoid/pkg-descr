@@ -1,4 +1,0 @@
-This program checks memcached (or compatible) server by memcached
-protocol: SET, GET, DELETE and GET.
-
-WWW: https://github.com/hirose31/nagios-check_memcached_paranoid

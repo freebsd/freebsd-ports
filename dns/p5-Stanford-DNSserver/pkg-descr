@@ -1,8 +1,0 @@
-Stanford::DNSserver
-===================
-
-Stanford::DNSserver is a DNS name server framework.  It allows you to make
-any information accessible with perl available via DNS.  To put it another
-way, it's a name server with a perl back end.
-
-WWW: http://www.stanford.edu/~riepel/lbnamed/Stanford-DNSserver/

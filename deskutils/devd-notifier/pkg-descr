@@ -1,8 +1,0 @@
-devd-notifer  - a simple daemon notifying the user about devd(8) events
-with libnotify
-
-devd-notifier parses all devd(8) messages from /var/run/devd.pipe  with
-a  configurable regular expression and notifies the user about creating
-and destroying of device nodes.
-
-WWW: https://github.com/funglaub/devd-notifier

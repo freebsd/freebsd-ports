@@ -1,8 +1,0 @@
-%%SITE_PERL%%/Data/Average/Bounded.pm
-%%SITE_PERL%%/Data/Average/BoundedExpires.pm
-%%SITE_PERL%%/Data/Average/Expires.pm
-%%SITE_PERL%%/Data/Average.pm
-%%PERL5_MAN3%%/Data::Average::Bounded.3.gz
-%%PERL5_MAN3%%/Data::Average::BoundedExpires.3.gz
-%%PERL5_MAN3%%/Data::Average::Expires.3.gz
-%%PERL5_MAN3%%/Data::Average.3.gz

@@ -1,6 +1,0 @@
-Mpiexec is a replacement program for the script mpirun, which is part of the
-MPICH package.  It is used to initialize a parallel job from within a PBS
-batch or interactive environment.  Mpiexec uses the task manager library of
-PBS to spawn copies of the executable on the nodes in a PBS allocation.
-
-WWW: https://www.osc.edu/~djohnson/mpiexec/

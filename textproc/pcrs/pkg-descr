@@ -1,3 +1,0 @@
-PCRS is a small library, written as a supplement to the PCRE library,
-that implements regex based substitution with the syntax and semantics
-of Perl's s/// operator.

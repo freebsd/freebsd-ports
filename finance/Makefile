@@ -25,7 +25,6 @@
     SUBDIR += beancount
     SUBDIR += beanie
     SUBDIR += bitcoinnodestats
-    SUBDIR += cbb
     SUBDIR += cointop
     SUBDIR += electrum
     SUBDIR += expense

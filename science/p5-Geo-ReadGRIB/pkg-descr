@@ -1,6 +1,0 @@
-Geo::ReadGRIB is an object Perl module that provides read
-access to data distributed in GRIB files. Specifically,
-it is wrote to access NOAA Wavewatch III marine weather
-model forecasts which are packaged as GRIB.
-
-WWW: https://metacpan.org/release/Geo-ReadGRIB

@@ -1,6 +1,0 @@
-MHGUI is the GUI widget library used in the C++ version of MakeHuman.
-The main idea is to have a small and easy toolkit with a set of special
-widgets. Some of this widgets are very special and not available in
-other toolkits.
-
-WWW: http://www.dedalo-3d.com/index.php

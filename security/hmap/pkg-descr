@@ -1,6 +1,0 @@
-"hmap" is a tool for fingerprinting web servers.  Basically, it collects
-a number of characteristics and compares them with known profiles to find
-a closest match.  The closest match is its best guess for the identity of
-the server.
-
-WWW: http://ujeni.murkyroc.com/hmap/

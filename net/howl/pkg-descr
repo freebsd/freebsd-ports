@@ -1,9 +1,0 @@
-Howl is a cross-platform implementation of the Zeroconf networking
-standard. Zeroconf brings a new ease of use to IP networking.
-
-Howl allows software developers to easily embed
-Zeroconf/Bonjour(tm)-like functionality in their applications, making
-cumbersome and error-prone network configuration tasks seem so five
-minutes ago.
-
-WWW: http://howl.sourceforge.net/

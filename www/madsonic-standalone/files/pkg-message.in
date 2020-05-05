@@ -1,4 +1,0 @@
-Enable Madsonic by putting the following line in /etc/rc.conf
-  madsonic_enable="YES"
-
-See %%LOCALBASE%%/etc/rc.d/madsonic for all the options.

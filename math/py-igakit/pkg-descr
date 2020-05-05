@@ -1,5 +1,0 @@
-An interface into many low-level routines which are needed to manipulate knot
-vectors or control point grids as well as a high level interface to simplify
-the creation of NURBS geometries by hand.
-
-WWW: https://bitbucket.org/dalcinl/igakit

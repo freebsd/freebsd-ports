@@ -1,6 +1,0 @@
-#!/bin/sh
-#
-# $FreeBSD$
-
-cd "%%DATADIR%%"
-exec "%%LOCALBASE%%/bin/java" -jar "%%DATADIR%%/YAAC.jar" "$@"

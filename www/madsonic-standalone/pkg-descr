@@ -1,9 +1,0 @@
-Madsonic is a web-based media streamer and jukebox fork of Subsonic.
-
-Madsonic instantly transports your media to any HTTP connected device
-regardless of bitrate. You can stream to multiple players simultaneously.
-Subsonic is designed to handle very large music collections. By using
-transcoder plug-ins, Subsonic supports on-the-fly conversion and streaming
-of virtually any audio format, including MP3, OGG, WMA, FLAC, APE and more.
-
-WWW: http://www.madsonic.org

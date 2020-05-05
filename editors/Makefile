@@ -201,7 +201,6 @@
     SUBDIR += nvi-devel
     SUBDIR += nvi-m17n
     SUBDIR += o
-    SUBDIR += omegaT
     SUBDIR += openoffice-4
     SUBDIR += openoffice-devel
     SUBDIR += p5-Proc-InvokeEditor

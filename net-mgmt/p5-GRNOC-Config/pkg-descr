@@ -1,5 +1,0 @@
-A module to allow everyone to access config files in a fairly standard
-way.  Uses XML::XPath and XML::Simple to parse our XML files, and
-stores all configs it has access to in this module.
-
-WWW: http://www.sourceforge.net/projects/routerproxy

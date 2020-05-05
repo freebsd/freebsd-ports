@@ -1,8 +1,0 @@
-qmqtool is a qmail queue manipulation program geared towards the
-viewing and safe modification of the contents in a qmail queue.
-
-Features include finding abusers, sorting messages by sender/sender's IP,
-showing stats, requeue messages, queue consistency check, queue
-backup/restore, and others.
-
-WWW: http://jeremy.kister.net/code/qmqtool/

@@ -1,6 +1,0 @@
-Perl script to search for RFC's by an RFC number,
-keyword, or your own regexp.  The results can be
-send to a browser to viewing, emailed, or just
-viewed.
-
-WWW: http://www.dewn.com/rfc/

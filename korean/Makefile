@@ -43,6 +43,5 @@
     SUBDIR += unfonts-core
     SUBDIR += unfonts-extra
     SUBDIR += uniksc
-    SUBDIR += xpdf
 
 .include <bsd.port.subdir.mk>

@@ -1,8 +1,0 @@
-A Perl 5 module for reading in, manipulating, and outputting
-bibliographic records in the USMARC format.  It handles conversions
-from MARC into ASCII (text),  Library of Congress MARCMaker, HTML,
-and ISBD.  Input from MARCMaker format is also supported.  Individual
-records, fields, indicators, and subfields can be created, modified, and
-deleted.  It can extract URLs from the 856 field into HTML.
-
-WWW: http://marcpm.sourceforge.net/

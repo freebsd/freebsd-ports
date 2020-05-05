@@ -1,5 +1,0 @@
-The detach command is a grungy little program for executing programs
-in the background, without use of a control terminal. (In the style
-of most common daemon processes...) The intent was to create a
-program one could start via rsh, to initiate xterm sessions, without
-keeping extra local rsh & remote rshd and shell processes alive.

@@ -1,8 +1,0 @@
-JFrog CLI is a compact and smart client that provides a simple interface that
-automates access to JFrog Artifactory, JFrog Mission Control, JFrog Bintray and
-JFrog Xray (through their respective REST APIs). By using the JFrog CLI, you
-can greatly simplify your automation scripts making them more readable and
-easier to maintain. Several features of the JFrog CLI makes your scripts more
-efficient and reliable.
-
-WWW: https://www.jfrog.com/getcli/

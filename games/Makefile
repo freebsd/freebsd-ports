@@ -22,7 +22,6 @@
     SUBDIR += abuse_sdl
     SUBDIR += ace-of-penguins
     SUBDIR += acm
-    SUBDIR += adom
     SUBDIR += adonthell
     SUBDIR += adonthell-wastesedge
     SUBDIR += aestats
@@ -115,14 +114,12 @@
     SUBDIR += brutalchess
     SUBDIR += bs
     SUBDIR += bsdgames
-    SUBDIR += bsdrain
     SUBDIR += bsdtris
     SUBDIR += bsp
     SUBDIR += bstone
     SUBDIR += bugsquish
     SUBDIR += bugsx
     SUBDIR += bumprace
-    SUBDIR += bunnysay
     SUBDIR += burgerspace
     SUBDIR += burrtools
     SUBDIR += bygfoot
@@ -131,7 +128,6 @@
     SUBDIR += cake
     SUBDIR += caph
     SUBDIR += cardpics
-    SUBDIR += castlevox
     SUBDIR += cataclysm-dda
     SUBDIR += catesc
     SUBDIR += cave9
@@ -320,7 +316,6 @@
     SUBDIR += gltron
     SUBDIR += gmastermind
     SUBDIR += gmines
-    SUBDIR += gnarr
     SUBDIR += gnome-2048
     SUBDIR += gnome-chess
     SUBDIR += gnome-games
@@ -377,8 +372,6 @@
     SUBDIR += hinversi
     SUBDIR += hitori
     SUBDIR += hllib
-    SUBDIR += hohlin
-    SUBDIR += hoichess
     SUBDIR += holotz-castle
     SUBDIR += homura
     SUBDIR += hoverboard-sdl
@@ -416,7 +409,6 @@
     SUBDIR += jutils
     SUBDIR += jvgs
     SUBDIR += jzip
-    SUBDIR += kajaani-kombat
     SUBDIR += kanagram
     SUBDIR += kapman
     SUBDIR += kartofel
@@ -545,9 +537,6 @@
     SUBDIR += linux-dwarffortress
     SUBDIR += linux-enemyterritory
     SUBDIR += linux-enemyterritory-jaymod
-    SUBDIR += linux-enemyterritory-jaymod-21
-    SUBDIR += linux-enemyterritory-omni-bot
-    SUBDIR += linux-enemyterritory-omni-bot-0660
     SUBDIR += linux-enemyterritory-shrub
     SUBDIR += linux-enemyterritory-tce
     SUBDIR += linux-etqw-demo-server
@@ -626,7 +615,6 @@
     SUBDIR += multimc
     SUBDIR += mvdsv
     SUBDIR += nInvaders
-    SUBDIR += nadar
     SUBDIR += naev
     SUBDIR += naev-data
     SUBDIR += narcissu2
@@ -662,11 +650,9 @@
     SUBDIR += numptyphysics
     SUBDIR += numptyphysics-npcomplete
     SUBDIR += nwndata
-    SUBDIR += nxengine
     SUBDIR += odamex
     SUBDIR += oldrunner
     SUBDIR += omega
-    SUBDIR += oneko
     SUBDIR += oneko-sakura
     SUBDIR += onscripter
     SUBDIR += onscripter-1byte
@@ -871,7 +857,6 @@
     SUBDIR += sdlsand
     SUBDIR += sea-defender
     SUBDIR += seabattle
-    SUBDIR += seahaven
     SUBDIR += searchandrescue
     SUBDIR += searchandrescue-data
     SUBDIR += senken
@@ -917,7 +902,6 @@
     SUBDIR += stransball2
     SUBDIR += stratagus
     SUBDIR += stuntrally
-    SUBDIR += sudoku_solver
     SUBDIR += sudsol
     SUBDIR += super_methane_brothers
     SUBDIR += supertux
@@ -939,7 +923,6 @@
     SUBDIR += tesseract-data
     SUBDIR += tetrinet
     SUBDIR += tetrinet-x
-    SUBDIR += tetrons
     SUBDIR += tetzle
     SUBDIR += textmaze
     SUBDIR += thegrind
@@ -1101,7 +1084,6 @@
     SUBDIR += xosmulti
     SUBDIR += xpanex
     SUBDIR += xpat2
-    SUBDIR += xpenguins
     SUBDIR += xpilot
     SUBDIR += xpilot-ng-server
     SUBDIR += xpipeman
@@ -1138,8 +1120,6 @@
     SUBDIR += xtruco
     SUBDIR += xtux
     SUBDIR += xvier
-    SUBDIR += xvmahjongg
-    SUBDIR += xvmines
     SUBDIR += xworm
     SUBDIR += xye
     SUBDIR += xzip

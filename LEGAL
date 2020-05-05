@@ -30,7 +30,6 @@ makemkv-*       multimedia/makemkv      	MAKEMKV licenses don't allow distributi
 *_MegaCLI.zip		sysutils/megacli	Source recipient must acknowledge license. Reproduction or redistribution prohibited. See http://www.lsi.com/lookup/License.aspx
 26410-800.zip		audio/libaacplus	unclear legal status, probably need licenses from 3GPP, Via Licensing and Coding Technologies
 aacplusenc-*		audio/aacplusenc	unclear legal status, probably need licenses from 3GPP, Via Licensing and Coding Technologies
-adom-*			games/adom		Copy of CD must be sent to author
 aestats-*		games/aestats		Commercial use is prohibited
 agrep-*			textproc/agrep		No redistribution for profit
 alephone/M1A1.zip	games/alephone-data	Bungie/Microsoft do not allow charging for Marathon data files
@@ -47,7 +46,6 @@ citrix_ica-*		net/citrix_ica		License prohibits redistribution
 arcconf-v*		sysutils/arcconf	May not be redistributed in binary form
 cloudflare-cloudflared*	net/cloudflared		Not sure if we are allowed to redistribute it.
 clustalw-*		biology/clustalw	No commercial use
-consed_linux.tar.gz	biology/consed		Redistribution is not permitted in any form. You must request access permission via e-mail to get the tarball. Free for academic use.
 cos-*			java/cos		Special conditions apply for commercial use
 cosmo/*			games/cosmo		Possible copyright infringement
 CrystalSVGforGnomeIcons* x11-themes/gnome-icons-crystal Themes may contain artwork not done by the author.  Keep FreeBSD safe if theme author violated copyrights.
@@ -177,7 +175,6 @@ serialmail-*		mail/serialmail		No license -- see http://cr.yp.to/softwarelaw.htm
 serious.sam*		games/linux-ssamtfe	Redistribution limited
 serious.sam*		games/linux-ssamtse	Redistribution limited
 sharefonts-*		x11-fonts/sharefonts	Shareware: cannot be distributed without prior authorization
-shorten-*		audio/shorten		May not be sold.  May not be distributed if modified
 sid-milter-*		mail/sid-milter		May incorporate intellectual property, possible patent issues
 simian-*		devel/simian		Have to agree to license before download
 STonX-*			emulators/stonx		Contains ROM (C) by Atari
@@ -231,7 +228,6 @@ sas2ircu-*		sysutils/sas2ircu	May not be redistributed. Must accept license to d
 snes9x-*		emulators/snes9x-gtk	Commercial users must seek permission from copyright holders.
 rainloop-1.*.zip	mail/rainloop		Redistribution in any form is prohibited
 lha-114i.tar.gz		archivers/lha		Binary only redistribution is prohibited. Non-network redistribution such as CDROM requires prior notification to author. Commercial use whose main purpose is to provide the functions of this program is prohibited.
-atom-*.tgz		science/atom		Redistribution in any form is prohibited
 charm-uiuc-*		net/charm		No commercial use: commercial use requires a commercial license
 namd-*			science/namd		No commercial use: commercial use requires a commercial license
 vmd-*			science/vmd		No commercial use: commercial use requires a commercial license

@@ -1,6 +1,0 @@
-HOZ is what you would call a "file splitter". Its file format is the same as
-the one used by the "Hacha" software, a well known splitter in Spain and
- Latinamerica. HOZ is an open-source and portable  C implementation of an
-"Hacha" compatible splitter.
-
-WWW: http://hoz.sourceforge.net/

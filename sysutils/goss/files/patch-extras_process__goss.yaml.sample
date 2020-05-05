@@ -1,6 +1,0 @@
---- extras/process_goss.yaml.sample.orig	2017-08-15 06:16:52 UTC
-+++ extras/process_goss.yaml.sample
-@@ -0,0 +1,3 @@
-+process:
-+  goss:
-+    running: true

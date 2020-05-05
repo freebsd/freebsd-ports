@@ -1,9 +1,0 @@
-drraw is a simple web based presentation front-end for RRDtool that
-allows you to interactively build graphs of your own design. A graph
-definition can be turned into a template which may be applied to many
-Round Robin Database files. drraw specializes in providing an easy
-means of displaying data stored with RRDtool and does not care about
-how the data is collected, making it a great complement to other
-RRDtool front-ends.
-
-WWW: http://web.taranis.org/drraw/

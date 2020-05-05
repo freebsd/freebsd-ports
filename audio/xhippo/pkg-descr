@@ -1,8 +1,0 @@
-Xhippo is a Generic music player for Unix.  Written in GTK, it has optional
-GNOME support.
-
-It supports all types of files, defaults including mp3, midi, wav, etc.
-
-More can be added via the configuration file using external players
-
-WWW: http://www.gnu.org/software/xhippo/xhippo.html

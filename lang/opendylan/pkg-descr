@@ -1,7 +1,0 @@
-Open Dylan compiles to native code and has a full-featured IDE including an
-incremental development mode, browsing of runtime objects, remote debugging,
-etc. Open Dylan currently only runs on the x86 platform and the IDE does not
-yet run on the Linux version. Open Dylan is in many ways a mature
-implementation. If you are new to the language, choose Open Dylan if you can.
-
-WWW: http://opendylan.org/

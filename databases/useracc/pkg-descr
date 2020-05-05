@@ -1,5 +1,0 @@
-The useracc utility is a special purpose database application to
-store and retrieve data about users in a distributed environment.
-It is usable in situations where a single numerical and/or a single
-non-numerical field for each index (possibly a user name) are
-adequate.

@@ -1,3 +1,0 @@
-mod_vhs is an Apache Web Server module allowing mass virtual hosting without
-the need for file based configuration. The virtual host paths are translated
-using mod_ldap or mod_dbd to get the corrects path at request time.

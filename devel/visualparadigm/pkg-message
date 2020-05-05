@@ -1,8 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-Visit http://www.visual-paradigm.com/ to get either a community or
-an enterprise license key
-EOM
-}
-]

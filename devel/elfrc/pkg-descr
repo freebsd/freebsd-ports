@@ -1,5 +1,0 @@
-elfrc is a utility that is able to compile resources (files) to object
-files. It can also generate corresponding C/C++ header files to use
-these resources from within a linked application.
-
-WWW: http://ktown.kde.org/~frerich/elfrc.html

@@ -1,6 +1,0 @@
-The WWW::Google::Video is a class implementing a interface for fetch the Google
-Video Information.  To use it, you should create WWW::Google::Video object and
-use its method fetch(), to fetch the information of Video.  It uses LWP::Simple
-for making request to Google.
-
-WWW: https://metacpan.org/release/KENWU/WWW-Google-Video-0.4

@@ -1,5 +1,0 @@
-dmenu2 is the fork of original dmenu -- an efficient dynamic menu for X11,
-patched to support features like flexible positioning, fuzzy matching,
-follow focus, tab navigation, background dimming, etc.
-
-WWW: https://github.com/mrshankly/dmenu2

@@ -1,6 +1,0 @@
-The scli package written to address the need for small and efficient
-command line utilities to monitor and configure network devices and
-host systems. The scli package is based on the SNMP management
-protocol.
-
-WWW: https://trac.eecs.iu-bremen.de/projects/scli/

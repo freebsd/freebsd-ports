@@ -1,7 +1,0 @@
-%%TTY%%bin/tty_calctool
-%%X11%%bin/xcalctool
-%%XVIEW%%bin/xv_calctool
-lib/libcalctool.so
-lib/libcalctool.so.1
-man/man1/calctool.1.gz
-%%DATADIR%%/calctool.help

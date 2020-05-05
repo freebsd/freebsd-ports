@@ -1,6 +1,0 @@
-This is a console-based Linux program, written in C language, that solves
-Su Doku puzzles (aka Sudoku, Number Place, etc.) using deductive logic.
-It will only resort to trial-and-error and backtracking approaches upon
-exhausting its deductive moves.
-
-WWW: http://www.techfinesse.com/game/sudoku_solver.php

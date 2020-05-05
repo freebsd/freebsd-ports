@@ -1,4 +1,0 @@
-bin/xhippo
-@sample etc/xhippo.config.sample
-man/man1/xhippo.1.gz
-share/locale/de/LC_MESSAGES/xhippo.mo

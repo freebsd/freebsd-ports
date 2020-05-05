@@ -1,6 +1,0 @@
-libp0f is the autotools version of p0f-2.x with support for 3rd-party
-linkage. libp0f splits the core p0f functionality from the p0f-2.x
-application. The p0f library is installed as libp0f.so so
-p0f2 and libp0f can co-exist independantly.
-
-WWW: https://tools.netsa.cert.org/confluence/display/tt/libp0f

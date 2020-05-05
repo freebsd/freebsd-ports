@@ -1,6 +1,0 @@
-libsmacker is a cross-platform C library which can be used for decoding Smacker
-Video files produced by RAD Game Tools. Smacker Video was the king of video
-middleware in the 1990s, and its 256-color compressed video format was used in
-over 2600 software titles.
-
-WWW: http://libsmacker.sourceforge.net

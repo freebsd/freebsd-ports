@@ -1,5 +1,0 @@
-bin/qmailmrtg7
-etc/qmail.mrtg.cfg.sample
-%%EXAMPLESDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/FAQ

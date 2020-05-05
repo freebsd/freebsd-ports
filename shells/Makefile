@@ -32,7 +32,6 @@
     SUBDIR += mksh
     SUBDIR += nologinmsg
     SUBDIR += oksh
-    SUBDIR += osh
     SUBDIR += p5-Bash-Completion
     SUBDIR += p5-Shell-Perl
     SUBDIR += p5-Term-Bash-Completion-Generator
@@ -45,7 +44,6 @@
     SUBDIR += rush
     SUBDIR += sash
     SUBDIR += scponly
-    SUBDIR += shell-include
     SUBDIR += starship
     SUBDIR += tcsh_nls
     SUBDIR += tcshrc

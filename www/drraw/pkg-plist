@@ -1,9 +1,0 @@
-@sample %%CONFDIR%%/drraw.conf-dist %%CONFDIR%%/drraw.conf
-%%WWWDIR%%/drraw.cgi
-%%WWWDIR%%/icons/bomb.gif
-%%WWWDIR%%/icons/folder.gif
-%%WWWDIR%%/icons/folder.open.gif
-%%WWWDIR%%/icons/generic.gif
-%%WWWDIR%%/icons/link.gif
-%%WWWDIR%%/icons/text.gif
-%%WWWDIR%%/icons/unknown.gif

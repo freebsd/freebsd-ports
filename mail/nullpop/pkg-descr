@@ -1,6 +1,0 @@
-NullPop is a POP3 server that allows logins, but never returns any
-email. This is useful for certain setups where the user needs an
-'account' setup in their mail client, but no real mail will ever
-be received.
-
-WWW: http://thewalter.net/stef/software/nullpop/

@@ -1,6 +1,0 @@
-#!/bin/sh
-
-[ "$2" != "POST-INSTALL" ] && exit 0
-
-install -d -m 0755 -o %%USERS%% -g %%GROUPS%% /var/run/ircd-ru
-install -d -m 0755 -o %%USERS%% -g %%GROUPS%% /var/log/ircd-ru

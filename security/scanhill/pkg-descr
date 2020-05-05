@@ -1,8 +1,0 @@
-Scanhill is a Microsoft Messenger Protocol Sniffer. Currently it can only
-intercept Instant Text Messaging. Optionally, intercepted text messages can be
-stored onto an RDMBS (Only mySQL is supported for now). Given that mySQL is
-used, stored instant messages can be read through a browser interface that is
-written in PHP language. Please see the INSTALL.txt file for instructions on
-how to install, configure and run EnderUNIX scanhill.
-
-WWW: http://www.enderunix.org/scanhill/

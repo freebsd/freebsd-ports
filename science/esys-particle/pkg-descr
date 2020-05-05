@@ -1,9 +1,0 @@
-ESyS-Particle is Open Source Software for particle-based numerical modelling
-using the Discrete Element Method (DEM); a widely adapted technique for
-modelling processes involving large deformations, granular flow and/or
-fragmentation. ESyS-Particle is best suited for execution on parallel
-supercomputers, clusters or multi-core PCs running a Linux-based operating
-system. The C++ DEM simulation engine implements spatial domain decomposition
-via the Message Passing Interface (MPI). 
-
-WWW: http://www.esys-particle.org/wiki/

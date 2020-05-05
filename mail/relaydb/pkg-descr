@@ -1,8 +1,0 @@
-relaydb is a mail header analyzer that builds a database of IP addresses either
-known as legitimate senders or spammers.
-
-relaydb doesn't itself classify mails as legitimate or spam, that decision needs
-to be reached through other means. Neither does relaydb block spam itself. It
-merely provides a list of IP addresses to block through other means.
-
-WWW: http://www.benzedrine.cx/relaydb.html

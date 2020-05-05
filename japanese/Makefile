@@ -128,7 +128,6 @@
     SUBDIR += jed
     SUBDIR += jishyo
     SUBDIR += jls
-    SUBDIR += jstrings
     SUBDIR += jvim3
     SUBDIR += kakasi
     SUBDIR += kanjipad
@@ -162,12 +161,10 @@
     SUBDIR += mecab-ipadic-eucjp
     SUBDIR += mecab-ipadic-sjis
     SUBDIR += mecab-ipadic-utf8
-    SUBDIR += mg
     SUBDIR += mh
     SUBDIR += migemo
     SUBDIR += migemo.el
     SUBDIR += mime_pls
-    SUBDIR += ming
     SUBDIR += mozc-el
     SUBDIR += mozc-server
     SUBDIR += mozc-tool
@@ -260,7 +257,6 @@
     SUBDIR += spoqahansans-ttf
     SUBDIR += srd-fpw-package
     SUBDIR += suicavalue
-    SUBDIR += t2ps
     SUBDIR += tdiary
     SUBDIR += tegaki-zinnia-japanese
     SUBDIR += tex-ptex

@@ -1,8 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-This port includes software with different (mainly OSI approved) licenses.
-See LICENSE.txt in the documentation for a detailed description.
-EOM
-}
-]

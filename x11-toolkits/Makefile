@@ -218,7 +218,6 @@
     SUBDIR += sdl_pango
     SUBDIR += shared-desktop-ontologies
     SUBDIR += skinlf
-    SUBDIR += slingshot
     SUBDIR += soqt
     SUBDIR += swt
     SUBDIR += tepl
@@ -253,6 +252,5 @@
     SUBDIR += xforms
     SUBDIR += xmhtml
     SUBDIR += xview
-    SUBDIR += xview-clients
 
 .include <bsd.port.subdir.mk>

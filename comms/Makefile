@@ -10,7 +10,6 @@
     SUBDIR += anyremote
     SUBDIR += apitran
     SUBDIR += aprsd
-    SUBDIR += ath3k-firmware
     SUBDIR += atslog
     SUBDIR += bfhist
     SUBDIR += bforce-kst
@@ -54,7 +53,6 @@
     SUBDIR += flwrap
     SUBDIR += freedv
     SUBDIR += gammu
-    SUBDIR += geoid
     SUBDIR += gkermit
     SUBDIR += gnocky
     SUBDIR += gnokii
@@ -74,7 +72,6 @@
     SUBDIR += inspectrum
     SUBDIR += iwmbt-firmware
     SUBDIR += java-simple-serial-connector
-    SUBDIR += jerm
     SUBDIR += kb
     SUBDIR += kermit
     SUBDIR += klog
@@ -217,7 +214,6 @@
     SUBDIR += xmorse
     SUBDIR += xnec2c
     SUBDIR += xnecview
-    SUBDIR += yaac
     SUBDIR += yagiuda
     SUBDIR += yaps
     SUBDIR += yfklog

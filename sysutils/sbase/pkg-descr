@@ -1,6 +1,0 @@
-sbase is a collection of UNIX tools that are portable across UNIX-like systems.
-
-Tools like mkdir, ln, sort are reimplemented based on minimalistic,
-a.k.a. "SuckLess" philosophy.
-
-WWW: https://core.suckless.org/sbase

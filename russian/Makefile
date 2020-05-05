@@ -22,7 +22,6 @@
     SUBDIR += p5-Lingua-RU-Charset
     SUBDIR += p5-Text-Hyphen-RU
     SUBDIR += p5-XML-Parser-encodings
-    SUBDIR += p5-cyrillic
     SUBDIR += py-pytils
     SUBDIR += rubygem-russian
     SUBDIR += rux
@@ -33,7 +32,6 @@
     SUBDIR += stardict-mueller7
     SUBDIR += stardict-mueller7accent
     SUBDIR += stardict-pc
-    SUBDIR += tidyup-mail
     SUBDIR += wordpress
     SUBDIR += xcode
     SUBDIR += xruskb

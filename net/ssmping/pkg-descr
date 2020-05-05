@@ -1,6 +1,0 @@
-ssmping is a tool for checking whether a host can receive SSM from
-another. If a host runst ssmpingd, users on other hosts can check
-that they receive from this host by running the ssmping tool.
-asmping is similar to ssmping, but checks for ASM rather than SSM.
-
-WWW: http://www.venaas.no/multicast/ssmping/

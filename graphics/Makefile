@@ -5,7 +5,6 @@
 
     SUBDIR += 4va
     SUBDIR += Coin
-    SUBDIR += EZWGL
     SUBDIR += GraphicsMagick
     SUBDIR += Hermes
     SUBDIR += IPA
@@ -394,7 +393,6 @@
     SUBDIR += kimageannotator
     SUBDIR += kimagemapeditor
     SUBDIR += kipi-plugins
-    SUBDIR += kix-kmod
     SUBDIR += klatexformula
     SUBDIR += kludge3d
     SUBDIR += kolourpaint
@@ -534,12 +532,10 @@
     SUBDIR += mesa-libs
     SUBDIR += metacam
     SUBDIR += metapixel
-    SUBDIR += mhgui
     SUBDIR += milton
     SUBDIR += minder
     SUBDIR += ming
     SUBDIR += mirtk
-    SUBDIR += mmrecover
     SUBDIR += movit
     SUBDIR += mozjpeg
     SUBDIR += mscgen

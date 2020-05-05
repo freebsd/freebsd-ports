@@ -1,8 +1,0 @@
-%%SITE_PERL%%/No/Dato.pm
-%%SITE_PERL%%/No/KontoNr.pm
-%%SITE_PERL%%/No/PersonNr.pm
-%%SITE_PERL%%/No/Sort.pm
-%%PERL5_MAN3%%/No::Sort.3.gz
-%%PERL5_MAN3%%/No::KontoNr.3.gz
-%%PERL5_MAN3%%/No::PersonNr.3.gz
-%%PERL5_MAN3%%/No::Dato.3.gz

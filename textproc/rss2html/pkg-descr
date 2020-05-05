@@ -1,6 +1,0 @@
-Minimalistic cmdline tool to fetch RSS news from HTTP or local files and
-convert them into plain text, formatted html, or token-separated strings.
-This tool can be easily integrated into shellscripts, cron tasks, motd's,
-etc.
-
-WWW: http://nopcode.org/blog/rss2html.html

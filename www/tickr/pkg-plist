@@ -1,7 +1,0 @@
-bin/tickr
-%%DESKTOPDIR%%/tickr.desktop
-share/pixmaps/tickr/tickr-icon.png
-share/pixmaps/tickr/tickr-icon.xpm
-share/pixmaps/tickr/tickr-logo.png
-share/pixmaps/tickr/tickr-rss-icon.png
-%%DATADIR%%/tickr-url-list

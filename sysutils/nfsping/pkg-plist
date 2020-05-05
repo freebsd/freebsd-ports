@@ -1,2 +1,0 @@
-bin/nfsping
-%%SMOKEPING%%smokeping/lib/Smokeping/probes/NFSping.pm

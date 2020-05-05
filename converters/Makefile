@@ -24,7 +24,6 @@
     SUBDIR += convmv
     SUBDIR += dosunix
     SUBDIR += drg2sbg
-    SUBDIR += dumpasn1
     SUBDIR += enca
     SUBDIR += erlang-base64url
     SUBDIR += fconv

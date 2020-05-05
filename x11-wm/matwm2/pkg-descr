@@ -1,6 +1,0 @@
-matwm2 is a simple window manager for X11.  It features window frames with
-titlebar and buttons, configurable key bindings and mouse buttons, support
-for EWMH and motif hints, focus-follows-mouse and click-to-focus focus
-models, virtual desktops, Xft fonts and Xinerama support.
-
-WWW: http://www.squidjam.com/matwm/

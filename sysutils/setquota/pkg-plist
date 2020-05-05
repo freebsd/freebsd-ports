@@ -1,4 +1,0 @@
-sbin/setquota
-sbin/getquota
-man/man8/getquota.8.gz
-man/man8/setquota.8.gz

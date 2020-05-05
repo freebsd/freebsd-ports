@@ -1,9 +1,0 @@
-The Autodist is a source distribution management system that allows
-powerful mechanisms to define what is included in and excluded from a
-distribution, and what license the distribution is released under. It is
-also used to create the actual distribution source packages. Autodist
-allows distribution management in file, directory and file content
-level. Autodist is especially targeted for large software projects, and
-projects where multiple distributions are created from one source tree.
-
-WWW: http://silcnet.org/software/developers/autodist/

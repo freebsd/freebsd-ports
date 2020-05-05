@@ -1,4 +1,0 @@
-@dir etc/goss.d
-@sample etc/goss.d/process_goss.yaml.sample
-@sample etc/goss.yaml.sample
-bin/goss

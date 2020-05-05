@@ -36,7 +36,6 @@
     SUBDIR += countdown
     SUBDIR += dailystrips
     SUBDIR += deforaos-todo
-    SUBDIR += devd-notifier
     SUBDIR += dfshow
     SUBDIR += docear
     SUBDIR += dosage
@@ -216,7 +215,6 @@
     SUBDIR += simpleagenda
     SUBDIR += sliderule
     SUBDIR += spice-gtk
-    SUBDIR += sugarcrm
     SUBDIR += synapse
     SUBDIR += syncthingtray
     SUBDIR += sysctlview
@@ -228,12 +226,9 @@
     SUBDIR += terminal-image-viewer
     SUBDIR += thinkingrock
     SUBDIR += timewarrior
-    SUBDIR += tine20
     SUBDIR += todo
     SUBDIR += tomboy
-    SUBDIR += tomboy-plugin-latex
     SUBDIR += tomboy-plugin-reminder
-    SUBDIR += tomboy-plugin-todo
     SUBDIR += toolboxkit
     SUBDIR += tpb
     SUBDIR += treeline
@@ -243,7 +238,6 @@
     SUBDIR += vit
     SUBDIR += when
     SUBDIR += wmpinboard
-    SUBDIR += wyrd
     SUBDIR += x026
     SUBDIR += xcalendar
     SUBDIR += xchm
@@ -260,7 +254,6 @@
     SUBDIR += xpad3
     SUBDIR += xpostit
     SUBDIR += xpostitPlus
-    SUBDIR += xrolo
     SUBDIR += xwrits
     SUBDIR += ydotool
     SUBDIR += zanshin

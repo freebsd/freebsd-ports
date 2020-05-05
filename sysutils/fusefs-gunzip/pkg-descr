@@ -1,7 +1,0 @@
-fuse.gunzip provides transparent decompression of gzip compressed files.
-Files read as if they were not compressed.
-Typical usage is to provide transparent decompression for /usr
-However, it can be enabled for /opt and /home also.
-System administrators select which files to compress.
-
-WWW: http://fuse.gunzip.silverice.org/

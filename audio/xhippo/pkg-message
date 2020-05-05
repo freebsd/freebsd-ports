@@ -1,8 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-Playlists should be created like this:
-find ~/sound -name \*.mp3 | sort > playlist
-EOM
-}
-]

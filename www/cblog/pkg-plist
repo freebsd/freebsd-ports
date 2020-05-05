@@ -1,4 +1,0 @@
-bin/cblogctl
-etc/cblog.conf.sample
-libexec/cblog.fcgi
-man/man1/cblog.fcgi.1.gz

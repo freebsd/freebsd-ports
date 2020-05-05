@@ -1,5 +1,0 @@
-%%PORTDOCS%%%%DOCSDIR%%/README
-@owner qmailq
-@group qmail
-@mode 4511
-bin/qmail-auditor

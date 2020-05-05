@@ -1,7 +1,0 @@
-fusexmp_fh is a example from fusefs-libs, could be a dummy driver for using
-fuse modules.
-For example: `fusexmp_fh
--omodules=iconv:subdir,from_code=big5,to_code=utf8,subdir=/mnt/big5
-/mnt/utf8`
-
-WWW: https://sourceforge.net/projects/fuse/

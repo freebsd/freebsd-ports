@@ -1,9 +1,0 @@
-bin/crashexport
-bin/crashgetnode
-bin/crashlist
-bin/crashmail
-bin/crashmaint
-bin/crashstats
-bin/crashwrite
-%%ETCDIR%%/example.prefs
-%%ETCDIR%%/areafix.help

@@ -1,4 +1,0 @@
-@sample etc/pim6sd.conf.sample
-sbin/pim6sd
-man/man5/pim6sd.conf.5.gz
-man/man8/pim6sd.8.gz

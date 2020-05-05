@@ -1,6 +1,0 @@
-#!/bin/sh
-#
-# $FreeBSD$
-
-cd "%%DATADIR%%" && exec "%%LOCALBASE%%/bin/java" \
--Djava.ext.dirs="%%DATADIR%%" -jar "%%DATADIR%%/VoxCore.jar" "${@}"

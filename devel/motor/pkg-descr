@@ -1,6 +1,0 @@
-Motor is a text mode based programming environment for *nix. It
-consists of a powerful editor with syntax highlight, project
-manager, makefile generator, gcc and gdb front-end, etc. Deep CVS
-integration is also provided.
-
-WWW: http://konst.org.ua/motor/

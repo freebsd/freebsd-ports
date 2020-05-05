@@ -1,5 +1,0 @@
-Arpalert uses ARP protocol monitoring to prevent unauthorized connections
-on the local network. If an illegal connection is detected, a program or
-script is launched, which could be used to send an alert message, for example.
-
-WWW: http://www.arpalert.org/

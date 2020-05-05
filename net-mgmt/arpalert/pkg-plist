@@ -1,9 +1,0 @@
-etc/arpalert/arpalert.conf
-etc/arpalert/maclist.allow
-etc/arpalert/maclist.deny
-etc/arpalert/oui.txt
-include/arpalert.h
-sbin/arpalert
-man/man8/arpalert.8.gz
-@dir /var/lib/arpalert
-@dir /var/lib

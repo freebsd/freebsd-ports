@@ -1,9 +1,0 @@
-PROG=	frink
-SRCS=	blocks.c config.c frink.c output.c tcl.c token.c util.c vars.c
-CFLAGS+=-I${.CURDIR}
-
-BINDIR=	${PREFIX}/bin
-MANDIR=	${PREFIX}/man/man
-NO_MAN=	regretfully
-
-.include <bsd.prog.mk>

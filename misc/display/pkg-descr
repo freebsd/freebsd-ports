@@ -1,7 +1,0 @@
-Display runs a specified command over and over, printing the output
-through curses(3X). The command can be compound and the delay
-between executions is settable on the command line.  The output
-from the command had better fit on a single screen, of course.
-
-This can conflict with the application of the same name from the
-graphics/ImageMagick port/package.

@@ -1,6 +1,0 @@
-SHA256 (hadoop/pig-0.15.0-src.tar.gz) = 3ea357b00410e2539bd9c650bec7ad982539855a7be2771c2ac14c556bcdeb13
-SIZE (hadoop/pig-0.15.0-src.tar.gz) = 14741037
-SHA256 (hadoop/FreeBSD-pig-0.15.0-ant-repository.tar.gz) = 643efa306951b09ae61d178ff251bc34830812d95723b6f0e09a26c092cf9309
-SIZE (hadoop/FreeBSD-pig-0.15.0-ant-repository.tar.gz) = 118338171
-SHA256 (hadoop/ivy-2.2.0.jar) = 9d0a56026680999986ca33d53d12d6f28f7bff5e3c9e6e0c6633a3677ca00f18
-SIZE (hadoop/ivy-2.2.0.jar) = 947592

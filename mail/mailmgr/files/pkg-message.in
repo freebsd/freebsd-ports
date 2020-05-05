@@ -1,8 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-You need to configure the %%PREFIX%%/etc/mailmgr.conf before using it.
-See http://sarg.sourceforge.net/mailmgr.README.txt
-EOM
-}
-]

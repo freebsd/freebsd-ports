@@ -9,7 +9,6 @@
     SUBDIR += cg
     SUBDIR += cleanfeed
     SUBDIR += cnews
-    SUBDIR += crashmail
     SUBDIR += diablo
     SUBDIR += fidogate
     SUBDIR += fidogate4
@@ -64,14 +63,12 @@
     SUBDIR += sabnzbdplus
     SUBDIR += slrn
     SUBDIR += slrnface
-    SUBDIR += sn
     SUBDIR += suck
     SUBDIR += suck-cnews
     SUBDIR += tin
     SUBDIR += trn
     SUBDIR += trn4
     SUBDIR += ubh
-    SUBDIR += xrn
     SUBDIR += yencode
     SUBDIR += yydecode
 

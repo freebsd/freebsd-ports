@@ -1,8 +1,0 @@
-notify 100 {
-	match "system"          "USB";
-	match "subsystem"       "DEVICE";
-	match "type"            "ATTACH";
-	match "vendor"          "0x04e8";
-	match "product"         "0x6761";
-	action "%%PREFIX%%/etc/rc.d/lvwimax start";
-};

@@ -1,3 +1,0 @@
-Net::RawSock provides a base function to send raw IP datagrams
-from Perl. The raw IP datagram is packed into a buffer and written
-on the network layer with the write_ip() function.

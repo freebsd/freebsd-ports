@@ -1,4 +1,0 @@
-Provides programmatic access to iocage features and jails, while aiming to be
-compatible with iocage-legacy, and the current Python 3 version of iocage.
-
-WWW: https://github.com/iocage/libiocage

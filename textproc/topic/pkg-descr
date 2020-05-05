@@ -1,5 +1,0 @@
-TOPIC markup provides a minimal context for plain text databases that
-can be read/modified by most text editors, and easily parsed as well.
-Use as a classic Unix filter or interactively with included REPL.
-
-WWW: http://freebsd.hypermart.net/topic.html

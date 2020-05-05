@@ -1,3 +1,0 @@
-sbin/www6to4
-@sample %%ETCDIR%%/www6to4.conf.sample
-@sample %%ETCDIR%%/www6to4_forward.conf.sample

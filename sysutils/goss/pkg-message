@@ -1,8 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-WARNING: goss is not yet fully functional on FreeBSD.
-See https://github.com/aelsabbahy/goss/issues/26 for details.
-EOM
-}
-]

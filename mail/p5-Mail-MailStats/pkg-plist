@@ -1,7 +1,0 @@
-bin/countmail
-%%SITE_PERL%%/Mail/Stats.pm
-%%SITE_PERL%%/Mail/Stats/Config.pm
-%%SITE_PERL%%/Mail/Stats/Parser.pm
-%%SITE_PERL%%/Mail/Stats/Record.pm
-%%PERL5_MAN3%%/Mail::Stats::Record.3.gz
-%%PERL5_MAN3%%/Mail::Stats.3.gz

@@ -1,9 +1,0 @@
-The t2ps converts text files to PostScript files.
-Especially, program list and japanese text are formatted elegantly.
-You can define font size and baseline skip as you like.
-In addition, it is possible to set the width of hankaku charater
-a half width of zenkaku character.
-
-WWW: http://www.uopmu.ees.osakafu-u.ac.jp/~yabu/soft/original/
-
-Tetsuro Yabu <yabu@uopmu.ees.osakafu-u.ac.jp>

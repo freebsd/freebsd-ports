@@ -1,3 +1,0 @@
-#!/bin/sh
-export LD_LIBRARY_PATH=%%DATADIR%%:${LD_LIBRARY_PATH}
-%%DATADIR%%/yoono-desktop

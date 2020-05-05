@@ -1,6 +1,0 @@
-This graphics library  implements about  100  OpenGL(TM)
-like graphics functions and procedures that provides high
-level support  for  3D  graphics, including features like
-zbuffer, double-buffer and lighting.
-
-WWW: http://rene.ma.utexas.edu/~mzou/EZWGL/

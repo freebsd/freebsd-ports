@@ -1,6 +1,0 @@
-lib/mono/gac/policy.2.0.taglib-sharp/0.0.0.0__%%VERSIONSUFX%%/policy.2.0.taglib-sharp.config
-lib/mono/gac/policy.2.0.taglib-sharp/0.0.0.0__%%VERSIONSUFX%%/policy.2.0.taglib-sharp.dll
-lib/mono/gac/taglib-sharp/%%PORTVERSION%%__%%VERSIONSUFX%%/taglib-sharp.dll
-lib/mono/gac/taglib-sharp/%%PORTVERSION%%__%%VERSIONSUFX%%/taglib-sharp.dll.mdb
-lib/mono/taglib-sharp/taglib-sharp.dll
-libdata/pkgconfig/taglib-sharp.pc

@@ -1,9 +1,0 @@
-The SIP Scenario Generator creates SIP Call Flows or SIP scenario diagrams,
-in html format, of SIP messages from ethernet capture files. SIP Scenario
-Generator shows the actual call processing trace in a format that is easily
-understood using browser technology. Clicking on a sip message hyperlink
-displays the contents of the traced SIP message. The SIP Scenario Generator
-is a useful tool for SIP professionals, engineers, administrators, educators,
-etc.
-
-WWW: http://www.abptech.com/support/resources/SIP_scen_generator_v1.2.7/

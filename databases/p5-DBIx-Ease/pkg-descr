@@ -1,8 +1,0 @@
-DBIx::Ease is intended to allow less-code DBI interactions.
-
-Upon creation of a new DBIx::Ease object you should pass the portion of the DSN
-(Data Source Name) common to all connections the object is supposed to store.
-Replace the variable portions with '<databasename>'.  Whenever you wish to make
-only one connection you may enter the complete DSN, also when you want to make
-connections with the same source but as different users, then call exec() with
-different names of your choice as  initial argument.

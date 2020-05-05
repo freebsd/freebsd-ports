@@ -1,6 +1,0 @@
-%%SITE_PERL%%/Jabber/Connection.pm
-%%SITE_PERL%%/Jabber/NS.pm
-%%SITE_PERL%%/Jabber/NodeFactory.pm
-%%PERL5_MAN3%%/Jabber::Connection.3.gz
-%%PERL5_MAN3%%/Jabber::NS.3.gz
-%%PERL5_MAN3%%/Jabber::NodeFactory.3.gz

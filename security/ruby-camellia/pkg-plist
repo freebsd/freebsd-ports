@@ -1,6 +1,0 @@
-%%RUBY_SITEARCHLIBDIR%%/camellia.so
-%%RUBY_SITELIBDIR%%/camellia/version.rb
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/History.txt
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/License.txt
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README.txt
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/camellia-example.rb

@@ -1,9 +1,0 @@
-fluxconf is a tiny GTK based configuration tool for the fluxbox window manager.
-It allows basic manipulation of the window manager behaviour:
-
-    o Slit configuration
-    o Window placement
-    o Focus model
-    o Workspace configuration
-
-WWW: http://devaux.fabien.free.fr/flux/

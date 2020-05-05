@@ -1,7 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-After installation please read manual in %%DOCSDIR%%.
-EOM
-}
-]

@@ -1,5 +1,0 @@
-mkfile(8) creates one or more files that are suitable for use as
-NFS-mounted swap areas, or as local swap areas.  The file is padded
-with zeros by default.
-
-WWW: http://www.infolab.ne.jp/~hatanou/freebsd/mkfile/

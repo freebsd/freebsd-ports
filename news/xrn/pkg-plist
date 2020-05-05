@@ -1,7 +1,0 @@
-bin/xrn
-man/man1/xrn.1.gz
-share/X11/app-defaults/XRn
-%%PORTDOCS%%%%DOCSDIR%%/COMMON-PROBLMS
-%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
-%%PORTDOCS%%%%DOCSDIR%%/CREDITS
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog

@@ -1,6 +1,0 @@
-TeXcount is a Perl script that counts the number of words in the
-text of LaTeX files. It has rules for handling most of the common
-macros and provides colour coded output indicating which parts have
-been counted.
-
-WWW: http://app.uio.no/ifi/texcount/

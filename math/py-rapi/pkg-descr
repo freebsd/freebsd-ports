@@ -1,6 +1,0 @@
-Minimal R API for Python.
-
-It is similar to rpy2 in its functionality, but doesn't require compilation,
-toolchains, etc.
-
-WWW: https://github.com/randy3k/rchitect

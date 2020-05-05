@@ -1,6 +1,0 @@
-The PHP Mess Detector aims to be a simplified PHP port of the well known
-Java Tool PMD. This project uses PHP_Depend to measure several software
-metrics from given source code, then it compares the calculated values
-with customizeable thresholds and reports all suspect software artifacts
-
-WWW: http://phpmd.org/

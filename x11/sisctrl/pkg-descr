@@ -1,8 +1,0 @@
-sisctrl is a gtk-2.x based tool for the XFree86/X.org SiS ("sis")
-driver to tune the display parameters during X server run-time. Among
-other features, it allows switching and changing output devices, tuning
-TV output, gamma correction and Xv (hardware video) properties. It also
-supports  switching the display mode and resizing the desktop using the
-RandR extension.
-
-WWW: http://www.winischhofer.at/linuxsispart1.shtml#23

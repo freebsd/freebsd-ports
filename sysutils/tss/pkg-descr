@@ -1,7 +1,0 @@
-Terminal ScreenSaver (or tss for short) is an attempt to clone and enhance
-FreeBSD's text-mode screen saver. Although intended for GNU/Linux, it works
-fine under FreeBSD and probably a lot of other Unix-based operating systems.
-Unlike the daemonsaver in FreeBSD, you may choose ASCII art of your own liking
-or make your own.
-
-WWW: http://www.pulia.nu/tss/

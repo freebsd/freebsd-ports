@@ -1,9 +1,0 @@
-%%DATADIR%%/SkyTpl/batch.TplCompiler.php
-%%DATADIR%%/SkyTpl/class.DefaultCacheHandler.php
-%%DATADIR%%/SkyTpl/plugin.post.PathRewrite.php
-%%DATADIR%%/SkyTpl/plugin.pre.BearTemplateSyntax.php
-%%DATADIR%%/SkyTpl/plugin.pre.TagComment.php
-%%DATADIR%%/SkyTpl/setup.ini.Master.php
-%%DATADIR%%/SkyTpl/setup.ini.SafeMode.php
-%%DATADIR%%/class.SkyTemplate.php
-%%DATADIR%%/class.SkyTemplate_withDaddy.php
