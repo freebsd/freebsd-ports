@@ -2,7 +2,7 @@
 
 PORTNAME=	sd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.4
+DISTVERSION=	0.7.5
 CATEGORIES=	textproc
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -17,8 +17,8 @@ GH_ACCOUNT=	chmln
 
 CARGO_CRATES=	aho-corasick-0.7.10 \
 		ansi_term-0.11.0 \
-		anyhow-1.0.27 \
-		assert_cmd-1.0.0 \
+		anyhow-1.0.28 \
+		assert_cmd-1.0.1 \
 		atty-0.2.14 \
 		autocfg-1.0.0 \
 		bitflags-1.2.1 \
@@ -31,27 +31,24 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		difference-2.0.0 \
 		doc-comment-0.3.3 \
 		either-1.5.3 \
-		escargot-0.5.0 \
 		getrandom-0.1.14 \
 		heck-0.3.1 \
-		hermit-abi-0.1.8 \
-		itoa-0.4.5 \
+		hermit-abi-0.1.11 \
 		lazy_static-1.4.0 \
-		libc-0.2.68 \
-		log-0.4.8 \
+		libc-0.2.69 \
 		man-0.3.0 \
 		maybe-uninit-2.0.0 \
 		memchr-2.3.3 \
 		memmap-0.7.0 \
 		memoffset-0.5.4 \
-		num_cpus-1.12.0 \
+		num_cpus-1.13.0 \
 		ppv-lite86-0.2.6 \
 		predicates-1.0.4 \
 		predicates-core-1.0.0 \
 		predicates-tree-1.0.0 \
-		proc-macro-error-0.4.12 \
-		proc-macro-error-attr-0.4.12 \
-		proc-macro2-1.0.9 \
+		proc-macro-error-1.0.2 \
+		proc-macro-error-attr-1.0.2 \
+		proc-macro2-1.0.10 \
 		quote-1.0.3 \
 		rand-0.7.3 \
 		rand_chacha-0.2.2 \
@@ -60,24 +57,20 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		rayon-1.3.0 \
 		rayon-core-1.7.0 \
 		redox_syscall-0.1.56 \
-		regex-1.3.6 \
+		regex-1.3.7 \
 		regex-syntax-0.6.17 \
 		remove_dir_all-0.5.2 \
 		roff-0.1.0 \
-		ryu-1.0.3 \
 		scopeguard-1.1.0 \
-		serde-1.0.105 \
-		serde_derive-1.0.105 \
-		serde_json-1.0.50 \
 		strsim-0.8.0 \
-		structopt-0.3.12 \
-		structopt-derive-0.4.5 \
+		structopt-0.3.14 \
+		structopt-derive-0.4.7 \
 		syn-1.0.17 \
 		syn-mid-0.5.0 \
 		tempfile-3.1.0 \
 		textwrap-0.11.0 \
-		thiserror-1.0.14 \
-		thiserror-impl-1.0.14 \
+		thiserror-1.0.15 \
+		thiserror-impl-1.0.15 \
 		thread_local-1.0.1 \
 		treeline-0.1.0 \
 		unescape-0.1.0 \
