@@ -114,8 +114,6 @@ lib/ogmrip/container-plugins/libogmrip-avi.so
 %%MATROSKA%%lib/ogmrip/container-plugins/libogmrip-mkv.so
 lib/ogmrip/container-plugins/libogmrip-mov.a
 lib/ogmrip/container-plugins/libogmrip-mov.so
-%%MP4BOX%%lib/ogmrip/container-plugins/libogmrip-mp4.a
-%%MP4BOX%%lib/ogmrip/container-plugins/libogmrip-mp4.so
 lib/ogmrip/container-plugins/libogmrip-ogg.a
 lib/ogmrip/container-plugins/libogmrip-ogg.so
 %%GTK2%%lib/ogmrip/options-plugins/libogmrip-lavc-options.a
