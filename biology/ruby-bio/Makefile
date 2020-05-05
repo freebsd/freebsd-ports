@@ -15,8 +15,7 @@ COMMENT=	Integrated environment for Bioinformatics written in Ruby
 LICENSE=	GPLv2 RUBY
 LICENSE_COMB=	dual
 
-OPTIONS_DEFINE=	XMLPARSER BDB4 MYSQL PGSQL DOCS
-XMLPARSER_DESC=	xmlparser support for faster Blast processing
+OPTIONS_DEFINE=	BDB4 MYSQL PGSQL DOCS
 BDB4_DESC=	bdb4 support for faster flat file indexing
 
 NO_ARCH=	yes
@@ -26,7 +25,6 @@ USE_RUBY_SETUP=	yes
 SHEBANG_FILES=	sample/biofetch.rb
 ruby_OLD_CMD=	/usr/proj/bioruby/bin/ruby
 
-XMLPARSER_RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/xmlparser.so:textproc/ruby-xmlparser
 BDB4_RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/bdb.so:databases/ruby-bdb
 MYSQL_RUN_DEPENDS=	rubygem-dbd-mysql>=0:databases/rubygem-dbd-mysql
 PGSQL_RUN_DEPENDS=	rubygem-dbd-pg>=0:databases/rubygem-dbd-pg
