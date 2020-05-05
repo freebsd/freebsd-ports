@@ -17,7 +17,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 CONFLICTS_INSTALL?=	domoticz-[23]* domoticz-devel-*
 
 OPTIONS_SUB=	YES
-OPTIONS_DEFINE=	PYTHON SBOOST SLUA SMINIZIP SMQTT SSQLITE SSSL TELLDUS
+OPTIONS_DEFINE=	PYTHON SBOOST SLUA SMINIZIP SMQTT SSQLITE SSSL
 SBOOST_DESC=	Use static Boost instead of dynamic linking
 SSSL_DESC=	Use static OpenSSL library instead of dynamic linking
 SLUA_DESC=	Use domoticz provided LUA instead of ports one
@@ -25,7 +25,6 @@ SMQTT_DESC=	Use domoticz mosquitto instead of ports one
 SSQLITE_DESC=	Use domoticz SQLLite instead of ports one
 SMINIZIP_DESC=	Use domoticz minizip instead of ports one
 PYTHON_DESC=	Enable support for Python Plugins
-TELLDUS_DESC=	Enable support for Telldus
 
 .include <bsd.port.options.mk>
 
@@ -93,10 +92,6 @@ CMAKE_ARGS+=	-DUSE_PYTHON="YES"
 USES+=		python:3.6
 .else
 CMAKE_ARGS+=	-DUSE_PYTHON="NO"
-.endif
-
-.if ${PORT_OPTIONS:MTELLDUS}
-LIB_DEPENDS+=	libtelldus-core.so:comms/telldus-core
 .endif
 
 post-patch:
