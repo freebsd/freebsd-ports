@@ -2,15 +2,7 @@
 
 PORTNAME=	lammps
 PORTVERSION=	${GH_TAGNAME:C/(stable|patch)_([0-9]{1,2})([A-Z][a-z][a-z])([0-9]{4})/\4.\3.\2/S/Jan/01/S/Feb/02/S/Mar/03/S/Apr/04/S/May/05/S/Jun/06/S/Jul/07/S/Aug/08/S/Sep/09/S/Oct/10/S/Nov/11/S/Dec/12/}
-PORTREVISION=	9
 CATEGORIES=	science
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	89f119e8aa44ab31139cf4caceacb546c08f199d.patch:-p1 \
-		c18efdbfa70f42390a3d535ccb1b8a423260f63a.patch:-p1 \
-		613b8a759666b4e2e15fca38323cf5455e154a6c.patch:-p1 \
-		2b542eacb7def4c6da6ff94ab716cb012111551e.patch:-p1 \
-		795e2cb133b99ed3b77fc73f367fff7bc9368b78.patch:-p1 # https://github.com/lammps/lammps/pull/2051
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Classical molecular dynamics code with a focus on materials modeling
@@ -25,7 +17,7 @@ LIB_DEPENDS=	libfftw3.so:math/fftw3
 
 USES=		blaslapack:openblas cmake:noninja compiler:c++11-lang eigen:3 fortran localbase:ldflags shebangfix
 USE_GITHUB=	yes
-GH_TAGNAME=	patch_15Apr2020
+GH_TAGNAME=	patch_5May2020
 USE_LDCONFIG=	yes
 
 SHEBANG_GLOB=	*.sh *.bash

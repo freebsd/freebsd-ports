@@ -112,6 +112,8 @@ man/man1/lmp.1.gz
 %%DATADIR%%/potentials/Cu_u3.eam
 %%DATADIR%%/potentials/Cu_u6.eam
 %%DATADIR%%/potentials/Cu_zhou.eam.alloy
+%%DATADIR%%/potentials/FeCH_BOP_I.poly
+%%DATADIR%%/potentials/FeCH_BOP_II.poly
 %%DATADIR%%/potentials/FeCr.cdeam
 %%DATADIR%%/potentials/FeP_mm.eam.fs
 %%DATADIR%%/potentials/Fe_mm.eam.fs
@@ -207,6 +209,7 @@ man/man1/lmp.1.gz
 %%DATADIR%%/potentials/Ti.meam.spline
 %%DATADIR%%/potentials/Ti.meam.sw.spline
 %%DATADIR%%/potentials/TiO.meam.spline
+%%DATADIR%%/potentials/TlBr_msw.poly
 %%DATADIR%%/potentials/V6.1.mgpt.README
 %%DATADIR%%/potentials/V6.1.mgpt.parmin
 %%DATADIR%%/potentials/V6.1.mgpt.potin
