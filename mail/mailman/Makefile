@@ -3,7 +3,7 @@
 
 PORTNAME=	mailman
 DISTVERSION=	2.1.30
-PORTREVISION=	0
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	GNU \
 		SF/${PORTNAME}/Mailman%202.1%20%28stable%29/${PORTVERSION} \
@@ -178,6 +178,11 @@ post-patch:
 	${REINPLACE_CMD} -e 's/messages//' ${WRKSRC}/Makefile.in
 .endif
 	${MV} ${WRKSRC}/configure.in ${WRKSRC}/configure.ac # suppress warning
+	# Fix up translations for patch-0-security-88760f4d-8ef7-11ea-a66d-4b2ef158be83.
+	# Note it's not just search & replace, the pattern needs to be unedited for
+	# admin.py and edited for options.py.
+	${REINPLACE_CMD} -Ee '/Illegal Email Address: %\(safeuser\)/,+1H;$${p;x;s/ *. %\(safeuser\)s//g;}' \
+		${WRKSRC}/messages/*/LC_MESSAGES/mailman.po
 
 # post-patch-HTDIG-on is to fix https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=238508
 post-patch-HTDIG-on:
