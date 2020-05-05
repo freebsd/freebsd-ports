@@ -10,6 +10,7 @@ COMMENT=		File tree cloning tool
 
 LICENSE=		BSD2CLAUSE
 
+USES=			compiler:c11
 USE_GITHUB=		yes
 GH_ACCOUNT=		cyclaero
 GH_PROJECT=		clone
