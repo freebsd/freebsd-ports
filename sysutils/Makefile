@@ -581,7 +581,6 @@
     SUBDIR += linux-c7-userspace-rcu
     SUBDIR += linux-rkbin
     SUBDIR += linuxfdisk
-    SUBDIR += livecd
     SUBDIR += lizardfs
     SUBDIR += lmmon
     SUBDIR += lmon
