@@ -8,6 +8,8 @@
 #
 # Configuration settings for jitsi-videobridge in /etc/rc.conf:
 #
+# jitsi_videobridge_enable:	run jitsi_videobridge server (default=NO)
+# jitsi_videobridge_flags:	additional flags for jitsi_videobridge server (default="")
 #
 
 . /etc/rc.subr
@@ -15,7 +17,7 @@
 name="jitsi_videobridge"
 rcvar=${name}_enable
 
-jitsi_videobridge_env_file="%%LOCALBASE%%/etc/jitsi/videobridge/jitsi-videobridge.conf"
+jitsi_videobridge_env_file="%%ETCDIR%%/jitsi-videobridge.conf"
 jitsi_videobridge_jar="%%JAVAJARDIR%%/jitsi-videobridge.jar"
 jitsi_videobridge_logging_config="%%DATADIR%%/lib/logging.properties"
 
@@ -24,7 +26,7 @@ load_rc_config "${name}"
 : ${jitsi_videobridge_enable="NO"}
 : ${jitsi_videobridge_flags=""}
 
-command="%%LOCALBASE%%/bin/java"
+command="%%JAVA%%"
 
 pidfile="/var/run/jitsi-videobridge.pid"
 required_files="${jitsi_videobridge_env_file}"
@@ -35,8 +37,10 @@ restart_cmd=${name}_restart
 
 jitsi_videobridge_start()
 {
-	daemon -p ${pidfile} -o /var/log/jitsi-videobridge.log ${command} -Xmx${VIDEOBRIDGE_MAX_MEMORY} \
-                -XX:+UseConcMarkSweepGC -XX:+HeapDumpOnOutOfMemoryError \
+	daemon -p ${pidfile} -o /var/log/jitsi-videobridge.log \
+		${command} -Xmx${VIDEOBRIDGE_MAX_MEMORY} \
+                -XX:+UseConcMarkSweepGC \
+                -XX:+HeapDumpOnOutOfMemoryError \
                 -XX:HeapDumpPath=/tmp \
                 -Djava.util.logging.config.file=${jitsi_videobridge_logging_config} \
                 -Dnet.java.sip.communicator.SC_HOME_DIR_LOCATION=%%LOCALBASE%%/etc/jitsi \
@@ -48,7 +52,7 @@ jitsi_videobridge_start()
                 --domain=${JVB_XMPP_DOMAIN} \
                 --port=${JVB_XMPP_PORT} \
                 --secret=${JVB_XMPP_SECRET} ${jitsi_videobridge_flags}
-		echo "Started"
+                echo "Started"
 }
 
 jitsi_videobridge_stop()
