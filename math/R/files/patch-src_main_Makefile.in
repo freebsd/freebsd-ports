@@ -1,19 +1,27 @@
---- src/main/Makefile.in.orig	2017-07-16 08:46:49 UTC
+--- src/main/Makefile.in.orig	2020-05-05 02:47:09 UTC
 +++ src/main/Makefile.in
-@@ -110,7 +110,7 @@ libR_la_LIBADD =  $(MAIN_OBJS) $(EXTRA_STATIC_LIBS) $(
+@@ -105,13 +105,13 @@ R_bin_OBJECTS = Rmain.o @WANT_R_SHLIB_FALSE@$(OBJECTS)
+ @WANT_R_SHLIB_TRUE@R_bin_LDADD = -lR @BLAS_SHLIB_TRUE@-lRblas
+ @BUILD_LTO_FALSE@R_bin_DEPENDENCIES =@WANT_R_SHLIB_FALSE@ libR.a @USE_EXPORTFILES_TRUE@ $(top_builddir)/etc/R.exp
+ 
+-libR_la = libR$(R_DYLIB_EXT)
++libR_la = libR$(R_DYLIB_EXT).%%FULLVER%%
+ libR_la_OBJECTS = $(OBJECTS)
+ libR_la_LIBADD =  $(MAIN_OBJS) $(EXTRA_STATIC_LIBS) $(EXTRA_LIBS) @WANT_R_SHLIB_TRUE@ @USE_EXPORTFILES_TRUE@ -Wl,-bE:$(top_builddir)/etc/R.exp
  libR_la_DEPENDENCIES = $(STATIC_LIBS) $(R_TZONE) @WANT_R_SHLIB_TRUE@ @USE_EXPORTFILES_TRUE@ $(top_builddir)/etc/R.exp
  
  ## The next is needed for macOS only at present
 -LIBR_LDFLAGS = @LIBR_LDFLAGS@
-+LIBR_LDFLAGS = -Wl,-soname,libR.so.%%LIBVER%%
++LIBR_LDFLAGS = -Wl,-soname,libR.so.4
  
  
  all: R
-@@ -200,6 +200,7 @@ install-bin: installdirs
+@@ -201,6 +201,8 @@ install-bin: installdirs
  install-lib: installdirs
  	@$(MKINSTALLDIRS) "$(DESTDIR)$(Rexeclibdir)"
  	@$(SHELL) $(top_srcdir)/tools/copy-if-change $(libR_la) "$(DESTDIR)$(Rexeclibdir)/$(libR_la)"
-+	@cd "$(DESTDIR)$(Rexeclibdir)" && ln -s $(libR_la) $(libR_la).%%LIBVER%%
++	@cd "$(DESTDIR)$(Rexeclibdir)" && ln -s $(libR_la) libR.so.%%MAJORVER%%
++	@cd "$(DESTDIR)$(Rexeclibdir)" && ln -s $(libR_la) libR.so
  install-static: installdirs
  	@$(MKINSTALLDIRS) "$(DESTDIR)$(Rexeclibdir)"
  	@$(SHELL) $(top_srcdir)/tools/copy-if-change libR.a "$(DESTDIR)$(Rexeclibdir)/libR.a"

@@ -3,7 +3,7 @@
 
 PORTNAME=	sspir
 PORTVERSION=	0.2.10
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	math
 MASTER_SITES=	http://cran.r-project.org/src/contrib/Archive/sspir/
 DISTNAME=	${PORTNAME}_${PORTVERSION}

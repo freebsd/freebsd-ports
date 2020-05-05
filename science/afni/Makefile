@@ -3,6 +3,7 @@
 PORTNAME=		afni
 DISTVERSIONPREFIX=	AFNI_
 DISTVERSION=		20.1.05
+PORTREVISION=	1
 CATEGORIES=		science biology graphics perl5 python
 
 MAINTAINER=	ports@FreeBSD.org

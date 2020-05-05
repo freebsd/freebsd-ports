@@ -76,11 +76,14 @@ lib/R/include/Rmath.h
 lib/R/include/Rversion.h
 lib/R/include/S.h
 lib/R/lib/libR.so
-lib/R/lib/libR.so.%%LIBVER%%
+lib/R/lib/libR.so.%%FULLVER%%
+lib/R/lib/libR.so.%%MAJORVER%%
 %%RBLAS%%lib/R/lib/libRblas.so
-%%RBLAS%%lib/R/lib/libRblas.so.%%LIBVER%%
+%%RBLAS%%lib/R/lib/libRblas.so.%%FULLVER%%
+%%RBLAS%%lib/R/lib/libRblas.so.%%MAJORVER%%
 %%RBLAS%%lib/R/lib/libRlapack.so
-%%RBLAS%%lib/R/lib/libRlapack.so.%%LIBVER%%
+%%RBLAS%%lib/R/lib/libRlapack.so.%%FULLVER%%
+%%RBLAS%%lib/R/lib/libRlapack.so.%%MAJORVER%%
 lib/R/library/KernSmooth/DESCRIPTION
 lib/R/library/KernSmooth/INDEX
 lib/R/library/KernSmooth/Meta/Rd.rds
@@ -311,6 +314,7 @@ lib/R/library/class/libs/class.so
 %%NLS%%lib/R/library/class/po/de/LC_MESSAGES/R-class.mo
 %%NLS%%lib/R/library/class/po/en@quot/LC_MESSAGES/R-class.mo
 %%NLS%%lib/R/library/class/po/fr/LC_MESSAGES/R-class.mo
+%%NLS%%lib/R/library/class/po/it/LC_MESSAGES/R-class.mo
 %%NLS%%lib/R/library/class/po/ko/LC_MESSAGES/R-class.mo
 %%NLS%%lib/R/library/class/po/pl/LC_MESSAGES/R-class.mo
 lib/R/library/cluster/CITATION

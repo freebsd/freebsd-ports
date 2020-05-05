@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	R
-DISTVERSION=	3.6.3
-PORTREVISION=	2
+DISTVERSION=	4.0.0
 CATEGORIES=	math lang
 MASTER_SITES=	CRAN/src/base/R-${PORTVERSION:C|\..*||}
 
@@ -16,7 +15,7 @@ ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 powerpc64
 
 BUILD_DEPENDS=	texi2any:print/texinfo
 LIB_DEPENDS=	libcurl.so:ftp/curl \
-		libpcre.so:devel/pcre
+		libpcre2-8.so:devel/pcre2
 RUN_DEPENDS=	gmake:devel/gmake # R packages may require GNU make
 
 # possible TODO
@@ -36,7 +35,7 @@ CONFIGURE_ARGS=	--disable-java \
 		--with-readline \
 		rdocdir=${DOCSDIR}
 INSTALL_TARGET=	install-strip
-PLIST_SUB=	LIBVER=${_LIBVER}
+PLIST_SUB=	FULLVER=${DISTVERSION} MAJORVER=${_MAJORVER}
 
 OPTIONS_DEFINE=		ICU INFO LDOUBLE LETTER MEMPROF NLS RPROF X11
 OPTIONS_DEFINE_amd64=	FLANG OPENMP
@@ -102,11 +101,11 @@ OPENMP_CONFIGURE_ENABLE=	openmp
 PNG_IMPLIES=			X11
 PNG_LIB_DEPENDS=		libpng.so:graphics/png
 PNG_CONFIGURE_WITH=		libpng
-RBLAS_CONFIGURE_OFF=		--with-blas="-L${LOCALBASE}/lib ${BLASLIB}" \
-				--with-lapack="${LAPACKLIB}"
 RBLAS_CONFIGURE_ON=		--enable-BLAS-shlib \
 				--without-blas \
 				--without-lapack
+RBLAS_CONFIGURE_OFF=		--with-blas="-L${LOCALBASE}/lib ${BLASLIB}" \
+				--with-lapack="${LAPACKLIB}"
 RBLAS_EXTRA_PATCHES=		${PATCHDIR}/extra-patch-src_extra_blas_Makefile.in \
 				${PATCHDIR}/extra-patch-src_modules_lapack_Makefile.in
 RPROF_CONFIGURE_ENABLE=		R-profiling
@@ -125,7 +124,7 @@ X11_USES=			xorg
 X11_USE=			XORG=ice,sm,x11,xext,xmu,xscrnsaver,xt
 X11_CONFIGURE_WITH=		x
 
-_LIBVER=	${PORTVERSION:R}
+_MAJORVER=	${DISTVERSION:R:R}
 
 .include <bsd.port.options.mk>
 
@@ -135,7 +134,9 @@ USES+=		fortran
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|/usr/local|${LOCALBASE}|g" ${WRKSRC}/configure
-	@${REINPLACE_CMD} "s|%%LIBVER%%|${_LIBVER}|" \
+	@${REINPLACE_CMD} \
+		-e "s|%%FULLVER%%|${DISTVERSION}|" \
+		-e "s|%%MAJORVER%%|${_MAJORVER}|" \
 		${WRKSRC}/src/main/Makefile.in \
 		${WRKSRC}/src/extra/blas/Makefile.in \
 		${WRKSRC}/src/modules/lapack/Makefile.in
