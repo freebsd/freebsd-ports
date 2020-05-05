@@ -333,9 +333,9 @@
     SUBDIR += udunits
     SUBDIR += v_sim
     SUBDIR += vipster
-    SUBDIR += votca
     SUBDIR += vmd
     SUBDIR += voro++
+    SUBDIR += votca
     SUBDIR += wannier90
     SUBDIR += wwplot
     SUBDIR += wxmacmolplt
