@@ -12,6 +12,9 @@ COMMENT=	Django application for building dojo
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	No longer maintained, not compatible with Django 2.2+
+EXPIRATION_DATE=	2020-06-01
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django111>=1.6:www/py-django111@${PY_FLAVOR}
 
 USES=		python
