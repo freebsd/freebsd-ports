@@ -1,0 +1,140 @@
+bin/ali
+bin/anno
+bin/burst
+bin/comp
+bin/dist
+bin/flist
+bin/flists
+bin/fnext
+bin/folder
+bin/folders
+bin/forw
+bin/fprev
+bin/inc
+bin/mark
+bin/mhbuild
+bin/mhl
+bin/mhlist
+bin/mhmail
+bin/mhparam
+bin/mhpath
+bin/mhpgp
+bin/mhsign
+bin/mhstore
+bin/mmh
+bin/new
+bin/next
+bin/packf
+bin/pick
+bin/prev
+bin/print-mimetype
+bin/prompter
+bin/rcvdist
+bin/rcvpack
+bin/rcvstore
+bin/refile
+bin/repl
+bin/rmf
+bin/rmm
+bin/scan
+bin/send
+bin/sendfiles
+bin/show
+bin/slocal
+bin/sortm
+bin/spost
+bin/unseen
+bin/whatnow
+bin/whatnow2
+bin/whom
+@sample %%ETCDIR%%/components.sample
+@sample %%ETCDIR%%/digestcomps.sample
+@sample %%ETCDIR%%/distcomps.sample
+@sample %%ETCDIR%%/forwcomps.sample
+@sample %%ETCDIR%%/mhl.body.sample
+@sample %%ETCDIR%%/mhl.format.sample
+@sample %%ETCDIR%%/mhl.forward.sample
+@sample %%ETCDIR%%/mhl.headers.sample
+@sample %%ETCDIR%%/mhl.reply.sample
+@sample %%ETCDIR%%/mhl.whatnow2.sample
+@sample %%ETCDIR%%/mhn.defaults.sample
+@sample %%ETCDIR%%/pick.default.sample
+@sample %%ETCDIR%%/rcvdistcomps.outbox.sample
+@sample %%ETCDIR%%/rcvdistcomps.sample
+@sample %%ETCDIR%%/replcomps.sample
+@sample %%ETCDIR%%/replgroupcomps.sample
+@sample %%ETCDIR%%/repllistcomps.sample
+@sample %%ETCDIR%%/scan.MMDDYY.sample
+@sample %%ETCDIR%%/scan.YYYYMMDD.sample
+@sample %%ETCDIR%%/scan.default.sample
+@sample %%ETCDIR%%/scan.mailx.sample
+@sample %%ETCDIR%%/scan.meillo.sample
+@sample %%ETCDIR%%/scan.nmh.sample
+@sample %%ETCDIR%%/scan.nomime.sample
+@sample %%ETCDIR%%/scan.size.sample
+@sample %%ETCDIR%%/scan.time.sample
+@sample %%ETCDIR%%/scan.timely.sample
+@sample %%ETCDIR%%/scan.unseen.sample
+libexec/mmh/ap
+libexec/mmh/dp
+libexec/mmh/fmtdump
+libexec/mmh/mhtest
+man/man1/ali.1.gz
+man/man1/anno.1.gz
+man/man1/burst.1.gz
+man/man1/comp.1.gz
+man/man1/dist.1.gz
+man/man1/flist.1.gz
+man/man1/flists.1.gz
+man/man1/fnext.1.gz
+man/man1/folder.1.gz
+man/man1/folders.1.gz
+man/man1/forw.1.gz
+man/man1/fprev.1.gz
+man/man1/inc.1.gz
+man/man1/mark.1.gz
+man/man1/mhbuild.1.gz
+man/man1/mhl.1.gz
+man/man1/mhlist.1.gz
+man/man1/mhmail.1.gz
+man/man1/mhparam.1.gz
+man/man1/mhpath.1.gz
+man/man1/mhpgp.1.gz
+man/man1/mhsign.1.gz
+man/man1/mhstore.1.gz
+man/man1/mmh.1.gz
+man/man1/new.1.gz
+man/man1/next.1.gz
+man/man1/packf.1.gz
+man/man1/pick.1.gz
+man/man1/prev.1.gz
+man/man1/prompter.1.gz
+man/man1/rcvdist.1.gz
+man/man1/rcvpack.1.gz
+man/man1/rcvstore.1.gz
+man/man1/refile.1.gz
+man/man1/repl.1.gz
+man/man1/rmf.1.gz
+man/man1/rmm.1.gz
+man/man1/scan.1.gz
+man/man1/send.1.gz
+man/man1/sendfiles.1.gz
+man/man1/show.1.gz
+man/man1/slocal.1.gz
+man/man1/sortm.1.gz
+man/man1/unseen.1.gz
+man/man1/whatnow.1.gz
+man/man1/whatnow2.1.gz
+man/man1/whom.1.gz
+man/man5/mh-alias.5.gz
+man/man5/mh-format.5.gz
+man/man5/mh-mail.5.gz
+man/man5/mh-profile.5.gz
+man/man7/mh-chart.7.gz
+man/man7/mh-draft.7.gz
+man/man7/mh-sequence.7.gz
+man/man7/mmh-intro.7.gz
+man/man8/ap.8.gz
+man/man8/dp.8.gz
+man/man8/fmtdump.8.gz
+man/man8/spost.8.gz

@@ -1,0 +1,9 @@
+Mmh is a modified version of the electronic mail handling system nmh.
+Nmh (new MH) itself was originally based on the package MH-6.8.3, and
+was intended to be a (mostly) compatible drop-in replacement for MH.
+In contrast, mmh is not intended to be a drop-in replacement for nmh,
+but rather aims for the modernization and simplification of nmh,
+accepting reduced compatiblity if it, at the same time, allows to
+achieve greater goals from mmh's point of view.
+
+WWW: http://marmaro.de/prog/mmh/

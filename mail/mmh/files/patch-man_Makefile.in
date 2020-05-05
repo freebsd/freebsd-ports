@@ -1,0 +1,11 @@
+--- man/Makefile.in.orig	2020-04-04 04:12:02 UTC
++++ man/Makefile.in
+@@ -51,7 +51,7 @@ SEDMAN = $(SED) -f man.sed $< > $@
+ 
+ # man pages to install in $(mandir)/$(manext1)
+ MAN1SRC = ali. anno. burst. comp. dist. flist. flists. folder. folders. \
+-       forw. inc. mark. mhbuild. mhl. mhlist. mhsign. mhpgp. mmh. mmhwrap. \
++       forw. inc. mark. mhbuild. mhl. mhlist. mhsign. mhpgp. mmh. \
+        mhmail. mhparam. mhpath. mhstore. new. fnext. \
+        fprev. unseen. next. packf. pick. prev. prompter. rcvdist. rcvpack. \
+        rcvstore. refile. repl. rmf. rmm. scan. send. sendfiles. \

@@ -237,6 +237,7 @@
     SUBDIR += missey
     SUBDIR += mlmmj
     SUBDIR += mls
+    SUBDIR += mmh
     SUBDIR += mmr
     SUBDIR += mpop
     SUBDIR += mreport
