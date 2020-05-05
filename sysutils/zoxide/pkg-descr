@@ -1,0 +1,5 @@
+zoxide is a new cd alternative inspired by z and z.lua. It keeps track of the
+directories you use most frequently, and uses a ranking algorithm to navigate
+to the best match.
+
+WWW: https://github.com/ajeetdsouza/zoxide
