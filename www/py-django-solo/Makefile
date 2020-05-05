@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	django-solo
-PORTVERSION=	1.1.3
+DISTVERSION=	1.1.3-8
+DISTVERSIONSUFFIX=	-g3dcd6ab
 CATEGORIES=	www python
-MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rozhuk.im@gmail.com
@@ -12,10 +12,13 @@ COMMENT=	Helps working with singletons
 LICENSE=	CC-BY-3.0
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django111>1.6:www/py-django111@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django22>=1.6:www/py-django22@${PY_FLAVOR}
+
+USES=		python:3.5+
+USE_GITHUB=	yes
+GH_ACCOUNT=	lazybird
+USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
-USES=		python
-USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

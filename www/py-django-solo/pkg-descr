@@ -1,4 +1,4 @@
 Helps working with singletons - things like global settings that you
 want to edit from the admin site.
 
-WWW: https://github.com/lazybird/django-solo/
+WWW: https://github.com/lazybird/django-solo
