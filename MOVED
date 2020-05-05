@@ -14554,3 +14554,4 @@ net/py-pcap|net/py-pypcap|2020-05-01|Has expired: Broken with python3 please con
 x11-drivers/xf86-video-tseng||2020-05-01|Has expired: broken
 x11-drivers/xf86-video-s3virge||2020-05-01|Has expired: broken
 net/py-smart_open|net/py-smart-open|2020-05-02|Rename to match upstream naming
+net-im/pidgin-rocketchat|net-im/purple-rocketchat|2020-05-05|Generalized into a libpurple plugin

@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20200505:
+  AFFECTS: users of net-im/pidgin-rocketchat
+  AUTHOR: tobias.rehbein@web.de
+
+  This port has been turned into a libpurple plugin (net-im/purple-rocketchat)
+  to support other libpurple clients than pidgin.
+
+  This also changes some dependencies and you should run the following command
+  to prevent pidgin from being autoremoved.
+
+  # mark pidgin as being not automatically installed
+  pkg set -A 0 pidgin
+
 20200504:
   AFFECTS: users of x11-wm/hs-xmonad
   AUTHOR:  arrowd@FreeBSD.org
