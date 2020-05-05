@@ -14,7 +14,7 @@ USES=		perl5
 USE_PERL5=	configure
 
 OPTIONS_DEFINE=	FASTCGI STACKTRACE HANDLEIO CORE SERVER EXTRASRV MIDDLE \
-		EXTRAMID TOOLS CATALYST SQUATTING CGIAPP
+		EXTRAMID CATALYST SQUATTING CGIAPP
 OPTIONS_DEFAULT=	CORE
 
 FASTCGI_DESC=		FastCGI daemon and dispatcher
@@ -25,7 +25,6 @@ SERVER_DESC=		Recommended PSGI Servers and Plack handlers
 EXTRASRV_DESC=		Extra PSGI servers and Plack handlers
 MIDDLE_DESC=		Recommended middleware components
 EXTRAMID_DESC=		Extra Middleware Components
-TOOLS_DESC=		Tools
 CATALYST_DESC=		Catalyst Engine
 SQUATTING_DESC=		Squatting::On
 CGIAPP_DESC=		CGI::Application::PSGI
@@ -91,11 +90,6 @@ DEP+=	p5-Plack-Middleware-JSConcat>=0.29:www/p5-Plack-Middleware-JSConcat \
 	p5-Plack-Middleware-Status>=1.101150:www/p5-Plack-Middleware-Status \
 	p5-Plack-Middleware-AutoRefresh>=0.08:www/p5-Plack-Middleware-AutoRefresh \
 	p5-Plack-Middleware-File-Sass>=0.01:www/p5-Plack-Middleware-File-Sass
-.endif
-
-.if ${PORT_OPTIONS:MTOOLS}
-DEP+=	p5-Test-WWW-Mechanize-PSGI>=0.35:devel/p5-Test-WWW-Mechanize-PSGI \
-	p5-Flea>=0.02:www/p5-Flea
 .endif
 
 .if ${PORT_OPTIONS:MCATALYST}
