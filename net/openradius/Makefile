@@ -5,15 +5,11 @@ PORTNAME=	openradius
 PORTVERSION=	0.9.12c
 PORTREVISION=	3
 CATEGORIES=	net
-MASTER_SITES=	http://evbergen.home.xs4all.nl/openradius/download/ \
-		http://www.mirrors.wiretapped.net/security/authentication/radius/openradius/
+MASTER_SITES=	http://sites.e-advies.nl/openradius/download/ \
+		https://BSDforge.COM/projects/source/net/openradius/
 
-MAINTAINER=	crees@FreeBSD.org
+MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	RADIUS server with some actual documentation
-
-BROKEN=		unfetchable
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
