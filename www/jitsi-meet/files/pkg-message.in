@@ -14,11 +14,17 @@ Jitsi Meet was installed
 
    https://github.com/jitsi/jitsi-meet/blob/master/doc/manual-install.md
 
-3) Configuration file is located at %%WWWDIR%%/config.js
+3) Configuration and interface options files are installed like 
 
-4) Activate some interface options at %%WWWDIR%%/interface_config.js 
+   %%WWWDIR%%/config.js.sample
+   %%WWWDIR%%/interface_config.js.sample
 
-5) Enjoy it
+   Must be renamed to
+
+   %%WWWDIR%%/config.js
+   %%WWWDIR%%/interface_config.js
+
+4) Enjoy it
 EOM
 }
 ]

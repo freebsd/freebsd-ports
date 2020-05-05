@@ -2,6 +2,7 @@
 
 PORTNAME=	jitsi
 PORTVERSION=	1.0.4048
+PORTREVISION=	1
 CATEGORIES=	www net-im
 MASTER_SITES=	https://download.jitsi.org/jitsi-meet/src/
 DISTVERSIONPREFIX=	meet-
@@ -19,6 +20,10 @@ SUB_FILES+=	pkg-message
 
 WWWDIR=		${PREFIX}/www/${PORTNAME}${PKGNAMESUFFIX}
 WRKSRC=		${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}
+
+post-extract:
+	@${MV} ${WRKSRC}/config.js ${WRKSRC}/config.js.sample
+	@${MV} ${WRKSRC}/interface_config.js ${WRKSRC}/interface_config.js.sample
 
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}

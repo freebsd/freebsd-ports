@@ -5,7 +5,7 @@
 %%WWWDIR%%/base.html
 %%WWWDIR%%/body.html
 %%WWWDIR%%/conference.js
-%%WWWDIR%%/config.js
+@sample %%WWWDIR%%/config.js.sample
 %%WWWDIR%%/connection.js
 %%WWWDIR%%/connection_optimization/.eslintrc.js
 %%WWWDIR%%/connection_optimization/connection_optimization.html
@@ -36,7 +36,7 @@
 %%WWWDIR%%/index.android.js
 %%WWWDIR%%/index.html
 %%WWWDIR%%/index.ios.js
-%%WWWDIR%%/interface_config.js
+@sample %%WWWDIR%%/interface_config.js.sample
 %%WWWDIR%%/lang/languages-af.json
 %%WWWDIR%%/lang/languages-ar.json
 %%WWWDIR%%/lang/languages-az.json
