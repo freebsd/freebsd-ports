@@ -1,0 +1,4 @@
+FlexFloat is a C library for the emulation of reduced-precision floating point
+types.
+
+WWW: https://github.com/oprecomp/flexfloat

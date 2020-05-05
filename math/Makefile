@@ -261,6 +261,7 @@
     SUBDIR += fftw3-long
     SUBDIR += fftw3-quad
     SUBDIR += flann
+    SUBDIR += flexfloat
     SUBDIR += flint2
     SUBDIR += flintqs
     SUBDIR += form
