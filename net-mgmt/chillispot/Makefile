@@ -21,11 +21,16 @@ CONFIGURE_ARGS=-sysconfdir=${PREFIX}/etc
 USE_RC_SUBR=	chillispot
 SUB_FILES=	pkg-message installguide.txt
 
-OPTIONS_DEFINE=	APACHE FREERADIUS
+OPTIONS_DEFINE=	APACHE RADIUS
+OPTIONS_SINGLE=	RADIUS
+OPTIONS_SINGLE_RADIUS= FREERADIUS OPENRADIUS
+
 FREERADIUS_DESC=depend on FreeRADIUS
+OPENRADIUS_DESC=depend on OpenRADIUS
 
 APACHE_USE=	apache_run=22+
 FREERADIUS_RUN_DEPENDS=	radiusd:net/freeradius
+OPENRADIUS_RUN_DEPENDS=	radiusd:net/openradius
 
 .include <bsd.port.pre.mk>
 
