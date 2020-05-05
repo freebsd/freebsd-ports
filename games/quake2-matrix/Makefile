@@ -4,16 +4,13 @@
 PORTNAME=	matrix
 PORTVERSION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://qudos.quakedev.com/linux/quake2/mods/
+MASTER_SITES=	http://freebsd.nsu.ru/distfiles/ LOCAL/danfe \
+		http://qudos.quakedev.com/linux/quake2/mods/
 PKGNAMEPREFIX=	${Q2PKGNAMEPREFIX}
 DISTNAME=	Matrix-v${PORTVERSION}.fixed.Linux
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Matrix modification for Quake II
-
-BROKEN=		unfetchable
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2020-05-05
 
 USES=		gmake tar:bzip2
 WRKSRC=		${WRKDIR}/${PORTNAME}

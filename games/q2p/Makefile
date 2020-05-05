@@ -5,15 +5,11 @@ PORTNAME=	q2p
 PORTVERSION=	0.2.20061231
 PORTREVISION=	16
 CATEGORIES=	games
-MASTER_SITES=	http://bfeared.com/library/quake/archive/quakedev/qudos/quake2/engines/Q2P/
+MASTER_SITES=	http://freebsd.nsu.ru/distfiles/ LOCAL/danfe
 DISTNAME=	Q2P-0.2-2006-12-31
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Enhanced OpenGL-only Quake II engine
-
-BROKEN=		unfetchable
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2020-05-05
 
 USES=		gmake tar:bzip2 xorg
 USE_XORG=	xxf86dga xext xxf86vm x11
