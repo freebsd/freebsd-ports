@@ -10,6 +10,9 @@ MASTER_SITES=	http://ftp.auxio.org/pub/mirrors/step.polymtl.ca/pub/Xview/apps/xv
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Look-based audio mixer
 
+DEPRECATED=	Depends on expired x11-toolkits/xview
+EXPIRATION_DATE=2020-06-05
+
 LIB_DEPENDS=	libxview.so:x11-toolkits/xview
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -I${LOCALBASE}/include -DUSE_XBM_ICON" \
