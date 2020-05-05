@@ -10,7 +10,8 @@ DISTNAME=	phpBB-${PORTVERSION}
 MAINTAINER=	liukang@cn.freebsd.org
 COMMENT=	PHP-based bulletin board / discussion forum system
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/docs/COPYING
 
 RUN_DEPENDS=	${LOCALBASE}/share/pear/System.php:devel/pear@${PHP_FLAVOR}
 
@@ -30,6 +31,7 @@ PHPBBURL?=	phpBB2
 #
 WRKSRC=		${WRKDIR}/phpBB2
 NO_BUILD=	yes
+NO_ARCH=	yes
 SUB_FILES=	pkg-message
 SUB_LIST=	PHPBBURL="${PHPBBURL}" \
 		PHPBBDIR="${PHPBBDIR}" \
