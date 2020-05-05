@@ -15,11 +15,12 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgd.so:graphics/gd
 
+USES=		localbase:ldflags
 SUB_FILES=	pkg-message
 GNU_CONFIGURE=	yes
+LDFLAGS+=	-lm
 CONFIGURE_ARGS=	--with-gd-inc=${LOCALBASE}/include \
-		--with-gd-lib=${LOCALBASE}/lib CFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${PREFIX}/lib"
+		--with-gd-lib=${LOCALBASE}/lib
 
 DOCS=		ChangeLog README
 EXAMPLES=	cvsgraphwrapper.php mkimage.php
