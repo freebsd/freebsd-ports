@@ -14,6 +14,9 @@ COMMENT=	Clustering multi-dimensional data with a pure-Perl implementation
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+DEPRECATED=	Depends on expired math/p5-Math-GSL
+EXPIRATION_DATE=2020-06-05
+
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Graphics-GnuplotIF>=1.4:graphics/p5-Graphics-GnuplotIF \
 		p5-Math-GSL>=0.26:math/p5-Math-GSL \
