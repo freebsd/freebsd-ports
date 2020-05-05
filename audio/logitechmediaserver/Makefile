@@ -39,15 +39,13 @@ SHEBANG_FILES=	Bin/darwin/check-update.pl \
 
 # Defaults support playback of relativly unrestricted formats on SB2 or
 # SB3 devices and wired SB1 devices.
-OPTIONS_DEFINE=	APE FAAD FLAC LAME SHORTEN SOX TEST DOCS
+OPTIONS_DEFINE=	APE FAAD FLAC LAME SOX TEST DOCS
 OPTIONS_DEFAULT=APE FAAD FLAX SOX TEST
-SHORTEN_DESC=	Support Shorten input
 SOX_DESC=	Support OGG Vorbis input via SoX (SliMP3 and SB1)
 APE_RUN_DEPENDS=	mac:audio/mac
 FAAD_RUN_DEPENDS=	faad:audio/faad
 FLAC_RUN_DEPENDS=	flac:audio/flac
 LAME_RUN_DEPENDS=	lame:audio/lame
-SHORTEN_RUN_DEPENDS=	shorten:audio/shorten
 SOX_RUN_DEPENDS=	sox:audio/sox
 TEST_VARS_OFF=		CONTRIB_FLAGS=-t
 
