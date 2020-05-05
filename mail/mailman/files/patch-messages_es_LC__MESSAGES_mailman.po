@@ -1,0 +1,11 @@
+--- messages/es/LC_MESSAGES/mailman.po.orig	2020-05-05 15:17:13 UTC
++++ messages/es/LC_MESSAGES/mailman.po
+@@ -6463,7 +6463,7 @@ msgstr ""
+ "(como\n"
+ "                 perder direcciones en correos reenviados y copias enviadas "
+ "a la\n"
+-"                 dirección de rebote cuando se usa "responder a todos"), así que puede ser \n"
++"                 dirección de rebote cuando se usa \"responder a todos\"), así que puede ser \n"
+ "                 deshabilitada aquí."
+ 
+ #: Mailman/Gui/General.py:512

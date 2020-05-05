@@ -2404,6 +2404,7 @@
 %%MMDIR%%/tests/bounces/yahoo_09.txt
 %%MMDIR%%/tests/bounces/yahoo_10.txt
 %%MMDIR%%/tests/bounces/yahoo_11.txt
+%%MMDIR%%/tests/bounces/yahoo_12.txt
 %%MMDIR%%/tests/bounces/yale_01.txt
 %%MMDIR%%/tests/fblast.py
 %%MMDIR%%/tests/msgs/bad_01.txt

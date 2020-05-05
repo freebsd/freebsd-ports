@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	mailman
-DISTVERSION=	2.1.30
-PORTREVISION=	2
+DISTVERSION=	2.1.31
+PORTREVISION=	0
 CATEGORIES=	mail
 MASTER_SITES=	GNU \
 		SF/${PORTNAME}/Mailman%202.1%20%28stable%29/${PORTVERSION} \
@@ -132,6 +132,9 @@ PKGNAMESUFFIX+=	-with-htdig
 #X unpack this tarball, and the original distfile
 #X diff -NEur original-unpack bazaar-unpack | xz --best -c >msapiro-htdig-1812.patch.xz
 #X upload the latter with mode 0644 or similar to freefall's public_distfiles/ directory
+#
+# 2.1.31: deliberately continue using the 1812 patch that was for 2.1.30.
+# There is no full merge of 2.1.31 for the htdig branch yet.
 _HTDIGREV=	1812
 PATCHFILES+=	msapiro-htdig-${_HTDIGREV}.patch.xz
 RUN_DEPENDS+=	htdig:textproc/htdig
@@ -178,6 +181,10 @@ post-patch:
 	${REINPLACE_CMD} -e 's/messages//' ${WRKSRC}/Makefile.in
 .endif
 	${MV} ${WRKSRC}/configure.in ${WRKSRC}/configure.ac # suppress warning
+	# 2.1.31: fix up translations for security fix - upstream rushed the fix
+	# but did not see to translations on 2020-05-05.
+	${REINPLACE_CMD} -Ee '/Illegal Email Address:/,+1s/ *. %\(safeuser\)s//' \
+		${WRKSRC}/messages/*/LC_MESSAGES/mailman.po
 
 # post-patch-HTDIG-on is to fix https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=238508
 post-patch-HTDIG-on:
