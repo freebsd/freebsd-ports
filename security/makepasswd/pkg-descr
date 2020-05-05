@@ -1,5 +1,5 @@
-Generates true random passwords by using the /dev/random feature
-of Linux, with the emphasis on security over pronounceability. It
-can also encrypt plaintext passwords given on the command line.
+Generates true random passwords using /dev/urandom, with the
+emphasis on security over pronounceability. It can also encrypt
+plaintext passwords given in a temporary file.
 
-WWW: http://packages.debian.org/stable/makepasswd
+WWW: https://packages.debian.org/stable/makepasswd
