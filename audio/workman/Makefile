@@ -11,6 +11,9 @@ DISTNAME=	WorkMan-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Look-based CD player tool
 
+DEPRECATED=	Depends on expired x11-toolkits/xview
+EXPIRATION_DATE=2020-06-05
+
 LIB_DEPENDS=	libxview.so:x11-toolkits/xview
 
 WRKSRC=		${WRKDIR}/workman
