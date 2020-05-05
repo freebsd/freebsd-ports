@@ -2,7 +2,7 @@
 
 PORTNAME=	jicofo
 DISTVERSION=	1.0-555
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im java
 
 MAINTAINER=	acm@FreeBSD.org
@@ -22,6 +22,7 @@ USE_JAVA=	yes
 
 USE_RC_SUBR=	${PORTNAME}
 SUB_FILES+=	pkg-message
+SUB_LIST+=	JAVA=${JAVA}
 ETCDIR=		${PREFIX}/etc/jitsi/jicofo
 
 DEV_UPDATE_MODE=	no

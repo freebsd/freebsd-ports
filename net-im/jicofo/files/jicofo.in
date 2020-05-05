@@ -8,6 +8,8 @@
 #
 # Configuration settings for jicofo in /etc/rc.conf:
 #
+# jicofo_enable:	run jicofo server (default=NO)
+# jicofo_flags:		additional flags for jicofo server (default="")
 #
 
 . /etc/rc.subr
@@ -15,18 +17,19 @@
 name="jicofo"
 rcvar=${name}_enable
 
-jicofo_env_file="%%LOCALBASE%%/etc/jitsi/jicofo/jicofo.conf"
+jicofo_env_file="%%ETCDIR%%/jicofo.conf"
 jicofo_jar="%%JAVAJARDIR%%/jicofo.jar"
 jicofo_logging_config="%%DATADIR%%/lib/logging.properties"
+jicofo_trust_store="%%ETCDIR%%/truststore.jks"
 
 load_rc_config "${name}"
 
 : ${jicofo_enable="NO"}
 : ${jicofo_flags=""}
 
-command="%%LOCALBASE%%/bin/java"
+command="%%JAVA%%"
 pidfile="/var/run/jicofo.pid"
-required_files="${jicofo_env_file} %%LOCALBASE%%/etc/ssl/java.pem"
+required_files="${jicofo_env_file} ${jicofo_trust_store}"
 
 start_cmd=${name}_start
 stop_cmd=${name}_stop
@@ -35,14 +38,15 @@ restart_cmd=${name}_restart
 
 jicofo_start()
 {
-	daemon -p ${pidfile} -o /var/log/${name}.log ${command} -Xmx${MAX_MEMORY} \
+	daemon -p ${pidfile} -o /var/log/${name}.log \
+		${command} -Xmx${MAX_MEMORY} \
                 -XX:+HeapDumpOnOutOfMemoryError \
                 -XX:HeapDumpPath=/tmp \
                 -Djava.util.logging.config.file=${jicofo_logging_config} \
                 -Dnet.java.sip.communicator.SC_HOME_DIR_LOCATION=%%LOCALBASE%%/etc/jitsi \
                 -Dnet.java.sip.communicator.SC_HOME_DIR_NAME=jicofo \
                 -Dnet.java.sip.communicator.SC_LOG_DIR_LOCATION=/var/log/ \
-		-Djavax.net.ssl.trustStore=%%LOCALBASE%%/etc/ssl/java.pem \
+		-Djavax.net.ssl.trustStore=${jicofo_trust_store} \
                 -cp ${jicofo_jar} \
                 org.jitsi.jicofo.Main \
                 --host=${JVB_XMPP_HOST} \
