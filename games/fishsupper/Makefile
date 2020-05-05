@@ -5,14 +5,10 @@ PORTNAME=	fishsupper
 PORTVERSION=	0.1.6
 PORTREVISION=	19
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}
+MASTER_SITES=	https://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Guide a cat across a series of rivers, jumping from log to log
-
-BROKEN=		unfetchable
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
