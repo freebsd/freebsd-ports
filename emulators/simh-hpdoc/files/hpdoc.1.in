@@ -1,0 +1,28 @@
+.Dd February 23, 2020
+.Dt HPDOC 1 CON
+.Os
+.Sh NAME
+.Nm hpdoc
+.Nd Documentation for HP 21xx/1000 and HP3000 computers
+.Sh DESCRIPTION
+.Xr hp2100
+and
+.Xr hp3000
+are simulators for a number of HP computers.
+See the appropriate manual pages for more details.
+.Pp
+Much of the documentation is simulator specific, but there
+is also some generic documentation.
+.Pp
+It can be found at
+.Pa %%DOCSDIR%% ,
+.br
+and also at
+.Pa http://simh.trailing-edge.com/hp/#Documentation .
+.Sh SEE ALSO
+.Xr hp2100 1 ,
+.Xr hp3000 1 .
+.Sh AUTHORS
+.An "J. David Bryan, Robert M. Supnik and others" .
+.Fx "port maintenance, and this manual page, by"
+.An "Bob Eager" Aq bob@eager.cx .

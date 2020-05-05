@@ -1,0 +1,5 @@
+This is the generic documentation for the HP 2100 and HP 3000
+simulators. It is packaged separately to avoid conflicts and
+duplications between the individual simulator packages.
+
+WWW: http://simh.trailing-edge.com/hp/

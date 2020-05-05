@@ -124,6 +124,7 @@
     SUBDIR += rtc
     SUBDIR += rubygem-fission
     SUBDIR += simh
+    SUBDIR += simh-hpdoc
     SUBDIR += skyeye
     SUBDIR += snes9x-gtk
     SUBDIR += spim
