@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rust-analyzer
-DISTVERSION=	2020-04-27
+DISTVERSION=	2020-05-04
 CATEGORIES=	devel
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -22,8 +22,8 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		atty-0.2.14 \
 		autocfg-1.0.0 \
 		backtrace-0.3.46 \
-		backtrace-sys-0.1.36 \
-		base64-0.11.0 \
+		backtrace-sys-0.1.37 \
+		base64-0.12.0 \
 		bitflags-1.2.1 \
 		bstr-0.2.12 \
 		cargo_metadata-0.9.1 \
@@ -31,7 +31,7 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		cfg-if-0.1.10 \
 		clicolors-control-1.0.1 \
 		cloudabi-0.0.3 \
-		console-0.10.0 \
+		console-0.10.3 \
 		crossbeam-0.7.3 \
 		crossbeam-channel-0.4.2 \
 		crossbeam-deque-0.7.3 \
@@ -43,6 +43,7 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		dtoa-0.4.5 \
 		either-1.5.3 \
 		ena-0.13.1 \
+		ena-0.14.0 \
 		encode_unicode-0.3.6 \
 		env_logger-0.7.1 \
 		filetime-0.2.9 \
@@ -51,14 +52,14 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		fs_extra-1.1.0 \
 		fsevent-0.4.0 \
 		fsevent-sys-2.0.1 \
-		fst-0.4.1 \
+		fst-0.4.3 \
 		fuchsia-zircon-0.3.3 \
 		fuchsia-zircon-sys-0.3.3 \
 		getrandom-0.1.14 \
 		globset-0.4.5 \
 		goblin-0.2.1 \
 		heck-0.3.1 \
-		hermit-abi-0.1.11 \
+		hermit-abi-0.1.12 \
 		idna-0.2.0 \
 		indexmap-1.3.2 \
 		inotify-0.7.0 \
@@ -80,24 +81,24 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		lock_api-0.3.4 \
 		log-0.4.8 \
 		lsp-server-0.3.1 \
-		lsp-types-0.73.0 \
+		lsp-types-0.74.1 \
 		matches-0.1.8 \
 		maybe-uninit-2.0.0 \
 		memchr-2.3.3 \
 		memmap-0.7.0 \
 		memoffset-0.5.4 \
-		mio-0.6.21 \
+		mio-0.6.22 \
 		mio-extras-2.0.6 \
 		miow-0.2.1 \
-		net2-0.2.33 \
+		net2-0.2.34 \
 		notify-4.0.15 \
 		num_cpus-1.13.0 \
 		once_cell-1.3.1 \
 		ordermap-0.3.5 \
 		parking_lot-0.10.2 \
 		parking_lot_core-0.7.2 \
-		paste-0.1.10 \
-		paste-impl-0.1.10 \
+		paste-0.1.11 \
+		paste-impl-0.1.11 \
 		percent-encoding-2.1.0 \
 		petgraph-0.4.13 \
 		pico-args-0.3.1 \
@@ -105,8 +106,8 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		ppv-lite86-0.2.6 \
 		proc-macro-hack-0.5.15 \
 		proc-macro2-1.0.10 \
-		quote-1.0.3 \
-		ra_vfs-0.5.3 \
+		quote-1.0.4 \
+		ra_vfs-0.6.0 \
 		rand-0.7.3 \
 		rand_chacha-0.2.2 \
 		rand_core-0.5.1 \
@@ -120,7 +121,7 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		relative-path-1.0.0 \
 		remove_dir_all-0.5.2 \
 		rowan-0.10.0 \
-		rustc-ap-rustc_lexer-652.0.0 \
+		rustc-ap-rustc_lexer-656.0.0 \
 		rustc-demangle-0.1.16 \
 		rustc-hash-1.1.0 \
 		ryu-1.0.4 \
@@ -133,9 +134,9 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		scroll_derive-0.10.1 \
 		semver-0.9.0 \
 		semver-parser-0.7.0 \
-		serde-1.0.104 \
-		serde_derive-1.0.104 \
-		serde_json-1.0.51 \
+		serde-1.0.106 \
+		serde_derive-1.0.106 \
+		serde_json-1.0.52 \
 		serde_repr-0.1.5 \
 		serde_yaml-0.8.11 \
 		slab-0.4.2 \
@@ -145,6 +146,7 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		syn-1.0.18 \
 		synstructure-0.12.3 \
 		tempfile-3.1.0 \
+		terminal_size-0.1.12 \
 		termios-0.3.2 \
 		text-size-1.0.0 \
 		thin-dst-1.1.0 \
