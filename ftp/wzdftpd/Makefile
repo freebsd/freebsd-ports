@@ -21,10 +21,9 @@ USE_LDCONFIG=	yes
 
 USE_RC_SUBR=	wzdftpd
 
-OPTIONS_DEFINE=	ICONV IPV6 MYSQL PERL PGSQL SQLITE TCL DOCS
-OPTIONS_RADIO=	TLS ZEROCONF
+OPTIONS_DEFINE=	AVAHI ICONV IPV6 MYSQL PERL PGSQL SQLITE TCL DOCS
+OPTIONS_RADIO=	TLS
 OPTIONS_RADIO_TLS=	GNUTLS OPENSSL
-OPTIONS_RADIO_ZEROCONF=	AVAHI HOWL
 OPTIONS_DEFAULT=	AVAHI GNUTLS
 OPTIONS_SUB=	yes
 
@@ -60,19 +59,6 @@ SQLITE_USES=			sqlite:3
 AVAHI_CONFIGURE_ON=	--with-zeroconf --enable-avahi
 AVAHI_LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 			libavahi-core.so:net/avahi-app
-
-HOWL_DESC=		Zeroconf support via Howl
-HOWL_CONFIGURE_ON=	--with-zeroconf --enable-howl
-HOWL_CPPFLAGS=		-I${LOCALBASE}/include/howl
-HOWL_LIB_DEPENDS=	libhowl.so:net/howl
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MAVAHI} || ${PORT_OPTIONS:MHOWL}
-PLIST_SUB+=	ZEROCONF=""
-.else
-PLIST_SUB+=	ZEROCONF="@comment "
-.endif
 
 post-patch:
 	@${TOUCH} ${WRKSRC}/config.rpath

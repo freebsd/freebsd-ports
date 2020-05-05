@@ -116,8 +116,8 @@ lib/wzdftpd/modules/libwzd_sfv.a
 lib/wzdftpd/modules/libwzd_sfv.so
 %%TCL%%lib/wzdftpd/modules/libwzd_tcl.a
 %%TCL%%lib/wzdftpd/modules/libwzd_tcl.so
-%%ZEROCONF%%lib/wzdftpd/modules/libwzd_zeroconf.a
-%%ZEROCONF%%lib/wzdftpd/modules/libwzd_zeroconf.so
+%%AVAHI%%lib/wzdftpd/modules/libwzd_zeroconf.a
+%%AVAHI%%lib/wzdftpd/modules/libwzd_zeroconf.so
 libdata/pkgconfig/wzdftpd.pc
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
