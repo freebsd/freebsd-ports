@@ -27,6 +27,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 USES=		zip
 
 NO_WRKSUBDIR=	yes
+NO_BUILD=	yes
 
 CONFLICTS_INSTALL=	simh-3.[789]*
 
@@ -36,10 +37,6 @@ OPTIONS_SUB=	yes
 APPNOTES_DESC=	Install application notes
 
 SUB_FILES=	hpdoc.1
-
-.include <bsd.port.pre.mk>
-
-do-build:	# nothing to do
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
@@ -52,4 +49,4 @@ do-install-APPNOTES-on:
 	${INSTALL_MAN} ${DISTDIR}/${DIST_SUBDIR}/running_hp_2000_tsb.pdf ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${DISTDIR}/${DIST_SUBDIR}/hp_1000_io_simulation.pdf ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
