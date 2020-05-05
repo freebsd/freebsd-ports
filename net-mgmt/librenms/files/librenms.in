@@ -40,10 +40,10 @@ start_precmd=librenms_precmd
 
 librenms_precmd()
 {
-     [ -f /var/log/$name/$name-service.log ] || install -g $librenms_user -o $librenms_user -m 644 /var/log/$name/$name-service.log
-     [ -f /var/log/$name/$name.log ] || install -g $librenms_user -o $librenms_user -m 644 /var/log/$name/$name.log
+	[ -f /var/log/$name/$name-service.log ] || install -g $librenms_group -o $librenms_user -m 644 /dev/null /var/log/$name/$name-service.log
+	[ -f /var/log/$name/$name.log ]         || install -g $librenms_group -o $librenms_user -m 644 /dev/null /var/log/$name/$name.log
 }
 
-command_args="-T $name -o /var/log/$name/$name-service.log -p $pidfile $procname %%WWWDIR%%/librenms-service.py -m"
+command_args="-T $name -o /var/log/$name/$name-service.log -p $pidfile $procname %%WWWDIR%%/librenms-service.py"
 
 run_rc_command "$1"
