@@ -1,0 +1,8 @@
+[
+{ type: install
+  message: <<EOM
+To enable the creation of the /dev/aws/disk/ hierarchy, add
+dev_aws_disk_enable=YES to /etc/rc.conf.
+EOM
+}
+]
