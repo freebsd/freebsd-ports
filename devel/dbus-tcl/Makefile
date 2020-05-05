@@ -3,16 +3,13 @@
 
 PORTNAME=	dbus-tcl
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	SF/${PORTNAME}/dbus/${PORTVERSION}/
+MASTER_SITES=	https://chiselapp.com/user/schelte/repository/dbus/uv/
 DISTNAME=	dbus-${PORTVERSION}
 
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Tcl interface to the D-Bus messaging system
-
-BROKEN=		unfetchable
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	ISCL
 
@@ -25,7 +22,7 @@ PORTDOCS=	*
 
 TEST_TARGET=	do-test
 
-USES=		pkgconfig tcl:tea
+USES=		gmake pkgconfig tcl:tea
 
 PLIST_FILES=	lib/dbus/libdbus21.so.1 \
 		lib/dbus/pkgIndex.tcl \
