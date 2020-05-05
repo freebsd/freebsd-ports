@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cargo-c
-DISTVERSION=	0.6.4
+DISTVERSION=	0.6.5
 CATEGORIES=	devel
 MASTER_SITES=	CRATESIO
 # XXX Teach USES=cargo to have proper default
@@ -33,7 +33,7 @@ CARGO_CRATES=	adler32-1.0.4 \
 		bytesize-1.0.0 \
 		cargo-0.44.0 \
 		cargo-platform-0.1.1 \
-		cbindgen-0.14.1 \
+		cbindgen-0.14.2 \
 		cc-1.0.52 \
 		cfg-if-0.1.10 \
 		clap-2.33.0 \
@@ -46,8 +46,8 @@ CARGO_CRATES=	adler32-1.0.4 \
 		crossbeam-channel-0.4.2 \
 		crossbeam-utils-0.7.2 \
 		crypto-hash-0.3.4 \
-		curl-0.4.28 \
-		curl-sys-0.4.30+curl-7.69.1 \
+		curl-0.4.29 \
+		curl-sys-0.4.31+curl-7.70.0 \
 		env_logger-0.7.1 \
 		filetime-0.2.9 \
 		flate2-1.0.14 \
@@ -57,12 +57,12 @@ CARGO_CRATES=	adler32-1.0.4 \
 		fs2-0.4.3 \
 		fwdansi-1.1.0 \
 		getrandom-0.1.14 \
-		git2-0.13.4 \
+		git2-0.13.5 \
 		git2-curl-0.14.0 \
 		glob-0.3.0 \
 		globset-0.4.5 \
 		heck-0.3.1 \
-		hermit-abi-0.1.11 \
+		hermit-abi-0.1.12 \
 		hex-0.3.2 \
 		hex-0.4.2 \
 		home-0.5.3 \
@@ -76,9 +76,9 @@ CARGO_CRATES=	adler32-1.0.4 \
 		lazy_static-1.4.0 \
 		lazycell-1.2.1 \
 		libc-0.2.69 \
-		libgit2-sys-0.12.4+1.0.0 \
+		libgit2-sys-0.12.5+1.0.0 \
 		libnghttp2-sys-0.1.3 \
-		libssh2-sys-0.2.16 \
+		libssh2-sys-0.2.17 \
 		libz-sys-1.0.25 \
 		log-0.4.8 \
 		matches-0.1.8 \
@@ -96,9 +96,9 @@ CARGO_CRATES=	adler32-1.0.4 \
 		ppv-lite86-0.2.6 \
 		proc-macro-error-1.0.2 \
 		proc-macro-error-attr-1.0.2 \
-		proc-macro2-1.0.10 \
+		proc-macro2-1.0.12 \
 		quick-error-1.2.3 \
-		quote-1.0.3 \
+		quote-1.0.4 \
 		rand-0.7.3 \
 		rand_chacha-0.2.2 \
 		rand_core-0.5.1 \
@@ -118,7 +118,7 @@ CARGO_CRATES=	adler32-1.0.4 \
 		serde-1.0.106 \
 		serde_derive-1.0.106 \
 		serde_ignored-0.1.1 \
-		serde_json-1.0.51 \
+		serde_json-1.0.52 \
 		shell-escape-0.1.4 \
 		sized-chunks-0.5.3 \
 		smallvec-1.4.0 \
