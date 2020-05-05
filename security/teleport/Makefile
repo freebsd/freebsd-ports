@@ -2,11 +2,11 @@
 
 PORTNAME=	teleport
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.2.2
+DISTVERSION=	4.2.8
 CATEGORIES=	security
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Gravitational Telport SSH
+COMMENT=	Gravitational Teleport SSH
 
 LICENSE=	APACHE20
 
@@ -32,6 +32,7 @@ PLIST_FILES=	bin/teleport \
 
 # Extra assets are stored in the binary and must not be inadvertently removed
 STRIP=
+NOPRECIOUSMAKEVARS=	YES
 
 GO_TELEPORT_SRC_DIR=	src/github.com/gravitational/teleport
 PRE_GOPATH_DIR=	${PORTNAME}-${DISTVERSION}${DISTVERSIONSUFFIX}
