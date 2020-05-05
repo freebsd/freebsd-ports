@@ -12,6 +12,9 @@ COMMENT=	SCCP network layer protocol implementation
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Depends on expired devel/libosmo-netif
+EXPIRATION_DATE=2020-06-05
+
 LIB_DEPENDS=	libosmocore.so:devel/libosmocore \
 		libosmonetif.so:devel/libosmo-netif \
 		libtalloc.so:devel/talloc
