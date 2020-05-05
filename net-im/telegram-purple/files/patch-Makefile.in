@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2020-05-02 09:45:59 UTC
++++ Makefile.in
+@@ -74,7 +74,7 @@ endif
+ # Check if -frandom-seed is supported before enabling it
+ RANDOM_SEED_UNSUPPORTED = $(shell $(CC) -frandom-seed=77e0418a98676b76729b50fe91cc1f250c14fd8f664f8430649487a6f918926d 2>&1 | grep -c 'random-seed')
+ ifeq "$(RANDOM_SEED_UNSUPPORTED)" "0"
+-	CFLAGS += -frandom-seed=0x$$(sha256sum $< | cut -f1 -d" ")
++	CFLAGS += -frandom-seed=0x$$(sha256 $< | cut -f1 -d" ")
+ endif
+ # Check if -ffile-prefix-map is supported before enabling it
+ FILE_PREFIX_MAP_UNSUPPORTED = $(shell $(CC) -ffile-prefix-map=/foo/bar/baz=/quux 2>&1 | grep -c 'file-prefix-map')

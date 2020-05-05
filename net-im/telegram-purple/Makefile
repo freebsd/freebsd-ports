@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	telegram-purple
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-im
 
@@ -21,19 +21,20 @@ LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libpurple.so:net-im/libpurple \
 		libpng.so:graphics/png
 
-USES=		gettext gmake gnome pkgconfig
+USES=		gmake gnome pkgconfig localbase:ldflags
 USE_GNOME=	glib20
+
+GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
-
-GNU_CONFIGURE=	yes
-LDFLAGS+=	-L${LOCALBASE}/lib
+NLS_USES=	gettext
+NLS_CONFIGURE_OFF=	--disable-translation
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	majn
 GH_PROJECT=	tgl:tgl
-GH_TAGNAME?=	bec2e6d:tgl
+GH_TAGNAME?=	cd7e3d7:tgl
 GH_SUBDIR=	tgl:tgl
 
 post-install:

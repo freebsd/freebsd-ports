@@ -1,4 +1,4 @@
---- commit.h.gen.orig	2016-08-08 08:53:04 UTC
+--- commit.h.gen.orig	2020-03-25 20:48:01 UTC
 +++ commit.h.gen
 @@ -20,19 +20,7 @@
  
@@ -17,7 +17,7 @@
 -fi
 -
 -GIT_COMMIT=`git rev-parse HEAD | cut -c1-10`
-+GIT_COMMIT="d3d090917d"
++GIT_COMMIT="ca42dcf0e6"
  
  if grep -scq "${GIT_COMMIT}" commit.h
  then
