@@ -12,6 +12,9 @@ COMMENT=	GSM network in a box software
 
 LICENSE=	GPLv3
 
+DEPRECATED=	Depends on expired devel/libosmo-netif
+EXIPIRATION_DATE=2020-06-05
+
 LIB_DEPENDS=	libdbi.so:databases/libdbi \
 		libosmocore.so:devel/libosmocore \
 		libosmoabis.so:devel/libosmo-abis \
@@ -25,7 +28,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	CFLAGS="-I${LOCALBASE}/include"
 
 OPTIONS_DEFINE=	BSC NAT SQLITE DOCS
-OPTIONS_DEFAULT= BSC NAT
+OPTIONS_DEFAULT=BSC NAT
 
 BSC_DESC=	Enable OSMO BSC
 NAT_DESC=	Enable NAT support
