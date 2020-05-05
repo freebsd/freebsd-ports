@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	mksh
-PORTVERSION=	57
+PORTVERSION=	59
 DISTVERSIONPREFIX=	R
 CATEGORIES=	shells
-MASTER_SITES=	http://www.mirbsd.org/MirOS/dist/mir/mksh/ \
-		http://pub.allbsd.org/MirOS/dist/mir/mksh/
+MASTER_SITES=	https://www.mirbsd.org/MirOS/dist/mir/mksh/ \
+		https://pub.allbsd.org/MirOS/dist/mir/mksh/
 
 MAINTAINER=	schaiba@gmail.com
 COMMENT=	MirBSD Korn Shell
@@ -24,7 +24,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 OPTIONS_DEFINE=	EXAMPLES
 
 do-build:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} SHELL=${SH} ${SH} ${WRKSRC}/Build.sh -r -c lto
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} SHELL=${SH} ${SH} ${WRKSRC}/Build.sh -r
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mksh ${STAGEDIR}${PREFIX}/bin
