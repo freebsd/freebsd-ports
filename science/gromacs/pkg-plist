@@ -28,9 +28,9 @@ include/gromacs/utility/basedefinitions.h
 include/gromacs/utility/current_function.h
 include/gromacs/utility/gmxassert.h
 include/gromacs/utility/real.h
-lib/libgmxapi.so
-lib/libgmxapi.so.0
-lib/libgmxapi.so.0.1.0
+lib/libgmxapi%%SUFFIX_MPI%%.so
+lib/libgmxapi%%SUFFIX_MPI%%.so.0
+lib/libgmxapi%%SUFFIX_MPI%%.so.0.1.0
 lib/libgromacs%%SUFFIX_MPI%%%%SUFFIX_D%%.so
 lib/libgromacs%%SUFFIX_MPI%%%%SUFFIX_D%%.so.5
 lib/libgromacs%%SUFFIX_MPI%%%%SUFFIX_D%%.so.5.0.0
