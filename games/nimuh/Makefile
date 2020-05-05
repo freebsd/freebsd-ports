@@ -5,15 +5,11 @@ PORTNAME=	nimuh
 PORTVERSION=	1.02
 PORTREVISION=	11
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20${PORTVERSION}/Nimuh%20SRC%20%28Source%20Code%29
+MASTER_SITES=	https://mirror.amdmi3.ru/distfiles/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${PORTNAME}-data-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Puzzle game destined to improve the knowledge of Andalusia
-
-BROKEN=		unfetchable
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	CC-BY-NC-SA-2.0
 
