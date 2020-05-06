@@ -2,4 +2,4 @@ The DBus-Tcl project provides a Tcl interface to the dbus message bus system.
 It contains packages that allow Tcl programs to send and receive dbus signals,
 as well as invoke and respond to dbus method calls.
 
-http://chiselapp.com/user/schelte/repository/dbus/home
+WWW: http://chiselapp.com/user/schelte/repository/dbus/home
