@@ -1,5 +1,6 @@
 include/cblas.h
 include/f77blas.h
+include/lapack.h
 include/lapacke.h
 include/lapacke_config.h
 include/lapacke_mangling.h
@@ -9,6 +10,6 @@ lib/cmake/openblas/OpenBLASConfig.cmake
 lib/cmake/openblas/OpenBLASConfigVersion.cmake
 lib/libopenblas.a
 lib/libopenblas.so
-%%DYNARCH%%lib/libopenblasp-r%%PORTVERSION%%.a
-%%DYNARCH%%lib/libopenblasp-r%%PORTVERSION%%.so
+%%DYNAMIC_ARCH%%lib/libopenblasp-r%%PORTVERSION%%.a
+%%DYNAMIC_ARCH%%lib/libopenblasp-r%%PORTVERSION%%.so
 libdata/pkgconfig/openblas.pc
