@@ -18,7 +18,7 @@ LICENSE_FILE_GPLv1+ =	${WRKSRC}/Copying
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-IO-FDPass>=1.1:devel/p5-IO-FDPass \
-		p5-MCE>=1.864:devel/p5-MCE
+		p5-MCE>=${PORTVERSION}:devel/p5-MCE
 
 USES=		perl5
 USE_PERL5=	configure
