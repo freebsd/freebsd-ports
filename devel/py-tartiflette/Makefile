@@ -20,8 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.0.0<2.0.0:devel/py-cffi@${PY_FLAVOR}
 USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
-# lib/libgraphqlparser.so is not available until configure phase
-post-configure:
-	@${CP} ${LOCALBASE}/lib/libgraphqlparser.so ${WRKSRC}/tartiflette/language/parsers/libgraphqlparser/cffi/libgraphqlparser.so
+post-patch:
+	@${LN} -s ${LOCALBASE}/lib/libgraphqlparser.so ${WRKSRC}/tartiflette/language/parsers/libgraphqlparser/cffi/libgraphqlparser.so
 
 .include <bsd.port.mk>
