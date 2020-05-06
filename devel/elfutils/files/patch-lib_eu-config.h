@@ -1,7 +1,7 @@
---- lib/eu-config.h.orig	2015-06-11 11:38:55 UTC
+--- lib/eu-config.h.orig	2020-03-30 12:17:45 UTC
 +++ lib/eu-config.h
-@@ -187,4 +187,180 @@ asm (".section predict_data, \"aw\"; .pr
- #endif
+@@ -176,6 +176,182 @@ asm (".section predict_data, \"aw\"; .previous\n"
+ #define ELFUTILS_HEADER(name) <lib##name.h>
  
  
 +/* FreeBSD ports of glibcisms */
@@ -180,4 +180,6 @@
 +#define	ngettext(s, p, n)	(((n) == 1) ? (s) : (p))
 +#endif
 +
- #endif	/* eu-config.h */
+ #ifdef SYMBOL_VERSIONING
+ # define OLD_VERSION(name, version) \
+   asm (".globl _compat." #version "." #name "\n" \

@@ -1,6 +1,6 @@
---- libelf/elf_update.c.orig	2018-09-14 03:23:36.000000000 -0700
+--- libelf/elf_update.c.orig	2020-03-30 12:17:45 UTC
 +++ libelf/elf_update.c
-@@ -106,9 +106,13 @@
+@@ -106,9 +106,13 @@ write_file (Elf *elf, int64_t size, int change_bo, siz
  	  if (elf->cmd == ELF_C_RDWR_MMAP
  	      && (size_t) size > elf->maximum_size)
  	    {

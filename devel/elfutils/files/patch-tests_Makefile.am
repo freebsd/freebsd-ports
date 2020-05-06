@@ -1,15 +1,15 @@
---- tests/Makefile.am.orig	2018-09-14 04:12:13.000000000 -0700
+--- tests/Makefile.am.orig	2020-03-30 12:17:45 UTC
 +++ tests/Makefile.am
-@@ -457,7 +457,7 @@
+@@ -537,7 +537,7 @@ libasm = -lasm
  libebl = -lebl
  else !STANDALONE
  if BUILD_STATIC
--libdw = ../libdw/libdw.a -lz $(zip_LIBS) $(libelf) $(libebl) -ldl
-+libdw = ../libdw/libdw.a -lz $(zip_LIBS) $(libelf) $(libebl)
+-libdw = ../libdw/libdw.a -lz $(zip_LIBS) $(libelf) $(libebl) -ldl -lpthread
++libdw = ../libdw/libdw.a -lz $(zip_LIBS) $(libelf) $(libebl) -lpthread
  libelf = ../libelf/libelf.a -lz
  libasm = ../libasm/libasm.a
  else
-@@ -472,16 +472,16 @@
+@@ -552,16 +552,16 @@ endif !STANDALONE
  arextract_LDADD = $(libelf)
  arsymtest_LDADD = $(libelf)
  newfile_LDADD = $(libelf)
@@ -30,7 +30,7 @@
  update1_LDADD = $(libelf)
  update2_LDADD = $(libelf)
  update3_LDADD = $(libdw) $(libelf)
-@@ -495,34 +495,34 @@
+@@ -575,12 +575,12 @@ get_files_LDADD = $(libdw) $(libelf)
  next_files_LDADD = $(libdw) $(libelf)
  get_aranges_LDADD = $(libdw) $(libelf)
  allfcts_LDADD = $(libdw) $(libelf)
@@ -47,61 +47,40 @@
 +allregs_LDADD = $(libeu) $(libdw) $(argp_LDADD)
 +find_prologues_LDADD = $(libeu) $(libdw) $(argp_LDADD)
  #show_ciefde_LDADD = ../libdwarf/libdwarf.so $(libelf)
--asm_tst1_LDADD = $(libasm) $(libebl) $(libelf) $(libdw) -ldl
--asm_tst2_LDADD = $(libasm) $(libebl) $(libelf) $(libdw) -ldl
--asm_tst3_LDADD = $(libasm) $(libebl) $(libelf) $(libdw) -ldl
--asm_tst4_LDADD = $(libasm) $(libebl) $(libelf) $(libdw) -ldl
--asm_tst5_LDADD = $(libasm) $(libebl) $(libelf) $(libdw) -ldl
--asm_tst6_LDADD = $(libasm) $(libebl) $(libelf) $(libdw) -ldl
--asm_tst7_LDADD = $(libasm) $(libebl) $(libelf) $(libdw) -ldl
--asm_tst8_LDADD = $(libasm) $(libebl) $(libelf) $(libdw) -ldl
--asm_tst9_LDADD = $(libasm) $(libebl) $(libelf) $(libdw) -ldl
--dwflmodtest_LDADD = $(libdw) $(libebl) $(libelf) $(argp_LDADD) -ldl
+ asm_tst1_LDADD = $(libasm) $(libebl) $(libelf) $(libdw)
+ asm_tst2_LDADD = $(libasm) $(libebl) $(libelf) $(libdw)
+@@ -592,13 +592,13 @@ asm_tst7_LDADD = $(libasm) $(libebl) $(libelf) $(libdw
+ asm_tst8_LDADD = $(libasm) $(libebl) $(libelf) $(libdw)
+ asm_tst9_LDADD = $(libasm) $(libebl) $(libelf) $(libdw)
+ dwflmodtest_LDADD = $(libdw) $(libebl) $(libelf) $(argp_LDADD)
 -rdwrmmap_LDADD = $(libelf)
--dwfl_bug_addr_overflow_LDADD = $(libdw) $(libebl) $(libelf) -ldl
-+asm_tst1_LDADD = $(libasm) $(libebl) $(libelf) $(libdw)
-+asm_tst2_LDADD = $(libasm) $(libebl) $(libelf) $(libdw)
-+asm_tst3_LDADD = $(libasm) $(libebl) $(libelf) $(libdw)
-+asm_tst4_LDADD = $(libasm) $(libebl) $(libelf) $(libdw)
-+asm_tst5_LDADD = $(libasm) $(libebl) $(libelf) $(libdw)
-+asm_tst6_LDADD = $(libasm) $(libebl) $(libelf) $(libdw)
-+asm_tst7_LDADD = $(libasm) $(libebl) $(libelf) $(libdw)
-+asm_tst8_LDADD = $(libasm) $(libebl) $(libelf) $(libdw)
-+asm_tst9_LDADD = $(libasm) $(libebl) $(libelf) $(libdw)
-+dwflmodtest_LDADD = $(libeu) $(libdw) $(libebl) $(libelf) $(argp_LDADD)
 +rdwrmmap_LDADD = $(libeu) $(libelf)
-+dwfl_bug_addr_overflow_LDADD = $(libdw) $(libebl) $(libelf)
+ dwfl_bug_addr_overflow_LDADD = $(libdw) $(libebl) $(libelf)
  arls_LDADD = $(libelf)
--dwfl_bug_fd_leak_LDADD = $(libdw) $(libebl) $(libelf) -ldl
--dwfl_bug_report_LDADD = $(libdw) $(libebl) $(libelf) -ldl
--dwfl_bug_getmodules_LDADD = $(libdw) $(libebl) $(libelf) -ldl
--dwfl_addr_sect_LDADD = $(libdw) $(libebl) $(libelf) $(argp_LDADD) -ldl
-+dwfl_bug_fd_leak_LDADD = $(libdw) $(libebl) $(libelf)
-+dwfl_bug_report_LDADD = $(libdw) $(libebl) $(libelf)
+ dwfl_bug_fd_leak_LDADD = $(libdw) $(libebl) $(libelf)
+ dwfl_bug_report_LDADD = $(libdw) $(libebl) $(libelf)
+-dwfl_bug_getmodules_LDADD = $(libdw) $(libebl) $(libelf)
+-dwfl_addr_sect_LDADD = $(libdw) $(libebl) $(libelf) $(argp_LDADD)
 +dwfl_bug_getmodules_LDADD = $(libeu) $(libdw) $(libebl) $(libelf)
 +dwfl_addr_sect_LDADD = $(libeu) $(libdw) $(libebl) $(libelf) $(argp_LDADD)
  dwarf_getmacros_LDADD = $(libdw)
  dwarf_ranges_LDADD = $(libdw)
  dwarf_getstring_LDADD = $(libdw)
--addrcfi_LDADD = $(libdw) $(libebl) $(libelf) $(argp_LDADD) -ldl
-+addrcfi_LDADD = $(libdw) $(libebl) $(libelf) $(argp_LDADD)
- dwarfcfi_LDADD = $(libdw) $(libelf)
- test_flag_nobits_LDADD = $(libelf)
- rerequest_tag_LDADD = $(libdw)
-@@ -532,9 +532,9 @@
+@@ -612,10 +612,10 @@ typeiter2_LDADD = $(libdw) $(libelf)
  low_high_pc_LDADD = $(libdw) $(libelf) $(argp_LDADD)
  test_elf_cntl_gelf_getshdr_LDADD = $(libelf)
  dwflsyms_LDADD = $(libdw) $(libelf) $(argp_LDADD)
 -dwfllines_LDADD = $(libdw) $(libelf) $(argp_LDADD)
 -dwfl_report_elf_align_LDADD = $(libdw)
--varlocs_LDADD = $(libdw) $(libelf) $(argp_LDADD)
 +dwfllines_LDADD = $(libeu) $(libdw) $(libelf) $(argp_LDADD)
 +dwfl_report_elf_align_LDADD = $(libeu) $(libdw)
+ dwfl_report_segment_contiguous_LDADD = $(libdw) $(libebl) $(libelf)
+-varlocs_LDADD = $(libdw) $(libelf) $(argp_LDADD)
 +varlocs_LDADD = $(libeu) $(libdw) $(libelf) $(argp_LDADD)
  backtrace_LDADD = $(libdw) $(libelf) $(argp_LDADD)
  # backtrace-child-biarch also uses those *_CFLAGS and *_LDLAGS variables:
  backtrace_child_CFLAGS = $(fpie_CFLAGS)
-@@ -543,23 +543,23 @@
+@@ -624,23 +624,23 @@ backtrace_child_biarch_SOURCES = backtrace-child.c
  backtrace_data_LDADD = $(libdw) $(libelf)
  backtrace_dwarf_CFLAGS = -Wno-unused-parameter
  backtrace_dwarf_LDADD = $(libdw) $(libelf)

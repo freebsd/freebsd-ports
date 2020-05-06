@@ -1,6 +1,6 @@
---- libdw/dwarf_getsrclines.c.orig	2016-12-25 13:36:55 UTC
+--- libdw/dwarf_getsrclines.c.orig	2020-03-30 12:17:45 UTC
 +++ libdw/dwarf_getsrclines.c
-@@ -273,7 +273,7 @@ read_srclines (Dwarf *dbg,
+@@ -287,7 +287,7 @@ read_srclines (Dwarf *dbg,
    /* Remember array with the standard opcode length (-1 to account for
       the opcode with value zero not being mentioned).  */
    const uint8_t *standard_opcode_lengths = linep - 1;

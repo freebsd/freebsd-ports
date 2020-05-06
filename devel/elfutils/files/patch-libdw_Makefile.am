@@ -1,11 +1,11 @@
---- libdw/Makefile.am.orig	2017-08-02 12:06:25 UTC
+--- libdw/Makefile.am.orig	2020-03-30 12:17:45 UTC
 +++ libdw/Makefile.am
-@@ -105,7 +105,7 @@ am_libdw_pic_a_OBJECTS = $(libdw_a_SOURC
- libdw_so_LIBS = libdw_pic.a ../libdwelf/libdwelf_pic.a \
- 	  ../libdwfl/libdwfl_pic.a ../libebl/libebl.a
+@@ -109,7 +109,7 @@ libdw_so_LIBS = ../libebl/libebl_pic.a ../backends/lib
+ 		../libcpu/libcpu_pic.a libdw_pic.a ../libdwelf/libdwelf_pic.a \
+ 		../libdwfl/libdwfl_pic.a
  libdw_so_DEPS = ../lib/libeu.a ../libelf/libelf.so
--libdw_so_LDLIBS = $(libdw_so_DEPS) -ldl -lz $(argp_LDADD) $(zip_LIBS)
-+libdw_so_LDLIBS = $(libdw_so_DEPS) -lz $(argp_LDADD) $(zip_LIBS)
+-libdw_so_LDLIBS = $(libdw_so_DEPS) -ldl -lz $(argp_LDADD) $(zip_LIBS) -pthread
++libdw_so_LDLIBS = $(libdw_so_DEPS) -lz $(argp_LDADD) $(zip_LIBS) -pthread
  libdw_so_SOURCES =
  libdw.so$(EXEEXT): $(srcdir)/libdw.map $(libdw_so_LIBS) $(libdw_so_DEPS)
- # The rpath is necessary for libebl because its $ORIGIN use will
+ 	$(AM_V_CCLD)$(LINK) $(dso_LDFLAGS) -o $@ \
