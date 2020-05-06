@@ -1,6 +1,6 @@
---- configure.orig	2019-05-17 10:25:29 UTC
-+++ configure
-@@ -19350,8 +19350,10 @@ fi
+--- configure.orig	2020-03-02 07:50:20.000000000 -0500
++++ configure	2020-03-02 07:50:20.000000000 -0500
+@@ -21139,8 +21139,10 @@
              { $as_echo "$as_me:${as_lineno-$LINENO}: checking for openssl/crypto.h in $ssldir" >&5
  $as_echo_n "checking for openssl/crypto.h in $ssldir... " >&6; }
              if test -f "$ssldir/include/openssl/crypto.h"; then

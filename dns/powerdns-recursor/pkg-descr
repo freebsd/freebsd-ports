@@ -1,4 +1,23 @@
-PowerDNS recursor is a high performance, simple and secure recursing
-nameserver. It currently powers over two million internet connections.
+The PowerDNS Recursor is a high-end, high-performance resolving
+name server which powers the DNS resolution of at least a hundred
+million subscribers. Utilizing multiple processors and supporting
+the same powerful scripting ability of the Authoritative Server,
+the Recursor delivers top performance while retaining the flexibility
+modern DNS deployments require:
 
-WWW: https://www.powerdns.com
+ * IPv4, UDP/TCP
+ * IPv6, UDP/TCP, 100% compliant
+ * Remotely pollable statistics for real time graphing
+ * Full support for all relevant standards
+ * Advanced anti-spoofing measures
+ * Reconfiguration without downtime
+ * Plain BIND zone files for "resolved hosting"
+ * Internal Lua-based scripted answer generation
+ * Question interception, answer reconditioning, NXDOMAIN redirection
+   - Including 'block lists' and security measures
+ * API for direct control (rec_control)
+   - Local and remote access
+ * DNS Response Policy Zones (RPZ)
+ * DNS64
+
+WWW: https://www.PowerDNS.com/recursor.html
