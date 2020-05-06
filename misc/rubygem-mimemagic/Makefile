@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mimemagic
-PORTVERSION=	0.3.4
+PORTVERSION=	0.3.5
 CATEGORIES=	misc rubygems
 MASTER_SITES=	RG
 
