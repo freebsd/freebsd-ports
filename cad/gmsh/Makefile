@@ -3,6 +3,7 @@
 
 PORTNAME=	gmsh
 DISTVERSION=	4.5.4
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	LOCAL/wen \
 		http://gmsh.info/src/

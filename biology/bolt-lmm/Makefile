@@ -2,7 +2,7 @@
 
 PORTNAME=	bolt-lmm
 DISTVERSION=	2.3.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	biology
 MASTER_SITES=	https://data.broadinstitute.org/alkesgroup/BOLT-LMM/downloads/
 DISTNAME=	BOLT-LMM_v${PORTVERSION}

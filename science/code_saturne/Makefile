@@ -3,6 +3,7 @@
 
 PORTNAME=	code_saturne
 PORTVERSION=	6.1.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	science parallel
 
