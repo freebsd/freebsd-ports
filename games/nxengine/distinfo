@@ -1,0 +1,11 @@
+TIMESTAMP = 1588756473
+SHA256 (nxengine.png) = d6d8866939c10342bd3feebef311648586bed38f0390acbe16fd42f5240ff4e7
+SIZE (nxengine.png) = 536
+SHA256 (cavestoryen.zip) = aa87fa30bee9b4980640c7e104791354e0f1f6411ee0d45a70af70046aa0685f
+SIZE (cavestoryen.zip) = 1136575
+SHA256 (nxengine-nxengine-evo-v2.6.4_GH0.tar.gz) = 482bb96ae0a778e17856a041237a5c53b581c0ed0e3b7da8bff9e70d283939f6
+SIZE (nxengine-nxengine-evo-v2.6.4_GH0.tar.gz) = 3329255
+SHA256 (d38fcaf80ac5c4b1a2da51b5d1a605ed408a192f.patch) = 48567b5c53f1ae6006fb1ce17b7dbcaaeaee57d756585b43b699abd8b6f76ce1
+SIZE (d38fcaf80ac5c4b1a2da51b5d1a605ed408a192f.patch) = 730
+SHA256 (f6bbeb2555e7c10dfdc04be57f20fedfc9f401af.patch) = 658c03445dd5141b60fd6b37ff4642ff8f342381474b9260dae872f8d152f851
+SIZE (f6bbeb2555e7c10dfdc04be57f20fedfc9f401af.patch) = 4061
