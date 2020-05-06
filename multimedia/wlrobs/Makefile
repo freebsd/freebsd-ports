@@ -22,6 +22,9 @@ USE_GL=		egl
 DATADIR=	${PREFIX}/lib/obs-plugins
 PORTDATA=	${PORTNAME}.so
 
+# XXX Move to "pkg-config --cflags libobs"
+CFLAGS_powerpc64=	-DNO_WARN_X86_INTRINSICS -maltivec -mvsx
+
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_LIB} ${INSTALL_WRKSRC}/lib${PORTNAME}.so \
