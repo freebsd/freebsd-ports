@@ -14,11 +14,4 @@ PLIST=		${NONEXISTENT}
 
 SLAVEPORT=	web
 
-#post-extract:
-#	@${FIND} ${WRKSRC}/web \( -name '*.am' -o -name '*.in' \
-		-o -name '*.scss' \) -delete
-
-#do-install:
-#	( cd ${WRKSRC} && ${COPYTREE_SHARE} web ${STAGEDIR}${DATADIR} )
-
 .include "${MASTERDIR}/Makefile"

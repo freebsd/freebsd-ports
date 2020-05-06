@@ -1,29 +1,26 @@
---- CMakeLists.txt.orig	2018-07-09 22:28:43 UTC
+--- CMakeLists.txt.orig	2020-04-25 22:05:56 UTC
 +++ CMakeLists.txt
-@@ -511,9 +511,9 @@ endif()
- # endif()
+@@ -437,7 +437,11 @@ set(NEEDED_HEADERS
+     xlocale.h)
  
  if(ENABLE_NLS)
--    check_library_exists(intl libintl_gettext "" HAVE_LIBINTL)
--    if(HAVE_LIBINTL)
--        set(LIBINTL_LIBRARY intl)
-+    find_package(Intl)
-+    if(Intl_FOUND)
-+        set(LIBINTL_LIBRARY ${Intl_LIBRARIES})
-     endif()
+-    list(APPEND NEEDED_HEADERS libintl.h)
++	list(APPEND NEEDED_HEADERS libintl.h)
++	find_package(Intl)
++	if(Intl_FOUND)
++		set(LIBINTL_LIBRARY ${Intl_LIBRARIES})
++	endif()
  endif()
  
-@@ -536,13 +536,6 @@ foreach(P daemon cli utils gtk qt)
+ foreach(H ${NEEDED_HEADERS})
+@@ -552,10 +556,6 @@ foreach(P daemon cli utils gtk qt mac)
+         add_subdirectory(${P})
      endif()
  endforeach()
- 
--if(ENABLE_DAEMON OR ENABLE_GTK OR ENABLE_QT)
--    install(DIRECTORY web DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/${TR_NAME}
--        PATTERN *.am EXCLUDE
--        PATTERN *.in EXCLUDE
--        PATTERN *.scss EXCLUDE)
--endif()
 -
- if(ENABLE_GTK AND ENABLE_NLS)
-     find_package(Gettext REQUIRED)
-     add_subdirectory(po)
+-if(ENABLE_DAEMON OR ENABLE_GTK OR ENABLE_QT)
+-    tr_install_web(${CMAKE_INSTALL_DATAROOTDIR}/${TR_NAME})
+-endif()
+ 
+ if(INSTALL_DOC)
+     install(FILES AUTHORS COPYING NEWS README.md extras/rpc-spec.txt extras/send-email-when-torrent-done.sh DESTINATION ${CMAKE_INSTALL_DOCDIR})

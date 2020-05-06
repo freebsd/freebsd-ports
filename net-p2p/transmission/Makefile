@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	transmission
-DISTVERSION=	2.94
-PORTREVISION=	4
+DISTVERSION=	3.00
 CATEGORIES=	net-p2p
 
 MAINTAINER=	rigoletto@FreeBSD.org
@@ -13,15 +12,14 @@ LICENSE_COMB=	multi
 
 USES=		metaport
 
-OPTIONS_DEFINE=		CLI DAEMON GTK WEB QT5
+OPTIONS_DEFINE=		CLI DAEMON GTK WEB QT
+OPTIONS_DEFAULT=        CLI GTK WEB
 
 CLI_DESC=		Command line version
 DAEMON_DESC=		Daemon version
 GTK_DESC=		GTK version
-QT5_DESC=		Qt5 version
+QT_DESC=		Qt version
 WEB_DESC=		Web client
-
-OPTIONS_DEFAULT=	CLI DAEMON GTK WEB
 
 CLI_RUN_DEPENDS=	transmission-cli:net-p2p/transmission-cli
 DAEMON_RUN_DEPENDS=	transmission-daemon:net-p2p/transmission-daemon
