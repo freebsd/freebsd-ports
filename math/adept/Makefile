@@ -2,7 +2,7 @@
 
 PORTNAME=	adept
 DISTVERSION=	2.0.5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	math
 MASTER_SITES=	http://www.met.reading.ac.uk/clouds/adept/
 

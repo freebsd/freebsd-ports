@@ -3,6 +3,7 @@
 
 PORTNAME=	fflas-ffpack
 PORTVERSION=	2.4.3
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	ports@FreeBSD.org

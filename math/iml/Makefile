@@ -3,6 +3,7 @@
 
 PORTNAME=	iml
 PORTVERSION=	1.0.5
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www.cs.uwaterloo.ca/~astorjoh/
 

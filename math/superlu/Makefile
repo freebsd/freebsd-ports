@@ -3,7 +3,7 @@
 
 PORTNAME=	superlu
 PORTVERSION=	5.2.1
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	math
 MASTER_SITES=	http://crd-legacy.lbl.gov/~xiaoye/SuperLU/ \
 		http://crd-legacy.lbl.gov/~xiaoye/:doc
