@@ -82,6 +82,7 @@ include/yarpl/Observable.h
 include/yarpl/Refcounted.h
 include/yarpl/Single.h
 include/yarpl/examples/FlowableExamples.h
+include/yarpl/flowable/AsyncGeneratorShim.h
 include/yarpl/flowable/CancelingSubscriber.h
 include/yarpl/flowable/DeferFlowable.h
 include/yarpl/flowable/EmitterFlowable.h
@@ -97,6 +98,7 @@ include/yarpl/flowable/PublishProcessor.h
 include/yarpl/flowable/Subscriber.h
 include/yarpl/flowable/Subscription.h
 include/yarpl/flowable/TestSubscriber.h
+include/yarpl/flowable/ThriftStreamShim.h
 include/yarpl/observable/DeferObservable.h
 include/yarpl/observable/Observable.h
 include/yarpl/observable/ObservableConcatOperators.h
