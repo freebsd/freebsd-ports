@@ -4,4 +4,4 @@ converts them to an ACL for use in BIND configuration files.
 It is part of dnstools, a set of utilities for DNS management and related
 tasks.
 
-WWW: http://www.gnu.org.ua/software/dnstools/rpsl2acl.html
+WWW: http://man.gnu.org.ua/manpage/?1+rpsl2acl
