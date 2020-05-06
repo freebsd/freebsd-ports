@@ -27,7 +27,8 @@ NOT_FOR_ARCHS=		i386
 NOT_FOR_ARCHS_REASON_i386=Uses 64 bit atomics that clang cannot generate on i386
 
 BUILD_DEPENDS=	checkmk:devel/check \
-		${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
+		${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs \
+		objdump:devel/binutils
 LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs
 
 USES=		compiler:c++11-lang python:build scons ssl
