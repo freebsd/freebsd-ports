@@ -64,6 +64,7 @@ lib/seed7/lib/comp/gkb_act.s7i
 lib/seed7/lib/comp/hsh_act.s7i
 lib/seed7/lib/comp/inline.s7i
 lib/seed7/lib/comp/int_act.s7i
+lib/seed7/lib/comp/intrange.s7i
 lib/seed7/lib/comp/itf_act.s7i
 lib/seed7/lib/comp/kbd_act.s7i
 lib/seed7/lib/comp/library.s7i
@@ -111,6 +112,7 @@ lib/seed7/lib/filebits.s7i
 lib/seed7/lib/filesys.s7i
 lib/seed7/lib/float.s7i
 lib/seed7/lib/font.s7i
+lib/seed7/lib/font8x8.s7i
 lib/seed7/lib/forloop.s7i
 lib/seed7/lib/ftp.s7i
 lib/seed7/lib/ftpserv.s7i
@@ -143,6 +145,7 @@ lib/seed7/lib/line.s7i
 lib/seed7/lib/listener.s7i
 lib/seed7/lib/logfile.s7i
 lib/seed7/lib/lower.s7i
+lib/seed7/lib/lzma.s7i
 lib/seed7/lib/lzw.s7i
 lib/seed7/lib/mahjng32.s7i
 lib/seed7/lib/make.s7i
@@ -221,6 +224,7 @@ lib/seed7/lib/wrinum.s7i
 lib/seed7/lib/x509cert.s7i
 lib/seed7/lib/xml_ent.s7i
 lib/seed7/lib/xmldom.s7i
+lib/seed7/lib/xz.s7i
 lib/seed7/lib/zip.s7i
 man/man1/s7.1.gz
 man/man1/s7c.1.gz
