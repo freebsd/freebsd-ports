@@ -103,7 +103,6 @@
 %%DATADIR%%/America/Fort_Nelson
 %%DATADIR%%/America/Fortaleza
 %%DATADIR%%/America/Glace_Bay
-%%DATADIR%%/America/Godthab
 %%DATADIR%%/America/Goose_Bay
 %%DATADIR%%/America/Grand_Turk
 %%DATADIR%%/America/Grenada
@@ -157,6 +156,7 @@
 %%DATADIR%%/America/North_Dakota/Beulah
 %%DATADIR%%/America/North_Dakota/Center
 %%DATADIR%%/America/North_Dakota/New_Salem
+%%DATADIR%%/America/Nuuk
 %%DATADIR%%/America/Ojinaga
 %%DATADIR%%/America/Panama
 %%DATADIR%%/America/Pangnirtung
@@ -486,6 +486,7 @@
 %%BACKWARD%%%%DATADIR%%/America/Cordoba
 %%BACKWARD%%%%DATADIR%%/America/Ensenada
 %%BACKWARD%%%%DATADIR%%/America/Fort_Wayne
+%%BACKWARD%%%%DATADIR%%/America/Godthab
 %%BACKWARD%%%%DATADIR%%/America/Indianapolis
 %%BACKWARD%%%%DATADIR%%/America/Jujuy
 %%BACKWARD%%%%DATADIR%%/America/Knox_IN
