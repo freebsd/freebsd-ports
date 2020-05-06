@@ -1259,7 +1259,6 @@
     SUBDIR += libolecf
     SUBDIR += libopenbsd
     SUBDIR += libopencm3
-    SUBDIR += libopensync
     SUBDIR += libopkele
     SUBDIR += liborcus
     SUBDIR += libosinfo

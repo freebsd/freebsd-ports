@@ -15002,3 +15002,6 @@ x11-wm/nickleby||2020-05-05|Has expired: Broken for more than 6 months
 x11-wm/olvwm||2020-05-05|Has expired: 64-bit unsupported
 x11-wm/ratmenu||2020-05-05|Has expired: Broken for more than 6 months
 sysutils/livecd||2020-05-05|Has expired: Broken for more than 6 months
+deskutils/osynctool||2020-05-06|Abandonware, website disappeared
+devel/libopensync||2020-05-06|Abandonware, website disappeared
+deskutils/libopensync-plugin-vformat-devel||2020-05-06|Abandonware, website disappeared
