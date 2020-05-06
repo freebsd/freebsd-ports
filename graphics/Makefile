@@ -862,6 +862,7 @@
     SUBDIR += py-python-poppler-qt5
     SUBDIR += py-pyvips
     SUBDIR += py-pyx
+    SUBDIR += py-qrencode
     SUBDIR += py-qt5-svg
     SUBDIR += py-rawkit
     SUBDIR += py-sane
