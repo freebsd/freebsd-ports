@@ -4,6 +4,7 @@
 PORTNAME=	telegram-purple
 PORTVERSION=	1.4.3
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	jjuanino@gmail.com
@@ -39,5 +40,6 @@ GH_SUBDIR=	tgl:tgl
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/purple-2/telegram-purple.so
+	@${RM} -rf ${STAGEDIR}/etc
 
 .include <bsd.port.mk>

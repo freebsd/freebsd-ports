@@ -17,4 +17,3 @@ share/appdata/telegram-purple.metainfo.xml
 share/pixmaps/pidgin/protocols/16/telegram.png
 share/pixmaps/pidgin/protocols/22/telegram.png
 share/pixmaps/pidgin/protocols/48/telegram.png
-@dir /%%ETCDIR%%
