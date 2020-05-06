@@ -24,7 +24,7 @@ WEB_DESC=		Web client
 CLI_RUN_DEPENDS=	transmission-cli:net-p2p/transmission-cli
 DAEMON_RUN_DEPENDS=	transmission-daemon:net-p2p/transmission-daemon
 GTK_RUN_DEPENDS=	transmission-gtk:net-p2p/transmission-gtk
-QT5_RUN_DEPENDS=	transmission-qt:net-p2p/transmission-qt
+QT_RUN_DEPENDS=		transmission-qt:net-p2p/transmission-qt
 WEB_RUN_DEPENDS=	${DATADIR}/web/index.html:www/transmission-web
 
 .include <bsd.port.mk>
