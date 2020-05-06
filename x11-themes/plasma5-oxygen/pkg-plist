@@ -1,9 +1,9 @@
 bin/oxygen-demo5
 bin/oxygen-settings5
 lib/liboxygenstyle5.so.5
-lib/liboxygenstyle5.so.5.18.4
+lib/liboxygenstyle5.so.%%KDE_PLASMA_VERSION%%
 lib/liboxygenstyleconfig5.so.5
-lib/liboxygenstyleconfig5.so.5.18.4
+lib/liboxygenstyleconfig5.so.%%KDE_PLASMA_VERSION%%
 %%QT_PLUGINDIR%%/kstyle_oxygen_config.so
 %%QT_PLUGINDIR%%/org.kde.kdecoration2/oxygendecoration.so
 %%QT_PLUGINDIR%%/styles/oxygen.so

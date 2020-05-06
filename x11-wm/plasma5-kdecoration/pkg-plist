@@ -26,9 +26,9 @@ lib/cmake/KDecoration2/KDecoration2Targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KDecoration2/KDecoration2Targets.cmake
 lib/libkdecorations2.so
 lib/libkdecorations2.so.5
-lib/libkdecorations2.so.5.18.4
+lib/libkdecorations2.so.%%KDE_PLASMA_VERSION%%
 lib/libkdecorations2private.so
-lib/libkdecorations2private.so.5.18.4
+lib/libkdecorations2private.so.%%KDE_PLASMA_VERSION%%
 lib/libkdecorations2private.so.7
 share/locale/ca/LC_MESSAGES/kdecoration.mo
 share/locale/ca@valencia/LC_MESSAGES/kdecoration.mo

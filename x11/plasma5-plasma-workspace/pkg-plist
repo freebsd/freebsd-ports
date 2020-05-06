@@ -77,7 +77,7 @@ lib/kconf_update_bin/krunnerglobalshortcuts
 lib/kconf_update_bin/krunnerplugins
 lib/libcolorcorrect.so
 lib/libcolorcorrect.so.5
-lib/libcolorcorrect.so.5.18.4
+lib/libcolorcorrect.so.%%KDE_PLASMA_VERSION%%
 lib/libexec/baloorunner
 lib/libexec/ksmserver-logout-greeter
 lib/libexec/ksyncdbusenv
@@ -89,12 +89,12 @@ lib/libkdeinit5_klipper.so
 lib/libkdeinit5_ksmserver.so
 lib/libkworkspace5.so
 lib/libkworkspace5.so.5
-lib/libkworkspace5.so.5.18.4
+lib/libkworkspace5.so.%%KDE_PLASMA_VERSION%%
 lib/libnotificationmanager.so
 lib/libnotificationmanager.so.1
-lib/libnotificationmanager.so.5.18.4
+lib/libnotificationmanager.so.%%KDE_PLASMA_VERSION%%
 lib/libtaskmanager.so
-lib/libtaskmanager.so.5.18.4
+lib/libtaskmanager.so.%%KDE_PLASMA_VERSION%%
 lib/libtaskmanager.so.6
 lib/libweather_ion.so
 lib/libweather_ion.so.7

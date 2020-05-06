@@ -3,7 +3,7 @@ lib/cmake/Breeze/BreezeConfig.cmake
 lib/cmake/Breeze/BreezeConfigVersion.cmake
 lib/kconf_update_bin/kde4breeze
 lib/libbreezecommon5.so.5
-lib/libbreezecommon5.so.5.18.4
+lib/libbreezecommon5.so.%%KDE_PLASMA_VERSION%%
 %%QT_PLUGINDIR%%/kstyle_breeze_config.so
 %%QT_PLUGINDIR%%/org.kde.kdecoration2/breezedecoration.so
 %%QT_PLUGINDIR%%/styles/breeze.so

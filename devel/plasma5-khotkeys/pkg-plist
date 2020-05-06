@@ -1,6 +1,6 @@
 lib/cmake/KHotKeysDBusInterface/KHotKeysDBusInterfaceConfig.cmake
 lib/libkhotkeysprivate.so.5
-lib/libkhotkeysprivate.so.5.18.4
+lib/libkhotkeysprivate.so.%%KDE_PLASMA_VERSION%%
 %%QT_PLUGINDIR%%/kcm_hotkeys.so
 %%QT_PLUGINDIR%%/kf5/kded/khotkeys.so
 share/dbus-1/interfaces/org.kde.khotkeys.xml

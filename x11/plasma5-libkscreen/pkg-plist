@@ -29,7 +29,7 @@ lib/cmake/KF5Screen/KF5ScreenConfigVersion.cmake
 lib/cmake/KF5Screen/KF5ScreenTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KF5Screen/KF5ScreenTargets.cmake
 lib/libKF5Screen.so
-lib/libKF5Screen.so.5.18.4
+lib/libKF5Screen.so.%%KDE_PLASMA_VERSION%%
 lib/libKF5Screen.so.7
 lib/libexec/kf5/kscreen_backend_launcher
 %%QT_PLUGINDIR%%/kf5/kscreen/KSC_Fake.so

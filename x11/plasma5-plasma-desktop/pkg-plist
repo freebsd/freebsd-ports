@@ -22,10 +22,10 @@ lib/libexec/plasma-changeicons
 lib/libkdeinit5_kaccess.so
 lib/libkfontinst.so
 lib/libkfontinst.so.5
-lib/libkfontinst.so.5.18.4
+lib/libkfontinst.so.%%KDE_PLASMA_VERSION%%
 lib/libkfontinstui.so
 lib/libkfontinstui.so.5
-lib/libkfontinstui.so.5.18.4
+lib/libkfontinstui.so.%%KDE_PLASMA_VERSION%%
 %%QT_PLUGINDIR%%/attica_kde.so
 %%QT_PLUGINDIR%%/fontthumbnail.so
 %%QT_PLUGINDIR%%/kcm_access.so

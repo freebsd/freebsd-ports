@@ -9,7 +9,7 @@ lib/cmake/KScreenLocker/KScreenLockerTargets.cmake
 lib/cmake/ScreenSaverDBusInterface/ScreenSaverDBusInterfaceConfig.cmake
 lib/libKScreenLocker.so
 lib/libKScreenLocker.so.5
-lib/libKScreenLocker.so.5.18.4
+lib/libKScreenLocker.so.%%KDE_PLASMA_VERSION%%
 @(,,4555) lib/libexec/kcheckpass
 lib/libexec/kscreenlocker_greet
 %%QT_PLUGINDIR%%/screenlocker_kcm.so

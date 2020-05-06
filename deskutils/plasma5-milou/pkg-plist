@@ -1,5 +1,5 @@
 lib/libmilou.so.5
-lib/libmilou.so.5.18.4
+lib/libmilou.so.%%KDE_PLASMA_VERSION%%
 %%QT_PLUGINDIR%%/miloutextplugin.so
 %%QT_QMLDIR%%/org/kde/milou/ResultDelegate.qml
 %%QT_QMLDIR%%/org/kde/milou/ResultsListView.qml
