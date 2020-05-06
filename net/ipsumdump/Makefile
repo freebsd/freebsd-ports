@@ -6,7 +6,7 @@ PORTVERSION=	1.86
 CATEGORIES=	net
 MASTER_SITES=	http://www.cs.ucla.edu/~kohler/ipsumdump/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	leres@FreeBSD.org
 COMMENT=	Produce ASCII summary of network traffic or tcpdump(1) file
 
 LICENSE=	CLICK
