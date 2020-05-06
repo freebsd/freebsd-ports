@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=   GH
 
-MAINTAINER=	dan@langille.org
+MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Client for sending package information to SamDrucker
 
 LICENSE=	BSD2CLAUSE
