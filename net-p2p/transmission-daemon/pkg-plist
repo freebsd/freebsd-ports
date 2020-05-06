@@ -10,7 +10,7 @@ man/man1/transmission-remote.1.gz
 man/man1/transmission-show.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/NEWS.md
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/rpc-spec.txt
 %%PORTDOCS%%%%DOCSDIR%%/send-email-when-torrent-done.sh

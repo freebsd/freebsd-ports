@@ -3,7 +3,7 @@ man/man1/transmission-qt.1.gz
 share/applications/transmission-qt.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/NEWS.md
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/rpc-spec.txt
 %%PORTDOCS%%%%DOCSDIR%%/send-email-when-torrent-done.sh
@@ -19,6 +19,7 @@ share/applications/transmission-qt.desktop
 %%DATADIR%%/translations/transmission_hu.qm
 %%DATADIR%%/translations/transmission_id.qm
 %%DATADIR%%/translations/transmission_it_IT.qm
+%%DATADIR%%/translations/transmission_ja.qm
 %%DATADIR%%/translations/transmission_ka.qm
 %%DATADIR%%/translations/transmission_kk.qm
 %%DATADIR%%/translations/transmission_ko.qm

@@ -37,6 +37,7 @@ CPE_VENDOR=	transmissionbt
 .endif
 
 USE_GITHUB=	yes
+GH_TAGNAME=	3ef10de6d97d8cf181fdef81cc435d6a84c86000
 
 .if ${SLAVEPORT} != web
 SLAVES=		cli daemon gtk qt
