@@ -19,7 +19,8 @@ LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs \
 		libsz.so:science/szip \
 		libxc.so:science/libxc
 
-USES=		cmake eigen:3 perl5 pkgconfig python:run shebangfix
+USES=		cmake compiler:c++14-lang eigen:3 perl5 pkgconfig python:run \
+		shebangfix
 SHEBANG_GLOB=	*.sh *.pl *.py
 SHEBANG_FILES=	csg/scripts/csg_call.in csg/scripts/csg_inverse.in tools/scripts/votca_compare.in \
 		xtp/scripts/xtp_update_mapfile.in xtp/scripts/xtp_basisset.in xtp/scripts/xtp_makeauxbasis.in xtp/share/benchmark/xtp_benchmark.in
