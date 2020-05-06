@@ -22,7 +22,7 @@ LIB_DEPENDS=	libderiv.so:science/libint \
 		libxc.so:science/libxc
 RUN_DEPENDS=	${LOCALBASE}/share/erkale/basis/6-21G.gbs:science/erkale-pseudopotentials
 
-FLAVORS=	serial parallel
+FLAVORS=	parallel serial
 FLAVOR?=	${FLAVORS:[1]}
 serial_PKGNAMESUFFIX=	-serial
 
@@ -59,7 +59,6 @@ NETLIB_BROKEN=		choosing NETLIB causes a conflict: openblas-0.3.7_3,1 conflicts 
 
 OPENBLAS_USES=		blaslapack:openblas
 OPENBLAS_CMAKE_ON=	-DLAPACK_LIBRARIES:STRING=-lopenblas -DBLAS_LIBRARIES:STRING=-lopenblas
-OPENBLAS_LIB_DEPENDS=	libopenblas.so:math/openblas
 
 .if ${FLAVOR} == parallel
 post-install:
