@@ -1,13 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	poshinit
-PORTVERSION=	1.0
+PORTVERSION=	2.0
 CATEGORIES=	shells
 
 MAINTAINER=	bourne.identity@hotmail.com
 COMMENT=	Portable shell setup for Bash/Zsh across FreeBSD/Linux/Cygwin
 
-LICENSE=	GPLv2+
+LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
