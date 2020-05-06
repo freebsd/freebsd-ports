@@ -2,8 +2,7 @@
 
 PORTNAME=	tokei
 DISTVERSIONPREFIX=	v
-DISTVERSION=	11.1.0
-PORTREVISION=	1
+DISTVERSION=	11.1.1
 CATEGORIES=	devel
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -18,7 +17,7 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	XAMPPRocky
 
-CARGO_CRATES=	ahash-0.3.2 \
+CARGO_CRATES=	ahash-0.3.4 \
 		aho-corasick-0.7.10 \
 		ansi_term-0.11.0 \
 		arrayref-0.3.6 \
@@ -34,7 +33,7 @@ CARGO_CRATES=	ahash-0.3.2 \
 		byte-tools-0.3.1 \
 		bytecount-0.6.0 \
 		byteorder-1.3.4 \
-		cc-1.0.50 \
+		cc-1.0.52 \
 		cfg-if-0.1.10 \
 		clap-2.33.0 \
 		cloudabi-0.0.3 \
@@ -46,7 +45,7 @@ CARGO_CRATES=	ahash-0.3.2 \
 		crossbeam-epoch-0.8.2 \
 		crossbeam-queue-0.2.1 \
 		crossbeam-utils-0.7.2 \
-		dashmap-3.11.0 \
+		dashmap-3.11.1 \
 		digest-0.8.1 \
 		dirs-2.0.2 \
 		dirs-sys-0.3.4 \
@@ -59,23 +58,22 @@ CARGO_CRATES=	ahash-0.3.2 \
 		fnv-1.0.6 \
 		generic-array-0.12.3 \
 		getrandom-0.1.14 \
-		git2-0.13.2 \
+		git2-0.13.5 \
 		globset-0.4.5 \
 		grep-matcher-0.1.4 \
 		grep-searcher-0.1.7 \
 		half-1.5.0 \
 		handlebars-3.0.1 \
-		hermit-abi-0.1.10 \
+		hermit-abi-0.1.12 \
 		hex-0.4.2 \
 		humantime-1.3.0 \
 		idna-0.2.0 \
 		ignore-0.4.14 \
 		itoa-0.4.5 \
 		jobserver-0.1.21 \
-		kernel32-sys-0.2.2 \
 		lazy_static-1.4.0 \
-		libc-0.2.68 \
-		libgit2-sys-0.12.3+1.0.0 \
+		libc-0.2.69 \
+		libgit2-sys-0.12.5+1.0.0 \
 		libz-sys-1.0.25 \
 		linked-hash-map-0.5.2 \
 		lock_api-0.3.4 \
@@ -86,10 +84,10 @@ CARGO_CRATES=	ahash-0.3.2 \
 		memchr-2.3.3 \
 		memmap-0.7.0 \
 		memoffset-0.5.4 \
-		num_cpus-1.12.0 \
+		num_cpus-1.13.0 \
 		opaque-debug-0.2.3 \
 		parking_lot-0.10.2 \
-		parking_lot_core-0.7.1 \
+		parking_lot_core-0.7.2 \
 		percent-encoding-2.1.0 \
 		pest-2.1.3 \
 		pest_derive-2.1.0 \
@@ -98,9 +96,9 @@ CARGO_CRATES=	ahash-0.3.2 \
 		pkg-config-0.3.17 \
 		ppv-lite86-0.2.6 \
 		proc-macro-hack-0.5.15 \
-		proc-macro2-1.0.10 \
+		proc-macro2-1.0.12 \
 		quick-error-1.2.3 \
-		quote-1.0.3 \
+		quote-1.0.4 \
 		rand-0.7.3 \
 		rand_chacha-0.2.2 \
 		rand_core-0.5.1 \
@@ -109,29 +107,29 @@ CARGO_CRATES=	ahash-0.3.2 \
 		rayon-core-1.7.0 \
 		redox_syscall-0.1.56 \
 		redox_users-0.3.4 \
-		regex-1.3.6 \
+		regex-1.3.7 \
 		regex-syntax-0.6.17 \
 		remove_dir_all-0.5.2 \
 		rust-argon2-0.7.0 \
-		ryu-1.0.3 \
+		ryu-1.0.4 \
 		same-file-1.0.6 \
 		scopeguard-1.1.0 \
 		serde-1.0.106 \
 		serde_cbor-0.11.1 \
 		serde_derive-1.0.106 \
-		serde_json-1.0.51 \
+		serde_json-1.0.52 \
 		serde_yaml-0.8.11 \
 		sha-1-0.8.2 \
-		smallvec-1.3.0 \
+		smallvec-1.4.0 \
 		strsim-0.8.0 \
-		syn-1.0.17 \
+		syn-1.0.18 \
 		tempfile-3.1.0 \
-		term_size-0.3.1 \
+		term_size-0.3.2 \
 		termcolor-1.1.0 \
 		textwrap-0.11.0 \
 		thread_local-1.0.1 \
 		toml-0.5.6 \
-		typenum-1.11.2 \
+		typenum-1.12.0 \
 		ucd-trie-0.1.3 \
 		unicode-bidi-0.3.4 \
 		unicode-normalization-0.1.12 \
@@ -142,11 +140,9 @@ CARGO_CRATES=	ahash-0.3.2 \
 		vec_map-0.8.1 \
 		walkdir-2.3.1 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
-		winapi-0.2.8 \
 		winapi-0.3.8 \
-		winapi-build-0.1.1 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
-		winapi-util-0.1.4 \
+		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		yaml-rust-0.4.3
 # enable all output serialization formats
