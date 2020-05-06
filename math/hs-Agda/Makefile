@@ -3,10 +3,13 @@
 
 PORTNAME=	Agda
 PORTVERSION=	2.6.1
+PORTREVISION=	1
 CATEGORIES=	math haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Dependently typed functional programming language and proof assistant
+
+BUILD_DEPENDS=	emacs:editors/emacs
 
 USES=		cabal
 
@@ -58,10 +61,15 @@ USE_CABAL=	STMonadTrans-0.4.4 \
 
 EXECUTABLES=		agda-mode agda
 agda_DATADIR_VARS=	Agda
+agda-mode_DATADIR_VARS=	Agda
+
+post-build:
+	${SETENV} Agda_datadir=${WRKSRC}/src/data $$(find ${WRKSRC}/dist-newstyle -name agda-mode -type f -perm +111) compile
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/lib/prim/Agda
 	find ${WRKSRC}/src/data/lib/prim/Agda -name '*.agda' -exec ${SETENV} ${PORTNAME}_datadir=${WRKSRC}/src/data ${STAGEDIR}${PREFIX}/libexec/cabal/agda {} \;
 	cd ${WRKSRC}/src/data && ${COPYTREE_SHARE} lib ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC}/src/data && ${COPYTREE_SHARE} emacs-mode ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
