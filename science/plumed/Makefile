@@ -15,7 +15,7 @@ BUILD_DEPENDS=	bash:shells/bash \
 		xxd:editors/vim-console
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		autoreconf gmake pkgconfig shebangfix
+USES=		autoreconf compiler:c++11-lang gmake pkgconfig shebangfix
 SHEBANG_GLOB=	*.sh
 SHEBANG_FILES=	src/maketools/makecmd
 GNU_CONFIGURE=	yes
