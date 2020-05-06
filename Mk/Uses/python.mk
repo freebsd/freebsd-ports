@@ -463,6 +463,11 @@ PYTHON_ABIVER=		m
 .endif
 .endif
 
+.if ${PYTHON_MAJOR_VER} == 2
+DEPRECATED?=	Uses Python 2.7 which is EOLed upstream
+EXPIRATION_DATE?=	2020-12-31
+.endif
+
 .if !defined(PYTHONBASE)
 PYTHONBASE!=	(${PYTHON_CMD} -c 'import sys; print(sys.prefix)' \
 			2> /dev/null || ${ECHO_CMD} ${LOCALBASE}) | ${TAIL} -1
