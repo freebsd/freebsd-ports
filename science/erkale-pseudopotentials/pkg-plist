@@ -229,6 +229,13 @@
 %%DATADIR%%/basis/def2-TZVPD.gbs
 %%DATADIR%%/basis/def2-TZVPP.gbs
 %%DATADIR%%/basis/def2-TZVPPD.gbs
+%%DATADIR%%/basis/def2-universal-jfit.gbs
+%%DATADIR%%/basis/def2-universal-jkfit.gbs
+%%DATADIR%%/basis/fano-5z.gbs
+%%DATADIR%%/basis/fano-6z.gbs
+%%DATADIR%%/basis/fano-dz.gbs
+%%DATADIR%%/basis/fano-qz.gbs
+%%DATADIR%%/basis/fano-tz.gbs
 %%DATADIR%%/basis/maug-cc-pV(D+d)Z.gbs
 %%DATADIR%%/basis/maug-cc-pV(Q+d)Z.gbs
 %%DATADIR%%/basis/maug-cc-pV(T+d)Z.gbs
@@ -260,6 +267,12 @@
 %%DATADIR%%/basis/pcseg-2.gbs
 %%DATADIR%%/basis/pcseg-3.gbs
 %%DATADIR%%/basis/pcseg-4.gbs
+%%DATADIR%%/basis/sapporo-dzp-2012-diffuse.gbs
+%%DATADIR%%/basis/sapporo-dzp-2012.gbs
+%%DATADIR%%/basis/sapporo-qzp-2012-diffuse.gbs
+%%DATADIR%%/basis/sapporo-qzp-2012.gbs
+%%DATADIR%%/basis/sapporo-tzp-2012-diffuse.gbs
+%%DATADIR%%/basis/sapporo-tzp-2012.gbs
 %%DATADIR%%/basis/t-aug-cc-pCV5Z.gbs
 %%DATADIR%%/basis/t-aug-cc-pCVDZ.gbs
 %%DATADIR%%/basis/t-aug-cc-pCVQZ.gbs
