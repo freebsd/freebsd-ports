@@ -20,7 +20,6 @@
     SUBDIR += compiz
     SUBDIR += compiz-plugins-extra
     SUBDIR += compiz-plugins-main
-    SUBDIR += compiz-plugins-unsupported
     SUBDIR += compizconfig-backend-gconf
     SUBDIR += compizconfig-python
     SUBDIR += compton
