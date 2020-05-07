@@ -2,8 +2,7 @@
 
 PORTNAME=	latte
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.1
-PORTREVISION=	8
+DISTVERSION=	1.2.2
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -38,8 +37,6 @@ MPI_LIB_DEPENDS=	libmpi.so:net/openmpi
 MPI_LDFLAGS=		${LOCALBASE}/mpi/openmpi/lib/libmpi_mpifh.so
 MPI_PLIST_FILES=	bin/LATTE_MPI_DOUBLE
 MPI_PLIST_FILES_OFF=	bin/LATTE_DOUBLE
-
-PLIST_FILES=	lib/liblatte.so
 
 CONFLICTS_INSTALL=	latte-integrale
 
