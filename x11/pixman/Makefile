@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pixman
-PORTVERSION=	0.38.4
+PORTVERSION=	0.40.0
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 PORTSCOUT=	limitw:1,even
 
-USES=		cpe perl5 xorg-cat:lib
+USES=		cpe perl5 tar:xz xorg-cat:lib
 USE_PERL5=	build
 CONFIGURE_ARGS=	--disable-gtk
 INSTALL_TARGET=	install-strip

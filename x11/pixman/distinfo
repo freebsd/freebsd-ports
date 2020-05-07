@@ -1,3 +1,3 @@
-TIMESTAMP = 1561381760
-SHA256 (xorg/lib/pixman-0.38.4.tar.bz2) = 84abb7fa2541af24d9c3b34bf75d6ac60cc94ac4410061bbb295b66a29221550
-SIZE (xorg/lib/pixman-0.38.4.tar.bz2) = 756898
+TIMESTAMP = 1588618784
+SHA256 (xorg/lib/pixman-0.40.0.tar.xz) = da8ed9fe2d1c5ef8ce5d1207992db959226bd4e37e3f88acf908fd9a71e2704e
+SIZE (xorg/lib/pixman-0.40.0.tar.xz) = 634752
