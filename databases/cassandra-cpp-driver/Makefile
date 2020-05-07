@@ -31,4 +31,7 @@ PLIST_FILES=	include/cassandra.h \
 		libdata/pkgconfig/cassandra.pc \
 		libdata/pkgconfig/cassandra_static.pc
 
+post-patch:
+	${REINPLACE_CMD} -e 's|-Werror||' ${WRKSRC}/src/CMakeLists.txt
+
 .include <bsd.port.mk>
