@@ -3,7 +3,7 @@
 
 PORTNAME=		openvpn
 DISTVERSION=		2.4.9
-PORTREVISION?=		0
+PORTREVISION?=		1
 CATEGORIES=		security net net-vpn
 MASTER_SITES=		https://swupdate.openvpn.org/community/releases/ \
 			https://build.openvpn.net/downloads/releases/ \

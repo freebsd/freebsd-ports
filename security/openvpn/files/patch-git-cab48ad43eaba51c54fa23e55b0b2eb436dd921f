@@ -1,0 +1,40 @@
+From cab48ad43eaba51c54fa23e55b0b2eb436dd921f Mon Sep 17 00:00:00 2001
+From: Selva Nair <selva.nair@gmail.com>
+Date: Tue, 7 Aug 2018 22:44:31 -0400
+Subject: [PATCH] Accept empty password and/or response in auth-pam plugin
+
+In the auth-pam plugin correctly parse the static challenge string
+even when password or challenge response is empty.
+
+Whether an empty user input is an error is determined by the PAM
+conversation function depending on whether the PAM module queries
+for it or not.
+
+Signed-off-by: Selva Nair <selva.nair@gmail.com>
+Acked-by: Gert Doering <gert@greenie.muc.de>
+Message-Id: <1533696271-21799-2-git-send-email-selva.nair@gmail.com>
+URL: https://www.mail-archive.com/openvpn-devel@lists.sourceforge.net/msg17382.html
+Signed-off-by: Gert Doering <gert@greenie.muc.de>
+(cherry picked from commit 7a8109023f4c345fe12f23421c5fa7e88e1ea85b)
+---
+ src/plugins/auth-pam/auth-pam.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/src/plugins/auth-pam/auth-pam.c b/src/plugins/auth-pam/auth-pam.c
+index 1324307f1..88b53204b 100644
+--- a/src/plugins/auth-pam/auth-pam.c
++++ ./src/plugins/auth-pam/auth-pam.c
+@@ -310,11 +310,11 @@ split_scrv1_password(struct user_pass *up)
+     *resp++ = '\0';
+ 
+     int n = plugin_base64_decode(pass, up->password, sizeof(up->password)-1);
+-    if (n > 0)
++    if (n >= 0)
+     {
+         up->password[n] = '\0';
+         n = plugin_base64_decode(resp, up->response, sizeof(up->response)-1);
+-        if (n > 0)
++        if (n >= 0)
+         {
+             up->response[n] = '\0';
+             if (DEBUG(up->verb))

@@ -1,0 +1,214 @@
+From b89e48b015e581a4a0f5c306e2ab20da34c862ea Mon Sep 17 00:00:00 2001
+From: Selva Nair <selva.nair@gmail.com>
+Date: Tue, 24 Jul 2018 22:34:53 -0400
+Subject: [PATCH] Parse static challenge response in auth-pam plugin
+
+If static challenge is in use, the password passed to the plugin by openvpn
+is of the form "SCRV1:base64-pass:base64-response". Parse this string to
+separate it into password and response and use them to respond to queries
+in the pam conversation function.
+
+On the plugin parameters line the substitution keyword for the static
+challenge response is "OTP". For example, for pam config named "test" that
+prompts for "user", "password" and "pin", use
+
+plugin openvpn-auth-pam.so "test user USERNAME password PASSWORD pin OTP"
+
+Signed-off-by: Selva Nair <selva.nair@gmail.com>
+
+Acked-by: Gert Doering <gert@greenie.muc.de>
+Message-Id: <1532486093-24793-1-git-send-email-selva.nair@gmail.com>
+URL: https://www.mail-archive.com/openvpn-devel@lists.sourceforge.net/msg17307.html
+Signed-off-by: Gert Doering <gert@greenie.muc.de>
+(cherry picked from commit 7369d01bf360bcfa02f26c05b86dde5496d120f6)
+---
+ src/plugins/auth-pam/README.auth-pam | 15 ++++--
+ src/plugins/auth-pam/auth-pam.c      | 75 +++++++++++++++++++++++++++-
+ 2 files changed, 84 insertions(+), 6 deletions(-)
+
+diff --git a/src/plugins/auth-pam/README.auth-pam b/src/plugins/auth-pam/README.auth-pam
+index e12369021..908156542 100644
+--- a/src/plugins/auth-pam/README.auth-pam
++++ ./src/plugins/auth-pam/README.auth-pam
+@@ -36,19 +36,20 @@ pairs to answer PAM module queries.
+ 
+ For example:
+ 
+-  plugin openvpn-auth-pam.so "login login USERNAME password PASSWORD"
++  plugin openvpn-auth-pam.so "login login USERNAME password PASSWORD pin OTP"
+ 
+ tells auth-pam to (a) use the "login" PAM module, (b) answer a
+-"login" query with the username given by the OpenVPN client, and
+-(c) answer a "password" query with the password given by the
+-OpenVPN client.  This provides flexibility in dealing with the different
++"login" query with the username given by the OpenVPN client,
++(c) answer a "password" query with the password, and (d) answer a
++"pin" query with the OTP given by the OpenVPN client.
++This provides flexibility in dealing with different
+ types of query strings which different PAM modules might generate.
+ For example, suppose you were using a PAM module called
+ "test" which queried for "name" rather than "login":
+ 
+   plugin openvpn-auth-pam.so "test name USERNAME password PASSWORD"
+ 
+-While "USERNAME" "COMMONNAME" and "PASSWORD" are special strings which substitute
++While "USERNAME" "COMMONNAME" "PASSWORD" and "OTP" are special strings which substitute
+ to client-supplied values, it is also possible to name literal values
+ to use as PAM module query responses.  For example, suppose that the
+ login module queried for a third parameter, "domain" which
+@@ -61,6 +62,10 @@ the operation of this plugin:
+ 
+   client-cert-not-required
+   username-as-common-name
++  static-challenge
++
++Use of --static challenege is required to pass a pin (represented by "OTP" in
++parameter substituion) or a second password.
+ 
+ Run OpenVPN with --verb 7 or higher to get debugging output from
+ this plugin, including the list of queries presented by the
+diff --git a/src/plugins/auth-pam/auth-pam.c b/src/plugins/auth-pam/auth-pam.c
+index 5ba4dc4cb..1324307f1 100644
+--- a/src/plugins/auth-pam/auth-pam.c
++++ ./src/plugins/auth-pam/auth-pam.c
+@@ -6,6 +6,7 @@
+  *             packet compression.
+  *
+  *  Copyright (C) 2002-2018 OpenVPN Inc <sales@openvpn.net>
++ *  Copyright (C) 2016-2018 Selva Nair <selva.nair@gmail.com>
+  *
+  *  This program is free software; you can redistribute it and/or modify
+  *  it under the terms of the GNU General Public License version 2
+@@ -64,6 +65,7 @@
+ 
+ /* Pointers to functions exported from openvpn */
+ static plugin_secure_memzero_t plugin_secure_memzero = NULL;
++static plugin_base64_decode_t plugin_base64_decode = NULL;
+ 
+ /*
+  * Plugin state, used by foreground
+@@ -87,6 +89,7 @@ struct auth_pam_context
+  *  "USERNAME" -- substitute client-supplied username
+  *  "PASSWORD" -- substitute client-specified password
+  *  "COMMONNAME" -- substitute client certificate common name
++ *  "OTP" -- substitute static challenge response if available
+  */
+ 
+ #define N_NAME_VALUE 16
+@@ -111,6 +114,7 @@ struct user_pass {
+     char username[128];
+     char password[128];
+     char common_name[128];
++    char response[128];
+ 
+     const struct name_value_list *name_value_list;
+ };
+@@ -276,6 +280,66 @@ name_value_match(const char *query, const char *match)
+     return strncasecmp(match, query, strlen(match)) == 0;
+ }
+ 
++/*
++ * Split and decode up->password in the form SCRV1:base64_pass:base64_response
++ * into pass and response and save in up->password and up->response.
++ * If the password is not in the expected format, input is not changed.
++ */
++static void
++split_scrv1_password(struct user_pass *up)
++{
++    const int skip = strlen("SCRV1:");
++    if (strncmp(up->password, "SCRV1:", skip) != 0)
++    {
++        return;
++    }
++
++    char *tmp = strdup(up->password);
++    if (!tmp)
++    {
++        fprintf(stderr, "AUTH-PAM: out of memory parsing static challenge password\n");
++        goto out;
++    }
++
++    char *pass = tmp + skip;
++    char *resp = strchr(pass, ':');
++    if (!resp) /* string not in SCRV1:xx:yy format */
++    {
++        goto out;
++    }
++    *resp++ = '\0';
++
++    int n = plugin_base64_decode(pass, up->password, sizeof(up->password)-1);
++    if (n > 0)
++    {
++        up->password[n] = '\0';
++        n = plugin_base64_decode(resp, up->response, sizeof(up->response)-1);
++        if (n > 0)
++        {
++            up->response[n] = '\0';
++            if (DEBUG(up->verb))
++            {
++                fprintf(stderr, "AUTH-PAM: BACKGROUND: parsed static challenge password\n");
++            }
++            goto out;
++        }
++    }
++
++    /* decode error: reinstate original value of up->password and return */
++    plugin_secure_memzero(up->password, sizeof(up->password));
++    plugin_secure_memzero(up->response, sizeof(up->response));
++    strcpy(up->password, tmp); /* tmp is guaranteed to fit in up->password */
++
++    fprintf(stderr, "AUTH-PAM: base64 decode error while parsing static challenge password\n");
++
++out:
++    if (tmp)
++    {
++        plugin_secure_memzero(tmp, strlen(tmp));
++        free(tmp);
++    }
++}
++
+ OPENVPN_EXPORT int
+ openvpn_plugin_open_v3(const int v3structver,
+                        struct openvpn_plugin_args_open_in const *args,
+@@ -316,6 +380,7 @@ openvpn_plugin_open_v3(const int v3structver,
+ 
+     /* Save global pointers to functions exported from openvpn */
+     plugin_secure_memzero = args->callbacks->plugin_secure_memzero;
++    plugin_base64_decode = args->callbacks->plugin_base64_decode;
+ 
+     /*
+      * Make sure we have two string arguments: the first is the .so name,
+@@ -599,6 +664,10 @@ my_conv(int n, const struct pam_message **msg_array,
+                     {
+                         aresp[i].resp = searchandreplace(match_value, "COMMONNAME", up->common_name);
+                     }
++                    else if (strstr(match_value, "OTP"))
++                    {
++                        aresp[i].resp = searchandreplace(match_value, "OTP", up->response);
++                    }
+                     else
+                     {
+                         aresp[i].resp = strdup(match_value);
+@@ -787,6 +856,9 @@ pam_server(int fd, const char *service, int verb, const struct name_value_list *
+ #endif
+                 }
+ 
++                /* If password is of the form SCRV1:base64:base64 split it up */
++                split_scrv1_password(&up);
++
+                 if (pam_auth(service, &up)) /* Succeeded */
+                 {
+                     if (send_control(fd, RESPONSE_VERIFY_SUCCEEDED) == -1)
+@@ -818,10 +890,11 @@ pam_server(int fd, const char *service, int verb, const struct name_value_list *
+                         command);
+                 goto done;
+         }
++        plugin_secure_memzero(up.response, sizeof(up.response));
+     }
+ done:
+-
+     plugin_secure_memzero(up.password, sizeof(up.password));
++    plugin_secure_memzero(up.response, sizeof(up.response));
+ #ifdef USE_PAM_DLOPEN
+     dlclose_pam();
+ #endif
