@@ -1,6 +1,6 @@
---- configure.orig	2019-02-20 12:28:34 UTC
+--- configure.orig	2020-04-16 13:26:53 UTC
 +++ configure
-@@ -18120,8 +18120,6 @@ fi
+@@ -18226,8 +18226,6 @@ fi
  $as_echo "!! WARNING !! The cmoka git submodule has not been initialized or updated.  Unit testing cannot be performed." >&6; }
     fi
  else
