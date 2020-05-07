@@ -1,0 +1,29 @@
+This is essentially the same as https://bugs.launchpad.net/mailman/+bug/1873722
+except the vector is the private archive login page and the attack only
+succeeds if the list's roster visibility (private_roster) setting is 'Anyone'.
+
+This is fixed by the attached patch.
+
+Source: https://bugs.launchpad.net/mailman/+bug/1877379
+Deep:   https://launchpadlibrarian.net/478684932/private.diff
+
+--- Mailman/Cgi/private.py	2019-03-06 17:48:32 +0000
++++ Mailman/Cgi/private.py	2020-05-07 13:42:03 +0000
+@@ -162,13 +162,9 @@
+             if mlist.isMember(username):
+                 mlist.MailUserPassword(username)
+             elif username:
+-                # Not a member
+-                if mlist.private_roster == 0:
+-                    # Public rosters
+-                    safeuser = Utils.websafe(username)
+-                    message = Bold(FontSize('+1',
+-                                  _('No such member: %(safeuser)s.'))).Format()
+-                else:
++                # Not a member. Don't report address in any case. It leads to
++                # Content injection. Just log if roster is not public.
++                if mlist.private_roster != 0:
+                     syslog('mischief',
+                        'Reminder attempt of non-member w/ private rosters: %s',
+                        username)
+
