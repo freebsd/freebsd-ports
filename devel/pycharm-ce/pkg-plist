@@ -41,7 +41,6 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/index/Python/sdk-stubs.names_i.len
 %%DATADIR%%/index/Python/sdk-stubs.version
 %%DATADIR%%/lib/FastInfoset-1.2.15.jar
-%%DATADIR%%/lib/MultithreadedTC-1.01.jar
 %%DATADIR%%/lib/annotations-19.0.0.jar
 %%DATADIR%%/lib/annotations-java5.jar
 %%DATADIR%%/lib/asm-all-7.0.1.jar
@@ -90,10 +89,6 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/lib/extensions.jar
 %%DATADIR%%/lib/external-system-rt.jar
 %%DATADIR%%/lib/failureaccess-1.0.1.jar
-%%DATADIR%%/lib/fest-assert-1.5.0-SNAPSHOT.jar
-%%DATADIR%%/lib/fest-reflect-2.0-SNAPSHOT.jar
-%%DATADIR%%/lib/fest-swing-1.4.6.jar
-%%DATADIR%%/lib/fest-util-1.3.0-SNAPSHOT.jar
 %%DATADIR%%/lib/fluent-hc-4.5.12.jar
 %%DATADIR%%/lib/forms-1.1-preview.jar
 %%DATADIR%%/lib/forms_rt.jar
@@ -511,7 +506,7 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/plugins/python-ce/helpers/generator3/version.txt
 %%DATADIR%%/plugins/python-ce/helpers/icon-robots.txt
 %%DATADIR%%/plugins/python-ce/helpers/packaging_tool.py
-%%DATADIR%%/plugins/python-ce/helpers/pip-19.0.3-py2.py3-none-any.whl
+%%DATADIR%%/plugins/python-ce/helpers/pip-20.0.2-py2.py3-none-any.whl
 %%DATADIR%%/plugins/python-ce/helpers/pockets/__init__.py
 %%DATADIR%%/plugins/python-ce/helpers/pockets/_version.py
 %%DATADIR%%/plugins/python-ce/helpers/pockets/collections.py
@@ -963,6 +958,7 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/plugins/python-ce/helpers/pycharm_display/datalore/__init__.py
 %%DATADIR%%/plugins/python-ce/helpers/pycharm_display/datalore/display/__init__.py
 %%DATADIR%%/plugins/python-ce/helpers/pycharm_display/datalore/display/display_.py
+%%DATADIR%%/plugins/python-ce/helpers/pycharm_display/datalore/display/display_log.py
 %%DATADIR%%/plugins/python-ce/helpers/pycharm_display/datalore/display/supported_data_type.py
 %%DATADIR%%/plugins/python-ce/helpers/pycharm_display/tests/display/test_supported_data_type.py
 %%DATADIR%%/plugins/python-ce/helpers/pycharm_matplotlib_backend/__init__.py
@@ -1565,7 +1561,7 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/plugins/python-ce/helpers/python-skeletons/struct.py
 %%DATADIR%%/plugins/python-ce/helpers/rest_runners/rst2smth.py
 %%DATADIR%%/plugins/python-ce/helpers/rest_runners/sphinx_runner.py
-%%DATADIR%%/plugins/python-ce/helpers/setuptools-40.8.0-py2.py3-none-any.whl
+%%DATADIR%%/plugins/python-ce/helpers/setuptools-44.1.0-py2.py3-none-any.whl
 %%DATADIR%%/plugins/python-ce/helpers/six.py
 %%DATADIR%%/plugins/python-ce/helpers/sphinxcontrib/__init__.py
 %%DATADIR%%/plugins/python-ce/helpers/sphinxcontrib/napoleon/__init__.py
@@ -2274,7 +2270,7 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/plugins/python-ce/helpers/typeshed/third_party/3/six/moves/urllib_request.pyi
 %%DATADIR%%/plugins/python-ce/helpers/typeshed/third_party/3/six/moves/urllib_response.pyi
 %%DATADIR%%/plugins/python-ce/helpers/typeshed/third_party/3/six/moves/urllib_robotparser.pyi
-%%DATADIR%%/plugins/python-ce/helpers/virtualenv-16.4.3-py2.py3-none-any.whl
+%%DATADIR%%/plugins/python-ce/helpers/virtualenv-16.7.10-py2.py3-none-any.whl
 %%DATADIR%%/plugins/python-ce/lib/completion-ranking-python-0.0.11.jar
 %%DATADIR%%/plugins/python-ce/lib/libthrift-0.11.0.jar
 %%DATADIR%%/plugins/python-ce/lib/python-ce.jar
