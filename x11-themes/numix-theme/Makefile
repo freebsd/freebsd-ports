@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	x11-themes xfce
 PKGNAMESUFFIX=	-theme
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	20.100@defert.com
 COMMENT=	Gtk flat themes
 
 LICENSE=	GPLv3
@@ -15,11 +15,11 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	rubygem-sass>=3.4:textproc/rubygem-sass
 RUN_DEPENDS=	gtk-murrine-engine>=0.98.2:x11-themes/gtk-murrine-engine
 
+USES=		gmake gnome
+
+USE_GITHUB=	yes
 GH_ACCOUNT=	numixproject
 GH_PROJECT=	numix-gtk-theme
-
-USES=		gmake gnome
-USE_GITHUB=	yes
 USE_GNOME=	glib20 gdkpixbuf2
 NO_ARCH=	yes
 INSTALL_TARGET=	# empty
