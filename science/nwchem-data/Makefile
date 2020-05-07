@@ -1,7 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	nwchem-data
-PORTVERSION=	6.8.1.20190125
+DISTVERSIONPREFIX=	v
+DISTVERSION=	7.0.0
+DISTVERSIONSUFFIX=	-release
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,7 +17,6 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 USE_GITHUB=	yes
 GH_ACCOUNT=	nwchemgit
 GH_PROJECT=	nwchem
-GH_TAGNAME=	master-oct22_2018-71-g3d310890e
 
 WRKSRC_SUBDIR=	src
 
