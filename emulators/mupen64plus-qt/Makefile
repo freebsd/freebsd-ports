@@ -1,14 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	mupen64plus-qt
-DISTVERSION=	1.12
-PORTREVISION=	3
+DISTVERSION=	1.14
 CATEGORIES=	emulators
 
 MAINTAINER=	maintainer@hasting.email
 COMMENT=	Basic launcher for Mupen64Plus
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libquazip5.so:archivers/quazip
 RUN_DEPENDS=	${LOCALBASE}/lib/libmupen64plus.so.2:emulators/mupen64plus-core \
