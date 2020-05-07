@@ -1,4 +1,4 @@
---- doc/mutt.man.orig	2020-01-28 23:08:03 UTC
+--- doc/mutt.man.orig	2020-05-02 21:08:56 UTC
 +++ doc/mutt.man
 @@ -67,7 +67,8 @@ mutt \- The Mutt Mail User Agent
  .PP

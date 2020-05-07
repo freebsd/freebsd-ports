@@ -1,10 +1,10 @@
---- PATCHES.orig	2020-03-29 21:24:31 UTC
+--- PATCHES.orig	2020-05-05 02:09:33 UTC
 +++ PATCHES
 @@ -0,0 +1 @@
 +patch-1.5.6.cb.reverse_reply.2
---- init.h.orig	2020-03-29 21:24:30 UTC
+--- init.h.orig	2020-05-05 02:09:32 UTC
 +++ init.h
-@@ -3034,6 +3034,13 @@ struct option_t MuttVars[] = {
+@@ -3111,6 +3111,13 @@ struct option_t MuttVars[] = {
    ** In either case, a missing real name will be filled in afterwards
    ** using the value of $$realname.
    */
@@ -18,9 +18,9 @@
    { "rfc2047_parameters", DT_BOOL, R_NONE, {.l=OPTRFC2047PARAMS}, {.l=0} },
    /*
    ** .pp
---- mutt.h.orig	2020-03-29 21:24:30 UTC
+--- mutt.h.orig	2020-05-05 02:09:32 UTC
 +++ mutt.h
-@@ -506,6 +506,7 @@ enum
+@@ -513,6 +513,7 @@ enum
    OPTREVALIAS,
    OPTREVNAME,
    OPTREVREAL,
@@ -28,19 +28,19 @@
    OPTRFC2047PARAMS,
    OPTSAVEADDRESS,
    OPTSAVEEMPTY,
---- protos.h.orig	2020-03-28 18:17:53 UTC
+--- protos.h.orig	2020-05-02 21:08:56 UTC
 +++ protos.h
-@@ -87,6 +87,7 @@ ADDRESS *mutt_get_address (ENVELOPE *, char **);
+@@ -85,6 +85,7 @@ char* mutt_extract_message_id (const char *, const cha
+ ADDRESS *mutt_get_address (ENVELOPE *, char **);
  ADDRESS *mutt_lookup_alias (const char *s);
  ADDRESS *mutt_remove_duplicates (ADDRESS *);
- ADDRESS *mutt_remove_xrefs (ADDRESS *, ADDRESS *);
 +ADDRESS *mutt_reverse_address (ADDRESS *);
  ADDRESS *mutt_expand_aliases (ADDRESS *);
  ADDRESS *mutt_parse_adrlist (ADDRESS *, const char *);
  
---- send.c.orig	2020-03-28 18:17:53 UTC
+--- send.c.orig	2020-05-02 21:08:56 UTC
 +++ send.c
-@@ -723,6 +723,10 @@ void mutt_fix_reply_recipients (ENVELOPE *env)
+@@ -725,6 +725,10 @@ void mutt_fix_reply_recipients (ENVELOPE *env)
    /* the CC field can get cluttered, especially with lists */
    env->to = mutt_remove_duplicates (env->to);
    env->cc = mutt_remove_duplicates (env->cc);
@@ -51,9 +51,9 @@
    env->cc = mutt_remove_xrefs (env->to, env->cc);
  
    if (env->cc && !env->to)
---- sendlib.c.orig	2020-03-28 18:17:53 UTC
+--- sendlib.c.orig	2020-05-02 21:08:56 UTC
 +++ sendlib.c
-@@ -2974,6 +2974,35 @@ static void set_noconv_flags (BODY *b, short flag)
+@@ -2981,6 +2981,35 @@ static void set_noconv_flags (BODY *b, short flag)
    }
  }
  
@@ -86,6 +86,6 @@
 +  return addr;
 +}
 +
- int mutt_write_fcc (const char *path, HEADER *hdr, const char *msgid, int post, const char *fcc)
+ int mutt_write_fcc (const char *path, SEND_CONTEXT *sctx, const char *msgid, int post, const char *fcc)
  {
-   CONTEXT f;
+   HEADER *hdr;

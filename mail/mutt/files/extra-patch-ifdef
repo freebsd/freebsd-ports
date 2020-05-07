@@ -1,10 +1,10 @@
---- PATCHES.orig	2020-03-29 21:24:30 UTC
+--- PATCHES.orig	2020-05-05 02:09:32 UTC
 +++ PATCHES
 @@ -0,0 +1 @@
 +patch-1.5.4.cd.ifdef.1
---- init.c.orig	2020-03-28 18:17:53 UTC
+--- init.c.orig	2020-05-02 21:08:56 UTC
 +++ init.c
-@@ -651,6 +651,52 @@ static mbchar_table *parse_mbchar_table (const char *s
+@@ -643,6 +643,52 @@ static mbchar_table *parse_mbchar_table (const char *s
    return t;
  }
  
@@ -20,7 +20,7 @@
 +  if (!(res = (mutt_option_index (tmp->data) != -1)))
 +    for (i = 0; !res && i < MENU_MAX; i++)
 +    {
-+      struct binding_t *b = km_get_table (Menus[i].value);
++      const struct binding_t *b = km_get_table (Menus[i].value);
 +
 +      if (!b)
 +	continue;
@@ -43,7 +43,7 @@
 +
 +  if (res)
 +  {
-+    if (mutt_parse_rc_line (tmp->data, &token, err) == -1)
++    if (mutt_parse_rc_buffer (tmp, &token, err) == -1)
 +    {
 +      mutt_error ("Erreur: %s", err->data);
 +      FREE (&token.data);
@@ -57,9 +57,9 @@
  static int parse_unignore (BUFFER *buf, BUFFER *s, union pointer_long_t udata, BUFFER *err)
  {
    do
---- init.h.orig	2020-03-29 21:24:30 UTC
+--- init.h.orig	2020-05-05 02:09:32 UTC
 +++ init.h
-@@ -4516,6 +4516,7 @@ static int parse_lists (BUFFER *, BUFFER *, union poin
+@@ -4594,6 +4594,7 @@ static int parse_lists (BUFFER *, BUFFER *, union poin
  static int parse_unlists (BUFFER *, BUFFER *, union pointer_long_t, BUFFER *);
  static int parse_alias (BUFFER *, BUFFER *, union pointer_long_t, BUFFER *);
  static int parse_unalias (BUFFER *, BUFFER *, union pointer_long_t, BUFFER *);
@@ -67,7 +67,7 @@
  static int parse_echo (BUFFER *, BUFFER *, union pointer_long_t, BUFFER *);
  static int parse_ignore (BUFFER *, BUFFER *, union pointer_long_t, BUFFER *);
  static int parse_unignore (BUFFER *, BUFFER *, union pointer_long_t, BUFFER *);
-@@ -4580,6 +4581,7 @@ const struct command_t Commands[] = {
+@@ -4658,6 +4659,7 @@ const struct command_t Commands[] = {
    { "hdr_order",	parse_list,		{.p=&HeaderOrderList} },
  #ifdef HAVE_ICONV
    { "iconv-hook",	mutt_parse_hook,	{.l=MUTT_ICONVHOOK} },

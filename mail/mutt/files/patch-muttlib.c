@@ -1,6 +1,6 @@
---- muttlib.c.orig	2020-03-29 21:24:32 UTC
+--- muttlib.c.orig	2020-05-05 02:09:34 UTC
 +++ muttlib.c
-@@ -877,16 +877,15 @@ void _mutt_buffer_mktemp (BUFFER *buf, const char *pre
+@@ -930,16 +930,15 @@ void _mutt_buffer_mktemp (BUFFER *buf, const char *pre
  void _mutt_mktemp (char *s, size_t slen, const char *prefix, const char *suffix,
                     const char *src, int line)
  {

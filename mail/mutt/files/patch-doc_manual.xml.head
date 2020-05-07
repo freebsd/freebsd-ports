@@ -1,4 +1,4 @@
---- doc/manual.xml.head.orig	2020-03-28 18:17:53 UTC
+--- doc/manual.xml.head.orig	2020-05-02 21:08:56 UTC
 +++ doc/manual.xml.head
 @@ -1,6 +1,6 @@
  <?xml version="1.0" standalone="no"?>

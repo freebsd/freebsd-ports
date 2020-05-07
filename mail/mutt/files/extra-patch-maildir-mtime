@@ -1,8 +1,8 @@
---- PATCHES.orig	2020-03-29 21:24:30 UTC
+--- PATCHES.orig	2020-05-05 02:09:32 UTC
 +++ PATCHES
 @@ -0,0 +1 @@
 +patch-1.5.7.ust.maildir-mtime.2
---- browser.c.orig	2020-03-28 18:17:53 UTC
+--- browser.c.orig	2020-05-02 21:08:56 UTC
 +++ browser.c
 @@ -32,6 +32,7 @@
  #ifdef USE_IMAP
@@ -39,10 +39,10 @@
      while (tmp && mutt_strcmp (mutt_b2s (full_path), mutt_b2s (tmp->pathbuf)))
        tmp = tmp->next;
 +    check_maildir_times (tmp, &s);
-     if (tmp && Context &&
+     if (tmp && Context && !tmp->nopoll &&
          !mutt_strcmp (tmp->realpath, Context->realpath))
      {
-@@ -574,6 +591,7 @@ static int examine_mailboxes (MUTTMENU *menu, struct b
+@@ -579,6 +596,7 @@ static int examine_mailboxes (MUTTMENU *menu, struct b
  	s.st_mtime = st2.st_mtime;
      }
  

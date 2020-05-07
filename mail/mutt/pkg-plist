@@ -46,6 +46,8 @@ man/man5/muttrc.5.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Pine.rc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Tin.rc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ca-bundle.crt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bgedit-detectgui.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bgedit-screen-tmux.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/colors.default
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/colors.linux
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gpg.rc

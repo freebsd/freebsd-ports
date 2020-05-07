@@ -1,6 +1,6 @@
---- Makefile.in.orig	2020-03-28 18:22:01 UTC
+--- Makefile.in.orig	2020-05-02 21:31:42 UTC
 +++ Makefile.in
-@@ -540,7 +540,7 @@ AUTOMAKE_OPTIONS = 1.6 foreign
+@@ -530,7 +530,7 @@ AUTOMAKE_OPTIONS = 1.6 foreign
  @BUILD_IMAP_TRUE@IMAP_INCLUDES = -I$(top_srcdir)/imap
  @BUILD_AUTOCRYPT_TRUE@AUTOCRYPT_SUBDIR = autocrypt
  @BUILD_AUTOCRYPT_TRUE@AUTOCRYPT_INCLUDES = -I$(top_srcdir)/autocrypt
@@ -9,7 +9,7 @@
  bin_SCRIPTS = muttbug flea $(SMIMEAUX_TARGET)
  @BUILD_HCACHE_TRUE@HCVERSION = hcversion.h
  BUILT_SOURCES = keymap_defs.h patchlist.c reldate.h conststrings.c version.h $(HCVERSION)
-@@ -1690,18 +1690,9 @@ install-exec-hook:
+@@ -1660,18 +1660,9 @@ install-exec-hook:
  		rm -f $(DESTDIR)$(bindir)/mutt.dotlock ;		\
  		ln -sf $(DESTDIR)$(bindir)/mutt_dotlock $(DESTDIR)$(bindir)/mutt.dotlock ; \
  	fi
