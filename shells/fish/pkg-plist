@@ -328,7 +328,6 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/completions/aws.fish
 %%DATADIR%%/completions/badblocks.fish
 %%DATADIR%%/completions/base64.fish
-%%DATADIR%%/completions/bat.fish
 %%DATADIR%%/completions/bb-wrapper.fish
 %%DATADIR%%/completions/bc.fish
 %%DATADIR%%/completions/bd.fish
@@ -753,7 +752,6 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/completions/resolvectl.fish
 %%DATADIR%%/completions/return.fish
 %%DATADIR%%/completions/rfkill.fish
-%%DATADIR%%/completions/rg.fish
 %%DATADIR%%/completions/rgrep.fish
 %%DATADIR%%/completions/rm.fish
 %%DATADIR%%/completions/rmdir.fish
