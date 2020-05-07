@@ -21,12 +21,17 @@ lib/lv2/amsynth.lv2/BriansBank17.amSynth.bank.ttl
 lib/lv2/amsynth.lv2/BriansBank18.amSynth.bank.ttl
 lib/lv2/amsynth.lv2/BriansBank19.amSynth.bank.ttl
 lib/lv2/amsynth.lv2/BriansBank20.amSynth.bank.ttl
+lib/lv2/amsynth.lv2/BriansBank21.amSynth.bank.ttl
+lib/lv2/amsynth.lv2/BriansBank22.amSynth.bank.ttl
 lib/lv2/amsynth.lv2/amsynth.ttl
 lib/lv2/amsynth.lv2/amsynth_factory.bank.ttl
 lib/lv2/amsynth.lv2/amsynth_lv2.so
 lib/lv2/amsynth.lv2/amsynth_lv2_gtk.so
 lib/lv2/amsynth.lv2/manifest.ttl
 lib/vst/amsynth_vst.so
+%%MANPAGES%%man/de/man1/amsynth.1.gz
+%%MANPAGES%%man/fr/man1/amsynth.1.gz
+%%MANPAGES%%man/man1/amsynth.1.gz
 %%DATADIR%%/banks/BriansBank01.amSynth.bank
 %%DATADIR%%/banks/BriansBank02.amSynth.bank
 %%DATADIR%%/banks/BriansBank03.amSynth.bank
@@ -47,6 +52,8 @@ lib/vst/amsynth_vst.so
 %%DATADIR%%/banks/BriansBank18.amSynth.bank
 %%DATADIR%%/banks/BriansBank19.amSynth.bank
 %%DATADIR%%/banks/BriansBank20.amSynth.bank
+%%DATADIR%%/banks/BriansBank21.amSynth.bank
+%%DATADIR%%/banks/BriansBank22.amSynth.bank
 %%DATADIR%%/banks/amsynth_factory.bank
 %%DATADIR%%/rc
 %%DATADIR%%/skins/default/background.png
@@ -74,7 +81,7 @@ share/appdata/dssi-amsynth-plugin.metainfo.xml
 share/appdata/lv2-amsynth-plugin.metainfo.xml
 share/appdata/vst-amsynth-plugin.metainfo.xml
 share/applications/amsynth.desktop
-%%NLS%%share/locale/de/LC_MESSAGES/amsynth.mo
-%%NLS%%share/locale/fr/LC_MESSAGES/amsynth.mo
 share/icons/hicolor/48x48/apps/amsynth.png
 share/icons/hicolor/scalable/apps/amsynth.svg
+%%NLS%%share/locale/de/LC_MESSAGES/amsynth.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/amsynth.mo
