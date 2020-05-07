@@ -4,13 +4,16 @@
 PORTNAME=	openblas
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.9
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	math
 MASTER_SITES=	NL/lapack/timing/:lapack_tmg
 DISTFILES=	large.tgz:lapack_tmg \
 		timing.tgz:lapack_tmg
 DIST_SUBDIR=	openblas
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	ee2e758278b5d82b7242f505ea694f082ef65879.patch:-p1 # fixes the regression: https://github.com/xianyi/OpenBLAS/pull/2512
 
 MAINTAINER=	phd_kimberlite@yahoo.co.jp
 COMMENT=	Optimized BLAS library based on GotoBLAS2
