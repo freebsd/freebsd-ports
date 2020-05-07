@@ -1,11 +1,9 @@
 [
 { type: upgrade, maximum_version: 4, message: <<EOT
-Version 4.3.3 is stricter and more standards compliant
+Clixon is undergoing rapid development on it's way to better
+RFC compliance,
 
-You will need to change your code, pay attention to XML handling
-and api-paths.
-
-See https://github.com/clicon/clixon/blob/master/CHANGELOG.md
+Please see https://github.com/clicon/clixon/blob/master/CHANGELOG.md
 for details.
 EOT
 }
