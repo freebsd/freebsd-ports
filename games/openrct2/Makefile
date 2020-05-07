@@ -3,13 +3,8 @@
 
 PORTNAME=	openrct2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.5
-PORTREVISION=	1
+DISTVERSION=	0.2.6
 CATEGORIES=	games
-
-PATCH_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/commit/
-PATCHFILES=	920150b06d1888919488502021717209d08433b1.patch:-p1 \
-		c8f9324e4176d57d521897565df00c33fcac0c07.patch:-p1
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Open source re-implementation of RollerCoaster Tycoon 2
@@ -31,7 +26,7 @@ USES=		cmake compiler:c++17-lang desktop-file-utils gnome gl iconv \
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenRCT2
 GH_PROJECT=	OpenRCT2
-GH_TUPLE=	OpenRCT2:objects:v1.0.13:objects \
+GH_TUPLE=	OpenRCT2:objects:v1.0.14:objects \
 		OpenRCT2:title-sequences:v0.1.2c:title_sequences
 USE_GL=		gl
 USE_LDCONFIG=	yes
