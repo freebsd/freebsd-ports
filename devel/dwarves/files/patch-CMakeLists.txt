@@ -1,0 +1,48 @@
+--- CMakeLists.txt.orig	2020-03-13 17:13:35 UTC
++++ CMakeLists.txt
+@@ -7,7 +7,7 @@ INCLUDE_DIRECTORIES( ${CMAKE_CURRENT_BINARY_DIR} ${CMA
+ # Try to parse this later, Helio just showed me a KDE4 example to support
+ # x86-64 builds.
+ # the following are directories where stuff will be installed to
+-set(__LIB "" CACHE STRING "Define suffix of directory name (32/64)" )
++set(__LIB "lib" CACHE STRING "Define suffix of directory name (32/64)" )
+ 
+ macro(_set_fancy _var _value _comment)
+ 	if (NOT DEFINED ${_var})
+@@ -76,7 +76,7 @@ endif()
+ 
+ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64")
+ 
+-file(GLOB libbpf_sources "lib/bpf/src/*.c")
++set(libbpf_sources lib/bpf/src/btf.c lib/bpf/src/hashmap.c lib/bpf/src/libbpf.c)
+ add_library(bpf OBJECT ${libbpf_sources})
+ set_property(TARGET bpf PROPERTY POSITION_INDEPENDENT_CODE 1)
+ target_include_directories(bpf PRIVATE
+@@ -85,13 +85,13 @@ target_include_directories(bpf PRIVATE
+ 
+ set(dwarves_LIB_SRCS dwarves.c dwarves_fprintf.c gobuffer strings
+ 		     ctf_encoder.c ctf_loader.c libctf.c btf_encoder.c btf_loader.c libbtf.c
+-		     dwarf_loader.c dutil.c elf_symtab.c rbtree.c)
++		     dwarf_loader.c dutil.c elf_symtab.c rbtree.c obstack.c)
+ add_library(dwarves SHARED ${dwarves_LIB_SRCS} $<TARGET_OBJECTS:bpf>)
+ set_target_properties(dwarves PROPERTIES VERSION 1.0.0 SOVERSION 1)
+ set_target_properties(dwarves PROPERTIES INTERFACE_LINK_LIBRARIES "")
+ target_include_directories(dwarves PRIVATE
+ 			   ${CMAKE_CURRENT_SOURCE_DIR}/lib/bpf/include/uapi)
+-target_link_libraries(dwarves ${DWARF_LIBRARIES} ${ZLIB_LIBRARIES})
++target_link_libraries(dwarves ${DWARF_LIBRARIES} ${ZLIB_LIBRARIES} libargp.so libintl.so)
+ 
+ set(dwarves_emit_LIB_SRCS dwarves_emit.c)
+ add_library(dwarves_emit SHARED ${dwarves_emit_LIB_SRCS})
+@@ -153,9 +153,10 @@ install(FILES dwarves.h dwarves_emit.h dwarves_reorgan
+ 	      btf_encoder.h config.h ctf_encoder.h ctf.h
+ 	      elfcreator.h elf_symtab.h hash.h libbtf.h libctf.h
+ 	DESTINATION ${CMAKE_INSTALL_PREFIX}/include/dwarves/)
+-install(FILES man-pages/pahole.1 DESTINATION ${CMAKE_INSTALL_PREFIX}/share/man/man1/)
++install(FILES man-pages/pahole.1 DESTINATION ${CMAKE_INSTALL_PREFIX}/man/man1/)
+ install(PROGRAMS ostra/ostra-cg DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
+ install(PROGRAMS btfdiff fullcircle DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
++install(FILES changes-v1.17 README README.btf DESTINATION ${CMAKE_INSTALL_PREFIX}/share/doc/dwarves)
+ install(FILES ostra/python/ostra.py DESTINATION ${CMAKE_INSTALL_PREFIX}/share/dwarves/runtime/python)
+ install(FILES lib/Makefile lib/ctracer_relay.c lib/ctracer_relay.h lib/linux.blacklist.cu
+ 	DESTINATION ${CMAKE_INSTALL_PREFIX}/share/dwarves/runtime)

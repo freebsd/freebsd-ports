@@ -1,0 +1,5 @@
+Pahole and the dwarves is a collection of libraries and tools for manipulating
+DWARF debuginfo in ELF binaries, as well as BTF and CTF compressed type
+metadata for tracing (i.e., Dtrace, eBPF).
+
+WWW: https://acmel.wordpress.com

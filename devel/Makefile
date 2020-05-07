@@ -503,6 +503,7 @@
     SUBDIR += duplo
     SUBDIR += dwarf2json
     SUBDIR += dwarfdump
+    SUBDIR += dwarves
     SUBDIR += dxa65
     SUBDIR += dyncall
     SUBDIR += e00compr
