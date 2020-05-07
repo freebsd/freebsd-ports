@@ -2,7 +2,7 @@
 
 PORTNAME=	authelia
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.16.0
+DISTVERSION=	4.17.0
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -42,8 +42,8 @@ GH_TUPLE=	\
 		hashicorp:hcl:v1.0.0:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
 		inconshreveable:mousetrap:v1.0.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
 		klauspost:compress:v1.10.4:klauspost_compress/vendor/github.com/klauspost/compress \
-		konsorten:go-windows-terminal-sequences:v1.0.2:konsorten_go_windows_terminal_sequences/vendor/github.com/konsorten/go-windows-terminal-sequences \
-		lib:pq:v1.4.0:lib_pq/vendor/github.com/lib/pq \
+		konsorten:go-windows-terminal-sequences:v1.0.3:konsorten_go_windows_terminal_sequences/vendor/github.com/konsorten/go-windows-terminal-sequences \
+		lib:pq:v1.5.1:lib_pq/vendor/github.com/lib/pq \
 		magiconair:properties:v1.8.1:magiconair_properties/vendor/github.com/magiconair/properties \
 		mattn:go-sqlite3:v2.0.3:mattn_go_sqlite3/vendor/github.com/mattn/go-sqlite3 \
 		mitchellh:mapstructure:v1.1.2:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
@@ -56,7 +56,7 @@ GH_TUPLE=	\
 		savsgio:dictpool:215dfcb77c2c:savsgio_dictpool/vendor/github.com/savsgio/dictpool \
 		savsgio:gotils:8c468ce75cca:savsgio_gotils/vendor/github.com/savsgio/gotils \
 		simia-tech:crypt:v0.4.2:simia_tech_crypt/vendor/github.com/simia-tech/crypt \
-		sirupsen:logrus:v1.5.0:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
+		sirupsen:logrus:v1.6.0:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		spf13:afero:v1.1.2:spf13_afero/vendor/github.com/spf13/afero \
 		spf13:cast:v1.3.0:spf13_cast/vendor/github.com/spf13/cast \
 		spf13:cobra:v0.0.7:spf13_cobra/vendor/github.com/spf13/cobra \
