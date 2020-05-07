@@ -93,24 +93,6 @@ you update your ports collection, before attempting any port upgrades.
 
   pw usermod -n tests -g tests
 
-20200418:
-  AFFECTS: users of mail/mailman
-  AUTHOR: mandree@FreeBSD.org
-
-  Mailman versions on FreeBSD before (exclusively) 2.1.30 have not marked the
-  web templates as "sample" files, and would overwrite changes made locally or
-  through the web interface on updates.
-
-  BEFORE updating mailman from a version such as 2.1.29_* or older, please
-  backup /usr/local/mailman/templates/ before the upgrade, and after installing
-  mailman 2.1.30 or a newer 2.1.x, restore from backup, overwriting the
-  existing newly installed templates/LANG/... files with those from your
-  backup, and then diff them against the respective *.sample files.  The *.txt
-  and *.html files are yours, and *.sample are the distributed ones.
-
-  Once you have upgraded to 2.1.30, the port or package will take care to only
-  replace files that were unaltered from the shipped version.
-
 20200408:
   AFFECTS: users of security/openssh-portable
   AUTHOR: bdrewery@FreeBSD.org
