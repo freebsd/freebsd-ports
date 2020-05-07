@@ -2,16 +2,18 @@
 
 PORTNAME=	openra
 DISTVERSIONPREFIX=	release-
-DISTVERSION=	20200202
+DISTVERSION=	20200503
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/SDL2-CS/releases/download/20190907/:SDL2_CS \
-		https://github.com/${GH_ACCOUNT}/OpenAL-CS/releases/download/20190907/:OpenAL_CS \
-		https://github.com/${GH_ACCOUNT}/Eluant/releases/download/20160124/:Eluant
+		https://github.com/${GH_ACCOUNT}/OpenAL-CS/releases/download/20200316/:OpenAL_CS \
+		https://github.com/${GH_ACCOUNT}/Eluant/releases/download/20160124/:Eluant \
+		https://download.ip2location.com/lite/:ip2location
 DISTFILES=	SDL2-CS.dll:SDL2_CS \
 		SDL2-CS.dll.config:SDL2_CS \
 		OpenAL-CS.dll:OpenAL_CS \
 		OpenAL-CS.dll.config:OpenAL_CS \
-		Eluant.dll:Eluant
+		Eluant.dll:Eluant \
+		IP2LOCATION-LITE-DB1.IPV6.BIN.ZIP:ip2location
 EXTRACT_ONLY=	${DISTFILES:C/:.*//:N*.config:N*.dll:N*.nupkg}
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -23,7 +25,6 @@ BUILD_DEPENDS=	msbuild:devel/msbuild
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libgdiplus.so:x11-toolkits/libgdiplus
 NUGET_DEPENDS=	FuzzyLogicLibrary=1.2.0 \
-		MaxMind.Db=2.0.0 \
 		NUnit=3.0.1 \
 		NUnit.Console=3.0.1 \
 		Open.NAT=2.1.0 \
@@ -57,6 +58,7 @@ TEST_ALL_TARGET=test
 post-extract:
 	${CP} ${DISTFILES:C/:.*//:N*.nupkg:N*.tar*:S,^,${_DISTDIR}/,} \
 		${NUGET_PACKAGEDIR}
+	${CP} ${_DISTDIR}/${DISTFILES:C/:.*//:MIP2LOCATION-*} ${WRKSRC}
 
 post-patch:
 	${REINPLACE_CMD} \
