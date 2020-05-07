@@ -1,0 +1,44 @@
+[
+{ type: install
+  message: <<EOM
+Odoo ERP was installed
+
+1) The configuration file can be located at:
+
+   %%ETCDIR%%/odoo.conf
+
+   Look at the following url for more config options
+
+   https://www.odoo.com/documentation/13.0/setup/deploy.html
+
+2) Odoo use PostgreSQL like database. You must create a database and user 
+   before of use Odoo by first time
+
+3) Add odoo_enable="YES" to /etc/rc.conf. Also, can add the following lines:
+
+   odoo_database="postgresql_odoo_database_name" # This is odoodb by default
+   odoo_datadir="/path/to/odoo/datadir" # This is /var/db/odoo by defualt
+
+4) Odoo database host, user and password must be defined at %%ETCDIR%%/odoo.conf
+
+5) The first time that you run odoo you must be do the following:
+
+   # service odoo initdb
+
+   This command will create PostgreSQL structure used by Odoo
+
+   Note: Don't use this command if you are updating from previous version of 
+   odoo because it could destroy your data
+
+6) You can load Odoo ERP from a web browser
+
+   http://odoo_ip_host:8069 
+
+7) If you want securizing Odoo access from web browser (https), you can use a 
+   web server like proxy. Look at following documentation:
+
+   https://www.odoo.com/documentation/13.0/setup/deploy.html#https
+
+EOM
+}
+]

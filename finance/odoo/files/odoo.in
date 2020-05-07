@@ -1,0 +1,115 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: odoo
+# REQUIRE: NETWORKING
+# KEYWORD: shutdown
+#
+# Configuration settings for odoo in /etc/rc.conf:
+#
+# odoo_enable:		run odoo server (default=NO)
+# odoo_database:	define odoo database name (default=odoodb)
+# odoo_datadir:		directory where odoo store data (default=/var/lib/odoo)
+# odoo_flags:		additional flags for odoo server (default=--without-demo=all)
+#
+
+. /etc/rc.subr
+
+name=odoo
+rcvar=odoo_enable
+
+load_rc_config ${name}
+
+: ${odoo_enable:=NO}
+: ${odoo_database:="odoodb"}
+: ${odoo_datadir:="/var/lib/${name}"}
+: ${odoo_flags="--without-demo=all"}
+
+odoo_user="odoo"
+pidfile=/var/run/odoo.pid
+extra_commands="initdb"
+
+su_cmd="/usr/bin/su"
+chown_cmd="/usr/sbin/chown"
+mkdir_cmd="/bin/mkdir"
+
+start_cmd="odoo_start"
+stop_cmd="odoo_stop"
+status_cmd="odoo_status"
+restart_cmd="odoo_restart"
+initdb_cmd="odoo_initdb"
+start_precmd="odoo_start_precmd"
+
+command=/usr/local/bin/odoo
+command_args="--database=${odoo_database} --data-dir=${odoo_datadir} --logfile=/var/log/${name}.log --config=%%LOCALBASE%%/etc/odoo.conf ${odoo_flags}"
+
+odoo_start_precmd() {
+	odoo_datadir_check
+	touch ${pidfile}
+	${chown_cmd} -R ${odoo_user}:${odoo_user} ${pidfile}
+}
+
+odoo_start()
+{
+	daemon -p ${pidfile} -u ${odoo_user} \
+		${command} ${command_args}
+		echo "Started"
+}
+
+odoo_datadir_check()
+{
+        if [ ! -d "${odoo_datadir}" ]; then
+                ${mkdir_cmd} -p ${odoo_datadir}
+                ${chown_cmd} -R ${odoo_user}:${odoo_user} ${odoo_datadir}
+		echo "Data directory created"
+        fi
+}
+
+odoo_initdb()
+{
+	echo " "
+	echo "#################################################################"
+	echo "#                                                               #"
+	echo "# Don't use initdb if you are updating from previous version of #"
+	echo "# Odoo. Cancel if this is your case (Ctrl + C)                  #"
+	echo "#                                                               #"
+	echo "#################################################################"
+	echo " "
+	sleep 10
+	odoo_start_precmd
+	daemon -p ${pidfile} -u ${odoo_user} \
+                ${command} ${command_args} -i all
+        echo "Initializing database and starting odoo server"
+}
+
+odoo_restart()
+{
+        echo "Performing restart"
+        odoo_stop
+        sleep 5
+        odoo_start
+}
+
+odoo_status()
+{
+        # If running, show pid
+	if [ -f ${pidfile} ]
+	then
+		echo "${name} is running as pid" `cat ${pidfile}`
+	else
+		echo "${name} is not running"
+	fi
+}
+
+odoo_stop()
+{
+        if [ -f ${pidfile} ]
+        then
+                kill `cat ${pidfile}`
+                rm ${pidfile}
+                echo "Stopped"
+        fi
+}
+
+run_rc_command "$1"
