@@ -29,7 +29,7 @@
    LIST(FIND VALID_INSTALL_LAYOUTS "${INSTALL_LAYOUT}" ind)
    IF(ind EQUAL -1)
      MESSAGE(FATAL_ERROR "Invalid INSTALL_LAYOUT parameter:${INSTALL_LAYOUT}."
-@@ -159,6 +163,32 @@ SET(INSTALL_MYSQLKEYRINGDIR_STANDALONE  "keyring")
+@@ -171,6 +175,32 @@ SET(INSTALL_MYSQLKEYRINGDIR_STANDALONE  "keyring")
  SET(INSTALL_SECURE_FILE_PRIVDIR_STANDALONE ${secure_file_priv_path})
  
  #
@@ -62,28 +62,20 @@
  # TARGZ layout
  #
  SET(INSTALL_BINDIR_TARGZ           "bin")
-@@ -345,7 +375,7 @@ ENDIF()
- 
- # Install layout for router, follows the same pattern as above.
- #
--# Supported layouts here are STANDALONE, RPM, DEB, SVR4, TARGZ
-+# Supported layouts here are STANDALONE, FREEBSD, RPM, DEB, SVR4, TARGZ
- 
- # Variables ROUTER_INSTALL_${X}DIR, where
- #  X = BIN, LIB and DOC is using
-@@ -387,7 +417,7 @@ ENDIF()
+@@ -369,7 +399,7 @@ ENDIF()
  SET(ROUTER_INSTALL_LAYOUT "${DEFAULT_ROUTER_INSTALL_LAYOUT}"
    CACHE
    STRING
 -  "Installation directory layout. Options are: STANDALONE RPM DEB SVR4 TARGZ")
 +  "Installation directory layout. Options are: STANDALONE FREEBSD RPM DEB SVR4 TARGZ")
  
- # If are _pure_ STANDALONE we can write into data/ as it is all ours
- # if we are shared STANDALONE with the the server, we shouldn't write
-@@ -400,6 +430,13 @@ SET(ROUTER_INSTALL_CONFIGDIR_STANDALONE  ".")
- SET(ROUTER_INSTALL_DATADIR_STANDALONE    "var/lib/mysqlrouter")
- SET(ROUTER_INSTALL_LOGDIR_STANDALONE     ".")
- SET(ROUTER_INSTALL_RUNTIMEDIR_STANDALONE "run")
+ # If we are shared STANDALONE with the the server, we shouldn't write
+ # into the server's data/ as that would create a "schemadir" in
+@@ -408,6 +438,18 @@ FOREACH(var
+     )
+   SET(ROUTER_INSTALL_${var}DIR_TARGZ ${ROUTER_INSTALL_${var}DIR_STANDALONE})
+ ENDFOREACH()
++
 +#
 +# FreeBSD layout
 +#
@@ -91,6 +83,10 @@
 +SET(ROUTER_INSTALL_DATADIR_FREEBSD    "/var/db/mysqlrouter")
 +SET(ROUTER_INSTALL_LOGDIR_FREEBSD     "/var/log/mysqlrouter")
 +SET(ROUTER_INSTALL_RUNTIMEDIR_FREEBSD "/var/run/mysqlrouter")
++
++SET(ROUTER_INSTALL_BINDIR_FREEBSD     "bin")
++SET(ROUTER_INSTALL_LIBDIR_FREEBSD     "lib/mysql")
++SET(ROUTER_INSTALL_PLUGINDIR_FREEBSD  "lib/mysql/mysqlrouter")
+ 
  #
  # RPM layout
- #

@@ -10,16 +10,16 @@
  #define HAVE_BIO_SET_CALLBACK_EX
  #endif
  
-@@ -490,7 +490,7 @@ static int ssl_do(struct st_VioSSLFd *ptr, Vio *vio, l
+@@ -635,7 +636,7 @@ static int ssl_do(struct st_VioSSLFd *ptr, Vio *vio, l
  #if !defined(DBUG_OFF)
      {
-       STACK_OF(SSL_COMP) *ssl_comp_methods = NULL;
+       STACK_OF(SSL_COMP) *ssl_comp_methods = nullptr;
 -      ssl_comp_methods = SSL_COMP_get_compression_methods();
 +      ssl_comp_methods = (STACK_OF(SSL_COMP) *)SSL_COMP_get_compression_methods();
        n = sk_SSL_COMP_num(ssl_comp_methods);
        DBUG_PRINT("info", ("Available compression methods:\n"));
        if (n == 0)
-@@ -498,7 +498,7 @@ static int ssl_do(struct st_VioSSLFd *ptr, Vio *vio, l
+@@ -643,7 +644,7 @@ static int ssl_do(struct st_VioSSLFd *ptr, Vio *vio, l
        else
          for (j = 0; j < n; j++) {
            SSL_COMP *c = sk_SSL_COMP_value(ssl_comp_methods, j);
