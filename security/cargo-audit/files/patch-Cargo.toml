@@ -1,0 +1,9 @@
+Avoid dependency on openssl-src crate
+
+--- Cargo.toml.orig	2020-05-06 17:02:01 UTC
++++ Cargo.toml
+@@ -35,4 +35,3 @@ features = ["testing"]
+ 
+ [features]
+ fix = ["rustsec/fix"]
+-vendored-openssl = ["rustsec/vendored-openssl"]
