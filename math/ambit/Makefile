@@ -2,8 +2,7 @@
 
 PORTNAME=	ambit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4
-PORTREVISION=	2
+DISTVERSION=	0.4.1
 CATEGORIES=	math
 PKGNAMESUFFIX=	-tensor # avoid clash with shells/ambit
 
@@ -20,6 +19,7 @@ LIB_DEPENDS=	libhdf5.so:science/hdf5 \
 USES=		cmake compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	jturney
+USE_LDCONFIG=	yes
 
 # some declared cmake options do nothing: see https://github.com/jturney/ambit/issues/25 and the patch
 CMAKE_ARGS+=	-DSHARED_ONLY:BOOL=ON
