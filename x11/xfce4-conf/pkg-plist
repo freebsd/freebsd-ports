@@ -55,6 +55,8 @@ share/dbus-1/services/org.xfce.Xfconf.service
 %%NLS%%share/locale/ru/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/si/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/xfconf.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/xfconf.mo
+%%NLS%%share/locale/sq/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/te/LC_MESSAGES/xfconf.mo
