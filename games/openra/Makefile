@@ -19,8 +19,7 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	msbuild:devel/msbuild
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libgdiplus.so:x11-toolkits/libgdiplus
-NUGET_DEPENDS=	MaxMind.Db=2.6.1 \
-		Microsoft.NETFramework.ReferenceAssemblies=1.0.0 \
+NUGET_DEPENDS=	Microsoft.NETFramework.ReferenceAssemblies=1.0.0 \
 		Microsoft.NETFramework.ReferenceAssemblies.net472=1.0.0 \
 		NUnit=3.12.0 \
 		NUnit.Console=3.11.1 \

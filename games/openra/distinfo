@@ -1,8 +1,6 @@
 TIMESTAMP = 1587901122
 SHA256 (IP2LOCATION-LITE-DB1.IPV6.BIN.ZIP) = 81d1d4b5743fd6aaebd93178954a0d502c76a85cad318a404f68c41ee37ac08d
 SIZE (IP2LOCATION-LITE-DB1.IPV6.BIN.ZIP) = 914610
-SHA256 (maxmind.db.2.6.1.nupkg) = 3e24a3d777044793c363badae5b170090af9e973119d4ef721eebf192c3ea491
-SIZE (maxmind.db.2.6.1.nupkg) = 112729
 SHA256 (microsoft.netframework.referenceassemblies.1.0.0.nupkg) = e9f68f4388da158dce186564de564a5be0c465a20e059ff01ea6e20d3b114759
 SIZE (microsoft.netframework.referenceassemblies.1.0.0.nupkg) = 20946
 SHA256 (microsoft.netframework.referenceassemblies.net472.1.0.0.nupkg) = 2c8fd79ea19bd03cece40ed92b7bafde024f87c73abcebe3eff8da6e05b611af
