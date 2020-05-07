@@ -22,11 +22,11 @@ CONFLICTS_INSTALL=	wine-mono-devel-[0-9]*
 NO_BUILD=	yes
 PLIST_SUB+=	MONO_VERSION="${DISTVERSION}"
 DATADIR=	${PREFIX}/share/wine
-PLIST_FILES=	${DATADIR}/mono/wine-mono-${DISTVERSION}.msi
+PLIST_FILES=	${DATADIR}/mono/${DISTNAME}.msi
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/mono
-	${INSTALL_DATA} ${DISTDIR}/wine-mono-${DISTVERSION}.msi \
+	${INSTALL_DATA} ${DISTDIR}/${DISTNAME}.msi \
 		${STAGEDIR}${DATADIR}/mono
 
 .include <bsd.port.mk>
