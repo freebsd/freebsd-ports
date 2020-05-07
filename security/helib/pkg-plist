@@ -17,6 +17,7 @@ include/helib/PolyModRing.h
 include/helib/PtrMatrix.h
 include/helib/PtrVector.h
 include/helib/Ptxt.h
+include/helib/apiAttributes.h
 include/helib/assertions.h
 include/helib/binaryArith.h
 include/helib/binaryCompare.h
