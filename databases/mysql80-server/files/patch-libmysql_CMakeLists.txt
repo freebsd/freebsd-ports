@@ -12,16 +12,12 @@
  #
  # Include protocol tracing infrastructure and the test
  # trace plugin if enabled by build options.
-@@ -240,12 +245,17 @@ IF(WIN32)
+@@ -242,11 +247,18 @@ IF(WIN32)
    LIST(APPEND LIBS_TO_MERGE auth_win_client)
  ENDIF()
  
 -# LDAP authentication SASL client plugin
--MESSAGE(STATUS "Creating LDAP authentication SASL client library.")
 -ADD_SUBDIRECTORY(authentication_ldap)
--  
--# Merge several convenience libraries into one big mysqlclient
--MERGE_CONVENIENCE_LIBRARIES(mysqlclient ${LIBS_TO_MERGE} COMPONENT Development)
 +IF(WITHOUT_CLIENTLIBS)
 +  # Merge several convenience libraries into one big mysqlclient
 +  MERGE_CONVENIENCE_LIBRARIES(mysqlclient ${LIBS_TO_MERGE} COMPONENT Development SKIP_INSTALL)
@@ -29,10 +25,13 @@
 +  # LDAP authentication SASL client plugin
 +  MESSAGE(STATUS "Creating LDAP authentication SASL client library.")
 +  ADD_SUBDIRECTORY(authentication_ldap)
-+
+ 
+-# Merge several convenience libraries into one big mysqlclient
+-MERGE_CONVENIENCE_LIBRARIES(mysqlclient ${LIBS_TO_MERGE} COMPONENT Development)
 +  # Merge several convenience libraries into one big mysqlclient
 +  MERGE_CONVENIENCE_LIBRARIES(mysqlclient ${LIBS_TO_MERGE} COMPONENT Development)
 +ENDIF(WITHOUT_CLIENTLIBS)
++
  TARGET_LINK_LIBRARIES(mysqlclient PRIVATE ${LIBS_TO_LINK})
  
  # Visual Studio users need debug  static library for debug projects

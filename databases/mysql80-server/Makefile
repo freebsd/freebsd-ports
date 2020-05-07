@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME?=		mysql
-PORTVERSION=		8.0.19
-PORTREVISION?=		3
+PORTVERSION=		8.0.20
+PORTREVISION?=		0
 CATEGORIES=		databases
 MASTER_SITES=		MYSQL/MySQL-8.0
 PKGNAMESUFFIX?=		80-server
@@ -20,6 +20,7 @@ SLAVEDIRS=	databases/mysql80-client
 USES=		bison:build cmake:noninja compiler:c++14-lang cpe \
 		groff:run libedit localbase ncurses perl5 pkgconfig shebangfix ssl
 
+USE_CXXSTD=	c++14
 USE_PERL5=	run
 
 MY_DBDIR=	/var/db/mysql
@@ -78,7 +79,15 @@ CMAKE_ARGS+=	-DINSTALL_LAYOUT=FREEBSD \
 		-DWITH_PROTOBUF=system \
 		-DWITH_SSL=${OPENSSLBASE} \
 		-DBUILD_BUNDLED_ZLIB=0 \
-		-DBUILD_BUNDLED_LZ4=0 \
+		-DBUILD_BUNDLED_LZ4=0
+
+# The Mroonga, RocksDB, and TokuDB storage engines are disabled.
+# Mroonga is only buildable on little endian archs.
+# RocksDB is only buildable on little endian archs and requires POSIX timers.
+# TokuDB is only buildable on 64-bit little endian archs.
+CMAKE_ARGS+=	-DWITHOUT_MROONGA_STORAGE_ENGINE=1 \
+		-DWITHOUT_ROCKSDB_STORAGE_ENGINE=1 \
+		-DWITHOUT_TOKUDB_STORAGE_ENGINE=1
 
 SHEBANG_FILES=	scripts/*.pl* scripts/*.sh
 
@@ -156,6 +165,13 @@ FEDERATED_SUB_LIST_OFF+=	FEDER=""
 .endif
 
 .include <bsd.port.options.mk>
+
+# Since 8.0.20 release innodb engine uses new memory alligned allocator
+# which is broken on i386 due to different size of types and caused a
+# 'static_assert(alignof(T) <= alignof(std::max_align_t))' error
+.if ${ARCH} == i386
+CMAKE_ARGS+=	-DDISABLE_PSI_MEMORY=1
+.endif
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200057
 SUB_LIST+=	LEGACY_LIMITS="@comment " MODERN_LIMITS=""

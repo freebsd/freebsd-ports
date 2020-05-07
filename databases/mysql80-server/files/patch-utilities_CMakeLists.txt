@@ -1,20 +1,20 @@
 --- utilities/CMakeLists.txt.orig	2019-09-20 08:30:51 UTC
 +++ utilities/CMakeLists.txt
-@@ -22,13 +22,19 @@
- 
+@@ -23,13 +23,19 @@
  ADD_WSHADOW_WARNING()
+ DISABLE_MISSING_PROFILE_WARNING()
  
 -IF(NOT CMAKE_CROSSCOMPILING)
 +IF(WITHOUT_CLIENTLIBS)
    MYSQL_ADD_EXECUTABLE(comp_err
      comp_err.cc
-     COMPONENT Server
+     COMPONENT Test
      LINK_LIBRARIES mysys
 +    SKIP_INSTALL)
 +ELSE(WITHOUT_CLIENTLIBS)
 +  MYSQL_ADD_EXECUTABLE(comp_err
 +    comp_err.cc
-+    COMPONENT Server
++    COMPONENT Test
 +    LINK_LIBRARIES mysys
      )
 -ENDIF()

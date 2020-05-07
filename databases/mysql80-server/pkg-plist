@@ -27,6 +27,10 @@ lib/mysql/libmysqlrouter.so
 lib/mysql/libmysqlrouter.so.1
 lib/mysql/libmysqlrouter_http.so
 lib/mysql/libmysqlrouter_http.so.1
+lib/mysql/libmysqlrouter_http_auth_backend.so
+lib/mysql/libmysqlrouter_http_auth_backend.so.1
+lib/mysql/libmysqlrouter_http_auth_realm.so
+lib/mysql/libmysqlrouter_http_auth_realm.so.1
 lib/mysql/mysqlrouter/http_auth_backend.so
 lib/mysql/mysqlrouter/http_auth_realm.so
 lib/mysql/mysqlrouter/http_server.so
