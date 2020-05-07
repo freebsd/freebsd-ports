@@ -4,16 +4,19 @@ PORTNAME=	rundeck
 DISTVERSION=	2.11.14
 CATEGORIES=	sysutils java
 MASTER_SITES=	http://dl.bintray.com/rundeck/rundeck-maven/
+PKGNAMESUFFIX=	2
 DISTNAME=	rundeck-launcher-${PORTVERSION}
 EXTRACT_SUFX=	.jar
 
-MAINTAINER=	arcade@b1t.name
+MAINTAINER=	daniel.tihanyi@tetragir.com
 COMMENT=	Web-console for dispatching commands and scripts to your nodes
 
 LICENSE=	APACHE20
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.8+
+
+CONFLICTS_INSTALL=	rundeck3
 
 NO_ARCH=	yes
 NO_BUILD=	yes

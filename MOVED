@@ -15006,3 +15006,4 @@ deskutils/osynctool||2020-05-06|Abandonware, website disappeared
 devel/libopensync||2020-05-06|Abandonware, website disappeared
 deskutils/libopensync-plugin-vformat-devel||2020-05-06|Abandonware, website disappeared
 devel/py-ipykernel|devel/py-ipykernel5|2020-05-07|Has expired: Old version, use devel/py-ipykernel5 instead
+sysutils/rundeck|sysutils/rundeck2|2020-05-07|Rename to avoid confusion with sysutils/rundeck3

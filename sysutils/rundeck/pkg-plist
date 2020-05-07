@@ -1,3 +1,0 @@
-%%DATADIR%%/rundeck-launcher.jar
-@dir(%%RUNDECK_USER%%,%%RUNDECK_GROUP%%,755) rundeck/server/lib
-@dir(%%RUNDECK_USER%%,%%RUNDECK_GROUP%%,755) rundeck/server

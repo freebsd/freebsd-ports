@@ -1144,7 +1144,8 @@
     SUBDIR += rubygem-winrm-elevated
     SUBDIR += rubygem-winrm-fs
     SUBDIR += rubygem-yell
-    SUBDIR += rundeck
+    SUBDIR += rundeck2
+    SUBDIR += rundeck3
     SUBDIR += runit
     SUBDIR += runit-faster
     SUBDIR += runwhen

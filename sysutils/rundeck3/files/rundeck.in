@@ -1,0 +1,84 @@
+#!/bin/sh
+
+# PROVIDE: rundeck
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Configuration settings for rundeck in /etc/rc.conf:
+#
+# rundeck_enable (bool):
+#   Set to "NO" by default.
+#   Set it to "YES" to enable rundeck
+#
+# rundeck_args (str):
+#   Extra arguments passed to start command
+#
+# rundeck_home (str)
+#   Set to "%%RUNDECK_HOME%%" by default.
+#   Set the RUNDECK_HOME variable for rundeck process
+#
+# rundeck_java_home (str):
+#   Set to "%%JAVA_HOME%%" by default.
+#   Set the Java virtual machine to run rundeck
+#
+# rundeck_java_opts (str):
+#   Set to "" by default.
+#   Java VM args to use.
+#
+# rundeck_user (str):
+#   Set to "%%RUNDECK_USER%%" by default.
+#   User to run rundeck as.
+#
+# rundeck_group (str):
+#   Set to "%%RUNDECK_GROUP%%" by default.
+#   Group for data file ownership.
+#
+# rundeck_log_file (str):
+#   Set to "%%RUNDECK_LOG_FILE%%" by default.
+#   Log file location.
+#
+
+. /etc/rc.subr
+
+name="rundeck"
+rcvar=rundeck_enable
+
+load_rc_config "${name}"
+
+: ${rundeck_args="-b %%RUNDECK_HOME%%"}
+: ${rundeck_enable="NO"}
+: ${rundeck_home="%%RUNDECK_HOME%%"}
+: ${rundeck_java_home="%%JAVA_HOME%%"}
+: ${rundeck_user="%%RUNDECK_USER%%"}
+: ${rundeck_group="%%RUNDECK_GROUP%%"}
+: ${rundeck_log_file="%%RUNDECK_LOG_FILE%%"}
+
+pidfile="/var/run/rundeck/rundeck.pid"
+command="/usr/sbin/daemon"
+java_cmd="${rundeck_java_home}/bin/java"
+procname="${java_cmd}"
+command_args="-p ${pidfile} ${java_cmd} ${rundeck_java_opts} -jar %%DATADIR%%/rundeck.war ${rundeck_args} > ${rundeck_log_file} 2>&1"
+required_files="${java_cmd}"
+
+start_precmd="rundeck_prestart"
+start_cmd="rundeck_start"
+
+rundeck_prestart() {
+	if [ ! -f "${rundeck_log_file}" ]; then
+		touch "${rundeck_log_file}"
+		chown "${rundeck_user}:${rundeck_group}" "${rundeck_log_file}"
+		chmod 640 "${rundeck_log_file}"
+	fi
+	if [ ! -d "/var/run/rundeck" ]; then
+		install -d -o "${rundeck_user}" -g "${rundeck_group}" -m 750 "/var/run/rundeck"
+	fi
+}
+
+rundeck_start()
+{
+	check_startmsgs && echo "Starting ${name}."
+	su -l ${rundeck_user} -c "exec ${command} ${command_args} ${rc_arg}"
+}
+
+run_rc_command "$1"
