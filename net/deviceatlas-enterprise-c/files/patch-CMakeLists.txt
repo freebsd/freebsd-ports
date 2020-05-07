@@ -1,8 +1,0 @@
---- CMakeLists.txt.orig	2017-10-18 10:07:09 UTC
-+++ CMakeLists.txt
-@@ -2,3 +2,5 @@ cmake_minimum_required(VERSION 2.6)
- 
- subdirs(Src)
- subdirs(Examples)
-+
-+install(DIRECTORY Documentation/ DESTINATION ${DOCSDIR})
