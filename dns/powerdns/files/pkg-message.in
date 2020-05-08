@@ -1,7 +1,8 @@
 [
 { type: install
   message: <<EOM
- Enable powerdns in /etc/rc.conf with the following line:
+ Enable PowerDNS in /etc/rc.conf(.local) or in
+ /etc/rc.conf.d/pdns with the following line:
 
     pdns_enable="YES"
 
@@ -20,7 +21,12 @@ EOM
  -----------------------------------------------
  This version needs a mandatory schema change for the gmsyql,
  gpgsql and gsqlite3 backends. SQL statements are available in
- %%DOCSDIR%% or http://doc.powerdns.com
+ %%DOCSDIR%% or http://Doc.PowerDNS.com
+ -----------------------------------------------
+ IMPORTANT: PowerDNS Authoritative Server 4.3.0+:
+ -----------------------------------------------
+ MyDNS and OpenDBX backends removed 
+ https://Blog.PowerDNS.com/2019/10/17/backend-removals-in-the-upcoming-authoritative-server-release/
 EOM
 }
 ]

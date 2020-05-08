@@ -24,10 +24,9 @@ sbin/pdns_server
 lib/pdns/libbindbackend.so
 lib/pdns/libpipebackend.so
 %%GEOIP%%lib/pdns/libgeoipbackend.so
+%%LMDB%%lib/pdns/liblmdbbackend.so
 %%LUABACKEND%%lib/pdns/liblua2backend.so
-%%MYDNS%%lib/pdns/libmydnsbackend.so
 %%MYSQL%%lib/pdns/libgmysqlbackend.so
-%%OPENDBX%%lib/pdns/libopendbxbackend.so
 %%OPENLDAP%%lib/pdns/libldapbackend.so
 %%OPENLDAP%%bin/zone2ldap
 %%PGSQL%%lib/pdns/libgpgsqlbackend.so
@@ -67,6 +66,7 @@ man/man1/zone2sql.1.gz
 %%SQLITE3%%%%PORTDOCS%%%%DOCSDIR%%/4.0.0_to_4.2.0_schema.sqlite3.sql
 %%MYSQL%%%%PORTDOCS%%%%DOCSDIR%%/4.1.0_to_4.2.0_schema.mysql.sql
 %%PGSQL%%%%PORTDOCS%%%%DOCSDIR%%/4.1.0_to_4.2.0_schema.pgsql.sql
+%%PGSQL%%%%PORTDOCS%%%%DOCSDIR%%/4.2.0_to_4.3.0_schema.pgsql.sql
 %%MYSQL%%%%PORTDOCS%%%%DOCSDIR%%/dnssec-3.x_to_3.4.0_schema.mysql.sql
 %%PGSQL%%%%PORTDOCS%%%%DOCSDIR%%/dnssec-3.x_to_3.4.0_schema.pgsql.sql
 %%SQLITE3%%%%PORTDOCS%%%%DOCSDIR%%/dnssec-3.x_to_3.4.0_schema.sqlite3.sql
@@ -75,8 +75,8 @@ man/man1/zone2sql.1.gz
 %%SQLITE3%%%%PORTDOCS%%%%DOCSDIR%%/nodnssec-3.x_to_3.4.0_schema.sqlite3.sql
 %%OPENLDAP%%%%PORTDOCS%%%%DOCSDIR%%/dnsdomain2.schema
 %%OPENLDAP%%%%PORTDOCS%%%%DOCSDIR%%/pdns-domaininfo.schema
-%%MYDNS%%%%PORTDOCS%%%%DOCSDIR%%/schema.mydns.sql
 %%MYSQL%%%%PORTDOCS%%%%DOCSDIR%%/schema.mysql.sql
 %%PGSQL%%%%PORTDOCS%%%%DOCSDIR%%/schema.pgsql.sql
 %%SQLITE3%%%%PORTDOCS%%%%DOCSDIR%%/schema.sqlite3.sql
 %%UNIXODBC%%%%PORTDOCS%%%%DOCSDIR%%/schema.mssql.sql
+@dir(root,wheel,0755) /var/run/pdns

@@ -1,4 +1,34 @@
-PowerDNS is an advanced DNS server, which allows for several different
-backends. Current backends include MySQL, PostgreSQL, bind, etc.
+The PowerDNS Authoritative Server is the only solution that enables
+authoritative DNS service from all major databases, including but
+not limited to MySQL, PostgreSQL, SQLite3, LDAP and plain text files.
 
-WWW: http://www.powerdns.com/
+DNS answers can also be fully scripted using a variety of (scripting)
+languages such as Lua, Java, Perl, Python, Ruby, C and C++. Such
+scripting can be used for dynamic redirection, (spam) filtering or
+real time intervention.
+
+In addition, the PowerDNS Authoritative Server is the leading DNSSEC
+implementation, hosting the majority of all DNSSEC domains worldwide.
+The Authoritative Server hosts at least 30% of all domain names in
+Europe, and around 90% of all DNSSEC domains in Europe.
+
+ * IPv4, UDP/TCP
+ * IPv6, UDP/TCP, 100% compliant
+ * Remotely pollable statistics for real time graphing
+ * MySQL, PostgreSQL, Oracle, Sybase, Microsoft SQL Server, LDAP, SQLite3
+   - Including replication
+ * Near instant start up time
+ * Plain BIND zone files
+   - Brief start up time
+ * Migration tools from legacy DNS platforms (zone2sql)
+ * Internal Lua-based scripted answer generation
+ * External high-performance Script-based answer generation
+ * Geographical load balancing
+ * Full DNSSEC support including all standardized algorithms
+ * TSIG for transaction signatures, AXFR authorization/requests
+ * Master/Slave support
+ * Built-in web server for statistics and limited direct control
+ * API for direct control (pdns_control, pdnssec)
+   - Local and remote access
+
+WWW: https://www.PowerDNS.com/auth.html
