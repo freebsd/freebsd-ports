@@ -4691,6 +4691,7 @@
     SUBDIR += py-ordereddict
     SUBDIR += py-orderedmultidict
     SUBDIR += py-os-brick
+    SUBDIR += py-os-brick2
     SUBDIR += py-os-client-config
     SUBDIR += py-os-client-config1
     SUBDIR += py-os-service-types

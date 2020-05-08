@@ -1,0 +1,8 @@
+OpenStack Cinder brick library for managing local volume attaches
+
+Features:
+- Discovery of volumes being attached to a host for many transport protocols.
+- Removal of volumes from a host.
+
+WWW: https://docs.openstack.org/os-brick/latest/
+WWW: https://github.com/openstack/os-brick
