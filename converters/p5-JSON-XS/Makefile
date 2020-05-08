@@ -20,10 +20,6 @@ RUN_DEPENDS=	p5-Types-Serialiser>=0:devel/p5-Types-Serialiser \
 USES=		perl5
 USE_PERL5=	configure
 
-post-patch:
-# This dependency does nothing and is safe to remove
-	@${REINPLACE_CMD} -e '/use Canary::Stability/d' ${WRKSRC}/Makefile.PL
-
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/JSON/XS/XS.so
 
