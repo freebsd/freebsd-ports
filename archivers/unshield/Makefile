@@ -19,7 +19,4 @@ USE_LDCONFIG=	yes
 GH_ACCOUNT=	twogood
 USE_GITHUB=	yes
 
-post-patch:
-	@${REINPLACE_CMD} -e '/CMAKE_INSTALL_DATAROOTDIR/ s|DATAROOTDIR|PREFIX|' ${WRKSRC}/CMakeLists.txt
-
 .include <bsd.port.mk>
