@@ -1,16 +1,11 @@
---- Makefile.orig	2012-01-23 18:13:41 UTC
+--- Makefile.orig	2020-05-07 15:17:41 UTC
 +++ Makefile
-@@ -46,9 +46,11 @@ OPTFLAGS += -DSO_REUSEPORT
+@@ -75,7 +75,7 @@ endif
  
- # END system dependant block
+ .PHONY: all clean docs install
  
--SSL_LIBS := $(shell pkg-config --libs libssl 2>/dev/null)
--ifeq ($(SSL_LIBS),)
- SSL_LIBS := $(shell pkg-config --libs openssl 2>/dev/null)
-+CFLAGS += $(shell pkg-config --cflags openssl 2>/dev/null)
-+ifeq ($(SSL_LIBS),)
-+SSL_LIBS := $(shell pkg-config --libs libssl 2>/dev/null)
-+CFLAGS += $(shell pkg-config --cflags libssl 2>/dev/null)
- endif
- ifeq ($(SSL_LIBS),)
- SSL_LIBS := -lssl -lcrypto
+-all: proxytunnel
++all: proxytunnel docs
+ 
+ docs:
+ 	$(MAKE) -C docs
