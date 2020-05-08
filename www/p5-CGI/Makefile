@@ -19,12 +19,10 @@ TEST_DEPENDS=	p5-Test-Deep>=0:devel/p5-Test-Deep \
 		p5-Test-NoWarnings>=0:devel/p5-Test-NoWarnings \
 		p5-Test-Warn>=0:devel/p5-Test-Warn
 
-CONFLICTS_INSTALL=	p5-CGI.pm-[1-3]*
-
-PORTSCOUT=	limit:^[0-9\.]*$$
-
 USES=		perl5
 USE_PERL5=	configure
+
+PORTSCOUT=	limit:^[0-9\.]*$$
 
 NO_ARCH=	yes
 
