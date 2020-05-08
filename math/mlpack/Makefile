@@ -1,12 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	mlpack
-DISTVERSION=	3.2.2
-PORTREVISION=	2
+DISTVERSION=	3.3.1
 CATEGORIES=	math # machine-learning
 MASTER_SITES=	https://mlpack.org/files/
 
-MAINTAINER=	robert.ayrapetyan@gmail.com
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Fast, flexible machine learning library
 
 LICENSE=	BSD3CLAUSE
@@ -22,7 +21,14 @@ USES=		cmake compiler:c++14-lang pkgconfig
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DSTB_IMAGE_INCLUDE_DIR=${LOCALBASE}/include/stb
-CMAKE_OFF=	BUILD_PYTHON_BINDINGS BUILD_TESTS BUILD_CLI_EXECUTABLES
+CMAKE_OFF=	BUILD_PYTHON_BINDINGS BUILD_TESTS
+
+OPTIONS_DEFINE=		EXECUTABLES
+OPTIONS_DEFAULT=	EXECUTABLES
+OPTIONS_SUB=		yes
+
+EXECUTABLES_DESC=	Build command-line executables
+EXECUTABLES_CMAKE_BOOL=	BUILD_CLI_EXECUTABLES
 
 do-test: # 'clean' target below is a workaround for: https://github.com/mlpack/mlpack/issues/2300
 	@cd ${BUILD_WRKSRC} && \
