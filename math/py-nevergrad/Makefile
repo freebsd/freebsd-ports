@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nevergrad
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.1
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,9 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bayesian-optimization>=1.1.0:math/py-bayesian-optimization@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cma>=2.6.0:math/py-cma@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}hiplot>=0:graphics/py-hiplot@${PY_FLAVOR} \
-		${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}pandas>=0.23.4:math/py-pandas@${PY_FLAVOR}
+		${PYNUMPY}
 
 USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
@@ -29,8 +27,12 @@ OPTIONS_DEFAULT=BENCHMARK
 BENCHMARK_DESC=	Run benchmark functions
 
 BENCHMARK_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gym>=0.12.1:math/py-gym@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}hiplot>=0:graphics/py-hiplot@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}matplotlib>=2.2.3:math/py-matplotlib@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}pandas>=0.23.4:math/py-pandas@${PY_FLAVOR} \
+			${PY_PILLOW} \
 			${PYTHON_PKGNAMEPREFIX}requests>=2.21.0:www/py-requests@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}tqdm>=0:misc/py-tqdm@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}xlrd>=1.2.0:textproc/py-xlrd@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}xlwt>=1.3.0:textproc/py-xlwt@${PY_FLAVOR}
 
