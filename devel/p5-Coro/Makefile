@@ -14,8 +14,7 @@ COMMENT=	Coroutine process abstraction for perl
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Canary-Stability>=0:devel/p5-Canary-Stability \
-		${RUN_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-AnyEvent>=7:devel/p5-AnyEvent \
 		p5-AnyEvent-AIO>=1.0:devel/p5-AnyEvent-AIO \
 		p5-EV>=4:devel/p5-EV \
