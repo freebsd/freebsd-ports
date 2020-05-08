@@ -34,7 +34,8 @@ BUILD_DEPENDS+=		psp-addr2line:devel/psptoolchain-binutils \
 			psp-readelf:devel/psptoolchain-binutils \
 			psp-size:devel/psptoolchain-binutils \
 			psp-strings:devel/psptoolchain-binutils \
-			psp-strip:devel/psptoolchain-binutils
+			psp-strip:devel/psptoolchain-binutils \
+			objdump:devel/binutils
 
 USES+=			compiler:c11 gmake libtool tar:bzip2
 
