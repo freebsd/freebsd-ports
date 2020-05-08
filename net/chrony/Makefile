@@ -14,18 +14,18 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cpe gmake libedit pkgconfig
-USERS=		chronyd
-GROUPS=		chronyd
 
 CPE_VENDOR=	tuxfamily
+
+USE_RC_SUBR=	chronyd
+
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--chronyvardir=/var/db/${PORTNAME} \
 		--sysconfdir=${PREFIX}/etc --mandir=${MANPREFIX}/man \
 		--datarootdir=${DATADIR} --docdir=${DOCSDIR} \
 		--with-readline-library=${LOCALBASE}/lib \
-		--with-user=chronyd --without-tomcrypt
-USE_RC_SUBR=	chronyd
+		--without-tomcrypt
 
 ALL_TARGET=	all
 INSTALL_TARGET=	install
@@ -35,26 +35,31 @@ PORTEXAMPLES=	chrony.conf.example1 chrony.conf.example2 \
 
 # XXX: there are also other potentially useful options worth looking into:
 #  --disable-pps        Disable PPS API support
-OPTIONS_DEFINE=		DOCS HTMLDOCS EXAMPLES IPV6 
-OPTIONS_DEFAULT=	NETTLE
+OPTIONS_DEFINE=		DOCS HTMLDOCS EXAMPLES IPV6 USER
+OPTIONS_DEFAULT=	NETTLE USER
 OPTIONS_RADIO=		CRYPTLIB
 OPTIONS_RADIO_CRYPTLIB=	NETTLE NSS
-HTMLDOCS_IMPLIES=	DOCS
 OPTIONS_SUB=		yes
 
 HTMLDOCS_DESC=		Build HTML docs (IMPLIES DOCS, needs ruby, asciidoctor)
 NETTLE_DESC=		Nettle crypto library support
 NSS_DESC=		NSS-based support for more hashing algorithms
+USER_DESC=		Run as user/group chronyd (unset: user/group ntpd)
 
-IPV6_CONFIGURE_OFF=	--disable-ipv6
-NETTLE_CONFIGURE_OFF=	--without-nettle
-NETTLE_LIB_DEPENDS=	libnettle.so:security/nettle
-NSS_CONFIGURE_OFF=	--without-nss
-NSS_LIB_DEPENDS=	libfreebl3.so:security/nss
+HTMLDOCS_IMPLIES=	DOCS
 
 HTMLDOCS_BUILD_DEPENDS+=asciidoctor:textproc/rubygem-asciidoctor
 HTMLDOCS_ALL_TARGET=	docs
 HTMLDOCS_INSTALL_TARGET=docs
+IPV6_CONFIGURE_OFF=	--disable-ipv6
+NETTLE_LIB_DEPENDS=	libnettle.so:security/nettle
+NETTLE_CONFIGURE_OFF=	--without-nettle
+NSS_LIB_DEPENDS=	libfreebl3.so:security/nss
+NSS_CONFIGURE_OFF=	--without-nss
+USER_CONFIGURE_ON=	--with-user=chronyd
+USER_CONFIGURE_OFF=	--with-user=ntpd
+
+USER_VARS=		USERS=chronyd GROUPS=chronyd
 
 .include <bsd.port.pre.mk>
 
