@@ -16,7 +16,8 @@ BROKEN_aarch64=		Fails to package: cannot find manpages
 BROKEN_mips64=		Fails to configure: cannot compute suffix of object files
 
 BUILD_DEPENDS=	avr-as:devel/binutils@avr \
-		avr-ld:devel/binutils@avr
+		avr-ld:devel/binutils@avr \
+		objdump:devel/binutils
 LIB_DEPENDS=	libmpfr.so:math/mpfr \
 		libgmp.so:math/gmp \
 		libmpc.so:math/mpc \

@@ -18,6 +18,7 @@ NOT_FOR_ARCHS=		arm armeb armv6 armv7 \
 			mips mips64 mips64el mipsel mipsn32
 NOT_FOR_ARCHS_REASON=	Very slow to build on emulator
 
+BUILD_DEPENDS=		objdump:devel/binutils
 LIB_DEPENDS=		libexpat.so:textproc/expat2 \
 			libgmp.so:math/gmp \
 			libmpfr.so:math/mpfr \
