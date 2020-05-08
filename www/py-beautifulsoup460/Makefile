@@ -14,6 +14,9 @@ COMMENT=	HTML/XML Parser for Python
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
+DEPRECATED=	Use www/py-beautifulsoup448 instead
+EXPIRATION_DATE=2020-05-31
+
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
