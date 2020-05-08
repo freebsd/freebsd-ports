@@ -5062,6 +5062,7 @@
     SUBDIR += py-six
     SUBDIR += py-smmap2
     SUBDIR += py-snakeviz
+    SUBDIR += py-sniffio
     SUBDIR += py-sortedcontainers
     SUBDIR += py-sourcemap
     SUBDIR += py-speaklater

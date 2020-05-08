@@ -1,0 +1,4 @@
+sniffio is a tiny package whose only purpose is to let you detect which async
+library your code is running under.
+
+WWW: https://github.com/python-trio/sniffio
