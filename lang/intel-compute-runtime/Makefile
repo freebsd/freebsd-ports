@@ -2,6 +2,7 @@
 
 PORTNAME=	compute-runtime
 DISTVERSION=	20.18.16699
+PORTREVISION=	1
 CATEGORIES=	lang
 PKGNAMEPREFIX=	intel-
 
@@ -22,7 +23,7 @@ USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 GH_ACCOUNT=	intel
 CMAKE_ON=	SKIP_UNIT_TESTS
-CMAKE_ARGS=	-DNEO_DRIVER_VERSION:STRING="${DISTVERSIONFULL}"
+CMAKE_ARGS=	-DNEO_OCL_DRIVER_VERSION:STRING="${DISTVERSIONFULL}"
 PLIST_FILES=	etc/OpenCL/vendors/intel.icd \
 		bin/ocloc \
 		lib/intel-opencl/libigdrcl.so
@@ -35,6 +36,7 @@ OPTIONS_DEFAULT_amd64=	L0
 L0_DESC=		oneAPI Level Zero support
 L0_BUILD_DEPENDS=	level-zero>0:devel/level-zero
 L0_CMAKE_BOOL=		BUILD_WITH_L0
+L0_CMAKE_ON=		-DNEO_VERSION_BUILD:STRING="0"
 L0_PLIST_FILES=		lib/libze_intel_gpu.so.0.8 \
 			lib/libze_intel_gpu.so.0.8.0
 
