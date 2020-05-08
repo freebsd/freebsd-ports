@@ -3,7 +3,7 @@
 
 PORTNAME=	openscad
 PORTVERSION=	2020.01.04
-PORTREVISION=	1
+PORTREVISION=	2
 #PORTREVISION=	1
 CATEGORIES=	cad
 PKGNAMESUFFIX=	-devel
@@ -17,12 +17,12 @@ COMMENT=	Programmer's solid 3D CAD modeller #'
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=  cgal>0:math/cgal
 LIB_DEPENDS=	libzip.so:archivers/libzip \
 		libhidapi.so:comms/hidapi \
 		libboost_regex.so:devel/boost-libs \
 		libqscintilla2_qt5.so:devel/qscintilla2-qt5 \
 		libopencsg.so:graphics/opencsg \
-		libCGAL.so:math/cgal \
 		libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr \
 		libfreetype.so:print/freetype2 \
@@ -32,7 +32,7 @@ LIB_DEPENDS=	libzip.so:archivers/libzip \
 
 CONFLICTS=	openscad
 
-USES=		bison compiler:c++11-lib desktop-file-utils eigen:3 gettext \
+USES=		bison compiler:c++14-lang desktop-file-utils eigen:3 gettext \
 		gl gnome pkgconfig qmake qt:5 shared-mime-info xorg
 USE_GITHUB=	yes
 USE_GL=		gl glu glew

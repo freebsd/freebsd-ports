@@ -3,3 +3,5 @@ SHA256 (colmap-colmap-3.5_GH0.tar.gz) = 7a23856a5662daf5466ef9cdf821eb139f2e1bd6
 SIZE (colmap-colmap-3.5_GH0.tar.gz) = 5872165
 SHA256 (b5ccc54e68e3.patch) = 38e8328e52889ec18dd69939c4fbef8b653d5f0fe022ca8eb3ae3b521582a3a8
 SIZE (b5ccc54e68e3.patch) = 1757
+SHA256 (c9e31ee9cde4.patch) = f1a85107e2b79c6bb32577543b6ae4b97cfa98a83f07357d69e70e1bf5de5a5b
+SIZE (c9e31ee9cde4.patch) = 12755
