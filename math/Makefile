@@ -820,6 +820,7 @@
     SUBDIR += py-secp256k1
     SUBDIR += py-simhash
     SUBDIR += py-slepc4py
+    SUBDIR += py-snuggs
     SUBDIR += py-spectral
     SUBDIR += py-spot
     SUBDIR += py-statsmodels
