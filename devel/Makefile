@@ -4713,6 +4713,7 @@
     SUBDIR += py-oslo.i18n
     SUBDIR += py-oslo.limit
     SUBDIR += py-oslo.log
+    SUBDIR += py-oslo.log3
     SUBDIR += py-oslo.messaging
     SUBDIR += py-oslo.messaging10
     SUBDIR += py-oslo.middleware
