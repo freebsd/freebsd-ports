@@ -1,0 +1,6 @@
+Test::Metrics::Any helps write unit tests which assert that the code under test
+reports metrics via Metrics::Any.
+
+Loading this module automatically sets the Metrics::Any::Adapter type to Test.
+
+WWW: https://metacpan.org/release/Test-Metrics-Any
