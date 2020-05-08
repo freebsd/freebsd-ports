@@ -120,6 +120,7 @@
     SUBDIR += metacity-theme-microgui
     SUBDIR += metacity-themes
     SUBDIR += mint-themes
+    SUBDIR += numix-icon-theme
     SUBDIR += numix-theme
     SUBDIR += openbox-arc-theme
     SUBDIR += papirus-icon-theme
