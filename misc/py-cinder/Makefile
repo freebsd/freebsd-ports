@@ -3,7 +3,7 @@
 
 PORTNAME=	cinder
 PORTVERSION=	12.0.10
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	misc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -54,7 +54,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=2.0.0:devel/py-pbr@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}suds-jurko>=0.6:net/py-suds-jurko@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}webob>=1.7.1:www/py-webob@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oslo.i18n>=3.15.3:devel/py-oslo.i18n@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}os-brick>=2.2.0:devel/py-os-brick@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}google-api-python-client>=1.4.2:www/py-google-api-python-client@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cryptography>=1.9:security/py-cryptography@${PY_FLAVOR} \
 		${PY_IPADDRESS} \
@@ -112,6 +111,7 @@ post-install:
 .if ${PYTHON_REL} < 3600
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}castellan1>=0.16.0:devel/py-castellan1@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}keystonemiddleware8>=4.17.0:devel/py-keystonemiddleware8@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}os-brick2>=2.2.0:devel/py-os-brick2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}os-win4>=3.0.0:devel/py-os-win4@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oslo.concurrency3>=3.25.0:devel/py-oslo.concurrency3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oslo.config7>=5.1.0:devel/py-oslo.config7@${PY_FLAVOR} \
@@ -132,6 +132,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}castellan1>=0.16.0:devel/py-castellan1@${PY
 .else
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}castellan>=0.16.0:devel/py-castellan@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}keystonemiddleware>=4.17.0:devel/py-keystonemiddleware@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}os-brick>=2.2.0:devel/py-os-brick@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}os-win>=3.0.0:devel/py-os-win@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oslo.concurrency>=3.25.0:devel/py-oslo.concurrency@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oslo.config>=5.1.0:devel/py-oslo.config@${PY_FLAVOR} \
