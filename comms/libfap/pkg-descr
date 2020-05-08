@@ -6,4 +6,4 @@ mic-e and compressed location packets, NMEA location packets, objects,
 items, messages, telemetry and most weather packets.
 For more description, see the Perl module.
 
-WWW: http://www.pakettiradio.net/libfap/
+WWW: https://www.pakettiradio.net/libfap/

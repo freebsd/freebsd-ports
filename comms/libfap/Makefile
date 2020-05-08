@@ -9,11 +9,13 @@ MASTER_SITES=	http://www.pakettiradio.net/downloads/libfap/${PORTVERSION}/ \
 MAINTAINER=	akh@nobugware.com
 COMMENT=	C port for Ham::APRS::FAP Finnish APRS Parser Perl module
 
-LICENSE=	GPLv2
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		libtool
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		libtool
 INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>
