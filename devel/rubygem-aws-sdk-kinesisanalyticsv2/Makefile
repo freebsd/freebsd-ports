@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aws-sdk-kinesisanalyticsv2
-PORTVERSION=	1.14.0
+PORTVERSION=	1.15.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
