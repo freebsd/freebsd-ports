@@ -15,6 +15,7 @@
 %%SITE_PERL%%/IO/Async/Loop/Poll.pm
 %%SITE_PERL%%/IO/Async/Loop/Select.pm
 %%SITE_PERL%%/IO/Async/LoopTests.pm
+%%SITE_PERL%%/IO/Async/Metrics.pm
 %%SITE_PERL%%/IO/Async/Notifier.pm
 %%SITE_PERL%%/IO/Async/OS.pm
 %%SITE_PERL%%/IO/Async/OS/MSWin32.pm
@@ -49,6 +50,7 @@
 %%PERL5_MAN3%%/IO::Async::Loop::Poll.3.gz
 %%PERL5_MAN3%%/IO::Async::Loop::Select.3.gz
 %%PERL5_MAN3%%/IO::Async::LoopTests.3.gz
+%%PERL5_MAN3%%/IO::Async::Metrics.3.gz
 %%PERL5_MAN3%%/IO::Async::Notifier.3.gz
 %%PERL5_MAN3%%/IO::Async::OS.3.gz
 %%PERL5_MAN3%%/IO::Async::OS::MSWin32.3.gz

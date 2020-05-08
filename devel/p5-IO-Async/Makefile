@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	IO-Async
-PORTVERSION=	0.75
+PORTVERSION=	0.76
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PEVANS
@@ -20,6 +20,7 @@ RUN_DEPENDS=	p5-Future>=0.33:devel/p5-Future \
 		p5-Struct-Dumb>0:devel/p5-Struct-Dumb
 TEST_DEPENDS=	p5-Test-Fatal>=0:devel/p5-Test-Fatal \
 		p5-Test-Identity>=0:devel/p5-Test-Identity \
+		p5-Test-Metrics-Any>=0:devel/p5-Test-Metrics-Any \
 		p5-Test-Pod>=1:devel/p5-Test-Pod \
 		p5-Test-Refcount>=0:devel/p5-Test-Refcount
 
