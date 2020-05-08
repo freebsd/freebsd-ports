@@ -1,5 +1,3 @@
-bin/eLut
-bin/toFloat
 include/OpenEXR/Iex.h
 include/OpenEXR/IexBaseExc.h
 include/OpenEXR/IexErrnoExc.h
@@ -57,9 +55,10 @@ include/OpenEXR/half.h
 include/OpenEXR/halfExport.h
 include/OpenEXR/halfFunction.h
 include/OpenEXR/halfLimits.h
-lib/cmake/IlmBase/IlmBaseConfig-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/IlmBase/IlmBaseConfig.cmake
 lib/cmake/IlmBase/IlmBaseConfigVersion.cmake
+lib/cmake/IlmBase/IlmBaseTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/IlmBase/IlmBaseTargets.cmake
 lib/libHalf-%%MAJORVER%%.so
 lib/libHalf-%%MAJORVER%%.so.%%VER%%
 lib/libHalf-%%MAJORVER%%.so.%%VER%%.0.0

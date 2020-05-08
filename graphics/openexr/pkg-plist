@@ -110,9 +110,10 @@ include/OpenEXR/ImfVersion.h
 include/OpenEXR/ImfWav.h
 include/OpenEXR/ImfXdr.h
 include/OpenEXR/OpenEXRConfig.h
-lib/cmake/OpenEXR/OpenEXRConfig-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/OpenEXR/OpenEXRConfig.cmake
 lib/cmake/OpenEXR/OpenEXRConfigVersion.cmake
+lib/cmake/OpenEXR/OpenEXRTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/OpenEXR/OpenEXRTargets.cmake
 lib/libIlmImf-%%MAJORVER%%.so
 lib/libIlmImf-%%MAJORVER%%.so.%%VER%%
 lib/libIlmImf-%%MAJORVER%%.so.%%VER%%.0.0

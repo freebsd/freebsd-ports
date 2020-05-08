@@ -3,7 +3,7 @@
 
 PORTNAME=	openexr
 PORTVERSION=	1.2.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	graphics python
 MASTER_SITES=	http://excamera.com/files/ \
 		CHEESESHOP
