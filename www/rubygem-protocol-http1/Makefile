@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	protocol-http1
-PORTVERSION=	0.12.0
+PORTVERSION=	0.13.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ COMMENT=	Low level implementation of the HTTP/1 protocol
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-protocol-http>=0.18<1:www/rubygem-protocol-http
+RUN_DEPENDS=	rubygem-protocol-http>=0.19<1:www/rubygem-protocol-http
 
 USES=		gem
 USE_RUBY=	yes
