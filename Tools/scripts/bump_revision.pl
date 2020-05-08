@@ -109,7 +109,7 @@ my ($portsdir, $INDEX);
 {
     $opt_i = "";
     $opt_u = "";
-    getopts("fgi:lnu:p:");
+    getopts("fgi:lnu:p:") or die "Aborting";
     $shallow = $opt_l if $opt_l;
     if ($opt_l and $opt_g) {
 	die "Options -g and -l given, which are mutually exclusive. Pick either.";
