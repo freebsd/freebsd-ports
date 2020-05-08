@@ -865,6 +865,7 @@
     SUBDIR += py-pyx
     SUBDIR += py-qrencode
     SUBDIR += py-qt5-svg
+    SUBDIR += py-rasterio
     SUBDIR += py-rawkit
     SUBDIR += py-sane
     SUBDIR += py-scikit-image
