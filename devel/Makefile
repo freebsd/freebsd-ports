@@ -4289,6 +4289,7 @@
     SUBDIR += py-crcmod
     SUBDIR += py-ctags
     SUBDIR += py-cuisine
+    SUBDIR += py-curio
     SUBDIR += py-cursive
     SUBDIR += py-curtsies
     SUBDIR += py-cxx
