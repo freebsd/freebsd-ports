@@ -15008,3 +15008,4 @@ deskutils/libopensync-plugin-vformat-devel||2020-05-06|Abandonware, website disa
 devel/py-ipykernel|devel/py-ipykernel5|2020-05-07|Has expired: Old version, use devel/py-ipykernel5 instead
 sysutils/rundeck|sysutils/rundeck2|2020-05-07|Rename to avoid confusion with sysutils/rundeck3
 x11-wm/compiz-plugins-unsupported||2020-05-07|Has expired: Broken for more than 6 months
+math/darknet|misc/darknet|2020-05-07|DarkNet is a machine learning project, not a math project

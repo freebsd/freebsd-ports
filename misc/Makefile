@@ -67,6 +67,7 @@
     SUBDIR += dahdi
     SUBDIR += dahdi-kmod
     SUBDIR += dahdi-kmod26
+    SUBDIR += darknet
     SUBDIR += dartsim
     SUBDIR += ddate
     SUBDIR += deco

@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	darknet
-PORTVERSION=	3.20200315 # the upstream doesn't maintain a meaningful versioning schema, so have to use a date here
+PORTVERSION=	3.20200507 # the upstream doesn't maintain a meaningful versioning schema, so have to use a date here
 PORTEPOCH=	1
-CATEGORIES=	math # machine-learning
+CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Open source neural networks in C
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		cmake compiler:c11
 USE_GITHUB=	yes
 GH_ACCOUNT=	AlexeyAB
-GH_TAGNAME=	92e6e8e
+GH_TAGNAME=	1f60ca57ad90f34a0559783656fa1ba98c61bb6d
 USE_LDCONFIG=	yes
 
 CMAKE_OFF=	ENABLE_CUDA ENABLE_CUDNN ENABLE_CUDNN_HALF ENABLE_VCPKG_INTEGRATION

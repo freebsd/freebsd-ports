@@ -211,7 +211,6 @@
     SUBDIR += curv
     SUBDIR += cvc3
     SUBDIR += cvc4
-    SUBDIR += darknet
     SUBDIR += dbcsr
     SUBDIR += deal.ii
     SUBDIR += dieharder
