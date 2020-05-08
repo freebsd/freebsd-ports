@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	serverspec
-PORTVERSION=	2.41.4
+PORTVERSION=	2.41.5
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -17,9 +17,10 @@ RUN_DEPENDS=	rubygem-multi_json>=0:devel/rubygem-multi_json \
 		rubygem-rspec-its>=1.2.0:devel/rubygem-rspec-its \
 		rubygem-specinfra>=2.72:sysutils/rubygem-specinfra
 
-NO_ARCH=	yes
 USES=		gem
 USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 PLIST_FILES=	bin/serverspec-init
 
