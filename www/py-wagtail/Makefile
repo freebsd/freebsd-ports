@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wagtail
-PORTVERSION=	2.8.2
+PORTVERSION=	2.9
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ COMMENT=	Django content management system
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup460>=4.5.1<4.6.1:www/py-beautifulsoup460@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup448>=4.8<4.9:www/py-beautifulsoup448@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django22>=2.1<3.1:www/py-django22@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-modelcluster>=5.0<6.0:www/py-django-modelcluster@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj22-django-taggit>=1.0<2.0:www/py-dj22-django-taggit@${PY_FLAVOR} \
@@ -25,7 +25,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup460>=4.5.1<4.6.1:www/py-beautif
 		${PY_PILLOW} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.11.1<3.0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}unidecode>=0.04.14<2.0:converters/py-unidecode@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}willow>=1.3<1.4:graphics/py-willow@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}willow>=1.3<1.4:graphics/py-willow@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}XlsxWriter>=1.2.8<2.0:textproc/py-xlsxwriter@${PY_FLAVOR}
 
 USES=		cpe python:3.5+ shebangfix
 USE_PYTHON=	autoplist distutils
