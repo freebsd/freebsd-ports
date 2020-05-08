@@ -25,7 +25,7 @@ use Cwd;
 use Data::Dumper;
 use File::Basename;
 
-use vars qw/$opt_c $opt_n $opt_i $opt_u $opt_l $opt_g $opt_p/;
+use vars qw/$opt_n $opt_f $opt_i $opt_u $opt_l $opt_g $opt_p/;
 
 # launder environment
 delete @ENV{'IFS', 'CDPATH', 'ENV', 'BASH_ENV'};
@@ -38,8 +38,8 @@ Usage: $0 [options] [<category>/]<portname>
 Options:
     -l              - shaLlow, only bump ports with direct dependencies.
     -g              - Grandchildren, also bump for indirect dependencies (default).
-    -c              - Check only (dry-run), do not change Makefiles.
-    -n              - No tmpdir, just use the directory where INDEX resides.
+    -n              - Check only (dry-run), do not change Makefiles.
+    -f              - No tmpdir, just use the directory where INDEX resides.
     -i <filename>   - Use this for INDEX name. Defaults to \${PORTSDIR}/INDEX-n,
                       where n is the major version of the OS, or \${PORTSDIR}/INDEX if missing.
     -p <dirname>    - Set portsdir, if different from /usr/ports.
@@ -134,7 +134,7 @@ my $TMPDIR = File::Basename::dirname($INDEX);
 #
 # Sanity checking
 #
-if (-d "$TMPDIR/.svn" and not $opt_n and not $opt_c) {
+if (-d "$TMPDIR/.svn" and not $opt_f and not $opt_n) {
     die "$TMPDIR/.svn exists, cowardly refusing to proceed.\n";
 }
 
@@ -258,7 +258,7 @@ my $ports = join(" ", keys %DEPPORTS);
 # Create a temp directory and cvs checkout the ports
 # (don't do error checking, too complicated right now)
 #
-unless ($opt_n or $opt_c) {
+unless ($opt_f or $opt_n) {
   $TMPDIR = ".bump_revsion_pl_tmpdir.$$";
   print "svn checkout into $TMPDIR...\n";
   mkdir($TMPDIR, 0755);
@@ -275,7 +275,7 @@ unless ($opt_n or $opt_c) {
     print "Updating Makefiles\n";
     foreach my $p (sort keys(%DEPPORTS)) {
 	print "- Updating Makefile of $p\n";
-    next if $opt_c;
+    next if $opt_n;
 	bumpMakefile "$p";
     }
 }
@@ -283,7 +283,7 @@ unless ($opt_n or $opt_c) {
 #
 # Commit the changes. Not automated.
 #
-unless ($opt_c) {
+unless ($opt_n) {
     print <<EOF;
 All PORTREVISIONs have been updated.  You are nearly done, only one
 thing remains:  Committing to the ports tree.  This program is not
