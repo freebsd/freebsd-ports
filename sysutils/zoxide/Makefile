@@ -2,7 +2,7 @@
 
 PORTNAME=	zoxide
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.1
+DISTVERSION=	0.4.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	andoriyu@gmail.com
@@ -33,17 +33,18 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		crossbeam-utils-0.7.2 \
 		dirs-2.0.2 \
 		dirs-sys-0.3.4 \
+		dunce-1.0.0 \
 		getrandom-0.1.14 \
 		heck-0.3.1 \
-		hermit-abi-0.1.10 \
+		hermit-abi-0.1.12 \
 		lazy_static-1.4.0 \
-		libc-0.2.68 \
+		libc-0.2.69 \
 		memchr-2.3.3 \
 		ppv-lite86-0.2.6 \
-		proc-macro-error-0.4.12 \
-		proc-macro-error-attr-0.4.12 \
-		proc-macro2-1.0.10 \
-		quote-1.0.3 \
+		proc-macro-error-1.0.2 \
+		proc-macro-error-attr-1.0.2 \
+		proc-macro2-1.0.12 \
+		quote-1.0.4 \
 		rand-0.7.3 \
 		rand_chacha-0.2.2 \
 		rand_core-0.5.1 \
@@ -52,12 +53,12 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		redox_users-0.3.4 \
 		regex-automata-0.1.9 \
 		rust-argon2-0.7.0 \
-		serde-1.0.105 \
-		serde_derive-1.0.105 \
+		serde-1.0.106 \
+		serde_derive-1.0.106 \
 		strsim-0.8.0 \
-		structopt-0.3.12 \
-		structopt-derive-0.4.5 \
-		syn-1.0.17 \
+		structopt-0.3.14 \
+		structopt-derive-0.4.7 \
+		syn-1.0.18 \
 		syn-mid-0.5.0 \
 		textwrap-0.11.0 \
 		unicode-segmentation-1.6.0 \
@@ -70,7 +71,6 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		winapi-0.3.8 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0
-
 PLIST_FILES=	bin/zoxide
 
 post-install:
