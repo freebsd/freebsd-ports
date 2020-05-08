@@ -13,8 +13,7 @@ COMMENT=	Asynchronous/Advanced Input/Output
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Canary-Stability>=2001:devel/p5-Canary-Stability \
-		${RUN_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-common-sense>=0:devel/p5-common-sense
 
 USES=		perl5
