@@ -1,0 +1,30 @@
+https://bugzilla.mozilla.org/show_bug.cgi?id=1634852
+https://bug1634852.bmoattachments.org/attachment.cgi?id=9145195
+
+/usr/ports/www/firefox/work/firefox-76.0/dom/base/nsTextFragmentVMX.cpp:47:5: error: ISO C++17 does not allow 'register' storage class specifier [-Wregister]
+    register const vector unsigned short gtcompare =
+    ^~~~~~~~~
+/usr/ports/www/firefox/work/firefox-76.0/dom/base/nsTextFragmentVMX.cpp:56:7: error: ISO C++17 does not allow 'register' storage class specifier [-Wregister]
+      register vector unsigned short vect;
+      ^~~~~~~~~
+
+--- dom/base/nsTextFragmentVMX.cpp.orig	2020-05-02 07:47:36.059185000 +0000
++++ dom/base/nsTextFragmentVMX.cpp
+@@ -44,7 +44,7 @@ int32_t FirstNon8Bit(const char16_t* str, const char16
+         reinterpret_cast<vector unsigned short>(
+             vec_mergel(vec_splat_s8(-1), vec_splat_s8(0)));
+ #else
+-    register const vector unsigned short gtcompare =
++    const vector unsigned short gtcompare =
+         reinterpret_cast<vector unsigned short>(
+             vec_mergel(vec_splat_s8(0), vec_splat_s8(-1)));
+ #endif
+@@ -53,7 +53,7 @@ int32_t FirstNon8Bit(const char16_t* str, const char16
+     i2 = i * sizeof(char16_t);
+ 
+     while (1) {
+-      register vector unsigned short vect;
++      vector unsigned short vect;
+ 
+       // Check one VMX register (8 unichars) at a time. The vec_any_gt
+       // intrinsic does exactly what we want. This loop is manually unrolled;
