@@ -1,0 +1,12 @@
+The Python pyperf module is a toolkit to write, run and analyze benchmarks.
+
+Features:
+- Simple API to run reliable benchmarks
+- Automatically calibrate a benchmark for a time budget.
+- Spawn multiple worker processes.
+- Compute the mean and standard deviation.
+- Detect if a benchmark result seems unstable.
+- JSON format to store benchmark results.
+- Support multiple units: seconds, bytes and integer.
+
+WWW: https://github.com/vstinner/pyperf
