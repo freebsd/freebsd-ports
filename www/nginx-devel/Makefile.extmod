@@ -252,6 +252,11 @@ NAXSI_VARS=		DSO_EXTMODS+=naxsi NAXSI_SUBDIR=/naxsi_src
 NJS_GH_TUPLE=		nginx:njs:0.4.0:njs
 NJS_VARS=		DSO_EXTMODS+=njs NJS_SUBDIR=/nginx
 
+OPENTRACING_GH_TUPLE=		opentracing-contrib:nginx-opentracing:2d81c29:opentracing
+OPENTRACING_LIB_DEPENDS=	libopentracing.so:devel/libopentracing
+OPENTRACING_VARS=		DSO_EXTMODS+=opentracing OPENTRACING_SUBDIR=/opentracing
+OPENTRACING_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nginx-opentracing-opentracing-config
+
 PASSENGER_NGINX_VER=	6.0.4
 PASSENGER_CATEGORIES=	ruby
 PASSENGER_USE=		ruby=yes
