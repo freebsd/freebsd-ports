@@ -729,12 +729,13 @@ share/pkgconfig/libzfs_core.pc
 %%TESTS%%share/zfs/zfs-tests/tests/functional/clean_mirror/default.cfg
 %%TESTS%%share/zfs/zfs-tests/tests/functional/clean_mirror/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/cli_common.kshlib
-%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zdb/zdb_001_neg.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zdb/zdb_002_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zdb/zdb_003_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zdb/zdb_004_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zdb/zdb_005_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zdb/zdb_006_pos.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zdb/zdb_args_neg.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zdb/zdb_args_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zdb/zdb_checksum.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zdb/zdb_decompress.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zdb/zdb_display_block.ksh
@@ -1327,6 +1328,7 @@ share/pkgconfig/libzfs_core.pc
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_split/zpool_split_cliargs.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_split/zpool_split_devices.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_split/zpool_split_encryption.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_split/zpool_split_indirect.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_split/zpool_split_props.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_split/zpool_split_resilver.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_split/zpool_split_vdevs.ksh
@@ -2021,6 +2023,12 @@ share/pkgconfig/libzfs_core.pc
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rootpool/rootpool_007_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rootpool/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/cleanup.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/dedup.zsend.bz2
+%%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/dedup_encrypted_zvol.bz2
+%%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/dedup_encrypted_zvol.zsend.bz2
+%%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/fs.tar.gz
+%%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/recv_dedup.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/recv_dedup_encrypted_zvol.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/rsend.cfg
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/rsend.kshlib
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/rsend_001_pos.ksh
@@ -2042,7 +2050,6 @@ share/pkgconfig/libzfs_core.pc
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/rsend_021_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/rsend_022_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/rsend_024_pos.ksh
-%%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send-cD.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send-c_embedded_blocks.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send-c_incremental.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send-c_lz4_disabled.ksh
@@ -2057,7 +2064,7 @@ share/pkgconfig/libzfs_core.pc
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send-c_volume.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send-c_zstreamdump.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send-cpL_varied_recsize.ksh
-%%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send-wDR_encrypted_zvol.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send-wR_encrypted_zvol.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send_encrypted_files.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send_encrypted_hierarchy.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send_encrypted_props.ksh
