@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	vtk
-DISTVERSION=	9.0.0.rc3
+DISTVERSION=	9.0.0
 CATEGORIES=	math graphics
 MASTER_SITES=	http://www.vtk.org/files/release/${VTK_SHORT_VER}/
 PKGNAMESUFFIX=	9
@@ -17,8 +17,6 @@ LIB_DEPENDS=	libtiff.so:graphics/tiff \
 		libfreetype.so:print/freetype2 \
 		libexpat.so:textproc/expat2
 
-CONFLICTS=	vtk6 vtk8
-
 USES=		alias cmake compiler:c++11-lang gl jpeg localbase xorg
 USE_LDCONFIG=	${PREFIX}/lib/vtk-${VTK_SHORT_VER}
 USE_XORG=	ice x11 xt xext sm
@@ -32,7 +30,7 @@ CMAKE_ARGS+=	-DVTK_INSTALL_LIBRARY_DIR=lib/vtk-${VTK_SHORT_VER} \
 		-DVTK_INSTALL_QT_DIR=/${QT_LIBDIR_REL}/plugins/designer \
 		-DSTAGEDIR=${STAGEDIR}
 
-VTK_SHORT_VER=	${PORTVERSION:R:R}
+VTK_SHORT_VER=	${PORTVERSION:R}
 
 DOCSDIR=	${PREFIX}/share/doc/vtk-${VTK_SHORT_VER}
 DATADIR=	${PREFIX}/share/vtk-${VTK_SHORT_VER}
@@ -73,7 +71,7 @@ DESIGNER_IMPLIES=	QT5
 MPI_LIB_DEPENDS=	libmpi.so:net/openmpi
 MPI_CMAKE_ON=		-DMPIEXEC=${LOCALBASE}/mpi/openmpi/bin/mpiexec
 
-OSMESA_CMAKE_ARGS=	-DVTK_OPENGL_HAS_OSMESA:BOOL=ON \
+OSMESA_CMAKE_ON=	-DVTK_OPENGL_HAS_OSMESA:BOOL=ON \
 			-DOSMESA_INCLUDE_DIR:PATH=${LOCALBASE}/include/Mesa \
 			-DOSMESA_LIBRARY:FILEPATH=${LOCALBASE}/lib/libOSMesa.so \
 			-DOPENGL_gl_LIBRARY:FILEPATH=${LOCALBASE}/lib/libOSMesa.so \
@@ -120,6 +118,8 @@ CMAKE_ARGS+=	-DVTK_Group_${g}:BOOL=OFF
 USES+=		gl
 USE_GL=		gl glu
 .endif
+
+CONFLICTS=	vtk6 vtk8
 
 post-install: # autoplist: thousands of files, complex dependencies on options
 	@cd ${STAGEDIR}${PREFIX} && \
