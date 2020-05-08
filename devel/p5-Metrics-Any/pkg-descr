@@ -1,0 +1,22 @@
+Metrics::Any provides a central location for modules to report monitoring
+metrics, such as counters of the number of times interesting events have
+happened, and programs to collect up and send those metrics to monitoring
+services.
+
+Inspired by Log::Any, this module splits the overall problem into two sides.
+Modules wishing to provide metrics for monitoring purposes can use the use
+Metrics::Any statement to obtain a collector into which they can report metric
+events. By default this collector doesn't actually do anything, so modules can
+easily use it without adding extra specific dependencies for specific reporting.
+
+A program using one or more such modules can apply a different policy and
+request a particular adapter implementation in order to actually report these
+metrics to some external system, by using the use Metrics::Any::Adapter
+statement.
+
+This separation of concerns allows module authors to write code which will
+report metrics without needing to care about the exact mechanism of that
+reporting (as well as to write code which does not itself depend on the code
+required to perform that reporting).
+
+WWW: https://metacpan.org/release/Metrics-Any
