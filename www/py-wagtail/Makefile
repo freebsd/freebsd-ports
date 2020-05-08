@@ -36,7 +36,4 @@ CPE_VENDOR=	torchbox
 
 SHEBANG_FILES=	wagtail/project_template/manage.py
 
-post-patch:
-	@${REINPLACE_CMD} -e '/draftjs_exporter/ s|>=2.1.5,<3.0|>=2.1.5|' ${WRKSRC}/setup.py
-
 .include <bsd.port.mk>
