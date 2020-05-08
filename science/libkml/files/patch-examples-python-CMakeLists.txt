@@ -1,0 +1,9 @@
+--- examples/python/CMakeLists.txt.orig	2015-12-21 17:23:05 UTC
++++ examples/python/CMakeLists.txt
+@@ -2,5 +2,5 @@ if(INSTALL_EXAMPLES)
+   file(GLOB eg_files "${CMAKE_CURRENT_SOURCE_DIR}/*.py")
+   install(
+     FILES ${eg_files}
+-    DESTINATION examples/python) ##compile python
++    DESTINATION ${KML_EXAMPLES_DIR}/python) ##compile python
+ endif()

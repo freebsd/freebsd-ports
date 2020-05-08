@@ -1,0 +1,10 @@
+--- examples/gx/CMakeLists.txt.orig	2015-12-21 17:23:05 UTC
++++ examples/gx/CMakeLists.txt
+@@ -12,5 +12,5 @@ if(INSTALL_EXAMPLES)
+ file(GLOB eg_files "${CMAKE_CURRENT_SOURCE_DIR}/*.cc")
+ install(
+   FILES ${eg_files}
+-  DESTINATION examples/gx)
++  DESTINATION ${KML_EXAMPLES_DIR}/gx)
+ endif()
+\ No newline at end of file

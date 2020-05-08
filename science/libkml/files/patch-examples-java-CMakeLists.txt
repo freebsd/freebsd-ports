@@ -1,0 +1,13 @@
+--- examples/java/CMakeLists.txt.orig	2015-12-21 17:23:05 UTC
++++ examples/java/CMakeLists.txt
+@@ -2,8 +2,8 @@ if(INSTALL_EXAMPLES)
+   file(GLOB eg_files "${CMAKE_CURRENT_SOURCE_DIR}/*.java")
+   install(
+     FILES ${eg_files}
+-    DESTINATION examples/java) ##compile java
++    DESTINATION ${KML_EXAMPLES_DIR}/java) ##compile java
+   install(
+     FILES run.sh
+-    DESTINATION examples/java) ##
++    DESTINATION ${KML_EXAMPLES_DIR}/java) ##
+ endif()

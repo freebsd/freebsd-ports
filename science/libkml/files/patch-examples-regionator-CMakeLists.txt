@@ -1,0 +1,9 @@
+--- examples/regionator/CMakeLists.txt.orig	2015-12-21 17:23:05 UTC
++++ examples/regionator/CMakeLists.txt
+@@ -10,5 +10,5 @@ if(INSTALL_EXAMPLES)
+   file(GLOB eg_files "${CMAKE_CURRENT_SOURCE_DIR}/*.cc")
+   install(
+     FILES ${eg_files}
+-    DESTINATION examples/regionator)
++    DESTINATION ${KML_EXAMPLES_DIR}/regionator)
+ endif()

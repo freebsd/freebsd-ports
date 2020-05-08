@@ -1,0 +1,9 @@
+--- examples/gpx/CMakeLists.txt.orig	2015-12-21 17:23:05 UTC
++++ examples/gpx/CMakeLists.txt
+@@ -9,5 +9,5 @@ build_example(
+ 
+ if(INSTALL_EXAMPLES)
+   file(GLOB eg_files "${CMAKE_CURRENT_SOURCE_DIR}/*.cc")
+-  install(FILES ${eg_files}  DESTINATION examples/gpx)
++  install(FILES ${eg_files}  DESTINATION ${KML_EXAMPLES_DIR}/gpx)
+ endif(INSTALL_EXAMPLES)

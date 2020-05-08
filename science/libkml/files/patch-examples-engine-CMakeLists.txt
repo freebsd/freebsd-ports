@@ -1,0 +1,9 @@
+--- examples/engine/CMakeLists.txt.orig	2015-12-21 17:23:05 UTC
++++ examples/engine/CMakeLists.txt
+@@ -60,5 +60,5 @@ build_example(
+ 
+ if(INSTALL_EXAMPLES)
+   file(GLOB eg_files "${CMAKE_CURRENT_SOURCE_DIR}/*.cc")
+-  install(FILES ${eg_files}  DESTINATION examples/engine)
++  install(FILES ${eg_files}  DESTINATION ${KML_EXAMPLES_DIR}/engine)
+ endif(INSTALL_EXAMPLES)
