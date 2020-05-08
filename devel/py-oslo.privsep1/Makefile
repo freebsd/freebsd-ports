@@ -3,6 +3,7 @@
 
 PORTNAME=	oslo.privsep
 PORTVERSION=	1.34.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,7 +23,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.7.0:devel/py-cffi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}greenlet>=0.4.10:devel/py-greenlet@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}msgpack>=0.5.0:devel/py-msgpack@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oslo.i18n>=3.15.3:devel/py-oslo.i18n@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}oslo.log>=3.36.0:devel/py-oslo.log@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oslo.utils>=3.33.0:devel/py-oslo.utils@${PY_FLAVOR}
 
 USES=		python
@@ -36,9 +36,11 @@ PORTSCOUT=	limit:^1\.
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 3600
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}oslo.config7>=5.2.0:devel/py-oslo.config7@${PY_FLAVOR}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}oslo.config7>=5.2.0:devel/py-oslo.config7@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}oslo.log3>=3.36.0:devel/py-oslo.log3@${PY_FLAVOR}
 .else
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}oslo.config>=5.2.0:devel/py-oslo.config@${PY_FLAVOR}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}oslo.config>=5.2.0:devel/py-oslo.config@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}oslo.log>=3.36.0:devel/py-oslo.log@${PY_FLAVOR}
 .endif
 
 .include <bsd.port.post.mk>
