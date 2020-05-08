@@ -21,8 +21,7 @@ USE_PERL5=	configure
 
 NO_ARCH=	yes
 
-pre-patch:
+post-patch:
 	@${MV} ${WRKSRC}/bin/json_pp ${WRKSRC}/bin/p5json_pp
-	@${REINPLACE_CMD} -e 's|bin/json_pp|bin/p5json_pp|' ${WRKSRC}/MANIFEST ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
