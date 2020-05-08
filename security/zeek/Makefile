@@ -3,6 +3,7 @@
 
 PORTNAME=	zeek
 PORTVERSION=	3.0.6
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://old.zeek.org/downloads/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -36,7 +37,6 @@ CMAKE_ARGS+=	-GNinja \
 		-D ZEEK_SCRIPT_INSTALL_PATH:PATH=${PREFIX}/share/zeek \
 		-D ZEEK_ETC_INSTALL_DIR:PATH=${PREFIX}/etc \
 		-D ZEEK_MAN_INSTALL_PATH=${MANPREFIX}/man \
-		-D ENABLE_PERFTOOLS:BOOL=false \
 		-D ENABLE_PERFTOOLS_DEBUG:BOOL=false \
 		-D BinPAC_SKIP_INSTALL:BOOL=true \
 		-D INSTALL_AUX_TOOLS:BOOL=true \
@@ -72,25 +72,26 @@ ZEEKCTL_DESC=	ZeekControl support (implies BROKER and IPSUMDUMP)
 ZEEKCTL_IMPLIES=		BROKER IPSUMDUMP
 
 BROCCOLI_LIB_DEPENDS=	libbroccoli.so:security/broccoli
-GEOIP2_LIB_DEPENDS=	libmaxminddb.so:net/libmaxminddb
-IPSUMDUMP_BUILD_DEPENDS=ipsumdump:net/ipsumdump
-IPSUMDUMP_RUN_DEPENDS=	ipsumdump:net/ipsumdump
 BROKER_BUILD_DEPENDS=	swig3.0:devel/swig30
 BROKER_CMAKE_BOOL=	ENABLE_BROKER
 DEBUG_CMAKE_BOOL=	ENABLE_DEBUG
-LBL_HF_RUN_DEPENDS=	${LOCALBASE}/bin/hf:sysutils/lbl-hf
+GEOIP2_LIB_DEPENDS=	libmaxminddb.so:net/libmaxminddb
+IPSUMDUMP_BUILD_DEPENDS=ipsumdump:net/ipsumdump
+IPSUMDUMP_RUN_DEPENDS=	ipsumdump:net/ipsumdump
 LBL_CF_RUN_DEPENDS=	${LOCALBASE}/bin/cf:sysutils/lbl-cf
+LBL_HF_RUN_DEPENDS=	${LOCALBASE}/bin/hf:sysutils/lbl-hf
 NETMAP_GH_TUPLE=	bro:bro-netmap:f3620df:bro_netmap
 NETMAP_USE=		GITHUB=nodefault
+PERFTOOLS_BUILD_DEPENDS=${LOCALBASE}/bin/perftools-pprof:devel/google-perftools
 PERFTOOLS_CMAKE_BOOL=	ENABLE_PERFTOOLS
-PERFTOOLS_RUN_DEPENDS=	${LOCALBASE}/bin/perftools-pprof:devel/google-perftools
+PERFTOOLS_RUN_DEPENDS=${LOCALBASE}/bin/perftools-pprof:devel/google-perftools
 PYTHON_BUILD_DEPENDS=	swig3.0:devel/swig30
 ZEEKCTL_BUILD_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash \
 			${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
 			swig3.0:devel/swig30
+ZEEKCTL_CMAKE_BOOL=	INSTALL_ZEEKCTL
 ZEEKCTL_RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash \
 			${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
-ZEEKCTL_CMAKE_BOOL=	INSTALL_ZEEKCTL
 
 .include <bsd.port.options.mk>
 
