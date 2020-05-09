@@ -1,4 +1,5 @@
 bin/stella
+%%PORTDOCS%%%%DOCSDIR%%/R77_readme.txt
 %%PORTDOCS%%%%DOCSDIR%%/debugger.html
 %%PORTDOCS%%%%DOCSDIR%%/graphics/cheat.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/chucky_cheese.png
@@ -32,7 +33,6 @@ bin/stella
 %%PORTDOCS%%%%DOCSDIR%%/graphics/eventmapping_remap.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/jr_pacman.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/launcher.png
-%%PORTDOCS%%%%DOCSDIR%%/graphics/launcher_options_files.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/launcher_options_snapshots.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/launcher_override.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/logs.png
@@ -41,12 +41,13 @@ bin/stella
 %%PORTDOCS%%%%DOCSDIR%%/graphics/options_developer.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/options_developer_debugger.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/options_developer_emulation.png
+%%PORTDOCS%%%%DOCSDIR%%/graphics/options_developer_tia.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/options_developer_timemachine.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/options_developer_video.png
-%%PORTDOCS%%%%DOCSDIR%%/graphics/options_gameinfo.png
+%%PORTDOCS%%%%DOCSDIR%%/graphics/options_gameinfo_cartridge.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/options_gameinfo_console.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/options_gameinfo_controller.png
-%%PORTDOCS%%%%DOCSDIR%%/graphics/options_gameinfo_display.png
+%%PORTDOCS%%%%DOCSDIR%%/graphics/options_gameinfo_emulation.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/options_misc.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/options_misc_classic.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/options_misc_light.png
@@ -56,6 +57,7 @@ bin/stella
 %%PORTDOCS%%%%DOCSDIR%%/graphics/options_video_tv.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/pacman.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/qwertz.png
+%%PORTDOCS%%%%DOCSDIR%%/graphics/resources/debugger_main.pdn
 %%PORTDOCS%%%%DOCSDIR%%/graphics/romaudit.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/rominfo_1x_large.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/rominfo_1x_small.png
@@ -64,4 +66,5 @@ bin/stella
 %%PORTDOCS%%%%DOCSDIR%%/graphics/space_invaders.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/timemachine.png
 %%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/index_r77.html
 %%DATADIR%%/stella.pro

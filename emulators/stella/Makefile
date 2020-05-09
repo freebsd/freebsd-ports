@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	stella
-PORTVERSION=	6.0.2
+PORTVERSION=	6.1.2
 CATEGORIES=	emulators
 
 MAINTAINER=	acm@FreeBSD.org
