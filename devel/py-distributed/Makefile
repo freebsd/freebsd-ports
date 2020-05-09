@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	distributed
-PORTVERSION=	2.15.2
+PORTVERSION=	2.16.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -30,6 +30,10 @@ USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
 .include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 3700
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}contextvars>=0:devel/py-contextvars@${PY_FLAVOR}
+.endif
 
 .if ${PYTHON_REL} < 3800
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tornado>=5:www/py-tornado@${PY_FLAVOR}
