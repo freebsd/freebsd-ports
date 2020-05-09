@@ -13,6 +13,9 @@ COMMENT=	IP routing protocol suite including BGP, IS-IS, OSPF and RIP
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 BUILD_DEPENDS=	gawk:lang/gawk
 LIB_DEPENDS=	libjson-c.so:devel/json-c
 

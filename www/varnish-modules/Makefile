@@ -11,6 +11,9 @@ COMMENT=	Collection of Varnish Cache modules by Varnish Software
 
 LICENSE=	BSD2CLAUSE
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 BUILD_DEPENDS=	rst2man:textproc/py-docutils
 
 USES=		autoreconf:build gmake libtool pkgconfig python:2.7,build varnish

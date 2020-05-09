@@ -13,6 +13,9 @@ COMMENT=	Varnish Module (vmod) for generating headers for AWS REST API
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 BUILD_DEPENDS=	rst2man:textproc/py-docutils
 LIB_DEPENDS=	libmhash.so:security/mhash
 

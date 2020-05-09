@@ -12,6 +12,9 @@ COMMENT=	Backport of shutil.which from Python 3.3
 LICENSE=	PSFL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=0:devel/py-setuptools_scm@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}backports>=0:devel/py-backports@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}future>=0:devel/py-future@${PY_FLAVOR}

@@ -15,6 +15,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}rcsparse>0:devel/py-rcsparse@${PY_FLAVOR} \
 
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	ustuehler
 

@@ -12,6 +12,9 @@ COMMENT=	Bi-directional git to bzr bridge
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 RUN_DEPENDS=	git:devel/git \
 		bzr:devel/bzr \
 		${PYTHON_SITELIBDIR}/bzrlib/plugins/fastimport/__init__.py:devel/bzr-fastimport

@@ -11,6 +11,9 @@ COMMENT=	Transparent bidirectional bridge between Git and Mercurial for Git
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 BUILD_DEPENDS=	a2x:textproc/asciidoc
 RUN_DEPENDS=	hg:devel/mercurial
 

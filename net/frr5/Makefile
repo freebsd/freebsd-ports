@@ -13,6 +13,9 @@ COMMENT=	IP routing protocol suite including BGP, IS-IS, OSPF and RIP
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 USES=		autoreconf bison compiler:c++11-lang gmake pkgconfig libtool \
 		makeinfo python:2.7,build readline
 

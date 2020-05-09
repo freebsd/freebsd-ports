@@ -5,6 +5,9 @@ PORTREVISION=	0
 CATEGORIES=	multimedia python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 USES=		python:2.7 shebangfix
 USE_PYTHON=	flavors
 MASTERDIR=	${.CURDIR:H}/mlt

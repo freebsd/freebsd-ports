@@ -12,6 +12,9 @@ COMMENT=	Software Defined Radio (SDR)
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 BROKEN_i386=	strip: elf_update() failed: Invalid data buffer descriptor (bug#238131)
 
 LIB_DEPENDS=	libfftw3.so:math/fftw3 \

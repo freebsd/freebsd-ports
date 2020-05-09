@@ -12,6 +12,9 @@ COMMENT=	Fast Python Bloom Filter using Mmap
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 USES=		python:2.7 ssl
 USE_PYTHON=	autoplist distutils
 
