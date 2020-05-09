@@ -24,4 +24,8 @@ USE_GSTREAMER1=	good bad
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
+post-patch:
+	@${FIND} ${WRKSRC} -name Makefile.in -exec ${REINPLACE_CMD} \
+		'/foreach/s/\\#include/#include/' {} +
+
 .include <bsd.port.mk>

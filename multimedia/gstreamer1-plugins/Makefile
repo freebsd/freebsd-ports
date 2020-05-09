@@ -176,6 +176,9 @@ post-patch:
 	  s|$$(top_builddir)/gst-libs/gst/allocators/libgstbadallocators-$$(GST_API_VERSION).la|-lgstbadallocators-${VERSION}|; \
 	  s|$$(top_builddir)/gst-libs/gst/audio/libgstbadaudio-$$(GST_API_VERSION).la|-lgstbadaudio-${VERSION}|; \
 	  s|$$(top_builddir)/gst-libs/gst/video/libgstbadvideo-$$(GST_API_VERSION).la|-lgstbadvideo-${VERSION}|'
+	@${FIND} ${WRKSRC}/ext ${WRKSRC}/gst ${WRKSRC}/gst-libs \
+		-name Makefile.in -exec ${REINPLACE_CMD} \
+		'/foreach/s/\\#include/#include/' {} +
 .endif
 
 .if ${DIST} == bad

@@ -1,6 +1,7 @@
 bin/gmake
 include/gnumake.h
 %%NLS%%share/locale/be/LC_MESSAGES/make.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/make.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/make.mo
 %%NLS%%share/locale/da/LC_MESSAGES/make.mo
 %%NLS%%share/locale/de/LC_MESSAGES/make.mo
@@ -18,11 +19,14 @@ include/gnumake.h
 %%NLS%%share/locale/lt/LC_MESSAGES/make.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/make.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/make.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/make.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/make.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/make.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/make.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/make.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/make.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/make.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/make.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/make.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/make.mo
 man/man1/gmake.1.gz

@@ -1,0 +1,11 @@
+--- libs/gst/controller/Makefile.in.orig	2019-12-03 10:52:27 UTC
++++ libs/gst/controller/Makefile.in
+@@ -591,7 +591,7 @@ libgstcontroller_@GST_API_VERSION@_la_CFLAGS = $(GST_O
+ libgstcontroller_@GST_API_VERSION@_la_LIBADD = $(GST_OBJ_LIBS) $(LIBM)
+ libgstcontroller_@GST_API_VERSION@_la_LDFLAGS = $(GST_LIB_LDFLAGS) $(GST_ALL_LDFLAGS) $(GST_LT_LDFLAGS)
+ CLEANFILES = *.gcno *.gcda *.gcov $(BUILT_SOURCES) $(am__append_1)
+-enum_headers = $(foreach h,$(glib_enum_headers),\n\#include \"$(h)\")
++enum_headers = $(foreach h,$(glib_enum_headers),\n#include \"$(h)\")
+ @HAVE_INTROSPECTION_TRUE@BUILT_GIRSOURCES = GstController-@GST_API_VERSION@.gir
+ @HAVE_INTROSPECTION_TRUE@gir_headers = $(patsubst %,$(srcdir)/%, \
+ @HAVE_INTROSPECTION_TRUE@	$(libgstcontroller_@GST_API_VERSION@_include_HEADERS)) \

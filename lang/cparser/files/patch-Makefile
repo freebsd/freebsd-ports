@@ -1,0 +1,11 @@
+--- Makefile.orig	2012-11-21 17:50:43 UTC
++++ Makefile
+@@ -104,7 +104,7 @@ REVISION ?= $(shell git describe --abbrev=40 --always 
+ 
+ # Update revision.h if necessary
+ UNUSED := $(shell \
+-	REV="\#define cparser_REVISION \"$(REVISION)\""; \
++	REV="#define cparser_REVISION \"$(REVISION)\""; \
+ 	echo "$$REV" | cmp -s - revision.h 2> /dev/null || echo "$$REV" > revision.h \
+ )
+ 

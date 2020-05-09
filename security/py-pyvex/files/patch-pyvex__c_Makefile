@@ -12,9 +12,16 @@
  ifeq ($(UNAME), Linux)
  	LIBRARY_FILE=libpyvex.so
  	STATIC_LIBRARY_FILE=libpyvex.a
-@@ -27,10 +32,10 @@ sp +=
- qs = $(subst ?,$(sp),$1)
- sq = $(subst $(sp),?,$1)
+@@ -22,15 +27,13 @@ endif
+ 
+ # deeply evil
+ # https://www.cmcrossroads.com/article/gnu-make-meets-file-names-spaces-them
+-sp :=
+-sp +=
+-qs = $(subst ?,$(sp),$1)
+-sq = $(subst $(sp),?,$1)
++qs = $(subst ?,\ ,$1)
++sq = $(subst \ ,?,$1)
  
 -CC=gcc
 -AR=ar

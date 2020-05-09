@@ -1,0 +1,22 @@
+--- Makefile.orig	2019-09-30 19:02:13 UTC
++++ Makefile
+@@ -100,7 +100,7 @@ endif
+     subdirs :=  $(sort $(dir $(filter-out  $(skipUchime), $(wildcard source/*/))))
+     subDirIncludes = $(patsubst %, -I %, $(subdirs))
+     subDirLinking =  $(patsubst %, -L%, $(subdirs))
+-    CXXFLAGS += -I. $(subDirIncludes)
++    CXXFLAGS += -Isource $(subDirIncludes)
+     LDFLAGS += $(subDirLinking)
+ 
+ 
+@@ -109,8 +109,8 @@ endif
+ #
+     OBJECTS=$(patsubst %.cpp,%.o,$(wildcard $(addsuffix *.cpp,$(subdirs))))
+     OBJECTS+=$(patsubst %.c,%.o,$(wildcard $(addsuffix *.c,$(subdirs))))
+-    OBJECTS+=$(patsubst %.cpp,%.o,$(wildcard *.cpp))
+-    OBJECTS+=$(patsubst %.c,%.o,$(wildcard *.c))
++    OBJECTS+=$(patsubst %.cpp,%.o,$(wildcard source/*.cpp))
++    OBJECTS+=$(patsubst %.c,%.o,$(wildcard source/*.c))
+ 
+ mothur : $(OBJECTS) uchime
+ 	$(CXX) $(LDFLAGS) $(TARGET_ARCH) -o $@ $(OBJECTS) $(LIBS)
