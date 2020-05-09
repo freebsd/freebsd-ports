@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mednafen
-PORTVERSION=	1.22.2
+PORTVERSION=	1.24.3
 PORTEPOCH=	1
 CATEGORIES=	emulators games
 MASTER_SITES=	https://mednafen.github.io/releases/files/
