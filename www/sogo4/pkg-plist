@@ -39,7 +39,6 @@ GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/4/Headers/SOGoDefaultsS
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/4/Headers/SOGoDomainDefaults.h
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/4/Headers/SOGoFolder.h
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/4/Headers/SOGoGCSFolder.h
-GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/4/Headers/SOGoGroup.h
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/4/Headers/SOGoLDAPDefaults.h
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/4/Headers/SOGoMailer.h
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/4/Headers/SOGoObject.h
@@ -734,7 +733,7 @@ GNUstep/Local/Library/Libraries/sogo/libSOGo.so.4
 GNUstep/Local/Library/Libraries/sogo/libSOGo.so.%%VERSION%%
 GNUstep/Local/Library/Libraries/sogo/libSOGoUI.so
 GNUstep/Local/Library/Libraries/sogo/libSOGoUI.so.4.3
-GNUstep/Local/Library/Libraries/sogo/libSOGoUI.so.%%VERSION%%
+GNUstep/Local/Library/Libraries/sogo/libSOGoUI.so.4.3.0
 GNUstep/Local/Library/OCSTypeModels/appointment-oracle.ocs
 GNUstep/Local/Library/OCSTypeModels/appointment.ocs
 GNUstep/Local/Library/OCSTypeModels/contact-oracle.ocs
@@ -2051,6 +2050,7 @@ GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/plugins/link/im
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/plugins/link/images/hidpi/anchor.png
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/plugins/pastefromword/filter/default.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/plugins/pastetools/filter/common.js
+GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/plugins/pastetools/filter/image.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/plugins/scayt/LICENSE.md
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/plugins/scayt/dialogs/dialog.css
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/plugins/scayt/dialogs/options.js
