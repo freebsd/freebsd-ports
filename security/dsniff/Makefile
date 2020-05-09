@@ -3,7 +3,7 @@
 
 PORTNAME=	dsniff
 DISTVERSION=	2.4b1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 MASTER_SITES=	http://www.monkey.org/~dugsong/${PORTNAME}/beta/ \
 		LOCAL/sbz
