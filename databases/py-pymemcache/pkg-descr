@@ -1,0 +1,13 @@
+A comprehensive, fast, pure-Python memcached client.
+
+pymemcache supports the following features:
+
+ * Complete implementation of the memcached text protocol.
+ * Configurable timeouts for socket connect and send/recv calls.
+ * Access to the "noreply" flag, which can significantly increase the speed of
+   writes.
+ * Flexible, modular and simple approach to serialization and deserialization.
+ * The (optional) ability to treat network and memcached errors as cache
+   misses.
+
+WWW: https://github.com/pinterest/pymemcache

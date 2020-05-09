@@ -790,6 +790,7 @@
     SUBDIR += py-pycql
     SUBDIR += py-pyhs
     SUBDIR += py-pylibmc
+    SUBDIR += py-pymemcache
     SUBDIR += py-pymssql
     SUBDIR += py-pymysql
     SUBDIR += py-pyodbc
