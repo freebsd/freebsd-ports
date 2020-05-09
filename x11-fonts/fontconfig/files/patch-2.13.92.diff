@@ -28,6 +28,8 @@
 # https://cgit.freedesktop.org/fontconfig/commit/?id=71d6866d381a0ab3585eb9ee760aeec98e722359
 # Fix memory leaks
 # https://cgit.freedesktop.org/fontconfig/commit/?id=61573ad5f7c4dd0860d613d99d0086433240eb75
+# Set name_mapping to NULL after freeing to avoid risk of double-free.
+# https://cgit.freedesktop.org/fontconfig/commit/?id=6edaaa4d1823518a97fb4cc3004d110b1046f742
 # Fix assertion in FcFini()
 # https://cgit.freedesktop.org/fontconfig/commit/?id=fbc05949ef52c8a8d69233eed77f6636dffec280
 # Set exact boolean value to color property
@@ -1338,6 +1340,17 @@ test/test-bz1744377.c, test/test-crbug1004254.c, test/test-issue180.c.
  		    if (FcDebug () & FC_DBG_SCANV)
  			printf ("found full   (n %2d p %d e %d l 0x%04x)",
  				sname.name_id, sname.platform_id,
+@@ -1624,7 +1627,10 @@ FcFreeTypeQueryFaceInternal (const FT_Fa
+ 	}
+     }
+     if (!nm_share)
++    {
+ 	free (name_mapping);
++	name_mapping = NULL;
++    }
+ 
+     if (!nfamily && face->family_name &&
+ 	FcStrCmpIgnoreBlanksAndCase ((FcChar8 *) face->family_name, (FcChar8 *) "") != 0)
 @@ -1679,6 +1682,61 @@ FcFreeTypeQueryFaceInternal (const FT_Fa
  	++nfamily;
      }
