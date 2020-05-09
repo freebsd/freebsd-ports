@@ -1,0 +1,9 @@
+This package contains tools for authenticating to an OpenStack-based cloud.
+These tools include:
+
+- Authentication plugins (password, token, and federation based)
+- Discovery mechanisms to determine API version support
+- A session that is used to maintain client settings across requests
+ (based on the requests Python library)
+
+WWW: https://docs.openstack.org/keystoneauth/latest/
