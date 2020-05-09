@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gym
-PORTVERSION=	0.17.1
-PORTREVISION=	1
+PORTVERSION=	0.17.2
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,8 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cloudpickle>=1.2.0<1.4.0:devel/py-cloudpickl
 		${PY_ENUM34} \
 		${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}pyglet150>=1.4.0<1.5.1:graphics/py-pyglet150@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}scipy>=0:science/py-scipy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}scipy>=0:science/py-scipy@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>=0:devel/py-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR}
 
