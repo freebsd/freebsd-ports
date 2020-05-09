@@ -1,0 +1,7 @@
+notcurses is a library for building complex, vibrant textual user interfaces
+(TUIs) on modern terminal emulators. It does not use Ncurses (though it does
+make use of libtinfo from that package), nor is it an X/Open Curses
+source-compatible replacement. It is written in C, with C++-safe headers.
+Rust, C++, and Python wrappers are available.
+
+WWW: https://nick-black.com/dankwiki/index.php/Notcurses

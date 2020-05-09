@@ -1558,6 +1558,7 @@
     SUBDIR += ninja
     SUBDIR += nlohmann-json
     SUBDIR += node-thrift
+    SUBDIR += notcurses
     SUBDIR += npth
     SUBDIR += nsgenbind
     SUBDIR += nspr
