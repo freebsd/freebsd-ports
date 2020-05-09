@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	birdfont
-DISTVERSION=	2.28.0
+DISTVERSION=	2.29.0
 CATEGORIES=	graphics x11-fonts
 MASTER_SITES=	http://birdfont.org/releases/
 
