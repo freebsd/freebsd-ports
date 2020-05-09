@@ -22,6 +22,7 @@ include/postgresql/server/distributed/distributed_execution_locks.h
 include/postgresql/server/distributed/distributed_planner.h
 include/postgresql/server/distributed/distribution_column.h
 include/postgresql/server/distributed/enterprise.h
+include/postgresql/server/distributed/error_codes.h
 include/postgresql/server/distributed/errormessage.h
 include/postgresql/server/distributed/extended_op_node_utils.h
 include/postgresql/server/distributed/foreign_key_relationship.h
@@ -34,6 +35,8 @@ include/postgresql/server/distributed/intermediate_result_pruning.h
 include/postgresql/server/distributed/intermediate_results.h
 include/postgresql/server/distributed/listutils.h
 include/postgresql/server/distributed/local_executor.h
+include/postgresql/server/distributed/local_multi_copy.h
+include/postgresql/server/distributed/local_plan_cache.h
 include/postgresql/server/distributed/lock_graph.h
 include/postgresql/server/distributed/log_utils.h
 include/postgresql/server/distributed/maintenanced.h
@@ -65,6 +68,7 @@ include/postgresql/server/distributed/pg_dist_placement.h
 include/postgresql/server/distributed/pg_dist_rebalance_strategy.h
 include/postgresql/server/distributed/pg_dist_shard.h
 include/postgresql/server/distributed/pg_dist_transaction.h
+include/postgresql/server/distributed/pg_version_constants.h
 include/postgresql/server/distributed/placement_access.h
 include/postgresql/server/distributed/placement_connection.h
 include/postgresql/server/distributed/query_colocation_checker.h
@@ -82,7 +86,9 @@ include/postgresql/server/distributed/repartition_join_execution.h
 include/postgresql/server/distributed/resource_lock.h
 include/postgresql/server/distributed/run_from_same_connection.h
 include/postgresql/server/distributed/shard_pruning.h
+include/postgresql/server/distributed/shard_utils.h
 include/postgresql/server/distributed/shardinterval_utils.h
+include/postgresql/server/distributed/shared_connection_stats.h
 include/postgresql/server/distributed/shared_library_init.h
 include/postgresql/server/distributed/statistics_collection.h
 include/postgresql/server/distributed/subplan_execution.h
@@ -96,6 +102,7 @@ include/postgresql/server/distributed/transmit.h
 include/postgresql/server/distributed/tuplestore.h
 include/postgresql/server/distributed/version_compat.h
 include/postgresql/server/distributed/worker_create_or_replace.h
+include/postgresql/server/distributed/worker_log_messages.h
 include/postgresql/server/distributed/worker_manager.h
 include/postgresql/server/distributed/worker_protocol.h
 include/postgresql/server/distributed/worker_shard_visibility.h
@@ -161,5 +168,6 @@ share/postgresql/extension/citus--9.0-2--9.1-1.sql
 share/postgresql/extension/citus--9.1-1--9.2-1.sql
 share/postgresql/extension/citus--9.2-1--9.2-2.sql
 share/postgresql/extension/citus--9.2-2--9.2-4.sql
+share/postgresql/extension/citus--9.2-4--9.3-2.sql
 share/postgresql/extension/citus--9.3-1--9.2-4.sql
 share/postgresql/extension/citus.control
