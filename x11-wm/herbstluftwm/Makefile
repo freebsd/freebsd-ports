@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	herbstluftwm
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://herbstluftwm.org/tarballs/
 
