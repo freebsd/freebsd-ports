@@ -2,7 +2,7 @@
 
 PORTNAME=	asterisk
 PORTVERSION=	16.10.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	https://downloads.asterisk.org/pub/telephony/%SUBDIR%/:DEFAULT,g729 \
 		http://www.pjsip.org/release/${PJSIP_VERSION}/:PJSIP
@@ -64,9 +64,10 @@ CONFLICTS_INSTALL=	asterisk13
 
 OPTIONS_DEFINE=			ASTVERSION BACKTRACE CURL EXCHANGE FREETDS G729 LDAP LUA MACRO \
 				MP3PLAYER OOH323 OPTIMIZED_CFLAGS PJSIP PORTAUDIO RADIUS SNMP \
-				SPANDSP SRTP SYSINFO XMPP
+				SPANDSP SRTP SYSINFO URIPARSER XMPP
 OPTIONS_DEFAULT=		CURL FREETDS GSM LUA MACRO MP3PLAYER NEWT ODBC MYSQL PGSQL \
-				PJSIP PORTAUDIO RADIUS SNMP SPANDSP SPEEX SQLITE2 SRTP VORBIS
+				PJSIP PORTAUDIO RADIUS SNMP SPANDSP SPEEX SQLITE2 SRTP URIPARSER \
+				VORBIS
 
 OPTIONS_DEFINE_i386=		DAHDI
 OPTIONS_DEFINE_amd64=		DAHDI
@@ -108,6 +109,7 @@ OPUS_DESC?=	Opus Codec
 PJSIP_DESC?=	Build the PJSIP based SIP channel
 SRTP_DESC?=	SecureRTP support
 SYSINFO_DESC?=	Use devel/libsysinfo to get system information
+URIPARSER_DESC?= Use RFC 3986 compliant uriparser library
 XMPP_DESC?=	XMPP/GTALK support
 
 OPTIONS_SUB=		yes
@@ -116,12 +118,10 @@ ASTVERSION_RUN_DEPENDS=		bash:shells/bash
 
 BACKTRACE_CONFIGURE_WITH=	execinfo
 
-CURL_CONFIGURE_ON=	--with-libcurl
-CURL_CONFIGURE_OFF=	--with-libcurl=no
+CURL_CONFIGURE_WITH=	libcurl
 CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 
-DAHDI_CONFIGURE_ON=	--with-dahdi --with-openr2
-DAHDI_CONFIGURE_OFF=	--without-dahdi --without-openr2
+DAHDI_CONFIGURE_WITH=	dahdi openr2
 DAHDI_LIB_DEPENDS=	libpri.so:misc/libpri \
 			libopenr2.so:misc/openr2 \
 			libtonezone.so:misc/dahdi
@@ -197,6 +197,9 @@ SRTP_CONFIGURE_WITH=	srtp
 SRTP_LIB_DEPENDS=	libsrtp2.so:net/libsrtp2
 
 SYSINFO_LIB_DEPENDS=	libsysinfo.so:devel/libsysinfo
+
+URIPARSER_CONFIGURE_WITH=	uriparser
+URIPARSER_LIB_DEPENDS=	liburiparser.so:net/uriparser
 
 VORBIS_CONFIGURE_WITH=	ogg
 VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
