@@ -1,6 +1,6 @@
 Desktop-installer is a post-install script to assist in setting up a FreeBSD
 desktop system using any of the mainstream desktop systems.  It automatically
-installs essential software and configures subsystems such as HAL, CUPS, etc.
+installs essential software and configures subsystems such as devd, CUPS, etc.
 for typical use.
 
 WWW: http://acadix.biz/desktop-installer.php
