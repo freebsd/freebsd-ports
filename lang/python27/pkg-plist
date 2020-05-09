@@ -1915,9 +1915,13 @@ lib/python2.7/lib-dynload/_io.so
 lib/python2.7/lib-dynload/_json.so
 lib/python2.7/lib-dynload/_locale.so
 lib/python2.7/lib-dynload/_lsprof.so
+%%DEBUG%%lib/python2.7/lib-dynload/_md5.so
 lib/python2.7/lib-dynload/_multibytecodec.so
-lib/python2.7/lib-dynload/_multiprocessing.so
+%%THREADS%%lib/python2.7/lib-dynload/_multiprocessing.so
 lib/python2.7/lib-dynload/_random.so
+%%DEBUG%%lib/python2.7/lib-dynload/_sha.so
+%%DEBUG%%lib/python2.7/lib-dynload/_sha256.so
+%%DEBUG%%lib/python2.7/lib-dynload/_sha512.so
 lib/python2.7/lib-dynload/_socket.so
 lib/python2.7/lib-dynload/_ssl.so
 lib/python2.7/lib-dynload/_struct.so
