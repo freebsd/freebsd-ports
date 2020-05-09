@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 		libqrcodegen.so:graphics/qr-code-generator
 
-USES=		cmake localbase ncurses:port pkgconfig python:run shebangfix
+USES=		cmake compiler:c++17-lang localbase ncurses:port pkgconfig python:run shebangfix
 SHEBANG_FILES=	src/pydemo/notcurses-pydemo
 USE_GITHUB=	yes
 GH_ACCOUNT=	dankamongmen
