@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}future>0:devel/py-future@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyfiglet>=0.7.2:misc/py-pyfiglet@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wcwidth>0:devel/py-wcwidth@${PY_FLAVOR}
 
-USES=		python:2.7 # only because misc/py-pyfiglet is py27-only
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes
