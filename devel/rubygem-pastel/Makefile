@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pastel
-PORTVERSION=	0.7.3
+PORTVERSION=	0.7.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
