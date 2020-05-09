@@ -1,4 +1,0 @@
-contextvars implements a backport of Python 3.7 contextvars module (see PEP 567)
-for Python 3.6.
-
-WWW: https://github.com/MagicStack/contextvars
