@@ -2,17 +2,17 @@ Remove objdump and open/read/write/fstat symbol names check.  objdump
 is not available on all architectures and the symbol names are
 unlikely to ever change from their visible names on FreeBSD.
 
---- configure.orig	2019-07-25 21:31:45 UTC
+--- configure.orig	2020-05-05 17:31:17 UTC
 +++ configure
-@@ -628,7 +628,6 @@ ALLOCA
- EGREP
- GREP
- CPP
+@@ -625,7 +625,6 @@ LIBOBJS
+ AUTOCONF
+ DEBUG
+ ALLOCA
 -OBJDUMP
  AWK
  TAR
  MT
-@@ -4283,51 +4282,6 @@ $as_echo "no" >&6; }
+@@ -4394,51 +4393,6 @@ $as_echo "no" >&6; }
  fi
  
  
@@ -64,7 +64,7 @@ unlikely to ever change from their visible names on FreeBSD.
  # Check whether --enable-largefile was given.
  if test "${enable_largefile+set}" = set; then :
    enableval=$enable_largefile;
-@@ -4939,11 +4893,7 @@ fi
+@@ -4653,11 +4607,7 @@ fi
  
  
  
@@ -76,7 +76,7 @@ unlikely to ever change from their visible names on FreeBSD.
    { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether to enable assertions" >&5
  $as_echo_n "checking whether to enable assertions... " >&6; }
    # Check whether --enable-assert was given.
-@@ -5948,86 +5898,12 @@ fi
+@@ -5673,86 +5623,12 @@ fi
  fi
  
  
