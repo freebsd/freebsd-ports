@@ -27,4 +27,10 @@ NO_ARCH=	yes
 do-test:
 	cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -v -rs
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 3700
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}contextvars>=2.1:devel/py-contextvars@${PY_FLAVOR}
+.endif
+
+.include <bsd.port.post.mk>
