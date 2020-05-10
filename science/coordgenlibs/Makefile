@@ -2,7 +2,8 @@
 
 PORTNAME=	coordgenlibs
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.0
+DISTVERSION=	1.4.0-6
+DISTVERSIONSUFFIX=	-g95e2367
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,6 +20,16 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	schrodinger
 USE_LDCONFIG=	yes
 
-CMAKE_ARGS=	-Dmaeparser_DIR=${LOCALBASE}/lib/cmake
+DATADIR=	${LOCALBASE}/share/coordgen
+
+CMAKE_ON=	COORDGEN_USE_MAEPARSER
+CMAKE_OFF=	COORDGEN_BUILD_TESTS COORDGEN_BUILD_EXAMPLE
+
+post-patch: # see https://github.com/schrodinger/coordgenlibs/issues/64
+	@${REINPLACE_CMD} 's|return getTempFileProjDir() + suffix;|return "${DATADIR}/templates.mae";|' ${WRKSRC}/sketcherMinimizer.cpp
+
+post-install: # see https://github.com/schrodinger/coordgenlibs/issues/64
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/templates.mae ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
