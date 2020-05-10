@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	sqlitestudio
-DISTVERSION=	3.2.1-705
-DISTVERSIONSUFFIX=	-gaf49fd61
+DISTVERSION=	3.2.1-1002
+DISTVERSIONSUFFIX=	-ga31dfca2
 CATEGORIES=	databases
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -28,10 +28,9 @@ PLUGIN${p:C/([A-Z])/_\1/g:tu}_VARS=	PLUGIN_DIRS+=${p}
 PLUGIN_DB_SQLITE_CIPHER_USES=		ssl
 PLUGIN_PRINTING_USE=			QT=printsupport
 
-USES=		compiler:c++11-lib gl gmake ncurses qmake qt:5 readline sqlite
+USES=		compiler:c++17-lang gl gmake ncurses qmake qt:5 readline sqlite
 USE_GITHUB=	yes
 GH_ACCOUNT=	pawelsalawa
-USE_CXXSTD=	c++11
 USE_QT=		core concurrent gui network script sql sql-sqlite3_run svg widgets xml \
 		uitools buildtools_build linguisttools_build
 USE_GL=		gl
