@@ -3,6 +3,7 @@
 
 PORTNAME=	metasploit
 PORTVERSION=	5.0.79
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	tanawts@gmail.com
@@ -155,7 +156,7 @@ do-build:
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC} && ${PAX} -rw . ${STAGEDIR}${DATADIR}
-.for f in msfd msfdb msfrpc msfrpcd msfvenom
+.for f in msfconsole msfd msfdb msfrpc msfrpcd msfvenom
 	${RLN} ${STAGEDIR}${DATADIR}/${f} ${STAGEDIR}${PREFIX}/bin/${f}
 .endfor
 
