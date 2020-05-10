@@ -16,7 +16,8 @@ LICENSE_COMB=	multi
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr \
 		libmpc.so:math/mpc
-BUILD_DEPENDS=	${BU_PREFIX}-as:devel/binutils@${TARGETARCH}
+BUILD_DEPENDS=	${BU_PREFIX}-as:devel/binutils@${TARGETARCH} \
+		objdump:devel/binutils
 RUN_DEPENDS=	${BU_PREFIX}-as:devel/binutils@${TARGETARCH}
 
 FLAVORS=	aarch64 amd64 i386 mips mips64 powerpc powerpc64 riscv64 sparc64
