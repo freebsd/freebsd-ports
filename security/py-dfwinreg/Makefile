@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dfwinreg
-PORTVERSION=	20200121
+PORTVERSION=	20200415
 CATEGORIES=	security devel python
 MASTER_SITES=	https://github.com/log2timeline/dfwinreg/releases/download/${PORTVERSION}/ \
 		LOCAL/antoine
