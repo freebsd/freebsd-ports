@@ -5,6 +5,7 @@
 %%WWWDIR%%/CONTRIBUTING.md
 %%WWWDIR%%/COPYING.txt
 %%WWWDIR%%/README.md
+%%WWWDIR%%/SECURITY.md
 %%WWWDIR%%/SUPPORT.md
 %%WWWDIR%%/ajax/autocompletion.php
 %%WWWDIR%%/ajax/comments.php
@@ -1250,6 +1251,8 @@
 %%WWWDIR%%/install/update_93_94.php
 %%WWWDIR%%/install/update_940_941.php
 %%WWWDIR%%/install/update_941_942.php
+%%WWWDIR%%/install/update_942_943.php
+%%WWWDIR%%/install/update_943_945.php
 %%WWWDIR%%/install/update_content.php
 %%WWWDIR%%/install/update_to_031.php
 %%WWWDIR%%/install/update_xx_xy.tpl.php
@@ -1279,6 +1282,7 @@
 %%WWWDIR%%/lib/chartist-plugin-tooltip-0.0.17/chartist-plugin-tooltip.css
 %%WWWDIR%%/lib/chartist-plugin-tooltip-0.0.17/chartist-plugin-tooltip.js
 %%WWWDIR%%/lib/chartist-plugin-tooltip-0.0.17/chartist-plugin-tooltip.min.js
+%%WWWDIR%%/lib/file-type.js
 %%WWWDIR%%/lib/font-awesome/LICENSE.txt
 %%WWWDIR%%/lib/font-awesome/css/all.css
 %%WWWDIR%%/lib/font-awesome/css/all.min.css
