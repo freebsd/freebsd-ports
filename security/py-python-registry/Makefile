@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	python-registry
-PORTVERSION=	1.3.2
+PORTVERSION=	1.4
 CATEGORIES=	security devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
