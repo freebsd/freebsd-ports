@@ -1,11 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	veroroute
-PORTVERSION=	1.90
+PORTVERSION=	1.93
 PORTEPOCH=	1
 CATEGORIES=	cad
 MASTER_SITES=	SF/${PORTNAME}/
-DISTNAME=	VeroRoute_V${PORTVERSION:S/.//}_Src
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	PCB (printed circuit board) design software
@@ -13,7 +12,7 @@ COMMENT=	PCB (printed circuit board) design software
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/../licenses/license_GPLv3.txt
 
-USES=		compiler:c++11-lang qmake qt:5 zip
+USES=		compiler:c++11-lang qmake qt:5
 USE_QT=		core gui network widgets buildtools_build
 
 WRKSRC=		${WRKDIR}/VeroRoute
