@@ -14,6 +14,9 @@ COMMENT=	Django authentication backend for use with OpenStack Identity
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	No longer maintained, code was merged into 13.x release of www/py-horizon
+EXPIRATION_DATE=	2020-05-25
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=2.0.0:devel/py-pbr@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=2.0.0:devel/py-pbr@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django111>=1.8:www/py-django111@${PY_FLAVOR} \
