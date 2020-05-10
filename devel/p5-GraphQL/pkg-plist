@@ -1,4 +1,5 @@
 %%SITE_PERL%%/GraphQL.pm
+%%SITE_PERL%%/GraphQL/AsyncIterator.pm
 %%SITE_PERL%%/GraphQL/Debug.pm
 %%SITE_PERL%%/GraphQL/Directive.pm
 %%SITE_PERL%%/GraphQL/Error.pm
@@ -11,6 +12,7 @@
 %%SITE_PERL%%/GraphQL/Plugin/Convert/Test.pm
 %%SITE_PERL%%/GraphQL/Plugin/Type.pm
 %%SITE_PERL%%/GraphQL/Plugin/Type/DateTime.pm
+%%SITE_PERL%%/GraphQL/PubSub.pm
 %%SITE_PERL%%/GraphQL/Role/Abstract.pm
 %%SITE_PERL%%/GraphQL/Role/Composite.pm
 %%SITE_PERL%%/GraphQL/Role/FieldDeprecation.pm
@@ -38,6 +40,7 @@
 %%SITE_PERL%%/GraphQL/Type/Union.pm
 %%SITE_PERL%%/GraphQL/Validation.pm
 %%PERL5_MAN3%%/GraphQL.3.gz
+%%PERL5_MAN3%%/GraphQL::AsyncIterator.3.gz
 %%PERL5_MAN3%%/GraphQL::Debug.3.gz
 %%PERL5_MAN3%%/GraphQL::Directive.3.gz
 %%PERL5_MAN3%%/GraphQL::Error.3.gz
@@ -50,6 +53,7 @@
 %%PERL5_MAN3%%/GraphQL::Plugin::Convert::Test.3.gz
 %%PERL5_MAN3%%/GraphQL::Plugin::Type.3.gz
 %%PERL5_MAN3%%/GraphQL::Plugin::Type::DateTime.3.gz
+%%PERL5_MAN3%%/GraphQL::PubSub.3.gz
 %%PERL5_MAN3%%/GraphQL::Role::Abstract.3.gz
 %%PERL5_MAN3%%/GraphQL::Role::Composite.3.gz
 %%PERL5_MAN3%%/GraphQL::Role::FieldDeprecation.3.gz
