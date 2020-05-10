@@ -1,9 +1,9 @@
 URL=https://github.com/HandBrake/HandBrake.git
-HASH=b6df6dfce4105d89de37530c0da0a9d6dce5de00
-SHORTHASH=b6df6dfce
-TAG=1.3.1
-TAG_HASH=b6df6dfce4105d89de37530c0da0a9d6dce5de00
+HASH=a91adfa02ce544c84aa34e758b85f0967d005aa7
+SHORTHASH=a91adfa02
+TAG=1.3.2
+TAG_HASH=a91adfa02ce544c84aa34e758b85f0967d005aa7
 REV=0
 BRANCH=
 REMOTE=https://github.com/HandBrake/HandBrake.git
-DATE=2020-01-04 16:28:06 +0000
+DATE=2020-05-03 12:12:08 -0400
