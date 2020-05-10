@@ -2,6 +2,7 @@
 
 PORTNAME=	mujs
 DISTVERSION=	1.0.7
+PORTREVISION=	1
 CATEGORIES=	lang devel
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
@@ -30,11 +31,14 @@ PLIST_FILES=	bin/mujs \
 		lib/libmujs.a \
 		libdata/pkgconfig/mujs.pc
 
-OPTIONS_DEFINE=		32BIT
+OPTIONS_DEFINE=		32BIT SANITIZED
 OPTIONS_DEFAULT=	32BIT
 
 32BIT_DESC=		32-bit address space to allow for larger programs
 32BIT_MAKE_ARGS=	XCFLAGS="-DJS_INSTRUCTION=int"
+
+SANITIZED_DESC=		Sanitized build (only for debugging)
+SANITIZED_MAKE_ARGS=	build=sanitize
 
 post-install: # https://github.com/ccxvii/mujs/issues/99
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmujs.so
