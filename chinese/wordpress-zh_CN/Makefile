@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wordpress
-DISTVERSION=	5.3.2
+DISTVERSION=	5.3.3
 DISTVERSIONSUFFIX=	-zh_CN
 CATEGORIES=	chinese www
 MASTER_SITES=	http://cn.wordpress.org/
@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		php:web
-USE_PHP=	curl gd mysqli pcre tokenizer xml zip
+USE_PHP=	curl gd json mysqli pcre tokenizer xml zip
 NO_ARCH=	yes
 NO_BUILD=	yes
 
