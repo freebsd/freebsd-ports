@@ -36,6 +36,7 @@
 @sample %%ETCDIR%%/etc/transparent.sbcprofile.conf.sample
 @sample %%ETCDIR%%/etc/voicebox.conf.sample
 @sample %%ETCDIR%%/etc/voicemail.conf.sample
+@sample %%ETCDIR%%/etc/xmlrpc2di.conf.sample
 @sample %%ETCDIR%%/etc/webconference.conf.sample
 @sample %%ETCDIR%%/sems.conf.sample
 lib/sems/audio/annrecorder/beep.wav
@@ -150,8 +151,8 @@ lib/sems/plug-in/cc_prepaid.so
 lib/sems/plug-in/cc_registrar.so
 lib/sems/plug-in/cc_syslog_cdr.so
 lib/sems/plug-in/click2dial.so
-lib/sems/plug-in/codec2.so
 lib/sems/plug-in/conference.so
+lib/sems/plug-in/diameter_client.so
 lib/sems/plug-in/dsm.so
 lib/sems/plug-in/early_announce.so
 lib/sems/plug-in/echo.so
@@ -175,6 +176,7 @@ lib/sems/plug-in/stats.so
 lib/sems/plug-in/uac_auth.so
 lib/sems/plug-in/voicebox.so
 lib/sems/plug-in/voicemail.so
+lib/sems/plug-in/xmlrpc2di.so
 lib/sems/plug-in/wav.so
 lib/sems/plug-in/webconference.so
 sbin/sems

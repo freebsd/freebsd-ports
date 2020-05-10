@@ -1,6 +1,6 @@
---- core/CMakeLists.txt.orig	2019-08-22 14:04:22.265669000 -0700
-+++ core/CMakeLists.txt	2019-08-22 14:05:02.760870000 -0700
-@@ -12,15 +12,12 @@
+--- core/CMakeLists.txt.orig	2020-05-10 08:28:35.425963000 -0700
++++ core/CMakeLists.txt	2020-05-10 08:32:38.193983000 -0700
+@@ -13,22 +13,12 @@
  INCLUDE_DIRECTORIES (ampi)
  INCLUDE_DIRECTORIES (amci)
  
@@ -14,7 +14,14 @@
 -
  FOREACH (EXE_TARGET sems sems_tests)
  
--	TARGET_LINK_LIBRARIES(${EXE_TARGET} ${CMAKE_DL_LIBS} sems_core sems_sip event event_pthreads -rdynamic)
+-	# This allows symbols defined in the SIP stack but not used
+-	# by the core itself to be included in the executable and
+-	# thus be available for modules
+-	IF(APPLE)
+-		TARGET_LINK_LIBRARIES(${EXE_TARGET} ${CMAKE_DL_LIBS} -Wl,-force_load sems_core -Wl,-force_load sems_sip event event_pthreads -rdynamic)
+-	ELSE()
+-		TARGET_LINK_LIBRARIES(${EXE_TARGET} ${CMAKE_DL_LIBS} -Wl,--whole-archive sems_core sems_sip -Wl,--no-whole-archive event event_pthreads -rdynamic)
+-	ENDIF()
 +	TARGET_LINK_LIBRARIES(${EXE_TARGET} ${CMAKE_DL_LIBS} event event_pthreads -rdynamic)
  
  	IF(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
