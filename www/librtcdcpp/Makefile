@@ -2,6 +2,7 @@
 
 PORTNAME=	librtcdcpp
 DISTVERSION=	g20180627
+PORTREVISION=	1
 CATEGORIES=	www devel
 
 MAINTAINER=	yuri@FreeBSD.org

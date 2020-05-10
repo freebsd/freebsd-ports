@@ -2,6 +2,7 @@
 
 PORTNAME=	waybar
 DISTVERSION=	0.9.2
+PORTREVISION=	1
 CATEGORIES=	x11
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
