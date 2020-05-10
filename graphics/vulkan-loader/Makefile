@@ -11,7 +11,8 @@ COMMENT=	Driver loader for the Vulkan graphics API
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:devel/vulkan-headers
+BUILD_DEPENDS=	as:devel/binutils \
+		${LOCALBASE}/include/vulkan/vulkan.h:devel/vulkan-headers
 
 USES=		cmake compiler:c++11-lib pkgconfig python:3.4+,build
 USE_LDCONFIG=	yes
@@ -38,11 +39,5 @@ XCB_LIB_DEPENDS=	libX11-xcb.so:x11/libX11 \
 			libxcb.so:x11/libxcb
 WAYLAND_CMAKE_BOOL=	BUILD_WSI_WAYLAND_SUPPORT
 WAYLAND_LIB_DEPENDS=	libwayland-egl.so:graphics/wayland
-
-post-patch:
-# Non-x86 targets use C code, so don't abort without GNU as (e.g., on aarch64)
-.if !exists(/usr/bin/as) && ${MACHINE_ARCH} != i386 && ${MACHINE_ARCH} != amd64
-	@${REINPLACE_CMD} 's/-ATT//' ${WRKSRC}/loader/CMakeLists.txt
-.endif
 
 .include <bsd.port.mk>
