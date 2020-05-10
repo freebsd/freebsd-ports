@@ -2,7 +2,7 @@
 
 PORTNAME=	hugo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.69.2
+DISTVERSION=	0.70.0
 CATEGORIES=	www
 PKGNAMEPREFIX=	go
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
@@ -28,7 +28,7 @@ GH_TUPLE=	\
 		aws:aws-sdk-go:v1.27.1:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
 		bep:debounce:v1.2.0:bep_debounce/vendor/github.com/bep/debounce \
 		bep:gitmap:v1.1.2:bep_gitmap/vendor/github.com/bep/gitmap \
-		bep:golibsass:v0.5.0:bep_golibsass/vendor/github.com/bep/golibsass \
+		bep:golibsass:v0.6.0:bep_golibsass/vendor/github.com/bep/golibsass \
 		bep:tmc:v0.5.1:bep_tmc/vendor/github.com/bep/tmc \
 		census-instrumentation:opencensus-go:v0.22.0:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
 		cpuguy83:go-md2man:v1.0.10:cpuguy83_go_md2man/vendor/github.com/cpuguy83/go-md2man \
@@ -97,8 +97,8 @@ GH_TUPLE=	\
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		spf13:viper:v1.6.1:spf13_viper/vendor/github.com/spf13/viper \
 		subosito:gotenv:v1.2.0:subosito_gotenv/vendor/github.com/subosito/gotenv \
-		tdewolff:minify:v2.6.1:tdewolff_minify_v2/vendor/github.com/tdewolff/minify/v2 \
-		tdewolff:parse:v2.3.14:tdewolff_parse_v2/vendor/github.com/tdewolff/parse/v2 \
+		tdewolff:minify:v2.6.2:tdewolff_minify_v2/vendor/github.com/tdewolff/minify/v2 \
+		tdewolff:parse:v2.4.2:tdewolff_parse_v2/vendor/github.com/tdewolff/parse/v2 \
 		yuin:goldmark-highlighting:60d527fdb691:yuin_goldmark_highlighting/vendor/github.com/yuin/goldmark-highlighting \
 		yuin:goldmark:v1.1.30:yuin_goldmark/vendor/github.com/yuin/goldmark
 
@@ -134,7 +134,7 @@ PORTMANS=	hugo-config.1 hugo-convert-toJSON.1 hugo-convert-toTOML.1 \
 .include <bsd.port.pre.mk>
 
 SOURCE_DATE_EPOCH_CMD=	date -r $$(grep TIMESTAMP ${DISTINFO_FILE} | ${SED} -e 's/[^0-9]//g') '+%FT%TZ%z'
-COMMIT_ID=		ec9dcf304849ded11cea70ab9ad46e0a0a4615b2
+COMMIT_ID=		7f47b99ea9a7ba7759c4f9424fedd4591e6da497
 
 do-build-MANPAGES-on:
 	@cd ${GO_WRKSRC} && ${GO_WRKDIR_BIN}/${PORTNAME} gen man --dir man/man1/
