@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	glpi
-PORTVERSION=	9.4.2
+PORTVERSION=	9.4.5
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/glpi-project/glpi/releases/download/${PORTVERSION}/
