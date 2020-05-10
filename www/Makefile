@@ -199,6 +199,7 @@
     SUBDIR += googlebook_dl
     SUBDIR += googler
     SUBDIR += goose
+    SUBDIR += gophernicus
     SUBDIR += gopherus
     SUBDIR += gotty
     SUBDIR += gpx2map

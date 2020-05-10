@@ -1,0 +1,7 @@
+Gophernicus is a modern full-featured and secure Gopher daemon
+
+- runs under various super-servers (inetd, xinetd)
+- optionally provides executable gophermaps and scripts
+- optionally provides access to user's ~/public_gopher/
+
+WWW: https://gophernicus.org/
