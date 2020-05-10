@@ -2,7 +2,7 @@
 
 PORTNAME=	sendmail
 PORTVERSION=	8.15.2
-PORTREVISION=	22
+PORTREVISION=	23
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.sendmail.org/pub/sendmail/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
@@ -67,7 +67,7 @@ SMTPUTF8_DESC=		Enable unicode address support
 
 TLS_USES=	ssl
 SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
-SASLAUTHD_RUN_DEPENDS=	${LOCALBASE}/sbin/saslauthd:security/cyrus-sasl2-saslauthd
+SASLAUTHD_RUN_DEPENDS=	saslauthd:security/cyrus-sasl2-saslauthd
 LDAP_USE=	OPENLDAP=yes
 BDB_USES=	bdb
 GDBM_LIB_DEPENDS=	libgdbm.so:databases/gdbm
