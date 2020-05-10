@@ -1,6 +1,6 @@
---- configure.ac.orig	2019-05-12 09:03:53 UTC
+--- configure.ac.orig	2020-04-20 14:40:46 UTC
 +++ configure.ac
-@@ -61,6 +61,7 @@ AM_CONDITIONAL(WINDOWS, test "$host_os" = "windows")
+@@ -64,6 +64,7 @@ AM_CONDITIONAL(WINDOWS, test "$host_os" = "windows")
  
  
  build_linux=no
@@ -8,37 +8,44 @@
  build_windows=no
  build_mac=no
  
-@@ -75,6 +76,15 @@ case "${host_os}" in
+@@ -88,6 +89,25 @@ case "${host_os}" in
  			    )
  	])
          ;;
-+	freebsd*)
++    freebsd*)
 +        build_freebsd=yes
 +        AC_MSG_NOTICE([FreeBSD detected])
-+	AS_IF([test "x$enable_aac" != "xno"], [
++
++	AS_IF([test "x$enable_aac" != "xno"], 
++	[
 +	       AC_CHECK_LIB([fdk-aac], [aacEncOpen], [],
 +			    [AC_MSG_ERROR([**** Could not find libfdk-aac     ****])]
++			   )
++	])
++	AS_IF([test "x$enable_ssl" != "xno"], [
++	       AC_CHECK_LIB([crypto], [EVP_EncryptInit], [],
++			    [AC_MSG_ERROR([**** Could not find libcrypto    ****])]
++			    )
++	       AC_CHECK_LIB([ssl], [SSL_CTX_new], [],
++			    [AC_MSG_ERROR([**** Could not find libssl     ****])]
 +			    )
 +	])
 +        ;;
      cygwin*|mingw*|windows)
          build_windows=yes
          AC_MSG_NOTICE([Windows detected])
-@@ -90,6 +100,7 @@ esac
+@@ -109,6 +129,7 @@ esac
  
  # Pass the conditionals to automake
  AM_CONDITIONAL([LINUX], [test "$build_linux" = "yes"])
-+AM_CONDITIONAL([FREEBSD], [test "$build_freebsd" = "yes"])
++AM_CONDITIONAL([FreeBSD], [test "$build_freebsd" = "yes"])
  AM_CONDITIONAL([WINDOWS], [test "$build_windows" = "yes"])
  AM_CONDITIONAL([OSX], [test "$build_mac" = "yes"])
  
-@@ -121,6 +132,21 @@ if test "$build_linux" = "yes"; then
- 		AC_MSG_ERROR([**** Coud not find dbus dev files])
- 	])
- fi
-+
-+#Add dbus library for FreeBSD
-+if test "$build_freebsd" = "yes"; then
+@@ -129,6 +150,20 @@ fi
+ 
+ #Add dbus library for Linux
+ if test "$build_linux" = "yes"; then
 +	AC_MSG_NOTICE([])
 +	PKG_CHECK_MODULES([DBUS], [dbus-1], [
 +		AC_DEFINE([HAVE_DBUS], [1], [Use dbus to get current tracks])
@@ -51,6 +58,8 @@
 +	])
 +fi
 +
- 
- # Checks for header files.
- AC_PATH_X
++#Add dbus library for FreeBSD
++if test "$build_freebsd" = "yes"; then
+ 	AC_MSG_NOTICE([])
+ 	PKG_CHECK_MODULES([DBUS], [dbus-1], [
+ 		AC_DEFINE([HAVE_DBUS], [1], [Use dbus to get current tracks])

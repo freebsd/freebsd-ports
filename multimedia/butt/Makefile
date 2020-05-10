@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	butt
-PORTVERSION=	0.1.18
-PORTREVISION=	1
+PORTVERSION=	0.1.20
 CATEGORIES=	multimedia graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -24,7 +23,7 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libsamplerate.so:audio/libsamplerate \
 		libvorbis.so:audio/libvorbis
 
-USES=		autoreconf compiler:c++11-lang gmake jpeg pkgconfig xorg
+USES=		autoreconf compiler:c++11-lang gmake jpeg pkgconfig xorg ssl uidfix
 USE_XORG=	x11 xrender xcursor xfixes xext xft xinerama
 
 GNU_CONFIGURE=	yes
