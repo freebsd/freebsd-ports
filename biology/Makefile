@@ -162,6 +162,7 @@
     SUBDIR += treepuzzle
     SUBDIR += trimadap
     SUBDIR += trimmomatic
+    SUBDIR += ugene
     SUBDIR += vcflib
     SUBDIR += vcftools
     SUBDIR += velvet
