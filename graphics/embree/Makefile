@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	embree
-PORTVERSION=	3.9.0
+PORTVERSION=	3.10.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics
 
@@ -18,14 +18,15 @@ USES=		cmake pkgconfig
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 
-CMAKE_ARGS=	-DEMBREE_TASKING_SYSTEM:STRING=INTERNAL \
+CMAKE_ARGS=	-DEMBREE_TASKING_SYSTEM:STRING=${_ETS} \
 		-DCMAKE_INSTALL_DOCDIR:STRING=${DOCSDIR} \
 		-DEMBREE_BACKFACE_CULLING:BOOL=ON \
 		-DEMBREE_RAY_MASK:BOOL=ON
 
 PLIST_SUB+=	VERSION=${DISTVERSION}
 
-OPTIONS_DEFINE=	DOCS EXAMPLES ISPC
+OPTIONS_DEFINE=	DOCS EXAMPLES ISPC TBB
+OPTIONS_DEFAULT=	TBB
 OPTIONS_SUB=	yes
 
 ISPC_DESC=		ISPC applications support
@@ -37,6 +38,11 @@ EXAMPLES_LIB_DEPENDS=	libglfw.so:graphics/glfw \
 EXAMPLES_USES=		gl jpeg xorg
 EXAMPLES_USE=		GL=gl,glu,glut XORG=x11,xau,xcb,xdmcp
 EXAMPLES_CMAKE_OFF=	-DEMBREE_TUTORIALS:BOOL=OFF
+
+TBB_DESC=	Use Intel TBB (optimal performance)
+TBB_LIB_DEPENDS=	libtbb.so:devel/tbb
+TBB_VARS=	_ETS=TBB
+TBB_VARS_OFF=	_ETS=INTERNAL
 
 .include <bsd.port.pre.mk>
 
@@ -51,10 +57,12 @@ post-patch:
 		${WRKSRC}/common/cmake/package.cmake
 	@${REINPLACE_CMD} -e 's,Win32,${OPSYS},gi' \
 		${WRKSRC}/common/simd/vint4_sse2.h
-	@${REINPLACE_CMD} -e 's,#else,#elif defined(MAP_HUGETLB),' \
-		${WRKSRC}/common/sys/alloc.cpp
-# Avoid "Redefining uint8/uint16/uint32/uint64 type which is part of
-# ISPC language since version 1.13" error
-	@${ECHO_CMD} > ${WRKSRC}/tutorials/common/common.isph
+# Obsolete GNU binutils 2.17.50 objdump(1) is going to be removed
+# from the base, use LLVM's one if it's available
+.if exists(/usr/bin/llvm-objdump)
+	@${REINPLACE_CMD} -e 's,objdump,llvm-&,' \
+		${WRKSRC}/common/cmake/check_globals.cmake \
+		${WRKSRC}/common/cmake/check_stack_frame_size.cmake
+.endif
 
 .include <bsd.port.post.mk>

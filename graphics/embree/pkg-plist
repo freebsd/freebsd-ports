@@ -18,6 +18,8 @@ include/embree3/rtcore_scene.h
 include/embree3/rtcore_scene.isph
 lib/cmake/embree-%%VERSION%%/embree-config-version.cmake
 lib/cmake/embree-%%VERSION%%/embree-config.cmake
+lib/cmake/embree-%%VERSION%%/embree-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/embree-%%VERSION%%/embree-targets.cmake
 lib/libembree3.so
 lib/libembree3.so.3
 lib/libembree3.so.%%VERSION%%
@@ -172,6 +174,13 @@ man/man3/rtcUpdateGeometryBuffer.3embree3.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/models/cornell_box_mblur.xml.bin
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/models/curve0.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/models/curve1.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/models/curve_flat.ecs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/models/curve_flat.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/models/curve_geometry.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/models/curve_oriented.ecs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/models/curve_oriented.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/models/curve_round.ecs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/models/curve_round.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/models/cylinder.ecs
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/models/cylinder.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/models/furBall_A.bin
@@ -179,6 +188,7 @@ man/man3/rtcUpdateGeometryBuffer.3embree3.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/models/furBall_A.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/models/hair0.ecs
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/models/hair0.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/models/hair1.ecs
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/models/hair1.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/models/linesegments.ecs
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/models/linesegments.xml
@@ -192,6 +202,8 @@ man/man3/rtcUpdateGeometryBuffer.3embree3.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/models/oriented_curve1.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/models/oriented_curves.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/models/oriented_hermite_curve_twisted.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/models/points.ecs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/models/points.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/models/round_line_segments_0.ecs
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/models/round_line_segments_0.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/models/round_line_segments_1.ecs
