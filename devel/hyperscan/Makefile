@@ -25,7 +25,7 @@ SHARED_DESC=		Build shared library
 NATIVE_DESC=		Build with native CPU tunes
 OPTIONS_DEFAULT=	SHARED
 
-CMAKE_ARGS+=	-DBOOST_ROOT=${WRKDIR}/boost_1_73_1
+CMAKE_ARGS+=	-DBOOST_ROOT=${WRKDIR}/boost_1_73_0
 
 NATIVE_CXXFLAGS=	-march=native -mtune=native
 NATIVE_CFLAGS=		-march=native -mtune=native
