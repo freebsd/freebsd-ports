@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rust-analyzer
-DISTVERSION=	2020-05-04
+DISTVERSION=	2020-05-11
 CATEGORIES=	devel
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -23,10 +23,10 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		autocfg-1.0.0 \
 		backtrace-0.3.46 \
 		backtrace-sys-0.1.37 \
-		base64-0.12.0 \
+		base64-0.12.1 \
 		bitflags-1.2.1 \
 		bstr-0.2.12 \
-		cargo_metadata-0.9.1 \
+		cargo_metadata-0.10.0 \
 		cc-1.0.52 \
 		cfg-if-0.1.10 \
 		clicolors-control-1.0.1 \
@@ -46,7 +46,7 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		ena-0.14.0 \
 		encode_unicode-0.3.6 \
 		env_logger-0.7.1 \
-		filetime-0.2.9 \
+		filetime-0.2.10 \
 		fixedbitset-0.1.9 \
 		fnv-1.0.6 \
 		fs_extra-1.1.0 \
@@ -60,6 +60,7 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		goblin-0.2.1 \
 		heck-0.3.1 \
 		hermit-abi-0.1.12 \
+		home-0.5.3 \
 		idna-0.2.0 \
 		indexmap-1.3.2 \
 		inotify-0.7.0 \
@@ -76,8 +77,8 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		lazy_static-1.4.0 \
 		lazycell-1.2.1 \
 		libc-0.2.69 \
-		libloading-0.6.1 \
-		linked-hash-map-0.5.2 \
+		libloading-0.6.2 \
+		linked-hash-map-0.5.3 \
 		lock_api-0.3.4 \
 		log-0.4.8 \
 		lsp-server-0.3.1 \
@@ -97,17 +98,17 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		ordermap-0.3.5 \
 		parking_lot-0.10.2 \
 		parking_lot_core-0.7.2 \
-		paste-0.1.11 \
-		paste-impl-0.1.11 \
+		paste-0.1.12 \
+		paste-impl-0.1.12 \
 		percent-encoding-2.1.0 \
 		petgraph-0.4.13 \
 		pico-args-0.3.1 \
 		plain-0.2.3 \
 		ppv-lite86-0.2.6 \
 		proc-macro-hack-0.5.15 \
-		proc-macro2-1.0.10 \
+		proc-macro2-1.0.12 \
 		quote-1.0.4 \
-		ra_vfs-0.6.0 \
+		ra_vfs-0.6.1 \
 		rand-0.7.3 \
 		rand_chacha-0.2.2 \
 		rand_core-0.5.1 \
@@ -134,8 +135,8 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		scroll_derive-0.10.1 \
 		semver-0.9.0 \
 		semver-parser-0.7.0 \
-		serde-1.0.106 \
-		serde_derive-1.0.106 \
+		serde-1.0.107 \
+		serde_derive-1.0.107 \
 		serde_json-1.0.52 \
 		serde_repr-0.1.5 \
 		serde_yaml-0.8.11 \
@@ -143,7 +144,7 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		smallvec-1.4.0 \
 		smol_str-0.1.15 \
 		superslice-1.0.0 \
-		syn-1.0.18 \
+		syn-1.0.19 \
 		synstructure-0.12.3 \
 		tempfile-3.1.0 \
 		terminal_size-0.1.12 \
