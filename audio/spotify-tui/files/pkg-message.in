@@ -14,6 +14,10 @@ registered as a Spotify device that you can control from spotify-tui.
 
 You can think of spotify-tui as more of a "controller" or "frontend" to Spotify,
 with this setup you can control all your Spotify devices.
+
+For a more detailed breakdown, visit the FreeBSD wiki at:
+
+https://wiki.FreeBSD.org/Ports/audio/spotify-tui
 EOM
 }
 ]
