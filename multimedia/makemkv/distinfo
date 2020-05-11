@@ -1,8 +1,8 @@
-TIMESTAMP = 1585042908
-SHA256 (makemkv/makemkv-oss-1.15.0.tar.gz) = a9213fa7cbf2bf2f03d90cd350ad53aa82394bc3991c440e9e369e4169f3ed06
-SIZE (makemkv/makemkv-oss-1.15.0.tar.gz) = 6383576
-SHA256 (makemkv/makemkv-bin-1.15.0.tar.gz) = 442d67d5368390263c30fca2d980ebfffb716be227b9f056b69961d2b11b26ff
-SIZE (makemkv/makemkv-bin-1.15.0.tar.gz) = 9516617
+TIMESTAMP = 1587020270
+SHA256 (makemkv/makemkv-oss-1.15.1.tar.gz) = 5e6b3da05a3298a0ac85c674dbde45d5eb36956159deb3207ac23f85a7ffa166
+SIZE (makemkv/makemkv-oss-1.15.1.tar.gz) = 6403114
+SHA256 (makemkv/makemkv-bin-1.15.1.tar.gz) = 80bbd4438c3ce6e95c085a63b9129c919dff865d14cd2b5e58a851da74302631
+SIZE (makemkv/makemkv-bin-1.15.1.tar.gz) = 8338636
 SHA256 (makemkv/linux-2.6.32.27.tar.xz) = 96c20c370ed440db61624d93f34721a09a69b12bb81b1b03bb735041983fb1bd
 SIZE (makemkv/linux-2.6.32.27.tar.xz) = 52652044
 SHA256 (makemkv/binutils-2.27.tar.bz2) = 369737ce51587f92466041a97ab7d2358c6d9e1b6490b3940eb09fb0a9a6ac88

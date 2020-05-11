@@ -25,7 +25,6 @@
 #
 # Dist			Port			Why
 # ------------------------------------------------------------------------------
-makemkv-*       multimedia/makemkv      	MAKEMKV licenses don't allow distributing the package as it contains a modified version of the makemkvcon binary
 *-for-1.4.tgz	net/dgd-lpmud			May not be used for monetary gain
 *_MegaCLI.zip		sysutils/megacli	Source recipient must acknowledge license. Reproduction or redistribution prohibited. See http://www.lsi.com/lookup/License.aspx
 26410-800.zip		audio/libaacplus	unclear legal status, probably need licenses from 3GPP, Via Licensing and Coding Technologies
@@ -142,6 +141,7 @@ lpac-*			audio/lpac		No commercial use
 l_cc_p*_*.*.*.tar.gz	lang/icc		No redistribution allowed
 macopix-*.tar.gz	games/macopix		Contains commercial character data
 madfufw-*		audio/madfufw		No redistribution of firmware files
+makemkv-bin-*		multimedia/makemkv	Do not sell. Do not redistribute modified binaries, but explicit permission to distribute a patched makemkvcon given by copyright owner
 malo-fw-*.tar.gz	net/malo-firmware-kmod	Marvell refuses to grant distribution rights
 mb339pan_*		games/flightgear-mb339-pan Redistribution prohibited
 mindfocus-*		games/mindfocus		Contains commercial character data
