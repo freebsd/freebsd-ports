@@ -1,0 +1,4 @@
+sphinxcontrib-serializinghtml is a sphinx extension which outputs serialized
+HTML files (json and pickle).
+
+WWW: https://www.sphinx-doc.org/
