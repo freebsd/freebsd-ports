@@ -36,6 +36,7 @@ NTL_LIB_DEPENDS=	libntl.so:math/ntl	\
 			libcddgmp.so:math/cddlib
 NTL_CONFIGURE_ON=	--with-ntl=${LOCALBASE} --with-flint=no
 NTL_CONFIGURE_OFF=	--with-ntl=no
+NTL_USES=		compiler:c11
 
 # not a shebang but "/bin/bash" is hardcoded in some files
 post-patch:
