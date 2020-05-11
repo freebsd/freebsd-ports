@@ -10,7 +10,7 @@ MASTER_SITES=	http://launchpad.net/gearmand/1.0/${PORTVERSION}/+download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gearman C Server and Library
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0:textproc/py-sphinx@${PY_FLAVOR}
+BUILD_DEPENDS=	${PY_SPHINX}
 LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs \
 		libevent.so:devel/libevent \
 		libuuid.so:misc/e2fsprogs-libuuid

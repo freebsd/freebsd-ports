@@ -41,6 +41,6 @@ DOCS_DESC=		Build documentation (needs sphinx)
 DOCS_CMAKE_OFF=	-DENABLE_DOCS=OFF
 DOCS_CMAKE_ON=	-DENABLE_DOCS=ON
 DOCS_USES=		python
-DOCS_BUILD_DEPENDS=	${PY_FLAVOR}-sphinx>0:textproc/py-sphinx@${PY_FLAVOR}
+DOCS_BUILD_DEPENDS=	${PY_SPHINX}
 
 .include <bsd.port.mk>

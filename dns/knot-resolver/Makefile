@@ -91,7 +91,7 @@ DNSTAP_MESON_OFF=		-Ddnstap=disabled
 
 DOXYGEN_IMPLIES=		DOCS
 DOXYGEN_BUILD_DEPENDS=		doxygen:devel/doxygen \
-				${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx@${PY_FLAVOR} \
+				${PY_SPHINX} \
 				${PYTHON_PKGNAMEPREFIX}sphinx_rtd_theme>0:textproc/py-sphinx_rtd_theme@${PY_FLAVOR}
 
 TRUSTANCHOR_DESC=		Trust anchor bootstrapping and stats

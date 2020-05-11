@@ -45,7 +45,7 @@ PORTSCOUT=	limitw:1,even
 
 OPTIONS_DEFINE=	DOCS
 
-DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=1.4.8:textproc/py-sphinx@${PY_FLAVOR}
+DOCS_BUILD_DEPENDS=	${PY_SPHINX}
 
 .include <bsd.port.pre.mk>
 

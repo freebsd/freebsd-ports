@@ -69,7 +69,7 @@ CONFIGURE_ARGS=	--enable-user=frr \
 		--disable-vrrpd \
 		--with-vtysh-pager=cat
 
-MANPAGES_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0:textproc/py-sphinx@${PY_FLAVOR}
+MANPAGES_BUILD_DEPENDS=	${PY_SPHINX}
 MANPAGES_CONFIGURE_OFF=	--disable-doc
 CONFIGROLLBACKS_LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 CONFIGROLLBACKS_CONFIGURE_ENABLE=	config-rollbacks

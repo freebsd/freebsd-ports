@@ -3,6 +3,7 @@
 PORTNAME=	noseofyeti
 PORTVERSION=	1.8
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -24,7 +25,7 @@ OPTIONS_DEFINE=	DOCS
 DOCS_BUILD_DEPENDS=	\
 		${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}fudge>0:devel/py-fudge@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx@${PY_FLAVOR} \
+		${PY_SPHINX} \
 		${PYTHON_PKGNAMEPREFIX}pinocchio>0:devel/py-pinocchio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}should_dsl>0:devel/py-should_dsl@${PY_FLAVOR}
 

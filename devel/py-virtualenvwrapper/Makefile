@@ -3,6 +3,7 @@
 
 PORTNAME=	virtualenvwrapper
 PORTVERSION=	4.8.4
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,10 +25,12 @@ USE_PYTHON=	autoplist concurrent distutils
 
 OPTIONS_DEFINE=	DOCS
 
-DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx@${PY_FLAVOR} \
+DOCS_BUILD_DEPENDS=	${PY_SPHINX} \
 			${PYTHON_PKGNAMEPREFIX}sphinxcontrib-bitbucket>=1.0:textproc/py-sphinxcontrib-bitbucket@${PY_FLAVOR}
 DOCS_VARS=		PYDISTUTILS_BUILD_TARGET+=build_sphinx \
 			PYDISTUTILS_BUILDARGS="-a -E"
+
+PORTDOCS=	*
 
 NO_ARCH=	yes
 
@@ -44,6 +47,9 @@ post-patch:
 post-patch-DOCS-on:
 	@${REINPLACE_CMD} -e 's|python setup.py|${PYTHON_CMD} setup.py|' \
 		${WRKSRC}/docs/source/conf.py
+
+post-build-DOCS-on:
+	@${RM} ${WRKSRC}/docs/build/html/.buildinfo
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

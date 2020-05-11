@@ -47,7 +47,7 @@ CGAL_BUILD_DEPENDS=	cgal>0:math/cgal
 CGAL_CMAKE_BOOL=	CGAL_ENABLED
 
 DOCS_BUILD_DEPENDS=	gmake:devel/gmake \
-			sphinx-build:textproc/py-sphinx
+			sphinx-build:textproc/py-sphinx18
 DOCS_PORTDOCS=		*
 
 OPENMP_USES=		compiler:openmp

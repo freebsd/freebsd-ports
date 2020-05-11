@@ -3,7 +3,7 @@
 
 PORTNAME=	ncmpc
 PORTVERSION=	0.34
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://www.musicpd.org/download/ncmpc/0/
 
@@ -34,7 +34,7 @@ DOCS_MESON_TRUE=	html_manual
 
 LYRICS_MESON_TRUE=	lyrics_screen
 
-MANPAGES_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx@${PY_FLAVOR}
+MANPAGES_BUILD_DEPENDS=	${PY_SPHINX}
 MANPAGES_MAKE_ENV=	PYTHON=${PYTHON_CMD} \
 			SPHINX=sphinx-build-${PYTHON_VER}
 MANPAGES_MESON_TRUE=	manual
@@ -43,5 +43,7 @@ MANPAGES_USES=		python:build
 NLS_LDFLAGS=		-lintl
 NLS_MESON_ENABLED=	nls
 NLS_USES=		gettext
+
+PORTDOCS=	*
 
 .include <bsd.port.mk>

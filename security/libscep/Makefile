@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/README.md
 BUILD_DEPENDS=	check>=0.12.0:devel/check \
 		curl>=7.64:ftp/curl \
 		uriparser>=0.9.1:net/uriparser \
-		${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx@${PY_FLAVOR}
+		${PY_SPHINX}
 RUN_DEPENDS=	check>=0.12.0:devel/check \
 		curl>=7.64:ftp/curl \
 		uriparser>=0.9.1:net/uriparser

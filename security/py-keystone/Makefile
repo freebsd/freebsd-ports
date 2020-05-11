@@ -82,7 +82,7 @@ MONGODB_DESC=		MongoDB support (used for messaging services)
 MYSQL_DESC=		MySQL/MariaDB support
 PGSQL_DESC=		PostgreSQL support
 
-DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=1.6.2:textproc/py-sphinx@${PY_FLAVOR} \
+DOCS_BUILD_DEPENDS=	${PY_SPHINX} \
 			${PYTHON_PKGNAMEPREFIX}openstackdocstheme>=1.18.1:textproc/py-openstackdocstheme@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}reno>=2.5.0:textproc/py-reno@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}ldap>=2.4.20:net/py-ldap@${PY_FLAVOR} \

@@ -14,7 +14,7 @@ COMMENT=	Sphinx-intl translation features
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=1.1.3:textproc/py-sphinx@${PY_FLAVOR} \
+RUN_DEPENDS=	${PY_SPHINX} \
 		${PYTHON_PKGNAMEPREFIX}polib>=1.0.6:devel/py-polib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.8.0:devel/py-six@${PY_FLAVOR}
 

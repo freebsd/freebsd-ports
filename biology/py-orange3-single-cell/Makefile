@@ -31,7 +31,7 @@ USE_PYTHON=	distutils autoplist
 OPTIONS_DEFINE=	DOCS
 
 DOCS_BUILD_DEPENDS=	gmake:devel/gmake \
-			${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx@${PY_FLAVOR}
+			${PY_SPHINX}
 
 pre-build-DOCS-on:
 	@cd ${WRKSRC}/doc && ${SETENV} ${MAKE_ENV} ${GMAKE} html htmlhelp SPHINXBUILD=${LOCALBASE}/bin/sphinx-build-${PYTHON_VER}

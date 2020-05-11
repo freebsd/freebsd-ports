@@ -2,7 +2,7 @@
 
 PORTNAME=	paperless
 PORTVERSION=	2.7.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -63,13 +63,15 @@ IMAGICK6_X11_DESC=	ImageMagick6 with X11 support
 IMAGICK7_NOX11_DESC=	ImageMagick7 without X11 support
 IMAGICK7_X11_DESC=	ImageMagick7 with X11 support
 
-DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0:textproc/py-sphinx@${PY_FLAVOR}
+DOCS_BUILD_DEPENDS=	${PY_SPHINX}
 DOCS_USES=		gmake
 
 IMAGICK6_X11_RUN_DEPENDS=	convert:graphics/ImageMagick6
 IMAGICK6_NOX11_RUN_DEPENDS=	convert:graphics/ImageMagick6-nox11
 IMAGICK7_X11_RUN_DEPENDS=	convert:graphics/ImageMagick7
 IMAGICK7_NOX11_RUN_DEPENDS=	convert:graphics/ImageMagick7-nox11
+
+PORTDOCS=	*
 
 PAPERLESS_STATICDIR=	${WRKSRC}/static
 
@@ -88,6 +90,9 @@ do-build:
 do-build-DOCS-on:
 	cd ${WRKSRC}/docs && ${SETENV} ${MAKE_ENV} \
 		${MAKE_CMD} ${MAKE_ARGS} html SPHINXBUILD=sphinx-build-${PYTHON_VER}
+
+post-build-DOCS-on:
+	@${RM} ${WRKSRC}/docs/_build/html/.buildinfo
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}/paperless

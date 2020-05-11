@@ -64,7 +64,8 @@ CONFIGURE_ARGS=	--enable-user=frr \
 		--disable-nhrpd \
 		--disable-pimd
 
-MANPAGES_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
+MANPAGES_BUILD_DEPENDS=	${PY_SPHINX}
+MANPAGES_MAKE_ENV=	SPHINXBUILD=sphinx-build-${PYTHON_VER}
 MANPAGES_CONFIGURE_OFF=	--disable-doc
 SHELLACCESS_CONFIGURE_ENABLE=	shell-access
 FPM_CONFIGURE_ENABLE=		fpm

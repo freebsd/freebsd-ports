@@ -58,7 +58,7 @@ DOCKER_DESC=	For testing on Docker Platform(Remote)
 EC2_DESC=	For testing on Amazon EC2 Platform
 GCE_DESC=	For testing on Google Compute Engine Platform
 DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}alabaster>0:textproc/py-alabaster@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx@${PY_FLAVOR}
+			${PY_SPHINX}
 AZURE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}azure-cli>0:sysutils/py-azure-cli@${PY_FLAVOR}
 DOCKER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docker>=2.0.0:sysutils/py-docker@${PY_FLAVOR}
 EC2_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto>0:devel/py-boto@${PY_FLAVOR} \

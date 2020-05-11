@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libcairo.so:graphics/cairo \
 		libgirara-gtk3.so:x11-toolkits/girara \
 		libsynctex.so:devel/tex-synctex
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PY_SPHINX} \
 		${PYTHON_PKGNAMEPREFIX}sphinx_rtd_theme>0:textproc/py-sphinx_rtd_theme@${PY_FLAVOR}
 
 USES=		compiler:c11 gettext-tools:build gnome meson ninja pkgconfig \

@@ -53,7 +53,7 @@ SCIPY_DESC=	Signal/image processing
 SPHINX_DESC=	Rich text help on the Object Inspector
 SYMPY_DESC=	Symbolic mathematics in the IPython Console
 
-DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0.6:textproc/py-sphinx@${PY_FLAVOR}
+DOCS_BUILD_DEPENDS=	${PY_SPHINX}
 IPYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipython>=6.0:devel/ipython@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}pyzmq>=2.1.11:net/py-pyzmq@${PY_FLAVOR}
 MATPLOT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>=1.0:math/py-matplotlib@${PY_FLAVOR}

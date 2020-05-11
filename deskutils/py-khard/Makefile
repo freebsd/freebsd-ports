@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}atomicwrites>=0.1.7:devel/py-atomicwrites@${
 		${PYTHON_PKGNAMEPREFIX}vdirsyncer>=0:deskutils/py-vdirsyncer@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}vobject>=0.9.5:deskutils/py-vobject@${PY_FLAVOR}
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx@${PY_FLAVOR} \
+		${PY_SPHINX} \
 		${RUN_DEPENDS}
 
 USES=		python:3.5+ gmake
@@ -34,6 +34,12 @@ PLIST_FILES=	share/zsh/site-functions/_khard \
 		man/man5/khard.conf.5.gz
 
 SUB_FILES=	pkg-message
+
+post-patch:
+	@${REINPLACE_CMD} \
+		-e 's|sphinx-build|${LOCALBASE}/bin/sphinx-build-${PYTHON_VER}|g' \
+		-e 's|sphinx-apidoc|${LOCALBASE}/bin/sphinx-apidoc-${PYTHON_VER}|g' \
+		${WRKSRC}/doc/Makefile
 
 do-build:
 	(cd ${WRKSRC}/doc && ${MAKE_CMD} man)

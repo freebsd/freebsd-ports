@@ -36,10 +36,15 @@ MANPAGES_BUILD_DEPENDS+=	sphinx-build:textproc/py-sphinx
 NLS_USES=		gettext
 NLS_CMAKE_BOOL=		WITH_GETTEXT
 
+PORTDOCS=	*
+
 post-install:
 .for i in fish fish_indent fish_key_reader
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${i}
 .endfor
+
+post-stage-DOCS-on:
+	@${RM} ${STAGEDIR}${DOCSDIR}/.buildinfo
 
 post-stage-MANPAGES-off:
 	@${RM} -rf ${STAGEDIR}${MANPREFIX}/man/man1

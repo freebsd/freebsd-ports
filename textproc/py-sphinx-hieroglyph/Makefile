@@ -13,7 +13,7 @@ COMMENT=	Sphinx extension which builds HTML presentations
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=1.4:textproc/py-sphinx@${PY_FLAVOR}
+RUN_DEPENDS=	${PY_SPHINX}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	nyergler

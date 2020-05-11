@@ -19,7 +19,7 @@ ONLY_FOR_ARCHS=	amd64
 
 BUILD_DEPENDS=	\
 	yasm:devel/yasm \
-	${PYTHON_PKGNAMEPREFIX}sphinx>=0:textproc/py-sphinx@${PY_FLAVOR} \
+	${PY_SPHINX} \
 	gperf:devel/gperf \
 	${LOCALBASE}/lib/libatomic_ops.a:devel/libatomic_ops
 LIB_DEPENDS=	\

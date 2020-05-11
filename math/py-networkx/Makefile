@@ -15,7 +15,7 @@ LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS:=	${PYTHON_PKGNAMEPREFIX}decorator>=4.1.0:devel/py-decorator@${PY_FLAVOR}
 
-#		${PYTHON_PKGNAMEPREFIX}sphinx>=1.2.3:textproc/py-sphinx@${PY_FLAVOR} \
+#		${PY_SPHINX} \
 #		${PYTHON_PKGNAMEPREFIX}docutils>=0.12:textproc/py-docutils@${PY_FLAVOR}
 
 USES=		python shebangfix zip

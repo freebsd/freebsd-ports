@@ -3,7 +3,7 @@
 
 PORTNAME=	aubio
 PORTVERSION=	0.4.7
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES?=	audio
 MASTER_SITES=	http://aubio.org/pub/
 
@@ -28,7 +28,7 @@ OPTIONS_SUB=		yes
 COMPLEX_DESC=			Compile with C99 complex.h
 COMPLEX_CONFIGURE_ENABLE=	complex
 
-DOCS_BUILD_DEPENDS=		${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx@${PY_FLAVOR}
+DOCS_BUILD_DEPENDS=		${PY_SPHINX}
 DOCS_CONFIGURE_ENABLE=		sphinx
 DOCS_BINARY_ALIAS=		sphinx-build=sphinx-build-${PYTHON_VER}
 
@@ -58,6 +58,8 @@ SNDFILE_CONFIGURE_ENABLE=	sndfile
 
 TEST_MAKE_ARGS=			--enable-tests
 TEST_MAKE_ARGS_OFF=		--disable-tests
+
+PORTDOCS=	*
 
 post-patch:
 	@${REINPLACE_CMD} -e \

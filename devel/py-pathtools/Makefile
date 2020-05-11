@@ -2,7 +2,7 @@
 
 PORTNAME=	pathtools
 PORTVERSION=	0.1.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,11 +17,11 @@ OPTIONS_DEFINE=	DOCS
 USES=		python
 USE_PYTHON=	distutils autoplist
 
-.include <bsd.port.options.mk>
+DOCS_BUILD_DEPENDS=	${PY_SPHINX}
 
-.if ${PORT_OPTIONS:MDOCS}
-BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sphinx>=1.1.3:textproc/py-sphinx@${PY_FLAVOR}
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
+
+PORTDOCS=	*
 
 post-build:
 	@(cd ${WRKSRC}/docs ; ${MAKE} SPHINXBUILD=sphinx-build-${PYTHON_VER} html)
@@ -29,6 +29,5 @@ post-build:
 post-install:
 	@(cd ${WRKSRC}/docs/build/html ; ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} \
 		"! -name .buildinfo -and ! -name objects.inv")
-.endif
 
 .include <bsd.port.mk>

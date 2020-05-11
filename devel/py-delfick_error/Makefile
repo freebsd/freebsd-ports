@@ -18,7 +18,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${PY_FLAVOR} \
 
 OPTIONS_DEFINE=	DOCS
 DOCS_BUILD_DEPENDS=	\
-		${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx@${PY_FLAVOR} \
+		${PY_SPHINX} \
 		${PYTHON_PKGNAMEPREFIX}cloud_sptheme>0:textproc/py-cloud_sptheme@${PY_FLAVOR}
 
 NO_ARCH=	yes

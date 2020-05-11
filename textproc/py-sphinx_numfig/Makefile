@@ -15,7 +15,7 @@ LICENSE=	BSD3CLAUSE
 DEPRECATED=	Uses deprecated version of python
 EXPIRATION_DATE=	2020-08-15
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=1.3.1:textproc/py-sphinx@${PY_FLAVOR}
+RUN_DEPENDS=	${PY_SPHINX}
 
 USES=		python:2.7 tar:tgz
 USE_PYTHON=	flavors
