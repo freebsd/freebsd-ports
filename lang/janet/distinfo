@@ -1,3 +1,5 @@
-TIMESTAMP = 1585689244
-SHA256 (janet-lang-janet-v1.8.1_GH0.tar.gz) = 0f3ee438fb159d3081b38506e51df6406b355eb241c662ca1a3529dac0140b92
-SIZE (janet-lang-janet-v1.8.1_GH0.tar.gz) = 977929
+TIMESTAMP = 1589169987
+SHA256 (janet-lang-janet-v1.9.0_GH0.tar.gz) = 30ca113843e597127912719a03a7da5f93fd1cf321245d8dbbcbae64d307ad5c
+SIZE (janet-lang-janet-v1.9.0_GH0.tar.gz) = 994545
+SHA256 (7275370ae563e8bfa7e907c9931bb1e0c88686d3.patch) = ea43e632c9dab2bad9517b89fef994bbcdbb9f64523da1bbe9b8a010cdd27dfd
+SIZE (7275370ae563e8bfa7e907c9931bb1e0c88686d3.patch) = 902
