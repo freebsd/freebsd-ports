@@ -48,13 +48,13 @@ RUN_DEPENDS=	bind-tools>0:dns/bind-tools
 # XXX: remove tar:bz2
 USES=		autoreconf compiler:c11 cpe libedit libtool pkgconfig ssl tar:bz2
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.17.0a0.2020.05.02
+ISCVERSION=	9.17.0a0.2020.05.10
 # XXX: Remove gitlab
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.isc.org
 GL_ACCOUNT=	isc-projects
 GL_PROJECT=	bind9
-GL_COMMIT=	a6e6d0c1d5d5add2901abd03050001fbc910ec76
+GL_COMMIT=	7b4d07c31dab70e9c168dd134a61b121b2587718
 
 CPE_VENDOR=	isc
 CPE_VERSION=	${ISCVERSION:C/-.*//}
@@ -64,10 +64,10 @@ CPE_UPDATE=	${ISCVERSION:C/.*-//:tl}
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-linux-caps \
+		--disable-shared \
 		--localstatedir=/var \
 		--sysconfdir=${ETCDIR} \
 		--with-dlopen=yes \
-		--disable-shared \
 		--with-libxml2 \
 		--with-openssl=${OPENSSLBASE} \
 		--with-readline="-L${LOCALBASE}/lib -ledit"
@@ -89,11 +89,11 @@ CONFLICTS=	bind911 bind912 bind913 bind914 bind916
 
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS_DEFAULT=	DLZ_FILESYSTEM GSSAPI_NONE IDN JSON LMDB PYTHON \
-			SIGCHASE TCP_FASTOPEN
+OPTIONS_DEFAULT=	DLZ_FILESYSTEM GSSAPI_NONE IDN JSON LMDB MANPAGES \
+			PYTHON SIGCHASE TCP_FASTOPEN
 OPTIONS_DEFINE=		DNSTAP DOCS FIXED_RRSET GEOIP IDN JSON LARGE_FILE LMDB \
-			OVERRIDECACHE PORTREVISION PYTHON QUERYTRACE SIGCHASE \
-			START_LATE TCP_FASTOPEN TUNING_LARGE
+			MANPAGES OVERRIDECACHE PORTREVISION PYTHON QUERYTRACE \
+			SIGCHASE START_LATE TCP_FASTOPEN TUNING_LARGE
 
 OPTIONS_RADIO=		CRYPTO
 OPTIONS_RADIO_CRYPTO=	NATIVE_PKCS11
@@ -193,6 +193,8 @@ LARGE_FILE_CONFIGURE_ENABLE=	largefile
 LMDB_CONFIGURE_WITH=	lmdb=${LOCALBASE}
 LMDB_LIB_DEPENDS=	liblmdb.so:databases/lmdb
 
+MANPAGES_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
+
 OVERRIDECACHE_EXTRA_PATCHES=	${FILESDIR}/extrapatch-bind-min-override-ttl
 
 NATIVE_PKCS11_CONFIGURE_ENABLE=	native-pkcs11
@@ -242,8 +244,8 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e '/^m4_define.*bind_VERSION_EXTRA/s#)#-${GL_COMMIT})#' \
 		${WRKSRC}/configure.ac
-.for FILE in check/named-checkconf.8 named/named.8 nsupdate/nsupdate.1 \
-	rndc/rndc.8
+.for FILE in check/named-checkconf.rst named/named.rst nsupdate/nsupdate.rst \
+	rndc/rndc.rst
 	@${REINPLACE_CMD} -e 's#/etc/named.conf#${ETCDIR}/named.conf#g' \
 		-e 's#/etc/rndc.conf#${ETCDIR}/rndc.conf#g' \
 		-e "s#/var\/run\/named\/named.pid#/var/run/named/pid#" \
@@ -272,11 +274,11 @@ post-install:
 	${INSTALL_DATA} ${FILESDIR}/BIND.chroot.local.dist ${STAGEDIR}${PREFIX}/etc/mtree/BIND.chroot.local.dist.sample
 	${INSTALL_DATA} ${WRKSRC}/bin/rndc/rndc.conf \
 		${STAGEDIR}${ETCDIR}/rndc.conf.sample
+# FIXME: these are strange.
+	@${RM} -rf ${STAGEDIR}/wrkdirs ${STAGEDIR}${PREFIX}/lib/bind
 
 post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}/arm
-	${INSTALL_DATA} ${WRKSRC}/doc/arm/*.html ${STAGEDIR}${DOCSDIR}/arm
-	${INSTALL_DATA} ${WRKSRC}/doc/arm/Bv9ARM.pdf ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/CHANGES* ${WRKSRC}/HISTORY.md \
 		${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 .else

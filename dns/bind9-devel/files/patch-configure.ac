@@ -1,6 +1,6 @@
 automake has warnings, it is ok here.
 
---- configure.ac.orig	2020-04-30 08:56:31 UTC
+--- configure.ac.orig	2020-05-10 23:44:14 UTC
 +++ configure.ac
 @@ -56,7 +56,7 @@ AC_DEFINE_UNQUOTED([PACKAGE_CONFIGARGS], ["$bind_CONFI
  AC_DEFINE([PACKAGE_BUILDER], ["make"], [make or Visual Studio])
@@ -9,5 +9,5 @@ automake has warnings, it is ok here.
 -AM_INIT_AUTOMAKE([foreign subdir-objects dist-xz -Wall -Werror])
 +AM_INIT_AUTOMAKE([foreign subdir-objects dist-xz -Wall])
  AM_SILENT_RULES([yes])
- AM_EXTRA_RECURSIVE_TARGETS([test unit])
+ AM_EXTRA_RECURSIVE_TARGETS([test unit doc])
  

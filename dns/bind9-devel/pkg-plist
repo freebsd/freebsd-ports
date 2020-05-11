@@ -260,21 +260,41 @@ lib/libisccfg.a
 lib/libns.a
 @comment lib/named/filter-aaaa.so
 @comment %%DNSTAP%%man/man1/dnstap-read.1.gz
-@comment man/man5/named.conf.5.gz
-@comment man/man5/rndc.conf.5.gz
-@comment man/man8/ddns-confgen.8.gz
-@comment man/man8/filter-aaaa.8.gz
-@comment man/man8/named-checkconf.8.gz
-@comment man/man8/named-checkzone.8.gz
+@comment man/man1/arpaname.1.gz
+@comment man/man1/delv.1.gz
+@comment man/man1/dig.1.gz
+@comment man/man1/dnstap-read.1.gz
+@comment man/man1/host.1.gz
+@comment man/man1/mdig.1.gz
+@comment man/man1/named-rrchecker.1.gz
+@comment man/man1/nslookup.1.gz
+@comment man/man1/nsupdate.1.gz
+%%MANPAGES%%man/man5/named.conf.5.gz
+%%MANPAGES%%man/man5/rndc.conf.5.gz
+%%MANPAGES%%man/man8/ddns-confgen.8.gz
+@comment man/man8/dnssec-cds.8.gz
+@comment man/man8/dnssec-dsfromkey.8.gz
+@comment man/man8/dnssec-importkey.8.gz
+@comment man/man8/dnssec-keyfromlabel.8.gz
+@comment man/man8/dnssec-keygen.8.gz
+@comment man/man8/dnssec-revoke.8.gz
+@comment man/man8/dnssec-settime.8.gz
+@comment man/man8/dnssec-signzone.8.gz
+@comment man/man8/dnssec-verify.8.gz
+%%MANPAGES%%man/man8/filter-aaaa.8.gz
+%%MANPAGES%%man/man8/named-checkconf.8.gz
+%%MANPAGES%%man/man8/named-checkzone.8.gz
 @comment man/man8/named-compilezone.8.gz
-@comment %%LMDB%%man/man8/named-nzd2nzf.8.gz
-@comment man/man8/named.8.gz
-@comment %%NATIVE_PKCS11%%man/man8/pkcs11-destroy.8.gz
-@comment %%NATIVE_PKCS11%%man/man8/pkcs11-keygen.8.gz
-@comment %%NATIVE_PKCS11%%man/man8/pkcs11-list.8.gz
-@comment %%NATIVE_PKCS11%%man/man8/pkcs11-tokens.8.gz
-@comment man/man8/rndc-confgen.8.gz
-@comment man/man8/rndc.8.gz
+@comment man/man8/named-journalprint.8.gz
+%%MANPAGES%%%%LMDB%%man/man8/named-nzd2nzf.8.gz
+%%MANPAGES%%man/man8/named.8.gz
+@comment man/man8/nsec3hash.8.gz
+%%MANPAGES%%%%NATIVE_PKCS11%%man/man8/pkcs11-destroy.8.gz
+%%MANPAGES%%%%NATIVE_PKCS11%%man/man8/pkcs11-keygen.8.gz
+%%MANPAGES%%%%NATIVE_PKCS11%%man/man8/pkcs11-list.8.gz
+%%MANPAGES%%%%NATIVE_PKCS11%%man/man8/pkcs11-tokens.8.gz
+%%MANPAGES%%man/man8/rndc-confgen.8.gz
+%%MANPAGES%%man/man8/rndc.8.gz
 @comment man/man8/tsig-keygen.8.gz
 sbin/ddns-confgen
 sbin/named
