@@ -2,4 +2,4 @@ A utility to split a diff patch into separate sections. It also features
 splitting a patch file by hunks instead of the default by file. This is very
 useful for merging patches that fail to apply by only some hunks.
 
-WWW: https://github.com/benjsc/splitpatch
+WWW: https://github.com/jaalto/splitpatch

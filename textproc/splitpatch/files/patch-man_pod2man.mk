@@ -1,33 +1,11 @@
---- man/pod2man.mk.orig	2016-08-15 17:36:10 UTC
+--- man/pod2man.mk.orig	2020-05-09 06:49:29 UTC
 +++ man/pod2man.mk
-@@ -36,7 +36,6 @@ RELEASE         ?= $(PACKAGE)
- 
- # Optional variables to set
- MANSECT		?= 1
--PODCENTER	?= $$(date "+%Y-%m-%d")
+@@ -41,7 +41,7 @@ DATE_FMT = %Y-%m-%d
+ ifdef SOURCE_DATE_EPOCH
+ PODCENTER	?= $(shell date -u -d "@$(SOURCE_DATE_EPOCH)" "+$(DATE_FMT)" 2>/dev/null || date -u -r "$(SOURCE_DATE_EPOCH)" "+$(DATE_FMT)" 2>/dev/null || date -u "+$(DATE_FMT)")
+ else
+-PODCENTER	?= $(date "$(DATE_FMT)")
++PODCENTER	?= $(shell date "+$(DATE_FMT)")
+ endif
  
  # Directories
- MANSRC		=
-@@ -46,7 +45,6 @@ MANPOD		= $(MANSRC)$(PACKAGE).$(MANSECT)
- MANPAGE		= $(MANDEST)$(PACKAGE).$(MANSECT)
- 
- POD2MAN		= pod2man
--POD2MAN_FLAGS	= --utf8
- 
- makeman: $(MANPAGE)
- 
-@@ -54,12 +52,9 @@ $(MANPAGE): $(MANPOD)
- 	# make target - create manual page from a *.pod page
- 	podchecker $(MANPOD)
- 	LC_ALL=C $(POD2MAN) $(POD2MAN_FLAGS) \
--		--center="$(PODCENTER)" \
-+		--center=" " \
- 		--name="$(PACKAGE)" \
- 		--section="$(MANSECT)" \
-                 --release="$(RELEASE)" \
- 		$(MANPOD) \
--	        > $(MANPAGE) && \
--	rm -f pod*.tmp
--
--# End of of Makefile part
-+	        > $(MANPAGE)

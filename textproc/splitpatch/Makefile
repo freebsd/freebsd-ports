@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	splitpatch
-PORTVERSION=	1.0.2016122801
+PORTVERSION=	1.1
+DISTVERSIONPREFIX=	release/
 CATEGORIES=	textproc
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -11,17 +12,17 @@ COMMENT=	Utility to split a diff patch into separate sections
 LICENSE=	GPLv2+
 
 USES=		gmake perl5
-USE_PERL5=	build
-USE_RUBY=	yes
-NO_ARCH=	yes
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	jaalto
-GH_TAGNAME=	13c5941
+USE_PERL5=	build
+USE_RUBY=	yes
 
-PLIST_FILES=	bin/splitpatch man/man1/splitpatch.1.gz
+MAKE_JOBS_UNSAFE=	yes
 
-MAKE_JOBS_UNSAFE=yes
+NO_ARCH=	yes
+
+PLIST_FILES=	bin/splitpatch \
+		man/man1/splitpatch.1.gz
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/bin ${STAGEDIR}${MANPREFIX}/man/man1
