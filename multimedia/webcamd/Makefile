@@ -22,17 +22,15 @@ SUB_FILES=	webcamd.conf
 OPTIONS_DEFINE=	DEBUG HAL VT_CLIENT VT_SERVER DVB INPUT KEYBOARD MOUSE RADIO WEBCAM
 OPTIONS_DEFAULT=DVB HAL INPUT RADIO WEBCAM
 
-COMPAT32_DESC=	Enable 32-bit compatibility support
-COMPAT32_MAKE_ARGS=	HAVE_COMPAT32="YES"
-
 #
 # 32-bit compatibility support is mostly useful for
 # platforms using 32-bit applications:
 #
 OPTIONS_DEFINE_amd64=		COMPAT32
-OPTIONS_DEFINE_aarch64=		COMPAT32
 OPTIONS_DEFAULT_amd64=		COMPAT32
-OPTIONS_DEFAULT_aarch64=	COMPAT32
+
+COMPAT32_DESC=	Enable 32-bit compatibility support
+COMPAT32_MAKE_ARGS=	HAVE_COMPAT32="YES"
 
 HAL_DESC=	Build with HAL and DBUS support
 HAL_LIB_DEPENDS+=	libhal.so:sysutils/hal
