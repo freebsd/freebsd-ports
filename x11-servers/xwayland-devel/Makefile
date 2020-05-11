@@ -9,9 +9,9 @@ CATEGORIES=	x11-servers
 PKGNAMESUFFIX=	-devel
 
 PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/commit/
-PATCHFILES+=	71749de24509.patch:-p1 # https://gitlab.freedesktop.org/xorg/xserver/merge_requests/393
-PATCHFILES+=	1e897704c822.patch:-p1 # https://gitlab.freedesktop.org/xorg/xserver/merge_requests/393
-PATCHFILES+=	83cda3ce3195.patch:-p1 # https://gitlab.freedesktop.org/xorg/xserver/merge_requests/393
+PATCHFILES+=	71749de24509.diff:-p1 # https://gitlab.freedesktop.org/xorg/xserver/merge_requests/393
+PATCHFILES+=	1e897704c822.diff:-p1 # https://gitlab.freedesktop.org/xorg/xserver/merge_requests/393
+PATCHFILES+=	83cda3ce3195.diff:-p1 # https://gitlab.freedesktop.org/xorg/xserver/merge_requests/393
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	X11 server as Wayland client (development snapshot)

@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	x11-wm
 
 PATCH_SITES=	https://gitlab.freedesktop.org/xorg/app/${PORTNAME}/commit/
-PATCHFILES+=	e2a533d16e04.patch:-p1
+PATCHFILES+=	e2a533d16e04.diff:-p1
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Tab Window Manager for the X Window System

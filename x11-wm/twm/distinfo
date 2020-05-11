@@ -1,5 +1,5 @@
 TIMESTAMP = 1588446762
 SHA256 (xorg/app/twm-1.0.10.tar.bz2) = 6449eadca16ce0f0d900605b0cc020b95f40619261b7beccfb46bcc1836445d7
 SIZE (xorg/app/twm-1.0.10.tar.bz2) = 287094
-SHA256 (xorg/app/e2a533d16e04.patch) = cfc521776662a4ef1363b39be900b7c7e3c37be88aa8808d53633203910e81fd
-SIZE (xorg/app/e2a533d16e04.patch) = 652
+SHA256 (xorg/app/e2a533d16e04.diff) = 88b3e5165c42f8f134cff4d48b7c7b657a87e9bfbe6b722223641147a19e5b66
+SIZE (xorg/app/e2a533d16e04.diff) = 439

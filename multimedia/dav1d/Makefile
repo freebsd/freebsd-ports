@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	multimedia
 
 PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/commit/
-PATCHFILES+=	e04227c5f672.patch:-p1 # https://code.videolan.org/videolan/dav1d/-/merge_requests/934
+PATCHFILES+=	e04227c5f672.diff:-p1 # https://code.videolan.org/videolan/dav1d/-/merge_requests/934
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Small and fast AV1 decoder
