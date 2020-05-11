@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4.1
 CATEGORIES=	devel
 
-MAINTAINER=	yuri@FreeBSD.org
+MAINTAINER=	nickblack@linux.com
 COMMENT=	TUI library for modern terminal emulators
 
 LICENSE=	APACHE20
