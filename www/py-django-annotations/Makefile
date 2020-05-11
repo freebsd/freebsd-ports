@@ -11,6 +11,9 @@ COMMENT=	Django implementation of annotatorjs Storage
 
 LICENSE=	APACHE20
 
+DEPRECATED=	No longer maintained, not compatible with Django 2.0+
+EXPIRATION_DATE=	2020-05-25
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django-cors-headers>=1.1.0:www/py-django-cors-headers@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}djangorestframework>=3.3.2:www/py-djangorestframework@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-rq>0:devel/py-django-rq@${PY_FLAVOR} \
