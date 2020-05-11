@@ -112,6 +112,7 @@ man/man1/epic5.1.gz
 %%DATADIR%%/script/screen.e
 %%DATADIR%%/script/set_color
 %%DATADIR%%/script/setmail
+%%DATADIR%%/script/shortener.py
 %%DATADIR%%/script/shorturl.irc
 %%DATADIR%%/script/slowcat
 %%DATADIR%%/script/snip
