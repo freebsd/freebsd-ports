@@ -25,7 +25,9 @@ OPTIONS_DEFAULT=DVB HAL INPUT RADIO WEBCAM
 COMPAT32_DESC=	Enable 32-bit compatibility support
 COMPAT32_MAKE_ARGS=	HAVE_COMPAT32="YES"
 
-.if exists(/usr/lib32/libcuse.so)
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == amd64 || ${ARCH} == aarch64
 OPTIONS_DEFAULT+=	COMPAT32
 .endif
 
