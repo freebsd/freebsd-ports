@@ -3,6 +3,7 @@
 PORTNAME=	shotcut
 DISTVERSIONPREFIX=	v
 DISTVERSION=	${FULLVERSION}
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	ports@FreeBSD.org
@@ -34,12 +35,6 @@ USE_QT=		buildtools_build concurrent_build core declarative \
 USE_SDL=	sdl2
 USE_XORG=	x11
 QMAKE_ARGS=	${PORTNAME:tu}_VERSION="${FULLVERSION}"
-DESKTOP_ENTRIES="Shotcut" \
-		"Video Editor" \
-		"${PORTNAME}" \
-		"${PORTNAME}" \
-		"AudioVideo;Video;AudioVideoEditing;" \
-		""
 
 OPTIONS_DEFINE=	FREI0R LADSPA NLS WEBVFX
 OPTIONS_DEFAULT=FREI0R LADSPA WEBVFX
@@ -58,10 +53,5 @@ post-patch:
 
 pre-build:
 	@${FIND} ${WRKSRC} -name '.depend' -delete
-
-post-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/64x64/apps
-	${INSTALL_DATA} ${WRKSRC}/icons/${PORTNAME}-logo-64.png \
-		${STAGEDIR}${PREFIX}/share/icons/hicolor/64x64/apps/${PORTNAME}.png
 
 .include <bsd.port.mk>
