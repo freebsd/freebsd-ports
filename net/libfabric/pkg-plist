@@ -14,7 +14,7 @@ include/rdma/fi_tagged.h
 include/rdma/fi_trigger.h
 lib/libfabric.so
 lib/libfabric.so.1
-lib/libfabric.so.1.12.1
+lib/libfabric.so.1.13.1
 libdata/pkgconfig/libfabric.pc
 man/man1/fi_info.1.gz
 man/man1/fi_pingpong.1.gz
