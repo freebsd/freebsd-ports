@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	data
-PORTVERSION=	1.9.5.4
+PORTVERSION=	1.9.5.7
 PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/raduprv/Eternal-Lands/releases/download/${PORTVERSION}/:data \
@@ -22,7 +22,7 @@ DOS2UNIX_GLOB=	*.ini *.txt
 
 DATADIR=	${PREFIX}/share/${PKGNAMEPREFIX:S/-//}
 WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX:S/-/_/}data
-EL_DATA=	${PKGNAMEPREFIX:S/-/_/}${PORTVERSION:S/.//g:S/4//g}_p4_data_files${EXTRACT_SUFX}
+EL_DATA=	${PKGNAMEPREFIX:S/-/_/}${PORTVERSION:S/.//g:S/7//g}_p7_data_files${EXTRACT_SUFX}
 
 PORTDATA=	*
 
