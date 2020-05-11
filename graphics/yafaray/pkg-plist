@@ -3,6 +3,7 @@ include/yafaray/cameras/angularCamera.h
 include/yafaray/cameras/architectCamera.h
 include/yafaray/cameras/orthographicCamera.h
 include/yafaray/cameras/perspectiveCamera.h
+include/yafaray/cameras/equirectangularCamera.h
 include/yafaray/core_api/background.h
 include/yafaray/core_api/bound.h
 include/yafaray/core_api/camera.h
@@ -188,6 +189,7 @@ lib/yafaray-plugins/libblend.so
 lib/yafaray-plugins/libcoatedglossy.so
 lib/yafaray-plugins/libdirectional.so
 lib/yafaray-plugins/libdirectlight.so
+lib/yafaray-plugins/libequirectangularCamera.so
 lib/yafaray-plugins/libexrHandler.so
 lib/yafaray-plugins/libglass.so
 lib/yafaray-plugins/libglossy.so
