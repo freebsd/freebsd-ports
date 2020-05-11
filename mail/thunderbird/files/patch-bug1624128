@@ -1,0 +1,70 @@
+commit 2a981b96abf3
+Author: Kevin Jacobs <kjacobs@mozilla.com>
+Date:   Tue Apr 14 18:32:19 2020 +0000
+
+    Bug 1624128 - Update CK_GCM_PARAMS uses for PKCS11 v3.0 definition r=keeler
+    
+    This patch initializes the ulIvBits member of CK_GCM_PARAMS, which is new in PKCS11 v3.
+    
+    For libprio, we instead define NSS_PKCS11_2_0_COMPAT, which yields the old struct definition.
+    
+    Differential Revision: https://phabricator.services.mozilla.com/D67740
+    
+    --HG--
+    extra : moz-landing-system : lando
+---
+ dom/crypto/WebCryptoTask.cpp                 | 1 +
+ netwerk/srtp/src/crypto/cipher/aes_gcm_nss.c | 1 +
+ security/manager/ssl/OSKeyStore.cpp          | 1 +
+ third_party/prio/moz.build                   | 5 +++++
+ 4 files changed, 8 insertions(+)
+
+diff --git dom/crypto/WebCryptoTask.cpp dom/crypto/WebCryptoTask.cpp
+index ad0d1432738f0..60a265972d212 100644
+--- dom/crypto/WebCryptoTask.cpp
++++ dom/crypto/WebCryptoTask.cpp
+@@ -600,6 +600,7 @@ class AesTask : public ReturnArrayBufferViewTask, public DeferredData {
+       case CKM_AES_GCM:
+         gcmParams.pIv = mIv.Elements();
+         gcmParams.ulIvLen = mIv.Length();
++        gcmParams.ulIvBits = gcmParams.ulIvLen * 8;
+         gcmParams.pAAD = mAad.Elements();
+         gcmParams.ulAADLen = mAad.Length();
+         gcmParams.ulTagBits = mTagLength;
+diff --git netwerk/srtp/src/crypto/cipher/aes_gcm_nss.c netwerk/srtp/src/crypto/cipher/aes_gcm_nss.c
+index e1fdbe36fbf85..2be2ce932ddf1 100644
+--- netwerk/srtp/src/crypto/cipher/aes_gcm_nss.c
++++ netwerk/srtp/src/crypto/cipher/aes_gcm_nss.c
+@@ -271,6 +271,7 @@ static srtp_err_status_t srtp_aes_gcm_nss_do_crypto(void *cv,
+ 
+     c->params.pIv = c->iv;
+     c->params.ulIvLen = GCM_IV_LEN;
++    c->params.ulIvBits = GCM_IV_LEN * 8;
+     c->params.pAAD = c->aad;
+     c->params.ulAADLen = c->aad_size;
+ 
+diff --git security/manager/ssl/OSKeyStore.cpp security/manager/ssl/OSKeyStore.cpp
+index 00bc918c5fdd7..c83a559d9c1ea 100644
+--- security/manager/ssl/OSKeyStore.cpp
++++ security/manager/ssl/OSKeyStore.cpp
+@@ -663,6 +663,7 @@ nsresult AbstractOSKeyStore::DoCipher(const UniquePK11SymKey& aSymKey,
+   CK_GCM_PARAMS gcm_params;
+   gcm_params.pIv = const_cast<unsigned char*>(ivp);
+   gcm_params.ulIvLen = mIVLength;
++  gcm_params.ulIvBits = gcm_params.ulIvLen * 8;
+   gcm_params.ulTagBits = 128;
+   gcm_params.pAAD = nullptr;
+   gcm_params.ulAADLen = 0;
+diff --git third_party/prio/moz.build third_party/prio/moz.build
+index 3e10fe71ce8ed..0a6e3c74a2696 100644
+--- third_party/prio/moz.build
++++ third_party/prio/moz.build
+@@ -42,3 +42,8 @@ SOURCES += [
+ ]
+ 
+ FINAL_LIBRARY = 'xul'
++
++# Use PKCS11 v2 struct definitions for now, otherwise NSS requires
++# CK_GCM_PARAMS.ulIvBits to be set. This workaround is only required
++# until NSS 3.52 RTM and upstream correctly initializes the field.
++DEFINES['NSS_PKCS11_2_0_COMPAT'] = True
