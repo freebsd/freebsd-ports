@@ -1,6 +1,6 @@
---- package.json.orig	2019-12-29 05:23:50 UTC
+--- package.json.orig	2020-04-22 18:42:32 UTC
 +++ package.json
-@@ -74,7 +74,7 @@
+@@ -76,7 +76,7 @@
      "incompatible-packages": "file:packages/incompatible-packages",
      "jasmine-json": "~0.0",
      "jasmine-reporters": "1.1.0",
