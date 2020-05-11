@@ -11,7 +11,6 @@ lib/cmake/Savitar/Savitar-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Savitar/Savitar-targets.cmake
 lib/cmake/Savitar/SavitarConfig.cmake
 lib/cmake/Savitar/SavitarConfigVersion.cmake
-lib/cmake/pugixml/pugixml-config-%%CMAKE_BUILD_TYPE%%.cmake
 lib/libSavitar.so
 lib/libSavitar.so.0
 lib/libSavitar.so.0.1.1
