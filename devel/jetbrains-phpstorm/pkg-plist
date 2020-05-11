@@ -17,7 +17,6 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/help/ReferenceCard.pdf
 %%DATADIR%%/help/ReferenceCardForMac.pdf
 %%DATADIR%%/lib/FastInfoset-1.2.15.jar
-%%DATADIR%%/lib/MultithreadedTC-1.01.jar
 %%DATADIR%%/lib/annotations-19.0.0.jar
 %%DATADIR%%/lib/annotations-java5.jar
 %%DATADIR%%/lib/asm-all-7.0.1.jar
@@ -68,10 +67,6 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/lib/extensions.jar
 %%DATADIR%%/lib/external-system-rt.jar
 %%DATADIR%%/lib/failureaccess-1.0.1.jar
-%%DATADIR%%/lib/fest-assert-1.5.0-SNAPSHOT.jar
-%%DATADIR%%/lib/fest-reflect-2.0-SNAPSHOT.jar
-%%DATADIR%%/lib/fest-swing-1.4.6.jar
-%%DATADIR%%/lib/fest-util-1.3.0-SNAPSHOT.jar
 %%DATADIR%%/lib/fluent-hc-4.5.12.jar
 %%DATADIR%%/lib/forms-1.1-preview.jar
 %%DATADIR%%/lib/forms_rt.jar
@@ -275,8 +270,9 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/plugins/DatabaseTools/lib/database-minicats.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/database-openapi.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/jdbc-console.jar
+%%DATADIR%%/plugins/DatabaseTools/lib/mariadb-1.8.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/resources_en.jar
-%%DATADIR%%/plugins/DatabaseTools/lib/tips-database-plugin-201.22.jar
+%%DATADIR%%/plugins/DatabaseTools/lib/tips-database-plugin-201.30.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/unidecode-0.0.7.jar
 %%DATADIR%%/plugins/Docker/lib/Docker-agent-api-rt.jar
 %%DATADIR%%/plugins/Docker/lib/Docker-compose.jar
