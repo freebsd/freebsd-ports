@@ -3,7 +3,7 @@
 PORTNAME=		PrusaSlicer
 DISTVERSIONPREFIX=	version_
 DISTVERSION=		2.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=		cad
 MASTER_SITES=https://github.com/CGAL/cgal/archive/releases/:cgal
 DISTFILES=CGAL-5.0.2.tar.gz:cgal

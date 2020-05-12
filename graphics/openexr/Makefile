@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openexr
-PORTVERSION=	2.5.0
+PORTVERSION=	2.5.1
 CATEGORIES=	graphics devel
 MASTER_SITES=	LOCAL/mandree/:test
 DISTFILES=	${PORTNAME}-2.2.0-comp_dwa-test-images.tar.xz:test
@@ -13,7 +13,7 @@ COMMENT=	High dynamic-range (HDR) image file format
 LICENSE=	BSD3CLAUSE
 
 # exact version required to avoid hard-to-debug issues
-LIB_DEPENDS=	libImath-2_5.so.24:graphics/ilmbase
+LIB_DEPENDS=	libImath-2_5.so.25:graphics/ilmbase
 
 USES=		cmake compiler:c++14-lang libtool pathfix pkgconfig
 
@@ -46,7 +46,7 @@ USE_GCC=	yes
 .endif
 
 MAJORVER=	2_5
-VER=		24
+VER=		25
 
 PLIST_SUB+=	MAJORVER=${MAJORVER} \
 		VER=${VER}
