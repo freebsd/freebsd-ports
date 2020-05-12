@@ -119,7 +119,6 @@
 : ${ac_cv_header_argz_h=no}
 : ${ac_cv_header_byteswap_h=no}
 : ${ac_cv_header_dl_h=no}
-: ${ac_cv_header_malloc_h=no}
 : ${ac_cv_header_random_h=no}
 : ${ac_cv_header_vfork_h=no}
 
