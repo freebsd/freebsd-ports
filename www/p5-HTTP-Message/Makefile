@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	HTTP-Message
-PORTVERSION=	6.22
+PORTVERSION=	6.24
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,8 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Encode-Locale>=1:converters/p5-Encode-Locale \
+RUN_DEPENDS=	p5-Clone>=0:devel/p5-Clone \
+		p5-Encode-Locale>=1:converters/p5-Encode-Locale \
 		p5-HTTP-Date>=6:www/p5-HTTP-Date \
 		p5-IO-HTML>=0:devel/p5-IO-HTML \
 		p5-LWP-MediaTypes>=6:www/p5-LWP-MediaTypes \
