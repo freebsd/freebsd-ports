@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	when
-PORTVERSION=	1.1.36
+PORTVERSION=	1.1.40
 CATEGORIES=	deskutils
 
 MAINTAINER=	culot@FreeBSD.org
