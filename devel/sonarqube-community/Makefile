@@ -2,7 +2,7 @@
 
 PORTNAME=	sonarqube
 DISTVERSION=	8.3.0.34182
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel security www java
 MASTER_SITES=	https://binaries.sonarsource.com/Distribution/sonarqube/:m_core \
 		https://binaries.sonarsource.com/Distribution/sonar-csharp-plugin/:m_csharp \
@@ -54,7 +54,7 @@ TEMP_DIR=	${DBBASE_DIR}/temp
 SONARCSHARP_VER=	8.6.1.17183
 SONARJAVA_VER=		6.3.0.21585
 SONARJAVASCRIPT_VER=	6.2.1.12157
-SONARPYTHON_VER=	2.8.0.6204
+SONARPYTHON_VER=	2.9.0.6410
 SONARSCMGIT_VER=	1.11.1.2008
 SONARVBNET_VER=		8.6.1.17183
 
