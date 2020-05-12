@@ -1,0 +1,5 @@
+LSD (LSDelux) is an alternative to ls that supports icons. This project is
+heavily inspired by the super colorls project but with some little differences.
+For example it is written in rust and not in ruby which makes it much faster.
+
+WWW: https://github.com/Peltoche/lsd
