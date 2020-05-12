@@ -7,6 +7,7 @@ bin/testauto
 %%SITE_PERL%%/Test/Auto/Subtests.pm
 %%SITE_PERL%%/Test/Auto/Try.pm
 %%SITE_PERL%%/Test/Auto/Types.pm
+%%PERL5_MAN1%%/testauto.1.gz
 %%PERL5_MAN3%%/Test::Auto.3.gz
 %%PERL5_MAN3%%/Test::Auto::Document.3.gz
 %%PERL5_MAN3%%/Test::Auto::Parser.3.gz
