@@ -3,7 +3,7 @@
 
 PORTNAME=	scalapack
 PORTVERSION=	2.0.2
-PORTREVISION=	21
+PORTREVISION=	22
 CATEGORIES=	math
 MASTER_SITES=	NL
 DISTFILES=	scalapack-${PORTVERSION}.tgz manpages.tgz
@@ -53,6 +53,7 @@ BLAS_LIB_DEPENDS=	libblas.so:math/blas \
 OPENMPI_BUILD_DEPENDS=	openmpi>0:net/openmpi
 OPENMPI_RUN_DEPENDS=	openmpi>0:net/openmpi
 OPENMPI_CMAKE_ON=	-DMPI_BASE_DIR=${LOCALBASE}/mpi/openmpi
+OPENMPI_LDFLAGS=	-L${LOCALBASE}/mpi/openmpi/lib -Wl,-rpath,${LOCALBASE}/mpi/openmpi/lib -lmpi
 
 MPICH_BUILD_DEPENDS=	${LOCALBASE}/bin/mpicc:net/mpich
 MPICH_RUN_DEPENDS=	${LOCALBASE}/bin/mpicc:net/mpich
