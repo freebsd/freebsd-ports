@@ -15,6 +15,9 @@ COMMENT=	Perl XS frontend to the Xapian C++ search library
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+DEPRECATED=	Depend on unsupported xapian-core. Use databases/p5-Search-Xapian instead
+EXPIRATION_DATE=2020-06-30
+
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	xapian-core10>=1.0.22:databases/xapian-core10
 
@@ -22,6 +25,7 @@ CONFLICTS_INSTALL=	p5-Search-Xapian12
 
 USES=		perl5
 USE_PERL5=	configure
+
 CC=		${CXX}
 
 post-patch:
