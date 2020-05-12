@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wmmoonclock
-PORTVERSION=	1.29
+PORTVERSION=	1.30
 CATEGORIES=	astro windowmaker
 MASTER_SITES=	https://www.dockapps.net/download/
 
@@ -11,9 +11,10 @@ COMMENT=	Displays the phase of the moon, plus orbital data
 
 LICENSE=	GPLv2
 
-GNU_CONFIGURE=	yes
 USES=		autoreconf:build pkgconfig xorg
 USE_XORG+=	x11 xext xpm
+
+GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/wmmoonclock man/man1/wmmoonclock.1.gz
 
