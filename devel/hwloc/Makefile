@@ -12,7 +12,7 @@ COMMENT=	Portable Hardware Locality software package
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-ONLY_FOR_ARCHS=		aarch64 amd64 armv6 armv7 i386 powerpc64
+ONLY_FOR_ARCHS=		aarch64 amd64 armv6 armv7 i386 powerpc64 powerpc
 ONLY_FOR_ARCHS_REASON=	has not been ported to this architecture
 
 LIB_DEPENDS=	libpciaccess.so:devel/libpciaccess
