@@ -50,6 +50,8 @@ CONFLICTS_INSTALL=	py*-sphinx
 
 NO_ARCH=	yes
 
+PORTSCOUT=	limit:^1\.8\.
+
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -v -rs -o addopts=
 
