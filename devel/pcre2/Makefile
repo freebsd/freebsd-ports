@@ -2,12 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	pcre2
-PORTVERSION=	10.34
+PORTVERSION=	10.35
 CATEGORIES=	devel
-MASTER_SITES=	SF/pcre/${PORTNAME}/${PORTVERSION} \
-		ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/ \
-		ftp://ftp.fu-berlin.de/unix/misc/pcre/ \
-		ftp://ftp.tin.org/pub/libs/pcre/
+MASTER_SITES=	SF/pcre/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Perl Compatible Regular Expressions library, version 2
@@ -22,12 +19,9 @@ USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--enable-pcre2-16 --enable-pcre2-32
 
-OPTIONS_DEFINE=	DOCS STACK_RECURSION
-OPTIONS_DEFAULT=	STACK_RECURSION
+OPTIONS_DEFINE=	DOCS
 OPTIONS_RADIO=	CLI
 OPTIONS_RADIO_CLI=	LIBEDIT READLINE
-
-STACK_RECURSION_DESC=	Use the stack for recursion during matching
 
 LIBEDIT_CONFIGURE_ENABLE=	pcre2test-libedit
 LIBEDIT_USES=			libedit
@@ -47,12 +41,6 @@ CONFIGURE_ARGS+=	--disable-jit
 PORTDOCS=	*
 .endif
 
-# Using the heap rather than the stack for recursion is slower but less
-# prone to segfaults from stack exhaustion when matching certain patterns
-.if !${PORT_OPTIONS:MSTACK_RECURSION}
-CONFIGURE_ARGS+=	--disable-stack-for-recursion
-.endif
-
 # Optional knobs that accept positive integer parameters (see pcrebuild(3)):
 
 # Allow the use of very large patterns (> 64K) with the 8- and 16-bit
@@ -66,12 +54,6 @@ CONFIGURE_ARGS+=	--with-link-size=${WITH_LINK_SIZE}
 # can call match() during a single operation (default: 10 million):
 .if defined(WITH_MATCH_LIMIT)
 CONFIGURE_ARGS+=	--with-match-limit=${WITH_MATCH_LIMIT}
-.endif
-
-# Control PCRE resource use by limiting the default number of times pcre_exec()
-# can call match() recursively during a single operation (default: 10 million):
-.if defined(WITH_MATCH_LIMIT_RECURSION)
-CONFIGURE_ARGS+=	--with-match-limit-recursion=${WITH_MATCH_LIMIT_RECURSION}
 .endif
 
 # Control PCRE resource use by limiting the nesting depth of parentheses in
