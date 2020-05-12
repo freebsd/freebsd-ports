@@ -1,0 +1,11 @@
+--- configure.ac.orig	2020-03-19 09:52:56.280271200 +0100
++++ configure.ac	2020-03-27 19:05:05.205060000 +0100
+@@ -6475,7 +6475,7 @@ AC_ARG_WITH([libslurm],
+     else if test -d "$with_libslurm/lib"; then
+       AC_MSG_NOTICE([Not checking for libslurm: Manually configured])
+       with_libslurm_cflags="-I$withval/include"
+-      with_libslurm_libs="-L$withval/lib -llibslurm"
++      with_libslurm_libs="-L$withval/lib -lslurm"
+       with_libslurm="yes"
+     fi; fi; fi
+   ],

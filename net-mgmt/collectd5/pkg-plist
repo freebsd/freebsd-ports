@@ -36,11 +36,13 @@ lib/collectd/email.so
 lib/collectd/exec.so
 lib/collectd/filecount.so
 lib/collectd/interface.so
+lib/collectd/ipstats.so
 %%IPMI%%lib/collectd/ipmi.so
 %%JAVA%%lib/collectd/java.so
 lib/collectd/load.so
 %%LOGSTASH%%lib/collectd/log_logstash.so
 lib/collectd/logfile.so
+lib/collectd/logparser.so
 lib/collectd/match_empty_counter.so
 lib/collectd/match_hashed.so
 lib/collectd/match_regex.so
@@ -75,6 +77,7 @@ lib/collectd/processes.so
 %%RRDTOOL%%lib/collectd/rrdcached.so
 %%RRDTOOL%%lib/collectd/rrdtool.so
 %%SIGROK%%lib/collectd/sigrok.so
+%%SLURM%%lib/collectd/slurm.so
 %%SNMP%%lib/collectd/snmp.so
 %%STATSD%%lib/collectd/statsd.so
 lib/collectd/swap.so
@@ -101,6 +104,7 @@ lib/collectd/uuid.so
 lib/collectd/write_graphite.so
 %%CURL%%lib/collectd/write_http.so
 lib/collectd/write_log.so
+%%INFLUXDB%%lib/collectd/write_influxdb_udp.so
 %%KAFKA%%lib/collectd/write_kafka.so
 %%MONGODB%%lib/collectd/write_mongodb.so
 %%PROMETHEUS%%lib/collectd/write_prometheus.so

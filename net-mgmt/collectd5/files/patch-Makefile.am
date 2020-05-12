@@ -1,6 +1,6 @@
---- Makefile.am.orig	2019-06-13 09:13:42 UTC
+--- Makefile.am.orig	2020-03-08 15:57:09 UTC
 +++ Makefile.am
-@@ -187,7 +187,7 @@ AM_CPPFLAGS = \
+@@ -188,7 +188,7 @@ AM_CPPFLAGS = \
  	-DPREFIX='"${prefix}"' \
  	-DCONFIGFILE='"${sysconfdir}/${PACKAGE_NAME}.conf"' \
  	-DLOCALSTATEDIR='"${localstatedir}"' \
@@ -9,7 +9,7 @@
  	-DPLUGINDIR='"${cpkglibdir}"' \
  	-DPKGDATADIR='"${cpkgdatadir}"'
  if BUILD_WIN32
-@@ -2184,15 +2184,10 @@ endif
+@@ -2377,15 +2377,10 @@ endif
  
  install-exec-hook:
  	$(mkinstalldirs) $(DESTDIR)$(localstatedir)/run

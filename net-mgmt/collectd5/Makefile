@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	collectd
-PORTVERSION=	5.10.0
-PORTREVISION=	1
+PORTVERSION=	5.11.0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://storage.googleapis.com/collectd-tarballs/
 PKGNAMESUFFIX=	5
@@ -20,12 +19,12 @@ GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=		CGI GCRYPT JAVA LOGGING LOGSTASH VIRT
 OPTIONS_GROUP=		INPUT OUTPUT
-OPTIONS_GROUP_OUTPUT=	KAFKA MONGODB NOTIFYDESKTOP NOTIFYEMAIL PROMETHEUS \
+OPTIONS_GROUP_OUTPUT=	INFLUXDB KAFKA MONGODB NOTIFYDESKTOP NOTIFYEMAIL PROMETHEUS \
 			RIEMANN RRDTOOL TSDB
-OPTIONS_GROUP_INPUT=	CHRONY CURL CURL_JSON CURL_XML DBI IPMI JSON MEMCACHEC \
-			MODBUS MQTT MYSQL NUTUPS OLSRD ONEWIRE OPENLDAP PERL \
-			PGSQL PINBA PING PYTHON RABBITMQ REDIS SIGROK \
-			SNMP STATSD TOKYOTYRANT VARNISH XML ZOOKEEPER
+OPTIONS_GROUP_INPUT=	CHRONY CURL CURL_JSON CURL_XML DBI IPMI JSON \
+			MEMCACHEC MODBUS MQTT MYSQL NUTUPS OLSRD ONEWIRE OPENLDAP \
+			PERL PGSQL PINBA PING PYTHON RABBITMQ REDIS SIGROK \
+			SLURM SNMP STATSD TOKYOTYRANT VARNISH XML ZOOKEEPER
 
 OPTIONS_DEFAULT=	GCRYPT LOGGING PING
 
@@ -36,6 +35,7 @@ CURL_JSON_DESC=		Enable curl_json plugin (implies curl and json)
 CURL_XML_DESC=		Enable ascent, bind, curl_xml plugins (implies curl and xml)
 DBI_DESC=		Enable dbi plugin
 GCRYPT_DESC=		Build with libgcrypt
+INFLUXDB_DESC=		Enable write_influxdb_udp plugin
 IPMI_DESC=		Enable OpenIPMI plugin
 JSON_DESC=		Enable JSON plugins
 KAFKA_DESC=		Enable write_kafka plugin
@@ -63,6 +63,7 @@ REDIS_DESC=		Enable redis-based plugins
 RIEMANN_DESC=		Enable write_riemann plugin (via riemann-c-client)
 RRDTOOL_DESC=		Enable rrdtool plugin (also rrdcached plugin)
 SIGROK_DESC=		Enable sigrok plugin
+SLURM_DESC=		Enable slurm plugin
 SNMP_DESC=		Enable SNMP plugin
 STATSD_DESC=		Enable statsd plugin
 TOKYOTYRANT_DESC=	Enable tokyotyrant plugin
@@ -133,6 +134,8 @@ GCRYPT_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 			libgpg-error.so:security/libgpg-error
 GCRYPT_CONFIGURE_WITH=	libgcrypt=${LOCALBASE}
 GCRYPT_LIBS=		-lgcrypt
+
+INFLUXDB_CONFIGURE_ENABLE=	write_influxdb_udp
 
 IPMI_LIB_DEPENDS=	libOpenIPMI.so:sysutils/openipmi
 IPMI_CONFIGURE_ENABLE=	ipmi
@@ -243,6 +246,10 @@ SIGROK_CONFIGURE_WITH=		libsigrok=${LOCALBASE}
 SIGROK_USES=			gettext-runtime
 SIGROK_BROKEN=			fails to configure with sigrok option
 
+SLURM_LIB_DEPENDS=		libslurm.so:sysutils/slurm-wlm
+SLURM_CONFIGURE_ENABLE=		slurm
+SLURM_CONFIGURE_WITH=		libslurm=${LOCALBASE}
+
 SNMP_LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 SNMP_CONFIGURE_ENABLE=	snmp
 SNMP_CONFIGURE_WITH=	libnetsnmp
@@ -286,8 +293,10 @@ CONFIGURE_ARGS+=	--enable-aggregation \
 			--enable-exec \
 			--enable-filecount \
 			--enable-interface \
+			--enable-ipstats \
 			--enable-load \
 			--enable-logfile \
+			--enable-logparser \
 			--enable-match_empty_counter \
 			--enable-match_hashed \
 			--enable-match_regex \

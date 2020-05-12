@@ -1,6 +1,6 @@
---- src/network.c.orig	2019-06-13 09:13:42 UTC
+--- src/network.c.orig	2020-03-08 15:57:09 UTC
 +++ src/network.c
-@@ -2013,6 +2013,13 @@ static int sockent_client_connect(socken
+@@ -2045,6 +2045,13 @@ static int sockent_client_connect(sockent_t *se) /* {{
        continue;
      }
  

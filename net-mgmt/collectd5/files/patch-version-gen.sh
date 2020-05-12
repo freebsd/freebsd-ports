@@ -1,11 +1,11 @@
---- version-gen.sh.orig	2019-06-13 09:32:35 UTC
-+++ version-gen.sh
+--- version-gen.sh.orig	2020-03-19 09:52:56.313967100 +0100
++++ version-gen.sh	2020-03-27 19:15:53.407855000 +0100
 @@ -2,10 +2,6 @@
  
- DEFAULT_VERSION="5.9.0.git"
+ DEFAULT_VERSION="5.11.0.git"
  
 -if [ -d .git ]; then
--	VERSION="`git describe --dirty=+ --abbrev=7 2> /dev/null | grep collectd | sed -e 's/^collectd-//' -e 's/-/./g'`"
+-	VERSION="`git describe --dirty=+ --abbrev=7 2> /dev/null | sed -e '/^collectd-/!d' -e 's///' -e 'y/-/./'`"
 -fi
 -
  if test -z "$VERSION"; then
