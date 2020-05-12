@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gio2
-PORTVERSION=	3.4.2
+PORTVERSION=	3.4.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
 RUN_DEPENDS=	rubygem-gobject-introspection>=${PORTVERSION}:devel/rubygem-gobject-introspection
 
-USES=		gem
+USES=		gem gnome
+USE_GNOME=	glib20
 USE_RUBY=	yes
 
 .include <bsd.port.mk>
