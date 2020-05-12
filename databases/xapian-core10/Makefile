@@ -18,6 +18,9 @@ BROKEN_armv7=		fails to install: quartz_log.cc:: error: call to 'om_tostring' is
 BROKEN_mips=		fails to install: quartz_log.cc:: error: call to 'om_tostring' is ambiguous
 BROKEN_mips64=		fails to install: quartz_log.cc:: error: call to 'om_tostring' is ambiguous
 
+DEPRECATED=	Unsupported by upstream. Use databases/xapian-core instead
+EXPIRATION_DATE=2020-06-30
+
 CONFLICTS_INSTALL=	xapian-core xapian-core12
 
 USES=		libtool
