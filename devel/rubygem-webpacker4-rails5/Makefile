@@ -4,7 +4,7 @@ PORTNAME=	webpacker
 PORTVERSION=	4.2.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
-PKGNAMESUFFIX=	-rails5
+PKGNAMESUFFIX=	4-rails5
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Use Webpack to manage app-like JavaScript modules in Rails
