@@ -1,5 +1,5 @@
---- config.h.orig	2012-02-11 15:52:24.000000000 +0200
-+++ config.h	2012-02-11 15:52:06.000000000 +0200
+--- config.h.orig	2013-10-04 13:59:08 UTC
++++ config.h
 @@ -123,7 +123,7 @@
  
  /* #define SHADOW_NONE		/**/
@@ -29,7 +29,7 @@
  
  
  /* If NOLOGIN_FILE is defined to the full path name of a file, then the
-@@ -278,7 +278,7 @@
+@@ -279,7 +279,7 @@
   * to change the uid list.
   */
  
@@ -38,7 +38,7 @@
  
  
  /* If MIN_UNIX_UID is defined to an integer, logins with uid numbers less than
-@@ -290,7 +290,7 @@
+@@ -291,7 +291,7 @@
   * given value will be accepted).
   */
  
