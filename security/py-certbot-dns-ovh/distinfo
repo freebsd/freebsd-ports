@@ -1,3 +1,3 @@
-TIMESTAMP = 1584280694
-SHA256 (certbot-dns-ovh-1.3.0.tar.gz) = eba02419443a5365f55291c98d30e78745353a81afea8b2d6e5913dadd9be904
-SIZE (certbot-dns-ovh-1.3.0.tar.gz) = 11959
+TIMESTAMP = 1589245406
+SHA256 (certbot-dns-ovh-1.4.0.tar.gz) = 9899506f7d7b8eb5903b2be5041e2a874a88ff9916aaccce9cf3dd367d0c9c2d
+SIZE (certbot-dns-ovh-1.4.0.tar.gz) = 13032
