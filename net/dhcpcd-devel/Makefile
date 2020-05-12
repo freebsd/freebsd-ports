@@ -3,11 +3,12 @@
 
 PORTNAME=	dhcpcd
 PORTVERSION=	g20200512
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://roy.marples.name/cgit/dhcpcd.git/snapshot/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-${GITTAG}
-GITTAG=		5ccec78
+GITTAG=		d0a186d
 
 MAINTAINER=	woodsb02@FreeBSD.org
 COMMENT=	DHCP/IPv4LL/IPv6RS/DHCPv6 client
