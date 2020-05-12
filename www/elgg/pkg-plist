@@ -12457,6 +12457,7 @@
 %%WWWDIR%%/vendor/doctrine/dbal/lib/Doctrine/DBAL/Types/VarDateTimeType.php
 %%WWWDIR%%/vendor/doctrine/dbal/lib/Doctrine/DBAL/Version.php
 %%WWWDIR%%/vendor/doctrine/dbal/lib/Doctrine/DBAL/VersionAwarePlatformDriver.php
+%%WWWDIR%%/vendor/doctrine/dbal/psalm.xml
 %%WWWDIR%%/vendor/doctrine/event-manager/.doctrine-project.json
 %%WWWDIR%%/vendor/doctrine/event-manager/LICENSE
 %%WWWDIR%%/vendor/doctrine/event-manager/README.md
@@ -17358,6 +17359,7 @@
 %%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_with_style_array.md
 %%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_with_style_array.txt
 %%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_with_style_array.xml
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/stream_output_file.txt
 %%WWWDIR%%/vendor/symfony/console/Tests/Formatter/OutputFormatterStyleStackTest.php
 %%WWWDIR%%/vendor/symfony/console/Tests/Formatter/OutputFormatterStyleTest.php
 %%WWWDIR%%/vendor/symfony/console/Tests/Formatter/OutputFormatterTest.php
