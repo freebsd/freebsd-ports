@@ -41,7 +41,8 @@ CONFIGURE_ARGS+=--verbose \
 		--without-sane \
 		--without-sdl \
 		--without-tiff \
-		--without-udev
+		--without-udev \
+		--without-unwind 
 CONFIGURE_ENV=	CPPBIN="${CPP}" FLEX="${LOCALBASE}/bin/flex"
 WINELIBDIR?=	${PREFIX}/lib
 .if !defined(USE_LDCONFIG32)
