@@ -1,7 +1,0 @@
-Bitcoin node status and statistics web interface based on Django.
-
-Features:
-* Current node status overview
-* Charts of peer count, upload and download history
-
-WWW: https://github.com/bartromgens/bitcoinnodestats

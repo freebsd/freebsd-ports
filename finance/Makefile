@@ -24,7 +24,6 @@
     SUBDIR += aqbanking
     SUBDIR += beancount
     SUBDIR += beanie
-    SUBDIR += bitcoinnodestats
     SUBDIR += cointop
     SUBDIR += electrum
     SUBDIR += expense
