@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	strptime
-PORTVERSION=	0.2.3
+PORTVERSION=	0.2.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
