@@ -55,6 +55,7 @@ include/wine/msvcrt/fcntl.h
 include/wine/msvcrt/fenv.h
 include/wine/msvcrt/float.h
 include/wine/msvcrt/fpieee.h
+include/wine/msvcrt/intrin.h
 include/wine/msvcrt/inttypes.h
 include/wine/msvcrt/io.h
 include/wine/msvcrt/limits.h
@@ -358,6 +359,8 @@ include/wine/windows/dsgetdc.h
 include/wine/windows/dshow.h
 include/wine/windows/dsound.h
 include/wine/windows/dsrole.h
+include/wine/windows/dvdif.h
+include/wine/windows/dvdif.idl
 include/wine/windows/dvdmedia.h
 include/wine/windows/dvoice.h
 include/wine/windows/dwmapi.h
@@ -2019,6 +2022,7 @@ lib/wine/fakedlls/kernelbase.dll
 %%WINE32%%lib/wine/fakedlls/keyboard.drv16
 %%WINE32%%lib/wine/fakedlls/krnl386.exe16
 lib/wine/fakedlls/ksecdd.sys
+lib/wine/fakedlls/ksproxy.ax
 lib/wine/fakedlls/ksuser.dll
 lib/wine/fakedlls/ktmw32.dll
 %%MPG123%%lib/wine/fakedlls/l3codeca.acm
@@ -2246,6 +2250,7 @@ lib/wine/fakedlls/scrrun.dll
 lib/wine/fakedlls/scsiport.sys
 lib/wine/fakedlls/sdbinst.exe
 lib/wine/fakedlls/secedit.exe
+lib/wine/fakedlls/sechost.dll
 lib/wine/fakedlls/secur32.dll
 lib/wine/fakedlls/security.dll
 lib/wine/fakedlls/sensapi.dll
@@ -2534,6 +2539,7 @@ lib/wine/kernelbase.dll.so
 %%WINE32%%lib/wine/keyboard.drv16.so
 %%WINE32%%lib/wine/krnl386.exe16.so
 lib/wine/ksecdd.sys.so
+lib/wine/ksproxy.ax.so
 lib/wine/ksuser.dll.so
 lib/wine/ktmw32.dll.so
 %%MPG123%%lib/wine/l3codeca.acm.so
@@ -2677,6 +2683,7 @@ lib/wine/librpcrt4.def
 lib/wine/librsaenh.def
 lib/wine/librtutils.def
 lib/wine/librtworkq.def
+lib/wine/libsechost.def
 lib/wine/libsecur32.def
 lib/wine/libsensapi.def
 lib/wine/libsetupapi.def
@@ -2963,6 +2970,7 @@ lib/wine/scrrun.dll.so
 lib/wine/scsiport.sys.so
 lib/wine/sdbinst.exe.so
 lib/wine/secedit.exe.so
+lib/wine/sechost.dll.so
 lib/wine/secur32.dll.so
 lib/wine/security.dll.so
 lib/wine/sensapi.dll.so
