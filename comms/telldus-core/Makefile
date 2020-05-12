@@ -5,12 +5,10 @@ PORTNAME=	telldus-core
 PORTVERSION=	2.1.2
 PORTREVISION=	7
 CATEGORIES=	comms
-MASTER_SITES=	http://download.telldus.se/TellStick/Software/telldus-core/
+MASTER_SITES=	http://download.telldus.com/TellStick/Software/telldus-core/
 
 MAINTAINER=	johan@stromnet.se
 COMMENT=	Tellstick Telldus daemon + library
-
-BROKEN=		unfetchable
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
