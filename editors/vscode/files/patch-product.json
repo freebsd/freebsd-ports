@@ -1,11 +1,9 @@
---- product.json.orig	2019-10-15 15:03:50 UTC
+--- product.json.orig	2020-05-05 21:48:19 UTC
 +++ product.json
-@@ -22,5 +22,16 @@
- 	"urlProtocol": "code-oss",
- 	"extensionAllowedProposedApi": [
+@@ -24,6 +24,17 @@
+ 		"ms-vscode.vscode-js-profile-table",
  		"ms-vscode.references-view"
--	]
-+	],
+ 	],
 +	"documentationUrl": "https://go.microsoft.com/fwlink/?LinkID=533484",
 +	"extensionsGallery": {
 +		"serviceUrl": "https://marketplace.visualstudio.com/_apis/public/gallery",
@@ -16,5 +14,7 @@
 +	"keyboardShortcutsUrlLinux": "https://go.microsoft.com/fwlink/?linkid=832144",
 +	"quality": "stable",
 +	"requestFeatureUrl": "https://go.microsoft.com/fwlink/?LinkID=533482",
-+	"tipsAndTricksUrl": "https://go.microsoft.com/fwlink/?linkid=852118"
- }
++	"tipsAndTricksUrl": "https://go.microsoft.com/fwlink/?linkid=852118",
+ 	"builtInExtensions": [
+ 		{
+ 			"name": "ms-vscode.node-debug",

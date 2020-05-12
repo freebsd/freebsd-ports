@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	vscode
-DISTVERSION=	1.44.2
-PORTREVISION=	1
+DISTVERSION=	1.45.0
 CATEGORIES=	editors
 MASTER_SITES=	https://nodejs.org/dist/v${NODE_VER}/:node_headers \
 		https://github.com/tagattie/FreeBSD-VSCode/releases/download/${DISTVERSION}/:yarn_cache
@@ -57,12 +56,12 @@ TEST_DEPENDS=	electron${ELECTRON_VER_MAJOR}:devel/electron${ELECTRON_VER_MAJOR} 
 		bash:shells/bash
 
 USES=		desktop-file-utils gl gmake gnome jpeg pkgconfig \
-		python:2.7,build shebangfix xorg
+		python:build shebangfix xorg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	microsoft
 
-SOURCE_COMMIT_HASH=	ff915844119ce9485abfe8aa9076ec76b5300ddd
+SOURCE_COMMIT_HASH=	d69a79b73808559a91206d73d7717ff5f798f23c
 
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
@@ -86,6 +85,9 @@ MAKE_ENV+=	BUILD_SOURCEVERSION=${SOURCE_COMMIT_HASH} \
 		ELECTRON_SKIP_BINARY_DOWNLOAD=1 \
 		PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=1 \
 		XDG_CACHE_HOME=${WRKDIR}/.cache
+# Don't create __pycache__ directory when executing node-gyp
+# This is a workaround to avoid filesystem violations during poudriere build
+MAKE_ENV+=	PYTHONDONTWRITEBYTECODE=1
 
 ELECTRON_DIR=	${.CURDIR}/../../devel/electron7
 .include	"${ELECTRON_DIR}/Makefile.version"

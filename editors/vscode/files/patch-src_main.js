@@ -1,6 +1,6 @@
---- src/main.js.orig	2020-03-10 09:24:33 UTC
+--- src/main.js.orig	2020-05-05 21:48:19 UTC
 +++ src/main.js
-@@ -137,7 +137,7 @@ function configureCommandlineSwitchesSync(cliArgs) {
+@@ -143,7 +143,7 @@ function configureCommandlineSwitchesSync(cliArgs) {
  		'force-color-profile'
  	];
  

@@ -1,6 +1,6 @@
---- test/smoke/src/main.ts.orig	2020-04-16 15:59:11 UTC
+--- test/smoke/src/main.ts.orig	2020-05-05 21:48:19 UTC
 +++ test/smoke/src/main.ts
-@@ -95,7 +95,7 @@ if (!opts.web) {
+@@ -94,7 +94,7 @@ if (!opts.web) {
  		switch (process.platform) {
  			case 'darwin':
  				return path.join(buildPath, 'electron', `${product.nameLong}.app`, 'Contents', 'MacOS', 'Electron');
@@ -9,7 +9,7 @@
  				return path.join(buildPath, 'electron', `${product.applicationName}`);
  			case 'win32':
  				return path.join(buildPath, 'electron', `${product.nameShort}.exe`);
-@@ -108,7 +108,7 @@ if (!opts.web) {
+@@ -107,7 +107,7 @@ if (!opts.web) {
  		switch (process.platform) {
  			case 'darwin':
  				return path.join(root, 'Contents', 'MacOS', 'Electron');
