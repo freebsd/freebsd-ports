@@ -16,6 +16,9 @@ COMMENT=	Catalyst model for Search::Xapian
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+DEPRECATED=	Depend on unsupported xapian-core. Use www/p5-Catalyst-Model-Xapian instead
+EXPIRATION_DATE=2020-06-30
+
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Catalyst-Runtime>=5.30:www/p5-Catalyst-Runtime \
 		p5-Catalyst-Devel>=1.00:www/p5-Catalyst-Devel \
