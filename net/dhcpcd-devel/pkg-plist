@@ -12,3 +12,4 @@ sbin/dhcpcd
 %%EXAMPLESDIR%%/hooks/29-lookup-hostname
 %%EXAMPLESDIR%%/hooks/50-ypbind
 @sample %%EXAMPLESDIR%%/dhcpcd.conf etc/dhcpcd.conf
+@dir(_dhcp,_dhcp,) /var/db/dhcpcd

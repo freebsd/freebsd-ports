@@ -4,7 +4,7 @@ listening for carrier up/down events and managing routes.
 
 dhcpcd-9 introduces a number of security improvements:
 - privilege separation; operations which do not require root privileges
-  are run in a chroot /var/chroot/dhcpcd as the unprivileged user _dhcp
+  are run as the unprivileged user _dhcp
 - capsicumized all network facing processes; all fd's in network facing
   processes are fully limited
 
