@@ -2,7 +2,7 @@
 
 PORTNAME=       bareos
 DISTVERSIONPREFIX=      Release/
-DISTVERSION=    19.2.6
+DISTVERSION=    19.2.7
 CATEGORIES?=    www sysutils
 PKGNAMESUFFIX= -webui
 
