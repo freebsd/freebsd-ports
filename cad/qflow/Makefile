@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	qflow
-DISTVERSION=	1.4.79
-PORTREVISION=	1
+DISTVERSION=	1.4.80
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,7 +9,8 @@ COMMENT=	End-to-end digital synthesis flow for ASIC designs
 
 LICENSE=	GPLv2
 
-APP_DEPENDS=	graywolf:cad/graywolf \
+APP_DEPENDS=	abc:cad/abc \
+		graywolf:cad/graywolf \
 		magic>0:cad/magic \
 		netgen-lvs>0:cad/netgen-lvs \
 		qrouter>0:cad/qrouter \
