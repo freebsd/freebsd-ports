@@ -1,13 +1,15 @@
---- web/gui/main.js.orig	2020-04-06 01:28:55 UTC
+--- web/gui/main.js.orig	2020-05-13 18:08:21 UTC
 +++ web/gui/main.js
-@@ -4923,9 +4923,7 @@ function renderAccountUI() {
-         container.setAttribute("data-original-title", "sign in");
-         container.setAttribute("data-placement", "bottom");
-         container.innerHTML = (
--            `<a href="#" class="btn sign-in-btn theme-${netdataTheme}" onclick="signInDidClick(event); return false">
--                <i class="fas fa-sign-in-alt"></i>&nbsp;<span class="hidden-sm hidden-md">Sign In</span>
--            </a>`
-+            ``
-         )
+@@ -745,11 +745,7 @@ function renderMyNetdataMenu(machinesArray) {
+     if (!isSignedIn()) {
+         if (!NETDATA.registry.isRegistryEnabled()) {
+             html += (
+-                `<div class="info-item" style="white-space: nowrap">
+-                    <span>Please <a href="#" onclick="signInDidClick(event); return false">sign in to netdata.cloud</a> to view your nodes!</span>
+-                    <div></div>
+-                </div>
+-                <hr />`
++                ``
+             );
+         }
      }
- }
