@@ -3,10 +3,12 @@ It can also act as a network manager, responding to new interfaces,
 listening for carrier up/down events and managing routes.
 
 dhcpcd-9 introduces a number of security improvements:
-- privilege separation; operations which do not require root privileges
-  are run as the unprivileged user _dhcp
-- capsicumized all network facing processes; all fd's in network facing
-  processes are fully limited
+- privilege separation
+  operations are performed across multiple processes, and those which do
+  not require root privileges are run as the unprivileged _dhcp user
+- sanboxed with capsicum(4)
+  processes run in capability mode, limiting their access and therefore
+  the potential impact of security vulnerabilities
 
 This is an experimental version for testing purposes.
 
