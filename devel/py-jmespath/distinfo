@@ -1,3 +1,3 @@
-TIMESTAMP = 1582642141
-SHA256 (jmespath-0.9.5.tar.gz) = cca55c8d153173e21baa59983015ad0daf603f9cb799904ff057bfb8ff8dc2d9
-SIZE (jmespath-0.9.5.tar.gz) = 27084
+TIMESTAMP = 1589395403
+SHA256 (jmespath-0.10.0.tar.gz) = b85d0567b8666149a93172712e68920734333c0ce7e89b78b3e987f71e5ed4f9
+SIZE (jmespath-0.10.0.tar.gz) = 21607
