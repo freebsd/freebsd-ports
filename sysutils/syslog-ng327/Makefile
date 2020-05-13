@@ -188,8 +188,10 @@ PYTHON_PLIST_FILES=		lib/syslog-ng/libmod-python.so \
 		lib/syslog-ng/python/syslogng/debuggercli/__pycache__/tflang.cpython-${PYTHON_SUFFIX}.pyc
 
 CURL_CONFIGURE_OFF=		--with-libcurl=off
+CURL_CONFIGURE_ON=		--enable-http
 CURL_LIB_DEPENDS=		libcurl.so:ftp/curl
-CURL_PLIST_FILES=		lib/syslog-ng/libhttp.so
+CURL_PLIST_FILES=		lib/syslog-ng/libhttp.so \
+				include/syslog-ng/modules/http/http-signals.h
 
 RIEMANN_CONFIGURE_ON=		--enable-riemann
 RIEMANN_CONFIGURE_OFF=		--disable-riemann

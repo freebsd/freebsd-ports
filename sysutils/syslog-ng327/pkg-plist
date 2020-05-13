@@ -262,7 +262,6 @@ include/syslog-ng/cfg-path.h
 include/syslog-ng/timeutils/zonecache.h
 include/syslog-ng/timeutils/zonedb.h
 include/syslog-ng/list-adt.h
-include/syslog-ng/modules/http/http-signals.h
 include/syslog-ng/rewrite/rewrite-set-severity.h
 include/syslog-ng/signal-slot-connector/signal-slot-connector.h
 include/syslog-ng/rewrite/rewrite-set-facility.h
