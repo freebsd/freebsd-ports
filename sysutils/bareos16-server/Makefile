@@ -1,12 +1,12 @@
 # $FreeBSD$
 
-PORTNAME=	bareos16
+PORTNAME=	bareos
 DISTVERSIONPREFIX=	Release/
-DISTVERSION=	16.2.9
+DISTVERSION=	16.2.10
 PORTREVISION?=	0
 CATEGORIES?=	sysutils
 PKGNAMEPREFIX?=	#
-PKGNAMESUFFIX?=	-server
+PKGNAMESUFFIX?=	16-server
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT?=	Backup archiving recovery open sourced (server)
@@ -19,8 +19,6 @@ LIB_DEPENDS+=	liblzo2.so:archivers/lzo2 \
 
 USES+=		libtool:keepla pkgconfig readline:port shebangfix
 USE_GITHUB=	yes
-GH_ACCOUNT=	${PORTNAME:S/16//}
-GH_PROJECT=	${PORTNAME:S/16//}
 
 CONFLICTS?=	bacula*-server-* bareos-server-*
 
@@ -36,8 +34,6 @@ SHEBANG_FILES=	${WRKSRC}/src/cats/make_catalog_backup.pl.in
 
 CPPFLAGS+=	-I${LOCALBASE}/readline -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-
-ETCDIR=		${PREFIX}/etc/${PORTNAME:S/16//}
 
 OPTIONS_DEFAULT=	OPENSSL
 OPTIONS_SINGLE=		CRYPTO
