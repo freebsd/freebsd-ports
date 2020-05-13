@@ -44,7 +44,7 @@ MTX_DESC=		Install mtx for control of autochanger devices
 NDMP_DESC=		Enable build of NDMP support
 SCSICRYPTO_DESC=	Build LTO AME crypto plugin
 
-.if ${PKGNAMESUFFIX} == "-server"
+.if ${PKGNAMESUFFIX} == "16-server"
 OPTIONS_DEFINE=		MTX PYTHON NDMP NLS SCSICRYPTO
 OPTIONS_DEFAULT+=	PGSQL SCSICRYPTO
 OPTIONS_SINGLE_DATABASE=	SQLITE3 MYSQL PGSQL
@@ -65,7 +65,7 @@ OPENSSL_CONFIGURE_OFF=	--with-openssl="no"
 SCSICRYPTO_CONFIGURE_ON=	--enable-scsi-crypto=yes
 SCSICRYPTO_CONFIGURE_OFF=	--enable-scsi-crypto=no
 
-.if ${PKGNAMESUFFIX} == "-client" || ${PKGNAMESUFFIX} == "-server"  #Till end of the file
+.if ${PKGNAMESUFFIX} == "16-client" || ${PKGNAMESUFFIX} == "16-server"  #Till end of the file
 PYTHON_USES=		  python
 PYTHON_CONFIGURE_ON=	--with-python=yes
 PYTHON_CONFIGURE_OFF=	--with-python=no
@@ -232,5 +232,5 @@ post-install:
 .endif
 .else
 .include "${MASTERDIR}/Makefile.common"
-.endif # -client and -server are defined
+.endif # 16-client and 16-server are defined
 .include <bsd.port.mk>
