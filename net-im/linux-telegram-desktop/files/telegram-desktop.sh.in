@@ -1,9 +1,0 @@
-#!/bin/sh
-
-if [ "$DBUS_SESSION_BUS_ADDRESS" = "" ]; then
-	eval `dbus-launch --sh-syntax`
-fi
-
-mkdir -p $HOME/.local/share/TelegramDesktop/tdata
-export QT_XKB_CONFIG_ROOT=%%PREFIX%%/share/X11/xkb
-exec %%PREFIX%%/%%TDESKTOPDIR%%/Telegram "$@"

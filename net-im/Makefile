@@ -71,7 +71,6 @@
     SUBDIR += licq-jabber
     SUBDIR += licq-osd
     SUBDIR += licq-qt-gui
-    SUBDIR += linux-telegram-desktop
     SUBDIR += loudmouth
     SUBDIR += matterbridge
     SUBDIR += matterhorn
