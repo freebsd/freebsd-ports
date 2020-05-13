@@ -5,6 +5,7 @@ bin/ncmpc
 %%NLS%%share/locale/cs/LC_MESSAGES/ncmpc.mo
 %%NLS%%share/locale/da/LC_MESSAGES/ncmpc.mo
 %%NLS%%share/locale/de/LC_MESSAGES/ncmpc.mo
+%%NLS%%share/locale/en/LC_MESSAGES/ncmpc.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/ncmpc.mo
 %%NLS%%share/locale/es/LC_MESSAGES/ncmpc.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/ncmpc.mo
