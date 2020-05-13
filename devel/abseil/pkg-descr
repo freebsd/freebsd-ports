@@ -3,7 +3,7 @@ most fundamental pieces of Google's internal codebase.  These libraries
 are the nuts-and-bolts that underpin almost everything Google runs.
 Bits and pieces of these APIs are embedded in most of our open source
 projects, and Abseil aims to bring them together into one comprehensive
-project.  Absei encompasses the most basic building blocks of Google's
+project.  Abseil encompasses the most basic building blocks of Google's
 codebase: code that is production-tested and will be fully maintained
 for years to come.
 

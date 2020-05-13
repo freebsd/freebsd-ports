@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	abseil
-PORTVERSION=	g20190703
-PORTREVISION=	1
+PORTVERSION=	20200225.2
 CATEGORIES=	devel
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -14,7 +13,8 @@ LICENSE=	APACHE20
 USES=		cmake compiler:c++11-lang
 USE_GITHUB=	yes
 GH_PROJECT=	${PORTNAME}-cpp
-GH_TAGNAME=	74d9175
+
+CMAKE_ARGS=	-DBUILD_SHARED_LIBS:BOOL=ON
 
 post-install:
 # XXX: should fix CMakeLists.txt instead of removing empty directories
