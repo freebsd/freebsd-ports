@@ -25,7 +25,7 @@ RUN_DEPENDS=	gdal>=1.11:graphics/gdal \
 		${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}snuggs>=1.4.1:math/py-snuggs@${PY_FLAVOR}
 
-USES=		python
+USES=		compiler:c++11-lang python
 USE_PYTHON=	autoplist concurrent cython distutils
 
 .include <bsd.port.mk>
