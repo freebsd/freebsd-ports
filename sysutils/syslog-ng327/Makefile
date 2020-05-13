@@ -2,20 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	syslog-ng
-DISTVERSION=	3.25.1
+DISTVERSION=	3.27.1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/balabit/syslog-ng/releases/download/syslog-ng-${DISTVERSION}/
 .if !defined(MASTERDIR)
-PKGNAMESUFFIX=	325
+PKGNAMESUFFIX=	327
 .endif
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Powerful syslogd replacement
 
 BROKEN_sparc64=		fails to link: Internal error: Segmentation fault (program ld)
-
-DEPRECATED=	Agreed upon upstream one year deprecation policy
-EXPIRATION_DATE=	2021-05-13
 
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libuuid.so:misc/e2fsprogs-libuuid
@@ -88,9 +85,9 @@ REDIS_CONFIGURE_ENABLE=		redis
 REDIS_LIB_DEPENDS=		libhiredis.so:databases/hiredis
 REDIS_PLIST_FILES=		lib/syslog-ng/libredis.so
 
-SNMPDEST_CONFIGURE_ENABLE=	snmp-dest
+SNMPDEST_CONFIGURE_ENABLE=	afsnmp
 SNMPDEST_LIB_DEPENDS=		libnetsnmp.so:net-mgmt/net-snmp
-SNMPDEST_PLIST_FILES=		lib/syslog-ng/libsnmpdest.so
+SNMPDEST_PLIST_FILES=		lib/syslog-ng/libafsnmp.so
 
 SMTP_CONFIGURE_ON=		--with-libesmtp=${LOCALBASE} --enable-smtp
 SMTP_CONFIGURE_OFF=		--without-libesmtp --disable-smtp
