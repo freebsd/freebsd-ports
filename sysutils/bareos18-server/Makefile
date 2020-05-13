@@ -1,12 +1,12 @@
 # $FreeBSD$
 
-PORTNAME=	bareos18
+PORTNAME=	bareos
 DISTVERSIONPREFIX=	Release/
-DISTVERSION=	18.2.7
+DISTVERSION=	18.2.8
 PORTREVISION?=	0
 CATEGORIES?=	sysutils
 PKGNAMEPREFIX?=	#
-PKGNAMESUFFIX?=	-server
+PKGNAMESUFFIX?=	18-server
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT?=	Backup archiving recovery open sourced (server)
@@ -22,8 +22,6 @@ LIB_DEPENDS+=	liblzo2.so:archivers/lzo2 \
 USES+=		cmake:insource compiler:c++11-lang pkgconfig readline:port \
 		shebangfix
 USE_GITHUB=	yes
-GH_ACCOUNT=	${PORTNAME:S/18//}
-GH_PROJECT=	${PORTNAME:S/18//}
 
 USERS=		bareos
 GROUPS=		${USERS}
@@ -36,8 +34,6 @@ SHEBANG_FILES=	${WRKSRC}/core/src/cats/make_catalog_backup.pl.in
 
 CPPFLAGS+=	-I${LOCALBASE}/readline -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-
-ETCDIR=		${PREFIX}/etc/${PORTNAME:S/18//}
 
 OPTIONS_DEFAULT=	OPENSSL
 OPTIONS_SINGLE=		CRYPTO
