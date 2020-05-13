@@ -1,0 +1,5 @@
+The oslo.serialization library provides support for representing objects
+in transmittable and storable formats, such as Base64, JSON and MessagePack.
+
+WWW: https://docs.openstack.org/oslo.serialization/latest/
+WWW: https://github.com/openstack/oslo.serialization
