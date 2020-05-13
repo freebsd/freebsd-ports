@@ -1,7 +1,7 @@
 # $FreeBSD$
 
-PORTNAME=	bareos17
-PKGNAMESUFFIX=	-client-static
+PORTNAME=	bareos
+PKGNAMESUFFIX=	17-client-static
 
 COMMENT=	Backup archiving recovery open sourced (static client)
 
