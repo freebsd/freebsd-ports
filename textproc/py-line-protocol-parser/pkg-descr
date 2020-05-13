@@ -1,0 +1,5 @@
+The InfluxDB line protocol is a text based format for writing points to
+InfluxDB. This library can read this format and convert line strings to
+Python dicitonaries.
+
+WWW: https://github.com/Penlect/line-protocol-parser/

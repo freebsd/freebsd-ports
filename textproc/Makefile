@@ -1271,6 +1271,7 @@
     SUBDIR += py-libxml2
     SUBDIR += py-libxslt
     SUBDIR += py-license-expression
+    SUBDIR += py-line-protocol-parser
     SUBDIR += py-m2r
     SUBDIR += py-mako
     SUBDIR += py-markdown
