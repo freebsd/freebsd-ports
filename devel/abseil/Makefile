@@ -4,6 +4,8 @@
 PORTNAME=	abseil
 PORTVERSION=	20200225.2
 CATEGORIES=	devel
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	567bee2f7393.diff:-p1
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Abseil Common Libraries (C++)
