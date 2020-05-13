@@ -3,6 +3,7 @@
 
 PORTNAME=	bitkeeper
 PORTVERSION=	7.3.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://www.bitkeeper.org/downloads/${PORTVERSION}/
 DISTNAME=	bk-${PORTVERSION}.src
@@ -28,5 +29,8 @@ ALL_TARGET= p
 
 do-build:
 	@(cd ${WRKSRC}; ${MAKE_CMD} ${ALL_TARGET})
+
+post-install:
+	@cd ${STAGEDIR}${PREFIX}/bin/ && ${LN} -s ../bitkeeper/bk
 
 .include <bsd.port.mk>
