@@ -13,6 +13,8 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 USE_GITHUB=	YES
 GH_ACCOUNT=	cperciva
 
+USES=		uidfix
+
 PLIST_FILES=	etc/rc.d/dev_aws_disk		\
 		etc/devd/dev-aws-disk.conf	\
 		sbin/ebsnvme-id			\
