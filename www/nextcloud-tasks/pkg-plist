@@ -9,8 +9,8 @@
 %%WWWDIR%%/css/src/sprites-bw.scss
 %%WWWDIR%%/css/src/sprites-color.scss
 %%WWWDIR%%/css/src/style.scss
-%%WWWDIR%%/css/src/vars.scss
 %%WWWDIR%%/css/tasks.scss
+%%WWWDIR%%/img/circle.svg
 %%WWWDIR%%/img/color_picker.svg
 %%WWWDIR%%/img/favicon-touch.png
 %%WWWDIR%%/img/favicon-touch.svg
