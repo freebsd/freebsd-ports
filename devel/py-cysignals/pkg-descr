@@ -1,0 +1,13 @@
+When writing Cython code, special care must be taken to ensure that the code can
+be interrupted with CTRL-C. Since Cython optimizes for speed, Cython normally
+does not check for interrupts. For example, code like the following cannot be
+interrupted in Cython:
+
+while True:
+    pass
+
+The cysignals package provides mechanisms to handle interrupts (and other
+signals and errors) in Cython code.
+
+WWW: https://github.com/sagemath/cysignals
+WWW: https://pypi.org/project/cysignals/

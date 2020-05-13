@@ -4297,6 +4297,7 @@
     SUBDIR += py-cxx
     SUBDIR += py-cycler
     SUBDIR += py-cymem
+    SUBDIR += py-cysignals
     SUBDIR += py-cytoolz
     SUBDIR += py-d2to1
     SUBDIR += py-daemon
