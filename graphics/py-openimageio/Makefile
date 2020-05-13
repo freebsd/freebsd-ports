@@ -6,7 +6,6 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 COMMENT=	OpenImageIO python bindings
 
-BROKEN=		fails to configure
 MASTERDIR=	${.CURDIR}/../openimageio
 OPTIONS_EXCLUDE=${OPTIONS_DEFINE}
 
