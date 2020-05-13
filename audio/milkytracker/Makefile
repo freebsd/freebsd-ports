@@ -7,6 +7,9 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 CATEGORIES=	audio
 
+PATCH_SITES=	https://github.com/${PORTNAME}/MilkyTracker/commit/
+PATCHFILES=	ba5699e109018d38fd1675c43aef2bab19a880c2.patch:-p1
+
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Music creation tool inspired by Fast Tracker 2
 
@@ -14,14 +17,11 @@ LICENSE=	GPLv3+ BSD3CLAUSE
 LICENSE_COMB=	multi
 LICENSE_FILE_GPLv3+ =	${WRKSRC}/COPYING
 
-BROKEN_powerpc=		Does not build on powerpc: src/ppui/fastfill.h:42:15: error: invalid operand for instruction
-BROKEN_powerpc64=	Does not build on powerpc64: src/ppui/fastfill.h:42:15: error: invalid operand for instruction
-
 LIB_DEPENDS=	liblhasa.so:archivers/lhasa \
 		libzzip.so:devel/zziplib \
 		libjack.so:audio/jack
 
-USES=		cmake sdl
+USES=		cmake compiler:c11 sdl
 USE_GITHUB=	yes
 USE_SDL=	sdl2
 
