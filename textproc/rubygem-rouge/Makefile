@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rouge
-PORTVERSION=	3.18.0
+PORTVERSION=	3.19.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
