@@ -1,6 +1,6 @@
---- src/CMakeLists.txt.orig
+--- src/CMakeLists.txt.orig	2020-04-15 07:10:53 UTC
 +++ src/CMakeLists.txt
-@@ -336,7 +336,7 @@ if(USE_OPENJPEG)
+@@ -360,7 +360,7 @@ if(USE_OPENJPEG)
      add_definitions("-DHAVE_OPENJPEG")
      list(APPEND SOURCES "common/imageio_j2k.c")
  

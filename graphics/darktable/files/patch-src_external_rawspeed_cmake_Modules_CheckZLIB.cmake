@@ -1,6 +1,6 @@
---- src/external/rawspeed/cmake/Modules/CheckZLIB.cmake.orig	2018-01-18 18:05:10 UTC
+--- src/external/rawspeed/cmake/Modules/CheckZLIB.cmake.orig	2020-04-03 21:02:54 UTC
 +++ src/external/rawspeed/cmake/Modules/CheckZLIB.cmake
-@@ -38,7 +38,7 @@ endif()
+@@ -40,7 +40,7 @@ endif()
  CHECK_PROTOTYPE_DEFINITION(zError
   "const char* zError(int zErrorCode)"
   "NULL"

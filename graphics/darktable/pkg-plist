@@ -18,9 +18,6 @@ lib/darktable/plugins/imageio/format/libtiff.so
 %%WEBP%%lib/darktable/plugins/imageio/format/libwebp.so
 lib/darktable/plugins/imageio/storage/libdisk.so
 lib/darktable/plugins/imageio/storage/libemail.so
-lib/darktable/plugins/imageio/storage/libfacebook.so
-lib/darktable/plugins/imageio/storage/libgooglephoto.so
-%%FLICKR%%lib/darktable/plugins/imageio/storage/libflickr.so
 lib/darktable/plugins/imageio/storage/libgallery.so
 lib/darktable/plugins/imageio/storage/liblatex.so
 lib/darktable/plugins/imageio/storage/libpiwigo.so

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	darktable
-PORTVERSION=	3.0.0
-PORTREVISION=	4
+PORTVERSION=	3.0.2
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/darktable-org/${PORTNAME}/releases/download/release-${PORTVERSION:C/\.rc/rc/}/
 
@@ -18,7 +17,9 @@ ONLY_FOR_ARCHS_REASON=	uses SSE instructions and 64-bit address space
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes \
 		xsltproc:textproc/libxslt \
 		po4a-translate:textproc/po4a
-LIB_DEPENDS=	libcurl.so:ftp/curl \
+LIB_DEPENDS=	libcolord.so:graphics/colord \
+		libcolord-gtk.so:graphics/colord-gtk \
+		libcurl.so:ftp/curl \
 		libexiv2.so:graphics/exiv2 \
 		libjson-glib-1.0.so:devel/json-glib \
 		liblcms2.so:graphics/lcms2 \
@@ -32,34 +33,27 @@ USES=		cmake compiler:c++11-lib desktop-file-utils	\
 		gl gnome jpeg pkgconfig sqlite tar:xz xorg
 USE_GL=		glu
 USE_GNOME=	cairo gtk30 intltool librsvg2 libxml2
-USE_XORG=	ice sm x11 xext xrandr
-USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 INSTALLS_ICONS=	yes
-
-OPTIONS_DEFINE=	COLORD DOCS FLICKR GEO GPHOTO GRAPHMAGICK	\
-		LIBSECRET LUA NLS OPENEXR OPENJPEG PRINT WEBP
-
-GEO_DESC=	Support geotagging
-LIBSECRET_DESC=	Support libsecret as password backend
-
-OPTIONS_DEFAULT=COLORD FLICKR GEO GPHOTO LUA OPENEXR OPENJPEG	\
-		PRINT WEBP
-OPTIONS_SUB=	yes
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\.rc/~rc/}
+USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
+USE_XORG=	ice sm x11 xext xrandr
 
 CMAKE_ARGS+=	-DBINARY_PACKAGE_BUILD=1
 CMAKE_ARGS+=	-DBUILD_CMSTEST:BOOL=ON
 CMAKE_ARGS+=	-DUSE_KWALLET:BOOL=ON
-LDFLAGS+=	-L${LOCALBASE}/lib
+
 CFLAGS+=	-fopenmp
+LDFLAGS+=	-L${LOCALBASE}/lib
 
-COLORD_LIB_DEPENDS=	libcolord.so:graphics/colord \
-			libcolord-gtk.so:graphics/colord-gtk
-COLORD_CMAKE_OFF=	-DUSE_COLORD:BOOL=OFF
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\.rc/~rc/}
 
-FLICKR_LIB_DEPENDS=	libflickcurl.so:www/flickcurl
-FLICKR_CMAKE_OFF=	-DUSE_FLICKR:BOOL=OFF
+OPTIONS_DEFINE=	DOCS GEO GPHOTO GRAPHMAGICK	\
+		LIBSECRET LUA NLS OPENEXR OPENJPEG PRINT WEBP
+OPTIONS_DEFAULT=GEO GPHOTO LUA OPENEXR OPENJPEG	\
+		PRINT WEBP
+OPTIONS_SUB=	yes
+
+GEO_DESC=	Support geotagging
+LIBSECRET_DESC=	Support libsecret as password backend
 
 GEO_LIB_DEPENDS=	libosmgpsmap-1.0.so:x11-toolkits/osm-gps-map
 GEO_CMAKE_OFF=		-DUSE_MAP:BOOL=OFF
