@@ -15009,3 +15009,4 @@ www/rubygem-activeresource5|www/rubygem-activeresource|2020-05-08|Remove PKGNAME
 finance/bitcoinnodestats||2020-05-12|Has expired: No longer maintained and not compatible with Django 2.2+
 devel/rubygem-webpacker-rails5|devel/rubygem-webpacker4-rails5|2020-05-12|Rename when rubygem-webpacker is 5.x now
 devel/rubygem-webpacker-rails50|devel/rubygem-webpacker4-rails50|2020-05-12|Rename when rubygem-webpacker is 5.x now
+net-p2p/parity-ethereum|net-p2p/openethereum|2020-05-13|Renamed upstream for transition to a DAO ownership and maintainer model

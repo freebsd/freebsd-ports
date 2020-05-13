@@ -1,9 +1,9 @@
-Parity is the fastest and most advanced Ethereum client.
+OpenEthereum is a fast and feature-rich multi-network Ethereum client.
 
 Built for mission-critical use: miners, service providers, and
 exchanges need fast synchronisation and maximum uptime.
 
-Parity Ethereum provides the core infrastructure essential for
+OpenEthereum provides the core infrastructure essential for
 speedy and reliable services.
 
 * Clean, modular codebase for easy customisation
@@ -12,4 +12,4 @@ speedy and reliable services.
 * Synchronise in hours, not days with Warp Sync
 * Modular for light integration into your service or product
 
-WWW: https://github.com/paritytech/parity-ethereum/
+WWW: https://github.com/openethereum/openethereum/

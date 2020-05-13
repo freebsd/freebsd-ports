@@ -1,13 +1,12 @@
 # $FreeBSD$
 
-PORTNAME=	parity-ethereum
+PORTNAME=	openethereum
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.7.2
-PORTREVISION=	3
+DISTVERSION=	3.0.0
 CATEGORIES=	net-p2p
 
 MAINTAINER=	ale@FreeBSD.org
-COMMENT=	Fast and advanced Ethereum client
+COMMENT=	Fast and feature-rich multi-network Ethereum client
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -20,9 +19,8 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/llvm-config90:devel/llvm90
 USES=		cargo
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	paritytech
 
-PLIST_FILES=	bin/parity
+PLIST_FILES=	bin/${PORTNAME}
 
 CARGO_FEATURES=	final
 CARGO_TEST=	yes
@@ -32,6 +30,6 @@ MAKE_ENV+=	LLVM_CONFIG_PATH="${LOCALBASE}/bin/llvm-config90"
 .include "${.CURDIR}/Makefile.crates"
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/parity
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
