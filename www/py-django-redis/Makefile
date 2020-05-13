@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	django-redis
-PORTVERSION=	4.10.0
-PORTREVISION=	1
+PORTVERSION=	4.11.0
 CATEGORIES=	www databases
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,20 +12,16 @@ COMMENT=	Full featured Redis cache/session backend for Django
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django111>=1.11:www/py-django111@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django22>=1.11:www/py-django22@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}redis>=2.10.0:databases/py-redis@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hiredis>=0:databases/py-hiredis@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mock>=0:devel/py-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}msgpack>=0:devel/py-msgpack@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.5+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
-
-# django-redis 4.11.0+ requires Python 3.5+
-# py-django-redis is required by www/py-django-prometheus
-PORTSCOUT=	limit:^4\.10\.
 
 do-test:
 	@cd ${WRKSRC}/tests && ${PYTHON_CMD} runtests.py
