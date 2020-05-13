@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bmfdec
-DISTVERSION=	g20180113
+DISTVERSION=	g20200512
 CATEGORIES=	converters devel sysutils
 
 MAINTAINER=	takawata@FreeBSD.org
@@ -11,7 +11,7 @@ LICENSE=	GPLv2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	pali
-GH_TAGNAME=	a9c0d30
+GH_TAGNAME=	7f47b07
 
 PLIST_FILES=	${BINARIES:S,^,bin/&,}
 
