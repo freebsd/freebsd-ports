@@ -389,6 +389,7 @@
 %%WWWDIR%%/lib/Signaling/Listener.php
 %%WWWDIR%%/lib/Signaling/Messages.php
 %%WWWDIR%%/lib/TalkSession.php
+%%WWWDIR%%/lib/TInitialState.php
 %%WWWDIR%%/lib/Webinary.php
 %%WWWDIR%%/sample-commands/calc.sh
 %%WWWDIR%%/sample-commands/hackernews.php
