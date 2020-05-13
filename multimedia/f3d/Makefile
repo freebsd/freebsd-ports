@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libvtkCommonMisc-9.0.so:math/vtk9
 
-USES=		cmake gl xorg
+USES=		cmake compiler:c++11-lang gl xorg
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.kitware.com
 GL_COMMIT=	973d8e3b05f2b4275c72f82694e65f1713a87863
