@@ -1,4 +1,2 @@
 bin/ipfs-go
-@owner %%IPFS_USER%%
-@group %%IPFS_GROUP%%
-@dir %%IPFS_HOME%%
+@dir(%%IPFS_USER%%,%%IPFS_GROUP%%,755) %%IPFS_HOME%%
