@@ -153,11 +153,20 @@
 
 	<h2 class="section">References</h2>
 	<table class="reftab">
+	  <xsl:for-each select="vuxml:references/vuxml:freebsdsa">
+	    <tr valign="top">
+	      <td class="label">FreeBSD SA</td>
+	      <td class="content"><xsl:element name="a">
+		  <xsl:attribute name="href"><xsl:value-of select="concat('https://security.freebsd.org/advisories/FreeBSD-', ., '.asc')" /></xsl:attribute>
+		  <xsl:value-of select="concat('FreeBSD-', .)" />
+		</xsl:element></td>
+	    </tr>
+	  </xsl:for-each>
 	  <xsl:for-each select="vuxml:references/vuxml:cvename">
 	    <tr valign="top">
 	      <td class="label">CVE Name</td>
 	      <td class="content"><xsl:element name="a">
-		  <xsl:attribute name="href"><xsl:value-of select="concat(., '.html')" /></xsl:attribute>
+		  <xsl:attribute name="href"><xsl:value-of select="concat('https://cve.mitre.org/cgi-bin/cvename.cgi?name=', .)" /></xsl:attribute>
 		  <xsl:value-of select="." />
 		</xsl:element></td>
 	    </tr>
