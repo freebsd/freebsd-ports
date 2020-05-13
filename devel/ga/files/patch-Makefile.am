@@ -1,0 +1,16 @@
+--- Makefile.am.orig	2020-02-28 19:39:16 UTC
++++ Makefile.am
+@@ -1649,11 +1649,11 @@ libga_la_LIBADD += $(MAYBE_FLIBS)
+ # if --disable-f77 is used, we must override linker choice
+ if ENABLE_F77
+ libga_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=F77 $(AM_LIBTOOLFLAGS) \
+-    $(LIBTOOLFLAGS) --mode=link $(F77LD) $(AM_FFLAGS) $(FFLAGS) \
++    $(LIBTOOLFLAGS) --mode=link $(F77LD) $(FREEBSD_LINK_FLAGS) $(AM_FFLAGS) $(FFLAGS) \
+     $(libga_la_LDFLAGS) $(LDFLAGS) -o $@
+ else
+ libga_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+-    $(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
++    $(LIBTOOLFLAGS) --mode=link $(CCLD) $(FREEBSD_LINK_FLAGS) (AM_CFLAGS) $(CFLAGS) \
+     $(libga_la_LDFLAGS) $(LDFLAGS) -o $@
+ endif
+ 
