@@ -34,7 +34,6 @@ XLIB_DESC=	Build Xlib WSI (Window System Integration) support
 WAYLAND_BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto
 WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland
 WAYLAND_CMAKE_BOOL=	BUILD_WSI_WAYLAND_SUPPORT
-WAYLAND_CMAKE_ON=	-DCUBE_WSI_SELECTION:STRING="WAYLAND"
 
 XCB_CMAKE_BOOL=		BUILD_WSI_XCB_SUPPORT
 XCB_LIB_DEPENDS=	libxcb.so:x11/libxcb
