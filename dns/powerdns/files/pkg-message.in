@@ -1,32 +1,54 @@
 [
 { type: install
   message: <<EOM
- Enable PowerDNS in /etc/rc.conf(.local) or in
- /etc/rc.conf.d/pdns with the following line:
+Enable PowerDNS in /etc/rc.conf(.local) or in /etc/rc.conf.d/pdns with the following line:
 
     pdns_enable="YES"
 
- A configuration template is available in %%PREFIX%%/etc/pdns
- as pdns.conf-dist.
+A configuration template is available in %%PREFIX%%/etc/pdns as pdns.conf-dist.
 
- A pdns.conf with all possible options is available in
- %%EXAMPLESDIR%%
+A pdns.conf with all possible options is available in %%EXAMPLESDIR%%
+
+Initialization file(s) for your database backend(s) are available in %%DOCSDIR%% as "schema.X.sql"
 EOM
 }
 { type: upgrade
-  maximum_versio: 3.4
+  maximum_version: "3.4.0"
   message: <<EOM
- -----------------------------------------------
- IMPORTANT: PowerDNS Authoritative Server 3.4.0+:
- -----------------------------------------------
- This version needs a mandatory schema change for the gmsyql,
- gpgsql and gsqlite3 backends. SQL statements are available in
- %%DOCSDIR%% or http://Doc.PowerDNS.com
- -----------------------------------------------
- IMPORTANT: PowerDNS Authoritative Server 4.3.0+:
- -----------------------------------------------
- MyDNS and OpenDBX backends removed 
- https://Blog.PowerDNS.com/2019/10/17/backend-removals-in-the-upcoming-authoritative-server-release/
+This version needs a mandatory schema change for the gmsyql, gpgsql and gsqlite3 backends. SQL 
+statements are available in %%DOCSDIR%% or https://doc.powerdns.com
+EOM
+}
+{ type: upgrade
+  maximum_version: "4.2.0"
+  mimimum_version: "4.0.0"
+  message: <<EOM
+Autoserial support has been removed. The change_date column has been removed from the records table 
+in all gsql backends, but leaving it in is harmless.
+The Generic PostgreSQL backend schema has changed: the notified_serial column type in the domains 
+table has been changed from INT DEFAULT NULL to BIGINT
+DEFAULT NULL:
+ALTER TABLE domains ALTER notified_serial TYPE bigint USING CASE WHEN notified_serial >= 0 THEN 
+notified_serial::bigint END;
+
+This version needs a mandatory schema change for the gmsyql, godbc (mssql), gpgsql and gsqlite3 
+backends. SQL statements are available in %%DOCSDIR%% or https://doc.powerdns.com
+EOM
+}
+{ type: upgrade
+  minimum_version: "4.2.0"
+  message: <<EOM
+MyDNS and OpenDBX backends removed
+https://Blog.PowerDNS.com/2019/10/17/backend-removals-in-the-upcoming-authoritative-server-release/
+
+The new ‘unpublished DNSSEC keys’ feature' comes with a mandatory schema change for all database 
+backends (including BIND with a DNSSEC database).
+
+This version needs a mandatory schema change for the gmsyql, godbc(mssql), gpgsql and gsqlite3 
+backends. SQL statements are available in %%DOCSDIR%% or https://doc.powerdns.com
+
+For the LMDB backend, please review lmdb-schema-version
+(https://doc.powerdns.com/authoritative/backends/lmdb.html#setting-lmdb-schema-version)
 EOM
 }
 ]

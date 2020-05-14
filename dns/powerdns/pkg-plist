@@ -14,6 +14,7 @@ sbin/pdns_server
 %%TOOLS%%bin/dnstcpbench
 %%TOOLS%%bin/dnswasher
 %%TOOLS%%bin/dumresp
+%%IXFRDIST%%bin/ixfrdist
 %%TOOLS%%bin/ixplore
 %%TOOLS%%bin/nproxy
 %%TOOLS%%bin/nsec3dig
@@ -40,6 +41,7 @@ lib/pdns/libpipebackend.so
 %%TOOLS%%man/man1/dnspcap2calidns.1.gz
 %%TOOLS%%man/man1/dnsscan.1.gz
 %%TOOLS%%man/man1/dumresp.1.gz
+%%IXFRDIST%%man/man1/ixfrdist.1.gz
 %%TOOLS%%man/man1/ixplore.1.gz
 %%TOOLS%%man/man1/nproxy.1.gz
 %%TOOLS%%man/man1/nsec3dig.1.gz
@@ -57,19 +59,26 @@ man/man1/zone2sql.1.gz
 %%TOOLS%%man/man1/dnsreplay.1.gz
 %%TOOLS%%man/man1/dnsscope.1.gz
 %%TOOLS%%man/man1/dnswasher.1.gz
+%%IXFRDIST%%man/man5/ixfrdist.yml.5.gz
+%%IXFRDIST%%etc/pdns/ixfrdist.example.yml
 @sample etc/pdns/pdns.conf-dist etc/pdns/pdns.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pdns.conf
 %%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%
 %%MYSQL%%%%PORTDOCS%%%%DOCSDIR%%/3.4.0_to_4.1.0_schema.mysql.sql
 %%PGSQL%%%%PORTDOCS%%%%DOCSDIR%%/3.4.0_to_4.1.0_schema.pgsql.sql
 %%SQLITE3%%%%PORTDOCS%%%%DOCSDIR%%/3.4.0_to_4.0.0_schema.sqlite3.sql
+%%UNIXODBC%%%%PORTDOCS%%%%DOCSDIR%%/4.0.0_to_4.2.0_schema.mssql.sql
 %%SQLITE3%%%%PORTDOCS%%%%DOCSDIR%%/4.0.0_to_4.2.0_schema.sqlite3.sql
 %%MYSQL%%%%PORTDOCS%%%%DOCSDIR%%/4.1.0_to_4.2.0_schema.mysql.sql
 %%PGSQL%%%%PORTDOCS%%%%DOCSDIR%%/4.1.0_to_4.2.0_schema.pgsql.sql
+%%UNIXODBC%%%%PORTDOCS%%%%DOCSDIR%%/4.2.0_to_4.3.0_schema.mssql.sql
+%%MYSQL%%%%PORTDOCS%%%%DOCSDIR%%/4.2.0_to_4.3.0_schema.mysql.sql
 %%PGSQL%%%%PORTDOCS%%%%DOCSDIR%%/4.2.0_to_4.3.0_schema.pgsql.sql
+%%SQLITE3%%%%PORTDOCS%%%%DOCSDIR%%/4.2.0_to_4.3.0_schema.sqlite3.sql
 %%MYSQL%%%%PORTDOCS%%%%DOCSDIR%%/dnssec-3.x_to_3.4.0_schema.mysql.sql
 %%PGSQL%%%%PORTDOCS%%%%DOCSDIR%%/dnssec-3.x_to_3.4.0_schema.pgsql.sql
 %%SQLITE3%%%%PORTDOCS%%%%DOCSDIR%%/dnssec-3.x_to_3.4.0_schema.sqlite3.sql
+%%MYSQL%%%%PORTDOCS%%%%DOCSDIR%%/enable-foreign-keys.mysql.sql
 %%MYSQL%%%%PORTDOCS%%%%DOCSDIR%%/nodnssec-3.x_to_3.4.0_schema.mysql.sql
 %%PGSQL%%%%PORTDOCS%%%%DOCSDIR%%/nodnssec-3.x_to_3.4.0_schema.pgsql.sql
 %%SQLITE3%%%%PORTDOCS%%%%DOCSDIR%%/nodnssec-3.x_to_3.4.0_schema.sqlite3.sql

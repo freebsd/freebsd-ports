@@ -28,7 +28,7 @@ pdns_conf=${pdns_conf:-"%%PREFIX%%/etc/pdns/pdns.conf"}
 
 required_files=${pdns_conf}
 
-pidfile=/var/run/pdns/pdns_server.pid
+pidfile=/var/run/pdns/${name}.pid
 
 command=%%PREFIX%%/sbin/pdns_server
 command_args="--daemon --guardian"
