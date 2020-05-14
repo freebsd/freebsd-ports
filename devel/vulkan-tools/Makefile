@@ -36,14 +36,14 @@ WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland
 WAYLAND_CMAKE_BOOL=	BUILD_WSI_WAYLAND_SUPPORT
 WAYLAND_CMAKE_ON=	-DCUBE_WSI_SELECTION:STRING="WAYLAND"
 
+XCB_CMAKE_BOOL=		BUILD_WSI_XCB_SUPPORT
+XCB_LIB_DEPENDS=	libxcb.so:x11/libxcb
+
 XLIB_CMAKE_BOOL=	BUILD_WSI_XLIB_SUPPORT
 XLIB_LIB_DEPENDS=	libX11.so:x11/libX11 \
 			libXext.so:x11/libXext \
 			libICE.so:x11/libICE \
 			libSM.so:x11/libSM
-
-XCB_CMAKE_BOOL=		BUILD_WSI_XCB_SUPPORT
-XCB_LIB_DEPENDS=	libxcb.so:x11/libxcb
 
 .include <bsd.port.options.mk>
 
