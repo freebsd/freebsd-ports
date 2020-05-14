@@ -55,7 +55,7 @@ GHOSTSCRIPT_DEFAULT?=	agpl
 JAVA_DEFAULT?=		8
 # Possible values: 0.6, 0.7, 1.0, 1.1
 JULIA_DEFAULT?=		1.0
-# Possible values: 2.0.6
+# Possible values: 2.0.8
 LAZARUS_DEFAULT?=	2.0.8
 # Possible values: c7
 LINUX_DEFAULT?=		c7
