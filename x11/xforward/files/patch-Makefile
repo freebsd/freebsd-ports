@@ -20,7 +20,7 @@
 +INCFLAGS= -I${LOCALBASE}/include
 +LDFLAGS= -L${LOCALBASE}/lib
 +LIBS= -lXm -lXt -lX11 -lXext
-+LIBS_STATIC= -lXm -lXmu -lXt -lXext -lSM -lICE -lpng16 -lz -lm -ljpeg -lXft -lfontconfig -lexpat -lfreetype -lbz2 -lX11 -lXau -lxcb -lXdmcp -lXau -lXft -lXrender
++LIBS_STATIC= -lXm -lXmu -lXt -lXext -lSM -lICE -lpng16 -lz -lm -ljpeg -lXft -lfontconfig -lexpat -lfreetype -lbz2 -lX11 -lXau -lxcb -lXdmcp -lXau -lXft -lXrender -lXp
  
 +
  CFLAGS= ${INCFLAGS} -O
