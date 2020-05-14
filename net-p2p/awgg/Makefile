@@ -20,8 +20,8 @@ gtk2_CONFLICTS_INSTALL=	${PORTNAME}-qt5
 qt5_CONFLICTS_INSTALL=	${PORTNAME}-gtk2
 
 USES=		fpc gnome lazarus:flavors xorg
-USE_FPC=	chm fcl-base fcl-db fcl-image fcl-json fcl-registry fcl-web \
-		fcl-xml pasjpeg regexpr rtl-extra rtl-objpas x11
+USE_FPC=	chm fcl-base fcl-db fcl-image fcl-json ffcl-net cl-registry \
+		fcl-web fcl-xml openssl pasjpeg regexpr rtl-extra rtl-objpas x11
 USE_XORG=	x11
 USE_GITHUB=	yes
 GH_ACCOUNT=	Nenirey
