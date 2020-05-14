@@ -18,7 +18,7 @@ LICENSE_FILE_GPLv2+ =		${WRKSRC}/vendor/geshi/geshi/LICENSE
 LICENSE_FILE_GPLv3=		${WRKSRC}/vendor/marcusschwarz/lesserphp/LICENSE
 LICENSE_FILE_MIT=		${WRKSRC}/vendor/composer/LICENSE
 
-DIST_VER=	${PORTNAME}-2018-04-22b
+DIST_VER=	${PORTNAME}-2018-04-22c
 USES=		cpe tar:tgz php:web
 USE_PHP=	gd hash json mbstring openssl pcre session xml zlib
 NO_ARCH=	YES
