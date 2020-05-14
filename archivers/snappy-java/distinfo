@@ -1,6 +1,9 @@
-SHA256 (snappy-1.0.4.tar.gz) = 4ad91adb1592b6de67ecaad2ade6c34b9cf98a0bbc74ac8786b520b529b3bf61
-SIZE (snappy-1.0.4.tar.gz) = 1676541
-SHA256 (FreeBSD-snappy-1.0.4.1-maven-repository.tar.gz) = 1d258eedabd2ff74954988b7d404ac803f55687b916f697179489c3a4cb0e243
-SIZE (FreeBSD-snappy-1.0.4.1-maven-repository.tar.gz) = 8290287
-SHA256 (xerial-snappy-java-snappy-java-1.0.4.1_GH0.tar.gz) = efb6d747d754779113b0c023886803c2daedb585b6ec80dd71ffa6a40a083f14
-SIZE (xerial-snappy-java-snappy-java-1.0.4.1_GH0.tar.gz) = 5475057
+TIMESTAMP = 1589051057
+SHA256 (snappy-java-repository-1.1.7.5.tar.gz) = 8025714a5ab5bcd91cf5f0da77465948247b5b2b1b5ebd02a14f4a1bec19e067
+SIZE (snappy-java-repository-1.1.7.5.tar.gz) = 222476258
+SHA256 (xerial-snappy-java-1.1.7.5_GH0.tar.gz) = af428168ae017944eb775e46ddc8e459365610fdde813e4542b9337aed479d93
+SIZE (xerial-snappy-java-1.1.7.5_GH0.tar.gz) = 3547828
+SHA256 (google-snappy-1.1.7_GH0.tar.gz) = 3dfa02e873ff51a11ee02b9ca391807f0c8ea0529a4924afa645fbf97163f9d4
+SIZE (google-snappy-1.1.7_GH0.tar.gz) = 1090550
+SHA256 (kiyo-masui-bitshuffle-0.3.2_GH0.tar.gz) = c0b97632fdcf26c67db2634fda70ac05c1679b5f4d4bc3674c5961bd515672e4
+SIZE (kiyo-masui-bitshuffle-0.3.2_GH0.tar.gz) = 109279

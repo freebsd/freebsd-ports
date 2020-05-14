@@ -1,0 +1,25 @@
+--- Makefile.common.orig	2020-05-14 10:44:28 UTC
++++ Makefile.common
+@@ -45,7 +45,7 @@ endif
+ 
+ # os=Default is meant to be generic unix/linux
+ 
+-known_os_archs := Linux-x86 Linux-x86_64 Linux-arm Linux-armv6 Linux-armv7 Linux-android-arm Linux-aarch64 Linux-ppc Linux-ppc64 Linux-ppc64le Linux-s390 Linux-s390x Mac-x86 Mac-x86_64 FreeBSD-x86_64 Windows-x86 Windows-x86_64 SunOS-x86 SunOS-sparc SunOS-x86_64 AIX-ppc AIX-ppc64
++known_os_archs := Linux-x86 Linux-x86_64 Linux-arm Linux-armv6 Linux-armv7 Linux-android-arm Linux-aarch64 Linux-ppc Linux-ppc64 Linux-ppc64le Linux-s390 Linux-s390x Mac-x86 Mac-x86_64 FreeBSD-x86 FreeBSD-x86_64 Windows-x86 Windows-x86_64 SunOS-x86 SunOS-sparc SunOS-x86_64 AIX-ppc AIX-ppc64
+ os_arch := $(OS_NAME)-$(OS_ARCH)
+ IBM_JDK_7 := $(findstring IBM, $(shell $(JAVA) -version 2>&1 | grep IBM | grep "JRE 1.7"))
+ 
+@@ -249,6 +249,13 @@ Mac-x86_64_CXXFLAGS  := -Ilib/inc_mac -I$(JAVA_HOME)/i
+ Mac-x86_64_LINKFLAGS := -dynamiclib
+ Mac-x86_64_LIBNAME   := libsnappyjava.jnilib
+ Mac-x86_64_SNAPPY_FLAGS  :=
++
++FreeBSD-x86_CXX          := $(CROSS_PREFIX)g++
++FreeBSD-x86_STRIP        := $(CROSS_PREFIX)strip
++FreeBSD-x86_CXXFLAGS     := -I$(JAVA_HOME)/include -Ilib/inc_mac -O2 -fPIC -fvisibility=hidden
++FreeBSD-x86_LINKFLAGS    := -shared -static-libgcc
++FreeBSD-x86_LIBNAME      := libsnappyjava.so
++FreeBSD-x86_SNAPPY_FLAGS :=
+ 
+ FreeBSD-x86_64_CXX          := $(CROSS_PREFIX)g++
+ FreeBSD-x86_64_STRIP        := $(CROSS_PREFIX)strip
