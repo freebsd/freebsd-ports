@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	opengrok-tools
-PORTVERSION=	1.3.3
+PORTVERSION=	1.3.11
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenGrok tools for synchronization and mirroring
 
 LICENSE=	CDDL
@@ -30,8 +30,5 @@ GH_PROJECT=	opengrok
 
 BUILD_WRKSRC=	${WRKSRC}/opengrok-tools
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|requests\=\=|requests>=|g' ${BUILD_WRKSRC}/requirements.txt
 
 .include <bsd.port.mk>
