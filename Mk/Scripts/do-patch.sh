@@ -39,10 +39,22 @@ cat_file() {
 	esac
 }
 
+# If we want to continue when one patch fails, set the flag, otherwise, abort.
+if [ -n "${dp_PATCH_CONTINUE_ON_FAIL}" ]; then
+	failure_fatal() {
+		has_failed=1
+	}
+else
+	failure_fatal() {
+		false
+	}
+fi
+
 apply_one_patch() {
 	local file="$1"
 	local msg="$2"
-	shift 2
+	local verbose="$3"
+	shift 3
 	local patch_strip=""
 
 	case ${file} in
@@ -52,13 +64,13 @@ apply_one_patch() {
 			;;
 	esac
 
-	if [ -n "${msg}" ]; then
+	if [ -n "${verbose}" -o -n "${dp_PATCH_DEBUG_TMP}" ]; then
 		${dp_ECHO_MSG} "===>  Applying ${msg} ${file}${patch_strip:+ with ${patch_strip}}"
 	fi
 
 	if ! cat_file "$file" | do_patch "$@" ${patch_strip}; then
 		${dp_ECHO_MSG} "===>  FAILED Applying ${msg} ${file}${patch_strip:+ with ${patch_strip}}"
-		has_failed=1
+		false
 	fi
 }
 
@@ -77,7 +89,7 @@ patch_from_directory() {
 
 		if [ "$(echo patch-*)" != "patch-*" ]; then
 
-			${dp_ECHO_MSG} "===>  Applying ${msg} patches for ${dp_PKGNAME}"
+			${dp_ECHO_MSG} "===>  Applying ${msg} patches for ${dp_PKGNAME} from ${dir}"
 
 
 			for i in patch-*; do
@@ -86,25 +98,26 @@ patch_from_directory() {
 						${dp_ECHO_MSG} "====>   IGNORING patchfile ${i}"
 						;;
 					*)
-						if [ -n "${dp_PATCH_DEBUG_TMP}" ]; then
-							${dp_ECHO_MSG} "====>  Applying ${msg} patch ${i}"
-						fi
-						if cat_file "$i" | do_patch ${dp_PATCH_ARGS}; then
+						if apply_one_patch "${i}" "${msg}" "" ${dp_PATCH_ARGS}; then
 							patches_applied="${patches_applied} ${i}"
 						else
-							${dp_ECHO_MSG} "====> FAILED Applying ${msg} patch ${i}"
 							patches_failed="${patches_failed} ${i}"
+							if ! failure_fatal; then
+								break
+							fi
 						fi
 						;;
 				esac
 			done
 
-			if [ -n "${patches_applied}" -a "${dp_PATCH_SILENT}" != "yes" ]; then
-				${dp_ECHO_MSG} "===> Cleanly applied ${msg} patch(es) ${patches_applied}"
-			fi
 			if [ -n "${patches_failed}" -a "${dp_PATCH_SILENT}" != "yes" ]; then
+				if [ -n "${patches_applied}" ]; then
+					${dp_ECHO_MSG} "===> Cleanly applied ${msg} patch(es) ${patches_applied}"
+				fi
 				${dp_ECHO_MSG} "===> FAILED to apply cleanly ${msg} patch(es) ${patches_failed}"
-				has_failed=1
+				# If we want to stop after the first failure, this returns false,
+				# let its return value bubble up here and stop everything.
+				failure_fatal
 			fi
 		fi
 	fi
@@ -114,9 +127,12 @@ if [ -n "${dp_PATCHFILES}" ]; then
 	${dp_ECHO_MSG} "===>  Applying distribution patches for ${dp_PKGNAME}"
 	cd "${dp_DISTDIR}"
 	for i in ${dp_PATCHFILES}; do
-		apply_one_patch "${i}" \
-			"${dp_PATCH_DEBUG_TMP:+ distribution patch}" \
-			${dp_PATCH_DIST_ARGS}
+		if ! apply_one_patch "${i}" \
+			"distribution patch" \
+			"" \
+			${dp_PATCH_DIST_ARGS}; then
+			failure_fatal
+		fi
 	done
 fi
 
@@ -126,9 +142,12 @@ if [ -n "${dp_EXTRA_PATCHES}" ]; then
 			patch_from_directory "${i}" \
 				"extra patch"
 		else
-			apply_one_patch "${i}" \
+			if ! apply_one_patch "${i}" \
 				"extra patch" \
-				${dp_PATCH_ARGS}
+				"verbose" \
+				${dp_PATCH_ARGS}; then
+				failure_fatal
+			fi
 		fi
 	done
 fi
@@ -140,8 +159,10 @@ if [ -n "${dp_EXTRA_PATCH_TREE}" ]; then
 fi
 
 if [ -n "$has_failed" ]; then
-	${dp_ECHO_MSG} "==> SOME PATCHES FAILED TO APPLY CLEANLY."
-	${dp_ECHO_MSG} "==> Look for FAILED messages above."
+	if [ -n "${dp_PATCH_DEBUG_TMP}" ]; then
+		${dp_ECHO_MSG} "==> Some patches failed to apply cleanly."
+		${dp_ECHO_MSG} "==> Look for FAILED messages above."
+	fi
 	false
 fi
 

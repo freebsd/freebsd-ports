@@ -10,6 +10,16 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20200514:
+AUTHOR: mat@FreeBSD.org
+
+  Add PATCH_CONTINUE_ON_FAIL to allow patching to go through all the patches
+  even if one fail.
+
+  This helps when upgrading ports with a large number of patches, like
+  www/chromium where having to fix one patch, re-do the patching, fix the
+  fallout, 800 times, is really painful.
+
 20200414:
 AUTHOR: bapt@FreeBSD.org
 
