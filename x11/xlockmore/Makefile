@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xlockmore
-PORTVERSION=	5.62
+PORTVERSION=	5.63
 CATEGORIES=	x11
 MASTER_SITES=	http://www.sillycycle.com/xlock/ \
 		SF/bsdsrc/${.CURDIR:T}
