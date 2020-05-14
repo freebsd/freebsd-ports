@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	handbrake
-DISTVERSION=	1.3.1
+DISTVERSION=	1.3.2
 CATEGORIES=	multimedia
 DIST_SUBDIR=	${PORTNAME}
 
@@ -47,7 +47,9 @@ CONTRIB_FILES=	fdk-aac-2.0.1.tar.gz \
 		libdvdread-6.0.2.tar.bz2 \
 		dav1d-0.5.1.tar.bz2 \
 		x265_3.2.1.tar.gz
-MASTER_SITES+=	https://download.handbrake.fr/contrib/:contrib
+
+MASTER_SITES+= https://github.com/HandBrake/HandBrake-contribs/releases/download/contribs/:contrib
+
 
 DISTFILES+=	${CONTRIB_FILES:S/$/:contrib/}
 
@@ -124,8 +126,6 @@ post-extract: .SILENT
 # for powerpc64.
 # picked from multimedia/ffmpeg/files/patch-libswscale_ppc_swscale__altivec.c
 	${CP} ${FILESDIR}/P02-freebsd-ppc-libswscale.patch ${WRKSRC}/contrib/ffmpeg
-# fix pkgconfig directory name for meson build
-	${CP} ${FILESDIR}/A01-src-meson-build.patch ${WRKSRC}/contrib/libdav1d
 
 post-install-X11-on:
 	${LN} -sf ghb ${STAGEDIR}${PREFIX}/bin/HandBrake
