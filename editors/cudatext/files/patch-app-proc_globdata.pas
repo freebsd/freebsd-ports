@@ -1,16 +1,17 @@
---- app/proc_globdata.pas	2019-12-25 06:22:53.000000000 -0500
-+++ app/proc_globdata.pas	2019-12-31 02:48:45.328993000 -0500
-@@ -916,6 +916,9 @@
-   Result:=
-     {$ifdef linux} 
-     '/usr/share/cudatext'
-+    {$endif}
-+    {$ifdef freebsd}
-+    '%%DATADIR%%'
-     {$else} 
-       {$ifdef darwin} 
-       ExtractFileDir(OpDirExe)+'/Resources'
-@@ -986,6 +989,10 @@
+--- app/proc_globdata.pas	2020-05-11 23:45:28.000000000 -0500
++++ app/proc_globdata.pas	2020-05-13 18:40:54.377841000 -0500
+@@ -909,6 +909,10 @@
+   exit(ExtractFileDir(OpDirExe)+'/Resources');
+   {$endif}
+ 
++  {$ifdef freebsd}
++  exit('%%DATADIR%%');
++  {$endif}
++
+   Result:= '';
+ end;
+ 
+@@ -973,6 +977,10 @@
    OpDirLocal:= AppDir_Home+'Library/Application Support/CudaText';
    CreateDirUTF8(OpDirLocal);
    {$endif}
@@ -21,10 +22,10 @@
  
    AppDir_Settings:= OpDirLocal+DirectorySeparator+'settings';
    CreateDirUTF8(AppDir_Settings);
-@@ -1001,6 +1008,15 @@
-           '/usr/share/cudatext/data',
-           '/usr/share/cudatext/settings_default'
-           ], S);
+@@ -1000,6 +1008,15 @@
+         OpDirPrecopy+'/',
+         OpDirLocal
+         ], S);
 +  {$endif}
 +  {$ifdef freebsd}
 +    RunCommand('cp', ['-R',
@@ -35,5 +36,5 @@
 +        OpDirLocal
 +         ], S);
    {$endif}
-   {$ifdef darwin}
-   if IsDistroUpdateNeeded then
+ 
+   AppDir_Py:= OpDirLocal+DirectorySeparator+'py';

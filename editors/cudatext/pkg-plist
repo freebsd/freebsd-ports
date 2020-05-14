@@ -7,11 +7,8 @@ share/applications/cudatext.desktop
 %%DATADIR%%/data/autocomplete/JavaScript.acp
 %%DATADIR%%/data/autocomplete/Lua.acp
 %%DATADIR%%/data/autocomplete/PHP_.acp
-%%DATADIR%%/data/autocomplete/Pascal.acp
-%%DATADIR%%/data/autocomplete/PowerShell.acp
 %%DATADIR%%/data/autocomplete/Python.acp
 %%DATADIR%%/data/autocomplete/Resource script.acp
-%%DATADIR%%/data/autocomplete/Ruby.acp
 %%DATADIR%%/data/autocomplete/SQL.acp
 %%DATADIR%%/data/autocomplete/VBScript.acp
 %%DATADIR%%/data/autocompletespec/css_list.ini
@@ -359,8 +356,6 @@ share/applications/cudatext.desktop
 %%DATADIR%%/data/lexlib/C.lcf
 %%DATADIR%%/data/lexlib/CSS.cuda-lexmap
 %%DATADIR%%/data/lexlib/CSS.lcf
-%%DATADIR%%/data/lexlib/Diff.cuda-lexmap
-%%DATADIR%%/data/lexlib/Diff.lcf
 %%DATADIR%%/data/lexlib/HTML.cuda-lexmap
 %%DATADIR%%/data/lexlib/HTML.lcf
 %%DATADIR%%/data/lexlib/Ini files.cuda-lexmap
@@ -373,24 +368,14 @@ share/applications/cudatext.desktop
 %%DATADIR%%/data/lexlib/JavaScript.lcf
 %%DATADIR%%/data/lexlib/Lua.cuda-lexmap
 %%DATADIR%%/data/lexlib/Lua.lcf
-%%DATADIR%%/data/lexlib/Makefile.cuda-lexmap
-%%DATADIR%%/data/lexlib/Makefile.lcf
 %%DATADIR%%/data/lexlib/Markdown.cuda-lexmap
 %%DATADIR%%/data/lexlib/Markdown.lcf
 %%DATADIR%%/data/lexlib/PHP.cuda-lexmap
 %%DATADIR%%/data/lexlib/PHP.lcf
 %%DATADIR%%/data/lexlib/PHP_.cuda-lexmap
 %%DATADIR%%/data/lexlib/PHP_.lcf
-%%DATADIR%%/data/lexlib/Pascal.cuda-lexmap
-%%DATADIR%%/data/lexlib/Pascal.lcf
-%%DATADIR%%/data/lexlib/PowerShell.cuda-lexmap
-%%DATADIR%%/data/lexlib/PowerShell.lcf
-%%DATADIR%%/data/lexlib/Properties.cuda-lexmap
-%%DATADIR%%/data/lexlib/Properties.lcf
 %%DATADIR%%/data/lexlib/Python.cuda-lexmap
 %%DATADIR%%/data/lexlib/Python.lcf
-%%DATADIR%%/data/lexlib/Ruby.cuda-lexmap
-%%DATADIR%%/data/lexlib/Ruby.lcf
 %%DATADIR%%/data/lexlib/Search results.cuda-lexmap
 %%DATADIR%%/data/lexlib/Search results.lcf
 %%DATADIR%%/data/lexlib/VBScript.cuda-lexmap
@@ -414,9 +399,7 @@ share/applications/cudatext.desktop
 %%DATADIR%%/data/newdoc/default.css
 %%DATADIR%%/data/newdoc/default.js
 %%DATADIR%%/data/newdoc/default.php
-%%DATADIR%%/data/newdoc/default.pl
 %%DATADIR%%/data/newdoc/default.py
-%%DATADIR%%/data/newdoc/default.rb
 %%DATADIR%%/data/newdoc/default.vbs
 %%DATADIR%%/data/newdoc/default.xml
 %%DATADIR%%/data/newdoc/html.htm
@@ -624,6 +607,7 @@ share/applications/cudatext.desktop
 %%DATADIR%%/data/themes/navy.cuda-theme-ui
 %%DATADIR%%/data/themes/sub.cuda-theme-syntax
 %%DATADIR%%/data/themes/sub.cuda-theme-ui
+%%DATADIR%%/data/themes/white.cuda-theme-syntax
 %%DATADIR%%/data/themes/white.cuda-theme-ui
 %%DATADIR%%/data/themes/zeus.cuda-theme-syntax
 %%DATADIR%%/data/themes/zeus.cuda-theme-ui
@@ -659,6 +643,7 @@ share/applications/cudatext.desktop
 %%DATADIR%%/py/cuda_comments/install.inf
 %%DATADIR%%/py/cuda_emmet/__init__.py
 %%DATADIR%%/py/cuda_emmet/content.css
+%%DATADIR%%/py/cuda_emmet/dlg_emmet.py
 %%DATADIR%%/py/cuda_emmet/help.html
 %%DATADIR%%/py/cuda_emmet/install.inf
 %%DATADIR%%/py/cuda_emmet/proc_snip_insert.py
@@ -666,6 +651,10 @@ share/applications/cudatext.desktop
 %%DATADIR%%/py/cuda_insert_time/__init__.py
 %%DATADIR%%/py/cuda_insert_time/cuda_insert_time.ini
 %%DATADIR%%/py/cuda_insert_time/install.inf
+%%DATADIR%%/py/cuda_lexer_detecter/__init__.py
+%%DATADIR%%/py/cuda_lexer_detecter/cuda_gen_types.py
+%%DATADIR%%/py/cuda_lexer_detecter/install.inf
+%%DATADIR%%/py/cuda_lexer_detecter/lexertypes.py
 %%DATADIR%%/py/cuda_make_plugin/__init__.py
 %%DATADIR%%/py/cuda_make_plugin/dlg.py
 %%DATADIR%%/py/cuda_make_plugin/events.py
@@ -690,6 +679,7 @@ share/applications/cudatext.desktop
 %%DATADIR%%/py/cuda_project_man/__init__.py
 %%DATADIR%%/py/cuda_project_man/install.inf
 %%DATADIR%%/py/cuda_project_man/projman_dlg.py
+%%DATADIR%%/py/cuda_project_man/projman_glob.py
 %%DATADIR%%/py/cuda_project_man/readme/history.txt
 %%DATADIR%%/py/cuda_project_man/readme/license.txt
 %%DATADIR%%/py/cuda_project_man/readme/readme.txt
@@ -735,7 +725,6 @@ share/applications/cudatext.desktop
 %%DATADIR%%/py/cuda_tree_markdown/install.inf
 %%DATADIR%%/py/cudatext.py
 %%DATADIR%%/py/cudatext_cmd.py
-%%DATADIR%%/py/cudatext_init.py
 %%DATADIR%%/py/cudatext_keys.py
 %%DATADIR%%/py/cudatext_reset_plugins.py
 %%DATADIR%%/py/cudax_lib.py
@@ -883,7 +872,6 @@ share/applications/cudatext.desktop
 %%DATADIR%%/settings_default/lexer Bash script.json
 %%DATADIR%%/settings_default/lexer C++.json
 %%DATADIR%%/settings_default/lexer C.json
-%%DATADIR%%/settings_default/lexer CSS.json
 %%DATADIR%%/settings_default/lexer JSON.json
 %%DATADIR%%/settings_default/lexer JavaScript.json
 %%DATADIR%%/settings_default/lexer Lua.json
