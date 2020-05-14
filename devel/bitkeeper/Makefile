@@ -31,6 +31,6 @@ do-build:
 	@(cd ${WRKSRC}; ${MAKE_CMD} ${ALL_TARGET})
 
 post-install:
-	@cd ${STAGEDIR}${PREFIX}/bin/ && ${LN} -s ../bitkeeper/bk
+	${LN} -s ../bitkeeper/bk ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
