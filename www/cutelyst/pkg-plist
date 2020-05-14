@@ -187,10 +187,12 @@ man/man5/Cutelyst2Qt5Session.5.gz
 %%DATADIR%%2/translations/cutelystcore.en.qm
 %%DATADIR%%2/translations/cutelystwsgi.en.qm
 %%DATADIR%%2/translations/plugin_csrfprotection.de.qm
-%%DATADIR%%2/translations/plugin_memcached.de.qm
-%%DATADIR%%2/translations/plugin_utils_validator.de.qm
-%%DATADIR%%2/translations/plugin_view_grantlee.de.qm
 %%DATADIR%%2/translations/plugin_csrfprotection.en.qm
+%%DATADIR%%2/translations/plugin_memcached.de.qm
 %%DATADIR%%2/translations/plugin_memcached.en.qm
+%%DATADIR%%2/translations/plugin_utils_validator.de.qm
 %%DATADIR%%2/translations/plugin_utils_validator.en.qm
+%%DATADIR%%2/translations/plugin_view_cutelee.de.qm
+%%DATADIR%%2/translations/plugin_view_cutelee.en.qm
+%%DATADIR%%2/translations/plugin_view_grantlee.de.qm
 %%DATADIR%%2/translations/plugin_view_grantlee.en.qm
