@@ -70,6 +70,7 @@
     SUBDIR += elmerfem
     SUBDIR += epte
     SUBDIR += erd
+    SUBDIR += ergo
     SUBDIR += erkale
     SUBDIR += erkale-pseudopotentials
     SUBDIR += fastcap

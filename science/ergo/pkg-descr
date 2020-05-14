@@ -1,0 +1,22 @@
+Ergo is a quantum chemistry program for large-scale self-consistent
+field calculations.
+
+Key features of the Ergo program:
+* Performs electronic structure calculations using Hartree-Fock and
+  Kohn-Sham density functional theory.
+* Written in C++.
+* Uses Gaussian basis sets.
+* Both core and valence electrons are included in the calculations.
+* Both restricted and unrestricted models are implemented for energy
+  calculations.
+* Implements a broad range of both pure and hybrid Kohn-Sham density
+  functionals.
+* Employs modern linear scaling techniques like fast multipole
+  methods, hierarchic sparse matrix algebra, density matrix
+  purification, and efficient integral screening.
+* Linear scaling is achieved not only in terms of CPU usage but also
+  memory utilization.
+* The time consuming parts of the code are currently parallelized
+  using the shared-memory paradigm.
+
+WWW: http://www.ergoscf.org/
