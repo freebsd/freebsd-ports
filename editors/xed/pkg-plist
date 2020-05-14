@@ -23,6 +23,8 @@ lib/xed/girepository-1.0/Xed-1.0.typelib
 lib/xed/libxed.so
 lib/xed/plugins/docinfo.plugin
 lib/xed/plugins/filebrowser.plugin
+lib/xed/plugins/joinlines.plugin
+lib/xed/plugins/joinlines/__init__.py
 lib/xed/plugins/libdocinfo.so
 lib/xed/plugins/libfilebrowser.so
 lib/xed/plugins/libmodelines.so
