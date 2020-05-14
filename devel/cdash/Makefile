@@ -8,7 +8,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.cdash.org/wp-content/uploads/2014/11/
 DISTNAME=	CDash-2-2-3
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Web-based software testing server
 
 LICENSE=	BSD3CLAUSE
