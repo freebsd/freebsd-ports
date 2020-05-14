@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	protracker
-PORTVERSION=	1.12
+PORTVERSION=	1.15
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	2
 CATEGORIES=	audio
-MASTER_SITES=	LOCAL/ehaupt
-DISTFILES=	${PORTNAME}-extras-1${EXTRACT_SUFX}
+MASTER_SITES=	LOCAL/ehaupt:extras
+DISTFILES=	${PORTNAME}-extras-1${EXTRACT_SUFX}:extras
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Amiga ProTracker clone
@@ -18,15 +18,15 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib
 
 USES=		cmake localbase:ldflags sdl
 USE_CSTD=	c99
-USE_SDL=	sdl2
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	8bitbubsy
 GH_PROJECT=	pt2-clone
+USE_SDL=	sdl2
 
 CFLAGS_i386+=	-msse2
 
-PLIST_FILES=	bin/protracker man/man1/protracker.1.gz \
+PLIST_FILES=	bin/protracker \
+		man/man1/protracker.1.gz \
 		share/applications/protracker.desktop \
 		share/pixmaps/protracker.png
 
