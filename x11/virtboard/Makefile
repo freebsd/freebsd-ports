@@ -6,8 +6,8 @@ DISTVERSION=	0.0.6
 CATEGORIES=	x11
 
 PATCH_SITES=	${GL_SITE}/jbeich/${GL_PROJECT}/commit/
-PATCHFILES+=	42e698964e42.patch:-p1
-PATCHFILES+=	86e6915d4920.patch:-p1
+PATCHFILES+=	42e698964e42.diff:-p1
+PATCHFILES+=	86e6915d4920.diff:-p1
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Basic keyboard, blazing the path of modern Wayland keyboards

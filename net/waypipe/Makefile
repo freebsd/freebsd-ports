@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	net
 
 PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/commit/
-PATCHFILES+=	9f0b9f2e8929.patch:-p1
+PATCHFILES+=	9f0b9f2e8929.diff:-p1
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Network transparency with Wayland
