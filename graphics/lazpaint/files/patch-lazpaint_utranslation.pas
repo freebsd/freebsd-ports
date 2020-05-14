@@ -1,18 +1,18 @@
---- lazpaint/utranslation.pas	2019-12-30 23:16:40.903045000 -0500
-+++ lazpaint/utranslation.pas	2019-12-30 23:26:13.503822000 -0500
+--- lazpaint/utranslation.pas	2020-05-13 16:32:15.701490000 -0500
++++ lazpaint/utranslation.pas	2020-05-13 16:51:08.348905000 -0500
 @@ -60,10 +60,13 @@
    {$ELSE}
      {$IFDEF DARWIN}
-     if DirectoryExists(GetResourcesPath+'i18n') then
--      result := GetResourcesPath+'i18n'+PathDelim
+     if DirectoryExists(GetDarwinResourcesPath+AResource) then
+-      result := GetDarwinResourcesPath+AResource+PathDelim
 -    else
-+      result := GetResourcesPath+'i18n'+PathDelim;
++      result := GetDarwinResourcesPath+AResource+PathDelim;
      {$ENDIF}
--    result:=ExtractFilePath(Application.ExeName)+'i18n'+PathDelim;
+-    result:=ExtractFilePath(Application.ExeName)+AResource+PathDelim;
 +    {$IFDEF FREEBSD}
-+      result:='%%DATADIR%%'+PathDelim+'i18n'+PathDelim;
++      result:='%%DATADIR%%'+PathDelim+AResource+PathDelim;
 +    {$ELSE}
-+      result:=ExtractFilePath(Application.ExeName)+'i18n'+PathDelim;
++      result:=ExtractFilePath(Application.ExeName)+AResource+PathDelim;
 +    {$ENDIF}
    {$ENDIF}
  end;
