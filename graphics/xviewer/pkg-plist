@@ -25,7 +25,6 @@ include/xviewer-3.0/xviewer/xviewer-window.h
 lib/xviewer/girepository-1.0/Xviewer-3.0.typelib
 lib/xviewer/libxviewer.so
 libdata/pkgconfig/xviewer.pc
-share/GConf/gsettings/xviewer.convert
 share/appdata/xviewer.appdata.xml
 share/applications/xviewer.desktop
 share/help/C/xviewer/commandline.page

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xviewer
-PORTVERSION=	2.4.3
+PORTVERSION=	2.6.0
 CATEGORIES=	graphics
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -10,14 +10,17 @@ COMMENT=	Fast and functional image viewer
 
 LICENSE=	GPLv2+
 
-BUILD_DEPENDS=	intltool-update:textproc/intltool \
+PORTSCOUT=	limit:^[0-9.]+$$	# ignore master.mint* tags
+
+BUILD_DEPENDS=	${LOCALBASE}/share/aclocal/gtk-doc.m4:textproc/gtk-doc \
+		intltool-update:textproc/intltool \
 		itstool:textproc/itstool \
 		${LOCALBASE}/share/aclocal/yelp.m4:textproc/yelp-tools
 LIB_DEPENDS=	libcinnamon-desktop.so:x11/cinnamon-desktop \
 		libpeas-1.0.so:devel/libpeas
 
 USES=		autoreconf compiler:c++11-lang desktop-file-utils gettext-tools \
-		gmake gnome libtool localbase pkgconfig
+		gmake gnome libtool localbase pkgconfig xorg
 GNU_CONFIGURE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint
