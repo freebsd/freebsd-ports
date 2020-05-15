@@ -3,6 +3,7 @@
 PORTNAME=	node
 PORTVERSION=	13.13.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
 
@@ -43,7 +44,7 @@ NLS_LIB_DEPENDS=	libicui18n.so:devel/icu
 
 DTRACE_CONFIGURE_ON=	--with-dtrace
 
-USES=		compiler:c++11-lib gmake python:2.7,build pkgconfig \
+USES=		compiler:c++11-lib gmake python:build pkgconfig \
 		localbase shebangfix
 
 HAS_CONFIGURE=	yes
@@ -57,7 +58,10 @@ CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} \
 		--shared-nghttp2 \
 		--shared-zlib
 
-SHEBANG_FILES=	tools/specialize_node_d.py tools/genv8constants.py
+SHEBANG_FILES=	deps/v8/tools/*.py \
+		deps/v8/third_party/inspector_protocol/*.py \
+		tools/*.py \
+		tools/inspector_protocol/*.py
 
 PREFIX_RELDEST=	${PREFIX:S,^${DESTDIR},,}
 REINPLACE_ARGS=	-i ''
