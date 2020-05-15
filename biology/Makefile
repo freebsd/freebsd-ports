@@ -143,6 +143,7 @@
     SUBDIR += ruby-bio
     SUBDIR += rubygem-bio
     SUBDIR += samtools
+    SUBDIR += scrm
     SUBDIR += seaview
     SUBDIR += seqan
     SUBDIR += seqan-apps

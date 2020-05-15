@@ -1,0 +1,8 @@
+scrm simulates the evolution of genetic sequences. It takes a neutral
+evolutionary model as input, and generates random sequences that evolved under
+the model. As coalescent simulator, it traces the ancestry of the sampled
+sequences backwards in time and is therefore extremely efficient. Compared to
+other coalescent simulators, it can simulate chromosome-scale sequences without
+a measureable reduction of genetic linkage between different sites.
+
+WWW: https://scrm.github.io/
