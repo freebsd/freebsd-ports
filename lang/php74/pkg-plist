@@ -137,6 +137,8 @@ include/php/ext/pcre/pcre2lib/config.h
 include/php/ext/pcre/pcre2lib/pcre2.h
 include/php/ext/pcre/pcre2lib/pcre2_internal.h
 include/php/ext/pcre/pcre2lib/pcre2_intmodedep.h
+include/php/ext/pcre/pcre2lib/pcre2_jit_neon_inc.h
+include/php/ext/pcre/pcre2lib/pcre2_jit_simd_inc.h
 include/php/ext/pcre/pcre2lib/pcre2_ucp.h
 include/php/ext/pcre/php_pcre.h
 include/php/ext/spl/php_spl.h
