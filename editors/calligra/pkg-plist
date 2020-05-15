@@ -6897,7 +6897,9 @@ share/locale/ru/LC_MESSAGES/calligra_shape_paths.mo
 share/locale/ru/LC_MESSAGES/calligra_shape_picture.mo
 share/locale/ru/LC_MESSAGES/calligra_shape_plugin.mo
 share/locale/ru/LC_MESSAGES/calligra_shape_spreadsheet.mo
+share/locale/ru/LC_MESSAGES/calligra_shape_template.mo
 share/locale/ru/LC_MESSAGES/calligra_shape_text.mo
+share/locale/ru/LC_MESSAGES/calligra_shape_threed.mo
 share/locale/ru/LC_MESSAGES/calligra_shape_vector.mo
 share/locale/ru/LC_MESSAGES/calligra_shape_video.mo
 share/locale/ru/LC_MESSAGES/calligra_textediting_autocorrect.mo
