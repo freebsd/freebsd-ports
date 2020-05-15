@@ -47,6 +47,11 @@ INSTALL_BINS=	certutil cmsutil crlutil derdump makepqg \
 		ssltap strsclnt symkeyutil vfychain vfyserv
 
 OPTIONS_DEFINE=	DEBUG
+OPTIONS_DEFINE_powerpc64=	VSX
+OPTIONS_DEFINE_powerpc=	VSX
+
+VSX_CFLAGS=	-DUSE_PPC_CRYPTO
+VSX_DESC=	Use VSX optimized routines (POWER8 or newer)
 
 .include <bsd.port.options.mk>
 
@@ -57,7 +62,8 @@ BINS=		${DIST}/${OPSYS}${OSREL}_OPT.OBJ
 BINS=		${DIST}/${OPSYS}${OSREL}_DBG.OBJ
 .endif
 
-.if ${ARCH} == powerpc64
+.if ${ARCH} == powerpc64 || ${ARCH} == powerpc
+EXTRA_PATCHES=	${FILESDIR}/${ARCH}${PPC_ABI:tl}-lib_freebl_scripts_gen.sh
 USES+=		compiler:c++11-lang # -mcrypto -mvsx
 .else
 MAKE_ENV+=	NSS_DISABLE_ALTIVEC=1
@@ -88,6 +94,11 @@ post-patch:
 	@cd ${WRKSRC} && \
 		${FIND} . -name "*.c" -o -name "*.h" | \
 		${XARGS} ${REINPLACE_CMD} -e 's|"nspr.h"|<nspr.h>|'
+
+#.if ${ARCH} == powerpc64 || ${ARCH} == powerpc
+#pre-build:
+#	@cd ${WRKSRC}/lib/freebl/scripts && ./gen.sh
+#.endif
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/nss ${STAGEDIR}${PREFIX}/lib
