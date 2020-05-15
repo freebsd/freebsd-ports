@@ -15,7 +15,7 @@ LIB_DEPENDS=	libblas.so:math/blas \
 		liblapack.so:math/lapack
 TEST_DEPENDS=	bash:shells/bash
 
-USES=		69619.pts-12.portsjail gmake localbase shebangfix
+USES=		compiler:c++11-lang gmake localbase shebangfix
 
 SHEBANG_FILES=	test/check_eigenvectors.sh test/compare_homo_lumo.sh
 
