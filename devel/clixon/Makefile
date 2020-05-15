@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	clixon
-PORTVERSION=	4.4.0
-PORTREVISION=	1
+PORTVERSION=	4.5.0
 CATEGORIES=	devel
 
 MAINTAINER=	dcornejo@netgate.com
