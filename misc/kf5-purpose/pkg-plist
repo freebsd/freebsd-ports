@@ -499,6 +499,7 @@ share/locale/sl/LC_MESSAGES/purpose_phabricator.mo
 share/locale/sl/LC_MESSAGES/purpose_reviewboard.mo
 share/locale/sl/LC_MESSAGES/purpose_saveas.mo
 share/locale/sl/LC_MESSAGES/purpose_youtube.mo
+share/locale/sq/LC_MESSAGES/purpose_youtube.mo
 share/locale/sv/LC_MESSAGES/libpurpose_quick.mo
 share/locale/sv/LC_MESSAGES/libpurpose_widgets.mo
 share/locale/sv/LC_MESSAGES/purpose-fileitemaction.mo

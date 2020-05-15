@@ -48,6 +48,7 @@ lib/libKF5Kirigami2.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/kirigami.2/PagePoolAction.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/PageRow.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/PasswordField.qml
+%%QT_QMLDIR%%/org/kde/kirigami.2/PlaceholderMessage.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/ScrollablePage.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/SearchField.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/Separator.qml
