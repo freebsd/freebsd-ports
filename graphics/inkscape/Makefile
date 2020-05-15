@@ -47,7 +47,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 USES=		compiler:c++11-lib cmake cpe desktop-file-utils gnome \
 		iconv:wchar_t jpeg pathfix pkgconfig python:3.6+ \
 		shebangfix tar:xz xorg
-USE_GNOME=	gtkmm30 gvfs libxml2 libxslt
+USE_GNOME=	gtkmm30 libxml2 libxslt
 USE_XORG=	sm ice x11 xext
 USE_LDCONFIG=	yes
 
@@ -58,7 +58,7 @@ INSTALLS_ICONS=	yes
 SHEBANG_FILES=	share/extensions/*.py share/extensions/genpofiles.sh \
 		share/templates/*.py man/fix-roff-punct
 
-OPTIONS_DEFINE=		OPENMP POPPLER VISIO CDR DBUS WPG
+OPTIONS_DEFINE=		OPENMP POPPLER VISIO CDR DBUS WPG GVFS
 OPTIONS_DEFAULT=	POPPLER VISIO CDR WPG GM
 OPTIONS_DEFAULT_amd64=	OPENMP
 OPTIONS_SINGLE=		IMAGICK
@@ -73,6 +73,8 @@ CDR_LIB_DEPENDS=	librevenge-stream-0.0.so:textproc/librevenge \
 DBUS_CMAKE_BOOL=	WITH_DBUS
 DBUS_LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 			libdbus-1.so:devel/dbus
+
+GVFS_USE=		GNOME=gvfs
 
 OPENMP_USES=		compiler:openmp
 OPENMP_CMAKE_BOOL=	WITH_OPENMP
