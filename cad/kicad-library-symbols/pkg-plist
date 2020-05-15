@@ -34,6 +34,8 @@
 %%DATADIR%%/library/Audio.lib
 %%DATADIR%%/library/Battery_Management.dcm
 %%DATADIR%%/library/Battery_Management.lib
+%%DATADIR%%/library/Buffer.dcm
+%%DATADIR%%/library/Buffer.lib
 %%DATADIR%%/library/Comparator.dcm
 %%DATADIR%%/library/Comparator.lib
 %%DATADIR%%/library/Connector_Generic_MountingPin.dcm
@@ -50,6 +52,8 @@
 %%DATADIR%%/library/Converter_DCDC.lib
 %%DATADIR%%/library/CPLD_Altera.dcm
 %%DATADIR%%/library/CPLD_Altera.lib
+%%DATADIR%%/library/CPLD_Microchip.dcm
+%%DATADIR%%/library/CPLD_Microchip.lib
 %%DATADIR%%/library/CPLD_Xilinx.dcm
 %%DATADIR%%/library/CPLD_Xilinx.lib
 %%DATADIR%%/library/CPU_NXP_6800.dcm
@@ -86,6 +90,8 @@
 %%DATADIR%%/library/Driver_Motor.lib
 %%DATADIR%%/library/Driver_Relay.dcm
 %%DATADIR%%/library/Driver_Relay.lib
+%%DATADIR%%/library/Driver_TEC.dcm
+%%DATADIR%%/library/Driver_TEC.lib
 %%DATADIR%%/library/DSP_AnalogDevices.dcm
 %%DATADIR%%/library/DSP_AnalogDevices.lib
 %%DATADIR%%/library/DSP_Freescale.dcm
@@ -186,6 +192,8 @@
 %%DATADIR%%/library/MCU_Microchip_PIC24.lib
 %%DATADIR%%/library/MCU_Microchip_PIC32.dcm
 %%DATADIR%%/library/MCU_Microchip_PIC32.lib
+%%DATADIR%%/library/MCU_Microchip_SAMA.dcm
+%%DATADIR%%/library/MCU_Microchip_SAMA.lib
 %%DATADIR%%/library/MCU_Microchip_SAMD.dcm
 %%DATADIR%%/library/MCU_Microchip_SAMD.lib
 %%DATADIR%%/library/MCU_Microchip_SAME.dcm
@@ -212,6 +220,8 @@
 %%DATADIR%%/library/MCU_NXP_MAC7100.lib
 %%DATADIR%%/library/MCU_NXP_MCore.dcm
 %%DATADIR%%/library/MCU_NXP_MCore.lib
+%%DATADIR%%/library/MCU_NXP_NTAG.dcm
+%%DATADIR%%/library/MCU_NXP_NTAG.lib
 %%DATADIR%%/library/MCU_NXP_S08.dcm
 %%DATADIR%%/library/MCU_NXP_S08.lib
 %%DATADIR%%/library/MCU_Parallax.dcm

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kicad
-PORTVERSION=	5.1.5
-PORTREVISION=	1
+PORTVERSION=	5.1.6
 CATEGORIES=	cad
 MASTER_SITES=	https://kicad-downloads.s3.cern.ch/docs/
 PKGNAMESUFFIX=	-doc
