@@ -10,6 +10,7 @@ include/lammps/compute.h
 include/lammps/dihedral.h
 include/lammps/domain.h
 include/lammps/error.h
+%%EXCEPTIONS%%include/lammps/exceptions.h
 include/lammps/fix.h
 include/lammps/force.h
 include/lammps/group.h
