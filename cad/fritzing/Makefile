@@ -4,15 +4,11 @@
 PORTNAME=	fritzing
 PORTVERSION=	0.9.2
 DISTVERSIONSUFFIX=	b
-PORTREVISION=	18
+PORTREVISION=	19
 CATEGORIES=	cad
 
 MAINTAINER=	lenzi.sergio@gmail.com
 COMMENT=	CAD for printed circuit boards
-
-BROKEN=		unfetchable
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	GPLv2+
 
