@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	redmine
-PORTVERSION=	4.0.6
-PORTREVISION=	1
+PORTVERSION=	4.1.1
 CATEGORIES=	www
 MASTER_SITES=	https://www.redmine.org/releases/
 PKGNAMESUFFIX=	4
@@ -20,12 +19,12 @@ RUN_DEPENDS=	rubygem-bundler>=1.5.0:sysutils/rubygem-bundler \
 		rubygem-request_store>=1.0.5:devel/rubygem-request_store \
 		rubygem-mini_mime>=1.0.1:mail/rubygem-mini_mime \
 		rubygem-actionpack-xml_parser-rails52>=0:textproc/rubygem-actionpack-xml_parser-rails52 \
-		rubygem-roadie-rails-rails52>=1.3.0:mail/rubygem-roadie-rails-rails52 \
+		rubygem-roadie-rails-rails52>=2.1.0:mail/rubygem-roadie-rails-rails52 \
 		rubygem-mimemagic>=0:misc/rubygem-mimemagic \
 		rubygem-mail>=2.7.1:mail/rubygem-mail \
+		rubygem-csv>=3.1.1:devel/rubygem-csv \
 		rubygem-nokogiri>=1.10.0:textproc/rubygem-nokogiri \
 		rubygem-i18n>=0.7:devel/rubygem-i18n \
-		rubygem-sprockets3>=3.7.2:devel/rubygem-sprockets3 \
 		rubygem-rbpdf>=1.19.6:print/rubygem-rbpdf \
 		rubygem-net-ldap>=0.16:net/rubygem-net-ldap \
 		rubygem-ruby-openid>=2.9.2:net/rubygem-ruby-openid \
@@ -44,7 +43,7 @@ PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 SUB_LIST=	RUBY_NAME=${RUBY_NAME}
 
 OPTIONS_DEFINE=	MYSQL POSTGRESQL MARKDOWN RMAGIC THIN
-OPTIONS_DEFAULT=MYSQL MARKDOWN THIN
+OPTIONS_DEFAULT=MYSQL MARKDOWN RMAGIC THIN
 OPTIONS_SUB=	yes
 POSTGRESQL_DESC=Enable PostgreSQL support
 MARKDOWN_DESC=	Enable Markdown support
@@ -56,20 +55,12 @@ NO_OPTIONS_SORT=	yes
 MYSQL_RUN_DEPENDS=	rubygem-mysql2>=0.5.0:databases/rubygem-mysql2
 POSTGRESQL_RUN_DEPENDS=	rubygem-pg>=1.1.4:databases/rubygem-pg
 MARKDOWN_RUN_DEPENDS=	rubygem-redcarpet>=3.4.0:textproc/rubygem-redcarpet
-RMAGIC_RUN_DEPENDS=	rubygem-rmagick>=2.16.0:graphics/rubygem-rmagick
+RMAGIC_RUN_DEPENDS=	rubygem-mini_magick>=4.9.5:graphics/rubygem-mini_magick
 THIN_RUN_DEPENDS=	rubygem-thin>=1.6.2:www/rubygem-thin
 THIN_SUB_LIST=		WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 THIN_VARS=		USE_RC_SUBR=redmine
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MRMAGIC}
-# rubygem-mini_magick-4.10.1 wants imagemagick7
-# and rubygem-rmagick-2.16.0_6 wants imagemagick6
-# fixed in 4.1.0: https://www.redmine.org/projects/redmine/repository/revisions/18366
-# but not in 4.0-stable as of 2020/02/13
-BROKEN=	conflicting dependencies
-.endif
 
 post-extract:
 	@${RM} -r ${WRKSRC}/.hgignore ${WRKSRC}/.gitignore ${WRKSRC}/.github \
@@ -99,7 +90,7 @@ do-install-MARKDOWN-on:
 	${CP} ${FILESDIR}/markdown.rb ${STAGEDIR}${WWWDIR}/bundler.d
 
 do-install-RMAGIC-on:
-	${CP} ${FILESDIR}/rmagic.rb ${STAGEDIR}${WWWDIR}/bundler.d
+	${CP} ${FILESDIR}/mini_magick.rb ${STAGEDIR}${WWWDIR}/bundler.d
 
 do-install-THIN-on:
 	${CP} ${FILESDIR}/thin.rb ${STAGEDIR}${WWWDIR}/bundler.d

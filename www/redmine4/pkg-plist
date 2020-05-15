@@ -1,3 +1,5 @@
+%%WWWDIR%%/.rubocop.yml
+%%WWWDIR%%/.rubocop_todo.yml
 %%WWWDIR%%/CONTRIBUTING.md
 @owner %%WWWOWN%%
 @group %%WWWGRP%%
@@ -63,6 +65,7 @@
 %%WWWDIR%%/app/helpers/application_helper.rb
 %%WWWDIR%%/app/helpers/attachments_helper.rb
 %%WWWDIR%%/app/helpers/auth_sources_helper.rb
+%%WWWDIR%%/app/helpers/avatars_helper.rb
 %%WWWDIR%%/app/helpers/boards_helper.rb
 %%WWWDIR%%/app/helpers/calendars_helper.rb
 %%WWWDIR%%/app/helpers/context_menus_helper.rb
@@ -85,6 +88,7 @@
 %%WWWDIR%%/app/helpers/news_helper.rb
 %%WWWDIR%%/app/helpers/principal_memberships_helper.rb
 %%WWWDIR%%/app/helpers/projects_helper.rb
+%%WWWDIR%%/app/helpers/projects_queries_helper.rb
 %%WWWDIR%%/app/helpers/queries_helper.rb
 %%WWWDIR%%/app/helpers/reports_helper.rb
 %%WWWDIR%%/app/helpers/repositories_helper.rb
@@ -146,6 +150,7 @@
 %%WWWDIR%%/app/models/principal.rb
 %%WWWDIR%%/app/models/project.rb
 %%WWWDIR%%/app/models/project_custom_field.rb
+%%WWWDIR%%/app/models/project_query.rb
 %%WWWDIR%%/app/models/query.rb
 %%WWWDIR%%/app/models/repository.rb
 %%WWWDIR%%/app/models/repository/bazaar.rb
@@ -160,6 +165,7 @@
 %%WWWDIR%%/app/models/time_entry_activity.rb
 %%WWWDIR%%/app/models/time_entry_activity_custom_field.rb
 %%WWWDIR%%/app/models/time_entry_custom_field.rb
+%%WWWDIR%%/app/models/time_entry_import.rb
 %%WWWDIR%%/app/models/time_entry_query.rb
 %%WWWDIR%%/app/models/token.rb
 %%WWWDIR%%/app/models/tracker.rb
@@ -206,7 +212,6 @@
 %%WWWDIR%%/app/views/auth_sources/edit.html.erb
 %%WWWDIR%%/app/views/auth_sources/index.html.erb
 %%WWWDIR%%/app/views/auth_sources/new.html.erb
-%%WWWDIR%%/app/views/auto_completes/issues.html.erb
 %%WWWDIR%%/app/views/boards/_form.html.erb
 %%WWWDIR%%/app/views/boards/edit.html.erb
 %%WWWDIR%%/app/views/boards/index.html.erb
@@ -217,6 +222,7 @@
 %%WWWDIR%%/app/views/common/_diff.html.erb
 %%WWWDIR%%/app/views/common/_file.html.erb
 %%WWWDIR%%/app/views/common/_image.html.erb
+%%WWWDIR%%/app/views/common/_markup.html.erb
 %%WWWDIR%%/app/views/common/_no_preview.html.erb
 %%WWWDIR%%/app/views/common/_other.html.erb
 %%WWWDIR%%/app/views/common/_preview.html.erb
@@ -231,6 +237,9 @@
 %%WWWDIR%%/app/views/custom_field_enumerations/index.html.erb
 %%WWWDIR%%/app/views/custom_fields/_form.html.erb
 %%WWWDIR%%/app/views/custom_fields/_index.html.erb
+%%WWWDIR%%/app/views/custom_fields/_visibility_by_project_selector.html.erb
+%%WWWDIR%%/app/views/custom_fields/_visibility_by_role_selector.html.erb
+%%WWWDIR%%/app/views/custom_fields/_visibility_by_tracker_selector.html.erb
 %%WWWDIR%%/app/views/custom_fields/edit.html.erb
 %%WWWDIR%%/app/views/custom_fields/formats/_attachment.html.erb
 %%WWWDIR%%/app/views/custom_fields/formats/_bool.html.erb
@@ -287,7 +296,16 @@
 %%WWWDIR%%/app/views/groups/remove_user.js.erb
 %%WWWDIR%%/app/views/groups/show.api.rsb
 %%WWWDIR%%/app/views/groups/show.html.erb
-%%WWWDIR%%/app/views/imports/_fields_mapping.html.erb
+%%WWWDIR%%/app/views/imports/_issues_fields_mapping.html.erb
+%%WWWDIR%%/app/views/imports/_issues_mapping.html.erb
+%%WWWDIR%%/app/views/imports/_issues_mapping.js.erb
+%%WWWDIR%%/app/views/imports/_issues_saved_objects.html.erb
+%%WWWDIR%%/app/views/imports/_issues_sidebar.html.erb
+%%WWWDIR%%/app/views/imports/_time_entries_fields_mapping.html.erb
+%%WWWDIR%%/app/views/imports/_time_entries_mapping.html.erb
+%%WWWDIR%%/app/views/imports/_time_entries_mapping.js.erb
+%%WWWDIR%%/app/views/imports/_time_entries_saved_objects.html.erb
+%%WWWDIR%%/app/views/imports/_time_entries_sidebar.html.erb
 %%WWWDIR%%/app/views/imports/mapping.html.erb
 %%WWWDIR%%/app/views/imports/mapping.js.erb
 %%WWWDIR%%/app/views/imports/new.html.erb
@@ -317,15 +335,14 @@
 %%WWWDIR%%/app/views/issues/_action_menu.html.erb
 %%WWWDIR%%/app/views/issues/_action_menu_edit.html.erb
 %%WWWDIR%%/app/views/issues/_attributes.html.erb
-%%WWWDIR%%/app/views/issues/_changesets.html.erb
 %%WWWDIR%%/app/views/issues/_conflict.html.erb
 %%WWWDIR%%/app/views/issues/_edit.html.erb
 %%WWWDIR%%/app/views/issues/_form.html.erb
 %%WWWDIR%%/app/views/issues/_form_custom_fields.html.erb
-%%WWWDIR%%/app/views/issues/_history.html.erb
 %%WWWDIR%%/app/views/issues/_list.html.erb
 %%WWWDIR%%/app/views/issues/_relations.html.erb
 %%WWWDIR%%/app/views/issues/_sidebar.html.erb
+%%WWWDIR%%/app/views/issues/_trackers_description.html.erb
 %%WWWDIR%%/app/views/issues/_watchers_form.html.erb
 %%WWWDIR%%/app/views/issues/bulk_edit.html.erb
 %%WWWDIR%%/app/views/issues/bulk_edit.js.erb
@@ -340,6 +357,9 @@
 %%WWWDIR%%/app/views/issues/show.api.rsb
 %%WWWDIR%%/app/views/issues/show.html.erb
 %%WWWDIR%%/app/views/issues/show.pdf.erb
+%%WWWDIR%%/app/views/issues/tabs/_changesets.html.erb
+%%WWWDIR%%/app/views/issues/tabs/_history.html.erb
+%%WWWDIR%%/app/views/issues/tabs/_time_entries.html.erb
 %%WWWDIR%%/app/views/journals/_notes_form.html.erb
 %%WWWDIR%%/app/views/journals/diff.html.erb
 %%WWWDIR%%/app/views/journals/edit.js.erb
@@ -409,6 +429,7 @@
 %%WWWDIR%%/app/views/messages/quote.js.erb
 %%WWWDIR%%/app/views/messages/show.html.erb
 %%WWWDIR%%/app/views/my/_sidebar.html.erb
+%%WWWDIR%%/app/views/my/account.api.rsb
 %%WWWDIR%%/app/views/my/account.html.erb
 %%WWWDIR%%/app/views/my/add_block.js.erb
 %%WWWDIR%%/app/views/my/blocks/_activity.html.erb
@@ -431,6 +452,7 @@
 %%WWWDIR%%/app/views/news/index.api.rsb
 %%WWWDIR%%/app/views/news/index.html.erb
 %%WWWDIR%%/app/views/news/new.html.erb
+%%WWWDIR%%/app/views/news/show.api.rsb
 %%WWWDIR%%/app/views/news/show.html.erb
 %%WWWDIR%%/app/views/principal_memberships/_edit.html.erb
 %%WWWDIR%%/app/views/principal_memberships/_index.html.erb
@@ -443,10 +465,14 @@
 %%WWWDIR%%/app/views/principal_memberships/new.html.erb
 %%WWWDIR%%/app/views/principal_memberships/new.js.erb
 %%WWWDIR%%/app/views/principal_memberships/update.js.erb
+%%WWWDIR%%/app/views/projects/_board.html.erb
 %%WWWDIR%%/app/views/projects/_edit.html.erb
 %%WWWDIR%%/app/views/projects/_form.html.erb
+%%WWWDIR%%/app/views/projects/_list.html.erb
 %%WWWDIR%%/app/views/projects/_members_box.html.erb
+%%WWWDIR%%/app/views/projects/_sidebar.html.erb
 %%WWWDIR%%/app/views/projects/autocomplete.js.erb
+%%WWWDIR%%/app/views/projects/bookmark.js.erb
 %%WWWDIR%%/app/views/projects/copy.html.erb
 %%WWWDIR%%/app/views/projects/destroy.html.erb
 %%WWWDIR%%/app/views/projects/index.api.rsb
@@ -528,6 +554,7 @@
 %%WWWDIR%%/app/views/timelog/_form.html.erb
 %%WWWDIR%%/app/views/timelog/_list.html.erb
 %%WWWDIR%%/app/views/timelog/_report_criteria.html.erb
+%%WWWDIR%%/app/views/timelog/_sidebar.html.erb
 %%WWWDIR%%/app/views/timelog/bulk_edit.html.erb
 %%WWWDIR%%/app/views/timelog/bulk_edit.js.erb
 %%WWWDIR%%/app/views/timelog/edit.html.erb
@@ -618,7 +645,7 @@
 %%MARKDOWN%%%%WWWDIR%%/bundler.d/markdown.rb
 %%MYSQL%%%%WWWDIR%%/bundler.d/mysql.rb
 %%POSTGRESQL%%%%WWWDIR%%/bundler.d/pg.rb
-%%RMAGIC%%%%WWWDIR%%/bundler.d/rmagic.rb
+%%RMAGIC%%%%WWWDIR%%/bundler.d/mini_magick.rb
 %%THIN%%%%WWWDIR%%/bundler.d/thin.rb
 %%WWWDIR%%/config.ru
 %%WWWDIR%%/config/additional_environment.rb.example
@@ -971,9 +998,14 @@
 %%WWWDIR%%/db/migrate/20170418090031_add_view_news_to_all_existing_roles.rb
 %%WWWDIR%%/db/migrate/20170419144536_add_view_messages_to_all_existing_roles.rb
 %%WWWDIR%%/db/migrate/20170723112801_rename_comments_to_content.rb
+%%WWWDIR%%/db/migrate/20180501132547_add_author_id_to_time_entries.rb
 %%WWWDIR%%/db/migrate/20180913072918_add_verify_peer_to_auth_sources.rb
 %%WWWDIR%%/db/migrate/20180923082945_change_sqlite_booleans_to_0_and_1.rb
 %%WWWDIR%%/db/migrate/20180923091603_change_sqlite_booleans_default.rb
+%%WWWDIR%%/db/migrate/20190315094151_change_custom_values_value_limit.rb
+%%WWWDIR%%/db/migrate/20190315102101_add_trackers_description.rb
+%%WWWDIR%%/db/migrate/20190510070108_add_unique_id_to_import_items.rb
+%%WWWDIR%%/db/migrate/20190620135549_change_roles_name_limit.rb
 %%WWWDIR%%/doc/CHANGELOG
 %%WWWDIR%%/doc/COPYING
 %%WWWDIR%%/doc/INSTALL
@@ -1012,6 +1044,9 @@
 %%WWWDIR%%/lib/generators/redmine_plugin_controller/templates/functional_test.rb.erb
 %%WWWDIR%%/lib/generators/redmine_plugin_controller/templates/helper.rb.erb
 %%WWWDIR%%/lib/generators/redmine_plugin_controller/templates/view.html.erb
+%%WWWDIR%%/lib/generators/redmine_plugin_migration/USAGE
+%%WWWDIR%%/lib/generators/redmine_plugin_migration/redmine_plugin_migration_generator.rb
+%%WWWDIR%%/lib/generators/redmine_plugin_migration/templates/migration.rb.tt
 %%WWWDIR%%/lib/generators/redmine_plugin_model/USAGE
 %%WWWDIR%%/lib/generators/redmine_plugin_model/redmine_plugin_model_generator.rb
 %%WWWDIR%%/lib/generators/redmine_plugin_model/templates/migration.rb
@@ -1111,6 +1146,7 @@
 %%WWWDIR%%/lib/redmine/platform.rb
 %%WWWDIR%%/lib/redmine/plugin.rb
 %%WWWDIR%%/lib/redmine/pop3.rb
+%%WWWDIR%%/lib/redmine/project_jump_box.rb
 %%WWWDIR%%/lib/redmine/safe_attributes.rb
 %%WWWDIR%%/lib/redmine/scm/adapters.rb
 %%WWWDIR%%/lib/redmine/scm/adapters/abstract_adapter.rb
@@ -1398,6 +1434,7 @@
 %%WWWDIR%%/public/images/comment.png
 %%WWWDIR%%/public/images/comments.png
 %%WWWDIR%%/public/images/copy.png
+%%WWWDIR%%/public/images/database_go.png
 %%WWWDIR%%/public/images/database_key.png
 %%WWWDIR%%/public/images/delete.png
 %%WWWDIR%%/public/images/document.png
@@ -1477,6 +1514,8 @@
 %%WWWDIR%%/public/images/sort_desc.png
 %%WWWDIR%%/public/images/stats.png
 %%WWWDIR%%/public/images/table_multiple.png
+%%WWWDIR%%/public/images/tag_blue_add.png
+%%WWWDIR%%/public/images/tag_blue_delete.png
 %%WWWDIR%%/public/images/task_done.png
 %%WWWDIR%%/public/images/task_late.png
 %%WWWDIR%%/public/images/task_parent_end.png
@@ -1551,7 +1590,7 @@
 %%WWWDIR%%/public/javascripts/i18n/datepicker-vi.js
 %%WWWDIR%%/public/javascripts/i18n/datepicker-zh-CN.js
 %%WWWDIR%%/public/javascripts/i18n/datepicker-zh-TW.js
-%%WWWDIR%%/public/javascripts/jquery-1.11.1-ui-1.11.0-ujs-4.3.1.js
+%%WWWDIR%%/public/javascripts/jquery-2.2.4-ui-1.11.0-ujs-5.2.3.js
 %%WWWDIR%%/public/javascripts/jstoolbar/jstoolbar.js
 %%WWWDIR%%/public/javascripts/jstoolbar/lang/jstoolbar-ar.js
 %%WWWDIR%%/public/javascripts/jstoolbar/lang/jstoolbar-az.js
@@ -1608,6 +1647,9 @@
 %%WWWDIR%%/public/javascripts/repository_navigation.js
 %%WWWDIR%%/public/javascripts/responsive.js
 %%WWWDIR%%/public/javascripts/revision_graph.js
+%%WWWDIR%%/public/javascripts/tribute-3.7.3.min.js
+%%WWWDIR%%/public/javascripts/tribute.min.js.map
+%%WWWDIR%%/public/plugin_assets/empty
 %%WWWDIR%%/public/stylesheets/application.css
 %%WWWDIR%%/public/stylesheets/context_menu.css
 %%WWWDIR%%/public/stylesheets/context_menu_rtl.css
@@ -1630,6 +1672,7 @@
 %%WWWDIR%%/public/stylesheets/responsive.css
 %%WWWDIR%%/public/stylesheets/rtl.css
 %%WWWDIR%%/public/stylesheets/scm.css
+%%WWWDIR%%/public/stylesheets/tribute-3.7.3.css
 %%WWWDIR%%/public/themes/README
 %%WWWDIR%%/public/themes/alternate/stylesheets/application.css
 %%WWWDIR%%/public/themes/classic/images/home.png
@@ -1678,16 +1721,22 @@
 %%WWWDIR%%/test/fixtures/files/2010/11/101123161450_testfile_1.png
 %%WWWDIR%%/test/fixtures/files/2010/12/101223161450_testfile_2.png
 %%WWWDIR%%/test/fixtures/files/2019/04/190430092344_redmine_logo.ai.unknown
+%%WWWDIR%%/test/fixtures/files/2019/05/190511141819_ecookbook-gantt.pdf
 %%WWWDIR%%/test/fixtures/files/hello.js
 %%WWWDIR%%/test/fixtures/files/hg-export.diff
 %%WWWDIR%%/test/fixtures/files/import_dates.csv
+%%WWWDIR%%/test/fixtures/files/import_dates_ja.csv
 %%WWWDIR%%/test/fixtures/files/import_iso8859-1.csv
 %%WWWDIR%%/test/fixtures/files/import_issues.csv
 %%WWWDIR%%/test/fixtures/files/import_issues_utf8_with_bom.csv
 %%WWWDIR%%/test/fixtures/files/import_subtasks.csv
+%%WWWDIR%%/test/fixtures/files/import_subtasks_with_unique_id.csv
+%%WWWDIR%%/test/fixtures/files/import_time_entries.csv
 %%WWWDIR%%/test/fixtures/files/invalid-Shift_JIS.csv
 %%WWWDIR%%/test/fixtures/files/iso8859-1.txt
 %%WWWDIR%%/test/fixtures/files/japanese-utf-8.txt
+%%WWWDIR%%/test/fixtures/files/testfile.md
+%%WWWDIR%%/test/fixtures/files/testfile.textile
 %%WWWDIR%%/test/fixtures/files/testfile.txt
 %%WWWDIR%%/test/fixtures/groups_users.yml
 %%WWWDIR%%/test/fixtures/issue_categories.yml
@@ -1702,9 +1751,11 @@
 %%WWWDIR%%/test/fixtures/ldap/test-ldap.ldif
 %%WWWDIR%%/test/fixtures/mail_handler/apple_mail_with_attachment.eml
 %%WWWDIR%%/test/fixtures/mail_handler/body_ks_c_5601-1987.eml
+%%WWWDIR%%/test/fixtures/mail_handler/different_contents_in_text_and_html.eml
 %%WWWDIR%%/test/fixtures/mail_handler/empty_text_and_html_part.eml
 %%WWWDIR%%/test/fixtures/mail_handler/empty_text_part.eml
 %%WWWDIR%%/test/fixtures/mail_handler/fullname_of_sender_as_utf8_encoded.eml
+%%WWWDIR%%/test/fixtures/mail_handler/fullname_of_sender_in_parentheses.eml
 %%WWWDIR%%/test/fixtures/mail_handler/gmail-iso8859-2.eml
 %%WWWDIR%%/test/fixtures/mail_handler/gmail_with_attachment_iso-8859-1.eml
 %%WWWDIR%%/test/fixtures/mail_handler/gmail_with_attachment_ja.eml
@@ -1744,6 +1795,7 @@
 %%WWWDIR%%/test/fixtures/mail_handler/ticket_with_invalid_attributes.eml
 %%WWWDIR%%/test/fixtures/mail_handler/ticket_with_keyword_after_delimiter.eml
 %%WWWDIR%%/test/fixtures/mail_handler/ticket_with_localized_attributes.eml
+%%WWWDIR%%/test/fixtures/mail_handler/ticket_with_localized_private_flag.eml
 %%WWWDIR%%/test/fixtures/mail_handler/ticket_with_long_subject.eml
 %%WWWDIR%%/test/fixtures/mail_handler/ticket_with_spaces_between_attribute_and_separator.eml
 %%WWWDIR%%/test/fixtures/mail_handler/ticket_with_text_attachment_iso-8859-2.eml
@@ -1753,6 +1805,7 @@
 %%WWWDIR%%/test/fixtures/messages.yml
 %%WWWDIR%%/test/fixtures/news.yml
 %%WWWDIR%%/test/fixtures/plugins/foo_plugin/_foo_plugin_settings.html.erb
+%%WWWDIR%%/test/fixtures/plugins/other_plugin/_other_plugin_settings.html.erb
 %%WWWDIR%%/test/fixtures/projects.yml
 %%WWWDIR%%/test/fixtures/projects_trackers.yml
 %%WWWDIR%%/test/fixtures/queries.yml
@@ -1780,6 +1833,7 @@
 %%WWWDIR%%/test/functional/account_controller_test.rb
 %%WWWDIR%%/test/functional/activities_controller_test.rb
 %%WWWDIR%%/test/functional/admin_controller_test.rb
+%%WWWDIR%%/test/functional/application_controller_test.rb
 %%WWWDIR%%/test/functional/attachments_controller_test.rb
 %%WWWDIR%%/test/functional/attachments_visibility_test.rb
 %%WWWDIR%%/test/functional/auth_sources_controller_test.rb
@@ -1834,6 +1888,7 @@
 %%WWWDIR%%/test/functional/trackers_controller_test.rb
 %%WWWDIR%%/test/functional/users_controller_test.rb
 %%WWWDIR%%/test/functional/versions_controller_test.rb
+%%WWWDIR%%/test/functional/versions_custom_fields_visibility_test.rb
 %%WWWDIR%%/test/functional/watchers_controller_test.rb
 %%WWWDIR%%/test/functional/welcome_controller_test.rb
 %%WWWDIR%%/test/functional/wiki_controller_test.rb
@@ -1841,12 +1896,14 @@
 %%WWWDIR%%/test/functional/workflows_controller_test.rb
 %%WWWDIR%%/test/helpers/activities_helper_test.rb
 %%WWWDIR%%/test/helpers/application_helper_test.rb
+%%WWWDIR%%/test/helpers/avatars_helper_test.rb
 %%WWWDIR%%/test/helpers/custom_fields_helper_test.rb
 %%WWWDIR%%/test/helpers/groups_helper_test.rb
 %%WWWDIR%%/test/helpers/issues_helper_test.rb
 %%WWWDIR%%/test/helpers/journals_helper_test.rb
 %%WWWDIR%%/test/helpers/members_helper_test.rb
 %%WWWDIR%%/test/helpers/projects_helper_test.rb
+%%WWWDIR%%/test/helpers/projects_queries_helper_test.rb
 %%WWWDIR%%/test/helpers/queries_helper_test.rb
 %%WWWDIR%%/test/helpers/routes_helper_test.rb
 %%WWWDIR%%/test/helpers/search_helper_test.rb
@@ -1874,6 +1931,7 @@
 %%WWWDIR%%/test/integration/api_test/issues_test.rb
 %%WWWDIR%%/test/integration/api_test/jsonp_test.rb
 %%WWWDIR%%/test/integration/api_test/memberships_test.rb
+%%WWWDIR%%/test/integration/api_test/my_test.rb
 %%WWWDIR%%/test/integration/api_test/news_test.rb
 %%WWWDIR%%/test/integration/api_test/projects_test.rb
 %%WWWDIR%%/test/integration/api_test/queries_test.rb
@@ -1972,6 +2030,7 @@
 %%WWWDIR%%/test/unit/default_data_test.rb
 %%WWWDIR%%/test/unit/document_category_test.rb
 %%WWWDIR%%/test/unit/document_test.rb
+%%WWWDIR%%/test/unit/email_address_test.rb
 %%WWWDIR%%/test/unit/enabled_module_test.rb
 %%WWWDIR%%/test/unit/enumeration_test.rb
 %%WWWDIR%%/test/unit/group_test.rb
@@ -2025,6 +2084,7 @@
 %%WWWDIR%%/test/unit/lib/redmine/pagination_helper_test.rb
 %%WWWDIR%%/test/unit/lib/redmine/pagination_test.rb
 %%WWWDIR%%/test/unit/lib/redmine/plugin_test.rb
+%%WWWDIR%%/test/unit/lib/redmine/project_jump_box_test.rb
 %%WWWDIR%%/test/unit/lib/redmine/safe_attributes_test.rb
 %%WWWDIR%%/test/unit/lib/redmine/scm/adapters/bazaar_adapter_test.rb
 %%WWWDIR%%/test/unit/lib/redmine/scm/adapters/cvs_adapter_test.rb
@@ -2058,6 +2118,7 @@
 %%WWWDIR%%/test/unit/project_members_inheritance_test.rb
 %%WWWDIR%%/test/unit/project_nested_set_concurrency_test.rb
 %%WWWDIR%%/test/unit/project_nested_set_test.rb
+%%WWWDIR%%/test/unit/project_query_test.rb
 %%WWWDIR%%/test/unit/project_test.rb
 %%WWWDIR%%/test/unit/query_test.rb
 %%WWWDIR%%/test/unit/repository_bazaar_test.rb
@@ -2071,6 +2132,7 @@
 %%WWWDIR%%/test/unit/search_test.rb
 %%WWWDIR%%/test/unit/setting_test.rb
 %%WWWDIR%%/test/unit/time_entry_activity_test.rb
+%%WWWDIR%%/test/unit/time_entry_import_test.rb
 %%WWWDIR%%/test/unit/time_entry_query_test.rb
 %%WWWDIR%%/test/unit/time_entry_test.rb
 %%WWWDIR%%/test/unit/token_test.rb
@@ -2092,7 +2154,6 @@
 @dir %%WWWDIR%%/test/mocks/test
 @dir %%WWWDIR%%/vendor
 @dir %%WWWDIR%%/app/views/previews
-@(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/public/plugin_assets/empty
 @(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/tmp/pdf/empty
 @(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/tmp/test/empty
 @(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/tmp/thumbnails/empty

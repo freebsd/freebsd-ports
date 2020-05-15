@@ -1,50 +1,26 @@
---- Gemfile.orig	2019-12-20 12:46:22 UTC
-+++ Gemfile
-@@ -2,9 +2,9 @@ source 'https://rubygems.org'
- 
- gem "bundler", ">= 1.5.0"
- 
--gem "rails", "5.2.4.1"
--gem "rouge", "~> 3.3.0"
--gem "request_store", "1.0.5"
-+gem "rails", "5.2.4.2"
-+gem "rouge", "~> 3.12.0"
-+gem "request_store", ">= 1.0.5"
- gem "mini_mime", "~> 1.0.1"
- gem "actionpack-xml_parser"
- gem "roadie-rails", "~> 1.3.0"
-@@ -13,7 +13,7 @@ gem "mail", "~> 2.7.1"
- gem "csv", "~> 3.0.1" if RUBY_VERSION >= "2.3" && RUBY_VERSION < "2.6"
- 
- gem "nokogiri", (RUBY_VERSION >= "2.3" ? "~> 1.10.0" : "~> 1.9.1")
--gem "i18n", "~> 0.7.0"
-+gem "i18n", ">= 0.7"
- gem "xpath", "< 3.2.0" if RUBY_VERSION < "2.3"
- 
- # TODO: Remove the following line when #32223 is fixed
-@@ -21,7 +21,7 @@ gem "sprockets", "~> 3.7.2"
+--- Gemfile.orig	2020-04-06 19:00:48.000000000 +0200
++++ Gemfile	2020-05-14 17:15:47.187698000 +0200
+@@ -14,7 +14,7 @@ gem "mimemagic"
+ gem "mail", "~> 2.7.1"
+ gem "csv", "~> 3.1.1"
+ gem "nokogiri", "~> 1.10.0"
+-gem "i18n", "~> 1.6.0"
++gem "i18n", ">= 1.6.0"
+ gem "rbpdf", "~> 1.20.0"
  
  # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
- gem 'tzinfo-data', platforms: [:mingw, :x64_mingw, :mswin]
--gem "rbpdf", "~> 1.19.6"
-+gem "rbpdf", "~> 1.19", ">= 1.19.6"
- 
- # Optional gem for LDAP authentication
- group :ldap do
-@@ -34,63 +34,6 @@ group :openid do
+@@ -31,66 +31,6 @@ group :openid do
    gem "rack-openid"
  end
  
--platforms :mri, :mingw, :x64_mingw do
--  # Optional gem for exporting the gantt to a PNG file, not supported with jruby
--  group :rmagick do
--    gem "rmagick", "~> 2.16.0"
--  end
+-# Optional gem for exporting the gantt to a PNG file
+-group :minimagick do
+-  gem "mini_magick", "~> 4.9.5"
+-end
 -
--  # Optional Markdown support, not for JRuby
--  group :markdown do
--    gem "redcarpet", "~> 3.4.0"
--  end
+-# Optional Markdown support, not for JRuby
+-group :markdown do
+-  gem "redcarpet", "~> 3.5.0"
 -end
 -
 -# Include database gems for the adapters found in the database
@@ -63,10 +39,10 @@
 -      when /postgresql/
 -        gem "pg", "~> 1.1.4", :platforms => [:mri, :mingw, :x64_mingw]
 -      when /sqlite3/
--        gem "sqlite3", "~>1.3.12", :platforms => [:mri, :mingw, :x64_mingw]
+-        gem "sqlite3", "~> 1.4.0", :platforms => [:mri, :mingw, :x64_mingw]
 -      when /sqlserver/
--        gem "tiny_tds", "~> 1.0.5", :platforms => [:mri, :mingw, :x64_mingw]
--        gem "activerecord-sqlserver-adapter", :platforms => [:mri, :mingw, :x64_mingw]
+-        gem "tiny_tds", "~> 2.1.2", :platforms => [:mri, :mingw, :x64_mingw]
+-        gem "activerecord-sqlserver-adapter", "~> 5.2.1", :platforms => [:mri, :mingw, :x64_mingw]
 -      else
 -        warn("Unknown database adapter `#{adapter}` found in config/database.yml, use Gemfile.local to load your own database gems")
 -      end
@@ -85,17 +61,22 @@
 -group :test do
 -  gem "rails-dom-testing"
 -  gem 'mocha', '>= 1.4.0'
--  gem "simplecov", "~> 0.14.1", :require => false
+-  gem "simplecov", "~> 0.17.0", :require => false
+-  gem "ffi", platforms: [:mingw, :x64_mingw, :mswin]
 -  # For running system tests
 -  gem 'puma', '~> 3.7'
--  gem "capybara", '~> 2.13'
+-  gem "capybara", (RUBY_VERSION < "2.4" ? "~> 3.15.1" : "~> 3.25.0")
 -  gem "selenium-webdriver"
+-  # RuboCop
+-  gem 'rubocop', '~> 0.76.0'
+-  gem 'rubocop-performance', '~> 1.5.0'
+-  gem 'rubocop-rails', '~> 2.3.0'
 -end
 -
  local_gemfile = File.join(File.dirname(__FILE__), "Gemfile.local")
  if File.exists?(local_gemfile)
    eval_gemfile local_gemfile
-@@ -99,4 +42,8 @@ end
+@@ -99,4 +39,8 @@ end
  # Load plugins' Gemfiles
  Dir.glob File.expand_path("../plugins/*/{Gemfile,PluginGemfile}", __FILE__) do |file|
    eval_gemfile file
