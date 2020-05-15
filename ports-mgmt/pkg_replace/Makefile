@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pkg_replace
-PORTVERSION=	20191018
+PORTVERSION=	20200504
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://member.tokoha-u.ac.jp/~kdeguchi/download/
 
@@ -31,7 +31,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.sh \
 		${STAGEDIR}${PREFIX}/sbin/${PORTNAME}
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1/
+		${STAGEDIR}${MANPREFIX}/share/man/man1/
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf \
 		${STAGEDIR}${ETCDIR}/${PORTNAME}.conf.sample
