@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	schismtracker
-PORTVERSION=	20190805
+PORTVERSION=	20200412
 CATEGORIES=	audio
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -12,26 +12,24 @@ LICENSE=	GPLv2
 
 ONLY_FOR_ARCHS=	amd64 i386
 
-USES=		autoreconf python compiler:c++11-lib desktop-file-utils sdl xorg
+USES=		autoreconf compiler:c++11-lib desktop-file-utils python sdl \
+		xorg
+USE_GITHUB=	yes
 USE_SDL=	sdl
 USE_XORG=	x11 xext xv
-
-USE_GITHUB=	yes
 
 GNU_CONFIGURE=	yes
 
 # if you touch these make sure configure finds X11/XKBlib.h presence
+CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	`sdl-config --libs`
 LIBS+=		-lm -lX11
-CPPFLAGS+=	-I${LOCALBASE}/include
 
-PLIST_FILES=	bin/schismtracker man/man1/schismtracker.1.gz \
+PLIST_FILES=	bin/schismtracker \
+		man/man1/schismtracker.1.gz \
 		share/applications/schism.desktop \
 		share/pixmaps/schism-icon-128.png \
 		share/pixmaps/schism-itf-icon-128.png
-
-# changes only affect macOS
-PORTSCOUT=	ignore:20190614
 
 post-patch:
 	@${REINPLACE_CMD} \
