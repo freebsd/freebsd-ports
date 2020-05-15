@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME?=	arcanist
-PORTVERSION?=	20190622
+PORTVERSION?=	20200514
 CATEGORIES?=	devel
 PKGNAMESUFFIX=	${SLAVE_PKGNAMESUFFIX}${PHP_PKGNAMESUFFIX}
 
@@ -13,18 +13,16 @@ SLAVEPORT?=	lib
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PHP_PKGNAMEPREFIX}libphutil>=20190831:devel/libphutil@${PHP_FLAVOR}
-
 PHP_DESTDIR=	lib/php/arcanist
-USES=		php:flavors python:2.7,env shebangfix
-SHEBANG_FILES=	scripts/breakout.py
+USES=		php:flavors python:env shebangfix
+SHEBANG_FILES=	support/arcanoid/arcanoid.py
 USE_PHP=	curl dom hash json simplexml zlib
 USE_GITHUB=	yes
 NO_BUILD=	yes
 NO_ARCH=	yes
 PORTSCOUT=	ignore:1
 GH_ACCOUNT=	phacility
-GH_TAGNAME=	feb5f4d
+GH_TAGNAME=	b76b9c4
 PLIST=		${.CURDIR}/pkg-plist
 
 .if ${SLAVEPORT} == lib
@@ -49,12 +47,26 @@ PLIST_FILES=	bin/arc
 
 do-install:
 .if ${SLAVEPORT} == bin
-	${RLN} ../${PHP_DESTDIR}/scripts/arcanist.php ${STAGEDIR}${PREFIX}/bin/arc
+	${RLN} ../${PHP_DESTDIR}/bin/arc ${STAGEDIR}${PREFIX}/bin/arc
 .else
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${PHP_DESTDIR}
 	cd ${WRKSRC} ; ${PAX} -rw * ${STAGEDIR}${PREFIX}/${PHP_DESTDIR}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/bash-completion/completions/
-	${RLN} ${STAGEDIR}${PREFIX}/${PHP_DESTDIR}/resources/shell/bash-completion ${STAGEDIR}${PREFIX}/share/bash-completion/completions/arc
+	@${REINPLACE_CMD} \
+		's|%%PREFIX%%|${PREFIX}|g; \
+		 s|%%PHP_DESTDIR%%|${PHP_DESTDIR}|g' \
+		${STAGEDIR}${PREFIX}/${PHP_DESTDIR}/support/shell/hooks/bash-completion.sh
+	@${REINPLACE_CMD} \
+		's|%%PKGNAME%%|${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}|g; \
+		 s|%%PKGVERSION%%|${PKGVERSION}|g; \
+		 s|%%PKGORIGIN%%|${PKGORIGIN}|g' \
+		${STAGEDIR}${PREFIX}/${PHP_DESTDIR}/src/toolset/workflow/ArcanistVersionWorkflow.php
+	@${REINPLACE_CMD} \
+		's|%%PYTHON_CMD%%|${PYTHON_CMD}|g' \
+		${STAGEDIR}${PREFIX}/${PHP_DESTDIR}/src/workflow/ArcanistAnoidWorkflow.php
+	${RM} ${STAGEDIR}${PREFIX}/${PHP_DESTDIR}/src/toolset/workflow/*.orig
+	${RLN} ${STAGEDIR}${PREFIX}/${PHP_DESTDIR}/support/shell/hooks/bash-completion.sh \
+		 ${STAGEDIR}${PREFIX}/share/bash-completion/completions/arc
 .endif
 
 .include <bsd.port.mk>

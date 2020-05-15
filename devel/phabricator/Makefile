@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	phabricator
-PORTVERSION=	20190831
+PORTVERSION=	20200514
 CATEGORIES=	devel
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
@@ -11,8 +11,7 @@ COMMENT=	Open source, software engineering platform
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PHP_PKGNAMEPREFIX}libphutil>=20190831:devel/libphutil@${PHP_FLAVOR} \
-		arcanist-lib${PHP_PKGNAMESUFFIX}>=20190622:devel/arcanist-lib@${PHP_FLAVOR} \
+RUN_DEPENDS=	arcanist-lib${PHP_PKGNAMESUFFIX}>=20200514:devel/arcanist-lib@${PHP_FLAVOR} \
 		git:devel/git
 
 USES=		php:flavors shebangfix
@@ -59,7 +58,7 @@ USE_RC_SUBR=	phd
 SUB_FILES=	pkg-message
 PORTSCOUT=	ignore:1
 GH_ACCOUNT=	phacility
-GH_TAGNAME=	24dbff2
+GH_TAGNAME=	3ee6b53
 
 PHP_DESTDIR=	lib/php/phabricator
 

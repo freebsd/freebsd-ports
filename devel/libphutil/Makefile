@@ -12,6 +12,9 @@ COMMENT=	Collection of PHP utility classes
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Upstream merged functionality into downstream projects.
+EXPIRATION_DATE=	2020-05-15
+
 PHP_DESTDIR=	lib/php/libphutil
 USES=		php:flavors
 USE_PHP=	xml

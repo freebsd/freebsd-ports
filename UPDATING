@@ -5,6 +5,22 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20200515:
+  AFFECTS: users of devel/libphutil, devel/arcanist-lib, devel/phabricator
+  AUTHOR: grembo@FreeBSD.org
+
+  Upstream fully deprecated devel/libphutil and merged its functionality
+  into devel/arcanist-lib and devel/phabricator. As a result, the
+  devel/libphutil port will be removed from the ports tree.
+
+  After upgrading devel/(arcanist-lib|phabricator) to version 20200514, it is
+  recommended to remove the orphaned libphutil package by running:
+
+    # pkg delete php\*-libphutil
+
+  Alternatively, 'pkg autoremove' will also work as expected, but might
+  remove orphaned packages unrelated to this update.
+
 20200505:
   AFFECTS: users of net-im/pidgin-rocketchat
   AUTHOR: tobias.rehbein@web.de
