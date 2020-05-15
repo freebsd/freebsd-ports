@@ -5,6 +5,7 @@ include/vulkan/vk_sdk_platform.h
 include/vulkan/vulkan.h
 include/vulkan/vulkan.hpp
 include/vulkan/vulkan_android.h
+include/vulkan/vulkan_beta.h
 include/vulkan/vulkan_core.h
 include/vulkan/vulkan_fuchsia.h
 include/vulkan/vulkan_ggp.h
@@ -22,6 +23,7 @@ share/vulkan/registry/conventions.py
 share/vulkan/registry/generator.py
 share/vulkan/registry/genvk.py
 share/vulkan/registry/reg.py
+share/vulkan/registry/spec_tools/util.py
 share/vulkan/registry/validusage.json
 share/vulkan/registry/vk.xml
 share/vulkan/registry/vkconventions.py

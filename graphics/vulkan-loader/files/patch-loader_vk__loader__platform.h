@@ -1,4 +1,4 @@
---- loader/vk_loader_platform.h.orig	2018-08-03 22:10:42 UTC
+--- loader/vk_loader_platform.h.orig	2020-04-02 16:20:56 UTC
 +++ loader/vk_loader_platform.h
 @@ -31,7 +31,7 @@
  #include "vulkan/vk_platform.h"
