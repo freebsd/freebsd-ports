@@ -1283,7 +1283,6 @@
     SUBDIR += libpff
     SUBDIR += libphk
     SUBDIR += libphonenumber
-    SUBDIR += libphutil
     SUBDIR += libplist
     SUBDIR += libpo6
     SUBDIR += libpololu-avr
