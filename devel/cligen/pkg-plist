@@ -14,4 +14,4 @@ include/cligen/cligen_syntax.h
 include/cligen/cligen_util.h
 lib/libcligen.so
 lib/libcligen.so.4
-lib/libcligen.so.4.4
+lib/libcligen.so.4.5
