@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	winrm
-PORTVERSION=	2.2.3
-PORTREVISION=	1
+PORTVERSION=	2.3.4
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -14,13 +13,13 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-builder>=2.1.2:devel/rubygem-builder \
-		rubygem-erubis>=2.7:www/rubygem-erubis \
-		rubygem-gssapi>=1.2:security/rubygem-gssapi \
-		rubygem-gyoku>=1.0:devel/rubygem-gyoku \
-		rubygem-httpclient>=2.2.0.2:www/rubygem-httpclient \
-		rubygem-logging>=1.6.1:devel/rubygem-logging \
-		rubygem-nori>=2.0:devel/rubygem-nori \
-		rubygem-rubyntlm>=0.6.1:net/rubygem-rubyntlm
+		rubygem-erubi>=1.8<2:www/rubygem-erubi \
+		rubygem-gssapi>=1.2<2:security/rubygem-gssapi \
+		rubygem-gyoku>=1.0<2:devel/rubygem-gyoku \
+		rubygem-httpclient>=2.2.0.2<3:www/rubygem-httpclient \
+		rubygem-logging>=1.6.1<3.0:devel/rubygem-logging \
+		rubygem-nori>=2.0<3:devel/rubygem-nori \
+		rubygem-rubyntlm>=0.6.1<0.7:net/rubygem-rubyntlm
 
 USES=		gem
 USE_RUBY=	yes
