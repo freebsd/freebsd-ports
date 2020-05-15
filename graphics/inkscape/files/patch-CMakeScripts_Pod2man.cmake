@@ -1,11 +1,18 @@
---- CMakeScripts/Pod2man.cmake.orig	2018-03-11 20:38:09 UTC
+--- CMakeScripts/Pod2man.cmake.orig	2020-05-01 13:17:41 UTC
 +++ CMakeScripts/Pod2man.cmake
-@@ -48,7 +48,7 @@ macro(pod2man PODFILE_FULL RELEASE SECTION CENTER)
-         )
-         install(
-             FILES ${MANFILE_FULL}
--            DESTINATION ${CMAKE_INSTALL_PREFIX}/${SHARE_INSTALL}/man/man${SECTION}
-+            DESTINATION ${CMAKE_INSTALL_PREFIX}/man/man${SECTION}
-         )
-     endif()
- endmacro(pod2man PODFILE NAME SECTION CENTER)
+@@ -34,13 +34,13 @@ macro(pod2man PODFILE_FULL RELEASE SECTION CENTER)
+             set(MANFILE_TEMP "${CMAKE_CURRENT_BINARY_DIR}/${NAME}.${LANG}.tmp")
+             set(MANFILE_FULL "${CMAKE_CURRENT_BINARY_DIR}/${NAME}.${LANG}.${SECTION}")
+             set(MANFILE_FULL_GZ "${CMAKE_CURRENT_BINARY_DIR}/${NAME}.${LANG}.${SECTION}.gz")
+-            set(MANFILE_DEST "${SHARE_INSTALL}/man/${LANG}/man${SECTION}")
++            set(MANFILE_DEST "${CMAKE_INSTALL_PREFIX}/man/${LANG}/man${SECTION}")
+         else()
+             set(MANPAGE_TARGET "man-${NAME}")
+             set(MANFILE_TEMP "${CMAKE_CURRENT_BINARY_DIR}/${NAME}.tmp")
+             set(MANFILE_FULL "${CMAKE_CURRENT_BINARY_DIR}/${NAME}.${SECTION}")
+             set(MANFILE_FULL_GZ "${CMAKE_CURRENT_BINARY_DIR}/${NAME}.${SECTION}.gz")
+-            set(MANFILE_DEST "${SHARE_INSTALL}/man/man${SECTION}")
++            set(MANFILE_DEST "${CMAKE_INSTALL_PREFIX}/man/man${SECTION}")
+         endif()
+         add_custom_command(
+             OUTPUT ${MANFILE_TEMP}
