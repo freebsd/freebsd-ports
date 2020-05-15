@@ -3,7 +3,7 @@
 
 PORTNAME=	graphviz
 PORTVERSION=	2.44.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics tk
 MASTER_SITES=	https://www2.graphviz.org/Packages/stable/portable_source/
 
@@ -22,7 +22,7 @@ LIB_DEPENDS=	libltdl.so:devel/libltdl \
 		libexpat.so:textproc/expat2 \
 		libgd.so:${GD_PORT}
 
-USES=		cpe pathfix shebangfix gmake bison groff pkgconfig \
+USES=		cpe pathfix shebangfix gmake bison pkgconfig \
 		libtool:keepla autoreconf localbase:ldflags jpeg \
 		tcl:build
 
@@ -99,7 +99,7 @@ RUBY_USE=	RUBY=yes
 LUA_USES=	lua
 TK_USES=	tk:build
 GO_USES=	go:no_targets
-DOCS_USES=	ghostscript:build
+DOCS_USES=	ghostscript:build groff
 
 POPPLER_LIB_DEPENDS=	libpoppler-glib.so:graphics/poppler-glib
 ANN_LIB_DEPENDS=	libann.so:math/ann
