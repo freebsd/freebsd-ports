@@ -1,0 +1,18 @@
+Moltemplate is a general cross-platform text-based molecule builder for LAMMPS,
+an extremely flexible and customizable molecular dynamics engine.
+
+Moltemplate was designed for inventing new kinds of complex coarse-grained toy
+models of molecules, molecular machines, and assemblies. However it is well
+suited for preparing realistic all-atom simulations as well. It supports a wide
+variety of existing force fields and models including: OPLS, AMBER(GAFF,GAFF2),
+COMPASS, LOPLS(2015), EFF, TraPPE(1998), MOLC, mW, ELBA(water), and oxDNA2.
+However it can be used to build molecules using any of the force fields (and
+atom styles) available in LAMMPS, including new force fields created by
+modifying the LAMMPS source code. Molecules can be copied, combined, and linked
+together as building-blocks to define new molecules (hierarchically). Once
+built, individual molecules and subunits can be customized (atoms, bonds, and
+subunits can be moved and deleted). Moltemplate is currently interoperable with:
+VMD , PACKMOL , OVITO , CellPACK , VIPSTER , and the ATB molecule server
+(by using the ltemplify.py converter).
+
+WWW: http://www.moltemplate.org/
