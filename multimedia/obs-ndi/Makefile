@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	obs-ndi
-DISTVERSION=	4.9.0
+DISTVERSION=	4.9.1
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
