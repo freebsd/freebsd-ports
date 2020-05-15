@@ -3,7 +3,7 @@
 
 PORTNAME=	bambootracker
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.1
+DISTVERSION=	0.4.2
 CATEGORIES=	audio
 MASTER_SITES=	LOCAL/ehaupt:extras
 DISTFILES=	${PORTNAME}-extras-${EXTRASVERSION}${EXTRACT_SUFX}:extras
@@ -15,23 +15,23 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		compiler:c++14-lang qmake qt:5 gl xorg
-USE_QT=		buildtools core gui linguisttools_build multimedia network \
-		widgets
-USE_GL=		gl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rerrahkr
 GH_PROJECT=	BambooTracker
+USE_GL=		gl
+USE_QT=		buildtools core gui linguisttools_build multimedia network \
+		widgets
 
-CONFIGURE_WRKSRC=	${WRKSRC}/BambooTracker
 BUILD_WRKSRC=		${WRKSRC}/BambooTracker
+CONFIGURE_WRKSRC=	${WRKSRC}/BambooTracker
+
+PORTEXAMPLES=	*
 
 EXTRASVERSION=	2
 
 OPTIONS_DEFINE=	EXAMPLES NLS
 OPTIONS_SUB=	yes
-
-PORTEXAMPLES=	*
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons \
