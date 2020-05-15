@@ -27,7 +27,7 @@ GH_TUPLE=	\
 		golang:net:0de0cce0169b:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:bf48bf16ab8d:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.3.3:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sync:cd5d95a43a6e:golang_sync/vendor/golang.org/x/sync \
+		golang:sync:43a5402ce75a:golang_sync/vendor/golang.org/x/sync \
 		golang:sys:d101bd2416d5:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
 		golang:time:555d28b269f0:golang_time/vendor/golang.org/x/time \
@@ -54,7 +54,7 @@ GH_TUPLE=	\
 		mattn:go-colorable:v0.1.2:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-isatty:v0.0.9:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		mattn:go-runewidth:v0.0.4:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
-		mattn:go-sqlite3:v2.0.2:mattn_go_sqlite3/vendor/github.com/mattn/go-sqlite3 \
+		mattn:go-sqlite3:v2.0.3:mattn_go_sqlite3/vendor/github.com/mattn/go-sqlite3 \
 		minio:sha256-simd:v0.1.1:minio_sha256_simd/vendor/github.com/minio/sha256-simd \
 		mitchellh:mapstructure:v1.1.2:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
 		nsf:jsondiff:7de28ed2b6e3:nsf_jsondiff/vendor/github.com/nsf/jsondiff \
@@ -64,8 +64,7 @@ GH_TUPLE=	\
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
 		shopspring:decimal:408a2507e114:shopspring_decimal/vendor/github.com/shopspring/decimal \
 		spacemonkeygo:errors:9064522e9fd1:spacemonkeygo_errors/vendor/github.com/spacemonkeygo/errors \
-		spacemonkeygo:monkit:76480079049a:spacemonkeygo_monkit/vendor/github.com/spacemonkeygo/monkit/v3 \
-		spacemonkeygo:monotime:e3f48a95f98a:spacemonkeygo_monotime/vendor/github.com/spacemonkeygo/monotime \
+		spacemonkeygo:monkit:v3.0.6:spacemonkeygo_monkit/vendor/github.com/spacemonkeygo/monkit/v3 \
 		spacemonkeygo:spacelog:2296661a0572:spacemonkeygo_spacelog/vendor/github.com/spacemonkeygo/spacelog \
 		spf13:afero:v1.1.2:spf13_afero/vendor/github.com/spf13/afero \
 		spf13:cast:v1.3.0:spf13_cast/vendor/github.com/spf13/cast \
@@ -73,11 +72,11 @@ GH_TUPLE=	\
 		spf13:jwalterweatherman:v1.0.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		spf13:viper:v1.4.0:spf13_viper/vendor/github.com/spf13/viper \
-		storj:common:e54806ee8c56:storj_common/vendor/storj.io/common \
+		storj:common:4ba140e4b747:storj_common/vendor/storj.io/common \
 		storj:drpc:debb458a7474:storj_drpc/vendor/storj.io/drpc \
-		storj:monkit-jaeger:669a3830ea40:storj_monkit_jaeger/vendor/storj.io/monkit-jaeger \
-		storj:private:fe6c6bb80e76:storj_private/vendor/storj.io/private \
-		storj:uplink:8fbdcbad8065:storj_uplink/vendor/storj.io/uplink \
+		storj:monkit-jaeger:d5f5530ea079:storj_monkit_jaeger/vendor/storj.io/monkit-jaeger \
+		storj:private:e00b0e612cfb:storj_private/vendor/storj.io/private \
+		storj:uplink:v1.0.5:storj_uplink/vendor/storj.io/uplink \
 		stretchr:testify:v1.5.1:stretchr_testify/vendor/github.com/stretchr/testify \
 		stripe:stripe-go:v63.1.1:stripe_stripe_go/vendor/github.com/stripe/stripe-go \
 		uber-go:atomic:v1.6.0:uber_go_atomic/vendor/go.uber.org/atomic \
