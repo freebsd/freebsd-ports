@@ -1,11 +1,17 @@
---- scripts/Makefile.am.orig	2017-04-25 03:59:07 UTC
+--- scripts/Makefile.am.orig	2020-05-08 16:11:52 UTC
 +++ scripts/Makefile.am
-@@ -3,7 +3,7 @@ defaultscripts += poweroff-vm-default
+@@ -20,12 +20,12 @@ defaultscripts += poweroff-vm-default
  defaultscripts += suspend-vm-default
  defaultscripts += resume-vm-default
  
 -confdir = /etc/vmware-tools
 +confdir = ${prefix}/share/vmware-tools
  
- conf_SCRIPTS = ./common/vm-support
- conf_SCRIPTS += ./common/statechange.subr
+ conf_SCRIPTS = ./common/statechange.subr
+ conf_SCRIPTS += $(defaultscripts)
+ 
+-vmsupportdir = /usr/bin
++vmsupportdir = $(bindir)
+ 
+ vmsupport_SCRIPTS = ./common/vm-support
+ 
