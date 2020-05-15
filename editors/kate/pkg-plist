@@ -648,6 +648,7 @@ share/locale/ja/LC_MESSAGES/kate.mo
 share/locale/ja/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/ja/LC_MESSAGES/katebuild-plugin.mo
 share/locale/ja/LC_MESSAGES/katecloseexceptplugin.mo
+share/locale/ja/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/ja/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/ja/LC_MESSAGES/katefiletree.mo
 share/locale/ja/LC_MESSAGES/kategdbplugin.mo

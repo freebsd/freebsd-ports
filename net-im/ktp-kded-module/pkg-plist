@@ -1,5 +1,5 @@
 %%QT_PLUGINDIR%%/kcm_ktp_integration_module.so
-%%QT_PLUGINDIR%%/kf5/kded/ktp_integration.so
+%%QT_PLUGINDIR%%/kf5/kded/ktp_integration_module.so
 share/dbus-1/services/org.freedesktop.Telepathy.Client.KTp.KdedIntegrationModule.service
 share/kservices5/kcm_ktp_integration_module.desktop
 share/locale/ar/LC_MESSAGES/kded_ktp_integration_module.mo

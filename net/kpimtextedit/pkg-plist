@@ -2,6 +2,7 @@ share/qlogging-categories5/kpimtextedit.categories
 include/KF5/KPIMTextEdit/KPIMTextEdit/AbstractTextToSpeechInterface
 include/KF5/KPIMTextEdit/KPIMTextEdit/EditorUtil
 include/KF5/KPIMTextEdit/KPIMTextEdit/EmoticonUnicodeTab
+include/KF5/KPIMTextEdit/KPIMTextEdit/MarkupDirector
 include/KF5/KPIMTextEdit/KPIMTextEdit/PlainTextEditFindBar
 include/KF5/KPIMTextEdit/KPIMTextEdit/PlainTextEditor
 include/KF5/KPIMTextEdit/KPIMTextEdit/PlainTextEditorWidget
@@ -31,6 +32,7 @@ include/KF5/KPIMTextEdit/kpimtextedit/abstracttexttospeechinterface.h
 include/KF5/KPIMTextEdit/kpimtextedit/editorutil.h
 include/KF5/KPIMTextEdit/kpimtextedit/emoticonunicodetab.h
 include/KF5/KPIMTextEdit/kpimtextedit/kpimtextedit_export.h
+include/KF5/KPIMTextEdit/kpimtextedit/markupdirector.h
 include/KF5/KPIMTextEdit/kpimtextedit/plaintexteditfindbar.h
 include/KF5/KPIMTextEdit/kpimtextedit/plaintexteditor.h
 include/KF5/KPIMTextEdit/kpimtextedit/plaintexteditorwidget.h

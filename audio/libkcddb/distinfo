@@ -1,3 +1,3 @@
-TIMESTAMP = 1587103648
-SHA256 (KDE/applications/20.04.0/libkcddb-20.04.0.tar.xz) = cbe9669c8ef92c64119ed134b56c50dcdd6d1df4d724c7def886c464fcd48d2c
-SIZE (KDE/applications/20.04.0/libkcddb-20.04.0.tar.xz) = 427428
+TIMESTAMP = 1589429560
+SHA256 (KDE/applications/20.04.1/libkcddb-20.04.1.tar.xz) = 1068e8263cc9f0c93ecee9a27cd2a2fdc4e417524d765c28c4ba368aa4f299bb
+SIZE (KDE/applications/20.04.1/libkcddb-20.04.1.tar.xz) = 427308

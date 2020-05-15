@@ -1,3 +1,3 @@
-TIMESTAMP = 1587103710
-SHA256 (KDE/applications/20.04.0/libkexiv2-20.04.0.tar.xz) = 6456ed484817a4556b960faa4b8e290122f9aa222c86664177e862527c30c67e
-SIZE (KDE/applications/20.04.0/libkexiv2-20.04.0.tar.xz) = 64552
+TIMESTAMP = 1589429643
+SHA256 (KDE/applications/20.04.1/libkexiv2-20.04.1.tar.xz) = 91c23aacc2fc51970a5bd141de689c51c454d72b489ff842b5b8534c21c7b9a4
+SIZE (KDE/applications/20.04.1/libkexiv2-20.04.1.tar.xz) = 64544
