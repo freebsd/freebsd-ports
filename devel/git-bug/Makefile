@@ -2,6 +2,7 @@
 
 PORTNAME=	git-bug
 DISTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	vulcan@wired.sh
