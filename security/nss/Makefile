@@ -65,8 +65,9 @@ BINS=		${DIST}/${OPSYS}${OSREL}_DBG.OBJ
 .if ${ARCH} == powerpc64 || ${ARCH} == powerpc
 EXTRA_PATCHES=	${FILESDIR}/${ARCH}${PPC_ABI:tl}-lib_freebl_scripts_gen.sh
 USES+=		compiler:c++11-lang # -mcrypto -mvsx
-.else
+.if ! ${PORT_OPTIONS:MVSX}
 MAKE_ENV+=	NSS_DISABLE_ALTIVEC=1
+.endif
 .endif
 
 .if ${OPSYS} == FreeBSD && ${ARCH} == amd64
@@ -95,10 +96,10 @@ post-patch:
 		${FIND} . -name "*.c" -o -name "*.h" | \
 		${XARGS} ${REINPLACE_CMD} -e 's|"nspr.h"|<nspr.h>|'
 
-#.if ${ARCH} == powerpc64 || ${ARCH} == powerpc
-#pre-build:
-#	@cd ${WRKSRC}/lib/freebl/scripts && ./gen.sh
-#.endif
+.if ${ARCH} == powerpc64 || ${ARCH} == powerpc
+pre-build:
+	@cd ${WRKSRC}/lib/freebl/scripts && ./gen.sh
+.endif
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/nss ${STAGEDIR}${PREFIX}/lib
