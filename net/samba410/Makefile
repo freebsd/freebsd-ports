@@ -100,7 +100,7 @@ OPTIONS_SINGLE_GSSAPI=		GSSAPI_BUILTIN GSSAPI_MIT
 OPTIONS_SINGLE_ZEROCONF=	ZEROCONF_NONE AVAHI MDNSRESPONDER
 
 OPTIONS_RADIO=			DNS
-OPTIONS_RADIO_DNS=		NSUPDATE BIND911 BIND914
+OPTIONS_RADIO_DNS=		NSUPDATE BIND911
 # Make those default options
 OPTIONS_DEFAULT=		AD_DC ADS DEBUG DOCS FAM LDAP \
 				QUOTAS SYSLOG UTMP PROFILE \
@@ -135,7 +135,6 @@ ZEROCONF_NONE_DESC=		Zeroconf support is absent
 
 DNS_DESC=			DNS frontend
 BIND911_DESC=			Use Bind 9.11 as AD DC DNS server frontend
-BIND914_DESC=			Use Bind 9.14 as AD DC DNS server frontend
 NSUPDATE_DESC=			Use samba NSUPDATE utility for AD DC
 ##############################################################################
 # XXX: Unconditional dependencies which can't be switched off(if present in
@@ -297,7 +296,6 @@ MDNSRESPONDER_LIB_DEPENDS=	libdns_sd.so:net/mDNSResponder
 MDNSRESPONDER_VARS=		SAMBA4_SERVICES+=mdnsd
 ##############################################################################
 BIND911_RUN_DEPENDS=		bind911>=9.11.0.0:dns/bind911
-BIND914_RUN_DEPENDS=		bind914>=9.14.0.0:dns/bind914
 NSUPDATE_RUN_DEPENDS=		samba-nsupdate:dns/samba-nsupdate
 ##############################################################################
 DEBUG_CONFIGURE_ON=		--verbose --enable-debug

@@ -14521,3 +14521,5 @@ databases/mongodb34-tools|databases/mongodb36-tools|2020-03-31|Removed, part of 
 databases/py-pypuppetdb03|databases/py-pypuppetdb|2020-04-01|Has expired: Use databases/py-pypuppetdb instead
 www/py-puppetboard02|www/py-puppetboard|2020-04-01|Has expired: Use www/py-puppetboard instead
 www/py-puppetboard03|www/py-puppetboard|2020-04-01|Has expired: Use www/py-puppetboard instead
+dns/dnsperf||2020-05-15|Removed, depends on expired dns/bind914, not compatible with dns/bind916
+dns/bind914|dns/bind916|2020-05-15|Has expired: End of life, please migrate to a newer version of BIND9
