@@ -2,7 +2,7 @@
 
 PORTNAME=	libaudec
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2
+DISTVERSION=	0.2.1
 CATEGORIES=	audio devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,7 +19,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	alex-tee
 USE_LDCONFIG=	yes
 
-PLIST_FILES=	include/audec/audec.h \
+PLIST_FILES=	bin/audec \
+		include/audec/audec.h \
 		lib/libaudec.so \
 		libdata/pkgconfig/audec.pc
 
