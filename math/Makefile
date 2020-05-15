@@ -740,6 +740,7 @@
     SUBDIR += py-cvxopt
     SUBDIR += py-cvxpy
     SUBDIR += py-cyipopt
+    SUBDIR += py-cypari2
     SUBDIR += py-deap
     SUBDIR += py-ecos
     SUBDIR += py-fastcluster
