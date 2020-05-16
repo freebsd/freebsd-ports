@@ -28,9 +28,4 @@ RUN_DEPENDS=	${PYNUMPY} \
 USES=		python:3.5+
 USE_PYTHON=	autoplist distutils
 
-xpost-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/skbio/alignment/_ssw_wrapper.so
-	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/skbio/diversity/_phylogenetic.so
-	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/skbio/stats/__subsample.so
-
 .include <bsd.port.mk>
