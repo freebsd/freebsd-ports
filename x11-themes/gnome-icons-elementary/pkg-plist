@@ -408,6 +408,7 @@ share/icons/elementary/actions/24/tool-pointer.svg
 share/icons/elementary/actions/24/view-reader.svg
 share/icons/elementary/actions/24/view-refresh-symbolic.svg
 share/icons/elementary/actions/24/view-refresh.svg
+share/icons/elementary/actions/24/window-close-symbolic.svg
 share/icons/elementary/actions/24/window-close.svg
 share/icons/elementary/actions/24/window-new.svg
 share/icons/elementary/actions/24/zoom-fit-best.svg
@@ -986,7 +987,6 @@ share/icons/elementary/apps/48/accessories-character-map.svg
 share/icons/elementary/apps/48/accessories-screenshot.svg
 share/icons/elementary/apps/48/accessories-text-editor.svg
 share/icons/elementary/apps/48/application-default-icon.svg
-share/icons/elementary/apps/48/apport.svg
 share/icons/elementary/apps/48/archive-manager.svg
 share/icons/elementary/apps/48/evince.svg
 share/icons/elementary/apps/48/file-roller.svg
@@ -1022,7 +1022,6 @@ share/icons/elementary/apps/64/accessories-character-map.svg
 share/icons/elementary/apps/64/accessories-screenshot.svg
 share/icons/elementary/apps/64/accessories-text-editor.svg
 share/icons/elementary/apps/64/application-default-icon.svg
-share/icons/elementary/apps/64/apport.svg
 share/icons/elementary/apps/64/archive-manager.svg
 share/icons/elementary/apps/64/evince.svg
 share/icons/elementary/apps/64/file-roller.svg
@@ -1167,19 +1166,29 @@ share/icons/elementary/categories/48/applications-video-symbolic.svg
 share/icons/elementary/categories/48/bug.svg
 share/icons/elementary/categories/48/config-language.svg
 share/icons/elementary/categories/48/preferences-bluetooth.svg
+share/icons/elementary/categories/48/preferences-color.svg
+share/icons/elementary/categories/48/preferences-desktop-accessibility-pointing.svg
+share/icons/elementary/categories/48/preferences-desktop-accessibility-zoom.svg
 share/icons/elementary/categories/48/preferences-desktop-accessibility.svg
+share/icons/elementary/categories/48/preferences-desktop-applications.svg
 share/icons/elementary/categories/48/preferences-desktop-display.svg
 share/icons/elementary/categories/48/preferences-desktop-keyboard.svg
 share/icons/elementary/categories/48/preferences-desktop-locale.svg
 share/icons/elementary/categories/48/preferences-desktop-online-accounts.svg
 share/icons/elementary/categories/48/preferences-desktop-peripherals.svg
 share/icons/elementary/categories/48/preferences-desktop-sound.svg
+share/icons/elementary/categories/48/preferences-desktop-wallpaper.svg
+share/icons/elementary/categories/48/preferences-desktop-workspaces.svg
 share/icons/elementary/categories/48/preferences-system-network.svg
+share/icons/elementary/categories/48/preferences-system-notifications-rtl.svg
+share/icons/elementary/categories/48/preferences-system-notifications.svg
 share/icons/elementary/categories/48/preferences-system-parental-controls.svg
 share/icons/elementary/categories/48/preferences-system-power.svg
 share/icons/elementary/categories/48/preferences-system-privacy-housekeeping.svg
 share/icons/elementary/categories/48/preferences-system-privacy.svg
+share/icons/elementary/categories/48/preferences-system-sharing.svg
 share/icons/elementary/categories/48/preferences-system-time.svg
+share/icons/elementary/categories/48/preferences-system-windows.svg
 share/icons/elementary/categories/48/preferences-system.svg
 share/icons/elementary/categories/48/system-help.svg
 share/icons/elementary/categories/64/applications-internet.svg
@@ -1301,9 +1310,11 @@ share/icons/elementary/cursors/ll_angle
 share/icons/elementary/cursors/lr_angle
 share/icons/elementary/cursors/move
 share/icons/elementary/cursors/no-drop
+share/icons/elementary/cursors/not-allowed
 share/icons/elementary/cursors/pencil
 share/icons/elementary/cursors/pirate
 share/icons/elementary/cursors/plus
+share/icons/elementary/cursors/pointer
 share/icons/elementary/cursors/question_arrow
 share/icons/elementary/cursors/right_ptr
 share/icons/elementary/cursors/right_side
@@ -1316,6 +1327,7 @@ share/icons/elementary/cursors/sb_up_arrow
 share/icons/elementary/cursors/sb_v_double_arrow
 share/icons/elementary/cursors/target
 share/icons/elementary/cursors/tcross
+share/icons/elementary/cursors/text
 share/icons/elementary/cursors/top_left_arrow
 share/icons/elementary/cursors/top_left_corner
 share/icons/elementary/cursors/top_right_corner
@@ -1663,7 +1675,9 @@ share/icons/elementary/emblems/24/emblem-default.svg
 share/icons/elementary/emblems/24/emblem-downloads.svg
 share/icons/elementary/emblems/24/emblem-shared.svg
 share/icons/elementary/emblems/24/emblem-synchronized.svg
+share/icons/elementary/emblems/32/emblem-synchronized.svg
 share/icons/elementary/emblems/48/emblem-default.svg
+share/icons/elementary/emblems/48/emblem-synchronized.svg
 share/icons/elementary/emblems/symbolic/emblem-default-symbolic.svg
 share/icons/elementary/emblems/symbolic/emblem-documents-symbolic.svg
 share/icons/elementary/emblems/symbolic/emblem-favorite-symbolic.svg
@@ -3186,6 +3200,7 @@ share/icons/elementary/status/16/security-medium.svg
 share/icons/elementary/status/16/semi-starred-rtl.svg
 share/icons/elementary/status/16/semi-starred.svg
 share/icons/elementary/status/16/software-update-available.svg
+share/icons/elementary/status/16/software-update-urgent.svg
 share/icons/elementary/status/16/starred.svg
 share/icons/elementary/status/16/user-available.svg
 share/icons/elementary/status/16/user-away.svg
@@ -3342,6 +3357,8 @@ share/icons/elementary/status/24/security-high.svg
 share/icons/elementary/status/24/security-low.svg
 share/icons/elementary/status/24/security-medium.svg
 share/icons/elementary/status/24/software-update-available.svg
+share/icons/elementary/status/24/software-update-urgent.svg
+share/icons/elementary/status/24/sync-synchronizing.svg
 share/icons/elementary/status/24/user-available.svg
 share/icons/elementary/status/24/user-away.svg
 share/icons/elementary/status/24/user-busy.svg
@@ -3385,6 +3402,8 @@ share/icons/elementary/status/32/security-high.svg
 share/icons/elementary/status/32/security-low.svg
 share/icons/elementary/status/32/security-medium.svg
 share/icons/elementary/status/32/software-update-available.svg
+share/icons/elementary/status/32/software-update-urgent.svg
+share/icons/elementary/status/32/sync-synchronizing.svg
 share/icons/elementary/status/48/airplane-mode.svg
 share/icons/elementary/status/48/appointment-missed.svg
 share/icons/elementary/status/48/appointment-soon.svg
@@ -3469,6 +3488,8 @@ share/icons/elementary/status/48/security-high.svg
 share/icons/elementary/status/48/security-low.svg
 share/icons/elementary/status/48/security-medium.svg
 share/icons/elementary/status/48/software-update-available.svg
+share/icons/elementary/status/48/software-update-urgent.svg
+share/icons/elementary/status/48/sync-synchronizing.svg
 share/icons/elementary/status/48/view-private.svg
 share/icons/elementary/status/64/appointment-missed.svg
 share/icons/elementary/status/64/appointment-soon.svg
@@ -3489,6 +3510,7 @@ share/icons/elementary/status/64/security-high.svg
 share/icons/elementary/status/64/security-low.svg
 share/icons/elementary/status/64/security-medium.svg
 share/icons/elementary/status/64/software-update-available.svg
+share/icons/elementary/status/64/software-update-urgent.svg
 share/icons/elementary/status/symbolic/airplane-mode-symbolic.svg
 share/icons/elementary/status/symbolic/alarm-symbolic.svg
 share/icons/elementary/status/symbolic/appointment-missed-symbolic.svg
@@ -3631,6 +3653,7 @@ share/icons/elementary/status/symbolic/semi-starred-symbolic.svg
 share/icons/elementary/status/symbolic/software-update-available-symbolic.svg
 share/icons/elementary/status/symbolic/software-update-urgent-symbolic.svg
 share/icons/elementary/status/symbolic/starred-symbolic.svg
+share/icons/elementary/status/symbolic/sync-synchronizing-symbolic.svg
 share/icons/elementary/status/symbolic/task-due-symbolic.svg
 share/icons/elementary/status/symbolic/task-past-due-symbolic.svg
 share/icons/elementary/status/symbolic/touchpad-disabled-symbolic.svg
