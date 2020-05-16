@@ -1,0 +1,6 @@
+The oslo.i18n library contain utilities for working with internationalization
+(i18n) features, especially translation for text strings in an application or
+library.
+
+WWW: https://docs.openstack.org/oslo.i18n/latest/
+WWW: https://github.com/openstack/oslo.i18n
