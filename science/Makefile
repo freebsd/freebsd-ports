@@ -242,6 +242,7 @@
     SUBDIR += py-kim-query
     SUBDIR += py-kinematics
     SUBDIR += py-kliff
+    SUBDIR += py-liac-arff
     SUBDIR += py-lifelines
     SUBDIR += py-mdp
     SUBDIR += py-mlpy
