@@ -1,6 +1,6 @@
---- Makefile.orig	2014-06-25 21:07:29 UTC
+--- Makefile.orig	2019-10-29 11:37:45 UTC
 +++ Makefile
-@@ -228,7 +228,7 @@ BIN_FILES = bin/
+@@ -236,7 +236,7 @@ BIN_FILES = bin/
  
  prefix   ?= /usr/local
  version  := $(shell cat version)
@@ -9,42 +9,3 @@
  
  install: xcrysden
  	@echo
-@@ -238,27 +238,27 @@ install: xcrysden
- 	@echo "#                          "
- 	@echo "#-----"
- 	@echo	
--	install -m755 -d $(prefix)/share/$(xcrysden)
--	cp -a $(IRON_ITEMS) $(prefix)/share/$(xcrysden)
-+	install -m755 -d $(DESTDIR)$(prefix)/share/$(xcrysden)
-+	cp -a $(IRON_ITEMS) $(DESTDIR)$(prefix)/share/$(xcrysden)
- 	\
- 	for subdir in Awk examples $(EXTERNAL_LIB_BWIDGET) images scripts Tcl util; do \
- 		if test -d $$subdir; then \
--			install -m755 -d $(prefix)/share/$(xcrysden)/$$subdir; \
--			cp -a   $$subdir/* $(prefix)/share/$(xcrysden)/$$subdir; \
-+			install -m755 -d $(DESTDIR)$(prefix)/share/$(xcrysden)/$$subdir; \
-+			cp -a   $$subdir/* $(DESTDIR)$(prefix)/share/$(xcrysden)/$$subdir; \
- 		fi; \
- 	done
- 	\
--	install -m755 -d $(prefix)/share/man/man1
--	install -m644 $(MAN_FILES) $(prefix)/share/man/man1/
--	gzip -f $(addprefix $(prefix)/share/man/man1/,$(MAN_PAGES))
-+	install -m755 -d $(DESTDIR)$(prefix)/man/man1
-+	install -m644 $(MAN_FILES) $(DESTDIR)$(prefix)/man/man1/
-+	gzip -f $(addprefix $(DESTDIR)$(prefix)/man/man1/,$(MAN_PAGES))
- 	\
--	install -m755 -d $(prefix)/lib/$(xcrysden)
--	install -m755 bin/*  $(prefix)/lib/$(xcrysden)/
-+	install -m755 -d $(DESTDIR)$(prefix)/lib/$(xcrysden)
-+	install -m755 bin/*  $(DESTDIR)$(prefix)/lib/$(xcrysden)/
- 	\
- 	prefix=$(prefix) xcrysden=$(xcrysden) sh sys_utils/wrappers.sh
--	if test ! -d $(prefix)/bin; then install -m755 -d $(prefix)/bin; fi
-+	if test ! -d $(DESTDIR)$(prefix)/bin; then install -m755 -d $(DESTDIR)$(prefix)/bin; fi
- 	for prog in $(PROGS); do \
--		install -m755 $$prog.wrapper   $(prefix)/bin/$$prog; \
-+		install -m755 $$prog.wrapper   $(DESTDIR)$(prefix)/bin/$$prog; \
- 	done
- 
- 
