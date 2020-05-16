@@ -6,6 +6,8 @@ man/man1/show.1.gz
 %%DATADIR%%/default
 %%DATADIR%%/hot-dog-stand
 %%DATADIR%%/light
+%%DATADIR%%/mac
 %%DATADIR%%/monochrome
 %%DATADIR%%/neutral
 %%DATADIR%%/nt
+%%DATADIR%%/ti
