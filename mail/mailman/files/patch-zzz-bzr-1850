@@ -1,0 +1,45 @@
+=== modified file 'Mailman/MailList.py'
+--- Mailman/MailList.py	2020-01-10 01:00:40 +0000
++++ Mailman/MailList.py	2020-05-13 18:10:04 +0000
+@@ -1,4 +1,4 @@
+-# Copyright (C) 1998-2018 by the Free Software Foundation, Inc.
++# Copyright (C) 1998-2020 by the Free Software Foundation, Inc.
+ #
+ # This program is free software; you can redistribute it and/or
+ # modify it under the terms of the GNU General Public License
+@@ -846,9 +846,8 @@
+         for k, v in pends.items():
+             if k in ('evictions', 'version'):
+                 continue
+-            op, data = v
+-            if (op == Pending.SUBSCRIPTION and
+-                    data.address.lower() == email.lower()):
++            if (v[0] == Pending.SUBSCRIPTION and
++                    v[1].address.lower() == email.lower()):
+                 return True
+         return False
+ 
+
+=== modified file 'NEWS'
+--- NEWS	2020-05-07 13:53:40 +0000
++++ NEWS	2020-05-13 18:10:04 +0000
+@@ -1,10 +1,17 @@
+ -*- coding: iso-8859-1 -*-
+ Mailman - The GNU Mailing List Management System
+-Copyright (C) 1998-2018 by the Free Software Foundation, Inc.
++Copyright (C) 1998-2020 by the Free Software Foundation, Inc.
+ 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA
+ 
+ Here is a history of user visible changes to Mailman.
+ 
++2.1.34 (xx-xxx-xxxx)
++
++  Bug Fixes and other patches
++
++    - The fix for LP: #1859104 can result in ValueError being thrown on
++      attempts to subscribe to a list. This is fixed.  (LP: #1878458)
++
+ 2.1.33 (07-May-2020)
+ 
+   Security
+
