@@ -3,7 +3,7 @@
 
 PORTNAME=	osc-lib
 PORTVERSION=	1.15.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=2.0.0:devel/py-pbr@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=2.3.4:devel/py-babel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openstacksdk>=0.15.0:devel/py-openstacksdk@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}oslo.i18n>=3.15.3:devel/py-oslo.i18n@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oslo.utils>=3.33.0:devel/py-oslo.utils@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pbr>=2.0.0:devel/py-pbr@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}simplejson>=3.5.1:devel/py-simplejson@${PY_FLAVOR} \
@@ -36,10 +35,12 @@ PORTSCOUT=	limit:^1\.
 
 .if ${PYTHON_REL} < 3600
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}cliff2>=2.8.0:devel/py-cliff2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}keystoneauth13>=3.7.0:devel/py-keystoneauth13@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}keystoneauth13>=3.7.0:devel/py-keystoneauth13@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}oslo.i18n3>=3.15.3:devel/py-oslo.i18n3@${PY_FLAVOR}
 .else
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}cliff>=2.8.0:devel/py-cliff@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}keystoneauth1>=3.7.0:devel/py-keystoneauth1@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}keystoneauth1>=3.7.0:devel/py-keystoneauth1@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}oslo.i18n>=3.15.3:devel/py-oslo.i18n@${PY_FLAVOR}
 .endif
 
 .include <bsd.port.post.mk>
