@@ -86,7 +86,7 @@ SHEBANG_FILES=		tests/system/tools/objectsToTable.py \
 
 .include <bsd.port.pre.mk>
 
-.if ${LLVM_DEFAULT:S,-devel,990,} >= 90
+.if ${LLVM_DEFAULT:C/[1-5]./&0/:S,-devel,990,} >= 90
 LLVM_DEFAULT=	80
 .endif
 

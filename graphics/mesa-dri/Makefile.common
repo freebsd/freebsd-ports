@@ -79,7 +79,7 @@ INSTALL_TARGET=	install-strip
 
 .if ${ARCH} == powerpc64
 LLVM_DEFAULT=	90
-.elif ${LLVM_DEFAULT:S,-devel,990,} >= 90
+.elif ${LLVM_DEFAULT:C/[1-5]./&0/:S,-devel,990,} >= 90
 LLVM_DEFAULT=	80
 .endif
 
