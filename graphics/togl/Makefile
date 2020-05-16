@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	togl
-PORTVERSION=	1.7
-PORTREVISION=	7
+DISTVERSION=	2.0
+DISTVERSIONSUFFIX=	-src
 CATEGORIES=	graphics tk
 MASTER_SITES=	SF/${PORTNAME}/Togl/${PORTVERSION}
-DISTNAME=	Togl-${PORTVERSION}
+DISTNAME=	Togl${DISTVERSIONFULL}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tk OpenGL widget
@@ -17,30 +17,27 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		gl gmake tk:tea xorg
 USE_XORG=	x11 xt xmu
 USE_GL=		gl
-USE_LDCONFIG=	yes
+USE_LDCONFIG=	${PREFIX}/lib/Togl2.0
+
+WRKSRC=		${WRKDIR}/Togl2.0
 
 TOGL_INSTDIR=	${PREFIX}/lib/${DISTNAME}
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
+
+PORTDOCS=	*
+PORTEXAMPLES=	*
+
+WITH_DEBUG=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|wish |${WISH:T} |' ${WRKSRC}/*.tcl
 	@${REINPLACE_CMD} -e 's/FreeBSD-\*/FreeBSD-*|DragonFly-*/g' \
 		${WRKSRC}/configure
 
-do-install:
-	@${MKDIR} ${STAGEDIR}${TOGL_INSTDIR}
-.for i in togl.h togl_ws.h pkgIndex.tcl
-	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${TOGL_INSTDIR}
-.endfor
-	${INSTALL_LIB} ${WRKSRC}/libTogl1.7.so ${STAGEDIR}${TOGL_INSTDIR}
-	${LN} -s libTogl1.7.so  ${STAGEDIR}${TOGL_INSTDIR}/libtogl.so.1
-	${LN} -s ${TOGL_INSTDIR}/libTogl1.7.so  ${STAGEDIR}${PREFIX}/lib/libtogl.so
-	${LN} -s ${TOGL_INSTDIR}/libTogl1.7.so  ${STAGEDIR}${PREFIX}/lib/libtogl.so.1
-
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/Togl.html ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
 do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
