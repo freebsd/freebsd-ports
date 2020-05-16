@@ -1,0 +1,4 @@
+URI is a module providing classes to handle Uniform Resource Identifiers (RFC
+2396).
+
+WWW: https://github.com/ruby/uri
