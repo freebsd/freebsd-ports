@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 SEAFILE_VER=7.1.3
-SEAHUB_VER=7.1.3
+SEAHUB_VER=7.1.4
 
 
 # Various vars used in most/all the Makefiles
