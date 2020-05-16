@@ -1,0 +1,11 @@
+Matrix is an implementation of Matrix and Vector classes.
+
+The Matrix class represents a mathematical matrix. It provides methods for
+creating matrices, operating on them arithmetically and algebraically, and
+determining their mathematical properties (trace, rank, inverse, determinant,
+eigensystem, etc.).
+
+The Vector class represents a mathematical vector, which is useful in its own
+right, and also constitutes a row or column of a Matrix.
+
+WWW: https://github.com/ruby/matrix
