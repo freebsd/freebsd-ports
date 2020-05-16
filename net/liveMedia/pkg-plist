@@ -61,6 +61,7 @@ include/liveMedia/AC3AudioRTPSource.hh
 include/liveMedia/AC3AudioStreamFramer.hh
 include/liveMedia/ADTSAudioFileServerMediaSubsession.hh
 include/liveMedia/ADTSAudioFileSource.hh
+include/liveMedia/ADTSAudioStreamDiscreteFramer.hh
 include/liveMedia/AMRAudioFileServerMediaSubsession.hh
 include/liveMedia/AMRAudioFileSink.hh
 include/liveMedia/AMRAudioFileSource.hh
