@@ -1,3 +1,7 @@
-Terminology is an EFL terminal emulator with some extra bells and whistles.
+Terminology is a terminal emulator bristling with advanced features including:
+tabs, splits, 256-color support, wallpapers (even animated ones), in-line
+display of media (click on a file path to a video and watch it play),
+link detection, compressed scrollback stored in RAM, translucency and
+a gorgeous look and feel inspired by classic CRT monitors.
 
 WWW: https://www.enlightenment.org/

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	terminology
-DISTVERSION=	1.4.1
-PORTREVISION=	1
+DISTVERSION=	1.6.0
 CATEGORIES=	x11 enlightenment
 MASTER_SITES=	http://download.enlightenment.org/rel/apps/${PORTNAME}/
 DIST_SUBDIR=	enlightenment
