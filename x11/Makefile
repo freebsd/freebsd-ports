@@ -322,6 +322,7 @@
     SUBDIR += urxvt-perls
     SUBDIR += vdesk
     SUBDIR += viewres
+    SUBDIR += virglrenderer
     SUBDIR += virtboard
     SUBDIR += virtualgl
     SUBDIR += wallutils

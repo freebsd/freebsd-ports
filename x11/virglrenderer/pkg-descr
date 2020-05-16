@@ -1,0 +1,7 @@
+Virgil is a research project to investigate the possibility of creating a
+virtual 3D GPU for use inside qemu virtual machines, that allows the guest
+operating system to use the capabilities of the host GPU to accelerate 3D
+rendering. The plan is to have a guest GPU that is fully independent of the
+host GPU.
+
+WWW: https://virgil3d.github.io/

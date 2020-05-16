@@ -1,0 +1,6 @@
+bin/virgl_test_server
+include/virgl/virglrenderer.h
+lib/libvirglrenderer.so
+lib/libvirglrenderer.so.1
+lib/libvirglrenderer.so.1.4.2
+libdata/pkgconfig/virglrenderer.pc
