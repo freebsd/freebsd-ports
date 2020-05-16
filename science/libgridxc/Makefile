@@ -12,6 +12,8 @@ COMMENT=	Library to compute the exchange and correlation energy and potentials
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/../BSD_LICENSE
 
+BROKEN=		fails to build
+
 USES=		fortran gmake tar:tgz
 USE_LDCONFIG=	yes
 
