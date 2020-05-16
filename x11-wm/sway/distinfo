@@ -3,3 +3,5 @@ SHA256 (swaywm-sway-1.4_GH0.tar.gz) = e2805291fc01d49e21dda4b273e38170d1fff4e175
 SIZE (swaywm-sway-1.4_GH0.tar.gz) = 5514489
 SHA256 (cd9d1038a822.patch) = 4183dffdf4e3dbe70302d7e6e665cc83243a7166cf9bc2b8aacd7d56a9876069
 SIZE (cd9d1038a822.patch) = 8946
+SHA256 (f98ca3ab7ca1.patch) = 319a9658ea12403e6c73ed0c2c6f0deffd23ebe25b6ba81d7573f9984be95760
+SIZE (f98ca3ab7ca1.patch) = 2669
