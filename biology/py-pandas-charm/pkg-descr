@@ -1,0 +1,5 @@
+pandas-charm is a small Python package for getting character matrices
+(alignments) into and out of pandas. Use this library to make pandas
+interoperable with BioPython and DendroPy.
+
+WWW: https://github.com/jmenglund/pandas-charm
