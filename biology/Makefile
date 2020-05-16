@@ -129,6 +129,7 @@
     SUBDIR += py-fastTSNE
     SUBDIR += py-gffutils
     SUBDIR += py-gtfparse
+    SUBDIR += py-hits
     SUBDIR += py-loompy
     SUBDIR += py-macs2
     SUBDIR += py-multiqc
