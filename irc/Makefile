@@ -53,6 +53,7 @@
     SUBDIR += irssi-xmpp
     SUBDIR += irssistats
     SUBDIR += keitairc2
+    SUBDIR += komanda-cli
     SUBDIR += konversation
     SUBDIR += kvirc
     SUBDIR += libircclient
