@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sentry-cli
-DISTVERSION=	1.52.3
+DISTVERSION=	1.52.4
 CATEGORIES=	devel
 
 MAINTAINER=	vulcan@wired.sh
