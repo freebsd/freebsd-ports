@@ -349,6 +349,7 @@
     SUBDIR += jack-smf-utils
     SUBDIR += jack_ghero
     SUBDIR += jack_umidi
+    SUBDIR += jacktrip
     SUBDIR += jalv
     SUBDIR += jalv-select
     SUBDIR += jamin
