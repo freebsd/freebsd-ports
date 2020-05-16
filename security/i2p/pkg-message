@@ -1,0 +1,24 @@
+[
+{ type: install
+  message: <<EOM
+
+The wrapper and rc script are currently broken and under review,
+so you have to install and run i2p in the following way:
+
+- Install security/i2p port (which you might have now)
+- As normal user run /usr/local/sbin/i2prouter install (root is not allowed)
+  to extract all data into $HOME/i2p.
+- Go to users home i2p/ and edit runplain.sh to map I2PTEMP to the same 
+  directory as I2P
+- Now you can start the process in I2P home directory with ./runplain.sh
+
+You first have to walk through an initial setup via 
+
+http://localhost:7657
+
+Follow the instructions and map your browser to the configured ports.
+You can also host hidden services and many more via the UI.
+
+EOM
+}
+]

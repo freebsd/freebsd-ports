@@ -1,6 +1,6 @@
---- installer/resources/postinstall.sh.orig	2014-07-28 20:57:21.000000000 +0200
-+++ installer/resources/postinstall.sh	2014-07-28 20:58:49.000000000 +0200
-@@ -53,7 +53,7 @@
+--- installer/resources/postinstall.sh.orig	2020-02-24 17:37:40 UTC
++++ installer/resources/postinstall.sh
+@@ -57,7 +57,7 @@ case $HOST_OS in
          else
              wrapperpath="./lib/wrapper/linux64"
              # the 32bit libwrapper.so will be needed if a 32 bit jvm is used
