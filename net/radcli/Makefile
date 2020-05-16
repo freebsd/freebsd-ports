@@ -3,7 +3,7 @@
 
 PORTNAME=	radcli
 PORTVERSION=	1.2.11
-PORTREVISION=	1
+PORTREVISION=	2
 MASTER_SITES=	https://github.com/radcli/radcli/releases/download/${PORTVERSION}/
 CATEGORIES=	net
 

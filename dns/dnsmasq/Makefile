@@ -4,7 +4,7 @@
 PORTNAME=	dnsmasq
 DISTVERSION=	2.81
 # Leave the PORTREVISION in even if 0 to avoid accidental PORTEPOCH bumps:
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/ \

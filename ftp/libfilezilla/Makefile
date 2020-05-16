@@ -2,7 +2,7 @@
 
 PORTNAME=	libfilezilla
 PORTVERSION=	0.15.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	ftp
 MASTER_SITES=	https://download.filezilla-project.org/${PORTNAME}/
 

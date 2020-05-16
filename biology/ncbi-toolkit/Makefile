@@ -3,7 +3,7 @@
 
 PORTNAME=	ncbi-toolkit
 DISTVERSION=	2017.01.06	# containing BLAST v2.2.27 (? is this true)
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.ncbi.nlm.nih.gov/toolbox/ncbi_tools/old/${PORTVERSION:S/.//g}/
 DISTNAME=	ncbi

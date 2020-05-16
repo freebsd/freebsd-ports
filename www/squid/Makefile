@@ -2,7 +2,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	4.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://www.squid-cache.org/Versions/v4/ \
 		http://www2.us.squid-cache.org/Versions/v4/ \

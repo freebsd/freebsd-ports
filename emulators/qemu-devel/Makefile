@@ -3,6 +3,7 @@
 
 PORTNAME=	qemu
 PORTVERSION=	4.2.0
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.qemu.org/
 PKGNAMESUFFIX=	-devel
