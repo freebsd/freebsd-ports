@@ -17,6 +17,9 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libavcodec.so:multimedia/ffmpeg \
 		libfreetype.so:print/freetype2
 
+BUILD_DEPENDS=	${BUILD_DEPENDS_${ARCH}}
+BUILD_DEPENDS_i386=	as:devel/binutils
+
 USES=		compiler:c11 gmake iconv ncurses tar:xz
 NOPRECIOUSMAKEVARS=	yes # ARCH
 HAS_CONFIGURE=	yes
