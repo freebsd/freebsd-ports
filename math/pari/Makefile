@@ -3,6 +3,7 @@
 
 PORTNAME=	pari
 DISTVERSION=	2.11.4
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	math
 MASTER_SITES=	http://pari.math.u-bordeaux.fr/pub/pari/unix/ \
@@ -20,7 +21,7 @@ LIB_DEPENDS=	libgmp.so:math/gmp
 
 USES=		perl5 readline
 USE_LDCONFIG=	yes
-USE_PERL5=	build
+USE_PERL5=	build run
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man/man1 \
