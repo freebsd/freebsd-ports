@@ -2221,8 +2221,8 @@ lib/python%%XYDOT%%/http/server.py
 lib/python%%XYDOT%%/idlelib/CREDITS.txt
 lib/python%%XYDOT%%/idlelib/ChangeLog
 lib/python%%XYDOT%%/idlelib/HISTORY.txt
+lib/python%%XYDOT%%/idlelib/Icons/README.txt
 lib/python%%XYDOT%%/idlelib/Icons/folder.gif
-lib/python%%XYDOT%%/idlelib/Icons/idle.icns
 lib/python%%XYDOT%%/idlelib/Icons/idle.ico
 lib/python%%XYDOT%%/idlelib/Icons/idle_16.gif
 lib/python%%XYDOT%%/idlelib/Icons/idle_16.png
@@ -2230,6 +2230,7 @@ lib/python%%XYDOT%%/idlelib/Icons/idle_32.gif
 lib/python%%XYDOT%%/idlelib/Icons/idle_32.png
 lib/python%%XYDOT%%/idlelib/Icons/idle_48.gif
 lib/python%%XYDOT%%/idlelib/Icons/idle_48.png
+lib/python%%XYDOT%%/idlelib/Icons/idle_256.png
 lib/python%%XYDOT%%/idlelib/Icons/minusnode.gif
 lib/python%%XYDOT%%/idlelib/Icons/openfolder.gif
 lib/python%%XYDOT%%/idlelib/Icons/plusnode.gif
