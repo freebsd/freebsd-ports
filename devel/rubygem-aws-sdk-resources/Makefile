@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	aws-sdk-resources
-PORTVERSION=	3.72.0
+PORTVERSION=	3.73.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -142,6 +142,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-lightsail>=1<2:devel/rubygem-aws-sdk-lightsail \
 		rubygem-aws-sdk-machinelearning>=1<2:devel/rubygem-aws-sdk-machinelearning \
 		rubygem-aws-sdk-macie>=1<2:devel/rubygem-aws-sdk-macie \
+		rubygem-aws-sdk-macie2>=1<2:devel/rubygem-aws-sdk-macie2 \
 		rubygem-aws-sdk-managedblockchain>=1<2:devel/rubygem-aws-sdk-managedblockchain \
 		rubygem-aws-sdk-marketplacecatalog>=1<2:devel/rubygem-aws-sdk-marketplacecatalog \
 		rubygem-aws-sdk-marketplacecommerceanalytics>=1<2:devel/rubygem-aws-sdk-marketplacecommerceanalytics \
