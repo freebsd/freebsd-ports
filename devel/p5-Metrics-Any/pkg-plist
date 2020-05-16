@@ -3,6 +3,7 @@
 %%SITE_PERL%%/Metrics/Any/Adapter/File.pm
 %%SITE_PERL%%/Metrics/Any/Adapter/Null.pm
 %%SITE_PERL%%/Metrics/Any/Adapter/Stderr.pm
+%%SITE_PERL%%/Metrics/Any/Adapter/Tee.pm
 %%SITE_PERL%%/Metrics/Any/Adapter/Test.pm
 %%SITE_PERL%%/Metrics/Any/Collector.pm
 %%PERL5_MAN3%%/Metrics::Any.3.gz
@@ -10,5 +11,6 @@
 %%PERL5_MAN3%%/Metrics::Any::Adapter::File.3.gz
 %%PERL5_MAN3%%/Metrics::Any::Adapter::Null.3.gz
 %%PERL5_MAN3%%/Metrics::Any::Adapter::Stderr.3.gz
+%%PERL5_MAN3%%/Metrics::Any::Adapter::Tee.3.gz
 %%PERL5_MAN3%%/Metrics::Any::Adapter::Test.3.gz
 %%PERL5_MAN3%%/Metrics::Any::Collector.3.gz
