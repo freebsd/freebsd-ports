@@ -19,12 +19,13 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}astroid1>=1.6:devel/py-astroid1@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}mccabe>=0:devel/py-mccabe@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${PY_FLAVOR}
 
-PORTSCOUT=	limit:^1\.
-
 USES=		python shebangfix
 USE_PYTHON=	concurrent distutils py3kplist
 
 NO_ARCH=	yes
+
+# pylint 2.0.0+ require Python 3.4+
+PORTSCOUT=	limit:^1\.
 
 SHEBANG_FILES=	pylint/test/data/ascript
 
