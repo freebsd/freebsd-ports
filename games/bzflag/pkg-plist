@@ -71,6 +71,8 @@ man/man6/bzfs.6.gz
 %%DATADIR%%/flag_won.wav
 %%DATADIR%%/flap.wav
 %%DATADIR%%/fonts/DejaVu.License
+%%DATADIR%%/fonts/DejaVuSansCondensedBold_10.fmt
+%%DATADIR%%/fonts/DejaVuSansCondensedBold_10.png
 %%DATADIR%%/fonts/DejaVuSansCondensedBold_12.fmt
 %%DATADIR%%/fonts/DejaVuSansCondensedBold_12.png
 %%DATADIR%%/fonts/DejaVuSansCondensedBold_16.fmt
@@ -87,6 +89,8 @@ man/man6/bzfs.6.gz
 %%DATADIR%%/fonts/DejaVuSansCondensedBold_64.png
 %%DATADIR%%/fonts/DejaVuSansCondensedBold_8.fmt
 %%DATADIR%%/fonts/DejaVuSansCondensedBold_8.png
+%%DATADIR%%/fonts/DejaVuSansMonoBold_10.fmt
+%%DATADIR%%/fonts/DejaVuSansMonoBold_10.png
 %%DATADIR%%/fonts/DejaVuSansMonoBold_12.fmt
 %%DATADIR%%/fonts/DejaVuSansMonoBold_12.png
 %%DATADIR%%/fonts/DejaVuSansMonoBold_16.fmt
@@ -134,6 +138,7 @@ man/man6/bzfs.6.gz
 %%DATADIR%%/l10n/bzflag_nl.po
 %%DATADIR%%/l10n/bzflag_pt.po
 %%DATADIR%%/l10n/bzflag_ru.po
+%%DATADIR%%/l10n/bzflag_sk.po
 %%DATADIR%%/l10n/bzflag_sv.po
 %%DATADIR%%/land.wav
 %%DATADIR%%/laser.wav
