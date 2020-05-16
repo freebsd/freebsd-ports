@@ -1,0 +1,11 @@
+The GetoptLong class allows you to parse command line options similarly to the
+GNU getopt_long() C library call. Note, however, that GetoptLong is a pure Ruby
+implementation.
+
+GetoptLong allows for POSIX-style options like --file as well as single letter
+options like -f
+
+The empty option -- (two minus symbols) is used to end option processing. This
+can be particularly important if options have optional arguments.
+
+WWW: https://github.com/ruby/getoptlong
