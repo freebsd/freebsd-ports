@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-Async-HTTP
-PORTVERSION=	0.46
+PORTVERSION=	0.47
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,7 +19,7 @@ RUN_DEPENDS=	p5-Future>=0.28:devel/p5-Future \
 		p5-HTTP-Cookies>=0:www/p5-HTTP-Cookies \
 		p5-HTTP-Message>=0:www/p5-HTTP-Message \
 		p5-IO-Async>=0.59:devel/p5-IO-Async \
-		p5-Metrics-Any>=0.03:devel/p5-Metrics-Any \
+		p5-Metrics-Any>=0.05:devel/p5-Metrics-Any \
 		p5-Struct-Dumb>=0.07:devel/p5-Struct-Dumb \
 		p5-URI>=0:net/p5-URI
 TEST_DEPENDS=	p5-IO-Async-SSL>=0.12:security/p5-IO-Async-SSL \
