@@ -9804,7 +9804,6 @@ devel/beautifyphp||2018-01-29|only works for PHP4 which is gone long ago
 devel/clanlib22|devel/clanlib|2018-01-29|No users in the ports tree, newer version available
 devel/php-xdebug|devel/pecl-xdebug|2018-01-30|Moved to pecl
 astro/py-pyfits|astro/py-astropy|2018-01-31|Has expired: Use astro/py-astropy instead
-devel/py-gitdb|devel/py-gitdb2|2018-01-31|Has expired: Use devel/py-gitdb2 instead
 devel/py-smmap|devel/py-smmap2|2018-01-31|Has expired: Use devel/py-smmap2 instead
 devel/rubygem-moneta06|devel/rubygem-moneta|2018-01-31|Has expired: Use devel/rubygem-moneta instead
 lang/ruby22|lang/ruby24|2018-01-31|Has expired: Upgrade to newer version (e.g. lang/ruby24)
