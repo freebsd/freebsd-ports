@@ -1,0 +1,11 @@
+Smmap wraps an interface around mmap and tracks the mapped files as well as the
+amount of clients who use it. If the system runs out of resources, or if a
+memory limit is reached, it will automatically unload unused maps to allow
+continued operation.
+
+To allow processing large files even on 32 bit systems, it allows only portions
+of the file to be mapped. Once the user reads beyond the mapped region, smmap
+will automatically map the next required region, unloading unused regions using
+a LRU algorithm.
+
+WWW: https://github.com/gitpython-developers/smmap
