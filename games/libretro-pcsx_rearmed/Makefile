@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libretro-pcsx_rearmed
-PORTVERSION=	0.20200313
+PORTVERSION=	0.20200504
 CATEGORIES=	games
 
 MAINTAINER=	menelkir@itroll.org
@@ -18,12 +18,12 @@ GH_ACCOUNT=	libretro
 GH_PROJECT=	pcsx_rearmed
 GH_TAGNAME=	8fda5dd
 
-PLIST_FILES=	libexec/libretro/pcsx_rearmed_libretro.so
+PLIST_FILES=	lib/libretro/pcsx_rearmed_libretro.so
 
 MAKEFILE=	Makefile.libretro
 
 do-install:
-	${MKDIR} ${STAGEDIR}/${PREFIX}/libexec/libretro;
-	${INSTALL_LIB} $$(find ${WRKSRC}/${COREDIR}/ -name "*.so") ${STAGEDIR}/${PREFIX}/libexec/libretro;
+	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro;
+	${INSTALL_LIB} ${WRKSRC}/pcsx_rearmed_libretro.so ${STAGEDIR}/${PREFIX}/lib/libretro;
 
 .include <bsd.port.mk>

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libretro-nestopia
-PORTVERSION=	0.20200313
+PORTVERSION=	0.20200504
 CATEGORIES=	games
 
 MAINTAINER=	menelkir@itroll.org
@@ -17,12 +17,12 @@ GH_ACCOUNT=	libretro
 GH_PROJECT=	nestopia
 GH_TAGNAME=	70c53f0
 
-PLIST_FILES=	libexec/libretro/nestopia_libretro.so
+PLIST_FILES=	lib/libretro/nestopia_libretro.so
 
 MAKEFILE=	Makefile.freebsd
 
 do-install:
-	${MKDIR} ${STAGEDIR}/${PREFIX}/libexec/libretro;
-	${INSTALL_LIB} $$(find ${WRKSRC}/${COREDIR}/ -name "*.so") ${STAGEDIR}/${PREFIX}/libexec/libretro;
+	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro;
+	${INSTALL_LIB} ${WRKSRC}/libretro/nestopia_libretro.so ${STAGEDIR}/${PREFIX}/lib/libretro;
 
 .include <bsd.port.mk>

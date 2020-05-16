@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libretro-fbalpha
-PORTVERSION=	0.20200313
+PORTVERSION=	0.20200504
 CATEGORIES=	games
 
 MAINTAINER=	menelkir@itroll.org
@@ -16,7 +16,7 @@ USES=		compiler:c++11-lib gmake gl
 USE_LDCONFIG=	yes
 USE_GL=		gl
 
-PLIST_FILES=	libexec/libretro/fbalpha_libretro.so
+PLIST_FILES=	lib/libretro/fbalpha_libretro.so
 
 NO_CDROM=       Commercial users must seek permission from copyright holders.
 
@@ -28,7 +28,7 @@ GH_TAGNAME=	84eb9d9
 MAKEFILE=	Makefile.freebsd
 
 do-install:
-	${MKDIR} ${STAGEDIR}/${PREFIX}/libexec/libretro;
-	${INSTALL_LIB} $$(find ${WRKSRC}/${COREDIR}/ -name "*.so") ${STAGEDIR}/${PREFIX}/libexec/libretro;
+	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro;
+	${INSTALL_LIB} ${WRKSRC}/fbalpha_libretro.so ${STAGEDIR}/${PREFIX}/lib/libretro;
 
 .include <bsd.port.mk>

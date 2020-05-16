@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libretro-bluemsx
-PORTVERSION=	0.20200313
+PORTVERSION=	0.20200504
 CATEGORIES=	games
 
 MAINTAINER=	menelkir@itroll.org
@@ -19,10 +19,10 @@ GH_ACCOUNT=	libretro
 GH_PROJECT=	blueMSX-libretro
 GH_TAGNAME=	7a1d40e
 
-PLIST_FILES=	libexec/libretro/bluemsx_libretro.so
+PLIST_FILES=	lib/libretro/bluemsx_libretro.so
 
 do-install:
-	${MKDIR} ${STAGEDIR}/${PREFIX}/libexec/libretro;
-	${INSTALL_LIB} $$(find ${WRKSRC}/${COREDIR}/ -name "*.so") ${STAGEDIR}/${PREFIX}/libexec/libretro;
+	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro;
+	${INSTALL_LIB} ${WRKSRC}/bluemsx_libretro.so ${STAGEDIR}/${PREFIX}/lib/libretro;
 
 .include <bsd.port.mk>

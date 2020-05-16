@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libretro-picodrive
-PORTVERSION=	0.20200313
+PORTVERSION=	0.20200504
 CATEGORIES=	games
 
 MAINTAINER=	menelkir@itroll.org
@@ -19,12 +19,12 @@ GH_ACCOUNT=	libretro
 GH_PROJECT=	picodrive
 GH_TAGNAME=	600894e
 
-PLIST_FILES=	libexec/libretro/picodrive_libretro.so
+PLIST_FILES=	lib/libretro/picodrive_libretro.so
 
 MAKEFILE=	Makefile.libretro
 
 do-install:
-	${MKDIR} ${STAGEDIR}/${PREFIX}/libexec/libretro;
-	${INSTALL_LIB} $$(find ${WRKSRC}/${COREDIR}/ -name "*.so") ${STAGEDIR}/${PREFIX}/libexec/libretro;
+	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro;
+	${INSTALL_LIB} ${WRKSRC}/picodrive_libretro.so ${STAGEDIR}/${PREFIX}/lib/libretro;
 
 .include <bsd.port.mk>

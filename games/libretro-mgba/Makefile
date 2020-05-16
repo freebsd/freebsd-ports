@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libretro-mgba
-PORTVERSION=	0.20200313
+PORTVERSION=	0.20200504
 CATEGORIES=	games
 
 MAINTAINER=	menelkir@itroll.org
@@ -17,10 +17,10 @@ GH_ACCOUNT=	libretro
 GH_PROJECT=	mgba
 GH_TAGNAME=	f87f9ef
 
-PLIST_FILES=	libexec/libretro/mgba_libretro.so
+PLIST_FILES=	lib/libretro/mgba_libretro.so
 
 do-install:
-	${MKDIR} ${STAGEDIR}/${PREFIX}/libexec/libretro;
-	${INSTALL_LIB} $$(find ${WRKSRC}/${COREDIR}/ -name "*.so") ${STAGEDIR}/${PREFIX}/libexec/libretro;
+	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro;
+	${INSTALL_LIB} ${WRKSRC}/mgba_libretro.so ${STAGEDIR}/${PREFIX}/lib/libretro;
 
 .include <bsd.port.mk>
