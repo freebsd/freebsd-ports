@@ -3,6 +3,7 @@ bin/gdal_contour
 bin/gdal_grid
 bin/gdal_rasterize
 bin/gdal_translate
+bin/gdal_viewshed
 bin/gdaladdo
 bin/gdalbuildvrt
 bin/gdaldem
@@ -10,6 +11,8 @@ bin/gdalenhance
 bin/gdalinfo
 bin/gdallocationinfo
 bin/gdalmanage
+bin/gdalmdiminfo
+bin/gdalmdimtranslate
 bin/gdalserver
 bin/gdalsrsinfo
 bin/gdaltindex
@@ -100,11 +103,12 @@ include/ogr_geometry.h
 include/ogr_p.h
 include/ogr_spatialref.h
 include/ogr_srs_api.h
+include/ogr_swq.h
 include/ogrsf_frmts.h
 include/rawdataset.h
 include/thinplatespline.h
 include/vrtdataset.h
-lib/gdalplugins/.keepme
+@dir lib/gdalplugins
 lib/libgdal.a
 lib/libgdal.so
 lib/libgdal.so.3
@@ -122,6 +126,7 @@ libdata/pkgconfig/gdal.pc
 %%DATADIR%%/epsg.wkt
 %%DATADIR%%/esri_StatePlane_extra.wkt
 %%DATADIR%%/gdalicon.png
+%%DATADIR%%/gdalmdiminfo_output.schema.json
 %%DATADIR%%/gdalvrt.xsd
 %%DATADIR%%/gml_registry.xml
 %%DATADIR%%/gmlasconf.xml
@@ -186,3 +191,4 @@ libdata/pkgconfig/gdal.pc
 %%DATADIR%%/trailer.dxf
 %%DATADIR%%/vdv452.xml
 %%DATADIR%%/vdv452.xsd
+%%DATADIR%%/vicar.json
