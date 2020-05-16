@@ -2,6 +2,7 @@
 
 PORTNAME=	kitinerary
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -10,7 +11,7 @@ COMMENT=	Data Model and Extraction System for Travel Reservation information
 LICENSE=	LGPL21
 
 LIB_DEPENDS=	libpoppler.so:graphics/poppler \
-		libzxing.so:textproc/zxing-cpp
+		libZXingCore.so:textproc/zxing-cpp
 
 USES=		compiler:c++11-lang cmake gettext gnome kde:5 pkgconfig qt:5 tar:xz
 USE_GNOME=	libxml2

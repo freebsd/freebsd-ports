@@ -1,5 +1,3 @@
-TIMESTAMP = 1571103733
-SHA256 (glassechidna-zxing-cpp-0.20190320-e0e40dd_GH0.tar.gz) = 699ed1e08812631d40730bd96a7e314d1ad8adf28f45770d8ae8e57a536ba33b
-SIZE (glassechidna-zxing-cpp-0.20190320-e0e40dd_GH0.tar.gz) = 312377
-SHA256 (9e5dfa57f3b998bc3049bfa893b20e81dea656df.patch) = a9afdcaed3ac3026eb471e371431d23b9353a58807c7b5c863f33253f31f128b
-SIZE (9e5dfa57f3b998bc3049bfa893b20e81dea656df.patch) = 1251
+TIMESTAMP = 1589647728
+SHA256 (nu-book-zxing-cpp-v1.0.8_GH0.tar.gz) = 9154b5456904e47bd4c38462d57e4b7897bfb20cb2bc2e8c958453e40e73c8b2
+SIZE (nu-book-zxing-cpp-v1.0.8_GH0.tar.gz) = 128506816
