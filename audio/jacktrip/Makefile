@@ -13,7 +13,7 @@ LICENSE=	MIT
 
 LIB_DEPENDS=	libjack.so:audio/jack
 
-USES=		qt:5 qmake
+USES=		compiler:c++11-lang qmake qt:5
 USE_GITHUB=	yes
 USE_QT=		core network buildtools_build
 
