@@ -13,6 +13,8 @@ COMMENT=	Reusable Django field to store validated JSON in your model
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Obsolete, please use www/py-jsonfield2 instead
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django22>=2.2:www/py-django22@${PY_FLAVOR}
 
 USES=		python:3.5+
