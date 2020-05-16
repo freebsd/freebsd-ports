@@ -11,6 +11,8 @@ COMMENT=	Scientific program aimed at the ab initio virtual experimentation
 
 LICENSE=	GPLv2
 
+BROKEN=		fails to build
+
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libarpack.so:math/arpack-ng \
 		libblas.so:math/blas \
