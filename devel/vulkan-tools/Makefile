@@ -53,7 +53,7 @@ CMAKE_ARGS+=	-DCUBE_WSI_SELECTION:STRING="XLIB"
 CMAKE_ARGS+=	-DCUBE_WSI_SELECTION:STRING="WAYLAND"
 .else
 CMAKE_ARGS+=	-DCUBE_WSI_SELECTION:STRING="DISPLAY"
-BROKEN=		fails to build
+BROKEN=		https://github.com/KhronosGroup/Vulkan-Headers/issues/122
 .endif
 
 .include <bsd.port.mk>
