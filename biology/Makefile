@@ -125,6 +125,7 @@
     SUBDIR += py-bx-python
     SUBDIR += py-cutadapt
     SUBDIR += py-dnaio
+    SUBDIR += py-ete3
     SUBDIR += py-fastTSNE
     SUBDIR += py-gffutils
     SUBDIR += py-gtfparse

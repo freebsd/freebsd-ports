@@ -1,0 +1,11 @@
+ETE is a Python programming toolkit that assists in the automated manipulation,
+analysis and visualization of phylogenetic trees. It provides a wide range of
+tree handling options, node annotation features and specialized features to deal
+with phylogenetic trees (i.e automatic orthology and paralogy detection,
+phylostratigraphy, tree reconciliation, etc). ETE implements also an interactive
+tree visualization system based on a a highly customizable tree drawing engine
+(PDF and SVG tree images). Although ETE is developed as a tool for phylogenetic
+analysis, it is also used to handle other types of hierarchical trees
+(i.e. clustering results).
+
+WWW: http://etetoolkit.org/
