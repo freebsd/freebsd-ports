@@ -13,7 +13,7 @@ LICENSE=	GPLv3
 
 RUN_DEPENDS=	spatch:devel/coccinelle
 
-USES=		python
+USES=		python:3.5+
 USE_PYTHON=	distutils autoplist concurrent optsuffix
 
 USE_GITHUB=	yes
