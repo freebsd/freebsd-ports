@@ -757,6 +757,7 @@
     SUBDIR += py-graphillion
     SUBDIR += py-gym
     SUBDIR += py-hdbscan
+    SUBDIR += py-hdmedians
     SUBDIR += py-igraph
     SUBDIR += py-intspan
     SUBDIR += py-keras
