@@ -26,6 +26,7 @@ TEST_TARGET=	check
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 pre-test:
-	${CP} -p ${FILESDIR}/rdiff_bad_option.sh ${WRKSRC}/tests/
+	${CP} ${FILESDIR}/rdiff_bad_option.sh ${WRKSRC}/tests/
+	${CHMOD} +x ${WRKSRC}/tests/rdiff_bad_option.sh
 
 .include <bsd.port.mk>
