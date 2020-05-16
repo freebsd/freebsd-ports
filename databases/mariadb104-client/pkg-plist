@@ -172,4 +172,4 @@ man/man1/replace.1.gz
 @comment man/man1/wsrep_sst_xtrabackup.1.gz
 @comment man/man8/mysqld.8.gz
 @comment share/aclocal/mysql.m4
-share/pkgconfig/mariadb.pc
+libdata/pkgconfig/mariadb.pc
