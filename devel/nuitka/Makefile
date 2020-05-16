@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	nuitka
-PORTVERSION=	0.6.7
+PORTVERSION=	0.6.8
 CATEGORIES=	devel python
 MASTER_SITES=	https://nuitka.net/releases/
-DISTNAME=	Nuitka-${PORTVERSION}
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
+DISTNAME=	Nuitka-${PORTVERSION}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Compatible and efficient Python compiler
