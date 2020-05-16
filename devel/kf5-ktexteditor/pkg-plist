@@ -66,7 +66,7 @@ lib/cmake/KF5TextEditor/KF5TextEditorTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KF5TextEditor/KF5TextEditorTargets.cmake
 lib/libKF5TextEditor.so
 lib/libKF5TextEditor.so.5
-lib/libKF5TextEditor.so.%%KDE_FRAMEWORKS_VERSION%%
+lib/libKF5TextEditor.so.5.70.0
 lib/libexec/kauth/kauth_ktexteditor_helper
 %%QT_PLUGINDIR%%/kf5/parts/katepart.so
 %%QT_MKSPECDIR%%/modules/qt_KTextEditor.pri
