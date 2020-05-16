@@ -146,6 +146,7 @@ man/man1/openssl-asn1parse.1.gz
 man/man1/openssl-ca.1.gz
 man/man1/openssl-ciphers.1.gz
 man/man1/openssl-cmds.1.gz
+man/man1/openssl-cmp.1.gz
 man/man1/openssl-cms.1.gz
 man/man1/openssl-crl.1.gz
 man/man1/openssl-crl2pkcs7.1.gz
@@ -199,6 +200,7 @@ man/man1/openssl.1.gz
 man/man1/tsget.1.gz
 %%MAN3%%man/man3/ADMISSIONS.3.gz
 %%MAN3%%man/man3/ASN1_INTEGER_get_int64.3.gz
+%%MAN3%%man/man3/ASN1_INTEGER_new.3.gz
 %%MAN3%%man/man3/ASN1_ITEM_lookup.3.gz
 %%MAN3%%man/man3/ASN1_OBJECT_new.3.gz
 %%MAN3%%man/man3/ASN1_STRING_TABLE_add.3.gz
@@ -263,6 +265,7 @@ man/man1/tsget.1.gz
 %%MAN3%%man/man3/BN_swap.3.gz
 %%MAN3%%man/man3/BN_zero.3.gz
 %%MAN3%%man/man3/BUF_MEM_new.3.gz
+%%MAN3%%man/man3/CMS_EnvelopedData_create.3.gz
 %%MAN3%%man/man3/CMS_add0_cert.3.gz
 %%MAN3%%man/man3/CMS_add1_recipient_cert.3.gz
 %%MAN3%%man/man3/CMS_add1_signer.3.gz
@@ -467,6 +470,7 @@ man/man1/tsget.1.gz
 %%MAN3%%man/man3/OSSL_STORE_INFO.3.gz
 %%MAN3%%man/man3/OSSL_STORE_LOADER.3.gz
 %%MAN3%%man/man3/OSSL_STORE_SEARCH.3.gz
+%%MAN3%%man/man3/OSSL_STORE_attach.3.gz
 %%MAN3%%man/man3/OSSL_STORE_expect.3.gz
 %%MAN3%%man/man3/OSSL_STORE_open.3.gz
 %%MAN3%%man/man3/OSSL_trace_enabled.3.gz
