@@ -1,3 +1,6 @@
-HarfBuzz is an OpenType text shaping engine.
+HarfBuzz is an OpenType text shaping engine. Using the HarfBuzz
+library allows programs to convert a sequence of Unicode input into
+properly formatted and positioned glyph output - for any writing
+system and language.
 
-WWW: https://www.freedesktop.org/wiki/Software/HarfBuzz/
+WWW: https://harfbuzz.github.io/

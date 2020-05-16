@@ -8,6 +8,7 @@
 @comment include/harfbuzz/hb-buffer.h
 @comment include/harfbuzz/hb-common.h
 @comment include/harfbuzz/hb-deprecated.h
+@comment include/harfbuzz/hb-draw.h
 @comment include/harfbuzz/hb-face.h
 @comment include/harfbuzz/hb-font.h
 @comment include/harfbuzz/hb-ft.h

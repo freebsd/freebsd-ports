@@ -2,15 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	harfbuzz
-PORTVERSION=	2.6.4
+DISTVERSION=	2.6.6
 PORTREVISION?=	0
 CATEGORIES=	print
-MASTER_SITES=	http://www.freedesktop.org/software/harfbuzz/release/
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT?=	OpenType text shaping engine
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libgraphite2.so:graphics/graphite2
@@ -26,7 +27,7 @@ USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
-PLIST_SUB+=	LIBVER=0.20600.4
+PLIST_SUB+=	LIBVER=0.20600.6
 
 HARFBUZZ_SLAVE?=	no
 

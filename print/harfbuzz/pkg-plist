@@ -7,6 +7,7 @@ include/harfbuzz/hb-blob.h
 include/harfbuzz/hb-buffer.h
 include/harfbuzz/hb-common.h
 include/harfbuzz/hb-deprecated.h
+include/harfbuzz/hb-draw.h
 include/harfbuzz/hb-face.h
 include/harfbuzz/hb-font.h
 include/harfbuzz/hb-ft.h
@@ -61,10 +62,10 @@ share/gtk-doc/html/harfbuzz/building.html
 share/gtk-doc/html/harfbuzz/ch01s03.html
 share/gtk-doc/html/harfbuzz/ch03s02.html
 share/gtk-doc/html/harfbuzz/ch03s03.html
-share/gtk-doc/html/harfbuzz/ch11.html
 share/gtk-doc/html/harfbuzz/ch12.html
 share/gtk-doc/html/harfbuzz/ch13.html
 share/gtk-doc/html/harfbuzz/ch14.html
+share/gtk-doc/html/harfbuzz/ch15.html
 share/gtk-doc/html/harfbuzz/clusters.html
 share/gtk-doc/html/harfbuzz/complex-scripts.html
 share/gtk-doc/html/harfbuzz/customizing-unicode-functions.html
@@ -105,6 +106,12 @@ share/gtk-doc/html/harfbuzz/harfbuzz.devhelp2
 share/gtk-doc/html/harfbuzz/home.png
 share/gtk-doc/html/harfbuzz/index.html
 share/gtk-doc/html/harfbuzz/install-harfbuzz.html
+share/gtk-doc/html/harfbuzz/integration-coretext.html
+share/gtk-doc/html/harfbuzz/integration-freetype.html
+share/gtk-doc/html/harfbuzz/integration-icu.html
+share/gtk-doc/html/harfbuzz/integration-python.html
+share/gtk-doc/html/harfbuzz/integration-uniscribe.html
+share/gtk-doc/html/harfbuzz/integration.html
 share/gtk-doc/html/harfbuzz/left-insensitive.png
 share/gtk-doc/html/harfbuzz/left.png
 share/gtk-doc/html/harfbuzz/level-2.html
