@@ -1,15 +1,15 @@
---- tests/Makefile.orig	2018-10-28 03:25:47 UTC
+--- tests/Makefile.orig	2020-05-04 01:52:54 UTC
 +++ tests/Makefile
-@@ -9,7 +9,7 @@ include ../Link_flags
- SOBJS= COMMON/shared_utils.o COMMON/ioandtest.o
+@@ -10,7 +10,7 @@ SOBJS= COMMON/shared_utils.o COMMON/ioandtest.o
  COMMON_INCLUDE = -I./COMMON -I../include
- override INCLUDE += $(COMMON_INCLUDE)
+ INCLUDE := $(COMMON_INCLUDE)
+ FINCLUDE := $(COMMON_INCLUDE)
 -LIBS := ../lib/libprimme.a $(LIBS)
 +LIBS := ../lib/libprimme.so $(LIBS)
  
  USE_NATIVE    ?= yes
  USE_PETSC     ?= $(if $(findstring undefined,$(origin PETSC_DIR)),no,yes)
-@@ -89,7 +89,7 @@ all: drivers
+@@ -90,7 +90,7 @@ all: drivers
  
  drivers: primme_double primme_doublecomplex primmesvds_double primmesvds_doublecomplex
  

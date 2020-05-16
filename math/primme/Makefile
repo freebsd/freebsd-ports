@@ -2,8 +2,7 @@
 
 PORTNAME=	primme
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.1
-PORTREVISION=	1
+DISTVERSION=	3.1.1
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -54,6 +53,6 @@ PLIST_FILES=	include/primme.h \
 		include/primme_svds_f90.inc \
 		lib/libprimme.so \
 		lib/libprimme.so.3 \
-		lib/libprimme.so.3.0
+		lib/libprimme.so.3.1
 
 .include <bsd.port.mk>
