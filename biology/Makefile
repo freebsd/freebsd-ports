@@ -137,6 +137,7 @@
     SUBDIR += py-pandas-charm
     SUBDIR += py-pyfaidx
     SUBDIR += py-pysam
+    SUBDIR += py-scikit-bio
     SUBDIR += py-xenaPython
     SUBDIR += pyfasta
     SUBDIR += python-nexus
