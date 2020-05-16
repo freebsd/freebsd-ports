@@ -18,12 +18,13 @@ RUN_DEPENDS=	${PY_ENUM34} \
 		${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wrapt>=0:devel/py-wrapt@${PY_FLAVOR}
 
-PORTSCOUT=	limit:^1\.
-
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
+
+# astroid 2.0.0+ requires Python 3.4+
+PORTSCOUT=	limit:^1\.
 
 .include <bsd.port.pre.mk>
 
