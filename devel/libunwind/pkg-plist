@@ -39,6 +39,7 @@ man/man3/libunwind-ia64.3.gz
 man/man3/libunwind-ptrace.3.gz
 man/man3/libunwind-setjmp.3.gz
 man/man3/libunwind.3.gz
+man/man3/unw_apply_reg_state.3.gz
 man/man3/unw_backtrace.3.gz
 man/man3/unw_create_addr_space.3.gz
 man/man3/unw_destroy_addr_space.3.gz
@@ -51,11 +52,14 @@ man/man3/unw_get_proc_name.3.gz
 man/man3/unw_get_reg.3.gz
 man/man3/unw_getcontext.3.gz
 man/man3/unw_init_local.3.gz
+man/man3/unw_init_local2.3.gz
 man/man3/unw_init_remote.3.gz
 man/man3/unw_is_fpreg.3.gz
 man/man3/unw_is_signal_frame.3.gz
+man/man3/unw_reg_states_iterate.3.gz
 man/man3/unw_regname.3.gz
 man/man3/unw_resume.3.gz
+man/man3/unw_set_cache_size.3.gz
 man/man3/unw_set_caching_policy.3.gz
 man/man3/unw_set_fpreg.3.gz
 man/man3/unw_set_reg.3.gz
