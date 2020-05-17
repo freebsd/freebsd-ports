@@ -1,11 +1,11 @@
---- rails.gemspec.orig	2019-04-20 08:38:13 UTC
+--- rails.gemspec.orig	2020-05-16 12:58:37 UTC
 +++ rails.gemspec
 @@ -30,7 +30,7 @@ Gem::Specification.new do |s|
-       s.add_runtime_dependency(%q<actionmailer>.freeze, ["= 4.2.11.1"])
-       s.add_runtime_dependency(%q<activejob>.freeze, ["= 4.2.11.1"])
-       s.add_runtime_dependency(%q<railties>.freeze, ["= 4.2.11.1"])
+       s.add_runtime_dependency(%q<actionmailer>.freeze, ["= 4.2.11.3"])
+       s.add_runtime_dependency(%q<activejob>.freeze, ["= 4.2.11.3"])
+       s.add_runtime_dependency(%q<railties>.freeze, ["= 4.2.11.3"])
 -      s.add_runtime_dependency(%q<bundler>.freeze, [">= 1.3.0", "< 2.0"])
 +      s.add_runtime_dependency(%q<bundler>.freeze, [">= 1.3.0"])
        s.add_runtime_dependency(%q<sprockets-rails>.freeze, [">= 0"])
      else
-       s.add_dependency(%q<activesupport>.freeze, ["= 4.2.11.1"])
+       s.add_dependency(%q<activesupport>.freeze, ["= 4.2.11.3"])
