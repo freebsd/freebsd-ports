@@ -3,7 +3,7 @@
 
 PORTNAME=	gitlab-ce
 PORTVERSION=	12.9.5
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -21,6 +21,7 @@ MY_DEPENDS=	git>=2.24.3:devel/git \
 	gitlab-pages>=1.17.0:www/gitlab-pages \
 	redis>=3.2.12:databases/redis \
 	yarn>=1.10.0:www/yarn \
+	gtar>0:archivers/gtar \
 	rubygem-rails60>=6.0.2.2<6.0.2.3:www/rubygem-rails60 \
 	rubygem-bootsnap>=1.4.6<2.0:devel/rubygem-bootsnap \
 	rubygem-nakayoshi_fork>=0.0.4<0.1.0:devel/rubygem-nakayoshi_fork \
