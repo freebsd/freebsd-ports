@@ -1,0 +1,36 @@
+From 3894dcb756e9c5501e063d6c44af9712f3ef44c1 Mon Sep 17 00:00:00 2001
+From: Joas Schilling <coding@schilljs.com>
+Date: Fri, 14 Feb 2020 11:56:23 +0100
+Subject: [PATCH] Hardcode Talk namespace to fix install due to global route
+
+Signed-off-by: Joas Schilling <coding@schilljs.com>
+---
+ lib/private/AppFramework/App.php | 15 +++++++++++++--
+ 1 file changed, 13 insertions(+), 2 deletions(-)
+
+diff --git a/lib/private/AppFramework/App.php b/lib/private/AppFramework/App.php
+index a36e013cb68..2cbe623bb27 100644
+--- lib/private/AppFramework/App.php.orig
++++ lib/private/AppFramework/App.php
+@@ -68,8 +68,19 @@ public static function buildAppNamespace(string $appId, string $topNamespace='OC
+ 		if (isset($appInfo['namespace'])) {
+ 			self::$nameSpaceCache[$appId] = trim($appInfo['namespace']);
+ 		} else {
+-			// if the tag is not found, fall back to uppercasing the first letter
+-			self::$nameSpaceCache[$appId] = ucfirst($appId);
++			if ($appId !== 'spreed') {
++				// if the tag is not found, fall back to uppercasing the first letter
++				self::$nameSpaceCache[$appId] = ucfirst($appId);
++			} else {
++				// For the Talk app (appid spreed) the above fallback doesn't work.
++				// This leads to a problem when trying to install it freshly,
++				// because the apps namespace is already registered before the
++				// app is downloaded from the appstore, because of the hackish
++				// global route index.php/call/{token} which is registered via
++				// the core/routes.php so it does not have the app namespace.
++				// @ref https://github.com/nextcloud/server/pull/19433
++				self::$nameSpaceCache[$appId] = 'Talk';
++			}
+ 		}
+ 
+ 		return $topNamespace . self::$nameSpaceCache[$appId];
