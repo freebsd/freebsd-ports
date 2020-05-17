@@ -1,0 +1,10 @@
+The Automatic Rule-Based Time Tracker is a desktop daemon that runs in
+the background and, every minute, records what windows are open on
+your desktop, what their titles are, which one is active. The
+accompanied statistics program lets you derive information from this
+log file, i.e. what how much of your time have you been spending with
+e-mail, or what projects are your largest time wasters. The mapping
+from the raw window titles to sensible "tags" is done by a
+configuration file with an powerful syntax.
+
+WWW: https://arbtt.nomeata.de/
