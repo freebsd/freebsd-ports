@@ -4,6 +4,7 @@
 PORTNAME=	jucipp
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.6.0
+PORTREVISION=	1
 CATEGORIES=	editors
 
 MAINTAINER=	info@babaei.net
@@ -16,7 +17,8 @@ BUILD_DEPENDS=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT}
 LIB_DEPENDS=	libaspell.so:textproc/aspell \
 		libboost_filesystem.so:devel/boost-libs \
 		libgit2.so:devel/libgit2
-RUN_DEPENDS=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT}
+RUN_DEPENDS=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT} \
+	uctags:devel/universal-ctags
 
 USES=		cmake compiler:c++14-lang desktop-file-utils gnome pkgconfig
 USE_GITLAB=	yes
@@ -26,6 +28,10 @@ GL_TUPLE=	cppit:libclangmm:a0316826f7f0c91949c6e11376fd4e92e39a008c:libclangmm/l
 		eidheim:tiny-process-library:a6773276efdbc322f1abb0159301f5502647eb52:tinyprocesslibrary/lib/tiny-process-library
 USE_GNOME=	gdkpixbuf2 gtkmm30 gtksourceviewmm3
 INSTALLS_ICONS=	yes
+
+OPTIONS_DEFINE=	TESTS
+
+TESTS_CMAKE_BOOL=	BUILD_TESTING
 
 CMAKE_ARGS=	-DCMAKE_INCLUDE_PATH=${LOCALBASE}/llvm${LLVM_DEFAULT}/include \
 		-DCMAKE_LIBRARY_PATH=${LOCALBASE}/llvm${LLVM_DEFAULT}/lib
