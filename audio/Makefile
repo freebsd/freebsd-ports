@@ -770,6 +770,7 @@
     SUBDIR += stegosaurus-lv2
     SUBDIR += stk
     SUBDIR += stone-phaser-lv2
+    SUBDIR += strawberry
     SUBDIR += streamripper
     SUBDIR += streamtranscoder
     SUBDIR += string-machine-lv2
