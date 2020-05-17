@@ -25,6 +25,7 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
+# twine 2.0.0+ requires Python 3.6+
 PORTSCOUT=	limit:^1\.
 
 .include <bsd.port.mk>
