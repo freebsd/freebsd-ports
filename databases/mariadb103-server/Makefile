@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	mariadb
-PORTVERSION=	10.3.22
+PORTVERSION=	10.3.23
 PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	http://mirrors.supportex.net/${SITESDIR}/ \
@@ -215,6 +215,9 @@ post-configure-INNOBASE-on:
 post-install:
 	${RM} -r ${STAGEDIR}${DATADIR}
 	${RM} -r ${STAGEDIR}${PREFIX}/include/mysql/server
+	${MV} ${STAGEDIR}${PREFIX}/lib/mysql/pkgconfig/mariadb.pc \
+		${STAGEDIR}${PREFIX}/libdata/pkgconfig/mariadb.pc
+	${RM} -r ${STAGEDIR}${PREFIX}/lib/mysql/pkgconfig
 
 post-install-GSSAPI_NONE-off:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/mysql/plugin/auth_gssapi_client.so
@@ -223,6 +226,7 @@ post-install-GSSAPI_NONE-off:
 post-install:
 	${RM} -r ${STAGEDIR}${PREFIX}/share/mysql/policy
 	${RM} -r ${STAGEDIR}${PREFIX}/include/mysql/server/private
+	${RM} -r ${STAGEDIR}${PREFIX}/lib/mysql/pkgconfig
 .endif # ${PKGNAMESUFFIX:M*-client}
 
 .include <bsd.port.post.mk>

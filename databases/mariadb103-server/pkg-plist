@@ -308,6 +308,8 @@ man/man8/mysqld.8.gz
 %%DATADIR%%/ukrainian/errmsg.sys
 %%WSREP%%%%DATADIR%%/wsrep.cnf
 %%WSREP%%%%DATADIR%%/wsrep_notify
+share/pam_user_map.so
+share/user_map.conf
 @comment %%DOCSDIR%%/COPYING
 @comment %%DOCSDIR%%/COPYING.thirdparty
 @comment share/groonga-normalizer-mysql/lgpl-2.0.txt
