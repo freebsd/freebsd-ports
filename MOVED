@@ -15011,3 +15011,4 @@ net-p2p/parity-ethereum|net-p2p/openethereum|2020-05-13|Renamed upstream for tra
 net-im/linux-telegram-desktop|net-im/telegram-desktop|2020-05-13|Has expired: Broken for more than 6 months, use native version
 devel/libphutil||2020-05-15|Has expired: Upstream merged functionality into downstream projects.
 print/frescobaldi|print/py-frescobaldi|2020-05-16|Renamed to comply with Python Ports Policy
+sysutils/rdiff-backup|sysutils/py-rdiff-backup@py37|2020-05-16|Renamed comply with Python Ports Policy and flavored
