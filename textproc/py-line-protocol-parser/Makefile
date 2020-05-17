@@ -12,7 +12,7 @@ COMMENT=	Parses InfluxDB line protocol strings into Python dictionaries
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-USES=		python
+USES=		python:3.5+
 USE_GITHUB=	yes
 USE_PYTHON=	autoplist concurrent distutils
 
