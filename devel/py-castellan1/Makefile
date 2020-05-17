@@ -28,6 +28,7 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
+# castellan 2.0.0+ requires Python 3.6+
 PORTSCOUT=	limit:^1\.
 
 SHEBANG_GLOB=	*.sh
