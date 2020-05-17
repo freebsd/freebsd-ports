@@ -1,3 +1,11 @@
-The fork of C++ version of ZXing library (https://github.com/zxing/zxing).
+This project is a C++ port of ZXing Library.
 
-WWW: https://github.com/glassechidna/zxing-cpp
+Features
+    * In pure C++14, no third-party dependencies
+    * Stateless, thread-safe readers/generators
+    * Wrapper to create WinRT component
+    * Wrapper for Android
+    * Wrapper for WebAssembly
+    * Python binding
+
+WWW: https://github.com/nu-book/zxing-cpp
