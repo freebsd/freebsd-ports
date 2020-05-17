@@ -3,7 +3,7 @@
 
 PORTNAME=	sassc-rails
 PORTVERSION=	2.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails60
@@ -15,7 +15,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-railties60>=4.0.0:www/rubygem-railties60 \
-		rubygem-sassc>=2.0:textproc/rubygem-sassc \
+		rubygem-sassc22>=2.0:textproc/rubygem-sassc22 \
 		rubygem-sprockets-rails-rails60>=0:devel/rubygem-sprockets-rails-rails60 \
 		rubygem-sprockets3>=3.0:devel/rubygem-sprockets3 \
 		rubygem-tilt>=0:devel/rubygem-tilt
