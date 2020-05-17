@@ -1,0 +1,17 @@
+%%PYTHON_SITELIBDIR%%/ppl/__init__.py
+%%PYTHON_SITELIBDIR%%/ppl/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/ppl/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/ppl/bit_arrays.pxd
+%%PYTHON_SITELIBDIR%%/ppl/bit_arrays.so
+%%PYTHON_SITELIBDIR%%/ppl/constraint.pxd
+%%PYTHON_SITELIBDIR%%/ppl/constraint.so
+%%PYTHON_SITELIBDIR%%/ppl/generator.pxd
+%%PYTHON_SITELIBDIR%%/ppl/generator.so
+%%PYTHON_SITELIBDIR%%/ppl/linear_algebra.pxd
+%%PYTHON_SITELIBDIR%%/ppl/linear_algebra.so
+%%PYTHON_SITELIBDIR%%/ppl/mip_problem.pxd
+%%PYTHON_SITELIBDIR%%/ppl/mip_problem.so
+%%PYTHON_SITELIBDIR%%/ppl/polyhedron.pxd
+%%PYTHON_SITELIBDIR%%/ppl/polyhedron.so
+%%PYTHON_SITELIBDIR%%/ppl/ppl_decl.pxd
+%%PYTHON_SITELIBDIR%%/ppl/ppl_shim.hh
