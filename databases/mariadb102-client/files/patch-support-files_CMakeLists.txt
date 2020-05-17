@@ -1,6 +1,6 @@
---- support-files/CMakeLists.txt.orig	2018-06-25 11:13:30 UTC
+--- support-files/CMakeLists.txt.orig	2020-05-08 11:45:27 UTC
 +++ support-files/CMakeLists.txt
-@@ -57,6 +59,7 @@ ENDIF()
+@@ -59,6 +59,7 @@ ENDIF()
  
  IF(UNIX)
    SET(prefix ${CMAKE_INSTALL_PREFIX})
@@ -8,23 +8,22 @@
    FOREACH(script mysqld_multi.server mysql-log-rotate binary-configure wsrep_notify)
      CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/${script}.sh 
                     ${CMAKE_CURRENT_BINARY_DIR}/${script} @ONLY )
-@@ -86,12 +89,14 @@ IF(UNIX)
-       ENDFOREACH()
+@@ -98,12 +99,14 @@ IF(UNIX)
+       ENDIF()
      ENDIF()
    ENDIF()
 +  ENDIF()
  
    CONFIGURE_FILE(mariadb.pc.in ${CMAKE_CURRENT_BINARY_DIR}/mariadb.pc @ONLY)
-   INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/mariadb.pc DESTINATION ${INSTALL_SHAREDIR}/pkgconfig COMPONENT Development)
+   INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/mariadb.pc DESTINATION ${INSTALL_LIBDIR}/pkgconfig COMPONENT Development)
  
    INSTALL(FILES mysql.m4 DESTINATION ${INSTALL_SHAREDIR}/aclocal COMPONENT Development)
--  
-+
-+IF(NOT WITHOUT_SERVER)  
+   
++ IF(NOT WITHOUT_SERVER) 
    SET(bindir ${INSTALL_BINDIRABS})
    SET(sbindir ${INSTALL_SBINDIRABS})
    SET(scriptdir ${INSTALL_SCRIPTDIRABS})
-@@ -158,6 +163,7 @@ IF(UNIX)
+@@ -175,6 +178,7 @@ IF(UNIX)
      INSTALL(PROGRAMS ${CMAKE_CURRENT_BINARY_DIR}/mysql.server
              DESTINATION  ${INSTALL_SYSCONFDIR}/init.d
              RENAME mysql COMPONENT SupportFiles)
