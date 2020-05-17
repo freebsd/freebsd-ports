@@ -14,6 +14,8 @@ COMMENT=	Software Testing Automation Framework
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/LICENSE.htm
 
+BROKEN=		fails to build
+
 WRKSRC=		${WRKDIR}/src
 WRKSRC_SUBDIR=	${PORTNAME}
 INSTALL_WRKSRC=	${WRKDIR}/rel/freebsd/staf/${STAF_BUILD_TYPE}
