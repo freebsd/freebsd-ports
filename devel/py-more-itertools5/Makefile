@@ -21,6 +21,7 @@ USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
 
+# more-itertools 6.0.0+ requires Python 3.4+
 PORTSCOUT=	limit:^5\.
 
 do-test:
