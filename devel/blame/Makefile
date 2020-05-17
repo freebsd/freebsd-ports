@@ -4,14 +4,10 @@
 PORTNAME=	blame
 PORTVERSION=	1.3.1
 CATEGORIES=	devel
-MASTER_SITES=	SF
+MASTER_SITES=	ftp://ftp.invisible-island.net/rcs-blame/
 
 MAINTAINER=	jhein@symmetricom.com
 COMMENT=	Display last modification for each line in an RCS file
-
-BROKEN=		unfetchable
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2020-05-05
 
 USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
