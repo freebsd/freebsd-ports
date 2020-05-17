@@ -1,7 +1,6 @@
 bin/cliqz
 lib/cliqz/application.ini
 lib/cliqz/browser/adult-domains.bin
-lib/cliqz/browser/blocklist.xml
 lib/cliqz/browser/chrome/icons/default/default128.png
 lib/cliqz/browser/chrome/icons/default/default16.png
 lib/cliqz/browser/chrome/icons/default/default32.png
@@ -13,7 +12,6 @@ lib/cliqz/browser/features/https-everywhere@cliqz.com.xpi
 lib/cliqz/browser/omni.ja
 lib/cliqz/cliqz
 lib/cliqz/cliqz-bin
-lib/cliqz/cliqz.cfg
 lib/cliqz/defaults/pref/channel-prefs.js
 lib/cliqz/dependentlibs.list
 lib/cliqz/fonts/TwemojiMozilla.ttf
