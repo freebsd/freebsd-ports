@@ -4902,6 +4902,7 @@
     SUBDIR += py-pytest-azurepipelines
     SUBDIR += py-pytest-benchmark
     SUBDIR += py-pytest-black
+    SUBDIR += py-pytest-black-multipy
     SUBDIR += py-pytest-cache
     SUBDIR += py-pytest-capturelog
     SUBDIR += py-pytest-cov

@@ -1,0 +1,4 @@
+pytest-black-multipy is a wrapper around pytest-black to allow projects on older
+Python versions to use the --black paremeter.
+
+WWW: https://github.com/jaraco/pytest-black-multipy
