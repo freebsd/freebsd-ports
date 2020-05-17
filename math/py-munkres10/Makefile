@@ -18,6 +18,7 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
+# munkres 1.1.1+ requires Python 3.5+
 PORTSCOUT=	limit:^1\.0\.
 
 GH_ACCOUNT=	bmc
