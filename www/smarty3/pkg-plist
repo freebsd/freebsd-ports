@@ -3,7 +3,6 @@
 %%DATADIR%%/SmartyBC.class.php
 %%DATADIR%%/bootstrap.php
 %%DATADIR%%/debug.tpl
-%%DATADIR%%/libs - Verknüpfung.lnk
 %%DATADIR%%/plugins/block.textformat.php
 %%DATADIR%%/plugins/function.counter.php
 %%DATADIR%%/plugins/function.cycle.php
@@ -204,4 +203,3 @@
 %%DATADIR%%/sysplugins/smarty_variable.php
 %%DATADIR%%/sysplugins/smartycompilerexception.php
 %%DATADIR%%/sysplugins/smartyexception.php
-
