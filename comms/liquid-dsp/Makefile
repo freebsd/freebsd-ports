@@ -27,6 +27,6 @@ MAKEFILE=	makefile
 TEST_TARGET=	check
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libliquid.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libliquid.so
 
 .include <bsd.port.mk>
