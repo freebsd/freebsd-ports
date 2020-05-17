@@ -20,6 +20,12 @@ RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss
 
 USES=		cabal:hpack
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	purescript
+GH_PROJECT=	spago
+
+USE_LOCALE=	en_US.UTF-8
+
 USE_CABAL=	Diff-0.4.0 \
 		Glob-0.10.0_1 \
 		StateVar-1.2 \
@@ -193,12 +199,6 @@ USE_CABAL=	Diff-0.4.0 \
 		x509-system-1.6.6 \
 		x509-validation-1.6.11 \
 		zlib-0.6.2.1_1
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	purescript
-GH_PROJECT=	spago
-
-USE_LOCALE=	en_US.UTF-8
 
 PURESCRIPT_DOCS_SEARCH_VERSION=	0.0.8
 
