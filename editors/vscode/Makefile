@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	vscode
-DISTVERSION=	1.45.0
+DISTVERSION=	1.45.1
 CATEGORIES=	editors
 MASTER_SITES=	https://nodejs.org/dist/v${NODE_VER}/:node_headers \
 		https://github.com/tagattie/FreeBSD-VSCode/releases/download/${DISTVERSION}/:yarn_cache
@@ -61,7 +61,7 @@ USES=		desktop-file-utils gl gmake gnome jpeg pkgconfig \
 USE_GITHUB=	yes
 GH_ACCOUNT=	microsoft
 
-SOURCE_COMMIT_HASH=	d69a79b73808559a91206d73d7717ff5f798f23c
+SOURCE_COMMIT_HASH=	5763d909d5f12fe19f215cbfdd29a91c0fa9208a
 
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
@@ -82,9 +82,12 @@ DATADIR=	${PREFIX}/share/code-oss
 TMPDIR=		${WRKDIR}
 
 MAKE_ENV+=	BUILD_SOURCEVERSION=${SOURCE_COMMIT_HASH} \
-		ELECTRON_SKIP_BINARY_DOWNLOAD=1 \
-		PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=1 \
 		XDG_CACHE_HOME=${WRKDIR}/.cache
+# Don't download electron binary distribution on electron node_modules installation
+MAKE_ENV+=	ELECTRON_SKIP_BINARY_DOWNLOAD=1
+# Don't download browser binaries on playwright node_modules installation
+MAKE_ENV+=	PLAYWRIGHT_BROWSERS_PATH=${WRKDIR}/pw-browsers \
+		PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1
 # Don't create __pycache__ directory when executing node-gyp
 # This is a workaround to avoid filesystem violations during poudriere build
 MAKE_ENV+=	PYTHONDONTWRITEBYTECODE=1
