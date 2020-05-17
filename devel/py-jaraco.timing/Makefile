@@ -15,6 +15,8 @@ LICENSE=	MIT
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=1.15.0:devel/py-setuptools_scm@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jaraco>=0:devel/py-jaraco@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=3.5:devel/py-pytest@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-flake8>=0:devel/py-pytest-flake8@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
@@ -22,6 +24,14 @@ USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
 
 POST_PLIST=	trim-jaraco-namespace
+
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 3600
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tempora1>=1.5:devel/py-tempora1@${PY_FLAVOR}
+.else
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tempora>=1.5:devel/py-tempora@${PY_FLAVOR}
+.endif
 
 post-install:
 	@${RM} ${STAGEDIR}${PYTHON_SITELIBDIR}/jaraco/__init__.py*
@@ -31,12 +41,7 @@ post-install:
 trim-jaraco-namespace:
 	@${REINPLACE_CMD} '/jaraco\/__init__\./d; /jaraco\/__pycache__\/__init__\./d' ${TMPPLIST}
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 3600
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tempora1>=1.5:devel/py-tempora1@${PY_FLAVOR}
-.else
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tempora>=1.5:devel/py-tempora@${PY_FLAVOR}
-.endif
+do-test:
+	cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -rs -v
 
 .include <bsd.port.post.mk>
