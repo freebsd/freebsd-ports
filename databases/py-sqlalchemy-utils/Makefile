@@ -22,7 +22,7 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	ANYJSON ARROW BABEL COLOR ENCRYPTED INTERVALS IPADDRESS PASSWORD PHONE TIMEZONE URL
+OPTIONS_DEFINE=	ANYJSON ARROW BABEL COLOR ENCRYPTED INTERVALS IPADDRESS PASSWORD PENDULUM PHONE TIMEZONE URL
 ANYJSON_DESC=	JSON support
 ARROW_DESC=	Arrow type support
 BABEL_DESC=	Babel locale type support
@@ -31,6 +31,7 @@ ENCRYPTED_DESC=	Encrypted type support
 INTERVALS_DESC=	Interval operators support
 IPADDRESS_DESC=	IP address type support
 PASSWORD_DESC=	Password type support
+PENDULUM_DESC=	Pendulum Date/DateTime support
 PHONE_DESC=	Phone number type support
 TIMEZONE_DESC=	Timezone support
 URL_DESC=	URL type support
@@ -42,6 +43,7 @@ COLOR_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}colour>=0.0.4:graphics/py-colour@${PY_
 ENCRYPTED_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>=0.6:security/py-cryptography@${PY_FLAVOR}
 INTERVALS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}intervals>=0.7.1:net/py-intervals@${PY_FLAVOR}
 PASSWORD_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}passlib>=1.6<2.0:security/py-passlib@${PY_FLAVOR}
+PENDULUM_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pendulum>=2.0.5:devel/py-pendulum@${PY_FLAVOR}
 PHONE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}phonenumbers>=5.9.2:devel/py-phonenumbers@${PY_FLAVOR}
 TIMEZONE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=0:devel/py-dateutil@${PY_FLAVOR}
 URL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}furl>=0.4.1:devel/py-furl@${PY_FLAVOR}
