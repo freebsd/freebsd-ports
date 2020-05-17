@@ -28,4 +28,11 @@ RUN_DEPENDS=	gdal>=1.11:graphics/gdal \
 USES=		compiler:c++11-lang python
 USE_PYTHON=	autoplist concurrent cython distutils
 
+OPTIONS_DEFINE=	PLOT S3
+PLOT_DESC=	Plotting support
+S3_DESC=	Amazon S3 support
+
+PLOT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>=0:math/py-matplotlib@${PY_FLAVOR}
+S3_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}boto3>=1.2.4:www/py-boto3@${PY_FLAVOR}
+
 .include <bsd.port.mk>
