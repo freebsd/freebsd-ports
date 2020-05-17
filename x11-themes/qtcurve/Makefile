@@ -81,7 +81,7 @@ PKGNAMEPREFIX=	kf5-style-
 USES+=		kde:5 qt:5
 USE_KDE=	archive completion config configwidgets coreaddons \
 		ecm_build frameworkintegration guiaddons i18n iconthemes \
-		kdelibs4support kio widgetsaddons windowsystem xmlgui
+		init kdelibs4support kio widgetsaddons windowsystem xmlgui
 USE_QT=		core dbus gui printsupport svg widgets x11extras \
 		buildtools_build qmake_build
 BUILD_WRKSRC=	${WRKSRC}/qt5
