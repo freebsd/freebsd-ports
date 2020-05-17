@@ -1,9 +1,9 @@
---- package.yaml.orig	2020-02-09 22:15:29 UTC
+--- package.yaml.orig	2020-04-15 16:39:52 UTC
 +++ package.yaml
-@@ -153,26 +153,3 @@ executables:
-     - time
+@@ -152,26 +152,3 @@ executables:
+     - text < 1.3
      - turtle
-     - vector
+     - with-utf8
 -
 -tests:
 -  spec:
