@@ -2,7 +2,7 @@
 
 PORTNAME=	core
 DISTVERSION=	${QT5_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 PKGNAMEPREFIX=	qt5-
 
@@ -10,7 +10,8 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt core non-graphical module
 
 LIB_DEPENDS=	libicui18n.so:devel/icu \
-		libpcre2-posix.so:devel/pcre2
+		libpcre2-posix.so:devel/pcre2 \
+		libzstd.so:archivers/zstd
 
 USES=		compiler:c++11-lang gnome qmake:no_env qt-dist:5,base
 USE_GNOME=	glib20
