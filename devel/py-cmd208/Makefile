@@ -24,6 +24,7 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
+# cmd2 0.9.0.1+ requires Python 3.4+
 PORTSCOUT=	limit:^0\.8
 
 .include <bsd.port.pre.mk>
