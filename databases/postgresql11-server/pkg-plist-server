@@ -1056,6 +1056,7 @@ lib/libpgcommon.a
 %%TZDATA%%%%DATADIR%%/timezone/America/North_Dakota/Beulah
 %%TZDATA%%%%DATADIR%%/timezone/America/North_Dakota/Center
 %%TZDATA%%%%DATADIR%%/timezone/America/North_Dakota/New_Salem
+%%TZDATA%%%%DATADIR%%/timezone/America/Nuuk 
 %%TZDATA%%%%DATADIR%%/timezone/America/Ojinaga
 %%TZDATA%%%%DATADIR%%/timezone/America/Panama
 %%TZDATA%%%%DATADIR%%/timezone/America/Pangnirtung

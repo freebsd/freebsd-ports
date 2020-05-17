@@ -873,10 +873,15 @@ lib/libpgcommon.a
 %%NLS%%share/locale/tr/LC_MESSAGES/postgres-12.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/initdb-12.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/pg_archivecleanup-12.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/pg_basebackup-12.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/pg_checksums-12.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/pg_controldata-12.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/pg_ctl-12.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/pg_resetwal-12.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/pg_rewind-12.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/pg_test_fsync-12.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/pg_test_timing-12.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/pg_waldump-12.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/plpgsql-12.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/pg_controldata-12.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/pg_test_fsync-12.mo
@@ -1071,6 +1076,7 @@ lib/libpgcommon.a
 %%TZDATA%%%%DATADIR%%/timezone/America/North_Dakota/Beulah
 %%TZDATA%%%%DATADIR%%/timezone/America/North_Dakota/Center
 %%TZDATA%%%%DATADIR%%/timezone/America/North_Dakota/New_Salem
+%%TZDATA%%%%DATADIR%%/timezone/America/Nuuk
 %%TZDATA%%%%DATADIR%%/timezone/America/Ojinaga
 %%TZDATA%%%%DATADIR%%/timezone/America/Panama
 %%TZDATA%%%%DATADIR%%/timezone/America/Pangnirtung

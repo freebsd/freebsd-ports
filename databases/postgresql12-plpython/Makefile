@@ -20,8 +20,8 @@ WANT_PYTHON_USE?=	python
 CONFIGURE_ARGS=	--with-python
 COMPONENT=	-plpython
 
-BUILD_DIRS=	src/backend src/pl/plpython
-INSTALL_DIRS=	src/pl/plpython
+BUILD_DIRS=	src/backend ${INSTALL_DIRS}
+INSTALL_DIRS?=	src/pl/plpython contrib/hstore_plpython contrib/jsonb_plpython contrib/ltree_plpython
 SLAVE_ONLY=	yes
 
 .include "${MASTERDIR}/Makefile"

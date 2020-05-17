@@ -8,3 +8,8 @@ include/postgresql/server/ppport.h
 %%DATADIR%%/extension/plperl--unpackaged--1.0.sql
 %%DOCSDIR%%/README-plperl
 lib/postgresql/plperl.so
+lib/postgresql/hstore_plperl.so
+%%DATADIR%%/extension/hstore_plperl--1.0.sql
+%%DATADIR%%/extension/hstore_plperl.control
+%%DATADIR%%/extension/hstore_plperlu--1.0.sql
+%%DATADIR%%/extension/hstore_plperlu.control

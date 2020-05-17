@@ -10,9 +10,10 @@ cat <<EOF
   =========== BACKUP YOUR DATA! =============
   As always, backup your data before
   upgrading. If the upgrade leads to a higher
-  minor revision (e.g. 8.3.x -> 8.4), a dump
+  major revision (e.g. 9.6 -> 10), a dump
   and restore of all databases is
   required. This is *NOT* done by the port!
+  See https://www.postgresql.org/docs/current/upgrading.html
   ===========================================
 EOF
 }

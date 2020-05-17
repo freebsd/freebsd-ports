@@ -19,8 +19,8 @@ WANT_PGSQL_VER?=12
 USES+=		perl5 readline
 CONFIGURE_ARGS=	--with-perl
 
-BUILD_DIRS=	src/backend src/pl/plperl
-INSTALL_DIRS=	src/pl/plperl
+BUILD_DIRS=	src/backend ${INSTALL_DIRS}
+INSTALL_DIRS?=	src/pl/plperl contrib/hstore_plperl contrib/jsonb_plperl
 SLAVE_ONLY=	yes
 COMPONENT=	-plperl
 

@@ -1199,6 +1199,8 @@ man/man7/WITH.7.gz
 %%NLS%%share/locale/uk/LC_MESSAGES/ecpglib6-12.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/libpq5-12.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/pg_config-12.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/pg_dump-12.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/pgscripts-12.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/psql-12.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/ecpg-12.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/ecpglib6-12.mo
