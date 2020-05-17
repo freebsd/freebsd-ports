@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bibtexconv
-PORTVERSION=	1.1.17
+PORTVERSION=	1.1.20
 CATEGORIES=	converters
 MASTER_SITES=	https://www.uni-due.de/~be0001/bibtexconv/download/
 
