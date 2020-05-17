@@ -29,7 +29,7 @@ LIB_DEPENDS=	libmad.so:audio/libmad \
 		libtheoradec.so:multimedia/libtheora \
 		libfreetype.so:print/freetype2
 
-USES=		gmake gl iconv jpeg sdl
+USES=		compiler:c++11-lang gmake gl iconv jpeg sdl
 
 USE_GITHUB=	yes
 
