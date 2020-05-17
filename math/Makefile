@@ -753,6 +753,7 @@
     SUBDIR += py-gimmik
     SUBDIR += py-gmpy
     SUBDIR += py-gmpy2
+    SUBDIR += py-gmpy2-devel
     SUBDIR += py-grandalf
     SUBDIR += py-graphillion
     SUBDIR += py-gym
