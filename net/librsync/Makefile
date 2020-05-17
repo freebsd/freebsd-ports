@@ -13,7 +13,6 @@ LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpopt.so:devel/popt
-TEST_DEPENDS=	bash:shells/bash
 
 USES=		cmake compiler:c11 localbase:ldflags
 
@@ -24,9 +23,5 @@ USE_LDCONFIG=	yes
 TEST_TARGET=	check
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
-
-pre-test:
-	${CP} ${FILESDIR}/rdiff_bad_option.sh ${WRKSRC}/tests/
-	${CHMOD} +x ${WRKSRC}/tests/rdiff_bad_option.sh
 
 .include <bsd.port.mk>
