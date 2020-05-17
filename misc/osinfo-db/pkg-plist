@@ -231,6 +231,7 @@ share/osinfo/os/endlessos.com/eos-3.4.xml
 share/osinfo/os/endlessos.com/eos-3.5.xml
 share/osinfo/os/endlessos.com/eos-3.6.xml
 share/osinfo/os/endlessos.com/eos-3.7.xml
+share/osinfo/os/endlessos.com/eos-3.8.xml
 share/osinfo/os/fedoraproject.org/fedora-1.xml
 share/osinfo/os/fedoraproject.org/fedora-10.xml
 share/osinfo/os/fedoraproject.org/fedora-11.xml
@@ -256,6 +257,7 @@ share/osinfo/os/fedoraproject.org/fedora-29.xml
 share/osinfo/os/fedoraproject.org/fedora-3.xml
 share/osinfo/os/fedoraproject.org/fedora-30.xml
 share/osinfo/os/fedoraproject.org/fedora-31.xml
+share/osinfo/os/fedoraproject.org/fedora-32.xml
 share/osinfo/os/fedoraproject.org/fedora-4.xml
 share/osinfo/os/fedoraproject.org/fedora-5.xml
 share/osinfo/os/fedoraproject.org/fedora-6.xml
@@ -268,6 +270,7 @@ share/osinfo/os/fedoraproject.org/silverblue-28.xml
 share/osinfo/os/fedoraproject.org/silverblue-29.xml
 share/osinfo/os/fedoraproject.org/silverblue-30.xml
 share/osinfo/os/fedoraproject.org/silverblue-31.xml
+share/osinfo/os/fedoraproject.org/silverblue-32.xml
 share/osinfo/os/freebsd.org/freebsd-1.0.xml
 share/osinfo/os/freebsd.org/freebsd-10.0.xml
 share/osinfo/os/freebsd.org/freebsd-10.1.xml
@@ -279,6 +282,7 @@ share/osinfo/os/freebsd.org/freebsd-11.1.xml
 share/osinfo/os/freebsd.org/freebsd-11.2.xml
 share/osinfo/os/freebsd.org/freebsd-11.3.xml
 share/osinfo/os/freebsd.org/freebsd-12.0.xml
+share/osinfo/os/freebsd.org/freebsd-12.1.xml
 share/osinfo/os/freebsd.org/freebsd-2.0.5.xml
 share/osinfo/os/freebsd.org/freebsd-2.0.xml
 share/osinfo/os/freebsd.org/freebsd-2.2.8.xml
@@ -373,6 +377,7 @@ share/osinfo/os/mandriva.com/mandriva-2011.xml
 share/osinfo/os/mandriva.com/mbs-1.0.xml
 share/osinfo/os/mandriva.com/mes-5.0.xml
 share/osinfo/os/mandriva.com/mes-5.1.xml
+share/osinfo/os/manjaro.org/manjaro-rolling.xml
 share/osinfo/os/microsoft.com/msdos-6.22.xml
 share/osinfo/os/microsoft.com/win-1.0.xml
 share/osinfo/os/microsoft.com/win-10.d/post-installable-drivers.xml
@@ -433,6 +438,11 @@ share/osinfo/os/netbsd.org/netbsd-7.1.xml
 share/osinfo/os/netbsd.org/netbsd-7.2.xml
 share/osinfo/os/netbsd.org/netbsd-8.0.xml
 share/osinfo/os/netbsd.org/netbsd-8.1.xml
+share/osinfo/os/netbsd.org/netbsd-8.2.xml
+share/osinfo/os/netbsd.org/netbsd-9.0.xml
+share/osinfo/os/nixos.org/nixos-20.03.xml
+share/osinfo/os/nixos.org/nixos-unknown.xml
+share/osinfo/os/nixos.org/nixos-unstable.xml
 share/osinfo/os/novell.com/netware-4.xml
 share/osinfo/os/novell.com/netware-5.xml
 share/osinfo/os/novell.com/netware-6.xml
