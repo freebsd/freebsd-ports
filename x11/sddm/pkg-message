@@ -1,5 +1,6 @@
 [
 { type: upgrade
+  maximum_version: 0.18.1_4
   message: <<EOM
 SDDM user's home directory have been moved to /var/lib/sddm. It is advised to run
 following commands as root:
