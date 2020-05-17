@@ -3,6 +3,4 @@ databases. GeoAlchemy 2 focuses on PostGIS. PostGIS 1.5 and PostGIS 2 are
 supported. GeoAlchemy 2 aims to be simpler than its predecessor, GeoAlchemy.
 Simpler to use, and simpler to maintain.
 
-Git repository: https://github.com/geoalchemy/geoalchemy2
-
-WWW: https://pypi.org/project/GeoAlchemy2/
+WWW: https://github.com/geoalchemy/geoalchemy2
