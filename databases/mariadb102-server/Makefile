@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME?=	mariadb
-PORTVERSION=	10.2.31
+PORTVERSION=	10.2.32
 PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	http://mirrors.supportex.net/${SITESDIR}/ \
@@ -204,11 +204,13 @@ post-install:
 	${RM} ${STAGEDIR}${PREFIX}/share/aclocal/mysql.m4 \
 		${STAGEDIR}${PREFIX}/man/man1/aria* \
 		${STAGEDIR}${PREFIX}/man/man1/myisam*
-	${RM} -r ${STAGEDIR}${PREFIX}/share/pkgconfig \
-		${STAGEDIR}${DATADIR}/policy \
+	${RM} -r ${STAGEDIR}${DATADIR}/policy \
 		${STAGEDIR}${PREFIX}/include/mysql/server
 	# Fix https://mariadb.atlassian.net/browse/MDEV-9388
 	@${REINPLACE_CMD} 's/-l-pthread/-pthread/' ${STAGEDIR}${PREFIX}/bin/mysql_config
+	${MV} ${STAGEDIR}${PREFIX}/lib/mysql/pkgconfig/mariadb.pc \
+		${STAGEDIR}${PREFIX}/libdata/pkgconfig
+	${RM} -r ${STAGEDIR}${PREFIX}/lib/mysql/pkgconfig
 
 post-install-GSSAPI_NONE-off:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/mysql/plugin/auth_gssapi_client.so
@@ -234,6 +236,7 @@ post-install:
 		${STAGEDIR}${LOCALBASE}/storage/groonga/COPYING \
 		${STAGEDIR}${LOCALBASE}/share/mysql/mroonga/COPYING
 	${RM} ${STAGEDIR}${PREFIX}/include/mysql/*.h
+	${RM} -r ${STAGEDIR}${PREFIX}/lib/mysql/pkgconfig
 
 .endif # targets for -server
 

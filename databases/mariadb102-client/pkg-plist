@@ -49,6 +49,7 @@ lib/mysql/plugin/dialog.so
 lib/mysql/plugin/mysql_clear_password.so
 lib/mysql/plugin/sha256_password.so
 libdata/pkgconfig/libmariadb.pc
+libdata/pkgconfig/mariadb.pc
 %%DATADIR%%/charsets/Index.xml
 %%DATADIR%%/charsets/README
 %%DATADIR%%/charsets/armscii8.xml
