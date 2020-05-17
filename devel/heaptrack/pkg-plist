@@ -1,5 +1,10 @@
+bin/heaptrack
 bin/heaptrack_gui
 bin/heaptrack_print
+include/heaptrack_api.h
+lib/heaptrack/libexec/heaptrack_interpret
+lib/heaptrack/libheaptrack_inject.so
+lib/heaptrack/libheaptrack_preload.so
 share/applications/org.kde.heaptrack.desktop
 share/icons/hicolor/128x128/apps/heaptrack.png
 share/icons/hicolor/16x16/apps/heaptrack.png
@@ -7,5 +12,4 @@ share/icons/hicolor/22x22/apps/heaptrack.png
 share/icons/hicolor/32x32/apps/heaptrack.png
 share/icons/hicolor/48x48/apps/heaptrack.png
 share/icons/hicolor/64x64/apps/heaptrack.png
-share/icons/hicolor/scalable/apps/heaptrack.svg
 share/metainfo/org.kde.heaptrack.appdata.xml
