@@ -10,6 +10,9 @@ COMMENT=	Cross-platform GUI toolkit
 
 LICENSE=	BSD2CLAUSE
 
+BROKEN_powerpc64_12=	fails to compile: cpuinfo.c:289: error: 'IllegalInsn' undeclared (first use in this function)
+BROKEN_powerpc64_13=	fails to compile: include/agar/core/byteswap.h:46:8: error: unsupported inline asm: input with type 'int' matching output with type 'u_int16_t' (aka 'unsigned short')
+
 USES=		libtool pathfix perl5 pkgconfig jpeg
 USE_PERL5=	build
 USE_LDCONFIG=	yes
