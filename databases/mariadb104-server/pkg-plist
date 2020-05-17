@@ -318,6 +318,8 @@ man/man8/mysqld.8.gz
 @comment share/mysql/mroonga/COPYING
 %%MROONGA%%share/groonga-normalizer-mysql/README.md
 %%MROONGA%%share/groonga/README.md
+share/pam_user_map.so
+share/user_map.conf
 @comment bin/mariadb
 @comment bin/mariadb-access
 @comment bin/mariadb-admin
