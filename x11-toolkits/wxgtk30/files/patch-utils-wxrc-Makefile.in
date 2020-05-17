@@ -1,6 +1,6 @@
---- utils/wxrc/Makefile.in.orig	Thu Nov 30 23:00:32 2006
-+++ utils/wxrc/Makefile.in	Thu Nov 30 23:01:25 2006
-@@ -29,6 +29,7 @@
+--- utils/wxrc/Makefile.in.orig	2020-05-02 14:03:18 UTC
++++ utils/wxrc/Makefile.in
+@@ -29,6 +29,7 @@ WX_LIB_FLAVOUR = @WX_LIB_FLAVOUR@
  TOOLKIT = @TOOLKIT@
  TOOLKIT_LOWERCASE = @TOOLKIT_LOWERCASE@
  TOOLKIT_VERSION = @TOOLKIT_VERSION@
@@ -8,9 +8,9 @@
  EXTRALIBS = @EXTRALIBS@
  EXTRALIBS_XML = @EXTRALIBS_XML@
  EXTRALIBS_GUI = @EXTRALIBS_GUI@
-@@ -114,11 +115,7 @@
+@@ -115,11 +116,7 @@ distclean: clean
  
- @COND_USE_XRC_1@install_wxrc: 
+ @COND_USE_XRC_1@install_wxrc: $(__wxrc___depname)
  @COND_USE_XRC_1@	$(INSTALL_DIR) $(DESTDIR)$(bindir)
 -@COND_USE_XRC_1@	$(INSTALL_PROGRAM) wxrc$(EXEEXT) $(DESTDIR)$(bindir)
 -@COND_USE_XRC_1@	rm -f $(DESTDIR)$(bindir)/wxrc$(EXEEXT) $(DESTDIR)$(bindir)/wxrc-$(WX_RELEASE)

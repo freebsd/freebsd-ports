@@ -1,6 +1,6 @@
---- setup.h.in.orig	2014-10-06 21:33:44 UTC
+--- setup.h.in.orig	2020-05-02 14:03:18 UTC
 +++ setup.h.in
-@@ -757,17 +757,14 @@
+@@ -763,17 +763,14 @@
  /*
   * Define if your compiler has std::tr1::unordered_map
   */

@@ -2,7 +2,7 @@
 
 PORTNAME=	djvusmooth
 DISTVERSION=	0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics python
 
 MAINTAINER=	yuri@FreeBSD.org

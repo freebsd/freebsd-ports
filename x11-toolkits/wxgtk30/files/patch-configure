@@ -1,6 +1,6 @@
---- configure.orig	2014-10-06 21:33:44 UTC
+--- configure.orig	2020-05-02 14:03:18 UTC
 +++ configure
-@@ -3947,7 +3947,7 @@ case "${host}" in
+@@ -4047,7 +4047,7 @@ case "${host}" in
  
      DEFAULT_DEFAULT_wxUSE_MOTIF=1
    ;;
@@ -9,7 +9,7 @@
      USE_BSD=1
      USE_FREEBSD=1
      $as_echo "#define __FREEBSD__ 1" >>confdefs.h
-@@ -21894,6 +21894,7 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+@@ -21657,6 +21657,7 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
  
  
  SEARCH_INCLUDE="\
@@ -17,7 +17,7 @@
      /usr/local/include        \
      /usr/local/X11/include    \
      /usr/local/include/X11    \
-@@ -31852,9 +31853,6 @@ $as_echo "$as_me: WARNING: BeOS threads 
+@@ -31499,9 +31500,6 @@ $as_echo "$as_me: WARNING: BeOS threads are not yet su
                                          THREAD_OPTS="-pthreads $THREAD_OPTS"
                  fi
                  ;;
@@ -27,16 +27,17 @@
            *-*-darwin* | *-*-cygwin* )
                                                  THREAD_OPTS=""
                  ;;
-@@ -33127,7 +33125,7 @@ else
+@@ -32764,8 +32762,8 @@ else
          fi
      fi
  fi
--
 +OPTIMISE_CFLAGS=
  
+-
  if test "x$WXWIN_COMPATIBILITY_2_6" = "xyes"; then
      $as_echo "#define WXWIN_COMPATIBILITY_2_6 1" >>confdefs.h
-@@ -39390,6 +39388,7 @@ EOF
+ 
+@@ -39001,6 +38999,7 @@ fi
        ;;
  
        powerpc-apple-macos* | \
@@ -44,7 +45,7 @@
        *-*-freebsd* | *-*-openbsd* | *-*-netbsd* | *-*-gnu* | *-*-k*bsd*-gnu | \
        *-*-mirbsd* | \
        *-*-sunos4* | \
-@@ -39432,6 +39431,7 @@ EOF
+@@ -39042,6 +39041,7 @@ fi
  
      case "${BAKEFILE_HOST}" in
        *-*-linux* | *-*-freebsd* | *-*-openbsd* | *-*-netbsd* | \

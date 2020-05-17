@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	wx
-PORTVERSION=	3.0.4
+PORTVERSION=	3.0.5.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	9
 CATEGORIES=	x11-toolkits
 PKGNAMESUFFIX=	30-gtk3
 
@@ -17,6 +16,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libpng.so:graphics/png \
+		libsoup-2.4.so:devel/libsoup \
 		libtiff.so:graphics/tiff
 
 USE_GITHUB=	yes

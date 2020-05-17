@@ -1,4 +1,4 @@
---- src/unix/fswatcher_kqueue.cpp.orig	2018-03-07 17:21:58 UTC
+--- src/unix/fswatcher_kqueue.cpp.orig	2020-05-04 14:49:11 UTC
 +++ src/unix/fswatcher_kqueue.cpp
 @@ -20,8 +20,10 @@
  
@@ -11,10 +11,11 @@
  
  #include "wx/dynarray.h"
  #include "wx/evtloop.h"
-@@ -279,8 +281,12 @@ class wxFSWatcherImplKqueue : public wxFSWatcherImpl (
-     {
-         wxASSERT_MSG(e.udata, "Null user data associated with kevent!");
+@@ -295,9 +297,12 @@ class wxFSWatcherImplKqueue : public wxFSWatcherImpl (
+         void* const udata = FromUdata(e.udata);
  
+         wxASSERT_MSG(udata, "Null user data associated with kevent!");
+-
 -        wxLogTrace(wxTRACE_FSWATCHER, "Event: ident=%d, filter=%d, flags=%u, "
 -                   "fflags=%u, data=%d, user_data=%p",
 +        wxLogTrace(wxTRACE_FSWATCHER, "Event: ident=%" PRIuPTR ", filter=%hd, flags=%hu, "
@@ -23,6 +24,6 @@
 +#else
 +                   "fflags=%u, data=%" PRIdPTR ", user_data=%p",
 +#endif
-                    e.ident, e.filter, e.flags, e.fflags, e.data, e.udata);
+                    e.ident, e.filter, e.flags, e.fflags, e.data, udata);
  
          // for ease of use

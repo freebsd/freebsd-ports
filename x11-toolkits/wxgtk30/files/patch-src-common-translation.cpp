@@ -1,6 +1,6 @@
---- src/common/translation.cpp.orig	2011-02-18 15:12:53.000000000 +0600
-+++ src/common/translation.cpp	2011-02-18 15:15:10.000000000 +0600
-@@ -1302,7 +1302,7 @@
+--- src/common/translation.cpp.orig	2020-05-02 14:03:18 UTC
++++ src/common/translation.cpp
+@@ -1471,7 +1471,7 @@ wxArrayString wxTranslations::GetAvailableTranslations
  
  bool wxTranslations::AddStdCatalog()
  {

@@ -2,6 +2,7 @@
 
 PORTNAME=	pcem
 DISTVERSION=	14
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	https://bitbucket.org/pcem_emulator/pcem/get/
 DISTNAME=	faf5d6423060
