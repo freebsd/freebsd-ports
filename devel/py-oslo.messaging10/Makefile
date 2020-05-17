@@ -30,6 +30,7 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
+# oslo.messaging 11.0.0+ requires Python 3.6+
 PORTSCOUT=	limit:^10\.
 
 .include <bsd.port.pre.mk>
