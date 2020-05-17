@@ -20,6 +20,7 @@ USE_PYTHON=	autoplist concurrent distutils
 MAKE_ENV=	FONTTOOLS_MANPATH="man"
 NO_ARCH=	yes
 
+# fonttools 4.0.0+ requires Python 3.6+
 PORTSCOUT=	limit:^3\.
 
 OPTIONS_DEFINE=	GRAPHITE INTERPOLATABLE LXML PLOT SYMFONT UFO UNICODE WOFF
