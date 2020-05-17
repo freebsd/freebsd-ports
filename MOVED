@@ -15012,3 +15012,5 @@ net-im/linux-telegram-desktop|net-im/telegram-desktop|2020-05-13|Has expired: Br
 devel/libphutil||2020-05-15|Has expired: Upstream merged functionality into downstream projects.
 print/frescobaldi|print/py-frescobaldi|2020-05-16|Renamed to comply with Python Ports Policy
 sysutils/rdiff-backup|sysutils/py-rdiff-backup@py37|2020-05-16|Renamed comply with Python Ports Policy and flavored
+www/py-django-happenings|www/py-django-happenings-update|2020-05-17|Has expired: Doesn't work with Django 2.2+, please use www/py-django-happenings-update instead
+devel/py-django-tastypie-mongoengine||2020-05-17|Has expired: Not necessary anymore, and project unmaintained
