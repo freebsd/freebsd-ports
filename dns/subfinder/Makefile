@@ -2,7 +2,7 @@
 
 PORTNAME=	subfinder
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.2
+DISTVERSION=	2.3.3
 CATEGORIES=	dns
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -30,6 +30,7 @@ GH_TUPLE=	\
 		modern-go:reflect2:4b7aa43c6742:modern_go_reflect2/vendor/github.com/modern-go/reflect2 \
 		pkg:errors:v0.8.1:pkg_errors/vendor/github.com/pkg/errors \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
+		projectdiscovery:gologger:v1.0.0:projectdiscovery_gologger/vendor/github.com/projectdiscovery/gologger \
 		rs:xid:v1.2.1:rs_xid/vendor/github.com/rs/xid \
 		sirupsen:logrus:v1.4.2:sirupsen_logrus/vendor/github.com/sirupsen/logrus
 
