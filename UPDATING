@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20200517:
+  AFFECTS: users of x11/sddm
+  AUTHOR: arrowd@FreeBSD.org
+
+  The home directory of sddm user has been moved to /var/lib/sddm. It is advised
+  to run following commands as root after updating the package:
+
+    # pw usermod -n sddm -d /var/lib/sddm
+    # pwd_mkdb /etc/master.passwd
+    # mv /usr/local/etc/sddm/home/state.conf /var/lib/sddm/state.conf
+    # rm -rf /usr/local/etc/sddm/home
+
+  Otherwise, SDDM will keep using /usr/local/etc/sddm/home/ as its HOME.
+
 20200515:
   AFFECTS: users of devel/libphutil, devel/arcanist-lib, devel/phabricator
   AUTHOR: grembo@FreeBSD.org
