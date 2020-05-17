@@ -32,14 +32,6 @@ REINPLACE_ARGS=	-i ''
 # os-brick 3.0.0+ requires Python 3.6+
 PORTSCOUT=	limit:^2\.
 
-post-patch:
-	@${REINPLACE_CMD} -e '/etc\//d' ${WRKSRC}/setup.cfg
-	@${GREP} -lr '/etc/' ${WRKSRC}/etc ${WRKSRC}/os_brick | ${XARGS} -J % ${REINPLACE_CMD} -e 's|/etc/|${PREFIX}&|g' %
-
-post-install:
-	@${MKDIR} ${STAGEDIR}${ETCDIR}/rootwrap.d
-	${INSTALL_DATA} ${WRKSRC}/etc/os-brick/rootwrap.d/os-brick.filters ${STAGEDIR}${ETCDIR}/rootwrap.d/os-brick.filters.sample
-
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 3600
@@ -59,5 +51,13 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}os-win>=3.0.0:devel/py-os-win@${PY_FLAVOR} 
 		${PYTHON_PKGNAMEPREFIX}oslo.service>=1.24.0:devel/py-oslo.service@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oslo.utils>=3.33.0:devel/py-oslo.utils@${PY_FLAVOR}
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e '/etc\//d' ${WRKSRC}/setup.cfg
+	@${GREP} -lr '/etc/' ${WRKSRC}/etc ${WRKSRC}/os_brick | ${XARGS} -J % ${REINPLACE_CMD} -e 's|/etc/|${PREFIX}&|g' %
+
+post-install:
+	@${MKDIR} ${STAGEDIR}${ETCDIR}/rootwrap.d
+	${INSTALL_DATA} ${WRKSRC}/etc/os-brick/rootwrap.d/os-brick.filters ${STAGEDIR}${ETCDIR}/rootwrap.d/os-brick.filters.sample
 
 .include <bsd.port.post.mk>
