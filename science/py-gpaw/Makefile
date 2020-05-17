@@ -13,6 +13,8 @@ COMMENT=	DFT and beyond within the projector-augmented wave method in chemistry
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		fails to build
+
 BUILD_DEPENDS=	${PYNUMPY}
 LIB_DEPENDS=	libmpich.so:net/mpich \
 		libopenblas.so:math/openblas \
