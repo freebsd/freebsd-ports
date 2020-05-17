@@ -11,7 +11,7 @@ post-build:
 .endif
 
 pre-install:
-.if ${PKGNAMESUFFIX} == "-traymonitor"
+.if ${PKGNAMESUFFIX} == "17-traymonitor"
 .	for d in client director monitor storage
 		${MKDIR} ${STAGEDIR}${ETCDIR}/tray-monitor.d/${d}
 		${FIND} ${WRKSRC}/src/defaultconfigs/tray-monitor.d/${d} -type f -name '*.conf' -exec ${MV} -v {} {}.sample \;
@@ -24,11 +24,11 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/examples/nagios/check_bareos/check_bareos \
 	${STAGEDIR}${PREFIX}/libexec/nagios
 .endif
-.if ${PKGNAMESUFFIX} == "-client-static"
+.if ${PKGNAMESUFFIX} == "17-client-static"
 	${INSTALL_PROGRAM} ${WRKSRC}/src/filed/static-bareos-fd ${STAGEDIR}${PREFIX}/sbin/bareos-fd-static
 	${INSTALL_PROGRAM} ${WRKSRC}/src/console/static-bconsole ${STAGEDIR}${PREFIX}/sbin/bconsole-static
 .endif
-.if ${PKGNAMESUFFIX} == "-traymonitor"
+.if ${PKGNAMESUFFIX} == "17-traymonitor"
 # Install config files and preserve existing ones
 .for d in client director monitor storage
 	${INSTALL_SCRIPT} ${WRKSRC}/src/defaultconfigs/tray-monitor.d/${d}/*.sample ${STAGEDIR}${ETCDIR}/tray-monitor.d/${d}/
