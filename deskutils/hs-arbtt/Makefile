@@ -55,7 +55,6 @@ USE_CABAL=		X11-1.9 \
 			old-locale-1.0.0.7_2
 
 EXECUTABLES=		arbtt-capture arbtt-stats arbtt-recover arbtt-import arbtt-dump
-SKIP_CABAL_PLIST=	yes
 
 SUB_FILES=		pkg-message
 SUB_LIST=		EXAMPLESDIR=${EXAMPLESDIR}
