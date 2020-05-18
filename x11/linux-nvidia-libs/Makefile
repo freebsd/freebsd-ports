@@ -3,7 +3,7 @@
 PORTNAME=	nvidia-libs
 DISTVERSION?=	440.82
 # Always try to set PORTREVISION as it can be overridden by the slave ports
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	x11 linux
 MASTER_SITES=	NVIDIA/XFree86/Linux-${ARCH_SUFX}/${DISTVERSION}/
 DISTNAME=	NVIDIA-Linux-${ARCH_SUFX}-${DISTVERSION}
@@ -232,6 +232,19 @@ PLIST_RE+=	'\,${LINUXBASE},s/cuda-mps/cuda-proxy/' \
 LINUX_DATA+=	nvidia_icd.json /etc/vulkan/icd.d
 .else
 PLIST_RE+=	'\,${LINUXBASE}/etc/vulkan,d'
+.endif
+.if ${NVVERSION} >= 410.057
+LINUX_LIBS+=	libnvidia-cbl.so.${PORTVERSION} \
+		libnvidia-rtcore.so.${PORTVERSION}
+.else
+PLIST_RE+=	'\,${LINUXBASE}.*libnvidia-cbl\.so,d' \
+		'\,${LINUXBASE}.*libnvidia-rtcore\.so,d'
+.endif
+.if ${NVVERSION} >= 396.018
+LINUX_LIBS+=	libnvidia-glvkspirv.so.${PORTVERSION}
+LINUX32_LIBS+=	libnvidia-glvkspirv.so.${PORTVERSION}
+.else
+PLIST_RE+=	'\,${LINUXBASE}.*libnvidia-glvkspirv\.so,d'
 .endif
 
 PLIST_SUB+=	LINUXBASE=${LINUXBASE} \
