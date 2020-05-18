@@ -22,7 +22,7 @@ USE_GITHUB=	yes
 USE_QT=		dbus concurrent core buildtools_build gui network printsupport \
 		qmake_build widgets xml
 USE_KDE=	auth codecs config configwidgets completion coreaddons crash \
-		bookmarks guiaddons i18n iconthemes itemviews jobwidgets \
+		bookmarks guiaddons i18n iconthemes init itemviews jobwidgets \
 		kdelibs4support kio libkcddb notifications parts textwidgets \
 		service solid sonnet unitconversion windowsystem widgetsaddons \
 		xmlgui

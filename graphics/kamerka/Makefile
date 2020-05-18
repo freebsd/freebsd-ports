@@ -22,7 +22,7 @@ GH_ACCOUNT=	dos1
 USE_QT=		concurrent core dbus declarative gui network printsupport script xml widgets \
 		qmake_build buildtools_build
 USE_KDE=	auth bookmarks codecs completion config configwidgets coreaddons crash \
-		guiaddons i18n iconthemes itemviews jobwidgets kdeclarative kdelibs4support \
+		guiaddons i18n iconthemes init itemviews jobwidgets kdeclarative kdelibs4support \
 		kio notifications package parts service solid sonnet textwidgets \
 		unitconversion xmlgui widgetsaddons windowsystem
 

@@ -36,7 +36,7 @@ USE_QT=		concurrent core dbus gui network phonon4 printsupport \
 		svg widgets x11extras xml \
 		buildtools_build qmake_build
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
-		coreaddons crash ecm guiaddons i18n iconthemes itemviews \
+		coreaddons crash ecm guiaddons i18n iconthemes init itemviews \
 		jobwidgets mediaplayer notifications parts service \
 		textwidgets unitconversion widgetsaddons windowsystem \
 		xmlgui kdelibs4support kio solid sonnet
