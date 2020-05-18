@@ -13,6 +13,7 @@
 # fiche_enable (bool):	Set to "NO" by default.
 #				Set it to "YES" to enable fiche.
 # fiche_domain (str):	Default "localhost"
+# fiche_options (str):	Additional flags Default ""
 # fiche_output (str):	Default "/usr/local/www/fiche"
 # fiche_logfile (str):	Default "/var/log/fiche/fiche.log"
 
@@ -25,6 +26,7 @@ load_rc_config $name
 
 : ${fiche_enable="NO"}
 : ${fiche_pidfile="/var/run/${name}.pid"}
+: ${fiche_options=""}
 : ${fiche_output="%%WWWDIR%%"}
 : ${fiche_domain="localhost"}
 : ${fiche_logfile="/var/log/${name}/${name}.log"}
@@ -34,7 +36,11 @@ pidfile="${fiche_pidfile}"
 procname="%%PREFIX%%/sbin/fiche"
 
 command="/usr/sbin/daemon"
-command_args="-fp ${pidfile} %%PREFIX%%/sbin/fiche -o ${fiche_output} -d ${fiche_domain} -l ${fiche_logfile}"
+command_args="-fp ${pidfile} %%PREFIX%%/sbin/fiche \
+    -o ${fiche_output} \
+    -d ${fiche_domain} \
+    -l ${fiche_logfile} \
+    ${fiche_options}"
 
 fiche_prestart() {
 	install -d -o 477 -g 477 -m 755 /var/log/${name}
