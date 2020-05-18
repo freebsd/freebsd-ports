@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rust-analyzer
-DISTVERSION=	2020-05-11
+DISTVERSION=	2020-05-18
 CATEGORIES=	devel
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -14,18 +14,18 @@ LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 
 USES=		cargo
 USE_GITHUB=	yes
-GH_TUPLE=	rust-lang:chalk:2c072cc830d04af5f10b390e6643327f85108282:chalkderive
-CARGO_CRATES=	aho-corasick-0.7.10 \
-		anyhow-1.0.28 \
+GH_TUPLE=	rust-lang:chalk:3e9c2503ae9c5277c2acb74624dc267876dd89b3:chalkderive
+CARGO_CRATES=	addr2line-0.12.0 \
+		aho-corasick-0.7.10 \
+		anyhow-1.0.29 \
 		anymap-0.12.1 \
 		arrayvec-0.5.1 \
 		atty-0.2.14 \
 		autocfg-1.0.0 \
-		backtrace-0.3.46 \
-		backtrace-sys-0.1.37 \
+		backtrace-0.3.47 \
 		base64-0.12.1 \
 		bitflags-1.2.1 \
-		bstr-0.2.12 \
+		bstr-0.2.13 \
 		cargo_metadata-0.10.0 \
 		cc-1.0.52 \
 		cfg-if-0.1.10 \
@@ -56,8 +56,9 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		fuchsia-zircon-0.3.3 \
 		fuchsia-zircon-sys-0.3.3 \
 		getrandom-0.1.14 \
+		gimli-0.21.0 \
 		globset-0.4.5 \
-		goblin-0.2.1 \
+		goblin-0.2.3 \
 		heck-0.3.1 \
 		hermit-abi-0.1.12 \
 		home-0.5.3 \
@@ -76,7 +77,7 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		kernel32-sys-0.2.2 \
 		lazy_static-1.4.0 \
 		lazycell-1.2.1 \
-		libc-0.2.69 \
+		libc-0.2.70 \
 		libloading-0.6.2 \
 		linked-hash-map-0.5.3 \
 		lock_api-0.3.4 \
@@ -94,6 +95,7 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		net2-0.2.34 \
 		notify-4.0.15 \
 		num_cpus-1.13.0 \
+		object-0.19.0 \
 		once_cell-1.3.1 \
 		ordermap-0.3.5 \
 		parking_lot-0.10.2 \
@@ -107,7 +109,7 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		ppv-lite86-0.2.6 \
 		proc-macro-hack-0.5.15 \
 		proc-macro2-1.0.12 \
-		quote-1.0.4 \
+		quote-1.0.5 \
 		ra_vfs-0.6.1 \
 		rand-0.7.3 \
 		rand_chacha-0.2.2 \
@@ -132,19 +134,19 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		scoped-tls-1.0.0 \
 		scopeguard-1.1.0 \
 		scroll-0.10.1 \
-		scroll_derive-0.10.1 \
+		scroll_derive-0.10.2 \
 		semver-0.9.0 \
 		semver-parser-0.7.0 \
-		serde-1.0.107 \
-		serde_derive-1.0.107 \
-		serde_json-1.0.52 \
+		serde-1.0.110 \
+		serde_derive-1.0.110 \
+		serde_json-1.0.53 \
 		serde_repr-0.1.5 \
-		serde_yaml-0.8.11 \
+		serde_yaml-0.8.12 \
 		slab-0.4.2 \
 		smallvec-1.4.0 \
 		smol_str-0.1.15 \
 		superslice-1.0.0 \
-		syn-1.0.19 \
+		syn-1.0.21 \
 		synstructure-0.12.3 \
 		tempfile-3.1.0 \
 		terminal_size-0.1.12 \
@@ -152,7 +154,7 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		text-size-1.0.0 \
 		thin-dst-1.1.0 \
 		thread_local-1.0.1 \
-		threadpool-1.8.0 \
+		threadpool-1.8.1 \
 		unicode-bidi-0.3.4 \
 		unicode-normalization-0.1.12 \
 		unicode-segmentation-1.6.0 \
