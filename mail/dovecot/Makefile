@@ -8,8 +8,7 @@
 ######################################################################
 
 PORTNAME=	dovecot
-PORTVERSION=	2.3.10
-PORTREVISION=	3
+PORTVERSION=	2.3.10.1
 CATEGORIES=	mail
 MASTER_SITES=	https://dovecot.org/releases/2.3/
 
@@ -134,17 +133,12 @@ CPPFLAGS+=	-I${LOCALBASE}/include -I${OPENSSLINC}
 LDFLAGS+=	-L${LOCALBASE}/lib -L${OPENSSLLIB}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,/etc/dovecot,${PREFIX}/etc/dovecot,g; \
-		s,sysconfdir=/etc,sysconfdir=${PREFIX}/etc,g' \
-		${WRKSRC}/doc/example-config/*.conf ${WRKSRC}/doc/example-config/conf.d/*
 	@${REINPLACE_CMD} -e '/^LIBS =/s/$$/ @LTLIBICONV@/' \
 		${WRKSRC}/src/lib-mail/Makefile.in
 # Install the sample config files into ETCDIR/example-config/
 	@${REINPLACE_CMD} -e '/^exampledir =/s|\$$(docdir)|${ETCDIR}|' \
 		${WRKSRC}/doc/example-config/Makefile.in \
 		${WRKSRC}/doc/example-config/conf.d/Makefile.in
-	@${REINPLACE_CMD} -e 's|/usr/bin|${LOCALBASE}/bin|' \
-		${WRKSRC}/src/plugins/fts/decode2text.sh
 
 post-patch-LUA-on:
 	@${REINPLACE_CMD} -e '/^libdovecot_lua_la_DEPENDENCIES =/ s|LUA_LIBS|true|' \
