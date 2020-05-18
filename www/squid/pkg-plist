@@ -46,11 +46,7 @@ libexec/squid/basic_db_auth
 %%UNLINKD%%libexec/squid/unlinkd
 %%SSL%%man/man8/security_file_certgen.8.gz
 %%SSL%%libexec/squid/security_file_certgen
-%%ICMP%%libexec/squid/pinger
-%%ICMP%%@mode 4510
-%%ICMP%%@mode
-%%ICMP%%@group squid
-%%ICMP%%@group
+%%ICMP%%@(,squid,4510) libexec/squid/pinger
 %%FS_DISKD%%libexec/squid/diskd
 %%ETCDIR%%/squid.conf.documented
 %%ETCDIR%%/mib.txt
