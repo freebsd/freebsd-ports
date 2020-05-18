@@ -1,0 +1,11 @@
+[
+{ type: install
+  message: <<EOM
+OpenNTPD's man page has been installed as %%MANPREFIX%%/man/man8/ntpd.8.
+To view it instead of the base system ntpd's, override the manual search
+path:
+
+    MANPATH=%%MANPREFIX%%/man man ntpd
+EOM
+}
+]
