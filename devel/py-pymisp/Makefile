@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pymisp
-PORTVERSION=	2.4.114
+PORTVERSION=	2.4.125
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,9 @@ COMMENT=	Python library to access MISP platforms via their REST API
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=	python
+USES=	python shebangfix
+
+SHEBANG_FILES=	pymisp/data/misp-objects/validate_all.sh pymisp/data/misp-objects/jq_all_the_things.sh
 
 USE_PYTHON=	autoplist distutils
 
