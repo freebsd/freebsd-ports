@@ -12,6 +12,8 @@ COMMENT=	Routing engine designed for security, scalability, speed
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_powerpc64=	fails to install: cjdns-cjdns-v20.3/cjdroute: No such file or directory
+
 BUILD_DEPENDS=	node:www/node \
 		bash:shells/bash
 
