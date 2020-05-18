@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	pytest-xdist
-PORTVERSION=	1.29.0
+PORTVERSION=	1.32.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	koobs@FreeBSD.org
-COMMENT=	Py.test plugin for distributed testing and loop-on-failing modes
+COMMENT=	Pytest xdist plugin for distributed testing and loop-on-failing modes
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -28,6 +28,6 @@ TEST_ENV=	PYTHONPATH=${WRKSRC}/src
 NO_ARCH=	yes
 
 do-test:
-	@(cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest -v -rs)
+	@(cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest -v -rs -o addopts=)
 
 .include <bsd.port.mk>
