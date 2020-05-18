@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	guessit
-PORTVERSION=	2.1.4
+PORTVERSION=	3.1.1
 CATEGORIES=	multimedia python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	wg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extract as much information as possible from a video file
 
 LICENSE=	LGPL3
