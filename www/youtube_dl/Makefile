@@ -1,44 +1,41 @@
 # $FreeBSD$
 
 PORTNAME=	youtube_dl
-PORTVERSION=	2020.03.24
+PORTVERSION=	2020.05.08
 CATEGORIES=	www
 MASTER_SITES=	https://yt-dl.org/downloads/${PORTVERSION}/
 DISTNAME=	youtube-dl-${PORTVERSION}
 
-MAINTAINER=	araujo@FreeBSD.org
-COMMENT=	Program for downloading videos from YouTube.com
+# Implicit approval to commit trivial version updates.
+MAINTAINER=	tobik@FreeBSD.org
+COMMENT=	Program for downloading videos from various services
 
 LICENSE=	UNLICENSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gmake python
 
-ALL_TARGET=	youtube-dl
 MAKE_ARGS=	PYTHON=${PYTHON_CMD}
+ALL_TARGET=	youtube-dl
 NO_ARCH=	yes
 WRKSRC=		${WRKDIR}/youtube-dl
 
-OPTIONS_DEFINE=	BASH FISH RTMPDUMP FFMPEG ZSH
-OPTIONS_DEFAULT=BASH FISH RTMPDUMP ZSH
-OPTIONS_SUB=	yes
-FISH_DESC=	Install programmable completions for Fish
-RTMPDUMP_DESC=	Use RTMPDUMP to download rtmp video streams
-
 PLIST_FILES=	bin/youtube-dl \
+		etc/bash_completion.d/youtube-dl.sh \
 		man/man1/youtube-dl.1.gz \
-		%%BASH%%etc/bash_completion.d/youtube-dl.sh \
-		%%FISH%%share/fish/completions/youtube-dl.fish \
-		%%ZSH%%share/zsh/site-functions/_youtube-dl
+		share/fish/vendor_completions.d/youtube-dl.fish \
+		share/zsh/site-functions/_youtube-dl
 
-FFMPEG_RUN_DEPENDS=	${LOCALBASE}/bin/ffprobe:multimedia/ffmpeg
-RTMPDUMP_RUN_DEPENDS=	${LOCALBASE}/bin/rtmpdump:multimedia/rtmpdump
+OPTIONS_DEFINE=		FFMPEG RTMPDUMP
+OPTIONS_DEFAULT=	RTMPDUMP
+
+RTMPDUMP_DESC=	Use rtmpdump to download rtmp video streams
+
+FFMPEG_RUN_DEPENDS=	ffprobe:multimedia/ffmpeg
+RTMPDUMP_RUN_DEPENDS=	rtmpdump:multimedia/rtmpdump
 
 post-extract:
-	@# remove tarball provided version, build our own
+# remove tarball provided version, build our own
 	@${RM} ${WRKSRC}/youtube-dl
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|python devscripts/|${PYTHON_CMD} devscripts/|' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
