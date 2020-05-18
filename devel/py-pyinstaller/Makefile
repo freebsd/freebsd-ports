@@ -15,6 +15,9 @@ COMMENT=	Program to create standalone executables from Python scripts
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
+BROKEN_FreeBSD_12_powerpc64=	fails to compile: /usr/include/machine/ieeefp.h:36: expected '=', ',', ';', 'asm' or '__attribute__' before 'extern'
+BROKEN_FreeBSD_13_powerpc64=	fails to compile: /usr/include/machine/ieeefp.h:35:1: error: unknown type name '__BEGIN_DECLS'
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}altgraph>0:math/py-altgraph@${PY_FLAVOR}
 
 USES=		python
