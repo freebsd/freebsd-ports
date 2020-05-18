@@ -6,7 +6,7 @@ DISTVERSION=	1.9.0
 PORTEPOCH=	1
 CATEGORIES=	devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gspurki@gmail.com
 COMMENT=	Command-line make-like build tool using Go as input files
 
 LICENSE=	APACHE20
