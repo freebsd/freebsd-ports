@@ -9,6 +9,8 @@ COMMENT=		Vishap Oberon Compiler for Oberon-2
 
 LICENSE=		GPLv3
 
+BROKEN_powerpc64=	fails to compile: C compiler does not store multibyte numeric values in little-endian order
+
 USE_GITHUB=		yes
 GH_ACCOUNT=		vishaps
 GH_PROJECT=		voc
