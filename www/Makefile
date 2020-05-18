@@ -347,6 +347,7 @@
     SUBDIR += mod_auth_cookie_mysql2
     SUBDIR += mod_auth_gssapi
     SUBDIR += mod_auth_kerb2
+    SUBDIR += mod_auth_mellon
     SUBDIR += mod_auth_mysql2
     SUBDIR += mod_auth_mysql_another
     SUBDIR += mod_auth_openid
