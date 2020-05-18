@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pyside2
-DISTVERSION=	5.14.2
+DISTVERSION=	5.14.2.1
 CATEGORIES=	devel
 MASTER_SITES=	QT/official_releases/QtForPython/shiboken2/PySide2-${DISTVERSION}-src
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -34,6 +34,6 @@ CMAKE_ARGS+=	"-DUSE_PYTHON_VERSION=${PYTHON_VER}" \
 PLIST_SUB+=	PYVERSTR=.cpython-${PYTHON_SUFFIX}${PYTHON_ABIVER}
 PLIST_SUB+=	DISTVERSION=${DISTVERSION}
 
-WRKSRC=		${WRKDIR}/pyside-setup-opensource-src-${DISTVERSION}/sources/pyside2
+WRKSRC=		${WRKDIR}/pyside-setup-opensource-src-${DISTVERSION:C/^([0-9].[0-9]+.[0-9])(.[0-9])?/\1/}/sources/pyside2
 
 .include <bsd.port.post.mk>
