@@ -16,6 +16,8 @@ LICENSE_FILE_GPLv3+ =	${WRKSRC}/licenses/GPL-3.0.txt
 LICENSE_FILE_CC-BY-SA-4.0=${WRKSRC}/licenses/CC-BY-SA-4.0.txt
 LICENSE_FILE_OFL11=	${WRKSRC}/licenses/OFL-1.1.txt
 
+BROKEN_powerpc64=	fails to build: gamedata/models/models.pack: vw_CreateVFS(): VFS compilation process aborted!
+
 LIB_DEPENDS=	libogg.so:audio/libogg \
 		libvorbis.so:audio/libvorbis \
 		libvorbisfile.so:audio/libvorbis \
