@@ -10,7 +10,7 @@ COMMENT=	Advanced Functional Neuro Imaging
 
 LICENSE=	GPLv2
 
-BROKEN_sparc64=	Does not compile: "undefined reference to '_mcount'"
+BROKEN_powerpc64=	fails to compile: ./predicates_init.c:46: error: implicit declaration of function 'fpsetprec'
 
 CRAN_DEPENDS=	R-cran-lme4>0:math/R-cran-lme4 \
 		R-cran-snow>0:science/R-cran-snow \
