@@ -21,7 +21,7 @@ LIB_DEPENDS=	libgmp.so:math/gmp	\
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gmpy2-devel>0:math/py-gmpy2-devel@${PY_FLAVOR}	\
 		${PYTHON_PKGNAMEPREFIX}cysignals>0:devel/py-cysignals@${PY_FLAVOR}
 
-USES=		localbase python:3.6+
+USES=		compiler:c++11-lang localbase python:3.6+
 USE_PYTHON=	cython distutils
 
 OPTIONS_DEFINE=		DOCS
