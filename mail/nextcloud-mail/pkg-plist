@@ -233,8 +233,10 @@
 %%WWWDIR%%/lib/AppInfo/Application.php
 %%WWWDIR%%/lib/AppInfo/BootstrapSingleton.php
 %%WWWDIR%%/lib/Attachment.php
+%%WWWDIR%%/lib/BackgroundJob/CleanupJob.php
 %%WWWDIR%%/lib/BackgroundJob/SyncJob.php
 %%WWWDIR%%/lib/Cache/Cache.php
+%%WWWDIR%%/lib/Command/CleanUp.php
 %%WWWDIR%%/lib/Command/CreateAccount.php
 %%WWWDIR%%/lib/Command/DiagnoseAccount.php
 %%WWWDIR%%/lib/Command/ExportAccount.php
@@ -313,6 +315,7 @@
 %%WWWDIR%%/lib/Listener/MessageCacheUpdaterListener.php
 %%WWWDIR%%/lib/Listener/SaveSentMessageListener.php
 %%WWWDIR%%/lib/Listener/TrashMailboxCreatorListener.php
+%%WWWDIR%%/lib/Listener/UserDeletedListener.php
 %%WWWDIR%%/lib/Mailbox.php
 %%WWWDIR%%/lib/Migration/FixAccountSyncs.php
 %%WWWDIR%%/lib/Migration/FixCollectedAddresses.php
@@ -369,6 +372,7 @@
 %%WWWDIR%%/lib/Service/Avatar/GravatarSource.php
 %%WWWDIR%%/lib/Service/Avatar/IAvatarSource.php
 %%WWWDIR%%/lib/Service/AvatarService.php
+%%WWWDIR%%/lib/Service/CleanupService.php
 %%WWWDIR%%/lib/Service/ContactsIntegration.php
 %%WWWDIR%%/lib/Service/Group/ContactsGroupService.php
 %%WWWDIR%%/lib/Service/Group/IGroupService.php
