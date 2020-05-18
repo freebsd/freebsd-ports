@@ -1,11 +1,13 @@
---- src/acl/external/session/ext_session_acl.cc.orig	2020-04-19 10:50:48 UTC
+--- src/acl/external/session/ext_session_acl.cc.orig	2020-05-10 08:32:32 UTC
 +++ src/acl/external/session/ext_session_acl.cc
-@@ -137,7 +137,7 @@ static void init_db(void)
+@@ -137,6 +137,10 @@ static void init_db(void)
          }
      }
  #elif USE_TRIVIALDB
--    db = tdb_open(db_path, 0, TDB_CLEAR_IF_FIRST, O_CREAT|O_DSYNC, 0666);
-+    db = tdb_open(db_path, 0, TDB_CLEAR_IF_FIRST, O_CREAT|O_SYNC, 0666);
++#if _SQUID_FREEBSD_ && !defined(O_DSYNC)
++    // FreeBSD lacks O_DSYNC, O_SYNC is closest to correct behaviour
++#define O_DSYNC O_SYNC
++#endif
+     db = tdb_open(db_path, 0, TDB_CLEAR_IF_FIRST, O_CREAT|O_DSYNC, 0666);
  #endif
      if (!db) {
-         fprintf(stderr, "FATAL: %s: Failed to open session db '%s'\n", program_name, db_path);
