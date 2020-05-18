@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	xfstt
-PORTVERSION=	1.9.3
+PORTVERSION=	1.10
 CATEGORIES=	x11-servers
 MASTER_SITES=	http://archive.hadrons.org/software/xfstt/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gspurki@gmail.com
 COMMENT=	TrueType font server for X11
 
 LICENSE=	LGPL20+
