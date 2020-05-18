@@ -1,0 +1,6 @@
+Napoleon is a pre-processor that parses NumPy and Google style docstrings and
+converts them to reStructuredText before Sphinx attempts to parse them. This
+happens in an intermediate step while Sphinx is processing the documentation,
+so it doesn't modify any of the docstrings in your actual source code files.
+
+WWW: https://pypi.org/project/sphinxcontrib-napoleon/
