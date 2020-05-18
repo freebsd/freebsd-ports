@@ -10,6 +10,9 @@ DISTFILES=	android-icon-192x192.png:icon \
 		${PORTNAME}-assets-${DISTVERSIONFULL}.tar.xz:assets
 EXTRACT_ONLY=	${DISTFILES:N*\:icon:C/:.*//}
 
+PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/commit/
+PATCHFILES+=	886cad910372.diff:-p1 # https://gitlab.com/veloren/veloren/merge_requests/1003
+
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Multiplayer voxel RPG written in Rust
 
@@ -587,8 +590,8 @@ post-patch:
 		-e "/GIT_DATE/s/=.*/= \"$$(date -r $$(${AWK} '/TIMESTAMP/ { print $$3 }' \
 			${DISTINFO_FILE}) +'%Y-%m-%d-%H:%M')\";/" \
 		${WRKSRC}/common/src/util/mod.rs
-# Enable system assets
-	@${REINPLACE_CMD} -e '/linux/d; s,/usr/share,${DATADIR:H},' \
+# Respect PREFIX != /usr/local for system assets
+	@${REINPLACE_CMD} -e 's,/usr/share,${DATADIR:H},' \
 		${WRKSRC}/common/src/assets/mod.rs
 # lang/python3 cannot be used as a dependency
 	@${REINPLACE_CMD} -e 's/"python3"/"${PYTHON_CMD:T}"/' \
