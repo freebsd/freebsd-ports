@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	amazon-ssm-agent
-PORTVERSION=	2.3.612.0
-PORTREVISION=	1
+PORTVERSION=	2.3.1205.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	cperciva@FreeBSD.org
@@ -38,6 +37,11 @@ USE_RC_SUBR=	amazon-ssm-agent
 
 post-patch:
 	${LN} -s ${WRKSRC}/vendor/src/* ${WRKSRC}/vendor/
+
+pre-build:
+# set package version
+	cd ${GO_WRKSRC} && BRAZIL_PACKAGE_VERSION=${PORTVERSION} \
+	${SETENV} ${MAKE_ENV} ${GO_ENV} ${GO_CMD} run ./agent/version/versiongenerator/version-gen.go
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/amazon/ssm
