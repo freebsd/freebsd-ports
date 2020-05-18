@@ -13,7 +13,8 @@ COMMENT=	MultiBody Dynamics analysis system
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_powerpc=	Does not compile on powerpc
+BROKEN_powerpc=		Does not compile on powerpc
+BROKEN_powerpc64=	fails to compile: libraries/libmbutil/parser.h:275:3: error: expected identifier
 
 BUILD_DEPENDS=	libatomic_ops>0:devel/libatomic_ops
 LIB_DEPENDS=	libltdl.so:devel/libltdl \
