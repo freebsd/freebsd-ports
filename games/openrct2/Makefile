@@ -12,6 +12,9 @@ COMMENT=	Open source re-implementation of RollerCoaster Tycoon 2
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/licence.txt
 
+BROKEN_FreeBSD_11_powerpc64=	fails to build: src/openrct2/util/Endian.h:9:24: error: unused function 'ORCT_Swapu16'
+BROKEN_FreeBSD_12_powerpc64=	fails to build: openrct2/common.h:96:10: error: #error Unknown endianess!
+
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libjansson.so:devel/jansson \
 		libzip.so:archivers/libzip \
