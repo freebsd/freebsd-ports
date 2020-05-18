@@ -2,11 +2,8 @@
 
 PORTNAME=	janet
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.9.0
+DISTVERSION=	1.9.1
 CATEGORIES=	lang
-
-PATCH_SITES=	https://github.com/janet-lang/janet/commit/
-PATCHFILES=	7275370ae563e8bfa7e907c9931bb1e0c88686d3.patch:-p1
 
 MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Functional embeddable lisp with C interop, & performant data types
