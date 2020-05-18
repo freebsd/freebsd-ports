@@ -10,6 +10,9 @@ COMMENT=	Reimplementation of zEngine, the Gothic and Gothic II engine
 
 LICENSE=	GPLv3
 
+BROKEN_FreeBSD_12_powerpc64=	fails to build: /usr/include/math.h:251:8: error: conflicting declaration of C function 'double pow(double, double)'
+BROKEN_FreeBSD_13_powerpc64=	fails to build: mmintrin.h:33:5: error: use of undeclared identifier '__builtin_ia32_emms'; did you mean '__builtin_isless'?
+
 LIB_DEPENDS=	libsndfile.so:audio/libsndfile
 
 USES=		cmake compiler:c++11-lib gl openal xorg
