@@ -1,3 +1,3 @@
-TIMESTAMP = 1586381044
-SHA256 (skunkwerks-fdb-7.0.0.a.20200408-7608cb9_GH0.tar.gz) = bc95899eae9c1b009e01aaab1eed5df569807a6aed15a41033c0d2ccd0f639de
-SIZE (skunkwerks-fdb-7.0.0.a.20200408-7608cb9_GH0.tar.gz) = 5306375
+TIMESTAMP = 1589833261
+SHA256 (apple-foundationdb-7.0.0.a.20200515-c1fc784_GH0.tar.gz) = 6cd6fd7dc95b18b8f2e8a400c556eebf8fb4d4392ddff4a954a4d175cd57ab13
+SIZE (apple-foundationdb-7.0.0.a.20200515-c1fc784_GH0.tar.gz) = 5425979

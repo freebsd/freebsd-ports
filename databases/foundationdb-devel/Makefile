@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	foundationdb-devel
-DISTVERSION=	7.0.0.a.20200408
+DISTVERSION=	7.0.0.a.20200515
 CATEGORIES=	databases
 
 MAINTAINER=	dch@FreeBSD.org
@@ -19,17 +19,16 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 
 USES=		compiler:c++17-lang cmake mono:build python:build shebangfix ssl
 USE_GITHUB=	yes
-GH_ACCOUNT=	skunkwerks
-GH_PROJECT=	fdb
-GH_TAGNAME=	7608cb9
-
+GH_ACCOUNT=	apple
+GH_PROJECT=	foundationdb
+GH_TAGNAME=	c1fc784
+USE_LDCONFIG=	yes
 USE_RC_SUBR=	foundationdb
 
 SHEBANG_FILES=	bindings/c/generate_asm.py
 
-CMAKE_ARGS=	DLibreSSL_ROOT=${OPENSSLLIB}
-CMAKE_OFF=	USE_DTRACE
-CMAKE_ON=	DISABLE_TLS
+CMAKE_ARGS=	-DOPENSSL_ROOT_DIR=${OPENSSLLIB}
+CMAKE_OFF=	USE_DTRACE DISABLE_TLS
 
 USERS=		foundationdb
 GROUPS=		foundationdb
@@ -44,19 +43,24 @@ SUB_FILES+=	foundationdb.conf
 SUB_LIST+=	${SUB_FDB}
 PLIST_SUB+=	${SUB_FDB}
 
+
+post-patch:
+		${REINPLACE_CMD} 's/OPENSSL_USE_STATIC_LIBS TRUE/OPENSSL_USE_STATIC_LIBS FALSE/' \
+		${WRKSRC}/cmake/FDBComponents.cmake
 do-install:
 	# commands on first line, dev tools on next two
 .for f in fdbbackup fdbcli fdbmonitor fdbserver \
 	    actor_flamegraph fdb_c_performance_test fdb_c_ryw_benchmark \
-	    fdb_c_txn_size_test fdb_flow_tester mako
+	    fdb_c_txn_size_test fdb_flow_tester fdbconvert fdbdecode mako tutorial
 	${INSTALL_PROGRAM} ${WRKDIR}/.build/bin/${f} ${STAGEDIR}${PREFIX}/bin/
 .endfor
 	# confirm with upstream if these are actually needed
-.for s in backup_agent dr_agent fdbr fdbrestore
+.for s in backup_agent dr_agent fastrestore_agent fdbr fdbrestore
 	${RLN} ${STAGEDIR}${PREFIX}/bin/fdbbackup ${STAGEDIR}${PREFIX}/bin/${s}
 .endfor
 	# exposed libraries - confirm with upstream
-.for l in libfdb_c.so libfdb_flow.a libfdb_sqlite.a libfdbclient.a libfdbrpc.a libflow.a libthirdparty.a
+.for l in libfdb_c.so libfdb_flow.a libfdb_sqlite.a libfdbclient.a \
+	    libfdbrpc.a libflow.a libthirdparty.a
 	${STRIP_CMD} ${WRKDIR}/.build/lib/${l}
 	${INSTALL_DATA} ${WRKDIR}/.build/lib/${l} ${STAGEDIR}/${PREFIX}/lib/
 .endfor
