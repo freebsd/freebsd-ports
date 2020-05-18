@@ -31,7 +31,10 @@ USE_TEX=	latex dvipsk
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME}-org
 
-DOS2UNIX_FILES=	${PORTNAME}.pro
+DOS2UNIX_FILES=	${PORTNAME}.pro \
+		src/manhattanstyle.cpp \
+		src/pdfviewer/PDFDocument.h \
+		src/qcodeedit/lib/widgets/qfoldpanel.cpp
 
 QMAKE_ARGS+=	USE_SYSTEM_HUNSPELL=true USE_SYSTEM_QUAZIP=true
 
