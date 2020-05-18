@@ -1,0 +1,10 @@
+Small command-line application to view images from the terminal
+written in Rust. It uses lower half blocks (\u2584) to fit 2 pixels
+into a single cell by adjusting foreground and background colours
+accordingly.
+
+When run, viu will check the value of $COLORTERM. If it contains
+either truecolor or 24bit, truecolor (16 million colors) will be
+used. If not, it will fallback to using only ansi256.
+
+WWW: https://github.com/atanunq/viu
