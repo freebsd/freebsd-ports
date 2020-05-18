@@ -3,7 +3,7 @@
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	editors java
 MASTER_SITES=	APACHE/openoffice/${PORTVERSION}/source \
 		http://tools.openoffice.org/unowinreg_prebuild/680/:unoreg \
@@ -15,7 +15,7 @@ PKGNAMEPREFIX=		${LANG_PKGNAME}-
 .if defined(LANG_SUFFIX)
 PKGNAMESUFFIX=		-${LANG_SUFFIX}
 .endif
-DISTFILES=	${AOOSRC} ${EXTSRC}:extsrc
+DISTFILES=	${AOOSRC} ${EXTSRC}:extsrc ${PYTHON_DISTFILE}:sf
 DIST_SUBDIR=	openoffice
 EXTRACT_ONLY=	${AOOSRC}
 
@@ -97,7 +97,7 @@ RUN_DEPENDS=								\
 
 USES=		autoreconf bison compiler:c++11-lib cpe desktop-file-utils \
 		gettext-runtime gl gmake gnome iconv jpeg perl5 pkgconfig \
-		python:2.7 shared-mime-info ssl tar:bzip2 xorg
+		shared-mime-info ssl tar:bzip2 xorg
 USE_GL=		gl glu
 USE_GNOME=	gtk20 libxslt libidl glib20
 USE_JAVA=	yes
@@ -204,6 +204,7 @@ CONFIGURE_ARGS+=	--enable-symbols
 
 .include <${FILESDIR}/Makefile.localized>
 
+PYTHON_DISTFILE=	1d8728eb0dfcac72a0fd99c17ec7f386-Python-2.7.6.tgz
 GCC_EXTRA_DISTFILES=	d6eef4b4cacb2183f2bf265a5a03a354-boost_1_55_0.tar.bz2 \
 			d62650a6f908e85643e557a236ea989c-vigra1.6.0.tar.gz
 
@@ -291,7 +292,7 @@ CONFIGURE_ARGS+=							\
 			--enable-opengl					\
 			--with-system-openssl				\
 			--with-package-format="archive"			\
-			--with-system-python				\
+			--without-system-python				\
 			--with-system-redland				\
 			--with-system-sane				\
 			--with-system-serf				\
@@ -333,6 +334,7 @@ do-extract-SDK-on:
 
 post-extract:
 	${TAR} -C ${WRKSUBDIR} -xzf ${DISTDIR}/${DIST_SUBDIR}/${EXTSRC}
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/${PYTHON_DISTFILE} ${WRKSUBDIR}/ext_sources/${PYTHON_DISTFILE}
 .if ${CHOSEN_COMPILER_TYPE} == gcc
 .  for f in ${GCC_EXTRA_DISTFILES}
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/${f} ${WRKSUBDIR}/ext_sources/${f}
