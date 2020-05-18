@@ -3,7 +3,7 @@
 
 PORTVERSION=	1.45.0.${NIGHTLY_DATE:C,-,,g}
 # Always set PORTREVISION explicitly as otherwise it is inherited from lang/rust
-PORTREVISION=	0
+PORTREVISION=	1
 PKGNAMESUFFIX=	-nightly
 DISTNAME=	rustc-nightly-src
 
