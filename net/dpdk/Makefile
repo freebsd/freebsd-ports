@@ -16,12 +16,13 @@ ONLY_FOR_ARCHS_REASON=	Only works on 64-bit x86 hardware
 
 LIB_DEPENDS=	libjansson.so:devel/jansson
 
-USES=		meson kmod shebangfix ssl tar:xz
+USES=		meson kmod shebangfix tar:xz
 MESON_ARGS=	-Dmachine=default -Ddefault_library=shared
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	usertools/dpdk-pmdinfo.py \
 	usertools/dpdk-telemetry-client.py \
 	usertools/dpdk-devbind.py \
+	usertools/dpdk-pmdinfo.py \
 	examples/ipsec-secgw/test/pkttest.py \
 	examples/ipsec-secgw/test/pkttest.sh \
 	examples/ipsec-secgw/test/run_test.sh \
