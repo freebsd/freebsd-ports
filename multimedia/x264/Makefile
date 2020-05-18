@@ -53,6 +53,10 @@ OPTIONS_RADIO+=		MP4
 OPTIONS_RADIO_MP4+=	GPAC LSMASH
 OPTIONS_DEFAULT+=	FFMS LAVF LSMASH SWSCALE
 
+.if make(makesum) # for optional distfiles
+.MAKEFLAGS:	WITH="${OPTIONS_DEFINE}"
+.endif
+
 FFMS_DESC=		FFmpeg Source input support
 GPAC_DESC=		GPAC library support
 LAVF_DESC=		libav* format input support (requires FFmpeg)
