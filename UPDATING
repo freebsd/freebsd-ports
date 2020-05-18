@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20200518:
+  AFFECTS: users of converers/libiconv
+  AUTHOR: zeising@FreeBSD.org
+
+  Support for the Japanese specific patches have been discontinued.
+  These were previously added in a nondefault ports options, for people who
+  needed them.
+  If you still need them, it might be possible to create a port of libiconv 1.14
+  which includes those patches.
+
 20200517:
   AFFECTS: users of x11/sddm
   AUTHOR: arrowd@FreeBSD.org

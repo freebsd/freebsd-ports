@@ -2,7 +2,6 @@ bin/iconv
 include/iconv.h
 include/libcharset.h
 include/localcharset.h
-lib/charset.alias
 lib/libcharset.a
 lib/libcharset.so
 lib/libcharset.so.1
@@ -10,7 +9,7 @@ lib/libcharset.so.1.0.0
 lib/libiconv.a
 lib/libiconv.so
 lib/libiconv.so.2
-lib/libiconv.so.2.5.1
+lib/libiconv.so.2.6.1
 man/man1/iconv.1.gz
 man/man3/iconv.3.gz
 man/man3/iconv_open.3.gz
