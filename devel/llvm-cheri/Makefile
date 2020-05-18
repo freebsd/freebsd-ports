@@ -266,6 +266,10 @@ post-patch:
 	    -e 's|lit\.|lit${LLVM_SUFFIX}.|' \
 	    ${WRKSRC}/llvm/utils/lit/lit.py ${WRKSRC}/llvm/utils/lit/lit/*.py
 
+post-patch-LLD-on:
+		${REINPLACE_CMD} -e "s|\'indexsidebar.html\'|[\'indexsidebar.html\']|" \
+			${PATCH_WRKSRC}/lld/docs/conf.py
+
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/toolchains/
 	${INSTALL_DATA} ${WRKDIR}/mips-cheri-clang.mk \
