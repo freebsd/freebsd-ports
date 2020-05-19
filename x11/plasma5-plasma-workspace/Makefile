@@ -2,7 +2,7 @@
 
 PORTNAME=	plasma-workspace
 DISTVERSION=	${KDE_PLASMA_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 kde kde-plasma
 
 PATCH_SITES=	https://github.com/KDE/plasma-workspace/commit/

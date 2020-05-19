@@ -1,0 +1,10 @@
+--- ksmserver/CMakeLists.txt.orig	2020-05-05 15:00:04 UTC
++++ ksmserver/CMakeLists.txt
+@@ -1,6 +1,6 @@
+ add_definitions(-DTRANSLATION_DOMAIN=\"ksmserver\")
+ 
+-check_library_exists(ICE _IceTransNoListen "" HAVE__ICETRANSNOLISTEN)
++check_library_exists("${X11_ICE_LIB}" _IceTransNoListen "" HAVE__ICETRANSNOLISTEN)
+ configure_file(config-ksmserver.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-ksmserver.h)
+ 
+ add_definitions("-DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_TO_ASCII")
