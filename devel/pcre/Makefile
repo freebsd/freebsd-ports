@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pcre
-PORTVERSION=	8.43
-PORTREVISION=	2
+PORTVERSION=	8.44
 CATEGORIES=	devel
 MASTER_SITES=	https://ftp.pcre.org/pub/pcre/ \
 		SF
