@@ -20,6 +20,7 @@
 %%SITE_PERL%%/Date/Language/Icelandic.pm
 %%SITE_PERL%%/Date/Language/Italian.pm
 %%SITE_PERL%%/Date/Language/Norwegian.pm
+%%SITE_PERL%%/Date/Language/Occitan.pm
 %%SITE_PERL%%/Date/Language/Oromo.pm
 %%SITE_PERL%%/Date/Language/Romanian.pm
 %%SITE_PERL%%/Date/Language/Russian.pm
@@ -35,9 +36,11 @@
 %%SITE_PERL%%/Date/Language/Turkish.pm
 %%SITE_PERL%%/Date/Parse.pm
 %%SITE_PERL%%/Time/Zone.pm
+%%SITE_PERL%%/TimeDate.pm
 %%PERL5_MAN3%%/Date::Format.3.gz
 %%PERL5_MAN3%%/Date::Language.3.gz
 %%PERL5_MAN3%%/Date::Language::Bulgarian.3.gz
 %%PERL5_MAN3%%/Date::Language::Hungarian.3.gz
 %%PERL5_MAN3%%/Date::Parse.3.gz
 %%PERL5_MAN3%%/Time::Zone.3.gz
+%%PERL5_MAN3%%/TimeDate.3.gz
