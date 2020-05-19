@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	actionmailbox
-PORTVERSION=	6.0.2.2
+PORTVERSION=	6.0.3.1
 CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	60
@@ -24,5 +24,7 @@ USES=		gem
 USE_RUBY=	yes
 
 NO_ARCH=	yes
+
+PORTSCOUT=	limit:^6\.0\.
 
 .include <bsd.port.mk>
