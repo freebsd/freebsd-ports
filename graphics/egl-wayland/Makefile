@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	egl-wayland
-DISTVERSION=	1.1.4
+DISTVERSION=	1.1.5
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
