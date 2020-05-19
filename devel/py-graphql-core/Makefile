@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	graphql-core
-PORTVERSION=	3.1.0
+PORTVERSION=	3.1.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		python:3.6+
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
