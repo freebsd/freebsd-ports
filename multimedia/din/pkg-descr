@@ -1,10 +1,9 @@
-DIN Is Noise is an open source, cross-platform sound synthesizer.
-
-The WEB site states:
- "DIN Is Noise is a musical instrument for Windows, Mac OS X and
-  GNU/Linux, Use your mouse & keyboard to make high quality music.
-
-  It can accept input from your MIDI keyboard, Notes, control change,
-  pitch bend and clock sync."
+DIN Is Noise is a program for making sound, music and noise. Use
+bezier curves to edit waveforms, envelopes, modulators and FX
+components; use the keyboard (computer and MIDI) to trigger notes (or
+noise), use the mouse to sound like the theremin, create drones on
+microtones, launch, orbit and drag them around; bounce balls on walls
+to trigger notes in a mondrian inspired drawing and also make binaural
+beats. Supports MIDI input and scripting through TCL.
 
 WWW: https://dinisnoise.org/
