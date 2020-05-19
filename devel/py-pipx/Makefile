@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pipx
-PORTVERSION=	0.15.2.0
+PORTVERSION=	0.15.3.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}argcomplete>=1.9.4<2.0:devel/py-argcomplete@
 		${PYTHON_PKGNAMEPREFIX}userpath>=0:devel/py-userpath@${PY_FLAVOR}
 
 USES=		python:3.6+
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 

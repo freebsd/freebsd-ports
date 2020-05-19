@@ -1,3 +1,3 @@
-TIMESTAMP = 1589818817
-SHA256 (pipx-0.15.2.0.tar.gz) = 8f0cadaa649991adc976bbba57350dd418ccd84d5204419d34922b29e3ad4c79
-SIZE (pipx-0.15.2.0.tar.gz) = 336188
+TIMESTAMP = 1589908778
+SHA256 (pipx-0.15.3.0.tar.gz) = 6ca426c95e600e8e2cfd56478e82f0152a272edccbb8ca864e1d4eaa8c09bca7
+SIZE (pipx-0.15.3.0.tar.gz) = 336454
