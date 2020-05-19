@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	tpm2-tools
-DISTVERSION=	4.0
+DISTVERSION=	4.2
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/tpm2-software/tpm2-tools/releases/download/${DISTVERSION}/
 
@@ -11,13 +11,14 @@ COMMENT=	TPM2 tools
 LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libtss2-esys.so:security/tpm2-tss \
-		libcurl.so:ftp/curl
+		libcurl.so:ftp/curl \
+		libuuid.so:misc/e2fsprogs-libuuid
 
 USES=	gmake libtool pkgconfig ssl
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CRYPTO_CFLAGS="-I${OPENSSLINC}" CRYPTO_LIBS="-L${OPENSSLLIB} -lcrypto"
-CONFIGURE_ARGS=	--disable-hardening
+CONFIGURE_ARGS=	--disable-hardening --disable-fapi
 
 BROKEN_SSL=	openssl
 
