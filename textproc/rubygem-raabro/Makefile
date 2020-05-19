@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	raabro
-PORTVERSION=	1.1.6
+PORTVERSION=	1.3.1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
