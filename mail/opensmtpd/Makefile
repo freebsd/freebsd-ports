@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	opensmtpd
-PORTVERSION=	6.6.4
+PORTVERSION=	6.7.0
 DISTVERSIONSUFFIX=	p1
 PORTEPOCH=	1
-PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.opensmtpd.org/archives/
 
@@ -26,7 +25,7 @@ LIBASRDEVEL_DESC=	Use development version of libasr
 MAILERCONF_DESC=	Activate OpenSMTPD in mailer.conf(5)
 TABLE_DB_DESC=		Build table-db plugin (aliases)
 
-USES=		cpe groff libtool ssl
+USES=		bison cpe groff libtool localbase ssl
 GNU_CONFIGURE=	yes
 
 CPE_VENDOR=	openbsd
@@ -50,9 +49,8 @@ LIBASRDEVEL_LIB_DEPENDS=	libasr.so:dns/libasr-devel
 PAM_CONFIGURE_WITH=	auth-pam=smtpd
 TABLE_DB_CONFIGURE_WITH=	table-db
 
-CONFIGURE_ARGS+=	--with-libasr=${LOCALBASE} \
+CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc/mail/ \
 			--with-libevent=${LOCALBASE} \
-			--sysconfdir=${PREFIX}/etc/mail/ \
 			--with-path-mbox=/var/mail \
 			--with-user-smtpd=_smtpd \
 			--with-user-queue=_smtpq \
