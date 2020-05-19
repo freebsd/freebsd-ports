@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mutt
-DISTVERSION=	1.14.0
+DISTVERSION=	1.14.1
 CATEGORIES+=	mail
 MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
 		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
@@ -46,10 +46,10 @@ GNU_CONFIGURE=	yes
 
 OPTIONS_SUB=	yes
 
-OPTIONS_DEFINE=	AUTOCRYPT DEBUG DOCS EXAMPLES FLOCK FORCEBASE64 GPGME \
+OPTIONS_DEFINE=	AUTOCRYPT DEBUG_LOGS DOCS EXAMPLES FLOCK FORCEBASE64 GPGME \
 		GREETING_PATCH HTML ICONV IDN IFDEF_PATCH LOCALES_FIX \
 		MAILBOX_MANPAGES MAILDIR_MTIME_PATCH NLS QUOTE_PATCH \
-		REVERSE_REPLY_PATCH SASL SMART_DATE SMTP URLVIEW
+		REVERSE_REPLY_PATCH SASL SMIME SMART_DATE SMTP URLVIEW
 
 OPTIONS_SINGLE=	GSSAPI HCACHE SCREEN
 OPTIONS_RADIO=	SPELL
@@ -59,7 +59,7 @@ OPTIONS_SINGLE_HCACHE=	HCACHE_BDB HCACHE_TOKYOCABINET HCACHE_KYOTOCABINET HCACHE
 OPTIONS_SINGLE_SCREEN=	NCURSES SLANG
 
 AUTOCRYPT_DESC=	Convenient End-to-End Encryption
-DEBUG_DESC=	Debugging capabilities
+DEBUG_LOGS_DESC=	Debugging capabilities
 FLOCK_DESC=	flock() usage
 FORCEBASE64_DESC=	Option to force base64 encoding for compose
 GPGME_DESC=	Gpgme interface
@@ -80,14 +80,15 @@ NLS_DESC=	Native language support (implies ICONV)
 QUOTE_PATCH_DESC=	Extended quoting
 REVERSE_REPLY_PATCH_DESC=	Reverse_reply
 SASL_DESC=	SASL authentication
+SMIME_DESC=	SMIME email check option patch
 SLANG_DESC=	SLANG support
 SMART_DATE_DESC=	Dynamic date formatting with "%@"
 SMTP_DESC=	SMTP relay support
 URLVIEW_DESC=	Use urlview for the URL selector menu
 
-OPTIONS_DEFAULT=	AUTOCRYPT DEBUG GPGME GSSAPI_NONE HCACHE_BDB HTML ICONV IDN \
+OPTIONS_DEFAULT=	AUTOCRYPT DEBUG_LOGS GPGME GSSAPI_NONE HCACHE_BDB HTML ICONV IDN \
 		IFDEF_PATCH LOCALES_FIX MAILBOX_MANPAGES MAILDIR_MTIME_PATCH NCURSES \
-		NLS QUOTE_PATCH REVERSE_REPLY_PATCH SASL SMART_DATE SMTP URLVIEW
+		NLS QUOTE_PATCH REVERSE_REPLY_PATCH SASL SMIME SMART_DATE SMTP URLVIEW
 
 .ifmake makesum # for optional distfiles patchfiles
 OPTIONS_OVERRIDE=	${OPTIONS_DEFINE} ${OPTIONS_DEFAULT}
@@ -109,7 +110,7 @@ ISPELL_BUILD_DEPENDS=	ispell:textproc/aspell-ispell
 ISPELL_RUN_DEPENDS=	ispell:textproc/aspell-ispell
 URLVIEW_RUN_DEPENDS=	urlview:textproc/urlview
 
-DEBUG_CONFIGURE_ON=	--enable-debug
+DEBUG_LOGS_CONFIGURE_ON=	--enable-debug
 
 # Handle ncurses/ncurses-port/slang
 SLANG_CONFIGURE_ON=	--with-slang=${LOCALBASE}
@@ -150,9 +151,15 @@ ICONV_CONFIGURE_ON=	${ICONV_CONFIGURE_ARG}
 ICONV_CONFIGURE_OFF=	--disable-iconv
 
 REVERSE_REPLY_PATCH_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-reverse_reply
+REVERSE_REPLY_PATCH_USES=		perl5
+REVERSE_REPLY_PATCH_VARS=		USE_PERL5=build
 
 SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 SASL_CONFIGURE_ON=	--with-sasl=${LOCALBASE}
+
+SMIME_EXTRA_PATCHES=	${PATCHDIR}/extra-smime-sender
+SMIME_USES=		perl5
+SMIME_VARS=		USE_PERL5=build
 
 SMART_DATE_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-smartdate
 
@@ -166,6 +173,8 @@ IDN_CONFIGURE_WITH=	idn2=${LOCALBASE}
 IDN_IMPLIES=	ICONV
 
 IFDEF_PATCH_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ifdef
+IFDEF_PATCH_USES=		perl5
+IFDEF_PATCH_VARS=		USE_PERL5=build
 
 GPGME_LIB_DEPENDS+=	libgpgme.so:security/gpgme
 GPGME_LIB_DEPENDS+=	libgpg-error.so:security/libgpg-error
@@ -175,15 +184,19 @@ GPGME_CONFIGURE_ENABLE=	gpgme
 SMTP_CONFIGURE_ENABLE=	smtp
 
 FORCEBASE64_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-forcebase64
+FORCEBASE64_USES=		perl5
+FORCEBASE64_VARS=		USE_PERL5=build
 
 MAILDIR_MTIME_PATCH_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-maildir-mtime
 
 GREETING_PATCH_PATCHFILES=	mutt-${GREETING_PATCH_VERSION}.vc.greeting:vc
+GREETING_PATCH_USES=		perl5
+GREETING_PATCH_VARS=		USE_PERL5=build
 
 QUOTE_PATCH_PATCHFILES=	patch-${VVV_PATCH_VERSION}.vvv.initials.xz:vvv \
 	patch-${VVV_PATCH_VERSION}.vvv.quote.xz:vvv
-
-DOCS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-doc-ref
+QUOTE_PATCH_USES=		perl5
+QUOTE_PATCH_VARS=		USE_PERL5=build
 
 .include <bsd.port.options.mk>
 
@@ -195,24 +208,16 @@ post-install:
 	${INSTALL_MAN} ${FILESDIR}/mailcap.5 ${STAGEDIR}${MANPREFIX}/man/man5
 
 pre-configure::
+	# Stop make from setgid mutt_dotlock
+	@${REINPLACE_CMD} \
+		-e '/if test.*mutt_dotlock.*DOTLOCK_GROUP/s/if/if ${FALSE} \&\&/' \
+		${WRKSRC}/Makefile.in
+	# Base FreeBSD krb5-config --version returns "FreeBSD heimdal"
 	@${REINPLACE_CMD} -e 's,?eimdal\*),?eimdal*|\"FreeBSD heimdal\"*),' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-	@${REINPLACE_CMD} -e 's,pgp6,pgp,g' \
-		${WRKSRC}/contrib/pgp6.rc
-	@${REINPLACE_CMD} -E -e 's#(/samples|samples/)#share/examples/mutt#g' \
-		${WRKSRC}/doc/reference.html \
-		${WRKSRC}/doc/manual.html \
-		${WRKSRC}/doc/manual.txt \
-		${WRKSRC}/doc/Muttrc \
-		${WRKSRC}/INSTALL \
-		${WRKSRC}/init.h
+	# Install contrib samples to ${EXAMPLESDIR}
 	@${REINPLACE_CMD} -e 's#$$(docdir)/samples#${EXAMPLESDIR}#g' \
 		${WRKSRC}/contrib/Makefile.in
-
-pre-configure-ASPELL-on:
-	@${REINPLACE_CMD} -e '/^# append-hook/p' \
-		-e 's/^# append-hook.*$$/set ispell="aspell --mode=email check"/' \
-	${WRKSRC}/doc/Muttrc.head
 
 pre-configure-HCACHE_BDB-on:
 	@${REINPLACE_CMD} -E -e 's/BDB_VERSIONS="/&${BDB_LIB_NAME} db${BDB_VER} /' \
@@ -220,5 +225,17 @@ pre-configure-HCACHE_BDB-on:
 
 pre-build::
 	@${REINPLACE_CMD} -e '/^BUILD_DOC_TARGETS/s/=.*/=/' ${WRKSRC}/doc/Makefile
+
+# Undo some dist. installed files
+post-stage::
+	@${MV} ${STAGEDIR}/${LOCALBASE}/etc/Muttrc.dist \
+	    	${STAGEDIR}/${LOCALBASE}/etc/Muttrc.sample
+	@${RM} ${STAGEDIR}/${LOCALBASE}/etc/mime.types*
+
+# Change default ispell
+post-build-ASPELL-on:
+	@${REINPLACE_CMD} -e '/^# append-hook/p' \
+		-e 's/^# append-hook.*$$/set ispell="aspell --mode=email check"/' \
+		${WRKSRC}/doc/Muttrc
 
 .include <bsd.port.mk>

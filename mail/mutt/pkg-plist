@@ -72,6 +72,7 @@ man/man5/muttrc.5.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/markdown2html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mutt_xtitle
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pgp2.rc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pgp5.rc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pgp6.rc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.mailcap
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.muttrc
