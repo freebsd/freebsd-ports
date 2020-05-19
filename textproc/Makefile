@@ -1242,6 +1242,7 @@
     SUBDIR += py-errorhandler
     SUBDIR += py-esmre
     SUBDIR += py-et_xmlfile
+    SUBDIR += py-fastavro
     SUBDIR += py-feedparser
     SUBDIR += py-fingerprints
     SUBDIR += py-ftfy
