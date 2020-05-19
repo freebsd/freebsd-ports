@@ -17,7 +17,7 @@ FORBIDDEN=	See http://support.ntp.org/bin/view/Main/SecurityNotice#March_2020_nt
 
 LIB_DEPENDS=	libevent.so:devel/libevent
 
-CONFLICTS=	ntp-[0-9].* openntpd-*
+CONFLICTS=	ntp ntpsec openntpd
 
 USES=		cpe pathfix shebangfix libedit libtool localbase:ldflags \
 		pkgconfig gettext-runtime

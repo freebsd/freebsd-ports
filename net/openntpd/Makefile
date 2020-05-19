@@ -16,7 +16,7 @@ RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss
 
 USES=		ssl
 
-CONFLICTS=	ntp-[0-9].* ntp-devel-* ntpsec-*
+CONFLICTS=	ntp ntp-devel ntpsec
 
 USE_RC_SUBR=	openntpd
 USERS=		_ntp

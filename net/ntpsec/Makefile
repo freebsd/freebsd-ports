@@ -18,6 +18,8 @@ USES=		bison gettext-runtime pkgconfig python shebangfix ssl waf
 SHEBANG_FILES=	${WRKSRC}/ntpclients/ntp*.py
 USE_GITHUB=	yes
 
+CONFLICTS=	ntp ntp-devel openntpd
+
 MAKE_ENV=	NOSYNC=1 # workaround for the console problem: https://gitlab.com/NTPsec/ntpsec/issues/599
 
 PORTSCOUT=	limit:^\d+\. # prevent alpha-numeric strings
