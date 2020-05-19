@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	simplescreenrecorder
-DISTVERSION=	0.4.1
-PORTREVISION=	1
+DISTVERSION=	0.4.2
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
