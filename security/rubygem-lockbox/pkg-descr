@@ -1,0 +1,6 @@
+Modern encryption for Rails.
+- Uses state-of-the-art algorithms
+- Works with database fields, files, and strings
+- Makes migrating existing data and key rotation easy
+
+WWW: https://github.com/ankane/lockbox

@@ -863,6 +863,7 @@
     SUBDIR += rocs
     SUBDIR += rpcalc
     SUBDIR += rubygem-algebra
+    SUBDIR += rubygem-enumerable-statistics
     SUBDIR += rubygem-expression_parser
     SUBDIR += rubygem-fftw3
     SUBDIR += rubygem-mathn
@@ -873,6 +874,7 @@
     SUBDIR += rubygem-numru-misc
     SUBDIR += rubygem-numru-units
     SUBDIR += rubygem-rb-gsl
+    SUBDIR += rubygem-ruby-statistics
     SUBDIR += rumur
     SUBDIR += saga
     SUBDIR += sage

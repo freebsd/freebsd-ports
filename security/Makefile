@@ -1061,6 +1061,7 @@
     SUBDIR += rubygem-gssapi
     SUBDIR += rubygem-hkdf
     SUBDIR += rubygem-hrr_rb_ssh
+    SUBDIR += rubygem-lockbox
     SUBDIR += rubygem-metasploit-aggregator
     SUBDIR += rubygem-metasploit-concern
     SUBDIR += rubygem-metasploit-credential

@@ -213,6 +213,7 @@
     SUBDIR += gastex
     SUBDIR += gd-aspell
     SUBDIR += gdome2
+    SUBDIR += gitlab-elasticsearch-indexer
     SUBDIR += gl-aspell
     SUBDIR += gladtex
     SUBDIR += gmetadom
@@ -1641,6 +1642,7 @@
     SUBDIR += rubygem-twitter-text1
     SUBDIR += rubygem-unf
     SUBDIR += rubygem-unf_ext
+    SUBDIR += rubygem-unicode_plot
     SUBDIR += rubygem-version_sorter
     SUBDIR += rubygem-whatlanguage
     SUBDIR += rubygem-wikicloth

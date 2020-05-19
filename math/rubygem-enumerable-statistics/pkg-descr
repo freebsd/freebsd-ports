@@ -1,0 +1,4 @@
+Enumerable::Statistics provides some methods to calculate statistical
+summary in arrays and enumerables.
+
+WWW: https://github.com/mrkn/enumerable-statistics
