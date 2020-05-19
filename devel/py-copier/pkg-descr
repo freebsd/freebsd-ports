@@ -1,0 +1,8 @@
+Copier is a library for rendering project templates.
+- Works with local paths and git URLs.
+- Your project can include any file and Copier can dynamically replace values in
+  any kind of text file.
+- It generates a beautiful output and takes care of not overwrite existing files
+  unless instructed to do so.
+
+WWW: https://github.com/pykong/copier

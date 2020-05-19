@@ -4278,6 +4278,7 @@
     SUBDIR += py-contextlib2
     SUBDIR += py-convertdate
     SUBDIR += py-cookiecutter
+    SUBDIR += py-copier
     SUBDIR += py-coreapi
     SUBDIR += py-coreschema
     SUBDIR += py-country
