@@ -1,5 +1,14 @@
---- Gemfile.orig	2020-04-06 19:00:48.000000000 +0200
-+++ Gemfile	2020-05-14 17:15:47.187698000 +0200
+--- Gemfile.orig	2020-04-06 17:00:48 UTC
++++ Gemfile
+@@ -3,7 +3,7 @@ source 'https://rubygems.org'
+ ruby '>= 2.3.0', '< 2.7.0' if Bundler::VERSION >= '1.12.0'
+ gem "bundler", ">= 1.5.0"
+ 
+-gem 'rails', '5.2.4.2'
++gem 'rails', '5.2.4.3'
+ gem 'sprockets', '~> 3.7.2' if RUBY_VERSION < '2.5'
+ gem "rouge", "~> 3.12.0"
+ gem "request_store", "~> 1.4.1"
 @@ -14,7 +14,7 @@ gem "mimemagic"
  gem "mail", "~> 2.7.1"
  gem "csv", "~> 3.1.1"
