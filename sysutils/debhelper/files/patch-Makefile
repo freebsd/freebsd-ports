@@ -1,4 +1,4 @@
---- Makefile.orig	2020-01-27 20:31:46 UTC
+--- Makefile.orig	2020-05-17 09:32:16 UTC
 +++ Makefile
 @@ -3,7 +3,7 @@ PO4A ?= po4a
  POD2MAN ?= pod2man
@@ -9,7 +9,7 @@
  MANPAGES=$(COMMANDS:=.1) dh.1
  
  # Find deprecated commands by looking at their synopsis.
-@@ -118,19 +118,18 @@ endif
+@@ -118,23 +118,22 @@ endif
  	done;
  
  install:
@@ -29,10 +29,14 @@
 +	install -m 0644 lib/Debian/Debhelper/*.pm $(DESTDIR)${SITE_PERL}/Debian/Debhelper
  	[ "$(PREFIX)" = /usr ] || \
 -		sed -i '/$$prefix=/s@/usr@$(PREFIX)@g' $(DESTDIR)$(PERLLIBDIR)/Dh_Lib.pm
++		sed -i '' '/$$prefix=/s@/usr@$(PREFIX)@g' $(DESTDIR)${SITE_PERL}/Debian/Debhelper/Dh_Lib.pm
+ 	if [ "$(VERSION)" ]; then \
+ 		MV=$$(echo "$(VERSION)" | $(PERL) -ne 'print $$1 if /^(\d+)[~.]/;') ; \
+ 		sed -i "/constant HIGHEST_STABLE_COMPAT_LEVEL =>/s@=>.*;@=> $${MV};@g" $(DESTDIR)$(PERLLIBDIR)/Dh_Lib.pm ; \
+ 	fi
 -	install -m 0644 lib/Debian/Debhelper/Sequence/*.pm $(DESTDIR)$(PERLLIBDIR)/Sequence
 -	install -m 0644 lib/Debian/Debhelper/Buildsystem/*.pm $(DESTDIR)$(PERLLIBDIR)/Buildsystem
 -	install -m 0644 lib/Debian/Debhelper/DH/*.pm $(DESTDIR)$(PERLLIBDIR)/DH
-+		sed -i '' '/$$prefix=/s@/usr@$(PREFIX)@g' $(DESTDIR)${SITE_PERL}/Debian/Debhelper/Dh_Lib.pm
 +	install -m 0644 lib/Debian/Debhelper/Sequence/*.pm $(DESTDIR)${SITE_PERL}/Debian/Debhelper/Sequence
 +	install -m 0644 lib/Debian/Debhelper/Buildsystem/*.pm $(DESTDIR)${SITE_PERL}/Debian/Debhelper/Buildsystem
 +	install -m 0644 lib/Debian/Debhelper/DH/*.pm $(DESTDIR)${SITE_PERL}/DH

@@ -14,6 +14,7 @@ bin/dh_gconf
 bin/dh_gencontrol
 bin/dh_icons
 bin/dh_install
+bin/dh_installalternatives
 bin/dh_installcatalogs
 bin/dh_installchangelogs
 bin/dh_installcron
@@ -62,13 +63,13 @@ bin/dh_ucf
 bin/dh_update_autotools_config
 bin/dh_usrlocal
 bin/maintscript-helper
+bin/postinst-alternatives
 bin/postinst-emacsen
 bin/postinst-icons
 bin/postinst-init
 bin/postinst-init-nostart
 bin/postinst-init-restart
 bin/postinst-init-tmpfiles
-bin/postinst-initramfs-hook
 bin/postinst-menu
 bin/postinst-menu-method
 bin/postinst-modules
@@ -87,7 +88,6 @@ bin/postinst-xfonts
 bin/postrm-debconf
 bin/postrm-icons
 bin/postrm-init
-bin/postrm-initramfs-hook
 bin/postrm-menu
 bin/postrm-menu-method
 bin/postrm-modules
@@ -98,6 +98,7 @@ bin/postrm-systemd-user
 bin/postrm-ucf
 bin/postrm-xfonts
 bin/preinst-emacsen
+bin/prerm-alternatives
 bin/prerm-emacsen
 bin/prerm-init
 bin/prerm-init-norestart
