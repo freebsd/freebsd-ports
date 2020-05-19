@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rsplib
-PORTVERSION=	3.2.4
+PORTVERSION=	3.2.5
 CATEGORIES=	net
 MASTER_SITES=	https://www.uni-due.de/~be0001/rserpool/download/
 
