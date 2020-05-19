@@ -1,3 +1,3 @@
-TIMESTAMP = 1557442353
-SHA256 (libusb1-1.7.1.tar.gz) = adf64a4f3f5c94643a1286f8153bcf4bc787c348b38934aacd7fe17fbeebc571
-SIZE (libusb1-1.7.1.tar.gz) = 78016
+TIMESTAMP = 1588847526
+SHA256 (libusb1-1.8.tar.gz) = 240f65ac70ba3fab77749ec84a412e4e89624804cb80d6c9d394eef5af8878d6
+SIZE (libusb1-1.8.tar.gz) = 78282
