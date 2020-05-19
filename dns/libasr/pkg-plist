@@ -2,5 +2,4 @@ include/asr.h
 lib/libasr.a
 lib/libasr.so
 lib/libasr.so.0
-lib/libasr.so.0.0.2
-man/man3/asr_run.3.gz
+lib/libasr.so.0.0.3
