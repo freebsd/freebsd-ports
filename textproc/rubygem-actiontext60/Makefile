@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	actiontext
-PORTVERSION=	6.0.2.2
+PORTVERSION=	6.0.3.1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	60
@@ -23,5 +23,7 @@ USES=		gem
 USE_RUBY=	yes
 
 NO_ARCH=	yes
+
+PORTSCOUT=	limit:^6\.0\.
 
 .include <bsd.port.mk>
