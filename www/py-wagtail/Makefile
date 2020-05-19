@@ -28,7 +28,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup448>=4.8<4.9:www/py-beautifulso
 		${PYTHON_PKGNAMEPREFIX}willow>=1.3<1.4:graphics/py-willow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}XlsxWriter>=1.2.8<2.0:textproc/py-xlsxwriter@${PY_FLAVOR}
 
-USES=		cpe python:3.5+ shebangfix
+USES=		cpe python:3.6+ shebangfix
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
