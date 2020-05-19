@@ -16,6 +16,7 @@ bin/git-lfs
 %%MANPAGES%%man/man1/git-lfs-migrate.1.gz
 %%MANPAGES%%man/man1/git-lfs-pointer.1.gz
 %%MANPAGES%%man/man1/git-lfs-post-checkout.1.gz
+%%MANPAGES%%man/man1/git-lfs-post-commit.1.gz
 %%MANPAGES%%man/man1/git-lfs-post-merge.1.gz
 %%MANPAGES%%man/man1/git-lfs-pre-push.1.gz
 %%MANPAGES%%man/man1/git-lfs-prune.1.gz
