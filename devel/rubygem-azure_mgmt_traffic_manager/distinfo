@@ -1,3 +1,3 @@
-TIMESTAMP = 1579306257
-SHA256 (rubygem/azure_mgmt_traffic_manager-0.17.2.gem) = dac5754138789bed69b29ef6e648254f2147bcddf5395907717e9f22f8084865
-SIZE (rubygem/azure_mgmt_traffic_manager-0.17.2.gem) = 69632
+TIMESTAMP = 1589818843
+SHA256 (rubygem/azure_mgmt_traffic_manager-0.17.3.gem) = b50a1d4c45c8b0d528919d685522a31eaa99fff454e009769b9886f28067569d
+SIZE (rubygem/azure_mgmt_traffic_manager-0.17.3.gem) = 71168
