@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	tpm2-tss
-DISTVERSION=	2.3.1
+DISTVERSION=	2.4.1
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/tpm2-software/tpm2-tss/releases/download/${DISTVERSION}/
 
@@ -10,11 +10,15 @@ COMMENT=	TPM2 Software Stack core library
 
 LICENSE=	BSD2CLAUSE
 
+LIB_DEPENDS=	libjson-c.so:devel/json-c \
+		libcurl.so:ftp/curl
+
 USES=		gmake libtool pkgconfig ssl
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBCRYPTO_CFLAGS="-I${OPENSSLINC}" LIBCRYPTO_LIBS="-L${OPENSSLLIB} -lcrypto"
+CONFIGURE_ENV=	LIBCRYPTO_CFLAGS="-I${OPENSSLINC}" LIBCRYPTO_LIBS="-L${OPENSSLLIB} -lcrypto" \
+		EXTRA_CFLAGS="-I${LOCALBASE}/include"
 CONFIGURE_ARGS=	--disable-doxygen-doc --disable-dependency-tracking --enable-valgrind=no
 
 INSTALL_TARGET=	install-strip

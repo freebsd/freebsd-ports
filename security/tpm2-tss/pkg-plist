@@ -1,5 +1,11 @@
+etc/sysusers.d/tpm2-tss.conf
+etc/tmpfiles.d/tpm2-tss-fapi.conf
+%%ETCDIR%%/fapi-config.json
+%%ETCDIR%%/fapi-profiles/P_ECCP256SHA256.json
+%%ETCDIR%%/fapi-profiles/P_RSA2048SHA256.json
 include/tss2/tss2_common.h
 include/tss2/tss2_esys.h
+include/tss2/tss2_fapi.h
 include/tss2/tss2_mu.h
 include/tss2/tss2_rc.h
 include/tss2/tss2_sys.h
@@ -12,6 +18,10 @@ lib/libtss2-esys.a
 lib/libtss2-esys.so
 lib/libtss2-esys.so.0
 lib/libtss2-esys.so.0.0.0
+lib/libtss2-fapi.a
+lib/libtss2-fapi.so
+lib/libtss2-fapi.so.0
+lib/libtss2-fapi.so.0.0.0
 lib/libtss2-mu.a
 lib/libtss2-mu.so
 lib/libtss2-mu.so.0
@@ -24,7 +34,6 @@ lib/libtss2-sys.a
 lib/libtss2-sys.so
 lib/libtss2-sys.so.0
 lib/libtss2-sys.so.0.0.0
-lib/libtss2-tcti-default.so
 lib/libtss2-tcti-device.a
 lib/libtss2-tcti-device.so
 lib/libtss2-tcti-device.so.0
@@ -38,6 +47,7 @@ lib/libtss2-tctildr.so
 lib/libtss2-tctildr.so.0
 lib/libtss2-tctildr.so.0.0.0
 libdata/pkgconfig/tss2-esys.pc
+libdata/pkgconfig/tss2-fapi.pc
 libdata/pkgconfig/tss2-mu.pc
 libdata/pkgconfig/tss2-rc.pc
 libdata/pkgconfig/tss2-sys.pc
