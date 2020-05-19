@@ -26,6 +26,7 @@ include/mupdf/fitz/glyph.h
 include/mupdf/fitz/hash.h
 include/mupdf/fitz/image.h
 include/mupdf/fitz/link.h
+include/mupdf/fitz/log.h
 include/mupdf/fitz/outline.h
 include/mupdf/fitz/output-svg.h
 include/mupdf/fitz/output.h
