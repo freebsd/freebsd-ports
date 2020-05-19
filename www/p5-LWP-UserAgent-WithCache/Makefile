@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	LWP-UserAgent-WithCache
-PORTVERSION=	0.12
-PORTREVISION=	1
+PORTVERSION=	0.13
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,8 +18,9 @@ RUN_DEPENDS=	p5-Cache-Cache>=0:devel/p5-Cache-Cache \
 		p5-File-HomeDir>=0:devel/p5-File-HomeDir \
 		p5-libwww>=0:www/p5-libwww
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
