@@ -1,6 +1,6 @@
---- _support/Makefile.template.orig	2020-03-26 12:14:05 UTC
+--- _support/Makefile.template.orig	2020-04-20 15:09:52 UTC
 +++ _support/Makefile.template
-@@ -56,8 +56,8 @@ build: ../.ruby-bundle
+@@ -33,8 +33,8 @@ build: ../.ruby-bundle
  # step. Both Omnibus and CNG assume it is in the Gitaly root, not in
  # _build. Hence the '../' in front.
  ../.ruby-bundle:  {{ .GitalyRubyDir }}/Gemfile.lock  {{ .GitalyRubyDir }}/Gemfile

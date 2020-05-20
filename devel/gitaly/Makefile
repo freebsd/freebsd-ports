@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitaly
-DISTVERSION=	12.9.5
+DISTVERSION=	12.10.6
 PORTREVISION=	0
 CATEGORIES=	devel
 
@@ -12,23 +12,24 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 # define dependencies that are required for build and run under MY_DEPENDS
-MY_DEPENDS=	git>=2.24.3:devel/git \
+MY_DEPENDS=	git>=2.26:devel/git \
 		rubygem-bundler>=1.17.3:sysutils/rubygem-bundler \
 		rubygem-rugged>=0.28:devel/rubygem-rugged \
 		rubygem-github-linguist>=7.5<8.0:textproc/rubygem-github-linguist \
 		rubygem-gitlab-markup>=1.7.0<1.8.0:textproc/rubygem-gitlab-markup \
-		rubygem-activesupport60>=6.0.2.2<6.0.2.3:devel/rubygem-activesupport60 \
+		rubygem-activesupport60>=6.0.3.1<6.0.3.2:devel/rubygem-activesupport60 \
 		rubygem-rdoc>=6.1<7.0:devel/rubygem-rdoc \
 		rubygem-gitlab-gollum-lib>=4.2.7.8<4.2.8.0:www/rubygem-gitlab-gollum-lib \
 		rubygem-gitlab-gollum-rugged_adapter>=0.4.4.2<0.4.5.0:www/rubygem-gitlab-gollum-rugged_adapter \
-		rubygem-grpc124>=1.24.0<1.25.0:net/rubygem-grpc124 \
+		rubygem-grpc124>=1.24.0:net/rubygem-grpc124 \
 		rubygem-sentry-raven29>=2.9.0<2.10.0:devel/rubygem-sentry-raven29 \
 		rubygem-faraday>=0.12<1.0:www/rubygem-faraday \
 		rubygem-rbtrace>0:devel/rubygem-rbtrace \
-		rubygem-gitlab-labkit>=0.11.0<0.11.1:devel/rubygem-gitlab-labkit \
+		rubygem-gitlab-labkit>=0.12.0<0.12.1:devel/rubygem-gitlab-labkit \
 		rubygem-licensee8>=8.9.0<8.10.0:devel/rubygem-licensee8 \
 		rubygem-google-protobuf38>=3.8.0<3.9.0:devel/rubygem-google-protobuf38
 BUILD_DEPENDS=	gem:devel/ruby-gems \
+		bash>0:shells/bash \
 		${MY_DEPENDS}
 RUN_DEPENDS=	${MY_DEPENDS} \
 		gitlab-shell>=9.3.0:devel/gitlab-shell
@@ -41,12 +42,12 @@ MAKE_ENV=	GOFLAGS="${GO_BUILDFLAGS}"
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find this here: https://gitlab.com/gitlab-org/gitaly/-/tags
-GL_COMMIT=	982f91e3c6f073c7c043cded0e29cd42e9a6b951
+GL_COMMIT=	de65813a201020830bc6da809e5349caf1dac33e
 
 # for go dependencies
 USE_GITHUB=	nodefault
 # generated with: make gomod-vendor
-# 52dd
+# 53dd
 GH_TUPLE=	\
 		BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/toml \
 		DataDog:dd-trace-go:v1.7.0:datadog_dd_trace_go/vendor/gopkg.in/DataDog/dd-trace-go.v1 \
@@ -70,7 +71,7 @@ GH_TUPLE=	\
 		google:go-genproto:ca5a22157cba:google_go_genproto/vendor/google.golang.org/genproto \
 		google:pprof:d4f498aebedc:google_pprof/vendor/github.com/google/pprof \
 		google:uuid:v1.1.1:google_uuid/vendor/github.com/google/uuid \
-		googleapis:gax-go:v2.0.5:googleapis_gax_go/vendor/github.com/googleapis/gax-go/v2 \
+		googleapis:gax-go:v2.0.5:googleapis_gax_go_v2/vendor/github.com/googleapis/gax-go \
 		googleapis:google-api-go-client:v0.15.0:googleapis_google_api_go_client/vendor/google.golang.org/api \
 		googleapis:google-cloud-go:v0.50.0:googleapis_google_cloud_go/vendor/cloud.google.com/go \
 		grpc-ecosystem:go-grpc-middleware:v1.0.0:grpc_ecosystem_go_grpc_middleware/vendor/github.com/grpc-ecosystem/go-grpc-middleware \
@@ -79,9 +80,10 @@ GH_TUPLE=	\
 		kelseyhightower:envconfig:v1.3.0:kelseyhightower_envconfig/vendor/github.com/kelseyhightower/envconfig \
 		konsorten:go-windows-terminal-sequences:v1.0.2:konsorten_go_windows_terminal_sequences/vendor/github.com/konsorten/go-windows-terminal-sequences \
 		lib:pq:v1.2.0:lib_pq/vendor/github.com/lib/pq \
-		libgit2:git2go:ecaeb7a21d47:libgit2_git2go/vendor/github.com/libgit2/git2go \
 		lightstep:lightstep-tracer-go:v0.15.6:lightstep_lightstep_tracer_go/vendor/github.com/lightstep/lightstep-tracer-go \
+		mattn:go-runewidth:v0.0.4:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
 		matttproud:golang_protobuf_extensions:v1.0.1:matttproud_golang_protobuf_extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
+		olekukonko:tablewriter:v0.0.2:olekukonko_tablewriter/vendor/github.com/olekukonko/tablewriter \
 		opentracing:opentracing-go:v1.0.2:opentracing_opentracing_go/vendor/github.com/opentracing/opentracing-go \
 		philhofer:fwd:v1.0.0:philhofer_fwd/vendor/github.com/philhofer/fwd \
 		pkg:errors:v0.8.1:pkg_errors/vendor/github.com/pkg/errors \
@@ -98,7 +100,7 @@ GH_TUPLE=	\
 		uber:jaeger-client-go:v2.15.0:uber_jaeger_client_go/vendor/github.com/uber/jaeger-client-go \
 		uber:jaeger-lib:v1.5.0:uber_jaeger_lib/vendor/github.com/uber/jaeger-lib
 
-GL_TUPLE=	gitlab-org:labkit:9cb7801f7feafecc53f5a061ffeae5c11567da9b:gitlab_org_labkit/vendor/gitlab.com/gitlab-org/labkit
+GL_TUPLE=	gitlab-org:labkit:fac94cb428e67efc019e7ba67429b53fa9b394c5:gitlab_org_labkit/vendor/gitlab.com/gitlab-org/labkit
 
 post-patch:
 	${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" ${WRKSRC}/config.toml.example
