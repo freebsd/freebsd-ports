@@ -3,6 +3,7 @@
 
 PORTNAME=	strongswan
 PORTVERSION=	5.8.4
+PORTREVISION=	1
 CATEGORIES=	security net-vpn
 MASTER_SITES=	http://download.strongswan.org/ \
 		http://download2.strongswan.org/
@@ -19,6 +20,7 @@ USE_LDCONFIG=	${PREFIX}/lib/ipsec
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 
 CONFIGURE_ARGS=	--enable-kernel-pfkey \
 		--enable-kernel-pfroute  \
