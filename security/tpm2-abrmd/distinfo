@@ -1,3 +1,3 @@
-TIMESTAMP = 1589830931
-SHA256 (tpm2-abrmd-2.3.2.tar.gz) = c9375be6e9cab9ec01c343821bd97ea8a3390e255c08ac931656addd132ea89f
-SIZE (tpm2-abrmd-2.3.2.tar.gz) = 576381
+TIMESTAMP = 1590000902
+SHA256 (tpm2-abrmd-2.3.2.tar.gz) = df02c18882116e19b56aa8c701687c0c0987dd334e6fc002b340cedf6e000d10
+SIZE (tpm2-abrmd-2.3.2.tar.gz) = 576363
