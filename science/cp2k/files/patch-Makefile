@@ -1,0 +1,112 @@
+--- Makefile.orig	2020-05-20 01:09:16 UTC
++++ Makefile
+@@ -13,9 +13,9 @@ endif
+ 
+ ifneq ($(SPACK_COMPILER_SPEC),)
+  # SPACK_COMPILER_SPEC is set when running in a Spack build-env
+- ARCH         := $(shell spack arch)-$(shell echo $${SPACK_COMPILER_SPEC%%@*})
++ XARCH         := $(shell spack arch)-$(shell echo $${SPACK_COMPILER_SPEC%%@*})
+ else
+- ARCH         := local
++ XARCH         := local
+ endif
+ 
+ export VERSION=sopt
+@@ -32,7 +32,7 @@ PRETTYOBJDIR := $(CP2KHOME)/obj/prettified
+ DOXIFYOBJDIR := $(CP2KHOME)/obj/doxified
+ TOOLSRC      := $(CP2KHOME)/tools
+ SRCDIR       := $(CP2KHOME)/src
+-EXEDIR       := $(MAINEXEDIR)/$(ARCH)
++EXEDIR       := $(MAINEXEDIR)/$(XARCH)
+ REVISION     := $(shell $(CP2KHOME)/tools/build_utils/get_revision_number $(SRCDIR))
+ 
+ EXTSDIR      := exts
+@@ -54,13 +54,13 @@ EXE_NAMES := $(basename $(notdir $(ALL_EXE_FILES)))
+ # this only happens on stage 3 and 4
+ ifneq ($(ONEVERSION),)
+ MODDEPS = "lower"
+-include $(ARCHDIR)/$(ARCH).$(ONEVERSION)
+-LIBDIR  := $(MAINLIBDIR)/$(ARCH)/$(ONEVERSION)
++include $(ARCHDIR)/$(XARCH).$(ONEVERSION)
++LIBDIR  := $(MAINLIBDIR)/$(XARCH)/$(ONEVERSION)
+ LIBEXTSDIR := $(LIBDIR)/$(EXTSDIR)
+-OBJDIR  := $(MAINOBJDIR)/$(ARCH)/$(ONEVERSION)
++OBJDIR  := $(MAINOBJDIR)/$(XARCH)/$(ONEVERSION)
+ OBJEXTSDIR := $(OBJDIR)/$(EXTSDIR)
+ OBJEXTSINCL := $(foreach dir,$(EXTSPACKAGES),-I'$(OBJEXTSDIR)/$(dir)')
+-TSTDIR     := $(MAINTSTDIR)/$(ARCH)/$(ONEVERSION)
++TSTDIR     := $(MAINTSTDIR)/$(XARCH)/$(ONEVERSION)
+ ifeq ($(NVCC),)
+ EXE_NAMES := $(basename $(notdir $(filter-out %.cu, $(ALL_EXE_FILES))))
+ endif
+@@ -142,7 +142,7 @@ all: makedep | dirs exts
+ 
+ # foreground testing, compilation happens in do_regtest
+ test: dirs
+-	cd $(TSTDIR); $(TOOLSRC)/regtesting/do_regtest -quick -arch $(ARCH) -version $(ONEVERSION) -cp2kdir ../../../  $(TESTOPTS)
++	cd $(TSTDIR); $(TOOLSRC)/regtesting/do_regtest -quick -arch $(XARCH) -version $(ONEVERSION) -cp2kdir ../../../  $(TESTOPTS)
+ 
+ # background testing, compilation happens here
+ testbg: dirs makedep all
+@@ -222,7 +222,7 @@ $(EXEDIR)/cp2k_shell.$(ONEVERSION): $(EXEDIR)/cp2k.$(O
+ 
+ testbg:
+ 	@echo "testing: $(ONEVERSION) : full log in $(TSTDIR)/regtest.log "
+-	@$(TOOLSRC)/regtesting/do_regtest -nobuild $(ARCH) -version $(ONEVERSION) -cp2kdir ../../../  $(TESTOPTS) >& $(TSTDIR)/regtest.log
++	@$(TOOLSRC)/regtesting/do_regtest -nobuild $(XARCH) -version $(ONEVERSION) -cp2kdir ../../../  $(TESTOPTS) >& $(TSTDIR)/regtest.log
+ 	@cat `grep 'regtesting location error_summary file:' $(TSTDIR)/regtest.log | awk '{print $$NF}'`
+ 	@cat `grep 'regtesting location summary file:' $(TSTDIR)/regtest.log | awk '{print $$NF}'`
+ 	@grep "Number of FAILED  tests 0" $(TSTDIR)/regtest.log >& /dev/null
+@@ -278,31 +278,31 @@ define get_extensions
+ 	$(shell test -d $(1) && find $(1) -type f -name "*.*" ! -name "*.gcda" | sed 's|.*\.||' | sort -u)
+ endef
+ clean:
+-	@echo rm -rf $(foreach v, $(VERSION), $(MAINOBJDIR)/$(ARCH)/$(v))
+-	@$(foreach v, $(VERSION), $(foreach ext, $(call get_extensions, $(MAINOBJDIR)/$(ARCH)/$(v)/), $(shell rm -rf $(MAINOBJDIR)/$(ARCH)/$(v)/*.$(ext))))
+-	rm -rf $(foreach v, $(VERSION), $(MAINLIBDIR)/$(ARCH)/$(v))
+-OTHER_HELP += "clean : Remove intermediate object and mod files, but not the libraries and executables, for given ARCH and VERSION"
++	@echo rm -rf $(foreach v, $(VERSION), $(MAINOBJDIR)/$(XARCH)/$(v))
++	@$(foreach v, $(VERSION), $(foreach ext, $(call get_extensions, $(MAINOBJDIR)/$(XARCH)/$(v)/), $(shell rm -rf $(MAINOBJDIR)/$(XARCH)/$(v)/*.$(ext))))
++	rm -rf $(foreach v, $(VERSION), $(MAINLIBDIR)/$(XARCH)/$(v))
++OTHER_HELP += "clean : Remove intermediate object and mod files, but not the libraries and executables, for given XARCH and VERSION"
+ 
+ execlean:
+ 	rm -rf $(foreach v, $(VERSION), $(EXEDIR)/*.$(v))
+-OTHER_HELP += "execlean : Remove the executables, for given ARCH and VERSION"
++OTHER_HELP += "execlean : Remove the executables, for given XARCH and VERSION"
+ 
+ #
+ # delete the intermediate files, the programs and libraries and anything that might be in the objdir or libdir directory
+ # Use this if you want to fully rebuild an executable (for a given compiler and or VERSION)
+ #
+ realclean: extclean clean execlean
+-	rm -rf $(foreach v, $(VERSION), $(MAINOBJDIR)/$(ARCH)/$(v))
+-	rm -rf $(foreach v, $(VERSION), $(MAINLIBDIR)/$(ARCH)/$(v))
+-OTHER_HELP += "realclean : Remove all files for given ARCH and VERSION"
++	rm -rf $(foreach v, $(VERSION), $(MAINOBJDIR)/$(XARCH)/$(v))
++	rm -rf $(foreach v, $(VERSION), $(MAINLIBDIR)/$(XARCH)/$(v))
++OTHER_HELP += "realclean : Remove all files for given XARCH and VERSION"
+ 
+ testclean:
+-	rm -rf $(foreach v, $(VERSION), $(MAINTSTDIR)/$(ARCH)/$(v)/TEST-*)
+-OTHER_HELP += "testclean : Remove all TEST-* files for given ARCH and VERSION"
++	rm -rf $(foreach v, $(VERSION), $(MAINTSTDIR)/$(XARCH)/$(v)/TEST-*)
++OTHER_HELP += "testclean : Remove all TEST-* files for given XARCH and VERSION"
+ 
+ testrealclean: testclean
+-	rm -rf $(foreach v, $(VERSION), $(MAINTSTDIR)/$(ARCH)/$(v)/LAST-*)
+-OTHER_HELP += "testrealclean : Remove all LAST-* and TEST-* files for given ARCH and VERSION"
++	rm -rf $(foreach v, $(VERSION), $(MAINTSTDIR)/$(XARCH)/$(v)/LAST-*)
++OTHER_HELP += "testrealclean : Remove all LAST-* and TEST-* files for given XARCH and VERSION"
+ 
+ #
+ # Remove all files from previous builds
+@@ -457,7 +457,7 @@ FORCE: ;
+ cp2k_info.o: $(GIT_REF)
+ 
+ # Add some practical metadata about the build.
+-FCFLAGS += -D__COMPILE_ARCH="\"$(ARCH)\""\
++FCFLAGS += -D__COMPILE_ARCH="\"$(XARCH)\""\
+            -D__COMPILE_DATE="\"$(shell date)\""\
+            -D__COMPILE_HOST="\"$(shell hostname)\""\
+            -D__COMPILE_REVISION="\"$(strip $(REVISION))\""\

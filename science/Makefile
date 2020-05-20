@@ -54,6 +54,7 @@
     SUBDIR += code_saturne
     SUBDIR += colt
     SUBDIR += coordgenlibs
+    SUBDIR += cp2k
     SUBDIR += cp2k-data
     SUBDIR += crf++
     SUBDIR += dalton
