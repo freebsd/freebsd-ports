@@ -491,6 +491,7 @@
     SUBDIR += libretro-emux
     SUBDIR += libretro-fbalpha
     SUBDIR += libretro-fceumm
+    SUBDIR += libretro-fmsx
     SUBDIR += libretro-fuse
     SUBDIR += libretro-gambatte
     SUBDIR += libretro-genesis_plus_gx
