@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-workhorse
-PORTVERSION=	8.25.2
+PORTVERSION=	8.30.1
 PORTREVISION=	0
 CATEGORIES=	www
 
@@ -21,7 +21,7 @@ MAKE_ENV=	GOFLAGS="${GO_BUILDFLAGS}"
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find the commit hash here: https://gitlab.com/gitlab-org/gitlab-workhorse/tags
-GL_COMMIT=	7edfe8beeacbd32ded50bdbd187cbe08dbd6b565
+GL_COMMIT=	d0573443810ed08c8425cf771cb0758621ce0baf
 
 # for go dependencies
 USE_GITHUB=	nodefault
@@ -55,7 +55,7 @@ GH_TUPLE=	\
 		gomodule:redigo:v2.0.0:gomodule_redigo/vendor/github.com/gomodule/redigo \
 		google:go-genproto:ca5a22157cba:google_go_genproto/vendor/google.golang.org/genproto \
 		google:pprof:d4f498aebedc:google_pprof/vendor/github.com/google/pprof \
-		googleapis:gax-go:v2.0.5:googleapis_gax_go/vendor/github.com/googleapis/gax-go \
+		googleapis:gax-go:v2.0.5:googleapis_gax_go_v2/vendor/github.com/googleapis/gax-go \
 		googleapis:google-api-go-client:v0.15.0:googleapis_google_api_go_client/vendor/google.golang.org/api \
 		googleapis:google-cloud-go:v0.50.0:googleapis_google_cloud_go/vendor/cloud.google.com/go \
 		gorilla:websocket:v1.4.0:gorilla_websocket/vendor/github.com/gorilla/websocket \
@@ -86,7 +86,7 @@ GH_TUPLE=	\
 		uber:jaeger-lib:v1.5.0:uber_jaeger_lib/vendor/github.com/uber/jaeger-lib
 
 GL_TUPLE=	gitlab-org:gitaly:acc6be5a2cba43e4a39d05a7c995062fb9279ee6:gitlab_org_gitaly/vendor/gitlab.com/gitlab-org/gitaly \
-		gitlab-org:labkit:4f8041c014c2e9c6eed42674d76f5235afb5a36a:gitlab_org_labkit/vendor/gitlab.com/gitlab-org/labkit
+		gitlab-org:labkit:fac94cb428e67efc019e7ba67429b53fa9b394c5:gitlab_org_labkit/vendor/gitlab.com/gitlab-org/labkit
 
 PLIST_FILES=	bin/gitlab-workhorse \
 		bin/gitlab-zip-cat \
