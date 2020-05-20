@@ -2,8 +2,7 @@
 
 PORTNAME=	prototool
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.9.0
-PORTREVISION=	2
+DISTVERSION=	1.10.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,30 +15,33 @@ USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	uber
 GH_TUPLE=	\
-		cpuguy83:go-md2man:v1.0.10:cpuguy83_go_md2man/vendor/github.com/cpuguy83/go-md2man \
+		cpuguy83:go-md2man:v2.0.0:cpuguy83_go_md2man_v2/vendor/github.com/cpuguy83/go-md2man/v2 \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
-		emicklei:proto:v1.7.0:emicklei_proto/vendor/github.com/emicklei/proto \
+		emicklei:proto:v1.9.0:emicklei_proto/vendor/github.com/emicklei/proto \
 		fullstorydev:grpcurl:v1.4.0:fullstorydev_grpcurl/vendor/github.com/fullstorydev/grpcurl \
-		go-yaml:yaml:v2.2.4:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
-		gobuffalo:flect:v0.1.6:gobuffalo_flect/vendor/github.com/gobuffalo/flect \
+		go-yaml:yaml:v2.2.8:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
+		gobuffalo:flect:v0.2.1:gobuffalo_flect/vendor/github.com/gobuffalo/flect \
 		gofrs:flock:v0.7.1:gofrs_flock/vendor/github.com/gofrs/flock \
-		golang:net:d66e71096ffb:golang_net/vendor/golang.org/x/net \
-		golang:protobuf:v1.3.2:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:b09406accb47:golang_sys/vendor/golang.org/x/sys \
+		golang:lint:738671d3881b:golang_lint/vendor/golang.org/x/lint \
+		golang:net:244492dfa37a:golang_net/vendor/golang.org/x/net \
+		golang:protobuf:v1.3.4:golang_protobuf/vendor/github.com/golang/protobuf \
+		golang:sys:5c8b2ff67527:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
-		google:go-genproto:548a555dbc03:google_go_genproto/vendor/google.golang.org/genproto \
-		grpc:grpc-go:v1.24.0:grpc_grpc_go/vendor/google.golang.org/grpc \
+		golang:tools:c807066ff753:golang_tools/vendor/golang.org/x/tools \
+		google:go-genproto:b662892dd51b:google_go_genproto/vendor/google.golang.org/genproto \
+		grpc:grpc-go:v1.28.0:grpc_grpc_go/vendor/google.golang.org/grpc \
 		inconshreveable:mousetrap:v1.0.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
-		jhump:protoreflect:v1.5.0:jhump_protoreflect/vendor/github.com/jhump/protoreflect \
+		jhump:protoreflect:v1.6.0:jhump_protoreflect/vendor/github.com/jhump/protoreflect \
 		mitchellh:go-wordwrap:v1.0.0:mitchellh_go_wordwrap/vendor/github.com/mitchellh/go-wordwrap \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
-		russross:blackfriday:v1.5.2:russross_blackfriday/vendor/github.com/russross/blackfriday \
-		spf13:cobra:v0.0.5:spf13_cobra/vendor/github.com/spf13/cobra \
+		russross:blackfriday:v2.0.1:russross_blackfriday_v2/vendor/github.com/russross/blackfriday/v2 \
+		shurcooL:sanitized_anchor_name:v1.0.0:shurcool_sanitized_anchor_name/vendor/github.com/shurcooL/sanitized_anchor_name \
+		spf13:cobra:v0.0.6:spf13_cobra/vendor/github.com/spf13/cobra \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
-		stretchr:testify:v1.4.0:stretchr_testify/vendor/github.com/stretchr/testify \
-		uber-go:atomic:v1.4.0:uber_go_atomic/vendor/go.uber.org/atomic \
-		uber-go:multierr:v1.2.0:uber_go_multierr/vendor/go.uber.org/multierr \
-		uber-go:zap:v1.10.0:uber_go_zap/vendor/go.uber.org/zap
+		stretchr:testify:v1.5.1:stretchr_testify/vendor/github.com/stretchr/testify \
+		uber-go:atomic:v1.6.0:uber_go_atomic/vendor/go.uber.org/atomic \
+		uber-go:multierr:v1.5.0:uber_go_multierr/vendor/go.uber.org/multierr \
+		uber-go:zap:v1.14.0:uber_go_zap/vendor/go.uber.org/zap
 GO_TARGET=	./cmd/prototool
 
 PLIST_FILES=	bin/${PORTNAME} \
