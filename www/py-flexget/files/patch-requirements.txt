@@ -1,6 +1,6 @@
 --- requirements.txt.orig	2019-05-25 02:03:39 UTC
 +++ requirements.txt
-@@ -7,8 +7,8 @@ html5lib>=0.11
+@@ -7,15 +7,15 @@ html5lib>=0.11
  PyRSS2Gen
  pynzb
  #PY3 progressbar
@@ -11,6 +11,14 @@
  # There is a bug in requests 2.4.0 where it leaks urllib3 exceptions
  requests>=2.20.0
  python-dateutil
+ jsonschema>=2.0
+ path.py>=10.6
+ pathlib>=1.0; python_version<'3.4'
+-guessit==3.0.3
++guessit>=3.0.3
+ rebulk>=0.9.0
+ apscheduler>=3.2.0
+ terminaltables>=3.1.0
 @@ -24,11 +24,11 @@ colorclass>=2.2.0
  cherrypy>=3.7.0
  flask>=0.7
