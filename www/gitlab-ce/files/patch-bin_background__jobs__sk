@@ -5,7 +5,7 @@
  stop()
  {
 -  bundle exec sidekiqctl stop $sidekiq_pidfile >> $sidekiq_logfile 2>&1
-+  bundle exec sidekiqctl5 stop $sidekiq_pidfile >> $sidekiq_logfile 2>&1
++  bundle exec sidekiqctl stop $sidekiq_pidfile >> $sidekiq_logfile 2>&1
  }
  
  restart()
@@ -14,7 +14,7 @@
    fi
  
 -  ${cmd} bundle exec sidekiq -C "${sidekiq_config}" -e $RAILS_ENV "$@"
-+  ${cmd} bundle exec sidekiq5 -C "${sidekiq_config}" -e $RAILS_ENV "$@"
++  ${cmd} bundle exec sidekiq -C "${sidekiq_config}" -e $RAILS_ENV "$@"
  }
  
  case "$1" in

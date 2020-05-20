@@ -48,7 +48,8 @@ load_rc_config $name
 
 ### Environment variables
 RAILS_ENV="production"
-EXPERIMENTAL_PUMA=""
+USE_UNICORN="1"
+SIDEKIQ_WORKERS=1
 
 # Script variable names should be lower-case not to conflict with
 # internal /bin/sh variables such as PATH, EDITOR or SHELL.
@@ -58,7 +59,6 @@ pid_path="$app_root/tmp/pids"
 socket_path="$app_root/tmp/sockets"
 rails_socket="$socket_path/gitlab.socket"
 web_server_pid_path="$pid_path/unicorn.pid"
-sidekiq_pid_path="$pid_path/sidekiq.pid"
 if checkyesno gitlab_mail_room_enable; then
 	mail_room_enabled=true
 else
@@ -152,12 +152,17 @@ if ! cd "$app_root" ; then
 fi
 
 # Select the web server to use
-if [ -z "$EXPERIMENTAL_PUMA" ]; then
-  use_web_server="unicorn"
-else
+if [ -z "$USE_UNICORN" ]; then
   use_web_server="puma"
+else
+  use_web_server="unicorn"
 fi
 
+if [ -z "$SIDEKIQ_WORKERS" ]; then
+  sidekiq_pid_path="$pid_path/sidekiq.pid"
+else
+  sidekiq_pid_path="$pid_path/sidekiq-cluster.pid"
+fi
 
 ### Init Script functions
 
@@ -379,7 +384,7 @@ start_gitlab() {
   if [ "$sidekiq_status" = "0" ]; then
     echo "The Sidekiq job dispatcher is already running with pid $spid, not restarting"
   else
-    RAILS_ENV=$RAILS_ENV bin/background_jobs start &
+    RAILS_ENV=$RAILS_ENV SIDEKIQ_WORKERS=$SIDEKIQ_WORKERS bin/background_jobs start &
   fi
 
   if [ "$gitlab_workhorse_status" = "0" ]; then
@@ -438,7 +443,7 @@ stop_gitlab() {
   fi
   if [ "$sidekiq_status" = "0" ]; then
     echo "Shutting down GitLab Sidekiq"
-    RAILS_ENV=$RAILS_ENV bin/background_jobs stop
+    RAILS_ENV=$RAILS_ENV SIDEKIQ_WORKERS=$SIDEKIQ_WORKERS bin/background_jobs stop
   fi
   if [ "$gitlab_workhorse_status" = "0" ]; then
     echo "Shutting down GitLab Workhorse"
@@ -542,7 +547,7 @@ reload_gitlab(){
   echo "Done."
 
   echo "Restarting GitLab Sidekiq since it isn't capable of reloading its config..."
-  RAILS_ENV=$RAILS_ENV bin/background_jobs restart
+  RAILS_ENV=$RAILS_ENV SIDEKIQ_WORKERS=$SIDEKIQ_WORKERS bin/background_jobs restart
 
   if [ "$mail_room_enabled" != true ]; then
     echo "Restarting GitLab MailRoom since it isn't capable of reloading its config..."
