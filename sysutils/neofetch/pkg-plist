@@ -1,4 +1,3 @@
 bin/neofetch
-%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.md
 %%PORTDOCS%%%%DOCSDIR%%/README.md
-man/man1/neofetch.1.gz
+share/man/man1/neofetch.1.gz
