@@ -5,8 +5,6 @@ DISTVERSIONPREFIX=	version_
 DISTVERSION=		2.2.0
 PORTREVISION=	2
 CATEGORIES=		cad
-MASTER_SITES=https://github.com/CGAL/cgal/archive/releases/:cgal
-DISTFILES=CGAL-5.0.2.tar.gz:cgal
 
 MAINTAINER=	teodorsigaev@gmail.com
 COMMENT=	Slicing application for 3D printers
@@ -43,15 +41,16 @@ CMAKE_ARGS+=	-DwxWidgets_CONFIG_EXECUTABLE=${LOCALBASE}/bin/wxgtk3u-3.1-config \
 CMAKE_INSTALL_PREFIX=	${PREFIX}/${PORTNAME}
 
 USE_GITHUB=	yes
-USE_GL=		gl glu glew
 GH_ACCOUNT=	prusa3d
+GH_TUPLE=	CGAL:cgal:releases/CGAL-5.0.2:cgal
+USE_GL=		gl glu glew
 
 post-patch:
 	${REINPLACE_CMD} -e 's,%%WRKSRC%%,${WRKSRC},' \
 		${WRKSRC}/CMakeLists.txt
 
 pre-configure:
-	cd ${WRKDIR}/cgal-releases-CGAL-5.0.2 && \
+	cd ${WRKSRC_cgal} && \
 	${CMAKE_BIN} -E remove CGALConfig-installation-dirs.cmake && \
 	${MKDIR} build && cd build && \
 	${CMAKE_BIN} -DCMAKE_INSTALL_PREFIX=${WRKSRC}/CGAL \

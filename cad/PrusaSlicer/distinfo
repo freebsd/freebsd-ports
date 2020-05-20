@@ -1,5 +1,5 @@
 TIMESTAMP = 1585766317
 SHA256 (prusa3d-PrusaSlicer-version_2.2.0_GH0.tar.gz) = e6e0c83bf92e448ec058fd3063b84caca69f58b8b419e48eace6e8ce534937c0
 SIZE (prusa3d-PrusaSlicer-version_2.2.0_GH0.tar.gz) = 30811929
-SHA256 (CGAL-5.0.2.tar.gz) = 7d824efce318fe901fd9d6f233a1f27e2d956d787602621df035a759b587c40c
-SIZE (CGAL-5.0.2.tar.gz) = 146441795
+SHA256 (CGAL-cgal-releases-CGAL-5.0.2_GH0.tar.gz) = 7d824efce318fe901fd9d6f233a1f27e2d956d787602621df035a759b587c40c
+SIZE (CGAL-cgal-releases-CGAL-5.0.2_GH0.tar.gz) = 146441795

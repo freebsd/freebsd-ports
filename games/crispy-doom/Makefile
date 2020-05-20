@@ -2,6 +2,7 @@
 
 PORTNAME=	crispy-doom
 PORTVERSION=	5.8.0
+DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	games
 
 MAINTAINER=	danilo@FreeBSD.org
@@ -21,7 +22,6 @@ OPTIONS_DEFINE=	DOCS
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	fabiangreffrath
-GH_TAGNAME=	${PORTNAME}-${PORTVERSION}
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/crispy-*

@@ -3,6 +3,7 @@
 
 PORTNAME=	v1541commander
 PORTVERSION=	1.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	archivers emulators
 
 MAINTAINER=	felix@palmen-it.de
@@ -22,9 +23,9 @@ USES=		compiler:c++11-lang gmake pkgconfig qt:5 shared-mime-info
 USE_QT=		core gui network widgets buildtools_build linguisttools_build
 
 USE_GITHUB=	yes
-GH_PROJECT=	${PORTNAME} zimk:zimk
+GH_PROJECT=	zimk:zimk
 GH_ACCOUNT=	excess-c64 Zirias:zimk
-GH_TAGNAME=	v${PORTVERSION} 31500ca:zimk
+GH_TAGNAME=	31500ca:zimk
 
 OPTIONS_DEFINE=	DOCS
 
@@ -33,6 +34,6 @@ MAKE_ARGS=	pkgconfigdir=${LOCALBASE}/libdata/pkgconfig \
 ALL_TARGET=	strip
 
 post-extract:
-	@${MV} ${WRKDIR}/zimk-*/* ${WRKSRC}/zimk/
+	@${MV} ${WRKSRC_zimk}/* ${WRKSRC}/zimk/
 
 .include <bsd.port.mk>

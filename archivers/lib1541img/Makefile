@@ -3,6 +3,7 @@
 
 PORTNAME=	lib1541img
 PORTVERSION=	1.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	archivers devel emulators
 
 MAINTAINER=	felix@palmen-it.de
@@ -13,9 +14,9 @@ LICENSE=	BSD2CLAUSE
 USES=		compiler:c11 gmake
 
 USE_GITHUB=	yes
-GH_PROJECT=	${PORTNAME} zimk:zimk
+GH_PROJECT=	zimk:zimk
 GH_ACCOUNT=	excess-c64 Zirias:zimk
-GH_TAGNAME=	v${PORTVERSION} 31500ca:zimk
+GH_TAGNAME=	31500ca:zimk
 
 USE_LDCONFIG=	yes
 MAKE_ARGS=	pkgconfigdir=${LOCALBASE}/libdata/pkgconfig \
@@ -30,6 +31,6 @@ DOXYGEN_BUILD_DEPENDS=	doxygen>0:devel/doxygen
 DOXYGEN_ALL_TARGET=	html
 
 post-extract:
-	@${MV} ${WRKDIR}/zimk-*/* ${WRKSRC}/zimk/
+	@${MV} ${WRKSRC_zimk}/* ${WRKSRC}/zimk/
 
 .include <bsd.port.mk>
