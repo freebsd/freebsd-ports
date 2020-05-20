@@ -78,8 +78,8 @@
              st,len);
  
      if (avoid_mmap) writeptr=MAP_FAILED; else {      
--      for (i=st;i<=en;i+=PAGE_SIZE) ptrace(PTRACE_PEEKDATA,tracepid,i,0);
-+      for (i=st;i<=en;i+=PAGE_SIZE) ptrace(PT_READ_D,tracepid,(caddr_t)i,0);
+-      for (i=st;i<en;i+=PAGE_SIZE) ptrace(PTRACE_PEEKDATA,tracepid,i,0);
++      for (i=st;i<en;i+=PAGE_SIZE) ptrace(PT_READ_D,tracepid,(caddr_t)i,0);
        writeptr=mmap(0,len,PROT_READ,MAP_PRIVATE,memfile,st);
      }
  
