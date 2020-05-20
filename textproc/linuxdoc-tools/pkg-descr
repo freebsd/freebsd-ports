@@ -2,4 +2,4 @@ Linuxdoc-Tools is a fork of SGML-Tools 1.0.9, capable of processing
 LinuxDoc DTD SGML files. Such files are sometimes used as an input
 format for generated documentation.
 
-WWW: https://tracker.debian.org/pkg/linuxdoc-tools
+WWW: https://gitlab.com/agmartin/linuxdoc-tools
