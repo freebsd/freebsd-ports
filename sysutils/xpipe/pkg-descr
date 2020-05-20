@@ -1,0 +1,7 @@
+The xpipe command reads input from stdin and splits it by the given number of
+bytes, lines, or if matching the given pattern. It then invokes the given
+utility repeatedly, feeding it the generated data chunks as input. You can
+think of it as a Unix love-child of the split(1), tee(1), and xargs(1)
+commands.
+
+WWW: https://github.com/jschauma/xpipe

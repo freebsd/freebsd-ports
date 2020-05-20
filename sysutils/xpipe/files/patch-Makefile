@@ -1,0 +1,11 @@
+--- Makefile.orig	2020-05-19 16:52:46 UTC
++++ Makefile
+@@ -1,7 +1,7 @@
+ NAME= xpipe
+ OBJS= src/xpipe.o
+ 
+-CFLAGS= -g -Wall -Werror -Wextra
++CFLAGS+=-Wall -Werror -Wextra
+ LIBS= -lm
+ 
+ PREFIX?=/usr/local

@@ -1461,6 +1461,7 @@
     SUBDIR += xmbmon
     SUBDIR += xorriso
     SUBDIR += xosview
+    SUBDIR += xpipe
     SUBDIR += xstow
     SUBDIR += xsysstats
     SUBDIR += xvidcap
