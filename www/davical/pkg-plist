@@ -122,6 +122,7 @@
 %%WWWDIR%%/inc/caldav-client-v2.php
 %%WWWDIR%%/inc/caldav-client.php
 %%WWWDIR%%/inc/check_UTF8.php
+%%WWWDIR%%/inc/csrf_tokens.php
 %%WWWDIR%%/inc/davical_configuration_missing.php
 %%WWWDIR%%/inc/drivers_imap_pam.php
 %%WWWDIR%%/inc/drivers_ldap.php

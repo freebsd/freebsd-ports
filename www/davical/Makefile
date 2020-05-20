@@ -3,8 +3,7 @@
 
 PORTNAME=	davical
 DISTVERSIONPREFIX=	r
-DISTVERSION=	1.1.8
-PORTREVISION=	2
+DISTVERSION=	1.1.9.1
 CATEGORIES?=	www
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
@@ -25,7 +24,7 @@ USES=		pgsql php:flavors shebangfix
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	davical-project
-GL_COMMIT=	4af9595f4d0530268ac1289ba4ab2adb4890802e
+GL_COMMIT=	55d485045f43b52ccdbedbded2bfebb33b781d57
 
 USE_PHP=	calendar curl gettext iconv pcre pdo \
 		pdo_pgsql pgsql xml
