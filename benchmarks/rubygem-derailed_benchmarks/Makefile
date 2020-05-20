@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	derailed_benchmarks
-PORTVERSION=	1.3.6
+PORTVERSION=	1.7.0
 CATEGORIES=	benchmarks rubygems
 MASTER_SITES=	RG
 
@@ -15,9 +15,12 @@ RUN_DEPENDS=	rubygem-benchmark-ips>=2.0.0:benchmarks/rubygem-benchmark-ips \
 		rubygem-get_process_mem>=0:devel/rubygem-get_process_mem \
 		rubygem-heapy>=0:devel/rubygem-heapy \
 		rubygem-memory_profiler>=0:devel/rubygem-memory_profiler \
+		rubygem-mini_histogram>=0:devel/rubygem-mini_histogram\
 		rubygem-rack>=1:www/rubygem-rack \
-		rubygem-rake>=10:devel/rubygem-rake \
-		rubygem-thor>=0.19:devel/rubygem-thor
+		rubygem-rake>=10<14:devel/rubygem-rake \
+		rubygem-ruby-statistics>=2.1:devel/rubygem-ruby-statistics \
+		rubygem-thor>=0.19:devel/rubygem-thor \
+		rubygem-unicode_plot>=0.0.4<1.0.0:textproc/rubygem-unicode_plot
 
 USES=		gem
 USE_RUBY=	yes
