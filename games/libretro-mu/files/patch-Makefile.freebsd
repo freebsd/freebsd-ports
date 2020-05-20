@@ -1,0 +1,5 @@
+--- Makefile.freebsd.orig	2020-05-03 19:06:09 UTC
++++ Makefile.freebsd
+@@ -0,0 +1,2 @@
++all:
++	cd libretroBuildSystem && ${MAKE} 

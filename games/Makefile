@@ -502,6 +502,7 @@
     SUBDIR += libretro-mame2003
     SUBDIR += libretro-mame2003_plus
     SUBDIR += libretro-mgba
+    SUBDIR += libretro-mu
     SUBDIR += libretro-nestopia
     SUBDIR += libretro-nxengine
     SUBDIR += libretro-o2em
