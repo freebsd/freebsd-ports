@@ -1,6 +1,6 @@
---- meson.build.orig	2020-01-06 04:43:34 UTC
+--- meson.build.orig	2020-05-16 11:50:13 UTC
 +++ meson.build
-@@ -160,7 +160,7 @@ config_h_dep = declare_dependency (
+@@ -177,7 +177,7 @@ config_h_dep = declare_dependency (
    )
  audec_deps += config_h_dep
  
@@ -9,3 +9,14 @@
    'audec',
    sources: srcs,
    dependencies: [
+@@ -212,7 +212,9 @@ audec_exe = executable (
+   install: not meson.is_subproject(),
+   )
+ 
+-subdir('tests')
++if get_variable('build-tests', true)
++	subdir('tests')
++endif
+ 
+ summary = [
+   '',
