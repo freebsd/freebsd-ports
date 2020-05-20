@@ -2,6 +2,7 @@
 
 PORTNAME=	dftbplus
 DISTVERSION=	19.1
+PORTREVISION=	1
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,15 +10,13 @@ COMMENT=	DFTB+: Package for performing fast atomistic simulations
 
 LICENSE=	GPLv3 # main code is under LGPL3+, the bundled dftd3-lib is under GPLv1+, this makes the result GPLv3 (based on https://www.gnu.org/licenses/gpl-faq.html#AllCompatibility)
 
-DEPRECATED=	Uses deprecated version of python
-EXPIRATION_DATE=	2020-08-15
 BROKEN_powerpc64=	fails to compile: lbfgs.f90:18:19: Cannot find an intrinsic module named 'ieee_arithmetic' at (1)
 
 LIB_DEPENDS=	libblas.so:math/blas \
 		liblapack.so:math/lapack
 RUN_DEPENDS=	${PYNUMPY}
 
-USES=		compiler:gcc-c++11-lib fortran gmake python:2.7 shebangfix
+USES=		compiler:gcc-c++11-lib fortran gmake python shebangfix
 SHEBANG_FILES=	tools/dptools/bin/* tools/misc/* utils/srcmanip/* utils/build/* external/fypp/bin/* utils/get_opt_externals \
 		external/fypp/bin/fypp utils/test/testlist_to_fypp test/prog/dftb+/bin/tagdiff
 SHEBANG_GLOB=	*.py
@@ -34,6 +33,8 @@ LDFLAGS+=	-llapack -lblas -lgfortran -lm
 
 MAKE_ARGS=	PYTHON=${PYTHON_CMD} FC=${FC} FXX=${FC} LN=${CC} \
 		INSTALLDIR=${STAGEDIR}${PREFIX} FREEBSD_PYDISTUTILS_INSTALLARGS="${PYDISTUTILS_INSTALLARGS} --root=${STAGEDIR}"
+
+BINARY_ALIAS=		python=${PYTHON_CMD}
 
 OPTIONS_DEFINE=		DFTD3 MPI SOCKETS ARPACK
 OPTIONS_DEFAULT=	DFTD3 MPI SOCKETS
