@@ -91,6 +91,7 @@
     SUBDIR += transmission-gtk
     SUBDIR += transmission-qt
     SUBDIR += transmission-remote-gui
+    SUBDIR += transmission-utils
     SUBDIR += udpt
     SUBDIR += uhub
     SUBDIR += vuze

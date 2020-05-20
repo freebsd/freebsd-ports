@@ -1,0 +1,14 @@
+bin/transmission-create
+bin/transmission-edit
+bin/transmission-remote
+bin/transmission-show
+man/man1/transmission-create.1.gz
+man/man1/transmission-edit.1.gz
+man/man1/transmission-remote.1.gz
+man/man1/transmission-show.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/NEWS.md
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%DOCSDIR%%/rpc-spec.txt
+%%PORTDOCS%%%%DOCSDIR%%/send-email-when-torrent-done.sh

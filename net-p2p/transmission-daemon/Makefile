@@ -1,11 +1,10 @@
 # $FreeBSD$
 
 PKGNAMESUFFIX=	-daemon
+PORTREVISION=	1
 
 USES=		ssl
 NLS_USES=	gettext-runtime:run
-
-CONFLICTS_INSTALL=	transmission-cli
 
 USERS=		transmission
 GROUPS=		transmission

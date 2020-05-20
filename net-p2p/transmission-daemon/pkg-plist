@@ -1,13 +1,5 @@
-bin/transmission-create
 bin/transmission-daemon
-bin/transmission-edit
-bin/transmission-remote
-bin/transmission-show
-man/man1/transmission-create.1.gz
 man/man1/transmission-daemon.1.gz
-man/man1/transmission-edit.1.gz
-man/man1/transmission-remote.1.gz
-man/man1/transmission-show.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/NEWS.md
