@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-shell
-PORTVERSION=	12.0.0
+PORTVERSION=	12.2.0
 CATEGORIES=	devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -19,7 +19,7 @@ ALL_TARGET=	build
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find the commit hash here: https://gitlab.com/gitlab-org/gitlab-shell/tags
-GL_COMMIT=	b920520599142435ce06ad155099544adc923618
+GL_COMMIT=	3e73101ada44b2f65ea1eb14d243fe1daf074692
 
 BUILD_DEPENDS=	rubygem-bundler1=1.17.3:sysutils/rubygem-bundler1
 
@@ -70,7 +70,7 @@ post-patch:
 # Build the go deps, use `pkg install modules2tuple`
 gomod-deps: patch
 	(cd ${WRKSRC} && go mod vendor)
-	(cd ${WRKSRC} && modules2tuple -prefix vendor vendor/modules.txt)
+	(cd ${WRKSRC} && modules2tuple vendor/modules.txt)
 
 pre-build:
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} build)

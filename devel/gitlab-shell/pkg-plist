@@ -24,6 +24,7 @@
 %%DATADIR%%/spec/gitlab_shell_authorized_keys_check_spec.rb
 %%DATADIR%%/spec/gitlab_shell_authorized_principals_check_spec.rb
 %%DATADIR%%/spec/gitlab_shell_custom_git_receive_pack_spec.rb
+%%DATADIR%%/spec/gitlab_shell_custom_git_upload_pack_spec.rb
 %%DATADIR%%/spec/gitlab_shell_discover_spec.rb
 %%DATADIR%%/spec/gitlab_shell_lfs_authentication_spec.rb
 %%DATADIR%%/spec/gitlab_shell_two_factor_recovery_spec.rb
