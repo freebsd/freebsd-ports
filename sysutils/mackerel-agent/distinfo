@@ -1,6 +1,6 @@
-TIMESTAMP = 1587385115
-SHA256 (mackerelio-mackerel-agent-v0.67.1_GH0.tar.gz) = e421757b7f2eae9febafaaa0967f94beb7b3a8ef25914d7aa35a6c67234ed591
-SIZE (mackerelio-mackerel-agent-v0.67.1_GH0.tar.gz) = 176239
+TIMESTAMP = 1589964082
+SHA256 (mackerelio-mackerel-agent-v0.68.0_GH0.tar.gz) = b9509bfef4bce70d83e7996dbcdcc742bc4f08665a117a7ebc8ebbe86d89c91c
+SIZE (mackerelio-mackerel-agent-v0.68.0_GH0.tar.gz) = 178369
 SHA256 (BurntSushi-toml-v0.3.1_GH0.tar.gz) = 6593da894578ba510a470735ffbdc88ce88033094dc5a8f4d3957ab87e18803f
 SIZE (BurntSushi-toml-v0.3.1_GH0.tar.gz) = 42077
 SHA256 (Songmu-prompter-v0.3.0_GH0.tar.gz) = f6bd9d5d3a2970a11d704f8b474dc8a761ce1468a9fb803f0eeb8b799cb86803
@@ -35,5 +35,5 @@ SHA256 (motemen-go-cli-9961a876eb5f_GH0.tar.gz) = b74fc04d9d7411b35a9d546e485195
 SIZE (motemen-go-cli-9961a876eb5f_GH0.tar.gz) = 6304
 SHA256 (pkg-errors-v0.9.1_GH0.tar.gz) = 56bfd893023daa498508bfe161de1be83299fcf15376035e7df79cbd7d6fa608
 SIZE (pkg-errors-v0.9.1_GH0.tar.gz) = 13415
-SHA256 (shirou-gopsutil-v2.20.2_GH0.tar.gz) = 0c4fe59d69d4ef3f1e6f2266bc86037b1078e837b244b37c2310767ef54d7929
-SIZE (shirou-gopsutil-v2.20.2_GH0.tar.gz) = 135747
+SHA256 (shirou-gopsutil-v2.20.4_GH0.tar.gz) = de25e312ca9ddb9742a7509f6acc82566d2b6c2f4ac2a32011098d1307265eaa
+SIZE (shirou-gopsutil-v2.20.4_GH0.tar.gz) = 137165
