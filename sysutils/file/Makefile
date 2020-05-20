@@ -2,9 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	file
-PORTVERSION=	5.37
+PORTVERSION=	5.38
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.astron.com/pub/file/ \
+MASTER_SITES=	https://astron.com/pub/file/ \
+		https://www.nic.funet.fi/pub/mirrors/ftp.astron.com/pub/file/ \
+		https://ftp.icm.edu.pl/packages/file/ \
 		ftp://ftp.fu-berlin.de/unix/tools/file/
 
 MAINTAINER=	jharris@widomaker.com
