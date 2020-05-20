@@ -7,13 +7,18 @@ DQS key.
 Follow the instructions at:
 https://www.spamhaustech.com/dqs/
 to get a key, then go to:
-https://portal.spamhaustech.com/src/manual/dqs/
-and note your key. 
+https://portal.spamhaustech.com/manuals/dqs/
+and note the DQS key under section "1.0 Datafeed Query Service".
 
 Once you have it, run the following as root:
 
 cd %%PREFIX%%/etc/mail/spamassassin
 sed -e 's/your_DQS_key/<your key from above>/g' sh.cf.sample >sh.cf
+
+if the HBL option is selected, issue the following as well:
+sed -e 's/your_DQS_key/<your key from above>/g' sh_hbl.cf.sample >sh_hbl.cf
+
+(for more information on HBL, see %%DOCSDIR%%/README.md)
 
 then restart spamassassin.
 EOM
@@ -26,10 +31,15 @@ You will need to re-run this as root:
 cd %%PREFIX%%/etc/mail/spamassassin
 sed -e 's/your_DQS_key/<your key from above>/g' sh.cf.sample >sh.cf
 
+if the HBL option is selected, issue the following as well:
+sed -e 's/your_DQS_key/<your key from above>/g' sh_hbl.cf.sample >sh_hbl.cf
+
+(for more information on HBL, see %%DOCSDIR%%/README.md)
+
 and restart spamassassin
 EOM
    type: upgrade
-   maximum_version: "1.0.3"
+   maximum_version: "1.1.0"
 }
 ]
 
