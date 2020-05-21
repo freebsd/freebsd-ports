@@ -9,7 +9,7 @@ COMMENT=	Amstrad CPC computers emulator core for libretro API
 
 LICENSE=	GPLv2
 
-USES=		gmake localbase
+USES=		compiler:c++11-lang gmake localbase
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
