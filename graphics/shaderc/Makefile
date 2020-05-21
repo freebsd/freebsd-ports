@@ -5,8 +5,8 @@ DISTVERSIONPREFIX=v
 DISTVERSION=	2020.0
 CATEGORIES=	graphics devel
 
-PATCH_SITES=	https://github.com/haasn/${GH_PROJECT}/commit/
-PATCHFILES=	21c8be385b3f.patch:-p1
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	21c8be385b3f.patch:-p1 # https://github.com/google/shaderc/pull/463
 
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	GLSL/HLSL to SPIR-V shader compiler
