@@ -12,6 +12,8 @@ COMMENT=	Efficient tree implementations for Django
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Obsolete after r532093, use www/py-django-treebeard instead
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django22>=0:www/py-django22@${PY_FLAVOR}
 
 USES=		python:3.5+
