@@ -1,0 +1,56 @@
+Obtained from:	https://github.com/json-c/json-c/commit/8b511c402b73d1d8b195991891c8d44859cb57ec
+		https://github.com/json-c/json-c/commit/22870ac2bd4cfdd135887ecc8cbbe02e7ef0c34e
+		https://github.com/json-c/json-c/commit/4f43a077a497f94214645ce9763247ec085e2094
+
+--- CMakeLists.txt.orig	2020-04-19 03:39:09 UTC
++++ CMakeLists.txt
+@@ -65,6 +65,7 @@ include(GNUInstallDirs)
+ include(CMakePackageConfigHelpers)
+ 
+ option(BUILD_SHARED_LIBS  "Default to building shared libraries" ON)
++option(BUILD_STATIC_LIBS  "Default to building static libraries" ON)
+ 
+ # Generate a release merge and test it to verify the correctness of republishing the package.
+ ADD_CUSTOM_TARGET(distcheck
+@@ -299,7 +300,7 @@ if ($ENV{VALGRIND})
+ endif()
+ 
+ set(JSON_C_PUBLIC_HEADERS
+-    ${PROJECT_BINARY_DIR}/config.h
++    # Note: config.h is _not_ included here
+     ${PROJECT_BINARY_DIR}/json_config.h
+ 
+     ${PROJECT_SOURCE_DIR}/json.h
+@@ -383,7 +384,7 @@ add_library(${PROJECT_NAME}
+ set_target_properties(${PROJECT_NAME} PROPERTIES
+     VERSION 5.0.0
+     SOVERSION 5)
+-
++list(APPEND CMAKE_TARGETS ${PROJECT_NAME})
+ # If json-c is used as subroject it set to target correct interface -I flags and allow
+ # to build external target without extra include_directories(...)
+ target_include_directories(${PROJECT_NAME}
+@@ -392,7 +393,22 @@ target_include_directories(${PROJECT_NAME}
+         $<BUILD_INTERFACE:${PROJECT_BINARY_DIR}>
+ )
+ 
+-install(TARGETS ${PROJECT_NAME}
++# Allow to build static and shared libraries at the same time
++if (BUILD_STATIC_LIBS AND BUILD_SHARED_LIBS)
++    set(STATIC_LIB ${PROJECT_NAME}-static)
++    add_library(${STATIC_LIB} STATIC
++        ${JSON_C_SOURCES}
++        ${JSON_C_HEADERS}
++    )
++
++    # rename the static library
++    set_target_properties(${STATIC_LIB} PROPERTIES
++        OUTPUT_NAME ${PROJECT_NAME}
++    )
++    list(APPEND CMAKE_TARGETS ${STATIC_LIB})
++endif ()
++
++install(TARGETS ${CMAKE_TARGETS}
+     EXPORT ${PROJECT_NAME}-targets
+     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
