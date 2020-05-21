@@ -1,0 +1,4 @@
+This the official Python wrapper for gridscale's API. It allows you to manage
+your own infrastructure from your own applications, or from the command line.
+
+WWW: https://pypi.org/project/gs-api-client
