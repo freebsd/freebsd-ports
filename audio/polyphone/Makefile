@@ -21,7 +21,9 @@ LIB_DEPENDS=	libFLAC.so:audio/flac \
 USES=		compiler:c++11-lang desktop-file-utils dos2unix gl gnome pkgconfig qmake:outsource qt:5 shared-mime-info ssl xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	davy7125
-DOS2UNIX_FILES=	polyphone.pro
+DOS2UNIX_FILES=	polyphone.pro \
+		editor/graphics/graphiquefourier.cpp \
+		editor/tree/treeitemdelegate.cpp
 USE_GL=		gl
 USE_QT=		core concurrent gui network printsupport svg widgets buildtools_build qmake_build
 USE_GNOME=	glib20
