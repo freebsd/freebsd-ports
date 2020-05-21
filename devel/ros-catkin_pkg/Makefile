@@ -16,12 +16,13 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}argparse>=1:devel/py-argparse@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyparsing>=2:devel/py-pyparsing@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}docutils>=0:textproc/py-docutils@${PY_FLAVOR}
 
-USES=	python
+USES=		python
 
 USE_PYTHON=	distutils autoplist
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ros-infrastructure
 GH_PROJECT=	catkin_pkg
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
