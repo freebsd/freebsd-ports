@@ -199,7 +199,7 @@ lib/libfreeswitch.a
 lib/libfreeswitch.so
 lib/libfreeswitch.so.1
 lib/libfreeswitch.so.1.0.0
-%%LUA_LIBDIR%%/freeswitch/mod/mod_pgsql.so
+%%PGSQL%%%%LUA_LIBDIR%%/freeswitch/mod/mod_pgsql.so
 libdata/pkgconfig/freeswitch.pc
 %%DATADIR%%/fonts/FreeMono.ttf
 %%DATADIR%%/fonts/FreeMonoBold.ttf
@@ -574,6 +574,7 @@ libdata/pkgconfig/freeswitch.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testing/autoload_configs/pre_load_modules.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testing/autoload_configs/presence_map.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testing/autoload_configs/shout.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testing/autoload_configs/sndfile.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testing/autoload_configs/sofia.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testing/autoload_configs/spandsp.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testing/autoload_configs/switch.conf.xml
@@ -715,6 +716,7 @@ libdata/pkgconfig/freeswitch.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/skinny.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/smpp.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/sms_flowroute.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/sndfile.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/sofia.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/spandsp.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/switch.conf.xml

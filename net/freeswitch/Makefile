@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	freeswitch
-PORTVERSION=	1.10.2
+PORTVERSION=	1.10.3
 CATEGORIES=	net
 MASTER_SITES=	https://files.freeswitch.org/releases/freeswitch/ \
 		https://files.freeswitch.org/releases/sounds/:sounds
@@ -106,7 +106,8 @@ ALL_MODULES_USES=		autoreconf xorg # required by mod_unimrcp
 48K_VARS=	BITRATES+=48000
 
 PGSQL_USES=	pgsql
-PGSQL_CONFIGURE_ENABLE=	core-pgsql-support
+PGSQL_CONFIGURE_ENABLE=	core-pgsql-support core-pgsql-pkgconfig
+PGSQL_CONFIGURE_ENV_OFF=	ac_cv_lib_pq_PQgetvalue=false
 
 # install-strip causes `make stage' to fail:
 # libtool: install: strip --strip-debug /wrkdirs/usr/ports/net/freeswitch/work/stage/usr/local/lib/libfreeswitch.a
@@ -165,6 +166,9 @@ DISTFILES+=	${distfile}:sounds
 post-patch:
 		${REINPLACE_CMD} -Ee 's|^(applications/mod_signalwire)|#\1|' \
 			${WRKSRC}/modules.conf
+
+post-patch-PGSQL-off:
+		${REINPLACE_CMD} -Ee 's|^(databases/mod_pgsql)|#\1|' ${WRKSRC}/modules.conf
 
 post-install:
 		${MKDIR} ${STAGEDIR}${DATADIR}/sounds

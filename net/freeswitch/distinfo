@@ -1,6 +1,6 @@
-TIMESTAMP = 1588352620
-SHA256 (freeswitch-1.10.2.-release.tar.gz) = be6b294560ae66029b06ac3abbfaadee02095d588e1a7f93092dd1d4cbea8347
-SIZE (freeswitch-1.10.2.-release.tar.gz) = 48322632
+TIMESTAMP = 1590055652
+SHA256 (freeswitch-1.10.3.-release.tar.gz) = 15a1f741cc682d3161ff266d9fa4c568a0200d8bfcb5edf74611aeb620bfa917
+SIZE (freeswitch-1.10.3.-release.tar.gz) = 48818052
 SHA256 (freeswitch-sounds-music-16000-1.0.52.tar.gz) = 93e0bf31797f4847dc19a94605c039ad4f0763616b6d819f5bddbfb6dd09718a
 SIZE (freeswitch-sounds-music-16000-1.0.52.tar.gz) = 27991592
 SHA256 (freeswitch-sounds-pt-BR-karina-16000-1.0.51.tar.gz) = 80432c1027f57e464cd899ed92216936cf48a3993dc1c168b1be2545b8f97aed
