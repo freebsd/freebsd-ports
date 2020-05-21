@@ -90,11 +90,3 @@
 %%EXAMPLESDIR%%/masterfiles/templates/json_multiline.mustache
 %%EXAMPLESDIR%%/masterfiles/templates/json_serial.mustache
 %%EXAMPLESDIR%%/masterfiles/update.cf
-%%EXAMPLESDIR%%/modules/packages/apt_get
-%%EXAMPLESDIR%%/modules/packages/freebsd_ports
-%%EXAMPLESDIR%%/modules/packages/nimclient
-%%EXAMPLESDIR%%/modules/packages/pkg
-%%EXAMPLESDIR%%/modules/packages/pkgsrc
-%%EXAMPLESDIR%%/modules/packages/slackpkg
-%%EXAMPLESDIR%%/modules/packages/yum
-%%EXAMPLESDIR%%/modules/packages/zypper
