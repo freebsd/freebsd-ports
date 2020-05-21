@@ -1,3 +1,7 @@
-TIMESTAMP = 1587835976
+TIMESTAMP = 1588238389
 SHA256 (multimarkdown/fletcher-MultiMarkdown-6-6.5.2_GH0.tar.gz) = 97e9bb25e8eb151f178fd34212852f5d40d8fd01b317e718fded11603fafb773
 SIZE (multimarkdown/fletcher-MultiMarkdown-6-6.5.2_GH0.tar.gz) = 3359037
+SHA256 (multimarkdown/fletcher-MultiMarkdown-6-Syntax-Guide-3b268b4_GH0.tar.gz) = cc8e5c49d81dc65212b3366719a13fb62ab2b21f54d997ec943a439118158401
+SIZE (multimarkdown/fletcher-MultiMarkdown-6-Syntax-Guide-3b268b4_GH0.tar.gz) = 48364
+SHA256 (multimarkdown/fletcher-MMD-Support-685c95c_GH0.tar.gz) = 3544d81579a0a3d8b1649437ef418f5a4862c5cf080309fd817f617a2f958e69
+SIZE (multimarkdown/fletcher-MMD-Support-685c95c_GH0.tar.gz) = 16865
