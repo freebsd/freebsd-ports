@@ -35,6 +35,8 @@ USE_GNOME=	libxml2
 USE_PYTHON=	distutils concurrent # autoplist is broken: https://github.com/schrodinger/pymol-open-source/issues/99
 SHEBANG_FILES=	test/show test/run test/cyg
 
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}chempy # https://github.com/schrodinger/pymol-open-source/issues/100
+
 OPTIONS_SINGLE=	GUI
 OPTIONS_SINGLE_GUI=	QT5 TK
 OPTIONS_DEFAULT=	QT5

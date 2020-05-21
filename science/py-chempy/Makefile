@@ -34,6 +34,8 @@ USES=		python:3.5+
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}pymol # https://github.com/schrodinger/pymol-open-source/issues/100
+
 OPTIONS_DEFINE=		EXTRAS
 OPTIONS_DEFAULT=	EXTRAS
 
