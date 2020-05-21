@@ -3,8 +3,7 @@
 
 PORTNAME=	pymol
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.0
-PORTREVISION=	1
+DISTVERSION=	2.4.0
 CATEGORIES=	science biology python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -16,26 +15,24 @@ LICENSE_NAME=	Open-Source PyMOL Copyright
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-DEPRECATED=	Uses deprecated version of python
-EXPIRATION_DATE=	2020-08-15
-
 BUILD_DEPENDS=	${PYNUMPY} \
 		${LOCALBASE}/include/glm/glm.hpp:math/glm \
 		${LOCALBASE}/include/mmtf.hpp:science/mmtf-cpp
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libpng.so:graphics/png \
-		libmsgpackc.so:devel/msgpack
+		libmsgpackc.so:devel/msgpack \
+		libnetcdf.so:science/netcdf
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack>0:devel/py-msgpack@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Pmw>0:x11-toolkits/py-Pmw@${PY_FLAVOR} \
 		${PYNUMPY}
 
-USES=		compiler:c++11-lang gl gnome python:2.7 shebangfix tar:bz2
+USES=		compiler:c++11-lang gl gnome python shebangfix tar:bz2
 USE_GITHUB=	yes
 GH_ACCOUNT=	schrodinger
 GH_PROJECT=	${PORTNAME}-open-source
 USE_GL=		gl glew glu glut
 USE_GNOME=	libxml2
-USE_PYTHON=	distutils concurrent # autoplist is broken: https://sourceforge.net/p/pymol/bugs/189
+USE_PYTHON=	distutils concurrent # autoplist is broken: https://github.com/schrodinger/pymol-open-source/issues/99
 SHEBANG_FILES=	test/show test/run test/cyg
 
 OPTIONS_SINGLE=	GUI
