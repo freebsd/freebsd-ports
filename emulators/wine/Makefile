@@ -3,6 +3,7 @@
 
 PORTNAME=	wine
 DISTVERSION=	5.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
@@ -21,7 +22,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex
 LIB_DEPENDS=	libFAudio.so:audio/faudio \
 		libxml2.so:textproc/libxml2
 
-USES=		bison desktop-file-utils gmake localbase shebangfix tar:xz
+USES=		bison desktop-file-utils gmake localbase pkgconfig shebangfix tar:xz
 
 CONFLICTS_INSTALL=	wine-staging-[0-9]* wine-devel-[0-9]* i386-wine-[0-9]* \
 			i386-wine-staging-[0-9]* i386-wine-devel-[0-9]*
@@ -105,7 +106,6 @@ V4L_BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 V4L_LIB_DEPENDS=	libv4l2.so:multimedia/libv4l
 
 VKD3D_CONFIGURE_WITH=	vkd3d
-VKD3D_USES=		pkgconfig
 VKD3D_LIB_DEPENDS=	libvkd3d.so:graphics/vkd3d
 
 VULKAN_CONFIGURE_WITH=	vulkan
