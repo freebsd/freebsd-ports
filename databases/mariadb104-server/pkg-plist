@@ -53,6 +53,7 @@ bin/resolveip
 %%WSREP%%bin/wsrep_sst_mysqldump
 %%WSREP%%bin/wsrep_sst_rsync
 %%WSREP%%bin/wsrep_sst_rsync_wan
+@sample etc/mysql/user_map.conf.sample
 @comment data/test/db.opt
 include/mysql/server/big_endian.h
 include/mysql/server/byte_order_generic.h
@@ -175,6 +176,7 @@ lib/mysql/plugin/ha_test_sql_discovery.so
 lib/mysql/plugin/handlersocket.so
 lib/mysql/plugin/locales.so
 lib/mysql/plugin/metadata_lock_info.so
+lib/mysql/plugin/pam_user_map.so
 lib/mysql/plugin/qa_auth_client.so
 lib/mysql/plugin/qa_auth_interface.so
 lib/mysql/plugin/qa_auth_server.so
@@ -318,8 +320,6 @@ man/man8/mysqld.8.gz
 @comment share/mysql/mroonga/COPYING
 %%MROONGA%%share/groonga-normalizer-mysql/README.md
 %%MROONGA%%share/groonga/README.md
-share/pam_user_map.so
-share/user_map.conf
 @comment bin/mariadb
 @comment bin/mariadb-access
 @comment bin/mariadb-admin
