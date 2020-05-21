@@ -470,6 +470,7 @@
     SUBDIR += highlnk
     SUBDIR += hilite
     SUBDIR += host-setup
+    SUBDIR += hostctl
     SUBDIR += hourglass
     SUBDIR += hpacucli
     SUBDIR += hploscripts
