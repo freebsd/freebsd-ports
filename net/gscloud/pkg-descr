@@ -1,0 +1,4 @@
+The official command-line interface for the gridscale API. Currently it has
+support to control Kubernetes (k8s) services.
+
+WWW: https://github.com/gridscale/gscloud

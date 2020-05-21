@@ -214,6 +214,7 @@
     SUBDIR += grpcui
     SUBDIR += grpcurl
     SUBDIR += grsync
+    SUBDIR += gscloud
     SUBDIR += gsk
     SUBDIR += gspoof
     SUBDIR += gssdp
