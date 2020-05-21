@@ -3,6 +3,7 @@
 
 PORTNAME=	scikit-fuzzy
 DISTVERSION=	0.4.2
+PORTREVISION=	1
 CATEGORIES=	science python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,15 +14,12 @@ COMMENT=	Fuzzy logic toolkit for SciPy
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-DEPRECATED=	Uses deprecated version of python
-EXPIRATION_DATE=	2020-08-15
-
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}networkx>=1.9.0:math/py-networkx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=0.9.0:science/py-scipy@${PY_FLAVOR}
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-USES=		python:2.7
+USES=		python
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
