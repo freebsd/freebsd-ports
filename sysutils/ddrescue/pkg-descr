@@ -17,4 +17,4 @@ areas at the same places on different input files is very low. Using
 the logfile, only the needed blocks are read from the second and
 successive copies.
 
-WWW: http://www.gnu.org/software/ddrescue/ddrescue.html
+WWW: https://www.gnu.org/software/ddrescue/ddrescue.html
