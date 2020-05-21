@@ -1,0 +1,8 @@
+This is the Microsoft Azure Log Analytics Client Library.
+
+Log Analytics is the primary tool in the Azure portal for writing log queries
+and interactively analyzing their results. Even if a log query is used
+elsewhere in Azure Monitor, you'll typically write and test the query first
+using Log Analytics.
+
+WWW: https://pypi.org/project/azure-loganalytics/

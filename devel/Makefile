@@ -4097,6 +4097,7 @@
     SUBDIR += py-azure-functions-devops-build
     SUBDIR += py-azure-graphrbac
     SUBDIR += py-azure-keyvault
+    SUBDIR += py-azure-loganalytics
     SUBDIR += py-azure-mgmt-advisor
     SUBDIR += py-azure-mgmt-apimanagement
     SUBDIR += py-azure-mgmt-appconfiguration
