@@ -4,7 +4,7 @@
 PORTNAME=	jucipp
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 
 MAINTAINER=	info@babaei.net
@@ -23,9 +23,9 @@ RUN_DEPENDS=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT} \
 USES=		cmake compiler:c++14-lang desktop-file-utils gnome pkgconfig
 USE_GITLAB=	yes
 GL_ACCOUNT=	cppit
-GL_COMMIT=	22b7c68c9f740f5db1c93c699068568fc87b3a07
-GL_TUPLE=	cppit:libclangmm:a0316826f7f0c91949c6e11376fd4e92e39a008c:libclangmm/lib/libclangmm \
-		eidheim:tiny-process-library:a6773276efdbc322f1abb0159301f5502647eb52:tinyprocesslibrary/lib/tiny-process-library
+GL_COMMIT=	485aa718ecbb99473ccc745d4a59c8f2871fef19
+GL_TUPLE=	cppit:libclangmm:043d96d0bfbfe4bbb216a0954992d744a35c60ab:libclangmm/lib/libclangmm \
+		eidheim:tiny-process-library:953b19c4c0692b18fb729ffd30f1cc3412797cda:tinyprocesslibrary/lib/tiny-process-library
 USE_GNOME=	gdkpixbuf2 gtkmm30 gtksourceviewmm3
 INSTALLS_ICONS=	yes
 
