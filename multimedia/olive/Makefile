@@ -19,7 +19,9 @@ RUN_DEPENDS=	frei0r>0:graphics/frei0r
 USES=		dos2unix qmake compiler:c++11-lang desktop-file-utils gl pkgconfig qt:5 shared-mime-info
 USE_GITHUB=	yes
 GH_ACCOUNT=	olive-editor
-DOS2UNIX_FILES=	olive.pro
+DOS2UNIX_FILES=	olive.pro \
+		ui/graphview.cpp \
+		ui/timelineheader.cpp
 USE_QT=		core gui multimedia network opengl svg widgets buildtools_build linguisttools_build
 USE_GL=		gl
 
