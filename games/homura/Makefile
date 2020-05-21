@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	homura
-PORTVERSION=	3.7
+PORTVERSION=	4.0
 CATEGORIES=	games
 
 MAINTAINER=	Alexander88207@protonmail.com
@@ -37,9 +37,9 @@ PLIST_FILES=	bin/Homura \
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
-RUN_DEPENDS+=	wine:emulators/wine-devel
+RUN_DEPENDS+=	wine:emulators/wine
 .else
-RUN_DEPENDS+=	wine:emulators/i386-wine-devel
+RUN_DEPENDS+=	wine:emulators/i386-wine
 .endif
 
 do-install:
