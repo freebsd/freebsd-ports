@@ -13,9 +13,6 @@ EXTRACT_SUFX=	.ZIP
 MAINTAINER=	ak@FreeBSD.org
 COMMENT=	Copies files from VMS Files-11 (ODS2) file systems
 
-BROKEN_FreeBSD_12_powerpc64=	fails to build: ods-2-reader.new.c:60:1: error: unterminated #ifdef
-BROKEN_FreeBSD_13_powerpc64=	fails to build: ods-2-reader.new.c:3:687: error: expected identifier or '('
-
 USES=		zip
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/ods2reader

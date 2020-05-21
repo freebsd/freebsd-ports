@@ -17,13 +17,16 @@ fi
 
 while true; do
 	off=$((${off} + ${strlen}))
-	strlen=$(hexdump -s ${off} -n 2 -e '"%u"' ${file})
+	# read in 1-byte units
+	set -- $(od -An -tu1 -j${off} -N2 ${file})
 	# EoF
-	[ -z ${strlen} ] && break
+	[ -z "${1}" -o -z "${2}" ] && break
+	# assume little-endian, it's OpenVMS format
+	strlen=$(($2 * 256 + $1))
 	# print newline for zero-size records, as info-zip does
 	[ ${strlen} -eq 0 ] && echo
 	off=$((${off} + 2))
-	hexdump -s ${off} -n ${strlen} -e '1000/1 "%c""\n"' ${file}
+	hexdump -s ${off} -n ${strlen} -e '"'%.${strlen}s'"''"\n"' ${file}
 	# align 2
 	[ $((${strlen} % 2)) -ne 0 ] && off=$((${off} + 1))
 done
