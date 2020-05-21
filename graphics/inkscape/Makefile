@@ -3,6 +3,7 @@
 
 PORTNAME=	inkscape
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	https://media.inkscape.org/dl/resources/file/
 
@@ -58,7 +59,7 @@ INSTALLS_ICONS=	yes
 SHEBANG_FILES=	share/extensions/*.py share/extensions/genpofiles.sh \
 		share/templates/*.py man/fix-roff-punct
 
-OPTIONS_DEFINE=		OPENMP POPPLER VISIO CDR DBUS WPG GVFS
+OPTIONS_DEFINE=		OPENMP POPPLER VISIO CDR DBUS WPG GVFS NLS
 OPTIONS_DEFAULT=	POPPLER VISIO CDR WPG GM
 OPTIONS_DEFAULT_amd64=	OPENMP
 OPTIONS_SINGLE=		IMAGICK
@@ -100,10 +101,8 @@ IMAGICK6_CMAKE_BOOL=	WITH_IMAGE_MAGICK
 GM_DESC=		Use GraphicsMagick
 GM_LIB_DEPENDS=		libGraphicsMagick.so:graphics/GraphicsMagick
 
-# temporary until the build works for the !NLS case
-USES+=			gettext
-#NLS_CMAKE_BOOL=		WITH_NLS
-#NLS_USES=		gettext
+NLS_CMAKE_BOOL=		WITH_NLS
+NLS_USES=		gettext
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|COMMAND python3|COMMAND ${PYTHON_VERSION}|g' \
