@@ -1,6 +1,14 @@
---- CMakeLists.txt.orig	2016-04-20 05:20:38 UTC
+--- CMakeLists.txt.orig	2015-09-11 15:30:41 UTC
 +++ CMakeLists.txt
-@@ -135,11 +135,7 @@ message(STATUS "Default ZMap configurati
+@@ -72,6 +72,7 @@ if(WITH_JSON)
+     endif()
+ 
+     add_definitions("-DJSON")
++    string(REPLACE ";" " "  JSON_CFLAGS "${JSON_CFLAGS}")
+     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${JSON_CFLAGS}")
+ endif()
+ 
+@@ -135,11 +136,7 @@ message(STATUS "Default ZMap configuration file locati
  foreach(EACH_CONF ${CONF_FILES})
      get_filename_component(CONF_BASENAME ${EACH_CONF} NAME)
      message(STATUS "Checking if ${CONF_BASENAME} exists there...")
