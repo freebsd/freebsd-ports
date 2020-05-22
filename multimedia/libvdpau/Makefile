@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libvdpau
-PORTVERSION=	1.3
-PORTREVISION=	1
+PORTVERSION=	1.4
 CATEGORIES=	multimedia
 
 MAINTAINER=	madpilot@FreeBSD.org
@@ -17,7 +16,7 @@ USE_XORG=	x11 xext xorgproto
 USE_LDCONFIG=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	vdpau
-GL_COMMIT=	f57a9904c43ef5d726320c77baa91d0c38361ed4
+GL_COMMIT=	c3d1a9dbafdfe6144ff474d0d523dc01b068750f
 MESON_ARGS=	-Ddocumentation=false
 
 post-patch:	.SILENT
