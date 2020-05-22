@@ -9,10 +9,6 @@ MASTER_SITES=	http://oav.net/projects/syslogger/
 MAINTAINER=	kiwi@oav.net
 COMMENT=	Logger(1) like tool that sends file or pipe througth syslog
 
-BROKEN=		unfetchable
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
-
 PLIST_FILES=		bin/syslogger
 
 do-install:
