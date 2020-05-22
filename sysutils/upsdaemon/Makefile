@@ -4,13 +4,10 @@
 PORTNAME=	upsdaemon
 PORTVERSION=	1.0
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.ederbs.org/pub/ \
-		ftp://ederbs.org/pub/
+MASTER_SITES=	https://BSDforge.com/projects/sysutils/upsdaemon/
 
-MAINTAINER=	freebsduser@paradisegreen.co.uk
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Simple APC UPS Daemon
-
-BROKEN=		unfetchable
 
 LICENSE=	BSD2CLAUSE
 
