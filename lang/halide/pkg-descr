@@ -1,0 +1,11 @@
+Halide is a new programming language designed to make it easier to write
+high-performance image processing code on modern machines. Its current front
+end is embedded in C++. Compiler targets include x86/SSE, ARM v7/NEON, CUDA,
+and OpenCL.
+
+Rather than being a standalone programming language, Halide is embedded in C++.
+This means you write C++ code that builds an in-memory representation of a
+Halide pipeline using Halide's C++ API. You can then compile this representation
+to an object file, or JIT-compile it and run it in the same process.
+
+WWW: https://halide-lang.org/
