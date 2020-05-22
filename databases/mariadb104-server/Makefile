@@ -3,7 +3,7 @@
 
 PORTNAME?=	mariadb
 PORTVERSION=	10.4.13
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://mirrors.supportex.net/${SITESDIR}/ \
 		http://mirror2.hs-esslingen.de/pub/Mirrors/${SITESDIR}/ \
@@ -150,6 +150,7 @@ MSGPACK_LIB_DEPENDS=	libmsgpackc.so:devel/msgpack
 OQGRAPH_LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 			libJudy.so:devel/judy
 ROCKSDB_USES=		python
+ROCKSDB_CMAKE_ON=	-DPYTHON_SHEBANG=${PYTHON_CMD}
 SNAPPY_CMAKE_ON=	-DWITH_INNODB_SNAPPY=ON  -DWITH_ROCKSDB_snappy=ON
 SNAPPY_CMAKE_OFF=	-DWITH_INNODB_SNAPPY=OFF -DWITH_ROCKSDB_snappy=OFF
 SNAPPY_LIB_DEPENDS=	libsnappy.so:archivers/snappy
@@ -158,6 +159,10 @@ TOKUDB_PORTDOCS=	README.md
 TOKUDB_VARS=		LICENSE+=PerconaFT LICENSE_COMB=multi
 WSREP_CMAKE_BOOL=	WITH_WSREP
 WSREP_LIB_DEPENDS=	libgalera.so:databases/galera26
+WSREP_RUN_DEPENDS=	bash:shells/bash \
+			rsync:net/rsync \
+			#stunnel:security/stunnel
+WSREP_SHEBANG_FILES=	bin/wsrep_sst_rsync
 ZMQ_LIB_DEPENDS=	libzmq.so:net/libzmq4
 ZSTD_CMAKE_ON=		-DWITH_ROCKSDB_zstd=ON
 ZSTD_CMAKE_OFF=		-DWITH_ROCKSDB_zstd=OFF
@@ -192,9 +197,7 @@ CMAKE_OFF+=	WITH_TOKUDB
 .endif
 
 post-patch:
-	${REINPLACE_CMD} 's|/usr/bin/env python|${PYTHON_CMD}|' ${WRKSRC}/CMakeLists.txt
-	${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/mysys/my_default.c
-	${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/scripts/mysql_config.sh \
+	${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/storage/tokudb/PerconaFT/cmake_modules/TokuThirdParty.cmake
 	${MV} ${WRKSRC}/storage/mroonga/version ${WRKSRC}/storage/mroonga/version_txt
 .if ${OPSYS} == DragonFly
@@ -207,20 +210,13 @@ post-configure:
 		-e 's|(#define LIBS .*)"$$|\1 -L${PREFIX}/lib"|' \
 		${WRKSRC}/libmariadb/mariadb_config/mariadb_config.c
 
-# Fix build failure in mbstream, see https://jira.mariadb.org/browse/MDEV-14072
-post-configure-INNOBASE-on:
-	${REINPLACE_CMD} -e 's| ${PREFIX}/lib/liblz4.so\(.* ${PREFIX}/lib/liblz4.so.*\)|\1|' \
-		-e 's| ${PREFIX}/lib/liblzo2.so\(.* ${PREFIX}/lib/liblzo2.so.*\)|\1|' \
-		-e 's| ${PREFIX}/lib/libsnappy.so\(.* ${PREFIX}/lib/libsnappy.so\)|\1|' \
-		-e 's| -llzma\(.* -llzma\)|\1|;s| -lbz2\(.* -lbz2\)|\1|;' \
-		${WRKSRC}/extra/mariabackup/CMakeFiles/mbstream.dir/link.txt
-
 .if ${PKGNAMESUFFIX:M*-client}
 post-install:
 	${RM} -r ${STAGEDIR}${DATADIR}
 	${RM} -r ${STAGEDIR}${PREFIX}/include/mysql/server
 	${MV} ${STAGEDIR}${PREFIX}/lib/mysql/pkgconfig/mariadb.pc \
 		${STAGEDIR}${PREFIX}/libdata/pkgconfig/mariadb.pc
+	${RMDIR} ${STAGEDIR}${PREFIX}/lib/mysql/pkgconfig
 
 post-install-GSSAPI_NONE-off:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/mysql/plugin/auth_gssapi_client.so
@@ -230,6 +226,8 @@ post-install:
 	${RM} -r ${STAGEDIR}${PREFIX}/share/mysql/policy
 	${RM} -r ${STAGEDIR}${PREFIX}/include/mysql/server/private
 	${RM} -r ${STAGEDIR}${PREFIX}/lib/mysql/pkgconfig
+	${MV} ${STAGEDIR}${PREFIX}/etc/mysql/user_map.conf \
+		${STAGEDIR}${PREFIX}/etc/mysql/user_map.conf.sample
 .endif # ${PKGNAMESUFFIX:M*-client}
 
 .include <bsd.port.post.mk>
