@@ -48,6 +48,7 @@ share/help/C/shotwell/other-files.page
 share/help/C/shotwell/other-missing.page
 share/help/C/shotwell/other-multiple.page
 share/help/C/shotwell/other-plugins.page
+share/help/C/shotwell/privacy-policy.page
 share/help/C/shotwell/raw.page
 share/help/C/shotwell/running.page
 share/help/C/shotwell/share-background.page
@@ -90,6 +91,7 @@ share/help/cs/shotwell/other-files.page
 share/help/cs/shotwell/other-missing.page
 share/help/cs/shotwell/other-multiple.page
 share/help/cs/shotwell/other-plugins.page
+share/help/cs/shotwell/privacy-policy.page
 share/help/cs/shotwell/raw.page
 share/help/cs/shotwell/running.page
 share/help/cs/shotwell/share-background.page
@@ -132,6 +134,7 @@ share/help/de/shotwell/other-files.page
 share/help/de/shotwell/other-missing.page
 share/help/de/shotwell/other-multiple.page
 share/help/de/shotwell/other-plugins.page
+share/help/de/shotwell/privacy-policy.page
 share/help/de/shotwell/raw.page
 share/help/de/shotwell/running.page
 share/help/de/shotwell/share-background.page
@@ -174,6 +177,7 @@ share/help/el/shotwell/other-files.page
 share/help/el/shotwell/other-missing.page
 share/help/el/shotwell/other-multiple.page
 share/help/el/shotwell/other-plugins.page
+share/help/el/shotwell/privacy-policy.page
 share/help/el/shotwell/raw.page
 share/help/el/shotwell/running.page
 share/help/el/shotwell/share-background.page
@@ -216,6 +220,7 @@ share/help/es/shotwell/other-files.page
 share/help/es/shotwell/other-missing.page
 share/help/es/shotwell/other-multiple.page
 share/help/es/shotwell/other-plugins.page
+share/help/es/shotwell/privacy-policy.page
 share/help/es/shotwell/raw.page
 share/help/es/shotwell/running.page
 share/help/es/shotwell/share-background.page
@@ -258,6 +263,7 @@ share/help/fr/shotwell/other-files.page
 share/help/fr/shotwell/other-missing.page
 share/help/fr/shotwell/other-multiple.page
 share/help/fr/shotwell/other-plugins.page
+share/help/fr/shotwell/privacy-policy.page
 share/help/fr/shotwell/raw.page
 share/help/fr/shotwell/running.page
 share/help/fr/shotwell/share-background.page
@@ -300,6 +306,7 @@ share/help/hu/shotwell/other-files.page
 share/help/hu/shotwell/other-missing.page
 share/help/hu/shotwell/other-multiple.page
 share/help/hu/shotwell/other-plugins.page
+share/help/hu/shotwell/privacy-policy.page
 share/help/hu/shotwell/raw.page
 share/help/hu/shotwell/running.page
 share/help/hu/shotwell/share-background.page
@@ -342,6 +349,7 @@ share/help/lv/shotwell/other-files.page
 share/help/lv/shotwell/other-missing.page
 share/help/lv/shotwell/other-multiple.page
 share/help/lv/shotwell/other-plugins.page
+share/help/lv/shotwell/privacy-policy.page
 share/help/lv/shotwell/raw.page
 share/help/lv/shotwell/running.page
 share/help/lv/shotwell/share-background.page
@@ -384,6 +392,7 @@ share/help/pt_BR/shotwell/other-files.page
 share/help/pt_BR/shotwell/other-missing.page
 share/help/pt_BR/shotwell/other-multiple.page
 share/help/pt_BR/shotwell/other-plugins.page
+share/help/pt_BR/shotwell/privacy-policy.page
 share/help/pt_BR/shotwell/raw.page
 share/help/pt_BR/shotwell/running.page
 share/help/pt_BR/shotwell/share-background.page
@@ -426,6 +435,7 @@ share/help/sv/shotwell/other-files.page
 share/help/sv/shotwell/other-missing.page
 share/help/sv/shotwell/other-multiple.page
 share/help/sv/shotwell/other-plugins.page
+share/help/sv/shotwell/privacy-policy.page
 share/help/sv/shotwell/raw.page
 share/help/sv/shotwell/running.page
 share/help/sv/shotwell/share-background.page
