@@ -11,6 +11,8 @@ COMMENT=	Dense and sparse linear algebra, conic optimization, lattice reduction
 
 LICENSE=	BSD2CLAUSE
 
+BROKEN_i386=	clang crashes: https://bugs.llvm.org/show_bug.cgi?id=46026
+
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmetis.so:math/metis \
 		libmpc.so:math/mpc \
