@@ -679,6 +679,7 @@
 %%WWWDIR%%/go/modules/business/newsletters/language/it.php
 %%WWWDIR%%/go/modules/business/newsletters/language/nb.php
 %%WWWDIR%%/go/modules/business/newsletters/language/nl.php
+%%WWWDIR%%/go/modules/business/newsletters/language/pl.php
 %%WWWDIR%%/go/modules/business/newsletters/language/pt_br.php
 %%WWWDIR%%/go/modules/business/newsletters/model/AddressList.php
 %%WWWDIR%%/go/modules/business/newsletters/model/AddressListEntity.php
@@ -716,6 +717,7 @@
 %%WWWDIR%%/go/modules/business/wopi/language/hr.php
 %%WWWDIR%%/go/modules/business/wopi/language/nb.php
 %%WWWDIR%%/go/modules/business/wopi/language/nl.php
+%%WWWDIR%%/go/modules/business/wopi/language/pl.php
 %%WWWDIR%%/go/modules/business/wopi/language/pt_br.php
 %%WWWDIR%%/go/modules/business/wopi/model/Lock.php
 %%WWWDIR%%/go/modules/business/wopi/model/Service.php
@@ -755,6 +757,7 @@
 %%WWWDIR%%/go/modules/community/addressbook/language/it.php
 %%WWWDIR%%/go/modules/community/addressbook/language/nb.php
 %%WWWDIR%%/go/modules/community/addressbook/language/nl.php
+%%WWWDIR%%/go/modules/community/addressbook/language/pl.php
 %%WWWDIR%%/go/modules/community/addressbook/language/pt_br.php
 %%WWWDIR%%/go/modules/community/addressbook/model/Address.php
 %%WWWDIR%%/go/modules/community/addressbook/model/AddressBook.php
@@ -825,6 +828,7 @@
 %%WWWDIR%%/go/modules/community/apikeys/language/id.php
 %%WWWDIR%%/go/modules/community/apikeys/language/it.php
 %%WWWDIR%%/go/modules/community/apikeys/language/nl.php
+%%WWWDIR%%/go/modules/community/apikeys/language/pl.php
 %%WWWDIR%%/go/modules/community/apikeys/language/pt_br.php
 %%WWWDIR%%/go/modules/community/apikeys/model/Key.php
 %%WWWDIR%%/go/modules/community/apikeys/views/extjs3/KeyDialog.js
@@ -896,6 +900,7 @@
 %%WWWDIR%%/go/modules/community/comments/language/it.php
 %%WWWDIR%%/go/modules/community/comments/language/nb.php
 %%WWWDIR%%/go/modules/community/comments/language/nl.php
+%%WWWDIR%%/go/modules/community/comments/language/pl.php
 %%WWWDIR%%/go/modules/community/comments/language/pt_br.php
 %%WWWDIR%%/go/modules/community/comments/model/Comment.php
 %%WWWDIR%%/go/modules/community/comments/model/Label.php
@@ -926,6 +931,7 @@
 %%WWWDIR%%/go/modules/community/dokuwiki/language/hr.php
 %%WWWDIR%%/go/modules/community/dokuwiki/language/nb.php
 %%WWWDIR%%/go/modules/community/dokuwiki/language/nl.php
+%%WWWDIR%%/go/modules/community/dokuwiki/language/pl.php
 %%WWWDIR%%/go/modules/community/dokuwiki/language/pt_br.php
 %%WWWDIR%%/go/modules/community/dokuwiki/language/ru.php
 %%WWWDIR%%/go/modules/community/dokuwiki/language/vi.php
@@ -1053,6 +1059,7 @@
 %%WWWDIR%%/go/modules/community/googleauthenticator/language/id.php
 %%WWWDIR%%/go/modules/community/googleauthenticator/language/it.php
 %%WWWDIR%%/go/modules/community/googleauthenticator/language/nl.php
+%%WWWDIR%%/go/modules/community/googleauthenticator/language/pl.php
 %%WWWDIR%%/go/modules/community/googleauthenticator/language/pt_br.php
 %%WWWDIR%%/go/modules/community/googleauthenticator/model/Googleauthenticator.php
 %%WWWDIR%%/go/modules/community/googleauthenticator/views/extjs3/EnableAuthenticatorDialog.js
@@ -1076,6 +1083,7 @@
 %%WWWDIR%%/go/modules/community/imapauthenticator/language/id.php
 %%WWWDIR%%/go/modules/community/imapauthenticator/language/it.php
 %%WWWDIR%%/go/modules/community/imapauthenticator/language/nl.php
+%%WWWDIR%%/go/modules/community/imapauthenticator/language/pl.php
 %%WWWDIR%%/go/modules/community/imapauthenticator/language/pt_br.php
 %%WWWDIR%%/go/modules/community/imapauthenticator/model/Authenticator.php
 %%WWWDIR%%/go/modules/community/imapauthenticator/model/Domain.php
@@ -1105,6 +1113,7 @@
 %%WWWDIR%%/go/modules/community/ldapauthenticator/language/id.php
 %%WWWDIR%%/go/modules/community/ldapauthenticator/language/it.php
 %%WWWDIR%%/go/modules/community/ldapauthenticator/language/nl.php
+%%WWWDIR%%/go/modules/community/ldapauthenticator/language/pl.php
 %%WWWDIR%%/go/modules/community/ldapauthenticator/language/pt_br.php
 %%WWWDIR%%/go/modules/community/ldapauthenticator/model/Authenticator.php
 %%WWWDIR%%/go/modules/community/ldapauthenticator/model/Domain.php
@@ -1135,6 +1144,7 @@
 %%WWWDIR%%/go/modules/community/multi_instance/language/id.php
 %%WWWDIR%%/go/modules/community/multi_instance/language/it.php
 %%WWWDIR%%/go/modules/community/multi_instance/language/nl.php
+%%WWWDIR%%/go/modules/community/multi_instance/language/pl.php
 %%WWWDIR%%/go/modules/community/multi_instance/language/pt_br.php
 %%WWWDIR%%/go/modules/community/multi_instance/model/Instance.php
 %%WWWDIR%%/go/modules/community/multi_instance/oninstall.php
@@ -1199,6 +1209,8 @@
 %%WWWDIR%%/go/modules/community/notesencrypt/Module.php
 %%WWWDIR%%/go/modules/community/notesencrypt/language/de.php
 %%WWWDIR%%/go/modules/community/notesencrypt/language/en.php
+%%WWWDIR%%/go/modules/community/notesencrypt/language/fr.php
+%%WWWDIR%%/go/modules/community/notesencrypt/language/pl.php
 %%WWWDIR%%/go/modules/community/notesencrypt/views/extjs3/Functions.js
 %%WWWDIR%%/go/modules/community/notesencrypt/views/extjs3/Module.js
 %%WWWDIR%%/go/modules/community/notesencrypt/views/extjs3/NoteDetailOverride.js
@@ -1323,6 +1335,7 @@
 %%WWWDIR%%/modules/addressbook/language/fr.php
 %%WWWDIR%%/modules/addressbook/language/hr.php
 %%WWWDIR%%/modules/addressbook/language/nb.php
+%%WWWDIR%%/modules/addressbook/language/pl.php
 %%WWWDIR%%/modules/addressbook/language/pt_br.php
 %%WWWDIR%%/modules/addressbook/views/Extjs3/ContactDetail.js
 %%WWWDIR%%/modules/assistant/AssistantModule.php
@@ -1338,6 +1351,7 @@
 %%WWWDIR%%/modules/assistant/language/id.php
 %%WWWDIR%%/modules/assistant/language/it.php
 %%WWWDIR%%/modules/assistant/language/nl.php
+%%WWWDIR%%/modules/assistant/language/pl.php
 %%WWWDIR%%/modules/assistant/language/pt_br.php
 %%WWWDIR%%/modules/assistant/scripts.txt
 %%WWWDIR%%/modules/assistant/themes/Default/images/assistant.png
@@ -1831,6 +1845,7 @@
 %%WWWDIR%%/modules/cron/language/id.php
 %%WWWDIR%%/modules/cron/language/nb.php
 %%WWWDIR%%/modules/cron/language/nl.php
+%%WWWDIR%%/modules/cron/language/pl.php
 %%WWWDIR%%/modules/cron/language/pt_br.php
 %%WWWDIR%%/modules/cron/themes/Default/images/add-cron.png
 %%WWWDIR%%/modules/cron/themes/Default/images/cron.png
@@ -1948,6 +1963,7 @@
 %%WWWDIR%%/modules/demodata/language/es.php
 %%WWWDIR%%/modules/demodata/language/fr.php
 %%WWWDIR%%/modules/demodata/language/id.php
+%%WWWDIR%%/modules/demodata/language/pl.php
 %%WWWDIR%%/modules/demodata/language/pt_br.php
 %%WWWDIR%%/modules/demodata/scripts.txt
 %%WWWDIR%%/modules/documenttemplates/DocumenttemplatesModule.php
@@ -1974,6 +1990,7 @@
 %%WWWDIR%%/modules/documenttemplates/language/ko.php
 %%WWWDIR%%/modules/documenttemplates/language/nb.php
 %%WWWDIR%%/modules/documenttemplates/language/nl.php
+%%WWWDIR%%/modules/documenttemplates/language/pl.php
 %%WWWDIR%%/modules/documenttemplates/language/pt_br.php
 %%WWWDIR%%/modules/documenttemplates/language/sv.php
 %%WWWDIR%%/modules/documenttemplates/language/th.php
@@ -2133,6 +2150,7 @@
 %%WWWDIR%%/modules/exactonline/language/id.php
 %%WWWDIR%%/modules/exactonline/language/it.php
 %%WWWDIR%%/modules/exactonline/language/nl.php
+%%WWWDIR%%/modules/exactonline/language/pl.php
 %%WWWDIR%%/modules/exactonline/language/pt_br.php
 %%WWWDIR%%/modules/exactonline/model/AddressbookAddressbookExtension.php
 %%WWWDIR%%/modules/exactonline/model/AddressbookCompanyExtension.php
@@ -2621,6 +2639,7 @@
 %%WWWDIR%%/modules/filesearch/language/it.php
 %%WWWDIR%%/modules/filesearch/language/nb.php
 %%WWWDIR%%/modules/filesearch/language/nl.php
+%%WWWDIR%%/modules/filesearch/language/pl.php
 %%WWWDIR%%/modules/filesearch/language/pt_br.php
 %%WWWDIR%%/modules/filesearch/model/DocBundle.php
 %%WWWDIR%%/modules/filesearch/model/DocBundleFile.php
@@ -2810,6 +2829,7 @@
 %%WWWDIR%%/modules/leavedays/language/it.php
 %%WWWDIR%%/modules/leavedays/language/nb.php
 %%WWWDIR%%/modules/leavedays/language/nl.php
+%%WWWDIR%%/modules/leavedays/language/pl.php
 %%WWWDIR%%/modules/leavedays/language/pt_br.php
 %%WWWDIR%%/modules/leavedays/model/Credit.php
 %%WWWDIR%%/modules/leavedays/model/CreditType.php
@@ -2957,6 +2977,7 @@
 %%WWWDIR%%/modules/mediawiki/language/ko.php
 %%WWWDIR%%/modules/mediawiki/language/nb.php
 %%WWWDIR%%/modules/mediawiki/language/nl.php
+%%WWWDIR%%/modules/mediawiki/language/pl.php
 %%WWWDIR%%/modules/mediawiki/language/pt_br.php
 %%WWWDIR%%/modules/mediawiki/language/ru.php
 %%WWWDIR%%/modules/mediawiki/language/vi.php
@@ -3088,6 +3109,7 @@
 %%WWWDIR%%/modules/pr2analyzer/language/it.php
 %%WWWDIR%%/modules/pr2analyzer/language/nb.php
 %%WWWDIR%%/modules/pr2analyzer/language/nl.php
+%%WWWDIR%%/modules/pr2analyzer/language/pl.php
 %%WWWDIR%%/modules/pr2analyzer/language/pt_br.php
 %%WWWDIR%%/modules/pr2analyzer/themes/Default/images/pr2analizer.png
 %%WWWDIR%%/modules/pr2analyzer/themes/Default/images/reports.png
@@ -3179,6 +3201,7 @@
 %%WWWDIR%%/modules/projects2/language/de.php
 %%WWWDIR%%/modules/projects2/language/en.php
 %%WWWDIR%%/modules/projects2/language/es.php
+%%WWWDIR%%/modules/projects2/language/fr.php
 %%WWWDIR%%/modules/projects2/language/hr.php
 %%WWWDIR%%/modules/projects2/language/hu.php
 %%WWWDIR%%/modules/projects2/language/id.php
@@ -3296,6 +3319,7 @@
 %%WWWDIR%%/modules/reminders/language/it.php
 %%WWWDIR%%/modules/reminders/language/nb.php
 %%WWWDIR%%/modules/reminders/language/nl.php
+%%WWWDIR%%/modules/reminders/language/pl.php
 %%WWWDIR%%/modules/reminders/language/pt_br.php
 %%WWWDIR%%/modules/reminders/language/ru.php
 %%WWWDIR%%/modules/reminders/language/th.php
@@ -3324,6 +3348,7 @@
 %%WWWDIR%%/modules/savemailas/language/ko.php
 %%WWWDIR%%/modules/savemailas/language/nb.php
 %%WWWDIR%%/modules/savemailas/language/nl.php
+%%WWWDIR%%/modules/savemailas/language/pl.php
 %%WWWDIR%%/modules/savemailas/language/pt_br.php
 %%WWWDIR%%/modules/savemailas/language/sv.php
 %%WWWDIR%%/modules/savemailas/language/th.php
@@ -3343,6 +3368,7 @@
 %%WWWDIR%%/modules/scanbox/language/it.php
 %%WWWDIR%%/modules/scanbox/language/nb.php
 %%WWWDIR%%/modules/scanbox/language/nl.php
+%%WWWDIR%%/modules/scanbox/language/pl.php
 %%WWWDIR%%/modules/scanbox/language/pt_br.php
 %%WWWDIR%%/modules/scanbox/model/ScannableFolder.php
 %%WWWDIR%%/modules/scanbox/views/Extjs3/FileFoundDialog.js
@@ -3403,6 +3429,7 @@
 %%WWWDIR%%/modules/sieve/language/ko.php
 %%WWWDIR%%/modules/sieve/language/nb.php
 %%WWWDIR%%/modules/sieve/language/nl.php
+%%WWWDIR%%/modules/sieve/language/pl.php
 %%WWWDIR%%/modules/sieve/language/pt_br.php
 %%WWWDIR%%/modules/sieve/language/sv.php
 %%WWWDIR%%/modules/sieve/scripts.inc.php
@@ -3447,6 +3474,7 @@
 %%WWWDIR%%/modules/site/language/it.php
 %%WWWDIR%%/modules/site/language/nb.php
 %%WWWDIR%%/modules/site/language/nl.php
+%%WWWDIR%%/modules/site/language/pl.php
 %%WWWDIR%%/modules/site/language/pt_br.php
 %%WWWDIR%%/modules/site/model/Content.php
 %%WWWDIR%%/modules/site/model/FormModel.php
@@ -3602,6 +3630,7 @@
 %%WWWDIR%%/modules/smime/language/ko.php
 %%WWWDIR%%/modules/smime/language/nb.php
 %%WWWDIR%%/modules/smime/language/nl.php
+%%WWWDIR%%/modules/smime/language/pl.php
 %%WWWDIR%%/modules/smime/language/pt_br.php
 %%WWWDIR%%/modules/smime/model/Certificate.php
 %%WWWDIR%%/modules/smime/model/PublicCertificate.php
@@ -3984,6 +4013,7 @@
 %%WWWDIR%%/modules/workflow/language/id.php
 %%WWWDIR%%/modules/workflow/language/nb.php
 %%WWWDIR%%/modules/workflow/language/nl.php
+%%WWWDIR%%/modules/workflow/language/pl.php
 %%WWWDIR%%/modules/workflow/language/pt_br.php
 %%WWWDIR%%/modules/workflow/model/ActionType.php
 %%WWWDIR%%/modules/workflow/model/Approver.php
@@ -4295,6 +4325,7 @@
 %%WWWDIR%%/modules/zpushadmin/language/it.php
 %%WWWDIR%%/modules/zpushadmin/language/nb.php
 %%WWWDIR%%/modules/zpushadmin/language/nl.php
+%%WWWDIR%%/modules/zpushadmin/language/pl.php
 %%WWWDIR%%/modules/zpushadmin/language/sv.php
 %%WWWDIR%%/modules/zpushadmin/language/th.php
 %%WWWDIR%%/modules/zpushadmin/model/Device.php
@@ -7321,6 +7352,7 @@
 %%WWWDIR%%/views/Extjs3/themes/Dark/img/filetype/image.svg
 %%WWWDIR%%/views/Extjs3/themes/Dark/img/filetype/iso.svg
 %%WWWDIR%%/views/Extjs3/themes/Dark/img/filetype/js.svg
+%%WWWDIR%%/views/Extjs3/themes/Dark/img/filetype/kdbx.svg
 %%WWWDIR%%/views/Extjs3/themes/Dark/img/filetype/pdf.svg
 %%WWWDIR%%/views/Extjs3/themes/Dark/img/filetype/pgp.svg
 %%WWWDIR%%/views/Extjs3/themes/Dark/img/filetype/php.svg
@@ -7330,6 +7362,7 @@
 %%WWWDIR%%/views/Extjs3/themes/Dark/img/filetype/svg.svg
 %%WWWDIR%%/views/Extjs3/themes/Dark/img/filetype/txt.svg
 %%WWWDIR%%/views/Extjs3/themes/Dark/img/filetype/unknown.svg
+%%WWWDIR%%/views/Extjs3/themes/Dark/img/filetype/vcf.svg
 %%WWWDIR%%/views/Extjs3/themes/Dark/img/filetype/wav.svg
 %%WWWDIR%%/views/Extjs3/themes/Dark/img/filetype/xls.svg
 %%WWWDIR%%/views/Extjs3/themes/Dark/img/filetype/xml.svg
@@ -7477,6 +7510,7 @@
 %%WWWDIR%%/views/Extjs3/themes/Paper/img/filetype/image.svg
 %%WWWDIR%%/views/Extjs3/themes/Paper/img/filetype/iso.svg
 %%WWWDIR%%/views/Extjs3/themes/Paper/img/filetype/js.svg
+%%WWWDIR%%/views/Extjs3/themes/Paper/img/filetype/kdbx.svg
 %%WWWDIR%%/views/Extjs3/themes/Paper/img/filetype/pdf.svg
 %%WWWDIR%%/views/Extjs3/themes/Paper/img/filetype/pgp.svg
 %%WWWDIR%%/views/Extjs3/themes/Paper/img/filetype/php.svg
@@ -7486,6 +7520,7 @@
 %%WWWDIR%%/views/Extjs3/themes/Paper/img/filetype/svg.svg
 %%WWWDIR%%/views/Extjs3/themes/Paper/img/filetype/txt.svg
 %%WWWDIR%%/views/Extjs3/themes/Paper/img/filetype/unknown.svg
+%%WWWDIR%%/views/Extjs3/themes/Paper/img/filetype/vcf.svg
 %%WWWDIR%%/views/Extjs3/themes/Paper/img/filetype/wav.svg
 %%WWWDIR%%/views/Extjs3/themes/Paper/img/filetype/xls.svg
 %%WWWDIR%%/views/Extjs3/themes/Paper/img/filetype/xml.svg
