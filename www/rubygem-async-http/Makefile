@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	async-http
-PORTVERSION=	0.52.3
+PORTVERSION=	0.52.4
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
