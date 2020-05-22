@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	imapsync
-PORTVERSION=	1.945
+PORTVERSION=	1.977
 DISTVERSIONPREFIX=	imapsync-
 CATEGORIES=	mail perl5
 
@@ -14,9 +14,9 @@ LICENSE_NAME=	NO LIMIT PUBLIC LICENSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-RUN_DEPENDS=	p5-CGI>0:www/p5-CGI \
-		p5-Crypt-OpenSSL-RSA>0:security/p5-Crypt-OpenSSL-RSA \
+RUN_DEPENDS=	p5-Crypt-OpenSSL-RSA>0:security/p5-Crypt-OpenSSL-RSA \
 		p5-Data-Uniqid>0:devel/p5-Data-Uniqid \
+		p5-Encode-IMAPUTF7>0:converters/p5-Encode-IMAPUTF7 \
 		p5-File-Copy-Recursive>0:devel/p5-File-Copy-Recursive \
 		p5-File-Tail>0:devel/p5-File-Tail \
 		p5-IO-Socket-INET6>0:net/p5-IO-Socket-INET6 \
@@ -35,6 +35,8 @@ RUN_DEPENDS=	p5-CGI>0:www/p5-CGI \
 USES=		cpe perl5 tar:tgz shebangfix
 SHEBANG_FILES=	${PORTNAME}
 USE_GITHUB=	yes
+GH_ACCOUNT=	imapsync
+GH_TAGNAME=	1d08afa
 
 CPE_VENDOR=	gilles_lamiral
 NO_BUILD=	yes
