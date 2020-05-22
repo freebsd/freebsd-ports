@@ -39,12 +39,12 @@ lib/cmake/notcurses/notcursesConfig.cmake
 lib/cmake/notcurses/notcursesConfigVersion.cmake
 lib/libnotcurses++.a
 lib/libnotcurses++.so
-lib/libnotcurses++.so.1
-lib/libnotcurses++.so.1.4.1
+lib/libnotcurses++.so.%%ABI_VER%%
+lib/libnotcurses++.so.%%REL_VER%%
 lib/libnotcurses.a
 lib/libnotcurses.so
-lib/libnotcurses.so.1
-lib/libnotcurses.so.1.4.1
+lib/libnotcurses.so.%%ABI_VER%%
+lib/libnotcurses.so.%%REL_VER%%
 libdata/pkgconfig/notcurses++.pc
 libdata/pkgconfig/notcurses.pc
 %%DATADIR%%/PurpleDrank.jpg
