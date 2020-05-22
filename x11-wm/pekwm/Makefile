@@ -2,25 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	pekwm
-PORTVERSION=	0.1.17
-PORTREVISION=	4
+DISTVERSIONPREFIX=	release-
+DISTVERSION=	0.1.17
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	x11-wm
-MASTER_SITES=	https://pekwm.org/projects/3/files/
 
 MAINTAINER=	natbsd@instinctive.eu
 COMMENT=	Light, Unobtrusive, and configurable windowmanager
-
-BROKEN=		unfetchable
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		compiler gmake iconv:wchar_t jpeg localbase pkgconfig \
-		tar:bzip2 xorg
-USE_XORG=	xft xpm x11 sm ice xext
+USES=		autoreconf compiler gmake iconv:wchar_t jpeg \
+		localbase pkgconfig tar:bzip2 xorg
+USE_XORG=	xft xpm x11 sm ice xext xinerama xrandr
+USE_GITHUB=	yes
+GH_ACCOUNT=	pekdon
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shape --enable-xinerama --enable-xrandr \
 		--enable-xft --enable-image-xpm --enable-image-jpeg \

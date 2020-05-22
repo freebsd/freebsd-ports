@@ -1,5 +1,5 @@
---- ./data/scripts/pekwm_screenshot.sh.orig	2013-05-26 14:01:18.000000000 +0200
-+++ ./data/scripts/pekwm_screenshot.sh	2013-06-25 13:38:36.617834517 +0200
+--- data/scripts/pekwm_screenshot.sh.orig	2013-05-24 19:24:23 UTC
++++ data/scripts/pekwm_screenshot.sh
 @@ -1,30 +1,30 @@
 -#!/usr/bin/env bash
 +#!/bin/sh
@@ -37,7 +37,7 @@
  {
      is_in_path "scrot"
      if test $? -eq 0; then
-@@ -45,7 +45,7 @@
+@@ -45,7 +45,7 @@ function detect_command
      fi
  }
  
@@ -46,7 +46,7 @@
  {
      echo "usage: pekwm_screenshot.sh [-c scrot|netpbm|magick] [-d delay] [-o output.png]"
      echo ""
-@@ -61,7 +61,7 @@
+@@ -61,7 +61,7 @@ function usage
      exit 0
  }
  
@@ -55,7 +55,7 @@
  {
      echo "Unable to find any supported commands for taking screenshots"
      echo ""
-@@ -74,7 +74,7 @@
+@@ -74,7 +74,7 @@ function usage_command
      exit 1
  }
  
