@@ -2,6 +2,7 @@
 
 PORTNAME=	softether
 DISTVERSION=	5.01.9674
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	security net-vpn
 PKGNAMESUFFIX=	5
@@ -26,7 +27,10 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	SoftEtherVPN
 GH_PROJECT=	SoftEtherVPN
 
-CMAKE_ARGS+=	 -DCMAKE_BUILD_TYPE=RelWithDebInfo
+CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE=RelWithDebInfo \
+		-DSE_DBDIR="${SE_DBDIR}" \
+		-DSE_LOGDIR="${SE_LOGDIR}" \
+		-DSE_PIDDIR="${SE_PIDDIR}"
 
 OPTIONS_DEFINE=	DOCS UNLOCK
 
@@ -59,15 +63,6 @@ CMAKE_BOOL_ON+=	SKIP_CPU_FEATURES
 .else
 BUILD_DEPENDS+=	${LOCALBASE}/include/cpu_features_macros.h:devel/cpu_features
 .endif
-
-post-patch:
-	# SoftEther scatters logs, config files and PID files in PREFIX/libexec
-	# directory. To write them in the right place, replace it.
-	${REINPLACE_CMD} \
-		-e "s|%%SE_DBDIR%%|${SE_DBDIR}|g" \
-		-e "s|%%SE_LOGDIR%%|${SE_LOGDIR}|g" \
-		-e "s|%%SE_PIDDIR%%|${SE_PIDDIR}|g" \
-		${WRKSRC}/src/Mayaqua/FileIO.c
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${SE_LOGDIR} ${STAGEDIR}${SE_DBDIR} ${STAGEDIR}${SE_PIDDIR}
