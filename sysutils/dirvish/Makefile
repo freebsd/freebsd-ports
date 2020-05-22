@@ -10,8 +10,6 @@ MASTER_SITES=	http://www.dirvish.org/
 MAINTAINER=	tarkhil@over.ru
 COMMENT=	Network backup system based off of rsync
 
-BROKEN=		unfetchable
-
 RUN_DEPENDS=	p5-Time-modules>=0:devel/p5-Time-modules \
 		p5-Time-Period>=0:devel/p5-Time-Period \
 		rsync:net/rsync
@@ -23,7 +21,6 @@ USES=		perl5 tar:tgz
 USE_PERL5=	run
 
 NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
 
 EXECUTABLES=	dirvish   dirvish-expire   dirvish-locate   dirvish-runall
 
