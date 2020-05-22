@@ -4,6 +4,7 @@
 PORTNAME=	mypaint
 DISTVERSIONPREFIX=v
 DISTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 PATCH_SITES=	https://github.com/garynthompson/${PORTNAME}/commit/

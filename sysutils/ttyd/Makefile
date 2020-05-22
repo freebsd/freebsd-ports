@@ -2,6 +2,7 @@
 
 PORTNAME=	ttyd
 DISTVERSION=	1.6.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	ports@FreeBSD.org

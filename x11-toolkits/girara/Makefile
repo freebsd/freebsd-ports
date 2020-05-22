@@ -3,6 +3,7 @@
 
 PORTNAME=	girara
 PORTVERSION=	0.3.4
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits graphics
 MASTER_SITES=	https://pwmt.org/projects/girara/download/ \
 		http://www.madpilot.net/~mad/pwmt.org/

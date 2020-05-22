@@ -3,6 +3,7 @@
 
 PORTNAME=	syslog-ng
 DISTVERSION=	3.26.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/balabit/syslog-ng/releases/download/syslog-ng-${DISTVERSION}/
 .if !defined(MASTERDIR)

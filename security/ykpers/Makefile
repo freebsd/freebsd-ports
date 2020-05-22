@@ -2,6 +2,7 @@
 
 PORTNAME=	ykpers
 PORTVERSION=	1.19.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://developers.yubico.com/yubikey-personalization/Releases/
 

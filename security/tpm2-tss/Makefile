@@ -2,6 +2,7 @@
 
 PORTNAME=	tpm2-tss
 DISTVERSION=	2.4.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/tpm2-software/tpm2-tss/releases/download/${DISTVERSION}/
 

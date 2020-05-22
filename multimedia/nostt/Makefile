@@ -2,6 +2,7 @@
 
 PORTNAME=	nostt
 DISTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	ik@sjmulder.nl
