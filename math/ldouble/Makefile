@@ -12,6 +12,8 @@ DISTFILES=	${LDOUBLE_DISTFILE}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Long double math precision functions
 
+BUILD_DEPENDS=	as:devel/binutils
+
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
 USE_LDCONFIG=	yes
