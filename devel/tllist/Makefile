@@ -12,6 +12,7 @@ COMMENT=	C header file only implementation of a typed linked list
 LICENSE=	MIT
 
 USES=		meson
+USE_CSTD=	c99
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
