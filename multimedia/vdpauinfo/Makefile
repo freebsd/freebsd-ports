@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vdpauinfo
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	multimedia
 
 MAINTAINER=	madpilot@FreeBSD.org
@@ -17,7 +17,7 @@ USES=		autoreconf pkgconfig
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	vdpau
-GL_COMMIT=	0bc58c03e61e038ba3b81dfff36cc35cadfae447
+GL_COMMIT=	3463ab40a89179e6e199575e8bee9c23ee027377
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/vdpauinfo
 
