@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	zabbix44
-PORTVERSION=	4.4.5
+PORTVERSION=	4.4.8
 PORTREVISION?=	0
 CATEGORIES=	net-mgmt
-MASTER_SITES=	SF/zabbix/ZABBIX%20Latest%20Stable/${PORTVERSION}
+MASTER_SITES=	https://cdn.zabbix.com/zabbix/sources/stable/${PORTVERSION:R}/
 PKGNAMESUFFIX?=	-server
 DISTNAME=	zabbix-${PORTVERSION}
 
@@ -25,7 +25,7 @@ ZABBIX_BUILD=	${PKGNAMESUFFIX:S/^-//}
 
 .if ${ZABBIX_BUILD} != "frontend" # frontend only needs the version/distribution settings
 .if ${ZABBIX_BUILD} != "agent"
-CONFIGURE_ARGS+=	--with-libevent=${LOCALBASE}
+CONFIGURE_ARGS+=	--with-libevent=${LOCALBASE} --cache-file=${WRKSRC}/config.cache
 LIB_DEPENDS+=	libevent.so:devel/libevent
 USE_RC_SUBR=	zabbix_${ZABBIX_BUILD}
 .else
@@ -123,7 +123,7 @@ IPV6_CONFIGURE_ENABLE=	ipv6
 NMAP_RUN_DEPENDS=	nmap:security/nmap \
 			sudo:security/sudo
 
-LIBXML2_CONFIGURE_WITH=	libxml2
+LIBXML2_CONFIGURE_WITH=	libxml2=${LOCALBASE}
 LIBXML2_LIB_DEPENDS=	libxml2.so:textproc/libxml2
 
 OPENSSL_CONFIGURE_WITH=	openssl
@@ -178,6 +178,9 @@ post-patch:
 .endif
 	@${FIND} ${WRKSRC} -type f \( -name '*.bak' -or -name '*.orig' \) \
 		-exec ${RM} {} +
+
+pre-configure:
+	@echo "ac_cv_env_PKG_CONFIG_set=${LOCALBASE}/bin/pkgconf" > ${WRKSRC}/config.cache
 
 post-install:
 .if ${ZABBIX_BUILD} == "java"

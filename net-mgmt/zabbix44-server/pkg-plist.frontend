@@ -478,6 +478,7 @@
 %%WWWDIR%%/include/classes/import/converters/CConverter.php
 %%WWWDIR%%/include/classes/import/converters/CDefaultImportConverter.php
 %%WWWDIR%%/include/classes/import/converters/CImportConverterFactory.php
+%%WWWDIR%%/include/classes/import/converters/CTransformImportConverter.php
 %%WWWDIR%%/include/classes/import/importers/CAbstractScreenImporter.php
 %%WWWDIR%%/include/classes/import/importers/CHostImporter.php
 %%WWWDIR%%/include/classes/import/importers/CImporter.php
