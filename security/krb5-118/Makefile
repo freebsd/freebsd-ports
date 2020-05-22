@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		krb5
-PORTVERSION=		1.18.1
+PORTVERSION=		1.18.2
 CATEGORIES=		security
 MASTER_SITES=		http://web.mit.edu/kerberos/dist/${PORTNAME}/${PORTVERSION:C/^[0-9]*\.[0-9]*/&X/:C/X\.[0-9]*$//:C/X//}/
 .if !defined(MASTERDIR)
