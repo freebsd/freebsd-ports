@@ -116,6 +116,7 @@
 %%DRUPAL_BASE%%/misc/grippie.png
 %%DRUPAL_BASE%%/misc/help.png
 %%DRUPAL_BASE%%/misc/jquery-extend-3.4.0.js
+%%DRUPAL_BASE%%/misc/jquery-html-prefilter-3.5.0-backport.js
 %%DRUPAL_BASE%%/misc/jquery.ba-bbq.js
 %%DRUPAL_BASE%%/misc/jquery.cookie.js
 %%DRUPAL_BASE%%/misc/jquery.form.js
