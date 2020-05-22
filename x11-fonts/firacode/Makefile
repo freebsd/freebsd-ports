@@ -2,10 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	firacode
-DISTVERSION=	2
+DISTVERSIONPREFIX=	v
+DISTVERSION=	4
 CATEGORIES=	x11-fonts
-MASTER_SITES=	https://github.com/tonsky/FiraCode/releases/download/${PORTVERSION}/
-DISTNAME=	FiraCode_${PORTVERSION}
+MASTER_SITES=	https://github.com/tonsky/FiraCode/releases/download/${DISTVERSION}/
+DISTNAME=	Fira_Code_${DISTVERSIONPREFIX}${PORTVERSION}
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Monospaced font with programming ligatures derived from Fira
