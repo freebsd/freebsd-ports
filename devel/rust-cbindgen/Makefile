@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cbindgen
-DISTVERSION=	0.13.2
+DISTVERSION=	0.14.2
 CATEGORIES=	devel
 MASTER_SITES=	CRATESIO
 PKGNAMEPREFIX=	rust-
@@ -25,6 +25,7 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		cfg-if-0.1.10 \
 		clap-2.33.0 \
 		getrandom-0.1.13 \
+		heck-0.3.1 \
 		itoa-0.4.4 \
 		libc-0.2.66 \
 		log-0.4.8 \
@@ -46,6 +47,7 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		tempfile-3.1.0 \
 		textwrap-0.11.0 \
 		toml-0.5.5 \
+		unicode-segmentation-1.6.0 \
 		unicode-width-0.1.7 \
 		unicode-xid-0.2.0 \
 		vec_map-0.8.1 \
