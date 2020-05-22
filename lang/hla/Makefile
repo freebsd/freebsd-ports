@@ -12,6 +12,8 @@ EXTRACT_ONLY=	${PORTNAME}src${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High Level Assembly
 
+BUILD_DEPENDS=	as:devel/binutils
+
 USES=		bison dos2unix zip:infozip
 
 WRKSRC=		${WRKDIR}/hlasrc/trunk/trunk
