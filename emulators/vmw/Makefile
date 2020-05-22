@@ -2,7 +2,7 @@
 
 PORTNAME=	vmw
 PORTVERSION=	060510
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://sites.google.com/site/chitchatvmback/storage/
 
@@ -10,6 +10,8 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	VM Back Command Line Tools for VMware
 
 ONLY_FOR_ARCHS=	i386 amd64
+
+BUILD_DEPENDS=	as:devel/binutils
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 USES=		iconv
