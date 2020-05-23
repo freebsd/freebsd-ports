@@ -1,7 +1,7 @@
 Index: www/minio-client/files/patch-gopsutil_aarch64
 ===================================================================
---- www/minio-client/files/patch-gopsutil_aarch64	(nonexistent)
-+++ www/minio-client/files/patch-gopsutil_aarch64	(working copy)
+--- www/minio-client/files/patch-gopsutil_aarch64.orig	2020-05-23 04:00:18 UTC
++++ www/minio-client/files/patch-gopsutil_aarch64
 @@ -0,0 +1,407 @@
 +https://github.com/shirou/gopsutil/commit/270f6afc220d6dcbc9e1d14e0f6f65fb4d29dfaf
 +
@@ -410,18 +410,3 @@ Index: www/minio-client/files/patch-gopsutil_aarch64
 ++	X_kve_ispare		[8]int32
 ++	Path			[1024]uint8
 ++}
-
-Property changes on: www/minio-client/files/patch-gopsutil_aarch64
-___________________________________________________________________
-Added: fbsd:nokeywords
-## -0,0 +1 ##
-+yes
-\ No newline at end of property
-Added: svn:eol-style
-## -0,0 +1 ##
-+native
-\ No newline at end of property
-Added: svn:mime-type
-## -0,0 +1 ##
-+text/plain
-\ No newline at end of property
