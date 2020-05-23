@@ -1,2 +1,3 @@
-SHA256 (java-cup-v11a-20050516-sources.tar.gz) = af0a664e4dd4f5fdf8ec546f9560363d1f297114fa0d4612032936267afab203
-SIZE (java-cup-v11a-20050516-sources.tar.gz) = 362129
+TIMESTAMP = 1586399405
+SHA256 (java-cup-bin-11b-20160615.tar.gz) = 3f01d657882380c1e5dc1593d9db7b5ded853429b7e52bc517f9bcbb4a65decc
+SIZE (java-cup-bin-11b-20160615.tar.gz) = 144985

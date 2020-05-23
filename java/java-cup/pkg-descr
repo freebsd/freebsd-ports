@@ -1,5 +1,7 @@
-This is the Java based Constructor of Useful Parsers (CUP for short).  It
-serves the same role as the widely used program YAXX and in fact offers most
-of the features of YACC.  However,  CUP is written in Java, uses specifications
-including embedded Java code, and produces parsers which are implemented in
-Java.
+Constructor of Useful Parsers (CUP), a system for generating LALR
+parsers from simple specifications.  It serves the same role as the
+widely-used program `yacc', and in fact offers most of the features of
+`yacc'; however, CUP is written in Java, uses specifications including
+embedded Java code, and produces parsers with are implemented in Java.
+
+WWW: http://www2.cs.tum.edu/projects/cup/
