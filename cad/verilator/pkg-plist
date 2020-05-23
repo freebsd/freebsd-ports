@@ -41,6 +41,9 @@ man/man1/verilator_profcfunc.1.gz
 %%DATADIR%%/examples/make_tracing_sc/sc_main.cpp
 %%DATADIR%%/examples/make_tracing_sc/sub.v
 %%DATADIR%%/examples/make_tracing_sc/top.v
+%%DATADIR%%/examples/xml_py/Makefile
+%%DATADIR%%/examples/xml_py/sub.v
+%%DATADIR%%/examples/xml_py/top.v
 %%DATADIR%%/include/gtkwave/fastlz.c
 %%DATADIR%%/include/gtkwave/fastlz.h
 %%DATADIR%%/include/gtkwave/fst_config.h
@@ -64,6 +67,7 @@ man/man1/verilator_profcfunc.1.gz
 %%DATADIR%%/include/verilated_fst_c.h
 %%DATADIR%%/include/verilated_heavy.h
 %%DATADIR%%/include/verilated_imp.h
+%%DATADIR%%/include/verilated_intrinsics.h
 %%DATADIR%%/include/verilated_save.cpp
 %%DATADIR%%/include/verilated_save.h
 %%DATADIR%%/include/verilated_sc.h
@@ -71,6 +75,8 @@ man/man1/verilator_profcfunc.1.gz
 %%DATADIR%%/include/verilated_syms.h
 %%DATADIR%%/include/verilated_threads.cpp
 %%DATADIR%%/include/verilated_threads.h
+%%DATADIR%%/include/verilated_trace.h
+%%DATADIR%%/include/verilated_trace_imp.cpp
 %%DATADIR%%/include/verilated_unordered_set_map.h
 %%DATADIR%%/include/verilated_vcd_c.cpp
 %%DATADIR%%/include/verilated_vcd_c.h
