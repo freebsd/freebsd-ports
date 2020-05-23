@@ -113,6 +113,7 @@ include/wine/windows/amvideo.idl
 include/wine/windows/appcompatapi.h
 include/wine/windows/appmgmt.h
 include/wine/windows/appmodel.h
+include/wine/windows/asferr.h
 include/wine/windows/asptlb.h
 include/wine/windows/asptlb.idl
 include/wine/windows/asynot.idl
@@ -136,6 +137,7 @@ include/wine/windows/aviriff.h
 include/wine/windows/avrt.h
 include/wine/windows/axcore.idl
 include/wine/windows/axextend.idl
+include/wine/windows/axextendenums.h
 include/wine/windows/basetsd.h
 include/wine/windows/basetyps.h
 include/wine/windows/bcrypt.h
@@ -346,6 +348,7 @@ include/wine/windows/docobjectservice.idl
 include/wine/windows/downloadmgr.h
 include/wine/windows/downloadmgr.idl
 include/wine/windows/dpaddr.h
+include/wine/windows/dpfilter.h
 include/wine/windows/dplay.h
 include/wine/windows/dplay8.h
 include/wine/windows/dplobby.h
@@ -414,6 +417,7 @@ include/wine/windows/excpt.h
 include/wine/windows/exdisp.h
 include/wine/windows/exdisp.idl
 include/wine/windows/exdispid.h
+include/wine/windows/exposeenums2managed.h
 include/wine/windows/fci.h
 include/wine/windows/fdi.h
 include/wine/windows/fileapi.h
@@ -676,6 +680,7 @@ include/wine/windows/ole2.h
 include/wine/windows/ole2ver.h
 include/wine/windows/oleacc.h
 include/wine/windows/oleacc.idl
+include/wine/windows/oleacc.tlb
 include/wine/windows/oleauto.h
 include/wine/windows/olectl.h
 include/wine/windows/oledb.h
@@ -811,6 +816,7 @@ include/wine/windows/srcrst.idl
 include/wine/windows/srrestoreptapi.h
 include/wine/windows/sspi.h
 include/wine/windows/stdole2.idl
+include/wine/windows/stdole2.tlb
 %%STAGING%%include/wine/windows/stdole32.idl
 include/wine/windows/stgprop.h
 include/wine/windows/sti.h
@@ -863,6 +869,7 @@ include/wine/windows/uiautomationcore.idl
 include/wine/windows/uiautomationcoreapi.h
 include/wine/windows/uiribbon.h
 include/wine/windows/uiribbon.idl
+include/wine/windows/unexposeenums2managed.h
 include/wine/windows/unknwn.h
 include/wine/windows/unknwn.idl
 include/wine/windows/urlhist.h
@@ -907,6 +914,7 @@ include/wine/windows/wia_xp.h
 include/wine/windows/wia_xp.idl
 include/wine/windows/wiadef.h
 include/wine/windows/wimgapi.h
+include/wine/windows/winapifamily.h
 include/wine/windows/winbase.h
 include/wine/windows/wincodec.h
 include/wine/windows/wincodec.idl
@@ -2689,6 +2697,7 @@ lib/wine/libsensapi.def
 lib/wine/libsetupapi.def
 lib/wine/libsfc.def
 lib/wine/libsfc_os.def
+lib/wine/libshcore.def
 lib/wine/libshdocvw.def
 lib/wine/libshell32.def
 lib/wine/libshfolder.def
@@ -2873,6 +2882,7 @@ lib/wine/notepad.exe.so
 lib/wine/npmshtml.dll.so
 lib/wine/npptools.dll.so
 lib/wine/ntdll.dll.so
+lib/wine/ntdll.so
 lib/wine/ntdsapi.dll.so
 lib/wine/ntoskrnl.exe.so
 lib/wine/ntprint.dll.so
