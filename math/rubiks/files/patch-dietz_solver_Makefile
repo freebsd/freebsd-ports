@@ -1,0 +1,11 @@
+--- dietz/solver/Makefile.orig	2020-05-23 15:31:49 UTC
++++ dietz/solver/Makefile
+@@ -10,7 +10,7 @@ RM=/bin/rm -f
+ all: build
+ 
+ build: $(OBJS)
+-	$(LINK) $(LFLAGS)  -o cubex  $(OBJS)
++	$(LINK) $(LFLAGS)  -o cubex  $(OBJS) $(LDFLAGS)
+ 
+ clean:
+ 	$(RM) $(OBJS)

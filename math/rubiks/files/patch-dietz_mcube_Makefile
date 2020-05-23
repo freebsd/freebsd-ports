@@ -1,0 +1,11 @@
+--- dietz/mcube/Makefile.orig	2020-05-23 15:31:49 UTC
++++ dietz/mcube/Makefile
+@@ -19,7 +19,7 @@ all: build
+ debug: build-debug
+ 
+ build: $(OBJS)
+-	$(LINK) $(LFLAGS)  -o mcube  $(OBJS) $(LIBS)
++	$(LINK) $(LFLAGS)  -o mcube  $(OBJS) $(LIBS) $(LDFLAGS)
+ 
+ build-debug: $(DBGOBJS)
+ 	$(LINK) $(DBGLFLAGS)  -o mcube  $(OBJS) $(DBGLIBS)

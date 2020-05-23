@@ -862,6 +862,7 @@
     SUBDIR += rngstreams
     SUBDIR += rocs
     SUBDIR += rpcalc
+    SUBDIR += rubiks
     SUBDIR += rubygem-algebra
     SUBDIR += rubygem-enumerable-statistics
     SUBDIR += rubygem-expression_parser
