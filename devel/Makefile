@@ -4612,6 +4612,7 @@
     SUBDIR += py-logbook
     SUBDIR += py-logfury
     SUBDIR += py-logilab-common
+    SUBDIR += py-loguru
     SUBDIR += py-logutils
     SUBDIR += py-louie
     SUBDIR += py-lunardate
