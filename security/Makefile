@@ -72,6 +72,7 @@
     SUBDIR += ccsrch
     SUBDIR += certificate-transparency
     SUBDIR += cfs
+    SUBDIR += cfssl
     SUBDIR += chaosreader
     SUBDIR += checkpassword
     SUBDIR += checkpassword-pam
