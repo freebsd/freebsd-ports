@@ -1,7 +1,7 @@
 [
 { type: install
   message: <<EOM
-There are example scripts in
+There are sample scripts in
     %%ETCDIR%%
 that you can use for renewing and deploying certificates.
 
@@ -18,7 +18,14 @@ Script to run to renew certificates, will be run as %%LEGO_USER%% (required)
 To run a script after the renewal to deploy certificates
     weekly_lego_deployscript="%%ETCDIR%%/deploy.sh"
 
-If using the example renew script, add the domains for which lego will manage
+Note that the deploy script is provided as a sample and may need to be modified
+for your environment. The script will attempt to deploy certificates to
+    %%ETCDIR%%/ssl/certs
+and private keys to
+    %%ETCDIR%%/ssl/private.
+The script also tries to restart nginx.
+
+If using the sample renew script, add the domains for which lego will manage
 certificates to
     %%ETCDIR%%/domains.txt, one domain on each line.
 
