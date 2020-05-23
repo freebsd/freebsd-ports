@@ -15012,3 +15012,4 @@ www/py-django-happenings|www/py-django-happenings-update|2020-05-17|Has expired:
 devel/py-django-tastypie-mongoengine||2020-05-17|Has expired: Not necessary anymore, and project unmaintained
 sysutils/py-cpuinfo|sysutils/py-py-cpuinfo|2020-05-18|Rename to match PyPI name
 devel/py-jupyterlab_server|devel/py-jupyterlab-server|2020-05-19|Rename to match upstream naming
+math/py-onnx|misc/py-onnx|2020-05-23|Move to misc category because it's not related to math
