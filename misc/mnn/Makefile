@@ -2,6 +2,7 @@
 
 PORTNAME=	mnn
 DISTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -26,6 +27,26 @@ LDFLAGS+=	-pthread
 CFLAGS+=	-fPIC # workaround for https://github.com/alibaba/MNN/issues/553
 CXXFLAGS+=	-fPIC
 
+OPTIONS_DEFINE=		CONVERTER HARD_FP QUANTOOLS TOOLS TRAIN
+OPTIONS_DEFAULT=	CONVERTER HARD_FP QUANTOOLS TOOLS TRAIN
+OPTIONS_SUB=		yes
+
+CONVERTER_DESC=		Build machine learning model converter
+CONVERTER_CMAKE_BOOL=	MNN_BUILD_CONVERTER
+CONVERTER_LIB_DEPENDS=	libprotobuf.so:devel/protobuf
+
+HARD_FP_DESC=		Hard floating point numbers
+HARD_FP_CMAKE_BOOL=	MNN_BUILD_HARD
+
+QUANTOOLS_DESC=		Build quantized tools
+QUANTOOLS_CMAKE_BOOL=	MNN_BUILD_QUANTOOLS
+
+TOOLS_DESC=		Build tools
+TOOLS_CMAKE_BOOL=	MNN_BUILD_TOOLS
+
+TRAIN_DESC=		Build MNN's training framework
+TRAIN_CMAKE_BOOL=	MNN_BUILD_TRAIN
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != amd64 && ${ARCH} != i386
@@ -35,6 +56,22 @@ CMAKE_ARGS+=	-DMNN_USE_AVX:BOOL=OFF \
 
 pre-build: # https://github.com/alibaba/MNN/issues/648
 	@cd ${WRKSRC}/schema && ./generate.sh
+
+do-install-CONVERTER-on:
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/MNNConvert ${STAGEDIR}${PREFIX}/bin
+
+do-install-QUANTOOLS-on:
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/quantized.out ${STAGEDIR}${PREFIX}/bin
+
+do-install-TOOLS-on:
+.for f in MNNV2Basic.out mobilenetTest.out backendTest.out testModel.out testModelWithDescrisbe.out getPerformance.out checkInvalidValue.out timeProfile.out
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin
+.endfor
+
+do-install-TRAIN-on:
+.for f in transformer.out train.out rawDataTransform.out dataTransformer.out runTrainDemo.out
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin
+.endfor
 
 do-test:
 	@cd ${BUILD_WRKSRC} && \
