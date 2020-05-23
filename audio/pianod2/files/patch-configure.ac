@@ -1,15 +1,15 @@
---- configure.ac.orig	2020-03-17 17:41:27 UTC
-+++ configure.ac
-@@ -19,7 +19,7 @@
+--- configure.ac.org	2020-05-22 18:04:30.726838000 -0700
++++ configure.ac	2020-05-22 18:07:12.289613000 -0700
+@@ -20,7 +20,7 @@
  AC_PREREQ([2.68])
  AC_CONFIG_MACRO_DIRS([m4])
  AC_INIT([pianod2],
--	m4_esyscmd([svn info svn://svn.deviousfish.com/pianod2 | grep Revision: | awk '{print $2}' | tr -d '\n']),
-+	[309],
+-	m4_esyscmd([svn info svn://svn.deviousfish.com/pianod2/trunk | grep Revision: | awk '{print $2}' | tr -d '\n']),
++	[329],
  	[pianod@lists.deviousfish.com],
  	,[http://deviousfish.com/pianod2])
  AM_INIT_AUTOMAKE([foreign -Wall -Werror])
-@@ -543,9 +543,9 @@ AS_IF([test "$with_libao" != "no" ], [
+@@ -552,9 +552,9 @@
  
  # Check for libsdl
  AS_IF([test "$with_libsdl" != "no" ], [
