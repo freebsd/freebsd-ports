@@ -23,14 +23,14 @@ COMMENT=	Build cross-platform desktop apps with JavaScript, HTML, and CSS
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/electron/LICENSE
 
-FETCH_DEPENDS=	npm:www/npm-node10
+FETCH_DEPENDS=	npm-node10>0:www/npm-node10
 PATCH_DEPENDS=	git:devel/git
 BUILD_DEPENDS=	${LOCALBASE}/bin/ar:devel/binutils \
 		gperf:devel/gperf \
 		yasm:devel/yasm \
 		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat \
-		node:www/node10 \
-		npm:www/npm-node10
+		node10>0:www/node10 \
+		npm-node10>0:www/npm-node10
 LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-atk \
 		libsnappy.so:archivers/snappy \
 		libFLAC.so:audio/flac \
@@ -51,7 +51,7 @@ LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-atk \
 		libfontconfig.so:x11-fonts/fontconfig
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-dbusmock>0:devel/py-python-dbusmock@${PY_FLAVOR} \
-		npm:www/npm-node10
+		npm-node10>0:www/npm-node10
 
 USES=		bison dos2unix gettext-tools gl gnome jpeg localbase:ldflags \
 		ninja pkgconfig python:2.7,build,test tar:xz xorg
@@ -60,9 +60,6 @@ USE_GITHUB=	yes
 GH_TAGNAME=	${DISTVERSIONPREFIX}${ELECTRON_VER}
 # See ${WRKSRC}/electron/DEPS for GH_TAGNAME_node
 GH_TUPLE=	electron:node:8bc5d171a0873c0ba49f9433798bc8b67399788c:node
-		# boto:boto:f7574aa6cc2c819430c1f05e9a1a1a666ef8169b:boto \
-		# yaml:pyyaml:3.12:pyyaml \
-		# kennethreitz:requests:e4d59bedfd3c7f4f254f4f5d036587bcd8152458:requests
 
 # Official chromium version containing "gn" which is known to work
 CHROMIUM_OFFICIAL_VER=	76.0.3809.132
@@ -200,14 +197,6 @@ post-extract:
 	${MV} ${WRKDIR}/${PORTNAME}-${ELECTRON_VER}/${PORTNAME}-${ELECTRON_VER} ${WRKSRC}/electron
 	${MV} ${WRKDIR}/${PORTNAME}-${ELECTRON_VER}/${GH_PROJECT_node}-${GH_TAGNAME_node} \
 		${WRKSRC}/third_party/${GH_ACCOUNT_node}_${GH_PROJECT_node}
-	# ${RMDIR} ${WRKSRC}/electron/vendor/${GH_PROJECT_boto}
-	# ${MV} ${WRKDIR}/${PORTNAME}-${ELECTRON_VER}/${GH_PROJECT_boto}-${GH_TAGNAME_boto} \
-	# 	${WRKSRC}/electron/vendor/${GH_PROJECT_boto}
-	# ${MV} ${WRKDIR}/${PORTNAME}-${ELECTRON_VER}/${GH_PROJECT_pyyaml}-${GH_TAGNAME_pyyaml} \
-	# 	${WRKSRC}/electron/vendor/${GH_PROJECT_pyyaml}
-	# ${RMDIR} ${WRKSRC}/electron/vendor/${GH_PROJECT_requests}
-	# ${MV} ${WRKDIR}/${PORTNAME}-${ELECTRON_VER}/${GH_PROJECT_requests}-${GH_TAGNAME_requests} \
-	# 	${WRKSRC}/electron/vendor/${GH_PROJECT_requests}
 	${MV} ${WRKDIR}/${PORTNAME}-${ELECTRON_VER}/node_modules ${WRKSRC}/third_party/node
 	${MV} ${WRKDIR}/${PORTNAME}-${ELECTRON_VER}/test_fonts ${WRKSRC}/third_party/test_fonts
 	${MV} ${WRKDIR}/${PORTNAME}-${ELECTRON_VER}/npm_modules ${WRKSRC}/electron/node_modules
@@ -218,10 +207,6 @@ pre-patch:
 	# ${FIND} ${WRKSRC} -type f -name '*~' -print -delete
 
 pre-configure:
-	# cd ${WRKSRC}/electron/vendor/${GH_PROJECT_boto} && \
-	# 	${PYTHON_CMD} setup.py build
-	# cd ${WRKSRC}/electron/vendor/${GH_PROJECT_requests} && \
-	# 	${PYTHON_CMD} setup.py build
 	# We used to remove bundled libraries to be sure that chromium uses
 	# system libraries and not shipped ones.
 	# cd ${WRKSRC} && ${PYTHON_CMD} \
@@ -241,9 +226,6 @@ do-configure:
 	# Setup nodejs dependency
 	${MKDIR} ${WRKSRC}/third_party/node/freebsd/node-freebsd-x64/bin
 	${LN} -sf ${LOCALBASE}/bin/node ${WRKSRC}/third_party/node/freebsd/node-freebsd-x64/bin/node
-
-# do-build:
-# 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ninja -C out/${BUILDTYPE} ${ALL_TARGET}
 
 post-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
