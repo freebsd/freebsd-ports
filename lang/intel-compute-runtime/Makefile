@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	compute-runtime
-DISTVERSION=	20.19.16754
+DISTVERSION=	20.20.16837
 CATEGORIES=	lang
 PKGNAMEPREFIX=	intel-
 
@@ -13,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	Only Intel GPUs on x86 are supported
+BROKEN_i386=	https://github.com/intel/compute-runtime/issues/316
 
 LIB_DEPENDS=	libigc.so:devel/intel-graphics-compiler \
 		libigdgmm.so:multimedia/gmmlib
@@ -23,9 +24,12 @@ USE_LDCONFIG=	yes
 GH_ACCOUNT=	intel
 CMAKE_ON=	SKIP_UNIT_TESTS
 CMAKE_ARGS=	-DNEO_OCL_DRIVER_VERSION:STRING="${DISTVERSIONFULL}"
-PLIST_FILES=	etc/OpenCL/vendors/intel.icd \
-		bin/ocloc \
-		lib/intel-opencl/libigdrcl.so
+PLIST_FILES=	bin/ocloc \
+		etc/OpenCL/vendors/intel.icd \
+		include/ocloc_api.h \
+		lib/intel-opencl/libigdrcl.so \
+		lib/libocloc.so \
+		${NULL}
 
 OPTIONS_DEFINE=	VAAPI
 OPTIONS_DEFAULT=VAAPI

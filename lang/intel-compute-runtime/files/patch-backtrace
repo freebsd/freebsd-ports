@@ -23,15 +23,14 @@ ld: error: undefined symbol: backtrace_symbols
          callstack = backtrace_symbols(addresses, backtraceSize);
  
          for (int i = 0; i < backtraceSize; ++i) {
---- shared/offline_compiler/source/CMakeLists.txt.orig	2020-02-28 16:16:42 UTC
+--- shared/offline_compiler/source/CMakeLists.txt.orig	2020-05-15 20:36:40 UTC
 +++ shared/offline_compiler/source/CMakeLists.txt
-@@ -161,6 +161,10 @@ endif()
+@@ -140,6 +140,9 @@ endif()
+ 
  if(UNIX)
-   target_link_libraries(ocloc_lib dl pthread)
-   target_link_libraries(ocloc dl pthread)
+   target_link_libraries(${OCLOC_NAME}_lib dl pthread)
 +  if(CMAKE_SYSTEM_NAME MATCHES "DragonFly|FreeBSD|NetBSD|OpenBSD")
-+    target_link_libraries(ocloc_lib execinfo)
-+    target_link_libraries(ocloc execinfo)
++    target_link_libraries(${OCLOC_NAME}_lib execinfo)
 +  endif()
  endif()
  

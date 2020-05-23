@@ -23,14 +23,15 @@ frame #4: 0x000000000020df59 ze_peak`L0Context::init_xe(this=0x00007fffffffde70)
    185    }
    186    if (verbose)
 
---- level_zero/core/source/device/device_imp.h.orig	2020-04-17 18:43:38 UTC
+--- level_zero/core/source/device/device_imp.h.orig	2020-05-15 20:36:40 UTC
 +++ level_zero/core/source/device/device_imp.h
-@@ -99,9 +99,7 @@ struct DeviceImp : public Device {
-             auto hwInfo = neoDevice->getHardwareInfo();
-             if (hwInfo.capabilityTable.blitterOperationsSupported) {
-                 *useBliter = NEO::DebugManager.flags.EnableCopyOnlyCommandListsAndCommandQueues.get();
+@@ -102,10 +102,7 @@ struct DeviceImp : public Device {
+                 } else {
+                     *useBliter = NEO::DebugManager.flags.EnableCopyOnlyCommandListsAndCommandQueues.get();
+                 }
 -                return ZE_RESULT_SUCCESS;
              }
+-
 -            return ZE_RESULT_ERROR_INVALID_ENUMERATION;
          }
          return ZE_RESULT_SUCCESS;

@@ -9,14 +9,18 @@ runtime/os_interface/linux/os_time_linux.cpp:138:24: error:
     if (resolutionFunc(CLOCK_MONOTONIC_RAW, &ts)) {
                        ^
 
---- shared/source/os_interface/linux/os_time_linux.cpp.orig	2020-02-28 16:16:42 UTC
+--- shared/source/os_interface/linux/os_time_linux.cpp.orig	2020-05-15 20:36:40 UTC
 +++ shared/source/os_interface/linux/os_time_linux.cpp
-@@ -14,6 +14,10 @@
+@@ -14,6 +14,14 @@
  
  #include <time.h>
  
 +#ifndef CLOCK_MONOTONIC_RAW
-+#define CLOCK_MONOTONIC_RAW CLOCK_MONOTONIC
++# ifdef CLOCK_MONOTONIC_FAST
++#  define CLOCK_MONOTONIC_RAW CLOCK_MONOTONIC_FAST
++# else
++#  define CLOCK_MONOTONIC_RAW CLOCK_MONOTONIC
++# endif
 +#endif
 +
  namespace NEO {
