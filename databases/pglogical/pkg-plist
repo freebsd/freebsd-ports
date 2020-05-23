@@ -21,8 +21,11 @@ share/postgresql/extension/pglogical--2.2.0.sql
 share/postgresql/extension/pglogical--2.2.1--2.2.2.sql
 share/postgresql/extension/pglogical--2.2.1.sql
 share/postgresql/extension/pglogical--2.2.2--2.3.0.sql
+share/postgresql/extension/pglogical--2.2.2--2.3.1.sql
 share/postgresql/extension/pglogical--2.2.2.sql
+share/postgresql/extension/pglogical--2.3.0--2.3.1.sql
 share/postgresql/extension/pglogical--2.3.0.sql
+share/postgresql/extension/pglogical--2.3.1.sql
 share/postgresql/extension/pglogical.control
 share/postgresql/extension/pglogical_origin--1.0.0.sql
 share/postgresql/extension/pglogical_origin.control

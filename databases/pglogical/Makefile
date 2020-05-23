@@ -4,6 +4,7 @@
 PORTNAME=	pglogical
 DISTVERSIONPREFIX=	REL
 DISTVERSION=	2_3_1
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	matthew@FreeBSD.org
@@ -35,9 +36,13 @@ PLIST_SUB+=	PGSQL94=""
 PLIST_SUB+=	PGSQL94="@comment "
 .endif
 
-.if ${PGSQL_VER} >= 11
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-pglogical__apply__spi.c
+.if ${PGSQL_VER} >= 9.5
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-pglogical__dependency.c
 .endif
+
+#.if ${PGSQL_VER} >= 11
+#EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-pglogical__apply__spi.c
+#.endif
 
 # FFI
 #TEST_DEPENDS=	pg_regress:databases/postgresql${PGSQL_VER_NODOT}-pg_regress
