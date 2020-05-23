@@ -1,3 +1,3 @@
-TIMESTAMP = 1586453982
-SHA256 (hashicorp-nomad-v0.11.0_GH0.tar.gz) = 4868a493b83ad833eaf94f7b5552d1ee58aa1a5e9f6a20d86baf7b78b282c307
-SIZE (hashicorp-nomad-v0.11.0_GH0.tar.gz) = 52708805
+TIMESTAMP = 1590199997
+SHA256 (hashicorp-nomad-v0.11.2_GH0.tar.gz) = d0da412d23dfeba313a9824e9cc56c4aeb6180156d540d5a13313c510f6d549b
+SIZE (hashicorp-nomad-v0.11.2_GH0.tar.gz) = 53217187
