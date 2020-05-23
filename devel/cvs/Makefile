@@ -6,7 +6,7 @@ PORTREVISION?=	6
 CATEGORIES=	devel
 MASTER_SITES=	LOCAL/eadler
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER?=	schaiba@gmail.com
 COMMENT?=	Version control system
 
 LICENSE=	GPLv2+
