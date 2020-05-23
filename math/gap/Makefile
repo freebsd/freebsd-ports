@@ -2,12 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	gap
-PORTVERSION=	4.8.10.${GAP_DISTDATE}
+PORTVERSION=	4.11.0
 CATEGORIES=	math
-MASTER_SITES=	http://www.gap-system.org/pub/gap/gap48/tar.bz2/ \
-		ftp://ftp.stack.nl/pub/users/johans/gap/ \
-		ftp://ftp.gap-system.org/pub/gap/gap48/old/
-DISTNAME=	${GAP_VERSION}p${PORTVERSION:R:E}_${GAP_DISTTIME}
+MASTER_SITES=	https://files.gap-system.org/${PORTNAME}-${PORTVERSION:R}/${EXTRACT_SUFX:C/\.//}/
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	GAP is a system for computational discrete algebra
@@ -16,39 +13,56 @@ LICENSE=	GPLv2+
 
 BROKEN_aarch64=		fails to link: undefined reference to SyAllocBags
 
+BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libgmp.so:math/gmp
 
-USES=		gmake shebangfix tar:bzip2
-SHEBANG_FILES=	configure \
-		pkg/GAPDoc-*/*/clean \
-		pkg/*/doc/clean \
-		pkg/PolymakeInterface/configure \
-		pkg/*/doc/convert.pl \
-		pkg/anupq-*/tst/make_anupqeg \
-		pkg/crime/gap/print.pl \
-		pkg/io-*/tst/sleep.sh \
-		pkg/pargap/mpinu/thwap
+USES=		autoreconf:build gmake libtool localbase perl5 shebangfix	\
+		readline tar:bzip2
+SHEBANG_FILES=	.
+USE_PERL5=	run
+
+OPTIONS_DEFINE=	ADDPACK MANU
+OPTIONS_DEFAULT=ADDPACK
+OPTIONS_SUB=	yes
+ADDPACK_DESC=	Additional packages typically "expected" out-of-the-box
+ADDPACK_VARS=	ADD_PACK="${ADDPACK}"
+MANU_DESC=	HTML and PDF manuals
+MANU_USE=	TEX=latex:build,formats,web2c
+MANU_VARS=	DOC_TARGET=doc
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-gmp=${LOCALBASE}
-ALL_TARGET=	default
-INSTALL_TARGET=	install-strip
+MAKEFILE=	GNUmakefile
+ALL_TARGET=	all ${DOC_TARGET}
+INSTALL_TARGET=	install-headers install-libgap
+USE_LDCONFIG=	yes
+PORTDATA=	doc/*
 
 MAKE_JOBS_UNSAFE=yes
 
-GAP_VERSION=	${PORTNAME}${PORTVERSION:R:R:S/./r/}	# gap4r5
-GAP_DISTTIME=	2018_01_15-13_02
-GAP_DISTDATE=	${GAP_DISTTIME:C/-.*//:S/_//g}
-GAP_LIBDIR=	${PREFIX}/lib/${GAP_VERSION}
-WRKSRC=		${WRKDIR}/${GAP_VERSION}
-PLIST_FILES=	bin/gap
+# The minimal packages GAP needs to run (do not need compilation)
+MINPACK=	GAPDoc- HeLP- primgrp- SmallGrp- transgrp
+ADDPACK=	atlasrep autpgrp- alnuth- crisp- ctbllib FactInt- fga	\
+		irredsol- laguna- polenta- polycyclic- resclasses-	\
+		sophus- tomlib-
 
-post-patch:
-	@${REINPLACE_CMD} -i '' -e '1s|/usr/bin/sh|/bin/sh|' \
-	    ${WRKSRC}/pkg/happrime/make_tarball
+ACLOCVER=	1.16	# Truncated version of aclocal / automake
+BASH2FIX=	pkg/AGT-0.1/GNUmakefile \
+		pkg/AGT-0.1/gac
+
+.include <bsd.port.options.mk>
+
+pre-configure:
 # Avoid conflict with C++20 <version> by ignoring <...> under WRKSRC
-	@${REINPLACE_CMD} -i .c++20 's/-I/-iquote/' \
+	${REINPLACE_CMD} -i .c++20 's/-I/-iquote/' \
 		${WRKSRC}/pkg/*/Makefile.in
+.for f in ${BASH2FIX}
+	${REINPLACE_CMD} -i '' -e 's|/bin/bash|${LOCALBASE}/bin/bash|'	\
+		${WRKSRC}/${f}
+.endfor
+.for f in aclocal.m4 configure
+	${FIND} ${WRKSRC} -name ${f} | ${XARGS} ${REINPLACE_CMD} -i ''	\
+		-e "s|am__api_version='1.15'|am__api_version='${ACLOCVER}'|"
+.endfor
 
 post-build:
 	cd ${WRKSRC}/pkg/simpcomp && \
@@ -58,23 +72,25 @@ post-build:
 	    ${MAKE} ${MAKEFLAGS} install-strip && \
 	    ${RM} bistellar
 
-do-install:
-	${SED} -e "s:GAP_DIR=.*:GAP_DIR=${GAP_LIBDIR}:g" \
-		-e "s:GAP_PRG=.*:GAP_PRG=gap:g" ${WRKSRC}/bin/gap.sh \
-		> ${STAGEDIR}${PREFIX}/bin/gap
-	@${CHMOD} 755 ${STAGEDIR}${PREFIX}/bin/gap
-	@${MKDIR} ${STAGEDIR}${GAP_LIBDIR}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/*/gap ${STAGEDIR}${GAP_LIBDIR}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/*/gac ${STAGEDIR}${GAP_LIBDIR}/bin
-	${INSTALL_DATA} ${WRKSRC}/sysinfo.gap ${STAGEDIR}${GAP_LIBDIR}
-.for subdir in doc etc grp lib pkg prim small trans tst
-	${CP} -R ${WRKSRC}/${subdir} ${STAGEDIR}${GAP_LIBDIR}/
-.endfor
-
 post-install:
-	@${FIND} ${STAGEDIR}${GAP_LIBDIR} -type d -empty -delete
-	@${FIND} ${STAGEDIR}${GAP_LIBDIR} -name \*.py -delete
-	@${FIND} ${STAGEDIR}${GAP_LIBDIR} ! -type d | \
-		${SED} 's,${STAGEDIR}${PREFIX}/,,' >> ${TMPPLIST}
+	${INSTALL_DATA} ${WRKSRC}/gen/config.h ${STAGEDIR}${PREFIX}/include/gap
+	(cd ${WRKSRC} &&	\
+	./libtool --mode=install install gap ${STAGEDIR}${PREFIX}/bin/gap-bin)
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/gap-bin
+	(cd ${WRKSRC} &&	\
+	./libtool --mode=install install gac ${STAGEDIR}${PREFIX}/bin/gac)
+	${SED} -e "s:${WRKSRC}:${GAP_LIBDIR}:" ${WRKSRC}/bin/gap.sh \
+		> ${WRKSRC}/bin/gap
+	${SED} -e "s:GAP_DIR=.*:GAP_DIR=${DATADIR}:" \
+		-e "s:GAP_EXE=.*:GAP_EXE=${PREFIX}/bin/gap-bin:" \
+		-e "/^exec/s:/gap::" ${WRKSRC}/bin/gap.sh > ${WRKSRC}/bin/gap
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/gap ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${DATADIR}/pkg
+.for subdir in doc etc gen grp lib tst sysinfo.gap
+	${CP} -R ${WRKSRC}/${subdir} ${STAGEDIR}${DATADIR}/
+.endfor
+.for p in ${MINPACK} ${ADD_PACK}
+	(cd ${WRKSRC}/pkg && ${CP} -R $$(ls -d ${p}*) ${STAGEDIR}${DATADIR}/pkg/)
+.endfor
 
 .include <bsd.port.mk>
