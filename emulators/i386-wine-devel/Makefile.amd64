@@ -1,7 +1,7 @@
 # Created by: David Naylor <dbn@FreeBSD.org>
 # $FreeBSD$
 
-DISTVERSION=	5.5
+DISTVERSION=	5.8
 PORTEPOCH=	1
 MASTER_SITES=	LOCAL/salvadore/i386-wine-devel/${DIST_SUBDIR}/
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-${DISTVERSION},${PORTEPOCH}
@@ -46,7 +46,7 @@ MONO_RUN_DEPENDS=	${DATADIR}/mono/wine-mono-4.9.4.msi:emulators/wine-mono-devel
 do-extract:
 	@${RM} -r ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
-	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${EXTRACT_ONLY} -C ${WRKDIR} --include '/usr/local/share/licenses/${DISTNAME}/LICENSE' -s '|/usr/local/share/licenses/${DISTNAME}/||g'
+	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${EXTRACT_ONLY} -C ${WRKDIR} --include '/usr/local/share/licenses/[^/]*/LICENSE' -s '|/usr/local/share/licenses/[^/]*/||g'
 
 do-install:
 	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${EXTRACT_ONLY} ${EXTRACT_AFTER_ARGS}

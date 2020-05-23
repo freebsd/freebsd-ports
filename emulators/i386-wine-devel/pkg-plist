@@ -77,6 +77,7 @@ include/wine/msvcrt/fenv.h
 include/wine/msvcrt/float.h
 include/wine/msvcrt/fpieee.h
 include/wine/msvcrt/inttypes.h
+include/wine/msvcrt/intrin.h
 include/wine/msvcrt/io.h
 include/wine/msvcrt/limits.h
 include/wine/msvcrt/locale.h
@@ -190,6 +191,7 @@ include/wine/windows/cmdbas.idl
 include/wine/windows/cmdtxt.idl
 include/wine/windows/cmnquery.h
 include/wine/windows/cmnquery.idl
+include/wine/windows/codecapi.h
 include/wine/windows/colinf.idl
 include/wine/windows/colordlg.h
 include/wine/windows/comcat.h
@@ -397,11 +399,14 @@ include/wine/windows/dplobby8.h
 include/wine/windows/dpnathlp.h
 include/wine/windows/drmexternals.h
 include/wine/windows/drmexternals.idl
+include/wine/windows/dsclient.h
 include/wine/windows/dsconf.h
 include/wine/windows/dsgetdc.h
 include/wine/windows/dshow.h
 include/wine/windows/dsound.h
 include/wine/windows/dsrole.h
+include/wine/windows/dvdif.h
+include/wine/windows/dvdif.idl
 include/wine/windows/dvdmedia.h
 include/wine/windows/dvoice.h
 include/wine/windows/dwmapi.h
@@ -837,6 +842,8 @@ include/wine/windows/slerror.h
 include/wine/windows/slpublic.h
 include/wine/windows/snmp.h
 include/wine/windows/softpub.h
+include/wine/windows/spatialaudioclient.h
+include/wine/windows/spatialaudioclient.idl
 include/wine/windows/sperror.h
 include/wine/windows/sql.h
 include/wine/windows/sqlext.h
@@ -1100,7 +1107,6 @@ lib32/libpciaccess.so.0
 lib32/libtasn1.so.6
 lib32/libunistring.so.2
 lib32/libunwind.so.8
-lib32/libuuid.so.1
 lib32/libwine.so
 lib32/libwine.so.1
 lib32/libxcb-dri2.so.0
@@ -1494,6 +1500,7 @@ lib32/wine/dsdmo.dll.so
 lib32/wine/dsound.dll.so
 lib32/wine/dsquery.dll.so
 lib32/wine/dssenh.dll.so
+lib32/wine/dsuiext.dll.so
 lib32/wine/dswave.dll.so
 lib32/wine/dwmapi.dll.so
 lib32/wine/dwrite.dll.so
@@ -1943,6 +1950,7 @@ lib32/wine/fakedlls/dsdmo.dll
 lib32/wine/fakedlls/dsound.dll
 lib32/wine/fakedlls/dsquery.dll
 lib32/wine/fakedlls/dssenh.dll
+lib32/wine/fakedlls/dsuiext.dll
 lib32/wine/fakedlls/dswave.dll
 lib32/wine/fakedlls/dwmapi.dll
 lib32/wine/fakedlls/dwrite.dll
@@ -2072,6 +2080,7 @@ lib32/wine/fakedlls/kernelbase.dll
 lib32/wine/fakedlls/keyboard.drv16
 lib32/wine/fakedlls/krnl386.exe16
 lib32/wine/fakedlls/ksecdd.sys
+lib32/wine/fakedlls/ksproxy.ax
 lib32/wine/fakedlls/ksuser.dll
 lib32/wine/fakedlls/ktmw32.dll
 lib32/wine/fakedlls/loadperf.dll
@@ -2245,6 +2254,7 @@ lib32/wine/fakedlls/psapi.dll
 lib32/wine/fakedlls/pstorec.dll
 lib32/wine/fakedlls/qasf.dll
 lib32/wine/fakedlls/qcap.dll
+lib32/wine/fakedlls/qdvd.dll
 lib32/wine/fakedlls/qedit.dll
 lib32/wine/fakedlls/qmgr.dll
 lib32/wine/fakedlls/qmgrprxy.dll
@@ -2288,6 +2298,7 @@ lib32/wine/fakedlls/scrrun.dll
 lib32/wine/fakedlls/scsiport.sys
 lib32/wine/fakedlls/sdbinst.exe
 lib32/wine/fakedlls/secedit.exe
+lib32/wine/fakedlls/sechost.dll
 lib32/wine/fakedlls/secur32.dll
 lib32/wine/fakedlls/security.dll
 lib32/wine/fakedlls/sensapi.dll
@@ -2542,6 +2553,7 @@ lib32/wine/kernelbase.dll.so
 lib32/wine/keyboard.drv16.so
 lib32/wine/krnl386.exe16.so
 lib32/wine/ksecdd.sys.so
+lib32/wine/ksproxy.ax.so
 lib32/wine/ksuser.dll.so
 lib32/wine/ktmw32.dll.so
 lib32/wine/libaclui.def
@@ -2683,6 +2695,7 @@ lib32/wine/librpcrt4.def
 lib32/wine/librsaenh.def
 lib32/wine/librtutils.def
 lib32/wine/librtworkq.def
+lib32/wine/libsechost.def
 lib32/wine/libsecur32.def
 lib32/wine/libsensapi.def
 lib32/wine/libsetupapi.def
@@ -2718,7 +2731,7 @@ lib32/wine/libvulkan-1.def
 lib32/wine/libwbemuuid.a
 lib32/wine/libwebservices.def
 lib32/wine/libwer.def
-lib32/wine/libwindowscodecs.def
+lib32/wine/libwindowscodecs.a
 lib32/wine/libwindowscodecsext.def
 lib32/wine/libwinecrt0.a
 lib32/wine/libwined3d.def
@@ -2915,6 +2928,7 @@ lib32/wine/psapi.dll.so
 lib32/wine/pstorec.dll.so
 lib32/wine/qasf.dll.so
 lib32/wine/qcap.dll.so
+lib32/wine/qdvd.dll.so
 lib32/wine/qedit.dll.so
 lib32/wine/qmgr.dll.so
 lib32/wine/qmgrprxy.dll.so
@@ -2958,6 +2972,7 @@ lib32/wine/scrrun.dll.so
 lib32/wine/scsiport.sys.so
 lib32/wine/sdbinst.exe.so
 lib32/wine/secedit.exe.so
+lib32/wine/sechost.dll.so
 lib32/wine/secur32.dll.so
 lib32/wine/security.dll.so
 lib32/wine/sensapi.dll.so
@@ -3311,3 +3326,4 @@ share/applications/wine.desktop
 %%DATADIR%%/wine.inf
 %%DATADIR%%/winebus.inf
 %%DATADIR%%/winehid.inf
+%%DATADIR%%/wineusb.inf
