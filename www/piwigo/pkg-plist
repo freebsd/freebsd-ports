@@ -939,6 +939,7 @@
 %%WWWDIR%%/language/ca_ES/help/notification_by_mail.html
 %%WWWDIR%%/language/ca_ES/help/permalinks.html
 %%WWWDIR%%/language/ca_ES/help/photos_add_ftp.html
+%%WWWDIR%%/language/ca_ES/help/quick_search.html
 %%WWWDIR%%/language/ca_ES/help/search.html
 %%WWWDIR%%/language/ca_ES/help/synchronize.html
 %%WWWDIR%%/language/ca_ES/help/user_list.html
@@ -1153,6 +1154,7 @@
 %%WWWDIR%%/language/es_ES/help/notification_by_mail.html
 %%WWWDIR%%/language/es_ES/help/permalinks.html
 %%WWWDIR%%/language/es_ES/help/photos_add_ftp.html
+%%WWWDIR%%/language/es_ES/help/quick_search.html
 %%WWWDIR%%/language/es_ES/help/search.html
 %%WWWDIR%%/language/es_ES/help/synchronize.html
 %%WWWDIR%%/language/es_ES/help/user_list.html
@@ -1181,6 +1183,8 @@
 %%WWWDIR%%/language/eu_ES/common.lang.php
 %%WWWDIR%%/language/eu_ES/eu_ES.jpg
 %%WWWDIR%%/language/eu_ES/help/cat_move.html
+%%WWWDIR%%/language/eu_ES/help/cat_options.html
+%%WWWDIR%%/language/eu_ES/help/group_list.html
 %%WWWDIR%%/language/eu_ES/help/help_add_photos.html
 %%WWWDIR%%/language/eu_ES/install.lang.php
 %%WWWDIR%%/language/eu_ES/iso.txt
@@ -1813,7 +1817,9 @@
 %%WWWDIR%%/language/sl_SI/help/help_add_photos.html
 %%WWWDIR%%/language/sl_SI/help/help_groups.html
 %%WWWDIR%%/language/sl_SI/help/help_misc.html
+%%WWWDIR%%/language/sl_SI/help/help_virtual_links.html
 %%WWWDIR%%/language/sl_SI/help/notification_by_mail.html
+%%WWWDIR%%/language/sl_SI/help/permalinks.html
 %%WWWDIR%%/language/sl_SI/help/search.html
 %%WWWDIR%%/language/sl_SI/help/synchronize.html
 %%WWWDIR%%/language/sl_SI/help/user_list.html
@@ -1825,6 +1831,7 @@
 %%WWWDIR%%/language/sr_RS/about.html
 %%WWWDIR%%/language/sr_RS/admin.lang.php
 %%WWWDIR%%/language/sr_RS/common.lang.php
+%%WWWDIR%%/language/sr_RS/help/help_groups.html
 %%WWWDIR%%/language/sr_RS/index.php
 %%WWWDIR%%/language/sr_RS/install.lang.php
 %%WWWDIR%%/language/sr_RS/iso.txt
@@ -2450,6 +2457,7 @@
 %%WWWDIR%%/plugins/TakeATour/language/eo_EO/index.php
 %%WWWDIR%%/plugins/TakeATour/language/eo_EO/plugin.lang.php
 %%WWWDIR%%/plugins/TakeATour/language/eo_EO/tour_2_7_0.lang.php
+%%WWWDIR%%/plugins/TakeATour/language/eo_EO/tour_2_9_0.lang.php
 %%WWWDIR%%/plugins/TakeATour/language/eo_EO/tour_first_contact.lang.php
 %%WWWDIR%%/plugins/TakeATour/language/es_ES/description.txt
 %%WWWDIR%%/plugins/TakeATour/language/es_ES/index.php
@@ -2490,6 +2498,7 @@
 %%WWWDIR%%/plugins/TakeATour/language/gl_ES/description.txt
 %%WWWDIR%%/plugins/TakeATour/language/gl_ES/plugin.lang.php
 %%WWWDIR%%/plugins/TakeATour/language/he_IL/plugin.lang.php
+%%WWWDIR%%/plugins/TakeATour/language/hu_HU/description.txt
 %%WWWDIR%%/plugins/TakeATour/language/hu_HU/index.php
 %%WWWDIR%%/plugins/TakeATour/language/hu_HU/plugin.lang.php
 %%WWWDIR%%/plugins/TakeATour/language/hu_HU/tour_2_9_0.lang.php
@@ -2757,8 +2766,8 @@
 %%WWWDIR%%/plugins/language_switch/pem_metadata.txt
 %%WWWDIR%%/plugins/language_switch/style.css
 @mode
-@owner root
-@group wheel
+@owner
+@group
 %%WWWDIR%%/popuphelp.php
 %%WWWDIR%%/profile.php
 %%WWWDIR%%/qsearch.php
@@ -2776,6 +2785,9 @@
 %%WWWDIR%%/template-extension/yoga/index.php
 %%WWWDIR%%/template-extension/yoga/local/README
 %%WWWDIR%%/template-extension/yoga/local/index.php
+@mode 750
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 %%WWWDIR%%/themes/default/fix-ie5-ie6.css
 %%WWWDIR%%/themes/default/fix-ie7.css
 %%WWWDIR%%/themes/default/fix-khtml.css
@@ -3474,6 +3486,7 @@
 %%WWWDIR%%/themes/modus/language/es_ES/theme.lang.php
 %%WWWDIR%%/themes/modus/language/et_EE/index.php
 %%WWWDIR%%/themes/modus/language/et_EE/theme.lang.php
+%%WWWDIR%%/themes/modus/language/eu_ES/theme.lang.php
 %%WWWDIR%%/themes/modus/language/fa_IR/index.php
 %%WWWDIR%%/themes/modus/language/fa_IR/theme.lang.php
 %%WWWDIR%%/themes/modus/language/fi_FI/index.php
@@ -3528,6 +3541,9 @@
 %%WWWDIR%%/themes/modus/mail-css.tpl
 %%WWWDIR%%/themes/modus/pem_metadata.txt
 %%WWWDIR%%/themes/modus/screenshot.png
+%%WWWDIR%%/themes/modus/skins/avocado-screenshot.jpg
+%%WWWDIR%%/themes/modus/skins/avocado.css
+%%WWWDIR%%/themes/modus/skins/avocado.inc.php
 %%WWWDIR%%/themes/modus/skins/blueberry-screenshot.jpg
 %%WWWDIR%%/themes/modus/skins/blueberry.css
 %%WWWDIR%%/themes/modus/skins/blueberry.inc.php
@@ -3546,6 +3562,9 @@
 %%WWWDIR%%/themes/modus/skins/dark_sky.inc.php
 %%WWWDIR%%/themes/modus/skins/debug-screenshot.jpg
 %%WWWDIR%%/themes/modus/skins/debug.inc.php
+%%WWWDIR%%/themes/modus/skins/glacier-screenshot.jpg
+%%WWWDIR%%/themes/modus/skins/glacier.css
+%%WWWDIR%%/themes/modus/skins/glacier.inc.php
 %%WWWDIR%%/themes/modus/skins/grey-screenshot.jpg
 %%WWWDIR%%/themes/modus/skins/grey.inc.php
 %%WWWDIR%%/themes/modus/skins/neon_orange-screenshot.jpg
@@ -3563,6 +3582,9 @@
 %%WWWDIR%%/themes/modus/skins/splash-screenshot.jpg
 %%WWWDIR%%/themes/modus/skins/splash.css
 %%WWWDIR%%/themes/modus/skins/splash.inc.php
+%%WWWDIR%%/themes/modus/skins/strawberry_jam-screenshot.jpg
+%%WWWDIR%%/themes/modus/skins/strawberry_jam.css
+%%WWWDIR%%/themes/modus/skins/strawberry_jam.inc.php
 %%WWWDIR%%/themes/modus/skins/swimming_pool-screenshot.jpg
 %%WWWDIR%%/themes/modus/skins/swimming_pool.css
 %%WWWDIR%%/themes/modus/skins/swimming_pool.inc.php
@@ -3729,6 +3751,9 @@
 %%WWWDIR%%/themes/smartpocket/template/thumbnails.tpl
 %%WWWDIR%%/themes/smartpocket/theme.css
 %%WWWDIR%%/themes/smartpocket/themeconf.inc.php
+@mode
+@owner
+@group
 %%WWWDIR%%/upgrade.php
 %%WWWDIR%%/upgrade_feed.php
 %%WWWDIR%%/ws.php
