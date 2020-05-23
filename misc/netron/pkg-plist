@@ -10,6 +10,7 @@ bin/netron
 %%PYTHON_SITELIBDIR%%/netron/armnn-metadata.json
 %%PYTHON_SITELIBDIR%%/netron/armnn-schema.js
 %%PYTHON_SITELIBDIR%%/netron/armnn.js
+%%PYTHON_SITELIBDIR%%/netron/barracuda.js
 %%PYTHON_SITELIBDIR%%/netron/base.js
 %%PYTHON_SITELIBDIR%%/netron/bigdl-metadata.json
 %%PYTHON_SITELIBDIR%%/netron/bigdl-proto.js
