@@ -60,7 +60,9 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-set-clock-local-utc.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-timezone-confirm.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-timezone-country.png
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-timezone-date.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-timezone-region.png
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-timezone-time.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-timezone-zone.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-zfs-disk_info.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-zfs-disk_select.png

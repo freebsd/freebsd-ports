@@ -81,8 +81,12 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-zfs-disk_info.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-zfs-disk_select.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-zfs-geli_password.png
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-zfs-init-encription.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-zfs-menu.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-zfs-partmenu.png
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-zfs-pool-name.png
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-zfs-rescan-devices.png
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-zfs-swap-amount.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-zfs-vdev_invalid.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-zfs-vdev_type.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-zfs-warning.png

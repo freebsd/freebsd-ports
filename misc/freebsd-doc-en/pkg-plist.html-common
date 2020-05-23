@@ -109,17 +109,12 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/dev-model/branches.png
 %%DOCSDIR%%/%%DOCLANG%%/books/dev-model/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/books/dev-model/freebsd-code-model.png
-%%DOCSDIR%%/%%DOCLANG%%/books/dev-model/hats-overview.png
-%%DOCSDIR%%/%%DOCLANG%%/books/dev-model/maintenance.png
-%%DOCSDIR%%/%%DOCLANG%%/books/dev-model/orghierarchy.png
-%%DOCSDIR%%/%%DOCLANG%%/books/dev-model/orghierarchy2.png
 %%DOCSDIR%%/%%DOCLANG%%/books/dev-model/portsstatus.png
 %%DOCSDIR%%/%%DOCLANG%%/books/dev-model/proc-add-committer.png
 %%DOCSDIR%%/%%DOCLANG%%/books/dev-model/proc-commit.png
 %%DOCSDIR%%/%%DOCLANG%%/books/dev-model/proc-contrib.png
 %%DOCSDIR%%/%%DOCLANG%%/books/dev-model/proc-elections.png
 %%DOCSDIR%%/%%DOCLANG%%/books/dev-model/proc-pr.png
-%%DOCSDIR%%/%%DOCLANG%%/books/dev-model/proc-releng.png
 %%DOCSDIR%%/%%DOCLANG%%/books/dev-model/proc-rm-committer.png
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/sockets/layers.png
