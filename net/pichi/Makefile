@@ -1,12 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	pichi
-DISTVERSION=	1.2.0
-PORTREVISION=	1
+DISTVERSION=	1.3.0
 CATEGORIES=	net
 
 MAINTAINER=	pichi@elude.in
-COMMENT=	Application Layer Proxy controlled via RESTful APIs
+COMMENT=	Flexible rule-based proxy
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -22,20 +21,19 @@ USE_RC_SUBR=	pichi
 PLIST_SUB=	DISTVERSION=${DISTVERSION}
 
 CMAKE_BUILD_TYPE=	MinSizeRel
-CMAKE_ARGS=		-DVERSION=${DISTVERSION}
-CMAKE_ON=		BUILD_SERVER BUILD_TEST
-CMAKE_OFF=		INSTALL_HEADERS
-INSTALL_TARGET=		install/strip
-TEST_TARGET=		test
+CMAKE_ARGS=	-DVERSION=${DISTVERSION}
+CMAKE_ON=	BUILD_SERVER BUILD_TEST
+INSTALL_TARGET=	install/strip
+TEST_TARGET=	test
 
-OPTIONS_DEFINE=		STATIC TLS
+OPTIONS_DEFINE=		DEVEL STATIC TLS
 OPTIONS_DEFAULT=	TLS
 OPTIONS_SUB=		yes
 
 TLS_DESC=	Enable TLS support ( requiring OpenSSL )
 TLS_CMAKE_BOOL=	ENABLE_TLS
 
-STATIC_DESC=		Build/Install static library
+STATIC_DESC=		Static linking
 STATIC_CMAKE_BOOL=	STATIC_LINK
 STATIC_BUILD_DEPENDS=	boost-libs>=1.67.0:devel/boost-libs \
 			libmaxminddb>=1.3.0:net/libmaxminddb \
@@ -50,12 +48,12 @@ STATIC_LIB_DEPENDS_OFF=	libboost_context.so:devel/boost-libs \
 			libmbedtls.so:security/mbedtls \
 			libmbedx509.so:security/mbedtls \
 			libsodium.so:security/libsodium
+STATIC_USE_OFF=		LDCONFIG=yes
+
+DEVEL_DESC=		Install development files
+DEVEL_CMAKE_BOOL=	INSTALL_DEVEL
 
 .include <bsd.port.options.mk>
-
-.if ! ${PORT_OPTIONS:MSTATIC}
-USE_LDCONFIG=	yes
-.endif
 
 .if ${PORT_OPTIONS:MTLS}
 .if ${PORT_OPTIONS:MSTATIC}
@@ -69,6 +67,8 @@ post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/test/geo.mmdb ${STAGEDIR}${ETCDIR}/geo.mmdb
 	${INSTALL_DATA} ${WRKSRC}/server/pichi.json.default ${STAGEDIR}${ETCDIR}/pichi.json.sample
+
+post-install-DEVEL-on:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/include/pichi.h ${STAGEDIR}${PREFIX}/include/pichi.h
 
