@@ -64,9 +64,6 @@ USE_GITHUB=	yes
 GH_TAGNAME=	${DISTVERSIONPREFIX}${ELECTRON_VER}
 GH_TUPLE=	nodejs:node:v${NODE_VER}:node \
 		nodejs:nan:${NAN_VER}:nan
-		# boto:boto:f7574aa6cc2c819430c1f05e9a1a1a666ef8169b:boto \
-		# yaml:pyyaml:3.12:pyyaml \
-		# kennethreitz:requests:e4d59bedfd3c7f4f254f4f5d036587bcd8152458:requests
 
 # Official chromium version containing "gn" which is known to work
 CHROMIUM_OFFICIAL_VER=	78.0.3904.108
@@ -217,14 +214,6 @@ post-extract:
 	${ECHO_CMD} 'yarn-offline-mirror "../../../yarn-offline-cache"' >> ${WRKSRC}/electron/.yarnrc
 	cd ${WRKSRC}/electron && \
 		${SETENV} HOME=${WRKDIR} XDG_CACHE_HOME=${WRKDIR}/.cache yarn --frozen-lockfile --offline
-	# ${RMDIR} ${WRKSRC}/electron/vendor/${GH_PROJECT_boto}
-	# ${MV} ${WRKDIR}/${PORTNAME}-${ELECTRON_VER}/${GH_PROJECT_boto}-${GH_TAGNAME_boto} \
-	# 	${WRKSRC}/electron/vendor/${GH_PROJECT_boto}
-	# ${MV} ${WRKDIR}/${PORTNAME}-${ELECTRON_VER}/${GH_PROJECT_pyyaml}-${GH_TAGNAME_pyyaml} \
-	# 	${WRKSRC}/electron/vendor/${GH_PROJECT_pyyaml}
-	# ${RMDIR} ${WRKSRC}/electron/vendor/${GH_PROJECT_requests}
-	# ${MV} ${WRKDIR}/${PORTNAME}-${ELECTRON_VER}/${GH_PROJECT_requests}-${GH_TAGNAME_requests} \
-	# 	${WRKSRC}/electron/vendor/${GH_PROJECT_requests}
 	${MV} ${WRKDIR}/${PORTNAME}-${ELECTRON_VER}/node_modules ${WRKSRC}/third_party/node
 	${MV} ${WRKDIR}/${PORTNAME}-${ELECTRON_VER}/test_fonts ${WRKSRC}/third_party/test_fonts
 
@@ -234,10 +223,6 @@ pre-patch:
 	# ${FIND} ${WRKSRC} -type f -name '*~' -print -delete
 
 pre-configure:
-	# cd ${WRKSRC}/electron/vendor/${GH_PROJECT_boto} && \
-	# 	${PYTHON_CMD} setup.py build
-	# cd ${WRKSRC}/electron/vendor/${GH_PROJECT_requests} && \
-	# 	${PYTHON_CMD} setup.py build
 	# We used to remove bundled libraries to be sure that chromium uses
 	# system libraries and not shipped ones.
 	# cd ${WRKSRC} && ${PYTHON_CMD} \
@@ -260,9 +245,6 @@ do-configure:
 	# Setup java dependency
 	${MKDIR} ${WRKDIR}/bin
 	${LN} -sf ${LOCALBASE}/openjdk8/bin/java ${WRKDIR}/bin/java
-
-# do-build:
-# 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ninja -C out/${BUILDTYPE} ${ALL_TARGET}
 
 post-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
