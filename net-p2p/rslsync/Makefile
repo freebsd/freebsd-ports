@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rslsync
-PORTVERSION=	2.6.3
+PORTVERSION=	2.6.4
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://download-cdn.resilio.com/${PORTVERSION}/FreeBSD-${CONFIG_ARCH}/ \
 		http://download-cdn.resilio.com/${PORTVERSION}/FreeBSD-${CONFIG_ARCH}/
@@ -16,9 +16,12 @@ LICENSE_NAME=	Resilio Sync
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 LICENSE_PERMS=	auto-accept
 
-NO_WRKSUBDIR=	yes
 ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	It is a binary-only program. Source code not available.
+
+CONFLICTS_INSTALL=	rslsync-beta
+
+NO_WRKSUBDIR=	yes
 
 PLIST_SUB=	USER=${USERS} GROUP=${GROUPS}
 SUB_LIST=	USER=${USERS} GROUP=${GROUPS}
@@ -47,6 +50,6 @@ do-install:
 	${MKDIR} ${STAGEDIR}/var/db/rslsync
 
 maintainer-makesum:
-	for arch in ${ONLY_FOR_ARCHS}; do ${MAKE} DISTINFO_FILE=/dev/stdout ARCH=$$arch makesum; done | awk '$$1 != "TIMESTAMP" || NR == 1' > ${DISTINFO_FILE}
+	for arch in ${ONLY_FOR_ARCHS}; do ${MAKE} DISTINFO_FILE=/dev/stdout ARCH=$$arch makesum; done | ${AWK} '$$1 != "TIMESTAMP" || NR == 1' > ${DISTINFO_FILE}
 
 .include <bsd.port.post.mk>
