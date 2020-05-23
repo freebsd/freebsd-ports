@@ -1,3 +1,3 @@
-TIMESTAMP = 1584464913
-SHA256 (apache-tomcat-9.0.33.tar.gz) = d5cd9463492f4552229295a9a8c00615748f85e9de36434847d495e95b0ef796
-SIZE (apache-tomcat-9.0.33.tar.gz) = 11027411
+TIMESTAMP = 1589399315
+SHA256 (apache-tomcat-9.0.35.tar.gz) = 88b682fda5ffd0f27c61d14178ae880f71cea78355107ea2d176a6047859f0ac
+SIZE (apache-tomcat-9.0.35.tar.gz) = 11188192

@@ -26,7 +26,7 @@
 %%T%%/lib/catalina-storeconfig.jar
 %%T%%/lib/catalina-tribes.jar
 %%T%%/lib/catalina.jar
-%%T%%/lib/ecj-4.13.jar
+%%T%%/lib/ecj-4.15.jar
 %%T%%/lib/el-api.jar
 %%T%%/lib/jasper-el.jar
 %%T%%/lib/jasper.jar
