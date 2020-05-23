@@ -13,9 +13,6 @@ COMMENT=	Dancer2 Plugin for Interchange6 Open Source Shop Machine
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-DEPRECATED=	Depends on expired devel/p5-Test-WWW-Mechanize-PSGI
-EXPIRATION_DATE=2020-06-05
-
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Interchange6-Schema>=0:databases/p5-Interchange6-Schema \
 		p5-Interchange6>=0:www/p5-Interchange6 \
