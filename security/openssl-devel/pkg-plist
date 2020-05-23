@@ -136,8 +136,8 @@ lib/libcrypto.a
 lib/libssl.a
 %%SHARED%%lib/libssl.so
 %%SHARED%%lib/libssl.so.%%SHLIBVER%%
-%%SHARED%%lib/ossl-modules/fips.so
-%%SHARED%%lib/ossl-modules/legacy.so
+%%FIPS%%%%SHARED%%lib/ossl-modules/fips.so
+%%LEGACY%%%%SHARED%%lib/ossl-modules/legacy.so
 libdata/pkgconfig/libcrypto.pc
 libdata/pkgconfig/libssl.pc
 libdata/pkgconfig/openssl.pc
