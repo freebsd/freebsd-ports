@@ -409,6 +409,8 @@ man/man1/x509.1.gz
 %%MAN3%%man/man3/BIO_get_fp.3.gz
 %%MAN3%%man/man3/BIO_get_info_callback.3.gz
 %%MAN3%%man/man3/BIO_get_init.3.gz
+%%KTLS%%%%MAN3%%man/man3/BIO_get_ktls_recv.3.gz
+%%KTLS%%%%MAN3%%man/man3/BIO_get_ktls_send.3.gz
 %%MAN3%%man/man3/BIO_get_md.3.gz
 %%MAN3%%man/man3/BIO_get_md_ctx.3.gz
 %%MAN3%%man/man3/BIO_get_mem_data.3.gz
@@ -3000,6 +3002,7 @@ man/man1/x509.1.gz
 %%MAN3%%man/man3/SSL_rstate_string_long.3.gz
 %%MAN3%%man/man3/SSL_select_current_cert.3.gz
 %%MAN3%%man/man3/SSL_select_next_proto.3.gz
+%%KTLS%%%%MAN3%%man/man3/SSL_sendfile.3.gz
 %%MAN3%%man/man3/SSL_session_reused.3.gz
 %%MAN3%%man/man3/SSL_set0_CA_list.3.gz
 %%MAN3%%man/man3/SSL_set0_chain.3.gz

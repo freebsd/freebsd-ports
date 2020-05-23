@@ -40,10 +40,12 @@ OPTIONS_GROUP_OPTIMIZE=	ASM SSE2 THREADS
 OPTIONS_DEFINE_i386=	I386
 OPTIONS_GROUP_PROTOCOLS=NEXTPROTONEG SCTP SSL3 TLS1 TLS1_1 TLS1_2
 
-OPTIONS_DEFINE=	ASYNC CT MAN3 RFC3779 SHARED ZLIB
+OPTIONS_DEFINE=	ASYNC CT KTLS MAN3 RFC3779 SHARED ZLIB
 
 OPTIONS_DEFAULT=ASM ASYNC CT GOST DES EC MAN3 MD4 NEXTPROTONEG RC2 RC4 \
 		RMD160 SCTP SHARED SSE2 THREADS TLS1 TLS1_1 TLS1_2
+
+OPTIONS_EXCLUDE=${${OSVERSION} < 1300042:?KTLS:}
 
 OPTIONS_GROUP_OPTIMIZE_amd64=	EC
 
@@ -66,6 +68,7 @@ GOST_DESC=	GOST (Russian standard)
 HASHES_DESC=	Hash Function Support
 I386_DESC=	i386 (instead of i486+)
 IDEA_DESC=	International Data Encryption Algorithm
+KTLS_DESC=	Kernel TLS offload
 MAN3_DESC=	Install API manpages (section 3, 7)
 MD2_DESC=	MD2 (obsolete)
 MD4_DESC=	MD4 (unsafe)
@@ -92,7 +95,7 @@ WEAK-SSL-CIPHERS_DESC=	Weak cipher support (unsafe)
 ZLIB_DESC=	zlib compression support
 
 # Upstream default disabled options
-.for _option in md2 rc5 sctp ssl3 zlib weak-ssl-ciphers
+.for _option in ktls md2 rc5 sctp ssl3 zlib weak-ssl-ciphers
 ${_option:tu}_CONFIGURE_ON=	enable-${_option}
 .endfor
 
@@ -108,6 +111,7 @@ TLS1_1_IMPLIES=	TLS1_2
 
 EC_CONFIGURE_ON=	enable-ec_nistp_64_gcc_128
 I386_CONFIGURE_ON=	386
+KTLS_EXTRA_PATCHES=	${FILESDIR}/extra-patch-ktls
 MAN3_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-util_process__docs.pl
 SHARED_MAKE_ENV=	SHLIBVER=${OPENSSL_SHLIBVER}
 SHARED_PLIST_SUB=	SHLIBVER=${OPENSSL_SHLIBVER}
