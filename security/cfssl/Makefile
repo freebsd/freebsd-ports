@@ -8,7 +8,7 @@ MASTER_SITES=	https://bitbucket.org/${GOOSE_ACCOUNT}/${GOOSE_PROJECT}/get/${GOOS
 DISTFILES=	goose-${GOOSE_COMMIT}.tar.gz:goose
 
 MAINTAINER=	yuri@FreeBSD.org
-COMMENT=	CloudFlares PKI and TLS toolkit
+COMMENT=	Cloudflare's PKI and TLS toolkit
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -66,8 +66,7 @@ pre-configure:
 
 # the project uses Makefile for build and installation
 do-build:
-	(cd ${WRKSRC} && \
-	${SETENV} ${MAKE_ENV} ${GO_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} all)
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GO_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} all
 
 do-install:
 	# Makefile is used but the install target uses go install.
