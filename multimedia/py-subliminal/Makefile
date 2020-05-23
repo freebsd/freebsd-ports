@@ -7,7 +7,7 @@ CATEGORIES=	multimedia python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ed.arrakis@gmail.com
 COMMENT=	Python library to search and download subtitles
 
 LICENSE=	MIT
