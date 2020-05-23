@@ -2,7 +2,7 @@
 
 PORTNAME=	hugo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.70.0
+DISTVERSION=	0.71.0
 CATEGORIES=	www
 PKGNAMEPREFIX=	go
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
@@ -23,7 +23,7 @@ GH_TUPLE=	\
 		BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/toml \
 		PuerkitoBio:purell:v1.1.1:puerkitobio_purell/vendor/github.com/PuerkitoBio/purell \
 		PuerkitoBio:urlesc:de5bf2ad4578:puerkitobio_urlesc/vendor/github.com/PuerkitoBio/urlesc \
-		alecthomas:chroma:v0.7.2:alecthomas_chroma/vendor/github.com/alecthomas/chroma \
+		alecthomas:chroma:v0.7.3:alecthomas_chroma/vendor/github.com/alecthomas/chroma \
 		armon:go-radix:v1.0.0:armon_go_radix/vendor/github.com/armon/go-radix \
 		aws:aws-sdk-go:v1.27.1:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
 		bep:debounce:v1.2.0:bep_debounce/vendor/github.com/bep/debounce \
@@ -49,7 +49,7 @@ GH_TUPLE=	\
 		golang:oauth2:aaccbc9213b0:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.3.1:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sync:cd5d95a43a6e:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:ef85f5a75ddf:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:669c56c373c4:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
 		golang:xerrors:a985d3407aa7:golang_xerrors/vendor/golang.org/x/xerrors \
 		google:go-cloud:v0.15.0:google_go_cloud/vendor/gocloud.dev \
@@ -74,7 +74,7 @@ GH_TUPLE=	\
 		magefile:mage:v1.9.0:magefile_mage/vendor/github.com/magefile/mage \
 		magiconair:properties:v1.8.1:magiconair_properties/vendor/github.com/magiconair/properties \
 		markbates:inflect:a12c3aec81a6:markbates_inflect/vendor/github.com/markbates/inflect \
-		mattn:go-isatty:v0.0.11:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
+		mattn:go-isatty:v0.0.12:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		mattn:go-runewidth:v0.0.7:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
 		miekg:mmark:v1.3.6:miekg_mmark/vendor/github.com/miekg/mmark \
 		mitchellh:hashstructure:v1.0.0:mitchellh_hashstructure/vendor/github.com/mitchellh/hashstructure \
@@ -84,7 +84,7 @@ GH_TUPLE=	\
 		niklasfasching:go-org:v1.1.0:niklasfasching_go_org/vendor/github.com/niklasfasching/go-org \
 		olekukonko:tablewriter:v0.0.4:olekukonko_tablewriter/vendor/github.com/olekukonko/tablewriter \
 		pelletier:go-toml:v1.6.0:pelletier_go_toml/vendor/github.com/pelletier/go-toml \
-		pkg:errors:v0.8.1:pkg_errors/vendor/github.com/pkg/errors \
+		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		rogpeppe:go-internal:v1.5.1:rogpeppe_go_internal/vendor/github.com/rogpeppe/go-internal \
 		russross:blackfriday:41c5fccfd6f6:russross_blackfriday/vendor/github.com/russross/blackfriday \
 		rwcarlsen:goexif:9e8deecbddbd:rwcarlsen_goexif/vendor/github.com/rwcarlsen/goexif \
@@ -134,7 +134,7 @@ PORTMANS=	hugo-config.1 hugo-convert-toJSON.1 hugo-convert-toTOML.1 \
 .include <bsd.port.pre.mk>
 
 SOURCE_DATE_EPOCH_CMD=	date -r $$(grep TIMESTAMP ${DISTINFO_FILE} | ${SED} -e 's/[^0-9]//g') '+%FT%TZ%z'
-COMMIT_ID=		7f47b99ea9a7ba7759c4f9424fedd4591e6da497
+COMMIT_ID=		06150c87be19d63665747608ea14c3442f18ea13
 
 do-build-MANPAGES-on:
 	@cd ${GO_WRKSRC} && ${GO_WRKDIR_BIN}/${PORTNAME} gen man --dir man/man1/
