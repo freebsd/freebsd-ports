@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	octave-forge-octclip
-PORTVERSION=	1.0.8
-PORTREVISION=	14
+PORTVERSION=	2.0.1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
