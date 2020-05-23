@@ -5,7 +5,7 @@ PORTVERSION=	11.5.2
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Module wrapper for os.path
 
 LICENSE=	MIT
