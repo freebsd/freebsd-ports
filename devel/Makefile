@@ -854,6 +854,7 @@
     SUBDIR += godot2-tools
     SUBDIR += goffice
     SUBDIR += gogs
+    SUBDIR += golangci-lint
     SUBDIR += golint
     SUBDIR += google-cloud-cpp
     SUBDIR += google-gdata
