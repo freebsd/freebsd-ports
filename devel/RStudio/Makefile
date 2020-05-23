@@ -5,18 +5,14 @@
 
 PORTNAME=	RStudio
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.5042
-PORTREVISION=	1
+DISTVERSION=	1.3.959
 CATEGORIES=	devel math java
 MASTER_SITES=	https://s3.amazonaws.com/rstudio-buildtools/dictionaries/:dictionaries \
 		https://s3.amazonaws.com/rstudio-buildtools/:buildtools
 DISTFILES=	core-dictionaries.zip:dictionaries \
 		gin-${GIN_VERSION}.zip:buildtools \
 		gwt-${GWT_VERSION}.zip:buildtools \
-		mathjax-26.zip:buildtools
-
-PATCH_SITES=	https://github.com/rstudio/rstudio/commit/
-PATCHFILES+=	33c2c42d40ad97d97ca3907df51059cd2ce76fe3.patch:-p1 # https://github.com/rstudio/rstudio/commit/33c2c42d40ad97d97ca3907df51059cd2ce76fe3
+		mathjax-27.zip:buildtools
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Integrated development environment (IDE) for R

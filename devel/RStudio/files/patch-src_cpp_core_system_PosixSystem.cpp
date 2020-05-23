@@ -1,7 +1,15 @@
---- src/cpp/core/system/PosixSystem.cpp.orig	2020-04-01 16:16:24 UTC
+--- src/cpp/core/system/PosixSystem.cpp.orig	2020-05-18 18:11:10 UTC
 +++ src/cpp/core/system/PosixSystem.cpp
-@@ -46,13 +46,18 @@
+@@ -40,20 +40,25 @@
+ 
+ #include <uuid/uuid.h>
+ 
+-#ifdef __APPLE__
++#if !defined(__APPLE__) && !defined(__FreeBSD__)
+ #include <mach-o/dyld.h>
+ #include <sys/proc_info.h>
  #include <libproc.h>
+ #include <gsl/gsl>
  #endif
  
 -#ifndef __APPLE__
@@ -20,7 +28,7 @@
  #include <boost/thread.hpp>
  #include <boost/format.hpp>
  #include <boost/lexical_cast.hpp>
-@@ -920,7 +925,7 @@ Error executablePath(const char * argv0,
+@@ -917,7 +922,7 @@ Error executablePath(const char * argv0,
  
  #elif defined(HAVE_PROCSELF)
  
@@ -29,7 +37,7 @@
  
  #else
  
-@@ -1429,7 +1434,7 @@ Error osResourceLimit(ResourceLimit limit, int* pLimit
+@@ -1426,7 +1431,7 @@ Error osResourceLimit(ResourceLimit limit, int* pLimit
        case CpuLimit:
           *pLimit = RLIMIT_CPU;
           break;
@@ -38,7 +46,7 @@
        case NiceLimit:
           *pLimit = RLIMIT_NICE;
           break;
-@@ -1502,7 +1507,7 @@ Error systemInformation(SysInfo* pSysInfo)
+@@ -1499,7 +1504,7 @@ Error systemInformation(SysInfo* pSysInfo)
  {
     pSysInfo->cores = boost::thread::hardware_concurrency();
  
@@ -47,7 +55,7 @@
     struct sysinfo info;
     if (::sysinfo(&info) == -1)
        return systemError(errno, ERROR_LOCATION);
-@@ -1942,7 +1947,7 @@ Error restrictCoreDumps()
+@@ -1939,7 +1944,7 @@ Error restrictCoreDumps()
        return error;
  
     // no ptrace core dumps permitted
@@ -56,7 +64,7 @@
     int res = ::prctl(PR_SET_DUMPABLE, 0);
     if (res == -1)
        return systemError(errno, ERROR_LOCATION);
-@@ -1953,7 +1958,7 @@ Error restrictCoreDumps()
+@@ -1950,7 +1955,7 @@ Error restrictCoreDumps()
  
  Error enableCoreDumps()
  {
@@ -65,12 +73,12 @@
     int res = ::prctl(PR_SET_DUMPABLE, 1);
     if (res == -1)
        return systemError(errno, ERROR_LOCATION);
-@@ -1979,7 +1984,7 @@ void printCoreDumpable(const std::string& context)
+@@ -1976,7 +1981,7 @@ void printCoreDumpable(const std::string& context)
     ostr << "  hard limit: " << rLimitHard << std::endl;
  
     // ptrace
 -#ifndef __APPLE__
 +#if !defined(__APPLE__) && !defined(__FreeBSD__)
-    int dumpable = ::prctl(PR_GET_DUMPABLE, NULL, NULL, NULL, NULL);
+    int dumpable = ::prctl(PR_GET_DUMPABLE, nullptr, nullptr, nullptr, nullptr);
     if (dumpable == -1)
        LOG_ERROR(systemError(errno, ERROR_LOCATION));
