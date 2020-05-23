@@ -47,15 +47,15 @@ lib/racket/mzdyn3m.o
 lib/racket/starter
 lib/racket/starter-sh
 lib/racket/system.rktd
-share/man/man1/drracket.1.gz
-share/man/man1/gracket.1.gz
-share/man/man1/mred.1.gz
-share/man/man1/mzc.1.gz
-share/man/man1/mzscheme.1.gz
-share/man/man1/plt-help.1.gz
-share/man/man1/racket.1.gz
-share/man/man1/raco.1.gz
-share/man/man1/setup-plt.1.gz
+man/man1/drracket.1.gz
+man/man1/gracket.1.gz
+man/man1/mred.1.gz
+man/man1/mzc.1.gz
+man/man1/mzscheme.1.gz
+man/man1/plt-help.1.gz
+man/man1/racket.1.gz
+man/man1/raco.1.gz
+man/man1/setup-plt.1.gz
 share/applications/drracket.desktop
 share/applications/slideshow.desktop
 %%PORTDOCS%%%%DOCSDIR%%/2d/blueboxes.rktd
@@ -203,6 +203,7 @@ share/applications/slideshow.desktop
 %%PORTDOCS%%%%DOCSDIR%%/deinprogramm/Eigenschaften.html
 %%PORTDOCS%%%%DOCSDIR%%/deinprogramm/Konstruktionsanleitungen.html
 %%PORTDOCS%%%%DOCSDIR%%/deinprogramm/Pattern-Matching.html
+%%PORTDOCS%%%%DOCSDIR%%/deinprogramm/Record-Typ-Definition__alte_Form.html
 %%PORTDOCS%%%%DOCSDIR%%/deinprogramm/Record-Typ-Definitionen.html
 %%PORTDOCS%%%%DOCSDIR%%/deinprogramm/Signaturen.html
 %%PORTDOCS%%%%DOCSDIR%%/deinprogramm/Testf_lle.html
@@ -217,6 +218,7 @@ share/applications/slideshow.desktop
 %%PORTDOCS%%%%DOCSDIR%%/deinprogramm/beginner-prim-ops.html
 %%PORTDOCS%%%%DOCSDIR%%/deinprogramm/blueboxes.rktd
 %%PORTDOCS%%%%DOCSDIR%%/deinprogramm/cond.html
+%%PORTDOCS%%%%DOCSDIR%%/deinprogramm/define-record-with-parameters.html
 %%PORTDOCS%%%%DOCSDIR%%/deinprogramm/doc-index.html
 %%PORTDOCS%%%%DOCSDIR%%/deinprogramm/id.html
 %%PORTDOCS%%%%DOCSDIR%%/deinprogramm/if.html
@@ -608,6 +610,7 @@ share/applications/slideshow.desktop
 %%PORTDOCS%%%%DOCSDIR%%/foreign/synced.rktd
 %%PORTDOCS%%%%DOCSDIR%%/foreign/types.html
 %%PORTDOCS%%%%DOCSDIR%%/foreign/unsafe-global.html
+%%PORTDOCS%%%%DOCSDIR%%/foreign/vm.html
 %%PORTDOCS%%%%DOCSDIR%%/foreign/winapi.html
 %%PORTDOCS%%%%DOCSDIR%%/framework/Application.html
 %%PORTDOCS%%%%DOCSDIR%%/framework/Autosave.html
@@ -831,6 +834,7 @@ share/applications/slideshow.desktop
 %%PORTDOCS%%%%DOCSDIR%%/gui/editor-stream-out_.html
 %%PORTDOCS%%%%DOCSDIR%%/gui/editor-wordbreak-map_.html
 %%PORTDOCS%%%%DOCSDIR%%/gui/editor___.html
+%%PORTDOCS%%%%DOCSDIR%%/gui/event_.html
 %%PORTDOCS%%%%DOCSDIR%%/gui/frame_.html
 %%PORTDOCS%%%%DOCSDIR%%/gui/gauge.png
 %%PORTDOCS%%%%DOCSDIR%%/gui/gauge_.html
@@ -1346,9 +1350,19 @@ share/applications/slideshow.desktop
 %%PORTDOCS%%%%DOCSDIR%%/inside/Structures.html
 %%PORTDOCS%%%%DOCSDIR%%/inside/Subprocesses.html
 %%PORTDOCS%%%%DOCSDIR%%/inside/Writing_Racket_Extensions.html
+%%PORTDOCS%%%%DOCSDIR%%/inside/appendix.html
+%%PORTDOCS%%%%DOCSDIR%%/inside/bc.html
 %%PORTDOCS%%%%DOCSDIR%%/inside/blueboxes.rktd
 %%PORTDOCS%%%%DOCSDIR%%/inside/config.html
 %%PORTDOCS%%%%DOCSDIR%%/inside/contmarks.html
+%%PORTDOCS%%%%DOCSDIR%%/inside/cs-embedding.html
+%%PORTDOCS%%%%DOCSDIR%%/inside/cs-eval.html
+%%PORTDOCS%%%%DOCSDIR%%/inside/cs-overview.html
+%%PORTDOCS%%%%DOCSDIR%%/inside/cs-procs.html
+%%PORTDOCS%%%%DOCSDIR%%/inside/cs-start.html
+%%PORTDOCS%%%%DOCSDIR%%/inside/cs-thread.html
+%%PORTDOCS%%%%DOCSDIR%%/inside/cs-values_types.html
+%%PORTDOCS%%%%DOCSDIR%%/inside/cs.html
 %%PORTDOCS%%%%DOCSDIR%%/inside/doc-index.html
 %%PORTDOCS%%%%DOCSDIR%%/inside/embedding.html
 %%PORTDOCS%%%%DOCSDIR%%/inside/exceptions.html
@@ -1363,6 +1377,8 @@ share/applications/slideshow.desktop
 %%PORTDOCS%%%%DOCSDIR%%/inside/overview.html
 %%PORTDOCS%%%%DOCSDIR%%/inside/provides.sxref
 %%PORTDOCS%%%%DOCSDIR%%/inside/security.html
+%%PORTDOCS%%%%DOCSDIR%%/inside/segment-ideas.html
+%%PORTDOCS%%%%DOCSDIR%%/inside/src-build.html
 %%PORTDOCS%%%%DOCSDIR%%/inside/stamp.sxref
 %%PORTDOCS%%%%DOCSDIR%%/inside/synced.rktd
 %%PORTDOCS%%%%DOCSDIR%%/inside/threads.html
@@ -1578,6 +1594,7 @@ share/applications/slideshow.desktop
 %%PORTDOCS%%%%DOCSDIR%%/mrlib/Syntax_Browser.html
 %%PORTDOCS%%%%DOCSDIR%%/mrlib/TeX_Table.html
 %%PORTDOCS%%%%DOCSDIR%%/mrlib/Terminal_Window.html
+%%PORTDOCS%%%%DOCSDIR%%/mrlib/White_on_Black_Panel_Predicate.html
 %%PORTDOCS%%%%DOCSDIR%%/mrlib/aligned-editor-canvas_.html
 %%PORTDOCS%%%%DOCSDIR%%/mrlib/aligned-editor-snip_.html
 %%PORTDOCS%%%%DOCSDIR%%/mrlib/aligned-pasteboard-parent___.html
@@ -1936,6 +1953,9 @@ share/applications/slideshow.desktop
 %%PORTDOCS%%%%DOCSDIR%%/pict/pict_210.png
 %%PORTDOCS%%%%DOCSDIR%%/pict/pict_211.png
 %%PORTDOCS%%%%DOCSDIR%%/pict/pict_212.png
+%%PORTDOCS%%%%DOCSDIR%%/pict/pict_213.png
+%%PORTDOCS%%%%DOCSDIR%%/pict/pict_214.png
+%%PORTDOCS%%%%DOCSDIR%%/pict/pict_215.png
 %%PORTDOCS%%%%DOCSDIR%%/pict/pict_22.png
 %%PORTDOCS%%%%DOCSDIR%%/pict/pict_23.png
 %%PORTDOCS%%%%DOCSDIR%%/pict/pict_24.png
@@ -2692,6 +2712,7 @@ share/applications/slideshow.desktop
 %%PORTDOCS%%%%DOCSDIR%%/reference/Byte_and_String_Output.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Command-Line_Parsing.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Delayed_Evaluation.html
+%%PORTDOCS%%%%DOCSDIR%%/reference/Equality.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Exiting.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Expanding_Top-Level_Forms.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Filesystem.html
@@ -3969,9 +3990,11 @@ share/applications/slideshow.desktop
 %%PORTDOCS%%%%DOCSDIR%%/xrepl/provides.sxref
 %%PORTDOCS%%%%DOCSDIR%%/xrepl/stamp.sxref
 %%PORTDOCS%%%%DOCSDIR%%/xrepl/synced.rktd
-%%DATADIR%%/COPYING-libscheme.txt
-%%DATADIR%%/COPYING.txt
-%%DATADIR%%/COPYING_LESSER.txt
+%%DATADIR%%/LICENSE-APACHE.txt
+%%DATADIR%%/LICENSE-GPL.txt
+%%DATADIR%%/LICENSE-LGPL.txt
+%%DATADIR%%/LICENSE-MIT.txt
+%%DATADIR%%/LICENSE-libscheme.txt
 %%DATADIR%%/collects/acks/acks.rkt
 %%DATADIR%%/collects/acks/compiled/acks_rkt.dep
 %%DATADIR%%/collects/acks/compiled/acks_rkt.zo
@@ -4011,10 +4034,31 @@ share/applications/slideshow.desktop
 %%DATADIR%%/collects/compiler/find-exe.rkt
 %%DATADIR%%/collects/compiler/module-suffix.rkt
 %%DATADIR%%/collects/compiler/option.rkt
+%%DATADIR%%/collects/compiler/private/cm-dep.rkt
+%%DATADIR%%/collects/compiler/private/cm-file.rkt
+%%DATADIR%%/collects/compiler/private/cm-hash.rkt
+%%DATADIR%%/collects/compiler/private/cm-log.rkt
 %%DATADIR%%/collects/compiler/private/cm-minimal.rkt
+%%DATADIR%%/collects/compiler/private/cm-path.rkt
+%%DATADIR%%/collects/compiler/private/cm-security.rkt
+%%DATADIR%%/collects/compiler/private/cm-util.rkt
 %%DATADIR%%/collects/compiler/private/collects-path.rkt
+%%DATADIR%%/collects/compiler/private/compiled/cm-dep_rkt.dep
+%%DATADIR%%/collects/compiler/private/compiled/cm-dep_rkt.zo
+%%DATADIR%%/collects/compiler/private/compiled/cm-file_rkt.dep
+%%DATADIR%%/collects/compiler/private/compiled/cm-file_rkt.zo
+%%DATADIR%%/collects/compiler/private/compiled/cm-hash_rkt.dep
+%%DATADIR%%/collects/compiler/private/compiled/cm-hash_rkt.zo
+%%DATADIR%%/collects/compiler/private/compiled/cm-log_rkt.dep
+%%DATADIR%%/collects/compiler/private/compiled/cm-log_rkt.zo
 %%DATADIR%%/collects/compiler/private/compiled/cm-minimal_rkt.dep
 %%DATADIR%%/collects/compiler/private/compiled/cm-minimal_rkt.zo
+%%DATADIR%%/collects/compiler/private/compiled/cm-path_rkt.dep
+%%DATADIR%%/collects/compiler/private/compiled/cm-path_rkt.zo
+%%DATADIR%%/collects/compiler/private/compiled/cm-security_rkt.dep
+%%DATADIR%%/collects/compiler/private/compiled/cm-security_rkt.zo
+%%DATADIR%%/collects/compiler/private/compiled/cm-util_rkt.dep
+%%DATADIR%%/collects/compiler/private/compiled/cm-util_rkt.zo
 %%DATADIR%%/collects/compiler/private/compiled/collects-path_rkt.dep
 %%DATADIR%%/collects/compiler/private/compiled/collects-path_rkt.zo
 %%DATADIR%%/collects/compiler/private/compiled/configdir_rkt.dep
@@ -4166,6 +4210,8 @@ share/applications/slideshow.desktop
 %%DATADIR%%/collects/ffi/unsafe/compiled/schedule_rkt.zo
 %%DATADIR%%/collects/ffi/unsafe/compiled/try-atomic_rkt.dep
 %%DATADIR%%/collects/ffi/unsafe/compiled/try-atomic_rkt.zo
+%%DATADIR%%/collects/ffi/unsafe/compiled/vm_rkt.dep
+%%DATADIR%%/collects/ffi/unsafe/compiled/vm_rkt.zo
 %%DATADIR%%/collects/ffi/unsafe/custodian.rkt
 %%DATADIR%%/collects/ffi/unsafe/cvector.rkt
 %%DATADIR%%/collects/ffi/unsafe/define.rkt
@@ -4183,6 +4229,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/collects/ffi/unsafe/private/win32.rkt
 %%DATADIR%%/collects/ffi/unsafe/schedule.rkt
 %%DATADIR%%/collects/ffi/unsafe/try-atomic.rkt
+%%DATADIR%%/collects/ffi/unsafe/vm.rkt
 %%DATADIR%%/collects/ffi/vector.rkt
 %%DATADIR%%/collects/ffi/winapi.rkt
 %%DATADIR%%/collects/file/cache.rkt
@@ -4594,6 +4641,8 @@ share/applications/slideshow.desktop
 %%DATADIR%%/collects/racket/compiled/kernel_rkt.zo
 %%DATADIR%%/collects/racket/compiled/keyword-transform_rkt.dep
 %%DATADIR%%/collects/racket/compiled/keyword-transform_rkt.zo
+%%DATADIR%%/collects/racket/compiled/keyword_rkt.dep
+%%DATADIR%%/collects/racket/compiled/keyword_rkt.zo
 %%DATADIR%%/collects/racket/compiled/language-info_rkt.dep
 %%DATADIR%%/collects/racket/compiled/language-info_rkt.zo
 %%DATADIR%%/collects/racket/compiled/lazy-require_rkt.dep
@@ -4676,6 +4725,8 @@ share/applications/slideshow.desktop
 %%DATADIR%%/collects/racket/compiled/stxparam_rkt.zo
 %%DATADIR%%/collects/racket/compiled/surrogate_rkt.dep
 %%DATADIR%%/collects/racket/compiled/surrogate_rkt.zo
+%%DATADIR%%/collects/racket/compiled/symbol_rkt.dep
+%%DATADIR%%/collects/racket/compiled/symbol_rkt.zo
 %%DATADIR%%/collects/racket/compiled/syntax_rkt.dep
 %%DATADIR%%/collects/racket/compiled/syntax_rkt.zo
 %%DATADIR%%/collects/racket/compiled/system_rkt.dep
@@ -4889,6 +4940,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/collects/racket/kernel/compiled/init_rkt.zo
 %%DATADIR%%/collects/racket/kernel/init.rkt
 %%DATADIR%%/collects/racket/keyword-transform.rkt
+%%DATADIR%%/collects/racket/keyword.rkt
 %%DATADIR%%/collects/racket/lang/compiled/reader_rkt.dep
 %%DATADIR%%/collects/racket/lang/compiled/reader_rkt.zo
 %%DATADIR%%/collects/racket/lang/reader.rkt
@@ -4977,7 +5029,6 @@ share/applications/slideshow.desktop
 %%DATADIR%%/collects/racket/pretty.rkt
 %%DATADIR%%/collects/racket/private/arity.rkt
 %%DATADIR%%/collects/racket/private/base.rkt
-%%DATADIR%%/collects/racket/private/c.rkt
 %%DATADIR%%/collects/racket/private/case.rkt
 %%DATADIR%%/collects/racket/private/cert.rkt
 %%DATADIR%%/collects/racket/private/check.rkt
@@ -4992,8 +5043,6 @@ share/applications/slideshow.desktop
 %%DATADIR%%/collects/racket/private/compiled/arity_rkt.zo
 %%DATADIR%%/collects/racket/private/compiled/base_rkt.dep
 %%DATADIR%%/collects/racket/private/compiled/base_rkt.zo
-%%DATADIR%%/collects/racket/private/compiled/c_rkt.dep
-%%DATADIR%%/collects/racket/private/compiled/c_rkt.zo
 %%DATADIR%%/collects/racket/private/compiled/case_rkt.dep
 %%DATADIR%%/collects/racket/private/compiled/case_rkt.zo
 %%DATADIR%%/collects/racket/private/compiled/cert_rkt.dep
@@ -5140,6 +5189,8 @@ share/applications/slideshow.desktop
 %%DATADIR%%/collects/racket/private/compiled/set-types_rkt.zo
 %%DATADIR%%/collects/racket/private/compiled/set_rkt.dep
 %%DATADIR%%/collects/racket/private/compiled/set_rkt.zo
+%%DATADIR%%/collects/racket/private/compiled/share-search_rkt.dep
+%%DATADIR%%/collects/racket/private/compiled/share-search_rkt.zo
 %%DATADIR%%/collects/racket/private/compiled/shared-body_rkt.dep
 %%DATADIR%%/collects/racket/private/compiled/shared-body_rkt.zo
 %%DATADIR%%/collects/racket/private/compiled/small-scheme_rkt.dep
@@ -5267,6 +5318,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/collects/racket/private/serialize.rkt
 %%DATADIR%%/collects/racket/private/set-types.rkt
 %%DATADIR%%/collects/racket/private/set.rkt
+%%DATADIR%%/collects/racket/private/share-search.rkt
 %%DATADIR%%/collects/racket/private/shared-body.rkt
 %%DATADIR%%/collects/racket/private/small-scheme.rkt
 %%DATADIR%%/collects/racket/private/so-search.rkt
@@ -5330,6 +5382,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/collects/racket/stxparam-exptime.rkt
 %%DATADIR%%/collects/racket/stxparam.rkt
 %%DATADIR%%/collects/racket/surrogate.rkt
+%%DATADIR%%/collects/racket/symbol.rkt
 %%DATADIR%%/collects/racket/syntax.rkt
 %%DATADIR%%/collects/racket/system.rkt
 %%DATADIR%%/collects/racket/tcp.rkt
@@ -5914,7 +5967,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/algol60/tests/syncheck-test.rkt
 %%DATADIR%%/pkgs/algol60/tests/test.rkt
 %%DATADIR%%/pkgs/algol60/tool.rkt
-%%DATADIR%%/pkgs/at-exp-lib/LICENSE.txt
+%%DATADIR%%/pkgs/at-exp-lib/LICENSE
 %%DATADIR%%/pkgs/at-exp-lib/at-exp/lang/compiled/language-info_rkt.dep
 %%DATADIR%%/pkgs/at-exp-lib/at-exp/lang/compiled/language-info_rkt.zo
 %%DATADIR%%/pkgs/at-exp-lib/at-exp/lang/compiled/reader_rkt.dep
@@ -5931,7 +5984,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/at-exp-lib/scribble/compiled/reader_rkt.dep
 %%DATADIR%%/pkgs/at-exp-lib/scribble/compiled/reader_rkt.zo
 %%DATADIR%%/pkgs/at-exp-lib/scribble/reader.rkt
-%%DATADIR%%/pkgs/base/LICENSE.txt
+%%DATADIR%%/pkgs/base/LICENSE
 %%DATADIR%%/pkgs/base/info.rkt
 %%DATADIR%%/pkgs/cext-lib/compiler/commands/compiled/ctool_rkt.dep
 %%DATADIR%%/pkgs/cext-lib/compiler/commands/compiled/ctool_rkt.zo
@@ -6412,7 +6465,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/compatibility-lib/scheme/mpair.rkt
 %%DATADIR%%/pkgs/compatibility-lib/scheme/package.rkt
 %%DATADIR%%/pkgs/compatibility/info.rkt
-%%DATADIR%%/pkgs/compiler-lib/LICENSE.txt
+%%DATADIR%%/pkgs/compiler-lib/LICENSE
 %%DATADIR%%/pkgs/compiler-lib/compiler/bundle-dist.rkt
 %%DATADIR%%/pkgs/compiler-lib/compiler/commands/compiled/decompile_rkt.dep
 %%DATADIR%%/pkgs/compiler-lib/compiler/commands/compiled/decompile_rkt.zo
@@ -6499,6 +6552,9 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/compiler-lib/compiler/embed-sig.rkt
 %%DATADIR%%/pkgs/compiler-lib/compiler/embed-unit.rkt
 %%DATADIR%%/pkgs/compiler-lib/compiler/option-unit.rkt
+%%DATADIR%%/pkgs/compiler-lib/compiler/private/chez.rkt
+%%DATADIR%%/pkgs/compiler-lib/compiler/private/compiled/chez_rkt.dep
+%%DATADIR%%/pkgs/compiler-lib/compiler/private/compiled/chez_rkt.zo
 %%DATADIR%%/pkgs/compiler-lib/compiler/private/compiled/deserialize_rkt.dep
 %%DATADIR%%/pkgs/compiler-lib/compiler/private/compiled/deserialize_rkt.zo
 %%DATADIR%%/pkgs/compiler-lib/compiler/private/compiled/language_rkt.dep
@@ -6522,7 +6578,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/compiler-lib/setup/option-sig.rkt
 %%DATADIR%%/pkgs/compiler-lib/setup/option-unit.rkt
 %%DATADIR%%/pkgs/compiler-lib/setup/setup-unit.rkt
-%%DATADIR%%/pkgs/compiler/LICENSE.txt
+%%DATADIR%%/pkgs/compiler/LICENSE
 %%DATADIR%%/pkgs/compiler/info.rkt
 %%DATADIR%%/pkgs/contract-profile/LICENSE
 %%DATADIR%%/pkgs/contract-profile/README.md
@@ -6811,7 +6867,6 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/datalog/tool/datalog.png
 %%DATADIR%%/pkgs/datalog/tool/submit.rkt
 %%DATADIR%%/pkgs/datalog/tool/syntax-color.rkt
-%%DATADIR%%/pkgs/db-doc/LICENSE.txt
 %%DATADIR%%/pkgs/db-doc/db/compiled/info_rkt.dep
 %%DATADIR%%/pkgs/db-doc/db/compiled/info_rkt.zo
 %%DATADIR%%/pkgs/db-doc/db/info.rkt
@@ -6848,7 +6903,6 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/db-doc/db/scribblings/using-db.scrbl
 %%DATADIR%%/pkgs/db-doc/db/scribblings/util.scrbl
 %%DATADIR%%/pkgs/db-doc/info.rkt
-%%DATADIR%%/pkgs/db-lib/LICENSE.txt
 %%DATADIR%%/pkgs/db-lib/db/TODO
 %%DATADIR%%/pkgs/db-lib/db/base.rkt
 %%DATADIR%%/pkgs/db-lib/db/cassandra.rkt
@@ -6968,7 +7022,6 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/db-lib/db/util/private/geometry.rkt
 %%DATADIR%%/pkgs/db-lib/db/util/testing.rkt
 %%DATADIR%%/pkgs/db-lib/info.rkt
-%%DATADIR%%/pkgs/db/LICENSE.txt
 %%DATADIR%%/pkgs/db/info.rkt
 %%DATADIR%%/pkgs/deinprogramm-signature/deinprogramm/quickcheck/compiled/info_rkt.dep
 %%DATADIR%%/pkgs/deinprogramm-signature/deinprogramm/quickcheck/compiled/info_rkt.zo
@@ -7549,6 +7602,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/draw-lib/racket/draw/unsafe/bstr.rkt
 %%DATADIR%%/pkgs/draw-lib/racket/draw/unsafe/cairo-lib.rkt
 %%DATADIR%%/pkgs/draw-lib/racket/draw/unsafe/cairo.rkt
+%%DATADIR%%/pkgs/draw-lib/racket/draw/unsafe/callback.rkt
 %%DATADIR%%/pkgs/draw-lib/racket/draw/unsafe/compiled/brush_rkt.dep
 %%DATADIR%%/pkgs/draw-lib/racket/draw/unsafe/compiled/brush_rkt.zo
 %%DATADIR%%/pkgs/draw-lib/racket/draw/unsafe/compiled/bstr_rkt.dep
@@ -7557,6 +7611,8 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/draw-lib/racket/draw/unsafe/compiled/cairo-lib_rkt.zo
 %%DATADIR%%/pkgs/draw-lib/racket/draw/unsafe/compiled/cairo_rkt.dep
 %%DATADIR%%/pkgs/draw-lib/racket/draw/unsafe/compiled/cairo_rkt.zo
+%%DATADIR%%/pkgs/draw-lib/racket/draw/unsafe/compiled/callback_rkt.dep
+%%DATADIR%%/pkgs/draw-lib/racket/draw/unsafe/compiled/callback_rkt.zo
 %%DATADIR%%/pkgs/draw-lib/racket/draw/unsafe/compiled/glib_rkt.dep
 %%DATADIR%%/pkgs/draw-lib/racket/draw/unsafe/compiled/glib_rkt.zo
 %%DATADIR%%/pkgs/draw-lib/racket/draw/unsafe/compiled/jpeg_rkt.dep
@@ -7572,7 +7628,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/draw-lib/racket/draw/xbm.rkt
 %%DATADIR%%/pkgs/draw-lib/racket/draw/xpm.rkt
 %%DATADIR%%/pkgs/draw/info.rkt
-%%DATADIR%%/pkgs/drracket-plugin-lib/LICENSE.txt
+%%DATADIR%%/pkgs/drracket-plugin-lib/LICENSE
 %%DATADIR%%/pkgs/drracket-plugin-lib/drracket/compiled/tool_rkt.dep
 %%DATADIR%%/pkgs/drracket-plugin-lib/drracket/compiled/tool_rkt.zo
 %%DATADIR%%/pkgs/drracket-plugin-lib/drracket/private/compiled/drsig_rkt.dep
@@ -7589,6 +7645,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/drracket-plugin-lib/lang/compiled/info_rkt.zo
 %%DATADIR%%/pkgs/drracket-plugin-lib/lang/debugger-language-interface.rkt
 %%DATADIR%%/pkgs/drracket-plugin-lib/lang/info.rkt
+%%DATADIR%%/pkgs/drracket-tool-doc/LICENSE
 %%DATADIR%%/pkgs/drracket-tool-doc/info.rkt
 %%DATADIR%%/pkgs/drracket-tool-doc/scribblings/drracket-tools/compiled/drracket-tools_scrbl.dep
 %%DATADIR%%/pkgs/drracket-tool-doc/scribblings/drracket-tools/compiled/drracket-tools_scrbl.zo
@@ -7596,6 +7653,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/drracket-tool-doc/scribblings/drracket-tools/compiled/info_rkt.zo
 %%DATADIR%%/pkgs/drracket-tool-doc/scribblings/drracket-tools/drracket-tools.scrbl
 %%DATADIR%%/pkgs/drracket-tool-doc/scribblings/drracket-tools/info.rkt
+%%DATADIR%%/pkgs/drracket-tool-lib/LICENSE
 %%DATADIR%%/pkgs/drracket-tool-lib/drracket/check-syntax.rkt
 %%DATADIR%%/pkgs/drracket-tool-lib/drracket/compiled/check-syntax_rkt.dep
 %%DATADIR%%/pkgs/drracket-tool-lib/drracket/compiled/check-syntax_rkt.zo
@@ -7642,8 +7700,9 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/drracket-tool-lib/drracket/private/syncheck/traversals.rkt
 %%DATADIR%%/pkgs/drracket-tool-lib/drracket/private/syncheck/xref.rkt
 %%DATADIR%%/pkgs/drracket-tool-lib/info.rkt
+%%DATADIR%%/pkgs/drracket-tool/LICENSE
 %%DATADIR%%/pkgs/drracket-tool/info.rkt
-%%DATADIR%%/pkgs/drracket/LICENSE.txt
+%%DATADIR%%/pkgs/drracket/LICENSE
 %%DATADIR%%/pkgs/drracket/browser/browser-sig.rkt
 %%DATADIR%%/pkgs/drracket/browser/browser-unit.rkt
 %%DATADIR%%/pkgs/drracket/browser/browser.rkt
@@ -7745,6 +7804,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/drracket/drracket/private/app.rkt
 %%DATADIR%%/pkgs/drracket/drracket/private/bindings-browser.rkt
 %%DATADIR%%/pkgs/drracket/drracket/private/colored-errors.rkt
+%%DATADIR%%/pkgs/drracket/drracket/private/compiled-dir.rkt
 %%DATADIR%%/pkgs/drracket/drracket/private/compiled/ada_rkt.dep
 %%DATADIR%%/pkgs/drracket/drracket/private/compiled/ada_rkt.zo
 %%DATADIR%%/pkgs/drracket/drracket/private/compiled/app_rkt.dep
@@ -7753,6 +7813,8 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/drracket/drracket/private/compiled/bindings-browser_rkt.zo
 %%DATADIR%%/pkgs/drracket/drracket/private/compiled/colored-errors_rkt.dep
 %%DATADIR%%/pkgs/drracket/drracket/private/compiled/colored-errors_rkt.zo
+%%DATADIR%%/pkgs/drracket/drracket/private/compiled/compiled-dir_rkt.dep
+%%DATADIR%%/pkgs/drracket/drracket/private/compiled/compiled-dir_rkt.zo
 %%DATADIR%%/pkgs/drracket/drracket/private/compiled/debug_rkt.dep
 %%DATADIR%%/pkgs/drracket/drracket/private/compiled/debug_rkt.zo
 %%DATADIR%%/pkgs/drracket/drracket/private/compiled/dock-icon_rkt.dep
@@ -9942,7 +10004,6 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/games/tests/compiled/test-docs-complete_rkt.dep
 %%DATADIR%%/pkgs/games/tests/compiled/test-docs-complete_rkt.zo
 %%DATADIR%%/pkgs/games/tests/test-docs-complete.rkt
-%%DATADIR%%/pkgs/gui-doc/LICENSE.txt
 %%DATADIR%%/pkgs/gui-doc/embedded-gui/compiled/info_rkt.dep
 %%DATADIR%%/pkgs/gui-doc/embedded-gui/compiled/info_rkt.zo
 %%DATADIR%%/pkgs/gui-doc/embedded-gui/info.rkt
@@ -10079,6 +10140,8 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/gui-doc/mrlib/scribblings/compiled/mrlib_scrbl.zo
 %%DATADIR%%/pkgs/gui-doc/mrlib/scribblings/compiled/name-message_scrbl.dep
 %%DATADIR%%/pkgs/gui-doc/mrlib/scribblings/compiled/name-message_scrbl.zo
+%%DATADIR%%/pkgs/gui-doc/mrlib/scribblings/compiled/panel-wob_scrbl.dep
+%%DATADIR%%/pkgs/gui-doc/mrlib/scribblings/compiled/panel-wob_scrbl.zo
 %%DATADIR%%/pkgs/gui-doc/mrlib/scribblings/compiled/path-dialog_scrbl.dep
 %%DATADIR%%/pkgs/gui-doc/mrlib/scribblings/compiled/path-dialog_scrbl.zo
 %%DATADIR%%/pkgs/gui-doc/mrlib/scribblings/compiled/plot_scrbl.dep
@@ -10135,6 +10198,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/gui-doc/mrlib/scribblings/matrix-snip.scrbl
 %%DATADIR%%/pkgs/gui-doc/mrlib/scribblings/mrlib.scrbl
 %%DATADIR%%/pkgs/gui-doc/mrlib/scribblings/name-message.scrbl
+%%DATADIR%%/pkgs/gui-doc/mrlib/scribblings/panel-wob.scrbl
 %%DATADIR%%/pkgs/gui-doc/mrlib/scribblings/path-dialog.scrbl
 %%DATADIR%%/pkgs/gui-doc/mrlib/scribblings/plot.scrbl
 %%DATADIR%%/pkgs/gui-doc/mrlib/scribblings/snip-canvas.scrbl
@@ -10607,7 +10671,6 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/gui-doc/scribblings/gui/window-intf.scrbl
 %%DATADIR%%/pkgs/gui-doc/scribblings/gui/wxme-circle-snip.rkt
 %%DATADIR%%/pkgs/gui-doc/scribblings/gui/wxme.scrbl
-%%DATADIR%%/pkgs/gui-lib/LICENSE.txt
 %%DATADIR%%/pkgs/gui-lib/embedded-gui/compiled/embedded-gui_rkt.dep
 %%DATADIR%%/pkgs/gui-lib/embedded-gui/compiled/embedded-gui_rkt.zo
 %%DATADIR%%/pkgs/gui-lib/embedded-gui/compiled/main_rkt.dep
@@ -11039,6 +11102,8 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/gui-lib/mred/private/compiled/mrtop_rkt.zo
 %%DATADIR%%/pkgs/gui-lib/mred/private/compiled/mrwindow_rkt.dep
 %%DATADIR%%/pkgs/gui-lib/mred/private/compiled/mrwindow_rkt.zo
+%%DATADIR%%/pkgs/gui-lib/mred/private/compiled/panel-wob_rkt.dep
+%%DATADIR%%/pkgs/gui-lib/mred/private/compiled/panel-wob_rkt.zo
 %%DATADIR%%/pkgs/gui-lib/mred/private/compiled/path-dialog_rkt.dep
 %%DATADIR%%/pkgs/gui-lib/mred/private/compiled/path-dialog_rkt.zo
 %%DATADIR%%/pkgs/gui-lib/mred/private/compiled/repl_rkt.dep
@@ -11095,6 +11160,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/gui-lib/mred/private/mrtextfield.rkt
 %%DATADIR%%/pkgs/gui-lib/mred/private/mrtop.rkt
 %%DATADIR%%/pkgs/gui-lib/mred/private/mrwindow.rkt
+%%DATADIR%%/pkgs/gui-lib/mred/private/panel-wob.rkt
 %%DATADIR%%/pkgs/gui-lib/mred/private/path-dialog.rkt
 %%DATADIR%%/pkgs/gui-lib/mred/private/repl.rkt
 %%DATADIR%%/pkgs/gui-lib/mred/private/seqcontract.rkt
@@ -11669,6 +11735,8 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/gui-lib/mrlib/compiled/matrix-snip_rkt.zo
 %%DATADIR%%/pkgs/gui-lib/mrlib/compiled/name-message_rkt.dep
 %%DATADIR%%/pkgs/gui-lib/mrlib/compiled/name-message_rkt.zo
+%%DATADIR%%/pkgs/gui-lib/mrlib/compiled/panel-wob_rkt.dep
+%%DATADIR%%/pkgs/gui-lib/mrlib/compiled/panel-wob_rkt.zo
 %%DATADIR%%/pkgs/gui-lib/mrlib/compiled/path-dialog_rkt.dep
 %%DATADIR%%/pkgs/gui-lib/mrlib/compiled/path-dialog_rkt.zo
 %%DATADIR%%/pkgs/gui-lib/mrlib/compiled/plot_rkt.dep
@@ -11702,6 +11770,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/gui-lib/mrlib/interactive-value-port.rkt
 %%DATADIR%%/pkgs/gui-lib/mrlib/matrix-snip.rkt
 %%DATADIR%%/pkgs/gui-lib/mrlib/name-message.rkt
+%%DATADIR%%/pkgs/gui-lib/mrlib/panel-wob.rkt
 %%DATADIR%%/pkgs/gui-lib/mrlib/path-dialog.rkt
 %%DATADIR%%/pkgs/gui-lib/mrlib/plot.rkt
 %%DATADIR%%/pkgs/gui-lib/mrlib/private/aligned-pasteboard/aligned-editor-container.rkt
@@ -11858,9 +11927,8 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/gui-pkg-manager-lib/pkg/gui/private/compiled/settings_rkt.zo
 %%DATADIR%%/pkgs/gui-pkg-manager-lib/pkg/gui/private/filter-panel.rkt
 %%DATADIR%%/pkgs/gui-pkg-manager-lib/pkg/gui/private/settings.rkt
-%%DATADIR%%/pkgs/gui/LICENSE.txt
 %%DATADIR%%/pkgs/gui/info.rkt
-%%DATADIR%%/pkgs/htdp-doc/LICENSE.txt
+%%DATADIR%%/pkgs/htdp-doc/LICENSE
 %%DATADIR%%/pkgs/htdp-doc/graphics/scribblings/common.rkt
 %%DATADIR%%/pkgs/htdp-doc/graphics/scribblings/compiled/common_rkt.dep
 %%DATADIR%%/pkgs/htdp-doc/graphics/scribblings/compiled/common_rkt.zo
@@ -12408,7 +12476,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/htdp-lib/2htdp/universe-syntax-parse.rkt
 %%DATADIR%%/pkgs/htdp-lib/2htdp/universe.rkt
 %%DATADIR%%/pkgs/htdp-lib/2htdp/web-io.rkt
-%%DATADIR%%/pkgs/htdp-lib/LICENSE.txt
+%%DATADIR%%/pkgs/htdp-lib/LICENSE
 %%DATADIR%%/pkgs/htdp-lib/graphics/compiled/graphics-posn-less-unit_rkt.dep
 %%DATADIR%%/pkgs/htdp-lib/graphics/compiled/graphics-posn-less-unit_rkt.zo
 %%DATADIR%%/pkgs/htdp-lib/graphics/compiled/graphics-sig_rkt.dep
@@ -12777,6 +12845,8 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/htdp-lib/stepper/private/compiled/shared-typed_rkt.zo
 %%DATADIR%%/pkgs/htdp-lib/stepper/private/compiled/shared_rkt.dep
 %%DATADIR%%/pkgs/htdp-lib/stepper/private/compiled/shared_rkt.zo
+%%DATADIR%%/pkgs/htdp-lib/stepper/private/compiled/step-img_rkt.dep
+%%DATADIR%%/pkgs/htdp-lib/stepper/private/compiled/step-img_rkt.zo
 %%DATADIR%%/pkgs/htdp-lib/stepper/private/compiled/syntax-hider_rkt.dep
 %%DATADIR%%/pkgs/htdp-lib/stepper/private/compiled/syntax-hider_rkt.zo
 %%DATADIR%%/pkgs/htdp-lib/stepper/private/compiled/syntax-property_rkt.dep
@@ -12805,6 +12875,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/htdp-lib/stepper/private/reconstruct.rkt
 %%DATADIR%%/pkgs/htdp-lib/stepper/private/shared-typed.rkt
 %%DATADIR%%/pkgs/htdp-lib/stepper/private/shared.rkt
+%%DATADIR%%/pkgs/htdp-lib/stepper/private/step-img.rkt
 %%DATADIR%%/pkgs/htdp-lib/stepper/private/syntax-hider.rkt
 %%DATADIR%%/pkgs/htdp-lib/stepper/private/syntax-property.rkt
 %%DATADIR%%/pkgs/htdp-lib/stepper/private/vertical-separator-snip.rkt
@@ -12996,7 +13067,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/htdp-lib/xml/text-snipclass.rkt
 %%DATADIR%%/pkgs/htdp-lib/xml/xml-snipclass.rkt
 %%DATADIR%%/pkgs/htdp-lib/xml/xml.png
-%%DATADIR%%/pkgs/htdp/LICENSE.txt
+%%DATADIR%%/pkgs/htdp/LICENSE
 %%DATADIR%%/pkgs/htdp/info.rkt
 %%DATADIR%%/pkgs/html-doc/html/compiled/html_scrbl.dep
 %%DATADIR%%/pkgs/html-doc/html/compiled/html_scrbl.zo
@@ -13022,7 +13093,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/html-lib/html/sgml-reader.rkt
 %%DATADIR%%/pkgs/html-lib/info.rkt
 %%DATADIR%%/pkgs/html/info.rkt
-%%DATADIR%%/pkgs/icons/LICENSE.txt
+%%DATADIR%%/pkgs/icons/LICENSE
 %%DATADIR%%/pkgs/icons/PLT-206-larval.png
 %%DATADIR%%/pkgs/icons/PLT-206-mars.jpg
 %%DATADIR%%/pkgs/icons/PLT-206-small.png
@@ -13030,6 +13101,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/icons/PLT-pumpkin.png
 %%DATADIR%%/pkgs/icons/PLTnolarval.jpg
 %%DATADIR%%/pkgs/icons/PLTylarval.jpg
+%%DATADIR%%/pkgs/icons/README.md
 %%DATADIR%%/pkgs/icons/anchor.gif
 %%DATADIR%%/pkgs/icons/animate1.gif
 %%DATADIR%%/pkgs/icons/animate2.gif
@@ -13140,6 +13212,8 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/icons/up-down-mask.xbm
 %%DATADIR%%/pkgs/icons/very-small-planet.png
 %%DATADIR%%/pkgs/icons/wizard-image.jpg
+%%DATADIR%%/pkgs/icons/wob-recycle.png
+%%DATADIR%%/pkgs/icons/wob-recycle@2x.png
 %%DATADIR%%/pkgs/icons/xml-box-open.jpg
 %%DATADIR%%/pkgs/icons/xml-box.jpg
 %%DATADIR%%/pkgs/images-doc/images/compiled/info_rkt.dep
@@ -13363,10 +13437,14 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/macro-debugger-text-lib/macro-debugger/model/compiled/deriv_rkt.zo
 %%DATADIR%%/pkgs/macro-debugger-text-lib/macro-debugger/model/compiled/hiding-policies_rkt.dep
 %%DATADIR%%/pkgs/macro-debugger-text-lib/macro-debugger/model/compiled/hiding-policies_rkt.zo
+%%DATADIR%%/pkgs/macro-debugger-text-lib/macro-debugger/model/compiled/parser-util_rkt.dep
+%%DATADIR%%/pkgs/macro-debugger-text-lib/macro-debugger/model/compiled/parser-util_rkt.zo
+%%DATADIR%%/pkgs/macro-debugger-text-lib/macro-debugger/model/compiled/pattern_rkt.dep
+%%DATADIR%%/pkgs/macro-debugger-text-lib/macro-debugger/model/compiled/pattern_rkt.zo
 %%DATADIR%%/pkgs/macro-debugger-text-lib/macro-debugger/model/compiled/reductions-config_rkt.dep
 %%DATADIR%%/pkgs/macro-debugger-text-lib/macro-debugger/model/compiled/reductions-config_rkt.zo
-%%DATADIR%%/pkgs/macro-debugger-text-lib/macro-debugger/model/compiled/reductions-engine_rkt.dep
-%%DATADIR%%/pkgs/macro-debugger-text-lib/macro-debugger/model/compiled/reductions-engine_rkt.zo
+%%DATADIR%%/pkgs/macro-debugger-text-lib/macro-debugger/model/compiled/reductions-util_rkt.dep
+%%DATADIR%%/pkgs/macro-debugger-text-lib/macro-debugger/model/compiled/reductions-util_rkt.zo
 %%DATADIR%%/pkgs/macro-debugger-text-lib/macro-debugger/model/compiled/reductions_rkt.dep
 %%DATADIR%%/pkgs/macro-debugger-text-lib/macro-debugger/model/compiled/reductions_rkt.zo
 %%DATADIR%%/pkgs/macro-debugger-text-lib/macro-debugger/model/compiled/steps_rkt.dep
@@ -13375,10 +13453,8 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/macro-debugger-text-lib/macro-debugger/model/compiled/stx-util_rkt.zo
 %%DATADIR%%/pkgs/macro-debugger-text-lib/macro-debugger/model/compiled/trace_rkt.dep
 %%DATADIR%%/pkgs/macro-debugger-text-lib/macro-debugger/model/compiled/trace_rkt.zo
-%%DATADIR%%/pkgs/macro-debugger-text-lib/macro-debugger/model/compiled/yacc-ext_rkt.dep
-%%DATADIR%%/pkgs/macro-debugger-text-lib/macro-debugger/model/compiled/yacc-ext_rkt.zo
-%%DATADIR%%/pkgs/macro-debugger-text-lib/macro-debugger/model/compiled/yacc-interrupted_rkt.dep
-%%DATADIR%%/pkgs/macro-debugger-text-lib/macro-debugger/model/compiled/yacc-interrupted_rkt.zo
+%%DATADIR%%/pkgs/macro-debugger-text-lib/macro-debugger/model/compiled/tracking_rkt.dep
+%%DATADIR%%/pkgs/macro-debugger-text-lib/macro-debugger/model/compiled/tracking_rkt.zo
 %%DATADIR%%/pkgs/macro-debugger-text-lib/macro-debugger/model/context.rkt
 %%DATADIR%%/pkgs/macro-debugger-text-lib/macro-debugger/model/debug.rkt
 %%DATADIR%%/pkgs/macro-debugger-text-lib/macro-debugger/model/deriv-c.rkt
@@ -13387,22 +13463,20 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/macro-debugger-text-lib/macro-debugger/model/deriv-util.rkt
 %%DATADIR%%/pkgs/macro-debugger-text-lib/macro-debugger/model/deriv.rkt
 %%DATADIR%%/pkgs/macro-debugger-text-lib/macro-debugger/model/hiding-policies.rkt
+%%DATADIR%%/pkgs/macro-debugger-text-lib/macro-debugger/model/parser-util.rkt
+%%DATADIR%%/pkgs/macro-debugger-text-lib/macro-debugger/model/pattern.rkt
 %%DATADIR%%/pkgs/macro-debugger-text-lib/macro-debugger/model/reductions-config.rkt
-%%DATADIR%%/pkgs/macro-debugger-text-lib/macro-debugger/model/reductions-engine.rkt
+%%DATADIR%%/pkgs/macro-debugger-text-lib/macro-debugger/model/reductions-util.rkt
 %%DATADIR%%/pkgs/macro-debugger-text-lib/macro-debugger/model/reductions.rkt
 %%DATADIR%%/pkgs/macro-debugger-text-lib/macro-debugger/model/steps.rkt
 %%DATADIR%%/pkgs/macro-debugger-text-lib/macro-debugger/model/stx-util.rkt
 %%DATADIR%%/pkgs/macro-debugger-text-lib/macro-debugger/model/trace.rkt
-%%DATADIR%%/pkgs/macro-debugger-text-lib/macro-debugger/model/yacc-ext.rkt
-%%DATADIR%%/pkgs/macro-debugger-text-lib/macro-debugger/model/yacc-interrupted.rkt
+%%DATADIR%%/pkgs/macro-debugger-text-lib/macro-debugger/model/tracking.rkt
 %%DATADIR%%/pkgs/macro-debugger-text-lib/macro-debugger/stepper-text.rkt
-%%DATADIR%%/pkgs/macro-debugger-text-lib/macro-debugger/syntax-browser/compiled/interfaces_rkt.dep
-%%DATADIR%%/pkgs/macro-debugger-text-lib/macro-debugger/syntax-browser/compiled/interfaces_rkt.zo
 %%DATADIR%%/pkgs/macro-debugger-text-lib/macro-debugger/syntax-browser/compiled/partition_rkt.dep
 %%DATADIR%%/pkgs/macro-debugger-text-lib/macro-debugger/syntax-browser/compiled/partition_rkt.zo
 %%DATADIR%%/pkgs/macro-debugger-text-lib/macro-debugger/syntax-browser/compiled/pretty-helper_rkt.dep
 %%DATADIR%%/pkgs/macro-debugger-text-lib/macro-debugger/syntax-browser/compiled/pretty-helper_rkt.zo
-%%DATADIR%%/pkgs/macro-debugger-text-lib/macro-debugger/syntax-browser/interfaces.rkt
 %%DATADIR%%/pkgs/macro-debugger-text-lib/macro-debugger/syntax-browser/partition.rkt
 %%DATADIR%%/pkgs/macro-debugger-text-lib/macro-debugger/syntax-browser/pretty-helper.rkt
 %%DATADIR%%/pkgs/macro-debugger-text-lib/macro-debugger/util/compiled/eomap_rkt.dep
@@ -13445,6 +13519,8 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/macro-debugger/macro-debugger/syntax-browser/compiled/hrule-snip_rkt.zo
 %%DATADIR%%/pkgs/macro-debugger/macro-debugger/syntax-browser/compiled/image_rkt.dep
 %%DATADIR%%/pkgs/macro-debugger/macro-debugger/syntax-browser/compiled/image_rkt.zo
+%%DATADIR%%/pkgs/macro-debugger/macro-debugger/syntax-browser/compiled/interfaces_rkt.dep
+%%DATADIR%%/pkgs/macro-debugger/macro-debugger/syntax-browser/compiled/interfaces_rkt.zo
 %%DATADIR%%/pkgs/macro-debugger/macro-debugger/syntax-browser/compiled/keymap_rkt.dep
 %%DATADIR%%/pkgs/macro-debugger/macro-debugger/syntax-browser/compiled/keymap_rkt.zo
 %%DATADIR%%/pkgs/macro-debugger/macro-debugger/syntax-browser/compiled/prefs_rkt.dep
@@ -13468,7 +13544,17 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/macro-debugger/macro-debugger/syntax-browser/embed.rkt
 %%DATADIR%%/pkgs/macro-debugger/macro-debugger/syntax-browser/frame.rkt
 %%DATADIR%%/pkgs/macro-debugger/macro-debugger/syntax-browser/hrule-snip.rkt
+%%DATADIR%%/pkgs/macro-debugger/macro-debugger/syntax-browser/icons/base.rkt
+%%DATADIR%%/pkgs/macro-debugger/macro-debugger/syntax-browser/icons/compiled/base_rkt.dep
+%%DATADIR%%/pkgs/macro-debugger/macro-debugger/syntax-browser/icons/compiled/base_rkt.zo
+%%DATADIR%%/pkgs/macro-debugger/macro-debugger/syntax-browser/icons/compiled/lock_rkt.dep
+%%DATADIR%%/pkgs/macro-debugger/macro-debugger/syntax-browser/icons/compiled/lock_rkt.zo
+%%DATADIR%%/pkgs/macro-debugger/macro-debugger/syntax-browser/icons/compiled/tainted_rkt.dep
+%%DATADIR%%/pkgs/macro-debugger/macro-debugger/syntax-browser/icons/compiled/tainted_rkt.zo
+%%DATADIR%%/pkgs/macro-debugger/macro-debugger/syntax-browser/icons/lock.rkt
+%%DATADIR%%/pkgs/macro-debugger/macro-debugger/syntax-browser/icons/tainted.rkt
 %%DATADIR%%/pkgs/macro-debugger/macro-debugger/syntax-browser/image.rkt
+%%DATADIR%%/pkgs/macro-debugger/macro-debugger/syntax-browser/interfaces.rkt
 %%DATADIR%%/pkgs/macro-debugger/macro-debugger/syntax-browser/keymap.rkt
 %%DATADIR%%/pkgs/macro-debugger/macro-debugger/syntax-browser/prefs.rkt
 %%DATADIR%%/pkgs/macro-debugger/macro-debugger/syntax-browser/pretty-printer.rkt
@@ -13552,6 +13638,9 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/macro-debugger/tests/macro-debugger/gentest-framework.rkt
 %%DATADIR%%/pkgs/macro-debugger/tests/macro-debugger/gentests.rkt
 %%DATADIR%%/pkgs/macro-debugger/tests/macro-debugger/gui-tests.rkt
+%%DATADIR%%/pkgs/macro-debugger/tests/macro-debugger/helper/compiled/helper_rkt.dep
+%%DATADIR%%/pkgs/macro-debugger/tests/macro-debugger/helper/compiled/helper_rkt.zo
+%%DATADIR%%/pkgs/macro-debugger/tests/macro-debugger/helper/helper.rkt
 %%DATADIR%%/pkgs/macro-debugger/tests/macro-debugger/test-setup.rkt
 %%DATADIR%%/pkgs/macro-debugger/tests/macro-debugger/tests/collects.rkt
 %%DATADIR%%/pkgs/macro-debugger/tests/macro-debugger/tests/compiled/collects_rkt.dep
@@ -13580,7 +13669,8 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/main-distribution/LICENSE
 %%DATADIR%%/pkgs/main-distribution/README.md
 %%DATADIR%%/pkgs/main-distribution/info.rkt
-%%DATADIR%%/pkgs/make/LICENSE.txt
+%%DATADIR%%/pkgs/make/LICENSE
+%%DATADIR%%/pkgs/make/README.md
 %%DATADIR%%/pkgs/make/collection-sig.rkt
 %%DATADIR%%/pkgs/make/collection-unit.rkt
 %%DATADIR%%/pkgs/make/collection.rkt
@@ -14340,7 +14430,6 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/mzscheme-lib/setup/info.rkt
 %%DATADIR%%/pkgs/mzscheme-lib/setup/setup-plt.1
 %%DATADIR%%/pkgs/mzscheme/info.rkt
-%%DATADIR%%/pkgs/net-cookies-doc/LICENSE.txt
 %%DATADIR%%/pkgs/net-cookies-doc/info.rkt
 %%DATADIR%%/pkgs/net-cookies-doc/net/cookies/compiled/info_rkt.dep
 %%DATADIR%%/pkgs/net-cookies-doc/net/cookies/compiled/info_rkt.zo
@@ -14348,7 +14437,6 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/net-cookies-doc/net/cookies/scribblings/compiled/cookies_scrbl.dep
 %%DATADIR%%/pkgs/net-cookies-doc/net/cookies/scribblings/compiled/cookies_scrbl.zo
 %%DATADIR%%/pkgs/net-cookies-doc/net/cookies/scribblings/cookies.scrbl
-%%DATADIR%%/pkgs/net-cookies-lib/LICENSE.txt
 %%DATADIR%%/pkgs/net-cookies-lib/info.rkt
 %%DATADIR%%/pkgs/net-cookies-lib/net/compiled/cookies_rkt.dep
 %%DATADIR%%/pkgs/net-cookies-lib/net/compiled/cookies_rkt.zo
@@ -14362,9 +14450,8 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/net-cookies-lib/net/cookies/compiled/user-agent_rkt.zo
 %%DATADIR%%/pkgs/net-cookies-lib/net/cookies/server.rkt
 %%DATADIR%%/pkgs/net-cookies-lib/net/cookies/user-agent.rkt
-%%DATADIR%%/pkgs/net-cookies/LICENSE.txt
 %%DATADIR%%/pkgs/net-cookies/info.rkt
-%%DATADIR%%/pkgs/net-doc/LICENSE.txt
+%%DATADIR%%/pkgs/net-doc/LICENSE
 %%DATADIR%%/pkgs/net-doc/info.rkt
 %%DATADIR%%/pkgs/net-doc/net/scribblings/base64.scrbl
 %%DATADIR%%/pkgs/net-doc/net/scribblings/cgi.scrbl
@@ -14447,7 +14534,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/net-doc/net/scribblings/uri-codec.scrbl
 %%DATADIR%%/pkgs/net-doc/net/scribblings/url.scrbl
 %%DATADIR%%/pkgs/net-doc/net/scribblings/win32-ssl.scrbl
-%%DATADIR%%/pkgs/net-lib/LICENSE.txt
+%%DATADIR%%/pkgs/net-lib/LICENSE
 %%DATADIR%%/pkgs/net-lib/info.rkt
 %%DATADIR%%/pkgs/net-lib/net/cgi.rkt
 %%DATADIR%%/pkgs/net-lib/net/compiled/cgi_rkt.dep
@@ -14515,7 +14602,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/net-lib/net/tcp-sig.rkt
 %%DATADIR%%/pkgs/net-lib/net/tcp-unit.rkt
 %%DATADIR%%/pkgs/net-lib/net/unihead.rkt
-%%DATADIR%%/pkgs/net/LICENSE.txt
+%%DATADIR%%/pkgs/net/LICENSE
 %%DATADIR%%/pkgs/net/info.rkt
 %%DATADIR%%/pkgs/optimization-coach/LICENSE.txt
 %%DATADIR%%/pkgs/optimization-coach/README.md
@@ -15318,7 +15405,6 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/planet-lib/planet/util.rkt
 %%DATADIR%%/pkgs/planet-lib/planet/version.rkt
 %%DATADIR%%/pkgs/planet/info.rkt
-%%DATADIR%%/pkgs/plot-compat/LICENSE.txt
 %%DATADIR%%/pkgs/plot-compat/info.rkt
 %%DATADIR%%/pkgs/plot-compat/plot/compat.rkt
 %%DATADIR%%/pkgs/plot-compat/plot/compiled/compat_rkt.dep
@@ -15329,7 +15415,6 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/plot-compat/plot/private/compat.rkt
 %%DATADIR%%/pkgs/plot-compat/plot/private/compiled/compat_rkt.dep
 %%DATADIR%%/pkgs/plot-compat/plot/private/compiled/compat_rkt.zo
-%%DATADIR%%/pkgs/plot-doc/LICENSE.txt
 %%DATADIR%%/pkgs/plot-doc/info.rkt
 %%DATADIR%%/pkgs/plot-doc/plot/compiled/info_rkt.dep
 %%DATADIR%%/pkgs/plot-doc/plot/compiled/info_rkt.zo
@@ -15376,7 +15461,6 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/plot-doc/plot/scribblings/ticks.scrbl
 %%DATADIR%%/pkgs/plot-doc/plot/scribblings/typed-compat.scrbl
 %%DATADIR%%/pkgs/plot-doc/plot/scribblings/utils.scrbl
-%%DATADIR%%/pkgs/plot-gui-lib/LICENSE.txt
 %%DATADIR%%/pkgs/plot-gui-lib/info.rkt
 %%DATADIR%%/pkgs/plot-gui-lib/plot/compiled/info_rkt.dep
 %%DATADIR%%/pkgs/plot-gui-lib/plot/compiled/info_rkt.zo
@@ -15420,7 +15504,6 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/plot-gui-lib/plot/private/gui/worker-thread.rkt
 %%DATADIR%%/pkgs/plot-gui-lib/plot/snip.rkt
 %%DATADIR%%/pkgs/plot-gui-lib/plot/typed.rkt
-%%DATADIR%%/pkgs/plot-lib/LICENSE.txt
 %%DATADIR%%/pkgs/plot-lib/info.rkt
 %%DATADIR%%/pkgs/plot-lib/plot/bitmap.rkt
 %%DATADIR%%/pkgs/plot-lib/plot/compiled/bitmap_rkt.dep
@@ -15912,7 +15995,6 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/r5rs-lib/r5rs/r5rs.rkt
 %%DATADIR%%/pkgs/r5rs-lib/r5rs/run.rkt
 %%DATADIR%%/pkgs/r5rs/info.rkt
-%%DATADIR%%/pkgs/r6rs-doc/LICENSE.txt
 %%DATADIR%%/pkgs/r6rs-doc/info.rkt
 %%DATADIR%%/pkgs/r6rs-doc/r6rs/scribblings/compiled/info_rkt.dep
 %%DATADIR%%/pkgs/r6rs-doc/r6rs/scribblings/compiled/info_rkt.zo
@@ -16018,7 +16100,6 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/r6rs-doc/r6rs/tests/compiled/test-docs-complete_rkt.dep
 %%DATADIR%%/pkgs/r6rs-doc/r6rs/tests/compiled/test-docs-complete_rkt.zo
 %%DATADIR%%/pkgs/r6rs-doc/r6rs/tests/test-docs-complete.rkt
-%%DATADIR%%/pkgs/r6rs-lib/LICENSE.txt
 %%DATADIR%%/pkgs/r6rs-lib/info.rkt
 %%DATADIR%%/pkgs/r6rs-lib/r6rs/compiled/info_rkt.dep
 %%DATADIR%%/pkgs/r6rs-lib/r6rs/compiled/info_rkt.zo
@@ -16173,7 +16254,6 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/r6rs-lib/rnrs/sorting-6.rkt
 %%DATADIR%%/pkgs/r6rs-lib/rnrs/syntax-case-6.rkt
 %%DATADIR%%/pkgs/r6rs-lib/rnrs/unicode-6.rkt
-%%DATADIR%%/pkgs/r6rs/LICENSE.txt
 %%DATADIR%%/pkgs/r6rs/info.rkt
 %%DATADIR%%/pkgs/racket-cheat/LICENSE
 %%DATADIR%%/pkgs/racket-cheat/README
@@ -16187,7 +16267,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/racket-cheat/racket-cheat.css
 %%DATADIR%%/pkgs/racket-cheat/racket-cheat.rkt
 %%DATADIR%%/pkgs/racket-cheat/racket-cheat.scrbl
-%%DATADIR%%/pkgs/racket-doc/LICENSE.txt
+%%DATADIR%%/pkgs/racket-doc/LICENSE
 %%DATADIR%%/pkgs/racket-doc/compatibility/compiled/info_rkt.dep
 %%DATADIR%%/pkgs/racket-doc/compatibility/compiled/info_rkt.zo
 %%DATADIR%%/pkgs/racket-doc/compatibility/info.rkt
@@ -16468,6 +16548,8 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/racket-doc/scribblings/foreign/compiled/utils_rkt.zo
 %%DATADIR%%/pkgs/racket-doc/scribblings/foreign/compiled/vector_scrbl.dep
 %%DATADIR%%/pkgs/racket-doc/scribblings/foreign/compiled/vector_scrbl.zo
+%%DATADIR%%/pkgs/racket-doc/scribblings/foreign/compiled/vm_scrbl.dep
+%%DATADIR%%/pkgs/racket-doc/scribblings/foreign/compiled/vm_scrbl.zo
 %%DATADIR%%/pkgs/racket-doc/scribblings/foreign/compiled/winapi_scrbl.dep
 %%DATADIR%%/pkgs/racket-doc/scribblings/foreign/compiled/winapi_scrbl.zo
 %%DATADIR%%/pkgs/racket-doc/scribblings/foreign/cpointer.scrbl
@@ -16494,6 +16576,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/racket-doc/scribblings/foreign/unexported.scrbl
 %%DATADIR%%/pkgs/racket-doc/scribblings/foreign/utils.rkt
 %%DATADIR%%/pkgs/racket-doc/scribblings/foreign/vector.scrbl
+%%DATADIR%%/pkgs/racket-doc/scribblings/foreign/vm.scrbl
 %%DATADIR%%/pkgs/racket-doc/scribblings/foreign/winapi.scrbl
 %%DATADIR%%/pkgs/racket-doc/scribblings/getting-started/compiled/getting-started_scrbl.dep
 %%DATADIR%%/pkgs/racket-doc/scribblings/getting-started/compiled/getting-started_scrbl.zo
@@ -16869,8 +16952,30 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/racket-doc/scribblings/icons.rkt
 %%DATADIR%%/pkgs/racket-doc/scribblings/icons.tex
 %%DATADIR%%/pkgs/racket-doc/scribblings/info.rkt
+%%DATADIR%%/pkgs/racket-doc/scribblings/inside/appendix.scrbl
+%%DATADIR%%/pkgs/racket-doc/scribblings/inside/bc.scrbl
+%%DATADIR%%/pkgs/racket-doc/scribblings/inside/compiled/appendix_scrbl.dep
+%%DATADIR%%/pkgs/racket-doc/scribblings/inside/compiled/appendix_scrbl.zo
+%%DATADIR%%/pkgs/racket-doc/scribblings/inside/compiled/bc_scrbl.dep
+%%DATADIR%%/pkgs/racket-doc/scribblings/inside/compiled/bc_scrbl.zo
 %%DATADIR%%/pkgs/racket-doc/scribblings/inside/compiled/contmarks_scrbl.dep
 %%DATADIR%%/pkgs/racket-doc/scribblings/inside/compiled/contmarks_scrbl.zo
+%%DATADIR%%/pkgs/racket-doc/scribblings/inside/compiled/cs-embedding_scrbl.dep
+%%DATADIR%%/pkgs/racket-doc/scribblings/inside/compiled/cs-embedding_scrbl.zo
+%%DATADIR%%/pkgs/racket-doc/scribblings/inside/compiled/cs-eval_scrbl.dep
+%%DATADIR%%/pkgs/racket-doc/scribblings/inside/compiled/cs-eval_scrbl.zo
+%%DATADIR%%/pkgs/racket-doc/scribblings/inside/compiled/cs-overview_scrbl.dep
+%%DATADIR%%/pkgs/racket-doc/scribblings/inside/compiled/cs-overview_scrbl.zo
+%%DATADIR%%/pkgs/racket-doc/scribblings/inside/compiled/cs-procs_scrbl.dep
+%%DATADIR%%/pkgs/racket-doc/scribblings/inside/compiled/cs-procs_scrbl.zo
+%%DATADIR%%/pkgs/racket-doc/scribblings/inside/compiled/cs-start_scrbl.dep
+%%DATADIR%%/pkgs/racket-doc/scribblings/inside/compiled/cs-start_scrbl.zo
+%%DATADIR%%/pkgs/racket-doc/scribblings/inside/compiled/cs-thread_scrbl.dep
+%%DATADIR%%/pkgs/racket-doc/scribblings/inside/compiled/cs-thread_scrbl.zo
+%%DATADIR%%/pkgs/racket-doc/scribblings/inside/compiled/cs-values_scrbl.dep
+%%DATADIR%%/pkgs/racket-doc/scribblings/inside/compiled/cs-values_scrbl.zo
+%%DATADIR%%/pkgs/racket-doc/scribblings/inside/compiled/cs_scrbl.dep
+%%DATADIR%%/pkgs/racket-doc/scribblings/inside/compiled/cs_scrbl.zo
 %%DATADIR%%/pkgs/racket-doc/scribblings/inside/compiled/custodians_scrbl.dep
 %%DATADIR%%/pkgs/racket-doc/scribblings/inside/compiled/custodians_scrbl.zo
 %%DATADIR%%/pkgs/racket-doc/scribblings/inside/compiled/embedding_scrbl.dep
@@ -16918,6 +17023,14 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/racket-doc/scribblings/inside/compiled/values_scrbl.dep
 %%DATADIR%%/pkgs/racket-doc/scribblings/inside/compiled/values_scrbl.zo
 %%DATADIR%%/pkgs/racket-doc/scribblings/inside/contmarks.scrbl
+%%DATADIR%%/pkgs/racket-doc/scribblings/inside/cs-embedding.scrbl
+%%DATADIR%%/pkgs/racket-doc/scribblings/inside/cs-eval.scrbl
+%%DATADIR%%/pkgs/racket-doc/scribblings/inside/cs-overview.scrbl
+%%DATADIR%%/pkgs/racket-doc/scribblings/inside/cs-procs.scrbl
+%%DATADIR%%/pkgs/racket-doc/scribblings/inside/cs-start.scrbl
+%%DATADIR%%/pkgs/racket-doc/scribblings/inside/cs-thread.scrbl
+%%DATADIR%%/pkgs/racket-doc/scribblings/inside/cs-values.scrbl
+%%DATADIR%%/pkgs/racket-doc/scribblings/inside/cs.scrbl
 %%DATADIR%%/pkgs/racket-doc/scribblings/inside/custodians.scrbl
 %%DATADIR%%/pkgs/racket-doc/scribblings/inside/embedding.scrbl
 %%DATADIR%%/pkgs/racket-doc/scribblings/inside/eval.scrbl
@@ -17134,6 +17247,8 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/compiled/enter_scrbl.zo
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/compiled/envvars_scrbl.dep
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/compiled/envvars_scrbl.zo
+%%DATADIR%%/pkgs/racket-doc/scribblings/reference/compiled/equality_scrbl.dep
+%%DATADIR%%/pkgs/racket-doc/scribblings/reference/compiled/equality_scrbl.zo
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/compiled/eval-model_scrbl.dep
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/compiled/eval-model_scrbl.zo
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/compiled/eval_scrbl.dep
@@ -17182,6 +17297,8 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/compiled/io_scrbl.zo
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/compiled/kernel_scrbl.dep
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/compiled/kernel_scrbl.zo
+%%DATADIR%%/pkgs/racket-doc/scribblings/reference/compiled/keywords_scrbl.dep
+%%DATADIR%%/pkgs/racket-doc/scribblings/reference/compiled/keywords_scrbl.zo
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/compiled/linklet_scrbl.dep
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/compiled/linklet_scrbl.zo
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/compiled/load-lang_scrbl.dep
@@ -17390,6 +17507,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/engine.scrbl
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/enter.scrbl
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/envvars.scrbl
+%%DATADIR%%/pkgs/racket-doc/scribblings/reference/equality.scrbl
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/eval-model.scrbl
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/eval.scrbl
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/evts.scrbl
@@ -17416,6 +17534,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/interactive.scrbl
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/io.scrbl
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/kernel.scrbl
+%%DATADIR%%/pkgs/racket-doc/scribblings/reference/keywords.scrbl
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/linklet.scrbl
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/load-lang.scrbl
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/logging.scrbl
@@ -17769,7 +17888,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/racket-doc/xml/compiled/xml_scrbl.zo
 %%DATADIR%%/pkgs/racket-doc/xml/info.rkt
 %%DATADIR%%/pkgs/racket-doc/xml/xml.scrbl
-%%DATADIR%%/pkgs/racket-index/LICENSE.txt
+%%DATADIR%%/pkgs/racket-index/LICENSE
 %%DATADIR%%/pkgs/racket-index/info.rkt
 %%DATADIR%%/pkgs/racket-index/rackunit/compiled/docs-complete_rkt.dep
 %%DATADIR%%/pkgs/racket-index/rackunit/compiled/docs-complete_rkt.zo
@@ -17848,7 +17967,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/racket-index/setup/private/doc-path.rkt
 %%DATADIR%%/pkgs/racket-index/setup/scribble.rkt
 %%DATADIR%%/pkgs/racket-index/setup/xref.rkt
-%%DATADIR%%/pkgs/racket-lib/LICENSE.txt
+%%DATADIR%%/pkgs/racket-lib/LICENSE
 %%DATADIR%%/pkgs/racket-lib/info.rkt
 %%DATADIR%%/pkgs/racklog/COPYING
 %%DATADIR%%/pkgs/racklog/LICENSE
@@ -19451,7 +19570,6 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/schemeunit/info.rkt
 %%DATADIR%%/pkgs/schemeunit/main.rkt
 %%DATADIR%%/pkgs/schemeunit/text-ui.rkt
-%%DATADIR%%/pkgs/scribble-doc/LICENSE.txt
 %%DATADIR%%/pkgs/scribble-doc/info.rkt
 %%DATADIR%%/pkgs/scribble-doc/scribblings/scribble/acmart.scrbl
 %%DATADIR%%/pkgs/scribble-doc/scribblings/scribble/base.scrbl
@@ -19658,7 +19776,6 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/scribble-doc/scriblib/scribblings/info.rkt
 %%DATADIR%%/pkgs/scribble-doc/scriblib/scribblings/render-cond.scrbl
 %%DATADIR%%/pkgs/scribble-doc/scriblib/scribblings/scriblib.scrbl
-%%DATADIR%%/pkgs/scribble-html-lib/LICENSE.txt
 %%DATADIR%%/pkgs/scribble-html-lib/info.rkt
 %%DATADIR%%/pkgs/scribble-html-lib/scribble/compiled/html_rkt.dep
 %%DATADIR%%/pkgs/scribble-html-lib/scribble/compiled/html_rkt.zo
@@ -19687,7 +19804,6 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/scribble-html-lib/scribble/html/main.rkt
 %%DATADIR%%/pkgs/scribble-html-lib/scribble/html/resource.rkt
 %%DATADIR%%/pkgs/scribble-html-lib/scribble/html/xml.rkt
-%%DATADIR%%/pkgs/scribble-lib/LICENSE.txt
 %%DATADIR%%/pkgs/scribble-lib/help/compiled/help_rkt.dep
 %%DATADIR%%/pkgs/scribble-lib/help/compiled/help_rkt.zo
 %%DATADIR%%/pkgs/scribble-lib/help/compiled/info_rkt.dep
@@ -20083,7 +20199,6 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/scribble-lib/scriblib/private/counter.rkt
 %%DATADIR%%/pkgs/scribble-lib/scriblib/private/gui-eval-exn.rkt
 %%DATADIR%%/pkgs/scribble-lib/scriblib/render-cond.rkt
-%%DATADIR%%/pkgs/scribble-text-lib/LICENSE.txt
 %%DATADIR%%/pkgs/scribble-text-lib/info.rkt
 %%DATADIR%%/pkgs/scribble-text-lib/scribble/compiled/info_rkt.dep
 %%DATADIR%%/pkgs/scribble-text-lib/scribble/compiled/info_rkt.zo
@@ -20109,7 +20224,6 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/scribble-text-lib/scribble/text/output.rkt
 %%DATADIR%%/pkgs/scribble-text-lib/scribble/text/syntax-utils.rkt
 %%DATADIR%%/pkgs/scribble-text-lib/scribble/text/wrap.rkt
-%%DATADIR%%/pkgs/scribble/LICENSE.txt
 %%DATADIR%%/pkgs/scribble/info.rkt
 %%DATADIR%%/pkgs/serialize-cstruct-lib/LICENSE
 %%DATADIR%%/pkgs/serialize-cstruct-lib/README.md
@@ -20460,7 +20574,6 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/srfi-doc-nonfree/srfi/scribblings/srfi-nf.scrbl
 %%DATADIR%%/pkgs/srfi-doc-nonfree/srfi/scribblings/srfi-std/srfi-29.html
 %%DATADIR%%/pkgs/srfi-doc-nonfree/srfi/scribblings/srfi-std/srfi-5.html
-%%DATADIR%%/pkgs/srfi-doc/LICENSE.txt
 %%DATADIR%%/pkgs/srfi-doc/info.rkt
 %%DATADIR%%/pkgs/srfi-doc/srfi/scribblings/compiled/info_rkt.dep
 %%DATADIR%%/pkgs/srfi-doc/srfi/scribblings/compiled/info_rkt.zo
@@ -20530,7 +20643,6 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/srfi-doc/srfi/scribblings/srfi-std/srfi-98.html
 %%DATADIR%%/pkgs/srfi-doc/srfi/scribblings/srfi.scrbl
 %%DATADIR%%/pkgs/srfi-doc/srfi/scribblings/util.rkt
-%%DATADIR%%/pkgs/srfi-lib/LICENSE.txt
 %%DATADIR%%/pkgs/srfi-lib/info.rkt
 %%DATADIR%%/pkgs/srfi-lib/srfi/%3a1.rkt
 %%DATADIR%%/pkgs/srfi-lib/srfi/%3a1/compiled/lists_rkt.dep
@@ -21130,7 +21242,6 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/srfi-lib/srfi/compiled/features_rkt.zo
 %%DATADIR%%/pkgs/srfi-lib/srfi/doc.txt
 %%DATADIR%%/pkgs/srfi-lib/srfi/features.rkt
-%%DATADIR%%/pkgs/srfi-lite-lib/LICENSE.txt
 %%DATADIR%%/pkgs/srfi-lite-lib/info.rkt
 %%DATADIR%%/pkgs/srfi-lite-lib/srfi/1.rkt
 %%DATADIR%%/pkgs/srfi-lite-lib/srfi/1/alist.rkt
@@ -21209,9 +21320,8 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/srfi-lite-lib/srfi/compiled/provider_rkt.zo
 %%DATADIR%%/pkgs/srfi-lite-lib/srfi/optional.rkt
 %%DATADIR%%/pkgs/srfi-lite-lib/srfi/provider.rkt
-%%DATADIR%%/pkgs/srfi/LICENSE.txt
 %%DATADIR%%/pkgs/srfi/info.rkt
-%%DATADIR%%/pkgs/string-constants-doc/LICENSE.txt
+%%DATADIR%%/pkgs/string-constants-doc/LICENSE
 %%DATADIR%%/pkgs/string-constants-doc/info.rkt
 %%DATADIR%%/pkgs/string-constants-doc/string-constants/compiled/info_rkt.dep
 %%DATADIR%%/pkgs/string-constants-doc/string-constants/compiled/info_rkt.zo
@@ -21219,7 +21329,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/string-constants-doc/string-constants/compiled/string-constants_scrbl.zo
 %%DATADIR%%/pkgs/string-constants-doc/string-constants/info.rkt
 %%DATADIR%%/pkgs/string-constants-doc/string-constants/string-constants.scrbl
-%%DATADIR%%/pkgs/string-constants-lib/LICENSE.txt
+%%DATADIR%%/pkgs/string-constants-lib/LICENSE
 %%DATADIR%%/pkgs/string-constants-lib/info.rkt
 %%DATADIR%%/pkgs/string-constants-lib/string-constants/compiled/info_rkt.dep
 %%DATADIR%%/pkgs/string-constants-lib/string-constants/compiled/info_rkt.zo
@@ -21275,8 +21385,9 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/string-constants-lib/string-constants/private/traditional-chinese-string-constants.rkt
 %%DATADIR%%/pkgs/string-constants-lib/string-constants/private/ukrainian-string-constants.rkt
 %%DATADIR%%/pkgs/string-constants-lib/string-constants/string-constant.rkt
+%%DATADIR%%/pkgs/string-constants-lib/string-constants/tests/sc.rkt
 %%DATADIR%%/pkgs/string-constants-lib/string-constants/tests/test-docs-complete.rkt
-%%DATADIR%%/pkgs/string-constants/LICENSE.txt
+%%DATADIR%%/pkgs/string-constants/LICENSE
 %%DATADIR%%/pkgs/string-constants/info.rkt
 %%DATADIR%%/pkgs/swindle/LICENSE
 %%DATADIR%%/pkgs/swindle/README.md
@@ -21395,7 +21506,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/trace/stacktrace.rkt
 %%DATADIR%%/pkgs/trace/test-cases-proposed.txt
 %%DATADIR%%/pkgs/trace/tests.rkt
-%%DATADIR%%/pkgs/typed-racket-compatibility/LICENSE.txt
+%%DATADIR%%/pkgs/typed-racket-compatibility/LICENSE
 %%DATADIR%%/pkgs/typed-racket-compatibility/info.rkt
 %%DATADIR%%/pkgs/typed-racket-compatibility/typed-scheme/compiled/main_rkt.dep
 %%DATADIR%%/pkgs/typed-racket-compatibility/typed-scheme/compiled/main_rkt.zo
@@ -21436,7 +21547,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/typed-racket-compatibility/typed/scheme/no-check/lang/compiled/reader_rkt.zo
 %%DATADIR%%/pkgs/typed-racket-compatibility/typed/scheme/no-check/lang/reader.rkt
 %%DATADIR%%/pkgs/typed-racket-compatibility/typed/scheme/system.rkt
-%%DATADIR%%/pkgs/typed-racket-doc/LICENSE.txt
+%%DATADIR%%/pkgs/typed-racket-doc/LICENSE
 %%DATADIR%%/pkgs/typed-racket-doc/info.rkt
 %%DATADIR%%/pkgs/typed-racket-doc/source-syntax/compiled/info_rkt.dep
 %%DATADIR%%/pkgs/typed-racket-doc/source-syntax/compiled/info_rkt.zo
@@ -21529,7 +21640,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/typed-racket-doc/typed-racket/scribblings/ts-guide.scrbl
 %%DATADIR%%/pkgs/typed-racket-doc/typed-racket/scribblings/ts-reference.scrbl
 %%DATADIR%%/pkgs/typed-racket-doc/typed-racket/scribblings/utils.rkt
-%%DATADIR%%/pkgs/typed-racket-lib/LICENSE.txt
+%%DATADIR%%/pkgs/typed-racket-lib/LICENSE
 %%DATADIR%%/pkgs/typed-racket-lib/info.rkt
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/HISTORY.txt
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/base-env/ann-inst.rkt
@@ -22298,7 +22409,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/typed-racket-lib/typed/racket/system.rkt
 %%DATADIR%%/pkgs/typed-racket-lib/typed/racket/unit.rkt
 %%DATADIR%%/pkgs/typed-racket-lib/typed/racket/unsafe.rkt
-%%DATADIR%%/pkgs/typed-racket-more/LICENSE.txt
+%%DATADIR%%/pkgs/typed-racket-more/LICENSE
 %%DATADIR%%/pkgs/typed-racket-more/info.rkt
 %%DATADIR%%/pkgs/typed-racket-more/typed/compiled/db_rkt.dep
 %%DATADIR%%/pkgs/typed-racket-more/typed/compiled/db_rkt.zo
@@ -22353,7 +22464,10 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/typed-racket-more/typed/mrlib/compiled/bitmap-label_rkt.zo
 %%DATADIR%%/pkgs/typed-racket-more/typed/mrlib/compiled/gif_rkt.dep
 %%DATADIR%%/pkgs/typed-racket-more/typed/mrlib/compiled/gif_rkt.zo
+%%DATADIR%%/pkgs/typed-racket-more/typed/mrlib/compiled/panel-wob_rkt.dep
+%%DATADIR%%/pkgs/typed-racket-more/typed/mrlib/compiled/panel-wob_rkt.zo
 %%DATADIR%%/pkgs/typed-racket-more/typed/mrlib/gif.rkt
+%%DATADIR%%/pkgs/typed-racket-more/typed/mrlib/panel-wob.rkt
 %%DATADIR%%/pkgs/typed-racket-more/typed/mzlib/compiled/pconvert-prop_rkt.dep
 %%DATADIR%%/pkgs/typed-racket-more/typed/mzlib/compiled/pconvert-prop_rkt.zo
 %%DATADIR%%/pkgs/typed-racket-more/typed/mzlib/pconvert-prop.rkt
@@ -22516,7 +22630,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/typed-racket-more/typed/web-server/configuration/compiled/responders_rkt.zo
 %%DATADIR%%/pkgs/typed-racket-more/typed/web-server/configuration/responders.rkt
 %%DATADIR%%/pkgs/typed-racket-more/typed/web-server/http.rkt
-%%DATADIR%%/pkgs/typed-racket/LICENSE.txt
+%%DATADIR%%/pkgs/typed-racket/LICENSE
 %%DATADIR%%/pkgs/typed-racket/info.rkt
 %%DATADIR%%/pkgs/unix-socket-doc/info.rkt
 %%DATADIR%%/pkgs/unix-socket-doc/scribblings/socket/compiled/info_rkt.dep
@@ -22533,7 +22647,6 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/unix-socket-lib/racket/private/unix-socket-ffi.rkt
 %%DATADIR%%/pkgs/unix-socket-lib/racket/unix-socket.rkt
 %%DATADIR%%/pkgs/unix-socket/info.rkt
-%%DATADIR%%/pkgs/web-server-doc/LICENSE.txt
 %%DATADIR%%/pkgs/web-server-doc/info.rkt
 %%DATADIR%%/pkgs/web-server-doc/web-server/compiled/info_rkt.dep
 %%DATADIR%%/pkgs/web-server-doc/web-server/compiled/info_rkt.zo
@@ -22604,6 +22717,8 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/web-server-doc/web-server/scribblings/compiled/responders_scrbl.zo
 %%DATADIR%%/pkgs/web-server-doc/web-server/scribblings/compiled/running_scrbl.dep
 %%DATADIR%%/pkgs/web-server-doc/web-server/scribblings/compiled/running_scrbl.zo
+%%DATADIR%%/pkgs/web-server-doc/web-server/scribblings/compiled/safety-limits_scrbl.dep
+%%DATADIR%%/pkgs/web-server-doc/web-server/scribblings/compiled/safety-limits_scrbl.zo
 %%DATADIR%%/pkgs/web-server-doc/web-server/scribblings/compiled/serial_scrbl.dep
 %%DATADIR%%/pkgs/web-server-doc/web-server/scribblings/compiled/serial_scrbl.zo
 %%DATADIR%%/pkgs/web-server-doc/web-server/scribblings/compiled/server-faq_scrbl.dep
@@ -22678,6 +22793,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/web-server-doc/web-server/scribblings/private.scrbl
 %%DATADIR%%/pkgs/web-server-doc/web-server/scribblings/responders.scrbl
 %%DATADIR%%/pkgs/web-server-doc/web-server/scribblings/running.scrbl
+%%DATADIR%%/pkgs/web-server-doc/web-server/scribblings/safety-limits.scrbl
 %%DATADIR%%/pkgs/web-server-doc/web-server/scribblings/serial.scrbl
 %%DATADIR%%/pkgs/web-server-doc/web-server/scribblings/server-faq.scrbl
 %%DATADIR%%/pkgs/web-server-doc/web-server/scribblings/servlet-env-int.scrbl
@@ -22739,7 +22855,6 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/web-server-doc/web-server/scribblings/web-server.rkt
 %%DATADIR%%/pkgs/web-server-doc/web-server/scribblings/web-server.scrbl
 %%DATADIR%%/pkgs/web-server-doc/web-server/scribblings/web.scrbl
-%%DATADIR%%/pkgs/web-server-lib/LICENSE.txt
 %%DATADIR%%/pkgs/web-server-lib/info.rkt
 %%DATADIR%%/pkgs/web-server-lib/web-server/base/lang/compiled/reader_rkt.dep
 %%DATADIR%%/pkgs/web-server-lib/web-server/base/lang/compiled/reader_rkt.zo
@@ -22772,6 +22887,8 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/web-server-lib/web-server/compiled/main_rkt.zo
 %%DATADIR%%/pkgs/web-server-lib/web-server/compiled/page_rkt.dep
 %%DATADIR%%/pkgs/web-server-lib/web-server/compiled/page_rkt.zo
+%%DATADIR%%/pkgs/web-server-lib/web-server/compiled/safety-limits_rkt.dep
+%%DATADIR%%/pkgs/web-server-lib/web-server/compiled/safety-limits_rkt.zo
 %%DATADIR%%/pkgs/web-server-lib/web-server/compiled/servlet-dispatch_rkt.dep
 %%DATADIR%%/pkgs/web-server-lib/web-server/compiled/servlet-dispatch_rkt.zo
 %%DATADIR%%/pkgs/web-server-lib/web-server/compiled/servlet-env_rkt.dep
@@ -23113,6 +23230,8 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/web-server-lib/web-server/http/compiled/cookie_rkt.zo
 %%DATADIR%%/pkgs/web-server-lib/web-server/http/compiled/digest-auth_rkt.dep
 %%DATADIR%%/pkgs/web-server-lib/web-server/http/compiled/digest-auth_rkt.zo
+%%DATADIR%%/pkgs/web-server-lib/web-server/http/compiled/empty_rkt.dep
+%%DATADIR%%/pkgs/web-server-lib/web-server/http/compiled/empty_rkt.zo
 %%DATADIR%%/pkgs/web-server-lib/web-server/http/compiled/id-cookie_rkt.dep
 %%DATADIR%%/pkgs/web-server-lib/web-server/http/compiled/id-cookie_rkt.zo
 %%DATADIR%%/pkgs/web-server-lib/web-server/http/compiled/json_rkt.dep
@@ -23134,6 +23253,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/web-server-lib/web-server/http/cookie-parse.rkt
 %%DATADIR%%/pkgs/web-server-lib/web-server/http/cookie.rkt
 %%DATADIR%%/pkgs/web-server-lib/web-server/http/digest-auth.rkt
+%%DATADIR%%/pkgs/web-server-lib/web-server/http/empty.rkt
 %%DATADIR%%/pkgs/web-server-lib/web-server/http/id-cookie.rkt
 %%DATADIR%%/pkgs/web-server-lib/web-server/http/json.rkt
 %%DATADIR%%/pkgs/web-server-lib/web-server/http/redirect.rkt
@@ -23282,6 +23402,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/web-server-lib/web-server/private/util.rkt
 %%DATADIR%%/pkgs/web-server-lib/web-server/private/web-server-structs.rkt
 %%DATADIR%%/pkgs/web-server-lib/web-server/private/xexpr.rkt
+%%DATADIR%%/pkgs/web-server-lib/web-server/safety-limits.rkt
 %%DATADIR%%/pkgs/web-server-lib/web-server/servlet-dispatch.rkt
 %%DATADIR%%/pkgs/web-server-lib/web-server/servlet-env.rkt
 %%DATADIR%%/pkgs/web-server-lib/web-server/servlet.rkt
@@ -23326,7 +23447,6 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/web-server-lib/web-server/web-server-sig.rkt
 %%DATADIR%%/pkgs/web-server-lib/web-server/web-server-unit.rkt
 %%DATADIR%%/pkgs/web-server-lib/web-server/web-server.rkt
-%%DATADIR%%/pkgs/web-server/LICENSE.txt
 %%DATADIR%%/pkgs/web-server/info.rkt
 %%DATADIR%%/pkgs/wxme-lib/info.rkt
 %%DATADIR%%/pkgs/wxme-lib/wxme/cache-image.rkt
@@ -23378,7 +23498,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/wxme-lib/wxme/wxme.rkt
 %%DATADIR%%/pkgs/wxme-lib/wxme/xml.rkt
 %%DATADIR%%/pkgs/wxme/info.rkt
-%%DATADIR%%/pkgs/xrepl-doc/LICENSE.txt
+%%DATADIR%%/pkgs/xrepl-doc/LICENSE
 %%DATADIR%%/pkgs/xrepl-doc/info.rkt
 %%DATADIR%%/pkgs/xrepl-doc/xrepl/compiled/doc-utils_rkt.dep
 %%DATADIR%%/pkgs/xrepl-doc/xrepl/compiled/doc-utils_rkt.zo
@@ -23389,7 +23509,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/xrepl-doc/xrepl/doc-utils.rkt
 %%DATADIR%%/pkgs/xrepl-doc/xrepl/info.rkt
 %%DATADIR%%/pkgs/xrepl-doc/xrepl/xrepl.scrbl
-%%DATADIR%%/pkgs/xrepl-lib/LICENSE.txt
+%%DATADIR%%/pkgs/xrepl-lib/LICENSE
 %%DATADIR%%/pkgs/xrepl-lib/info.rkt
 %%DATADIR%%/pkgs/xrepl-lib/xrepl/compiled/info_rkt.dep
 %%DATADIR%%/pkgs/xrepl-lib/xrepl/compiled/info_rkt.zo
@@ -23403,8 +23523,9 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/xrepl-lib/xrepl/main.rkt
 %%DATADIR%%/pkgs/xrepl-lib/xrepl/saved-values.rkt
 %%DATADIR%%/pkgs/xrepl-lib/xrepl/xrepl.rkt
-%%DATADIR%%/pkgs/xrepl/LICENSE.txt
+%%DATADIR%%/pkgs/xrepl/LICENSE
 %%DATADIR%%/pkgs/xrepl/info.rkt
+%%DATADIR%%/pkgs/zo-lib/LICENSE
 %%DATADIR%%/pkgs/zo-lib/compiler/compiled/zo-marshal_rkt.dep
 %%DATADIR%%/pkgs/zo-lib/compiler/compiled/zo-marshal_rkt.zo
 %%DATADIR%%/pkgs/zo-lib/compiler/compiled/zo-parse_rkt.dep

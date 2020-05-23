@@ -1,4 +1,4 @@
---- share/pkgs/gui-lib/mred/private/wx/gtk/queue.rkt.orig	2018-01-27 18:25:11 UTC
+--- share/pkgs/gui-lib/mred/private/wx/gtk/queue.rkt.orig	2020-01-21 20:13:32 UTC
 +++ share/pkgs/gui-lib/mred/private/wx/gtk/queue.rkt
 @@ -11,7 +11,6 @@
           "clipboard.rkt"
@@ -8,7 +8,7 @@
           "../common/keep-forever.rkt")
  
  (provide (protect-out gtk-start-event-pump
-@@ -86,8 +85,6 @@
+@@ -101,8 +100,6 @@
            (error (format
                    "Gtk initialization failed for display ~s"
                    (or display ":0"))))
