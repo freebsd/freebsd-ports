@@ -2,8 +2,12 @@
 
 PORTNAME=	flask-restplus
 PORTVERSION=	0.13.0
+PORTREVISION=	1
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	f48b1d2403de.patch:-p1 119a6feb2950.patch:-p1
 
 MAINTAINER=	andrej@ebert.su
 COMMENT=	Extension for Flask that adds support for quickly building REST APIs
