@@ -36,6 +36,7 @@ include/adplug/jbm.h
 include/adplug/kemuopl.h
 include/adplug/ksm.h
 include/adplug/lds.h
+include/adplug/load_helper.h
 include/adplug/mad.h
 include/adplug/mdi.h
 include/adplug/mid.h
