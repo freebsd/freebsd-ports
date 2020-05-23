@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	virtualmin
-PORTVERSION=	6.08
+PORTVERSION=	6.09
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.webmin.com/download/virtualmin/
@@ -16,7 +16,8 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	${LOCALBASE}/lib/webmin/webmin-init:sysutils/webmin
 
 USES=		shebangfix
-SHEBANG_FILES=	*.cgi
+SHEBANG_FILES=	*.cgi \
+		bin/virtualmin-get-domains-ssl-status.pl
 NO_ARCH=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/virtual-server

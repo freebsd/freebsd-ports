@@ -26,6 +26,7 @@ lib/webmin/virtual-server/backup_form.cgi
 lib/webmin/virtual-server/backup_sched.cgi
 lib/webmin/virtual-server/backuplog.cgi
 lib/webmin/virtual-server/backups-lib.pl
+lib/webmin/virtual-server/bin/virtualmin-get-domains-ssl-status.pl
 lib/webmin/virtual-server/break_cert.cgi
 lib/webmin/virtual-server/bw-template
 lib/webmin/virtual-server/bw.pl
@@ -1071,8 +1072,10 @@ lib/webmin/virtual-server/help/newips.nl.html
 lib/webmin/virtual-server/help/newips_mode.html
 lib/webmin/virtual-server/help/newips_new.html
 lib/webmin/virtual-server/help/newips_new.nl.html
+lib/webmin/virtual-server/help/newips_new6.html
 lib/webmin/virtual-server/help/newips_old.html
 lib/webmin/virtual-server/help/newips_old.nl.html
+lib/webmin/virtual-server/help/newips_old6.html
 lib/webmin/virtual-server/help/newips_servers_def.html
 lib/webmin/virtual-server/help/newips_servers_def.nl.html
 lib/webmin/virtual-server/help/newmail.html
@@ -1299,6 +1302,7 @@ lib/webmin/virtual-server/help/spf_all.fr.html
 lib/webmin/virtual-server/help/spf_all.html
 lib/webmin/virtual-server/help/spf_all.nl.html
 lib/webmin/virtual-server/help/spf_denabled.html
+lib/webmin/virtual-server/help/spf_dnssec.html
 lib/webmin/virtual-server/help/spf_dp.html
 lib/webmin/virtual-server/help/spf_dpct.html
 lib/webmin/virtual-server/help/spf_enabled.fr.html
@@ -1317,6 +1321,7 @@ lib/webmin/virtual-server/help/spf_mx.html
 lib/webmin/virtual-server/help/spf_mx.nl.html
 lib/webmin/virtual-server/help/ssl.html
 lib/webmin/virtual-server/help/ssl.nl.html
+lib/webmin/virtual-server/help/sslredir.html
 lib/webmin/virtual-server/help/status.html
 lib/webmin/virtual-server/help/status.nl.html
 lib/webmin/virtual-server/help/subs.html
@@ -1369,6 +1374,7 @@ lib/webmin/virtual-server/help/template_dns.nl.html
 lib/webmin/virtual-server/help/template_dns_also.html
 lib/webmin/virtual-server/help/template_dns_also.nl.html
 lib/webmin/virtual-server/help/template_dns_dmarc_mode.html
+lib/webmin/virtual-server/help/template_dns_dmarcextra.html
 lib/webmin/virtual-server/help/template_dns_dmarcp.html
 lib/webmin/virtual-server/help/template_dns_dmarcpct.html
 lib/webmin/virtual-server/help/template_dns_dmarcrua.html
@@ -1556,8 +1562,6 @@ lib/webmin/virtual-server/help/template_statustmpl.html
 lib/webmin/virtual-server/help/template_statustmpl.nl.html
 lib/webmin/virtual-server/help/template_subject.html
 lib/webmin/virtual-server/help/template_subject.nl.html
-lib/webmin/virtual-server/help/template_suexec.html
-lib/webmin/virtual-server/help/template_suexec.nl.html
 lib/webmin/virtual-server/help/template_ugroup_mode.html
 lib/webmin/virtual-server/help/template_ugroup_mode.nl.html
 lib/webmin/virtual-server/help/template_uplainpass.html
@@ -1576,6 +1580,7 @@ lib/webmin/virtual-server/help/template_web_dovecot_ssl.html
 lib/webmin/virtual-server/help/template_web_port.html
 lib/webmin/virtual-server/help/template_web_port.nl.html
 lib/webmin/virtual-server/help/template_web_postfix_ssl.html
+lib/webmin/virtual-server/help/template_web_ssl.html
 lib/webmin/virtual-server/help/template_web_sslport.html
 lib/webmin/virtual-server/help/template_web_sslport.nl.html
 lib/webmin/virtual-server/help/template_web_sslprotos.html
@@ -1843,6 +1848,7 @@ lib/webmin/virtual-server/list-s3-buckets.pl
 lib/webmin/virtual-server/list-s3-files.pl
 lib/webmin/virtual-server/list-scheduled-backups.pl
 lib/webmin/virtual-server/list-scripts.pl
+lib/webmin/virtual-server/list-server-statuses.pl
 lib/webmin/virtual-server/list-shared-addresses.pl
 lib/webmin/virtual-server/list-simple-aliases.pl
 lib/webmin/virtual-server/list-styles.pl
@@ -2232,7 +2238,6 @@ lib/webmin/virtual-server/newkey.cgi
 lib/webmin/virtual-server/notify-domains.pl
 lib/webmin/virtual-server/notify.cgi
 lib/webmin/virtual-server/php-lib.pl
-lib/webmin/virtual-server/php_errors.log
 lib/webmin/virtual-server/plans-lib.pl
 lib/webmin/virtual-server/ports-lib.pl
 lib/webmin/virtual-server/postgres-encodings
@@ -2398,7 +2403,6 @@ lib/webmin/virtual-server/validate.pl
 lib/webmin/virtual-server/view_backuplog.cgi
 lib/webmin/virtual-server/view_domain.cgi
 lib/webmin/virtual-server/view_log.cgi
-lib/webmin/virtual-server/view_maillog.cgi
 lib/webmin/virtual-server/view_records.cgi
 lib/webmin/virtual-server/virtual-server-lib-funcs.pl
 lib/webmin/virtual-server/virtual-server-lib.pl
