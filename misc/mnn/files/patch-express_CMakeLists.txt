@@ -1,0 +1,10 @@
+--- express/CMakeLists.txt.orig	2020-05-23 09:47:07 UTC
++++ express/CMakeLists.txt
+@@ -9,6 +9,7 @@ IF(MNN_SEP_BUILD)
+     endif()
+     add_library(MNN_Express SHARED ${MNN_EXPR_SRCS})
+     target_link_libraries(MNN_Express MNN)
++    install(TARGETS MNN_Express LIBRARY DESTINATION lib)
+ ELSE()
+     add_library(MNNExpress OBJECT ${MNN_EXPR_SRCS})
+ ENDIF()
