@@ -1,11 +1,15 @@
-bin/ephemera
 bin/add.munger
 bin/create.munger
 bin/delete.munger
+bin/edit.munger
+bin/ephemera
 bin/extract.munger
 bin/replace.munger
-bin/edit.munger
 etc/rc.d/ephemera
-man/man8/ephemera.8.gz
+man/man1/ephemera.1.gz
+%%DATADIR%%/Merriweather-Bold.ttf
+%%DATADIR%%/Merriweather-BoldIt.ttf
+%%DATADIR%%/Merriweather-Light.ttf
+%%DATADIR%%/Merriweather-LightIt.ttf
+%%DATADIR%%/ephemera.config
 %%DATADIR%%/ephemera.css
-@sample etc/ephemera.config.sample

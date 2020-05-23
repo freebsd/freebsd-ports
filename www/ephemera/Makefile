@@ -2,14 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	ephemera
-PORTVERSION=	5.9
+PORTVERSION=	6.34
 CATEGORIES=	www
 MASTER_SITES=	http://www.mammothcheese.ca/
 
 MAINTAINER=	jimmy@mammothcheese.ca
 COMMENT=	Blog server
-
-BROKEN=		unfetchable
 
 LICENSE=	BSD3CLAUSE
 
