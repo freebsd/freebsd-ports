@@ -44,6 +44,7 @@
     SUBDIR += graywolf
     SUBDIR += gspiceui
     SUBDIR += gtkwave
+    SUBDIR += ifcopenshell
     SUBDIR += impact
     SUBDIR += irsim
     SUBDIR += iverilog

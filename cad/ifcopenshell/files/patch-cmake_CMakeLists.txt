@@ -1,0 +1,10 @@
+--- cmake/CMakeLists.txt.orig	2020-04-18 16:47:03 UTC
++++ cmake/CMakeLists.txt
+@@ -163,6 +163,7 @@ if(USE_MMAP)
+ endif()
+ 
+ if (IFCXML_SUPPORT)
++    find_package(LibXml2 REQUIRED)
+     add_definitions(-DWITH_IFCXML)
+ endif()
+ 
