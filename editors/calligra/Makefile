@@ -9,6 +9,9 @@ DIST_SUBDIR=	KDE/${PORTNAME}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE office suite
 
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libImath.so:graphics/ilmbase \
 		libKPropertyCore3.so:x11-toolkits/kproperty \
 		libKReport3.so:textproc/kreport \
