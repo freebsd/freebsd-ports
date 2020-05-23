@@ -1,11 +1,11 @@
---- src/translations.cpp.orig	2018-03-06 08:11:44 UTC
+--- src/translations.cpp.orig	2020-04-01 05:39:38 UTC
 +++ src/translations.cpp
-@@ -176,7 +176,7 @@ void set_language()
- 
-     // Step 2. Bind to gettext domain.
-     std::string locale_dir;
--#if (defined __linux__ || (defined MACOSX && !defined TILES))
-+#if (defined __linux__ || defined __FreeBSD__ || (defined MACOSX && !defined TILES))
-     if( !FILENAMES["base_path"].empty() ) {
-         locale_dir = FILENAMES["base_path"] + "share/locale";
+@@ -212,7 +212,7 @@ void set_language()
+     auto env = getenv( "LANGUAGE" );
+     locale_dir = std::string( PATH_INFO::base_path() + "lang/mo/" + ( env ? env : "none" ) +
+                               "/LC_MESSAGES/cataclysm-dda.mo" );
+-#elif (defined(__linux__) || (defined(MACOSX) && !defined(TILES)))
++#elif (defined(__linux__) || defined(__FreeBSD__) || (defined(MACOSX) && !defined(TILES)))
+     if( !PATH_INFO::base_path().empty() ) {
+         locale_dir = PATH_INFO::base_path() + "share/locale";
      } else {
