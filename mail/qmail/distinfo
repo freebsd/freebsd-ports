@@ -1,4 +1,4 @@
-TIMESTAMP = 1485784051
+TIMESTAMP = 1584978462
 SHA256 (qmail/qmail-1.03.tar.gz) = 21ed6c562cbb55092a66197c35c8222b84115d1acab0854fdb1ad1f301626f88
 SIZE (qmail/qmail-1.03.tar.gz) = 220668
 SHA256 (qmail/netqmail-1.06.tar.gz) = 8e7d98d15211fc9f9c28109e942e2268f42a6672d68df92a42f2afa90ff00532
@@ -47,8 +47,8 @@ SHA256 (qmail/netqmail-mysql-1.1.15.patch) = 656d2366c1b4749f0ffdaf68b30f10d469c
 SIZE (qmail/netqmail-mysql-1.1.15.patch) = 61635
 SHA256 (qmail/spamcontrol-2731.tgz) = 24a9c0af8f405ae6bcc4038fd1fc1ea12d5e5c54642e105fd9f0790593128b71
 SIZE (qmail/spamcontrol-2731.tgz) = 179422
-SHA256 (qmail/netqmail-1.06-tls-20160918.patch) = f41d4cca8c9603bfcdbd97d46654f49ad736d8d2f43032305096da80cc7e876a
-SIZE (qmail/netqmail-1.06-tls-20160918.patch) = 50082
+SHA256 (qmail/netqmail-1.06-tls-20200107.patch) = 4230ffe10d58f9ded8f28f0d226e1cb1fa4e21321f7e8584388c52c4dd0f83b3
+SIZE (qmail/netqmail-1.06-tls-20200107.patch) = 52188
 SHA256 (qmail/qmail-smtpd-auth-0.31.tar.gz) = 1b439fa7e128de13fa80b86883f61a39d17b87b7e8916b6a0eab065bbe49b938
 SIZE (qmail/qmail-smtpd-auth-0.31.tar.gz) = 8798
 SHA256 (qmail/qmail-smtpd-auth-close3.patch) = d933e871261d6740cebe5c21cad81146525cfe06a464e277979f61c1242b5ad4

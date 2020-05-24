@@ -41,8 +41,8 @@ pidfile="/var/run/${name}.pid"
 
 qmailsend_start() {
   case ${qmailsend_delivery} in
-    maildir) command_args='./Maildir/';;
-    mailbox) command_args='./Mailbox';;
+    maildir) command_args=./Maildir/;;
+    mailbox) command_args=./Mailbox;;
     proc)    command_args='|preline procmail';;
     V7)      command_args='|preline -f /bin/mail -f "${SENDER:-MAILER-DAEMON}" -d "$USER"';;
     SVR4)    command_args='|preline -f /bin/mail -r "${SENDER:-MAILER-DAEMON}" -d "$USER"';;
