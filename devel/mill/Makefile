@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mill
-DISTVERSION=	0.7.1
+DISTVERSION=	0.7.2
 CATEGORIES=	devel java
 MASTER_SITES=	https://github.com/lihaoyi/mill/releases/download/${PORTVERSION}/
 DISTNAME=	${PORTVERSION}-assembly
@@ -15,10 +15,10 @@ COMMENT=	Mill is a Java/Scala build tool
 LICENSE=	MIT
 
 USE_JAVA=	yes
-
 JAVA_VERSION=	1.8+
-NO_BUILD=	yes
+
 NO_ARCH=	yes
+NO_BUILD=	yes
 
 PLIST_FILES=	bin/mill
 
