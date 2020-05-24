@@ -23,4 +23,10 @@ CONFIGURE_ARGS=	--disable-gtk-doc \
 INSTALL_TARGET=	install-strip
 CFLAGS:=	${CFLAGS:N-O*} -O2
 
+.include <bsd.port.options.mk>
+
+.if defined(PPC_ABI) && ${PPC_ABI} == ELFv2
+USES+=		compiler:gcc-c++11-lib
+.endif
+
 .include <bsd.port.mk>
