@@ -42,6 +42,8 @@ man/man1/fio_generate_plots.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/libiscsi.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/libhdfs.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/libpmem.fio
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/libzbc-rand-write.fio
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/libzbc-seq-read.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mtd.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/nbd.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/netio.fio
@@ -61,4 +63,6 @@ man/man1/fio_generate_plots.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/surface-scan.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tiobench-example.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/waitfor.fio
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/zbd-rand-write.fio
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/zbd-seq-read.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/zipf.fio
