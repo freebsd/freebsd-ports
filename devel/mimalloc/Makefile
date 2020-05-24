@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mimalloc
-PORTVERSION=	1.6.1
+PORTVERSION=	1.6.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -15,9 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		cmake compiler:c11
 
 USE_GITHUB=	yes
-USE_LDCONFIG=	yes
-
 GH_ACCOUNT=	microsoft
+USE_LDCONFIG=	yes
 
 # shows broken links: 400: Invalid request
 PORTSCOUT=	ignore:1
