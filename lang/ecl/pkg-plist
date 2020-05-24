@@ -84,6 +84,7 @@ include/ecl/number.h
 include/ecl/object.h
 include/ecl/page.h
 include/ecl/stacks.h
+lib/ecl
 lib/ecl-%%VERSION%%/COPYING
 lib/ecl-%%VERSION%%/LICENSE
 lib/ecl-%%VERSION%%/TAGS

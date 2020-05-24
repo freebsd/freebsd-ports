@@ -3,6 +3,7 @@
 
 PORTNAME=	ecl
 PORTVERSION=	16.1.3
+PORTREVISION=	1
 CATEGORIES=	lang lisp
 MASTER_SITES=	https://common-lisp.net/project/ecl/static/files/release/
 
@@ -63,5 +64,6 @@ post-patch-THREADS-on:
 post-install:
 	${RMDIR} ${STAGEDIR}${PREFIX}/include/ecl/gc/private
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libecl.so.${PORTVERSION}
+	${LN} -sf ecl-${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/ecl
 
 .include <bsd.port.mk>
