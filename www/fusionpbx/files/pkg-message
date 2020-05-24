@@ -1,0 +1,45 @@
+#################################
+#run freeswith under www user and group
+sysrc memcached_enable="YES"
+sysrc freeswitch_enable="YES"
+sysrc freeswitch_flags="-nc -nonat"
+sysrc freeswitch_user="www"
+sysrc freeswitch_group="www"
+
+#copy the default conf directory
+mkdir -p /usr/local/etc/freeswitch
+cp -R /usr/local/www/fusionpbx/resources/templates/conf/* /usr/local/etc/freeswitch
+
+#copy the scripts
+cp -R /usr/local/www/fusionpbx/resources/install/scripts /usr/local/share/freeswitch
+
+#default ownership
+chown -R www:www /usr/local/etc/freeswitch
+chown -R www:www /var/lib/freeswitch
+chown -R www:www /usr/local/share/freeswitch
+chown -R www:www /var/log/freeswitch
+chown -R www:www /var/run/freeswitch
+
+#install nginx or apache24 and mod_php72
+#optinal install postgresql10
+sysrc postgresql_enable="YES"
+  
+/usr/local/etc/rc.d/postgresql initdb
+
+sudo -u postgres /usr/local/bin/pg_ctl -D /var/db/postgres/data10 -l logfile start
+
+service postgresql restart
+  
+sudo -u postgres psql -c "DROP DATABASE fusionpbx;"
+sudo -u postgres psql -c "DROP DATABASE freeswitch;"
+sudo -u postgres psql -c "DROP ROLE fusionpbx;"
+sudo -u postgres psql -c "DROP ROLE freeswitch;"
+  
+sudo -u postgres psql -c "CREATE DATABASE fusionpbx;"
+sudo -u postgres psql -c "CREATE DATABASE freeswitch;"
+sudo -u postgres psql -c "CREATE ROLE fusionpbx WITH SUPERUSER LOGIN PASSWORD '$DB_PASSWORD';"
+sudo -u postgres psql -c "CREATE ROLE freeswitch WITH SUPERUSER LOGIN PASSWORD '$DB_PASSWORD';"
+sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE fusionpbx to fusionpbx;"
+sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE freeswitch to fusionpbx;"
+sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE freeswitch to freeswitch;"
+#################################
