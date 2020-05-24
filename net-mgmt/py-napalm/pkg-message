@@ -1,0 +1,20 @@
+[
+{ type: upgrade
+  maximum_version: "3.0.1"
+  message: <<EOD
+Release 3.0.0 introduced support for the Arista FN 0039 command changes (Github
+issue #1093), by replacing the old style commands with the new style commands.
+
+This also affected the way NAPALM loads the configuration on the device (i.e.,
+it would transform the configuration before loading).
+
+In order to prevent this, and avoid unexpected results, a new optional argument
+"eos_fn0039_config" was introduced, defaulting to "False", which can be used to
+select whether NAPALM should convert the configuration command before loading.
+
+By default, NAPALM won't transform the configuration, but setting the variable
+"eos_fn0039_config" to "True" it would help one to transition to newer EOS
+versions.
+EOD
+}
+]
