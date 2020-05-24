@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	regripper
-PORTVERSION=	2.8.20200220
+PORTVERSION=	2.8.20200404
 CATEGORIES=	security
 
 MAINTAINER=	antoine@FreeBSD.org
@@ -15,7 +15,7 @@ RUN_DEPENDS=	p5-Parse-Win32Registry>=0:devel/p5-Parse-Win32Registry
 USE_GITHUB=	yes
 GH_ACCOUNT=	keydet89
 GH_PROJECT=	RegRipper2.8
-GH_TAGNAME=	ee874d5
+GH_TAGNAME=	1b87d06
 
 NO_ARCH=	yes
 NO_BUILD=	yes
@@ -25,8 +25,8 @@ perl_OLD_CMD=	c:\\\\perl\\\\bin\\\\perl.exe
 USE_PERL5=	run
 
 PLIST_FILES=	bin/rip.pl
-PORTDATA=	plugins/*.pl plugins/all plugins/ntuser plugins/sam \
-		plugins/security plugins/software plugins/system \
+PORTDATA=	plugins/*.pl plugins/all plugins/amcache plugins/ntuser plugins/sam \
+		plugins/security plugins/software plugins/syscache plugins/system \
 		plugins/usrclass
 
 post-patch:
