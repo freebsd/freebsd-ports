@@ -7,12 +7,12 @@ DISTVERSIONSUFFIX=	-g${GL_COMMIT:C/(.{12}).*/\1/}
 CATEGORIES=	x11-servers
 PKGNAMESUFFIX=	-devel
 
-PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/commit/
-PATCHFILES+=	71749de24509.diff:-p1 # https://gitlab.freedesktop.org/xorg/xserver/merge_requests/393
-PATCHFILES+=	1e897704c822.diff:-p1 # https://gitlab.freedesktop.org/xorg/xserver/merge_requests/393
-PATCHFILES+=	83cda3ce3195.diff:-p1 # https://gitlab.freedesktop.org/xorg/xserver/merge_requests/393
-PATCHFILES+=	9e0086f99b39.diff:-p1 # https://gitlab.freedesktop.org/xorg/xserver/merge_requests/432
-PATCHFILES+=	30ea6cb622e9.diff:-p1 # https://gitlab.freedesktop.org/xorg/xserver/merge_requests/432
+PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
+PATCHFILES+=	71749de24509.diff:-p1 # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/393
+PATCHFILES+=	1e897704c822.diff:-p1 # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/393
+PATCHFILES+=	83cda3ce3195.diff:-p1 # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/393
+PATCHFILES+=	9e0086f99b39.diff:-p1 # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/432
+PATCHFILES+=	30ea6cb622e9.diff:-p1 # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/432
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	X11 server as Wayland client (development snapshot)

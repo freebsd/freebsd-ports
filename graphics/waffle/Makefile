@@ -6,7 +6,7 @@ DISTVERSION=	1.6.0-7
 CATEGORIES=	graphics
 
 # Wayland xdg-shell support (to run on sway/wayfire/etc. that have removed wl-shell)
-PATCH_SITES=	https://gitlab.freedesktop.org/oreaus/${PORTNAME}/commit/
+PATCH_SITES=	https://gitlab.freedesktop.org/oreaus/${PORTNAME}/-/commit/
 PATCHFILES=	3cdce7b38cbd91cd7288e21940b279bf7ddc5757.diff:-p1
 
 MAINTAINER=	x11@FreeBSD.org

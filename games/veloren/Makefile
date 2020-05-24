@@ -10,8 +10,8 @@ DISTFILES=	android-icon-192x192.png:icon \
 		${PORTNAME}-assets-${DISTVERSIONFULL}.tar.xz:assets
 EXTRACT_ONLY=	${DISTFILES:N*\:icon:C/:.*//}
 
-PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/commit/
-PATCHFILES+=	886cad910372.diff:-p1 # https://gitlab.com/veloren/veloren/merge_requests/1003
+PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
+PATCHFILES+=	886cad910372.diff:-p1 # https://gitlab.com/veloren/veloren/-/merge_requests/1003
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Multiplayer voxel RPG written in Rust

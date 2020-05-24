@@ -12,7 +12,7 @@ DISTNAME=	xorg-server-${PORTVERSION}
 MAINTAINER=	x11@FreeBSD.org
 COMMENT?=	X.Org X server and related programs
 
-PATCH_SITES=	https://gitlab.freedesktop.org/xorg/xserver/commit/
+PATCH_SITES=	https://gitlab.freedesktop.org/xorg/xserver/-/commit/
 PATCHFILES=	271934db9f3b1297754b29855646e0a4ee01db59.diff:-p1
 
 LICENSE=	MIT

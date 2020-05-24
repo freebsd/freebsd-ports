@@ -9,7 +9,7 @@ CATEGORIES=	x11-drivers
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org ati display driver
 
-PATCH_SITES=	https://gitlab.freedesktop.org/xorg/driver/${PORTNAME}/commit/
+PATCH_SITES=	https://gitlab.freedesktop.org/xorg/driver/${PORTNAME}/-/commit/
 PATCHFILES+=	f223035f4ffcff2a9296d1e907a5193f8e8845a3.diff:-p1
 PATCHFILES+=	4d84cf438e7f1bebf0053035ef0292e9fed257d1.diff:-p1
 PATCHFILES+=	c0eb5dbd9c1db6b6d5b1574bcd8c584170d7ab54.diff:-p1
