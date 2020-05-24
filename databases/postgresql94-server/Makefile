@@ -4,7 +4,7 @@
 DISTVERSION?=	9.4.26
 # PORTREVISION must be ?= otherwise, all slave ports get this PORTREVISION and
 # not their own.  Probably best to keep it at ?=0 when reset here too.
-PORTREVISION?=	0
+PORTREVISION?=	1
 PKGNAMESUFFIX?=	${PORTVERSION:R:S/.//}${COMPONENT}
 
 MAINTAINER?=	pgsql@FreeBSD.org
@@ -21,5 +21,8 @@ ICU_PATCHFILE=	pg-949-icu-2016-10-02.diff.gz
 PG_USER?=	pgsql
 PG_GROUP?=	pgsql
 PG_UID?=	70
+
+DEPRECATED=	PostgreSQL-9.4 has reached end-of-life
+EXPIRATION_DATE=2020-07-24
 
 .include "${.CURDIR}/../postgresql12-server/Makefile"
