@@ -75,6 +75,7 @@
     SUBDIR += gaupol
     SUBDIR += gavl
     SUBDIR += gdialog
+    SUBDIR += get_iplayer
     SUBDIR += gmerlin
     SUBDIR += gmimms
     SUBDIR += gmmlib

@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	get_iplayer
-PORTVERSION=	3.24
-DISTVERSIONPREFIX=v
+PORTVERSION=	3.25
+DISTVERSIONPREFIX=	v
 CATEGORIES=	net multimedia
 
 MAINTAINER=	jamie@catflap.org
@@ -43,18 +43,14 @@ ATOMICPARSLEY_DESC=	Enable tagging of media files
 ATOMICPARSLEY_RUN_DEPENDS=	AtomicParsley>=0:multimedia/atomicparsley
 
 post-patch:
-	${REINPLACE_CMD} -e "s|/usr/bin/get_iplayer|${PREFIX}/bin/${PORTNAME}|" \
-		${WRKSRC}/README.md ${WRKSRC}/get_iplayer.cgi
-	${REINPLACE_CMD} -e "s|/usr/bin/|${LOCALBASE}/bin|" \
-		${WRKSRC}/README.md
-	${REINPLACE_CMD} -e "s|/usr/share/get_iplayer|${WWWDIR}|" \
-		${WRKSRC}/get_iplayer
+	${REINPLACE_CMD} -e "108,110c\\${.newline}	\$$opt_cmdline->{getiplayer} = \"${PREFIX}/bin/${PORTNAME}\";" \
+		${WRKSRC}/get_iplayer.cgi
 
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}
 	(cd ${WRKSRC}; ${INSTALL_SCRIPT} ${SCRIPTS} ${STAGEDIR}${WWWDIR})
 	${LN} -sf ${WWWDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
