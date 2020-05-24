@@ -1,6 +1,6 @@
-JFlex is a lexical analyzer generator for Java written in Java.
-It is also a rewrite of the very useful tool JLex which was developed
-by Elliot Berk at Princeton University. As Vern Paxon states for his C/C++
-tool flex: They do not share any code though.
+JFlex is a lexical analyser generator for Java written in Java.  It is
+also a rewrite of the tool JLex (Berk 1996) which was developed by
+Elliot Berk at Princeton University.  As Vern Paxson states for his
+C/C++ tool flex (Paxson 1995): they do not share any code though.
 
-WWW: http://www.jflex.de/
+WWW: https://www.jflex.de/

@@ -2,48 +2,42 @@
 # $FreeBSD$
 
 PORTNAME=	jflex
-PORTVERSION=	1.4.2
+PORTVERSION=	1.8.1
 CATEGORIES=	java devel
-MASTER_SITES=	http://www.jflex.de/:jflexde \
-		http://jflex.sourceforge.net/jar/devel/:jflexsf
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:jflexde \
-		JFlex.jar:jflexsf \
-		java_cup.jar:jflexsf
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+MASTER_SITES=	https://github.com/jflex-de/jflex/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	eg@fbsd.lt
-COMMENT=	The Fast Lexical Analyser Generator for Java[tm]
+COMMENT=	Fast Lexical Analyser Generator for Java[tm]
 
-BROKEN=		unfetchable
-
-BUILD_DEPENDS=	${JAVALIBDIR}/junit.jar:java/junit
+LICENSE=	BSD3CLAUSE
 
 USE_JAVA=	yes
-USE_ANT=	yes
-BUILD_WRKSRC=	${WRKSRC}/src
-ALL_TARGET=	jar
-MAKE_ENV+=	CLASSPATH="${JAVALIBDIR}/junit.jar"
 
-PORTDOCS=	*
-
-SUB_FILES=	jflex.sh
+#
+# JFlex has two build options --- Maven and Bazel --- and neither of
+# them are easy within the Ports tree framework.  If you *really* want
+# to build it from source, grab the distfile (which includes the source)
+# or the entire repo, and have fun!     -- ~jashankj, 2020-04-08
+#
+NO_BUILD=	yes
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
-
-post-extract:
-	${MKDIR} ${WRKSRC}/tools
-	${CP} ${DISTDIR}/JFlex.jar ${WRKSRC}/tools/
-	${CP} ${DISTDIR}/java_cup.jar ${WRKSRC}/tools/
+SUB_FILES=	jflex.sh
+SUB_LIST+=	PORTVERSION=${PORTVERSION}
+PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/jflex.sh ${STAGEDIR}${PREFIX}/bin/jflex
-	${INSTALL_DATA} ${WRKSRC}/lib/JFlex.jar ${STAGEDIR}${JAVAJARDIR}/JFlex.jar
+	${INSTALL_DATA} ${WRKSRC}/lib/${PORTNAME}-full-${PORTVERSION}.jar \
+		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}-${PORTVERSION}.jar
+	${LN} -s ${PORTNAME}-${PORTVERSION}.jar ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
+
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} "! -name \.* ")
+
+do-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-.for EXAMPLE in binary byaccj cup interpreter java simple standalone
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/${EXAMPLE}
-	${INSTALL_DATA} ${WRKSRC}/examples/${EXAMPLE}/* ${STAGEDIR}${EXAMPLESDIR}/${EXAMPLE}
-.endfor
+	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR} "! -name \.*")
 
 .include <bsd.port.mk>
