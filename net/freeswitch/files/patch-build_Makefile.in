@@ -1,6 +1,6 @@
---- build/Makefile.in.orig	2017-06-13 13:22:10 UTC
+--- build/Makefile.in.orig	2020-05-12 10:20:11 UTC
 +++ build/Makefile.in
-@@ -594,76 +594,9 @@ uninstall-am:
+@@ -706,76 +706,9 @@ uninstall-am:
  
  all:
  	@echo " +---------- FreeSWITCH Build Complete ----------+"
