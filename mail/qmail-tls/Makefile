@@ -3,7 +3,7 @@
 
 PORTNAME=	qmail
 PORTVERSION=	${QMAIL_VERSION}.${TLS_PATCH_DATE}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-tls
 
@@ -13,7 +13,7 @@ CONFLICTS=	*qmail-[0-9]* qmail-ldap-[0-9]* *qmail-mysql-[0-9]* qmail-spamcontrol
 
 SLAVE_TLS=	yes
 
-TLS_PATCH_DATE=	20160918
+TLS_PATCH_DATE=	20200107
 
 USES=		ssl
 

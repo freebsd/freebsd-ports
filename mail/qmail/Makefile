@@ -3,7 +3,7 @@
 
 PORTNAME=	${QMAIL_PORTNAME}
 PORTVERSION?=	${QMAIL_VERSION}
-PORTREVISION?=	4
+PORTREVISION?=	5
 CATEGORIES=	mail
 MASTER_SITES+=	QMAIL
 DISTNAME=	${PORTNAME}-${QMAIL_VERSION}
@@ -383,10 +383,6 @@ NO_MTREE=	yes
 NO_PREFIX_RMDIR=yes
 
 .include <bsd.port.options.mk>
-
-.if defined(SLAVE_TLS) && ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200000
-EXTRA_PATCHES+=	${FILESDIR}/netqmail-1.06-tls-20160918-freebsd-12.patch
-.endif
 
 .if ${ARCH} == "amd64" && !defined(SLAVE_LDAP) \
     && !defined(SLAVE_SPAMCONTROL)
