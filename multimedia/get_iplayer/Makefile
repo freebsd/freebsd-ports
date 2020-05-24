@@ -3,7 +3,7 @@
 PORTNAME=	get_iplayer
 PORTVERSION=	3.25
 DISTVERSIONPREFIX=	v
-CATEGORIES=	net multimedia
+CATEGORIES=	multimedia net
 
 MAINTAINER=	jamie@catflap.org
 COMMENT=	Search, index, or stream archive video from BBC iPlayer
