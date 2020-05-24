@@ -30,7 +30,7 @@ causes conflicts.
 
 If you want to change the screen saver being used and enable
 xscreensaver please go to the Session and Startup settings, and in
-the Aplication Autostart tab enable only the relevant screensaver:
+the Application Autostart tab enable only the relevant screensaver:
 
 Screensaver -> to enable xscreensaver
 XFCE Screensaver -> to enable xfce4-screensaver
@@ -46,7 +46,7 @@ causes conflicts.
 
 If you want to change the screen saver being used and enable
 xscreensaver please go to the Session and Startup settings, and in
-the Aplication Autostart tab enable only the relevant screensaver:
+the Application Autostart tab enable only the relevant screensaver:
 
 Screensaver -> to enable xscreensaver
 XFCE Screensaver -> to enable xfce4-screensaver
