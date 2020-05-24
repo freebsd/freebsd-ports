@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	metasploit
-PORTVERSION=	5.0.79
-PORTREVISION=	1
+PORTVERSION=	5.0.90
 CATEGORIES=	security
 
 MAINTAINER=	tanawts@gmail.com
@@ -18,6 +17,7 @@ RUN_DEPENDS=	nmap:security/nmap \
 		rubygem-activesupport4>=4.2.6:devel/rubygem-activesupport4 \
 		rubygem-actionpack4>=4.2.6:www/rubygem-actionpack4 \
 		rubygem-bcrypt>=0:security/rubygem-bcrypt \
+		rubygem-bson>=0:devel/rubygem-bson \
 		rubygem-bundler>=0:sysutils/rubygem-bundler \
 		rubygem-jsobfu>=0:www/rubygem-jsobfu \
 		rubygem-json>=0:devel/rubygem-json \
@@ -27,8 +27,8 @@ RUN_DEPENDS=	nmap:security/nmap \
 		rubygem-metasploit-credential>=0:security/rubygem-metasploit-credential \
 		rubygem-metasploit_data_models>=3.0.10_2:security/rubygem-metasploit_data_models \
 		rubygem-metasploit-model>=0:security/rubygem-metasploit-model \
-		rubygem-metasploit-payloads>=1.3.85:security/rubygem-metasploit-payloads \
-		rubygem-metasploit_payloads-mettle>=0.5.19:security/rubygem-metasploit_payloads-mettle \
+		rubygem-metasploit-payloads>=1.4.2:security/rubygem-metasploit-payloads \
+		rubygem-metasploit_payloads-mettle>=0.5.21:security/rubygem-metasploit_payloads-mettle \
 		rubygem-msgpack>=0:devel/rubygem-msgpack \
 		rubygem-network_interface>=0:net/rubygem-network_interface \
 		rubygem-rubyntlm>=0:net/rubygem-rubyntlm \
@@ -55,6 +55,7 @@ RUN_DEPENDS=	nmap:security/nmap \
 		rubygem-ruby-macho>=0:devel/rubygem-ruby-macho \
 		rubygem-dnsruby>=0:dns/rubygem-dnsruby \
 		rubygem-mqtt>=0:net/rubygem-mqtt \
+		rubygem-net-ldap>=0:net/rubygem-net-ldap \
 		rubygem-net-ssh>=0:security/rubygem-net-ssh \
 		rubygem-ed25519>=0:security/rubygem-ed25519 \
 		rubygem-bcrypt_pbkdf>=0:security/rubygem-bcrypt_pbkdf \
@@ -111,6 +112,7 @@ SHEBANG_FILES=	data/exploits/CVE-2017-17562/build.sh \
 		external/source/metsvc/test.rb \
 		docker/bin/msfvenom \
 		docker/bin/msfconsole \
+		modules/auxiliary/admin/http/grafana_auth_bypass.py \
 		modules/auxiliary/admin/teradata/teradata_odbc_sql.py \
 		modules/auxiliary/dos/http/slowloris.py \
 		modules/auxiliary/dos/tcp/claymore_dos.py \
