@@ -248,7 +248,6 @@
     SUBDIR += boost_build
     SUBDIR += bossa
     SUBDIR += bpython
-    SUBDIR += breakpad
     SUBDIR += brz
     SUBDIR += bsdbuild
     SUBDIR += bsdcflow

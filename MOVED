@@ -15016,3 +15016,4 @@ math/py-onnx|misc/py-onnx|2020-05-23|Move to misc category because it's not rela
 misc/onnx|misc/py-onnx|2020-05-23|Remove duplicate
 net/get_iplayer|multimedia/get_iplayer|2020-05-24|Move to a proper category
 lang/gnatdroid-armv7||2020-05-24|Has expired: Broken for more than 6 months
+devel/breakpad||2020-05-24|Has expired: Broken for more than 6 months
