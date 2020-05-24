@@ -1,0 +1,11 @@
+--- chrome/browser/browser_resources.grd.orig	2019-04-08 08:32:43 UTC
++++ chrome/browser/browser_resources.grd
+@@ -679,7 +679,7 @@
+         <include name="IDR_WELCOME_WIN10_PIN_WEBP" file="resources\welcome\pin.webp" type="BINDATA" />
+       </if>
+       <include name="IDR_SSL_ERROR_ASSISTANT_PB" file="${root_gen_dir}/chrome/browser/resources/ssl/ssl_error_assistant/ssl_error_assistant.pb" use_base_dir="false" type="BINDATA" />
+-      <if expr="is_android or is_linux">
++      <if expr="is_android or is_posix">
+         <include name="IDR_SANDBOX_INTERNALS_HTML" file="resources\sandbox_internals\sandbox_internals.html" flattenhtml="true" allowexternalscript="true" type="BINDATA" compress="gzip" />
+         <include name="IDR_SANDBOX_INTERNALS_JS" file="resources\sandbox_internals\sandbox_internals.js" type="BINDATA" compress="gzip" />
+       </if>

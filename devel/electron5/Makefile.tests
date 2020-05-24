@@ -1,0 +1,55 @@
+# $FreeBSD$
+
+TEST_MODULES=	electron\ module \
+		app\ module \
+		default\ behavior \
+		autoUpdater\ module \
+		BrowserView\ module \
+		BrowserWindow\ with\ affinity\ module \
+		BrowserWindow\ module \
+		CallbacksRegistry\ module \
+		clipboard\ module \
+		contentTracing \
+		debugger\ module \
+		deprecations \
+		desktopCapturer \
+		dialog\ module \
+		globalShortcut\ module \
+		ipc\ main\ module \
+		ipc\ renderer\ module \
+		MenuItems \
+		Menu\ module \
+		nativeImage\ module \
+		netLog\ module \
+		net\ module \
+		Notification\ module \
+		powerMonitor \
+		powerSaveBlocker\ module \
+		process\ module \
+		protocol\ module \
+		remote\ module \
+		screen\ module \
+		session\ module \
+		shell\ module \
+		renderer\ nodeIntegrationInSubFrames \
+		systemPreferences\ module \
+		TouchBar\ module \
+		tray\ module \
+		View \
+		webContents\ module \
+		WebContentsView \
+		webFrame\ module \
+		webRequest\ module \
+		asar\ package \
+		chromium\ feature \
+		font\ fallback \
+		feature-string\ parsing \
+		modules\ support \
+		node\ feature \
+		security\ warnings \
+		bump-version\ utils \
+		bump-version\ script \
+		<webview>\ tag
+
+#		crashReporter\ module \
+#		inAppPurchase\ module \

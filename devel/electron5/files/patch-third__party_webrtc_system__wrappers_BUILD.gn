@@ -1,0 +1,11 @@
+--- third_party/webrtc/system_wrappers/BUILD.gn.orig	2019-04-08 08:34:48 UTC
++++ third_party/webrtc/system_wrappers/BUILD.gn
+@@ -59,8 +59,6 @@ rtc_static_library("system_wrappers") {
+     if (!build_with_chromium) {
+       deps += [ ":cpu_features_linux" ]
+     }
+-
+-    libs += [ "rt" ]
+   }
+ 
+   if (is_win) {

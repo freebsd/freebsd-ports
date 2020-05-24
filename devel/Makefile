@@ -520,6 +520,7 @@
     SUBDIR += egypt
     SUBDIR += eiffelstudio
     SUBDIR += electron4
+    SUBDIR += electron5
     SUBDIR += electron6
     SUBDIR += electron7
     SUBDIR += elf

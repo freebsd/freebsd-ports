@@ -1,0 +1,36 @@
+--- electron/BUILD.gn.orig	2019-07-23 18:38:39 UTC
++++ electron/BUILD.gn
+@@ -366,6 +366,15 @@ static_library("electron_lib") {
+   sources = filenames.lib_sources
+   set_sources_assignment_filter(sources_assignment_filter)
+ 
++  if (is_bsd) {
++    sources -= [
++      "atom/common/crash_reporter/crash_reporter_linux.cc",
++      "atom/common/crash_reporter/crash_reporter_linux.h",
++      "atom/common/crash_reporter/linux/crash_dump_handler.cc",
++      "atom/common/crash_reporter/linux/crash_dump_handler.h",
++    ]
++  }
++
+   if (is_component_build) {
+     defines += [ "NODE_SHARED_MODE" ]
+   }
+@@ -440,7 +449,7 @@ static_library("electron_lib") {
+   if (is_win) {
+     libs += [ "dwmapi.lib" ]
+   }
+-  if (is_linux || is_win) {
++  if ((is_linux && !is_bsd) || is_win) {
+     deps += [ "//third_party/breakpad:client" ]
+     include_dirs += [ "//third_party/breakpad" ]
+   }
+@@ -1057,7 +1066,7 @@ dist_zip("electron_dist_zip") {
+     ":licenses",
+     ":electron_version",
+   ]
+-  if (is_linux) {
++  if (is_linux && !is_bsd) {
+     data_deps += [ "//sandbox/linux:chrome_sandbox" ]
+   }
+   outputs = [
