@@ -106,7 +106,6 @@
     SUBDIR += gnat_util
     SUBDIR += gnatcross-binutils-aarch64
     SUBDIR += gnatcross-sysroot-aarch64
-    SUBDIR += gnatdroid-armv7
     SUBDIR += gnatdroid-binutils
     SUBDIR += gnatdroid-binutils-x86
     SUBDIR += gnatdroid-sysroot
