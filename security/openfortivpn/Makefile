@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	openfortivpn
-PORTVERSION=	1.11.0
-DISTVERSIONPREFIX=v
+PORTVERSION=	1.14.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	security net-vpn
 
 MAINTAINER=	lifanov@FreeBSD.org
@@ -16,6 +16,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	adrienverge
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	OPENSSL_LIBS="-lssl -lcrypto" OPENSSL_CFLAGS=${OPENSSLINC}
+CONFIGURE_ENV=	OPENSSL_CFLAGS=${OPENSSLINC} \
+		OPENSSL_LIBS="-lssl -lcrypto"
 
 .include <bsd.port.mk>
