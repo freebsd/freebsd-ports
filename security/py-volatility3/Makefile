@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	volatility3
-DISTVERSION=	g20200117
+DISTVERSION=	g20200510
 CATEGORIES=	security python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -21,7 +21,7 @@ RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	volatilityfoundation
-GH_TAGNAME=	9fe6e6b
+GH_TAGNAME=	94426ad
 
 USES=		python:3.5+
 USE_PYTHON=	distutils autoplist
