@@ -1,6 +1,7 @@
 # $FreeBSD$
 
 PKGNAMESUFFIX=	-qt
+PORTREVISION=	1
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2

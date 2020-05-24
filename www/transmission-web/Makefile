@@ -2,6 +2,7 @@
 
 CATEGORIES=	www
 PKGNAMESUFFIX=	-web
+PORTREVISION=	1
 
 USES=		cpe
 NO_ARCH=	yes

@@ -15,6 +15,7 @@ share/applications/transmission-qt.desktop
 %%DATADIR%%/translations/transmission_en.qm
 %%DATADIR%%/translations/transmission_es.qm
 %%DATADIR%%/translations/transmission_eu.qm
+%%DATADIR%%/translations/transmission_fi.qm
 %%DATADIR%%/translations/transmission_fr.qm
 %%DATADIR%%/translations/transmission_hu.qm
 %%DATADIR%%/translations/transmission_id.qm
