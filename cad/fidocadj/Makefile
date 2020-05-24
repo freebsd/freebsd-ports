@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	fidocadj
-PORTVERSION=	0.24.6
-PORTREVISION=	2
+PORTVERSION=	0.24.7
+PORTREVISION=	0
 CATEGORIES=	cad java
 # No USE_GITHUB here because GITHUB_EXTRACT_SUFX is hardcoded to .tar.gz
 MASTER_SITES=	https://github.com/DarwinNE/FidoCadJ/releases/download/v${PORTVERSION}/
