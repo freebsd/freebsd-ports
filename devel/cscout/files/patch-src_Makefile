@@ -1,0 +1,27 @@
+--- src/Makefile.orig	2019-11-04 16:42:35 UTC
++++ src/Makefile
+@@ -207,12 +207,13 @@ mkerr:
+ 
+ # This ensures that the version.cpp is regenerated iff its SHA doesn't
+ # match the current one.
+-ifneq ($(shell sed -n '/Version::revision/s/.* = "\(.*\)";/\1/p' version.cpp), $(shell git log -n 1 --format='%H' || sed -n '/Version::revision/s/.* = "\(.*\)";/\1/p' version.cpp))
++# Without git available, we will just generate a semi-static version.cpp
++#ifneq ($(shell sed -n '/Version::revision/s/.* = "\(.*\)";/\1/p' version.cpp), $(shell git log -n 1 --format='%H' || sed -n '/Version::revision/s/.* = "\(.*\)";/\1/p' version.cpp))
+ version.cpp:
+ 	sh make-version.sh >$@
+ 
+-.PHONY: version.cpp
+-endif
++#.PHONY: version.cpp
++#endif
+ 
+ 
+ test:
+@@ -264,6 +265,7 @@ obfuscation:
+ 	)
+ 
+ install: build/cscout
++	install -d "${INSTALL_PREFIX}/bin"
+ 	install -Ds $< "$(INSTALL_PREFIX)/bin/cscout"
+ 	./dest-install.sh "$(INSTALL_PREFIX)"
+ 

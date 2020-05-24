@@ -2,57 +2,43 @@
 # $FreeBSD$
 
 PORTNAME=	cscout
-PORTVERSION=	2.7
-PORTREVISION=	2
+PORTVERSION=	3.01
 CATEGORIES=	devel
-MASTER_SITES=	http://www.spinellis.gr/cscout/ \
-		http://www.dmst.aueb.gr/dds/cscout/
-DISTFILES=	${DISTNAME}-neutral${EXTRACT_SUFX} \
-		${DISTNAME}-fbsd-${ARCH}${EXTRACT_SUFX}
 
 MAINTAINER=	dds@FreeBSD.org
 COMMENT=	Source code analyzer and refactoring browser for C program collections
 
-BROKEN=		unfetchable
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2020-05-05
+LICENSE=	GPLv3
 
-LIB_DEPENDS+=	libc.so.6:misc/compat6x
+BUILD_DEPENDS=	unzip:archivers/unzip
+RUN_DEPENDS=	dot:graphics/graphviz
 
-NO_BUILD=	yes
-ONLY_FOR_ARCHS=	i386 amd64 sparc64
-ONLY_FOR_ARCHS_REASON=	The port fetches and installs precompiled binaries
-USES=		perl5 shebangfix
-USE_PERL5=	run
-SHEBANG_FILES=	bin/csmake bin/cswc
+USES=		gmake perl5 shebangfix
+USE_GITHUB=	yes
+GH_ACCOUNT=	dspinellis dspinellis:swill,btyacc
+GH_PROJECT=	cscout swill:swill btyacc:btyacc
+GH_TAGNAME=	bd7dfac fafde76:swill 4d0be15:btyacc
+GH_SUBDIR=	swill:swill btyacc:btyacc
+USE_PERL5=	run build
+SHEBANG_FILES=	src/csmake.pl src/cswc.pl
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+# DOCS temporary disabled, need XML -> HTML conversion
+OPTIONS_DEFINE=	EXAMPLES #DOCS
+SUB_FILES=	pkg-message
 
 post-patch:
-.if exists(/usr/include/g++/)
-	${REINPLACE_CMD} -i "" -e 's:g++-3:g++:g' \
-	    ${WRKSRC}/etc/cscout_incs.FBSD_GCC
-.endif
-	(${SED} -n '1,/Platform defines begin/p' \
-	    ${WRKSRC}/etc/cscout_defs.FBSD_GCC && \
-		${CPP} -O -dM /dev/null | ${SORT} && \
-		${SED} -n '/Platform defines end/,$$p' \
-		    ${WRKSRC}/etc/cscout_defs.FBSD_GCC ) \
-		    > ${WRKDIR}/cscout_defs.h
-	${CP} ${WRKDIR}/cscout_defs.h ${WRKSRC}/etc/cscout_defs.FBSD_GCC
+	${REINPLACE_CMD} -e 's|install -d \"|install -d \"${STAGEDIR}/|g' ${WRKSRC}/src/Makefile
+	${REINPLACE_CMD} -e 's|install -Ds $$< \"|install -s $$< \"${STAGEDIR}/|g' ${WRKSRC}/src/Makefile
+	${REINPLACE_CMD} -e 's|./dest-install.sh \"|./dest-install.sh \"${STAGEDIR}/|g' ${WRKSRC}/src/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/cscout ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/cswc ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/csmake ${STAGEDIR}${PREFIX}/bin
-	cd ${WRKSRC}/etc && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/etc/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/etc/cscout_incs.FBSD_GCC ${STAGEDIR}${PREFIX}/etc/${PORTNAME}/
-	${INSTALL_DATA} ${WRKSRC}/etc/cscout_defs.FBSD_GCC ${STAGEDIR}${PREFIX}/etc/${PORTNAME}/
 	${INSTALL_MAN} ${WRKSRC}/man/cscout.1 ${STAGEDIR}${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/man/cswc.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/cscc.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/csmake.1 ${STAGEDIR}${PREFIX}/man/man1
 
-do-install-DOCS-on:
-	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
+#do-install-DOCS-on:
+#	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
 do-install-EXAMPLES-on:
 	cd ${WRKSRC}/example && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
