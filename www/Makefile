@@ -2187,6 +2187,7 @@
     SUBDIR += template_
     SUBDIR += templatelite
     SUBDIR += thirtybees
+    SUBDIR += threejs
     SUBDIR += thttpd
     SUBDIR += thumbnail_index
     SUBDIR += thundercache
