@@ -2,7 +2,7 @@
 
 PORTNAME=	microsoft-gsl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.0
+DISTVERSION=	3.0.1
 CATEGORIES=	devel
 
 MAINTAINER=	henry.hu.sh@gmail.com

@@ -6,4 +6,6 @@ include/gsl/gsl_util
 include/gsl/multi_span
 include/gsl/pointers
 include/gsl/span
+include/gsl/span_ext
 include/gsl/string_span
+share/cmake/Microsoft.GSL/Microsoft.GSLConfig.cmake
