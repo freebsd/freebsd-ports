@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	scons
-PORTVERSION=	3.1.1
+PORTVERSION=	3.1.2
 CATEGORIES=	devel python
 MASTER_SITES=	SF
+PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Build tool alternative to make
@@ -14,8 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	gm4:devel/m4
 
-USES=		python:2.7 shebangfix
-USE_PYTHON=	autoplist distutils
+USES=		python shebangfix
+USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
@@ -27,4 +28,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|distutils\(\.command\.install\)$$|setuptools\1|; s|distutils\(\.command\.install\.\)|setuptools\1|' ${WRKSRC}/setup.py
 	@${FIND} ${WRKSRC} -name '*.orig' -delete
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+PYDISTUTILS_INSTALLARGS+=	--standard-lib
+
+.include <bsd.port.post.mk>
