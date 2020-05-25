@@ -49,6 +49,9 @@ share/aclocal/bison-i18n.m4
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/variant-11.yy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/variant.yy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/README.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/bistromathic/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/bistromathic/README.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/bistromathic/parse.y
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/calc/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/calc/README.md
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/calc/calc.y
@@ -59,6 +62,9 @@ share/aclocal/bison-i18n.m4
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/mfcalc/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/mfcalc/calc.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/mfcalc/mfcalc.y
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/pushcalc/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/pushcalc/README.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/pushcalc/calc.y
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/reccalc/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/reccalc/README.md
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/reccalc/parse.y
@@ -68,9 +74,11 @@ share/aclocal/bison-i18n.m4
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/d/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/d/README.md
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/d/calc.y
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/Calc.y
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/README.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/calc/Calc.y
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/calc/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/simple/Calc.y
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/simple/Makefile
 %%NLS%%share/locale/af/LC_MESSAGES/bison-gnulib.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/bison-runtime.mo
 %%NLS%%share/locale/be/LC_MESSAGES/bison-gnulib.mo
