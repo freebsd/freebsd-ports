@@ -2,7 +2,7 @@
 
 PORTNAME=	authelia
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.18.1
+DISTVERSION=	4.19.1
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,7 +16,7 @@ USE_GITHUB=	yes
 GH_TUPLE=	\
 		Gurpartap:logrus-stack:89c00d8a28f4:gurpartap_logrus_stack/vendor/github.com/Gurpartap/logrus-stack \
 		Workiva:go-datastructures:v1.0.52:workiva_go_datastructures/vendor/github.com/Workiva/go-datastructures \
-		aletheia-icu:broccoli:c5ac961a357a:aletheia_icu/vendor/aletheia.icu/broccoli \
+		aletheia-icu:broccoli:c5ac961a357a:aletheia_icu_broccoli_fs/vendor/aletheia.icu/broccoli \
 		andybalholm:brotli:v1.0.0:andybalholm_brotli/vendor/github.com/andybalholm/brotli \
 		asaskevich:govalidator:f61b66f89f4a:asaskevich_govalidator/vendor/github.com/asaskevich/govalidator \
 		blang:semver:v3.5.1:blang_semver/vendor/github.com/blang/semver \
@@ -26,8 +26,8 @@ GH_TUPLE=	\
 		dgrijalva:jwt-go:v3.2.0:dgrijalva_jwt_go/vendor/github.com/dgrijalva/jwt-go \
 		duosecurity:duo_api_golang:6c680f768e74:duosecurity_duo_api_golang/vendor/github.com/duosecurity/duo_api_golang \
 		facebookgo:stack:751773369052:facebookgo_stack/vendor/github.com/facebookgo/stack \
-		fasthttp:router:v1.1.1:fasthttp_router/vendor/github.com/fasthttp/router \
-		fasthttp:session:v1.1.8:fasthttp_session/vendor/github.com/fasthttp/session \
+		fasthttp:router:v1.1.2:fasthttp_router/vendor/github.com/fasthttp/router \
+		fasthttp:session:v2.0.2:fasthttp_session_v2/vendor/github.com/fasthttp/session/v2 \
 		fsnotify:fsnotify:v1.4.7:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		go-asn1-ber:asn1-ber:v1.3.1:go_asn1_ber_asn1_ber/vendor/github.com/go-asn1-ber/asn1-ber \
 		go-ini:ini:v1.51.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
