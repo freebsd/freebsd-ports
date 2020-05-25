@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	seabios
-PORTVERSION=	1.11.0
-PORTREVISION=	3
+PORTVERSION=	1.13.0
+PORTREVISION=	0
 CATEGORIES=	misc
-MASTER_SITES=	http://code.coreboot.org/p/seabios/downloads/get/
+MASTER_SITES=	https://www.seabios.org/downloads/
 
 MAINTAINER=	royger@FreeBSD.org
 COMMENT=	Open source implementation of a 16bit X86 BIOS

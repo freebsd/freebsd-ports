@@ -1,3 +1,3 @@
-TIMESTAMP = 1513927389
-SHA256 (seabios-1.11.0.tar.gz) = 622b432ebb8a3b0b13b8accd6d4a196a7eb3af11f243815e5f7d75d9ceb99bf7
-SIZE (seabios-1.11.0.tar.gz) = 607746
+TIMESTAMP = 1590427100
+SHA256 (seabios-1.13.0.tar.gz) = 37673dc2d6308591b15bdb94e5bcc3e99bdb40198d2247733c43f50b55dbe703
+SIZE (seabios-1.13.0.tar.gz) = 620940
