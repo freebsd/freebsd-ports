@@ -1,6 +1,6 @@
---- makefile_bsd.orig	2015-01-19 17:10:12 UTC
+--- makefile_bsd.orig	2017-01-25 16:42:21 UTC
 +++ makefile_bsd
-@@ -6,14 +6,12 @@ OBJS = newlisp.o nl-symbol.o nl-math.o n
+@@ -6,14 +6,12 @@ OBJS = newlisp.o nl-symbol.o nl-math.o nl-list.o nl-li
  
  # the option -fno-strict-aliasing may not be available on some BSD versions 
  

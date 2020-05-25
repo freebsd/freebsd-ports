@@ -1,19 +1,19 @@
---- makefile_bsdLP64_utf8.orig	2015-01-19 17:10:12 UTC
+--- makefile_bsdLP64_utf8.orig	2019-04-24 15:04:10 UTC
 +++ makefile_bsdLP64_utf8
-@@ -6,14 +6,12 @@ OBJS = newlisp.o nl-symbol.o nl-math.o n
+@@ -6,14 +6,12 @@ OBJS = newlisp.o nl-symbol.o nl-math.o nl-list.o nl-li
  
  # the option -fno-strict-aliasing may not be available on some BSD versions 
  
--CFLAGS = -m64 -Wall -Wno-uninitialized -fno-strict-aliasing -O2 -c -g -DREADLINE -DNEWLISP64 -DSUPPORT_UTF8 -D_BSD
+-CFLAGS = -m64 -Wall -Wno-strict-aliasing -O2 -c -g -I/usr/local/include -DREADLINE -DNEWLISP64 -DSUPPORT_UTF8 -D_BSD
 +CFLAGS += -m64 -c -DREADLINE -DNEWLISP64 -DSUPPORT_UTF8 -D_BSD -DFFI
  # or without readline lib
- #CFLAGS = -m64 -Wall -Wno-uninitialized -Wno-strict-aliasing -O2 -c -g -DNEWLISP64 -D_BSD
+ #CFLAGS = -m64 -Wall -Wno-strict-aliasing -O2 -c -g -DNEWLISP64 -D_BSD
  
 -CC = cc
 -
  default: $(OBJS)
 -	$(CC) $(OBJS) -m64 -g -lm -lreadline -lncurses -o newlisp
-+	$(CC) $(LDFLAGS) $(OBJS) -m64 -lm -lreadline -lncurses -lffi -o newlisp
++	$(CC) $(LDFLAGS) $(OBJS) -m64 -g -lm -lreadline -lncurses -o newlisp
  # or without readline lib
  #	$(CC) $(OBJS) -m64 -g -lm -o newlisp
  	strip newlisp

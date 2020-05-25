@@ -1,0 +1,24 @@
+--- makefile_original_install.orig	2019-05-12 16:44:17 UTC
++++ makefile_original_install
+@@ -6,10 +6,10 @@ VERSION=10.7.5
+ # run in an environment, where NEWLISPDIR is predefined,
+ # else NEWLISPDIR will be defined during newlisp startup
+ # as /usr/share/newlisp which is hardcoded in newlisp.c
+-prefix=/usr/local
++prefix=$(DESTDIR)$(PREFIX)
+ datadir=$(prefix)/share
+ bindir=$(prefix)/bin
+-mandir=$(prefix)/share/man
++mandir=$(prefix)/man
+ 
+ # this is the standard install in /usr/local/bin and /usr/local/share
+ # which as to be done as 'root' with supersuser permissions
+@@ -29,7 +29,7 @@ install:
+ 	-install -d $(datadir)/doc/newlisp
+ 	-rm $(bindir)/newlisp
+ 	-install -m 755  newlisp $(bindir)/newlisp-$(VERSION)
+-	-ln -s $(bindir)/newlisp-$(VERSION) $(bindir)/newlisp
++	-ln -s newlisp-$(VERSION) $(bindir)/newlisp
+ 	-install -m 755 util/newlispdoc $(bindir)/newlispdoc
+ 	-install -m 644 util/syntax.cgi $(datadir)/newlisp/util/syntax.cgi
+ 	-install -m 644 util/newlisp.vim $(datadir)/newlisp/util/newlisp.vim

@@ -1,14 +1,14 @@
---- modules/gsl.lsp.orig	2015-05-23 14:58:26 UTC
+--- modules/gsl.lsp.orig	2019-05-12 16:44:17 UTC
 +++ modules/gsl.lsp
-@@ -169,6 +169,7 @@
- 		(= ostype "Win32") "libgsl-0.dll" ; 32-bit
+@@ -171,6 +171,7 @@
+ 		(= ostype "Windows") "libgsl-0.dll" ; 32-bit or 64-bit
  		(= ostype "OSX")   "libgsl.dylib" ; 32-bit or 64-bit
  		(= ostype "Linux") "/usr/local/lib/libgsl.so" ; 32-bit or 64-bit
 +		(= ostype "BSD") "/usr/local/lib/libgsl.so" ; 32-bit or 64-bit
  	))
  
  ; load libgslcblas which contans functions referenced by libgsl
-@@ -179,6 +180,7 @@
+@@ -181,6 +182,7 @@
  (if 
      (= ostype "OSX") (import "libgslcblas.dylib" "cblas_sdsdot")
      (= ostype "Linux") (import "/usr/local/lib/libgslcblas.so" "cblas_sdsdot")
