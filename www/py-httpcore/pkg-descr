@@ -1,0 +1,18 @@
+The HTTP Core package provides a minimal low-level HTTP client, which does one
+thing only. Sending HTTP requests.
+
+It does not provide any high level model abstractions over the API, does not
+handle redirects, multipart uploads, building authentication headers,
+transparent HTTP caching, URL parsing, session cookie handling, content or
+charset decoding, handling JSON, environment based configuration defaults, or
+any of that Jazz.
+
+Some things HTTP Core does do:
+- Sending HTTP requests.
+- Provides both sync and async interfaces.
+- Supports HTTP/1.1 and HTTP/2.
+- Async backend support for asyncio and trio.
+- Automatic connection pooling.
+- HTTP(S) proxy support.
+
+WWW: https://github.com/encode/httpcore
