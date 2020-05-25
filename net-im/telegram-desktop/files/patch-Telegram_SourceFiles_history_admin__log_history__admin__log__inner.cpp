@@ -1,6 +1,6 @@
---- Telegram/SourceFiles/history/admin_log/history_admin_log_inner.cpp.orig	2020-02-18 08:28:06 UTC
+--- Telegram/SourceFiles/history/admin_log/history_admin_log_inner.cpp.orig	2020-05-24 07:59:19 UTC
 +++ Telegram/SourceFiles/history/admin_log/history_admin_log_inner.cpp
-@@ -1451,13 +1451,13 @@ void InnerWidget::mouseActionFinish(const QPoint &scre
+@@ -1458,13 +1458,13 @@ void InnerWidget::mouseActionFinish(const QPoint &scre
  	_mouseSelectType = TextSelectType::Letters;
  	//_widget->noSelectingScroll(); // TODO
  

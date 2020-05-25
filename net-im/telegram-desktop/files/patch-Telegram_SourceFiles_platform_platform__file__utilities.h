@@ -1,6 +1,6 @@
---- Telegram/SourceFiles/platform/platform_file_utilities.h.orig	2018-08-04 18:53:40 UTC
+--- Telegram/SourceFiles/platform/platform_file_utilities.h.orig	2020-05-24 07:59:19 UTC
 +++ Telegram/SourceFiles/platform/platform_file_utilities.h
-@@ -45,8 +45,8 @@ bool Get(
+@@ -46,8 +46,8 @@ bool Get(
  
  #ifdef Q_OS_MAC
  #include "platform/mac/file_utilities_mac.h"

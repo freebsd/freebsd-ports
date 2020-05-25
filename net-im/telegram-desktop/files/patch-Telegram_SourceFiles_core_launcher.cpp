@@ -1,6 +1,6 @@
---- Telegram/SourceFiles/core/launcher.cpp.orig	2020-02-18 08:28:06 UTC
+--- Telegram/SourceFiles/core/launcher.cpp.orig	2020-05-24 07:59:19 UTC
 +++ Telegram/SourceFiles/core/launcher.cpp
-@@ -248,7 +248,7 @@ void Launcher::init() {
+@@ -275,7 +275,7 @@ void Launcher::init() {
  
  	QApplication::setApplicationName(qsl("TelegramDesktop"));
  

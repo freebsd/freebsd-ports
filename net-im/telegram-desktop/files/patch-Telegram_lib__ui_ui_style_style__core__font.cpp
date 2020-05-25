@@ -1,6 +1,6 @@
---- Telegram/lib_ui/ui/style/style_core_font.cpp.orig	2020-02-10 08:12:05 UTC
+--- Telegram/lib_ui/ui/style/style_core_font.cpp.orig	2020-05-24 07:44:41 UTC
 +++ Telegram/lib_ui/ui/style/style_core_font.cpp
-@@ -22,7 +22,7 @@ void style_InitFontsResource() {
+@@ -24,7 +24,7 @@ void style_InitFontsResource() {
  	Q_INIT_RESOURCE(win);
  #elif defined Q_OS_MAC // Q_OS_WIN
  	Q_INIT_RESOURCE(mac);

@@ -1,6 +1,6 @@
---- Telegram/cmake/lib_tgvoip.cmake.orig	2020-04-30 01:34:51 UTC
+--- Telegram/cmake/lib_tgvoip.cmake.orig	2020-05-24 07:59:19 UTC
 +++ Telegram/cmake/lib_tgvoip.cmake
-@@ -778,11 +778,17 @@ else()
+@@ -793,11 +793,17 @@ else()
          )
      endif()
  

@@ -1,6 +1,6 @@
---- Telegram/lib_base/base/platform/base_platform_file_utilities.h.orig	2020-01-29 09:41:30 UTC
+--- Telegram/lib_base/base/platform/base_platform_file_utilities.h.orig	2020-05-12 13:19:31 UTC
 +++ Telegram/lib_base/base/platform/base_platform_file_utilities.h
-@@ -22,8 +22,8 @@ void RemoveQuarantine(const QString &path);
+@@ -26,8 +26,8 @@ void FlushFileData(QFile &file);
  
  #ifdef Q_OS_MAC
  #include "base/platform/mac/base_file_utilities_mac.h"
