@@ -2,7 +2,7 @@
 
 PORTNAME=	xgboost
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.2
+DISTVERSION=	1.1.0
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,11 +16,12 @@ BROKEN_FreeBSD_13_powerpc64=	fails to build: /usr/local/include/dmlc/./serialize
 
 LIB_DEPENDS=	libdmlc.so:devel/dmlc-core
 
-USES=		cmake compiler:c++11-lang localbase
+USES=		cmake compiler:c++11-lang localbase:ldflags
 USE_GITHUB=	yes
 GH_ACCOUNT=	dmlc
-GH_TUPLE=	dmlc:rabit:2f25347:rabit/rabit \
-		NVlabs:cub:b20808b:cub/cub
+GH_TUPLE=	\
+		dmlc:rabit:4fb34a008db6437c84d1877635064e09a55c8553:dmlc_rabit/rabit \
+		NVlabs:cub:c3cceac115c072fb63df1836ff46d8c60d9eb304:NVlabs_cub/cub
 USE_LDCONFIG=	yes
 
 LDFLAGS+=	${LOCALBASE}/lib/libdmlc.so -lexecinfo

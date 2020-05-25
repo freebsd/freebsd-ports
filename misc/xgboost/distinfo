@@ -1,7 +1,7 @@
-TIMESTAMP = 1583311809
-SHA256 (dmlc-xgboost-v1.0.2_GH0.tar.gz) = f0ff412996cc82d6be2006aaa90c6c24e5aed8ebe52b896dfa8d97e9fc2af4ed
-SIZE (dmlc-xgboost-v1.0.2_GH0.tar.gz) = 1171236
-SHA256 (dmlc-rabit-2f25347_GH0.tar.gz) = 9a9f9b754d1f8f8f0949faded75859e791cc56c75c38928467649fc227bee7e0
-SIZE (dmlc-rabit-2f25347_GH0.tar.gz) = 90555
-SHA256 (NVlabs-cub-b20808b_GH0.tar.gz) = 5d613bf9c4bd3f60803720b982291c585e5e9cce83a93b5ef576bd3ce6d141e4
-SIZE (NVlabs-cub-b20808b_GH0.tar.gz) = 390976
+TIMESTAMP = 1590429848
+SHA256 (dmlc-xgboost-v1.1.0_GH0.tar.gz) = 8c081ae2a86619be990200ede5552c711067afcb51e3468f8d95ea3ac6ee8acb
+SIZE (dmlc-xgboost-v1.1.0_GH0.tar.gz) = 1255067
+SHA256 (dmlc-rabit-4fb34a008db6437c84d1877635064e09a55c8553_GH0.tar.gz) = 7d9a18b1613dfd3a5244524ecdb164d6b2a1f150d297cc7b8527e221aabb6eb7
+SIZE (dmlc-rabit-4fb34a008db6437c84d1877635064e09a55c8553_GH0.tar.gz) = 93236
+SHA256 (NVlabs-cub-c3cceac115c072fb63df1836ff46d8c60d9eb304_GH0.tar.gz) = ecb8b5b7c2e9493b1661cf023b29edcf5cdb80de7033e90f286501251e293b97
+SIZE (NVlabs-cub-c3cceac115c072fb63df1836ff46d8c60d9eb304_GH0.tar.gz) = 385598
