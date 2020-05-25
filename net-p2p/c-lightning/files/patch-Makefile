@@ -1,13 +1,5 @@
 --- Makefile.orig	2020-02-17 08:37:09 UTC
 +++ Makefile
-@@ -192,6 +192,7 @@ ALL_PROGRAMS =
- 
- CPPFLAGS += -DBINTOPKGLIBEXECDIR="\"$(shell sh tools/rel.sh $(bindir) $(pkglibexecdir))\""
- CFLAGS = $(CPPFLAGS) $(CWARNFLAGS) $(CDEBUGFLAGS) $(COPTFLAGS) -I $(CCANDIR) $(EXTERNAL_INCLUDE_FLAGS) -I . -I/usr/local/include $(FEATURES) $(COVFLAGS) $(DEV_CFLAGS) -DSHACHAIN_BITS=48 -DJSMN_PARENT_LINKS $(PIE_CFLAGS) $(COMPAT_CFLAGS) -DBUILD_ELEMENTS=1
-+unexport CFLAGS
- 
- # We can get configurator to run a different compile cmd to cross-configure.
- CONFIGURATOR_CC := $(CC)
 @@ -457,7 +458,7 @@ pkglibexecdir = $(libexecdir)/$(PKGNAME)
  plugindir = $(pkglibexecdir)/plugins
  datadir = $(PREFIX)/share

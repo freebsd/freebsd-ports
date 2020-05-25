@@ -11,6 +11,7 @@ libexec/c-lightning/lightning_openingd
 libexec/c-lightning/plugins/autoclean
 libexec/c-lightning/plugins/bcli
 libexec/c-lightning/plugins/fundchannel
+libexec/c-lightning/plugins/keysend
 libexec/c-lightning/plugins/pay
 man/man1/lightning-cli.1.gz
 man/man5/lightningd-config.5.gz
@@ -30,6 +31,7 @@ man/man7/lightning-fundchannel_cancel.7.gz
 man/man7/lightning-fundchannel_complete.7.gz
 man/man7/lightning-fundchannel_start.7.gz
 man/man7/lightning-getroute.7.gz
+man/man7/lightning-getsharedsecret.7.gz
 man/man7/lightning-invoice.7.gz
 man/man7/lightning-listchannels.7.gz
 man/man7/lightning-listforwards.7.gz
