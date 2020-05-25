@@ -2,15 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	galera
-PORTVERSION?=	25.3.28
+PORTVERSION?=	25.3.29
 DISTVERSIONPREFIX?=	release_
-PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	devel@galeracluster.com
 COMMENT=	Synchronous multi-master replication engine
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_aarch64=		fails to compile: gu_int128.h: use of undeclared identifier '__bswap64_var'
 BROKEN_armv6=		fails to compile: gu_int128.h: use of undeclared identifier '__bswap64_var'
