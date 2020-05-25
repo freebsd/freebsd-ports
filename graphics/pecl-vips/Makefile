@@ -14,6 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	libvips.so:graphics/vips
 
-USES=		php:pecl pkgconfig
+USES=		compiler:c11 php:pecl pkgconfig
 
 .include <bsd.port.mk>
