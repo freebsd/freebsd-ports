@@ -28,6 +28,8 @@ CFLAGS+=		-fPIC
 
 PATCHES_powerpc64=	${PATCHDIR}/extra-patch-ffcall-abi.h
 EXTRA_PATCHES=		${PATCHES_${ARCH}}
+USES_powerpc64=		compiler:gcc-c++11-lib
+USES+=			${USES_${ARCH}}
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libavcall.so \
