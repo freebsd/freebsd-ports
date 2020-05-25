@@ -15018,3 +15018,4 @@ net/get_iplayer|multimedia/get_iplayer|2020-05-24|Move to a proper category
 lang/gnatdroid-armv7||2020-05-24|Has expired: Broken for more than 6 months
 devel/breakpad||2020-05-24|Has expired: Broken for more than 6 months
 x11/xcolorsel||2020-05-24|Has expired: Broken for more than 6 months
+textproc/simplexml||2020-05-24|Has expired: Unfetchable, an alternative upstream suggested in bug#235252 only contains the MS C-sharp project which is unbuildable on FreeBSD
