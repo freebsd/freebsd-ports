@@ -1,3 +1,3 @@
-TIMESTAMP = 1548502935
-SHA256 (django-recaptcha-2.0.2.tar.gz) = 7eb3263e90166943a4b983d947be00e6a3e6c8a1c8af924934bc986287334be8
-SIZE (django-recaptcha-2.0.2.tar.gz) = 15263
+TIMESTAMP = 1590395598
+SHA256 (praekelt-django-recaptcha-2.0.6_GH0.tar.gz) = 0c9ded24c04c46209c923db2a5ac1ac5d1373681c1fdc0ca36c613f57ba076eb
+SIZE (praekelt-django-recaptcha-2.0.6_GH0.tar.gz) = 17998
