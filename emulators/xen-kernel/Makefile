@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xen
-PORTVERSION=	4.13.0
+PORTVERSION=	4.13.1
 PORTREVISION=	0
 CATEGORIES=	emulators
 MASTER_SITES=	http://downloads.xenproject.org/release/xen/${PORTVERSION}/
