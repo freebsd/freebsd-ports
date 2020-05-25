@@ -1,0 +1,59 @@
+--- Makefile.in.orig	2013-12-08 01:47:33 UTC
++++ Makefile.in
+@@ -357,10 +357,9 @@ codegen/get_user_name.$(OBJEXT) codegen/get_user_name.
+ 
+ codegen/gram.yacc.c codegen/gram.yacc.h: codegen/gram.y
+ 	$(YACC) -d $(YFLAGS) codegen/gram.y
+-	sed -e 's/[yY][yY]/gram_/g' -e '/<stdio.h>/d' -e '/<stdlib.h>/d' -e \
++	sed -e '/<stdio.h>/d' -e '/<stdlib.h>/d' -e \
+ 		'/<stddef.h>/d' y.tab.c > codegen/gram.yacc.c
+-	sed -e 's/[yY][yY]/gram_/g' -e 's/Y_TAB_H/codegen_gram_YACC_H/g' \
+-		y.tab.h > codegen/gram.yacc.h
++	cp y.tab.h codegen/gram.yacc.h
+ 	test -f y.output && mv y.output codegen/gram.output || true
+ 	rm -f y.tab.c y.tab.h y.output || true
+ 
+@@ -3997,12 +3996,10 @@ libexplain/acl_get_file_or_die.$(OBJEXT) libexplain/ac
+ libexplain/acl_grammar.yacc.c libexplain/acl_grammar.yacc.h: \
+ 		libexplain/acl_grammar.y
+ 	$(YACC) -d $(YFLAGS) libexplain/acl_grammar.y
+-	sed -e 's/[yY][yY]/acl_grammar_/g' -e '/<stdio.h>/d' -e \
++	sed -e '/<stdio.h>/d' -e \
+ 		'/<stdlib.h>/d' -e '/<stddef.h>/d' y.tab.c > \
+ 		libexplain/acl_grammar.yacc.c
+-	sed -e 's/[yY][yY]/acl_grammar_/g' -e \
+-		's/Y_TAB_H/libexplain_acl_grammar_YACC_H/g' y.tab.h > \
+-		libexplain/acl_grammar.yacc.h
++	cp y.tab.h libexplain/acl_grammar.yacc.h
+ 	test -f y.output && mv y.output libexplain/acl_grammar.output || true
+ 	rm -f y.tab.c y.tab.h y.output || true
+ 
+@@ -30978,11 +30975,9 @@ libexplain/output/warning.$(OBJEXT) libexplain/output/
+ libexplain/parse_bits.yacc.c libexplain/parse_bits.yacc.h: \
+ 		libexplain/parse_bits.y
+ 	$(YACC) -d $(YFLAGS) libexplain/parse_bits.y
+-	sed -e 's/[yY][yY]/parse_bits_/g' -e '/<stdio.h>/d' -e '/<stdlib.h>/d' \
++	sed -e '/<stdio.h>/d' -e '/<stdlib.h>/d' \
+ 		-e '/<stddef.h>/d' y.tab.c > libexplain/parse_bits.yacc.c
+-	sed -e 's/[yY][yY]/parse_bits_/g' -e \
+-		's/Y_TAB_H/libexplain_parse_bits_YACC_H/g' y.tab.h > \
+-		libexplain/parse_bits.yacc.h
++	cp y.tab.h libexplain/parse_bits.yacc.h
+ 	test -f y.output && mv y.output libexplain/parse_bits.output || true
+ 	rm -f y.tab.c y.tab.h y.output || true
+ 
+@@ -31338,12 +31333,10 @@ $(includedir)/libexplain/printf.h: .mkdir.__includedir
+ libexplain/printf_format.yacc.c libexplain/printf_format.yacc.h: \
+ 		libexplain/printf_format.y
+ 	$(YACC) -d $(YFLAGS) libexplain/printf_format.y
+-	sed -e 's/[yY][yY]/printf_format_/g' -e '/<stdio.h>/d' -e \
++	sed -e '/<stdio.h>/d' -e \
+ 		'/<stdlib.h>/d' -e '/<stddef.h>/d' y.tab.c > \
+ 		libexplain/printf_format.yacc.c
+-	sed -e 's/[yY][yY]/printf_format_/g' -e \
+-		's/Y_TAB_H/libexplain_printf_format_YACC_H/g' y.tab.h > \
+-		libexplain/printf_format.yacc.h
++	cp y.tab.h libexplain/printf_format.yacc.h
+ 	test -f y.output && mv y.output libexplain/printf_format.output || true
+ 	rm -f y.tab.c y.tab.h y.output || true
+ 
