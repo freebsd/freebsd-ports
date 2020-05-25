@@ -42,8 +42,6 @@ PORTDOCS=	*
 
 .if ${NCURSESBASE:M${LOCALBASE}}
 CMAKE_ARGS+=	-DCURSES_NEED_NCURSES=TRUE
-.else
-.info NCURSES BASE
 .endif
 
 post-install:
