@@ -114,6 +114,7 @@
     SUBDIR += ical
     SUBDIR += jjclient
     SUBDIR += jlj
+    SUBDIR += just
     SUBDIR += kaddressbook
     SUBDIR += kalarm
     SUBDIR += kcharselect
