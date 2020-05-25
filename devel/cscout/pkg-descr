@@ -12,8 +12,5 @@ scopes and namespaces.  CScout has already been applied on projects
 ranging from tens of thousands of lines, like the FreeBSD and
 Linux kernels, and the Apache web server.
 
-This free unsupported version of CScout is distributed under the terms
-of the CScout Public License, which is available in the accompanying
-documentation.
-
 WWW: https://www.spinellis.gr/cscout/
+WWW: https://github.com/dspinellis/cscout

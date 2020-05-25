@@ -1,8 +1,7 @@
-SHA256 (cscout-2.7-fbsd-i386.tar.gz) = e6cc7d5f0bc5dd7b787865ece4a9b2d1672617b2ab8cc66ef481c4b1e2a6426c
-SIZE (cscout-2.7-fbsd-i386.tar.gz) = 652845
-SHA256 (cscout-2.7-fbsd-amd64.tar.gz) = 2197bee348e0dd163cdc233dc0ae283acf9e09e237699b55857a23fded08bf6f
-SIZE (cscout-2.7-fbsd-amd64.tar.gz) = 680558
-SHA256 (cscout-2.7-fbsd-sparc64.tar.gz) = ed18ee49cd533151075adbe62ec37c96539fdc5ceea649634254b5ca9461cad7
-SIZE (cscout-2.7-fbsd-sparc64.tar.gz) = 692352
-SHA256 (cscout-2.7-neutral.tar.gz) = ef0d3442756077f0623be3e5f9592d78bcd702c215a6766d1c6fc3b39b753cf2
-SIZE (cscout-2.7-neutral.tar.gz) = 730328
+TIMESTAMP = 1575242282
+SHA256 (dspinellis-cscout-3.01-bd7dfac_GH0.tar.gz) = d2e0af80a0e581e36020c319931cac67337b5c6d6d33b73d2d1cd4c7edef116d
+SIZE (dspinellis-cscout-3.01-bd7dfac_GH0.tar.gz) = 1165610
+SHA256 (dspinellis-swill-fafde76_GH0.tar.gz) = 52303d4e83f170f1c454314471b5d4c76cfbb3e41828272416d6370e8bac4052
+SIZE (dspinellis-swill-fafde76_GH0.tar.gz) = 119107
+SHA256 (dspinellis-btyacc-4d0be15_GH0.tar.gz) = 18d71bcfff135167f7a3997bdf36796ed0a53f3a82b97aa6c06cf378599b78b2
+SIZE (dspinellis-btyacc-4d0be15_GH0.tar.gz) = 87570
