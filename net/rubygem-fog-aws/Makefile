@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fog-aws
-PORTVERSION=	3.6.4
+PORTVERSION=	3.6.5
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
