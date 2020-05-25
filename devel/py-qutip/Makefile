@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	qutip
-DISTVERSION=	4.5.0
+DISTVERSION=	4.5.1
 CATEGORIES=	devel
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,7 +22,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=1.0:science/py-scipy@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${PY_FLAVOR}
 
-USES=		python:2.7
+USES=		python:2.7 # 2.7 because of graphics/py-mayavi
 USE_PYTHON=	distutils cython cython_run autoplist
 
 post-patch: # https://github.com/qutip/qutip/issues/1059
