@@ -1,4 +1,4 @@
-# Created by: Richard Allen <richard2891@gmail.com>
+# Created by: Richard Neese <r.neese@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	fusionpbx
