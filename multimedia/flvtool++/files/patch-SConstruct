@@ -1,11 +1,12 @@
 --- SConstruct.orig	2012-03-09 14:32:30 UTC
 +++ SConstruct
-@@ -1,5 +1,7 @@
+@@ -1,6 +1,7 @@
 +import os
 +
  libd = '#lib/'
 -env = Environment(CPPFLAGS='-ggdb -O3 -Wall', LINKFLAGS='-ggdb')
+-env.TargetSignatures('content')
 +env = Environment(CXX=os.environ['CXX'], CXXFLAGS=os.environ['CXXFLAGS'], ENV=os.environ)
- env.TargetSignatures('content')
  
  Export('env libd')
+ SConscript('SConscript')

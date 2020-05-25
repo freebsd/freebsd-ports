@@ -1,6 +1,21 @@
---- ./SConstruct.orig	2007-06-11 14:29:13.000000000 -0400
-+++ ./SConstruct	2014-08-11 09:56:15.000000000 -0400
-@@ -62,7 +62,7 @@
+--- SConstruct.orig	2007-06-11 18:29:13 UTC
++++ SConstruct
+@@ -46,7 +46,7 @@ if sys.platform == 'win32':
+ 		env.Append(CPPDEFINES = ['USE_SSE'])
+ 		print 'Using x86 SSE/MMX optimizations with GCC intrinsics.'
+ 	datadir = './data'	# use slashes as separator always. C/C++ want it so.
+-	build_dir = 'win32'
++	variant_dir = 'win32'
+ elif sys.platform == 'darwin':
+ 	print "Compiling for MacOSX"
+ 	env = Environment(ENV = os.environ)
+@@ -57,12 +57,12 @@ elif sys.platform == 'darwin':
+ 	env.Append(CCFLAGS = '-Wall -g -O2 `sdl-config --cflags`')
+ 	env.Append(LINKFLAGS = '-F/System/Library/Frameworks -framework AGL -framework OpenGL -framework GLUT -framework Cocoa -framework SDL -framework SDL_image -framework SDL_mixer -framework SDL_net')
+ 	datadir = './data'	# use slashes as separator always. C/C++ want it so.
+-	build_dir = 'macosx'
++	variant_dir = 'macosx'
+ 	osspecificsrc = Split("""Mac/SDLMain.m""")
          if (debug == 1):
                  env.Append(CCFLAGS = '-g')
                  env.Append(CPPDEFINES = ['DEBUG'])
@@ -9,7 +24,7 @@
  	print "Compiling for FreeBSD Environment"
  	env = Environment(ENV = os.environ)
  	LOCALBASE = os.environ['LOCALBASE']
-@@ -70,7 +70,7 @@
+@@ -70,7 +70,7 @@ elif (sys.platform == 'freebsd5') or (sys.platform == 
  	SDL_CONFIG = os.environ['SDL_CONFIG']
  	env.Replace(CC = os.environ['CC'])
  	env.Replace(CXX = os.environ['CXX'])
@@ -18,7 +33,7 @@
  	libpath = [LOCALBASE + '/lib', X11BASE + '/lib'] 
  	gllibs = ['GL', 'GLU']
  	sdllibs = ['SDL_image']
-@@ -79,7 +79,7 @@
+@@ -79,7 +79,7 @@ elif (sys.platform == 'freebsd5') or (sys.platform == 
  	cpuinfol = cpuinfof.readlines()
  	mmxsupported = False
  	ssesupported = False
@@ -27,7 +42,7 @@
  		if i == '1\n':
  			mmxsupported = True
  			ssesupported = True
-@@ -91,14 +91,15 @@
+@@ -91,14 +91,15 @@ elif (sys.platform == 'freebsd5') or (sys.platform == 
  	                osspecificsrc += []
  	                print 'Using x86 SSE/MMX optimizations.'
  
@@ -44,7 +59,46 @@
 +	env.Append(LINKFLAGS = '`' + SDL_CONFIG + ' --libs`')
 +	env.Append(LIBPATH = [LOCALBASE + '/lib', X11BASE + '/lib'])
 +	datadir = '/usr/local/share/dangerdeep'
-+	build_dir = 'freebsd'
++	variant_dir = 'freebsd'
  	
          if (os.system('grep glBindProgram ' + X11BASE + '/include/GL/gl*.h > /dev/null') == 0):
                  gllibdirs = [X11BASE + '/lib/', '/usr/lib/', LOCALBASE + '/lib/']
+@@ -179,7 +180,7 @@ else:
+ 			print 'Using x86 SSE/MMX optimizations with GCC intrinsics.'
+ 	env.Append(CCFLAGS = ccflags)
+ 	datadir = '/usr/local/share/dangerdeep'
+-	build_dir = 'linux'
++	variant_dir = 'linux'
+ 	# check for broken libGL, ignore undefined symbols then
+ 	if (os.system('grep glBindProgram /usr/include/GL/gl*.h > /dev/null') == 0):
+ 		gllibdirs = ['/usr/X11R6/lib/', '/usr/lib/', '/usr/local/lib/']
+@@ -208,7 +209,7 @@ if ARGUMENTS.get('installbindir', 0):
+ print 'Install binary path: ' + installbindir
+ print 'Using data dir: ' + datadir
+ 
+-target_dir = '#build' + os.sep + build_dir
++target_dir = '#build' + os.sep + variant_dir
+ source_base_dir = 'src'
+ 
+ ################ configure
+@@ -273,9 +274,9 @@ f.close()
+ 
+ Export('env', 'gfxlibs', 'alllibs', 'installbindir', 'datadir', 'version', 'osspecificsrc')
+ 
+-SConscript(source_base_dir + os.sep + 'SConscript', build_dir = target_dir, duplicate = 0)
++SConscript(source_base_dir + os.sep + 'SConscript', variant_dir = target_dir, duplicate = 0)
+ 
+-BuildDir(target_dir, source_base_dir, duplicate=0)
++VariantDir(target_dir, source_base_dir, duplicate=0)
+ 
+ ############### Helper functions
+ def findCVS(basedir):
+@@ -304,7 +305,7 @@ def findCVS(basedir):
+ 
+ ############### option so that "scons tarball" builds a tarball of source
+ # tar building works only on linux
+-if (( build_dir == 'linux' ) or ( build_dir == 'freebsd' )) and (os.path.isdir('./CVS')):
++if (( variant_dir == 'linux' ) or ( variant_dir == 'freebsd' )) and (os.path.isdir('./CVS')):
+ 	basetarfilename = 'dangerdeep-' + version
+ 	os.system('rm -rf ' + basetarfilename)
+ 	os.system('ln -s . ' + basetarfilename)

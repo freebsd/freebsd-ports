@@ -1,5 +1,5 @@
---- SConstruct.orig	Fri Feb 10 19:01:20 2006
-+++ SConstruct	Tue May 30 22:35:47 2006
+--- SConstruct.orig	2006-02-10 22:01:20 UTC
++++ SConstruct
 @@ -3,7 +3,6 @@
  
  import commands, re, sys, os, pickle, string, popen2
@@ -8,7 +8,7 @@
  
  # to access some internal stuff
  import SCons
-@@ -11,7 +10,7 @@
+@@ -11,7 +10,7 @@ import SCons
  conf_filename='site.conf'
  # there is a default hardcoded value, you can override on command line, those are saved between runs
  # we only handle strings
@@ -17,7 +17,7 @@
  
  # help -------------------------------------------
  
-@@ -64,14 +63,7 @@
+@@ -64,14 +63,7 @@ print 'SCons ' + SCons.__version__
  # TODO: detect Darwin / OSX
  
  # CPU type
@@ -33,7 +33,7 @@
  
  # OS
  OS = commands.getoutput('uname')
-@@ -140,7 +132,7 @@
+@@ -140,7 +132,7 @@ def GetGCCVersion(name):
  ver_cc = GetGCCVersion(CC)
  ver_cxx = GetGCCVersion(CXX)
  
@@ -42,7 +42,7 @@
    print 'Compiler version check failed - need gcc 3.x or later:'
    print 'CC: %s %s\nCXX: %s %s' % ( CC, repr(ver_cc), CXX, repr(ver_cxx) )
    Exit(1)
-@@ -172,8 +164,8 @@
+@@ -172,8 +164,8 @@ LINK = CXX
  # common flags
  warningFlags = '-W -Wall -Wcast-align -Wcast-qual -Wno-unused-parameter '
  warningFlagsCXX = '-Wno-non-virtual-dtor -Wreorder ' # -Wold-style-cast
@@ -53,7 +53,7 @@
  CPPPATH = []
  if (BUILD == 'debug'):
  	CXXFLAGS += '-g -D_DEBUG '
-@@ -190,7 +182,6 @@
+@@ -190,7 +182,6 @@ else:
  	print 'Unknown build configuration ' + BUILD
  	sys.exit( 0 )
  
@@ -61,7 +61,7 @@
  if ( OS == 'Linux' ):
  
    # static
-@@ -218,6 +209,11 @@
+@@ -218,6 +209,11 @@ if ( OS == 'Darwin' ):
    CPPPATH.append('/sw/include')
    CPPPATH.append('/usr/X11R6/include')
    LINKFLAGS += '-L/sw/lib -L/usr/lib -L/usr/X11R6/lib '
@@ -73,7 +73,7 @@
  
  CPPPATH.append('libs')
  
-@@ -248,7 +244,7 @@
+@@ -248,7 +244,7 @@ class idEnvironment(Environment):
    def useGtk2(self):
      self['CXXFLAGS'] += '`pkg-config gtk+-2.0 --cflags` '
      self['CCFLAGS'] += '`pkg-config gtk+-2.0 --cflags` '
@@ -82,7 +82,7 @@
     
    def useGtkGLExt(self):
      self['CXXFLAGS'] += '`pkg-config gtkglext-1.0 --cflags` '
-@@ -278,7 +276,7 @@
+@@ -278,7 +274,7 @@ class idEnvironment(Environment):
          print('ERROR: CheckLDD: target %s not found\n' % target[0])
          Exit(1)
      # not using os.popen3 as I want to check the return code
@@ -91,7 +91,7 @@
      stdout_lines = ldd.fromchild.readlines()
      stderr_lines = ldd.childerr.readlines()
      ldd_ret = ldd.wait()
-@@ -317,7 +313,13 @@
+@@ -317,8 +313,14 @@ g_env = idEnvironment()
  # export the globals
  GLOBALS = 'g_env INSTALL SETUP g_cpu'
  
@@ -101,8 +101,18 @@
 +  if (ret[0] != 0): return None
 +  info = re.search('(gcc|clang) version [0-9.]+', ret[1])
 +  return info.group(0) if info else None
-+
-+radiant_makeversion('\\n%s' % get_compiler_info(CXX))
  
++radiant_makeversion('\\n%s' % get_compiler_info(CXX))
++
  # end general configuration ----------------------
  
+ # targets ----------------------------------------
+@@ -326,7 +328,7 @@ radiant_makeversion('\\ngcc version: %s.%s.%s' % ( ver
+ Default('.')
+ 
+ Export('GLOBALS ' + GLOBALS)
+-BuildDir(g_build, '.', duplicate = 0)
++VariantDir(g_build, '.', duplicate = 0)
+ SConscript(g_build + '/SConscript')
+ 
+ # end targets ------------------------------------

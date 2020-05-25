@@ -1,6 +1,6 @@
 --- SConstruct.orig	2008-08-24 00:37:34 UTC
 +++ SConstruct
-@@ -24,28 +24,28 @@ release = '0.79'  # should get from a fi
+@@ -24,28 +24,28 @@ release = '0.79'  # should get from a file, and use on
  conf_file = 'nonpareil.conf'
  
  #-----------------------------------------------------------------------------
@@ -66,3 +66,21 @@
  			     help = 'use Readline library for command editing and history (only when debugger CLI is enabled)',
  			     default = 1))  # only if has_debugger_cli
  
+@@ -235,7 +235,7 @@ SConscript (['rom/SConscript',
+ # host platform code
+ #-----------------------------------------------------------------------------
+ 
+-native_env = env.Copy ()
++native_env = env.Clone ()
+ native_env ['build_target_only'] = 0
+ SConscript ('src/SConscript',
+             build_dir = 'build/' + env ['host'],
+@@ -256,7 +256,7 @@ SConscript ('asm/SConscript',
+ #-----------------------------------------------------------------------------
+ 
+ if (env ['host'] != env ['target']):
+-	cross_build_env = env.Copy ()
++	cross_build_env = env.Clone ()
+ 	cross_build_env ['build_target_only'] = 1
+ 	SConscript ('src/SConscript',
+ 		    build_dir = 'build/' + env ['target'],

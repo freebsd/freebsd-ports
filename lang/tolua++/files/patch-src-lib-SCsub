@@ -1,6 +1,6 @@
---- src/lib/SCsub.orig	2011-01-20 07:48:43.000000000 +0100
-+++ src/lib/SCsub	2011-01-20 07:58:30.000000000 +0100
-@@ -9,10 +9,7 @@
+--- src/lib/SCsub.orig	2008-04-21 00:05:35 UTC
++++ src/lib/SCsub
+@@ -9,10 +9,7 @@ sources = [
  	'tolua_to.c',
  	]
  

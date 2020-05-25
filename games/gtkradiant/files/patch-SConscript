@@ -1,6 +1,77 @@
---- SConscript.orig	2006-02-11 06:01:20.000000000 +0800
+--- SConscript.orig	2006-02-10 22:01:20 UTC
 +++ SConscript
-@@ -359,8 +359,6 @@ module_env = g_env.Copy()
+@@ -23,7 +23,7 @@ md5lib_lib = g_env.StaticLibrary(target='libs/md5lib',
+ 
+ ddslib_lib = g_env.StaticLibrary(target='libs/ddslib', source='libs/ddslib/ddslib.c')
+ 
+-jpeg_env = g_env.Copy()
++jpeg_env = g_env.Clone()
+ jpeg_env.Prepend(CPPPATH = 'libs/jpeg6')
+ jpeg_src = 'jcomapi.cpp jdcoefct.cpp jdinput.cpp jdpostct.cpp jfdctflt.cpp jpgload.cpp jdapimin.cpp jdcolor.cpp jdmainct.cpp jdsample.cpp jidctflt.cpp jutils.cpp jdapistd.cpp jddctmgr.cpp jdmarker.cpp jdtrans.cpp jmemmgr.cpp jdatasrc.cpp jdhuff.cpp jdmaster.cpp jerror.cpp jmemnobs.cpp'
+ jpeg_lib = jpeg_env.StaticLibrary(target='libs/jpeg6', source=build_list('libs/jpeg6', jpeg_src))
+@@ -35,17 +35,17 @@ picomodel_src = 'picointernal.c picomodel.c picomodule
+   lwo/lwo2.c lwo/lwob.c lwo/pntspols.c lwo/surface.c lwo/vecmath.c lwo/vmap.c'
+ picomodel_lib = g_env.StaticLibrary(target='libs/picomodel', source=build_list('libs/picomodel', picomodel_src))
+ 
+-#splines_env = g_env.Copy()
++#splines_env = g_env.Clone()
+ #splines_src = build_list('libs/splines', 'math_angles.cpp math_matrix.cpp math_quaternion.cpp math_vector.cpp q_parse.cpp q_shared.cpp splines.cpp util_str.cpp')
+ #splines_env['CPPPATH'].append('include')
+ #splines_lib = splines_env.StaticLibrary(target='libs/splines', source=splines_src)
+ 
+-profile_env = g_env.Copy();
++profile_env = g_env.Clone();
+ profile_env['CPPPATH'].append('include')
+ profile_src = 'profile.cpp file.cpp'
+ profile_lib = profile_env.StaticLibrary(target='libs/profile', source=build_list('libs/profile', profile_src))
+ 
+-gtkutil_env = g_env.Copy();
++gtkutil_env = g_env.Clone();
+ gtkutil_env['CPPPATH'].append('include')
+ gtkutil_env.useGlib2()
+ gtkutil_env.useGtk2()
+@@ -83,7 +83,7 @@ gtkutil_lib = gtkutil_env.StaticLibrary(target='libs/g
+ 
+ # q3map ---------------------------------------------------------------------------
+ 
+-q3map_env = g_env.Copy()
++q3map_env = g_env.Clone()
+ q3map_env['CPPPATH'].append('include')
+ q3map_env.useXML2()
+ q3map_env.useGlib2()
+@@ -160,7 +160,7 @@ q3map_env.Install(INSTALL, q3map_prog)
+ 
+ # q3data ---------------------------------------------------------------------------
+ 
+-q3data_env = q3map_env.Copy()
++q3data_env = q3map_env.Clone()
+ 
+ q3data_common_src = [
+   'common/aselib.c',
+@@ -200,7 +200,7 @@ q3data_env.Install( INSTALL, q3data_prog )
+ 
+ # q2_tools ---------------------------------------------------------------------------
+ 
+-q2_tools_env = g_env.Copy()
++q2_tools_env = g_env.Clone()
+ q2_tools_env['CPPPATH'].append('include')
+ q2_tools_env.useXML2()
+ q2_tools_env.usePThread()
+@@ -290,7 +290,7 @@ if ( OS != 'Darwin' ):
+ 
+ # qdata3_heretic2 ---------------------------------------------------------------------------
+ 
+-heretic2_tools_env = g_env.Copy()
++heretic2_tools_env = g_env.Clone()
+ heretic2_tools_env['CPPPATH'].append('include')
+ heretic2_tools_env.useXML2()
+ heretic2_tools_env.usePThread()
+@@ -355,48 +355,46 @@ if ( OS != 'Darwin' ):
+ 
+ # radiant, modules and plugins ----------------------------------------------------
+ 
+-module_env = g_env.Copy()
++module_env = g_env.Clone()
  module_env['CPPPATH'].append('include')
  if ( OS == 'Darwin' ):
    module_env['LINKFLAGS'] += '-dynamiclib -ldl '
@@ -9,9 +80,109 @@
  module_env['LIBPREFIX'] = ''
  
  
-@@ -485,7 +483,7 @@ module_env.Install(INSTALL + '/modules',
+-vfspk3_env = module_env.Copy()
++vfspk3_env = module_env.Clone()
+ vfspk3_lst = build_list('plugins/vfspk3', 'vfspk3.cpp vfs.cpp archive.cpp')
+ vfspk3_env.useGlib2()
+ vfspk3_lib = vfspk3_env.SharedLibrarySafe(target='vfspk3', source=vfspk3_lst)
+ vfspk3_env.Install(INSTALL + '/modules', vfspk3_lib)
  
- radiant_env = g_env.Copy()
+-archivepak_env = module_env.Copy()
++archivepak_env = module_env.Clone()
+ archivepak_lst = build_list('plugins/archivepak', 'plugin.cpp archive.cpp pak.cpp')
+ archivepak_lib = archivepak_env.SharedLibrarySafe(target='archivepak', source=archivepak_lst, LIBS='cmdlib', LIBPATH='libs')
+ archivepak_env.Depends(archivepak_lib, cmdlib_lib)
+ archivepak_env.Install(INSTALL + '/modules', archivepak_lib)
+ 
+-archivewad_env = module_env.Copy()
++archivewad_env = module_env.Clone()
+ archivewad_lst = build_list('plugins/archivewad', 'plugin.cpp archive.cpp wad.cpp')
+ archivewad_lib = archivewad_env.SharedLibrarySafe(target='archivewad', source=archivewad_lst, LIBS='cmdlib', LIBPATH='libs')
+ archivewad_env.Depends(archivewad_lib, cmdlib_lib)
+ archivewad_env.Install(INSTALL + '/modules', archivewad_lib)
+ 
+-archivezip_env = module_env.Copy()
++archivezip_env = module_env.Clone()
+ archivezip_lst = build_list('plugins/archivezip', 'plugin.cpp archive.cpp pkzip.cpp zlibstream.cpp')
+ archivezip_env.useZLib()
+ archivezip_lib = archivezip_env.SharedLibrarySafe(target='archivezip', source=archivezip_lst, LIBS='cmdlib', LIBPATH='libs')
+ archivezip_env.Depends(archivezip_lib, cmdlib_lib)
+ archivezip_env.Install(INSTALL + '/modules', archivezip_lib)
+ 
+-shaders_env = module_env.Copy()
++shaders_env = module_env.Clone()
+ shaders_lst = build_list('plugins/shaders', 'shaders.cpp plugin.cpp')
+ shaders_env.useGlib2()
+ shaders_lib = shaders_env.SharedLibrarySafe(target='shaders', source=shaders_lst, LIBS='cmdlib', LIBPATH='libs')
+ shaders_env.Depends(shaders_lib, cmdlib_lib)
+ shaders_env.Install(INSTALL + '/modules', shaders_lib)
+ 
+-image_env = module_env.Copy()
++image_env = module_env.Clone()
+ image_lst = build_list('plugins/image', 'bmp.cpp jpeg.cpp image.cpp pcx.cpp tga.cpp dds.cpp')
+ image_lib = image_env.SharedLibrarySafe(target='image', source=image_lst, LIBS=['jpeg6', 'ddslib'], LIBPATH='libs')
+ image_env.Depends(image_lib, jpeg_lib)
+@@ -411,26 +409,26 @@ imageq2_lst = build_list('plugins/imageq2', 'imageq2.c
+ imageq2_lib = module_env.SharedLibrarySafe(target='imageq2', source=imageq2_lst)
+ module_env.Install(INSTALL + '/modules', imageq2_lib)
+ 
+-mapq3_env = module_env.Copy()
++mapq3_env = module_env.Clone()
+ mapq3_lst=build_list('plugins/mapq3', 'plugin.cpp parse.cpp write.cpp')
+ mapq3_lib = mapq3_env.SharedLibrarySafe(target='mapq3', source=mapq3_lst, LIBS='cmdlib', LIBPATH='libs')
+ mapq3_env.Depends(mapq3_lib, cmdlib_lib)
+ mapq3_env.Install(INSTALL + '/modules', mapq3_lib)
+ 
+-imagepng_env = module_env.Copy()
++imagepng_env = module_env.Clone()
+ imagepng_lst = build_list('plugins/imagepng', 'plugin.cpp')
+ imagepng_env.usePNG()
+ imagepng_lib = imagepng_env.SharedLibrarySafe(target='imagepng', source=imagepng_lst)
+ imagepng_env.Install(INSTALL + '/modules', imagepng_lib)
+ 
+-mapxml_env = module_env.Copy()
++mapxml_env = module_env.Clone()
+ mapxml_lst = build_list('plugins/mapxml', 'plugin.cpp xmlparse.cpp xmlwrite.cpp')
+ mapxml_lib = mapxml_env.SharedLibrarySafe(target='mapxml', source=mapxml_lst)
+ mapxml_env.useXML2()
+ mapxml_env.useGlib2()
+ mapxml_env.Install(INSTALL + '/modules', mapxml_lib)
+ 
+-model_env = module_env.Copy()
++model_env = module_env.Clone()
+ model_lst = build_list('plugins/model', 'plugin.cpp model.cpp')
+ model_lib = model_env.SharedLibrarySafe(target='model', source=model_lst, LIBS=['mathlib', 'picomodel'], LIBPATH='libs')
+ model_env.Depends(model_lib, mathlib_lib)
+@@ -445,7 +443,7 @@ entity_lst = build_list('plugins/entity', 'plugin.cpp 
+ entity_lib = module_env.SharedLibrarySafe(target='entity', source=entity_lst)
+ module_env.Install(INSTALL + '/modules', entity_lib)
+ 
+-#bob_env = module_env.Copy()
++#bob_env = module_env.Clone()
+ #bob_env.useGtk2()
+ #bob_lst = build_list('contrib/bobtoolz/',
+ #'dialogs/dialogs-gtk.cpp bobToolz-GTK.cpp bsploader.cpp cportals.cpp DBobView.cpp \
+@@ -466,7 +464,7 @@ module_env.Install(INSTALL + '/modules', entity_lib)
+ 
+ #prtview_lst = build_list('contrib/prtview', 
+ #'AboutDialog.cpp ConfigDialog.cpp LoadPortalFileDialog.cpp portals.cpp prtview.cpp')
+-#prtview_env = bob_env.Copy()
++#prtview_env = bob_env.Clone()
+ #prtview_env['CXXFLAGS'] += '-DGTK_PLUGIN '
+ #prtview_env.SharedLibrarySafe(target='prtview', source=prtview_lst)
+ #prtview_env.Install(INSTALL + '/plugins', 'prtview.so')
+@@ -478,14 +476,14 @@ module_env.Install(INSTALL + '/modules', entity_lib)
+ 
+ #bkgrnd2d_list = build_list( 'contrib/bkgrnd2d', 'bkgrnd2d.cpp plugin.cpp dialog.cpp' )
+ #bkgrnd2d_list.append( 'libs/libsynapse.a' )
+-#bkgrnd2d_env = module_env.Copy()
++#bkgrnd2d_env = module_env.Clone()
+ #bkgrnd2d_env.useGtk2()
+ #bkgrnd2d_env.SharedLibrarySafe( target='bkgrnd2d', source=bkgrnd2d_list )
+ #bkgrnd2d_env.Install( INSTALL + '/plugins', 'bkgrnd2d.so' )
+ 
+-radiant_env = g_env.Copy()
++radiant_env = g_env.Clone()
  radiant_env['CPPPATH'].append('include')
 -radiant_env['LINKFLAGS'] += '-ldl -lGL '
 +radiant_env['LINKFLAGS'] += '-lX11 -lGL '
