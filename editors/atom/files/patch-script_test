@@ -1,4 +1,4 @@
---- script/test.orig	2019-12-13 19:07:42 UTC
+--- script/test.orig	2020-05-18 19:34:10 UTC
 +++ script/test
 @@ -51,7 +51,7 @@ if (process.platform === 'darwin') {
    const executablePaths = glob.sync(path.join(CONFIG.buildOutputPath, '*.app'))
@@ -9,7 +9,7 @@
    const executablePaths = glob.sync(path.join(CONFIG.buildOutputPath, 'atom-*', 'atom'))
    assert(executablePaths.length === 1, `More than one application to run tests against was found. ${executablePaths.join(',')}`)
    executablePath = executablePaths[0]
-@@ -215,7 +215,7 @@ function testSuitesForPlatform (platform) {
+@@ -222,7 +222,7 @@ function testSuitesForPlatform (platform) {
      case 'win32':
        suites = (process.arch === 'x64') ? [runCoreMainProcessTests, runCoreRenderProcessTests] : [runCoreMainProcessTests]
        break

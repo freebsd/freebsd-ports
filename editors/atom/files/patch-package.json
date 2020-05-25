@@ -1,4 +1,4 @@
---- package.json.orig	2020-04-22 18:42:32 UTC
+--- package.json.orig	2020-05-18 19:34:10 UTC
 +++ package.json
 @@ -76,7 +76,7 @@
      "incompatible-packages": "file:packages/incompatible-packages",
@@ -8,4 +8,4 @@
 +    "jasmine-tagged": "file:../jasmine-tagged",
      "key-path-helpers": "^0.4.0",
      "keybinding-resolver": "https://www.atom.io/api/packages/keybinding-resolver/versions/0.39.0/tarball",
-     "language-c": "https://www.atom.io/api/packages/language-c/versions/0.60.18/tarball",
+     "language-c": "https://www.atom.io/api/packages/language-c/versions/0.60.19/tarball",

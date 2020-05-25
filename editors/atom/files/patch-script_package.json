@@ -1,12 +1,12 @@
---- script/package.json.orig	2019-12-13 19:07:42 UTC
+--- script/package.json.orig	2020-05-18 19:34:10 UTC
 +++ script/package.json
 @@ -10,9 +10,7 @@
      "coffeelint": "1.15.7",
      "colors": "1.1.2",
      "donna": "1.0.16",
--    "electron-chromedriver": "^4.2.0",
-     "electron-link": "0.4.0",
--    "electron-mksnapshot": "^4.2.0",
+-    "electron-chromedriver": "^5.0.0",
+     "electron-link": "0.4.1",
+-    "electron-mksnapshot": "^5.0.0",
      "electron-packager": "12.2.0",
      "@atom/electron-winstaller": "0.0.1",
      "eslint": "^5.16.0",

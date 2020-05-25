@@ -100,7 +100,6 @@ share/applications/atom.desktop
 %%DATADIR%%/resources/app.asar.unpacked/node_modules/symbols-view/vendor/ctags-darwin
 %%DATADIR%%/resources/app.asar.unpacked/node_modules/symbols-view/vendor/ctags-linux
 %%DATADIR%%/resources/app.asar.unpacked/node_modules/symbols-view/vendor/ctags-win32.exe
-%%DATADIR%%/resources/app.asar.unpacked/node_modules/text-buffer/node_modules/superstring/build/Release/superstring.node
 %%DATADIR%%/resources/app.asar.unpacked/node_modules/tree-sitter-bash/build/Release/tree_sitter_bash_binding.node
 %%DATADIR%%/resources/app.asar.unpacked/node_modules/tree-sitter-c/build/Release/tree_sitter_c_binding.node
 %%DATADIR%%/resources/app.asar.unpacked/node_modules/tree-sitter-cpp/build/Release/tree_sitter_cpp_binding.node
@@ -531,14 +530,10 @@ share/applications/atom.desktop
 %%DATADIR%%/resources/app/apm/node_modules/code-point-at/license
 %%DATADIR%%/resources/app/apm/node_modules/code-point-at/package.json
 %%DATADIR%%/resources/app/apm/node_modules/code-point-at/readme.md
-%%DATADIR%%/resources/app/apm/node_modules/coffee-script/CNAME
-%%DATADIR%%/resources/app/apm/node_modules/coffee-script/CONTRIBUTING.md
 %%DATADIR%%/resources/app/apm/node_modules/coffee-script/LICENSE
-%%DATADIR%%/resources/app/apm/node_modules/coffee-script/README
 %%DATADIR%%/resources/app/apm/node_modules/coffee-script/README.md
 %%DATADIR%%/resources/app/apm/node_modules/coffee-script/bin/cake
 %%DATADIR%%/resources/app/apm/node_modules/coffee-script/bin/coffee
-%%DATADIR%%/resources/app/apm/node_modules/coffee-script/bower.json
 %%DATADIR%%/resources/app/apm/node_modules/coffee-script/lib/coffee-script/browser.js
 %%DATADIR%%/resources/app/apm/node_modules/coffee-script/lib/coffee-script/cake.js
 %%DATADIR%%/resources/app/apm/node_modules/coffee-script/lib/coffee-script/coffee-script.js
@@ -592,9 +587,7 @@ share/applications/atom.desktop
 %%DATADIR%%/resources/app/apm/node_modules/core-util-is/lib/util.js
 %%DATADIR%%/resources/app/apm/node_modules/core-util-is/package.json
 %%DATADIR%%/resources/app/apm/node_modules/core-util-is/test.js
-%%DATADIR%%/resources/app/apm/node_modules/cson-parser/.travis.yml
 %%DATADIR%%/resources/app/apm/node_modules/cson-parser/CHANGELOG.md
-%%DATADIR%%/resources/app/apm/node_modules/cson-parser/CONTRIBUTING.md
 %%DATADIR%%/resources/app/apm/node_modules/cson-parser/LICENSE
 %%DATADIR%%/resources/app/apm/node_modules/cson-parser/README.md
 %%DATADIR%%/resources/app/apm/node_modules/cson-parser/lib/cson-parser.js
@@ -694,6 +687,7 @@ share/applications/atom.desktop
 %%DATADIR%%/resources/app/apm/node_modules/end-of-stream/README.md
 %%DATADIR%%/resources/app/apm/node_modules/end-of-stream/index.js
 %%DATADIR%%/resources/app/apm/node_modules/end-of-stream/package.json
+%%DATADIR%%/resources/app/apm/node_modules/es5-ext/.github/FUNDING.yml
 %%DATADIR%%/resources/app/apm/node_modules/es5-ext/CHANGELOG.md
 %%DATADIR%%/resources/app/apm/node_modules/es5-ext/CHANGES
 %%DATADIR%%/resources/app/apm/node_modules/es5-ext/LICENSE
@@ -939,7 +933,9 @@ share/applications/atom.desktop
 %%DATADIR%%/resources/app/apm/node_modules/es5-ext/node_modules/es6-iterator/package.json
 %%DATADIR%%/resources/app/apm/node_modules/es5-ext/node_modules/es6-iterator/string.js
 %%DATADIR%%/resources/app/apm/node_modules/es5-ext/node_modules/es6-iterator/valid-iterable.js
-%%DATADIR%%/resources/app/apm/node_modules/es5-ext/node_modules/es6-symbol/.travis.yml
+%%DATADIR%%/resources/app/apm/node_modules/es5-ext/node_modules/es6-symbol/.github/FUNDING.yml
+%%DATADIR%%/resources/app/apm/node_modules/es5-ext/node_modules/es6-symbol/.testignore
+%%DATADIR%%/resources/app/apm/node_modules/es5-ext/node_modules/es6-symbol/CHANGELOG.md
 %%DATADIR%%/resources/app/apm/node_modules/es5-ext/node_modules/es6-symbol/CHANGES
 %%DATADIR%%/resources/app/apm/node_modules/es5-ext/node_modules/es6-symbol/LICENSE
 %%DATADIR%%/resources/app/apm/node_modules/es5-ext/node_modules/es6-symbol/README.md
@@ -948,6 +944,9 @@ share/applications/atom.desktop
 %%DATADIR%%/resources/app/apm/node_modules/es5-ext/node_modules/es6-symbol/is-implemented.js
 %%DATADIR%%/resources/app/apm/node_modules/es5-ext/node_modules/es6-symbol/is-native-implemented.js
 %%DATADIR%%/resources/app/apm/node_modules/es5-ext/node_modules/es6-symbol/is-symbol.js
+%%DATADIR%%/resources/app/apm/node_modules/es5-ext/node_modules/es6-symbol/lib/private/generate-name.js
+%%DATADIR%%/resources/app/apm/node_modules/es5-ext/node_modules/es6-symbol/lib/private/setup/standard-symbols.js
+%%DATADIR%%/resources/app/apm/node_modules/es5-ext/node_modules/es6-symbol/lib/private/setup/symbol-registry.js
 %%DATADIR%%/resources/app/apm/node_modules/es5-ext/node_modules/es6-symbol/package.json
 %%DATADIR%%/resources/app/apm/node_modules/es5-ext/node_modules/es6-symbol/polyfill.js
 %%DATADIR%%/resources/app/apm/node_modules/es5-ext/node_modules/es6-symbol/validate-symbol.js
@@ -1195,13 +1194,15 @@ share/applications/atom.desktop
 %%DATADIR%%/resources/app/apm/node_modules/es6-weak-map/package.json
 %%DATADIR%%/resources/app/apm/node_modules/es6-weak-map/polyfill.js
 %%DATADIR%%/resources/app/apm/node_modules/es6-weak-map/valid-weak-map.js
+%%DATADIR%%/resources/app/apm/node_modules/event-kit/.github/no-response.yml
 %%DATADIR%%/resources/app/apm/node_modules/event-kit/LICENSE.md
 %%DATADIR%%/resources/app/apm/node_modules/event-kit/README.md
 %%DATADIR%%/resources/app/apm/node_modules/event-kit/api.json
-%%DATADIR%%/resources/app/apm/node_modules/event-kit/lib/composite-disposable.js
-%%DATADIR%%/resources/app/apm/node_modules/event-kit/lib/disposable.js
-%%DATADIR%%/resources/app/apm/node_modules/event-kit/lib/emitter.js
-%%DATADIR%%/resources/app/apm/node_modules/event-kit/lib/event-kit.js
+%%DATADIR%%/resources/app/apm/node_modules/event-kit/appveyor.yml
+%%DATADIR%%/resources/app/apm/node_modules/event-kit/dist/composite-disposable.js
+%%DATADIR%%/resources/app/apm/node_modules/event-kit/dist/disposable.js
+%%DATADIR%%/resources/app/apm/node_modules/event-kit/dist/emitter.js
+%%DATADIR%%/resources/app/apm/node_modules/event-kit/dist/event-kit.js
 %%DATADIR%%/resources/app/apm/node_modules/event-kit/package.json
 %%DATADIR%%/resources/app/apm/node_modules/expand-template/.travis.yml
 %%DATADIR%%/resources/app/apm/node_modules/expand-template/LICENSE
@@ -1209,6 +1210,84 @@ share/applications/atom.desktop
 %%DATADIR%%/resources/app/apm/node_modules/expand-template/index.js
 %%DATADIR%%/resources/app/apm/node_modules/expand-template/package.json
 %%DATADIR%%/resources/app/apm/node_modules/expand-template/test.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/CHANGELOG.md
+%%DATADIR%%/resources/app/apm/node_modules/ext/LICENSE
+%%DATADIR%%/resources/app/apm/node_modules/ext/README.md
+%%DATADIR%%/resources/app/apm/node_modules/ext/docs/function/identity.md
+%%DATADIR%%/resources/app/apm/node_modules/ext/docs/global-this.md
+%%DATADIR%%/resources/app/apm/node_modules/ext/docs/math/ceil-10.md
+%%DATADIR%%/resources/app/apm/node_modules/ext/docs/math/floor-10.md
+%%DATADIR%%/resources/app/apm/node_modules/ext/docs/math/round-10.md
+%%DATADIR%%/resources/app/apm/node_modules/ext/docs/object/entries.md
+%%DATADIR%%/resources/app/apm/node_modules/ext/docs/string/random.md
+%%DATADIR%%/resources/app/apm/node_modules/ext/docs/thenable_/finally.md
+%%DATADIR%%/resources/app/apm/node_modules/ext/function/identity.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/global-this/implementation.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/global-this/index.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/global-this/is-implemented.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/lib/private/decimal-adjust.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/math/ceil-10.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/math/floor-10.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/math/round-10.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/CHANGELOG.md
+%%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/LICENSE
+%%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/README.md
+%%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/array-length/coerce.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/array-length/ensure.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/array-like/ensure.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/array-like/is.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/array/ensure.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/array/is.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/date/ensure.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/date/is.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/error/ensure.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/error/is.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/finite/coerce.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/finite/ensure.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/function/ensure.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/function/is.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/integer/coerce.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/integer/ensure.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/iterable/ensure.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/iterable/is.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/lib/is-to-string-tag-supported.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/lib/resolve-error-message.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/lib/resolve-exception.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/lib/safe-to-string.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/lib/to-short-string.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/natural-number/coerce.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/natural-number/ensure.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/number/coerce.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/number/ensure.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/object/ensure.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/object/is.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/package.json
+%%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/plain-function/ensure.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/plain-function/is.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/plain-object/ensure.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/plain-object/is.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/promise/ensure.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/promise/is.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/prototype/is.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/reg-exp/ensure.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/reg-exp/is.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/safe-integer/coerce.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/safe-integer/ensure.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/string/coerce.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/string/ensure.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/thenable/ensure.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/thenable/is.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/time-value/coerce.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/time-value/ensure.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/value/ensure.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/value/is.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/object/entries/implement.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/object/entries/implementation.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/object/entries/index.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/object/entries/is-implemented.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/package.json
+%%DATADIR%%/resources/app/apm/node_modules/ext/string/random.js
+%%DATADIR%%/resources/app/apm/node_modules/ext/thenable_/finally.js
 %%DATADIR%%/resources/app/apm/node_modules/extend/.jscs.json
 %%DATADIR%%/resources/app/apm/node_modules/extend/.travis.yml
 %%DATADIR%%/resources/app/apm/node_modules/extend/CHANGELOG.md
@@ -1239,6 +1318,7 @@ share/applications/atom.desktop
 %%DATADIR%%/resources/app/apm/node_modules/first-mate/LICENSE.md
 %%DATADIR%%/resources/app/apm/node_modules/first-mate/README.md
 %%DATADIR%%/resources/app/apm/node_modules/first-mate/api.json
+%%DATADIR%%/resources/app/apm/node_modules/first-mate/appveyor.yml
 %%DATADIR%%/resources/app/apm/node_modules/first-mate/benchmark/bootstrap.css
 %%DATADIR%%/resources/app/apm/node_modules/first-mate/benchmark/bootstrap.min.css
 %%DATADIR%%/resources/app/apm/node_modules/first-mate/benchmark/large.js
@@ -1254,13 +1334,18 @@ share/applications/atom.desktop
 %%DATADIR%%/resources/app/apm/node_modules/first-mate/lib/scope-selector-matchers.js
 %%DATADIR%%/resources/app/apm/node_modules/first-mate/lib/scope-selector-parser.js
 %%DATADIR%%/resources/app/apm/node_modules/first-mate/lib/scope-selector.js
-%%DATADIR%%/resources/app/apm/node_modules/first-mate/node_modules/.bin/csonc
-%%DATADIR%%/resources/app/apm/node_modules/first-mate/node_modules/season/LICENSE.md
-%%DATADIR%%/resources/app/apm/node_modules/first-mate/node_modules/season/README.md
-%%DATADIR%%/resources/app/apm/node_modules/first-mate/node_modules/season/bin/csonc
-%%DATADIR%%/resources/app/apm/node_modules/first-mate/node_modules/season/lib/cson.js
-%%DATADIR%%/resources/app/apm/node_modules/first-mate/node_modules/season/lib/csonc.js
-%%DATADIR%%/resources/app/apm/node_modules/first-mate/node_modules/season/package.json
+%%DATADIR%%/resources/app/apm/node_modules/first-mate/node_modules/async/CHANGELOG.md
+%%DATADIR%%/resources/app/apm/node_modules/first-mate/node_modules/async/LICENSE
+%%DATADIR%%/resources/app/apm/node_modules/first-mate/node_modules/async/README.md
+%%DATADIR%%/resources/app/apm/node_modules/first-mate/node_modules/async/dist/async.js
+%%DATADIR%%/resources/app/apm/node_modules/first-mate/node_modules/async/dist/async.min.js
+%%DATADIR%%/resources/app/apm/node_modules/first-mate/node_modules/async/lib/async.js
+%%DATADIR%%/resources/app/apm/node_modules/first-mate/node_modules/async/package.json
+%%DATADIR%%/resources/app/apm/node_modules/first-mate/node_modules/fs-plus/LICENSE.md
+%%DATADIR%%/resources/app/apm/node_modules/first-mate/node_modules/fs-plus/README.md
+%%DATADIR%%/resources/app/apm/node_modules/first-mate/node_modules/fs-plus/appveyor.yml
+%%DATADIR%%/resources/app/apm/node_modules/first-mate/node_modules/fs-plus/lib/fs-plus.js
+%%DATADIR%%/resources/app/apm/node_modules/first-mate/node_modules/fs-plus/package.json
 %%DATADIR%%/resources/app/apm/node_modules/first-mate/package.json
 %%DATADIR%%/resources/app/apm/node_modules/forever-agent/LICENSE
 %%DATADIR%%/resources/app/apm/node_modules/forever-agent/README.md
@@ -1373,12 +1458,25 @@ share/applications/atom.desktop
 %%DATADIR%%/resources/app/apm/node_modules/getpass/package.json
 %%DATADIR%%/resources/app/apm/node_modules/git-utils/LICENSE.md
 %%DATADIR%%/resources/app/apm/node_modules/git-utils/README.md
+%%DATADIR%%/resources/app/apm/node_modules/git-utils/appveyor.yml
 %%DATADIR%%/resources/app/apm/node_modules/git-utils/build/Release/git.node
 %%DATADIR%%/resources/app/apm/node_modules/git-utils/build/Release/git2.a
 %%DATADIR%%/resources/app/apm/node_modules/git-utils/build/Release/http_parser.a
 %%DATADIR%%/resources/app/apm/node_modules/git-utils/build/Release/zlib.a
-%%DATADIR%%/resources/app/apm/node_modules/git-utils/lib/git.js
+%%DATADIR%%/resources/app/apm/node_modules/git-utils/node_modules/async/CHANGELOG.md
+%%DATADIR%%/resources/app/apm/node_modules/git-utils/node_modules/async/LICENSE
+%%DATADIR%%/resources/app/apm/node_modules/git-utils/node_modules/async/README.md
+%%DATADIR%%/resources/app/apm/node_modules/git-utils/node_modules/async/dist/async.js
+%%DATADIR%%/resources/app/apm/node_modules/git-utils/node_modules/async/dist/async.min.js
+%%DATADIR%%/resources/app/apm/node_modules/git-utils/node_modules/async/lib/async.js
+%%DATADIR%%/resources/app/apm/node_modules/git-utils/node_modules/async/package.json
+%%DATADIR%%/resources/app/apm/node_modules/git-utils/node_modules/fs-plus/LICENSE.md
+%%DATADIR%%/resources/app/apm/node_modules/git-utils/node_modules/fs-plus/README.md
+%%DATADIR%%/resources/app/apm/node_modules/git-utils/node_modules/fs-plus/appveyor.yml
+%%DATADIR%%/resources/app/apm/node_modules/git-utils/node_modules/fs-plus/lib/fs-plus.js
+%%DATADIR%%/resources/app/apm/node_modules/git-utils/node_modules/fs-plus/package.json
 %%DATADIR%%/resources/app/apm/node_modules/git-utils/package.json
+%%DATADIR%%/resources/app/apm/node_modules/git-utils/src/git.js
 %%DATADIR%%/resources/app/apm/node_modules/github-from-package/.travis.yml
 %%DATADIR%%/resources/app/apm/node_modules/github-from-package/LICENSE
 %%DATADIR%%/resources/app/apm/node_modules/github-from-package/index.js
@@ -1399,6 +1497,7 @@ share/applications/atom.desktop
 %%DATADIR%%/resources/app/apm/node_modules/graceful-fs/polyfills.js
 %%DATADIR%%/resources/app/apm/node_modules/grim/LICENSE.md
 %%DATADIR%%/resources/app/apm/node_modules/grim/README.md
+%%DATADIR%%/resources/app/apm/node_modules/grim/appveyor.yml
 %%DATADIR%%/resources/app/apm/node_modules/grim/lib/deprecation.js
 %%DATADIR%%/resources/app/apm/node_modules/grim/lib/grim.js
 %%DATADIR%%/resources/app/apm/node_modules/grim/package.json
@@ -4692,11 +4791,6 @@ share/applications/atom.desktop
 %%DATADIR%%/resources/app/apm/node_modules/open/lib/open.js
 %%DATADIR%%/resources/app/apm/node_modules/open/package.json
 %%DATADIR%%/resources/app/apm/node_modules/open/vendor/xdg-open
-%%DATADIR%%/resources/app/apm/node_modules/optimist/.travis.yml
-%%DATADIR%%/resources/app/apm/node_modules/optimist/LICENSE
-%%DATADIR%%/resources/app/apm/node_modules/optimist/index.js
-%%DATADIR%%/resources/app/apm/node_modules/optimist/package.json
-%%DATADIR%%/resources/app/apm/node_modules/optimist/readme.markdown
 %%DATADIR%%/resources/app/apm/node_modules/os-homedir/index.js
 %%DATADIR%%/resources/app/apm/node_modules/os-homedir/license
 %%DATADIR%%/resources/app/apm/node_modules/os-homedir/package.json
@@ -4749,18 +4843,14 @@ share/applications/atom.desktop
 %%DATADIR%%/resources/app/apm/node_modules/property-accessors/README.md
 %%DATADIR%%/resources/app/apm/node_modules/property-accessors/lib/property-accessors.js
 %%DATADIR%%/resources/app/apm/node_modules/property-accessors/package.json
-%%DATADIR%%/resources/app/apm/node_modules/psl/.eslintignore
-%%DATADIR%%/resources/app/apm/node_modules/psl/.travis.yml
 %%DATADIR%%/resources/app/apm/node_modules/psl/LICENSE
 %%DATADIR%%/resources/app/apm/node_modules/psl/README.md
+%%DATADIR%%/resources/app/apm/node_modules/psl/browserstack-logo.svg
 %%DATADIR%%/resources/app/apm/node_modules/psl/data/rules.json
 %%DATADIR%%/resources/app/apm/node_modules/psl/dist/psl.js
 %%DATADIR%%/resources/app/apm/node_modules/psl/dist/psl.min.js
 %%DATADIR%%/resources/app/apm/node_modules/psl/index.js
-%%DATADIR%%/resources/app/apm/node_modules/psl/karma.conf.js
 %%DATADIR%%/resources/app/apm/node_modules/psl/package.json
-%%DATADIR%%/resources/app/apm/node_modules/psl/scripts/ci-build.sh
-%%DATADIR%%/resources/app/apm/node_modules/psl/scripts/update-rules.js
 %%DATADIR%%/resources/app/apm/node_modules/pump/.travis.yml
 %%DATADIR%%/resources/app/apm/node_modules/pump/LICENSE
 %%DATADIR%%/resources/app/apm/node_modules/pump/README.md
@@ -4869,8 +4959,6 @@ share/applications/atom.desktop
 %%DATADIR%%/resources/app/apm/node_modules/season/bin/csonc
 %%DATADIR%%/resources/app/apm/node_modules/season/lib/cson.js
 %%DATADIR%%/resources/app/apm/node_modules/season/lib/csonc.js
-%%DATADIR%%/resources/app/apm/node_modules/season/node_modules/.bin/cake
-%%DATADIR%%/resources/app/apm/node_modules/season/node_modules/.bin/coffee
 %%DATADIR%%/resources/app/apm/node_modules/season/node_modules/async/CHANGELOG.md
 %%DATADIR%%/resources/app/apm/node_modules/season/node_modules/async/LICENSE
 %%DATADIR%%/resources/app/apm/node_modules/season/node_modules/async/README.md
@@ -4878,36 +4966,6 @@ share/applications/atom.desktop
 %%DATADIR%%/resources/app/apm/node_modules/season/node_modules/async/dist/async.min.js
 %%DATADIR%%/resources/app/apm/node_modules/season/node_modules/async/lib/async.js
 %%DATADIR%%/resources/app/apm/node_modules/season/node_modules/async/package.json
-%%DATADIR%%/resources/app/apm/node_modules/season/node_modules/coffee-script/LICENSE
-%%DATADIR%%/resources/app/apm/node_modules/season/node_modules/coffee-script/README.md
-%%DATADIR%%/resources/app/apm/node_modules/season/node_modules/coffee-script/bin/cake
-%%DATADIR%%/resources/app/apm/node_modules/season/node_modules/coffee-script/bin/coffee
-%%DATADIR%%/resources/app/apm/node_modules/season/node_modules/coffee-script/lib/coffee-script/browser.js
-%%DATADIR%%/resources/app/apm/node_modules/season/node_modules/coffee-script/lib/coffee-script/cake.js
-%%DATADIR%%/resources/app/apm/node_modules/season/node_modules/coffee-script/lib/coffee-script/coffee-script.js
-%%DATADIR%%/resources/app/apm/node_modules/season/node_modules/coffee-script/lib/coffee-script/command.js
-%%DATADIR%%/resources/app/apm/node_modules/season/node_modules/coffee-script/lib/coffee-script/grammar.js
-%%DATADIR%%/resources/app/apm/node_modules/season/node_modules/coffee-script/lib/coffee-script/helpers.js
-%%DATADIR%%/resources/app/apm/node_modules/season/node_modules/coffee-script/lib/coffee-script/index.js
-%%DATADIR%%/resources/app/apm/node_modules/season/node_modules/coffee-script/lib/coffee-script/lexer.js
-%%DATADIR%%/resources/app/apm/node_modules/season/node_modules/coffee-script/lib/coffee-script/nodes.js
-%%DATADIR%%/resources/app/apm/node_modules/season/node_modules/coffee-script/lib/coffee-script/optparse.js
-%%DATADIR%%/resources/app/apm/node_modules/season/node_modules/coffee-script/lib/coffee-script/parser.js
-%%DATADIR%%/resources/app/apm/node_modules/season/node_modules/coffee-script/lib/coffee-script/register.js
-%%DATADIR%%/resources/app/apm/node_modules/season/node_modules/coffee-script/lib/coffee-script/repl.js
-%%DATADIR%%/resources/app/apm/node_modules/season/node_modules/coffee-script/lib/coffee-script/rewriter.js
-%%DATADIR%%/resources/app/apm/node_modules/season/node_modules/coffee-script/lib/coffee-script/scope.js
-%%DATADIR%%/resources/app/apm/node_modules/season/node_modules/coffee-script/lib/coffee-script/sourcemap.js
-%%DATADIR%%/resources/app/apm/node_modules/season/node_modules/coffee-script/package.json
-%%DATADIR%%/resources/app/apm/node_modules/season/node_modules/coffee-script/register.js
-%%DATADIR%%/resources/app/apm/node_modules/season/node_modules/coffee-script/repl.js
-%%DATADIR%%/resources/app/apm/node_modules/season/node_modules/cson-parser/CHANGELOG.md
-%%DATADIR%%/resources/app/apm/node_modules/season/node_modules/cson-parser/LICENSE
-%%DATADIR%%/resources/app/apm/node_modules/season/node_modules/cson-parser/README.md
-%%DATADIR%%/resources/app/apm/node_modules/season/node_modules/cson-parser/lib/cson-parser.js
-%%DATADIR%%/resources/app/apm/node_modules/season/node_modules/cson-parser/lib/parse.js
-%%DATADIR%%/resources/app/apm/node_modules/season/node_modules/cson-parser/lib/stringify.js
-%%DATADIR%%/resources/app/apm/node_modules/season/node_modules/cson-parser/package.json
 %%DATADIR%%/resources/app/apm/node_modules/season/node_modules/fs-plus/LICENSE.md
 %%DATADIR%%/resources/app/apm/node_modules/season/node_modules/fs-plus/README.md
 %%DATADIR%%/resources/app/apm/node_modules/season/node_modules/fs-plus/appveyor.yml
@@ -5119,15 +5177,17 @@ share/applications/atom.desktop
 %%DATADIR%%/resources/app/apm/node_modules/tar/lib/parse.js
 %%DATADIR%%/resources/app/apm/node_modules/tar/package.json
 %%DATADIR%%/resources/app/apm/node_modules/tar/tar.js
-%%DATADIR%%/resources/app/apm/node_modules/temp/.travis.yml
 %%DATADIR%%/resources/app/apm/node_modules/temp/LICENSE
 %%DATADIR%%/resources/app/apm/node_modules/temp/README.md
 %%DATADIR%%/resources/app/apm/node_modules/temp/lib/temp.js
-%%DATADIR%%/resources/app/apm/node_modules/temp/no_cleanup.js
-%%DATADIR%%/resources/app/apm/node_modules/temp/no_cleanup_on_exit.js
-%%DATADIR%%/resources/app/apm/node_modules/temp/no_cleanup_on_exit.spec.js
 %%DATADIR%%/resources/app/apm/node_modules/temp/node_modules/.bin/rimraf
-%%DATADIR%%/resources/app/apm/node_modules/temp/node_modules/rimraf/AUTHORS
+%%DATADIR%%/resources/app/apm/node_modules/temp/node_modules/glob/LICENSE
+%%DATADIR%%/resources/app/apm/node_modules/temp/node_modules/glob/README.md
+%%DATADIR%%/resources/app/apm/node_modules/temp/node_modules/glob/changelog.md
+%%DATADIR%%/resources/app/apm/node_modules/temp/node_modules/glob/common.js
+%%DATADIR%%/resources/app/apm/node_modules/temp/node_modules/glob/glob.js
+%%DATADIR%%/resources/app/apm/node_modules/temp/node_modules/glob/package.json
+%%DATADIR%%/resources/app/apm/node_modules/temp/node_modules/glob/sync.js
 %%DATADIR%%/resources/app/apm/node_modules/temp/node_modules/rimraf/LICENSE
 %%DATADIR%%/resources/app/apm/node_modules/temp/node_modules/rimraf/README.md
 %%DATADIR%%/resources/app/apm/node_modules/temp/node_modules/rimraf/bin.js
@@ -5189,8 +5249,8 @@ share/applications/atom.desktop
 %%DATADIR%%/resources/app/apm/node_modules/tweetnacl/nacl.js
 %%DATADIR%%/resources/app/apm/node_modules/tweetnacl/nacl.min.js
 %%DATADIR%%/resources/app/apm/node_modules/tweetnacl/package.json
-%%DATADIR%%/resources/app/apm/node_modules/type/.prettierrc.js
 %%DATADIR%%/resources/app/apm/node_modules/type/CHANGELOG.md
+%%DATADIR%%/resources/app/apm/node_modules/type/LICENSE
 %%DATADIR%%/resources/app/apm/node_modules/type/README.md
 %%DATADIR%%/resources/app/apm/node_modules/type/array-length/coerce.js
 %%DATADIR%%/resources/app/apm/node_modules/type/array-length/ensure.js
@@ -5288,7 +5348,6 @@ share/applications/atom.desktop
 %%DATADIR%%/resources/app/apm/node_modules/uuid/CHANGELOG.md
 %%DATADIR%%/resources/app/apm/node_modules/uuid/LICENSE.md
 %%DATADIR%%/resources/app/apm/node_modules/uuid/README.md
-%%DATADIR%%/resources/app/apm/node_modules/uuid/README_js.md
 %%DATADIR%%/resources/app/apm/node_modules/uuid/bin/uuid
 %%DATADIR%%/resources/app/apm/node_modules/uuid/index.js
 %%DATADIR%%/resources/app/apm/node_modules/uuid/lib/bytesToUuid.js
@@ -5561,38 +5620,82 @@ share/icons/hicolor/64x64/apps/atom.png
 @dir %%DATADIR%%/resources/app/apm/node_modules/es6-iterator/test/#
 @dir %%DATADIR%%/resources/app/apm/node_modules/es6-symbol/test
 @dir %%DATADIR%%/resources/app/apm/node_modules/es6-weak-map/test
+@dir %%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/test/_lib
+@dir %%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/test/array
+@dir %%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/test/array-length
+@dir %%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/test/array-like
+@dir %%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/test/date
+@dir %%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/test/error
+@dir %%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/test/finite
+@dir %%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/test/function
+@dir %%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/test/integer
+@dir %%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/test/iterable
+@dir %%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/test/lib
+@dir %%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/test/natural-number
+@dir %%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/test/number
+@dir %%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/test/object
+@dir %%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/test/plain-function
+@dir %%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/test/plain-object
+@dir %%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/test/promise
+@dir %%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/test/prototype
+@dir %%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/test/reg-exp
+@dir %%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/test/safe-integer
+@dir %%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/test/string
+@dir %%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/test/thenable
+@dir %%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/test/time-value
+@dir %%DATADIR%%/resources/app/apm/node_modules/ext/node_modules/type/test/value
+@dir %%DATADIR%%/resources/app/apm/node_modules/ext/test/function
+@dir %%DATADIR%%/resources/app/apm/node_modules/ext/test/global-this
+@dir %%DATADIR%%/resources/app/apm/node_modules/ext/test/math
+@dir %%DATADIR%%/resources/app/apm/node_modules/ext/test/object/entries
+@dir %%DATADIR%%/resources/app/apm/node_modules/ext/test/string
+@dir %%DATADIR%%/resources/app/apm/node_modules/ext/test/thenable_
 @dir %%DATADIR%%/resources/app/apm/node_modules/fast-json-stable-stringify/example
 @dir %%DATADIR%%/resources/app/apm/node_modules/fast-json-stable-stringify/test
 @dir %%DATADIR%%/resources/app/apm/node_modules/fstream/examples
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/build/Release/.deps/Release/obj.target/git/src
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/build/Release/.deps/Release/obj.target/http_parser/deps/libgit2/deps/http-parser
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/build/Release/.deps/Release/obj.target/libgit2/deps/libgit2/src/allocators
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/build/Release/.deps/Release/obj.target/libgit2/deps/libgit2/src/hash
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/build/Release/.deps/Release/obj.target/libgit2/deps/libgit2/src/streams
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/build/Release/.deps/Release/obj.target/libgit2/deps/libgit2/src/transports
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/build/Release/.deps/Release/obj.target/libgit2/deps/libgit2/src/unix
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/build/Release/.deps/Release/obj.target/libgit2/deps/libgit2/src/xdiff
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/build/Release/.deps/Release/obj.target/zlib/deps/libgit2/deps/zlib
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/build/Release/obj.target/git/src
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/build/Release/obj.target/http_parser/deps/libgit2/deps/http-parser
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/build/Release/obj.target/libgit2/deps/libgit2/src/allocators
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/build/Release/obj.target/libgit2/deps/libgit2/src/hash
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/build/Release/obj.target/libgit2/deps/libgit2/src/streams
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/build/Release/obj.target/libgit2/deps/libgit2/src/transports
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/build/Release/obj.target/libgit2/deps/libgit2/src/unix
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/build/Release/obj.target/libgit2/deps/libgit2/src/xdiff
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/build/Release/obj.target/zlib/deps/libgit2/deps/zlib
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/.github
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/azure-pipelines
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/ci
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/cmake/Modules
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/deps/http-parser
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/deps/regex
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/deps/ntlmclient
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/deps/pcre/cmake
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/deps/winhttp
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/deps/zlib
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/docs
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/examples/network
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/examples/test
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/examples
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/fuzzers/corpora/config_file
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/fuzzers/corpora/download_refs
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/fuzzers/corpora/objects
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/fuzzers/corpora/packfile
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/include/git2/sys
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/script
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/src/hash
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/src/allocators
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/src/hash/sha1dc
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/src/streams
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/src/transports
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/src/unix
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/src/win32
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/src/xdiff
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/apply
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/attr
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/blame
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/buf
@@ -5604,14 +5707,19 @@ share/icons/hicolor/64x64/apps/atom.png
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/config
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/core
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/date
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/delta
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/describe
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/diff
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/fetchhead
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/filter
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/graph
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/ignore
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/index
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/iterator
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/mailmap
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/merge/trees
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/merge/workdir
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/message
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/network/remote
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/notes
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/object/blob
@@ -5622,6 +5730,7 @@ share/icons/hicolor/64x64/apps/atom.png
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/odb/backend
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/online
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/pack
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/patch
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/path
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/perf
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/rebase
@@ -5848,78 +5957,294 @@ share/icons/hicolor/64x64/apps/atom.png
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf/.gitted/objects/f4
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf/.gitted/objects/fe
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf/.gitted/refs/heads
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix/autocrlf_false
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix/autocrlf_false,-crlf
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix/autocrlf_false,-text
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix/autocrlf_false,crlf
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix/autocrlf_false,eol_crlf
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix/autocrlf_false,eol_lf
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix/autocrlf_false,text
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix/autocrlf_false,text,eol_crlf
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix/autocrlf_false,text,eol_lf
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix/autocrlf_false,text_auto
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix/autocrlf_false,text_auto,eol_crlf
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix/autocrlf_false,text_auto,eol_lf
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix/autocrlf_input
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix/autocrlf_input,-crlf
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix/autocrlf_input,-text
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix/autocrlf_input,crlf
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix/autocrlf_input,eol_crlf
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix/autocrlf_input,eol_lf
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix/autocrlf_input,text
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix/autocrlf_input,text,eol_crlf
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix/autocrlf_input,text,eol_lf
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix/autocrlf_input,text_auto
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix/autocrlf_input,text_auto,eol_crlf
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix/autocrlf_input,text_auto,eol_lf
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix/autocrlf_true
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix/autocrlf_true,-crlf
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix/autocrlf_true,-text
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix/autocrlf_true,crlf
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix/autocrlf_true,eol_crlf
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix/autocrlf_true,eol_lf
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix/autocrlf_true,text
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix/autocrlf_true,text,eol_crlf
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix/autocrlf_true,text,eol_lf
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix/autocrlf_true,text_auto
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix/autocrlf_true,text_auto,eol_crlf
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix/autocrlf_true,text_auto,eol_lf
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows/autocrlf_false
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows/autocrlf_false,-crlf
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows/autocrlf_false,-text
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows/autocrlf_false,crlf
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows/autocrlf_false,eol_crlf
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows/autocrlf_false,eol_lf
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows/autocrlf_false,text
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows/autocrlf_false,text,eol_crlf
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows/autocrlf_false,text,eol_lf
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows/autocrlf_false,text_auto
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows/autocrlf_false,text_auto,eol_crlf
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows/autocrlf_false,text_auto,eol_lf
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows/autocrlf_input
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows/autocrlf_input,-crlf
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows/autocrlf_input,-text
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows/autocrlf_input,crlf
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows/autocrlf_input,eol_crlf
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows/autocrlf_input,eol_lf
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows/autocrlf_input,text
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows/autocrlf_input,text,eol_crlf
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows/autocrlf_input,text,eol_lf
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows/autocrlf_input,text_auto
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows/autocrlf_input,text_auto,eol_crlf
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows/autocrlf_input,text_auto,eol_lf
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows/autocrlf_true
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows/autocrlf_true,-crlf
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows/autocrlf_true,-text
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows/autocrlf_true,crlf
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows/autocrlf_true,eol_crlf
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows/autocrlf_true,eol_lf
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows/autocrlf_true,text
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows/autocrlf_true,text,eol_crlf
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows/autocrlf_true,text,eol_lf
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows/autocrlf_true,text_auto
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows/autocrlf_true,text_auto,eol_crlf
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows/autocrlf_true,text_auto,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_false,safecrlf_false
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_false,safecrlf_false,-crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_false,safecrlf_false,-text
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_false,safecrlf_false,crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_false,safecrlf_false,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_false,safecrlf_false,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_false,safecrlf_false,text
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_false,safecrlf_false,text,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_false,safecrlf_false,text,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_false,safecrlf_false,text_auto
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_false,safecrlf_false,text_auto,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_false,safecrlf_false,text_auto,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_false,safecrlf_true
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_false,safecrlf_true,-crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_false,safecrlf_true,-text
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_false,safecrlf_true,crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_false,safecrlf_true,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_false,safecrlf_true,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_false,safecrlf_true,text
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_false,safecrlf_true,text,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_false,safecrlf_true,text,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_false,safecrlf_true,text_auto
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_false,safecrlf_true,text_auto,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_false,safecrlf_true,text_auto,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_false,safecrlf_warn
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_false,safecrlf_warn,-crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_false,safecrlf_warn,-text
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_false,safecrlf_warn,crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_false,safecrlf_warn,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_false,safecrlf_warn,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_false,safecrlf_warn,text
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_false,safecrlf_warn,text,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_false,safecrlf_warn,text,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_false,safecrlf_warn,text_auto
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_false,safecrlf_warn,text_auto,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_false,safecrlf_warn,text_auto,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_input,safecrlf_false
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_input,safecrlf_false,-crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_input,safecrlf_false,-text
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_input,safecrlf_false,crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_input,safecrlf_false,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_input,safecrlf_false,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_input,safecrlf_false,text
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_input,safecrlf_false,text,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_input,safecrlf_false,text,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_input,safecrlf_false,text_auto
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_input,safecrlf_false,text_auto,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_input,safecrlf_false,text_auto,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_input,safecrlf_true
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_input,safecrlf_true,-crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_input,safecrlf_true,-text
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_input,safecrlf_true,crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_input,safecrlf_true,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_input,safecrlf_true,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_input,safecrlf_true,text
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_input,safecrlf_true,text,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_input,safecrlf_true,text,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_input,safecrlf_true,text_auto
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_input,safecrlf_true,text_auto,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_input,safecrlf_true,text_auto,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_input,safecrlf_warn
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_input,safecrlf_warn,-crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_input,safecrlf_warn,-text
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_input,safecrlf_warn,crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_input,safecrlf_warn,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_input,safecrlf_warn,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_input,safecrlf_warn,text
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_input,safecrlf_warn,text,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_input,safecrlf_warn,text,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_input,safecrlf_warn,text_auto
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_input,safecrlf_warn,text_auto,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_input,safecrlf_warn,text_auto,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_true,safecrlf_false
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_true,safecrlf_false,-crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_true,safecrlf_false,-text
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_true,safecrlf_false,crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_true,safecrlf_false,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_true,safecrlf_false,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_true,safecrlf_false,text
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_true,safecrlf_false,text,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_true,safecrlf_false,text,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_true,safecrlf_false,text_auto
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_true,safecrlf_false,text_auto,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_true,safecrlf_false,text_auto,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_true,safecrlf_true
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_true,safecrlf_true,-crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_true,safecrlf_true,-text
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_true,safecrlf_true,crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_true,safecrlf_true,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_true,safecrlf_true,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_true,safecrlf_true,text
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_true,safecrlf_true,text,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_true,safecrlf_true,text,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_true,safecrlf_true,text_auto
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_true,safecrlf_true,text_auto,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_true,safecrlf_true,text_auto,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_true,safecrlf_warn
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_true,safecrlf_warn,-crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_true,safecrlf_warn,-text
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_true,safecrlf_warn,crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_true,safecrlf_warn,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_true,safecrlf_warn,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_true,safecrlf_warn,text
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_true,safecrlf_warn,text,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_true,safecrlf_warn,text,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_true,safecrlf_warn,text_auto
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_true,safecrlf_warn,text_auto,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_odb/autocrlf_true,safecrlf_warn,text_auto,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_workdir/autocrlf_false
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_workdir/autocrlf_false,-crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_workdir/autocrlf_false,-text
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_workdir/autocrlf_false,crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_workdir/autocrlf_false,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_workdir/autocrlf_false,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_workdir/autocrlf_false,text
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_workdir/autocrlf_false,text,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_workdir/autocrlf_false,text,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_workdir/autocrlf_false,text_auto
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_workdir/autocrlf_false,text_auto,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_workdir/autocrlf_false,text_auto,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_workdir/autocrlf_input
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_workdir/autocrlf_input,-crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_workdir/autocrlf_input,-text
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_workdir/autocrlf_input,crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_workdir/autocrlf_input,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_workdir/autocrlf_input,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_workdir/autocrlf_input,text
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_workdir/autocrlf_input,text,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_workdir/autocrlf_input,text,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_workdir/autocrlf_input,text_auto
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_workdir/autocrlf_input,text_auto,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_workdir/autocrlf_input,text_auto,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_workdir/autocrlf_true
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_workdir/autocrlf_true,-crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_workdir/autocrlf_true,-text
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_workdir/autocrlf_true,crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_workdir/autocrlf_true,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_workdir/autocrlf_true,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_workdir/autocrlf_true,text
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_workdir/autocrlf_true,text,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_workdir/autocrlf_true,text,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_workdir/autocrlf_true,text_auto
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_workdir/autocrlf_true,text_auto,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/posix_to_workdir/autocrlf_true,text_auto,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_false,safecrlf_false
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_false,safecrlf_false,-crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_false,safecrlf_false,-text
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_false,safecrlf_false,crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_false,safecrlf_false,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_false,safecrlf_false,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_false,safecrlf_false,text
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_false,safecrlf_false,text,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_false,safecrlf_false,text,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_false,safecrlf_false,text_auto
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_false,safecrlf_false,text_auto,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_false,safecrlf_false,text_auto,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_false,safecrlf_true
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_false,safecrlf_true,-crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_false,safecrlf_true,-text
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_false,safecrlf_true,crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_false,safecrlf_true,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_false,safecrlf_true,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_false,safecrlf_true,text
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_false,safecrlf_true,text,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_false,safecrlf_true,text,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_false,safecrlf_true,text_auto
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_false,safecrlf_true,text_auto,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_false,safecrlf_true,text_auto,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_false,safecrlf_warn
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_false,safecrlf_warn,-crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_false,safecrlf_warn,-text
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_false,safecrlf_warn,crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_false,safecrlf_warn,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_false,safecrlf_warn,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_false,safecrlf_warn,text
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_false,safecrlf_warn,text,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_false,safecrlf_warn,text,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_false,safecrlf_warn,text_auto
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_false,safecrlf_warn,text_auto,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_false,safecrlf_warn,text_auto,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_input,safecrlf_false
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_input,safecrlf_false,-crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_input,safecrlf_false,-text
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_input,safecrlf_false,crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_input,safecrlf_false,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_input,safecrlf_false,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_input,safecrlf_false,text
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_input,safecrlf_false,text,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_input,safecrlf_false,text,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_input,safecrlf_false,text_auto
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_input,safecrlf_false,text_auto,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_input,safecrlf_false,text_auto,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_input,safecrlf_true
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_input,safecrlf_true,-crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_input,safecrlf_true,-text
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_input,safecrlf_true,crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_input,safecrlf_true,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_input,safecrlf_true,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_input,safecrlf_true,text
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_input,safecrlf_true,text,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_input,safecrlf_true,text,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_input,safecrlf_true,text_auto
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_input,safecrlf_true,text_auto,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_input,safecrlf_true,text_auto,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_input,safecrlf_warn
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_input,safecrlf_warn,-crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_input,safecrlf_warn,-text
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_input,safecrlf_warn,crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_input,safecrlf_warn,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_input,safecrlf_warn,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_input,safecrlf_warn,text
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_input,safecrlf_warn,text,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_input,safecrlf_warn,text,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_input,safecrlf_warn,text_auto
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_input,safecrlf_warn,text_auto,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_input,safecrlf_warn,text_auto,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_true,safecrlf_false
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_true,safecrlf_false,-crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_true,safecrlf_false,-text
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_true,safecrlf_false,crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_true,safecrlf_false,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_true,safecrlf_false,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_true,safecrlf_false,text
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_true,safecrlf_false,text,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_true,safecrlf_false,text,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_true,safecrlf_false,text_auto
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_true,safecrlf_false,text_auto,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_true,safecrlf_false,text_auto,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_true,safecrlf_true
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_true,safecrlf_true,-crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_true,safecrlf_true,-text
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_true,safecrlf_true,crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_true,safecrlf_true,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_true,safecrlf_true,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_true,safecrlf_true,text
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_true,safecrlf_true,text,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_true,safecrlf_true,text,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_true,safecrlf_true,text_auto
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_true,safecrlf_true,text_auto,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_true,safecrlf_true,text_auto,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_true,safecrlf_warn
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_true,safecrlf_warn,-crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_true,safecrlf_warn,-text
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_true,safecrlf_warn,crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_true,safecrlf_warn,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_true,safecrlf_warn,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_true,safecrlf_warn,text
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_true,safecrlf_warn,text,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_true,safecrlf_warn,text,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_true,safecrlf_warn,text_auto
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_true,safecrlf_warn,text_auto,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_odb/autocrlf_true,safecrlf_warn,text_auto,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_workdir/autocrlf_false
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_workdir/autocrlf_false,-crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_workdir/autocrlf_false,-text
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_workdir/autocrlf_false,crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_workdir/autocrlf_false,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_workdir/autocrlf_false,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_workdir/autocrlf_false,text
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_workdir/autocrlf_false,text,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_workdir/autocrlf_false,text,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_workdir/autocrlf_false,text_auto
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_workdir/autocrlf_false,text_auto,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_workdir/autocrlf_false,text_auto,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_workdir/autocrlf_input
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_workdir/autocrlf_input,-crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_workdir/autocrlf_input,-text
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_workdir/autocrlf_input,crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_workdir/autocrlf_input,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_workdir/autocrlf_input,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_workdir/autocrlf_input,text
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_workdir/autocrlf_input,text,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_workdir/autocrlf_input,text,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_workdir/autocrlf_input,text_auto
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_workdir/autocrlf_input,text_auto,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_workdir/autocrlf_input,text_auto,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_workdir/autocrlf_true
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_workdir/autocrlf_true,-crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_workdir/autocrlf_true,-text
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_workdir/autocrlf_true,crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_workdir/autocrlf_true,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_workdir/autocrlf_true,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_workdir/autocrlf_true,text
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_workdir/autocrlf_true,text,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_workdir/autocrlf_true,text,eol_lf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_workdir/autocrlf_true,text_auto
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_workdir/autocrlf_true,text_auto,eol_crlf
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/crlf_data/windows_to_workdir/autocrlf_true,text_auto,eol_lf
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/deprecated-mode.git/info
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/deprecated-mode.git/objects/06
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/deprecated-mode.git/objects/08
@@ -5974,7 +6299,10 @@ share/icons/hicolor/64x64/apps/atom.png
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/diff/.gitted/objects/d7
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/diff/.gitted/refs/heads
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/diff_format_email/.gitted/info
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/diff_format_email/.gitted/objects/06
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/diff_format_email/.gitted/objects/07
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/diff_format_email/.gitted/objects/0a
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/diff_format_email/.gitted/objects/0d
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/diff_format_email/.gitted/objects/10
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/diff_format_email/.gitted/objects/13
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/diff_format_email/.gitted/objects/17
@@ -5996,6 +6324,7 @@ share/icons/hicolor/64x64/apps/atom.png
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/diff_format_email/.gitted/objects/4f
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/diff_format_email/.gitted/objects/50
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/diff_format_email/.gitted/objects/52
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/diff_format_email/.gitted/objects/53
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/diff_format_email/.gitted/objects/55
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/diff_format_email/.gitted/objects/62
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/diff_format_email/.gitted/objects/66
@@ -6008,8 +6337,10 @@ share/icons/hicolor/64x64/apps/atom.png
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/diff_format_email/.gitted/objects/77
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/diff_format_email/.gitted/objects/7a
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/diff_format_email/.gitted/objects/7f
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/diff_format_email/.gitted/objects/85
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/diff_format_email/.gitted/objects/87
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/diff_format_email/.gitted/objects/89
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/diff_format_email/.gitted/objects/8c
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/diff_format_email/.gitted/objects/8d
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/diff_format_email/.gitted/objects/92
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/diff_format_email/.gitted/objects/94
@@ -6022,11 +6353,14 @@ share/icons/hicolor/64x64/apps/atom.png
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/diff_format_email/.gitted/objects/af
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/diff_format_email/.gitted/objects/b0
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/diff_format_email/.gitted/objects/b4
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/diff_format_email/.gitted/objects/bb
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/diff_format_email/.gitted/objects/bd
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/diff_format_email/.gitted/objects/c7
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/diff_format_email/.gitted/objects/cb
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/diff_format_email/.gitted/objects/cd
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/diff_format_email/.gitted/objects/ce
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/diff_format_email/.gitted/objects/d1
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/diff_format_email/.gitted/objects/d3
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/diff_format_email/.gitted/objects/d5
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/diff_format_email/.gitted/objects/d7
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/diff_format_email/.gitted/objects/db
@@ -6040,6 +6374,7 @@ share/icons/hicolor/64x64/apps/atom.png
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/diff_format_email/.gitted/objects/fc
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/diff_format_email/.gitted/objects/ff
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/diff_format_email/.gitted/refs/heads
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/diff_format_email/dir
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/duplicate.git/info
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/duplicate.git/logs/refs/heads
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/duplicate.git/objects/03
@@ -6072,6 +6407,10 @@ share/icons/hicolor/64x64/apps/atom.png
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/icase/.gitted/refs/heads
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/icase/L
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/icase/k
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/indexv4/.gitted/objects/4c
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/indexv4/.gitted/objects/b0
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/indexv4/.gitted/objects/e6
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/indexv4/.gitted/refs/heads
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/issue_1397/.gitted/objects/7f
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/issue_1397/.gitted/objects/83
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/issue_1397/.gitted/objects/8a
@@ -6102,43 +6441,100 @@ share/icons/hicolor/64x64/apps/atom.png
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/issue_592b/.gitted/objects/f7
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/issue_592b/.gitted/refs/heads
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/issue_592b/ignored/contained
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/mailmap/.gitted/info
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/mailmap/.gitted/objects/00
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/mailmap/.gitted/objects/02
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/mailmap/.gitted/objects/09
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/mailmap/.gitted/objects/0c
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/mailmap/.gitted/objects/1e
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/mailmap/.gitted/objects/36
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/mailmap/.gitted/objects/3a
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/mailmap/.gitted/objects/3f
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/mailmap/.gitted/objects/43
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/mailmap/.gitted/objects/46
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/mailmap/.gitted/objects/4b
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/mailmap/.gitted/objects/4d
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/mailmap/.gitted/objects/50
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/mailmap/.gitted/objects/61
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/mailmap/.gitted/objects/62
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/mailmap/.gitted/objects/68
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/mailmap/.gitted/objects/69
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/mailmap/.gitted/objects/6a
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/mailmap/.gitted/objects/6c
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/mailmap/.gitted/objects/71
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/mailmap/.gitted/objects/7e
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/mailmap/.gitted/objects/83
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/mailmap/.gitted/objects/87
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/mailmap/.gitted/objects/8c
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/mailmap/.gitted/objects/94
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/mailmap/.gitted/objects/95
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/mailmap/.gitted/objects/96
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/mailmap/.gitted/objects/a1
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/mailmap/.gitted/objects/a7
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/mailmap/.gitted/objects/c9
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/mailmap/.gitted/objects/d3
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/mailmap/.gitted/objects/f6
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/mailmap/.gitted/objects/fe
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/mailmap/.gitted/refs/heads
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/info
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/00
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/01
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/03
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/05
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/06
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/07
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/08
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/0b
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/0c
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/0e
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/0f
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/12
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/15
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/16
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/17
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/18
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/1b
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/1c
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/1e
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/21
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/23
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/26
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/2c
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/2e
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/30
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/34
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/35
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/36
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/37
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/38
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/39
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/3a
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/3b
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/3e
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/3f
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/40
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/41
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/42
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/43
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/44
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/48
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/4a
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/4b
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/4c
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/4d
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/4e
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/4f
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/50
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/51
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/53
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/56
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/5a
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/5b
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/5c
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/5d
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/5e
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/5f
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/61
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/63
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/65
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/66
@@ -6150,10 +6546,12 @@ share/icons/hicolor/64x64/apps/atom.png
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/73
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/74
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/75
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/76
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/78
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/7a
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/7c
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/7e
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/7f
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/81
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/88
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/89
@@ -6164,6 +6562,7 @@ share/icons/hicolor/64x64/apps/atom.png
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/96
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/97
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/98
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/99
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/9a
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/9b
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/9c
@@ -6171,34 +6570,56 @@ share/icons/hicolor/64x64/apps/atom.png
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/a0
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/a2
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/a3
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/a6
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/a7
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/a8
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/a9
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/aa
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/ad
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/b0
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/b1
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/b2
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/b4
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/b6
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/b7
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/b8
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/b9
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/ba
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/bb
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/bd
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/c0
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/c4
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/c7
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/ca
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/cb
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/ce
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/d0
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/d2
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/d3
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/d5
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/d6
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/d7
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/d8
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/da
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/db
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/de
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/e0
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/e1
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/e2
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/e5
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/e6
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/e9
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/ea
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/ef
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/f0
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/f1
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/f2
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/f3
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/f4
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/f5
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/f6
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/f7
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/f9
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/fa
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/fd
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-recursive/.gitted/objects/fe
@@ -6249,6 +6670,7 @@ share/icons/hicolor/64x64/apps/atom.png
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-resolve/.gitted/objects/25
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-resolve/.gitted/objects/26
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-resolve/.gitted/objects/27
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-resolve/.gitted/objects/2a
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-resolve/.gitted/objects/2b
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-resolve/.gitted/objects/2d
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-resolve/.gitted/objects/2f
@@ -6273,6 +6695,7 @@ share/icons/hicolor/64x64/apps/atom.png
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-resolve/.gitted/objects/4a
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-resolve/.gitted/objects/4b
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-resolve/.gitted/objects/4c
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-resolve/.gitted/objects/4d
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-resolve/.gitted/objects/4e
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-resolve/.gitted/objects/4f
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-resolve/.gitted/objects/50
@@ -6336,6 +6759,8 @@ share/icons/hicolor/64x64/apps/atom.png
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-resolve/.gitted/objects/9e
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-resolve/.gitted/objects/9f
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-resolve/.gitted/objects/a0
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-resolve/.gitted/objects/a1
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-resolve/.gitted/objects/a2
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-resolve/.gitted/objects/a3
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-resolve/.gitted/objects/a4
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-resolve/.gitted/objects/a5
@@ -6365,6 +6790,7 @@ share/icons/hicolor/64x64/apps/atom.png
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-resolve/.gitted/objects/ca
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-resolve/.gitted/objects/cb
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-resolve/.gitted/objects/cc
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-resolve/.gitted/objects/cd
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-resolve/.gitted/objects/ce
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-resolve/.gitted/objects/cf
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-resolve/.gitted/objects/d0
@@ -6403,6 +6829,7 @@ share/icons/hicolor/64x64/apps/atom.png
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-resolve/.gitted/objects/f6
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-resolve/.gitted/objects/f7
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-resolve/.gitted/objects/f8
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-resolve/.gitted/objects/f9
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-resolve/.gitted/objects/fa
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-resolve/.gitted/objects/fb
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/merge-resolve/.gitted/objects/fc
@@ -6481,6 +6908,7 @@ share/icons/hicolor/64x64/apps/atom.png
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/nasty/.gitted/objects/02
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/nasty/.gitted/objects/04
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/nasty/.gitted/objects/05
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/nasty/.gitted/objects/07
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/nasty/.gitted/objects/09
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/nasty/.gitted/objects/0a
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/nasty/.gitted/objects/0b
@@ -6497,12 +6925,14 @@ share/icons/hicolor/64x64/apps/atom.png
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/nasty/.gitted/objects/24
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/nasty/.gitted/objects/26
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/nasty/.gitted/objects/27
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/nasty/.gitted/objects/2a
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/nasty/.gitted/objects/2b
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/nasty/.gitted/objects/2d
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/nasty/.gitted/objects/35
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/nasty/.gitted/objects/38
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/nasty/.gitted/objects/39
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/nasty/.gitted/objects/3b
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/nasty/.gitted/objects/42
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/nasty/.gitted/objects/44
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/nasty/.gitted/objects/46
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/nasty/.gitted/objects/4a
@@ -6688,6 +7118,7 @@ share/icons/hicolor/64x64/apps/atom.png
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/rebase/.gitted/objects/12
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/rebase/.gitted/objects/19
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/rebase/.gitted/objects/1b
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/rebase/.gitted/objects/1d
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/rebase/.gitted/objects/1f
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/rebase/.gitted/objects/20
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/rebase/.gitted/objects/22
@@ -6711,6 +7142,7 @@ share/icons/hicolor/64x64/apps/atom.png
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/rebase/.gitted/objects/50
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/rebase/.gitted/objects/53
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/rebase/.gitted/objects/58
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/rebase/.gitted/objects/5a
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/rebase/.gitted/objects/5b
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/rebase/.gitted/objects/60
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/rebase/.gitted/objects/61
@@ -6721,6 +7153,7 @@ share/icons/hicolor/64x64/apps/atom.png
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/rebase/.gitted/objects/6d
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/rebase/.gitted/objects/73
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/rebase/.gitted/objects/74
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/rebase/.gitted/objects/77
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/rebase/.gitted/objects/78
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/rebase/.gitted/objects/79
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/rebase/.gitted/objects/7a
@@ -6732,6 +7165,7 @@ share/icons/hicolor/64x64/apps/atom.png
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/rebase/.gitted/objects/86
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/rebase/.gitted/objects/8d
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/rebase/.gitted/objects/8f
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/rebase/.gitted/objects/91
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/rebase/.gitted/objects/92
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/rebase/.gitted/objects/95
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/rebase/.gitted/objects/9a
@@ -6753,6 +7187,7 @@ share/icons/hicolor/64x64/apps/atom.png
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/rebase/.gitted/objects/cb
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/rebase/.gitted/objects/d4
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/rebase/.gitted/objects/d6
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/rebase/.gitted/objects/d9
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/rebase/.gitted/objects/da
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/rebase/.gitted/objects/dc
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/rebase/.gitted/objects/df
@@ -6772,6 +7207,20 @@ share/icons/hicolor/64x64/apps/atom.png
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/rebase/.gitted/objects/fc
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/rebase/.gitted/objects/ff
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/rebase/.gitted/refs/heads
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/rebase-submodule/.gitted/info
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/rebase-submodule/.gitted/objects/01
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/rebase-submodule/.gitted/objects/17
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/rebase-submodule/.gitted/objects/42
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/rebase-submodule/.gitted/objects/4b
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/rebase-submodule/.gitted/objects/5b
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/rebase-submodule/.gitted/objects/68
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/rebase-submodule/.gitted/objects/7c
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/rebase-submodule/.gitted/objects/a7
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/rebase-submodule/.gitted/objects/ab
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/rebase-submodule/.gitted/objects/c4
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/rebase-submodule/.gitted/objects/f3
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/rebase-submodule/.gitted/objects/ff
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/rebase-submodule/.gitted/refs/heads
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/redundant.git/objects/info
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/redundant.git/objects/pack
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/redundant.git/refs
@@ -6782,6 +7231,7 @@ share/icons/hicolor/64x64/apps/atom.png
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/renames/.gitted/objects/19
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/renames/.gitted/objects/1c
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/renames/.gitted/objects/2b
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/renames/.gitted/objects/2c
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/renames/.gitted/objects/31
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/renames/.gitted/objects/35
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/renames/.gitted/objects/36
@@ -6794,10 +7244,14 @@ share/icons/hicolor/64x64/apps/atom.png
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/renames/.gitted/objects/5e
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/renames/.gitted/objects/61
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/renames/.gitted/objects/66
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/renames/.gitted/objects/84
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/renames/.gitted/objects/89
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/renames/.gitted/objects/93
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/renames/.gitted/objects/95
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/renames/.gitted/objects/9a
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/renames/.gitted/objects/ad
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/renames/.gitted/objects/b9
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/renames/.gitted/objects/be
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/renames/.gitted/objects/d7
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/renames/.gitted/objects/ea
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/renames/.gitted/objects/f9
@@ -6853,6 +7307,10 @@ share/icons/hicolor/64x64/apps/atom.png
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/revert/.gitted/objects/ee
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/revert/.gitted/objects/f4
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/revert/.gitted/refs/heads
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/revwalk.git/objects/info
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/revwalk.git/objects/pack
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/revwalk.git/refs
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/sha1
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/shallow.git/objects/pack
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/shallow.git/refs
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/short_tag.git/objects/4a
@@ -6860,6 +7318,9 @@ share/icons/hicolor/64x64/apps/atom.png
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/short_tag.git/objects/5d
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/short_tag.git/objects/e6
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/short_tag.git/refs/heads
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/splitindex/.gitted/info
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/splitindex/.gitted/objects
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/splitindex/.gitted/refs
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/status/.gitted/info
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/status/.gitted/logs/refs/heads
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/status/.gitted/objects/00
@@ -7065,6 +7526,158 @@ share/icons/hicolor/64x64/apps/atom.png
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod2_target/.gitted/objects/88
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod2_target/.gitted/objects/d0
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod2_target/.gitted/refs/heads
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/EIGHT/objects/06
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/EIGHT/objects/0e
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/EIGHT/objects/17
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/EIGHT/objects/41
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/EIGHT/objects/48
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/EIGHT/objects/5e
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/EIGHT/objects/6b
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/EIGHT/objects/73
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/EIGHT/objects/78
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/EIGHT/objects/88
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/EIGHT/objects/d0
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/EIGHT/refs/heads
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/EIGHT/refs/remotes/origin
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/Five/objects/06
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/Five/objects/0e
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/Five/objects/17
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/Five/objects/41
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/Five/objects/48
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/Five/objects/5e
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/Five/objects/6b
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/Five/objects/73
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/Five/objects/78
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/Five/objects/88
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/Five/objects/d0
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/Five/refs/heads
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/Five/refs/remotes/origin
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/FoUr/objects/06
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/FoUr/objects/0e
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/FoUr/objects/17
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/FoUr/objects/41
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/FoUr/objects/48
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/FoUr/objects/5e
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/FoUr/objects/6b
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/FoUr/objects/73
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/FoUr/objects/78
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/FoUr/objects/88
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/FoUr/objects/d0
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/FoUr/refs/heads
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/FoUr/refs/remotes/origin
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/One/objects/06
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/One/objects/0e
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/One/objects/17
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/One/objects/41
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/One/objects/48
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/One/objects/5e
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/One/objects/6b
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/One/objects/73
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/One/objects/78
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/One/objects/88
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/One/objects/d0
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/One/refs/heads
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/One/refs/remotes/origin
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/TEN/objects/06
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/TEN/objects/0e
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/TEN/objects/17
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/TEN/objects/41
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/TEN/objects/48
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/TEN/objects/5e
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/TEN/objects/6b
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/TEN/objects/73
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/TEN/objects/78
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/TEN/objects/88
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/TEN/objects/d0
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/TEN/refs/heads
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/TEN/refs/remotes/origin
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/TWO/objects/06
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/TWO/objects/0e
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/TWO/objects/17
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/TWO/objects/41
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/TWO/objects/48
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/TWO/objects/5e
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/TWO/objects/6b
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/TWO/objects/73
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/TWO/objects/78
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/TWO/objects/88
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/TWO/objects/d0
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/TWO/refs/heads
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/TWO/refs/remotes/origin
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/nine/objects/06
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/nine/objects/0e
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/nine/objects/17
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/nine/objects/41
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/nine/objects/48
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/nine/objects/5e
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/nine/objects/6b
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/nine/objects/73
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/nine/objects/78
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/nine/objects/88
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/nine/objects/d0
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/nine/refs/heads
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/nine/refs/remotes/origin
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/sEvEn/objects/06
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/sEvEn/objects/0e
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/sEvEn/objects/17
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/sEvEn/objects/41
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/sEvEn/objects/48
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/sEvEn/objects/5e
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/sEvEn/objects/6b
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/sEvEn/objects/73
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/sEvEn/objects/78
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/sEvEn/objects/88
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/sEvEn/objects/d0
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/sEvEn/refs/heads
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/sEvEn/refs/remotes/origin
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/six/objects/06
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/six/objects/0e
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/six/objects/17
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/six/objects/41
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/six/objects/48
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/six/objects/5e
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/six/objects/6b
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/six/objects/73
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/six/objects/78
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/six/objects/88
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/six/objects/d0
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/six/refs/heads
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/six/refs/remotes/origin
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/three/objects/06
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/three/objects/0e
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/three/objects/17
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/three/objects/41
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/three/objects/48
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/three/objects/5e
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/three/objects/6b
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/three/objects/73
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/three/objects/78
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/three/objects/88
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/three/objects/d0
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/three/refs/heads
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/modules/three/refs/remotes/origin
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/objects/0d
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/objects/0e
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/objects/33
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/objects/4f
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/objects/5b
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/objects/6e
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/objects/6f
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/objects/90
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/objects/d0
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/objects/e6
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/objects/e7
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/.gitted/refs/heads
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/EIGHT
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/Five
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/FoUr
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/One
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/TEN
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/TWO
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/nine
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/sEvEn
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/six
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submod3/three
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submodule_simple/.gitted/objects/22
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submodule_simple/.gitted/objects/5b
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submodule_simple/.gitted/objects/a8
@@ -7090,6 +7703,7 @@ share/icons/hicolor/64x64/apps/atom.png
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submodules/.gitted/objects/info
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submodules/.gitted/objects/pack
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submodules/.gitted/refs/heads
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submodules/.gitted/worktrees/submodules-worktree-parent
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submodules/testrepo/.gitted/info
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submodules/testrepo/.gitted/logs/refs/heads
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submodules/testrepo/.gitted/objects/13
@@ -7128,13 +7742,25 @@ share/icons/hicolor/64x64/apps/atom.png
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submodules/testrepo/.gitted/objects/pack
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submodules/testrepo/.gitted/refs/heads
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submodules/testrepo/.gitted/refs/remotes/origin
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submodules/testrepo/.gitted/worktrees/submodules-worktree-child
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submodules-worktree-child
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submodules-worktree-parent
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submodules.git/objects/26
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submodules.git/objects/78
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submodules.git/objects/97
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submodules.git/objects/b6
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submodules.git/objects/d5
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submodules.git/objects/e3
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submodules.git/objects/info
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submodules.git/objects/pack
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/submodules.git/refs/heads
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/super/.gitted/objects/51
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/super/.gitted/objects/79
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/super/.gitted/objects/d7
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/super/.gitted/refs/heads
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/template/branches
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/template/hooks
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/template/info
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo/.gitted/logs/refs/heads
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo/.gitted/objects/09
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo/.gitted/objects/13
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo/.gitted/objects/14
@@ -7149,6 +7775,7 @@ share/icons/hicolor/64x64/apps/atom.png
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo/.gitted/objects/45
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo/.gitted/objects/4a
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo/.gitted/objects/4e
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo/.gitted/objects/57
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo/.gitted/objects/5b
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo/.gitted/objects/62
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo/.gitted/objects/66
@@ -7161,12 +7788,17 @@ share/icons/hicolor/64x64/apps/atom.png
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo/.gitted/objects/84
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo/.gitted/objects/87
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo/.gitted/objects/94
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo/.gitted/objects/97
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo/.gitted/objects/99
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo/.gitted/objects/9a
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo/.gitted/objects/9b
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo/.gitted/objects/9f
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo/.gitted/objects/a3
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo/.gitted/objects/a4
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo/.gitted/objects/a6
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo/.gitted/objects/a7
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo/.gitted/objects/a8
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo/.gitted/objects/ad
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo/.gitted/objects/ae
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo/.gitted/objects/af
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo/.gitted/objects/b2
@@ -7186,10 +7818,13 @@ share/icons/hicolor/64x64/apps/atom.png
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo/.gitted/objects/ee
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo/.gitted/objects/f1
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo/.gitted/objects/f6
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo/.gitted/objects/f9
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo/.gitted/objects/fa
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo/.gitted/objects/fd
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo/.gitted/objects/pack
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo/.gitted/refs/heads
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo/.gitted/worktrees/testrepo-worktree/logs
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo-worktree
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo.git/logs/refs/heads
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo.git/logs/refs/remotes/origin
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo.git/logs/refs/remotes/test
@@ -7204,16 +7839,20 @@ share/icons/hicolor/64x64/apps/atom.png
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo.git/objects/2d
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo.git/objects/32
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo.git/objects/36
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo.git/objects/43
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo.git/objects/45
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo.git/objects/4a
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo.git/objects/4b
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo.git/objects/52
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo.git/objects/5b
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo.git/objects/5d
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo.git/objects/5f
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo.git/objects/75
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo.git/objects/76
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo.git/objects/7b
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo.git/objects/81
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo.git/objects/84
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo.git/objects/8e
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo.git/objects/94
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo.git/objects/9a
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo.git/objects/9f
@@ -7224,13 +7863,17 @@ share/icons/hicolor/64x64/apps/atom.png
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo.git/objects/ae
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo.git/objects/b2
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo.git/objects/b6
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo.git/objects/b9
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo.git/objects/bd
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo.git/objects/be
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo.git/objects/c4
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo.git/objects/d0
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo.git/objects/d6
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo.git/objects/d7
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo.git/objects/db
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo.git/objects/e6
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo.git/objects/e7
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo.git/objects/f0
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo.git/objects/f1
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo.git/objects/f6
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo.git/objects/fa
@@ -7247,6 +7890,7 @@ share/icons/hicolor/64x64/apps/atom.png
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo2/.gitted/objects/18
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo2/.gitted/objects/2d
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo2/.gitted/objects/36
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo2/.gitted/objects/39
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo2/.gitted/objects/45
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo2/.gitted/objects/4a
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/resources/testrepo2/.gitted/objects/5b
@@ -7427,13 +8071,15 @@ share/icons/hicolor/64x64/apps/atom.png
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/revwalk
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/stash
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/status
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/stream
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/stress
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/submodule
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/threads
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/trace/windows
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/transport
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/transports/smart
 @dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/win32
-@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/src
+@dir %%DATADIR%%/resources/app/apm/node_modules/git-utils/deps/libgit2/tests/worktree
 @dir %%DATADIR%%/resources/app/apm/node_modules/github-from-package/example
 @dir %%DATADIR%%/resources/app/apm/node_modules/github-from-package/test
 @dir %%DATADIR%%/resources/app/apm/node_modules/json-schema/draft-03/examples
@@ -7595,8 +8241,6 @@ share/icons/hicolor/64x64/apps/atom.png
 @dir %%DATADIR%%/resources/app/apm/node_modules/oniguruma/deps/onig/m4
 @dir %%DATADIR%%/resources/app/apm/node_modules/oniguruma/deps/onig/sample
 @dir %%DATADIR%%/resources/app/apm/node_modules/oniguruma/deps/onig/win32
-@dir %%DATADIR%%/resources/app/apm/node_modules/optimist/example
-@dir %%DATADIR%%/resources/app/apm/node_modules/optimist/test/_
 @dir %%DATADIR%%/resources/app/apm/node_modules/performance-now/test/scripts
 @dir %%DATADIR%%/resources/app/apm/node_modules/prebuild-install/node_modules/minimist/example
 @dir %%DATADIR%%/resources/app/apm/node_modules/prebuild-install/node_modules/minimist/test
@@ -7612,9 +8256,6 @@ share/icons/hicolor/64x64/apps/atom.png
 @dir %%DATADIR%%/resources/app/apm/node_modules/tar-fs/test/fixtures/d/sub-dir
 @dir %%DATADIR%%/resources/app/apm/node_modules/tar-fs/test/fixtures/d/sub-files
 @dir %%DATADIR%%/resources/app/apm/node_modules/tar-fs/test/fixtures/e/directory
-@dir %%DATADIR%%/resources/app/apm/node_modules/temp/examples
-@dir %%DATADIR%%/resources/app/apm/node_modules/temp/node_modules/rimraf/test
-@dir %%DATADIR%%/resources/app/apm/node_modules/temp/test
 @dir %%DATADIR%%/resources/app/apm/node_modules/tmp/test/symlinkme
 @dir %%DATADIR%%/resources/app/apm/node_modules/touch/node_modules/nopt/examples
 @dir %%DATADIR%%/resources/app/apm/node_modules/touch/test

@@ -2,8 +2,7 @@
 
 PORTNAME=	atom
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.46.0
-PORTREVISION=	1
+DISTVERSION=	1.47.0
 CATEGORIES=	editors
 MASTER_SITES=	https://nodejs.org/dist/v${APM_NODE_VER}/:node \
 		https://github.com/tagattie/FreeBSD-Atom/releases/download/v1.42.0/:jasmine_tagged \
@@ -29,6 +28,7 @@ BUILD_DEPENDS=	zip:archivers/zip \
 		node10>:www/node10 \
 		npm-node10>0:www/npm-node10
 LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-atk \
+		libatspi.so:accessibility/at-spi2-core \
 		libsnappy.so:archivers/snappy \
 		libasound.so:audio/alsa-lib \
 		libFLAC.so:audio/flac \
@@ -39,9 +39,12 @@ LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-atk \
 		libpci.so:devel/libpci \
 		libnspr4.so:devel/nspr \
 		libpcre2-8.so:devel/pcre2 \
+		libre2.so:devel/re2 \
+		liblcms2.so:graphics/lcms2 \
 		libdrm.so:graphics/libdrm \
 		libwebp.so:graphics/webp \
 		libavcodec.so:multimedia/ffmpeg \
+		libvpx.so:multimedia/libvpx \
 		libopenh264.so:multimedia/openh264 \
 		libcups.so:print/cups \
 		libfreetype.so:print/freetype2 \
@@ -60,7 +63,7 @@ USES=		desktop-file-utils gl gnome jpeg localbase:ldflags pkgconfig \
 
 USE_GITHUB=	yes
 
-.include "${.CURDIR}/../../devel/electron4/Makefile.version"
+.include "${.CURDIR}/../../devel/electron5/Makefile.version"
 # See ${WRKSRC}/apm/node_modules/atom-package-manager/BUNDLED_NODE_VERSION for APM_NODE_VER
 APM_NODE_VER=	10.2.1
 
