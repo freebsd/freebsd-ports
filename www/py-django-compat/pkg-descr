@@ -1,0 +1,9 @@
+Forward and backwards compatibility layer for different Django versions.
+
+Reasons to use django-compat:
+
+* Be able to use LTS versions of Django and support newer versions in an app
+* Use features from newer Django versions in an old one
+* Manage and master the gap between different framework versions
+
+WWW: https://github.com/arteria/django-compat
