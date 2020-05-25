@@ -9,6 +9,7 @@ include/lilv-0/lilv/lilvmm.hpp
 lib/liblilv-0.so
 lib/liblilv-0.so.0
 lib/liblilv-0.so.%%VERSION%%
+%%PYTHON_SITELIBDIR%%/lilv.py
 libdata/pkgconfig/lilv-0.pc
 share/man/man1/lv2apply.1.gz
 share/man/man1/lv2info.1.gz
