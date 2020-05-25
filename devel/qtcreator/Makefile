@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qtcreator
-DISTVERSION=	4.11.2
+DISTVERSION=	4.12.1
 CATEGORIES=	devel
 MASTER_SITES=	QT/official_releases/qtcreator/${DISTVERSION:R}/${DISTVERSION}
 DISTNAME=	qt-creator-opensource-src-${DISTVERSION}
@@ -73,7 +73,6 @@ SHEBANG_FILES=		tests/system/tools/objectsToTable.py \
 			scripts/packagePlugins.py \
 			scripts/ninjawrapper.py \
 			scripts/checkInstalledFiles.py \
-			scripts/generateClangTidyChecks.py \
 			scripts/createDistPackage.py \
 			scripts/createDevPackage.py \
 			scripts/deployqt.py \
