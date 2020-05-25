@@ -10,6 +10,8 @@ COMMENT=	Fast, flexible machine learning library
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN_i386=	undefined symbol: __atomic_load
+
 BUILD_DEPENDS=	ensmallen>0:math/ensmallen \
 		${LOCALBASE}/include/stb/stb_image.h:devel/stb
 LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs \
