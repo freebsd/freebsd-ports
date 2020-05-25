@@ -12,6 +12,9 @@ COMMENT=	Common API for running Django on non-relational/NoSQL databases
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	No longer maintained, not compatible with Django 1.11+
+EXPIRATION_DATE=	2020-06-01
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django111>0:www/py-django111@${PY_FLAVOR}
 
 USES=		python
