@@ -18,6 +18,8 @@ USE_LDCONFIG=	yes
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 
+CXXFLAGS+=	-Wno-error
+
 post-install:
 	@${MV} ${STAGEDIR}${DATADIR}/cmake ${STAGEDIR}${PREFIX}/lib/
 	@${RMDIR} ${STAGEDIR}${DATADIR}
