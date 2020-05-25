@@ -22,11 +22,6 @@ USE_PHP=	phar pdo pdo_odbc pdo_sqlite json gd imap \
 		ldap openssl sockets simplexml xml session odbc
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	${PORTNAME}
-GH_PROJECT=	${PORTNAME}
-GH_TAGNAME=	${PORTVERSION}
-
-DEFAULT_VERSIONS+=php=7.2
 
 VARBASE=	var
 
