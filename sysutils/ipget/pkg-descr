@@ -1,0 +1,8 @@
+ipget is a standalone program analogous to GNU wget. Unlike wget though, ipget
+specializes in downloading files and directory structures from the IPFS network.
+
+ipget includes its own IPFS node, so you don't need IPFS installed on your
+system. This makes it ideal for users and projects that want a simple utility
+for whenever they want to retrieve files from IPFS.
+
+WWW: https://github.com/ipfs/ipget
