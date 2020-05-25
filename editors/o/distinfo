@@ -1,6 +1,6 @@
-TIMESTAMP = 1590260516
-SHA256 (xyproto-o-2.29.0_GH0.tar.gz) = 49a5a87394798781000065f3955c766aba2f18f637e3ede3aabd2c42d70915da
-SIZE (xyproto-o-2.29.0_GH0.tar.gz) = 973811
+TIMESTAMP = 1590378825
+SHA256 (xyproto-o-2.29.1_GH0.tar.gz) = 6a4e3527eba64fa86a1ea6b51303c4a1bc94a527bb28baf5e067b7830e626d0f
+SIZE (xyproto-o-2.29.1_GH0.tar.gz) = 984090
 SHA256 (atotto-clipboard-v0.1.2_GH0.tar.gz) = 84704a60eb4de90eaebe6e8cbfab30bb53d103c26c25560d67d13469fd17934e
 SIZE (atotto-clipboard-v0.1.2_GH0.tar.gz) = 4478
 SHA256 (golang-sys-fe76b779f299_GH0.tar.gz) = 84cda22938ed183a5629979d1f16ab82aa2fab1d2bbb078b6440deada7b360f5
