@@ -18,7 +18,7 @@ Add the override-cache-ttl feature.
  	obj = NULL;
 +	result = named_config_get(maps, "override-cache-ttl", &obj);
 +	INSIST(result == ISC_R_SUCCESS);
-+	view->overridecachettl = cfg_obj_asuint32(obj);
++	view->overridecachettl = cfg_obj_asduration(obj);
 +
 +	obj = NULL;
  	result = named_config_get(maps, "max-cache-ttl", &obj);
