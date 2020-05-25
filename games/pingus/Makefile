@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/signals2.hpp:devel/boost-libs
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		compiler:c++11-lib gl iconv scons sdl tar:bzip2 xorg
+USES=		compiler:c++11-lib gl iconv scons:python2 sdl tar:bzip2 xorg
 USE_GL=		gl
 USE_SDL=	sdl image mixer
 LIBS+=		${ICONV_LIB}

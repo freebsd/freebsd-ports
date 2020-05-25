@@ -14,7 +14,7 @@ COMMENT=	Westwood red alert game engine
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/gpl.txt
 
-USES=		compiler:c++11-lang scons sdl
+USES=		compiler:c++11-lang scons:python2 sdl
 USE_SDL=	sdl mixer
 
 WRKSRC=		${WRKDIR}/freera++

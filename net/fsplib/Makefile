@@ -13,7 +13,7 @@ LICENSE_NAME=	FSP software suite copyright
 LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		scons
+USES=		scons:python2
 
 CCFLAGS=	${CXXFLAGS}
 

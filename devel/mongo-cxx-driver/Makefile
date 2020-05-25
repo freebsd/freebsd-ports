@@ -31,7 +31,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	mongodb
 GH_PROJECT=	mongo-cxx-driver
 
-USES=		compiler:c++11-lang scons ssl
+USES=		compiler:c++11-lang scons:python2 ssl
 MAKE_ARGS=	--prefix=${STAGEDIR}${PREFIX} \
 		--cc=${CC} \
 		--cxx=${CXX}

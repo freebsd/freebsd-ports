@@ -3,7 +3,7 @@
 
 PORTNAME=	serf
 PORTVERSION=	1.3.9
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 MASTER_SITES=	APACHE/serf
 
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS+=	libapr-1.so:devel/apr1
 
-USES=		scons ssl tar:bzip2 cpe
+USES=		scons:python2 ssl tar:bzip2 cpe
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=		DOCS

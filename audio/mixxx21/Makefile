@@ -32,7 +32,7 @@ LIB_DEPENDS=	libchromaprint.so:audio/chromaprint \
 		libtag.so:audio/taglib \
 		libprotobuf.so:devel/protobuf
 
-USES=		compiler:c++11-lang gl iconv qt:5 pkgconfig scons xorg
+USES=		compiler:c++11-lang gl iconv qt:5 pkgconfig scons:python2 xorg
 USE_XORG=	x11
 USE_GL=		gl glu
 USE_GITHUB=	yes

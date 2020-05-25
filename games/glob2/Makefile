@@ -21,7 +21,7 @@ LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
 
 OPTIONS_DEFINE=	DOCS PORTAUDIO
 
-USES=		compiler:c++11-lang gl gnome pkgconfig scons sdl
+USES=		compiler:c++11-lang gl gnome pkgconfig scons:python2 sdl
 USE_SDL=	image net sdl ttf
 USE_GL=		gl glu
 MAKE_ARGS=	CCFLAGS="${CFLAGS}" \

@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		bison gnome pkgconfig scons sdl
+USES=		bison gnome pkgconfig scons:python2 sdl
 USE_GNOME=	gtk20 libxml2
 USE_SDL=	sdl
 

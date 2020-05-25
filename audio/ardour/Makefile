@@ -31,7 +31,7 @@ LIB_DEPENDS=	libaubio.so:audio/aubio \
 		libsamplerate.so:audio/libsamplerate \
 		libsndfile.so:audio/libsndfile
 
-USES=		cpe gettext gnome pkgconfig scons tar:bzip2
+USES=		cpe gettext gnome pkgconfig scons:python2 tar:bzip2
 MAKE_ARGS+=	SYSLIBS=yes PREFIX=${PREFIX} NLS=yes
 CFLAGS+=	-I${LOCALBASE}/include -DHAVE_AUBIO4
 USE_GNOME=	atk atkmm cairo cairomm gdkpixbuf2 glib20 glibmm gtk20 gtkmm24 \

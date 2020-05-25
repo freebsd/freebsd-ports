@@ -16,7 +16,7 @@ LIB_DEPENDS=	libargp.so:devel/argp-standalone \
 		libglfw.so:graphics/glfw \
 		libpng.so:graphics/png
 
-USES=		compiler:c++11-lang pkgconfig scons gnome gl
+USES=		compiler:c++11-lang pkgconfig scons:python2 gnome gl
 USE_GITHUB=	yes
 GH_ACCOUNT=	guillaumechereau
 USE_GNOME=	cairo gtk30

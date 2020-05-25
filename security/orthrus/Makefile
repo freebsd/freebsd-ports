@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libapr-1.so:devel/apr1
 
-USES=		iconv scons tar:bzip2
+USES=		iconv scons:python2 tar:bzip2
 MAKE_ARGS=	DEBUG=False --install-sandbox=${STAGEDIR}
 USE_LDCONFIG=	yes
 

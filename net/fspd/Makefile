@@ -13,7 +13,7 @@ COMMENT=	FSP daemon, clients, and scanner
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-USES=		scons tar:bzip2
+USES=		scons:python2 tar:bzip2
 
 CLIENTS=	fbye fcatcmd fcdcmd fducmd ffindcmd fgetcmd fgrabcmd fhostcmd \
 		flscmd fmkdir fmvcmd fprocmd fput frmcmd frmdircmd fsetupcmd \

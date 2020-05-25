@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LDFLAGS+=	-lpthreads
 
-USES=		gnome scons sdl zip
+USES=		gnome scons:python2 sdl zip
 USE_SDL=	sdl mixer image
 USE_GNOME=	libxml2
 MAKE_ARGS+=	datadir="${DATADIR}"

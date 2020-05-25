@@ -8,8 +8,7 @@ CATEGORIES=	emulators
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	gem5 Simulator System
 
-BUILD_DEPENDS=	swig3.0:devel/swig30 \
-		scons:devel/scons
+BUILD_DEPENDS=	swig3.0:devel/swig30
 
 BROKEN_armv6=		fails to link: undefined reference to HDLcd::BUS_OPTIONS_RESETV
 BROKEN_armv7=		fails to link: undefined reference to HDLcd::BUS_OPTIONS_RESETV
@@ -18,12 +17,15 @@ BROKEN_mips64=		fails to build: claims that gcc version 4.6 or newer required
 BROKEN_FreeBSD_11_powerpc64=	fails to build: claims that gcc version 4.6 or newer required
 BROKEN_FreeBSD_12_powerpc64=	fails to build: claims that gcc version 4.6 or newer required
 
+USES=		gmake scons:python2
+
 DATE=		20140422
 USE_GITHUB=	yes
 GH_ACCOUNT=	CTSRD-CHERI
 GH_TAGNAME=	99d65cc
-SWIG_BIN=	swig3.0
-USES=		gmake
+
+ALL_TARGET=	build/ARM/gem5.opt
+MAKE_ENV=	SWIG="${LOCALBASE}/bin/swig3.0"
 
 .include <bsd.port.pre.mk>
 
@@ -33,10 +35,8 @@ post-patch:
 		${WRKSRC}/src/dev/terminal.cc \
 		${WRKSRC}/util/term/term.c
 
-do-build:
+pre-build:
 	cd ${WRKSRC} && ${GMAKE} -C util/term
-	cd ${WRKSRC} && ${SETENV} SWIG="${PREFIX}/bin/${SWIG_BIN}" scons \
-		build/ARM/gem5.opt
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${PORTNAME} \

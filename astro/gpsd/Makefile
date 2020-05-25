@@ -12,7 +12,7 @@ COMMENT=	Daemon that monitors one or more GPSes attached to a host computer
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe pathfix pkgconfig python:3.6+ scons shebangfix
+USES=		cpe pathfix pkgconfig python:3.6+ scons:python2 shebangfix
 CPE_VENDOR=	gpsd_project
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	gpsd

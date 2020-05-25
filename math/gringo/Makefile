@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	re2c:devel/re2c
 
-USES=		bison compiler:c++11-lib python:2.7 scons
+USES=		bison compiler:c++11-lib python:2.7 scons:python2
 MAKE_ARGS=	${MAKE_ENV}
 CXXFLAGS+=	-std=c++11
 MAKE_ENV=	WITH_LUA=no

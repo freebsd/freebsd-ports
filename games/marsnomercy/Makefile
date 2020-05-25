@@ -13,10 +13,9 @@ COMMENT=	Turn-based strategy game setting on Mars
 
 LICENSE=	GPLv2 # version unspecified actually
 
-BUILD_DEPENDS=	scons:devel/scons
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		compiler gl sdl
+USES=		compiler gl scons:python2 sdl
 USE_GL=		gl
 USE_SDL=	sdl image ttf
 SCONS_ARGS=	prefix=${PREFIX}
@@ -46,9 +45,6 @@ SCONS_ARGS+=	with_opengl=1
 .else
 SCONS_ARGS+=	with_opengl=0
 .endif
-
-do-build:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} scons ${SCONS_ARGS}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/mars-nomercy ${STAGEDIR}${PREFIX}/bin/

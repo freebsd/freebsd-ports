@@ -10,7 +10,7 @@ MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Ftp-like client for the FSP service
 
 CONFLICTS_INSTALL=	alliance-*
-USES=		tar:bzip2 scons
+USES=		tar:bzip2 scons:python2
 MAKE_ARGS=	prefix=${PREFIX}
 
 PLIST_FILES=	bin/fsp share/man/man1/fsp.1.gz

@@ -14,7 +14,7 @@ COMMENT=	Open source World War II German submarine simulation
 LIB_DEPENDS=	libfftw3.so:math/fftw3
 RUN_DEPENDS=	dangerdeep-data>0:games/dangerdeep-data
 
-USES=		compiler gl scons sdl
+USES=		compiler gl scons:python2 sdl
 USE_GL=		yes
 USE_SDL=	sdl mixer image net
 

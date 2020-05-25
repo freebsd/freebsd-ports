@@ -21,7 +21,7 @@ GH_TAGNAME=	a8bd811
 
 MAKE_ARGS+=	--prefix=${PREFIX}
 USE_LDCONFIG=	yes
-USES=		gmake iconv perl5 pkgconfig python:2.7 scons shebangfix
+USES=		gmake iconv perl5 pkgconfig python:2.7 scons:python2 shebangfix
 USE_PERL5=	build
 SHEBANG_FILES=	python/*.py
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}

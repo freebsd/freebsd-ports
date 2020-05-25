@@ -16,7 +16,7 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libkate.so:multimedia/libkate \
 		libtheora.so:multimedia/libtheora
 
-USES=		iconv pkgconfig scons tar:bzip2
+USES=		iconv pkgconfig scons:python2 tar:bzip2
 MAKE_ARGS=	APPEND_CCFLAGS="${CFLAGS} ${CPPFLAGS}" \
 		APPEND_LINKFLAGS="${LDFLAGS} ${LIBS}"
 

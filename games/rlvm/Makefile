@@ -28,7 +28,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:x11-fonts/dejavu
 USE_GITHUB=	yes
 GH_ACCOUNT=	eglaysher
 
-USES=		compiler:c++11-lib gl gnome pkgconfig scons sdl
+USES=		compiler:c++11-lib gl gnome pkgconfig scons:python2 sdl
 USE_GL=		glew glu
 USE_GNOME=	gtk20
 USE_SDL=	image mixer ttf

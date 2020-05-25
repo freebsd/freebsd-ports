@@ -22,7 +22,7 @@ BUILD_DEPENDS=	as:devel/binutils
 LIB_DEPENDS=	libphysfs.so:devel/physfs \
 		libpng.so:graphics/png
 
-USES=		compiler:c++14-lang gl localbase:ldflags pkgconfig scons sdl tar:xz
+USES=		compiler:c++14-lang gl localbase:ldflags pkgconfig scons:python2 sdl tar:xz
 USE_GL=		gl glu
 USE_SDL=	mixer sdl
 
