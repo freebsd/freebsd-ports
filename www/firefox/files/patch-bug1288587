@@ -2,48 +2,15 @@ diff --git a/build/moz.configure/init.configure b/build/moz.configure/init.confi
 index 855214a..1e91d51 100644
 --- build/moz.configure/init.configure
 +++ build/moz.configure/init.configure
-@@ -252,6 +252,7 @@ option(env='PYTHON', nargs=1, help='Python 2.7 interpr
- @imports(_from='mozbuild.pythonutil', _import='find_python2_executable')
- @imports(_from='mozbuild.pythonutil', _import='python_executable_version')
- @imports(_from='six', _import='ensure_text')
-+@imports(_from='__builtin__', _import='KeyError')
- def virtualenv_python2(env_python, build_env, mozillabuild, mozconfig, help):
-     if help:
-         return
-@@ -283,6 +284,12 @@ def virtualenv_python2(env_python, build_env, mozillab
-             python = mozconfig['vars']['added']['PYTHON']
-         elif 'PYTHON' in mozconfig['vars']['modified']:
-             python = mozconfig['vars']['modified']['PYTHON'][1]
-+        for i in ('env', 'vars'):
-+            for j in ('added', 'modified'):
-+                try:
-+                    del mozconfig[i][j]['PYTHON']
-+                except KeyError:
-+                    pass
- 
-     log.debug("python2: executable from configuration: %r" % python)
- 
-@@ -365,7 +372,10 @@ def virtualenv_python2(env_python, build_env, mozillab
-                 sys.executable, manager.python_path))
-             log.info('Reexecuting in the virtualenv')
-             if env_python:
--                del os.environ['PYTHON']
-+                try:
-+                    del os.environ['PYTHON']
-+                except KeyError:
-+                    pass
-             # One would prefer to use os.execl, but that's completely borked on
-             # Windows.
-             sys.exit(subprocess.call([python] + sys.argv))
-@@ -468,6 +478,7 @@ option(env='PYTHON3', nargs=1, help='Python 3 interpre
+@@ -252,6 +252,7 @@ option(env='PYTHON3', nargs=1, help='Python 3 interpre
  @imports(_from='mozbuild.pythonutil', _import='find_python3_executable')
  @imports(_from='mozbuild.pythonutil', _import='python_executable_version')
  @imports(_from='six', _import='ensure_text')
 +@imports(_from='__builtin__', _import='KeyError')
- def virtualenv_python3(env_python, build_env, mozillabuild, mozconfig, help):
+ def virtualenv_python3(env_python, build_env, mozconfig, help):
+     # Avoid re-executing python when running configure --help.
      if help:
-         return
-@@ -503,6 +514,12 @@ def virtualenv_python3(env_python, build_env, mozillab
+@@ -284,6 +285,12 @@ def virtualenv_python3(env_python, build_env, mozconfi
              python = mozconfig['vars']['added']['PYTHON3']
          elif 'PYTHON3' in mozconfig['vars']['modified']:
              python = mozconfig['vars']['modified']['PYTHON3'][1]
@@ -56,7 +23,7 @@ index 855214a..1e91d51 100644
  
      log.debug("python3: executable from configuration: %r" % python)
  
-@@ -583,7 +600,10 @@ def virtualenv_python3(env_python, build_env, mozillab
+@@ -373,7 +380,10 @@ def virtualenv_python3(env_python, build_env, mozconfi
                  sys.executable, manager.python_path))
              log.info('Re-executing in the virtualenv')
              if env_python:
