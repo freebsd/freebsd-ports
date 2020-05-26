@@ -12,10 +12,10 @@ COMMENT=	File system general utilities for Python
 
 LICENSE=	MIT
 
-OPTIONS_DEFINE=	DOCS
-
 USES=		python
 USE_PYTHON=	distutils autoplist
+
+OPTIONS_DEFINE=	DOCS
 
 DOCS_BUILD_DEPENDS=	${PY_SPHINX}
 
@@ -23,10 +23,10 @@ DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 
 PORTDOCS=	*
 
-post-build:
+post-build-DOCS-on:
 	@(cd ${WRKSRC}/docs ; ${MAKE} SPHINXBUILD=sphinx-build-${PYTHON_VER} html)
 
-post-install:
+post-install-DOCS-on:
 	@(cd ${WRKSRC}/docs/build/html ; ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} \
 		"! -name .buildinfo -and ! -name objects.inv")
 
