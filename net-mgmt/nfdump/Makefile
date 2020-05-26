@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nfdump
-PORTVERSION=	1.6.19
+PORTVERSION=	1.6.20
 DISTVERSIONPREFIX=v
 CATEGORIES=	net-mgmt
 
@@ -91,6 +91,7 @@ RUN_DEPENDS+=	rrdtool:databases/rrdtool
 #flow-tools support
 .if ${PORT_OPTIONS:MFT2NFDUMP}
 BUILD_DEPENDS+=		flow-cat:net-mgmt/flow-tools
+LIB_DEPENDS+=		libft.so:net-mgmt/flow-tools
 CONFIGURE_ARGS+=	--enable-ftconv --with-ftpath=${LOCALBASE}
 PLIST_FILES+=	bin/ft2nfdump man/man1/ft2nfdump.1.gz
 .endif
