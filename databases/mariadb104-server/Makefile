@@ -3,7 +3,7 @@
 
 PORTNAME?=	mariadb
 PORTVERSION=	10.4.13
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://mirrors.supportex.net/${SITESDIR}/ \
 		http://mirror2.hs-esslingen.de/pub/Mirrors/${SITESDIR}/ \
@@ -98,6 +98,7 @@ DISABLED_PLUGINS+=	DAEMON_EXAMPLE DIALOG_EXAMPLES EXAMPLE \
 		EXAMPLE_KEY_MANAGEMENT FTEXAMPLE
 
 DATADIR=	${PREFIX}/share/mysql
+ETCDIR=		${PREFIX}/etc/mysql
 
 CONFLICTS_INSTALL=	mariadb5*-${PKGNAMESUFFIX:C/^[0-9]*-//}-* \
 			mariadb10[0-24-9]-${PKGNAMESUFFIX:C/^[0-9]*-//}-* \
@@ -118,6 +119,7 @@ CMAKE_ON+=	CONC_WITH_MYSQLCOMPAT WITHOUT_SERVER
 CMAKE_OFF+=	WITH_WSREP
 USES+=		readline
 USE_LDCONFIG=	${PREFIX}/lib/mysql
+SUB_FILES+=	my.cnf.sample client.cnf.sample
 .else # ! ${PKGNAMESUFFIX:M*-client}
 # MySQL-Server part
 USES+=		mysql:104m
@@ -127,6 +129,7 @@ USERS=		mysql
 GROUPS=		mysql
 CMAKE_ON+=	CMAKE_SKIP_BUILD_RPATH WITH_EMBEDDED_SERVER
 CMAKE_OFF+=	WITH_CLIENT
+SUB_FILES+=	server.cnf.sample
 
 .for ENGINE in ${OPTIONS_GROUP_ENGINES:NINNOBASE}
 ${ENGINE}_CMAKE_OFF=	-DPLUGIN_${ENGINE}=NO
@@ -199,6 +202,7 @@ CMAKE_OFF+=	WITH_TOKUDB
 post-patch:
 	${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/storage/tokudb/PerconaFT/cmake_modules/TokuThirdParty.cmake
+	${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/mysys/my_default.c
 	${MV} ${WRKSRC}/storage/mroonga/version ${WRKSRC}/storage/mroonga/version_txt
 .if ${OPSYS} == DragonFly
 	${CP} ${WRKSRC}/cmake/os/FreeBSD.cmake \
@@ -210,8 +214,14 @@ post-configure:
 		-e 's|(#define LIBS .*)"$$|\1 -L${PREFIX}/lib"|' \
 		${WRKSRC}/libmariadb/mariadb_config/mariadb_config.c
 
+pre-install:
+	${MKDIR} -p ${STAGEDIR}${ETCDIR}/conf.d
+
 .if ${PKGNAMESUFFIX:M*-client}
 post-install:
+	${INSTALL_DATA} ${WRKDIR}/my.cnf.sample ${STAGEDIR}${ETCDIR}/my.cnf.sample
+	${INSTALL_DATA} ${WRKDIR}/client.cnf.sample \
+		${STAGEDIR}${ETCDIR}/conf.d/client.cnf.sample
 	${RM} -r ${STAGEDIR}${DATADIR}
 	${RM} -r ${STAGEDIR}${PREFIX}/include/mysql/server
 	${MV} ${STAGEDIR}${PREFIX}/lib/mysql/pkgconfig/mariadb.pc \
@@ -223,11 +233,17 @@ post-install-GSSAPI_NONE-off:
 
 .else # ! ${PKGNAMESUFFIX:M*-client}
 post-install:
+	${INSTALL_DATA} ${WRKDIR}/server.cnf.sample \
+		${STAGEDIR}${ETCDIR}/conf.d/server.cnf.sample
 	${RM} -r ${STAGEDIR}${PREFIX}/share/mysql/policy
 	${RM} -r ${STAGEDIR}${PREFIX}/include/mysql/server/private
 	${RM} -r ${STAGEDIR}${PREFIX}/lib/mysql/pkgconfig
 	${MV} ${STAGEDIR}${PREFIX}/etc/mysql/user_map.conf \
 		${STAGEDIR}${PREFIX}/etc/mysql/user_map.conf.sample
+
+post-install-WSREP-on:
+	${MV} ${STAGEDIR}${DATADIR}/wsrep.cnf \
+		${STAGEDIR}${ETCDIR}/conf.d/wsrep.cnf.sample
 .endif # ${PKGNAMESUFFIX:M*-client}
 
 .include <bsd.port.post.mk>

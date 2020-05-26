@@ -10,8 +10,6 @@ BROKEN_i386=	compile error: undeclared identifier 'my_atomic_add32'
 
 MASTERDIR=	${.CURDIR}/../${PORTNAME}${PKGNAMESUFFIX:C/-client/-server/}
 
-FILESDIR=	${.CURDIR}/files
-PATCHDIR=	${.CURDIR}/files
 PLIST=		${.CURDIR}/pkg-plist
 
 CONFLICTS_INSTALL=	databases/mytop

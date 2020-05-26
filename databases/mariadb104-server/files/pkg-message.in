@@ -3,7 +3,9 @@
   message: <<EOM
 MariaDB respects hier(7) and doesn't check /etc and /etc/mysql for
 my.cnf. Please move existing my.cnf files from those paths to
-%%PREFIX%%/etc and %%PREFIX%%/etc/mysql.
+%%PREFIX%%/etc/mysql or %%PREFIX%%/etc. Sample
+configuration files are provided in %%PREFIX%%/etc/mysql
+and %%PREFIX%%/etc/mysql/conf.d.
 
 This port does NOT include the mytop perl script, this is included in
 the MariaDB tarball but the most recent version can be found in the
@@ -12,9 +14,9 @@ EOM
 }
 { type: upgrade
   message: <<EOM
-Remember to run mysql_upgrade (with the optional --datadir=<dbdir> flag)
+Remember to run mariadb-upgrade (with the optional --datadir=<dbdir> flag)
 the first time you start the MySQL server after an upgrade from an
 earlier version.
 EOM
 }
-]
+

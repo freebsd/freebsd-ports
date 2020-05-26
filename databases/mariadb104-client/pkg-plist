@@ -36,6 +36,8 @@ bin/mysqlslap
 bin/mytop
 bin/replace
 @comment bin/wsrep_sst_rsync_wan
+@sample %%ETCDIR%%/my.cnf.sample
+@sample %%ETCDIR%%/conf.d/client.cnf.sample
 include/mysql/errmsg.h
 include/mysql/ma_list.h
 include/mysql/ma_pvio.h
@@ -65,7 +67,6 @@ lib/mysql/libmysqlclient.a
 lib/mysql/libmysqlclient.so
 lib/mysql/libmysqlclient_r.a
 lib/mysql/libmysqlclient_r.so
-lib/mysql/libmysqlservices.a
 @comment lib/mysql/plugin/caching_sha2_password.so
 lib/mysql/plugin/client_ed25519.so
 lib/mysql/plugin/daemon_example.ini
@@ -161,15 +162,10 @@ man/man1/mysqlslap.1.gz
 man/man1/replace.1.gz
 @comment man/man1/resolve_stack_dump.1.gz
 @comment man/man1/resolveip.1.gz
-@comment man/man1/tokuft_logprint.1.gz
-@comment man/man1/tokuftdump.1.gz
 @comment man/man1/wsrep_sst_common.1.gz
 @comment man/man1/wsrep_sst_mariabackup.1.gz
 @comment man/man1/wsrep_sst_mysqldump.1.gz
 @comment man/man1/wsrep_sst_rsync.1.gz
 @comment man/man1/wsrep_sst_rsync_wan.1.gz
-@comment man/man1/wsrep_sst_xtrabackup-v2.1.gz
-@comment man/man1/wsrep_sst_xtrabackup.1.gz
 @comment man/man8/mysqld.8.gz
-@comment share/aclocal/mysql.m4
 libdata/pkgconfig/mariadb.pc

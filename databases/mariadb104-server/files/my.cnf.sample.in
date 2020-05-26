@@ -1,0 +1,13 @@
+#
+# This group is read both by the client and the server
+# use it for options that affect everything, see
+# https://mariadb.com/kb/en/configuring-mariadb-with-option-files/#option-groups
+#
+[client-server]
+port	= 3306
+socket	= /var/run/mysql/mysql.sock
+
+#
+# include *.cnf from the config directory
+#
+!includedir %%ETCDIR%%/conf.d/
