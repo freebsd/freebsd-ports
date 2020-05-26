@@ -2,69 +2,44 @@
 # $FreeBSD$
 
 PORTNAME=	netgen
-PORTVERSION=	5.3.1
-PORTREVISION=	11
+PORTVERSION=	6.2.2004
+DISTVERSIONPREFIX=	v
 CATEGORIES=	cad
-#MASTER_SITES=	SF/netgen-mesher/netgen-mesher/${PORTVERSION:C|\.[[:digit:]]+$||}/
-MASTER_SITES=	http://faculty.missouri.edu/~stephen/
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Automatic 3D tetrahedral mesh generator
 
-LIB_DEPENDS=	libTix8.4.3.so:x11-toolkits/tix \
-		libtogl.so:graphics/togl
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-OCC_BROKEN=	Does not compile because of issues with cad/opencascade
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR}
 
-USE_LDCONFIG=	yes
-USES=		gl gmake jpeg libtool localbase tk:tea xorg
+USES=		cmake python tcl tk gl xorg
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	NGSolve
+GH_PROJECT=	netgen:1 pybind11:2
+GH_TAGNAME=	v${PORTVERSION}:1 v2.4.3:2
+GH_SUBDIR=	external_dependencies/pybind11:2
+
 USE_GL=		gl glu
 USE_XORG=	x11 xmu xi
-MAKE_JOBS_UNSAFE=	yes
-CPPFLAGS+=	-isystem ${LOCALBASE}/lib/Togl-1.7
-CONFIGURE_ARGS=	--enable-jpeglib
-INSTALL_TARGET=	install-strip
+USE_LDCONFIG=	yes
 
-FETCH_BEFORE_ARGS+=	-o ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}
+CFLAGS+=	-I${LOCALBASE}/include -I${TK_INCLUDEDIR}/generic -I${TK_INCLUDEDIR}/unix
+CXXFLAGS+=	-I${LOCALBASE}/include -I${TK_INCLUDEDIR}/generic -I${TK_INCLUDEDIR}/unix
 
-OPTIONS_DEFINE=		OCC FFMPEG
-OCC_DESC=		Compile with OpenCascade geometry kernel
-FFMPEG_DESC=		video recording with FFmpeg
-OPTIONS_DEFAULT=	# OCC
+OPTIONS_DEFINE=	JPEG MPEG CGNS
 
-BROKEN_sparc64=		internal gcc error (Bug 23159)
+JPEG_DESC=	Enable snapshots using jpeg
+MPEG_DESC=	Enable recording with FFmpeg
+CGNS_DESC=	Enable CGNS file read/write support
 
-OCC_LIB_DEPENDS=	libTKernel.so:cad/opencascade
-OCC_CXXFLAGS=		-DOCCGEOMETRY -DHAVE_CONFIG_H -D${ARCH} -I${LOCALBASE}/include/OpenCASCADE
-OCC_CONFIGURE_ON=	--enable-occ
+JPEG_CMAKE_BOOL=	USE_JPEG
+JPEG_USES=		jpeg
+MPEG_CMAKE_BOOL=	USE_MPEG
+MPEG_LIB_DEPENDS=	libavcodec.so:multimedia/libav
+CGNS_CMAKE_BOOL=	USE_CGNS
+CGNS_LIB_DEPENDS=	libcgns.so:science/cgnslib
 
-FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
-FFMPEG_CONFIGURE_ON=	--enable-ffmpeg
-
-MACHINE=	${OPSYS:tu}
-
-SUB_LIST=	PREFIX=${PREFIX}
-SUB_FILES=	pkg-message
-MAKE_ENV=	TK_VER=${TK_VER} TCL_VER=${TCL_VER}	\
-		TCL_INCLUDEDIR="${TCL_INCLUDEDIR}"	\
-		TK_INCLUDEDIR="${TK_INCLUDEDIR}"	\
-		MACHINE=${MACHINE} MAKE=${MAKE_CMD}
-
-post-patch:
-	@${REINPLACE_CMD} -e '/ngdir/s,"\.","${PREFIX}/bin",' \
-		${WRKSRC}/ng/ng.tcl \
-		${WRKSRC}/ng/ngappinit.cpp
-
-post-install:
-#	copy some additional headers for build cad/salome-netgenplugin
-	${MKDIR} ${STAGEDIR}${DATADIR}/include
-	${SH} ${FILESDIR}/netgen_copy_include_for_salome ${WRKSRC} ${STAGEDIR}${PREFIX}
-	${LN} ${STAGEDIR}${PREFIX}/lib/libnglib.so ${STAGEDIR}${PREFIX}/lib/libnglib.so.1
-
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1300014
-BROKEN=			does not build with recent versions of FreeBSD
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
