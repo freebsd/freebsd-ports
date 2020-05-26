@@ -4,7 +4,7 @@ PORTNAME=	codespell
 PORTVERSION=	1.14
 CATEGORIES=	textproc
 
-MAINTAINER=	gjb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Source code spelling checker
 
 LICENSE=	GPLv2
