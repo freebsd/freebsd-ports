@@ -1,6 +1,6 @@
-TIMESTAMP = 1590267989
-SHA256 (OWASP-Amass-v3.6.2_GH0.tar.gz) = 9e5c40da42357800b0ead4d25cddfa02adeb540f23e416a55e01d243a828fa9a
-SIZE (OWASP-Amass-v3.6.2_GH0.tar.gz) = 10820190
+TIMESTAMP = 1590481396
+SHA256 (OWASP-Amass-v3.6.3_GH0.tar.gz) = 73e85bd3b67422de915e1c5f75a5afdb56c98e72dd4f1d43dbbea0e9fcf6bf70
+SIZE (OWASP-Amass-v3.6.3_GH0.tar.gz) = 10819915
 SHA256 (AndreasBriese-bbloom-46b345b51c96_GH0.tar.gz) = 49b41b2b20e73f31091222e4a6abf12762231cbad9de642d2227c16dae29b4ff
 SIZE (AndreasBriese-bbloom-46b345b51c96_GH0.tar.gz) = 8005
 SHA256 (PuerkitoBio-goquery-v1.5.1_GH0.tar.gz) = 50b671f7128ac6993b7388d4e8a76901afdcaa7c6889f45687a2acc0d0753ca4
