@@ -11,6 +11,7 @@ LICENSE=	GPLv3 # main code is under LGPL3+, the bundled dftd3-lib is under GPLv1
 
 DEPRECATED=	Uses deprecated version of python
 EXPIRATION_DATE=	2020-08-15
+BROKEN_powerpc64=	fails to compile: lbfgs.f90:18:19: Cannot find an intrinsic module named 'ieee_arithmetic' at (1)
 
 LIB_DEPENDS=	libblas.so:math/blas \
 		liblapack.so:math/lapack
