@@ -1,0 +1,8 @@
+--- fastjet-config.in.orig	2020-05-26 16:35:22 UTC
++++ fastjet-config.in
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ #
+ # @configure_input@
+ #

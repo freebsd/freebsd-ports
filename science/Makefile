@@ -76,6 +76,7 @@
     SUBDIR += erkale
     SUBDIR += erkale-pseudopotentials
     SUBDIR += fastcap
+    SUBDIR += fastjet
     SUBDIR += fasthenry
     SUBDIR += fisicalab
     SUBDIR += fleur
