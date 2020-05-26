@@ -1,0 +1,8 @@
+The HepMC package is an object oriented, C++ event record for High Energy
+Physics Monte Carlo generators and simulation. The original code was written
+by M. Dobbs and J.B. Hansen (Comput. Phys. Commun. 134 (2001) 41). Since the
+first implementation, the package has undergone several modifications and in
+particular, the latest HepMC3 series is a completely new rewrite using
+currently available C++11 techniques.
+
+WWW: http://hepmc.web.cern.ch/hepmc/
