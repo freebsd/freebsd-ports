@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	domoticz
-PORTVERSION=	4.${DOMOTICZ_REL}
-PORTREVISION=	1
+PORTVERSION=	2020.2
 CATEGORIES=	www
 
 MAINTAINER=	kiwi@oav.net
@@ -11,103 +10,68 @@ COMMENT=	Home Automation System
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/License.txt
 
-LIB_DEPENDS=	libcurl.so:ftp/curl \
-		libexpat.so:textproc/expat2
+LIB_DEPENDS=	libcurl.so:ftp/curl libboost_system.so:devel/boost-libs \
+		libminizip.so:archivers/minizip libjsoncpp.so:devel/jsoncpp
+BUILD_DEPENDS=	cereal>=1.2.2:devel/cereal
 
-CONFLICTS_INSTALL?=	domoticz-[23]* domoticz-devel-*
+USES=		cmake pkgconfig ssl lua:53 sqlite
 
 OPTIONS_SUB=	YES
-OPTIONS_DEFINE=	PYTHON SBOOST SLUA SMINIZIP SMQTT SSQLITE SSSL TELLDUS
-SBOOST_DESC=	Use static Boost instead of dynamic linking
-SSSL_DESC=	Use static OpenSSL library instead of dynamic linking
-SLUA_DESC=	Use domoticz provided LUA instead of ports one
-SMQTT_DESC=	Use domoticz mosquitto instead of ports one
-SSQLITE_DESC=	Use domoticz SQLLite instead of ports one
-SMINIZIP_DESC=	Use domoticz minizip instead of ports one
-PYTHON_DESC=	Enable support for Python Plugins
-TELLDUS_DESC=	Enable support for Telldus
+OPTIONS_DEFINE=	SMQTT PYTHON TELLDUS OPENZWAVE PRECOMP
+OPTIONS_DEFAULT=	PYTHON PRECOMP
+SMQTT_DESC=	Use domoticz Mosquitto instead of ports one
+PYTHON_DESC=	Enable Python for Plugins and Event-Scripts
+TELLDUS_DESC=	Enable Tellstick Telldus support
+OPENZWAVE_DESC=	Enable OpenZWave support
+PRECOMP_DESC=	Enable usage of precompiled header to speed build time
 
 .include <bsd.port.options.mk>
 
-USES=		cmake compiler:c++11-lang iconv pkgconfig ssl
-
-# This hack is to get rid of dependency of git while building
-# the package.
-DOMOTICZ_REL=	10717
-DOMOTICZ_TS=	1565707487
 USE_GITHUB=	yes
+# allow to build port with MQQT version recommended by the upstream
+# see https://github.com/domoticz/domoticz/tree/development/extern for the
+# specific release tag
+GH_TUPLE=	eclipse:mosquitto:22e0a4b:mosquitto/extern/mosquitto
 
 USE_RC_SUBR=	domoticz
 
 USERS=		domoticz
 GROUPS=		domoticz
 
-CMAKE_ARGS+=	-DCMAKE_INSTALL_PREFIX=${PREFIX}/domoticz \
-		-DUSE_BUILTIN_ZLIB="NO" \
-		-DUSE_STATIC_OPENZWAVE="NO"
-
-.if ${PORT_OPTIONS:MSSSL}
-CMAKE_ARGS+=	-DUSE_OPENSSL_STATIC="YES"
-.else
-CMAKE_ARGS+=	-DUSE_OPENSSL_STATIC="NO"
-.endif
-
-.if ${PORT_OPTIONS:MSBOOST}
-CMAKE_ARGS+=	-DUSE_STATIC_BOOST="YES"
-BUILD_DEPENDS+=	boost-libs>=0:devel/boost-libs
-.else
-CMAKE_ARGS+=	-DUSE_STATIC_BOOST="NO"
-LIB_DEPENDS+=	libboost_system.so:devel/boost-libs
-.endif
-
-.if ${PORT_OPTIONS:MSLUA}
-CMAKE_ARGS+=	-DUSE_BUILTIN_LUA="YES"
-.else
-CMAKE_ARGS+=	-DUSE_BUILTIN_LUA="NO"
-USES+=		lua:52
-.endif
+CMAKE_INSTALL_PREFIX=	${PREFIX}/domoticz
+CMAKE_OFF+=		GIT_SUBMODULE USE_STATIC_BOOST USE_OPENSSL_STATIC \
+			USE_BUILTIN_SQLITE USE_BUILTIN_MINIZIP USE_BUILTIN_JSONCPP
 
 .if ${PORT_OPTIONS:MSMQTT}
-CMAKE_ARGS+=	-DUSE_BUILTIN_MQTT="YES"
+CMAKE_ON+=	USE_BUILTIN_MQTT
 .else
-CMAKE_ARGS+=	-DUSE_BUILTIN_MQTT="NO"
+CMAKE_OFF+=	USE_BUILTIN_MQTT
 LIB_DEPENDS+=	libmosquitto.so:net/mosquitto
 .endif
 
-.if ${PORT_OPTIONS:MSSQLITE}
-CMAKE_ARGS+=	-DUSE_BUILTIN_SQLITE="YES"
-.else
-CMAKE_ARGS+=	-DUSE_BUILTIN_SQLITE="NO"
-USES+=		sqlite
-.endif
-
-.if ${PORT_OPTIONS:MSMINIZIP}
-CMAKE_ARGS+=	-DUSE_BUILTIN_MINIZIP="YES"
-.else
-CMAKE_ARGS+=	-DUSE_BUILTIN_MINIZIP="NO"
-LIB_DEPENDS+=	libminizip.so:archivers/minizip
-.endif
-
 .if ${PORT_OPTIONS:MPYTHON}
-CMAKE_ARGS+=	-DUSE_PYTHON="YES"
-USES+=		python:3.6
+CMAKE_ON+=	USE_PYTHON
+USES+=		python:3.7
 .else
-CMAKE_ARGS+=	-DUSE_PYTHON="NO"
+CMAKE_OFF+=	USE_PYTHON
 .endif
 
 .if ${PORT_OPTIONS:MTELLDUS}
 LIB_DEPENDS+=	libtelldus-core.so:comms/telldus-core
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e "s,\/opt,${PREFIX},g" ${WRKSRC}/CMakeLists.txt
-	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/CMakeLists.txt
-	@${REINPLACE_CMD} -e "/^ADD_PRECOMPILED_HEADER/ d" ${WRKSRC}/CMakeLists.txt
-	@${REINPLACE_CMD} -e "s/\(#define APPVERSION\)\(.*\)/\1 ${DOMOTICZ_REL}/" ${WRKSRC}/appversion.default
-	@${REINPLACE_CMD} -e "s/\(#define APPHASH\)\(.*\)/\1 \"be79a17\"/" ${WRKSRC}/appversion.default
-	@${REINPLACE_CMD} -e "s/\(#define APPDATE\)\(.*\)/\1 ${DOMOTICZ_TS}/" ${WRKSRC}/appversion.default
+.if ${PORT_OPTIONS:MPRECOMP}
+CMAKE_ON+=	USE_PRECOMPILED_HEADER
+.else
+CMAKE_OFF+=	USE_PRECOMPILED_HEADER
+.endif
+
+.if ${PORT_OPTIONS:MOPENZWAVE}
+CMAKE_OFF+=	USE_STATIC_OPENZWAVE
+LIB_DEPENDS+=	libopenzwave.so:comms/openzwave-devel
+.endif
 
 post-install:
-	@${MKDIR} ${STAGEDIR}/var/db/domoticz ${STAGEDIR}/var/run/domoticz
+	${MKDIR} ${STAGEDIR}/var/db/domoticz ${STAGEDIR}/var/run/domoticz
 
 .include <bsd.port.mk>

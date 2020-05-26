@@ -1,0 +1,11 @@
+--- extern/mosquitto/lib/CMakeLists.txt.orig	2020-05-25 08:19:49 UTC
++++ extern/mosquitto/lib/CMakeLists.txt
+@@ -91,8 +91,6 @@ set_target_properties(libmosquitto PROPERTIES
+ 	SOVERSION 1
+ )
+ 
+-install(TARGETS libmosquitto RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}" LIBRARY DESTINATION "${CMAKE_INSTALL_LIBDIR}")
+-
+ if (WITH_STATIC_LIBRARIES)
+ 	add_library(libmosquitto_static STATIC ${C_SRC})
+ 	if (WITH_PIC)
