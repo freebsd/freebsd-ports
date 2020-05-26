@@ -1,3 +1,3 @@
-TIMESTAMP = 1545556540
-SHA256 (python-stdnum-1.10.tar.gz) = caa050aed5d1d4825cc3294c99dc03d498aaf71f4415d659c9fcb58ff0303a5f
-SIZE (python-stdnum-1.10.tar.gz) = 477929
+TIMESTAMP = 1590432802
+SHA256 (python-stdnum-1.13.tar.gz) = 120f83d33fb8b8be1b282f20dd755a892d5facf84f54fa21f75bbd2633128160
+SIZE (python-stdnum-1.13.tar.gz) = 893897
