@@ -14,6 +14,8 @@ LICENSE=	MIT PD
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
+BROKEN_powerpc64=	fails to build: gmake[2]: *** No rule to make target 'vm_ppc64.dasc', needed by 'host/buildvm_arch.h'.
+
 USES=		gmake
 
 CONFLICTS_INSTALL=	luajit
@@ -32,7 +34,7 @@ PLIST_SUB+=	VERSION=${LUAJIT_VERSION} SOVERSION=${LUAJIT_SOVERSION}
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH:Mpowerpc*} || ${ARCH:Mmips*} || ${ARCH:Msparc*}
+.if ${ARCH:Mpowerpc*} || ${ARCH:Mmips*}
 USE_GCC=yes
 .endif
 
