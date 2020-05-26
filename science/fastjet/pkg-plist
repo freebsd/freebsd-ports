@@ -1,8 +1,10 @@
 bin/fastjet-config
+include/fastjet/ATLASConePlugin.hh
 include/fastjet/ActiveAreaSpec.hh
 include/fastjet/AreaDefinition.hh
 include/fastjet/CDFJetCluPlugin.hh
 include/fastjet/CDFMidPointPlugin.hh
+include/fastjet/CMSIterativeConePlugin.hh
 include/fastjet/CircularRange.hh
 include/fastjet/ClusterSequence.hh
 include/fastjet/ClusterSequence1GhostPassiveArea.hh
@@ -15,6 +17,10 @@ include/fastjet/ClusterSequenceStructure.hh
 include/fastjet/ClusterSequenceVoronoiArea.hh
 include/fastjet/ClusterSequenceWithArea.hh
 include/fastjet/CompositeJetStructure.hh
+include/fastjet/D0RunIBaseConePlugin.hh
+include/fastjet/D0RunIConePlugin.hh
+include/fastjet/D0RunIIConePlugin.hh
+include/fastjet/D0RunIpre96ConePlugin.hh
 include/fastjet/EECambridgePlugin.hh
 include/fastjet/Error.hh
 include/fastjet/FunctionOfPseudoJet.hh
@@ -30,6 +36,7 @@ include/fastjet/NNH.hh
 include/fastjet/NestedDefsPlugin.hh
 include/fastjet/PseudoJet.hh
 include/fastjet/PseudoJetStructureBase.hh
+include/fastjet/PxConePlugin.hh
 include/fastjet/RangeDefinition.hh
 include/fastjet/RectangularGrid.hh
 include/fastjet/SISConeBasePlugin.hh
@@ -37,6 +44,7 @@ include/fastjet/SISConePlugin.hh
 include/fastjet/SISConeSphericalPlugin.hh
 include/fastjet/Selector.hh
 include/fastjet/SharedPtr.hh
+include/fastjet/TrackJetPlugin.hh
 include/fastjet/WrappedStructure.hh
 include/fastjet/config.h
 include/fastjet/config_auto.h
