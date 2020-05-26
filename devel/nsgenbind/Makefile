@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nsgenbind
-PORTVERSION=	0.7
+PORTVERSION=	0.8
 CATEGORIES=	devel
 MASTER_SITES=	http://download.netsurf-browser.org/libs/releases/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
