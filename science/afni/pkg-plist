@@ -18,8 +18,6 @@ bin/1dTsort
 bin/1dUpsample
 bin/1d_tool.py
 bin/1dcat
-bin/@djunct_ssw_intermed_edge_imgs
-bin/adjunct_simplify_cost.py
 bin/1ddot
 bin/1deval
 bin/1dfft
@@ -323,6 +321,7 @@ bin/@Install_DBSproc
 bin/@Install_FATCAT_DEMO
 bin/@Install_FATCAT_DEMO2
 bin/@Install_FATMVM_DEMO
+bin/@Install_IBT_DATASETS
 bin/@Install_InstaCorr_Demo
 bin/@Install_MACAQUE_DEMO
 bin/@Install_MEICA_Demo
@@ -388,6 +387,7 @@ bin/@djunct_glue_imgs_vert
 bin/@djunct_json_value.py
 bin/@djunct_montage_coordinator
 bin/@djunct_slice_space
+bin/@djunct_ssw_intermed_edge_imgs
 bin/@djunct_vol_3slice_select
 bin/@escape-
 bin/@extract_meica_ortvec
@@ -496,11 +496,13 @@ bin/abids_json_info.py
 bin/abids_json_tool.py
 bin/abids_tool.py
 bin/abut
+bin/adjunct_aw_tableize_roi_info.py
 bin/adjunct_calc_mont_dims.py
 bin/adjunct_combine_str.py
 bin/adjunct_is_label.py
 bin/adjunct_make_script_and_rst.py
 bin/adjunct_select_str.py
+bin/adjunct_simplify_cost.py
 bin/adwarp
 bin/afni
 bin/afni_check_omp
