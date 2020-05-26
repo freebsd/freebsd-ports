@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20200526:
+  AFFECTS: users of databases/mariadb104-client, databases/mariadb104-server
+  AUTHOR: brnrd@FreeBSD.org
+
+  The ports now add sample configuration files to /usr/local/etc/mysql. You
+  must merge your client configation with the conf.d/client.cnf and your
+  server configuration with conf.d/server.cnf.
+
 20200518:
   AFFECTS: users of converters/libiconv
   AUTHOR: zeising@FreeBSD.org
