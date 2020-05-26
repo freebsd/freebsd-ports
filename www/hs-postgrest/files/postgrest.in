@@ -1,0 +1,167 @@
+#!/bin/sh
+# $FreeBSD$
+#
+# PROVIDE: postgrest
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add postgrest_enable="YES" to /etc/rc.conf to enable PostgREST:
+#
+# Additional variables you can define are:
+#
+# postgrest_user:					Username to run PostgREST
+#							Default: %%POSTGREST_USER%%
+# postgrest_group:					Group to run PostgREST
+#							Default: %%POSTGREST_GROUP%%
+# postgrest_profile:					Profile list
+#							Default: default
+# postgrest_syslog_output_enable:			Set to enable syslog output.
+#							Default: YES
+# postgrest_syslog_output_tag				Set syslog tag if syslog enabled.
+#							Default: postgrest
+# postgrest_syslog_output_priority: 			Set syslog priority if syslog enabled.
+#							Default: info
+# postgrest_syslog_output_facility:			Set syslog facility if syslog enabled.
+#							Default: daemon
+# postgrest_{{ profile }}_config:			Configuration file to run PostgREST
+#							Default: %%ETCDIR%%/default.conf
+# postgrest_{{ profile }}_syslog_output_enable		Set to enable syslog output.
+#							Default: YES
+# postgrest_{{ profile }}_syslog_output_tag		Set syslog tag if syslog enabled.
+#							Default: postgrest
+# postgrest_{{ profile }}_syslog_output_priority: 	Set syslog priority if syslog enabled.
+#							Default: info
+# postgrest_{{ profile }}_syslog_output_facility:	Set syslog facility if syslog enabled.
+#							Default: daemon
+
+. /etc/rc.subr
+
+name="postgrest"
+rcvar="postgrest_enable"
+start_precmd="postgrest_start_precmd"
+start_cmd="postgrest_start"
+stop_cmd="postgrest_stop"
+reload_cmd="postgrest_reload"
+extra_commands="reload"
+
+load_rc_config $name
+
+: ${postgrest_enable:="NO"}
+: ${postgrest_user:="%%POSTGREST_USER%%"}
+: ${postgrest_group:="%%POSTGREST_GROUP%%"}
+: ${postgrest_profile:="default"}
+: ${postgrest_default_config:="%%ETCDIR%%/default.conf"}
+: ${postgrest_syslog_output_enable:="YES"}
+
+postgrest_start_profile()
+{
+	local _profile _pidfile _child_pidfile _config
+	local _syslog_output_enable _syslog_output_tag _syslog_output_priority _syslog_output_facility _syslog_output_flags
+	local procname command command_args
+
+	_profile=$1
+
+	_pidfile="/var/run/${name}/${_profile}.pid"
+	_child_pidfile="/var/run/${name}/${_profile}.child.pid"
+
+	eval _config=\${${name}_${_profile}_config}
+	eval _syslog_output_enable=\${${name}_syslog_output_enable}
+	eval _syslog_output_enable=\${${name}_${_profile}_syslog_output_enable:-${_syslog_output_enable}}
+	eval _syslog_output_tag=\${${name}_syslog_output_tag:-${name}}
+	eval _syslog_output_tag=\${${name}_${_profile}_syslog_output_tag:-"${_syslog_output_tag}"}
+	eval _syslog_output_priority=\${${name}_syslog_output_priority}
+	eval _syslog_output_priority=\${${name}_${_profile}_syslog_output_priority:-"${_syslog_output_priority}"}
+	eval _syslog_output_facility=\${${name}_syslog_output_facility}
+	eval _syslog_output_facility=\${${name}_${_profile}_syslog_output_facility:-"${_syslog_output_facility}"}
+
+	if [ ! -r "${_config}" ]; then
+		warn "${name}.${_profile}: config file does not exist"
+		return 1
+	fi
+
+	if checkyesno _syslog_output_enable; then
+		if [ -n "${_syslog_output_tag}" ]; then
+			_syslog_output_flags="-T ${_syslog_output_tag}"
+		fi
+		if [ -n "${_syslog_output_priority}" ]; then
+			_syslog_output_flags="${_syslog_output_flags} -s ${_syslog_output_priority}"
+		fi
+		if [ -n "${_syslog_output_facility}" ]; then
+			_syslog_output_flags="${_syslog_output_flags} -l ${_syslog_output_facility}"
+		fi
+	fi
+
+	procname="%%PREFIX%%/sbin/postgrest"
+	command="/usr/sbin/daemon"
+	command_args="-f ${_syslog_output_flags} -p ${_child_pidfile} -P ${_pidfile} -t ${name}.${_profile} ${procname} ${_config}"
+
+	su -m ${postgrest_user} -c "${command} ${rc_flags} ${command_args}"
+	rc=$?
+
+	return ${rc}
+}
+
+postgrest_start_precmd()
+{
+	if [ ! -d "/var/run/${name}" ]; then
+		install -d -m 0750 -o ${postgrest_user} -g ${postgrest_group} "/var/run/${name}"
+	fi
+}
+
+postgrest_start()
+{
+	local _ok _profile
+
+	if [ -n "$*" ]; then
+		_ok=
+		for _profile in $@; do
+			postgrest_start_profile ${_profile} || continue
+			_ok="${_ok} ${_profile}"
+		done
+
+		if [ -n "${_ok}" ]; then
+			echo "Starting ${name}:${_ok}."
+		fi
+	fi
+}
+
+postgrest_stop()
+{
+	local _ok _profile _pidfile
+
+	if [ -n "$*" ]; then
+		_ok=
+		for _profile in $@; do
+			_pidfile="/var/run/${name}/${_profile}.pid"
+			/bin/pkill -F "${_pidfile}" 2>/dev/null || continue
+			_ok="${_ok} ${_profile}"
+		done
+
+		if [ -n "${_ok}" ]; then
+			echo "Stopping ${name}:${_ok}."
+		fi
+	fi
+}
+
+postgrest_reload()
+{
+	local _ok _profile _pidfile
+
+	if [ -n "$*" ]; then
+		_ok=
+		for _profile in $@; do
+			_pidfile="/var/run/${name}/${_profile}.child.pid"
+			/bin/pkill -USR1 -F "${_pidfile}" 2>/dev/null || continue
+			_ok="${_ok} ${_profile}"
+		done
+
+		if [ -n "${_ok}" ]; then
+			echo "Reloading ${name}:${_ok}."
+		fi
+	fi
+}
+
+case $# in
+1) run_rc_command $@ ${postgrest_profile} ;;
+*) run_rc_command $@ ;;
+esac

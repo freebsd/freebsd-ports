@@ -1,0 +1,42 @@
+db-uri = "postgres://user:pass@localhost:5432/dbname"
+db-schema = "public" # this schema gets added to the search_path of every request
+db-anon-role = "postgres"
+db-pool = 10
+db-pool-timeout = 10
+
+server-host = "127.0.0.1"
+server-port = 3000
+
+## unix socket location
+## if specified it takes precedence over server-port
+# server-unix-socket = "/tmp/pgrst.sock"
+## unix socket file mode
+# server-unix-socket-mode = "660"
+
+## base url for swagger output
+# server-proxy-uri = ""
+
+## choose a secret, JSON Web Key (or set) to enable JWT auth
+## (use "@filename" to load from separate file)
+# jwt-secret = "foo"
+# secret-is-base64 = false
+# jwt-aud = "your_audience_claim"
+
+## limit rows in response
+# max-rows = 1000
+
+## stored proc to exec immediately after auth
+# pre-request = "stored_proc_name"
+
+## jspath to the role claim key
+# role-claim-key = ".role"
+
+## extra schemas to add to the search_path of every request
+# db-extra-search-path = "extensions, util"
+
+## stored proc that overrides the root "/" spec
+## it must be inside the db-schema
+# root-spec = "stored_proc_name"
+
+## content types to produce raw output
+# raw-media-types="image/png, image/jpg"

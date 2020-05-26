@@ -1,0 +1,2 @@
+sbin/postgrest
+@sample %%ETCDIR%%/default.conf.sample

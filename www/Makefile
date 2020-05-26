@@ -233,6 +233,7 @@
     SUBDIR += hotcrp
     SUBDIR += hs-DAV
     SUBDIR += hs-hjsmin
+    SUBDIR += hs-postgrest
     SUBDIR += hs-wai-app-static
     SUBDIR += hs-yesod-bin
     SUBDIR += htdigest

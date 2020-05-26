@@ -717,7 +717,7 @@ c-lightning:*:735:735::0:0:c-lightning Daemon:/var/db/c-lightning:/usr/sbin/nolo
 # free: 769
 postgres:*:770:770::0:0:PostgreSQL Daemon:/var/db/postgres:/bin/sh
 cockroach:*:771:771::0:0:CockroachDB Daemon:/var/db/cockroach:/usr/sbin/nologin
-# free: 772
+postgrest:*:772:772::0:0:PostgREST Daemon:/nonexistent:/usr/sbin/nologin
 # free: 773
 # free: 774
 # free: 775
