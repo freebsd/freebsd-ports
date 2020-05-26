@@ -479,6 +479,7 @@
     SUBDIR += hstr
     SUBDIR += htop
     SUBDIR += httplog
+    SUBDIR += hw-probe
     SUBDIR += hwstat
     SUBDIR += i2c-tools
     SUBDIR += i7z
