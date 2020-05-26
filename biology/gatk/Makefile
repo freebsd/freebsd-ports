@@ -11,6 +11,8 @@ COMMENT=	Variant discovery in high-throughput sequencing data
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
+BROKEN_FreeBSD_12_powerpc64=	fails to build: String index out of range: -1
+
 BUILD_DEPENDS=	gradle62:devel/gradle62
 
 USES=		gettext-runtime
@@ -51,7 +53,6 @@ GRADLE_ARGS=	--offline
 post-extract: # need a separate extract step because the cache is in /tmp, and not under work/ like with maven
 	@cd ${DEPS_CACHE_DIR} && ${TAR} xzf ${DISTDIR}/${PORTNAME}-${DISTVERSION}-deps${EXTRACT_SUFX}
 .endif
-
 
 do-build:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} gradle62 \
