@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vm
-DISTVERSION=	0.6.0
-PORTREVISION=	1
+DISTVERSION=	0.8.0
 CATEGORIES=	audio
 MASTER_SITES=	https://gitlab.com/OpenMusicKontrollers/vm.lv2/repository/archive.tar.gz?ref=${PORTVERSION}&dummy=/
 PKGNAMESUFFIX=	-lv2
