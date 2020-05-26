@@ -1,0 +1,7 @@
+This is a client library for Glance built on the OpenStack Images API. It
+provides a Python API (the glanceclient module) and a command-line tool
+(glance). This library fully supports the v1 Images API, while support for the
+v2 API is in progress.
+
+WWW: https://docs.openstack.org/python-glanceclient/latest/
+WWW: https://github.com/openstack/python-glanceclient
