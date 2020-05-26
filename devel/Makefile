@@ -1098,6 +1098,7 @@
     SUBDIR += libafterbase
     SUBDIR += liballium
     SUBDIR += libantlr3c
+    SUBDIR += libantlr4
     SUBDIR += libappindicator
     SUBDIR += libaravis
     SUBDIR += libarea
