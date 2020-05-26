@@ -12,6 +12,8 @@ COMMENT=	Tool for use with clang to analyze \#includes in C and C++ source files
 LICENSE=	NCSA
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
+BROKEN_powerpc64=	fails to configure: Could NOT find Git (missing: GIT_EXECUTABLE)
+
 LLVM_VER=	80
 BUILD_DEPENDS=	clang${LLVM_VER}:devel/llvm${LLVM_VER}
 RUN_DEPENDS=	clang${LLVM_VER}:devel/llvm${LLVM_VER}
