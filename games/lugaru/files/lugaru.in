@@ -1,7 +1,0 @@
-#!/bin/sh
-#
-# $FreeBSD$
-#
-
-cd "%%DATADIR%%"
-./lugaru "${@}"
