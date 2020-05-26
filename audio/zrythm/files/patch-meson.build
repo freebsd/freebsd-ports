@@ -1,0 +1,24 @@
+--- meson.build.orig	2020-05-15 17:53:28 UTC
++++ meson.build
+@@ -625,8 +625,8 @@ zrythm_deps = [
+   gtksource_dep,
+ 
+   # these are needed for gentoo
+-  dependency('fftw3_threads', required: false),
+-  dependency('fftw3f_threads', required: false),
++  #dependency('fftw3_threads', required: false),
++  #dependency('fftw3f_threads', required: false),
+ 
+   libm,
+ ]
+@@ -637,8 +637,8 @@ if os_windows
+   # pkg-config
+   zrythm_deps += dependency('fftw3f')
+ else
+-  zrythm_deps += cc.find_library('fftw3_threads')
+-  zrythm_deps += cc.find_library('fftw3f_threads')
++  #zrythm_deps += cc.find_library('fftw3_threads')
++  #zrythm_deps += cc.find_library('fftw3f_threads')
+ endif
+ 
+ if os_gnu
