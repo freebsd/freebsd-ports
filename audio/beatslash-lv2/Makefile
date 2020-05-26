@@ -13,6 +13,8 @@ COMMENT=	LV2 plugins to mangle, slash, repeat and do much more with your beats
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_powerpc64=	fails to build: FileNotFoundError: [Errno 2] No such file or directory
+
 BUILD_DEPENDS=	lv2>0:audio/lv2 \
 		lvtk>0:audio/lvtk
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
