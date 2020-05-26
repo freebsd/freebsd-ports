@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	glances
-PORTVERSION=	3.1.3
+PORTVERSION=	3.1.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,9 +15,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psutil>=5.3.0:sysutils/py-psutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}future>=0.15.2:devel/py-future@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>=0.15.2:devel/py-coverage@${PY_FLAVOR}
 
-USES=		python
-USE_PYTHON=	autoplist distutils
+USES=		python:-3.6
+USE_PYTHON=	autoplist concurrent distutils
 USE_GITHUB=	yes
 
 OPTIONS_DEFINE=	DOCS
@@ -31,8 +32,11 @@ PLIST_FILES=	${ETCDIR}/glances.conf.sample \
 		man/man1/glances.1.gz
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/glances
-	${INSTALL_DATA} ${WRKSRC}/conf/glances.conf ${STAGEDIR}${PREFIX}/etc/glances/glances.conf.sample
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${WRKSRC}/conf/glances.conf ${STAGEDIR}${ETCDIR}/glances.conf.sample
 	${INSTALL_MAN} ${WRKSRC}/docs/man/glances.1 ${STAGEDIR}${MANPREFIX}/man/man1/
+
+do-test:
+	@(cd ${WRKSRC} && ${SETENV} coverage-${PYTHON_VER} run --source=glances unitest.py)
 
 .include <bsd.port.mk>
