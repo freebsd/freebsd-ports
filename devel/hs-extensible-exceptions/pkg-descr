@@ -1,4 +1,0 @@
-This package provides extensible exceptions for both new and old versions
-of GHC (i.e., < 6.10).
-
-WWW: http://hackage.haskell.org/package/extensible-exceptions

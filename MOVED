@@ -15023,3 +15023,25 @@ www/py-django-annotations||2020-05-26|Has expired: No longer maintained, not com
 www/py-django-registration-defaults||2020-05-26|Has expired: No longer maintained, not compatible with newer versions of www/py-django-registration
 devel/py-django-rq-dashboard|devel/py-django-rq|2020-05-26|Has expired: No longer maintained, not compatible with Django 2.0+, please use devel/py-django-rq instead
 www/py-django_openstack_auth||2020-05-26|Has expired: No longer maintained, code was merged into 13.x release of www/py-horizon
+math/hs-semigroups||2020-05-26|Deprecated: Haskell libraries get pushed out of the ports tree
+net/hs-network||2020-05-26|Deprecated: Haskell libraries get pushed out of the ports tree
+devel/hs-extensible-exceptions||2020-05-26|Deprecated: Haskell libraries get pushed out of the ports tree
+devel/hs-random||2020-05-26|Deprecated: Haskell libraries get pushed out of the ports tree
+devel/hs-old-time||2020-05-26|Deprecated: Haskell libraries get pushed out of the ports tree
+devel/hs-data-default-instances-old-locale||2020-05-26|Deprecated: Haskell libraries get pushed out of the ports tree
+devel/hs-data-default-class||2020-05-26|Deprecated: Haskell libraries get pushed out of the ports tree
+devel/hs-data-default-instances-base||2020-05-26|Deprecated: Haskell libraries get pushed out of the ports tree
+devel/hs-data-default-instances-dlist||2020-05-26|Deprecated: Haskell libraries get pushed out of the ports tree
+devel/hs-setlocale||2020-05-26|Deprecated: Haskell libraries get pushed out of the ports tree
+devel/hs-data-default||2020-05-26|Deprecated: Haskell libraries get pushed out of the ports tree
+devel/hs-hashable||2020-05-26|Deprecated: Haskell libraries get pushed out of the ports tree
+devel/hs-transformers-compat||2020-05-26|Deprecated: Haskell libraries get pushed out of the ports tree
+devel/hs-dlist||2020-05-26|Deprecated: Haskell libraries get pushed out of the ports tree
+devel/hs-unordered-containers||2020-05-26|Deprecated: Haskell libraries get pushed out of the ports tree
+devel/hs-mtl||2020-05-26|Deprecated: Haskell libraries get pushed out of the ports tree
+devel/hs-old-locale||2020-05-26|Deprecated: Haskell libraries get pushed out of the ports tree
+devel/hs-utf8-string||2020-05-26|Deprecated: Haskell libraries get pushed out of the ports tree
+devel/hs-data-default-instances-containers||2020-05-26|Deprecated: Haskell libraries get pushed out of the ports tree
+x11-wm/hs-xmonad-contrib||2020-05-26|Deprecated: Haskell libraries get pushed out of the ports tree
+x11/hs-X11||2020-05-26|Deprecated: Haskell libraries get pushed out of the ports tree
+x11/hs-X11-xft||2020-05-26|Deprecated: Haskell libraries get pushed out of the ports tree

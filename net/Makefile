@@ -245,7 +245,6 @@
     SUBDIR += hostapd
     SUBDIR += hping
     SUBDIR += hping3
-    SUBDIR += hs-network
     SUBDIR += hsflowd
     SUBDIR += htpdate
     SUBDIR += http_ping

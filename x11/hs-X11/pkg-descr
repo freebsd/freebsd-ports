@@ -1,4 +1,0 @@
-A Haskell binding to the X11 library.  The binding is a direct
-translation of C binding.
-
-WWW: https://github.com/haskell-pkg-janitors/X11

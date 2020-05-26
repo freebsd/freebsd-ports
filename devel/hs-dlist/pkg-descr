@@ -1,5 +1,0 @@
-Differences lists are a list-like type supporting O(1) append. This is
-particularly useful for efficient logging and pretty printing, (e.g.
-with the Writer monad), where list append quickly becomes too expensive.
-
-WWW: https://github.com/spl/dlist

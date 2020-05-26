@@ -53,7 +53,6 @@
     SUBDIR += herbstluftwm
     SUBDIR += hikari
     SUBDIR += hs-xmonad
-    SUBDIR += hs-xmonad-contrib
     SUBDIR += i3
     SUBDIR += i3-gaps
     SUBDIR += icewm
