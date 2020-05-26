@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	inadyn
-PORTVERSION=	2.6
-PORTREVISION=	1
+PORTVERSION=	2.7
 CATEGORIES=	dns
-MASTER_SITES=	https://github.com/troglobit/inadyn/releases/download/v${PORTVERSION}/
+MASTER_SITES=	https://github.com/troglobit/${PORTNAME}/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	samm@FreeBSD.org
 COMMENT=	Dynamic DNS update client
@@ -16,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libconfuse.so:devel/libconfuse
 RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss
 
-USES=		pkgconfig
+USES=		pkgconfig tar:xz
 
 GNU_CONFIGURE=	yes
 
