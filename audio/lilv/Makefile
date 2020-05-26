@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	lilv
-PORTVERSION=	0.24.6
+PORTVERSION=	0.24.8
 CATEGORIES=	audio
-MASTER_SITES=	http://download.drobilla.net/
+MASTER_SITES=	https://download.drobilla.net/
 
 MAINTAINER=	beerml@sigma6audio.de
 COMMENT=	Lilv makes the use of LV2 plugins as simple as possible
