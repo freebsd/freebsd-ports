@@ -1,6 +1,6 @@
 --- storage/rocksdb/CMakeLists.txt.orig	2019-05-16 05:06:00 UTC
 +++ storage/rocksdb/CMakeLists.txt
-@@ -23,8 +23,8 @@
+@@ -23,8 +23,8 @@ ELSE ()
  ENDIF ()
  
  # check platform support, no 32 bit
@@ -11,7 +11,7 @@
    RETURN ()
  ENDIF ()
  
-@@ -119,38 +119,11 @@ EXECUTE_PROCESS(
+@@ -111,50 +111,11 @@ EXECUTE_PROCESS(
  # split the list into lines
  STRING(REGEX MATCHALL "[^\n]+" ROCKSDB_LIB_SOURCES ${SCRIPT_OUTPUT})
  
@@ -28,12 +28,24 @@
 -  ${CMAKE_CURRENT_SOURCE_DIR}/third_party/zstd/lib/common/threading.c
 -  ${CMAKE_CURRENT_SOURCE_DIR}/third_party/zstd/lib/common/xxhash.c
 -  ${CMAKE_CURRENT_SOURCE_DIR}/third_party/zstd/lib/common/zstd_common.c
+-  ${CMAKE_CURRENT_SOURCE_DIR}/third_party/zstd/lib/compress/zstd_compress_literals.c
+-  ${CMAKE_CURRENT_SOURCE_DIR}/third_party/zstd/lib/compress/zstd_compress_sequences.c
+-  ${CMAKE_CURRENT_SOURCE_DIR}/third_party/zstd/lib/compress/zstd_double_fast.c
+-  ${CMAKE_CURRENT_SOURCE_DIR}/third_party/zstd/lib/compress/zstd_fast.c
+-  ${CMAKE_CURRENT_SOURCE_DIR}/third_party/zstd/lib/compress/zstd_lazy.c
+-  ${CMAKE_CURRENT_SOURCE_DIR}/third_party/zstd/lib/compress/zstd_ldm.c
+-  ${CMAKE_CURRENT_SOURCE_DIR}/third_party/zstd/lib/compress/zstd_opt.c
+-  ${CMAKE_CURRENT_SOURCE_DIR}/third_party/zstd/lib/compress/hist.c
 -  ${CMAKE_CURRENT_SOURCE_DIR}/third_party/zstd/lib/compress/fse_compress.c
 -  ${CMAKE_CURRENT_SOURCE_DIR}/third_party/zstd/lib/compress/huf_compress.c
 -  ${CMAKE_CURRENT_SOURCE_DIR}/third_party/zstd/lib/compress/zstd_compress.c
 -  ${CMAKE_CURRENT_SOURCE_DIR}/third_party/zstd/lib/compress/zstdmt_compress.c
 -  ${CMAKE_CURRENT_SOURCE_DIR}/third_party/zstd/lib/decompress/huf_decompress.c
 -  ${CMAKE_CURRENT_SOURCE_DIR}/third_party/zstd/lib/decompress/zstd_decompress.c
+-  ${CMAKE_CURRENT_SOURCE_DIR}/third_party/zstd/lib/decompress/zstd_decompress_block.c
+-  ${CMAKE_CURRENT_SOURCE_DIR}/third_party/zstd/lib/decompress/zstd_ddict.c
+-  ${CMAKE_CURRENT_SOURCE_DIR}/third_party/zstd/lib/dictBuilder/cover.c
+-  ${CMAKE_CURRENT_SOURCE_DIR}/third_party/zstd/lib/dictBuilder/fastcover.c
 -  ${CMAKE_CURRENT_SOURCE_DIR}/third_party/zstd/lib/dictBuilder/divsufsort.c
 -  ${CMAKE_CURRENT_SOURCE_DIR}/third_party/zstd/lib/dictBuilder/zdict.c
 -)
@@ -42,7 +54,7 @@
    ${CMAKE_CURRENT_SOURCE_DIR}/rocksdb
    ${CMAKE_CURRENT_SOURCE_DIR}/rocksdb/include
    ${CMAKE_CURRENT_SOURCE_DIR}/rocksdb/include/rocksdb
-   ${CMAKE_CURRENT_SOURCE_DIR}/rocksdb/third-party/gtest-1.7.0/fused-src
+   ${CMAKE_CURRENT_SOURCE_DIR}/rocksdb/third-party/gtest-1.8.1/fused-src
 -  ${CMAKE_CURRENT_SOURCE_DIR}/third_party/lz4/lib
 -  ${CMAKE_CURRENT_SOURCE_DIR}/third_party/zstd/lib
 -  ${CMAKE_CURRENT_SOURCE_DIR}/third_party/zstd/lib/common
@@ -50,12 +62,12 @@
  )
  
  ADD_DEFINITIONS(-DROCKSDB_PLATFORM_POSIX -DROCKSDB_LIB_IO_POSIX -DZLIB -DLZ4
-@@ -183,7 +156,7 @@ SET(ROCKSDB_SOURCES
+@@ -188,7 +149,7 @@ SET(ROCKSDB_SOURCES
    ${ROCKSDB_LIB_SOURCES}
  )
  
--SET(rocksdb_static_libs ${rocksdb_static_libs} ${ZLIB_LIBRARY} "-lrt")
-+SET(rocksdb_static_libs ${rocksdb_static_libs} ${ZLIB_LIBRARY} "-lrt -llz4 -lzstd")
+-SET(rocksdb_static_libs ${rocksdb_static_libs} ${ZLIB_LIBRARY} "-lrt" "-ldl")
++SET(rocksdb_static_libs ${rocksdb_static_libs} ${ZLIB_LIBRARY} "-lrt" "-ldl -llz4 -lzstd")
  
  MYSQL_ADD_PLUGIN(rocksdb ${ROCKSDB_SOURCES} STORAGE_ENGINE DEFAULT MODULE_ONLY
    LINK_LIBRARIES ${rocksdb_static_libs}
