@@ -1,6 +1,6 @@
---- storage/myisam/mi_dynrec.c.orig	2018-03-16 23:50:04.334166000 +0300
-+++ storage/myisam/mi_dynrec.c	2018-03-16 23:50:29.996533000 +0300
-@@ -65,18 +65,13 @@
+--- storage/myisam/mi_dynrec.c.orig	2020-04-10 19:45:19 UTC
++++ storage/myisam/mi_dynrec.c
+@@ -65,18 +65,13 @@ my_bool mi_dynmap_file(MI_INFO *info, my_off_t size)
      DBUG_RETURN(1);
    }
    /*
