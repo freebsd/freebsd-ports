@@ -11,6 +11,8 @@ COMMENT=	Single molecule sequence assembler
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKDIR}/${PORTNAME}-${PORTVERSION}/README.license.GPL
 
+BROKEN_powerpc64=	fails to build: utgcns/libboost/boost/smart_ptr/detail/sp_counted_impl.hpp:81:5: error: 'get_deleter' declared as a 'virtual' field
+
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs
 RUN_DEPENDS=	gnuplot:math/gnuplot
 
