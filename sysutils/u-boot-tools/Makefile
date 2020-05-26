@@ -12,7 +12,9 @@ COMMENT=	U-boot related tools
 
 LICENSE=	GPLv2
 
-USES=	bison tar:bzip2 gmake python:2.7,build ssl
+BROKEN_powerpc64=	fails to build: include/config_distro_bootcmd.h:279:3: sandbox EFI support is only supported on ARM and x86
+
+USES=		bison compiler:c11 gmake python:2.7,build ssl tar:bzip2
 
 CONFLICTS=	uboot-mkimage
 ALL_TARGET=	tools-only
