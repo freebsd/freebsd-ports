@@ -15,6 +15,8 @@ LICENSE_NAME=	Ce[a] C[nrs] I[nria] L[ogiciel] L[ibre] C license, version 1
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+BROKEN_powerpc64=	fails to compile: Assembler messages: /tmp/camlasm2822e8.s:10348: Error: operand out of range
+
 BUILD_DEPENDS=	ocaml-zarith>1.2:math/ocaml-zarith \
 		ocaml-ocamlgraph>1.8:math/ocaml-ocamlgraph
 RUN_DEPENDS=	ocaml-ocamlgraph>1.8:math/ocaml-ocamlgraph
