@@ -2,20 +2,20 @@
 
 PORTNAME=	media-driver
 DISTVERSIONPREFIX=	intel-media-
-DISTVERSION=	20.1.1
+DISTVERSION=	20.2.pre3
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	libva-intel-
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	f337957afed6.patch:-p1 # https://github.com/intel/media-driver/pull/819
-PATCHFILES+=	1c790ebf5006.patch:-p1 # https://github.com/intel/media-driver/pull/819
-PATCHFILES+=	63d607335723.patch:-p1 # https://github.com/intel/media-driver/pull/819
-PATCHFILES+=	ad51a4ed50d1.patch:-p1 # https://github.com/intel/media-driver/pull/819
-PATCHFILES+=	ffc5e189592b.patch:-p1 # https://github.com/intel/media-driver/pull/819
-PATCHFILES+=	783fb8d1c8a9.patch:-p1 # https://github.com/intel/media-driver/pull/819
-PATCHFILES+=	a5e441477420.patch:-p1 # https://github.com/intel/media-driver/pull/819
-PATCHFILES+=	199db8d44462.patch:-p1 # https://github.com/intel/media-driver/pull/819
-PATCHFILES+=	718ae1db9724.patch:-p1 # https://github.com/intel/media-driver/pull/819
+PATCHFILES+=	2bd42cddbe7c.patch:-p1 # https://github.com/intel/media-driver/pull/819
+PATCHFILES+=	0ef9d7bd97ac.patch:-p1 # https://github.com/intel/media-driver/pull/819
+PATCHFILES+=	b7b1ffbc5323.patch:-p1 # https://github.com/intel/media-driver/pull/819
+PATCHFILES+=	68360a8a07a0.patch:-p1 # https://github.com/intel/media-driver/pull/819
+PATCHFILES+=	c32a4a263b2d.patch:-p1 # https://github.com/intel/media-driver/pull/819
+PATCHFILES+=	79a852a14d7a.patch:-p1 # https://github.com/intel/media-driver/pull/819
+PATCHFILES+=	99a9f233a171.patch:-p1 # https://github.com/intel/media-driver/pull/819
+PATCHFILES+=	0c01a2d56aa2.patch:-p1 # https://github.com/intel/media-driver/pull/819
+PATCHFILES+=	bf8cbb1a04ea.patch:-p1 # https://github.com/intel/media-driver/pull/819
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	VAAPI driver for Intel HD 5000 (Gen8) or newer
