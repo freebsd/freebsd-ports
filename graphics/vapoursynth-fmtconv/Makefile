@@ -15,6 +15,8 @@ COMMENT=	Format conversion tools for Vapoursynth
 
 LICENSE=	WTFPL
 
+BROKEN_powerpc64=	fails to compile on powerpc64: \#error
+
 BUILD_DEPENDS=	${LOCALBASE}/include/vapoursynth/VapourSynth.h:multimedia/vapoursynth
 
 USE_GITHUB=	yes
