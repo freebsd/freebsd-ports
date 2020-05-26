@@ -16,7 +16,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	opentracing
 GH_PROJECT=	opentracing-cpp
 
-USES=		cmake compiler
+USES=		cmake compiler:c++11-lang
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
