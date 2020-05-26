@@ -2,17 +2,16 @@
 
 PORTNAME=	kio-fuse
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.90.0
+DISTVERSION=	4.95.0
 CATEGORIES=	sysutils kde
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	FUSE Interface for KIO
 
-LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/LICENSES/GPL-3.0-or-later.txt
 
-LIB_DEPENDS=	libfuse3.so:sysutils/fusefs-libs3 \
-		libboost_thread.so:devel/boost-libs
+LIB_DEPENDS=	libfuse3.so:sysutils/fusefs-libs3
 
 USES=		cmake compiler:c++11-lang kde:5 pkgconfig qt:5
 USE_KDE=	config coreaddons kio service
