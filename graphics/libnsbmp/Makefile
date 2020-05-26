@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libnsbmp
-PORTVERSION=	0.1.5
+PORTVERSION=	0.1.6
 CATEGORIES=	graphics
 MASTER_SITES=	http://download.netsurf-browser.org/libs/releases/
 EXTRACT_SUFX=	-src.tar.gz
