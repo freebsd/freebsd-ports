@@ -31,9 +31,13 @@ CMAKE_ARGS=	-DWITHOUT_EERIE:BOOL=ON
 
 .include <bsd.port.pre.mk>
 
-# disable sse on non-x86 archs
+# disable SSE on non-x86 archs
 .if ${ARCH} != amd64 && ${ARCH} != i386
 EXTRA_PATCHES+= ${PATCHDIR}/extra-patch-CMakeLists.txt
 .endif
+
+do-test:
+	cd ${BUILD_WRKSRC} && \
+	    ./_build/binaries/io ${WRKSRC}/libs/iovm/tests/correctness/run.io
 
 .include <bsd.port.post.mk>
