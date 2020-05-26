@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	percona
-DISTVERSION=	5.7.29-32
+DISTVERSION=	5.7.30-33
 PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	http://www.percona.com/downloads/Percona-Server-5.7/Percona-Server-${DISTVERSION}/source/tarball/:percona \
@@ -16,6 +16,9 @@ MAINTAINER=	fluffy@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
 
 LICENSE?=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+CPE_VENDOR=	percona
 
 LIB_DEPENDS=	libevent.so:devel/libevent \
 		liblz4.so:archivers/liblz4 \
@@ -171,7 +174,6 @@ MY_SSL=		system
 .else
 MY_SSL=		${OPENSSLBASE}
 .endif
-
 
 .if ${PORT_OPTIONS:MTOKUDB}
 NOT_FOR_ARCHS=	i386
