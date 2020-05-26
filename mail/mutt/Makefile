@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mutt
-DISTVERSION=	1.14.1
+DISTVERSION=	1.14.2
 CATEGORIES+=	mail
 MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
 		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
@@ -202,7 +202,7 @@ QUOTE_PATCH_VARS=		USE_PERL5=build
 
 # un/comment as each VERSION is created for PORTVERSION
 VVV_PATCH_VERSION=	1.13.0
-GREETING_PATCH_VERSION=	1.14.0
+GREETING_PATCH_VERSION=	1.14.1
 
 post-install:
 	${INSTALL_MAN} ${FILESDIR}/mailcap.5 ${STAGEDIR}${MANPREFIX}/man/man5
