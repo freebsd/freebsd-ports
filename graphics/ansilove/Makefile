@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ansilove
-PORTVERSION=	4.1.0
+PORTVERSION=	4.1.1
 CATEGORIES=	graphics textproc
 
 MAINTAINER=	amdmi3@FreeBSD.org
