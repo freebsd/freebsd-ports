@@ -1,5 +1,0 @@
-Pluggable Django authentication backend for use with OpenStack Identity, that
-works with Django's contrib.auth framework to authenticate a user against
-OpenStack's Keystone Identity API.
-
-WWW: https://pypi.org/project/django_openstack_auth/

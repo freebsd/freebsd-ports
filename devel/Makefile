@@ -4343,7 +4343,6 @@
     SUBDIR += py-distributed
     SUBDIR += py-dj22-django-rq
     SUBDIR += py-django-rq
-    SUBDIR += py-django-rq-dashboard
     SUBDIR += py-docker-py
     SUBDIR += py-dockerpty
     SUBDIR += py-docopt

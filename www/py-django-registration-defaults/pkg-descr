@@ -1,5 +1,0 @@
-This module provides a full set of default templates and settings for
-django-registration to ease the process of creating Django apps that
-require user registration.
-
-WWW: https://github.com/yourcelf/django-registration-defaults

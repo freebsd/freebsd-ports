@@ -1460,7 +1460,6 @@
     SUBDIR += py-dj22-swapper
     SUBDIR += py-django
     SUBDIR += py-django-allauth
-    SUBDIR += py-django-annotations
     SUBDIR += py-django-annoying
     SUBDIR += py-django-appconf
     SUBDIR += py-django-appmedia
@@ -1535,7 +1534,6 @@
     SUBDIR += py-django-recaptcha
     SUBDIR += py-django-redis
     SUBDIR += py-django-registration
-    SUBDIR += py-django-registration-defaults
     SUBDIR += py-django-registration-redux
     SUBDIR += py-django-rest-swagger
     SUBDIR += py-django-reversion
@@ -1566,7 +1564,6 @@
     SUBDIR += py-django22
     SUBDIR += py-django30
     SUBDIR += py-django_compressor
-    SUBDIR += py-django_openstack_auth
     SUBDIR += py-djangocms-admin-style
     SUBDIR += py-djangorestframework
     SUBDIR += py-djangorestframework-csv

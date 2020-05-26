@@ -15019,3 +15019,7 @@ lang/gnatdroid-armv7||2020-05-24|Has expired: Broken for more than 6 months
 devel/breakpad||2020-05-24|Has expired: Broken for more than 6 months
 x11/xcolorsel||2020-05-24|Has expired: Broken for more than 6 months
 textproc/simplexml||2020-05-24|Has expired: Unfetchable, an alternative upstream suggested in bug#235252 only contains the MS C-sharp project which is unbuildable on FreeBSD
+www/py-django-annotations||2020-05-26|Has expired: No longer maintained, not compatible with Django 2.0+
+www/py-django-registration-defaults||2020-05-26|Has expired: No longer maintained, not compatible with newer versions of www/py-django-registration
+devel/py-django-rq-dashboard|devel/py-django-rq|2020-05-26|Has expired: No longer maintained, not compatible with Django 2.0+, please use devel/py-django-rq instead
+www/py-django_openstack_auth||2020-05-26|Has expired: No longer maintained, code was merged into 13.x release of www/py-horizon
