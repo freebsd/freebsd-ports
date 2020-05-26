@@ -183,8 +183,6 @@ include/agrum/BN/learning/paramUtils/paramEstimator.h
 include/agrum/BN/learning/paramUtils/paramEstimatorML.h
 include/agrum/BN/learning/paramUtils/paramEstimatorML_tpl.h
 include/agrum/BN/learning/paramUtils/paramEstimator_tpl.h
-include/agrum/BN/learning/scores_and_tests/idCondSet.h
-include/agrum/BN/learning/scores_and_tests/idCondSet_tpl.h
 include/agrum/BN/learning/scores_and_tests/score.h
 include/agrum/BN/learning/scores_and_tests/scoreAIC.h
 include/agrum/BN/learning/scores_and_tests/scoreAIC_tpl.h
@@ -813,6 +811,8 @@ include/agrum/tools/multidim/utils/patterns/projectionPattern4MultiDimFunctionGr
 include/agrum/tools/multidim/utils/patterns/projectionPattern4MultiDimImplementation.h
 include/agrum/tools/stattests/correctedMutualInformation.h
 include/agrum/tools/stattests/correctedMutualInformation_tpl.h
+include/agrum/tools/stattests/idCondSet.h
+include/agrum/tools/stattests/idCondSet_tpl.h
 include/agrum/tools/stattests/indepTestChi2.h
 include/agrum/tools/stattests/indepTestChi2_tpl.h
 include/agrum/tools/stattests/indepTestG2.h
@@ -821,6 +821,8 @@ include/agrum/tools/stattests/independenceTest.h
 include/agrum/tools/stattests/independenceTest_tpl.h
 include/agrum/tools/stattests/kNML.h
 include/agrum/tools/stattests/kNML_tpl.h
+include/agrum/tools/stattests/pseudoCount.h
+include/agrum/tools/stattests/pseudoCount_tpl.h
 include/agrum/tools/stattests/recordCounter.h
 include/agrum/tools/stattests/recordCounter_tpl.h
 include/agrum/tools/variables/IContinuousVariable.h
@@ -847,7 +849,7 @@ lib/cmake/aGrUM/agrum-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/aGrUM/agrum-targets.cmake
 lib/libagrum.so
 lib/libagrum.so.0
-lib/libagrum.so.0.17.2
+lib/libagrum.so.0.17.3
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum-%%VERSION%%-py%%PYTHON_VER_MAJ%%.egg-info
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum-%%VERSION%%.dist-info/METADATA
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum-%%VERSION%%.dist-info/WHEEL
