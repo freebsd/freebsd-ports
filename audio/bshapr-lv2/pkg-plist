@@ -1,6 +1,9 @@
 lib/lv2/BShapr.lv2/BShapr.so
 lib/lv2/BShapr.lv2/BShapr.ttl
+lib/lv2/BShapr.lv2/BShapr-cv.so
+lib/lv2/BShapr.lv2/BShapr-cv.ttl
 lib/lv2/BShapr.lv2/BShaprGUI.so
+lib/lv2/BShapr.lv2/BShaprGUI-cv.so
 lib/lv2/BShapr.lv2/LICENSE
 lib/lv2/BShapr.lv2/inc/Amplify.png
 lib/lv2/BShapr.lv2/inc/Balance.png
@@ -15,6 +18,8 @@ lib/lv2/BShapr.lv2/inc/Level.png
 lib/lv2/BShapr.lv2/inc/Low_pass.png
 lib/lv2/BShapr.lv2/inc/Low_pass_log.png
 lib/lv2/BShapr.lv2/inc/Pitch_shift.png
+lib/lv2/BShapr.lv2/inc/Send_cv.png
+lib/lv2/BShapr.lv2/inc/Send_midi.png
 lib/lv2/BShapr.lv2/inc/Shape1.png
 lib/lv2/BShapr.lv2/inc/Shape2.png
 lib/lv2/BShapr.lv2/inc/Shape3.png
