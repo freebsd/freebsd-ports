@@ -2,7 +2,7 @@
 
 PORTNAME=	giada
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.16.2
+DISTVERSION=	0.16.2.2
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -27,6 +27,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	monocasual
 GH_TUPLE=	nlohmann:json:bde5712:json/src/deps/json \
 		monocasual:rtaudio:5386a90:rtaudio/src/deps/rtaudio
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--target=${OPSYS:tl}
 USE_XORG=	x11 xcursor xext xfixes xft xinerama xpm xrender
