@@ -1,0 +1,7 @@
+HVAC is Python client for Hashicorp Vault.
+
+Tested against the latest release, HEAD ref, and 3 previous minor versions
+counting back from the latest release of Vault.
+Current official support covers Vault v1.1.5 or later.
+
+WWW: https://pypi.org/project/hvac/
