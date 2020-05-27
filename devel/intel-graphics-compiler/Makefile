@@ -26,7 +26,7 @@ GH_ACCOUNT=	intel
 CFLAGS+=	-Wno-macro-redefined # __fastcall
 PLIST_SUB=	ARCH_SUFX=${ARCH:S/i386/32/:S/amd//:S/x86_//}
 
-.if exists(/usr/lib/clang/10.0.0) && ${CXX} == c++
+.if (exists(/usr/lib/clang/10.0.0) || exists(/usr/lib/clang/10.0.1)) && ${CXX} == c++
 # https://github.com/intel/intel-graphics-compiler/issues/126
 BUILD_DEPENDS+=	clang++90:devel/llvm90
 USES:=		${USES:Ncompiler*}
