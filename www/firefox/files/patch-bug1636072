@@ -1,0 +1,33 @@
+commit edbe69232a5b
+Author: Martin Stransky <stransky@redhat.com>
+Date:   Tue May 12 09:20:25 2020 +0000
+
+    Bug 1636072 [Wayland] Don't crash when GetWlBuffer() fails, r=jhorak
+    
+    Differential Revision: https://phabricator.services.mozilla.com/D74663
+---
+ widget/gtk/WindowSurfaceWayland.cpp | 11 +++++++----
+ 1 file changed, 7 insertions(+), 4 deletions(-)
+
+diff --git widget/gtk/WindowSurfaceWayland.cpp widget/gtk/WindowSurfaceWayland.cpp
+index 372158c9f0f33..56f5d3d530853 100644
+--- widget/gtk/WindowSurfaceWayland.cpp
++++ widget/gtk/WindowSurfaceWayland.cpp
+@@ -390,10 +390,13 @@ void WindowBackBuffer::Attach(wl_surface* aSurface) {
+        (void*)GetWlBuffer(),
+        GetWlBuffer() ? wl_proxy_get_id((struct wl_proxy*)GetWlBuffer()) : -1));
+ 
+-  wl_surface_attach(aSurface, GetWlBuffer(), 0, 0);
+-  wl_surface_commit(aSurface);
+-  wl_display_flush(WaylandDisplayGetWLDisplay());
+-  SetAttached();
++  wl_buffer* buffer = GetWlBuffer();
++  if (buffer) {
++    wl_surface_attach(aSurface, buffer, 0, 0);
++    wl_surface_commit(aSurface);
++    wl_display_flush(WaylandDisplayGetWLDisplay());
++    SetAttached();
++  }
+ }
+ 
+ void WindowBackBufferShm::Detach(wl_buffer* aBuffer) {
