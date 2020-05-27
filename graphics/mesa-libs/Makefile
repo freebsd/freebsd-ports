@@ -7,6 +7,8 @@ CATEGORIES=	graphics
 
 COMMENT=	OpenGL libraries that support GLX and EGL clients
 
+CONFLICTS_INSTALL=	libglvnd # include/GL/gl.h
+
 USES=		xorg
 USE_XORG=	xorgproto x11 xcb xdamage xext \
 		xfixes xshmfence xxf86vm
