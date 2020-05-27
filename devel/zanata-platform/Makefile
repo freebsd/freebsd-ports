@@ -10,7 +10,7 @@ DISTFILES=	zanata-war-${PORTVERSION}.war \
 EXTRACT_ONLY=
 
 MAINTAINER=	dbaio@FreeBSD.org
-COMMENT=	Zanata is a web-based translation platform
+COMMENT=	Web-based translation platform
 
 LICENSE=	GPLv2 LGPL21+
 LICENSE_COMB=	multi

@@ -7,7 +7,7 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=	irc
 
 MAINTAINER=	dbaio@FreeBSD.org
-COMMENT=	Eggdrop is the most popular Internet Relay Chat (IRC) bot
+COMMENT=	Popular Internet Relay Chat (IRC) bot
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

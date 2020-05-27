@@ -8,7 +8,7 @@ PORTEPOCH=	2
 CATEGORIES=	devel
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Ninja is a small build system closest in spirit to Make
+COMMENT=	Small build system closest in spirit to Make
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING

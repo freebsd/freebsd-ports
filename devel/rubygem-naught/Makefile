@@ -7,7 +7,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	Naught is a toolkit for building Null Objects
+COMMENT=	Toolkit for building Null Objects
 
 LICENSE=	MIT
 

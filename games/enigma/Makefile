@@ -7,7 +7,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/enigma-game/Release%20${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	Enigma is a reimplementation of Oxyd, a puzzle game
+COMMENT=	Reimplementation of Oxyd, a puzzle game
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

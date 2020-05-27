@@ -8,7 +8,7 @@ CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	sawp@sawp.com.br
-COMMENT=	Pymorph is a pure implementations of image morphology functions
+COMMENT=	Pure implementation of image morphology functions
 
 LICENSE=	BSD3CLAUSE
 

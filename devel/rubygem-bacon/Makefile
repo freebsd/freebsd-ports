@@ -7,7 +7,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	Bacon is a small RSpec clone
+COMMENT=	Small RSpec clone
 
 LICENSE=	MIT
 

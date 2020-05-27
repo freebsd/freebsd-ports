@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Violet is a easy to learn and use UML editor
+COMMENT=	Easy to learn and use UML editor
 
 LICENSE=	GPLv2
 

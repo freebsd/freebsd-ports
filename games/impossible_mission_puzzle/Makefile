@@ -13,7 +13,7 @@ DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	puzzle-${DISTVERSION}.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	This is a puzzle from the old C64 Impossible Mission game
+COMMENT=	Puzzle from the old C64 Impossible Mission game
 
 LICENSE=	GPLv2
 

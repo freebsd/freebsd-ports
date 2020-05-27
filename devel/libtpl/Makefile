@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	culot@FreeBSD.org
-COMMENT=	Tpl is a library for serializing C data
+COMMENT=	Library for serializing C data
 
 LICENSE=	GPLv3 MIT
 LICENSE_COMB=	multi

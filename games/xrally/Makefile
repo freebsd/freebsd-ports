@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/1.1
 DISTNAME=	${PORTNAME}-1.1
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	XRally is a Linux clone of the classic Rally X arcade game
+COMMENT=	Clone of the classic Rally X arcade game
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 HAS_CONFIGURE=	yes

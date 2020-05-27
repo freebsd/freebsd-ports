@@ -6,7 +6,7 @@ DISTVERSION=	2.2.1
 CATEGORIES=	devel comms hamradio
 
 MAINTAINER=	hamradio@FreeBSD.org
-COMMENT=	VOLK is the Vector-Optimized Library of Kernels
+COMMENT=	Vector-Optimized Library of Kernels
 
 LICENSE=	GPLv3
 

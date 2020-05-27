@@ -6,7 +6,7 @@ DISTVERSION=	1.6.9
 CATEGORIES=	dns
 
 MAINTAINER=	yuri@FreeBSD.org
-COMMENT=	CoreDNS is a DNS server that chains plugins
+COMMENT=	DNS server that chains plugins
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

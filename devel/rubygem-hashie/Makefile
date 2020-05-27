@@ -7,7 +7,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Hashie is a simple collection of useful Hash extensions
+COMMENT=	Simple collection of useful Hash extensions
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

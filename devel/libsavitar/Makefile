@@ -7,7 +7,7 @@ CATEGORIES=	devel cad
 DIST_SUBDIR=	Ultimaker
 
 MAINTAINER=	db@FreeBSD.org
-COMMENT=	LibSavitar is a c++ implementation of 3mf loading/python bindings
+COMMENT=	C++ implementation of 3mf loading/python bindings
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE

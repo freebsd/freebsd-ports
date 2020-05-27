@@ -5,7 +5,7 @@ PORTVERSION=	0.20200504
 CATEGORIES=	games
 
 MAINTAINER=	menelkir@itroll.org
-COMMENT=	Hatari is an Atari ST/STE/TT/Falcon emulator
+COMMENT=	Atari ST/STE/TT/Falcon emulator
 
 LICENSE=	GPLv2
 

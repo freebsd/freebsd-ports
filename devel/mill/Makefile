@@ -10,7 +10,7 @@ DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=
 
 MAINTAINER=	freebsd-ports@jan0sch.de
-COMMENT=	Mill is a Java/Scala build tool
+COMMENT=	Java/Scala build tool
 
 LICENSE=	MIT
 

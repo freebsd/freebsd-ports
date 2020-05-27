@@ -7,7 +7,7 @@ PORTEPOCH=	1
 CATEGORIES=	devel
 
 MAINTAINER=	oliver@FreeBSD.org
-COMMENT=	Yac is a shared memory user data cache for PHP
+COMMENT=	Shared memory user data cache for PHP
 
 LICENSE=	PHP301
 

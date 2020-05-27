@@ -7,7 +7,7 @@ CATEGORIES=	editors
 MASTER_SITES=	http://freebsdcluster.org/~mich/software/
 
 MAINTAINER=	mich@FreeBSD.org
-COMMENT=	Bitedit is a simple ncurses program for editing a file
+COMMENT=	Simple ncurses file editing program
 
 LICENSE=	GPLv2
 

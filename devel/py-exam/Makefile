@@ -8,7 +8,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
-COMMENT=	Exam is a Python toolkit for writing better tests
+COMMENT=	Python toolkit for writing better tests
 
 USES=		python
 USE_PYTHON=	distutils autoplist

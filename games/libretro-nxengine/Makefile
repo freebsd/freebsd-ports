@@ -5,7 +5,7 @@ PORTVERSION=	0.20200504
 CATEGORIES=	games
 
 MAINTAINER=	menelkir@itroll.org
-COMMENT=	NXEngine is a Cave Story game engine clone for libretro
+COMMENT=	Cave Story game engine clone for libretro
 
 LICENSE=	GPLv3
 

@@ -5,7 +5,7 @@ PORTVERSION=	0.20200504
 CATEGORIES=	games
 
 MAINTAINER=	menelkir@itroll.org
-COMMENT=	Emux is a cross-platform emulator project supporting various machines
+COMMENT=	Cross-platform emulator project supporting various machines
 
 LICENSE=	GPLv2
 

@@ -7,7 +7,7 @@ PORTEPOCH=	1
 CATEGORIES=	dns
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Dnsforwarder is A simple DNS forwarder
+COMMENT=	Simple DNS forwarder
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,7 +7,7 @@ DISTVERSION=	2.1.0
 CATEGORIES=	devel
 
 MAINTAINER=	chuck@tuffli.net
-COMMENT=	Unibilium is a very basic terminfo library
+COMMENT=	Very basic terminfo library
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LGPLv3

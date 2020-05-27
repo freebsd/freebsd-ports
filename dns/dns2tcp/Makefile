@@ -8,7 +8,7 @@ MASTER_SITES=	http://deb.debian.org/debian/pool/main/d/${PORTNAME}/
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	sbz@FreeBSD.org
-COMMENT=	Dns2tcp is a tool for relaying TCP connections over DNS
+COMMENT=	Tool for relaying TCP connections over DNS
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

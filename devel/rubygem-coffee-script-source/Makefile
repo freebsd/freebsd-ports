@@ -7,7 +7,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	CoffeeScript is a little language that compiles into JavaScript
+COMMENT=	Little language that compiles into JavaScript
 
 LICENSE=	MIT
 

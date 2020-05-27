@@ -7,7 +7,7 @@ MASTER_SITES=	RG
 PKGNAMESUFFIX=	2
 
 MAINTAINER=	renchap@cocoa-x.com
-COMMENT=	Hashie is a simple collection of useful Hash extensions
+COMMENT=	Simple collection of useful Hash extensions
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
