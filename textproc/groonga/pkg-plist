@@ -58,6 +58,7 @@ include/groonga/groonga/output_columns.h
 include/groonga/groonga/pat.h
 include/groonga/groonga/plugin.h
 include/groonga/groonga/portability.h
+include/groonga/groonga/posting.h
 include/groonga/groonga/raw_string.h
 include/groonga/groonga/request_canceler.h
 include/groonga/groonga/request_timer.h
