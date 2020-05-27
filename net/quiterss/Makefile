@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	quiterss
-PORTVERSION=	0.19.3
+PORTVERSION=	0.19.4
 CATEGORIES=	net
-MASTER_SITES=	http://quiterss.org/files/${PORTVERSION}/
+MASTER_SITES=	http://quiterss.org/files/${PORTVERSION}_/
 DISTNAME=	QuiteRSS-${PORTVERSION}-src
 
 MAINTAINER=	lbartoletti@FreeBSD.org
