@@ -137,7 +137,7 @@ CMake Error at IGC/CMakeLists.txt:1974 (message):
              if (!IGC_IS_FLAG_ENABLED(DumpToCurrentDir) && g_shaderOutputFolder == "" && !IGC_IS_FLAG_ENABLED(DumpToCustomDir))
              {
                  bool needMkdir = false;
---- IGC/AdaptorOCL/CLElfLib/CLElfTypes.h.orig	2019-11-27 01:05:20 UTC
+--- IGC/AdaptorOCL/CLElfLib/CLElfTypes.h.orig	2020-05-19 05:44:04 UTC
 +++ IGC/AdaptorOCL/CLElfLib/CLElfTypes.h
 @@ -30,7 +30,7 @@ Abstract:  Defines the types used for ELF headers/sect
  \******************************************************************************/
@@ -146,15 +146,6 @@ CMake Error at IGC/CMakeLists.txt:1974 (message):
 -#if defined(__linux__) && defined(OGL)
 +#if !defined(__APPLE__) && !defined(_WIN32) && defined(OGL)
      #include "os_inc.h"
- #endif
- 
-@@ -38,7 +38,7 @@ Abstract:  Defines the types used for ELF headers/sect
-     #include <inttypes.h>
- #endif
- 
--#if defined(__linux__)
-+#if !defined(__APPLE__) && !defined(_WIN32)
-     #include "elf.h"
  #endif
  
 --- IGC/AdaptorOCL/DriverInfoOCL.hpp.orig	2020-02-22 05:52:18 UTC

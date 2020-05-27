@@ -1,0 +1,24 @@
+Don't look for libLLVM without llvm-config or LLVM.cmake help
+
+-- [IGC] LLVM targets are not defined. Searching for LLVM.
+-- [IGC] Using system LLVM 10.0.0
+CMake Error at IGC/CMakeLists.txt:3283 (message):
+  [IGC] Could not find the LLVM dylib.  Aborting.
+
+--- IGC/CMakeLists.txt.orig	2020-05-19 05:44:04 UTC
++++ IGC/CMakeLists.txt
+@@ -3278,12 +3278,8 @@ if(LLVM_LINK_LLVM_DYLIB)
+         set(IGC_BUILD__LLVM_LIBS_TO_LINK "${SET_LLVM_LIB_PATH}/libLLVM-${LLVM_VERSION_MAJOR}.so")
+         message(STATUS "[IGC] Link against specified LLVM dylib ${IGC_BUILD__LLVM_LIBS_TO_LINK}")
+     else()
+-        find_library(IGC_BUILD__LLVM_LIBS_TO_LINK "libLLVM-${LLVM_VERSION_MAJOR}.so")
+-        if(IGC_BUILD__LLVM_LIBS_TO_LINK)
+-          message(STATUS "[IGC] Link against found LLVM dylib ${IGC_BUILD__LLVM_LIBS_TO_LINK}")
+-        else()
+-          message(FATAL_ERROR "[IGC] Could not find the LLVM dylib. Aborting.")
+-        endif()
++        set(IGC_BUILD__LLVM_LIBS_TO_LINK "LLVM")
++        message(STATUS "[IGC] Link against LLVM dylib")
+     endif()
+ 
+ else()
