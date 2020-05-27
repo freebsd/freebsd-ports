@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}3-${DISTVERSIONFULL}
 
 MAINTAINER=	antoine@FreeBSD.org
-COMMENT=	Wapiti is a vulnerability scanner for web applications
+COMMENT=	Vulnerability scanner for web applications
 
 LICENSE=	GPLv2
 

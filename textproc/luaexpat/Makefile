@@ -10,7 +10,7 @@ MASTER_SITES=	http://matthewwild.co.uk/projects/luaexpat/ \
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
 MAINTAINER=	lx@FreeBSD.org
-COMMENT=	LuaExpat is a SAX XML parser based on the Expat library
+COMMENT=	SAX XML parser based on Expat library
 
 LICENSE=	MIT
 

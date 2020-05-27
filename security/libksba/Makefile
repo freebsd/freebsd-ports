@@ -7,7 +7,7 @@ CATEGORIES=	security
 MASTER_SITES=	GNUPG/${PORTNAME}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	KSBA is an X.509 Library
+COMMENT=	Library to make X.509 certificates
 
 LICENSE=	GPLv2 GPLv3 LGPL3
 LICENSE_COMB=	dual

@@ -8,7 +8,7 @@ PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	gavin@FreeBSD.org
-COMMENT=	SSLScan is a fast SSL port scanner
+COMMENT=	Fast SSL port scanner
 
 LICENSE=	GPLv3
 

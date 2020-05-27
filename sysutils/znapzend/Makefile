@@ -6,7 +6,7 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
 MAINTAINER=	olgeni@FreeBSD.org
-COMMENT=	ZnapZend is a ZFS centric backup tool
+COMMENT=	ZFS-centric backup tool
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE

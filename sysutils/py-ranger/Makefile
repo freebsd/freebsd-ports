@@ -9,7 +9,7 @@ MASTER_SITES=	https://ranger.github.io/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	linpct@gmail.com
-COMMENT=	Ranger is a file manager with VI key bindings
+COMMENT=	File manager with VI key bindings
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

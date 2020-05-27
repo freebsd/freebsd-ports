@@ -8,7 +8,7 @@ PORTREVISION=	2
 CATEGORIES=	security
 
 MAINTAINER=	sascha@root-login.org
-COMMENT=	Gopass is a rewrite of the pass password manager in Go
+COMMENT=	Rewrite of the pass password manager in Go
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

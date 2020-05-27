@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	science python
 
 MAINTAINER=	wen@FreeBSD.org
-COMMENT=	PyBrain is the swiss army knife for neural networking
+COMMENT=	Swiss Army knife for neural networking
 
 LICENSE=	BSD3CLAUSE
 

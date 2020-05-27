@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.snortsam.net/files/snortsam/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
 MAINTAINER=	urisso@bsd.com.br
-COMMENT=	SnortSam is a output plugin for Snort
+COMMENT=	Output plugin for Snort
 
 OPTIONS_DEFINE=	IPFW SAMTOOL DEBUG DOCS
 OPTIONS_DEFAULT=	IPFW SAMTOOL

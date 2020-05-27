@@ -8,7 +8,7 @@ CATEGORIES=	textproc python
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Makefaq is a Python program that creates a (FAQ)
+COMMENT=	Python program that creates a FAQ
 
 LICENSE=	GPLv2+
 

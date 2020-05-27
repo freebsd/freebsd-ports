@@ -11,7 +11,7 @@ PATCHFILES=	mpntrbits.patch
 PATCH_SITES=	http://sourceforge.net/p/beecrypt/patches/_discuss/thread/bff89ba1/5387/attachment/
 
 MAINTAINER=	mi@aldan.algebra.com
-COMMENT=	BeeCrypt is an open source cryptography library
+COMMENT=	Open source cryptographic library
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
