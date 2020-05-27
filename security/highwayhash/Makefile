@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	highwayhash
-PORTVERSION=	g20191102
+PORTVERSION=	g20200527
 PORTEPOCH=	1
 CATEGORIES=	security
 
@@ -20,7 +20,7 @@ ONLY_FOR_ARCHS_REASON=	Assembly is implemented only for specific architectures i
 USES=		compiler:c++11-lang gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
-GH_TAGNAME=	0aaf66bb8a1634ceee4b778df51a652bdf4e1f17
+GH_TAGNAME=	954e56589a7e75bad04f1063174d78f8c17a9b3a
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
