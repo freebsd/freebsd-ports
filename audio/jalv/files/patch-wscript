@@ -1,11 +1,11 @@
---- wscript.orig	2017-08-04 04:48:22 UTC
+--- wscript.orig	2019-11-10 22:01:17 UTC
 +++ wscript
-@@ -61,7 +61,7 @@ def configure(conf):
-                       atleast_version='0.6.0', mandatory=True)
-     autowaf.check_pkg(conf, 'sratom-0', uselib_store='SRATOM',
-                       atleast_version='0.6.0', mandatory=True)
+@@ -47,7 +47,7 @@ def configure(conf):
+     conf.check_pkg('serd-0 >= 0.24.0', uselib_store='SERD')
+     conf.check_pkg('sord-0 >= 0.14.0', uselib_store='SORD')
+     conf.check_pkg('sratom-0 >= 0.6.0', uselib_store='SRATOM')
 -    if Options.options.portaudio:
 +    if False and Options.options.portaudio:
-         autowaf.check_pkg(conf, 'portaudio-2.0', uselib_store='PORTAUDIO',
-                           atleast_version='2.0.0', mandatory=False)
+         conf.check_pkg('portaudio-2.0 >= 2.0.0',
+                        uselib_store='PORTAUDIO', mandatory=False)
      else:

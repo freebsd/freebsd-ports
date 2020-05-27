@@ -3,6 +3,7 @@ bin/jalv.gtk
 bin/jalv.gtk3
 bin/jalv.gtkmm
 bin/jalv.qt5
+lib/jack/jalv.so
 share/man/man1/jalv.1.gz
 share/man/man1/jalv.gtk.1.gz
 share/man/man1/jalv.gtkmm.1.gz
