@@ -12,7 +12,7 @@ COMMENT=	Logical replication system as a PostgreSQL extension
 
 LICENSE=	PostgreSQL
 
-USES=		gettext-runtime gmake pgsql:9.4+
+USES=		compiler:c11 gettext-runtime gmake pgsql:9.4+
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	2ndQuadrant
