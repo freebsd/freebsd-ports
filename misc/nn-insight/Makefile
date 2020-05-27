@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	nn-insight
-DISTVERSION=	0.1.3
+DISTVERSION=	1.0.5
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,6 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	avir>0:graphics/avir \
 		flatbuffers>0:devel/flatbuffers \
+		half>0:math/half \
 		nlohmann-json>0:devel/nlohmann-json \
 		png++>0:graphics/png++
 LIB_DEPENDS=	libcgraph.so:graphics/graphviz \
