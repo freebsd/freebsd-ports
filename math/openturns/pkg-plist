@@ -341,6 +341,7 @@ include/openturns/InverseRosenblattEvaluation.hxx
 include/openturns/InverseTrendEvaluation.hxx
 include/openturns/InverseTrendTransform.hxx
 include/openturns/InverseWishart.hxx
+include/openturns/Ipopt.hxx
 include/openturns/IteratedQuadrature.hxx
 include/openturns/JacobiFactory.hxx
 include/openturns/JansenSensitivityAlgorithm.hxx
@@ -443,7 +444,6 @@ include/openturns/MeixnerDistributionFactory.hxx
 include/openturns/MeixnerFactory.hxx
 include/openturns/MemoizeEvaluation.hxx
 include/openturns/MemoizeFunction.hxx
-include/openturns/Memory.hxx
 include/openturns/Mesh.hxx
 include/openturns/MeshDomain.hxx
 include/openturns/MetaModelAlgorithm.hxx
@@ -506,7 +506,6 @@ include/openturns/Null.hxx
 include/openturns/NullHessian.hxx
 include/openturns/ODESolver.hxx
 include/openturns/ODESolverImplementation.hxx
-include/openturns/OPTpp.hxx
 include/openturns/OSS.hxx
 include/openturns/OStream.hxx
 include/openturns/OT.hxx
@@ -720,6 +719,7 @@ include/openturns/SpaceFillingC2.hxx
 include/openturns/SpaceFillingImplementation.hxx
 include/openturns/SpaceFillingMinDist.hxx
 include/openturns/SpaceFillingPhiP.hxx
+include/openturns/SparseMatrix.hxx
 include/openturns/SparseMethod.hxx
 include/openturns/SpecFunc.hxx
 include/openturns/SpectralGaussianProcess.hxx
@@ -1465,6 +1465,8 @@ include/openturns/csv_parser_state.hxx
 %%PYTHON%%include/openturns/swig/InverseTrendTransform_doc.i
 %%PYTHON%%include/openturns/swig/InverseWishart.i
 %%PYTHON%%include/openturns/swig/InverseWishart_doc.i
+%%PYTHON%%include/openturns/swig/Ipopt.i
+%%PYTHON%%include/openturns/swig/Ipopt_doc.i
 %%PYTHON%%include/openturns/swig/IteratedQuadrature.i
 %%PYTHON%%include/openturns/swig/IteratedQuadrature_doc.i
 %%PYTHON%%include/openturns/swig/JacobiFactory.i
@@ -1652,7 +1654,6 @@ include/openturns/csv_parser_state.hxx
 %%PYTHON%%include/openturns/swig/MemoizeEvaluation.i
 %%PYTHON%%include/openturns/swig/MemoizeFunction.i
 %%PYTHON%%include/openturns/swig/MemoizeFunction_doc.i
-%%PYTHON%%include/openturns/swig/Memory.i
 %%PYTHON%%include/openturns/swig/Mesh.i
 %%PYTHON%%include/openturns/swig/MeshDomain.i
 %%PYTHON%%include/openturns/swig/MeshDomain_doc.i
@@ -1754,8 +1755,6 @@ include/openturns/csv_parser_state.hxx
 %%PYTHON%%include/openturns/swig/ODESolverImplementation.i
 %%PYTHON%%include/openturns/swig/ODESolverImplementation_doc.i
 %%PYTHON%%include/openturns/swig/ODESolver_doc.i
-%%PYTHON%%include/openturns/swig/OPTpp.i
-%%PYTHON%%include/openturns/swig/OPTpp_doc.i
 %%PYTHON%%include/openturns/swig/OTexceptions.i
 %%PYTHON%%include/openturns/swig/OTtypes.i
 %%PYTHON%%include/openturns/swig/Object.i
@@ -2270,8 +2269,8 @@ lib/cmake/openturns/UseOpenTURNS.cmake
 lib/libOT.so
 lib/libOT.so.0
 lib/libOT.so.0.0.0
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns-1.14.dist-info/METADATA
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns-1.14.dist-info/WHEEL
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns-1.15.dist-info/METADATA
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns-1.15.dist-info/WHEEL
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/_algo.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/_analytical.so
