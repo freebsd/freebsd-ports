@@ -50,3 +50,5 @@ share/mime/packages/scidavis.xml
 %%NLS%%%%DATADIR%%/translations/scidavis_pt-br.qm
 %%NLS%%%%DATADIR%%/translations/scidavis_ru.qm
 %%NLS%%%%DATADIR%%/translations/scidavis_sv.qm
+%%NLS%%%%DATADIR%%/translations/scidavis_zh-cn.qm
+%%NLS%%%%DATADIR%%/translations/scidavis_zh-tw.qm
