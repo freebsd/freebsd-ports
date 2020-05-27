@@ -1,6 +1,6 @@
---- if.c.orig	2018-11-25 22:25:28 UTC
+--- if.c.orig	2020-05-27 00:29:37 UTC
 +++ if.c
-@@ -276,7 +276,7 @@ initFilter(int fd, UINT16_t type, unsigned char *hwadd
+@@ -277,7 +277,7 @@ initFilter(int fd, UINT16_t type, unsigned char *hwadd
  * traffic on this network.
  ***********************************************************************/
  int
@@ -9,7 +9,7 @@
  {
      static int fd = -1;
      char bpfName[32];
-@@ -287,7 +287,12 @@ openInterface(char const *ifname, UINT16_t type, unsig
+@@ -288,7 +288,12 @@ openInterface(char const *ifname, UINT16_t type, unsig
      int i;
  
      /* BSD only opens one socket for both Discovery and Session packets */
@@ -22,7 +22,7 @@
  	return fd;
      }
  
-@@ -396,6 +401,8 @@ openInterface(char const *ifname, UINT16_t type, unsig
+@@ -397,6 +402,8 @@ openInterface(char const *ifname, UINT16_t type, unsig
  		ifname);
  	rp_fatal(buffer);
      }

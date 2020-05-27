@@ -1,6 +1,6 @@
---- pppoe.h.orig	2018-11-25 22:25:28 UTC
+--- pppoe.h.orig	2020-05-27 00:29:37 UTC
 +++ pppoe.h
-@@ -65,10 +65,14 @@ extern int IsSetID;
+@@ -62,10 +62,14 @@ extern int IsSetID;
  #include <net/if_ppp.h>
  #endif
  

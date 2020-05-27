@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	rp-pppoe
-PORTVERSION=	3.13
-PORTREVISION=	1
+PORTVERSION=	3.14
+PORTREVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	https://dianne.skoll.ca/projects/rp-pppoe/download/
 

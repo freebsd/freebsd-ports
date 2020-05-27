@@ -1,6 +1,6 @@
---- relay.h.orig	2018-11-25 22:25:28 UTC
+--- relay.h.orig	2020-05-27 00:29:37 UTC
 +++ relay.h
-@@ -51,8 +51,13 @@ typedef struct SessionHashStruct {
+@@ -52,8 +52,13 @@ typedef struct SessionHashStruct {
  
  /* Function prototypes */
  

@@ -1,6 +1,6 @@
---- relay.c.orig	2018-11-25 22:25:28 UTC
+--- relay.c.orig	2020-05-27 00:29:37 UTC
 +++ relay.c
-@@ -754,6 +754,11 @@ void
+@@ -756,6 +756,11 @@ void
  relayLoop()
  {
      fd_set readable, readableCopy;
@@ -12,7 +12,7 @@
      int maxFD;
      int i, r;
      int sock;
-@@ -783,6 +788,27 @@ relayLoop()
+@@ -785,6 +790,27 @@ relayLoop()
  	    continue;
  	}
  
@@ -26,7 +26,7 @@
 +                continue;
 +
 +            /* Ignore unknown code/version */
-+            if (packet.ver != 1 || packet.type != 1)
++            if (PPPOE_VER(packet.vertype) != 1 || PPPOE_TYPE(packet.vertype) != 1)
 +                continue;
 +
 +            type = etherType(&packet);
@@ -40,7 +40,7 @@
  	/* Handle session packets first */
  	for (i=0; i<NumInterfaces; i++) {
  	    if (FD_ISSET(Interfaces[i].sessionSock, &readableCopy)) {
-@@ -797,6 +823,7 @@ relayLoop()
+@@ -799,6 +825,7 @@ relayLoop()
  	    }
  	}
  
@@ -48,7 +48,7 @@
  	/* Handle the session-cleaning process */
  	if (FD_ISSET(CleanPipe[0], &readableCopy)) {
  	    char dummy;
-@@ -816,7 +843,47 @@ relayLoop()
+@@ -818,7 +845,47 @@ relayLoop()
  *%DESCRIPTION:
  * Receives and processes a discovery packet.
  ***********************************************************************/
@@ -96,7 +96,7 @@
  relayGotDiscoveryPacket(PPPoEInterface const *iface)
  {
      PPPoEPacket packet;
-@@ -863,6 +930,7 @@ relayGotDiscoveryPacket(PPPoEInterface const *iface)
+@@ -865,6 +932,7 @@ relayGotDiscoveryPacket(PPPoEInterface const *iface)
  	       iface->name, (int) packet.code);
      }
  }
@@ -104,7 +104,7 @@
  
  /**********************************************************************
  *%FUNCTION: relayGotSessionPacket
-@@ -873,7 +941,66 @@ relayGotDiscoveryPacket(PPPoEInterface const *iface)
+@@ -875,7 +943,66 @@ relayGotDiscoveryPacket(PPPoEInterface const *iface)
  *%DESCRIPTION:
  * Receives and processes a session packet.
  ***********************************************************************/
@@ -171,7 +171,7 @@
  relayGotSessionPacket(PPPoEInterface const *iface)
  {
      PPPoEPacket packet;
-@@ -939,6 +1066,7 @@ relayGotSessionPacket(PPPoEInterface const *iface)
+@@ -941,6 +1068,7 @@ relayGotSessionPacket(PPPoEInterface const *iface)
  #endif
      sendPacket(NULL, sh->interface->sessionSock, &packet, size);
  }
