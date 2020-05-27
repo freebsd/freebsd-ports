@@ -1,16 +1,13 @@
-Fix some locations specific to the ports tree i.e.
-
-- Fixes location of manpages resulting to be in site_perl
-- Set LOCALSTATEDIR to /var/run as done in this ports tree
-- Install agent.cfg as agent.cfg.sample
-
---- Makefile.PL.orig	2018-02-22 21:27:09 UTC
-+++ Makefile.PL
-@@ -157,22 +157,12 @@ sub constants {
+--- Makefile.PL.orig	2020-02-21 21:14:44.416901000 +0100
++++ Makefile.PL	2020-02-21 21:15:41.844326000 +0100
+@@ -163,25 +163,15 @@
  
      # for some reason, initialising variables from the global scope doesn't work
      %variables = (
 -        PREFIX               => '/usr/local',
+         VERSION              => '',
+         COMMENTS             => "Platform  : $Config{myuname},Build date: ".gmtime()." (GMT)",
+         RAWCOMMENTS          => '',
 -        INSTALLSCRIPT        => '$(PREFIX)/bin',
 -        INSTALLSITESCRIPT    => '$(PREFIX)/bin',
 -        INSTALLVENDORSCRIPT  => '$(PREFIX)/bin',
@@ -30,16 +27,18 @@ Fix some locations specific to the ports tree i.e.
      );
  
      # allow variables defined on command line to override defaults
-@@ -220,11 +210,7 @@ sub install {
- 
- config_install :
- 	install -d -m 755 $(DESTDIR)$(SYSCONFDIR)
--	if [ -f $(DESTDIR)/$(SYSCONFDIR)/agent.cfg ]; then \
--	    install -m 644 etc/agent.cfg $(DESTDIR)$(SYSCONFDIR)/agent.cfg.new; \
--	else \
--	    install -m 644 etc/agent.cfg $(DESTDIR)$(SYSCONFDIR)/agent.cfg; \
--	fi
-+	install -m 644 etc/agent.cfg $(DESTDIR)$(SYSCONFDIR)/agent.cfg.sample
+@@ -243,14 +233,9 @@
+ 	$(NOECHO) $(CHMOD) $(PERM_DIR) $(DESTDIR)$(SYSCONFDIR)
+ 	for config in agent.cfg $(shell cd etc; echo *-plugin.cfg ); \
+ 	do \
+-	  if $(TEST_F) $(DESTDIR)$(SYSCONFDIR)/$$config; then \
+ 	    $(RM_F) $(DESTDIR)$(SYSCONFDIR)/$$config.new; \
+ 	    $(CP) etc/$$config $(DESTDIR)$(SYSCONFDIR)/$$config.new; \
+ 	    $(CHMOD) $(PERM_RW) $(DESTDIR)$(SYSCONFDIR)/$$config.new; \
+-	  else \
+-	    $(CP) etc/$$config $(DESTDIR)$(SYSCONFDIR)/$$config; \
+-	    $(CHMOD) $(PERM_RW) $(DESTDIR)$(SYSCONFDIR)/$$config; \
+-	  fi; \
+ 	done
  	$(ABSPERLRUN) -pi \
  	    -e "s|=> undef, # SYSCONFDIR.*|=> '$(SYSCONFDIR)',|;" \
- 	        $(DESTDIR)$(DATADIR)/lib/FusionInventory/Agent/Config.pm
