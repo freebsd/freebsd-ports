@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/JasperReports%20${PORTVERSION}
 DISTFILES=	${PORTNAME}-${PORTVERSION}.jar ${PORTNAME}-applet-${PORTVERSION}.jar
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	JasperReports is a powerful open source Java reporting tool
+COMMENT=	Powerful open source Java reporting tool
 
 RUN_DEPENDS=	${JAVALIBDIR}/itext.jar:devel/itext			\
 		${JAVALIBDIR}/xalan.jar:textproc/xalan-j		\

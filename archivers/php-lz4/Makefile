@@ -6,7 +6,7 @@ CATEGORIES=	archivers
 PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
 MAINTAINER=	pave@FreeBSD.org
-COMMENT=	This is the lz4 extension for PHP
+COMMENT=	LZ4 extension for PHP
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

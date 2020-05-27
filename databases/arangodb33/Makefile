@@ -8,7 +8,7 @@ CATEGORIES=	databases net
 PKGNAMESUFFIX=	33
 
 MAINTAINER=	dev@dudu.ro
-COMMENT=	ArangoDB is a distributed NoSQL database with multiple data models
+COMMENT=	Distributed NoSQL database with multiple data models
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -9,7 +9,7 @@ PORTREVISION=	8
 CATEGORIES=	databases
 
 MAINTAINER=	proler@gmail.com
-COMMENT=	ClickHouse is a column-oriented database management system
+COMMENT=	Column-oriented database management system
 
 LICENSE=	APACHE20
 

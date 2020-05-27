@@ -7,7 +7,7 @@ CATEGORIES=	audio
 MASTER_SITES=	SF/ario-player/ario-player/${PORTVERSION}
 
 MAINTAINER=	alfix86@gmail.com
-COMMENT=	Ario is a GTK2 client for MPD
+COMMENT=	GTK client for MPD
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

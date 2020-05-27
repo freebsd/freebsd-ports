@@ -7,7 +7,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://download.drobilla.net/
 
 MAINTAINER=	beerml@sigma6audio.de
-COMMENT=	Sratom is a library for serialising LV2 atoms to/from RDF
+COMMENT=	Library for serialising LV2 atoms to/from RDF
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING

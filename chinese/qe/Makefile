@@ -8,7 +8,7 @@ CATEGORIES=	chinese
 MASTER_SITES=	http://www.cc.ncu.edu.tw/~center5/product/qe/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	QE is a PE2-like editor program under U*nix
+COMMENT=	PE2-like editor program for Unix
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

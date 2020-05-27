@@ -7,7 +7,7 @@ CATEGORIES=	audio
 MASTER_SITES=	BERLIOS
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Gimmix is a graphical MPD client written in C using GTK+2
+COMMENT=	Graphical MPD client written in C using GTK2
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

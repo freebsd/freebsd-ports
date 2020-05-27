@@ -8,7 +8,7 @@ CATEGORIES=	databases java
 MASTER_SITES=	https://github.com/OpenTSDB/opentsdb/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	kbowling@FreeBSD.org
-COMMENT=	OpenTSDB is the Scalable Timeseries Database
+COMMENT=	Distributed, scalable Time Series Database
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER

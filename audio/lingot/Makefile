@@ -7,7 +7,7 @@ CATEGORIES=	audio
 MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	lbartoletti@FreeBSD.org
-COMMENT=	LINGOT is a musical instrument tuner
+COMMENT=	Musical instrument tuner
 
 LICENSE=	GPLv2
 

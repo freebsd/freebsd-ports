@@ -7,7 +7,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://download.drobilla.net/
 
 MAINTAINER=	beerml@sigma6audio.de
-COMMENT=	Suil is a C library for loading and wrapping LV2 plugin UIs
+COMMENT=	C library for loading and wrapping LV2 plugin UIs
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING

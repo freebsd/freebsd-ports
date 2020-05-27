@@ -7,7 +7,7 @@ MASTER_SITES=	https://sourceforge.net/projects/openctm/files/
 DISTNAME=	OpenCTM-${DISTVERSION}-src
 
 MAINTAINER=	db@FreeBSD.org
-COMMENT=	OpenCTM is a file format for compression of 3D triangle meshes
+COMMENT=	File format for compression of 3D triangle meshes
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

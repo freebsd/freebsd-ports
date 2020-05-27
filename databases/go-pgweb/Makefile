@@ -7,7 +7,7 @@ CATEGORIES=	databases www
 PKGNAMEPREFIX=	go-
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	Pgweb is a web-based database browser for PostgreSQL
+COMMENT=	Web-based database browser for PostgreSQL
 
 LICENSE=	MIT
 

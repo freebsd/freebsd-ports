@@ -8,7 +8,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	PyAL-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	PyAL is a binding of OpenAL for Python
+COMMENT=	OpenAL bindings for Python
 
 LICENSE=	PD ZLIB
 LICENSE_COMB=	dual

@@ -7,7 +7,7 @@ CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/fldigi/${PORTNAME}
 
 MAINTAINER=	hamradio@FreeBSD.org
-COMMENT=	Flwrap is a companion utility for fldigi
+COMMENT=	Companion utility for fldigi
 
 LICENSE=	GPLv2
 

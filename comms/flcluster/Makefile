@@ -7,7 +7,7 @@ CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/fldigi/${PORTNAME}
 
 MAINTAINER=	hamradio@FreeBSD.org
-COMMENT=	FLCLUSTER is a management tool for accessing dxcluster nodes
+COMMENT=	Management tool for accessing dxcluster nodes
 
 LICENSE=	GPLv3
 

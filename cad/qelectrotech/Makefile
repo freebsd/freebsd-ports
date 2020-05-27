@@ -9,7 +9,7 @@ MASTER_SITES=	https://git.tuxfamily.org/qet/qet.git/snapshot/
 DISTNAME=	qet-${DISTVERSION}
 
 MAINTAINER=	arrowd@FreeBSD.org
-COMMENT=	QElectroTech is application to design electric diagrams
+COMMENT=	Application to design electric diagrams
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

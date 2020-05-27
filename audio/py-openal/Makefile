@@ -11,7 +11,7 @@ DISTNAME=	PyOpenAL-${PORTVERSION}
 DIST_SUBDIR=	python
 
 MAINTAINER=	acm@FreeBSD.org
-COMMENT=	PyOpenAL is a binding of OpenAL for Python
+COMMENT=	OpenAL bindings for Python
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSE
