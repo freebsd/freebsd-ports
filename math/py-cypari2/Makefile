@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cysignals>0:devel/py-cysignals@${PY_FLAVOR}
 USE_GITHUB=	yes
 GH_ACCOUNT=	sagemath
 
-USES=		perl5 python:3.6+
+USES=		compiler:c11 perl5 python:3.6+
 USE_PERL5=	build
 USE_PYTHON=	cython distutils
 
