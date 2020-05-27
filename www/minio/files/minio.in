@@ -8,7 +8,7 @@
 #
 # minio_enable (bool):          Set to "NO" by default.
 #                               Set it to "YES" to enable minio
-# minio_config (path):          Set to "%%PREFIX%%/etc/minio" by default
+# minio_config (path):          Set to "%%ETCDIR%%" by default
 #                               Set to directory to store minio config
 # minio_certs (path):           Set to "/var/tmp/minio" by default
 #                               Set to directory to certs dir
@@ -22,6 +22,14 @@
 #                               Set it to group to run minio under
 # minio_logfile (str):          Set to "/var/log/minio.log" by default.
 #                               Set it to file where stdout/stderr are logged.
+# minio_syslog_enable (bool):   Set to YES by default
+#                               Set it to NO to disable syslog output
+# minio_syslog_tag (str):       Set to "minio" by default.
+#                               Set syslog tag if syslog enabled
+# minio_syslog_priority (str):  Set to "info" by default.
+#                               Set syslog priority if syslog enabled
+# minio_syslog_facility (str):  Set to "daemon" by default.
+#                               Set syslog facility if syslog enabled
 #
 
 . /etc/rc.subr
@@ -32,40 +40,56 @@ rcvar=minio_enable
 load_rc_config ${name}
 
 : ${minio_enable:="NO"}
-: ${minio_config="%%PREFIX%%/etc/minio"}
+: ${minio_config="%%ETCDIR%%"}
 : ${minio_certs="/var/tmp/minio"}
 : ${minio_disks="/var/db/minio"}
 : ${minio_address=":9000"}
 : ${minio_user:="%%USER%%"}
 : ${minio_group:="%%GROUP%%"}
+: ${minio_syslog_enable:="YES"}
 : ${minio_logfile:="/var/log/minio.log"}
+
+start_precmd="minio_startprecmd"
+
+if checkyesno minio_syslog_enable; then
+    if [ -n "${minio_syslog_output_tag}" ]; then
+        minio_syslog_output_flags="-T ${minio_syslog_output_tag}"
+    else
+        minio_syslog_output_flags="-T ${name}"
+    fi
+    if [ -n "${minio_syslog_priority}" ]; then
+        minio_syslog_output_flags="${minio_syslog_output_flags} -s ${minio_syslog_priority}"
+    fi
+    if [ -n "${minio_syslog_facility}" ]; then
+        minio_syslog_output_flags="${minio_syslog_output_flags} -l ${minio_syslog_facility}"
+    fi
+else
+    minio_syslog_output_flags="-o ${minio_logfile}"
+fi
 
 pidfile="/var/run/${name}.pid"
 procname="%%PREFIX%%/bin/minio"
 command="/usr/sbin/daemon"
-command_args="-c -p ${pidfile} /usr/bin/env ${minio_env} ${procname} -C \"${minio_config}\" -S \"${minio_certs}\" server --address=\"${minio_address}\" --quiet ${minio_disks} < /dev/null > ${minio_logfile} 2>&1"
-
-start_precmd="minio_startprecmd"
+command_args="-f -t ${name} ${minio_syslog_output_flags} -p ${pidfile} /usr/bin/env ${minio_env} ${procname} -C \"${minio_config}\" -S \"${minio_certs}\" --quiet server --address=\"${minio_address}\" ${minio_disks} ${minio_args}"
 
 minio_startprecmd()
 {
-	if [ ! -e "${pidfile}" ]; then
-		install -o "${minio_user}" -g "${minio_group}" "/dev/null" "${pidfile}"
-	fi
+    if [ ! -e "${pidfile}" ]; then
+        install -o "${minio_user}" -g "${minio_group}" "/dev/null" "${pidfile}"
+    fi
 
-	if [ ! -d "${minio_config}" ]; then
-		install -d -o "${minio_user}" -g "${minio_group}" "${minio_config}"
-	fi
+    if [ ! -d "${minio_config}" ]; then
+        install -d -o "${minio_user}" -g "${minio_group}" "${minio_config}"
+    fi
+    if [ ! -e "${minio_logfile}" ]; then
+        install -o "${minio_user}" -g "${minio_group}" "/dev/null" "${minio_logfile}"
+    fi
 
-        if [ ! -e "${minio_logfile}" ]; then
-                install -o "${minio_user}" -g "${minio_group}" "/dev/null" "${minio_logfile}"
+    for disk in "${minio_disks}"; do
+        if [ ! -d "${disk}" ]; then
+            install -d -o "${minio_user}" -g "${minio_group}" "${disk}"
         fi
-
-	for disk in "${minio_disks}"; do
-		if [ ! -d "${disk}" ]; then
-			install -d -o "${minio_user}" -g "${minio_group}" "${disk}"
-		fi
-	done
+    done
 }
 
 run_rc_command "$1"
