@@ -14,7 +14,7 @@ COMMENT=	ANother Tool for Language Recognition (C runtime)
 
 LICENSE=	BSD3CLAUSE
 
-USES=		cmake zip
+USES=		cmake compiler:c11 zip
 NO_WRKSUBDIR=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
