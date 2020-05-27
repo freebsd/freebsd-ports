@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	recursor
-DISTVERSION=	4.3.0
+DISTVERSION=	4.3.1
 CATEGORIES=	dns
 MASTER_SITES=	http://downloads.powerdns.com/releases/
 PKGNAMEPREFIX=	powerdns-
@@ -16,6 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_armv6=	fails to compile: use of overloaded operator << is ambiguous
 BROKEN_armv7=	fails to compile: use of overloaded operator << is ambiguous
+BROKEN_i386=	crashes on startup (SIGSEGV)
 BROKEN_sparc64=	fails to compile: json11.cpp: undefined reference to std::__throw_out_of_range_fmt
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs

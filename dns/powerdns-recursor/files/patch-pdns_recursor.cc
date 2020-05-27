@@ -1,6 +1,6 @@
---- pdns_recursor.cc.orig	2020-03-02 07:49:54.000000000 -0500
-+++ pdns_recursor.cc	2020-03-02 07:49:54.000000000 -0500
-@@ -4639,12 +4639,12 @@
+--- pdns_recursor.cc.orig	2020-05-08 09:31:59 UTC
++++ pdns_recursor.cc
+@@ -4640,12 +4640,12 @@ int main(int argc, char **argv)
  #define SYSTEMD_SETID_MSG ". When running inside systemd, use the User and Group settings in the unit-file!"
          SYSTEMD_SETID_MSG
  #endif

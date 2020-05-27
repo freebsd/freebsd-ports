@@ -1,5 +1,5 @@
---- dnsname.hh.orig	2020-03-02 07:49:54.000000000 -0500
-+++ dnsname.hh	2020-03-02 07:49:54.000000000 -0500
+--- dnsname.hh.orig	2020-05-08 09:31:59 UTC
++++ dnsname.hh
 @@ -33,7 +33,7 @@
  #include <boost/version.hpp>
  
@@ -9,7 +9,7 @@
  #include <boost/container/string.hpp>
  #endif
  
-@@ -138,7 +138,7 @@
+@@ -138,7 +138,7 @@ class DNSName (public)
    inline bool canonCompare(const DNSName& rhs) const;
    bool slowCanonCompare(const DNSName& rhs) const;  
  
