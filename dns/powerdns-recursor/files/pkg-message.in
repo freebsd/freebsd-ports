@@ -1,8 +1,9 @@
 [
 { type: install
   message: <<EOM
- If you want to use the powerdns recursor,
+ If you want to use the PowerDNS Recursor,
  you need the following line in /etc/rc.conf(.local)
+ or in /etc/rc.conf.d/pdns_recursor
 
     pdns_recursor_enable="YES"
 

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	recursor
-DISTVERSION=	4.2.1
+DISTVERSION=	4.3.1
 CATEGORIES=	dns
 MASTER_SITES=	http://downloads.powerdns.com/releases/
 PKGNAMEPREFIX=	powerdns-
@@ -12,9 +12,11 @@ MAINTAINER=	tremere@cainites.net
 COMMENT=	Advanced DNS recursor
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_armv6=	fails to compile: use of overloaded operator << is ambiguous
 BROKEN_armv7=	fails to compile: use of overloaded operator << is ambiguous
+BROKEN_i386=	crashes on startup (SIGSEGV)
 BROKEN_sparc64=	fails to compile: json11.cpp: undefined reference to std::__throw_out_of_range_fmt
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
@@ -34,19 +36,16 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/pdns \
 
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=		LUAJIT SETUID
-OPTIONS_DEFAULT=	SETUID
+USERS=		pdns_recursor
+GROUPS=		pdns
+
+OPTIONS_DEFINE=	LUAJIT
 
 LUAJIT_DESC=	Use LuaJIT instead of Lua
-SETUID_DESC=	Run as pdns_recursor user
 
 LUAJIT_LIB_DEPENDS=	libluajit-5.1.so.2:lang/luajit-openresty
 LUAJIT_USES_OFF=	lua
 LUAJIT_CONFIGURE_ON=	--with-lua=luajit
-
-SETUID_EXTRA_PATCHES=	${PATCHDIR}/extrapatch-setuid
-SETUID_VARS=		GROUPS=pdns \
-			USERS=pdns_recursor
 
 .include <bsd.port.pre.mk>
 
@@ -56,5 +55,8 @@ CONFIGURE_ARGS+=	--enable-libdecaf \
 LIB_DEPENDS+=		libdecaf.so:security/libdecaf \
 			libsodium.so:security/libsodium
 .endif
+
+post-install:
+	@${MKDIR} ${STAGEDIR}/var/run/pdns-recursor
 
 .include <bsd.port.post.mk>
