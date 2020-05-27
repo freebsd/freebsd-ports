@@ -9,7 +9,7 @@ if [ "$2" = "POST_INSTALL" ]; then
 	else
 		if [ $(tail -1 %%ETCDIR%%/data_structure.version | cut -d. -f3) -lt 2 ]; then
 			echo "It seems you are upgrading from version <6.2 ($(cat %%ETCDIR%%/data_structure.version))"
-			echo "You'll have to read https://www.sympa.org/faq/upgrade-to-v6.2 and (at least) run:"
+			echo "You'll have to read https://sympa-community.github.io/manual/upgrade/notes.html and (at least) run:"
 			echo " # %%PREFIX%%/libexec/sympa/sympa.pl --upgrade_config_location"
 			echo " # %%PREFIX%%/libexec/sympa/sympa.pl --upgrade"
 			echo " # %%PREFIX%%/libexec/sympa/upgrade_bulk_spool.pl"
@@ -18,6 +18,9 @@ if [ "$2" = "POST_INSTALL" ]; then
 		else
 			echo "to upgrade, run:"
 			echo " # %%PREFIX%%/libexec/sympa/sympa.pl --upgrade"
+      echo ""
+      echo "Don't forget to read:"
+      echo "  https://sympa-community.github.io/manual/upgrade/notes.html"
 		fi
 	fi
 fi
