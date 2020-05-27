@@ -7,7 +7,7 @@ MASTER_SITES=	https://github.com/lidarr/Lidarr/releases/download/v${PORTVERSION}
 DISTNAME=	Lidarr.develop.${PORTVERSION}.linux
 
 MAINTAINER=	michiel@vanbaak.eu
-COMMENT=	Lidarr is a music collection manager for Usenet and BitTorrent users
+COMMENT=	Music collection manager for Usenet and BitTorrent users
 
 LICENSE=	GPLv3
 

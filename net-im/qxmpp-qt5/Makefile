@@ -7,7 +7,7 @@ CATEGORIES=	net-im
 PKGNAMESUFFIX=	-qt5
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	QXmpp is an xmpp client library based on Qt & C++
+COMMENT=	XMPP client library based on Qt and C++
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE.LGPL

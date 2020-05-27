@@ -7,7 +7,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	http://tools.netsa.cert.org/releases/
 
 MAINTAINER=	dikshie@sfc.wide.ad.jp
-COMMENT=	YAF is Yet Another Flowmeter
+COMMENT=	Yet Another Flowmeter
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

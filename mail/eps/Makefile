@@ -8,7 +8,7 @@ CATEGORIES=	mail
 MASTER_SITES=	SF/${PORTNAME}inter7/${PORTNAME}inter7/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	EPS is a Email Parsing System
+COMMENT=	Email Parsing System
 
 BROKEN_aarch64=		fails to link: can't create dynamic relocation R_AARCH64_ABS64 against symbol: content_prefs in readonly segment
 

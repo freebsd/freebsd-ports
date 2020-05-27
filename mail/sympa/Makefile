@@ -6,7 +6,7 @@ DISTVERSION=	6.2.54
 CATEGORIES=	mail
 
 MAINTAINER=	dgeo@centrale-marseille.fr
-COMMENT=	Sympa is an electronic mailing list manager
+COMMENT=	Electronic mailing list manager
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -7,7 +7,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://downloads.laffeycomputer.com/current_builds/
 
 MAINTAINER=	mich@FreeBSD.org
-COMMENT=	Rpl is a Unix text replacement utility
+COMMENT=	Unix text replacement utility
 
 LICENSE=	GPLv2
 

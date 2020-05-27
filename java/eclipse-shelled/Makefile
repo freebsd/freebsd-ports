@@ -11,7 +11,7 @@ DISTNAME=	shelled_${PORTVERSION}
 DIST_SUBDIR=	eclipse
 
 MAINTAINER=	zhoushuqun@gmail.com
-COMMENT=	ShellEd is a superb shell script editor for Eclipse
+COMMENT=	Shell script editor for Eclipse
 
 RUN_DEPENDS=	eclipse:java/eclipse
 

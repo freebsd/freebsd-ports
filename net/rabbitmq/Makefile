@@ -9,7 +9,7 @@ MASTER_SITES=	https://github.com/rabbitmq/rabbitmq-server/releases/download/v${P
 DISTNAME=	${PORTNAME}-server-${PORTVERSION}
 
 MAINTAINER=	erlang@FreeBSD.org
-COMMENT=	RabbitMQ is an implementation of AMQP
+COMMENT=	Erlang implementation of AMQP
 
 LICENSE=	MPL11
 LICENSE_FILE=	${WRKSRC}/LICENSE-MPL-RabbitMQ

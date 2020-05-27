@@ -12,7 +12,7 @@ PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	aab7d3f065a7.patch:-p2
 
 MAINTAINER?=	ports@FreeBSD.org
-COMMENT?=	MythTV is a homebrew PVR project
+COMMENT?=	Homebrew PVR project
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

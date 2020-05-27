@@ -7,7 +7,7 @@ CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Yaph is a proxy scanner
+COMMENT=	Yet Another Proxy Hunter (proxy scanner)
 
 GNU_CONFIGURE=	yes
 

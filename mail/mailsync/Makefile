@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Mailsync is a way of keeping a collection of mailboxes synchronized
+COMMENT=	Keeps collection of mailboxes synchronized
 
 LICENSE=	GPLv2
 

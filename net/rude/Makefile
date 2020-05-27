@@ -8,7 +8,7 @@ CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Rude is a Real-time UDP Data Emitter and Collector (crude)
+COMMENT=	Real-time UDP data emitter and collector
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/DOC/COPYING

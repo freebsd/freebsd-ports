@@ -7,7 +7,7 @@ CATEGORIES=	net
 MASTER_SITES=	SOURCEFORGE/socks-relay/socks-relay/${PORTNAME}-0.4.8
 
 MAINTAINER=	decke@FreeBSD.org
-COMMENT=	Srelay is a SOCKS4/5 proxy and Relay
+COMMENT=	SOCKS4/5 proxy and relay
 
 LICENSE=	BSD3CLAUSE
 

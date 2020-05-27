@@ -7,7 +7,7 @@ CATEGORIES=	math
 MASTER_SITES=	https://files.gap-system.org/${PORTNAME}-${PORTVERSION:R}/${EXTRACT_SUFX:C/\.//}/
 
 MAINTAINER=	hrs@FreeBSD.org
-COMMENT=	GAP is a system for computational discrete algebra
+COMMENT=	System for computational discrete algebra
 
 LICENSE=	GPLv2+
 

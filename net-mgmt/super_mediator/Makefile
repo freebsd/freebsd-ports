@@ -8,7 +8,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	http://tools.netsa.cert.org/releases/
 
 MAINTAINER=	nacho319+freebsdZilla@gmail.com
-COMMENT=	SuperMediator is an IPFIX mediator by CMU CERT generally used with YAF
+COMMENT=	IPFIX mediator by CMU CERT generally used with YAF
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

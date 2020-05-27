@@ -8,7 +8,7 @@ CATEGORIES=	net
 MASTER_SITES=	GH
 
 MAINTAINER=	m.tsatsenko@gmail.com
-COMMENT=	Radsecproxy is a generic RADIUS proxy
+COMMENT=	Generic RADIUS proxy
 
 LICENSE=	BSD3CLAUSE
 

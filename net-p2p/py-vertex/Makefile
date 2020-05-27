@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Vertex-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Vertex is an implementation of the Q2Q protocol
+COMMENT=	Implementation of Q2Q protocol
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

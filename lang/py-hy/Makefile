@@ -8,7 +8,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dave@dal.ca
-COMMENT=	Hy is a dialect of Lisp that is embedded in Python
+COMMENT=	Dialect of Lisp that is embedded in Python
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,7 +7,7 @@ CATEGORIES=	net security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	sbz@FreeBSD.org
-COMMENT=	HexInject is a very versatile packet injector and sniffer
+COMMENT=	Versatile packet injector and sniffer
 
 LICENSE=	BSD2CLAUSE
 

@@ -7,7 +7,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.${PORTNAME}.org/files/
 
 MAINTAINER=	ast@treibsand.com
-COMMENT=	Spmfilter is a high-performance mail filtering framework, written in C
+COMMENT=	High-performance mail filtering framework written in C
 
 LICENSE=	LGPL3
 

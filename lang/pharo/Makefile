@@ -10,7 +10,7 @@ DISTNAME=	Pharo-${DISTVERSION}-${SVNVERSION}
 EXTRACT_ONLY=	Pharo-${DISTVERSION}-${SVNVERSION}.zip
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Pharo is Smalltalk-inspired environment
+COMMENT=	Smalltalk-inspired language and environment
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	multi

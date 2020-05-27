@@ -8,7 +8,7 @@ PORTREVISION=	8
 CATEGORIES=	net
 
 MAINTAINER=	rodrigo@FreeBSD.org
-COMMENT=	Splat is the Scalable Periodic LDAP Attribute Transmogrifier
+COMMENT=	Scalable Periodic LDAP Attribute Transmogrifier
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

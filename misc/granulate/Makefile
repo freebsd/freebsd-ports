@@ -7,7 +7,7 @@ CATEGORIES=	misc
 MASTER_SITES=	https://github.com/jharris3299/distfiles/raw/master/
 
 MAINTAINER=	jharris@widomaker.com
-COMMENT=	Granulate is a program for splitting files in place
+COMMENT=	Program for splitting files in place
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

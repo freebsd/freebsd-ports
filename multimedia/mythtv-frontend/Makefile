@@ -5,7 +5,7 @@ PORTREVISION=	1
 PKGNAMESUFFIX=	-${SLAVEPORT}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	MythTV is a homebrew PVR project (frontend only)
+COMMENT=	Homebrew PVR project (frontend only)
 
 MASTERDIR=	${.CURDIR}/../../multimedia/mythtv
 SLAVEPORT=	frontend

@@ -8,7 +8,7 @@ MASTER_SITES=	https://download.jboss.org/wildfly/${WILDFLY_VERSION}/
 DISTNAME=	wildfly-${WILDFLY_VERSION}
 
 MAINTAINER=	reig.simeo@gmail.com
-COMMENT=	WildFly is a Java Jakarta EE8 application server developed by Red Hat
+COMMENT=	Java Jakarta EE8 application server developed by Red Hat
 
 LICENSE=	GPLv2
 

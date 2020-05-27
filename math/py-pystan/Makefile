@@ -8,7 +8,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	gmm@tutanota.com
-COMMENT=	PyStan is the Python interface for Stan
+COMMENT=	Python interface for Stan
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
