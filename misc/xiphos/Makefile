@@ -3,7 +3,7 @@
 PORTNAME=	xiphos
 DISTVERSION=	4.1.0-72
 DISTVERSIONSUFFIX=	-g9e573336
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc gnome
 
 MAINTAINER=	salvadore@FreeBSD.org
@@ -27,7 +27,6 @@ LIB_DEPENDS=	libbiblesync.so:misc/biblesync \
 		libwebkit2gtk-4.0.so:www/webkit2-gtk3
 
 USES=		cmake gettext gnome pkgconfig
-USE_GCC=	yes # misc/biblesync is build with GCC.
 USE_GITHUB=	yes
 GH_ACCOUNT=	crosswire
 USE_GNOME=	cairo gconf2 gtk30 gtkhtml4 intltool libgsf

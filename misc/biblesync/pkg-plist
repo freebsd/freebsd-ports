@@ -1,6 +1,6 @@
 include/biblesync/biblesync-version.hh
 include/biblesync/biblesync.hh
 lib/libbiblesync.so
-lib/libbiblesync.so.2.0.1
+lib/libbiblesync.so.2.1.0
 libdata/pkgconfig/biblesync.pc
 man/man7/biblesync.7.gz
