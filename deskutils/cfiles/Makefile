@@ -4,6 +4,7 @@ PORTNAME=	cfiles
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.8-6
 DISTVERSIONSUFFIX=	-g327d47f
+PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,7 +16,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${LOCALBASE}/libexec/w3m/w3mimgdisplay:www/w3m-img \
 		atool:archivers/atool \
 		bash:shells/bash \
-		fzf:textproc/fzf \
 		pdftoppm:graphics/poppler-utils
 
 USES=		shebangfix
@@ -53,4 +53,10 @@ do-install:
 .endfor
 	${INSTALL_MAN} ${WRKSRC}/cfiles.1 ${STAGEDIR}${MAN5PREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "powerpc" # textproc/fzf isn't available on powerpc because go isn't available there
+RUN_DEPENDS+=	fzf:textproc/fzf
+.endif
+
+.include <bsd.port.post.mk>
