@@ -169,6 +169,7 @@ libexec/sympa/Sympa/Tracking.pm
 libexec/sympa/Sympa/Upgrade.pm
 libexec/sympa/Sympa/User.pm
 libexec/sympa/Sympa/WWW/Auth.pm
+libexec/sympa/Sympa/WWW/FastCGI.pm
 libexec/sympa/Sympa/WWW/Marc.pm
 libexec/sympa/Sympa/WWW/Marc/Search.pm
 libexec/sympa/Sympa/WWW/Report.pm
@@ -371,6 +372,7 @@ man/man3/Sympa::Tools::Text.3Sympa.gz
 man/man3/Sympa::Tools::Time.3Sympa.gz
 man/man3/Sympa::Tracking.3Sympa.gz
 man/man3/Sympa::User.3Sympa.gz
+man/man3/Sympa::WWW::FastCGI.3Sympa.gz
 man/man3/Sympa::WWW::Marc::Search.3Sympa.gz
 man/man3/Sympa::WWW::Session.3Sympa.gz
 man/man3/Sympa::WWW::SharedDocument.3Sympa.gz
@@ -427,6 +429,7 @@ share/locale/fr/LC_MESSAGES/sympa.mo
 share/locale/fr/LC_MESSAGES/web_help.mo
 share/locale/gl/LC_MESSAGES/sympa.mo
 share/locale/gl/LC_MESSAGES/web_help.mo
+share/locale/hr/LC_MESSAGES/sympa.mo
 share/locale/hu/LC_MESSAGES/sympa.mo
 share/locale/hu/LC_MESSAGES/web_help.mo
 share/locale/id/LC_MESSAGES/sympa.mo
@@ -901,6 +904,8 @@ share/locale/zh_TW/LC_MESSAGES/sympa.mo
 %%DATADIR%%/static/js/respondjs/respond.min.js
 %%DATADIR%%/static/js/sympa.js
 %%PORTDOCS%%%%DOCSDIR%%/NEWS.md
+@group sympa
+@dir %%ETCDIR%%
 @dir %%ETCDIR%%/create_list_templates
 @dir %%ETCDIR%%/custom_actions
 @dir %%ETCDIR%%/custom_conditions
@@ -913,11 +918,11 @@ share/locale/zh_TW/LC_MESSAGES/sympa.mo
 @dir %%ETCDIR%%/web_tt2
 @dir libexec/sympa/Sympa/Template/Plugin
 @dir libexec/sympa/Sympa/List
+@owner sympa
 @dir %%DATADIR%%/arc
 @dir %%DATADIR%%/bounce
 @dir %%DATADIR%%/list_data
 @dir %%DATADIR%%/static
-@owner sympa
 @dir %%DATADIR%%/static/css
 @dir %%DATADIR%%/static/pictures
 @dir /var/run/sympa
