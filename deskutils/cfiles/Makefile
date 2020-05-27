@@ -4,7 +4,7 @@ PORTNAME=	cfiles
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.8-6
 DISTVERSIONSUFFIX=	-g327d47f
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -55,7 +55,9 @@ do-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "powerpc" # textproc/fzf isn't available on powerpc because go isn't available there
+GOLANG_ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386
+
+.if ${GOLANG_ONLY_FOR_ARCHS:M${ARCH}} # textproc/fzf isn't available on powerpc because go isn't available there
 RUN_DEPENDS+=	fzf:textproc/fzf
 .endif
 
