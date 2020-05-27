@@ -1,4 +1,5 @@
 bin/perftools-pprof
+bin/pprof-symbolize
 include/google/heap-checker.h
 include/google/heap-profiler.h
 include/google/malloc_extension.h
@@ -21,7 +22,7 @@ include/gperftools/tcmalloc.h
 lib/libprofiler.a
 lib/libprofiler.so
 lib/libprofiler.so.0
-lib/libprofiler.so.0.4.18
+lib/libprofiler.so.0.4.19
 lib/libtcmalloc.a
 lib/libtcmalloc.so
 lib/libtcmalloc.so.%%SHL1%%

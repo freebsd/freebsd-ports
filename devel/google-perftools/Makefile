@@ -3,8 +3,7 @@
 
 PORTNAME=	google-perftools
 DISTVERSIONPREFIX=	gperftools-
-DISTVERSION=	2.7
-PORTREVISION=	1
+DISTVERSION=	2.7.90
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/gperftools/gperftools/releases/download/gperftools-${PORTVERSION}/
 DISTNAME=	gperftools-${PORTVERSION}
@@ -15,8 +14,6 @@ COMMENT=	Fast, multi-threaded malloc() and nifty performance analysis tools
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-DOCSDIR=	${PREFIX}/share/doc/gperftools
-
 USES=		compiler:c11 gmake libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -24,7 +21,9 @@ TEST_TARGET=	check
 
 LIBS+=		-lexecinfo
 
-PLIST_SUB=	SHL3=4.5.3 SHL1=4
+DOCSDIR=	${PREFIX}/share/doc/gperftools
+
+PLIST_SUB=	SHL3=4.5.4 SHL1=4
 
 OPTIONS_DEFINE=		DOCS
 OPTIONS_SINGLE=		PAGESIZE ALIGN
