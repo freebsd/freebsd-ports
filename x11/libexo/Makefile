@@ -34,6 +34,8 @@ INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--without-html-dir --disable-silent-rules
 
+PORTSCOUT=	limit:^0\.12\.
+
 OPTIONS_DEFINE=	GTK2 NLS
 OPTIONS_DEFAULT=	GTK2
 OPTIONS_SUB=	yes
