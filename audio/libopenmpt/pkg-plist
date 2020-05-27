@@ -11,7 +11,7 @@ include/libopenmpt/libopenmpt_version.h
 lib/libopenmpt.a
 lib/libopenmpt.so
 lib/libopenmpt.so.0
-lib/libopenmpt.so.0.1.1
+lib/libopenmpt.so.0.2.2
 libdata/pkgconfig/libopenmpt.pc
 man/man1/openmpt123.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README.md
