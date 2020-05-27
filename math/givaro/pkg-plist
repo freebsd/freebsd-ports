@@ -224,5 +224,5 @@ include/recint/rutools.h
 lib/libgivaro.a
 lib/libgivaro.so
 lib/libgivaro.so.9
-lib/libgivaro.so.9.1.0
+lib/libgivaro.so.9.1.1
 libdata/pkgconfig/givaro.pc
