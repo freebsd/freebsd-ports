@@ -4469,6 +4469,7 @@
     SUBDIR += py-humanize
     SUBDIR += py-hvac
     SUBDIR += py-hypothesis
+    SUBDIR += py-hypothesmith
     SUBDIR += py-icalendar
     SUBDIR += py-ice
     SUBDIR += py-ice37
