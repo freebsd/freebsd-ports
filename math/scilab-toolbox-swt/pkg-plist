@@ -7,8 +7,10 @@
 %%TOOLBOXDIR%%/demos/image.sce
 %%TOOLBOXDIR%%/demos/image/woman.bmp
 %%TOOLBOXDIR%%/demos/image/woman.dat
+%%TOOLBOXDIR%%/demos/imageDenoising.sce
 %%TOOLBOXDIR%%/demos/rwt.sce
 %%TOOLBOXDIR%%/demos/scale2freq.dem.sce
+%%TOOLBOXDIR%%/demos/semibalance.sce
 %%TOOLBOXDIR%%/demos/smoothness_wav.dem.sce
 %%TOOLBOXDIR%%/demos/swt.dem.gateway.sce
 %%TOOLBOXDIR%%/demos/swt1d.sce
@@ -145,3 +147,7 @@
 %%TOOLBOXDIR%%/sci_gateway/c/libswt_c.so
 %%TOOLBOXDIR%%/sci_gateway/c/loader.sce
 %%TOOLBOXDIR%%/sci_gateway/loader_gateway.sce
+%%TOOLBOXDIR%%/src/c/libswtlib.so
+%%TOOLBOXDIR%%/src/c/loader.sce
+%%TOOLBOXDIR%%/src/gwsupport/libswt_gwsupport.so
+%%TOOLBOXDIR%%/src/gwsupport/loader.sce

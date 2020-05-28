@@ -1,12 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	swt
-PORTVERSION=	0.1.20
-PORTREVISION=	6
+PORTVERSION=	0.3.1
 CATEGORIES=	math
 MASTER_SITES=	http://atoms.scilab.org/toolboxes/swt/${PORTVERSION}/files/
 PKGNAMEPREFIX=	scilab-toolbox-
-DISTFILES=	${DISTNAME}-3-src${EXTRACT_SUFX}
+DISTNAME=	${PORTNAME}-${PORTVERSION}-3-src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Scilab 1-D and 2-D Wavelet Toolbox
@@ -14,9 +13,13 @@ COMMENT=	Scilab 1-D and 2-D Wavelet Toolbox
 BUILD_DEPENDS=	${SCILAB_CMD}:math/scilab
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+USES=		dos2unix zip
+USE_LOCALE=	en_US.UTF-8
+
 SCILAB_CMD=	${LOCALBASE}/bin/scilab-adv-cli
 SCILAB_ARGS=	-noatomsautoload -nb -nouserstartup
 MAKE_ENV=	SCI_JAVA_ENABLE_HEADLESS=1 SCI_DISABLE_TK=1
+DOS2UNIX_FILES=	etc/swt.start
 
 CONTRIBDIR?=	share/scilab/contrib
 TOOLBOXDIR_REL?=	${CONTRIBDIR}/${PORTNAME}
@@ -45,8 +48,6 @@ post-patch:
 .if !${PORT_OPTIONS:MHELP}
 	${REINPLACE_CMD} -e '/tbx_builder_help/d' ${WRKSRC}/builder.sce
 .endif
-	${REINPLACE_CMD} -e '/#include <malloc.h>/d' \
-		${WRKSRC}/sci_gateway/c/kiss_fft.h
 	${ECHO_CMD} quit >> ${WRKSRC}/builder.sce
 
 pre-build:
@@ -57,15 +58,10 @@ do-build:
 		${SETENV} ${MAKE_ENV} ${SCILAB_CMD} ${SCILAB_ARGS} -f builder.sce
 
 do-install:
-	${MKDIR} ${STAGEDIR}${TOOLBOXDIR}/sci_gateway/c
-	${INSTALL_DATA} ${WRKSRC}/loader.sce ${STAGEDIR}${TOOLBOXDIR}
-	${INSTALL_DATA} ${WRKSRC}/sci_gateway/loader_gateway.sce \
-		${STAGEDIR}${TOOLBOXDIR}/sci_gateway
-	cd ${WRKSRC}/sci_gateway/c && \
-	${INSTALL_DATA} loader.sce ${STAGEDIR}${TOOLBOXDIR}/sci_gateway/c && \
-	${INSTALL_PROGRAM} libswt_c.so ${STAGEDIR}${TOOLBOXDIR}/sci_gateway/c
+	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${TOOLBOXDIR} "-name *\.so -or -name loader*\.sce"
 .for d in ${TOOLBOX_SUBDIRS}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${STAGEDIR}${TOOLBOXDIR}
 .endfor
+	${FIND} ${STAGEDIR}${TOOLBOXDIR} -name *\.so -exec ${STRIP_CMD} {} \;
 
 .include <bsd.port.mk>
