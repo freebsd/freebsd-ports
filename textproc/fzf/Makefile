@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fzf
-PORTVERSION=	0.19.0
+PORTVERSION=	0.21.1
 CATEGORIES=	textproc
 
 MAINTAINER=	sascha@root-login.org
@@ -16,17 +16,19 @@ USES=		compiler go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	junegunn
 GH_TUPLE=	\
-		gdamore:encoding:b23993cbb635:gdamore_encoding/vendor/github.com/gdamore/encoding \
-		gdamore:tcell:0a0db94084df:gdamore_tcell/vendor/github.com/gdamore/tcell \
-		golang:crypto:558b6879de74:golang_crypto/vendor/golang.org/x/crypto \
-		golang:sys:a5b02f93d862:golang_sys/vendor/golang.org/x/sys \
-		golang:text:4ee4af566555:golang_text/vendor/golang.org/x/text \
-		lucasb-eyer:go-colorful:c900de9dbbc7:lucasb_eyer_go_colorful/vendor/github.com/lucasb-eyer/go-colorful \
-		mattn:go-isatty:66b8e73f3f5c:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
-		mattn:go-runewidth:14207d285c6c:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
-		mattn:go-shellwords:v1.0.3:mattn_go_shellwords/vendor/github.com/mattn/go-shellwords
+		gdamore:encoding:v1.0.0:gdamore_encoding/vendor/github.com/gdamore/encoding \
+		gdamore:tcell:v1.3.0:gdamore_tcell/vendor/github.com/gdamore/tcell \
+		golang:crypto:69ecbb4d6d5d:golang_crypto/vendor/golang.org/x/crypto \
+		golang:sync:cd5d95a43a6e:golang_sync/vendor/golang.org/x/sync \
+		golang:sys:d101bd2416d5:golang_sys/vendor/golang.org/x/sys \
+		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
+		lucasb-eyer:go-colorful:v1.0.3:lucasb_eyer_go_colorful/vendor/github.com/lucasb-eyer/go-colorful \
+		mattn:go-isatty:v0.0.12:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
+		mattn:go-runewidth:v0.0.8:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
+		mattn:go-shellwords:v1.0.9:mattn_go_shellwords/vendor/github.com/mattn/go-shellwords \
+		saracen:walker:324a081bae7e:saracen_walker/vendor/github.com/saracen/walker
 
-GO_BUILDFLAGS=	-ldflags="-X main.revision=9a41fd5 -w"
+GO_BUILDFLAGS=	-ldflags="-X main.revision=334a4fa -w"
 
 SUB_FILES=	pkg-message
 PLIST_FILES=	bin/fzf man/man1/fzf.1.gz
