@@ -134,6 +134,9 @@ make-use-cabal:
 	@echo ====================
 	@echo -n USE_CABAL=
 	@find ${CABAL_HOME} -name '*.conf' -exec basename {} + | sed -E 's|-[0-9a-z]{64}\.conf||' | sort | sed 's/$$/ \\/'
+	@find ${CABAL_HOME} -name 'hsc2hs*.tar.gz' -exec basename {} + | sed -E 's|\.tar\.gz||' | sed 's/$$/ \\/'
+	@find ${CABAL_HOME} -name 'alex*.tar.gz' -exec basename {} + | sed -E 's|\.tar\.gz||' | sed 's/$$/ \\/'
+	@find ${CABAL_HOME} -name 'happy*.tar.gz' -exec basename {} + | sed -E 's|\.tar\.gz||' | sed 's/$$/ \\/'
 
 # Re-generates USE_CABAL items to have revision numbers.
 make-use-cabal-revs:
