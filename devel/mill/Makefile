@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mill
-DISTVERSION=	0.7.2
+DISTVERSION=	0.7.3
 CATEGORIES=	devel java
 MASTER_SITES=	https://github.com/lihaoyi/mill/releases/download/${PORTVERSION}/
 DISTNAME=	${PORTVERSION}-assembly
