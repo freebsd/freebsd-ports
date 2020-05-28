@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	acpica
-PORTVERSION=	20200430
+PORTVERSION=	20200528
 CATEGORIES=	sysutils devel
 MASTER_SITES=	https://acpica.org/sites/acpica/files/ \
 		LOCAL/jkim
@@ -21,7 +21,7 @@ USES=		gmake
 
 BUILD_WRKSRC=	${WRKSRC}/generate/unix
 
-ACPICA_TOOLS=	acpibin acpidump acpiexec acpihelp acpinames acpisrc
+ACPICA_TOOLS=	acpibin acpidump acpiexec acpihelp acpisrc
 ACPICA_TOOLS+=	acpixtract iasl
 
 PLIST_FILES=	${ACPICA_TOOLS:S,^,bin/,}
