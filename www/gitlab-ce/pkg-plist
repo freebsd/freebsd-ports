@@ -17308,6 +17308,7 @@
 %%WWWDIR%%/spec/features/milestones/user_views_milestone_spec.rb
 %%WWWDIR%%/spec/features/milestones/user_views_milestones_spec.rb
 %%WWWDIR%%/spec/features/oauth_login_spec.rb
+%%WWWDIR%%/spec/features/oauth_provider_authorize_spec.rb
 %%WWWDIR%%/spec/features/participants_autocomplete_spec.rb
 %%WWWDIR%%/spec/features/password_reset_spec.rb
 %%WWWDIR%%/spec/features/populate_new_pipeline_vars_with_params_spec.rb
@@ -18405,6 +18406,7 @@
 %%WWWDIR%%/spec/frontend/fixtures/static/images/red_box.png
 %%WWWDIR%%/spec/frontend/fixtures/static/issuable_filter.html
 %%WWWDIR%%/spec/frontend/fixtures/static/issue_sidebar_label.html
+%%WWWDIR%%/spec/frontend/fixtures/static/issue_with_mermaid_graph.html
 %%WWWDIR%%/spec/frontend/fixtures/static/line_highlighter.html
 %%WWWDIR%%/spec/frontend/fixtures/static/linked_tabs.html
 %%WWWDIR%%/spec/frontend/fixtures/static/merge_requests_show.html
@@ -22718,6 +22720,7 @@
 %%WWWDIR%%/spec/support/shared_examples/features/resolving_discussions_in_issues_shared_examples.rb
 %%WWWDIR%%/spec/support/shared_examples/features/rss_shared_examples.rb
 %%WWWDIR%%/spec/support/shared_examples/features/search_shared_examples.rb
+%%WWWDIR%%/spec/support/shared_examples/features/secure_oauth_authorizations_shared_examples.rb
 %%WWWDIR%%/spec/support/shared_examples/features/showing_user_status_shared_examples.rb
 %%WWWDIR%%/spec/support/shared_examples/features/snippets_shared_examples.rb
 %%WWWDIR%%/spec/support/shared_examples/features/variable_list_shared_examples.rb
@@ -22879,6 +22882,7 @@
 %%WWWDIR%%/spec/support/shared_examples/services/updating_mentions_shared_examples.rb
 %%WWWDIR%%/spec/support/shared_examples/tasks/gitlab/import_export/measurable_shared_examples.rb
 %%WWWDIR%%/spec/support/shared_examples/tasks/gitlab/uploads/migration_shared_examples.rb
+%%WWWDIR%%/spec/support/shared_examples/uncached_response_shared_examples.rb
 %%WWWDIR%%/spec/support/shared_examples/uploaders/gitlab_uploader_shared_examples.rb
 %%WWWDIR%%/spec/support/shared_examples/uploaders/object_storage_shared_examples.rb
 %%WWWDIR%%/spec/support/shared_examples/uploaders/upload_type_shared_examples.rb
@@ -22961,6 +22965,7 @@
 %%WWWDIR%%/spec/validators/system_hook_url_validator_spec.rb
 %%WWWDIR%%/spec/validators/variable_duplicates_validator_spec.rb
 %%WWWDIR%%/spec/validators/x509_certificate_credentials_validator_spec.rb
+%%WWWDIR%%/spec/views/admin/application_settings/_eks.html.haml_spec.rb
 %%WWWDIR%%/spec/views/admin/application_settings/_repository_storage.html.haml_spec.rb
 %%WWWDIR%%/spec/views/admin/application_settings/general.html.haml_spec.rb
 %%WWWDIR%%/spec/views/admin/dashboard/index.html.haml_spec.rb
