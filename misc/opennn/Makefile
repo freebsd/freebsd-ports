@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	opennn
-DISTVERSION=	0.1-86
-DISTVERSIONSUFFIX=	-g449b346
-PORTREVISION=	2
+DISTVERSION=	4.0
 CATEGORIES=	misc # machine-learning
+MASTER_SITES=	SF/${PORTNAME}/
+DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Open neural networks library
@@ -12,11 +12,8 @@ COMMENT=	Open neural networks library
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		cmake compiler dos2unix
-DOS2UNIX_FILES=	CMakeLists.txt
-USE_GITHUB=	yes
-GH_ACCOUNT=	Artelnics
-GH_PROJECT=	OpenNN
+USES=		cmake compiler dos2unix zip
+DOS2UNIX_FILES=	opennn/CMakeLists.txt
 USE_LDCONFIG=	yes
 
 CMAKE_OFF=	OpenNN_BUILD_EXAMPLES OpenNN_BUILD_TESTS
