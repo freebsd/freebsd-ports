@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mysql-connector-python
-PORTVERSION=	8.0.19
-PORTREVISION=	2
+PORTVERSION=	8.0.20
 CATEGORIES=	databases python
 MASTER_SITES=	MYSQL/Connector-Python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,9 +21,5 @@ NO_ARCH=	yes
 .include <bsd.port.pre.mk>
 
 PYDISTUTILS_INSTALLARGS:=	${PYDISTUTILS_INSTALLARGS:N--single-version-externally-managed}
-
-post-patch:
-	${REINPLACE_CMD} -e 's|protobuf==|protobuf>=|; s|dnspython==|dnspython>=|' \
-		${WRKSRC}/setupinfo.py
 
 .include <bsd.port.post.mk>
