@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	CPAN:MSERGEANT
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Clamd - Connect to a local clamd service and send commands
+COMMENT=	Connect to local clamd(8) service and send commands
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	clamd:security/clamav

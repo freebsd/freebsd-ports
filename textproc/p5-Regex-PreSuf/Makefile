@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	CPAN:JHI
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Regex::PreSuf - Given word lists, create regular expressions
+COMMENT=	Given word lists, create Perl regular expressions
 
 USES=		perl5
 USE_PERL5=	configure

@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	HTML::Fraction - Encode fractions as HTML entities
+COMMENT=	Encode fractions as HTML entities with Perl
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

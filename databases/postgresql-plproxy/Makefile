@@ -8,7 +8,7 @@ CATEGORIES=	databases
 PKGNAMEPREFIX=	postgresql-
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	PL/Proxy - Function-based sharding for PostgreSQL
+COMMENT=	Function-based sharding for PostgreSQL
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

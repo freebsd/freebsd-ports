@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Lingua::Stem::Snowball - Perl interface to Snowball stemmers
+COMMENT=	Perl interface to Snowball stemmers
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

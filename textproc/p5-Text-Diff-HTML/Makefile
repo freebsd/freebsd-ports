@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Text::Diff::HTML - XHTML format for Text::Diff::Unified
+COMMENT=	XHTML format for Text::Diff::Unified Perl module
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

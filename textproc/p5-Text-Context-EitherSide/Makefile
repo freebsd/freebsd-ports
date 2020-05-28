@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Text::Context::EitherSide - Get n words either side of search keywords
+COMMENT=	Get n words either side of search keywords
 
 USES=		perl5
 USE_PERL5=	configure

@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Tie::Hash::Sorted - presents hashes in sorted order
+COMMENT=	Perl module to present hashes in sorted order
 
 USES=		perl5
 USE_PERL5=	configure

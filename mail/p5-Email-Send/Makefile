@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Email::Send - Simply Sending Email
+COMMENT=	Perl module for simple email sending
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

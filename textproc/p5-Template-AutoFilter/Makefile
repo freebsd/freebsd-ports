@@ -7,7 +7,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dgeo@centrale-marseille.fr
-COMMENT=	Template::AutoFilter - Template::Toolkit with automatic filtering
+COMMENT=	Template::Toolkit subclass with automatic filtering
 
 LICENSE=	CC0-1.0
 

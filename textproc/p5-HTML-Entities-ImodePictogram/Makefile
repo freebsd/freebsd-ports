@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	smatsui@karashi.org
-COMMENT=	HTML::Entities::ImodePictogram - encode / decode i-mode pictogram
+COMMENT=	Encode/decode HTML entities for i-mode pictograms
 
 USES=		perl5
 USE_PERL5=	configure

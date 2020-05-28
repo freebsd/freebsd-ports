@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	MLDBM::Sync - safe concurrent access to MLDBM databases
+COMMENT=	Safe concurrent access to MLDBM databases from Perl
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-MLDBM>=0:databases/p5-MLDBM

@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Time::Piece::MySQL - Adds MySQL-specific methods to Time::Piece
+COMMENT=	MySQL-specific methods for Time::Piece Perl module
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

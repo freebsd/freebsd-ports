@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Template::Plugin::FillInForm - TT plugin for HTML::FillInForm
+COMMENT=	TT plugin for HTML::FillInForm Perl module
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

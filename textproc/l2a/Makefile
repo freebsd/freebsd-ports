@@ -8,7 +8,7 @@ MASTER_SITES=	http://hannemyr.com/enjoy/
 DISTNAME=	l2a
 
 MAINTAINER=	jflemer@alum.rpi.edu
-COMMENT=	L2a - LaTeX to ASCII converter
+COMMENT=	LaTeX to ASCII converter
 
 USES=		zip
 

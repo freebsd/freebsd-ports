@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	des@FreeBSD.org
-COMMENT=	Regexp::Common - Provide commonly requested regular expressions
+COMMENT=	Provide commonly requested Perl regular expressions
 
 LICENSE=	ART10 ART20 BSD3CLAUSE MIT
 LICENSE_COMB=	dual

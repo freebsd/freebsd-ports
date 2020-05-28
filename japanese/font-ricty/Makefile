@@ -11,7 +11,7 @@ EXTRACT_SUFX=	# empty
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER?=	meta@FreeBSD.org
-COMMENT?=	Ricty - fonts for programming
+COMMENT?=	Programming fonts with Japanese support
 
 LICENSE=	OFL11 IPAFONTLICv1.0
 LICENSE_COMB=	multi

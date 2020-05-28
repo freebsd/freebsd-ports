@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	CPAN:PETDANCE
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	HTML::Lint - check for HTML errors in a string or file
+COMMENT=	Check for HTML errors in string or file with Perl
 
 LICENSE=	ART20
 

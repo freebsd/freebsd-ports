@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}_fsl_9y
 
 MAINTAINER=	yds@Necessitu.de
-COMMENT=	LuaSQLite3 - a Lua 5.1 to 5.3 wrapper for the SQLite3 library
+COMMENT=	Lua 5.1 to 5.3 wrapper for SQLite3 library
 
 LICENSE=	MIT
 

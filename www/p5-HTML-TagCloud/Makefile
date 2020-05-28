@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	HTML::TagCloud - Generate An HTML Tag Cloud
+COMMENT=	Generate an HTML tag cloud with Perl
 
 USES=		perl5
 USE_PERL5=	configure

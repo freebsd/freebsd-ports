@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Regexp::Log - A base class for log files regexp builders
+COMMENT=	Base Perl class for log files regexp builders
 
 USES=		perl5
 USE_PERL5=	configure

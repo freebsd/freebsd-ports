@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	CPAN:DGL
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	AnyEvent::Redis - Non-blocking Redis client
+COMMENT=	Non-blocking Redis client written in Perl
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Try-Tiny>=0:lang/p5-Try-Tiny \

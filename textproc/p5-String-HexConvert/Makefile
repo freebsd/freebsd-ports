@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	CPAN:AHERNIT
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ale@biancalanas.net
-COMMENT=	String::HexConver - Converts ascii strings to hex and reverse
+COMMENT=	Convert ASCII strings to hex and reverse
 
 WRKSRC=	${WRKDIR}/${PORTNAME}
 

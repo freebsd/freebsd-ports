@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	XML::Atom::SimpleFeed - Generate simple Atom syndication feeds
+COMMENT=	Generate simple Atom syndication feeds with Perl
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

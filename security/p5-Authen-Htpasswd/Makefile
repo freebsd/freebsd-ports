@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Authen::Htpasswd - interface to read and modify Apache .htpasswd files
+COMMENT=	Perl interface to read and modify Apache .htpasswd files
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
