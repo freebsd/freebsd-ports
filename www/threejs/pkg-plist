@@ -548,6 +548,8 @@
 %%WWWDIR%%/renderers/webgl/WebGLInfo.js
 %%WWWDIR%%/renderers/webgl/WebGLLights.d.ts
 %%WWWDIR%%/renderers/webgl/WebGLLights.js
+%%WWWDIR%%/renderers/webgl/WebGLMaterials.d.ts
+%%WWWDIR%%/renderers/webgl/WebGLMaterials.js
 %%WWWDIR%%/renderers/webgl/WebGLMorphtargets.d.ts
 %%WWWDIR%%/renderers/webgl/WebGLMorphtargets.js
 %%WWWDIR%%/renderers/webgl/WebGLObjects.d.ts
