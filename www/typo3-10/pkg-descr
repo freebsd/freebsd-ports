@@ -2,9 +2,24 @@ TYPO3 is a free Open Source content management system for enterprise purposes
 on the web and in intranets. It offers full flexibility and extendability while
 featuring an accomplished set of ready-made interfaces, functions and modules.
 
-The current stable LTS release (for all new projects).
-The latest version with Long Term Support (LTS).
-It will have full support until October 2021 and security-related bugfixes
-until April 2023.
+The latest version with Long Term Support (LTS). It will have full support until
+October 2021 and security bugfixes until April 2023.
+
+* Dashboard for editors
+* Additional security features for editors and website users
+* Improved Site setup and URL handling
+
+System requirements
+* PHP 7.2 or later
+* MySQL 5.5+ / MariaDB / Postgres / SQLite support
+* Modern Browsers
+
+Supported Until
+Free: 2023-04-30
+ELTS: 2026-04-30
+
+Current Version
+Version: 10.4.3
+Release Date: 2020-05-19
 
 WWW: https://typo3.org/
