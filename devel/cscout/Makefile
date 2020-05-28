@@ -13,7 +13,7 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	unzip:archivers/unzip
 RUN_DEPENDS=	dot:graphics/graphviz
 
-USES=		gmake perl5 shebangfix
+USES=		compiler:c++11-lang gmake perl5 shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	dspinellis dspinellis:swill,btyacc
 GH_PROJECT=	cscout swill:swill btyacc:btyacc
