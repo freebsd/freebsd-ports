@@ -8,7 +8,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	This Ruby gem is a tiny command-line interface library
+COMMENT=	Tiny command-line interface library
 
 NO_ARCH=	yes
 

@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svysh.fbsd@gmail.com
-COMMENT=	This module is a compatibility wrapper around Date::Parse
+COMMENT=	Compatibility wrapper around Date::Parse
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

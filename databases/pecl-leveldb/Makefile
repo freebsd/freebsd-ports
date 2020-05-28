@@ -6,7 +6,7 @@ PORTVERSION=	0.2.1
 CATEGORIES=	databases
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	This extension is a PHP binding for Google LevelDB
+COMMENT=	PHP bindings for Google LevelDB
 
 LICENSE=	PHP301
 

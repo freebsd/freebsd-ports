@@ -9,7 +9,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ericbsd@FreeBSD.org
-COMMENT=	Xcffib is a replacement for xpyb, also is a XCB python binding
+COMMENT=	Replacement for xpyb and XCB Python bindings
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

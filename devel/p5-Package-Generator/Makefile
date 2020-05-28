@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	This module lets you quickly and easily construct new packages
+COMMENT=	Quickly and easily construct new packages
 
 LICENSE=	GPLv1 ART10
 LICENSE_COMB=	dual

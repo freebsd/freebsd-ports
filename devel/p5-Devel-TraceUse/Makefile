@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	mauricio@arareko.net
-COMMENT=	This module shows the modules your program loads, recursively
+COMMENT=	Show the modules your program loads, recursively
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

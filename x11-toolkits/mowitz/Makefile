@@ -8,7 +8,7 @@ CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://siag.nu/pub/mowitz/
 
 MAINTAINER=	mi@aldan.algebra.com
-COMMENT=	This is the Mowitz ("More widgets") library
+COMMENT=	Mowitz ("More widgets") library
 
 LIB_DEPENDS=	libXaw3d.so:x11-toolkits/Xaw3d
 

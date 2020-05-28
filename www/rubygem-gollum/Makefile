@@ -8,7 +8,7 @@ CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sirl33tname@gmail.com
-COMMENT=	Gollum is a simple wiki system built on top of Git
+COMMENT=	Simple wiki system built on top of Git
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,7 +7,7 @@ CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	Unicorn is an HTTP server for Rack applications
+COMMENT=	HTTP server for Rack applications
 
 LICENSE=	GPLv2 GPLv3 RUBY
 LICENSE_COMB=	dual

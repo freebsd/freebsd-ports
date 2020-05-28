@@ -9,7 +9,7 @@ MASTER_SITES=	http://homepage.univie.ac.at/l.ertl/swiggle/files/ \
 		http://bsd-geek.de/FreeBSD/distfiles/
 
 MAINTAINER=	lme@FreeBSD.org
-COMMENT=	Swiggle is a commandline web image gallery generator
+COMMENT=	Command-line web image gallery generator
 
 LICENSE=	BSD4CLAUSE
 

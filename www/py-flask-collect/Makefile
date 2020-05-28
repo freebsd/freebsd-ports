@@ -7,7 +7,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	meka@tilda.center
-COMMENT=	This tool will help you collect static files in one command
+COMMENT=	Tool to collect static files in one command
 
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE

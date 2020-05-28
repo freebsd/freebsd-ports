@@ -8,7 +8,7 @@ MASTER_SITES=	SF/motiftools/Xmt/Xmt400
 DISTNAME=	xmt400
 
 MAINTAINER=	cy@FreeBSD.org
-COMMENT=	Xmt is a Motif Tools library
+COMMENT=	Motif Tools library
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

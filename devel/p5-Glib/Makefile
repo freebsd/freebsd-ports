@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	CPAN:XAOC
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	This module provides access to Glib and GObject libraries
+COMMENT=	Interface to Glib and GObject libraries
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE

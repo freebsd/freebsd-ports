@@ -7,7 +7,7 @@ CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	Ramaze is a simple and modular web framework
+COMMENT=	Simple and modular web framework
 
 LICENSE=	MIT
 

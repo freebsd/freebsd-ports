@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	This is a simple HTML link extractor
+COMMENT=	Simple HTML link extractor
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE

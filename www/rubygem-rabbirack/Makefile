@@ -7,7 +7,7 @@ CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	tota@FreeBSD.org
-COMMENT=	RabbiRack is a tool that controls Rabbit by Web browser
+COMMENT=	Tool to control Rabbit from web browser
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/GPL

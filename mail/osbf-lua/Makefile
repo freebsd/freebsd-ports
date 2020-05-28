@@ -7,7 +7,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://luaforge.net/frs/download.php/2094/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	This tool is used as classifier for mails, primarily as Anti Spam
+COMMENT=	Email classifier, primarily for anti-spam
 
 LICENSE=	GPLv2
 

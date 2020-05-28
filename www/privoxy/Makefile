@@ -9,7 +9,7 @@ MASTER_SITES=	https://www.privoxy.org/sf-download-mirror/Sources/${PORTVERSION}%
 DISTNAME=	privoxy-${PORTVERSION}-stable-src
 
 MAINTAINER=	fk@fabiankeil.de
-COMMENT=	Privoxy is a web proxy with advanced filtering capabilities
+COMMENT=	Web proxy with advanced filtering capabilities
 
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
