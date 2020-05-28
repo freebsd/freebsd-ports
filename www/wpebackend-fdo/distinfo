@@ -1,3 +1,5 @@
 TIMESTAMP = 1581852467
 SHA256 (wpebackend-fdo-1.4.1.tar.xz) = 6249a0b7cbfa662206a8d2fa24e2c574e75c681ad0e93468091f1dc68ddb299d
 SIZE (wpebackend-fdo-1.4.1.tar.xz) = 30248
+SHA256 (b01aa039d1fe.patch) = 3687a3798b6876d5907ed092da52df0c2234c22eeff2a27c5a6fabc8874ace83
+SIZE (b01aa039d1fe.patch) = 1320
