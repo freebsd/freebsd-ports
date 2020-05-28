@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	links
-DISTVERSION=	2.16
-PORTREVISION=	2
+DISTVERSION=	2.20.2
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://links.twibright.com/download/
@@ -62,7 +61,9 @@ UTF8_CONFIGURE_ENABLE=	utf8
 X11_USES=		xorg
 X11_USE=		xorg=x11,xorgproto
 X11_LIB_DEPENDS=	libevent.so:devel/libevent \
-			libfontconfig.so:x11-fonts/fontconfig
+			libfontconfig.so:x11-fonts/fontconfig \
+			libfreetype.so:print/freetype2
+
 X11_CONFIGURE_WITH=	x
 X11_PLIST_FILES=	share/pixmaps/links.xpm
 
