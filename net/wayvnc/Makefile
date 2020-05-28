@@ -16,7 +16,8 @@ COMMENT=	VNC server for wlroots-based compositors
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto
+BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
+		${LOCALBASE}/include/libdrm/drm_fourcc.h:graphics/libdrm
 LIB_DEPENDS=	libuv.so:devel/libuv \
 		libwayland-client.so:graphics/wayland \
 		libneatvnc.so:net/neatvnc \
