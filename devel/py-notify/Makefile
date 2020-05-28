@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.galago-project.org/files/releases/source/notify-python/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	python bindings for libnotify
+COMMENT=	Python bindings for libnotify
 
 DEPRECATED=	Uses deprecated version of python
 EXPIRATION_DATE=	2020-09-15

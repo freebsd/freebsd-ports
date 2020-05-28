@@ -6,7 +6,7 @@ PORTVERSION=	0.5
 CATEGORIES=	misc
 
 MAINTAINER=	zi@FreeBSD.org
-COMMENT=	A figlet for TDF ANSI fonts
+COMMENT=	Figlet for TDF ANSI fonts
 
 USES=		gmake
 ALL_TARGET=	default

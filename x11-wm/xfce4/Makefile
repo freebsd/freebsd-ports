@@ -6,7 +6,7 @@ PORTVERSION=	4.14
 CATEGORIES=	x11-wm xfce
 
 MAINTAINER=	xfce@FreeBSD.org
-COMMENT=	meta-port for the Xfce Desktop Environment
+COMMENT=	Meta-port for the Xfce Desktop Environment
 
 RUN_DEPENDS=	xfwm4:x11-wm/xfce4-wm \
 		xfce4-session:x11-wm/xfce4-session \

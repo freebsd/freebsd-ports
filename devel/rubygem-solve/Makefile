@@ -7,7 +7,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A ruby version constraint solver
+COMMENT=	Ruby version constraint solver
 
 LICENSE=	APACHE20
 

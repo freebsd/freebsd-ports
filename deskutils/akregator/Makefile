@@ -5,7 +5,7 @@ DISTVERSION=	${KDE_APPLICATIONS_VERSION}
 CATEGORIES=	deskutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	A Feed Reader by KDE
+COMMENT=	Feed reader for KDE
 
 LICENSE=	LGPL21
 
@@ -29,7 +29,6 @@ USE_QT=		concurrent core dbus declarative gui location network printsupport \
 USE_LDCONFIG=	yes
 
 DESCR=		${.CURDIR:H:H}/deskutils/kdepim/pkg-descr
-
 
 OPTIONS_DEFINE=	DOCS
 

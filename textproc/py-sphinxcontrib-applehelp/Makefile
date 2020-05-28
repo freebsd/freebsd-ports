@@ -8,7 +8,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	python
 
 MAINTAINER=	wen@FreeBSD.org
-COMMENT=	sphinx extension which outputs Apple help books
+COMMENT=	Extension which outputs Apple help books
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

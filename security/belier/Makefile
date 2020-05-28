@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.ohmytux.com/belier/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	romain.garbage@gmail.com
-COMMENT=	easily cross several machines with ssh
+COMMENT=	Easily cross several machines with SSH
 
 RUN_DEPENDS=	expect>=5.42.1:lang/expect
 

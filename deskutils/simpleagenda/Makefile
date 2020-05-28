@@ -8,7 +8,7 @@ MASTER_SITES=	http://coyote.octets.fr/pub/gnustep/
 DISTNAME=	SimpleAgenda-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	simple calendar and agenda application
+COMMENT=	Simple calendar and agenda application
 
 LIB_DEPENDS+=	libical.so:devel/libical \
 		libuuid.so:misc/e2fsprogs-libuuid

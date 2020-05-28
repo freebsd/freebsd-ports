@@ -7,7 +7,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://www.flamingspork.com/projects/libeatmydata/
 
 MAINTAINER=	bra@fsn.hu
-COMMENT=	a small LD_PRELOAD library designed to (transparently) disable fsync
+COMMENT=	Small library designed to transparently disable fsync
 
 USES=		tar:bzip2
 NO_MTREE=	yes

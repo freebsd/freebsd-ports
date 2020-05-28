@@ -8,7 +8,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	GNU
 
 MAINTAINER=	jev@ecad.org
-COMMENT=	A barcode generation library along with a command line frontend
+COMMENT=	Barcode generation library and command-line frontend
 
 BUILD_DEPENDS=	gawk:lang/gawk
 

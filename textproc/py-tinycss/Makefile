@@ -8,7 +8,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	demon@FreeBSD.org
-COMMENT=	A complete yet simple CSS parser for Python
+COMMENT=	Complete yet simple CSS parser for Python
 
 USES=		python
 USE_PYTHON=	distutils autoplist

@@ -7,7 +7,7 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
 MAINTAINER=	zi@FreeBSD.org
-COMMENT=	hash table for C structures
+COMMENT=	Hash table for C structures
 
 LICENSE=	BSD1CLAUSE
 LICENSE_NAME=	BSD 1-Clause License

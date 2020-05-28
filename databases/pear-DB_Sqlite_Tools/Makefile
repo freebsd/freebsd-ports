@@ -6,7 +6,7 @@ PORTVERSION=	0.1.7
 CATEGORIES=	databases www pear
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	an object oriented interface to backup Sqlite databases
+COMMENT=	Object-oriented interface to backup SQLite databases
 
 LICENSE=	BSD2CLAUSE
 

@@ -7,7 +7,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	acm@FreeBSD.org
-COMMENT=	A high level API for Python internationalization
+COMMENT=	High-level API for Python internationalization
 
 LICENSE=	APACHE20
 

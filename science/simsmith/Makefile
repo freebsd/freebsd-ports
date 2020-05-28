@@ -12,7 +12,7 @@ EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
 
 MAINTAINER=	hamradio@FreeBSD.org
-COMMENT=	A Java-based Smith Chart program
+COMMENT=	Java-based Smith Chart program
 
 USE_JAVA=	yes
 JAVA_RUN=	yes

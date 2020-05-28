@@ -7,7 +7,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	some add-on perlcritic policies
+COMMENT=	Collection of add-on policies for Perl::Critic
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

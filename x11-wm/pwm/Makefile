@@ -10,7 +10,7 @@ MASTER_SITES=	http://modeemi.fi/~tuomov/dl/ \
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 
 MAINTAINER=	schot@a-eskwadraat.nl
-COMMENT=	lightweight window manager with emphasis on usability
+COMMENT=	Lightweight window manager with emphasis on usability
 
 USES=		gmake xorg
 USE_XORG=	x11

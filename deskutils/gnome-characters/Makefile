@@ -8,7 +8,7 @@ MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	find and insert unusual characters for GNOME 3
+COMMENT=	Find and insert unusual characters for GNOME
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

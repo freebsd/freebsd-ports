@@ -7,7 +7,7 @@ CATEGORIES=	textproc
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Swiss-Army Knife for Data I/O
+COMMENT=	Swiss-Army knife for data I/O
 
 LICENSE=	GPLv2
 

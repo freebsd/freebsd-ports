@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	science
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	massXpert software for (bio)chemists
+COMMENT=	Software suite for (bio)chemists
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -9,7 +9,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	gmm@tutanota.com
-COMMENT=	A collection of cache libraries in the same API interface
+COMMENT=	Collection of cache libraries in the same API interface
 
 LICENSE=        BSD3CLAUSE
 LICENSE_FILE=   ${WRKSRC}/LICENSE

@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	CPAN:XANTUS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	snowfly@yuntech.edu.tw
-COMMENT=	This module simplifies access to gmail
+COMMENT=	Module that simplifies access to Gmail
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

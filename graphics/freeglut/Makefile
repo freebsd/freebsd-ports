@@ -8,7 +8,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF
 
 MAINTAINER=	x11@FreeBSD.org
-COMMENT=	open source implementation of the GLUT library
+COMMENT=	Open source implementation of GLUT library
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

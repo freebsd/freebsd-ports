@@ -5,7 +5,7 @@ PORTVERSION=	2020.1
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
-COMMENT=	xorg protocol headers
+COMMENT=	X.Org protocol headers
 
 USES=		xorg-cat:proto
 

@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN/${PORTNAME}/GAAS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	wrapper to the Digest::MD5 module
+COMMENT=	Wrapper to the Digest::MD5 module
 
 USES=		perl5
 USE_PERL5=	configure

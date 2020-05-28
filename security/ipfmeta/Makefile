@@ -8,7 +8,7 @@ MASTER_SITES=	http://cschubert.com/distfiles/ \
 		LOCAL/cy
 
 MAINTAINER=	cy@FreeBSD.org
-COMMENT=	ipfmeta - use objects in IPfilter files
+COMMENT=	Use objects in IPfilter files
 
 USES=		perl5 shebangfix
 

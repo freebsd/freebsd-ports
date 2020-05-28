@@ -7,7 +7,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	cffi-based Python bindings for nanomsg
+COMMENT=	Python bindings for nanomsg (cffi-based)
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

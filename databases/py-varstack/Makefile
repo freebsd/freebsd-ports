@@ -6,7 +6,7 @@ CATEGORIES=	databases python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
-COMMENT=	create stacked configuration structures
+COMMENT=	Create stacked configuration structures
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

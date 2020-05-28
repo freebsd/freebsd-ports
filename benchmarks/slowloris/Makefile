@@ -8,7 +8,7 @@ CATEGORIES=	benchmarks
 MASTER_SITES=	ftp://ftp.renatasystems.org/pub/FreeBSD/ports/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The low bandwidth, yet greedy and poisonous HTTP client
+COMMENT=	Low-bandwidth, yet greedy and poisonous HTTP client
 
 RUN_DEPENDS=	p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL
 

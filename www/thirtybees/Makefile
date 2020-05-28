@@ -7,7 +7,7 @@ MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${POR
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	acm@FreeBSD.org
-COMMENT=	A matured e-commerce solution
+COMMENT=	Mature e-commerce solution
 
 LICENSE_FILE=	${WRKSRC}/LICENSES
 

@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/iReport/iReport-${PORTVERSION}
 DISTNAME=	iReport-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A visual report builder/designer for JasperReports
+COMMENT=	Visual report builder/designer for JasperReports
 
 USES=		dos2unix
 USE_JAVA=	yes
