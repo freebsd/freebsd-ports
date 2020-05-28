@@ -5,6 +5,7 @@
 %%INSTALLPATH%%/fallback_archive.lib.lua
 %%INSTALLPATH%%/feeds.lib.lua
 %%INSTALLPATH%%/install.lua
+%%INSTALLPATH%%/jsonmap.lib.lua
 %%INSTALLPATH%%/ldap.lib.lua
 %%INSTALLPATH%%/mamprefs.lib.lua
 %%INSTALLPATH%%/mamprefsxml.lib.lua
@@ -23,7 +24,7 @@
 %%INSTALLPATH%%/mod_auth_any.lua
 %%INSTALLPATH%%/mod_auth_ccert.lua
 %%INSTALLPATH%%/mod_auth_custom_http.lua
-%%INSTALLPATH%%/mod_auth_external.lua
+%%INSTALLPATH%%/mod_auth_external_insecure.lua
 %%INSTALLPATH%%/mod_auth_ha1.lua
 %%INSTALLPATH%%/mod_auth_http_async.lua
 %%INSTALLPATH%%/mod_auth_http_cookie.lua
@@ -90,6 +91,8 @@
 %%INSTALLPATH%%/mod_discoitems.lua
 %%INSTALLPATH%%/mod_dwd.lua
 %%INSTALLPATH%%/mod_e2e_policy.lua
+%%INSTALLPATH%%/mod_easy_invite.lua
+%%INSTALLPATH%%/mod_email.lua
 %%INSTALLPATH%%/mod_email_pass.lua
 %%INSTALLPATH%%/mod_extdisco.lua
 %%INSTALLPATH%%/mod_fallback_vcard.lua
@@ -115,6 +118,7 @@
 %%INSTALLPATH%%/mod_http_index.lua
 %%INSTALLPATH%%/mod_http_logging.lua
 %%INSTALLPATH%%/mod_http_muc_log.lua
+%%INSTALLPATH%%/mod_http_oauth2.lua
 %%INSTALLPATH%%/mod_http_pep_avatar.lua
 %%INSTALLPATH%%/mod_http_rest.lua
 %%INSTALLPATH%%/mod_http_roster_admin.lua
@@ -127,6 +131,7 @@
 %%INSTALLPATH%%/mod_inject_ecaps2.lua
 %%INSTALLPATH%%/mod_inotify_reload.lua
 %%INSTALLPATH%%/mod_invite.lua
+%%INSTALLPATH%%/mod_invites.lua
 %%INSTALLPATH%%/mod_ipcheck.lua
 %%INSTALLPATH%%/mod_isolate_host.lua
 %%INSTALLPATH%%/mod_jid_prep.lua
@@ -143,6 +148,7 @@
 %%INSTALLPATH%%/mod_log_events_by_cpu_usage.lua
 %%INSTALLPATH%%/mod_log_events_by_memory.lua
 %%INSTALLPATH%%/mod_log_http.lua
+%%INSTALLPATH%%/mod_log_json.lua
 %%INSTALLPATH%%/mod_log_mark.lua
 %%INSTALLPATH%%/mod_log_messages_sql.lua
 %%INSTALLPATH%%/mod_log_rate.lua
@@ -186,6 +192,7 @@
 %%INSTALLPATH%%/mod_muc_mam_hints.lua
 %%INSTALLPATH%%/mod_muc_mam_markers.lua
 %%INSTALLPATH%%/mod_muc_media_metadata.lua
+%%INSTALLPATH%%/mod_muc_moderation.lua
 %%INSTALLPATH%%/mod_muc_notifications.lua
 %%INSTALLPATH%%/mod_muc_occupant_id.lua
 %%INSTALLPATH%%/mod_muc_ping.lua
@@ -195,6 +202,7 @@
 %%INSTALLPATH%%/mod_net_dovecotauth.lua
 %%INSTALLPATH%%/mod_net_proxy.lua
 %%INSTALLPATH%%/mod_nodeinfo2.lua
+%%INSTALLPATH%%/mod_nooffline_noerror.lua
 %%INSTALLPATH%%/mod_offline_email.lua
 %%INSTALLPATH%%/mod_offline_hints.lua
 %%INSTALLPATH%%/mod_omemo_all_access.lua
@@ -240,8 +248,10 @@
 %%INSTALLPATH%%/mod_register_web.lua
 %%INSTALLPATH%%/mod_reload_components.lua
 %%INSTALLPATH%%/mod_reload_modules.lua
+%%INSTALLPATH%%/mod_reminders.lua
 %%INSTALLPATH%%/mod_remote_roster.lua
 %%INSTALLPATH%%/mod_require_otr.lua
+%%INSTALLPATH%%/mod_rest.lua
 %%INSTALLPATH%%/mod_roster_allinall.lua
 %%INSTALLPATH%%/mod_roster_command.lua
 %%INSTALLPATH%%/mod_s2s_auth_compat.lua
@@ -259,6 +269,7 @@
 %%INSTALLPATH%%/mod_s2s_reload_newcomponent.lua
 %%INSTALLPATH%%/mod_s2s_whitelist.lua
 %%INSTALLPATH%%/mod_s2soutinjection.lua
+%%INSTALLPATH%%/mod_sasl2.lua
 %%INSTALLPATH%%/mod_sasl_oauthbearer.lua
 %%INSTALLPATH%%/mod_sasl_token.lua
 %%INSTALLPATH%%/mod_saslauth_muc.lua
@@ -286,6 +297,7 @@
 %%INSTALLPATH%%/mod_statistics_mem.lua
 %%INSTALLPATH%%/mod_statistics_statsd.lua
 %%INSTALLPATH%%/mod_statistics_statsman.lua
+%%INSTALLPATH%%/mod_stats39.lua
 %%INSTALLPATH%%/mod_statsd.lua
 %%INSTALLPATH%%/mod_storage_appendmap.lua
 %%INSTALLPATH%%/mod_storage_ejabberdsql_readonly.lua
@@ -317,8 +329,8 @@
 %%INSTALLPATH%%/mod_vcard_command.lua
 %%INSTALLPATH%%/mod_vcard_muc.lua
 %%INSTALLPATH%%/mod_vjud.lua
+%%INSTALLPATH%%/mod_warn_legacy_tls.lua
 %%INSTALLPATH%%/mod_watchuntrusted.lua
-%%INSTALLPATH%%/mod_web_push.lua
 %%INSTALLPATH%%/mod_webpresence.lua
 %%INSTALLPATH%%/mod_xhtmlim.lua
 %%INSTALLPATH%%/mqtt.lib.lua
