@@ -1,2 +1,5 @@
-SHA256 (facebook-watchman-v4.5.0_GH0.tar.gz) = ef11ad11f3b79a09232a27d993331cc8b686fe06a8f0e7c777cb50cc198020f6
-SIZE (facebook-watchman-v4.5.0_GH0.tar.gz) = 412516
+TIMESTAMP = 1590699687
+SHA256 (facebook-watchman-v4.9.0-1115-gde3c5f68_GH0.tar.gz) = eb226deca69942bf22ddd36cf0e8a967fcd57ebdf5250c0b6567676e7346b2d5
+SIZE (facebook-watchman-v4.9.0-1115-gde3c5f68_GH0.tar.gz) = 3617955
+SHA256 (7bbea1f8e75337d135815da440835a701fb26379.patch) = 35a325c5aa408f104bc708964215e40f5cda27c08b660c0cbdc07da5f4a8d49f
+SIZE (7bbea1f8e75337d135815da440835a701fb26379.patch) = 934

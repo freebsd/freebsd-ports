@@ -2,50 +2,44 @@
 # $FreeBSD$
 
 PORTNAME=	watchman
-PORTVERSION=	4.5.0
-PORTREVISION=	1
 DISTVERSIONPREFIX=	v
+DISTVERSION=	4.9.0-1115
+DISTVERSIONSUFFIX=	-gde3c5f68
 CATEGORIES=	sysutils
 
-MAINTAINER=	linpct@gmail.com
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
+PATCHFILES=	7bbea1f8e75337d135815da440835a701fb26379.patch:-p1
+
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	File alteration monitoring service
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_mips=		fails to build: watchman.h:169: undefined reference to '__sync_add_and_fetch_8'
 BROKEN_mips64=		fails to build: watchman.h:169: undefined reference to '__sync_add_and_fetch_8'
 
+LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+		libdouble-conversion.so:devel/double-conversion \
+		libevent.so:devel/libevent \
+		libfolly.so:devel/folly \
+		libgflags.so:devel/gflags \
+		libglog.so:devel/glog \
+		liblz4.so:archivers/liblz4 \
+		libpcre.so:devel/pcre \
+		libsnappy.so:archivers/snappy \
+		libsodium.so:security/libsodium \
+		libunwind.so:devel/libunwind \
+		libzstd.so:archivers/zstd
+
+USES=		cmake compiler:c++17-lang pkgconfig ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	facebook
 
-USES=		autoreconf gmake pkgconfig
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	ac_cv_prog_HAVE_ARC=false ac_cv_header_sys_inotify_h=no
-CONFIGURE_ARGS=	--without-python --without-ruby # in separate ports
+CMAKE_ON=	BUILD_SHARED_LIBS
+
 TEST_TARGET=	check
 
-PLIST_FILES=	bin/${PORTNAME} \
-		"@dir(,,2777) /var/run/${PORTNAME}"
-PORTDOCS=	README.markdown
-
-OPTIONS_DEFINE=	BACKTRACE PCRE DOCS
-OPTIONS_DEFAULT=BACKTRACE PCRE
-
-BACKTRACE_DESC=		Stack backtrace support via (lib)execinfo
-BACKTRACE_LIBS=		-lexecinfo
-
-PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
-PCRE_CONFIGURE_WITH=	pcre
-
-CPPFLAGS+=	-Wno-error
-
-post-patch:
-# https://www.gnu.org/prep/standards/html_node/Directory-Variables.html
-	@${REINPLACE_CMD} -e 's,xprefix/var,localstatedir,' \
-		-e '\,/etc, { s//$$sysconfdir/; /=/s/^/eval /; }' \
-		${WRKSRC}/configure.ac
-	@${REINPLACE_CMD} -e '/^docdir = /d' \
-		-e '/not-empty/d; /chmod g+s/d;' \
-		${WRKSRC}/Makefile.am
+PLIST_FILES=	bin/${PORTNAME}
 
 .include <bsd.port.mk>

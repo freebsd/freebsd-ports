@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2020-05-28 21:04:15 UTC
++++ CMakeLists.txt
+@@ -309,7 +309,7 @@ if (ENABLE_EDEN_SUPPORT)
+   find_package(rsocket CONFIG REQUIRED)
+ endif()
+ 
+-find_package(PythonInterp REQUIRED)
++#find_package(PythonInterp REQUIRED)
+ message(STATUS "Found python ${PYTHON_VERSION_STRING}")
+ 
+ if(PYTHONINTERP_FOUND)
