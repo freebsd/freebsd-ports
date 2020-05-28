@@ -1,5 +1,5 @@
-TIMESTAMP = 1585887931
-SHA256 (Palakis-obs-websocket-4.7.0-161-g67e89e7_GH0.tar.gz) = 82f4c650c1a18e2cc681f3833990c071ddd9b9c944f796f232ef0d4c4e563fce
-SIZE (Palakis-obs-websocket-4.7.0-161-g67e89e7_GH0.tar.gz) = 169180
+TIMESTAMP = 1590685877
+SHA256 (Palakis-obs-websocket-4.8.0_GH0.tar.gz) = a0b99f8039225305af36ef84d353155173d5878f56187a8988a827b487f15781
+SIZE (Palakis-obs-websocket-4.8.0_GH0.tar.gz) = 173336
 SHA256 (chriskohlhoff-asio-b73dc1d2c0ecb9452a87c26544d7f71e24342df6_GH0.tar.gz) = e4a5f556e3d562c71f9e569ffa64eae665abd2c61d85a2d275c86042b32f9342
 SIZE (chriskohlhoff-asio-b73dc1d2c0ecb9452a87c26544d7f71e24342df6_GH0.tar.gz) = 1211725
