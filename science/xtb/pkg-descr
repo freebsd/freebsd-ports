@@ -1,0 +1,6 @@
+Semiempirical Extended Tight-Binding Program Package
+
+xtb implements a variety of semiempirical, tight-binding, and force field
+methods for computational chemistry and materials science.
+
+WWW: https://github.com/grimme-lab/xtb
