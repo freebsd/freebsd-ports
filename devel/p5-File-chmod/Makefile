@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	smatsui@karashi.org
-COMMENT=	File::chmod - Implements symbolic and ls chmod modes
+COMMENT=	Perl module for symbolic and ls(1)-like chmod modes
 
 USES=		perl5
 USE_PERL5=	configure

@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	IPC::Run - Run subprocesses with piping and redirection
+COMMENT=	Run subprocesses with piping and redirection
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

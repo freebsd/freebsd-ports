@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Proc::Queue - limit the number of child processes running
+COMMENT=	Limit the number of child processes running
 
 USES=		perl5
 USE_PERL5=	configure

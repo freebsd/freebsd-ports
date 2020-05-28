@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Tie::RefHash - use references as hash keys
+COMMENT=	Use references as hash keys in Perl
 
 LICENSE_COMB=	dual
 LICENSE=	ART20 GPLv1

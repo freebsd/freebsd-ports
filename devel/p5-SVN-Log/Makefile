@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ychsiao@ychsiao.org
-COMMENT=	SVN::Log - Extract change logs from a Subversion server
+COMMENT=	Extract change logs from Subversion server
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

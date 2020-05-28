@@ -9,7 +9,7 @@ MASTER_SITES=	SF/hl7toolkit/hl7api/${PORTVERSION}
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bbp2006@columbia.edu
-COMMENT=	Net::HL7 - A simple yet flexible API for non-XML HL7 applications
+COMMENT=	Simple yet flexible API for non-XML HL7 applications
 
 USES=		perl5
 USE_PERL5=	configure

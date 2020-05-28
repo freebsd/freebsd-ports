@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Attribute::Persistent - Really lazy persistence
+COMMENT=	Abstract away persistence of arrays and hashes
 
 BUILD_DEPENDS=	p5-Attribute-Handlers-Prospective>=0:devel/p5-Attribute-Handlers-Prospective \
 		p5-MLDBM>=0:databases/p5-MLDBM

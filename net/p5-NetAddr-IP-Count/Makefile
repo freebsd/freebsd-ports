@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	NetAddr::IP::Count - Count hosts in named subnets
+COMMENT=	Perl module to count hosts in named subnets
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-NetAddr-IP>0:net-mgmt/p5-NetAddr-IP

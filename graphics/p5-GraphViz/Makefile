@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	GraphViz - Perl interface to the GraphViz graphing tool
+COMMENT=	Perl interface to GraphViz graphing tool
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE

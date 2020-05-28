@@ -8,7 +8,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	Entities - a simple Facade to use with your models and API
+COMMENT=	Simple facade to use with your models and APIs
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

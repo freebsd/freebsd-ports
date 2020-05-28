@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	CPAN:ROBIN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	PadWalker - play with Perl lexical variables
+COMMENT=	Play with Perl lexical variables
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

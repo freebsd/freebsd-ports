@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION:S|0$||}
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	App::CLI - Dispatcher module for command line interface programs
+COMMENT=	Dispatcher Perl module for command-line programs
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Data::ICal - Generates iCalendar (RFC 2445) calendar files
+COMMENT=	Generate iCalendar (RFC 2445) calendar files
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

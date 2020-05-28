@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	IO::Multiplex - Manage IO on many file handles
+COMMENT=	Perl module to manage I/O on many file handles
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

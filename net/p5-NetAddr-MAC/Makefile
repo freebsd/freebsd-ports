@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dgeo@centrale-marseille.fr
-COMMENT=	NetAddr::MAC - Handles hardware MAC Addresses (EUI-48 and EUI-64)
+COMMENT=	Handle hardware MAC addresses (EUI-48 and EUI-64)
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Games::Bingo::Print - PDF Generation Class
+COMMENT=	Perl class for PDF generation
 
 LICENSE=	ART10
 

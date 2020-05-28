@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Math::BigInt::GMP - Use the GMP library for Math::BigInt routines
+COMMENT=	Use GMP library for Math::BigInt routines
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	CPAN:DEXTER
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dgeo@centrale-marseille.fr
-COMMENT=	AnyEvent::DNS::EtcHosts - Use /etc/hosts before DNS
+COMMENT=	Use /etc/hosts before DNS in Perl
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

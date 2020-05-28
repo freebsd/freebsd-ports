@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Date::Range - work with a range of dates
+COMMENT=	Work with a range of dates in Perl
 
 BUILD_DEPENDS=	p5-Date-Simple>=0.03:devel/p5-Date-Simple
 RUN_DEPENDS=	p5-Date-Simple>=0.03:devel/p5-Date-Simple

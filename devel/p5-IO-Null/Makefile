@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	rouslan@rshell.net
-COMMENT=	IO::Null - class for null filehandles
+COMMENT=	Perl class for null file handles
 
 USES=		perl5
 USE_PERL5=	configure

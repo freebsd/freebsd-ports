@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Lingua::JA::Fold - fold a Japanese text
+COMMENT=	Perl module for folding Japanese text
 
 USES=		perl5
 USE_PERL5=	configure

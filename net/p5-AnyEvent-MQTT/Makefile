@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	Alex.Bakhtin@gmail.com
-COMMENT=	AnyEvent::MQTT - AnyEvent module for an MQTT client
+COMMENT=	AnyEvent Perl module for MQTT client
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

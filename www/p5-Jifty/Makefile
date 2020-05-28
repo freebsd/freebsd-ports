@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	CPAN:ALEXMV
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Jifty -- Just Do It -- Yet another web framework
+COMMENT=	Yet another web framework written in Perl
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

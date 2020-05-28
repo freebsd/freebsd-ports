@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=	CPAN:MWS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	ResourcePool::Resource::DBI - A ResourcePool wrapper for DBI
+COMMENT=	Resource pool wrapper for DBI Perl module
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-ResourcePool>=0:devel/p5-ResourcePool \

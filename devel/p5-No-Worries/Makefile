@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	No::Worries - coding without worries
+COMMENT=	Coding without worries in Perl
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

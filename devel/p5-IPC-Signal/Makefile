@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	rouslan@rshell.net
-COMMENT=	IPC::Signal - Utility functions dealing with signals
+COMMENT=	Utility functions to deal with signals in Perl
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

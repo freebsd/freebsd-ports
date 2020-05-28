@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/0*$//}
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Data::Compare - compare perl data structures
+COMMENT=	Compare Perl data structures
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

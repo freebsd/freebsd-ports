@@ -7,7 +7,7 @@ CATEGORIES=	shells
 MASTER_SITES=	http://libcode.org/attachments/download/70/
 
 MAINTAINER=	umeno@rr.iij4u.or.jp
-COMMENT=	Klish - Kommand Line Interface Shell
+COMMENT=	Kommand Line Interface Shell
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENCE

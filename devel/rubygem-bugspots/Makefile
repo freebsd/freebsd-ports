@@ -8,7 +8,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	Bugspots - Bug Prediction Heuristic
+COMMENT=	Simple bug prediction heuristic
 
 LICENSE=	MIT
 

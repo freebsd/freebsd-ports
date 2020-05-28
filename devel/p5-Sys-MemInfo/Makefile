@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Sys::MemInfo - Perl extension for getting Memory information
+COMMENT=	Perl extension for getting memory information
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -12,7 +12,7 @@ DISTFILES=	${DISTNAME}.zip \
 		pari-2.3.5.tar.gz:pari
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	PARI - numerical/scientific/number-theoretic calculations
+COMMENT=	Numerical/scientific/number-theoretic calculations
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

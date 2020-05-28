@@ -8,7 +8,7 @@ MASTER_SITES=	http://mad.cs.tut.fi/download/
 DISTNAME=	${PORTNAME}_v${PORTVERSION}_src
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	FLUTE - File Delivery over Unidirectional Transport implementation
+COMMENT=	File Delivery over Unidirectional Transport implementation
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libcurl.so:ftp/curl

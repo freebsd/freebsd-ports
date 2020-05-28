@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	CPAN:CHORNY
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Switch - A switch statement for Perl
+COMMENT=	Switch statement for Perl
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Data::Validate::Domain - domain validation methods
+COMMENT=	Domain validation methods in Perl
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Syntax::Highlight::HTML - Highlight HTML syntax
+COMMENT=	Perl module for HTML syntax highlighting
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

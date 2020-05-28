@@ -8,7 +8,7 @@ PORTREVISION=	1
 CATEGORIES=	comms
 
 MAINTAINER=	johan@stromnet.se
-COMMENT=	OWFS -- 1-Wire file system
+COMMENT=	1-wire file system implementation
 
 LICENSE=	GPLv2
 

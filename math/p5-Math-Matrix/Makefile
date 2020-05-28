@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Math::Matrix - multiply and invert matrices
+COMMENT=	Multiply and invert matrices in Perl
 
 USES=		perl5
 USE_PERL5=	configure

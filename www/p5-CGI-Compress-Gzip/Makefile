@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	CGI::Compress::Gzip - CGI with automatically compressed output
+COMMENT=	CGI in Perl with automatically compressed output
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

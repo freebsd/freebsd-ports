@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	System2 - like system(), but with STDERR available as well
+COMMENT=	Like system(), but with STDERR available as well
 
 USES=		perl5
 USE_PERL5=	configure

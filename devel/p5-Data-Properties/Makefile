@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Data::Properties - persistent properties
+COMMENT=	Perl module for persistent properties
 
 USES=		perl5
 USE_PERL5=	configure

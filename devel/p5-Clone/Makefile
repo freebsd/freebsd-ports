@@ -7,7 +7,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Clone - recursively copy Perl datatypes
+COMMENT=	Recursively copy Perl datatypes
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

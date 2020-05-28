@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	IO::LockedFile - supply object methods for locking files
+COMMENT=	Perl object-oriented methods for locking files
 
 USES=		perl5
 USE_PERL5=	configure

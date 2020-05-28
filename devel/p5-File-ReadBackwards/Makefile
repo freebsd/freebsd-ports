@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	File::ReadBackwards -- read a file backwards by lines
+COMMENT=	Perl module to read file backwards by lines
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

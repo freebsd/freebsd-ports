@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Log::Agent::Logger - a logging interface for perl
+COMMENT=	Logging interface for Perl
 
 LICENSE=	ART20
 

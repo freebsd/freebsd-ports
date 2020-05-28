@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Net::SNPP - Perl Simple Network Pager Protocol Client
+COMMENT=	Perl Simple Network Pager Protocol client
 
 USES=		perl5
 USE_PERL5=	configure

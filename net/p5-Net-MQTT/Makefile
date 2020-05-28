@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	Alex.Bakhtin@gmail.com
-COMMENT=	Net::MQTT - Perl modules for MQTT Protocol (http://mqtt.org/)
+COMMENT=	Perl modules for MQTT protocol
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

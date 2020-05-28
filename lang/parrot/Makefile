@@ -9,7 +9,7 @@ MASTER_SITES=	ftp://ftp.parrot.org/pub/parrot/releases/supported/${PORTVERSION}/
 		LOCAL/sunpoet
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Parrot - virtual machine for dynamic languages
+COMMENT=	Virtual machine for dynamic languages
 
 LICENSE=	ART20
 

@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	CPAN:RCLAMP
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	rouslan@rshell.net
-COMMENT=	Pipeline - Generic pipeline interface
+COMMENT=	Generic pipeline Perl interface
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Class-ISA>=0:devel/p5-Class-ISA \

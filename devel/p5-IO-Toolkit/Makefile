@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	CPAN:LINMAR/${PORTNAME:S/-//}
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ychsiao@ychsiao.org
-COMMENT=	IO::Toolkit - Perl extension to create logfiles
+COMMENT=	Perl extension to create logfiles
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

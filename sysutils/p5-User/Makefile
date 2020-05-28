@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	User - API for locating user information regardless of OS
+COMMENT=	OS-independent API for locating user information
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

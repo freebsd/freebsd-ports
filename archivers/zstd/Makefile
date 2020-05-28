@@ -7,7 +7,7 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=	archivers
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Zstandard - Fast real-time compression algorithm
+COMMENT=	Fast real-time compression algorithm
 
 LICENSE=	BSD3CLAUSE GPLv2
 LICENSE_COMB=	dual

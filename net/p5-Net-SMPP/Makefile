@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	culot@FreeBSD.org
-COMMENT=	Net::SMPP - pure Perl implementation of SMPP 3.4 over TCP
+COMMENT=	Pure Perl implementation of SMPP 3.4 over TCP
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	*.pl

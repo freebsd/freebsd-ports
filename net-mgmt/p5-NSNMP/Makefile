@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	CPAN:KRAGEN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	NSNMP - fast, flexible, low-level, pure-Perl SNMP library
+COMMENT=	Fast, flexible, low-level, pure-Perl SNMP library
 
 USES=		perl5
 USE_PERL5=	configure

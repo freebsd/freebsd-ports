@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	CPAN:LINMAR
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ychsiao@ychsiao.org
-COMMENT=	SVN::Statistics - perl module to create subversion statistics
+COMMENT=	Perl module to generate Subversion statistics
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

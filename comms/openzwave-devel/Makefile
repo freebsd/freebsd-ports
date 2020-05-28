@@ -7,7 +7,7 @@ CATEGORIES=	comms
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	kiwi@oav.net
-COMMENT=	Open-zwave - An open-source interface to Z-Wave networks
+COMMENT=	Open-source interface to Z-Wave networks
 
 LICENSE=	LGPL20
 

@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
-COMMENT=	App::Cmd - Write command line apps with less suffering
+COMMENT=	Write command-line programs with less suffering
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

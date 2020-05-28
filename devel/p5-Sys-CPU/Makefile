@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Sys::CPU - Perl extension for getting CPU information
+COMMENT=	Perl extension for getting CPU information
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

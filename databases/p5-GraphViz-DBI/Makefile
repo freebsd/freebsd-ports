@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	CPAN:MARCEL
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	GraphViz::DBI - graph database tables and relations
+COMMENT=	Perl module for graph database tables and relations
 
 BUILD_DEPENDS=	p5-DBI>=0:databases/p5-DBI \
 		p5-GraphViz>=0:graphics/p5-GraphViz

@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Net::IP::Resolver - Resolve IPs to a particular network
+COMMENT=	Resolve IPs to a particular network
 
 BUILD_DEPENDS=	p5-Net-IP-Match-XS>=0.03:net-mgmt/p5-Net-IP-Match-XS \
 		p5-ExtUtils-AutoInstall>0:devel/p5-ExtUtils-AutoInstall

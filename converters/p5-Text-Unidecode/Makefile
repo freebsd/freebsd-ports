@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Text::Unidecode -- US-ASCII transliterations of Unicode text
+COMMENT=	US-ASCII transliterations of Unicode text
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

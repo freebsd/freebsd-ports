@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	CPAN:NWIGER
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Apache::ConfigFile - Parse Apache style httpd.conf configuration files
+COMMENT=	Parse Apache style httpd.conf configuration files
 
 USES=		perl5
 USE_PERL5=	configure

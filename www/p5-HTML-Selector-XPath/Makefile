@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	CPAN:CORION
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	smatsui@karashi.org
-COMMENT=	HTML::Selector::XPath - CSS Selector to XPath compiler
+COMMENT=	CSS selector to XPath compiler Perl module
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

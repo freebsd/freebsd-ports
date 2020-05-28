@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION:S|00$||}
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Time::Piece - Object Oriented time objects
+COMMENT=	Object-oriented time objects for Perl
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

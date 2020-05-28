@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/0$//}
 
 MAINTAINER=	nistor@snickers.org
-COMMENT=	DBIx::Abstract - DBI SQL abstraction
+COMMENT=	Perl module for DBI SQL abstraction
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
