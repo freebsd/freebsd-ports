@@ -2,10 +2,10 @@
 
 PORTNAME=	rofi-calc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5
+DISTVERSION=	1.7
 CATEGORIES=	x11
 
-MAINTAINER=	alex@xanderio.de
+MAINTAINER=	vidar@karlsen.tech
 COMMENT=	Do live calculations in rofi
 
 LICENSE=	MIT
@@ -24,5 +24,7 @@ GH_ACCOUNT=	svenstaro
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	lib/rofi/calc.so
+
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>
