@@ -4,6 +4,6 @@ include/libcpuid/libcpuid_constants.h
 include/libcpuid/libcpuid_types.h
 lib/libcpuid.a
 lib/libcpuid.so
-lib/libcpuid.so.14
-lib/libcpuid.so.14.0.1
+lib/libcpuid.so.15
+lib/libcpuid.so.15.0.0
 libdata/pkgconfig/libcpuid.pc
