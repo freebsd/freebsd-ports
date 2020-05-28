@@ -25,7 +25,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup448>=4.8<4.9:www/py-beautifulso
 		${PY_PILLOW} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.11.1<3.0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}unidecode>=0.04.14<2.0:converters/py-unidecode@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}willow>=1.3<1.4:graphics/py-willow@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}willow>=1.3:graphics/py-willow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}XlsxWriter>=1.2.8<2.0:textproc/py-xlsxwriter@${PY_FLAVOR}
 
 USES=		cpe python:3.6+ shebangfix
