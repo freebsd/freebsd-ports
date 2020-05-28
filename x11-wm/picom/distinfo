@@ -1,3 +1,5 @@
 TIMESTAMP = 1587493997
 SHA256 (yshui-picom-v8_GH0.tar.gz) = f839a3c058ca90f463eae3973a9381cf2fe93be7d0e58db1c28ea72acd10480f
 SIZE (yshui-picom-v8_GH0.tar.gz) = 242059
+SHA256 (78223caea3f7.patch) = f9e32a1d348ea77343366e96111529f2cd2e78562aaf28252f9ea17c72afb7b1
+SIZE (78223caea3f7.patch) = 868
