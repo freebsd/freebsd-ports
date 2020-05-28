@@ -1,6 +1,6 @@
-TIMESTAMP = 1588953414
-SHA256 (nextdns-nextdns-1.5.7-v1.4.25_GH0.tar.gz) = f6447d4df88e03385a0dd1810034583d3bb008e9d2404f0e54ba64e7dcba119e
-SIZE (nextdns-nextdns-1.5.7-v1.4.25_GH0.tar.gz) = 144430
+TIMESTAMP = 1590694653
+SHA256 (nextdns-nextdns-1.6.3-v1.4.25_GH0.tar.gz) = f6447d4df88e03385a0dd1810034583d3bb008e9d2404f0e54ba64e7dcba119e
+SIZE (nextdns-nextdns-1.6.3-v1.4.25_GH0.tar.gz) = 144430
 SHA256 (cenkalti-backoff-v2.2.1_GH0.tar.gz) = a2c29d0184e7afc415975cf2689723028d2686ffbb67fe0999ab1d691e6d16db
 SIZE (cenkalti-backoff-v2.2.1_GH0.tar.gz) = 8623
 SHA256 (cespare-xxhash-v1.1.0_GH0.tar.gz) = 9418be390574092f0ca989b9ae2f5450270ead8125a635a100850b28c8c9c495
