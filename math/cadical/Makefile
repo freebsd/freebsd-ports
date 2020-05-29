@@ -13,6 +13,8 @@ COMMENT=	Simple CDCL satisfiability solver
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_FreeBSD_12_powerpc64=	fails to build: sed: 1: "s,@CXXFLAGS@,-O2 -pipe  ...": bad flag in substitute command: '-'
+
 USES=		compiler:c++0x gmake tar:xz
 GNU_CONFIGURE=	yes
 
