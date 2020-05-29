@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fcitx
-PORTVERSION=	4.2.9.6
-PORTREVISION=	3
+PORTVERSION=	4.2.9.7
 CATEGORIES=	chinese x11
 MASTER_SITES=	http://download.fcitx-im.org/fcitx/:fcitx \
 		http://download.fcitx-im.org/data/:data
@@ -26,6 +25,8 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes \
 		${LOCALBASE}/libdata/pkgconfig/xkeyboard-config.pc:x11/xkeyboard-config
 LIB_DEPENDS=	libcairo.so:graphics/cairo \
 		libdbus-1.so:devel/dbus \
+		libenchant-2.so:textproc/enchant2 \
+		libjson-c.so:devel/json-c \
 		libXfixes.so:x11/libXfixes \
 		libXinerama.so:x11/libXinerama \
 		libXrender.so:x11/libXrender \
