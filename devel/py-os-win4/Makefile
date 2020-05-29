@@ -25,6 +25,7 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
+# os-win 5.0.0+ requires Python 3.6+
 PORTSCOUT=	limit:^4\.
 
 .include <bsd.port.pre.mk>
