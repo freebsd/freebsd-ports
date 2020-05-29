@@ -16,12 +16,12 @@ BUILD_DEPENDS=	help2man:misc/help2man	\
 		bash:shells/bash
 LIB_DEPENDS=	libpari.so:math/pari
 
+USES=		compiler:c++11-lang gmake shebangfix
+SHEBANG_FILES=	${CONFIGURE_SCRIPT}
+
 USE_GITLAB=	yes
 GL_ACCOUNT=	rezozer/forks
 GL_COMMIT=	7fd4d97cabc07951200b98ee841afc4151c2c287
-
-USES=		gmake shebangfix
-SHEBANG_FILES=	${CONFIGURE_SCRIPT}
 
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=Configure
