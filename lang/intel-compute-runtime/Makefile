@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	Only Intel GPUs on x86 are supported
-BROKEN_i386=	https://github.com/intel/compute-runtime/issues/316
 
 LIB_DEPENDS=	libigc.so:devel/intel-graphics-compiler \
 		libigdgmm.so:multimedia/gmmlib

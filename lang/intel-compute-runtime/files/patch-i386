@@ -1,9 +1,32 @@
+Revert BufferObject's size to size_t like before 45a0ceecfbe4
+
+shared/source/os_interface/linux/drm_memory_manager.cpp:61:54: error: non-const
+      lvalue reference to type 'size_t' (aka 'unsigned int') cannot bind to a value of unrelated type 'uint64_t'
+      (aka 'unsigned long long')
+                    bo->gpuAddress = acquireGpuRange(bo->size, false, rootDeviceIndex, false);
+                                                     ^~~~~~~~
+shared/source/os_interface/linux/drm_memory_manager.h:66:38: note: passing argument
+      to parameter 'size' here
+    uint64_t acquireGpuRange(size_t &size, bool requireSpecificBitness, uint32_t rootDeviceIndex, bool requi...
+                                     ^
+
 SSE2 is not enabled by default on BSDs
 
 core/utilities/clflush.cpp:16:5: error: '_mm_clflush' needs target feature sse2
     _mm_clflush(ptr);
     ^
 
+--- shared/source/os_interface/linux/drm_buffer_object.h.orig	2020-05-21 10:39:12 UTC
++++ shared/source/os_interface/linux/drm_buffer_object.h
+@@ -55,7 +55,7 @@ class BufferObject {
+     std::atomic<uint32_t> refCount;
+ 
+     int handle; // i915 gem object handle
+-    uint64_t size;
++    size_t size;
+     bool isReused;
+ 
+     //Tiling
 --- shared/source/utilities/cpuintrinsics.cpp.orig	2020-02-28 16:16:42 UTC
 +++ shared/source/utilities/cpuintrinsics.cpp
 @@ -12,6 +12,9 @@
