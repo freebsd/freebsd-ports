@@ -112,6 +112,7 @@ GBM_BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto
 GBM_LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
 			libinput.so:x11/libinput \
 			libxkbcommon.so:x11/libxkbcommon
+GBM_USE=		GL=gbm
 GBM_VARS=		_KODI_PLATFORMS+=GBM
 _KODI_GBM_ARGS=		-DCORE_PLATFORM_NAME:STRING="gbm" \
 			-DGBM_RENDER_SYSTEM:STRING="gl"
