@@ -2,6 +2,7 @@
 
 PORTNAME=	riemann-rabbitmq
 DISTVERSION=	0.1.3
+PORTREVISION=	1
 CATEGORIES=	net-mgmt rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +13,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-riemann-tools>=0.2.14:net-mgmt/rubygem-riemann-tools \
-		rubygem-faraday>=0.8.5:www/rubygem-faraday
+		rubygem-faraday0>=0.8.5:www/rubygem-faraday0
 
 USES=		gem
 USE_RUBY=	yes
