@@ -1,3 +1,3 @@
-TIMESTAMP = 1582811416
-SHA256 (rubygem/elasticsearch-transport-7.5.0.gem) = 831ffd52cc4308bd1211fd3128d86e6b35a179b149718d8d4c9cc9a3f59afd2a
-SIZE (rubygem/elasticsearch-transport-7.5.0.gem) = 48128
+TIMESTAMP = 1590358842
+SHA256 (rubygem/elasticsearch-transport-7.7.0.gem) = 48daf4df3a564236d520313aa269f753e055043730fa2bf94ac37e62cc2a0443
+SIZE (rubygem/elasticsearch-transport-7.7.0.gem) = 50176
