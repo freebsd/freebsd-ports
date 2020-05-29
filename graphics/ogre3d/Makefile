@@ -7,25 +7,27 @@ DISTVERSION=	1.11.6
 PORTREVISION=	0
 CATEGORIES=	graphics devel
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	OGRECave
-GH_PROJECT=	ogre
-
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Scene-oriented, flexible 3D engine written in C++
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_FreeBSD_12_powerpc64=	fails to build: /usr/local/bin/ld: /usr/lib/crt1.o:(.got+0x60): undefined reference to 'main'
+
 LIB_DEPENDS=	libzzip.so:devel/zziplib \
 		libfreetype.so:print/freetype2
 
 CONFLICTS=	ogre3d19-[0-9]*
 
+USES=		cmake compiler:c++11-lib pkgconfig sdl xorg
 USE_LDCONFIG=	yes
-USES=		cmake pkgconfig compiler:c++11-lib sdl xorg
 USE_SDL=	sdl2
 USE_XORG=	x11 xaw xext xrandr xt
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	OGRECave
+GH_PROJECT=	ogre
 
 CMAKE_ARGS+=	-DOGRE_BUILD_RENDERSYSTEM_GL3PLUS:BOOL=OFF \
 		-DOGRE_BUILD_RENDERSYSTEM_GL:BOOL=OFF \
@@ -46,7 +48,7 @@ OPTIONS_SUB=		yes
 
 DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen
 DOCS_CMAKE_BOOL=	OGRE_INSTALL_DOCS
- 
+
 FREEIMAGE_DESC=		Build FreeImage codec
 FREEIMAGE_CMAKE_BOOL=	OGRE_BUILD_PLUGIN_FREEIMAGE
 FREEIMAGE_LIB_DEPENDS=	libfreeimage.so:graphics/freeimage
