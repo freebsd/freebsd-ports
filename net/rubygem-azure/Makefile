@@ -3,6 +3,7 @@
 
 PORTNAME=	azure
 PORTVERSION=	0.7.10
+PORTREVISION=	1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -14,8 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-addressable>=2.3<3:www/rubygem-addressable \
 		rubygem-azure-core>=0.1<1:net/rubygem-azure-core \
-		rubygem-faraday>=0.9<1:www/rubygem-faraday \
-		rubygem-faraday_middleware>=0.10<1:www/rubygem-faraday_middleware \
+		rubygem-faraday0>=0.9<1:www/rubygem-faraday0 \
+		rubygem-faraday_middleware0>=0.10<1:www/rubygem-faraday_middleware0 \
 		rubygem-mime-types>=1<4.0:misc/rubygem-mime-types \
 		rubygem-nokogiri>=1.6<2:textproc/rubygem-nokogiri \
 		rubygem-systemu>=2.6<3:devel/rubygem-systemu \
