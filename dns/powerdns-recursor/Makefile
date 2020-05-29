@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BROKEN_armv6=	fails to compile: use of overloaded operator << is ambiguous
 BROKEN_armv7=	fails to compile: use of overloaded operator << is ambiguous
 BROKEN_i386=	crashes on startup (SIGSEGV)
-BROKEN_sparc64=	fails to compile: json11.cpp: undefined reference to std::__throw_out_of_range_fmt
+BROKEN_FreeBSD_12_powerpc64=	fails to compile: Assembler messages: unaligned opcodes detected in executable segment
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
 LIB_DEPENDS=	libboost_context.so:devel/boost-libs \
