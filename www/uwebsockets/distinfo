@@ -1,5 +1,5 @@
-TIMESTAMP = 1590046907
-SHA256 (uNetworking-uWebSockets-v0.17.5_GH0.tar.gz) = 530fb2b4bd013aad595c58ada74d4e3def15ca55ffe033265ace1e2bed7ebf53
-SIZE (uNetworking-uWebSockets-v0.17.5_GH0.tar.gz) = 259444
+TIMESTAMP = 1590729946
+SHA256 (uNetworking-uWebSockets-v0.17.6_GH0.tar.gz) = ba2bee1cc6ed260874ec52f8e19c5a607da29d86d9410806a4df8d4e17cf5ea9
+SIZE (uNetworking-uWebSockets-v0.17.6_GH0.tar.gz) = 259831
 SHA256 (159430943c3c1118a56a22ff9f7cc845661804f9.patch) = c924ccfef7b1e4db08dfa94bdca177ec35918732e1e8b8bba3f9e58ec3cf3c58
 SIZE (159430943c3c1118a56a22ff9f7cc845661804f9.patch) = 1583

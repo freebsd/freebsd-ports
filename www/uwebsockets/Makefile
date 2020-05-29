@@ -2,7 +2,7 @@
 
 PORTNAME=	uwebsockets
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.17.5
+DISTVERSION=	0.17.6
 CATEGORIES=	www devel
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
