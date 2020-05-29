@@ -3,7 +3,7 @@
 PORTNAME=	sk1
 DISTVERSION=	2.0
 DISTVERSIONSUFFIX=	rc3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics python
 MASTER_SITES=	https://downloads.sk1project.net/sk1/${DISTVERSIONFULL}/
 
@@ -21,7 +21,7 @@ LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cairo>0:graphics/py-cairo@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cairo>0:graphics/py-cairo@${PY_FLAVOR} \
 		${PY_PILLOW} \
-		${PYTHON_PKGNAMEPREFIX}pycups>0:print/py-pycups@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pycups1>0:print/py-pycups1@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}reportlab>0:print/py-reportlab@${PY_FLAVOR}
 
 USES=		desktop-file-utils gettext gnome python:2.7 shebangfix
