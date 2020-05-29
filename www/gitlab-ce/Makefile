@@ -3,7 +3,7 @@
 
 PORTNAME=	gitlab-ce
 PORTVERSION=	12.10.7
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -34,7 +34,7 @@ MY_DEPENDS=	git>=2.24.3:devel/git \
 	rubygem-pg>=1.1<2:databases/rubygem-pg \
 	rubygem-rugged>=0.28:devel/rubygem-rugged \
 	rubygem-grape-path-helpers>=1.2<2.0:devel/rubygem-grape-path-helpers \
-	rubygem-faraday>=0.12<1.0:www/rubygem-faraday \
+	rubygem-faraday0>=0.12<1.0:www/rubygem-faraday0 \
 	rubygem-marginalia>=1.8.0<1.9:databases/rubygem-marginalia \
 	rubygem-devise-rails60>=4.6<5.0:devel/rubygem-devise-rails60 \
 	rubygem-doorkeeper>=5.0.2<5.1:security/rubygem-doorkeeper \
