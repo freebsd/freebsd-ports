@@ -3,6 +3,7 @@
 
 PORTNAME=	backup
 PORTVERSION=	4.4.1
+PORTREVISION=	1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -22,7 +23,7 @@ RUN_DEPENDS=	rubygem-CFPropertyList>=2.3.1:devel/rubygem-CFPropertyList \
 		rubygem-dropbox-sdk>=1.6.5:net/rubygem-dropbox-sdk \
 		rubygem-equalizer>=0.0.9:devel/rubygem-equalizer \
 		rubygem-excon>=0.44.4:devel/rubygem-excon \
-		rubygem-faraday>=0.8.8:www/rubygem-faraday \
+		rubygem-faraday0>=0.8.8:www/rubygem-faraday0 \
 		rubygem-fission>=0.5.0:emulators/rubygem-fission \
 		rubygem-flowdock>=0.4.0:www/rubygem-flowdock \
 		rubygem-fog>=1.28.0:devel/rubygem-fog \
