@@ -12,6 +12,8 @@ COMMENT=	Yet Another Swagger Generator
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
+DEPRECATED=	Obsolete, please use www/py-drf-yasg instead
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=3.0.6:devel/py-setuptools_scm@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django22>=1.11.7:www/py-django22@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj22-djangorestframework>=3.8:www/py-dj22-djangorestframework@${PY_FLAVOR} \

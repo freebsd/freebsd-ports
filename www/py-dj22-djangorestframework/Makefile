@@ -12,6 +12,8 @@ COMMENT=	Django REST framework
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
+DEPRECATED=	Obsolete, please use www/py-djangorestframework instead
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django22>=1.11:www/py-django22@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytz>=0:devel/py-pytz@${PY_FLAVOR}
 
@@ -21,7 +23,6 @@ USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}djangorestframework \
-			${PYTHON_PKGNAMEPREFIX}djangorestframework36 \
-			${PYTHON_PKGNAMEPREFIX}dj21-djangorestframework
+			${PYTHON_PKGNAMEPREFIX}djangorestframework3*
 
 .include <bsd.port.mk>
