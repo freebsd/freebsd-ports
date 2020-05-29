@@ -2,6 +2,7 @@ bin/pigrep
 bin/pire_inline
 include/pire/align.h
 include/pire/any.h
+include/pire/approx_matching.h
 include/pire/config.h
 include/pire/defs.h
 include/pire/determine.h
@@ -11,13 +12,17 @@ include/pire/extra.h
 include/pire/fsm.h
 include/pire/fwd.h
 include/pire/glue.h
+include/pire/half_final_fsm.h
+include/pire/minimize.h
 include/pire/partition.h
 include/pire/pire.h
 include/pire/platform.h
 include/pire/re_lexer.h
 include/pire/re_parser.h
+include/pire/read_unicode.h
 include/pire/run.h
 include/pire/scanners/common.h
+include/pire/scanners/half_final.h
 include/pire/scanners/loaded.h
 include/pire/scanners/multi.h
 include/pire/scanners/pair.h

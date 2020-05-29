@@ -2,24 +2,27 @@
 # $FreeBSD$
 
 PORTNAME=	pire
-PORTVERSION=	0.0.5
+PORTVERSION=	0.0.6
 DISTVERSIONPREFIX=	release-
-PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Perl Incompatible Regular Expressions library
 
-LICENSE=	LGPL3+
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	LGPL3+ MIT
+LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	dprokoptsev
+GH_ACCOUNT=	yandex
 
+USES=		autoreconf bison compiler:c++11-lib libtool
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		autoreconf bison libtool
 USE_LDCONFIG=	yes
 TEST_TARGET=	check
+
+post-install:
+	cd ${WRKSRC} && make check
 
 .include <bsd.port.mk>
