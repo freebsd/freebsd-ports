@@ -3,7 +3,7 @@
 
 PORTNAME=	gh
 PORTVERSION=	0.15.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +14,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-addressable>=2.4.0<3:www/rubygem-addressable \
-		rubygem-faraday>=0.8<1:www/rubygem-faraday \
+		rubygem-faraday0>=0.8<1:www/rubygem-faraday0 \
 		rubygem-multi_json>=1.0<2:devel/rubygem-multi_json \
 		rubygem-net-http-persistent2>=2.9<3:www/rubygem-net-http-persistent2 \
 		rubygem-net-http-pipeline>=0:www/rubygem-net-http-pipeline
