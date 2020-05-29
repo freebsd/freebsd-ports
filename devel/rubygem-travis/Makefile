@@ -3,6 +3,7 @@
 
 PORTNAME=	travis
 PORTVERSION=	1.8.9
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,8 +13,8 @@ COMMENT=	CLI and Ruby client library for Travis CI
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-faraday>=0.9<1:www/rubygem-faraday \
-		rubygem-faraday_middleware>=0.9.1<1:www/rubygem-faraday_middleware \
+RUN_DEPENDS=	rubygem-faraday0>=0.9<1:www/rubygem-faraday0 \
+		rubygem-faraday_middleware0>=0.9.1<1:www/rubygem-faraday_middleware0 \
 		rubygem-gh>=0.13<1:devel/rubygem-gh \
 		rubygem-highline>=1.6<2:devel/rubygem-highline \
 		rubygem-launchy>=2.1<3:devel/rubygem-launchy \
