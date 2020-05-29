@@ -1,0 +1,12 @@
+--- folly/CMakeLists.txt.orig	2020-05-27 18:59:36 UTC
++++ folly/CMakeLists.txt
+@@ -27,7 +27,9 @@ install(
+ )
+ 
+ add_subdirectory(experimental/exception_tracer)
++if (FREEBSD_BUILD_EXAMPLES)
+ add_subdirectory(logging/example)
++endif()
+ 
+ if (PYTHON_EXTENSIONS)
+   # Create tree of symbolic links in structure required for successful

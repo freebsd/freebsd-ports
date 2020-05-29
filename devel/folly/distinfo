@@ -1,5 +1,3 @@
-TIMESTAMP = 1561001550
-SHA256 (facebook-folly-v2019.06.17.00_GH0.tar.gz) = dc7ee18b24521a842fc5f7166d44b3db7246354ba4b22aa58b6a2444bb6cae6b
-SIZE (facebook-folly-v2019.06.17.00_GH0.tar.gz) = 2951001
-SHA256 (1df75a13c2f52ee275b6f95be87a02a474e3386f.patch) = 095fac5e28acc5bb2a70a5c0cd3d693dd8c0b1835f2cffc0170ef96e2441a7ad
-SIZE (1df75a13c2f52ee275b6f95be87a02a474e3386f.patch) = 4837
+TIMESTAMP = 1590603778
+SHA256 (facebook-folly-v2020.05.25.00_GH0.tar.gz) = bceb726307fd63f31dc4e3ae89f0c461bae5aa75d08f7115ef0a2cb7ac40d519
+SIZE (facebook-folly-v2020.05.25.00_GH0.tar.gz) = 3214886
