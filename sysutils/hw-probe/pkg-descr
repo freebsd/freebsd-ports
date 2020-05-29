@@ -1,5 +1,5 @@
 A tool to check operability of computer hardware and upload result
-to the Linux/*BSD hardware database.
+to the online hardware database.
 
 Probe is a snapshot of your computer hardware state and system
 logs.  The tool checks operability of devices by analysis of logs
@@ -7,12 +7,12 @@ and returns a permanent URL to view the probe of the computer.
 
 The tool is intended to simplify collecting of logs necessary for
 investigating hardware related problems.  Just run one simple
-command in the console to check your hardware and collect all the
-system logs at once:
+command (requires superuser privileges) in the console to check
+your hardware and collect all the system logs at once:
 
-    sudo -E hw-probe -all -upload
+    # hw-probe -all -upload
 
-By creating probes you contribute to the HDD/SSD Desktop-Class
-Reliability Test study: https://github.com/linuxhw/SMART
+By creating probes you also contribute to the HDD/SSD reliability
+test study (https://github.com/bsdhw/SMART).
 
 WWW: https://bsd-hardware.info/
