@@ -10,7 +10,7 @@ COMMENT=	Modules to implement required syscalls for userspace fileservers
 
 LICENSE=	BSD3CLAUSE
 
-BROKEN_powerpc64=	fails to compile: fhlink.c:57: error: redefinition of 'struct fhlink_args'
+BROKEN=		fails to compile: fhlink.c:57: error: redefinition of 'struct fhlink_args'
 
 USES=		kmod
 
