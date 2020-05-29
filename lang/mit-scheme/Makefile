@@ -13,6 +13,8 @@ COMMENT=	MIT Scheme: includes runtime, compiler, and edwin binaries
 
 LICENSE=	GPLv2
 
+BUILD_DEPENDS=	as:devel/binutils
+
 ONLY_FOR_ARCHS=	i386 amd64
 GNU_CONFIGURE=	yes
 USES=		gmake
