@@ -1,0 +1,7 @@
+Fizz is a TLS 1.3 implementation.
+
+Fizz currently supports TLS 1.3 drafts 28, 26 (both wire-compatible with the
+final specification), and 23. All major handshake modes are supported, including
+PSK resumption, early data, client authentication, and HelloRetryRequest.
+
+WWW: https://github.com/facebookincubator/fizz
