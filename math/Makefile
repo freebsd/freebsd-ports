@@ -909,6 +909,7 @@
     SUBDIR += superlu
     SUBDIR += symmetrica
     SUBDIR += symphony
+    SUBDIR += sympow
     SUBDIR += tablix
     SUBDIR += taucs
     SUBDIR += tblis
