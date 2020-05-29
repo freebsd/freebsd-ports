@@ -24,6 +24,8 @@ BROKEN_sparc64=	No rule to make target 'none.o', needed by 'libasmrun.a'
 BROKEN_mips64=	No ASM support
 BROKEN_mips=	No ASM support
 
+BUILD_DEPENDS=	as:devel/binutils
+
 USES=		cpe compiler:c11 gmake tar:xz
 USE_LDCONFIG=	yes
 CPE_VENDOR=	inria
