@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	faraday_middleware
-PORTVERSION=	0.14.0
+PORTVERSION=	1.0.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,7 @@ COMMENT=	Collection of Ruby Faraday middlewares
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	rubygem-faraday>=0.7.4<1.0:www/rubygem-faraday
+RUN_DEPENDS=	rubygem-faraday>=1.0<2:www/rubygem-faraday
 
 USES=		gem
 USE_RUBY=	yes
