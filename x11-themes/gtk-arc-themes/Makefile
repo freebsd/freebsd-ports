@@ -11,6 +11,8 @@ COMMENT=	Arc-themes for GTK-2.0 and GTK-3.0 based desktop environments
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		fails to build
+
 BUILD_DEPENDS=	inkscape:graphics/inkscape \
 		optipng:graphics/optipng \
 		sassc:textproc/sassc
