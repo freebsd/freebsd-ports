@@ -3,6 +3,7 @@
 
 PORTNAME=	faraday_middleware-aws-sigv4
 PORTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +14,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-aws-sigv4>=1.0<2:devel/rubygem-aws-sigv4 \
-		rubygem-faraday>=0.15:www/rubygem-faraday
+		rubygem-faraday0>=0.15:www/rubygem-faraday0
 
 USES=		gem
 USE_RUBY=	yes
