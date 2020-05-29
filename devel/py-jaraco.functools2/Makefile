@@ -24,6 +24,7 @@ NO_ARCH=	yes
 
 POST_PLIST=	trim-jaraco-namespace
 
+# jaraco.functools 3.0.0+ requires Python 3.6+
 PORTSCOUT=	limit:^2\.
 
 .include <bsd.port.pre.mk>
