@@ -1,7 +1,7 @@
 Source code spell checker.
 
-Fix common misspellings in text files. It's designed primarily for 
-checking misspelled words in source code, but it can be used with other 
+Fix common misspellings in text files. It's designed primarily for
+checking misspelled words in source code, but it can be used with other
 files as well.
 
-WWW: https://github.com/lucasdemarchi/codespell/
+WWW: https://github.com/codespell-project/codespell

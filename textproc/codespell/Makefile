@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	codespell
-PORTVERSION=	1.14
+PORTVERSION=	1.17.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
@@ -11,40 +12,14 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		python:3.4+
+USE_PYTHON=	autoplist concurrent distutils
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	lucasdemarchi
-GH_TAGNAME=	4cb7fe3
-
-OPTIONS_DEFINE=	DOCS EXAMPLES
-
-PLIST_FILES=	bin/codespell
-PORTDOCS=	NEWS TODO
-PORTEXAMPLES=	*
+GH_ACCOUNT=	codespell-project
 
 NO_ARCH=	yes
 
 SUB_FILES+=	pkg-message
-
-do-build:
-	@${REINPLACE_CMD} 's|#!/usr/bin/env python3|#!${PYTHON_CMD}|' \
-		${WRKSRC}/codespell.py
-	@${REINPLACE_CMD} "s|^default_dictionary = .*|default_dictionary = '${EXAMPLESDIR}/data/dictionary.txt'|" \
-		${WRKSRC}/codespell.py
-
-do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/codespell.py ${STAGEDIR}${PREFIX}/bin/codespell
-
-do-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-. for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
-. endfor
-
-do-install-EXAMPLES-on:
-.for i in data example
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/${i}
-	${INSTALL_DATA} ${WRKSRC}/${i}/* ${STAGEDIR}${EXAMPLESDIR}/${i}
-.endfor
+SUB_LIST=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR}
 
 .include <bsd.port.mk>
