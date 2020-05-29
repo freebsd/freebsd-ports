@@ -9,7 +9,7 @@ COMMENT=	Simple and pretty Qt5-based expression calculator
 
 LICENSE=	BSD4CLAUSE
 
-USES=		qmake compiler:c++14-lang qt:5 tar:xz
+USES=		compiler:c++14-lang qmake qt:5 tar:xz
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	anpp
