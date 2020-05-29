@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	biopython
-PORTVERSION=	1.73
-PORTREVISION=	1
+DISTVERSION=	1.77
 CATEGORIES=	biology python
 MASTER_SITES=	http://www.biopython.org/DIST/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,13 +19,16 @@ RUN_DEPENDS=	${PYNUMPY}
 USES=		python
 USE_PYTHON=	distutils autoplist
 
-OPTIONS_DEFINE=	REPORTLAB
+OPTIONS_DEFINE=		REPORTLAB
 OPTIONS_DEFAULT=	REPORTLAB
 
-REPORTLAB_DESC=	PDF support in Bio.Graphics module
+REPORTLAB_DESC=		PDF support in Bio.Graphics module
 REPORTLAB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}reportlab>0:print/py-reportlab@${PY_FLAVOR}
 
-pre-configure: # unbreak for python3: README.rst can't be decoded with the ascii codec: https://github.com/biopython/biopython/issues/1649
-	@truncate -s 0 ${WRKSRC}/README.rst
+post-install:
+	@${STRIP_CMD} \
+		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/Bio/*.so \
+		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/Bio/*/*.so \
+		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/Bio/*/*/*.so \
 
 .include <bsd.port.mk>
