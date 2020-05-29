@@ -1,7 +1,7 @@
 bin/glmark2
 bin/glmark2-es2
-man/man1/glmark2.1.gz
-man/man1/glmark2-es2.1.gz
+share/man/man1/glmark2.1.gz
+share/man/man1/glmark2-es2.1.gz
 %%DATADIR%%/models/asteroid-high.3ds
 %%DATADIR%%/models/asteroid-low.3ds
 %%DATADIR%%/models/bunny.obj
@@ -9,6 +9,7 @@ man/man1/glmark2-es2.1.gz
 %%DATADIR%%/models/cube.3ds
 %%DATADIR%%/models/horse.3ds
 %%DATADIR%%/models/jellyfish.jobj
+%%DATADIR%%/shaders/README.shaders
 %%DATADIR%%/shaders/buffer-wireframe.frag
 %%DATADIR%%/shaders/buffer-wireframe.vert
 %%DATADIR%%/shaders/bump-height.frag
@@ -75,7 +76,6 @@ man/man1/glmark2-es2.1.gz
 %%DATADIR%%/shaders/loop.vert
 %%DATADIR%%/shaders/pulsar-light.vert
 %%DATADIR%%/shaders/pulsar.vert
-%%DATADIR%%/shaders/README.shaders
 %%DATADIR%%/shaders/shadow.frag
 %%DATADIR%%/shaders/shadow.vert
 %%DATADIR%%/shaders/terrain-blur.frag

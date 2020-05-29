@@ -2,23 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	glmark2
-PORTVERSION=	2014.03
-PORTREVISION=	1
+PORTVERSION=	2020.04
 CATEGORIES=	benchmarks
-MASTER_SITES=	https://launchpadlibrarian.net/169075003/
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Benchmark for OpenGL (ES) 2.0
 
 LICENSE=	GPLv3
 
-DEPRECATED=	Uses deprecated version of python
-EXPIRATION_DATE=	2020-09-15
-
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		gl jpeg localbase:ldflags pkgconfig python:2.7,build waf
+USES=		compiler:c++11-lang gl jpeg localbase:ldflags pkgconfig \
+		waf xorg
+USE_XORG=	x11
 USE_GL=		egl gl glesv2
+USE_GITHUB=	yes
+GH_TAGNAME=	06e4728
 CONFIGURE_ARGS=	--with-flavors=x11-gl,x11-glesv2 --no-opt --no-debug
 
 PORTDOCS=	NEWS
@@ -26,6 +25,7 @@ PORTDOCS=	NEWS
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
+	@${REINPLACE_CMD} -e '/-std=c++/s,14,11,' ${WRKSRC}/wscript
 	@${REINPLACE_CMD} -e "/lib/s/, 'dl'//" ${WRKSRC}/src/wscript_build
 	@${REINPLACE_CMD} -e 's/GLMARK_VERSION/ &/' \
 		${WRKSRC}/src/native-state-x11.cpp
