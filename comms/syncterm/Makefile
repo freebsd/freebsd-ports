@@ -11,6 +11,8 @@ COMMENT=	ANSI-BBS terminal which supports telnet, rlogin, and SSH
 
 LICENSE=	GPLv2
 
+BUILD_DEPENDS=	as:devel/binutils
+
 WRKSRC=		${WRKDIR}/syncterm-${PORTVERSION}/src/syncterm
 USES=		gmake perl5 tar:tgz
 USE_PERL5=	build
