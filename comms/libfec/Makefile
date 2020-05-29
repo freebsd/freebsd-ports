@@ -14,6 +14,8 @@ COMMENT=	Several forward error correction (FEC) decoders
 
 LICENSE=	LGPL21
 
+BUILD_DEPENDS=	as:devel/binutils
+
 MAKEFILE=	makefile
 
 GNU_CONFIGURE=	yes
