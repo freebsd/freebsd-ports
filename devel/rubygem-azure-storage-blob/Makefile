@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	azure-storage-blob
-PORTVERSION=	1.1.0
+PORTVERSION=	2.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,9 +11,8 @@ COMMENT=	Microsoft Azure Storage Blob Client Library for Ruby
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-azure-core>=0.1.13<0.2:net/rubygem-azure-core \
-		rubygem-azure-storage-common>=1.0<2:devel/rubygem-azure-storage-common \
-		rubygem-nokogiri>=1.6.8<2:textproc/rubygem-nokogiri
+RUN_DEPENDS=	rubygem-azure-storage-common>=2.0<3:devel/rubygem-azure-storage-common \
+		rubygem-nokogiri>=1.10.4<1.11:textproc/rubygem-nokogiri
 
 USES=		gem
 USE_RUBY=	yes
