@@ -15045,3 +15045,4 @@ devel/hs-data-default-instances-containers||2020-05-26|Deprecated: Haskell libra
 x11-wm/hs-xmonad-contrib||2020-05-26|Deprecated: Haskell libraries get pushed out of the ports tree
 x11/hs-X11||2020-05-26|Deprecated: Haskell libraries get pushed out of the ports tree
 x11/hs-X11-xft||2020-05-26|Deprecated: Haskell libraries get pushed out of the ports tree
+devel/rubygem-peek-redis-rails5|devel/rubygem-peek-redis-rails52|2020-05-29|Obsolete: Please use devel/rubygem-peek-redis-rails52 instead
