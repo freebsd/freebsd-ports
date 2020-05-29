@@ -26,7 +26,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack>0:devel/py-msgpack@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Pmw>0:x11-toolkits/py-Pmw@${PY_FLAVOR} \
 		${PYNUMPY}
 
-USES=		compiler:c++11-lang gl gnome python shebangfix tar:bz2
+USES=		compiler:c++11-lang gl gnome python:3.5+ shebangfix tar:bz2
 USE_GITHUB=	yes
 GH_ACCOUNT=	schrodinger
 GH_PROJECT=	${PORTNAME}-open-source
