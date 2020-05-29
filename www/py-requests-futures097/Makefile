@@ -13,6 +13,9 @@ COMMENT=	HTTP library written in Python for human beings
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Use www/py-requests-futures instead
+EXPIRATION_DATE=2020-05-31
+
 RUN_DEPENDS=	${PY_FUTURES} \
 		${PYTHON_PKGNAMEPREFIX}requests>=1.2.0:www/py-requests@${PY_FLAVOR}
 
