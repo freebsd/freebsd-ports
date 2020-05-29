@@ -487,6 +487,7 @@
     SUBDIR += dmlc-core
     SUBDIR += dmucs
     SUBDIR += docopt.cpp
+    SUBDIR += doctest
     SUBDIR += doctorj
     SUBDIR += dolphin-plugins
     SUBDIR += dotconf
