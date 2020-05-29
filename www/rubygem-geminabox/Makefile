@@ -3,6 +3,7 @@
 
 PORTNAME=	geminabox
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +14,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-builder>=0:devel/rubygem-builder \
-		rubygem-faraday>=0:www/rubygem-faraday \
+		rubygem-faraday0>=0:www/rubygem-faraday0 \
 		rubygem-httpclient>=2.2.7:www/rubygem-httpclient \
 		rubygem-nesty>=0:devel/rubygem-nesty \
 		rubygem-reentrant_flock>=0:devel/rubygem-reentrant_flock \
