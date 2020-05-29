@@ -1,0 +1,169 @@
+# HG changeset patch
+# User Tiago Natel de Moura <t.nateldemoura@f5.com>
+# Date 1590694099 -3600
+#      Thu May 28 20:28:19 2020 +0100
+# Node ID 6fcd2b868ff0603173af1f13642b996805eea1eb
+# Parent  9e14c63773be52613dd47dea9fd113037f15a3eb
+Python: fixed configure script on OSX.
+
+diff --git a/auto/modules/python b/auto/modules/python
+--- a/auto/modules/python
++++ b/auto/modules/python
+@@ -68,7 +68,6 @@ if /bin/sh -c "$NXT_PYTHON_CONFIG --pref
+         NXT_PYTHON_CONFIG="${NXT_PYTHON_CONFIG} --embed"
+     fi
+ 
+-    NXT_PYTHON_EXEC=`${NXT_PYTHON_CONFIG} --exec-prefix`/bin/${NXT_PYTHON}
+     NXT_PYTHON_INCLUDE=`${NXT_PYTHON_CONFIG} --includes`
+     NXT_PYTHON_LIBS=`${NXT_PYTHON_CONFIG} --ldflags`
+ 
+@@ -133,7 +132,7 @@ fi
+ 
+ NXT_PYTHON_MOUNTS_HEADER=$NXT_BUILD_DIR/nxt_python_mounts.h
+ 
+-$NXT_PYTHON_EXEC -c 'import os.path
++$NXT_PYTHON -c 'import os.path
+ import sys
+ pyver = "python" + str(sys.version_info[0]) + "." + str(sys.version_info[1])
+ 
+# HG changeset patch
+# User Tiago Natel de Moura <t.nateldemoura@f5.com>
+# Date 1590694548 -3600
+#      Thu May 28 20:35:48 2020 +0100
+# Node ID 9c63e42284103b24c9f23639ac9c71c91793136b
+# Parent  6fcd2b868ff0603173af1f13642b996805eea1eb
+Isolation: fixed build when features aren't detected.
+
+diff --git a/auto/isolation b/auto/isolation
+--- a/auto/isolation
++++ b/auto/isolation
+@@ -111,7 +111,7 @@ nxt_feature_libs=
+ nxt_feature_test="#include <sys/mount.h>
+ 
+                   int main() {
+-                      return MS_BIND | MS_REC
++                      return MS_BIND | MS_REC;
+                   }"
+ . auto/feature
+ 
+diff --git a/src/nxt_application.c b/src/nxt_application.c
+--- a/src/nxt_application.c
++++ b/src/nxt_application.c
+@@ -474,20 +474,24 @@ nxt_discovery_quit(nxt_task_t *task, nxt
+ static nxt_int_t
+ nxt_app_prefork(nxt_task_t *task, nxt_process_t *process, nxt_mp_t *mp)
+ {
+-    nxt_int_t              cap_setid, cap_chroot;
++    nxt_int_t              cap_setid;
+     nxt_int_t              ret;
+     nxt_runtime_t          *rt;
+     nxt_common_app_conf_t  *app_conf;
+-    nxt_app_lang_module_t  *lang;
+ 
+     rt = task->thread->runtime;
+     app_conf = process->data.app;
+     cap_setid = rt->capabilities.setid;
++
++#if (NXT_HAVE_ISOLATION_ROOTFS)
++    nxt_int_t              cap_chroot;
++    nxt_app_lang_module_t  *lang;
++
+     cap_chroot = rt->capabilities.chroot;
+-
+     lang = nxt_app_lang_module(rt, &app_conf->type);
+ 
+     nxt_assert(lang != NULL);
++#endif
+ 
+     if (app_conf->isolation != NULL) {
+         ret = nxt_app_set_isolation(task, app_conf->isolation, process);
+@@ -499,7 +503,10 @@ nxt_app_prefork(nxt_task_t *task, nxt_pr
+ #if (NXT_HAVE_CLONE_NEWUSER)
+     if (nxt_is_clone_flag_set(process->isolation.clone.flags, NEWUSER)) {
+         cap_setid = 1;
++
++#if (NXT_HAVE_ISOLATION_ROOTFS)
+         cap_chroot = 1;
++#endif
+     }
+ #endif
+ 
+diff --git a/src/nxt_process.c b/src/nxt_process.c
+--- a/src/nxt_process.c
++++ b/src/nxt_process.c
+@@ -37,13 +37,11 @@ static void nxt_process_created_error(nx
+ static nxt_int_t nxt_process_chroot(nxt_task_t *task, const char *path);
+ #endif
+ 
+-#if (NXT_HAVE_PIVOT_ROOT)
++#if (NXT_HAVE_ISOLATION_ROOTFS) && (NXT_HAVE_PIVOT_ROOT)                      \
++    && (NXT_HAVE_CLONE_NEWNS)
+ static nxt_int_t nxt_process_pivot_root(nxt_task_t *task, const char *rootfs);
+ static nxt_int_t nxt_process_private_mount(nxt_task_t *task,
+     const char *rootfs);
+-#endif
+-
+-#if (NXT_HAVE_PIVOT_ROOT)
+ static int nxt_pivot_root(const char *new_root, const char *old_root);
+ #endif
+ 
+@@ -590,11 +588,6 @@ nxt_process_change_root(nxt_task_t *task
+ #endif
+ 
+ 
+-#endif
+-
+-
+-#if (NXT_HAVE_ISOLATION_ROOTFS)
+-
+ static nxt_int_t
+ nxt_process_chroot(nxt_task_t *task, const char *path)
+ {
+@@ -625,8 +618,6 @@ nxt_process_unmount_all(nxt_task_t *task
+     }
+ }
+ 
+-#endif
+-
+ 
+ #if (NXT_HAVE_PIVOT_ROOT) && (NXT_HAVE_CLONE_NEWNS)
+ 
+@@ -856,6 +847,8 @@ nxt_pivot_root(const char *new_root, con
+ 
+ #endif
+ 
++#endif
++
+ 
+ static nxt_int_t
+ nxt_process_send_ready(nxt_task_t *task, nxt_process_t *process)
+diff --git a/src/perl/nxt_perl_psgi.c b/src/perl/nxt_perl_psgi.c
+--- a/src/perl/nxt_perl_psgi.c
++++ b/src/perl/nxt_perl_psgi.c
+@@ -118,12 +118,8 @@ NXT_EXPORT nxt_app_module_t  nxt_app_mod
+     nxt_perl_psgi_compat,
+     nxt_string("perl"),
+     PERL_VERSION_STRING,
+-
+-#if (NXT_HAVE_ISOLATION_ROOTFS)
+     NULL,
+     0,
+-#endif
+-
+     NULL,
+     nxt_perl_psgi_start,
+ };
+diff --git a/src/ruby/nxt_ruby.c b/src/ruby/nxt_ruby.c
+--- a/src/ruby/nxt_ruby.c
++++ b/src/ruby/nxt_ruby.c
+@@ -79,10 +79,8 @@ NXT_EXPORT nxt_app_module_t  nxt_app_mod
+     compat,
+     nxt_string("ruby"),
+     ruby_version,
+-#if (NXT_HAVE_ISOLATION_ROOTFS)
+     nxt_ruby_mounts,
+     nxt_nitems(nxt_ruby_mounts),
+-#endif
+     NULL,
+     nxt_ruby_start,
+ };

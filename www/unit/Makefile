@@ -3,6 +3,7 @@
 
 PORTNAME=	unit
 PORTVERSION=	1.18.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://unit.nginx.org/download/
 
@@ -12,6 +13,7 @@ COMMENT?=	Dynamic web application server
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+PATCH_STRIP=	-p1
 USES+=		compiler:c11 cpe
 
 CPE_VENDOR=	nginx
