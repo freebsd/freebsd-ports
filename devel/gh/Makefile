@@ -2,7 +2,7 @@
 
 PORTNAME=	gh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.0
+DISTVERSION=	0.9.0
 CATEGORIES=	devel
 
 MAINTAINER=	vulcan@wired.sh
@@ -65,22 +65,27 @@ GO_BUILDFLAGS=	-ldflags "\
 		-X github.com/${GH_ACCOUNT}/${GH_PROJECT}/command.Version=${_BUILD_VERSION} \
 		-X github.com/${GH_ACCOUNT}/${GH_PROJECT}/command.BuildDate=${_BUILD_DATE}"
 
-PLIST_FILES=	bin/${PORTNAME} \
-		etc/bash_completion.d/${PORTNAME} \
-		share/fish/completions/${PORTNAME}.fish \
-		share/zsh/site-functions/_${PORTNAME}
-PORTDOCS=	${DOCS:T}
+_DOCS=		README.md docs/gh-vs-hub.md docs/releasing.md \
+		docs/command-line-syntax.md docs/source.md
+PORTDOCS=	${_DOCS:T}
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=		COMPLETIONS DOCS MANPAGES
+OPTIONS_DEFAULT=	COMPLETIONS MANPAGES
+OPTIONS_SUB=		yes
 
-DOCS=		README.md docs/gh-vs-hub.md docs/releasing.md docs/source.md
+COMPLETIONS_DESC=	Build and install shell completions for bash, fish and zsh
+MANPAGES_DESC=		Build and install auto-generated manpages
 
-post-build:
-.for shell in bash fish zsh
-	${WRKDIR}/bin/${PORTNAME} completion -s ${shell} > ${WRKSRC}/${shell}
+do-build-COMPLETIONS-on:
+.for SHELL in bash fish zsh
+	${WRKDIR}/bin/${PORTNAME} completion -s ${SHELL} > ${WRKSRC}/${SHELL}
 .endfor
 
-post-install:
+do-build-MANPAGES-on:
+	cd ${WRKSRC} && \
+		${SETENV} ${MAKE_ENV} GOFLAGS="-mod=vendor" go run ./cmd/gen-docs --man-page --doc-path docs/man/
+
+post-install-COMPLETIONS-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
 	${INSTALL_DATA} ${WRKSRC}/bash \
 		${STAGEDIR}${PREFIX}/etc/bash_completion.d/${PORTNAME}
@@ -93,6 +98,9 @@ post-install:
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${_DOCS} ${STAGEDIR}${DOCSDIR}
+
+post-install-MANPAGES-on:
+	${INSTALL_MAN} ${WRKSRC}/docs/man/*.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
 .include <bsd.port.mk>
