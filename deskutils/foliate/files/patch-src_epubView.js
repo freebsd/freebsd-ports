@@ -1,8 +1,10 @@
---- src/epubView.js.orig	2020-04-06 13:22:39 UTC
+Adds variable to help substitute the correct python version suffix.
+
+--- src/epubView.js.orig	2020-05-29 07:10:48 UTC
 +++ src/epubView.js
-@@ -21,7 +21,7 @@ const {
-     mimetypes, execCommand, recursivelyDeleteDir
- } = imports.utils
+@@ -36,7 +36,7 @@ var enableAnnotations = [
+     mimetypes.kindleAlias,
+ ]
  
 -const python = GLib.find_program_in_path('python') || GLib.find_program_in_path('python3')
 +const python = GLib.find_program_in_path('@PYTHON_VERSION@')
