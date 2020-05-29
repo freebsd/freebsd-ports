@@ -3,7 +3,7 @@
 
 PORTNAME=	rabbit
 PORTVERSION=	2.2.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	misc rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +14,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE_GPLv2+ =	${WRKSRC}/GPL
 
 RUN_DEPENDS=	rubygem-coderay>=1.0.0:textproc/rubygem-coderay \
-		rubygem-faraday>0:www/rubygem-faraday \
+		rubygem-faraday0>0:www/rubygem-faraday0 \
 		rubygem-gdk_pixbuf2>=3.0.9:graphics/rubygem-gdk_pixbuf2 \
 		rubygem-gettext>=3.0.1:devel/rubygem-gettext \
 		rubygem-gio2>0:devel/rubygem-gio2 \
