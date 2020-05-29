@@ -22,7 +22,4 @@ INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 TEST_TARGET=	check
 
-post-install:
-	cd ${WRKSRC} && make check
-
 .include <bsd.port.mk>
