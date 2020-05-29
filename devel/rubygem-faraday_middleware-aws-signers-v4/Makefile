@@ -4,6 +4,7 @@
 PORTNAME=	faraday_middleware-aws-signers-v4
 #PORTVERSION=	0.2.0.beta
 DISTVERSION=	0.2.0.beta
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +15,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-aws-sdk-resources>=3.0.0:devel/rubygem-aws-sdk-resources \
-		rubygem-faraday>0.9<1.0:www/rubygem-faraday
+		rubygem-faraday0>0.9<1.0:www/rubygem-faraday0
 
 USES=		gem shebangfix
 USE_RUBY=	yes
