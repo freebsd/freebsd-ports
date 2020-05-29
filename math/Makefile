@@ -673,6 +673,7 @@
     SUBDIR += p5-Task-Math-Symbolic
     SUBDIR += p5-Text-AsciiTeX
     SUBDIR += p5-bignum
+    SUBDIR += palp
     SUBDIR += pantheon-calculator
     SUBDIR += pari
     SUBDIR += pari_elldata
