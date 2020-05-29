@@ -1,4 +1,4 @@
---- src/CMakeLists.txt.orig	2019-12-13 01:34:45 UTC
+--- src/CMakeLists.txt.orig	2020-05-29 04:35:51 UTC
 +++ src/CMakeLists.txt
 @@ -23,7 +23,7 @@ set(HEADER_FILES    conv.h
  					wtmath.h
@@ -6,6 +6,6 @@
  
 -add_library(wavelib STATIC ${SOURCE_FILES} ${HEADER_FILES})
 +add_library(wavelib SHARED ${SOURCE_FILES} ${HEADER_FILES})
-         
- set_property(TARGET wavelib PROPERTY FOLDER "lib")
+ 
+ include(CheckSymbolExists)
  
