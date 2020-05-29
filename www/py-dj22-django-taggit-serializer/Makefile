@@ -12,6 +12,8 @@ COMMENT=	Django Taggit serializer for the Django REST Framework
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Obsolete, please use www/py-django-taggit-serializer instead
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dj22-django-taggit>=0:www/py-dj22-django-taggit@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${PY_FLAVOR}
 
