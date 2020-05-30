@@ -1,0 +1,19 @@
+--- etc/rc.d/wsdd.orig	2019-12-16 13:40:38 UTC
++++ etc/rc.d/wsdd
+@@ -9,14 +9,11 @@
+ 
+ name=wsdd
+ rcvar=wsdd_enable
+-wsdd_group=""
++wsdd_group=$(/usr/local/bin/testparm -s --parameter-name workgroup 2>/dev/null)
+ 
+-if which testparm >/dev/null 2>/dev/null; then
+-	wsdd_group=$(testparm -s --parameter-name workgroup 2>/dev/null)
+-fi
++: ${wsdd_smb_config_file="/usr/local/etc/smb4.conf"}
+ 
+ # try to manually extract workgroup from samba configuration if testparm failed
+-wsdd_smb_config_file="/usr/local/etc/smb.conf"
+ if [ -z "$wsdd_group" ] && [ -r $wsdd_smb_config_file ]; then
+ 	wsdd_group="$(grep -i '^[[:space:]]*workgroup[[:space:]]*=' $wsdd_smb_config_file | cut -f2 -d= | tr -d '[:blank:]')"
+ fi
