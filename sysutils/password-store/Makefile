@@ -35,7 +35,7 @@ GIT_RUN_DEPENDS=	git>=0:devel/git
 XCLIP_RUN_DEPENDS=	base64>=0:converters/base64 \
 			xclip>=0:x11/xclip
 CONTRIB_RUN_DEPENDS=	pwgen>=0:sysutils/pwgen
-QRENCODE_RUN_DEPENDS=	qrencode>=0:graphics/libqrencode
+QRENCODE_RUN_DEPENDS=	libqrencode>=0:graphics/libqrencode
 
 SUB_FILES=		pass
 
