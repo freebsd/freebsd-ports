@@ -1,6 +1,6 @@
---- raphodo/storage.py.orig	2020-04-17 01:22:23 UTC
+--- raphodo/storage.py.orig	2020-05-03 17:31:45 UTC
 +++ raphodo/storage.py
-@@ -68,10 +68,9 @@ import xdg
+@@ -69,10 +69,9 @@ import xdg
  import gi
  
  gi.require_version('GUdev', '1.0')
@@ -12,7 +12,7 @@
  
  
  
-@@ -170,7 +169,7 @@ def get_media_dir() -> str:
+@@ -181,7 +180,7 @@ def get_media_dir() -> str:
  
      """
  
@@ -21,7 +21,7 @@
          media_dir = '/media/{}'.format(get_user_name())
          run_media_dir = '/run/media'
          distro = get_distro()
-@@ -278,7 +277,7 @@ class ValidMounts():
+@@ -289,7 +288,7 @@ class ValidMounts():
          self.validMountFolders, e.g. /media/<USER>, etc.
          """
  
@@ -30,7 +30,7 @@
              raise ("Mounts.setValidMountPoints() not implemented on %s", sys.platform())
          else:
              try:
-@@ -649,7 +648,7 @@ def get_default_file_manager() -> Tuple[Optional[str],
+@@ -660,7 +659,7 @@ def get_default_file_manager() -> Tuple[Optional[str],
  
      _default_file_manager_probed = True
  
@@ -39,19 +39,12 @@
      cmd = shlex.split('xdg-mime query default inode/directory')
      try:
          desktop_file = subprocess.check_output(cmd, universal_newlines=True)  # type: str
-@@ -794,7 +793,7 @@ def validate_download_folder(path: Optional[str],
- 
-     :param path: path to analyze
-     :param write_on_waccesss_failure: if os.access reports path is not writable, test
--     nonetheless to see if it's writable by writing and deleting a test file 
-+     nonetheless to see if it's writable by writing and deleting a test file
-     :return: Tuple indicating validity and path made absolute
- 
-     >>> validate_download_folder('/some/bogus/and/ridiculous/path')
-@@ -1041,259 +1040,6 @@ class CameraHotplug(QObject):
+@@ -1064,259 +1063,6 @@ class CameraHotplug(QObject):
+             if emit_remove:
+                 logging.info("Hotplug: %s has been removed", name)
                  self.cameraRemoved.emit()
- 
- 
+-
+-
 -class UDisks2Monitor(QObject):
 -    # Most of this class is Copyright 2008-2015 Canonical
 -
@@ -303,17 +296,6 @@
 -            logging.exception('Traceback:')
 -
 -        self.partitionUnmounted.emit(mount_point)
--
--
+ 
+ 
  if have_gio:
-     class GVolumeMonitor(QObject):
-         r"""
-@@ -1692,7 +1438,7 @@ def get_mount_size(mount: QStorageInfo) -> Tuple[int, 
-     """
-     Uses GIO to get bytes total and bytes free (available) for the mount that a
-     path is in.
--    
-+
-     :param path: path located anywhere in the mount
-     :return: bytes_total, bytes_free
-     """
