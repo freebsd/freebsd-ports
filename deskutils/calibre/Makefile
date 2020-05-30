@@ -6,6 +6,9 @@ PORTVERSION=	4.17.0
 CATEGORIES=	deskutils python
 MASTER_SITES=	http://download.calibre-ebook.com/${PORTVERSION}/
 
+PATCH_SITES=	https://github.com/kovidgoyal/calibre/commit/
+PATCHFILES=	db7007a25faefb0cc90e64dda1c0793393b9512d.patch:-p1
+
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Ebook management application
 
