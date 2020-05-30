@@ -27,6 +27,11 @@ include/kodi/addon-instance/Screensaver.h
 include/kodi/addon-instance/VFS.h
 include/kodi/addon-instance/VideoCodec.h
 include/kodi/addon-instance/Visualization.h
+include/kodi/c-api/addon-instance/image_decoder.h
+include/kodi/c-api/addon_base.h
+include/kodi/c-api/audio_engine.h
+include/kodi/c-api/filesystem.h
+include/kodi/c-api/network.h
 include/kodi/gui/General.h
 include/kodi/gui/ListItem.h
 include/kodi/gui/Window.h
@@ -57,7 +62,6 @@ include/kodi/gui/gl/GL.h
 include/kodi/gui/gl/GLonDX.h
 include/kodi/gui/gl/Shader.h
 include/kodi/gui/renderHelper.h
-include/kodi/kodi_vfs_types.h
 include/kodi/libKODI_guilib.h
 include/kodi/libXBMC_addon.h
 include/kodi/libXBMC_pvr.h
@@ -65,7 +69,6 @@ include/kodi/platform/android/System.h
 include/kodi/tools/DllHelper.h
 include/kodi/versions.h
 include/kodi/xbmc_addon_dll.h
-include/kodi/xbmc_epg_types.h
 include/kodi/xbmc_pvr_dll.h
 include/kodi/xbmc_pvr_types.h
 %%GBM%%lib/kodi/kodi-gbm

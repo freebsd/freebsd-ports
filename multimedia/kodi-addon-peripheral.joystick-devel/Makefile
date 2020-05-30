@@ -14,6 +14,8 @@ COMMENT=	Joystick support for Kodi
 
 LICENSE=	GPLv2+
 
+BROKEN=		outdated and incompatible with Kodi addon API changes
+
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/joystick.h:devel/evdev-proto \
 		kodi-devel>=19.0.a20200414:multimedia/kodi-devel
 LIB_DEPENDS=	libtinyxml.so:textproc/tinyxml \

@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kodi
-DISTVERSION=	19.0.a20200414
-PORTREVISION=	2
+DISTVERSION=	19.0.a20200530
 CATEGORIES=	multimedia
 PKGNAMESUFFIX=	-devel
 
@@ -24,6 +23,7 @@ LIB_DEPENDS=	libass.so:multimedia/libass \
 		libcdio.so:sysutils/libcdio \
 		libcrossguid.so:devel/libcrossguid \
 		libcurl.so:ftp/curl \
+		libdav1d.so:multimedia/dav1d \
 		libdrm.so:graphics/libdrm \
 		libdvdnav.so:multimedia/libdvdnav \
 		libdvdread.so:multimedia/libdvdread \
@@ -40,6 +40,7 @@ LIB_DEPENDS=	libass.so:multimedia/libass \
 		libpcrecpp.so:devel/pcre \
 		libpng.so:graphics/png \
 		libpostproc.so:multimedia/ffmpeg \
+		libspdlog.so:devel/spdlog \
 		libswresample.so:multimedia/ffmpeg \
 		libswscale.so:multimedia/ffmpeg \
 		libtag.so:audio/taglib \
@@ -57,7 +58,7 @@ USES=		autoreconf:build cmake:noninja compiler:c++11-lang gettext gl \
 USE_GITHUB=	yes
 GH_ACCOUNT=	xbmc
 GH_PROJECT=	xbmc
-GH_TAGNAME=	75b31098a8800da653b373cd99a025b483029cfc
+GH_TAGNAME=	3b954873c3ce93c3ceb176b06388ba9ba4f2d296
 USE_GL=		egl gl glu
 USE_GNOME=	libxml2 libxslt
 USE_JAVA=	yes
@@ -68,7 +69,7 @@ CMAKE_ARGS=	-DDVDNAV_LIBRARY="${LOCALBASE}/lib/libdvdnav.so" \
 		-DDVDREAD_LIBRARY="${LOCALBASE}/lib/libdvdread.so" \
 		-DLIBDVD_INCLUDE_DIRS="${LOCALBASE}/include"
 CMAKE_OFF=	ENABLE_ALSA ENABLE_DVDCSS ENABLE_INTERNAL_CROSSGUID \
-		ENABLE_INTERNAL_FFMPEG
+		ENABLE_INTERNAL_FFMPEG ENABLE_TESTING
 CONFIGURE_ENV=	CPU_FEATURES=" Features=0xdeadbeef<${_CPU_FEATURES:ts,}>" \
 		OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 		OPENSSL_LIBS="-L${OPENSSLLIB}"
