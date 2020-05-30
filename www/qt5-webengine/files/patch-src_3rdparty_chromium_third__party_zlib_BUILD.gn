@@ -1,6 +1,15 @@
 --- src/3rdparty/chromium/third_party/zlib/BUILD.gn.orig	2018-11-13 18:25:11 UTC
 +++ src/3rdparty/chromium/third_party/zlib/BUILD.gn
-@@ -359,7 +359,7 @@ static_library("bundled_minizip") {
+@@ -82,6 +82,8 @@ if (use_arm_neon_optimizations) {
+       defines = [ "CRC32_ARMV8_CRC32" ]
+       if (is_android) {
+         defines += [ "ARMV8_OS_ANDROID" ]
++      } else if (is_bsd) {
++        defines += [ "ARMV8_OS_FREEBSD" ]
+       } else if (is_linux || is_chromeos) {
+         defines += [ "ARMV8_OS_LINUX" ]
+       } else if (is_fuchsia) {
+@@ -367,7 +369,7 @@ static_library("bundled_minizip") {
      ]
    }
  

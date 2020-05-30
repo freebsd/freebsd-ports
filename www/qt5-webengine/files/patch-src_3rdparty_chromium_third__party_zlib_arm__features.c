@@ -1,6 +1,15 @@
 --- src/3rdparty/chromium/third_party/zlib/arm_features.c.orig	2020-03-22 20:03:48 UTC
 +++ src/3rdparty/chromium/third_party/zlib/arm_features.c
-@@ -27,6 +27,15 @@ int ZLIB_INTERNAL arm_cpu_enable_pmull = 0;
+@@ -12,7 +12,7 @@
+ int ZLIB_INTERNAL arm_cpu_enable_crc32 = 0;
+ int ZLIB_INTERNAL arm_cpu_enable_pmull = 0;
+ 
+-#if defined(ARMV8_OS_ANDROID) || defined(ARMV8_OS_LINUX) || defined(ARMV8_OS_FUCHSIA)
++#if defined(ARMV8_OS_ANDROID) || defined(ARMV8_OS_LINUX) || defined(ARMV8_OS_FUCHSIA) || defined(ARMV8_OS_FREEBSD)
+ #include <pthread.h>
+ #endif
+ 
+@@ -27,13 +27,22 @@ int ZLIB_INTERNAL arm_cpu_enable_pmull = 0;
  #include <zircon/types.h>
  #elif defined(ARMV8_OS_WINDOWS)
  #include <windows.h>
@@ -16,6 +25,14 @@
  #else
  #error arm_features.c ARM feature detection in not defined for your platform
  #endif
+ 
+ static void _arm_check_features(void);
+ 
+-#if defined(ARMV8_OS_ANDROID) || defined(ARMV8_OS_LINUX) || defined(ARMV8_OS_FUCHSIA)
++#if defined(ARMV8_OS_ANDROID) || defined(ARMV8_OS_LINUX) || defined(ARMV8_OS_FUCHSIA) || defined(ARMV8_OS_FREEBSD)
+ static pthread_once_t cpu_check_inited_once = PTHREAD_ONCE_INIT;
+ void ZLIB_INTERNAL arm_check_features(void)
+ {
 @@ -86,5 +95,12 @@ static void _arm_check_features(void)
  #elif defined(ARMV8_OS_WINDOWS)
      arm_cpu_enable_crc32 = IsProcessorFeaturePresent(PF_ARM_V8_CRC32_INSTRUCTIONS_AVAILABLE);
