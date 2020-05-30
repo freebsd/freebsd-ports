@@ -2,9 +2,9 @@
 
 PORTNAME=	scrcpy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.13
+DISTVERSION=	1.14
 CATEGORIES=	comms net
-MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/${GH_TAGNAME}/:server
+MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/${DISTVERSIONFULL}/:server
 DISTFILES=	${SERVER_FILE}:server
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -28,11 +28,11 @@ MESON_ARGS=	-Dportable=false \
 		-Dprebuilt_server=${WRKSRC}/${SERVER_FILE}
 
 PLIST_FILES=	bin/scrcpy man/man1/scrcpy.1.gz ${DATADIR}/scrcpy-server
-PORTDOCS=	README.md FAQ.md
+PORTDOCS=	FAQ.md README.md
 
 OPTIONS_DEFINE=	DOCS
 
-SERVER_FILE=	${PORTNAME}-server-${DISTVERSIONPREFIX}${DISTVERSION}
+SERVER_FILE=	${PORTNAME}-server-${DISTVERSIONFULL}
 
 post-extract:
 	${CP} ${DISTDIR}/${SERVER_FILE} ${WRKSRC}
