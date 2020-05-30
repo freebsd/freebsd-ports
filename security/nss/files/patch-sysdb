@@ -53,17 +53,17 @@
  
  NSS_EXTERN_DATA NSSCKMDInstance nss_dbm_mdInstance;
  
---- lib/manifest.mn.orig	2018-08-31 12:55:53 UTC
-+++ lib/manifest.mn
-@@ -20,7 +20,7 @@ ifndef NSS_BUILD_UTIL_ONLY
- SOFTOKEN_SRCDIRS = \
- 	$(FREEBL_SRCDIR) \
- 	$(SQLITE_SRCDIR) \
--	$(DBM_SRCDIR) \
-+	$(NULL) \
- 	$(SOFTOKEN_SRCDIR) \
- 	$(NULL)
- ifndef NSS_BUILD_SOFTOKEN_ONLY
+--- lib/Makefile.orig	2020-05-29 20:34:42 UTC
++++ lib/Makefile
+@@ -49,7 +49,7 @@ endif
+ endif # MOZILLA_CLIENT
+ 
+ ifndef NSS_DISABLE_DBM
+-DBM_SRCDIR = dbm
++DBM_SRCDIR = $(NULL)
+ endif
+ 
+ ifndef NSS_DISABLE_LIBPKIX
 --- lib/softoken/legacydb/cdbhdl.h.orig	2018-08-31 12:55:53 UTC
 +++ lib/softoken/legacydb/cdbhdl.h
 @@ -9,7 +9,8 @@

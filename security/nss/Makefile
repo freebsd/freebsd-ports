@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nss
-PORTVERSION=	3.52.1
+PORTVERSION=	3.53
 CATEGORIES=	security
 MASTER_SITES=	MOZILLA/security/${PORTNAME}/releases/${DISTNAME:tu:C/[-.]/_/g}_RTM/src
 
@@ -17,8 +17,6 @@ LIB_DEPENDS=	libnspr4.so:devel/nspr \
 TEST_DEPENDS=	bash:shells/bash
 
 USES=		cpe gmake perl5
-
-MAKE_JOBS_UNSAFE=	yes
 
 WRKSRC_SUBDIR=	nss
 
