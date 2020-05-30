@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	ruqola
-DISTVERSION=	1.0.0-246
-DISTVERSIONSUFFIX=	-g3b35804a
+DISTVERSION=	1.0.0-1111
+DISTVERSIONSUFFIX=	-g990e1e65
 CATEGORIES=	net-im kde
 
 MAINTAINER=	kde@FreeBSD.org
@@ -19,6 +19,5 @@ USE_QT=		core dbus declarative declarative gui network networkauth \
 		buildtools_build qmake_build
 USE_GITHUB=	yes
 GH_ACCOUNT=	KDE
-GH_TAGNAME=	3b35804a
 
 .include <bsd.port.mk>
