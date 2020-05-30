@@ -1,6 +1,6 @@
---- quickjs.c.orig	2019-09-18 18:34:20 UTC
+--- quickjs.c.orig	2020-04-12 13:18:13 UTC
 +++ quickjs.c
-@@ -1423,7 +1423,7 @@ static const JSMallocFunctions def_malloc_funcs = {
+@@ -1694,7 +1694,7 @@ static const JSMallocFunctions def_malloc_funcs = {
      (size_t (*)(const void *))malloc_usable_size,
  #else
      /* change this to `NULL,` if compilation fails */
