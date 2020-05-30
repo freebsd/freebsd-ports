@@ -3,7 +3,7 @@
 
 PORTNAME=	ufraw
 PORTVERSION=	0.22
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	graphics
 
 MAINTAINER=	rodrigo@FreeBSD.org
@@ -59,6 +59,8 @@ GNOME_USE=		GNOME=gconf2
 GNOME_CONFIGURE_ENABLE=	mime
 GNOME_VARS=		CATEGORIES+=gnome GCONF_SCHEMAS=${PORTNAME}.schemas
 
+post-patch:
+	${GREP} -Ilrs 'default(none)' ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e 's/default(none)//g'
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/ufraw.desktop ${STAGEDIR}${DESKTOPDIR}
 
