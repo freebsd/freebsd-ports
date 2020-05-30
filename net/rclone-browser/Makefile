@@ -18,4 +18,7 @@ GH_ACCOUNT=	kapitainsky
 GH_PROJECT=	RcloneBrowser
 USE_QT=		buildtools_build core gui qmake_build widgets
 
+# Prepare for Qt5-5.15
+CFLAGS+=	-Wno-deprecated
+
 .include <bsd.port.mk>
