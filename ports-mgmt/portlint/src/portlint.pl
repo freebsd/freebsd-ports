@@ -15,7 +15,7 @@
 # was removed.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.505 2020/03/02 22:19:11 jclarke Exp $
+# $MCom: portlint/portlint.pl,v 1.510 2020/05/30 13:40:58 jclarke Exp $
 #
 
 use strict;
@@ -49,8 +49,8 @@ $portdir = '.';
 
 # version variables
 my $major = 2;
-my $minor = 18;
-my $micro = 11;
+my $minor = 19;
+my $micro = 0;
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
@@ -122,7 +122,16 @@ $makeenv = $opt_M if $opt_M;
 $portdir = $ARGV[0] ? $ARGV[0] : '.';
 
 # The PORTSDIR environment variable overrides our defaults.
-$portsdir = $ENV{PORTSDIR} if ( defined $ENV{'PORTSDIR'} );
+# And if PORTSDIR is defined in /etc/make.conf, that will
+# be checked next.
+if (defined $ENV{'PORTSDIR'}) {
+	$portsdir = $ENV{PORTSDIR};
+} else {
+	my $mconf_portsdir = &get_makeconf_var('PORTSDIR');
+	if ($mconf_portsdir ne '') {
+		$portsdir = $mconf_portsdir;
+	}
+}
 $ENV{'PL_SVN_IGNORE'} //= '';
 my $mfile_moved = "${portsdir}/MOVED";
 my $mfile_uids = "${portsdir}/UIDs";
@@ -160,7 +169,7 @@ my @varlist =  qw(
 	ALLFILES CHECKSUM_ALGORITHMS INSTALLS_ICONS GNU_CONFIGURE
 	CONFIGURE_ARGS MASTER_SITE_SUBDIR LICENSE LICENSE_COMB NO_STAGE
 	DEVELOPER SUB_FILES SHEBANG_LANG MASTER_SITES_SUBDIRS FLAVORS
-	USE_PYTHON LICENSE_PERMS USE_PYQT
+	USE_PYTHON LICENSE_PERMS USE_PYQT USE_GITHUB USE_GITLAB
 );
 
 my %makevar;
@@ -1132,6 +1141,13 @@ sub check_depends_syntax {
 			print "OK: $j refers to $1, skipping checks.\n"
 				if ($verbose);
 			next;
+		} elsif ($j ne 'DEPENDS' && $i =~ /^\$\{([A-Z_]+DEPENDS)}\s*$/ && !$seen_depends{$1}) {
+			# XXX: technically we don't need this elsif block (we could remove the seen_depends check above)
+			# but I don't like that one can use a variable before they've declared it.
+			#&perror("FATAL", $file, -1, "$j points to ${dtype}DEPENDS which has not yet been defined.");
+			print "OK: (kinda) $j refers to $1 (which hasn't been declared yet, but it will work), skipping checks.\n"
+			    if ($verbose);
+			next;
 		}
 		print "OK: checking ports listed in $j.\n" if ($verbose);
 		my @ks = split(/\s+/, $i);
@@ -1141,7 +1157,7 @@ sub check_depends_syntax {
 				last;
 			}
 			my $ok = $k;
-			if ($k =~ /^\$\{(\w+)\}$/) {
+			if ($k =~ /^\$\{([^\}]+)\}$/) {
 				$k = get_makevar_shallow($1);
 				push @ks, split(/\s+/, $k);
 				next;
@@ -1761,12 +1777,16 @@ sub checkmakefile {
 		}
 	}
 
+	my %seen_opts = ();
 	foreach my $i ((@opt, @aopt, @aropt)) {
 		# skip global options
 		next if ($i eq 'DOCS' or $i eq 'NLS' or $i eq 'EXAMPLES' or $i eq 'IPV6' or $i eq 'X11' or $i eq 'DEBUG');
-		my $odescr = &get_makevar("${i}_DESC");
-		if (!$odescr) {
-			&perror("FATAL", $file, -1, "OPTION $i does not have a description (${i}_DESC).");
+		if (!$seen_opts{$i}) {
+			$seen_opts{$i}++;
+			my $odescr = &get_makevar("${i}_DESC");
+			if ($odescr eq "" && $whole !~ /^${i}_DESC.?=/m) {
+				&perror("FATAL", $file, -1, "OPTION $i does not have a description (${i}_DESC).");
+			}
 		}
 		if (!grep(/^$i$/, (@mopt, @popt))) {
 			if ($whole !~ /\n${i}_($m)(_\w+)?(.)?=[^\n]+/ and $whole !~ /\n[-\w]+-${i}-(on|off):\n/) {
@@ -1952,9 +1972,9 @@ sub checkmakefile {
 	);
 	print "OK: checking to see if certain macros are sorted.\n" if ($verbose);
 	foreach my $sorted_macro (@macros_to_sort) {
-		while ($whole =~ /\n$sorted_macro.?=\s*(.+)\n/g) {
+		while ($whole =~ /\n$sorted_macro.?=\s*([^#]+)(#.*)?\n/g) {
 			my $lineno = &linenumber($`);
-			my $srex = $1;
+			my $srex = chomp($1);
 			my @smacros = sort(split / /, $srex);
 			if (join(" ", @smacros) ne $srex) {
 				&perror("WARN", $file, $lineno, "the arguments to $sorted_macro ".
@@ -3029,31 +3049,34 @@ DIST_SUBDIR EXTRACT_ONLY
 	}
 
 	# if DISTFILES have only single item, it is better to avoid DISTFILES
-	# and to use combination of DISTNAME and EXTRACT_SUFX.
+	# and to use combination of DISTNAME and EXTRACT_SUFX (unless USE_GITHUB
+	# or USE_GITLAB is set to nodefault in which case it is fine).
 	# example:
 	#	DISTFILES=package-1.0.tgz
 	# should be
 	#	DISTNAME=     package-1.0
 	#	EXTRACT_SUFX= .tgz
-	if ($distfiles =~ /^\S+$/ && $distfiles !~ /:[^\/:]+$/) {
-		$bogusdistfiles++;
-		print "OK: seen DISTFILES with single item, checking value.\n"
-			if ($verbose);
-		&perror("WARN", $file, -1, "use of DISTFILES with single file ".
-			"discouraged. distribution filename should be set by ".
-			"DISTNAME and EXTRACT_SUFX.");
-		if ($distfiles eq (($distname ne '') ? $distname : "$portname-$portversion") . $extractsufx) {
-			&perror("WARN", $file, -1, "definition of DISTFILES not necessary. ".
-				"DISTFILES is \${DISTNAME}/\${EXTRACT_SUFX} ".
-				"by default.");
-		}
+	if ($makevar{USE_GITHUB} ne 'nodefault' && $makevar{USE_GITLUB} ne 'nodefault') {
+		if ($distfiles =~ /^\S+$/ && $distfiles !~ /:[^\/:]+$/) {
+			$bogusdistfiles++;
+			print "OK: seen DISTFILES with single item, checking value.\n"
+				if ($verbose);
+			&perror("WARN", $file, -1, "use of DISTFILES with single file ".
+				"discouraged. distribution filename should be set by ".
+				"DISTNAME and EXTRACT_SUFX.");
+			if ($distfiles eq (($distname ne '') ? $distname : "$portname-$portversion") . $extractsufx) {
+				&perror("WARN", $file, -1, "definition of DISTFILES not necessary. ".
+					"DISTFILES is \${DISTNAME}/\${EXTRACT_SUFX} ".
+					"by default.");
+			}
 
-		# display advice only in certain cases.
+			# display advice only in certain cases.
 #MICHAEL: will this work with multiple distfiles in this list?  what about
 #         doing the same sort of thing for DISTNAME, is it needed?
-		if ($distfiles =~ /^\Q$i\E([\-.].+)$/) {
-			&perror("WARN", $file, -1, "how about \"EXTRACT_SUFX=$1\"".
-				", instead of DISTFILES?");
+			if ($distfiles =~ /^\Q$i\E([\-.].+)$/) {
+				&perror("WARN", $file, -1, "how about \"EXTRACT_SUFX=$1\"".
+					", instead of DISTFILES?");
+			}
 		}
 	}
 
@@ -3841,6 +3864,22 @@ sub get_makevar_raw {
 	if (${^CHILD_ERROR_NATIVE} != 0) {
         die "\nFATAL ERROR: make(1) died with status ${^CHILD_ERROR_NATIVE} and returned '$result'";
 	}
+
+	return $result;
+}
+
+# This uses a "null" makefile to extract options from /etc/make.conf without any overrides.
+sub get_makeconf_var {
+	my($cmd, $result);
+
+	$cmd = join(' -V ', "echo '' | make $makeenv -f -", map { "'$_'"} @_);
+	$result =`$cmd`;
+	chomp $result;
+
+	$result =~ s/\n\n/\n\0\n/g;
+	if (${^CHILD_ERROR_NATIVE} != 0) {
+        die "\nFATAL ERROR: make(1) died with status ${^CHILD_ERROR_NATIVE} and returned '$result'";
+    }
 
 	return $result;
 }
