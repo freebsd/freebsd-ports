@@ -2,7 +2,7 @@
 
 PORTNAME=	tokei
 DISTVERSIONPREFIX=	v
-DISTVERSION=	11.1.1
+DISTVERSION=	11.2.1
 CATEGORIES=	devel
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -17,7 +17,7 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	XAMPPRocky
 
-CARGO_CRATES=	ahash-0.3.4 \
+CARGO_CRATES=	ahash-0.3.5 \
 		aho-corasick-0.7.10 \
 		ansi_term-0.11.0 \
 		arrayref-0.3.6 \
@@ -29,13 +29,13 @@ CARGO_CRATES=	ahash-0.3.4 \
 		blake2b_simd-0.5.10 \
 		block-buffer-0.7.3 \
 		block-padding-0.1.5 \
-		bstr-0.2.12 \
+		bstr-0.2.13 \
 		byte-tools-0.3.1 \
 		bytecount-0.6.0 \
 		byteorder-1.3.4 \
-		cc-1.0.52 \
+		cc-1.0.54 \
 		cfg-if-0.1.10 \
-		clap-2.33.0 \
+		clap-2.33.1 \
 		cloudabi-0.0.3 \
 		const-random-0.1.8 \
 		const-random-macro-0.1.8 \
@@ -45,37 +45,37 @@ CARGO_CRATES=	ahash-0.3.4 \
 		crossbeam-epoch-0.8.2 \
 		crossbeam-queue-0.2.1 \
 		crossbeam-utils-0.7.2 \
-		dashmap-3.11.1 \
+		dashmap-3.11.2 \
 		digest-0.8.1 \
 		dirs-2.0.2 \
 		dirs-sys-0.3.4 \
 		dtoa-0.4.5 \
 		either-1.5.3 \
-		encoding_rs-0.8.22 \
+		encoding_rs-0.8.23 \
 		encoding_rs_io-0.1.7 \
 		env_logger-0.7.1 \
 		fake-simd-0.1.2 \
-		fnv-1.0.6 \
+		fnv-1.0.7 \
 		generic-array-0.12.3 \
 		getrandom-0.1.14 \
-		git2-0.13.5 \
+		git2-0.13.6 \
 		globset-0.4.5 \
 		grep-matcher-0.1.4 \
 		grep-searcher-0.1.7 \
-		half-1.5.0 \
+		half-1.6.0 \
 		handlebars-3.0.1 \
-		hermit-abi-0.1.12 \
+		hermit-abi-0.1.13 \
 		hex-0.4.2 \
 		humantime-1.3.0 \
 		idna-0.2.0 \
-		ignore-0.4.14 \
+		ignore-0.4.15 \
 		itoa-0.4.5 \
 		jobserver-0.1.21 \
 		lazy_static-1.4.0 \
-		libc-0.2.69 \
-		libgit2-sys-0.12.5+1.0.0 \
+		libc-0.2.71 \
+		libgit2-sys-0.12.6+1.0.0 \
 		libz-sys-1.0.25 \
-		linked-hash-map-0.5.2 \
+		linked-hash-map-0.5.3 \
 		lock_api-0.3.4 \
 		log-0.4.8 \
 		maplit-1.0.2 \
@@ -94,11 +94,11 @@ CARGO_CRATES=	ahash-0.3.4 \
 		pest_generator-2.1.3 \
 		pest_meta-2.1.3 \
 		pkg-config-0.3.17 \
-		ppv-lite86-0.2.6 \
-		proc-macro-hack-0.5.15 \
-		proc-macro2-1.0.12 \
+		ppv-lite86-0.2.8 \
+		proc-macro-hack-0.5.16 \
+		proc-macro2-1.0.17 \
 		quick-error-1.2.3 \
-		quote-1.0.4 \
+		quote-1.0.6 \
 		rand-0.7.3 \
 		rand_chacha-0.2.2 \
 		rand_core-0.5.1 \
@@ -114,15 +114,15 @@ CARGO_CRATES=	ahash-0.3.4 \
 		ryu-1.0.4 \
 		same-file-1.0.6 \
 		scopeguard-1.1.0 \
-		serde-1.0.106 \
+		serde-1.0.110 \
 		serde_cbor-0.11.1 \
-		serde_derive-1.0.106 \
-		serde_json-1.0.52 \
-		serde_yaml-0.8.11 \
+		serde_derive-1.0.110 \
+		serde_json-1.0.53 \
+		serde_yaml-0.8.12 \
 		sha-1-0.8.2 \
 		smallvec-1.4.0 \
 		strsim-0.8.0 \
-		syn-1.0.18 \
+		syn-1.0.27 \
 		tempfile-3.1.0 \
 		term_size-0.3.2 \
 		termcolor-1.1.0 \
@@ -137,7 +137,7 @@ CARGO_CRATES=	ahash-0.3.4 \
 		unicode-xid-0.2.0 \
 		url-2.1.1 \
 		vcpkg-0.2.8 \
-		vec_map-0.8.1 \
+		vec_map-0.8.2 \
 		walkdir-2.3.1 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
 		winapi-0.3.8 \
