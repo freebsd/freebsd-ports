@@ -57,6 +57,7 @@ bin/%%TDIARY_SCRIPT%%
 %%WWWDIR%%/lib/tdiary/lang/ja.rb
 %%WWWDIR%%/lib/tdiary/plugin.rb
 %%WWWDIR%%/lib/tdiary/plugin/00default.rb
+%%WWWDIR%%/lib/tdiary/plugin/03purge_cache.rb
 %%WWWDIR%%/lib/tdiary/plugin/05referer.rb
 %%WWWDIR%%/lib/tdiary/plugin/10spamfilter.rb
 %%WWWDIR%%/lib/tdiary/plugin/50sp.rb
