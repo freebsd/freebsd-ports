@@ -10,11 +10,10 @@ COMMENT=		Library passing all socket communications through unix sockets
 
 LICENSE=		GPLv3
 
-BROKEN_aarch64=		fails to compile: socket_wrapper.c:4036:9: cast to 'void *' from smaller integer type 'uintptr_t' (aka 'unsigned int')
-
 USES=			cmake
 USE_LDCONFIG=		yes
 
+CFLAGS_aarch64=	-Wno-error=int-to-pointer-cast -Wno-error=pointer-to-int-cast
 CFLAGS_mips=	-Wno-error=int-to-pointer-cast -Wno-error=pointer-to-int-cast
 CFLAGS_mips64=	-Wno-error=int-to-pointer-cast -Wno-error=pointer-to-int-cast
 CFLAGS_powerpcspe=	-Wno-error=int-to-pointer-cast -Wno-error=pointer-to-int-cast
