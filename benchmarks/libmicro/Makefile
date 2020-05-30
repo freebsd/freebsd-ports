@@ -11,9 +11,6 @@ COMMENT=	Set of utilities to benchmark productivity of system calls
 
 LICENSE=	CDDL
 
-BROKEN_aarch64=		Fails to build: bin-aarch64: no such file or directory
-BROKEN_armv6=		Fails to build: bin-armv6: no such file or directory
-BROKEN_armv7=		Fails to build: bin-armv7: no such file or directory
 BROKEN_mips64=		Fails to build: bin-mips64: no such file or directory
 
 USES=		gmake
@@ -22,7 +19,7 @@ STRIP=		# Do not strip binaries
 PLIST_SUB=	ARCH="${LIBMICRO_ARCH}"
 PKGLIBDIR=	${PREFIX}/lib/${PORTNAME}
 
-LIBMICRO_ARCH=	${ARCH:S/powerpc64/powerpc/}
+LIBMICRO_ARCH=	${ARCH:S/aarch64/arm64/:C/armv.*/arm/:S/powerpc64/powerpc/}
 
 post-build:
 	${ECHO_CMD} '#!/bin/sh' > ${WRKDIR}/libmicro-bench
