@@ -1,0 +1,41 @@
+[
+{ type: install
+  message: <<EOM
+1 Please keep in mind that
+heavily used ILIAS installation can cause huge growth
+of your log file, so remember to disable notices logging
+in your PHP installation.
+
+2 Also, this installation process has installed everything
+that is needed for ILIAS to run properly with basic
+functionality, but to broaden it you will have to install
+third party software like Sun Java, HTMLdoc, LaTeX or
+some virus scanner by yourself.
+
+3 Add the following to your Apache configuration file
+   httpd.conf, and restart the server:
+
+   Alias /ilias %%WWWDIR%%/
+   AcceptPathInfo On
+   <Directory %%WWWDIR%%/>
+      AllowOverride None
+      Require all granted
+   </Directory>
+
+4 If you use MySQL, Strict SQL Mode MUST be disabled.
+
+5 After installation, you should use 'composer install'
+in the directory %%WWWDIR%%/libs/composer.
+
+6 Then feel free to proceed to ILIAS web setup proccess.
+  When input Ilias data directory, please use
+  %%PREFIX%%/%%ILIASDATADIR%% and uncheck the create option.
+
+7 If all is OK, you can login into the system with
+username/root and password/homer as the administrator.
+
+For more information, see the INSTALL DOCUMENTATION:
+http://www.ilias.de/docu/goto.php?target=lm_367&client_id=docu
+EOM
+}
+]

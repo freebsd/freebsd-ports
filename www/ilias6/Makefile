@@ -2,18 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	ilias
-PORTVERSION=	5.4.11
+PORTVERSION=	6.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
+PKGNAMESUFFIX=	6${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Powerful, dynamic, PHP and MySQL based e-learning platform
 
 LICENSE=	GPLv2
 
-CONFLICTS=	ilias6-[0-9]*
+CONFLICTS=	ilias-5.4.[0-9]*
 
-RUN_DEPENDS=	convert:graphics/ImageMagick6 \
+RUN_DEPENDS=	composer:devel/php-composer \
+		convert:graphics/ImageMagick6 \
 		zip:archivers/zip \
 		${UNZIP_CMD}:archivers/unzip \
 		${LOCALBASE}/share/pear/PEAR.php:devel/pear@${PHP_FLAVOR} \
@@ -29,7 +31,8 @@ GH_PROJECT=	ILIAS
 USES=		cpe jpeg php
 NO_BUILD=	yes
 PLIST=		${WRKDIR}/plist
-USE_PHP=	pdo_mysql session zlib gd pdf dom xsl pcre simplexml
+USE_PHP=	curl ldap pdo_mysql gd pdf dom pcre session simplexml \
+		soap xmlrpc xmlwriter xsl zlib
 ILIASDIR=	www/ilias
 ILIASDATADIR=	www/iliasdata
 PLIST_SUB=	ILIASDATADIR=${ILIASDATADIR}
@@ -41,12 +44,7 @@ SCORM2004_USE=		php=json
 CHECKER_RUN_DEPENDS=	${LOCALBASE}/share/pear/HTTP/Request.php:www/pear-HTTP_Request@${PHP_FLAVOR}
 MAIL_RUN_DEPENDS=	${LOCALBASE}/share/pear/Mail.php:mail/pear-Mail@${PHP_FLAVOR}
 
-EXTRA_FILES=	%%WWWDIR%%/libs/composer/vendor/bin/generate_vcards \
-		%%WWWDIR%%/libs/composer/vendor/bin/naturalselection \
-		%%WWWDIR%%/libs/composer/vendor/bin/sabredav \
-		%%WWWDIR%%/libs/composer/vendor/bin/vobject \
-		%%WWWDIR%%/libs/composer/vendor/simplesamlphp/simplesamlphp/locales/no \
-		%%WWWDIR%%/Modules/Chatroom/chat/node_modules/.bin/_mocha \
+EXTRA_FILES=	%%WWWDIR%%/Modules/Chatroom/chat/node_modules/.bin/_mocha \
 		%%WWWDIR%%/Modules/Chatroom/chat/node_modules/.bin/esparse \
 		%%WWWDIR%%/Modules/Chatroom/chat/node_modules/.bin/esvalidate \
 		%%WWWDIR%%/Modules/Chatroom/chat/node_modules/.bin/flat \
