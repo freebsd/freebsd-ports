@@ -3,7 +3,7 @@
 
 PORTNAME=	runit
 DISTVERSION=	2.1.3.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/t6/freebsd-runit/releases/download/v${DISTVERSION}/ \
 		LOCAL/tobik
