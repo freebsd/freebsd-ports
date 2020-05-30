@@ -2,7 +2,7 @@
 
 PORTNAME=	rumur
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2020.05.18
+DISTVERSION=	2020.05.27
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -27,6 +27,6 @@ BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 do-test:
 	@cd ${BUILD_WRKSRC} && \
-		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} --build . --target test
+		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} --build . --target check
 
 .include <bsd.port.mk>
