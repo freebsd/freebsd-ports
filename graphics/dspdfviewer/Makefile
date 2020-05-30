@@ -48,6 +48,9 @@ CFLAGS+=	-Wno-error=zero-as-null-pointer-constant
 CFLAGS+=	-Wno-error=extra-semi-stmt
 .endif
 
+# Prepare for Qt5-5.15
+CFLAGS+=	-Wno-deprecated
+
 CFLAGS+=	-Wno-error=redundant-parens
 
 .include <bsd.port.post.mk>
