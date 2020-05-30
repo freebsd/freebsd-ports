@@ -19,7 +19,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 DEPRECATED=	Uses deprecated version of python
 EXPIRATION_DATE=	2020-09-15
 
-BUILD_DEPENDS=	lv2>=1.14.0:audio/lv2 itstool>2.0.0:textproc/itstool
+BUILD_DEPENDS=	lv2>=1.14.0:audio/lv2 itstool>2.0.0:textproc/itstool \
+		as:devel/binutils
 LIB_DEPENDS=	libserd-0.so:devel/serd \
 		libsord-0.so:devel/sord \
 		libsratom-0.so:audio/sratom \
