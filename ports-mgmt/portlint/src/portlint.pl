@@ -3057,7 +3057,7 @@ DIST_SUBDIR EXTRACT_ONLY
 	# should be
 	#	DISTNAME=     package-1.0
 	#	EXTRACT_SUFX= .tgz
-	if ($makevar{USE_GITHUB} ne 'nodefault' && $makevar{USE_GITHUB} ne 'nodefault') {
+	if ($makevar{USE_GITHUB} ne 'nodefault' && $makevar{USE_GITLAB} ne 'nodefault') {
 		if ($distfiles =~ /^\S+$/ && $distfiles !~ /:[^\/:]+$/) {
 			$bogusdistfiles++;
 			print "OK: seen DISTFILES with single item, checking value.\n"
