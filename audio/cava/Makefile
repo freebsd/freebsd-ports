@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cava
-DISTVERSION=	0.6.1
-PORTREVISION=	2
+DISTVERSION=	0.7.0
 CATEGORIES=	audio
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -19,6 +18,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	karlstav
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-input-alsa
 CONFIGURE_ENV=	ac_cv_lib_asound_snd_pcm_open=no \
 		FONT_DIR=${DATADIR}
 
@@ -28,7 +28,7 @@ PLIST_FILES=	bin/cava
 PORTDOCS=	README.md
 PORTEXAMPLES=	config
 
-OPTIONS_DEFINE=		DOCS EXAMPLES PULSEAUDIO SNDIO VT
+OPTIONS_DEFINE=		DOCS EXAMPLES PORTAUDIO PULSEAUDIO SNDIO VT
 OPTIONS_DEFAULT=	PULSEAUDIO SNDIO VT
 .if !exists(/usr/bin/vtfontcvt)
 OPTIONS_EXCLUDE=	VT
@@ -36,16 +36,19 @@ OPTIONS_EXCLUDE=	VT
 
 VT_DESC=	Build with vt(4) support (installs custom font)
 
-PULSEAUDIO_CONFIGURE_ENV_OFF=	ac_cv_lib_pulse_simple_pa_simple_new=no
+PORTAUDIO_LIB_DEPENDS=		libportaudio.so:audio/portaudio
+PORTAUDIO_CONFIGURE_OFF=	--disable-input-portaudio
+
 PULSEAUDIO_LIB_DEPENDS=		libpulse-simple.so:audio/pulseaudio \
-				libpulse.so:audio/pulseaudio \
+				libpulse.so:audio/pulseaudio
+PULSEAUDIO_CONFIGURE_OFF=	--disable-input-pulse
 
-SNDIO_CONFIGURE_ENV_OFF=	ac_cv_lib_sndio_sio_open=no
-SNDIO_LIB_DEPENDS=		libsndio.so:audio/sndio
+SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
+SNDIO_CONFIGURE_OFF=	--disable-input-sndio
 
-VT_BUILD_DEPENDS=		psf2bdf:x11-fonts/psftools
-VT_MAKE_ARGS_OFF=		cava_font__DATA=""
-VT_PLIST_FILES=			${DATADIR}/cava.fnt
+VT_BUILD_DEPENDS=	psf2bdf:x11-fonts/psftools
+VT_MAKE_ARGS_OFF=	cava_font__DATA=""
+VT_PLIST_FILES=		${DATADIR}/cava.fnt
 
 pre-configure:
 	@${ECHO_CMD} ${DISTVERSION} > ${WRKSRC}/version

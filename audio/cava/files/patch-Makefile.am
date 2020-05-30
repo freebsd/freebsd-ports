@@ -2,21 +2,34 @@
   does not recognize
 - Do not install the Linux-only font
 
---- Makefile.am.orig	2018-05-03 16:07:33 UTC
+--- Makefile.am.orig	2020-05-26 20:29:47 UTC
 +++ Makefile.am
-@@ -13,11 +13,12 @@ cava_SOURCES = cava.c
- cava_LDADD = -liniparser
+@@ -10,11 +10,11 @@ M_CPPFLAGS = -DSYSTEM_LIBINIPARSER=@SYSTEM_LIBINIPARSE
+ 
+ bin_PROGRAMS = cava
+ cava_SOURCES = cava.c config.c input/common.c input/fifo.c input/shmem.c \
+-               output/terminal_noncurses.c output/raw.c
++               output/raw.c
  cava_LDFLAGS = -L/usr/local/lib -Wl,-rpath /usr/local/lib
  cava_CPPFLAGS = -DPACKAGE=\"$(PACKAGE)\" -DVERSION=\"$(VERSION)\" \
 -           -D_POSIX_SOURCE -D _POSIX_C_SOURCE=200809L
 -cava_CFLAGS = -std=c99 -Wall -Wextra -Wno-unused-result -Wno-maybe-uninitialized 
 +           -D_POSIX_SOURCE -D _POSIX_C_SOURCE=200809L -DFONT_DIR=\"@FONT_DIR@\"
-+         
 +cava_CFLAGS = -std=c99 -Wall -Wextra
+ 
+ if OSX
+     cava_CFLAGS += -DNORT
+@@ -39,11 +39,11 @@ if SNDIO
+ endif
+ 
+ if NCURSES
+-    cava_SOURCES += output/terminal_bcircle.c output/terminal_ncurses.c
++    cava_SOURCES += output/terminal_ncurses.c
+ endif
  
  cava_font_dir = @FONT_DIR@
 -cava_font__DATA = cava.psf
 +cava_font__DATA = cava.fnt
  
  if !SYSTEM_LIBINIPARSER
-     cava_SOURCES += iniparser/libiniparser.la
+     cava_LDADD = -liniparser

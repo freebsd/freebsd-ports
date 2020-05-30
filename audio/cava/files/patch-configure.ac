@@ -1,0 +1,13 @@
+Neuter gratuitous OS check that is not used for anything at all.
+
+--- configure.ac.orig	2020-05-26 20:29:47 UTC
++++ configure.ac
+@@ -294,7 +294,7 @@ case "${host_os}" in
+         build_mac=yes
+         ;;
+     *)
+-        AC_MSG_ERROR(["OS $host_os is not supported"])
++        AC_MSG_NOTICE([I'm a teapot])
+         ;;
+ esac
+ 
