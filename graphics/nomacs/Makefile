@@ -17,9 +17,11 @@ LIB_DEPENDS=	libexiv2.so:graphics/exiv2 \
 		libquazip5.so:archivers/quazip
 
 USES=		cmake compiler:c++11-lang desktop-file-utils \
-		pkgconfig qt:5
+		dos2unix pkgconfig qt:5
 USE_QT=		concurrent core gui network printsupport svg widgets \
 		buildtools_build linguisttools_build qmake_build
+DOS2UNIX_FILES=	ImageLounge/plugins/PaintPlugin/src/DkPaintPlugin.cpp \
+		ImageLounge/src/DkGui/DkWidgets.cpp
 
 USE_LDCONFIG=	yes
 
