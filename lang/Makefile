@@ -315,6 +315,7 @@
     SUBDIR += scala-docs
     SUBDIR += scheme48
     SUBDIR += scm
+    SUBDIR += sdcc
     SUBDIR += see
     SUBDIR += seed7
     SUBDIR += siod
