@@ -196,12 +196,10 @@ share/icons/hicolor/scalable/mimetypes/application-x-kicad-schematic.svg
 %%DATADIR%%/demos/microwave/microwave.pro
 %%DATADIR%%/demos/microwave/shape1.txt
 %%DATADIR%%/demos/pic_programmer/fp-lib-table
-%%DATADIR%%/demos/pic_programmer/libs/3d_shapes/DSUB-9_Female_Horizontal_P%%PYTHON_VER%%7x2.84mm_EdgePinOffset7.70mm_Housed_MountingHolesOffset9.12mm.wrl
 %%DATADIR%%/demos/pic_programmer/libs/3d_shapes/adjustable_rx2v4.wrl
 %%DATADIR%%/demos/pic_programmer/libs/3d_shapes/textool_40.wrl
 %%DATADIR%%/demos/pic_programmer/libs/pic_programmer_fp.pretty/40tex-Ell600.kicad_mod
 %%DATADIR%%/demos/pic_programmer/libs/pic_programmer_fp.pretty/RV2X4.kicad_mod
-%%DATADIR%%/demos/pic_programmer/libs/pic_programmer_fp.pretty/TO-92_BC237_307.kicad_mod
 %%DATADIR%%/demos/pic_programmer/libs/pic_programmer_schlib.dcm
 %%DATADIR%%/demos/pic_programmer/libs/pic_programmer_schlib.lib
 %%DATADIR%%/demos/pic_programmer/pic_programmer-cache.lib
@@ -261,7 +259,6 @@ share/icons/hicolor/scalable/mimetypes/application-x-kicad-schematic.svg
 %%DATADIR%%/demos/test_pads_inside_pads/test_pads_inside_pads_schlib.lib
 %%DATADIR%%/demos/test_xil_95108/carte_test-cache.lib
 %%DATADIR%%/demos/test_xil_95108/carte_test.kicad_pcb
-%%DATADIR%%/demos/test_xil_95108/carte_test.net
 %%DATADIR%%/demos/test_xil_95108/carte_test.pro
 %%DATADIR%%/demos/test_xil_95108/carte_test.sch
 %%DATADIR%%/demos/test_xil_95108/carte_test_schlib.dcm
@@ -285,7 +282,6 @@ share/icons/hicolor/scalable/mimetypes/application-x-kicad-schematic.svg
 %%DATADIR%%/demos/video/sym-lib-table
 %%DATADIR%%/demos/video/video-cache.lib
 %%DATADIR%%/demos/video/video.kicad_pcb
-%%DATADIR%%/demos/video/video.net
 %%DATADIR%%/demos/video/video.pro
 %%DATADIR%%/demos/video/video.sch
 %%DATADIR%%/plugins/README-bom.txt

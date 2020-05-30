@@ -29,10 +29,10 @@ GH_ACCOUNT=     KiCad
 GH_PROJECT=     kicad-source-mirror
 GH_TAGNAME=	${GIT_SRC_HASH}
 
-CXXFLAGS+=	--std=c++11 -I${WRKSRC} -I${WRKSRC}/include -I${LOCALBASE}/include -msse
+CXXFLAGS+=	--std=c++14 -I${WRKSRC} -I${WRKSRC}/include -I${LOCALBASE}/include
 USE_GL=		gl glew glu glut
 USE_WX=		3.0
-WX_COMPS=	wx wx:build wx:run python:build python:run
+WX_COMPS=	wx python:lib
 USE_GNOME=	atk cairo	# Required by libwx_gtk2_aui-2.8.so
 USE_XORG+=	ice pixman x11 xext
 
@@ -46,8 +46,8 @@ PLIST_SUB=	OPSYS=${OPSYS}	\
 BINS=		cvpcb eeschema gerbview kicad pcbnew
 EXTRAS2RM=	linux-non_unicode linux wings3d LINUX.README	\
 		contrib_makefiles.txt running_kicad_under_W98.txt
-USES=		desktop-file-utils shared-mime-info compiler:c++11-lib tar:bzip2 cmake:insource,noninja \
-		gettext python:2.7 shebangfix ssl gl xorg gnome
+USES=		desktop-file-utils shared-mime-info compiler:c++14-lang tar:bzip2 cmake:insource,noninja \
+		gettext python:3.5+ shebangfix ssl gl xorg gnome
 SHEBANG_FILES=	pcbnew/python/plugins/touch_slider_wizard.py
 
 CMAKE_ARGS=	-DLOCALBASE="${LOCALBASE}" \
@@ -61,6 +61,7 @@ CMAKE_ARGS=	-DLOCALBASE="${LOCALBASE}" \
 		-DwxWidgets_wxrc_EXECUTABLE=${WXRC_CMD} \
 		-DKICAD_SCRIPTING=ON \
 		-DKICAD_SCRIPTING_MODULES=ON \
+		-DKICAD_SCRIPTING_PYTHON3=ON \
 		-DKICAD_SCRIPTING_WXPYTHON=ON \
 		-DKICAD_SCRIPTING_WXPYTHON_PHOENIX=ON \
 		-DKICAD_SKIP_BOOST=YES \
@@ -68,6 +69,9 @@ CMAKE_ARGS=	-DLOCALBASE="${LOCALBASE}" \
 		-DKICAD_USE_OCE=OFF \
 		-DKICAD_USE_OCC=ON \
 		-DOCC_INCLUDE_DIR=${LOCALBASE}/include/OpenCASCADE
+USE_LDCONFIG=   yes
+INSTALLS_ICONS= yes
+
 
 .include "Makefile.git_rev"
 
@@ -95,6 +99,13 @@ tmp:
 # because it uses CMake internals that have gone away in 3.11.
 post-extract:
 	${RM} ${WRKSRC}/CMakeModules/CheckCXXSymbolExists.cmake
+
+pre-configure:
+	${REINPLACE_CMD} -e 's|/usr/share/kicad|${DATADIR}|'            \
+		-e 's|/usr/local|${PREFIX}|'                            \
+		${WRKSRC}/common/gestfich.cpp
+	${REINPLACE_CMD} -e 's|/usr/bin/xdg-open|${LOCALBASE}/bin/xdg-open|' \
+		${WRKSRC}/common/pgm_base.cpp
 
 post-configure:
 	${REINPLACE_CMD} -e 's|#define HAVE_ISO646_H|//#define HAVE_ISO646_H|'     \

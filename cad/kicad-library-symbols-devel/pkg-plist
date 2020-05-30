@@ -34,6 +34,8 @@
 %%DATADIR%%/library/Audio.lib
 %%DATADIR%%/library/Battery_Management.dcm
 %%DATADIR%%/library/Battery_Management.lib
+%%DATADIR%%/library/Buffer.dcm
+%%DATADIR%%/library/Buffer.lib
 %%DATADIR%%/library/CPLD_Altera.dcm
 %%DATADIR%%/library/CPLD_Altera.lib
 %%DATADIR%%/library/CPLD_Microchip.dcm
@@ -98,6 +100,8 @@
 %%DATADIR%%/library/Driver_Motor.lib
 %%DATADIR%%/library/Driver_Relay.dcm
 %%DATADIR%%/library/Driver_Relay.lib
+%%DATADIR%%/library/Driver_TEC.dcm
+%%DATADIR%%/library/Driver_TEC.lib
 %%DATADIR%%/library/FPGA_Lattice.dcm
 %%DATADIR%%/library/FPGA_Lattice.lib
 %%DATADIR%%/library/FPGA_Microsemi.dcm
@@ -214,6 +218,8 @@
 %%DATADIR%%/library/MCU_NXP_MAC7100.lib
 %%DATADIR%%/library/MCU_NXP_MCore.dcm
 %%DATADIR%%/library/MCU_NXP_MCore.lib
+%%DATADIR%%/library/MCU_NXP_NTAG.dcm
+%%DATADIR%%/library/MCU_NXP_NTAG.lib
 %%DATADIR%%/library/MCU_NXP_S08.dcm
 %%DATADIR%%/library/MCU_NXP_S08.lib
 %%DATADIR%%/library/MCU_Nordic.dcm
@@ -340,6 +346,8 @@
 %%DATADIR%%/library/Sensor_Audio.lib
 %%DATADIR%%/library/Sensor_Current.dcm
 %%DATADIR%%/library/Sensor_Current.lib
+%%DATADIR%%/library/Sensor_Distance.dcm
+%%DATADIR%%/library/Sensor_Distance.lib
 %%DATADIR%%/library/Sensor_Gas.dcm
 %%DATADIR%%/library/Sensor_Gas.lib
 %%DATADIR%%/library/Sensor_Humidity.dcm
