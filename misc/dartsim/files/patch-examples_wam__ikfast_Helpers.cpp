@@ -1,6 +1,6 @@
---- examples/osgExamples/osgWamIkFast/Helpers.cpp.orig	2018-11-20 05:49:04 UTC
-+++ examples/osgExamples/osgWamIkFast/Helpers.cpp
-@@ -104,10 +104,10 @@ void setupEndEffectors(const dart::dynam
+--- examples/wam_ikfast/Helpers.cpp.orig	2019-08-17 03:14:11 UTC
++++ examples/wam_ikfast/Helpers.cpp
+@@ -106,10 +106,10 @@ void setupEndEffectors(const dart::dynamics::SkeletonP
    ee->getIK(true)->setTarget(wam7_target);
  
    std::string libName = "libwamIk";

@@ -2,8 +2,7 @@
 
 PORTNAME=	dartsim
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.8.5
-PORTREVISION=	6
+DISTVERSION=	6.9.2
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -28,6 +27,8 @@ LIB_DEPENDS=	libassimp.so:multimedia/assimp \
 		libode.so:devel/ode \
 		libosg.so:graphics/osg34 \
 		libnlopt.so:math/nlopt \
+		libpagmo.so:science/pagmo2 \
+		libtbb.so:devel/tbb \
 		libtinyxml2.so:textproc/tinyxml2 \
 		liburdfdom_world.so:devel/ros-urdfdom
 
@@ -39,6 +40,13 @@ USE_GL=		gl glu glut
 USE_XORG=	xi xmu
 USE_LDCONFIG=	yes
 
+CMAKE_ON=	BUILD_SHARED_LIBS
+
 DATADIR=	share/dart
+DOCSDIR=	${PREFIX}/share/doc/dart
+
+OPTIONS_DEFINE=	DOCS
+
+PORTDOCS=	*
 
 .include <bsd.port.mk>

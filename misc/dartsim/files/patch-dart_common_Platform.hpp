@@ -1,4 +1,4 @@
---- dart/common/Platform.hpp.orig	2018-09-03 18:37:30 UTC
+--- dart/common/Platform.hpp.orig	2019-08-17 03:14:11 UTC
 +++ dart/common/Platform.hpp
 @@ -43,6 +43,15 @@
  #define DART_ARCH_32BITS   1
@@ -16,14 +16,14 @@
  #elif defined(__APPLE__)
  
  #define DART_OS_MACOS      1
-@@ -77,6 +86,10 @@
-   #define DART_OS_LINUX    0
- #endif
+@@ -75,6 +84,10 @@
  
-+#ifndef DART_OS_FREEBSD
-+  #define DART_OS_FREEBSD    0
+ #ifndef DART_OS_LINUX
+   #define DART_OS_LINUX    0
 +#endif
 +
- #ifndef DART_OS_MACOS
-   #define DART_OS_MACOS   0
++#ifndef DART_OS_FREEBSD
++  #define DART_OS_FREEBSD    0
  #endif
+ 
+ #ifndef DART_OS_MACOS
