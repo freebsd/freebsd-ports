@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	oniguruma
-DISTVERSION=	6.9.4
+DISTVERSIONPREFIX=	v
+DISTVERSION=	6.9.5_rev1
 CATEGORIES=	devel textproc
-MASTER_SITES=	https://github.com/kkos/${PORTNAME}/releases/download/v${DISTVERSION}/
-DISTNAME=	onig-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Regular expressions library compatible with POSIX/GNU/Perl
@@ -14,6 +13,8 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=			autoreconf pathfix libtool  # configure provided in the tarball breaks: https://github.com/kkos/oniguruma/issues/73
+USE_GITHUB=		yes
+GH_ACCOUNT=		kkos
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--disable-static
 PATHFIX_MAKEFILEIN=	Makefile.am

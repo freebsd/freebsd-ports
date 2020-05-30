@@ -1,6 +1,5 @@
 bin/onig-config
 include/oniggnu.h
-include/onigposix.h
 include/oniguruma.h
 lib/libonig.so
 lib/libonig.so.5
