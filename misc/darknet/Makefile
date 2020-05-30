@@ -40,8 +40,6 @@ OPENCV_CMAKE_BOOL=	ENABLE_OPENCV
 OPENCV_LIB_DEPENDS=	libopencv_video.so:graphics/opencv \
 			libopencv_core.so:graphics/opencv-core
 
-OPTIONS_GROUP=	SIMD
-OPTIONS_GROUP_SIMD_amd64=	SSE2 SSE3 SSE4 AVX
 SSE2_DESC=		Use SSE2 instructions
 SSE2_CMAKE_ON=		-DFREEBSD_SIMD="-msse2"
 SSE3_DESC=		Use SSE3 instructions

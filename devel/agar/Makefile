@@ -10,8 +10,8 @@ COMMENT=	Cross-platform GUI toolkit
 
 LICENSE=	BSD2CLAUSE
 
-BROKEN_powerpc64_12=	fails to compile: cpuinfo.c:289: error: 'IllegalInsn' undeclared (first use in this function)
-BROKEN_powerpc64_13=	fails to compile: include/agar/core/byteswap.h:46:8: error: unsupported inline asm: input with type 'int' matching output with type 'u_int16_t' (aka 'unsigned short')
+BROKEN_FreeBSD_12_powerpc64=	fails to compile: cpuinfo.c:289: error: 'IllegalInsn' undeclared (first use in this function)
+BROKEN_FreeBSD_13_powerpc64=	fails to compile: include/agar/core/byteswap.h:46:8: error: unsupported inline asm: input with type 'int' matching output with type 'u_int16_t' (aka 'unsigned short')
 
 USES=		libtool pathfix perl5 pkgconfig jpeg
 USE_PERL5=	build
@@ -42,7 +42,6 @@ SNDFILE_LIB_DEPENDS=	libsndfile.so:audio/libsndfile
 SNDFILE_IMPLIES=	PORTAUDIO
 
 GUI_CONFIGURE_ENABLE=	gui
-GUI_USE=		JPEG=jpeg
 
 GUI_CONFIGURE_ON=	--with-jpeg=${LOCALBASE} \
 			--with-png=${LOCALBASE} \

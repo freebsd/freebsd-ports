@@ -19,8 +19,6 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-DEVELOPER=	yes
-
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -rs -v
 
