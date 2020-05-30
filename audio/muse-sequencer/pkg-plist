@@ -1,8 +1,13 @@
 bin/grepmidi
 bin/muse3
 bin/muse_plugin_scan
+lib/muse-3.1/converters/rubberband_converter.so
+lib/muse-3.1/converters/src_converter.so
+lib/muse-3.1/converters/zita_resampler_converter.so
+lib/muse-3.1/modules/libaudio_converter_plugin.so
 lib/muse-3.1/modules/libmuse_al.so
 lib/muse-3.1/modules/libmuse_arranger.so
+lib/muse-3.1/modules/libmuse_audio_convert.so
 lib/muse-3.1/modules/libmuse_awl.so
 lib/muse-3.1/modules/libmuse_cliplist.so
 lib/muse-3.1/modules/libmuse_components.so
@@ -12,6 +17,7 @@ lib/muse-3.1/modules/libmuse_driver.so
 lib/muse-3.1/modules/libmuse_evdata_module.so
 lib/muse-3.1/modules/libmuse_icons.so
 lib/muse-3.1/modules/libmuse_instruments.so
+lib/muse-3.1/modules/libmuse_latency_compensator_module.so
 lib/muse-3.1/modules/libmuse_liste.so
 lib/muse-3.1/modules/libmuse_lv2_gtk2_support.so
 lib/muse-3.1/modules/libmuse_lv2host_module.so
@@ -19,6 +25,7 @@ lib/muse-3.1/modules/libmuse_marker.so
 lib/muse-3.1/modules/libmuse_master.so
 lib/muse-3.1/modules/libmuse_memory_module.so
 lib/muse-3.1/modules/libmuse_midiedit.so
+lib/muse-3.1/modules/libmuse_midnam_module.so
 lib/muse-3.1/modules/libmuse_mixer.so
 lib/muse-3.1/modules/libmuse_mpevent_module.so
 lib/muse-3.1/modules/libmuse_mplugins.so
@@ -32,6 +39,8 @@ lib/muse-3.1/modules/libmuse_simpler_plugingui.so
 lib/muse-3.1/modules/libmuse_string.so
 lib/muse-3.1/modules/libmuse_synti.so
 lib/muse-3.1/modules/libmuse_sysex_helper_module.so
+lib/muse-3.1/modules/libmuse_time_stretch_module.so
+lib/muse-3.1/modules/libmuse_wave_module.so
 lib/muse-3.1/modules/libmuse_waveedit.so
 lib/muse-3.1/modules/libmuse_wavepreview_module.so
 lib/muse-3.1/modules/libmuse_widgets.so
@@ -142,6 +151,7 @@ share/mime/packages/muse.xml
 %%DATADIR%%/presets/deicsonze/SutulaBank.dei
 %%DATADIR%%/pybridge/musepclient.py
 %%DATADIR%%/pybridge/museplauncher.py
+%%DATADIR%%/pybridge/musepstopserver.py
 %%DATADIR%%/pybridge/robert.py
 %%DATADIR%%/rdf/blop.rdf
 %%DATADIR%%/rdf/swh-plugins.rdf
@@ -190,8 +200,8 @@ share/mime/packages/muse.xml
 %%DATADIR%%/scripts/SwingQuantize1
 %%DATADIR%%/scripts/TempoDelay
 %%DATADIR%%/splash.png
-%%DATADIR%%/templates/MusE-qt.conf
-%%DATADIR%%/templates/MusE.cfg
+%%DATADIR%%/templates/MusE-seq.cfg
+%%DATADIR%%/templates/MusE.conf
 %%DATADIR%%/templates/audio.med
 %%DATADIR%%/templates/default.med
 %%DATADIR%%/templates/midiGM.med

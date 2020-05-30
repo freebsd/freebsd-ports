@@ -2,9 +2,7 @@
 
 PORTNAME=	muse-sequencer
 DISTVERSIONPREFIX=	muse_
-DISTVERSION=	3_1_0_pre1-20
-PORTREVISION=	2
-DISTVERSIONSUFFIX=	-g27f026ff
+DISTVERSION=	3_1_0
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -33,6 +31,9 @@ GH_PROJECT=	muse
 SHEBANG_FILES=	share/scripts/* utils/muse-find-unused-wavs utils/muse-song-convert.py
 USE_QT=		core gui svg xml widgets buildtools_build linguisttools_build qmake_build uitools_build
 USE_GNOME=	atk atkmm cairo cairomm gdkpixbuf2 glib20 glibmm gtk20 gtkmm24 libsigc++20 pango pangomm
+USE_LDCONFIG=	yes
+
+INSTALLS_ICONS=	yes
 
 CMAKE_OFF=	ENABLE_ALSA ENABLE_DSSI
 
