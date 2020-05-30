@@ -50,6 +50,9 @@ CONFLICTS_INSTALL=	py*-sphinx18
 
 NO_ARCH=	yes
 
+# Upstream archive contains files with UTF-8 names (#246618)
+EXTRACT_CMD=	${SETENV} LC_ALL=en_US.UTF-8 /usr/bin/bsdtar
+
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -v -rs -o addopts=
 
