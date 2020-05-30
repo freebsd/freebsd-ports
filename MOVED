@@ -15046,3 +15046,4 @@ x11/hs-X11||2020-05-26|Deprecated: Haskell libraries get pushed out of the ports
 x11/hs-X11-xft||2020-05-26|Deprecated: Haskell libraries get pushed out of the ports tree
 devel/rubygem-peek-redis-rails5|devel/rubygem-peek-redis-rails52|2020-05-29|Obsolete: Please use devel/rubygem-peek-redis-rails52 instead
 devel/rubygem-peek-rblineprof-rails5|devel/rubygem-peek-rblineprof-rails52|2020-05-29|Obsolete, please use devel/rubygem-peek-rblineprof-rails52 instead
+www/moodle36|www/moodle37|2020-05-30|Has expired: EOLed upstream
