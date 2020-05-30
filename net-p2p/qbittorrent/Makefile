@@ -12,6 +12,8 @@ COMMENT=	Bittorrent client using Qt5 and libtorrent-rasterbar
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_FreeBSD_12_powerpc64=	fails to build: ./base/tristatebool.h:44:5: 'constexpr' constructor does not have empty body
+
 LIB_DEPENDS=	libtorrent-rasterbar.so:net-p2p/libtorrent-rasterbar \
 		libboost_system.so:devel/boost-libs
 
