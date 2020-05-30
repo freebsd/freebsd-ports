@@ -328,6 +328,6 @@ include/cppad/utility/vector.hpp
 include/cppad/utility/vector_bool.hpp
 include/cppad/wno_conversion.hpp
 lib/libcppad_lib.so
-lib/libcppad_lib.so.340.2
+lib/libcppad_lib.so.340.3
 libdata/pkgconfig/cppad.pc
 share/pkgconfig/cppad.pc
