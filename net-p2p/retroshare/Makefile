@@ -38,7 +38,8 @@ USE_GNOME=	libxml2 libxslt
 USE_GL=		gl
 USE_QT=		core gui multimedia printsupport network widgets xml \
 		buildtools_build uitools_build
-DOS2UNIX_FILES=	retroshare-nogui/src/retroshare-nogui.pro
+DOS2UNIX_FILES=	retroshare-nogui/src/retroshare-nogui.pro \
+		retroshare-gui/src/gui/elastic/node.cpp
 
 .include <bsd.port.pre.mk>
 
