@@ -11,6 +11,8 @@ COMMENT=	Cryptographic library with low footprint
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	as:devel/binutils
+
 USES=		cmake compiler:c++11-lang
 
 USE_GITHUB=	yes
