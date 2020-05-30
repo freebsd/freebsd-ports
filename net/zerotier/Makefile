@@ -15,6 +15,8 @@ LICENSE_FILE_BUSINESS=	${WRKSRC}/LICENSE.txt
 LICENSE_FILE_MIT=	${WRKSRC}/ext/json/LICENSE.MIT
 LICENSE_PERMS_BUSINESS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+BUILD_DEPENDS=	as:devel/binutils
+
 USES=		gmake compiler:c++14-lang
 USE_RC_SUBR=	zerotier
 
