@@ -13,6 +13,8 @@ COMMENT=	NTT-based fast lattice cryptography library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT_LICENSE.txt
 
+BUILD_DEPENDS=	as:devel/binutils
+
 ONLY_FOR_ARCHS=		amd64
 ONLY_FOR_ARCHS_REASON=	unconditionally includes amd64 assembler code
 
