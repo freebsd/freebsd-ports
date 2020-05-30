@@ -1,0 +1,16 @@
+bin/iscsi-inq
+bin/iscsi-ls
+bin/iscsi-perf
+bin/iscsi-readcapacity16
+bin/iscsi-swp
+include/iscsi/iscsi.h
+include/iscsi/scsi-lowlevel.h
+lib/libiscsi.a
+lib/libiscsi.so
+lib/libiscsi.so.9
+lib/libiscsi.so.9.0.0
+libdata/pkgconfig/libiscsi.pc
+man/man1/iscsi-inq.1.gz
+man/man1/iscsi-ls.1.gz
+man/man1/iscsi-swp.1.gz
+man/man1/iscsi-test-cu.1.gz

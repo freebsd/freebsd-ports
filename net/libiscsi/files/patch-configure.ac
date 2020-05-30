@@ -1,0 +1,12 @@
+--- configure.ac.orig	2019-07-13 22:04:44 UTC
++++ configure.ac
+@@ -144,7 +144,8 @@ AC_CACHE_CHECK([for iSER support],libiscsi_cv_HAVE_LIN
+ AC_TRY_COMPILE([
+ #include <infiniband/verbs.h>
+ #include <rdma/rdma_cma.h>
+-#include <rdma/rdma_verbs.h>],
++#include <rdma/rdma_verbs.h>
++#error not on FreeBSD],
+ [int ibv = IBV_WC_SEND;],
+ libiscsi_cv_HAVE_LINUX_ISER=yes,libiscsi_cv_HAVE_LINUX_ISER=no)])
+ if test x"$libiscsi_cv_HAVE_LINUX_ISER" = x"yes"; then
