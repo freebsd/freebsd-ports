@@ -15,7 +15,7 @@
 # was removed.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.510 2020/05/30 13:40:58 jclarke Exp $
+# $MCom: portlint/portlint.pl,v 1.512 2020/05/30 23:14:06 jclarke Exp $
 #
 
 use strict;
@@ -50,7 +50,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 19;
-my $micro = 0;
+my $micro = 1;
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
@@ -1974,7 +1974,8 @@ sub checkmakefile {
 	foreach my $sorted_macro (@macros_to_sort) {
 		while ($whole =~ /\n$sorted_macro.?=\s*([^#]+)(#.*)?\n/g) {
 			my $lineno = &linenumber($`);
-			my $srex = chomp($1);
+			my $srex = $1;
+			$srex =~ s/\s+$//;
 			my @smacros = sort(split / /, $srex);
 			if (join(" ", @smacros) ne $srex) {
 				&perror("WARN", $file, $lineno, "the arguments to $sorted_macro ".
@@ -3056,7 +3057,7 @@ DIST_SUBDIR EXTRACT_ONLY
 	# should be
 	#	DISTNAME=     package-1.0
 	#	EXTRACT_SUFX= .tgz
-	if ($makevar{USE_GITHUB} ne 'nodefault' && $makevar{USE_GITLUB} ne 'nodefault') {
+	if ($makevar{USE_GITHUB} ne 'nodefault' && $makevar{USE_GITHUB} ne 'nodefault') {
 		if ($distfiles =~ /^\S+$/ && $distfiles !~ /:[^\/:]+$/) {
 			$bogusdistfiles++;
 			print "OK: seen DISTFILES with single item, checking value.\n"
