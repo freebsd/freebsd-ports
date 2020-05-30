@@ -11,6 +11,8 @@ COMMENT=	Myrddin Compiler
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	as:devel/binutils
+
 ONLY_FOR_ARCHS=	amd64
 
 USES=	gmake
