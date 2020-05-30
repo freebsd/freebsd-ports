@@ -818,6 +818,7 @@ include/wine/windows/sspi.h
 include/wine/windows/stdole2.idl
 include/wine/windows/stdole2.tlb
 %%STAGING%%include/wine/windows/stdole32.idl
+%%STAGING%%include/wine/windows/stdole32.tlb
 include/wine/windows/stgprop.h
 include/wine/windows/sti.h
 include/wine/windows/storage.h
