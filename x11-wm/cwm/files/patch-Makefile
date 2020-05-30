@@ -1,6 +1,6 @@
 Prefer libc version over custom strlcpy, strlcat, reallocarray, strtonum
 
---- Makefile.orig	2020-01-04 21:20:03 UTC
+--- Makefile.orig	2020-05-22 19:40:11 UTC
 +++ Makefile
 @@ -11,8 +11,7 @@ SRCS=		calmwm.c screen.c xmalloc.c client.c menu.c \
  
@@ -9,6 +9,6 @@ Prefer libc version over custom strlcpy, strlcat, reallocarray, strtonum
 -		kbfunc.o strlcpy.o strlcat.o y.tab.o \
 -		strtonum.o reallocarray.o
 +		kbfunc.o y.tab.o
- 
- CPPFLAGS+=	`pkg-config --cflags x11 xft xrandr`
+ 		
+ PKG_CONFIG?=	pkg-config
  

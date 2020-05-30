@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cwm
-DISTVERSION=	6.6
+DISTVERSION=	6.7
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://leahneukirchen.org/releases/
 
