@@ -1,3 +1,3 @@
-TIMESTAMP = 1567264229
-SHA256 (spglib-1.14.1.post0.tar.gz) = 1823aa0a10c0cde0504c8dae8c0012591e5334fd38e21c3bf540dc0219a3b44e
-SIZE (spglib-1.14.1.post0.tar.gz) = 694833
+TIMESTAMP = 1590830156
+SHA256 (spglib-1.15.1.tar.gz) = 7d4dbbcad0c3aec3d5f9204b4d7d3edffbc478378353a45e0f66785eda5d3630
+SIZE (spglib-1.15.1.tar.gz) = 699060
