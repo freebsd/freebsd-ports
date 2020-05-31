@@ -1,6 +1,6 @@
 --- x11vile.h.orig	2013-04-14 19:09:08 UTC
 +++ x11vile.h
-@@ -282,11 +282,19 @@
+@@ -282,10 +282,18 @@
  
  #if OPT_MENUS
  #if ATHENA_WIDGETS
@@ -15,8 +15,7 @@
  #include <X11/Xaw/Box.h>
  #include <X11/Xaw/Form.h>
  #include <X11/Xaw/Paned.h>
- #endif
 +#endif
+ #endif
  #if MOTIF_WIDGETS
  #include <Xm/RowColumn.h>
- #endif

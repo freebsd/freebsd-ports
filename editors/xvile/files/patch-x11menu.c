@@ -1,6 +1,6 @@
 --- x11menu.c.orig	2013-12-07 16:26:12 UTC
 +++ x11menu.c
-@@ -29,12 +29,21 @@
+@@ -29,11 +29,20 @@
  #endif
  
  #if ATHENA_WIDGETS
@@ -17,8 +17,7 @@
  #include <X11/Xaw/MenuButton.h>
  #include <X11/Xaw/SmeLine.h>
  #include <X11/Xaw/SmeBSB.h>
- #endif
 +#endif
+ #endif
  
  #define Nval(name,value) name, (XtArgVal)(value)
- #define Sval(name,value) name, (value)

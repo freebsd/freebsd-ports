@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vile
-PORTVERSION=	9.8t
+PORTVERSION=	9.8u
 CATEGORIES=	editors
 MASTER_SITES=	ftp://dickey.his.com/vile/current/ \
 		ftp://ftp.invisible-island.net/vile/current/ \
@@ -16,6 +16,7 @@ MAINTAINER=	dickey@invisible-island.net
 COMMENT=	VI Like Emacs -- X11 version
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	reflex:textproc/reflex
 
@@ -80,9 +81,6 @@ post-patch:
 		 s|$$(datadir)/html|$$(docdir)/html| ; \
 		 s|\($$(DOCDIR)\) \($$(MANDIR)\)|\1 $$(HTMLDIR) \2|' \
 		${WRKSRC}/makefile.in
-	@${REINPLACE_CMD} -e \
-		'/^Categories/s|Application;||' \
-		${WRKSRC}/macros/*.desktop
 
 post-install:
 	(cd ${WRKSRC}/macros && ${INSTALL_DATA} *.desktop \
