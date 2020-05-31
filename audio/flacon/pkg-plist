@@ -9,7 +9,7 @@ share/icons/hicolor/128x128/apps/flacon.png
 share/icons/hicolor/256x256/apps/flacon.png
 share/icons/hicolor/512x512/apps/flacon.png
 share/icons/hicolor/scalable/apps/flacon.svg
-share/metainfo/com.github.Flacon.metadata.xml
+share/metainfo/com.github.Flacon.metainfo.xml
 %%DATADIR%%/translations/flacon_cs.qm
 %%DATADIR%%/translations/flacon_cs_CZ.qm
 %%DATADIR%%/translations/flacon_de.qm
@@ -35,7 +35,6 @@ share/metainfo/com.github.Flacon.metadata.xml
 %%DATADIR%%/translations/flacon_pt_PT.qm
 %%DATADIR%%/translations/flacon_ro_RO.qm
 %%DATADIR%%/translations/flacon_ru.qm
-%%DATADIR%%/translations/flacon_ru_new.qm
 %%DATADIR%%/translations/flacon_sr.qm
 %%DATADIR%%/translations/flacon_sr@latin.qm
 %%DATADIR%%/translations/flacon_tr.qm
