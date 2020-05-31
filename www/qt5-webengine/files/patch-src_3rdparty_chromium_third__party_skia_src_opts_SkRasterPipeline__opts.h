@@ -5,7 +5,7 @@
  SI U16 to_half(F f) {
  #if defined(JUMPER_IS_NEON) && defined(SK_CPU_ARM64) \
 -    && !defined(SK_BUILD_FOR_GOOGLE3)  // Temporary workaround for some Google3 builds.
-+    && ! (defined(SK_BUILD_FOR_GOOGLE3 || defined(ARMV8_OS_FREEBSD))  // Temporary workaround for some Google3 builds.
++    && ! (defined(SK_BUILD_FOR_GOOGLE3) || defined(ARMV8_OS_FREEBSD))  // Temporary workaround for some Google3 builds.
      __fp16 fp16 = __fp16(f);
      U16 u16;
      memcpy(&u16, &fp16, sizeof(U16));
