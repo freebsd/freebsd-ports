@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	libpci
-PORTVERSION=	3.6.4
+PORTVERSION=	3.7.0
 CATEGORIES=	devel
 MASTER_SITES=	KERNEL_ORG/software/utils/pciutils \
-		ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/ \
 		LOCAL/sunpoet
 DISTNAME=	pciutils-${PORTVERSION}
 

@@ -1,4 +1,4 @@
---- Makefile.orig	2020-01-25 19:42:39 UTC
+--- Makefile.orig	2020-05-30 22:17:26 UTC
 +++ Makefile
 @@ -1,8 +1,8 @@
  # Makefile for The PCI Utilities
@@ -9,8 +9,8 @@
 +# OPT=-O2
 +CFLAGS+=$(OPT) -Wall -W -Wno-parentheses -Wstrict-prototypes -Wmissing-prototypes
  
- VERSION=3.6.4
- DATE=2020-01-25
+ VERSION=3.7.0
+ DATE=2020-05-31
 @@ -32,7 +32,7 @@ HWDB=
  ABI_VERSION=.3
  
