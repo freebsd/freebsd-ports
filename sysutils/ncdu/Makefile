@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ncdu
-PORTVERSION=	1.14.2
+PORTVERSION=	1.15
 CATEGORIES=	sysutils
 MASTER_SITES=	https://dev.yorhel.nl/download/
 
