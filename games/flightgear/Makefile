@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flightgear
-PORTVERSION=	2019.1.1
-PORTREVISION=	2
+PORTVERSION=	2020.1.2
 CATEGORIES=	games
 MASTER_SITES=	SF/flightgear/release-${PORTVERSION:R}
 
@@ -17,7 +16,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libboost_thread.so:devel/boost-libs \
 		libfltk.so:x11-toolkits/fltk \
 		libfreetype.so:print/freetype2 \
-		libosg.so:graphics/osg34 \
+		libosg.so:graphics/osg \
 		libspeex.so:audio/speex \
 		libspeexdsp.so:audio/speexdsp \
 		libcurl.so:ftp/curl \
@@ -37,6 +36,7 @@ USE_GL=		gl glew glu glut
 
 DOS2UNIX_REGEX=	.*\.(c|h|cxx|cpp|hxx|hpp)
 CMAKE_ARGS+=	-DSYSTEM_SQLITE:BOOL=ON \
+		-DENABLE_HID_INPUT:BOOL=OFF \
 		-DFG_DATA_DIR:PATH=${LOCALBASE}/share/${PORTNAME} \
 		-DCMAKE_INSTALL_MANDIR:PATH=${MANPREFIX}/man \
 		-DFGCOM_DATA_PATH:PATH=${DATADIR}
