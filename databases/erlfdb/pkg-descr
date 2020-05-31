@@ -2,4 +2,4 @@ FoundationDB native Erlang bindings, a NIF wrapper for the FoundationDB
 C API, this project also provides a conforming implementation of the
 Tuple and Directory layers.
 
-WWW: https://github.com/cloudant-labs/couchdb-erlfdb
+WWW: https://github.com/apache/couchdb-erlfdb
