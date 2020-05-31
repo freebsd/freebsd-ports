@@ -3,12 +3,16 @@
 
 PORTNAME=	pam_ssh_agent_auth
 PORTVERSION=	0.10.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
-MASTER_SITES=	SF/pamsshagentauth/${PORTNAME}/v${PORTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	PAM module which permits authentication via ssh-agent
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	jbeverly
+GH_TAGNAME=	7ff7858
+GH_TUPLE=	floodyberry:ed25519-donna:8757bd4:floodyberry_ed25519_donna/ed25519-donna
 
 BROKEN_mips64=		fails to compile: ed25519-donna-portable.h:85:4: Need a uint128_t implementation!
 BROKEN_FreeBSD_11_powerpc64=	fails to compile on powerpc64 elfv1: ed25519-donna-portable.h: warning: ALIGN redefined
