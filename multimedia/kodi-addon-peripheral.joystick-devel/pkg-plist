@@ -1,5 +1,5 @@
 lib/kodi/addons/peripheral.joystick/peripheral.joystick.so
-lib/kodi/addons/peripheral.joystick/peripheral.joystick.so.%%SOVERSION%%
+lib/kodi/addons/peripheral.joystick/peripheral.joystick.so.1.5.3
 lib/kodi/addons/peripheral.joystick/peripheral.joystick.so.19.0
 share/kodi/addons/peripheral.joystick/addon.xml
 share/kodi/addons/peripheral.joystick/resources/buttonmaps/xml/android/Hi_keyboard_v0001_p0001_23b.xml
@@ -25,10 +25,13 @@ share/kodi/addons/peripheral.joystick/resources/buttonmaps/xml/cocoa/USB_Gamepad
 share/kodi/addons/peripheral.joystick/resources/buttonmaps/xml/cocoa/USB_Joystick_v0E8F_p0003_12b_5a.xml
 share/kodi/addons/peripheral.joystick/resources/buttonmaps/xml/cocoa/Wireless_360_Controller_v045E_p028E_15b_6a.xml
 share/kodi/addons/peripheral.joystick/resources/buttonmaps/xml/cocoa/Wireless_Controller_v054C_p09CC_14b_6a.xml
+share/kodi/addons/peripheral.joystick/resources/buttonmaps/xml/cocoa/Xbox_360_Wired_Controller_v045E_p028E_15b_6a.xml
 share/kodi/addons/peripheral.joystick/resources/buttonmaps/xml/cocoa/Xbox_360_Wired_Controller_v046D_pC21D_15b_6a.xml
 share/kodi/addons/peripheral.joystick/resources/buttonmaps/xml/cocoa/Xbox_One_Wired_Controller_v045E_p02DD_15b_6a.xml
 share/kodi/addons/peripheral.joystick/resources/buttonmaps/xml/cocoa/usb_gamepad____________v0810_pE501_10b_3a.xml
 share/kodi/addons/peripheral.joystick/resources/buttonmaps/xml/cocoa/usb_gamepad_v0810_pE501_10b_3a.xml
+share/kodi/addons/peripheral.joystick/resources/buttonmaps/xml/darwinembedded/Extended_Gamepad_14b_4a.xml
+share/kodi/addons/peripheral.joystick/resources/buttonmaps/xml/darwinembedded/Micro_Gamepad_6b.xml
 share/kodi/addons/peripheral.joystick/resources/buttonmaps/xml/directinput/Adaptoid_v06F7_p1_14b_2a.xml
 share/kodi/addons/peripheral.joystick/resources/buttonmaps/xml/directinput/Bluetooth_HID_Port_v05A0_p3232_16b_1h_6a.xml
 share/kodi/addons/peripheral.joystick/resources/buttonmaps/xml/directinput/GamePad_Pro_USB_v0428_p4001_10b_2a.xml
@@ -96,6 +99,7 @@ share/kodi/addons/peripheral.joystick/resources/buttonmaps/xml/udev/Xbox_360_Wir
 share/kodi/addons/peripheral.joystick/resources/buttonmaps/xml/xarcade/X-Arcade_Tankstick_Player_1_vAA55_p0101_14b.xml
 share/kodi/addons/peripheral.joystick/resources/buttonmaps/xml/xarcade/X-Arcade_Tankstick_Player_2_vAA55_p0101_14b.xml
 share/kodi/addons/peripheral.joystick/resources/buttonmaps/xml/xinput/Xbox_360-compatible_controller_15b_6a.xml
+share/kodi/addons/peripheral.joystick/resources/icon.png
 share/kodi/addons/peripheral.joystick/resources/joystickfamilies/joystickfamilies.xml
 share/kodi/addons/peripheral.joystick/resources/language/resource.language.en_gb/strings.po
 share/kodi/addons/peripheral.joystick/resources/settings.xml

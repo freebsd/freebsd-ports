@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	peripheral.joystick
-PORTVERSION=	1.4.8
-DISTVERSIONSUFFIX=	-Leia
-PORTREVISION=	5
+PORTVERSION=	1.6.0
+DISTVERSIONSUFFIX=	-Matrix
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	kodi-addon-
 PKGNAMESUFFIX=	-devel
@@ -14,19 +13,15 @@ COMMENT=	Joystick support for Kodi
 
 LICENSE=	GPLv2+
 
-BROKEN=		outdated and incompatible with Kodi addon API changes
-
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/joystick.h:devel/evdev-proto \
-		kodi-devel>=19.0.a20200414:multimedia/kodi-devel
+		kodi-devel>=19.0.a20200530:multimedia/kodi-devel
 LIB_DEPENDS=	libtinyxml.so:textproc/tinyxml \
 		libudev.so:devel/libudev-devd
-RUN_DEPENDS=	kodi-devel>=19.0.a20200414:multimedia/kodi-devel
+RUN_DEPENDS=	kodi-devel>=19.0.a20200530:multimedia/kodi-devel
 
-USES=		cmake localbase
+USES=		cmake compiler:c++14-lang localbase
 USE_GITHUB=	yes
 GH_ACCOUNT=	xbmc
-
-PLIST_SUB=	SOVERSION=${PORTVERSION}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|if(CORE_SYSTEM_NAME STREQUAL linux)|if(1)|g' \
