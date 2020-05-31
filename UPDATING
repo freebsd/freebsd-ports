@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20200531:
+  AFFECTS: users of mail/postfix-policyd-spf-python
+  AUTHOR:  yasu@utahime.org
+
+  This port is now deprecated because upstream project is superseded by its
+  successor. So uninstall this port and install mail/py-spf-engine instead.
+  Keep in mind that the path of configuration file is changed from
+  ${PREFIX}/etc/postfix-policyd-spf-python/policyd-spf.conf to
+  ${PREFIX}/etc/python-policyd-spf/policyd-spf.conf. So you need to move
+  it to new location unless you use the default one without changing.
+
 20200526:
   AFFECTS: users of databases/mariadb104-client, databases/mariadb104-server
   AUTHOR: brnrd@FreeBSD.org

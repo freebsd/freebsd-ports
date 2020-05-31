@@ -1,0 +1,76 @@
+[
+{ type: install
+  message: <<EOM
+#
+# Using policyd-spf with Postfix
+#
+
+Policyd-spf must be integrated with Postfix to be effective:
+
+ 1. Add to your postfix master.cf:
+
+        policyd-spf  unix  -       n       n       -       0       spawn
+            user=nobody argv=%%PREFIX%%/bin/policyd-spf
+
+ 2. Configure the Postfix policy service in your main.cf so that the
+    "smtpd_recipient_restrictions" includes a call to the policyd-spf policy
+    filter.  If you already have a "smtpd_recipient_restrictions" line, you can
+    add the "check_policy_service" command anywhere *after* the line which
+    reads "reject_unauth_destination" (otherwise you're system can become an
+    open relay).
+
+        smtpd_recipient_restrictions =
+            ...
+            reject_unauth_destination
+            check_policy_service unix:private/policyd-spf
+            ...
+
+        policyd-spf_time_limit = 3600
+
+  3. Please consult the postfix documentation for more information on these and
+     other settings you may wish to have in the "smtpd_recipient_restrictions"
+     configuration.
+
+  4. Reload postfix.
+
+#
+# Automatically starting pyspf-milter at boot time.
+#
+
+Add 'pyspf_milter_enable="YES"' to /etc/rc.conf.
+
+#
+# Using pyspf-milter with Sendmail
+#
+
+Following is an example configuration line to include in your sendmail.mc.
+
+INPUT_MAIL_FILTER(`pyspf-milter', `S=local:/var/run/pyspf-milter/pyspf-milter.sock')dnl
+
+#
+# Using pyspf-milter with Postfix
+#
+
+Integration of pyspf-milter into Postfix is like any milter (See Postfix's
+README_FILES/MILTER_README). But care is required to segregate outbound mail
+from inbound mail to be checked. Here is example using milter macros to keep
+the mail streams segregated.
+
+%%PREFIX%%/etc/postfix/main.cf:
+
+smtpd_milters = unix:/var/run/pyspf-milter/pyspf-milter.sock
+
+%%PREFIX%%/etc/postfix/master.cf:
+
+smtp       inet  n       -       -       -       -       smtpd
+    ...
+        -o milter_macro_daemon_name=VERIFYING
+    ...
+
+%%PREFIX%%/etc/python-policyd-spf/policyd-spf.conf:
+
+MacroList               daemon_name|VERIFYING
+
+EOM
+}
+]
