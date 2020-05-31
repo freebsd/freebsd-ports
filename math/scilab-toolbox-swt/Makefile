@@ -2,6 +2,7 @@
 
 PORTNAME=	swt
 PORTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://atoms.scilab.org/toolboxes/swt/${PORTVERSION}/files/
 PKGNAMEPREFIX=	scilab-toolbox-
@@ -48,6 +49,8 @@ post-patch:
 .if !${PORT_OPTIONS:MHELP}
 	${REINPLACE_CMD} -e '/tbx_builder_help/d' ${WRKSRC}/builder.sce
 .endif
+	${REINPLACE_CMD} '/#include "MALLOC.h"/d' \
+		${WRKSRC}/sci_gateway/c/swt_common.h
 	${ECHO_CMD} quit >> ${WRKSRC}/builder.sce
 
 pre-build:
