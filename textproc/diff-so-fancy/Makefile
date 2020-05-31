@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	diff-so-fancy
-PORTVERSION=	1.2.6
+PORTVERSION=	1.3.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
 
