@@ -17,7 +17,7 @@ LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
 		liblzo2.so:archivers/lzo2
 RUN_DEPENDS=	kodi-devel>=19.0.a20200530:multimedia/kodi-devel
 
-USES=		cmake libarchive ssl
+USES=		cmake compiler:c++14-lang libarchive ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	xbmc
 

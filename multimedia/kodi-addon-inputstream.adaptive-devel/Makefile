@@ -17,7 +17,7 @@ BUILD_DEPENDS=	kodi-devel>=19.0.a20200530:multimedia/kodi-devel
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 RUN_DEPENDS=	kodi-devel>=19.0.a20200530:multimedia/kodi-devel
 
-USES=		cmake
+USES=		cmake compiler:c++14-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	peak3d
 
