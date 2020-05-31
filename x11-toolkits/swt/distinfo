@@ -1,3 +1,5 @@
-TIMESTAMP = 1530093075
+TIMESTAMP = 1590921567
+SHA256 (swt-4.7.3a-gtk-linux-x86.zip) = 1cf752f04b65e2cea92683142c5ee51f91de0f0a87898ca1903f3e16161d6556
+SIZE (swt-4.7.3a-gtk-linux-x86.zip) = 6182251
 SHA256 (swt-4.7.3a-gtk-linux-x86_64.zip) = 856005feff25de55f7d7b304d2cbed9dd24938c7b6d07ffd7413b8361a4753e3
 SIZE (swt-4.7.3a-gtk-linux-x86_64.zip) = 6360885
