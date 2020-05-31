@@ -10,6 +10,14 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20200531:
+AUTHOR: kde@FreeBSD.org
+
+  pyqt.mk gained support for test-only dependencies. If a component, say
+  py-qt5-gui is only required for testing, you can add
+
+    USE_PYQT=<other_deps> gui_test
+
 20200514:
 AUTHOR: mat@FreeBSD.org
 
