@@ -1,0 +1,28 @@
+From fc0297143494e0a0f08564d90dbb210669d0abf5 Mon Sep 17 00:00:00 2001
+From: Antonio Quartulli <a@unstable.cc>
+Date: Sat, 30 May 2020 02:05:54 +0200
+Subject: [PATCH] pool: prevent IPv6 pools to be larger than 2^16 addresses
+
+Signed-off-by: Antonio Quartulli <a@unstable.cc>
+Acked-by: Gert Doering <gert@greenie.muc.de>
+Message-Id: <20200530000600.1680-2-a@unstable.cc>
+URL: https://www.mail-archive.com/openvpn-devel@lists.sourceforge.net/msg19945.html
+Signed-off-by: Gert Doering <gert@greenie.muc.de>
+(cherry picked from commit 81d66a1f14d4be3282dd648ecc2049658e3a65ed)
+---
+ src/openvpn/pool.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/openvpn/pool.c b/src/openvpn/pool.c
+index da28bc06b..e45bf88a2 100644
+--- ./src/openvpn/pool.c
++++ ./src/openvpn/pool.c
+@@ -183,7 +183,7 @@ ifconfig_pool_init(int type, in_addr_t start, in_addr_t end,
+     if (pool->ipv6)
+     {
+         pool->base_ipv6 = ipv6_base;
+-        pool->size_ipv6 = ipv6_netbits>96 ? ( 1<<(128-ipv6_netbits) )
++        pool->size_ipv6 = ipv6_netbits > 112 ? (1 << (128 - ipv6_netbits))
+                           : IFCONFIG_POOL_MAX;
+ 
+         msg( D_IFCONFIG_POOL, "IFCONFIG POOL IPv6: (IPv4) size=%d, size_ipv6=%d, netbits=%d, base_ipv6=%s",
