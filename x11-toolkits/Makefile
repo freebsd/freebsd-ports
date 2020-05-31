@@ -171,6 +171,7 @@
     SUBDIR += py-easygui
     SUBDIR += py-fltk
     SUBDIR += py-gtk2
+    SUBDIR += py-qt5-chart
     SUBDIR += py-qt5-gui
     SUBDIR += py-qt5-quick
     SUBDIR += py-qt5-quickwidgets
