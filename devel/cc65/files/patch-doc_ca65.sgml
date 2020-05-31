@@ -1,0 +1,58 @@
+--- doc/ca65.sgml.orig	2020-05-20 11:15:00 UTC
++++ doc/ca65.sgml
+@@ -621,10 +621,10 @@ problem in most cases.
+ <table>
+ <tabular ca="clc">
+ <bf/Operator/| <bf/Description/| <bf/Precedence/@<hline>
+-| Built-in string functions| 0@
+-||~@
+-| Built-in pseudo-variables| 1@
+-| Built-in pseudo-functions| 1@
++&nbsp; | Built-in string functions| 0@
++&nbsp; | &nbsp; |~@
++&nbsp; | Built-in pseudo-variables| 1@
++&nbsp; | Built-in pseudo-functions| 1@
+ +| Unary positive| 1@
+ -| Unary negative| 1@
+ &tilde;<newline>
+@@ -635,7 +635,7 @@ problem in most cases.
+ .HIBYTE| Unary high-byte operator| 1@
+ ^<newline>
+ .BANKBYTE| Unary bank-byte operator| 1@
+-||~@
++&nbsp; | &nbsp; |~@
+ *| Multiplication| 2@
+ /| Division| 2@
+ .MOD| Modulo operator| 2@
+@@ -647,26 +647,26 @@ problem in most cases.
+ .SHL| Shift-left operator| 2@
+ &gt;&gt;<newline>
+ .SHR| Shift-right operator| 2@
+-||~@
++&nbsp; | &nbsp; |~@
+ +| Binary addition| 3@
+ -| Binary subtraction| 3@
+ &verbar;<newline>
+ .BITOR| Bitwise or| 3@
+-||~@
++&nbsp; | &nbsp; |~@
+ = | Compare operator (equal)| 4@
+ &lt;&gt;| Compare operator (not equal)| 4@
+ &lt;| Compare operator (less)| 4@
+ &gt;| Compare operator (greater)| 4@
+ &lt;=| Compare operator (less or equal)| 4@
+ &gt;=| Compare operator (greater or equal)| 4@
+-||~@
++&nbsp; | &nbsp; |~@
+ &amp;&amp;<newline>
+ .AND| Boolean and| 5@
+ .XOR| Boolean xor| 5@
+-||~@
++&nbsp; | &nbsp; |~@
+ &verbar;&verbar;<newline>
+ .OR| Boolean or| 6@
+-||~@
++&nbsp; | &nbsp; |~@
+ !<newline>
+ .NOT| Boolean not| 7@<hline>
+ </tabular>
