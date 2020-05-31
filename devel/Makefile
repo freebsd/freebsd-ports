@@ -875,7 +875,6 @@
     SUBDIR += gradle5
     SUBDIR += gradle62
     SUBDIR += grantlee5
-    SUBDIR += graphql.el
     SUBDIR += grpc
     SUBDIR += grumpy
     SUBDIR += grv

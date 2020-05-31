@@ -39,10 +39,6 @@
     SUBDIR += android-file-transfer-qt5
     SUBDIR += ansible
     SUBDIR += ansible-sysrc
-    SUBDIR += ansible23
-    SUBDIR += ansible24
-    SUBDIR += ansible25
-    SUBDIR += ansible26
     SUBDIR += ansible27
     SUBDIR += ansible28
     SUBDIR += anvil
