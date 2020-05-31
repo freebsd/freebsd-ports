@@ -15,7 +15,7 @@
 # was removed.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.512 2020/05/30 23:14:06 jclarke Exp $
+# $MCom: portlint/portlint.pl,v 1.515 2020/05/31 15:15:06 jclarke Exp $
 #
 
 use strict;
@@ -50,7 +50,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 19;
-my $micro = 1;
+my $micro = 2;
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
@@ -1972,7 +1972,7 @@ sub checkmakefile {
 	);
 	print "OK: checking to see if certain macros are sorted.\n" if ($verbose);
 	foreach my $sorted_macro (@macros_to_sort) {
-		while ($whole =~ /\n$sorted_macro.?=\s*([^#]+)(#.*)?\n/g) {
+		while ($whole =~ /\n$sorted_macro.?=\s*([^#\n]+)(#.*)?\n/g) {
 			my $lineno = &linenumber($`);
 			my $srex = $1;
 			$srex =~ s/\s+$//;
@@ -3831,10 +3831,18 @@ sub get_makevar {
 	$result = `$cmd`;
 	chomp $result;
 
-	$result =~ s/\n\n/\n\0\n/g;
+	# This bit of magic is interesting and repeated in the get_make* functions.
+	# It will ensure that all empty values for macros are replaced with a '\0' character
+	# to preserve their "place in line" for future parsing.  This is only needed when passing
+	# multiple variables to these functions.
+	no warnings 'uninitialized';
+	$result =~ s/(?:^|(?<=\n))(?=\n|$)/$1\0$3/g;
 	if (${^CHILD_ERROR_NATIVE} != 0) {
         die "\nFATAL ERROR: make(1) died with status ${^CHILD_ERROR_NATIVE} and returned '$result'";
 	}
+
+	# If the final value is just a '\0' strip it out.
+	$result =~ s/^\0$//;
 
 	return $result;
 }
@@ -3846,10 +3854,13 @@ sub get_makevar_shallow {
 	$result = `$cmd`;
 	chomp $result;
 
-	$result =~ s/\n\n/\n\0\n/g;
+	no warnings 'uninitialized';
+	$result =~ s/(?:^|(?<=\n))(?=\n|$)/$1\0$3/g;
 	if (${^CHILD_ERROR_NATIVE} != 0) {
 		die "\nFATAL ERROR: make(1) died with status ${^CHILD_ERROR_NATIVE} and returned '$result'";
 	}
+
+	$result =~ s/^\0$//;
 
 	return $result;
 }
@@ -3861,10 +3872,13 @@ sub get_makevar_raw {
 	$result = `$cmd`;
 	chomp $result;
 
-	$result =~ s/\n\n/\n\0\n/g;
+	no warnings 'uninitialized';
+	$result =~ s/(?:^|(?<=\n))(?=\n|$)/$1\0$3/g;
 	if (${^CHILD_ERROR_NATIVE} != 0) {
         die "\nFATAL ERROR: make(1) died with status ${^CHILD_ERROR_NATIVE} and returned '$result'";
 	}
+
+	$result =~ s/^\0$//;
 
 	return $result;
 }
@@ -3877,10 +3891,13 @@ sub get_makeconf_var {
 	$result =`$cmd`;
 	chomp $result;
 
-	$result =~ s/\n\n/\n\0\n/g;
+	no warnings 'uninitialized';
+	$result =~ s/(?:^|(?<=\n))(?=\n|$)/$1\0$3/g;
 	if (${^CHILD_ERROR_NATIVE} != 0) {
         die "\nFATAL ERROR: make(1) died with status ${^CHILD_ERROR_NATIVE} and returned '$result'";
     }
+
+	$result =~ s/^\0$//;
 
 	return $result;
 }
