@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	montserrat
-PORTVERSION=	7.200
-PORTREVISION=	1
+PORTVERSION=	7.210
 DISTVERSIONPREFIX=	v
 CATEGORIES=	x11-fonts
 
@@ -18,11 +17,12 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	JulietaUla
 GH_PROJECT=	Montserrat
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for docfile in AUTHOR.txt CONTRIBUTORS.txt README.md
+.for docfile in AUTHORS.txt CONTRIBUTORS.txt README.md
 	cd ${WRKSRC} && \
 		${INSTALL_DATA} ${docfile} ${STAGEDIR}${DOCSDIR}
 .endfor
