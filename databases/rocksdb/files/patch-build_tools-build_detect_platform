@@ -1,0 +1,102 @@
+Remove -fno-builtin-memcmp and -ltcmalloc
+
+--- build_tools/build_detect_platform.orig	2020-05-27 23:38:10 UTC
++++ build_tools/build_detect_platform
+@@ -126,7 +126,7 @@ PLATFORM_SHARED_VERSIONED=true
+ # generic port files (working on all platform by #ifdef) go directly in /port
+ GENERIC_PORT_FILES=`cd "$ROCKSDB_ROOT"; find port -name '*.cc' | tr "\n" " "`
+ 
+-# On GCC, we pick libc's memcmp over GCC's memcmp via -fno-builtin-memcmp
++# On GCC, we pick libc's memcmp over GCC's memcmp via
+ case "$TARGET_OS" in
+     Darwin)
+         PLATFORM=OS_MACOSX
+@@ -147,7 +147,7 @@ case "$TARGET_OS" in
+         PLATFORM=OS_LINUX
+         COMMON_FLAGS="$COMMON_FLAGS -DOS_LINUX"
+         if [ -z "$USE_CLANG" ]; then
+-            COMMON_FLAGS="$COMMON_FLAGS -fno-builtin-memcmp"
++            COMMON_FLAGS="$COMMON_FLAGS"
+         else
+             PLATFORM_LDFLAGS="$PLATFORM_LDFLAGS -latomic"
+         fi
+@@ -174,34 +174,34 @@ EOF
+         ;;
+     SunOS)
+         PLATFORM=OS_SOLARIS
+-        COMMON_FLAGS="$COMMON_FLAGS -fno-builtin-memcmp -D_REENTRANT -DOS_SOLARIS -m64"
++        COMMON_FLAGS="$COMMON_FLAGS -D_REENTRANT -DOS_SOLARIS -m64"
+         PLATFORM_LDFLAGS="$PLATFORM_LDFLAGS -lpthread -lrt -static-libstdc++ -static-libgcc -m64"
+         # PORT_FILES=port/sunos/sunos_specific.cc
+         ;;
+     AIX)
+         PLATFORM=OS_AIX
+         CC=gcc
+-        COMMON_FLAGS="$COMMON_FLAGS -maix64 -pthread -fno-builtin-memcmp -D_REENTRANT -DOS_AIX -D__STDC_FORMAT_MACROS"
++        COMMON_FLAGS="$COMMON_FLAGS -maix64 -pthread -D_REENTRANT -DOS_AIX -D__STDC_FORMAT_MACROS"
+         PLATFORM_LDFLAGS="$PLATFORM_LDFLAGS -pthread -lpthread -lrt -maix64 -static-libstdc++ -static-libgcc"
+         # PORT_FILES=port/aix/aix_specific.cc
+         ;;
+     FreeBSD)
+         PLATFORM=OS_FREEBSD
+         CXX=clang++
+-        COMMON_FLAGS="$COMMON_FLAGS -fno-builtin-memcmp -D_REENTRANT -DOS_FREEBSD"
++        COMMON_FLAGS="$COMMON_FLAGS -D_REENTRANT -DOS_FREEBSD"
+         PLATFORM_LDFLAGS="$PLATFORM_LDFLAGS -lpthread"
+         # PORT_FILES=port/freebsd/freebsd_specific.cc
+         ;;
+     NetBSD)
+         PLATFORM=OS_NETBSD
+-        COMMON_FLAGS="$COMMON_FLAGS -fno-builtin-memcmp -D_REENTRANT -DOS_NETBSD"
++        COMMON_FLAGS="$COMMON_FLAGS -D_REENTRANT -DOS_NETBSD"
+         PLATFORM_LDFLAGS="$PLATFORM_LDFLAGS -lpthread -lgcc_s"
+         # PORT_FILES=port/netbsd/netbsd_specific.cc
+         ;;
+     OpenBSD)
+         PLATFORM=OS_OPENBSD
+ 	CXX=clang++
+-        COMMON_FLAGS="$COMMON_FLAGS -fno-builtin-memcmp -D_REENTRANT -DOS_OPENBSD"
++        COMMON_FLAGS="$COMMON_FLAGS -D_REENTRANT -DOS_OPENBSD"
+         PLATFORM_LDFLAGS="$PLATFORM_LDFLAGS -pthread"
+         # PORT_FILES=port/openbsd/openbsd_specific.cc
+ 	FIND=gfind
+@@ -209,7 +209,7 @@ EOF
+         ;;
+     DragonFly)
+         PLATFORM=OS_DRAGONFLYBSD
+-        COMMON_FLAGS="$COMMON_FLAGS -fno-builtin-memcmp -D_REENTRANT -DOS_DRAGONFLYBSD"
++        COMMON_FLAGS="$COMMON_FLAGS -D_REENTRANT -DOS_DRAGONFLYBSD"
+         PLATFORM_LDFLAGS="$PLATFORM_LDFLAGS -lpthread"
+         # PORT_FILES=port/dragonfly/dragonfly_specific.cc
+         ;;
+@@ -219,7 +219,7 @@ EOF
+         PLATFORM_CXXFLAGS="-std=gnu++11"
+         COMMON_FLAGS="$COMMON_FLAGS -DCYGWIN"
+         if [ -z "$USE_CLANG" ]; then
+-            COMMON_FLAGS="$COMMON_FLAGS -fno-builtin-memcmp"
++            COMMON_FLAGS="$COMMON_FLAGS"
+         else
+             PLATFORM_LDFLAGS="$PLATFORM_LDFLAGS -latomic"
+         fi
+@@ -228,7 +228,7 @@ EOF
+         ;;
+     OS_ANDROID_CROSSCOMPILE)
+         PLATFORM=OS_ANDROID
+-	COMMON_FLAGS="$COMMON_FLAGS -fno-builtin-memcmp -D_REENTRANT -DOS_ANDROID -DROCKSDB_PLATFORM_POSIX"
++	COMMON_FLAGS="$COMMON_FLAGS -D_REENTRANT -DOS_ANDROID -DROCKSDB_PLATFORM_POSIX"
+ 	PLATFORM_LDFLAGS="$PLATFORM_LDFLAGS "  # All pthread features are in the Android C library
+         # PORT_FILES=port/android/android.cc
+         CROSS_COMPILE=true
+@@ -410,9 +410,9 @@ EOF
+     if ! test $JEMALLOC && ! test $ROCKSDB_DISABLE_TCMALLOC; then
+         # jemalloc is not available. Let's try tcmalloc
+         if echo 'int main() {}' | $CXX $CFLAGS -x c++ - -o /dev/null \
+-          -ltcmalloc 2>/dev/null; then
+-            PLATFORM_LDFLAGS="$PLATFORM_LDFLAGS -ltcmalloc"
+-            JAVA_LDFLAGS="$JAVA_LDFLAGS -ltcmalloc"
++          2>/dev/null; then
++            PLATFORM_LDFLAGS="$PLATFORM_LDFLAGS"
++            JAVA_LDFLAGS="$JAVA_LDFLAGS"
+         fi
+     fi
+ 
