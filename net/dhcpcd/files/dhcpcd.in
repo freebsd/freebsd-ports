@@ -16,7 +16,7 @@ if [ -n "$ifn" ]; then
 	if [ -z "$flags" -a -n "$specific" ]; then
 		rc_flags="$specific"
 	fi
-	pidfile="/var/run/dhcpcd-$ifn.pid"
+	pidfile="/var/run/dhcpcd/dhcpcd-$ifn.pid"
 else
 	pidfile="$($command -P $rc_flags)"
 	: ${dhcpcd_enable:=NO}

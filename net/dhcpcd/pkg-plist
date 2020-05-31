@@ -1,5 +1,4 @@
 libexec/dhcpcd-hooks/01-test
-libexec/dhcpcd-hooks/02-dump
 libexec/dhcpcd-hooks/20-resolv.conf
 libexec/dhcpcd-hooks/30-hostname
 libexec/dhcpcd-hooks/50-ntp.conf
@@ -12,5 +11,5 @@ sbin/dhcpcd
 %%EXAMPLESDIR%%/hooks/15-timezone
 %%EXAMPLESDIR%%/hooks/29-lookup-hostname
 %%EXAMPLESDIR%%/hooks/50-ypbind
-@dir /var/db/dhcpcd
 @sample %%EXAMPLESDIR%%/dhcpcd.conf etc/dhcpcd.conf
+@dir(_dhcp,_dhcp,) /var/db/dhcpcd
