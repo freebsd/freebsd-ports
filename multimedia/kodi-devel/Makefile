@@ -52,7 +52,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 # Building libcpluff.a requires autoreconf and gmake.  Using ninja
 # leads to dependency problems where libcpluff.a is not yet finished
 # building when it's required.
-USES=		autoreconf:build cmake:noninja compiler:c++11-lang gettext gl \
+USES=		autoreconf:build cmake:noninja compiler:c++14-lang gettext gl \
 		gmake gnome iconv:wchar_t jpeg libtool pkgconfig python:3.5+ \
 		sqlite ssl
 USE_GITHUB=	yes
