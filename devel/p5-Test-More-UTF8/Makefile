@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Test-More-UTF8
-PORTVERSION=	0.04
-PORTREVISION=	1
+PORTVERSION=	0.05
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +14,8 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Test-Simple>=0:devel/p5-Test-Simple
+RUN_DEPENDS=	p5-Test-Pod>=1.22:devel/p5-Test-Pod \
+		p5-Test-Pod-Coverage>=1.08:devel/p5-Test-Pod-Coverage
 
 USES=		perl5
 USE_PERL5=	configure
