@@ -22,6 +22,8 @@ You might need to add the following line to /etc/syslog.conf
 
 if you want to keep log informations of Motsognir. Some of them go to
 /var/log/messages, but connection informations go to LOG_INFO.
+Since version 1.0.12 you can also configure the log facility
+(see LogFacility in motsognir.conf).
 
 
 Motsognir will serve files in /var/gopher/ per default.
@@ -31,6 +33,8 @@ Note that Motsognir tries to use an inet6/ipv6 socket. Therefore it needs
 access to an interface where ipv6 is enabled (for instance if you run
 Motsognir in a jail). This holds even if you want to bind it to an ipv4
 address.
+Since version 1.0.11 you can disable IPv6 (see disableipv6 in
+motsognir.conf).
 EOM
 }
 ]

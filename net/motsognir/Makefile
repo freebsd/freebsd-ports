@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	motsognir
-PORTVERSION=	1.0.9
+PORTVERSION=	1.0.12
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/v${PORTVERSION}
 
@@ -11,10 +11,10 @@ COMMENT=	Full-featured gopher server without dependencies
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-SUB_FILES=	pkg-message
+USES=		tar:xz
 USE_RC_SUBR=	motsognir
 
-USES=		tar:xz
+SUB_FILES=	pkg-message
 
 PLIST_FILES=	bin/motsognir \
 		"@sample etc/motsognir.conf.sample" \
