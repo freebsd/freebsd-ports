@@ -12,6 +12,8 @@ LICENSE_COMB=	multi
 LICENSE_FILE_LGPL21+ =	${WRKSRC}/licenses/lgpl-2.1.txt
 LICENSE_FILE_GPLv3+ =	${WRKSRC}/licenses/gpl-3.0.txt
 
+BROKEN_FreeBSD_12_powerpc64=	fails to configure: The C++ compiler is not working
+
 USES=		compiler:c++0x pkgconfig scons
 USE_GITHUB=	yes
 GH_ACCOUNT=	Olga-Yakovleva
