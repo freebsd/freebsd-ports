@@ -21,7 +21,6 @@ bin/eric6_tray
 bin/eric6_trpreviewer
 bin/eric6_uipreviewer
 bin/eric6_unittest
-bin/eric6_webbrowser
 %%PYTHON_SITELIBDIR%%/eric6config.py
 %%PYTHON2%%%%PYTHON_SITELIBDIR%%/eric6config.pyc
 %%PYTHON_SITELIBDIR%%/eric6plugins/__init__.py
@@ -37,4 +36,12 @@ share/qt4/qsci/api/ruby/Ruby-1.8.7.api
 share/qt4/qsci/api/ruby/Ruby-1.8.7.bas
 share/qt4/qsci/api/ruby/Ruby-1.9.1.api
 share/qt4/qsci/api/ruby/Ruby-1.9.1.bas
+share/qt4/qsci/api/python/calliope.api
+share/qt4/qsci/api/python/circuitpython.api
+share/qt4/qsci/api/python/microbit.api
+share/qt4/qsci/api/python/micropython.api
+share/qt4/qsci/api/python/micropython.bas
+@dir %%DATADIR%%/DTDs
 @dir %%DATADIR%%/i18n
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%
+

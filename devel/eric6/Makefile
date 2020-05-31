@@ -1,20 +1,22 @@
 # Created by: Boris Samorodov <bsam@FreeBSD.org>
 # $FreeBSD$
 
-PORTREVISION=	4
+PORTREVISION=	0
 PKGNAMESUFFIX=	-${FLAVOR:U:S/_/-/}
 DISTNAME=	${PORTNAME}-nolang-${DISTVERSION}
 CATEGORIES=	devel python
 
 # Note to MAINTAINER: this should be converted to USES=pyqt, USE_PYQT=[...]
-RUN_DEPENDS=	${PYTHON_LIBDIR}/lib-dynload/_sqlite3.so:databases/py-sqlite3@${PY_FLAVOR}
+BUILD_DEPENDS+=	${PYQT_PY_RELNAME}-chart>=${PYQT_VERSION}:x11-toolkits/py-qt5-chart@${PY_FLAVOR}
+RUN_DEPENDS+=	${PYQT_PY_RELNAME}-chart>=${PYQT_VERSION}:x11-toolkits/py-qt5-chart@${PY_FLAVOR}
+RUN_DEPENDS+=	${PYTHON_LIBDIR}/lib-dynload/_sqlite3.so:databases/py-sqlite3@${PY_FLAVOR}
 
 CONFLICTS_INSTALL=	${FLAVORS:N${FLAVOR}:C/^/${PKGNAMEPREFIX}${PORTNAME}-/:C/$/-[0-9]*/}
 
 USES=		desktop-file-utils python:${FLAVOR:C/.*_py([0-9])/\1./} pyqt:5
 USE_PYQT=	core gui qscintilla2 webengine \
 		help_run network_run svg_run sql_run
-INSTALL_CMD=	install.py -c -f eric6config.freebsd -i ${STAGEDIR} --pyqt=5
+INSTALL_CMD=	install.py -c -f eric6config.freebsd -i ${STAGEDIR}
 SUB_FILES=	eric6.desktop
 MASTERPORT=	yes
 

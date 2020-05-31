@@ -6,6 +6,6 @@ quick and dirty editor as well as being usable as a professional project
 management tool integrating many advanced features Python offers
 the professional coder.
 
-This is a port of eric6 (based on Qt4).
+This is a port of eric6 (based on Qt5).
 
-WWW: http://eric-ide.python-projects.org/index.html
+WWW: https://eric-ide.python-projects.org/index.html
