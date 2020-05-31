@@ -9,4 +9,4 @@ Features:
 - JSON format to store benchmark results.
 - Support multiple units: seconds, bytes and integer.
 
-WWW: https://github.com/vstinner/pyperf
+WWW: https://github.com/psf/pyperf
