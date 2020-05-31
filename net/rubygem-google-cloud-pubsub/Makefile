@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	google-cloud-pubsub
-PORTVERSION=	1.7.0
+PORTVERSION=	1.7.1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
