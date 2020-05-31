@@ -37,7 +37,7 @@ index 9a73326399bd5..9e42a7f1c5d18 100644
      errno = posix_fallocate(mShmPoolFd, 0, aSize);
    } while (errno == EINTR);
 -  if (errno != 0) return false;
-+  if (errno != EINVAL && errno != EOPNOTSUPP) return false;
++  if (errno != 0 && errno != EINVAL && errno != EOPNOTSUPP) return false;
  #endif
  
    wl_shm_pool_resize(mShmPool, aSize);
