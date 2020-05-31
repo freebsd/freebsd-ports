@@ -3,7 +3,7 @@
 
 PORTNAME=	qmc2
 PORTVERSION=	0.195
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 
@@ -17,7 +17,7 @@ OPTIONS_DEFINE=	DOCS
 
 NO_WRKSUBDIR=	yes
 
-USES=		compiler:c++11-lang gl gmake qt:5 sdl tar:bzip2 xorg
+USES=		compiler:c++11-lang dos2unix gl gmake qt:5 sdl tar:bzip2 xorg
 USE_XORG=	x11 xmu
 USE_GL=		gl glu
 USE_QT=		buildtools_build core declarative gui multimedia \
@@ -39,6 +39,12 @@ DESKTOP_ENTRIES="QMC2" "MAME frontend" "${DATADIR}/img/mame.png" \
 		"${PORTNAME}-arcade" "Game;Emulator;Qt;" "true" \
 		"CHDMAN GUI" "Qt CHDMAN GUI" "${DATADIR}/img/qchdman.png" \
 		"qchdman" "Game;Emulator;Qt;" "true" \
+
+# This seems to be third-party, and has DOS line-endings. It also
+# needs to be patched because of a confusing build error: #define True 1
+# is a bad idea in C++ code that *also* uses True as an identifier
+# in some scopes.
+DOS2UNIX_FILES=	qmc2/lzma/7zTypes.h
 
 post-patch:
 	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
