@@ -2,9 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	graylog
-DISTVERSION=	3.2.5
+DISTVERSION=	3.3.0
 CATEGORIES=	sysutils java
-MASTER_SITES=	https://packages.graylog2.org/releases/graylog/
+MASTER_SITES=	https://downloads.graylog.org/releases/
+DISTFILES=	graylog/${DISTNAME}${EXTRACT_SUFX} \
+		graylog-integrations/graylog-integrations-plugins-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Tool for centralized log collection
@@ -51,7 +53,10 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${GRAYLOG_LOGS_DIR}
 	${INSTALL_DATA} ${WRKSRC}/graylog.jar ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/graylog.conf.example ${STAGEDIR}${ETCDIR}/graylog.conf.example
-	cd ${WRKSRC}/plugin && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/plugin
+	cd ${WRKDIR}/graylog-integrations-plugins-${DISTVERSION}/plugin && \
+	    ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/plugin/
+	cd ${WRKSRC}/plugin && \
+	    ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/plugin/
 	${INSTALL_DATA} ${WRKDIR}/log4j2.xml ${STAGEDIR}${ETCDIR}/log4j2.xml.example
 
 .include <bsd.port.mk>
