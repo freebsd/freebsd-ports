@@ -78,29 +78,29 @@ MANPAGES_DESC=		Build and install auto-generated manpages
 
 do-build-COMPLETIONS-on:
 .for SHELL in bash fish zsh
-	${WRKDIR}/bin/${PORTNAME} completion -s ${SHELL} > ${WRKSRC}/${SHELL}
+	${GO_WRKDIR_BIN}/${PORTNAME} completion -s ${SHELL} > ${GO_WRKSRC}/${SHELL}
 .endfor
 
 do-build-MANPAGES-on:
-	cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} GOFLAGS="-mod=vendor" go run ./cmd/gen-docs --man-page --doc-path docs/man/
+	cd ${GO_WRKSRC} && \
+		${SETENV} ${MAKE_ENV} ${GO_ENV} ${GO_CMD} run ${GO_BUILDFLAGS} ./cmd/gen-docs --man-page --doc-path docs/man
 
 post-install-COMPLETIONS-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
-	${INSTALL_DATA} ${WRKSRC}/bash \
+	${INSTALL_DATA} ${GO_WRKSRC}/bash \
 		${STAGEDIR}${PREFIX}/etc/bash_completion.d/${PORTNAME}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/fish/completions
-	${INSTALL_DATA} ${WRKSRC}/fish \
+	${INSTALL_DATA} ${GO_WRKSRC}/fish \
 		${STAGEDIR}${PREFIX}/share/fish/completions/${PORTNAME}.fish
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
-	${INSTALL_DATA} ${WRKSRC}/zsh \
+	${INSTALL_DATA} ${GO_WRKSRC}/zsh \
 		${STAGEDIR}${PREFIX}/share/zsh/site-functions/_${PORTNAME}
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${_DOCS} ${STAGEDIR}${DOCSDIR}
+	cd ${GO_WRKSRC} && ${INSTALL_DATA} ${_DOCS} ${STAGEDIR}${DOCSDIR}
 
 post-install-MANPAGES-on:
-	${INSTALL_MAN} ${WRKSRC}/docs/man/*.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${GO_WRKSRC}/docs/man/*.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
 .include <bsd.port.mk>
