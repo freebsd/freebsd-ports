@@ -1,12 +1,27 @@
+@dir(%%DB_USER%%,%%DB_GROUP%%,) %%DB_DIR%%
+@dir(%%DB_USER%%,%%DB_GROUP%%,) %%LOG_DIR%%
+@sample etc/foundationdb/foundationdb.conf.sample
+bin/actor_flamegraph
+bin/backup_agent
+bin/dr_agent
+bin/fdb_c_performance_test
+bin/fdb_c_ryw_benchmark
+bin/fdb_c_txn_size_test
+bin/fdb_flow_tester
 bin/fdbbackup
 bin/fdbcli
+bin/fdbmonitor
+bin/fdbr
 bin/fdbrestore
-@sample etc/foundationdb/foundationdb.conf.sample
-lib/foundationdb/backup_agent/backup_agent
+bin/fdbserver
+bin/mako
+include/foundationdb/fdb.options
+include/foundationdb/fdb_c.h
+include/foundationdb/fdb_c_options.g.h
+lib/libfdb_c.so
+lib/libfdb_flow.a
+lib/libfdb_sqlite.a
 lib/libfdbclient.a
 lib/libfdbrpc.a
 lib/libflow.a
-sbin/fdbmonitor
-sbin/fdbserver
-@dir(%%DB_USER%%,%%DB_GROUP%%,) %%DB_DIR%%
-@dir(%%DB_USER%%,%%DB_GROUP%%,) %%LOG_DIR%%
+lib/libthirdparty.a

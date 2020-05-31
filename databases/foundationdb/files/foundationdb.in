@@ -22,7 +22,7 @@
 name="foundationdb"
 rcvar="${name}_enable"
 foundationdb_enable=${foundationdb_enable:-"NO"}
-command=/usr/local/sbin/fdbmonitor
+command=%%PREFIX%%/bin/fdbmonitor
 pidfile="/var/run/fdbmonitor.pid"
 
 load_rc_config "$name"

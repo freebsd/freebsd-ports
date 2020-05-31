@@ -1,3 +1,16 @@
-A distributed, transactional key-value store.
+A massively distributed, transactional key-value store, extensible by
+design, with unparalleled reliability and performance.
+
+FoundationDB is multi-model, meaning you can store many types of data in a
+single database. All data is safely stored, distributed, and replicated
+in the Key-Value Store component. It is easy to install, grow, and
+manage, with a distributed architecture that gracefully scales out, and
+handles faults while acting like a single ACID database. FoundationDB
+provides amazing performance on commodity hardware, allowing you to
+support very heavy loads at low cost. It has been running in production
+for years and been hardened with lessons learned in some of the world's
+largest database deployments. Backing FoundationDB up is an unmatched
+testing system based on a deterministic simulation engine that ensures
+optimal reliability of operations.
 
 WWW: https://www.foundationdb.org/

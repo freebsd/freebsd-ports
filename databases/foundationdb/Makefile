@@ -1,9 +1,7 @@
-# Created by: vanilla@
 # $FreeBSD$
 
 PORTNAME=	foundationdb
-DISTVERSION=	6.1.8
-PORTREVISION=	6
+DISTVERSION=	6.3.0
 CATEGORIES=	databases
 
 MAINTAINER=	dch@FreeBSD.org
@@ -19,45 +17,64 @@ BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libeio.so:devel/libeio
 
-USES=		compiler:c++14-lang gmake mono:build python:build shebangfix
+USES=		compiler:c++17-lang cmake mono:build python:build shebangfix ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	apple
+GH_PROJECT=	foundationdb
+USE_LDCONFIG=	yes
 USE_RC_SUBR=	foundationdb
-SHEBANG_FILES=	build/csprojtom4.py build/link-wrapper.sh build/vcxprojtom4.py \
-		bindings/c/generate_asm.py
-MAKE_ENV+=	PYTHON=${PYTHON_CMD} TLS_DISABLED=yes
-CXXFLAGS+=	-Wno-varargs -DTLS_DISABLED
-CFLAGS+=	-Wno-implicit-int-float-conversion
 
-USERS=		${PORTNAME}
-GROUPS=		${PORTNAME}
+SHEBANG_FILES=	bindings/c/generate_asm.py
+
+CMAKE_ARGS=	-DOPENSSL_ROOT_DIR=${OPENSSLLIB}
+CMAKE_OFF=	USE_DTRACE DISABLE_TLS
+
+USERS=		foundationdb
+GROUPS=		foundationdb
 DBDIR?=		/var/db/foundationdb
 LOGDIR?=	/var/log/foundationdb
 
-PLIST_SUB+=	DB_USER=${USERS} \
+SUB_FDB=	DB_USER=${USERS} \
 		DB_GROUP=${GROUPS} \
 		DB_DIR=${DBDIR} \
 		LOG_DIR=${LOGDIR}
+SUB_FILES+=	foundationdb.conf
+SUB_LIST+=	${SUB_FDB}
+PLIST_SUB+=	${SUB_FDB}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/foundationdb.conf
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/flow/Platform.cpp
-
+		${REINPLACE_CMD} 's/OPENSSL_USE_STATIC_LIBS TRUE/OPENSSL_USE_STATIC_LIBS FALSE/' \
+		${WRKSRC}/cmake/FDBComponents.cmake
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/fdbbackup ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/fdbcli ${STAGEDIR}${PREFIX}/bin
-	${LN} -sf ${PREFIX}/bin/fdbbackup ${STAGEDIR}${PREFIX}/bin/fdbrestore
-	${INSTALL_DATA} ${WRKSRC}/lib/libfdbclient.a ${STAGEDIR}/${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/lib/libfdbrpc.a ${STAGEDIR}/${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/lib/libflow.a ${STAGEDIR}/${PREFIX}/lib
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/foundationdb
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/foundationdb/backup_agent
-	${LN} -sf ${PREFIX}/bin/fdbbackup ${STAGEDIR}${PREFIX}/lib/foundationdb/backup_agent/backup_agent
-	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/foundationdb
-	${INSTALL_DATA} ${WRKSRC}/foundationdb.conf ${STAGEDIR}${PREFIX}/etc/foundationdb/foundationdb.conf.sample
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/fdbmonitor ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/fdbserver ${STAGEDIR}${PREFIX}/sbin
-	@${MKDIR} ${STAGEDIR}${DBDIR}
-	@${MKDIR} ${STAGEDIR}${LOGDIR}
+	# commands on first line, dev tools on next two
+.for f in fdbbackup fdbcli fdbmonitor fdbserver \
+	    actor_flamegraph fdb_c_performance_test fdb_c_ryw_benchmark \
+	    fdb_c_txn_size_test fdb_flow_tester fdbconvert fdbdecode mako tutorial
+	${INSTALL_PROGRAM} ${WRKDIR}/.build/bin/${f} ${STAGEDIR}${PREFIX}/bin/
+.endfor
+	# confirm with upstream if these are actually needed
+.for s in backup_agent dr_agent fastrestore_agent fdbr fdbrestore
+	${RLN} ${STAGEDIR}${PREFIX}/bin/fdbbackup ${STAGEDIR}${PREFIX}/bin/${s}
+.endfor
+	# exposed libraries - confirm with upstream
+.for l in libfdb_c.so libfdb_flow.a libfdb_sqlite.a libfdbclient.a \
+	    libfdbrpc.a libflow.a libthirdparty.a
+	${STRIP_CMD} ${WRKDIR}/.build/lib/${l}
+	${INSTALL_DATA} ${WRKDIR}/.build/lib/${l} ${STAGEDIR}/${PREFIX}/lib/
+.endfor
+	# exposed headers - confirm with upstream
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/foundationdb
+	${INSTALL_DATA} ${WRKSRC}/bindings/c/foundationdb/fdb_c.h \
+	    ${STAGEDIR}/${PREFIX}/include/foundationdb/
+	${INSTALL_DATA} ${WRKSRC}/fdbclient/vexillographer/fdb.options \
+	    ${STAGEDIR}/${PREFIX}/include/foundationdb/
+	${INSTALL_DATA} ${WRKDIR}/.build/bindings/c/foundationdb/fdb_c_options.g.h \
+	    ${STAGEDIR}/${PREFIX}/include/foundationdb/
+	# runtime related
+	${MKDIR} ${STAGEDIR}${DBDIR} \
+	    ${STAGEDIR}${LOGDIR} \
+	    ${STAGEDIR}${PREFIX}/etc/foundationdb
+	${INSTALL_DATA} ${WRKDIR}/foundationdb.conf \
+	    ${STAGEDIR}${PREFIX}/etc/foundationdb/foundationdb.conf.sample
 
 .include <bsd.port.mk>
