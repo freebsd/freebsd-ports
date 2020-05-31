@@ -15054,3 +15054,4 @@ www/py-requests-futures097|www/py-requests-futures|2020-05-31|Has expired: Use w
 sysutils/ansible23|sysutils/ansible|2020-05-31|Has expired: Upstream support ended. Consider upgrading to sysutils/ansible
 devel/graphql.el||2020-05-31|Has expired: No longer required by anything
 lang/perl5.26|lang/perl5.28|2020-05-31|Has expired: Support ends three years after .0 release, please upgrade to a more recent version of Perl
+www/py-beautifulsoup460|www/py-beautifulsoup448|2020-05-31|Has expired: Use www/py-beautifulsoup448 instead
