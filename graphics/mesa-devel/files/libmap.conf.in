@@ -1,0 +1,26 @@
+# EGL/GLX built with -Dglvnd=false
+libEGL.so.1 libEGL%%PKGNAMESUFFIX%%.so.1
+libGL.so.1 libGL%%PKGNAMESUFFIX%%.so.1
+libGLESv1_CM.so.1 libGLESv1_CM%%PKGNAMESUFFIX%%.so.1
+libGLESv2.so.2 libGLESv2%%PKGNAMESUFFIX%%.so.2
+
+# EGL/GLX built with -Dglvnd=true
+# Xorg sets GLX_EXT_libglvnd to "mesa" by default
+libEGL_mesa.so.0 libEGL_mesa%%PKGNAMESUFFIX%%.so.0
+libGLX_mesa.so.0 libGLX_mesa%%PKGNAMESUFFIX%%.so.0
+
+# Fallback if GLX_EXT_libglvnd is missing or vendor library doesn't exist
+libGLX_indirect.so.0 libGLX_mesa%%PKGNAMESUFFIX%%.so.0
+
+# GBM clients like eglkms and wlroots fail otherwise
+libgbm.so.1 libgbm%%PKGNAMESUFFIX%%.so.1
+
+# Avoid different versions of the same driver showing up as multiple GPUs
+%%PREFIX%%/lib/libvulkan_intel.so libvulkan_intel%%PKGNAMESUFFIX%%.so
+%%PREFIX%%/lib/libvulkan_radeon.so libvulkan_radeon%%PKGNAMESUFFIX%%.so
+
+# VAAPI/VDPAU
+%%PREFIX%%/lib/dri/r600_drv_video.so %%PREFIX%%/lib/dri%%PKGNAMESUFFIX%%/r600_drv_video.so
+%%PREFIX%%/lib/dri/radeonsi_drv_video.so %%PREFIX%%/lib/dri%%PKGNAMESUFFIX%%/radeonsi_drv_video.so
+%%PREFIX%%/lib/vdpau/libvdpau_r600.so.1 %%PREFIX%%/lib/vdpau%%PKGNAMESUFFIX%%/libvdpau_r600.so.1
+%%PREFIX%%/lib/vdpau/libvdpau_radeonsi.so.1 %%PREFIX%%/lib/vdpau%%PKGNAMESUFFIX%%/libvdpau_radeonsi.so.1

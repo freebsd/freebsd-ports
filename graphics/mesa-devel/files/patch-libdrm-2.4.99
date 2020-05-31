@@ -1,0 +1,107 @@
+Revert libdrm 2.4.100 dependencies:
+https://gitlab.freedesktop.org/mesa/mesa/commit/9edcce2a32ed
+https://gitlab.freedesktop.org/mesa/mesa/commit/f9fe86e02ada
+
+--- meson.build.orig	2020-05-30 21:28:01 UTC
++++ meson.build
+@@ -1319,7 +1319,7 @@ dep_libdrm_radeon = null_dep
+ dep_libdrm_nouveau = null_dep
+ dep_libdrm_intel = null_dep
+ 
+-_drm_amdgpu_ver = '2.4.100'
++_drm_amdgpu_ver = '2.4.99'
+ _drm_radeon_ver = '2.4.71'
+ _drm_nouveau_ver = '2.4.66'
+ _drm_intel_ver = '2.4.75'
+--- src/amd/common/ac_gpu_info.c.orig	2020-05-30 21:28:01 UTC
++++ src/amd/common/ac_gpu_info.c
+@@ -516,14 +516,9 @@ bool ac_query_gpu_info(int fd, void *dev_p,
+ 	}
+ 	if (info->chip_class >= GFX10) {
+ 		info->tcc_cache_line_size = 128;
+-
+-		if (info->drm_minor >= 35) {
+-			info->tcc_harvested = device_info.tcc_disabled_mask != 0;
+-		} else {
+-			/* This is a hack, but it's all we can do without a kernel upgrade. */
+-			info->tcc_harvested =
+-				(info->vram_size / info->num_tcc_blocks) != 512*1024*1024;
+-		}
++		/* This is a hack, but it's all we can do without a kernel upgrade. */
++		info->tcc_harvested =
++			(info->vram_size / info->num_tcc_blocks) != 512*1024*1024;
+ 	} else {
+ 		info->tcc_cache_line_size = 64;
+ 	}
+--- src/gallium/winsys/amdgpu/drm/amdgpu_cs.c.orig	2020-05-30 21:28:01 UTC
++++ src/gallium/winsys/amdgpu/drm/amdgpu_cs.c
+@@ -341,49 +341,32 @@ static enum pipe_reset_status
+ amdgpu_ctx_query_reset_status(struct radeon_winsys_ctx *rwctx)
+ {
+    struct amdgpu_ctx *ctx = (struct amdgpu_ctx*)rwctx;
++   uint32_t result, hangs;
+    int r;
+ 
+    /* Return a failure due to a GPU hang. */
+-   if (ctx->ws->info.drm_minor >= 24) {
+-      uint64_t flags;
++   r = amdgpu_cs_query_reset_state(ctx->ctx, &result, &hangs);
++   if (r) {
++      fprintf(stderr, "amdgpu: amdgpu_cs_query_reset_state failed. (%i)\n", r);
++      return PIPE_NO_RESET;
++   }
+ 
+-      r = amdgpu_cs_query_reset_state2(ctx->ctx, &flags);
+-      if (r) {
+-         fprintf(stderr, "amdgpu: amdgpu_cs_query_reset_state failed. (%i)\n", r);
+-         return PIPE_NO_RESET;
++   switch (result) {
++   case AMDGPU_CTX_GUILTY_RESET:
++      return PIPE_GUILTY_CONTEXT_RESET;
++   case AMDGPU_CTX_INNOCENT_RESET:
++      return PIPE_INNOCENT_CONTEXT_RESET;
++   case AMDGPU_CTX_UNKNOWN_RESET:
++      return PIPE_UNKNOWN_CONTEXT_RESET;
++   case AMDGPU_CTX_NO_RESET:
++   default:
++      /* Return a failure due to a rejected command submission. */
++      if (ctx->ws->num_total_rejected_cs > ctx->initial_num_total_rejected_cs) {
++         return ctx->num_rejected_cs ? PIPE_GUILTY_CONTEXT_RESET :
++                                       PIPE_INNOCENT_CONTEXT_RESET;
+       }
+-
+-      if (flags & AMDGPU_CTX_QUERY2_FLAGS_RESET) {
+-         if (flags & AMDGPU_CTX_QUERY2_FLAGS_GUILTY)
+-            return PIPE_GUILTY_CONTEXT_RESET;
+-         else
+-            return PIPE_INNOCENT_CONTEXT_RESET;
+-      }
+-   } else {
+-      uint32_t result, hangs;
+-
+-      r = amdgpu_cs_query_reset_state(ctx->ctx, &result, &hangs);
+-      if (r) {
+-         fprintf(stderr, "amdgpu: amdgpu_cs_query_reset_state failed. (%i)\n", r);
+-         return PIPE_NO_RESET;
+-      }
+-
+-      switch (result) {
+-      case AMDGPU_CTX_GUILTY_RESET:
+-         return PIPE_GUILTY_CONTEXT_RESET;
+-      case AMDGPU_CTX_INNOCENT_RESET:
+-         return PIPE_INNOCENT_CONTEXT_RESET;
+-      case AMDGPU_CTX_UNKNOWN_RESET:
+-         return PIPE_UNKNOWN_CONTEXT_RESET;
+-      }
++      return PIPE_NO_RESET;
+    }
+-
+-   /* Return a failure due to a rejected command submission. */
+-   if (ctx->ws->num_total_rejected_cs > ctx->initial_num_total_rejected_cs) {
+-      return ctx->num_rejected_cs ? PIPE_GUILTY_CONTEXT_RESET :
+-                                    PIPE_INNOCENT_CONTEXT_RESET;
+-   }
+-   return PIPE_NO_RESET;
+ }
+ 
+ /* COMMAND SUBMISSION */

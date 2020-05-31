@@ -529,6 +529,7 @@
     SUBDIR += megapov
     SUBDIR += meh
     SUBDIR += mesa-demos
+    SUBDIR += mesa-devel
     SUBDIR += mesa-dri
     SUBDIR += mesa-libs
     SUBDIR += metacam

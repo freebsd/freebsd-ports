@@ -1,0 +1,75 @@
+bin/mesa-overlay-control.py
+@sample etc/libmap.d/mesa%%PKGNAMESUFFIX%%.conf.sample
+@comment include/EGL/egl.h
+@comment include/EGL/eglext.h
+@comment include/EGL/eglextchromium.h
+@comment include/EGL/eglmesaext.h
+@comment include/EGL/eglplatform.h
+@comment include/GL/gl.h
+@comment include/GL/glcorearb.h
+@comment include/GL/glext.h
+@comment include/GL/glx.h
+@comment include/GL/glxext.h
+@comment include/GL/internal/dri_interface.h
+@comment include/GLES/egl.h
+@comment include/GLES/gl.h
+@comment include/GLES/glext.h
+@comment include/GLES/glplatform.h
+@comment include/GLES2/gl2.h
+@comment include/GLES2/gl2ext.h
+@comment include/GLES2/gl2platform.h
+@comment include/GLES3/gl3.h
+@comment include/GLES3/gl31.h
+@comment include/GLES3/gl32.h
+@comment include/GLES3/gl3ext.h
+@comment include/GLES3/gl3platform.h
+@comment include/KHR/khrplatform.h
+@comment include/gbm.h
+@comment include/vulkan/vulkan_intel.h
+lib/dri%%PKGNAMESUFFIX%%/i965_dri.so
+lib/dri%%PKGNAMESUFFIX%%/iris_dri.so
+lib/dri%%PKGNAMESUFFIX%%/r600_dri.so
+lib/dri%%PKGNAMESUFFIX%%/radeonsi_dri.so
+%%VAAPI%%lib/dri%%PKGNAMESUFFIX%%/r600_drv_video.so
+%%VAAPI%%lib/dri%%PKGNAMESUFFIX%%/radeonsi_drv_video.so
+@comment lib/libEGL%%PKGNAMESUFFIX%%.so
+lib/libEGL%%PKGNAMESUFFIX%%.so.1
+lib/libEGL%%PKGNAMESUFFIX%%.so.1.0.0
+%%X11%%@comment lib/libGL%%PKGNAMESUFFIX%%.so
+%%X11%%lib/libGL%%PKGNAMESUFFIX%%.so.1
+%%X11%%lib/libGL%%PKGNAMESUFFIX%%.so.1.2.0
+@comment lib/libGLESv1_CM%%PKGNAMESUFFIX%%.so
+lib/libGLESv1_CM%%PKGNAMESUFFIX%%.so.1
+lib/libGLESv1_CM%%PKGNAMESUFFIX%%.so.1.1.0
+@comment lib/libGLESv2%%PKGNAMESUFFIX%%.so
+lib/libGLESv2%%PKGNAMESUFFIX%%.so.2
+lib/libGLESv2%%PKGNAMESUFFIX%%.so.2.0.0
+lib/libVkLayer_MESA_device_select.so
+lib/libVkLayer_MESA_overlay.so
+@comment lib/libgbm%%PKGNAMESUFFIX%%.so
+lib/libgbm%%PKGNAMESUFFIX%%.so.1
+lib/libgbm%%PKGNAMESUFFIX%%.so.1.0.0
+@comment lib/libglapi%%PKGNAMESUFFIX%%.so
+lib/libglapi%%PKGNAMESUFFIX%%.so.0
+lib/libglapi%%PKGNAMESUFFIX%%.so.0.0.0
+lib/libvulkan_intel%%PKGNAMESUFFIX%%.so
+lib/libvulkan_radeon%%PKGNAMESUFFIX%%.so
+%%VDPAU%%lib/vdpau%%PKGNAMESUFFIX%%/libvdpau_r600.so
+%%VDPAU%%lib/vdpau%%PKGNAMESUFFIX%%/libvdpau_r600.so.1
+%%VDPAU%%lib/vdpau%%PKGNAMESUFFIX%%/libvdpau_r600.so.1.0
+%%VDPAU%%lib/vdpau%%PKGNAMESUFFIX%%/libvdpau_r600.so.1.0.0
+%%VDPAU%%lib/vdpau%%PKGNAMESUFFIX%%/libvdpau_radeonsi.so
+%%VDPAU%%lib/vdpau%%PKGNAMESUFFIX%%/libvdpau_radeonsi.so.1
+%%VDPAU%%lib/vdpau%%PKGNAMESUFFIX%%/libvdpau_radeonsi.so.1.0
+%%VDPAU%%lib/vdpau%%PKGNAMESUFFIX%%/libvdpau_radeonsi.so.1.0.0
+@comment libdata/pkgconfig/dri.pc
+@comment libdata/pkgconfig/egl.pc
+@comment libdata/pkgconfig/gbm.pc
+@comment libdata/pkgconfig/gl.pc
+@comment libdata/pkgconfig/glesv1_cm.pc
+@comment libdata/pkgconfig/glesv2.pc
+share/drirc.d/00-mesa%%PKGNAMESUFFIX%%-defaults.conf
+share/vulkan/explicit_layer.d/VkLayer_MESA_overlay.json
+@comment share/vulkan/icd.d/intel_icd.%%ARCH%%.json
+@comment share/vulkan/icd.d/radeon_icd.%%ARCH%%.json
+share/vulkan/implicit_layer.d/VkLayer_MESA_device_select.json

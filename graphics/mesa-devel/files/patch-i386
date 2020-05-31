@@ -1,0 +1,53 @@
+FreeBSD doesn't ship libatomic for Clang to use, so use __sync* atomics.
+https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=230888
+
+Checking if "GCC atomic builtins" compiles: YES
+Checking if "GCC atomic builtins required -latomic" links: NO
+
+meson.build:1098:4: ERROR: C library 'atomic' not found
+
+ld.lld: error: undefined symbol: __atomic_load_8
+>>> referenced by testfile.c
+>>>               /tmp/testfile-055958.o:(main)
+
+ld.lld: error: undefined symbol: __atomic_fetch_add_8
+>>> referenced by testfile.c
+>>>               /tmp/testfile-055958.o:(main)
+cc: error: linker command failed with exit code 1 (use -v to see invocation)
+
+--- meson.build.orig	2020-05-30 21:28:01 UTC
++++ meson.build
+@@ -1068,7 +1068,7 @@ endif
+ # Check for GCC style atomics
+ dep_atomic = null_dep
+ 
+-if cc.compiles('''#include <stdint.h>
++if cc.links('''#include <stdint.h>
+                   int main() {
+                     struct {
+                       uint64_t *v;
+@@ -1079,24 +1079,6 @@ if cc.compiles('''#include <stdint.h>
+                   }''',
+                name : 'GCC atomic builtins')
+   pre_args += '-DUSE_GCC_ATOMIC_BUILTINS'
+-
+-  # Not all atomic calls can be turned into lock-free instructions, in which
+-  # GCC will make calls into the libatomic library. Check whether we need to
+-  # link with -latomic.
+-  #
+-  # This can happen for 64-bit atomic operations on 32-bit architectures such
+-  # as ARM.
+-  if not cc.links('''#include <stdint.h>
+-                     int main() {
+-                       struct {
+-                         uint64_t *v;
+-                       } x;
+-                       return (int)__atomic_load_n(x.v, __ATOMIC_ACQUIRE) &
+-                              (int)__atomic_add_fetch(x.v, (uint64_t)1, __ATOMIC_ACQ_REL);
+-                     }''',
+-                  name : 'GCC atomic builtins required -latomic')
+-    dep_atomic = cc.find_library('atomic')
+-  endif
+ endif
+ if not cc.links('''#include <stdint.h>
+                    uint64_t v;

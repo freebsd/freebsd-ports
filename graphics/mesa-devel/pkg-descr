@@ -1,0 +1,4 @@
+Development branch of Mesa 3D graphics library. Only some drivers are
+enabled, so it can co-exist with the stable version.
+
+WWW: https://www.mesa3d.org/
