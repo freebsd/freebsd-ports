@@ -4,6 +4,9 @@ PORTNAME=	yoshimi
 DISTVERSION=	1.7.1
 CATEGORIES=	audio
 
+PATCH_SITES=	https://github.com/Yoshimi/yoshimi/commit/
+PATCHFILES=	86996cbb235f0fe138ae814a6758c2c8ba1c2a38.patch:-p1
+
 MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Sophisticated software synthesizer
 
