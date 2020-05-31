@@ -6,6 +6,8 @@ PKGNAMESUFFIX=	18-traymonitor
 
 COMMENT=	Backup archiving recovery open sourced (traymonitor)
 
+BROKEN_FreeBSD_13_powerpc64=	fails to package: bareos-tray-monitor: No such file or directory
+
 LIB_DEPENDS+=	libqwt5-qt5.so:x11-toolkits/qwt5-qt5 \
 		libbareos.so:sysutils/bareos18-client
 

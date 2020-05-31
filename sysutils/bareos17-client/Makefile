@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	17-client
 COMMENT=	Backup archiving recovery open sourced (client)
 
 BROKEN_aarch64=	Fails to link: missing sbrk
+BROKEN_FreeBSD_13_powerpc64=	fails to compile: bsnprintf.c:621:16: static declaration of 'round' follows non-static declaration
 
 CONFLICTS=	bareos16-client-* bareos-client-*
 
