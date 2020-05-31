@@ -1,0 +1,136 @@
+From 098edbb1f5a2e1360fd6a4ae0642b63bec12e992 Mon Sep 17 00:00:00 2001
+From: Jeremy Evans <code@jeremyevans.net>
+Date: Wed, 20 May 2020 11:34:04 -0700
+Subject: [PATCH] Switch assertion failure to returning false
+
+This assertion failure can be hit in production, which causes the
+openvpn server process to stop and all clients to be disconnected.
+Bug #1270 has been filed for this issue on Trac by another user
+who has experienced the issue, and this patch attempts to address it.
+
+Tracing callers, it appears that some callers check ks->authenticated
+before calling, but others do not.  It may be possible to add the check
+for the callers that do not check, but this seems to be a simpler
+solution.
+
+To give some background, we hit this assertion failure, with the
+following log output:
+
+```
+Tue May 19 15:57:05 2020 username/73.135.141.11:1194 PUSH: Received
+control message: 'PUSH_REQUEST'
+Tue May 19 15:57:05 2020 username/73.135.141.11:1194 SENT CONTROL
+[username]: 'PUSH_REPLY,redirect-gateway
+def1,comp-lzo,persist-key,persist-tun,route-gateway 10.28.47.1,topology
+subnet,ping 10,ping-restart 120,ifconfig 10.28.47.38 255.255.255.0,peer-id
+89' (status=1)
+Tue May 19 15:57:05 2020 username/73.135.141.11:1194 Assertion failed at
+/path/to/openvpn-2.4.7/src/openvpn/ssl.c:1944 (ks->authenticated)
+Tue May 19 15:57:05 2020 username/73.135.141.11:1194 Exiting due to fatal
+error
+Tue May 19 15:57:05 2020 username/73.135.141.11:1194 Closing TUN/TAP
+interface
+```
+
+using the following OpenVPN server configuration:
+
+```
+port 1194
+proto udp
+dev-type tun
+ca ca.crt
+cert server.crt
+key server.key
+dh dh.pem
+topology subnet
+push "redirect-gateway def1"
+push "comp-lzo"
+push "persist-key"
+push "persist-tun"
+keepalive 10 120
+comp-lzo
+user nobody
+group nobody
+persist-key
+persist-tun
+cd /home/openvpn/server
+chroot /var/empty
+daemon
+verb 3
+crl-verify crl.pem
+tls-auth ta.key 0
+cipher AES-256-CBC
+tls-version-min 1.2
+tls-cipher ECDHE-RSA-AES256-GCM-SHA384
+ncp-disable
+mute-replay-warnings
+script-security 3
+auth-user-pass-verify "ldap-auth/ldap-auth" via-env
+auth-user-pass-optional
+```
+
+and the following command line options:
+
+```
+--config openvpn.conf --dev tun1 --local 206.131.72.52 \
+--log-append openvpn.log --status openvpn-status.log \
+--server 10.28.47.0 255.255.255.0
+```
+
+The failed assertion is inside the function
+`tls_session_generate_data_channel_keys`, which is called 3 other places
+in `ssl.c.`:
+
+* `key_method_2_write`: checks for `ks->authenticated` before calling
+
+* `key_method_2_read`: appears to run in client mode but not in server
+  mode
+
+* `tls_session_update_crypto_params`: runs in server mode and does not
+  check before calling
+
+That leads me to believe the problem caller is
+`tls_session_update_crypto_params`. There.s three callers of
+`tls_session_update_crypto_params`:.
+
+* `incoming_push_message` (`push.c`): Probably this caller, since the
+  server pushes configuration to clients, and the log shows the
+  assertion failure right after the push reply.
+
+* `multi_process_file_closed` (`multi.c`): Not this caller.  NCP is
+  disabled in config, and async push was not enabled when compiling.
+
+* `do_deferred_options` (`init.c`): Not this caller.  The server
+  configuration doesn't pull.
+
+Changing the assertion to returning false appears to be the simplest
+fix.  Another approach would be changing callers to check
+`ks->authenticated` before calling, either
+`tls_session_update_crypto_params` or `incoming_push_message`.
+
+Signed-off-by: Jeremy Evans <code@jeremyevans.net>
+Acked-by: Steffan Karger <steffan.karger@foxcrypto.com>
+Message-Id: <20200520183404.54822-1-code@jeremyevans.net>
+URL: https://www.mail-archive.com/openvpn-devel@lists.sourceforge.net/msg19914.html
+Signed-off-by: Gert Doering <gert@greenie.muc.de>
+(cherry picked from commit 984bd1e1601e4b9562dbc88b02a8db60b884286f)
+---
+ src/openvpn/ssl.c | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+diff --git a/src/openvpn/ssl.c b/src/openvpn/ssl.c
+index cf6689982..215147f37 100644
+--- ./src/openvpn/ssl.c
++++ ./src/openvpn/ssl.c
+@@ -1941,7 +1941,10 @@ tls_session_generate_data_channel_keys(struct tls_session *session)
+     const struct session_id *server_sid = !session->opt->server ?
+                                           &ks->session_id_remote : &session->session_id;
+ 
+-    ASSERT(ks->authenticated);
++    if (!ks->authenticated) {
++        msg(D_TLS_ERRORS, "TLS Error: key_state not authenticated");
++        goto cleanup;
++    }
+ 
+     ks->crypto_options.flags = session->opt->crypto_flags;
+     if (!generate_key_expansion(&ks->crypto_options.key_ctx_bi,
