@@ -12,6 +12,8 @@ COMMENT=	SIP benchmarking and testing tool
 
 LICENSE=	GPLv2
 
+BROKEN_FreeBSD_12_powerpc64=	fails to compile: /usr/local/lib/gcc9/include/c++/cstddef:52:8: expected unqualified-id before string constant
+
 BUILD_DEPENDS=	help2man:misc/help2man
 
 USES=		autoreconf compiler:c++11-lang gmake ncurses pkgconfig
