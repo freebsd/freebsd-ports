@@ -1,3 +1,3 @@
-TIMESTAMP = 1590421088
-SHA256 (httpcore-0.9.0.tar.gz) = f77ea2e5fecd58d2b049a2efd706788b1808b73c2367479a0f4a49f6e391cba7
-SIZE (httpcore-0.9.0.tar.gz) = 31794
+TIMESTAMP = 1590927009
+SHA256 (httpcore-0.9.1.tar.gz) = ecc5949310d9dae4de64648a4ce529f86df1f232ce23dcfefe737c24d21dfbe9
+SIZE (httpcore-0.9.1.tar.gz) = 31911
