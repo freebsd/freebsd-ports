@@ -4,6 +4,7 @@
 PORTNAME=	oniguruma
 DISTVERSIONPREFIX=	v
 DISTVERSION=	6.9.5_rev1
+PORTREVISION=	1
 CATEGORIES=	devel textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,7 +17,7 @@ USES=			autoreconf pathfix libtool  # configure provided in the tarball breaks: 
 USE_GITHUB=		yes
 GH_ACCOUNT=		kkos
 GNU_CONFIGURE=		yes
-CONFIGURE_ARGS=		--disable-static
+CONFIGURE_ARGS=		--disable-static --enable-posix-api=yes
 PATHFIX_MAKEFILEIN=	Makefile.am
 USE_LDCONFIG=		yes
 INSTALL_TARGET=		install-strip
