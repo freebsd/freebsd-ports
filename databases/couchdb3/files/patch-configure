@@ -1,0 +1,26 @@
+--- configure.orig	2018-08-18 17:55:47 UTC
++++ configure
+@@ -19,7 +19,7 @@
+ rootdir="$(cd "${0%/*}" 2>/dev/null; echo "$PWD")"
+ basename=`basename $0`
+ 
+-PACKAGE_AUTHOR_NAME="The Apache Software Foundation"
++PACKAGE_AUTHOR_NAME="FreeBSD"
+ 
+ # TEST=0
+ WITH_CURL="false"
+@@ -168,10 +168,10 @@ cat > rel/couchdb.config << EOF
+ %
+ {package_author_name, "$PACKAGE_AUTHOR_NAME"}.
+-{prefix, "."}.
++{prefix, "%%APPDIR%%"}.
+-{data_dir, "./data"}.
+-{view_index_dir, "./data"}.
++{data_dir, "%%DBDIR%%"}.
++{view_index_dir, "%%DBDIR%%"}.
+ {log_file, "$LOG_FILE"}.
+-{fauxton_root, "./share/www"}.
++{fauxton_root, "%%WWWDIR%%"}.
+ {user, "$COUCHDB_USER"}.
+ {node_name, "-name couchdb@127.0.0.1"}.
+ {cluster_port, 5984}.

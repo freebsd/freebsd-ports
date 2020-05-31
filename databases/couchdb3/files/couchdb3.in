@@ -1,0 +1,96 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: couchdb3
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# couchdb3_enable (bool):       Set to NO by default.
+#                               Set it to YES to enable couchdb.
+
+. /etc/rc.subr
+
+name=%%PORTNAME%%
+rcvar=%%PORTNAME%%_enable
+
+start_cmd="${name}_start"
+stop_cmd="${name}_stop"
+status_cmd="${name}_status"
+
+load_rc_config $name
+
+: ${%%PORTNAME%%_enable:="NO"}
+: ${%%PORTNAME%%_user="couchdb"}
+: ${%%PORTNAME%%_erl_flags="-couch_ini %%APPDIR%%/etc/default.ini %%ETCDIR%%/local.ini"}
+: ${%%PORTNAME%%_chdir="/var/db/%%PORTNAME%%"}
+
+command="%%ERL_PATH%%"
+pidfile="/var/run/${name}.pid"
+daemonpidfile="/var/run/${name}-daemon.pid"
+
+erl_sasl='-sasl releases_dir \"%%PORTNAME%%/releases\"'
+erl_boot='-boot %%RELDIR%%/couchdb -boot_var RELTOOL_EXT_LIB %%APPDIR%%/lib'
+erl_args='-args_file %%ETCDIR%%/vm.args'
+erl_flags="${erl_sasl} ${erl_boot} ${erl_args} ${%%PORTNAME%%_erl_flags}"
+
+%%PORTNAME%%_start()
+{
+    # chdir manually as overriding _start() blocks rc.subr defaults
+    cd "${%%PORTNAME%%_chdir}"
+    /usr/sbin/daemon -p ${pidfile} \
+        -P ${daemonpidfile} \
+        -t ${name} \
+        -u ${%%PORTNAME%%_user} \
+        env ERL_FLAGS="${erl_flags}" \
+        HOME=/var/run/couchdb \
+        ERL_CRASH_DUMP=/var/run/couchdb/erl_crash.dump \
+        %%PORTNAME%%_FAUXTON_DOCROOT=%%WWWDIR%% \
+        %%PORTNAME%%_QUERY_SERVER_JAVASCRIPT="%%APPDIR%%/bin/couchjs %%APPDIR%%/share/server/main.js" \
+        %%PORTNAME%%_QUERY_SERVER_COFFEESCRIPT="%%APPDIR%%/bin/couchjs %%APPDIR%%/share/server/main-coffee.js" \
+        ${command}
+}
+
+%%PORTNAME%%_stop()
+{
+    echo -n "Stopping ${name}: "
+    retval=0
+    if ! status_quiet
+    then
+        echo "already stopped"
+        return 1
+    else
+        %%PORTNAME%%_pids=$(/bin/pgrep -ifU ${%%PORTNAME%%_user} ${name})
+        kill ${%%PORTNAME%%_pids}
+        wait_for_pids ${%%PORTNAME%%_pids}
+        retval=$?
+        echo "stopped"
+    fi
+    return $retval
+}
+
+%%PORTNAME%%_status()
+{
+    /bin/pgrep -ifU ${%%PORTNAME%%_user} ${name}  > /dev/null && status="$?" || status="$?"
+    if [ "${status}" = 0 ]; then
+        echo "${name} is running"
+        return 0
+    elif [ "${status}" = 4 ]; then
+        echo "could not access PID file for ${name}"
+        return ${status}
+    else
+        echo "${name} is not running"
+        return ${status}
+    fi
+}
+
+status_quiet()
+{
+    %%PORTNAME%%_status >/dev/null 2>&1
+}
+
+run_rc_command $1
+
