@@ -1,6 +1,6 @@
---- ./modules/gui/src/java/org/scilab/modules/gui/utils/WebBrowser.java.orig	2014-07-24 22:44:04.242274707 +0000
-+++ ./modules/gui/src/java/org/scilab/modules/gui/utils/WebBrowser.java	2014-07-24 22:50:25.305278583 +0000
-@@ -98,14 +98,14 @@
+--- modules/gui/src/java/org/scilab/modules/gui/utils/WebBrowser.java.orig	2020-02-25 09:59:55 UTC
++++ modules/gui/src/java/org/scilab/modules/gui/utils/WebBrowser.java
+@@ -101,14 +101,14 @@ public final class WebBrowser implements XConfiguratio
                      // We have <pierre.marechal@scilab.org>
                      String mail = "mailto:" + url.substring(1, url.length() - 1);
                      if (webprefs.defaultMailer) {
@@ -17,7 +17,7 @@
                  } else {
                      Runtime.getRuntime().exec(webprefs.cmdMailer + " " + new URI(url).toString());
                  }
-@@ -113,7 +113,7 @@
+@@ -116,7 +116,7 @@ public final class WebBrowser implements XConfiguratio
                  if (webprefs.defaultBrowser) {
                      // Under Windows, ShellExecute is called with the URI and under Linux it is gnome_url_show.
                      // So to handle different protocol in URI, user must config its OS to handle them.

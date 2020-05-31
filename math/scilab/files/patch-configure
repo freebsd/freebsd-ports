@@ -1,11 +1,29 @@
---- configure.orig	2015-10-02 17:09:45.251035000 +0000
-+++ configure	2015-10-02 17:07:21.796652000 +0000
-@@ -11863,7 +11863,7 @@
-             fi
-         fi
-                 ac_java_jvm_jni_lib_runtime_path="${ac_java_jvm_jni_lib_runtime_path}:$D"
--                ac_java_jvm_jni_lib_flags="$ac_java_jvm_jni_lib_flags -L$D -ljvm"
-+                ac_java_jvm_jni_lib_flags="$ac_java_jvm_jni_lib_flags -L$D -ljvm -pthread"
-                 D=$ac_java_jvm_dir/jre/lib/$machine/native_threads
-                 if test -d $D; then
-                   ac_java_jvm_jni_lib_runtime_path="${ac_java_jvm_jni_lib_runtime_path}:$D"
+--- configure.orig	2020-02-25 09:59:42 UTC
++++ configure
+@@ -9995,7 +9995,7 @@ if test -z "$CXX"; then
+ fi
+ 
+ case "$CXX" in
+-    g++-* | g++ | ccache*g++ | ccache*g++-* )
++    g++-* | g++ | ccache*g++ | ccache*g++-* | c++ | clang++* )
+         ## With GNU C++ Compiler
+ 
+         # enable the code coverage
+@@ -10022,7 +10022,7 @@ esac
+ #### 64 bits detection
+ IS_64_BITS_CPU=false
+ case "$host" in
+-         x86_64-*-linux-gnu | x86_64-linux-gnu | ia64-*-linux-gnu | alpha-*-linux-gnu | alpha-*-netbsd* | x86_64-*-netbsd* | sparc64-*-netbsd*)
++         x86_64-*-linux-gnu | x86_64-linux-gnu | ia64-*-linux-gnu | alpha-*-linux-gnu | alpha-*-netbsd* | x86_64-*-netbsd* | sparc64-*-netbsd* | amd64-*-freebsd* )
+                 IS_64_BITS_CPU=true
+     ;;
+ esac
+@@ -10030,7 +10030,7 @@ esac
+ ##########"
+ 
+ case "$CC" in
+-     gcc-* | gcc | ccache*gcc | ccache*gcc-* )
++     gcc-* | gcc | ccache*gcc | ccache*gcc-* | cc | clang* )
+    ## With GNU Compiler
+ 
+    # enable the code coverage

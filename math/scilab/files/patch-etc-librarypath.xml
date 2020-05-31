@@ -1,9 +1,0 @@
---- etc/librarypath.xml.orig	2015-03-31 09:31:16 UTC
-+++ etc/librarypath.xml
-@@ -62,4 +62,6 @@
-     <!-- Standard path for 64 bits -->
-     <path value="/usr/lib64/scilab/"/>
-     
-+    <path value="%%JAVALIBDIR%%"/>
-+    <path value="%%LOCALBASE%%/lib"/>
- </librarypaths>

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	scilab
-PORTVERSION=	5.5.2
-PORTREVISION=	25
+PORTVERSION=	6.1.0
 CATEGORIES=	math cad java
 MASTER_SITES=	https://www.scilab.org/download/${PORTVERSION}/
 DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX}
@@ -16,8 +15,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/COPYING-BSD
 
-# A partial dependencies list can be found at:
-# http://wiki.scilab.org/Dependencies_of_Scilab_5.X
+BUILD_DEPENDS=	${LOCALBASE}/include/eigen3/Eigen/Sparse:math/eigen3
 LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
 		libpcre.so:devel/pcre \
 		libcurl.so:ftp/curl \
@@ -28,24 +26,22 @@ LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
 		libamd.so:math/suitesparse
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
-USES=		cpe desktop-file-utils fortran gettext gmake gnome iconv \
-		libtool ncurses pathfix pkgconfig shared-mime-info
-USE_CXXSTD=	gnu++98
+USES=		compiler:c++17-lang cpe desktop-file-utils fortran \
+		gettext gmake gnome iconv:wchar_t libtool \
+		localbase ncurses pathfix pkgconfig shared-mime-info
 USE_LOCALE=	en_US.UTF-8
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-gfortran \
 		--without-emf \
-		-disable-static-system-lib
+		--with-eigen-include=${LOCALBASE}/include/eigen3 \
+		${ICONV_CONFIGURE_ARG}
+LDFLAGS+=	${ICONV_LIB}
+
 CONFIGURE_ENV=	BLAS_LIBS="${BLASLIB}" LAPACK_LIBS="${LAPACKLIB}"
 INSTALL_TARGET=	install-strip
-TEST_TARGET=	check  # XXX: tests fail
-
-MAKE_JOBS_UNSAFE=	yes
 
 PLIST_SUB=	SHLIB_VER=${PORTVERSION}
 
@@ -71,7 +67,8 @@ _GUI_DEPENDS+=	${JAVALIBDIR}/flexdock.jar:devel/flexdock \
 		${JAVALIBDIR}/commons-logging.jar:java/apache-commons-logging \
 		${JAVALIBDIR}/jgraphx.jar:java/jgraphx \
 		${JAVALIBDIR}/jlatexmath.jar:math/jlatexmath \
-		${LOCALBASE}/share/java/ecj-4.5.jar:lang/gcc-ecj45
+		${LOCALBASE}/share/java/ecj-4.5.jar:lang/gcc-ecj45 \
+		${JAVALIBDIR}/lucene-core-5.5.5.jar:textproc/lucene5
 # Documentation, graphic export:
 _GUI_DEPENDS+=	${LOCALBASE}/share/java/fop/build/fop.jar:textproc/fop \
 		${JAVALIBDIR}/jlatexmath-fop.jar:math/jlatexmath \
@@ -128,47 +125,32 @@ TK_RUN_DEPENDS=	${LOCALBASE}/lib/bwidget/init.tcl:x11-toolkits/bwidget
 CONFIGURE_ARGS+=	--without-openmp
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MGUI} && ${JAVA_PORT_VERSION:M*8*}
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-Makefile.in
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=	--enable-debug
 .endif
 
 post-patch:
-	@# Configure fixes
-	@${REINPLACE_CMD} -e 's|-ldl | |' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|-lumfpack|-lumfpack -lsuitesparseconfig -lamd -lcholmod -lcolamd $$LAPACK_LIBS $$BLAS_LIBS|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|TCLTK_LIBS=" -ldl"|TCLTK_LIBS=" "|' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|"x=" ==|"x" =|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|"x" ==|"x" =|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|sparc64-\*-netbsd\*|amd64-\*-freebsd\*|' ${WRKSRC}/configure
-	@# Build fixes
-	@${REINPLACE_CMD} -e 's|$$(CFLAGS:-O%=)|-I${LOCALBASE}/include -L${LOCALBASE}/lib|' ${WRKSRC}/modules/elementary_functions/Makefile.in
-	@${REINPLACE_CMD} -e 's|freebsd|__FreeBSD__|g' ${WRKSRC}/modules/sparse/includes/spConfig.h
-	@# malloc.h -> stdlib.h conversions
-	@${GREP} -lr "<malloc.h>" ${WRKSRC} \
-		| ${XARGS} ${REINPLACE_CMD} -e \
-		's/[<"]malloc.h[>"]/<stdlib.h>/'
-	@# Run fixes
-	@${REINPLACE_CMD} -e 's|%%JAVALIBDIR%%|${JAVALIBDIR}|' ${WRKSRC}/etc/librarypath.xml
-	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/etc/librarypath.xml
+	@${REINPLACE_CMD} 's,/usr/local,${LOCALBASE},' ${WRKSRC}/etc/librarypath.xml
 	@${REINPLACE_CMD} -e 's, gfortran, ${FC},' ${WRKSRC}/modules/dynamic_link/src/scripts/configure
 
 post-patch-GUI-on:
+# scilab segfaults on FreeBSD with C locale
+	@${REINPLACE_CMD} 's,LC_ALL=C,,' ${WRKSRC}/Makefile.in
 	@# Configure fixes
+	@${REINPLACE_CMD} '/ac_java_jvm_jni_lib_flags/s,\(ljvm\),\1 -pthread,' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/usr/lib/java|${JAVALIBDIR}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/usr/lib64/jni|${LOCALBASE}/lib/|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|$$jardir/batik-all.jar|${LOCALBASE}/share/java/batik/lib/batik-all.jar|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|$$jardir/fop.jar|${LOCALBASE}/share/java/fop/build/fop.jar|' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|$$jardir/jeuclid-core*.jar|${LOCALBASE}/share/java/jeuclid/repo/jeuclid-core*.jar|' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|jrosetta-API.jar|jrosetta-api.jar|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} 's,\(DEFAULT_JAR_DIR="\),\1 \
+		${LOCALBASE}/share/java/classes \
+		${LOCALBASE}/share/java/fop/build \
+		${LOCALBASE}/share/java/batik/lib \
+		${LOCALBASE}/share/java/jeuclid/repo ,' ${WRKSRC}/configure
+	@${REINPLACE_CMD} 's|fop\*.jar|fop.jar|' ${WRKSRC}/configure
+# Part of the jogamp-jogl-2.3 patch:
 	@${REINPLACE_CMD} -e 's|javax.media.opengl.glu.GLUnurbs|com.jogamp.opengl.glu.GLUnurbs|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|jogamp.common.os.MachineDescriptionRuntime|jogamp.common.os.MachineDataInfoRuntime|' ${WRKSRC}/configure
 	@# Run fixes
 	@${REINPLACE_CMD} -e 's|%%JAVA_HOME%%|${JAVA_HOME}|' ${WRKSRC}/bin/scilab
-	@${REINPLACE_CMD} -e 's|/usr/share/scilab|${DATADIR}|' ${WRKSRC}/desktop/scilab.desktop
-	@${REINPLACE_CMD} -e 's|/usr/share/scilab-cli|${DATADIR}|' \
-		${WRKSRC}/desktop/scilab-adv-cli.desktop ${WRKSRC}/desktop/scilab-cli.desktop
 
 pre-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/.atoms
@@ -178,4 +160,4 @@ post-install:
 	@# toolbox uninstaller otherwise if 3rd party toolboxes are used
 	@${FIND} ${STAGEDIR}${DATADIR}/modules -type d -empty -delete
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
