@@ -2,7 +2,7 @@
 
 PORTNAME=	etc_os-release
 PORTVERSION=	0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils kde gnome
 MASTER_SITES=	#
 DISTFILES=	#
@@ -15,7 +15,11 @@ NO_BUILD=	yes
 
 PLIST_FILES=	etc/os-release
 
+.if exists(/bin/freebsd-version)
 VERSION!=	freebsd-version -u
+.else
+VERSION!=	uname -r
+.endif
 VERSION_ID=	${VERSION:C/^([0-9\.]+).*/\1/}
 
 CONTENTS=	'NAME=FreeBSD\0'$\
