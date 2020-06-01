@@ -21,6 +21,7 @@
 %%JAVAJARDIR%%/lib/batik-i18n-%%VERSION%%.jar
 %%JAVAJARDIR%%/lib/batik-parser-%%VERSION%%.jar
 %%JAVAJARDIR%%/lib/batik-script-%%VERSION%%.jar
+%%JAVAJARDIR%%/lib/batik-shared-resources-%%VERSION%%.jar
 %%JAVAJARDIR%%/lib/batik-svg-dom-%%VERSION%%.jar
 %%JAVAJARDIR%%/lib/batik-svgbrowser-%%VERSION%%.jar
 %%JAVAJARDIR%%/lib/batik-svggen-%%VERSION%%.jar
@@ -34,7 +35,7 @@
 %%JAVAJARDIR%%/lib/batik-util-%%VERSION%%-tests.jar
 %%JAVAJARDIR%%/lib/batik-util-%%VERSION%%.jar
 %%JAVAJARDIR%%/lib/batik-xml-%%VERSION%%.jar
-%%JAVAJARDIR%%/lib/fop-transcoder-allinone-2.4.jar
+%%JAVAJARDIR%%/lib/fop-transcoder-allinone-2.5.jar
 %%JAVAJARDIR%%/lib/rhino-1.7.7.jar
 %%JAVAJARDIR%%/lib/serializer-2.7.2.jar
 %%JAVAJARDIR%%/lib/xalan-2.7.2.jar
