@@ -3,6 +3,7 @@
 
 PORTNAME=	scilab
 PORTVERSION=	6.1.0
+PORTREVISION=	1
 CATEGORIES=	math cad java
 MASTER_SITES=	https://www.scilab.org/download/${PORTVERSION}/
 DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX}
@@ -145,7 +146,14 @@ post-patch-GUI-on:
 		${LOCALBASE}/share/java/fop/build \
 		${LOCALBASE}/share/java/batik/lib \
 		${LOCALBASE}/share/java/jeuclid/repo ,' ${WRKSRC}/configure
-	@${REINPLACE_CMD} 's|fop\*.jar|fop.jar|' ${WRKSRC}/configure
+# Prefer non-versioned files to avoid excessive rebuilds. This also fixes detection of fop.
+	@${REINPLACE_CMD} 's|batik-all\*\.jar|batik-all.jar|g; \
+			s|commons-io\*\.jar|commons-io.jar|g; \
+			s|commons-logging\*\.jar|commons-logging.jar|g; \
+			s|fop\*\.jar|fop.jar|g; \
+			s|jlatexmath\*\.jar|jlatexmath.jar|g; \
+			s|xmlgraphics-commons\*\.jar|xmlgraphics-commons.jar|g' \
+			${WRKSRC}/configure
 # Part of the jogamp-jogl-2.3 patch:
 	@${REINPLACE_CMD} -e 's|javax.media.opengl.glu.GLUnurbs|com.jogamp.opengl.glu.GLUnurbs|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|jogamp.common.os.MachineDescriptionRuntime|jogamp.common.os.MachineDataInfoRuntime|' ${WRKSRC}/configure
