@@ -52,8 +52,6 @@ MESON_ARGS=	-Ddri-drivers=i965 \
 		-Dgallium-drivers=iris,r600,radeonsi \
 		-Dgallium-omx=disabled \
 		-Dgallium-opencl=disabled \
-		-Dgallium-va=false \
-		-Dgallium-vdpau=false \
 		-Dgallium-xa=false \
 		-Dgallium-xvmc=false \
 		-Dplatforms=${PLATFORMS:ts,} \
