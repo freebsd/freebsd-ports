@@ -52,7 +52,7 @@ include/freetype2/ft2build.h
 lib/libfreetype.a
 lib/libfreetype.so
 lib/libfreetype.so.6
-lib/libfreetype.so.6.17.1
+lib/libfreetype.so.6.17.2
 libdata/pkgconfig/freetype2.pc
 %%CONFIG%%man/man1/freetype-config.1.gz
 share/aclocal/freetype2.m4
