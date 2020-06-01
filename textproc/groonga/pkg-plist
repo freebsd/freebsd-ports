@@ -59,10 +59,13 @@ include/groonga/groonga/pat.h
 include/groonga/groonga/plugin.h
 include/groonga/groonga/portability.h
 include/groonga/groonga/posting.h
+include/groonga/groonga/proc.h
 include/groonga/groonga/raw_string.h
 include/groonga/groonga/request_canceler.h
 include/groonga/groonga/request_timer.h
+include/groonga/groonga/result_set.h
 include/groonga/groonga/scorer.h
+include/groonga/groonga/selector.h
 include/groonga/groonga/string.h
 include/groonga/groonga/table.h
 include/groonga/groonga/thread.h
