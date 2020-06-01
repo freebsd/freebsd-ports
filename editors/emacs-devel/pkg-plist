@@ -2529,8 +2529,6 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/mail/mailclient.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/mail/mailheader.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/mail/mailheader.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/mail/metamail.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/mail/metamail.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/mail/mspools.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/mail/mspools.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/mail/qp.el.gz
@@ -2903,8 +2901,6 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/landmark.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/lazy-lock.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/lazy-lock.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/levents.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/levents.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/longlines.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/longlines.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/mailpost.el.gz
@@ -2914,6 +2910,8 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/meese.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/meese.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/messcompat.el
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/metamail.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/metamail.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/mouse-sel.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/mouse-sel.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/old-emacs-lock.el.gz
