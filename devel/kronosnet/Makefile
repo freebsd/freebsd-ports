@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kronosnet
-PORTVERSION=	1.15
-PORTREVISION=	1
+PORTVERSION=	1.16
 CATEGORIES=	devel
 MASTER_SITES=	https://kronosnet.org/releases/
 
