@@ -1,0 +1,1308 @@
+--- blocks.c	2004-01-22 08:58:26.000000000 -0500
++++ blocks.c	2020-05-26 00:46:17.567171000 -0400
+@@ -33,5 +33,4 @@
+ 
+ extern List *blocks;
+-extern void warnFor(Token*, char*, char*);
+ 
+ Blox *pushBlock(Token *cmd, int infl, int lvl, int cond)
+--- blocks.h	2002-12-11 17:22:09.000000000 -0500
++++ blocks.h	2020-05-25 21:44:35.228984000 -0400
+@@ -34,5 +34,5 @@
+ extern void delBlock(Blox *);
+ extern void popBlock(int);
+-extern int isUnreachable();
++extern int isUnreachable(void);
+ extern void setUnreachable(int);
+ 
+--- config.c	2002-12-13 04:56:37.000000000 -0500
++++ config.c	2020-05-26 00:53:58.729888000 -0400
+@@ -30,12 +30,8 @@
+ #endif
+ 
+-extern Token *tokenPop(Token **);
+-extern void freeToken(Token *);
+-extern void streamMore(Input *);
+-
+ List *config = noList;
+ 
+ static struct {
+-	char		*name;
++	const char	*name;
+ 	ParamType	code;
+ } pvals[] ={
+@@ -72,8 +68,8 @@
+ };
+ 
+-void dumpPdata(ParamData *pt, FILE *op)
++static void dumpPdata(ParamData *pt, FILE *op)
+ {
+     int i;
+-    char *pad;
++    const char *pad;
+     List *lp;
+ 
+@@ -105,5 +101,5 @@
+ }
+ 
+-void dumpConf(ConfigData *cp, FILE *op)
++void dumpConf(const ConfigData *cp, FILE *op)
+ {
+     List *plp;
+@@ -119,5 +115,5 @@
+ }
+ 
+-static void pcode(ParamData *ppt, char *str)
++static void pcode(ParamData *ppt, const char *str)
+ {
+     int i;
+@@ -172,6 +168,5 @@
+     SeqnData *sd;
+     void *dp;
+-    extern void dumpToken(Token *, FILE *);
+-    
++ 
+     ppt = newpdata();
+     switch (tp->type)
+@@ -253,5 +248,5 @@
+ }
+ 
+-static int handle(Token *line)
++static int confighandle(Token *line)
+ {
+     ConfigData *cpt;
+@@ -307,9 +302,9 @@
+ }
+ 
+-void readconfig(char *str)
++void readconfig(const char *str)
+ {
+     FILE *fd;
+     Input file;
+-    
++
+     if ((fd = fopen(str, "r")) == NULL)
+     {
+@@ -320,5 +315,5 @@
+  * use the tokenising mechanism we already have to parse the config file
+  */
+-    file.text = (char *) malloc(64*1024);
++    file.atext = malloc(64*1024);
+     file.stream = fd;
+     file.tcall = file.texpr = 0;
+@@ -326,13 +321,13 @@
+     file.lineStart = 1;
+     streamMore(&file);
+-    while(handle(collect(&file)))
++    while(confighandle(collect(&file)))
+     {
+         /* skip */
+     }
+-    free(file.text);  
++    free(file.atext);
+     fclose(fd);
+ }
+ 
+-void stringconfig(char *str)
++void stringconfig(const char *str)
+ {
+     Input file;
+@@ -347,5 +342,5 @@
+     file.lineNumber = 1;
+     file.lineStart = 1;
+-    while(handle(collect(&file)))
++    while(confighandle(collect(&file)))
+     {
+         /* skip */
+--- flagvars.h	2002-12-11 17:22:22.000000000 -0500
++++ flagvars.h	2020-05-25 22:01:07.242413000 -0400
+@@ -15,5 +15,5 @@
+ 
+ extern int lineNumber;
+-extern char *currentfile;
++extern const char *currentfile;
+ 
+ extern int compout;
+@@ -64,9 +64,9 @@
+ extern int trystrings;
+ 
+-extern char *style;
+-extern char *pstyle;
+-extern char *contString;
++extern const char *style;
++extern const char *pstyle;
++extern const char *contString;
+ 
+-extern char *locale;
++extern const char *locale;
+ extern FILE *msgfile;
+ extern FILE *specfile;
+--- frink.c	2020-05-16 20:19:34.593158000 -0400
++++ frink.c	2020-05-26 00:20:15.522562000 -0400
+@@ -29,4 +29,5 @@
+ #include <stdlib.h>
+ #endif
++#include <unistd.h>
+ 
+ int failed	= 0;
+@@ -40,5 +41,5 @@
+ 
+ int compout	= 0;
+-int resvsplit	= 0;
++static int resvsplit = 0;
+ int noquotes	= 0;
+ int spaceout	= 0;
+@@ -81,9 +82,9 @@
+ int internat	= 0;
+ 
+-char *style		= (char *) 0;
+-char *pstyle		= (char *) 0;
+-char *contString 	= "";
++const char *style	= NULL;
++const char *pstyle	= NULL;
++const char *contString 	= "";
+ 
+-char *locale		= (char *) 0;
++const char *locale	= NULL;
+ FILE *msgfile		= NULL;
+ FILE *specfile		= NULL;
+@@ -92,17 +93,8 @@
+ int praghold		= 0;
+ 
+-char *currentfile	= (char *) 0;
++const char *currentfile	= NULL;
+ 
+-List *skiplist = (List *) 0;
++List *skiplist = NULL;
+ 
+-#ifndef __FreeBSD__
+-extern int getopt(int, char*const*, const char*);
+-#endif
+-
+-extern int optind;
+-extern char *optarg;
+-extern int fclose(FILE*);
+-extern void readconfig(char *);
+-extern void stringconfig(char *);
+ extern void clearState(void);
+ 
+@@ -113,5 +105,5 @@
+ }
+ 
+-static char *languages[] =
++static const char *languages[] =
+ {
+     "aa",	/* Afar	*/
+@@ -257,5 +249,5 @@
+ };
+ 
+-static char *countries[] =
++static const char *countries[] =
+ {
+     "AF",	/* AFGHANISTAN */
+@@ -501,9 +493,9 @@
+ };
+ 
+-static void checkLocale(char *v)
++static void checkLocale(const char *v)
+ {
+     int l, i, fnd = 0;;
+ 
+-    for (i = 0; languages[i] != (char *) 0; i += 1)
++    for (i = 0; languages[i] != NULL; i += 1)
+     {
+ 	if (strncmp(v, languages[i], 2) == 0)
+@@ -625,5 +617,5 @@
+ }
+ 
+-void setOption(int flag, char *value)
++static void setOption(int flag, const char *value)
+ {
+     int not;
+@@ -750,7 +742,8 @@
+ }
+ 
+-static void readrc(char *file)
++static void readrc(const char *file)
+ {
+-    char *opts[50], buff[128], *cp;
++    const char *opts[50];
++    char buff[128], *cp;
+     FILE *desc;
+     int leng, i;
+@@ -794,11 +787,7 @@
+ static void process(FILE *desc)
+ {
+-    extern void flushOutput(void);
+-    extern int handle(Token *line);
+-    extern void streamMore(Input *);
+-
+     Input file;
+ 
+-    file.text = (char *) malloc(64*1024);
++    file.atext = malloc(64*1024);
+     file.stream = desc;
+     file.tcall = file.texpr = 0;
+@@ -810,10 +799,10 @@
+     }
+     flushOutput();
+-    free(file.text);
++    free(file.atext);
+ }
+ 
+ static void initCmds(void)
+ {
+-    static char *cmdspec =
++    static const char *cmdspec =
+ 	"set {{var 0x0017} {ctype? 0x0001}}\n"
+ 	"global {{varlist 0x0150}}\n"
+@@ -970,5 +959,4 @@
+ {
+     FILE  *desc;
+-    extern void initOutput(void);
+ 
+     initCmds();
+--- frink.h	2004-01-22 09:01:52.000000000 -0500
++++ frink.h	2020-05-26 00:46:50.409373000 -0400
+@@ -100,2 +100,16 @@
+ extern List *skiplist;
+ extern List *blocks;
++
++void dumpConf(const ConfigData *, FILE*);
++void readconfig(const char *fileName);
++void stringconfig(const char *line);
++void initOutput(void);
++void setIndent(void);
++void outdent(void);
++int isVarToken(const Token *);
++int isSwitch(const Token *);
++int isSingleCall(const Token *, const char *);
++int tokEqual(const Token *, const char *);
++void flushOutput(void);
++void clearState(void);
++void warnFor(const Token *token, const char *cmd, const char *txt);
+--- output.c	2002-12-11 18:05:16.000000000 -0500
++++ output.c	2020-05-25 22:27:07.601022000 -0400
+@@ -44,8 +44,8 @@
+ static TokenType olast	= HEAD;
+ 
+-static Token nlToken	= {BLANK, CNSTWORD, 0, (char *) 0, 0, (Token *) 0, (Token *) 0};
+-static Token startToken	= {START, CNSTWORD, 0, (char *) 0, 0, (Token *) 0, (Token *) 0};
+-static Token contToken	= {CONT, CNSTWORD, 0, (char *) 0, 0, (Token *) 0, (Token *) 0};
+-static Token spToken	= {SP, CNSTWORD, 0, " ", 1, (Token *) 0, (Token *) 0};
++static Token nlToken	= {.type = BLANK, .ckind = CNSTWORD};
++static Token startToken	= {.type = START, .ckind = CNSTWORD};
++static Token contToken	= {.type = CONT, .ckind = CNSTWORD};
++static Token spToken	= {.type = SP, .ckind = CNSTWORD, .text = " ", .length = 1};
+ 
+ void initOutput(void)
+@@ -227,5 +227,5 @@
+ }
+ 
+-static void printkn(char *txt, int length, int keepnl)
++static void printkn(const char *txt, int length, int keepnl)
+ {
+     char *cp;
+@@ -252,5 +252,5 @@
+ }
+ 
+-static void printn(char *txt, int len)
++static void printn(const char *txt, int len)
+ {
+     if (!testonly)
+@@ -260,10 +260,10 @@
+ }
+ 
+-static void print(char *txt)
++static void print(const char *txt)
+ {
+     printn(txt, strlen(txt));
+ }
+ 
+-static void brace(char *t)
++static void brace(const char *t)
+ {
+     char *cp, *bp;
+@@ -378,8 +378,8 @@
+ }
+ 
+-static Token dollarToken = {DOLLAR, CNSTWORD, 0, (char *) 0, 0, (Token *) 0, (Token *) 0};
+-static Token endlineToken = {ENDLINE, CNSTWORD, 0, (char *) 0, 0, (Token *) 0, (Token *) 0};
+-static Token lbrackToken = {LBRACK, CNSTWORD, 0, (char *) 0, 0, (Token *) 0, (Token *) 0};
+-static Token rbrackToken = {RBRACK, CNSTWORD, 0, (char *) 0, 0, (Token *) 0, (Token *) 0};
++static Token dollarToken = {.type = DOLLAR, .ckind = CNSTWORD};
++static Token endlineToken = {.type = ENDLINE, .ckind = CNSTWORD};
++static Token lbrackToken = {.type = LBRACK, .ckind = CNSTWORD};
++static Token rbrackToken = {.type = RBRACK, .ckind = CNSTWORD};
+ 
+ void output(Token *token, int compress)
+--- tcl.c	2004-01-22 08:25:48.000000000 -0500
++++ tcl.c	2020-05-26 00:46:39.040977000 -0400
+@@ -27,48 +27,40 @@
+ static int inproc = 0;
+ 
+-static Token lbraceToken	= {LBRACE, CNSTWORD, 0, (char *) 0, 0, (Token *) 0, (Token *) 0};
+-static Token rbraceToken	= {RBRACE, CNSTWORD, 0, (char *) 0, 0, (Token *) 0, (Token *) 0};
+-static Token xcontToken		= {XCONT, CNSTWORD, 0, (char *) 0, 0, (Token *) 0, (Token *) 0};
+-static Token ostartToken	= {OSTART, CNSTWORD, 0, (char *) 0, 0, (Token *) 0, (Token *) 0};
+-static Token startToken		= {START, CNSTWORD, 0, (char *) 0, 0, (Token *) 0, (Token *) 0};
+-static Token contToken		= {CONT, CNSTWORD, 0, (char *) 0, 0, (Token *) 0, (Token *) 0};
+-static Token econtToken		= {ECONT, CNSTWORD, 0, (char *) 0, 0, (Token *) 0, (Token *) 0};
+-static Token emToken		= {EM, CNSTWORD, 0, (char *) 0, 0, (Token *) 0, (Token *) 0};
+-static Token nospToken		= {NOSP, CNSTWORD, 0, (char *) 0, 0, (Token *) 0, (Token *) 0};
++static Token lbraceToken	= {.type = LBRACE, .ckind = CNSTWORD};
++static Token rbraceToken	= {.type = RBRACE, .ckind = CNSTWORD};
++static Token xcontToken		= {.type = XCONT, .ckind = CNSTWORD};
++static Token ostartToken	= {.type = OSTART, .ckind = CNSTWORD};
++static Token startToken		= {.type = START, .ckind = CNSTWORD};
++static Token contToken		= {.type = CONT, .ckind = CNSTWORD};
++static Token econtToken		= {.type = ECONT, .ckind = CNSTWORD};
++static Token emToken		= {.type = EM, .ckind = CNSTWORD};
++static Token nospToken		= {.type = NOSP, .ckind = CNSTWORD};
+ static Token *olsToken		= &emToken;
+-static Token spToken		= {SP, CNSTWORD, 0, (char *) 0, 0, (Token *) 0, (Token *) 0};
+-static Token lbrackToken	= {LBRACK, CNSTWORD, 0, (char *) 0, 0, (Token *) 0, (Token *) 0};
+-static Token rbrackToken	= {RBRACK, CNSTWORD, 0, (char *) 0, 0, (Token *) 0, (Token *) 0};
+-static Token msgcatToken	= {CONST, CNSTWORD, 0, "::msgcat::mc", 12, (Token *) 0, (Token *) 0};
+-
+-static Token dqStart		= {DQSTART, CNSTWORD, 0, (char *) 0, 0, noToken, noToken};
+-static Token dqEnd		= {DQEND, CNSTWORD, 0, (char *) 0, 0, noToken, noToken};
+-static Token thenToken		= {CONST, CNSTWORD, 0, "then", 4, noToken, noToken};
+-static Token procToken		= {CONST, CNSTWORD, 0, "proc", 4, noToken, noToken};
+-static Token elseToken		= {CONST, CNSTWORD, 0, "else", 4, noToken, noToken};
+-static Token elseifToken	= {CONST, CNSTWORD, 0, "elseif", 6, noToken, noToken};
+-static Token methodToken	= {CONST, CNSTWORD, 0, "method", 6, noToken, noToken};
+-static Token semiToken		= {SEMI, CNSTWORD, 0, ";", 1, noToken, noToken};
+-static Token argsToken		= {SEMI, CNSTWORD, 0, "args", 4, noToken, noToken};
+-static Token argvToken		= {SEMI, CNSTWORD, 0, "argv", 4, noToken, noToken};
+-static Token argv0Token		= {SEMI, CNSTWORD, 0, "argv0", 5, noToken, noToken};
+-static Token platfToken		= {SEMI, CNSTWORD, 0, "tcl_platform", 12, noToken, noToken};
++static Token spToken		= {.type = SP, .ckind = CNSTWORD};
++static Token lbrackToken	= {.type = LBRACK, .ckind = CNSTWORD};
++static Token rbrackToken	= {.type = RBRACK, .ckind = CNSTWORD};
++static Token msgcatToken	= {.type = CONST, .ckind = CNSTWORD, .text = "::msgcat::mc", .length = 12};
++
++static Token dqStart		= {.type = DQSTART, .ckind = CNSTWORD};
++static Token dqEnd		= {.type = DQEND, .ckind = CNSTWORD};
++static Token thenToken		= {.type = CONST, .ckind = CNSTWORD, .text = "then", .length = 4};
++static Token procToken		= {.type = CONST, .ckind = CNSTWORD, .text = "proc", .length = 4};
++static Token elseToken		= {.type = CONST, .ckind = CNSTWORD, .text = "else", .length = 4};
++static Token elseifToken	= {.type = CONST, .ckind = CNSTWORD, .text = "elseif", .length = 6};
++static Token methodToken	= {.type = CONST, .ckind = CNSTWORD, .text = "method", .length = 6};
++static Token semiToken		= {.type = SEMI, .ckind = CNSTWORD, .text = ";", .length = 1};
++static Token argsToken		= {.type = SEMI, .ckind = CNSTWORD, .text = "args", .length = 4};
++static Token argvToken		= {.type = SEMI, .ckind = CNSTWORD, .text = "argv", .length = 4};
++static Token argv0Token		= {.type = SEMI, .ckind = CNSTWORD, .text = "argv0", .length = 5};
++static Token platfToken		= {.type = SEMI, .ckind = CNSTWORD, .text = "tcl_platform", .length = 12};
+ 
+ List *blocks  = noList;
+ 
+-static CheckIt **noChecks = (CheckIt **) 0;
+-
+-extern void setIndent(void);
+-extern void outdent(void);
+-extern int isVarToken(Token *);
+-extern int isSwitch(Token *);
+-extern int isSingleCall(Token *, char *);
+-extern int tokEqual(Token *, char *);
+-
+ /*
+  * If there are no more tokens, print a useful message to the user and
+  * exit.
+  */
+-void failIfNullToken(Token *token, char *part, char *command, int ln)
++static void failIfNullToken(const Token *token, const char *part,
++    const char *command, int ln)
+ {
+     char msg[1024];
+@@ -78,9 +70,9 @@
+ 	if (ln == 0)
+ 	{
+-	    sprintf(msg, "Missing \"%s\" part in call of %s", part, command);
++	    snprintf(msg, sizeof msg, "Missing \"%s\" part in call of %s", part, command);
+ 	}
+ 	else
+ 	{
+-	    sprintf(msg, "Missing \"%s\" part in call of %s, starting line %d",
++	    snprintf(msg, sizeof msg, "Missing \"%s\" part in call of %s, starting line %d",
+ 	      part, command, ln);
+ 	}
+@@ -93,5 +85,6 @@
+  * the user.
+  */
+-void warnIfArgsAfter(Token *token, char *part, char *command)
++static void warnIfArgsAfter(const Token *token, const char *part,
++    const char *command)
+ {
+     char msg[1024];
+@@ -107,10 +100,10 @@
+ 	    if (*part != '\0')
+ 	    {
+-		sprintf(msg, "Extra arguments after \"%s\" part in call of %s",
++		snprintf(msg, sizeof msg, "Extra arguments after \"%s\" part in call of %s",
+ 		  part, command);
+ 	    }
+ 	    else
+ 	    {
+-		sprintf(msg, "Extra arguments in call of `%s'", command);
++		snprintf(msg, sizeof msg, "Extra arguments in call of `%s'", command);
+ 	    }
+ 	    warn(token, msg);
+@@ -118,5 +111,5 @@
+ 	      token->next->text[0] != '\0')
+ 	    {
+-		sprintf(msg, "Extra token is `%s'", token->next->text);
++		snprintf(msg, sizeof msg, "Extra token is `%s'", token->next->text);
+ 		warn(token->next, msg);
+ 	    }
+@@ -125,5 +118,5 @@
+ }
+ 
+-void warnExpr(Token *cmd, char *txt)
++static void warnExpr(const Token *cmd, const char *txt)
+ {
+     if (doTest(HEXPR) && cmd != noToken && cmd->type != LIST)
+@@ -133,19 +126,12 @@
+ }
+ 
+-void warnFor(Token *token, char *cmd, char *txt)
++void warnFor(const Token *token, const char *cmd, const char *txt)
+ {
+     char msg[1024];
+ 
+-    sprintf(msg, txt, cmd);
++    snprintf(msg, sizeof msg, txt, cmd);
+     warn(token, msg);
+ }
+ 
+-static void warnIFor(Token *token, int val, char *txt)
+-{
+-    char msg[1024];
+-
+-    sprintf(msg, txt, val);
+-    warn(token, msg);
+-}
+ /*
+  * reset various variables so that multiple file processing doesn't get
+@@ -171,5 +157,5 @@
+ }
+ 
+-static int isNumber(char *cp)
++static int isNumber(const char *cp)
+ {
+     if (*cp == '-' || *cp == '+')
+@@ -188,7 +174,7 @@
+ }
+ 
+-static int tokIsLevel(Token *tp)
++static int tokIsLevel(const Token *tp)
+ {
+-    char *cp;
++    const char *cp;
+     if (tp == noToken || !(tp->type == CONST || tp->type == LIST) || tp->text == (char *) 0)
+     {
+@@ -208,5 +194,5 @@
+ }
+ 
+-static int oneLine(Token *seq, int semis)
++static int oneLine(const Token *seq, int semis)
+ {
+     while (seq != noToken)
+@@ -222,5 +208,5 @@
+ }
+ 
+-static int checkSpecial(char *val)
++static int checkSpecial(const char *val)
+ {
+     char ch;
+@@ -239,15 +225,15 @@
+ }
+ 
+-static void checkUnquoted(Token *str)
++static void checkUnquoted(const Token *str)
+ {
+     char msg[128];
+     if (noquotes && str->type == CONST && str->ckind == CNSTWORD && !isNumber(str->text))
+     {
+-        sprintf(msg, "Unquoted constant - \"%s\"", str->text);
++        snprintf(msg, sizeof msg, "Unquoted constant - \"%s\"", str->text);
+         warn(str, msg);
+     }
+ }
+ 
+-static void checkType(Token *cmd, int flags)
++static void checkType(const Token *cmd, int flags)
+ {
+     if (cmd->type == CONST)
+@@ -267,5 +253,5 @@
+ }
+ 
+-static int single(Token * tp)
++static int single(const Token * tp)
+ {
+     if (tp != noToken && tp->next == noToken)
+@@ -286,5 +272,5 @@
+ }
+ 
+-static int sconstant(Token *tp)
++static int sconstant(const Token *tp)
+ {
+     return (tp != noToken && tp->next == noToken
+@@ -292,5 +278,5 @@
+ }
+ 
+-static int constantString(Token * tp, int any)
++static int constantString(const Token * tp, int any)
+ {
+     Token *sq;
+@@ -313,10 +299,10 @@
+ }
+ 
+-void loopstart(int inf, int cond)
++static void loopstart(int inf, int cond)
+ {
+     pushBlock(noToken, inf, -1, cond);
+ }
+ 
+-void loopend(void)
++static void loopend(void)
+ {
+     Blox *bp = lpeek(blocks);
+@@ -330,5 +316,5 @@
+ }
+ 
+-static void msgsave(Token *tp, int any)
++static void msgsave(const Token *tp, int any)
+ {
+     char filename[128];
+@@ -363,8 +349,9 @@
+ }
+ 
+-void sptclop(Token *hd)
++static void doUser(Token *hd, Token *cmd, const ConfigData *cpt, int nostart);
++
++static void sptclop(Token *hd)
+ {
+     List *cpt = config;
+-    extern void doUser(Token *hd, Token *cmd, ConfigData *cpt, int nostart);
+     ConfigData *cdp;
+ 
+@@ -529,5 +516,5 @@
+ } PressFlags;
+ 
+-static void press(Token *v , PressFlags flags, CheckIt **checkp)
++static void press(Token *v , PressFlags flags)
+ {
+     Input *idx;
+@@ -602,5 +589,5 @@
+ 		{
+ 		case SEMI :
+-		    if (flags && SEMIS)
++		    if (flags & SEMIS)
+ 		    {
+ 			output(&semiToken, 1);
+@@ -641,5 +628,5 @@
+ }
+ 
+-void etcetera(Token *cmd, int v)
++static void etcetera(Token *cmd, int v)
+ {
+     while (cmd != noToken)
+@@ -650,5 +637,5 @@
+ }
+ 
+-void catbin(Token *tp)
++static void catbin(Token *tp)
+ {
+     int sem, oln;
+@@ -693,5 +680,6 @@
+     VarData *vp = (VarData *) 0;
+     char msg[1024];
+-    Token *ap = noToken, *ac;
++    Token *ap = noToken;
++    const Token *ac;
+     int array = 0;
+ 
+@@ -829,5 +817,5 @@
+ }
+ 
+-Token *doswitch(Token *cmd, Token *leadin)
++static Token *doswitch(Token *cmd, Token *leadin)
+ {
+     Token *tp, *bod;
+@@ -952,5 +940,5 @@
+ }
+ 
+-Token *doif(Token *cmd, Token *leadin)
++static Token *doif(Token *cmd, Token *leadin)
+ {
+     Token *tp, *then;
+@@ -964,5 +952,5 @@
+ 	cfl |= SPACEOUT;
+     }
+-    press(cmd, cfl, noChecks);
++    press(cmd, cfl);
+     if (putThen) { output(&thenToken, 0); }
+     then = cmd->next;
+@@ -980,5 +968,5 @@
+ 	failIfNullToken(tp, "condition", "elseif", ln);
+         warnExpr(tp, "elseif condition not braced.");
+-	press(tp, efl | PAREN, noChecks);
++	press(tp, efl | PAREN);
+ 	tp = tp->next;
+ 	failIfNullToken(tp, "body", "elseif", ln);
+@@ -1020,7 +1008,7 @@
+ 
+ 
+-int isNSName(Token *cmd)
++static int isNSName(const Token *cmd)
+ {
+-    char *cp;
++    const char *cp;
+     int cols = 0;
+ 
+@@ -1054,5 +1042,5 @@
+ }
+ 
+-static Token *doProc(Token *tag, Token *cmd, Token *leadin, int checkNS)
++static Token *doProc(Token *tag, Token *cmd, Token *leadin)
+ {
+     int ln = leadin->lineNo, inns;
+@@ -1177,13 +1165,13 @@
+ static Token *doproc(Token *cmd, Token *leadin)
+ {
+-    return doProc(&procToken, cmd, leadin, 1);
++    return doProc(&procToken, cmd, leadin);
+ }
+ 
+ static Token *domethod(Token *cmd, Token *leadin)
+ {
+-    return doProc(&methodToken, cmd, leadin, 0);
++    return doProc(&methodToken, cmd, leadin);
+ }
+ 
+-static Token *dodestructor(Token *cmd, Token *leadin)
++static Token *dodestructor(Token *cmd, Token *leadin __attribute__((__unused__)))
+ {
+     if (!nest[0])
+@@ -1200,5 +1188,5 @@
+ }
+ 
+-Token *doconstructor(Token *cmd, Token *leadin)
++static Token *doconstructor(Token *cmd, Token *leadin __attribute__((__unused__)))
+ {
+     if (!nest[0])
+@@ -1209,5 +1197,5 @@
+     {
+ 	failIfNullToken(cmd, "args", "constructor", 0);
+-	press(cmd, NOBRACE | ADDBRACES, noChecks);
++	press(cmd, NOBRACE | ADDBRACES);
+ 	cmd = cmd->next;
+ 	failIfNullToken(cmd, "body", "constructor", 0);
+@@ -1218,5 +1206,5 @@
+ }
+ 
+-Token *doreturn(Token *cmd, Token *leadin)
++static Token *doreturn(Token *cmd, Token *leadin)
+ {
+     Blox *pr = (Blox *) lpeek(blocks);
+@@ -1267,5 +1255,5 @@
+ }
+ 
+-Token *doregexp(Token *cmd, Token *leadin)
++static Token *doregexp(Token *cmd, Token *leadin)
+ {
+     int eopt = 0;
+@@ -1312,5 +1300,5 @@
+ }
+ 
+-Token *doregsub(Token *cmd, Token *leadin)
++static Token *doregsub(Token *cmd, Token *leadin)
+ {
+     int eopt = 0;
+@@ -1361,5 +1349,5 @@
+ }
+ 
+-Token *dobind(Token *cmd, Token *leadin)
++static Token *dobind(Token *cmd, Token *leadin __attribute__((__unused__)))
+ {
+     Token *np;
+@@ -1387,5 +1375,5 @@
+ }
+ 
+-Token *doitcl_class(Token *cmd, Token *leadin)
++static Token *doitcl_class(Token *cmd, Token *leadin __attribute__((__unused__)))
+ {
+     failIfNullToken(cmd, "className", "itcl_class", 0);
+@@ -1400,5 +1388,5 @@
+ }
+ 
+-Token *docvar(Token *cmd, Token *prt)
++static Token *docvar(Token *cmd, Token *prt)
+ {
+     if (!nest[0])
+@@ -1412,5 +1400,5 @@
+ 	if ((cmd = cmd->next) != noToken)
+ 	{
+-	    press(cmd, NOBRACE | ADDBRACES, noChecks);
++	    press(cmd, NOBRACE | ADDBRACES);
+ 	    warnIfArgsAfter(cmd, "init", prt->text);
+ 	}
+@@ -1419,5 +1407,5 @@
+ }
+ 
+-Token *dopublic(Token *cmd, Token *leadin)
++static Token *dopublic(Token *cmd, Token *leadin __attribute__((__unused__)))
+ {
+     if (!nest[0])
+@@ -1431,5 +1419,5 @@
+ 	if ((cmd = cmd->next) != noToken)
+ 	{
+-	    press(cmd, NOBRACE | ADDBRACES, noChecks);
++	    press(cmd, NOBRACE | ADDBRACES);
+ 	    if ((cmd = cmd->next) != noToken)
+ 	    {
+@@ -1442,9 +1430,9 @@
+ }
+ 
+-Token *doprotected(Token *cmd, Token *leadin) { return docvar(cmd, leadin); }
++static Token *doprotected(Token *cmd, Token *leadin) { return docvar(cmd, leadin); }
+ 
+-Token *docommon(Token *cmd, Token *leadin) { return docvar(cmd, leadin); }
++static Token *docommon(Token *cmd, Token *leadin) { return docvar(cmd, leadin); }
+ 
+-static void checkVar(Token *cmd, char *nm)
++static void checkVar(Token *cmd, const char *nm)
+ {
+     List *bp = blocks;
+@@ -1525,5 +1513,5 @@
+ }
+ 
+-Token *doforeach(Token *cmd, Token *leadin)
++static Token *doforeach(Token *cmd, Token *leadin __attribute__((__unused__)))
+ {
+     failIfNullToken(cmd, "varName", "foreach", 0);
+@@ -1535,5 +1523,5 @@
+ 	cmd = cmd->next;
+ 	failIfNullToken(cmd, "list", "foreach", 0);
+-	press(cmd, NOBRACE, noChecks);
++	press(cmd, NOBRACE);
+ 	cmd = cmd->next;
+     }
+@@ -1547,5 +1535,5 @@
+ }
+ 
+-Token *doloop(Token *cmd, Token *leadin)
++static Token *doloop(Token *cmd, Token *leadin __attribute__((__unused__)))
+ {
+     Token *tp;
+@@ -1557,13 +1545,13 @@
+     {
+ 	failIfNullToken(cmd, "var", "loop", 0);
+-	press(cmd, NOBRACE | ADDBRACES, noChecks);	/* var */
++	press(cmd, NOBRACE | ADDBRACES);	/* var */
+ 	tp = cmd->next;
+ 	failIfNullToken(tp, "first", "loop", 0);
+ 	warnExpr(cmd, "Unbracketed loop \"first\"");
+-	press(tp, ADDBRACES, noChecks);			/* first */
++	press(tp, ADDBRACES);			/* first */
+ 	tp = tp->next;
+ 	failIfNullToken(tp, "limit", "loop", 0);
+ 	warnExpr(cmd, "Unbracketed loop \"limit\"");
+-	press(tp, ADDBRACES, noChecks);			/* limit */
++	press(tp, ADDBRACES);			/* limit */
+ 
+ 	tp = tp->next;
+@@ -1573,5 +1561,5 @@
+ 	{
+ 	    warnExpr(cmd, "Unbracketed loop \"incr\"");
+-	    press(tp, NOBRACE | ADDBRACES, noChecks);		/* incr */
++	    press(tp, NOBRACE | ADDBRACES);		/* incr */
+ 	    tp = tp->next;
+ 	}
+@@ -1585,5 +1573,5 @@
+ } 
+ 
+-Token *doexpr(Token *cmd, Token *leadin)
++static Token *doexpr(Token *cmd, Token *leadin __attribute__((__unused__)))
+ {
+     if (!doExpr)
+@@ -1600,5 +1588,5 @@
+ 	{
+ 	    warnExpr(cmd, "expr body not braced.");
+-	    press(cmd, ADDBRACES | PAREN, noChecks); /* */
++	    press(cmd, ADDBRACES | PAREN); /* */
+ 	}
+ 	else
+@@ -1611,5 +1599,5 @@
+ }
+ 
+-Token *dounset(Token *cmd, Token *leadin)
++static Token *dounset(Token *cmd, Token *leadin)
+ {
+     int pCount = 1;
+@@ -1642,5 +1630,5 @@
+ }
+ 
+-Token *doupvar(Token *cmd, Token *leadin)
++static Token *doupvar(Token *cmd, Token *leadin)
+ {
+     int paramCount = 0;
+@@ -1673,5 +1661,5 @@
+ }
+ 
+-Token *dovariable(Token *cmd, Token *leadin)
++static Token *dovariable(Token *cmd, Token *leadin)
+ {
+     int paramCount = 1;
+@@ -1777,5 +1765,5 @@
+ }
+ 
+-void doBasic(ConfigData *cpt, Token *hd, Token *cmd)
++static void doBasic(const ConfigData *cpt, Token *hd, Token *cmd)
+ {
+     List *sp, *llp, *lp;
+@@ -1851,5 +1839,5 @@
+ 	    else
+ 	    {
+-		press(cmd, NOBRACE | ADDBRACES | SEMIS, noChecks); /* */
++		press(cmd, NOBRACE | ADDBRACES | SEMIS); /* */
+ 	    }
+ 	    break;
+@@ -1863,5 +1851,5 @@
+ 	    {
+ 		warnExpr(cmd, "Unbracketed expression");
+-		press(cmd, ptpar, noChecks); /* */
++		press(cmd, ptpar); /* */
+ 	    }
+ 	    break;
+@@ -1884,5 +1872,5 @@
+ 		    ptpar |= SPACEOUT;
+ 		}
+-		press(cmd, ptpar, noChecks);
++		press(cmd, ptpar);
+ 		loopstart(infloop, 1);
+ 	    }
+@@ -2141,5 +2129,6 @@
+ }
+ 
+-void doUser(Token *hd, Token *cmd, ConfigData *cpt, int nostart)
++static void doUser(Token *hd, Token *cmd,
++    const ConfigData *cpt, int nostart)
+ {
+     if (isUnreachable())
+--- token.c	2004-01-22 08:58:48.000000000 -0500
++++ token.c	2020-05-26 00:51:36.179835000 -0400
+@@ -32,6 +32,4 @@
+ #endif
+ 
+-extern char *currentfile;
+-
+ typedef struct tbuff_s
+ {
+@@ -78,5 +76,5 @@
+ }
+ 
+-static void catTB(TBuff *tp, char *str)
++static void catTB(TBuff *tp, const char *str)
+ {
+     while (*str)
+@@ -87,5 +85,5 @@
+ }
+ 
+-static char *tokenName[] =
++static const char *tokenName[] =
+ {
+     "ENDF",
+@@ -137,5 +135,5 @@
+ static Token *varToken(Input *);
+ 
+-Token *newToken(TokenType t)
++static Token *newToken(TokenType t)
+ {
+     Token *tp = malloc(sizeof(Token));
+@@ -150,7 +148,7 @@
+ }
+ 
+-void dumpToken(Token *tk, FILE *ops)
++void dumpToken(const Token *tk, FILE *ops)
+ {
+-    static char *cval [] =
++    static const char *cval [] =
+     {
+         "word", "string", "list"
+@@ -195,5 +193,5 @@
+ }
+ 
+-void fail(Token *tp, char *msg)
++void fail(const Token *tp, const char *msg)
+ {
+     if (!compout)
+@@ -325,5 +323,5 @@
+ }
+ 
+-void warn(Token *tp, char *msg)
++void warn(const Token *tp, const char *msg)
+ {
+     Blox *blp = (Blox *) lpeek(blocks);
+@@ -334,5 +332,5 @@
+         fprintf(stderr, "***");
+     }
+-    if (currentfile != (char *) 0)
++    if (currentfile != NULL)
+     {
+         fprintf(stderr, " %s", currentfile);
+@@ -377,5 +375,5 @@
+ }
+ 
+-static void bwarn(int ln, char *msg)
++static void bwarn(int ln, const char *msg)
+ {
+     Token *tp = newToken(SP);
+@@ -391,5 +389,5 @@
+     if (file->stream != NULL)
+     {
+-	file->remaining = fread(file->text, 1, 64*1024, file->stream);
++	file->remaining = fread(file->atext, 1, 64*1024, file->stream);
+     }
+ }
+@@ -400,5 +398,5 @@
+ }
+ 
+-static char *skipblank(char *cp)
++static const char *skipblank(const char *cp)
+ {
+     while (isBlank(*cp))
+@@ -497,7 +495,7 @@
+     if (tp != noToken)
+     {
+-	if (tp->text != (char *) 0 && tp->text != tp->little)
++	if (tp->atext != tp->little)
+ 	{
+-	    free(tp->text);
++	    free(tp->atext);
+ 	}
+ 	if (tp->sequence) freeToken(tp->sequence);
+@@ -507,5 +505,5 @@
+ }
+ 
+-static char *filterString(Token *tp, char *txt)
++static char *filterString(Token *tp, const char *txt)
+ {
+     char *cp = malloc(strlen(txt) + 1), *pt;
+@@ -556,23 +554,7 @@
+ }
+ 
+-Input *ftokenise(char *txt, int length, int lineNo, int expr)
+-{
+-    Token *tmp = newToken(CONST); /* gash token for filterstring */
+-    Input *file = (Input *) malloc(sizeof(Input));
+-    file->remaining = length;
+-    file->pushed = 0;
+-    file->stream = NULL;
+-    file->position = file->text = filterString(tmp, txt);
+-    file->tcall = 0;
+-    file->texpr = expr;
+-    file->lineNumber = lineNo;
+-    file->lineStart = 1;
+-    freeToken(tmp); 
+-    return file;
+-}
+-
+ void untokenise(Input *file)
+ {
+-    free(file->text);
++    free(file->atext);
+     free(file);
+ }
+@@ -607,9 +589,9 @@
+ }
+ 
+-static Token *createToken(TokenType t, char *text, Token *nxt)
++static Token *createToken(TokenType t, const char *text, size_t len, Token *nxt)
+ {
+     Token *tp = newToken(t);
+ 
+-    if ((tp->length = strlen(text)) < (sizeof(tp->little) - 1))
++    if ((tp->length = len) < (sizeof(tp->little) - 1))
+     {
+ 	tp->text = strcpy(tp->little, text);
+@@ -617,5 +599,5 @@
+     else
+     {
+-	tp->text = newString(text);
++	tp->text = strndup(text, len);
+     }
+     tp->next = nxt;
+@@ -720,5 +702,5 @@
+ static Token *handleSemi(Input*, char);
+ 
+-Token *stringToken(Input *file, char lst, TokenType res, int term)
++static Token *stringToken(Input *file, char lst, TokenType res, int term)
+ {
+     int bufSize = 16*1024;
+@@ -837,5 +819,5 @@
+ 
+ 
+-int tokEqual(Token *tp, char *val)
++int tokEqual(const Token *tp, const char *val)
+ {
+     if (tp != noToken)
+@@ -845,5 +827,5 @@
+ 	case CONST:
+ 	case LIST :
+-	    return (tp->text != (char *) 0 && strcmp(tp->text, val) == 0);
++	    return (tp->text != NULL && strcmp(tp->text, val) == 0);
+ 	default:
+ 	    break;
+@@ -853,5 +835,5 @@
+ }
+ 
+-int tokNEqual(Token *tp, char *val, int n)
++static int tokNEqual(const Token *tp, const char *val, int n)
+ {
+     if (tp != noToken)
+@@ -871,5 +853,5 @@
+ static int isPragma(TBuff *tp)
+ {
+-    char *cp;
++    const char *cp;
+     
+     cp = skipblank(tp->buff + 1); /* start after # character */
+@@ -1252,5 +1234,5 @@
+     static struct pragma_s
+     {
+-        char		*text;
++        const char	*text;
+ 	enum Pragmas	value;
+ 	int		nextmode;
+@@ -1264,9 +1246,9 @@
+ 	{ "unused",		0,		3},
+ 	{ "array",		0,		4},
+-	{ (char *) 0,		0,		1},
++	{ NULL,			0,		1},
+     };
+     struct pragma_s *prp;
+     int label, mode = 1;
+-    char *cp;
++    const char *cp;
+     Token *token, *chars = newToken(CONST);
+     Input *pfile;
+@@ -1348,7 +1330,4 @@
+     Token *hd;
+ 
+-    extern int tclop(Token*, Token*);
+-    extern void comment(Token *);
+-
+     if (line == noToken)
+     {
+@@ -1576,5 +1555,5 @@
+ }
+ 
+-Token *accumulate(Input *file, int nl)
++static Token *accumulate(Input *file, int nl)
+ {
+     Token *line = noToken, *hd = noToken;
+@@ -1653,5 +1632,5 @@
+ }
+ 
+-static int chkVarToken(Token *token)
++static int chkVarToken(const Token *token)
+ {
+     return (token != noToken &&
+@@ -1660,7 +1639,7 @@
+ }
+ 
+-int isVarToken(Token *token)
++int isVarToken(const Token *token)
+ {
+-    char *cp;
++    const char *cp;
+     TBuff *tb;
+ 
+@@ -1695,5 +1674,5 @@
+ }
+ 
+-int isSingleCall(Token *token, char *proc)
++int isSingleCall(const Token *token, const char *proc)
+ {
+     if (token != noToken)
+@@ -1716,5 +1695,5 @@
+ }
+ 
+-int isSwitch(Token *token)
++int isSwitch(const Token *token)
+ {
+     if (token != noToken)
+@@ -1740,12 +1719,13 @@
+ }
+ 
+-Token *isArray(Token *tp)
++Token *isArray(const Token *tp)
+ {
+     Token *res = noToken;
+     TBuff *tbp = (TBuff *) 0;
+-    char *txt, *cp, ch;
++    const char *txt, *cp;
++    char ch;
+     int len;
+ 
+-    if (tp != noToken && (tp->text != (char *) 0 || tp->type == CONC))
++    if (tp != noToken && (tp->text != NULL || tp->type == CONC))
+     {
+ 	switch (tp->type)
+@@ -1777,7 +1757,5 @@
+ 	        if (ch == '(')
+ 		{
+-		    *cp = '\0';
+-		    res = createToken(CONST, txt, noToken);
+-		    *cp = '(';
++		    res = createToken(CONST, txt, cp - txt, noToken);
+ 		    break;
+ 		}
+@@ -1791,5 +1769,5 @@
+ }
+ 
+-int constant(Token *tp)
++int constant(const Token *tp)
+ {
+     return (tp != noToken && (tp->type == CONST || tp->type == LIST));
+--- token.h	2002-12-11 17:20:34.000000000 -0500
++++ token.h	2020-05-26 00:51:20.737970000 -0400
+@@ -19,9 +19,12 @@
+ typedef struct input_s
+ {
+-    char *position;
++    const char *position;
+     int	 remaining;
+     int  pushed;
+     char back[16];
+-    char *text;
++    union {
++        const char *text; /* Use const in most cases */
++	char *atext;
++    };
+     FILE *stream;
+     int tcall;
+@@ -49,6 +52,9 @@
+     ConstType ckind;
+     int isconc;
+-    char *text;
+-    int length;
++    union {
++        const char *text;
++        char *atext;
++    };
++    size_t length;
+     struct token_s *sequence;
+     struct token_s *next;
+@@ -70,11 +76,20 @@
+ extern void makeCall(Token*, Token*);
+ extern void body(Token *, int, int);
++extern void comment(Token *);
+ 
+ extern void output(Token *, int);
+ extern void blank(void);
+-extern void warn(Token *, char *);
+-extern void fail(Token *, char *);
++extern void warn(const Token *, const char *);
++extern void fail(const Token *, const char *);
++
++extern Token *isArray(const Token *);
++extern int constant(const Token *tp);
++extern int tclop(Token *hd, Token *line);
++extern void streamMore(Input *file);
++extern int handle(Token *line);
++extern void sprocess(Token *lst, int nls);
++extern void dumpToken(const Token *tk, FILE *ops);
++extern Token *tokenPop(Token **);
++extern void freeToken(Token *);
+ 
+-extern Token *isArray(Token *);
+-extern int constant(Token *tp);
+ #endif
+--- vars.c	2004-01-22 08:31:04.000000000 -0500
++++ vars.c	2020-05-26 00:47:20.615067000 -0400
+@@ -33,9 +33,7 @@
+ #endif
+ 
+-extern void warnFor(Token*, char*, char*);
+-
+ void checkName(Token *cmd, int dynm)
+ {
+-    static char *badNames[] =
++    static const char *badNames[] =
+     {
+ 	".",
+@@ -159,5 +157,6 @@
+         (char *) 0
+     };
+-    char **bnp = badNames, msgb[256];
++    const char **bnp = badNames;
++    char msgb[256];
+ 
+     if (cmd != noToken)
+@@ -199,5 +198,5 @@
+ }
+ 
+-static VarData *newVar(char *name, enum VarType type)
++static VarData *newVar(const char *name, enum VarType type)
+ {
+     VarData *blp = (VarData *) malloc(sizeof(VarData));
+@@ -212,5 +211,5 @@
+ }
+ 
+-static VarData *addVar(char *name, enum VarType type, int array)
++static VarData *addVar(const char *name, enum VarType type, int array)
+ {
+     VarData *vp = newVar(name, type);
+@@ -221,5 +220,5 @@
+ }
+ 
+-VarData *varKnown(char *name)
++VarData *varKnown(const char *name)
+ {
+     List *blp = blocks;
+@@ -246,5 +245,5 @@
+ }
+ 
+-VarData *declareVar(Token *nm, enum VarType type, int array)
++VarData *declareVar(const Token *nm, enum VarType type, int array)
+ {
+     VarData *vp = varKnown(nm->text);
+@@ -269,5 +268,5 @@
+ }
+ 
+-VarData *useVar(Token *nm, enum VarType type, int array)
++VarData *useVar(const Token *nm, enum VarType type, int array)
+ {
+     VarData *vp;
+@@ -299,5 +298,5 @@
+ }
+ 
+-VarData *setVar(Token *nm, enum VarType type, int array)
++VarData *setVar(const Token *nm, enum VarType type, int array)
+ {
+     VarData *vp;
+--- vars.h	2020-05-16 20:19:34.598633000 -0400
++++ vars.h	2020-05-25 23:56:08.143689000 -0400
+@@ -12,5 +12,5 @@
+  */
+ 
+-#ifndef FRINK_VARS_h
++#ifndef FRINK_VARS_H
+ #define FRINK_VARS_H
+ 
+@@ -47,8 +47,8 @@
+ 
+ extern void checkName(Token *, int);
+-extern VarData *varKnown(char *);
+-extern VarData *declareVar(Token *, enum VarType, int);
+-extern VarData *useVar(Token *, enum VarType, int);
+-extern VarData *setVar(Token *, enum VarType, int);
++extern VarData *varKnown(const char *);
++extern VarData *declareVar(const Token *, enum VarType, int);
++extern VarData *useVar(const Token *, enum VarType, int);
++extern VarData *setVar(const Token *, enum VarType, int);
+ 
+ #endif

@@ -1,0 +1,23 @@
+This patch sets frink's indentation defaults closer to the FreeBSD's
+style(9) guidelines.
+--- README	Thu Jun 21 10:49:12 2001
++++ README	Fri May 31 15:04:26 2002
+@@ -33,3 +33,3 @@
+    -c <n>
+-          set further indent for continuations to n. default = 2
++          set further indent for continuations to n. default = 4
+ 
+@@ -77,3 +77,3 @@
+    -i <n>
+-          set indent for each level to n. default = 4
++          set indent for each level to n. default = 8
+ 
+--- frink.c	Thu Jun 21 10:49:12 2001
++++ frink.c	Fri May 31 15:05:31 2002
+@@ -37,4 +37,4 @@
+ int width	= 80;
+-int indent	= 4;
+-int contdent	= 2;
++int indent	= 8;
++int contdent	= 4;
+ int nocomments	= 0;

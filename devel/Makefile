@@ -658,6 +658,7 @@
     SUBDIR += fortytwo-encore
     SUBDIR += fossil
     SUBDIR += fossology-nomos-standalone
+    SUBDIR += frink
     SUBDIR += fp16
     SUBDIR += fpc-bfd
     SUBDIR += fpc-dbus

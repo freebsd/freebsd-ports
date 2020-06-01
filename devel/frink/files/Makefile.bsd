@@ -1,0 +1,10 @@
+PROG=	frink
+SRCS=	blocks.c config.c frink.c output.c tcl.c token.c util.c vars.c
+CFLAGS+=-I${.CURDIR} -DHAVE_STDLIB_H
+
+BINDIR=	${PREFIX}/bin
+MANDIR=	${PREFIX}/man/man
+NO_MAN=	regretfully
+WARNS=	7
+
+.include <bsd.prog.mk>
