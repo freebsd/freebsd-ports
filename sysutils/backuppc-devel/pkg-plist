@@ -119,13 +119,16 @@ man/man1/backuppc.1.gz
 %%WWWDIR%%/BackupPC_stnd.css
 %%WWWDIR%%/BackupPC_retro_v2.css
 %%WWWDIR%%/BackupPC_retro_v3.css
+%%WWWDIR%%/apple-touch-icon.png
+%%WWWDIR%%/favicon-16x16.png
+%%WWWDIR%%/favicon-32x32.png
 %%WWWDIR%%/favicon.ico
 %%WWWDIR%%/icon-dir.png
 %%WWWDIR%%/icon-file.png
 %%WWWDIR%%/icon-hardlink.png
 %%WWWDIR%%/icon-symlink.png
-%%WWWDIR%%/logo.gif
 %%WWWDIR%%/logo320.png
+%%WWWDIR%%/safari-pinned-tab.svg
 %%WWWDIR%%/sorttable.js
 @owner backuppc
 @group backuppc

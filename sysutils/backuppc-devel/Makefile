@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	backuppc
-DISTVERSION=	4.1.6.20180212
-PORTREVISION=	2
+DISTVERSION=	4.3.3.20200531
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-devel
 
@@ -13,7 +12,7 @@ COMMENT=	Multi-platform backup to disk-based storage
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-EXTRACT_DEPENDS=	p5-BackupPC-XS>=0.57:sysutils/p5-BackupPC-XS
+EXTRACT_DEPENDS=	p5-BackupPC-XS>=0.60:sysutils/p5-BackupPC-XS
 RUN_DEPENDS=	p5-CGI>0:www/p5-CGI \
 		p5-File-Listing>=0:sysutils/p5-File-Listing \
 		p5-BackupPC-XS>=0.57:sysutils/p5-BackupPC-XS
@@ -27,7 +26,7 @@ BROKEN=		fails to build under qemu: uncaught target signal 11 (Segmetation fault
 CONFLICTS_INSTALL=	backuppc backuppc4
 
 USE_GITHUB=	yes
-GH_TAGNAME=	3990160
+GH_TAGNAME=	cae051c
 USE_PERL5=	extract
 NO_BUILD=	yes
 NO_ARCH=	yes
