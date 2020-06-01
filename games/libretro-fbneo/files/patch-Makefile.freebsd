@@ -1,0 +1,5 @@
+--- Makefile.freebsd.orig	2020-05-02 12:53:57 UTC
++++ Makefile.freebsd
+@@ -0,0 +1,2 @@
++all:
++	cd src/burner/libretro && ${MAKE} 

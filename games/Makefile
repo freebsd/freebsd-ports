@@ -492,6 +492,7 @@
     SUBDIR += libretro-dosbox
     SUBDIR += libretro-emux
     SUBDIR += libretro-fbalpha
+    SUBDIR += libretro-fbneo
     SUBDIR += libretro-fceumm
     SUBDIR += libretro-fmsx
     SUBDIR += libretro-fuse
