@@ -1,0 +1,215 @@
+--- python/samba/provision/sambadns.py.orig	2020-03-26 08:58:46 UTC
++++ python/samba/provision/sambadns.py
+@@ -27,6 +27,7 @@ import time
+ import ldb
+ from base64 import b64encode
+ import subprocess
++import re
+ import samba
+ from samba.tdb_util import tdb_copy
+ from samba.mdb_util import mdb_copy
+@@ -965,34 +966,35 @@ def create_named_conf(paths, realm, dnsdomain, dns_bac
+                                      stderr=subprocess.STDOUT,
+                                      cwd='.').communicate()[0]
+         bind_info = get_string(bind_info)
+-        bind9_8 = '#'
+-        bind9_9 = '#'
+-        bind9_10 = '#'
+-        bind9_11 = '#'
+-        bind9_12 = '#'
+-        if bind_info.upper().find('BIND 9.8') != -1:
+-            bind9_8 = ''
+-        elif bind_info.upper().find('BIND 9.9') != -1:
+-            bind9_9 = ''
+-        elif bind_info.upper().find('BIND 9.10') != -1:
+-            bind9_10 = ''
+-        elif bind_info.upper().find('BIND 9.11') != -1:
+-            bind9_11 = ''
+-        elif bind_info.upper().find('BIND 9.12') != -1:
+-            bind9_12 = ''
+-        elif bind_info.upper().find('BIND 9.7') != -1:
+-            raise ProvisioningError("DLZ option incompatible with BIND 9.7.")
++        bind9_release = re.search('BIND (9)\.(\d+)\.', bind_info, re.I)
++        if bind9_release:
++            bind9_disabled = ''
++            bind9_version = bind9_release.group(0) + "x"
++            bind9_version_major = int(bind9_release.group(1))
++            bind9_version_minor = int(bind9_release.group(2))
++            if bind9_version_minor == 7:
++                raise ProvisioningError("DLZ option incompatible with BIND 9.7.")
++            elif bind9_version_minor == 8:
++                bind9_dlz_version = "9"
++            else:
++                bind9_dlz_version = "%d_%d" % (bind9_version_major, bind9_version_minor)
+         else:
++            bind9_disabled = '# '
++            bind9_version = "BIND z.y.x"
++            bind9_dlz_version = "z_y"
+             logger.warning("BIND version unknown, please modify %s manually." % paths.namedconf)
++
++        bind9_dlz = (
++            '    # For %s\n'
++            '    %sdatabase "dlopen %s/bind9/dlz_bind%s.so";'
++        ) % (
++            bind9_version, bind9_disabled, samba.param.modules_dir(), bind9_dlz_version
++        )
++
+         setup_file(setup_path("named.conf.dlz"), paths.namedconf, {
+                     "NAMED_CONF": paths.namedconf,
+                     "MODULESDIR": samba.param.modules_dir(),
+-                    "BIND9_8": bind9_8,
+-                    "BIND9_9": bind9_9,
+-                    "BIND9_10": bind9_10,
+-                    "BIND9_11": bind9_11,
+-                    "BIND9_12": bind9_12
+-
++                    "BIND9_DLZ": bind9_dlz
+                     })
+ 
+ 
+--- source4/dns_server/dlz_minimal.h.orig	2019-12-06 10:10:30 UTC
++++ source4/dns_server/dlz_minimal.h
+@@ -23,22 +23,23 @@
+ #ifndef DLZ_MINIMAL_H
+ #define DLZ_MINIMAL_H 1
+ 
+-#if defined (BIND_VERSION_9_8)
+-# define DLZ_DLOPEN_VERSION 1
+-#elif defined (BIND_VERSION_9_9)
+-# define DLZ_DLOPEN_VERSION 2
+-# define DNS_CLIENTINFO_VERSION 1
+-#elif defined (BIND_VERSION_9_10)
+-# define DLZ_DLOPEN_VERSION 3
+-# define DNS_CLIENTINFO_VERSION 1
+-#elif defined (BIND_VERSION_9_11)
+-# define DLZ_DLOPEN_VERSION 3
+-# define DNS_CLIENTINFO_VERSION 2
+-#elif defined (BIND_VERSION_9_12)
+-# define DLZ_DLOPEN_VERSION 3
+-# define DNS_CLIENTINFO_VERSION 2
++#if defined (BIND_VERSION)
++# if BIND_VERSION == 908
++#  define DLZ_DLOPEN_VERSION 1
++# elif BIND_VERSION == 909
++#  define DLZ_DLOPEN_VERSION 2
++#  define DNS_CLIENTINFO_VERSION 1
++# elif BIND_VERSION == 910
++#  define DLZ_DLOPEN_VERSION 3
++#  define DNS_CLIENTINFO_VERSION 1
++# elif BIND_VERSION >= 911
++#  define DLZ_DLOPEN_VERSION 3
++#  define DNS_CLIENTINFO_VERSION 2
++# else
++#  error Unsupported BIND version
++# endif
+ #else
+-# error Unsupported BIND version
++# error BIND_VERSION undefined
+ #endif
+ 
+ #if DLZ_DLOPEN_VERSION > 1
+--- source4/dns_server/wscript_build.orig	2019-12-06 10:11:08 UTC
++++ source4/dns_server/wscript_build
+@@ -20,7 +20,7 @@ bld.SAMBA_MODULE('service_dns',
+ # a bind9 dlz module giving access to the Samba DNS SAM
+ bld.SAMBA_LIBRARY('dlz_bind9',
+                   source='dlz_bind9.c',
+-                  cflags='-DBIND_VERSION_9_8',
++                  cflags='-DBIND_VERSION=908',
+                   private_library=True,
+                   link_name='modules/bind9/dlz_bind9.so',
+                   realname='dlz_bind9.so',
+@@ -28,49 +28,21 @@ bld.SAMBA_LIBRARY('dlz_bind9',
+                   deps='samba-hostconfig samdb-common gensec popt dnsserver_common',
+                   enabled=bld.AD_DC_BUILD_IS_ENABLED())
+ 
+-bld.SAMBA_LIBRARY('dlz_bind9_9',
++for bind_version in (909, 910, 911, 912, 914, 916):
++    string_version='%d_%d' % (bind_version//100, bind_version % 100)
++    bld.SAMBA_LIBRARY('dlz_bind%s' % (string_version),
+                   source='dlz_bind9.c',
+-                  cflags='-DBIND_VERSION_9_9',
++                  cflags='-DBIND_VERSION=%d' % bind_version,
+                   private_library=True,
+-                  link_name='modules/bind9/dlz_bind9_9.so',
+-                  realname='dlz_bind9_9.so',
++                  link_name='modules/bind9/dlz_bind%s.so' % (string_version),
++                  realname='dlz_bind%s.so' % (string_version),
+                   install_path='${MODULESDIR}/bind9',
+                   deps='samba-hostconfig samdb-common gensec popt dnsserver_common',
+                   enabled=bld.AD_DC_BUILD_IS_ENABLED())
+ 
+-bld.SAMBA_LIBRARY('dlz_bind9_10',
+-                  source='dlz_bind9.c',
+-                  cflags='-DBIND_VERSION_9_10',
+-                  private_library=True,
+-                  link_name='modules/bind9/dlz_bind9_10.so',
+-                  realname='dlz_bind9_10.so',
+-                  install_path='${MODULESDIR}/bind9',
+-                  deps='samba-hostconfig samdb-common gensec popt dnsserver_common',
+-                  enabled=bld.AD_DC_BUILD_IS_ENABLED())
+-
+-bld.SAMBA_LIBRARY('dlz_bind9_11',
+-                  source='dlz_bind9.c',
+-                  cflags='-DBIND_VERSION_9_11',
+-                  private_library=True,
+-                  link_name='modules/bind9/dlz_bind9_11.so',
+-                  realname='dlz_bind9_11.so',
+-                  install_path='${MODULESDIR}/bind9',
+-                  deps='samba-hostconfig samdb-common gensec popt dnsserver_common',
+-                  enabled=bld.AD_DC_BUILD_IS_ENABLED())
+-
+-bld.SAMBA_LIBRARY('dlz_bind9_12',
+-                  source='dlz_bind9.c',
+-                  cflags='-DBIND_VERSION_9_12',
+-                  private_library=True,
+-                  link_name='modules/bind9/dlz_bind9_12.so',
+-                  realname='dlz_bind9_12.so',
+-                  install_path='${MODULESDIR}/bind9',
+-                  deps='samba-hostconfig samdb-common gensec popt dnsserver_common',
+-                  enabled=bld.AD_DC_BUILD_IS_ENABLED())
+-
+ bld.SAMBA_LIBRARY('dlz_bind9_for_torture',
+                   source='dlz_bind9.c',
+-                  cflags='-DBIND_VERSION_9_8',
++                  cflags='-DBIND_VERSION=908',
+                   private_library=True,
+                   deps='samba-hostconfig samdb-common gensec popt dnsserver_common',
+                   enabled=bld.AD_DC_BUILD_IS_ENABLED())
+--- source4/setup/named.conf.dlz.orig	2019-12-06 10:10:31 UTC
++++ source4/setup/named.conf.dlz
+@@ -7,22 +7,10 @@
+ 
+ #
+ # This configures dynamically loadable zones (DLZ) from AD schema
+-# Uncomment only single database line, depending on your BIND version
+ #
+ dlz "AD DNS Zone" {
+-    # For BIND 9.8.x
+-    ${BIND9_8} database "dlopen ${MODULESDIR}/bind9/dlz_bind9.so";
+ 
+-    # For BIND 9.9.x
+-    ${BIND9_9} database "dlopen ${MODULESDIR}/bind9/dlz_bind9_9.so";
++${BIND9_DLZ}
+ 
+-    # For BIND 9.10.x
+-    ${BIND9_10} database "dlopen ${MODULESDIR}/bind9/dlz_bind9_10.so";
+-
+-    # For BIND 9.11.x
+-    ${BIND9_11} database "dlopen ${MODULESDIR}/bind9/dlz_bind9_11.so";
+-
+-    # For BIND 9.12.x
+-    ${BIND9_12} database "dlopen ${MODULESDIR}/bind9/dlz_bind9_12.so";
+ };
+ 
+--- source4/torture/dns/wscript_build.orig	2020-04-11 03:26:46 UTC
++++ source4/torture/dns/wscript_build
+@@ -5,7 +5,7 @@ if bld.AD_DC_BUILD_IS_ENABLED():
+ 		source='dlz_bind9.c',
+ 		subsystem='smbtorture',
+ 		init_function='torture_bind_dns_init',
+-		cflags='-DBIND_VERSION_9_8',
++		cflags='-DBIND_VERSION=908',
+ 		deps='torture talloc torturemain dlz_bind9_for_torture',
+ 		internal_module=True
+ 		)

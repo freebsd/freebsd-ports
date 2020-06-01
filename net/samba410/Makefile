@@ -24,12 +24,11 @@ EXTRA_PATCHES+=			${PATCHDIR}/0001-provision-use-ASCII-quotes.patch:-p1
 
 SAMBA4_BASENAME=		samba
 SAMBA4_PORTNAME=		${SAMBA4_BASENAME}4
-SAMBA4_VERSION=			4.10.13
+SAMBA4_VERSION=			4.10.15
 SAMBA4_DISTNAME=		${SAMBA4_BASENAME}-${SAMBA4_VERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
 
 WRKSRC?=			${WRKDIR}/${DISTNAME}
 
-.if !defined(SAMBA4_SUBPORT)
 CPE_VENDOR=			samba
 CPE_PRODUCT=			samba
 # Directories
@@ -81,7 +80,7 @@ SUB_LIST+=			PKGCONFIGDIR=${PKGCONFIGDIR_REL}
 ##############################################################################
 OPTIONS_SUB=			yes
 
-OPTIONS_DEFINE=			AD_DC ADS CLUSTER CUPS DEBUG DOCS FAM GPGME \
+OPTIONS_DEFINE=			AD_DC ADS CLUSTER CUPS DOCS FAM GPGME \
 				LDAP NTVFS PROFILE QUOTAS SPOTLIGHT SYSLOG UTMP
 # This shouldn't be default in the release
 OPTIONS_DEFINE+=		DEVELOPER MANDOC
@@ -89,7 +88,6 @@ OPTIONS_DEFINE+=		DEVELOPER MANDOC
 
 OPTIONS_DEFINE_amd64=		AESNI
 OPTIONS_DEFAULT_amd64=		AESNI
-OPTIONS_EXCLUDE_powerpc64=	DEBUG
 
 OPTIONS_GROUP=			VFS
 OPTIONS_GROUP_VFS=		FRUIT GLUSTERFS
@@ -100,9 +98,9 @@ OPTIONS_SINGLE_GSSAPI=		GSSAPI_BUILTIN GSSAPI_MIT
 OPTIONS_SINGLE_ZEROCONF=	ZEROCONF_NONE AVAHI MDNSRESPONDER
 
 OPTIONS_RADIO=			DNS
-OPTIONS_RADIO_DNS=		NSUPDATE BIND911
+OPTIONS_RADIO_DNS=		NSUPDATE BIND911 BIND916
 # Make those default options
-OPTIONS_DEFAULT=		AD_DC ADS DEBUG DOCS FAM LDAP \
+OPTIONS_DEFAULT=		AD_DC ADS DOCS FAM LDAP \
 				QUOTAS SYSLOG UTMP PROFILE \
 				FRUIT GSSAPI_BUILTIN AVAHI
 ##############################################################################
@@ -135,11 +133,14 @@ ZEROCONF_NONE_DESC=		Zeroconf support is absent
 
 DNS_DESC=			DNS frontend
 BIND911_DESC=			Use Bind 9.11 as AD DC DNS server frontend
+BIND916_DESC=			Use Bind 9.16 as AD DC DNS server frontend
 NSUPDATE_DESC=			Use samba NSUPDATE utility for AD DC
 ##############################################################################
 # XXX: Unconditional dependencies which can't be switched off(if present in
 # the system)
 
+# Iconv(picked up unconditionaly)
+LIB_DEPENDS+=			libiconv.so:converters/libiconv
 # Readline(sponsored by Python)
 # XXX: USES=readline pollutes CPPFLAGS, so we explicitly put dependency
 LIB_DEPENDS+=			libreadline.so:devel/readline
@@ -174,20 +175,19 @@ SAMBA4_BUNDLED_LDB?=		yes
 # cmocka
 .if defined(SAMBA4_BUNDLED_CMOCKA) && ${SAMBA4_BUNDLED_CMOCKA} == yes
 SAMBA4_BUNDLED_LIBS+=		cmocka
-CONFLICTS+=			cmocka-1.*
+CONFLICTS_INSTALL+=		cmocka-1.*
 PLIST_SUB+=			SAMBA4_BUNDLED_CMOCKA=""
 SUB_LIST+=			SAMBA4_BUNDLED_CMOCKA=""
 .else
 SAMBA4_BUNDLED_LIBS+=		!cmocka
 BUILD_DEPENDS+=			cmocka>=1.1.3:sysutils/cmocka
-RUN_DEPENDS+=			cmocka>=1.1.3:sysutils/cmocka
 PLIST_SUB+=			SAMBA4_BUNDLED_CMOCKA="@comment "
 SUB_LIST+=			SAMBA4_BUNDLED_CMOCKA="@comment "
 .endif
 # talloc
 .if defined(SAMBA4_BUNDLED_TALLOC) && ${SAMBA4_BUNDLED_TALLOC} == yes
 SAMBA4_BUNDLED_LIBS+=		talloc
-CONFLICTS+=			talloc-* talloc1-*
+CONFLICTS_INSTALL+=		talloc-* talloc1-*
 PLIST_SUB+=			SAMBA4_BUNDLED_TALLOC=""
 SUB_LIST+=			SAMBA4_BUNDLED_TALLOC=""
 .else
@@ -200,7 +200,7 @@ SUB_LIST+=			SAMBA4_BUNDLED_TALLOC="@comment "
 # tevent
 .if defined(SAMBA4_BUNDLED_TEVENT) && ${SAMBA4_BUNDLED_TEVENT} == yes
 SAMBA4_BUNDLED_LIBS+=		tevent
-CONFLICTS+=			tevent-* tevent1-*
+CONFLICTS_INSTALL+=		tevent-* tevent1-*
 PLIST_SUB+=			SAMBA4_BUNDLED_TEVENT=""
 SUB_LIST+=			SAMBA4_BUNDLED_TEVENT=""
 .else
@@ -213,7 +213,7 @@ SUB_LIST+=			SAMBA4_BUNDLED_TEVENT="@comment "
 # tdb
 .if defined(SAMBA4_BUNDLED_TDB) && ${SAMBA4_BUNDLED_TDB} == yes
 SAMBA4_BUNDLED_LIBS+=		tdb
-CONFLICTS+=			tdb-* tdb1-*
+CONFLICTS_INSTALL+=		tdb-* tdb1-*
 PLIST_SUB+=			SAMBA4_BUNDLED_TDB=""
 SUB_LIST+=			SAMBA4_BUNDLED_TDB=""
 .else
@@ -239,7 +239,7 @@ SUB_LIST+=			SAMBA4_BUNDLED_LDB="@comment "
 SAMBA4_MODULEDIR=		${PREFIX}/lib/shared-modules
 .endif
 
-.if (defined(SAMBA4_BUNDLED_TALLOC) && ${SAMBA4_BUNDLED_TEVENT} == yes) \
+.if (defined(SAMBA4_BUNDLED_TALLOC) && ${SAMBA4_BUNDLED_TALLOC} == yes) \
 	|| (defined(SAMBA4_BUNDLED_TDB) && ${SAMBA4_BUNDLED_TDB} == yes) \
 	|| (defined(SAMBA4_BUNDLED_LDB) && ${SAMBA4_BUNDLED_LDB} == yes) \
 	|| (defined(SAMBA4_BUNDLED_TEVENT) && ${SAMBA4_BUNDLED_TEVENT} == yes)
@@ -252,7 +252,8 @@ TEST_USES=			python
 TEST_ENV+=			PYTHON="${PYTHON_CMD}" \
 				SHA1SUM=/sbin/sha1 \
 				SHA256SUM=/sbin/sha256 \
-				MD5SUM=/sbin/md5
+				MD5SUM=/sbin/md5 \
+				PYTHONDONTWRITEBYTECODE=1
 TEST_DEPENDS+=			bash:shells/bash \
 				tshark:net/tshark
 ##############################################################################
@@ -296,12 +297,9 @@ MDNSRESPONDER_LIB_DEPENDS=	libdns_sd.so:net/mDNSResponder
 MDNSRESPONDER_VARS=		SAMBA4_SERVICES+=mdnsd
 ##############################################################################
 BIND911_RUN_DEPENDS=		bind911>=9.11.0.0:dns/bind911
+BIND916_RUN_DEPENDS=		bind916>=9.16.0.0:dns/bind916
 NSUPDATE_RUN_DEPENDS=		samba-nsupdate:dns/samba-nsupdate
 ##############################################################################
-DEBUG_CONFIGURE_ON=		--verbose --enable-debug
-DEBUG_MAKE_ARGS=		--verbose
-DEBUG_FLAGS=			-g -ggdb3 -O0
-
 MEMORY_DEBUG_IMPLIES=		DEBUG
 MEMORY_DEBUG_CONFIGURE_ENV=	ADDITIONAL_CFLAGS="-DENABLE_JEMALLOC `pkg-config --cflags jemalloc`" ADDITIONAL_LDFLAGS="`pkg-config --libs jemalloc`"
 MEMORY_DEBUG_LIB_DEPENDS=	libjemalloc.so.2:devel/jemalloc
@@ -373,14 +371,10 @@ LIBZFS_VARS=			SAMBA4_MODULES+=vfs_zfs_space
 MANDOC_BUILD_DEPENDS=		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl \
 				xsltproc:textproc/libxslt
 MANDOC_CONFIGURE_ENV_OFF=	XSLTPROC="true"
-# !SAMBA4_SUBPORT
-.endif
 
 ##############################################################################
 .include <bsd.port.options.mk>
 ##############################################################################
-
-.if !defined(SAMBA4_SUBPORT)
 
 .if !defined(WANT_EXP_MODULES) || empty(WANT_EXP_MODULES)
 WANT_EXP_MODULES=		vfs_cacheprime
@@ -416,7 +410,9 @@ SUB_LIST+=			SAMBA4_PYTHON="@comment "
 USES+=				python:3.4+
 PLIST_SUB+=			SAMBA4_PYTHON=""
 SUB_LIST+=			SAMBA4_PYTHON=""
+# Don't cache Python modules
 CONFIGURE_ARGS+=		--nopycache
+MAKE_ENV+=			PYTHONDONTWRITEBYTECODE=1
 
 .if defined(SAMBA4_BUNDLED_TALLOC) && ${SAMBA4_BUNDLED_TALLOC} == yes
 SAMBA4_BUNDLED_LIBS+=		pytalloc-util
@@ -442,9 +438,6 @@ SAMBA4_BUNDLED_LIBS+=		pyldb pyldb-util
 SAMBA4_BUNDLED_LIBS+=		!pyldb !pyldb-util
 .endif
 # External Python modules
-BUILD_DEPENDS+=			${PYTHON_PKGNAMEPREFIX}dnspython>=1.15.0:dns/py-dnspython@${PY_FLAVOR}
-RUN_DEPENDS+=			${PYTHON_PKGNAMEPREFIX}dnspython>=1.15.0:dns/py-dnspython@${PY_FLAVOR}
-
 BUILD_DEPENDS+=			${PYTHON_PKGNAMEPREFIX}iso8601>=0.1.11:devel/py-iso8601@${PY_FLAVOR}
 RUN_DEPENDS+=			${PYTHON_PKGNAMEPREFIX}iso8601>=0.1.11:devel/py-iso8601@${PY_FLAVOR}
 .endif
@@ -465,14 +458,17 @@ CONFIGURE_ARGS+=		--with-shared-modules="${SAMBA4_MODULES:C|-|_|:Q:C|(\\\\ )+|,|
 .for module in ${SAMBA4_MODULES}
 PLIST_FILES+=			${SAMBA4_MODULEDIR}/${module:C|_|/|:C|-|_|}.so
 .endfor
-# !SAMBA4_SUBPORT
+
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=		--verbose --enable-debug
+MAKE_ARGS+=			--verbose
+DEBUG_FLAGS?=			-g -ggdb3 -O0
 .endif
 
 ##############################################################################
 .include <bsd.port.pre.mk>
 ##############################################################################
 
-.if !defined(SAMBA4_SUBPORT)
 # Require llvm 4.0 and AMD64
 .if ${PORT_OPTIONS:MAESNI} && ${ARCH} == "amd64"
 CONFIGURE_ARGS+=		--accel-aes=intelaesni
@@ -480,6 +476,7 @@ PLIST_FILES+=			lib/samba4/private/libaesni-intel-samba4.so
 .else
 CONFIGURE_ARGS+=		--accel-aes=none
 .endif
+
 
 # Only for 64-bit architectures
 .if ${ARCH} != armv6 && ${ARCH} != armv7 && ${ARCH} != i386 && ${ARCH} != mips && ${ARCH} != powerpc && ${ARCH} != powerpcspe
@@ -511,6 +508,7 @@ MAKE_ENV+=			RPCGEN_CPP="${CPP}"
 #.if ${readline_ARGS} == port
 #CFLAGS+=			-D_FUNCTION_DEF
 #.endif
+
 # Make sure that the right version of Python is used by the tools
 # https://bugzilla.samba.org/show_bug.cgi?id=7305
 SHEBANG_FILES=			${PATCH_WRKSRC}/source4/scripting/bin/* ${PATCH_WRKSRC}/selftest/*
@@ -545,8 +543,6 @@ post-patch:
 					${PATCH_WRKSRC}/buildtools/scripts/abi_gen.sh
 				@${REINPLACE_CMD} -e 's|%%SAMBA4_CONFIG%%|${SAMBA4_CONFIG}|g' \
 					${PATCH_WRKSRC}/dynconfig/wscript
-				@${REINPLACE_CMD} -e '1s|/bin/bash|/bin/sh|' \
-					 ${PATCH_WRKSRC}/ctdb/tools/onnode
 
 # Use threading (or multiprocessing) but not thread (renamed in python 3+).
 pre-configure:
@@ -635,6 +631,12 @@ post-install: post-install-rm-junk post-install-fix-manpages
 .for dir in			auth bind9 gensec gpext idmap ldb nss_info pdb perfcount process_model service vfs
 					${INSTALL} -d -m 0755 "${STAGEDIR}${SAMBA4_MODULEDIR}/${dir}"
 .endfor
+.if !defined(WITH_DEBUG)
+				-${FIND} ${STAGEDIR}${PREFIX}/bin ${STAGEDIR}${PREFIX}/sbin \
+					-type f -print0 | ${XARGS} -0 -n 1 -t ${STRIP_CMD}
+				-${FIND} ${STAGEDIR}${PREFIX}/lib -name '*.so*' \
+					-type f -print0 | ${XARGS} -0 -n 1 -t ${STRIP_CMD}
+.endif
 
 post-install-FRUIT-off:
 				${RM} ${STAGEDIR}${SAMBA4_MODULEDIR}/vfs/fruit.so
@@ -651,8 +653,5 @@ post-install-CLUSTER-on:
 				${LN} -nfs ../../../../share/ctdb/events/legacy/10.interface.script	${STAGEDIR}${PREFIX}/etc/ctdb/events/legacy/10.interface.script
 				${LN} -nfs ../../../../share/ctdb/events/legacy/05.system.script	${STAGEDIR}${PREFIX}/etc/ctdb/events/legacy/05.system.script
 				${LN} -nfs ../../../../share/ctdb/events/legacy/01.reclock.script	${STAGEDIR}${PREFIX}/etc/ctdb/events/legacy/01.reclock.script
-
-# !SAMBA4_SUBPORT
-.endif
 
 .include <bsd.port.post.mk>
