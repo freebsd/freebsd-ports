@@ -1,5 +1,5 @@
-TIMESTAMP = 1584392523
-SHA256 (arp242-uni-v1.1.0_GH0.tar.gz) = 938712d1e750b8dcea9f42d4691b66e15dbc7c7ce0200400f20f79702dc97bac
-SIZE (arp242-uni-v1.1.0_GH0.tar.gz) = 412240
+TIMESTAMP = 1591008278
+SHA256 (arp242-uni-v1.1.1_GH0.tar.gz) = d29fdd8f34f726e6752e87f554d8ea73e324b7729afaf4bd52fcae04c7638757
+SIZE (arp242-uni-v1.1.1_GH0.tar.gz) = 412723
 SHA256 (golang-sys-bd437916bb0e_GH0.tar.gz) = 649b142ea9aec8da603327e456442cb625ddd8a99cddb2e4ee72c9a40a9fd712
 SIZE (golang-sys-bd437916bb0e_GH0.tar.gz) = 1515958
