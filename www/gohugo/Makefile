@@ -2,7 +2,7 @@
 
 PORTNAME=	hugo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.71.1
+DISTVERSION=	0.72.0
 CATEGORIES=	www
 PKGNAMEPREFIX=	go
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
@@ -100,7 +100,7 @@ GH_TUPLE=	\
 		tdewolff:minify:v2.6.2:tdewolff_minify_v2/vendor/github.com/tdewolff/minify/v2 \
 		tdewolff:parse:v2.4.2:tdewolff_parse_v2/vendor/github.com/tdewolff/parse/v2 \
 		yuin:goldmark-highlighting:60d527fdb691:yuin_goldmark_highlighting/vendor/github.com/yuin/goldmark-highlighting \
-		yuin:goldmark:v1.1.30:yuin_goldmark/vendor/github.com/yuin/goldmark
+		yuin:goldmark:v1.1.31:yuin_goldmark/vendor/github.com/yuin/goldmark
 
 post-extract:
 	@${RM} -r ${WRKSRC}/vendor/github.com/googleapis/gax-go/v2
@@ -134,7 +134,7 @@ PORTMANS=	hugo-config.1 hugo-convert-toJSON.1 hugo-convert-toTOML.1 \
 .include <bsd.port.pre.mk>
 
 SOURCE_DATE_EPOCH_CMD=	date -r $$(grep TIMESTAMP ${DISTINFO_FILE} | ${SED} -e 's/[^0-9]//g') '+%FT%TZ%z'
-COMMIT_ID=		a301f6b2ae47359c04ef67e0dd810c5927e89182
+COMMIT_ID=		8a7ef3cf4ee3c65d4edba17b1608c770b6da1673
 
 do-build-MANPAGES-on:
 	@cd ${GO_WRKSRC} && ${GO_WRKDIR_BIN}/${PORTNAME} gen man --dir man/man1/
