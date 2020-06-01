@@ -91,6 +91,7 @@
     SUBDIR += gawk
     SUBDIR += gcc
     SUBDIR += gcc-ecj45
+    SUBDIR += gcc10
     SUBDIR += gcc10-devel
     SUBDIR += gcc11-devel
     SUBDIR += gcc48
