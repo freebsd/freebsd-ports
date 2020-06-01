@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	go-btfs
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.3
 DISTVERSIONPREFIX=	btfs-v
 CATEGORIES=	sysutils
 
@@ -30,15 +30,16 @@ GH_TUPLE=	\
 		TRON-US:go-btfs-api:v0.1.0:tron_us_go_btfs_api/vendor/github.com/TRON-US/go-btfs-api \
 		TRON-US:go-btfs-chunker:v0.2.8:tron_us_go_btfs_chunker/vendor/github.com/TRON-US/go-btfs-chunker \
 		TRON-US:go-btfs-cmds:v0.1.6:tron_us_go_btfs_cmds/vendor/github.com/TRON-US/go-btfs-cmds \
-		TRON-US:go-btfs-config:v0.5.2:tron_us_go_btfs_config/vendor/github.com/TRON-US/go-btfs-config \
-		TRON-US:go-btfs-files:v0.1.6:tron_us_go_btfs_files/vendor/github.com/TRON-US/go-btfs-files \
-		TRON-US:go-cid:v0.1.0:tron_us_go_cid/vendor/github.com/ipfs/go-cid \
+		TRON-US:go-btfs-config:v0.5.10:tron_us_go_btfs_config/vendor/github.com/TRON-US/go-btfs-config \
+		TRON-US:go-btfs-files:v0.1.7:tron_us_go_btfs_files/vendor/github.com/TRON-US/go-btfs-files \
+		TRON-US:go-cid:v0.1.0:tron_us_go_cid_1/vendor/github.com/ipfs/go-cid \
 		TRON-US:go-eccrypto:v0.0.1:tron_us_go_eccrypto/vendor/github.com/TRON-US/go-eccrypto \
 		TRON-US:go-ipld-format:v0.1.0:tron_us_go_ipld_format/vendor/github.com/ipfs/go-ipld-format \
 		TRON-US:go-libp2p-core:v0.4.1:tron_us_go_libp2p_core/vendor/github.com/libp2p/go-libp2p-core \
 		TRON-US:go-mfs:v0.2.2:tron_us_go_mfs/vendor/github.com/TRON-US/go-mfs \
-		TRON-US:go-unixfs:v0.5.9:tron_us_go_unixfs/vendor/github.com/TRON-US/go-unixfs \
-		TRON-US:interface-go-btfs-core:v0.5.4:tron_us_interface_go_btfs_core/vendor/github.com/TRON-US/interface-go-btfs-core \
+		TRON-US:go-unixfs:v0.5.10:tron_us_go_unixfs/vendor/github.com/TRON-US/go-unixfs \
+		TRON-US:interface-go-btfs-core:v0.5.5:tron_us_interface_go_btfs_core/vendor/github.com/TRON-US/interface-go-btfs-core \
+		Workiva:go-datastructures:v1.0.52:workiva_go_datastructures/vendor/github.com/Workiva/go-datastructures \
 		alecthomas:units:2efee857e7cf:alecthomas_units/vendor/github.com/alecthomas/units \
 		bazil:fuse:65cc252bf669:bazil_fuse/vendor/bazil.org/fuse \
 		beorn7:perks:v1.0.0:beorn7_perks/vendor/github.com/beorn7/perks \
