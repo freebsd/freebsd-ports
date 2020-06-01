@@ -1,0 +1,25 @@
+commit 9a89dccd2a85
+Author: Martin Stransky <stransky@redhat.com>
+Date:   Fri May 15 07:52:39 2020 +0000
+
+    Bug 1638010 [Wayland] Make WaylandDMABUFTextureData::BorrowDrawTarget() fail when underlying dmabuf surface is not locked, r=sotaro
+    
+    Differential Revision: https://phabricator.services.mozilla.com/D75329
+---
+ gfx/layers/opengl/WaylandDMABUFTextureClientOGL.cpp | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git gfx/layers/opengl/WaylandDMABUFTextureClientOGL.cpp gfx/layers/opengl/WaylandDMABUFTextureClientOGL.cpp
+index bb556d9fcfaf5..da9c9cb6f4d19 100644
+--- gfx/layers/opengl/WaylandDMABUFTextureClientOGL.cpp
++++ gfx/layers/opengl/WaylandDMABUFTextureClientOGL.cpp
+@@ -86,6 +86,9 @@ already_AddRefed<DrawTarget> WaylandDMABUFTextureData::BorrowDrawTarget() {
+     return nullptr;
+   }
+   auto surf = mSurface->GetAsWaylandDMABufSurfaceRGBA();
++  if (!surf->GetMappedRegion()) {
++    return nullptr;
++  }
+   return Factory::CreateDrawTargetForData(
+       mBackend, (unsigned char*)surf->GetMappedRegion(),
+       IntSize(surf->GetWidth(), surf->GetHeight()),

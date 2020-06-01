@@ -72,6 +72,7 @@ USE_XORG=	x11 xcb xcomposite xdamage xext xfixes xrender xt
 HAS_CONFIGURE=	yes
 CONFIGURE_OUTSOURCE=	yes
 LDFLAGS+=		-Wl,--as-needed
+BINARY_ALIAS+=	python3=python${PYTHON3_DEFAULT}
 
 BUNDLE_LIBS=	yes
 
