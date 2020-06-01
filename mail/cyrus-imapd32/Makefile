@@ -2,6 +2,7 @@
 
 PORTNAME=	cyrus-imapd
 PORTVERSION=	3.2.1
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	https://github.com/cyrusimap/cyrus-imapd/releases/download/${PORTNAME}-${PORTVERSION}/
 PKGNAMESUFFIX=	32
@@ -15,7 +16,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2 \
 		libicuuc.so:devel/icu \
 		libjansson.so:devel/jansson \
-		libpcre.so:devel/pcre
+		libpcre.so:devel/pcre \
+		libuuid.so:misc/e2fsprogs-libuuid
 
 CONFLICTS_INSTALL=	cyrus-imapd-2.* cyrus-imapd2*
 
@@ -27,7 +29,6 @@ CONFIGURE_ARGS=	--libexecdir=${CYRUS_PREFIX}/libexec \
 		--sbindir=${CYRUS_PREFIX}/sbin \
 		--sysconfdir=${PREFIX}/etc \
 		--with-cyrus-user=${CYRUS_USER} \
-		--with-cyrus-group=${CYRUS_GROUP} \
 		--with-sasl=${LOCALBASE} \
 		--with-com_err \
 		--with-openssl=${OPENSSLBASE} \
@@ -38,7 +39,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 USES+=		shebangfix
 SHEBANG_FILES=	imap/promdatagen snmp/snmpgen tools/config2header \
-		tools/mkimap
+		tools/masssievec tools/mkimap perl/sieve/scripts/*.pl
 
 CPE_VENDOR=	cmu
 CPE_PRODUCT=	cyrus_imap_server
@@ -144,6 +145,8 @@ CYRUS_PERL_MAN3=Cyrus::Annotator::Daemon Cyrus::Annotator::Message \
 		Cyrus::IMAP Cyrus::IMAP::Admin Cyrus::IMAP::IMSP \
 		Cyrus::IMAP::Shell Cyrus::SIEVE::managesieve
 
+INSTALL_TARGET=	install-strip
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MHTTP} || ${PORT_OPTIONS:MSQLITE}
@@ -185,6 +188,8 @@ post-patch:
 		${WRKSRC}/Makefile.in
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Cyrus/IMAP/IMAP.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Cyrus/SIEVE/managesieve/managesieve.so
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${FILESDIR}/imapd.conf \
 		${STAGEDIR}${EXAMPLESDIR}
