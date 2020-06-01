@@ -21,7 +21,6 @@ man/man8/ntopng.8.gz
 %%DATADIR%%/httpdocs/bootstrap-4.4.0-dist/js/bootstrap.js.map
 %%DATADIR%%/httpdocs/bootstrap-4.4.0-dist/js/bootstrap.min.js
 %%DATADIR%%/httpdocs/bootstrap-4.4.0-dist/js/bootstrap.min.js.map
-%%DATADIR%%/httpdocs/css/ntopng.min.css
 %%DATADIR%%/httpdocs/css/Rickshaw/detail.css
 %%DATADIR%%/httpdocs/css/Rickshaw/graph.css
 %%DATADIR%%/httpdocs/css/Rickshaw/legend.css
@@ -53,12 +52,13 @@ man/man8/ntopng.8.gz
 %%DATADIR%%/httpdocs/css/images/ui-icons_ffd27a_256x240.png
 %%DATADIR%%/httpdocs/css/images/ui-icons_ffffff_256x240.png
 %%DATADIR%%/httpdocs/css/jquery-ui.css
-%%DATADIR%%/httpdocs/css/minified/ntopng.min.css
 %%DATADIR%%/httpdocs/css/minified/fontawesome-custom.min.css
 %%DATADIR%%/httpdocs/css/minified/heatmap.min.css
+%%DATADIR%%/httpdocs/css/minified/ntopng.min.css
 %%DATADIR%%/httpdocs/css/minified/rickshaw.min.css
 %%DATADIR%%/httpdocs/css/minified/tempusdominus.min.css
 %%DATADIR%%/httpdocs/css/ntopng.css
+%%DATADIR%%/httpdocs/css/ntopng.min.css
 %%DATADIR%%/httpdocs/css/nv.d3.css
 %%DATADIR%%/httpdocs/css/pie-chart.css
 %%DATADIR%%/httpdocs/css/rickshaw.css
@@ -1759,7 +1759,6 @@ man/man8/ntopng.8.gz
 %%DATADIR%%/httpdocs/img/warning.png
 %%DATADIR%%/httpdocs/inc/as_stats_id.inc
 %%DATADIR%%/httpdocs/inc/country_stats_id.inc
-%%DATADIR%%/httpdocs/inc/flows_stats_id.inc
 %%DATADIR%%/httpdocs/inc/geolocation_disclaimer.inc
 %%DATADIR%%/httpdocs/inc/host_to_server_id.inc
 %%DATADIR%%/httpdocs/inc/host_to_server_top.inc
@@ -1855,12 +1854,12 @@ man/man8/ntopng.8.gz
 %%DATADIR%%/httpdocs/leaflet/leaflet.js.map
 %%DATADIR%%/httpdocs/leaflet/leaflet.markercluster.js
 %%DATADIR%%/httpdocs/leaflet/leaflet.markercluster.js.map
-%%DATADIR%%/httpdocs/misc/ntopng_template_elk7.json
 %%DATADIR%%/httpdocs/misc/ntopng-add-user.sh
 %%DATADIR%%/httpdocs/misc/ntopng-utils-manage-config
 %%DATADIR%%/httpdocs/misc/ntopng-utils-manage-config.in
 %%DATADIR%%/httpdocs/misc/ntopng_template_elk.json
 %%DATADIR%%/httpdocs/misc/ntopng_template_elk6.json
+%%DATADIR%%/httpdocs/misc/ntopng_template_elk7.json
 %%DATADIR%%/httpdocs/monaco-editor/editor.main.nls.js
 %%DATADIR%%/httpdocs/monaco-editor/min/vs/base/worker/workerMain.js
 %%DATADIR%%/httpdocs/monaco-editor/min/vs/basic-languages/lua/lua.js
@@ -1961,8 +1960,8 @@ man/man8/ntopng.8.gz
 %%DATADIR%%/scripts/lua/bubble.lua
 %%DATADIR%%/scripts/lua/captive_portal.lua
 %%DATADIR%%/scripts/lua/change_password.lua
-%%DATADIR%%/scripts/lua/check_recording_data.lua
 %%DATADIR%%/scripts/lua/check_major_release.lua
+%%DATADIR%%/scripts/lua/check_recording_data.lua
 %%DATADIR%%/scripts/lua/check_update.lua
 %%DATADIR%%/scripts/lua/code_viewer.lua
 %%DATADIR%%/scripts/lua/container_details.lua
@@ -2005,7 +2004,6 @@ man/man8/ntopng.8.gz
 %%DATADIR%%/scripts/lua/get_discover_progress.lua
 %%DATADIR%%/scripts/lua/get_extracted_traffic.lua
 %%DATADIR%%/scripts/lua/get_fingerprint_data.lua
-%%DATADIR%%/scripts/lua/get_flow_data.lua
 %%DATADIR%%/scripts/lua/get_flow_db_data.lua
 %%DATADIR%%/scripts/lua/get_flow_process_tree.lua
 %%DATADIR%%/scripts/lua/get_flows_data.lua
@@ -2107,6 +2105,7 @@ man/man8/ntopng.8.gz
 %%DATADIR%%/scripts/lua/manage_data.lua
 %%DATADIR%%/scripts/lua/modules/alert_consts.lua
 %%DATADIR%%/scripts/lua/modules/alert_endpoints_utils.lua
+%%DATADIR%%/scripts/lua/modules/alert_keys.lua
 %%DATADIR%%/scripts/lua/modules/alert_utils.lua
 %%DATADIR%%/scripts/lua/modules/alerts_api.lua
 %%DATADIR%%/scripts/lua/modules/as_utils.lua
@@ -2135,6 +2134,7 @@ man/man8/ntopng.8.gz
 %%DATADIR%%/scripts/lua/modules/flow_dbms/flow_dbms.lua
 %%DATADIR%%/scripts/lua/modules/flow_field_value_maps.lua
 %%DATADIR%%/scripts/lua/modules/flow_field_value_maps/sonicwall_app_id.lua
+%%DATADIR%%/scripts/lua/modules/flow_keys.lua
 %%DATADIR%%/scripts/lua/modules/flow_utils.lua
 %%DATADIR%%/scripts/lua/modules/format_utils.lua
 %%DATADIR%%/scripts/lua/modules/google_assistant_utils.lua
@@ -2166,7 +2166,6 @@ man/man8/ntopng.8.gz
 %%DATADIR%%/scripts/lua/modules/page_utils.lua
 %%DATADIR%%/scripts/lua/modules/periodic_activities_utils.lua
 %%DATADIR%%/scripts/lua/modules/persistence.lua
-%%DATADIR%%/scripts/lua/modules/plugins_consts_utils.lua
 %%DATADIR%%/scripts/lua/modules/plugins_utils.lua
 %%DATADIR%%/scripts/lua/modules/prefs_dump_utils.lua
 %%DATADIR%%/scripts/lua/modules/prefs_menu.lua

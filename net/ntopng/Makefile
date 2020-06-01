@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ntopng
-PORTVERSION=	4.0.d20200414
-PORTREVISION=	1
+PORTVERSION=	4.0.d20200530
 PORTEPOCH=	1
 CATEGORIES=	net
 
@@ -20,7 +19,7 @@ LIB_DEPENDS=	librrd.so:databases/rrdtool \
 		libjson-c.so:devel/json-c \
 		libsodium.so:security/libsodium \
 		libmaxminddb.so:net/libmaxminddb
-BUILD_DEPENDS=  bash:shells/bash
+BUILD_DEPENDS=	bash:shells/bash
 
 USES=		autoreconf compiler:c++11-lang cpe gmake libtool localbase \
 		mysql pathfix pkgconfig shebangfix sqlite ssl
@@ -37,7 +36,7 @@ PLIST_SUB=	NTOPNGUSER="${USERS}" NTOPNGROUP="${GROUPS}"
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ntop
-GH_TAGNAME=	e7f6b4a
+GH_TAGNAME=	66a6a44
 
 CPE_VENDOR=	ntop
 
