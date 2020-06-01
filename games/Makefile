@@ -530,6 +530,7 @@
     SUBDIR += libretro-vbanext
     SUBDIR += libretro-vecx
     SUBDIR += libretro-virtualjaguar
+    SUBDIR += libretro-yabause
     SUBDIR += libshhcards
     SUBDIR += libtmcg
     SUBDIR += lightsoff

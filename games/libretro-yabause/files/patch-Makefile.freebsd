@@ -1,0 +1,5 @@
+--- Makefile.freebsd.orig	2020-05-02 13:46:15 UTC
++++ Makefile.freebsd
+@@ -0,0 +1,2 @@
++all:
++	cd yabause/src/libretro && ${MAKE} 
