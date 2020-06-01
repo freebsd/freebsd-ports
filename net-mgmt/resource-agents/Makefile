@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	resource-agents
-PORTVERSION=	4.4.0
+PORTVERSION=	4.5.0
 DISTVERSIONPREFIX=v
 CATEGORIES=	net-mgmt
 
