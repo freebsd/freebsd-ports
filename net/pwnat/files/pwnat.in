@@ -1,0 +1,24 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: pwnat
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# pwnat_enable	(bool)	Default: NO
+# pwnat_flags	(str)	Default: 
+#
+
+. /etc/rc.subr
+
+name="pwnat"
+rcvar="${name}_enable"
+command="%%PREFIX%%/bin/${name}"
+
+: ${pwnat_enable:="NO"}
+: ${pwnat_flags:=""}
+
+load_rc_config $name
+
+run_rc_command "$1"

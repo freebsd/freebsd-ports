@@ -1,0 +1,19 @@
+pwnat, pronounced "poe-nat", is a tool that allows any
+number of clients behind NATs to communicate with a
+server behind a separate NAT with *no* port forwarding
+*no* DMZ setup, and *no* 3rd party involvement. The server
+does not need to know anything about the clients trying
+to connect.
+
+Simply put, this is a proxy server that works behind a NAT,
+even when the client is behind a different NAT, without any
+3rd party or network changes.
+
+There is no middle man, no proxy, no 3rd party,
+no UPnP/STUN/ICE required, no spoofing, and no DNS tricks.
+
+More importantly, the client can then connect to any
+host or port on any remote host or to a fixed host and
+port decided by the server.
+
+WWW: https://samy.pl/pwnat
