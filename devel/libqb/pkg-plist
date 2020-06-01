@@ -14,8 +14,8 @@ include/qb/qbrb.h
 include/qb/qbutil.h
 lib/libqb.a
 lib/libqb.so
-lib/libqb.so.0
-lib/libqb.so.0.19.2
+lib/libqb.so.100
+lib/libqb.so.100.0.0
 libdata/pkgconfig/libqb.pc
 %%DOXYGEN%%man/man3/qbarray.h.3.gz
 %%DOXYGEN%%man/man3/qbatomic.h.3.gz
@@ -32,7 +32,7 @@ libdata/pkgconfig/libqb.pc
 %%DOXYGEN%%man/man3/qbutil.h.3.gz
 %%DOXYGEN%%man/man8/qb-blackbox.8.gz
 sbin/qb-blackbox
-@comment %%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/README.markdown
 @dir(,haclient,1770) %%QB_SOCKET_DIR%%
