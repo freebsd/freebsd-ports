@@ -4,7 +4,7 @@
 PORTNAME=	vigra
 DISTVERSIONPREFIX=v
 DISTVERSION=	1.11.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	graphics
 
 MAINTAINER=	ports@FreeBSD.org
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LIB_DEPENDS=	libHalf.so:graphics/ilmbase \
 		libsz.so:science/szip
 
-USES=		cmake compiler:c++14-lang python:2.7,run shebangfix
+USES=		cmake compiler:c++14-lang python:run shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	ukoethe
 GH_TAGNAME=	8acd73a
@@ -40,7 +40,7 @@ OPENEXR_LIB_DEPENDS=	libIlmImf.so:graphics/openexr
 
 NUMPY_DESC=		NumPy mathematical computing (USE Fortran/GCC47+)
 NUMPY_CMAKE_BOOL=	WITH_VIGRANUMPY
-NUMPY_USES=		compiler:gcc-c++11-lib python:2.7,build
+NUMPY_USES=		compiler:gcc-c++11-lib python:build
 NUMPY_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${PY_FLAVOR} \
 			${PYNUMPY}
 NUMPY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${PY_FLAVOR} \
