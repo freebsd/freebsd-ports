@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	mesa
-DISTVERSION=	20.1-branchpoint-1310
-DISTVERSIONSUFFIX=	-gaaec065f03e
+DISTVERSION=	20.1-branchpoint-1363
+DISTVERSIONSUFFIX=	-gfb62e642ae6
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	-devel
 
@@ -22,7 +22,7 @@ PATCHFILES+=	9291544ca0bd.patch:-p1
 PATCHFILES+=	700efacda59c.patch:-p1
 PATCHFILES+=	227ebbd9e837.patch:-p1
 PATCHFILES+=	de60a36d5836.patch:-p1
-PATCHFILES+=	0a500a8f4648.patch:-p1
+PATCHFILES+=	614e5280165b.patch:-p1
 PATCHFILES+=	15057d74fdb9.patch:-p1
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -95,21 +95,21 @@ radeonsi_DESC=		Southern Islands and newer
 
 LIBUNWIND_DESC=		Use libunwind for stacktraces
 LIBUNWIND_LIB_DEPENDS=	libunwind.so:devel/libunwind
-LIBUNWIND_MESON_TRUE=	libunwind
+LIBUNWIND_MESON_ENABLED=	libunwind
 
 LLVM_DESC=		Build with LLVM support
 LLVM_LIB_DEPENDS=	libLLVM-${LLVM_DEFAULT:C/^([6-9])0/\1/:S/-devel/11/}.so:devel/llvm${LLVM_DEFAULT}
-LLVM_MESON_TRUE=	llvm
+LLVM_MESON_ENABLED=	llvm
 LLVM_BINARY_ALIAS=	llvm-config=llvm-config${LLVM_DEFAULT}
 .for i in r600 radeonsi radv
 ${i}_IMPLIES+=		LLVM
 .endfor
 
 VAAPI_BUILD_DEPENDS=	libva>0:multimedia/libva
-VAAPI_MESON_TRUE=	gallium-va
+VAAPI_MESON_ENABLED=	gallium-va
 
 VDPAU_BUILD_DEPENDS=	libvdpau>0:multimedia/libvdpau
-VDPAU_MESON_TRUE=	gallium-vdpau
+VDPAU_MESON_ENABLED=	gallium-vdpau
 
 VULKAN_DESC=		Vulkan drivers and layers
 VULKAN_BUILD_DEPENDS=	glslangValidator:devel/glslang
@@ -126,7 +126,7 @@ X11_MESON_OFF=		-Dglx=disabled
 
 ZSTD_DESC=		Use ZSTD for shader cache
 ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
-ZSTD_MESON_TRUE=	zstd
+ZSTD_MESON_ENABLED=	zstd
 
 post-patch:
 # Extract (snapshot) version from the port instead of empty string
