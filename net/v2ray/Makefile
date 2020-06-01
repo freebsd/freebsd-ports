@@ -2,7 +2,7 @@
 
 PORTNAME=	v2ray
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.20.0
+DISTVERSION=	4.23.2
 CATEGORIES=	net
 
 MAINTAINER=	shen.elf@gmail.com
@@ -17,23 +17,26 @@ USE_RC_SUBR=	v2ray
 
 GH_ACCOUNT=	v2ray
 GH_PROJECT=	v2ray-core
-GH_TUPLE=	golang:crypto:193df9c0f06f:golang_crypto/vendor/golang.org/x/crypto \
+GH_TUPLE=	golang:crypto:c2843e01d9a2:golang_crypto/vendor/golang.org/x/crypto \
 		golang:mock:v1.2.0:golang_mock/vendor/github.com/golang/mock \
-		golang:net:65e2d4e15006:golang_net/vendor/golang.org/x/net \
-		golang:protobuf:c823c79ea157:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sync:1d60e4601c6f:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:49385e6e1522:golang_sys/vendor/golang.org/x/sys \
+		golang:net:d8887717615a:golang_net/vendor/golang.org/x/net \
+		golang:protobuf:v1.3.2:golang_protobuf/vendor/github.com/golang/protobuf \
+		golang:sync:112230192c58:golang_sync/vendor/golang.org/x/sync \
+		golang:sys:d0b11bdaac8a:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.0:golang_text/vendor/golang.org/x/text \
 		google:go-cmp:v0.2.0:google_go_cmp/vendor/github.com/google/go-cmp \
 		google:go-genproto:11092d34479b:google_go_genproto/vendor/google.golang.org/genproto \
-		google:starlark-go:1174b2613e82:google_starlark_go/vendor/go.starlark.net \
-		grpc:grpc-go:v1.18.0:grpc_grpc_go/vendor/google.golang.org/grpc \
+		google:starlark-go:979af19b165c:google_starlark_go/vendor/go.starlark.net \
+		gorilla:websocket:v1.4.1:gorilla_websocket/vendor/github.com/gorilla/websocket \
+		grpc:grpc-go:v1.24.0:grpc_grpc_go/vendor/google.golang.org/grpc \
 		h12w:socks:v1.0.0:h12w_socks/vendor/h12.io/socks \
-		miekg:dns:v1.1.4:miekg_dns/vendor/github.com/miekg/dns
+		miekg:dns:v1.1.4:miekg_dns/vendor/github.com/miekg/dns \
+		refraction-networking:utls:43c36d3c1f57:refraction_networking_utls/vendor/github.com/refraction-networking/utls
 
 GO_BUILDFLAGS=	-ldflags='-s -w'
 GO_TARGET=	./main:v2ray \
 		./infra/control/main:v2ctl
+GO_TESTFLAGS=	-p 1 -tags json -timeout 30m
 
 USERS=		v2ray
 GROUPS=		v2ray
@@ -49,9 +52,5 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/release/config/vpoint_vmess_freedom.json ${STAGEDIR}${ETCDIR}/vpoint_vmess_freedom.json
 	${INSTALL_DATA} ${WRKSRC}/release/config/geoip.dat ${STAGEDIR}${DATADIR}/geoip.dat
 	${INSTALL_DATA} ${WRKSRC}/release/config/geosite.dat ${STAGEDIR}${DATADIR}/geosite.dat
-
-do-test:
-	@cd ${GO_WRKSRC} && \
-	${SETENV} ${MAKE_ENV} ${GO_ENV} ${GO_CMD} test -p 1 -tags json -v -timeout 30m ./...
 
 .include <bsd.port.mk>
