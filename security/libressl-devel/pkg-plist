@@ -1549,6 +1549,7 @@ man/man1/openssl.1.gz
 %%MAN3%%man/man3/OPENSSL_VERSION_TEXT.3.gz
 %%MAN3%%man/man3/OPENSSL_cleanse.3.gz
 %%MAN3%%man/man3/OPENSSL_config.3.gz
+%%MAN3%%man/man3/OPENSSL_init.3.gz
 %%MAN3%%man/man3/OPENSSL_free.3.gz
 %%MAN3%%man/man3/OPENSSL_init_crypto.3.gz
 %%MAN3%%man/man3/OPENSSL_init_ssl.3.gz
@@ -1701,11 +1702,17 @@ man/man1/openssl.1.gz
 %%MAN3%%man/man3/PKCS7_SIGNER_INFO_new.3.gz
 %%MAN3%%man/man3/PKCS7_SIGN_ENVELOPE_free.3.gz
 %%MAN3%%man/man3/PKCS7_SIGN_ENVELOPE_new.3.gz
+%%MAN3%%man/man3/PKCS7_content_new.3.gz
+%%MAN3%%man/man3/PKCS7_dataFinal.3.gz
+%%MAN3%%man/man3/PKCS7_dataInit.3.gz
 %%MAN3%%man/man3/PKCS7_decrypt.3.gz
 %%MAN3%%man/man3/PKCS7_encrypt.3.gz
 %%MAN3%%man/man3/PKCS7_free.3.gz
 %%MAN3%%man/man3/PKCS7_get0_signers.3.gz
 %%MAN3%%man/man3/PKCS7_new.3.gz
+%%MAN3%%man/man3/PKCS7_set0_type_other.3.gz
+%%MAN3%%man/man3/PKCS7_set_content.3.gz
+%%MAN3%%man/man3/PKCS7_set_type.3.gz
 %%MAN3%%man/man3/PKCS7_sign.3.gz
 %%MAN3%%man/man3/PKCS7_sign_add_signer.3.gz
 %%MAN3%%man/man3/PKCS7_verify.3.gz
