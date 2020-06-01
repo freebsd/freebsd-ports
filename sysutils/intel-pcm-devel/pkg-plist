@@ -3,6 +3,7 @@ sbin/pcm-iio.x
 sbin/pcm-latency.x
 sbin/pcm-lspci.x
 sbin/pcm-memory.x
+sbin/pcm-mmio.x
 sbin/pcm-msr.x
 sbin/pcm-numa.x
 sbin/pcm-pcicfg.x
