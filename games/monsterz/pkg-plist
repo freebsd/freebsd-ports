@@ -1,4 +1,6 @@
 @(,games,2555) bin/monsterz
+%%DATADIR%%/__pycache__/monsterz.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%DATADIR%%/__pycache__/monsterz.cpython-%%PYTHON_SUFFIX%%.pyc
 %%DATADIR%%/graphics/background.png
 %%DATADIR%%/graphics/bigtiles.png
 %%DATADIR%%/graphics/board.png
@@ -8,8 +10,6 @@
 %%DATADIR%%/graphics/pattern.png
 %%DATADIR%%/graphics/tiles.png
 %%DATADIR%%/monsterz.py
-%%DATADIR%%/monsterz.pyc
-%%DATADIR%%/monsterz.pyo
 %%DATADIR%%/sound/applause.wav
 %%DATADIR%%/sound/boing.wav
 %%DATADIR%%/sound/click.wav

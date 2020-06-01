@@ -1,5 +1,5 @@
---- Makefile.orig	2007-12-17 23:05:00.000000000 +0100
-+++ Makefile	2014-04-11 21:13:39.000000000 +0200
+--- Makefile.orig	2007-12-17 22:05:00 UTC
++++ Makefile
 @@ -1,8 +1,8 @@
  
 -prefix = /usr/local
@@ -13,7 +13,7 @@
  scoredir = /var/games
  scorefile = $(scoredir)/monsterz
  
-@@ -22,7 +22,7 @@
+@@ -22,7 +22,7 @@ INKSCAPE = inkscape -z
  all: monsterz
  
  monsterz: monsterz.c
@@ -22,7 +22,7 @@
  
  bitmap: $(BITMAP)
  
-@@ -42,17 +42,17 @@
+@@ -42,17 +42,17 @@ graphics/logo.png: graphics/graphics.svg
  install: all
  	mkdir -p $(DESTDIR)$(gamesdir)
  	cp monsterz $(DESTDIR)$(gamesdir)/
