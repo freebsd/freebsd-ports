@@ -1,12 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	jgraphx
-PORTVERSION=	4.0.3
+PORTVERSION=	4.1.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	java graphics
 
 MAINTAINER=	makc@FreeBSD.org
-COMMENT=	The Java Graph Diagram Component version X (jgraph v6+)
+COMMENT=	Java Graph Diagram Component version X
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/license.txt
@@ -16,7 +16,7 @@ GH_ACCOUNT=	jgraph
 USE_JAVA=	yes
 USE_ANT=	yes
 
-PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
+PLIST_FILES=	${JAVAJARDIR}/${PORTNAME}.jar
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
