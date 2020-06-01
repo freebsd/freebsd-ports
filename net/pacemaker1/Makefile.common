@@ -15,7 +15,7 @@ BUILD_DEPENDS=		bash:shells/bash \
 			getopt>=0:misc/getopt
 LIB_DEPENDS=		libgnutls.so:security/gnutls \
 			libltdl.so:devel/libltdl \
-			libqb.so.0:devel/libqb \
+			libqb.so:devel/libqb \
 			libuuid.so:misc/e2fsprogs-libuuid \
 			libxml2.so:textproc/libxml2 \
 			libxslt.so:textproc/libxslt

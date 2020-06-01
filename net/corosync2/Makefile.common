@@ -12,7 +12,7 @@ LICENSE=		BSD3CLAUSE
 
 LIB_DEPENDS=		libnspr4.so:devel/nspr \
 			libnss3.so:security/nss \
-			libqb.so.0:devel/libqb
+			libqb.so:devel/libqb
 
 TEST_DEPENDS=		augparse:textproc/augeas
 
