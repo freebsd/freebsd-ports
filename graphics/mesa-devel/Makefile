@@ -30,57 +30,92 @@ COMMENT=	Bleeding edge Mesa drivers (OpenGL, Vulkan)
 
 LICENSE=	MIT
 
-ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc64
 ONLY_FOR_ARCHS_REASON=	Limited scope: no old drivers and no software rendering. \
 			See also https://mesamatrix.net/
-BROKEN_DragonFly=	requires making Vulkan support conditional
 
-BUILD_DEPENDS=	glslangValidator:devel/glslang \
-		${PYTHON_PKGNAMEPREFIX}mako>0:textproc/py-mako@${PY_FLAVOR}
-LIB_DEPENDS=	libLLVM-${LLVM_DEFAULT:C/^([6-9])0/\1/:S/-devel/11/}.so:devel/llvm${LLVM_DEFAULT} \
-		libdrm.so:graphics/libdrm \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mako>0:textproc/py-mako@${PY_FLAVOR}
+LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 		libexpat.so:textproc/expat2
+.if !exists(/usr/lib/libelf.so)
+# DragonFly doesn't install it yet
+LIB_DEPENDS+=	libelf.so:devel/libelf
+.endif
 
 USES=		bison compiler:c++11-lib meson pkgconfig python:3.6+,build shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	mesa3d
 USE_LDCONFIG=	yes
-BINARY_ALIAS=	llvm-config=llvm-config${LLVM_DEFAULT} python=${PYTHON_CMD}
+BINARY_ALIAS=	python=${PYTHON_CMD}
 SHEBANG_FILES=	src/vulkan/overlay-layer/${PORTNAME}-overlay-control.py
 PLATFORMS=	${PORT_OPTIONS:MX11:tl} ${PORT_OPTIONS:MWAYLAND:tl} drm surfaceless
-MESON_ARGS=	-Ddri-drivers=i965 \
-		-Dgallium-drivers=iris,r600,radeonsi \
-		-Dgallium-omx=disabled \
+MESON_ARGS=	-Dgallium-omx=disabled \
 		-Dgallium-opencl=disabled \
 		-Dgallium-xa=false \
 		-Dgallium-xvmc=false \
 		-Dplatforms=${PLATFORMS:ts,} \
-		-Dvulkan-device-select-layer=true \
-		-Dvulkan-overlay-layer=true \
 		${PKGNAMESUFFIX:S/^/-Degl-lib-suffix=/} \
 		${NULL}
 SUB_FILES=	libmap.conf
 SUB_LIST=	PKGNAMESUFFIX=${PKGNAMESUFFIX}
 PLIST_SUB=	ARCH=${ARCH:S/amd/x86_/} PKGNAMESUFFIX=${PKGNAMESUFFIX}
 
-.if ${/usr/bin/ld:L:tA} != /usr/bin/ld.lld
+.if exists(/usr/bin/ld.lld) && ${/usr/bin/ld:L:tA} != /usr/bin/ld.lld
 # --build-id isn't supported by old GNU ld.bfd in base
 LDFLAGS+=	-fuse-ld=lld
 .endif
 
-OPTIONS_DEFINE=		LIBUNWIND VAAPI VDPAU WAYLAND X11 ZSTD
-OPTIONS_DEFAULT=	LIBUNWIND VAAPI VDPAU WAYLAND X11 ZSTD
+OPTIONS_DEFINE=		${OPTIONS_MULTI} LIBUNWIND LLVM VAAPI VDPAU WAYLAND X11 ZSTD
+OPTIONS_DEFAULT=	${OPTIONS_MULTI} LIBUNWIND LLVM VAAPI VDPAU WAYLAND X11 ZSTD
+OPTIONS_MULTI=		DRI GALLIUM VULKAN
+OPTIONS_MULTI_DRI=	i965
+OPTIONS_MULTI_GALLIUM=	iris r600 radeonsi
+OPTIONS_MULTI_VULKAN=	anv radv
+OPTIONS_EXCLUDE_DragonFly=	LIBUNWIND anv
+OPTIONS_EXCLUDE+=	${ARCH:Namd64:Ni386:C/.+/anv i965 iris/}
+OPTIONS_EXCLUDE+=	${ARCH:Naarch64:Namd64:Ni386:C/.+/LIBUNWIND/}
 OPTIONS_SUB=		yes
+
+# Convert options to -D<type>-drivers=<driver1,driver2,etc>
+.for i in ${OPTIONS_MULTI}
+MESON_ARGS+=		-D${i:tl}-drivers=${${i}_DRIVERS:ts,}
+. for j in ${OPTIONS_MULTI_${i}}
+OPTIONS_DEFAULT+=	${j}
+${j}_VARS+=		${i}_DRIVERS+=${j:S/anv/intel/:S/radv/amd/}
+. endfor
+.endfor
+
+DRI_DESC=		Classic OpenGL drivers
+i965_DESC=		GMA 3000 (Gen4) and newer
+
+GALLIUM_DESC=		Unified OpenGL drivers
+iris_DESC=		Broadwell and newer
+r600_DESC=		R600, R700, Evergreen, Northern Islands
+radeonsi_DESC=		Southern Islands and newer
 
 LIBUNWIND_DESC=		Use libunwind for stacktraces
 LIBUNWIND_LIB_DEPENDS=	libunwind.so:devel/libunwind
 LIBUNWIND_MESON_TRUE=	libunwind
+
+LLVM_DESC=		Build with LLVM support
+LLVM_LIB_DEPENDS=	libLLVM-${LLVM_DEFAULT:C/^([6-9])0/\1/:S/-devel/11/}.so:devel/llvm${LLVM_DEFAULT}
+LLVM_MESON_TRUE=	llvm
+LLVM_BINARY_ALIAS=	llvm-config=llvm-config${LLVM_DEFAULT}
+.for i in r600 radeonsi radv
+${i}_IMPLIES+=		LLVM
+.endfor
 
 VAAPI_BUILD_DEPENDS=	libva>0:multimedia/libva
 VAAPI_MESON_TRUE=	gallium-va
 
 VDPAU_BUILD_DEPENDS=	libvdpau>0:multimedia/libvdpau
 VDPAU_MESON_TRUE=	gallium-vdpau
+
+VULKAN_DESC=		Vulkan drivers and layers
+VULKAN_BUILD_DEPENDS=	glslangValidator:devel/glslang
+VULKAN_MESON_TRUE=	vulkan-device-select-layer vulkan-overlay-layer
+anv_DESC=		Haswell and newer
+radv_DESC=		Southern Islands and newer
 
 WAYLAND_BUILD_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols
 WAYLAND_LIB_DEPENDS=	libwayland-server.so:graphics/wayland
