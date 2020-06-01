@@ -18,7 +18,7 @@ LIB_DEPENDS=	libicudata.so:devel/icu \
 		libmozjs-60.so:lang/spidermonkey60
 RUN_DEPENDS=	erlang-runtime22>=22.0:lang/erlang-runtime22
 
-USES=		cpe gmake libtool ncurses
+USES=		compiler:c++14-lang cpe gmake libtool ncurses
 USE_RC_SUBR=	${PORTNAME}
 
 CONFLICTS=	couchdb[24]*
