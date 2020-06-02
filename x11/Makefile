@@ -107,6 +107,7 @@
     SUBDIR += imwheel
     SUBDIR += innerspace
     SUBDIR += j4-dmenu-desktop
+    SUBDIR += jgmenu
     SUBDIR += kanshi
     SUBDIR += kb2mb2
     SUBDIR += kde-baseapps
