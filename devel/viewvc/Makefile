@@ -37,14 +37,7 @@ MODPYTHON35_RUN_DEPENDS=${APACHE_PKGNAMEPREFIX}mod_python35>=3.5:www/mod_python3
 MODWSGI_RUN_DEPENDS=	${APACHE_PKGNAMEPREFIX}${PYTHON_PKGNAMEPREFIX}mod_wsgi>=4.4.13:www/mod_wsgi4@${PY_FLAVOR}
 MYSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=0:databases/py-MySQLdb@${PY_FLAVOR}
 
-.if defined(WITH_SUBVERSION_VER) && ${WITH_SUBVERSION_VER} == LTS
 SVN_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}subversion-lts>=0:devel/py-subversion@${PY_FLAVOR}
-.elif defined(WITH_SUBVERSION_VER) && ${WITH_SUBVERSION_VER} == 19
-SVN_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}subversion19>=0:devel/py-subversion@${PY_FLAVOR}
-.else
-# default version
-SVN_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}subversion>=0:devel/py-subversion@${PY_FLAVOR}
-.endif
 
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pygments>=1.6:textproc/py-pygments@${PY_FLAVOR}
 

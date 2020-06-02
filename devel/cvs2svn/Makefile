@@ -35,14 +35,7 @@ SUBVERSION_DESC=	Build with subversion support
 GIT_DESC=		Build with git support
 BAZAAR_DESC=		Build with Bazaar support
 
-.if defined(WITH_SUBVERSION_VER) && ${WITH_SUBVERSION_VER} == LTS
 SUBVERSION_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}subversion-lts>=0:devel/py-subversion@${PY_FLAVOR}
-.elif defined(WITH_SUBVERSION_VER) && ${WITH_SUBVERSION_VER} == 19
-SUBVERSION_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}subversion19>=0:devel/py-subversion@${PY_FLAVOR}
-.else
-# default version
-SUBVERSION_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}subversion>=0:devel/py-subversion@${PY_FLAVOR}
-.endif
 
 GIT_RUN_DEPENDS=	${LOCALBASE}/bin/git:devel/git
 BAZAAR_RUN_DEPENDS=	${LOCALBASE}/bin/bzr:devel/bzr
