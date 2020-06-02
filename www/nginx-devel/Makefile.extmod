@@ -157,7 +157,7 @@ HTTP_TARANTOOL_GH_TUPLE=	tarantool:nginx_upstream_module:27836e4:nginx_tarantool
 HTTP_TARANTOOL_VARS=		DSO_EXTMODS+=nginx_tarantool
 HTTP_TARANTOOL_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_tarantool-config
 
-HTTP_UPLOAD_GH_TUPLE=		Austinb:nginx-upload-module:72ec037:upload
+HTTP_UPLOAD_GH_TUPLE=		fdintino:nginx-upload-module:aa42509:upload
 HTTP_UPLOAD_VARS=		DSO_EXTMODS+=upload
 
 HTTP_UPLOAD_PROGRESS_GH_TUPLE=	masterzen:nginx-upload-progress-module:afb2d31:uploadprogress
@@ -207,7 +207,7 @@ LUA_CONFIGURE_ENV=	LUAJIT_INC=${LOCALBASE}/include/luajit-2.1 \
 LUA_GH_TUPLE=		openresty:lua-nginx-module:v0.10.15:lua
 LUA_VARS=		DSO_EXTMODS+=lua
 
-LINK_GH_TUPLE=		Taymindis:nginx-link-function:3.2.1:link
+LINK_GH_TUPLE=		Taymindis:nginx-link-function:3.2.2:link
 LINK_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nginx-link-function-config \
 			${PATCHDIR}/extra-patch-ngx_link_func_module.c
 LINK_VARS=		DSO_EXTMODS+=link
