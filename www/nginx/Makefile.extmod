@@ -208,7 +208,7 @@ ICONV_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-calio-iconv-nginx-module-config
 LET_GH_TUPLE=		arut:nginx-let-module:v0.0.4:let
 LET_CONFIGURE_ON=	--add-module=${WRKSRC_let}
 
-LINK_GH_TUPLE=		Taymindis:nginx-link-function:3.2.1:link
+LINK_GH_TUPLE=		Taymindis:nginx-link-function:3.2.2:link
 LINK_CONFIGURE_ON=	--add-module=${WRKSRC_link}
 LINK_EXTRA_PATCHES=     ${PATCHDIR}/extra-patch-nginx-link-function-config \
 				${PATCHDIR}/extra-patch-ngx_link_func_module.c
