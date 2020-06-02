@@ -1,15 +1,15 @@
 Only select the "tools" part of bind for building.
 
---- Makefile.am.orig	2020-05-10 23:44:14 UTC
+--- Makefile.am.orig	2020-06-01 11:40:58 UTC
 +++ Makefile.am
 @@ -8,6 +8,4 @@ CLEANFILES = bind.keys.h
  bind.keys.h: bind.keys Makefile
- 	${PERL} ${top_srcdir}/util/bindkeys.pl < ${top_srcdir}/bind.keys > $@
+ 	${PERL} ${top_srcdir}/util/bindkeys.pl ${top_srcdir}/bind.keys > $@
  
 -dist_sysconf_DATA = bind.keys
 -
  .PHONY: doc
---- bin/Makefile.am.orig	2020-05-10 23:44:14 UTC
+--- bin/Makefile.am.orig	2020-06-01 11:40:58 UTC
 +++ bin/Makefile.am
 @@ -1,4 +1,4 @@
 -SUBDIRS = named rndc dig delv dnssec tools nsupdate check confgen tests plugins

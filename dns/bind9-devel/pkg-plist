@@ -1,4 +1,8 @@
 %%DNSTAP%%bin/dnstap-read
+%%NATIVE_PKCS11%%bin/pkcs11-destroy
+%%NATIVE_PKCS11%%bin/pkcs11-keygen
+%%NATIVE_PKCS11%%bin/pkcs11-list
+%%NATIVE_PKCS11%%bin/pkcs11-tokens
 @sample etc/mtree/BIND.chroot.dist.sample
 @sample etc/mtree/BIND.chroot.local.dist.sample
 %%ETCDIR%%/bind.keys
@@ -303,10 +307,6 @@ sbin/named-checkconf
 sbin/named-checkzone
 sbin/named-compilezone
 %%LMDB%%sbin/named-nzd2nzf
-%%NATIVE_PKCS11%%sbin/pkcs11-destroy
-%%NATIVE_PKCS11%%sbin/pkcs11-keygen
-%%NATIVE_PKCS11%%sbin/pkcs11-list
-%%NATIVE_PKCS11%%sbin/pkcs11-tokens
 sbin/rndc
 sbin/rndc-confgen
 sbin/tsig-confgen
