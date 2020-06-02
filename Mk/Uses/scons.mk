@@ -22,6 +22,8 @@ scons_ARGS=	python3
 _SCONS_PYTHON_VER=	${PYTHON3_DEFAULT}
 .elif ${scons_ARGS} == python2
 _SCONS_PYTHON_VER=	${PYTHON2_DEFAULT}
+DEPRECATED?=	Uses Python 2.7 version of scons, and Python 2.7 which is EOLed upstream
+EXPIRATION_DATE?=	2020-12-31
 .else
 IGNORE=		Incorrect 'USES+= scons:${scons_ARGS}' usage
 .endif
