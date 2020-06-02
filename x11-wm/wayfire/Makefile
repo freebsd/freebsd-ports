@@ -5,6 +5,9 @@ DISTVERSION=	0.4.0
 PORTREVISION=	1
 CATEGORIES=	x11-wm
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	e5b6f1245709.patch:-p1 # https://github.com/WayfireWM/wayfire/pull/472
+
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	3D Wayland compositor
 
