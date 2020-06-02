@@ -1,0 +1,4 @@
+txredisapi is a non-blocking client driver for the redis database, written in
+python. It uses twisted for the asynchronous communication with redis.
+
+WWW: https://github.com/IlyaSkriblovsky/txredisapi
