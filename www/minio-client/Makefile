@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	minio-client
-PORTVERSION=    ${GH_TAGNAME:S/RELEASE.//:S/Z//:S/T/-/:S/-/./g}
+PORTVERSION=	${GH_TAGNAME:S/RELEASE.//:S/Z//:S/T/-/:S/-/./g}
 CATEGORIES=	www
 
 MAINTAINER=	jhixson@FreeBSD.org
@@ -26,8 +26,8 @@ MC=	${PORTNAME}
 .endif
 
 USE_GITHUB=	yes
-GHTAG=		RELEASE.2020-05-16T01-44-37Z
-COMMIT_ID=	3b479cf92ed650079a069b1288049524232d6d6f
+GHTAG=		RELEASE.2020-05-28T23-43-36Z
+COMMIT_ID=	2403e7a7441b85c19ff4155568b409457bd14958
 
 GH_TUPLE=	minio:mc:${GHTAG}:DEFAULT \
 		StackExchange:wmi:cbe66965904d:stackexchange_wmi/vendor/github.com/StackExchange/wmi \
@@ -37,10 +37,10 @@ GH_TUPLE=	minio:mc:${GHTAG}:DEFAULT \
 		dustin:go-humanize:v1.0.0:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
 		fatih:color:v1.7.0:fatih_color/vendor/github.com/fatih/color \
 		fatih:structs:v1.1.0:fatih_structs/vendor/github.com/fatih/structs \
-		go-check:check:788fd7840127:go_check_check/vendor/gopkg.in/check.v1 \
+		go-check:check:8fa46927fb4f:go_check_check/vendor/gopkg.in/check.v1 \
 		go-ini:ini:v1.55.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
 		go-ole:go-ole:v1.2.4:go_ole_go_ole/vendor/github.com/go-ole/go-ole \
-		go-yaml:yaml:v2.2.4:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
+		go-yaml:yaml:v2.2.8:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		gogo:protobuf:v1.2.1:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang:crypto:1d94cc7ab1c6:golang_crypto/vendor/golang.org/x/crypto \
 		golang:net:d3edc9973b7e:golang_net/vendor/golang.org/x/net \
@@ -55,20 +55,20 @@ GH_TUPLE=	minio:mc:${GHTAG}:DEFAULT \
 		inconshreveable:go-update:8152e7eb6ccf:inconshreveable_go_update/vendor/github.com/inconshreveable/go-update \
 		json-iterator:go:v1.1.9:json_iterator_go/vendor/github.com/json-iterator/go \
 		klauspost:compress:v1.10.3:klauspost_compress/vendor/github.com/klauspost/compress \
-		kr:pretty:v0.1.0:kr_pretty/vendor/github.com/kr/pretty \
-		kr:text:v0.1.0:kr_text/vendor/github.com/kr/text \
+		kr:text:v0.2.0:kr_text/vendor/github.com/kr/text \
 		mattn:go-colorable:v0.1.4:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-isatty:v0.0.8:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		mattn:go-runewidth:v0.0.5:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
 		minio:cli:v1.22.0:minio_cli/vendor/github.com/minio/cli \
-		minio:minio-go:a81c8c13cc3f:minio_minio_go_v6/vendor/github.com/minio/minio-go/v6 \
-		minio:minio:282c9f790a03:minio_minio/vendor/github.com/minio/minio \
+		minio:minio-go:44a5f2e3b76b:minio_minio_go_v6/vendor/github.com/minio/minio-go/v6 \
+		minio:minio:cccf2de129da:minio_minio/vendor/github.com/minio/minio \
 		minio:sha256-simd:v0.1.1:minio_sha256_simd/vendor/github.com/minio/sha256-simd \
 		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
 		modern-go:concurrent:bacd9c7ef1dd:modern_go_concurrent/vendor/github.com/modern-go/concurrent \
 		modern-go:reflect2:v1.0.1:modern_go_reflect2/vendor/github.com/modern-go/reflect2 \
 		montanaflynn:stats:v0.5.0:montanaflynn_stats/vendor/github.com/montanaflynn/stats \
 		ncw:directio:v1.0.5:ncw_directio/vendor/github.com/ncw/directio \
+		niemeyer:pretty:a10e7caefd8e:niemeyer_pretty/vendor/github.com/niemeyer/pretty \
 		pkg:profile:v1.3.0:pkg_profile/vendor/github.com/pkg/profile \
 		pkg:xattr:v0.4.1:pkg_xattr/vendor/github.com/pkg/xattr \
 		posener:complete:6ffe496ea953:posener_complete/vendor/github.com/posener/complete \
