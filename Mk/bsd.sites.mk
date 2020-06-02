@@ -668,15 +668,18 @@ MASTER_SITE_GIMP+= \
 .if !defined(IGNORE_MASTER_SITE_GNU)
 MASTER_SITE_GNU+= \
 	https://ftpmirror.gnu.org/%SUBDIR%/ \
-	https://ftp.gnu.org/gnu/%SUBDIR%/ \
-	ftp://ftp.gnu.org/gnu/%SUBDIR%/ \
-	http://www.gtlib.gatech.edu/pub/gnu/gnu/%SUBDIR%/ \
 	https://mirrors.kernel.org/gnu/%SUBDIR%/ \
-	ftp://ftp.kddlabs.co.jp/GNU/gnu/%SUBDIR%/ \
+	https://mirror.netcologne.de/gnu/%SUBDIR%/ \
+	https://www.nic.funet.fi/pub/gnu/gnu/%SUBDIR%/ \
+	http://mirror.navercorp.com/gnu/%SUBDIR%/ \
+	http://ftp.halifax.rwth-aachen.de/gnu/%SUBDIR%/ \
+	http://download.xs4all.nl/gnu/%SUBDIR%/ \
+	http://ftp.kddilabs.jp/GNU/gnu/%SUBDIR%/ \
+	ftp://mirrors.rit.edu/gnu/%SUBDIR%/ \
+	ftp://ftp.fu-berlin.de/unix/gnu/%SUBDIR%/ \
 	ftp://ftp.mirrorservice.org/sites/ftp.gnu.org/gnu/%SUBDIR%/ \
-	ftp://ftp.informatik.hu-berlin.de/pub/gnu/gnu/%SUBDIR%/ \
-	ftp://ftp.informatik.rwth-aachen.de/pub/mirror/ftp.gnu.org/pub/gnu/%SUBDIR%/ \
-	http://ftp.funet.fi/pub/gnu/prep/%SUBDIR%/
+	ftp://ftp.cse.yzu.edu.tw/gnu/%SUBDIR%/ \
+	https://ftp.gnu.org/gnu/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_GNUPG)
@@ -1200,11 +1203,15 @@ MASTER_SITE_XORG+= \
 
 .if !defined(IGNORE_MASTER_SITE_KERNEL_ORG)
 MASTER_SITE_KERNEL_ORG+= \
+	https://cdn.kernel.org/pub/%SUBDIR%/ \
 	https://www.kernel.org/pub/%SUBDIR%/ \
+	https://download.xs4all.nl/ftp.kernel.org/pub/%SUBDIR%/ \
+	https://mirrors.mit.edu/kernel/%SUBDIR%/ \
+	http://ftp.nara.wide.ad.jp/pub/kernel.org/%SUBDIR%/ \
+	http://ftp.yandex.ru/pub/%SUBDIR%/ \
+	http://ftp.heanet.ie/pub/kernel.org/pub/%SUBDIR%/ \
 	ftp://ftp.ntu.edu.tw/%SUBDIR%/ \
-	https://ftp.yandex.ru/pub/%SUBDIR%/ \
-	https://ftp.heanet.ie/pub/%SUBDIR%/ \
-	http://slackware.cs.utah.edu/pub/kernel.org/pub/%SUBDIR%/
+	ftp://ftp.riken.jp/Linux/kernel.org/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_ZI)
