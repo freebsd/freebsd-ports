@@ -200,6 +200,8 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/envvar/FFLAGS.rst
 %%DATADIR%%/Help/envvar/LDFLAGS.rst
 %%DATADIR%%/Help/envvar/MACOSX_DEPLOYMENT_TARGET.rst
+%%DATADIR%%/Help/envvar/OBJC.rst
+%%DATADIR%%/Help/envvar/OBJCXX.rst
 %%DATADIR%%/Help/envvar/PackageName_ROOT.rst
 %%DATADIR%%/Help/envvar/RC.rst
 %%DATADIR%%/Help/envvar/RCFLAGS.rst
