@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	webalizer-geodb
-PORTVERSION=	20200501
+PORTVERSION=	20200601
 CATEGORIES+=	net
 MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/geodb/
 
