@@ -54,7 +54,6 @@
     SUBDIR += boringssl
     SUBDIR += botan110
     SUBDIR += botan2
-    SUBDIR += bro
     SUBDIR += broccoli
     SUBDIR += bruteblock
     SUBDIR += bruteforceblocker
