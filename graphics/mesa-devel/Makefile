@@ -3,6 +3,7 @@
 PORTNAME=	mesa
 DISTVERSION=	20.1-branchpoint-1363
 DISTVERSIONSUFFIX=	-gfb62e642ae6
+PORTREVISION=	1
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	-devel
 
@@ -24,6 +25,7 @@ PATCHFILES+=	227ebbd9e837.patch:-p1
 PATCHFILES+=	de60a36d5836.patch:-p1
 PATCHFILES+=	614e5280165b.patch:-p1
 PATCHFILES+=	15057d74fdb9.patch:-p1
+PATCHFILES+=	4902067868ea.patch:-p1
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Bleeding edge Mesa drivers (OpenGL, Vulkan)
