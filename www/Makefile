@@ -311,6 +311,7 @@
     SUBDIR += linux-opera
     SUBDIR += litmus
     SUBDIR += ljdeps
+    SUBDIR += logswan
     SUBDIR += logtools
     SUBDIR += lua-resty-core
     SUBDIR += lua-resty-lrucache
