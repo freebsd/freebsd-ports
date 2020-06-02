@@ -5,7 +5,6 @@ bin/ocp-curses
 lib/ocp/autoload/10-devi.so
 lib/ocp/autoload/10-hardware.so
 lib/ocp/autoload/10-mchasm.so
-lib/ocp/autoload/10-mixclip.so
 lib/ocp/autoload/10-sets.so
 lib/ocp/autoload/11-framelock.so
 lib/ocp/autoload/12-poutput.so

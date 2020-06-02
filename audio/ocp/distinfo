@@ -1,5 +1,7 @@
-TIMESTAMP = 1575554501
-SHA256 (mywave82-opencubicplayer-v0.2.1_GH0.tar.gz) = 49ab335f848e6b76b9c98d929ac2c4567c37c69a2dac14260c863fca260b0293
-SIZE (mywave82-opencubicplayer-v0.2.1_GH0.tar.gz) = 1023061
+TIMESTAMP = 1591003840
+SHA256 (mywave82-opencubicplayer-v0.2.2_GH0.tar.gz) = 5d90a1755ea1be7045a18af55e712e6b5da8f21dd9f8add5a0c5271685cc2cf0
+SIZE (mywave82-opencubicplayer-v0.2.2_GH0.tar.gz) = 1188111
 SHA256 (mywave82-timidity-77cd92d_GH0.tar.gz) = 66b9fd32dd8587a1b9f423fe324f5d0e6ab697780514861e3e20406905706efa
 SIZE (mywave82-timidity-77cd92d_GH0.tar.gz) = 1763114
+SHA256 (mywave82-sidplay-residfp-ocp-152551f_GH0.tar.gz) = cf620c1a49fa1a9fe488845e49bb9266a304f2d9cf86b2750165fee9c046cea3
+SIZE (mywave82-sidplay-residfp-ocp-152551f_GH0.tar.gz) = 906248
