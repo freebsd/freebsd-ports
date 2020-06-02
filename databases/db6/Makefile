@@ -12,6 +12,9 @@ PKGNAMEPREFIX?=
 DISTNAME=	db-${PORTVERSION}
 DIST_SUBDIR=	bdb
 
+DEPRECATED=	latest 6.2.x version and newer not downloadable without registration
+EXPIRATION_DATE=2020-12-02
+
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Oracle Berkeley DB, revision ${BDBVER}
 
