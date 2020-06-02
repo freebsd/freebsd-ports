@@ -9,7 +9,8 @@ MASTER_SITES=	https://dev.entrouvert.org/releases/lasso/
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Free Liberty Alliance Implementation
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libltdl.so:devel/libltdl \
 		libxmlsec1-openssl.so:security/xmlsec1
@@ -29,7 +30,7 @@ OPTIONS_SUB=	yes
 PERL_CONFIGURE_ENABLE=	perl
 PERL_USES=	perl5
 PYTHON_CONFIGURE_ENABLE=python
-INSTALL_TARGET=install-strip
+INSTALL_TARGET=	install-strip
 
 post-patch:
 	@${REINPLACE_CMD} -E 's,(xmlsec1-openssl >= 1\.2\.6) openssl,\1,' \
