@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libepoll-shim
-PORTVERSION=	0.0.20200223
+PORTVERSION=	0.0.20200602
 CATEGORIES=	devel
 
 MAINTAINER=	x11@FreeBSD.org
@@ -14,9 +14,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		cmake compiler:c11
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
-GH_ACCOUNT=	FreeBSDDesktop
+GH_ACCOUNT=	jiixyj
 GH_PROJECT=	epoll-shim
-GH_TAGNAME=	ae12186
+GH_TAGNAME=	3840e9c
 
 do-test:
 	# Exclude certain tests in resource restricted environments
