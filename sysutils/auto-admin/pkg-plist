@@ -103,6 +103,7 @@ sbin/auto-restore-user
 sbin/auto-root-check
 sbin/auto-secure-directory
 sbin/auto-service-enabled
+sbin/auto-set-conf-var
 sbin/auto-set-hostname
 sbin/auto-set-lid-switch-mode
 sbin/auto-set-memory-limits
@@ -111,6 +112,7 @@ sbin/auto-set-umask
 sbin/auto-sound-driver-setup
 sbin/auto-ssh-authorize
 sbin/auto-ssh-reverse-authorize
+sbin/auto-su+j-toggle
 sbin/auto-transfer-pw
 sbin/auto-unlock-local-pw
 sbin/auto-unlock-user
@@ -121,5 +123,6 @@ sbin/auto-useradd
 sbin/auto-using-pkgsrc
 sbin/auto-wheel-check
 sbin/auto-wifi-failover
+sbin/auto-write-cache-toggle
 sbin/auto-xdm-toggle
 %%DATADIR%%/ipfw-rules.sh

@@ -1,17 +1,18 @@
 # $FreeBSD$
 
 PORTNAME=	auto-admin
-DISTVERSION=	0.6.2
+DISTVERSION=	0.6.4
 CATEGORIES=	sysutils
-MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
-		http://outpaddling.mooo.com/~bacon/Acadix/Ports/distfiles/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Portable tools for automating systems management
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		tar:xz
+USE_GITHUB=	yes
+
+GH_ACCOUNT=	outpaddling
 
 NO_BUILD=	yes
 NO_ARCH=	yes
