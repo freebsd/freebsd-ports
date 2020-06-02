@@ -2,7 +2,7 @@
 
 PORTNAME=	dnscontrol
 DISTVERSIONPREFIX=v
-DISTVERSION=	3.1.1
+DISTVERSION=	3.2.0
 CATEGORIES=	dns
 
 MAINTAINER=	decke@FreeBSD.org
@@ -30,7 +30,7 @@ GH_TUPLE=	\
 		DisposaBoy:JsonConfigReader:5ea4d0ddac55:disposaboy_jsonconfigreader/vendor/github.com/DisposaBoy/JsonConfigReader \
 		TomOnTime:utfutil:09c41003ee1d:tomontime_utfutil/vendor/github.com/TomOnTime/utfutil \
 		andreyvit:diff:c7f18ee00883:andreyvit_diff/vendor/github.com/andreyvit/diff \
-		aws:aws-sdk-go:v1.31.4:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
+		aws:aws-sdk-go:v1.31.7:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
 		billputer:go-namecheap:0c7adb0710f8:billputer_go_namecheap/vendor/github.com/billputer/go-namecheap \
 		cenkalti:backoff:v2.1.1:cenkalti_backoff/vendor/github.com/cenkalti/backoff \
 		census-instrumentation:opencensus-go:v0.22.3:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
@@ -44,6 +44,7 @@ GH_TUPLE=	\
 		go-acme:lego:v2.7.2:go_acme_lego/vendor/github.com/go-acme/lego \
 		go-ini:ini:v1.42.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
 		go-sourcemap:sourcemap:v1.0.5:go_sourcemap_sourcemap/vendor/gopkg.in/sourcemap.v1 \
+		go-yaml:yaml:2ff61e1afc86:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
 		go-yaml:yaml:v2.3.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		gobwas:glob:e7a84e9525fe:gobwas_glob/vendor/github.com/gobwas/glob \
 		gofrs:uuid:v3.2.0:gofrs_uuid/vendor/github.com/gofrs/uuid \
@@ -51,7 +52,7 @@ GH_TUPLE=	\
 		golang:crypto:891825fb96df:golang_crypto/vendor/golang.org/x/crypto \
 		golang:groupcache:8c9f03a8e57e:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:mod:v0.3.0:golang_mod/vendor/golang.org/x/mod \
-		golang:net:0ba52f642ac2:golang_net/vendor/golang.org/x/net \
+		golang:net:3c3fba18258b:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:bf48bf16ab8d:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.4.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:snappy:v0.0.1:golang_snappy/vendor/github.com/golang/snappy \
@@ -86,6 +87,7 @@ GH_TUPLE=	\
 		miekg:dns:v1.1.29:miekg_dns/vendor/github.com/miekg/dns \
 		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
 		mitchellh:mapstructure:v1.1.2:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
+		mittwald:go-powerdns:v0.4.0:mittwald_go_powerdns/vendor/github.com/mittwald/go-powerdns \
 		mjibson:esc:v0.2.0:mjibson_esc/vendor/github.com/mjibson/esc \
 		namedotcom:go:08470befbe04:namedotcom_go/vendor/github.com/namedotcom/go \
 		ns1:ns1-go:c563826f4cbe:ns1_ns1_go/vendor/gopkg.in/ns1/ns1-go.v2 \
@@ -103,7 +105,7 @@ GH_TUPLE=	\
 		smartystreets:goconvey:68dc04aab96a:smartystreets_goconvey/vendor/github.com/smartystreets/goconvey \
 		softlayer:softlayer-go:5e1c8cccc730:softlayer_softlayer_go/vendor/github.com/softlayer/softlayer-go \
 		square:go-jose:v2.3.1:square_go_jose/vendor/gopkg.in/square/go-jose.v2 \
-		stretchr:testify:v1.5.1:stretchr_testify/vendor/github.com/stretchr/testify \
+		stretchr:testify:v1.6.0:stretchr_testify/vendor/github.com/stretchr/testify \
 		tdewolff:minify:v2.3.6:tdewolff_minify/vendor/github.com/tdewolff/minify \
 		tdewolff:parse:v2.3.4:tdewolff_parse/vendor/github.com/tdewolff/parse \
 		tdewolff:test:v1.0.6:tdewolff_test/vendor/github.com/tdewolff/test \
