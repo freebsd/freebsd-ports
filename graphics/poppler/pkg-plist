@@ -80,6 +80,7 @@ include/poppler/XRef.h
 include/poppler/cpp/poppler-destination.h
 include/poppler/cpp/poppler-document.h
 include/poppler/cpp/poppler-embedded-file.h
+include/poppler/cpp/poppler-font-private.h
 include/poppler/cpp/poppler-font.h
 include/poppler/cpp/poppler-global.h
 include/poppler/cpp/poppler-image.h
@@ -131,7 +132,7 @@ include/poppler/splash/SplashXPath.h
 include/poppler/splash/SplashXPathScanner.h
 lib/libpoppler-cpp.so
 lib/libpoppler-cpp.so.0
-lib/libpoppler-cpp.so.0.8.0
+lib/libpoppler-cpp.so.0.9.0
 lib/libpoppler.so
 lib/libpoppler.so.%%SHLIB_VER%%
 lib/libpoppler.so.%%SHLIB_VER%%.0.0
