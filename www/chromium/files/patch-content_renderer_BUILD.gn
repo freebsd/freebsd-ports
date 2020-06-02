@@ -1,0 +1,18 @@
+--- content/renderer/BUILD.gn.orig	2020-05-19 08:32:02 UTC
++++ content/renderer/BUILD.gn
+@@ -463,10 +463,11 @@ target(link_target_type, "renderer") {
+   }
+ 
+   if (is_linux) {
+-    deps += [
+-      "//components/services/font/public/cpp",
+-      "//services/service_manager/zygote",
+-    ]
++    deps += [ "//components/services/font/public/cpp" ]
++
++    if (!is_bsd) {
++      deps += [ "//services/service_manager/zygote" ]
++    }
+   }
+ 
+   if (is_mac) {

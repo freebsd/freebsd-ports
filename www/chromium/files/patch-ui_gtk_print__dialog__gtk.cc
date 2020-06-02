@@ -1,5 +1,5 @@
---- chrome/browser/ui/gtk/print_dialog_gtk.cc.orig	2020-03-16 18:40:30 UTC
-+++ chrome/browser/ui/gtk/print_dialog_gtk.cc
+--- ui/gtk/print_dialog_gtk.cc.orig	2020-03-16 18:40:30 UTC
++++ ui/gtk/print_dialog_gtk.cc
 @@ -336,7 +336,7 @@ void PrintDialogGtk::ShowDialog(
    // Since we only generate PDF, only show printers that support PDF.
    // TODO(thestig) Add more capabilities to support?

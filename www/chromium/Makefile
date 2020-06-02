@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chromium
-PORTVERSION=	81.0.4044.138
-PORTREVISION=	1
+PORTVERSION=	83.0.4103.61
 CATEGORIES?=	www java
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/ \
 		LOCAL/cpm/chromium/:fonts
@@ -90,7 +89,7 @@ USE_PERL5=	build
 USE_XORG=	x11 xcb xcomposite xcursor xext xdamage xfixes xi \
 		xorgproto xrandr xrender xscrnsaver xtst
 USE_GNOME=	atk dconf glib20 gtk30 libxml2 libxslt
-SHEBANG_FILES=	chrome/tools/build/linux/chrome-wrapper
+SHEBANG_FILES=	chrome/tools/build/linux/chrome-wrapper buildtools/linux64/clang-format
 ALL_TARGET=	chrome
 INSTALLS_ICONS=	yes
 
@@ -276,6 +275,11 @@ do-configure:
 	@${MKDIR} ${WRKDIR}/bin
 	${LN} -sf ${LOCALBASE}/openjdk8/bin/java ${WRKDIR}/bin/java
 .endif
+
+	# Setup buildtools/freebsd
+	@${MKDIR} ${WRKSRC}/buildtools/freebsd
+	${LN} -sf ${WRKSRC}/buildtools/linux64/clang-format ${WRKSRC}/buildtools/freebsd
+	${LN} -sf ${WRKSRC}/out/${BUILDTYPE}/gn ${WRKSRC}/buildtools/freebsd
 .endif
 
 do-test-TEST-on:

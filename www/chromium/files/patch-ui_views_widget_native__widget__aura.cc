@@ -1,4 +1,4 @@
---- ui/views/widget/native_widget_aura.cc.orig	2020-03-16 18:40:43 UTC
+--- ui/views/widget/native_widget_aura.cc.orig	2020-05-13 18:40:37 UTC
 +++ ui/views/widget/native_widget_aura.cc
 @@ -64,7 +64,7 @@
  #include "ui/views/widget/desktop_aura/desktop_window_tree_host_win.h"
@@ -9,7 +9,7 @@
  #include "ui/views/linux_ui/linux_ui.h"
  #include "ui/views/widget/desktop_aura/desktop_window_tree_host_linux.h"
  #endif
-@@ -1099,13 +1099,13 @@ void Widget::CloseAllSecondaryWidgets() {
+@@ -1102,13 +1102,13 @@ void Widget::CloseAllSecondaryWidgets() {
    EnumThreadWindows(GetCurrentThreadId(), WindowCallbackProc, 0);
  #endif
  

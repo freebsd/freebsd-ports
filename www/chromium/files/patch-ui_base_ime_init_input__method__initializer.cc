@@ -1,4 +1,4 @@
---- ui/base/ime/init/input_method_initializer.cc.orig	2019-06-04 18:55:49 UTC
+--- ui/base/ime/init/input_method_initializer.cc.orig	2020-05-13 18:40:37 UTC
 +++ ui/base/ime/init/input_method_initializer.cc
 @@ -8,7 +8,7 @@
  
@@ -27,7 +27,7 @@
    if (!g_linux_input_method_context_factory_for_testing)
      g_linux_input_method_context_factory_for_testing =
          new FakeInputMethodContextFactory();
-@@ -67,7 +67,7 @@ void InitializeInputMethodForTesting() {
+@@ -65,7 +65,7 @@ void InitializeInputMethodForTesting() {
  void ShutdownInputMethodForTesting() {
  #if defined(OS_CHROMEOS)
    IMEBridge::Shutdown();

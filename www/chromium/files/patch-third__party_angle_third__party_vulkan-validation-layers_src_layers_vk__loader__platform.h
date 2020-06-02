@@ -1,7 +1,7 @@
---- third_party/angle/third_party/vulkan-validation-layers/src/layers/vk_loader_platform.h.orig	2019-03-11 22:08:06 UTC
+--- third_party/angle/third_party/vulkan-validation-layers/src/layers/vk_loader_platform.h.orig	2020-05-13 18:41:57 UTC
 +++ third_party/angle/third_party/vulkan-validation-layers/src/layers/vk_loader_platform.h
-@@ -31,7 +31,7 @@
- #include "vulkan/vk_platform.h"
+@@ -33,7 +33,7 @@
+ #undef NOMINMAX
  #include "vulkan/vk_sdk_platform.h"
  
 -#if defined(__linux__) || defined(__APPLE__)

@@ -1,4 +1,4 @@
---- media/mojo/mojom/video_frame_mojom_traits.cc.orig	2020-02-24 18:39:18 UTC
+--- media/mojo/mojom/video_frame_mojom_traits.cc.orig	2020-05-13 18:40:32 UTC
 +++ media/mojo/mojom/video_frame_mojom_traits.cc
 @@ -20,9 +20,9 @@
  #include "ui/gfx/mojom/buffer_types_mojom_traits.h"
@@ -12,19 +12,19 @@
  
  namespace mojo {
  
-@@ -60,7 +60,7 @@ media::mojom::VideoFrameDataPtr MakeVideoFrameData(
-             mojo_frame->PlaneOffset(media::VideoFrame::kVPlane)));
+@@ -62,7 +62,7 @@ media::mojom::VideoFrameDataPtr MakeVideoFrameData(
+             std::move(offsets)));
    }
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
    if (input->storage_type() == media::VideoFrame::STORAGE_DMABUFS) {
-     std::vector<mojo::ScopedHandle> dmabuf_fds;
+     std::vector<mojo::PlatformHandle> dmabuf_fds;
  
-@@ -161,7 +161,7 @@ bool StructTraits<media::mojom::VideoFrameDataView,
-         shared_buffer_data.u_offset(), shared_buffer_data.v_offset(),
-         shared_buffer_data.y_stride(), shared_buffer_data.u_stride(),
-         shared_buffer_data.v_stride(), timestamp);
+@@ -165,7 +165,7 @@ bool StructTraits<media::mojom::VideoFrameDataView,
+         shared_buffer_data.TakeFrameData(),
+         shared_buffer_data.frame_data_size(), std::move(offsets),
+         std::move(strides), timestamp);
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
    } else if (data.is_dmabuf_data()) {

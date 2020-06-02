@@ -1,6 +1,6 @@
---- net/base/features.cc.orig	2020-03-17 10:02:15 UTC
+--- net/base/features.cc.orig	2020-05-13 18:40:32 UTC
 +++ net/base/features.cc
-@@ -88,7 +88,7 @@ const base::FeatureParam<int>
+@@ -92,7 +92,7 @@ const base::Feature kBlockExternalRequestsFromNonSecur
  #if BUILDFLAG(BUILTIN_CERT_VERIFIER_FEATURE_SUPPORTED)
  const base::Feature kCertVerifierBuiltinFeature {
    "CertVerifierBuiltin",

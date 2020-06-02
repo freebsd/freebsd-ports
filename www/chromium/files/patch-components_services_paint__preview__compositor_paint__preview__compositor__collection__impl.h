@@ -1,6 +1,6 @@
---- components/services/paint_preview_compositor/paint_preview_compositor_collection_impl.h.orig	2020-02-26 13:13:33 UTC
+--- components/services/paint_preview_compositor/paint_preview_compositor_collection_impl.h.orig	2020-05-13 18:39:42 UTC
 +++ components/services/paint_preview_compositor/paint_preview_compositor_collection_impl.h
-@@ -19,7 +19,7 @@
+@@ -20,7 +20,7 @@
  #include "mojo/public/cpp/bindings/pending_receiver.h"
  #include "mojo/public/cpp/bindings/receiver.h"
  
@@ -9,7 +9,7 @@
  #include "components/services/font/public/cpp/font_loader.h"
  #include "third_party/skia/include/core/SkRefCnt.h"
  #endif
-@@ -68,7 +68,7 @@ class PaintPreviewCompositorCollectionImpl
+@@ -74,7 +74,7 @@ class PaintPreviewCompositorCollectionImpl
                   std::unique_ptr<PaintPreviewCompositorImpl>>
        compositors_;
  

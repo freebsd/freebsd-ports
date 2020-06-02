@@ -1,6 +1,6 @@
---- chrome/common/chrome_features.cc.orig	2020-03-16 18:40:30 UTC
+--- chrome/common/chrome_features.cc.orig	2020-05-13 18:40:25 UTC
 +++ chrome/common/chrome_features.cc
-@@ -86,13 +86,13 @@ const base::Feature kAsyncDns {
+@@ -66,13 +66,13 @@ const base::Feature kAsyncDns {
  #endif
  };
  
@@ -14,5 +14,5 @@
 -#endif  // defined(OS_WIN) || defined(OS_LINUX)
 +#endif  // defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD)
  
- // Once the user declines a notification permission prompt in a WebContents,
- // automatically dismiss subsequent prompts in the same WebContents, from any
+ #if !defined(OS_ANDROID)
+ // Enables logging UKMs for background tab activity by TabActivityWatcher.

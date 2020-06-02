@@ -1,6 +1,6 @@
---- content/shell/browser/shell_browser_main_parts.cc.orig	2019-12-16 21:51:26 UTC
+--- content/shell/browser/shell_browser_main_parts.cc.orig	2020-05-13 18:40:32 UTC
 +++ content/shell/browser/shell_browser_main_parts.cc
-@@ -47,7 +47,7 @@
+@@ -46,7 +46,7 @@
  #if defined(USE_AURA) && defined(USE_X11)
  #include "ui/events/devices/x11/touch_factory_x11.h"  // nogncheck
  #endif
@@ -9,7 +9,7 @@
  #include "ui/base/ime/init/input_method_initializer.h"
  #endif
  #if defined(OS_CHROMEOS)
-@@ -123,7 +123,7 @@ int ShellBrowserMainParts::PreEarlyInitialization() {
+@@ -122,7 +122,7 @@ int ShellBrowserMainParts::PreEarlyInitialization() {
  #if defined(USE_X11)
    ui::SetDefaultX11ErrorHandlers();
  #endif

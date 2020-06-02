@@ -1,0 +1,34 @@
+--- content/test/BUILD.gn.orig	2020-05-19 08:32:40 UTC
++++ content/test/BUILD.gn
+@@ -1337,15 +1337,22 @@ test("content_browsertests") {
+   }
+ 
+   if (is_linux) {
+-    sources += [
+-      "../browser/utility_process_sandbox_browsertest.cc",
+-      "../zygote/zygote_browsertest.cc",
+-    ]
+-    deps += [
+-      "//services/service_manager/tests:interfaces",
+-      "//services/service_manager/zygote",
+-      "//ui/gfx:test_support",
+-    ]
++    if (is_bsd) {
++      deps += [
++        "//services/service_manager/tests:interfaces",
++        "//ui/gfx:test_support",
++      ]
++    } else {
++      sources += [
++        "../browser/utility_process_sandbox_browsertest.cc",
++        "../zygote/zygote_browsertest.cc",
++      ]
++      deps += [
++        "//services/service_manager/tests:interfaces",
++        "//services/service_manager/zygote",
++        "//ui/gfx:test_support",
++      ]
++    }
+ 
+     if (use_atk) {
+       sources += [

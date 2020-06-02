@@ -1,4 +1,4 @@
---- extensions/common/api/_permission_features.json.orig	2020-02-03 21:53:31 UTC
+--- extensions/common/api/_permission_features.json.orig	2020-05-18 18:40:23 UTC
 +++ extensions/common/api/_permission_features.json
 @@ -135,7 +135,7 @@
      {
@@ -9,16 +9,16 @@
        "whitelist": [
          "1C93BD3CF875F4A73C0B2A163BB8FBDA8B8B3D80",  // http://crbug.com/387169
          "A3BC37E2148AC4E99BE4B16AF9D42DD1E592BBBE",  // http://crbug.com/387169
-@@ -468,7 +468,7 @@
-   }, {
-     "channel": "stable",
-     "extension_types": ["extension", "legacy_packaged_app", "platform_app"],
+@@ -481,7 +481,7 @@
+       "platform_app",
+       "login_screen_extension"
+     ],
 -    "platforms": ["chromeos", "mac", "win", "linux"],
 +    "platforms": ["chromeos", "mac", "win", "linux", "bsd"],
      "whitelist": [
        "0DE0F05680A4A056BCEC864ED8DDA84296F82B40",  // http://crbug.com/434651
        "1C93BD3CF875F4A73C0B2A163BB8FBDA8B8B3D80",  // http://crbug.com/293683
-@@ -499,7 +499,7 @@
+@@ -520,7 +520,7 @@
    "networkingPrivate": {
      "channel": "stable",
      "extension_types": ["extension", "legacy_packaged_app", "platform_app"],

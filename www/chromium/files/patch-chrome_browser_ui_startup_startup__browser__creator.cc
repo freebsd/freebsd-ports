@@ -1,4 +1,4 @@
---- chrome/browser/ui/startup/startup_browser_creator.cc.orig	2020-02-03 21:52:41 UTC
+--- chrome/browser/ui/startup/startup_browser_creator.cc.orig	2020-05-13 18:40:25 UTC
 +++ chrome/browser/ui/startup/startup_browser_creator.cc
 @@ -82,7 +82,7 @@
  #include "chrome/browser/ui/user_manager.h"
@@ -18,7 +18,7 @@
    PrefService* service = g_browser_process->local_state();
    DCHECK(service);
  
-@@ -662,8 +662,10 @@ bool StartupBrowserCreator::ProcessCmdLineImpl(
+@@ -675,8 +675,10 @@ bool StartupBrowserCreator::ProcessCmdLineImpl(
    }
  #endif  // OS_CHROMEOS
  

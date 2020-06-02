@@ -1,6 +1,6 @@
---- media/base/audio_latency.cc.orig	2019-03-11 22:00:59 UTC
+--- media/base/audio_latency.cc.orig	2020-05-13 18:39:45 UTC
 +++ media/base/audio_latency.cc
-@@ -106,7 +106,7 @@ int AudioLatency::GetRtcBufferSize(int sample_rate, in
+@@ -113,7 +113,7 @@ int AudioLatency::GetRtcBufferSize(int sample_rate, in
      return frames_per_buffer;
    }
  

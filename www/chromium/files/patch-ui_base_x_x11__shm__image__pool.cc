@@ -1,5 +1,5 @@
---- ui/base/x/x11_shm_image_pool_base.cc.orig	2020-03-16 18:40:43 UTC
-+++ ui/base/x/x11_shm_image_pool_base.cc
+--- ui/base/x/x11_shm_image_pool.cc.orig	2020-05-13 18:40:03 UTC
++++ ui/base/x/x11_shm_image_pool.cc
 @@ -16,6 +16,7 @@
  #include "base/environment.h"
  #include "base/location.h"
@@ -23,7 +23,7 @@
  }
  
  std::size_t MaxShmSegmentSize() {
-@@ -199,7 +204,7 @@ bool XShmImagePoolBase::Resize(const gfx::Size& pixel_
+@@ -201,7 +206,7 @@ bool XShmImagePool::Resize(const gfx::Size& pixel_size
          shmctl(state.shminfo_.shmid, IPC_RMID, nullptr);
          return false;
        }
@@ -32,12 +32,12 @@
        // On Linux, a shmid can still be attached after IPC_RMID if otherwise
        // kept alive.  Detach before XShmAttach to prevent a memory leak in case
        // the process dies.
-@@ -209,7 +214,7 @@ bool XShmImagePoolBase::Resize(const gfx::Size& pixel_
+@@ -211,7 +216,7 @@ bool XShmImagePool::Resize(const gfx::Size& pixel_size
        if (!XShmAttach(display_, &state.shminfo_))
          return false;
        state.shmem_attached_to_server_ = true;
 -#if !defined(OS_LINUX)
-+#if !defined(OS_LINUX) && !defined(OS_BSD)
++#if (!defined(OS_LINUX) && !defined(OS_BSD))
        // The Linux-specific shmctl behavior above may not be portable, so we're
        // forced to do IPC_RMID after the server has attached to the segment.
        // XShmAttach is asynchronous, so we must also sync.

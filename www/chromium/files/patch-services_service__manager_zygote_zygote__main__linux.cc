@@ -1,4 +1,4 @@
---- services/service_manager/zygote/zygote_main_linux.cc.orig	2020-02-03 21:53:32 UTC
+--- services/service_manager/zygote/zygote_main_linux.cc.orig	2020-05-13 18:39:47 UTC
 +++ services/service_manager/zygote/zygote_main_linux.cc
 @@ -11,7 +11,9 @@
  #include <stddef.h>
@@ -36,7 +36,7 @@
    sandbox::SetAmZygoteOrRenderer(true, GetSandboxFD());
  
    auto* linux_sandbox = service_manager::SandboxLinux::GetInstance();
-@@ -238,6 +245,9 @@ bool ZygoteMain(
+@@ -240,6 +247,9 @@ bool ZygoteMain(
  
    // This function call can return multiple times, once per fork().
    return zygote.ProcessRequests();

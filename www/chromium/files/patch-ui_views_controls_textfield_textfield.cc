@@ -1,14 +1,14 @@
---- ui/views/controls/textfield/textfield.cc.orig	2020-03-16 18:40:43 UTC
+--- ui/views/controls/textfield/textfield.cc.orig	2020-05-13 18:40:37 UTC
 +++ ui/views/controls/textfield/textfield.cc
-@@ -60,7 +60,7 @@
+@@ -62,7 +62,7 @@
  #include "base/win/win_util.h"
  #endif
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
- #include "base/strings/utf_string_conversions.h"
++#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
  #include "ui/base/ime/linux/text_edit_command_auralinux.h"
  #include "ui/base/ime/linux/text_edit_key_bindings_delegate_auralinux.h"
+ #endif
 @@ -183,14 +183,14 @@ ui::TextEditCommand GetCommandForKeyEvent(const ui::Ke
  #endif
          return ui::TextEditCommand::DELETE_BACKWARD;
@@ -35,7 +35,7 @@
    return flags & ui::EF_CONTROL_DOWN;
  #else
    return false;
-@@ -730,7 +730,7 @@ bool Textfield::OnMousePressed(const ui::MouseEvent& e
+@@ -691,7 +691,7 @@ bool Textfield::OnMousePressed(const ui::MouseEvent& e
  #endif
    }
  
@@ -44,7 +44,7 @@
    if (!handled && !had_focus && event.IsOnlyMiddleMouseButton())
      RequestFocusWithPointer(ui::EventPointerType::POINTER_TYPE_MOUSE);
  #endif
-@@ -776,7 +776,7 @@ bool Textfield::OnKeyPressed(const ui::KeyEvent& event
+@@ -737,7 +737,7 @@ bool Textfield::OnKeyPressed(const ui::KeyEvent& event
    if (!textfield)
      return handled;
  
@@ -53,7 +53,7 @@
    ui::TextEditKeyBindingsDelegateAuraLinux* delegate =
        ui::GetTextEditKeyBindingsDelegate();
    std::vector<ui::TextEditCommandAuraLinux> commands;
-@@ -923,7 +923,7 @@ void Textfield::AboutToRequestFocusFromTabTraversal(bo
+@@ -886,7 +886,7 @@ void Textfield::AboutToRequestFocusFromTabTraversal(bo
  }
  
  bool Textfield::SkipDefaultKeyEventProcessing(const ui::KeyEvent& event) {
@@ -62,7 +62,7 @@
    // Skip any accelerator handling that conflicts with custom keybindings.
    ui::TextEditKeyBindingsDelegateAuraLinux* delegate =
        ui::GetTextEditKeyBindingsDelegate();
-@@ -2182,7 +2182,7 @@ bool Textfield::PasteSelectionClipboard() {
+@@ -2146,7 +2146,7 @@ bool Textfield::PasteSelectionClipboard() {
  }
  
  void Textfield::UpdateSelectionClipboard() {

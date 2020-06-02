@@ -1,4 +1,4 @@
---- BUILD.gn.orig	2020-03-16 18:40:27 UTC
+--- BUILD.gn.orig	2020-05-13 18:40:15 UTC
 +++ BUILD.gn
 @@ -418,7 +418,7 @@ group("gn_all") {
      ]
@@ -29,7 +29,7 @@
          "//media/cast:generate_barcode_video",
          "//media/cast:generate_timecode_audio",
          "//net:crash_cache",
-@@ -575,10 +569,6 @@ group("gn_all") {
+@@ -579,10 +573,6 @@ group("gn_all") {
        "//mojo:mojo_perftests",
        "//services/service_manager/public/cpp",
        "//testing/gmock:gmock_main",
@@ -40,7 +40,7 @@
      ]
  
      if (!is_android) {
-@@ -652,7 +642,7 @@ group("gn_all") {
+@@ -656,7 +646,7 @@ group("gn_all") {
          host_os == "win") {
        deps += [ "//chrome/test/mini_installer:mini_installer_tests" ]
      }
@@ -49,7 +49,7 @@
      deps += [ "//third_party/breakpad:symupload($host_toolchain)" ]
    }
  
-@@ -794,7 +784,6 @@ group("gn_all") {
+@@ -789,7 +779,6 @@ group("gn_all") {
        "//chrome/browser/vr:vr_common_perftests",
        "//chrome/browser/vr:vr_common_unittests",
        "//chrome/browser/vr:vr_pixeltests",
@@ -57,15 +57,7 @@
      ]
      if (is_desktop_linux && use_ozone) {
        deps += [ "//chrome/browser/vr/testapp:vr_testapp" ]
-@@ -934,7 +923,6 @@ if (is_chromeos) {
-       "//ppapi/examples/video_decode",
-       "//sandbox/linux:chrome_sandbox",
-       "//sandbox/linux:sandbox_linux_unittests",
--      "//third_party/breakpad:minidump_stackwalk($host_toolchain)",
- 
-       # Blocked on https://github.com/catapult-project/catapult/issues/2297
-       #"//third_party/catapult/telemetry:bitmaptools",
-@@ -1092,7 +1080,7 @@ if (!is_ios) {
+@@ -1071,7 +1060,7 @@ if (!is_ios) {
        ]
      }
  
@@ -74,7 +66,7 @@
        data_deps +=
            [ "//third_party/breakpad:minidump_stackwalk($host_toolchain)" ]
      }
-@@ -1101,7 +1089,7 @@ if (!is_ios) {
+@@ -1080,7 +1069,7 @@ if (!is_ios) {
        data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
      }
  
@@ -83,7 +75,7 @@
        data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
      }
  
-@@ -1231,9 +1219,6 @@ group("chromium_builder_perf") {
+@@ -1273,9 +1262,6 @@ group("chromium_builder_perf") {
  
      if (is_win) {
        data_deps += [ "//chrome/installer/mini_installer:mini_installer" ]

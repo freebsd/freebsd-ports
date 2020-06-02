@@ -1,6 +1,6 @@
---- content/browser/utility_process_host.cc.orig	2020-03-16 18:40:32 UTC
+--- content/browser/utility_process_host.cc.orig	2020-05-13 18:40:31 UTC
 +++ content/browser/utility_process_host.cc
-@@ -210,7 +210,7 @@ UtilityProcessHost::UtilityProcessHost()
+@@ -247,7 +247,7 @@ UtilityProcessHost::UtilityProcessHost()
  
  UtilityProcessHost::UtilityProcessHost(std::unique_ptr<Client> client)
      : sandbox_type_(service_manager::SandboxType::kUtility),

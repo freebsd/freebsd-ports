@@ -1,15 +1,15 @@
---- chrome/browser/ui/tab_helpers.cc.orig	2020-03-16 18:40:30 UTC
+--- chrome/browser/ui/tab_helpers.cc.orig	2020-05-13 18:40:25 UTC
 +++ chrome/browser/ui/tab_helpers.cc
-@@ -132,7 +132,7 @@
- #include "components/zoom/zoom_controller.h"
- #endif  // defined(OS_ANDROID)
+@@ -143,7 +143,7 @@
+ #include "chrome/browser/ui/app_list/search/cros_action_history/cros_action_recorder_tab_tracker.h"
+ #endif
  
 -#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
 +#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
  #include "chrome/browser/ui/blocked_content/framebust_block_tab_helper.h"
  #include "chrome/browser/ui/hats/hats_helper.h"
  #endif
-@@ -347,11 +347,11 @@ void TabHelpers::AttachTabHelpers(WebContents* web_con
+@@ -377,11 +377,11 @@ void TabHelpers::AttachTabHelpers(WebContents* web_con
  #endif
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || \

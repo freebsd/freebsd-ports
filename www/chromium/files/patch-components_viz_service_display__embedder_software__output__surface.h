@@ -1,6 +1,6 @@
---- components/viz/service/display_embedder/software_output_surface.h.orig	2020-03-16 18:40:31 UTC
+--- components/viz/service/display_embedder/software_output_surface.h.orig	2020-05-13 18:39:42 UTC
 +++ components/viz/service/display_embedder/software_output_surface.h
-@@ -50,7 +50,7 @@ class VIZ_SERVICE_EXPORT SoftwareOutputSurface : publi
+@@ -49,7 +49,7 @@ class VIZ_SERVICE_EXPORT SoftwareOutputSurface : publi
        UpdateVSyncParametersCallback callback) override;
    void SetDisplayTransformHint(gfx::OverlayTransform transform) override {}
    gfx::OverlayTransform GetDisplayTransform() override;

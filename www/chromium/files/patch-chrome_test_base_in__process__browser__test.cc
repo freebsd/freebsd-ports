@@ -1,4 +1,4 @@
---- chrome/test/base/in_process_browser_test.cc.orig	2020-04-03 04:11:30 UTC
+--- chrome/test/base/in_process_browser_test.cc.orig	2020-05-13 18:40:25 UTC
 +++ chrome/test/base/in_process_browser_test.cc
 @@ -77,6 +77,10 @@
  #include "chrome/test/base/scoped_bundle_swizzler_mac.h"
@@ -20,7 +20,7 @@
  #include "ui/views/test/test_desktop_screen_x11.h"
  #endif
  
-@@ -253,7 +257,7 @@ void InProcessBrowserTest::SetUp() {
+@@ -258,7 +262,7 @@ void InProcessBrowserTest::SetUp() {
    // Cookies). Without this on Mac and Linux, many tests will hang waiting for a
    // user to approve KeyChain/kwallet access. On Windows this is not needed as
    // OS APIs never block.
@@ -29,7 +29,7 @@
    OSCryptMocker::SetUp();
  #endif
  
-@@ -308,7 +312,7 @@ void InProcessBrowserTest::TearDown() {
+@@ -320,7 +324,7 @@ void InProcessBrowserTest::TearDown() {
    com_initializer_.reset();
  #endif
    BrowserTestBase::TearDown();

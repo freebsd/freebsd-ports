@@ -1,0 +1,17 @@
+--- weblayer/BUILD.gn.orig	2020-05-18 11:02:15 UTC
++++ weblayer/BUILD.gn
+@@ -414,6 +414,14 @@ source_set("weblayer_lib_base") {
+     ]
+   }
+ 
++  if (is_bsd) {
++    deps -= [
++      "//components/crash/content/browser",
++      "//components/crash/core/app",
++      "//components/crash/core/common",
++    ]
++  }
++
+   if (toolkit_views) {
+     deps += [ "//ui/views" ]
+   }

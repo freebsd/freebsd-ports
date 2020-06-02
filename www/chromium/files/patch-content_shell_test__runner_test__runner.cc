@@ -1,4 +1,4 @@
---- content/shell/test_runner/test_runner.cc.orig	2020-03-16 18:40:32 UTC
+--- content/shell/test_runner/test_runner.cc.orig	2020-05-13 18:40:32 UTC
 +++ content/shell/test_runner/test_runner.cc
 @@ -62,7 +62,7 @@
  #include "ui/gfx/geometry/size.h"
@@ -18,7 +18,7 @@
    blink::WebFontRenderStyle::SetSubpixelPositioning(false);
  #endif
  
-@@ -2111,7 +2111,7 @@ void TestRunner::AddOriginAccessAllowListEntry(
+@@ -2112,7 +2112,7 @@ void TestRunner::AddOriginAccessAllowListEntry(
  }
  
  void TestRunner::SetTextSubpixelPositioning(bool value) {

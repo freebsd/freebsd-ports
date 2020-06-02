@@ -1,4 +1,4 @@
---- services/service_manager/zygote/host/zygote_host_impl_linux.cc.orig	2019-03-11 22:01:02 UTC
+--- services/service_manager/zygote/host/zygote_host_impl_linux.cc.orig	2020-05-13 18:39:47 UTC
 +++ services/service_manager/zygote/host/zygote_host_impl_linux.cc
 @@ -72,6 +72,7 @@ ZygoteHostImpl* ZygoteHostImpl::GetInstance() {
  }
@@ -24,7 +24,7 @@
    int fds[2];
    CHECK_EQ(0, socketpair(AF_UNIX, SOCK_SEQPACKET, 0, fds));
    CHECK(base::UnixDomainSocket::EnableReceiveProcessId(fds[0]));
-@@ -210,9 +213,12 @@ pid_t ZygoteHostImpl::LaunchZygote(
+@@ -213,9 +216,12 @@ pid_t ZygoteHostImpl::LaunchZygote(
  
    AddZygotePid(pid);
    return pid;

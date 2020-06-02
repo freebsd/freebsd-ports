@@ -1,8 +1,8 @@
---- chrome/browser/flag_descriptions.h.orig	2020-04-03 04:11:29 UTC
+--- chrome/browser/flag_descriptions.h.orig	2020-05-13 18:40:22 UTC
 +++ chrome/browser/flag_descriptions.h
-@@ -21,9 +21,9 @@
- #include "ui/android/buildflags.h"
- #endif  // defined(OS_ANDROID)
+@@ -18,9 +18,9 @@
+ #include "ppapi/buildflags/buildflags.h"
+ #include "printing/buildflags/buildflags.h"
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
@@ -12,7 +12,7 @@
  
  // This file declares strings used in chrome://flags. These messages are not
  // translated, because instead of end-users they target Chromium developers and
-@@ -2128,14 +2128,14 @@ extern const char kZeroStateFilesDescription[];
+@@ -2167,14 +2167,14 @@ extern const char kZeroStateFilesDescription[];
  
  #endif  // #if defined(OS_CHROMEOS)
  
@@ -29,7 +29,7 @@
  
  // All views-based platforms --------------------------------------------------
  
-@@ -2154,12 +2154,12 @@ extern const char kReopenTabInProductHelpDescription[]
+@@ -2193,12 +2193,12 @@ extern const char kReopenTabInProductHelpDescription[]
  
  // Random platform combinations -----------------------------------------------
  
@@ -44,7 +44,7 @@
  
  #if BUILDFLAG(ENABLE_CLICK_TO_CALL)
  
-@@ -2171,21 +2171,21 @@ extern const char kClickToCallDetectionV2Description[]
+@@ -2207,7 +2207,7 @@ extern const char kClickToCallUIDescription[];
  
  #endif  // BUILDFLAG(ENABLE_CLICK_TO_CALL)
  
@@ -53,10 +53,12 @@
      defined(OS_CHROMEOS)
  
  extern const char kRemoteCopyReceiverName[];
- extern const char kRemoteCopyReceiverDescription[];
+@@ -2219,15 +2219,15 @@ extern const char kRemoteCopyImageNotificationDescript
+ extern const char kRemoteCopyProgressNotificationName[];
+ extern const char kRemoteCopyProgressNotificationDescription[];
  
 -#endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) ||
-+#endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD) ||
++#endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
          // defined(OS_CHROMEOS)
  
 -#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)

@@ -1,15 +1,14 @@
---- build/config/sysroot.gni.orig	2019-03-11 22:00:52 UTC
+--- build/config/sysroot.gni.orig	2020-05-13 18:39:36 UTC
 +++ build/config/sysroot.gni
-@@ -15,9 +15,10 @@ declare_args() {
-   # The absolute path to directory containing linux sysroot images
-   target_sysroot_dir = "//build/linux"
+@@ -21,9 +21,9 @@ declare_args() {
  
+   # Controls default is_linux sysroot. If set to true, and sysroot
+   # is empty, default sysroot is calculated.
 -  use_sysroot = current_cpu == "x86" || current_cpu == "x64" ||
-+  use_sysroot = !is_bsd && (
-+                current_cpu == "x86" || current_cpu == "x64" ||
++  use_sysroot = !is_bsd && (current_cpu == "x86" || current_cpu == "x64" ||
                  current_cpu == "arm" || current_cpu == "arm64" ||
 -                current_cpu == "mipsel" || current_cpu == "mips64el"
 +                current_cpu == "mipsel" || current_cpu == "mips64el")
  }
  
- if (current_os == target_os && current_cpu == target_cpu &&
+ if (sysroot == "") {

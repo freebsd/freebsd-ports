@@ -1,24 +1,24 @@
---- build/config/compiler/BUILD.gn.orig	2020-03-16 18:40:27 UTC
+--- build/config/compiler/BUILD.gn.orig	2020-05-13 18:40:16 UTC
 +++ build/config/compiler/BUILD.gn
-@@ -137,7 +137,7 @@ declare_args() {
-   # TODO(vitalybuka):
+@@ -138,7 +138,7 @@ declare_args() {
    # 'is_android' breaks content_shell_test_apk on android-kitkat-arm-rel.
    # 'use_xcode_clang' may call old clang.
--  init_stack_vars = !is_android && !use_xcode_clang && !is_official_build
-+  init_stack_vars = !is_android && !use_xcode_clang && !is_official_build && !is_bsd
+   init_stack_vars =
+-      !is_android && !use_xcode_clang && (!is_official_build || is_linux)
++      !is_android && !use_xcode_clang && (!is_official_build || is_linux) && !is_bsd
  }
  
  declare_args() {
 @@ -298,7 +298,7 @@ config("compiler") {
+     }
  
      # Linker warnings.
-     if (fatal_linker_warnings && !(is_chromeos && current_cpu == "arm") &&
--        !is_mac && !is_ios && current_os != "aix") {
-+        !is_mac && !is_ios && current_os != "aix" && !is_bsd) {
-       # TODO(jochen): Enable this on chromeos on arm. http://crbug.com/356580
+-    if (fatal_linker_warnings && !is_mac && !is_ios && current_os != "aix") {
++    if (fatal_linker_warnings && !is_mac && !is_ios && !is_bsd && current_os != "aix") {
        ldflags += [ "-Wl,--fatal-warnings" ]
      }
-@@ -393,7 +393,7 @@ config("compiler") {
+     if (fatal_linker_warnings && (is_mac || is_ios)) {
+@@ -392,7 +392,7 @@ config("compiler") {
  
      # Compiler instrumentation can introduce dependencies in DSOs to symbols in
      # the executable they are loaded into, so they are unresolved at link-time.
@@ -27,7 +27,7 @@
        ldflags += [
          "-Wl,-z,defs",
          "-Wl,--as-needed",
-@@ -486,7 +486,7 @@ config("compiler") {
+@@ -485,7 +485,7 @@ config("compiler") {
      }
    }
  
@@ -36,7 +36,7 @@
      cflags += [ "-fcrash-diagnostics-dir=" +
                  rebase_path("//tools/clang/crashreports", root_build_dir) ]
  
-@@ -767,7 +767,7 @@ config("compiler_cpu_abi") {
+@@ -755,7 +755,7 @@ config("compiler_cpu_abi") {
          cflags += [ "-mtune=$arm_tune" ]
        }
      } else if (current_cpu == "arm64") {
@@ -45,7 +45,7 @@
          cflags += [ "--target=aarch64-linux-gnu" ]
          ldflags += [ "--target=aarch64-linux-gnu" ]
        }
-@@ -1118,7 +1118,7 @@ config("compiler_deterministic") {
+@@ -1105,7 +1105,7 @@ config("compiler_deterministic") {
        "-Xclang",
        ".",
      ]
@@ -54,7 +54,7 @@
        # We don't use clang -cc1as on Windows (yet? https://crbug.com/762167)
        asmflags = [ "-Wa,-fdebug-compilation-dir,." ]
      }
-@@ -1507,7 +1507,7 @@ config("default_warnings") {
+@@ -1488,7 +1488,7 @@ config("default_warnings") {
          cflags += [ "-Wno-nonportable-include-path" ]
        }
  
@@ -63,7 +63,7 @@
          # Flags NaCl (Clang 3.7) and Xcode 9.2 (Clang clang-900.0.39.2) do not
          # recognize.
          cflags += [
-@@ -1741,7 +1741,7 @@ config("thin_archive") {
+@@ -1738,7 +1738,7 @@ config("thin_archive") {
    # Mac and iOS use the mac-specific "libtool" command, not ar, which doesn't
    # have a "thin archive" mode (it does accept -T, but it means truncating
    # archive names to 16 characters, which is not what we want).
@@ -72,7 +72,7 @@
      arflags = [ "-T" ]
    } else if (is_win && use_lld) {
      arflags = [ "/llvmlibthin" ]
-@@ -2334,7 +2334,7 @@ config("symbols") {
+@@ -2262,7 +2262,7 @@ config("symbols") {
      # flag, so we can use use -g1 for pnacl and nacl-clang compiles.
      # gcc nacl is is_nacl && !is_clang, pnacl and nacl-clang are && is_clang.
      if (!is_nacl || is_clang) {
@@ -80,8 +80,8 @@
 +      cflags += [ "-g0" ]
      }
  
-     if (use_debug_fission && !is_nacl && !is_android) {
-@@ -2355,7 +2355,7 @@ config("symbols") {
+     if (is_clang && !is_nacl && !use_xcode_clang) {
+@@ -2290,7 +2290,7 @@ config("symbols") {
      # DWARF info may be corrupt; offsets in a range list entry are in different
      # sections" there.  Maybe just a bug in nacl_switch_32.S.
      if (!is_mac && !is_ios && !is_nacl && current_cpu != "x86" &&

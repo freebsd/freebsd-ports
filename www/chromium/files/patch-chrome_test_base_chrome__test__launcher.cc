@@ -1,15 +1,15 @@
---- chrome/test/base/chrome_test_launcher.cc.orig	2020-04-06 07:46:40 UTC
+--- chrome/test/base/chrome_test_launcher.cc.orig	2020-05-13 18:39:39 UTC
 +++ chrome/test/base/chrome_test_launcher.cc
-@@ -59,7 +59,7 @@
+@@ -61,7 +61,7 @@
  #endif
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || \
 -    (defined(OS_LINUX) && !defined(OS_CHROMEOS))
 +    (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
  #include "chrome/browser/first_run/scoped_relaunch_chrome_browser_override.h"
+ #include "chrome/browser/upgrade_detector/installed_version_poller.h"
  #include "testing/gtest/include/gtest/gtest.h"
- #endif
-@@ -221,7 +221,7 @@ int LaunchChromeTests(size_t parallel_jobs,
+@@ -231,7 +231,7 @@ int LaunchChromeTests(size_t parallel_jobs,
    }
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || \

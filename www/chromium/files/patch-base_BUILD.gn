@@ -1,6 +1,15 @@
---- base/BUILD.gn.orig	2020-03-16 18:40:27 UTC
+--- base/BUILD.gn.orig	2020-05-13 18:40:16 UTC
 +++ base/BUILD.gn
-@@ -912,7 +912,7 @@ jumbo_component("base") {
+@@ -59,7 +59,7 @@ declare_args() {
+   # replacement base::Location::Current(). On by default in non-official builds
+   # for testing purposes.
+   # TODO(https://crbug.com/974061): remove this eventually.
+-  from_here_uses_location_builtins = !is_official_build
++  from_here_uses_location_builtins = !is_official_build && !is_bsd
+ 
+   # Unsafe developer build. Has developer-friendly features that may weaken or
+   # disable security measures like sandboxing or ASLR.
+@@ -929,7 +929,7 @@ jumbo_component("base") {
        "timer/hi_res_timer_manager_posix.cc",
      ]
  
@@ -9,7 +18,7 @@
        sources += [
          "profiler/stack_copier_signal.cc",
          "profiler/stack_copier_signal.h",
-@@ -921,6 +921,12 @@ jumbo_component("base") {
+@@ -938,6 +938,12 @@ jumbo_component("base") {
          "profiler/thread_delegate_posix.h",
        ]
      }
@@ -22,7 +31,7 @@
    }
  
    if (is_win) {
-@@ -1305,7 +1311,7 @@ jumbo_component("base") {
+@@ -1321,7 +1327,7 @@ jumbo_component("base") {
    # Needed for <atomic> if using newer C++ library than sysroot, except if
    # building inside the cros_sdk environment - use host_toolchain as a
    # more robust check for this.
@@ -31,7 +40,7 @@
        host_toolchain != "//build/toolchain/cros:host") {
      libs += [ "atomic" ]
    }
-@@ -1331,7 +1337,7 @@ jumbo_component("base") {
+@@ -1347,7 +1353,7 @@ jumbo_component("base") {
          "allocator/allocator_shim_override_glibc_weak_symbols.h",
        ]
        deps += [ "//base/allocator:tcmalloc" ]
@@ -40,7 +49,7 @@
        sources += [ "allocator/allocator_shim_default_dispatch_to_glibc.cc" ]
      } else if (is_android && use_allocator == "none") {
        sources += [
-@@ -1930,6 +1936,33 @@ jumbo_component("base") {
+@@ -1942,6 +1948,33 @@ jumbo_component("base") {
      }
    }
  
@@ -74,7 +83,7 @@
    # iOS
    if (is_ios) {
      sources -= [
-@@ -2880,7 +2913,7 @@ test("base_unittests") {
+@@ -2898,7 +2931,7 @@ test("base_unittests") {
        "posix/unix_domain_socket_unittest.cc",
        "task/thread_pool/task_tracker_posix_unittest.cc",
      ]
@@ -83,7 +92,7 @@
        sources += [ "profiler/stack_copier_signal_unittest.cc" ]
      }
    }
-@@ -3068,6 +3101,12 @@ test("base_unittests") {
+@@ -3087,6 +3120,12 @@ test("base_unittests") {
  
      manifest = "//build/config/fuchsia/tests.cmx"
    }

@@ -1,6 +1,6 @@
---- net/tools/quic/quic_http_proxy_backend.cc.orig	2019-10-21 19:06:39 UTC
+--- net/tools/quic/quic_http_proxy_backend.cc.orig	2020-05-13 18:39:46 UTC
 +++ net/tools/quic/quic_http_proxy_backend.cc
-@@ -161,7 +161,7 @@ void QuicHttpProxyBackend::InitializeURLRequestContext
+@@ -162,7 +162,7 @@ void QuicHttpProxyBackend::InitializeURLRequestContext
    // Enable HTTP2, but disable QUIC on the backend
    context_builder.SetSpdyAndQuicEnabled(true /* http2 */, false /* quic */);
  

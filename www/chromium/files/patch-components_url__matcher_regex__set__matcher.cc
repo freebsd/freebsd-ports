@@ -1,6 +1,6 @@
---- components/url_matcher/regex_set_matcher.cc.orig	2019-03-11 22:00:57 UTC
+--- components/url_matcher/regex_set_matcher.cc.orig	2020-05-13 18:39:42 UTC
 +++ components/url_matcher/regex_set_matcher.cc
-@@ -11,8 +11,13 @@
+@@ -12,8 +12,13 @@
  #include "base/logging.h"
  #include "base/strings/string_util.h"
  #include "components/url_matcher/substring_set_matcher.h"
