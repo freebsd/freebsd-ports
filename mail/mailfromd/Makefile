@@ -3,7 +3,7 @@
 
 PORTNAME=	mailfromd
 PORTVERSION=	8.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	mail
 MASTER_SITES=	http://download.gnu.org.ua/pub/release/${PORTNAME}/ \
 		http://download.gnu.org.ua/pub/alpha/${PORTNAME}/
@@ -14,7 +14,8 @@ COMMENT=	Mail filtering daemon for Sendmail, Postfix, and MeTA1
 LICENSE=	GPLv3+
 
 LIB_DEPENDS=	libmailutils.so:mail/mailutils \
-		libadns.so:dns/adns
+		libadns.so:dns/adns \
+		libgnutls.so:security/gnutls
 
 USES=		gmake localbase readline tar:xz
 GNU_CONFIGURE=	yes
@@ -53,11 +54,10 @@ DSPAM_CONFIGURE_WITH=	dspam
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
 
-BDB_USES=		bdb:48
+BDB_USES=		bdb
 BDB_CONFIGURE_WITH=	berkeley-db
 BDB_CPPFLAGS=		-I${BDB_INCLUDE_DIR}
 BDB_LDFLAGS=		-L${BDB_LIB_DIR}
-INVALID_BDB_VER=	5+
 
 GDBM_LIB_DEPENDS=	libgdbm.so:databases/gdbm
 GDBM_CONFIGURE_WITH=	gdbm
