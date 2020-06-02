@@ -6,7 +6,7 @@ PORTVERSION=	201812R1
 PORTREVISION=	2
 CATEGORIES=	comms
 
-MAINTAINER=	gnn@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bluetooth Baseband Library
 
 LICENSE=	GPLv2+

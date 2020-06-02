@@ -10,7 +10,7 @@ CATEGORIES=	benchmarks
 PATCH_SITES=	https://github.com/gvnn3/${PORTNAME}/commit/
 PATCHFILES=	8d752bd051d43772b92019a65afe3ab6dcbf4b7a.patch:-p1
 
-MAINTAINER=	gnn@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hash Algorithm Benchmarking
 
 LICENSE=	MIT
