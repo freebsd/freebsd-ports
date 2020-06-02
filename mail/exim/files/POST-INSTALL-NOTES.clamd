@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 The following steps will enable clamd malware scanning using exiscan ACLs.
 It is important to follow them in sequence.
 
@@ -44,3 +47,6 @@ It is important to follow them in sequence.
 
 Sheldon Hearn <sheldonh@FreeBSD.org>
 
+EOM
+}
+]

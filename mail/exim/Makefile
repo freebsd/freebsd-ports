@@ -3,7 +3,7 @@
 
 PORTNAME=	exim
 PORTVERSION?=	${EXIM_VERSION}
-PORTREVISION?=	3
+PORTREVISION?=	0
 CATEGORIES=	mail
 MASTER_SITES=	EXIM:exim
 MASTER_SITE_SUBDIR=	/exim4/:exim \
@@ -57,11 +57,13 @@ INTERNATIONAL_LIB_DEPENDS=	libidn.so:dns/libidn
 LMDB_LIB_DEPENDS=	liblmdb.so:databases/lmdb
 MYSQL_USES=	mysql
 OPENLDAP_USE=	openldap=yes
-PGSQL_USES=	pgsql
+PGSQL_LIB_DEPENDS=	libicudata.so:devel/icu
+PGSQL_USES=	pgsql pkgconfig
 REDIS_LIB_DEPENDS=	libhiredis.so:databases/hiredis
 SASLAUTHD_RUN_DEPENDS=	${LOCALBASE}/sbin/saslauthd:security/cyrus-sasl2-saslauthd
 SA_EXIM_RUN_DEPENDS=	${LOCALBASE}/bin/spamc:mail/spamassassin
 SPF_LIB_DEPENDS=	libspf2.so:mail/libspf2
+SQLITE_LIB_DEPENDS=	libicudata.so:devel/icu
 SQLITE_USES=	pkgconfig sqlite
 
 .include <bsd.port.options.mk>
@@ -103,7 +105,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-Local-sa-exim.c
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-Local-sa-exim.conf
 .endif
 
-EXIM_VERSION=	4.93.0.4
+EXIM_VERSION=	4.94
 SA_EXIM_VERSION=4.2.1
 EXIM_INSTALL_ARG+=	"-no_chown" "-no_symlink"
 EXTRA_PATCHES+=	`${FIND} ${PATCHDIR} -name '74_*.patch'|${SORT} -h`
