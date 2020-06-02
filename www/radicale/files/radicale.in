@@ -25,11 +25,11 @@ load_rc_config $name
 
 : ${radicale_enable:=NO}
 : ${radicale_config=%%ETCDIR%%/config}
-: ${radicale_user:=radicale}
-: ${radicale_group:=radicale}
+: ${radicale_user=%%USERS%%}
+: ${radicale_group=%%GROUPS%%}
 
 pidfile=/var/run/radicale/radicale.pid
-command=%%PREFIX%%/bin/radicale-%%PYTHON_VER%%
+command=%%PREFIX%%/bin/radicale
 command_args="-d -p ${pidfile} -C ${radicale_config}"
 command_interpreter=%%PYTHON_CMD%%
 required_files=${radicale_config}

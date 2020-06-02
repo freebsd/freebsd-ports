@@ -1,3 +1,5 @@
 @sample %%ETCDIR%%/config.sample
 @sample %%ETCDIR%%/logging.sample
 @dir(radicale,radicale,0755) %%DATADIR%%
+%%WWWDIR%%/radicale.fcgi
+%%WWWDIR%%/radicale.wsgi

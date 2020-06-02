@@ -6,6 +6,16 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20200602:
+  AFFECTS: users of www/radicale
+  AUTHOR: decke@FreeBSD.org
+
+  Migration from radicale 1.x to 2.x requires that you export the storage
+  with radicale 1.1.6 before updating.
+
+  Migration instructions are available at:
+  https://web.archive.org/web/20190314225402/https://radicale.org/1to2/
+
+20200602:
   AFFECTS: users of sysutils/py-salt
   AUTHOR: krion@FreeBSD.org
 

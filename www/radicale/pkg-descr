@@ -1,5 +1,15 @@
-The Radicale Project is a complete CalDAV (calendar) and CardDAV (contact)
-server solution.
+Radicale is a small but powerful CalDAV (calendars, todo-lists) and CardDAV
+(contacts) server, that:
+
+    Shares calendars through CalDAV, WebDAV and HTTP.
+    Shares contacts through CardDAV, WebDAV and HTTP.
+    Supports events, todos, journal entries and business cards.
+    Works out-of-the-box, no installation nor configuration required.
+    Can warn users on concurrent editing.
+    Can limit access by authentication.
+    Can secure connections.
+    Works with many CalDAV and CardDAV clients.
+    Is GPLv3-licensed free software.
 
 WWW: https://radicale.org/
 WWW: https://github.com/Kozea/Radicale

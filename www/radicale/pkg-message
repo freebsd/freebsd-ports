@@ -1,0 +1,10 @@
+[
+{ type: install
+  message: <<EOM
+Migration from radicale 1.x to 2.x requires that you export the storage
+with radicale 1.1.x before it can be used.
+
+Migration instructions: https://web.archive.org/web/20190314225402/https://radicale.org/1to2/
+EOM
+}
+]
