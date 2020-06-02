@@ -1,4 +1,4 @@
-TIMESTAMP = 1587666533
+TIMESTAMP = 1591027492
 SHA256 (nginx-1.18.0.tar.gz) = 4c373e7ab5bf91d34a4f11a0c9496561061ba5eee6020db272a17a7228d35f99
 SIZE (nginx-1.18.0.tar.gz) = 1039530
 SHA256 (ngx_cache_purge-2.3.tar.gz) = 279e0d8a46d3b1521fd43b3f78bc1c08b263899142a7cc5058c1c0361a92c89c
@@ -89,8 +89,8 @@ SHA256 (yaoweibin-ngx_http_substitutions_filter_module-v0.6.4_GH0.tar.gz) = ed4d
 SIZE (yaoweibin-ngx_http_substitutions_filter_module-v0.6.4_GH0.tar.gz) = 92230
 SHA256 (tarantool-nginx_upstream_module-1278ee5_GH0.tar.gz) = 34d51afcd464582e6011a5d3abe6829c5690ddb9b50c993dfdafb4c725a4803a
 SIZE (tarantool-nginx_upstream_module-1278ee5_GH0.tar.gz) = 48378
-SHA256 (Austinb-nginx-upload-module-72ec037_GH0.tar.gz) = c6d4e38ad0712c898cc53721f492f8f73acf2753cc0a0769fa34d4d6ba4e8efd
-SIZE (Austinb-nginx-upload-module-72ec037_GH0.tar.gz) = 28303
+SHA256 (fdintino-nginx-upload-module-aa42509_GH0.tar.gz) = 2285245bdef11656e5bcc866e693e48f84b7443d36924f45a6fb8647cd35319a
+SIZE (fdintino-nginx-upload-module-aa42509_GH0.tar.gz) = 42221
 SHA256 (masterzen-nginx-upload-progress-module-afb2d31_GH0.tar.gz) = 6318851cc3a624aaad3b1f4cd9f51f79c86575c53dfe0c28bbdcf9470b6a33e6
 SIZE (masterzen-nginx-upload-progress-module-afb2d31_GH0.tar.gz) = 17269
 SHA256 (yaoweibin-nginx_upstream_check_module-9aecf15_GH0.tar.gz) = 4404c64e845e19feeb07a37976347987892a8e8680a961f793ff0d3ef96c07f4
