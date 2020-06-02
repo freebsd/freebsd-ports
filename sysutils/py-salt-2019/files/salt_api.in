@@ -1,0 +1,31 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# Salt API startup script
+#
+# PROVIDE: salt_api
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following to /etc/rc.conf[.local] to enable this service
+#
+# salt_api_enable (bool):          Set to NO by default.
+#               Set it to YES to enable salt_api
+#
+
+. /etc/rc.subr
+
+name=salt_api
+rcvar=salt_api_enable
+
+load_rc_config ${name}
+
+: ${salt_api_enable:=NO}
+
+command="%%PREFIX%%/bin/salt-api"
+command_interpreter="%%PYTHON_CMD%%"
+required_files="%%PREFIX%%/etc/salt"
+command_args="-c ${required_files} -d"
+
+run_rc_command "$1"

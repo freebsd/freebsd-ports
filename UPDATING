@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20200602:
+  AFFECTS: users of sysutils/py-salt
+  AUTHOR: krion@FreeBSD.org
+
+  This port is moved to sysutils/py-salt-2019 and sysutils/py-salt was
+  updated to version 3000.
+
+  If you wish to use pysalt-2019 in the future, you might run the
+  following command:
+
+  # pkg set -o sysutils/py-salt:sysutils/py-salt-2019
+  # pkg upgrade
+
 20200531:
   AFFECTS: users of mail/postfix-policyd-spf-python
   AUTHOR:  yasu@utahime.org
