@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cpputest
-PORTVERSION=	3.8
+PORTVERSION=	4.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -10,9 +10,9 @@ COMMENT=	Unit testing and mocking framework for C/C++
 
 LICENSE=	BSD3CLAUSE
 
-USE_GITHUB=	yes
-
 USES=		autoreconf libtool pathfix
 GNU_CONFIGURE=	yes
+
+USE_GITHUB=	yes
 
 .include <bsd.port.mk>
