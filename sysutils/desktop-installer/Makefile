@@ -1,18 +1,21 @@
 # $FreeBSD$
 
 PORTNAME=	desktop-installer
-DISTVERSION=	0.6.13
+DISTVERSION=	0.6.15
 CATEGORIES=	sysutils
-MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Quickly configure a FreeBSD desktop system
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	auto-admin>=0.6.2:sysutils/auto-admin
+RUN_DEPENDS=	auto-admin>=0.6.4:sysutils/auto-admin
 
 USES=		tar:xz
+USE_GITHUB=	yes
+
+GH_ACCOUNT=	outpaddling
 
 NO_BUILD=	yes
 NO_ARCH=	yes
