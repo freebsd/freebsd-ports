@@ -1,0 +1,6 @@
+py3c helps you port C extensions to Python 3.
+
+It provides a detailed guide, and a set of macros
+to make porting easy and reduce boilerplate.
+
+WWW: https://github.com/encukou/py3c
