@@ -3,12 +3,16 @@
 
 PORTNAME=	namecoin
 PORTVERSION=	0.19.0.1
+PORTREVISION=	1
 DISTVERSIONPREFIX=	nc
 PORTEPOCH=	1
 CATEGORIES=	net-p2p dns
 
 MAINTAINER=	milios@ccsys.com
 COMMENT?=	Decentralized, open DNS and general purpose key/value store
+
+DEPRECATED=	Relies on implementation details of a particular Berkeley DB version (4.8), which has been EOL since 2010.
+EXPIRATION_DATE=2020-06-30
 
 LICENSE=	MIT
 
@@ -78,7 +82,7 @@ QRCODES_LIB_DEPENDS=	libqrencode.so:graphics/libqrencode
 WALLET_CONFIGURE_ENABLE=	wallet
 WALLET_CXXFLAGS=		-I${BDB_INCLUDE_DIR}
 WALLET_LIBS=			-L${BDB_LIB_DIR}
-WALLET_USES=			bdb:48
+WALLET_USES=			bdb
 
 ZMQ_CONFIGURE_ENABLE=	zmq
 ZMQ_BUILD_DEPENDS=	libzmq4>0:net/libzmq4
@@ -113,5 +117,11 @@ regression-test: build
 	# from CONFIGURE_ARGS above.
 
 	@cd ${WRKSRC} && ${GMAKE} check
+
+.include <bsd.port.options.mk>
+
+.if !empty(PORT_OPTIONS:MWALLET)
+BROKEN=	Critical design flaw: Wallet option relies on Berkeley DB 4.8 implementation internals, where Berkeley DB 4.8 has been EOL since 2010
+.endif
 
 .include <bsd.port.mk>
