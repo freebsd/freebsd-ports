@@ -7,7 +7,7 @@ CATEGORIES=	security gnome
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Gnome Keyring integration for Version control system
 
-PORTREVISION_113=	0
+PORTREVISION_114=	0
 PORTREVISION_LTS=	0
 
 .include "${.CURDIR}/../../devel/subversion/Makefile.addons"

@@ -1,0 +1,310 @@
+--- configure.orig	2020-05-20 12:21:55 UTC
++++ configure
+@@ -24462,46 +24462,52 @@ $as_echo "$ac_cv_python_libs" >&6; }
+   fi
+ `"
+ 
+-          { $as_echo "$as_me:${as_lineno-$LINENO}: checking for Python >= 3" >&5
++          if test "$SWIG" = "none"; then
++            SWIG_PY_ERRMSG=""
++          else
++            # Look more closely at the SWIG and Python versions to
++            # determine SWIG_PY_OPTS. We can skip this if we already
++            # have the SWIG-generated files.
++            { $as_echo "$as_me:${as_lineno-$LINENO}: checking for Python >= 3" >&5
+ $as_echo_n "checking for Python >= 3... " >&6; }
+ if ${ac_cv_python_is_py3+:} false; then :
+   $as_echo_n "(cached) " >&6
+ else
+ 
+-            ac_cv_python_is_py3="no"
+-            $PYTHON -c 'import sys; sys.exit(0x3000000 > sys.hexversion)' && \
+-               ac_cv_python_is_py3="yes"
++              ac_cv_python_is_py3="no"
++              $PYTHON -c 'import sys; sys.exit(0x3000000 > sys.hexversion)' && \
++                 ac_cv_python_is_py3="yes"
+ 
+ fi
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_python_is_py3" >&5
+ $as_echo "$ac_cv_python_is_py3" >&6; }
+ 
+-          if test "$ac_cv_python_is_py3" = "yes"; then
+-            if test "$SWIG_VERSION" -ge "300010"; then
+-                            SWIG_PY_ERRMSG=""
+-            else
+-              SWIG_PY_ERRMSG="SWIG version is not suitable"
+-              { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: Subversion Python bindings for Python 3 require SWIG 3.0.10 or newer" >&5
++            if test "$ac_cv_python_is_py3" = "yes"; then
++              if test "$SWIG_VERSION" -ge "300010"; then
++                                SWIG_PY_ERRMSG=""
++              else
++                SWIG_PY_ERRMSG="SWIG version is not suitable"
++                { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: Subversion Python bindings for Python 3 require SWIG 3.0.10 or newer" >&5
+ $as_echo "$as_me: WARNING: Subversion Python bindings for Python 3 require SWIG 3.0.10 or newer" >&2;}
+-            fi
+-            if test "$SWIG_VERSION" -lt "400000"; then
+-              SWIG_PY_OPTS="-python -py3 -nofastunpack -modern"
++              fi
++              if test "$SWIG_VERSION" -lt "400000"; then
++                SWIG_PY_OPTS="-python -py3 -nofastunpack -modern"
++              else
++                SWIG_PY_OPTS="-python -py3 -nofastunpack"
++              fi
+             else
+-              SWIG_PY_OPTS="-python -py3 -nofastunpack"
+-            fi
+-          else
+-            if test "$SWIG_VERSION" -lt "400000"; then
+-              SWIG_PY_OPTS="-python -classic"
+-                            SWIG_PY_ERRMSG=""
+-            else
+-              SWIG_PY_OPTS="-python -nofastunpack"
+-              SWIG_PY_ERRMSG="SWIG version is not suitable"
+-              { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: Subversion Python bindings for Python 2 require 1.3.24 <= SWIG < 4.0.0" >&5
++              if test "$SWIG_VERSION" -lt "400000"; then
++                SWIG_PY_OPTS="-python -classic"
++                                SWIG_PY_ERRMSG=""
++              else
++                SWIG_PY_OPTS="-python -nofastunpack"
++                SWIG_PY_ERRMSG="SWIG version is not suitable"
++                { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: Subversion Python bindings for Python 2 require 1.3.24 <= SWIG < 4.0.0" >&5
+ $as_echo "$as_me: WARNING: Subversion Python bindings for Python 2 require 1.3.24 <= SWIG < 4.0.0" >&2;}
++              fi
+             fi
+           fi
+         fi
+-
+       fi
+     fi
+ 
+@@ -25093,46 +25099,52 @@ $as_echo "$ac_cv_python_libs" >&6; }
+   fi
+ `"
+ 
+-          { $as_echo "$as_me:${as_lineno-$LINENO}: checking for Python >= 3" >&5
++          if test "$SWIG" = "none"; then
++            SWIG_PY_ERRMSG=""
++          else
++            # Look more closely at the SWIG and Python versions to
++            # determine SWIG_PY_OPTS. We can skip this if we already
++            # have the SWIG-generated files.
++            { $as_echo "$as_me:${as_lineno-$LINENO}: checking for Python >= 3" >&5
+ $as_echo_n "checking for Python >= 3... " >&6; }
+ if ${ac_cv_python_is_py3+:} false; then :
+   $as_echo_n "(cached) " >&6
+ else
+ 
+-            ac_cv_python_is_py3="no"
+-            $PYTHON -c 'import sys; sys.exit(0x3000000 > sys.hexversion)' && \
+-               ac_cv_python_is_py3="yes"
++              ac_cv_python_is_py3="no"
++              $PYTHON -c 'import sys; sys.exit(0x3000000 > sys.hexversion)' && \
++                 ac_cv_python_is_py3="yes"
+ 
+ fi
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_python_is_py3" >&5
+ $as_echo "$ac_cv_python_is_py3" >&6; }
+ 
+-          if test "$ac_cv_python_is_py3" = "yes"; then
+-            if test "$SWIG_VERSION" -ge "300010"; then
+-                            SWIG_PY_ERRMSG=""
+-            else
+-              SWIG_PY_ERRMSG="SWIG version is not suitable"
+-              { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: Subversion Python bindings for Python 3 require SWIG 3.0.10 or newer" >&5
++            if test "$ac_cv_python_is_py3" = "yes"; then
++              if test "$SWIG_VERSION" -ge "300010"; then
++                                SWIG_PY_ERRMSG=""
++              else
++                SWIG_PY_ERRMSG="SWIG version is not suitable"
++                { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: Subversion Python bindings for Python 3 require SWIG 3.0.10 or newer" >&5
+ $as_echo "$as_me: WARNING: Subversion Python bindings for Python 3 require SWIG 3.0.10 or newer" >&2;}
+-            fi
+-            if test "$SWIG_VERSION" -lt "400000"; then
+-              SWIG_PY_OPTS="-python -py3 -nofastunpack -modern"
++              fi
++              if test "$SWIG_VERSION" -lt "400000"; then
++                SWIG_PY_OPTS="-python -py3 -nofastunpack -modern"
++              else
++                SWIG_PY_OPTS="-python -py3 -nofastunpack"
++              fi
+             else
+-              SWIG_PY_OPTS="-python -py3 -nofastunpack"
+-            fi
+-          else
+-            if test "$SWIG_VERSION" -lt "400000"; then
+-              SWIG_PY_OPTS="-python -classic"
+-                            SWIG_PY_ERRMSG=""
+-            else
+-              SWIG_PY_OPTS="-python -nofastunpack"
+-              SWIG_PY_ERRMSG="SWIG version is not suitable"
+-              { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: Subversion Python bindings for Python 2 require 1.3.24 <= SWIG < 4.0.0" >&5
++              if test "$SWIG_VERSION" -lt "400000"; then
++                SWIG_PY_OPTS="-python -classic"
++                                SWIG_PY_ERRMSG=""
++              else
++                SWIG_PY_OPTS="-python -nofastunpack"
++                SWIG_PY_ERRMSG="SWIG version is not suitable"
++                { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: Subversion Python bindings for Python 2 require 1.3.24 <= SWIG < 4.0.0" >&5
+ $as_echo "$as_me: WARNING: Subversion Python bindings for Python 2 require 1.3.24 <= SWIG < 4.0.0" >&2;}
++              fi
+             fi
+           fi
+         fi
+-
+       fi
+     fi
+ 
+@@ -25724,46 +25736,52 @@ $as_echo "$ac_cv_python_libs" >&6; }
+   fi
+ `"
+ 
+-          { $as_echo "$as_me:${as_lineno-$LINENO}: checking for Python >= 3" >&5
++          if test "$SWIG" = "none"; then
++            SWIG_PY_ERRMSG=""
++          else
++            # Look more closely at the SWIG and Python versions to
++            # determine SWIG_PY_OPTS. We can skip this if we already
++            # have the SWIG-generated files.
++            { $as_echo "$as_me:${as_lineno-$LINENO}: checking for Python >= 3" >&5
+ $as_echo_n "checking for Python >= 3... " >&6; }
+ if ${ac_cv_python_is_py3+:} false; then :
+   $as_echo_n "(cached) " >&6
+ else
+ 
+-            ac_cv_python_is_py3="no"
+-            $PYTHON -c 'import sys; sys.exit(0x3000000 > sys.hexversion)' && \
+-               ac_cv_python_is_py3="yes"
++              ac_cv_python_is_py3="no"
++              $PYTHON -c 'import sys; sys.exit(0x3000000 > sys.hexversion)' && \
++                 ac_cv_python_is_py3="yes"
+ 
+ fi
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_python_is_py3" >&5
+ $as_echo "$ac_cv_python_is_py3" >&6; }
+ 
+-          if test "$ac_cv_python_is_py3" = "yes"; then
+-            if test "$SWIG_VERSION" -ge "300010"; then
+-                            SWIG_PY_ERRMSG=""
+-            else
+-              SWIG_PY_ERRMSG="SWIG version is not suitable"
+-              { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: Subversion Python bindings for Python 3 require SWIG 3.0.10 or newer" >&5
++            if test "$ac_cv_python_is_py3" = "yes"; then
++              if test "$SWIG_VERSION" -ge "300010"; then
++                                SWIG_PY_ERRMSG=""
++              else
++                SWIG_PY_ERRMSG="SWIG version is not suitable"
++                { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: Subversion Python bindings for Python 3 require SWIG 3.0.10 or newer" >&5
+ $as_echo "$as_me: WARNING: Subversion Python bindings for Python 3 require SWIG 3.0.10 or newer" >&2;}
+-            fi
+-            if test "$SWIG_VERSION" -lt "400000"; then
+-              SWIG_PY_OPTS="-python -py3 -nofastunpack -modern"
++              fi
++              if test "$SWIG_VERSION" -lt "400000"; then
++                SWIG_PY_OPTS="-python -py3 -nofastunpack -modern"
++              else
++                SWIG_PY_OPTS="-python -py3 -nofastunpack"
++              fi
+             else
+-              SWIG_PY_OPTS="-python -py3 -nofastunpack"
+-            fi
+-          else
+-            if test "$SWIG_VERSION" -lt "400000"; then
+-              SWIG_PY_OPTS="-python -classic"
+-                            SWIG_PY_ERRMSG=""
+-            else
+-              SWIG_PY_OPTS="-python -nofastunpack"
+-              SWIG_PY_ERRMSG="SWIG version is not suitable"
+-              { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: Subversion Python bindings for Python 2 require 1.3.24 <= SWIG < 4.0.0" >&5
++              if test "$SWIG_VERSION" -lt "400000"; then
++                SWIG_PY_OPTS="-python -classic"
++                                SWIG_PY_ERRMSG=""
++              else
++                SWIG_PY_OPTS="-python -nofastunpack"
++                SWIG_PY_ERRMSG="SWIG version is not suitable"
++                { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: Subversion Python bindings for Python 2 require 1.3.24 <= SWIG < 4.0.0" >&5
+ $as_echo "$as_me: WARNING: Subversion Python bindings for Python 2 require 1.3.24 <= SWIG < 4.0.0" >&2;}
++              fi
+             fi
+           fi
+         fi
+-
+       fi
+     fi
+ 
+@@ -26358,46 +26376,52 @@ $as_echo "$ac_cv_python_libs" >&6; }
+   fi
+ `"
+ 
+-          { $as_echo "$as_me:${as_lineno-$LINENO}: checking for Python >= 3" >&5
++          if test "$SWIG" = "none"; then
++            SWIG_PY_ERRMSG=""
++          else
++            # Look more closely at the SWIG and Python versions to
++            # determine SWIG_PY_OPTS. We can skip this if we already
++            # have the SWIG-generated files.
++            { $as_echo "$as_me:${as_lineno-$LINENO}: checking for Python >= 3" >&5
+ $as_echo_n "checking for Python >= 3... " >&6; }
+ if ${ac_cv_python_is_py3+:} false; then :
+   $as_echo_n "(cached) " >&6
+ else
+ 
+-            ac_cv_python_is_py3="no"
+-            $PYTHON -c 'import sys; sys.exit(0x3000000 > sys.hexversion)' && \
+-               ac_cv_python_is_py3="yes"
++              ac_cv_python_is_py3="no"
++              $PYTHON -c 'import sys; sys.exit(0x3000000 > sys.hexversion)' && \
++                 ac_cv_python_is_py3="yes"
+ 
+ fi
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_python_is_py3" >&5
+ $as_echo "$ac_cv_python_is_py3" >&6; }
+ 
+-          if test "$ac_cv_python_is_py3" = "yes"; then
+-            if test "$SWIG_VERSION" -ge "300010"; then
+-                            SWIG_PY_ERRMSG=""
+-            else
+-              SWIG_PY_ERRMSG="SWIG version is not suitable"
+-              { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: Subversion Python bindings for Python 3 require SWIG 3.0.10 or newer" >&5
++            if test "$ac_cv_python_is_py3" = "yes"; then
++              if test "$SWIG_VERSION" -ge "300010"; then
++                                SWIG_PY_ERRMSG=""
++              else
++                SWIG_PY_ERRMSG="SWIG version is not suitable"
++                { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: Subversion Python bindings for Python 3 require SWIG 3.0.10 or newer" >&5
+ $as_echo "$as_me: WARNING: Subversion Python bindings for Python 3 require SWIG 3.0.10 or newer" >&2;}
+-            fi
+-            if test "$SWIG_VERSION" -lt "400000"; then
+-              SWIG_PY_OPTS="-python -py3 -nofastunpack -modern"
++              fi
++              if test "$SWIG_VERSION" -lt "400000"; then
++                SWIG_PY_OPTS="-python -py3 -nofastunpack -modern"
++              else
++                SWIG_PY_OPTS="-python -py3 -nofastunpack"
++              fi
+             else
+-              SWIG_PY_OPTS="-python -py3 -nofastunpack"
+-            fi
+-          else
+-            if test "$SWIG_VERSION" -lt "400000"; then
+-              SWIG_PY_OPTS="-python -classic"
+-                            SWIG_PY_ERRMSG=""
+-            else
+-              SWIG_PY_OPTS="-python -nofastunpack"
+-              SWIG_PY_ERRMSG="SWIG version is not suitable"
+-              { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: Subversion Python bindings for Python 2 require 1.3.24 <= SWIG < 4.0.0" >&5
++              if test "$SWIG_VERSION" -lt "400000"; then
++                SWIG_PY_OPTS="-python -classic"
++                                SWIG_PY_ERRMSG=""
++              else
++                SWIG_PY_OPTS="-python -nofastunpack"
++                SWIG_PY_ERRMSG="SWIG version is not suitable"
++                { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: Subversion Python bindings for Python 2 require 1.3.24 <= SWIG < 4.0.0" >&5
+ $as_echo "$as_me: WARNING: Subversion Python bindings for Python 2 require 1.3.24 <= SWIG < 4.0.0" >&2;}
++              fi
+             fi
+           fi
+         fi
+-
+       fi
+     fi
+ 

@@ -1,7 +1,7 @@
 # Created by: rooneg@electricjellyfish.net
 # $FreeBSD$
 
-PORTREVISION=	1
+PORTREVISION=	0
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Version control system
@@ -32,7 +32,7 @@ OPTIONS_DEFAULT=FREEBSD_TEMPLATE GPG_AGENT SERF TOOLS
 FREEBSD_TEMPLATE_DESC=	FreeBSD Project log template
 GPG_AGENT_DESC=		Enable GPG agent password store
 SERF_DESC=		WebDAV/Delta-V (HTTP/HTTPS) repo access module
-STATIC_DESC=		Build static version (no shared libs)
+STATIC_DESC=		No shared libs (disables SVN integration)
 SVNSERVE_WRAPPER_DESC=	Enable svnserve wrapper (umask setter)
 TEST_DESC=		Run subversion test suite
 TOOLS_DESC=		Install several tools
@@ -41,7 +41,7 @@ TOOLS_DESC=		Install several tools
 FREEBSD_TEMPLATE_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-fbsd-template
 SVNSERVE_WRAPPER_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-svnserve-wrapper
 
-USES+=			shebangfix python:2.7,env
+USES+=			shebangfix python:3.5+,env
 python_OLD_CMD+=	"/bin/env python"
 SHEBANG_REGEX=		./tools/.*
 
@@ -219,7 +219,7 @@ _mkrepos:	.USE
 .endif
 
 svn-build-outputs-hack:
-	(cd ${WRKSRC} && python2.7 gen-make.py --release --installed-libs libsvn_client,libsvn_delta,libsvn_diff,libsvn_fs,libsvn_fs_x,libsvn_ra,libsvn_repos,libsvn_subr,libsvn_wc)
+	(cd ${WRKSRC} && python gen-make.py --release --installed-libs libsvn_client,libsvn_delta,libsvn_diff,libsvn_fs,libsvn_fs_x,libsvn_ra,libsvn_repos,libsvn_subr,libsvn_wc)
 	${MV} ${WRKSRC}/build-outputs.mk ${FILESDIR}/build-outputs.mk.addons
 
 .include <bsd.port.post.mk>

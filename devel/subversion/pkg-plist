@@ -359,7 +359,6 @@ man/man8/svnserve.8.gz
 %%DATADIR%%/dist/backport_tests_py.py
 %%DATADIR%%/dist/changes-to-html.py
 %%DATADIR%%/dist/checksums.py
-%%DATADIR%%/dist/create-minor-release-branch.py
 %%DATADIR%%/dist/detect-conflicting-backports.py
 %%DATADIR%%/dist/dist.sh
 %%DATADIR%%/dist/edit-N-log-messages
@@ -368,6 +367,7 @@ man/man8/svnserve.8.gz
 %%DATADIR%%/dist/nightly.sh
 %%DATADIR%%/dist/nominate.pl
 %%DATADIR%%/dist/rat-excludes
+%%DATADIR%%/dist/release-lines.yaml
 %%DATADIR%%/dist/release.py
 %%DATADIR%%/dist/security/__init__.py
 %%DATADIR%%/dist/security/_gnupg.py
@@ -375,9 +375,12 @@ man/man8/svnserve.8.gz
 %%DATADIR%%/dist/security/mailer.py
 %%DATADIR%%/dist/security/mailinglist.py
 %%DATADIR%%/dist/security/parser.py
+%%DATADIR%%/dist/templates/STATUS.ezt
 %%DATADIR%%/dist/templates/download.ezt
 %%DATADIR%%/dist/templates/rc-news.ezt
 %%DATADIR%%/dist/templates/rc-release-ann.ezt
+%%DATADIR%%/dist/templates/release-notes-lts.ezt
+%%DATADIR%%/dist/templates/release-notes.ezt
 %%DATADIR%%/dist/templates/stable-news.ezt
 %%DATADIR%%/dist/templates/stable-release-ann.ezt
 %%DATADIR%%/dist/test.sh
