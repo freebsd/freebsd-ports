@@ -327,7 +327,6 @@
     SUBDIR += mattermost-server
     SUBDIR += mattermost-webapp
     SUBDIR += mediawiki131
-    SUBDIR += mediawiki132
     SUBDIR += mediawiki133
     SUBDIR += mediawiki134
     SUBDIR += mergelog
@@ -1504,7 +1503,6 @@
     SUBDIR += py-django-htmlmin
     SUBDIR += py-django-i18nfield
     SUBDIR += py-django-js-asset
-    SUBDIR += py-django-json-rpc
     SUBDIR += py-django-jsonfield
     SUBDIR += py-django-ldapdb
     SUBDIR += py-django-libsass
@@ -1571,8 +1569,6 @@
     SUBDIR += py-djangorestframework-xml
     SUBDIR += py-djangorestframework311
     SUBDIR += py-djangorestframework36
-    SUBDIR += py-djangotoolbox
-    SUBDIR += py-dojango
     SUBDIR += py-draftjs_exporter
     SUBDIR += py-drf-yasg
     SUBDIR += py-dtflickr

@@ -15056,3 +15056,7 @@ lang/perl5.26|lang/perl5.28|2020-05-31|Has expired: Support ends three years aft
 www/py-beautifulsoup460|www/py-beautifulsoup448|2020-05-31|Has expired: Use www/py-beautifulsoup448 instead
 databases/db48|databases/db5|2020-06-02|Has expired. Use databases/db5 instead
 security/bro||2020-06-02|Has expired: Please migrate to security/zeek
+www/py-djangotoolbox||2020-06-03|Has expired: No longer maintained, not compatible with Django 1.11+
+www/py-dojango||2020-06-03|Has expired: No longer maintained, not compatible with Django 2.2+
+www/py-django-json-rpc||2020-06-03|Has expired: No longer maintained, not compatible with Django 2.0+
+www/mediawiki132|www/mediawiki133|2020-06-03|Has expired: EOLed upstream
