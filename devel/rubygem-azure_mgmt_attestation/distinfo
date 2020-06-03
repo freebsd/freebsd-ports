@@ -1,3 +1,3 @@
-TIMESTAMP = 1579306067
-SHA256 (rubygem/azure_mgmt_attestation-0.17.0.gem) = 9616aa342d6f7a5a9f14e3b521d107be082c1a292209e8cde9355d35b1e8f7bc
-SIZE (rubygem/azure_mgmt_attestation-0.17.0.gem) = 13312
+TIMESTAMP = 1591186898
+SHA256 (rubygem/azure_mgmt_attestation-0.17.1.gem) = e98e2d947c4ea7a6d589c0acf28f370a40119f6f61a7a9cd2e130cecaf78f19d
+SIZE (rubygem/azure_mgmt_attestation-0.17.1.gem) = 13312
