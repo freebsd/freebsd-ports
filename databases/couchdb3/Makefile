@@ -53,6 +53,12 @@ LOGFILE?=	${LOGDIR}/couch.log
 APPDIR=		${LOCALBASE}/libexec/${PORTNAME}
 RELDIR=		${APPDIR}/releases/${DISTVERSION}
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${ARCH} == i386
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src_jiffy_c__src_double-conversion_strtod.cc
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} \
 	    -e 's,%%APPDIR%%,${APPDIR},g' \
@@ -64,6 +70,12 @@ post-patch:
 	    -e 's,\$COUCHDB_USER,${USERS},g' \
 	    -e 's,\$LOG_FILE,${LOGFILE},g' \
 	    ${WRKSRC}/configure
+# https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=238514
+.if ${OPSYS} == FreeBSD && (${OSVERSION} < 1200000 || ${ARCH} == i386)
+	@${REINPLACE_CMD} \
+	    -e 's,\$FLTO_FLAG ,,g' \
+	    ${WRKSRC}/src/jiffy/rebar.config
+.endif
 
 pre-install:
 	# relocate user-modifiable runtime configs to match hier(7)
