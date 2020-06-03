@@ -8,6 +8,8 @@ lib/dnscap/cryptopan.a
 lib/dnscap/cryptopan.so
 lib/dnscap/cryptopant.a
 lib/dnscap/cryptopant.so
+lib/dnscap/eventlog.a
+lib/dnscap/eventlog.so
 lib/dnscap/ipcrypt.a
 lib/dnscap/ipcrypt.so
 lib/dnscap/pcapdump.a
