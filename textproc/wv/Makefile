@@ -7,7 +7,7 @@ PORTREVISION=	5
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.abisource.com/downloads/wv/${PORTVERSION}/
 
-MAINTAINER=	salvadore@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library and executables to access Microsoft Word files
 
 LICENSE=	GPLv2+

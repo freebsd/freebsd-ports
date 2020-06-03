@@ -7,7 +7,7 @@ PORTREVISION=	8
 CATEGORIES=	textproc
 MASTER_SITES=	SF/wvware/
 
-MAINTAINER=	salvadore@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library providing routines to access Microsoft Word files
 
 LICENSE=	LGPL20
