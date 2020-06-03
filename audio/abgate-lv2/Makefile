@@ -13,6 +13,8 @@ COMMENT=	Noise gate LV2 plugin
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		gate.cpp:47:41: error: unknown type name '_LV2_Descriptor'; did you mean 'LV2_Descriptor'?
+
 BUILD_DEPENDS=	lv2>0:audio/lv2
 
 USES=		compiler:c++11-lang gl gmake gnome pkgconfig qt:5 xorg
