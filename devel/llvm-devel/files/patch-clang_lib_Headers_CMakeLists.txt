@@ -1,14 +1,14 @@
 --- clang/lib/Headers/CMakeLists.txt.orig
 +++ clang/lib/Headers/CMakeLists.txt
-@@ -56,7 +56,6 @@
-   intrin.h
+@@ -67,7 +67,6 @@
    inttypes.h
+   invpcidintrin.h
    iso646.h
 -  limits.h
    lwpintrin.h
    lzcntintrin.h
    mm3dnow.h
-@@ -76,21 +75,13 @@
+@@ -93,14 +92,7 @@
    s390intrin.h
    shaintrin.h
    smmintrin.h
@@ -23,10 +23,11 @@
    tbmintrin.h
    tgmath.h
    tmmintrin.h
+@@ -108,7 +100,6 @@
    unwind.h
    vadefs.h
    vaesintrin.h
 -  varargs.h
    vecintrin.h
    vpclmulqdqintrin.h
-   wmmintrin.h
+   waitpkgintrin.h
