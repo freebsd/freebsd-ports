@@ -5382,6 +5382,7 @@
     SUBDIR += ros-urdfdom_headers
     SUBDIR += ros-vcstools
     SUBDIR += ros-wstool
+    SUBDIR += roswell
     SUBDIR += rote
     SUBDIR += rpc2
     SUBDIR += rpclib
