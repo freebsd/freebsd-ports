@@ -63,6 +63,9 @@ checkyesno recorderd_syslog_enable && command_args="-S -T recorderd"
 command_args="${command_args} -P ${pidfile} -R 60 -- ${_recorderd_program} ${_recorderd_arguments}"
 #procname=${_recorderd_program} # do not override procname as program runs under daemon
 
+# setup environment to reduce memory loading
+export GODEBUG='madvdontneed=1'
+export MALLOC_CONF='abort:true,narenas:1'
 
 recorderd_checkdirs()
 {

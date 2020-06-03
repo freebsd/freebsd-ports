@@ -2,7 +2,7 @@
 
 PORTNAME=	bitmark
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.12.4
+DISTVERSION=	0.13.2
 CATEGORIES=	net-p2p
 
 MAINTAINER=	hsw@bitmark.com
@@ -40,33 +40,33 @@ GH_PROJECT=	bitmarkd
 GH_TUPLE=	bitmark-inc:certgen:v0.1.1:bitmark_inc_certgen/vendor/github.com/bitmark-inc/certgen \
 		bitmark-inc:exitwithstatus:v0.1.2:bitmark_inc_exitwithstatus/vendor/github.com/bitmark-inc/exitwithstatus \
 		bitmark-inc:getoptions:v0.1.1:bitmark_inc_getoptions/vendor/github.com/bitmark-inc/getoptions \
-		bitmark-inc:go-argon2:v0.1.4:bitmark_inc_go_argon2/vendor/github.com/bitmark-inc/go-argon2 \
-		bitmark-inc:logger:v0.3.4:bitmark_inc_logger/vendor/github.com/bitmark-inc/logger \
-		btcsuite:btcd:c26ffa870fd8:btcsuite_btcd/vendor/github.com/btcsuite/btcd \
+		bitmark-inc:go-argon2:v0.1.5:bitmark_inc_go_argon2/vendor/github.com/bitmark-inc/go-argon2 \
+		bitmark-inc:logger:v0.3.5:bitmark_inc_logger/vendor/github.com/bitmark-inc/logger \
+		bitmark-inc:btcd:16c0ce95d92a:btcsuite_btcd/vendor/github.com/btcsuite/btcd \
 		btcsuite:btclog:84c8d2346e9f:btcsuite_btclog/vendor/github.com/btcsuite/btclog \
 		btcsuite:btcutil:9e5f4b9a998d:btcsuite_btcutil/vendor/github.com/btcsuite/btcutil \
 		btcsuite:go-socks:4720035b7bfd:btcsuite_go_socks/vendor/github.com/btcsuite/go-socks \
 		cihub:seelog:f561c5e57575:cihub_seelog/vendor/github.com/cihub/seelog \
+		cpuguy83:go-md2man:v2.0.0:cpuguy83_go_md2man/vendor/github.com/cpuguy83/go-md2man/v2 \
 		davecgh:go-spew:v1.1.0:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
-		fsnotify:fsnotify:v1.4.7:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
+		fsnotify:fsnotify:v1.4.9:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		go-yaml:yaml:v2.2.2:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
-		golang:crypto:9756ffdc2472:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:ba9fcec4b297:golang_net/vendor/golang.org/x/net \
-		golang:snappy:v0.0.1:golang_snappy/vendor/github.com/golang/snappy \
+		golang:crypto:f7b00557c8c4:golang_crypto/vendor/golang.org/x/crypto \
+		golang:net:aa69164e4478:golang_net/vendor/golang.org/x/net \
+		golang:snappy:2e65f85255db:golang_snappy/vendor/github.com/golang/snappy \
 		golang:sync:112230192c58:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:749cb33beabd:golang_sys/vendor/golang.org/x/sys \
-		golang:time:9d24e82272b4:golang_time/vendor/golang.org/x/time \
-		miekg:dns:v1.1.16:miekg_dns/vendor/github.com/miekg/dns \
+		golang:sys:aed5e4c7ecf9:golang_sys/vendor/golang.org/x/sys \
+		golang:time:555d28b269f0:golang_time/vendor/golang.org/x/time \
+		miekg:dns:v1.1.28:miekg_dns/vendor/github.com/miekg/dns \
 		mitchellh:mapstructure:v1.1.2:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
 		patrickmn:go-cache:v2.1.0:patrickmn_go_cache/vendor/github.com/patrickmn/go-cache \
-		pebbe:zmq4:v1.0.0:pebbe_zmq4/vendor/github.com/pebbe/zmq4 \
+		pebbe:zmq4:v1.2.0:pebbe_zmq4/vendor/github.com/pebbe/zmq4 \
+		russross:blackfriday:v2.0.1:russross_blackfriday/vendor/github.com/russross/blackfriday/v2 \
+		shurcooL:sanitized_anchor_name:v1.0.0:shurcool_sanitized_anchor_name/vendor/github.com/shurcooL/sanitized_anchor_name \
 		syndtr:goleveldb:v1.0.0:syndtr_goleveldb/vendor/github.com/syndtr/goleveldb \
-		urfave:cli:v1.21.0:urfave_cli/vendor/github.com/urfave/cli \
+		urfave:cli:v1.22.3:urfave_cli/vendor/github.com/urfave/cli \
 		yuin:gluamapper:d836955830e7:yuin_gluamapper/vendor/github.com/yuin/gluamapper \
-		yuin:gopher-lua:1cd887cd7036:yuin_gopher_lua/vendor/github.com/yuin/gopher-lua
-
-# stripping can break go binaries
-STRIP=
+		yuin:gopher-lua:ab39c6098bdb:yuin_gopher_lua/vendor/github.com/yuin/gopher-lua
 
 SLAVE_PORT?=	NO
 

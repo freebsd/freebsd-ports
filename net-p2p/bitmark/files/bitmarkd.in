@@ -80,6 +80,9 @@ command_args="${command_args} -P ${pidfile} -R 60 -- ${_bitmarkd_program} ${_bit
 # list of items for keygen
 generate_list='gen-peer-identity gen-proof-identity gen-rpc-cert'
 
+# setup environment to reduce memory loading
+export GODEBUG='madvdontneed=1'
+export MALLOC_CONF='abort:true,narenas:1'
 
 bitmarkd_checkdirs()
 {
