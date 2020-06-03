@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	hikari
-DISTVERSION=	1.2.1
+DISTVERSION=	2.0.0
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://hikari.acmelabs.space/releases/
 
@@ -24,17 +24,11 @@ LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
 USES=		compiler:c11 gnome pkgconfig xorg
 USE_GNOME=	cairo glib20 pango
 USE_XORG=	pixman
-MAKE_ARGS=	${WITH_DEBUG:DDEBUG=YES}
-SUB_FILES=	${PORTNAME}.desktop
-SUB_LIST=	COMMENT="${COMMENT}"
-PLIST_FILES=	"${MAYBE_SUID}bin/${PORTNAME}" \
-		"${MAYBE_SUID}bin/${PORTNAME}-unlocker" \
-		etc/pam.d/${PORTNAME}-unlocker \
-		share/man/man1/${PORTNAME}.1.gz \
-		share/wayland-sessions/${PORTNAME}.desktop
-PORTEXAMPLES=	${PORTNAME}.conf
 
-OPTIONS_DEFINE=		EXAMPLES GAMMA LAYERSHELL SCREENCOPY SUID X11
+MAKE_ARGS+=	${WITH_DEBUG:DDEBUG=YES} \
+		WITHOUT_SUID=YES
+
+OPTIONS_DEFINE=		GAMMA LAYERSHELL SCREENCOPY SUID X11
 OPTIONS_DEFAULT=	GAMMA LAYERSHELL SCREENCOPY SUID X11
 
 GAMMA_DESC=		Include gammacontrol protocol (required by, e.g., Redshift)
@@ -45,17 +39,16 @@ SUID_DESC=		Setuid bit on binaries (required for DRM and PAM)
 GAMMA_MAKE_ARGS=	WITH_GAMMACONTROL=YES
 LAYERSHELL_MAKE_ARGS=	WITH_LAYERSHELL=YES
 SCREENCOPY_MAKE_ARGS=	WITH_SCREENCOPY=YES
-SUID_VARS=		MAYBE_SUID="@(,,4755) "
+SUID_PLIST_SUB=		MAYBE_SUID="@(,,4755) "
+SUID_PLIST_SUB_OFF=	MAYBE_SUID=""
 X11_MAKE_ARGS=		WITH_XWAYLAND=YES
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/hikari ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_PROGRAM} ${WRKSRC}/hikari-unlocker ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_DATA} ${WRKSRC}/pam.d/hikari-unlocker.FreeBSD ${STAGEDIR}${PREFIX}/etc/pam.d/hikari-unlocker
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_MAN} ${WRKSRC}/share/examples/hikari/hikari.conf ${STAGEDIR}${EXAMPLESDIR}/hikari.conf
-	${INSTALL_MAN} ${WRKSRC}/share/man/man1/hikari.1 ${STAGEDIR}${MAN1PREFIX}/share/man/man1/
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/wayland-sessions
-	${INSTALL_DATA} ${WRKDIR}/hikari.desktop ${STAGEDIR}${PREFIX}/share/wayland-sessions
+post-install:
+.ifndef WITH_DEBUG
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/hikari
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/hikari-unlocker
+.endif
+	${MV} ${STAGEDIR}${ETCDIR}/hikari.conf \
+		${STAGEDIR}${ETCDIR}/hikari.conf.sample
 
 .include <bsd.port.mk>

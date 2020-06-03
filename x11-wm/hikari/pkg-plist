@@ -1,0 +1,7 @@
+%%MAYBE_SUID%%bin/hikari
+%%MAYBE_SUID%%bin/hikari-unlocker
+etc/pam.d/hikari-unlocker
+@sample %%ETCDIR%%/hikari.conf.sample
+share/backgrounds/hikari/hikari_wallpaper.png
+share/man/man1/hikari.1.gz
+share/wayland-sessions/hikari.desktop

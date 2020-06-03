@@ -1,0 +1,15 @@
+--- Makefile.orig	2020-06-01 09:25:10 UTC
++++ Makefile
+@@ -221,10 +221,10 @@ install: hikari hikari-unlocker share/man/man1/hikari.
+ 	mkdir -p ${DESTDIR}/${PREFIX}/share/wayland-sessions
+ 	mkdir -p ${DESTDIR}/${ETC_PREFIX}/etc/hikari
+ 	mkdir -p ${DESTDIR}/${ETC_PREFIX}/etc/pam.d
+-	sed "s,PREFIX,/${PREFIX}," etc/hikari/hikari.conf > ${DESTDIR}/${ETC_PREFIX}/etc/hikari/hikari.conf
++	sed "s,PREFIX,${PREFIX}," etc/hikari/hikari.conf > ${DESTDIR}/${ETC_PREFIX}/etc/hikari/hikari.conf
+ 	chmod 644 ${DESTDIR}/${ETC_PREFIX}/etc/hikari/hikari.conf
+ 	install -m ${PERMS} hikari ${DESTDIR}/${PREFIX}/bin
+-	install -m 4555 hikari-unlocker ${DESTDIR}/${PREFIX}/bin
++	install -m 555 hikari-unlocker ${DESTDIR}/${PREFIX}/bin
+ 	install -m 644 share/man/man1/hikari.1 ${DESTDIR}/${PREFIX}/share/man/man1
+ 	install -m 644 share/backgrounds/hikari/hikari_wallpaper.png ${DESTDIR}/${PREFIX}/share/backgrounds/hikari/hikari_wallpaper.png
+ 	install -m 644 share/wayland-sessions/hikari.desktop ${DESTDIR}/${PREFIX}/share/wayland-sessions/hikari.desktop
