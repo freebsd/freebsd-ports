@@ -1,14 +1,14 @@
---- config/config.documented.php.orig	2018-03-13 18:47:31 UTC
+--- config/config.documented.php.orig	2020-05-26 10:01:24 UTC
 +++ config/config.documented.php
-@@ -818,6 +818,11 @@ $CONFIG = array(
+@@ -927,6 +927,11 @@ $CONFIG = [
  		'url' => '/apps',
  		'writable' => true,
- 	),
-+	array(
-+		'path'=> '/var/www/nextcloud/apps-pkg',
+ 	],
++	[
++		'path'=> '/usr/local/www/nextcloud/apps-pkg',
 +		'url' => '/apps-pkg',
 +		'writable' => false,
-+	),
- ),
++	],
+ ],
  
  /**
