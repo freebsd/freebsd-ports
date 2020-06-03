@@ -1,0 +1,19 @@
+--- src/Makefile.in.orig	2016-12-19 10:25:00 UTC
++++ src/Makefile.in
+@@ -304,10 +304,14 @@ install:
+ 	  if test -s $$i ; then \
+ 	   if echo $$i | grep dll; then \
+ 	    $(INSTALL_LIBRARY) $$i $(DESTDIR)$(bindir); \
+-	   fi; \
+-	   $(INSTALL_LIBRARY) $$i $(DESTDIR)$(libdir); \
++	   else \
++	    $(INSTALL_LIBRARY) $$i $(DESTDIR)$(libdir); \
++	   fi \
+ 	  fi \
+ 	done
++	if [ "x@IMPLIB_NAME@" != "x" -a -f "@IMPLIB_NAME@" ]; then \
++	  $(INSTALL_LIBRARY) @IMPLIB_NAME@ $(DESTDIR)$(libdir); \
++	fi
+ 	if [ "x@SONAME3@" != "x" -a -f "@SONAME3@" ]; then \
+ 	  ( $(INSTALL_LIBRARY) @SONAME3@ $(DESTDIR)$(libdir) && \
+ 	    cd $(DESTDIR)$(libdir) && $(RM) -f @SONAME2@ @SONAME1@ @SONAME@ && \

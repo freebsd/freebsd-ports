@@ -1,0 +1,13 @@
+--- src/compile.lsp.in.orig	2016-12-19 10:25:00 UTC
++++ src/compile.lsp.in
+@@ -142,8 +142,9 @@
+ #+:wants-dlopen
+ ;;;
+ ;;; We do not need the -rpath flag for the library, nor -lecl.
++;;; Patch borrowed from SageMath
+ ;;;
+-(let* ((c::*ld-shared-flags* #-msvc "@SHARED_LDFLAGS@ @LDFLAGS@ @SONAME_LDFLAGS@ @CORE_LIBS@ @FASL_LIBS@ @LIBS@"
++(let* ((c::*ld-shared-flags* #-msvc " @IMPLIB_LDFLAGS@ @SHARED_LDFLAGS@ @LDFLAGS@ @SONAME_LDFLAGS@ @CORE_LIBS@ @FASL_LIBS@ @LIBS@"
+                              #+msvc "@SHARED_LDFLAGS@ @LDFLAGS@ @STATICLIBS@ @CLIBS@")
+        (c::*cc-flags* (concatenate 'string "-DECL_API -I@true_builddir@/c " c::*cc-flags*))
+        (extra-args nil))

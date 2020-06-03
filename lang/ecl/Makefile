@@ -3,7 +3,7 @@
 
 PORTNAME=	ecl
 PORTVERSION=	16.1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang lisp
 MASTER_SITES=	https://common-lisp.net/project/ecl/static/files/release/
 
@@ -16,21 +16,26 @@ BROKEN_aarch64=		fails to compile: error: unknown type name AO_TS_t
 BROKEN_mips=		fails to build: qemu: uncaught target signal 11 (Segmentation fault) - core dumped
 BROKEN_mips64=		fails to build: qemu: uncaught target signal 11 (Segmentation fault) - core dumped
 
-LIB_DEPENDS=	libgmp.so:math/gmp
+BUILD_DEPENDS=	${LOCALBASE}/lib/libatomic_ops.a:devel/libatomic_ops
+LIB_DEPENDS=	libgmp.so:math/gmp \
+		libgc.so:devel/boehm-gc
 
 MAKE_JOBS_UNSAFE=	yes
-USES=		gmake perl5 tar:tgz
+USES=		autoreconf gmake localbase perl5 tar:tgz
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-system-gmp --with-gmp-prefix=${LOCALBASE} --enable-boehm=system
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+AUTORECONF_WRKSRC=	${WRKSRC}/src
+CONFIGURE_ARGS=	--with-system-gmp \
+		--with-gmp-prefix=${LOCALBASE} \
+		--enable-boehm=system \
+		--enable-libatomic=system
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	ASDF DFFI SOCKETS THREADS X11
-OPTIONS_DEFAULT=ASDF DFFI SOCKETS THREADS
+OPTIONS_DEFINE=	ASDF DFFI SAGE SOCKETS THREADS X11
+OPTIONS_DEFAULT=ASDF DFFI SAGE SOCKETS THREADS
 
 ASDF_DESC=	Enable ASDF building facility
+SAGE_DESC=	Build with patches for sage
 SOCKETS_DESC=	Enable socket interface
 DFFI_DESC=	Dynamic foreign-function support
 
@@ -45,6 +50,13 @@ X11_USE=		XORG=x11
 X11_CONFIGURE_ON=	--with-x=yes
 X11_CONFIGURE_OFF=	--with-x=no
 
+SAGE_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src_aclocal.m4 \
+			${PATCHDIR}/extra-patch-src_c_file.d \
+			${PATCHDIR}/extra-patch-src_compile.lsp.in \
+			${PATCHDIR}/extra-patch-src_configure.ac \
+			${PATCHDIR}/extra-patch-src_lsp_format.lsp \
+			${PATCHDIR}/extra-patch-src_Makefile.in
+
 SOCKETS_CONFIGURE_ON=	--with-tcp=yes
 SOCKETS_CONFIGURE_OFF=	--with-tcp=no
 
@@ -53,10 +65,9 @@ DFFI_CONFIGURE_ON=	--with-dffi=system
 DFFI_CONFIGURE_OFF=	--with-dffi=no
 
 THREADS_CONFIGURE_ON=	--enable-threads=yes
-THREADS_LDFLAGS=	-lpthread
+THREADS_LDFLAGS=	-lpthread -lgc-threaded
 THREADS_LIB_DEPENDS=	libgc-threaded.so:devel/boehm-gc-threaded
 THREADS_CONFIGURE_OFF=	--enable-threads=no
-THREADS_LIB_DEPENDS_OFF=	libgc.so:devel/boehm-gc
 
 post-patch-THREADS-on:
 	@${REINPLACE_CMD} -e 's|-lgc|-lgc-threaded|' ${WRKSRC}/src/configure
