@@ -1,0 +1,9 @@
+%%ETCDIR%%/zabbix_agentd.conf.sample
+bin/zabbix_get
+bin/zabbix_sender
+man/man1/zabbix_get.1.gz
+man/man1/zabbix_sender.1.gz
+man/man8/zabbix_%%ZABBIX_BUILD%%d.8.gz
+sbin/zabbix_agentd
+@dir %%ETCDIR%%/zabbix_agentd.conf.d
+@dir lib/modules
