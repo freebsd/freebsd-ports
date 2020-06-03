@@ -13,7 +13,7 @@ LICENSE=	BSD2CLAUSE
 LIB_DEPENDS=	libjansson.so:devel/jansson \
 		libmaxminddb.so:net/libmaxminddb
 
-USES=		cmake
+USES=		cmake compiler:c11
 USE_GITHUB=	yes
 GH_ACCOUNT=	fcambus
 
