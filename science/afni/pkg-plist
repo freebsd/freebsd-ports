@@ -385,6 +385,7 @@ bin/@djunct_dwi_selector.tcsh
 bin/@djunct_edgy_align_check
 bin/@djunct_glue_imgs_vert
 bin/@djunct_json_value.py
+bin/@djunct_modal_smoothing_with_rep
 bin/@djunct_montage_coordinator
 bin/@djunct_slice_space
 bin/@djunct_ssw_intermed_edge_imgs
@@ -821,6 +822,7 @@ lib/afni/plug_zeropad.so
 %%PYTHON_SITELIBDIR%%/afnipy/lib_fs.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_gershgorin.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_info_dict.py
+%%PYTHON_SITELIBDIR%%/afnipy/lib_mat2d_base.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_matplot.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_msar.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_plot_1D.py
