@@ -1,5 +1,6 @@
 [
-{ type: install
+{ type: upgrade
+  maximum_version: 2.0
   message: <<EOM
 Migration from radicale 1.x to 2.x requires that you export the storage
 with radicale 1.1.x before it can be used.
