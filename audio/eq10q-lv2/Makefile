@@ -13,6 +13,8 @@ COMMENT=	Parametric equalizer LV2 audio plugin
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		midside_ui.cpp:40:50: error: unknown type name '_LV2UI_Descriptor'; did you mean 'LV2UI_Descriptor'?
+
 BUILD_DEPENDS=	lv2>0:audio/lv2
 LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 		libfontconfig.so:x11-fonts/fontconfig \
