@@ -13,6 +13,7 @@ COMMENT=	Virtual versatile amplification for Jack and set of LV2 plugins
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		gxamp_gui.cpp:239:21: error: cannot initialize a member subobject of type 'LV2UI_Handle'
 DEPRECATED=	Uses deprecated version of python
 EXPIRATION_DATE=	2020-08-15
 
