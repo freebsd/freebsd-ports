@@ -39,12 +39,6 @@ _DOC_FILES1=	CHANGES.md CONTRIBUTING.md GOVERNANCE.md LICENSE.md SECURITY.md \
 		CODE_OF_CONDUCT.md CONTRIBUTORS.md README.md
 _DOC_FILES2=	*.odt *.pdf
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == powerpc
-USE_GCC=	yes
-.endif
-
 MAJORVER=	2_5
 VER=		25
 
@@ -89,4 +83,4 @@ post-install-EXAMPLES-on:
 do-test:
 	cd ${BUILD_WRKSRC} && ctest -j ${MAKE_JOBS_NUMBER}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
