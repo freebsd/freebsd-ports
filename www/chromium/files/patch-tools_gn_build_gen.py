@@ -1,4 +1,4 @@
---- tools/gn/build/gen.py.orig	2020-03-16 18:48:21 UTC
+--- tools/gn/build/gen.py.orig	2020-05-13 18:47:33 UTC
 +++ tools/gn/build/gen.py
 @@ -73,6 +73,9 @@ class Platform(object):
    def is_haiku(self):
@@ -10,7 +10,7 @@
    def is_posix(self):
      return self._platform in ['linux', 'freebsd', 'darwin', 'aix', 'openbsd', 'haiku']
  
-@@ -351,6 +354,11 @@ def WriteGNNinja(path, platform, host, options):
+@@ -354,6 +357,11 @@ def WriteGNNinja(path, platform, host, options):
      elif platform.is_haiku():
        cflags.append('-fPIC')
        cflags.extend(['-D_BSD_SOURCE'])

@@ -1,14 +1,17 @@
---- chrome/browser/chrome_browser_main_linux.cc.orig	2019-12-16 21:50:42 UTC
+--- chrome/browser/chrome_browser_main_linux.cc.orig	2020-05-13 18:39:37 UTC
 +++ chrome/browser/chrome_browser_main_linux.cc
-@@ -81,14 +81,16 @@ void ChromeBrowserMainPartsLinux::PreProfileInit() {
+@@ -83,6 +83,7 @@ void ChromeBrowserMainPartsLinux::PreProfileInit() {
  void ChromeBrowserMainPartsLinux::PostProfileInit() {
    ChromeBrowserMainPartsPosix::PostProfileInit();
  
 +#if !defined(OS_BSD)
-   bool enabled = (crash_reporter::IsCrashpadEnabled() &&
-                   crash_reporter::GetUploadsEnabled()) ||
-                  breakpad::IsCrashReporterEnabled();
-   g_browser_process->metrics_service()->RecordBreakpadRegistration(enabled);
+   bool breakpad_registered;
+   if (crash_reporter::IsCrashpadEnabled()) {
+     // If we're using crashpad, there's no breakpad and crashpad is always
+@@ -100,10 +101,11 @@ void ChromeBrowserMainPartsLinux::PostProfileInit() {
+   }
+   g_browser_process->metrics_service()->RecordBreakpadRegistration(
+       breakpad_registered);
 +#endif
  }
  
@@ -18,7 +21,7 @@
    bluez::BluezDBusManager::Initialize(nullptr /* system_bus */);
  #endif
  
-@@ -96,7 +98,7 @@ void ChromeBrowserMainPartsLinux::PostMainMessageLoopS
+@@ -111,7 +113,7 @@ void ChromeBrowserMainPartsLinux::PostMainMessageLoopS
  }
  
  void ChromeBrowserMainPartsLinux::PostDestroyThreads() {

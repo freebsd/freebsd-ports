@@ -1,11 +1,12 @@
---- chrome/common/BUILD.gn.orig	2020-03-16 18:40:30 UTC
+--- chrome/common/BUILD.gn.orig	2020-05-13 18:40:25 UTC
 +++ chrome/common/BUILD.gn
-@@ -272,6 +272,10 @@ static_library("common") {
+@@ -277,6 +277,11 @@ static_library("common") {
      public_deps += [ "//ppapi/shared_impl" ]
    }
  
 +  if (is_bsd) {
 +    sources -= [ "component_flash_hint_file_linux.cc" ]
++    deps -= [ "//components/crash/core/app" ]
 +  }
 +
    if (enable_extensions) {

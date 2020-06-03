@@ -1,6 +1,6 @@
---- content/common/user_agent.cc.orig	2020-03-16 18:40:32 UTC
+--- content/common/user_agent.cc.orig	2020-05-13 18:40:31 UTC
 +++ content/common/user_agent.cc
-@@ -140,6 +140,14 @@ std::string BuildOSCpuInfo(bool include_android_build_
+@@ -160,6 +160,14 @@ std::string BuildOSCpuInfo(bool include_android_build_
  #endif
    );
  

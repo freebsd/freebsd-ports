@@ -1,4 +1,4 @@
---- base/profiler/thread_delegate_posix.cc.orig	2020-04-03 04:10:36 UTC
+--- base/profiler/thread_delegate_posix.cc.orig	2020-05-13 18:39:35 UTC
 +++ base/profiler/thread_delegate_posix.cc
 @@ -9,6 +9,9 @@
  #include "base/stl_util.h"
@@ -10,7 +10,7 @@
  
  namespace base {
  
-@@ -17,7 +20,12 @@
+@@ -17,7 +20,12 @@ namespace {
  uintptr_t GetThreadStackBaseAddressImpl(
      SamplingProfilerThreadToken thread_token) {
    pthread_attr_t attr;
@@ -23,7 +23,7 @@
    // See crbug.com/617730 for limitations of this approach on Linux.
    void* address;
    size_t size;
-@@ -93,16 +103,33 @@
+@@ -93,16 +101,33 @@ std::vector<uintptr_t*> ThreadDelegatePosix::GetRegist
    return {
        // Return the set of callee-save registers per the i386 System V ABI
        // section 2.2.3, plus the stack pointer.
@@ -57,7 +57,7 @@
        reinterpret_cast<uintptr_t*>(&thread_context->gregs[REG_RBP]),
        reinterpret_cast<uintptr_t*>(&thread_context->gregs[REG_RBX]),
        reinterpret_cast<uintptr_t*>(&thread_context->gregs[REG_R12]),
-@@ -110,6 +137,7 @@
+@@ -110,6 +135,7 @@ std::vector<uintptr_t*> ThreadDelegatePosix::GetRegist
        reinterpret_cast<uintptr_t*>(&thread_context->gregs[REG_R14]),
        reinterpret_cast<uintptr_t*>(&thread_context->gregs[REG_R15]),
        reinterpret_cast<uintptr_t*>(&thread_context->gregs[REG_RSP]),

@@ -1,0 +1,56 @@
+--- headless/BUILD.gn.orig	2020-05-18 11:07:20 UTC
++++ headless/BUILD.gn
+@@ -267,7 +267,7 @@ jumbo_source_set("headless_shared_sources") {
+   sources += generated_devtools_api
+   sources += get_target_outputs(":protocol_sources")
+ 
+-  if (!is_fuchsia) {
++  if (!is_fuchsia && !is_bsd) {
+     sources += [
+       "lib/headless_crash_reporter_client.cc",
+       "lib/headless_crash_reporter_client.h",
+@@ -286,7 +286,7 @@ jumbo_source_set("headless_shared_sources") {
+     "//url",
+   ]
+ 
+-  if (!is_fuchsia) {
++  if (!is_fuchsia && !is_bsd) {
+     deps += [ "//components/crash/content/browser" ]
+   }
+   if (is_component_build && is_win) {
+@@ -442,7 +442,7 @@ jumbo_component("headless_non_renderer") {
+       "//v8",
+     ]
+ 
+-    if (!is_fuchsia) {
++    if (!is_fuchsia && !is_bsd) {
+       deps += [ "//components/crash/content/browser" ]
+     }
+     if (is_win) {
+@@ -589,7 +589,7 @@ test("headless_unittests") {
+     "//testing/gtest",
+   ]
+ 
+-  if (!is_fuchsia) {
++  if (!is_fuchsia && !is_bsd) {
+     deps += [ "//components/crash/content/browser" ]
+   }
+ 
+@@ -673,7 +673,7 @@ test("headless_browsertests") {
+     "//ui/base/clipboard",
+   ]
+ 
+-  if (!is_fuchsia) {
++  if (!is_fuchsia && !is_bsd) {
+     deps += [ "//components/crash/content/browser" ]
+   }
+ 
+@@ -801,7 +801,7 @@ jumbo_static_library("headless_shell_lib") {
+     public_deps += [ ":headless_non_renderer" ]
+   }
+ 
+-  if (!is_fuchsia) {
++  if (!is_fuchsia && !is_bsd) {
+     deps += [ "//components/crash/content/browser" ]
+   }
+ 

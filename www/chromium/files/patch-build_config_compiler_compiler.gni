@@ -1,4 +1,4 @@
---- build/config/compiler/compiler.gni.orig	2020-03-16 18:40:27 UTC
+--- build/config/compiler/compiler.gni.orig	2020-05-13 18:40:16 UTC
 +++ build/config/compiler/compiler.gni
 @@ -47,7 +47,7 @@ declare_args() {
    # only two architectures that are currently checked in). Turn this off when
@@ -9,7 +9,7 @@
        (current_cpu == "x64" || current_cpu == "x86")
    binutils_path = rebase_path("//third_party/binutils/Linux_x64/Release/bin",
                                root_build_dir)
-@@ -200,7 +200,7 @@ declare_args() {
+@@ -190,7 +190,7 @@ declare_args() {
  declare_args() {
    # Whether to use the gold linker from binutils instead of lld or bfd.
    use_gold =

@@ -1,6 +1,6 @@
---- third_party/leveldatabase/env_chromium.cc.orig	2020-03-16 18:40:42 UTC
+--- third_party/leveldatabase/env_chromium.cc.orig	2020-05-13 18:40:36 UTC
 +++ third_party/leveldatabase/env_chromium.cc
-@@ -40,7 +40,11 @@
+@@ -37,7 +37,11 @@
  #include "third_party/leveldatabase/leveldb_chrome.h"
  #include "third_party/leveldatabase/leveldb_features.h"
  #include "third_party/leveldatabase/src/include/leveldb/options.h"

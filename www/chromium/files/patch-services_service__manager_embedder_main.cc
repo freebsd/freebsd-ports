@@ -1,6 +1,6 @@
---- services/service_manager/embedder/main.cc.orig	2019-10-21 19:06:40 UTC
+--- services/service_manager/embedder/main.cc.orig	2020-05-13 18:39:47 UTC
 +++ services/service_manager/embedder/main.cc
-@@ -272,7 +272,7 @@ int Main(const MainParams& params) {
+@@ -275,7 +275,7 @@ int Main(const MainParams& params) {
  #endif
      base::EnableTerminationOnOutOfMemory();
  

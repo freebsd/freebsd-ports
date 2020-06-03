@@ -1,6 +1,6 @@
---- chrome/common/channel_info.h.orig	2019-12-17 19:22:25 UTC
+--- chrome/common/channel_info.h.orig	2020-05-13 18:39:39 UTC
 +++ chrome/common/channel_info.h
-@@ -55,7 +55,7 @@ version_info::Channel GetChannelByName(const std::stri
+@@ -61,7 +61,7 @@ bool IsSideBySideCapable();
  std::string GetChannelSuffixForDataDir();
  #endif
  

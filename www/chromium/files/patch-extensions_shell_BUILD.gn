@@ -1,0 +1,11 @@
+--- extensions/shell/BUILD.gn.orig	2020-05-18 11:01:17 UTC
++++ extensions/shell/BUILD.gn
+@@ -193,7 +193,7 @@ source_set("app_shell_lib") {
+     }
+   }
+ 
+-  if (is_desktop_linux) {
++  if (is_desktop_linux && !is_bsd) {
+     sources += [
+       "app/shell_crash_reporter_client.cc",
+       "app/shell_crash_reporter_client.h",

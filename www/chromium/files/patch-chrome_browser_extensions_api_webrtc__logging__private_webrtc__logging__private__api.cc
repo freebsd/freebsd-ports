@@ -1,4 +1,4 @@
---- chrome/browser/extensions/api/webrtc_logging_private/webrtc_logging_private_api.cc.orig	2019-10-21 19:06:21 UTC
+--- chrome/browser/extensions/api/webrtc_logging_private/webrtc_logging_private_api.cc.orig	2020-05-13 18:40:22 UTC
 +++ chrome/browser/extensions/api/webrtc_logging_private/webrtc_logging_private_api.cc
 @@ -29,7 +29,7 @@
  #include "extensions/browser/process_manager.h"
@@ -18,24 +18,22 @@
    if (extension) {
      enabled_by_permissions =
          extension->permissions_data()->active_permissions().HasAPIPermission(
-@@ -557,7 +557,7 @@ void WebrtcLoggingPrivateStartEventLoggingFunction::Fi
- }
+@@ -569,7 +569,7 @@ void WebrtcLoggingPrivateStartEventLoggingFunction::Fi
  
- bool WebrtcLoggingPrivateGetLogsDirectoryFunction::RunAsync() {
+ ExtensionFunction::ResponseAction
+ WebrtcLoggingPrivateGetLogsDirectoryFunction::Run() {
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    // Unlike other WebrtcLoggingPrivate functions that take a RequestInfo object,
    // this function shouldn't be called by a component extension on behalf of
    // some web code. It returns a DirectoryEntry for use directly in the calling
-@@ -580,11 +580,11 @@ bool WebrtcLoggingPrivateGetLogsDirectoryFunction::Run
+@@ -592,9 +592,9 @@ WebrtcLoggingPrivateGetLogsDirectoryFunction::Run() {
            &WebrtcLoggingPrivateGetLogsDirectoryFunction::FireErrorCallback,
            this));
-   return true;
+   return RespondLater();
 -#else   // defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#else   // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
-   SetError("Not supported on the current OS");
-   SendResponse(false);
-   return false;
+   return RespondNow(Error("Not supported on the current OS"));
 -#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  }

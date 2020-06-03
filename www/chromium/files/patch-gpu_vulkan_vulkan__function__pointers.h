@@ -1,26 +1,26 @@
---- gpu/vulkan/vulkan_function_pointers.h.orig	2020-03-16 18:40:32 UTC
+--- gpu/vulkan/vulkan_function_pointers.h.orig	2020-05-13 18:40:32 UTC
 +++ gpu/vulkan/vulkan_function_pointers.h
-@@ -180,15 +180,15 @@ struct VulkanFunctionPointers {
-       vkGetAndroidHardwareBufferPropertiesANDROIDFn = nullptr;
+@@ -227,15 +227,15 @@ struct VulkanFunctionPointers {
+       vkGetAndroidHardwareBufferPropertiesANDROIDFn;
  #endif  // defined(OS_ANDROID)
  
 -#if defined(OS_LINUX) || defined(OS_ANDROID)
 +#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
-   PFN_vkGetSemaphoreFdKHR vkGetSemaphoreFdKHRFn = nullptr;
-   PFN_vkImportSemaphoreFdKHR vkImportSemaphoreFdKHRFn = nullptr;
+   VulkanFunction<PFN_vkGetSemaphoreFdKHR> vkGetSemaphoreFdKHRFn;
+   VulkanFunction<PFN_vkImportSemaphoreFdKHR> vkImportSemaphoreFdKHRFn;
 -#endif  // defined(OS_LINUX) || defined(OS_ANDROID)
 +#endif  // defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
-   PFN_vkGetMemoryFdKHR vkGetMemoryFdKHRFn = nullptr;
-   PFN_vkGetMemoryFdPropertiesKHR vkGetMemoryFdPropertiesKHRFn = nullptr;
--#endif  // defined(OS_LINUX)
-+#endif  // defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_ANDROID)
++#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
+   VulkanFunction<PFN_vkGetMemoryFdKHR> vkGetMemoryFdKHRFn;
+   VulkanFunction<PFN_vkGetMemoryFdPropertiesKHR> vkGetMemoryFdPropertiesKHRFn;
+-#endif  // defined(OS_LINUX) || defined(OS_ANDROID)
++#endif  // defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
  
  #if defined(OS_FUCHSIA)
-   PFN_vkImportSemaphoreZirconHandleFUCHSIA
-@@ -378,18 +378,18 @@ struct VulkanFunctionPointers {
+   VulkanFunction<PFN_vkImportSemaphoreZirconHandleFUCHSIA>
+@@ -447,18 +447,18 @@ struct VulkanFunctionPointers {
        ->vkGetAndroidHardwareBufferPropertiesANDROIDFn
  #endif  // defined(OS_ANDROID)
  
@@ -33,13 +33,20 @@
 -#endif  // defined(OS_LINUX) || defined(OS_ANDROID)
 +#endif  // defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_ANDROID)
++#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
  #define vkGetMemoryFdKHR gpu::GetVulkanFunctionPointers()->vkGetMemoryFdKHRFn
  #define vkGetMemoryFdPropertiesKHR \
    gpu::GetVulkanFunctionPointers()->vkGetMemoryFdPropertiesKHRFn
--#endif  // defined(OS_LINUX)
-+#endif  // defined(OS_LINUX) || defined(OS_BSD)
+-#endif  // defined(OS_LINUX) || defined(OS_ANDROID)
++#endif  // defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
  
  #if defined(OS_FUCHSIA)
  #define vkImportSemaphoreZirconHandleFUCHSIA \
+@@ -493,4 +493,4 @@ struct VulkanFunctionPointers {
+   gpu::GetVulkanFunctionPointers()->vkGetSwapchainImagesKHRFn
+ #define vkQueuePresentKHR gpu::GetVulkanFunctionPointers()->vkQueuePresentKHRFn
+ 
+-#endif  // GPU_VULKAN_VULKAN_FUNCTION_POINTERS_H_
+\ No newline at end of file
++#endif  // GPU_VULKAN_VULKAN_FUNCTION_POINTERS_H_

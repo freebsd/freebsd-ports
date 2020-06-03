@@ -1,8 +1,8 @@
---- chrome/browser/dev_ui_browser_resources.grd.orig	2020-03-17 09:36:38 UTC
+--- chrome/browser/dev_ui_browser_resources.grd.orig	2020-05-13 18:40:22 UTC
 +++ chrome/browser/dev_ui_browser_resources.grd
-@@ -55,7 +55,7 @@ This file specifies browser resources for developer-fa
-       <include name="IDR_PREDICTORS_HTML" file="resources\predictors\predictors.html" flattenhtml="true" allowexternalscript="true" type="BINDATA" compress="gzip" />
-       <include name="IDR_PREDICTORS_JS" file="resources\predictors\predictors.js" flattenhtml="true" type="BINDATA" compress="gzip" />
+@@ -61,7 +61,7 @@ This file specifies browser resources for developer-fa
+       <include name="IDR_MEDIA_SESSION_MOJOM_LITE_JS" file="${root_gen_dir}\services\media_session\public\mojom\media_session.mojom-lite.js" use_base_dir="false" type="BINDATA" compress="gzip" />
+       <include name="IDR_UI_GEOMETRY_MOJOM_LITE_JS" file="${root_gen_dir}\ui\gfx\geometry\mojom\geometry.mojom-lite.js" use_base_dir="false" type="BINDATA" compress="gzip" />
  
 -      <if expr="is_android or is_linux">
 +      <if expr="is_android or is_posix">

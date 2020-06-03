@@ -1,0 +1,18 @@
+--- components/BUILD.gn.orig	2020-05-18 11:10:39 UTC
++++ components/BUILD.gn
+@@ -286,9 +286,13 @@ test("components_unittests") {
+     ]
+ 
+     if (!is_fuchsia) {
++      if (!is_bsd) {
++        deps += [
++          "//components/crash/content/browser:unit_tests",
++          "//components/crash/core/app:unit_tests",
++        ]
++      }
+       deps += [
+-        "//components/crash/content/browser:unit_tests",
+-        "//components/crash/core/app:unit_tests",
+         "//components/data_reduction_proxy/content/common:unit_tests",
+         "//components/data_reduction_proxy/core/browser:unit_tests",
+         "//components/data_reduction_proxy/core/common:unit_tests",

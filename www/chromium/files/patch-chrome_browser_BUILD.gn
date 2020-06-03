@@ -1,0 +1,22 @@
+--- chrome/browser/BUILD.gn.orig	2020-05-13 18:40:22 UTC
++++ chrome/browser/BUILD.gn
+@@ -4195,7 +4195,9 @@ jumbo_static_library("browser") {
+       configs += [ "//build/config/linux:x11" ]
+       deps += [ "//ui/gfx/x" ]
+     }
+-    deps += [ "//services/service_manager/zygote" ]
++    if (!is_bsd) {
++      deps += [ "//services/service_manager/zygote" ]
++    }
+ 
+     if (use_allocator == "tcmalloc") {
+       deps += [ "//chrome/common/performance_manager/mojom" ]
+@@ -4408,7 +4410,7 @@ jumbo_static_library("browser") {
+     ]
+   }
+ 
+-  if (is_posix && !is_mac) {
++  if (is_posix && !is_mac && !is_bsd) {
+     # TODO(crbug.com/753619): Enable crash reporting on Fuchsia.
+     sources += [
+       "//chrome/app/chrome_crash_reporter_client.cc",

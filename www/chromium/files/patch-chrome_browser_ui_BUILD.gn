@@ -1,0 +1,19 @@
+--- chrome/browser/ui/BUILD.gn.orig	2020-05-13 18:40:23 UTC
++++ chrome/browser/ui/BUILD.gn
+@@ -630,12 +630,15 @@ jumbo_static_library("ui") {
+     deps += [ "//components/autofill/content/browser/webauthn" ]
+   }
+ 
+-  if (!is_fuchsia) {
++  if (!is_fuchsia && !is_bsd) {
+     # TODO(crbug.com/753619): Enable crash reporting on Fuchsia.
+     deps += [
+       "//components/crash/core/app",
+       "//components/crash/core/browser",
+     ]
++  }
++  if (is_bsd) {
++    deps += [ "//components/crash/core/browser" ]
+   }
+ 
+   if (is_win || is_android || is_linux) {

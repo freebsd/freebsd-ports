@@ -1,6 +1,6 @@
---- net/url_request/url_fetcher.h.orig	2019-10-30 16:19:33 UTC
+--- net/url_request/url_fetcher.h.orig	2020-05-13 18:40:33 UTC
 +++ net/url_request/url_fetcher.h
-@@ -113,7 +113,7 @@ class NET_EXPORT URLFetcher {
+@@ -114,7 +114,7 @@ class NET_EXPORT URLFetcher {
    // The unannotated Create() methods are not available on desktop Linux +
    // Windows. They are available on other platforms, since we only audit network
    // annotations on Linux & Windows.

@@ -1,11 +1,11 @@
---- gpu/command_buffer/service/external_vk_image_backing.h.orig	2020-03-16 18:40:32 UTC
+--- gpu/command_buffer/service/external_vk_image_backing.h.orig	2020-05-13 18:40:32 UTC
 +++ gpu/command_buffer/service/external_vk_image_backing.h
-@@ -132,7 +132,7 @@ class ExternalVkImageBacking final : public ClearTrack
-                          base::Optional<WGPUTextureFormat> wgpu_format,
-                          base::Optional<uint32_t> memory_type_index);
+@@ -151,7 +151,7 @@ class ExternalVkImageBacking final : public ClearTrack
  
--#ifdef OS_LINUX
-+#if defined(OS_LINUX) || defined(OS_BSD)
+  private:
+ 
+-#if defined(OS_LINUX) || defined(OS_ANDROID)
++#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
    // Extract file descriptor from image
    int GetMemoryFd(const GrVkImageInfo& image_info);
  #endif

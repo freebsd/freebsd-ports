@@ -1,6 +1,6 @@
---- chrome/app/generated_resources.grd.orig	2020-03-16 18:40:27 UTC
+--- chrome/app/generated_resources.grd.orig	2020-05-13 18:40:17 UTC
 +++ chrome/app/generated_resources.grd
-@@ -5141,7 +5141,7 @@ Keep your key file in a safe place. You will need it t
+@@ -5137,7 +5137,7 @@ Keep your key file in a safe place. You will need it t
        </if>
  
        <!-- chrome://browser-switch strings -->
@@ -9,7 +9,7 @@
          <message name="IDS_ABOUT_BROWSER_SWITCH_TITLE" desc="about:browser-switch page title">
            Legacy Browser Support
          </message>
-@@ -6861,7 +6861,7 @@ the Bookmarks menu.">
+@@ -6880,7 +6880,7 @@ the Bookmarks menu.">
          Google Pay
        </message>
  
@@ -18,7 +18,7 @@
          <message name="IDS_SHOW_WINDOW_DECORATIONS" desc="The label of a radio button in the options dialog for using the system title bar and borders.">
            Use system title bar and borders
          </message>
-@@ -7822,7 +7822,7 @@ Please help our engineers fix this problem. Tell us wh
+@@ -7806,7 +7806,7 @@ Please help our engineers fix this problem. Tell us wh
          Set as default
        </message>
  

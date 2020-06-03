@@ -1,6 +1,6 @@
---- content/browser/media/media_internals.cc.orig	2020-03-16 18:40:31 UTC
+--- content/browser/media/media_internals.cc.orig	2020-05-13 18:40:31 UTC
 +++ content/browser/media/media_internals.cc
-@@ -531,7 +531,7 @@ void MediaInternals::UpdateVideoCaptureDeviceCapabilit
+@@ -560,7 +560,7 @@ void MediaInternals::UpdateVideoCaptureDeviceCapabilit
      device_dict->SetString("id", descriptor.device_id);
      device_dict->SetString("name", descriptor.GetNameAndModel());
      device_dict->Set("formats", std::move(format_list));

@@ -1,0 +1,11 @@
+--- content/public/common/BUILD.gn.orig	2020-05-19 08:31:27 UTC
++++ content/public/common/BUILD.gn
+@@ -254,7 +254,7 @@ jumbo_source_set("common_sources") {
+     deps += [ "//content/public/android:jni" ]
+   }
+ 
+-  if (is_linux) {
++  if (is_linux && !is_bsd) {
+     deps += [ "//services/service_manager/zygote" ]
+   }
+ 

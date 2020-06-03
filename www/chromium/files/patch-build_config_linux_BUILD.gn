@@ -1,9 +1,9 @@
---- build/config/linux/BUILD.gn.orig	2019-03-11 22:00:52 UTC
+--- build/config/linux/BUILD.gn.orig	2020-05-13 18:39:36 UTC
 +++ build/config/linux/BUILD.gn
-@@ -28,7 +28,7 @@ config("runtime_library") {
-   }
+@@ -30,7 +30,7 @@ config("runtime_library") {
  
-   if ((!is_chromeos || default_toolchain != "//build/toolchain/cros:target") &&
+   if ((!(is_chromeos || chromeos_is_browser_only) ||
+        default_toolchain != "//build/toolchain/cros:target") &&
 -      (!use_custom_libcxx || current_cpu == "mipsel")) {
 +      (!use_custom_libcxx || current_cpu == "mipsel") && !is_bsd) {
      libs = [ "atomic" ]

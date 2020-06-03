@@ -1,6 +1,6 @@
---- services/video_capture/broadcasting_receiver.cc.orig	2019-12-16 21:51:28 UTC
+--- services/video_capture/broadcasting_receiver.cc.orig	2020-05-13 18:39:47 UTC
 +++ services/video_capture/broadcasting_receiver.cc
-@@ -40,7 +40,7 @@ void CloneSharedBufferHandle(const mojo::ScopedSharedB
+@@ -39,7 +39,7 @@ void CloneSharedBufferHandle(const mojo::ScopedSharedB
  void CloneSharedBufferToRawFileDescriptorHandle(
      const mojo::ScopedSharedBufferHandle& source,
      media::mojom::VideoBufferHandlePtr* target) {
@@ -9,7 +9,7 @@
    // |source| is unwrapped to a |PlatformSharedMemoryRegion|, from whence a file
    // descriptor can be extracted which is then mojo-wrapped.
    base::subtle::PlatformSharedMemoryRegion platform_region =
-@@ -183,7 +183,7 @@ void BroadcastingReceiver::BufferContext::
+@@ -182,7 +182,7 @@ void BroadcastingReceiver::BufferContext::
      ConvertRawFileDescriptorToSharedBuffer() {
    DCHECK(buffer_handle_->is_shared_memory_via_raw_file_descriptor());
  
