@@ -1,5 +1,5 @@
---- ../ngx_postgres-1.0rc7/config.orig	2015-05-26 20:52:25.649166000 +0300
-+++ ../ngx_postgres-1.0rc7/config	2015-05-26 20:53:10.331122000 +0300
+--- ../ngx_postgres-8aa7359/config.orig	2015-05-26 20:52:25.649166000 +0300
++++ ../ngx_postgres-8aa7359/config	2015-05-26 20:53:10.331122000 +0300
 @@ -48,12 +48,12 @@
  
      if [ $ngx_found = no ]; then

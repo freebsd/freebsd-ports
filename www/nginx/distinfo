@@ -1,4 +1,4 @@
-TIMESTAMP = 1591086628
+TIMESTAMP = 1591122333
 SHA256 (nginx-1.18.0.tar.gz) = 4c373e7ab5bf91d34a4f11a0c9496561061ba5eee6020db272a17a7228d35f99
 SIZE (nginx-1.18.0.tar.gz) = 1039530
 SHA256 (ngx_cache_purge-2.3.tar.gz) = 279e0d8a46d3b1521fd43b3f78bc1c08b263899142a7cc5058c1c0361a92c89c
@@ -117,8 +117,8 @@ SHA256 (nbs-system-naxsi-0.56_GH0.tar.gz) = 0a66dcadd32432460fab180be9f2efe24e91
 SIZE (nbs-system-naxsi-0.56_GH0.tar.gz) = 192120
 SHA256 (nginx-njs-629027e_GH0.tar.gz) = ea541abadd1e928081f71a0e1a843d4ca6573cdf5dcb2004367062fc4b795cbf
 SIZE (nginx-njs-629027e_GH0.tar.gz) = 418481
-SHA256 (FRiCKLE-ngx_postgres-1.0rc7_GH0.tar.gz) = c942e674a7273ab87caab4dcad626ab54852be192c29b1add50d2cb535e3cbb9
-SIZE (FRiCKLE-ngx_postgres-1.0rc7_GH0.tar.gz) = 40742
+SHA256 (konstruxi-ngx_postgres-8aa7359_GH0.tar.gz) = c69ad4495de7c7883ebc23e1e6c4cc83a4ac6a7fddd4d5c12e49d33b65f7c50b
+SIZE (konstruxi-ngx_postgres-8aa7359_GH0.tar.gz) = 48544
 SHA256 (openresty-rds-csv-nginx-module-v0.08_GH0.tar.gz) = 26e80646cc4ad87984c60dab584e8f32faf5dbebb4c6911784339822f4675c79
 SIZE (openresty-rds-csv-nginx-module-v0.08_GH0.tar.gz) = 20518
 SHA256 (openresty-rds-json-nginx-module-v0.14_GH0.tar.gz) = 99aedf222a9664484918392988cce41b1a6238240d42f8bd44f5ff102c05c36c

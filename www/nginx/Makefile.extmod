@@ -263,10 +263,9 @@ PASSENGER_EXTRA_PATCHES=${PATCHDIR}/extra-patch-passenger-build-nginx.rb \
 			${PATCHDIR}/extra-patch-passenger-system-calls
 
 POSTGRES_USES=		pgsql
-POSTGRES_GH_TUPLE=	FRiCKLE:ngx_postgres:1.0rc7:postgres
-POSTGRES_CONFIGURE_ON=	--add-module=${WRKSRC_postgres}
-POSTGRES_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_postgres-config \
-			${PATCHDIR}/extra-patch-ngx_postgres_module.c
+POSTGRES_GH_TUPLE=	konstruxi:ngx_postgres:8aa7359:postgres
+POSTGRES_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_postgres-config
+POSTGRES_VARS=		DSO_EXTMODS+=postgres
 
 RDS_CSV_GH_TUPLE=	openresty:rds-csv-nginx-module:v0.08:rdscsv
 RDS_CSV_CONFIGURE_ON=	--add-module=${WRKSRC_rdscsv}

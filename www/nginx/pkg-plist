@@ -50,6 +50,7 @@
 %%DSO%%%%HTTP%%%%NJS%%libexec/nginx/ngx_http_js_module.so
 %%DSO%%%%STREAM%%%%NJS%%libexec/nginx/ngx_stream_js_module.so
 %%DSO%%%%PASSENGER%%libexec/nginx/ngx_http_passenger_module.so
+%%DSO%%%%POSTGRES%%libexec/nginx/ngx_postgres_module.so
 %%DSO%%%%REDIS2%%libexec/nginx/ngx_http_redis2_module.so
 %%DSO%%%%RTMP%%libexec/nginx/ngx_rtmp_module.so
 %%DSO%%%%SET_MISC%%libexec/nginx/ngx_http_set_misc_module.so
