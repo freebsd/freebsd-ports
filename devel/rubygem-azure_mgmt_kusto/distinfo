@@ -1,3 +1,3 @@
-TIMESTAMP = 1581519207
-SHA256 (rubygem/azure_mgmt_kusto-0.19.1.gem) = 15ebc1d803874e359e8cf1ebb5861fb0ef7191788c2b11158d37da540215ed45
-SIZE (rubygem/azure_mgmt_kusto-0.19.1.gem) = 121344
+TIMESTAMP = 1591186978
+SHA256 (rubygem/azure_mgmt_kusto-0.19.2.gem) = f426afa957d4d3b13b0f85df7945b4d9ac6428c97b6d08c5e267bc685ee4c5a2
+SIZE (rubygem/azure_mgmt_kusto-0.19.2.gem) = 147968
