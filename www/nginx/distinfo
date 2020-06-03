@@ -1,4 +1,4 @@
-TIMESTAMP = 1591122333
+TIMESTAMP = 1591177712
 SHA256 (nginx-1.18.0.tar.gz) = 4c373e7ab5bf91d34a4f11a0c9496561061ba5eee6020db272a17a7228d35f99
 SIZE (nginx-1.18.0.tar.gz) = 1039530
 SHA256 (ngx_cache_purge-2.3.tar.gz) = 279e0d8a46d3b1521fd43b3f78bc1c08b263899142a7cc5058c1c0361a92c89c
@@ -51,8 +51,8 @@ SHA256 (mongodb-mongo-c-driver-v0.3.1_GH0.tar.gz) = 552c54aff81c4701ace4eb1ce20c
 SIZE (mongodb-mongo-c-driver-v0.3.1_GH0.tar.gz) = 53024
 SHA256 (openresty-headers-more-nginx-module-085fbbc_GH0.tar.gz) = 720d250a446f233ce12ccfe0d4eec67aa44085a0a71327f158e19bf0b26a602b
 SIZE (openresty-headers-more-nginx-module-085fbbc_GH0.tar.gz) = 28226
-SHA256 (giom-nginx_accept_language_module-2f69842_GH0.tar.gz) = 5534ca63cdfc2a7dc4e1cbf9c2d54d3ed3f0e6c86b4a95be48ec0a3f41cc1eb0
-SIZE (giom-nginx_accept_language_module-2f69842_GH0.tar.gz) = 3393
+SHA256 (dvershinin-nginx_accept_language_module-5683967_GH0.tar.gz) = a58feb576f2231498b8a3863d3c6fba45c7d48bc48735fa714e07a7bfbedb6e3
+SIZE (dvershinin-nginx_accept_language_module-5683967_GH0.tar.gz) = 3425
 SHA256 (atomx-nginx-http-auth-digest-cd86418_GH0.tar.gz) = 9858b202e5009da4047ac16f3ee02e018673237f0d9652a9e1c2c9d7917f07bf
 SIZE (atomx-nginx-http-auth-digest-cd86418_GH0.tar.gz) = 17869
 SHA256 (TeslaGov-ngx-http-auth-jwt-module-80d89d9_GH0.tar.gz) = 1b71290a0eab6a0bb6ab75e1228a302cf76c82f3284ad0eb7e8b2bfa110582e7
