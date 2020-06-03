@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	azure_mgmt_marketplace_ordering
-PORTVERSION=	0.17.4
+PORTVERSION=	0.17.5
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,7 @@ COMMENT=	Microsoft Azure Microsoft Azure Marketplace Ordering Library for Ruby C
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-ms_rest_azure>=0.11.1<0.12:devel/rubygem-ms_rest_azure
+RUN_DEPENDS=	rubygem-ms_rest_azure>=0.12.0<0.13:devel/rubygem-ms_rest_azure
 
 USES=		gem
 USE_RUBY=	yes
