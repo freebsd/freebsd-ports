@@ -17,7 +17,7 @@ BROKEN_powerpc64=	fails to build: include/config_distro_bootcmd.h:279:3: sandbox
 BROKEN_SSL=	libressl
 BROKEN_SSL_REASON_libressl=	not supported by the upstream
 
-USES=		bison compiler:c11 gmake python:2.7,build ssl tar:bzip2
+USES=		bison compiler:c11 gmake python:build ssl tar:bzip2
 
 CONFLICTS=	uboot-mkimage
 ALL_TARGET=	tools-only
