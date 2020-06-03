@@ -135,6 +135,7 @@ include/libzfs/libzfs_core.h
 include/libzfs/libzfs_impl.h
 include/libzfs/libzutil.h
 include/libzfs/sys/abd.h
+include/libzfs/sys/abd_impl.h
 include/libzfs/sys/aggsum.h
 include/libzfs/sys/arc.h
 include/libzfs/sys/arc_impl.h
@@ -371,6 +372,7 @@ libexec/zfs/zpool.d/upath
 libexec/zfs/zpool.d/vendor
 libexec/zfs/zpool.d/w_proc
 libexec/zfs/zpool.d/w_ucor
+man/man1/arcstat.1.gz
 %%TESTS%%man/man1/raidz_test.1.gz
 %%TESTS%%man/man1/test-runner.1.gz
 man/man1/zhack.1.gz
@@ -424,6 +426,7 @@ man/man8/zfs-upgrade.8.gz
 man/man8/zfs-userspace.8.gz
 man/man8/zfs-wait.8.gz
 man/man8/zfs.8.gz
+man/man8/zfs_ids_to_path.8.gz
 man/man8/zfsconcepts.8.gz
 man/man8/zfsprops.8.gz
 man/man8/zinject.8.gz
@@ -466,6 +469,7 @@ man/man8/zstreamdump.8.gz
 sbin/fsck.zfs
 sbin/zdb
 sbin/zfs
+sbin/zfs_ids_to_path
 sbin/zhack
 sbin/zinject
 sbin/zpool
@@ -854,6 +858,9 @@ share/pkgconfig/libzfs_core.pc
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_get/zfs_get_010_neg.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_get/zfs_get_common.kshlib
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_get/zfs_get_list_d.kshlib
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_ids_to_path/cleanup.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_ids_to_path/setup.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_ids_to_path/zfs_ids_to_path_001_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_inherit/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_inherit/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_inherit/zfs_inherit_001_neg.ksh
@@ -2016,6 +2023,7 @@ share/pkgconfig/libzfs_core.pc
 %%TESTS%%share/zfs/zfs-tests/tests/functional/resilver/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/resilver/resilver.cfg
 %%TESTS%%share/zfs/zfs-tests/tests/functional/resilver/resilver_restart_001.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/resilver/resilver_restart_002.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/resilver/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rootpool/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rootpool/rootpool_002_neg.ksh
