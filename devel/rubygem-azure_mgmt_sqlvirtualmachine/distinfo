@@ -1,3 +1,3 @@
-TIMESTAMP = 1579306241
-SHA256 (rubygem/azure_mgmt_sqlvirtualmachine-0.18.1.gem) = 646232337ef232eb14466e1bc2f8788c700d5a9d2d5c401a2c0e804c1fba67e1
-SIZE (rubygem/azure_mgmt_sqlvirtualmachine-0.18.1.gem) = 27136
+TIMESTAMP = 1591187074
+SHA256 (rubygem/azure_mgmt_sqlvirtualmachine-0.18.2.gem) = 5a0769be325a6f8991cf64e2563c3d2b9948bbca81d99663db4c658f36b5d94d
+SIZE (rubygem/azure_mgmt_sqlvirtualmachine-0.18.2.gem) = 27136
