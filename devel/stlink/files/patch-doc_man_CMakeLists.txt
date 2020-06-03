@@ -1,11 +1,11 @@
---- doc/man/CMakeLists.txt.orig	2017-07-01 17:41:54.000000000 +0300
-+++ doc/man/CMakeLists.txt	2017-08-21 18:28:07.995838000 +0300
-@@ -31,7 +31,7 @@ foreach(manpage ${MANPAGES})
- 	endif()
+--- doc/man/CMakeLists.txt.orig	2020-05-31 22:00:20 UTC
++++ doc/man/CMakeLists.txt
+@@ -30,7 +30,7 @@ foreach (manpage ${MANPAGES})
+     endif ()
  
- 	if (f AND NOT WIN32)
--		install(FILES ${f} DESTINATION ${CMAKE_INSTALL_PREFIX}/share/man/man1)
-+		install(FILES ${f} DESTINATION ${CMAKE_INSTALL_PREFIX}/man/man1)
- 		unset(f)
- 	endif()
- endforeach()
+     if (f AND NOT WIN32)
+-        install(FILES ${f} DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/${PROJECT_NAME}/man/man1)
++        install(FILES ${f} DESTINATION ${CMAKE_INSTALL_PREFIX}/man/man1)
+         unset(f)
+     endif ()
+ endforeach ()

@@ -1,0 +1,23 @@
+--- CMakeLists.txt.orig	2020-05-31 22:00:20 UTC
++++ CMakeLists.txt
+@@ -71,7 +71,11 @@ include(CheckLibraryExists)
+ 
+ CHECK_LIBRARY_EXISTS(ssp __stack_chk_fail "" _stack_chk_fail_exists)
+ if (_stack_chk_fail_exists)
+-    set(SSP_LIB -static ssp)
++    if(WIN32)
++        set(SSP_LIB -static ssp)
++    else()
++        set(SSP_LIB ssp)
++    endif()
+ else ()
+     set(SSP_LIB "")
+ endif ()
+@@ -278,6 +282,7 @@ add_subdirectory(include) # contains subordinate CMake
+ add_subdirectory(src/stlink-gui)  # contains subordinate CMakeLists to build GUI
+ add_subdirectory(tests)           # contains subordinate CMakeLists to build test executables
+ add_subdirectory(cmake/packaging) # contains subordinate CMakeLists to build packages
++add_subdirectory(cmake/pkgconfig) # contains subordinate CMakeLists to build pkgconfig file
+ 
+ option(STLINK_GENERATE_MANPAGES "Generate manpages with pandoc" OFF)
+ add_subdirectory(doc/man)         # contains subordinate CMakeLists to generate manpages

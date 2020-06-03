@@ -1,0 +1,9 @@
+--- cmake/pkgconfig/CMakeLists.txt.orig	2020-05-31 22:00:20 UTC
++++ cmake/pkgconfig/CMakeLists.txt
+@@ -11,5 +11,5 @@ configure_file(
+ 
+ install(
+     FILES "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.pc"
+-    DESTINATION ${STLINK_LIBRARY_PATH}/pkgconfig
++    DESTINATION libdata/pkgconfig/
+     )

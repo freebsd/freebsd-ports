@@ -1,17 +1,19 @@
---- CMakeLists.txt.orig	2017-07-01 17:41:54.000000000 +0300
-+++ CMakeLists.txt	2017-08-21 18:28:07.992623000 +0300
-@@ -21,10 +21,10 @@ include(cmake/CFlags.cmake)
- # Dependencies
- ###
- find_package(LibUSB REQUIRED)
--if (NOT APPLE AND NOT WIN32 AND NOT CMAKE_CROSSCOMPILING)
--	find_package(PkgConfig)
--	pkg_check_modules(gtk gtk+-3.0)
+--- CMakeLists.txt.orig	2020-06-01 01:00:20.000000000 +0300
++++ CMakeLists.txt	2020-06-02 16:07:00.308748843 +0300
+@@ -48,11 +48,11 @@ endif ()
+ find_package(libusb REQUIRED)
+ 
+ ## Package configuration (pkg-config) on unix-based systems
+-if (NOT WIN32 AND NOT CMAKE_CROSSCOMPILING)
+-    #add_subdirectory(cmake/pkgconfig)
+-    find_package(PkgConfig)
+-    pkg_check_modules(GTK3 gtk+-3.0)
 -endif ()
-+#if (NOT APPLE AND NOT WIN32 AND NOT CMAKE_CROSSCOMPILING)
-+#	find_package(PkgConfig)
-+#	pkg_check_modules(gtk gtk+-3.0)
++#if (NOT WIN32 AND NOT CMAKE_CROSSCOMPILING)
++#    #add_subdirectory(cmake/pkgconfig)
++#    find_package(PkgConfig)
++#    pkg_check_modules(GTK3 gtk+-3.0)
 +#endif ()
  
+ ## Check for system-specific additional header files and libraries
  include(CheckIncludeFile)
- CHECK_INCLUDE_FILE(sys/mman.h STLINK_HAVE_SYS_MMAN_H)

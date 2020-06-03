@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	stlink
-PORTVERSION=	1.5.0
-PORTREVISION=	2
+PORTVERSION=	1.6.1
+#PORTREVISION=	0
 CATEGORIES=	devel
 
 MAINTAINER=	lev@FreeBSD.org
@@ -18,11 +18,16 @@ GTK3_USE=		GNOME=gtk30
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	texane
+GH_TAGNAME=	v${PORTVERSION}
 
 USES=		cmake pkgconfig
 USE_LDCONFIG=	yes
 
-PORTDOCS=	README.md tested-boards.md tutorial.md
+PORTDOCS=	README.md ${ALLDOCS}
+
+ALLDOCS=	compiling.md developer.txt devices_boards.md \
+		flashloaders.md release.md tutorial.md \
+		version_support.md
 
 .include <bsd.port.pre.mk>
 
@@ -33,7 +38,8 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-pacth-32bit
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}/README.md
-	${INSTALL_DATA} ${WRKSRC}/doc/tested-boards.md ${STAGEDIR}${DOCSDIR}/tested-boards.md
-	${INSTALL_DATA} ${WRKSRC}/doc/tutorial.md ${STAGEDIR}${DOCSDIR}/tutorial.md
+.for DOC in ${ALLDOCS}
+	${INSTALL_DATA} ${WRKSRC}/doc/${DOC} ${STAGEDIR}${DOCSDIR}/${DOC}
+.endfor
 
 .include <bsd.port.post.mk>
