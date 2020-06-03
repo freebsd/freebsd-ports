@@ -1,3 +1,3 @@
-TIMESTAMP = 1579306099
-SHA256 (rubygem/azure_mgmt_cosmosdb-0.21.0.gem) = 1b7bcf2709ff695460ba0b233c52a10f6f167c60ade2fec61c97a97ca1efe364
-SIZE (rubygem/azure_mgmt_cosmosdb-0.21.0.gem) = 105984
+TIMESTAMP = 1591186930
+SHA256 (rubygem/azure_mgmt_cosmosdb-0.21.1.gem) = 236105f763860715ca93bdcfd41680de06e9eec860285a629dd0b3cb0e911d0e
+SIZE (rubygem/azure_mgmt_cosmosdb-0.21.1.gem) = 105984
