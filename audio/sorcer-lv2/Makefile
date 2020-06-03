@@ -13,6 +13,8 @@ COMMENT=	Wavetable LV2 plugin synth targeted at the electronic/dubstep genre
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		sorcer_ui.cxx:265:21: error: cannot initialize a member subobject of type 'LV2UI_Handle'
+
 BUILD_DEPENDS=	lv2>0:audio/lv2 \
 		${LOCALBASE}/include/boost/circular_buffer.hpp:devel/boost-libs
 LIB_DEPENDS=	libntk.so:x11-toolkits/ntk
