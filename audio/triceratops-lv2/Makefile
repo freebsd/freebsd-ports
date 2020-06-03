@@ -14,6 +14,7 @@ COMMENT=	Polyphonic synthesizer LV2 plugin
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		triceratops_gui.cpp:892:26: error: cannot initialize a member subobject of type 'LV2UI_Handle'
 DEPRECATED=	Uses deprecated version of python
 EXPIRATION_DATE=	2020-08-15
 
