@@ -2,7 +2,7 @@
 
 PORTNAME=	glow
 DISTVERSION=	g20200115
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc # machine-learning
 PKGNAMESUFFIX=	-nn-compiler
 

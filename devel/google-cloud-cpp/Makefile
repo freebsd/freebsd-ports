@@ -3,7 +3,7 @@
 PORTNAME=	google-cloud-cpp
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.11.0.g20190710 # the upstream master branch is mis-versioned: https://github.com/googleapis/google-cloud-cpp/issues/2871
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/nlohmann/json/releases/download/v3.4.0/:json # should use the package: https://github.com/googleapis/google-cloud-cpp/issues/2874
 DISTFILES=	json.hpp:json

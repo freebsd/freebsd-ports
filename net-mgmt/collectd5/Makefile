@@ -3,6 +3,7 @@
 
 PORTNAME=	collectd
 PORTVERSION=	5.11.0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://storage.googleapis.com/collectd-tarballs/
 PKGNAMESUFFIX=	5
