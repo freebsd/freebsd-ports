@@ -10,6 +10,9 @@ PKGNAMESUFFIX=	-ltr
 MAINTAINER=	rhurlin@gwdg.de
 COMMENT=	Free and Open Source Geographic Information System
 
+PATCH_SITES=    https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=     4bb4bc8fb1b6.patch:-p1
+
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	gpsbabel>=1.5.4:astro/gpsbabel \
