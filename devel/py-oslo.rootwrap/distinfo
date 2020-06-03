@@ -1,3 +1,3 @@
-TIMESTAMP = 1588163965
-SHA256 (oslo.rootwrap-6.0.2.tar.gz) = d3f365dca4d8403cecb9d8392ffa500d4f361503f38f34cbf4865df6b2d654d6
-SIZE (oslo.rootwrap-6.0.2.tar.gz) = 46431
+TIMESTAMP = 1591186788
+SHA256 (oslo.rootwrap-6.1.0.tar.gz) = a3d0d8dd43f692e5e8e5d31f5ecd28a48ac410982a8af51ae6637c2ac45c6e5a
+SIZE (oslo.rootwrap-6.1.0.tar.gz) = 46783
