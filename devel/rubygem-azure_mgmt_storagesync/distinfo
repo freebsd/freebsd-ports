@@ -1,3 +1,3 @@
-TIMESTAMP = 1579306249
-SHA256 (rubygem/azure_mgmt_storagesync-0.18.0.gem) = 275bbf232a78c9033a3c2b411e7e509b2fa8b14d29166f547645fc1d0c926bb1
-SIZE (rubygem/azure_mgmt_storagesync-0.18.0.gem) = 131072
+TIMESTAMP = 1591187082
+SHA256 (rubygem/azure_mgmt_storagesync-0.18.1.gem) = f4e63329ea4df45366869b9d59b0f720d7e660760028f0e7eb1abc362b439065
+SIZE (rubygem/azure_mgmt_storagesync-0.18.1.gem) = 131072
