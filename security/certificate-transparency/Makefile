@@ -12,6 +12,8 @@ COMMENT=	Open framework for monitoring and auditing SSL certificates
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		inherits generated classes which is prohitited by protobuf. See PR 246530 for detail
+
 LIB_DEPENDS=	libevent.so:devel/libevent \
 		libevhtp.so:www/libevhtp \
 		libgtest.so:devel/googletest \
