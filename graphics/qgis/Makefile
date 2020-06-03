@@ -7,6 +7,9 @@ DISTVERSION=	3_12_1
 PORTREVISION=	1
 CATEGORIES=	graphics geography
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	e0cc886ee9de.patch:-p1
+
 MAINTAINER=	rhurlin@gwdg.de
 COMMENT=	Free and Open Source Geographic Information System
 
