@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	talk
-PORTVERSION=	8.0.9
+PORTVERSION=	9.0.0
 CATEGORIES=	net-im
 MASTER_SITES=	https://github.com/${PKGNAMEPREFIX:S/-//}/${DISTNAME:C/-.*//}/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	nextcloud-
@@ -17,7 +17,7 @@ COMMENT=	Online meeting app for Nextcloud
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	nextcloud${PHP_PKGNAMESUFFIX}>=18:www/nextcloud@${PHP_FLAVOR}
+RUN_DEPENDS=	nextcloud${PHP_PKGNAMESUFFIX}>=19:www/nextcloud@${PHP_FLAVOR}
 
 USES=		php:flavors
 NO_BUILD=	yes
