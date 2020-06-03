@@ -12,6 +12,8 @@ COMMENT=	LV2 plugins for various sound effects
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		casynth_ui_main.cxx:181:5: error: cannot initialize a member subobject of type 'LV2UI_Handle'
+
 BUILD_DEPENDS=	lv2>0:audio/lv2 \
 		${LOCALBASE}/lib/libfftw3.so:math/fftw3
 LIB_DEPENDS=	libfftw3f.so:math/fftw3-float \
