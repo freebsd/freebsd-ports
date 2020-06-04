@@ -551,9 +551,16 @@ gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/g0/spi.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/g0/syscfg.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/g0/timer.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/g0/usart.h
+gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/g4/doc-stm32g4.h
+gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/g4/gpio.h
+gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/g4/irq.json
+gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/g4/memorymap.h
+gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/g4/nvic.h
+gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/g4/rcc.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/gpio.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/h7/dac.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/h7/doc-stm32h7.h
+gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/h7/exti.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/h7/flash.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/h7/fmc.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/h7/gpio.h
@@ -719,6 +726,7 @@ gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencmsis/stm32/f3/irqha
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencmsis/stm32/f4/irqhandlers.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencmsis/stm32/f7/irqhandlers.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencmsis/stm32/g0/irqhandlers.h
+gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencmsis/stm32/g4/irqhandlers.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencmsis/stm32/h7/irqhandlers.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencmsis/stm32/l0/irqhandlers.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencmsis/stm32/l1/irqhandlers.h
@@ -756,6 +764,7 @@ gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/lib/libopencm3_stm32f3.a
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/lib/libopencm3_stm32f4.a
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/lib/libopencm3_stm32f7.a
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/lib/libopencm3_stm32g0.a
+gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/lib/libopencm3_stm32g4.a
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/lib/libopencm3_stm32h7.a
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/lib/libopencm3_stm32l0.a
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/lib/libopencm3_stm32l1.a
