@@ -2,7 +2,7 @@
 
 PORTNAME=	jitsi
 DISTVERSION=	2.1-183
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-im java
 PKGNAMESUFFIX=	-videobridge
 
@@ -12,6 +12,7 @@ COMMENT=	WebRTC compatible video router or SFU
 LICENSE=	APACHE20
 
 BUILD_DEPENDS=	${LOCALBASE}/share/java/maven/bin/mvn:devel/maven
+RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash
 
 ONLY_FOR_ARCHS=	i386 amd64
 
