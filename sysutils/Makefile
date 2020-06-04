@@ -1266,6 +1266,7 @@
     SUBDIR += tealdeer
     SUBDIR += tenshi
     SUBDIR += terraform
+    SUBDIR += terraform-provider-gridscale
     SUBDIR += terraform-provider-vultr
     SUBDIR += testdisk
     SUBDIR += thefish
