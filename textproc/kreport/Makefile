@@ -2,7 +2,7 @@
 
 PORTNAME=		kreport
 DISTVERSION=		3.2.0
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		textproc kde
 MASTER_SITES=		KDE/stable/${PORTNAME}/src
 DIST_SUBDIR=		KDE/${PORTNAME}
@@ -19,5 +19,8 @@ USE_QT=			core declarative gui network webkit widgets xml \
 			buildtools_build printsupport qmake_build
 
 CONFLICTS_INSTALL=	calligra-2*
+
+post-extract:
+	${CP} ${FILESDIR}/KReportGroupTracker.cpp ${WRKSRC}/src/renderer/scripting/KReportGroupTracker.cpp
 
 .include <bsd.port.mk>

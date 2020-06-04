@@ -1,0 +1,21 @@
+--- src/CMakeLists.txt.orig	2020-06-04 20:16:17 UTC
++++ src/CMakeLists.txt
+@@ -106,6 +106,7 @@ set(kreport_TARGET_INCLUDE_DIRS
+ 
+ if(KREPORT_SCRIPTING)
+     list(APPEND kreport_LIB_SRCS
++        renderer/scripting/KReportGroupTracker.cpp
+         renderer/scripting/KReportScriptHandler.cpp
+         renderer/scripting/KReportScriptConstants.cpp
+         renderer/scripting/KReportScriptDebug.cpp
+@@ -131,10 +132,6 @@ if(KREPORT_SCRIPTING)
+         items/field/KReportScriptField.cpp
+         items/image/KReportScriptImage.cpp
+         items/text/KReportScriptText.cpp
+-    )
+-
+-    qt_wrap_cpp(KReport kreport_LIB_SRCS
+-        renderer/scripting/KReportGroupTracker.h
+     )
+ 
+     list(APPEND kreport_INCLUDE_DIRS
