@@ -1294,6 +1294,7 @@ gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/envz.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/errno.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/fastmath.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/fcntl.h
+gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/fenv.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/fnmatch.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/getopt.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/glob.h
@@ -1325,6 +1326,7 @@ gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/machine/types.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/malloc.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/math.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/memory.h
+gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/ndbm.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/newlib-nano/newlib.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/newlib.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/paths.h
@@ -1354,6 +1356,7 @@ gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/string.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/strings.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/_default_fcntl.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/_intsup.h
+gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/_locale.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/_pthreadtypes.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/_sigset.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/_stdint.h
@@ -1368,6 +1371,7 @@ gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/dirent.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/errno.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/fcntl.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/features.h
+gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/fenv.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/file.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/iconvnls.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/lock.h
@@ -1403,7 +1407,6 @@ gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/utmp.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/wchar.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/wctype.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/wordexp.h
-gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/xlocale.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/lib/aprofile-validation-v2m.specs
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/lib/aprofile-validation.specs
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/lib/aprofile-ve-v2m.specs

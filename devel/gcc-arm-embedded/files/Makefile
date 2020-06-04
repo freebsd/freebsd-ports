@@ -3,7 +3,7 @@
 .include "Makefile.inc"
 
 MULTILIB_LIST=	rmprofile
-PKGVERSION=	GNU Tools for ARM Embedded Processors
+PKGVERSION=	GNU Arm Embedded Toolchain
 
 BUILD_PREFIX=	${WRKDIR}/build
 DOC_PREFIX=	${INTERIM_PREFIX}/${DOCS_SUFFIX}
@@ -211,6 +211,7 @@ build-newlib-nano:
 	 --htmldir=${DOC_PREFIX}/html \
 	 --pdfdir=${DOC_PREFIX}/pdf \
 	 --disable-newlib-supplied-syscalls    \
+	 --enable-newlib-reent-check-verify    \
 	 --enable-newlib-reent-small           \
 	 --enable-newlib-retargetable-locking  \
 	 --disable-newlib-fvwrite-in-streamio  \
