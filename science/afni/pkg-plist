@@ -528,6 +528,7 @@ bin/auto_warp.py
 bin/byteorder
 bin/cat_matvec
 bin/ccalc
+bin/check_dset_for_fs.py
 bin/cifti_tool
 bin/column_cat
 bin/count
@@ -541,7 +542,9 @@ bin/dicom_to_raw
 bin/dsetstat2p
 bin/eg_main_chrono.py
 bin/ent16
+bin/epi_b0_correct.py
 bin/fat_lat_csv.py
+bin/fat_mat2d_plot.py
 bin/fat_mat_sel.py
 bin/fat_mvm_gridconv.py
 bin/fat_mvm_prep.py
@@ -797,9 +800,7 @@ lib/afni/plug_zeropad.so
 %%PYTHON_SITELIBDIR%%/afnipy/afni_util.py
 %%PYTHON_SITELIBDIR%%/afnipy/afni_xmat.py
 %%PYTHON_SITELIBDIR%%/afnipy/ask_me.py
-%%PYTHON_SITELIBDIR%%/afnipy/check_dset_for_fs.py
 %%PYTHON_SITELIBDIR%%/afnipy/db_mod.py
-%%PYTHON_SITELIBDIR%%/afnipy/epi_b0_correct.py
 %%PYTHON_SITELIBDIR%%/afnipy/gui_uber_align_test.py
 %%PYTHON_SITELIBDIR%%/afnipy/gui_uber_proc.py
 %%PYTHON_SITELIBDIR%%/afnipy/gui_uber_skel.py
@@ -823,6 +824,7 @@ lib/afni/plug_zeropad.so
 %%PYTHON_SITELIBDIR%%/afnipy/lib_gershgorin.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_info_dict.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_mat2d_base.py
+%%PYTHON_SITELIBDIR%%/afnipy/lib_mat2d_plot.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_matplot.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_msar.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_plot_1D.py
