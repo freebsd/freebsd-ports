@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	netpbm
-DISTVERSION=	10.90.02
+DISTVERSION=	10.90.03
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/t6/netpbm/releases/download/v${DISTVERSION}/
 
