@@ -3,7 +3,7 @@
 
 PORTNAME=	txt2man
 DISTVERSIONPREFIX=	txt2man-
-DISTVERSION=	1.6.0
+DISTVERSION=	1.7.0
 CATEGORIES=	textproc
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -23,11 +23,14 @@ GH_ACCOUNT=	mvertes
 MAKE_ENV=	prefix=${STAGEDIR}${PREFIX}
 NO_ARCH=	yes
 
-PLIST_FILES=	bin/bookman bin/src2man bin/txt2man \
-		man/man1/bookman.1.gz man/man1/src2man.1.gz man/man1/txt2man.1.gz
+PLIST_FILES=	bin/bookman \
+		bin/src2man \
+		bin/txt2man \
+		share/man/man1/bookman.1.gz \
+		share/man/man1/src2man.1.gz \
+		share/man/man1/txt2man.1.gz
 
 post-patch:
-	@${REINPLACE_CMD} 's,share/man,man,g' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} 's,awk,gawk,' ${WRKSRC}/bookman ${WRKSRC}/src2man
 	@${REINPLACE_CMD} '/exec ksh/d' ${WRKSRC}/txt2man
 
