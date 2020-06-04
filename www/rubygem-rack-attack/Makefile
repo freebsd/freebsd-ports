@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rack-attack
-PORTVERSION=	6.2.1
+PORTVERSION=	6.3.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
