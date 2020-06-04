@@ -1,6 +1,6 @@
-libexec/xfce4/panel/plugins/libstopwatch.so
-libexec/xfce4/panel/plugins/libstopwatch.so.0
-libexec/xfce4/panel/plugins/libstopwatch.so.0.0.0
+lib/xfce4/panel/plugins/libstopwatch.so
+lib/xfce4/panel/plugins/libstopwatch.so.0
+lib/xfce4/panel/plugins/libstopwatch.so.0.0.0
 share/icons/hicolor/16x16/apps/xfce4-stopwatch-plugin.png
 share/icons/hicolor/22x22/apps/xfce4-stopwatch-plugin.png
 share/icons/hicolor/24x24/apps/xfce4-stopwatch-plugin.png
