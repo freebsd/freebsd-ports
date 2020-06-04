@@ -2,7 +2,7 @@
 
 PORTNAME=	git-cinnabar
 DISTVERSION=	0.5.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -27,6 +27,9 @@ MAKE_ARGS!=	${MAKE} -V MAKE_ARGS -C ${.CURDIR}/../git
 .endif
 MAKE_ENV+=	PYTHON_PATH="${PYTHON_CMD}"
 MAKE_ARGS+=	SUBMODULE_STATUS=dummy
+CFLAGS+=	-ffunction-sections -fdata-sections
+LDFLAGS+=	-Wl,--gc-sections
+.export		CPPFLAGS CFLAGS CXXFLAGS LDFLAGS # :configure
 DATADIR=	${PREFIX}/libexec/git-core
 PORTDATA=	*
 PORTDOCS=	README.md
