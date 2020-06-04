@@ -2,7 +2,7 @@
 
 PORTNAME=	jitsi
 PORTVERSION=	1.0.4048
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www net-im
 MASTER_SITES=	https://download.jitsi.org/jitsi-meet/src/
 DISTVERSIONPREFIX=	meet-

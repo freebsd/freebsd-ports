@@ -12,14 +12,14 @@ Jitsi Meet was installed
 
 2) You can look a basic configuration at the following url:
 
-   https://github.com/jitsi/jitsi-meet/blob/master/doc/manual-install.md
+   https://jitsi.github.io/handbook/docs/devops-guide/devops-guide-manual
 
 3) Configuration and interface options files are installed like 
 
    %%WWWDIR%%/config.js.sample
    %%WWWDIR%%/interface_config.js.sample
 
-   Must be renamed to
+   Copy these files to
 
    %%WWWDIR%%/config.js
    %%WWWDIR%%/interface_config.js
