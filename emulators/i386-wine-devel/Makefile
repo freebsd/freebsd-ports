@@ -24,12 +24,11 @@ PKGINSTALL=	${.CURDIR}/files/pkg-install
 PKGDEINSTALL=	${PKGINSTALL}
 
 distinfo-update:
-	${RM} ${.CURDIR}/distinfo ${.CURDIR}/distinfo~
+	${RM} ${.CURDIR}/distinfo~
 .for osrel in 11 12 13
 	${MAKE} fetch OSREL=${osrel} OSVERSION=${osrel}99999 _OSRELEASE=${osrel}
 	${MAKE} makesum OSREL=${osrel} OSVERSION=${osrel}99999 _OSRELEASE=${osrel}
 	${CAT} ${.CURDIR}/distinfo >> ${.CURDIR}/distinfo~
-	${RM} ${.CURDIR}/distinfo
 .endfor
 	${SED} -e '2,$${' -e '/^TIMESTAMP/d' -e '}' distinfo~ > ${.CURDIR}/distinfo
 	${RM} ${.CURDIR}/distinfo~
