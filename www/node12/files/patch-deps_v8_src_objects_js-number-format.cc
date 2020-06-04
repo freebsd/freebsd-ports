@@ -1,8 +1,8 @@
 https://github.com/nodejs/node/issues/32660
 
---- deps/v8/src/objects/js-number-format.cc.orig	2020-03-26 20:00:01 UTC
+--- deps/v8/src/objects/js-number-format.cc.orig	2020-04-28 09:45:23 UTC
 +++ deps/v8/src/objects/js-number-format.cc
-@@ -1187,42 +1187,31 @@ MaybeHandle<JSNumberFormat> JSNumberFormat::New(Isolat
+@@ -1257,42 +1257,31 @@ MaybeHandle<JSNumberFormat> JSNumberFormat::New(Isolat
  }
  
  namespace {
@@ -53,7 +53,7 @@ https://github.com/nodejs/node/issues/32660
  }
  
  }  // namespace
-@@ -1233,10 +1222,16 @@ MaybeHandle<String> JSNumberFormat::FormatNumeric(
+@@ -1303,10 +1292,16 @@ MaybeHandle<String> JSNumberFormat::FormatNumeric(
      Handle<Object> numeric_obj) {
    DCHECK(numeric_obj->IsNumeric());
  
@@ -73,7 +73,7 @@ https://github.com/nodejs/node/issues/32660
  }
  
  namespace {
-@@ -1349,12 +1344,18 @@ std::vector<NumberFormatSpan> FlattenRegionsToParts(
+@@ -1419,12 +1414,18 @@ std::vector<NumberFormatSpan> FlattenRegionsToParts(
  }
  
  namespace {
@@ -95,7 +95,7 @@ https://github.com/nodejs/node/issues/32660
    int index = start_index;
    if (length == 0) return Just(index);
  
-@@ -1363,13 +1364,14 @@ Maybe<int> ConstructParts(Isolate* isolate, const icu:
+@@ -1433,13 +1434,14 @@ Maybe<int> ConstructParts(Isolate* isolate, const icu:
    // other region covers some part of the formatted string. It's possible
    // there's another field with exactly the same begin and end as this backdrop,
    // in which case the backdrop's field_id of -1 will give it lower priority.
@@ -115,7 +115,7 @@ https://github.com/nodejs/node/issues/32660
      }
    }
  
-@@ -1391,7 +1393,7 @@ Maybe<int> ConstructParts(Isolate* isolate, const icu:
+@@ -1461,7 +1463,7 @@ Maybe<int> ConstructParts(Isolate* isolate, const icu:
      Handle<String> substring;
      ASSIGN_RETURN_ON_EXCEPTION_VALUE(
          isolate, substring,
@@ -124,7 +124,7 @@ https://github.com/nodejs/node/issues/32660
          Nothing<int>());
      Intl::AddElement(isolate, result, index, field_type_string, substring);
      ++index;
-@@ -1411,14 +1413,14 @@ MaybeHandle<JSArray> JSNumberFormat::FormatToParts(
+@@ -1481,14 +1483,14 @@ MaybeHandle<JSArray> JSNumberFormat::FormatToParts(
        number_format->icu_number_formatter().raw();
    CHECK_NOT_NULL(fmt);
  

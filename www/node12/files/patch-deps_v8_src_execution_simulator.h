@@ -1,6 +1,6 @@
---- deps/v8/src/execution/simulator.h.orig	2019-04-26 17:47:06 UTC
+--- deps/v8/src/execution/simulator.h.orig	2020-04-28 09:45:23 UTC
 +++ deps/v8/src/execution/simulator.h
-@@ -124,7 +124,7 @@ class GeneratedCode {
+@@ -122,7 +122,7 @@ class GeneratedCode {
  
    DISABLE_CFI_ICALL Return Call(Args... args) {
      // When running without a simulator we call the entry directly.
