@@ -1,4 +1,0 @@
-cargo tree is a Cargo subcommand that visualizes a crate's dependency graph in
-a tree-like format.
-
-WWW: https://github.com/sfackler/cargo-tree

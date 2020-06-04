@@ -15060,3 +15060,4 @@ www/py-djangotoolbox||2020-06-03|Has expired: No longer maintained, not compatib
 www/py-dojango||2020-06-03|Has expired: No longer maintained, not compatible with Django 2.2+
 www/py-django-json-rpc||2020-06-03|Has expired: No longer maintained, not compatible with Django 2.0+
 www/mediawiki132|www/mediawiki133|2020-06-03|Has expired: EOLed upstream
+devel/cargo-tree|lang/rust|2020-06-04|Integrated into cargo

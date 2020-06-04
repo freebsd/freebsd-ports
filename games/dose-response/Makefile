@@ -3,7 +3,7 @@
 PORTNAME=	dose-response
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 
 MAINTAINER=	greg@unrelenting.technology

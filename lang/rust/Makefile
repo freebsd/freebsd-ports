@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rust
-PORTVERSION?=	1.43.1
+PORTVERSION?=	1.44.0
 PORTREVISION?=	0
 CATEGORIES=	lang
 MASTER_SITES=	https://static.rust-lang.org/dist/:src \
@@ -59,9 +59,9 @@ WASM_VARS=		_RUST_BUILD_WASM=true \
 WASM_VARS_OFF=		_RUST_BUILD_WASM=false
 
 # See WRKSRC/src/stage0.txt for the date and version values.
-BOOTSTRAPS_DATE?=		2020-03-12
-RUST_BOOTSTRAP_VERSION?=	1.42.0
-CARGO_BOOTSTRAP_VERSION?=	0.43.0
+BOOTSTRAPS_DATE?=		2020-05-07
+RUST_BOOTSTRAP_VERSION?=	1.43.1
+CARGO_BOOTSTRAP_VERSION?=	0.44.0
 
 BOOTSTRAPS_SUFFIX?=		${BOOTSTRAPS_SUFFIX_${ARCH}}
 BOOTSTRAPS_SUFFIX_powerpc64?=	-${PPC_ABI:tl}
@@ -147,6 +147,10 @@ do-configure:
 	@${ECHO_CMD} 'default-linker="${CC}"' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'verbose-tests=true' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'lld=${_RUST_BUILD_WASM}' >> ${WRKSRC}/config.toml
+.if ${ARCH} == powerpc64
+# XXX: crashes without this?
+	@${ECHO_CMD} 'debuginfo-level-std=1' >> ${WRKSRC}/config.toml
+.endif
 	@${ECHO_CMD} '[llvm]' >> ${WRKSRC}/config.toml
 .if defined(WITH_CCACHE_BUILD) && !defined(NO_CCACHE)
 	@${ECHO_CMD} 'ccache="${CCACHE_BIN}"' >> ${WRKSRC}/config.toml

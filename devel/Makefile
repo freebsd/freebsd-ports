@@ -272,7 +272,6 @@
     SUBDIR += capstone3
     SUBDIR += capstone4
     SUBDIR += cargo-c
-    SUBDIR += cargo-tree
     SUBDIR += cask
     SUBDIR += catch
     SUBDIR += cbrowser
