@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	abcl
-PORTVERSION=	1.6.1
+PORTVERSION=	1.7.0
 CATEGORIES=	lang lisp java
 MASTER_SITES=	http://abcl.org/releases/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
