@@ -4,6 +4,7 @@ bin/satellite
 bin/segment-reaper
 bin/storagenode
 bin/storagenode-updater
+bin/storj-admin
 bin/storj-identity
 bin/storj-sim
 bin/uplink
