@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bolt
-PORTVERSION=	2.7.0
+PORTVERSION=	2.12.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -13,10 +13,9 @@ LICENSE=	APACHE20
 RUN_DEPENDS=	puppet:sysutils/puppet6 \
 		r10k:sysutils/rubygem-r10k \
 		rubygem-addressable>=2.5:www/rubygem-addressable \
-		rubygem-CFPropertyList>=2.2:devel/rubygem-CFPropertyList \
 		rubygem-aws-sdk-ec2>0:devel/rubygem-aws-sdk-ec2 \
+		rubygem-CFPropertyList>=2.2:devel/rubygem-CFPropertyList \
 		rubygem-concurrent-ruby>=1.0:devel/rubygem-concurrent-ruby \
-		rubygem-docker-api>=1.34:net/rubygem-docker-api \
 		rubygem-hiera-eyaml>=3:sysutils/rubygem-hiera-eyaml \
 		rubygem-jwt>=2.2:www/rubygem-jwt \
 		rubygem-logging>=2.2:devel/rubygem-logging \
