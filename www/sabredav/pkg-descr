@@ -2,16 +2,16 @@ Popular WebDAV framework for PHP. Use it to create WebDAV, CalDAV and
 CardDAV servers. It supports a wide range of internet standards related to
 these protocols. The most relevant are:
 
-WebDAV
-CalDAV
-CardDAV
-vCard 2.1, 3.0, 4.0 and jCard
-iCalendar 2.0 and jCal
-current-user-principal
-Extended MKCOL
-WebDAV-sync
-CardDAV directories
-CalDAV delegation
-CalDAV sharing
+* WebDAV
+* CalDAV
+* CardDAV
+* vCard 2.1, 3.0, 4.0 and jCard
+* iCalendar 2.0 and jCal
+* current-user-principal
+* Extended MKCOL
+* WebDAV-sync
+* CardDAV directories
+* CalDAV delegation
+* CalDAV sharing
 
-WWW: http://sabre.io/
+WWW: https://sabre.io/
