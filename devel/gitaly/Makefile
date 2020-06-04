@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitaly
-DISTVERSION=	12.10.9
+DISTVERSION=	13.0.5
 PORTREVISION=	0
 CATEGORIES=	devel
 
@@ -15,11 +15,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 MY_DEPENDS=	git>=2.26:devel/git \
 		rubygem-bundler>=1.17.3:sysutils/rubygem-bundler \
 		rubygem-rugged>=0.28:devel/rubygem-rugged \
-		rubygem-github-linguist>=7.5<8.0:textproc/rubygem-github-linguist \
-		rubygem-gitlab-markup>=1.7.0<1.8.0:textproc/rubygem-gitlab-markup \
+		rubygem-github-linguist>=7.9<8.0:textproc/rubygem-github-linguist \
+		rubygem-gitlab-markup>=1.7.1<1.8.0:textproc/rubygem-gitlab-markup \
 		rubygem-activesupport60>=6.0.3.1<6.0.3.2:devel/rubygem-activesupport60 \
 		rubygem-rdoc>=6.1<7.0:devel/rubygem-rdoc \
-		rubygem-gitlab-gollum-lib>=4.2.7.8<4.2.8.0:www/rubygem-gitlab-gollum-lib \
+		rubygem-gitlab-gollum-lib>=4.2.7.9<4.2.8:www/rubygem-gitlab-gollum-lib \
 		rubygem-gitlab-gollum-rugged_adapter>=0.4.4.2<0.4.5.0:www/rubygem-gitlab-gollum-rugged_adapter \
 		rubygem-grpc124>=1.24.0:net/rubygem-grpc124 \
 		rubygem-sentry-raven29>=2.9.0<2.10.0:devel/rubygem-sentry-raven29 \
@@ -42,22 +42,22 @@ MAKE_ENV=	GOFLAGS="${GO_BUILDFLAGS}"
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find this here: https://gitlab.com/gitlab-org/gitaly/-/tags
-GL_COMMIT=	f808a6941594bdf4997daa33ad37ead0e272d7be
+GL_COMMIT=	86292a176c16f247d2d1948e526d2bdf0ad3339f
 
 # for go dependencies
 USE_GITHUB=	nodefault
 # generated with: make gomod-vendor
-# 53dd
+# 54dd
 GH_TUPLE=	\
 		BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/toml \
 		DataDog:dd-trace-go:v1.7.0:datadog_dd_trace_go/vendor/gopkg.in/DataDog/dd-trace-go.v1 \
 		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 		census-instrumentation:opencensus-go:v0.22.2:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
 		client9:reopen:v1.0.0:client9_reopen/vendor/github.com/client9/reopen \
-		cloudflare:tableflip:8392f1641731:cloudflare_tableflip/vendor/github.com/cloudflare/tableflip \
+		cloudflare:tableflip:4baec9811f2b:cloudflare_tableflip/vendor/github.com/cloudflare/tableflip \
 		codahale:hdrhistogram:3a0bb77429bd:codahale_hdrhistogram/vendor/github.com/codahale/hdrhistogram \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
-		getsentry:sentry-go:v0.3.0:getsentry_sentry_go/vendor/github.com/getsentry/sentry-go \
+		getsentry:sentry-go:v0.5.1:getsentry_sentry_go/vendor/github.com/getsentry/sentry-go \
 		go-gorp:gorp:v1.7.2:go_gorp_gorp/vendor/gopkg.in/gorp.v1 \
 		go-yaml:yaml:v2.2.8:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		golang:appengine:v1.6.5:golang_appengine/vendor/google.golang.org/appengine \
@@ -100,7 +100,8 @@ GH_TUPLE=	\
 		uber:jaeger-client-go:v2.15.0:uber_jaeger_client_go/vendor/github.com/uber/jaeger-client-go \
 		uber:jaeger-lib:v1.5.0:uber_jaeger_lib/vendor/github.com/uber/jaeger-lib
 
-GL_TUPLE=	gitlab-org:labkit:fac94cb428e67efc019e7ba67429b53fa9b394c5:gitlab_org_labkit/vendor/gitlab.com/gitlab-org/labkit
+GL_TUPLE=	gitlab-org:gitlab-shell:716e30c55e893ebe2385b27f85902a789f26c6ef:gitlab_org_gitlab_shell/vendor/gitlab.com/gitlab-org/gitlab-shell \
+		gitlab-org:labkit:0149780c759d60f61fcfe1648fb882ba7ec41f3f:gitlab_org_labkit/vendor/gitlab.com/gitlab-org/labkit
 
 post-patch:
 	${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" ${WRKSRC}/config.toml.example

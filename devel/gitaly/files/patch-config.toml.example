@@ -1,4 +1,4 @@
---- config.toml.example.orig	2019-12-19 16:43:27 UTC
+--- config.toml.example.orig	2020-05-21 17:02:13 UTC
 +++ config.toml.example
 @@ -2,10 +2,10 @@
  # Documentation lives at https://docs.gitlab.com/ee/administration/gitaly/ and
@@ -48,12 +48,18 @@
  
  # # Gitaly-ruby resident set size (RSS) that triggers a memory restart (bytes)
  # max_rss = 200000000
-@@ -85,7 +85,7 @@ dir = "/home/git/gitaly/ruby"
+@@ -85,10 +85,10 @@ dir = "/home/git/gitaly/ruby"
  
  [gitlab-shell]
  # The directory where gitlab-shell is installed
 -dir = "/home/git/gitlab-shell"
+-secret_file = "/home/git/gitlab-shell/.gitlab_shell_secret"
+-custom_hooks_dir = "/home/git/custom_hooks"
+-gitlab_url = "http://localhost:8080"
 +dir = "%%PREFIX%%/share/gitlab-shell"
++secret_file = "%%PREFIX%%/share/gitlab-shell/.gitlab_shell_secret"
++custom_hooks_dir = "%%PREFIX%%/git/custom_hooks"
++gitlab_url = "https://_change_to_gitlab_url_"
  
- # # You can adjust the concurrency of each RPC endpoint
- # [[concurrency]]
+ [gitlab-shell.http-settings]
+ # read_timeout = 300

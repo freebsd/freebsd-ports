@@ -115,7 +115,6 @@
 %%DATADIR%%/ruby/lib/gitlab/git/path_helper.rb
 %%DATADIR%%/ruby/lib/gitlab/git/popen.rb
 %%DATADIR%%/ruby/lib/gitlab/git/push_options.rb
-%%DATADIR%%/ruby/lib/gitlab/git/push_results.rb
 %%DATADIR%%/ruby/lib/gitlab/git/ref.rb
 %%DATADIR%%/ruby/lib/gitlab/git/remote_mirror.rb
 %%DATADIR%%/ruby/lib/gitlab/git/remote_repository.rb
@@ -174,6 +173,8 @@
 %%DATADIR%%/ruby/proto/gitaly/smarthttp_services_pb.rb
 %%DATADIR%%/ruby/proto/gitaly/ssh_pb.rb
 %%DATADIR%%/ruby/proto/gitaly/ssh_services_pb.rb
+%%DATADIR%%/ruby/proto/gitaly/transaction_pb.rb
+%%DATADIR%%/ruby/proto/gitaly/transaction_services_pb.rb
 %%DATADIR%%/ruby/proto/gitaly/version.rb
 %%DATADIR%%/ruby/proto/gitaly/wiki_pb.rb
 %%DATADIR%%/ruby/proto/gitaly/wiki_services_pb.rb
@@ -184,6 +185,7 @@
 %%DATADIR%%/ruby/spec/gitaly/repository_service_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitaly_server/exception_sanitizer_interceptor_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitaly_server/feature_flags_spec.rb
+%%DATADIR%%/ruby/spec/lib/gitaly_server/remote_service_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitaly_server/rugged_interceptor_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitaly_server/utils_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitaly_server/sentry/url_sanitizer_spec.rb
@@ -199,7 +201,6 @@
 %%DATADIR%%/ruby/spec/lib/gitlab/git/lfs_changes_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitlab/git/popen_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitlab/git/push_options_spec.rb
-%%DATADIR%%/ruby/spec/lib/gitlab/git/push_results_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitlab/git/remote_mirror_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitlab/git/remote_repository_client_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitlab/git/remote_repository_spec.rb
