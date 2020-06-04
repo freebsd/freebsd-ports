@@ -1,5 +1,14 @@
---- config.yml.example.orig	2018-11-28 23:06:49 UTC
+--- config.yml.example.orig	2020-06-01 04:40:32 UTC
 +++ config.yml.example
+@@ -13,7 +13,7 @@ user: git
+ # only listen on a Unix domain socket. For Unix domain sockets use
+ # "http+unix://<urlquoted-path-to-socket>", e.g.
+ # "http+unix://%2Fpath%2Fto%2Fsocket"
+-gitlab_url: "http+unix://%2Fhome%2Fgit%2Fgitlab%2Ftmp%2Fsockets%2Fgitlab-workhorse.socket"
++gitlab_url: "http+unix://%2Fusr%2Flocal%2Fwww%2Fgitlab-ce%2Ftmp%2Fsockets%2Fgitlab-workhorse.socket"
+ 
+ # See installation.md#using-https for additional HTTPS configuration details.
+ http_settings:
 @@ -25,7 +25,7 @@ http_settings:
    self_signed_cert: false
  
@@ -9,7 +18,7 @@
  
  # File that contains the secret key for verifying access to GitLab.
  # Default is .gitlab_shell_secret in the gitlab-shell directory.
-@@ -37,7 +37,7 @@ auth_file: "/home/git/.ssh/authorized_keys"
+@@ -33,7 +33,7 @@ auth_file: "/home/git/.ssh/authorized_keys"
  
  # Log file.
  # Default is gitlab-shell.log in the root directory.
