@@ -24,11 +24,11 @@ GH_TUPLE=	\
 		golang:appengine:v1.6.5:golang_appengine/vendor/google.golang.org/appengine \
 		golang:crypto:bac4c82f6975:golang_crypto/vendor/golang.org/x/crypto \
 		golang:groupcache:215e87163ea7:golang_groupcache/vendor/github.com/golang/groupcache \
-		golang:net:0de0cce0169b:golang_net/vendor/golang.org/x/net \
+		golang:net:d3edc9973b7e:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:bf48bf16ab8d:golang_oauth2/vendor/golang.org/x/oauth2 \
-		golang:protobuf:v1.3.3:golang_protobuf/vendor/github.com/golang/protobuf \
+		golang:protobuf:v1.3.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sync:43a5402ce75a:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:d101bd2416d5:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:85ca7c5b95cd:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
 		golang:time:555d28b269f0:golang_time/vendor/golang.org/x/time \
 		golang:xerrors:9bdfabe68543:golang_xerrors/vendor/golang.org/x/xerrors \
@@ -42,7 +42,7 @@ GH_TUPLE=	\
 		gorilla:mux:v1.7.1:gorilla_mux/vendor/github.com/gorilla/mux \
 		gorilla:schema:v1.1.0:gorilla_schema/vendor/github.com/gorilla/schema \
 		graphql-go:graphql:v0.7.9:graphql_go_graphql/vendor/github.com/graphql-go/graphql \
-		grpc:grpc-go:v1.28.0:grpc_grpc_go/vendor/google.golang.org/grpc \
+		grpc:grpc-go:v1.27.1:grpc_grpc_go/vendor/google.golang.org/grpc \
 		hashicorp:errwrap:v1.0.0:hashicorp_errwrap/vendor/github.com/hashicorp/errwrap \
 		hashicorp:go-multierror:v1.0.0:hashicorp_go_multierror/vendor/github.com/hashicorp/go-multierror \
 		hashicorp:hcl:v1.0.0:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
@@ -52,7 +52,7 @@ GH_TUPLE=	\
 		lib:pq:v1.3.0:lib_pq/vendor/github.com/lib/pq \
 		magiconair:properties:v1.8.0:magiconair_properties/vendor/github.com/magiconair/properties \
 		mattn:go-colorable:v0.1.2:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
-		mattn:go-isatty:v0.0.9:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
+		mattn:go-isatty:v0.0.8:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		mattn:go-runewidth:v0.0.4:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
 		mattn:go-sqlite3:v2.0.3:mattn_go_sqlite3/vendor/github.com/mattn/go-sqlite3 \
 		minio:sha256-simd:v0.1.1:minio_sha256_simd/vendor/github.com/minio/sha256-simd \
@@ -72,16 +72,16 @@ GH_TUPLE=	\
 		spf13:jwalterweatherman:v1.0.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		spf13:viper:v1.4.0:spf13_viper/vendor/github.com/spf13/viper \
-		storj:common:4ba140e4b747:storj_common/vendor/storj.io/common \
-		storj:drpc:debb458a7474:storj_drpc/vendor/storj.io/drpc \
+		storj:common:a376f4c68993:storj_common/vendor/storj.io/common \
+		storj:drpc:v0.0.12:storj_drpc/vendor/storj.io/drpc \
 		storj:monkit-jaeger:d5f5530ea079:storj_monkit_jaeger/vendor/storj.io/monkit-jaeger \
-		storj:private:e00b0e612cfb:storj_private/vendor/storj.io/private \
+		storj:private:565a173f6d33:storj_private/vendor/storj.io/private \
 		storj:uplink:v1.0.5:storj_uplink/vendor/storj.io/uplink \
 		stretchr:testify:v1.5.1:stretchr_testify/vendor/github.com/stretchr/testify \
 		stripe:stripe-go:v63.1.1:stripe_stripe_go/vendor/github.com/stripe/stripe-go \
 		uber-go:atomic:v1.6.0:uber_go_atomic/vendor/go.uber.org/atomic \
 		uber-go:multierr:v1.5.0:uber_go_multierr/vendor/go.uber.org/multierr \
-		uber-go:zap:v1.14.1:uber_go_zap/vendor/go.uber.org/zap \
+		uber-go:zap:v1.15.0:uber_go_zap/vendor/go.uber.org/zap \
 		vivint:infectious:2455b059135b:vivint_infectious/vendor/github.com/vivint/infectious \
 		yuin:gopher-lua:8bfc7677f583:yuin_gopher_lua/vendor/github.com/yuin/gopher-lua \
 		zeebo:admission:v2.0.0:zeebo_admission/vendor/github.com/zeebo/admission/v2 \
