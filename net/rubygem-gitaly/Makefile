@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitaly
-DISTVERSION=	12.9.0.pre.rc4
-PORTREVISION=	1
+DISTVERSION=	13.0.0.pre.rc1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +13,7 @@ LICENSE=	MIT
 #BUILD_DEPENDS=	rubygem-bundler>=1.12:sysutils/rubygem-bundler \
 #		rubygem-rake>=10.0:devel/rubygem-rake
 RUN_DEPENDS=	rubygem-grpc124>=1.0<2.0:net/rubygem-grpc124 \
-		gitaly>=0.86.0:devel/gitaly
+		gitaly>=13.0:devel/gitaly
 
 USES=		gem
 USE_RUBY=	yes
