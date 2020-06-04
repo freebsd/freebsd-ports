@@ -1,0 +1,11 @@
+--- config/redis.shared_state.yml.example.orig	2020-05-23 10:48:31 UTC
++++ config/redis.shared_state.yml.example
+@@ -18,7 +18,7 @@ test:
+   # url: redis://localhost:6382
+ production:
+   # Redis (single instance)
+-  url: unix:/var/run/redis/redis.shared_state.sock
++  url: unix:/var/run/redis/redis.sock
+   ##
+   # Redis + Sentinel (for HA)
+   #

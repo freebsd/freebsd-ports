@@ -1,13 +1,5 @@
---- Gemfile.orig	2020-05-04 10:07:41 UTC
+--- Gemfile.orig	2020-05-21 17:04:27 UTC
 +++ Gemfile
-@@ -1,6 +1,6 @@
- source 'https://rubygems.org'
- 
--gem 'rails', '6.0.2'
-+gem 'rails', '6.0.3.1'
- 
- gem 'bootsnap', '~> 1.4.6'
- 
 @@ -18,7 +18,7 @@ gem 'default_value_for', '~> 3.3.0'
  # Supported DBs
  gem 'pg', '~> 1.1'
@@ -33,8 +25,8 @@
 +gem 'hipchat', '~> 1.6.0'
  
  # Jira integration
- gem 'jira-ruby', '~> 1.7'
-@@ -329,91 +328,6 @@ group :metrics do
+ gem 'jira-ruby', '~> 2.0.0'
+@@ -325,94 +324,6 @@ group :metrics do
    # Prometheus
    gem 'prometheus-client-mmap', '~> 0.10.0'
    gem 'raindrops', '~> 0.18'
@@ -64,7 +56,7 @@
 -
 -  gem 'database_cleaner', '~> 1.7.0'
 -  gem 'factory_bot_rails', '~> 5.1.0'
--  gem 'rspec-rails', '~> 4.0.0.beta4'
+-  gem 'rspec-rails', '~> 4.0.0'
 -
 -  # Prevent occasions where minitest is not bundled in packaged versions of ruby (see #3826)
 -  gem 'minitest', '~> 5.11.0'
@@ -123,6 +115,9 @@
 -  gem 'test-prof', '~> 0.10.0'
 -  gem 'rspec_junit_formatter'
 -  gem 'guard-rspec'
+-
+-  # Moved in `test` because https://gitlab.com/gitlab-org/gitlab/-/issues/217527
+-  gem 'derailed_benchmarks', require: false
  end
  
  gem 'octokit', '~> 4.15'

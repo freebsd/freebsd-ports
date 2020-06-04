@@ -47,9 +47,20 @@ restart_cmd="restart_gitlab"
 load_rc_config $name
 
 ### Environment variables
-RAILS_ENV="production"
-USE_UNICORN="1"
-SIDEKIQ_WORKERS=1
+RAILS_ENV=${RAILS_ENV:-'production'}
+SIDEKIQ_WORKERS=${SIDEKIQ_WORKERS:-1}
+USE_WEB_SERVER=${USE_WEB_SERVER:-'unicorn'}
+
+case "${USE_WEB_SERVER}" in
+  puma|unicorn)
+    use_web_server="$USE_WEB_SERVER"
+    ;;
+  *)
+    echo "Unsupported web server '${USE_WEB_SERVER}' (Allowed: 'puma', 'unicorn')" 1>&2
+    exit 1
+    ;;
+esac
+
 
 # Script variable names should be lower-case not to conflict with
 # internal /bin/sh variables such as PATH, EDITOR or SHELL.
@@ -58,7 +69,7 @@ app_root="%%PREFIX%%/www/gitlab-ce"
 pid_path="$app_root/tmp/pids"
 socket_path="$app_root/tmp/sockets"
 rails_socket="$socket_path/gitlab.socket"
-web_server_pid_path="$pid_path/unicorn.pid"
+web_server_pid_path="$pid_path/$use_web_server.pid"
 if checkyesno gitlab_mail_room_enable; then
 	mail_room_enabled=true
 else
@@ -149,13 +160,6 @@ fi
 # Switch to the gitlab path, exit on failure.
 if ! cd "$app_root" ; then
  echo "Failed to cd into $app_root, exiting!";  exit 1
-fi
-
-# Select the web server to use
-if [ -z "$USE_UNICORN" ]; then
-  use_web_server="puma"
-else
-  use_web_server="unicorn"
 fi
 
 if [ -z "$SIDEKIQ_WORKERS" ]; then

@@ -1,0 +1,11 @@
+--- config/redis.queues.yml.example.orig	2020-05-23 10:52:06 UTC
++++ config/redis.queues.yml.example
+@@ -18,7 +18,7 @@ test:
+   # url: redis://localhost:6381
+ production:
+   # Redis (single instance)
+-  url: unix:/var/run/redis/redis.queues.sock
++  url: unix:/var/run/redis/redis.sock
+   ##
+   # Redis + Sentinel (for HA)
+   #

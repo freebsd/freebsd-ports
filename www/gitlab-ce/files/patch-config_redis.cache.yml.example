@@ -1,0 +1,11 @@
+--- config/redis.cache.yml.example.orig	2020-05-23 10:51:33 UTC
++++ config/redis.cache.yml.example
+@@ -18,7 +18,7 @@ test:
+   # url: redis://localhost:6380
+ production:
+   # Redis (single instance)
+-  url: unix:/var/run/redis/redis.cache.sock
++  url: unix:/var/run/redis/redis.sock
+   ##
+   # Redis + Sentinel (for HA)
+   #
