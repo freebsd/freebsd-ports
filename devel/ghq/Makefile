@@ -2,8 +2,7 @@
 
 PORTNAME=	ghq
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.3
-PORTREVISION=	1
+DISTVERSION=	1.1.1
 CATEGORIES=	devel
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -16,7 +15,7 @@ TEST_DEPENDS=	git>0:devel/git
 
 USES=		go:modules
 USE_GITHUB=	yes
-GH_ACCOUNT=	motemen
+GH_ACCOUNT=	x-motemen
 GH_TUPLE=	Songmu:gitconfig:v0.0.3:songmu_gitconfig/vendor/github.com/Songmu/gitconfig \
 		cpuguy83:go-md2man:v2.0.0:cpuguy83_go_md2man/vendor/github.com/cpuguy83/go-md2man/v2 \
 		daviddengcn:go-colortext:186a3d44e920:daviddengcn_go_colortext/vendor/github.com/daviddengcn/go-colortext \
@@ -39,7 +38,7 @@ OPTIONS_DEFINE=		MANPAGES
 OPTIONS_DEFAULT=	MANPAGES
 
 MANPAGES_BUILD_DEPENDS=	asciidoctor:textproc/rubygem-asciidoctor
-MANPAGES_PLIST_FILES=	man/man1/ghq.1.gz
+MANPAGES_PLIST_FILES=	share/man/man1/ghq.1.gz
 
 post-build-MANPAGES-on:
 	cd ${WRKSRC} && asciidoctor -b manpage -d manpage -o ghq.1 README.adoc
@@ -53,7 +52,7 @@ post-install:
 		${STAGEDIR}${PREFIX}/share/zsh/site-functions
 
 post-install-MANPAGES-on:
-	${INSTALL_MAN} ${WRKSRC}/ghq.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/ghq.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 do-test:
 	@cd ${WRKSRC} && \

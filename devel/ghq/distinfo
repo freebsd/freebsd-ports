@@ -1,6 +1,6 @@
-TIMESTAMP = 1579766838
-SHA256 (motemen-ghq-v1.0.3_GH0.tar.gz) = 3540b78575b915492a2a05b35e3cbc17d2b0d940d7e3b28eed6fab2bc83958dd
-SIZE (motemen-ghq-v1.0.3_GH0.tar.gz) = 45612
+TIMESTAMP = 1591182014
+SHA256 (x-motemen-ghq-v1.1.1_GH0.tar.gz) = 3a186003fc57e2bfb99c535db0a1d4cff79936dbc3c926a91f5d18d67d0bfc37
+SIZE (x-motemen-ghq-v1.1.1_GH0.tar.gz) = 45866
 SHA256 (Songmu-gitconfig-v0.0.3_GH0.tar.gz) = b7814c1264c454e59d102a36d55788170ee7444f8475c65d47f28f81527c3ac1
 SIZE (Songmu-gitconfig-v0.0.3_GH0.tar.gz) = 5835
 SHA256 (cpuguy83-go-md2man-v2.0.0_GH0.tar.gz) = 50537880d42fc28b9c2e9aaa36b137349d43cc73d46436a499f8c928cd2fc576
