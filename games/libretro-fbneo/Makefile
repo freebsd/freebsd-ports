@@ -10,17 +10,13 @@ COMMENT=	Final Burn Alpha fork for libretro
 LICENSE=	FBNeo
 LICENSE_NAME=	FBNeo
 LICENSE_FILE=	${WRKSRC}/src/license.txt
-LICENSE_PERMS=  dist-mirror pkg-mirror auto-accept
+LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 USES=		gmake gl
 USE_LDCONFIG=	yes
 USE_GL=		gl
 
-BUILD_DEPEND=	devel/nasm
-
 PLIST_FILES=	lib/libretro/fbneo_libretro.so
-
-NO_CDROM=       Commercial users must seek permission from copyright holders.
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro

@@ -657,7 +657,6 @@
     SUBDIR += fortytwo-encore
     SUBDIR += fossil
     SUBDIR += fossology-nomos-standalone
-    SUBDIR += frink
     SUBDIR += fp16
     SUBDIR += fpc-bfd
     SUBDIR += fpc-dbus
@@ -692,6 +691,7 @@
     SUBDIR += frama-c
     SUBDIR += freebsd-gcc6
     SUBDIR += freebsd-gcc9
+    SUBDIR += frink
     SUBDIR += fsmtrie
     SUBDIR += fstrcmp
     SUBDIR += fstrm
@@ -5271,8 +5271,8 @@
     SUBDIR += py-zope.testing
     SUBDIR += py-zope.traversing
     SUBDIR += py-zsm-lib
-    SUBDIR += py_static_check
     SUBDIR += py3c
+    SUBDIR += py_static_check
     SUBDIR += pybind11
     SUBDIR += pybugz
     SUBDIR += pycanberra
