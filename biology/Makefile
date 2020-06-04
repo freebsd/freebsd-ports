@@ -173,6 +173,7 @@
     SUBDIR += velvet
     SUBDIR += viennarna
     SUBDIR += vsearch
+    SUBDIR += vt
     SUBDIR += wise
 
 .include <bsd.port.subdir.mk>

@@ -1,0 +1,41 @@
+--- Makefile.orig	2018-05-09 00:33:23 UTC
++++ Makefile
+@@ -1,7 +1,8 @@
+-OPTFLAG = -O3
+-INCLUDES = -I./lib -I. -I./lib/htslib -I./lib/Rmath -I./lib/pcre2
+-CXXFLAGS = -pipe -std=c++0x $(OPTFLAG) $(INCLUDES) -D__STDC_LIMIT_MACROS
+-CXX = g++
++# ${LOCALBASE}/include must come after bundled dirs
++INCLUDES = -I. -Ilib -Ilib/Rmath -Ilib/tclap -Ilib/pcre2 -I${LOCALBASE}/include
++CXXFLAGS ?= -pipe -std=c++0x $(OPTFLAG) $(INCLUDES) -D__STDC_LIMIT_MACROS
++CXXFLAGS += -std=c++0x $(INCLUDES) -D__STDC_LIMIT_MACROS
++CXX ?= g++
+ 
+ SOURCESONLY =
+ 
+@@ -139,11 +140,11 @@ SOURCESONLY = main.cpp
+ TARGET = vt
+ TOOLSRC = $(SOURCES:=.cpp) $(SOURCESONLY)
+ TOOLOBJ = $(TOOLSRC:.cpp=.o)
+-LIBDEFLATE = lib/libdeflate/libdeflate.a
+-LIBHTS = lib/htslib/libhts.a
++LIBDEFLATE = -ldeflate
++LIBHTS = -lhts
+ LIBRMATH = lib/Rmath/libRmath.a
+ LIBPCRE2 = lib/pcre2/libpcre2.a
+-LIBSVM = lib/libsvm/libsvm.a
++LIBSVM = -lsvm
+ 
+ all : $(TARGET)
+ 
+@@ -165,8 +166,8 @@ ${LIBSVM} :
+ version :
+ 	git rev-parse HEAD | cut -c 1-8 | awk '{print "#define VERSION \"0.5772-"$$0"\""}' > version.h;
+ 
+-$(TARGET) : ${LIBHTS} ${LIBRMATH} ${LIBPCRE2}  ${LIBSVM} $(TOOLOBJ) 
+-	$(CXX) $(CXXFLAGS) -o $@ $(TOOLOBJ) $(LIBHTS) $(LIBRMATH) ${LIBPCRE2} ${LIBDEFLATE} -lz -lpthread -lbz2 -llzma -lcurl -lcrypto
++$(TARGET) : ${LIBRMATH} ${LIBPCRE2} $(TOOLOBJ) 
++	$(CXX) $(CXXFLAGS) -o $@ $(TOOLOBJ) -L${LOCALBASE}/lib $(LIBHTS) $(LIBRMATH) ${LIBPCRE2} ${LIBDEFLATE} -lz -lpthread -lbz2 -llzma -lcurl -lcrypto
+ 
+ $(TOOLOBJ): $(HEADERSONLY)
+ 
