@@ -91,12 +91,16 @@ ONLY_FOR_ARCHS+=	aarch64 armv6 armv7 powerpc64
 BUILD_DEPENDS+=	${LOCALBASE}/lib/compat/libncursesw.so.8:misc/compat12x
 .endif
 
-.if ${GHC_VERSION_MAJOR} == 8 && ${GHC_VERSION_MINOR} <= 4
+.if ${GHC_VERSION_MAJOR} == 8 && ${GHC_VERSION_MINOR} == 4
 LLVM_VERSION=		50
 # Turn off for old GHCs, see PR 228727
 CONFIGURE_ARGS+=	--enable-dtrace=0
-.else
+.elif ${GHC_VERSION_MAJOR} == 8 && ${GHC_VERSION_MINOR} == 6
 LLVM_VERSION=		60
+.elif ${GHC_VERSION_MAJOR} == 8 && ${GHC_VERSION_MINOR} == 8
+LLVM_VERSION=		70
+.else # ghc 8.10
+LLVM_VERSION=		90
 .endif
 
 .if ${ARCH} == powerpc64
