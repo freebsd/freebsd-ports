@@ -32,7 +32,7 @@ include/gnutls/x509.h
 %%DANE%%lib/libgnutls-dane.so.0.4.1
 lib/libgnutls.so
 lib/libgnutls.so.30
-lib/libgnutls.so.30.27.0
+lib/libgnutls.so.30.28.0
 lib/libgnutlsxx.so
 lib/libgnutlsxx.so.28
 lib/libgnutlsxx.so.28.1.0
@@ -261,6 +261,7 @@ man/man3/gnutls_est_record_overhead_size.3.gz
 man/man3/gnutls_ext_get_current_msg.3.gz
 man/man3/gnutls_ext_get_data.3.gz
 man/man3/gnutls_ext_get_name.3.gz
+man/man3/gnutls_ext_get_name2.3.gz
 man/man3/gnutls_ext_raw_parse.3.gz
 man/man3/gnutls_ext_register.3.gz
 man/man3/gnutls_ext_set_data.3.gz
@@ -523,6 +524,7 @@ man/man3/gnutls_pkcs7_get_signature_info.3.gz
 man/man3/gnutls_pkcs7_import.3.gz
 man/man3/gnutls_pkcs7_init.3.gz
 man/man3/gnutls_pkcs7_print.3.gz
+man/man3/gnutls_pkcs7_print_signature_info.3.gz
 man/man3/gnutls_pkcs7_set_crl.3.gz
 man/man3/gnutls_pkcs7_set_crl_raw.3.gz
 man/man3/gnutls_pkcs7_set_crt.3.gz
