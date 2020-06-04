@@ -1,0 +1,57 @@
+https://github.com/glandium/git-cinnabar/commit/81c1269f2e7d
+
+--- helper/GIT-VERSION.mk.orig	2020-04-23 06:16:13 UTC
++++ helper/GIT-VERSION.mk
+@@ -1,2 +1,2 @@
+-GIT_VERSION ?= v2.26.2
++GIT_VERSION ?= v2.27.0
+ WINDOWS_GIT_VERSION ?= $(GIT_VERSION).windows.1
+--- helper/cinnabar-fast-import.c.orig	2020-04-23 06:16:13 UTC
++++ helper/cinnabar-fast-import.c
+@@ -9,7 +9,7 @@ static void start_packfile();
+ #include "hg-bundle.h"
+ #include "hg-data.h"
+ #include "list.h"
+-#include "sha1-array.h"
++#include "oid-array.h"
+ #include "strslice.h"
+ #include "tree-walk.h"
+ 
+@@ -131,6 +131,8 @@ static void init()
+ 	avail_tree_table = xcalloc(avail_tree_table_sz, sizeof(struct avail_tree_content*));
+ 	marks = mem_pool_calloc(&fi_mem_pool, 1, sizeof(struct mark_set));
+ 
++	hashmap_init(&object_table, object_entry_hashcmp, NULL, 0);
++
+ 	global_argc = 1;
+ 
+ 	rc_free = mem_pool_alloc(&fi_mem_pool, cmd_save * sizeof(*rc_free));
+@@ -266,7 +268,7 @@ static uintmax_t parse_mark_ref(const char *p, char **
+ 		e->pack_id = MAX_PACK_ID;
+ 		e->idx.offset = 1;
+ 	}
+-	insert_mark(2, e);
++	insert_mark(marks, 2, e);
+ 	return 2;
+ }
+ 
+@@ -462,7 +464,7 @@ static void do_set(struct string_list *args)
+ 
+ 	if (args->items[2].string[0] == ':') {
+ 		uintmax_t mark = parse_mark_ref_eol(args->items[2].string);
+-		struct object_entry *oe = find_mark(mark);
++		struct object_entry *oe = find_mark(marks, mark);
+ 		oidcpy(&git_id, &oe->idx.oid);
+ 	} else if (get_oid_hex(args->items[2].string, &git_id))
+ 		die("Invalid sha1");
+--- helper/hg-connect.h.orig	2020-04-23 06:16:13 UTC
++++ helper/hg-connect.h
+@@ -3,7 +3,7 @@
+ 
+ #include "cinnabar-util.h"
+ #include "run-command.h"
+-#include "sha1-array.h"
++#include "oid-array.h"
+ #include "string-list.h"
+ 
+ struct hg_connection {
