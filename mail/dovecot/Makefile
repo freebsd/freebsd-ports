@@ -9,6 +9,7 @@
 
 PORTNAME=	dovecot
 PORTVERSION=	2.3.10.1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	https://dovecot.org/releases/2.3/
 
@@ -133,6 +134,10 @@ CPPFLAGS+=	-I${LOCALBASE}/include -I${OPENSSLINC}
 LDFLAGS+=	-L${LOCALBASE}/lib -L${OPENSSLLIB}
 
 post-patch:
+	@${REINPLACE_CMD} -e 's,/etc/dovecot,${PREFIX}/etc/dovecot,g; \
+		s,sysconfdir=/etc,sysconfdir=${PREFIX}/etc,g' \
+		${WRKSRC}/doc/example-config/*.conf ${WRKSRC}/doc/example-config/conf.d/* \
+		${WRKSRC}/doc/example-config/*.conf.ext
 	@${REINPLACE_CMD} -e '/^LIBS =/s/$$/ @LTLIBICONV@/' \
 		${WRKSRC}/src/lib-mail/Makefile.in
 # Install the sample config files into ETCDIR/example-config/
