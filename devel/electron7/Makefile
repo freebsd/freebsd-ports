@@ -3,7 +3,6 @@
 PORTNAME=	electron
 DISTVERSIONPREFIX=	v
 DISTVERSION=	${ELECTRON_VER:S/-beta./.b/}
-PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	https://github.com/tagattie/FreeBSD-Electron/releases/download/v7.1.5/:chromium \
 		https://commondatastorage.googleapis.com/chromium-browser-official/:chromium_official \
@@ -161,7 +160,7 @@ PULSEAUDIO_VARS_OFF=	GN_ARGS+=use_pulseaudio=false
 POST_BUILD_TARGETS=	licenses version
 POST_BUILD_DIST_TARGETS=	electron_dist_zip electron_chromedriver_zip electron_mksnapshot_zip
 
-YARN_TIMESTAMP=	1589527913
+YARN_TIMESTAMP=	1591165014
 
 PLIST_SUB=	ELECTRON_VER=${ELECTRON_VER} \
 		ELECTRON_VER_MAJOR=${ELECTRON_VER_MAJOR}

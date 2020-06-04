@@ -1,4 +1,4 @@
---- electron/spec-main/api-app-spec.ts.orig	2019-12-13 19:48:14 UTC
+--- electron/spec-main/api-app-spec.ts.orig	2020-06-01 19:28:27 UTC
 +++ electron/spec-main/api-app-spec.ts
 @@ -130,7 +130,7 @@ describe('app module', () => {
    describe('app.getLocaleCountryCode()', () => {
@@ -18,7 +18,7 @@
          this.skip()
          return
        }
-@@ -537,7 +537,7 @@ describe('app module', () => {
+@@ -527,7 +527,7 @@ describe('app module', () => {
    describe('app.badgeCount', () => {
      const platformIsNotSupported =
          (process.platform === 'win32') ||
@@ -27,7 +27,7 @@
      const platformIsSupported = !platformIsNotSupported
  
      const expectedBadgeCount = 42
-@@ -571,7 +571,7 @@ describe('app module', () => {
+@@ -561,7 +561,7 @@ describe('app module', () => {
      ]
  
      before(function () {
@@ -36,7 +36,7 @@
      })
  
      beforeEach(() => {
-@@ -647,7 +647,7 @@ describe('app module', () => {
+@@ -637,7 +637,7 @@ describe('app module', () => {
    })
  
    describe('accessibilitySupportEnabled property', () => {
@@ -45,7 +45,7 @@
  
      it('returns whether the Chrome has accessibility APIs enabled', () => {
        expect(app.accessibilitySupportEnabled).to.be.a('boolean')
-@@ -684,6 +684,7 @@ describe('app module', () => {
+@@ -674,6 +674,7 @@ describe('app module', () => {
      const logsPaths = {
        'darwin': path.resolve(homedir(), 'Library', 'Logs'),
        'linux': path.resolve(homedir(), 'AppData', app.name),
@@ -53,7 +53,7 @@
        'win32': path.resolve(homedir(), 'AppData', app.name),
      }
  
-@@ -742,7 +743,7 @@ describe('app module', () => {
+@@ -732,7 +733,7 @@ describe('app module', () => {
      let w: BrowserWindow
  
      before(function () {
@@ -62,7 +62,7 @@
          this.skip()
        }
      })
-@@ -936,7 +937,7 @@ describe('app module', () => {
+@@ -926,7 +927,7 @@ describe('app module', () => {
      // doesn't affect nested `describe`s.
      beforeEach(function () {
        // FIXME Get these specs running on Linux CI
@@ -71,7 +71,7 @@
          this.skip()
        }
      })
-@@ -1006,7 +1007,7 @@ describe('app module', () => {
+@@ -996,7 +997,7 @@ describe('app module', () => {
            expect(entry.memory).to.have.property('privateBytes').that.is.greaterThan(0)
          }
  
@@ -80,7 +80,7 @@
            expect(entry.sandboxed).to.be.a('boolean')
          }
  
-@@ -1073,7 +1074,7 @@ describe('app module', () => {
+@@ -1063,7 +1064,7 @@ describe('app module', () => {
  
      it('succeeds with complete GPUInfo', async () => {
        const completeInfo = await getGPUInfo('complete')
@@ -89,7 +89,7 @@
          // For linux and macOS complete info is same as basic info
          await verifyBasicGPUInfo(completeInfo)
          const basicInfo = await getGPUInfo('basic')
-@@ -1101,7 +1102,7 @@ describe('app module', () => {
+@@ -1091,7 +1092,7 @@ describe('app module', () => {
      const socketPath = process.platform === 'win32' ? '\\\\.\\pipe\\electron-mixed-sandbox' : '/tmp/electron-mixed-sandbox'
  
      beforeEach(function (done) {
