@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	netdisco
-DISTVERSION=	2.044015
+DISTVERSION=	2.045006
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:OLIVER
@@ -81,6 +81,7 @@ RUN_DEPENDS=	p5-DBD-Pg>=0:databases/p5-DBD-Pg \
 		p5-Try-Tiny>=0:lang/p5-Try-Tiny \
 		p5-Twiggy>=0:www/p5-Twiggy \
 		p5-URI>=0:net/p5-URI \
+		p5-URI-Based>=0:net/p5-URI-Based \
 		p5-URL-Encode>=0.01:www/p5-URL-Encode \
 		p5-YAML>=0.84:textproc/p5-YAML \
 		p5-YAML-LibYAML>=0.41:textproc/p5-YAML-LibYAML \
