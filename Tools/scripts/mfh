@@ -39,13 +39,15 @@ LF=$(printf '\nX')
 LF=${LF%X}
 IFS="${LF}"
 
+# defaults from here ---------------------------
+
+: ${svnserver:="svn+ssh://repo.FreeBSD.org"}
+: ${EDITOR:=vi}
+
+# implementation from here ---------------------
+
 err() {
 	echo "$@" >&2
-	exit 1
-}
-
-clean() {
-	rm -rf "${dir}"
 	exit 1
 }
 
@@ -62,7 +64,7 @@ ask() {
 	return 1
 }
 
-: "${svnserver:="svn+ssh://repo.FreeBSD.org"}"
+# -- find svn and diff coloring command --
 
 if [ -n "$(command -v svn 2>/dev/null)" ]; then
 	svn=svn
@@ -77,6 +79,11 @@ latest_branch=$("${svn}" ls ${svnserver}/ports/branches/|sed -ne '/^2.*Q./s|/$||
 [ $# -lt 1 ] && err "$(basename "$0") requires at least 1 arguments: [<branch>] <revnumber> [<revnumber>...]"
 branch=$1
 
+if   [ -n "$(command -v ydiff)" ] ;     then cdiffcmd=ydiff 
+elif [ -n "$(command -v colordiff)" ] ; then cdiffcmd=colordiff 
+else                                         cdiffcmd=cat
+fi
+
 # I sure hope by 2030 we'll be doing something else. Yes, famous last words.
 if expr "${branch}" : '20[12][0-9]Q[1-4]' > /dev/null; then
 	shift
@@ -87,6 +94,8 @@ else
 	branch=${latest_branch}
 fi
 
+## -- parse revisions --
+
 for rev in "$@"
 do
   rev=${rev##r} # remove a leading "r"
@@ -95,12 +104,13 @@ do
   esac
 done
 
+## -- set up tmpdir and auto-clean --
 
-trap "rc=\$? ; rm -rf \"\${dir}\" ; exit \$rc" EXIT
-dir=$(mktemp -d /tmp/merge.XXXXXX)
+dir=$(mktemp -d /tmp/mfh.XXXXXX)
+trap "rc=\$? ; echo '+ rm -rf \"${dir}\"' ; rm -rf \"\${dir}\" ; trap - EXIT ; exit \$rc" EXIT INT QUIT TERM
 cd "${dir}"
-"${svn}" co --depth=empty ${svnserver}/ports/branches/"${branch}"
-filelist=""
+
+## -- check out, merge, generate commit log --
 
 printf "MFH:" > commit.txt
 for rev in "$@"
@@ -109,24 +119,39 @@ do
   printf " r%s" "${rev}" >> commit.txt
 done
 echo >> commit.txt
+
+# iterate over revisions to assemble dirlist (for checkout)
+# and accumulate log messages
+dirlist=""
 for rev in "$@"
 do
   rev=${rev##r}
   for f in $("${svn}" diff --summarize -c "r${rev}" "${svnserver}/ports/head"); do
+	  # ignore top-level filenames without slash
 	  case ${f} in
 	  */*) ;;
-	  *)continue;;
+	  *)   continue ;;
 	  esac
 	  f=${f#*/ports/head/}
-	  f=${f%/*}
-	  filelist="${filelist}${LF}${f}"
+	  # strip down f to the first two components (CATEGORY/PORTNAME),
+	  # so that if the MFH only addresses files/, we still get the
+	  # full port to review, and, for instance, bump PORTREVISION
+	  # separately if the patch was broken out from a larger lump.
+	  while :; do 
+		  case ${f} in 
+			  */*/*) f=${f%/*} ;; 
+			  *)     break ;; 
+		  esac 
+	  done
+	  dirlist="${dirlist}${f}${LF}"
   done
   "${svn}" log "-r${rev##-}" ${svnserver}/ports/head | sed '1,2d;$d;/^MFH:/d' \
       | sed '$d' >> commit.txt
 done
-filelist=$(printf '%s\n' "${filelist}" | sort -u)
-"${svn}" up --parents $(printf '%s\n' $filelist \
-    | sed "s}^}${branch}/}")
+dirlist=$(printf '%s' "${dirlist}" | sort -u | sed "s}^}${branch}/}")
+
+"${svn}" co --quiet --depth=empty ${svnserver}/ports/branches/"${branch}"
+"${svn}" up --parents --set-depth=infinity $dirlist
 "${svn}" up --quiet "${branch}"
 for rev in "$@"
 do
@@ -134,19 +159,29 @@ do
   "${svn}" merge -c "r${rev}" ^/head/ "${branch}"
 done
 "${svn}" up --quiet "${branch}"
-"${svn}" status "${branch}"
-"${svn}" diff "${branch}"
-echo "All the merge work was done in ${dir}/${branch}"
+
+## -- present final result to user --
+svnstat=$("${svn}" status "${branch}")
+if [ -z "${svnstat}" ] ; then
+    err "The MFH came up empty - already merged? Wrong revision given?"
+fi
+
+echo
+printf '%s\n' "${svnstat}"
+"${svn}" diff "${branch}" | $cdiffcmd
+printf '\nSee the status/diff above: all the merge work was done on %s.\n' "${dir}/${branch}"
 ask "Do you want to commit? (no = start a shell)" || (
     echo "Dropping you to a shell so you can investigate. Exit the shell to resume this script."
     cd "${branch}"
     pwd
     su -m $(id -un) || :
-    ask "Do you want to commit now? (no = clean up and abort)" || clean
+    ask "Do you want to commit now? (no = clean up and abort)" || err "User-requested abort."
 )
 echo >> commit.txt
-echo "Approved by:	" >> commit.txt
-${EDITOR:-vi} commit.txt
+echo "Approved by:     " >> commit.txt
+
+## -- edit pre-assembled log message and commit --
+${EDITOR} commit.txt
 while ! "${svn}" ci -F commit.txt "${branch}"; do
 	if ! ask "Commit failed. Re-edit message and try again?"; then
 		save_log="$(mktemp -t mfh)"
@@ -154,7 +189,8 @@ while ! "${svn}" ci -F commit.txt "${branch}"; do
 		echo "Saving commit log to ${save_log}"
 		break
 	fi
-	${EDITOR:-vi} commit.txt
+	${EDITOR} commit.txt
 done
-rm -rf "${dir}"
-trap - 0
+
+# the trap will clean up for us
+exit 0
