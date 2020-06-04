@@ -20,6 +20,7 @@
 %%DSO%%%%ECHO%%libexec/nginx/ngx_http_echo_module.so
 %%DSO%%%%DYNAMIC_UPSTREAM%%libexec/nginx/ngx_dynamic_upstream_module.so
 %%DSO%%%%DEVEL_KIT%%libexec/nginx/ndk_http_module.so
+%%DSO%%%%DRIZZLE%%libexec/nginx/ngx_http_drizzle_module.so
 %%DSO%%%%ENCRYPTSESSION%%libexec/nginx/ngx_http_encrypted_session_module.so
 %%DSO%%%%FASTDFS%%libexec/nginx/ngx_http_fastdfs_module.so
 %%DSO%%%%FORMINPUT%%libexec/nginx/ngx_http_form_input_module.so
@@ -30,11 +31,15 @@
 %%DSO%%%%HTTP_AUTH_KRB5%%libexec/nginx/ngx_http_auth_spnego_module.so
 %%DSO%%%%HTTP_AUTH_LDAP%%libexec/nginx/ngx_http_auth_ldap_module.so
 %%DSO%%%%HTTP_AUTH_PAM%%libexec/nginx/ngx_http_auth_pam_module.so
+%%DSO%%%%HTTP_DAV_EXT%%libexec/nginx/ngx_http_dav_ext_module.so
 %%DSO%%%%HTTP_EVAL%%libexec/nginx/ngx_http_eval_module.so
 %%DSO%%%%HTTP_FANCYINDEX%%libexec/nginx/ngx_http_fancyindex_module.so
+%%DSO%%%%HTTP_FOOTER%%libexec/nginx/ngx_http_footer_filter_module.so
 %%DSO%%%%HTTP%%%%HTTP_GEOIP2%%libexec/nginx/ngx_http_geoip2_module.so
 %%DSO%%%%STREAM%%%%HTTP_GEOIP2%%libexec/nginx/ngx_stream_geoip2_module.so
 %%DSO%%%%HTTP_IMAGE_FILTER%%libexec/nginx/ngx_http_image_filter_module.so
+%%DSO%%%%HTTP_IP2LOCATION%%libexec/nginx/ngx_http_ip2location_module.so
+%%DSO%%%%HTTP_IP2PROXY%%libexec/nginx/ngx_http_ip2proxy_module.so
 %%DSO%%%%HTTP_PERL%%libexec/nginx/ngx_http_perl_module.so
 %%DSO%%%%HTTP_PUSH%%libexec/nginx/ngx_nchan_module.so
 %%DSO%%%%HTTP_REDIS%%libexec/nginx/ngx_http_redis_module.so

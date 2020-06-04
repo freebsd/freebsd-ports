@@ -35,7 +35,8 @@ DRIZZLE_LIB_DEPENDS=	libdrizzle.so:databases/libdrizzle
 DRIZZLE_CONFIGURE_ENV=	LIBDRIZZLE_INC=${LOCALBASE}/include \
 			LIBDRIZZLE_LIB=${LOCALBASE}/lib
 DRIZZLE_GH_TUPLE=	openresty:drizzle-nginx-module:v0.1.11:drizzle
-DRIZZLE_CONFIGURE_ON=	--add-module=${WRKSRC_drizzle}
+DRIZZLE_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-openresty-drizzle-nginx-module-config
+DRIZZLE_VARS=		DSO_EXTMODS+=drizzle
 
 DYNAMIC_TLS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-dynamic_tls_records
 
@@ -98,7 +99,7 @@ HTTP_AUTH_PAM_VARS=		DSO_EXTMODS+=auth_pam
 HTTP_DAV_EXT_IMPLIES=		HTTP_DAV
 HTTP_DAV_EXT_LIB_DEPENDS=	libexpat.so:textproc/expat2
 HTTP_DAV_EXT_GH_TUPLE=		arut:nginx-dav-ext-module:v3.0.0:dav_ext
-HTTP_DAV_EXT_CONFIGURE_ON=	--add-module=${WRKSRC_dav_ext}
+HTTP_DAV_EXT_VARS=		DSO_EXTMODS+=dav_ext
 
 HTTP_EVAL_GH_TUPLE=		openresty:nginx-eval-module:582bd25:eval
 HTTP_EVAL_VARS=			DSO_EXTMODS+=eval
@@ -107,7 +108,8 @@ HTTP_FANCYINDEX_GH_TUPLE=	aperezdc:ngx-fancyindex:v0.4.3:fancyindex
 HTTP_FANCYINDEX_VARS=		DSO_EXTMODS+=fancyindex
 
 HTTP_FOOTER_GH_TUPLE=		alibaba:nginx-http-footer-filter:1.2.2:footer
-HTTP_FOOTER_CONFIGURE_ON=	--add-module=${WRKSRC_footer}
+HTTP_FOOTER_VARS=		DSO_EXTMODS+=footer
+HTTP_FOOTER_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nginx-http-footer-filter-config
 
 HTTP_GEOIP2_GH_TUPLE=		leev:ngx_http_geoip2_module:3.2:geoip2
 HTTP_GEOIP2_CFLAGS=		-I${LOCALBASE}/include
@@ -116,11 +118,11 @@ HTTP_GEOIP2_LIB_DEPENDS=	libmaxminddb.so:net/libmaxminddb
 
 HTTP_IP2LOCATION_GH_TUPLE=	ip2location:ip2location-nginx:7aa49ce:ip2location
 HTTP_IP2LOCATION_LIB_DEPENDS=	libIP2Location.so:net/ip2location
-HTTP_IP2LOCATION_CONFIGURE_ON=	--add-module=${WRKSRC_ip2location}
+HTTP_IP2LOCATION_VARS=		DSO_EXTMODS+=ip2location
 
 HTTP_IP2PROXY_GH_TUPLE=		ip2location:ip2proxy-nginx:f9815e3:ip2proxy
 HTTP_IP2PROXY_LIB_DEPENDS=	libIP2Proxy.so:net/ip2proxy
-HTTP_IP2PROXY_CONFIGURE_ON=	--add-module=${WRKSRC_ip2proxy}
+HTTP_IP2PROXY_VARS=		DSO_EXTMODS+=ip2proxy
 
 HTTP_JSON_STATUS_GH_TUPLE=	nginx-modules:ngx_http_json_status_module:1d2f303:json_status
 HTTP_JSON_STATUS_CONFIGURE_ON=	--add-module=${WRKSRC_json_status}

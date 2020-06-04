@@ -1,0 +1,42 @@
+--- ../drizzle-nginx-module-0.1.11/config.orig	2020-06-04 19:19:26.245657000 +0200
++++ ../drizzle-nginx-module-0.1.11/config	2020-06-04 19:29:28.502730000 +0200
+@@ -34,12 +34,12 @@ else
+ 
+     if [ $ngx_found = no ]; then
+         # FreeBSD, OpenBSD
+-        ngx_feature="libdrizzle library in /usr/local/"
+-        ngx_feature_path="/usr/local/include/libdrizzle-1.0"
++        ngx_feature="libdrizzle library in %%PREFIX%%"
++        ngx_feature_path="%%PREFIX%%/include/libdrizzle"
+         if [ $NGX_RPATH = YES ]; then
+-            ngx_feature_libs="-R/usr/local/lib -L/usr/local/lib -ldrizzle"
++            ngx_feature_libs="-R%%PREFIX%%/lib -L%%PREFIX%%/lib -ldrizzle"
+         else
+-            ngx_feature_libs="-L/usr/local/lib -ldrizzle"
++            ngx_feature_libs="-L%%PREFIX/lib -ldrizzle"
+         fi
+         . auto/feature
+     fi
+@@ -80,8 +80,19 @@ END
+ fi
+ 
+ ngx_addon_name=ngx_http_drizzle_module
+-HTTP_MODULES="$HTTP_MODULES ngx_http_drizzle_module"
+-NGX_ADDON_SRCS="$NGX_ADDON_SRCS $ngx_addon_dir/src/ngx_http_drizzle_module.c $ngx_addon_dir/src/ngx_http_drizzle_handler.c $ngx_addon_dir/src/ngx_http_drizzle_processor.c $ngx_addon_dir/src/ngx_http_drizzle_upstream.c $ngx_addon_dir/src/ngx_http_drizzle_util.c $ngx_addon_dir/src/ngx_http_drizzle_output.c $ngx_addon_dir/src/ngx_http_drizzle_keepalive.c $ngx_addon_dir/src/ngx_http_drizzle_quoting.c $ngx_addon_dir/src/ngx_http_drizzle_checker.c"
+-NGX_ADDON_DEPS="$NGX_ADDON_DEPS $ngx_addon_dir/src/ddebug.h $ngx_addon_dir/src/ngx_http_drizzle_module.h $ngx_addon_dir/src/ngx_http_drizzle_handler.h $ngx_addon_dir/src/ngx_http_drizzle_processor.h $ngx_addon_dir/src/ngx_http_drizzle_upstream.h $ngx_addon_dir/src/ngx_http_drizzle_util.h $ngx_addon_dir/src/ngx_http_drizzle_output.h $ngx_addon_dir/src/resty_dbd_stream.h $ngx_addon_dir/src/ngx_http_drizzle_keepalive.h $ngx_addon_dir/src/ngx_http_drizzle_quoting.h $ngx_addon_dir/src/ngx_http_drizzle_checker.h"
++if test -n "$ngx_module_link"; then
++    ngx_module_type=HTTP
++    ngx_module_name=$ngx_addon_name
++    ngx_module_srcs="$ngx_addon_dir/src/ngx_http_drizzle_module.c $ngx_addon_dir/src/ngx_http_drizzle_handler.c $ngx_addon_dir/src/ngx_http_drizzle_processor.c $ngx_addon_dir/src/ngx_http_drizzle_upstream.c $ngx_addon_dir/src/ngx_http_drizzle_util.c $ngx_addon_dir/src/ngx_http_drizzle_output.c $ngx_addon_dir/src/ngx_http_drizzle_keepalive.c $ngx_addon_dir/src/ngx_http_drizzle_quoting.c $ngx_addon_dir/src/ngx_http_drizzle_checker.c"
++    ngx_module_incs="$ngx_addon_dir/src/ddebug.h $ngx_addon_dir/src/ngx_http_drizzle_module.h $ngx_addon_dir/src/ngx_http_drizzle_handler.h $ngx_addon_dir/src/ngx_http_drizzle_processor.h $ngx_addon_dir/src/ngx_http_drizzle_upstream.h $ngx_addon_dir/src/ngx_http_drizzle_util.h $ngx_addon_dir/src/ngx_http_drizzle_output.h $ngx_addon_dir/src/resty_dbd_stream.h $ngx_addon_dir/src/ngx_http_drizzle_keepalive.h $ngx_addon_dir/src/ngx_http_drizzle_quoting.h $ngx_addon_dir/src/ngx_http_drizzle_checker.h"
++    ngx_module_deps=
++    ngx_module_libs="-L%%PREFIX%%/lib -ldrizzle"
++
++    . auto/module
++else
++    HTTP_MODULES="$HTTP_MODULES ngx_http_drizzle_module"
++    NGX_ADDON_SRCS="$NGX_ADDON_SRCS $ngx_addon_dir/src/ngx_http_drizzle_module.c $ngx_addon_dir/src/ngx_http_drizzle_handler.c $ngx_addon_dir/src/ngx_http_drizzle_processor.c $ngx_addon_dir/src/ngx_http_drizzle_upstream.c $ngx_addon_dir/src/ngx_http_drizzle_util.c $ngx_addon_dir/src/ngx_http_drizzle_output.c $ngx_addon_dir/src/ngx_http_drizzle_keepalive.c $ngx_addon_dir/src/ngx_http_drizzle_quoting.c $ngx_addon_dir/src/ngx_http_drizzle_checker.c"
++    NGX_ADDON_DEPS="$NGX_ADDON_DEPS $ngx_addon_dir/src/ddebug.h $ngx_addon_dir/src/ngx_http_drizzle_module.h $ngx_addon_dir/src/ngx_http_drizzle_handler.h $ngx_addon_dir/src/ngx_http_drizzle_processor.h $ngx_addon_dir/src/ngx_http_drizzle_upstream.h $ngx_addon_dir/src/ngx_http_drizzle_util.h $ngx_addon_dir/src/ngx_http_drizzle_output.h $ngx_addon_dir/src/resty_dbd_stream.h $ngx_addon_dir/src/ngx_http_drizzle_keepalive.h $ngx_addon_dir/src/ngx_http_drizzle_quoting.h $ngx_addon_dir/src/ngx_http_drizzle_checker.h"
++fi
+ 
+ have=NGX_DRIZZLE_MODULE . auto/have
