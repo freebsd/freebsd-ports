@@ -2,3 +2,5 @@
 %%SITE_PERL%%/Test/Cukes/Feature.pm
 %%SITE_PERL%%/Test/Cukes/Scenario.pm
 %%PERL5_MAN3%%/Test::Cukes.3.gz
+%%PERL5_MAN3%%/Test::Cukes::Feature.3.gz
+%%PERL5_MAN3%%/Test::Cukes::Scenario.3.gz
