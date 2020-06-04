@@ -110,6 +110,7 @@ lib/seed7/lib/field.s7i
 lib/seed7/lib/file.s7i
 lib/seed7/lib/filebits.s7i
 lib/seed7/lib/filesys.s7i
+lib/seed7/lib/fileutil.s7i
 lib/seed7/lib/float.s7i
 lib/seed7/lib/font.s7i
 lib/seed7/lib/font8x8.s7i
