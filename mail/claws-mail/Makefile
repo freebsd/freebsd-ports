@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	claws-mail
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail news
 
 COMMENT=	Lightweight and featureful GTK+ based e-mail and news client
@@ -19,7 +19,8 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libexpat.so:textproc/expat2 \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libnettle.so:security/nettle
-RUN_DEPENDS=	mime-support>0:misc/mime-support
+RUN_DEPENDS=	mime-support>0:misc/mime-support \
+		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
 USES=		autoreconf compiler:c++11-lang cpe desktop-file-utils gettext \
 		gettext-tools gnome pathfix pkgconfig python:3.5+ shebangfix ssl xorg
@@ -60,10 +61,14 @@ THEMES_RUN_DEPENDS=	claws-mail-themes>0:x11-themes/claws-mail-themes
 
 .include "Makefile.claws"
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+	${WRKSRC}/src/common/ssl.c
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	(cd ${WRKSRC}/tools && \
-		${INSTALL_SCRIPT} acroread2claws-mail.pl ca-certificates.crt \
+		${INSTALL_SCRIPT} acroread2claws-mail.pl \
 		calypso_convert.pl claws-mail-compose-insert-files.pl \
 		cm-reparent.pl convert_mbox.pl csv2addressbook.pl ddg_search.pl \
 		eud2gc.py filter_conv.pl filter_conv_new.pl fix_date.sh \

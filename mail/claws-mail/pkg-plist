@@ -236,7 +236,6 @@ libdata/pkgconfig/claws-mail.pc
 man/man1/claws-mail.1.gz
 share/applications/claws-mail.desktop
 %%DATADIR%%/acroread2claws-mail.pl
-%%DATADIR%%/ca-certificates.crt
 %%DATADIR%%/calypso_convert.pl
 %%DATADIR%%/claws-mail-compose-insert-files.pl
 %%DATADIR%%/cm-reparent.pl
