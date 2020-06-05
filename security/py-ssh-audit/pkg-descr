@@ -1,7 +1,8 @@
-ssh-audit is a tool for ssh server auditing.
+ssh-audit is a tool for ssh server & client configuration auditing.
 
 Features:
 * SSH1 and SSH2 protocol server support;
+* analyze SSH client configuration;
 * grab banner, recognize device or software and operating system,
 	detect compression;
 * gather key-exchange, host-key, encryption and
@@ -15,4 +16,4 @@ Features:
 * historical information from OpenSSH, Dropbear SSH and libssh;
 * no dependencies, compatible with Python 2.6+, Python 3.x and PyPy.
 
-WWW: https://github.com/arthepsy/ssh-audit
+WWW: https://github.com/jtesta/ssh-audit
