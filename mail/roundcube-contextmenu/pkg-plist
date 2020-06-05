@@ -4,6 +4,7 @@
 %%RCDIR_REL%%/plugins/contextmenu/composer.json
 %%RCDIR_REL%%/plugins/contextmenu/contextmenu.js
 %%RCDIR_REL%%/plugins/contextmenu/contextmenu.php
+%%RCDIR_REL%%/plugins/contextmenu/localization/bg_BG.inc
 %%RCDIR_REL%%/plugins/contextmenu/localization/ca_ES.inc
 %%RCDIR_REL%%/plugins/contextmenu/localization/cs_CZ.inc
 %%RCDIR_REL%%/plugins/contextmenu/localization/da_DK.inc
@@ -24,6 +25,7 @@
 %%RCDIR_REL%%/plugins/contextmenu/localization/pt_PT.inc
 %%RCDIR_REL%%/plugins/contextmenu/localization/ro_RO.inc
 %%RCDIR_REL%%/plugins/contextmenu/localization/ru_RU.inc
+%%RCDIR_REL%%/plugins/contextmenu/localization/sk_SK.inc
 %%RCDIR_REL%%/plugins/contextmenu/localization/sv_SE.inc
 %%RCDIR_REL%%/plugins/contextmenu/localization/tr_TR.inc
 %%RCDIR_REL%%/plugins/contextmenu/localization/uk_UA.inc
