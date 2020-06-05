@@ -49,6 +49,7 @@ OPTIONS_SUB=	yes
 
 BROTLI_CONFIGURE_WITH=	brotli
 BROTLI_LIB_DEPENDS=	libbrotlidec.so:archivers/brotli
+BROTLI_USES=		pkgconfig
 CONFIG_DESC=	Install freetype-config
 CONFIG_CONFIGURE_ENABLE=freetype-config
 PNG_DESC=		Png compressed OpenType embedded bitmaps support
