@@ -2,11 +2,8 @@
 
 PORTNAME=	uwebsockets
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.17.6
+DISTVERSION=	18.0.0
 CATEGORIES=	www devel
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	159430943c3c1118a56a22ff9f7cc845661804f9.patch:-p1 # https://github.com/uNetworking/uWebSockets/pull/1042
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ Web I/O library for the most demanding of applications

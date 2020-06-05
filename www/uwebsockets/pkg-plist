@@ -20,4 +20,5 @@ include/uWebSockets/WebSocketData.h
 include/uWebSockets/WebSocketExtensions.h
 include/uWebSockets/WebSocketHandshake.h
 include/uWebSockets/WebSocketProtocol.h
+include/uWebSockets/f2/LICENSE.txt
 include/uWebSockets/f2/function2.hpp
