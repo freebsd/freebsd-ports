@@ -252,6 +252,5 @@
     SUBDIR += xbae
     SUBDIR += xforms
     SUBDIR += xmhtml
-    SUBDIR += xview
 
 .include <bsd.port.subdir.mk>

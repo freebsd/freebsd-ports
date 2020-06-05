@@ -1,8 +1,0 @@
---- util/soelim/Imakefile.orig	2005-03-28 06:41:58.000000000 -0800
-+++ util/soelim/Imakefile	2012-02-03 13:01:00.097079040 -0800
-@@ -1,4 +1,5 @@
- #include <XView.tmpl>
-+INCLUDES=	-I../../build/include
- 
-            SRCS = soelim.c
-            OBJS = soelim.o 

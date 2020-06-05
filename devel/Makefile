@@ -1251,8 +1251,6 @@
     SUBDIR += liborcus
     SUBDIR += libosinfo
     SUBDIR += libosmo-abis
-    SUBDIR += libosmo-netif
-    SUBDIR += libosmo-sccp
     SUBDIR += libosmocore
     SUBDIR += libowfat
     SUBDIR += libpafe

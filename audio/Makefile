@@ -570,7 +570,6 @@
     SUBDIR += osd-lyrics
     SUBDIR += osdmixer
     SUBDIR += oss
-    SUBDIR += p5-Audio
     SUBDIR += p5-Audio-CD
     SUBDIR += p5-Audio-Ecasound
     SUBDIR += p5-Audio-FLAC-Header
@@ -848,7 +847,6 @@
     SUBDIR += wmmp
     SUBDIR += wmrecord
     SUBDIR += wmsmixer
-    SUBDIR += workman
     SUBDIR += wxguitar
     SUBDIR += x42-plugins-lv2
     SUBDIR += xanalyser
@@ -868,7 +866,6 @@
     SUBDIR += xmradio
     SUBDIR += xoscope
     SUBDIR += xsynth-dssi
-    SUBDIR += xvmixer
     SUBDIR += xwave
     SUBDIR += yell
     SUBDIR += ympd

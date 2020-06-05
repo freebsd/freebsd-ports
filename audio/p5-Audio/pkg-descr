@@ -1,7 +1,0 @@
-This is the beginnings of Audio manipulation routines for perl.
-
-Currently can load or save Sun/Next .au/.snd files and play them
-via Network Audio Server (from ftp.x.org) or native /dev/audio
-on Unices.
-
-WWW: https://metacpan.org/release/Audio

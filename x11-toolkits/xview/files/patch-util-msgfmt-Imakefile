@@ -1,9 +1,0 @@
---- util/msgfmt/Imakefile.orig	2005-03-28 06:41:59.000000000 -0800
-+++ util/msgfmt/Imakefile	2012-02-03 13:01:00.097079040 -0800
-@@ -1,5 +1,6 @@
- XCOMM # @(#)Imakefile	1.5 28 Jun 1993 SMI
- XCOMM # Imakefile for util/msgfmt
-+INCLUDES=	-I../../build/include
- 
- #include	<XView.tmpl>
- 
