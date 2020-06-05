@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	libtorrent-rasterbar
-DISTVERSIONPREFIX=	libtorrent-
-DISTVERSION=	1_2_6
+DISTVERSIONPREFIX=	libtorrent_
+DISTVERSION=	1_2_7
 CATEGORIES=	net-p2p
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libboost_chrono.so:devel/boost-libs \
 		libboost_random.so:devel/boost-libs \
 		libboost_system.so:devel/boost-libs
 
-USES=		cmake iconv:wchar_t libtool pathfix pkgconfig python:2.7,test shebangfix ssl # compiler:c++14-lang
+USES=		cmake iconv:wchar_t libtool pathfix pkgconfig python:test shebangfix ssl # compiler:c++14-lang
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 SHEBANG_FILES=	test/socks.py test/web_server.py
 USE_GITHUB=	yes
