@@ -2,9 +2,7 @@
 
 PORTNAME=	qmasm
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0-34
-PORTREVISION=	1
-DISTVERSIONSUFFIX=	-gb02225f
+DISTVERSION=	4.0.2
 CATEGORIES=	lang
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,9 +18,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	lanl
 USE_PYTHON=	distutils noflavors autoplist
 
-POST_PLIST=	fix-plist
-
-fix-plist: # https://github.com/lanl/qmasm/issues/9
-	@${REINPLACE_CMD} -E "s|^bin/([a-z0-9-]*).py$$|bin/\1|" ${TMPPLIST}
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
