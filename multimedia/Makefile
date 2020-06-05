@@ -319,6 +319,7 @@
     SUBDIR += php-pHash
     SUBDIR += pipewire
     SUBDIR += pitivi
+    SUBDIR += playerctl
     SUBDIR += plexmediaserver
     SUBDIR += plexmediaserver-plexpass
     SUBDIR += podcastdl
