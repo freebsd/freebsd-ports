@@ -832,6 +832,7 @@ lib/calibre/calibre/gui2/dialogs/tag_categories_ui.py
 lib/calibre/calibre/gui2/dialogs/tag_editor.py
 lib/calibre/calibre/gui2/dialogs/tag_editor_ui.py
 lib/calibre/calibre/gui2/dialogs/tag_list_editor.py
+lib/calibre/calibre/gui2/dialogs/tag_list_editor_table_widget.py
 lib/calibre/calibre/gui2/dialogs/tag_list_editor_ui.py
 lib/calibre/calibre/gui2/dialogs/template_dialog.py
 lib/calibre/calibre/gui2/dialogs/template_dialog_ui.py
@@ -1094,6 +1095,7 @@ lib/calibre/calibre/gui2/viewer/annotations.py
 lib/calibre/calibre/gui2/viewer/bookmarks.py
 lib/calibre/calibre/gui2/viewer/convert_book.py
 lib/calibre/calibre/gui2/viewer/highlights.py
+lib/calibre/calibre/gui2/viewer/integration.py
 lib/calibre/calibre/gui2/viewer/lookup.py
 lib/calibre/calibre/gui2/viewer/main.py
 lib/calibre/calibre/gui2/viewer/mathjax.py
