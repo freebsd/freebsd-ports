@@ -160,6 +160,7 @@
     SUBDIR += stacks
     SUBDIR += star
     SUBDIR += stringtie
+    SUBDIR += subread
     SUBDIR += tRNAscan-SE
     SUBDIR += tabixpp
     SUBDIR += tophat
