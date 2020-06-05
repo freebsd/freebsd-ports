@@ -6,7 +6,7 @@ PORTVERSION=	7.0
 CATEGORIES=	sysutils
 DISTFILES=
 
-MAINTAINER=	salvadore@FreeBSD.org
+MAINTAINER=	scrappy@hub.org
 COMMENT=	Monthly script for reporting anonymous statistics about your machine
 
 LICENSE=	BSD4CLAUSE
