@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	obs-streamfx
-DISTVERSION=	0.8.0b3
+DISTVERSION=	0.8.0
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org

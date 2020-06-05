@@ -15,6 +15,7 @@ share/obs/obs-plugins/StreamFX/effects/sdf/sdf-consumer.effect
 share/obs/obs-plugins/StreamFX/effects/sdf/sdf-producer.effect
 share/obs/obs-plugins/StreamFX/examples/normal-maps/neutral.png
 share/obs/obs-plugins/StreamFX/examples/normal-maps/stretch-middle.png
+share/obs/obs-plugins/StreamFX/examples/shaders/feature-test.effect
 share/obs/obs-plugins/StreamFX/examples/shaders/filter/crt-curvature.effect
 share/obs/obs-plugins/StreamFX/examples/shaders/filter/crt-scanlines.effect
 share/obs/obs-plugins/StreamFX/examples/shaders/filter/drunk.effect
