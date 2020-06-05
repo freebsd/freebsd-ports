@@ -3668,6 +3668,7 @@ gcc-arm-embedded-%%FULL_VERSION%%/share/gcc-%%TARGET%%/libstdcxx/v6/xmethods.py
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/as.html/Z80_002dCase.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/as.html/Z80_002dChars.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/as.html/Z80_002dDependent.html
+%%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/as.html/Z80_002dLabels.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/as.html/Z80_002dRegs.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/as.html/Z80-Directives.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/as.html/Z80-Floating-Point.html
@@ -3758,6 +3759,7 @@ gcc-arm-embedded-%%FULL_VERSION%%/share/gcc-%%TARGET%%/libstdcxx/v6/xmethods.py
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/binutils.html/Bug-Reporting.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/binutils.html/c_002b_002bfilt.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/binutils.html/Common-Options.html
+%%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/binutils.html/debuginfod.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/binutils.html/def-file-format.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/binutils.html/dlltool.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/binutils.html/elfedit.html
@@ -5845,6 +5847,7 @@ gcc-arm-embedded-%%FULL_VERSION%%/share/gcc-%%TARGET%%/libstdcxx/v6/xmethods.py
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/wmempcpy.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/wmemset.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libiberty.html
+%%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libm/Fenv.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libm/acos.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libm/acosh.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libm/asin.html
@@ -5887,6 +5890,17 @@ gcc-arm-embedded-%%FULL_VERSION%%/share/gcc-%%TARGET%%/libstdcxx/v6/xmethods.py
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libm/expm1.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libm/fabs.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libm/fdim.html
+%%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libm/feclearexcept.html
+%%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libm/fegetenv.html
+%%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libm/fegetexceptflag.html
+%%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libm/fegetround.html
+%%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libm/feholdexcept.html
+%%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libm/feraiseexcept.html
+%%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libm/fesetenv.html
+%%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libm/fesetexceptflag.html
+%%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libm/fesetround.html
+%%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libm/fetestexcept.html
+%%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libm/feupdateenv.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libm/floor.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libm/fma.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libm/fmax.html
@@ -5911,7 +5925,6 @@ gcc-arm-embedded-%%FULL_VERSION%%/share/gcc-%%TARGET%%/libstdcxx/v6/xmethods.py
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libm/lrint.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libm/lround.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libm/Math.html
-%%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libm/matherr.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libm/modf.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libm/nan.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libm/nearbyint.html
