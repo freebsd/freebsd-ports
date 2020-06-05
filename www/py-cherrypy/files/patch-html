@@ -1,0 +1,60 @@
+https://github.com/cherrypy/cherrypy/commit/c65dc279d1d8
+
+--- cherrypy/_cpcompat.py.orig	2016-05-11 00:35:35 UTC
++++ cherrypy/_cpcompat.py
+@@ -357,3 +357,19 @@ class SetDaemonProperty:
+ 
+     if sys.version_info < (2, 6):
+         daemon = property(__get_daemon, __set_daemon)
++
++# html module come in 3.2 version
++try:
++    from html import escape
++except ImportError:
++    from cgi import escape
++
++# html module needed the argument quote=False because in cgi the default
++# is False. With quote=True the results differ.
++
++def escape_html(s, escape_quote=False):
++    """Replace special characters "&", "<" and ">" to HTML-safe sequences.
++
++    When escape_quote=True, escape (') and (") chars.
++    """
++    return escape(s, quote=escape_quote)
+--- cherrypy/_cperror.py.orig	2016-05-11 00:35:35 UTC
++++ cherrypy/_cperror.py
+@@ -115,9 +115,9 @@ Note that you have to explicitly set
+ and not simply return an error message as a result.
+ """
+ 
+-from cgi import escape as _escape
+ from sys import exc_info as _exc_info
+ from traceback import format_exception as _format_exception
++from cherrypy._cpcompat import escape_html
+ from cherrypy._cpcompat import basestring, bytestr, iteritems, ntob
+ from cherrypy._cpcompat import tonative, urljoin as _urljoin
+ from cherrypy.lib import httputil as _httputil
+@@ -489,7 +489,7 @@ def get_error_page(status, **kwargs):
+         if v is None:
+             kwargs[k] = ""
+         else:
+-            kwargs[k] = _escape(kwargs[k])
++            kwargs[k] = escape_html(kwargs[k])
+ 
+     # Use a custom template or callable for the error page?
+     pages = cherrypy.serving.request.error_page
+--- cherrypy/test/test_compat.py.orig	2016-05-11 00:35:35 UTC
++++ cherrypy/test/test_compat.py
+@@ -17,3 +17,11 @@ class StringTester(unittest.TestCase):
+         if compat.py3k:
+             raise nose.SkipTest("Only useful on Python 2")
+         self.assertRaises(Exception, compat.ntob, unicode('fight'))
++
++
++class EscapeTester(unittest.TestCase):
++    """Class to test escape_html function from _cpcompat."""
++
++    def test_escape_quote(self):
++        """test_escape_quote - Verify the output for &<>"' chars."""
++        self.assertEqual("""xx&amp;&lt;&gt;"aa'""", compat.escape_html("""xx&<>"aa'"""))
