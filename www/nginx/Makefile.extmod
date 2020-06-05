@@ -68,9 +68,9 @@ FORMINPUT_IMPLIES=	DEVEL_KIT
 FORMINPUT_GH_TUPLE=	calio:form-input-nginx-module:v0.12:forminput
 FORMINPUT_VARS=		DSO_EXTMODS+=forminput
 
-GRIDFS_GH_TUPLE=	mdirolf:nginx-gridfs:v0.8:gridfs \
-			mongodb:mongo-c-driver:v0.3.1:mongo_c
-GRIDFS_CONFIGURE_ON=	--add-module=${WRKSRC_gridfs}
+GRIDFS_GH_TUPLE=	technowledgy:nginx_http_gridfs_module:7970bab:gridfs \
+			10gen-archive:mongo-c-driver-legacy:f06669b:mongo_c
+GRIDFS_VARS=		DSO_EXTMODS+=gridfs
 
 HEADERS_MORE_GH_TUPLE=		openresty:headers-more-nginx-module:085fbbc:headers_more
 HEADERS_MORE_VARS=		DSO_EXTMODS+=headers_more
@@ -145,7 +145,7 @@ HTTP_PUSH_GH_TUPLE=		slact:nchan:v1.1.14:push
 HTTP_PUSH_VARS=			DSO_EXTMODS+=push
 
 HTTP_PUSH_STREAM_GH_TUPLE=	wandenberg:nginx-push-stream-module:0.5.4:pushstream
-HTTP_PUSH_STREAM_CONFIGURE_ON=	--add-module=${WRKSRC_pushstream}
+HTTP_PUSH_STREAM_VARS=		DSO_EXTMODS+=pushstream
 
 HTTP_REDIS_MASTER_SITES=	LOCAL/osa:redis
 HTTP_REDIS_DISTFILES=		ngx_http_redis-0.3.9.tar.gz:redis
@@ -185,21 +185,19 @@ HTTP_UPSTREAM_FAIR_GH_TUPLE=		jaygooby:nginx-upstream-fair:10ecdcf:upstreamfair
 HTTP_UPSTREAM_FAIR_VARS=		DSO_EXTMODS+=upstreamfair
 
 HTTP_UPSTREAM_STICKY_IMPLIES=		HTTP_SSL
-HTTP_UPSTREAM_STICKY_MASTER_SITES=	https://bitbucket.org/nginx-goodies/nginx-sticky-module-ng/get/:upstreamsticky
-HTTP_UPSTREAM_STICKY_DISTFILES=		08a395c66e42.tar.gz:upstreamsticky
-HTTP_UPSTREAM_STICKY_CONFIGURE_ON=	--add-module=${WRKDIR}/nginx-goodies-nginx-sticky-module-ng-08a395c66e42/
-HTTP_UPSTREAM_STICKY_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_sticky_misc.c
+HTTP_UPSTREAM_STICKY_GH_TUPLE=		ayty-adrianomartins:nginx-sticky-module-ng:c407e0d:upstreamsticky
+HTTP_UPSTREAM_STICKY_VARS=		DSO_EXTMODS+=upstreamsticky
 
 HTTP_VIDEO_THUMBEXTRACTOR_LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 					libavcodec.so:multimedia/ffmpeg \
 					libavutil.so:multimedia/ffmpeg \
 					libswscale.so:multimedia/ffmpeg
 HTTP_VIDEO_THUMBEXTRACTOR_USES=		jpeg
-HTTP_VIDEO_THUMBEXTRACTOR_GH_TUPLE=	wandenberg:nginx-video-thumbextractor-module:0.9.0:vte
-HTTP_VIDEO_THUMBEXTRACTOR_CONFIGURE_ON=--add-module=${WRKSRC_vte}
+HTTP_VIDEO_THUMBEXTRACTOR_GH_TUPLE=	Novetta:nginx-video-thumbextractor-module:f5b5bae:vte
+HTTP_VIDEO_THUMBEXTRACTOR_VARS=		DSO_EXTMODS+=vte
 
-HTTP_ZIP_GH_TUPLE=	anthonyryan1:mod_zip:74ef235:mod_zip
-HTTP_ZIP_CONFIGURE_ON=	--add-module=${WRKSRC_mod_zip}
+HTTP_ZIP_GH_TUPLE=	rtm-ctrlz:mod_zip:cfd0be4:mod_zip
+HTTP_ZIP_VARS=		DSO_EXTMODS+=mod_zip
 
 ICONV_IMPLIES=		DEVEL_KIT
 ICONV_USES=		iconv
@@ -207,13 +205,13 @@ ICONV_GH_TUPLE=		calio:iconv-nginx-module:v0.14:iconv
 ICONV_VARS=		DSO_EXTMODS+=iconv
 ICONV_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-calio-iconv-nginx-module-config
 
-LET_GH_TUPLE=		arut:nginx-let-module:v0.0.4:let
-LET_CONFIGURE_ON=	--add-module=${WRKSRC_let}
+LET_GH_TUPLE=		baysao:nginx-let-module:c1f23aa:let
+LET_VARS=		DSO_EXTMODS+=let
 
 LINK_GH_TUPLE=		Taymindis:nginx-link-function:3.2.2:link
-LINK_CONFIGURE_ON=	--add-module=${WRKSRC_link}
 LINK_EXTRA_PATCHES=     ${PATCHDIR}/extra-patch-nginx-link-function-config \
 				${PATCHDIR}/extra-patch-ngx_link_func_module.c
+LINK_VARS=		DSO_EXTMODS+=link
 
 LUA_IMPLIES=		DEVEL_KIT
 LUA_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty

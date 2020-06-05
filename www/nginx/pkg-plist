@@ -24,6 +24,7 @@
 %%DSO%%%%ENCRYPTSESSION%%libexec/nginx/ngx_http_encrypted_session_module.so
 %%DSO%%%%FASTDFS%%libexec/nginx/ngx_http_fastdfs_module.so
 %%DSO%%%%FORMINPUT%%libexec/nginx/ngx_http_form_input_module.so
+%%DSO%%%%GRIDFS%%libexec/nginx/ngx_http_gridfs_module.so
 %%DSO%%%%HEADERS_MORE%%libexec/nginx/ngx_http_headers_more_filter_module.so
 %%DSO%%%%HTTP_ACCEPT_LANGUAGE%%libexec/nginx/ngx_http_accept_language_module.so
 %%DSO%%%%HTTP_AUTH_DIGEST%%libexec/nginx/ngx_http_auth_digest_module.so
@@ -42,13 +43,19 @@
 %%DSO%%%%HTTP_IP2PROXY%%libexec/nginx/ngx_http_ip2proxy_module.so
 %%DSO%%%%HTTP_PERL%%libexec/nginx/ngx_http_perl_module.so
 %%DSO%%%%HTTP_PUSH%%libexec/nginx/ngx_nchan_module.so
+%%DSO%%%%HTTP_PUSH_STREAM%%libexec/nginx/ngx_http_push_stream_module.so
 %%DSO%%%%HTTP_REDIS%%libexec/nginx/ngx_http_redis_module.so
 %%DSO%%%%HTTP_TARANTOOL%%libexec/nginx/ngx_http_tnt_module.so
 %%DSO%%%%HTTP_UPLOAD%%libexec/nginx/ngx_http_upload_module.so
 %%DSO%%%%HTTP_UPLOAD_PROGRESS%%libexec/nginx/ngx_http_uploadprogress_module.so
 %%DSO%%%%HTTP_UPSTREAM_FAIR%%libexec/nginx/ngx_http_upstream_fair_module.so
+%%DSO%%%%HTTP_UPSTREAM_STICKY%%libexec/nginx/ngx_http_sticky_module.so
+%%DSO%%%%HTTP_VIDEO_THUMBEXTRACTOR%%libexec/nginx/ngx_http_video_thumbextractor_module.so
 %%DSO%%%%HTTP_XSLT%%libexec/nginx/ngx_http_xslt_filter_module.so
+%%DSO%%%%HTTP_ZIP%%libexec/nginx/ngx_http_zip_module.so
 %%DSO%%%%ICONV%%libexec/nginx/ngx_http_iconv_module.so
+%%DSO%%%%LET%%libexec/nginx/ngx_http_let_module.so
+%%DSO%%%%LINK%%libexec/nginx/ngx_http_link_func_module.so
 %%DSO%%%%LUA%%libexec/nginx/ngx_http_lua_module.so
 %%DSO%%%%MAIL%%libexec/nginx/ngx_mail_module.so
 %%DSO%%%%MEMC%%libexec/nginx/ngx_http_memc_module.so
