@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	reactphysics3d
-DISTVERSION=	0.7.1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.8.0
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		cmake compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	DanielChappuis
-GH_TAGNAME=	f3be5384997da7ddeccc526036985a80de660bae  # branch 'fix37'
 USE_LDCONFIG=	yes
 CMAKE_ON=	BUILD_SHARED_LIBS
 
