@@ -53,6 +53,13 @@ USES+=		compiler:c++11-lib bison meson pathfix pkgconfig \
 
 USE_LDCONFIG=	yes
 
+.if ${/usr/bin/ld:L:tA} != /usr/bin/ld.lld
+# --build-id isn't supported by old GNU ld.bfd in base
+# Also ld.bfd have problems that seems related to --as-needed
+USE_BINUTILS=		yes
+LDFLAGS+=		-B${LOCALBASE}/bin
+.endif
+
 # only have one port to check with portscout.
 .if ${PORTNAME} != mesa-dri
 PORTSCOUT=	ignore:1
@@ -83,8 +90,6 @@ LLVM_DEFAULT=	90
 .elif ${LLVM_DEFAULT:C/[1-5]./&0/:S,-devel,990,} >= 90
 LLVM_DEFAULT=	80
 .endif
-
-LDFLAGS+=	-fuse-ld=lld
 
 BINARY_ALIAS+=	python3=${PYTHON_VERSION}
 

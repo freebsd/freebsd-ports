@@ -67,13 +67,6 @@ USE_XORG+=		xcb xrandr
 .endif
 
 LDFLAGS_i386=		-Wl,-znotext
-.if ${DRI_DRIVERS} || ${VULKAN_DRIVERS:MINTEL}
-. if ${/usr/bin/ld:L:tA} != /usr/bin/ld.lld
-# --build-id isn't supported by old GNU ld.bfd in base
-USE_BINUTILS=		yes
-LDFLAGS+=		-B${LOCALBASE}/bin
-. endif
-.endif
 
 # enables VK_KHR_wayland_surface in Vulkan drivers
 .if ${PORT_OPTIONS:MWAYLAND} && !empty(VULKAN_DRIVERS)
