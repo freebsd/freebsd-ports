@@ -292,9 +292,8 @@ SFLOW_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_sflow_config.c \
 SHIBBOLETH_GH_TUPLE=	nginx-shib:nginx-http-shibboleth:f07bf3c:shibboleth
 SHIBBOLETH_VARS=	DSO_EXTMODS+=shibboleth
 
-SLOWFS_CACHE_MASTER_SITES=	http://labs.frickle.com/files/:slowfs_cache
-SLOWFS_CACHE_DISTFILES=		ngx_slowfs_cache-1.10.tar.gz:slowfs_cache
-SLOWFS_CACHE_CONFIGURE_ON=	--add-module=${WRKDIR}/ngx_slowfs_cache-1.10
+SLOWFS_CACHE_GH_TUPLE=	baysao:ngx_slowfs_cache:d011a18:slowfs_cache
+SLOWFS_CACHE_VARS=	DSO_EXTMODS+=slowfs_cache
 
 SMALL_LIGHT_LIB_DEPENDS=	libMagickWand-6.so:graphics/ImageMagick6 \
 				libpcre.so:devel/pcre
@@ -302,7 +301,6 @@ SMALL_LIGHT_GH_TUPLE=		cubicdaiya:ngx_small_light:v0.9.2:small_light
 SMALL_LIGHT_VARS=		DSO_EXTMODS+=small_light
 
 SRCACHE_GH_TUPLE=	openresty:srcache-nginx-module:v0.31:srcache
-#SRCACHE_CONFIGURE_ON=	--add-module=${WRKSRC_srcache}
 SRCACHE_VARS=		DSO_EXTMODS+=srcache
 
 VOD_GH_TUPLE=		kaltura:nginx-vod-module:1.23:vod
@@ -314,8 +312,9 @@ VOD_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nginx-vod-module-config \
 VTS_GH_TUPLE=		vozlt:nginx-module-vts:v0.1.18:vts
 VTS_CONFIGURE_ON=	--add-module=${WRKSRC_vts}
 
-XSS_GH_TUPLE=		openresty:xss-nginx-module:v0.05:xss
-XSS_CONFIGURE_ON=	--add-module=${WRKSRC_xss}
+XSS_GH_TUPLE=		openresty:xss-nginx-module:v0.06:xss
+XSS_VARS=		DSO_EXTMODS+=xss
+XSS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-xss-nginx-module-config
 
 WEBSOCKIFY_GH_TUPLE=	tg123:websockify-nginx-module:e82d254:websockify
 WEBSOCKIFY_CONFIGURE_ON=	--add-module=${WRKSRC_websockify}
