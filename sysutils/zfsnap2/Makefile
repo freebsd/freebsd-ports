@@ -4,7 +4,7 @@
 PORTNAME=	zfsnap
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.0-beta3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	2
 
@@ -44,7 +44,7 @@ post-install-BASH-on:
 
 post-install-ZSH-on:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
-	${LN} -s ../../share/zfsnap/completion/zfsnap-completion.zsh \
+	${LN} -s ../../zfsnap/completion/zfsnap-completion.zsh \
 		${STAGEDIR}${PREFIX}/share/zsh/site-functions/_zfsnap
 
 .include <bsd.port.mk>
