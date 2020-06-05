@@ -65,6 +65,8 @@
 %%DSO%%%%STREAM%%%%NJS%%libexec/nginx/ngx_stream_js_module.so
 %%DSO%%%%PASSENGER%%libexec/nginx/ngx_http_passenger_module.so
 %%DSO%%%%POSTGRES%%libexec/nginx/ngx_postgres_module.so
+%%DSO%%%%RDS_CSV%%libexec/nginx/ngx_http_rds_csv_filter_module.so
+%%DSO%%%%RDS_JSON%%libexec/nginx/ngx_http_rds_json_filter_module.so
 %%DSO%%%%REDIS2%%libexec/nginx/ngx_http_redis2_module.so
 %%DSO%%%%RTMP%%libexec/nginx/ngx_rtmp_module.so
 %%DSO%%%%SET_MISC%%libexec/nginx/ngx_http_set_misc_module.so

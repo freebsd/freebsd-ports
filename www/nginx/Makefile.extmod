@@ -268,11 +268,13 @@ POSTGRES_GH_TUPLE=	konstruxi:ngx_postgres:8aa7359:postgres
 POSTGRES_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_postgres-config
 POSTGRES_VARS=		DSO_EXTMODS+=postgres
 
-RDS_CSV_GH_TUPLE=	openresty:rds-csv-nginx-module:v0.08:rdscsv
-RDS_CSV_CONFIGURE_ON=	--add-module=${WRKSRC_rdscsv}
+RDS_CSV_GH_TUPLE=	openresty:rds-csv-nginx-module:v0.09:rdscsv
+RDS_CSV_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-rds-csv-nginx-module-config
+RDS_CSV_VARS=		DSO_EXTMODS+=rdscsv
 
-RDS_JSON_GH_TUPLE=	openresty:rds-json-nginx-module:v0.14:rdsjson
-RDS_JSON_CONFIGURE_ON=	--add-module=${WRKSRC_rdsjson}
+RDS_JSON_GH_TUPLE=	openresty:rds-json-nginx-module:v0.15:rdsjson
+RDS_JSON_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-rds-json-nginx-module-config
+RDS_JSON_VARS=		DSO_EXTMODS+=rdsjson
 
 REDIS2_GH_TUPLE=	openresty:redis2-nginx-module:v0.15:redis2
 REDIS2_VARS=		DSO_EXTMODS+=redis2
