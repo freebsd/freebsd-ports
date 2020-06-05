@@ -2,18 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	Scope-Guard
-PORTVERSION=	0.20
-PORTREVISION=	1
+PORTVERSION=	0.21
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:CHOCOLATE
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	v.a.popov@gmail.com
+MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Lexically scoped resource management
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/README
 
 USES=		perl5
 USE_PERL5=	configure
