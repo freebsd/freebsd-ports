@@ -10,6 +10,7 @@
     SUBDIR += bamtools
     SUBDIR += bcftools
     SUBDIR += bedtools
+    SUBDIR += bioawk
     SUBDIR += biococoa
     SUBDIR += bolt-lmm
     SUBDIR += bowtie
