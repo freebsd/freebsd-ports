@@ -5,4 +5,4 @@ If you know the pre-shared key, also known as shared secret or group password,
 you can impersonate the VPN gateway in IKE phase 1, and learn XAUTH user
 credentials in phase 2.
 
-WWW: http://www.roe.ch/FakeIKEd
+WWW: https://www.roe.ch/FakeIKEd
