@@ -208,7 +208,7 @@ ICONV_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-calio-iconv-nginx-module-config
 LET_GH_TUPLE=		baysao:nginx-let-module:c1f23aa:let
 LET_VARS=		DSO_EXTMODS+=let
 
-LINK_GH_TUPLE=		Taymindis:nginx-link-function:3.2.2:link
+LINK_GH_TUPLE=		Taymindis:nginx-link-function:3.2.3:link
 LINK_EXTRA_PATCHES=     ${PATCHDIR}/extra-patch-nginx-link-function-config \
 				${PATCHDIR}/extra-patch-ngx_link_func_module.c
 LINK_VARS=		DSO_EXTMODS+=link
