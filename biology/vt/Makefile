@@ -14,7 +14,7 @@ LIB_DEPENDS=	libhts.so:biology/htslib \
 		libdeflate.so:archivers/libdeflate \
 		libcurl.so:ftp/curl
 
-USES=		gmake ssl
+USES=		compiler:c++0x gmake ssl
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	atks
