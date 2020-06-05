@@ -84,6 +84,8 @@ LLVM_DEFAULT=	90
 LLVM_DEFAULT=	80
 .endif
 
+LDFLAGS+=	-fuse-ld=lld
+
 BINARY_ALIAS+=	python3=${PYTHON_VERSION}
 
 .if ${ARCH} == sparc64
