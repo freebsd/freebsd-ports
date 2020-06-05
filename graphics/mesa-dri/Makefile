@@ -3,7 +3,7 @@
 
 PORTNAME=	mesa-dri
 PORTVERSION=	${MESAVERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 
 COMMENT=	OpenGL hardware acceleration drivers for DRI2+
@@ -30,7 +30,7 @@ WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland
 .include "${.CURDIR:H:H}/graphics/mesa-dri/Makefile.common"
 
 ALL_DRI_DRIVERS=	I915 I965 R100 R200 SWRAST
-ALL_GALLIUM_DRIVERS=	FREEDRENO R300 R600 RADEONSI SVGA SWRAST VC4
+ALL_GALLIUM_DRIVERS=	R300 R600 RADEONSI SVGA SWRAST
 ALL_VULKAN_DRIVERS=	INTEL AMD
 
 .if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH:Marm*} || ${ARCH} == i386 || ${ARCH:Mmips*} || ${ARCH:Mpowerpc*}
@@ -54,11 +54,6 @@ GALLIUM_DRIVERS+=	SVGA
 EXTRA_PATCHES+=	${PATCHDIR}/extra-src_mesa_drivers_dri_i965_intel__screen.c
 . endif
 VULKAN_DRIVERS+=	INTEL
-.elif ${ARCH} == aarch64 || ${ARCH} == armv6 || ${ARCH} == armv7
-GALLIUM_DRIVERS+=	FREEDRENO VC4
-. if ${ARCH} == armv6 || ${ARCH} == armv7
-EXTRA_PATCHES+=	${PATCHDIR}/extra-src_gallium_drivers_vc4_Makefile.in
-. endif
 .endif
 
 .if ${VULKAN_DRIVERS}
