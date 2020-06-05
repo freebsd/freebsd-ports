@@ -363,6 +363,7 @@ include/folly/fibers/TimedMutex.h
 include/folly/fibers/WhenN-inl.h
 include/folly/fibers/WhenN.h
 include/folly/fibers/async/Async.h
+include/folly/fibers/async/Baton.h
 include/folly/fibers/detail/AtomicBatchDispatcher.h
 include/folly/fibers/traits.h
 include/folly/folly-config.h
