@@ -5,3 +5,4 @@ lib/libxatracker.so
 lib/libxatracker.so.2
 lib/libxatracker.so.2.5.0
 libdata/pkgconfig/xatracker.pc
+@comment share/drirc.d/00-mesa-defaults.conf

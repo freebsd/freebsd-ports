@@ -1,0 +1,19 @@
+--- src/gallium/state_trackers/xvmc/meson.build.orig	2019-06-26 20:14:08 UTC
++++ src/gallium/state_trackers/xvmc/meson.build
+@@ -18,12 +18,15 @@
+ # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ # SOFTWARE.
+ 
++XVMC_MAJOR = 1
++XVMC_MINOR = 0
++
+ libxvmc_st = static_library(
+   'xvmc_st',
+   files('attributes.c', 'block.c', 'context.c', 'surface.c', 'subpicture.c'),
+   c_args : [c_vis_args],
+   include_directories : [inc_common],
+-  dependencies : [dep_xvmc, dep_x11_xcb, dep_xcb, dep_xcb_dri2, dep_xcb_dri3],
++  dependencies : [dep_xvmc, dep_x11_xcb, dep_xcb, dep_xcb_dri2, dep_xcb_dri3, dep_xv],
+ )
+ 
+ # These tests will not work without a working xvmc configuration. 

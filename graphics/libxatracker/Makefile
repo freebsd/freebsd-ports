@@ -8,7 +8,7 @@ CATEGORIES=	graphics
 
 COMMENT=	Mesa XA state tracker
 
-USES=		xorg
+USES=		xorg meson
 USE_XORG=	xorgproto
 
 .include <bsd.port.options.mk>
@@ -17,22 +17,27 @@ USE_XORG=	xorgproto
 ONLY_FOR_ARCHS=		i386 amd64
 ONLY_FOR_ARCHS_REASON=	Used only by VMWare supported architectures
 
-CONFIGURE_ARGS+=	--disable-dri \
-			--disable-egl \
-			--disable-gbm \
-			--disable-gles2 \
-			--disable-glx \
-			--disable-opengl \
-			--disable-shared-glapi \
-			--with-gallium-drivers= \
-			--with-platforms=
+MESON_ARGS+=	-Ddri-drivers="" \
+		-Dgallium-drivers="svga" \
+		-Dvulkan-drivers="" \
+		-Dgallium-vdpau=false \
+		-Dgallium-omx=disabled \
+		-Dgallium-va=false \
+		-Dgallium-opencl=disabled \
+		-Dgallium-xvmc=false \
+		-Dgallium-nine=false \
+		-Degl=false \
+		-Dgbm=false \
+		-Dgles2=false \
+		-Dglx=disabled \
+		-Dopengl=false \
+		-Dshared-glapi=false \
+		-Dosmesa=none \
+		-Dplatforms=
 
-MESA_BUILD_WRKSRC=	src/util src/compiler
 LDFLAGS_i386=		-Wl,-znotext
 
-CONFIGURE_ARGS+=	--enable-xa
-MESA_BUILD_WRKSRC+=	src/gallium
-MESA_INSTALL_WRKSRC=	src/gallium/state_trackers/xa src/gallium/targets/xa
+MESA_ARGS+=	-Dgallium-xa=true
 
 .include "${MASTERDIR}/Makefile.targets"
 .include <bsd.port.post.mk>

@@ -13,18 +13,32 @@ USE_XORG=	xorgproto
 .include <bsd.port.options.mk>
 .include "${.CURDIR:H:H}/graphics/mesa-dri/Makefile.common"
 
-CONFIGURE_ARGS+=	--disable-dri --disable-egl --disable-gbm \
-			--disable-gles2 --with-gallium-drivers=swrast
-MESA_BUILD_WRKSRC=	src/util src/compiler src/mapi src/mesa
+
+# Disable some options
+MESON_ARGS+=	-Ddri-drivers="" \
+		-Dgallium-drivers=swrast \
+		-Dvulkan-drivers="" \
+		-Dplatforms="" \
+		-Dgallium-vdpau=false \
+		-Dgallium-omx=disabled \
+		-Dgallium-va=false \
+		-Dgallium-opencl=disabled \
+		-Dgallium-xa=false \
+		-Dgallium-xvmc=false \
+		-Dgallium-nine=false \
+		-Dgles1=false \
+		-Dgles2=false \
+		-Dopengl=false \
+		-Dglx=disabled \
+		-Degl=false \
+		-Dgbm=false \
+		-Dtools=""
 LDFLAGS_i386=		-Wl,-znotext
 
-.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH:Marm*} || ${ARCH} == i386 || ${ARCH:Mmips*} || ${ARCH:Mpowerpc*}
-CONFIGURE_ARGS+=	--enable-osmesa-gallium
-MESA_BUILD_WRKSRC+=	src/gallium
-MESA_INSTALL_WRKSRC=	src/gallium/state_trackers/osmesa src/gallium/targets/osmesa
+.if ${ARCH} == sparc64
+MESON_ARGS+=	-Dosmesa=classic
 .else
-CONFIGURE_ARGS+=	--enable-osmesa
-MESA_INSTALL_WRKSRC=	src/mesa/drivers/osmesa
+MESON_ARGS+=	-Dosmesa=gallium
 .endif
 
 .include "${MASTERDIR}/Makefile.targets"

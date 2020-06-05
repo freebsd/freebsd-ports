@@ -1,0 +1,26 @@
+- Do not define GLX_USE_TLS, this doesn't work on all FreeBSD version
+  Later mesa version rename this to USE_ELF_TLS and make it conditional
+  on some platform, but for now simply comment it here.
+  See https://github.com/dumbbell/test-tls-initial-exec for more info
+- Add dependency on libxv for xvmc, this is fixed in later mesa version.
+--- meson.build.orig	2019-06-26 20:14:08 UTC
++++ meson.build
+@@ -336,7 +336,7 @@ if with_egl and not (with_platform_drm or with_platfor
+   endif
+ endif
+ 
+-pre_args += '-DGLX_USE_TLS'
++#pre_args += '-DGLX_USE_TLS'
+ if with_glx != 'disabled'
+   if not (with_platform_x11 and with_any_opengl)
+     error('Cannot build GLX support without X11 platform support and at least one OpenGL API')
+@@ -458,7 +458,8 @@ dep_xvmc = null_dep
+ with_gallium_xvmc = false
+ if _xvmc != 'false'
+   dep_xvmc = dependency('xvmc', version : '>= 1.0.6', required : _xvmc == 'true')
+-  with_gallium_xvmc = dep_xvmc.found()
++  dep_xv = dependency('xv', required: _xvmc == 'true')
++  with_gallium_xvmc = dep_xvmc.found() and dep_xv.found()
+ endif
+ 
+ xvmc_drivers_path = get_option('xvmc-libs-path')

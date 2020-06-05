@@ -1,25 +1,8 @@
-@comment include/EGL/egl.h
-@comment include/EGL/eglext.h
-@comment include/EGL/eglextchromium.h
-@comment include/EGL/eglmesaext.h
-@comment include/EGL/eglplatform.h
 @comment include/GL/gl.h
 @comment include/GL/gl_mangle.h
 @comment include/GL/glcorearb.h
 @comment include/GL/glext.h
-@comment include/GL/glx.h
-@comment include/GL/glx_mangle.h
-@comment include/GL/glxext.h
 include/GL/internal/dri_interface.h
-@comment include/GL/osmesa.h
-@comment include/GLES2/gl2.h
-@comment include/GLES2/gl2ext.h
-@comment include/GLES2/gl2platform.h
-@comment include/GLES3/gl3.h
-@comment include/GLES3/gl31.h
-@comment include/GLES3/gl32.h
-@comment include/GLES3/gl3ext.h
-@comment include/GLES3/gl3platform.h
 @comment include/KHR/khrplatform.h
 @comment include/gbm.h
 %%INTEL_VDRIVER%%include/vulkan/vulkan_intel.h
@@ -32,32 +15,12 @@ include/GL/internal/dri_interface.h
 %%R300_GDRIVER%%lib/dri/r300_dri.so
 %%R600_GDRIVER%%lib/dri/r600_dri.so
 %%VAAPI%%%%R600_GDRIVER%%lib/dri/r600_drv_video.so
-%%RADEON_DRIVER%%lib/dri/radeon_dri.so
+%%R100_DRIVER%%lib/dri/radeon_dri.so
 %%RADEONSI_GDRIVER%%lib/dri/radeonsi_dri.so
 %%VAAPI%%%%RADEONSI_GDRIVER%%lib/dri/radeonsi_drv_video.so
-%%SWRAST_DRIVER%%lib/dri/swrast_dri.so
+%%SWRAST_GDRIVER%%lib/dri/swrast_dri.so
 %%VC4_GDRIVER%%lib/dri/vc4_dri.so
 %%SVGA_GDRIVER%%lib/dri/vmwgfx_dri.so
-@comment lib/gallium-pipe/pipe_r300.so
-@comment lib/gallium-pipe/pipe_r600.so
-@comment lib/gallium-pipe/pipe_radeonsi.so
-@comment lib/gallium-pipe/pipe_swrast.so
-@comment lib/gallium-pipe/pipe_vmwgfx.so
-@comment lib/libEGL.so
-@comment lib/libEGL.so.1
-@comment lib/libEGL.so.1.0.0
-@comment lib/libGL.so
-@comment lib/libGL.so.1
-@comment lib/libGL.so.1.2.0
-@comment lib/libGLESv2.so
-@comment lib/libGLESv2.so.2
-@comment lib/libGLESv2.so.2.0.0
-@comment lib/libMesaOpenCL.so
-@comment lib/libMesaOpenCL.so.1
-@comment lib/libMesaOpenCL.so.1.0.0
-@comment lib/libOSMesa.so
-@comment lib/libOSMesa.so.8
-@comment lib/libOSMesa.so.8.0.0
 %%R600_GDRIVER%%lib/libXvMCr600.so
 %%R600_GDRIVER%%lib/libXvMCr600.so.1
 %%R600_GDRIVER%%lib/libXvMCr600.so.1.0
@@ -81,13 +44,9 @@ include/GL/internal/dri_interface.h
 %%VDPAU%%%%RADEONSI_GDRIVER%%lib/vdpau/libvdpau_radeonsi.so.1.0
 %%VDPAU%%%%RADEONSI_GDRIVER%%lib/vdpau/libvdpau_radeonsi.so.1.0.0
 %%INTEL_VDRIVER%%lib/libvulkan_intel.so
-%%RADEON_VDRIVER%%lib/libvulkan_radeon.so
+%%AMD_VDRIVER%%lib/libvulkan_radeon.so
 libdata/pkgconfig/dri.pc
-@comment libdata/pkgconfig/egl.pc
 @comment libdata/pkgconfig/gbm.pc
-@comment libdata/pkgconfig/gl.pc
-@comment libdata/pkgconfig/glesv2.pc
-@comment libdata/pkgconfig/osmesa.pc
 share/drirc.d/00-mesa-defaults.conf
 %%INTEL_VDRIVER%%share/vulkan/icd.d/intel_icd.%%ARCH%%.json
-%%RADEON_VDRIVER%%share/vulkan/icd.d/radeon_icd.%%ARCH%%.json
+%%AMD_VDRIVER%%share/vulkan/icd.d/radeon_icd.%%ARCH%%.json

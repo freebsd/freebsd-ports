@@ -1,0 +1,11 @@
+--- src/gallium/targets/xvmc/meson.build.orig	2020-06-04 18:31:48 UTC
++++ src/gallium/targets/xvmc/meson.build
+@@ -55,7 +55,7 @@ libxvmc_gallium = shared_library(
+ 
+ foreach d : [[with_gallium_r600, 'r600'], [with_gallium_nouveau, 'nouveau']]
+   if d[0]
+-    xvmc_drivers += 'libXvMC@0@.so'.format(d[1])
++    xvmc_drivers += 'libXvMC@0@.so.@1@.@2@.0'.format(d[1], XVMC_MAJOR, XVMC_MINOR)
+   endif
+ endforeach
+ 

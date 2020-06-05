@@ -18,18 +18,31 @@ ONLY_FOR_ARCHS_REASON=	Clover needs a GPU supported by the Radeon KMS driver
 .include <bsd.port.options.mk>
 .include "${.CURDIR:H:H}/graphics/mesa-dri/Makefile.common"
 
-CONFIGURE_ARGS+=	--enable-opencl --enable-opencl-icd --disable-dri \
-			--disable-egl --disable-gbm --disable-gles2 --disable-glx \
-			--disable-va --disable-vdpau --disable-xvmc \
-			--with-gallium-drivers=r600,radeonsi	# only supported GPUs
-LDFLAGS_i386=		-Wl,-znotext
+MESON_ARGS+=	-Ddri-drivers="" \
+		-Dgallium-drivers=r600,radeonsi \
+		-Dvulkan-drivers="" \
+		-Dplatforms="" \
+		-Dgallium-vdpau=false \
+		-Dgallium-omx=disabled \
+		-Dgallium-va=false \
+		-Dgallium-opencl=disabled \
+		-Dgallium-xa=false \
+		-Dgallium-xvmc=false \
+		-Dgallium-nine=false \
+		-Dgles1=false \
+		-Dgles2=false \
+		-Dopengl=false \
+		-Dglx=disabled \
+		-Degl=false \
+		-Dgbm=false \
+		-Dgallium-opencl=icd \
+		-Dtools=""
 
-#MESA_BUILD_WRKSRC=	src/util src/compiler src/mesa src/gallium
-MESA_INSTALL_WRKSRC=	src/gallium/targets/opencl src/gallium/targets/pipe-loader
+LDFLAGS_i386=		-Wl,-znotext
 
 .include "${MASTERDIR}/Makefile.targets"
 
-pre-configure:
+pre-patch:
 	@if [ -e ${LOCALBASE}/bin/llvm-config${LLVM_DEFAULT} ] && \
 		! [ -e ${LOCALBASE}/bin/clang${LLVM_DEFAULT} ]; then \
 		${ECHO_MSG} "Your llvm${LLVM_DEFAULT} is not built with clang support, which is required."; \

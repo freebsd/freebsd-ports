@@ -3,3 +3,4 @@ lib/libOSMesa.so
 lib/libOSMesa.so.8
 lib/libOSMesa.so.8.0.0
 libdata/pkgconfig/osmesa.pc
+@comment share/drirc.d/00-mesa-defaults.conf
