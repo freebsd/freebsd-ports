@@ -5,6 +5,15 @@
 - Add dependency on libxv for xvmc, this is fixed in later mesa version.
 --- meson.build.orig	2019-06-26 20:14:08 UTC
 +++ meson.build
+@@ -25,7 +25,7 @@ project(
+     [find_program('python', 'python2', 'python3'), 'bin/meson_get_version.py']
+   ).stdout(),
+   license : 'MIT',
+-  meson_version : '>= 0.45',
++  meson_version : '>= 0.46',
+   default_options : ['buildtype=debugoptimized', 'b_ndebug=if-release', 'c_std=c99', 'cpp_std=c++11']
+ )
+ 
 @@ -336,7 +336,7 @@ if with_egl and not (with_platform_drm or with_platfor
    endif
  endif
@@ -24,3 +33,15 @@
  endif
  
  xvmc_drivers_path = get_option('xvmc-libs-path')
+@@ -1053,10 +1054,7 @@ if cc.links('int main() { return 0; }',
+             name : 'dynamic-list')
+   with_ld_dynamic_list = true
+ endif
+-ld_args_build_id = []
+-if build_machine.system() != 'darwin'
+-   ld_args_build_id += '-Wl,--build-id=sha1'
+-endif
++ld_args_build_id = cc.get_supported_link_arguments('-Wl,--build-id=sha1')
+ 
+ # check for dl support
+ if cc.has_function('dlopen')
