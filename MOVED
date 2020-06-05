@@ -15071,3 +15071,4 @@ devel/libosmo-netif||2020-06-05|Has expired: Broken for more than 6 months
 audio/xvmixer||2020-06-05|Has expired: Depends on expired x11-toolkits/xview
 devel/libosmo-sccp||2020-06-05|Has expired: Depends on expired devel/libosmo-netif
 audio/p5-Audio||2020-06-05|Has expired: Depends on expired math/p5-Math-GSL
+databases/rubygem-peek-pg-rails5||2020-06-05|Removed: not required by gitlab-ce anymore
