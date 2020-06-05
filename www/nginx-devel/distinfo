@@ -1,4 +1,4 @@
-TIMESTAMP = 1591120787
+TIMESTAMP = 1591365189
 SHA256 (nginx-1.19.0.tar.gz) = 44a616171fcd7d7ad7c6af3e6f3ad0879b54db5a5d21be874cd458b5691e36c8
 SIZE (nginx-1.19.0.tar.gz) = 1043748
 SHA256 (nginx_mogilefs_module-1.0.4.tar.gz) = 7ac230d30907f013dff8d435a118619ea6168aa3714dba62c6962d350c6295ae
@@ -99,8 +99,8 @@ SHA256 (calio-iconv-nginx-module-v0.14_GH0.tar.gz) = b8b9f355c05c0790226512f6732
 SIZE (calio-iconv-nginx-module-v0.14_GH0.tar.gz) = 13133
 SHA256 (baysao-nginx-let-module-c1f23aa_GH0.tar.gz) = 7393809d5d8877812da1bd5b5fbd1d8b00bc85e71f2f387c344f007773e49050
 SIZE (baysao-nginx-let-module-c1f23aa_GH0.tar.gz) = 20617
-SHA256 (Taymindis-nginx-link-function-3.2.2_GH0.tar.gz) = ef6c17bad33af15d816e21a3c82a5feb8769564e6b52c10384cffd35f757ee5d
-SIZE (Taymindis-nginx-link-function-3.2.2_GH0.tar.gz) = 145304
+SHA256 (Taymindis-nginx-link-function-3.2.3_GH0.tar.gz) = 0b74d94896709aba21036ed6f9dfd63c9efc5b9921ee5892d28a4b03bd9b09bd
+SIZE (Taymindis-nginx-link-function-3.2.3_GH0.tar.gz) = 145317
 SHA256 (openresty-lua-nginx-module-v0.10.15_GH0.tar.gz) = 7d5f3439c8df56046d0564b5857fd8a30296ab1bd6df0f048aed7afb56a0a4c2
 SIZE (openresty-lua-nginx-module-v0.10.15_GH0.tar.gz) = 655110
 SHA256 (openresty-memc-nginx-module-v0.19_GH0.tar.gz) = 8c2bdbe875e4f5225d0778bfb09a2668f9281d7de6218c7b462a7ba2cee06fe8

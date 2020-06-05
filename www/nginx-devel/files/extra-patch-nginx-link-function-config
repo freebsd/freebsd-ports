@@ -1,5 +1,5 @@
---- ../nginx-link-function-3.2.2/config.orig	2019-02-22 21:19:02.000000000 -0500
-+++ ../nginx-link-function-3.2.2/config	2020-01-24 10:29:53.871805000 -0500
+--- ../nginx-link-function-3.2.3/config.orig	2019-02-22 21:19:02.000000000 -0500
++++ ../nginx-link-function-3.2.3/config	2020-01-24 10:29:53.871805000 -0500
 @@ -15,24 +15,6 @@
  #echo "#define NGINX_HTTP_HTTP_LINK_FUNC_VERSION \""$HTTP_LINK_FUNC_VERSION"\"" > $NGX_OBJS/ngx_vod_version.h
  

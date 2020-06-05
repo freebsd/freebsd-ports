@@ -207,7 +207,7 @@ LUA_CONFIGURE_ENV=	LUAJIT_INC=${LOCALBASE}/include/luajit-2.1 \
 LUA_GH_TUPLE=		openresty:lua-nginx-module:v0.10.15:lua
 LUA_VARS=		DSO_EXTMODS+=lua
 
-LINK_GH_TUPLE=		Taymindis:nginx-link-function:3.2.2:link
+LINK_GH_TUPLE=		Taymindis:nginx-link-function:3.2.3:link
 LINK_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nginx-link-function-config \
 			${PATCHDIR}/extra-patch-ngx_link_func_module.c
 LINK_VARS=		DSO_EXTMODS+=link
