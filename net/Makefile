@@ -169,7 +169,6 @@
     SUBDIR += freeradius-client
     SUBDIR += freeradius3
     SUBDIR += freerdp
-    SUBDIR += freerdp1
     SUBDIR += freeswitch
     SUBDIR += freevrrpd
     SUBDIR += frr5

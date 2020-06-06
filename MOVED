@@ -15074,3 +15074,5 @@ audio/p5-Audio||2020-06-05|Has expired: Depends on expired math/p5-Math-GSL
 databases/rubygem-peek-pg-rails5||2020-06-05|Removed: not required by gitlab-ce anymore
 devel/rubygem-peek-gc-rails5|devel/rubygem-peek-gc-rails52|2020-06-05|Removed: please use devel/rubygem-peek-gc-rails52 instead
 devel/rubygem-peek-rails5|devel/rubygem-peek-rails60|2020-06-05|Removed: please use devel/rubygem-peek-rails60 instead
+net/freerdp1|net/freerdp|2020-06-06|Has expired: Superseded by the freerdp port/package
+irc/psybnc||2020-06-06|Has expired: Broken for more than 6 months
