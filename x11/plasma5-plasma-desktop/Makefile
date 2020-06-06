@@ -2,7 +2,7 @@
 
 PORTNAME=	plasma-desktop
 DISTVERSION=	${KDE_PLASMA_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -23,6 +23,7 @@ RUN_DEPENDS=	iso-codes>=0:misc/iso-codes \
 		xf86-input-libinput>0:x11-drivers/xf86-input-libinput \
 		setxkbmap:x11/setxkbmap
 BUILD_DEPENDS=	xf86-input-evdev>0:x11-drivers/xf86-input-evdev \
+		xf86-input-synaptics>0:x11-drivers/xf86-input-synaptics \
 		xf86-input-libinput>0:x11-drivers/xf86-input-libinput
 
 USES=		cmake compiler:c++11-lib cpe desktop-file-utils gettext gnome \
@@ -49,19 +50,11 @@ USE_XORG=	ice sm x11 xcb xcursor xext xfixes xft xi xrender
 
 SHEBANG_FILES=	kcms/ksmserver/kconf_update/ksmserver_update_loginMode_value.py
 
-OPTIONS_DEFINE=	SYNAPTICS
 OPTIONS_SUB=	yes
 
 OPTIONS_GROUP=		IM
 OPTIONS_GROUP_IM=	IBUS SCIM
 IM_DESC=		Input Method Support
-
-OPTIONS_DEFAULT=	SYNAPTICS
-
-SYNAPTICS_DESC=			Build touchpad KCM
-SYNAPTICS_BUILD_DEPENDS=	xf86-input-synaptics>0:x11-drivers/xf86-input-synaptics
-SYNAPTICS_RUN_DEPENDS=		xf86-input-synaptics>0:x11-drivers/xf86-input-synaptics
-SYNAPTICS_CMAKE_BOOL=		WANT_SYNAPTICS
 
 IBUS_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_IBus
 IBUS_LIB_DEPENDS=	libibus-1.0.so:textproc/ibus
