@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	azure-cli
-PORTVERSION=	2.6.0
+PORTVERSION=	2.7.0
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -56,7 +56,7 @@ RUN_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-iothubprovisioningservices>=0.2.0:devel/py-azure-mgmt-iothubprovisioningservices@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-keyvault>=2.2.0:devel/py-azure-mgmt-keyvault@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-kusto>=0.3.0:devel/py-azure-mgmt-kusto@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}azure-mgmt-loganalytics>=0.5.0:devel/py-azure-mgmt-loganalytics@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}azure-mgmt-loganalytics>=0.6.0:devel/py-azure-mgmt-loganalytics@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-managedservices>=1.0:devel/py-azure-mgmt-managedservices@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-managementgroups>=0.1:devel/py-azure-mgmt-managementgroups@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-maps>=0.1.0:devel/py-azure-mgmt-maps@${PY_FLAVOR} \
@@ -64,7 +64,7 @@ RUN_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-media>=2.1.0:devel/py-azure-mgmt-media@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-monitor>=0.9.0:devel/py-azure-mgmt-monitor@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-msi>=0.2:devel/py-azure-mgmt-msi@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}azure-mgmt-network>=10.1.0:devel/py-azure-mgmt-network@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}azure-mgmt-network>=10.2.0:devel/py-azure-mgmt-network@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-netapp>=0.8.0:devel/py-azure-mgmt-netapp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-policyinsights>=0.4.0:devel/py-azure-mgmt-policyinsights@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-privatedns>=0.1.0:devel/py-azure-mgmt-privatedns@${PY_FLAVOR} \
