@@ -3,7 +3,7 @@
 
 PORTNAME=	zabbix44
 PORTVERSION=	4.4.9
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://cdn.zabbix.com/zabbix/sources/stable/${PORTVERSION:R}/
 PKGNAMESUFFIX?=	-server
@@ -41,10 +41,12 @@ GROUPS=		zabbix
 PLIST_SUB=	PROXY="@comment "
 .else
 PLIST_SUB=	PROXY=""
+PLIST_FILES+=	bin/zabbix_proxy_js
 .endif
 
 .if ${ZABBIX_BUILD} == "server"
 PLIST_SUB+=	SERVER=""
+PLIST_FILES+=	bin/zabbix_js
 .else
 PLIST_SUB+=	SERVER="@comment "
 .endif
@@ -203,6 +205,11 @@ post-install:
 .if ${ZABBIX_BUILD} == "agent"
 	${MV} ${STAGEDIR}${ETCDIR}/zabbix_${ZABBIX_BUILD}d.conf \
 		${STAGEDIR}${ETCDIR}/zabbix_${ZABBIX_BUILD}d.conf.sample
+.endif
+
+.if ${ZABBIX_BUILD} == "proxy"
+	${MV} ${STAGEDIR}${LOCALBASE}/bin/zabbix_js \
+		${STAGEDIR}${LOCALBASE}/bin/zabbix_proxy_js
 .endif
 
 .else # frontend
