@@ -3,7 +3,7 @@
 PORTNAME=	icc-profiles-adobe-cs4
 PORTVERSION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	http://download.adobe.com/pub/adobe/iccprofiles/win/
+MASTER_SITES=	https://download.adobe.com/pub/adobe/iccprofiles/win/
 DISTNAME=	AdobeICCProfilesCS4Win_end-user
 
 MAINTAINER=	bsam@FreeBSD.org
