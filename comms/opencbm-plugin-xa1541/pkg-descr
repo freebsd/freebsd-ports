@@ -1,0 +1,9 @@
+OpenCBM plugin for parallel-port cables
+
+The OpenCBM package contains user space support programs and development
+libraries to control and use CBM serial IEC/IEEE-488 bus devices as used by
+most Commodore (CBM) 8-bit machines.
+
+This port contains the xa1541 plugin for parallel-port cables.
+
+WWW: http://opencbm.sourceforge.net/
