@@ -1,13 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	meek
-DISTVERSION=	0.31
-PORTREVISION=	1
+DISTVERSION=	0.35.0
 CATEGORIES=	security
 MASTER_SITES=	https://gitweb.torproject.org/pluggable-transports/meek.git/snapshot/ \
-		https://gitweb.torproject.org/pluggable-transports/goptlib.git/snapshot/:goptlib
-DISTFILES=	${PORTNAME}-${DISTVERSION}.tar.gz \
-		goptlib-${GOPTLIBVERSION}.tar.gz:goptlib
+DISTFILES=	${PORTNAME}-v${DISTVERSION}.tar.gz \
 
 MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Pluggable transport proxy that relays through third-party server
@@ -17,15 +14,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		go
 
-USE_GITHUB=	nodefault
-GH_TUPLE=	golang:crypto:c126467:crypto/vendor/golang.org/x/crypto \
-		golang:net:a680a1e:net/vendor/golang.org/x/net \
-		golang:text:0605a83:text/vendor/golang.org/x/text
-
 GO_TARGET=	./meek-client \
 		./meek-server
-
-GOPTLIBVERSION=	0.7
 
 PLIST_FILES=	bin/meek-client \
 		bin/meek-server \
@@ -37,7 +27,6 @@ SUB_FILES=	pkg-message
 post-patch:
 	@${MKDIR} ${WRKDIR}/src/git.torproject.org/pluggable-transports
 	@${LN} -s ${WRKSRC} ${WRKDIR}/src/git.torproject.org/pluggable-transports/${PORTNAME}
-	@${LN} -s ${WRKDIR}/goptlib-${GOPTLIBVERSION} ${WRKDIR}/src/git.torproject.org/pluggable-transports/goptlib.git
 
 do-test:
 .for t in ${GO_TARGET}
