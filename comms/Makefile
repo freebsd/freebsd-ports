@@ -108,6 +108,7 @@
     SUBDIR += o2sms
     SUBDIR += obexapp
     SUBDIR += opencbm
+    SUBDIR += opencbm-kmod
     SUBDIR += openobex
     SUBDIR += openzwave
     SUBDIR += openzwave-devel
