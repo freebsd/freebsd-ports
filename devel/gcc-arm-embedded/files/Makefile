@@ -2,7 +2,12 @@
 
 .include "Makefile.inc"
 
+.if ${PORT_OPTIONS:MAPROFILE}
+MULTILIB_LIST=	rmprofile,aprofile
+.else
 MULTILIB_LIST=	rmprofile
+.endif
+
 PKGVERSION=	GNU Arm Embedded Toolchain
 
 BUILD_PREFIX=	${WRKDIR}/build
@@ -23,8 +28,7 @@ MAKE_ARGS+=     CFLAGS="-Wno-error -fbracket-depth=512 -Wno-deprecated-register"
 MISC_DOCS=	license.txt readme.txt release.txt
 
 .if ${PORT_OPTIONS:MPURE}
-PREREQUISITES=	libiconv \
-		expat \
+PREREQUISITES=	expat \
 		zlib \
 		libelf \
 		gmp \
@@ -56,9 +60,8 @@ COMMON_GDB_CONFIGURE_ARGS= \
 	 --disable-gprof \
 	 --with-libexpat \
 	 --with-libexpat-prefix=${WORLD_LIB} \
-	 --with-libiconv-prefix=${WORLD_LIB} \
 	 --with-lzma=no \
-	 --with-system-gdbinit=${INTERIM_PREFIX}/${TARGET}/lib/gdbinit \
+	 --with-system-gdbinit=${INTERIM_PREFIX}/${CONFIGURE_TARGET}/${TARGET}/lib/gdbinit \
 	 --with-gdb-datadir='$${prefix}/${TARGET}/share/gdb' \
 	 --with-pkgversion="${PKGVERSION}"
 
@@ -79,21 +82,6 @@ ALL_BUILD=	build-binutils \
 
 all: ${PREREQUISITES} ${ALL_BUILD}
 
-libiconv:
-	@${ECHO_MSG} "====>  Build libiconv"
-	@${RM} -rf ${BUILD_PREFIX}/libiconv
-	@${MKDIR} ${BUILD_PREFIX}/libiconv
-	@${ECHO_MSG} "=====>  Configure"
-	@cd ${BUILD_PREFIX}/libiconv && \
-	 ${MAKE_ENV} ${CONFIGURE_ENV} ${SRC_DIR}/libiconv-${BUNDLED_VERSION_LIBICONV}/configure \
-	 --prefix=${INTERIM_WORLD} \
-	 --disable-shared \
-	 --disable-nls
-	@${ECHO_MSG} "=====>  Build"
-	@${MAKE_ENV} ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/libiconv all ${MAKE_ARGS}
-	@${ECHO_MSG} "=====>  Install into intermediate directory"
-	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/libiconv install ${MAKE_ARGS}
-
 expat:
 	@${ECHO_MSG} "====>  Build expat"
 	@${RM} -rf ${BUILD_PREFIX}/expat
@@ -101,6 +89,9 @@ expat:
 	@${ECHO_MSG} "=====>  Configure"
 	@cd ${BUILD_PREFIX}/expat && \
 	 ${MAKE_ENV} ${CONFIGURE_ENV} ${SRC_DIR}/expat-${BUNDLED_VERSION_EXPAT}/configure \
+	 --build=${CONFIGURE_TARGET} \
+	 --host=${CONFIGURE_TARGET} \
+	 --target=${TARGET} \
 	 --prefix=${INTERIM_WORLD} \
 	 --disable-shared \
 	 --disable-nls
@@ -133,6 +124,7 @@ libelf:
 	@cd ${BUILD_PREFIX}/libelf && \
 	 ${MAKE_ENV} ${CONFIGURE_ENV} ${SRC_DIR}/libelf-${BUNDLED_VERSION_LIBELF}/configure \
 	 --prefix=${INTERIM_WORLD} \
+	 --build=${CONFIGURE_TARGET} \
 	 --disable-shared \
 	 --disable-nls
 	@${ECHO_MSG} "=====>  Build"
@@ -147,6 +139,8 @@ gmp:
 	@${ECHO_MSG} "=====>  Configure"
 	@cd ${BUILD_PREFIX}/gmp && \
 	 ${MAKE_ENV} ${CONFIGURE_ENV} ${SRC_DIR}/gmp-${BUNDLED_VERSION_GMP}/configure \
+	 --build=${CONFIGURE_TARGET} \
+	 --host=${CONFIGURE_TARGET} \
 	 --prefix=${INTERIM_WORLD} \
 	 --enable-cxx \
 	 --disable-shared \
@@ -163,6 +157,9 @@ mpfr:
 	@${ECHO_MSG} "=====>  Configure"
 	@cd ${BUILD_PREFIX}/mpfr && \
 	 ${MAKE_ENV} ${CONFIGURE_ENV} ${SRC_DIR}/mpfr-${BUNDLED_VERSION_MPFR}/configure \
+	 --build=${CONFIGURE_TARGET} \
+	 --host=${CONFIGURE_TARGET} \
+	 --target=${TARGET} \
 	 --prefix=${INTERIM_WORLD} \
 	 --with-gmp=${INTERIM_WORLD} \
 	 --disable-shared \
@@ -179,6 +176,9 @@ mpc:
 	@${ECHO_MSG} "=====>  Configure"
 	@cd ${BUILD_PREFIX}/mpc && \
 	 ${MAKE_ENV} ${CONFIGURE_ENV} ${SRC_DIR}/mpc-${BUNDLED_VERSION_MPC}/configure \
+	 --build=${CONFIGURE_TARGET} \
+	 --host=${CONFIGURE_TARGET} \
+	 --target=${TARGET} \
 	 --prefix=${INTERIM_WORLD} \
 	 --with-gmp=${INTERIM_WORLD} \
 	 --with-mpfr=${INTERIM_WORLD} \
@@ -196,6 +196,9 @@ isl:
 	@${ECHO_MSG} "=====>  Configure"
 	@cd ${BUILD_PREFIX}/isl && \
 	 ${MAKE_ENV} ${CONFIGURE_ENV} ${SRC_DIR}/isl-${BUNDLED_VERSION_ISL}/configure \
+	 --build=${CONFIGURE_TARGET} \
+	 --host=${CONFIGURE_TARGET} \
+	 --target=${TARGET} \
 	 --prefix=${INTERIM_WORLD} \
 	 --with-gmp-prefix=${INTERIM_WORLD} \
 	 --disable-shared \
@@ -286,6 +289,7 @@ build-gcc-first:
 	 --with-python-dir=share/gcc-${TARGET} \
 	 --with-sysroot=${INTERIM_PREFIX}/${TARGET} \
 	 --with-multilib-list=${MULTILIB_LIST} \
+	 --with-host-libstdcxx="-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm" \
 	 --with-pkgversion="${PKGVERSION}"
 	@${ECHO_MSG} "=====>  Build"
 	@${MAKE_ENV} ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/gcc-first all-gcc ${MAKE_ARGS}
@@ -390,7 +394,6 @@ build-gcc-final:
 	 --with-mpc=${WORLD_LIB} \
 	 --with-isl=${WORLD_LIB} \
 	 --with-libelf=${WORLD_LIB} \
-	 --with-libiconv-prefix=${WORLD_LIB} \
 	 --enable-languages=c,c++ \
 	 --enable-plugins \
 	 --disable-decimal-float \
@@ -411,6 +414,7 @@ build-gcc-final:
 	 --with-python-dir=share/gcc-${TARGET} \
 	 --with-sysroot=${INTERIM_PREFIX}/${TARGET} \
 	 --with-multilib-list=${MULTILIB_LIST} \
+	 --with-host-libstdcxx="-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm" \
 	 --with-pkgversion="${PKGVERSION}"
 	@${ECHO_MSG} "=====>  Build"
 	@${MAKE_ENV} ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/gcc-final INHIBIT_LIBC_CFLAGS="-DUSE_TM_CLONE_REGISTRY=0" all ${MAKE_ARGS}
@@ -475,6 +479,7 @@ build-libstdcxx:
 	 --with-python-dir=share/gcc-${TARGET} \
 	 --with-sysroot=${BUILD_PREFIX}/target-libs/${TARGET} \
 	 --with-multilib-list=${MULTILIB_LIST} \
+	 --with-host-libstdcxx="-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm" \
 	 --with-pkgversion="${PKGVERSION}"
 	@${ECHO_MSG} "=====>  Build"
 	@${MAKE_ENV} ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/gcc-size-libstdcxx \
