@@ -48,9 +48,12 @@
 %%DSO%%%%HTTP_PUSH%%libexec/nginx/ngx_nchan_module.so
 %%DSO%%%%HTTP_PUSH_STREAM%%libexec/nginx/ngx_http_push_stream_module.so
 %%DSO%%%%HTTP_REDIS%%libexec/nginx/ngx_http_redis_module.so
+%%DSO%%%%HTTP_RESPONSE%%libexec/nginx/ngx_http_response_module.so
+%%DSO%%%%HTTP_SUBS_FILTER%%libexec/nginx/ngx_http_subs_filter_module.so
 %%DSO%%%%HTTP_TARANTOOL%%libexec/nginx/ngx_http_tnt_module.so
 %%DSO%%%%HTTP_UPLOAD%%libexec/nginx/ngx_http_upload_module.so
 %%DSO%%%%HTTP_UPLOAD_PROGRESS%%libexec/nginx/ngx_http_uploadprogress_module.so
+%%DSO%%%%HTTP_UPSTREAM_CHECK%%libexec/nginx/ngx_http_upstream_check_module.so
 %%DSO%%%%HTTP_UPSTREAM_FAIR%%libexec/nginx/ngx_http_upstream_fair_module.so
 %%DSO%%%%HTTP_UPSTREAM_STICKY%%libexec/nginx/ngx_http_sticky_module.so
 %%DSO%%%%HTTP_VIDEO_THUMBEXTRACTOR%%libexec/nginx/ngx_http_video_thumbextractor_module.so
