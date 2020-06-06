@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	feh
-PORTVERSION=	3.4
+PORTVERSION=	3.4.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://feh.finalrewind.org/ \
 		LOCAL/uqs
