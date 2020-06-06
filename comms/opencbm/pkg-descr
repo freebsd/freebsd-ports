@@ -1,0 +1,17 @@
+Commodore CBM serial IEC/IEEE-488 bus utilities
+
+The OpenCBM package contains user space support programs and development
+libraries to control and use CBM serial IEC/IEEE-488 bus devices as used by
+most Commodore (CBM) 8-bit machines.
+
+OpenCBM allows for access to Commodore seriel IEC bus devices such as CBM
+1540, 1541, 1570, 1571 and 1581 floppy disk drives.
+
+OpenCBM allows for access to Commodore (parallel) IEEE-488 bus devices such as
+CBM 2031, 2040, 3040, 4031, 4040, 8050, 8250, 8280 and SFD-1001 floppy disk
+drives.
+
+The devices are connected via a custom USB adapter (called xu1541 or xum1541).
+A fast .d64 disk copier/transfer program is included.
+
+WWW: http://opencbm.sourceforge.net/
