@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	waifu2x-ncnn-vulkan
-DISTVERSION=	20200530
+DISTVERSION=	20200606
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -12,14 +12,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	glslangValidator:devel/glslang \
 		vulkan-headers>0:devel/vulkan-headers
-LIB_DEPENDS=	libwebpdecoder.so:graphics/webp \
+LIB_DEPENDS=	libwebp.so:graphics/webp \
 		libvulkan.so:graphics/vulkan-loader
 
 USES=		cmake compiler:${OPENMP}c++11-lib localbase:ldflags
 USE_GITHUB=	yes
 GH_ACCOUNT=	nihui
 GH_TUPLE=	KhronosGroup:glslang:8.13.3743-39-gd39b8afc:glslang/src/ncnn/glslang \
-		Tencent:ncnn:20200413-74-g15111fa:ncnn/src/ncnn
+		Tencent:ncnn:20200413-97-g13c59d9:ncnn/src/ncnn
 CMAKE_SOURCE_PATH=	${WRKSRC}/src
 PLIST_FILES=	bin/${PORTNAME}
 PORTDATA=	*
