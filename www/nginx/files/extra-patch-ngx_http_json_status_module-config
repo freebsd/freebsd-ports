@@ -1,0 +1,12 @@
+--- ../ngx_http_json_status_module-1d2f303/config.orig	2020-04-25 16:16:47.024292000 -0400
++++ ../ngx_http_json_status_module-1d2f303/config	2020-04-25 16:18:39.461340000 -0400
+@@ -1,4 +1,6 @@
+ ngx_addon_name=ngx_http_json_status_module
+-HTTP_MODULES="$HTTP_MODULES ngx_http_json_status_module"
+-NGX_ADDON_SRCS="$NGX_ADDON_SRCS $ngx_addon_dir/ngx_http_json_status_module.c"
+-NGX_ADDON_DEPS="$NGX_ADDON_DEPS $ngx_addon_dir/ngx_http_json_status_module.h"
++ngx_module_name="$ngx_addon_name"
++ngx_module_type=HTTP
++ngx_module_srcs="$ngx_addon_dir/ngx_http_json_status_module.c"
++ngx_module_deps="$ngx_addon_dir/ngx_http_json_status_module.h"
++. auto/module

@@ -125,12 +125,15 @@ HTTP_IP2PROXY_LIB_DEPENDS=	libIP2Proxy.so:net/ip2proxy
 HTTP_IP2PROXY_VARS=		DSO_EXTMODS+=ip2proxy
 
 HTTP_JSON_STATUS_GH_TUPLE=	nginx-modules:ngx_http_json_status_module:1d2f303:json_status
-HTTP_JSON_STATUS_CONFIGURE_ON=	--add-module=${WRKSRC_json_status}
+HTTP_JSON_STATUS_VARS=		DSO_EXTMODS+=json_status
+HTTP_JSON_STATUS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_json_status_module-config
 
 HTTP_MOGILEFS_MASTER_SITES=	http://www.grid.net.ru/nginx/download/:mogilefs
 HTTP_MOGILEFS_DISTFILES=	nginx_mogilefs_module-1.0.4.tar.gz:mogilefs
-HTTP_MOGILEFS_CONFIGURE_ON=	--add-module=${WRKDIR}/nginx_mogilefs_module-1.0.4
-HTTP_MOGILEFS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_mogilefs_module.c
+HTTP_MOGILEFS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_mogilefs_module.c \
+				${PATCHDIR}/extra-patch-nginx_mogilefs_module-config
+HTTP_MOGILEFS_VARS=		DSO_EXTDIRS+=nginx_mogilefs_module-1.0.4
+
 
 HTTP_MP4_H264_MASTER_SITES=	http://h264.code-shop.com/download/:mp4streaming
 HTTP_MP4_H264_DISTFILES=	nginx_mod_h264_streaming-2.2.7.tar.gz:mp4streaming
@@ -138,8 +141,9 @@ HTTP_MP4_H264_CONFIGURE_ON=	--add-module=${WRKDIR}/nginx_mod_h264_streaming-2.2.
 HTTP_MP4_H264_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_streaming_module.c
 
 HTTP_NOTICE_GH_TUPLE=		kr:nginx-notice:3c95966:notice
-HTTP_NOTICE_CONFIGURE_ON=	--add-module=${WRKSRC_notice}
-HTTP_NOTICE_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_notice_module.c
+HTTP_NOTICE_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_notice_module.c \
+				${PATCHDIR}/extra-patch-nginx-notice-config
+HTTP_NOTICE_VARS=		DSO_EXTMODS+=notice
 
 HTTP_PUSH_GH_TUPLE=		slact:nchan:v1.1.14:push
 HTTP_PUSH_VARS=			DSO_EXTMODS+=push

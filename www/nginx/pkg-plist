@@ -41,6 +41,9 @@
 %%DSO%%%%HTTP_IMAGE_FILTER%%libexec/nginx/ngx_http_image_filter_module.so
 %%DSO%%%%HTTP_IP2LOCATION%%libexec/nginx/ngx_http_ip2location_module.so
 %%DSO%%%%HTTP_IP2PROXY%%libexec/nginx/ngx_http_ip2proxy_module.so
+%%DSO%%%%HTTP_JSON_STATUS%%libexec/nginx/ngx_http_json_status_module.so
+%%DSO%%%%HTTP_MOGILEFS%%libexec/nginx/ngx_http_mogilefs_module.so
+%%DSO%%%%HTTP_NOTICE%%libexec/nginx/ngx_http_notice_module.so
 %%DSO%%%%HTTP_PERL%%libexec/nginx/ngx_http_perl_module.so
 %%DSO%%%%HTTP_PUSH%%libexec/nginx/ngx_nchan_module.so
 %%DSO%%%%HTTP_PUSH_STREAM%%libexec/nginx/ngx_http_push_stream_module.so
