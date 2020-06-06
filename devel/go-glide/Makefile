@@ -3,6 +3,7 @@
 
 PORTNAME=	glide
 PORTVERSION=	0.13.2
+DEPRECATED=	use go mod instead of glide
 DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 CATEGORIES=	devel
