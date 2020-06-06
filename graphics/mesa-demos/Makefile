@@ -19,7 +19,7 @@ GNU_CONFIGURE=	yes
 USE_GL=		egl gbm gl glesv2 glew glu glut
 USE_XORG=	xorgproto x11 xdamage xext xfixes xi xxf86vm
 
-CONFIGURE_ARGS+=--disable-osmesa --disable-vg --disable-wayland \
+CONFIGURE_ARGS+=--disable-gles1 --disable-osmesa --disable-vg --disable-wayland \
 		--with-system-data-files
 
 .include <bsd.port.mk>
