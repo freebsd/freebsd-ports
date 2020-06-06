@@ -2,8 +2,7 @@
 
 PORTNAME=	broot
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.13.6
-PORTREVISION=	3
+DISTVERSION=	0.14.2
 CATEGORIES=	misc
 
 MAINTAINER=	vulcan@wired.sh
@@ -52,7 +51,7 @@ CARGO_CRATES=	aho-corasick-0.7.6 \
 		crossbeam-queue-0.2.0 \
 		crossbeam-utils-0.6.6 \
 		crossbeam-utils-0.7.0 \
-		crossterm-0.16.0 \
+		crossterm-0.17.5 \
 		crossterm_winapi-0.6.1 \
 		csv-1.1.1 \
 		csv-core-0.1.6 \
@@ -78,7 +77,7 @@ CARGO_CRATES=	aho-corasick-0.7.6 \
 		jobserver-0.1.19 \
 		js-sys-0.3.37 \
 		kernel32-sys-0.2.2 \
-		lazy-regex-0.1.2 \
+		lazy-regex-0.1.3 \
 		lazy_static-1.4.0 \
 		libc-0.2.65 \
 		libgit2-sys-0.10.0 \
@@ -104,7 +103,7 @@ CARGO_CRATES=	aho-corasick-0.7.6 \
 		percent-encoding-2.1.0 \
 		pkg-config-0.3.17 \
 		plotters-0.2.12 \
-		proc-macro2-1.0.6 \
+		proc-macro2-1.0.10 \
 		quote-1.0.2 \
 		rand_core-0.3.1 \
 		rand_core-0.4.2 \
@@ -129,24 +128,25 @@ CARGO_CRATES=	aho-corasick-0.7.6 \
 		serde-1.0.102 \
 		serde_derive-1.0.103 \
 		serde_json-1.0.42 \
-		signal-hook-0.1.13 \
+		signal-hook-0.1.15 \
 		signal-hook-registry-1.2.0 \
 		simplelog-0.7.4 \
 		slab-0.4.2 \
 		smallvec-1.0.0 \
+		strict-0.1.3 \
 		strsim-0.8.0 \
-		syn-1.0.7 \
+		syn-1.0.17 \
 		synstructure-0.12.1 \
 		term-0.6.1 \
-		termimad-0.8.16 \
+		termimad-0.8.23 \
 		textwrap-0.11.0 \
-		thiserror-1.0.4 \
-		thiserror-impl-1.0.4 \
+		thiserror-1.0.19 \
+		thiserror-impl-1.0.19 \
 		thread_local-0.3.6 \
 		time-0.1.42 \
 		tinytemplate-1.0.2 \
 		toml-0.5.5 \
-		umask-0.1.7 \
+		umask-1.0.0 \
 		unicode-bidi-0.3.4 \
 		unicode-normalization-0.1.11 \
 		unicode-width-0.1.6 \
