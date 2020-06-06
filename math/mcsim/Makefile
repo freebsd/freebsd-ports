@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mcsim
-PORTVERSION=	6.1.0
-PORTREVISION=	1
+PORTVERSION=	6.2.0
 CATEGORIES=	math
 MASTER_SITES=	GNU
 
@@ -20,7 +19,7 @@ USE_LDCONFIG=	yes
 
 INFO=		mcsim
 
-SHEBANG_FILES=	sim/makemcsim.in sim/makemcsims.in sim/makemcsimd.in
+SHEBANG_FILES=	sim/makemcsim.in sim/makemcsims.in sim/makemcsimd.in sim/makemcsimp.in
 
 INSTALL_TARGET=	install-strip
 

@@ -1,4 +1,5 @@
 bin/makemcsim
+bin/makemcsimp
 bin/mod
 bin/makemcsims
 bin/makemcsimd
