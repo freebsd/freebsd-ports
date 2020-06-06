@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pageedit
-PORTVERSION=	0.9.5
+PORTVERSION=	1.2.0
 CATEGORIES=	textproc
 
 MAINTAINER=	FreeBSD@Shaneware.biz
