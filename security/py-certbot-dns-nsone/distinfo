@@ -1,3 +1,3 @@
-TIMESTAMP = 1589245404
-SHA256 (certbot-dns-nsone-1.4.0.tar.gz) = 53e0de4e53e0068039114bbbb25c1af074b7c7ea92796699663b47dad21d0263
-SIZE (certbot-dns-nsone-1.4.0.tar.gz) = 12740
+TIMESTAMP = 1591468009
+SHA256 (certbot-dns-nsone-1.5.0.tar.gz) = 28cec69074587b0a8b7ab269148962c391bb92ace40376810367f393ba20b876
+SIZE (certbot-dns-nsone-1.5.0.tar.gz) = 11861
