@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	jetty
-PORTVERSION=	9.4.27
+PORTVERSION=	9.4.29
 CATEGORIES=	www java
 MASTER_SITES=	https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-distribution/${PORTVERSION}.${JDVDATE}/
 PKGNAMESUFFIX=	9
@@ -18,13 +18,13 @@ RUN_DEPENDS=	bash:shells/bash
 
 CONFLICTS=	jetty-8.*
 
-JDVDATE=	v20200227
+JDVDATE=	v20200521
 USE_JAVA=	yes
 NO_ARCH=	yes
 USES=		shebangfix
 SHEBANG_FILES=	bin/jetty.sh
 NO_BUILD=	yes
-JAVA_VERSION=	1.8+
+JAVA_VERSION=	8+
 JAVA_VENDOR=	openjdk
 ONLY_FOR_ARCHS=	i386 amd64
 USE_RC_SUBR=	${PORTNAME}
