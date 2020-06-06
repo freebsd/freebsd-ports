@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cups-filters
-PORTVERSION=	1.27.4
-PORTREVISION=	2
+PORTVERSION=	1.27.5
 CATEGORIES=	print
 MASTER_SITES=	https://www.openprinting.org/download/cups-filters/
 
@@ -12,6 +11,8 @@ COMMENT=	Additional backends, filters and other software for CUPS
 LICENSE=	BSD4CLAUSE GPLv2 GPLv2+ GPLv3 GPLv3+ LGPL20 LGPL21+ MIT
 LICENSE_COMB=	multi
 
+BUILD_DEPENDS=	${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:x11-fonts/dejavu
+RUN_DEPENDS=	${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:x11-fonts/dejavu
 LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
 		libqpdf.so:print/qpdf \
 		libcupsimage.so:print/cups \
@@ -42,7 +43,7 @@ SHEBANG_FILES=	filter/braille/drivers/generic/brftoembosser.in \
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-shell=/bin/sh \
 		--with-pdftops-path=${LOCALBASE}/bin/pdftops \
-		--with-test-font-path=/dev/null
+		--with-test-font-path=${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf
 INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE= 		BRAILLE COLORD DOCS
@@ -137,5 +138,9 @@ post-patch:
 		${WRKSRC}/utils/cups-browsed.8 \
 		${WRKSRC}/utils/cups-browsed.conf.5 \
 		${WRKSRC}/utils/driverless.1
+
+post-install:
+	@${MV} ${STAGEDIR}${PREFIX}/etc/cups/cups-browsed.conf \
+		${STAGEDIR}${PREFIX}/etc/cups/cups-browsed.conf.sample
 
 .include <bsd.port.mk>

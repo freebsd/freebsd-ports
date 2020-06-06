@@ -1,7 +1,7 @@
 bin/driverless
 bin/foomatic-rip
 bin/ttfread
-etc/cups/cups-browsed.conf
+@sample etc/cups/cups-browsed.conf.sample
 include/cupsfilters/colord.h
 include/cupsfilters/colormanager.h
 include/cupsfilters/driver.h
