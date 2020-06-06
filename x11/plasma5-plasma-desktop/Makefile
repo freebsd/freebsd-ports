@@ -47,6 +47,7 @@ USE_QT=		concurrent core dbus declarative gui network phonon4 printsupport \
 		buildtools_build qmake_build
 USE_XORG=	ice sm x11 xcb xcursor xext xfixes xft xi xrender
 
+CMAKE_ARGS=	-DWANT_SYNAPTICS:BOOL=ON
 
 SHEBANG_FILES=	kcms/ksmserver/kconf_update/ksmserver_update_loginMode_value.py
 
