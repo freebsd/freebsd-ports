@@ -2,8 +2,7 @@
 
 PORTNAME=	adios2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.5.0
-PORTREVISION=	1
+DISTVERSION=	2.6.0
 CATEGORIES=	misc science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,12 +16,14 @@ LIB_DEPENDS=	libblosc.so:archivers/c-blosc \
 		libepoll-shim.so:devel/libepoll-shim \
 		libfabric.so:net/libfabric \
 		libffi.so:devel/libffi \
+		libhdf5.so:science/hdf5 \
 		libmpi.so:net/openmpi \
 		libpng.so:graphics/png \
+		libsz.so:science/szip \
 		libzfp.so:devel/zfp
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		bison cmake compiler:c++11-lang localbase:ldflags pkgconfig \
+USES=		bison cmake compiler:c++11-lang fortran localbase:ldflags pkgconfig \
 		perl5 python shebangfix
 SHEBANG_FILES=	cmake/install/post/adios2-config.pre.sh.in cmake/install/post/generate-adios2-config.sh.in source/utils/bp4dbg/bp4dbg.py \
 		source/utils/adios_deactivate_bp.sh
