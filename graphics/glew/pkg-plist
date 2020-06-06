@@ -6,7 +6,7 @@ include/GL/wglew.h
 lib/libGLEW.a
 lib/libGLEW.so
 lib/libGLEW.so.2
-lib/libGLEW.so.2.1.0
+lib/libGLEW.so.2.2.0
 libdata/pkgconfig/glew.pc
 %%PORTDOCS%%%%DOCSDIR%%/advanced.html
 %%PORTDOCS%%%%DOCSDIR%%/basic.html

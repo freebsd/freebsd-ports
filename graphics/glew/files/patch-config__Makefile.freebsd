@@ -1,17 +1,19 @@
---- config/Makefile.freebsd.orig	2017-07-31 11:25:39 UTC
+--- config/Makefile.freebsd.orig	2020-03-15 11:53:59 UTC
 +++ config/Makefile.freebsd
-@@ -1,17 +1,17 @@
+@@ -1,19 +1,19 @@
+ # As of FreeBSD12 X11 is in /usr/local
+ 
  NAME = $(GLEW_NAME)
 -CC = cc
 -LD = ld
--LDFLAGS.EXTRA = -L/usr/X11R6/lib
+-LDFLAGS.EXTRA = -L/usr/local/lib
 +CC ?= cc
 +LD ?= ld
 +LDFLAGS.EXTRA ?= -L${LOCALBASE}/lib
  LDFLAGS.GL = -lGL -lX11
  LDFLAGS.STATIC = -Wl,-Bstatic
  LDFLAGS.DYNAMIC = -Wl,-Bdynamic
--CFLAGS.EXTRA += -I/usr/X11R6/include -fPIC
+-CFLAGS.EXTRA += -I/usr/local/include -fPIC
 +CFLAGS.EXTRA += -I${LOCALBASE}/include -fPIC
  NAME = GLEW
  WARN = -Wall -W

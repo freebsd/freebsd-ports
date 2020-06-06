@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTREVISION=	1
+PORTREVISION=	0
 PKGNAMESUFFIX=	-wayland
 
 # https://github.com/nigels-com/glew/issues/172
