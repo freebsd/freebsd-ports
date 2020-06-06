@@ -20,7 +20,7 @@ RUN_DEPENDS=	opencbm=${PORTVERSION}:comms/opencbm \
 USES=		gmake
 USE_LDCONFIG=	yes
 
-MAKE_ARGS=	CC=cc SUBDIRS_PLUGIN_XA1541=opencbm/lib/plugin/xa1541
+MAKE_ARGS=	CC="${CC}" SUBDIRS_PLUGIN_XA1541=opencbm/lib/plugin/xa1541
 MAKEFILE=	LINUX/Makefile
 MAKE_JOBS_UNSAFE=	yes
 ALL_TARGET=	plugin-xa1541
