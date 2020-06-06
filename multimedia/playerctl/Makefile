@@ -13,6 +13,7 @@ LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gnome meson pkgconfig
+USE_CSTD=	c99
 USE_GNOME=	glib20
 
 USE_LDCONFIG=	yes
