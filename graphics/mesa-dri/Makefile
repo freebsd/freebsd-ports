@@ -11,8 +11,16 @@ COMMENT=	OpenGL hardware acceleration drivers for DRI2+
 USES=		xorg
 USE_XORG=	xorgproto x11 xdamage xext xfixes xshmfence xv xvmc
 
+OPTIONS_GROUP=			PLATFORM
+OPTIONS_GROUP_PLATFORM=		PLATFORM_X11 PLATFORM_WAYLAND PLATFORM_DRM PLATFORM_SURFACELESS
+PLATFORM_X11_DESC=		Enable X11 support for GBM/EGL
+PLATFORM_WAYLAND_DESC=		Enable Wayland support for GBM/EGL
+PLATFORM_DRM_DESC=		Enable DRM support for GBM/EGL
+PLATFORM_SURFACELESS_DESC=	Enable Surfaceless support for GBM/EGL
+PLATFORM_WAYLAND_IMPLIES=	WAYLAND
+
 OPTIONS_DEFINE=	VAAPI VDPAU WAYLAND
-OPTIONS_DEFAULT=WAYLAND
+OPTIONS_DEFAULT=WAYLAND PLATFORM_X11 PLATFORM_WAYLAND PLATFORM_DRM PLATFORM_SURFACELESS
 OPTIONS_SUB=	yes
 
 VAAPI_MESON_ON=		-Dgallium-va=true
@@ -25,6 +33,7 @@ VDPAU_LIB_DEPENDS=	libvdpau.so:multimedia/libvdpau
 WAYLAND_DESC=		Enable support for the Wayland platform in Vulkan drivers
 WAYLAND_BUILD_DEPENDS=	wayland-protocols>=1.8:graphics/wayland-protocols
 WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland
+WAYLAND_IMPLIES=	PLATFORM_WAYLAND
 
 .include <bsd.port.options.mk>
 .include "${.CURDIR:H:H}/graphics/mesa-dri/Makefile.common"
@@ -63,14 +72,26 @@ USE_XORG+=		xcb xrandr
 
 LDFLAGS_i386=		-Wl,-znotext
 
-# enables VK_KHR_wayland_surface in Vulkan drivers
-.if ${PORT_OPTIONS:MWAYLAND} && !empty(VULKAN_DRIVERS)
-MESON_ARGS+=	-Dplatforms=x11,surfaceless,drm,wayland
+.if ${PORT_OPTIONS:MPLATFORM_X11}
+MESA_PLATFORMS+=	x11
 .endif
+
+.if ${PORT_OPTIONS:MPLATFORM_DRM}
+MESA_PLATFORMS+=	drm
+.endif
+
+.if ${PORT_OPTIONS:MPLATFORM_SURFACELESS}
+MESA_PLATFORMS+=	surfaceless
+.endif
+
+# .if ${PORT_OPTIONS:MPLATFORM_WAYLAND} && !${PORT_OPTIONS:MWAYLAND}
+# .error "Platform Wayland is selected but Wayland support is disabled"
+# .endif
 
 MESON_ARGS+=	-Ddri-drivers="${DRI_DRIVERS:ts,:tl}" \
 			-Dgallium-drivers="${GALLIUM_DRIVERS:ts,:tl}" \
-			-Dvulkan-drivers="${VULKAN_DRIVERS:ts,:tl}"
+			-Dvulkan-drivers="${VULKAN_DRIVERS:ts,:tl}" \
+			-Dplatforms="${MESA_PLATFORMS:ts,:tl}"
 
 # Disable some options
 MESON_ARGS+=	-Dgallium-xa=false \
