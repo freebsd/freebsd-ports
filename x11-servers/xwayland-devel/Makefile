@@ -2,16 +2,12 @@
 
 PORTNAME=	xwayland
 DISTVERSIONPREFIX=	xorg-server-
-DISTVERSION=	1.20.0-655
+DISTVERSION=	1.20.0-660
 DISTVERSIONSUFFIX=	-g${GL_COMMIT:C/(.{12}).*/\1/}
-PORTREVISION=	3
 CATEGORIES=	x11-servers
 PKGNAMESUFFIX=	-devel
 
 PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
-PATCHFILES+=	f2cf236da8e8.diff:-p1 # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/393
-PATCHFILES+=	be731e0bdc7d.diff:-p1 # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/393
-PATCHFILES+=	b5b529799a20.diff:-p1 # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/393
 PATCHFILES+=	9e0086f99b39.diff:-p1 # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/432
 PATCHFILES+=	30ea6cb622e9.diff:-p1 # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/432
 
@@ -39,7 +35,7 @@ USE_XORG=	pixman xau xdmcp xfont2 xkbfile xshmfence xtrans
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	xorg
 GL_PROJECT=	xserver
-GL_COMMIT=	4195e8035645007be313ade79032b8d561ceec6c
+GL_COMMIT=	fc4f248544f207ffd68303da22ea1e27beb3729f
 MESON_ARGS=	-Dxwayland=true \
 		-Dxorg=false \
 		-Dxnest=false \
