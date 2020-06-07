@@ -15078,3 +15078,4 @@ net/freerdp1|net/freerdp|2020-06-06|Has expired: Superseded by the freerdp port/
 irc/psybnc||2020-06-06|Has expired: Broken for more than 6 months
 www/py-dj22-djangoql|www/py-djangoql|2020-06-06|Renamed to match the naming of other Django ports since Django 2.2 became default
 sysutils/beats|sysutils/beats6|2020-06-07|Renamed to match the naming of other ELK ports
+security/pam_pseudo||2020-06-07|Has expired: Broken for more than 6 months
