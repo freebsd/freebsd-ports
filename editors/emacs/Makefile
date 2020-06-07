@@ -158,7 +158,6 @@ GIF_LIB_DEPENDS=		libgif.so:graphics/giflib
 GIF_CONFIGURE_WITH=		gif
 GNUTLS_LIB_DEPENDS=		libgnutls.so:security/gnutls
 GNUTLS_CONFIGURE_WITH=		gnutls
-GSETTINGS_IMPLIES=		DBUS
 GSETTINGS_USE=			GNOME=glib20
 GSETTINGS_CONFIGURE_WITH=	gsettings
 GTK2_LIB_DEPENDS=		libfontconfig.so:x11-fonts/fontconfig \
