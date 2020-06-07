@@ -16,7 +16,7 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	node10>=10.15.2:www/node10
 
-CONFLICTS=	kibana[3-5]*
+CONFLICTS=	kibana[3-5]* kibana7*
 
 NO_BUILD=	yes
 WWWDIR=		${PREFIX}/www/${PORTNAME}${PKGNAMESUFFIX}
