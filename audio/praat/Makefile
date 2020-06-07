@@ -2,7 +2,7 @@
 
 PORTNAME=		praat
 DISTVERSIONPREFIX=	v
-DISTVERSION=		6.1.15
+DISTVERSION=		6.1.16
 CATEGORIES=		audio science
 
 MAINTAINER=	adridg@FreeBSD.org
@@ -28,8 +28,6 @@ HARDCPPFLAGS=	${WRKSRC}/EEG/Makefile \
 		${WRKSRC}/artsynth/Makefile \
 		${WRKSRC}/dwsys/Makefile \
 		${WRKSRC}/dwtools/Makefile \
-		${WRKSRC}/external/clapack/blas/Makefile \
-		${WRKSRC}/external/clapack/lapack/Makefile \
 		${WRKSRC}/external/espeak/Makefile \
 		${WRKSRC}/external/flac/Makefile \
 		${WRKSRC}/external/gsl/Makefile \
