@@ -14,7 +14,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl libboost_system.so:devel/boost-libs \
 		libminizip.so:archivers/minizip libjsoncpp.so:devel/jsoncpp
 BUILD_DEPENDS=	cereal>=1.2.2:devel/cereal
 
-USES=		cmake pkgconfig ssl lua:53 sqlite
+USES=		cmake compiler:c++11-lang pkgconfig ssl lua:53 sqlite
 
 OPTIONS_SUB=	YES
 OPTIONS_DEFINE=	SMQTT PYTHON TELLDUS OPENZWAVE PRECOMP
