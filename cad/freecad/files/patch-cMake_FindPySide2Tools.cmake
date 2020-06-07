@@ -15,7 +15,7 @@
          ADD_CUSTOM_COMMAND(OUTPUT "${outfile}"
 -          COMMAND "${PYSIDE2RCCBINARY}" "${infile}" ${PY_ATTRIBUTE} -o "${outfile}"
 -          COMMAND sed -i "/^# /d" "${outfile}"
-+          COMMAND "${PYSIDE2RCCBINARY}" "${infile}" --generator python -o "${outfile}"
++          COMMAND "${PYSIDE2RCCBINARY}" "${infile}" --no-compress --generator python -o "${outfile}"
 +          COMMAND sed -i \"\" "/^# /d" "${outfile}"
            MAIN_DEPENDENCY "${infile}"
          )
