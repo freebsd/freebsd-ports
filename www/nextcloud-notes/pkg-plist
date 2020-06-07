@@ -2,7 +2,6 @@
 %%WWWDIR%%/COPYING
 %%WWWDIR%%/README.md
 %%WWWDIR%%/appinfo/app.php
-%%WWWDIR%%/appinfo/database.xml
 %%WWWDIR%%/appinfo/info.xml
 %%WWWDIR%%/appinfo/info.xsd
 %%WWWDIR%%/appinfo/routes.php
@@ -38,6 +37,8 @@
 %%WWWDIR%%/l10n/bg.json
 %%WWWDIR%%/l10n/bn_BD.js
 %%WWWDIR%%/l10n/bn_BD.json
+%%WWWDIR%%/l10n/br.js
+%%WWWDIR%%/l10n/br.json
 %%WWWDIR%%/l10n/bs.js
 %%WWWDIR%%/l10n/bs.json
 %%WWWDIR%%/l10n/ca.js
@@ -209,6 +210,10 @@
 %%WWWDIR%%/lib/Controller/SettingsController.php
 %%WWWDIR%%/lib/Db/Meta.php
 %%WWWDIR%%/lib/Db/MetaMapper.php
+%%WWWDIR%%/lib/Migration/Cleanup.php
+%%WWWDIR%%/lib/Migration/Version3005Date20200528204430.php
+%%WWWDIR%%/lib/Migration/Version3005Date20200528204431.php
+%%WWWDIR%%/lib/NotesHooks.php
 %%WWWDIR%%/lib/Service/InsufficientStorageException.php
 %%WWWDIR%%/lib/Service/MetaService.php
 %%WWWDIR%%/lib/Service/Note.php
