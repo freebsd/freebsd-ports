@@ -274,6 +274,8 @@ post-patch:
 	    ${WRKSRC}/LocalConfig.kmk
 	@${ECHO_CMD} 'VBOX_GCC_PEDANTIC_CXX = -Wshadow $$(VBOX_GCC_WARN) -Wno-long-long' >> \
 	    ${WRKSRC}/LocalConfig.kmk
+	@${REINPLACE_CMD} -E -e '/soap_socket_errno\(/s/(soap_socket_errno)(\([^)]+\))/\1/' \
+		${WRKSRC}/src/VBox/Main/webservice/vboxweb.cpp
 .endif
 	@${REINPLACE_CMD} -e 's| -finline-limit=8000||' \
 	    -e 's| -mpreferred-stack-boundary=2||' ${WRKSRC}/Config.kmk
