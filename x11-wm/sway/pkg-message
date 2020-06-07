@@ -1,0 +1,3 @@
+Experimental features:
+- HiDPI support for X11 applications. For instructions see
+  https://github.com/swaywm/wlroots/pull/2064#issuecomment-622647075
