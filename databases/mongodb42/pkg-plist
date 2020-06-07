@@ -1,0 +1,5 @@
+bin/install_compass
+bin/mongo
+bin/mongod
+bin/mongos
+@sample etc/mongodb.conf.sample

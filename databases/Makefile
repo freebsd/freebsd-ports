@@ -188,6 +188,7 @@
     SUBDIR += mongodb36-tools
     SUBDIR += mongodb40
     SUBDIR += mongodb40-tools
+    SUBDIR += mongodb42
     SUBDIR += mroonga
     SUBDIR += mtools-mongodb
     SUBDIR += mtop

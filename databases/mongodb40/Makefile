@@ -34,7 +34,7 @@ USES=		compiler:c++14-lang cpe python:2.7,build scons:python2 shebangfix
 USE_RC_SUBR=	mongod
 
 CONFLICTS_BUILD=	mongo-cxx-driver
-CONFLICTS_INSTALL=	mongodb3[46]
+CONFLICTS_INSTALL=	mongodb3[46] mongodb42
 
 SHEBANG_FILES=	src/mongo/installer/compass/install_compass.in
 python_OLD_CMD=	@python_interpreter@
