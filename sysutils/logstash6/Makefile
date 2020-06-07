@@ -16,7 +16,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash
 
 USES=		cpe shebangfix
 
-CONFLICTS=	logstash-[0-9]* logstash5-[0-9]*
+CONFLICTS=	logstash-[0-9]* logstash5* logstash7*
 
 SHEBANG_FILES=	bin/*
 CPE_VENDOR=	elasticsearch
