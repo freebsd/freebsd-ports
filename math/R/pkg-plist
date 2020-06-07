@@ -107,6 +107,7 @@ lib/R/library/KernSmooth/libs/KernSmooth.so
 %%NLS%%lib/R/library/KernSmooth/po/de/LC_MESSAGES/R-KernSmooth.mo
 %%NLS%%lib/R/library/KernSmooth/po/en@quot/LC_MESSAGES/R-KernSmooth.mo
 %%NLS%%lib/R/library/KernSmooth/po/fr/LC_MESSAGES/R-KernSmooth.mo
+%%NLS%%lib/R/library/KernSmooth/po/it/LC_MESSAGES/R-KernSmooth.mo
 %%NLS%%lib/R/library/KernSmooth/po/ko/LC_MESSAGES/R-KernSmooth.mo
 %%NLS%%lib/R/library/KernSmooth/po/pl/LC_MESSAGES/R-KernSmooth.mo
 lib/R/library/MASS/CITATION
@@ -138,6 +139,7 @@ lib/R/library/MASS/libs/MASS.so
 %%NLS%%lib/R/library/MASS/po/de/LC_MESSAGES/R-MASS.mo
 %%NLS%%lib/R/library/MASS/po/en@quot/LC_MESSAGES/R-MASS.mo
 %%NLS%%lib/R/library/MASS/po/fr/LC_MESSAGES/R-MASS.mo
+%%NLS%%lib/R/library/MASS/po/it/LC_MESSAGES/R-MASS.mo
 %%NLS%%lib/R/library/MASS/po/ko/LC_MESSAGES/R-MASS.mo
 %%NLS%%lib/R/library/MASS/po/pl/LC_MESSAGES/R-MASS.mo
 lib/R/library/MASS/scripts/ch01.R
@@ -286,6 +288,7 @@ lib/R/library/boot/html/R.css
 %%NLS%%lib/R/library/boot/po/de/LC_MESSAGES/R-boot.mo
 %%NLS%%lib/R/library/boot/po/en@quot/LC_MESSAGES/R-boot.mo
 %%NLS%%lib/R/library/boot/po/fr/LC_MESSAGES/R-boot.mo
+%%NLS%%lib/R/library/boot/po/it/LC_MESSAGES/R-boot.mo
 %%NLS%%lib/R/library/boot/po/ko/LC_MESSAGES/R-boot.mo
 %%NLS%%lib/R/library/boot/po/pl/LC_MESSAGES/R-boot.mo
 %%NLS%%lib/R/library/boot/po/ru/LC_MESSAGES/R-boot.mo
@@ -443,6 +446,8 @@ lib/R/library/foreign/libs/foreign.so
 %%NLS%%lib/R/library/foreign/po/en@quot/LC_MESSAGES/foreign.mo
 %%NLS%%lib/R/library/foreign/po/fr/LC_MESSAGES/R-foreign.mo
 %%NLS%%lib/R/library/foreign/po/fr/LC_MESSAGES/foreign.mo
+%%NLS%%lib/R/library/foreign/po/it/LC_MESSAGES/R-foreign.mo
+%%NLS%%lib/R/library/foreign/po/it/LC_MESSAGES/foreign.mo
 %%NLS%%lib/R/library/foreign/po/pl/LC_MESSAGES/R-foreign.mo
 %%NLS%%lib/R/library/foreign/po/pl/LC_MESSAGES/foreign.mo
 lib/R/library/grDevices/DESCRIPTION
@@ -842,6 +847,7 @@ lib/R/library/nnet/libs/nnet.so
 %%NLS%%lib/R/library/nnet/po/de/LC_MESSAGES/R-nnet.mo
 %%NLS%%lib/R/library/nnet/po/en@quot/LC_MESSAGES/R-nnet.mo
 %%NLS%%lib/R/library/nnet/po/fr/LC_MESSAGES/R-nnet.mo
+%%NLS%%lib/R/library/nnet/po/it/LC_MESSAGES/R-nnet.mo
 %%NLS%%lib/R/library/nnet/po/ko/LC_MESSAGES/R-nnet.mo
 %%NLS%%lib/R/library/nnet/po/pl/LC_MESSAGES/R-nnet.mo
 lib/R/library/parallel/DESCRIPTION
@@ -941,6 +947,7 @@ lib/R/library/spatial/libs/spatial.so
 %%NLS%%lib/R/library/spatial/po/de/LC_MESSAGES/R-spatial.mo
 %%NLS%%lib/R/library/spatial/po/en@quot/LC_MESSAGES/R-spatial.mo
 %%NLS%%lib/R/library/spatial/po/fr/LC_MESSAGES/R-spatial.mo
+%%NLS%%lib/R/library/spatial/po/it/LC_MESSAGES/R-spatial.mo
 %%NLS%%lib/R/library/spatial/po/ko/LC_MESSAGES/R-spatial.mo
 %%NLS%%lib/R/library/spatial/po/pl/LC_MESSAGES/R-spatial.mo
 lib/R/library/spatial/ppdata/agter.dat
