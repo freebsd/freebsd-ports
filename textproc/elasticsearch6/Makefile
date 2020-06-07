@@ -19,7 +19,7 @@ RUN_DEPENDS=	bash>0:shells/bash \
 
 USES=		cpe shebangfix
 
-CONFLICTS=	elasticsearch-[0-9]* elasticsearch2-[0-9]* elasticsearch5-[0-9]*
+CONFLICTS=	elasticsearch-[0-9]* elasticsearch2* elasticsearch5* elasticsearch7*
 
 NO_ARCH=	yes
 USE_JAVA=	yes
