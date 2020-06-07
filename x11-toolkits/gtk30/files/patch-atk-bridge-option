@@ -1,0 +1,120 @@
+Revert https://gitlab.gnome.org/GNOME/gtk/-/commit/ed8203e700aa
+
+--- config.h.in.orig	2019-07-03 20:26:06 UTC
++++ config.h.in
+@@ -10,6 +10,9 @@
+ /* Disable deprecation warnings from glib */
+ #undef GLIB_DISABLE_DEPRECATION_WARNINGS
+ 
++/* Define to use atk-bridge-2.0 */
++#undef HAVE_ATK_BRIDGE
++
+ /* Define to 1 if you have the `bind_textdomain_codeset' function. */
+ #undef HAVE_BIND_TEXTDOMAIN_CODESET
+ 
+--- config.h.meson.orig	2019-06-17 17:04:21 UTC
++++ config.h.meson
+@@ -11,6 +11,9 @@
+ /* Disable deprecation warnings from glib */
+ #mesondefine GLIB_DISABLE_DEPRECATION_WARNINGS
+ 
++/* Define to use atk-bridge-2.0 */
++#mesondefine HAVE_ATK_BRIDGE
++
+ /* Define to 1 if you have the `bind_textdomain_codeset' function. */
+ #mesondefine HAVE_BIND_TEXTDOMAIN_CODESET
+ 
+--- configure.orig	2019-07-03 20:26:06 UTC
++++ configure
+@@ -1061,6 +1061,7 @@ enable_glibtest
+ enable_modules
+ with_included_immodules
+ with_x
++with_atk_bridge
+ enable_win32_gles
+ enable_cups
+ enable_papi
+@@ -1838,6 +1839,7 @@ Optional Packages:
+   --with-included-immodules=MODULE1,MODULE2,...
+                           build the specified input methods into gtk
+   --with-x                use the X Window System
++  --without-atk-bridge    Do not use AT-SPI ATK bridge
+   --with-html-dir=PATH    path to installed docs
+   --with-xml-catalog=CATALOG
+                           path to xml catalog to use
+@@ -27103,8 +27105,20 @@ fi
+ # Check for Accessibility Toolkit flags
+ ########################################
+ 
+-if test x$enable_x11_backend = xyes; then
++
++# Check whether --with-atk-bridge was given.
++if test "${with_atk_bridge+set}" = set; then :
++  withval=$with_atk_bridge; :
++else
++  with_atk_bridge=$enable_x11_backend
++fi
++
++
++if test x$with_atk_bridge != xno; then
+    ATK_PACKAGES="atk atk-bridge-2.0"
++
++$as_echo "#define HAVE_ATK_BRIDGE 1" >>confdefs.h
++
+ else
+    ATK_PACKAGES="atk"
+ fi
+--- gtk/a11y/gtkaccessibility.c.orig	2019-01-03 00:44:12 UTC
++++ gtk/a11y/gtkaccessibility.c
+@@ -37,7 +37,7 @@
+ #include <gtk/gtktogglebutton.h>
+ #include <gtk/gtkaccessible.h>
+ 
+-#ifdef GDK_WINDOWING_X11
++#ifdef HAVE_ATK_BRIDGE
+ #include <atk-bridge.h>
+ #endif
+ 
+@@ -988,7 +988,7 @@ _gtk_accessibility_init (void)
+   _gtk_accessibility_override_atk_util ();
+   do_window_event_initialization ();
+ 
+-#ifdef GDK_WINDOWING_X11
++#ifdef HAVE_ATK_BRIDGE
+   atk_bridge_adaptor_init (NULL, NULL);
+ #endif
+ 
+--- meson.build.orig	2019-07-03 20:24:52 UTC
++++ meson.build
+@@ -561,7 +561,7 @@ if x11_enabled
+   xfixes_dep     = dependency('xfixes', required: false)
+   xcomposite_dep = dependency('xcomposite', required: false)
+   fontconfig_dep = dependency('fontconfig', fallback: ['fontconfig', 'fontconfig_dep'])
+-  atkbridge_dep  = dependency('atk-bridge-2.0', version: atk_req)
++  atkbridge_dep  = dependency('atk-bridge-2.0', version: atk_req, required: get_option('atk-bridge'))
+ 
+   x11_pkgs = ['fontconfig', 'x11', 'xext', 'xi', 'xrandr']
+ 
+@@ -578,7 +578,10 @@ if x11_enabled
+     x11_pkgs += ['xdamage']
+   endif
+ 
+-  atk_pkgs += ['atk-bridge-2.0']
++  if atkbridge_dep.found()
++    atk_pkgs += ['atk-bridge-2.0']
++    cdata.set('HAVE_ATK_BRIDGE', 1)
++  endif
+ 
+   cdata.set('HAVE_XDAMAGE', xdamage_dep.found() ? 1 : false)
+   cdata.set('HAVE_XCURSOR', xcursor_dep.found() ? 1 : false)
+--- meson_options.txt.orig	2019-06-17 18:03:27 UTC
++++ meson_options.txt
+@@ -13,6 +13,8 @@ option('mir_backend', type: 'boolean', value: false,
+   description : 'Enable the Mir gdk backend')
+ 
+ # Optional dependencies
++option('atk-bridge', type: 'boolean', value: 'true',
++  description : 'Enable AT-SPI ATK bridge support')
+ option('xinerama', type: 'combo', choices : ['yes', 'no', 'auto'], value : 'auto',
+   description : 'Enable support for the Xinerama extension')
+ option('cloudproviders', type: 'boolean', value: false,

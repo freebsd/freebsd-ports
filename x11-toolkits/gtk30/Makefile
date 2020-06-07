@@ -19,7 +19,6 @@ LICENSE=	LGPL20
 
 PORTSCOUT=	limit:1,even
 
-BUILD_DEPENDS+=	at-spi2-atk>=0:accessibility/at-spi2-atk
 LIB_DEPENDS=	libepoxy.so:graphics/libepoxy \
 		libfribidi.so:converters/fribidi \
 		libfontconfig.so:x11-fonts/fontconfig \
@@ -27,7 +26,6 @@ LIB_DEPENDS=	libepoxy.so:graphics/libepoxy \
 		libharfbuzz.so:print/harfbuzz
 RUN_DEPENDS+=	hicolor-icon-theme>=0:misc/hicolor-icon-theme \
 		adwaita-icon-theme>=0:x11-themes/adwaita-icon-theme \
-		at-spi2-atk>=0:accessibility/at-spi2-atk \
 		librsvg2>=0:graphics/librsvg2
 
 USE_PERL5=	build
@@ -53,9 +51,13 @@ GLIB_SCHEMAS=	org.gtk.Demo.gschema.xml \
 		org.gtk.Settings.EmojiChooser.gschema.xml \
 		org.gtk.Settings.FileChooser.gschema.xml
 
-OPTIONS_DEFINE=	CUPS CLOUDPRINT COLORD DEBUG BROADWAY WAYLAND
-OPTIONS_DEFAULT=CUPS COLORD BROADWAY WAYLAND
+OPTIONS_DEFINE=	ATK_BRIDGE CUPS CLOUDPRINT COLORD DEBUG BROADWAY WAYLAND
+OPTIONS_DEFAULT=ATK_BRIDGE CUPS COLORD BROADWAY WAYLAND
 OPTIONS_SUB=	yes
+
+ATK_BRIDGE_DESC=AT-SPI ATK bridge support
+ATK_BRIDGE_CONFIGURE_WITH=	atk-bridge
+ATK_BRIDGE_LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-atk
 
 BROADWAY_DESC=	Enable GDK Broadway backend for showing GTK+ in the webbrowser using HTML5 and web sockets.
 BROADWAY_CONFIGURE_ENABLE=	broadway-backend
