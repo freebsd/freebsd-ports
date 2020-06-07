@@ -14437,7 +14437,7 @@ textproc/rubygem-actionpack-xml_parser|textproc/rubygem-actionpack-xml_parser-ra
 textproc/rubygem-actionpack-xml_parser1|textproc/rubygem-actionpack-xml_parser1-rails4|2020-03-02|Renamed to match rubygem name convention
 textproc/rubygem-actionpack-xml_parser52|textproc/rubygem-actionpack-xml_parser-rails52|2020-03-02|Renamed to match rubygem name convention
 x11-toolkits/py-kivy||2020-03-02|Has expired: Old, uses EOLed python27
-lang/gcc6|lang/gcc|2020-03-07|Has expired: Unsupported by upstream. Use GCC 9 or newer instead.
+lang/gcc6|lang/gcc|2020-03-07|Has expired: Unsupported by upstream. Use GCC 9 or newer instead
 www/pycarddav|deskutils/py-khard|2020-03-07|Has expired: Deprecated by upstream, please migrate to deskutils/py-khard
 x11-wm/ccsm||2020-03-07|Has expired: Old, uses EOLed python27
 x11-toolkits/py-gtkglext||2020-03-07|Has expired: Old, uses EOLed python27
@@ -15003,7 +15003,7 @@ devel/rubygem-webpacker-rails5|devel/rubygem-webpacker4-rails5|2020-05-12|Rename
 devel/rubygem-webpacker-rails50|devel/rubygem-webpacker4-rails50|2020-05-12|Rename when rubygem-webpacker is 5.x now
 net-p2p/parity-ethereum|net-p2p/openethereum|2020-05-13|Renamed upstream for transition to a DAO ownership and maintainer model
 net-im/linux-telegram-desktop|net-im/telegram-desktop|2020-05-13|Has expired: Broken for more than 6 months, use native version
-devel/libphutil||2020-05-15|Has expired: Upstream merged functionality into downstream projects.
+devel/libphutil||2020-05-15|Has expired: Upstream merged functionality into downstream projects
 print/frescobaldi|print/py-frescobaldi|2020-05-16|Renamed to comply with Python Ports Policy
 sysutils/rdiff-backup|sysutils/py-rdiff-backup@py37|2020-05-16|Renamed comply with Python Ports Policy and flavored
 www/py-django-happenings|www/py-django-happenings-update|2020-05-17|Has expired: Doesn't work with Django 2.2+, please use www/py-django-happenings-update instead
@@ -15077,3 +15077,4 @@ devel/rubygem-peek-rails5|devel/rubygem-peek-rails60|2020-06-05|Removed: please 
 net/freerdp1|net/freerdp|2020-06-06|Has expired: Superseded by the freerdp port/package
 irc/psybnc||2020-06-06|Has expired: Broken for more than 6 months
 www/py-dj22-djangoql|www/py-djangoql|2020-06-06|Renamed to match the naming of other Django ports since Django 2.2 became default
+devel/pear-channel-phpunit||2020-06-07|Remove obsolete
