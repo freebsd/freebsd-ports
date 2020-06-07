@@ -1,0 +1,5 @@
+Command-line video downloader written in Go, supporting over 20 sites
+and includes features such as resumable downloads, multiple downloads
+and auto-retry.
+
+WWW: https://github.com/iawia002/annie

@@ -22,6 +22,7 @@
     SUBDIR += alef-webfont
     SUBDIR += amphetadesk
     SUBDIR += analog
+    SUBDIR += annie
     SUBDIR += anyremote2html
     SUBDIR += anyterm
     SUBDIR += apache-mode.el
