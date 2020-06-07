@@ -2,8 +2,7 @@
 
 PORTNAME=	smtprelay
 DISTVERSIONPREFIX=v
-DISTVERSION=	1.3.0
-PORTREVISION=	2
+DISTVERSION=	1.4.0
 CATEGORIES=	mail
 
 MAINTAINER=	decke@FreeBSD.org
@@ -18,8 +17,8 @@ USE_RC_SUBR=	smtprelay
 USE_GITHUB=	yes
 GH_ACCOUNT=	decke
 
-GH_TUPLE=	chrj:smtpd:v0.1.2:chrj_smtpd/vendor/github.com/chrj/smtpd \
-		golang:crypto:9756ffdc2472:golang_crypto/vendor/golang.org/x/crypto \
+GH_TUPLE=	chrj:smtpd:v0.2.0:chrj_smtpd/vendor/github.com/chrj/smtpd \
+		golang:crypto:70a84ac30bf9:golang_crypto/vendor/golang.org/x/crypto \
 		vharitonsky:iniflags:a33cd0b5f3de:vharitonsky_iniflags/vendor/github.com/vharitonsky/iniflags
 
 PLIST_FILES=	bin/${PORTNAME} \
