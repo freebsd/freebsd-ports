@@ -100,7 +100,7 @@
     SUBDIR += bchunk
     SUBDIR += beadm
     SUBDIR += beadm-devel
-    SUBDIR += beats
+    SUBDIR += beats6
     SUBDIR += bfs
     SUBDIR += bhyve-firmware
     SUBDIR += bhyve-rc
