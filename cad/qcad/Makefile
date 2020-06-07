@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qcad
-PORTVERSION=	3.24.2.0
+PORTVERSION=	3.24.3.8
 #PORTREVISION=
 DISTVERSIONPREFIX=	v
 CATEGORIES=	cad
@@ -54,6 +54,7 @@ OPTIONS_DEFINE=	EXAMPLES
 
 CFLAGS_i386= -fPIC
 CXXFLAGS_i386= -fPIC
+LDFLAGS_i386= -Wl,-z,notext
 
 pre-configure:
 	${MKDIR} ${WRKSRC}/src/3rdparty/qt-labs-qtscriptgenerator-${_QT_VERSION}
