@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	libktorrent
-DISTVERSION=	2.1.1
-PORTREVISION=	2
+DISTVERSION=	2.2.0
 CATEGORIES=	net-p2p kde
-MASTER_SITES=	KDE/stable/ktorrent/5.1.2/
+MASTER_SITES=	KDE/stable/ktorrent/5.2.0/
 
 # Since libktorrent is released with ktorrent, it lives in a
 # strange download directory; keep this in-sync with net-p2p/ktorrent.

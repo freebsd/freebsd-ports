@@ -193,7 +193,6 @@ lib/libKF5Torrent.so
 lib/libKF5Torrent.so.6
 lib/libKF5Torrent.so.6.0.0
 share/locale/ar/LC_MESSAGES/libktorrent5.mo
-share/locale/ast/LC_MESSAGES/libktorrent5.mo
 share/locale/be/LC_MESSAGES/libktorrent5.mo
 share/locale/bg/LC_MESSAGES/libktorrent5.mo
 share/locale/bs/LC_MESSAGES/libktorrent5.mo
@@ -214,7 +213,6 @@ share/locale/ga/LC_MESSAGES/libktorrent5.mo
 share/locale/gl/LC_MESSAGES/libktorrent5.mo
 share/locale/hi/LC_MESSAGES/libktorrent5.mo
 share/locale/hne/LC_MESSAGES/libktorrent5.mo
-share/locale/hr/LC_MESSAGES/libktorrent5.mo
 share/locale/hu/LC_MESSAGES/libktorrent5.mo
 share/locale/ia/LC_MESSAGES/libktorrent5.mo
 share/locale/is/LC_MESSAGES/libktorrent5.mo
@@ -238,8 +236,6 @@ share/locale/pt/LC_MESSAGES/libktorrent5.mo
 share/locale/pt_BR/LC_MESSAGES/libktorrent5.mo
 share/locale/ro/LC_MESSAGES/libktorrent5.mo
 share/locale/ru/LC_MESSAGES/libktorrent5.mo
-share/locale/se/LC_MESSAGES/libktorrent5.mo
-share/locale/si/LC_MESSAGES/libktorrent5.mo
 share/locale/sk/LC_MESSAGES/libktorrent5.mo
 share/locale/sl/LC_MESSAGES/libktorrent5.mo
 share/locale/sr/LC_MESSAGES/libktorrent5.mo
