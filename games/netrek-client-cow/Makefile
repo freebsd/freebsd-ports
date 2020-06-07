@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	netrek-client-cow
-PORTVERSION=	3.3.1
-PORTREVISION=	5
+PORTVERSION=	3.3.2
 CATEGORIES=	games
 MASTER_SITES=	http://www.netrek.org/files/COW/ \
 		http://quozl.us.netrek.org/netrek/
@@ -11,21 +10,17 @@ MASTER_SITES=	http://www.netrek.org/files/COW/ \
 MAINTAINER=	kevinz5000@gmail.com
 COMMENT=	Multi-player battle simulation with a Star Trek theme
 
-LIB_DEPENDS=	libImlib2.so:graphics/imlib2
-
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-GNU_CONFIGURE=	yes
-USES=		gmake sdl
-USE_SDL=	sdl mixer
+LIB_DEPENDS=	libImlib2.so:graphics/imlib2
 
-CONFIGURE_ARGS+=	NORSA='\#'
+USES=		gmake sdl xorg
+USE_SDL=	mixer sdl
+USE_XORG=	x11 xau xcb xdmcp xext xpm xxf86vm
+
+GNU_CONFIGURE=	yes
 
 post-patch:
-	${REINPLACE_CMD} -e 's|ushort  damage|unsigned short damage|' \
-		${WRKSRC}/short.c
-	${REINPLACE_CMD} -e 's|inline void|void|' \
-		${WRKSRC}/local.[ch]
 	${REINPLACE_CMD} -e 's|/usr|${PREFIX}|' \
 		${WRKSRC}/netrek-client-cow.desktop \
 		${WRKSRC}/sound.c \
@@ -34,5 +29,8 @@ post-patch:
 		${WRKSRC}/sound.c
 	${REINPLACE_CMD} -e 's|games|bin|' \
 		${WRKSRC}/netrek-client-cow.desktop
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/netrek-client-cow
 
 .include <bsd.port.mk>

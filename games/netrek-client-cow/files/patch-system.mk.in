@@ -1,21 +1,11 @@
---- ./system.mk.in.orig	2011-10-18 05:35:35.000000000 -0500
-+++ ./system.mk.in	2012-04-27 15:59:00.000000000 -0500
-@@ -9,8 +9,7 @@
+--- system.mk.in.orig	2020-05-16 16:32:14 UTC
++++ system.mk.in
+@@ -9,7 +9,7 @@ exec_prefix=@exec_prefix@
  datarootdir=@datarootdir@
  
  DESTDIR=
 -BINDIR=${prefix}/games
--DOCDIR=${datarootdir}/doc/${PACKAGE}
 +BINDIR=${prefix}/bin
  PIXMAPDIR=${datarootdir}/pixmaps/${PACKAGE}
  APPDIR=${datarootdir}/applications
  
-@@ -200,8 +199,6 @@
- install: netrek-client-cow
- 	mkdir -p $(DESTDIR)$(BINDIR)
- 	install netrek-client-cow $(DESTDIR)$(BINDIR)
--	mkdir -p $(DESTDIR)$(DOCDIR)
--	cp $(KEYFILE) $(DESTDIR)$(DOCDIR)
- 	mkdir -p $(DESTDIR)$(PIXMAPDIR)
- 	cp -pr pixmaps/* $(DESTDIR)$(PIXMAPDIR)/
- 	mkdir -p $(DESTDIR)$(APPDIR)
