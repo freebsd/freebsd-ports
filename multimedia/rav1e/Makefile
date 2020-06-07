@@ -2,8 +2,8 @@
 
 PORTNAME=	rav1e
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.2
-PORTREVISION?=	1
+DISTVERSION=	0.3.3
+PORTREVISION?=	0
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -26,7 +26,7 @@ CARGO_CRATES=	addr2line-0.12.1 \
 		ansi_term-0.11.0 \
 		aom-sys-0.1.4 \
 		arbitrary-0.2.0 \
-		arc-swap-0.4.6 \
+		arc-swap-0.4.7 \
 		arg_enum_proc_macro-0.3.0 \
 		arrayvec-0.5.1 \
 		assert_cmd-1.0.1 \
@@ -38,7 +38,7 @@ CARGO_CRATES=	addr2line-0.12.1 \
 		bitflags-1.2.1 \
 		bitstream-io-0.8.5 \
 		bstr-0.2.13 \
-		bumpalo-3.3.0 \
+		bumpalo-3.4.0 \
 		bytemuck-1.2.0 \
 		byteorder-1.3.4 \
 		cast-0.2.3 \
@@ -55,7 +55,7 @@ CARGO_CRATES=	addr2line-0.12.1 \
 		criterion-plot-0.4.2 \
 		crossbeam-deque-0.7.3 \
 		crossbeam-epoch-0.8.2 \
-		crossbeam-queue-0.2.1 \
+		crossbeam-queue-0.2.2 \
 		crossbeam-utils-0.7.2 \
 		csv-1.1.3 \
 		csv-core-0.1.10 \
@@ -103,19 +103,19 @@ CARGO_CRATES=	addr2line-0.12.1 \
 		object-0.19.0 \
 		oorandom-11.1.1 \
 		output_vt100-0.1.2 \
-		paste-0.1.14 \
-		paste-impl-0.1.14 \
+		paste-0.1.16 \
+		paste-impl-0.1.16 \
 		peeking_take_while-0.1.2 \
 		pkg-config-0.3.17 \
 		plotters-0.2.15 \
-		png-0.16.3 \
+		png-0.16.4 \
 		ppv-lite86-0.2.8 \
 		predicates-1.0.4 \
 		predicates-core-1.0.0 \
 		predicates-tree-1.0.0 \
 		pretty_assertions-0.6.1 \
 		proc-macro-hack-0.5.16 \
-		proc-macro2-1.0.17 \
+		proc-macro2-1.0.18 \
 		quick-error-1.2.3 \
 		quote-1.0.6 \
 		rand-0.7.3 \
@@ -124,7 +124,7 @@ CARGO_CRATES=	addr2line-0.12.1 \
 		rand_hc-0.2.0 \
 		rayon-1.3.0 \
 		rayon-core-1.7.0 \
-		regex-1.3.8 \
+		regex-1.3.9 \
 		regex-automata-0.1.9 \
 		regex-syntax-0.6.18 \
 		rust_hawktracer-0.7.0 \
@@ -134,21 +134,21 @@ CARGO_CRATES=	addr2line-0.12.1 \
 		rustc-demangle-0.1.16 \
 		rustc-hash-1.1.0 \
 		rustc_version-0.2.3 \
-		ryu-1.0.4 \
+		ryu-1.0.5 \
 		same-file-1.0.6 \
 		scan_fmt-0.2.5 \
 		scopeguard-1.1.0 \
 		semver-0.9.0 \
 		semver-parser-0.7.0 \
-		serde-1.0.110 \
-		serde_derive-1.0.110 \
+		serde-1.0.111 \
+		serde_derive-1.0.111 \
 		serde_json-1.0.53 \
 		shlex-0.1.1 \
 		signal-hook-0.1.15 \
 		signal-hook-registry-1.2.0 \
 		simd_helpers-0.1.0 \
 		strsim-0.8.0 \
-		syn-1.0.27 \
+		syn-1.0.30 \
 		termcolor-1.1.0 \
 		terminal_size-0.1.12 \
 		termios-0.3.2 \
@@ -157,7 +157,7 @@ CARGO_CRATES=	addr2line-0.12.1 \
 		thiserror-impl-1.0.19 \
 		thread_local-1.0.1 \
 		time-0.1.43 \
-		tinytemplate-1.0.4 \
+		tinytemplate-1.1.0 \
 		toml-0.2.1 \
 		toml-0.5.6 \
 		treeline-0.1.0 \
