@@ -1,4 +1,4 @@
---- BUILD.gn.orig	2020-05-13 18:40:15 UTC
+--- BUILD.gn.orig	2020-06-03 18:40:09 UTC
 +++ BUILD.gn
 @@ -418,7 +418,7 @@ group("gn_all") {
      ]
@@ -57,7 +57,7 @@
      ]
      if (is_desktop_linux && use_ozone) {
        deps += [ "//chrome/browser/vr/testapp:vr_testapp" ]
-@@ -1071,7 +1060,7 @@ if (!is_ios) {
+@@ -1072,7 +1061,7 @@ if (!is_ios) {
        ]
      }
  
@@ -66,7 +66,7 @@
        data_deps +=
            [ "//third_party/breakpad:minidump_stackwalk($host_toolchain)" ]
      }
-@@ -1080,7 +1069,7 @@ if (!is_ios) {
+@@ -1081,7 +1070,7 @@ if (!is_ios) {
        data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
      }
  
@@ -75,7 +75,7 @@
        data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
      }
  
-@@ -1273,9 +1262,6 @@ group("chromium_builder_perf") {
+@@ -1274,9 +1263,6 @@ group("chromium_builder_perf") {
  
      if (is_win) {
        data_deps += [ "//chrome/installer/mini_installer:mini_installer" ]
