@@ -42,7 +42,7 @@ JIT_CONFIGURE_ENABLE=	jit
 
 # JIT is not supported on non-x86 make sure it's off
 .if ${ARCH} != amd64 && ${ARCH} != i386
-CONFIGURE_ARGS+=	--without-jit
+CONFIGURE_ARGS+=	--disable-jit
 .endif
 
 post-patch:
