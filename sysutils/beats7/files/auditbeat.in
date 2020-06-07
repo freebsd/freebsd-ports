@@ -1,0 +1,47 @@
+#!/bin/sh
+# $FreeBSD$
+
+# PROVIDE: auditbeat
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable auditbeat:
+#
+# auditbeat_enable (bool):	Set to YES to enable auditbeat
+# 				Default: NO
+# auditbeat_flags (str):	Extra flags passed to auditbeat
+# auditbeat_conf (str):	auditbeat configuration metric
+#				Default: ${PREFIX}/etc/auditbeat.yml
+
+. /etc/rc.subr
+
+name="auditbeat"
+rcvar=${name}_enable
+load_rc_config $name
+
+: ${auditbeat_enable:="NO"}
+: ${auditbeat_config:="%%ETCDIR%%"}
+: ${auditbeat_home:="%%DATADIR%%/auditbeat"}
+: ${auditbeat_logs:="/var/log/beats"}
+: ${auditbeat_data:="/var/db/beats/auditbeat"
+
+# daemon
+start_precmd=auditbeat_prestart
+command=/usr/sbin/daemon
+pidfile="/var/run/${name}"
+command_args="-rP ${pidfile} %%PREFIX%%/sbin/${name} ${auditbeat_flags} -path.config ${auditbeat_config} --path.home ${auditbeat_home} --path.data ${auditbeat_data} --path.logs ${auditbeat_logs}"
+auditbeat_prestart() {
+# Have to empty rc_flags so they don't get passed to daemon(8)
+	rc_flags=""
+}
+
+# auditbeat will refuse to quit if linprocfs is mounted, and sadly requires -9
+[ -f /compat/linux/proc/cpuinfo ] && stop_cmd=auditbeat_stop
+
+auditbeat_stop() {
+	pkill -9 -F ${pidfile} > /dev/null 2>&1
+	pkill -9 -F ${pidfile}.child > /dev/null 2>&1
+}
+
+run_rc_command "$1"

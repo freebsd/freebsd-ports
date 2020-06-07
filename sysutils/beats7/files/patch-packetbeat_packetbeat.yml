@@ -1,0 +1,15 @@
+--- packetbeat/packetbeat.yml.orig	2020-02-28 18:43:02 UTC
++++ packetbeat/packetbeat.yml
+@@ -10,8 +10,10 @@
+ #============================== Network device ================================
+ 
+ # Select the network interface to sniff the data. On Linux, you can use the
+-# "any" keyword to sniff on all connected interfaces.
+-packetbeat.interfaces.device: any
++# "any" keyword to sniff on all connected interfaces. FreeBSD is a bit different
++# and the beats programmers did not bother to implement it, so you must set this
++# to your preferred device
++packetbeat.interfaces.device: em0
+ 
+ #================================== Flows =====================================
+ 

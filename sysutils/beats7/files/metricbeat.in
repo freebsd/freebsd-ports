@@ -1,0 +1,48 @@
+#!/bin/sh
+# $FreeBSD$
+
+# PROVIDE: metricbeat
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable metricbeat:
+#
+# metricbeat_enable (bool):	Set to YES to enable metricbeat
+# 				Default: NO
+# metricbeat_flags (str):	Extra flags passed to metricbeat
+# metricbeat_conf (str):	metricbeat configuration metric
+#				Default: ${PREFIX}/etc/metricbeat.yml
+
+. /etc/rc.subr
+
+name="metricbeat"
+rcvar=${name}_enable
+load_rc_config $name
+
+: ${metricbeat_enable:="NO"}
+: ${metricbeat_config:="%%ETCDIR%%"}
+: ${metricbeat_home:="%%DATADIR%%/metricbeat"}
+: ${metricbeat_logs:="/var/log/beats"}
+: ${metricbeat_data:="/var/db/beats/metricbeat"}
+
+# daemon
+start_precmd=metricbeat_prestart
+command=/usr/sbin/daemon
+pidfile="/var/run/${name}"
+command_args="-rP ${pidfile} %%PREFIX%%/sbin/${name} ${metricbeat_flags} -path.config ${metricbeat_config} --path.home ${metricbeat_home} --path.data ${metricbeat_data} --path.logs ${metricbeat_logs}"
+
+metricbeat_prestart() {
+# Have to empty rc_flags so they don't get passed to daemon(8)
+	rc_flags=""
+}
+
+# metricbeat will refuse to quit if linprocfs is mounted, and sadly requires -9
+[ -f /compat/linux/proc/cpuinfo ] && stop_cmd=metricbeat_stop
+
+metricbeat_stop() {
+	pkill -9 -F ${pidfile} > /dev/null 2>&1
+	pkill -9 -F ${pidfile}.child > /dev/null 2>&1
+}
+
+run_rc_command "$1"

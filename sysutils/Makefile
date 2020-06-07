@@ -101,6 +101,7 @@
     SUBDIR += beadm
     SUBDIR += beadm-devel
     SUBDIR += beats6
+    SUBDIR += beats7
     SUBDIR += bfs
     SUBDIR += bhyve-firmware
     SUBDIR += bhyve-rc

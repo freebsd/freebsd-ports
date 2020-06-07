@@ -1,0 +1,20 @@
+Beats is the platform for building lightweight, open source data
+shippers for many types of operational data you want to enrich with
+Logstash, search and analyze in Elasticsearch, and visualize in Kibana.
+Whether you're interested in log files, infrastructure metrics, network
+packets, or any other type of data, Beats serves as the foundation for
+keeping a beat on your data.
+
+Filebeat is a lightweight, open source shipper for log file data. As the
+next-generation Logstash Forwarder, Filebeat tails logs and quickly
+sends this information to Logstash for further parsing and enrichment or
+to Elasticsearch for centralized storage and analysis.
+
+Metricbeat Collect metrics from your systems and services. From CPU to memory,
+Redis to Nginx, and much more, Metricbeat is a lightweight way to send system
+and service statistics.
+
+Packetbeat is a lightweight network packet analyzer that sends data to Logstash
+or Elasticsearch.
+
+WWW: https://www.elastic.co/products/beats/
