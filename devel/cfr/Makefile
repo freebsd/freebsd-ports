@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cfr
-DISTVERSION=	0.149
+DISTVERSION=	0.150
 CATEGORIES=	devel java
 MASTER_SITES=	http://www.benf.org/other/cfr/ \
 		https://www.benf.org/other/cfr/ \
