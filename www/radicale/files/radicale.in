@@ -29,9 +29,8 @@ load_rc_config $name
 : ${radicale_group=%%GROUPS%%}
 
 pidfile=/var/run/radicale/radicale.pid
-command=%%PREFIX%%/bin/radicale
-command_args="-d -p ${pidfile} -C ${radicale_config}"
-command_interpreter=%%PYTHON_CMD%%
+command=/usr/sbin/daemon
+command_args="-P ${pidfile} %%PREFIX%%/bin/radicale -C ${radicale_config}"
 required_files=${radicale_config}
 start_precmd=do_precmd
 
