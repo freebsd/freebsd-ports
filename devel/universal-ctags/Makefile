@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	universal-ctags
-PORTVERSION=	g20200502
+PORTVERSION=	g20200606
 CATEGORIES=	devel
 
 MAINTAINER=	dereks@lifeofadishwasher.com
@@ -17,7 +17,7 @@ GNU_CONFIGURE=	yes
 
 USE_GITHUB=	yes
 GH_PROJECT=	ctags
-GH_TAGNAME=	3671ad72
+GH_TAGNAME=	f9de6921
 
 OPTIONS_DEFINE=			DEBUG ICONV JSON LIBXML2 MANPAGES YAML
 OPTIONS_DEFAULT=		ICONV JSON LIBXML2 MANPAGES YAML
@@ -42,6 +42,7 @@ JSON_LIB_DEPENDS=		libjansson.so:devel/jansson
 
 MANPAGES_BUILD_DEPENDS=		rst2man:textproc/py-docutils
 MANPAGES_PLIST_FILES=		man/man1/uctags.1.gz \
+				man/man1/ureadtags.1.gz \
 				man/man5/utags.5.gz \
 				man/man7/uctags-client-tools.7.gz \
 				man/man7/uctags-incompatibilities.7.gz \
