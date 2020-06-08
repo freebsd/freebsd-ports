@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	retro12
-DISTVERSION=	2020.1
+DISTVERSION=	2020.4
 CATEGORIES=	lang
 MASTER_SITES=	http://forthworks.com/retro/r/ \
 		https://forthworks.com/retro/r/
