@@ -66,7 +66,7 @@ PLIST_SUB=	ARCH=${ARCH:S/amd/x86_/} PKGNAMESUFFIX=${PKGNAMESUFFIX}
 LDFLAGS+=	-fuse-ld=lld
 .endif
 
-OPTIONS_DEFINE=		${OPTIONS_MULTI} LIBUNWIND LLVM VAAPI VDPAU WAYLAND X11 ZSTD
+OPTIONS_DEFINE=		${OPTIONS_MULTI} LIBUNWIND LLVM NLS VAAPI VDPAU WAYLAND X11 ZSTD
 OPTIONS_DEFAULT=	${OPTIONS_MULTI} LIBUNWIND LLVM VAAPI VDPAU WAYLAND X11 ZSTD
 OPTIONS_MULTI=		DRI GALLIUM VULKAN
 OPTIONS_MULTI_DRI=	i965
@@ -106,6 +106,8 @@ LLVM_BINARY_ALIAS=	llvm-config=llvm-config${LLVM_DEFAULT}
 ${i}_IMPLIES+=		LLVM
 .endfor
 
+NLS_USES=		gettext-tools
+
 VAAPI_BUILD_DEPENDS=	libva>0:multimedia/libva
 VAAPI_MESON_ENABLED=	gallium-va
 
@@ -139,6 +141,10 @@ post-patch:
 	@${MV} ${WRKSRC}/src/util/00-${PORTNAME}-defaults.conf \
 		${WRKSRC}/src/util/00-${PKGBASE}-defaults.conf
 .endif
+
+pre-build-NLS-on:
+# Meson doesn't automatically generate translations
+	@${DO_MAKE_BUILD} -C ${BUILD_WRKSRC} xmlpool-gmo
 
 post-install:
 .if defined(PKGNAMESUFFIX)
