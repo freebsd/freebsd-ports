@@ -53,17 +53,6 @@ ENCRYPTSESSION_IMPLIES=		DEVEL_KIT
 ENCRYPTSESSION_GH_TUPLE=	openresty:encrypted-session-nginx-module:v0.08:encryptsession
 ENCRYPTSESSION_VARS=		DSO_EXTMODS+=encryptsession
 
-FASTDFS_GH_TUPLE=	happyfish100:fastdfs-nginx-module:8796a7d:fastdfs
-FASTDFS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-fastdfs-src-config \
-			${PATCHDIR}/extra-patch-fastdfs-src-mod_fastdfs.conf
-FASTDFS_BUILD_DEPENDS=	${LOCALBASE}/include/fastcommon/logger.h:devel/libfastcommon \
-			${LOCALBASE}/include/fastdfs/fdfs_client.h:ftp/fastdfs
-FASTDFS_LIB_DEPENDS=	libfastcommon.so:devel/libfastcommon \
-			libfdfsclient.so:ftp/fastdfs
-FASTDFS_CONFIGURE_ON=	--with-cc-opt="-I ${LOCALBASE}/include/fastdfs \
-			-I ${LOCALBASE}/include/fastcommon"
-FASTDFS_VARS=		DSO_EXTMODS+=fastdfs FASTDFS_SUBDIR=/src 
-
 FORMINPUT_IMPLIES=	DEVEL_KIT
 FORMINPUT_GH_TUPLE=	calio:form-input-nginx-module:v0.12:forminput
 FORMINPUT_VARS=		DSO_EXTMODS+=forminput
@@ -229,20 +218,6 @@ LUA_VARS=		DSO_EXTMODS+=lua
 
 MEMC_GH_TUPLE=		openresty:memc-nginx-module:v0.18:memc
 MEMC_VARS=		DSO_EXTMODS+=memc
-
-MODSECURITY_LIB_DEPENDS=	libapr-1.so:devel/apr1 \
-				libcurl.so:ftp/curl \
-				libluajit-5.1.so:lang/luajit-openresty \
-				libpcre.so:devel/pcre \
-				libyajl.so:devel/yajl
-MODSECURITY_USE=		GNOME=libxml2
-MODSECURITY_VERSION=	2.9.3
-MODSECURITY_USES=		apache:2.4+ pkgconfig shebangfix
-MODSECURITY_MASTER_SITES=	http://www.modsecurity.org/tarball/${MODSECURITY_VERSION}/:modsecurity
-MODSECURITY_DISTFILES=		modsecurity-${MODSECURITY_VERSION}.tar.gz:modsecurity
-MODSECURITY_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nginx-modsecurity-configure
-MODSECURITY_VARS=		WRKSRC_modsecurity=${WRKDIR}/modsecurity-${MODSECURITY_VERSION}
-MODSECURITY_CONFIGURE_ON=	--add-module=${WRKDIR}/modsecurity-${MODSECURITY_VERSION}/nginx/modsecurity
 
 MODSECURITY3_IMPLIES=	HTTP_ADDITION HTTP_IMAGE_FILTER HTTP_GUNZIP_FILTER HTTP_XSLT
 MODSECURITY3_LIB_DEPENDS=	libmodsecurity.so:security/modsecurity3

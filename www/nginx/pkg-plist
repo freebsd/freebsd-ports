@@ -1,9 +1,7 @@
-%%FASTDFS%%@sample etc/fdfs/mod_fastdfs.conf.sample
 @sample %%ETCDIR%%/fastcgi_params-dist %%ETCDIR%%/fastcgi_params
 %%ETCDIR%%/koi-utf
 %%ETCDIR%%/koi-win
 %%LINK%%include/ngx_link_func_module.h
-%%MODSECURITY%%%%ETCDIR%%/unicode.mapping
 %%NAXSI%%%%ETCDIR%%/naxsi_core.rules
 @sample %%ETCDIR%%/scgi_params-dist %%ETCDIR%%/scgi_params
 @sample %%ETCDIR%%/uwsgi_params-dist %%ETCDIR%%/uwsgi_params
@@ -22,7 +20,6 @@
 %%DSO%%%%DEVEL_KIT%%libexec/nginx/ndk_http_module.so
 %%DSO%%%%DRIZZLE%%libexec/nginx/ngx_http_drizzle_module.so
 %%DSO%%%%ENCRYPTSESSION%%libexec/nginx/ngx_http_encrypted_session_module.so
-%%DSO%%%%FASTDFS%%libexec/nginx/ngx_http_fastdfs_module.so
 %%DSO%%%%FORMINPUT%%libexec/nginx/ngx_http_form_input_module.so
 %%DSO%%%%GRIDFS%%libexec/nginx/ngx_http_gridfs_module.so
 %%DSO%%%%HEADERS_MORE%%libexec/nginx/ngx_http_headers_more_filter_module.so
