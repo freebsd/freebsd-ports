@@ -1,6 +1,6 @@
-TIMESTAMP = 1587975359
-SHA256 (sentriz-gonic-v0.8.8_GH0.tar.gz) = 2d160df62fc714256d86080835396a80b62a805146972c14ddb2c5d187f34043
-SIZE (sentriz-gonic-v0.8.8_GH0.tar.gz) = 1110350
+TIMESTAMP = 1591601652
+SHA256 (sentriz-gonic-v0.9.0_GH0.tar.gz) = 21e14fcd4c20ce2ae343b1c855e812a83e44dbe1b19d2a0a96d939916578ae09
+SIZE (sentriz-gonic-v0.9.0_GH0.tar.gz) = 1112784
 SHA256 (Masterminds-goutils-v1.1.0_GH0.tar.gz) = 053a61c4b0d78e6978600c99562f04d053993c428d549a20b627151cf1aabbae
 SIZE (Masterminds-goutils-v1.1.0_GH0.tar.gz) = 14610
 SHA256 (Masterminds-semver-v1.4.2_GH0.tar.gz) = 13532037b53099292eca94fffba355f2399284b5f7b5c9cb7d9d4fce760336dd
