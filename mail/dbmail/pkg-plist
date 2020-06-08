@@ -82,8 +82,9 @@ sbin/dbmail-util
 %%DATADIR%%/sqlite/upgrades/32003.sqlite
 %%DATADIR%%/sqlite/upgrades/32004.sqlite
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.md
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.aliases
 %%PORTDOCS%%%%DOCSDIR%%/README.exim
 %%PORTDOCS%%%%DOCSDIR%%/README.filters

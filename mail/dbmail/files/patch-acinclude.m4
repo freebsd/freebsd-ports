@@ -27,15 +27,6 @@
          AC_SUBST(LDAPLIB)
          AC_SUBST(LDAPINC)
          AUTHALIB="modules/.libs/libauth_ldap.a"
-@@ -291,6 +291,8 @@ AC_DEFUN([DM_CHECK_ZDB], [dnl
- 		[ZDBLIB="-lzdb"], 
- 		[ZDBLIB="failed"],
- 	[[
-+#include <stdbool.h>
-+#include <zdb.h>
- #include <URL.h>
- #include <ResultSet.h>
- #include <PreparedStatement.h>
 @@ -339,7 +341,7 @@ AC_DEFUN([DM_CHECK_EVENT], [
  
  AC_DEFUN([DM_CHECK_SSL], [
