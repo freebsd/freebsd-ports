@@ -52,8 +52,8 @@ SHEBANG_FILES=	src/vulkan/overlay-layer/${PORTNAME}-overlay-control.py
 PLATFORMS=	${PORT_OPTIONS:MX11:tl} ${PORT_OPTIONS:MWAYLAND:tl} drm surfaceless
 MESON_ARGS=	-Dgallium-omx=disabled \
 		-Dgallium-opencl=disabled \
-		-Dgallium-xa=false \
-		-Dgallium-xvmc=false \
+		-Dgallium-xa=disabled \
+		-Dgallium-xvmc=disabled \
 		-Dplatforms=${PLATFORMS:ts,} \
 		${PKGNAMESUFFIX:S/^/-Degl-lib-suffix=/} \
 		${NULL}
