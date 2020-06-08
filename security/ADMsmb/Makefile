@@ -7,7 +7,7 @@ CATEGORIES=	security
 MASTER_SITES=	PACKETSTORM/groups/ADM
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	mauro@eldritch.com.ar
+MAINTAINER=	mauroeldritch@gmail.com
 COMMENT=	Security scanner for Samba
 
 USES=		gmake
