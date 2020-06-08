@@ -3,21 +3,21 @@
 
 PORTNAME=	vrfy
 PORTVERSION=	1.0
-PORTREVISION=	1
+DISTVERSIONPREFIX=v
+PORTREVISION=	2
 CATEGORIES=	mail
-MASTER_SITES=	http://jadawin.tuxaco.net/freebsd/
-DISTNAME=	${PORTNAME}
 
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Verify mail address
 
-BROKEN=		unfetchable
+USE_GITHUB=	yes
+GH_ACCOUNT=	asxe
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" RES=""
-NO_WRKSUBDIR=	yes
-PLIST_FILES=	bin/vrfy
+PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vrfy ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
 .include <bsd.port.mk>
