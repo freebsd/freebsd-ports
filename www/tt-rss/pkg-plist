@@ -2384,7 +2384,10 @@
 %%WWWDIR%%/plugins/cache_starred_images/init.php
 %%WWWDIR%%/plugins/close_button/init.php
 %%WWWDIR%%/plugins/googlereaderkeys/init.php
+%%WWWDIR%%/plugins/hotkeys_force_top/init.js
+%%WWWDIR%%/plugins/hotkeys_force_top/init.php
 %%WWWDIR%%/plugins/hotkeys_noscroll/init.php
+%%WWWDIR%%/plugins/hotkeys_swap_jk/init.php
 %%WWWDIR%%/plugins/index.html
 %%WWWDIR%%/plugins/mail/init.php
 %%WWWDIR%%/plugins/mail/mail.js
@@ -2410,7 +2413,6 @@
 %%WWWDIR%%/plugins/shorten_expanded/init.css
 %%WWWDIR%%/plugins/shorten_expanded/init.js
 %%WWWDIR%%/plugins/shorten_expanded/init.php
-%%WWWDIR%%/plugins/swap_jk/init.php
 %%WWWDIR%%/plugins/toggle_sidebar/init.js
 %%WWWDIR%%/plugins/toggle_sidebar/init.php
 %%WWWDIR%%/plugins/vf_shared/init.php
@@ -2771,7 +2773,6 @@
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/schema
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/vf_shared
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/toggle_sidebar
-@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/swap_jk
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/shorten_expanded
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/share
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/search_sphinx
