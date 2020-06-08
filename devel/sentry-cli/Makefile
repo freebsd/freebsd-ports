@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sentry-cli
-DISTVERSION=	1.53.0
-PORTREVISION=	1
+DISTVERSION=	1.54.0
 CATEGORIES=	devel
 
 MAINTAINER=	vulcan@wired.sh
@@ -95,11 +94,11 @@ CARGO_CRATES=	adler32-1.0.4 \
 		fuchsia-cprng-0.1.1 \
 		generic-array-0.12.3 \
 		getrandom-0.1.14 \
-		gimli-0.20.0 \
+		gimli-0.21.0 \
 		git2-0.13.0 \
 		glob-0.3.0 \
 		globset-0.4.5 \
-		goblin-0.2.1 \
+		goblin-0.2.3 \
 		hashbrown-0.7.1 \
 		hermit-abi-0.1.8 \
 		hostname-0.3.1 \
@@ -231,10 +230,10 @@ CARGO_CRATES=	adler32-1.0.4 \
 		stable_deref_trait-1.1.1 \
 		string_cache-0.8.0 \
 		strsim-0.8.0 \
-		symbolic-7.2.0 \
-		symbolic-common-7.2.0 \
-		symbolic-debuginfo-7.2.0 \
-		symbolic-proguard-7.2.0 \
+		symbolic-7.3.1 \
+		symbolic-common-7.3.1 \
+		symbolic-debuginfo-7.3.1 \
+		symbolic-proguard-7.3.1 \
 		syn-0.15.44 \
 		syn-1.0.17 \
 		synstructure-0.12.3 \
