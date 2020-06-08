@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	freetds
-PORTVERSION=	1.1.176
+PORTVERSION=	1.1.186
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://www.freetds.org/files/current/ \
@@ -18,6 +18,7 @@ LICENSE=	LGPL20
 USES=		autoreconf compiler:c11 gettext-tools gmake iconv \
 		libtool:keepla pkgconfig tar:bzip2
 
+PORTSCOUT=	limit:^1\.1\.[0-9][0-9][0-9]$
 WRKSRC=		${WRKDIR}/${PORTNAME}-dev.${PORTVERSION}
 TDS_VER?=	7.4
 CPPFLAGS+=	"-I${LOCALBASE}/include"
@@ -50,7 +51,7 @@ ODBCWIDE_CONFIGURE_ON=	--enable-odbc-wide
 
 PORTDOCS=	*
 
-CONFLICTS=	freetds-0.64.[0-9]
+CONFLICTS=	freetds-1.*
 
 .include <bsd.port.options.mk>
 .if ${PORT_OPTIONS:MIODBC} || ${PORT_OPTIONS:MUNIXODBC}
@@ -79,7 +80,8 @@ post-patch:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/interfaces ${STAGEDIR}${ETCDIR}/interfaces.sample
-.if ${PORT_OPTIONS:MDOCS}
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/userguide
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/reference
 	@${FIND} ${WRKSRC}/doc/userguide \( -type f -o -type l \) \
@@ -88,7 +90,5 @@ post-install:
 		-exec ${INSTALL_DATA} {} ${STAGEDIR}${DOCSDIR}/reference ';'
 	@cd ${WRKSRC}/doc && \
 		${COPYTREE_SHARE} images ${STAGEDIR}${DOCSDIR}
-
-.endif
 
 .include <bsd.port.mk>
