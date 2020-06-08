@@ -84,9 +84,9 @@ MESA_PLATFORMS+=	drm
 MESA_PLATFORMS+=	surfaceless
 .endif
 
-# .if ${PORT_OPTIONS:MPLATFORM_WAYLAND} && !${PORT_OPTIONS:MWAYLAND}
-# .error "Platform Wayland is selected but Wayland support is disabled"
-# .endif
+.if ${PORT_OPTIONS:MPLATFORM_WAYLAND}
+MESA_PLATFORMS+=	wayland
+.endif
 
 MESON_ARGS+=	-Ddri-drivers="${DRI_DRIVERS:ts,:tl}" \
 			-Dgallium-drivers="${GALLIUM_DRIVERS:ts,:tl}" \
