@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	foliate
-PORTVERSION=	2.2.0
+PORTVERSION=	2.2.1
 CATEGORIES=	deskutils
 
 MAINTAINER=	fox@FreeBSD.org
