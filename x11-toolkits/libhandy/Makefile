@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libhandy
-PORTVERSION=	0.0.10
+PORTVERSION=	0.0.13
 CATEGORIES=	x11-toolkits gnome
 DIST_SUBDIR=	gnome
 
@@ -22,6 +22,6 @@ MESON_ARGS=	-Dtests=false
 USE_GITLAB=	yes
 GL_SITE=	https://source.puri.sm/
 GL_ACCOUNT=	Librem5
-GL_COMMIT=	2d777677352d037b6f5cc24d9c1c8d9a74ac0ded
+GL_COMMIT=	7a193d7692c9c76a1a94f17c4d30b585f77d177c
 
 .include <bsd.port.mk>

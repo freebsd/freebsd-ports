@@ -1,9 +1,11 @@
 bin/handy-0.0-demo
 include/libhandy-0.0/handy.h
 include/libhandy-0.0/hdy-action-row.h
+include/libhandy-0.0/hdy-animation.h
 include/libhandy-0.0/hdy-arrows.h
 include/libhandy-0.0/hdy-column.h
 include/libhandy-0.0/hdy-combo-row.h
+include/libhandy-0.0/hdy-deprecation-macros.h
 include/libhandy-0.0/hdy-dialer-button.h
 include/libhandy-0.0/hdy-dialer-cycle-button.h
 include/libhandy-0.0/hdy-dialer.h
@@ -14,9 +16,11 @@ include/libhandy-0.0/hdy-expander-row.h
 include/libhandy-0.0/hdy-fold.h
 include/libhandy-0.0/hdy-header-bar.h
 include/libhandy-0.0/hdy-header-group.h
+include/libhandy-0.0/hdy-keypad.h
 include/libhandy-0.0/hdy-leaflet.h
 include/libhandy-0.0/hdy-list-box.h
 include/libhandy-0.0/hdy-main.h
+include/libhandy-0.0/hdy-paginator.h
 include/libhandy-0.0/hdy-preferences-group.h
 include/libhandy-0.0/hdy-preferences-page.h
 include/libhandy-0.0/hdy-preferences-row.h
@@ -24,6 +28,8 @@ include/libhandy-0.0/hdy-preferences-window.h
 include/libhandy-0.0/hdy-search-bar.h
 include/libhandy-0.0/hdy-squeezer.h
 include/libhandy-0.0/hdy-string-utf8.h
+include/libhandy-0.0/hdy-swipe-group.h
+include/libhandy-0.0/hdy-swipeable.h
 include/libhandy-0.0/hdy-title-bar.h
 include/libhandy-0.0/hdy-value-object.h
 include/libhandy-0.0/hdy-version.h
