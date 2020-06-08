@@ -64,7 +64,7 @@ GH_TUPLE=	\
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
 		shopspring:decimal:408a2507e114:shopspring_decimal/vendor/github.com/shopspring/decimal \
 		spacemonkeygo:errors:9064522e9fd1:spacemonkeygo_errors/vendor/github.com/spacemonkeygo/errors \
-		spacemonkeygo:monkit:v3.0.6:spacemonkeygo_monkit/vendor/github.com/spacemonkeygo/monkit/v3 \
+		spacemonkeygo:monkit:072401d8c752:spacemonkeygo_monkit/vendor/github.com/spacemonkeygo/monkit/v3 \
 		spacemonkeygo:spacelog:2296661a0572:spacemonkeygo_spacelog/vendor/github.com/spacemonkeygo/spacelog \
 		spf13:afero:v1.1.2:spf13_afero/vendor/github.com/spf13/afero \
 		spf13:cast:v1.3.0:spf13_cast/vendor/github.com/spf13/cast \
@@ -72,11 +72,11 @@ GH_TUPLE=	\
 		spf13:jwalterweatherman:v1.0.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		spf13:viper:v1.4.0:spf13_viper/vendor/github.com/spf13/viper \
-		storj:common:a376f4c68993:storj_common/vendor/storj.io/common \
+		storj:common:3ff8acf78c46:storj_common/vendor/storj.io/common \
 		storj:drpc:v0.0.12:storj_drpc/vendor/storj.io/drpc \
 		storj:monkit-jaeger:d5f5530ea079:storj_monkit_jaeger/vendor/storj.io/monkit-jaeger \
 		storj:private:565a173f6d33:storj_private/vendor/storj.io/private \
-		storj:uplink:v1.0.5:storj_uplink/vendor/storj.io/uplink \
+		storj:uplink:v1.0.6:storj_uplink/vendor/storj.io/uplink \
 		stretchr:testify:v1.5.1:stretchr_testify/vendor/github.com/stretchr/testify \
 		stripe:stripe-go:v63.1.1:stripe_stripe_go/vendor/github.com/stripe/stripe-go \
 		uber-go:atomic:v1.6.0:uber_go_atomic/vendor/go.uber.org/atomic \
