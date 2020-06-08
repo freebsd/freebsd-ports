@@ -56,6 +56,7 @@ MESON_ARGS=	-Dgallium-omx=disabled \
 		-Dgallium-xvmc=disabled \
 		-Dplatforms=${PLATFORMS:ts,} \
 		${PKGNAMESUFFIX:S/^/-Degl-lib-suffix=/} \
+		${BINARY_ALIAS:D--native-file=binary_alias.ini} \
 		${NULL}
 SUB_FILES=	libmap.conf
 SUB_LIST=	PKGNAMESUFFIX=${PKGNAMESUFFIX}
@@ -130,6 +131,15 @@ X11_MESON_OFF=		-Dglx=disabled
 ZSTD_DESC=		Use ZSTD for shader cache
 ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
 ZSTD_MESON_ENABLED=	zstd
+
+post-extract:
+# Work around Meson lookup order e.g., llvm-config
+.if defined(BINARY_ALIAS)
+	@${ECHO_CMD} '[binaries]' >${WRKSRC}/binary_alias.ini
+	@for f in ${BINARY_ALIAS}; do \
+		${ECHO_CMD} "$${f%%=*} = '$${f#*=}'"; \
+	done >>${WRKSRC}/binary_alias.ini
+.endif
 
 post-patch:
 # Extract (snapshot) version from the port instead of empty string
