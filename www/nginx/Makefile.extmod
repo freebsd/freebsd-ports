@@ -123,7 +123,6 @@ HTTP_MOGILEFS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_mogilefs_module.c 
 				${PATCHDIR}/extra-patch-nginx_mogilefs_module-config
 HTTP_MOGILEFS_VARS=		DSO_EXTDIRS+=nginx_mogilefs_module-1.0.4
 
-
 HTTP_MP4_H264_MASTER_SITES=	http://h264.code-shop.com/download/:mp4streaming
 HTTP_MP4_H264_CONFIGURE_ON=		--with-cc-opt="-DLARGEFILE_SOURCE -DBUILDING_NGINX"
 HTTP_MP4_H264_DISTFILES=	nginx_mod_h264_streaming-2.2.7.tar.gz:mp4streaming
@@ -233,7 +232,7 @@ NAXSI_VARS=		DSO_EXTMODS+=naxsi NAXSI_SUBDIR=/naxsi_src
 NJS_GH_TUPLE=		nginx:njs:629027e:njs
 NJS_VARS=		DSO_EXTMODS+=njs NJS_SUBDIR=/nginx
 
-PASSENGER_NGINX_VER=	6.0.4
+PASSENGER_NGINX_VER=	6.0.5
 PASSENGER_CATEGORIES=	ruby
 PASSENGER_USE=		ruby=yes
 PASSENGER_BUILD_DEPENDS=${LOCALBASE}/bin/rake:devel/rubygem-rake
@@ -243,8 +242,7 @@ PASSENGER_DISTFILES=	passenger-${PASSENGER_NGINX_VER}.tar.gz:passenger
 PASSENGER_VARS=		WRKSRC_passenger=${WRKDIR}/passenger-${PASSENGER_NGINX_VER} \
 			DSO_EXTDIRS+=passenger-${PASSENGER_NGINX_VER}/src/nginx_module
 PASSENGER_EXTRA_PATCHES=${PATCHDIR}/extra-patch-passenger-build-nginx.rb \
-			${PATCHDIR}/extra-patch-passenger-disable-telemetry \
-			${PATCHDIR}/extra-patch-passenger-system-calls
+			${PATCHDIR}/extra-patch-passenger-disable-telemetry
 
 POSTGRES_USES=		pgsql
 POSTGRES_GH_TUPLE=	konstruxi:ngx_postgres:8aa7359:postgres
