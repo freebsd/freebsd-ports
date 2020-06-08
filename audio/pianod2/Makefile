@@ -3,6 +3,7 @@
 
 PORTNAME=	pianod2
 PORTVERSION=	329
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://deviousfish.com/Downloads/pianod2/Devel/
 
@@ -14,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_i386=	fails to build
 
+BUILD_DEPENDS=	gsed:textproc/gsed
 LIB_DEPENDS=	libao.so:audio/libao \
 	libavcodec.so:multimedia/ffmpeg \
 	libgcrypt.so:security/libgcrypt \
@@ -38,6 +40,7 @@ GNU_CONFIGURE=	yes
 SHEBANG_FILES=	contrib/piano contrib/runmix
 ksh_CMD=	${LOCALBASE}/bin/mksh
 
+BINARY_ALIAS=	sed=${LOCALBASE}/bin/gsed
 CONFIGURE_ARGS=	--with-compression \
 	--with-accesscontrol \
 	--with-engine=gstreamer \

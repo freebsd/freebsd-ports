@@ -3,7 +3,7 @@
 
 PORTNAME=	cinnamon-settings-daemon
 PORTVERSION=	2.4.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	sysutils gnome
 DIST_SUBDIR=	gnome3
 
@@ -13,7 +13,8 @@ COMMENT=	GNOME 3 settings daemon
 BUILD_DEPENDS=	cinnamon-session:x11/cinnamon-session \
 		gnome-autogen.sh:devel/gnome-common \
 		gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas \
-		docbook-xsl>=0:textproc/docbook-xsl
+		docbook-xsl>=0:textproc/docbook-xsl \
+		gsed:textproc/gsed
 LIB_DEPENDS=	libcanberra-gtk3.so:audio/libcanberra-gtk3 \
 		libpolkit-gobject-1.so:sysutils/polkit \
 		libibus-1.0.so:textproc/ibus \
@@ -33,6 +34,7 @@ USE_GNOME=	gnomeprefix intlhack libgnomekbd \
 USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV+=	ac_cv_path_SED=${LOCALBASE}/bin/gsed
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-gudev \

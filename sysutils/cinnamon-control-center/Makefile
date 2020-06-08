@@ -3,7 +3,7 @@
 
 PORTNAME=	cinnamon-control-center
 PORTVERSION=	2.4.2
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	https://raw.githubusercontent.com/${GH_ACCOUNT}/${GH_PROJECT}/9363a4a1e121344ae98f22b55fb28623cf0f6038/panels/datetime/data/:tzpng
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -15,7 +15,8 @@ COMMENT=	Control center for Cinnamon
 
 BUILD_DEPENDS=	ca_root_nss>=0:security/ca_root_nss \
 		cinnamon-settings-daemon>=0:sysutils/cinnamon-settings-daemon \
-		gnome-autogen.sh:devel/gnome-common
+		gnome-autogen.sh:devel/gnome-common \
+		gsed:textproc/gsed
 LIB_DEPENDS=	libstartup-notification-1.so:x11/startup-notification \
 		libupower-glib.so:sysutils/upower \
 		libcheese.so:multimedia/cheese \
@@ -49,6 +50,7 @@ INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-compile-warnings=no
+CONFIGURE_ENV+=ac_cv_path_SED=${LOCALBASE}/bin/gsed
 CFLAGS+=	-I${LOCALBASE}/include
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

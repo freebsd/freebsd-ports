@@ -3,7 +3,7 @@
 
 PORTNAME=	rpm
 PORTVERSION=	4.15.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers
 MASTER_SITES=	http://ftp.rpm.org/releases/rpm-4.15.x/
 PKGNAMESUFFIX=	4
@@ -14,6 +14,7 @@ COMMENT=	Red Hat Package Manager
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	gsed:textproc/gsed
 LIB_DEPENDS=	libpopt.so:devel/popt \
 		libnss3.so:security/nss \
 		libzstd.so:archivers/zstd
@@ -25,6 +26,7 @@ USES=		alias bdb compiler:openmp gmake iconv libarchive libtool \
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+BINARY_ALIAS=	sed=${LOCALBASE}/bin/gsed
 SHEBANG_FILES=	scripts/brp-python-bytecompile scripts/check-prereqs \
 		scripts/check-rpaths-worker scripts/pythondeps.sh \
 		scripts/pkgconfigdeps.sh scripts/fontconfig.prov \

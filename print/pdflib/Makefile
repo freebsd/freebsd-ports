@@ -3,13 +3,15 @@
 
 PORTNAME=	pdflib
 PORTVERSION=	7.0.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	print perl5 java
 MASTER_SITES=	LOCAL/ale
 DISTNAME=	PDFlib-Lite-${PORTVERSION}p3
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	C library for dynamically generating PDF
+
+BUILD_DEPENDS=	gsed:textproc/gsed
 
 RESTRICTED=	Many odd restrictions on usage and distribution
 
@@ -20,6 +22,7 @@ JAVA_DESC=	Build Java bindings
 USES=		gmake libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+BINARY_ALIAS=	sed=${LOCALBASE}/bin/gsed
 CONFIGURE_ARGS=	--with-py=no --with-ruby=no --with-tcl=no
 
 PORTDOCS=	*

@@ -13,8 +13,8 @@
  	aix*|AIX*)   PERLLINK="-L$PERLINCLUDE -lperl $PERLLINK";;
  	osf1*|OSF1*) PERLLINK="-L$PERLINCLUDE -lperl $PERLLINK";;
  	darwin|Darwin*) PERLLINK="-L$PERLINCLUDE -lperl $PERLLINK";;
-+	dragonfly|DragonFly*) PERLLINK=`perl -V:lddlflags|sed -e "s|.*=\'\(.*\)\';|\1|"`;;
-+	freebsd|FreeBSD*) PERLLINK=`perl -V:lddlflags|sed -e "s|.*=\'\(.*\)\';|\1|"`;;
++	dragonfly|DragonFly*) PERLLINK=`perl -V:lddlflags|sed -e "s|.*='\(.*\)';|\1|"`;;
++	freebsd|FreeBSD*) PERLLINK=`perl -V:lddlflags|sed -e "s|.*='\(.*\)';|\1|"`;;
  	*) ;;
      esac
  

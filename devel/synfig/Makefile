@@ -4,7 +4,7 @@
 PORTNAME=	synfig
 PORTVERSION=	1.2.2
 DISTVERSIONPREFIX=v
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel graphics multimedia
 
 MAINTAINER=	woodsb02@FreeBSD.org
@@ -39,6 +39,8 @@ USE_GNOME=	cairo glibmm intltool libxml++26 pango
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG}
 CONFIGURE_ENV+=	ac_cv_path_SED=${LOCALBASE}/bin/gsed
+# Other spurious uses of direct sed have popped up
+BINARY_ALIAS=	sed=${LOCALBASE}/bin/gsed
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 WRKSRC_SUBDIR=	synfig-core

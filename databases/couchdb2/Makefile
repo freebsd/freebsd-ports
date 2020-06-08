@@ -3,7 +3,7 @@
 
 PORTNAME=	couchdb2
 DISTVERSION=	2.3.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	databases
 MASTER_SITES=	APACHE/couchdb/source/${DISTVERSION}
 DISTNAME=	apache-couchdb-${DISTVERSION}
@@ -60,8 +60,8 @@ post-patch:
 	    -e 's,%%LOCALBASE%%,${LOCALBASE},g' \
 	    -e 's,%%PORTNAME%%,${PORTNAME},g' \
 	    -e 's,%%WWWDIR%%,${WWWDIR},g' \
-	    -e 's,\$COUCHDB_USER,${USERS},g' \
-	    -e 's,\$LOG_FILE,${LOGFILE},g' \
+	    -e 's,$$COUCHDB_USER,${USERS},g' \
+	    -e 's,$$LOG_FILE,${LOGFILE},g' \
 	    ${WRKSRC}/configure
 
 pre-install:

@@ -2,6 +2,7 @@
 
 PORTNAME=	amavisd-new
 PORTVERSION=	2.12.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	https://gitlab.com/amavis/amavis/-/archive/v${PORTVERSION}/
@@ -211,8 +212,8 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/tnef:converters/tnef
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|$daemon_user  = \'vscan\';|$daemon_user  = \'${AMAVISUSER}\';|" \
-			-e "s|$daemon_group = \'vscan\';|$daemon_group = \'${AMAVISGROUP}\';|" \
+	@${REINPLACE_CMD} -e "s|$$daemon_user  = 'vscan';|$$daemon_user  = '${AMAVISUSER}';|" \
+			-e "s|$$daemon_group = 'vscan';|$$daemon_group = '${AMAVISGROUP}';|" \
 			-e "s|/var/amavis|${AMAVISDIR}|" \
 			-e "s|/var/lib/amavis|${AMAVISDIR}|" \
 			-e "s|/var/virusmails|${AMAVISQUARANTINE}|" \

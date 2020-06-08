@@ -4,6 +4,7 @@
 PORTNAME=	zziplib
 DISTVERSIONPREFIX=	v
 PORTVERSION=	0.13.71
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -14,7 +15,8 @@ LICENSE_COMB=	dual
 LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LIB
 LICENSE_FILE_MPL11=	${WRKSRC}/docs/COPYING.MPL
 
-BUILD_DEPENDS=	zip:archivers/zip
+BUILD_DEPENDS=	gsed:textproc/gsed \
+		zip:archivers/zip
 
 USES=		libtool pathfix pkgconfig
 

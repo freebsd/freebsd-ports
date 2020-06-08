@@ -4,12 +4,15 @@
 PORTNAME=	etl
 PORTVERSION=	1.2.2
 DISTVERSIONPREFIX=v
+PORTREVISION=	1
 CATEGORIES=	devel lang
 
 MAINTAINER=	woodsb02@FreeBSD.org
 COMMENT=	Voria Extended Class and Template Library
 
 LICENSE=	GPLv2+
+
+BUILD_DEPENDS=	gsed:textproc/gsed
 
 NO_ARCH=	yes
 PORTSCOUT=	limitw:1,even
@@ -22,6 +25,8 @@ GH_PROJECT=	synfig
 WRKSRC_SUBDIR=	ETL
 
 OPTIONS_DEFINE=	DOCS
+
+BINARY_ALIAS=	sed=${LOCALBASE}/bin/gsed
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

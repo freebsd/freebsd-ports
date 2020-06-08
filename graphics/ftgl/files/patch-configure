@@ -1,0 +1,11 @@
+--- configure.orig	2019-09-25 00:59:19 UTC
++++ configure
+@@ -23739,7 +23739,7 @@ GLUT_X_LIBS=
+ { echo "$as_me:$LINENO: checking for a TrueType font on the system" >&5
+ echo $ECHO_N "checking for a TrueType font on the system... $ECHO_C" >&6; }
+ 
+-FONT_FILE="`fc-match -sv serif 2>/dev/null| sed -ne 's/.*\file:[^"]*"\([^"]*\)".*/\1/p' | sed q`"
++FONT_FILE="`fc-match -sv serif 2>/dev/null| sed -ne 's/.*file:[^"]*"\([^"]*\)".*/\1/p' | sed q`"
+ 
+ if test "$FONT_FILE" = ""; then
+     for font in \

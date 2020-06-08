@@ -3,7 +3,7 @@
 
 PORTNAME=	knot
 DISTVERSION=	2.9.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns
 MASTER_SITES=	https://secure.nic.cz/files/knot-dns/ \
 		https://dns.company/downloads/knot-dns/
@@ -17,7 +17,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS=	knot-1.* knot1-[0-6].*
 
-BUILD_DEPENDS=	autoconf>=2.65:devel/autoconf
+BUILD_DEPENDS=	autoconf>=2.65:devel/autoconf \
+		gsed:textproc/gsed
 
 LIB_DEPENDS=	libgnutls.so:security/gnutls \
 		liblmdb.so:databases/lmdb
@@ -25,6 +26,7 @@ LIB_DEPENDS=	libgnutls.so:security/gnutls \
 USES=		alias libtool localbase pkgconfig tar:xz
 
 HAS_CONFIGURE=	yes
+BINARY_ALIAS=	sed=${LOCALBASE}/bin/gsed
 CONFIGURE_ARGS=	--enable-recvmmsg=no \
 		--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig \
 		--mandir=${MANPREFIX}/man

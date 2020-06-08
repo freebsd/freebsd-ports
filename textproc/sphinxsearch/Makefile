@@ -7,7 +7,7 @@
 
 PORTNAME=	sphinxsearch
 PORTVERSION=	2.2.11
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc databases
 MASTER_SITES=	http://sphinxsearch.com/files/ \
 		http://snowball.tartarus.org/dist/:libstemmer
@@ -21,10 +21,13 @@ LICENSE=	GPLv2
 
 USES=		compiler:c++11-lang
 
+BUILD_DEPENDS=	gsed:textproc/gsed
 # If expat is present on the system and configure finds it, it will
 # unconditionally link the output binary against it.  There's no way
 # of turning this off.  So for consistency, make sure it's always on.
 LIB_DEPENDS=	libexpat.so:textproc/expat2
+
+BINARY_ALIAS=	sed=${LOCALBASE}/bin/gsed
 
 OPTIONS_DEFINE=	ICONV ID64 LIBSTEMMER MYSQL OPTIMIZED_CFLAGS PGSQL \
 		RE2 SYSLOG UNIXODBC DOCS EXAMPLES

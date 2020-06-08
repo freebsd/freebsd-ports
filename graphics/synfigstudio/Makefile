@@ -4,7 +4,7 @@
 PORTNAME=	synfigstudio
 PORTVERSION=	1.2.2
 DISTVERSIONPREFIX=v
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics multimedia
 
 MAINTAINER=	woodsb02@FreeBSD.org
@@ -12,7 +12,8 @@ COMMENT=	Vector-based 2D animation software package
 
 LICENSE=	GPLv2+
 
-BUILD_DEPENDS=	etl>=1.2.2:devel/etl
+BUILD_DEPENDS=	etl>=1.2.2:devel/etl \
+		gsed:textproc/gsed
 LIB_DEPENDS=	libHalf.so:graphics/ilmbase \
 		libIlmImf.so:graphics/openexr \
 		libMagick++-6.so:graphics/ImageMagick6 \
@@ -35,6 +36,7 @@ WRKSRC_SUBDIR=	synfig-studio
 USE_CXXSTD=	c++11
 USE_GNOME=	gtkmm30 intltool
 GNU_CONFIGURE=	yes
+BINARY_ALIAS=	sed=${LOCALBASE}/bin/gsed
 CONFIGURE_ARGS=	--disable-update-mimedb
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes

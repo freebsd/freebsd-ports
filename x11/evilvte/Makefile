@@ -3,14 +3,17 @@
 
 PORTNAME=	evilvte
 DISTVERSION=	0.5.2~pre1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://www.calno.com/${PORTNAME}/
 
 MAINTAINER=	aragon@phat.za.net
 COMMENT=	VTE based, super lightweight terminal emulator
 
+BUILD_DEPENDS=	gsed:textproc/gsed
+
 USES=		gmake gnome pkgconfig tar:xz
+BINARY_ALIAS=	sed=${LOCALBASE}/bin/gsed
 HAS_CONFIGURE=	yes
 ALL_TARGET=	evilvte
 INSTALLS_ICONS=	yes
