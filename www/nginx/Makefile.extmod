@@ -125,9 +125,11 @@ HTTP_MOGILEFS_VARS=		DSO_EXTDIRS+=nginx_mogilefs_module-1.0.4
 
 
 HTTP_MP4_H264_MASTER_SITES=	http://h264.code-shop.com/download/:mp4streaming
+HTTP_MP4_H264_CONFIGURE_ON=		--with-cc-opt="-DLARGEFILE_SOURCE -DBUILDING_NGINX"
 HTTP_MP4_H264_DISTFILES=	nginx_mod_h264_streaming-2.2.7.tar.gz:mp4streaming
-HTTP_MP4_H264_CONFIGURE_ON=	--add-module=${WRKDIR}/nginx_mod_h264_streaming-2.2.7
-HTTP_MP4_H264_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_streaming_module.c
+HTTP_MP4_H264_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_streaming_module.c \
+			${PATCHDIR}/extra-patch-nginx_mod_h264_streaming-config
+HTTP_MP4_H264_VARS=		DSO_EXTDIRS+=nginx_mod_h264_streaming-2.2.7
 
 HTTP_NOTICE_GH_TUPLE=		kr:nginx-notice:3c95966:notice
 HTTP_NOTICE_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_notice_module.c \
