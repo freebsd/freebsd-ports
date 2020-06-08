@@ -222,6 +222,7 @@ libexec/inspircd/modules/m_xline_db.so
 %%PGSQL%%libexec/inspircd/modules/m_pgsql.so
 %%POSIX%%libexec/inspircd/modules/m_regex_posix.so
 %%SQLITE%%libexec/inspircd/modules/m_sqlite3.so
+%%SSLREHASH%%libexec/inspircd/modules/m_sslrehashsignal.so
 man/man1/inspircd-genssl.1.gz
 man/man1/inspircd.1.gz
 @dir(%%INSPIRCD_USER%%,%%INSPIRCD_GROUP%%,750) %%INSPIRCD_DBDIR%%
