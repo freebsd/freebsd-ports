@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	lowdown
-PORTVERSION=	0.6.5
+PORTVERSION=	0.7.0
 CATEGORIES=	textproc
 MASTER_SITES=	https://kristaps.bsd.lv/lowdown/snapshots/
 
