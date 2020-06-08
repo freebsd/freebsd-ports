@@ -2,7 +2,7 @@
 
 PORTNAME=	v2ray
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.23.2
+DISTVERSION=	4.23.4
 CATEGORIES=	net
 
 MAINTAINER=	shen.elf@gmail.com
@@ -17,12 +17,12 @@ USE_RC_SUBR=	v2ray
 
 GH_ACCOUNT=	v2ray
 GH_PROJECT=	v2ray-core
-GH_TUPLE=	golang:crypto:c2843e01d9a2:golang_crypto/vendor/golang.org/x/crypto \
+GH_TUPLE=	golang:crypto:8986dd9e96cf:golang_crypto/vendor/golang.org/x/crypto \
 		golang:mock:v1.2.0:golang_mock/vendor/github.com/golang/mock \
-		golang:net:d8887717615a:golang_net/vendor/golang.org/x/net \
+		golang:net:eb5bcb51f2a3:golang_net/vendor/golang.org/x/net \
 		golang:protobuf:v1.3.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sync:112230192c58:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:d0b11bdaac8a:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:97732733099d:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.0:golang_text/vendor/golang.org/x/text \
 		google:go-cmp:v0.2.0:google_go_cmp/vendor/github.com/google/go-cmp \
 		google:go-genproto:11092d34479b:google_go_genproto/vendor/google.golang.org/genproto \
