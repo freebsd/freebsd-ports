@@ -6,6 +6,11 @@ DISTVERSION=	0.3.2
 PORTREVISION?=	0
 CATEGORIES=	multimedia
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	9c4c1111deb8.patch:-p1 # https://github.com/xiph/rav1e/pull/2361
+PATCHFILES+=	faaee6685f7c.patch:-p1 # https://github.com/xiph/rav1e/pull/2361
+PATCHFILES+=	dfc0e67eb1e4.patch:-p1 # https://github.com/xiph/rav1e/pull/2361
+
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Fast and safe AV1 encoder
 
