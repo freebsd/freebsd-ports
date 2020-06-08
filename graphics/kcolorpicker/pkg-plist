@@ -5,4 +5,4 @@ lib/cmake/kColorPicker/kColorPicker-targets.cmake
 lib/cmake/kColorPicker/kColorPickerConfig-version.cmake
 lib/cmake/kColorPicker/kColorPickerConfig.cmake
 lib/libkColorPicker.so
-lib/libkColorPicker.so.0.1.2
+lib/libkColorPicker.so.0.1.3
