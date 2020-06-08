@@ -10,20 +10,18 @@ Exclude the "tools" from building and installing.
  SUBDIRS += pkcs11
 --- bin/tools/Makefile.am.orig	2020-06-01 11:40:58 UTC
 +++ bin/tools/Makefile.am
-@@ -8,14 +8,9 @@ LDADD =				\
+@@ -8,13 +8,8 @@
  	$(LIBISC_LIBS)		\
  	$(LIBDNS_LIBS)
  
 -bin_PROGRAMS =			\
 -	arpaname		\
--	named-rrchecker		\
--	mdig
-+bin_PROGRAMS =
- 
--sbin_PROGRAMS =			\
+-	mdig			\
 -	named-journalprint	\
+-	named-rrchecker		\
 -	nsec3hash
-+sbin_PROGRAMS =
++bin_PROGRAMS =
  
  arpaname_LDADD =		\
  	$(LIBISC_LIBS)
+ 
