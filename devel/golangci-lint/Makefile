@@ -3,6 +3,7 @@
 PORTNAME=	golangci-lint
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.27.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	vulcan@wired.sh
@@ -125,24 +126,24 @@ PORTEXAMPLES=	.golangci.example.yml
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-build:
-.for shell in bash zsh
-	${WRKDIR}/bin/${PORTNAME} completion ${shell} > ${WRKSRC}/${shell}
+.for SHELL in bash zsh
+	${SETENV} ${MAKE_ENV} ${GO_ENV} ${GO_WRKDIR_BIN}/${PORTNAME} completion ${SHELL} > ${GO_WRKSRC}/${SHELL}
 .endfor
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
-	${INSTALL_DATA} ${WRKSRC}/bash \
+	${INSTALL_DATA} ${GO_WRKSRC}/bash \
 		${STAGEDIR}${PREFIX}/etc/bash_completion.d/${PORTNAME}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site_functions
-	${INSTALL_DATA} ${WRKSRC}/zsh \
+	${INSTALL_DATA} ${GO_WRKSRC}/zsh \
 		${STAGEDIR}${PREFIX}/share/zsh/site_functions/_${PORTNAME}
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${GO_WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${GO_WRKSRC}/${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
