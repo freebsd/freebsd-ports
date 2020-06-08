@@ -4,13 +4,11 @@
 PORTNAME=	openconnect-gui
 PORTVERSION=	1.4.1
 DISTVERSIONPREFIX=v
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security net-vpn
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Graphical OpenConnect client
-
-BROKEN=		unfetchable
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
