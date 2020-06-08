@@ -1,16 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	Test-WWW-Mechanize-PSGI
-PORTVERSION=	0.35
-PORTREVISION=	1
+PORTVERSION=	0.39
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension to test PSGI programs using WWW::Mechanize
-
-BROKEN=		unfetchable
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	\
