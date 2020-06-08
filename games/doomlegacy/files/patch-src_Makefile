@@ -15,9 +15,9 @@
 @@ -598,7 +600,7 @@ ifeq ($(SMIF), SDL)
        # default is Linux, for all unix SDL
        EXENAME:=doomlegacy
-       LDFLAGS=-L/usr/X11R6/lib
--      LIBS:=-lGL -lGLU -lm
-+      LIBS:=-lGL -lGLU -lm -lipx
+       LDFLAGS+=-L/usr/X11R6/lib
+-      LIBS+=-lGL -lGLU -lm
++      LIBS+=-lGL -lGLU -lm -lipx
        # -L/usr/X11R6/lib is needed by Linux 2.4 and others that still have
        # the GLU libraries in an X11 directory.
        # -lm is needed for pow, powf, and other MATH1 functions.
