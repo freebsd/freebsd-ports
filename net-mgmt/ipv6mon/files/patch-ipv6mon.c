@@ -1,6 +1,6 @@
---- ipv6mon.c.orig	2012-09-20 13:02:24.000000000 +0900
-+++ ipv6mon.c	2012-09-20 13:02:26.000000000 +0900
-@@ -277,7 +277,7 @@
+--- ipv6mon.c.orig	2012-10-26 09:06:17 UTC
++++ ipv6mon.c
+@@ -277,7 +277,7 @@ int main(int argc, char **argv){
  	}
  
  	if(!configfile_f){
@@ -9,7 +9,7 @@
  	}
  
  	if(process_config_file(configfile) == -1)
-@@ -888,7 +888,8 @@
+@@ -888,7 +888,8 @@ void print_help(void){
  	usage();
      
  	puts("\nOPTIONS:\n"
