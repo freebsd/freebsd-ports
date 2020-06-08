@@ -4,13 +4,10 @@
 PORTNAME=	hexcurse
 PORTVERSION=	1.55
 CATEGORIES=	editors
-MASTER_SITES=	DEBIAN
-DISTFILES=	${PORTNAME}_${PORTVERSION}.orig
+MASTER_SITES=	https://BSDforge.com/projects/source/editors/hexcurse/
 
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Versatile ncurses-based hex editor
-
-BROKEN=		unfetchable
 
 USES=		ncurses
 
