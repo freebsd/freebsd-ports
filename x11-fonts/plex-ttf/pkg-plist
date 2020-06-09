@@ -70,6 +70,14 @@
 %%FONTSDIR%%/IBMPlexSansHebrew-SemiBold.ttf
 %%FONTSDIR%%/IBMPlexSansHebrew-Text.ttf
 %%FONTSDIR%%/IBMPlexSansHebrew-Thin.ttf
+%%FONTSDIR%%/IBMPlexSansKR-Bold.ttf
+%%FONTSDIR%%/IBMPlexSansKR-ExtraLight.ttf
+%%FONTSDIR%%/IBMPlexSansKR-Light.ttf
+%%FONTSDIR%%/IBMPlexSansKR-Medium.ttf
+%%FONTSDIR%%/IBMPlexSansKR-Regular.ttf
+%%FONTSDIR%%/IBMPlexSansKR-SemiBold.ttf
+%%FONTSDIR%%/IBMPlexSansKR-Text.ttf
+%%FONTSDIR%%/IBMPlexSansKR-Thin.ttf
 %%FONTSDIR%%/IBMPlexSansThai-Bold.ttf
 %%FONTSDIR%%/IBMPlexSansThai-ExtraLight.ttf
 %%FONTSDIR%%/IBMPlexSansThai-Light.ttf
@@ -86,6 +94,8 @@
 %%FONTSDIR%%/IBMPlexSansThaiLooped-SemiBold.ttf
 %%FONTSDIR%%/IBMPlexSansThaiLooped-Text.ttf
 %%FONTSDIR%%/IBMPlexSansThaiLooped-Thin.ttf
+%%FONTSDIR%%/IBMPlexSansVar-Italic.ttf
+%%FONTSDIR%%/IBMPlexSansVar-Roman.ttf
 %%FONTSDIR%%/IBMPlexSerif-Bold.ttf
 %%FONTSDIR%%/IBMPlexSerif-BoldItalic.ttf
 %%FONTSDIR%%/IBMPlexSerif-ExtraLight.ttf
