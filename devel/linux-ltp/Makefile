@@ -8,9 +8,7 @@ PORTNAME=	ltp
 PORTVERSION=	20200605
 DISTVERSIONSUFFIX=	.b54247721-368.1
 CATEGORIES=	devel
-MASTER_SITES=	https://download.opensuse.org/repositories/benchmark:/ltp:/devel/%SUBDIR%/:DEFAULT,amd64,SOURCE
-MASTER_SITE_SUBDIR=	SLE_15/x86_64/:DEFAULT,amd64 \
-			SLE_15/src/:SOURCE
+MASTER_SITES=	LOCAL/trasz:DEFAULT,amd64,SOURCE
 
 MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	Linux Test Project (SUSE Linux Enterprise 15)
