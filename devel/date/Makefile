@@ -2,9 +2,7 @@
 
 PORTNAME=	date
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.4.1-80
-DISTVERSIONSUFFIX=	-ged0368f
-PORTREVISION=	3
+DISTVERSION=	3.0.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,6 +22,11 @@ USE_LDCONFIG=	yes
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	ENABLE_DATE_TESTING
+
+PLIST_FILES=	include/date/date.h \
+		lib/cmake/date/dateConfig.cmake \
+		lib/cmake/date/dateConfigVersion.cmake \
+		lib/cmake/date/dateTargets.cmake
 
 do-test:
 	@cd ${WRKSRC} && ${REINPLACE_CMD} 's|!/bin/bash|!${LOCALBASE}/bin/bash|' compile_fail.sh test_fail.sh
