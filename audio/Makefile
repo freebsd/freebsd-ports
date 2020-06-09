@@ -115,6 +115,7 @@
     SUBDIR += deadbeef-waveform-seekbar-plugin
     SUBDIR += dekagen
     SUBDIR += denemo
+    SUBDIR += din
     SUBDIR += discid
     SUBDIR += dpf-plugins-lv2
     SUBDIR += drumgizmo

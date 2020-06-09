@@ -42,7 +42,6 @@
     SUBDIR += cx88
     SUBDIR += dav1d
     SUBDIR += deforaos-player
-    SUBDIR += din
     SUBDIR += dirac
     SUBDIR += dragon
     SUBDIR += dtv-scan-tables

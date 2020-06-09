@@ -2,7 +2,7 @@
 
 PORTNAME=	din
 PORTVERSION=	47.1
-CATEGORIES=	multimedia
+CATEGORIES=	audio
 MASTER_SITES=	https://archive.org/download/dinisnoise_source_code/
 
 MAINTAINER=	fox@FreeBSD.org
