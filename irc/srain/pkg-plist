@@ -1,0 +1,13 @@
+bin/srain
+%%ETCDIR%%/builtin.cfg
+share/applications/im.srain.Srain.desktop
+share/icons/hicolor/128x128/apps/im.srain.Srain.png
+share/locale/nl/LC_MESSAGES/srain.mo
+share/locale/ru/LC_MESSAGES/srain.mo
+share/locale/zh_CN/LC_MESSAGES/srain.mo
+share/metainfo/im.srain.Srain.metainfo.xml
+%%DATADIR%%/themes/bubble.css
+%%DATADIR%%/themes/default-bubble-dark.css
+%%DATADIR%%/themes/default-bubble.css
+%%DATADIR%%/themes/default-min.css
+%%DATADIR%%/themes/reset.css

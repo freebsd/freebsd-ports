@@ -1,0 +1,11 @@
+--- src/Makefile.orig	2020-06-03 20:39:44 UTC
++++ src/Makefile
+@@ -29,7 +29,7 @@ LIBSSLLIBS = $(shell pkg-config --libs openssl)
+ LIBSECRETFLAGS =$(shell pkg-config --cflags libsecret-1)
+ LIBSECRETLIBS =$(shell pkg-config --libs libsecret-1)
+ 
+-CFLAGS += -std=gnu99 -O2 -Wall -Iinc -Wno-deprecated-declarations \
++CFLAGS += -std=gnu11 -Wall -Iinc -Wno-deprecated-declarations \
+ 		  $(DEFS) \
+ 		  $(DBGFLAGS) \
+ 		  $(GTK3FLAGS) \
