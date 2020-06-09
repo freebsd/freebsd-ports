@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xreader
-PORTVERSION=	2.6.0
+PORTVERSION=	2.6.2
 CATEGORIES=	print
 
 MAINTAINER=	danfe@FreeBSD.org
