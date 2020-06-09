@@ -3,12 +3,12 @@
 
 PORTNAME=	libxatracker
 PORTVERSION=	${MESAVERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 
 COMMENT=	Mesa XA state tracker
 
-USES=		xorg meson
+USES=		xorg
 USE_XORG=	xorgproto
 
 .include <bsd.port.options.mk>
