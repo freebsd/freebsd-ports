@@ -6,6 +6,8 @@ MODEL=		beaglebone
 BOARD_CONFIG=	am335x_evm_defconfig
 FAMILY=		omap
 
+U_BOOT_SLAVE_PORTREVISION_2020.04=	1
+
 CONFIG_FRAGMENT=	${.CURDIR}/files/bbb_fragment
 FRAGMENT_NAME=		bbb_fragment
 
