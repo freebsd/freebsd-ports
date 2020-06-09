@@ -2,8 +2,9 @@
 
 PORTNAME=	ngraph
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.29.0-rc.0-270
-DISTVERSIONSUFFIX=	-g92bd148c0
+DISTVERSION=	0.29.0-rc.0-345
+DISTVERSIONSUFFIX=	-g58b649aa6
+PORTREVISION=	1
 CATEGORIES=	misc # machine-learning
 PKGNAMESUFFIX=	-machine-learning-library
 
@@ -35,6 +36,11 @@ RUN_DEPENDS+=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT}
 CPP=		clang-cpp${LLVM_DEFAULT}
 CC=		clang${LLVM_DEFAULT}
 CXX=		clang++${LLVM_DEFAULT}
+
+OPTIONS_DEFINE=		NATIVE
+
+NATIVE_DESC=		Build with native optimizations (-march=native)
+NATIVE_CMAKE_BOOL=	NGRAPH_NATIVE_ARCH_ENABLE
 
 post-install:
 	@cd ${STAGEDIR}${PREFIX} && \
