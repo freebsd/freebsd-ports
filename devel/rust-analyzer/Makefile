@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rust-analyzer
-DISTVERSION=	2020-06-01
+DISTVERSION=	2020-06-08
 CATEGORIES=	devel
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -29,6 +29,10 @@ CARGO_CRATES=	addr2line-0.12.1 \
 		cargo_metadata-0.10.0 \
 		cc-1.0.54 \
 		cfg-if-0.1.10 \
+		chalk-derive-0.11.0 \
+		chalk-engine-0.11.0 \
+		chalk-ir-0.11.0 \
+		chalk-solve-0.11.0 \
 		clicolors-control-1.0.1 \
 		cloudabi-0.0.3 \
 		console-0.10.3 \
@@ -62,8 +66,8 @@ CARGO_CRATES=	addr2line-0.12.1 \
 		hermit-abi-0.1.13 \
 		home-0.5.3 \
 		idna-0.2.0 \
-		indexmap-1.3.2 \
-		inotify-0.7.0 \
+		indexmap-1.4.0 \
+		inotify-0.7.1 \
 		inotify-sys-0.1.3 \
 		insta-0.16.0 \
 		iovec-0.1.4 \
@@ -98,16 +102,16 @@ CARGO_CRATES=	addr2line-0.12.1 \
 		once_cell-1.4.0 \
 		parking_lot-0.10.2 \
 		parking_lot_core-0.7.2 \
-		paste-0.1.15 \
-		paste-impl-0.1.15 \
+		paste-0.1.16 \
+		paste-impl-0.1.16 \
 		percent-encoding-2.1.0 \
 		petgraph-0.5.1 \
 		pico-args-0.3.1 \
 		plain-0.2.3 \
 		ppv-lite86-0.2.8 \
 		proc-macro-hack-0.5.16 \
-		proc-macro2-1.0.17 \
-		quote-1.0.6 \
+		proc-macro2-1.0.18 \
+		quote-1.0.7 \
 		ra_vfs-0.6.1 \
 		rand-0.7.3 \
 		rand_chacha-0.2.2 \
@@ -125,7 +129,7 @@ CARGO_CRATES=	addr2line-0.12.1 \
 		rustc-ap-rustc_lexer-661.0.0 \
 		rustc-demangle-0.1.16 \
 		rustc-hash-1.1.0 \
-		ryu-1.0.4 \
+		ryu-1.0.5 \
 		salsa-0.14.1 \
 		salsa-macros-0.14.1 \
 		same-file-1.0.6 \
@@ -144,7 +148,7 @@ CARGO_CRATES=	addr2line-0.12.1 \
 		smallvec-1.4.0 \
 		smol_str-0.1.15 \
 		superslice-1.0.0 \
-		syn-1.0.29 \
+		syn-1.0.30 \
 		synstructure-0.12.3 \
 		tempfile-3.1.0 \
 		terminal_size-0.1.12 \
@@ -167,7 +171,7 @@ CARGO_CRATES=	addr2line-0.12.1 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		ws2_32-sys-0.2.1 \
-		yaml-rust-0.4.3
+		yaml-rust-0.4.4
 
 CARGO_USE_GITHUB=	yes
 CARGO_GIT_SUBDIR=	chalkderive:chalk-ir:chalk-ir \
