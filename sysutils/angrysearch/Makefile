@@ -6,9 +6,11 @@ PORTVERSION=	1.0.2 # untagged, but specified in the setup.py
 CATEGORIES=	sysutils python
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	Quick search GUI tool for Unix systems
+COMMENT=	Quick search GUI tool for Unix-like systems
 
 LICENSE=	GPLv2
+
+RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	DoTheEvo
