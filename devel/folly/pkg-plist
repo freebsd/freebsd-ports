@@ -596,6 +596,7 @@ include/folly/ssl/OpenSSLLockTypes.h
 include/folly/ssl/OpenSSLPtrTypes.h
 include/folly/ssl/OpenSSLVersionFinder.h
 include/folly/ssl/SSLSession.h
+include/folly/ssl/SSLSessionManager.h
 include/folly/ssl/detail/OpenSSLSession.h
 include/folly/ssl/detail/OpenSSLThreading.h
 include/folly/stats/BucketedTimeSeries-inl.h
