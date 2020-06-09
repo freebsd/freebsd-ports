@@ -529,7 +529,7 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/plugins/JavaScriptLanguage/languageService/eslint/src/typings/js-lanuage-api.d.ts
 %%DATADIR%%/plugins/JavaScriptLanguage/languageService/eslint/tsconfig.json
 %%DATADIR%%/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar
-%%DATADIR%%/plugins/JavaScriptLanguage/lib/completion-ranking-js-0.0.3.jar
+%%DATADIR%%/plugins/JavaScriptLanguage/lib/completion-ranking-js-0.0.5.jar
 %%DATADIR%%/plugins/JavaScriptLanguage/lib/javascript-openapi.jar
 %%DATADIR%%/plugins/JavaScriptLanguage/lib/js-test-common.jar
 %%DATADIR%%/plugins/JavaScriptLanguage/lib/resources_en.jar
