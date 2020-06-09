@@ -44,3 +44,4 @@ lib/librabit_empty.so
 lib/librabit_mock.so
 lib/librabit_mock_static.a
 lib/libxgboost.so
+libdata/pkgconfig/xgboost.pc
