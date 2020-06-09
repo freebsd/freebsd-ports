@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dplyr
-DISTVERSION=	0.8.5
-PORTREVISION=	1
+DISTVERSION=	1.0.0
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -13,6 +12,7 @@ COMMENT=	Grammar of Data Manipulation
 LICENSE=	MIT
 
 BUILD_DEPENDS=	R-cran-assertthat>=0.2.0:math/R-cran-assertthat \
+		R-cran-generics>=0:devel/R-cran-generics \
 		R-cran-glue>=1.3.0:devel/R-cran-glue \
 		R-cran-magrittr>=1.5:devel/R-cran-magrittr \
 		R-cran-pkgconfig>0:devel/R-cran-pkgconfig \
