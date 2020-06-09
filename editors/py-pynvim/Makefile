@@ -1,12 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	pynvim
-DISTVERSION=	0.4.0
+DISTVERSION=	0.4.1
 CATEGORIES=	editors python
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-
-PATCH_SITES=	https://github.com/neovim/pynvim/commit/
-PATCHFILES=	f04853121de564ac03b981a984595ea33331ad3e.patch:-p1
 
 MAINTAINER=	tm@NetBSD.org
 COMMENT=	Python client and plugin host for Neovim
@@ -21,10 +19,6 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=3.4.0:devel/py-pytest@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	concurrent distutils flavors autoplist
-# XXX: Switch to CHEESESHOP once https://github.com/neovim/pynvim/issues/367
-# is resolved.
-USE_GITHUB=	yes
-GH_ACCOUNT=	neovim
 
 NO_ARCH=	yes
 SUB_FILES=	pkg-message
