@@ -16,7 +16,7 @@ LICENSE_FILE_ART10=	${WRKSRC}/Artistic
 LICENSE_FILE_GPLv1+ =	${WRKSRC}/Copying
 
 # Uncomment when the default Perl is switched to 5.32
-#DEPRECATED=	Support end three years after .0 release, please upgrade to a more recent version of Perl
+#DEPRECATED=	Support ends three years after .0 release. Please upgrade to a more recent version of Perl
 #EXPIRATION_DATE=	2022-05-22
 
 USES=	cpe tar:xz
