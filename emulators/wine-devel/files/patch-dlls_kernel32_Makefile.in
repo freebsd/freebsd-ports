@@ -1,7 +1,7 @@
 Author: David Naylor <naylor.b.david@gmail.com>
 Date:   Mon Feb 2 22:10:55 2015 +0200
 Author: Gerald Pfeifer <gerald@pfeifer.com>
-Date:   Sat Jun 22 7:47:55 UTC 2019
+Date:   Sat Jun 6, 17:32:59 UTC 2020
 
     kernel32: force 4096 byte page alignment.
     
@@ -14,13 +14,12 @@ diff --git a/dlls/kernel32/Makefile.in b/dlls/kernel32/Makefile.in
 index c09771d..a006c2c 100644
 --- dlls/kernel32/Makefile.in
 +++ dlls/kernel32/Makefile.in
-@@ -3,7 +3,8 @@ MODULE    = kernel32.dll
+@@ -3,7 +3,7 @@
  IMPORTLIB = kernel32
- IMPORTS   = winecrt0 ntdll
+ IMPORTS   = winecrt0 kernelbase ntdll
  EXTRALIBS = $(COREFOUNDATION_LIBS) $(POLL_LIBS) $(RT_LIBS)
--EXTRADLLFLAGS = -nodefaultlibs -Wb,-F,KERNEL32.dll -Wl,--image-base,0x7b400000
-+EXTRADLLFLAGS = -nodefaultlibs -Wb,-F,KERNEL32.dll -Wl,--image-base,0x7b400000 \
-+	-Wl,-z,max-page-size=0x1000
+-EXTRADLLFLAGS = -nodefaultlibs -Wb,-F,KERNEL32.dll -Wl,--image-base,0x7b600000
++EXTRADLLFLAGS = -nodefaultlibs -Wb,-F,KERNEL32.dll -Wl,--image-base,0x7b600000 -Wl,-z,max-page-size=0x1000
  
  C_SRCS = \
- 	actctx.c \
+ 	atom.c \

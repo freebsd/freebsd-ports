@@ -1,0 +1,35 @@
+From: Gerald Pfeifer <gerald@pfeifer.com>
+To: wine-devel@winehq.org
+Date: Sun, 7 Jun 2020 00:38:02 +0200 (CEST)
+Subject: [PATCH] ntdll: Replicate InterlockedCompareExchange64 to the Unix library.
+
+Between Wine 5.9 and 5.10 many ntdll functions moved to the Unix
+library. Make the implementation of InterlockedCompareExchange64 via
+RtlInterlockedCompareExchange64 available there as well for targets
+without __GCC_HAVE_SYNC_COMPARE_AND_SWAP_8.
+
+This fixes the build on FreeBSD/i386 with GCC 9.
+
+Signed-off-by: Gerald Pfeifer <gerald@pfeifer.com>
+---
+ dlls/ntdll/unix/unix_private.h | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+--- UTC
+diff --git a/dlls/ntdll/unix/unix_private.h b/dlls/ntdll/unix/unix_private.h
+index a422fd825e..a0485b411d 100644
+--- dlls/ntdll/unix/unix_private.h
++++ dlls/ntdll/unix/unix_private.h
+@@ -23,6 +23,10 @@
+ 
+ #include "unixlib.h"
+ 
++#ifndef __GCC_HAVE_SYNC_COMPARE_AND_SWAP_8
++#define InterlockedCompareExchange64(dest,xchg,cmp) RtlInterlockedCompareExchange64(dest,xchg,cmp)
++#endif
++
+ struct debug_info
+ {
+     unsigned int str_pos;       /* current position in strings buffer */
+-- 
+2.25.0
