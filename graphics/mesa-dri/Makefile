@@ -3,7 +3,7 @@
 
 PORTNAME=	mesa-dri
 PORTVERSION=	${MESAVERSION}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 
 COMMENT=	OpenGL hardware acceleration drivers for DRI2+
@@ -44,10 +44,7 @@ ALL_VULKAN_DRIVERS=	INTEL AMD
 
 .if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH:Marm*} || ${ARCH} == i386 || ${ARCH:Mmips*} || ${ARCH:Mpowerpc*}
 GALLIUM_DRIVERS=	SWRAST	# llvmpipe
-.else
-GALLIUM_DRIVERS=	""
 .endif
-VULKAN_DRIVERS=		#
 
 .if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == i386 \
  || ${ARCH} == powerpc || ${ARCH} == powerpc64
@@ -65,8 +62,7 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-src_mesa_drivers_dri_i965_intel__screen.c
 VULKAN_DRIVERS+=	INTEL
 .endif
 
-.if ${VULKAN_DRIVERS}
-BUILD_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}mako>0:textproc/py-mako@${PY_FLAVOR}
+.if defined(VULKAN_DRIVERS)
 USE_XORG+=		xcb xrandr
 .endif
 
@@ -103,7 +99,7 @@ MESON_ARGS+=	-Dgallium-xa=false \
 		-Dtools=""
 
 .for _d in ${ALL_DRI_DRIVERS}
-. if ${DRI_DRIVERS:M${_d}}
+. if defined(DRI_DRIVERS) && ${DRI_DRIVERS:M${_d}}
 PLIST_SUB+=	${_d}_DRIVER=""
 . else
 PLIST_SUB+=	${_d}_DRIVER="@comment "
@@ -111,7 +107,7 @@ PLIST_SUB+=	${_d}_DRIVER="@comment "
 .endfor
 
 .for _gd in ${ALL_GALLIUM_DRIVERS}
-. if ${GALLIUM_DRIVERS:M${_gd}}
+. if defined(GALLIUM_DRIVERS) && ${GALLIUM_DRIVERS:M${_gd}}
 PLIST_SUB+=	${_gd}_GDRIVER=""
 . else
 PLIST_SUB+=	${_gd}_GDRIVER="@comment "
@@ -120,7 +116,7 @@ PLIST_SUB+=	${_gd}_GDRIVER="@comment "
 
 PLIST_SUB += ARCH=${ARCH:S/amd/x86_/}
 .for _vd in ${ALL_VULKAN_DRIVERS}
-. if ${VULKAN_DRIVERS:M${_vd}}
+. if defined(VULKAN_DRIVERS) && ${VULKAN_DRIVERS:M${_vd}}
 PLIST_SUB+=	${_vd}_VDRIVER=""
 . else
 PLIST_SUB+=	${_vd}_VDRIVER="@comment "
