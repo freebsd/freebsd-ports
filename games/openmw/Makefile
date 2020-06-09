@@ -3,12 +3,8 @@
 
 PORTNAME=	openmw
 DISTVERSIONPREFIX=	openmw-
-DISTVERSION=	0.45.0
-PORTREVISION=	9
+DISTVERSION=	0.46.0
 CATEGORIES=	games
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	a78d98df273e266c05c73837a5961fbf6a875ccf.patch:-p1
 
 MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Unofficial open source engine reimplementation of the game Morrowind
@@ -27,9 +23,9 @@ USES=		cmake compiler:c++14-lang gl openal pkgconfig qt:5 sdl xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenMW
 USE_GL=		gl
-USE_SDL=	sdl2
 USE_QT=		core gui network opengl printsupport widgets buildtools_build \
 		qmake_build
+USE_SDL=	sdl2
 
 CMAKE_ARGS=	-DDESIRED_QT_VERSION=5 \
 		-DGLOBAL_DATA_PATH="${PREFIX}/share" \

@@ -1,5 +1,6 @@
 bin/bsatool
 bin/esmtool
+bin/niftest
 bin/openmw
 bin/openmw-cs
 bin/openmw-essimporter
@@ -7,14 +8,12 @@ bin/openmw-iniimporter
 bin/openmw-launcher
 bin/openmw-wizard
 %%ETCDIR%%/gamecontrollerdb.txt
-%%ETCDIR%%/gamecontrollerdb_204.txt
-%%ETCDIR%%/gamecontrollerdb_205.txt
 %%ETCDIR%%/openmw-cs.cfg
 %%ETCDIR%%/openmw.cfg
 %%ETCDIR%%/settings-default.cfg
 %%ETCDIR%%/version
-share/applications/openmw-cs.desktop
-share/applications/openmw.desktop
+share/applications/org.openmw.cs.desktop
+share/applications/org.openmw.launcher.desktop
 share/metainfo/openmw.appdata.xml
 %%DATADIR%%/resources/defaultfilters
 %%DATADIR%%/resources/mygui/DejaVuLGCSansMono.ttf
@@ -109,12 +108,22 @@ share/metainfo/openmw.appdata.xml
 %%DATADIR%%/resources/shaders/parallax.glsl
 %%DATADIR%%/resources/shaders/s360_fragment.glsl
 %%DATADIR%%/resources/shaders/s360_vertex.glsl
+%%DATADIR%%/resources/shaders/shadowcasting_fragment.glsl
+%%DATADIR%%/resources/shaders/shadowcasting_vertex.glsl
+%%DATADIR%%/resources/shaders/shadows_fragment.glsl
+%%DATADIR%%/resources/shaders/shadows_vertex.glsl
 %%DATADIR%%/resources/shaders/terrain_fragment.glsl
 %%DATADIR%%/resources/shaders/terrain_vertex.glsl
 %%DATADIR%%/resources/shaders/water_fragment.glsl
 %%DATADIR%%/resources/shaders/water_nm.png
 %%DATADIR%%/resources/shaders/water_vertex.glsl
 %%DATADIR%%/resources/version
+%%DATADIR%%/resources/vfs/textures/omw_menu_scroll_center_h.dds
+%%DATADIR%%/resources/vfs/textures/omw_menu_scroll_center_v.dds
+%%DATADIR%%/resources/vfs/textures/omw_menu_scroll_down.dds
+%%DATADIR%%/resources/vfs/textures/omw_menu_scroll_left.dds
+%%DATADIR%%/resources/vfs/textures/omw_menu_scroll_right.dds
+%%DATADIR%%/resources/vfs/textures/omw_menu_scroll_up.dds
 share/pixmaps/openmw-cs.png
 share/pixmaps/openmw.png
 @dir %%DATADIR%%/data
