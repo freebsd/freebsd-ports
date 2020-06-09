@@ -3,7 +3,7 @@
 
 PORTNAME?=	xorg-server
 PORTVERSION?=	1.20.8
-PORTREVISION?=	1
+PORTREVISION?=	2
 PORTEPOCH?=	1
 CATEGORIES=	x11-servers
 MASTER_SITES=	XORG/individual/xserver
@@ -66,7 +66,8 @@ USE_XORG+=	pixman xau xdmcp xfont2 xkbfile xorgproto xshmfence xtrans
 CONFIGURE_ARGS+=--without-doxygen --without-xmlto --without-fop \
 		--with-default-font-path="$$(${DEFAULT_FONTPATH_CMD})" \
 		--without-dtrace --disable-config-hal	\
-		--disable-install-setuid --disable-unit-tests
+		--disable-install-setuid --disable-unit-tests \
+		--with-fallback-input-driver=libinput
 INSTALL_TARGET=	install-strip
 CPE_VENDOR=	x.org
 
