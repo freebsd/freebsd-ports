@@ -1,0 +1,18 @@
+pygmo is a scientific Python library for massively parallel optimization. It is
+built around the idea of providing a unified interface to optimization
+algorithms and problems, and to make their deployment in massively parallel
+environments easy.
+
+Efficient implementantions of bio-inspired and evolutionary algorithms are sided
+to state-of-the-art optimization algorithms (Simplex Methods, SQP methods,
+interior points methods, ...) and can be easily mixed (also with your
+newly-invented algorithms) to build a super-algorithm exploiting algorithmic
+cooperation via the asynchronous, generalized island model.
+
+pygmo can be used to solve constrained, unconstrained, single objective,
+multiple objective, continuous and integer optimization problems, stochastic and
+deterministic problems, as well as to perform research on novel algorithms and
+paradigms, and easily compare them to state-of-the-art implementations of
+established ones.
+
+WWW: https://esa.github.io/pygmo2/
