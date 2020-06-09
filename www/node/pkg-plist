@@ -447,7 +447,6 @@ include/node/node_version.h
 include/node/v8-internal.h
 include/node/v8-platform.h
 include/node/v8-profiler.h
-include/node/v8-testing.h
 include/node/v8-util.h
 include/node/v8-value-serializer-version.h
 include/node/v8-version.h
