@@ -171,5 +171,6 @@ post-patch:
 
 pre-configure:
 	${CP} ${FILESDIR}/mntent.h ${WRKSRC}/rdtk/include
+	${CP} ${FILESDIR}/mntent_compat.c ${WRKSRC}/channels/rdpdr/client
 
 .include <bsd.port.mk>
