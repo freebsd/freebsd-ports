@@ -2,8 +2,7 @@
 
 PORTNAME=	wsdd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5
-PORTREVISION=	1
+DISTVERSION=	0.6
 CATEGORIES=	net python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,7 +10,7 @@ MAINTAINER=	hiroo.ono+freebsd@gmail.com
 COMMENT=	Web Service Discovery (WSD) host daemon for Samba
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENCE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		python:3.5+,run shebangfix
 USE_GITHUB=	yes
