@@ -1,5 +1,5 @@
-TIMESTAMP = 1588344924
+TIMESTAMP = 1591718160
 SHA256 (org/bouncycastle/bcprov-jdk15on/1.64/bcprov-jdk15on-1.64.jar) = a4f463ce552b908a722fa198ef4892a226b3225e453f8df10d5c0a5bfe5db6b6
 SIZE (org/bouncycastle/bcprov-jdk15on/1.64/bcprov-jdk15on-1.64.jar) = 4771726
-SHA256 (pdftk-java-pdftk-535a84da37c507378d7674f7f61aa8c29e200509_GL0.tar.gz) = 5b870d4ef5295d6cc3318623d418af0214f3b660a217840fb2fe889ba3559bf9
-SIZE (pdftk-java-pdftk-535a84da37c507378d7674f7f61aa8c29e200509_GL0.tar.gz) = 1363823
+SHA256 (pdftk-java-pdftk-33a5467b6d31d2a233cc71d0f7b4aff5449cfbfe_GL0.tar.gz) = f491a776b6c5c673d5133de501d63b46841ea9fef0596f01d3f4cc78d1155a59
+SIZE (pdftk-java-pdftk-33a5467b6d31d2a233cc71d0f7b4aff5449cfbfe_GL0.tar.gz) = 1364271
