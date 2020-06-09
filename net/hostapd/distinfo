@@ -1,3 +1,9 @@
-TIMESTAMP = 1566442225
+TIMESTAMP = 1591652140
 SHA256 (hostapd-2.9.tar.gz) = 881d7d6a90b2428479288d64233151448f8990ab4958e0ecaca7eeb3c9db2bd7
 SIZE (hostapd-2.9.tar.gz) = 2244312
+SHA256 (0001-WPS-UPnP-Do-not-allow-event-subscriptions-with-URLs-.patch) = 2d9a5b9d616f1b4aa4a22b967cee866e2f69b798b0b46803a7928c8559842bd7
+SIZE (0001-WPS-UPnP-Do-not-allow-event-subscriptions-with-URLs-.patch) = 5909
+SHA256 (0002-WPS-UPnP-Fix-event-message-generation-using-a-long-U.patch) = 49feb35a5276279b465f6836d6fa2c6b34d94dc979e8b840d1918865c04260de
+SIZE (0002-WPS-UPnP-Fix-event-message-generation-using-a-long-U.patch) = 2284
+SHA256 (0003-WPS-UPnP-Handle-HTTP-initiation-failures-for-events-.patch) = a8212a2d89a5bab2824d22b6047e7740553df163114fcec94832bfa9c5c5d78a
+SIZE (0003-WPS-UPnP-Handle-HTTP-initiation-failures-for-events-.patch) = 1553

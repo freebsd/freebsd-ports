@@ -1,6 +1,6 @@
---- src/wps/wps_upnp.c.orig	2015-03-15 17:30:39 UTC
-+++ src/wps/wps_upnp.c
-@@ -837,7 +837,8 @@ fail:
+--- src/wps/wps_upnp.c.orig	2020-06-08 14:40:50.402529000 -0700
++++ src/wps/wps_upnp.c	2020-06-08 15:48:08.294830000 -0700
+@@ -861,7 +861,8 @@
  }
  
  
@@ -10,7 +10,19 @@
  #include <sys/sysctl.h>
  #include <net/route.h>
  #include <net/if_dl.h>
-@@ -924,7 +925,8 @@ int get_netif_info(const char *net_if, u
+@@ -950,7 +951,11 @@
+ 				   errno, strerror(errno));
+ 			goto fail;
+ 		}
++#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
++		addr = (struct sockaddr_in *) &req.ifr_addr;
++#else
+ 		addr = (struct sockaddr_in *) &req.ifr_netmask;
++#endif
+ 		netmask->s_addr = addr->sin_addr.s_addr;
+ 	}
+ 
+@@ -962,7 +967,8 @@
  		goto fail;
  	}
  	os_memcpy(mac, req.ifr_addr.sa_data, 6);
