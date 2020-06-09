@@ -485,7 +485,6 @@ share/plasma/packages/org.kde.plasma.cuttlefish/contents/ui/IconGridDelegate.qml
 share/plasma/packages/org.kde.plasma.cuttlefish/contents/ui/Menu.qml
 share/plasma/packages/org.kde.plasma.cuttlefish/contents/ui/Preview.qml
 share/plasma/packages/org.kde.plasma.cuttlefish/contents/ui/ResponsivePreview.qml
-share/plasma/packages/org.kde.plasma.cuttlefish/contents/ui/SvgGrid.qml
 share/plasma/packages/org.kde.plasma.cuttlefish/contents/ui/Tools.qml
 share/plasma/packages/org.kde.plasma.cuttlefish/contents/ui/ToolsResponsive.qml
 share/plasma/packages/org.kde.plasma.cuttlefish/contents/ui/cuttlefish.qml

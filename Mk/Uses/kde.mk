@@ -54,7 +54,7 @@ _KDE_RELNAME=		KDE${_KDE_VERSION}
 
 # === VERSIONS OF THE DIFFERENT COMPONENTS =====================================
 # Current KDE desktop.
-KDE_PLASMA_VERSION?=		5.18.5
+KDE_PLASMA_VERSION?=		5.19.0
 KDE_PLASMA_BRANCH?=		stable
 
 # Current KDE frameworks.
@@ -194,7 +194,7 @@ _USE_FRAMEWORKS_TIER2=	auth completion crash doctools \
 _USE_FRAMEWORKS_TIER3=	activities activities-stats baloo5 bookmarks configwidgets \
 			designerplugin emoticons globalaccel guiaddons \
 			iconthemes init kcmutils kdeclarative \
-			kded kdesu kdewebkit kio newstuff notifyconfig parts \
+			kded kdesu kdewebkit kio kwayland-server newstuff notifyconfig parts \
 			people plasma-framework purpose runner service texteditor \
 			textwidgets wallet xmlgui xmlrpcclient
 
@@ -393,6 +393,12 @@ kde-kquickcharts_PATH=		${QT_QMLDIR}/org/kde/quickcharts/controls/libchartscontr
 kde-kross_PORT=			lang/kf5-kross
 kde-kross_LIB=			libKF5KrossCore.so
 
+kde-kwayland-protocols_PORT=	x11/plasma-kwayland-protocols
+kde-kwayland-protocols_LIB=	${KDE_PREFIX}/lib/cmake/PlasmaWaylandProtocols/PlasmaWaylandProtocolsConfig.cmake
+
+kde-kwayland-server_PORT=	x11/plasma5-kwayland-server
+kde-kwayland-server_LIB=	libKWaylandServer.so
+
 kde-mediaplayer_PORT=		multimedia/kf5-kmediaplayer
 kde-mediaplayer_LIB=		libKF5MediaPlayer.so.5
 
@@ -523,7 +529,7 @@ kde-kgamma5_PORT=		x11/plasma5-kgamma5
 kde-kgamma5_PATH=		${QT_PLUGINDIR}/kcm_kgamma.so
 
 kde-kmenuedit_PORT=		sysutils/plasma5-kmenuedit
-kde-kmenuedit_LIB=		libkdeinit5_kmenuedit.so
+kde-kmenuedit_PATH=		${KDE_PREFIX}/bin/kmenuedit
 
 kde-kscreen_PORT=		x11/plasma5-kscreen
 kde-kscreen_PATH=		${KDE_PREFIX}/bin/kscreen-console

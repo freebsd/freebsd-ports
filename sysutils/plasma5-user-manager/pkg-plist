@@ -1,9 +1,7 @@
 %%QT_PLUGINDIR%%/user_manager.so
 share/kservices5/user_manager.desktop
 %%DATADIR%%/avatars/circles/Cat.png
-%%DATADIR%%/avatars/circles/Female.png
 %%DATADIR%%/avatars/circles/Konqi.png
-%%DATADIR%%/avatars/circles/Male.png
 %%DATADIR%%/avatars/circles/Penguin.png
 %%DATADIR%%/avatars/circles/Zebra.png
 %%DATADIR%%/avatars/konqui/Artist Konqi.png
@@ -23,6 +21,26 @@ share/kservices5/user_manager.desktop
 %%DATADIR%%/avatars/konqui/Scientist Konqi.png
 %%DATADIR%%/avatars/konqui/Teacher Konqi.png
 %%DATADIR%%/avatars/konqui/Virtual Reality Konqi.png
+%%DATADIR%%/avatars/photos/Air Balloon.png
+%%DATADIR%%/avatars/photos/Astronaut.png
+%%DATADIR%%/avatars/photos/Books.png
+%%DATADIR%%/avatars/photos/Brushes.png
+%%DATADIR%%/avatars/photos/Bulb.png
+%%DATADIR%%/avatars/photos/Car.png
+%%DATADIR%%/avatars/photos/Cat.png
+%%DATADIR%%/avatars/photos/Chameleon.png
+%%DATADIR%%/avatars/photos/Cocktail.png
+%%DATADIR%%/avatars/photos/Dog.png
+%%DATADIR%%/avatars/photos/Fish.png
+%%DATADIR%%/avatars/photos/Gamepad.png
+%%DATADIR%%/avatars/photos/Owl.png
+%%DATADIR%%/avatars/photos/Pancakes.png
+%%DATADIR%%/avatars/photos/Parrot.png
+%%DATADIR%%/avatars/photos/Pencils.png
+%%DATADIR%%/avatars/photos/Shuttle.png
+%%DATADIR%%/avatars/photos/Soccer.png
+%%DATADIR%%/avatars/photos/Sunflower.png
+%%DATADIR%%/avatars/photos/Sushi.png
 share/locale/ar/LC_MESSAGES/user_manager.mo
 share/locale/ast/LC_MESSAGES/user_manager.mo
 share/locale/bg/LC_MESSAGES/user_manager.mo

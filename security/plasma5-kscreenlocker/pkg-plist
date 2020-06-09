@@ -23,6 +23,7 @@ share/ksmserver/screenlocker/org.kde.passworddialog/metadata.desktop
 share/locale/ar/LC_MESSAGES/kscreenlocker.mo
 share/locale/ar/LC_MESSAGES/kscreenlocker_greet.mo
 share/locale/ar/LC_MESSAGES/screenlocker_kcm.mo
+share/locale/ast/LC_MESSAGES/screenlocker_kcm.mo
 share/locale/bs/LC_MESSAGES/kscreenlocker.mo
 share/locale/bs/LC_MESSAGES/kscreenlocker_greet.mo
 share/locale/bs/LC_MESSAGES/screenlocker_kcm.mo

@@ -1,3 +1,4 @@
+lib/gtk-3.0/modules/libcolorreload-gtk-module.so
 lib/kconf_update_bin/gtk_theme
 lib/libexec/gtk3_preview
 lib/libexec/gtk_preview

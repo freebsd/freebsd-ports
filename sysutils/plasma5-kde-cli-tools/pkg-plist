@@ -11,12 +11,12 @@ bin/ksvgtopng5
 bin/ktraderclient5
 lib/libexec/kf5/kdeeject
 lib/libexec/kf5/kdesu
-lib/libkdeinit5_kcmshell5.so
 %%QT_PLUGINDIR%%/kcm_filetypes.so
 man/ca/man1/kdesu.1.gz
 man/de/man1/kdesu.1.gz
 man/es/man1/kdesu.1.gz
 man/et/man1/kdesu.1.gz
+man/fr/man1/kdesu.1.gz
 man/id/man1/kdesu.1.gz
 man/it/man1/kdesu.1.gz
 man/man1/kdesu.1.gz
@@ -48,6 +48,8 @@ share/doc/HTML/es/kdesu/index.cache.bz2
 share/doc/HTML/es/kdesu/index.docbook
 share/doc/HTML/et/kdesu/index.cache.bz2
 share/doc/HTML/et/kdesu/index.docbook
+share/doc/HTML/fr/kdesu/index.cache.bz2
+share/doc/HTML/fr/kdesu/index.docbook
 share/doc/HTML/id/kcontrol5/filetypes/index.cache.bz2
 share/doc/HTML/id/kcontrol5/filetypes/index.docbook
 share/doc/HTML/id/kdesu/index.cache.bz2
@@ -100,6 +102,7 @@ share/locale/ar/LC_MESSAGES/kioclient5.mo
 share/locale/ar/LC_MESSAGES/kmimetypefinder5.mo
 share/locale/ar/LC_MESSAGES/kstart5.mo
 share/locale/ar/LC_MESSAGES/ktraderclient5.mo
+share/locale/ast/LC_MESSAGES/kcm5_filetypes.mo
 share/locale/ast/LC_MESSAGES/kdesu5.mo
 share/locale/be/LC_MESSAGES/kcm5_filetypes.mo
 share/locale/be/LC_MESSAGES/kcmshell5.mo

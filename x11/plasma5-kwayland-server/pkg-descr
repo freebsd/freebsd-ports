@@ -1,0 +1,9 @@
+Plasma Wayland Protocols
+
+This project should be installing only the xml files of the non-standard
+wayland protocols we use in Plasma.
+
+They are installed to $PREFIX/share/plasma-wayland-protocols.
+
+
+WWW: https://github.com/kde/plasma-wayland-protocols

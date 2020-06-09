@@ -17,7 +17,8 @@ USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		i18n iconthemes jobwidgets kcmutils kdeclarative \
 		kdelibs4support kio notifications package parts init \
 		itemmodels itemviews service solid sonnet textwidgets \
-		unitconversion wayland wayland widgetsaddons windowsystem xmlgui
+		unitconversion wayland wayland widgetsaddons windowsystem xmlgui \
+		systemsettings_run
 USE_QT=		concurrent core dbus gui network printsupport widgets xml \
 		buildtools_build qmake_build
 USE_XORG=	ice sm x11 xext

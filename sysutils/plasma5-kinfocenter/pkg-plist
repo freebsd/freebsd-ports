@@ -24,6 +24,7 @@ share/doc/HTML/id/kinfocenter/index.cache.bz2
 share/doc/HTML/id/kinfocenter/index.docbook
 share/doc/HTML/it/kinfocenter/index.cache.bz2
 share/doc/HTML/it/kinfocenter/index.docbook
+share/doc/HTML/it/kinfocenter/kinfocenter.png
 share/doc/HTML/nl/kinfocenter/index.cache.bz2
 share/doc/HTML/nl/kinfocenter/index.docbook
 share/doc/HTML/pt/kinfocenter/index.cache.bz2
@@ -45,6 +46,8 @@ share/doc/HTML/uk/kinfocenter/kinfocenter.png
 share/kcmusb/usb.ids
 %%DATADIR%%/images/freebsd_logo.svg
 share/kservices5/about-distro.desktop
+share/kservices5/basicinformation.desktop
+share/kservices5/detailedinformation.desktop
 share/kservices5/deviceinfocategory.desktop
 share/kservices5/devinfo.desktop
 share/kservices5/dma.desktop
@@ -62,7 +65,6 @@ share/kservices5/smbstatus.desktop
 share/kservices5/wayland.desktop
 share/kservices5/xserver.desktop
 share/kservicetypes5/kinfocentercategory.desktop
-share/kxmlgui5/kinfocenter/kinfocenterui.rc
 share/locale/af/LC_MESSAGES/kcminfo.mo
 share/locale/af/LC_MESSAGES/kcmsamba.mo
 share/locale/af/LC_MESSAGES/kcmusb.mo
@@ -82,6 +84,8 @@ share/locale/ar/LC_MESSAGES/kcmusb.mo
 share/locale/ar/LC_MESSAGES/kcmview1394.mo
 share/locale/ar/LC_MESSAGES/kinfocenter.mo
 share/locale/ast/LC_MESSAGES/kcm-about-distro.mo
+share/locale/ast/LC_MESSAGES/kcmnic.mo
+share/locale/ast/LC_MESSAGES/kcmsamba.mo
 share/locale/ast/LC_MESSAGES/kcmusb.mo
 share/locale/ast/LC_MESSAGES/kinfocenter.mo
 share/locale/be/LC_MESSAGES/kcminfo.mo
@@ -866,8 +870,8 @@ share/locale/te/LC_MESSAGES/kcmsamba.mo
 share/locale/te/LC_MESSAGES/kcmusb.mo
 share/locale/te/LC_MESSAGES/kcmview1394.mo
 share/locale/te/LC_MESSAGES/kinfocenter.mo
-share/locale/tg/LC_MESSAGES/kcm_memory.mo
 share/locale/tg/LC_MESSAGES/kcm_energyinfo.mo
+share/locale/tg/LC_MESSAGES/kcm_memory.mo
 share/locale/tg/LC_MESSAGES/kcm_pci.mo
 share/locale/tg/LC_MESSAGES/kcmdevinfo.mo
 share/locale/tg/LC_MESSAGES/kcminfo.mo

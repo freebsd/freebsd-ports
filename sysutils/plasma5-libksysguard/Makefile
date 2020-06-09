@@ -9,7 +9,7 @@ COMMENT=	Plasma5 library to track and control running processes
 
 USES=		cmake compiler:c++11-lib cpe gettext kde:5 qt:5 tar:xz
 USE_KDE=	auth codecs completion config configwidgets coreaddons \
-		globalaccel i18n iconthemes jobwidgets kio package \
+		globalaccel i18n iconthemes jobwidgets kio newstuff package \
 		plasma-framework service widgetsaddons windowsystem
 USE_QT=		concurrent core dbus gui network script webkit widgets x11extras xml \
 		buildtools_build qmake_build

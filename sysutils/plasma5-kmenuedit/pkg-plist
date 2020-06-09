@@ -1,6 +1,5 @@
 bin/kmenuedit
 lib/kconf_update_bin/kmenuedit_globalaccel
-lib/libkdeinit5_kmenuedit.so
 share/applications/org.kde.kmenuedit.desktop
 share/doc/HTML/ca/kmenuedit/done.png
 share/doc/HTML/ca/kmenuedit/index.cache.bz2
@@ -22,8 +21,14 @@ share/doc/HTML/en/kmenuedit/selecticon.png
 share/doc/HTML/en/kmenuedit/selectinternet.png
 share/doc/HTML/id/kmenuedit/index.cache.bz2
 share/doc/HTML/id/kmenuedit/index.docbook
+share/doc/HTML/it/kmenuedit/done.png
 share/doc/HTML/it/kmenuedit/index.cache.bz2
 share/doc/HTML/it/kmenuedit/index.docbook
+share/doc/HTML/it/kmenuedit/itemname.png
+share/doc/HTML/it/kmenuedit/new.png
+share/doc/HTML/it/kmenuedit/selecticon.png
+share/doc/HTML/it/kmenuedit/selectinternet.png
+share/doc/HTML/it/kmenuedit/toolbars-toolbar.png
 share/doc/HTML/nl/kmenuedit/index.cache.bz2
 share/doc/HTML/nl/kmenuedit/index.docbook
 share/doc/HTML/pt/kmenuedit/index.cache.bz2
