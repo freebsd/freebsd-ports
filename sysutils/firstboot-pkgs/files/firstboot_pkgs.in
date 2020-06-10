@@ -30,11 +30,9 @@ firstboot_pkgs_run()
 	# Count rc.d scripts
 	nscriptso=`ls /usr/local/etc/rc.d | wc -l`
 
-	# Bootstrap if necessary
-	if ! pkg -N 2>/dev/null; then
-		env ASSUME_ALWAYS_YES=YES pkg bootstrap |
-		    cat
-	fi
+	# Bootstrap and update pkg to ensure synchronization with the repository
+	env ASSUME_ALWAYS_YES=YES pkg bootstrap -f | cat
+	env ASSUME_ALWAYS_YES=YES pkg update -f | cat
 
 	# Install requested packages, if any
 	for package in ${firstboot_pkgs_list}; do
