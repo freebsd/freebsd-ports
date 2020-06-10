@@ -403,7 +403,7 @@ post-extract-OPENMP-on:
 	${MV} ${WRKSRC_openmp} ${PATCH_WRKSRC}/projects/openmp
 
 post-patch-LLD-on:
-	${REINPLACE_CMD} -e "s|\'indexsidebar.html\'|[\'indexsidebar.html\']|" \
+	${REINPLACE_CMD} -e "s|'indexsidebar.html'|['indexsidebar.html']|" \
 		${PATCH_WRKSRC}/tools/lld/docs/conf.py
 
 post-patch:

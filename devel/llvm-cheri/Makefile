@@ -267,7 +267,7 @@ post-patch:
 	    ${WRKSRC}/llvm/utils/lit/lit.py ${WRKSRC}/llvm/utils/lit/lit/*.py
 
 post-patch-LLD-on:
-		${REINPLACE_CMD} -e "s|\'indexsidebar.html\'|[\'indexsidebar.html\']|" \
+		${REINPLACE_CMD} -e "s|'indexsidebar.html'|['indexsidebar.html']|" \
 			${PATCH_WRKSRC}/lld/docs/conf.py
 
 post-install:
