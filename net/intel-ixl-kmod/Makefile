@@ -3,6 +3,7 @@
 
 PORTNAME?=	ixl
 PORTVERSION?=	1.11.9
+PORTREVISION?=	1
 CATEGORIES=	net
 MASTER_SITES=	https://downloadmirror.intel.com/${MASTER_SITE_SUBDIR}/ \
 		http://downloadmirror.intel.com/${MASTER_SITE_SUBDIR}/
@@ -17,13 +18,11 @@ LICENSE=	BSD2CLAUSE
 
 USES=		kmod
 
-# Present version of net/intel-em-kmod has issues building with netmap(4)
-# support on 11+. Narrowing netmap(4) support to this port only
 OPTIONS_SINGLE=		NETMAP
 OPTIONS_SINGLE_NETMAP=	NETMAP_AUTO NETMAP_ON NETMAP_OFF
 OPTIONS_DEFAULT=	NETMAP_AUTO
 
-NETMAP_AUTO_DESC=	Enable netmap(4) support on FreeBSD 11.0+
+NETMAP_AUTO_DESC=	Enable netmap(4) support on supported OS versions
 NETMAP_ON_DESC=		Enable netmap(4) support unconditionally
 NETMAP_OFF_DESC=	Disable netmap(4) support unconditionally
 
@@ -34,17 +33,20 @@ WRKSRC_SUBDIR=	src
 
 SUB_FILES=	pkg-message
 SUB_LIST=	PORTNAME=${PORTNAME}
+MAKE_ENV+=	WERROR=""
+PLIST_FILES=	${KMODDIR}/if_${PORTNAME}_updated.ko
+MANPAGEEXISTS?=	1
 MANPAGENAME?=	${PORTNAME}
 MANPAGELINKS?=	if_${PORTNAME}
-PLIST_FILES=	${KMODDIR}/if_${PORTNAME}_updated.ko \
-		man/man4/${MANPAGENAME}.4.gz
-MAKE_ENV+=	WERROR=""
 
-.for link in ${MANPAGELINKS}
+.if ${MANPAGEEXISTS}
+PLIST_FILES+=	man/man4/${MANPAGENAME}.4.gz
+.  for link in ${MANPAGELINKS}
 PLIST_FILES+=	man/man4/${link}.4.gz
-.endfor
+.  endfor
+.endif
 
-MAX_NETMAP_OSVERSION?=	1299999  # Maximum OSVERSION for which NETMAP support works
+MAX_NETMAP_OSVERSION?=	1200500  # Maximum OSVERSION for which NETMAP support works
 
 .include <bsd.port.pre.mk>
 
@@ -60,10 +62,11 @@ CFLAGS+=	-DDEV_NETMAP
 
 do-install:
 	${INSTALL_KLD} ${WRKSRC}/if_${PORTNAME}.ko ${STAGEDIR}${KMODDIR}/if_${PORTNAME}_updated.ko
+.if ${MANPAGEEXISTS}
 	${INSTALL_MAN} ${WRKSRC}/${MANPAGENAME}.4 ${STAGEDIR}${MAN4PREFIX}/man/man4/
-
-.for link in ${MANPAGELINKS}
+.  for link in ${MANPAGELINKS}
 	${LN} ${STAGEDIR}${MAN4PREFIX}/man/man4/${MANPAGENAME}.4 ${STAGEDIR}${MAN4PREFIX}/man/man4/${link}.4
-.endfor
+.  endfor
+.endif
 
 .include <bsd.port.post.mk>
