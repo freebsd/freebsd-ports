@@ -1,0 +1,15 @@
+Useful utilities for managing a MongoDB instance written in Go.
+
+- bsondump - display BSON files in a human-readable format
+- mongoimport - Convert data from JSON, TSV or CSV and insert them
+  into a collection
+- mongoexport - Write an existing collection to CSV or JSON format
+- mongodump/mongorestore - Dump MongoDB backups to disk in .BSON
+  format, or restore them to a live database
+- mongostat - Monitor live MongoDB servers, replica sets, or sharded
+  clusters
+- mongofiles - Read, write, delete, or update files in GridFS
+- mongotop - Monitor read/write activity on a mongo server
+- mongoreplay - Capture, observe, and replay traffic for MongoDB
+
+WWW: https://github.com/mongodb/mongo-tools

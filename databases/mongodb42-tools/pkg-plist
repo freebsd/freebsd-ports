@@ -1,0 +1,12 @@
+%%BSONDUMP%%bin/bsondump
+%%MONGODUMP%%bin/mongodump
+%%MONGOEXPORT%%bin/mongoexport
+%%MONGOFILES%%bin/mongofiles
+%%MONGOIMPORT%%bin/mongoimport
+%%MONGORESTORE%%bin/mongorestore
+%%MONGOREPLAY%%bin/mongoreplay
+%%MONGOSTAT%%bin/mongostat
+%%MONGOTOP%%bin/mongotop
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTING.md
+%%PORTDOCS%%%%DOCSDIR%%/THIRD-PARTY-NOTICES

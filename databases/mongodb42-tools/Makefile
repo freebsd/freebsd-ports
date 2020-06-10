@@ -1,13 +1,12 @@
 # $FreeBSD$
 
-PORTNAME=	mongodb40-tools
+PORTNAME=	mongodb42-tools
 DISTVERSIONPREFIX=	r
-DISTVERSION=	4.0.8
-PORTREVISION=	2
+DISTVERSION=	4.2.7
 CATEGORIES=	databases
 
-MAINTAINER=	dev.ashevchuk@gmail.com
-COMMENT=	Tools for MongoDB
+MAINTAINER=	ronald-lists@klop.ws
+COMMENT=	Tools for MongoDB 4.2.x
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
@@ -23,7 +22,7 @@ GH_PROJECT=	mongo-tools
 GO_BUILDFLAGS=	-tags "${USE_MY_TAGS}"
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
 
-CONFLICTS_INSTALL=	mongodb3[46] mongodb42 mongodb3[46]-tools mongodb42-tools
+CONFLICTS_INSTALL=	mongodb36 mongodb40 mongodb36-tools mongodb40-tools
 
 OPTIONS_DEFINE=		DOCS
 OPTIONS_DEFAULT=	MONGODUMP MONGOEXPORT MONGOFILES MONGOIMPORT \

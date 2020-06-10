@@ -17,7 +17,7 @@ BROKEN_SSL_REASON_openssl=	variable has incomplete type 'BIO_METHOD' (aka 'struc
 BROKEN_SSL_REASON_libressl=		could not determine kind of name for C.EVP_sha
 BROKEN_SSL_REASON_libressl-devel=	${BROKEN_SSL_REASON_libressl}
 
-CONFLICTS_INSTALL=	mongodb mongodb[32-34]-tools
+CONFLICTS_INSTALL=	mongodb mongodb4[02] mongodb4[02]-tools
 
 USES=	go localbase
 
