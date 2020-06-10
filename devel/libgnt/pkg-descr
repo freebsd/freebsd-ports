@@ -1,0 +1,7 @@
+GNT is an ncurses toolkit for creating text-mode graphical user interfaces in a
+fast and easy way. It is based on GLib and ncurses.
+
+It was born out of the console-based UI, Finch, for the libpurple project, but
+has now been split into its own independent repository.
+
+WWW: https://keep.imfreedom.org/libgnt/libgnt/
