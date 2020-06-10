@@ -17,7 +17,6 @@ COMMENT=	Numerical/scientific/number-theoretic calculations
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BROKEN_aarch64=		fails to link: mp.c:(function pari_kernel_init): can't create dynamic relocation R_AARCH64_ADR_PREL_PG_HI21 against symbol 'gpmalloc' defined in init.o
 .if ${/usr/bin/ld:L:tA} == /usr/bin/ld.lld
 BROKEN_i386=	ld: error: can't create dynamic relocation R_386_32 against local symbol in readonly segment; recompile object files with -fPIC or pass '-Wl,-z,notext' to allow text relocations in the output
 .endif
@@ -30,6 +29,7 @@ USE_PERL5=	configure
 PARI_WRKSRC=	${WRKDIR}/pari-2.3.5
 
 CFLAGS+=	-I${PARI_WRKSRC}/src/headers -I${PARI_WRKSRC}/build
+CFLAGS_aarch64=	-fPIC
 CFLAGS_powerpc=	-fPIC
 CFLAGS_powerpc64=	-fPIC
 
