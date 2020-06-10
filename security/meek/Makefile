@@ -16,6 +16,12 @@ USES=		go
 
 GO_TARGET=	./meek-client \
 		./meek-server
+GH_TUPLE=	\
+		golang:crypto:4b2356b1ed79:golang_crypto/vendor/golang.org/x/crypto \
+		golang:net:ff2c4b7c35a0:golang_net/vendor/golang.org/x/net \
+		golang:sys:593003d681fa:golang_sys/vendor/golang.org/x/sys \
+		golang:text:v0.3.0:golang_text/vendor/golang.org/x/text \
+		refraction-networking:utls:43c36d3c1f57:refraction_networking_utls/vendor/github.com/refraction-networking/utls
 
 PLIST_FILES=	bin/meek-client \
 		bin/meek-server \
