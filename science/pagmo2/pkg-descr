@@ -3,4 +3,4 @@ built around the idea of providing a unified interface to optimization
 algorithms and to optimization problems and to make their deployment in
 massively parallel environments easy.
 
-WWW: https://github.com/esa/pagmo2
+WWW: https://esa.github.io/pagmo2/
