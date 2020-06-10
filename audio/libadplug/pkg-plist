@@ -36,6 +36,7 @@ include/adplug/jbm.h
 include/adplug/kemuopl.h
 include/adplug/ksm.h
 include/adplug/lds.h
+include/adplug/load_helper.h
 include/adplug/mad.h
 include/adplug/mdi.h
 include/adplug/mid.h
@@ -50,7 +51,7 @@ include/adplug/player.h
 include/adplug/players.h
 include/adplug/protrack.h
 include/adplug/psi.h
-include/adplug/rad.h
+include/adplug/rad2.h
 include/adplug/rat.h
 include/adplug/raw.h
 include/adplug/realopl.h
