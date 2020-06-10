@@ -7,7 +7,7 @@ CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/KeePass%202.x/${PORTVERSION}
 DISTNAME=	KeePass-${PORTVERSION}-Source
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	m.muenz@gmail.com
 COMMENT=	Light-weight and easy-to-use password manager
 
 LICENSE=	GPLv2+
