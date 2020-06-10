@@ -6,7 +6,7 @@ CATEGORIES=	audio
 MASTER_SITES=	https://download.drobilla.net/
 
 MAINTAINER=	yuri@FreeBSD.org
-COMMENT=	Realtime modular synthesizer and/or effects processor
+COMMENT=	Interactive Gtk canvas widget for audio topologies representation
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
