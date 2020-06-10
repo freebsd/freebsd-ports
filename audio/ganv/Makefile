@@ -1,0 +1,25 @@
+# $FreeBSD$
+
+PORTNAME=	ganv
+PORTVERSION=	1.6.0
+CATEGORIES=	audio
+MASTER_SITES=	https://download.drobilla.net/
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Realtime modular synthesizer and/or effects processor
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+LIB_DEPENDS=	libcgraph.so:graphics/graphviz \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
+
+USES=		gettext-runtime gnome pkgconfig waf tar:bz2
+USE_GNOME=	atk atkmm cairo cairomm gdkpixbuf2 glib20 glibmm gtk20 gtkmm24 libsigc++20 pango pangomm
+USE_LDCONFIG=	yes
+
+post-install:
+	@cd ${STAGEDIR}${PREFIX} && ${STRIP_CMD} bin/ganv_bench lib/libganv-1.so.1.6.0
+
+.include <bsd.port.mk>

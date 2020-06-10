@@ -1,0 +1,4 @@
+Ganv is an interactive Gtk canvas widget for graph-based interfaces (patchers,
+modular synthesizers, finite state automata, interactive graphs, etc).
+
+WWW: https://drobilla.net/software/ganv
