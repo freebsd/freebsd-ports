@@ -2,8 +2,7 @@
 
 PORTNAME=	benchmark
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.0
-PORTREVISION=	1
+DISTVERSION=	1.5.1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,12 +16,13 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	google
 USE_LDCONFIG=	yes
 
+CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	BENCHMARK_ENABLE_TESTING
 
 CXXFLAGS+=	-Wno-thread-safety-analysis # workaround for https://github.com/google/benchmark/issues/655
 CXXFLAGS+=	-Wno-sign-compare # workaround for https://github.com/google/googletest/issues/1752
 
-do-test:
+do-test: # Broken: https://github.com/google/benchmark/issues/979
 	@cd ${BUILD_WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DBENCHMARK_ENABLE_TESTING=ON ${CMAKE_SOURCE_PATH} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
