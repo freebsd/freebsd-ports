@@ -852,10 +852,10 @@ share/gx_head/sounds/bands/White Chappel Hate Creation.wav
 share/gx_head/sounds/bands/green day Dookie.wav
 share/gx_head/sounds/bands/hatebreed The divinity of purpose.wav
 share/gx_head/sounds/greathall.wav
-share/locale/es/LC_MESSAGES/guitarix.mo
-share/locale/fr/LC_MESSAGES/guitarix.mo
-share/locale/it/LC_MESSAGES/guitarix.mo
-share/locale/ru/LC_MESSAGES/guitarix.mo
+%%NLS%%share/locale/es/LC_MESSAGES/guitarix.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/guitarix.mo
+%%NLS%%share/locale/it/LC_MESSAGES/guitarix.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/guitarix.mo
 share/pixmaps/gx_bypass.png
 share/pixmaps/gx_head.png
 share/pixmaps/gx_log_grey.png
