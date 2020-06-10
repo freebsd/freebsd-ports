@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	numix-icon-theme
-PORTVERSION=	20.03.20
+PORTVERSION=	20.06.07
 CATEGORIES=	x11-themes
 
 MAINTAINER=	20.100@defert.com

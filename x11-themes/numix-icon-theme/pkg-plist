@@ -5917,6 +5917,7 @@ share/icons/Numix-Light/scalable/status/audio-volume-low-symbolic.svg
 share/icons/Numix-Light/scalable/status/audio-volume-medium-symbolic.svg
 share/icons/Numix-Light/scalable/status/audio-volume-muted-blocking-symbolic.svg
 share/icons/Numix-Light/scalable/status/audio-volume-muted-symbolic.svg
+share/icons/Numix-Light/scalable/status/audio-volume-overamplified-symbolic.svg
 share/icons/Numix-Light/scalable/status/avatar-default-symbolic.svg
 share/icons/Numix-Light/scalable/status/battery-caution-charging-symbolic.svg
 share/icons/Numix-Light/scalable/status/battery-caution-symbolic.svg
@@ -7813,6 +7814,7 @@ share/icons/Numix/16/mimetypes/application-pgp.svg
 share/icons/Numix/16/mimetypes/application-pkcs7-mime.svg
 share/icons/Numix/16/mimetypes/application-pkcs7-signature.svg
 share/icons/Numix/16/mimetypes/application-pkix-cerl.svg
+share/icons/Numix/16/mimetypes/application-pkix-cert+pem.svg
 share/icons/Numix/16/mimetypes/application-pkix-cert.svg
 share/icons/Numix/16/mimetypes/application-postscript.svg
 share/icons/Numix/16/mimetypes/application-presentation-template.svg
@@ -7904,6 +7906,7 @@ share/icons/Numix/16/mimetypes/application-vnd.oasis.opendocument.text-web-templ
 share/icons/Numix/16/mimetypes/application-vnd.oasis.opendocument.text-web.svg
 share/icons/Numix/16/mimetypes/application-vnd.oasis.opendocument.text.svg
 share/icons/Numix/16/mimetypes/application-vnd.oasis.opendocument.web-template.svg
+share/icons/Numix/16/mimetypes/application-vnd.olive-project.svg
 share/icons/Numix/16/mimetypes/application-vnd.openofficeorg.extension.svg
 share/icons/Numix/16/mimetypes/application-vnd.openshot-qt-project.svg
 share/icons/Numix/16/mimetypes/application-vnd.openxmlformats-officedocument.presentationml.presentation.svg
@@ -7953,6 +7956,7 @@ share/icons/Numix/16/mimetypes/application-x-abiword.svg
 share/icons/Numix/16/mimetypes/application-x-acad.svg
 share/icons/Numix/16/mimetypes/application-x-ace.svg
 share/icons/Numix/16/mimetypes/application-x-addon.svg
+share/icons/Numix/16/mimetypes/application-x-alpm-package.svg
 share/icons/Numix/16/mimetypes/application-x-amiga-disk-format.svg
 share/icons/Numix/16/mimetypes/application-x-anki.svg
 share/icons/Numix/16/mimetypes/application-x-anki2.svg
@@ -8223,6 +8227,7 @@ share/icons/Numix/16/mimetypes/audio-x-scpis.svg
 share/icons/Numix/16/mimetypes/audio-x-scpls.svg
 share/icons/Numix/16/mimetypes/audio-x-shorten.svg
 share/icons/Numix/16/mimetypes/audio-x-smart-playlist.svg
+share/icons/Numix/16/mimetypes/audio-x-soundfont.svg
 share/icons/Numix/16/mimetypes/audio-x-speex+ogg.svg
 share/icons/Numix/16/mimetypes/audio-x-tg.svg
 share/icons/Numix/16/mimetypes/audio-x-vorbis+ogg.svg
@@ -8609,6 +8614,7 @@ share/icons/Numix/16/mimetypes/text-rust.svg
 share/icons/Numix/16/mimetypes/text-sgml.svg
 share/icons/Numix/16/mimetypes/text-spreadsheet.svg
 share/icons/Numix/16/mimetypes/text-tab-separated-values.svg
+share/icons/Numix/16/mimetypes/text-tcl.svg
 share/icons/Numix/16/mimetypes/text-troff.svg
 share/icons/Numix/16/mimetypes/text-vcalendar.svg
 share/icons/Numix/16/mimetypes/text-vnd.abc.svg
@@ -8656,6 +8662,7 @@ share/icons/Numix/16/mimetypes/text-x-java-source.svg
 share/icons/Numix/16/mimetypes/text-x-java.svg
 share/icons/Numix/16/mimetypes/text-x-javascript.svg
 share/icons/Numix/16/mimetypes/text-x-katefilelist.svg
+share/icons/Numix/16/mimetypes/text-x-kotlin.svg
 share/icons/Numix/16/mimetypes/text-x-ldif.svg
 share/icons/Numix/16/mimetypes/text-x-lilypond.svg
 share/icons/Numix/16/mimetypes/text-x-log.svg
@@ -13053,6 +13060,7 @@ share/icons/Numix/22/mimetypes/application-pgp.svg
 share/icons/Numix/22/mimetypes/application-pkcs7-mime.svg
 share/icons/Numix/22/mimetypes/application-pkcs7-signature.svg
 share/icons/Numix/22/mimetypes/application-pkix-cerl.svg
+share/icons/Numix/22/mimetypes/application-pkix-cert+pem.svg
 share/icons/Numix/22/mimetypes/application-pkix-cert.svg
 share/icons/Numix/22/mimetypes/application-postscript.svg
 share/icons/Numix/22/mimetypes/application-presentation-template.svg
@@ -13144,6 +13152,7 @@ share/icons/Numix/22/mimetypes/application-vnd.oasis.opendocument.text-web-templ
 share/icons/Numix/22/mimetypes/application-vnd.oasis.opendocument.text-web.svg
 share/icons/Numix/22/mimetypes/application-vnd.oasis.opendocument.text.svg
 share/icons/Numix/22/mimetypes/application-vnd.oasis.opendocument.web-template.svg
+share/icons/Numix/22/mimetypes/application-vnd.olive-project.svg
 share/icons/Numix/22/mimetypes/application-vnd.openofficeorg.extension.svg
 share/icons/Numix/22/mimetypes/application-vnd.openshot-qt-project.svg
 share/icons/Numix/22/mimetypes/application-vnd.openxmlformats-officedocument.presentationml.presentation.svg
@@ -13193,6 +13202,7 @@ share/icons/Numix/22/mimetypes/application-x-abiword.svg
 share/icons/Numix/22/mimetypes/application-x-acad.svg
 share/icons/Numix/22/mimetypes/application-x-ace.svg
 share/icons/Numix/22/mimetypes/application-x-addon.svg
+share/icons/Numix/22/mimetypes/application-x-alpm-package.svg
 share/icons/Numix/22/mimetypes/application-x-amiga-disk-format.svg
 share/icons/Numix/22/mimetypes/application-x-anki.svg
 share/icons/Numix/22/mimetypes/application-x-anki2.svg
@@ -13463,6 +13473,7 @@ share/icons/Numix/22/mimetypes/audio-x-scpis.svg
 share/icons/Numix/22/mimetypes/audio-x-scpls.svg
 share/icons/Numix/22/mimetypes/audio-x-shorten.svg
 share/icons/Numix/22/mimetypes/audio-x-smart-playlist.svg
+share/icons/Numix/22/mimetypes/audio-x-soundfont.svg
 share/icons/Numix/22/mimetypes/audio-x-speex+ogg.svg
 share/icons/Numix/22/mimetypes/audio-x-tg.svg
 share/icons/Numix/22/mimetypes/audio-x-vorbis+ogg.svg
@@ -13849,6 +13860,7 @@ share/icons/Numix/22/mimetypes/text-rust.svg
 share/icons/Numix/22/mimetypes/text-sgml.svg
 share/icons/Numix/22/mimetypes/text-spreadsheet.svg
 share/icons/Numix/22/mimetypes/text-tab-separated-values.svg
+share/icons/Numix/22/mimetypes/text-tcl.svg
 share/icons/Numix/22/mimetypes/text-troff.svg
 share/icons/Numix/22/mimetypes/text-vcalendar.svg
 share/icons/Numix/22/mimetypes/text-vnd.abc.svg
@@ -13896,6 +13908,7 @@ share/icons/Numix/22/mimetypes/text-x-java-source.svg
 share/icons/Numix/22/mimetypes/text-x-java.svg
 share/icons/Numix/22/mimetypes/text-x-javascript.svg
 share/icons/Numix/22/mimetypes/text-x-katefilelist.svg
+share/icons/Numix/22/mimetypes/text-x-kotlin.svg
 share/icons/Numix/22/mimetypes/text-x-ldif.svg
 share/icons/Numix/22/mimetypes/text-x-lilypond.svg
 share/icons/Numix/22/mimetypes/text-x-log.svg
@@ -18035,6 +18048,7 @@ share/icons/Numix/24/mimetypes/application-pgp-signature.svg
 share/icons/Numix/24/mimetypes/application-pgp.svg
 share/icons/Numix/24/mimetypes/application-pkcs7-mime.svg
 share/icons/Numix/24/mimetypes/application-pkcs7-signature.svg
+share/icons/Numix/24/mimetypes/application-pkix-cert+pem.svg
 share/icons/Numix/24/mimetypes/application-pkix-cert.svg
 share/icons/Numix/24/mimetypes/application-postscript.svg
 share/icons/Numix/24/mimetypes/application-presentation-template.svg
@@ -18118,6 +18132,7 @@ share/icons/Numix/24/mimetypes/application-vnd.oasis.opendocument.text-web-templ
 share/icons/Numix/24/mimetypes/application-vnd.oasis.opendocument.text-web.svg
 share/icons/Numix/24/mimetypes/application-vnd.oasis.opendocument.text.svg
 share/icons/Numix/24/mimetypes/application-vnd.oasis.opendocument.web-template.svg
+share/icons/Numix/24/mimetypes/application-vnd.olive-project.svg
 share/icons/Numix/24/mimetypes/application-vnd.openofficeorg.extension.svg
 share/icons/Numix/24/mimetypes/application-vnd.openshot-qt-project.svg
 share/icons/Numix/24/mimetypes/application-vnd.openxmlformats-officedocument.presentationml.presentation.svg
@@ -18152,6 +18167,7 @@ share/icons/Numix/24/mimetypes/application-x-abiword.svg
 share/icons/Numix/24/mimetypes/application-x-acad.svg
 share/icons/Numix/24/mimetypes/application-x-ace.svg
 share/icons/Numix/24/mimetypes/application-x-addon.svg
+share/icons/Numix/24/mimetypes/application-x-alpm-package.svg
 share/icons/Numix/24/mimetypes/application-x-amiga-disk-format.svg
 share/icons/Numix/24/mimetypes/application-x-anki.svg
 share/icons/Numix/24/mimetypes/application-x-anki2.svg
@@ -18344,6 +18360,7 @@ share/icons/Numix/24/mimetypes/application-x-tha.svg
 share/icons/Numix/24/mimetypes/application-x-theme.svg
 share/icons/Numix/24/mimetypes/application-x-thz.svg
 share/icons/Numix/24/mimetypes/application-x-trash.svg
+share/icons/Numix/24/mimetypes/application-x-troff-man.svg
 share/icons/Numix/24/mimetypes/application-x-tzo.svg
 share/icons/Numix/24/mimetypes/application-x-vocabularium.svg
 share/icons/Numix/24/mimetypes/application-x-vokabeltrainer.svg
@@ -18403,6 +18420,7 @@ share/icons/Numix/24/mimetypes/audio-x-scpis.svg
 share/icons/Numix/24/mimetypes/audio-x-scpls.svg
 share/icons/Numix/24/mimetypes/audio-x-shorten.svg
 share/icons/Numix/24/mimetypes/audio-x-smart-playlist.svg
+share/icons/Numix/24/mimetypes/audio-x-soundfont.svg
 share/icons/Numix/24/mimetypes/audio-x-speex+ogg.svg
 share/icons/Numix/24/mimetypes/audio-x-tg.svg
 share/icons/Numix/24/mimetypes/audio-x-vorbis+ogg.svg
@@ -18783,6 +18801,8 @@ share/icons/Numix/24/mimetypes/text-rust.svg
 share/icons/Numix/24/mimetypes/text-sgml.svg
 share/icons/Numix/24/mimetypes/text-spreadsheet.svg
 share/icons/Numix/24/mimetypes/text-tab-separated-values.svg
+share/icons/Numix/24/mimetypes/text-tcl.svg
+share/icons/Numix/24/mimetypes/text-troff.svg
 share/icons/Numix/24/mimetypes/text-vcalendar.svg
 share/icons/Numix/24/mimetypes/text-vnd.grpahviz.svg
 share/icons/Numix/24/mimetypes/text-vnd.qt.linguist.svg
@@ -18825,6 +18845,7 @@ share/icons/Numix/24/mimetypes/text-x-java-source.svg
 share/icons/Numix/24/mimetypes/text-x-java.svg
 share/icons/Numix/24/mimetypes/text-x-javascript.svg
 share/icons/Numix/24/mimetypes/text-x-katefilelist.svg
+share/icons/Numix/24/mimetypes/text-x-kotlin.svg
 share/icons/Numix/24/mimetypes/text-x-lilypond.svg
 share/icons/Numix/24/mimetypes/text-x-log.svg
 share/icons/Numix/24/mimetypes/text-x-lua.svg
@@ -22928,6 +22949,7 @@ share/icons/Numix/32/mimetypes/application-pgp.svg
 share/icons/Numix/32/mimetypes/application-pkcs7-mime.svg
 share/icons/Numix/32/mimetypes/application-pkcs7-signature.svg
 share/icons/Numix/32/mimetypes/application-pkix-cerl.svg
+share/icons/Numix/32/mimetypes/application-pkix-cert+pem.svg
 share/icons/Numix/32/mimetypes/application-pkix-cert.svg
 share/icons/Numix/32/mimetypes/application-postscript.svg
 share/icons/Numix/32/mimetypes/application-presentation-template.svg
@@ -23019,6 +23041,7 @@ share/icons/Numix/32/mimetypes/application-vnd.oasis.opendocument.text-web-templ
 share/icons/Numix/32/mimetypes/application-vnd.oasis.opendocument.text-web.svg
 share/icons/Numix/32/mimetypes/application-vnd.oasis.opendocument.text.svg
 share/icons/Numix/32/mimetypes/application-vnd.oasis.opendocument.web-template.svg
+share/icons/Numix/32/mimetypes/application-vnd.olive-project.svg
 share/icons/Numix/32/mimetypes/application-vnd.openofficeorg.extension.svg
 share/icons/Numix/32/mimetypes/application-vnd.openshot-qt-project.svg
 share/icons/Numix/32/mimetypes/application-vnd.openxmlformats-officedocument.presentationml.presentation.svg
@@ -23068,6 +23091,7 @@ share/icons/Numix/32/mimetypes/application-x-abiword.svg
 share/icons/Numix/32/mimetypes/application-x-acad.svg
 share/icons/Numix/32/mimetypes/application-x-ace.svg
 share/icons/Numix/32/mimetypes/application-x-addon.svg
+share/icons/Numix/32/mimetypes/application-x-alpm-package.svg
 share/icons/Numix/32/mimetypes/application-x-amiga-disk-format.svg
 share/icons/Numix/32/mimetypes/application-x-anki.svg
 share/icons/Numix/32/mimetypes/application-x-anki2.svg
@@ -23338,6 +23362,7 @@ share/icons/Numix/32/mimetypes/audio-x-scpis.svg
 share/icons/Numix/32/mimetypes/audio-x-scpls.svg
 share/icons/Numix/32/mimetypes/audio-x-shorten.svg
 share/icons/Numix/32/mimetypes/audio-x-smart-playlist.svg
+share/icons/Numix/32/mimetypes/audio-x-soundfont.svg
 share/icons/Numix/32/mimetypes/audio-x-speex+ogg.svg
 share/icons/Numix/32/mimetypes/audio-x-tuxguitar.svg
 share/icons/Numix/32/mimetypes/audio-x-vorbis+ogg.svg
@@ -23724,6 +23749,7 @@ share/icons/Numix/32/mimetypes/text-rust.svg
 share/icons/Numix/32/mimetypes/text-sgml.svg
 share/icons/Numix/32/mimetypes/text-spreadsheet.svg
 share/icons/Numix/32/mimetypes/text-tab-separated-values.svg
+share/icons/Numix/32/mimetypes/text-tcl.svg
 share/icons/Numix/32/mimetypes/text-troff.svg
 share/icons/Numix/32/mimetypes/text-vcalendar.svg
 share/icons/Numix/32/mimetypes/text-vnd.abc.svg
@@ -23771,6 +23797,7 @@ share/icons/Numix/32/mimetypes/text-x-java-source.svg
 share/icons/Numix/32/mimetypes/text-x-java.svg
 share/icons/Numix/32/mimetypes/text-x-javascript.svg
 share/icons/Numix/32/mimetypes/text-x-katefilelist.svg
+share/icons/Numix/32/mimetypes/text-x-kotlin.svg
 share/icons/Numix/32/mimetypes/text-x-ldif.svg
 share/icons/Numix/32/mimetypes/text-x-lilypond.svg
 share/icons/Numix/32/mimetypes/text-x-log.svg
@@ -26095,6 +26122,7 @@ share/icons/Numix/48/mimetypes/application-pgp-signature.svg
 share/icons/Numix/48/mimetypes/application-pgp.svg
 share/icons/Numix/48/mimetypes/application-pkcs7-mime.svg
 share/icons/Numix/48/mimetypes/application-pkcs7-signature.svg
+share/icons/Numix/48/mimetypes/application-pkix-cert+pem.svg
 share/icons/Numix/48/mimetypes/application-pkix-cert.svg
 share/icons/Numix/48/mimetypes/application-postscript.svg
 share/icons/Numix/48/mimetypes/application-presentation-template.svg
@@ -26178,6 +26206,7 @@ share/icons/Numix/48/mimetypes/application-vnd.oasis.opendocument.text-web-templ
 share/icons/Numix/48/mimetypes/application-vnd.oasis.opendocument.text-web.svg
 share/icons/Numix/48/mimetypes/application-vnd.oasis.opendocument.text.svg
 share/icons/Numix/48/mimetypes/application-vnd.oasis.opendocument.web-template.svg
+share/icons/Numix/48/mimetypes/application-vnd.olive-project.svg
 share/icons/Numix/48/mimetypes/application-vnd.openofficeorg.extension.svg
 share/icons/Numix/48/mimetypes/application-vnd.openshot-qt-project.svg
 share/icons/Numix/48/mimetypes/application-vnd.openxmlformats-officedocument.presentationml.presentation.svg
@@ -26212,6 +26241,7 @@ share/icons/Numix/48/mimetypes/application-x-abiword.svg
 share/icons/Numix/48/mimetypes/application-x-acad.svg
 share/icons/Numix/48/mimetypes/application-x-ace.svg
 share/icons/Numix/48/mimetypes/application-x-addon.svg
+share/icons/Numix/48/mimetypes/application-x-alpm-pakage.svg
 share/icons/Numix/48/mimetypes/application-x-amiga-disk-format.svg
 share/icons/Numix/48/mimetypes/application-x-anki.svg
 share/icons/Numix/48/mimetypes/application-x-anki2.svg
@@ -26404,6 +26434,7 @@ share/icons/Numix/48/mimetypes/application-x-tha.svg
 share/icons/Numix/48/mimetypes/application-x-theme.svg
 share/icons/Numix/48/mimetypes/application-x-thz.svg
 share/icons/Numix/48/mimetypes/application-x-trash.svg
+share/icons/Numix/48/mimetypes/application-x-troff-man.svg
 share/icons/Numix/48/mimetypes/application-x-tzo.svg
 share/icons/Numix/48/mimetypes/application-x-vocabularium.svg
 share/icons/Numix/48/mimetypes/application-x-vokabeltrainer.svg
@@ -26464,6 +26495,7 @@ share/icons/Numix/48/mimetypes/audio-x-scpis.svg
 share/icons/Numix/48/mimetypes/audio-x-scpls.svg
 share/icons/Numix/48/mimetypes/audio-x-shorten.svg
 share/icons/Numix/48/mimetypes/audio-x-smart-playlist.svg
+share/icons/Numix/48/mimetypes/audio-x-soundfont.svg
 share/icons/Numix/48/mimetypes/audio-x-speex+ogg.svg
 share/icons/Numix/48/mimetypes/audio-x-tuxguitar.svg
 share/icons/Numix/48/mimetypes/audio-x-vorbis+ogg.svg
@@ -26844,6 +26876,8 @@ share/icons/Numix/48/mimetypes/text-rust.svg
 share/icons/Numix/48/mimetypes/text-sgml.svg
 share/icons/Numix/48/mimetypes/text-spreadsheet.svg
 share/icons/Numix/48/mimetypes/text-tab-separated-values.svg
+share/icons/Numix/48/mimetypes/text-tcl.svg
+share/icons/Numix/48/mimetypes/text-troff.svg
 share/icons/Numix/48/mimetypes/text-vcalendar.svg
 share/icons/Numix/48/mimetypes/text-vnd.grpahviz.svg
 share/icons/Numix/48/mimetypes/text-vnd.qt.linguist.svg
@@ -26886,6 +26920,7 @@ share/icons/Numix/48/mimetypes/text-x-java-source.svg
 share/icons/Numix/48/mimetypes/text-x-java.svg
 share/icons/Numix/48/mimetypes/text-x-javascript.svg
 share/icons/Numix/48/mimetypes/text-x-katefilelist.svg
+share/icons/Numix/48/mimetypes/text-x-kotlin.svg
 share/icons/Numix/48/mimetypes/text-x-lilypond.svg
 share/icons/Numix/48/mimetypes/text-x-log.svg
 share/icons/Numix/48/mimetypes/text-x-lua.svg
@@ -29258,6 +29293,7 @@ share/icons/Numix/64/mimetypes/application-pgp.svg
 share/icons/Numix/64/mimetypes/application-pkcs7-mime.svg
 share/icons/Numix/64/mimetypes/application-pkcs7-signature.svg
 share/icons/Numix/64/mimetypes/application-pkix-cerl.svg
+share/icons/Numix/64/mimetypes/application-pkix-cert+pem.svg
 share/icons/Numix/64/mimetypes/application-pkix-cert.svg
 share/icons/Numix/64/mimetypes/application-postscript.svg
 share/icons/Numix/64/mimetypes/application-presentation-template.svg
@@ -29349,6 +29385,7 @@ share/icons/Numix/64/mimetypes/application-vnd.oasis.opendocument.text-web-templ
 share/icons/Numix/64/mimetypes/application-vnd.oasis.opendocument.text-web.svg
 share/icons/Numix/64/mimetypes/application-vnd.oasis.opendocument.text.svg
 share/icons/Numix/64/mimetypes/application-vnd.oasis.opendocument.web-template.svg
+share/icons/Numix/64/mimetypes/application-vnd.olive-project.svg
 share/icons/Numix/64/mimetypes/application-vnd.openofficeorg.extension.svg
 share/icons/Numix/64/mimetypes/application-vnd.openshot-qt-project.svg
 share/icons/Numix/64/mimetypes/application-vnd.openxmlformats-officedocument.presentationml.presentation.svg
@@ -29398,6 +29435,7 @@ share/icons/Numix/64/mimetypes/application-x-abiword.svg
 share/icons/Numix/64/mimetypes/application-x-acad.svg
 share/icons/Numix/64/mimetypes/application-x-ace.svg
 share/icons/Numix/64/mimetypes/application-x-addon.svg
+share/icons/Numix/64/mimetypes/application-x-alpm-package.svg
 share/icons/Numix/64/mimetypes/application-x-amiga-disk-format.svg
 share/icons/Numix/64/mimetypes/application-x-anki.svg
 share/icons/Numix/64/mimetypes/application-x-anki2.svg
@@ -29668,6 +29706,7 @@ share/icons/Numix/64/mimetypes/audio-x-scpis.svg
 share/icons/Numix/64/mimetypes/audio-x-scpls.svg
 share/icons/Numix/64/mimetypes/audio-x-shorten.svg
 share/icons/Numix/64/mimetypes/audio-x-smart-playlist.svg
+share/icons/Numix/64/mimetypes/audio-x-soundfont.svg
 share/icons/Numix/64/mimetypes/audio-x-speex+ogg.svg
 share/icons/Numix/64/mimetypes/audio-x-tuxguitar.svg
 share/icons/Numix/64/mimetypes/audio-x-vorbis+ogg.svg
@@ -30054,6 +30093,7 @@ share/icons/Numix/64/mimetypes/text-rust.svg
 share/icons/Numix/64/mimetypes/text-sgml.svg
 share/icons/Numix/64/mimetypes/text-spreadsheet.svg
 share/icons/Numix/64/mimetypes/text-tab-separated-values.svg
+share/icons/Numix/64/mimetypes/text-tcl.svg
 share/icons/Numix/64/mimetypes/text-troff.svg
 share/icons/Numix/64/mimetypes/text-vcalendar.svg
 share/icons/Numix/64/mimetypes/text-vnd.abc.svg
@@ -30101,6 +30141,7 @@ share/icons/Numix/64/mimetypes/text-x-java-source.svg
 share/icons/Numix/64/mimetypes/text-x-java.svg
 share/icons/Numix/64/mimetypes/text-x-javascript.svg
 share/icons/Numix/64/mimetypes/text-x-katefilelist.svg
+share/icons/Numix/64/mimetypes/text-x-kotlin.svg
 share/icons/Numix/64/mimetypes/text-x-ldif.svg
 share/icons/Numix/64/mimetypes/text-x-lilypond.svg
 share/icons/Numix/64/mimetypes/text-x-log.svg
@@ -31314,6 +31355,7 @@ share/icons/Numix/scalable/status/audio-volume-low-symbolic.svg
 share/icons/Numix/scalable/status/audio-volume-medium-symbolic.svg
 share/icons/Numix/scalable/status/audio-volume-muted-blocking-symbolic.svg
 share/icons/Numix/scalable/status/audio-volume-muted-symbolic.svg
+share/icons/Numix/scalable/status/audio-volume-overamplified-symbolic.svg
 share/icons/Numix/scalable/status/avatar-default-symbolic.svg
 share/icons/Numix/scalable/status/battery-caution-charging-symbolic.svg
 share/icons/Numix/scalable/status/battery-caution-symbolic.svg
