@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	python-gitlab
-PORTVERSION=	2.2.0
+PORTVERSION=	2.3.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.22.0:www/py-requests@${PY_FLAVOR
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}httmock>0:www/py-httmock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}responses>0:devel/py-responses@${PY_FLAVOR}
 
 USES=		python:3.6+
 
@@ -49,6 +50,6 @@ post-install-DOCS-on:
 	${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} "! -name .buildinfo -and ! -name objects.inv")
 
 do-test:
-	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -v -rs -o addopts=
+	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -v -rs -o addopts= gitlab/tests
 
 .include <bsd.port.mk>
