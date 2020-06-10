@@ -13,10 +13,6 @@ COMMENT=	Professional CAD system
 
 LICENSE=	GPLv3
 
-.if ${/usr/bin/ld:L:tA} == /usr/bin/ld.lld
-BROKEN_i386=	ld: error: relocation R_386_PC32 cannot be used against symbol ON_GetPointListBoundingBox
-.endif
-
 BUILD_DEPENDS=	bash:shells/bash	\
 		${LOCALBASE}/lib/libopenNURBS.a:graphics/opennurbs
 
