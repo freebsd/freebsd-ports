@@ -18,5 +18,5 @@ cfg = {
     'ericOthersDir'        : 'DATADIR/Others',
     'bindir'               : 'PREFIX/bin',
     'mdir'                 : 'PYTHON_SITELIBDIR',
-    'apidir'               : 'LOCALBASE/share/qt4/qsci/api',
+    'apidir'               : 'LOCALBASE/share/qt5/qsci/api',
 }

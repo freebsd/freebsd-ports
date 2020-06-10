@@ -1,7 +1,6 @@
 # Created by: Boris Samorodov <bsam@FreeBSD.org>
 # $FreeBSD$
 
-PORTREVISION=	1
 PKGNAMESUFFIX=	-qt5-${FLAVOR:U:S/_/-/}
 DISTNAME=	${PORTNAME}-nolang-${DISTVERSION}
 CATEGORIES=	devel python
@@ -13,11 +12,12 @@ RUN_DEPENDS+=	${PYTHON_LIBDIR}/lib-dynload/_sqlite3.so:databases/py-sqlite3@${PY
 
 CONFLICTS_INSTALL=	${FLAVORS:N${FLAVOR}:C/^/${PORTNAME}${PKGNAMESUFFIX}-/:C/$/-[0-9]*/}
 
-USES=		desktop-file-utils python:3.5+ pyqt:5
+USES+=		desktop-file-utils python:3.5+ pyqt:5 shebangfix
 USE_PYTHON=	flavors
 USE_PYQT=	core gui qscintilla2 webengine \
 		help_run network_run svg_run sql_run
-INSTALL_CMD=	install.py -c -f eric6config.freebsd -i ${STAGEDIR}
+INSTALL_PY=	install.py -c -f eric6config.freebsd -i ${STAGEDIR}
+SHEBANG_FILES=	*.py eric/eric6/*.py eric/scripts/*.py
 SUB_FILES=	eric6.desktop
 MASTERPORT=	yes
 
@@ -44,7 +44,7 @@ do-configure:
 
 do-install:
 	@(cd ${WRKSRC}; \
-	${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${INSTALL_CMD})
+	${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${INSTALL_PY})
 
 post-install:
 	${INSTALL_DATA} ${WRKDIR}/eric6.desktop ${STAGEDIR}${PREFIX}/share/applications/
