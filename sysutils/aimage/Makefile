@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libafflib.so:sysutils/afflib
 
-USES=		gmake readline ssl
+USES=		gmake readline ssl ncurses
 GNU_CONFIGURE=	yes
 # Pretend ssl3_new exists for LibreSSL.  It's never really used but
 # configure checks for it.
@@ -23,11 +23,4 @@ CONFIGURE_ARGS=	ac_cv_lib_ssl_ssl3_new=yes
 
 PLIST_FILES=	bin/aimage
 
-.include <bsd.port.pre.mk>
-
-.if ${SSL_DEFAULT} == base
-BROKEN_FreeBSD_12=	error: field has incomplete type 'EVP_MD_CTX' (aka 'evp_md_ctx_st')
-BROKEN_FreeBSD_13=	error: field has incomplete type 'EVP_MD_CTX' (aka 'evp_md_ctx_st')
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
