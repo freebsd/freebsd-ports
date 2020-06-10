@@ -1,11 +1,7 @@
---- Makefile.orig	2020-06-01 09:25:10 UTC
+--- Makefile.orig	2020-06-09 16:21:34 UTC
 +++ Makefile
-@@ -221,10 +221,10 @@ install: hikari hikari-unlocker share/man/man1/hikari.
- 	mkdir -p ${DESTDIR}/${PREFIX}/share/wayland-sessions
- 	mkdir -p ${DESTDIR}/${ETC_PREFIX}/etc/hikari
- 	mkdir -p ${DESTDIR}/${ETC_PREFIX}/etc/pam.d
--	sed "s,PREFIX,/${PREFIX}," etc/hikari/hikari.conf > ${DESTDIR}/${ETC_PREFIX}/etc/hikari/hikari.conf
-+	sed "s,PREFIX,${PREFIX}," etc/hikari/hikari.conf > ${DESTDIR}/${ETC_PREFIX}/etc/hikari/hikari.conf
+@@ -224,7 +224,7 @@ install: hikari hikari-unlocker share/man/man1/hikari.
+ 	sed "s,PREFIX,${PREFIX}," etc/hikari/hikari.conf > ${DESTDIR}/${ETC_PREFIX}/etc/hikari/hikari.conf
  	chmod 644 ${DESTDIR}/${ETC_PREFIX}/etc/hikari/hikari.conf
  	install -m ${PERMS} hikari ${DESTDIR}/${PREFIX}/bin
 -	install -m 4555 hikari-unlocker ${DESTDIR}/${PREFIX}/bin
