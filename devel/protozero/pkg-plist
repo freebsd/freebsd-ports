@@ -1,3 +1,9 @@
+include/protozero/basic_pbf_builder.hpp
+include/protozero/basic_pbf_writer.hpp
+include/protozero/buffer_fixed.hpp
+include/protozero/buffer_string.hpp
+include/protozero/buffer_tmpl.hpp
+include/protozero/buffer_vector.hpp
 include/protozero/byteswap.hpp
 include/protozero/config.hpp
 include/protozero/data_view.hpp
