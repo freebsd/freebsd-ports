@@ -47,7 +47,9 @@ MAKE_ARGS=	CC=${CC} CXX=${CXX}
 PLIST_FILES=	bin/eduke32 bin/mapster32
 PORTEXAMPLES=	*
 
-OPTIONS_DEFINE=		EXAMPLES GCC HRP OFFENSIVE SHAREWARE VOXEL
+OPTIONS_DEFINE=		EXAMPLES GCC HRP OFFENSIVE VOXEL
+OPTIONS_RADIO=		GAMEDATA
+OPTIONS_RADIO_GAMEDATA=	SHAREWARE FULL
 OPTIONS_DEFINE_i386=	ASM
 OPTIONS_DEFAULT_i386=	ASM
 OPTIONS_DEFAULT_amd64=	GCC
@@ -74,6 +76,9 @@ SHAREWARE_PLIST_FILES=	${DATADIR}/duke3d.grp ${DATADIR}/duke.rts
 VOXEL_DESC=		Install Voxel Pack
 VOXEL_DISTFILES=	duke3d_voxels.zip:voxel
 VOXEL_PLIST_FILES=	${DATADIR}/duke3d_voxels.zip
+FULL_DESC=		Install duke3d.grp and duke.rts from $${DISTDIR}/duke3d
+FULL_DISTFILES=		duke3d/duke3d.grp duke3d/duke.rts
+FULL_PLIST_FILES=	${DATADIR}/duke3d.grp ${DATADIR}/duke.rts
 
 post-extract-SHAREWARE-on:
 	@cd ${WRKDIR} && ${UNZIP_NATIVE_CMD} -qo DN3DSW13.SHR
@@ -107,5 +112,26 @@ do-install-SHAREWARE-on:
 do-install-VOXEL-on:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${DISTDIR}/duke3d_voxels.zip ${STAGEDIR}${DATADIR}/duke3d_voxels.zip
+
+do-install-FULL-on:
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${DISTDIR}/duke3d/duke3d.grp ${STAGEDIR}${DATADIR}/duke3d.grp
+	${INSTALL_DATA} ${DISTDIR}/duke3d/duke.rts ${STAGEDIR}${DATADIR}/duke.rts
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MFULL}
+
+# Avoid checksumming original (commercial) game data files: A variety of
+# editions exist with the same file names and they should all work.
+# This is a hack that would break when bsd.port.mk changes or DIST_SUBDIR
+# is set.
+_CKSUMFILES=	${ALLFILES:Nduke3d/duke*}
+
+.if !exists(${DISTDIR}/duke3d/duke3d.grp) || !exists(${DISTDIR}/duke3d/duke.rts)
+IGNORE=	option FULL selected, but duke3d.grp or duke.rts not found in ${DISTDIR}/duke3d
+.endif
+
+.endif
 
 .include <bsd.port.mk>
