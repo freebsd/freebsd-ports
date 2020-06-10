@@ -1,10 +1,11 @@
 # $FreeBSD$
 
-PORTNAME=	django_csp
+PORTNAME=	django-csp
 PORTVERSION=	3.5
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
-PKGNAMEPREFIX= ${PYTHON_PKGNAMEPREFIX}dj22-
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	django_csp-${PORTVERSION}
 
 MAINTAINER=	alex@xanderio.de
 COMMENT=	Adds Content-Security-Policy headers to Django

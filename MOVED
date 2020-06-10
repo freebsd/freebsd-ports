@@ -15079,3 +15079,4 @@ www/py-dj22-djangoql|www/py-djangoql|2020-06-06|Renamed to match the naming of o
 sysutils/beats|sysutils/beats6|2020-06-07|Renamed to match the naming of other ELK ports
 security/pam_pseudo||2020-06-07|Has expired: Broken for more than 6 months
 multimedia/din|audio/din|2020-06-09|Moved to a better category
+www/py-dj22-django_csp|www/py-django-csp|2020-06-10|Renamed to match upstream naming and to be in sync with other Django ports since Django 2.2 became default

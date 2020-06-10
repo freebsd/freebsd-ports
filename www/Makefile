@@ -1451,7 +1451,6 @@
     SUBDIR += py-dj22-django-taggit-serializer
     SUBDIR += py-dj22-django-timezone-field
     SUBDIR += py-dj22-django-treebeard
-    SUBDIR += py-dj22-django_csp
     SUBDIR += py-dj22-djangorestframework
     SUBDIR += py-dj22-drf-yasg
     SUBDIR += py-dj22-jsonfield
@@ -1486,6 +1485,7 @@
     SUBDIR += py-django-countries
     SUBDIR += py-django-crispy-forms
     SUBDIR += py-django-cron
+    SUBDIR += py-django-csp
     SUBDIR += py-django-datetime-widget
     SUBDIR += py-django-debreach
     SUBDIR += py-django-debug-toolbar
