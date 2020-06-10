@@ -788,6 +788,7 @@
     SUBDIR += taglookup
     SUBDIR += tagtool
     SUBDIR += tagutil
+    SUBDIR += tamgamp-lv2
     SUBDIR += tap-plugins
     SUBDIR += tap-plugins-lv2
     SUBDIR += tcd
