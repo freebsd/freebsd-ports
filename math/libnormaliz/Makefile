@@ -4,6 +4,7 @@ PORTNAME=		libnormaliz
 DISTVERSIONPREFIX=	v
 DISTVERSION=		3.8.4
 PORTREVISION=		1
+PORTREVISION=		1
 CATEGORIES=		math
 
 MAINTAINER=	salvadore@FreeBSD.org
@@ -34,7 +35,7 @@ COCOA_DESC=		Link with libcocoa.a (might cause circular dependency)
 COCOA_BUILD_DEPENDS=	${LOCALBASE}/lib/libcocoa.a:math/cocoalib
 COCOA_CONFIGURE_WITH=	cocoalib
 FLINT_DESC=		Link with libflint.so
-FLINT_BUILD_DEPENDS=	${LOCALBASE}/lib/libflint.so:math/flint2
+FLINT_LIB_DEPENDS=	libflint.so:math/flint2
 FLINT_CONFIGURE_WITH=	flint
 FLINT_LDFLAGS=		-lpthread
 OPENMP_CONFIGURE_ENABLE=	openmp
