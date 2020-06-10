@@ -2,7 +2,7 @@
 
 PORTNAME=	gotop
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.0.0
+DISTVERSION=	4.0.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -26,14 +26,12 @@ GH_TUPLE=	\
 		mattn:go-runewidth:v0.0.4:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
 		mitchellh:go-wordwrap:ad45545899c7:mitchellh_go_wordwrap/vendor/github.com/mitchellh/go-wordwrap \
 		nsf:termbox-go:38ba6e5628f1:nsf_termbox_go/vendor/github.com/nsf/termbox-go \
-		panotza:gosmc:810267459a2a:panotza_gosmc/vendor/github.com/panotza/gosmc \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
 		shibukawa:configdir:e180dbdc8da0:shibukawa_configdir/vendor/github.com/shibukawa/configdir \
 		shirou:gopsutil:v2.20.3:shirou_gopsutil/vendor/github.com/shirou/gopsutil \
 		stretchr:testify:v1.4.0:stretchr_testify/vendor/github.com/stretchr/testify \
  		valyala:fastrand:v1.0.0:valyala_fastrand/vendor/github.com/valyala/fastrand \
  		valyala:histogram:v1.0.1:valyala_histogram/vendor/github.com/valyala/histogram \
- 		xxxserxxx:iSMC:v1.0.1:xxxserxxx_ismc/vendor/github.com/xxxserxxx/iSMC \
  		xxxserxxx:opflag:v1.0.5:xxxserxxx_opflag/vendor/github.com/xxxserxxx/opflag
 GL_TUPLE=	https://gitlab.howett.net:go:plist:591f970eefbbeb04d7b37f334a0c4c3256e32876:go_plist/vendor/howett.net/plist
 
