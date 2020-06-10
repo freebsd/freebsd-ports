@@ -4,6 +4,7 @@ PORTNAME=	surge-synthesizer
 DISTVERSIONPREFIX=	release_
 DISTVERSION=	1.6.6-58
 DISTVERSIONSUFFIX=	-g3dbd1be
+PORTREVISION=	1
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 
@@ -37,13 +38,10 @@ GH_TUPLE=	\
 
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
-PLIST_FILES=	lib/lv2/Surge.lv2/Surge.so \
-		lib/lv2/Surge.lv2/Surge_dsp.ttl \
-		lib/lv2/Surge.lv2/Surge_ui.ttl \
-		lib/lv2/Surge.lv2/manifest.ttl \
-		lib/vst/Surge.so
-
 PORTSCOUT=	limit:^\d+\. # prevent alpha-numeric strings
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|"/usr/share/Surge/"|"${DATADIR}/"|' ${WRKSRC}/src/common/SurgeStorage.cpp
 
 do-install:
 	# LV2 plugin
@@ -53,5 +51,7 @@ do-install:
 	# VST plugin
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/vst
 	${INSTALL_LIB} ${WRKSRC}/products/Surge.vst3/Contents/*/Surge.so ${STAGEDIR}${PREFIX}/lib/vst
+	# data
+	cd ${WRKSRC}/resources/data && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
