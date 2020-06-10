@@ -125,6 +125,7 @@ libelf:
 	 ${MAKE_ENV} ${CONFIGURE_ENV} ${SRC_DIR}/libelf-${BUNDLED_VERSION_LIBELF}/configure \
 	 --prefix=${INTERIM_WORLD} \
 	 --build=${CONFIGURE_TARGET} \
+	 --host=${CONFIGURE_TARGET} \
 	 --disable-shared \
 	 --disable-nls
 	@${ECHO_MSG} "=====>  Build"
