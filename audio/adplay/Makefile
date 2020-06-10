@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	adplay
-PORTVERSION=	1.8
+PORTVERSION=	1.8.1
 PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	audio
@@ -17,30 +17,32 @@ LIB_DEPENDS=	libadplug.so:audio/libadplug \
 		libbinio.so:devel/libbinio
 
 USES=		autoreconf libtool pkgconfig
-GNU_CONFIGURE=	yes
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	adplug
 GH_PROJECT=	${PORTNAME}-unix
 GH_TUPLE=	adplug:database:${DBVERSION}:database/database-${DBVERSION}
 
-DBFILE=		adplug.db
-DBVERSION=	v1.0
-
+GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--sharedstatedir=${DATADIR}
+
+PLIST_FILES=	${DATADIR}/adplug.db \
+		bin/adplay \
+		man/man1/adplay.1.gz
 
 OPTIONS_DEFINE=	ALSA SDL
 
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
-ALSA_CONFIGURE_WITH=	alsa-prefix=${LOCALBASE}/lib
 ALSA_CONFIGURE_OFF=	--disable-output-alsa
+ALSA_CONFIGURE_WITH=	alsa-prefix=${LOCALBASE}/lib
 ALSA_CFLAGS+=		`pkg-config --cflags alsa`
 
-SDL_CONFIGURE_OFF=	--disable-output-sdl
 SDL_USES=		sdl
-SDL_USE=		SDL=sdl,mixer
+SDL_USE=		SDL=mixer,sdl
+SDL_CONFIGURE_OFF=	--disable-output-sdl
 
-PLIST_FILES=	bin/adplay %%DATADIR%%/adplug.db man/man1/adplay.1.gz
+DBFILE=		adplug.db
+DBVERSION=	v1.0
 
 post-patch:
 	@${RM} ${WRKSRC}/src/getopt.h
