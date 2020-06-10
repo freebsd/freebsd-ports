@@ -1,0 +1,5 @@
+TIMESTAMP = 1591762352
+SHA256 (drobilla-raul-0.8.0.20191209-e87bb398f025912fb989a09f1450b838b251aea1_GH0.tar.gz) = 850eafab4d6d3a59e44f32a56def0eb74a08df795e89bc0937471cd4f9a9f8c4
+SIZE (drobilla-raul-0.8.0.20191209-e87bb398f025912fb989a09f1450b838b251aea1_GH0.tar.gz) = 64634
+SHA256 (drobilla-autowaf-c87cc53_GH0.tar.gz) = afbe40c105255204e753db25b3e08c1cf9869aeea8c28dbf530224311ffe8a3c
+SIZE (drobilla-autowaf-c87cc53_GH0.tar.gz) = 376104

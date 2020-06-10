@@ -1,0 +1,15 @@
+include/raul-1/raul/Array.hpp
+include/raul-1/raul/Deletable.hpp
+include/raul-1/raul/DoubleBuffer.hpp
+include/raul-1/raul/Exception.hpp
+include/raul-1/raul/Maid.hpp
+include/raul-1/raul/Noncopyable.hpp
+include/raul-1/raul/Path.hpp
+include/raul-1/raul/Process.hpp
+include/raul-1/raul/RingBuffer.hpp
+include/raul-1/raul/Semaphore.hpp
+include/raul-1/raul/Socket.hpp
+include/raul-1/raul/Symbol.hpp
+include/raul-1/raul/TimeSlice.hpp
+include/raul-1/raul/TimeStamp.hpp
+libdata/pkgconfig/raul-1.pc

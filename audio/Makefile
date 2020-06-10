@@ -686,6 +686,7 @@
     SUBDIR += qsampler
     SUBDIR += qsynth
     SUBDIR += quimup
+    SUBDIR += raul
     SUBDIR += rawrec
     SUBDIR += re
     SUBDIR += rebot3
