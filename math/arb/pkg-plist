@@ -25,4 +25,4 @@ include/mag.h
 include/partitions.h
 lib/libarb.so
 lib/libarb.so.2
-lib/libarb.so.2.8.0
+lib/libarb.so.2.9.0
