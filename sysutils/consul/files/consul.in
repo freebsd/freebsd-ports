@@ -11,15 +11,13 @@
 # Additional variables you can define are:
 #
 # consul_user (string):                Set user to run consul.
-#                                      Default is "%%CONSUL_USER%%".
+#                                      Default is "%%USER%%".
 # consul_group (string):               Set group to run consul.
-#                                      Default is "%%CONSUL_GROUP%%".
+#                                      Default is "%%GROUP%%".
 # consul_pidfile (string):             Set full path to pid file
 #                                      Default is "/var/run/consul.pid"
-# consul_configtest (string):          Set to yes to enable Consul config validation
-#                                      Set to NO by default
 # consul_datadir (dir):                Set dir to run consul in.
-#                                      Default is "%%CONSUL_DATADIR%%"
+#                                      Default is "%%DBDIR%%"
 # consul_syslog_output_enable (bool):  Set to YES to enable syslog output
 #                                      Default is "NO". See daemon(8).
 # consul_syslog_output_tag (str):      Set syslog tag if syslog enabled.
@@ -41,15 +39,13 @@ load_rc_config $name
 
 : ${consul_enable:="NO"}
 : ${consul_syslog_output_enable:="NO"}
-: ${consul_user:="%%CONSUL_USER%%"}
-: ${consul_group:="%%CONSUL_GROUP%%"}
+: ${consul_user:="%%USER%%"}
+: ${consul_group:="%%GROUP%%"}
 : ${consul_pidfile:="/var/run/${name}.pid"}
-: ${consul_configtest:="NO"}
-: ${consul_datadir:="%%CONSUL_DATADIR%%"}
+: ${consul_datadir:="%%CONSUL_DBDIR%%"}
 
 start_precmd="consul_start_precmd"
-extra_commands="reload configtest"
-configtest_cmd="consul_checkconfig"
+extra_commands="reload"
 
 # backwards compatibility
 if [ -n "${consul_dir}" ]; then
@@ -71,11 +67,6 @@ if checkyesno consul_syslog_output_enable; then
         fi  
 fi  
 
-if checkyesno consul_configtest; then
-        restart_precmd="consul_checkconfig"
-        reload_precmd="consul_checkconfig"
-fi
-
 pidfile=${consul_pidfile}
 procname="%%PREFIX%%/bin/consul"
 command="/usr/sbin/daemon"
@@ -94,12 +85,6 @@ consul_start_precmd()
         if [ ! -d %%ETCDIR%% ]; then
                 install -d -m 0750 -o ${consul_user} -g ${consul_group} %%ETCDIR%%
         fi
-}
-
-consul_checkconfig()
-{
-        echo "Performing sanity check on ${name} configuration:"
-        eval ${procname} validate "%%ETCDIR%%"
 }
 
 run_rc_command "$1"
