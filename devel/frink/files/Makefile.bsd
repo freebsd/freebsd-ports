@@ -4,7 +4,7 @@ CFLAGS+=-I${.CURDIR} -DHAVE_STDLIB_H
 
 BINDIR=	${PREFIX}/bin
 MANDIR=	${PREFIX}/man/man
-NO_MAN=	regretfully
+MK_MAN=	no
 WARNS=	7
 
 .include <bsd.prog.mk>
