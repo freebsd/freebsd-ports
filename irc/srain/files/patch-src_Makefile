@@ -5,7 +5,7 @@
  LIBSECRETLIBS =$(shell pkg-config --libs libsecret-1)
  
 -CFLAGS += -std=gnu99 -O2 -Wall -Iinc -Wno-deprecated-declarations \
-+CFLAGS += -std=gnu11 -Wall -Iinc -Wno-deprecated-declarations \
++CFLAGS += -Wall -Iinc -Wno-deprecated-declarations \
  		  $(DEFS) \
  		  $(DBGFLAGS) \
  		  $(GTK3FLAGS) \

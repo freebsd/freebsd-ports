@@ -14,7 +14,7 @@ LIB_DEPENDS=	libconfig.so:devel/libconfig \
 		libsecret-1.so:security/libsecret \
 		libsoup-2.4.so:devel/libsoup
 
-USES=		gettext-tools gmake gnome pkgconfig ssl
+USES=		compiler:c11 gettext-tools gmake gnome pkgconfig ssl
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 pango
 
 USE_GITHUB=		yes
