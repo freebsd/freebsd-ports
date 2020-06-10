@@ -51,7 +51,7 @@ include/adplug/player.h
 include/adplug/players.h
 include/adplug/protrack.h
 include/adplug/psi.h
-include/adplug/rad.h
+include/adplug/rad2.h
 include/adplug/rat.h
 include/adplug/raw.h
 include/adplug/realopl.h
