@@ -38,6 +38,7 @@
 @sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/vernemq.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/vsphere.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/web_log.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/whoisquery.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/wmi.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/x509check.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/zookeeper.conf.sample
