@@ -6,6 +6,7 @@ share/applications/qt5ct.desktop
 %%DATADIR%%/colors/airy.conf
 %%DATADIR%%/colors/darker.conf
 %%DATADIR%%/colors/dusk.conf
+%%DATADIR%%/colors/ia_ora.conf
 %%DATADIR%%/colors/sand.conf
 %%DATADIR%%/colors/simple.conf
 %%DATADIR%%/colors/waves.conf
