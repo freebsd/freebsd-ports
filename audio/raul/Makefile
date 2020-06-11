@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	lv2>0:audio/lv2 \
 		${LOCALBASE}/include/fftw3.h:math/fftw3
 
-USES=		waf
+USES=		compiler:c++11-lang waf
 USE_GITHUB=	yes
 GH_ACCOUNT=	drobilla
 GH_TAGNAME=	e87bb398f025912fb989a09f1450b838b251aea1
