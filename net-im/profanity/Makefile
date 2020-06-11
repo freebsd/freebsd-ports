@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	profanity
-PORTVERSION=	0.8.1
+PORTVERSION=	0.9.0
 CATEGORIES=	net-im
 
 MAINTAINER=	arved@FreeBSD.org
@@ -19,7 +19,8 @@ LIB_DEPENDS=	libmesode.so:net-im/libmesode \
 		libassuan.so:security/libassuan \
 		libgpg-error.so:security/libgpg-error \
 		libgcrypt.so:security/libgcrypt \
-		libsignal-protocol-c.so:net/libsignal
+		libsignal-protocol-c.so:net/libsignal \
+		libsqlite3.so:databases/sqlite3
 
 USES=		ncurses pkgconfig ssl python readline autoreconf libtool gnome
 USE_GNOME=	glib20

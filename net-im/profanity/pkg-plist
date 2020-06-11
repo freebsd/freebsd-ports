@@ -14,6 +14,7 @@ man/man1/profanity.1.gz
 %%DATADIR%%/themes/hacker
 %%DATADIR%%/themes/headache
 %%DATADIR%%/themes/joker
+%%DATADIR%%/themes/jubalian
 %%DATADIR%%/themes/orange
 %%DATADIR%%/themes/original
 %%DATADIR%%/themes/shade
