@@ -5,9 +5,12 @@ steam-utils/bin/steam-install
 steam-utils/bin/steam-kill
 steam-utils/lib32/fakenm/libnm-glib.so.4
 steam-utils/lib32/fakepulse/libpulse.so.0
+steam-utils/lib32/fakeudev/libudev.so.0
+steam-utils/lib32/fmodfix/fmodfix.so
 steam-utils/lib32/steamfix/steamfix.so
 steam-utils/lib64/fakepulse/libpulse.so.0
 steam-utils/lib64/fakeudev/libudev.so.0
+steam-utils/lib64/fmodfix/fmodfix.so
 steam-utils/lib64/webfix/webfix.so
 steam-utils/lxbin/dbus-launch
 steam-utils/lxbin/fhelper32

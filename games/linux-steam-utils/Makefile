@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	steam-utils
-DISTVERSION=	20200404
+DISTVERSION=	20200525
 CATEGORIES=	games linux
 PKGNAMEPREFIX=	linux-
 
@@ -29,9 +29,14 @@ GH_PROJECT=	linuxulator-steam-utils
 ALL_TARGET=	build
 MAKE_ARGS+=	PREFIX=${STAGEDIR}${PREFIX}
 
+.include <bsd.port.options.mk>
+
 post-install:
 .for executable in steam steam-install
 	${LN} -s ../steam-utils/bin/${executable} ${STAGEDIR}${PREFIX}/bin/${executable}
 .endfor
+.if ${OSVERSION} >= 1300082
+	${REINPLACE_CMD} -e '/fmodfix.so/d' ${TMPPLIST}
+.endif
 
 .include <bsd.port.mk>
