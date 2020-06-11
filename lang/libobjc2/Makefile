@@ -11,7 +11,6 @@ COMMENT=	Replacement Objective-C runtime supporting modern Objective-C features
 
 LICENSE=	MIT
 
-BROKEN_powerpc=		Does not compile on powerpc: Unsupported relocation type 10
 BROKEN_sparc64=		Does not compile on sparc64: Cannot configure clang properly
 USES=		cmake compiler objc:compiler
 
