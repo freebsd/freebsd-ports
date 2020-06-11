@@ -25,7 +25,7 @@ GH_PROJECT=	vkQuake
 
 INSTALLS_ICONS=	yes
 
-MAKE_ENV=	prefix=${PREFIX} bindir=${PREFIX}/bin
+MAKE_ENV=	prefix=${PREFIX} bindir=${PREFIX}/bin VULKAN_SDK=${LOCALBASE}
 ALL_TARGET=	# empty
 
 .include	"${.CURDIR}/../quake-data/Makefile.include"
