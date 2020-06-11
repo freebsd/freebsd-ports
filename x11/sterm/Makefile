@@ -42,7 +42,7 @@ SCROLLBACK_PATCHFILES=	st-scrollback-20200419-72e3f6c.diff:-p1 \
 			st-scrollback-mouse-20191024-a2c479c.diff:-p1
 
 SOLARIZED_PATCH_SITES=	https://st.suckless.org/patches/solarized/
-SOLARIZED_PATCHFILES=	solarized/st-solarized-both-0.8.3.diff:-p1
+SOLARIZED_PATCHFILES=	st-solarized-both-0.8.3.diff:-p1
 
 pre-everything::
 	@${ECHO_MSG} "You can build st with your own config.h using the ST_CONF knob:"
