@@ -905,6 +905,7 @@
     SUBDIR += suitesparse
     SUBDIR += sundials
     SUBDIR += superlu
+    SUBDIR += symengine
     SUBDIR += symmetrica
     SUBDIR += symphony
     SUBDIR += sympow

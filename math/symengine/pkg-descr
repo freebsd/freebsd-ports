@@ -1,0 +1,12 @@
+SymEngine is a standalone fast C++ symbolic manipulation library.
+Optional thin wrappers allow usage of the library from other languages, e.g.:
+
+* C wrappers allow usage from C, or as a basis for other wrappers (the
+  symengine/cwrapper.h file)
+* Python wrappers allow easy usage from Python and integration with SymPy and
+  Sage (the symengine.py repository)
+* Ruby wrappers (the symengine.rb repository)
+* Julia wrappers (the SymEngine.jl repository)
+* Haskell wrappers (the symengine.hs repository)
+
+WWW: https://github.com/symengine/symengine
