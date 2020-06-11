@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	zookeeper
-PORTVERSION=	3.5.5
+PORTVERSION=	3.6.1
 CATEGORIES=	devel
-MASTER_SITES=	APACHE/${PORTNAME}/current
+MASTER_SITES=	APACHE/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 PKGNAMEPREFIX=	lib
 DISTNAME=	apache-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	skreuzer@FreeBSD.org
+MAINTAINER=	dmitry.wagin@ya.ru
 COMMENT=	C client interface to Zookeeper server
 
 LICENSE=	APACHE20
@@ -22,6 +22,10 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/zookeeper-client/zookeeper-client-c
+
+post-extract:
+	@${MKDIR} ${WRKSRC}/generated/
+	@cd ${FILESDIR} && ${CP} -p zookeeper.jute.* ${WRKSRC}/generated/
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/* ${STAGEDIR}${PREFIX}/lib/*.so

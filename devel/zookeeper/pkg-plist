@@ -1,26 +1,42 @@
 bin/zkCli.sh
 %%DATADIR%%/audience-annotations-0.5.0.jar
 %%DATADIR%%/commons-cli-1.2.jar
-%%DATADIR%%/jackson-annotations-2.9.0.jar
-%%DATADIR%%/jackson-core-2.9.8.jar
-%%DATADIR%%/jackson-databind-2.9.8.jar
+%%DATADIR%%/commons-lang-2.6.jar
+%%DATADIR%%/jackson-annotations-2.10.3.jar
+%%DATADIR%%/jackson-core-2.10.3.jar
+%%DATADIR%%/jackson-databind-2.10.3.jar
 %%DATADIR%%/javax.servlet-api-3.1.0.jar
-%%DATADIR%%/jetty-http-9.4.17.v20190418.jar
-%%DATADIR%%/jetty-io-9.4.17.v20190418.jar
-%%DATADIR%%/jetty-security-9.4.17.v20190418.jar
-%%DATADIR%%/jetty-server-9.4.17.v20190418.jar
-%%DATADIR%%/jetty-servlet-9.4.17.v20190418.jar
-%%DATADIR%%/jetty-util-9.4.17.v20190418.jar
+%%DATADIR%%/jetty-http-9.4.24.v20191120.jar
+%%DATADIR%%/jetty-io-9.4.24.v20191120.jar
+%%DATADIR%%/jetty-security-9.4.24.v20191120.jar
+%%DATADIR%%/jetty-server-9.4.24.v20191120.jar
+%%DATADIR%%/jetty-servlet-9.4.24.v20191120.jar
+%%DATADIR%%/jetty-util-9.4.24.v20191120.jar
 %%DATADIR%%/jline-2.11.jar
 %%DATADIR%%/json-simple-1.1.1.jar
 %%DATADIR%%/log4j-1.2.17.jar
-%%DATADIR%%/netty-all-4.1.29.Final.jar
+%%DATADIR%%/metrics-core-3.2.5.jar
+%%DATADIR%%/netty-buffer-4.1.48.Final.jar
+%%DATADIR%%/netty-codec-4.1.48.Final.jar
+%%DATADIR%%/netty-common-4.1.48.Final.jar
+%%DATADIR%%/netty-handler-4.1.48.Final.jar
+%%DATADIR%%/netty-resolver-4.1.48.Final.jar
+%%DATADIR%%/netty-transport-4.1.48.Final.jar
+%%DATADIR%%/netty-transport-native-epoll-4.1.48.Final.jar
+%%DATADIR%%/netty-transport-native-unix-common-4.1.48.Final.jar
+%%DATADIR%%/simpleclient_common-0.6.0.jar
+%%DATADIR%%/simpleclient_hotspot-0.6.0.jar
+%%DATADIR%%/simpleclient_servlet-0.6.0.jar
+%%DATADIR%%/simpleclient-0.6.0.jar
 %%DATADIR%%/slf4j-api-1.7.25.jar
 %%DATADIR%%/slf4j-log4j12-1.7.25.jar
+%%DATADIR%%/snappy-java-1.1.7.jar
 %%DATADIR%%/zookeeper-%%PORTVERSION%%.jar
 %%DATADIR%%/zookeeper-jute-%%PORTVERSION%%.jar
+%%DATADIR%%/zookeeper-prometheus-metrics-%%PORTVERSION%%.jar
 @sample %%ETCDIR%%/log4j.properties.sample
 @sample %%ETCDIR%%/configuration.xsl.sample
 @sample %%ETCDIR%%/zoo.cfg.sample
-@dir(%%USERS%%,%%GROUPS%%,755) %%ZOOKEEPER_LOGDIR%%
-@dir(%%USERS%%,%%GROUPS%%,755) %%ZOOKEEPER_DBDIR%%
+@dir(%%ZOOKEEPER_USER%%,%%ZOOKEEPER_GROUP%%,755) %%ETCDIR%%
+@dir(%%ZOOKEEPER_USER%%,%%ZOOKEEPER_GROUP%%,755) %%ZOOKEEPER_DBDIR%%
+@dir(%%ZOOKEEPER_USER%%,%%ZOOKEEPER_GROUP%%,755) %%ZOOKEEPER_LOGDIR%%
