@@ -66,6 +66,8 @@ do-test:
 PLATFORM_DIR_SUFFIX=	FreeBSD-x86_64
 .	elif ${ARCH} == i386
 PLATFORM_DIR_SUFFIX=	FreeBSD-x86
+.	elif ${ARCH} == aarch64
+PLATFORM_DIR_SUFFIX=	FreeBSD-aarch64
 .	else
 PLATFORM_DIR_SUFFIX=	Default
 .	endif
