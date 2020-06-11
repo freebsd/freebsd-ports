@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	vdirsyncer
-DISTVERSION=	0.16.7
+DISTVERSION=	0.16.8
 CATEGORIES=	deskutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}atomicwrites>=0.1.7:devel/py-atomicwrites@${
 		${PYTHON_PKGNAMEPREFIX}requests>=2.4.1:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests-toolbelt>=0.4.0:www/py-requests-toolbelt@${PY_FLAVOR}
 
-USES=		python:3.4+
+USES=		python:3.5+
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
