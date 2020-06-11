@@ -44,6 +44,7 @@ OPTIONS_SUB=	yes
 X11_USES=	xorg
 X11_USE=	xorg=x11,xext,xorgproto,xrender
 X11_CONFIGURE_ENABLE=xlib
+X11_CONFIGURE_OFF=--disable-glx
 
 OPENGL_USES=	gl
 OPENGL_USE=	gl=egl
@@ -83,9 +84,5 @@ post-patch:
 post-patch-DOCS-off:
 	@${REINPLACE_CMD} -e 's|public||g' \
 		${WRKSRC}/doc/Makefile.in
-
-post-patch-X11-off:
-	@${REINPLACE_CMD} -e '/need_glx_functions=yes/d' \
-		${WRKSRC}/configure
 
 .include <bsd.port.mk>
