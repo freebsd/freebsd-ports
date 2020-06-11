@@ -36,6 +36,8 @@ ALL_TARGET=	all doxygen
 
 .if ${ARCH} == "i386"
 CONFIGURE_ARGS+=--disable-64bit
+.elif ${ARCH:Mpowerpc*}
+USES+=		compiler:gcc-c++11-lib
 .endif
 
 post-install:
