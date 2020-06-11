@@ -42,7 +42,7 @@ OPTIONS_SLAVE=	${ARCH:tu}
 OPTIONS_SUB=	yes
 
 X11_USES=	xorg
-X11_USE=	xorg=x11,xext,xorgproto:both,xrender
+X11_USE=	xorg=x11,xext,xorgproto,xrender
 X11_CONFIGURE_ENABLE=xlib
 
 OPENGL_USES=	gl
