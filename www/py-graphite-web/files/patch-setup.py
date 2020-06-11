@@ -1,4 +1,4 @@
---- setup.py.orig	2018-09-03 22:00:39 UTC
+--- setup.py.orig	2020-03-16 15:55:20 UTC
 +++ setup.py
 @@ -39,10 +39,6 @@ else:
          cf.add_section('install')
@@ -32,13 +32,16 @@
 +conf_files = [ ('%%PREFIX%%/etc/graphite', glob('conf/*.example')) ]
  examples = [ ('examples', glob('examples/example-*')) ]
  
- try:
-@@ -108,7 +104,7 @@ try:
+ 
+@@ -116,8 +112,9 @@ try:
        package_data={'graphite' :
          ['templates/*', 'local_settings.py.example']},
        scripts=glob('bin/*'),
 -      data_files=list(webapp_content.items()) + storage_dirs + conf_files + examples,
+-      install_requires=['Django>=1.8,<3.1', 'django-tagging==0.4.3', 'pytz',
 +      data_files=list(conf_files),
-       install_requires=['Django>=1.8,<2.1', 'django-tagging==0.4.3', 'pytz', 'pyparsing', 'cairocffi', 'urllib3', 'scandir', 'six'],
++ 
++      install_requires=['Django>=1.8,<3.1', 'django-tagging>=0.4.3', 'pytz',
+                         'pyparsing', 'cairocffi', 'urllib3', 'scandir', 'six'],
        classifiers=[
            'Intended Audience :: Developers',
