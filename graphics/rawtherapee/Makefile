@@ -130,14 +130,15 @@ LDFLAGS+=	${OPENMP_FLAGS}
 
 .if defined(WITH_DEBUG)
 STRIP=
-CMAKE_BUILD_TYPE=	RelWithDebInfo
-_OPT_FLAGS=	-O1
+CMAKE_BUILD_TYPE=	None	# Arch Linux packaging trick to avoid cmake overriding our flags
+_OPT_FLAGS=	-ggdb3 -Og	# -Og is GCC-specific, use -O1 for clang
 .else
 _OPT_FLAGS=	-O3 -funroll-loops
 .endif
 
-# GCC >= 5.4 includes -fexpensive-optimizations in -O2 already
-.if (${ARCH} == i386) || (${ARCH} == amd64)
+# GCC >= 5.4 includes -fexpensive-optimizations in -O2 already.
+# x86_64/amd64 includes -msse2 by default
+.if ${ARCH} == i386
 # and SSE2 has been around since the years 2000...2003 latest
 _OPT_FLAGS+=	-msse2
 .endif
