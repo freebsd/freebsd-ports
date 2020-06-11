@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	osinfo-db-tools
-PORTVERSION=	1.7.0
+PORTVERSION=	1.8.0
 CATEGORIES=	sysutils
 MASTER_SITES=	https://releases.pagure.org/libosinfo/
 
