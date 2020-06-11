@@ -2,7 +2,6 @@
 
 PORTNAME=	semaphore
 PORTVERSION=	2.5.1
-PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 CATEGORIES=	net-mgmt
@@ -57,7 +56,7 @@ GH_TUPLE=	ansible-semaphore:semaphore-vendor:a44f7be:ansible/vendor/github.com/a
 		pkg:errors:v0.8.0:pkg/vendor/github.com/pkg/errors \
 		russross:blackfriday:v1.5.1:russross/vendor/github.com/russross/blackfriday \
 		golang:net:61147c4:golang/vendor/golang.org/x/net \
-		golang:sys:7dca6fe:golang2/vendor/golang.org/x/sys \
+		golang:sys:226ff32:golang2/vendor/golang.org/x/sys \
 		golang:text:v0.3.0:golang3/vendor/golang.org/x/text \
 		golang:crypto:c7dcf10:golang4/vendor/golang.org/x/crypto \
 		go-asn1-ber:asn1-ber:v1.2:pkgin/vendor/gopkg.in/asn1-ber.v1 \
