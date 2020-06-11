@@ -1,8 +1,7 @@
-# Created by: Jeremy Johnston <jeremy@smart-serv.net>
 # $FreeBSD$
 
 PORTNAME=	tuptime
-DISTVERSION=	4.1.0
+DISTVERSION=	5.0.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	jeremy@smart-serv.net
