@@ -15080,3 +15080,4 @@ sysutils/beats|sysutils/beats6|2020-06-07|Renamed to match the naming of other E
 security/pam_pseudo||2020-06-07|Has expired: Broken for more than 6 months
 multimedia/din|audio/din|2020-06-09|Moved to a better category
 www/py-dj22-django_csp|www/py-django-csp|2020-06-10|Renamed to match upstream naming and to be in sync with other Django ports since Django 2.2 became default
+www/py-dj22-django-jquery-js|www/py-django-jquery-js|2020-06-11|Renamed to match the naming of other Django ports since Django 2.2 became default
