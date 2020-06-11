@@ -42,11 +42,11 @@ OPTIONS_SLAVE=	${ARCH:tu}
 OPTIONS_SUB=	yes
 
 X11_USES=	xorg
-X11_USE=	xorg=x11,xext,xrender
+X11_USE=	xorg=x11,xext,xorgproto:both,xrender
 X11_CONFIGURE_ENABLE=xlib
 
-OPENGL_USES=	gl xorg
-OPENGL_USE=	gl=egl xorg=xorgproto:both
+OPENGL_USES=	gl
+OPENGL_USE=	gl=egl
 OPENGL_CONFIGURE_ENABLE=gl egl
 
 GLIB_DESC=	Enable GObject Functions Feature
