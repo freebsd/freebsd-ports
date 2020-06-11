@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gobuffalo
-PORTVERSION=	0.16.9
+PORTVERSION=	0.16.10
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -107,7 +107,7 @@ GH_TUPLE=	\
 		spf13:cobra:v0.0.6:spf13_cobra/vendor/github.com/spf13/cobra \
 		spf13:jwalterweatherman:v1.0.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
-		spf13:viper:v1.6.2:spf13_viper/vendor/github.com/spf13/viper \
+		spf13:viper:v1.7.0:spf13_viper/vendor/github.com/spf13/viper \
 		stretchr:testify:v1.5.1:stretchr_testify/vendor/github.com/stretchr/testify \
 		subosito:gotenv:v1.2.0:subosito_gotenv/vendor/github.com/subosito/gotenv
 
