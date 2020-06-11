@@ -141,7 +141,7 @@ getfilequotedarray() {
 	varname="$1"
 	shift
 	IFS="$LF"
-	set -- $("${SVN}" status -- "$@" | sed 's/^....... //')
+	set -- $("${SVN}" status -- "$@" | grep -v '^       ' | sed 's/^....... //')
 	eval "$varname=\$(savearray "\$@")"
 }
 
