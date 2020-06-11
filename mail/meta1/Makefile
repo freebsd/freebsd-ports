@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	meta1
-PORTVERSION=	1.1.0a.14.1
+PORTVERSION=	1.1.0a.15.0
 CATEGORIES=	mail
-MASTER_SITES=	http://www.MeTA1.org/download/.alpha/gran/
+MASTER_SITES=	http://www.MeTA1.org/download/.alpha/quar/
 PKGNAMESUFFIX?=	${TLS_SUFFIX}${SASL_SUFFIX}${BERKELEYDB_SUFFIX}${PMILTER_SUFFIX}${PKGNAMESUFFIX2}
-DISTNAME=	${PORTNAME}-1.1.Alpha14.1
+DISTNAME=	${PORTNAME}-1.1.Alpha15.0
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Secure and efficient mail gateway
@@ -63,11 +63,11 @@ SASL2_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 SASL2_CONFIGURE_ENABLE=	SASL
 SASL2_CONFIGURE_ON=	--with-sasl-incdir=${LOCALBASE}/include \
 			--with-sasl-libdir=${LOCALBASE}/lib
-SASL2AUTHD_RUN_DEPENDS=	${LOCALBASE}/sbin/saslauthd:security/cyrus-sasl2-saslauthd
+SASL2AUTHD_RUN_DEPENDS=	saslauthd:security/cyrus-sasl2-saslauthd
 TLS_USES=		ssl
 TLS_CONFIGURE_ENABLE=	TLS
 TLS_CPPFLAGS=		-I${LOCALBASE}/include
-TLS_LDFLAGS=		-I${LOCALBASE}/lib
+TLS_LDFLAGS=		-L${LOCALBASE}/lib
 
 .include <bsd.port.options.mk>
 
