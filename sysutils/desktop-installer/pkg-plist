@@ -5,7 +5,9 @@ sbin/desktop-installer
 %%DATADIR%%/90-vboxguest.fdi
 %%DATADIR%%/CDE/xinitrc
 %%DATADIR%%/CINNAMON/xinitrc
+%%DATADIR%%/FLUXBOX/xinitrc
 %%DATADIR%%/GNOME2/xinitrc
+%%DATADIR%%/ICEWM/xinitrc
 %%DATADIR%%/KDE5/xinitrc
 %%DATADIR%%/LUMINA/gtkrc
 %%DATADIR%%/LUMINA/xinitrc
