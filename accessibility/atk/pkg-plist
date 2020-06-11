@@ -35,7 +35,7 @@ include/atk-1.0/atk/atkwindow.h
 lib/girepository-1.0/Atk-1.0.typelib
 lib/libatk-1.0.so
 lib/libatk-1.0.so.0
-lib/libatk-1.0.so.0.22810.1
+lib/libatk-1.0.so.0.23609.1
 libdata/pkgconfig/atk.pc
 share/gir-1.0/Atk-1.0.gir
 share/locale/af/LC_MESSAGES/atk10.mo
@@ -53,6 +53,7 @@ share/locale/bn_IN/LC_MESSAGES/atk10.mo
 share/locale/bs/LC_MESSAGES/atk10.mo
 share/locale/ca/LC_MESSAGES/atk10.mo
 share/locale/ca@valencia/LC_MESSAGES/atk10.mo
+share/locale/ckb/LC_MESSAGES/atk10.mo
 share/locale/cs/LC_MESSAGES/atk10.mo
 share/locale/cy/LC_MESSAGES/atk10.mo
 share/locale/da/LC_MESSAGES/atk10.mo
