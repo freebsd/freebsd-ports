@@ -1,3 +1,11 @@
-TIMESTAMP = 1591358756
+TIMESTAMP = 1591876806
 SHA256 (st-0.8.3.tar.gz) = 939ae3da237e7c9489694853c205c7cbd5f2a2f0c17fe41a07477f1df8e28552
 SIZE (st-0.8.3.tar.gz) = 46292
+SHA256 (st-openclipboard-20190202-3be4cf1.diff) = e7a1a8dd90b30286236baafec2a00113aca21c91f4e9cbb2ec4a519f224274cb
+SIZE (st-openclipboard-20190202-3be4cf1.diff) = 1692
+SHA256 (st-scrollback-20200419-72e3f6c.diff) = 1e41fe17a5ef5a8194eea07422b49d815e2c2bb4d58d84771f793be423005310
+SIZE (st-scrollback-20200419-72e3f6c.diff) = 8904
+SHA256 (st-scrollback-mouse-20191024-a2c479c.diff) = 319458d980195d18fa0f81a6898d58f8d046c5ff982ab872d741f54bb60e267d
+SIZE (st-scrollback-mouse-20191024-a2c479c.diff) = 622
+SHA256 (st-solarized-both-0.8.3.diff) = 8ac1ca8daa4b5f4509c95fe9d6447d6cde68bc74181ad9160da6374be824aa9d
+SIZE (st-solarized-both-0.8.3.diff) = 5708

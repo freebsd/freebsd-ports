@@ -29,17 +29,20 @@ PORTDOCS=	FAQ LEGACY README TODO
 
 OPTIONS_DEFINE=	DOCS
 OPTIONS_RADIO=	PATCHES
-OPTIONS_RADIO_PATCHES=	SCROLLBACK SOLARIZED
+OPTIONS_RADIO_PATCHES=	OPEN_COPIED_URL SCROLLBACK SOLARIZED
+OPEN_COPIED_URL_DESC=	Open contents of the clipboard in a user-defined browser
 SCROLLBACK_DESC=	Scroll back through terminal output
 SOLARIZED_DESC=	Use Solarized color scheme
 
-SCROLLBACK_EXTRA_PATCHES=	${PATCHDIR}/extra-scrollback-patch-config.def.h \
-		${PATCHDIR}/extra-scrollback-patch-st.c \
-		${PATCHDIR}/extra-scrollback-patch-st.h
+OPEN_COPIED_URL_PATCH_SITES=	https://st.suckless.org/patches/open_copied_url/
+OPEN_COPIED_URL_PATCHFILES=	st-openclipboard-20190202-3be4cf1.diff:-p1
 
-SOLARIZED_EXTRA_PATCHES=	${PATCHDIR}/extra-solarized-patch-config.def.h \
-		${PATCHDIR}/extra-solarized-patch-x.c \
-		${PATCHDIR}/extra-solarized-patch-st.h
+SCROLLBACK_PATCH_SITES=	https://st.suckless.org/patches/scrollback/
+SCROLLBACK_PATCHFILES=	st-scrollback-20200419-72e3f6c.diff:-p1 \
+			st-scrollback-mouse-20191024-a2c479c.diff:-p1
+
+SOLARIZED_PATCH_SITES=	https://st.suckless.org/patches/solarized/
+SOLARIZED_PATCHFILES=	solarized/st-solarized-both-0.8.3.diff:-p1
 
 pre-everything::
 	@${ECHO_MSG} "You can build st with your own config.h using the ST_CONF knob:"
