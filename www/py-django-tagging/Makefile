@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	django-tagging
-PORTVERSION=	0.4.6
-PORTREVISION=	2
+PORTVERSION=	0.5.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,8 +16,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django22>=1.11:www/py-django22@${PY_FLAVOR}
 
-NO_ARCH=	yes
 USES=		python:3.5+
 USE_PYTHON=	distutils autoplist
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
