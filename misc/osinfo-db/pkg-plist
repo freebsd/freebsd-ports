@@ -32,6 +32,7 @@ share/osinfo/device/pcisig.com/pci-1af4-1048.d/class.xml
 share/osinfo/device/pcisig.com/pci-1af4-1049.d/class.xml
 share/osinfo/device/pcisig.com/pci-1af4-1050.d/class.xml
 share/osinfo/device/pcisig.com/pci-1af4-1052.d/class.xml
+share/osinfo/device/pcisig.com/pci-1af4-105a.d/class.xml
 share/osinfo/device/pcisig.com/pci-1b36-0004.d/class.xml
 share/osinfo/device/pcisig.com/pci-1b36-0100.d/class.xml
 share/osinfo/device/pcisig.com/pci-8086-100e.d/class.xml
@@ -590,6 +591,7 @@ share/osinfo/os/redhat.com/rhel-7.5.xml
 share/osinfo/os/redhat.com/rhel-7.6.xml
 share/osinfo/os/redhat.com/rhel-7.7.xml
 share/osinfo/os/redhat.com/rhel-7.8.xml
+share/osinfo/os/redhat.com/rhel-7.9.xml
 share/osinfo/os/redhat.com/rhel-8-unknown.xml
 share/osinfo/os/redhat.com/rhel-8.0.xml
 share/osinfo/os/redhat.com/rhel-8.1.xml
