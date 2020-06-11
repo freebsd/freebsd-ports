@@ -178,6 +178,7 @@
     SUBDIR += cmogstored
     SUBDIR += cmospwd
     SUBDIR += colorize
+    SUBDIR += conan
     SUBDIR += condor
     SUBDIR += confctl
     SUBDIR += conky

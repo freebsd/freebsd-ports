@@ -1,0 +1,9 @@
+--- conans/requirements_server.txt.orig	2020-06-11 21:59:08 UTC
++++ conans/requirements_server.txt
+@@ -1,3 +1,3 @@
+ # Server
+-bottle>=0.12.8, < 0.13
+-pluginbase>=0.5, < 1.0
+\ No newline at end of file
++bottle>=0.12.8
++pluginbase>=0.5

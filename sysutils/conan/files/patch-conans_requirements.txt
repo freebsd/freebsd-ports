@@ -1,0 +1,17 @@
+--- conans/requirements.txt.orig	2020-06-10 07:13:38 UTC
++++ conans/requirements.txt
+@@ -6,11 +6,11 @@ PyYAML>=3.11, <6.0
+ patch-ng>=1.17.4, <1.18
+ fasteners>=0.14.1
+ six>=1.10.0,<=1.14.0
+-node-semver==0.6.1
+-distro>=1.0.2, <1.2.0
++node-semver>=0.6.1
++distro>=1.0.2
+ future>=0.16.0, <0.19.0
+ pygments>=2.0, <3.0
+-deprecation>=2.0, <2.1
++deprecation>=2.0
+ tqdm>=4.28.1, <5
+ Jinja2>=2.3, <3
+ python-dateutil>=2.7.0, <3
