@@ -18,7 +18,7 @@ BUILD_DEPENDS=	pybind11>0:devel/pybind11
 LIB_DEPENDS=	libpagmo.so:science/pagmo2 \
 		libboost_serialization.so:devel/boost-libs
 
-USES=		cmake python
+USES=		cmake compiler:c++11-lang python
 USE_GITHUB=	yes
 GH_ACCOUNT=	esa
 GH_PROJECT=	pygmo2
