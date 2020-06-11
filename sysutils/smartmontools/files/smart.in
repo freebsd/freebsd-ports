@@ -74,9 +74,9 @@ case "${daily_status_smart_enable}" in
 					${trim_junk} "${tmpfile}"
 				elif [ `grep -c '^SMART support is: Unavailable' ${tmpfile}` -eq 1 ] ; then
 					rc=2
-				echo "N/A"
+					echo "N/A"
 				else
-					rc=1
+					rc=3
 					${smartctl} ${devflags} ${daily_status_smartctl_extra_status_flags} \
 						${device} | ${trim_junk}
 				fi
