@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	asterisk
-PORTVERSION=	13.33.0
-PORTREVISION=	2
+PORTVERSION=	13.34.0
 CATEGORIES=	net
 MASTER_SITES=	https://downloads.asterisk.org/pub/telephony/%SUBDIR%/:DEFAULT,g729 \
 		http://www.pjsip.org/release/${PJSIP_VERSION}/:PJSIP
@@ -65,7 +64,7 @@ CONFLICTS_INSTALL=	asterisk16
 OPTIONS_DEFINE=			ASTVERSION BACKTRACE CURL EXCHANGE FREETDS G729 LDAP LUA \
 				MP3PLAYER OOH323 OPTIMIZED_CFLAGS PJSIP PORTAUDIO RADIUS SNMP \
 				SPANDSP SRTP SYSINFO URIPARSER XMPP
-OPTIONS_DEFAULT=		CURL FREETDS GSM LUA MP3PLAYER NEWT ODBC MYSQL PGSQL PJSIP \
+OPTIONS_DEFAULT=		CURL FREETDS GSM LUA MP3PLAYER NEWT ODBC OPUS MYSQL PGSQL PJSIP \
 				PORTAUDIO RADIUS SNMP SPANDSP SPEEX SRTP SQLITE2 URIPARSER \
 				VORBIS
 
@@ -244,8 +243,6 @@ post-extract-OPUS-on:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/var/lib|${PREFIX}/share|g' ${WRKSRC}/configs/samples/musiconhold.conf.sample
-	@${CP} ${FILESDIR}/0050-fix-race-parallel-build.patch \
-		${WRKSRC}/third-party/pjproject/patches/
 .if exists(${FILESDIR}/.asterisk.makeopts)
 	${CP} ${FILESDIR}/.asterisk.makeopts ${WRKSRC}/menuselect.makeopts
 .endif
