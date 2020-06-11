@@ -1,3 +1,8 @@
-bin/vkcube
-bin/vkcubepp
+%%DISPLAY%%bin/vkcube-display
+%%WAYLAND%%bin/vkcube-wayland
+%%XCB%%bin/vkcube-xcb
+%%XLIB%%bin/vkcube-xlib
+%%WAYLAND%%bin/vkcubepp-wayland
+%%XCB%%bin/vkcubepp-xcb
+%%XLIB%%bin/vkcubepp-xlib
 bin/vulkaninfo
