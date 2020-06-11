@@ -15,7 +15,7 @@ LIB_DEPENDS=	libcgraph.so:graphics/graphviz \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-USES=		gettext-runtime gnome pkgconfig waf tar:bz2
+USES=		compiler:c++11-lang gettext-runtime gnome pkgconfig waf tar:bz2
 USE_GNOME=	atk atkmm cairo cairomm gdkpixbuf2 glib20 glibmm gtk20 gtkmm24 libsigc++20 pango pangomm
 USE_LDCONFIG=	yes
 
