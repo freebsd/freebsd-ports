@@ -1,6 +1,6 @@
---- build.sh.orig	2018-03-01 07:35:22.000000000 +0100
-+++ build.sh	2018-06-27 11:24:43.371971000 +0200
-@@ -115,9 +115,19 @@
+--- build.sh.orig	2018-03-30 05:04:36 UTC
++++ build.sh
+@@ -115,9 +115,19 @@ case $OS in
  			fi
  		fi
  		;;
@@ -20,12 +20,23 @@
  		;;
  	"Windows_NT")
  		SWT_OS=win32
-@@ -469,10 +479,10 @@
+@@ -149,6 +159,10 @@ case $MODEL in
+ 		SWT_ARCH=x86
+ 		AWT_ARCH=i386
+ 		;;
++	powerpc64)
++		SWT_ARCH=ppc64
++		AWT_ARCH=ppc64
++		;;
+ 	*)
+ 		SWT_ARCH=$MODEL
+ 		AWT_ARCH=$MODEL
+@@ -469,10 +483,10 @@ esac	
  
  
  # For 64-bit CPUs, we have a switch
 -if [ ${MODEL} = 'x86_64' -o ${MODEL} = 'ppc64' -o ${MODEL} = 'ia64' -o ${MODEL} = 'sparcv9'  -o ${MODEL} = 's390x' -o ${MODEL} = 'ppc64le' -o ${MODEL} = 'aarch64' ]; then
-+if [ ${MODEL} = 'x86_64' -o ${MODEL} = 'ppc64' -o ${MODEL} = 'ia64' -o ${MODEL} = 'sparcv9'  -o ${MODEL} = 's390x' -o ${MODEL} = 'ppc64le' -o ${MODEL} = 'aarch64'  -o ${MODEL} = 'amd64' ]; then
++if [ ${MODEL} = 'x86_64' -o ${MODEL} = 'ppc64' -o ${MODEL} = 'ia64' -o ${MODEL} = 'sparcv9'  -o ${MODEL} = 's390x' -o ${MODEL} == 'powerpc64' -o ${MODEL} = 'ppc64le' -o ${MODEL} = 'aarch64'  -o ${MODEL} = 'amd64' ]; then
  	SWT_PTR_CFLAGS=-DJNI64
  	if [ -d /lib64 ]; then
 -		XLIB64=-L/usr/X11R6/lib64
@@ -33,7 +44,7 @@
  		export XLIB64
  	fi
  	if [ ${MODEL} = 'ppc64' -o ${MODEL} = 'ppc64le' ]; then
-@@ -517,37 +527,24 @@
+@@ -517,37 +531,24 @@ if [ ${MODEL} = 'ppc' -a ${SWT_OS} = 'linux' ]; then
  	export SWT_LFLAGS SWT_PTR_CFLAGS
  fi
  
