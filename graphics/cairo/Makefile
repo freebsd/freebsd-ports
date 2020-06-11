@@ -46,9 +46,8 @@ X11_USE=	xorg=x11,xext,xrender
 X11_CONFIGURE_ENABLE=xlib
 
 OPENGL_USES=	gl xorg
-OPENGL_USE=	gl=gl,egl xorg=xorgproto:both
+OPENGL_USE=	gl=egl xorg=xorgproto:both
 OPENGL_CONFIGURE_ENABLE=gl egl
-OPENGL_IMPLIES=	X11
 
 GLIB_DESC=	Enable GObject Functions Feature
 GLIB_USES=	gettext-runtime
@@ -84,5 +83,9 @@ post-patch:
 post-patch-DOCS-off:
 	@${REINPLACE_CMD} -e 's|public||g' \
 		${WRKSRC}/doc/Makefile.in
+
+post-patch-X11-off:
+	@${REINPLACE_CMD} -e '/need_glx_functions=yes/d' \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>
