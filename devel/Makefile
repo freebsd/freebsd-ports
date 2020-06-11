@@ -4652,6 +4652,7 @@
     SUBDIR += py-nbconvert
     SUBDIR += py-nbdime
     SUBDIR += py-nbformat
+    SUBDIR += py-node-semver
     SUBDIR += py-nodeenv
     SUBDIR += py-nose
     SUBDIR += py-nose-cov
