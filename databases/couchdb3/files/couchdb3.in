@@ -48,9 +48,9 @@ erl_flags="${erl_sasl} ${erl_boot} ${erl_args} ${%%PORTNAME%%_erl_flags}"
         env ERL_FLAGS="${erl_flags}" \
         HOME=/var/run/couchdb \
         ERL_CRASH_DUMP=/var/run/couchdb/erl_crash.dump \
-        %%PORTNAME%%_FAUXTON_DOCROOT=%%WWWDIR%% \
-        %%PORTNAME%%_QUERY_SERVER_JAVASCRIPT="%%APPDIR%%/bin/couchjs %%APPDIR%%/share/server/main.js" \
-        %%PORTNAME%%_QUERY_SERVER_COFFEESCRIPT="%%APPDIR%%/bin/couchjs %%APPDIR%%/share/server/main-coffee.js" \
+        COUCHDB_FAUXTON_DOCROOT=%%WWWDIR%% \
+        COUCHDB_QUERY_SERVER_JAVASCRIPT="%%APPDIR%%/bin/couchjs %%APPDIR%%/share/server/main.js" \
+        COUCHDB_QUERY_SERVER_COFFEESCRIPT="%%APPDIR%%/bin/couchjs %%APPDIR%%/share/server/main-coffee.js" \
         ${command}
 }
 
