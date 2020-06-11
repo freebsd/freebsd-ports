@@ -57,6 +57,12 @@ NLS_USES=	gettext
 PYNVIM_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pynvim>=0.3.0:editors/py-pynvim@${PY_FLAVOR}
 PYNVIM_USES=		python:run
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc64
+USES+=		compiler:gcc-c++11-lib
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e \
 		's|lua_objlen|lua_rawlen| ; \
