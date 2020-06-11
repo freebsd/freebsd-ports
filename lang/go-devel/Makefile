@@ -1,8 +1,9 @@
 # Created by: Devon H. O'Dell <devon.odell@gmail.com>
 # $FreeBSD$
 
-PORTVERSION=	g20200601
+PORTVERSION=	g20200610
 # Always set PORTREVISION and PORTEPOCH explicitly as otherwise it is inherited from lang/go
+PORTREVISION=	0
 PORTEPOCH=	0
 MASTER_SITES=	https://github.com/dmgk/go-bootstrap/releases/download/${BOOTSTRAP_TAG}/:bootstrap \
 		LOCAL/dmgk:bootstrap
@@ -13,7 +14,7 @@ COMMENT=	Go programming language (development version)
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	golang
-GH_TAGNAME=	83b181c68bf332ac7948f145f33d128377a09c42
+GH_TAGNAME=	e92be18fd8b525b642ca25bdb3e2056b35d9d73c
 
 CONFLICTS_INSTALL=	go
 

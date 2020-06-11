@@ -1,7 +1,6 @@
-Upstream PR: https://github.com/golang/go/issues/37948
---- src/cmd/go/internal/modload/init.go.orig	2020-02-25 18:32:50 UTC
-+++ src/cmd/go/internal/modload/init.go
-@@ -562,7 +562,7 @@ func checkVendorConsistency() {
+--- src/cmd/go/internal/modload/vendor.go.orig	2020-06-11 12:36:37 UTC
++++ src/cmd/go/internal/modload/vendor.go
+@@ -133,7 +133,7 @@ func checkVendorConsistency() {
  	readVendorList()
  
  	pre114 := false
