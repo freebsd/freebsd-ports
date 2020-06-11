@@ -31,7 +31,7 @@ USE_LDCONFIG=	yes
 .if ${ARCH} == powerpc64
 USES+=		compiler:gcc-c++11-lib
 .else
-USES+=		compiler
+USES+=		compiler:c11
 .endif
 
 .include <bsd.port.pre.mk>
