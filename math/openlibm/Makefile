@@ -19,12 +19,20 @@ BROKEN_armv7=		fails to compile: a parameter list without types is only allowed 
 BROKEN_mips=		fails to compile: No rule to make target mips/Make.files
 BROKEN_mips64=		fails to compile: No rule to make target mips64/Make.files
 
-USES=	compiler:c11 gmake
+USES=	gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	JuliaMath
 GH_PROJECT=	openlibm
 
 USE_LDCONFIG=	yes
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc64
+USES+=		compiler:gcc-c++11-lib
+.else
+USES+=		compiler
+.endif
 
 .include <bsd.port.pre.mk>
 
