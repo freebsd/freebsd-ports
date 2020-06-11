@@ -15082,3 +15082,7 @@ multimedia/din|audio/din|2020-06-09|Moved to a better category
 www/py-dj22-django_csp|www/py-django-csp|2020-06-10|Renamed to match upstream naming and to be in sync with other Django ports since Django 2.2 became default
 www/py-dj22-django-jquery-js|www/py-django-jquery-js|2020-06-11|Renamed to match the naming of other Django ports since Django 2.2 became default
 www/py-dj22-django-formset-js-improved|www/py-django-formset-js-improved|2020-06-11|Renamed to match the naming of other Django ports since Django 2.2 became default
+mail/claws-mail-archiver|mail/claws-mail-archive|2020-06-11|Renamed to align port name to plugin name
+mail/claws-mail-attach_warner|mail/claws-mail-attachwarner|Renamed to align port name to plugin name
+mail/claws-mail-spamreport|mail/claws-mail-spam_report|Renamed to align port name to plugin name
+mail/claws-mail-tnef|mail/claws-mail-tnef_parse|Renamed to align port name to plugin name

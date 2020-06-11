@@ -6,7 +6,7 @@ PORTREVISION=	0
 
 COMMENT=	Mbox maildir plugin for Claws Mail
 
-CLAWS_PLUGINS_BUILD=	mailmbox
+CLAWS_PLUGINS_BUILD=	${PORTNAME}
 
 .include "../claws-mail/Makefile.claws"
 .include <bsd.port.mk>

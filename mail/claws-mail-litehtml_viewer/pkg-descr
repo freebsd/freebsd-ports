@@ -1,0 +1,9 @@
+Viewer plugin for HTML emails, using the litehtml library.
+
+litehtml is lightweight HTML/CSS rendering engine. The main goal of the
+litehtml library is to give the developers the easy way to show the HTML
+pages in theirs applications. The popular HTML engines like WebKit are
+too complicated for some tasks. For example, it may be too cumbersome
+to use WebKit to show some tooltips or pages in HTML format.
+
+WWW: https://www.claws-mail.org/plugins.php

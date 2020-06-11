@@ -1,0 +1,6 @@
+This add-on provides joystick drivers and button mapping services
+for Kodi.  It uses Kodi's Peripheral API.
+
+This port is for multimedia/kodi-devel only.
+
+WWW: https://github.com/xbmc/peripheral.joystick

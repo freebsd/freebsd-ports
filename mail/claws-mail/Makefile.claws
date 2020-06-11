@@ -13,36 +13,7 @@ GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG} --disable-dbus --disable-static
 
-CLAWS_PLUGINS=	acpi_notifier \
-		address_keeper \
-		archive \
-		att_remover \
-		attachwarner \
-		bogofilter \
-		bsfilter \
-		clamd \
-		dillo \
-		fancy \
-		fetchinfo \
-		gdata \
-		libravatar \
-		litehtml_viewer \
-		mailmbox \
-		managesieve \
-		newmail \
-		notification \
-		pdf_viewer \
-		perl \
-		python \
-		pgpcore \
-		pgpinline \
-		pgpmime \
-		rssyl \
-		smime \
-		spam_report \
-		spamassassin \
-		tnef_parse \
-		vcalendar
+.include "../claws-mail/Makefile.claws.plugins"
 
 .for p in ${CLAWS_PLUGINS}
 CONFIGURE_ARGS+=	--disable-${p}-plugin

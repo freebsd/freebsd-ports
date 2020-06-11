@@ -10,7 +10,7 @@ LIB_DEPENDS=	libpoppler-glib.so:graphics/poppler-glib
 
 USES+=		ghostscript
 
-CLAWS_PLUGINS_BUILD=	pdf_viewer
+CLAWS_PLUGINS_BUILD=	${PORTNAME}
 
 .include "../claws-mail/Makefile.claws"
 .include <bsd.port.mk>

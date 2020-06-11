@@ -11,7 +11,7 @@ SHEBANG_FILES=	src/plugins/perl/tools/matcherrc2perlfilter.pl
 
 PLIST_FILES+=	share/claws-mail/matcherrc2perlfilter.pl
 
-CLAWS_PLUGINS_BUILD=	perl
+CLAWS_PLUGINS_BUILD=	${PORTNAME}
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/claws-mail
