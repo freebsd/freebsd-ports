@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cocoalib
-DISTVERSION=	0.99601
-PORTREVISION=	1
+DISTVERSION=	0.99710
 CATEGORIES=	math
 MASTER_SITES=	http://cocoa.dima.unige.it/cocoalib/tgz/
 DISTNAME=	CoCoALib-${DISTVERSION}
@@ -26,7 +25,8 @@ CXXFLAGS+=	-I${WRKSRC}/include \
 		-I${WRKSRC}/src/AlgebraicCore/TmpFactorDir \
 		-I${WRKSRC}/src/AlgebraicCore/TmpFactorDir/multivariate \
 		-I${WRKSRC}/src/AlgebraicCore/TmpFactorDir/linalg \
-		-I${LOCALBASE}/include
+		-I${LOCALBASE}/include \
+		-DCoCoA_ULONG2LONG=1
 LDFLAGS+=	-L${LOCALBASE}/lib -L${BUILD_WRKSRC} -lcocoa -lgmp
 
 BUILD_WRKSRC=	${WRKSRC}/src/AlgebraicCore
@@ -51,16 +51,10 @@ FROBBY_BUILD_DEPENDS=	${LOCALBASE}/lib/libfrobby.a:math/frobby
 GFAN_BUILD_DEPENDS=	${LOCALBASE}/lib/libgfan.a:math/gfanlib
 GSL_BUILD_DEPENDS=	${LOCALBASE}/lib/libgsl.a:math/gsl
 NORMALIZ_BUILD_DEPENDS=	${LOCALBASE}/lib/libnormaliz.a:math/libnormaliz
+SMALLDEG_EXTRA_PATCHES=	${FILESDIR}/extra-patch-include-CoCoA_config.H
 
 post-patch:
-	${CP} ${FILESDIR}/Makefile.AlgebraicCore ${BUILD_WRKSRC}/Makefile
-	${CP} ${FILESDIR}/${PREPROCESSOR_DEFNS:T} ${PREPROCESSOR_DEFNS}
-
-post-patch-SMALLDEG-on:
-	${REINPLACE_CMD} 's,int SmallExponent_t,short SmallExponent_t,' ${WRKSRC}/include/CoCoA/config.H
-
-post-patch-TEST-on:
-	${CP} ${FILESDIR}/Makefile.tests ${TEST_WRKSRC}/Makefile
+	${REINPLACE_CMD} "s,%%DISTVERSION%%,${DISTVERSION},g" ${BUILD_WRKSRC}/Makefile
 
 do-configure-BOOST-on:
 	${ECHO_CMD} "#define COCOA_WITH_BOOST" >> ${PREPROCESSOR_DEFNS}
@@ -91,9 +85,6 @@ do-configure-NORMALIZ-on:
 
 do-configure-NORMALIZ-off:
 	${ECHO_CMD} "#undef COCOA_WITH_NORMALIZ" >> ${PREPROCESSOR_DEFNS}
-
-post-configure:
-	${ECHO_CMD} "#endif" >> ${PREPROCESSOR_DEFNS}
 
 pre-build:
 	cd ${WRKSRC}/include/CoCoA && ./MakeUnifiedHeader.sh --check
