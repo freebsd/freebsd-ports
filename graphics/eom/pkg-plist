@@ -102,9 +102,6 @@ share/applications/eom.desktop
 %%DATADIR%%/icons/hicolor/32x32/actions/eom-plugin.png
 %%DATADIR%%/icons/hicolor/32x32/actions/slideshow-play.png
 %%DATADIR%%/icons/hicolor/48x48/actions/slideshow-play.png
-%%DATADIR%%/icons/hicolor/scalable/actions/eom-image-collection.svg
-%%DATADIR%%/icons/hicolor/scalable/actions/eom-plugin.svg
-%%DATADIR%%/icons/hicolor/scalable/actions/slideshow-play.svg
 share/gir-1.0/Eom-1.0.gir
 share/help/C/eom/figures/eom_save_as_window.png
 share/help/C/eom/figures/eom_start_window.png
@@ -226,6 +223,11 @@ share/help/es/eom/figures/eom_start_window.png
 share/help/es/eom/figures/eom_toolbar_editor_window.png
 share/help/es/eom/index.docbook
 share/help/es/eom/legal.xml
+share/help/es_AR/eom/figures/eom_save_as_window.png
+share/help/es_AR/eom/figures/eom_start_window.png
+share/help/es_AR/eom/figures/eom_toolbar_editor_window.png
+share/help/es_AR/eom/index.docbook
+share/help/es_AR/eom/legal.xml
 share/help/et/eom/figures/eom_save_as_window.png
 share/help/et/eom/figures/eom_start_window.png
 share/help/et/eom/figures/eom_toolbar_editor_window.png
@@ -296,6 +298,11 @@ share/help/id/eom/figures/eom_start_window.png
 share/help/id/eom/figures/eom_toolbar_editor_window.png
 share/help/id/eom/index.docbook
 share/help/id/eom/legal.xml
+share/help/ie/eom/figures/eom_save_as_window.png
+share/help/ie/eom/figures/eom_start_window.png
+share/help/ie/eom/figures/eom_toolbar_editor_window.png
+share/help/ie/eom/index.docbook
+share/help/ie/eom/legal.xml
 share/help/is/eom/figures/eom_save_as_window.png
 share/help/is/eom/figures/eom_start_window.png
 share/help/is/eom/figures/eom_toolbar_editor_window.png
@@ -316,6 +323,11 @@ share/help/ka/eom/figures/eom_start_window.png
 share/help/ka/eom/figures/eom_toolbar_editor_window.png
 share/help/ka/eom/index.docbook
 share/help/ka/eom/legal.xml
+share/help/kab/eom/figures/eom_save_as_window.png
+share/help/kab/eom/figures/eom_start_window.png
+share/help/kab/eom/figures/eom_toolbar_editor_window.png
+share/help/kab/eom/index.docbook
+share/help/kab/eom/legal.xml
 share/help/kk/eom/figures/eom_save_as_window.png
 share/help/kk/eom/figures/eom_start_window.png
 share/help/kk/eom/figures/eom_toolbar_editor_window.png
