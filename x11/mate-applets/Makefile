@@ -30,8 +30,7 @@ USE_CSTD=	c11
 
 USE_MATE=	libmateweather panel
 USE_XORG=	ice sm x11
-USE_GNOME=	cairo gtk30 gtksourceview3 intltool libwnck3 libxml2 \
-		pygobject3
+USE_GNOME=	cairo gtk30 gtksourceview3 intltool libwnck3 libxml2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
