@@ -6,7 +6,7 @@
  	    $(INSTALL_LIBRARY) $$i $(DESTDIR)$(bindir); \
 -	   fi; \
 -	   $(INSTALL_LIBRARY) $$i $(DESTDIR)$(libdir); \
-+	   else \
++	   else \	# patch from SageMath
 +	    $(INSTALL_LIBRARY) $$i $(DESTDIR)$(libdir); \
 +	   fi \
  	  fi \
