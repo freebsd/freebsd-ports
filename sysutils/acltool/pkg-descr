@@ -1,0 +1,7 @@
+This is a port of acltool, an ACL manipulation CLI tool.
+
+This is a tool to manage NFSv4/ZFS/SMB (also known as Extended on MacOS)
+style ACLs of filesystems. That is listing, creating, editing, searching,
+stripping, sorting, removing redundant entries and more.
+
+WWW: https://github.com/ptrrkssn/acltool
