@@ -17,7 +17,6 @@ lib/libmatekbdui.so.4.2.0
 libdata/pkgconfig/libmatekbd.pc
 libdata/pkgconfig/libmatekbdui.pc
 share/gir-1.0/Matekbd-1.0.gir
-%%DATADIR%%/ui/show-layout.ui
 share/locale/af/LC_MESSAGES/libmatekbd.mo
 share/locale/am/LC_MESSAGES/libmatekbd.mo
 share/locale/an/LC_MESSAGES/libmatekbd.mo
@@ -89,12 +88,14 @@ share/locale/hu/LC_MESSAGES/libmatekbd.mo
 share/locale/hy/LC_MESSAGES/libmatekbd.mo
 share/locale/ia/LC_MESSAGES/libmatekbd.mo
 share/locale/id/LC_MESSAGES/libmatekbd.mo
+share/locale/ie/LC_MESSAGES/libmatekbd.mo
 share/locale/ig/LC_MESSAGES/libmatekbd.mo
 share/locale/is/LC_MESSAGES/libmatekbd.mo
 share/locale/it/LC_MESSAGES/libmatekbd.mo
 share/locale/ja/LC_MESSAGES/libmatekbd.mo
 share/locale/jv/LC_MESSAGES/libmatekbd.mo
 share/locale/ka/LC_MESSAGES/libmatekbd.mo
+share/locale/kab/LC_MESSAGES/libmatekbd.mo
 share/locale/kk/LC_MESSAGES/libmatekbd.mo
 share/locale/km/LC_MESSAGES/libmatekbd.mo
 share/locale/kn/LC_MESSAGES/libmatekbd.mo
