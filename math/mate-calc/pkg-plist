@@ -3298,9 +3298,4 @@ share/locale/zh_CN/LC_MESSAGES/mate-calc.mo
 share/locale/zh_HK/LC_MESSAGES/mate-calc.mo
 share/locale/zh_TW/LC_MESSAGES/mate-calc.mo
 share/locale/zu/LC_MESSAGES/mate-calc.mo
-%%DATADIR%%/buttons-advanced.ui
-%%DATADIR%%/buttons-basic.ui
-%%DATADIR%%/buttons-financial.ui
-%%DATADIR%%/buttons-programming.ui
-%%DATADIR%%/preferences.ui
 share/metainfo/mate-calc.appdata.xml
