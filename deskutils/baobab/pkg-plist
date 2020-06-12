@@ -288,12 +288,8 @@ share/help/zh_CN/baobab/scan-file-system.page
 share/help/zh_CN/baobab/scan-folder.page
 share/help/zh_CN/baobab/scan-home.page
 share/help/zh_CN/baobab/scan-remote.page
-share/icons/hicolor/16x16/apps/baobab.png
-share/icons/hicolor/22x22/apps/baobab.png
-share/icons/hicolor/256x256/apps/baobab.png
-share/icons/hicolor/32x32/apps/baobab.png
-share/icons/hicolor/48x48/apps/baobab.png
-share/icons/hicolor/symbolic/apps/baobab-symbolic.svg
+share/icons/hicolor/scalable/apps/org.gnome.baobab.svg
+share/icons/hicolor/symbolic/apps/org.gnome.baobab-symbolic.svg
 share/locale/af/LC_MESSAGES/baobab.mo
 share/locale/am/LC_MESSAGES/baobab.mo
 share/locale/an/LC_MESSAGES/baobab.mo
@@ -350,6 +346,7 @@ share/locale/lt/LC_MESSAGES/baobab.mo
 share/locale/lv/LC_MESSAGES/baobab.mo
 share/locale/mai/LC_MESSAGES/baobab.mo
 share/locale/mg/LC_MESSAGES/baobab.mo
+share/locale/mjw/LC_MESSAGES/baobab.mo
 share/locale/mk/LC_MESSAGES/baobab.mo
 share/locale/ml/LC_MESSAGES/baobab.mo
 share/locale/mn/LC_MESSAGES/baobab.mo
