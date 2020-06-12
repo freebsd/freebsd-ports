@@ -12,6 +12,8 @@ COMMENT=	High performance logs, metrics, and events router
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_FreeBSD_12_powerpc64=	fails to link: /usr/local/bin/ld: cannot find -lc++
+
 BUILD_DEPENDS=	protoc:devel/protobuf
 LIB_DEPENDS=	libonig.so:devel/oniguruma \
 		librdkafka.so:net/librdkafka
