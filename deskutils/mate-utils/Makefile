@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mate-utils
-PORTVERSION=	1.22.2
+PORTVERSION=	1.24.0
 CATEGORIES=	deskutils mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -33,6 +33,8 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
+
+CONFIGURE_ARGS=	--disable-disk-image-mounter
 
 GLIB_SCHEMAS=	org.mate.dictionary.gschema.xml \
 		org.mate.disk-usage-analyzer.gschema.xml \

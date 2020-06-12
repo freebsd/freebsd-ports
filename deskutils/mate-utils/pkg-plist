@@ -3250,12 +3250,7 @@ share/mate-dictionary/dictionary-applet-menu.xml
 share/mate-dictionary/mate-dictionary-preferences.ui
 share/mate-dictionary/mate-dictionary-source.ui
 share/mate-dictionary/mate-dictionary-ui.xml
-share/mate-disk-usage-analyzer/baobab-dialog-scan-props.ui
-share/mate-disk-usage-analyzer/baobab-main-window.ui
 share/mate-panel/applets/org.mate.DictionaryApplet.mate-panel-applet
-share/mate-screenshot/mate-screenshot.ui
-%%DATADIR%%/logview-filter.ui
-%%DATADIR%%/logview-toolbar.xml
 share/metainfo/mate-dictionary.appdata.xml
 share/metainfo/mate-disk-usage-analyzer.appdata.xml
 share/metainfo/mate-screenshot.appdata.xml
