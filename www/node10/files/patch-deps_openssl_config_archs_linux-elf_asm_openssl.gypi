@@ -1,6 +1,6 @@
---- deps/openssl/config/archs/linux-elf/asm/openssl.gypi.orig	2019-07-31 17:44:59 UTC
+--- deps/openssl/config/archs/linux-elf/asm/openssl.gypi.orig	2020-06-02 14:43:34 UTC
 +++ deps/openssl/config/archs/linux-elf/asm/openssl.gypi
-@@ -721,12 +721,11 @@
+@@ -722,12 +722,11 @@
      ],
      'openssl_cflags_linux-elf': [
        '-Wa,--noexecstack',
