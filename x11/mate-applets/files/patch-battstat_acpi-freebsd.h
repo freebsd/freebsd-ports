@@ -1,5 +1,5 @@
---- battstat/acpi-freebsd.h.orig	2013-03-26 20:55:32.000000000 -0500
-+++ battstat/acpi-freebsd.h	2013-03-26 20:57:36.000000000 -0500
+--- battstat/acpi-freebsd.h.orig	2020-02-10 11:36:09 UTC
++++ battstat/acpi-freebsd.h
 @@ -29,61 +29,30 @@
  #define ACPI_LIFE "hw.acpi.battery.life"
  #define ACPI_STATE "hw.acpi.battery.state"
@@ -18,7 +18,8 @@
 +  int      ai_batt_time;
 +  guint    ai_status;
  };
--
++#endif
+ 
 -gboolean acpi_freebsd_read(struct apm_info *apminfo, struct acpi_info * acpiinfo);
 -gboolean acpi_process_event(struct acpi_info * acpiinfo);
 -gboolean acpi_freebsd_init(struct acpi_info * acpiinfo);
@@ -40,7 +41,7 @@
 - *
 - *  You should have received a copy of the GNU General Public License
 - *  along with this program; if not, write to the Free Software
-- *  Foundation, Inc., 59 Temple Street #330, Boston, MA 02110-1301, USA.
+- *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 - */
 -
 -#ifndef __ACPI_FREEBSD_H__
@@ -55,8 +56,7 @@
 -#define ACPI_TIME "hw.acpi.battery.time"
 -#define ACPI_LIFE "hw.acpi.battery.life"
 -#define ACPI_STATE "hw.acpi.battery.state"
-+#endif
- 
+-
  struct acpi_info {
    gboolean  ac_online;
 +  gboolean  event_inited;

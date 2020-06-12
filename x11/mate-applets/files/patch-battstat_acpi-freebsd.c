@@ -1,5 +1,5 @@
---- battstat/acpi-freebsd.c.orig	Sun Jul  3 16:41:26 2005
-+++ battstat/acpi-freebsd.c	Sun Jul  3 16:49:55 2005
+--- battstat/acpi-freebsd.c.orig	2020-02-10 11:36:09 UTC
++++ battstat/acpi-freebsd.c
 @@ -31,9 +31,13 @@
  
  #include <stdio.h>
@@ -57,7 +57,7 @@
    }
  
    update_battery_info(acpiinfo);
-@@ -110,6 +134,65 @@ acpi_freebsd_init(struct acpi_info * acp
+@@ -110,6 +134,65 @@ acpi_freebsd_init(struct acpi_info * acpiinfo)
    return TRUE;
  }
  
@@ -123,7 +123,7 @@
  void
  acpi_freebsd_cleanup(struct acpi_info * acpiinfo)
  {
-@@ -119,21 +202,12 @@ acpi_freebsd_cleanup(struct acpi_info * 
+@@ -119,21 +202,12 @@ acpi_freebsd_cleanup(struct acpi_info * acpiinfo)
      close(acpiinfo->acpifd);
      acpiinfo->acpifd = -1;
    }

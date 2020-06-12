@@ -2,13 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	mate-settings-daemon
-PORTVERSION=	1.22.1
+PORTVERSION=	1.24.0
 CATEGORIES=	sysutils mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	MATE settings daemon
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libdbus-glib-1.so:devel/dbus-glib \
@@ -62,7 +65,9 @@ GLIB_SCHEMAS=	org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml \
 		org.mate.applications-at.gschema.xml \
 		org.mate.font-rendering.gschema.xml \
 		org.mate.peripherals-smartcard.gschema.xml \
-		org.mate.peripherals-touchpad.gschema.xml
+		org.mate.peripherals-touchpad.gschema.xml \
+		org.mate.peripherals-keyboard.gschema.xml \
+		org.mate.peripherals-mouse.gschema.xml
 
 OPTIONS_DEFINE=	PULSEAUDIO
 OPTIONS_SUB=	yes

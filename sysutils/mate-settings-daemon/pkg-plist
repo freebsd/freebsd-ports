@@ -1,4 +1,3 @@
-etc/dbus-1/system.d/org.mate.SettingsDaemon.DateTimeMechanism.conf
 etc/xdg/autostart/mate-settings-daemon.desktop
 etc/xrdb/Editres.ad
 etc/xrdb/Emacs.ad
@@ -8,6 +7,10 @@ etc/xrdb/Tk.ad
 etc/xrdb/Xaw.ad
 include/mate-settings-daemon/mate-settings-client.h
 include/mate-settings-daemon/mate-settings-plugin.h
+share/dbus-1/system.d/org.mate.SettingsDaemon.DateTimeMechanism.conf
+share/icons/hicolor/48x48/apps/msd-xrandr.png
+share/icons/hicolor/64x64/apps/msd-xrandr.png
+share/icons/hicolor/96x96/apps/msd-xrandr.png
 lib/mate-settings-daemon/a11y-keyboard.mate-settings-plugin
 lib/mate-settings-daemon/a11y-settings.mate-settings-plugin
 lib/mate-settings-daemon/background.mate-settings-plugin

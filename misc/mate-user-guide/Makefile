@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mate-user-guide
-PORTVERSION=	1.22.3
+PORTVERSION=	1.24.0
 CATEGORIES=	misc mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate

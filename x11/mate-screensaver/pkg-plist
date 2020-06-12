@@ -139,6 +139,5 @@ share/locale/zh_TW/LC_MESSAGES/mate-screensaver.mo
 share/locale/zu/LC_MESSAGES/mate-screensaver.mo
 share/mate-background-properties/cosmos.xml
 %%DATADIR%%/lock-dialog-default.ui
-%%DATADIR%%/mate-screensaver-preferences.ui
 share/pixmaps/gnome-logo-white.svg
 share/pixmaps/mate-logo-white.svg

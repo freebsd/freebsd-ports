@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mate-polkit
-PORTVERSION=	1.22.0
+PORTVERSION=	1.24.0
 CATEGORIES=	sysutils mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
