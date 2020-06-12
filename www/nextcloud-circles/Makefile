@@ -1,0 +1,36 @@
+# Created by: Bernard Spil <brnrd@freebsd.org>
+# $FreeBSD$
+
+PORTNAME=	circles
+PORTVERSION=	0.19.2
+CATEGORIES=	www
+MASTER_SITES=	https://github.com/${PKGNAMEPREFIX:S/-//}/${PORTNAME}/releases/download/v${PORTVERSION}/
+PKGNAMEPREFIX=	nextcloud-
+PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
+MAINTAINER=	brnrd@FreeBSD.org
+COMMENT=	Cicrles app for Nextcloud
+
+LICENSE=	AGPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+RUN_DEPENDS=	nextcloud${PHP_PKGNAMESUFFIX}>=19:www/nextcloud@${PHP_FLAVOR}
+
+USES=		php:flavors
+NO_BUILD=	yes
+NO_ARCH=	yes
+
+NEXTCLOUD_USERNAME?=	${WWWOWN}
+NEXTCLOUD_GROUPNAME?=	${WWWGRP}
+
+PLIST_SUB=	NEXTCLOUD_USERNAME=${NEXTCLOUD_USERNAME} \
+		NEXTCLOUD_GROUPNAME=${NEXTCLOUD_GROUPNAME}
+
+WWWDIR=		${PREFIX}/www/nextcloud/apps-pkg/${PORTNAME}
+
+do-install:
+	${MKDIR} ${STAGEDIR}${WWWDIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR})
+
+.include <bsd.port.mk>
