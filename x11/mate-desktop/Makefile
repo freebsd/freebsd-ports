@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mate-desktop
-PORTVERSION=	1.22.2
+PORTVERSION=	1.24.0
 CATEGORIES=	x11 mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -37,6 +37,7 @@ GLIB_SCHEMAS=	org.mate.accessibility-keyboard.gschema.xml \
 		org.mate.applications-at-visual.gschema.xml \
 		org.mate.applications-browser.gschema.xml \
 		org.mate.applications-calculator.gschema.xml \
+		org.mate.applications-messenger.gschema.xml \
 		org.mate.applications-office.gschema.xml \
 		org.mate.applications-terminal.gschema.xml \
 		org.mate.background.gschema.xml \
@@ -44,8 +45,6 @@ GLIB_SCHEMAS=	org.mate.accessibility-keyboard.gschema.xml \
 		org.mate.file-views.gschema.xml \
 		org.mate.interface.gschema.xml \
 		org.mate.lockdown.gschema.xml \
-		org.mate.peripherals-keyboard.gschema.xml \
-		org.mate.peripherals-mouse.gschema.xml \
 		org.mate.sound.gschema.xml \
 		org.mate.thumbnail-cache.gschema.xml \
 		org.mate.thumbnailers.gschema.xml \
