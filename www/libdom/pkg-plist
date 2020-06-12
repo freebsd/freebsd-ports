@@ -44,6 +44,7 @@ include/dom/html/html_basefont_element.h
 include/dom/html/html_body_element.h
 include/dom/html/html_br_element.h
 include/dom/html/html_button_element.h
+include/dom/html/html_canvas_element.h
 include/dom/html/html_collection.h
 include/dom/html/html_directory_element.h
 include/dom/html/html_div_element.h
