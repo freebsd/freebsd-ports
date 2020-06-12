@@ -1,8 +1,9 @@
 bin/sound-juicer
 man/man1/sound-juicer.1.gz
 share/GConf/gsettings/sound-juicer.convert
-share/appdata/sound-juicer.appdata.xml
-share/applications/sound-juicer.desktop
+share/appdata/org.gnome.SoundJuicer.appdata.xml
+share/applications/org.gnome.SoundJuicer.desktop
+share/dbus-1/services/org.gnome.SoundJuicer.service
 share/help/C/sound-juicer/figures/prefs.png
 share/help/C/sound-juicer/figures/startup.png
 share/help/C/sound-juicer/index.docbook
@@ -172,5 +173,3 @@ share/locale/zh_CN/LC_MESSAGES/sound-juicer.mo
 share/locale/zh_HK/LC_MESSAGES/sound-juicer.mo
 share/locale/zh_TW/LC_MESSAGES/sound-juicer.mo
 %%DATADIR%%/rhythmbox.gep
-%%DATADIR%%/sound-juicer-menu.ui
-%%DATADIR%%/sound-juicer.ui

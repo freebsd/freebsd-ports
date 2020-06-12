@@ -2,13 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	sound-juicer
-PORTVERSION=	3.18.1
+PORTVERSION=	3.24.0
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Clean, mean, and lean CD ripper for GNOME
+
+LICENSE=	GPLv3
 
 BUILD_DEPENDS=	itstool:textproc/itstool
 LIB_DEPENDS=	libmusicbrainz5.so:audio/libmusicbrainz5 \
