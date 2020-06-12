@@ -8,8 +8,8 @@
 %%NO_GLVND%%%%NO_COINST%%include/GL/gl.h
 %%NO_GLVND%%%%NO_COINST%%include/GL/glcorearb.h
 %%NO_GLVND%%%%NO_COINST%%include/GL/glext.h
-%%NO_GLVND%%%%NO_COINST%%include/GL/glx.h
-%%NO_GLVND%%%%NO_COINST%%include/GL/glxext.h
+%%NO_GLVND%%%%NO_COINST%%%%X11%%include/GL/glx.h
+%%NO_GLVND%%%%NO_COINST%%%%X11%%include/GL/glxext.h
 %%NO_COINST%%include/GL/internal/dri_interface.h
 %%NO_GLVND%%%%NO_COINST%%include/GLES/egl.h
 %%NO_GLVND%%%%NO_COINST%%include/GLES/gl.h
@@ -71,7 +71,7 @@ lib/libglapi%%SUFFIX%%.so.0.0.0
 %%NO_COINST%%libdata/pkgconfig/dri.pc
 %%NO_GLVND%%%%NO_COINST%%libdata/pkgconfig/egl.pc
 %%NO_COINST%%libdata/pkgconfig/gbm.pc
-%%NO_GLVND%%%%NO_COINST%%libdata/pkgconfig/gl.pc
+%%NO_GLVND%%%%NO_COINST%%%%X11%%libdata/pkgconfig/gl.pc
 %%NO_GLVND%%%%NO_COINST%%libdata/pkgconfig/glesv1_cm.pc
 %%NO_GLVND%%%%NO_COINST%%libdata/pkgconfig/glesv2.pc
 share/drirc.d/00-mesa%%SUFFIX%%-defaults.conf
