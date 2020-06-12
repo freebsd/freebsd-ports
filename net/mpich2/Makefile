@@ -3,7 +3,7 @@
 
 PORTNAME=	mpich2
 DISTVERSION=	1.5
-PORTREVISION=	14
+PORTREVISION=	15
 PORTEPOCH=	5
 CATEGORIES=	net java parallel
 MASTER_SITES=	http://www.mcs.anl.gov/research/projects/mpich2/downloads/tarballs/${DISTVERSION}/
@@ -21,7 +21,7 @@ BUILD_DEPENDS=	bash:shells/bash
 RUN_DEPENDS=	bash:shells/bash
 
 USES=		libtool:keepla localbase fortran perl5 \
-		pkgconfig python:2.7
+		pkgconfig
 GNU_CONFIGURE=	yes
 USE_GCC=	yes
 USE_LDCONFIG=	yes
@@ -30,7 +30,7 @@ INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE_i386=	JAVA
 OPTIONS_DEFINE_amd64=	JAVA
-OPTIONS_DEFINE=	SMPD X11 DOCS
+OPTIONS_DEFINE=	SMPD X11 DEBUG DOCS
 OPTIONS_DEFAULT_i386=	JAVA
 OPTIONS_DEFAULT_amd64=	JAVA
 OPTIONS_DEFAULT=	X11
@@ -40,7 +40,7 @@ X11_DESC=	build MPE graphics routines
 
 CONFIGURE_ARGS=	--enable-romio --enable-shared	\
 		--docdir="${DOCSDIR}" \
-		--with-python="${PYTHON_CMD}"
+		--without-python
 CONFIGURE_ENV=	FCFLAGS="${FFLAGS}" \
 		MPI_CFLAGS="-I${LOCALBASE}/include" \
 		PACKAGE="${PORTNAME}" \
@@ -157,10 +157,6 @@ pre-configure:
 .endfor
 
 post-install:
-	(cd ${STAGEDIR}${PREFIX} && ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py	\
-		-d ${PREFIX} -f bin)
-	(cd ${STAGEDIR}${PREFIX} && ${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py	\
-		-d ${PREFIX} -f bin)
 	@${ECHO_CMD} "MPD_SECRETWORD=change_on_install" > ${WRKDIR}/mpd.conf.dist
 	${INSTALL_DATA} ${WRKDIR}/mpd.conf.dist ${STAGEDIR}${PREFIX}/etc/
 .for pg in ${STAGE2FIX}
