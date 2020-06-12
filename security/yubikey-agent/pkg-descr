@@ -1,0 +1,13 @@
+yubikey-agent is a seamless ssh-agent for YubiKeys.
+
+  (*) Easy to use. A one-command setup, one environment variable,
+and it just runs in the background.
+  (*) Indestructible. Tolerates unplugging, sleep, and suspend.
+Never needs restarting.
+  (*) Compatible. Provides a public key that works with all services
+and servers.
+  (*) Secure. The key is generated on the YubiKey and can't be
+extracted. Every session requires the PIN, every login requires a
+touch. Setup takes care of PUK and management key.
+
+WWW: https://filippo.io/yubikey-agent

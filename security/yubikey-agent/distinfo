@@ -1,0 +1,13 @@
+TIMESTAMP = 1591950693
+SHA256 (FiloSottile-yubikey-agent-v0.1.1_GH0.tar.gz) = ba105395ec8321512742f69ce9cf7fc2fe4e107cf667c2b48d13749efff23d5c
+SIZE (FiloSottile-yubikey-agent-v0.1.1_GH0.tar.gz) = 15541
+SHA256 (go-piv-piv-go-a3e5767_GH0.tar.gz) = a9744ed1332e892656baede675f9a1757f466e15a0e2bab07e6b6999fa2ccc55
+SIZE (go-piv-piv-go-a3e5767_GH0.tar.gz) = 33795
+SHA256 (golang-crypto-4b2356b1ed79_GH0.tar.gz) = c881b4149829d6e249674bed9ff03d61811aeaf7c66708b36599f595a5a31d08
+SIZE (golang-crypto-4b2356b1ed79_GH0.tar.gz) = 1728742
+SHA256 (golang-sys-1957bb5e6d1f_GH0.tar.gz) = 8a20dc325d45d1226aac2ead52786de8d365af90e74ec1cb031f4292ff856643
+SIZE (golang-sys-1957bb5e6d1f_GH0.tar.gz) = 1050651
+SHA256 (gopasspw-gopass-v1.9.1_GH0.tar.gz) = ea9820dbb69d5a510c1c1f8ae561e8e1928f792d764a24cd7eca307e38e2a756
+SIZE (gopasspw-gopass-v1.9.1_GH0.tar.gz) = 418562
+SHA256 (pkg-errors-v0.9.1_GH0.tar.gz) = 56bfd893023daa498508bfe161de1be83299fcf15376035e7df79cbd7d6fa608
+SIZE (pkg-errors-v0.9.1_GH0.tar.gz) = 13415
