@@ -59,8 +59,8 @@ MESON_ARGS=	-Dgallium-omx=disabled \
 		${BINARY_ALIAS:D--native-file=binary_alias.ini} \
 		${NULL}
 SUB_FILES=	libmap.conf
-SUB_LIST=	PKGNAMESUFFIX=${PKGNAMESUFFIX}
-PLIST_SUB=	ARCH=${ARCH:S/amd/x86_/} PKGNAMESUFFIX=${PKGNAMESUFFIX}
+SUB_LIST=	SUFFIX=${PKGNAMESUFFIX}
+PLIST_SUB=	ARCH=${ARCH:S/amd/x86_/} SUFFIX=${PKGNAMESUFFIX}
 
 .if exists(/usr/bin/ld.lld) && ${/usr/bin/ld:L:tA} != /usr/bin/ld.lld
 # --build-id isn't supported by old GNU ld.bfd in base
