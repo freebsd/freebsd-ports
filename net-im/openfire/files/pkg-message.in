@@ -11,6 +11,7 @@ openfire.xml.sample
 security.xml.sample
 keystore.sample
 truststore.sample
+crowd.properties.sample
 EOM
 }
 ]
