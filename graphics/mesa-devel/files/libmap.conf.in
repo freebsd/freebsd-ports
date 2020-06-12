@@ -1,16 +1,16 @@
-# EGL/GLX built with -Dglvnd=false
-libEGL.so.1 libEGL%%SUFFIX%%.so.1
-%%X11%%libGL.so.1 libGL%%SUFFIX%%.so.1
-libGLESv1_CM.so.1 libGLESv1_CM%%SUFFIX%%.so.1
-libGLESv2.so.2 libGLESv2%%SUFFIX%%.so.2
+%%NO_GLVND%%# EGL/GLX built with -Dglvnd=false
+%%NO_GLVND%%libEGL.so.1 libEGL%%SUFFIX%%.so.1
+%%NO_GLVND%%%%X11%%libGL.so.1 libGL%%SUFFIX%%.so.1
+%%NO_GLVND%%libGLESv1_CM.so.1 libGLESv1_CM%%SUFFIX%%.so.1
+%%NO_GLVND%%libGLESv2.so.2 libGLESv2%%SUFFIX%%.so.2
 
-# EGL/GLX built with -Dglvnd=true
-# Xorg sets GLX_EXT_libglvnd to "mesa" by default
-libEGL_mesa.so.0 libEGL_mesa%%SUFFIX%%.so.0
-%%X11%%libGLX_mesa.so.0 libGLX_mesa%%SUFFIX%%.so.0
+%%GLVND%%# EGL/GLX built with -Dglvnd=true
+%%GLVND%%# Xorg sets GLX_EXT_libglvnd to "mesa" by default
+%%GLVND%%libEGL_mesa.so.0 libEGL_mesa%%SUFFIX%%.so.0
+%%GLVND%%%%X11%%libGLX_mesa.so.0 libGLX_mesa%%SUFFIX%%.so.0
 
-%%X11%%# Fallback if GLX_EXT_libglvnd is missing or vendor library doesn't exist
-%%X11%%libGLX_indirect.so.0 libGLX_mesa%%SUFFIX%%.so.0
+%%GLVND%%%%X11%%# Fallback if GLX_EXT_libglvnd is missing or vendor library doesn't exist
+%%GLVND%%%%X11%%libGLX_indirect.so.0 libGLX_mesa%%SUFFIX%%.so.0
 
 # GBM clients like eglkms and wlroots fail otherwise
 libgbm.so.1 libgbm%%SUFFIX%%.so.1

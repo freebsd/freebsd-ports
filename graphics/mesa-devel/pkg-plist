@@ -1,55 +1,61 @@
 %%VULKAN%%bin/mesa-overlay-control.py
-@sample etc/libmap.d/mesa%%SUFFIX%%.conf.sample
-@comment include/EGL/egl.h
-@comment include/EGL/eglext.h
-@comment include/EGL/eglextchromium.h
-@comment include/EGL/eglmesaext.h
-@comment include/EGL/eglplatform.h
-@comment include/GL/gl.h
-@comment include/GL/glcorearb.h
-@comment include/GL/glext.h
-@comment include/GL/glx.h
-@comment include/GL/glxext.h
-@comment include/GL/internal/dri_interface.h
-@comment include/GLES/egl.h
-@comment include/GLES/gl.h
-@comment include/GLES/glext.h
-@comment include/GLES/glplatform.h
-@comment include/GLES2/gl2.h
-@comment include/GLES2/gl2ext.h
-@comment include/GLES2/gl2platform.h
-@comment include/GLES3/gl3.h
-@comment include/GLES3/gl31.h
-@comment include/GLES3/gl32.h
-@comment include/GLES3/gl3ext.h
-@comment include/GLES3/gl3platform.h
-@comment include/KHR/khrplatform.h
-@comment include/gbm.h
-%%anv%%@comment include/vulkan/vulkan_intel.h
+%%COINST%%@sample etc/libmap.d/mesa%%SUFFIX%%.conf.sample
+%%NO_GLVND%%%%NO_COINST%%include/EGL/egl.h
+%%NO_GLVND%%%%NO_COINST%%include/EGL/eglext.h
+%%NO_COINST%%include/EGL/eglextchromium.h
+%%NO_COINST%%include/EGL/eglmesaext.h
+%%NO_GLVND%%%%NO_COINST%%include/EGL/eglplatform.h
+%%NO_GLVND%%%%NO_COINST%%include/GL/gl.h
+%%NO_GLVND%%%%NO_COINST%%include/GL/glcorearb.h
+%%NO_GLVND%%%%NO_COINST%%include/GL/glext.h
+%%NO_GLVND%%%%NO_COINST%%include/GL/glx.h
+%%NO_GLVND%%%%NO_COINST%%include/GL/glxext.h
+%%NO_COINST%%include/GL/internal/dri_interface.h
+%%NO_GLVND%%%%NO_COINST%%include/GLES/egl.h
+%%NO_GLVND%%%%NO_COINST%%include/GLES/gl.h
+%%NO_GLVND%%%%NO_COINST%%include/GLES/glext.h
+%%NO_GLVND%%%%NO_COINST%%include/GLES/glplatform.h
+%%NO_GLVND%%%%NO_COINST%%include/GLES2/gl2.h
+%%NO_GLVND%%%%NO_COINST%%include/GLES2/gl2ext.h
+%%NO_GLVND%%%%NO_COINST%%include/GLES2/gl2platform.h
+%%NO_GLVND%%%%NO_COINST%%include/GLES3/gl3.h
+%%NO_GLVND%%%%NO_COINST%%include/GLES3/gl31.h
+%%NO_GLVND%%%%NO_COINST%%include/GLES3/gl32.h
+%%NO_GLVND%%%%NO_COINST%%include/GLES3/gl3ext.h
+%%NO_GLVND%%%%NO_COINST%%include/GLES3/gl3platform.h
+%%NO_GLVND%%%%NO_COINST%%include/KHR/khrplatform.h
+%%NO_COINST%%include/gbm.h
+%%anv%%%%NO_COINST%%include/vulkan/vulkan_intel.h
 %%i965%%lib/dri%%SUFFIX%%/i965_dri.so
 %%iris%%lib/dri%%SUFFIX%%/iris_dri.so
 %%r600%%lib/dri%%SUFFIX%%/r600_dri.so
 %%radeonsi%%lib/dri%%SUFFIX%%/radeonsi_dri.so
 %%VAAPI%%%%r600%%lib/dri%%SUFFIX%%/r600_drv_video.so
 %%VAAPI%%%%radeonsi%%lib/dri%%SUFFIX%%/radeonsi_drv_video.so
-@comment lib/libEGL%%SUFFIX%%.so
-lib/libEGL%%SUFFIX%%.so.1
-lib/libEGL%%SUFFIX%%.so.1.0.0
-%%X11%%@comment lib/libGL%%SUFFIX%%.so
-%%X11%%lib/libGL%%SUFFIX%%.so.1
-%%X11%%lib/libGL%%SUFFIX%%.so.1.2.0
-@comment lib/libGLESv1_CM%%SUFFIX%%.so
-lib/libGLESv1_CM%%SUFFIX%%.so.1
-lib/libGLESv1_CM%%SUFFIX%%.so.1.1.0
-@comment lib/libGLESv2%%SUFFIX%%.so
-lib/libGLESv2%%SUFFIX%%.so.2
-lib/libGLESv2%%SUFFIX%%.so.2.0.0
+%%NO_GLVND%%%%NO_COINST%%lib/libEGL%%SUFFIX%%.so
+%%NO_GLVND%%lib/libEGL%%SUFFIX%%.so.1
+%%NO_GLVND%%lib/libEGL%%SUFFIX%%.so.1.0.0
+%%GLVND%%%%NO_COINST%%lib/libEGL_mesa%%SUFFIX%%.so
+%%GLVND%%lib/libEGL_mesa%%SUFFIX%%.so.0
+%%GLVND%%lib/libEGL_mesa%%SUFFIX%%.so.0.0.0
+%%NO_GLVND%%%%X11%%%%NO_COINST%%lib/libGL%%SUFFIX%%.so
+%%NO_GLVND%%%%X11%%lib/libGL%%SUFFIX%%.so.1
+%%NO_GLVND%%%%X11%%lib/libGL%%SUFFIX%%.so.1.2.0
+%%NO_GLVND%%%%NO_COINST%%lib/libGLESv1_CM%%SUFFIX%%.so
+%%NO_GLVND%%lib/libGLESv1_CM%%SUFFIX%%.so.1
+%%NO_GLVND%%lib/libGLESv1_CM%%SUFFIX%%.so.1.1.0
+%%NO_GLVND%%%%NO_COINST%%lib/libGLESv2%%SUFFIX%%.so
+%%NO_GLVND%%lib/libGLESv2%%SUFFIX%%.so.2
+%%NO_GLVND%%lib/libGLESv2%%SUFFIX%%.so.2.0.0
+%%GLVND%%%%X11%%%%NO_COINST%%lib/libGLX_mesa%%SUFFIX%%.so
+%%GLVND%%%%X11%%lib/libGLX_mesa%%SUFFIX%%.so.0
+%%GLVND%%%%X11%%lib/libGLX_mesa%%SUFFIX%%.so.0.0.0
 %%VULKAN%%lib/libVkLayer_MESA_device_select.so
 %%VULKAN%%lib/libVkLayer_MESA_overlay.so
-@comment lib/libgbm%%SUFFIX%%.so
+%%NO_COINST%%lib/libgbm%%SUFFIX%%.so
 lib/libgbm%%SUFFIX%%.so.1
 lib/libgbm%%SUFFIX%%.so.1.0.0
-@comment lib/libglapi%%SUFFIX%%.so
+%%NO_COINST%%lib/libglapi%%SUFFIX%%.so
 lib/libglapi%%SUFFIX%%.so.0
 lib/libglapi%%SUFFIX%%.so.0.0.0
 %%anv%%lib/libvulkan_intel%%SUFFIX%%.so
@@ -62,14 +68,15 @@ lib/libglapi%%SUFFIX%%.so.0.0.0
 %%VDPAU%%%%radeonsi%%lib/vdpau%%SUFFIX%%/libvdpau_radeonsi.so.1
 %%VDPAU%%%%radeonsi%%lib/vdpau%%SUFFIX%%/libvdpau_radeonsi.so.1.0
 %%VDPAU%%%%radeonsi%%lib/vdpau%%SUFFIX%%/libvdpau_radeonsi.so.1.0.0
-@comment libdata/pkgconfig/dri.pc
-@comment libdata/pkgconfig/egl.pc
-@comment libdata/pkgconfig/gbm.pc
-@comment libdata/pkgconfig/gl.pc
-@comment libdata/pkgconfig/glesv1_cm.pc
-@comment libdata/pkgconfig/glesv2.pc
+%%NO_COINST%%libdata/pkgconfig/dri.pc
+%%NO_GLVND%%%%NO_COINST%%libdata/pkgconfig/egl.pc
+%%NO_COINST%%libdata/pkgconfig/gbm.pc
+%%NO_GLVND%%%%NO_COINST%%libdata/pkgconfig/gl.pc
+%%NO_GLVND%%%%NO_COINST%%libdata/pkgconfig/glesv1_cm.pc
+%%NO_GLVND%%%%NO_COINST%%libdata/pkgconfig/glesv2.pc
 share/drirc.d/00-mesa%%SUFFIX%%-defaults.conf
+%%GLVND%%%%NO_COINST%%share/glvnd/egl_vendor.d/50_mesa.json
 %%VULKAN%%share/vulkan/explicit_layer.d/VkLayer_MESA_overlay.json
-%%anv%%@comment share/vulkan/icd.d/intel_icd.%%ARCH%%.json
-%%radv%%@comment share/vulkan/icd.d/radeon_icd.%%ARCH%%.json
+%%anv%%%%NO_COINST%%share/vulkan/icd.d/intel_icd.%%ARCH%%.json
+%%radv%%%%NO_COINST%%share/vulkan/icd.d/radeon_icd.%%ARCH%%.json
 %%VULKAN%%share/vulkan/implicit_layer.d/VkLayer_MESA_device_select.json
