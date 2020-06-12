@@ -206,6 +206,10 @@ share/help/id/mate-terminal/figures/mate-terminal-default.png
 share/help/id/mate-terminal/figures/mate-terminal-tabbed.png
 share/help/id/mate-terminal/index.docbook
 share/help/id/mate-terminal/legal.xml
+share/help/ie/mate-terminal/figures/mate-terminal-default.png
+share/help/ie/mate-terminal/figures/mate-terminal-tabbed.png
+share/help/ie/mate-terminal/index.docbook
+share/help/ie/mate-terminal/legal.xml
 share/help/ig/mate-terminal/figures/mate-terminal-default.png
 share/help/ig/mate-terminal/figures/mate-terminal-tabbed.png
 share/help/ig/mate-terminal/index.docbook
@@ -483,6 +487,7 @@ share/locale/hu/LC_MESSAGES/mate-terminal.mo
 share/locale/hy/LC_MESSAGES/mate-terminal.mo
 share/locale/ia/LC_MESSAGES/mate-terminal.mo
 share/locale/id/LC_MESSAGES/mate-terminal.mo
+share/locale/ie/LC_MESSAGES/mate-terminal.mo
 share/locale/ig/LC_MESSAGES/mate-terminal.mo
 share/locale/is/LC_MESSAGES/mate-terminal.mo
 share/locale/it/LC_MESSAGES/mate-terminal.mo
