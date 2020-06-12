@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mate-icon-theme
-PORTVERSION=	1.22.2
+PORTVERSION=	1.24.0
 CATEGORIES=	x11-themes mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -24,9 +24,5 @@ USES=		gettext-tools gmake gnome pkgconfig tar:xz
 USE_GNOME=	intltool
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-
-pre-install:
-	@${REINPLACE_CMD} -e 's|install: install-data|install:|g' \
-		${WRKSRC}/po/Makefile
 
 .include <bsd.port.mk>
