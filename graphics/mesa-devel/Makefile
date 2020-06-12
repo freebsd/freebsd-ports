@@ -146,8 +146,6 @@ post-patch:
 	@${REINPLACE_CMD} '/MESA_GIT_SHA1/s/""/" (git-${DISTVERSIONSUFFIX:C/.*-g//})"/' \
 		${WRKSRC}/bin/git_sha1_gen.py
 .if defined(PKGNAMESUFFIX)
-	@${MV} ${WRKSRC}/src/egl/main/50_${PORTNAME}.json \
-		${WRKSRC}/src/egl/main/50_${PKGBASE}.json
 	@${MV} ${WRKSRC}/src/util/00-${PORTNAME}-defaults.conf \
 		${WRKSRC}/src/util/00-${PKGBASE}-defaults.conf
 .endif

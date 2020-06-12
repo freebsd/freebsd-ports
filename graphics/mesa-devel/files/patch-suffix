@@ -51,19 +51,9 @@ Library selection is handled by libglvnd and/or libmap.conf.
    [libradv_files, radv_entrypoints, radv_extensions_c, amd_vk_format_table_c, sha1_h],
    include_directories : [
      inc_include, inc_src, inc_mapi, inc_mesa, inc_gallium, inc_gallium_aux, inc_amd, inc_amd_common, inc_amd_common_llvm, inc_compiler, inc_util, inc_vulkan_wsi,
---- src/egl/main/50_mesa.json.orig	2020-05-30 21:28:01 UTC
-+++ src/egl/main/50_mesa.json
-@@ -1,6 +1,6 @@
- {
-     "file_format_version" : "1.0.0",
-     "ICD" : {
--        "library_path" : "libEGL_mesa.so.0"
-+        "library_path" : "libEGL_mesa@0@.so.0".format(get_option('egl-lib-suffix'))
-     }
- }
 --- src/egl/meson.build.orig	2020-05-30 21:28:01 UTC
 +++ src/egl/meson.build
-@@ -147,13 +147,13 @@ if not with_glvnd
+@@ -147,7 +147,7 @@ if not with_glvnd
    egl_lib_name = 'EGL' + get_option('egl-lib-suffix')
    egl_lib_version = '1.0.0'
  else
@@ -72,13 +62,6 @@ Library selection is handled by libglvnd and/or libmap.conf.
    egl_lib_version = '0.0.0'
    deps_for_egl += dep_glvnd
    files_egl += [g_egldispatchstubs_h, g_egldispatchstubs_c]
-   files_egl += files('main/eglglvnd.c', 'main/egldispatchstubs.c')
-   install_data(
--    'main/50_mesa.json',
-+    'main/50_mesa@0@.json'.format(get_option('egl-lib-suffix')),
-     install_dir : join_paths(get_option('datadir'), 'glvnd', 'egl_vendor.d')
-   )
- endif
 --- src/gbm/backends/dri/gbm_dri.c.orig	2020-05-30 21:28:01 UTC
 +++ src/gbm/backends/dri/gbm_dri.c
 @@ -307,14 +307,6 @@ dri_bind_extensions(struct gbm_dri_device *dri,
