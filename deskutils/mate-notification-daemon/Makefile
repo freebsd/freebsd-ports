@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mate-notification-daemon
-PORTVERSION=	1.22.1
+PORTVERSION=	1.24.0
 CATEGORIES=	deskutils mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate

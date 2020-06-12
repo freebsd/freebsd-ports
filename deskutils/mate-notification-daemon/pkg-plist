@@ -120,4 +120,3 @@ share/locale/yo/LC_MESSAGES/mate-notification-daemon.mo
 share/locale/zh_CN/LC_MESSAGES/mate-notification-daemon.mo
 share/locale/zh_HK/LC_MESSAGES/mate-notification-daemon.mo
 share/locale/zh_TW/LC_MESSAGES/mate-notification-daemon.mo
-%%DATADIR%%/mate-notification-properties.ui
