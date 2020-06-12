@@ -46,7 +46,7 @@ lib/girepository-1.0/GTop-2.0.typelib
 lib/libgtop-2.0.a
 lib/libgtop-2.0.so
 lib/libgtop-2.0.so.11
-lib/libgtop-2.0.so.11.0.0
+lib/libgtop-2.0.so.11.0.1
 libdata/pkgconfig/libgtop-2.0.pc
 %%DOCSDIR%%/home.png
 %%DOCSDIR%%/index.html
