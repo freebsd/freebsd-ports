@@ -456,8 +456,10 @@ share/plasma/desktoptheme/air/widgets/translucentbackground.svgz
 share/plasma/desktoptheme/air/widgets/viewitem.svgz
 share/plasma/desktoptheme/breeze-dark/colors
 share/plasma/desktoptheme/breeze-dark/metadata.desktop
+share/plasma/desktoptheme/breeze-dark/widgets/plasmoidheading.svgz
 share/plasma/desktoptheme/breeze-light/colors
 share/plasma/desktoptheme/breeze-light/metadata.desktop
+share/plasma/desktoptheme/breeze-light/widgets/plasmoidheading.svgz
 share/plasma/desktoptheme/default/dialogs/background.svgz
 share/plasma/desktoptheme/default/icons/akonadi.svgz
 share/plasma/desktoptheme/default/icons/akregator.svgz

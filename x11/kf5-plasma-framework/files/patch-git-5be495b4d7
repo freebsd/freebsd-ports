@@ -1,0 +1,51 @@
+commit 5be495b4d7bdeb6797d483980f3ca273e56b0a19
+Author: Chris Holland <zrenfire@gmail.com>
+Date:   Tue Jun 9 20:20:12 2020 -0400
+
+    Symlink widgets/plasmoidheading.svgz in breeze light/dark
+    
+    PlasmoidHeading.qml only draws "widgets/plasmoidheading" if
+    fromCurrentTheme=true, so Breeze Light/Dark were not drawing it.
+
+diff --git src/desktoptheme/breeze-dark/CMakeLists.txt src/desktoptheme/breeze-dark/CMakeLists.txt
+index 7f8f99062..13a448a01 100644
+--- src/desktoptheme/breeze-dark/CMakeLists.txt
++++ src/desktoptheme/breeze-dark/CMakeLists.txt
+@@ -8,4 +8,7 @@ install(
+     FILES colors "${CMAKE_CURRENT_BINARY_DIR}/metadata.desktop"
+     DESTINATION ${PLASMA_DATA_INSTALL_DIR}/desktoptheme/breeze-dark
+ )
+-
++install(
++    DIRECTORY widgets
++    DESTINATION ${PLASMA_DATA_INSTALL_DIR}/desktoptheme/breeze-dark
++)
+diff --git src/desktoptheme/breeze-dark/widgets/plasmoidheading.svgz src/desktoptheme/breeze-dark/widgets/plasmoidheading.svgz
+new file mode 120000
+index 000000000..b20bf0773
+--- /dev/null
++++ src/desktoptheme/breeze-dark/widgets/plasmoidheading.svgz
+@@ -0,0 +1 @@
++../../default/widgets/plasmoidheading.svgz
+\ No newline at end of file
+diff --git src/desktoptheme/breeze-light/CMakeLists.txt src/desktoptheme/breeze-light/CMakeLists.txt
+index 5e595933f..9bb996a80 100644
+--- src/desktoptheme/breeze-light/CMakeLists.txt
++++ src/desktoptheme/breeze-light/CMakeLists.txt
+@@ -8,4 +8,7 @@ install(
+     FILES colors "${CMAKE_CURRENT_BINARY_DIR}/metadata.desktop"
+     DESTINATION ${PLASMA_DATA_INSTALL_DIR}/desktoptheme/breeze-light
+ )
+-
++install(
++    DIRECTORY widgets
++    DESTINATION ${PLASMA_DATA_INSTALL_DIR}/desktoptheme/breeze-light
++)
+diff --git src/desktoptheme/breeze-light/widgets/plasmoidheading.svgz src/desktoptheme/breeze-light/widgets/plasmoidheading.svgz
+new file mode 120000
+index 000000000..b20bf0773
+--- /dev/null
++++ src/desktoptheme/breeze-light/widgets/plasmoidheading.svgz
+@@ -0,0 +1 @@
++../../default/widgets/plasmoidheading.svgz
+\ No newline at end of file
