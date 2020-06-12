@@ -5,7 +5,7 @@ PORTNAME?=	ixl
 PORTVERSION?=	1.11.9
 PORTREVISION?=	1
 CATEGORIES=	net
-MASTER_SITES=	https://downloadmirror.intel.com/${MASTER_SITE_SUBDIR}/ \
+MASTER_SITES?=	https://downloadmirror.intel.com/${MASTER_SITE_SUBDIR}/ \
 		http://downloadmirror.intel.com/${MASTER_SITE_SUBDIR}/
 MASTER_SITE_SUBDIR?=	25160/eng
 PKGNAMEPREFIX=	intel-
@@ -33,18 +33,15 @@ WRKSRC_SUBDIR=	src
 
 SUB_FILES=	pkg-message
 SUB_LIST=	PORTNAME=${PORTNAME}
-MAKE_ENV+=	WERROR=""
-PLIST_FILES=	${KMODDIR}/if_${PORTNAME}_updated.ko
-MANPAGEEXISTS?=	1
 MANPAGENAME?=	${PORTNAME}
 MANPAGELINKS?=	if_${PORTNAME}
+PLIST_FILES=	${KMODDIR}/if_${PORTNAME}_updated.ko \
+		man/man4/${MANPAGENAME}.4.gz
+MAKE_ENV+=	WERROR=""
 
-.if ${MANPAGEEXISTS}
-PLIST_FILES+=	man/man4/${MANPAGENAME}.4.gz
-.  for link in ${MANPAGELINKS}
+.for link in ${MANPAGELINKS}
 PLIST_FILES+=	man/man4/${link}.4.gz
-.  endfor
-.endif
+.endfor
 
 MAX_NETMAP_OSVERSION?=	1200500  # Maximum OSVERSION for which NETMAP support works
 
@@ -62,11 +59,10 @@ CFLAGS+=	-DDEV_NETMAP
 
 do-install:
 	${INSTALL_KLD} ${WRKSRC}/if_${PORTNAME}.ko ${STAGEDIR}${KMODDIR}/if_${PORTNAME}_updated.ko
-.if ${MANPAGEEXISTS}
 	${INSTALL_MAN} ${WRKSRC}/${MANPAGENAME}.4 ${STAGEDIR}${MAN4PREFIX}/man/man4/
-.  for link in ${MANPAGELINKS}
+
+.for link in ${MANPAGELINKS}
 	${LN} ${STAGEDIR}${MAN4PREFIX}/man/man4/${MANPAGENAME}.4 ${STAGEDIR}${MAN4PREFIX}/man/man4/${link}.4
-.  endfor
-.endif
+.endfor
 
 .include <bsd.port.post.mk>
