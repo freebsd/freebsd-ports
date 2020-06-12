@@ -2,7 +2,7 @@
 
 PORTNAME=	waybar
 DISTVERSION=	0.9.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -27,7 +27,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols
-LIB_DEPENDS=	libtz.so:devel/date \
+LIB_DEPENDS=	libdate-tz.so:devel/date \
 		libjsoncpp.so:devel/jsoncpp \
 		libfmt.so:devel/libfmt \
 		libspdlog.so:devel/spdlog \
