@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bapu
-PORTVERSION=	0.1.0
-PORTREVISION=	2
+PORTVERSION=	0.2.0
 CATEGORIES=	net
 MASTER_SITES=	https://bitbucket.org/carlostrub/bapu/get/
 PKGNAMEPREFIX=	go-
@@ -17,7 +16,7 @@ LICENSE=	BSD3CLAUSE
 
 USES=		go tar:bzip2
 GO_PKGNAME=	bitbucket.org/carlostrub/bapu
-WRKSRC=		${WRKDIR}/carlostrub-bapu-4258e51442b6
+WRKSRC=		${WRKDIR}/carlostrub-bapu-35b71f581866
 
 post-install:
 	${CP} -R ${WRKSRC}/bapu.toml.sample ${STAGEDIR}${PREFIX}/etc/
