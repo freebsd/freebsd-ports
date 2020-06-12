@@ -5,12 +5,8 @@ share/applications/org.gnome.Characters.desktop
 share/dbus-1/services/org.gnome.Characters.BackgroundService.service
 share/dbus-1/services/org.gnome.Characters.service
 share/gnome-shell/search-providers/org.gnome.Characters.search-provider.ini
-share/icons/hicolor/16x16/apps/gnome-characters.png
-share/icons/hicolor/22x22/apps/gnome-characters.png
-share/icons/hicolor/256x256/apps/gnome-characters.png
-share/icons/hicolor/32x32/apps/gnome-characters.png
-share/icons/hicolor/48x48/apps/gnome-characters.png
-share/icons/hicolor/symbolic/apps/gnome-characters-symbolic.svg
+share/icons/hicolor/scalable/apps/org.gnome.Characters.svg
+share/icons/hicolor/symbolic/apps/org.gnome.Characters-symbolic.svg
 share/locale/af/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/ar/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/be/LC_MESSAGES/org.gnome.Characters.mo
@@ -44,6 +40,7 @@ share/locale/ln/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/lt/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/lv/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/ml/LC_MESSAGES/org.gnome.Characters.mo
+share/locale/ms/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/nb/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/ne/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/nl/LC_MESSAGES/org.gnome.Characters.mo
@@ -59,6 +56,7 @@ share/locale/sl/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/sr/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/sr@latin/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/sv/LC_MESSAGES/org.gnome.Characters.mo
+share/locale/ta/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/tg/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/tr/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/uk/LC_MESSAGES/org.gnome.Characters.mo
