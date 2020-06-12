@@ -3,7 +3,7 @@
 #   $MCom: ports/trunk/devel/libsigc++20/Makefile 19952 2014-10-15 08:11:00Z gusi $
 
 PORTNAME=	libsigc++
-PORTVERSION=	2.10.2
+PORTVERSION=	2.10.3
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 

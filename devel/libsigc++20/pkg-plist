@@ -398,13 +398,13 @@ libdata/pkgconfig/sigc++-%%API_VERSION%%.pc
 %%PORTDOCS%%%%DOCSDIR%%-%%API_VERSION%%/reference/html/classsigc_1_1volatile__mem__functor7__inherit__graph.png
 %%PORTDOCS%%%%DOCSDIR%%-%%API_VERSION%%/reference/html/closed.png
 %%PORTDOCS%%%%DOCSDIR%%-%%API_VERSION%%/reference/html/deprecated.html
-%%PORTDOCS%%%%DOCSDIR%%-%%API_VERSION%%/reference/html/dir_69292b900bf9f32fa1522c0a297aa561.html
-%%PORTDOCS%%%%DOCSDIR%%-%%API_VERSION%%/reference/html/dir_7061c03125b177af05ebe54a01c7815e.html
+%%PORTDOCS%%%%DOCSDIR%%-%%API_VERSION%%/reference/html/dir_49637f7a506fb46452b61fa9242e94fa.html
+%%PORTDOCS%%%%DOCSDIR%%-%%API_VERSION%%/reference/html/dir_707459f1045f56e3cfd726c166cb6440.html
+%%PORTDOCS%%%%DOCSDIR%%-%%API_VERSION%%/reference/html/dir_cfdc85331b77931098d1cb943916d356.html
+%%PORTDOCS%%%%DOCSDIR%%-%%API_VERSION%%/reference/html/dir_d27af17c007bf8336206730e5f9cd2f1.html
 %%PORTDOCS%%%%DOCSDIR%%-%%API_VERSION%%/reference/html/dir_a7a614a8e549e28882ee9909ca095aec.html
 %%PORTDOCS%%%%DOCSDIR%%-%%API_VERSION%%/reference/html/dir_d1b074183e01b19b1ce0df6f4868a06f.html
-%%PORTDOCS%%%%DOCSDIR%%-%%API_VERSION%%/reference/html/dir_e610d0fd7d8d422b14c5e759f0ef71be.html
 %%PORTDOCS%%%%DOCSDIR%%-%%API_VERSION%%/reference/html/dir_e7ee533ee50f0002bd12390b80ea971b.html
-%%PORTDOCS%%%%DOCSDIR%%-%%API_VERSION%%/reference/html/dir_ffa8fd617c28221f63108bd7d58d97eb.html
 %%PORTDOCS%%%%DOCSDIR%%-%%API_VERSION%%/reference/html/doc.png
 %%PORTDOCS%%%%DOCSDIR%%-%%API_VERSION%%/reference/html/doxygen-extra.css
 %%PORTDOCS%%%%DOCSDIR%%-%%API_VERSION%%/reference/html/doxygen.css
