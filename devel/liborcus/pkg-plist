@@ -2,7 +2,6 @@ bin/orcus-css-dump
 bin/orcus-detect
 bin/orcus-json
 bin/orcus-mso-encryption
-bin/orcus-xml-dump
 bin/orcus-yaml
 bin/orcus-zip-dump
 include/liborcus-%%VERSION%%/orcus/base64.hpp
@@ -29,12 +28,14 @@ include/liborcus-%%VERSION%%/orcus/json_global.hpp
 include/liborcus-%%VERSION%%/orcus/json_parser.hpp
 include/liborcus-%%VERSION%%/orcus/json_parser_base.hpp
 include/liborcus-%%VERSION%%/orcus/json_parser_thread.hpp
+include/liborcus-%%VERSION%%/orcus/json_structure_tree.hpp
 include/liborcus-%%VERSION%%/orcus/measurement.hpp
 include/liborcus-%%VERSION%%/orcus/mso/encryption_info.hpp
 include/liborcus-%%VERSION%%/orcus/orcus_csv.hpp
 include/liborcus-%%VERSION%%/orcus/orcus_gnumeric.hpp
 include/liborcus-%%VERSION%%/orcus/orcus_import_ods.hpp
 include/liborcus-%%VERSION%%/orcus/orcus_import_xlsx.hpp
+include/liborcus-%%VERSION%%/orcus/orcus_json.hpp
 include/liborcus-%%VERSION%%/orcus/orcus_ods.hpp
 include/liborcus-%%VERSION%%/orcus/orcus_xls_xml.hpp
 include/liborcus-%%VERSION%%/orcus/orcus_xlsx.hpp
