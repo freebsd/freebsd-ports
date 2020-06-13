@@ -1,8 +1,8 @@
---- examples/Makefile.orig	2019-03-10 13:46:23 UTC
+--- examples/Makefile.orig	2020-06-10 08:03:38 UTC
 +++ examples/Makefile
 @@ -89,7 +89,7 @@ VERSION2 = $(shell grep 'cimg_version\ ' ../CImg.h | t
  VERSION3 = $(shell grep 'cimg_version\ ' ../CImg.h | tail -c2 | head -c1)
- SVERSION=$(VERSION1).$(VERSION2).$(VERSION3)
+ SVERSION = $(VERSION1).$(VERSION2).$(VERSION3)
  
 -X11PATH = /usr/X11R6
 +X11PATH = $(LOCALBASE)
@@ -18,7 +18,7 @@
  LIBS = -lm
  ifdef IS_GCC
  CXXVER = $(shell $(CXX) -v 2>&1 | tail -n 1)
-@@ -144,9 +144,9 @@ DEBUG_CFLAGS = -Dcimg_verbosity=3 -Dcimg_strict_warnin
+@@ -151,9 +151,9 @@ DEBUG_CFLAGS = -Dcimg_verbosity=3 -Dcimg_strict_warnin
  VT100_CFLAGS = -Dcimg_use_vt100
  
  # Flags to enable code optimization by the compiler.
@@ -30,7 +30,7 @@
  endif
  ifdef IS_ICPC
  OPT_CFLAGS = -fast
-@@ -222,7 +222,7 @@ JPEG_LIBS = -ljpeg
+@@ -224,7 +224,7 @@ JPEG_LIBS = -ljpeg
  TIFF_DEFINE = -Dcimg_use_tiff
  TIFF_INCDIR =
  TIFF_CFLAGS = $(TIFF_DEFINE) $(TIFF_INCDIR)
@@ -39,7 +39,7 @@
  
  # Flags to enable native support for MINC2 image files, using the MINC2 library.
  # ( http://en.wikibooks.org/wiki/MINC/Reference/MINC2.0_Users_Guide )
-@@ -234,16 +234,16 @@ MINC2_LIBS = -lminc_io -lvolume_io2 -lminc2 -lnetcdf -
+@@ -236,16 +236,16 @@ MINC2_LIBS = -lminc_io -lvolume_io2 -lminc2 -lnetcdf -
  # Flags to enable native support for EXR image files, using the OpenEXR library.
  # ( http://www.openexr.com/ )
  OPENEXR_DEFINE = -Dcimg_use_openexr
@@ -61,7 +61,7 @@
  
  # Flags to enable native support for compressed .cimgz files, using the Zlib library.
  # ( http://www.zlib.net/ )
-@@ -279,15 +279,15 @@ endif
+@@ -281,15 +281,15 @@ endif
  
  # Flags to enable the use of LAPACK routines for matrix computation
  # ( http://www.netlib.org/lapack/ )
@@ -81,7 +81,7 @@
  BOARD_CFLAGS = $(BOARD_DEFINE) $(BOARD_INCDIR)
  BOARD_LIBS = -lboard
  
-@@ -366,6 +366,7 @@ $(X11_LIBS) \
+@@ -368,6 +368,7 @@ $(X11_LIBS) \
  $(TIFF_LIBS) \
  $(LAPACK_LIBS) \
  $(XSHM_LIBS)" \
@@ -89,7 +89,7 @@
  all $(EXTRA_FILES)
  
  # Linux/BSD/Mac OSX targets, with X11 display.
-@@ -458,8 +459,11 @@ $(ZLIB_CFLAGS) \
+@@ -460,8 +461,11 @@ $(ZLIB_CFLAGS) \
  $(CURL_CFLAGS) \
  $(OPENCV_CFLAGS) \
  $(MAGICK_CFLAGS) \
@@ -101,7 +101,7 @@
  $(X11_LIBS) \
  $(XSHM_LIBS) \
  $(XRANDR_LIBS) \
-@@ -471,6 +475,8 @@ $(ZLIB_LIBS) \
+@@ -473,6 +477,8 @@ $(ZLIB_LIBS) \
  $(CURL_LIBS) \
  $(OPENCV_LIBS) \
  $(MAGICK_LIBS) \
