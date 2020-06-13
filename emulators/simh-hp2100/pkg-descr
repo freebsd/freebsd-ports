@@ -1,0 +1,6 @@
+hp2100 is a simulator for the HP 2116/15/14, 2100, and 1000 M/E/F-Series
+machines (hereafter referred collectively as the HP 2100 simulator). A
+large variety of CPU options, device interface cards, and peripherals
+are provided.
+
+WWW: http://simh.trailing-edge.com/hp/
