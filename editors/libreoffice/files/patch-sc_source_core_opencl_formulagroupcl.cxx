@@ -1,168 +1,18 @@
---- vcl/inc/unx/saltype.h	2019-12-05 20:59:23.000000000 +0100
-+++ vcl/inc/unx/saltype.h	2020-03-17 18:23:05.585171000 +0100
-@@ -18,8 +18,8 @@
- public:
-     explicit SalX11Screen(unsigned int nXScreen) : mnXScreen( nXScreen ) {}
-     unsigned int getXScreen() const { return mnXScreen; }
--    bool operator==(const SalX11Screen &rOther) { return rOther.mnXScreen == mnXScreen; }
--    bool operator!=(const SalX11Screen &rOther) { return rOther.mnXScreen != mnXScreen; }
-+    bool operator==(const SalX11Screen &rOther) const { return rOther.mnXScreen == mnXScreen; }
-+    bool operator!=(const SalX11Screen &rOther) const { return rOther.mnXScreen != mnXScreen; }
- };
- 
- #endif // INCLUDED_VCL_INC_UNX_SALTYPE_H
---- sd/source/ui/framework/factories/BasicPaneFactory.cxx	2019-12-05 20:59:23.000000000 +0100
-+++ sd/source/ui/framework/factories/BasicPaneFactory.cxx	2020-03-17 20:51:22.331805000 +0100
-@@ -324,7 +324,7 @@
- void SAL_CALL BasicPaneFactory::disposing (
-     const lang::EventObject& rEventObject)
- {
--    if (mxConfigurationControllerWeak == rEventObject.Source)
-+    if (mxConfigurationControllerWeak.get() == rEventObject.Source)
-     {
-         mxConfigurationControllerWeak.clear();
-     }
---- sd/inc/OutlinerIterator.hxx	2019-12-05 20:59:23.000000000 +0100
-+++ sd/inc/OutlinerIterator.hxx	2020-03-17 21:20:36.906085000 +0100
-@@ -122,7 +122,7 @@
-         @return
-             Returns <TRUE/> when both iterators point to the same object.
-     */
--    bool operator== (const Iterator& rIterator);
-+    bool operator== (const Iterator& rIterator) const;
-     /** Test whether two iterators point to different objects.  This is just
-         the negation of the result of the equality operator.
-         @param rIterator
-@@ -130,7 +130,7 @@
-         @return
-             Returns <TRUE/> when both iterators point to the different objects.
-     */
--    bool operator!= (const Iterator& rIterator);
-+    bool operator!= (const Iterator& rIterator) const;
-     /** Reverse the direction of iteration.  The position of the iterator is
-         not changed.  Thus calling this method twice returns to the old state.
-     */
---- sd/source/ui/view/OutlinerIterator.cxx.orig	2019-12-05 20:59:23.000000000 +0100
-+++ sd/source/ui/view/OutlinerIterator.cxx	2020-03-17 21:24:11.082383000 +0100
-@@ -110,7 +110,7 @@
-     return *this;
- }
- 
--bool Iterator::operator== (const Iterator& rIterator)
-+bool Iterator::operator== (const Iterator& rIterator) const
- {
-     if (!mxIterator || !rIterator.mxIterator)
-         return mxIterator.get() == rIterator.mxIterator.get();
-@@ -118,7 +118,7 @@
-         return *mxIterator == *rIterator.mxIterator;
- }
- 
--bool Iterator::operator!= (const Iterator& rIterator)
-+bool Iterator::operator!= (const Iterator& rIterator) const
- {
-     return ! operator==(rIterator);
- }
---- compilerplugins/clang/simplifybool.cxx	2019-12-05 20:59:23.000000000 +0100
-+++ compilerplugins/clang/simplifybool.cxx	2020-03-17 22:03:11.369300000 +0100
-@@ -241,7 +241,30 @@
-             << expr->getSourceRange();
-         return true;
-     }
--    if (auto binaryOp = dyn_cast<BinaryOperator>(expr->getSubExpr()->IgnoreParenImpCasts())) {
-+    auto sub = expr->getSubExpr()->IgnoreParenImpCasts();
-+    auto reversed = false;
-+#if CLANG_VERSION >= 100000
-+    if (auto const rewritten = dyn_cast<CXXRewrittenBinaryOperator>(sub)) {
-+        if (rewritten->isReversed()) {
-+            if (rewritten->getOperator() == BO_EQ) {
-+                auto const sem = rewritten->getSemanticForm();
-+                bool match;
-+                if (auto const op1 = dyn_cast<BinaryOperator>(sem)) {
-+                    match = op1->getOpcode() == BO_EQ;
-+                } else if (auto const op2 = dyn_cast<CXXOperatorCallExpr>(sem)) {
-+                    match = op2->getOperator() == OO_EqualEqual;
-+                } else {
-+                    match = false;
-+                }
-+                if (match) {
-+                    sub = sem;
-+                    reversed = true;
-+                }
-+            }
-+        }
-+    }
-+#endif
-+    if (auto binaryOp = dyn_cast<BinaryOperator>(sub)) {
-         // Ignore macros, otherwise
-         //    OSL_ENSURE(!b, ...);
-         // triggers.
-@@ -289,7 +312,7 @@
-                     << binaryOp->getSourceRange();
-         }
-     }
--    if (auto binaryOp = dyn_cast<CXXOperatorCallExpr>(expr->getSubExpr()->IgnoreParenImpCasts())) {
-+    if (auto binaryOp = dyn_cast<CXXOperatorCallExpr>(sub)) {
-         // Ignore macros, otherwise
-         //    OSL_ENSURE(!b, ...);
-         // triggers.
-@@ -301,8 +324,8 @@
-         if (!(op == OO_EqualEqual || op == OO_ExclaimEqual))
-             return true;
-         BinaryOperator::Opcode negatedOpcode = BinaryOperator::negateComparisonOp(BinaryOperator::getOverloadedOpcode(op));
--        auto lhs = binaryOp->getArg(0)->IgnoreImpCasts()->getType()->getUnqualifiedDesugaredType();
--        auto rhs = binaryOp->getArg(1)->IgnoreImpCasts()->getType()->getUnqualifiedDesugaredType();
-+        auto lhs = binaryOp->getArg(reversed ? 1 : 0)->IgnoreImpCasts()->getType()->getUnqualifiedDesugaredType();
-+        auto rhs = binaryOp->getArg(reversed ? 0 : 1)->IgnoreImpCasts()->getType()->getUnqualifiedDesugaredType();
-         auto const negOp = findOperator(compiler, negatedOpcode, lhs, rhs);
-         if (!negOp)
-             return true;
-@@ -323,8 +346,10 @@
-             << expr->getSourceRange();
-         if (negOp != ASSUME_OPERATOR_EXISTS)
-             report(
--                DiagnosticsEngine::Note, "the presumed corresponding negated operator is declared here",
-+                DiagnosticsEngine::Note, "the presumed corresponding negated operator for %0 and %1 is declared here",
-                 negOp->getLocation())
-+                << binaryOp->getArg(reversed ? 1 : 0)->IgnoreImpCasts()->getType()
-+                << binaryOp->getArg(reversed ? 0 : 1)->IgnoreImpCasts()->getType()
-                 << negOp->getSourceRange();
-     }
-     return true;
---- cui/source/tabpages/tpline.cxx	2019-12-05 20:59:23.000000000 +0100
-+++ cui/source/tabpages/tpline.cxx	2020-03-17 22:06:49.493222000 +0100
-@@ -491,7 +491,7 @@
-             else if( m_pLineEndList->Count() > static_cast<long>( nPos - 1 ) )
-                 pItem.reset(new XLineStartItem( m_xLbStartStyle->get_active_text(), m_pLineEndList->GetLineEnd( nPos - 1 )->GetLineEnd() ));
-             pOld = GetOldItem( *rAttrs, XATTR_LINESTART );
--            if( pItem && ( !pOld || !( *static_cast<const XLineEndItem*>(pOld) == *pItem ) ) )
-+            if( pItem && ( !pOld || *pOld != *pItem ) )
-             {
-                 rAttrs->Put( *pItem );
-                 bModified = true;
---- sc/source/ui/view/viewfunc.cxx.orig	2019-12-05 20:59:23.000000000 +0100
-+++ sc/source/ui/view/viewfunc.cxx	2020-03-17 23:58:50.978995000 +0100
-@@ -958,7 +958,7 @@
- 
-     //  this should be intercepted by the pool: ?!??!??
- 
--    if (bFrame && rNewOuter == rOldOuter && rNewInner == rOldInner)
-+    if (bFrame && &rNewOuter == &rOldOuter && &rNewInner == &rOldInner)
-         bFrame = false;
- 
-     bFrame =   bFrame
---- sc/source/core/opencl/formulagroupcl.cxx	2019-12-05 20:59:23.000000000 +0100
-+++ sc/source/core/opencl/formulagroupcl.cxx	2020-03-18 00:44:08.091710000 +0100
-@@ -1026,9 +1026,6 @@
+https://bugs.gentoo.org/713574
+https://bugs.documentfoundation.org/show_bug.cgi?id=131591
+
+--- sc/source/core/opencl/formulagroupcl.cxx.orig	2020-03-11 16:18:35 UTC
++++ sc/source/core/opencl/formulagroupcl.cxx
+@@ -1026,8 +1026,6 @@ class DynamicKernelMixedArgument : public VectorRef (p
  /// Handling a Double Vector that is used as a sliding window input
  /// to either a sliding window average or sum-of-products
  /// Generate a sequential loop for reductions
 -class OpAverage;
 -class OpCount;
--
+ 
  template<class Base>
  class DynamicKernelSlidingArgument : public Base
- {
-@@ -1335,186 +1332,8 @@
+@@ -1335,186 +1333,8 @@ class ParallelReductionVectorRef : public Base (public
      }
  
      /// Emit the definition for the auxiliary reduction kernel
@@ -350,7 +200,7 @@
      virtual std::string GenSlidingWindowDeclRef( bool ) const
      {
          std::stringstream ss;
-@@ -1527,195 +1346,10 @@
+@@ -1527,195 +1347,10 @@ class ParallelReductionVectorRef : public Base (public
  
      /// Controls how the elements in the DoubleVectorRef are traversed
      size_t GenReductionLoopHeader(
@@ -548,10 +398,11 @@
      ~ParallelReductionVectorRef()
      {
          if (mpClmem2)
-@@ -2314,6 +1948,380 @@
-     }
-     virtual std::string BinFuncName() const override { return "fsop"; }
+@@ -2324,6 +1959,379 @@ struct SumIfsArgs
+     cl_mem mCLMem;
+     double mConst;
  };
++}
 +
 +template<class Base>
 +void ParallelReductionVectorRef<Base>::GenSlidingWindowFunction( std::stringstream& ss )
@@ -826,7 +677,7 @@
 +    // set work group size and execute
 +    size_t global_work_size[] = { 256, static_cast<size_t>(w) };
 +    size_t const local_work_size[] = { 256, 1 };
-+    SAL_INFO("sc.opencl", "Enqueuing kernel " << redKernel);
++    SAL_INFO("sc.opencl", "Enqueing kernel " << redKernel);
 +    err = clEnqueueNDRangeKernel(kEnv.mpkCmdQueue, redKernel, 2, nullptr,
 +        global_work_size, local_work_size, 0, nullptr, nullptr);
 +    if (CL_SUCCESS != err)
@@ -884,7 +735,7 @@
 +        // set work group size and execute
 +        size_t global_work_size1[] = { 256, static_cast<size_t>(w) };
 +        size_t const local_work_size1[] = { 256, 1 };
-+        SAL_INFO("sc.opencl", "Enqueuing kernel " << redKernel);
++        SAL_INFO("sc.opencl", "Enqueing kernel " << redKernel);
 +        err = clEnqueueNDRangeKernel(kEnv.mpkCmdQueue, redKernel, 2, nullptr,
 +            global_work_size1, local_work_size1, 0, nullptr, nullptr);
 +        if (CL_SUCCESS != err)
@@ -924,8 +775,6 @@
 +    if (CL_SUCCESS != err)
 +        throw OpenCLError("clSetKernelArg", err, __FILE__, __LINE__);
 +    return 1;
-+}
-+
- namespace {
- struct SumIfsArgs
- {
+ }
+ 
+ /// Helper functions that have multiple buffers

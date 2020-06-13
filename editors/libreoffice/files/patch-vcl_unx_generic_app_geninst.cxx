@@ -1,19 +1,14 @@
---- vcl/unx/generic/app/geninst.cxx.orig	2019-08-07 01:26:35.000000000 +0800
-+++ vcl/unx/generic/app/geninst.cxx	2019-08-08 20:11:15.760468000 +0800
-@@ -22,11 +22,8 @@
- #include <cassert>
- #include <string.h>
- #include <stdlib.h>
+--- vcl/unx/generic/app/geninst.cxx.orig	2019-12-18 18:16:42.000000000 +0800
++++ vcl/unx/generic/app/geninst.cxx	2020-01-03 16:10:17.974216000 +0800
+@@ -18,6 +18,7 @@
+  */
+ 
+ #include <sal/config.h>
 +#include <sys/utsname.h>
  
--#if defined(LINUX)
--#  include <stdio.h>
--#endif
--
- #include <osl/module.hxx>
- #include <comphelper/solarmutex.hxx>
- #include <config_features.h>
-@@ -54,30 +51,22 @@
+ #if defined(LINUX)
+ #  include <stdio.h>
+@@ -48,30 +49,22 @@
  
  OUString SalGenericInstance::getOSVersion()
  {

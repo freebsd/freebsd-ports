@@ -1,0 +1,98 @@
+From 97d736d27435fb26d5609000f77bd79ece08572e Mon Sep 17 00:00:00 2001
+From: Stephan Bergmann <sbergman@redhat.com>
+Date: Wed, 18 Dec 2019 10:59:46 +0100
+Subject: [PATCH] Fix typos concerning the __cxa_exception check
+
+...introduced with 069506bcb0ee4005b01c22095ed427b96b553c98 "Use config_cxxabi.h
+to check for __cxa_eh_globals, __cxa_exception", but which appear to have been
+harmless as (a) the checked-for __cxxabiv1::__cxa_exceptions never existed in
+cxxabi.h, and (b) lack of __cxxabiv1::__cxa_exception in cxxabi.h happened to
+conincide with !HAVE_CXXABI_H_CXA_EH_GLOBALS
+
+Change-Id: I13f8a2b3cf0f03f2bc96cf053d2b571860055978
+Reviewed-on: https://gerrit.libreoffice.org/85373
+Tested-by: Jenkins
+Reviewed-by: Stephan Bergmann <sbergman@redhat.com>
+---
+ bridges/source/cpp_uno/gcc3_linux_arm/share.hxx    | 2 +-
+ bridges/source/cpp_uno/gcc3_linux_x86-64/share.hxx | 2 +-
+ configure.ac                                       | 6 +++---
+ 3 files changed, 5 insertions(+), 5 deletions(-)
+
+diff --git bridges/source/cpp_uno/gcc3_linux_arm/share.hxx bridges/source/cpp_uno/gcc3_linux_arm/share.hxx
+index ac380969e21b..0faa612d92fd 100644
+--- bridges/source/cpp_uno/gcc3_linux_arm/share.hxx
++++ bridges/source/cpp_uno/gcc3_linux_arm/share.hxx
+@@ -60,7 +60,7 @@ public:
+ }
+ #endif
+ 
+-#if !HAVE_CXXABI_H_CXA_EH_GLOBALS
++#if !HAVE_CXXABI_H_CXA_EXCEPTION
+ namespace __cxxabiv1 {
+     struct __cxa_exception
+     {
+diff --git bridges/source/cpp_uno/gcc3_linux_x86-64/share.hxx bridges/source/cpp_uno/gcc3_linux_x86-64/share.hxx
+index 864173470476..e8afe35c4f59 100644
+--- bridges/source/cpp_uno/gcc3_linux_x86-64/share.hxx
++++ bridges/source/cpp_uno/gcc3_linux_x86-64/share.hxx
+@@ -101,7 +101,7 @@ public:
+ }
+ #endif
+ 
+-#if !HAVE_CXXABI_H_CXA_EH_GLOBALS
++#if !HAVE_CXXABI_H_CXA_EXCEPTION
+ // <https://mentorembedded.github.io/cxx-abi/abi-eh.html>,
+ // libcxxabi/src/cxa_exception.hpp:
+ namespace __cxxabiv1 {
+diff --git configure.ac configure.ac
+index ba5e87ea1641..ad246a64f37a 100644
+--- configure.ac
++++ configure.ac
+@@ -6312,14 +6312,14 @@ if test "$GCC" = "yes" -o "$COM_IS_CLANG" = TRUE; then
+         ], [AC_MSG_RESULT([no])])
+     AC_LANG_POP([C++])
+ 
+-    AC_MSG_CHECKING([whether $CXX_BASE defines __cxa_exceptions in cxxabi.h])
++    AC_MSG_CHECKING([whether $CXX_BASE defines __cxa_exception in cxxabi.h])
+     AC_LANG_PUSH([C++])
+     AC_COMPILE_IFELSE([AC_LANG_SOURCE([
+             #include <cstddef>
+             #include <cxxabi.h>
+-            std::size_t f() { return sizeof(__cxxabiv1::__cxa_exceptions); }
++            std::size_t f() { return sizeof(__cxxabiv1::__cxa_exception); }
+         ])], [
+-            AC_DEFINE([HAVE_CXXABI_H_CXA_EXCEPTIONS],[1])
++            AC_DEFINE([HAVE_CXXABI_H_CXA_EXCEPTION],[1])
+             AC_MSG_RESULT([yes])
+         ], [AC_MSG_RESULT([no])])
+     AC_LANG_POP([C++])
+
+--- configure.orig	2020-04-09 11:53:22.480526000 +0200
++++ configure	2020-04-09 11:57:59.716479000 +0200
+@@ -17682,8 +17692,8 @@ ac_link='$CC -o conftest$ac_exeext $CFLAGS $CPPFLAGS $
+ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+ 
+ 
+-    { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether $CXX_BASE defines __cxa_exceptions in cxxabi.h" >&5
+-$as_echo_n "checking whether $CXX_BASE defines __cxa_exceptions in cxxabi.h... " >&6; }
++    { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether $CXX_BASE defines __cxa_exception in cxxabi.h" >&5
++$as_echo_n "checking whether $CXX_BASE defines __cxa_exception in cxxabi.h... " >&6; }
+     ac_ext=cpp
+ ac_cpp='$CXXCPP $CPPFLAGS'
+ ac_compile='$CXX -c $CXXFLAGS $CPPFLAGS conftest.$ac_ext >&5'
+@@ -17695,12 +17705,12 @@ ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
+ 
+             #include <cstddef>
+             #include <cxxabi.h>
+-            std::size_t f() { return sizeof(__cxxabiv1::__cxa_exceptions); }
++            std::size_t f() { return sizeof(__cxxabiv1::__cxa_exception); }
+ 
+ _ACEOF
+ if ac_fn_cxx_try_compile "$LINENO"; then :
+ 
+-            $as_echo "#define HAVE_CXXABI_H_CXA_EXCEPTIONS 1" >>confdefs.h
++            $as_echo "#define HAVE_CXXABI_H_CXA_EXCEPTION 1" >>confdefs.h
+ 
+             { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+ $as_echo "yes" >&6; }

@@ -1,0 +1,114 @@
+From 50ccb7e82b7053306721cbe220323be072306a29 Mon Sep 17 00:00:00 2001
+From: Justin Luth <justin_luth@sil.org>
+Date: Sat, 22 Feb 2020 07:30:15 +0300
+Subject: python 3.8.2 compile: add tp_print to PyTypeObject
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+I couldn't find this documented on the Internet though,
+as the 3.9 and 3.8.2rc documentation didn't mention it
+as an added item...
+
+I'm using Ubuntu 20.04 alpha with python3 --version
+Python 3.8.2rc1
+
+This fixes pyuno/source/module/pyuno.cxx:1689:1: error:
+missing initializer for member ‘_typeobject::tp_print’
+[-Werror=missing-field-initializers]
+
+Change-Id: Idec5720050572b34628267cd94557dabf7edbf3c
+Reviewed-on: https://gerrit.libreoffice.org/c/core/+/89247
+Tested-by: Jenkins
+Reviewed-by: Noel Grandin <noel.grandin@collabora.co.uk>
+---
+ pyuno/source/module/pyuno.cxx          | 3 +++
+ pyuno/source/module/pyuno_callable.cxx | 3 +++
+ pyuno/source/module/pyuno_iterator.cxx | 6 ++++++
+ pyuno/source/module/pyuno_runtime.cxx  | 3 +++
+ pyuno/source/module/pyuno_struct.cxx   | 3 +++
+ 5 files changed, 18 insertions(+)
+
+diff --git pyuno/source/module/pyuno.cxx pyuno/source/module/pyuno.cxx
+index a6a875addc46..bf6e5c667b7c 100644
+--- pyuno/source/module/pyuno.cxx
++++ pyuno/source/module/pyuno.cxx
+@@ -1684,6 +1684,9 @@ static PyTypeObject PyUNOType =
+     , nullptr
+ #if PY_VERSION_HEX >= 0x03080000
+     , nullptr // vectorcallfunc tp_vectorcall
++#if PY_VERSION_HEX >= 0x03080200
++    , 0 //Py_ssize_t tp_print
++#endif
+ #endif
+ #endif
+ };
+diff --git pyuno/source/module/pyuno_callable.cxx pyuno/source/module/pyuno_callable.cxx
+index 9be3e1f1aef8..4803a30f814d 100644
+--- pyuno/source/module/pyuno_callable.cxx
++++ pyuno/source/module/pyuno_callable.cxx
+@@ -235,6 +235,9 @@ static PyTypeObject PyUNO_callable_Type =
+     , nullptr
+ #if PY_VERSION_HEX >= 0x03080000
+     , nullptr // vectorcallfunc tp_vectorcall
++#if PY_VERSION_HEX >= 0x03080200
++    , 0 //Py_ssize_t tp_print
++#endif
+ #endif
+ #endif
+ };
+diff --git pyuno/source/module/pyuno_iterator.cxx pyuno/source/module/pyuno_iterator.cxx
+index a7862857d719..6ba7f96a9632 100644
+--- pyuno/source/module/pyuno_iterator.cxx
++++ pyuno/source/module/pyuno_iterator.cxx
+@@ -168,6 +168,9 @@ static PyTypeObject PyUNO_iterator_Type =
+     , nullptr
+ #if PY_VERSION_HEX >= 0x03080000
+     , nullptr // vectorcallfunc tp_vectorcall
++#if PY_VERSION_HEX >= 0x03080200
++    , 0 //Py_ssize_t tp_print
++#endif
+ #endif
+ #endif
+ };
+@@ -305,6 +308,9 @@ static PyTypeObject PyUNO_list_iterator_Type =
+     , nullptr
+ #if PY_VERSION_HEX >= 0x03080000
+     , nullptr // vectorcallfunc tp_vectorcall
++#if PY_VERSION_HEX >= 0x03080200
++    , 0 //Py_ssize_t tp_print
++#endif
+ #endif
+ #endif
+ };
+diff --git pyuno/source/module/pyuno_runtime.cxx pyuno/source/module/pyuno_runtime.cxx
+index 823355a900da..5182f57ab201 100644
+--- pyuno/source/module/pyuno_runtime.cxx
++++ pyuno/source/module/pyuno_runtime.cxx
+@@ -126,6 +126,9 @@ static PyTypeObject RuntimeImpl_Type =
+     , nullptr
+ #if PY_VERSION_HEX >= 0x03080000
+     , nullptr // vectorcallfunc tp_vectorcall
++#if PY_VERSION_HEX >= 0x03080200
++    , 0 //Py_ssize_t tp_print
++#endif
+ #endif
+ #endif
+ };
+diff --git pyuno/source/module/pyuno_struct.cxx pyuno/source/module/pyuno_struct.cxx
+index 50b74126bee9..56b71cdf5cc4 100644
+--- pyuno/source/module/pyuno_struct.cxx
++++ pyuno/source/module/pyuno_struct.cxx
+@@ -347,6 +347,9 @@ static PyTypeObject PyUNOStructType =
+     , nullptr
+ #if PY_VERSION_HEX >= 0x03080000
+     , nullptr // vectorcallfunc tp_vectorcall
++#if PY_VERSION_HEX >= 0x03080200
++    , 0 //Py_ssize_t tp_print
++#endif
+ #endif
+ #endif
+ };
+-- 
+cgit v1.2.1
+
