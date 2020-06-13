@@ -1,4 +1,4 @@
-share/qlogging-categories5/kpimtextedit.categories
+include/KF5/KPIMTextEdit/KPIMTextEdit/AbstractMarkupBuilder
 include/KF5/KPIMTextEdit/KPIMTextEdit/AbstractTextToSpeechInterface
 include/KF5/KPIMTextEdit/KPIMTextEdit/EditorUtil
 include/KF5/KPIMTextEdit/KPIMTextEdit/EmoticonUnicodeTab
@@ -28,6 +28,7 @@ include/KF5/KPIMTextEdit/KPIMTextEdit/TextToSpeechActions
 include/KF5/KPIMTextEdit/KPIMTextEdit/TextToSpeechInterface
 include/KF5/KPIMTextEdit/KPIMTextEdit/TextToSpeechWidget
 include/KF5/KPIMTextEdit/KPIMTextEdit/TextUtils
+include/KF5/KPIMTextEdit/kpimtextedit/abstractmarkupbuilder.h
 include/KF5/KPIMTextEdit/kpimtextedit/abstracttexttospeechinterface.h
 include/KF5/KPIMTextEdit/kpimtextedit/editorutil.h
 include/KF5/KPIMTextEdit/kpimtextedit/emoticonunicodetab.h
@@ -113,3 +114,4 @@ share/locale/ug/LC_MESSAGES/libkpimtextedit.mo
 share/locale/uk/LC_MESSAGES/libkpimtextedit.mo
 share/locale/zh_CN/LC_MESSAGES/libkpimtextedit.mo
 share/locale/zh_TW/LC_MESSAGES/libkpimtextedit.mo
+share/qlogging-categories5/kpimtextedit.categories

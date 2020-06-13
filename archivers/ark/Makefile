@@ -41,6 +41,6 @@ ZIP_LIB_DEPENDS=	libzip.so:archivers/libzip
 ZIP_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_LibZip
 
 # Override shared library version
-KDE_APPLICATIONS_SHLIB_VER=20.4.1
+KDE_APPLICATIONS_SHLIB_VER=20.4.2
 
 .include <bsd.port.mk>
