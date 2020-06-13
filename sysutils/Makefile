@@ -735,6 +735,7 @@
     SUBDIR += npadmin
     SUBDIR += nq
     SUBDIR += nrg2iso
+    SUBDIR += nss_ndb
     SUBDIR += nsysctl
     SUBDIR += ntfy
     SUBDIR += nut

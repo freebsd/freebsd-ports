@@ -1,0 +1,22 @@
+This project consists of a NSS module (nss_ndb.so.1) and a CLI
+utility (makendb) that enables big passwd & group files to be
+handled efficiently via BTree BerkeleyDB databases.
+
+To activate and use this you must (after installation):
+
+1. Manually add a symbolic link:
+
+   /usr/lib/nss_ndb.so.1 -> /path/to/lib/nss_ndb.so.1.<version>
+
+2. Populate the databases in /var/db/nss_ndb via "makendb" (or some
+   other tool).
+
+3. Activate it in /etc/nsswitch.conf:
+
+   passwd: files ndb
+   group:  files ndb
+
+WWW: https://github.com/ptrrkssn/nss_ndb
+
+- Peter Eriksson
+pen@lysator.liu.se
