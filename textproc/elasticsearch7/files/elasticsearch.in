@@ -115,15 +115,15 @@ else
 fi
 
 if [ "x${elasticsearch_mem_min}" != "x" ]; then
-    echo "The elasticsearch_mem_min variable is no longer supported please set this in %%PREFIX%%/etc/jvm.options"
+    echo "The elasticsearch_mem_min variable is no longer supported please set this in ${elasticsearch_config}/jvm.options"
     exit 1;
 fi
 if [ "x${elasticsearch_mem_max}" != "x" ]; then
-    echo "The elasticsearch_mem_max variable is no longer supported please set this in %%PREFIX%%/etc/jvm.options"
+    echo "The elasticsearch_mem_max variable is no longer supported please set this in ${elasticsearch_config}/jvm.options"
     exit 1;
 fi
 if [ "x${elasticsearch_props}" != "x" ]; then
-    echo "The elasticsearch_props variable is no longer supported please set this in %%PREFIX%%/etc/jvm.options"
+    echo "The elasticsearch_props variable is no longer supported please set this in ${elasticsearch_config}/jvm.options"
     exit 1;
 fi
 
