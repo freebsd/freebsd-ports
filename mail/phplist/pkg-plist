@@ -18,6 +18,7 @@ bin/phplist
 %%WWWDIR%%/lists/admin/actions/domainstats.php
 %%WWWDIR%%/lists/admin/actions/export.php
 %%WWWDIR%%/lists/admin/actions/generatetext.php
+%%WWWDIR%%/lists/admin/actions/generatetextpreview.php
 %%WWWDIR%%/lists/admin/actions/getservertime.php
 %%WWWDIR%%/lists/admin/actions/hidenote.php
 %%WWWDIR%%/lists/admin/actions/import.php
@@ -53,6 +54,8 @@ bin/phplist
 %%WWWDIR%%/lists/admin/admin.php
 %%WWWDIR%%/lists/admin/adminattributes.php
 %%WWWDIR%%/lists/admin/admins.php
+%%WWWDIR%%/lists/admin/analytics.php
+%%WWWDIR%%/lists/admin/AnalyticsQuery.php
 %%WWWDIR%%/lists/admin/attributes.php
 %%WWWDIR%%/lists/admin/blacklistemail.php
 %%WWWDIR%%/lists/admin/bounce.php
@@ -138,6 +141,7 @@ bin/phplist
 %%WWWDIR%%/lists/admin/help/en/attachments.php
 %%WWWDIR%%/lists/admin/help/en/bounces.php
 %%WWWDIR%%/lists/admin/help/en/campaigntitle.php
+%%WWWDIR%%/lists/admin/help/en/date_format.php
 %%WWWDIR%%/lists/admin/help/en/embargo.php
 %%WWWDIR%%/lists/admin/help/en/finishsending.php
 %%WWWDIR%%/lists/admin/help/en/footer.php
@@ -174,6 +178,7 @@ bin/phplist
 %%WWWDIR%%/lists/admin/help/en/uniqueviews.php
 %%WWWDIR%%/lists/admin/help/en/usetemplate.php
 %%WWWDIR%%/lists/admin/help/en/viewrate.php
+%%WWWDIR%%/lists/admin/help/en/website.php
 %%WWWDIR%%/lists/admin/help/es/attachments.php
 %%WWWDIR%%/lists/admin/help/es/embargo.php
 %%WWWDIR%%/lists/admin/help/es/format.php
@@ -1050,6 +1055,21 @@ bin/phplist
 %%WWWDIR%%/lists/admin/onyxrss/README
 %%WWWDIR%%/lists/admin/onyxrss/TODO
 %%WWWDIR%%/lists/admin/pageaction.php
+%%WWWDIR%%/lists/admin/PEAR/HTTP/Request2/Adapter/Curl.php
+%%WWWDIR%%/lists/admin/PEAR/HTTP/Request2/Adapter/Mock.php
+%%WWWDIR%%/lists/admin/PEAR/HTTP/Request2/Adapter/Socket.php
+%%WWWDIR%%/lists/admin/PEAR/HTTP/Request2/Adapter.php
+%%WWWDIR%%/lists/admin/PEAR/HTTP/Request2/CookieJar.php
+%%WWWDIR%%/lists/admin/PEAR/HTTP/Request2/Exception.php
+%%WWWDIR%%/lists/admin/PEAR/HTTP/Request2/MultipartBody.php
+%%WWWDIR%%/lists/admin/PEAR/HTTP/Request2/Observer/Log.php
+%%WWWDIR%%/lists/admin/PEAR/HTTP/Request2/Observer/UncompressingDownload.php
+%%WWWDIR%%/lists/admin/PEAR/HTTP/Request2/Response.php
+%%WWWDIR%%/lists/admin/PEAR/HTTP/Request2/SocketWrapper.php
+%%WWWDIR%%/lists/admin/PEAR/HTTP/Request2/SOCKS5.php
+%%WWWDIR%%/lists/admin/PEAR/HTTP/Request2.php
+%%WWWDIR%%/lists/admin/PEAR/Net/URL2.php
+%%WWWDIR%%/lists/admin/PEAR/PEAR/Exception.php
 %%WWWDIR%%/lists/admin/phpListAdminAuthentication.php
 %%WWWDIR%%/lists/admin/PHPMailer/class.phpmailer.php
 %%WWWDIR%%/lists/admin/PHPMailer/class.phpmaileroauth.php
@@ -1176,8 +1196,17 @@ bin/phplist
 %%WWWDIR%%/lists/admin/plugins/CaptchaPlugin/version.txt
 %%WWWDIR%%/lists/admin/plugins/CaptchaPlugin.php
 %%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/.htaccess
+%%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/adapters/jquery-example.html
+%%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/adapters/jquery-min.js
+%%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/adapters/jquery.js
 %%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/browse.php
 %%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/cache/.htaccess
+%%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/cache/base.css
+%%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/cache/base.js
+%%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/cache/theme_dark.css
+%%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/cache/theme_dark.js
+%%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/cache/theme_default.css
+%%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/cache/theme_default.js
 %%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/conf/.htaccess
 %%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/conf/config.php
 %%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/conf/upload.htaccess
@@ -1186,14 +1215,16 @@ bin/phplist
 %%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/core/bootstrap.php
 %%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/core/class/browser.php
 %%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/core/class/minifier.php
+%%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/core/class/session.php
 %%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/core/class/uploader.php
 %%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/core/types/type_img.php
 %%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/core/types/type_mime.php
 %%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/css/000.base.css
+%%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/css/001.transForm.css
 %%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/css/999.agent.css
 %%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/css/index.php
 %%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/doc/.htaccess
-%%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/doc/Changelog
+%%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/doc/Changelog.md
 %%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/doc/LICENSE.GPL
 %%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/doc/LICENSE.LGPL
 %%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/favicon.ico
@@ -1203,10 +1234,11 @@ bin/phplist
 %%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/integration/drupal.php
 %%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/js/000._jquery.js
 %%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/js/002._jqueryui.js
-%%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/js/006.jquery.uniform.js
+%%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/js/006.jquery.transForm.js
 %%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/js/010.jquery.fixes.js
 %%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/js/020.jquery.rightClick.js
 %%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/js/021.jquery.taphold.js
+%%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/js/022.jquery.shDropUpload.js
 %%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/js/029.jquery.agent.js
 %%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/js/030.jquery.helper.js
 %%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/js/031.jquery.md5.js
@@ -1269,10 +1301,12 @@ bin/phplist
 %%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/lib/helper_file.php
 %%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/lib/helper_httpCache.php
 %%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/lib/helper_path.php
+%%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/lib/helper_phpGet.php
 %%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/lib/helper_text.php
 %%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/README.md
 %%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/themes/dark/01.ui.css
-%%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/themes/dark/02.misc.css
+%%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/themes/dark/02.transForm.css
+%%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/themes/dark/03.misc.css
 %%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/themes/dark/css.php
 %%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/themes/dark/img/bg_transparent.png
 %%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/themes/dark/img/files/big/..png
@@ -1448,7 +1482,8 @@ bin/phplist
 %%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/themes/dark/js.php
 %%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/themes/dark/README
 %%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/themes/default/01.ui.css
-%%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/themes/default/02.misc.css
+%%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/themes/default/02.transForm.css
+%%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/themes/default/03.misc.css
 %%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/themes/default/css.php
 %%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/themes/default/img/bg_transparent.png
 %%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/themes/default/img/files/big/..png
@@ -1618,6 +1653,7 @@ bin/phplist
 %%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/themes/default/img/tree/minus.png
 %%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/themes/default/img/tree/plus.png
 %%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/themes/default/img/ui-icons_black.png
+%%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/themes/default/img/ui-icons_blue.png
 %%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/themes/default/img/ui-icons_white.png
 %%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/themes/default/init.js
 %%WWWDIR%%/lists/admin/plugins/CKEditorPlugin/kcfinder/themes/default/js.php
@@ -1742,6 +1778,7 @@ bin/phplist
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/lan/translations_es.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/lan/translations_fr.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/lan/translations_ja.php
+%%WWWDIR%%/lists/admin/plugins/CommonPlugin/lan/translations_nl.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/lan/translations_ru.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/lan/translations_zh_TW.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/licence.txt
@@ -1753,6 +1790,7 @@ bin/phplist
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/Pager.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/PageURL.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/phpinfo.php
+%%WWWDIR%%/lists/admin/plugins/CommonPlugin/polyfill.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/Populator.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/session.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/StringStream.php
@@ -3826,12 +3864,8 @@ bin/phplist
 %%WWWDIR%%/lists/base/vendor/doctrine/orm/README.markdown
 %%WWWDIR%%/lists/base/vendor/doctrine/orm/SECURITY.md
 %%WWWDIR%%/lists/base/vendor/doctrine/orm/UPGRADE.md
-%%WWWDIR%%/lists/base/vendor/fig/link-util/.editorconfig
 %%WWWDIR%%/lists/base/vendor/fig/link-util/composer.json
 %%WWWDIR%%/lists/base/vendor/fig/link-util/LICENSE.md
-%%WWWDIR%%/lists/base/vendor/fig/link-util/phpcs.xml
-%%WWWDIR%%/lists/base/vendor/fig/link-util/README.md
-%%WWWDIR%%/lists/base/vendor/fig/link-util/rebuild-rels.php
 %%WWWDIR%%/lists/base/vendor/fig/link-util/src/EvolvableLinkProviderTrait.php
 %%WWWDIR%%/lists/base/vendor/fig/link-util/src/EvolvableLinkTrait.php
 %%WWWDIR%%/lists/base/vendor/fig/link-util/src/GenericLinkProvider.php
@@ -3840,9 +3874,6 @@ bin/phplist
 %%WWWDIR%%/lists/base/vendor/fig/link-util/src/LinkTrait.php
 %%WWWDIR%%/lists/base/vendor/fig/link-util/src/Relations.php
 %%WWWDIR%%/lists/base/vendor/fig/link-util/src/TemplatedHrefTrait.php
-%%WWWDIR%%/lists/base/vendor/fig/link-util/test/GenericLinkProviderTest.php
-%%WWWDIR%%/lists/base/vendor/fig/link-util/test/LinkTest.php
-%%WWWDIR%%/lists/base/vendor/fig/link-util/test/TemplatedHrefTraitTest.php
 %%WWWDIR%%/lists/base/vendor/friendsofsymfony/rest-bundle/.gitignore
 %%WWWDIR%%/lists/base/vendor/friendsofsymfony/rest-bundle/.php_cs
 %%WWWDIR%%/lists/base/vendor/friendsofsymfony/rest-bundle/.styleci.yml
@@ -5240,7 +5271,6 @@ bin/phplist
 %%WWWDIR%%/lists/base/vendor/psr/link/src/EvolvableLinkProviderInterface.php
 %%WWWDIR%%/lists/base/vendor/psr/link/src/LinkInterface.php
 %%WWWDIR%%/lists/base/vendor/psr/link/src/LinkProviderInterface.php
-%%WWWDIR%%/lists/base/vendor/psr/log/.gitignore
 %%WWWDIR%%/lists/base/vendor/psr/log/composer.json
 %%WWWDIR%%/lists/base/vendor/psr/log/LICENSE
 %%WWWDIR%%/lists/base/vendor/psr/log/Psr/Log/AbstractLogger.php
@@ -5251,6 +5281,7 @@ bin/phplist
 %%WWWDIR%%/lists/base/vendor/psr/log/Psr/Log/LoggerTrait.php
 %%WWWDIR%%/lists/base/vendor/psr/log/Psr/Log/LogLevel.php
 %%WWWDIR%%/lists/base/vendor/psr/log/Psr/Log/NullLogger.php
+%%WWWDIR%%/lists/base/vendor/psr/log/Psr/Log/Test/DummyTest.php
 %%WWWDIR%%/lists/base/vendor/psr/log/Psr/Log/Test/LoggerInterfaceTest.php
 %%WWWDIR%%/lists/base/vendor/psr/log/Psr/Log/Test/TestLogger.php
 %%WWWDIR%%/lists/base/vendor/psr/log/README.md
@@ -5581,6 +5612,7 @@ bin/phplist
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bridge/Doctrine/Tests/ManagerRegistryTest.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bridge/Doctrine/Tests/PropertyInfo/DoctrineExtractorTest.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bridge/Doctrine/Tests/PropertyInfo/Fixtures/DoctrineDummy.php
+%%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bridge/Doctrine/Tests/PropertyInfo/Fixtures/DoctrineDummy210.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bridge/Doctrine/Tests/PropertyInfo/Fixtures/DoctrineEmbeddable.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bridge/Doctrine/Tests/PropertyInfo/Fixtures/DoctrineFooType.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bridge/Doctrine/Tests/PropertyInfo/Fixtures/DoctrineRelation.php
@@ -5670,6 +5702,7 @@ bin/phplist
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bridge/PhpUnit/Tests/Fixtures/coverage/tests/CoversNothingTest.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bridge/PhpUnit/Tests/Fixtures/coverage/tests/CoversTest.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bridge/PhpUnit/Tests/Fixtures/coverage/tests/SutNotFindTest.php
+%%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bridge/PhpUnit/Tests/OnlyExpectingDeprecationSkippedTest.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bridge/PhpUnit/Tests/ProcessIsolationTest.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bridge/PhpUnit/TextUI/Command.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bridge/ProxyManager/.gitignore
@@ -5882,6 +5915,7 @@ bin/phplist
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/DependencyInjection/Compiler/PropertyInfoPass.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/DependencyInjection/Compiler/RoutingResolverPass.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/DependencyInjection/Compiler/SerializerPass.php
+%%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/DependencyInjection/Compiler/SessionPass.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/DependencyInjection/Compiler/TemplatingPass.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/DependencyInjection/Compiler/TranslationDumperPass.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/DependencyInjection/Compiler/TranslationExtractorPass.php
@@ -5900,6 +5934,7 @@ bin/phplist
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/LICENSE
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/phpunit.xml.dist
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/README.md
+%%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/bin/check-unused-tags-whitelist.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/config/annotations.xml
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/config/assets.xml
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/config/cache_debug.xml
@@ -6063,8 +6098,10 @@ bin/phplist
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Tests/DependencyInjection/Compiler/ProfilerPassTest.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Tests/DependencyInjection/Compiler/PropertyInfoPassTest.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Tests/DependencyInjection/Compiler/SerializerPassTest.php
+%%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Tests/DependencyInjection/Compiler/SessionPassTest.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Tests/DependencyInjection/Compiler/TranslatorPassTest.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Tests/DependencyInjection/Compiler/UnusedTagsPassTest.php
+%%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Tests/DependencyInjection/Compiler/UnusedTagsPassUtils.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Tests/DependencyInjection/Compiler/WorkflowGuardListenerPassTest.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Tests/DependencyInjection/config/serializer/foo.yml
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Tests/DependencyInjection/config/validator/foo.xml
@@ -6439,6 +6476,7 @@ bin/phplist
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Tests/Functional/Bundle/TestBundle/AutowiringTypes/AutowiredServices.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Tests/Functional/Bundle/TestBundle/Controller/AnnotatedController.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Tests/Functional/Bundle/TestBundle/Controller/FragmentController.php
+%%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Tests/Functional/Bundle/TestBundle/Controller/InjectedFlashbagSessionController.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Tests/Functional/Bundle/TestBundle/Controller/ProfilerController.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Tests/Functional/Bundle/TestBundle/Controller/SessionController.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Tests/Functional/Bundle/TestBundle/Controller/SubRequestController.php
@@ -7312,11 +7350,13 @@ bin/phplist
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Config/Tests/Fixtures/Builder/VariableNodeDefinition.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Config/Tests/Fixtures/Configuration/ExampleConfiguration.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Config/Tests/Fixtures/foo.xml
+%%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Config/Tests/Fixtures/ParseError.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Config/Tests/Fixtures/Resource/.hiddenFile
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Config/Tests/Fixtures/Resource/ConditionalClass.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Config/Tests/Fixtures/Util/document_type.xml
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Config/Tests/Fixtures/Util/invalid_schema.xml
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Config/Tests/Fixtures/Util/invalid.xml
+%%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Config/Tests/Fixtures/Util/not_readable.xml
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Config/Tests/Fixtures/Util/schema.xsd
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Config/Tests/Fixtures/Util/valid.xml
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Config/Tests/Loader/DelegatingLoaderTest.php
@@ -7574,6 +7614,7 @@ bin/phplist
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Console/Tests/Fixtures/input_option_with_style.md
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Console/Tests/Fixtures/input_option_with_style.txt
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Console/Tests/Fixtures/input_option_with_style.xml
+%%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Console/Tests/Fixtures/stream_output_file.txt
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Console/Tests/Fixtures/Style/SymfonyStyle/command/command_0.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Console/Tests/Fixtures/Style/SymfonyStyle/command/command_1.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Console/Tests/Fixtures/Style/SymfonyStyle/command/command_10.php
@@ -8898,6 +8939,7 @@ bin/phplist
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Form/Tests/Fixtures/FooTypeBazExtension.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Form/Tests/Fixtures/FormWithSameParentType.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Form/Tests/Fixtures/LazyChoiceTypeExtension.php
+%%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Form/Tests/Fixtures/NotMappedType.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Form/Tests/Fixtures/RecursiveFormTypeBar.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Form/Tests/Fixtures/RecursiveFormTypeBaz.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Form/Tests/Fixtures/RecursiveFormTypeFoo.php
@@ -8978,6 +9020,7 @@ bin/phplist
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/HttpFoundation/Session/SessionBagInterface.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/HttpFoundation/Session/SessionBagProxy.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/HttpFoundation/Session/SessionInterface.php
+%%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/HttpFoundation/Session/SessionUtils.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/HttpFoundation/Session/Storage/Handler/AbstractSessionHandler.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/HttpFoundation/Session/Storage/Handler/MemcachedSessionHandler.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/HttpFoundation/Session/Storage/Handler/MemcacheSessionHandler.php
@@ -9063,6 +9106,10 @@ bin/phplist
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/HttpFoundation/Tests/Session/Storage/Handler/Fixtures/with_cookie_and_session.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/HttpFoundation/Tests/Session/Storage/Handler/Fixtures/with_cookie.expected
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/HttpFoundation/Tests/Session/Storage/Handler/Fixtures/with_cookie.php
+%%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/HttpFoundation/Tests/Session/Storage/Handler/Fixtures/with_samesite_and_migration.expected
+%%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/HttpFoundation/Tests/Session/Storage/Handler/Fixtures/with_samesite_and_migration.php
+%%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/HttpFoundation/Tests/Session/Storage/Handler/Fixtures/with_samesite.expected
+%%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/HttpFoundation/Tests/Session/Storage/Handler/Fixtures/with_samesite.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/HttpFoundation/Tests/Session/Storage/Handler/MemcachedSessionHandlerTest.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/HttpFoundation/Tests/Session/Storage/Handler/MemcacheSessionHandlerTest.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/HttpFoundation/Tests/Session/Storage/Handler/MongoDbSessionHandlerTest.php
@@ -10748,6 +10795,8 @@ bin/phplist
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/PropertyAccess/Tests/Fixtures/Ticket5775Object.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/PropertyAccess/Tests/Fixtures/TraversableArrayObject.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/PropertyAccess/Tests/Fixtures/TypeHinted.php
+%%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/PropertyAccess/Tests/Fixtures/UninitializedPrivateProperty.php
+%%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/PropertyAccess/Tests/Fixtures/UninitializedProperty.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/PropertyAccess/Tests/PropertyAccessorArrayAccessTest.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/PropertyAccess/Tests/PropertyAccessorArrayObjectTest.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/PropertyAccess/Tests/PropertyAccessorArrayTest.php
@@ -11985,7 +12034,9 @@ bin/phplist
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Validator/Tests/DataCollector/ValidatorDataCollectorTest.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Validator/Tests/DependencyInjection/AddConstraintValidatorsPassTest.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Validator/Tests/DependencyInjection/AddValidatorInitializersPassTest.php
+%%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Validator/Tests/Fixtures/AbstractPropertyGetter.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Validator/Tests/Fixtures/CallbackClass.php
+%%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Validator/Tests/Fixtures/ChildGetterInterface.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Validator/Tests/Fixtures/ClassConstraint.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Validator/Tests/Fixtures/ConstraintA.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Validator/Tests/Fixtures/ConstraintB.php
@@ -11994,6 +12045,8 @@ bin/phplist
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Validator/Tests/Fixtures/ConstraintWithValueAsDefault.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Validator/Tests/Fixtures/Countable.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Validator/Tests/Fixtures/CustomArrayObject.php
+%%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Validator/Tests/Fixtures/Entity_74_Proxy.php
+%%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Validator/Tests/Fixtures/Entity_74.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Validator/Tests/Fixtures/Entity.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Validator/Tests/Fixtures/EntityInterfaceA.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Validator/Tests/Fixtures/EntityInterfaceB.php
@@ -12002,6 +12055,7 @@ bin/phplist
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Validator/Tests/Fixtures/EntityStaticCar.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Validator/Tests/Fixtures/EntityStaticCarTurbo.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Validator/Tests/Fixtures/EntityStaticVehicle.php
+%%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Validator/Tests/Fixtures/EntityWithGroupedConstraintOnMethods.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Validator/Tests/Fixtures/FailingConstraint.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Validator/Tests/Fixtures/FailingConstraintValidator.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Validator/Tests/Fixtures/FakeMetadataFactory.php
@@ -12010,6 +12064,8 @@ bin/phplist
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Validator/Tests/Fixtures/GroupSequenceProviderEntity.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Validator/Tests/Fixtures/InvalidConstraint.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Validator/Tests/Fixtures/PropertyConstraint.php
+%%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Validator/Tests/Fixtures/PropertyGetter.php
+%%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Validator/Tests/Fixtures/PropertyGetterInterface.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Validator/Tests/Fixtures/Reference.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Validator/Tests/Fixtures/ToString.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Validator/Tests/Mapping/Cache/AbstractCacheTest.php
@@ -12043,9 +12099,11 @@ bin/phplist
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Validator/Tests/Validator/RecursiveValidatorTest.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Validator/Tests/Validator/TraceableValidatorTest.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Validator/Tests/ValidatorBuilderTest.php
+%%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Validator/Tests/Violation/ConstraintViolationBuilderTest.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Validator/Util/PropertyPath.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Validator/Validation.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Validator/Validator/ContextualValidatorInterface.php
+%%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Validator/Validator/LazyProperty.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Validator/Validator/RecursiveContextualValidator.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Validator/Validator/RecursiveValidator.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Validator/Validator/TraceableValidator.php
@@ -12114,6 +12172,7 @@ bin/phplist
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/VarDumper/Tests/Dumper/CliDumperTest.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/VarDumper/Tests/Dumper/FunctionsTest.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/VarDumper/Tests/Dumper/HtmlDumperTest.php
+%%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/VarDumper/Tests/Fixtures/DateTimeChild.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/VarDumper/Tests/Fixtures/dumb-var.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/VarDumper/Tests/Fixtures/FooInterface.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/VarDumper/Tests/Fixtures/GeneratorDemo.php
