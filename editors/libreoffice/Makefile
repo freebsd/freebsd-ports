@@ -268,7 +268,7 @@ MAKE_ENV+=	verbose=1
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MGTK3}
-WARNING=	"GTK3 visual style is bkoken yet, build at your ouwn risk"
+WARNING=	"GTK3 visual style is broken yet, build at your own risk"
 .endif
 
 .if ${CHOSEN_COMPILER_TYPE} == clang
