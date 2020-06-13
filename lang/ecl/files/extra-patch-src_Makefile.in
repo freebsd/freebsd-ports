@@ -1,3 +1,5 @@
+Patch from SageMath
+
 --- src/Makefile.in.orig	2016-12-19 10:25:00 UTC
 +++ src/Makefile.in
 @@ -304,10 +304,14 @@ install:
@@ -6,7 +8,7 @@
  	    $(INSTALL_LIBRARY) $$i $(DESTDIR)$(bindir); \
 -	   fi; \
 -	   $(INSTALL_LIBRARY) $$i $(DESTDIR)$(libdir); \
-+	   else \	# patch from SageMath
++	   else \
 +	    $(INSTALL_LIBRARY) $$i $(DESTDIR)$(libdir); \
 +	   fi \
  	  fi \
