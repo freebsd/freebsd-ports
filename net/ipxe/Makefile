@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ipxe
-DISTVERSION=	20200314
+DISTVERSION=	20200610
 CATEGORIES=	net
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -17,7 +17,7 @@ USES=		gmake perl5 shebangfix
 USE_BINUTILS=	yes
 USE_GCC=	yes
 USE_GITHUB=	yes
-GH_TAGNAME=	bdf0e029ae8c9a0e173d5988ee64ff910538af53
+GH_TAGNAME=	9ee70fb95bc266885ff88be228b044a2bb226eeb
 USE_PERL5=	build
 SHEBANG_FILES=	util/geniso util/gensdsk
 MAKE_ARGS=	AR=${AR} \
@@ -62,12 +62,18 @@ _IPXE_BUILDCFG=	branding:PRODUCT_NAME="${PKGNAME} (${OPSYS} ${OSREL}/${ARCH})" \
 OPTIONS_DEFINE=		EFI ISO
 OPTIONS_DEFAULT=	EFI ISO
 
-EFI_DESC=	Create EFI image
+EFI_DESC=	Create EFI images
 ISO_DESC=	Create bootable CD image
 
+EFI_BUILD_DEPENDS=	bash:shells/bash \
+			mformat:emulators/mtools
 _EFI_ARCHS=		${ARCH:Mamd64:S/amd64/x86_64/} i386
+_EFI_TARGETS=		ipxe snp snponly
 .for _arch in ${_EFI_ARCHS}
-EFI_PLIST_FILES+=	${DATADIR}/ipxe.efi-${_arch}
+. for _target in ${_EFI_TARGETS}
+EFI_PLIST_FILES+=	${DATADIR}/${_target}.efi-${_arch}
+. endfor
+EFI_PLIST_FILES+=	${DATADIR}/ipxe.efi-${_arch}.usb
 .endfor
 
 ISO_BUILD_DEPENDS=	${LOCALBASE}/share/syslinux/bios/core/isolinux.bin:sysutils/syslinux \
@@ -105,7 +111,8 @@ pre-build-ISO-on:
 
 do-build-EFI-on:
 .for _arch in ${_EFI_ARCHS}
-	${DO_MAKE_BUILD} ARCH=${_arch} -C ${WRKSRC} bin-${_arch}-efi/ipxe.efi
+	${DO_MAKE_BUILD} ARCH=${_arch} -C ${WRKSRC} ${_EFI_TARGETS:@.target.@bin-${_arch}-efi/${.target.}.efi@} \
+		bin-${_arch}-efi/ipxe.usb
 .endfor
 
 do-install:
@@ -114,7 +121,12 @@ do-install:
 
 do-install-EFI-on:
 .for _arch in ${_EFI_ARCHS}
-	${INSTALL_DATA} ${WRKSRC}/bin-${_arch}-efi/ipxe.efi ${STAGEDIR}${DATADIR}/ipxe.efi-${_arch}
+. for _target in ${_EFI_TARGETS}
+	${INSTALL_DATA} ${WRKSRC}/bin-${_arch}-efi/${_target}.efi \
+		${STAGEDIR}${DATADIR}/${_target}.efi-${_arch}
+. endfor
+	${INSTALL_DATA} ${WRKSRC}/bin-${_arch}-efi/ipxe.usb \
+		${STAGEDIR}${DATADIR}/ipxe.efi-${_arch}.usb
 .endfor
 
 .include <bsd.port.post.mk>
