@@ -2786,6 +2786,8 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-cmds.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-compat.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-compat.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-crypt.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-crypt.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-ftp.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-ftp.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-gvfs.el.gz
