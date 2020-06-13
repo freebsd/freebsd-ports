@@ -27,7 +27,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=1.0.0:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.4.0:devel/py-six@${PY_FLAVOR}
 
-USES=		compiler:c++11-lang python
+USES=		compiler:c++11-lang python:3.6+
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>
