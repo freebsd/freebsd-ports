@@ -1,0 +1,6 @@
+hp3000 is a simulator for the classic SIO machines. This group consists
+of the 3000 CX, the Series I, Series II, and the HP 3000 Series III that
+is simulated here. A large variety of CPU options, device interface
+cards, and peripherals are provided.
+
+WWW: http://simh.trailing-edge.com/hp/

@@ -1,0 +1,5 @@
+bin/hp3000
+man/man1/hp3000.1.gz
+%%DOCSDIR%%/hp3000_diag.txt
+%%DOCSDIR%%/hp3000_guide.pdf
+%%DOCSDIR%%/hp3000_release.txt

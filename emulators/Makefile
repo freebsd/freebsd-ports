@@ -125,6 +125,7 @@
     SUBDIR += rubygem-fission
     SUBDIR += simh
     SUBDIR += simh-hp2100
+    SUBDIR += simh-hp3000
     SUBDIR += simh-hpdoc
     SUBDIR += skyeye
     SUBDIR += snes9x-gtk
