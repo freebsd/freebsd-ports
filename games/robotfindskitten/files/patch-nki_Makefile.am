@@ -1,0 +1,7 @@
+--- nki/Makefile.am.orig	2020-06-12 22:14:15 UTC
++++ nki/Makefile.am
+@@ -1,3 +1,3 @@
+-nkidir = $(datadir)/games/robotfindskitten
++nkidir = $(datadir)/robotfindskitten
+ nki_DATA = vanilla.nki
+ EXTRA_DIST=$(nki_DATA)

@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	robotfindskitten
-PORTVERSION=	2.7182818.701
-PORTREVISION=	1
+PORTVERSION=	2.8284271.702
 PORTEPOCH=	1
 CATEGORIES=	games
-MASTER_SITES=	http://robotfindskitten.org/download/POSIX/
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Yet another zen simulation
@@ -14,8 +12,11 @@ COMMENT=	Yet another zen simulation
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		ncurses
+USES=		autoreconf libtool ncurses
 GNU_CONFIGURE=	YES
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	robotfindskitten
 
 OPTIONS_DEFINE=	EXTRANKI MEGAHYPERDEATH
 
