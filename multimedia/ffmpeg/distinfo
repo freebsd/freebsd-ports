@@ -1,11 +1,11 @@
-TIMESTAMP = 1590076530
+TIMESTAMP = 1592065594
 SHA256 (ffmpeg-4.2.3.tar.xz) = 9df6c90aed1337634c1fb026fb01c154c29c82a64ea71291ff2da9aacb9aad31
 SIZE (ffmpeg-4.2.3.tar.xz) = 9101192
-SHA256 (0001-Add-ability-for-ffmpeg-to-run-svt-av1.patch) = d0ddc8ec34c7ecc3ab567caee9d4c42541b042c2fb6a2d0c5759333c6b19f9dd
-SIZE (0001-Add-ability-for-ffmpeg-to-run-svt-av1.patch) = 22788
 SHA256 (0001-lavc-svt_hevc-add-libsvt-hevc-encoder-wrapper.patch) = 878757eb6d7072521caaeb71f1453ec3fc0f91a12936ef302e1625184787c6a6
 SIZE (0001-lavc-svt_hevc-add-libsvt-hevc-encoder-wrapper.patch) = 22103
 SHA256 (0002-doc-Add-libsvt_hevc-encoder-docs.patch) = 1499e419dda72b1604dc5e3959668f3843292ff56bfba78734e31510ba576de0
 SIZE (0002-doc-Add-libsvt_hevc-encoder-docs.patch) = 5332
-SHA256 (n4.2.3-0001-Add-ability-for-ffmpeg-to-run-svt-vp9.patch) = 7a317989d441384cfe3c664c587529ed95fbb7f0297e0321c228f122bd1ab7b3
-SIZE (n4.2.3-0001-Add-ability-for-ffmpeg-to-run-svt-vp9.patch) = 34029
+SHA256 (0001-Add-ability-for-ffmpeg-to-run-svt-av1-with-svt-hevc.patch) = cbcf51f37b17355b228b62862cfde141b0701f260d8bc3502a922f0f91303f9e
+SIZE (0001-Add-ability-for-ffmpeg-to-run-svt-av1-with-svt-hevc.patch) = 23636
+SHA256 (n4.2.3-0001-Add-ability-for-ffmpeg-to-run-svt-vp9-with-hevc-av1.patch) = 7edb8d617d96e7582b307a341419b283943ea07da42d78033c79d6e3b3052295
+SIZE (n4.2.3-0001-Add-ability-for-ffmpeg-to-run-svt-vp9-with-hevc-av1.patch) = 33904

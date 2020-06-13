@@ -7,6 +7,9 @@ PORTEPOCH=	1
 CATEGORIES=	multimedia audio net
 MASTER_SITES=	https://ffmpeg.org/releases/
 
+PATCH_SITES=		${SVTHEVC_PATCH_SITES_} ${SVTAV1_PATCH_SITES_} ${SVTVP9_PATCH_SITES_}
+PATCHFILES=		${SVTHEVC_PATCHFILES_}  ${SVTAV1_PATCHFILES_}  ${SVTVP9_PATCHFILES_}
+
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Realtime audio/video encoder/converter and streaming server
 
@@ -451,51 +454,32 @@ SRT_CONFIGURE_ENABLE=	libsrt
 
 # svt-av1
 SVTAV1_LIB_DEPENDS=	libSvtAv1Enc.so:multimedia/svt-av1
-SVTAV1_CONFIGURE_ON=	--enable-libsvtav1
-SVTAV1_PATCH_SITES=	https://github.com/OpenVisualCloud/SVT-AV1/raw/v0.8.3/ffmpeg_plugin/:svtav1
-SVTAV1_PATCHFILES=	0001-Add-ability-for-ffmpeg-to-run-svt-av1.patch:-p1:svtav1
+SVTAV1_CONFIGURE_ENABLE=	libsvtav1
+SVTAV1_PATCH_SITES_=	https://github.com/OpenVisualCloud/SVT-AV1/raw/v0.8.3/ffmpeg_plugin/:svtav1
+SVTAV1_PATCHFILES_=	0001-Add-ability-for-ffmpeg-to-run-svt-av1-with-svt-hevc.patch:-p1:svtav1
 .if exists(/usr/bin/ld.lld) && (${/usr/bin/ld:L:tA} != /usr/bin/ld.lld)
 # https://github.com/OpenVisualCloud/SVT-AV1/issues/691
 SVTAV1_LDFLAGS=		-fuse-ld=lld
 .endif
-.if make(makesum)
-.MAKEFLAGS:		WITH+=SVTAV1
-.else
-SVTAV1_PREVENTS=	SVTHEVC SVTVP9
-SVTAV1_PREVENTS_MSG=	Only one SVT vendor patch can be applied at the same time
-.endif
 
 # svt-hevc
 SVTHEVC_LIB_DEPENDS=	libSvtHevcEnc.so:multimedia/svt-hevc
-SVTHEVC_CONFIGURE_ON=	--enable-libsvthevc
-SVTHEVC_PATCH_SITES=	https://github.com/Intel/SVT-HEVC/raw/v1.4.3/ffmpeg_plugin/:svthevc
-SVTHEVC_PATCHFILES=	0001-lavc-svt_hevc-add-libsvt-hevc-encoder-wrapper.patch:-p1:svthevc \
+SVTHEVC_CONFIGURE_ENABLE=	libsvthevc
+SVTHEVC_PATCH_SITES_=	https://github.com/Intel/SVT-HEVC/raw/v1.4.3/ffmpeg_plugin/:svthevc
+SVTHEVC_PATCHFILES_=	0001-lavc-svt_hevc-add-libsvt-hevc-encoder-wrapper.patch:-p1:svthevc \
 			0002-doc-Add-libsvt_hevc-encoder-docs.patch:-p1:svthevc
 .if exists(/usr/bin/ld.lld) && (${/usr/bin/ld:L:tA} != /usr/bin/ld.lld)
 SVTHEVC_LDFLAGS=	-fuse-ld=lld
 .endif
-.if make(makesum)
-.MAKEFLAGS:		WITH+=SVTHEVC
-.else
-SVTHEVC_PREVENTS=	SVTAV1 SVTVP9
-SVTHEVC_PREVENTS_MSG=	${SVTAV1_PREVENTS_MSG}
-.endif
 
 # svt-vp9
 SVTVP9_LIB_DEPENDS=	libSvtVp9Enc.so:multimedia/svt-vp9
-SVTVP9_CONFIGURE_ON=	--enable-libsvtvp9
-SVTVP9_PATCH_SITES=	https://github.com/OpenVisualCloud/SVT-VP9/raw/v0.2.0-2-gefe9c5a/ffmpeg_plugin/:svtvp9
-SVTVP9_PATCHFILES=	n4.2.3-0001-Add-ability-for-ffmpeg-to-run-svt-vp9.patch:-p1:svtvp9
+SVTVP9_CONFIGURE_ENABLE=	libsvtvp9
+SVTVP9_PATCH_SITES_=	https://github.com/OpenVisualCloud/SVT-VP9/raw/v0.2.0-2-gefe9c5a/ffmpeg_plugin/:svtvp9
+SVTVP9_PATCHFILES_=	n4.2.3-0001-Add-ability-for-ffmpeg-to-run-svt-vp9-with-hevc-av1.patch:-p1:svtvp9
 .if exists(/usr/bin/ld.lld) && (${/usr/bin/ld:L:tA} != /usr/bin/ld.lld)
 SVTVP9_LDFLAGS=		-fuse-ld=lld
 .endif
-.if make(makesum)
-.MAKEFLAGS:		WITH+=SVTVP9
-.else
-SVTVP9_PREVENTS=	SVTAV1 SVTHEVC
-SVTVP9_PREVENTS_MSG=	${SVTAV1_PREVENTS_MSG}
-.endif
-
 # tensorflow
 TENSORFLOW_LIB_DEPENDS=	libtensorflow.so:science/tensorflow
 TENSORFLOW_CONFIGURE_ENABLE=	libtensorflow
