@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+
+20200613:
+  AFFECTS: users of editors/libreoffice
+  AUTHOR: fluffy@FreeBSD.org
+
+  LibreOffice was updated to 6.4 vranch with some critical changes:
+  - GTK2 option is obsolete by upstream
+  - GTK3 option is not more set by default because of unstable yet and have visual glitches
+  - QT5 option is set by default to provide comfy visual style for every user
+  - KDE option was renamed to KF5 follows upstream
+
+  Please re-run "make config" to pick up the new defaults
+
 20200610:
   AFFECTS: users of www/node
   AUTHOR: bhughes@FreeBSD.org
