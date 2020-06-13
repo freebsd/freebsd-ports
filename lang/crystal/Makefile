@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=		crystal
-DISTVERSION=		0.32.1
+DISTVERSION=		0.34.0
 CATEGORIES=		lang
 MASTER_SITES=		https://unrelentingtech.s3.dualstack.eu-west-1.amazonaws.com/crystal/:bootstrap
 DISTFILES=		${BOOTSTRAP_PATH}:bootstrap

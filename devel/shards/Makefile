@@ -2,8 +2,7 @@
 
 PORTNAME=		shards
 DISTVERSIONPREFIX=	v
-DISTVERSION=		0.9.0
-PORTREVISION=		2
+DISTVERSION=		0.11.0
 CATEGORIES=		devel
 
 MAINTAINER=	greg@unrelenting.technology
@@ -20,6 +19,7 @@ RUN_DEPENDS=	git:devel/git
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	crystal-lang
+GH_TUPLE=	crystal-lang:crystal-molinillo:e61b200edb735d5676e11cbe56e8353c8b2ced0b:molinillo/lib/molinillo
 
 MAKE_ARGS+=	CRFLAGS="--release --no-debug" \
 		MANDIR="${STAGEDIR}${PREFIX}/man"
