@@ -1,3 +1,3 @@
-TIMESTAMP = 1589104773
-SHA256 (libvirt-python-6.3.0.tar.gz) = c772421ecc144f098f4ab15db700c62db9b9e6e76b876217edcfd62e9ce02750
-SIZE (libvirt-python-6.3.0.tar.gz) = 198458
+TIMESTAMP = 1592055572
+SHA256 (libvirt-python-6.4.0.tar.gz) = b13e6dddea8876a7a6c43482d275a84f082d72427302ecb76683c1279b865cec
+SIZE (libvirt-python-6.4.0.tar.gz) = 198762
