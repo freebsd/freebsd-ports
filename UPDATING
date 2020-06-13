@@ -10,7 +10,7 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of editors/libreoffice
   AUTHOR: fluffy@FreeBSD.org
 
-  LibreOffice was updated to 6.4 vranch with some critical changes:
+  LibreOffice was updated to 6.4 branch with some critical changes:
   - GTK2 option is obsolete by upstream
   - GTK3 option is not more set by default because of unstable yet and have visual glitches
   - QT5 option is set by default to provide comfy visual style for every user
