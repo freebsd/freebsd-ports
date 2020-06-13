@@ -14,11 +14,11 @@
  # use lua5.1 in the pkg-config calls
  
 -LUA_CFLAGS=$(shell pkg-config --cflags lua)
-+LUA_CFLAGS=$(shell pkg-config --cflags lua-5.2)
++LUA_CFLAGS=$(shell pkg-config --cflags lua-$(LUA_VER))
  
  # default lua lib
 -LUA_LIBS=$(shell pkg-config --libs lua)
-+LUA_LIBS=$(shell pkg-config --libs lua-5.2)
++LUA_LIBS=$(shell pkg-config --libs lua-$(LUA_VER))
  
  # luajit lib
  # LUA_LIBS=$(shell pkg-config --libs luajit)
