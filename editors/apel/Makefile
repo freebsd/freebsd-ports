@@ -12,10 +12,6 @@ COMMENT=	Portable Emacs Library
 
 LICENSE=	GPLv2
 
-.if ${FLAVOR:U} == devel_full || ${FLAVOR:U} == devel_nox
-BROKEN=		pces-e20.el:27:1: Error: Wrong type argument: stringp
-.endif
-
 USES=		emacs
 USE_GITHUB=	yes
 GH_ACCOUNT=	wanderlust
