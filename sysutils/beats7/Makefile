@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	beats
-PORTVERSION=	7.6.2
+PORTVERSION=	7.7.1
 DISTVERSIONPREFIX=v
 CATEGORIES=	sysutils
 PKGNAMESUFFIX?=	7
@@ -20,7 +20,7 @@ CONFLICTS=	beats6*
 
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
 FIND_ARGS=	"! ( -regex .*/*\.(go|in|log) ) ! -path *test* ! -path *vendor*"
-MAKE_ENV+=	GOBUILD_FLAGS=""
+MAKE_ENV+=	GOBUILD_FLAGS="-mod=vendor"
 
 CGO_CFLAGS=	-I.
 CGO_LDFLAGS=	-L.
@@ -71,13 +71,17 @@ do-install:
 		done)
 .endfor
 .for BEATMOD in filebeat metricbeat
+.if !empty(GO_TARGETS:M${BEATMOD})
 	${MKDIR} ${STAGEDIR}${ETCDIR}/${BEATMOD}.modules.d ${STAGEDIR}${DATADIR}/${BEATMOD}/module
 	(cd ${WRKSRC}/${BEATMOD}/module && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/${BEATMOD}/module ${FIND_ARGS})
 	(cd ${WRKSRC}/${BEATMOD}/modules.d && ${COPYTREE_SHARE} . ${STAGEDIR}${ETCDIR}/${BEATMOD}.modules.d)
+.endif
 .endfor
 .for BEATMOD in auditbeat
+.if !empty(GO_TARGETS:M${BEATMOD})
 	${MKDIR} ${STAGEDIR}${DATADIR}/${BEATMOD}/module
 	(cd ${WRKSRC}/${BEATMOD}/module && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/${BEATMOD}/module ${FIND_ARGS})
+.endif
 .endfor
 
 .include <bsd.port.mk>

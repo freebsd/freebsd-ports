@@ -2,7 +2,7 @@ Fix syntax for sh (get rid of bash-isms)
 
 --- libbeat/scripts/Makefile.orig	2020-02-28 18:43:02 UTC
 +++ libbeat/scripts/Makefile
-@@ -35,7 +35,7 @@ GOFILES = $(shell find . -type f -name '
+@@ -43,7 +43,7 @@
  GOFILES_NOVENDOR = $(shell find . -type f -name '*.go' -not -path "*/vendor/*" 2>/dev/null)
  GOFILES_ALL = $(GOFILES) $(shell find $(ES_BEATS) -type f -name '*.go' 2>/dev/null)
  GOPACKAGES_STRESSTESTS=$(shell find . -name '*.go' 2>/dev/null | xargs awk 'FNR>1 {nextfile} /\+build.*stresstest/ {print FILENAME; nextfile}' | xargs dirname | uniq)
@@ -11,16 +11,16 @@ Fix syntax for sh (get rid of bash-isms)
  ES_HOST?=elasticsearch
  ES_PORT?=9200
  ES_USER?=beats
-@@ -128,7 +128,7 @@ ${BEAT_NAME}.test: $(GOFILES_ALL)
+@@ -140,7 +140,7 @@
  .PHONY: crosscompile
  crosscompile: ## @build Cross-compile beat for the OS'es specified in GOX_OS variable. The binaries are placed in the build/bin directory.
  crosscompile: $(GOFILES)
 -ifneq ($(shell [[ $(BEAT_NAME) == journalbeat ]] && echo true ),true)
 +ifneq ($(shell [ $(BEAT_NAME) == journalbeat ] && echo true ),true)
- 	go get github.com/mitchellh/gox
+ 	go install -mod=vendor github.com/mitchellh/gox
  	mkdir -p ${BUILD_DIR}/bin
  	gox -output="${BUILD_DIR}/bin/{{.Dir}}-{{.OS}}-{{.Arch}}" -os="$(strip $(GOX_OS))" -osarch="$(strip $(GOX_OSARCH))" ${GOX_FLAGS}
-@@ -333,12 +333,12 @@ ifndef EXCLUDE_COMMON_UPDATE_TARGET
+@@ -354,12 +354,12 @@
  update: python-env fields collect config ## @build Update expects the most recent version of libbeat in the GOPATH
  	@echo "Updating generated files for ${BEAT_NAME}"
  
@@ -34,4 +34,4 @@ Fix syntax for sh (get rid of bash-isms)
 +ifneq ($(shell [ $(BEAT_NAME) == libbeat -o $(BEAT_NAME) == metricbeat ] && echo true ),true)
  	@# Update docs
  	@mkdir -p docs
- 	@${PYTHON_ENV}/bin/python ${ES_BEATS}/libbeat/scripts/generate_fields_docs.py $(PWD)/fields.yml ${BEAT_TITLE} ${ES_BEATS}
+ 	@${PYTHON_ENV_EXE} ${ES_BEATS}/libbeat/scripts/generate_fields_docs.py $(PWD)/fields.yml ${BEAT_TITLE} ${ES_BEATS}
