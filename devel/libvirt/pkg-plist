@@ -134,7 +134,14 @@ share/augeas/lenses/virtvboxd.aug
 %%DATADIR%%/api/libvirt-api.xml
 %%DATADIR%%/api/libvirt-lxc-api.xml
 %%DATADIR%%/api/libvirt-qemu-api.xml
+%%DATADIR%%/cpu_map/arm_Falkor.xml
+%%DATADIR%%/cpu_map/arm_Kunpeng-920.xml
+%%DATADIR%%/cpu_map/arm_ThunderX299xx.xml
+%%DATADIR%%/cpu_map/arm_cortex-a53.xml
+%%DATADIR%%/cpu_map/arm_cortex-a57.xml
+%%DATADIR%%/cpu_map/arm_cortex-a72.xml
 %%DATADIR%%/cpu_map/arm_features.xml
+%%DATADIR%%/cpu_map/arm_vendors.xml
 %%DATADIR%%/cpu_map/index.xml
 %%DATADIR%%/cpu_map/ppc64_POWER6.xml
 %%DATADIR%%/cpu_map/ppc64_POWER7.xml
@@ -151,6 +158,7 @@ share/augeas/lenses/virtvboxd.aug
 %%DATADIR%%/cpu_map/x86_Cascadelake-Server-noTSX.xml
 %%DATADIR%%/cpu_map/x86_Cascadelake-Server.xml
 %%DATADIR%%/cpu_map/x86_Conroe.xml
+%%DATADIR%%/cpu_map/x86_Cooperlake.xml
 %%DATADIR%%/cpu_map/x86_Dhyana.xml
 %%DATADIR%%/cpu_map/x86_EPYC-IBPB.xml
 %%DATADIR%%/cpu_map/x86_EPYC.xml
