@@ -1,0 +1,112 @@
+[00:00:00] Creating the reference jail... done
+[00:00:07] Mounting system devices for 12-1-amd64-default
+[00:00:07] Mounting ports/packages/distfiles
+[00:00:07] Stashing existing package repository
+[00:00:07] Mounting packages from: /usr/local/poudriere/data/packages/12-1-amd64-default
+/etc/resolv.conf -> /usr/local/poudriere/data/.m/12-1-amd64-default/ref/etc/resolv.conf
+[00:00:07] Starting jail 12-1-amd64-default
+[00:00:07] Ports supports: FLAVORS SELECTED_OPTIONS
+[00:00:07] Logs: /usr/local/poudriere/data/logs/bulk/12-1-amd64-default/2020-06-06_19h05m44s
+[00:00:07] Loading MOVED for /usr/local/poudriere/data/.m/12-1-amd64-default/ref/usr/ports
+[00:00:08] Gathering ports metadata
+[00:00:10] Calculating ports order and dependencies
+[00:00:11] Sanity checking the repository
+[00:00:11] Checking packages for incremental rebuild needs
+[00:00:11] Deleting bison-3.5.3,1.txz: new version: 3.5.4,1
+[00:00:11] Deleting fontconfig-2.13.1_1,1.txz: new version: 2.13.92_1,1
+[00:00:11] Deleting libX11-1.6.9,1.txz: new version: 1.6.9_1,1
+[00:00:11] Deleting libedit-3.1.20191211,1.txz: new version: 3.1.20191231,1
+[00:00:11] Deleting libtasn1-4.15.0.txz: new version: 4.16.0
+[00:00:11] Deleting libunwind-20170615.txz: new version: 20170615_1
+[00:00:11] Deleting p11-kit-0.23.18.1.txz: new version: 0.23.20
+[00:00:11] Deleting swig30-3.0.12.txz: new version: 3.0.12_1
+[00:00:11] Deleting xorgproto-2019.2.txz: new version: 2020.1
+[00:00:11] Deleting cairo-1.16.0,2.txz: missing dependency: fontconfig-2.13.1_1,1
+[00:00:11] Deleting dbus-1.12.16.txz: missing dependency: libX11-1.6.9,1
+[00:00:11] Deleting dejavu-2.37_1.txz: missing dependency: fontconfig-2.13.1_1,1
+[00:00:11] Deleting gnutls-3.6.13.txz: missing dependency: ca_root_nss-3.51
+[00:00:11] Deleting libXdamage-1.1.5.txz: missing dependency: libX11-1.6.9,1
+[00:00:11] Deleting libXdmcp-1.1.3.txz: missing dependency: xorgproto-2019.2
+[00:00:11] Deleting libXext-1.3.4,1.txz: missing dependency: libX11-1.6.9,1
+[00:00:11] Deleting libXfixes-5.0.3_2.txz: missing dependency: libX11-1.6.9,1
+[00:00:11] Deleting libXrender-0.9.10_2.txz: missing dependency: libX11-1.6.9,1
+[00:00:11] Deleting libXt-1.2.0,1.txz: missing dependency: libX11-1.6.9,1
+[00:00:11] Deleting libXxf86vm-1.1.4_3.txz: missing dependency: libX11-1.6.9,1
+[00:00:11] Deleting libxcb-1.13.1.txz: missing dependency: libXdmcp-1.1.3
+[00:00:11] Deleting llvm80-8.0.1_3.txz: missing dependency: libedit-3.1.20191211,1
+[00:00:11] Deleting lua52-5.2.4.txz: missing dependency: libedit-3.1.20191211,1
+[00:00:11] Deleting mesa-libs-18.3.2_4.txz: missing dependency: libX11-1.6.9,1
+[00:00:11] Deleting avahi-app-0.7_3.txz: missing dependency: dbus-1.12.16
+[00:00:11] Deleting cups-2.2.13.txz: missing dependency: avahi-app-0.7_3
+[00:00:11] Deleting dbus-glib-0.110.txz: missing dependency: dbus-1.12.16
+[00:00:12] Deleting stale symlinks... done
+[00:00:12] Deleting empty directories... done
+[00:00:12] Cleaning the build queue
+[00:00:12] Sanity checking build queue
+[00:00:12] Processing PRIORITY_BOOST
+[00:00:12] Balancing pool
+[00:00:12] Recording filesystem state for prepkg... done
+[00:00:12] Building 28 packages using 4 builders
+[00:00:12] Starting/Cloning builders
+[00:00:39] Hit CTRL+t at any time to see build progress and stats
+[00:00:39] [01] [00:00:00] Building x11/xorgproto | xorgproto-2020.1
+[00:00:39] [02] [00:00:00] Building devel/bison | bison-3.5.4,1
+[00:00:39] [03] [00:00:00] Building x11-fonts/fontconfig | fontconfig-2.13.92_1,1
+[00:00:39] [04] [00:00:00] Building security/libtasn1 | libtasn1-4.16.0
+[00:00:52] [01] [00:00:13] Finished x11/xorgproto | xorgproto-2020.1: Success
+[00:00:52] [01] [00:00:00] Building x11/libXdmcp | libXdmcp-1.1.3
+[00:01:03] [01] [00:00:11] Finished x11/libXdmcp | libXdmcp-1.1.3: Success
+[00:01:04] [01] [00:00:00] Building x11/libxcb | libxcb-1.13.1
+[00:01:07] [04] [00:00:28] Finished security/libtasn1 | libtasn1-4.16.0: Success
+[00:01:07] [04] [00:00:00] Building security/p11-kit | p11-kit-0.23.20
+[00:01:27] [03] [00:00:48] Finished x11-fonts/fontconfig | fontconfig-2.13.92_1,1: Success
+[00:01:27] [03] [00:00:00] Building java/javavmwrapper | javavmwrapper-2.7.5
+[00:01:30] [03] [00:00:03] Finished java/javavmwrapper | javavmwrapper-2.7.5: Success
+[00:01:30] [03] [00:00:00] Building java/bootstrap-openjdk8 | bootstrap-openjdk8-r450802
+[00:01:54] [02] [00:01:15] Finished devel/bison | bison-3.5.4,1: Success
+[00:01:54] [02] [00:00:00] Building x11-fonts/dejavu | dejavu-2.37_1
+[00:02:02] [04] [00:00:55] Finished security/p11-kit | p11-kit-0.23.20: Success
+[00:02:02] [04] [00:00:00] Building security/gnutls | gnutls-3.6.13
+[00:02:12] [02] [00:00:18] Finished x11-fonts/dejavu | dejavu-2.37_1: Success
+[00:02:12] [02] [00:00:00] Building java/java-zoneinfo | java-zoneinfo-2019.b
+[00:02:12] [01] [00:01:08] Finished x11/libxcb | libxcb-1.13.1: Success
+[00:02:12] [01] [00:00:00] Building x11/libX11 | libX11-1.6.9_1,1
+[00:02:15] [02] [00:00:03] Finished java/java-zoneinfo | java-zoneinfo-2019.b: Success
+[00:02:15] [02] [00:00:00] Building devel/libinotify | libinotify-20180201_1
+[00:02:41] [02] [00:00:26] Finished devel/libinotify | libinotify-20180201_1: Success
+[00:02:41] [02] [00:00:00] Building shells/bash | bash-5.0.16
+[00:03:46] [03] [00:02:16] Finished java/bootstrap-openjdk8 | bootstrap-openjdk8-r450802: Success
+[00:03:46] [03] [00:00:00] Building audio/alsa-lib | alsa-lib-1.1.2_2
+[00:04:41] [02] [00:02:00] Finished shells/bash | bash-5.0.16: Success
+[00:04:41] [02] [00:00:00] Building biology/samtools | samtools-1.9
+[00:04:42] [03] [00:00:56] Finished audio/alsa-lib | alsa-lib-1.1.2_2: Success
+[00:05:05] [01] [00:02:53] Finished x11/libX11 | libX11-1.6.9_1,1: Success
+[00:05:05] [01] [00:00:00] Building x11/libXext | libXext-1.3.4,1
+[00:05:05] [03] [00:00:00] Building x11/libXfixes | libXfixes-5.0.3_2
+[00:05:17] [03] [00:00:12] Finished x11/libXfixes | libXfixes-5.0.3_2: Success
+[00:05:17] [03] [00:00:00] Building x11/libXrender | libXrender-0.9.10_2
+[00:05:23] [01] [00:00:18] Finished x11/libXext | libXext-1.3.4,1: Success
+[00:05:23] [01] [00:00:00] Building devel/dbus | dbus-1.12.16
+[00:05:32] [02] [00:00:51] Finished biology/samtools | samtools-1.9: Success
+[00:05:32] [02] [00:00:00] Building x11/libXi | libXi-1.7.10,1
+[00:05:32] [03] [00:00:15] Finished x11/libXrender | libXrender-0.9.10_2: Success
+[00:05:32] [03] [00:00:00] Building x11-toolkits/libXt | libXt-1.2.0,1
+[00:06:01] [02] [00:00:29] Finished x11/libXi | libXi-1.7.10,1: Success
+[00:06:01] [02] [00:00:00] Building x11/libXtst | libXtst-1.2.3_2
+[00:06:14] [02] [00:00:13] Finished x11/libXtst | libXtst-1.2.3_2: Success
+[00:06:21] [04] [00:04:19] Finished security/gnutls | gnutls-3.6.13: Success
+[00:06:23] [03] [00:00:51] Finished x11-toolkits/libXt | libXt-1.2.0,1: Success
+[00:06:35] [01] [00:01:12] Finished devel/dbus | dbus-1.12.16: Success
+[00:06:35] [01] [00:00:00] Building devel/dbus-glib | dbus-glib-0.110
+[00:07:01] [01] [00:00:26] Finished devel/dbus-glib | dbus-glib-0.110: Success
+[00:07:02] [01] [00:00:00] Building net/avahi-app | avahi-app-0.7_3
+[00:07:56] [01] [00:00:54] Finished net/avahi-app | avahi-app-0.7_3: Success
+[00:07:56] [01] [00:00:00] Building print/cups | cups-2.2.13
+[00:09:09] [01] [00:01:13] Finished print/cups | cups-2.2.13: Success
+[00:09:09] [01] [00:00:00] Building java/openjdk8 | openjdk8-8.252.09.1
+[00:17:19] [01] [00:08:10] Finished java/openjdk8 | openjdk8-8.252.09.1: Failed: build
+[00:17:20] Stopping 4 builders
+[00:17:21] Error: Depends failed to build
+[00:17:21] Failed ports: java/openjdk8:build
+[00:17:21] Cleaning up
+[00:17:21] Unmounting file systems

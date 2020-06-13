@@ -1,0 +1,14 @@
+#!/bin/sh -e
+
+if [ $# = 0 ] || [ $1 = -h ]; then
+    cat << EOM
+
+"picard" is a wrapper script around the Picard tools Java jar.
+
+To run Picard tools the traditional way, run
+
+    java -jar %%JAVAJARDIR%%/picard.jar [args]
+
+EOM
+fi
+java -jar %%JAVAJARDIR%%/picard.jar "$@"

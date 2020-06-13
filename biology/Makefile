@@ -114,6 +114,7 @@
     SUBDIR += phred
     SUBDIR += phylip
     SUBDIR += phyml
+    SUBDIR += picard-tools
     SUBDIR += plink
     SUBDIR += primer3
     SUBDIR += prodigal
