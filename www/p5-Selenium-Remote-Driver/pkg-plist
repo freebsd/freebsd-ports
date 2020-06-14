@@ -39,12 +39,8 @@
 %%SITE_PERL%%/Selenium/Firefox.pm
 %%SITE_PERL%%/Selenium/Firefox/Binary.pm
 %%SITE_PERL%%/Selenium/Firefox/Profile.pm
-%%SITE_PERL%%/Selenium/Firefox/amd64/libibushandler.so
-%%SITE_PERL%%/Selenium/Firefox/amd64/x_ignore_nofocus.so
 %%SITE_PERL%%/Selenium/Firefox/webdriver.xpi
 %%SITE_PERL%%/Selenium/Firefox/webdriver_prefs.json
-%%SITE_PERL%%/Selenium/Firefox/x86/libibushandler.so
-%%SITE_PERL%%/Selenium/Firefox/x86/x_ignore_nofocus.so
 %%SITE_PERL%%/Selenium/InternetExplorer.pm
 %%SITE_PERL%%/Selenium/PhantomJS.pm
 %%SITE_PERL%%/Selenium/Remote/Commands.pm
