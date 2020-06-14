@@ -9,7 +9,8 @@ COMMENT=	Fast MegaDrive/MegaCD/32X emulator
 
 LICENSE=	PD
 
-BROKEN_aarch64=	error: unsupported arch
+ONLY_FOR_ARCHS=		amd64 i386
+ONLY_FOR_ARCHS_REASON=	all archs except x86 report error: unsupported arch
 
 USES=		compiler:c++11-lib gmake
 USE_LDCONFIG=	yes
