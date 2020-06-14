@@ -1,0 +1,10 @@
+The Open Observatory of Network Interference (OONI) is a free software
+project and a Global community measuring Internet censorship since 2012.
+
+OONI's miniooni is a small command line client useful to test the
+functionality without integrating with full features of OONI Probe CLI.
+
+miniooni can use tunnels provided by Tor, if you like to. The use of regular
+HTTP proxies is also possible.
+
+WWW: https://ooni.org/about/

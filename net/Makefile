@@ -529,6 +529,7 @@
     SUBDIR += onedrive
     SUBDIR += onenetd
     SUBDIR += onioncat
+    SUBDIR += ooni-mini
     SUBDIR += ooni-probe-cli
     SUBDIR += opal
     SUBDIR += open-isns
