@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	citra
-PORTVERSION=	s20200608
+PORTVERSION=	s20200612
 PORTREVISION?=	0
 CATEGORIES=	emulators
 
@@ -21,7 +21,7 @@ LICENSE_FILE_OpenSSL=	${WRKSRC}/externals/libressl/COPYING
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	citra-emu
-GH_TAGNAME=	e6ad0d390
+GH_TAGNAME=	16913feb4
 GH_TUPLE=	citra-emu:ext-boost:36603a1:boost/externals/boost \
 		citra-emu:ext-libressl-portable:7d01cb0:libressl/externals/libressl \
 		citra-emu:ext-soundtouch:060181e:soundtouch/externals/soundtouch \
@@ -38,7 +38,7 @@ GH_TUPLE=	citra-emu:ext-boost:36603a1:boost/externals/boost \
 		lvandeve:lodepng:31d9704:lodepng/externals/lodepng/lodepng \
 		neobrain:nihstro:fd69de1:nihstro/externals/nihstro \
 		weidai11:cryptopp:CRYPTOPP_7_0_0-23-gf320e7d9:cryptopp/externals/cryptopp/cryptopp \
-		wwylele:teakra:57bb1d2:teakra/externals/teakra
+		wwylele:teakra:3e032a7:teakra/externals/teakra
 
 USES=		cmake compiler:c++17-lang iconv localbase:ldflags sdl
 USE_SDL=	sdl2
