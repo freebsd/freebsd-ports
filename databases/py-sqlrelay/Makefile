@@ -3,23 +3,18 @@
 
 PORTNAME=	${SQLRELAY_PORTNAME}
 PORTVERSION=	${SQLRELAY_PORTVERSION}
-PORTREVISION=	2
 CATEGORIES=	databases python
 MASTER_SITES=	# none
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	# none
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Python modules to access to SQL Relay
-
-BROKEN_aarch64=		Fails to configure: machine 'aarch64-portbld' not recognized
-BROKEN_amd64=		Fails to configure: machine 'amd64-portbld' not recognized
-BROKEN_powerpc64=	Fails to configure: machine 'powerpc64-portbld' not recognized
 
 EXTRACT_DEPENDS=	${NONEXISTENT}:${SQLRELAY_PORTDIR}:patch
 LIB_DEPENDS=	libsqlrclient.so:${SQLRELAY_PORTDIR}
 
-USES=		gmake perl5 python
+USES=		gmake libtool perl5 python
 USE_PERL5=	build patch
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
