@@ -11,6 +11,9 @@ COMMENT=	Fast Gherkin lexer/parser based on the Ragel State Machine Compiler
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Use textproc/rubygem-cucumber-gherkin instead
+EXPIRATION_DATE=2020-06-30
+
 USES=		gem
 USE_RUBY=	yes
 
