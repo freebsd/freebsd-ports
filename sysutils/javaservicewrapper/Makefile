@@ -16,7 +16,9 @@ LICENSE_COMB=	dual
 ONLY_FOR_ARCHS=	amd64 i386
 
 USES=		gmake iconv
-USE_JAVA=	1.8+
+USE_JAVA=	yes
+JAVA_VERSION=	8+
+
 USE_ANT=	yes
 USE_LDCONFIG=	${PREFIX}/lib/javaservicewrapper/lib
 
@@ -39,6 +41,8 @@ post-patch:
 			s|-liconv|${ICONV_LIB}|' \
 		${WRKSRC}/src/c/Makefile-freebsd-x86-32.gmake \
 		${WRKSRC}/src/c/Makefile-freebsd-x86-64.gmake
+	@${REINPLACE_CMD} -e 's|\(javac\.target\.version\)=.*|\1=1.8|' \
+		${WRKSRC}/default.properties
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
