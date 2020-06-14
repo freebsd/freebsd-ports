@@ -1,4 +1,4 @@
---- Make.inc/Makefile.FREEBSD10.PAR.orig	2017-08-08 07:32:58 UTC
+--- Make.inc/Makefile.FREEBSD10.PAR.orig	2019-04-03 14:40:12 UTC
 +++ Make.inc/Makefile.FREEBSD10.PAR
 @@ -20,7 +20,7 @@
  #
@@ -39,7 +39,7 @@
  
  # The following variables will be used in the compilation process.
  # Please note that -Dptscotch and -Dparmetis imply -Dscotch and -Dmetis respectively.
-@@ -66,34 +66,34 @@ IORDERINGSC = $(IMETIS) $(IPORD) $(ISCOT
+@@ -66,34 +66,34 @@ IORDERINGSC = $(IMETIS) $(IPORD) $(ISCOTCH)
  
  PLAT    =
  LIBEXT  = .a
@@ -60,7 +60,7 @@
  RANLIB  = ranlib
  LAPACK  = -llapack
 -SCALAP  = -lscalapack -lblacs
-+SCALAP  = -L@LOCALBASE@/lib -lblacs -lblacsc -lblacsf77 -lscalapack
++SCALAP  = -L@LOCALBASE@/lib -lscalapack -lexecinfo
  
  INCPAR  = -I/usr/local/include
 -LIBPAR  = $(SCALAP) $(LAPACK) -L/usr/local/lib -lmpi
@@ -85,5 +85,5 @@
 -OPTC    = -O -I. #-fopenmp
 +OPTC    = @CFLAGS@ -I. #-fopenmp
  #End Optimized options
- INCS = $(INCPAR)
- LIBS = $(LIBPAR)
+  
+ 

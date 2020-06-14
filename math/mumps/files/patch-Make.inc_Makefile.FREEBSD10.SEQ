@@ -1,4 +1,4 @@
---- Make.inc/Makefile.FREEBSD10.SEQ.orig	2017-08-08 07:32:58 UTC
+--- Make.inc/Makefile.FREEBSD10.SEQ.orig	2019-04-03 14:40:12 UTC
 +++ Make.inc/Makefile.FREEBSD10.SEQ
 @@ -20,7 +20,7 @@
  #
@@ -29,7 +29,7 @@
  #LMETIS    = -L$(LMETISDIR) -lparmetis -lmetis
  
  # The following variables will be used in the compilation process.
-@@ -66,14 +66,14 @@ IORDERINGSC = $(IMETIS) $(IPORD) $(ISCOT
+@@ -66,14 +66,14 @@ IORDERINGSC = $(IMETIS) $(IPORD) $(ISCOTCH)
  
  PLAT    =
  LIBEXT  = .a
@@ -69,5 +69,5 @@
 -OPTC    = -O -I. #-fopenmp
 +OPTC    = @CFLAGS@ -I. #-fopenmp
  #End Optimized options
- INCS = $(INCSEQ)
- LIBS = $(LIBSEQ)
+  
+ 
