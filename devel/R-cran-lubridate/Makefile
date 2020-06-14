@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lubridate
-PORTVERSION=	1.7.8
-PORTREVISION=	1
+PORTVERSION=	1.7.9
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -17,6 +16,6 @@ CRAN_DEPENDS=	R-cran-generics>0:devel/R-cran-generics \
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
-USES=		cran:auto-plist,compiles
+USES=		compiler:c++11-lang cran:auto-plist,compiles
 
 .include <bsd.port.mk>
