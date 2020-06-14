@@ -1,6 +1,7 @@
 bin/cpplint.py
 bin/cpplint_unittest.py
 %%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%DOCSDIR%%/Rguide.md
 %%PORTDOCS%%%%DOCSDIR%%/angularjs-google-style.html
 %%PORTDOCS%%%%DOCSDIR%%/cppguide.html
 %%PORTDOCS%%%%DOCSDIR%%/cpplint/README
@@ -17,8 +18,8 @@ bin/cpplint_unittest.py
 %%PORTDOCS%%%%DOCSDIR%%/jsguide.html
 %%PORTDOCS%%%%DOCSDIR%%/jsoncstyleguide.html
 %%PORTDOCS%%%%DOCSDIR%%/objcguide.md
-%%PORTDOCS%%%%DOCSDIR%%/pyguide.html
 %%PORTDOCS%%%%DOCSDIR%%/pyguide.md
+%%PORTDOCS%%%%DOCSDIR%%/shellguide.md
 %%PORTDOCS%%%%DOCSDIR%%/styleguide.css
 %%PORTDOCS%%%%DOCSDIR%%/xmlstyle.html
 %%DATADIR%%/Rguide.xml
