@@ -3,7 +3,6 @@
 
 PORTNAME=	${SQLRELAY_PORTNAME}
 PORTVERSION=	${SQLRELAY_PORTVERSION}
-PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	SF
 
@@ -11,6 +10,9 @@ MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Persistent DB connection pooling/proxying/load balancing system
 
 LICENSE=	LGPL20
+
+ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64
+ONLY_FOR_ARCHS_REASON=	For i386 some depends like mysql fail to build
 
 LIB_DEPENDS=	librudiments.so:devel/rudiments \
 		libkrb5.so:security/krb5 \
@@ -161,7 +163,7 @@ post-patch:
 		-e 's#-release \$$\(SQLR_VERSION\)##g;'
 
 post-configure:
-	@${REINPLACE_CMD} 's,-Werror,,' ${WRKSRC}/config.mk
+	${REINPLACE_CMD} 's,-Werror,,' ${WRKSRC}/config.mk
 
 post-install:
 .for f in ${TOSTRIP}

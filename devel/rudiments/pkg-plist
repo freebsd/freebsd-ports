@@ -173,6 +173,8 @@ include/rudiments/private/serviceentry.h
 include/rudiments/private/serviceentryincludes.h
 include/rudiments/private/sha1.h
 include/rudiments/private/sha1includes.h
+include/rudiments/private/sha256.h
+include/rudiments/private/sha256includes.h
 include/rudiments/private/sharedmemory.h
 include/rudiments/private/sharedmemoryincludes.h
 include/rudiments/private/signalclassesincludes.h
@@ -218,6 +220,8 @@ include/rudiments/private/url.h
 include/rudiments/private/urlincludes.h
 include/rudiments/private/userentry.h
 include/rudiments/private/userentryincludes.h
+include/rudiments/private/websocket.h
+include/rudiments/private/websocketincludes.h
 include/rudiments/private/winsock.h
 include/rudiments/private/xmldom.h
 include/rudiments/private/xmldomincludes.h
@@ -235,6 +239,7 @@ include/rudiments/semaphoreset.h
 include/rudiments/server.h
 include/rudiments/serviceentry.h
 include/rudiments/sha1.h
+include/rudiments/sha256.h
 include/rudiments/sharedmemory.h
 include/rudiments/signalclasses.h
 include/rudiments/singlylinkedlist.h
@@ -254,11 +259,12 @@ include/rudiments/unixsocketserver.h
 include/rudiments/unixsocketutil.h
 include/rudiments/url.h
 include/rudiments/userentry.h
+include/rudiments/websocket.h
 include/rudiments/xmldom.h
 include/rudiments/xmlsax.h
 lib/librudiments.a
 lib/librudiments.so
-lib/librudiments.so.5
-lib/librudiments.so.5.0.0
+lib/librudiments.so.6
+lib/librudiments.so.6.0.1
 libdata/pkgconfig/rudiments.pc
 man/man1/rudiments-config.1.gz

@@ -1,16 +1,16 @@
---- etc/Makefile.orig	2016-01-28 19:28:21 UTC
+--- etc/Makefile.orig	2020-06-14 14:27:43 UTC
 +++ etc/Makefile
-@@ -3,12 +3,13 @@ top_builddir = ..
+@@ -3,12 +3,14 @@ top_builddir = ..
  include ../config.mk
  
  install:
 -	$(MKINSTALLDIRS) $(sysconfdir)/$(SQLRELAY).conf.d
 -	$(CP) sqlrelay.xsd $(sysconfdir)/$(SQLRELAY).xsd
 -	$(CHMOD) 644 $(sysconfdir)/$(SQLRELAY).xsd
--	$(MKINSTALLDIRS) $(EXAMPLEDIR)
++	$(MKINSTALLDIRS) $(sysconfdir)/$(SQLRELAY)
+ 	$(MKINSTALLDIRS) $(EXAMPLEDIR)
 -	$(CP) sqlrelay.conf $(EXAMPLEDIR)/$(SQLRELAY).conf
 -	$(CHMOD) 644 $(EXAMPLEDIR)/$(SQLRELAY).conf
-+	$(MKINSTALLDIRS) $(sysconfdir)/$(SQLRELAY)
 +	$(CP) sqlrelay.conf $(sysconfdir)/$(SQLRELAY)/conf.sample
 +	$(CHMOD) 644 $(sysconfdir)/$(SQLRELAY)/conf.sample
 +	$(CP) sqlrelay.xsd $(sysconfdir)/$(SQLRELAY)/

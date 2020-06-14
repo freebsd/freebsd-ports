@@ -1,6 +1,6 @@
---- Makefile.orig	2016-01-17 07:20:04 UTC
+--- Makefile.orig	2020-06-14 14:27:43 UTC
 +++ Makefile
-@@ -30,9 +30,6 @@ install-doc:
+@@ -31,9 +31,6 @@ install-doc:
  	cd doc $(AND) $(MAKE) install
  
  install-license:
@@ -9,12 +9,12 @@
 -	$(CHMOD) 0644 $(licensedir)/COPYING
  
  install-pkgconfig:
- 	$(MKINSTALLDIRS) $(libdir)/pkgconfig
-@@ -63,7 +60,6 @@ uninstall-doc:
+ 	$(MKINSTALLDIRS) $(prefix)/libdata/pkgconfig
+@@ -64,7 +61,6 @@ uninstall-doc:
  	cd doc $(AND) $(MAKE) uninstall
  
  uninstall-license:
 -	$(RMTREE) $(licensedir)
  
  uninstall-pkgconfig:
- 	$(RM) $(libdir)/pkgconfig/$(SQLRELAY)-c.pc \
+ 	$(RM) $(prefix)/libdata/pkgconfig/$(SQLRELAY)-c.pc \
