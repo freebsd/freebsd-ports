@@ -1,6 +1,6 @@
---- qemu/configure.orig	2017-04-20 06:14:24 UTC
+--- qemu/configure.orig	2020-05-29 03:56:24 UTC
 +++ qemu/configure
-@@ -229,11 +229,11 @@ QEMU_CFLAGS="-Wstrict-prototypes -Wredun
+@@ -225,11 +225,11 @@ QEMU_CFLAGS="-Wstrict-prototypes -Wredundant-decls $QE
  QEMU_CFLAGS="-D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE $QEMU_CFLAGS"
  QEMU_INCLUDES="-I. -I\$(SRC_PATH) -I\$(SRC_PATH)/include"
  if test "$debug_info" = "yes"; then
