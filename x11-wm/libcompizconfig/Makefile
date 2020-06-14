@@ -4,9 +4,9 @@
 PORTNAME=	libcompizconfig
 PORTVERSION=	0.8.8
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://releases.compiz.org/${PORTVERSION}/
+MASTER_SITES=	https://BSDforge.com/projects/source/x11-wm/libcompizconfig/
 
-MAINTAINER=	freebsd-ports@dan.me.uk
+MAINTAINER=	potmaster@BSDforge.com
 COMMENT=	Alternative configuration system for Compiz
 
 LICENSE=	GPLv2
