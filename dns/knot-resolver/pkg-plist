@@ -43,7 +43,6 @@ lib/knot-resolver/kres_modules/experimental_dot_auth.lua
 lib/knot-resolver/kres_modules/graphite.lua
 lib/knot-resolver/kres_modules/hints.so
 lib/knot-resolver/kres_modules/http.lua
-lib/knot-resolver/kres_modules/http/LICENSE
 lib/knot-resolver/kres_modules/http/bootstrap-theme.min.css
 lib/knot-resolver/kres_modules/http/bootstrap.min.css
 lib/knot-resolver/kres_modules/http/bootstrap.min.js
@@ -58,8 +57,7 @@ lib/knot-resolver/kres_modules/http/jquery.js
 lib/knot-resolver/kres_modules/http/kresd.css
 lib/knot-resolver/kres_modules/http/kresd.js
 lib/knot-resolver/kres_modules/http/main.tpl
-lib/knot-resolver/kres_modules/http/selectize.bootstrap3.min.css
-lib/knot-resolver/kres_modules/http/selectize.min.css
+lib/knot-resolver/kres_modules/http/selectize.bootstrap3.css
 lib/knot-resolver/kres_modules/http/selectize.min.js
 lib/knot-resolver/kres_modules/http/topojson.js
 lib/knot-resolver/kres_modules/http_doh.lua
