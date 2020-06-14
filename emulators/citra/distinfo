@@ -1,6 +1,6 @@
-TIMESTAMP = 1591625089
-SHA256 (citra-emu-citra-s20200608-e6ad0d390_GH0.tar.gz) = 5f0e17806478bb0f94c58983a610d3d867869b0e3621ffd0b0e5131226ddf55c
-SIZE (citra-emu-citra-s20200608-e6ad0d390_GH0.tar.gz) = 5252967
+TIMESTAMP = 1591971243
+SHA256 (citra-emu-citra-s20200612-16913feb4_GH0.tar.gz) = 019438a704b2c1ce82c23631d807a3e19300b073a81b850ff5099af1001c9343
+SIZE (citra-emu-citra-s20200612-16913feb4_GH0.tar.gz) = 5253307
 SHA256 (citra-emu-ext-boost-36603a1_GH0.tar.gz) = a1885cf0f7b1c790f8a83e963fec591bad1232e6b824e64d8db136920ec1b67d
 SIZE (citra-emu-ext-boost-36603a1_GH0.tar.gz) = 2351603
 SHA256 (citra-emu-ext-libressl-portable-7d01cb0_GH0.tar.gz) = f3fc8c9d4991b05ca1e1c8f5907ecd3ffd9724a8dccf328087b4784cda5c7db3
@@ -33,5 +33,5 @@ SHA256 (neobrain-nihstro-fd69de1_GH0.tar.gz) = cebeb307aad4b9fbc4d26eb54c01c90e1
 SIZE (neobrain-nihstro-fd69de1_GH0.tar.gz) = 110417
 SHA256 (weidai11-cryptopp-CRYPTOPP_7_0_0-23-gf320e7d9_GH0.tar.gz) = 1d6f029b83a230561e75bab26b5aaf98055b8439363a25bf113ac9ff6f9d2ef4
 SIZE (weidai11-cryptopp-CRYPTOPP_7_0_0-23-gf320e7d9_GH0.tar.gz) = 7209489
-SHA256 (wwylele-teakra-57bb1d2_GH0.tar.gz) = 07365898a2bf9d988e1bd1ebdb2cc643349d06eaf21ca255b7bc9661a6653b7f
-SIZE (wwylele-teakra-57bb1d2_GH0.tar.gz) = 953028
+SHA256 (wwylele-teakra-3e032a7_GH0.tar.gz) = 14662b40f0eac637ea9bec201ce8e00bf1592b7b02f62b9d0b0b901e178bcf2d
+SIZE (wwylele-teakra-3e032a7_GH0.tar.gz) = 953167
