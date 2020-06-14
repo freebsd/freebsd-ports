@@ -1,5 +1,5 @@
---- SLmake.inc.example.orig	2011-11-01 18:24:54.000000000 +0100
-+++ SLmake.inc.example	2014-08-24 11:35:47.000000000 +0200
+--- SLmake.inc.example.orig	2019-11-26 20:37:04 UTC
++++ SLmake.inc.example
 @@ -20,17 +20,17 @@
  #     -DUpCase   (fortran subprogram names are upper case without any suffix)
  #     -DAdd_     (fortran subprogram names are lower case with "_" appended)
@@ -24,7 +24,7 @@
  FCLOADER      = $(FC)
  CCLOADER      = $(CC)
  FCLOADFLAGS   = $(FCFLAGS)
-@@ -55,6 +55,6 @@
+@@ -55,6 +55,6 @@ SCALAPACKLIB  = libscalapack.a
  #  BLAS, LAPACK (and possibly other) libraries needed for linking test programs
  #
  

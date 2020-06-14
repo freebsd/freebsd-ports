@@ -8,14 +8,12 @@
 
  Example:
   % cd %%DATADIR%%/TESTING
-  % %%LOCALBASE%%/bin/mpd &
   % %%LOCALBASE%%/bin/mpirun -np 4 ./xcbrd
   % %%LOCALBASE%%/bin/mpirun -np 4 ./xcdblu
    etc., etc. ...
 
   to perform all the tests,
   % cd %%DATADIR%%/TESTING
-  % %%LOCALBASE%%/bin/mpd &
   % csh
   % foreach i (x*)
   ? %%LOCALBASE%%/bin/mpirun -np 4 ./$i >& ~/$i.log

@@ -2,13 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	scalapack
-PORTVERSION=	2.0.2
-PORTREVISION=	22
+PORTVERSION=	2.1.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	math
-MASTER_SITES=	NL
-DISTFILES=	scalapack-${PORTVERSION}.tgz manpages.tgz
-DIST_SUBDIR=	scalapack
-EXTRACT_ONLY=	scalapack-${PORTVERSION}.tgz manpages.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ScaLAPACK Scalable LAPACK library
@@ -17,6 +13,9 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 CONFLICTS=	elmer-mathlibs-1*
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	Reference-ScaLAPACK
 
 USES=		cmake:insource fortran pathfix
 
@@ -33,22 +32,16 @@ EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME:tu}
 SUB_FILES=	pkg-message
 PLIST_SUB=	SVERSION=${SVERSION} PORTVERSION=${PORTVERSION}
 
-OPTIONS_DEFINE=		DOCS EXAMPLES
+OPTIONS_DEFINE=		EXAMPLES
 OPTIONS_RADIO=		LA MPI
 OPTIONS_RADIO_LA=	ATLAS BLAS
 LA_DESC=		Linear Algebra library support
 BLAS_DESC=		LAPACK blass implementation
 OPTIONS_RADIO_MPI=	MPICH OPENMPI
-OPTIONS_DEFAULT=	BLAS DOCS EXAMPLES MPICH
+OPTIONS_DEFAULT=	BLAS EXAMPLES MPICH
 
-DOCS_DISTFILES=	scalapack_install.ps scalapackqref.ps  \
-		lawn100.ps pblasqref.ps manual.ps design.ps \
-		pumma_refmanual.ps trans.ps
-
-ATLAS_LIB_DEPENDS=	libatlas.so:math/atlas
-
-BLAS_LIB_DEPENDS=	libblas.so:math/blas \
-			liblapack.so:math/lapack
+ATLAS_USES=	blaslapack:atlas
+BLAS_USES=	blaslapack:openblas
 
 OPENMPI_BUILD_DEPENDS=	openmpi>0:net/openmpi
 OPENMPI_RUN_DEPENDS=	openmpi>0:net/openmpi
@@ -61,13 +54,8 @@ MPICH_CMAKE_ON=		-DMPI_BASE_DIR=${LOCALBASE}
 
 .include <bsd.port.pre.mk>
 
-.if ${PORT_OPTIONS:MATLAS}
-BLAS=		-lf77blas
-LAPACK=		-lalapack -lcblas
-.else
-BLAS=		-lblas
-LAPACK=		-llapack
-.endif
+BLAS=		${BLASLIB}
+LAPACK=		${LAPACKLIB}
 
 .if ${PORT_OPTIONS:MOPENMPI}
 MPIF77=	${LOCALBASE}/mpi/openmpi/bin/mpif77
@@ -106,14 +94,6 @@ NOOPT=	-O0
 # assume mpicc points to a compatible compiler and force that, too.
 CC=	${MPICC}
 
-post-patch:
-	${REINPLACE_CMD} -e 's|MPI_Type_struct|MPI_Type_create_struct|' \
-		${WRKSRC}/BLACS/SRC/igamx2d_.c ${WRKSRC}/BLACS/SRC/cgamn2d_.c \
-		${WRKSRC}/BLACS/SRC/dgamn2d_.c ${WRKSRC}/BLACS/SRC/zgamn2d_.c \
-		${WRKSRC}/BLACS/SRC/sgamn2d_.c ${WRKSRC}/BLACS/SRC/igamn2d_.c \
-		${WRKSRC}/BLACS/SRC/cgamx2d_.c ${WRKSRC}/BLACS/SRC/dgamx2d_.c \
-		${WRKSRC}/BLACS/SRC/zgamx2d_.c ${WRKSRC}/BLACS/SRC/sgamx2d_.c
-
 pre-configure:
 	${CP} -p ${WRKSRC}/Makefile ${WRKSRC}/Makefile.dist
 	${CP} ${WRKSRC}/SLmake.inc.example ${WRKSRC}/SLmake.inc
@@ -133,7 +113,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/lib/libscalapack.a ${STAGEDIR}${PREFIX}/lib
 	${MV} ${STAGEDIR}${PREFIX}/lib/libscalapack.so ${STAGEDIR}${PREFIX}/lib/libscalapack.so.${SVERSION}
 	${LN} -sf libscalapack.so.${SVERSION} ${STAGEDIR}${PREFIX}/lib/libscalapack.so
-	${INSTALL_MAN}  ${WRKDIR}/MANPAGES/man/manl/*.l ${STAGEDIR}${PREFIX}/man/manl
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/SCALAPACK/TESTING
 	(cd ${WRKSRC}/TESTING/ ;\
 	${INSTALL_PROGRAM} x* ${STAGEDIR}${PREFIX}/share/SCALAPACK/TESTING ;\
@@ -146,17 +125,6 @@ post-install:
 	${INSTALL_DATA} ${FILESDIR}/example1.cc ${STAGEDIR}${PREFIX}/share/examples/SCALAPACK
 	${INSTALL_DATA} ${FILESDIR}/example1.f  ${STAGEDIR}${PREFIX}/share/examples/SCALAPACK
 .endif
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${CAT} ${DISTDIR}/${DIST_SUBDIR}/design.ps    | ${GZIP_CMD} > ${STAGEDIR}${DOCSDIR}/design.ps.gz
-	${CAT} ${DISTDIR}/${DIST_SUBDIR}/lawn100.ps   | ${GZIP_CMD} > ${STAGEDIR}${DOCSDIR}/lawn100.ps.gz
-	${CAT} ${DISTDIR}/${DIST_SUBDIR}/manual.ps    | ${GZIP_CMD} > ${STAGEDIR}${DOCSDIR}/manual.ps.gz
-	${CAT} ${DISTDIR}/${DIST_SUBDIR}/pblasqref.ps | ${GZIP_CMD} > ${STAGEDIR}${DOCSDIR}/pblasqref.ps.gz
-	${CAT} ${DISTDIR}/${DIST_SUBDIR}/pumma_refmanual.ps | ${GZIP_CMD} > ${STAGEDIR}${DOCSDIR}/pumma_refmanual.ps.gz
-	${CAT} ${DISTDIR}/${DIST_SUBDIR}/scalapack_install.ps | ${GZIP_CMD} > ${STAGEDIR}${DOCSDIR}/scalapack_install.ps.gz
-	${CAT} ${DISTDIR}/${DIST_SUBDIR}/scalapackqref.ps | ${GZIP_CMD} > ${STAGEDIR}${DOCSDIR}/scalapackqref.ps.gz
-	${CAT} ${DISTDIR}/${DIST_SUBDIR}/trans.ps | ${GZIP_CMD} > ${STAGEDIR}${DOCSDIR}/trans.ps.gz
-.endif
 
 .if defined(MAINTAINER_MODE)
 do-test:
@@ -165,9 +133,7 @@ do-test:
 	${CHMOD} go-r ${HOME}/.mpd.conf
 	@${ECHO_MSG} "${HOME}/.mpd.conf has been generated - please change the secret word!"
 . endif
-	${LOCALBASE}/bin/mpd &
-	(sleep 5 && cd ${BUILD_WRKSRC}/TESTING && ${MAKE_CMD} test)
-	${LOCALBASE}/bin/mpdallexit
+	(cd ${BUILD_WRKSRC}/TESTING && ${MAKE_CMD} test)
 
 .endif
 
