@@ -3,6 +3,7 @@
 
 PORTNAME=	scotch
 DISTVERSION=	6.0.4-aster7
+PORTREVISION=	1
 CATEGORIES=	cad science
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -35,10 +36,9 @@ PORTDOCS=	ptscotch_user${DOCVER}.pdf scotch_user${DOCVER}.pdf scotch_example.f
 EXAMPLES=	scotch_example.f
 
 .if !defined(WITHOUT_MPI)
-LIB_DEPENDS+=	libmpich.so:net/mpich2
+LIB_DEPENDS+=	libmpi.so:net/mpich
 
 ALL_TARGET+=	ptesmumps
-MAKE_ENV+=	PATH=${PATH}:${LOCALBASE}/mpich2/bin
 TEST_TARGET+=	ptcheck
 
 PLIST_SUB+=	MPI=""
@@ -89,12 +89,6 @@ pre-test:
 	${CHMOD} go-r ${HOME}/.mpd.conf
 	@${ECHO_MSG} "${HOME}/.mpd.conf has been generated - please change the secret word!"
 . endif
-	${LOCALBASE}/bin/mpd &
-.endif
-
-.if !defined(WITHOUT_MPI)
-post-test:
-	${LOCALBASE}/bin/mpdallexit
 .endif
 
 .include "${.CURDIR}/../../french/aster/bsd.aster.mk"
