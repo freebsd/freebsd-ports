@@ -3,7 +3,7 @@
 
 PORTNAME=	aster
 DISTVERSION=	${ASTER_DISTVERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	french cad
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -54,6 +54,8 @@ RUN_DEPENDS+=	${SHELL_INSTALL_ASTER}:shells/${SHIADEP}	\
 USES=		bison fortran gettext python:3.6+ qt:5 tk
 USE_BINUTILS=	yes
 USE_QT=		linguisttools_build
+
+CONFLICTS_BUILD=${PYTHON_PKGNAMEPREFIX}cysignals-1.*
 
 .if defined(WITH_ATLAS)
 USES+=		blaslapack:atlas
@@ -127,14 +129,13 @@ MPISEQ=		-lmpiseq
 MUMPSLIB=	-L${LOCALBASE}/lib -ldmumps -lzmumps -lsmumps -lcmumps -lmumps_common -lpord ${MPISEQ}
 LIB_DEPENDS+=	libmpiseq.so.5:math/mumps
 .else
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libblacs.a:math/blacs	\
-		${LOCALBASE}/lib/libscalapack.a:math/scalapack
-MUMPSLIB=	-L${LOCALBASE}/lib -ldmumps -lzmumps -lsmumps -lcmumps -lmumps_common -lpord -lscalapack -lblacs -lblacsc -lblacs -L${LOCALBASE}/lib -lmpich -lmpl
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libscalapack.a:math/scalapack
+MUMPSLIB=	-L${LOCALBASE}/lib -ldmumps -lzmumps -lsmumps -lcmumps -lmumps_common -lpord -lscalapack -lexecinfo -L${LOCALBASE}/lib -lmpi
 LIB_DEPENDS+=	libcmumps.so.5:math/mumps
 .endif
 
 .if defined(WITH_MPI)
-LIB_DEPENDS+=	libmpich.so:net/mpich2
+LIB_DEPENDS+=	libmpi.so:net/mpich
 HOME_MPI=	${LOCALBASE}
 .endif
 
@@ -206,11 +207,6 @@ ASTKDIR=	${LOCALBASE}/${LASTKDIR}
 BASH2RC=	products_data.py
 
 ExportPATH?=	/tmp/maillages
-
-pre-everything::
-.if defined(WITH_MPI)
-	@${ECHO_MSG} "To build Code_Aster with MPI enabled, you need to run \`mpd &'"
-.endif
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|PREFER_SHARED_LIBS=False|PREFER_SHARED_LIBS=True|'	\
@@ -422,8 +418,7 @@ post-install:
 .for f in aster_pkginfo.cpython-${PYTHON_SUFFIX}.pyc aster_pkginfo.cpython-${PYTHON_SUFFIX}.opt-1.pyc
 	${RM} ${STAGEDIR}${inst_dir}/${VE}/lib/aster/__pycache__/${f}
 .endfor
-	${FIND} ${STAGEDIR}${inst_dir}/${VE}/share/aster/tests -name "*.datg" |	\
-		${XARGS} ${REINPLACE_CMD} -e 's|/home/PHIMECA/maillages/|${ExportPATH}|'
+	${FIND} ${STAGEDIR}${PREFIX} -name "*.bak" -delete
 
 .if defined(MAINTAINER_MODE)
 regression-test:	install
