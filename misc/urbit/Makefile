@@ -12,6 +12,8 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BROKEN_i386=	__int128 is not supported on this target
+NOT_FOR_ARCHS=		powerpc powerpc64 powerpcspe
+NOT_FOR_ARCHS_REASON=	meson.build:273:2: ERROR: Problem encountered: Little endian encoding required
 
 BUILD_DEPENDS=	re2c:devel/re2c
 LIB_DEPENDS=	libcurl.so:ftp/curl \
