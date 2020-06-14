@@ -23,5 +23,25 @@ load_rc_config $name
 
 start_cmd="/usr/bin/su -m zabbix -c %%PREFIX%%/sbin/zabbix_java/startup.sh"
 stop_cmd="/usr/bin/su -m zabbix -c %%PREFIX%%/sbin/zabbix_java/shutdown.sh"
+status_cmd="zabbix_java_status"
+
+extra_commands="status"
+
+zabbix_java_status() {
+  if get_pidfile_from_conf PID_FILE %%PREFIX%%/sbin/zabbix_java/settings.sh; then
+    PID_FILE="$_pidfile_from_conf"
+  fi
+
+  if [ -n "$PID_FILE" -a -f "$PID_FILE" ]; then
+    PID=`cat "$PID_FILE"`
+    if ps -p "$PID" > /dev/null 2>&1; then
+      echo "${name} is running as pid ${PID}"
+    else
+      echo "${name} is not running"
+    fi
+  else
+    echo "${name} is not running"
+  fi
+}
 
 run_rc_command "$1"

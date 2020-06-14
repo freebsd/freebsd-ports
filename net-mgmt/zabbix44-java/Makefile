@@ -1,6 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	zabbix44
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 PKGNAMESUFFIX=	-java
 
