@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	googleapis-common-protos
-PORTVERSION=	1.51.0
+PORTVERSION=	1.52.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,7 +10,6 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Common protobufs used in Google APIs
 
 LICENSE=	APACHE20
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}protobuf>=3.6.0:devel/py-protobuf@${PY_FLAVOR}
 
