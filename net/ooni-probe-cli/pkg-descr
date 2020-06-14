@@ -1,0 +1,7 @@
+The Open Observatory of Network Interference (OONI) is a free software
+project and a Global community measuring Internet censorship since 2012.
+
+This port provides the next generation OONI Probe, a tool used for the
+measurement of Internet censorship around the world.
+
+WWW: https://ooni.org/about/
