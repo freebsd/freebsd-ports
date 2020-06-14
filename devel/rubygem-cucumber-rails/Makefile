@@ -3,6 +3,7 @@
 
 PORTNAME=	cucumber-rails
 PORTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +14,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-capybara>=2.12<4:devel/rubygem-capybara \
-		rubygem-cucumber>=3.0.2<4:devel/rubygem-cucumber \
+		rubygem-cucumber>=3.0.2:devel/rubygem-cucumber \
 		rubygem-mime-types>=2.0<4:misc/rubygem-mime-types \
 		rubygem-nokogiri>=1.8:textproc/rubygem-nokogiri \
 		rubygem-railties5>=4.2:www/rubygem-railties5
