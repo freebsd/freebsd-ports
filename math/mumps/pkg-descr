@@ -13,4 +13,6 @@ format; elemental format.
 - Partial factorization and Schur complement matrix.
 - Several orderings interfaced : AMD, AMF, PORD, METIS
 
+When MPI is disabled, libseq is installed.
+
 WWW: http://graal.ens-lyon.fr/MUMPS/

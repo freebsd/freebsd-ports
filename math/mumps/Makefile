@@ -3,7 +3,7 @@
 
 PORTNAME=	mumps
 DISTVERSION=	5.1.2-aster6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 PKGNAMESUFFIX=	-edf
 
@@ -25,7 +25,7 @@ GCCLIBDIR=	${LDFLAGS}
 USE_LDCONFIG=	yes
 VEM=		${PORTVERSION:R:R:R}
 MUMPSVERSION=	${PORTVERSION:R}
-LIBS=		cmumps dmumps mumps_common pord smumps zmumps
+LIBS=	cmumps dmumps mumps_common pord smumps zmumps
 PLIST_SUB=	VE=${VEM} MUMPSVERSION=${MUMPSVERSION}
 
 OPTIONS_DEFINE=	DOCS EXAMPLES MPI
@@ -77,21 +77,30 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/lib/lib*.a ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_LIB} ${WRKSRC}/lib/lib*.so.${VEM} ${STAGEDIR}${PREFIX}/lib
 .for lib in ${LIBS}
-	(cd ${STAGEDIR}${PREFIX}/lib && ${LN} -sf lib${lib}.so.${VEM} ${STAGEDIR}${PREFIX}/lib/lib${lib}.so)
-. endfor
+	(cd ${STAGEDIR}${PREFIX}/lib &&	\
+	${LN} -sf lib${lib}.so.${VEM} ${STAGEDIR}${PREFIX}/lib/lib${lib}.so)
+.endfor
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/userguide_${MUMPSVERSION}.pdf ${STAGEDIR}${DOCSDIR}
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-. for ex in Makefile README *.c *.F input_simpletest_*
+.for ex in Makefile README *.c *.F input_simpletest_*
 	${INSTALL_DATA} ${WRKSRC}/examples/${ex} ${STAGEDIR}${EXAMPLESDIR}
-. endfor
-. for ex in c_example *simpletest
+.endfor
+.for ex in c_example *simpletest
 	${INSTALL_PROGRAM} ${WRKSRC}/examples/${ex} ${STAGEDIR}${EXAMPLESDIR}
-. endfor
+.endfor
 
 do-install-MPI-off:
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/mumps_seq
+	${INSTALL_DATA} ${WRKSRC}/libseq/mpi.h ${STAGEDIR}${PREFIX}/include/mumps_seq/mpi.h
 	${INSTALL_DATA} ${WRKSRC}/libseq/libmpiseq.a ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_LIB} ${WRKSRC}/libseq/libmpiseq*.so.${VEM} ${STAGEDIR}${PREFIX}/lib
+.for lib in ${LIBS}
+. for ext in a so so.${VEM}
+	(cd ${STAGEDIR}${PREFIX}/lib &&	\
+	${LN} -sf lib${lib}.${ext} ${STAGEDIR}${PREFIX}/lib/lib${lib}_seq.${ext})
+. endfor
+.endfor
 
 regression-test:	install
 .if defined (WITH_MPI) && defined(MAINTAINER_MODE)
