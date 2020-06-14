@@ -571,6 +571,7 @@ bin/widget
 %%SITE_ARCH%%/Tk/pack.pod
 %%SITE_ARCH%%/Tk/palette.pod
 %%SITE_ARCH%%/Tk/place.pod
+%%SITE_ARCH%%/Tk/ppport.h
 %%SITE_ARCH%%/Tk/prolog.ps
 %%SITE_ARCH%%/Tk/selection.pod
 %%SITE_ARCH%%/Tk/send.pod
