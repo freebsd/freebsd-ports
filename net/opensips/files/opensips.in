@@ -20,7 +20,7 @@ prefix=/usr/local
 name=opensips
 rcvar=`set_rcvar`
 
-load_rc_config opensips
+load_rc_config ${name}
 
 opensips_enable=${opensips_enable:-"NO"}
 opensips_shmem_size=${opensips_shmem_size:-"64"}
@@ -30,6 +30,6 @@ opensips_group=${opensips_group:-"opensips"}
 
 command="${prefix}/sbin/opensips"
 command_args="-m ${opensips_shmem_size} -M ${opensips_pkmem_size}"
-required_files="${prefix}/etc/opensips/opensipsctlrc"
+required_files="${prefix}/etc/opensips/opensips.cfg"
 
 run_rc_command "${1}"

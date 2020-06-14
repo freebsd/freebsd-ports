@@ -2,24 +2,10 @@
 # OpenSIPS residential configuration script
 #     by OpenSIPS Solutions <team@opensips-solutions.com>
 #
-# This script was generated via "gmake CC=gcc8 menuconfig", from
+# This script was generated via "make menuconfig", from
 #   the "Residential" scenario.
 # You can enable / disable more features / functionalities by
 #   re-generating the scenario with different options.#
-#
-# To generate an opensips script in FreeBSD, run the following commands,
-# after installing the port / package.
-# $ cd /usr/ports/net/opensips
-# $ make patch
-# $ cd work/opensips-*/
-# $ gmake CC=gcc8 menuconfig
-# $ ls tmp/
-#
-# As the FreeBSD port maintainer, I have tailored it a little
-# to resemble the (hopefully) sane set of defaults for a residential
-# SIP router running on FreeBSD and using PostgreSQL as backend database.
-# For other supported databases, it should be as simple as changing all
-# the db_url variables throughout this script.
 #
 # Please refer to the Core CookBook at:
 #      http://www.opensips.org/Resources/DocsCookbooks
@@ -33,7 +19,7 @@ log_level=3
 log_stderror=no
 log_facility=LOG_LOCAL0
 
-children=4
+udp_workers=4
 
 /* uncomment the following lines to enable debugging */
 #debug_mode=yes
@@ -51,16 +37,9 @@ children=4
 auto_aliases=no
 
 
-#listen=udp:127.0.0.1:5060   # CUSTOMIZE ME
-listen=udp:192.168.10.12:5060   # CUSTOMIZE ME
-listen=tcp:192.168.10.12:5060   # CUSTOMIZE ME 
-listen=tls:192.168.10.12:5061   # CUSTOMIZE ME 
-#advertised_address=12.34.56.78   # CUSTOMIZE ME (for running behind a NAT router)
-#alias=12.34.56.78   # CUSTOMIZE ME
-alias="domain1.net"   # CUSTOMIZE ME
-#alias="domain2.com"   # CUSTOMIZE ME
+listen=udp:127.0.0.1:5060   # CUSTOMIZE ME
 
-db_default_url="postgres://dbuser:dbpass@dbhostname/dbname"
+
 
 ####### Modules Section ########
 
@@ -96,13 +75,6 @@ loadmodule "mi_fifo.so"
 modparam("mi_fifo", "fifo_name", "/tmp/opensips_fifo")
 modparam("mi_fifo", "fifo_mode", 0666)
 
-#### URI module
-loadmodule "uri.so"
-modparam("uri", "use_uri_table", 0)
-
-#### PGSQL module
-loadmodule "db_postgres.so"
-
 #### MYSQL module
 #loadmodule "db_mysql.so"
 
@@ -113,17 +85,12 @@ loadmodule "db_postgres.so"
 #### USeR LOCation module
 loadmodule "usrloc.so"
 modparam("usrloc", "nat_bflag", "NAT")
-modparam("usrloc", "nat_bflag", "NAT")
-modparam("usrloc", "db_mode",   2)
-modparam("usrloc", "db_url", "postgres://dbuser:dbpass@dbhostname/dbname") # CUSTOMIZE ME
-#modparam("usrloc", "hash_size", 11)   # increases size of userloc hash table
-#modparam("usrloc", "working_mode_preset", "single-instance-no-db")
+modparam("usrloc", "db_mode",   0)
 
 #### REGISTRAR module
 loadmodule "registrar.so"
 modparam("registrar", "tcp_persistent_flag", "TCP_PERSISTENT")
-modparam("registrar", "received_avp", "$avp(received_nh)")
-/* uncomment the next line not to allow more than 10 contacts per AOR */
+modparam("registrar", "received_avp", "$avp(received_nh)")/* uncomment the next line not to allow more than 10 contacts per AOR */
 #modparam("registrar", "max_contacts", 10)
 
 #### ACCounting module
@@ -132,47 +99,17 @@ loadmodule "acc.so"
 modparam("acc", "early_media", 0)
 modparam("acc", "report_cancels", 0)
 /* by default we do not adjust the direct of the sequential requests.
-   if you enable this parameter, be sure to enable "append_fromtag"
+   if you enable this parameter, be sure the enable "append_fromtag"
    in "rr" module */
 modparam("acc", "detect_direction", 0)
-modparam("acc", "db_url", "postgres://dbuser:dbpass@dbhostname/dbname") # CUSTOMIZE ME
-
-#### AUTHentication modules
-loadmodule "auth.so"
-loadmodule "auth_db.so"
-modparam("auth_db", "calculate_ha1", yes)
-modparam("auth_db", "password_column", "password")
-modparam("auth_db", "db_url", "postgres://dbuser:dbpass@dbhostname/dbname") # CUSTOMIZE ME
-modparam("auth_db", "load_credentials", "")
-
-#### ALIAS module
-loadmodule "alias_db.so"
-modparam("alias_db", "db_url", "postgres://dbuser:dbpass@dbhostname/dbname") # CUSTOMIZE ME
-
-#### DOMAIN module
-loadmodule "domain.so"
-modparam("domain", "db_url", "postgres://dbuser:dbpass@dbhostname/dbname") # CUSTOMIZE ME
-modparam("domain", "db_mode", 1)   # Use caching
-modparam("auth_db|usrloc|uri", "use_domain", 1)
-
-#### PRESENCE modules
-loadmodule "xcap.so"
-loadmodule "presence.so"
-loadmodule "presence_xml.so"
-modparam("xcap|presence", "db_url", "postgres://dbuser:dbpass@dbhostname/dbname") # CUSTOMIZE ME
-modparam("presence_xml", "force_active", 1)
-modparam("presence", "server_address", "sip:127.0.0.1:5060") # CUSTOMIZE ME
-#modparam("presence", "subs_htable_size", 11)   # increases size of presence subs hash table
-#modparam("presence", "pres_htable_size", 11)   # increases size of presence subs hash table
-#modparam("presence", "max_expires_subscribe", 600)
-#modparam("presence", "max_expires_publish", 600)
 
 #### DIALOG module
 loadmodule "dialog.so"
 modparam("dialog", "dlg_match_mode", 1)
 modparam("dialog", "default_timeout", 21600)  # 6 hours timeout
-modparam("dialog", "db_mode", 2)
-modparam("dialog", "db_url", "postgres://dbuser:dbpass@dbhostname/dbname") # CUSTOMIZE ME
+modparam("dialog", "db_mode", 0)
+#modparam("dialog", "db_url",
+#	"mysql://opensips:opensipsrw@localhost/opensips") # CUSTOMIZE ME
 
 ####  NAT modules
 loadmodule "nathelper.so"
@@ -185,44 +122,30 @@ modparam("nathelper", "received_avp", "$avp(received_nh)")
 loadmodule "rtpproxy.so"
 modparam("rtpproxy", "rtpproxy_sock", "udp:localhost:12221") # CUSTOMIZE ME
 
-####  DIALPLAN module
-loadmodule "dialplan.so"
-modparam("dialplan", "db_url", "postgres://dbuser:dbpass@dbhostname/dbname") # CUSTOMIZE ME
-
-####  DYNAMMIC ROUTING module
-loadmodule "drouting.so"
-modparam("drouting", "db_url", "postgres://dbuser:dbpass@dbhostname/dbname") # CUSTOMIZE ME
-
 ####  MI_HTTP module
+#loadmodule "httpd.so"
 #loadmodule "mi_http.so"
 
-#### UDP module
 loadmodule "proto_udp.so"
-
-#### TCP module
-loadmodule "proto_tcp.so" 
-#modparam("proto_tcp", "tcp_send_timeout", 200)
-#modparam("proto_tcp", "tcp_max_msg_chunks", 8)
-
-#### TLS modules
-loadmodule "proto_tls.so"
-loadmodule "tls_mgm.so"
-modparam("tls_mgm","verify_cert", "1")
-modparam("tls_mgm","require_cert", "0")
-modparam("tls_mgm","tls_method", "TLSv1")
-#modparam("tls_mgm","ca_dir", "/usr/local/etc/opensips/tls/user/")
-modparam("tls_mgm","certificate", "/usr/local/etc/opensips/tls/user/user-cert.pem")
-modparam("tls_mgm","private_key", "/usr/local/etc/opensips/tls/user/user-privkey.pem")
-modparam("tls_mgm","ca_list", "/usr/local/etc/opensips/tls/user/user-calist.pem")
-#modparam("tls_mgm", "tls_send_timeout", 200)
-#modparam("tls_mgm", "tls_handshake_timeout", 119)
-#modparam("proto_tls", "tls_max_msg_chunks", 8)
 
 ####### Routing Logic ########
 
 # main request routing logic
 
 route{
+
+	# initial NAT handling; detect if the request comes from behind a NAT
+	# and apply contact fixing
+	force_rport();
+	if (nat_uac_test(23)) {
+		if (is_method("REGISTER")) {
+			fix_nated_register();
+			setbflag(NAT);
+		} else {
+			fix_nated_contact();
+			setflag(NAT);
+		}
+	}
 
 	if (!mf_process_maxfwd_header(10)) {
 		send_reply(483,"Too Many Hops");
@@ -246,11 +169,20 @@ route{
 			exit;
 		}
 
+		# validate the sequential request against dialog
+		if ( $DLG_status!=NULL && !validate_dialog() ) {
+			xlog("In-Dialog $rm from $si (callid=$ci) is not valid according to dialog\n");
+			## exit;
+		}
+
 		if (is_method("BYE")) {
 			# do accounting even if the transaction fails
 			do_accounting("log","failed");
 		}
 
+
+		if (check_route_param("nat=yes")) 
+			setflag(NAT);
 		# route it out to whatever destination was set by loose_route()
 		# in $du (destination URI).
 		route(relay);
@@ -298,6 +230,12 @@ route{
 	# account only INVITEs
 	if (is_method("INVITE")) {
 		
+		# create dialog with timeout
+		if ( !create_dialog("B") ) {
+			send_reply(500,"Internal Server Error");
+			exit;
+		}
+		
 		do_accounting("log");
 	}
 
@@ -316,7 +254,9 @@ route{
 	}
 
 	if (is_method("REGISTER")) {
-				
+				if (isflagset(NAT)) {
+			setbflag(SIP_PING_FLAG);
+		}
 		if (!save("location"))
 			sl_reply_error();
 
@@ -329,11 +269,21 @@ route{
 		exit;
 	}
 
+	
+
+	
+
+	 
+
 	# do lookup with method filtering
 	if (!lookup("location","m")) {
+		
+		
 		t_reply(404, "Not Found");
 		exit;
-	}
+	} 
+
+	if (isbflagset(NAT)) setflag(NAT);
 
 	# when routing via usrloc, log the missed calls also
 	do_accounting("log","missed");
@@ -344,9 +294,18 @@ route{
 route[relay] {
 	# for INVITEs enable some additional helper routes
 	if (is_method("INVITE")) {
+		
+		if (isflagset(NAT)) {
+			rtpproxy_offer("ro");
+		}
+
 		t_on_branch("per_branch_ops");
 		t_on_reply("handle_nat");
 		t_on_failure("missed_call");
+	}
+
+	if (isflagset(NAT)) {
+		add_rr_param(";nat=yes");
 	}
 
 	if (!t_relay()) {
@@ -364,6 +323,10 @@ branch_route[per_branch_ops] {
 
 
 onreply_route[handle_nat] {
+	if (nat_uac_test(1))
+		fix_nated_contact();
+	if ( isflagset(NAT) )
+		rtpproxy_answer("ro");
 	xlog("incoming reply\n");
 }
 
@@ -385,3 +348,10 @@ failure_route[missed_call] {
 
 
 
+local_route {
+	if (is_method("BYE") && $DLG_dir=="UPSTREAM") {
+		
+		acc_log_request("200 Dialog Timeout");
+		
+	}
+}

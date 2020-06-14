@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=		opensips
-DISTVERSION=		2.2.6
-PORTREVISION=	7
+DISTVERSION=		3.0.2
+PORTREVISION=		0
 CATEGORIES=		net
 MASTER_SITES=		http://opensips.org/pub/opensips/${PORTVERSION}/
 
@@ -19,8 +19,7 @@ EXPIRATION_DATE=	2020-09-15
 LIB_DEPENDS=		libxml2.so:textproc/libxml2 \
 			libxmlrpc.so:net/xmlrpc-c \
 			libpcre.so:devel/pcre \
-			libconfuse.so:devel/libconfuse \
-			librabbitmq.so:net/rabbitmq-c-devel \
+			librabbitmq.so:net/rabbitmq-c \
 			libhiredis.so:databases/hiredis \
 			libexpat.so:textproc/expat2 \
 			libcurl.so:ftp/curl \
@@ -28,9 +27,15 @@ LIB_DEPENDS=		libxml2.so:textproc/libxml2 \
 BUILD_DEPENDS=		ginstall:sysutils/coreutils \
 			gtar:archivers/gtar \
 			gm4:devel/m4 \
-			redis-server:databases/redis
+			redis-server:databases/redis \
+			flex:textproc/flex
 RUN_DEPENDS=		${LOCALBASE}/bin/bash:shells/bash \
 			${LOCALBASE}/bin/grep:textproc/gnugrep
+
+USES=			gmake bison ncurses perl5 pkgconfig python \
+			shebangfix ssl
+USE_RC_SUBR=		opensips
+USE_GCC=		yes
 
 GINSTALL=		ginstall
 
@@ -40,19 +45,18 @@ DOCSDIR=		share/doc/opensips
 USERS=			opensips
 GROUPS=			opensips
 
-USES=			gmake ncurses perl5 pkgconfig python:2.7 shebangfix ssl
-USE_RC_SUBR=		opensips
-USE_GCC=		yes
+LDFLAGS+=		-pthread
 
 NOPRECIOUSMAKEVARS=	yes
 
 OPTIONS_DEFINE=		DEBUG DOCS EXAMPLES HTTP LDAP MEMCACHED MYSQL \
-			PGSQL RADIUS TESTS TLS UNIXODBC SQLITE
+			PGSQL RADIUS SCTP TESTS TLS UNIXODBC SQLITE
 OPTIONS_DEFAULT=	HTTP LDAP MEMCACHED PGSQL RADIUS TLS
 OPTIONS_SUB=		yes
 
 HTTP_DESC=		Enable HTTP transport via libmicrohttpd
 MEMCACHED_DESC=		Build with memcached support
+SCTP_DESC=		SCTP support
 TESTS_DESC=		Install smoke tests
 
 LDAP_USE=		OPENLDAP=client
@@ -66,92 +70,9 @@ MEMCACHED_LIB_DEPENDS=	libmemcached.so:databases/libmemcached
 UNIXODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC
 SQLITE_LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 
-SHEBANG_FILES=		ccopts.sh \
-			ccver.sh \
-			examples/ctd.sh \
-			modules/jabber/doc/jabberreg.pl \
-			modules/seas/doc/xml2sgml.sh \
-			modules/sipcapture/examples/partrotate_unixtimestamp.pl \
-			packaging/debian/rules \
-			packaging/freebsd/files/pkg-deinstall.in \
-			packaging/freebsd/files/pkg-install.in \
-			packaging/gentoo/opensips.init \
-			packaging/redhat_fedora/opensips.init \
-			packaging/redhat_fedora/opensips-m4cfg \
-			packaging/rpm/opensips.init \
-			packaging/solaris/berkeley-postinstall \
-			packaging/solaris/berkeley-preinstall \
-			packaging/solaris/carrierroute-postinstall \
-			packaging/solaris/carrierroute-preinstall \
-			packaging/solaris/identity-postinstall \
-			packaging/solaris/identity-preinstall \
-			packaging/solaris/ldap-postinstall \
-			packaging/solaris/ldap-preinstall \
-			packaging/solaris/mmgeoip-preinstall \
-			packaging/solaris/mysql-postinstall \
-			packaging/solaris/mysql-preinstall \
-			packaging/solaris/pgsql-postinstall \
-			packaging/solaris/pgsql-preinstall \
-			packaging/solaris/regex-postinstall \
-			packaging/solaris/regex-preinstall \
-			packaging/solaris/snmp-postinstall \
-			packaging/solaris/snmp-preinstall \
-			packaging/solaris/xmlrpc-postinstall \
-			packaging/solaris/xmlrpc-preinstall \
-			scripts/dbtextdb/__init__.py \
-			scripts/dbtextdb/dbtextdb.py \
-			scripts/dbtextdb/dbtextdb_test.py \
-			scripts/opensipsctl \
-			scripts/opensipsctl.oracle \
-			scripts/opensipsdbctl \
-			scripts/opensipsdbctl.oracle \
-			scripts/opensipsdbfunc.oracle \
-			scripts/osipsconsole \
-			test/1.sh \
-			test/10.sh \
-			test/11.sh \
-			test/12.sh \
-			test/13.sh \
-			test/14.sh \
-			test/15.sh \
-			test/16.sh \
-			test/17.sh \
-			test/18.sh \
-			test/19.sh \
-			test/2.sh \
-			test/20.sh \
-			test/21.sh \
-			test/22.sh \
-			test/23.sh \
-			test/24.sh \
-			test/25.sh \
-			test/26.sh \
-			test/27.sh \
-			test/28.sh \
-			test/29.sh \
-			test/3.sh \
-			test/30.sh \
-			test/31.sh \
-			test/32.sh \
-			test/33.sh \
-			test/34.sh \
-			test/35.sh \
-			test/4.sh \
-			test/5.sh \
-			test/6.sh \
-			test/7.sh \
-			test/8.sh \
-			test/9.sh \
-			utils/fifo_relay/fifo_server.php \
-			utils/profile/launch.sh
-python_CMD=	${LOCALBASE}/bin/python2.7
+SHEBANG_GLOB=	*.sh *.pl *.py *.php
 
 .include <bsd.port.options.mk>
-
-.if ${SSL_DEFAULT} == base
-BROKEN_FreeBSD_12=	storage size of 'ctx' isn't known
-BROKEN_FreeBSD_13=	storage size of 'ctx' isn't known
-.endif
 
 .if ${PORT_OPTIONS:MHTTP}
 EXTRA_MODULES+=		httpd
@@ -181,6 +102,10 @@ EXTRA_MODULES+=		aaa_radius
 EXTRA_MODULES+=		db_unixodbc
 .endif
 
+.if ${PORT_OPTIONS:MSCTP}
+EXTRA_MODULES+=		sctp
+.endif
+
 .if ${PORT_OPTIONS:MTLS}
 EXTRA_MODULES+=		proto_tls proto_wss tls_mgm
 .endif
@@ -189,10 +114,7 @@ EXTRA_MODULES+=		proto_tls proto_wss tls_mgm
 EXTRA_MODULES+=		db_sqlite
 .endif
 
-OPENSIPS_MAKE_ENV=	CC="${CC}" CXX="${CXX}" CPP="${CPP}" _GCC_RUNTIME="${_GCC_RUNTIME}" CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" LDFLAGS="${LDFLAGS}" PYTHON=${PYTHON_CMD}
-
-post-patch:
-	@${RM} ${WRKSRC}/modules/json/array_del.c
+OPENSIPS_MAKE_ENV=	CC="${CC}" CXX="${CXX}" CPP="${CPP}" _GCC_RUNTIME="${_GCC_RUNTIME}" CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" LDFLAGS="${LDFLAGS}" PYTHON="${PYTHON_CMD}"
 
 do-configure:
 	@(cp files/Makefile.conf ${WRKSRC})
@@ -213,10 +135,6 @@ do-build:
 do-install:
 	cd ${WRKSRC} && ${OPENSIPS_MAKE_ENV} ${GMAKE} ${INSTALL_TARGET}
 
-	@${REINPLACE_CMD} -e "s|^# MD5=.*|MD5=\"md5\"|" ${STAGEDIR}${PREFIX}/etc/opensips/opensipsctlrc.sample
-	@${REINPLACE_CMD} -e "s|^# GREP=.*|GREP=\"${LOCALBASE}/bin/grep\"|" ${STAGEDIR}${PREFIX}/etc/opensips/opensipsctlrc.sample
-	@${REINPLACE_CMD} -e "s|^# MD5=.*|MD5=\"md5\"|" ${STAGEDIR}${PREFIX}/etc/opensips/osipsconsolerc.sample
-	@${REINPLACE_CMD} -e "s|^# GREP=.*|GREP=\"${LOCALBASE}/bin/egrep\"|" ${STAGEDIR}${PREFIX}/etc/opensips/osipsconsolerc.sample
 	(cp ${FILESDIR}/opensips.cfg.sample ${STAGEDIR}${ETCDIR}/opensips.cfg.sample)
 
 do-install-TESTS-on:
@@ -226,16 +144,16 @@ do-install-EXAMPLES-on:
 	(cp -r ${WRKSRC}/examples ${STAGEDIR}${PREFIX}/share/examples/opensips)
 
 post-install:
-	@cd ${STAGEDIR}${PREFIX}/sbin && ${STRIP_CMD} opensips osipsconfig opensipsunix
+	@cd ${STAGEDIR}${PREFIX}/sbin && ${STRIP_CMD} opensips osipsconfig
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/opensips/modules/*.so
 
 post-install-RADIUS-on:
-	(mv ${STAGEDIR}${ETCDIR}/dictionary.opensips ${STAGEDIR}${ETCDIR}/dictionary.opensips.sample)
+	(mv ${WRKSRC}/etc/dictionary.opensips ${STAGEDIR}${ETCDIR}/dictionary.opensips.sample)
 
 # Strip binaries in sbin
 	@${ECHO_CMD} "Stripping binaries in ${STAGEDIR}${PREFIX}/sbin/"
 
-.for i in opensipsunix opensips osipsconfig
+.for i in opensips osipsconfig
 	@if [ -e ${STAGEDIR}${PREFIX}/sbin/${i} ]; then \
 		${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/${i}; \
 	fi
