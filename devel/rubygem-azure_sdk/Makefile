@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	azure_sdk
-PORTVERSION=	0.58.0
+PORTVERSION=	0.58.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -95,7 +95,7 @@ RUN_DEPENDS=	rubygem-azure-storage>=0.15.0.preview<0.15:devel/rubygem-azure-stor
 		rubygem-azure_mgmt_machine_learning_services>=0.17.3<0.18:devel/rubygem-azure_mgmt_machine_learning_services \
 		rubygem-azure_mgmt_maintenance>=0.17.1<0.18:devel/rubygem-azure_mgmt_maintenance \
 		rubygem-azure_mgmt_managed_applications>=0.17.3<0.18:devel/rubygem-azure_mgmt_managed_applications \
-		rubygem-azure_mgmt_mariadb>=0.17.2<0.18:devel/rubygem-azure_mgmt_mariadb \
+		rubygem-azure_mgmt_mariadb>=0.17.3<0.18:devel/rubygem-azure_mgmt_mariadb \
 		rubygem-azure_mgmt_marketplace_ordering>=0.17.5<0.18:devel/rubygem-azure_mgmt_marketplace_ordering \
 		rubygem-azure_mgmt_media_services>=0.20.1<0.21:devel/rubygem-azure_mgmt_media_services \
 		rubygem-azure_mgmt_migrate>=0.17.1<0.18:devel/rubygem-azure_mgmt_migrate \
