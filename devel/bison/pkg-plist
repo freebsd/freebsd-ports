@@ -23,6 +23,7 @@ share/aclocal/bison-i18n.m4
 %%DATADIR%%/skeletons/lalr1.java
 %%DATADIR%%/skeletons/location.cc
 %%DATADIR%%/skeletons/stack.hh
+%%DATADIR%%/skeletons/traceon.m4
 %%DATADIR%%/skeletons/variant.hh
 %%DATADIR%%/skeletons/yacc.c
 %%DATADIR%%/xslt/bison.xsl
