@@ -2,7 +2,7 @@
 
 PORTNAME=	broot
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.14.2
+DISTVERSION=	0.15.1
 CATEGORIES=	misc
 
 MAINTAINER=	vulcan@wired.sh
@@ -65,6 +65,7 @@ CARGO_CRATES=	aho-corasick-0.7.6 \
 		fuchsia-cprng-0.1.1 \
 		fuchsia-zircon-0.3.3 \
 		fuchsia-zircon-sys-0.3.3 \
+		getrandom-0.1.14 \
 		git2-0.11.0 \
 		glob-0.3.0 \
 		hermit-abi-0.1.3 \
@@ -86,6 +87,7 @@ CARGO_CRATES=	aho-corasick-0.7.6 \
 		log-0.4.8 \
 		matches-0.1.8 \
 		memchr-2.2.1 \
+		memmap-0.7.0 \
 		memoffset-0.5.2 \
 		minimad-0.6.4 \
 		mio-0.6.21 \
@@ -101,13 +103,24 @@ CARGO_CRATES=	aho-corasick-0.7.6 \
 		parking_lot_core-0.7.0 \
 		pathdiff-0.1.0 \
 		percent-encoding-2.1.0 \
+		phf-0.8.0 \
+		phf_generator-0.8.0 \
+		phf_macros-0.8.0 \
+		phf_shared-0.8.0 \
 		pkg-config-0.3.17 \
 		plotters-0.2.12 \
+		ppv-lite86-0.2.8 \
+		proc-macro-hack-0.5.16 \
 		proc-macro2-1.0.10 \
 		quote-1.0.2 \
+		rand-0.7.3 \
+		rand_chacha-0.2.2 \
 		rand_core-0.3.1 \
 		rand_core-0.4.2 \
+		rand_core-0.5.1 \
+		rand_hc-0.2.0 \
 		rand_os-0.1.3 \
+		rand_pcg-0.2.1 \
 		rayon-1.3.0 \
 		rayon-core-1.7.0 \
 		rdrand-0.4.0 \
@@ -131,6 +144,7 @@ CARGO_CRATES=	aho-corasick-0.7.6 \
 		signal-hook-0.1.15 \
 		signal-hook-registry-1.2.0 \
 		simplelog-0.7.4 \
+		siphasher-0.3.3 \
 		slab-0.4.2 \
 		smallvec-1.0.0 \
 		strict-0.1.3 \
@@ -156,6 +170,7 @@ CARGO_CRATES=	aho-corasick-0.7.6 \
 		vcpkg-0.2.8 \
 		vec_map-0.8.1 \
 		walkdir-2.3.1 \
+		wasi-0.9.0+wasi-snapshot-preview1 \
 		wasm-bindgen-0.2.60 \
 		wasm-bindgen-backend-0.2.60 \
 		wasm-bindgen-macro-0.2.60 \
