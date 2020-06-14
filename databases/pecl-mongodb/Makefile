@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mongodb
-PORTVERSION=	1.7.1
+PORTVERSION=	1.7.4
 CATEGORIES=	databases pear
 
 MAINTAINER=	pi@FreeBSD.org
