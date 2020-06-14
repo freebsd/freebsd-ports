@@ -1,11 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	meta1
-PORTVERSION=	1.1.0a.15.0
+PORTVERSION=	1.1.0a.15.1
 CATEGORIES=	mail
-MASTER_SITES=	http://www.MeTA1.org/download/.alpha/quar/
-PKGNAMESUFFIX?=	${TLS_SUFFIX}${SASL_SUFFIX}${BERKELEYDB_SUFFIX}${PMILTER_SUFFIX}${PKGNAMESUFFIX2}
-DISTNAME=	${PORTNAME}-1.1.Alpha15.0
+MASTER_SITES=	http://www.MeTA1.org/download/.alpha/pri64/
+DISTNAME=	${PORTNAME}-1.1.Alpha15.1
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Secure and efficient mail gateway
@@ -78,36 +77,22 @@ MAKE_ENV+=	MTA_NETINET6=1
 .if ${PORT_OPTIONS:MBDB}
 BROKEN=		port version of Berkeley DB is not compatible
 INVALID_BDB_VER=	48 5 6
-BERKELEYDB_SUFFIX=	-db${BDB_VER}
 CONFIGURE_ARGS+=	--disable-included-bdb
 CONFIGURE_ARGS+=	--with-bdb-incdir=${BDB_INCLUDE_DIR}
 CONFIGURE_ARGS+=	--with-bdb-libdir=${BDB_LIB_DIR}
 PLIST_SUB+=	WITH_BDBINT="@comment "
 .else
-BERKELEYDB_SUFFIX=	-intbdb
 PLIST_SUB+=	WITH_BDBINT=""
-.endif
-
-.if ! ${PORT_OPTIONS:MPMILTER}
-PMILTER_SUFFIX?=	-nopmilter
 .endif
 
 .if ${PORT_OPTIONS:MMSP}
 CONFLICTS+=	courier-0.* postfix-1.* postfix-2.* smail-3.* zmailer-2.* opensmtpd-* sendmail-*
 .endif
 
-.if ! ${PORT_OPTIONS:MSASL2}
-SASL_SUFFIX?=	-nosasl
-.endif
-
 .if ${PORT_OPTIONS:MSASL2AUTHD}
 .if empty(PORT_OPTIONS:MSASL2)
 IGNORE=		option SASL2AUTHD needs option SASL2
 .endif
-.endif
-
-.if ! ${PORT_OPTIONS:MTLS}
-TLS_SUFFIX?=	-notls
 .endif
 
 post-patch:
