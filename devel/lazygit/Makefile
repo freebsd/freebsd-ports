@@ -2,7 +2,7 @@
 
 PORTNAME=	lazygit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.20.2
+DISTVERSION=	0.20.4
 CATEGORIES=	devel
 
 MAINTAINER=	meta@FreeBSD.org
@@ -22,7 +22,7 @@ GH_TUPLE=	\
 		emirpasic:gods:v1.12.0:emirpasic_gods/vendor/github.com/emirpasic/gods \
 		fatih:color:v1.7.0:fatih_color/vendor/github.com/fatih/color \
 		fsnotify:fsnotify:v1.4.7:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
-		go-errors:errors:v1.0.1:go_errors_errors/vendor/github.com/go-errors/errors \
+		go-errors:errors:v1.0.2:go_errors_errors/vendor/github.com/go-errors/errors \
 		go-git:gcfg:v1.5.0:go_git_gcfg/vendor/github.com/go-git/gcfg \
 		go-git:go-billy:v5.0.0:go_git_go_billy_v5/vendor/github.com/go-git/go-billy/v5 \
 		go-git:go-git:v5.0.0:go_git_go_git_v5/vendor/github.com/go-git/go-git/v5 \
@@ -39,15 +39,15 @@ GH_TUPLE=	\
 		hashicorp:hcl:v1.0.0:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
 		integrii:flaggy:v1.4.0:integrii_flaggy/vendor/github.com/integrii/flaggy \
 		jbenet:go-context:d14ea06fba99:jbenet_go_context/vendor/github.com/jbenet/go-context \
-		jesseduffield:gocui:7765949e1c8a:jesseduffield_gocui/vendor/github.com/jesseduffield/gocui \
-		jesseduffield:termbox-go:1d31d1faa3c9:jesseduffield_termbox_go/vendor/github.com/jesseduffield/termbox-go \
+		jesseduffield:gocui:8cde0b9be542:jesseduffield_gocui/vendor/github.com/jesseduffield/gocui \
+		jesseduffield:termbox-go:4dc645f7e8ba:jesseduffield_termbox_go/vendor/github.com/jesseduffield/termbox-go \
 		kardianos:osext:2bc1f35cddc0:kardianos_osext/vendor/github.com/kardianos/osext \
 		kevinburke:ssh_config:01f96b0aa0cd:kevinburke_ssh_config/vendor/github.com/kevinburke/ssh_config \
 		konsorten:go-windows-terminal-sequences:v1.0.2:konsorten_go_windows_terminal_sequences/vendor/github.com/konsorten/go-windows-terminal-sequences \
 		magiconair:properties:v1.8.1:magiconair_properties/vendor/github.com/magiconair/properties \
 		mattn:go-colorable:v0.1.4:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-isatty:v0.0.11:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
-		mattn:go-runewidth:v0.0.8:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
+		mattn:go-runewidth:v0.0.9:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
 		mgutz:str:v1.2.0:mgutz_str/vendor/github.com/mgutz/str \
 		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
 		mitchellh:mapstructure:v1.1.2:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
