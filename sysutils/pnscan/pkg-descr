@@ -1,0 +1,9 @@
+This is a port of pnscan, a Parallel Network Scanner
+
+This is a pretty basic tool to scan IPv4 networks for TCP
+services. No more, no less.
+
+WWW: https://github.com/ptrrkssn/pnscan
+
+- Peter Eriksson
+pen@lysator.liu.se
