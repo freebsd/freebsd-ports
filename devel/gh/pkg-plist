@@ -1,10 +1,14 @@
 bin/gh
 %%COMPLETIONS%%etc/bash_completion.d/gh
+%%MANPAGES%%man/man1/gh-alias-delete.1.gz
+%%MANPAGES%%man/man1/gh-alias-list.1.gz
+%%MANPAGES%%man/man1/gh-alias-set.1.gz
+%%MANPAGES%%man/man1/gh-alias.1.gz
+%%MANPAGES%%man/man1/gh-api.1.gz
 %%MANPAGES%%man/man1/gh-completion.1.gz
 %%MANPAGES%%man/man1/gh-config-get.1.gz
 %%MANPAGES%%man/man1/gh-config-set.1.gz
 %%MANPAGES%%man/man1/gh-config.1.gz
-%%MANPAGES%%man/man1/gh-credits.1.gz
 %%MANPAGES%%man/man1/gh-gist-create.1.gz
 %%MANPAGES%%man/man1/gh-gist.1.gz
 %%MANPAGES%%man/man1/gh-issue-close.1.gz
