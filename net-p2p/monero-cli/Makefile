@@ -3,7 +3,7 @@
 
 PORTNAME=	monero-cli
 # To build from an arbitrary git commit comment PORTVERSION and PORTREVISION (if present)
-PORTVERSION=	0.15.0.5
+PORTVERSION=	0.16.0.0
 DISTVERSIONPREFIX=	v
 # and uncomment the following two lines (use for example -git-HEAD or -git-b6420e1)
 #PORTVERSION=	0
@@ -44,7 +44,7 @@ GIT_COMMIT=	${DISTVERSIONPREFIX}${PORTVERSION}
 .endif
 GH_TUPLE=	monero-project:monero:${GIT_COMMIT} \
 		tevador:RandomX:7567cef4c6192fb5356bbdd7:ext1/external/randomx \
-		trezor:trezor-common:31a0073c62738:ext2/external/trezor-common
+		trezor:trezor-common:bff7fdfe436c727982c:ext2/external/trezor-common
 
 CFLAGS+=	-D_WANT_SEMUN
 
