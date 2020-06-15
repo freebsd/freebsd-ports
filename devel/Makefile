@@ -3247,6 +3247,7 @@
     SUBDIR += p5-Term-App-Roles
     SUBDIR += p5-Term-App-Util-Color
     SUBDIR += p5-Term-App-Util-Interactive
+    SUBDIR += p5-Term-App-Util-Size
     SUBDIR += p5-Term-CallEditor
     SUBDIR += p5-Term-Choose
     SUBDIR += p5-Term-Choose-Util
