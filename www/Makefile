@@ -413,6 +413,7 @@
     SUBDIR += moodle35
     SUBDIR += moodle37
     SUBDIR += moodle38
+    SUBDIR += moodle39
     SUBDIR += morty
     SUBDIR += mozplugger
     SUBDIR += multisort
