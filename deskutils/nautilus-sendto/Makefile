@@ -2,16 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	nautilus-sendto
-PORTVERSION=	3.8.3
+PORTVERSION=	3.8.6
 CATEGORIES=	deskutils
 MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Convenience application to send a file via email
 
+LICENSE=	GPLv2
+LICENSE_FILES=	${WRKSRC}/COPYING
+
 USE_GNOME=	intlhack introspection:build
-USES=		gettext gmake gnome localbase pathfix pkgconfig tar:xz
-GNU_CONFIGURE=	yes
+USES=		gettext gnome localbase meson pkgconfig tar:xz
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 CPPFLAGS+=	-Wno-error=format-nonliteral
