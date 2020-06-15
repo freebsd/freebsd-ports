@@ -12,7 +12,7 @@ COMMENT=	Course management system based on social constructionism
 
 LICENSE=	GPLv3
 
-CONFLICTS=	moodle36-3.6.[0-9]* moodle37-3.7.[0-9]* moodle38-3.8-[0-9]*
+CONFLICTS=	moodle37-3.7.[0-9]* moodle38-3.8-[0-9]* moodle39-3.9
 
 USES=		cpe php:flavors tar:tgz
 USE_PHP=	ctype curl dom fileinfo filter gd hash iconv intl json mbstring \
