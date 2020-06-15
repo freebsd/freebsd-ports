@@ -12,7 +12,7 @@ LICENSE_COMB=	multi
 
 CONFLICTS_INSTALL=	mesa-libs # include/GL/gl.h
 
-USES=		compiler:c++11-lib localbase meson pkgconfig
+USES=		localbase meson pkgconfig
 USE_LDCONFIG=	yes
 
 USE_GITLAB=	yes
@@ -27,6 +27,14 @@ OPTIONS_SUB=	yes
 X11_USES=		xorg
 X11_USE=		XORG=x11,xext,xorgproto
 X11_MESON_ENABLED=	x11 glx
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc64
+USES+=		compiler:gcc-c++11-lib
+.else
+USES+=		compiler:c++11-lib
+.endif
 
 # Lots of software expects gl.pc even when it can build with EGL only
 post-install-X11-off:
