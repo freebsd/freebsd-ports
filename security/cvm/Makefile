@@ -35,6 +35,8 @@ VCHKPW_ALL_TARGET=	cvm-vchkpw
 
 VCHKPW_BUILD_DEPENDS=	${LOCALBASE}/vpopmail/lib/libvpopmail.a:mail/vpopmail
 
+MAKE_JOBS_UNSAFE=	yes
+
 do-configure:
 	${ECHO_CMD} "${PREFIX}"		> ${WRKSRC}/conf-home
 	${ECHO_CMD} "${STAGEDIR}${PREFIX}/bin"	> ${WRKSRC}/conf-bin
