@@ -1,5 +1,5 @@
---- readTSC.C.orig	2019-02-27 09:30:27 UTC
-+++ readTSC.C
+--- readTSC.cpp.orig	2019-02-27 09:30:27 UTC
++++ readTSC.cpp
 @@ -19,10 +19,22 @@
  long long readTSC(void)
  {
