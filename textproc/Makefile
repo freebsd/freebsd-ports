@@ -1420,6 +1420,7 @@
     SUBDIR += py-zope.tal
     SUBDIR += py-zpt
     SUBDIR += qprint
+    SUBDIR += qr
     SUBDIR += qrcodegen
     SUBDIR += qstardict
     SUBDIR += qt5-xml
