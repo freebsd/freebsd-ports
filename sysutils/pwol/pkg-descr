@@ -1,0 +1,9 @@
+This is a port of pwol, Peter's Wake-on-Lan tool
+
+This is a simple tool to send WoL packets to wake up
+hosts. No more, no less.
+
+WWW: https://github.com/ptrrkssn/pwol
+
+- Peter Eriksson
+pen@lysator.liu.se
