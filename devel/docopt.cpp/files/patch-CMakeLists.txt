@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2018-11-15 07:15:24 UTC
+--- CMakeLists.txt.orig	2020-05-11 17:23:10 UTC
 +++ CMakeLists.txt
 @@ -42,7 +42,7 @@ if(MSVC OR XCODE)
      # Xcode does not support libraries with only object files as sources.
@@ -9,21 +9,7 @@
  else()
      # If not using MSVC or Xcode, we will create an intermediate object target
      # to avoid compiling the source code twice.
-@@ -50,11 +50,11 @@ else()
-     set_target_properties(docopt_o PROPERTIES POSITION_INDEPENDENT_CODE TRUE)
- 
-     add_library(docopt SHARED $<TARGET_OBJECTS:docopt_o>)
--    add_library(docopt_s STATIC $<TARGET_OBJECTS:docopt_o>)
-+    #add_library(docopt_s STATIC $<TARGET_OBJECTS:docopt_o>)
- endif()
- 
- target_include_directories(docopt PUBLIC $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}> $<INSTALL_INTERFACE:include/docopt>)
--target_include_directories(docopt_s PUBLIC $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}> $<INSTALL_INTERFACE:include/docopt>)
-+#target_include_directories(docopt_s PUBLIC $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}> $<INSTALL_INTERFACE:include/docopt>)
- 
- if(MSVC)
-     # DOCOPT_DLL: Must be specified when building *and* when using the DLL.
-@@ -67,7 +67,7 @@ endif()
+@@ -71,7 +71,7 @@ endif()
  
  if(NOT MSVC)
  	set_target_properties(docopt PROPERTIES OUTPUT_NAME docopt)
@@ -32,7 +18,7 @@
  endif()
  
  if(USE_BOOST_REGEX)
-@@ -79,7 +79,7 @@ if(USE_BOOST_REGEX)
+@@ -83,7 +83,7 @@ if(USE_BOOST_REGEX)
      include_directories(${Boost_INCLUDE_DIRS})
      target_link_libraries(docopt ${Boost_LIBRARIES})
  	if(WITH_STATIC)
@@ -41,7 +27,7 @@
  	endif()
  endif()
  
-@@ -116,7 +116,7 @@ set(export_name "docopt-targets")
+@@ -120,7 +120,7 @@ set(export_name "docopt-targets")
  install(TARGETS docopt EXPORT ${export_name} DESTINATION ${CMAKE_INSTALL_LIBDIR})
  
  # Development package

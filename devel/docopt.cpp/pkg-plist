@@ -7,3 +7,6 @@ lib/cmake/docopt/docopt-config.cmake
 lib/cmake/docopt/docopt-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/docopt/docopt-targets.cmake
 lib/libdocopt.so
+lib/libdocopt.so.0
+lib/libdocopt.so.0.6.2
+libdata/pkgconfig/docopt.pc
