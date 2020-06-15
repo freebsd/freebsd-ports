@@ -37,6 +37,9 @@ share/gtk-doc/html/gspell-1.0/GtkTextView-support.html
 share/gtk-doc/html/gspell-1.0/annexes.html
 share/gtk-doc/html/gspell-1.0/annotation-glossary.html
 share/gtk-doc/html/gspell-1.0/api-index-full.html
+share/gtk-doc/html/gspell-1.0/api-index-1-2.html
+share/gtk-doc/html/gspell-1.0/api-index-1-4.html
+share/gtk-doc/html/gspell-1.0/api-index-1-6.html
 share/gtk-doc/html/gspell-1.0/api-reference.html
 share/gtk-doc/html/gspell-1.0/core-classes.html
 share/gtk-doc/html/gspell-1.0/gspell-1.0.devhelp2
@@ -81,6 +84,7 @@ share/gtk-doc/html/gspell-1.0/up.png
 %%NLS%%share/locale/lv/LC_MESSAGES/gspell-1.mo
 %%NLS%%share/locale/mjw/LC_MESSAGES/gspell-1.mo
 %%NLS%%share/locale/ml/LC_MESSAGES/gspell-1.mo
+%%NLS%%share/locale/ms/LC_MESSAGES/gspell-1.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/gspell-1.mo
 %%NLS%%share/locale/ne/LC_MESSAGES/gspell-1.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/gspell-1.mo
