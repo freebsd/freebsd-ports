@@ -1,9 +1,9 @@
-If your code lets other people supply callback functions, it's important to 
-specify the function signature you expect, and check that functions support 
-that. Adding extra parameters later would break other peoples code unless 
+If your code lets other people supply callback functions, it's important to
+specify the function signature you expect, and check that functions support
+that. Adding extra parameters later would break other peoples code unless
 you're careful.
 
-backcall provides a way of specifying the callback signature using a prototype 
+backcall provides a way of specifying the callback signature using a prototype
 function
 
 WWW: https://github.com/takluyver/backcall
