@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gimp
-DISTVERSION?=	2.10.18
+DISTVERSION?=	2.10.20
 PORTEPOCH?=	2
 CATEGORIES=	graphics gnome
 
