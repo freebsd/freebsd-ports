@@ -1,0 +1,4 @@
+Term::App::Util::Interactive tries to determine whether terminal application is
+running interactively.
+
+WWW: https://metacpan.org/release/Term-App-Util-Interactive
