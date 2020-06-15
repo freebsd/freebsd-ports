@@ -16,8 +16,12 @@ include/gegl-%%GEGL_VER%%/gegl-enums.h
 include/gegl-%%GEGL_VER%%/gegl-graph-debug.h
 include/gegl-%%GEGL_VER%%/gegl-init.h
 include/gegl-%%GEGL_VER%%/gegl-lookup.h
+include/gegl-%%GEGL_VER%%/gegl-math.h
 include/gegl-%%GEGL_VER%%/gegl-matrix.h
 include/gegl-%%GEGL_VER%%/gegl-memory.h
+include/gegl-%%GEGL_VER%%/gegl-metadata.h
+include/gegl-%%GEGL_VER%%/gegl-metadatahash.h
+include/gegl-%%GEGL_VER%%/gegl-metadatastore.h
 include/gegl-%%GEGL_VER%%/gegl-node.h
 include/gegl-%%GEGL_VER%%/gegl-op.h
 include/gegl-%%GEGL_VER%%/gegl-operations-util.h
@@ -62,8 +66,8 @@ include/gegl-%%GEGL_VER%%/operation/gegl-operation-area-filter.h
 include/gegl-%%GEGL_VER%%/operation/gegl-operation-composer.h
 include/gegl-%%GEGL_VER%%/operation/gegl-operation-composer3.h
 include/gegl-%%GEGL_VER%%/operation/gegl-operation-context.h
-include/gegl-%%GEGL_VER%%/operation/gegl-operation-handlers.h
 include/gegl-%%GEGL_VER%%/operation/gegl-operation-filter.h
+include/gegl-%%GEGL_VER%%/operation/gegl-operation-handlers.h
 include/gegl-%%GEGL_VER%%/operation/gegl-operation-meta-json.h
 include/gegl-%%GEGL_VER%%/operation/gegl-operation-meta.h
 include/gegl-%%GEGL_VER%%/operation/gegl-operation-point-composer.h
@@ -140,6 +144,7 @@ share/locale/es/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/eu/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/fr/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/gl/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
+share/locale/hr/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/id/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/is/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/it/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
@@ -148,10 +153,11 @@ share/locale/lv/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/mr/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/nb/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/ne/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
+share/locale/nl/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/oc/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/pl/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
-share/locale/pt_BR/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/pt/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
+share/locale/pt_BR/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/ru/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/sk/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/sl/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
