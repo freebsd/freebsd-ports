@@ -1,3 +1,3 @@
-TIMESTAMP = 1588013502
-SHA256 (flask-marshmallow-0.12.0.tar.gz) = 6e6aec171b8e092e0eafaf035ff5b8637bf3a58ab46f568c4c1bab02f2a3c196
-SIZE (flask-marshmallow-0.12.0.tar.gz) = 35745
+TIMESTAMP = 1592145161
+SHA256 (flask-marshmallow-0.13.0.tar.gz) = aefc1f1d96256c430a409f08241bab75ffe97e5d14ac5d1f000764e39bf4873a
+SIZE (flask-marshmallow-0.13.0.tar.gz) = 35708
