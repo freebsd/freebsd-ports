@@ -387,7 +387,6 @@
 %%WWWDIR%%/zp-core/functions-db-MySQLi.php
 %%WWWDIR%%/zp-core/functions-db-PDO_MySQL.php
 %%WWWDIR%%/zp-core/functions-db_NULL.php
-%%WWWDIR%%/zp-core/functions-db_PDO.php
 %%WWWDIR%%/zp-core/functions-filter.php
 %%WWWDIR%%/zp-core/functions-i18n.php
 %%WWWDIR%%/zp-core/functions-image.php
@@ -422,6 +421,9 @@
 %%WWWDIR%%/zp-core/images/cache.png
 %%WWWDIR%%/zp-core/images/calendar.png
 %%WWWDIR%%/zp-core/images/captcha_background.png
+%%WWWDIR%%/zp-core/images/clock_expired.png
+%%WWWDIR%%/zp-core/images/clock_expiredate.png
+%%WWWDIR%%/zp-core/images/clock_futuredate.png
 %%WWWDIR%%/zp-core/images/comments-off.png
 %%WWWDIR%%/zp-core/images/comments-on.png
 %%WWWDIR%%/zp-core/images/drag_handle.png
@@ -625,11 +627,10 @@
 %%WWWDIR%%/zp-core/lib-NoGraphics.php
 %%WWWDIR%%/zp-core/lib-auth.php
 %%WWWDIR%%/zp-core/lib-encryption.php
-%%WWWDIR%%/zp-core/lib-gettext/gettext.inc
+%%WWWDIR%%/zp-core/lib-gettext/gettext.php
 %%WWWDIR%%/zp-core/lib-htmLawed.php
 %%WWWDIR%%/zp-core/lib-json.php
 %%WWWDIR%%/zp-core/lib-kses.php
-%%WWWDIR%%/zp-core/lib-pclzip.php
 %%WWWDIR%%/zp-core/lib-utf8.php
 %%WWWDIR%%/zp-core/lib-zipStream.php
 %%WWWDIR%%/zp-core/license.php
@@ -988,6 +989,7 @@
 %%WWWDIR%%/zp-core/zp-extensions/elFinder/js/i18n/elfinder.fallback.js
 %%WWWDIR%%/zp-core/zp-extensions/elFinder/js/i18n/elfinder.fo.js
 %%WWWDIR%%/zp-core/zp-extensions/elFinder/js/i18n/elfinder.fr.js
+%%WWWDIR%%/zp-core/zp-extensions/elFinder/js/i18n/elfinder.fr_CA.js
 %%WWWDIR%%/zp-core/zp-extensions/elFinder/js/i18n/elfinder.he.js
 %%WWWDIR%%/zp-core/zp-extensions/elFinder/js/i18n/elfinder.hr.js
 %%WWWDIR%%/zp-core/zp-extensions/elFinder/js/i18n/elfinder.hu.js
@@ -1013,6 +1015,7 @@
 %%WWWDIR%%/zp-core/zp-extensions/elFinder/js/i18n/elfinder.zh_CN.js
 %%WWWDIR%%/zp-core/zp-extensions/elFinder/js/i18n/elfinder.zh_TW.js
 %%WWWDIR%%/zp-core/zp-extensions/elFinder/js/i18n/help/cs.html.js
+%%WWWDIR%%/zp-core/zp-extensions/elFinder/js/i18n/help/de.html.js
 %%WWWDIR%%/zp-core/zp-extensions/elFinder/js/i18n/help/en.html.js
 %%WWWDIR%%/zp-core/zp-extensions/elFinder/js/i18n/help/es.html.js
 %%WWWDIR%%/zp-core/zp-extensions/elFinder/js/i18n/help/ja.html.js
@@ -1427,7 +1430,6 @@
 %%WWWDIR%%/zp-core/zp-extensions/zenpage/class-zenpageroot.php
 %%WWWDIR%%/zp-core/zp-extensions/zenpage/deprecated-functions.php
 %%WWWDIR%%/zp-core/zp-extensions/zenpage/images/add.png
-%%WWWDIR%%/zp-core/zp-extensions/zenpage/images/clock.png
 %%WWWDIR%%/zp-core/zp-extensions/zenpage/images/folder.png
 %%WWWDIR%%/zp-core/zp-extensions/zenpage/images/info.png
 %%WWWDIR%%/zp-core/zp-extensions/zenpage/images/loadingAnimation.gif
