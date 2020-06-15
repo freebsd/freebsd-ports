@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	squid
-PORTVERSION=	5.0.2
-PORTREVISION=	2
+PORTVERSION=	5.0.3
 CATEGORIES=	www
 MASTER_SITES=	http://www.squid-cache.org/Versions/v5/ \
 		http://www2.us.squid-cache.org/Versions/v5/ \
@@ -27,7 +26,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		compiler:c++11-lib cpe perl5 shebangfix tar:xz
 
-CONFLICTS=	squid3-* squid-*
+CONFLICTS=	squid3-* squid-4.*
 CPE_VENDOR=	squid-cache
 SHEBANG_FILES=	scripts/*.pl contrib/*.pl tools/*.pl
 GNU_CONFIGURE=	yes
