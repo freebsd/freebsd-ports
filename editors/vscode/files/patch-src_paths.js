@@ -1,6 +1,6 @@
---- src/paths.js.orig	2020-04-16 15:59:11 UTC
+--- src/paths.js.orig	2020-06-09 17:02:22 UTC
 +++ src/paths.js
-@@ -19,7 +19,8 @@ function getAppDataPath(platform) {
+@@ -18,7 +18,8 @@ function getAppDataPath(platform) {
  	switch (platform) {
  		case 'win32': return process.env['VSCODE_APPDATA'] || process.env['APPDATA'] || path.join(process.env['USERPROFILE'], 'AppData', 'Roaming');
  		case 'darwin': return process.env['VSCODE_APPDATA'] || path.join(os.homedir(), 'Library', 'Application Support');

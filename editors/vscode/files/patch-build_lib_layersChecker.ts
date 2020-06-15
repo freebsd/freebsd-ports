@@ -1,6 +1,6 @@
---- build/lib/layersChecker.ts.orig	2020-03-09 13:51:53 UTC
+--- build/lib/layersChecker.ts.orig	2020-06-09 17:02:22 UTC
 +++ build/lib/layersChecker.ts
-@@ -225,7 +225,7 @@ function checkFile(program: ts.Program, sourceFile: ts
+@@ -234,7 +234,7 @@ function checkFile(program: ts.Program, sourceFile: ts
  function createProgram(tsconfigPath: string): ts.Program {
  	const tsConfig = ts.readConfigFile(tsconfigPath, ts.sys.readFile);
  
