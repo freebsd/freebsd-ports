@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Term-App-Roles
-PORTVERSION=	0.030
+PORTVERSION=	0.031
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,6 +16,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Moo>=0:devel/p5-Moo \
+		p5-Term-App-Util-Color>=0:devel/p5-Term-App-Util-Color \
+		p5-Term-App-Util-Interactive>=0.002:devel/p5-Term-App-Util-Interactive \
+		p5-Term-App-Util-Size>=0:devel/p5-Term-App-Util-Size \
 		p5-Term-Detect-Software>=0:devel/p5-Term-Detect-Software
 
 USES=		perl5
