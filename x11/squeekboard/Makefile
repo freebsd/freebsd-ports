@@ -2,8 +2,7 @@
 
 PORTNAME=	squeekboard
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.9.1
-PORTREVISION=	1
+DISTVERSION=	1.9.2
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -27,19 +26,19 @@ USE_GITLAB=	yes
 USE_GNOME=	cairo gdkpixbuf2 gnomedesktop3 gtk30
 GL_SITE=	https://source.puri.sm
 GL_ACCOUNT=	Librem5
-GL_COMMIT=	334898c5a5d45a5883654b4f2f07f28ac8f2bfc4
+GL_COMMIT=	1a2df96c02c2600d9a1b1e779998534a4a1e9872
 MAKE_ENV=	${CARGO_ENV}
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/${PORTNAME}-entry \
 		bin/${PORTNAME}-test-layout \
 		share/applications/sm.puri.Squeekboard.desktop
 
-CARGO_CRATES=	aho-corasick-0.7.9 \
+CARGO_CRATES=	aho-corasick-0.7.10 \
 		atk-sys-0.7.0 \
 		bitflags-1.0.4 \
 		cairo-rs-0.5.0 \
 		cairo-sys-rs-0.7.0 \
-		cc-1.0.50 \
+		cc-1.0.54 \
 		clap-2.32.0 \
 		dtoa-0.4.5 \
 		fragile-0.3.0 \
@@ -55,22 +54,22 @@ CARGO_CRATES=	aho-corasick-0.7.9 \
 		gtk-0.5.0 \
 		gtk-sys-0.7.0 \
 		lazy_static-1.4.0 \
-		libc-0.2.67 \
-		linked-hash-map-0.5.2 \
+		libc-0.2.71 \
+		linked-hash-map-0.5.3 \
 		maplit-1.0.2 \
 		memchr-2.3.3 \
 		memmap-0.7.0 \
 		pango-0.5.0 \
 		pango-sys-0.7.0 \
 		pkg-config-0.3.17 \
-		proc-macro2-1.0.9 \
-		quote-1.0.3 \
+		proc-macro2-1.0.18 \
+		quote-1.0.6 \
 		regex-1.1.9 \
-		regex-syntax-0.6.16 \
-		serde-1.0.104 \
-		serde_derive-1.0.104 \
-		serde_yaml-0.8.11 \
-		syn-1.0.16 \
+		regex-syntax-0.6.18 \
+		serde-1.0.111 \
+		serde_derive-1.0.111 \
+		serde_yaml-0.8.12 \
+		syn-1.0.30 \
 		textwrap-0.10.0 \
 		thread_local-0.3.6 \
 		unicode-width-0.1.7 \
