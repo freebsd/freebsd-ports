@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	aws-sdk-resources
-PORTVERSION=	3.73.0
+PORTVERSION=	3.74.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -45,6 +45,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-cloudwatch>=1<2:devel/rubygem-aws-sdk-cloudwatch \
 		rubygem-aws-sdk-cloudwatchevents>=1<2:devel/rubygem-aws-sdk-cloudwatchevents \
 		rubygem-aws-sdk-cloudwatchlogs>=1<2:devel/rubygem-aws-sdk-cloudwatchlogs \
+		rubygem-aws-sdk-codeartifact>=1<2:devel/rubygem-aws-sdk-codeartifact \
 		rubygem-aws-sdk-codebuild>=1<2:devel/rubygem-aws-sdk-codebuild \
 		rubygem-aws-sdk-codecommit>=1<2:devel/rubygem-aws-sdk-codecommit \
 		rubygem-aws-sdk-codedeploy>=1<2:devel/rubygem-aws-sdk-codedeploy \
