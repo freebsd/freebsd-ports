@@ -48,13 +48,13 @@ RUN_DEPENDS=	bind-tools>0:dns/bind-tools
 # XXX: remove tar:bz2
 USES=		autoreconf compiler:c11 cpe libedit libtool pkgconfig ssl tar:bz2
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.17.0a0.2020.06.06
+ISCVERSION=	9.17.0a0.2020.06.11
 # XXX: Remove gitlab
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.isc.org
 GL_ACCOUNT=	isc-projects
 GL_PROJECT=	bind9
-GL_COMMIT=	d95951729025a8775a8a85d61a76fb5389a71adc
+GL_COMMIT=	50d3344ca5b098b1e629e2c123393a308e80bad4
 
 CPE_VENDOR=	isc
 CPE_VERSION=	${ISCVERSION:C/-.*//}
@@ -228,13 +228,9 @@ SUB_LIST+=	ENGINES=/usr/lib/engines
 SUB_LIST+=	ENGINES=${LOCALBASE}/lib/engines
 .endif
 
-# XXX: Remove
-post-extract:
-	echo "SRCID=${GL_COMMIT}" > ${WRKSRC}/srcid
-
 # XXX: Remove first REINPLACE_CMD
 post-patch:
-	@${REINPLACE_CMD} -e '/^m4_define.*bind_VERSION_EXTRA/s#)#-${GL_COMMIT})#' \
+	@${REINPLACE_CMD} -e '/^m4_define(\[bind_SRCID/s/\[m4.*\]/${GL_COMMIT}/' \
 		${WRKSRC}/configure.ac
 .for FILE in check/named-checkconf.rst named/named.rst nsupdate/nsupdate.rst \
 	rndc/rndc.rst
