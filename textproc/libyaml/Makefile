@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libyaml
-PORTVERSION=	0.2.4
+PORTVERSION=	0.2.5
 CATEGORIES=	textproc
 MASTER_SITES=	https://pyyaml.org/download/libyaml/
 DISTNAME=	yaml-${PORTVERSION}
@@ -13,7 +13,7 @@ COMMENT=	YAML 1.1 parser and emitter written in C
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/License
 
-USES=		cpe libtool pathfix
+USES=		cpe gmake libtool pathfix
 
 GNU_CONFIGURE=	yes
 
