@@ -121,7 +121,6 @@ lib/emscripten/site/source/docs/porting/connecting_cpp_and_javascript/WebIDL-Bin
 lib/emscripten/site/source/docs/porting/connecting_cpp_and_javascript/embind.rst
 lib/emscripten/site/source/docs/porting/connecting_cpp_and_javascript/index.rst
 lib/emscripten/site/source/docs/porting/emscripten-runtime-environment.rst
-lib/emscripten/site/source/docs/porting/emterpreter.rst
 lib/emscripten/site/source/docs/porting/files/FileSystemArchitecture.png
 lib/emscripten/site/source/docs/porting/files/Synchronous-Virtual-XHR-Backed-File-System-Usage.rst
 lib/emscripten/site/source/docs/porting/files/file_systems_overview.rst
@@ -164,7 +163,6 @@ lib/emscripten/src/compiler.js
 lib/emscripten/src/cpuprofiler.js
 lib/emscripten/src/deps_info.json
 lib/emscripten/src/deterministic.js
-lib/emscripten/src/ecmascript_simd.js
 lib/emscripten/src/embind/embind.js
 lib/emscripten/src/embind/emval.js
 lib/emscripten/src/emrun_postjs.js
@@ -180,6 +178,7 @@ lib/emscripten/src/jsifier.js
 lib/emscripten/src/library.js
 lib/emscripten/src/library_asmfs.js
 lib/emscripten/src/library_async.js
+lib/emscripten/src/library_bootstrap.js
 lib/emscripten/src/library_browser.js
 lib/emscripten/src/library_cyberdwarf.js
 lib/emscripten/src/library_debugger_toolkit.js
@@ -196,6 +195,7 @@ lib/emscripten/src/library_glew.js
 lib/emscripten/src/library_glfw.js
 lib/emscripten/src/library_glut.js
 lib/emscripten/src/library_html5.js
+lib/emscripten/src/library_html5_webgpu.js
 lib/emscripten/src/library_idbfs.js
 lib/emscripten/src/library_idbstore.js
 lib/emscripten/src/library_int53.js
@@ -213,6 +213,7 @@ lib/emscripten/src/library_pthread_stub.js
 lib/emscripten/src/library_sdl.js
 lib/emscripten/src/library_signals.js
 lib/emscripten/src/library_sockfs.js
+lib/emscripten/src/library_stack.js
 lib/emscripten/src/library_stack_trace.js
 lib/emscripten/src/library_strings.js
 lib/emscripten/src/library_strtok_r.c
@@ -367,6 +368,14 @@ lib/emscripten/system/include/SDL/SDL_version.h
 lib/emscripten/system/include/SDL/SDL_video.h
 lib/emscripten/system/include/SDL/begin_code.h
 lib/emscripten/system/include/SDL/close_code.h
+lib/emscripten/system/include/SSE/avxintrin.h
+lib/emscripten/system/include/SSE/emmintrin.h
+lib/emscripten/system/include/SSE/immintrin.h
+lib/emscripten/system/include/SSE/nmmintrin.h
+lib/emscripten/system/include/SSE/pmmintrin.h
+lib/emscripten/system/include/SSE/smmintrin.h
+lib/emscripten/system/include/SSE/tmmintrin.h
+lib/emscripten/system/include/SSE/xmmintrin.h
 lib/emscripten/system/include/X11/X.h
 lib/emscripten/system/include/X11/XKBlib.h
 lib/emscripten/system/include/X11/Xatom.h
@@ -419,13 +428,13 @@ lib/emscripten/system/include/emscripten/fetch.h
 lib/emscripten/system/include/emscripten/fiber.h
 lib/emscripten/system/include/emscripten/heap.h
 lib/emscripten/system/include/emscripten/html5.h
+lib/emscripten/system/include/emscripten/html5_webgpu.h
 lib/emscripten/system/include/emscripten/key_codes.h
 lib/emscripten/system/include/emscripten/math.h
 lib/emscripten/system/include/emscripten/posix_socket.h
 lib/emscripten/system/include/emscripten/threading.h
 lib/emscripten/system/include/emscripten/trace.h
 lib/emscripten/system/include/emscripten/val.h
-lib/emscripten/system/include/emscripten/vector.h
 lib/emscripten/system/include/emscripten/vr.h
 lib/emscripten/system/include/emscripten/websocket.h
 lib/emscripten/system/include/emscripten/wire.h
@@ -886,6 +895,7 @@ lib/emscripten/system/lib/compiler-rt/lib/builtins/divmoddi4.c
 lib/emscripten/system/lib/compiler-rt/lib/builtins/divsc3.c
 lib/emscripten/system/lib/compiler-rt/lib/builtins/divtf3.c
 lib/emscripten/system/lib/compiler-rt/lib/builtins/divti3.c
+lib/emscripten/system/lib/compiler-rt/lib/builtins/emscripten_setjmp.c
 lib/emscripten/system/lib/compiler-rt/lib/builtins/extenddftf2.c
 lib/emscripten/system/lib/compiler-rt/lib/builtins/extendsftf2.c
 lib/emscripten/system/lib/compiler-rt/lib/builtins/fixdfdi.c
@@ -1192,6 +1202,7 @@ lib/emscripten/system/lib/compiler-rt/lib/ubsan/weak_symbols.txt
 lib/emscripten/system/lib/compiler-rt/lib/ubsan_minimal/readme.txt
 lib/emscripten/system/lib/compiler-rt/lib/ubsan_minimal/ubsan_minimal_handlers.cpp
 lib/emscripten/system/lib/compiler-rt/readme.txt
+lib/emscripten/system/lib/compiler-rt/stack_ops.s
 lib/emscripten/system/lib/debugging.cpp
 lib/emscripten/system/lib/dlmalloc.c
 lib/emscripten/system/lib/embind/bind.cpp
@@ -1206,6 +1217,7 @@ lib/emscripten/system/lib/html5/key_codes.c
 lib/emscripten/system/lib/jsmath.c
 lib/emscripten/system/lib/libc/README.md
 lib/emscripten/system/lib/libc/crt1.c
+lib/emscripten/system/lib/libc/crt1_reactor.c
 lib/emscripten/system/lib/libc/emscripten_asan_fcntl.c
 lib/emscripten/system/lib/libc/emscripten_asan_memchr.c
 lib/emscripten/system/lib/libc/emscripten_asan_strchrnul.c
@@ -2750,8 +2762,11 @@ lib/emscripten/system/lib/pthread/library_pthread_asmjs.c
 lib/emscripten/system/lib/pthread/library_pthread_stub.c
 lib/emscripten/system/lib/pthread/library_pthread_wasm.c
 lib/emscripten/system/lib/sbrk.c
-lib/emscripten/system/lib/standalone_wasm.c
-lib/emscripten/system/lib/standalone_wasm_stdio.c
+lib/emscripten/system/lib/standalone/__main_argc_argv.c
+lib/emscripten/system/lib/standalone/__main_void.c
+lib/emscripten/system/lib/standalone/__original_main.c
+lib/emscripten/system/lib/standalone/standalone.c
+lib/emscripten/system/lib/standalone/standalone_wasm_stdio.c
 lib/emscripten/system/lib/symbols/asmjs/libal.symbols
 lib/emscripten/system/lib/symbols/asmjs/libgl-emu-full_es3.symbols
 lib/emscripten/system/lib/symbols/asmjs/libgl-emu-ofb-full_es3.symbols
@@ -3183,6 +3198,7 @@ lib/emscripten/tools/acorn-optimizer.js
 lib/emscripten/tools/add_license.py
 lib/emscripten/tools/asm_module.py
 lib/emscripten/tools/autodebugger.py
+lib/emscripten/tools/building.py
 lib/emscripten/tools/cache.py
 lib/emscripten/tools/check_clean.py
 lib/emscripten/tools/clean_webconsole.py
@@ -3213,7 +3229,6 @@ lib/emscripten/tools/emdebug_cd_merger.py
 lib/emscripten/tools/emdump
 lib/emscripten/tools/emdump.py
 lib/emscripten/tools/emprofile.py
-lib/emscripten/tools/emterpretify.py
 lib/emscripten/tools/exec_llvm.py
 lib/emscripten/tools/experimental/reproduceriter.js
 lib/emscripten/tools/experimental/reproduceriter.py
@@ -3226,12 +3241,12 @@ lib/emscripten/tools/gen_struct_info.py
 lib/emscripten/tools/hacky_postprocess_around_closure_limitations.py
 lib/emscripten/tools/install.py
 lib/emscripten/tools/js-optimizer.js
+lib/emscripten/tools/js_manipulation.py
 lib/emscripten/tools/js_optimizer.py
 lib/emscripten/tools/jsrun.py
 lib/emscripten/tools/line_endings.py
 lib/emscripten/tools/lz4-compress.js
 lib/emscripten/tools/maybe_wasm2js.py
-lib/emscripten/tools/merge_pair.py
 lib/emscripten/tools/minified_js_name_generator.py
 lib/emscripten/tools/minimal_runtime_shell.py
 lib/emscripten/tools/optimizer/CMakeLists.txt
@@ -3283,4 +3298,11 @@ lib/emscripten/tools/update_js.py
 lib/emscripten/tools/update_symbols.py
 lib/emscripten/tools/validate_asmjs.py
 lib/emscripten/tools/wasm-sourcemap.py
+lib/emscripten/tools/wasm2c.py
+lib/emscripten/tools/wasm2c/autodebug.c
+lib/emscripten/tools/wasm2c/base.c
+lib/emscripten/tools/wasm2c/main.c
+lib/emscripten/tools/wasm2c/os.c
+lib/emscripten/tools/wasm2c/os_sandboxed.c
+lib/emscripten/tools/wasm2c/reactor.c
 lib/emscripten/tools/webidl_binder.py
