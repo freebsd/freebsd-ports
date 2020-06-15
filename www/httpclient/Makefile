@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	httpclient
-DISTVERSION=	4.5.10
-PORTREVISION=	1
+DISTVERSION=	4.5.12
 CATEGORIES=	www java
 MASTER_SITES=	APACHE/httpcomponents/${PORTNAME}/binary
 DISTNAME=	httpcomponents-client-${DISTVERSION}-bin
