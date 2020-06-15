@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	fetchmail
-DISTVERSION=	6.4.4
+DISTVERSION=	6.4.8
 CATEGORIES=	mail
 # The next line is inherited by the fetchmailconf slave port,
 # do NOT replace fetchmail by ${PORTNAME}
