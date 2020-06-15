@@ -524,7 +524,7 @@ lib/postgresql/utf8_and_win.so
 %%LLVM%%lib/postgresql/bitcode/postgres/storage/smgr/smgrtype.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/tcop/dest.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/tcop/fastpath.bc
-%%LLVM%%lib/postgresql/bitcode/postgres/tcop/%%PG_USER%%.bc
+%%LLVM%%lib/postgresql/bitcode/postgres/tcop/postgres.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/tcop/pquery.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/tcop/utility.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/tsearch/dict.bc
