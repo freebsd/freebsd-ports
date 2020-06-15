@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	link-grammar
-DISTVERSION=	5.7.0
+DISTVERSION=	5.8.0
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.abisource.com/downloads/${PORTNAME}/${PORTVERSION}/
 

@@ -94,6 +94,7 @@ libdata/pkgconfig/link-grammar.pc
 %%DATADIR%%/demo-sql/dict.db
 %%DATADIR%%/en/4.0.affix
 %%DATADIR%%/en/4.0.constituent-knowledge
+%%DATADIR%%/en/4.0.dialect
 %%DATADIR%%/en/4.0.dict
 %%DATADIR%%/en/4.0.dict.m4
 %%DATADIR%%/en/4.0.knowledge
@@ -108,6 +109,10 @@ libdata/pkgconfig/link-grammar.pc
 %%DATADIR%%/en/words/entities.locations.sing
 %%DATADIR%%/en/words/entities.national.sing
 %%DATADIR%%/en/words/entities.organizations.sing
+%%DATADIR%%/en/words/entities.people
+%%DATADIR%%/en/words/entities.people.vowel
+%%DATADIR%%/en/words/entities.prof
+%%DATADIR%%/en/words/entities.prof.vowel
 %%DATADIR%%/en/words/entities.us-states.sing
 %%DATADIR%%/en/words/measures.1
 %%DATADIR%%/en/words/measures.2
