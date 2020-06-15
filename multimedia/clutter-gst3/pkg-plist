@@ -16,6 +16,6 @@ lib/girepository-1.0/ClutterGst-3.0.typelib
 lib/gstreamer-1.0/libcluttergst3.so
 lib/libclutter-gst-3.0.so
 lib/libclutter-gst-3.0.so.0
-lib/libclutter-gst-3.0.so.0.26.0
+lib/libclutter-gst-3.0.so.0.27.0
 libdata/pkgconfig/clutter-gst-3.0.pc
 share/gir-1.0/ClutterGst-3.0.gir
