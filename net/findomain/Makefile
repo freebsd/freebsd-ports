@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	findomain
-DISTVERSION=	1.5.0
-PORTREVISION=	2
+DISTVERSION=	1.7.0
 CATEGORIES=	net security
 
 MAINTAINER=	vulcan@wired.sh
@@ -15,16 +14,18 @@ USES=		cargo ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	Edu4rdSHL
 
-CARGO_CRATES=	ansi_term-0.11.0 \
+CARGO_CRATES=	aho-corasick-0.7.10 \
+		ansi_term-0.11.0 \
 		anyhow-1.0.26 \
-		async-trait-0.1.24 \
+		arrayvec-0.4.12 \
+		async-trait-0.1.35 \
 		atty-0.2.14 \
 		autocfg-0.1.7 \
 		autocfg-1.0.0 \
 		backtrace-0.3.44 \
 		backtrace-sys-0.1.32 \
-		base64-0.10.1 \
 		base64-0.11.0 \
+		base64-0.12.1 \
 		bitflags-1.2.1 \
 		block-buffer-0.7.3 \
 		block-padding-0.1.5 \
@@ -35,8 +36,9 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		c2-chacha-0.2.3 \
 		cc-1.0.50 \
 		cfg-if-0.1.10 \
-		clap-2.33.0 \
+		clap-2.33.1 \
 		cloudabi-0.0.3 \
+		config-0.10.1 \
 		core-foundation-0.6.4 \
 		core-foundation-sys-0.6.2 \
 		crossbeam-deque-0.7.2 \
@@ -49,7 +51,7 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		either-1.5.3 \
 		encoding_rs-0.8.22 \
 		enum-as-inner-0.3.0 \
-		failure-0.1.7 \
+		failure-0.1.8 \
 		failure_derive-0.1.7 \
 		fake-simd-0.1.2 \
 		fallible-iterator-0.2.0 \
@@ -88,7 +90,9 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		js-sys-0.3.35 \
 		kernel32-sys-0.2.2 \
 		lazy_static-1.4.0 \
+		lexical-core-0.6.2 \
 		libc-0.2.66 \
+		linked-hash-map-0.3.0 \
 		linked-hash-map-0.5.2 \
 		lock_api-0.3.3 \
 		log-0.4.8 \
@@ -104,12 +108,16 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		miow-0.2.1 \
 		native-tls-0.2.3 \
 		net2-0.2.33 \
+		nodrop-0.1.14 \
 		nom-4.2.3 \
+		nom-5.1.1 \
+		num-traits-0.1.43 \
+		num-traits-0.2.11 \
 		num_cpus-1.12.0 \
 		opaque-debug-0.2.3 \
-		openssl-0.10.28 \
+		openssl-0.10.29 \
 		openssl-probe-0.1.2 \
-		openssl-sys-0.9.54 \
+		openssl-sys-0.9.58 \
 		parking_lot-0.10.0 \
 		parking_lot_core-0.7.0 \
 		percent-encoding-2.1.0 \
@@ -120,7 +128,7 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		pin-project-lite-0.1.4 \
 		pin-utils-0.1.0-alpha.4 \
 		pkg-config-0.3.17 \
-		postgres-0.17.2 \
+		postgres-0.17.3 \
 		postgres-protocol-0.5.0 \
 		postgres-types-0.1.1 \
 		ppv-lite86-0.2.6 \
@@ -136,13 +144,16 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		rayon-1.3.0 \
 		rayon-core-1.7.0 \
 		redox_syscall-0.1.56 \
+		regex-1.3.9 \
+		regex-syntax-0.6.18 \
 		remove_dir_all-0.5.2 \
-		reqwest-0.10.4 \
+		reqwest-0.10.6 \
 		resolv-conf-0.6.2 \
-		ring-0.16.9 \
+		ring-0.16.12 \
+		rust-ini-0.13.0 \
 		rustc-demangle-0.1.16 \
 		rustc_version-0.2.3 \
-		rustls-0.16.0 \
+		rustls-0.17.0 \
 		ryu-1.0.2 \
 		schannel-0.1.16 \
 		scopeguard-1.0.0 \
@@ -150,10 +161,14 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		security-framework-0.3.4 \
 		security-framework-sys-0.3.3 \
 		semver-0.9.0 \
+		semver-0.10.0 \
 		semver-parser-0.7.0 \
-		serde-1.0.105 \
-		serde_derive-1.0.105 \
+		serde-0.8.23 \
+		serde-1.0.111 \
+		serde-hjson-0.9.1 \
+		serde_derive-1.0.111 \
 		serde_json-1.0.44 \
+		serde_test-0.8.23 \
 		serde_urlencoded-0.6.1 \
 		sha2-0.8.1 \
 		siphasher-0.3.1 \
@@ -162,6 +177,7 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		socket2-0.3.11 \
 		sourcefile-0.1.4 \
 		spin-0.5.2 \
+		static_assertions-0.3.4 \
 		stringprep-0.1.2 \
 		strsim-0.8.0 \
 		subtle-1.0.0 \
@@ -169,19 +185,21 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		synstructure-0.12.3 \
 		tempfile-3.1.0 \
 		textwrap-0.11.0 \
-		thiserror-1.0.11 \
-		thiserror-impl-1.0.11 \
+		thiserror-1.0.19 \
+		thiserror-impl-1.0.19 \
+		thread_local-1.0.1 \
 		time-0.1.42 \
-		tokio-0.2.11 \
-		tokio-postgres-0.5.3 \
-		tokio-rustls-0.12.2 \
+		tokio-0.2.21 \
+		tokio-postgres-0.5.4 \
+		tokio-rustls-0.13.1 \
 		tokio-tls-0.3.0 \
 		tokio-util-0.2.0 \
 		tokio-util-0.3.1 \
+		toml-0.5.6 \
 		tower-service-0.3.0 \
-		trust-dns-proto-0.19.3 \
-		trust-dns-resolver-0.19.3 \
-		trust-dns-rustls-0.19.3 \
+		trust-dns-proto-0.19.5 \
+		trust-dns-resolver-0.19.5 \
+		trust-dns-rustls-0.19.5 \
 		try-lock-0.2.2 \
 		typenum-1.11.2 \
 		unicase-2.6.0 \
@@ -216,9 +234,11 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		winreg-0.6.2 \
+		winreg-0.7.0 \
 		winutil-0.1.1 \
 		ws2_32-sys-0.2.1 \
-		yaml-rust-0.3.5
+		yaml-rust-0.3.5 \
+		yaml-rust-0.4.4
 
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/${PORTNAME}.1.gz
