@@ -1,6 +1,19 @@
---- jogl/make/build-jogl.xml.orig	2014-03-11 00:59:24.000000000 +0000
-+++ jogl/make/build-jogl.xml	2014-05-12 07:33:35.849403725 +0000
-@@ -1195,7 +1195,7 @@
+--- jogl/make/build-jogl.xml.orig	2015-10-10 01:08:14 UTC
++++ jogl/make/build-jogl.xml
+@@ -1184,9 +1184,9 @@
+       <!-- Note that we can use the base setups in the gluegen-cpptasks for most of these -->
+ 
+       <compiler id="compiler.cfg.freebsd.jogl" extends="compiler.cfg.freebsd">
+-        <!-- Need to force X11R6 headers on to include path after stub_includes -->
+-        <includepath path="stub_includes/opengl"/>
+-        <includepath path="/usr/local/include" />
++        <!-- Force /usr/local/include headers on to include path after all others to fix build with clang -->
++        <compilerarg value="-idirafter" />
++        <compilerarg value="/usr/local/include" />
+       </compiler>
+ 
+       <compiler id="compiler.cfg.linux.armv6.jogl.x11" extends="compiler.cfg.linux.armv6">
+@@ -1203,7 +1203,7 @@
  
        <!-- linker configuration -->
   
@@ -9,7 +22,7 @@
          <syslibset dir="/usr/local/lib" libs="X11"/>
        </linker>
  
-@@ -1383,7 +1383,7 @@
+@@ -1401,7 +1401,7 @@
      <target name="c.configure.freebsd.x86" depends="c.configure.x11" if="isFreeBSDX86">
        <echo message="FreeBSD" />
        <property name="compiler.cfg.id"                     value="compiler.cfg.freebsd.jogl" />
@@ -18,9 +31,9 @@
      </target>
  
      <target name="c.configure.freebsd.amd64" depends="c.configure.x11" if="isFreeBSDAMD64">
---- jogl/make/build-nativewindow.xml.orig	2014-03-11 00:59:24.000000000 +0000
-+++ jogl/make/build-nativewindow.xml	2014-05-12 07:32:13.047407428 +0000
-@@ -365,7 +365,7 @@
+--- jogl/make/build-nativewindow.xml.orig	2015-10-10 01:08:14 UTC
++++ jogl/make/build-nativewindow.xml
+@@ -373,7 +373,7 @@
  
        <!-- linker configuration -->
  
@@ -29,7 +42,7 @@
          <syslibset dir="/usr/local/lib" libs="X11"/>
          <syslibset dir="/usr/local/lib" libs="Xxf86vm" />
          <syslibset dir="/usr/local/lib" libs="Xrender"/>
-@@ -562,7 +562,7 @@
+@@ -582,7 +582,7 @@
      <target name="c.configure.freebsd.x86" if="isFreeBSDX86">
        <echo message="FreeBSD.x86" />
        <property name="compiler.cfg.id"                      value="compiler.cfg.freebsd.nativewindow" />
@@ -38,9 +51,9 @@
      </target>
      
      <target name="c.configure.freebsd.amd64" if="isFreeBSDAMD64">
---- jogl/make/build-newt.xml.orig	2014-03-11 00:59:24.000000000 +0000
-+++ jogl/make/build-newt.xml	2014-05-12 07:32:57.565406321 +0000
-@@ -273,7 +273,7 @@
+--- jogl/make/build-newt.xml.orig	2015-10-10 01:08:14 UTC
++++ jogl/make/build-newt.xml
+@@ -289,7 +289,7 @@
  
        <!-- linker configuration -->
  
@@ -49,7 +62,7 @@
          <linkerarg value="-L/usr/local/lib"/>
          <syslibset libs="X11"/>
          <syslibset libs="Xrandr"/>
-@@ -528,8 +528,8 @@
+@@ -560,8 +560,8 @@
      <target name="c.configure.freebsd.x86" if="isFreeBSDX86">
        <echo message="FreeBSD.x86" />
        <property name="compiler.cfg.id"                      value="compiler.cfg.freebsd.newt" />

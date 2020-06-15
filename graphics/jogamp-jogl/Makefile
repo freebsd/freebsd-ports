@@ -3,6 +3,7 @@
 
 PORTNAME=	jogamp-jogl
 PORTVERSION=	2.3.2
+PORTREVISION=	1
 CATEGORIES=	graphics devel java
 MASTER_SITES=	http://jogamp.org/deployment/jogamp-current/archive/Sources/ \
 		http://jogamp.org/deployment/v${PORTVERSION}/archive/Sources/
@@ -18,24 +19,23 @@ RUN_DEPENDS=	${JAVALIBDIR}/swt.jar:x11-toolkits/swt
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-USES=		tar:xz xorg
+USES=		compiler tar:xz xorg
 
 USE_ANT=	yes
-USE_GCC=	yes
 USE_JAVA=	yes
 USE_XORG=	x11 xcursor xrandr xrender xxf86vm
 
 PATCH_WRKSRC=	${WRKDIR}
 BUILD_WRKSRC=	${WRKDIR}/jogl/make
-BUILD_BINPATH=	${WRKSRC}/bin
-MAKE_ENV+=	PATH="${BUILD_BINPATH}:${PATH}"
+
+# compiler must be literally "gcc" or "clang"
+BINARY_ALIAS=	${CHOSEN_COMPILER_TYPE}=${CC}
+MAKE_ARGS=	-Dgcc.compat.compiler=${CHOSEN_COMPILER_TYPE}
 
 post-extract:
 	${MV} ${WRKDIR}/gluegen-v${PORTVERSION} ${WRKDIR}/gluegen
 	${MV} ${WRKDIR}/jcpp-v${PORTVERSION}/src ${WRKDIR}/gluegen/jcpp/src
 	${MV} ${WRKDIR}/jogl-v${PORTVERSION} ${WRKDIR}/jogl
-	${MKDIR} ${BUILD_BINPATH}
-	${LN} -sf ${LOCALBASE}/bin/${CC} ${BUILD_BINPATH}/gcc
 
 post-patch:
 	${REINPLACE_CMD} -e 's|%%JAVALIBDIR%%|${JAVALIBDIR}|g' \
