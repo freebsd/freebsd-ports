@@ -1,3 +1,3 @@
-TIMESTAMP = 1525379738
-SHA256 (gnome/zenity-3.28.1.tar.xz) = db179354721fb4e2d5c418e0dc41f09c831a6b2dd440e33f7743dfc266de8a6b
-SIZE (gnome/zenity-3.28.1.tar.xz) = 4458404
+TIMESTAMP = 1592234910
+SHA256 (gnome/zenity-3.32.0.tar.xz) = e786e733569c97372c3ef1776e71be7e7599ebe87e11e8ad67dcc2e63a82cd95
+SIZE (gnome/zenity-3.32.0.tar.xz) = 4753752
