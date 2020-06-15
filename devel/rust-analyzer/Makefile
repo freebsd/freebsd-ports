@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rust-analyzer
-DISTVERSION=	2020-06-08
+DISTVERSION=	2020-06-15
 CATEGORIES=	devel
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -14,7 +14,6 @@ LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 
 USES=		cargo
 USE_GITHUB=	yes
-GH_TUPLE=	rust-lang:chalk:329b7f3fdd2431ed6f6778cde53f22374c7d094c:chalkderive
 CARGO_CRATES=	addr2line-0.12.1 \
 		aho-corasick-0.7.10 \
 		anyhow-1.0.31 \
@@ -40,7 +39,7 @@ CARGO_CRATES=	addr2line-0.12.1 \
 		crossbeam-channel-0.4.2 \
 		crossbeam-deque-0.7.3 \
 		crossbeam-epoch-0.8.2 \
-		crossbeam-queue-0.2.2 \
+		crossbeam-queue-0.2.3 \
 		crossbeam-utils-0.7.2 \
 		difference-2.0.0 \
 		drop_bomb-0.1.4 \
@@ -76,7 +75,7 @@ CARGO_CRATES=	addr2line-0.12.1 \
 		jemalloc-ctl-0.3.3 \
 		jemalloc-sys-0.3.2 \
 		jemallocator-0.3.2 \
-		jod-thread-0.1.1 \
+		jod-thread-0.1.2 \
 		kernel32-sys-0.2.2 \
 		lazy_static-1.4.0 \
 		lazycell-1.2.1 \
@@ -141,15 +140,15 @@ CARGO_CRATES=	addr2line-0.12.1 \
 		semver-parser-0.7.0 \
 		serde-1.0.111 \
 		serde_derive-1.0.111 \
-		serde_json-1.0.53 \
+		serde_json-1.0.55 \
 		serde_repr-0.1.5 \
-		serde_yaml-0.8.12 \
+		serde_yaml-0.8.13 \
 		slab-0.4.2 \
 		smallvec-1.4.0 \
 		smol_str-0.1.15 \
 		superslice-1.0.0 \
-		syn-1.0.30 \
-		synstructure-0.12.3 \
+		syn-1.0.31 \
+		synstructure-0.12.4 \
 		tempfile-3.1.0 \
 		terminal_size-0.1.12 \
 		termios-0.3.2 \
@@ -173,10 +172,6 @@ CARGO_CRATES=	addr2line-0.12.1 \
 		ws2_32-sys-0.2.1 \
 		yaml-rust-0.4.4
 
-CARGO_USE_GITHUB=	yes
-CARGO_GIT_SUBDIR=	chalkderive:chalk-ir:chalk-ir \
-			chalkderive:chalk-rust-ir:chalk-rust-ir \
-			chalkderive:chalk-solve:chalk-solve
 CARGO_INSTALL_PATH=	crates/rust-analyzer
 
 # attempts to install rustup toolchains
