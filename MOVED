@@ -14994,7 +14994,6 @@ devel/libopensync||2020-05-06|Abandonware, website disappeared
 deskutils/libopensync-plugin-vformat-devel||2020-05-06|Abandonware, website disappeared
 devel/py-ipykernel|devel/py-ipykernel5|2020-05-07|Has expired: Old version, use devel/py-ipykernel5 instead
 sysutils/rundeck|sysutils/rundeck2|2020-05-07|Rename to avoid confusion with sysutils/rundeck3
-x11-wm/compiz-plugins-unsupported||2020-05-07|Has expired: Broken for more than 6 months
 math/darknet|misc/darknet|2020-05-07|DarkNet is a machine learning project, not a math project
 www/rubygem-activeresource5|www/rubygem-activeresource|2020-05-08|Remove PKGNAMESUFFIX 3 years and 4 months after rubygem-activeresource removal
 finance/bitcoinnodestats||2020-05-12|Has expired: No longer maintained and not compatible with Django 2.2+
