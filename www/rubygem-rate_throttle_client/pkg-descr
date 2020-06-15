@@ -1,0 +1,7 @@
+Rate limiting is for servers, rate throttling is for clients. This library
+implements a number of strategies for handling rate throttling on the client and
+a methodology for comparing performance of those clients. We don't just give you
+the code to rate throttle, we also give you the information to help you figure
+out the best strategy to rate throttle as well.
+
+WWW: https://github.com/zombocom/rate_throttle_client

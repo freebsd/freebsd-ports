@@ -2058,6 +2058,7 @@
     SUBDIR += rubygem-raindrops
     SUBDIR += rubygem-ramaze
     SUBDIR += rubygem-raphael-rails
+    SUBDIR += rubygem-rate_throttle_client
     SUBDIR += rubygem-rbovirt
     SUBDIR += rubygem-rdf
     SUBDIR += rubygem-rdf-normalize
