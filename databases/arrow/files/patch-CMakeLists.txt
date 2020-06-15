@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2019-02-16 22:27:06 UTC
++++ CMakeLists.txt
+@@ -51,7 +51,7 @@ message(STATUS "Arrow version: "
+ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake_modules")
+ 
+ include(CMakeParseArguments)
+-include(ExternalProject)
++#include(ExternalProject) # bundling isn't allowed
+ include(FindPkgConfig)
+ 
+ include(GNUInstallDirs)
