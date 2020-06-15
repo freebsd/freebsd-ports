@@ -10,7 +10,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Convenience application to send a file via email
 
 LICENSE=	GPLv2
-LICENSE_FILES=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GNOME=	intlhack introspection:build
 USES=		gettext gnome localbase meson pkgconfig tar:xz
