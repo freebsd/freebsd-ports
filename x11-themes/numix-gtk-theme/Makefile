@@ -1,11 +1,10 @@
 # Created by: Olivier Duchateau
 # $FreeBSD$
 
-PORTNAME=	numix
+PORTNAME=	numix-gtk-theme
 PORTVERSION=	2.6.7
 PORTREVISION=	1
 CATEGORIES=	x11-themes xfce
-PKGNAMESUFFIX=	-theme
 
 MAINTAINER=	20.100@defert.com
 COMMENT=	Gtk flat themes
@@ -19,15 +18,18 @@ USES=		gmake gnome
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	numixproject
-GH_PROJECT=	numix-gtk-theme
+
 USE_GNOME=	glib20 gdkpixbuf2
-NO_ARCH=	yes
+
 INSTALL_TARGET=	# empty
+
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=	NOTIFYD
 OPTIONS_DEFAULT=	NOTIFYD
-NOTIFYD_DESC=	Install xfce4-notifyd theme
 OPTIONS_SUB=	yes
+
+NOTIFYD_DESC=	Install xfce4-notifyd theme
 
 post-patch:
 # Remove .orig files
