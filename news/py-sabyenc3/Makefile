@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sabyenc3
-PORTVERSION=	4.0.1
+PORTVERSION=	4.0.2
 CATEGORIES=	news python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ COMMENT=	Python yEnc package optimized for use within SABnzbd
 LICENSE=	LGPL3
 
 USES=		python:3.5+
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/sabyenc3.so
