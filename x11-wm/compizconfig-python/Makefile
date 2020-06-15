@@ -5,9 +5,9 @@ PORTNAME=	compizconfig-python
 PORTVERSION=	0.8.4
 PORTREVISION=	9
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://releases.compiz.org/${PORTVERSION}/
+MASTER_SITES=	https://BSDforge.com/projects/source/x11-wm/compizconfig-python/
 
-MAINTAINER=	freebsd-ports@dan.me.uk
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Python bindings for the compizconfig library
 
 LICENSE=	GPLv2+
