@@ -11,6 +11,7 @@ include/uWebSockets/HttpRouter.h
 include/uWebSockets/Loop.h
 include/uWebSockets/LoopData.h
 include/uWebSockets/PerMessageDeflate.h
+include/uWebSockets/ProxyParser.h
 include/uWebSockets/TopicTree.h
 include/uWebSockets/Utilities.h
 include/uWebSockets/WebSocket.h
