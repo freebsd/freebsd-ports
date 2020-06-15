@@ -23,4 +23,12 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	accounts-sso
 GL_COMMIT=	cfadea7ba8ba4011ae20d771696eb74deb87201e
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc64
+PLIST_SUB=	PPC64="@comment "
+.else
+PLIST_SUB=	PPC64=""
+.endif
+
 .include <bsd.port.mk>
