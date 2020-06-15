@@ -1,3 +1,3 @@
-TIMESTAMP = 1551681755
-SHA256 (requests-aws4auth-0.9.tar.gz) = c9973af472d6d358ee301f077608361e078642aa019785139b588d526f50a23c
-SIZE (requests-aws4auth-0.9.tar.gz) = 44486
+TIMESTAMP = 1592145167
+SHA256 (requests-aws4auth-1.0.tar.gz) = 2950f6ff686b5a452a269076d990e4821d959b61cfac319c3d3c6daaa5db55ce
+SIZE (requests-aws4auth-1.0.tar.gz) = 34139
