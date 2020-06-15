@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mate-panel
-PORTVERSION=	1.22.2
+PORTVERSION=	1.24.0
 CATEGORIES=	x11 mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -19,7 +19,8 @@ LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LIB
 BUILD_DEPENDS=	itstool:textproc/itstool
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libdbus-glib-1.so:devel/dbus-glib \
-		libstartup-notification-1.so:x11/startup-notification
+		libstartup-notification-1.so:x11/startup-notification \
+		libgtk-layer-shell.so:x11-toolkits/gtk-layer-shell
 
 PORTSCOUT=	limitw:1,even
 
