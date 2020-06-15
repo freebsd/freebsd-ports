@@ -2,14 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	uhttpmock
-PORTVERSION=	0.5.1
-PORTREVISION=	1
+PORTVERSION=	0.5.2
 CATEGORIES=	net gnome
 MASTER_SITES=	http://tecnocode.co.uk/downloads/uhttpmock/
 DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	HTTP web service mocking library for GNOME
+
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	gnome-autogen.sh:devel/gnome-common \
 		vapigen:lang/vala \
