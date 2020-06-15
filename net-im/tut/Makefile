@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	tut
-DISTVERSION=	0.0.8
+DISTVERSION=	0.0.9
 CATEGORIES=	net-im
 
 MAINTAINER=	vulcan@wired.sh
