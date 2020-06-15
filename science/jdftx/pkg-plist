@@ -62,6 +62,7 @@ include/jdftx/electronic/ColumnBundleTransform.h
 include/jdftx/electronic/Control.h
 include/jdftx/electronic/DOS.h
 include/jdftx/electronic/Dump.h
+include/jdftx/electronic/DumpBGW_internal.h
 include/jdftx/electronic/Dump_internal.h
 include/jdftx/electronic/ElecInfo.h
 include/jdftx/electronic/ElecMinimizer.h
@@ -76,8 +77,8 @@ include/jdftx/electronic/ExCorr_internal_GGA.h
 include/jdftx/electronic/ExCorr_internal_LDA.h
 include/jdftx/electronic/ExCorr_internal_mGGA.h
 include/jdftx/electronic/ExactExchange.h
-include/jdftx/electronic/IonDynamics.h
-include/jdftx/electronic/IonDynamicsParams.h
+include/jdftx/electronic/IonicDynamics.h
+include/jdftx/electronic/IonicDynamicsParams.h
 include/jdftx/electronic/IonInfo.h
 include/jdftx/electronic/IonicMinimizer.h
 include/jdftx/electronic/LatticeMinimizer.h
