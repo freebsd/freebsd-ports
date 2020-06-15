@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	purescript
-PORTVERSION=	0.13.6
+PORTVERSION=	0.13.8
 CATEGORIES=	lang
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -14,7 +14,7 @@ USES=		cabal
 USE_LOCALE=	en_US.UTF-8
 
 USE_CABAL=	Glob-0.9.3 \
-		QuickCheck-2.14 \
+		QuickCheck-2.14_1 \
 		SHA-1.6.4.4 \
 		StateVar-1.2 \
 		aeson-1.4.7.1_1 \
@@ -47,10 +47,11 @@ USE_CABAL=	Glob-0.9.3 \
 		bytestring-builder-0.10.8.2.0 \
 		cabal-doctest-1.0.8_1 \
 		case-insensitive-1.2.1.0 \
+		cborg-0.2.3.0_1 \
 		cheapskate-0.1.1.2_1 \
 		clock-0.7.2 \
 		colour-2.3.5 \
-		comonad-5.0.6 \
+		comonad-5.0.6_1 \
 		conduit-1.3.2 \
 		conduit-extra-1.3.5 \
 		constraints-0.12 \
@@ -63,19 +64,20 @@ USE_CABAL=	Glob-0.9.3 \
 		data-default-instances-dlist-0.0.1 \
 		data-default-instances-old-locale-0.0.1 \
 		data-ordlist-0.4.7.0 \
-		distributive-0.6.2 \
+		distributive-0.6.2_1 \
 		dlist-0.8.0.8 \
 		easy-file-0.2.2 \
 		edit-distance-0.2.2.1_1 \
 		entropy-0.4.1.6 \
 		exceptions-0.10.4_1 \
 		fast-logger-3.0.1 \
-		file-embed-0.0.11.2 \
+		file-embed-0.0.12.0 \
 		fsnotify-0.3.0.1_1 \
+		half-0.3 \
 		happy-1.19.12 \
 		hashable-1.3.0.0_1 \
-		hsc2hs-0.68.6 \
 		hourglass-0.2.12 \
+		hsc2hs-0.68.7 \
 		http-date-0.0.8 \
 		http-types-0.12.3 \
 		http2-2.0.4 \
@@ -96,7 +98,7 @@ USE_CABAL=	Glob-0.9.3 \
 		mono-traversable-1.0.15.1 \
 		mtl-compat-0.2.2 \
 		network-3.0.1.1 \
-		network-byte-order-0.1.4.0 \
+		network-byte-order-0.1.5 \
 		network-uri-2.6.3.0 \
 		old-locale-1.0.0.7_2 \
 		old-time-1.1.0.3_2 \
@@ -105,21 +107,22 @@ USE_CABAL=	Glob-0.9.3 \
 		pattern-arrows-0.0.2 \
 		pem-0.2.4 \
 		primitive-0.7.0.1 \
-		protolude-0.2.4 \
+		protolude-0.3.0 \
 		psqueues-0.2.7.2_1 \
 		random-1.1_1 \
 		regex-base-0.94.0.0_1 \
 		regex-tdfa-1.3.1.0_1 \
 		resourcet-1.2.4 \
-		safe-0.3.18_1 \
+		safe-0.3.19 \
 		scientific-0.3.6.2 \
-		semialign-1.1_1 \
-		semigroupoids-5.3.4 \
+		semialign-1.1_2 \
+		semigroupoids-5.3.4_1 \
 		semigroups-0.18.5_1 \
+		serialise-0.2.3.0_1 \
 		simple-sendfile-0.2.30 \
 		sourcemap-0.1.6_1 \
 		split-0.2.3.4 \
-		splitmix-0.0.4 \
+		splitmix-0.0.5 \
 		stm-chans-3.0.0.4_1 \
 		streaming-commons-0.2.1.2 \
 		stringsearch-0.3.6.6_1 \
@@ -127,7 +130,7 @@ USE_CABAL=	Glob-0.9.3 \
 		tagged-0.8.6_2 \
 		tagsoup-0.14.8 \
 		th-abstraction-0.3.2.0 \
-		these-1.0.1_3 \
+		these-1.0.1_4 \
 		time-compat-1.9.3 \
 		time-manager-0.0.0 \
 		transformers-base-0.4.5.2 \
@@ -147,7 +150,7 @@ USE_CABAL=	Glob-0.9.3 \
 		void-0.7.3 \
 		wai-3.2.2.1 \
 		wai-websockets-3.0.1.2 \
-		warp-3.3.10 \
+		warp-3.3.12 \
 		websockets-0.12.6.1 \
 		word8-0.1.3 \
 		x509-1.7.5_1 \

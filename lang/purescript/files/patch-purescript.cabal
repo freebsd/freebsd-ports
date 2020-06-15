@@ -1,6 +1,6 @@
---- purescript.cabal.orig	2020-01-18 16:10:21 UTC
+--- purescript.cabal.orig	2020-05-23 21:19:50 UTC
 +++ purescript.cabal
-@@ -1153,7 +1153,7 @@ library
+@@ -1074,7 +1074,7 @@ library
          Language.PureScript.TypeClassDictionaries
          Language.PureScript.Types
          System.IO.UTF8
@@ -9,12 +9,12 @@
      hs-source-dirs: src
      other-modules:
          Paths_purescript
-@@ -1166,14 +1166,14 @@ library
+@@ -1087,14 +1087,14 @@ library
                          ScopedTypeVariables TupleSections ViewPatterns
      ghc-options: -Wall -O2
      build-depends:
--        Cabal >=2.2 && <2.5,
-+        Cabal >=2.2 && <3.2,
+-        Cabal >=2.2 && <3.0,
++        Cabal >=2.2 && <3.3,
          Glob ==0.9.*,
          aeson >=1.0 && <1.5,
          aeson-better-errors >=0.8 && <0.10,
@@ -22,11 +22,16 @@
          ansi-terminal >=0.7.1 && <0.9,
          array <0.6,
 -        base >=4.11 && <4.13,
-+        base >=4.11 && <4.14,
++        base >=4.11 && <4.15,
          base-compat >=0.6.0 && <0.11,
          blaze-html >=0.8.1 && <0.10,
          bower-json >=1.0.0.1 && <1.1,
-@@ -1195,8 +1195,8 @@ library
+@@ -1113,12 +1113,12 @@ library
+         file-embed <0.1,
+         filepath <1.5,
+         fsnotify >=0.2.1 && <0.4,
+-        haskeline >=0.7.0.0 && <0.8.0.0,
++        haskeline,
          language-javascript >=0.7.0.0 && <0.8,
          lifted-async >=0.10.0.3 && <0.10.1,
          lifted-base ==0.2.3.*,
@@ -37,22 +42,22 @@
          monad-control >=1.0.0.0 && <1.1,
          monad-logger ==0.3.*,
          mtl >=2.1.0 && <2.3.0,
-@@ -1204,11 +1204,11 @@ library
+@@ -1126,11 +1126,11 @@ library
          parsec >=3.1.10 && <3.2,
          pattern-arrows >=0.0.2 && <0.1,
          process >=1.2.0 && <1.7,
 -        protolude >=0.1.6 && <0.2.4,
 -        regex-tdfa <1.3,
-+        protolude >=0.1.6 && <0.2.5,
++        protolude,
 +        regex-tdfa,
          safe >=0.3.9 && <0.4,
          scientific >=0.3.4.9 && <0.4,
 -        semialign >=1 && <1.1,
 +        semialign >=1 && <1.2,
          semigroups >=0.16.2 && <0.19,
+         serialise <0.3,
          sourcemap >=0.1.6 && <0.2,
-         split <0.3,
-@@ -1217,7 +1217,7 @@ library
+@@ -1140,7 +1140,7 @@ library
          syb <0.8,
          text <1.3,
          these >=1 && <1.1,
@@ -61,7 +66,7 @@
          transformers >=0.3.0 && <0.6,
          transformers-base >=0.4.0 && <0.5,
          transformers-compat >=0.3.0 && <0.7,
-@@ -1227,7 +1227,7 @@ library
+@@ -1150,7 +1150,7 @@ library
  
  executable purs
      main-is: Main.hs
@@ -70,25 +75,35 @@
      hs-source-dirs: app
      other-modules:
          Command.Bundle
-@@ -1245,7 +1245,7 @@ executable purs
+@@ -1169,7 +1169,7 @@ executable purs
      ghc-options: -Wall -O2 -fno-warn-unused-do-bind -threaded -rtsopts
                   -with-rtsopts=-N
      build-depends:
--        Cabal >=2.2 && <2.5,
-+        Cabal >=2.2 && <3.2,
+-        Cabal >=2.2 && <3.0,
++        Cabal >=2.2 && <3.3,
          Glob ==0.9.*,
          aeson >=1.0 && <1.5,
          aeson-better-errors >=0.8 && <0.10,
-@@ -1253,7 +1253,7 @@ executable purs
+@@ -1177,7 +1177,7 @@ executable purs
          ansi-terminal >=0.7.1 && <0.9,
          ansi-wl-pprint <0.7,
          array <0.6,
 -        base >=4.11 && <4.13,
-+        base >=4.11 && <4.14,
++        base >=4.11 && <4.15,
          base-compat >=0.6.0 && <0.11,
          blaze-html >=0.8.1 && <0.10,
          bower-json >=1.0.0.1 && <1.1,
-@@ -1276,23 +1276,23 @@ executable purs
+@@ -1193,31 +1193,32 @@ executable purs
+         directory >=1.2.3 && <1.4,
+         dlist <0.9,
+         edit-distance <0.3,
++        exceptions,
+         file-embed <0.1,
+         filepath <1.5,
+         fsnotify >=0.2.1 && <0.4,
+-        haskeline >=0.7.0.0 && <0.8.0.0,
++        haskeline,
+         http-types <0.13,
          language-javascript >=0.7.0.0 && <0.8,
          lifted-async >=0.10.0.3 && <0.10.1,
          lifted-base ==0.2.3.*,
@@ -107,7 +122,7 @@
          pattern-arrows >=0.0.2 && <0.1,
          process >=1.2.0 && <1.7,
 -        protolude >=0.1.6 && <0.2.4,
-+        protolude >=0.1.6 && <0.2.5,
++        protolude,
          purescript -any,
 -        regex-tdfa <1.3,
 +        regex-tdfa,
@@ -116,9 +131,9 @@
 -        semialign >=1 && <1.1,
 +        semialign >=1 && <1.2,
          semigroups >=0.16.2 && <0.19,
+         serialise <0.3,
          sourcemap >=0.1.6 && <0.2,
-         split <0.3,
-@@ -1301,7 +1301,7 @@ executable purs
+@@ -1227,7 +1228,7 @@ executable purs
          syb <0.8,
          text <1.3,
          these >=1 && <1.1,
@@ -127,7 +142,7 @@
          transformers >=0.3.0 && <0.6,
          transformers-base >=0.4.0 && <0.5,
          transformers-compat >=0.3.0 && <0.7,
-@@ -1312,7 +1312,7 @@ executable purs
+@@ -1238,7 +1239,7 @@ executable purs
          wai-websockets ==3.*,
          warp ==3.*,
          websockets >=0.9 && <0.13
@@ -136,7 +151,7 @@
      if flag(release)
          cpp-options: -DRELEASE
      else
-@@ -1322,7 +1322,7 @@ executable purs
+@@ -1248,7 +1249,7 @@ executable purs
  test-suite tests
      type: exitcode-stdio-1.0
      main-is: Main.hs
@@ -145,12 +160,30 @@
      hs-source-dirs: tests
      other-modules:
          Language.PureScript.Ide.CompletionSpec
-@@ -1398,9 +1398,9 @@ test-suite tests
+@@ -1284,7 +1285,7 @@ test-suite tests
+     default-extensions: NoImplicitPrelude LambdaCase OverloadedStrings
+     ghc-options: -Wall
+     build-depends:
+-        Cabal >=2.2 && <3.0,
++        Cabal >=2.2 && <3.3,
+         Glob ==0.9.*,
+         HUnit <1.7,
+         aeson >=1.0 && <1.5,
+@@ -1311,7 +1312,7 @@ test-suite tests
+         file-embed <0.1,
+         filepath <1.5,
+         fsnotify >=0.2.1 && <0.4,
+-        haskeline >=0.7.0.0 && <0.8.0.0,
++        haskeline,
+         hspec <2.7,
+         hspec-discover <2.7,
+         language-javascript >=0.7.0.0 && <0.8,
+@@ -1326,9 +1327,9 @@ test-suite tests
          parsec >=3.1.10 && <3.2,
          pattern-arrows >=0.0.2 && <0.1,
          process >=1.2.0 && <1.7,
 -        protolude >=0.1.6 && <0.2.4,
-+        protolude >=0.1.6 && <0.2.5,
++        protolude,
          purescript -any,
 -        regex-tdfa <1.3,
 +        regex-tdfa,
