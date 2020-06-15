@@ -1,0 +1,65 @@
+Disable wrappers as Python version is controlled by FLAVORS
+
+--- README.md.orig	2020-04-23 06:16:13 UTC
++++ README.md
+@@ -53,18 +53,6 @@ Setup:
+ 
+   If you want to build git along the helper, you can run `make git`.
+ 
+-Experimental support for python 3.x:
+-------------------------------------
+-
+-Experimental support for python 3.5 or more can be enabled by one of the
+-following:
+-
+-- set the `GIT_CINNABAR_EXPERIMENTS` environment variable to `python3`.
+-- `git config cinnabar.experiments python3`.
+-
+-It has been tested mainly with python 3.5 and 3.7. Corner cases may not work
+-properly.
+-
+ Usage:
+ ------
+ 
+--- git-cinnabar.orig	2020-04-23 06:16:13 UTC
++++ git-cinnabar
+@@ -1,17 +1,4 @@
+-#!/bin/sh
+-''':'
+-experiments=${GIT_CINNABAR_EXPERIMENTS-$(git config cinnabar.experiments)}
+-case ",$experiments," in
+-*,python3,*)
+-  PYTHON=python3
+-  ;;
+-*)
+-  PYTHON=python2.7
+-  ;;
+-esac
+-exec $PYTHON $0 "$@"
+-exit 1
+-'''
++#!/usr/bin/env python
+ 
+ import os
+ import sys
+--- git-remote-hg.orig	2020-04-23 06:16:13 UTC
++++ git-remote-hg
+@@ -1,17 +1,4 @@
+-#!/bin/sh
+-''':'
+-experiments=${GIT_CINNABAR_EXPERIMENTS-$(git config cinnabar.experiments)}
+-case ",$experiments," in
+-*,python3,*)
+-  PYTHON=python3
+-  ;;
+-*)
+-  PYTHON=python2.7
+-  ;;
+-esac
+-exec $PYTHON $0 "$@"
+-exit 1
+-'''
++#!/usr/bin/env python
+ 
+ from __future__ import division
+ import os
