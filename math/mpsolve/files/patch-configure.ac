@@ -1,0 +1,11 @@
+--- configure.ac.orig	2020-06-15 18:09:55 UTC
++++ configure.ac
+@@ -574,7 +574,7 @@ AM_CONDITIONAL([BUILD_MATLAB_TOOLBOX], [test "$enable_
+ 
+ 
+ # == PYTHON MODULE ==
+-have_python=yes
++have_python=no
+ AM_PATH_PYTHON([2.3],,[:])
+ AC_ARG_VAR([PYTHON_INCLUDE], [Include flags for python, bypassing python-config])
+ AC_ARG_VAR([PYTHON_CONFIG], [Path to python-config])

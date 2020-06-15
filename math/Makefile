@@ -408,6 +408,7 @@
     SUBDIR += mpir
     SUBDIR += mppp
     SUBDIR += mprime
+    SUBDIR += mpsolve
     SUBDIR += mtrxmath
     SUBDIR += multichoose
     SUBDIR += mumps

@@ -1,0 +1,14 @@
+MPSolve stands for Multiprecision Polynomial SOLVEr.
+It is a software that aims to provide an easy to use (hopefully) universal
+blackbox for solving polynomials and secular equations.
+
+Among its features you can find:
+* Arbitrary precision approximation.
+* Guaranteed inclusion radii for the results.
+* Exploiting of polynomial structures: it can take advantage of sparsity as
+  well as coefficients in a particular domain (i.e. integers or rationals).
+* It can be specialized for specific classes of polynomials. As an example,
+  see the roots of the Mandelbrot polynomial of degree 2.097.151 computed in
+  about 10 days on a dual Xeon server.
+
+WWW: https://numpi.dm.unipi.it/software/mpsolve
