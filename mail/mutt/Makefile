@@ -2,12 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	mutt
-DISTVERSION=	1.14.2
+DISTVERSION=	1.14.3
 CATEGORIES+=	mail
 MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
-		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
 		https://bitbucket.org/mutt/mutt/downloads/ \
-		ftp://ftp.demon.co.uk/pub/mirrors/mutt/ \
 		http://www.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv \
 		http://www2.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv
 DIST_SUBDIR=	mutt
@@ -25,7 +23,8 @@ LICENSE=	GPLv2+
 
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:misc/mime-support
 
-USES=		cpe shebangfix ssl
+USES=		cpe perl5 shebangfix ssl
+USE_PERL5=	build
 
 CONFLICTS=	ja-mutt-[0-9]* ja-mutt-devel-[0-9]* mutt-1.4* mutt-devel-lite-[0-9]* mutt-lite-[0-9]* zh-mutt-devel-[0-9]*
 
@@ -112,6 +111,8 @@ URLVIEW_RUN_DEPENDS=	urlview:textproc/urlview
 
 DEBUG_LOGS_CONFIGURE_ON=	--enable-debug
 
+DOCS_BUILD_DEPENDS=	lynx:www/lynx
+
 # Handle ncurses/ncurses-port/slang
 SLANG_CONFIGURE_ON=	--with-slang=${LOCALBASE}
 SLANG_LIB_DEPENDS=	libslang.so:devel/libslang2
@@ -134,8 +135,6 @@ GSSAPI_NONE_CONFIGURE_ON=	--without-gss
 
 HCACHE_NONE_CONFIGURE_ON=	--disable-hcache
 HCACHE_NONE_CONFIGURE_OFF=	--enable-hcache --without-qdbm --without-gdbm
-HCACHE_NONE_USES_OFF=		perl5
-HCACHE_NONE_VARS_OFF=		USE_PERL5=build
 
 HCACHE_BDB_CONFIGURE_WITH=	bdb=${LOCALBASE}
 HCACHE_BDB_USES=	bdb:42+
@@ -151,15 +150,11 @@ ICONV_CONFIGURE_ON=	${ICONV_CONFIGURE_ARG}
 ICONV_CONFIGURE_OFF=	--disable-iconv
 
 REVERSE_REPLY_PATCH_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-reverse_reply
-REVERSE_REPLY_PATCH_USES=		perl5
-REVERSE_REPLY_PATCH_VARS=		USE_PERL5=build
 
 SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 SASL_CONFIGURE_ON=	--with-sasl=${LOCALBASE}
 
 SMIME_EXTRA_PATCHES=	${PATCHDIR}/extra-smime-sender
-SMIME_USES=		perl5
-SMIME_VARS=		USE_PERL5=build
 
 SMART_DATE_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-smartdate
 
@@ -173,8 +168,6 @@ IDN_CONFIGURE_WITH=	idn2=${LOCALBASE}
 IDN_IMPLIES=	ICONV
 
 IFDEF_PATCH_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ifdef
-IFDEF_PATCH_USES=		perl5
-IFDEF_PATCH_VARS=		USE_PERL5=build
 
 GPGME_LIB_DEPENDS+=	libgpgme.so:security/gpgme
 GPGME_LIB_DEPENDS+=	libgpg-error.so:security/libgpg-error
@@ -184,25 +177,19 @@ GPGME_CONFIGURE_ENABLE=	gpgme
 SMTP_CONFIGURE_ENABLE=	smtp
 
 FORCEBASE64_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-forcebase64
-FORCEBASE64_USES=		perl5
-FORCEBASE64_VARS=		USE_PERL5=build
 
 MAILDIR_MTIME_PATCH_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-maildir-mtime
 
 GREETING_PATCH_PATCHFILES=	mutt-${GREETING_PATCH_VERSION}.vc.greeting:vc
-GREETING_PATCH_USES=		perl5
-GREETING_PATCH_VARS=		USE_PERL5=build
 
 QUOTE_PATCH_PATCHFILES=	patch-${VVV_PATCH_VERSION}.vvv.initials.xz:vvv \
 	patch-${VVV_PATCH_VERSION}.vvv.quote.xz:vvv
-QUOTE_PATCH_USES=		perl5
-QUOTE_PATCH_VARS=		USE_PERL5=build
 
 .include <bsd.port.options.mk>
 
 # un/comment as each VERSION is created for PORTVERSION
 VVV_PATCH_VERSION=	1.13.0
-GREETING_PATCH_VERSION=	1.14.1
+GREETING_PATCH_VERSION=	1.14.3
 
 post-install:
 	${INSTALL_MAN} ${FILESDIR}/mailcap.5 ${STAGEDIR}${MANPREFIX}/man/man5
@@ -222,9 +209,6 @@ pre-configure::
 pre-configure-HCACHE_BDB-on:
 	@${REINPLACE_CMD} -E -e 's/BDB_VERSIONS="/&${BDB_LIB_NAME} db${BDB_VER} /' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-
-pre-build::
-	@${REINPLACE_CMD} -e '/^BUILD_DOC_TARGETS/s/=.*/=/' ${WRKSRC}/doc/Makefile
 
 # Undo some dist. installed files
 post-stage::
