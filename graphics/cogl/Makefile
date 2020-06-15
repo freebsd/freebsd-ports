@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cogl
-PORTVERSION=	1.22.4
+PORTVERSION=	1.22.8
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 
@@ -25,6 +25,6 @@ CONFIGURE_ARGS=	--with-x \
 		 --enable-xlib-egl-platform=yes
 INSTALL_TARGET=	install-strip
 
-PLIST_SUB=	LIBVER=20 LIBVERSION=20.4.2
+PLIST_SUB=	LIBVER=20 LIBVERSION=20.4.3
 
 .include <bsd.port.mk>
