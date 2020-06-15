@@ -1,5 +1,6 @@
 bin/cadabra-server
 bin/cadabra2
+bin/cadabra2-cli
 bin/cadabra2latex
 %%GUI%%bin/cadabra2-gtk
 bin/cadabra2cadabra
@@ -44,6 +45,7 @@ man/man1/cadabra2python.1.gz
 %%GUI%%%%DATADIR%%/manual/algorithms/lower_free_indices.cnb
 %%GUI%%%%DATADIR%%/manual/algorithms/lr_tensor.cnb
 %%GUI%%%%DATADIR%%/manual/algorithms/map_sympy.cnb
+%%GUI%%%%DATADIR%%/manual/algorithms/meld.cnb
 %%GUI%%%%DATADIR%%/manual/algorithms/product_rule.cnb
 %%GUI%%%%DATADIR%%/manual/algorithms/raise_free_indices.cnb
 %%GUI%%%%DATADIR%%/manual/algorithms/reduce_delta.cnb
@@ -58,6 +60,7 @@ man/man1/cadabra2python.1.gz
 %%GUI%%%%DATADIR%%/manual/algorithms/split_index.cnb
 %%GUI%%%%DATADIR%%/manual/algorithms/substitute.cnb
 %%GUI%%%%DATADIR%%/manual/algorithms/take_match.cnb
+%%GUI%%%%DATADIR%%/manual/algorithms/untrace.cnb
 %%GUI%%%%DATADIR%%/manual/algorithms/unwrap.cnb
 %%GUI%%%%DATADIR%%/manual/algorithms/vary.cnb
 %%GUI%%%%DATADIR%%/manual/algorithms/young_project_product.cnb
