@@ -397,6 +397,7 @@ bin/rexify
 %%PERL5_MAN3%%/Rex::Hardware.3.gz
 %%PERL5_MAN3%%/Rex::Helper::Rexfile::ParamLookup.3.gz
 %%PERL5_MAN3%%/Rex::Helper::SSH2::Expect.3.gz
+%%PERL5_MAN3%%/Rex::Hook.3.gz
 %%PERL5_MAN3%%/Rex::Logger.3.gz
 %%PERL5_MAN3%%/Rex::Resource::Common.3.gz
 %%PERL5_MAN3%%/Rex::Resource::firewall.3.gz
