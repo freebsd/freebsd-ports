@@ -49,6 +49,6 @@ include/HepMC3/WriterPlugin.h
 lib/libHepMC3.so
 lib/libHepMC3.so.3
 lib/libHepMC3search.so
-lib/libHepMC3search.so.3
+lib/libHepMC3search.so.4
 share/HepMC3/cmake/HepMC3Config-version.cmake
 share/HepMC3/cmake/HepMC3Config.cmake
