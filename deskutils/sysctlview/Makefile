@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sysctlview
-PORTVERSION=	2.0
+PORTVERSION=	2.0.1
 CATEGORIES=	deskutils
 
 MAINTAINER=	alfix86@gmail.com
@@ -16,7 +16,7 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils
 USES=		compiler:c++11-lang gettext-runtime gnome pkgconfig
 USE_GITLAB=	yes
 GL_ACCOUNT=	alfix
-GL_COMMIT=	c567a2f79bb9349b6b7c1a078ed448462e2eff70
+GL_COMMIT=	91028a02b584eaf8c16c72d839f57cd1680b5b62
 USE_GNOME=	atk atkmm cairo cairomm gdkpixbuf2 glib20 glibmm gtk30 gtkmm30 \
 		libsigc++20 pango pangomm
 
