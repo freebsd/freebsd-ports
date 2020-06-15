@@ -2,6 +2,7 @@
 
 PORTNAME=	spectral
 PORTVERSION=	817
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	adridg@FreeBSD.org
@@ -10,7 +11,8 @@ COMMENT=	Glossy Matrix IM client based on Qt technologies
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	libqmatrixclient>=0.5.3.2:net-im/libqmatrixclient
+LIB_DEPENDS=	libqt5keychain.so:security/qtkeychain \
+		libcmark.so:textproc/cmark
 
 USES=		cmake compiler:c++17-lang gl pkgconfig qt:5 tar:bz2
 USE_GL=		gl
@@ -18,11 +20,23 @@ USE_QT=		core dbus declarative graphicaleffects gui imageformats \
 		multimedia network quickcontrols quickcontrols2 svg widgets \
 		buildtools_build linguist_build qmake_build
 
-USE_GITLAB=	yes
-GL_ACCOUNT=	spectral-im
-GL_PROJECT=	spectral \
-		SortFilterProxyModel:sfpm
-GL_COMMIT=	8d6e69d5529b932b85a2f5e6774de27a267a2ace \
-		c61f2bdb0da48804a596a9a3a9382eebdba764dc:sfpm
+CMAKE_ON=	USE_INTREE_LIBQMC
+
+SFPMNAME=	SortFilterProxyModel
+SFPMVERSION=	36befddf5d57faad990e72c88c5844794f274145
+QUOTNAME=	libQuotient
+QUOTVERSION=	58dfe74390ebdd8ec6611d3b8fecfe7d051ff955
+DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.bz2:spectral \
+		${SFPMVERSION}.zip:sfpm \
+		${QUOTVERSION}.zip:quot
+MASTER_SITES=	https://gitlab.com/spectral-im/spectral/-/archive/${PORTVERSION}/:spectral \
+		https://github.com/oKcerG/${SFPMNAME}/archive/:sfpm \
+		https://github.com/quotient-im/${QUOTNAME}/archive/:quot
+
+
+post-extract:
+	${RMDIR} ${WRKSRC}/include/${SFPMNAME} ${WRKSRC}/include/${QUOTNAME}
+	${LN} -s ${WRKDIR}/${SFPMNAME}-${SFPMVERSION} ${WRKSRC}/include/${SFPMNAME}
+	${LN} -s ${WRKDIR}/${QUOTNAME}-${QUOTVERSION} ${WRKSRC}/include/${QUOTNAME}
 
 .include <bsd.port.mk>
