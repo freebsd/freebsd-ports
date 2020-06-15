@@ -13,6 +13,9 @@ COMMENT=	Ruby HTTP client generator for APIs represented with JSON schema
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=	Use www/rubygem-heroics instead
+EXPIRATION_DATE=2020-06-30
+
 RUN_DEPENDS=	rubygem-erubis>=2.0<3:www/rubygem-erubis \
 		rubygem-excon>=0:devel/rubygem-excon \
 		rubygem-moneta>=0:devel/rubygem-moneta \
