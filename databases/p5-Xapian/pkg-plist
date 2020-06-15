@@ -26,7 +26,6 @@
 %%SITE_PERL%%/Xapian/MultiValueSorter.pm
 %%SITE_PERL%%/Xapian/NetworkError.pm
 %%SITE_PERL%%/Xapian/NetworkTimeoutError.pm
-%%SITE_PERL%%/Xapian/PerlStopper.pm
 %%SITE_PERL%%/Xapian/PositionIterator.pm
 %%SITE_PERL%%/Xapian/PostingIterator.pm
 %%SITE_PERL%%/Xapian/Query.pm
