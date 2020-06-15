@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	estd
-DISTVERSION=	0.3.3
+DISTVERSION=	0.3.4
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
