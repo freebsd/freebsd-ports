@@ -50,7 +50,7 @@ load_rc_config ${name}
 
 # set up dependant variables
 procname="${command}"
-pidfile="${litecoind_data_dir}/litecoind.pid"
+pidfile="${litecoind_data_dir}/litecoind-daemon.pid"
 required_files="${litecoind_config_file}"
 
 
