@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xapian-core
-PORTVERSION=	1.4.15
+PORTVERSION=	1.4.16
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://oligarchy.co.uk/xapian/${PORTVERSION}/ \

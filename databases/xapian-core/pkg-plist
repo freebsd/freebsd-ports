@@ -55,7 +55,7 @@ lib/cmake/xapian/xapian-config-version.cmake
 lib/cmake/xapian/xapian-config.cmake
 lib/libxapian.so
 lib/libxapian.so.30
-lib/libxapian.so.30.10.1
+lib/libxapian.so.30.10.2
 libdata/pkgconfig/xapian-core.pc
 man/man1/copydatabase.1.gz
 man/man1/quest.1.gz
@@ -352,6 +352,7 @@ share/aclocal/xapian.m4
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/document_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/doxygen.css
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/doxygen.png
+%%PORTDOCS%%%%DOCSDIR%%/apidoc/html/dynsections.js
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/enquire_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/error_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/errorhandler_8h.html
@@ -446,8 +447,11 @@ share/aclocal/xapian.m4
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/inherit_graph_8.png
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/inherit_graph_9.png
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/inherits.html
+%%PORTDOCS%%%%DOCSDIR%%/apidoc/html/jquery.js
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/keymaker_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/matchspy_8h.html
+%%PORTDOCS%%%%DOCSDIR%%/apidoc/html/menu.js
+%%PORTDOCS%%%%DOCSDIR%%/apidoc/html/menudata.js
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/mset_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/namespaceXapian.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/namespaceXapian_1_1Auto.html
