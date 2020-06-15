@@ -2,8 +2,7 @@
 
 PORTNAME=	nheko
 DISTVERSIONPREFIX=v
-DISTVERSION=	0.7.1
-PORTREVISION=	1
+DISTVERSION=	0.7.2
 CATEGORIES=	net-im
 
 MAINTAINER=	adridg@FreeBSD.org
@@ -54,13 +53,5 @@ GH_TUPLE=	drycpp:lmdbxx:0b43ca87d8cfabba392dfe884eb1edb83874de02:lmdb/deps/lmdb 
 
 post-extract:
 	cd ${WRKSRC}/deps/tweeny && ${LN} -s include tweeny
-
-# Includes <json.hpp> without referencing where it's installed,
-# so hackishly correct all the broken paths.
-post-patch:
-	${FIND} ${WRKSRC} -type f -print0 | \
-	${XARGS} -0 ${REINPLACE_CMD} \
-		-e 's+include <json.hpp>+include <nlohmann/json.hpp>+' \
-		-e 's+include "json.hpp"+include <nlohmann/json.hpp>+'
 
 .include <bsd.port.mk>

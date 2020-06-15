@@ -24,6 +24,8 @@ include/mtx/events/messages/video.hpp
 include/mtx/events/name.hpp
 include/mtx/events/pinned_events.hpp
 include/mtx/events/power_levels.hpp
+include/mtx/events/presence.hpp
+include/mtx/events/reaction.hpp
 include/mtx/events/redaction.hpp
 include/mtx/events/tag.hpp
 include/mtx/events/tombstone.hpp
@@ -61,4 +63,4 @@ lib/cmake/MatrixClient/MatrixClientConfigVersion.cmake
 lib/cmake/MatrixClient/MatrixClientTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/MatrixClient/MatrixClientTargets.cmake
 lib/libmatrix_client.so
-lib/libmatrix_client.so.0.3.0
+lib/libmatrix_client.so.0.3.1

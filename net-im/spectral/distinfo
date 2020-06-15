@@ -1,5 +1,5 @@
-TIMESTAMP = 1559832001
-SHA256 (b0-spectral-4ef8e1efd95cd8de3f5c215d2ed27754d8e8c11a_GL0.tar.gz) = 21a042072c1e04e4129d1786f2e5143cb35f408cd692065867f67dc4085615cb
-SIZE (b0-spectral-4ef8e1efd95cd8de3f5c215d2ed27754d8e8c11a_GL0.tar.gz) = 868460
-SHA256 (b0-SortFilterProxyModel-c61f2bdb0da48804a596a9a3a9382eebdba764dc_GL0.tar.gz) = 1c2ba6d6926192e0c5e20aa9270d77accce4649a780f957a0b95f5c9d375050b
-SIZE (b0-SortFilterProxyModel-c61f2bdb0da48804a596a9a3a9382eebdba764dc_GL0.tar.gz) = 32084
+TIMESTAMP = 1588512516
+SHA256 (spectral-im-spectral-8d6e69d5529b932b85a2f5e6774de27a267a2ace_GL0.tar.gz) = cc6ed91feb4af8078f0185fd64570c43d5c877030c255a011c7bfe9522e2505b
+SIZE (spectral-im-spectral-8d6e69d5529b932b85a2f5e6774de27a267a2ace_GL0.tar.gz) = 845196
+SHA256 (spectral-im-SortFilterProxyModel-c61f2bdb0da48804a596a9a3a9382eebdba764dc_GL0.tar.gz) = 2403a578fc5b3e46ad1c3b14e71590ca4aaa00c521958020cd925e05fadc32c1
+SIZE (spectral-im-SortFilterProxyModel-c61f2bdb0da48804a596a9a3a9382eebdba764dc_GL0.tar.gz) = 18483

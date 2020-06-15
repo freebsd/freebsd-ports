@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	spectral
-PORTVERSION=	603
-PORTREVISION=	4
+PORTVERSION=	817
 CATEGORIES=	net-im
 
 MAINTAINER=	adridg@FreeBSD.org
@@ -13,20 +12,17 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	libqmatrixclient>=0.5.3.2:net-im/libqmatrixclient
 
-USES=		compiler:c++17-lang gl pkgconfig qmake qt:5 tar:bz2
+USES=		cmake compiler:c++17-lang gl pkgconfig qt:5 tar:bz2
 USE_GL=		gl
 USE_QT=		core dbus declarative graphicaleffects gui imageformats \
 		multimedia network quickcontrols quickcontrols2 svg widgets \
 		buildtools_build linguist_build qmake_build
 
 USE_GITLAB=	yes
-GL_ACCOUNT=	b0
+GL_ACCOUNT=	spectral-im
 GL_PROJECT=	spectral \
 		SortFilterProxyModel:sfpm
-GL_COMMIT=	4ef8e1efd95cd8de3f5c215d2ed27754d8e8c11a \
+GL_COMMIT=	8d6e69d5529b932b85a2f5e6774de27a267a2ace \
 		c61f2bdb0da48804a596a9a3a9382eebdba764dc:sfpm
-GL_SUBDIR=	include/SortFilterProxyModel:sfpm
-
-QMAKE_ARGS+=	USE_SYSTEM_QMATRIXCLIENT=true
 
 .include <bsd.port.mk>
