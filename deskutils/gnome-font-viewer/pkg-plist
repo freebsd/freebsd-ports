@@ -2,6 +2,8 @@ bin/gnome-font-viewer
 bin/gnome-thumbnail-font
 share/applications/org.gnome.font-viewer.desktop
 share/dbus-1/services/org.gnome.font-viewer.service
+share/icons/hicolor/scalable/apps/org.gnome.font-viewer.svg
+share/icons/hicolor/symbolic/apps/org.gnome.font-viewer-symbolic.svg
 share/locale/af/LC_MESSAGES/gnome-font-viewer.mo
 share/locale/am/LC_MESSAGES/gnome-font-viewer.mo
 share/locale/an/LC_MESSAGES/gnome-font-viewer.mo
