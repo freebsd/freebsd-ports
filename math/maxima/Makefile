@@ -3,7 +3,7 @@
 
 PORTNAME=	maxima
 PORTVERSION=	5.43.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math lisp tk
 MASTER_SITES=	SF/maxima/Maxima-source/${PORTVERSION}-source
 
@@ -19,7 +19,7 @@ LICENSE_PERMS_MAXIMAEXTRACLAUSE=	dist-mirror dist-sell pkg-mirror pkg-sell auto-
 RUN_DEPENDS=	gnuplot:math/gnuplot \
 		rlwrap:devel/rlwrap
 
-USES=		autoreconf gmake makeinfo shared-mime-info tk
+USES=		autoreconf gmake makeinfo shared-mime-info
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	PYTHON=dummy
@@ -31,11 +31,11 @@ PORTDOCS=	*
 PORTDATA=	*
 PORTEXAMPLES=	*
 
-OPTIONS_DEFINE=		EXAMPLES DOCS NOUSERINIT MANPAGES TEST
+OPTIONS_DEFINE=		EXAMPLES DOCS NOUSERINIT MANPAGES SAGE TEST XMAXIMA
 OPTIONS_SINGLE=		LISP
-OPTIONS_SINGLE_LISP=	CCL CMUCL SBCL
+OPTIONS_SINGLE_LISP=	CCL CMUCL ECL SBCL
 
-OPTIONS_DEFAULT=	NOUSERINIT MANPAGES SBCL
+OPTIONS_DEFAULT=	ECL NOUSERINIT MANPAGES SAGE TEST XMAXIMA
 OPTIONS_SUB=		yes
 
 CCL_DESC=		Build with Clozure Common Lisp
@@ -50,7 +50,29 @@ CMUCL_RUN_DEPENDS=	lisp:lang/cmucl
 CMUCL_CONFIGURE_ON=	--enable-cmucl
 CMUCL_PLIST_SUB=	BINDIR=binary-cmucl BINNAME=maxima_core
 
+ECL_DESC=		Build with Embedabble Common Lisp
+ECL_BUILD_DEPENDS=	ecl:lang/ecl
+ECL_RUN_DEPENDS=	ecl:lang/ecl
+ECL_LIB_DEPENDS=	libgmp.so:math/gmp	\
+			libffi.so:devel/libffi	\
+			libgc.so:devel/boehm-gc	\
+			libgc-threaded.so:devel/boehm-gc-threaded
+# libgc-threaded.so is really only used when ecl is built with THREADS on,
+# which is the default. See https://reviews.freebsd.org/D24959 for more
+# details.
+ECL_CONFIGURE_ON=	--with-ecl=ecl
+ECL_PLIST_SUB=		BINDIR=binary-ecl BINNAME=maxima
+GET_ECLLIB=		ecl -eval "(princ (SI:GET-LIBRARY-PATHNAME))" -eval "(quit)"
+
 NOUSERINIT_DESC=	Do not load user init file for lisp (only for sbcl)
+
+SAGE_DESC=		Build with patches from Sage (implies ECL)
+SAGE_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-share_linearalgebra_matrixexp.lisp \
+			${PATCHDIR}/extra-patch-src_grind.lisp \
+			${PATCHDIR}/extra-patch-src_hayat.lisp \
+			${PATCHDIR}/extra-patch-src_init-cl.lisp \
+			${PATCHDIR}/extra-patch-src_maxima.system
+SAGE_IMPLIES=		ECL
 
 SBCL_DESC=		Build with Steel Bank Common Lisp
 SBCL_BUILD_DEPENDS=	sbcl:lang/sbcl
@@ -58,9 +80,15 @@ SBCL_RUN_DEPENDS=	sbcl:lang/sbcl
 SBCL_CONFIGURE_ON=	--enable-sbcl
 SBCL_PLIST_SUB=		BINDIR=binary-sbcl BINNAME=maxima_core
 
-TEST_TARGET=	check
+TEST_TARGET=		check
 TEST_BUILD_DEPENDS=	gnuplot:math/gnuplot \
 			rlwrap:devel/rlwrap
+
+XMAXIMA_DESC=		Install xmaxima (implies DOCS and TEST)
+XMAXIMA_IMPLIES=	DOCS TEST
+XMAXIMA_USES=		tk
+XMAXIMA_CONFIGURE_WITH=	wish=${WISH}
+
 post-patch:
 	${GREP} -Fe '.core' -l -r ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} 's;\.core;_core;g'
 	${FIND} -X ${WRKSRC}/interfaces/xmaxima -name 'Makefile.in' | ${XARGS} ${REINPLACE_CMD} "s;tclsh;${TCLSH};g"
@@ -70,13 +98,22 @@ post-patch:
 post-patch-TEST-off:
 	${REINPLACE_CMD} 's;tests;;' ${WRKSRC}/Makefile.am
 
+post-patch-XMAXIMA-off:
+	${REINPLACE_CMD} 's; xmaxima;;' ${WRKSRC}/interfaces/Makefile.am
+
+post-patch-XMAXIMA-on:
+	${REINPLACE_CMD} "s;%%DOCSDIR%%;/${DOCSDIR:S,/, ,g};" \
+	${WRKSRC}/interfaces/xmaxima/Tkmaxima/Paths.tcl
+
+post-configure:
+	${REINPLACE_CMD} '/ld-flags/s|" |"|' ${WRKSRC}/src/autoconf-variables.lisp
+	${REINPLACE_CMD} '/ld-flags/s| ")|")|' ${WRKSRC}/src/autoconf-variables.lisp
+
 pre-build-CCL-on:
 	cd ${WRKSRC}/src/ && ${MKDIR} binary-ccl && ${LN} -s binary-ccl binary-openmcl
 
 post-build-MANPAGES-on:
 	${GZIP_CMD} ${WRKSRC}/doc/man/maxima.1
-
-post-build-TEST-on: do-test
 
 post-install:
 	for x in "" "-1" "-2" "-3"; do ${INSTALL_MAN} ${WRKSRC}/doc/info/maxima.info$$x ${STAGEDIR}${PREFIX}/${INFO_PATH}; done
@@ -95,5 +132,10 @@ post-install-MANPAGES-on:
 
 post-install-NOUSERINIT-on:
 	${REINPLACE_CMD} 's;--end-runtime-options;--end-runtime-options --no-userinit;' ${STAGEDIR}${PREFIX}/bin/maxima
+
+post-install-SAGE-on:
+	${MKDIR} ${STAGEDIR}$$(${GET_ECLLIB})
+	${INSTALL_DATA} ${WRKSRC}/src/binary-ecl/maxima.fas \
+		${STAGEDIR}$$(${GET_ECLLIB})
 
 .include <bsd.port.mk>

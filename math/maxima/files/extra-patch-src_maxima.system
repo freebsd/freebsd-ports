@@ -1,0 +1,24 @@
+--- src/maxima.system.orig	2019-10-21 03:38:59 UTC
++++ src/maxima.system
+@@ -1,5 +1,8 @@
+ ;;; -*- Lisp -*-
+ 
++(require :cmp)
++(setf c::*compile-in-constants* t)
++
+ (in-package :cl-user)
+ 
+ (pushnew :cl *features*)
+@@ -75,6 +78,12 @@
+ 			     ;; Convert dir/foo.fas to dir/foo.o
+ 			     (make-pathname :type "o" :defaults p))
+ 			 files)))
++;; Patch borrowed from SageMath: build the Maxima library
++	(c::build-fasl "binary-ecl/maxima" :lisp-files obj
++			  :ld-flags
++			  (let ((x (symbol-value (find-symbol "*AUTOCONF-LD-FLAGS*"
++							      (find-package "MAXIMA")))))
++			    (if (and x (not (string= x ""))) (list x))))
+ 	(c::build-program "binary-ecl/maxima" :lisp-files obj
+ 			  :ld-flags
+ 			  (let ((x (symbol-value (find-symbol "*AUTOCONF-LD-FLAGS*"

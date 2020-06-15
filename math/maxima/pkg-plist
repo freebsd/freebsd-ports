@@ -1,6 +1,7 @@
 bin/maxima
 bin/rmaxima
-bin/xmaxima
+%%XMAXIMA%%bin/xmaxima
+%%SAGE%%lib/ecl-16.1.3/maxima.fas
 lib/maxima/%%PORTVERSION%%/%%BINDIR%%/%%BINNAME%%
 %%CMUCL%%lib/maxima/%%PORTVERSION%%/%%BINDIR%%/lisp
 libexec/maxima/%%PORTVERSION%%/mgnuplot
@@ -27,7 +28,7 @@ share/info/maxima-index.lisp
 share/metainfo/net.sourceforge.maxima.xmaxima.appdata.xml
 share/mime/packages/x-mac.xml
 share/mime/packages/x-maxima-out.xml
-share/pixmaps/net.sourceforge.maxima.png
-share/pixmaps/net.sourceforge.maxima.svg
+%%XMAXIMA%%share/pixmaps/net.sourceforge.maxima.png
+%%XMAXIMA%%share/pixmaps/net.sourceforge.maxima.svg
 share/pixmaps/text-x-maxima-out.svg
 share/pixmaps/text-x-maximasession.svg
