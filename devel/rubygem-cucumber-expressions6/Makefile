@@ -13,7 +13,7 @@ COMMENT=	Cucumber Expressions for Ruby
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-DEPRECATED=	Use devel/rubygem-cucumber-expressions instead
+DEPRECATED=	Use devel/rubygem-cucumber-cucumber-expressions instead
 EXPIRATION_DATE=2020-06-30
 
 USES=		gem
