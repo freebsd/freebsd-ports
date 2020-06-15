@@ -76,7 +76,6 @@ man/man1/lmp.1.gz
 %%DATADIR%%/potentials/CH.airebo-m
 %%DATADIR%%/potentials/CH.rebo
 %%DATADIR%%/potentials/CH_taper.KC
-%%DATADIR%%/potentials/C_10_10.mesocnt
 %%DATADIR%%/potentials/CdTe.bop.table
 %%DATADIR%%/potentials/CdTe.sw
 %%DATADIR%%/potentials/CdTeSe.bop.table
@@ -186,6 +185,7 @@ man/man1/lmp.1.gz
 %%DATADIR%%/potentials/Si_Zuo_JPCA2020.snap
 %%DATADIR%%/potentials/Si_Zuo_JPCA2020.snapcoeff
 %%DATADIR%%/potentials/Si_Zuo_JPCA2020.snapparam
+%%DATADIR%%/potentials/TABTP_10_10.mesont
 %%DATADIR%%/potentials/Ta06A.snap
 %%DATADIR%%/potentials/Ta06A.snapcoeff
 %%DATADIR%%/potentials/Ta06A.snapparam
