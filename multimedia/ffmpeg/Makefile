@@ -307,7 +307,7 @@ LIBBLURAY_CONFIGURE_ENABLE=	libbluray
 
 # librsvg
 LIBRSVG2_USES=			gnome
-LIBRSVG2_USE=			GNOME=librsvg2
+LIBRSVG2_USE=			GNOME=cairo,librsvg2
 LIBRSVG2_CONFIGURE_ENABLE=	librsvg
 
 # libxml
