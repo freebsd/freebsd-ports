@@ -14,6 +14,7 @@ bin/dpdk-test-eventdev
 bin/dpdk-test-pipeline
 bin/dpdk-test-sad
 bin/dpdk-testpmd
+include/bpf_def.h
 include/cmdline.h
 include/cmdline_cirbuf.h
 include/cmdline_parse.h
@@ -53,6 +54,8 @@ include/rte_bbdev_op.h
 include/rte_bbdev_pmd.h
 include/rte_bitmap.h
 include/rte_bitrate.h
+include/rte_bpf.h
+include/rte_bpf_ethdev.h
 include/rte_branch_prediction.h
 include/rte_build_config.h
 include/rte_bus.h
@@ -65,8 +68,6 @@ include/rte_byteorder_32.h
 include/rte_byteorder_64.h
 include/rte_cfgfile.h
 include/rte_class.h
-include/rte_cmp_arm64.h
-include/rte_cmp_x86.h
 include/rte_common.h
 include/rte_comp.h
 include/rte_compat.h
@@ -81,7 +82,6 @@ include/rte_crypto_asym.h
 include/rte_crypto_sym.h
 include/rte_cryptodev.h
 include/rte_cryptodev_pmd.h
-include/rte_cuckoo_hash.h
 include/rte_cycles.h
 include/rte_debug.h
 include/rte_dev.h
@@ -247,6 +247,9 @@ include/rte_table_lpm_ipv6.h
 include/rte_table_stub.h
 include/rte_tailq.h
 include/rte_tcp.h
+include/rte_telemetry.h
+include/rte_telemetry_internal.h
+include/rte_telemetry_parser.h
 include/rte_thash.h
 include/rte_time.h
 include/rte_timer.h
@@ -1003,6 +1006,9 @@ lib/librte_security.so.20.0
 lib/librte_stack.a
 lib/librte_stack.so
 lib/librte_stack.so.0.200
+lib/librte_telemetry.a
+lib/librte_telemetry.so
+lib/librte_telemetry.so.0.200
 lib/librte_table.a
 lib/librte_table.so
 lib/librte_table.so.20.0

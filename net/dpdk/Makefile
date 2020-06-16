@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	dpdk
-DISTVERSION=	19.11
-PORTREVISION=	2
+DISTVERSION=	19.11.2
 CATEGORIES=	net
 MASTER_SITES=	http://fast.dpdk.org/rel/
 
@@ -15,8 +14,10 @@ ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	Only works on 64-bit x86 hardware
 
 LIB_DEPENDS=	libjansson.so:devel/jansson
+BUILD_DEPENDS=	objdump:devel/binutils
 
-USES=		meson kmod shebangfix tar:xz
+USES=		meson kmod pkgconfig shebangfix tar:xz python:3.5+
+WRKSRC=	${WRKDIR}/${PORTNAME}-stable-${PORTVERSION}
 MESON_ARGS=	-Dmachine=default -Ddefault_library=shared
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	usertools/dpdk-pmdinfo.py \
@@ -42,6 +43,5 @@ DEBUG_MESON_ON=		--buildtype=debug
 DEBUG_MESON_OFF=	--buildtype=release
 TESTS_MESON_TRUE=	tests
 TOOLS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyelftools>=0:devel/py-pyelftools@${PY_FLAVOR}
-TOOLS_USES=		python:3.5+
 
 .include <bsd.port.mk>
