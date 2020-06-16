@@ -1,0 +1,32 @@
+--- base/runtime/objs/mk.amd64-freebsd.orig	2019-11-14 19:33:11 UTC
++++ base/runtime/objs/mk.amd64-freebsd
+@@ -1,4 +1,4 @@
+-# mk.amd64-freebst
++# mk.amd64-freebsd
+ #
+ # makefile for "Free BSD" on the amd64 architecture, which is a BSD 4.4 clone.
+ #
+@@ -6,9 +6,10 @@
+ SHELL =		/bin/sh
+ 
+ MAKE =		make
+-AS =		as --64
+-CC =		cc -std=gnu99
+-CFLAGS =	-O2 -m64
++AS ?=		cc -x assembler -c
++ASFLAGS ?=	-fPIC
++CC ?=		cc -std=gnu99
++CFLAGS ?=	-O2 -m64 -fPIC
+ CPP =		cc -x assembler-with-cpp -E -P
+ XOBJS =
+ XLIBS =		../c-libs/dl/libunix-dynload.a
+@@ -26,6 +27,6 @@ RUNTIME_SO =	run.amd64-freebsd.so
+ RUNTIME_A =	run.amd64-freebsd.a
+ 
+ all:
+-	($(MAKE) CHECK_HEAP=$(CHECK_HEAP) RUNTIME="$(RUNTIME)" VERSION="$(VERSION)" AS="$(AS)" CC="$(CC)" CFLAGS="$(CFLAGS)" CPP="$(CPP)" TARGET=$(TARGET) DEFS="$(DEFS)" XOBJS="$(XOBJS)" XLIBS="$(XLIBS)" LD_LIBS="$(LD_LIBS)" $(RUNTIME))
+-#	($(MAKE) RUNTIME="$(RUNTIME_SO)" VERSION="$(VERSION)" AS="$(AS)" CC="$(CC)" CFLAGS="$(CFLAGS)" CPP="$(CPP)" TARGET=$(TARGET) DEFS="$(DEFS)" XOBJS="$(XOBJS)" XLIBS="$(XLIBS)" LD_LIBS="$(LD_LIBS)" LDFLAGS="-shared" $(RUNTIME_SO))
+-#	($(MAKE) RUNTIME_A="$(RUNTIME_A)" VERSION="$(VERSION)" AS="$(AS)" CC="$(CC)" CFLAGS="$(CFLAGS)" CPP="$(CPP)" TARGET=$(TARGET) DEFS="$(DEFS)" XOBJS="$(XOBJS)" XLIBS="$(XLIBS)" LD_LIBS="$(LD_LIBS)" LDFLAGS="" $(RUNTIME_A))
++	($(MAKE) CHECK_HEAP=$(CHECK_HEAP) RUNTIME="$(RUNTIME)" VERSION="$(VERSION)" AS="$(AS)" ASFLAGS="$(ASFLAGS)" CC="$(CC)" CFLAGS="$(CFLAGS)" CPP="$(CPP)" TARGET=$(TARGET) DEFS="$(DEFS)" XOBJS="$(XOBJS)" XLIBS="$(XLIBS)" LD_LIBS="$(LD_LIBS)" $(RUNTIME))
++	($(MAKE) RUNTIME="$(RUNTIME_SO)" VERSION="$(VERSION)" AS="$(AS)" ASFLAGS="$(ASFLAGS)" CC="$(CC)" CFLAGS="$(CFLAGS)" CPP="$(CPP)" TARGET=$(TARGET) DEFS="$(DEFS)" XOBJS="$(XOBJS)" XLIBS="$(XLIBS)" LD_LIBS="$(LD_LIBS)" LDFLAGS="-shared -Wl,-z,notext" $(RUNTIME_SO))
++	($(MAKE) RUNTIME_A="$(RUNTIME_A)" VERSION="$(VERSION)" AS="$(AS)" ASFLAGS="$(ASFLAGS)" CC="$(CC)" CFLAGS="$(CFLAGS)" CPP="$(CPP)" TARGET=$(TARGET) DEFS="$(DEFS)" XOBJS="$(XOBJS)" XLIBS="$(XLIBS)" LD_LIBS="$(LD_LIBS)" LDFLAGS="" $(RUNTIME_A))

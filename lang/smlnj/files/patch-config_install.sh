@@ -1,7 +1,7 @@
---- config/install.sh.orig	2019-05-31 12:15:03 UTC
+--- config/install.sh.orig	2019-11-23 16:06:59 UTC
 +++ config/install.sh
-@@ -17,6 +17,8 @@ else
-     nolib=false
+@@ -56,11 +56,36 @@ if [ x"$SIZE_OPT" = x ] ; then
+     SIZE_OPT="-"$DEFAULT_SIZE
  fi
  
 +[ -n "$RECOMPILEDIR" ] && echo "RECOMPILEDIR=$RECOMPILEDIR"
@@ -9,13 +9,12 @@
  if [ x${INSTALL_QUIETLY} = xtrue ] ; then
      export CM_VERBOSE
      CM_VERBOSE=false
-@@ -37,6 +39,28 @@ complain() {
-     exit 1
- }
+ fi
  
 +#
 +# do_patch patch-file
 +# apply a patch file
++#
 +do_patch() {
 +	patchfile=$FILESDIR/$1
 +
@@ -35,10 +34,10 @@
 +	fi
 +}
 +
- this=$0
- 
- 
-@@ -96,7 +120,28 @@ trap 'cd "$ROOT"; rm -f $tmpfiles' 0 1 2 3 15
+ vsay() {
+     if [ x${INSTALL_DEBUG} = xtrue ] ; then
+ 	echo "$@"
+@@ -128,7 +153,28 @@ trap 'cd "$ROOT"; rm -f $tmpfiles' 0 1 2 3 15
  # Especially important is CM_PATHCONFIG.
  #
  export CM_PATHCONFIG
@@ -68,7 +67,7 @@
  #
  # the release version that we are installing
  #
-@@ -371,7 +416,12 @@ esac
+@@ -403,7 +449,12 @@ esac
  # the name of the bin files directory
  #
  BOOT_ARCHIVE=boot.$ARCH-unix
@@ -82,7 +81,7 @@
  
  #
  # build the run-time system
-@@ -380,9 +430,15 @@ if [ -x "$RUNDIR"/run.$ARCH-$OPSYS ]; then
+@@ -412,9 +463,15 @@ if [ -x "$RUNDIR"/run.$ARCH-$OPSYS ]; then
      vsay $this: Run-time system already exists.
  else
      "$CONFIGDIR"/unpack "$ROOT" runtime
@@ -99,7 +98,7 @@
      if [ -x run.$ARCH-$OPSYS ]; then
  	mv run.$ARCH-$OPSYS "$RUNDIR"
  	if [ -f runx.$ARCH-$OPSYS ]; then
-@@ -394,7 +450,7 @@ else
+@@ -426,7 +483,7 @@ else
  	if [ -f run.$ARCH-$OPSYS.a ]; then
  	    mv run.$ARCH-$OPSYS.a "$RUNDIR"
  	fi
@@ -108,7 +107,7 @@
      else
  	complain "$this: !!! Run-time system build failed for some reason."
      fi
-@@ -420,7 +476,7 @@ if [ -r "$HEAPDIR"/sml.$HEAP_SUFFIX ]; then
+@@ -452,7 +509,7 @@ if [ -r "$HEAPDIR"/sml.$HEAP_SUFFIX ]; then
  	complain "$this !!! Unable to re-create heap image (sml.$HEAP_SUFFIX)."
      fi
  else
@@ -117,7 +116,7 @@
  
      fish "$ROOT"/"$BOOT_FILES"/smlnj/basis
  
-@@ -455,7 +511,7 @@ else
+@@ -487,7 +544,7 @@ else
  	    cd "$ROOT"/"$BOOT_FILES"
  	    for anchor in * ; do
  		if [ -d $anchor ] ; then
@@ -126,7 +125,7 @@
  		    move $anchor "$LIBDIR"/$anchor
  		fi
  	    done
-@@ -478,6 +534,18 @@ installdriver _ml-build ml-build
+@@ -510,6 +567,18 @@ installdriver _ml-build ml-build
  
  cd "$ROOT"
  
@@ -145,7 +144,7 @@
  #
  # Now do all the rest using the precompiled installer
  # (see base/system/smlnj/installer for details)
-@@ -487,6 +555,12 @@ if [ $nolib = false ] ; then
+@@ -519,6 +588,12 @@ if [ $nolib = false ] ; then
      export ROOT INSTALLDIR CONFIGDIR BINDIR
      CM_TOLERATE_TOOL_FAILURES=true
      export CM_TOLERATE_TOOL_FAILURES
@@ -155,10 +154,10 @@
 +    # propagated to the resulting heaps because the heaps generated
 +    # in this stage don't contain the compiler.
 +    [ -z "$STAGEDIR" ] || CM_PATHCONFIG=$CM_LOCAL_PATHCONFIG
-     if "$BINDIR"/sml -m \$smlnj/installer.cm
+     if "$BINDIR"/sml $SIZE_OPT -m \$smlnj/installer.cm
      then
  	vsay $this: Installation complete.
-@@ -494,5 +568,20 @@ if [ $nolib = false ] ; then
+@@ -526,5 +601,20 @@ if [ $nolib = false ] ; then
  	complain "$this: !!! Installation of libraries and programs failed."
      fi
  fi
