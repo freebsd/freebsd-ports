@@ -1883,6 +1883,7 @@ share/locale/en_GB/LC_MESSAGES/kcm_cursortheme.mo
 share/locale/en_GB/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/en_GB/LC_MESSAGES/kcm_desktoptheme.mo
 share/locale/en_GB/LC_MESSAGES/kcm_fonts.mo
+share/locale/en_GB/LC_MESSAGES/kcm_keys.mo
 share/locale/en_GB/LC_MESSAGES/kcm_launchfeedback.mo
 share/locale/en_GB/LC_MESSAGES/kcm_lookandfeel.mo
 share/locale/en_GB/LC_MESSAGES/kcm_nightcolor.mo
@@ -2180,6 +2181,7 @@ share/locale/fi/LC_MESSAGES/kcm_cursortheme.mo
 share/locale/fi/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/fi/LC_MESSAGES/kcm_desktoptheme.mo
 share/locale/fi/LC_MESSAGES/kcm_fonts.mo
+share/locale/fi/LC_MESSAGES/kcm_keys.mo
 share/locale/fi/LC_MESSAGES/kcm_launchfeedback.mo
 share/locale/fi/LC_MESSAGES/kcm_lookandfeel.mo
 share/locale/fi/LC_MESSAGES/kcm_nightcolor.mo
@@ -3049,6 +3051,7 @@ share/locale/ko/LC_MESSAGES/kcm_cursortheme.mo
 share/locale/ko/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/ko/LC_MESSAGES/kcm_desktoptheme.mo
 share/locale/ko/LC_MESSAGES/kcm_fonts.mo
+share/locale/ko/LC_MESSAGES/kcm_keys.mo
 share/locale/ko/LC_MESSAGES/kcm_launchfeedback.mo
 share/locale/ko/LC_MESSAGES/kcm_lookandfeel.mo
 share/locale/ko/LC_MESSAGES/kcm_nightcolor.mo

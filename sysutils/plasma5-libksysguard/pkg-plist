@@ -164,7 +164,11 @@ share/locale/el/LC_MESSAGES/ksgrd.mo
 share/locale/el/LC_MESSAGES/ksysguardlsofwidgets.mo
 share/locale/el/LC_MESSAGES/processcore.mo
 share/locale/el/LC_MESSAGES/processui.mo
+share/locale/en_GB/LC_MESSAGES/KSysGuardSensorFaces.mo
 share/locale/en_GB/LC_MESSAGES/ksgrd.mo
+share/locale/en_GB/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.barchart.mo
+share/locale/en_GB/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.linechart.mo
+share/locale/en_GB/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.piechart.mo
 share/locale/en_GB/LC_MESSAGES/ksysguardlsofwidgets.mo
 share/locale/en_GB/LC_MESSAGES/processcore.mo
 share/locale/en_GB/LC_MESSAGES/processui.mo
@@ -271,7 +275,11 @@ share/locale/km/LC_MESSAGES/ksysguardlsofwidgets.mo
 share/locale/km/LC_MESSAGES/processcore.mo
 share/locale/km/LC_MESSAGES/processui.mo
 share/locale/kn/LC_MESSAGES/ksysguardlsofwidgets.mo
+share/locale/ko/LC_MESSAGES/KSysGuardSensorFaces.mo
 share/locale/ko/LC_MESSAGES/ksgrd.mo
+share/locale/ko/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.barchart.mo
+share/locale/ko/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.linechart.mo
+share/locale/ko/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.piechart.mo
 share/locale/ko/LC_MESSAGES/ksysguardlsofwidgets.mo
 share/locale/ko/LC_MESSAGES/processcore.mo
 share/locale/ko/LC_MESSAGES/processui.mo
@@ -333,7 +341,11 @@ share/locale/pl/LC_MESSAGES/ksgrd.mo
 share/locale/pl/LC_MESSAGES/ksysguardlsofwidgets.mo
 share/locale/pl/LC_MESSAGES/processcore.mo
 share/locale/pl/LC_MESSAGES/processui.mo
+share/locale/pt/LC_MESSAGES/KSysGuardSensorFaces.mo
 share/locale/pt/LC_MESSAGES/ksgrd.mo
+share/locale/pt/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.barchart.mo
+share/locale/pt/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.linechart.mo
+share/locale/pt/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.piechart.mo
 share/locale/pt/LC_MESSAGES/ksysguardlsofwidgets.mo
 share/locale/pt/LC_MESSAGES/processcore.mo
 share/locale/pt/LC_MESSAGES/processui.mo
@@ -427,7 +439,11 @@ share/locale/uk/LC_MESSAGES/processui.mo
 share/locale/wa/LC_MESSAGES/ksysguardlsofwidgets.mo
 share/locale/wa/LC_MESSAGES/processcore.mo
 share/locale/wa/LC_MESSAGES/processui.mo
+share/locale/zh_CN/LC_MESSAGES/KSysGuardSensorFaces.mo
 share/locale/zh_CN/LC_MESSAGES/ksgrd.mo
+share/locale/zh_CN/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.barchart.mo
+share/locale/zh_CN/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.linechart.mo
+share/locale/zh_CN/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.piechart.mo
 share/locale/zh_CN/LC_MESSAGES/ksysguardlsofwidgets.mo
 share/locale/zh_CN/LC_MESSAGES/processcore.mo
 share/locale/zh_CN/LC_MESSAGES/processui.mo

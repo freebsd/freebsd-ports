@@ -100,6 +100,8 @@ share/locale/ia/LC_MESSAGES/ksysguard.mo
 share/locale/id/LC_MESSAGES/ksysguard.mo
 share/locale/is/LC_MESSAGES/ksysguard.mo
 share/locale/it/LC_MESSAGES/ksysguard.mo
+share/locale/it/LC_MESSAGES/ksysguard_plugins_global.mo
+share/locale/it/LC_MESSAGES/ksysguard_plugins_process.mo
 share/locale/ja/LC_MESSAGES/ksysguard.mo
 share/locale/kk/LC_MESSAGES/ksysguard.mo
 share/locale/km/LC_MESSAGES/ksysguard.mo
@@ -160,5 +162,7 @@ share/locale/vi/LC_MESSAGES/ksysguard.mo
 share/locale/wa/LC_MESSAGES/ksysguard.mo
 share/locale/xh/LC_MESSAGES/ksysguard.mo
 share/locale/zh_CN/LC_MESSAGES/ksysguard.mo
+share/locale/zh_CN/LC_MESSAGES/ksysguard_plugins_global.mo
+share/locale/zh_CN/LC_MESSAGES/ksysguard_plugins_process.mo
 share/locale/zh_TW/LC_MESSAGES/ksysguard.mo
 share/metainfo/org.kde.ksysguard.appdata.xml
