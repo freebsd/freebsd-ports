@@ -2,6 +2,7 @@
 
 PORTNAME=	clover
 PORTVERSION=	${MESAVERSION}
+PORTREVISION=	1
 CATEGORIES=	lang
 
 COMMENT=	Mesa OpenCL implementation for AMD GPUs

@@ -8,5 +8,6 @@ pre-configure:
 
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/etc/|${PREFIX}/etc/|g' \
+	${REINPLACE_CMD} -e '/SYSCONFDIR/ s|/etc|${PREFIX}/etc|g' \
+		-e '/DATADIR/ s|/usr/share|${PREFIX}/share|g' \
 		${WRKSRC}/src/util/xmlconfig.c
