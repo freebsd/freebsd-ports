@@ -1096,11 +1096,11 @@ lib32/libfreetype.so.6
 lib32/libglapi.so.0
 lib32/libgmp.so.10
 lib32/libgnutls.so.30
-lib32/libhogweed.so.5
+lib32/libhogweed.so.6
 lib32/libidn2.so.0
 %%NOOSREL13%%lib32/libjpeg.so.8
 lib32/liblcms2.so.2
-lib32/libnettle.so.7
+lib32/libnettle.so.8
 lib32/libp11-kit.so.0
 lib32/libpciaccess.so.0
 %%NOOSREL13%%lib32/libpng16.so.16
