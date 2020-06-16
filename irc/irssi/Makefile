@@ -15,7 +15,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		autoreconf cpe gettext-runtime gmake gnome libtool localbase \
 		ncurses pkgconfig tar:xz
-USE_LDCONFIG=	yes
 USE_GNOME=	glib20
 
 GNU_CONFIGURE=	yes
