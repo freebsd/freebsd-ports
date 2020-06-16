@@ -21,6 +21,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	texane
 
 USES=		cmake pkgconfig
+USE_CSTD=	c99
 USE_LDCONFIG=	yes
 
 PORTDOCS=	README.md ${ALLDOCS}
