@@ -139,6 +139,7 @@
     SUBDIR += qtcurve-utils
     SUBDIR += sawfish-themes
     SUBDIR += sddm-freebsd-black-theme
+    SUBDIR += sierra-gtk-themes
     SUBDIR += slim-freebsd-black-theme
     SUBDIR += slim-freebsd-themes
     SUBDIR += slim-themes
