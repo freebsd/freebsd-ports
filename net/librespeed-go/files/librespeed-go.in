@@ -1,0 +1,38 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: librespeed-go
+# REQUIRE: SERVERS
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# librespeed_go_enable:		Set to NO by default.
+#				Set it to YES to enable librenms
+# librespeed_go_pid:		Path of the pid file.
+#				Default /var/run/librenms/librenms.pid
+# librespeed_go_daemonflags:	Flags passed to daemon(8)
+#				Default -f which prevents any logging
+# librespeed_go_chdir:		Dir to run the daemon in
+# 				Default /usr/local/libexec/librespeed-go
+
+. /etc/rc.subr
+
+name="librespeed_go"
+rcvar="${name}_enable"
+command="/usr/sbin/daemon"
+
+load_rc_config $name
+
+: ${librespeed_go_enable:="NO"}
+: ${librespeed_go_pid:="/var/run/librespeed-go.pid"}
+: ${librespeed_go_daemonflags:="-f"}
+: ${librespeed_go_chdir:="%%PREFIX%%/libexec/librespeed-go"}
+
+pidfile="$librespeed_go_pid"
+procname="%%PREFIX%%/libexec/librespeed-go/librespeed-go"
+command_args="$librespeed_go_daemonflags -p $pidfile $procname"
+
+run_rc_command "$1"

@@ -1,0 +1,23 @@
+[
+{ type: install
+  message: <<EOM
+Copy your preferred example from %%PREFIX%%/share/examples/librespeed-go to %%PREFIX%%/libexec/librespeed-go/assets/index.html.
+To use the backend feature, be sure to copy a -full example.
+	cd %%PREFIX%%/share/examples/librespeed-go
+	cp -a example-singleServer-full.html %%PREFIX%%/libexec/librespeed-go/assets/index.html
+
+To automatically start librespeed-go at boot time:
+# sysrc librespeed_go_enable="YES"
+
+To start the service directly:
+# service librespeed-go start
+EOM
+}
+{ type: remove
+  message: <<EOM
+If you are uninstalling librespeed-go permanently,
+and you do *NOT* want to retain the speedtest database and other your configured landing page,
+you should manually remove /var/db/speedtest.db, and %%PREFIX%%/libexec/librespeed-go.
+EOM
+}
+]

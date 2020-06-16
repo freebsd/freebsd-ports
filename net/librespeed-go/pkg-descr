@@ -1,0 +1,6 @@
+LibreSpeed-go is a very lightweight speed test.
+Is is implemented in JavaScript, using XMLHttpRequest and Web Workers.
+This port uses GO as backend for hosting. And this in comparison to
+www/librespeed where PHP and a web server are required.
+
+WWW: https://github.com/librespeed/speedtest-go

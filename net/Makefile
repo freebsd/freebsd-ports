@@ -395,6 +395,7 @@
     SUBDIR += libproxy-python
     SUBDIR += libproxy-webkit3
     SUBDIR += librdkafka
+    SUBDIR += librespeed-go
     SUBDIR += librsync
     SUBDIR += libsignal
     SUBDIR += libsrtp2
