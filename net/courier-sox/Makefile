@@ -1,8 +1,9 @@
-# $FreeBSD$
 # Created by Radim Kolar <hsn@sendmail.cz>
+# $FreeBSD$
 
 PORTNAME=	courier-sox
 DISTVERSION=	0.12.20180428
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	SF/courier/sox-devel/${DISTVERSION:E}
 
@@ -26,6 +27,7 @@ USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
+USE_RC_SUBR=	sockd
 TEST_TARGET=	check
 
 post-stage:
