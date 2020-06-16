@@ -2,21 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	zint
-DISTVERSION=	2.6.3_rc2	# NOT a "release candidate", fixup for 2.6.3
-PORTREVISION=	2
+PORTVERSION=	2.8.0
 CATEGORIES=	graphics
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/2.6.3
-DISTNAME=	${PORTNAME}-${DISTVERSION}.src
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Zint Barcode Generator
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpng.so:graphics/png
-
-PORTSCOUT=	skipv:2.6.3
 
 USES=		cmake compiler:c++11-lang qt:5
 USE_LDCONFIG=	yes

@@ -2,8 +2,8 @@
 +++ backend_qt/qzint.cpp
 @@ -17,6 +17,7 @@
  
- #include "qzint.h"
- #include <stdio.h>
+ #include <math.h>
+ #include <QFontMetrics>
 +#include <QPainterPath>
  
  namespace Zint {
