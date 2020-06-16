@@ -2,6 +2,7 @@
 
 PORTNAME=	ncnn
 DISTVERSION=	20200616
+PORTREVISION=	1
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,9 +19,13 @@ OPTIONS_DEFINE=		VULKAN
 OPTIONS_DEFAULT=	VULKAN
 
 VULKAN_DESC=		Vulkan compute support
-VULKAN_CMAKE_BOOL=	NCNN_VULKAN
-VULKAN_BUILD_DEPENDS=	glslangValidator:devel/glslang \
+VULKAN_BUILD_DEPENDS=	glslang>0:devel/glslang \
 			${LOCALBASE}/include/vulkan/vulkan.h:devel/vulkan-headers \
 			${LOCALBASE}/lib/libvulkan.so:graphics/vulkan-loader
+VULKAN_CMAKE_BOOL=	NCNN_VULKAN NCNN_SYSTEM_GLSLANG
+VULKAN_CMAKE_ON=	-DGLSLANG_TARGET_DIR:PATH="${LOCALBASE}/lib/cmake"
+
+post-patch-VULKAN-on:
+	@${REINPLACE_CMD} 's,/glslang,,' ${WRKSRC}/src/gpu.cpp
 
 .include <bsd.port.mk>
