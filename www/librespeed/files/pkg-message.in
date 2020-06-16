@@ -1,0 +1,23 @@
+[
+{ type: install
+  message: <<EOM
+You can mostly follow the guide on: https://fdossena.com/speedtest/qs_v5_ubuntu1904.webm
+For more advanced docs: https://github.com/librespeed/speedtest/blob/master/doc.md
+
+Copy your preferred example from %%PREFIX%%/share/examples/librespeed to %%PREFIX%%/www/librespeed/index.html.
+To use the backend feature, be sure to copy a -full example and rebuild the port with backend support.
+
+	cd %%PREFIX%%/share/examples/librespeed
+	cp -a example-singleServer-full.html %%PREFIX%%/www/librespeed/index.html
+
+The next step is to install and setup a web server with PHP to serve the content.
+EOM
+}
+{ type: remove
+  message: <<EOM
+If you are uninstalling librespeed permanently,
+and you do *NOT* want to retain the configured landing page and config files,
+you should manually remove %%WWWDIR%%.
+EOM
+}
+]
