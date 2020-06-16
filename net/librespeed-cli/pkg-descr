@@ -1,0 +1,5 @@
+This is the CLI part of LibreSpeed which is a very lightweight speedtest.
+With the CLI it's possible to run a speedtest from the command line interface.
+The server part can be found in www/librespeed.
+
+WWW: https://github.com/librespeed/speedtest-cli
