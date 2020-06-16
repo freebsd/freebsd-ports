@@ -2,8 +2,8 @@
 
 PORTNAME=	lenticular
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.0-12
-DISTVERSIONSUFFIX=	-gc4281c0
+DISTVERSION=	0.5.0-14
+DISTVERSIONSUFFIX=	-g14d8075
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 
@@ -19,8 +19,6 @@ USES=		gmake pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	polyeffects
 GH_PROJECT=	lenticular_lv2
-
-USE_GCC=	any # clang-9 fails with a C++ error: variable-sized object may not be initialized
 
 GH_TUPLE=	\
 		VCVRack:pichenettes-eurorack:99432f2bf443219b3eb77e65e1a18583faad422e:AndrewBelt_eurorack/eurorack \
