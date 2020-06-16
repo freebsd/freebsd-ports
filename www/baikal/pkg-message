@@ -1,0 +1,16 @@
+[
+{ type: upgrade,
+  maximum_version: 0.7.1,
+  message: <<EOM
+With the 0.7.0 release, our configuration format was updated to use YAML files.
+You need to go through the installer again but we pre-fill most values with the
+ones from your old installation. We recommend that you make a full backup of
+your data, as a safety measure. Starting with 0.7.0, Baikal stores data in both
+the Specific and the config folders. Keep this in mind when upgrading!
+EOM
+},
+{ type: upgrade,
+  maximum_version: 0.6.1,
+  message: Upgrading from versions older than 0.6.1 does not work.
+}
+]
