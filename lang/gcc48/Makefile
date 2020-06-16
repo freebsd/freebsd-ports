@@ -40,35 +40,10 @@ OPTIONS_DEFINE=		BOOTSTRAP
 OPTIONS_DEFAULT=	BOOTSTRAP
 BOOTSTRAP_DESC=		Build using a full bootstrap
 
-.if exists(/usr/lib32/libc.so)
-OPTIONS_DEFINE_powerpc64+=	MULTILIB
-OPTIONS_DEFAULT_powerpc64+=	MULTILIB
-MULTILIB_DESC=		Build support for 32-bit and 64-bit targets
-MULTILIB_CONFIGURE_ENABLE=	multilib
-.else
-CONFIGURE_ARGS+=	--disable-multilib
-.endif
-
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == amd64
 CONFIGURE_TARGET=	x86_64-portbld-${OPSYS:tl}${OSREL}
-.endif
-
-.if ${ARCH} == powerpc64
-CONFIGURE_ENV+=	UNAME_m="powerpc64"
-.endif
-
-.if ${ARCH} == armv6
-# Override sys.mk including -O in CFLAGS which breaks libgomp building.
-CFLAGS:=	${CFLAGS:S/-O/-O2/}
-. if ${COMPILER_TYPE} == clang
-.  if empty(PORT_OPTIONS:MBOOTSTRAP)
-MAKE_ARGS+=CXXFLAGS=-fbracket-depth=512
-.  else
-MAKE_ARGS+=STAGE1_CXXFLAGS=-fbracket-depth=512
-.  endif
-. endif
 .endif
 
 LANGUAGES:=	c,c++,objc,fortran
@@ -87,6 +62,7 @@ INSTALL_TARGET=	install-strip
 BINMODE=	755
 .endif
 CONFIGURE_ARGS+=--disable-nls \
+		--disable-multilib \
 		--enable-gnu-indirect-function \
 		--libdir=${TARGLIB} \
 		--libexecdir=${LIBEXEC} \
