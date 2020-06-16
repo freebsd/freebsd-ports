@@ -2,6 +2,7 @@
 
 PORTNAME=	purescript
 PORTVERSION=	0.13.8
+PORTREVISION=	1
 CATEGORIES=	lang
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -83,7 +84,7 @@ USE_CABAL=	Glob-0.9.3 \
 		http2-2.0.4 \
 		integer-logarithms-1.0.3_2 \
 		iproute-1.7.9_1 \
-		language-javascript-0.7.1.0 \
+		language-javascript-0.7.0.0 \
 		lifted-async-0.10.0.6 \
 		lifted-base-0.2.3.12 \
 		memory-0.15.0_1 \
