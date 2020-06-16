@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	s3backer
-DISTVERSION=	1.5.0
+DISTVERSION=	1.5.4
 CATEGORIES=	sysutils
 MASTER_SITES=	https://s3.amazonaws.com/archie-public/s3backer/
 PKGNAMEPREFIX=	fusefs-
