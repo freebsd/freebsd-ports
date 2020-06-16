@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	flmsg
-DISTVERSION=	4.0.14
+DISTVERSION=	4.0.15
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.w1hkj.com/files/${PORTNAME}/
 
