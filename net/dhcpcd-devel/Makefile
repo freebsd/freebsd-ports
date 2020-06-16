@@ -22,7 +22,8 @@ USES=		compiler:c11 cpe tar:xz
 CPE_VENDOR=	dhcpcd_project
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/examples \
-		--privsepuser="_dhcp"
+		--privsepuser="_dhcp" \
+		--without-udev
 USE_RC_SUBR=	dhcpcd
 
 post-install:
