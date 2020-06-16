@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	blender
-DISTVERSION=	2.82
-PORTREVISION=	5
+DISTVERSION=	2.83.0
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	http://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/ \
@@ -47,9 +46,7 @@ CXXFLAGS_i386=	-march=i586
 LDFLAGS+=	-fuse-ld=lld
 .endif
 
-# version without trailing update letters
-VERDIR=		${DISTVERSION:C/[abcdef]//g}
-PLIST_SUB+=	VER=${VERDIR}
+PLIST_SUB+=	VER=${DISTVERSION:R}
 LLVM_VER=	90
 OPTIONS_SUB=	yes
 
@@ -84,7 +81,8 @@ CYCLESEMBR_ONLY_FOR_ARCHS_REASON=	embree only supports amd64
 CYCLESOSL_IMPLIES=		CYCLES
 CYCLESOSL_CMAKE_BOOL=		WITH_CYCLES_OSL WITH_LLVM
 CYCLESOSL_CMAKE_ON=		-DLLVM_STATIC:BOOL=OFF \
-				-DLLVM_CONFIG:STRING="${LOCALBASE}/bin/llvm-config${LLVM_VER}"
+				-DLLVM_CONFIG:STRING="${LOCALBASE}/bin/llvm-config${LLVM_VER}" \
+				-DOSL_ROOT_DIR:STRING="${LOCALBASE}/share/openshadinglanguage/"
 CYCLESOSL_BUILD_DEPENDS=	llvm-config${LLVM_VER}:devel/llvm${LLVM_VER}
 CYCLESOSL_LIB_DEPENDS=		liboslcomp.so:graphics/openshadinglanguage
 CYCLESOSL_RUN_DEPENDS=		llvm-config${LLVM_VER}:devel/llvm${LLVM_VER}
@@ -180,7 +178,7 @@ post-install-DRACO-on:
 	${MKDIR} ${STAGEDIR}/${PYTHON_SITELIBDIR}/
 	${INSTALL_LIB} ${INSTALL_WRKSRC}/lib/libextern_draco.so ${STAGEDIR}/${PYTHON_SITELIBDIR}/
 	${STRIP_CMD} ${STAGEDIR}/${PYTHON_SITELIBDIR}/libextern_draco.so
-	@${RM} -R ${STAGEDIR}/${PREFIX}/share/blender/${VERDIR}/python
+	@${RM} -R ${STAGEDIR}/${PREFIX}/share/blender/${DISTVERSION:R}/python
 
 post-install-MENU-on:
 	@-update-desktop-database -q
