@@ -6,6 +6,19 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 
+20200616:
+  AFFECTS: users of www/baikal
+  AUTHOR: gahr@FreeBSD.org
+
+  The www/baikal has been upated to 0.7.1. With the 0.7.0 release, our
+  configuration format was updated to use YAML files. You need to go through
+  the installer again but we pre-fill most values with the ones from your old
+  installation. We recommend that you make a full backup of your data, as a
+  safety measure. Starting with 0.7.0, Baikal stores data in both the Specific
+  and the config folders. Keep this in mind when upgrading!
+
+  Known issue:: Upgrading from versions older than 0.6.1 does not work.
+
 20200613:
   AFFECTS: users of editors/libreoffice
   AUTHOR: fluffy@FreeBSD.org
