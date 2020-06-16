@@ -1,0 +1,6 @@
+This port features a fuse implementation of bindfs. Bindfs is like nullfs exept
+for the fact that it features more options and filters. The most important
+difference is that you may overwrite the ownership of files when mounting the
+desired directory somewhere else.
+
+WWW: https://bindfs.org/

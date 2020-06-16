@@ -363,6 +363,7 @@
     SUBDIR += fswatch-mon
     SUBDIR += ftwin
     SUBDIR += fusefs-afuse
+    SUBDIR += fusefs-bindfs
     SUBDIR += fusefs-chironfs
     SUBDIR += fusefs-cryptofs
     SUBDIR += fusefs-curlftpfs
