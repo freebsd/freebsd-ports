@@ -1,6 +1,6 @@
---- configure.orig	2018-04-20 10:02:55 UTC
+--- configure.orig	2020-06-15 18:54:23 UTC
 +++ configure
-@@ -3516,13 +3516,7 @@ target_os_default=$(tolower $(uname -s))
+@@ -3744,13 +3744,7 @@ target_os_default=$(tolower $(uname -s))
  host_os=$target_os_default
  
  # machine
@@ -15,23 +15,3 @@
  cpu="generic"
  intrinsics="none"
  
-@@ -6122,6 +6117,7 @@
-                                die "ERROR: OpenMAX IL headers not found"; } && enable omx
- enabled openssl           && { check_pkg_config openssl openssl openssl/ssl.h OPENSSL_init_ssl ||
-                                check_pkg_config openssl openssl openssl/ssl.h SSL_library_init ||
-+                               check_lib openssl openssl/ssl.h OPENSSL_init_ssl -lssl -lcrypto ||
-                                check_lib openssl openssl/ssl.h SSL_library_init -lssl -lcrypto ||
-                                check_lib openssl openssl/ssl.h SSL_library_init -lssl32 -leay32 ||
-                                check_lib openssl openssl/ssl.h SSL_library_init -lssl -lcrypto -lws2_32 -lgdi32 ||
-@@ -6234,8 +6229,10 @@ else
- EOF
- fi
- 
--enabled alsa && check_pkg_config alsa alsa "alsa/asoundlib.h" snd_pcm_htimestamp ||
-+if enabled alsa; then
-+    check_pkg_config alsa alsa "alsa/asoundlib.h" snd_pcm_htimestamp ||
-     check_lib alsa alsa/asoundlib.h snd_pcm_htimestamp -lasound
-+fi
- 
- enabled libjack &&
-     require_pkg_config libjack jack jack/jack.h jack_port_get_latency_range
