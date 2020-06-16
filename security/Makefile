@@ -1078,6 +1078,7 @@
     SUBDIR += rubygem-net-ssh-krb
     SUBDIR += rubygem-net-ssh-multi
     SUBDIR += rubygem-net-ssh4
+    SUBDIR += rubygem-net-ssh5
     SUBDIR += rubygem-net-telnet
     SUBDIR += rubygem-nexpose
     SUBDIR += rubygem-nmap-parser
