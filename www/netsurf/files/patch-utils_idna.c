@@ -1,11 +1,11 @@
---- utils/idna.c.orig	2019-09-15 12:06:06.236299000 +0200
-+++ utils/idna.c	2019-09-15 12:06:07.393935000 +0200
-@@ -27,7 +27,7 @@
- #include <stdlib.h>
- #include <string.h>
- #include <sys/types.h>
+--- utils/idna.c.orig	2020-05-24 20:55:29 UTC
++++ utils/idna.c
+@@ -167,7 +167,7 @@ idna__ace_to_ucs4(const char *ace_label,
+ 
+ #ifdef WITH_UTF8PROC
+ 
 -#include <libutf8proc/utf8proc.h>
 +#include <utf8proc.h>
  
- #include "netsurf/inttypes.h"
- 
+ int32_t idna_contexto[] = {
+ 	/* CONTEXTO codepoints which have a rule defined */

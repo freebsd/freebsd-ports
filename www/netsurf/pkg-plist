@@ -4,7 +4,6 @@ share/applications/netsurf-gtk.desktop
 %%DATADIR%%/Messages
 %%DATADIR%%/SearchEngines
 %%DATADIR%%/adblock.css
-%%DATADIR%%/arrow_down_8x32.png
 %%DATADIR%%/ca-bundle.txt
 %%DATADIR%%/cookies.gtk3.ui
 %%DATADIR%%/credits.html
@@ -16,7 +15,6 @@ share/applications/netsurf-gtk.desktop
 %%DATADIR%%/en/Messages
 %%DATADIR%%/en/credits.html
 %%DATADIR%%/en/licence.html
-%%DATADIR%%/en/maps.html
 %%DATADIR%%/en/welcome.html
 %%DATADIR%%/favicon.png
 %%DATADIR%%/fr/Messages
@@ -28,7 +26,9 @@ share/applications/netsurf-gtk.desktop
 %%DATADIR%%/icons/directory2.png
 %%DATADIR%%/icons/hotlist-add.png
 %%DATADIR%%/icons/hotlist-rmv.png
+%%DATADIR%%/icons/local-history.png
 %%DATADIR%%/icons/search.png
+%%DATADIR%%/icons/show-cookie.png
 %%DATADIR%%/internal.css
 %%DATADIR%%/it/Messages
 %%DATADIR%%/it/credits.html
@@ -38,8 +38,6 @@ share/applications/netsurf-gtk.desktop
 %%DATADIR%%/languages
 %%DATADIR%%/licence.html
 %%DATADIR%%/localhistory.gtk3.ui
-%%DATADIR%%/login.gtk3.ui
-%%DATADIR%%/maps.html
 %%DATADIR%%/netsurf-16x16.xpm
 %%DATADIR%%/netsurf.gtk3.ui
 %%DATADIR%%/netsurf.png
@@ -49,9 +47,9 @@ share/applications/netsurf-gtk.desktop
 %%DATADIR%%/nl/licence.html
 %%DATADIR%%/nl/welcome.html
 %%DATADIR%%/options.gtk3.ui
+%%DATADIR%%/pageinfo.gtk3.ui
 %%DATADIR%%/password.gtk3.ui
 %%DATADIR%%/quirks.css
-%%DATADIR%%/ssl.gtk3.ui
 %%DATADIR%%/tabcontents.gtk3.ui
 %%DATADIR%%/throbber/throbber0.png
 %%DATADIR%%/throbber/throbber1.png

@@ -1,10 +1,10 @@
---- Makefile.orig	2016-11-19 13:37:41 UTC
+--- Makefile.orig	2020-05-24 20:55:29 UTC
 +++ Makefile
-@@ -555,7 +555,6 @@ ifeq ($(HOST),mint)
+@@ -547,7 +547,6 @@ ifeq ($(HOST),mint)
  else
      $(eval $(call pkg_config_find_and_add_enabled,CURL,libcurl,Curl))
  endif
 -$(eval $(call pkg_config_find_and_add_enabled,OPENSSL,openssl,OpenSSL))
  
- $(eval $(call pkg_config_find_and_add_enabled,PNG,libpng,PNG))
- $(eval $(call pkg_config_find_and_add_enabled,BMP,libnsbmp,BMP))
+ $(eval $(call pkg_config_find_and_add_enabled,UTF8PROC,libutf8proc,utf8))
+ $(eval $(call pkg_config_find_and_add_enabled,WEBP,libwebp,WEBP))
