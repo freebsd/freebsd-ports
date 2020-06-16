@@ -1,0 +1,17 @@
+TIMESTAMP = 1592267471
+SHA256 (polyeffects-lenticular_lv2-v0.5.0-12-gc4281c0_GH0.tar.gz) = 43c60eb4c2aef173bc25cd2290c8f06d778289bf6cd8eb0aed59c9d191ca7bf0
+SIZE (polyeffects-lenticular_lv2-v0.5.0-12-gc4281c0_GH0.tar.gz) = 24648566
+SHA256 (VCVRack-pichenettes-eurorack-99432f2bf443219b3eb77e65e1a18583faad422e_GH0.tar.gz) = 3e3c56189551e276d94ff31253400e9fa61910cbd5fff09d2f8f142a2ba5b593
+SIZE (VCVRack-pichenettes-eurorack-99432f2bf443219b3eb77e65e1a18583faad422e_GH0.tar.gz) = 29678500
+SHA256 (pichenettes-avril-36b988a851f8638adb9f53ff98939cb08ffce8cc_GH0.tar.gz) = 553a088272528f855165f4ab08e2370e71c7f574ea84a3105a27df34268ecf5a
+SIZE (pichenettes-avril-36b988a851f8638adb9f53ff98939cb08ffce8cc_GH0.tar.gz) = 97522
+SHA256 (pichenettes-avrilx-5c28367e91dfb036593e876c886241cf81f60a2d_GH0.tar.gz) = 1c89d9f7211912a9c5c1773722d31164e1ed35a1dafeebd5b9604cebcb0cbc96
+SIZE (pichenettes-avrilx-5c28367e91dfb036593e876c886241cf81f60a2d_GH0.tar.gz) = 99557
+SHA256 (pichenettes-stm-audio-bootloader-6f20ead22a28967b0446546d2fcf0dfb9599ba93_GH0.tar.gz) = 629289189eff564932a0933ee47573fd254936f2faada71ca0fb4d3b089b2226
+SIZE (pichenettes-stm-audio-bootloader-6f20ead22a28967b0446546d2fcf0dfb9599ba93_GH0.tar.gz) = 11861
+SHA256 (pichenettes-avr-audio-bootloader-52754f878b4883adf565bc3ddf691c5e1c4a9f6d_GH0.tar.gz) = 80e9e34572e0b73d7e5e8ebb45b45fc024f9b35f4d47fdcc76a2451ca8869408
+SIZE (pichenettes-avr-audio-bootloader-52754f878b4883adf565bc3ddf691c5e1c4a9f6d_GH0.tar.gz) = 8103
+SHA256 (mqtthiqs-stmlib-8ab2aaee77cbacb47b646d46d22ee5d358effe2d_GH0.tar.gz) = 335b2c0059eee86b7e4c4ae48bce9048eda096a4180ef302bdbfb37f44b7183f
+SIZE (mqtthiqs-stmlib-8ab2aaee77cbacb47b646d46d22ee5d358effe2d_GH0.tar.gz) = 2977099
+SHA256 (pichenettes-stmlib-d9b189670be3d5c1e41ee143b6ee92171cfd6de3_GH0.tar.gz) = cff8e7d80f5fa4bc429f1a444db1058efb38dd5d15da7a1b8985a2c67139bb62
+SIZE (pichenettes-stmlib-d9b189670be3d5c1e41ee143b6ee92171cfd6de3_GH0.tar.gz) = 5998961

@@ -1,0 +1,10 @@
+LV2 plugins based on Mutable Instrument's Clouds.
+
+Features:
+* Implements the alternative modes and quality options of Clouds as
+  a menu options
+* Inputs and knobs for the 3 addition 'Blend' parameters (Stereo Spread,
+  Feedback, and Reverb)
+* Dedicated Freeze button
+
+WWW: https://github.com/polyeffects/lenticular_lv2

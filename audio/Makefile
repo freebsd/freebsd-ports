@@ -369,6 +369,7 @@
     SUBDIR += ladspa
     SUBDIR += lame
     SUBDIR += lash
+    SUBDIR += lenticular-lv2
     SUBDIR += liba52
     SUBDIR += libaacplus
     SUBDIR += libadplug
