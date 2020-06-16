@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	simhash
-DISTVERSION=	1.9.0
+DISTVERSION=	1.10.2
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,6 +13,7 @@ LICENSE=	MIT
 
 USES=		python
 USE_PYTHON=	distutils autoplist
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
