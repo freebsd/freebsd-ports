@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	asciidoc
-PORTVERSION=	9.0.0rc2
+PORTVERSION=	9.0.0
 CATEGORIES=	textproc
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -10,7 +10,7 @@ COMMENT=	Text document format for writing short documents and man pages
 
 LICENSE=	GPLv2 MIT
 LICENSE_COMB=	multi
-LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
+LICENSE_FILE_GPLv2=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	docbook-xsl>=0:textproc/docbook-xsl
