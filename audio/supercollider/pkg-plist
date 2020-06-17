@@ -485,6 +485,7 @@ share/SuperCollider/HID_Support/hut/hut_8_ledpage.yaml
 %%HELP%%share/SuperCollider/HelpSource/Classes/Line.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/LineLayout.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Linen.schelp
+%%HELP%%share/SuperCollider/HelpSource/Classes/LinkClock.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/LinkedList.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/LinkedListNode.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/List.schelp
@@ -521,6 +522,7 @@ share/SuperCollider/HID_Support/hut/hut_8_ledpage.yaml
 %%HELP%%share/SuperCollider/HelpSource/Classes/Menu.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/MenuAction.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Message.schelp
+%%HELP%%share/SuperCollider/HelpSource/Classes/MeterSync.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Method.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/MidEQ.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Mix.schelp
@@ -697,6 +699,7 @@ share/SuperCollider/HID_Support/hut/hut_8_ledpage.yaml
 %%HELP%%share/SuperCollider/HelpSource/Classes/Pgauss.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Pgbrown.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Pgeom.schelp
+%%HELP%%share/SuperCollider/HelpSource/Classes/Pget.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Pgpar.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Pgroup.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Phasor.schelp
@@ -716,6 +719,7 @@ share/SuperCollider/HID_Support/hut/hut_8_ledpage.yaml
 %%HELP%%share/SuperCollider/HelpSource/Classes/Plazy.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/PlazyEnvir.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/PlazyEnvirN.schelp
+%%HELP%%share/SuperCollider/HelpSource/Classes/Plet.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Plotter.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Plprand.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Pluck.schelp
@@ -778,6 +782,7 @@ share/SuperCollider/HID_Support/hut/hut_8_ledpage.yaml
 %%HELP%%share/SuperCollider/HelpSource/Classes/Psync.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Ptime.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Ptpar.schelp
+%%HELP%%share/SuperCollider/HelpSource/Classes/Ptrace.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Ptuple.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Pulse.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/PulseCount.schelp
@@ -930,7 +935,6 @@ share/SuperCollider/HID_Support/hut/hut_8_ledpage.yaml
 %%HELP%%share/SuperCollider/HelpSource/Classes/TChoose.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/TDelay.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/TDuty.schelp
-%%HELP%%share/SuperCollider/HelpSource/Classes/TDuty_old.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/TExpRand.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/TGrains.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/TIRand.schelp
@@ -1003,12 +1007,10 @@ share/SuperCollider/HID_Support/hut/hut_8_ledpage.yaml
 %%HELP%%share/SuperCollider/HelpSource/Classes/ZeroCrossing.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/chebyshevpolynomials.png
 %%HELP%%share/SuperCollider/HelpSource/Guides/.placeholder
-%%HELP%%share/SuperCollider/HelpSource/Guides/AggregateDevice.schelp
 %%HELP%%share/SuperCollider/HelpSource/Guides/Backwards-Compatibility.schelp
 %%HELP%%share/SuperCollider/HelpSource/Guides/Bundled-Messages.schelp
 %%HELP%%share/SuperCollider/HelpSource/Guides/ClientVsServer.schelp
 %%HELP%%share/SuperCollider/HelpSource/Guides/Debugging-tips.schelp
-%%HELP%%share/SuperCollider/HelpSource/Guides/EmacsGUI.schelp
 %%HELP%%share/SuperCollider/HelpSource/Guides/FFT-Overview.schelp
 %%HELP%%share/SuperCollider/HelpSource/Guides/GUI-Introduction.schelp
 %%HELP%%share/SuperCollider/HelpSource/Guides/GUI-Layout-Management.schelp
@@ -1025,6 +1027,7 @@ share/SuperCollider/HID_Support/hut/hut_8_ledpage.yaml
 %%HELP%%share/SuperCollider/HelpSource/Guides/MultiClient_Setups.schelp
 %%HELP%%share/SuperCollider/HelpSource/Guides/Multichannel-Expansion.schelp
 %%HELP%%share/SuperCollider/HelpSource/Guides/News-3_10.schelp
+%%HELP%%share/SuperCollider/HelpSource/Guides/News-3_11.schelp
 %%HELP%%share/SuperCollider/HelpSource/Guides/News-3_5.schelp
 %%HELP%%share/SuperCollider/HelpSource/Guides/News-3_6.schelp
 %%HELP%%share/SuperCollider/HelpSource/Guides/News-3_7.schelp
@@ -1095,6 +1098,7 @@ share/SuperCollider/HID_Support/hut/hut_8_ledpage.yaml
 %%HELP%%share/SuperCollider/HelpSource/Reference/.placeholder
 %%HELP%%share/SuperCollider/HelpSource/Reference/Adverbs.schelp
 %%HELP%%share/SuperCollider/HelpSource/Reference/Assignment.schelp
+%%HELP%%share/SuperCollider/HelpSource/Reference/AudioDeviceSelection.schelp
 %%HELP%%share/SuperCollider/HelpSource/Reference/Classes.schelp
 %%HELP%%share/SuperCollider/HelpSource/Reference/Comments.schelp
 %%HELP%%share/SuperCollider/HelpSource/Reference/Control-Structures.schelp
@@ -1319,6 +1323,7 @@ share/SuperCollider/SCClassLibrary/Common/Audio/TestUGens.sc
 share/SuperCollider/SCClassLibrary/Common/Audio/Trig.sc
 share/SuperCollider/SCClassLibrary/Common/Audio/UGen.sc
 share/SuperCollider/SCClassLibrary/Common/Audio/canFreeSynth.sc
+share/SuperCollider/SCClassLibrary/Common/Audio/iphone/iPhoneUGens.sc
 share/SuperCollider/SCClassLibrary/Common/Collections/Array.sc
 share/SuperCollider/SCClassLibrary/Common/Collections/Array2D.sc
 share/SuperCollider/SCClassLibrary/Common/Collections/ArrayedCollection.sc
@@ -1346,6 +1351,8 @@ share/SuperCollider/SCClassLibrary/Common/Collections/SortedList.sc
 share/SuperCollider/SCClassLibrary/Common/Collections/SparseArray.sc
 share/SuperCollider/SCClassLibrary/Common/Collections/String.sc
 share/SuperCollider/SCClassLibrary/Common/Collections/linux/extString_linux.sc
+share/SuperCollider/SCClassLibrary/Common/Collections/osx/extString_osx.sc
+share/SuperCollider/SCClassLibrary/Common/Collections/windows/extString_windows.sc
 share/SuperCollider/SCClassLibrary/Common/Control/Buffer.sc
 share/SuperCollider/SCClassLibrary/Common/Control/Bus.sc
 share/SuperCollider/SCClassLibrary/Common/Control/Engine.sc
@@ -1355,6 +1362,7 @@ share/SuperCollider/SCClassLibrary/Common/Control/HIDMatchers.sc
 share/SuperCollider/SCClassLibrary/Common/Control/HID_API.sc
 share/SuperCollider/SCClassLibrary/Common/Control/MIDIOut.sc
 share/SuperCollider/SCClassLibrary/Common/Control/MIDIResponder.sc
+share/SuperCollider/SCClassLibrary/Common/Control/MeterSync.sc
 share/SuperCollider/SCClassLibrary/Common/Control/NetAddr.sc
 share/SuperCollider/SCClassLibrary/Common/Control/Node.sc
 share/SuperCollider/SCClassLibrary/Common/Control/NodeControl.sc
@@ -1482,6 +1490,9 @@ share/SuperCollider/SCClassLibrary/Common/GUI/backwardsCompatibility/classNameRe
 share/SuperCollider/SCClassLibrary/Common/GUI/backwardsCompatibility/deprecated-3.7.sc
 share/SuperCollider/SCClassLibrary/Common/GUI/backwardsCompatibility/flowViewSupportQt.sc
 share/SuperCollider/SCClassLibrary/Common/GUI/backwardsCompatibility/viewExtensions.sc
+share/SuperCollider/SCClassLibrary/Common/GUI/iphone/Base/GUIScreen.sc
+share/SuperCollider/SCClassLibrary/Common/GUI/iphone/Base/SCFont.sc
+share/SuperCollider/SCClassLibrary/Common/GUI/iphone/Base/SCView.sc
 share/SuperCollider/SCClassLibrary/Common/GUI/tools/HelpBrowser.sc
 share/SuperCollider/SCClassLibrary/Common/GUI/tools/Inspector.sc
 share/SuperCollider/SCClassLibrary/Common/GUI/tools/ServerMeter.sc
@@ -1535,6 +1546,7 @@ share/SuperCollider/SCClassLibrary/Common/Streams/TabFileReader.sc
 share/SuperCollider/SCClassLibrary/Common/Streams/TimePatterns.sc
 share/SuperCollider/SCClassLibrary/Common/UnitTesting/MixedBundleTester.sc
 share/SuperCollider/SCClassLibrary/Common/UnitTesting/UnitTest.sc
+share/SuperCollider/SCClassLibrary/Common/UnitTesting/UnitTestGUI.sc
 share/SuperCollider/SCClassLibrary/Common/Unix/Unix.sc
 share/SuperCollider/SCClassLibrary/Common/Unix/UnixFILE.sc
 share/SuperCollider/SCClassLibrary/DefaultLibrary/Main.sc
@@ -1572,11 +1584,23 @@ share/SuperCollider/SCClassLibrary/JITLib/ProxySpace/extStoreOn.sc
 share/SuperCollider/SCClassLibrary/JITLib/ProxySpace/operators.sc
 share/SuperCollider/SCClassLibrary/JITLib/ProxySpace/wrapForNodeProxy.sc
 share/SuperCollider/SCClassLibrary/Platform/Platform.sc
+share/SuperCollider/SCClassLibrary/Platform/iphone/SystemOverwrites/extFile.sc
+share/SuperCollider/SCClassLibrary/Platform/iphone/extMain.sc
+share/SuperCollider/SCClassLibrary/Platform/iphone/iPhonePlatform.sc
 share/SuperCollider/SCClassLibrary/Platform/linux/LID.sc
 share/SuperCollider/SCClassLibrary/Platform/linux/LIDGui.sc
 share/SuperCollider/SCClassLibrary/Platform/linux/LinuxPlatform.sc
 share/SuperCollider/SCClassLibrary/Platform/linux/SystemOverwrites/extMIDIOut.sc
 share/SuperCollider/SCClassLibrary/Platform/linux/extMain.sc
+share/SuperCollider/SCClassLibrary/Platform/osx/ApplicationStart.sc
+share/SuperCollider/SCClassLibrary/Platform/osx/OSXPlatform.sc
+share/SuperCollider/SCClassLibrary/Platform/osx/extMIDIOut.sc
+share/SuperCollider/SCClassLibrary/Platform/osx/extMain.sc
+share/SuperCollider/SCClassLibrary/Platform/windows/SystemOverwrites/overwrites.sc
+share/SuperCollider/SCClassLibrary/Platform/windows/WindowsPlatform.sc
+share/SuperCollider/SCClassLibrary/Platform/windows/extMIDIOut.sc
+share/SuperCollider/SCClassLibrary/Platform/windows/extMain.sc
+share/SuperCollider/SCClassLibrary/Platform/windows/extServerOptions.sc
 share/SuperCollider/SCClassLibrary/SCDoc/Help.sc
 share/SuperCollider/SCClassLibrary/SCDoc/SCDoc.sc
 share/SuperCollider/SCClassLibrary/SCDoc/SCDocRenderer.sc
@@ -1586,9 +1610,12 @@ share/SuperCollider/SCClassLibrary/deprecated/3.10/AudioIn.sc
 share/SuperCollider/SCClassLibrary/deprecated/3.10/File.sc
 share/SuperCollider/SCClassLibrary/deprecated/3.10/GUI/File.sc
 share/SuperCollider/SCClassLibrary/deprecated/3.10/GUI/QWebView.sc
+share/SuperCollider/SCClassLibrary/deprecated/3.10/Main.sc
+share/SuperCollider/SCClassLibrary/deprecated/3.10/Plotter.sc
 share/SuperCollider/SCClassLibrary/deprecated/3.10/deprecated-3.10.sc
 share/SuperCollider/SCClassLibrary/deprecated/3.10/osc/OSCpathResponder.sc
 share/SuperCollider/SCClassLibrary/deprecated/3.10/osc/OSCresponder.sc
+share/SuperCollider/SCClassLibrary/deprecated/3.11/deprecated-3.11.sc
 share/SuperCollider/SCClassLibrary/scide_scqt/ScIDE.sc
 share/SuperCollider/examples/GUI examples/ColorBrowser.scd
 share/SuperCollider/examples/GUI examples/GUI_examples1.scd
@@ -1669,3 +1696,4 @@ share/mime/packages/supercollider.xml
 share/pixmaps/sc_ide.svg
 share/pixmaps/supercollider.png
 share/pixmaps/supercollider.xpm
+@dir share/SuperCollider/SCClassLibrary/External
