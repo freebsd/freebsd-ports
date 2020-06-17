@@ -73,6 +73,7 @@ _linux_c7_fribidi=			linux-c7-fribidi>0:converters/linux-c7-fribidi
 _linux_${linux_ARGS}_gdkpixbuf2=	linux-${linux_ARGS}-gdk-pixbuf2>0:graphics/linux-${linux_ARGS}-gdk-pixbuf2
 _linux_${linux_ARGS}_gnutls=		linux-${linux_ARGS}-gnutls>0:security/linux-${linux_ARGS}-gnutls
 _linux_c7_graphite2=			linux-c7-graphite2>0:graphics/linux-c7-graphite2
+_linux_c7_gsm=				linux-c7-gsm>0:audio/linux-c7-gsm
 _linux_${linux_ARGS}_gtk2=		linux-${linux_ARGS}-gtk2>0:x11-toolkits/linux-${linux_ARGS}-gtk2
 _linux_c7_gtk3=				linux-c7-gtk3>0:x11-toolkits/linux-c7-gtk3
 _linux_c7_harfbuzz=			linux-c7-harfbuzz>0:print/linux-c7-harfbuzz

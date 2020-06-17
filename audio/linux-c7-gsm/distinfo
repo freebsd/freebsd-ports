@@ -1,0 +1,7 @@
+TIMESTAMP = 1592388883
+SHA256 (centos/gsm-1.0.13-11.el7.i686.rpm) = a1649b9d67a999d5a06d433f51919f541a0176a1879c41ba9250832be55773c3
+SIZE (centos/gsm-1.0.13-11.el7.i686.rpm) = 30316
+SHA256 (centos/gsm-1.0.13-11.el7.x86_64.rpm) = 0febb3319e3aef1e1192a5622c5fe0f5963ec6102dc9f60b158d8b4afa601bc3
+SIZE (centos/gsm-1.0.13-11.el7.x86_64.rpm) = 30212
+SHA256 (centos/gsm-1.0.13-11.el7.src.rpm) = 948b58654cac292bb2508fb656906e6346cc8e4de8891325550be24154fecfea
+SIZE (centos/gsm-1.0.13-11.el7.src.rpm) = 78519
