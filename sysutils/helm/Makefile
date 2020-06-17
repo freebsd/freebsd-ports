@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	helm
-PORTVERSION=	3.2.1
+PORTVERSION=	3.2.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -19,7 +19,7 @@ USE_GITHUB=	yes
 
 GH_TUPLE=	\
 		Azure:go-ansiterm:d6e3b3328b78:azure_go_ansiterm/vendor/github.com/Azure/go-ansiterm \
-		Azure:go-autorest:v13.3.1:azure_go_autorest/vendor/github.com/Azure/go-autorest \
+		Azure:go-autorest:v13.4.1:azure_go_autorest/vendor/github.com/Azure/go-autorest \
 		BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/toml \
 		DATA-DOG:go-sqlmock:v1.4.1:data_dog_go_sqlmock/vendor/github.com/DATA-DOG/go-sqlmock \
 		MakeNowJust:heredoc:bb23615498cd:makenowjust_heredoc/vendor/github.com/MakeNowJust/heredoc \
@@ -158,7 +158,7 @@ GH_TUPLE=	\
 
 GO_PKGNAME=	k8s.io/helm
 GO_BUILDFLAGS=	-ldflags="-X helm.sh/helm/v3/internal/version.version=v${PORTVERSION} \
-		-X helm.sh/helm/v3/internal/version.gitCommit=fe51cd1e31e6a202cba7dead9552a6d418ded79a"
+		-X helm.sh/helm/v3/internal/version.gitCommit=0ad800ef43d3b826f31a5ad8dfbb4fe05d143688"
 GO_TARGET=	./cmd/${PORTNAME}
 
 PLIST_FILES=	${GO_TARGET:C/.\/cmd/bin/}

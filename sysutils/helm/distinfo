@@ -1,10 +1,10 @@
-TIMESTAMP = 1590438353
-SHA256 (helm-helm-v3.2.1_GH0.tar.gz) = 6596e3ec8f9b91e43a03c190d8326f45844b31817ce1e6935c1864e58c93a56d
-SIZE (helm-helm-v3.2.1_GH0.tar.gz) = 619833
+TIMESTAMP = 1592427025
+SHA256 (helm-helm-v3.2.4_GH0.tar.gz) = 11387c9980a1195e890a231013734b0280a64336d717c710b1239c5eebd5dbaf
+SIZE (helm-helm-v3.2.4_GH0.tar.gz) = 622121
 SHA256 (Azure-go-ansiterm-d6e3b3328b78_GH0.tar.gz) = ee1ebe2efef498be1c558bf71e143289db2d21e2d42592503ad2d4a989006821
 SIZE (Azure-go-ansiterm-d6e3b3328b78_GH0.tar.gz) = 20946
-SHA256 (Azure-go-autorest-v13.3.1_GH0.tar.gz) = a06207e78072d15979e384d310a10b45a89c4351d0779dcb91d082c96e065a8e
-SIZE (Azure-go-autorest-v13.3.1_GH0.tar.gz) = 165007
+SHA256 (Azure-go-autorest-v13.4.1_GH0.tar.gz) = 0eb8ef02ecf9fc50c80940dd79cdfc3c3e716730a538b8334c085eb89e9babd5
+SIZE (Azure-go-autorest-v13.4.1_GH0.tar.gz) = 167129
 SHA256 (BurntSushi-toml-v0.3.1_GH0.tar.gz) = 6593da894578ba510a470735ffbdc88ce88033094dc5a8f4d3957ab87e18803f
 SIZE (BurntSushi-toml-v0.3.1_GH0.tar.gz) = 42077
 SHA256 (DATA-DOG-go-sqlmock-v1.4.1_GH0.tar.gz) = 50a4e370447d4096b288cdbe929fd15fad1196c0e153f068ffdca720196f7f37
