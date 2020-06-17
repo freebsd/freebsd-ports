@@ -11,6 +11,8 @@ COMMENT=	CSG and XTP: libraries for atomistic simulations
 
 LICENSE=	APACHE20
 
+BROKEN_i386=	undefined reference to `__atomic_load'
+
 RUN_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs \
 		libexpat.so:textproc/expat2 \
