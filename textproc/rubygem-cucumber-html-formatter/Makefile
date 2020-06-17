@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cucumber-html-formatter
-PORTVERSION=	6.0.2
+PORTVERSION=	6.0.3
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
