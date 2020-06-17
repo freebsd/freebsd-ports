@@ -7,5 +7,5 @@ SHA256 (0002-doc-Add-libsvt_hevc-encoder-docs.patch) = 1499e419dda72b1604dc5e395
 SIZE (0002-doc-Add-libsvt_hevc-encoder-docs.patch) = 5332
 SHA256 (0001-Add-ability-for-ffmpeg-to-run-svt-av1-with-svt-hevc.patch) = 69e0456b56429a422977d24a914e7e167a38397b2ab40aec575eee332b0e739c
 SIZE (0001-Add-ability-for-ffmpeg-to-run-svt-av1-with-svt-hevc.patch) = 23728
-SHA256 (master-0001-Add-ability-for-ffmpeg-to-run-svt-vp9-with-hevc-av1.patch) = 526f3eba71ff1a2d74e537d8ef777370d9b305a1458799121114b60f7e5a48df
-SIZE (master-0001-Add-ability-for-ffmpeg-to-run-svt-vp9-with-hevc-av1.patch) = 34177
+SHA256 (master-0001-Add-ability-for-ffmpeg-to-run-svt-vp9-with-hevc-av1.patch) = 9d9021dfdf523da60218b2aec58633f969c69107965780794768521314ded807
+SIZE (master-0001-Add-ability-for-ffmpeg-to-run-svt-vp9-with-hevc-av1.patch) = 34077

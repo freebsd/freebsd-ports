@@ -488,7 +488,7 @@ SVTHEVC_LDFLAGS=	-fuse-ld=lld
 # svt-vp9
 SVTVP9_LIB_DEPENDS=	libSvtVp9Enc.so:multimedia/svt-vp9
 SVTVP9_CONFIGURE_ENABLE=	libsvtvp9
-SVTVP9_PATCH_SITES_=	https://github.com/OpenVisualCloud/SVT-VP9/raw/v0.2.0-2-gefe9c5a/ffmpeg_plugin/:svtvp9
+SVTVP9_PATCH_SITES_=	https://github.com/OpenVisualCloud/SVT-VP9/raw/v0.2.0-5-g1b4277c/ffmpeg_plugin/:svtvp9
 SVTVP9_PATCHFILES_=	master-0001-Add-ability-for-ffmpeg-to-run-svt-vp9-with-hevc-av1.patch:-p1:svtvp9
 .if exists(/usr/bin/ld.lld) && (${/usr/bin/ld:L:tA} != /usr/bin/ld.lld)
 SVTVP9_LDFLAGS=		-fuse-ld=lld
