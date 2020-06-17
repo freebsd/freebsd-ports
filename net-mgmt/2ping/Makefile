@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	2ping
-PORTVERSION=	4.4
+PORTVERSION=	4.4.1
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	https://www.finnie.org/software/2ping/ \
 		LOCAL/sunpoet
