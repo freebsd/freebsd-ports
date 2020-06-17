@@ -38,6 +38,7 @@ MESON_ARGS=	-Dlibrsvg=true \
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
+BINARY_ALIAS=	python3=${PYTHON_CMD}
 SHEBANG_FILES=	*.py data/gschemas/*.py gthumb/*.py po/*.py
 
 PLIST_SUB=	GTHUMB_VER="3.10"
