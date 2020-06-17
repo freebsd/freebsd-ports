@@ -1,4 +1,4 @@
-@sample %%ETCDIR%%/bastille.conf
+@sample %%ETCDIR%%/bastille.conf.sample
 bin/bastille
 %%DATADIR%%/bootstrap.sh
 %%DATADIR%%/clone.sh
