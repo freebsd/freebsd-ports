@@ -92,6 +92,7 @@
     SUBDIR += excel-writer
     SUBDIR += exercism
     SUBDIR += explosions
+    SUBDIR += ezc3d
     SUBDIR += felis
     SUBDIR += figlet
     SUBDIR += figlet-fonts
