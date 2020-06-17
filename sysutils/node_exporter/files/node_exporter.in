@@ -38,7 +38,7 @@ load_rc_config $name
 pidfile=/var/run/node_exporter.pid
 command="/usr/sbin/daemon"
 procname="%%PREFIX%%/bin/node_exporter"
-command_args="-p ${pidfile} -T ${name} \
+command_args="-f -p ${pidfile} -T ${name} \
     /usr/bin/env ${procname} \
     --web.listen-address=${node_exporter_listen_address} \
     --collector.textfile.directory=${node_exporter_textfile_dir} \

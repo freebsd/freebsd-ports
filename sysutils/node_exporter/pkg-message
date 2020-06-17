@@ -1,5 +1,27 @@
 [
-{ type: install
+{
+  type: upgrade
+  message: <<EOM
+Text collector examples have been moved to a new repository at
+https://github.com/prometheus-community/node-exporter-textfile-collector-scripts.
+
+The netdev collector CLI argument `--collector.netdev.ignored-devices` was
+renamed to `--collector.netdev.device-blacklist`.
+
+Additional label `mountaddr` added to NFS device metrics to distinguish mounts
+from the same URL, but different IP addresses.
+
+Metrics `node_cpu_scaling_frequency_min_hrts` and
+`node_cpu_scaling_frequency_max_hrts` of the cpufreq collector were renamed to
+`node_cpu_scaling_frequency_min_hertz` and
+`node_cpu_scaling_frequency_max_hertz`.
+
+Collectors that are enabled, but are unable to find data to collect, now return
+`0` for `node_scrape_collector_success`.
+EOM
+}
+{
+  type: install
   message: <<EOM
 If upgrading from a version of node_exporter <0.15.0 you'll need to update any
 custom command line flags that you may have set as it now requires a
