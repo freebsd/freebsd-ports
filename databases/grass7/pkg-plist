@@ -3919,7 +3919,7 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/tools/ggroff.py
 %%GRASS_INST_DIR%%/tools/ghtml.py
 %%GRASS_INST_DIR%%/tools/mkhtml.py
-%%GRASS_INST_DIR%%/translation_status.json
+%%NLS%%%%GRASS_INST_DIR%%/translation_status.json
 %%GRASS_INST_DIR%%/translators.csv
 @dir %%GRASS_INST_DIR%%
 @dir %%GRASS_INST_DIR%%/demolocation/PERMANENT/cats
