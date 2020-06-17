@@ -14,9 +14,8 @@ COMMENT=	Ruby integrations for Elasticsearch
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-# Fix this again if 6.8.2 is released this should be an = restriction
-RUN_DEPENDS=	rubygem-elasticsearch-api6>=${PORTVERSION}<6.8.2:textproc/rubygem-elasticsearch-api6 \
-		rubygem-elasticsearch-transport6>=${PORTVERSION}<6.8.2:textproc/rubygem-elasticsearch-transport6
+RUN_DEPENDS=	rubygem-elasticsearch-api6>=${PORTVERSION}<${PORTVERSION}_99:textproc/rubygem-elasticsearch-api6 \
+		rubygem-elasticsearch-transport6>=${PORTVERSION}<${PORTVERSION}_99:textproc/rubygem-elasticsearch-transport6
 
 USES=		gem
 USE_RUBY=	yes
