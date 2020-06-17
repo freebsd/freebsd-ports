@@ -7,7 +7,7 @@ CATEGORIES=	games
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Classic overhead run-and-gun game
 
-USES=		cmake sdl pkgconfig gnome
+USES=		cmake compiler:c++11-lang gnome pkgconfig sdl
 USE_SDL=	sdl2 image2 mixer2
 USE_GNOME=	gtk30
 
