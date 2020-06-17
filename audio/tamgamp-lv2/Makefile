@@ -2,6 +2,7 @@
 
 PORTNAME=	tamgamp
 DISTVERSION=	g20200514
+PORTREVISION=	1
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 
@@ -32,5 +33,13 @@ PLIST_FILES=	lib/lv2/tamgamp.lv2/manifest.ttl \
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lv2/tamgamp.lv2/tamgamp-lv2.so
+
+OPTIONS_DEFINE=	SSE AVX
+
+SSE_DESC=	Use SIMD SSE instructions
+SSE_MAKE_ARGS=	SSE_INSTR_SET="-mmmx -m3dnow -msse"
+
+AVX_DESC=	Use SIMD AVX instructions
+AVX_MAKE_ARGS=	AVX_INSTR_SET="-mavx -mvzeroupper"
 
 .include <bsd.port.mk>

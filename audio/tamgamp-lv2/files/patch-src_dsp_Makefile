@@ -1,0 +1,13 @@
+--- src/dsp/Makefile.orig	2020-06-17 00:38:49 UTC
++++ src/dsp/Makefile
+@@ -89,8 +89,8 @@ COMMON_DEPS             = common.cpp
+ ARM_DEPS                = arm.cpp
+ AARCH64_DEPS            = aarch64.cpp
+ 
+-SSE_INSTR_SET           = -mmmx -m3dnow -msse
+-AVX_INSTR_SET           = -mavx -mvzeroupper
++#SSE_INSTR_SET           = -mmmx -m3dnow -msse
++#AVX_INSTR_SET           = -mavx -mvzeroupper
+ 
+ FILE                    = $(@:$(OBJDIR)/%.o=%.cpp)
+ LINK_OBJECTS            = $(COMMON_IMPL) $(NATIVE_IMPL)
