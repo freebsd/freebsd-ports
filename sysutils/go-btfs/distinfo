@@ -1,6 +1,6 @@
-TIMESTAMP = 1591433101
-SHA256 (TRON-US-go-btfs-btfs-v1.2.0_GH0.tar.gz) = 53dc28ceb7d86ae99f56c19aed1be2e71c245fc386c2d01f0415c9cec30217db
-SIZE (TRON-US-go-btfs-btfs-v1.2.0_GH0.tar.gz) = 6253278
+TIMESTAMP = 1592385508
+SHA256 (TRON-US-go-btfs-btfs-v1.2.1_GH0.tar.gz) = 2f88cb755bb339e063d6d6fb6239b00b756bad25178ddf71e6db980a28b86750
+SIZE (TRON-US-go-btfs-btfs-v1.2.1_GH0.tar.gz) = 6252982
 SHA256 (AndreasBriese-bbloom-e2d15f34fcf9_GH0.tar.gz) = e88bd873a2251d70b5d2cbf9dceff24fa25ca5652ac1f99165c303e98df494a1
 SIZE (AndreasBriese-bbloom-e2d15f34fcf9_GH0.tar.gz) = 7704
 SHA256 (BurntSushi-toml-v0.3.1_GH0.tar.gz) = 6593da894578ba510a470735ffbdc88ce88033094dc5a8f4d3957ab87e18803f
