@@ -79,7 +79,7 @@ MLSRCS+=	${MLROOT}/${srcdir}
 MLTARGETS=	heap2asm
 MLEXE=		asdlgen heap2exec ml-antlr ml-build ml-burg ml-lex \
 		ml-makedepend ml-ulex ml-yacc sml
-.if ${MLSIZE} == 32
+.if defined(${MLSIZE}) && ${MLSIZE} == 32
 MLEXE+=		ml-nlffigen
 .endif
 .if ${PORT_OPTIONS:MEVERYTHING}
