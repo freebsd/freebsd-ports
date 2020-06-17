@@ -1,0 +1,10 @@
+SAGE_SPKG_CONFIGURE(
+    [threejs], [dnl direct testing of file existence
+      AC_MSG_CHECKING(ThreeJS installation...)
+      if [[ -f %%LOCALBASE%%/www/threejs/Three.js ]] ; then
+        AC_MSG_RESULT(OK)
+      else
+        AC_MSG_RESULT(KO)
+        sage_spkg_install_threejs=yes
+      fi
+])

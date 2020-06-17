@@ -2,135 +2,521 @@
 # $FreeBSD$
 
 PORTNAME=	sage
-PORTVERSION=	6.7
-PORTREVISION=	8
+PORTVERSION=	9.1
 CATEGORIES=	math
-MASTER_SITES=	http://boxen.math.washington.edu/home/sagemath/sage-mirror/src/ \
-		http://mirrors.xmission.com/sage/src/ \
-		http://www-ftp.lip6.fr/pub/math/sagemath/src/ \
-		http://mirrors.mit.edu/sage/src/ \
-		http://www.sagemath.org/src-old/
+MASTER_SITES=	https://mirrors.xmission.com/sage/src/		\
+		http://mirrors.xmission.com/sage/src/		\
+		https://www-ftp.lip6.fr/pub/math/sagemath/src/	\
+		https://mirrors.mit.edu/sage/src/		\
+		https://files.sagemath.org/src/			\
+		ftp://www-ftp.lip6.fr/pub/math/sagemath/src/
 PKGNAMESUFFIX=	-math
 
-MAINTAINER=	stephen@FreeBSD.org
+MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Open source Mathematics software
-
-BROKEN=		unfetchable
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2020-06-05
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-BUILD_DEPENDS=	bash:shells/bash \
-		convert:graphics/ImageMagick6 \
-		ffmpeg:multimedia/ffmpeg \
-		automake:devel/automake \
-		autoconf:devel/autoconf
-LIB_DEPENDS=	libatlas.so:math/atlas \
-		liblapack.so:math/lapack
-RUN_DEPENDS=	bash:shells/bash
+BUILD_DEPENDS=	bash:shells/bash		\
+		dash:shells/dash		\
+		cmake:devel/cmake		\
+		dreadnaut:math/nauty		\
+		${PYTHON_PKGNAMEPREFIX}alabaster>0:textproc/py-alabaster@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}Babel>0:devel/py-babel@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}bleach>0:www/py-bleach@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}brial>0:math/py-brial@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}certifi>0:security/py-certifi@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}configparser>0:devel/py-configparser@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}cvxopt>0:math/py-cvxopt@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}cycler>0:devel/py-cycler@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}cypari2>0:math/py-cypari2@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}cysignals>0:devel/py-cysignals@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}cython>0:lang/cython@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}dateutil>0:devel/py-dateutil@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}decorator>0:devel/py-decorator@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}defusedxml>0:devel/py-defusedxml@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}docutils>0:textproc/py-docutils@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}entrypoints>0:devel/py-entrypoints@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}fpylll>0:math/py-fpylll@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}future>0:devel/py-future@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}gmpy2-devel>0:math/py-gmpy2-devel@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}html5lib>0:www/py-html5lib@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}imagesize>0:graphics/py-imagesize@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}ipython5>0:devel/ipython5@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}ipython_genutils>0:devel/py-ipython_genutils@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}itsdangerous>0:security/py-itsdangerous@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}Jinja2>0i:devel/py-Jinja2@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}jsonschema>0:devel/py-jsonschema@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}jupyter_core>0:devel/py-jupyter_core@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}jupyter_client>0:devel/py-jupyter_client@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}kiwisolver>0:math/py-kiwisolver@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}MarkupSafe>0:textproc/py-MarkupSafe@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}mistune>0:textproc/py-mistune@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}mpmath>0:math/py-mpmath@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}nbconvert>0:devel/py-nbconvert@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}nbformat>0:devel/py-nbformat@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}networkx>0:math/py-networkx@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${PY_FLAVOR}\
+		${PYNUMPY}			\
+		${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}pandocfilters>0:textproc/py-pandocfilters@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}pathlib2>0:devel/py-pathlib2@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}pexpect>0:misc/py-pexpect@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}pickleshare>0:databases/py-pickleshare@${PY_FLAVOR}\
+		${PY_PILLOW}			\
+		${PYTHON_PKGNAMEPREFIX}pkgconfig>0:devel/py-pkgconfig@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}pplpy>0:math/py-pplpy@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}prometheus-client>0:net-mgmt/py-prometheus-client@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}prompt_toolkit1>0:devel/py-prompt_toolkit1@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}psutil>0:sysutils/py-psutil@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}ptyprocess>0:sysutils/py-ptyprocess@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}pyparsing>0:devel/py-pyparsing@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}pyzmq>0:net/py-pyzmq@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}rpy2>0:math/py-rpy2@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}scandir>0:sysutils/py-scandir@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}send2trash>0:deskutils/py-send2trash@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}simplegeneric>0:devel/py-simplegeneric@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}snowballstemmer>0:textproc/py-snowballstemmer@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}sympy>0:math/py-sympy@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}terminado>0:net/py-terminado@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}testpath>0:devel/py-testpath@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}traitlets>0:devel/py-traitlets@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}tornado>0:www/py-tornado@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}traitlets>0:devel/py-traitlets@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}twisted>0:devel/py-twisted@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}vcversioner>0:devel/py-vcversioner@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}wcwidth>0:devel/py-wcwidth@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}webencodings>0:converters/py-webencodings@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}werkzeug>0:www/py-werkzeug@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}zope.interface>0:devel/py-zope.interface@${PY_FLAVOR}\
+		fflas-ffpack-config:math/fflas-ffpack	\
+		gfan:math/gfan			\
+		git:devel/git			\
+		gp2c:math/gp2c			\
+		jmol:science/jmol		\
+		libatomic_ops>0:devel/libatomic_ops	\
+		MathJax>0:www/mathjax		\
+		maxima>0:math/maxima		\
+		p5-XML-Writer>0:textproc/p5-XML-Writer	\
+		p5-XML-LibXML>0:textproc/p5-XML-LibXML	\
+		p5-XML-LibXSLT>0:textproc/p5-XML-LibXSLT\
+		p5-File-Slurp>0:devel/p5-File-Slurp	\
+		p5-JSON>0:converters/p5-JSON	\
+		p5-SVG>0:textproc/p5-SVG	\
+		p5-MongoDB>0:databases/p5-MongoDB	\
+		p5-Term-ReadLine-Gnu>0:devel/p5-Term-ReadLine-Gnu\
+		palp>0:math/palp		\
+		pandoc:textproc/hs-pandoc	\
+		pari-elldata>0:math/pari_elldata\
+		pari-galdata>0:math/pari_galdata\
+		pari-galpol>0:math/pari_galpol	\
+		pari-nftables>0:math/pari_nftables	\
+		pari-seadata>0:math/pari_seadata\
+		QuadraticSieve:math/flintqs	\
+		ninja:devel/ninja		\
+		gpatch:devel/patch		\
+		rubiks>0:math/rubiks		\
+		sympow:math/sympow		\
+		tachyon:graphics/tachyon	\
+		three.js>0:www/threejs		\
+		yasm:devel/yasm			\
+		gtar:archivers/gtar		\
+		convert:graphics/ImageMagick6	\
+		ffmpeg:multimedia/ffmpeg	\
+		${LOCALBASE}/lib/libBLT.a:x11-toolkits/blt
+LIB_DEPENDS=	libarb.so:math/arb		\
+		libboost_thread.so:devel/boost-libs	\
+		libbraiding.so:math/libbraiding	\
+		libbrial.so:math/brial		\
+		libCbc.so:math/cbc		\
+		libcdd.so:math/cddlib		\
+		libcliquer.so:math/cliquer	\
+		libcurl.so:ftp/curl		\
+		libec.so:math/eclib		\
+		libecl.so:lang/ecl		\
+		libecm.so:math/gmp-ecm		\
+		libflint.so:math/flint2		\
+		libfplll.so:math/fplll		\
+		libfreetype.so:print/freetype2	\
+		libgc.so:devel/boehm-gc		\
+		libgc-threaded.so:devel/boehm-gc-threaded\
+		libgf2x.so:math/gf2x		\
+		libgivaro.so:math/givaro	\
+		libglpk.so:math/glpk		\
+		libgap.so:math/gap		\
+		libgmp.so:math/gmp		\
+		libgsl.so:math/gsl		\
+		libhomfly.so:math/libhomfly	\
+		libiml.so:math/iml		\
+		libisl.so:devel/isl		\
+		libLfunction.so:math/lcalc	\
+		libffi.so:devel/libffi		\
+		libgd.so:graphics/gd		\
+		libgiac.so:math/giacxcas	\
+		liblinbox.so:math/linbox	\
+		liblrcalc.so:math/lrcalc	\
+		liblrsgmp.so:math/lrslib	\
+		libm4ri.so:math/m4ri		\
+		libm4rie.so:math/m4rie		\
+		libmpc.so:math/mpc		\
+		libmpfi.so:math/mpfi		\
+		libmpfr.so:math/mpfr		\
+		libmpir.so:math/mpir		\
+		libntl.so:math/ntl		\
+		libpari.so:math/pari		\
+		libpcre.so:devel/pcre		\
+		libplanarity.so:math/planarity	\
+		libpng.so:graphics/png		\
+		libppl.so:devel/ppl		\
+		libpynac.so:math/pynac		\
+		libR.so:math/R			\
+		librw.so:math/rankwidth		\
+		libSingular.so:math/singular	\
+		libamd.so:math/suitesparse	\
+		libsemigroups.so:math/libsemigroups	\
+		libsymmetrica.so:math/symmetrica\
+		libzmq.so:net/libzmq4		\
+		libzn_poly-0.9.so:math/zn_poly	\
+		libqd.so:math/qd		\
+		libisl.so:devel/isl		\
+		libblas.so:math/blas		\
+		libicuuc.so:devel/icu		\
+		libtiff.so:graphics/tiff	\
+		liblapack.so:math/lapack	\
+		libedit.so:devel/libedit	\
+		libwebp.so:graphics/webp	\
+		libpcre2-8.so:devel/pcre2	\
+		libgdbm.so:databases/gdbm	\
+		liblcms2.so:graphics/lcms2	\
+		libopenjp2.so:graphics/openjpeg
+RUN_DEPENDS=	bash:shells/bash		\
+		dreadnaut:math/nauty		\
+		${PYTHON_PKGNAMEPREFIX}alabaster>0:textproc/py-alabaster@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}Babel>0:devel/py-babel@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}bleach>0:www/py-bleach@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}brial>0:math/py-brial@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}certifi>0:security/py-certifi@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}configparser>0:devel/py-configparser@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}cvxopt>0:math/py-cvxopt@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}cycler>0:devel/py-cycler@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}cypari2>0:math/py-cypari2@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}cysignals>0:devel/py-cysignals@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}cython>0:lang/cython@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}dateutil>0:devel/py-dateutil@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}decorator>0:devel/py-decorator@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}defusedxml>0:devel/py-defusedxml@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}docutils>0:textproc/py-docutils@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}entrypoints>0:devel/py-entrypoints@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}fpylll>0:math/py-fpylll@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}future>0:devel/py-future@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}gmpy2-devel>0:math/py-gmpy2-devel@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}html5lib>0:www/py-html5lib@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}imagesize>0:graphics/py-imagesize@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}ipython5>0:devel/ipython5@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}ipython_genutils>0:devel/py-ipython_genutils@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}itsdangerous>0:security/py-itsdangerous@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}jsonschema>0:devel/py-jsonschema@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}jupyter_core>0:devel/py-jupyter_core@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}jupyter_client>0:devel/py-jupyter_client@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}kiwisolver>0:math/py-kiwisolver@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}MarkupSafe>0:textproc/py-MarkupSafe@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}mistune>0:textproc/py-mistune@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}mpmath>0:math/py-mpmath@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}nbconvert>0:devel/py-nbconvert@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}nbformat>0:devel/py-nbformat@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}networkx>0:math/py-networkx@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${PY_FLAVOR}\
+		${PYNUMPY}			\
+		${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}pandocfilters>0:textproc/py-pandocfilters@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}pathlib2>0:devel/py-pathlib2@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}pexpect>0:misc/py-pexpect@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}pickleshare>0:databases/py-pickleshare@${PY_FLAVOR}\
+		${PY_PILLOW}			\
+		${PYTHON_PKGNAMEPREFIX}pkgconfig>0:devel/py-pkgconfig@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}pplpy>0:math/py-pplpy@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}prometheus-client>0:net-mgmt/py-prometheus-client@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}prompt_toolkit1>0:devel/py-prompt_toolkit1@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}psutil>0:sysutils/py-psutil@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}ptyprocess>0:sysutils/py-ptyprocess@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}pyparsing>0:devel/py-pyparsing@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}pyzmq>0:net/py-pyzmq@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}rpy2>0:math/py-rpy2@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}scandir>0:sysutils/py-scandir@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}send2trash>0:deskutils/py-send2trash@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}simplegeneric>0:devel/py-simplegeneric@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}snowballstemmer>0:textproc/py-snowballstemmer@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}sympy>0:math/py-sympy@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}terminado>0:net/py-terminado@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}testpath>0:devel/py-testpath@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}tornado>0:www/py-tornado@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}traitlets>0:devel/py-traitlets@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}twisted>0:devel/py-twisted@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}vcversioner>0:devel/py-vcversioner@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}wcwidth>0:devel/py-wcwidth@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}webencodings>0:converters/py-webencodings@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}werkzeug>0:www/py-werkzeug@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}zope.interface>0:devel/py-zope.interface@${PY_FLAVOR}\
+		fflas-ffpack-config:math/fflas-ffpack	\
+		gfan:math/gfan			\
+		git:devel/git			\
+		gp2c:math/gp2c			\
+		jmol:science/jmol		\
+		MathJax>0:www/mathjax		\
+		maxima>0:math/maxima		\
+		p5-Term-ReadLine-Gnu>0:devel/p5-Term-ReadLine-Gnu\
+		palp>0:math/palp		\
+		pandoc:textproc/hs-pandoc	\
+		pari-elldata>0:math/pari_elldata\
+		pari-galdata>0:math/pari_galdata\
+		pari-galpol>0:math/pari_galpol	\
+		pari-nftables>0:math/pari_nftables	\
+		pari-seadata>0:math/pari_seadata\
+		QuadraticSieve:math/flintqs	\
+		rubiks>0:math/rubiks		\
+		sympow:math/sympow		\
+		tachyon:graphics/tachyon	\
+		three.js>0:www/threejs		\
+		yasm:devel/yasm			\
+		pixz:archivers/pixz
 
-pre-extract:
-	@${ECHO_MSG}
-	@${ECHO_MSG} Instead of installing the port, which will take a considerable amount of
-	@${ECHO_MSG} extra time and space, you can instead type \"make build\".  Then you can move
-	@${ECHO_MSG} work/${PORTNAME}-${PORTVERSION} to wherever you like, and run sage from there.
-	@${ECHO_MSG} However, there is no guarantee that this alternative will always work.
-.  if !(defined(PACKAGE_BUILDING) || defined(BATCH))
-	@sleep 10
-.  endif
+USES=		autoreconf blaslapack:openblas compiler:c++11-lib fortran	\
+		gettext gmake gnome iconv jpeg libtool localbase ncurses perl5	\
+		pkgconfig python:3.6+ readline shebangfix sqlite tk xorg
+USE_TEX=	latex:build pdftex:build tex:build
+USE_XORG=	x11 xext xscrnsaver
+USE_GNOME=	cairo glib20 pango
+USE_PYTHON=	cython
+USE_JAVA=	yes # for science/jmol
 
-PLIST_FILES=	bin/sage
-USE_TEX=	latex:build
-USES=		gmake iconv jpeg tk perl5
+CONFLICTS=	python-3.*	\
+		${PYTHON_PKGNAMEPREFIX}ipykernel5-5.*		\
+		${PYTHON_PKGNAMEPREFIX}ipython-7.*		\
+		${PYTHON_PKGNAMEPREFIX}ipywidgets-7.*		\
+		${PYTHON_PKGNAMEPREFIX}notebook-6.*		\
+		${PYTHON_PKGNAMEPREFIX}prompt_toolkit-2.*	\
+		${PYTHON_PKGNAMEPREFIX}widgetsnbextension-3.5.*
 
-# Optimization flags will be defined by the source
-CFLAGS:=	${CFLAGS:C/^-O.*$//}
-FFLAGS:=	${CFLAGS:C/^-O.*$//}
+SHEBANG_FILES=	.
+SHEBANG_LANG+=	dash
+dash_OLD_CMD=	/bin/dash
+dash_CMD=	${LOCALBASE}/bin/dash
 
-MAKE_ENV+=	SAGE_PORT=yes \
-		SAGE_ATLAS_LIB=${LOCALBASE}/lib \
-		DOT_SAGE=${WRKSRC}/tmp/.sage \
-		SAGE_FAT_BINARY=yes \
-		PERL=${PERL}
+DISABLE_BINUTILS=	yes
 
-# The following is needed for the lapack subpackage.
-MAKE_ARGS+=	ARCH="${AR}"
+LIBS=		-lomp -pthread
+.if !defined{WITH_DEBUG}
+LDFLAGS+=	-s
+.endif
+BLDDIR=		${WRKDIR}/build
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	SAGE_PORT=yes CC=${CC} GCC=${CC} CXX=${CXX} AS=${AS} LD=${LD}	\
+		SAGE_LOCAL=${PREFIX} SAGE_DESTDIR=${BLDDIR}/	\
+		DESTDIR=${BLDDIR}/${PREFIX} PATCH=${LOCALBASE}/bin/gpatch
+CONFIGURE_ARGS=	--with-system-gcc=force		\
+		--with-system-python3=yes	\
+		--localstatedir=/var
+MAKE_ENV=	MAKE=${GMAKE} DESTDIR=${BLDDIR}
+REINPLACE_ARGS=	-i ''
+BINARY_ALIAS=	patch=${LOCALBASE}/bin/gpatch
+PLIST_SUB=	VER=${PORTVERSION}
 
-post-patch:
-# Create wrapper for invocation of make.
-	@${MKDIR} ${WRKSRC}/local/bin
-	@${LN} -s -f ${LOCALBASE}/bin/gmake ${WRKSRC}/local/bin/make
+OPTIONS_DEFINE=	DOCS
+PORTDOCS=	*
 
-# Create wrapper for invocation of ld.
-	@${SED} -e 's#%%LD%%#${LOCALBASE}/bin/ld#' \
-		${FILESDIR}/ld.in > ${WRKSRC}/local/bin/ld
-	@${CHMOD} +x ${WRKSRC}/local/bin/ld
-
-post-build:
-	${RM} -r ${WRKSRC}/tmp/.sage
-	${CHMOD} -R a+rX ${WRKSRC}
-
-check regression-test test: build
-	@${ECHO_MSG} This test can also be performed after installation by typing \"sage -testall\".
-	@${ECHO_MSG}
-	cd ${WRKSRC} && ${SETENV} DOT_SAGE=${WRKSRC}/tmp/.sage ./sage -testall
-	${RM} ${WRKSRC}/python*.core
-
-# Don't build docs (because of mysterious race conditions).
-ALL_TARGET=	build
-
-INSTALL_SAGE_DIR=	${PREFIX}/${PORTNAME}-${PORTVERSION}
-STAGED_SAGE_DIR=	${STAGEDIR}${INSTALL_SAGE_DIR}
-do-install:
-	cd ${WRKDIR} && ${FIND} -s ${WRKSRC} | \
-		${GREP} -v '^${WRKSRC}/upstream/' | \
-		${GREP} -v '^${WRKSRC}/tmp' | \
-		${SED} -e 's#${WRKDIR}/##' | \
-		${CPIO} -pmud -R ${BINOWN}:${BINGRP} ${STAGEDIR}${PREFIX}
-	${ECHO_CMD} | ${SETENV} DOT_SAGE=${STAGED_SAGE_DIR}/tmp/.sage ${STAGED_SAGE_DIR}/sage
-	${RM} -r ${STAGED_SAGE_DIR}/tmp/.sage
-	${SED} -e "s+#SAGE_ROOT.*+SAGE_ROOT=${INSTALL_SAGE_DIR}+" ${WRKSRC}/sage > ${STAGEDIR}${PREFIX}/bin/sage
-	${CHMOD} ${BINMODE} ${STAGEDIR}${PREFIX}/bin/sage
-
-post-install:
-	@${FIND} -s ${STAGED_SAGE_DIR} -not -type d | \
-		${SED} -e 's#${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
-	@${FIND} -s ${STAGED_SAGE_DIR} -type d -empty | \
-		${SED} -e 's#${STAGEDIR}${PREFIX}/#@dir #' >> ${TMPPLIST}
+.if defined(PACKAGE_BUILDING)
+CONFIGURE_ARGS+=--enable-build-as-root
+.endif
 
 .include <bsd.port.pre.mk>
 
-MAKE_ENV+=	MAKE="${MAKE} -j${MAKE_JOBS_NUMBER}"
+WSDIR=		${BLDDIR}${PREFIX}
+SPKG_INST=	configure.ac configure build/sage_bootstrap/uninstall.py	\
+		build/make/install src/bin/sage-env
+PY2FIX=		bin lib/${PYTHON_VERSION}
+DOC2FIX=	.pickle .doctree
+SE2FIX=		^ECLDIR= ^SINGULAR MAXIMA_PREFIX
+SHR2FIX=	GAP_ROOT_DIR PPLPY_DOCS SINGULARPATH
+STG2FIX=	bin/sage-env-config default.qepcadrc	\
+		share/jupyter/kernels/sagemath/kernel.json
+BADLN=		kernels/sagemath/doc nbextensions/jsmol	\
+		nbextensions/mathjax nbextensions/threejs
+# External dependencies not yet handled by SageMath
+PY_LIBS=	alabaster babel bleach certifi configparser cvxopt cycler	\
+		cypari cysignals cython dateutil decorator defusedxml docutils	\
+		entrypoints fpylll future gmpy2	html5lib imagesize ipython	\
+		ipython_genutils itsdangerous jinja2 jsonschema jupyter_client	\
+		jupyter_core kiwisolver markupsafe matplotlib mistune mpmath	\
+		nbconvert nbformat networkx nose numpy packaging pandocfilters	\
+		pathlib2 pexpect pickleshare pillow pkgconfig pplpy		\
+		prometheus_client prompt_toolkit psutil ptyprocess pyparsing	\
+		pytz pyzmq requests rpy2 scandir scipy send2trash simplegeneric	\
+		six snowballstemmer sympy terminado testpath tornado traitlets	\
+		twisted vcversioner wcwidth webencodings werkzeug zope_interface
+PY_FILES=	sage_brial
+JS_LIBS=	jmol mathjax threejs
+SPKGCM4=	brial ecl gap gc giac libhomfly linbox maxima palp pynac rubiks	\
+		singular suitesparse sympow zn_poly
 
-.ifdef MAINTAINER_MODE
-test-fbsd-patches:	patch
-	${RM} -r ${WRKSRC}/build/pkgs/*/src; \
-	for d in ${WRKSRC}/build/pkgs/*; do \
-		if ls $$d/fbsd-patch-* > /dev/null 2>&1; then \
-			${ECHO_MSG} Testing patches in $${d##*/}; \
-			b=$${d##*/}-`${CAT} $$d/package-version.txt | ${SED} 's/\.p.*//'`; \
-			c=${WRKSRC}/upstream/$$b.tar.bz2 ; \
-			if [ ! -e $$c ]; then \
-				c=${WRKSRC}/upstream/$$b.tar.gz ; \
-				if [ ! -e $$c ]; then \
-					${ECHO_MSG} Couldn\'t find $$c; \
-					exit 1; \
-				fi; \
-			fi; \
-			b=`echo $$b | sed 's/python/Python/'` ; \
-			if ! (cd $$d && tar xf $$c && ${MV} $$b src); then \
-				${ECHO_MSG} Unable to unarchive $$c; \
-				exit 1; \
-			fi; \
-			if ! (cd $$d && ${CAT} fbsd-patch-* | patch); then \
-				${ECHO_MSG} Patches in $${d##*/} failed; \
-				exit 1; \
-			fi; \
-		fi; \
-	done; \
-	${RM} -r ${WRKSRC}/build/pkgs/*/src
-.endif
+post-patch:
+	${CP} ${FILESDIR}/psutil__arch__bsd__freebsd_socks.c.patch	\
+		${WRKSRC}/build/pkgs/psutil/patches/
+.for sp in ${SPKGCM4}
+	${CP} ${FILESDIR}/${sp}_spkg-configure.m4		\
+		${WRKSRC}/build/pkgs/${sp}/spkg-configure.m4
+.endfor
+.for sp in ${PY_LIBS}
+	${CP} ${FILESDIR}/py_libs_spkg-configure.m4		\
+		${WRKSRC}/build/pkgs/${sp:C/pari2/pari/}/spkg-configure.m4
+.endfor
+.for sp in ${PY_FILES}
+	${SED} -e 's|%%PYTHON_SITELIBDIR%%|${PYTHON_SITELIBDIR}|' ${FILESDIR}/${sp}_spkg-configure.m4.in \
+		> ${WRKSRC}/build/pkgs/${sp}/spkg-configure.m4
+.endfor
+.for sp in ${JS_LIBS}
+	${SED} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${FILESDIR}/${sp}_spkg-configure.m4.in \
+		> ${WRKSRC}/build/pkgs/${sp}/spkg-configure.m4
+.endfor
+
+pre-configure:
+	${REINPLACE_CMD} -e 's|SAGE_LOCAL="$$prefix"|SAGE_LOCAL="${WSDIR}"|'	\
+		-e 's|lib/pkgconfig|libdata/pkgconfig|' ${WRKSRC}/configure.ac
+	${REINPLACE_CMD} -e 's|SAGE_LOCAL="@prefix@"|SAGE_LOCAL="${WSDIR}"|'	\
+		${WRKSRC}/src/bin/sage-env-config.in
+	${REINPLACE_CMD} -e 's|%%CFLAGS%%|${CFLAGS}|;s|%%LDFLAGS%%|${LDFLAGS}|'	\
+		${WRKSRC}/build/pkgs/tachyon/patches/Make-arch.patch
+	${REINPLACE_CMD} -e '/SUITESPARSE_INC_DIR/s|$${SAGE_LOCAL}/include|${LOCALBASE}/include/suitesparse|'\
+		${WRKSRC}/build/pkgs/cvxopt/spkg-install.in
+.for f in ${PY_LIBS}
+	${REINPLACE_CMD} -e 's|python3|${PYTHON_CMD}|;s|py_libs|${f}|'	\
+		${WRKSRC}/build/pkgs/${f}/spkg-configure.m4
+.endfor
+	${REINPLACE_CMD} -e 's|import cypari|import cypari2|'	\
+		${WRKSRC}/build/pkgs/cypari/spkg-configure.m4
+	${REINPLACE_CMD} -e 's|import ipython|import IPython|'	\
+		${WRKSRC}/build/pkgs/ipython/spkg-configure.m4
+	${REINPLACE_CMD} -e 's|import pillow|import PIL|'	\
+		${WRKSRC}/build/pkgs/pillow/spkg-configure.m4
+	${REINPLACE_CMD} -e 's|import pplpy|import ppl|'	\
+		${WRKSRC}/build/pkgs/pplpy/spkg-configure.m4
+	${REINPLACE_CMD} -e 's|import pyzmq|import zmq|'	\
+		${WRKSRC}/build/pkgs/pyzmq/spkg-configure.m4
+	${REINPLACE_CMD} -e 's|import zope_interface|import zope.interface|'	\
+		${WRKSRC}/build/pkgs/zope_interface/spkg-configure.m4
+	${REINPLACE_CMD} -e '/GAP_ROOT=/s|$$SAGE_LOCAL|${LOCALBASE}|'	\
+		${WRKSRC}/build/pkgs/gap_packages/spkg-install.in
+	${REINPLACE_CMD} -e "/os.path.join/s|SAGE_LOCAL|'${LOCALBASE}'|"\
+		${WRKSRC}/src/sage/libs/gap/util.pyx
+	${REINPLACE_CMD} -e "/os.path.join(SAGE_LOCAL/s|SAGE_LOCAL|'${LOCALBASE}'|"	\
+		${WRKSRC}/src/sage/env.py
+	${REINPLACE_CMD} -e "/^library_dirs/s|SAGE_LOCAL|'${LOCALBASE}'|"	\
+		${WRKSRC}/src/setup.py
+.for f in ${SHR2FIX}
+	${REINPLACE_CMD} -e "/${f}/s|SAGE_SHARE|'${LOCALBASE}/share/'|"	\
+		${WRKSRC}/src/sage/env.py
+.endfor
+	${REINPLACE_CMD} -e "/JMOL_DIR/s|SAGE_SHARE|'${JAVASHAREDIR}'|"	\
+			-e "/JMOL_DIR/s|jmol|classes|"			\
+		${WRKSRC}/src/sage/env.py
+	${REINPLACE_CMD} -e "/JSMOL_DIR/s|SAGE_SHARE|'${LOCALBASE}/www'|"	\
+			-e "/JSMOL_DIR/s|jsmol|JSmol|"				\
+		${WRKSRC}/src/sage/env.py
+	${REINPLACE_CMD} -e "/MATHJAX_DIR/s|SAGE_SHARE|'${LOCALBASE}/www'|"	\
+			-e "/MATHJAX_DIR/s|mathjax|MathJax|"			\
+		${WRKSRC}/src/sage/env.py
+	${REINPLACE_CMD} -e "/THREEJS_DIR/s|SAGE_SHARE|'${LOCALBASE}/www'|"	\
+		${WRKSRC}/src/sage/env.py
+.for f in ${SE2FIX}
+	${REINPLACE_CMD} -e '/${f}/s|$$SAGE_LOCAL|${LOCALBASE}|'	\
+		${WRKSRC}/src/bin/sage-env
+.endfor
+	${REINPLACE_CMD} -e '/LDFLAGS=/s|-rpath,$$SAGE_LOCAL|-rpath,${LOCALBASE}|'	\
+		${WRKSRC}/src/bin/sage-env
+.for f in ${SPKG_INST}
+	${REINPLACE_CMD} -e 's|/var/lib/sage|/share/libdata/${PORTNAME}|'	\
+		${WRKSRC}/${f}
+.endfor
+	(cd ${WRKSRC} && ./bootstrap)
+	${MKDIR} ${BLDDIR}${PREFIX}/lib/pkgconfig	# Removed thereafter
+
+post-build:
+.for d in ${PY2FIX}
+	${FIND} ${WSDIR}/${d} -type f -exec ${GREP} -I -l "${WSDIR}/bin/python" {} \;	|\
+	${XARGS} ${SED} -i "" -e 's|${WSDIR}/bin/pytho.*|${PYTHON_CMD}|'
+.endfor
+.for d in ${PY2FIX}
+	${FIND} ${WSDIR}/${d} -type f -exec ${GREP} -I -l "/usr/bin/env python" {} \;	|\
+	${XARGS} ${SED} -i "" -e 's|/usr/bin/env pytho.*|${PYTHON_CMD}|'
+.endfor
+	${FIND} ${BLDDIR}/${PYTHON_LIBDIR} -type d -name __pycache__ |	\
+		${XARGS} ${RM} -r
+.for f in ${DOC2FIX}
+	${FIND} ${BLDDIR}${DOCSDIR} -type f -name "*${f}" | ${XARGS}	\
+	${SED} -i "" -e 's|${BLDDIR}||g'
+.endfor
+.for f in ${STG2FIX}
+	${SED} -i "" -e 's|${BLDDIR}||g' ${BLDDIR}${PREFIX}/${f}
+.endfor
+	${RM} ${BLDDIR}${PYTHON_CMD} ${BADLN:C|^|${BLDDIR}${PREFIX}/share/jupyter/|}
+	${RM} -r ${BLDDIR}${PREFIX}/var
+	${RM} ${BLDDIR}${PREFIX}/lib64 ${BLDDIR}${PREFIX}/libdata/pkgconfig/blas.pc	\
+		${BLDDIR}${PREFIX}/libdata/pkgconfig/cblas.pc	\
+		${BLDDIR}${PREFIX}/libdata/pkgconfig/gsl.pc	\
+		${BLDDIR}${PREFIX}/libdata/pkgconfig/lapack.pc
+	# Cannot use a package system for pip and setuptools
+	${RM} ${BLDDIR}${PREFIX}/bin/easy_install* ${BLDDIR}${PREFIX}/bin/pip*
+	${RM} -r ${BLDDIR}${PYTHON_SITELIBDIR}/pip-* ${BLDDIR}${PYTHON_SITELIBDIR}/pip/
+	${RM} -r ${BLDDIR}${PYTHON_SITELIBDIR}/setuptools*		\
+		${BLDDIR}${PYTHON_SITELIBDIR}/easy_install.py		\
+		${BLDDIR}${PYTHON_SITELIBDIR}/pkg_resources		\
+		${BLDDIR}${PYTHON_SITELIBDIR}/__pycache__/easy_install*
+	# Remoce CONFLICTS with py3x-backports-1
+	${RM} ${BLDDIR}${PYTHON_SITELIBDIR}/backports/__init__.py	\
+		${BLDDIR}${PYTHON_SITELIBDIR}/backports/__init__.cpython-${PYTHON_SUFFIX}.pyc
+	# Wont use a system package for sphinx because it would need py-sphinx18 + its dependencies
+	# Check https://trac.sagemath.org/ticket/28856
+	${RM} ${BLDDIR}${PREFIX}/bin/sphinx-*
+	${RM} -r ${BLDDIR}${PYTHON_SITELIBDIR}/sphinx
+	${RM} -r ${BLDDIR}${PYTHON_SITELIBDIR}/sphinxcontrib	\
+		${BLDDIR}${PYTHON_SITELIBDIR}/Sphinx-*	\
+		${BLDDIR}${PYTHON_SITELIBDIR}/sphinxcontrib_websupport-*
+	${RM} -r ${BLDDIR}${PREFIX}/bin/pygmentize		\
+		${BLDDIR}${PYTHON_SITELIBDIR}/Pygments-*	\
+		${BLDDIR}${PYTHON_SITELIBDIR}/pygments
+	# ${TRUE} because compilation of some .py fails: compileall.py -q to see errors
+	(cd ${WSDIR} && (${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py	\
+	 -d ${PYTHONPREFIX_SITELIBDIR} -f ${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;} ||	\
+	 ${TRUE}))
+	${FIND} ${BLDDIR}${PREFIX} -name "*.bak" -delete
+
+do-install:
+	cd "${BLDDIR}" && ${FIND} . | ${CPIO} -pdum ${STAGEDIR}
+	# Remove bad links
+	${LN} -sf ${DOCSDIR}	\
+		${STAGEDIR}${PREFIX}/share/jupyter/kernels/sagemath/doc
+	${LN} -sf ${LOCALBASE}/www/JSmol	\
+		${STAGEDIR}${PREFIX}/share/jupyter/nbextensions/jsmol
+	${LN} -sf ${LOCALBASE}/www/MathJax	\
+		${STAGEDIR}${PREFIX}/share/jupyter/nbextensions/mathjax
+	${LN} -sf ${LOCALBASE}/www/threejs	\
+		${STAGEDIR}${PREFIX}/share/jupyter/nbextensions/threejs
+	${RM} ${STAGEDIR}${PREFIX}/lib64 ${STAGEDIR}${PREFIX}/libdata/pkgconfig/blas.pc	\
+		${STAGEDIR}${PREFIX}/libdata/pkgconfig/cblas.pc	\
+		${STAGEDIR}${PREFIX}/libdata/pkgconfig/gsl.pc	\
+		${STAGEDIR}${PREFIX}/libdata/pkgconfig/lapack.pc
 
 .include <bsd.port.post.mk>

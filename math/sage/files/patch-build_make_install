@@ -1,0 +1,13 @@
+--- build/make/install.orig	2020-05-08 20:50:01 UTC
++++ build/make/install
+@@ -28,7 +28,9 @@ if [ -z "${SAGE_ORIG_PATH_SET}" ]; then
+ fi
+ export PATH="$SAGE_ROOT/build/bin:$SAGE_SRC/bin:$SAGE_LOCAL/bin:$PATH"
+ 
+-export PYTHONPATH="$SAGE_LOCAL"
++PYTHON_SITELIBDIR=`$PYTHON_FOR_VENV -c 'import sysconfig; print(sysconfig.get_paths()["purelib"])'`
++REL_PYTHON_SITELIBDIR=`echo $PYTHON_SITELIBDIR | sed -e "s|$PYTHONBASE||"`
++export PYTHONPATH="$SAGE_LOCAL:$SAGE_LOCAL$REL_PYTHON_SITELIBDIR:$PYTHON_SITELIBDIR"
+ 
+ ###############################################################################
+ # Skip the rest if nothing to do (i.e., to [re]build).

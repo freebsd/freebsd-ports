@@ -1,0 +1,542 @@
+--- build/pkgs/tachyon/patches/Make-arch.patch.orig	2020-01-01 11:03:10 UTC
++++ build/pkgs/tachyon/patches/Make-arch.patch
+@@ -10,7 +10,15 @@
+  
+  # MPI path setup, probably shouldn't need to be changed.
+  MPIINC=$(MPIDIR)/include
+-@@ -23,7 +24,8 @@ default:
++@@ -16,14 +17,15 @@
++ MISCDEFS=$(USEJPEG) $(USEPNG) $(FLT) $(MBOX)
++ MISCINC=$(JPEGINC) $(PNGINC) $(SPACEBALLINC)
++ MISCFLAGS=$(MISCDEFS) $(MISCINC)
++-MISCLIB=$(JPEGLIB) $(PNGLIB) $(SPACEBALLLIB)
+++MISCLIB=%%LDFLAGS%% $(JPEGLIB) $(PNGLIB) $(SPACEBALLLIB)
++ 
++ default:
++ 	@echo "  Choose one of the architectures specified below."
+  	@echo "--------------------------------------------------------------"
+  	@echo "              Parallel Versions        "
+  	@echo ""
+@@ -20,7 +28,7 @@
+  	@echo "          aix-64-thr - IBM AIX 5.x      POSIX Threads, 64-bit "
+  	@echo "             aix-mpi - IBM AIX 5.x (SP) MPI                   "
+  	@echo "        asci-red-mpi - Intel ASCI Red   MPI                   "
+-@@ -32,11 +34,12 @@ default:
++@@ -32,11 +34,12 @@
+  	@echo "        cray-t3e-mpi - Cray T3E         MPI                   "
+  	@echo "        cray-xt3-mpi - Cray XT3         MPI                   "
+  	@echo "  compaq-alphasc-mpi - Lemieux at PSC   MPI                   "
+@@ -34,7 +42,7 @@
+  	@echo " linux-alpha-ccc-qsw - Linux Alpha, Compaq C, MPI, QSWnet     "
+  	@echo "           linux-lam - Linux            MPI (OSC LAM)         "
+  	@echo "        linux-lam-64 - Linux AMD64/EM64T, MPI, 64-bit         "
+-@@ -48,13 +51,14 @@ default:
++@@ -48,13 +51,14 @@
+  	@echo "linux-ia64-thr-sgicc - Linux IA-64, SGI Pro64 Compilers       "
+  	@echo "          macosx-thr - MacOS X PowerPC, POSIX Threads         "
+  	@echo "      macosx-x86-thr - MacOS X Intel x86, POSIX Threads       "
+@@ -56,7 +64,7 @@
+  	@echo "--------------------------------------------------------------"
+  	@echo "            Hybrid Parallel Versions                          "
+  	@echo ""
+-@@ -63,9 +67,11 @@ default:
++@@ -63,9 +67,11 @@
+  	@echo "--------------------------------------------------------------"
+  	@echo "              Sequential Versions                             "
+  	@echo ""
+@@ -70,7 +78,7 @@
+  	@echo "            irix6 - SGI Irix 6.x                            "
+  	@echo "            linux - Linux                                   "
+  	@echo "         linux-64 - Linux, AMD64/EM64T, GCC 3.x, 64-bit     "
+-@@ -102,7 +108,7 @@ default:
++@@ -102,7 +108,7 @@
+  	@echo "Consult the README file in this directory for further info. "
+  
+  ##
+@@ -79,7 +87,7 @@
+  ## No pthreads on ASCI Red yet.  I didn't bother with the cop() stuff
+  ##
+  asci-red-mpi:
+-@@ -118,7 +124,7 @@ asci-red-mpi:
++@@ -118,7 +124,7 @@
+  
+  ##
+  ## IBM Blue Gene/L Parallel Supercomputer
+@@ -88,7 +96,7 @@
+  ## NOTE: strip breaks bluegene executables, they are dynamically re-linked
+  ##       at runtime, so we must use /bin/true rather than strip
+  ##
+-@@ -137,7 +143,7 @@ bluegene-mpi:
++@@ -137,7 +143,7 @@
+  ## Cray Parallel Vector Processor Machines Using Threads
+  ##
+  ## Tested on J90s, but should work on almost any of the Cray PVP systems.
+@@ -97,7 +105,7 @@
+  ##       off running on a fast workstation, or even better, on a T3E!!!
+  ##
+  cray-thr:
+-@@ -228,7 +234,7 @@ cray-xt3-mpi:
++@@ -228,7 +234,7 @@
+  ##
+  ## Architecture flags for the Intel Paragon XP/S Supercomputer using MPI
+  ## for message passing.  NX is no longer supported by this software.
+@@ -106,7 +114,7 @@
+  ## Concurrent I/O is used by default.
+  ##
+  
+-@@ -264,8 +270,8 @@ paragon-mpi:
++@@ -264,8 +270,8 @@
+  
+  
+  ##
+@@ -117,7 +125,7 @@
+  ## Tested with the mpich distribution from Argonne National Labs
+  ##
+  
+-@@ -277,7 +283,7 @@ ipsc860-mpi:
++@@ -277,7 +283,7 @@
+  	"AR = ar860" \
+  	"ARFLAGS = r" \
+  	"STRIP = strip860" \
+@@ -126,7 +134,7 @@
+  
+  ipsc860-mpi-debug:
+  	$(MAKE) all \
+-@@ -287,7 +293,7 @@ ipsc860-mpi-debug:
++@@ -287,7 +293,7 @@
+  	"AR = ar860" \
+  	"ARFLAGS = r" \
+  	"STRIP = touch " \
+@@ -135,7 +143,7 @@
+  
+  
+  ##
+-@@ -296,22 +302,18 @@ ipsc860-mpi-debug:
++@@ -296,22 +302,18 @@
+  tru64-alpha:
+  	$(MAKE) all \
+  	"ARCH = tru64-alpha" \
+@@ -159,7 +167,7 @@
+  	"ARFLAGS = r" \
+  	"STRIP = strip" \
+  	"LIBS = -L. -ltachyon $(MISCLIB) -lm"
+-@@ -319,9 +321,7 @@ tru64-alpha-thr:
++@@ -319,9 +321,7 @@
+  tru64-alpha-thr-ogl:
+  	$(MAKE) all \
+  	"ARCH = tru64-alpha-thr-ogl" \
+@@ -169,7 +177,7 @@
+  	"ARFLAGS = r" \
+  	"STRIP = strip" \
+  	"LIBS = -L. -ltachyon $(TRU64_GLX_LIBS) $(MISCLIB) -lm"
+-@@ -448,7 +448,7 @@ solaris-ultra-hpc:
++@@ -448,7 +448,7 @@
+  	"AR = ar" \
+  	"ARFLAGS = r" \
+  	"STRIP = strip" \
+@@ -178,7 +186,7 @@
+  
+  solaris-mpi:
+  	$(MAKE) all \
+-@@ -458,7 +458,7 @@ solaris-mpi:
++@@ -458,7 +458,7 @@
+  	"AR = ar" \
+  	"ARFLAGS = r" \
+  	"STRIP = strip" \
+@@ -187,25 +195,29 @@
+  
+  solaris-thr:
+  	$(MAKE) all \
+-@@ -473,9 +473,15 @@ solaris-thr:
++@@ -473,13 +473,19 @@
+  solaris-pthreads-gcc:
+  	$(MAKE) all \
+  	"ARCH = solaris-pthreads-gcc" \
+ -	"CC = gcc" \
+  	"CFLAGS = -Wall -O3 -fomit-frame-pointer -ffast-math -D_REENTRANT -DSunOS $(MISCFLAGS) -DTHR -DUSEPOSIXTHREADS" \
+ -	"AR = ar" \
+-+	"ARFLAGS = r" \
+-+	"STRIP = strip" \
+-+	"LIBS = -L. -ltachyon $(MISCLIB) -lm -lpthread"
+-+
++ 	"ARFLAGS = r" \
++ 	"STRIP = strip" \
++ 	"LIBS = -L. -ltachyon $(MISCLIB) -lm -lpthread"
++ 
+ +solaris-pthreads-gcc-64-bit:
+ +	$(MAKE) all \
+ +	"ARCH = solaris-pthreads-gcc" \
+ +	"CFLAGS = -Wall -O4 -m64 -fomit-frame-pointer -ffast-math -D_REENTRANT -DSunOS $(MISCFLAGS) -DTHR -DUSEPOSIXTHREADS" \
+- 	"ARFLAGS = r" \
+- 	"STRIP = strip" \
+- 	"LIBS = -L. -ltachyon $(MISCLIB) -lm -lpthread"
+-@@ -618,7 +624,7 @@ solaris-ultra-hpc-ogl:
+++	"ARFLAGS = r" \
+++	"STRIP = strip" \
+++	"LIBS = -L. -ltachyon $(MISCLIB) -lm -lpthread"
+++
++ solaris-thr-x11:
++ 	$(MAKE) all \
++ 	"ARCH = solaris-thr-x11" \
++@@ -618,7 +624,7 @@
+  	"AR = ar" \
+  	"ARFLAGS = r" \
+  	"STRIP = strip" \
+@@ -214,7 +226,7 @@
+  
+  solaris-ultra-pthreads-ogl:
+  	$(MAKE) all \
+-@@ -643,9 +649,7 @@ solaris-apcc-ultra-thr:
++@@ -643,9 +649,7 @@
+  solaris-gcc-thr:
+  	$(MAKE) all \
+  	"ARCH = solaris-gcc-thr" \
+@@ -224,7 +236,7 @@
+  	"ARFLAGS = r" \
+  	"STRIP = touch" \
+  	"LIBS = -L. -ltachyon $(MISCLIB) -lm -lsocket -lthread"
+-@@ -653,9 +657,7 @@ solaris-gcc-thr:
++@@ -653,9 +657,7 @@
+  solaris-gcc-thr-x11:
+  	$(MAKE) all \
+  	"ARCH = solaris-gcc-thr-x11" \
+@@ -234,7 +246,7 @@
+  	"ARFLAGS = r" \
+  	"STRIP = touch" \
+  	"LIBS = -L. -ltachyon $(MISCLIB) -lm -lsocket $(X11LIB) -lthread"
+-@@ -701,7 +703,7 @@ irix5-mpi:
++@@ -701,7 +703,7 @@
+  	"AR = ar" \
+  	"ARFLAGS = r" \
+  	"STRIP = strip" \
+@@ -243,7 +255,7 @@
+  
+  irix5:
+  	$(MAKE) all \
+-@@ -710,7 +712,7 @@ irix5:
++@@ -710,7 +712,7 @@
+  	"AR = ar" \
+  	"ARFLAGS = r" \
+  	"STRIP = strip" \
+@@ -252,7 +264,7 @@
+  
+  irix6:
+  	$(MAKE) all \
+-@@ -719,7 +721,7 @@ irix6:
++@@ -719,7 +721,7 @@
+  	"AR = ar" \
+  	"ARFLAGS = r" \
+  	"STRIP = strip" \
+@@ -261,7 +273,7 @@
+  
+  irix6-purify:
+  	$(MAKE) all \
+-@@ -738,7 +740,7 @@ irix6-64-thr:
++@@ -738,7 +740,7 @@
+  	"AR = ar" \
+  	"ARFLAGS = r" \
+  	"STRIP = strip" \
+@@ -270,7 +282,7 @@
+  
+  irix6-thr:
+  	$(MAKE) all \
+-@@ -747,7 +749,7 @@ irix6-thr:
++@@ -747,7 +749,7 @@
+  	"AR = ar" \
+  	"ARFLAGS = r" \
+  	"STRIP = strip" \
+@@ -279,7 +291,7 @@
+  
+  irix6-thr-purify:
+  	$(MAKE) all \
+-@@ -766,7 +768,7 @@ irix6-thr-ogl:
++@@ -766,7 +768,7 @@
+  	"AR = ar" \
+  	"ARFLAGS = r" \
+  	"STRIP = strip" \
+@@ -288,7 +300,7 @@
+  
+  
+  ##
+-@@ -776,6 +778,8 @@ irix6-thr-ogl:
++@@ -776,6 +778,8 @@
+  ## available yet, since access to a thread capable test machine is needed
+  ## for implementation.  These configurations require xlc.
+  ##
+@@ -297,7 +309,7 @@
+  
+  
+  aix:
+-@@ -788,6 +792,19 @@ aix:
++@@ -788,6 +792,19 @@
+  	"STRIP = strip" \
+  	"LIBS = -L. -ltachyon $(MISCLIB) -lm"
+  
+@@ -317,7 +329,7 @@
+  aix-mpi:
+  	$(MAKE) all \
+  	"ARCH = aix-mpi" \
+-@@ -808,6 +825,19 @@ aix-thr:
++@@ -808,6 +825,19 @@
+  	"STRIP = strip" \
+  	"LIBS = -L. -ltachyon $(MISCLIB) -lm -lpthread"
+  
+@@ -337,7 +349,7 @@
+  aix-64-thr:
+  	$(MAKE) all \
+  	"ARCH = aix-64-thr" \
+-@@ -836,6 +866,32 @@ hpux:
++@@ -836,6 +866,32 @@
+  	"STRIP = strip" \
+  	"LIBS = -L. -ltachyon $(MISCLIB) -lm"
+  
+@@ -370,7 +382,7 @@
+  hpux-thr:
+  	$(MAKE) all \
+  	"ARCH = hpux-thr" \
+-@@ -867,67 +923,57 @@ hpux-ia64-thr:
++@@ -867,67 +923,57 @@
+  next:
+  	$(MAKE) all \
+  	"ARCH = next" \
+@@ -391,16 +403,16 @@
+  	"ARFLAGS = r" \
+  	"STRIP = strip" \
+ -	"RANLIB = ranlib" \
+-+	"LIBS = -L. -ltachyon $(MISCLIB)"
+-+
++ 	"LIBS = -L. -ltachyon $(MISCLIB)"
++ 
+ +macosx-64:
+ +	$(MAKE) all \
+ +	"ARCH = macosx" \
+ +	"CFLAGS = -Os -m64 -ffast-math -DBsd $(MISCFLAGS)" \
+ +	"ARFLAGS = r" \
+ +	"STRIP = strip" \
+- 	"LIBS = -L. -ltachyon $(MISCLIB)"
+- 
+++	"LIBS = -L. -ltachyon $(MISCLIB)"
+++
+  macosx-thr:
+  	$(MAKE) all \
+  	"ARCH = macosx-thr" \
+@@ -446,7 +458,7 @@
+  	"LIBS = -L. -ltachyon $(MISCLIB) -lpthread -L/usr/X11R6/lib -lGLU -lGL -lX11 -framework Carbon"
+  
+  
+-@@ -938,12 +984,9 @@ macosx-x86-thr-ogl:
++@@ -938,12 +984,9 @@
+  beos:
+  	$(MAKE) all \
+  	"ARCH = beos" \
+@@ -459,13 +471,14 @@
+  	"LIBS = -L. -ltachyon $(MISCLIB)"
+  
+  ##
+-@@ -954,23 +997,17 @@ beos:
++@@ -954,23 +997,17 @@
+  bsd:
+  	$(MAKE) all \
+  	"ARCH = bsd" \
+ -	"CC = gcc" \
+- 	"CFLAGS = -O3 -fomit-frame-pointer -ffast-math -DBsd  $(MISCFLAGS)" \
++-	"CFLAGS = -O3 -fomit-frame-pointer -ffast-math -DBsd  $(MISCFLAGS)" \
+ -	"AR = ar" \
+++	"CFLAGS = %%CFLAGS%% -DBsd  $(MISCFLAGS)" \
+  	"ARFLAGS = r" \
+  	"STRIP = strip" \
+ -	"RANLIB = ranlib" \
+@@ -475,15 +488,16 @@
+  	$(MAKE) all \
+  	"ARCH = bsd-sparc" \
+ -	"CC = gcc" \
+- 	"CFLAGS = -mv8 -msupersparc -O3 -fomit-frame-pointer -ffast-math -DBsd  $(MISCFLAGS)" \
++-	"CFLAGS = -mv8 -msupersparc -O3 -fomit-frame-pointer -ffast-math -DBsd  $(MISCFLAGS)" \
+ -	"AR = ar" \
+++	"CFLAGS = -mv8 -msupersparc %%CFLAGS%% -DBsd  $(MISCFLAGS)" \
+  	"ARFLAGS = r" \
+  	"STRIP = strip" \
+ -	"RANLIB = ranlib" \
+  	"LIBS = -L. -ltachyon $(MISCLIB) -lm"
+  
+  ##
+-@@ -980,23 +1017,17 @@ bsd-sparc:
++@@ -980,23 +1017,17 @@
+  win32:
+  	$(MAKE) all \
+  	"ARCH = win32" \
+@@ -509,7 +523,7 @@
+  	"LIBS = -L. -L'/Program files/MPIPro/LIB' -ltachyon -lmpi $(MISCLIB) -lm"
+  
+  ##
+-@@ -1007,60 +1038,45 @@ win32-mpi:
++@@ -1007,60 +1038,45 @@
+  linux:
+  	$(MAKE) all \
+  	"ARCH = linux" \
+@@ -570,7 +584,7 @@
+  	"LIBS = -L. -ltachyon $(MISCLIB) -lm"
+  
+  
+-@@ -1068,12 +1084,9 @@ linux-64-debug:
++@@ -1068,12 +1084,9 @@
+  linux-64-thr:
+  	$(MAKE) all \
+  	"ARCH = linux-64-thr" \
+@@ -583,7 +597,7 @@
+  	"LIBS = -L. -ltachyon $(MISCLIB) -lm -lpthread"
+  
+  
+-@@ -1081,17 +1094,14 @@ linux-64-thr:
++@@ -1081,17 +1094,14 @@
+  linux-p4:
+  	$(MAKE) all \
+  	"ARCH = linux-p4" \
+@@ -603,7 +617,7 @@
+  linux-p4-icc:
+  	$(MAKE) all \
+  	"ARCH = linux-p4-icc" \
+-@@ -1119,23 +1129,17 @@ linux-p4-icc-thr:
++@@ -1119,23 +1129,17 @@
+  linux-athlon:
+  	$(MAKE) all \
+  	"ARCH = linux-athlon" \
+@@ -627,7 +641,7 @@
+  	"LIBS = -L. -ltachyon $(MISCLIB) -lm -lpthread"
+  
+  
+-@@ -1167,21 +1171,25 @@ linux-athlon-pgcc:
++@@ -1167,21 +1171,25 @@
+  linux-thr:
+  	$(MAKE) all \
+  	"ARCH = linux-thr" \
+@@ -637,8 +651,8 @@
+  	"ARFLAGS = r" \
+  	"STRIP = strip" \
+ -	"RANLIB = ranlib" \
+-+	"LIBS = -L. -ltachyon $(MISCLIB) -lm -lpthread"
+-+
++ 	"LIBS = -L. -ltachyon $(MISCLIB) -lm -lpthread"
++ 
+ +# Linux Arm using gcc, with threads
+ +linux-arm-thr:
+ +	$(MAKE) all \
+@@ -646,8 +660,8 @@
+ +	"CFLAGS = -Wall -O3 -fomit-frame-pointer -ffast-math -DLinux -DTHR -D_REENTRANT $(MISCFLAGS)" \
+ +	"ARFLAGS = r" \
+ +	"STRIP = strip" \
+- 	"LIBS = -L. -ltachyon $(MISCLIB) -lm -lpthread"
+- 
+++	"LIBS = -L. -ltachyon $(MISCLIB) -lm -lpthread"
+++
+  # Linux x86 using gcc, threads, and OpenGL
+  linux-thr-ogl:
+  	$(MAKE) all \
+@@ -658,7 +672,7 @@
+  	"ARFLAGS = r" \
+  	"STRIP = touch" \
+  	"LIBS = -L. -ltachyon $(MISCLIB) $(LINUX_GLX_LIBS) $(MISCLIB) -lm -lpthread"
+-@@ -1190,24 +1198,18 @@ linux-thr-ogl:
++@@ -1190,24 +1198,18 @@
+  linux-beowulf-mpi-ogl:
+  	$(MAKE) all \
+  	"ARCH = linux-beowulf-mpi" \
+@@ -683,7 +697,7 @@
+  	"LIBS = -L. -ltachyon -lmpi $(MISCLIB) -lm"
+  
+  # Linux x86 using LAM MPI
+-@@ -1239,10 +1241,8 @@ linux-mpi:
++@@ -1239,10 +1241,8 @@
+  	"ARCH = linux-mpi" \
+  	"CC = mpicc" \
+  	"CFLAGS = -DLinux -DMPI $(MISCFLAGS)" \
+@@ -694,7 +708,7 @@
+  	"LIBS = -L. -ltachyon  $(MISCLIB) -lm"
+  
+  linux-mpi-thr:
+-@@ -1250,10 +1250,8 @@ linux-mpi-thr:
++@@ -1250,10 +1250,8 @@
+  	"ARCH = linux-mpi-thr" \
+  	"CC = mpicc" \
+  	"CFLAGS = -DLinux -DMPI -DTHR $(MISCFLAGS)" \
+@@ -705,7 +719,7 @@
+  	"LIBS = -L. -ltachyon  $(MISCLIB) -lm -lpthread"
+  
+  linux-mpi-64:
+-@@ -1261,10 +1259,8 @@ linux-mpi-64:
++@@ -1261,10 +1259,8 @@
+  	"ARCH = linux-mpi-64" \
+  	"CC = mpicc" \
+  	"CFLAGS = -Wall -O3 -fomit-frame-pointer -ffast-math -I$(LAMHOME)/h -DLinux -DMPI -DLP64 $(MISCFLAGS)" \
+@@ -716,7 +730,7 @@
+  	"LIBS = -L. -L$(LAMHOME)/lib -ltachyon $(MISCLIB) -lm"
+  
+  
+-@@ -1297,48 +1293,36 @@ linux-lam-thr:
++@@ -1297,48 +1293,36 @@
+  linux-ipaq:
+  	$(MAKE) all \
+  	"ARCH = linux-ipaq" \
+@@ -768,7 +782,7 @@
+  	"LIBS = -L. -ltachyon $(MISCLIB) -lm"
+  
+  # Linux Alpha using Compaq's compilers
+-@@ -1369,12 +1353,9 @@ linux-alpha-ccc-qsw:
++@@ -1369,12 +1353,9 @@
+  linux-ia64:
+  	$(MAKE) all \
+  	"ARCH = linux-ia64" \
+@@ -782,7 +796,7 @@
+  	"LIBS = -L. -ltachyon $(MISCLIB) -lm"
+  
+  # Linux IA-64 using SGI compilers (Merced, Itanium, McKinley, etc)
+-@@ -1393,12 +1374,9 @@ linux-ia64-sgicc:
++@@ -1393,12 +1374,9 @@
+  linux-ia64-thr:
+  	$(MAKE) all \
+  	"ARCH = linux-ia64-thr" \
+@@ -796,7 +810,7 @@
+  	"LIBS = -L. -ltachyon $(MISCLIB) -lm -lpthread"
+  
+  # Linux IA-64 using SGI compilers and threads (Merced, Itanium, McKinley, etc)
+-@@ -1421,9 +1399,7 @@ linux-ia64-thr-sgicc:
++@@ -1421,9 +1399,7 @@
+  sgi-altix-mpi:
+  	$(MAKE) all \
+  	"ARCH = sgi-altix-mpi" \
+@@ -806,7 +820,7 @@
+  	"ARFLAGS = r" \
+  	"STRIP = strip" \
+  	"LIBS = -ltachyon -lmpi $(MISCLIB) -lm "
+-@@ -1432,7 +1408,7 @@ sgi-altix-mpi:
++@@ -1432,7 +1408,7 @@
+  ## CSPI PowerPC Based Multicomputers Running VXWORKS
+  ## This configuration works for the machine at MPI Software Technologies
+  ## Uses MSTI MPI/Pro for message passing.
+@@ -815,7 +829,7 @@
+  cspi-ppc-mpi:
+  	$(MAKE) all \
+  	"ARCH = cspi-ppc-mpi" \
+-@@ -1448,7 +1424,7 @@ cspi-ppc-mpi:
++@@ -1448,7 +1424,7 @@
+  ## Mercury PowerPC Based Multicomputers Running MCOS
+  ## This configuration works for the machine at MPI Software Technologies
+  ## Uses MSTI MPI/Pro for message passing.
+@@ -824,7 +838,7 @@
+  mercury-ppc-mpi:
+  	$(MAKE) all \
+  	"ARCH = mercury-ppc-mpi" \
+-@@ -1469,7 +1445,7 @@ mercury-ppc-mpi-rtvi:
++@@ -1469,7 +1445,7 @@
+  	"ARFLAGS = -r" \
+  	"STRIP = /bin/touch" \
+  	"LIBS = -L. -L/opt/MPIPro/lib ../compile/mercury-ppc-mpi-rtvi/libmgf.a ../compile/mercury-ppc-mpi-rtvi/libray.a $(RTVILIB) -lmpi.appc"
+@@ -833,7 +847,7 @@
+  	@echo "      Also, copy your machines file into your CWD."
+  
+  ##
+-@@ -1490,7 +1466,7 @@ mercury-i860-rtvi:
++@@ -1490,7 +1466,7 @@
+  ## Mercury i860 Based Multicomputers Running MCOS
+  ## This configuration works for the machine at MPI Software Technologies
+  ## Uses MSTI MPI/Pro for message passing.

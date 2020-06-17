@@ -1,0 +1,11 @@
+--- build/bin/sage-apply-patches.orig	2020-01-01 11:03:10 UTC
++++ build/bin/sage-apply-patches
+@@ -67,7 +67,7 @@ if [[ -r "${patches[0]}" ]]; then
+         # Skip non-existing or non-readable patches
+         [ -r "$patch" ] || continue
+         echo "Applying $patch"
+-        patch $patch_strip $patch_args < "$patch"
++        gpatch $patch_strip $patch_args < "$patch"
+         if [ $? -ne 0 ]; then
+             echo >&2 "Error applying '$patch'"
+             exit 1

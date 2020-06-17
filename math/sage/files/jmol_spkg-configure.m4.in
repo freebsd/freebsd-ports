@@ -1,0 +1,10 @@
+SAGE_SPKG_CONFIGURE(
+    [jmol], [dnl direct testing of file existence
+      AC_MSG_CHECKING(JSmol installation...)
+      if [[ -f %%LOCALBASE%%/www/JSmol/JSmol.lite.js ]] ; then
+        AC_MSG_RESULT(OK)
+      else
+        AC_MSG_RESULT(KO)
+        sage_spkg_install_jmol=yes
+      fi
+])

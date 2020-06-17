@@ -1,0 +1,10 @@
+SAGE_SPKG_CONFIGURE(
+    [sage_brial], [dnl direct testing of file existence, import do not work without sage
+      AC_MSG_CHECKING(py-brial installation...)
+      if [[ -f %%PYTHON_SITELIBDIR%%/brial/cnf.py ]] ; then
+        AC_MSG_RESULT(OK)
+      else
+        AC_MSG_RESULT(KO)
+        sage_spkg_install_sage_brial=yes
+      fi
+])

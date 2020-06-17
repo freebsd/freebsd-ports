@@ -1,0 +1,10 @@
+SAGE_SPKG_CONFIGURE(
+    [mathjax], [dnl direct testing of file existence
+      AC_MSG_CHECKING(MathJax installation...)
+      if [[ -f %%LOCALBASE%%/www/MathJax/MathJax.js ]] ; then
+        AC_MSG_RESULT(OK)
+      else
+        AC_MSG_RESULT(KO)
+        sage_spkg_install_mathjax=yes
+      fi
+])
