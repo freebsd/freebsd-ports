@@ -1,0 +1,11 @@
+Header-only C++ logging library
+
+Features:
+* Single header file implementation
+* No dependcies, just vanilla C++11
+* Use ostream operator <<
+* Unobtrusive, typesafe and expressive
+* Easy to switch from existing "cout logging"
+* Native support for various platforms (through Sinks)
+
+WWW: https://github.com/badaix/aixlog

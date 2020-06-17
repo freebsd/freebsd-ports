@@ -109,6 +109,7 @@
     SUBDIR += agar
     SUBDIR += ahven
     SUBDIR += aifad
+    SUBDIR += aixlog
     SUBDIR += ald
     SUBDIR += allegro
     SUBDIR += allegro-devel
