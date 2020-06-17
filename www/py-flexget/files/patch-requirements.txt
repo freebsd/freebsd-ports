@@ -1,4 +1,4 @@
---- requirements.txt.orig	2020-05-21 15:04:40 UTC
+--- requirements.txt.orig	2020-06-15 15:07:35 UTC
 +++ requirements.txt
 @@ -6,27 +6,27 @@ beautifulsoup4>=4.5
  html5lib>=0.11
@@ -24,12 +24,12 @@
 +cherrypy>=3.7.0
  flask>=0.7
  flask-restful>=0.3.3
--flask-restplus==0.10.1
-+flask-restplus>=0.10.1
+-flask-restx==0.2.0
++flask-restx>=0.2.0
  flask-compress>=1.2.1
  flask-login>=0.4.0
  flask-cors>=2.1.2
- pyparsing>=2.0.3
+ pyparsing>=2.4.7
 -zxcvbn-python
 -progressbar==2.5
 +zxcvbn

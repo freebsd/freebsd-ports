@@ -1,7 +1,0 @@
-TIMESTAMP = 1582426379
-SHA256 (noirbizarre-flask-restplus-0.13.0_GH0.tar.gz) = 5fd64c04bf224912965df54d29efbab423e65ea52ec61f37cf5d0aec553723da
-SIZE (noirbizarre-flask-restplus-0.13.0_GH0.tar.gz) = 281618
-SHA256 (f48b1d2403de.patch) = 43faca5fc256c745980fd0b05aa3aeee7728499754ea4884a815eb603b05c43b
-SIZE (f48b1d2403de.patch) = 794
-SHA256 (119a6feb2950.patch) = 9eb8d9e322f84c9c16113ea0d5128fec9c2f48388dbd3d8927bfbb443f4871f6
-SIZE (119a6feb2950.patch) = 894

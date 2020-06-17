@@ -3,7 +3,7 @@
 
 PORTNAME=	flexget
 DISTVERSIONPREFIX=	v
-PORTVERSION=	3.1.59
+PORTVERSION=	3.1.64
 PORTEPOCH=	1
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,7 +23,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy13>=1.3.10:databases/py-sqlalchemy
 		${PYTHON_PKGNAMEPREFIX}jsonschema>=2.0:devel/py-jsonschema@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}loguru>=0.4.1:devel/py-loguru@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}more-itertools>0:devel/py-more-itertools@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyparsing>=2.0.3:devel/py-pyparsing@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyparsing>=2.4.7:devel/py-pyparsing@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>=4.2:devel/py-yaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}progressbar>=2.5:misc/py-progressbar@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}guessit>=3.0.3:multimedia/py-guessit@${PY_FLAVOR} \
@@ -41,7 +41,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy13>=1.3.10:databases/py-sqlalchemy
 		${PYTHON_PKGNAMEPREFIX}Flask-Cors>=2.1.2:www/py-flask-cors@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Flask-Login>=0.4.0:www/py-flask-login@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Flask-RESTful>=0.3.3:www/py-flask-restful@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}flask-restplus>=0.10.1:www/py-flask-restplus@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}flask-restx>=0.2.0:www/py-flask-restx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}html5lib>=0.11:www/py-html5lib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.20.0:www/py-requests@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=3.3:devel/py-pytest@${PY_FLAVOR} \
