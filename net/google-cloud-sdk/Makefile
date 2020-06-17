@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	google-cloud-sdk
-PORTVERSION=	272.0.0
+PORTVERSION=	296.0.1
 CATEGORIES=	net
 MASTER_SITES=	https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/
 DISTNAME=	google-cloud-sdk-${PORTVERSION}-linux-x86_64
@@ -14,10 +14,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 
-USES=		python:2.7
+USES=		python:3.7+
 
 WRKSRC=		${WRKDIR}/google-cloud-sdk
 NO_ARCH=	yes
+NO_BUILD=	yes
 
 PLIST_FILES=	bin/bq \
 		bin/docker-credential-gcloud \
@@ -33,10 +34,6 @@ post-extract:
 		${WRKSRC}/rpm \
 		${WRKSRC}/deb \
 		${WRKSRC}/lib/third_party/grpc/_cython/cygrpc.so
-
-do-build:
-	@cd ${WRKSRC} ; \
-		${PYTHON_CMD} -m compileall -q -x python3 .
 
 do-install:
 	${RM} -r ${WRKSRC}/help ${WRKSRC}/.install/.download
