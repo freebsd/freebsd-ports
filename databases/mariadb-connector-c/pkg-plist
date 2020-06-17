@@ -7,6 +7,7 @@ include/mariadb/mariadb/ma_io.h
 include/mariadb/mariadb_com.h
 include/mariadb/mariadb_ctype.h
 include/mariadb/mariadb_dyncol.h
+include/mariadb/mariadb_rpl.h
 include/mariadb/mariadb_stmt.h
 include/mariadb/mariadb_version.h
 include/mariadb/mysql.h
@@ -19,6 +20,7 @@ lib/mariadb/libmariadb.so.3
 lib/mariadb/libmariadbclient.a
 lib/mariadb/plugin/auth_gssapi_client.so
 lib/mariadb/plugin/caching_sha2_password.so
+lib/mariadb/plugin/client_ed25519.so
 lib/mariadb/plugin/dialog.so
 lib/mariadb/plugin/mysql_clear_password.so
 lib/mariadb/plugin/remote_io.so
