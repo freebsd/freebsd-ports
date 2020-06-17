@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 USES=		bison:alias gmake
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	olofhagsand
+GH_ACCOUNT=	clicon
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
