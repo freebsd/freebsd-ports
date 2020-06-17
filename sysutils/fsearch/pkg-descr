@@ -8,4 +8,4 @@ Engine.  It is written in C and based on GTK+3.  It features:
   - Fast sort by file name, path, size, or modification time
   - Customizable interface
 
-WWW: http://www.fsearch.org/
+WWW: http://cboxdoerfer.github.io/fsearch/

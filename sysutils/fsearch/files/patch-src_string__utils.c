@@ -1,28 +1,17 @@
---- src/string_utils.c.orig	2016-10-16 16:07:25 UTC
+--- src/string_utils.c.orig	2020-02-24 11:50:22 UTC
 +++ src/string_utils.c
-@@ -17,6 +17,7 @@
+@@ -16,6 +16,7 @@
+    along with this program; if not, see <http://www.gnu.org/licenses/>.
     */
  
- #define _GNU_SOURCE
 +#include <glib.h>
  #include <stdlib.h>
  #include <ctype.h>
- #include <stdint.h>
-@@ -52,9 +53,6 @@ fourbyte_strstr(const unsigned char *h, 
-     return *h ? (char *)h-3 : 0;
+ #include <assert.h>
+@@ -62,3 +63,19 @@ fs_str_copy (char *dest, char *end, const char *src)
+     return ptr;
  }
  
--#define MAX(a,b) ((a)>(b)?(a):(b))
--#define MIN(a,b) ((a)<(b)?(a):(b))
--
- #define BITOP(a,b,op) \
-     ((a)[(size_t)(b)/(8*sizeof *(a))] op (size_t)1<<((size_t)(b)%(8*sizeof *(a))))
- 
-@@ -220,3 +218,20 @@ fsearch_strstr (const char *haystack,
- {
-     return my_strstr (haystack, needle);
- }
-+
 +int
 +strverscmp (const char *s1,
 +            const char *s2)

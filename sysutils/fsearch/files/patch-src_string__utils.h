@@ -1,9 +1,9 @@
---- src/string_utils.h.orig	2016-10-16 16:07:25 UTC
+--- src/string_utils.h.orig	2020-02-24 11:50:22 UTC
 +++ src/string_utils.h
-@@ -28,3 +28,7 @@ const char *
- fsearch_strcasestr (const char *haystack,
-                     const char *needle,
-                     size_t needle_len);
+@@ -30,3 +30,7 @@ char *
+ fs_str_copy (char *dest,
+              char *end,
+              const char *src);
 +
 +int
 +strverscmp (const char *s1,

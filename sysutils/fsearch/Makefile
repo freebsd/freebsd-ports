@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	fsearch
-DISTVERSION=	0.1beta2
-PORTREVISION=	3
+DISTVERSION=	0.1beta4
+DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	Search utility focusing on performance and advanced features
+COMMENT=	Fast file search utility for Unix-like systems
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/License
