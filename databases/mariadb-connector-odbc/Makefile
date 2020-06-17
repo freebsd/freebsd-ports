@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mariadb
-DISTVERSION=	3.0.9
+DISTVERSION=	3.1.7
 CATEGORIES=	databases
 MASTER_SITES=	http://ftp.osuosl.org/pub/${SITESDIR}/ \
 		http://mirrors.supportex.net/${SITESDIR}/ \
@@ -23,18 +23,24 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libodbc.so:databases/unixODBC \
 		libmariadb.so:databases/mariadb-connector-c
 
-USES=		cmake:insource
+USES=		cmake:insource ssl
 USE_LDCONFIG=	${PREFIX}/lib/mariadbconnector-odbc
+
 SITESDIR=	${PORTNAME}/${PKGNAMESUFFIX:S/^-//}-${PORTVERSION:S/.b$//}
 DOCSDIR=	${PREFIX}/share/doc/mysql
+
+OPTIONS_DEFINE=	SSL
+OPTIONS_DEFAULT=SSL
 
 CMAKE_ARGS+=	-DCOMPILATION_COMMENT="FreeBSD Ports"
 CFLAGS+=	-I${LOCALBASE}/include/mariadb
 LDFLAGS+=	-L${LOCALBASE}/lib/mariadb
 
+SSL_CMAKE_ON=	-DWITH_OPENSSL=on
+
 PLIST_FILES=	lib/libmaodbc.so
 
 post-install:
-	${RM} -r ${STAGEDIR}${PREFIX}/share/doc/mariadb_connector_odbc
+	${RM} -r ${STAGEDIR}${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 
 .include <bsd.port.mk>
