@@ -4,7 +4,7 @@
 
 PORTNAME=	hyperestraier
 PORTVERSION=	1.4.13
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 
@@ -35,7 +35,7 @@ LZO_LIB_DEPENDS=	liblzo2.so:archivers/lzo2
 
 MECAB_CONFIGURE_ENABLE=	mecab
 MECAB_LIB_DEPENDS=	libmecab.so:japanese/mecab
-MECAB_RUN_DEPENDS=	${LOCALBASE}/lib/mecab/dic/ipadic/matrix.bin:japanese/mecab-ipadic
+MECAB_RUN_DEPENDS=	ja-mecab-ipadic>0:japanese/mecab-ipadic
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/@MYCFLAGS@/@CFLAGS@ -Wall -fPIC -fsigned-char/' \
