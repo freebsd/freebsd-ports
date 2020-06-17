@@ -30,6 +30,7 @@ lib/libKF5TextWidgets.so.%%KDE_FRAMEWORKS_VERSION%%
 share/locale/af/LC_MESSAGES/ktextwidgets5.mo
 share/locale/ar/LC_MESSAGES/ktextwidgets5.mo
 share/locale/as/LC_MESSAGES/ktextwidgets5.mo
+share/locale/az/LC_MESSAGES/ktextwidgets5.mo
 share/locale/be/LC_MESSAGES/ktextwidgets5.mo
 share/locale/be@latin/LC_MESSAGES/ktextwidgets5.mo
 share/locale/bg/LC_MESSAGES/ktextwidgets5.mo

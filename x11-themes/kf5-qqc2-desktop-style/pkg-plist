@@ -43,6 +43,7 @@ lib/cmake/KF5QQC2DesktopStyle/KF5QQC2DesktopStyleConfigVersion.cmake
 %%QT_QMLDIR%%/QtQuick/Controls.2/org.kde.desktop/TextField.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/org.kde.desktop/ToolBar.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/org.kde.desktop/ToolButton.qml
+%%QT_QMLDIR%%/QtQuick/Controls.2/org.kde.desktop/ToolSeparator.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/org.kde.desktop/ToolTip.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/org.kde.desktop/private/DefaultListItemBackground.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/org.kde.desktop/private/FocusRect.qml

@@ -26,6 +26,7 @@ share/dbus-1/interfaces/kf5_org.kde.JobViewV2.xml
 share/locale/af/LC_MESSAGES/kjobwidgets5_qt.qm
 share/locale/ar/LC_MESSAGES/kjobwidgets5_qt.qm
 share/locale/as/LC_MESSAGES/kjobwidgets5_qt.qm
+share/locale/az/LC_MESSAGES/kjobwidgets5_qt.qm
 share/locale/be/LC_MESSAGES/kjobwidgets5_qt.qm
 share/locale/be@latin/LC_MESSAGES/kjobwidgets5_qt.qm
 share/locale/bg/LC_MESSAGES/kjobwidgets5_qt.qm

@@ -27,6 +27,7 @@ lib/libexec/kf5/kdesud
 %%QT_MKSPECDIR%%/modules/qt_KDESu.pri
 share/locale/ar/LC_MESSAGES/kdesud5.mo
 share/locale/ast/LC_MESSAGES/kdesud5.mo
+share/locale/az/LC_MESSAGES/kdesud5.mo
 share/locale/bs/LC_MESSAGES/kdesud5.mo
 share/locale/ca/LC_MESSAGES/kdesud5.mo
 share/locale/ca@valencia/LC_MESSAGES/kdesud5.mo

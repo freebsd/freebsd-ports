@@ -47,6 +47,7 @@ lib/libKF5Solid.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_MKSPECDIR%%/modules/qt_Solid.pri
 share/locale/ar/LC_MESSAGES/solid5_qt.qm
 share/locale/ast/LC_MESSAGES/solid5_qt.qm
+share/locale/az/LC_MESSAGES/solid5_qt.qm
 share/locale/bg/LC_MESSAGES/solid5_qt.qm
 share/locale/bs/LC_MESSAGES/solid5_qt.qm
 share/locale/ca/LC_MESSAGES/solid5_qt.qm

@@ -2,7 +2,6 @@
 
 PORTNAME=	ktexteditor
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
-KDE_FRAMEWORKS_VERSION=	5.70.1
 CATEGORIES=	devel kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org

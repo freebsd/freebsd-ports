@@ -22,6 +22,8 @@ share/knotifications5/kwalletd.notifyrc
 share/kservices5/kwalletd5.desktop
 share/locale/ar/LC_MESSAGES/kwallet-query.mo
 share/locale/ar/LC_MESSAGES/kwalletd5.mo
+share/locale/az/LC_MESSAGES/kwallet-query.mo
+share/locale/az/LC_MESSAGES/kwalletd5.mo
 share/locale/be/LC_MESSAGES/kwalletd5.mo
 share/locale/bg/LC_MESSAGES/kwalletd5.mo
 share/locale/bn/LC_MESSAGES/kwalletd5.mo

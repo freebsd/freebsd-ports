@@ -81,6 +81,7 @@ share/kservicetypes5/krwp.desktop
 share/locale/af/LC_MESSAGES/kparts5.mo
 share/locale/ar/LC_MESSAGES/kparts5.mo
 share/locale/as/LC_MESSAGES/kparts5.mo
+share/locale/az/LC_MESSAGES/kparts5.mo
 share/locale/be/LC_MESSAGES/kparts5.mo
 share/locale/be@latin/LC_MESSAGES/kparts5.mo
 share/locale/bg/LC_MESSAGES/kparts5.mo
@@ -177,3 +178,4 @@ share/locale/xh/LC_MESSAGES/kparts5.mo
 share/locale/zh_CN/LC_MESSAGES/kparts5.mo
 share/locale/zh_HK/LC_MESSAGES/kparts5.mo
 share/locale/zh_TW/LC_MESSAGES/kparts5.mo
+share/qlogging-categories5/kparts.categories

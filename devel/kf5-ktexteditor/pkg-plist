@@ -66,7 +66,7 @@ lib/cmake/KF5TextEditor/KF5TextEditorTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KF5TextEditor/KF5TextEditorTargets.cmake
 lib/libKF5TextEditor.so
 lib/libKF5TextEditor.so.5
-lib/libKF5TextEditor.so.5.70.0
+lib/libKF5TextEditor.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libexec/kauth/kauth_ktexteditor_helper
 %%QT_PLUGINDIR%%/kf5/parts/katepart.so
 %%QT_MKSPECDIR%%/modules/qt_KTextEditor.pri
@@ -80,6 +80,7 @@ share/kservicetypes5/ktexteditorplugin.desktop
 share/locale/af/LC_MESSAGES/ktexteditor5.mo
 share/locale/ast/LC_MESSAGES/ktexteditor5.mo
 share/locale/ar/LC_MESSAGES/ktexteditor5.mo
+share/locale/az/LC_MESSAGES/ktexteditor5.mo
 share/locale/be/LC_MESSAGES/ktexteditor5.mo
 share/locale/bg/LC_MESSAGES/ktexteditor5.mo
 share/locale/bn/LC_MESSAGES/ktexteditor5.mo

@@ -27,6 +27,7 @@ lib/libKF5Kirigami2.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/kirigami.2/ApplicationHeader.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/ApplicationItem.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/ApplicationWindow.qml
+%%QT_QMLDIR%%/org/kde/kirigami.2/Avatar.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/BasicListItem.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/Card.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/CardsGridView.qml
@@ -49,6 +50,7 @@ lib/libKF5Kirigami2.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/kirigami.2/PageRow.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/PasswordField.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/PlaceholderMessage.qml
+%%QT_QMLDIR%%/org/kde/kirigami.2/RouterWindow.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/ScrollablePage.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/SearchField.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/Separator.qml
@@ -97,6 +99,13 @@ lib/libKF5Kirigami2.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/kirigami.2/styles/org.kde.desktop/SwipeListItem.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/styles/org.kde.desktop/Theme.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/styles/org.kde.desktop/Units.qml
+%%QT_QMLDIR%%/org/kde/kirigami.2/swipenavigator/PrivateSwipeHighlight.qml
+%%QT_QMLDIR%%/org/kde/kirigami.2/swipenavigator/PrivateSwipeProgress.qml
+%%QT_QMLDIR%%/org/kde/kirigami.2/swipenavigator/PrivateSwipeStack.qml
+%%QT_QMLDIR%%/org/kde/kirigami.2/swipenavigator/PrivateSwipeTab.qml
+%%QT_QMLDIR%%/org/kde/kirigami.2/swipenavigator/PrivateSwipeTabBar.qml
+%%QT_QMLDIR%%/org/kde/kirigami.2/swipenavigator/PrivateSwipeTabBarLoader.qml
+%%QT_QMLDIR%%/org/kde/kirigami.2/swipenavigator/SwipeNavigator.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/AbstractApplicationHeader.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/AbstractCard.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/AbstractListItem.qml
@@ -106,6 +115,7 @@ lib/libKF5Kirigami2.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/OverlaySheet.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/SwipeListItem.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/private/BackButton.qml
+%%QT_QMLDIR%%/org/kde/kirigami.2/templates/private/BorderPropertiesGroup.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/private/ContextIcon.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/private/ForwardButton.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/private/GenericDrawerIcon.qml
@@ -117,6 +127,7 @@ lib/libKF5Kirigami2.so.%%KDE_FRAMEWORKS_VERSION%%
 share/kdevappwizard/templates/kirigami.tar.bz2
 share/locale/ar/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/ast/LC_MESSAGES/libkirigami2plugin_qt.qm
+share/locale/az/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/ca/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/ca@valencia/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/cs/LC_MESSAGES/libkirigami2plugin_qt.qm

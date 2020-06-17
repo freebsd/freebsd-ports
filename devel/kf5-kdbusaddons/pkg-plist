@@ -22,6 +22,7 @@ lib/libKF5DBusAddons.so.5
 lib/libKF5DBusAddons.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_MKSPECDIR%%/modules/qt_KDBusAddons.pri
 share/locale/ar/LC_MESSAGES/kdbusaddons5_qt.qm
+share/locale/az/LC_MESSAGES/kdbusaddons5_qt.qm
 share/locale/bs/LC_MESSAGES/kdbusaddons5_qt.qm
 share/locale/ca/LC_MESSAGES/kdbusaddons5_qt.qm
 share/locale/ca@valencia/LC_MESSAGES/kdbusaddons5_qt.qm

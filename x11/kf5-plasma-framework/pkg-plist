@@ -60,10 +60,10 @@ lib/cmake/KF5PlasmaQuick/KF5PlasmaQuickTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KF5PlasmaQuick/KF5PlasmaQuickTargets.cmake
 lib/libKF5Plasma.so
 lib/libKF5Plasma.so.5
-lib/libKF5Plasma.so.5.70.0
+lib/libKF5Plasma.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF5PlasmaQuick.so
 lib/libKF5PlasmaQuick.so.5
-lib/libKF5PlasmaQuick.so.5.70.0
+lib/libKF5PlasmaQuick.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_PLUGINDIR%%/kpackage/packagestructure/containmentactions_packagestructure.so
 %%QT_PLUGINDIR%%/kpackage/packagestructure/dataengine_packagestructure.so
 %%QT_PLUGINDIR%%/kpackage/packagestructure/plasmageneric_packagestructure.so
@@ -153,6 +153,7 @@ lib/libKF5PlasmaQuick.so.5.70.0
 %%QT_QMLDIR%%/QtQuick/Controls/Styles/Plasma/private/TextFieldFocus.qml
 %%QT_QMLDIR%%/QtQuick/Controls/Styles/Plasma/private/Util.js
 %%QT_QMLDIR%%/QtQuick/Controls/Styles/Plasma/qmldir
+%%QT_QMLDIR%%/org/kde/kirigami.2/styles/Plasma/AbstractApplicationHeader.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/styles/Plasma/Icon.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/styles/Plasma/Theme.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/styles/Plasma/Units.qml
@@ -316,6 +317,7 @@ share/kservicetypes5/plasma-shell.desktop
 share/kservicetypes5/plasma-wallpaper.desktop
 share/locale/ar/LC_MESSAGES/libplasma5.mo
 share/locale/ast/LC_MESSAGES/libplasma5.mo
+share/locale/az/LC_MESSAGES/libplasma5.mo
 share/locale/bs/LC_MESSAGES/libplasma5.mo
 share/locale/ca/LC_MESSAGES/libplasma5.mo
 share/locale/ca@valencia/LC_MESSAGES/libplasma5.mo

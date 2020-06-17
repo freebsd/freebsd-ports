@@ -1,6 +1,7 @@
 bin/kded5
 lib/cmake/KDED/KDEDConfig.cmake
 lib/cmake/KDED/KDEDConfigVersion.cmake
+lib/systemd/user/plasma-kded.service
 man/ca/man8/kded5.8.gz
 man/de/man8/kded5.8.gz
 man/es/man8/kded5.8.gz

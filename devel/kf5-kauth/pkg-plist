@@ -37,6 +37,7 @@ share/kf5/kauth/dbus_service.stub
 share/locale/af/LC_MESSAGES/kauth5_qt.qm
 share/locale/ar/LC_MESSAGES/kauth5_qt.qm
 share/locale/as/LC_MESSAGES/kauth5_qt.qm
+share/locale/az/LC_MESSAGES/kauth5_qt.qm
 share/locale/be/LC_MESSAGES/kauth5_qt.qm
 share/locale/be@latin/LC_MESSAGES/kauth5_qt.qm
 share/locale/bg/LC_MESSAGES/kauth5_qt.qm

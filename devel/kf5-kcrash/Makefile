@@ -4,6 +4,9 @@ PORTNAME=	kcrash
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
 CATEGORIES=	devel kde kde-frameworks
 
+PATCH_SITES=	https://github.com/KDE/kcrash/commit/
+PATCHFILES=	223908ac1030a3a4fe297748101aafcf81076dbc.patch:-p1
+
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 library to handle crash analysis and bug report from apps
 

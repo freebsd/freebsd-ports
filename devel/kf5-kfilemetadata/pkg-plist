@@ -53,6 +53,7 @@ lib/libKF5FileMetaData.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_PLUGINDIR%%/kf5/kfilemetadata/kfilemetadata_xmlextractor.so
 %%QT_PLUGINDIR%%/kf5/kfilemetadata/writers/kfilemetadata_taglibwriter.so
 share/locale/ar/LC_MESSAGES/kfilemetadata5.mo
+share/locale/az/LC_MESSAGES/kfilemetadata5.mo
 share/locale/bg/LC_MESSAGES/kfilemetadata5.mo
 share/locale/bs/LC_MESSAGES/kfilemetadata5.mo
 share/locale/ca/LC_MESSAGES/kfilemetadata5.mo

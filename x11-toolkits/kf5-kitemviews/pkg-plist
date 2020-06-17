@@ -30,6 +30,7 @@ lib/libKF5ItemViews.so.%%KDE_FRAMEWORKS_VERSION%%
 share/locale/af/LC_MESSAGES/kitemviews5_qt.qm
 share/locale/ar/LC_MESSAGES/kitemviews5_qt.qm
 share/locale/as/LC_MESSAGES/kitemviews5_qt.qm
+share/locale/az/LC_MESSAGES/kitemviews5_qt.qm
 share/locale/be/LC_MESSAGES/kitemviews5_qt.qm
 share/locale/be@latin/LC_MESSAGES/kitemviews5_qt.qm
 share/locale/bg/LC_MESSAGES/kitemviews5_qt.qm
