@@ -1,0 +1,9 @@
+cglm is optimized 3D math library written in C99 (compatible with C89).
+It is similar to original glm library except this is mainly for C
+
+This library stores matrices as column-major order but in the future row-major
+is considered to be supported as optional.
+
+Currently only float type is supported for most operations.
+
+WWW: https://github.com/recp/cglm
