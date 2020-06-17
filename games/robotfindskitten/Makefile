@@ -12,7 +12,7 @@ COMMENT=	Yet another zen simulation
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf libtool ncurses
+USES=		autoreconf libtool makeinfo ncurses
 GNU_CONFIGURE=	YES
 
 USE_GITHUB=	yes
