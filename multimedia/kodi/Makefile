@@ -18,7 +18,7 @@ BUILD_DEPENDS=	enca:converters/enca \
 		cmake:devel/cmake \
 		zip:archivers/zip \
 		nasm:devel/nasm \
-		swig3.0:devel/swig30
+		swig:devel/swig
 LIB_DEPENDS=	libass.so:multimedia/libass \
 		libFLAC.so:audio/flac \
 		libcdio.so:sysutils/libcdio \
@@ -218,7 +218,6 @@ post-patch:
 		${WRKSRC}/bootstrap \
 		${WRKSRC}/codegenerator.mk \
 		${WRKSRC}/xbmc/Makefile.in
-	${REINPLACE_CMD} 's;which swig;&3.0;' ${WRKSRC}/codegenerator.mk
 	${RM} ${WRKSRC}/system/settings/rbp2.xml.orig
 
 pre-configure:

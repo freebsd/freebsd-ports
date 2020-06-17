@@ -12,7 +12,7 @@ COMMENT=	Shared libraries for Amateur Radio Equipment Control Applications
 
 LICENSE=	LGPL20
 
-BUILD_DEPENDS=	swig3.0:devel/swig30
+BUILD_DEPENDS=	swig:devel/swig
 LIB_DEPENDS=	libltdl.so:devel/libltdl
 
 USES=		autoreconf gnome libtool:keepla pathfix perl5 pkgconfig python \
@@ -34,7 +34,6 @@ CONFIGURE_ARGS=	--with-perl-binding \
 CONFIGURE_ENV=	LIBUSB_LIBS="-lusb"
 PLIST_SUB=	VER=${PORTVERSION} TCL_VER=${TCL_VER}
 INSTALL_TARGET=	install-strip
-BINARY_ALIAS=	swig=swig3.0
 INFO=		hamlib
 
 OPTIONS_DEFINE=	DOCS

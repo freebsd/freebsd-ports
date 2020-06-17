@@ -51,7 +51,7 @@ FLTK_DESC=		Enable fltk widget
 PLIST_SUB=		SHLIB_VER=7.5.0
 
 PYTHON_CMAKE_BOOL=	enable-python
-PYTHON_BUILD_DEPENDS=	swig3.0:devel/swig30 \
+PYTHON_BUILD_DEPENDS=	swig:devel/swig \
 			${PYNUMPY}
 PYTHON_RUN_DEPENDS=	${PYNUMPY}
 MPI_CMAKE_BOOL=		enable-mpi

@@ -85,8 +85,7 @@ LIT_DESC=		Install lit and FileCheck test tools
 LLD_DESC=		Install lld linker
 LLD_PORTDOCS=		lld
 LLDB_DESC=		Install lldb, the LLVM debugger (ignore on 9.x)
-LLDB_BUILD_DEPENDS=	swig3.0:devel/swig30
-LLDB_BINARY_ALIAS=	swig=swig3.0
+LLDB_BUILD_DEPENDS=	swig:devel/swig
 
 PLIST_SUB+=	COMMAND_SUFFIX=${COMMAND_SUFFIX} \
 		LLVM_MAJOR=${LLVM_MAJOR} \

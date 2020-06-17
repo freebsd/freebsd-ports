@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yubikey-manager>=0.7.0:security/py-yubikey-m
 		RSA_SecurID_getpasswd:devel/libccid \
 		libffi>0:devel/libffi \
 		pcscd:devel/pcsc-lite \
-		swig30>0:devel/swig30
+		swig:devel/swig
 
 USES=		compiler:c++11-lang desktop-file-utils gl python:3.5+ qmake qt:5 \
 		shebangfix ssl

@@ -85,9 +85,8 @@ USES+=			python
 USE_PYTHON=		py3kplist
 CONFIGURE_ARGS+=	--with-python --with-swig
 CONFIGURE_ENV+=	ac_cv_path_pythonprog=${PYTHON_CMD}
-BUILD_DEPENDS+=		swig3.0:devel/swig30
+BUILD_DEPENDS+=		swig:devel/swig
 PLIST_SUB+=		OIPMIPYTHON=""
-BINARY_ALIAS=		swig=swig3.0
 .else
 CONFIGURE_ARGS+=	--with-python=no --with-swig=no
 PLIST_SUB+=		OIPMIPYTHON="@comment "

@@ -12,7 +12,7 @@ COMMENT=	Python binding for Coin
 LICENSE=	MIT
 
 BUILD_DEPENDS=	cmake:devel/cmake \
-		swig3.0:devel/swig30
+		swig:devel/swig
 LIB_DEPENDS=	libCoin.so:graphics/Coin \
 		libSoQt.so:x11-toolkits/soqt
 
@@ -23,7 +23,5 @@ USE_PYTHON=	autoplist distutils
 USE_QT=		core gui opengl widgets
 
 INSTALL_TARGET=	install-strip
-
-BINARY_ALIAS=	swig=swig3.0
 
 .include <bsd.port.mk>

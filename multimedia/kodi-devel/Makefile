@@ -14,7 +14,7 @@ ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386
 
 BUILD_DEPENDS=	flatbuffers>=0:devel/flatbuffers \
 		rapidjson>=0:devel/rapidjson \
-		swig3.0:devel/swig30
+		swig:devel/swig
 LIB_DEPENDS=	libass.so:multimedia/libass \
 		libavcodec.so:multimedia/ffmpeg \
 		libavfilter.so:multimedia/ffmpeg \

@@ -10,7 +10,7 @@ COMMENT=	Gate level static timing verifier
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	swig3.0:devel/swig30
+BUILD_DEPENDS=	swig:devel/swig
 LIB_DEPENDS=	libcudd.so:math/cudd
 
 USES=		bison compiler:c++11-lang cmake tcl

@@ -13,7 +13,7 @@ COMMENT=	Schematic and PCB editing software
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${LOCALBASE}/include/glm/glm.hpp:math/glm	\
-		swig3.0:devel/swig30
+		swig:devel/swig
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs	\
 		libngspice.so:cad/ngspice_rework@shlib	\
 		libTKernel.so:cad/opencascade		\

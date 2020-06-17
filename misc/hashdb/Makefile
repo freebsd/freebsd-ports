@@ -13,7 +13,7 @@ COMMENT=	Block hash database tool and API
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	swig3.0:devel/swig30
+BUILD_DEPENDS=	swig:devel/swig
 LIB_DEPENDS=	libewf.so:devel/libewf
 
 USES=		autoreconf compiler:c++11-lang gmake libtool localbase:ldflags \
@@ -27,7 +27,6 @@ CONFIGURE_ARGS=	ac_cv_lib_ssl_SSL_library_init=yes \
 INSTALL_TARGET=	install-strip
 
 CONFIGURE_ENV=	PYTHON=${PYTHON_CMD}
-BINARY_ALIAS=	swig=${LOCALBASE}/bin/swig3.0
 
 CFLAGS+=	-fPIC
 CXXFLAGS+=	-fPIC

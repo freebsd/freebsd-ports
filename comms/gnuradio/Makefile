@@ -29,7 +29,7 @@ BUILD_DEPENDS=	volk>0:devel/volk \
 		guile:lang/guile \
 		minixmlto:textproc/minixmlto \
 		sdl-config:devel/sdl12 \
-		swig3.0:devel/swig30 \
+		swig:devel/swig \
 		mpir>0:math/mpir \
 		xdg-open:devel/xdg-utils
 LIB_DEPENDS=	libcodec2.so:audio/codec2 \
@@ -68,7 +68,7 @@ CMAKE_ARGS+=	-DCMAKE_INSTALL_RPATH:STRING="${LOCALBASE}/lib/gcc${_GCC_VER}" \
 		-DLOCALBASE:STRING="${LOCALBASE}" \
 		-DGR_PKG_DOC_DIR:STRING="${DOCSDIR}" \
 		-DPYTHON_EXECUTABLE:STRING="${PYTHON_CMD}" \
-		-DSWIG_EXECUTABLE:STRING="${LOCALBASE}/bin/swig3.0"\
+		-DSWIG_EXECUTABLE:STRING="${LOCALBASE}/bin/swig"\
 		-DXMLTO_EXECUTABLE:STRING=minixmlto \
 		-DENABLE_INTERNAL_VOLK:STRING="OFF"
 # for detailed debugging uncomment the next line

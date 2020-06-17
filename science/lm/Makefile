@@ -18,7 +18,7 @@ LICENSE_NAME=	University of Illinois Open Source License
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
 
-BUILD_DEPENDS=	swig3.0:devel/swig30
+BUILD_DEPENDS=	swig:devel/swig
 LIB_DEPENDS=	libhdf5.so:science/hdf5 \
 		libprotobuf.so:devel/protobuf \
 		libsz.so:science/szip
@@ -58,7 +58,6 @@ post-patch:
 		s|USE_PYTHON := 1|USE_PYTHON := ${XUSE_PYTHON}|; \
 		s|USE_VMD := 1|USE_VMD := ${XUSE_VMD}|; \
 		s|USE_CUDA := 1|USE_CUDA := 0|; \
-		s|swig|swig3.0|; \
 		s|/usr/local|${LOCALBASE}|; \
 		s|INSTALL_PREFIX := /opt/lm|INSTALL_PREFIX := ${STAGEDIR}${PREFIX}|; \
 		s|BUILD_DIR := Build-linux|BUILD_DIR := Build-freebsd|; \

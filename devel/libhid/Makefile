@@ -14,14 +14,13 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/xsltproc:textproc/libxslt \
 		docbook-xsl>0:textproc/docbook-xsl \
-		${LOCALBASE}/bin/swig3.0:devel/swig30
+		${LOCALBASE}/bin/swig:devel/swig
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-doxygen --disable-werror
 INSTALL_TARGET=	install-strip
 USES=		gmake libtool pathfix python:2.7
 USE_LDCONFIG=	yes
-BINARY_ALIAS=	swig=swig3.0
 
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-usb
 

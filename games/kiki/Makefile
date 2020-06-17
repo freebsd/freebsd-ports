@@ -14,7 +14,7 @@ COMMENT=	Kiki the nanobot is a 3-D puzzle game
 DEPRECATED=	Uses deprecated version of python
 EXPIRATION_DATE=	2020-08-15
 
-BUILD_DEPENDS=	swig3.0:devel/swig30
+BUILD_DEPENDS=	swig:devel/swig
 
 USES=		compiler dos2unix gl gmake python:2.7 sdl
 USE_GL=		gl glu glut
@@ -51,7 +51,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|getenv("KIKI_HOME")|"${DATADIR}"|' ${WRKSRC}/src/main/KikiController.cpp
 
 do-build:
-	cd ${WRKSRC}/SWIG && swig3.0 -c++ -python -globals kiki -o KikiPy_wrap.cpp KikiPy.i
+	cd ${WRKSRC}/SWIG && swig -c++ -python -globals kiki -o KikiPy_wrap.cpp KikiPy.i
 	cd ${WRKSRC}/kodilib/linux && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${_MAKE_JOBS}
 	cd ${WRKSRC}/linux && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${_MAKE_JOBS}
 

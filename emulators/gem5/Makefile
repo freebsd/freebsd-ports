@@ -8,7 +8,7 @@ CATEGORIES=	emulators
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	gem5 Simulator System
 
-BUILD_DEPENDS=	swig3.0:devel/swig30
+BUILD_DEPENDS=	swig:devel/swig
 
 BROKEN_armv6=		fails to link: undefined reference to HDLcd::BUS_OPTIONS_RESETV
 BROKEN_armv7=		fails to link: undefined reference to HDLcd::BUS_OPTIONS_RESETV
@@ -25,7 +25,7 @@ GH_ACCOUNT=	CTSRD-CHERI
 GH_TAGNAME=	99d65cc
 
 ALL_TARGET=	build/ARM/gem5.opt
-MAKE_ENV=	SWIG="${LOCALBASE}/bin/swig3.0"
+MAKE_ENV=	SWIG="${LOCALBASE}/bin/swig"
 
 .include <bsd.port.pre.mk>
 

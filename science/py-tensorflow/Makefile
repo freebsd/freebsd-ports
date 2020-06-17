@@ -22,7 +22,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}grpcio-tools>=1.22.0:devel/py-grpcio-tools@${PY_FLAVOR} \
 		bash:shells/bash \
 		cython:lang/cython \
-		swig3.0:devel/swig30 \
+		swig:devel/swig \
 		bazel:devel/bazel029
 LIB_DEPENDS=	libsnappy.so:archivers/snappy \
 		liblmdb.so:databases/lmdb \

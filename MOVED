@@ -15088,3 +15088,4 @@ mail/claws-mail-tnef|mail/claws-mail-tnef_parse|2020-06-11|Renamed to align port
 x11-themes/numix-theme|x11-themes/numix-gtk-theme|2020-06-15|Renamed to match upstream naming
 www/py-djangorestframework36|www/py-djangorestframework|2020-06-15|Has expired: Not compatible with Django 2.0+, please use www/py-djangorestframework instead
 www/py-flask-restplus|www/py-flask-restx|2020-06-17|No longer maintained upstream, use www/py-flask-restx instead
+devel/swig30|devel/swig|2020-06-17|Remove PKGNAMESUFFIX since it is the only version in ports tree

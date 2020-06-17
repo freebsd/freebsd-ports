@@ -119,7 +119,7 @@ LLD_DISTFILES=		lld-${DISTVERSION}.src${EXTRACT_SUFX}
 LLD_EXTRA_PATCHES=	${PATCHDIR}/lld
 LLD_LINK_DESC=		Link ld.lld as ld to clang uses it
 LLD_LINK_IMPLIES=	LLD
-LLDB_BUILD_DEPENDS=	swig3.0:devel/swig30 \
+LLDB_BUILD_DEPENDS=	swig:devel/swig \
 			${PY_ENUM34}
 LLDB_DESC=		Install lldb, the LLVM debugger
 LLDB_DISTFILES=		lldb-${DISTVERSION}.src${EXTRACT_SUFX}

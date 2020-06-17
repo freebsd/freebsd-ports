@@ -57,7 +57,7 @@ LOGGING_CMAKE_BOOL=	logging
 PYTHON_CMAKE_BOOL=	build-python
 PYTHON_USES=		python
 PYTHON_USE=		python=flavors
-PYTHON_BUILD_DEPENDS=	${LOCALBASE}/bin/swig3.0:devel/swig30
+PYTHON_BUILD_DEPENDS=	${LOCALBASE}/bin/swig:devel/swig
 PYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}future>0:devel/py-future@${PY_FLAVOR}
 
 LIBRARY_CMAKE_BOOL=	build-library

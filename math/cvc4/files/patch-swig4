@@ -1,0 +1,40 @@
+Obtained from:	https://github.com/CVC4/CVC4/commit/c587235d29d2e3e1cd52a9f76dde8f58c89ae37e
+
+--- src/bindings/java/CMakeLists.txt.orig	2019-04-09 16:14:31 UTC
++++ src/bindings/java/CMakeLists.txt
+@@ -131,6 +131,7 @@ set(gen_java_files
+   ${CMAKE_CURRENT_BINARY_DIR}/LastExceptionBuffer.java
+   ${CMAKE_CURRENT_BINARY_DIR}/LogicException.java
+   ${CMAKE_CURRENT_BINARY_DIR}/LogicInfo.java
++  ${CMAKE_CURRENT_BINARY_DIR}/Map_ExprExpr.java
+   ${CMAKE_CURRENT_BINARY_DIR}/ModalException.java
+   ${CMAKE_CURRENT_BINARY_DIR}/OptionException.java
+   ${CMAKE_CURRENT_BINARY_DIR}/Options.java
+@@ -177,7 +178,6 @@ set(gen_java_files
+   ${CMAKE_CURRENT_BINARY_DIR}/SWIGTYPE_p_mpq_class.java
+   ${CMAKE_CURRENT_BINARY_DIR}/SWIGTYPE_p_mpz_class.java
+   ${CMAKE_CURRENT_BINARY_DIR}/SWIGTYPE_p_std__istream.java
+-  ${CMAKE_CURRENT_BINARY_DIR}/SWIGTYPE_p_std__mapT_CVC4__Expr_CVC4__Expr_t.java
+   ${CMAKE_CURRENT_BINARY_DIR}/SWIGTYPE_p_std__ostream.java
+   ${CMAKE_CURRENT_BINARY_DIR}/SWIGTYPE_p_std__shared_ptrT_CVC4__SygusPrintCallback_t.java
+   ${CMAKE_CURRENT_BINARY_DIR}/SWIGTYPE_p_std__string.java
+@@ -210,6 +210,7 @@ set(gen_java_files
+   ${CMAKE_CURRENT_BINARY_DIR}/SygusPrintCallback.java
+   ${CMAKE_CURRENT_BINARY_DIR}/SymbolTable.java
+   ${CMAKE_CURRENT_BINARY_DIR}/SymbolType.java
++  ${CMAKE_CURRENT_BINARY_DIR}/SynthFunCommand.java
+   ${CMAKE_CURRENT_BINARY_DIR}/TesterType.java
+   ${CMAKE_CURRENT_BINARY_DIR}/TheoryId.java
+   ${CMAKE_CURRENT_BINARY_DIR}/Timer.java
+--- src/smt/smt_engine.i.orig	2019-04-09 16:14:31 UTC
++++ src/smt/smt_engine.i
+@@ -42,6 +42,9 @@ SWIGEXPORT void JNICALL Java_edu_nyu_acsys_CVC4_SmtEng
+       swigCPtr = 0;
+     }
+   }
++
++%template(Map_ExprExpr) std::map<CVC4::Expr, CVC4::Expr>;
++
+ #endif // SWIGJAVA
+ 
+ %ignore CVC4::SmtEngine::setLogic(const char*);

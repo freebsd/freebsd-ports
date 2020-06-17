@@ -16,7 +16,7 @@ LICENSE=	LGPL3
 DEPRECATED=	Uses deprecated version of python
 EXPIRATION_DATE=	2020-08-15
 
-RUN_DEPENDS=	swig3.0:devel/swig30
+RUN_DEPENDS=	swig:devel/swig
 
 USES=			python:2.7
 USE_PYTHON=		distutils

@@ -204,10 +204,10 @@ CONFIGURE_ARGS+=	--without-libiconv-prefix
 .if ${PORT_OPTIONS:MPERL} || ${PORT_OPTIONS:MPHP} || ${PORT_OPTIONS:MPYTHON} || \
     ${PORT_OPTIONS:MRUBY} || ${PORT_OPTIONS:MLUA} || ${PORT_OPTIONS:MTCL} || \
     ${PORT_OPTIONS:MGUILE} || ${PORT_OPTIONS:MGO}
-BUILD_DEPENDS+=		swig3.0:devel/swig30
-RUN_DEPENDS+=		swig3.0:devel/swig30
+BUILD_DEPENDS+=		swig:devel/swig
+RUN_DEPENDS+=		swig:devel/swig
 CONFIGURE_ARGS+=	--enable-swig
-CONFIGURE_ENV+=		SWIG="${LOCALBASE}/bin/swig3.0"
+CONFIGURE_ENV+=		SWIG="${LOCALBASE}/bin/swig"
 .else
 CONFIGURE_ARGS+=	--disable-swig
 CONFIGURE_ENV+=		SWIG="/nonexistent"

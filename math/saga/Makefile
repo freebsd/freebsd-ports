@@ -14,7 +14,7 @@ LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT} \
-		swig3.0:devel/swig30
+		swig:devel/swig
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libfftw3.so:math/fftw3 \
 		libgdal.so:graphics/gdal \
@@ -29,7 +29,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libsvm.so:science/libsvm \
 		libtbb.so:devel/tbb \
 		libtiff.so:graphics/tiff
-RUN_DEPENDS:=	swig3.0:devel/swig30
+RUN_DEPENDS:=	swig:devel/swig
 
 USES=		autoreconf compiler:c++11-lib dos2unix gnome \
 		iconv:wchar_t libtool localbase pkgconfig python
@@ -38,7 +38,7 @@ USE_WX=		3.0+
 
 CONFIGURE_ARGS=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" \
 		--enable-python --with-system-svm
-CONFIGURE_ENV=	SWIG="${LOCALBASE}/bin/swig3.0"
+CONFIGURE_ENV=	SWIG="${LOCALBASE}/bin/swig"
 GNU_CONFIGURE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

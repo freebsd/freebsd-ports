@@ -12,7 +12,7 @@ LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
-		swig3.0:devel/swig30 \
+		swig:devel/swig \
 		gmm++>0:math/gmm++
 LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate \
 		libsndfile.so:audio/libsndfile
@@ -30,7 +30,6 @@ CMAKE_ARGS=	-DBUILD_CSOUNDVST:BOOL=OFF \
 		-DOPSYS:STRING="${OPSYS}"
 CMAKE_OFF=	USE_ALSA BUILD_JAVA_INTERFACE BUILD_TESTS
 SSP_UNSAFE=	yes
-BINARY_ALIAS=	swig=swig3.0
 LDFLAGS+=	-lexecinfo
 
 SUB_FILES=	pkg-message

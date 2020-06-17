@@ -916,12 +916,12 @@ lib/libosimTools.so
 %%JAVA%%%%DATADIR%%/java/org/opensim/modeling/SWIGTYPE_p_std__initializer_listT_SimTK__VecT_6_double_1_t_t.java
 %%JAVA%%%%DATADIR%%/java/org/opensim/modeling/SWIGTYPE_p_std__initializer_listT_double_t.java
 %%JAVA%%%%DATADIR%%/java/org/opensim/modeling/SWIGTYPE_p_std__istream.java
-%%JAVA%%%%DATADIR%%/java/org/opensim/modeling/SWIGTYPE_p_std__mapT_std__string_OpenSim__AbstractDataTable_const_p_t.java
-%%JAVA%%%%DATADIR%%/java/org/opensim/modeling/SWIGTYPE_p_std__mapT_std__string_OpenSim__OutputT_SimTK__Transform_T_double_t_t__Channel_t.java
-%%JAVA%%%%DATADIR%%/java/org/opensim/modeling/SWIGTYPE_p_std__mapT_std__string_OpenSim__OutputT_SimTK__VecT_2_SimTK__Vec3_1_t_t__Channel_t.java
-%%JAVA%%%%DATADIR%%/java/org/opensim/modeling/SWIGTYPE_p_std__mapT_std__string_OpenSim__OutputT_SimTK__VecT_3_double_1_t_t__Channel_t.java
-%%JAVA%%%%DATADIR%%/java/org/opensim/modeling/SWIGTYPE_p_std__mapT_std__string_OpenSim__OutputT_SimTK__Vector_T_double_t_t__Channel_t.java
-%%JAVA%%%%DATADIR%%/java/org/opensim/modeling/SWIGTYPE_p_std__mapT_std__string_OpenSim__OutputT_double_t__Channel_t.java
+%%JAVA%%%%DATADIR%%/java/org/opensim/modeling/SWIGTYPE_p_std__mapT_std__string_OpenSim__AbstractDataTable_const_p_std__lessT_std__string_t_t.java
+%%JAVA%%%%DATADIR%%/java/org/opensim/modeling/SWIGTYPE_p_std__mapT_std__string_OpenSim__OutputT_SimTK__Transform_T_double_t_t__Channel_std__lessT_std__string_t_t.java
+%%JAVA%%%%DATADIR%%/java/org/opensim/modeling/SWIGTYPE_p_std__mapT_std__string_OpenSim__OutputT_SimTK__VecT_2_SimTK__Vec3_1_t_t__Channel_std__lessT_std__string_t_t.java
+%%JAVA%%%%DATADIR%%/java/org/opensim/modeling/SWIGTYPE_p_std__mapT_std__string_OpenSim__OutputT_SimTK__VecT_3_double_1_t_t__Channel_std__lessT_std__string_t_t.java
+%%JAVA%%%%DATADIR%%/java/org/opensim/modeling/SWIGTYPE_p_std__mapT_std__string_OpenSim__OutputT_SimTK__Vector_T_double_t_t__Channel_std__lessT_std__string_t_t.java
+%%JAVA%%%%DATADIR%%/java/org/opensim/modeling/SWIGTYPE_p_std__mapT_std__string_OpenSim__OutputT_double_t__Channel_std__lessT_std__string_t_t.java
 %%JAVA%%%%DATADIR%%/java/org/opensim/modeling/SWIGTYPE_p_std__ostream.java
 %%JAVA%%%%DATADIR%%/java/org/opensim/modeling/SWIGTYPE_p_std__pairT_std__vectorT_SimTK__State_t__const_iterator_std__vectorT_SimTK__State_t__const_iterator_t.java
 %%JAVA%%%%DATADIR%%/java/org/opensim/modeling/SWIGTYPE_p_std__reverse_iteratorT_OpenSim__CoordinateReference_const_p_t.java
@@ -1007,7 +1007,6 @@ lib/libosimTools.so
 %%JAVA%%%%DATADIR%%/java/org/opensim/modeling/Station.java
 %%JAVA%%%%DATADIR%%/java/org/opensim/modeling/StdMapStringAbstractDataTable.java
 %%JAVA%%%%DATADIR%%/java/org/opensim/modeling/StdMapStringDataAdapter.java
-%%JAVA%%%%DATADIR%%/java/org/opensim/modeling/StdMapStringTimeSeriesTableVec3.java
 %%JAVA%%%%DATADIR%%/java/org/opensim/modeling/StdVectorDouble.java
 %%JAVA%%%%DATADIR%%/java/org/opensim/modeling/StdVectorEvent.java
 %%JAVA%%%%DATADIR%%/java/org/opensim/modeling/StdVectorInt.java

@@ -80,7 +80,7 @@ TEST_USE=		QT=testlib_build
 .  endif
 
 .  if ${SLAVEPORT} == "python"
-BUILD_DEPENDS+=	swig3.0:devel/swig30 \
+BUILD_DEPENDS+=	swig:devel/swig \
 		${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR}
 USES+=		python
@@ -88,7 +88,7 @@ USE_PYTHON=	py3kplist flavors
 CONFIGURE_ARGS+=--enable-languages="python"
 CONFIGURE_ENV+=	BSD_PYTHON="${PYTHON_CMD}" \
 		BSD_PYTHON_VERSION="${PYTHON_VER}" \
-		SWIG="${LOCALBASE}/bin/swig3.0"
+		SWIG="${LOCALBASE}/bin/swig"
 PLIST_SUB+=	VERSION=${PORTVERSION}
 .  endif
 .endif

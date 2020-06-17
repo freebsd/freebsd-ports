@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2019-01-11 17:24:38 UTC
++++ CMakeLists.txt
+@@ -897,7 +897,7 @@ if(build-python)
+   find_package(PythonLibs ${PYTHON_VERSION_STRING} EXACT)
+   include_directories(${PYTHON_INCLUDE_PATH})
+ 
+-  set(CMAKE_SWIG_FLAGS -modern -fastdispatch -dirvtable -nosafecstrings -noproxydel -fastproxy -fastinit -fastunpack -fastquery -modernargs -nobuildnone -keyword -w511 -w473 -w404 -w314)
++  set(CMAKE_SWIG_FLAGS -fastdispatch -dirvtable -fastproxy -keyword -w511 -w473 -w404 -w314)
+ 
+   set_source_files_properties("${PROJECT_BINARY_DIR}/fife.i" PROPERTIES CPLUSPLUS ON)
+   set(FIFE_SOURCES ${FIFE_CORE_SRC})

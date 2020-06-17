@@ -13,14 +13,13 @@ COMMENT=	Bro Client Communications Library
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	swig3.0:devel/swig30
+BUILD_DEPENDS=	swig:devel/swig
 
 USES=		cmake ssl bison
 USE_LDCONFIG=	yes
 
 EXTRACT_AFTER_ARGS=	${DISTNAME}/aux/broccoli
 CMAKE_SOURCE_PATH=	${WRKSRC}/aux/broccoli
-BINARY_ALIAS=	swig=swig3.0
 
 .if defined(BRO_PREFIX)
 PREFIX=		${BRO_PREFIX}

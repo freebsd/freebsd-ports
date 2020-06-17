@@ -12,7 +12,7 @@ COMMENT=	Vendor and platform neutral SDR support library (python binding)
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/../LICENSE_1_0.txt
 
-BUILD_DEPENDS=	swig3.0:devel/swig30
+BUILD_DEPENDS=	swig:devel/swig
 LIB_DEPENDS=	libSoapySDR.so:misc/soapysdr
 
 USES=		cmake compiler:c++11-lang gettext-runtime python

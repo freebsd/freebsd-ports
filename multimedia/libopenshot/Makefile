@@ -13,7 +13,7 @@ COMMENT=	OpenShot Video Library
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	swig3.0:devel/swig30 \
+BUILD_DEPENDS=	swig:devel/swig \
 		unittest-cpp>=0:devel/unittest-cpp \
 		${LOCALBASE}/include/zmq.hpp:net/cppzmq
 LIB_DEPENDS=	libopenshot-audio.so:audio/libopenshot-audio \

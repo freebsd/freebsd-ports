@@ -17,7 +17,7 @@ COMMENT=	Fast painting/scribbling program
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	swig3.0:devel/swig30 \
+BUILD_DEPENDS=	swig:devel/swig \
 		mypaint-brushes2>0:graphics/mypaint-brushes2 \
 		${PYNUMPY}
 LIB_DEPENDS=	libjson-c.so:devel/json-c \
@@ -33,7 +33,6 @@ USES=		compiler:c++11-lib desktop-file-utils gettext gnome localbase \
 USE_GITHUB=	yes
 GH_ACCOUNT=	mypaint
 
-BINARY_ALIAS=	swig=swig3.0
 USE_GNOME=	gtk30 pygobject3 cairo librsvg2:run
 USE_PYTHON=	distutils py3kplist
 PYDISTUTILS_BUILD_TARGET=	build build_ext

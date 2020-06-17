@@ -17,7 +17,7 @@ LICENSE_COMB=	dual
 DEPRECATED=	Uses deprecated version of python
 EXPIRATION_DATE=	2020-08-15
 
-BUILD_DEPENDS=	swig3.0:devel/swig30
+BUILD_DEPENDS=	swig:devel/swig
 LIB_DEPENDS=	libmecab.so:japanese/mecab
 
 USES=		python:2.7

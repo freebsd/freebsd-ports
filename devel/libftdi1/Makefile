@@ -46,8 +46,7 @@ CMAKE_ARGS+=	-DEXAMPLES:BOOL=false
 USES+=		python
 CMAKE_ARGS+=	-DPYTHON_BINDINGS:BOOL=true \
 		-DDOCUMENTATION:BOOL=false
-BUILD_DEPENDS+=	swig3.0:devel/swig30
-BINARY_ALIAS=	swig=swig3.0
+BUILD_DEPENDS+=	swig:devel/swig
 .else
 CMAKE_ARGS+=	-DPYTHON_BINDINGS:BOOL=false
 .endif

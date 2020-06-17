@@ -14,16 +14,13 @@ COMMENT=	Crypto and SSL toolkit for Python
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
-BUILD_DEPENDS=	swig3.0:devel/swig30
+BUILD_DEPENDS=	swig:devel/swig
 RUN_DEPENDS=	${PY_TYPING}
 
 USES=		python ssl
 USE_PYTHON=	autoplist concurrent distutils
 
-PYDISTUTILS_BUILDARGS=	build_ext --include=${OPENSSLINC} --openssl=${OPENSSLBASE} --swig=${LOCALBASE}/bin/swig3.0
-
-post-patch:
-	@${REINPLACE_CMD} -e "s|swig\(', '-version\)|swig3.0\1|" ${WRKSRC}/setup.py
+PYDISTUTILS_BUILDARGS=	build_ext --include=${OPENSSLINC} --openssl=${OPENSSLBASE} --swig=${LOCALBASE}/bin/swig
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/M2Crypto/_m2crypto.so

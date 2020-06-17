@@ -71,7 +71,7 @@ ZEEKCTL_DESC=	ZeekControl support (implies BROKER and IPSUMDUMP)
 ZEEKCTL_IMPLIES=		BROKER IPSUMDUMP
 
 BROCCOLI_LIB_DEPENDS=	libbroccoli.so:security/broccoli
-BROKER_BUILD_DEPENDS=	swig3.0:devel/swig30
+BROKER_BUILD_DEPENDS=	swig:devel/swig
 BROKER_CMAKE_BOOL=	ENABLE_BROKER
 DEBUG_CMAKE_BOOL=	ENABLE_DEBUG
 GEOIP2_LIB_DEPENDS=	libmaxminddb.so:net/libmaxminddb
@@ -84,10 +84,10 @@ NETMAP_USE=		GITHUB=nodefault
 PERFTOOLS_BUILD_DEPENDS=${LOCALBASE}/bin/perftools-pprof:devel/google-perftools
 PERFTOOLS_CMAKE_BOOL=	ENABLE_PERFTOOLS
 PERFTOOLS_RUN_DEPENDS=${LOCALBASE}/bin/perftools-pprof:devel/google-perftools
-PYTHON_BUILD_DEPENDS=	swig3.0:devel/swig30
+PYTHON_BUILD_DEPENDS=	swig:devel/swig
 ZEEKCTL_BUILD_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash \
 			${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
-			swig3.0:devel/swig30
+			swig:devel/swig
 ZEEKCTL_CMAKE_BOOL=	INSTALL_ZEEKCTL
 ZEEKCTL_RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash \
 			${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}

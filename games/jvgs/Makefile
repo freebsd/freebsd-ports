@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Minimalistic platform game
 
-BUILD_DEPENDS=	swig3.0:devel/swig30
+BUILD_DEPENDS=	swig:devel/swig
 LIB_DEPENDS=	libfreetype.so:print/freetype2
 
 USES=		cmake:insource gl lua:51 sdl
@@ -25,7 +25,6 @@ NO_CDROM=	contains data under CC-by-NC-SA
 PLIST_FILES=	bin/${PORTNAME} libexec/${PORTNAME}
 PORTDOCS=	*
 PORTDATA=	*
-BINARY_ALIAS=	swig=swig3.0
 
 OPTIONS_DEFINE=	DOCS
 

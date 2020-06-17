@@ -1,6 +1,26 @@
---- configure.orig	2014-08-01 17:07:37.000000000 +0200
-+++ configure	2014-08-01 17:08:37.000000000 +0200
-@@ -22785,7 +22785,7 @@
+--- configure.orig	2007-04-26 00:25:25 UTC
++++ configure
+@@ -22433,19 +22433,6 @@ echo "${ECHO_T}$swig_version" >&6; }
+                         if test -z "$available_patch" ; then
+                                 available_patch=0
+                         fi
+-                        if test $available_major -ne $required_major \
+-                                -o $available_minor -ne $required_minor \
+-                                -o $available_patch -lt $required_patch ; then
+-                                { echo "$as_me:$LINENO: WARNING: SWIG version >= 1.3 is required.  You have $swig_version.  You should look at http://www.swig.org" >&5
+-echo "$as_me: WARNING: SWIG version >= 1.3 is required.  You have $swig_version.  You should look at http://www.swig.org" >&2;}
+-                                SWIG='echo "Error: SWIG version >= 1.3 is required.  You have '"$swig_version"'.  You should look at http://www.swig.org" ; false'
+-                        else
+-                                { echo "$as_me:$LINENO: SWIG executable is '$SWIG'" >&5
+-echo "$as_me: SWIG executable is '$SWIG'" >&6;}
+-                                SWIG_LIB=`$SWIG -swiglib`
+-                                { echo "$as_me:$LINENO: SWIG library directory is '$SWIG_LIB'" >&5
+-echo "$as_me: SWIG library directory is '$SWIG_LIB'" >&6;}
+-                        fi
+                 else
+                         { echo "$as_me:$LINENO: WARNING: cannot determine SWIG version" >&5
+ echo "$as_me: WARNING: cannot determine SWIG version" >&2;}
+@@ -22785,7 +22772,7 @@ echo $ECHO_N "checking for Python library path... $ECH
  
  		PYTHON_LDFLAGS=`$PYTHON -c "from distutils.sysconfig import *; \
  			import os; \
