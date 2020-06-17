@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kops
-PORTVERSION=	1.16.1
+PORTVERSION=	1.17.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	danilo@FreeBSD.org
@@ -33,8 +33,8 @@ GH_TUPLE=	\
 		PuerkitoBio:urlesc:de5bf2ad4578:puerkitobio_urlesc/vendor/github.com/PuerkitoBio/urlesc \
 		aokoli:goutils:v1.0.1:aokoli_goutils/vendor/github.com/aokoli/goutils \
 		armon:go-metrics:f0300d1749da:armon_go_metrics/vendor/github.com/armon/go-metrics \
-		aws:aws-sdk-go:v1.23.0:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
-		bazelbuild:bazel-gazelle:67c9ddf12d8a:bazelbuild_bazel_gazelle/vendor/github.com/bazelbuild/bazel-gazelle \
+		aws:aws-sdk-go:v1.30.16:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
+		bazelbuild:bazel-gazelle:v0.19.1:bazelbuild_bazel_gazelle/vendor/github.com/bazelbuild/bazel-gazelle \
 		bazelbuild:buildtools:f720930ceb60:bazelbuild_buildtools/vendor/github.com/bazelbuild/buildtools \
 		beorn7:perks:3a771d992973:beorn7_perks/vendor/github.com/beorn7/perks \
 		blang:semver:v3.5.0:blang_semver/vendor/github.com/blang/semver \
@@ -64,7 +64,7 @@ GH_TUPLE=	\
 		ghodss:yaml:c7ce16629ff4:ghodss_yaml/vendor/github.com/ghodss/yaml \
 		go-gcfg:gcfg:v1.2.0:go_gcfg_gcfg/vendor/gopkg.in/gcfg.v1 \
 		go-inf:inf:v0.9.1:go_inf_inf/vendor/gopkg.in/inf.v0 \
-		go-ini:ini:v1.25.4:go_ini_ini/vendor/github.com/go-ini/ini \
+		go-ini:ini:v1.51.0:go_ini_ini/vendor/github.com/go-ini/ini \
 		go-logr:logr:v0.1.0:go_logr_logr/vendor/github.com/go-logr/logr \
 		go-openapi:jsonpointer:v0.19.0:go_openapi_jsonpointer/vendor/github.com/go-openapi/jsonpointer \
 		go-openapi:jsonreference:v0.19.0:go_openapi_jsonreference/vendor/github.com/go-openapi/jsonreference \
@@ -72,19 +72,21 @@ GH_TUPLE=	\
 		go-openapi:swag:v0.17.2:go_openapi_swag/vendor/github.com/go-openapi/swag \
 		go-warnings:warnings:v0.1.1:go_warnings_warnings/vendor/gopkg.in/warnings.v0 \
 		go-yaml:yaml:827449938966:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
-		go-yaml:yaml:v2.2.2:go_yaml_yaml_1/vendor/gopkg.in/yaml.v2 \
+		go-yaml:yaml:v2.2.7:go_yaml_yaml_1/vendor/gopkg.in/yaml.v2 \
 		gobuffalo:flect:v0.1.5:gobuffalo_flect/vendor/github.com/gobuffalo/flect \
 		gogo:protobuf:v1.1.1:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang:appengine:v1.5.0:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:cbcb75029529:golang_crypto/vendor/golang.org/x/crypto \
+		golang:crypto:86a70503ff7e:golang_crypto/vendor/golang.org/x/crypto \
 		golang:groupcache:24b0969c4cb7:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:net:${GOLANG_NET_V}:golang_net/vendor/golang.org/x/net_new \
 		golang:oauth2:9f3314589c9a:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.3.2:golang_protobuf/vendor/github.com/golang/protobuf \
+		golang:sync:cd5d95a43a6e:golang_sync/vendor/golang.org/x/sync \
 		golang:sys:6d18c012aee9:golang_sys/vendor/golang.org/x/sys \
-		golang:text:e6919f6577db:golang_text/vendor/golang.org/x/text \
+		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
 		golang:time:fbb02b2291d2:golang_time/vendor/golang.org/x/time \
-		golang:tools:6e04913cbbac:golang_tools/vendor/golang.org/x/tools \
+		golang:tools:c197fd4bf371:golang_tools/vendor/golang.org/x/tools \
+		gomodules:jsonpatch:v2.0.1:gomodules_jsonpatch/vendor/gomodules.xyz/jsonpatch/v2 \
 		google:btree:4030bb1f1f0c:google_btree/vendor/github.com/google/btree \
 		google:go-cmp:v0.3.0:google_go_cmp/vendor/github.com/google/go-cmp \
 		google:go-querystring:v1.0.0:google_go_querystring/vendor/github.com/google/go-querystring \
@@ -93,7 +95,7 @@ GH_TUPLE=	\
 		googleapis:gnostic:v0.3.1:googleapis_gnostic/vendor/github.com/googleapis/gnostic \
 		googleapis:google-api-go-client:583d854617af:googleapis_google_api_go_client/vendor/google.golang.org/api \
 		googleapis:google-cloud-go:v0.34.0:googleapis_google_cloud_go/vendor/cloud.google.com/go \
-		gophercloud:gophercloud:dcc6e84aef1b:gophercloud_gophercloud/vendor/github.com/gophercloud/gophercloud \
+		gophercloud:gophercloud:46fdd1830e9a:gophercloud_gophercloud/vendor/github.com/gophercloud/gophercloud \
 		gorilla:mux:v1.7.0:gorilla_mux/vendor/github.com/gorilla/mux \
 		gregjones:httpcache:787624de3eb7:gregjones_httpcache/vendor/github.com/gregjones/httpcache \
 		hashicorp:errwrap:v1.0.0:hashicorp_errwrap/vendor/github.com/hashicorp/errwrap \
@@ -108,12 +110,15 @@ GH_TUPLE=	\
 		imdario:mergo:v0.3.6:imdario_mergo/vendor/github.com/imdario/mergo \
 		inconshreveable:mousetrap:v1.0.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
 		jacksontj:memberlistmesh:93462b9d2bb7:jacksontj_memberlistmesh/vendor/github.com/jacksontj/memberlistmesh \
-		jmespath:go-jmespath:c2b33e8439af:jmespath_go_jmespath/vendor/github.com/jmespath/go-jmespath \
+		jmespath:go-jmespath:v0.3.0:jmespath_go_jmespath/vendor/github.com/jmespath/go-jmespath \
 		jpillora:backoff:8eab2debe79d:jpillora_backoff/vendor/github.com/jpillora/backoff \
 		json-iterator:go:v1.1.5:json_iterator_go/vendor/github.com/json-iterator/go \
 		jteeuwen:go-bindata:a0ff2567cfb7:jteeuwen_go_bindata/vendor/github.com/jteeuwen/go-bindata \
 		konsorten:go-windows-terminal-sequences:v1.0.1:konsorten_go_windows_terminal_sequences/vendor/github.com/konsorten/go-windows-terminal-sequences \
 		kr:fs:2788f0dbd169:kr_fs/vendor/github.com/kr/fs \
+		kubernetes-sigs:controller-runtime:v0.2.2:kubernetes_sigs_controller_runtime/vendor/sigs.k8s.io/controller-runtime \
+		kubernetes-sigs:controller-tools:76a25b63325a:kubernetes_sigs_controller_tools/vendor/sigs.k8s.io/controller-tools \
+		kubernetes-sigs:kustomize:v2.0.3:kubernetes_sigs_kustomize/vendor/sigs.k8s.io/kustomize \
 		kubernetes-sigs:yaml:v1.1.0:kubernetes_sigs_yaml/vendor/sigs.k8s.io/yaml \
 		kubernetes:api:3544db3b9e44:kubernetes_api/vendor/k8s.io/api \
 		kubernetes:apiextensions-apiserver:0dbe462fe92d:kubernetes_apiextensions_apiserver/vendor/k8s.io/apiextensions-apiserver \
@@ -144,7 +149,7 @@ GH_TUPLE=	\
 		pborman:uuid:v1.2.0:pborman_uuid/vendor/github.com/pborman/uuid \
 		pelletier:go-toml:v1.2.0:pelletier_go_toml/vendor/github.com/pelletier/go-toml \
 		peterbourgon:diskv:v2.0.1:peterbourgon_diskv/vendor/github.com/peterbourgon/diskv \
-		pkg:errors:v0.8.1:pkg_errors/vendor/github.com/pkg/errors \
+		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		pkg:sftp:4d0e916071f6:pkg_sftp/vendor/github.com/pkg/sftp \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
 		prometheus:client_golang:v0.9.2:prometheus_client_golang/vendor/github.com/prometheus/client_golang \
@@ -161,18 +166,14 @@ GH_TUPLE=	\
 		spf13:jwalterweatherman:v1.0.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.3:spf13_pflag/vendor/github.com/spf13/pflag \
 		spf13:viper:v1.3.2:spf13_viper/vendor/github.com/spf13/viper \
-		spotinst:spotinst-sdk-go:eb52d7ac273c:spotinst_spotinst_sdk_go/vendor/github.com/spotinst/spotinst-sdk-go \
-		stretchr:testify:v1.3.0:stretchr_testify/vendor/github.com/stretchr/testify \
+		spotinst:spotinst-sdk-go:v1.36.1:spotinst_spotinst_sdk_go/vendor/github.com/spotinst/spotinst-sdk-go \
+		stretchr:testify:v1.5.1:stretchr_testify/vendor/github.com/stretchr/testify \
 		uber-go:atomic:v1.3.2:uber_go_atomic/vendor/go.uber.org/atomic \
 		uber-go:multierr:v1.1.0:uber_go_multierr/vendor/go.uber.org/multierr \
 		uber-go:zap:v1.9.1:uber_go_zap/vendor/go.uber.org/zap \
 		urfave:cli:v1.20.0:urfave_cli/vendor/github.com/urfave/cli \
 		vmware:govmomi:v0.20.1:vmware_govmomi/vendor/github.com/vmware/govmomi \
-		weaveworks:mesh:1f158d31de55:weaveworks_mesh/vendor/github.com/weaveworks/mesh \
-		kubernetes-sigs:kustomize:v2.0.3:kubernetes_sigs_kustomize/vendor/sigs.k8s.io/kustomize \
-		kubernetes-sigs:controller-tools:76a25b63325a:kubernetes_sigs_controller_tools/vendor/sigs.k8s.io/controller-tools \
-		kubernetes-sigs:controller-runtime:v0.2.2:kubernetes_sigs_controller_runtime/vendor/sigs.k8s.io/controller-runtime \
-		gomodules:jsonpatch:v2.0.1:gomodules_jsonpatch/vendor/gomodules.xyz/jsonpatch
+		weaveworks:mesh:1f158d31de55:weaveworks_mesh/vendor/github.com/weaveworks/mesh
 
 GO_PKGNAME=	k8s.io/${PORTNAME}
 GO_TARGET=	${GO_PKGNAME}/cmd/${PORTNAME}
