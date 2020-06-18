@@ -3,7 +3,7 @@
 PORTNAME=	vulkan-tools
 DISTVERSIONPREFIX=	sdk-
 DISTVERSION=	1.2.135.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel graphics
 
 MAINTAINER=	greg@unrelenting.technology
@@ -33,7 +33,10 @@ WAYLAND_DESC=	Build Wayland WSI (Window System Integration) support
 XCB_DESC=	Build XCB WSI (Window System Integration) support
 XLIB_DESC=	Build Xlib WSI (Window System Integration) support
 
-WAYLAND_BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto
+WAYLAND_PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+WAYLAND_PATCHFILES=	6f6e3371c92a.patch:-p1
+WAYLAND_BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto \
+			wayland-protocols>0:graphics/wayland-protocols
 WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland
 WAYLAND_CMAKE_BOOL=	BUILD_WSI_WAYLAND_SUPPORT
 
