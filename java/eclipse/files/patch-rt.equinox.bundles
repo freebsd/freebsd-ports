@@ -162,7 +162,7 @@ diff -ru rt.equinox.bundles/features/org.eclipse.equinox.core.sdk/feature.xml rt
 diff -ru rt.equinox.bundles/pom.xml rt.equinox.bundles/pom.xml
 --- rt.equinox.bundles/pom.xml	0000-00-00 00:00:00.000000000 +0000
 +++ rt.equinox.bundles/pom.xml	0000-00-00 00:00:00.000000000 +0000
-@@ -89,7 +89,7 @@
+@@ -84,7 +84,7 @@
      <module>bundles/org.eclipse.equinox.security</module>
      <module>bundles/org.eclipse.equinox.security.macosx</module>
      <module>bundles/org.eclipse.equinox.security.win32.x86_64</module>

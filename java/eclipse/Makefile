@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	eclipse
-PORTVERSION=	4.15
+PORTVERSION=	4.16
 CATEGORIES=	java devel
 
 # Update to eclipse.platform.releng.aggregator.git git-tag on git.eclipse.org
-ECLIPSE_TAG=	R4_15
-ECLIPSE_TSTAMP=	20200318-1047
+ECLIPSE_TAG=	R4_16
+ECLIPSE_TSTAMP=	20200617-1404
 
 ECLIPSE_SUFX=	${ECLIPSE_TAG}.tar.xz
 ECLIPSE_MODULES=jdt/eclipse.jdt \
@@ -45,7 +45,7 @@ DISTFILES+=	${M:C/.*\///}-${ECLIPSE_SUFX}:${M:C/[\.\/]//g}
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	jonc@chen.org.nz
-COMMENT=	Eclipse IDE 2020-03
+COMMENT=	Eclipse IDE 2020-06
 
 LICENSE=	EPL
 

@@ -1,22 +1,3 @@
-diff -ru eclipse.platform.releng.tychoeclipsebuilder/eclipse/getBaseBuilderAndTools.xml eclipse.platform.releng.tychoeclipsebuilder/eclipse/getBaseBuilderAndTools.xml
---- eclipse.platform.releng.tychoeclipsebuilder/eclipse/getBaseBuilderAndTools.xml	0000-00-00 00:00:00.000000000 +0000
-+++ eclipse.platform.releng.tychoeclipsebuilder/eclipse/getBaseBuilderAndTools.xml	0000-00-00 00:00:00.000000000 +0000
-@@ -111,7 +111,7 @@
-     -->
-     <property
-       name="platformFile"
--      value="eclipse-platform-${eclispeBaseLabel}-linux-gtk-x86_64.tar.gz" />
-+      value="eclipse-platform-${eclispeBaseLabel}-freebsd-gtk-amd64.tar.gz" />
- 
-      <!-- the following setting is just to make sure we have a reasonable "fallback" value, such as when
-       using this script on Hudson to do "clean up" of repositories. Should change it to "well known" version,
-@@ -308,4 +308,4 @@
-       file="${settingsDir}/org.eclipse.core.net.prefs" />
-   </target>
- 
--</project>
-\ No newline at end of file
-+</project>
 diff -ru eclipse.platform.releng.tychoeclipsebuilder/eclipse/publishingFiles/testManifest.xml eclipse.platform.releng.tychoeclipsebuilder/eclipse/publishingFiles/testManifest.xml
 --- eclipse.platform.releng.tychoeclipsebuilder/eclipse/publishingFiles/testManifest.xml	0000-00-00 00:00:00.000000000 +0000
 +++ eclipse.platform.releng.tychoeclipsebuilder/eclipse/publishingFiles/testManifest.xml	0000-00-00 00:00:00.000000000 +0000
@@ -86,38 +67,6 @@ diff -ru eclipse.platform.releng.tychoeclipsebuilder/eclipse-junit-tests/pom.xml
              </environment>
              <environment>
                <os>win32</os>
-diff -ru eclipse.platform.releng.tychoeclipsebuilder/eclipse-junit-tests/src/main/resources/equinoxp2tests.properties eclipse.platform.releng.tychoeclipsebuilder/eclipse-junit-tests/src/main/resources/equinoxp2tests.properties
---- eclipse.platform.releng.tychoeclipsebuilder/eclipse-junit-tests/src/main/resources/equinoxp2tests.properties	0000-00-00 00:00:00.000000000 +0000
-+++ eclipse.platform.releng.tychoeclipsebuilder/eclipse-junit-tests/src/main/resources/equinoxp2tests.properties	0000-00-00 00:00:00.000000000 +0000
-@@ -1,11 +1,11 @@
- #Properties required by equinox p2 tests
- # Version from .../eclipse-junit-tests/src/main/resources/
- 
--org.eclipse.equinox.p2.reconciler.tests.platform.archive.linux-x86_64=\${basedir}/eclipse-platform-${buildId}-linux-gtk-x86_64.tar.gz
-+org.eclipse.equinox.p2.reconciler.tests.platform.archive.freebsd-amd64=\${basedir}/eclipse-platform-${buildId}-freebsd-gtk-amd64.tar.gz
- org.eclipse.equinox.p2.reconciler.tests.platform.archive.win32-x86_64=\${basedir}\\\\eclipse-platform-${buildId}-win32-x86_64.zip
- org.eclipse.equinox.p2.reconciler.tests.platform.archive.macosx-x86_64=\${basedir}/eclipse-platform-${buildId}-macosx-cocoa-x86_64.tar.gz
- 
--org.eclipse.equinox.p2.reconciler.tests.lastrelease.platform.archive.linux-x86_64=\${basedir}/eclipse-platform-4.14-linux-gtk-x86_64.tar.gz
-+org.eclipse.equinox.p2.reconciler.tests.lastrelease.platform.archive.freebsd-amd64=\${basedir}/eclipse-platform-4.14-freebsd-gtk-amd64.tar.gz
- org.eclipse.equinox.p2.reconciler.tests.lastrelease.platform.archive.win32-x86_64=\${basedir}\\\\eclipse-platform-4.14-win32-x86_64.zip
- org.eclipse.equinox.p2.reconciler.tests.lastrelease.platform.archive.macosx-x86_64=\${basedir}/eclipse-platform-4.14-macosx-cocoa-x86_64.tar.gz
- 
-diff -ru eclipse.platform.releng.tychoeclipsebuilder/eclipse-junit-tests/src/main/scripts/getPreviousRelease.sh eclipse.platform.releng.tychoeclipsebuilder/eclipse-junit-tests/src/main/scripts/getPreviousRelease.sh
---- eclipse.platform.releng.tychoeclipsebuilder/eclipse-junit-tests/src/main/scripts/getPreviousRelease.sh	0000-00-00 00:00:00.000000000 +0000
-+++ eclipse.platform.releng.tychoeclipsebuilder/eclipse-junit-tests/src/main/scripts/getPreviousRelease.sh	0000-00-00 00:00:00.000000000 +0000
-@@ -7,9 +7,9 @@
- 
- 
- mkdir -p workarea/${buildId}/eclipse-testing
--cp /home/files/buildzips/oxygen/R/R-4.14-201912100610/eclipse-platform-4.14-linux-gtk-x86_64.tar.gz ./workarea/${buildId}/eclipse-testing/platformLocation/
-+cp /home/files/buildzips/oxygen/R/R-4.14-201912100610/eclipse-platform-4.14-freebsd-gtk-amd64.tar.gz ./workarea/${buildId}/eclipse-testing/platformLocation/
- 
--cp /home/files/buildzips/oxygen/R/R-4.14-201912100610/eclipse-SDK-4.14-linux-gtk-x86_64.tar.gz ./workarea/${buildId}/eclipse-testing/
-+cp /home/files/buildzips/oxygen/R/R-4.14-201912100610/eclipse-SDK-4.14-freebsd-gtk-amd64.tar.gz ./workarea/${buildId}/eclipse-testing/
- 
- cp eclipse-junit-tests-${buildId}.zip workarea/${buildId}/eclipse-testing/
- 
 diff -ru eclipse.platform.releng.tychoeclipsebuilder/equinox/buildConfigs/equinox-launchers/build.xml eclipse.platform.releng.tychoeclipsebuilder/equinox/buildConfigs/equinox-launchers/build.xml
 --- eclipse.platform.releng.tychoeclipsebuilder/equinox/buildConfigs/equinox-launchers/build.xml	0000-00-00 00:00:00.000000000 +0000
 +++ eclipse.platform.releng.tychoeclipsebuilder/equinox/buildConfigs/equinox-launchers/build.xml	0000-00-00 00:00:00.000000000 +0000

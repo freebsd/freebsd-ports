@@ -7,8 +7,8 @@ diff -ru rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.freebsd.a
  Bundle-Vendor: %providerName
 -Bundle-SymbolicName: org.eclipse.equinox.launcher.gtk.linux.aarch64;singleton:=true
 +Bundle-SymbolicName: org.eclipse.equinox.launcher.gtk.freebsd.aarch64;singleton:=true
- Bundle-Version: 1.1.1100.qualifier
- Fragment-Host: org.eclipse.equinox.launcher;bundle-version="[1.0.0,1.5.0)"
+ Bundle-Version: 1.1.1200.qualifier
+ Fragment-Host: org.eclipse.equinox.launcher;bundle-version="[1.0.0,1.6.0)"
 -Eclipse-PlatformFilter: (& (osgi.ws=gtk) (osgi.os=linux) (osgi.arch=aarch64))
 -Bundle-Localization: launcher.gtk.linux.aarch64
 +Eclipse-PlatformFilter: (& (osgi.ws=gtk) (osgi.os=freebsd) (osgi.arch=aarch64))
@@ -23,7 +23,7 @@ diff -ru rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.freebsd.a
    <groupId>org.eclipse.equinox</groupId>
 -  <artifactId>org.eclipse.equinox.launcher.gtk.linux.aarch64</artifactId>
 +  <artifactId>org.eclipse.equinox.launcher.gtk.freebsd.aarch64</artifactId>
-   <version>1.1.1100-SNAPSHOT</version>
+   <version>1.1.1200-SNAPSHOT</version>
    <packaging>eclipse-plugin</packaging>
  
    <properties>
@@ -52,7 +52,7 @@ diff -ru rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.freebsd.a
  Bundle-Vendor: %providerName
 -Bundle-SymbolicName: org.eclipse.equinox.launcher.gtk.linux.x86_64;singleton:=true
 +Bundle-SymbolicName: org.eclipse.equinox.launcher.gtk.freebsd.amd64;singleton:=true
- Bundle-Version: 1.1.1100.qualifier
+ Bundle-Version: 1.1.1200.qualifier
  Fragment-Host: org.eclipse.equinox.launcher;bundle-version="[1.0.0,1.6.0)"
 -Eclipse-PlatformFilter: (& (osgi.ws=gtk) (osgi.os=linux) (osgi.arch=x86_64))
 -Bundle-Localization: launcher.gtk.linux.x86_64
@@ -78,7 +78,7 @@ diff -ru rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.freebsd.a
    <groupId>org.eclipse.equinox</groupId>
 -  <artifactId>org.eclipse.equinox.launcher.gtk.linux.x86_64</artifactId>
 +  <artifactId>org.eclipse.equinox.launcher.gtk.freebsd.amd64</artifactId>
-   <version>1.1.1100-SNAPSHOT</version>
+   <version>1.1.1200-SNAPSHOT</version>
    <packaging>eclipse-plugin</packaging>
  
    <properties>
@@ -110,7 +110,7 @@ diff -ru rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.freebsd.p
  Bundle-Vendor: %providerName
 -Bundle-SymbolicName: org.eclipse.equinox.launcher.gtk.linux.ppc64le;singleton:=true
 +Bundle-SymbolicName: org.eclipse.equinox.launcher.gtk.freebsd.powerpc64;singleton:=true
- Bundle-Version: 1.1.1100.qualifier
+ Bundle-Version: 1.1.1200.qualifier
  Fragment-Host: org.eclipse.equinox.launcher;bundle-version="[1.0.0,1.6.0)"
 -Eclipse-PlatformFilter: (& (osgi.ws=gtk) (osgi.os=linux) (osgi.arch=ppc64le))
 -Bundle-Localization: launcher.gtk.linux.ppc64le
@@ -126,7 +126,7 @@ diff -ru rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.freebsd.p
    <groupId>org.eclipse.equinox</groupId>
 -  <artifactId>org.eclipse.equinox.launcher.gtk.linux.ppc64le</artifactId>
 +  <artifactId>org.eclipse.equinox.launcher.gtk.freebsd.powerpc64</artifactId>
-   <version>1.1.1100-SNAPSHOT</version>
+   <version>1.1.1200-SNAPSHOT</version>
    <packaging>eclipse-plugin</packaging>
  
    <properties>

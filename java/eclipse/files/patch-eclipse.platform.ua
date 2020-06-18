@@ -43,7 +43,7 @@ diff -ru eclipse.platform.ua/org.eclipse.help.base/src/org/eclipse/help/internal
 diff -ru eclipse.platform.ua/org.eclipse.help.base/src/org/eclipse/help/internal/browser/BrowserManager.java eclipse.platform.ua/org.eclipse.help.base/src/org/eclipse/help/internal/browser/BrowserManager.java
 --- eclipse.platform.ua/org.eclipse.help.base/src/org/eclipse/help/internal/browser/BrowserManager.java	0000-00-00 00:00:00.000000000 +0000
 +++ eclipse.platform.ua/org.eclipse.help.base/src/org/eclipse/help/internal/browser/BrowserManager.java	0000-00-00 00:00:00.000000000 +0000
-@@ -102,6 +102,7 @@
+@@ -103,6 +103,7 @@
  				setDefaultBrowserID(BROWSER_ID_SYSTEM);
  			} else if (Constants.OS_AIX.equalsIgnoreCase(os)
  					|| (Constants.OS_HPUX.equalsIgnoreCase(os))
