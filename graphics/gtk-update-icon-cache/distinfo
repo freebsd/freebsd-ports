@@ -1,3 +1,3 @@
-TIMESTAMP = 1522240464
-SHA256 (gnome2/gtk+-2.24.32.tar.xz) = b6c8a93ddda5eabe3bfee1eb39636c9a03d2a56c7b62828b359bf197943c582e
-SIZE (gnome2/gtk+-2.24.32.tar.xz) = 12620860
+TIMESTAMP = 1580730312
+SHA256 (gnome/Community/gentoo-gtk-update-icon-cache-667cc0e1cdfd63a49703fe37228b0550e9f91f73_GL0.tar.gz) = 405b7d5147c3fedddf53ef411d69c4575550abfdcae1bfffaa89f17cddb33732
+SIZE (gnome/Community/gentoo-gtk-update-icon-cache-667cc0e1cdfd63a49703fe37228b0550e9f91f73_GL0.tar.gz) = 113939

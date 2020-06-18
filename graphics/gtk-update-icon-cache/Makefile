@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	gtk-update-icon-cache
-PORTVERSION=	2.24.32
+PORTVERSION=	3.24.20
 CATEGORIES=	graphics
-MASTER_SITES=	GNOME/sources/gtk+/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
-DISTNAME=	gtk+-${PORTVERSION}
-DIST_SUBDIR=	gnome2
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gtk-update-icon-cache utility from the Gtk+ toolkit
@@ -14,42 +12,19 @@ COMMENT=	Gtk-update-icon-cache utility from the Gtk+ toolkit
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS+=	update-mime-database:misc/shared-mime-info \
-		${LOCALBASE}/share/icons/hicolor/index.theme:misc/hicolor-icon-theme
+USES=		gettext gnome meson pkgconfig
+USE_GNOME=	gdkpixbuf2
+USE_GITLAB=	yes
+GL_SITE=	https://gitlab.gnome.org
+GL_ACCOUNT=	Community/gentoo
+GL_COMMIT=	667cc0e1cdfd63a49703fe37228b0550e9f91f73
 
-PORTSCOUT=	ignore:1
+OPTIONS_DEFINE=	MANPAGES
+OPTIONS_DEFAULT=MANPAGES
+OPTIONS_SUB=	yes
 
-USES=		gettext gmake gnome libtool localbase:ldflags pathfix perl5 \
-		pkgconfig tar:xz xorg
-USE_PERL5=	build
-MAKE_JOBS_UNSAFE=	yes
-USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-USE_GNOME=	atk pango gdkpixbuf2 introspection:build
-USE_XORG=	xext xrender x11 xinerama xi xrandr xcursor xfixes xdamage \
-		xcomposite
-PATCHDIR=	${.CURDIR}/../../x11-toolkits/gtk20/files
-CONFIGURE_ARGS=	--enable-static --with-xinput=yes
-BUILD_WRKSRC=	${WRKSRC}/gtk
-ALL_TARGET=	${PORTNAME}
-PLIST_FILES=	bin/gtk-update-icon-cache
-#		man/man1/gtk-update-icon-cache.1.gz
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-DGDK_PIXBUF_DISABLE_DEPRECATED||g' \
-		${WRKSRC}/configure
-
-pre-configure:
-# .if !exists() evaluates too early before cairo has a chance to be installed
-	@if ! pkg-config --exists cairo-xlib; then \
-		${ECHO_MSG} "${PKGNAME}: Needs cairo with X11 support enabled."; \
-		${FALSE}; \
-	fi
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/gtk/gtk-update-icon-cache \
-		${STAGEDIR}${PREFIX}/bin/
-#	${INSTALL_MAN} ${WRKSRC}/docs/reference/gtk/gtk-update-icon-cache.1 \
-#		${STAGEDIR}${PREFIX}/man/man1/
+MANPAGES_BUILD_DEPENDS=	docbook-xsl>0:textproc/docbook-xsl \
+			xsltproc:textproc/libxslt
+MANPAGES_MESON_TRUE=	man-pages
 
 .include <bsd.port.mk>
