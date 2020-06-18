@@ -21,6 +21,7 @@ USES=		gettext gnome meson localbase pkgconfig python:3.4+ tar:xz
 USE_GNOME=	gtk30 intlhack introspection
 USE_GSTREAMER1=	flac ogg pulse
 USE_LDCONFIG=	yes
+BINARY_ALIAS=	python3=${PYTHON_CMD}
 INSTALLS_ICONS=	yes
 GLIB_SCHEMAS=	org.gnome.SoundRecorder.gschema.xml
 
