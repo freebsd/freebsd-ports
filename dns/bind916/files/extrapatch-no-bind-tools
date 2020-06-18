@@ -1,6 +1,6 @@
 Exclude the "tools" from building and installing.
 
---- bin/Makefile.in.orig	2019-06-28 12:33:29 UTC
+--- bin/Makefile.in.orig	2020-06-10 21:01:43 UTC
 +++ bin/Makefile.in
 @@ -11,8 +11,8 @@ srcdir =	@srcdir@
  VPATH =		@srcdir@
@@ -13,9 +13,9 @@ Exclude the "tools" from building and installing.
  TARGETS =
  
  @BIND9_MAKE_RULES@
---- bin/tools/Makefile.in.orig	2019-06-28 12:33:29 UTC
+--- bin/tools/Makefile.in.orig	2020-06-10 21:01:43 UTC
 +++ bin/tools/Makefile.in
-@@ -41,10 +41,7 @@ SUBDIRS =
+@@ -43,10 +43,7 @@ SUBDIRS =
  
  DNSTAPTARGETS =	dnstap-read@EXEEXT@
  NZDTARGETS =	named-nzd2nzf@EXEEXT@
@@ -27,8 +27,8 @@ Exclude the "tools" from building and installing.
  
  DNSTAPSRCS  =	dnstap-read.c
  NZDSRCS  =	named-nzd2nzf.c
-@@ -120,21 +117,6 @@ dnstap:
- 	${INSTALL_DATA} ${srcdir}/dnstap-read.1 ${DESTDIR}${mandir}/man1
+@@ -103,16 +100,6 @@ dnstap:
+ 		${DESTDIR}${bindir}
  
  install:: ${TARGETS} installdirs @DNSTAP@ @NZD_TOOLS@
 -	${LIBTOOL_MODE_INSTALL} ${INSTALL_PROGRAM} arpaname@EXEEXT@ \
@@ -41,11 +41,6 @@ Exclude the "tools" from building and installing.
 -		${DESTDIR}${sbindir}
 -	${LIBTOOL_MODE_INSTALL} ${INSTALL_PROGRAM} mdig@EXEEXT@ \
 -		${DESTDIR}${bindir}
--	${INSTALL_DATA} ${srcdir}/arpaname.1 ${DESTDIR}${mandir}/man1
--	${INSTALL_DATA} ${srcdir}/named-journalprint.8 ${DESTDIR}${mandir}/man8
--	${INSTALL_DATA} ${srcdir}/named-rrchecker.1 ${DESTDIR}${mandir}/man1
--	${INSTALL_DATA} ${srcdir}/nsec3hash.8 ${DESTDIR}${mandir}/man8
--	${INSTALL_DATA} ${srcdir}/mdig.1 ${DESTDIR}${mandir}/man1
  
  uninstall::
- 	rm -f ${DESTDIR}${mandir}/man1/mdig.1
+ 	${LIBTOOL_MODE_UNINSTALL} rm -f \

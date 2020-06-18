@@ -5,10 +5,10 @@ PORTNAME=	bind
 PORTVERSION=	${ISCVERSION:S/-P/P/:S/b/.b/:S/a/.a/:S/rc/.rc/}
 .if defined(BIND_TOOLS_SLAVE)
 # dns/bind-tools here
-PORTREVISION=	1
+PORTREVISION=	0
 .else
 # dns/bind916 here
-PORTREVISION=	2
+PORTREVISION=	0
 .endif
 CATEGORIES=	dns net
 MASTER_SITES=	ISC/bind9/${ISCVERSION}
@@ -41,7 +41,7 @@ RUN_DEPENDS=	bind-tools>0:dns/bind-tools
 
 USES=		compiler:c11 cpe libedit pkgconfig ssl tar:xz
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.16.3
+ISCVERSION=	9.16.4
 
 CPE_VENDOR=	isc
 CPE_VERSION=	${ISCVERSION:C/-.*//}
@@ -75,10 +75,10 @@ CONFLICTS=	bind911 bind912 bind913 bind914 bind9-devel
 MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFAULT=	DLZ_FILESYSTEM GSSAPI_NONE IDN JSON LMDB PYTHON \
-			SIGCHASE TCP_FASTOPEN
+			SIGCHASE TCP_FASTOPEN MANPAGES
 OPTIONS_DEFINE=		DNSTAP DOCS FIXED_RRSET GEOIP IDN JSON LARGE_FILE LMDB \
 			OVERRIDECACHE PORTREVISION PYTHON QUERYTRACE SIGCHASE \
-			START_LATE TCP_FASTOPEN TUNING_LARGE
+			START_LATE TCP_FASTOPEN TUNING_LARGE MANPAGES
 
 OPTIONS_RADIO=		CRYPTO
 OPTIONS_RADIO_CRYPTO=	NATIVE_PKCS11
@@ -181,6 +181,8 @@ LARGE_FILE_CONFIGURE_ENABLE=	largefile
 LMDB_CONFIGURE_WITH=	lmdb=${LOCALBASE}
 LMDB_LIB_DEPENDS=	liblmdb.so:databases/lmdb
 
+MANPAGES_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
+
 OVERRIDECACHE_EXTRA_PATCHES=	${FILESDIR}/extrapatch-bind-min-override-ttl
 
 NATIVE_PKCS11_CONFIGURE_ENABLE=	native-pkcs11
@@ -225,12 +227,12 @@ SUB_LIST+=	ENGINES=${LOCALBASE}/lib/engines
 .endif
 
 post-patch:
-.for FILE in check/named-checkconf.8 named/named.8 nsupdate/nsupdate.1 \
-	rndc/rndc.8
+.for FILE in named-checkconf.8 named.8 nsupdate.1 \
+	rndc.8
 	@${REINPLACE_CMD} -e 's#/etc/named.conf#${ETCDIR}/named.conf#g' \
 		-e 's#/etc/rndc.conf#${ETCDIR}/rndc.conf#g' \
 		-e "s#/var\/run\/named\/named.pid#/var/run/named/pid#" \
-		${WRKSRC}/bin/${FILE}
+		${WRKSRC}/doc/man/${FILE}in
 .endfor
 
 .if !defined(BIND_TOOLS_SLAVE)
@@ -257,12 +259,13 @@ post-install:
 		${STAGEDIR}${ETCDIR}/rndc.conf.sample
 
 post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}/arm
-	${INSTALL_DATA} ${WRKSRC}/doc/arm/*.html ${STAGEDIR}${DOCSDIR}/arm
-	${INSTALL_DATA} ${WRKSRC}/doc/arm/Bv9ARM.pdf ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/CHANGES* ${WRKSRC}/HISTORY.md \
 		${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 .else
+
+post-install-MANPAGES-on:
+	@(cd ${WRKSRC}/doc/man && ${SETENV} ${MAKE_ENV} ${FAKEROOT} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
 
 # Can't use USE_PYTHON=autoplist
 post-install-PYTHON-on:
