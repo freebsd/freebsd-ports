@@ -90,6 +90,7 @@ include/igc/ocl_igc_shared/gtpin/gtpin_driver_common.h
 include/igc/ocl_igc_shared/gtpin/gtpin_driver_common_bti.h
 include/igc/ocl_igc_shared/gtpin/gtpin_ocl_interface.h
 include/visa/RelocationInfo.h
+@comment lib/igc/NOTICES.txt
 lib/libiga%%ARCH_SUFX%%.so
 lib/libiga%%ARCH_SUFX%%.so.1
 lib/libiga%%ARCH_SUFX%%.so.1.0.1
