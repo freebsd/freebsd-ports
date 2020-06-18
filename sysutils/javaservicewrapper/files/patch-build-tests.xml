@@ -1,0 +1,14 @@
+--- build-tests.xml.orig	2019-10-30 07:02:29 UTC
++++ build-tests.xml
+@@ -31,10 +31,7 @@
+  
+     <!-- Does Java include the JavaScript Engine ? -->
+     <condition property="java-includes-jsEngine">
+-        <and>
+-            <isfalse value="${is.java 1.5 or lower}"/>
+-            <istrue  value="${is.JavaSunOracleApple}"/>
+-        </and>
++        <javaversion atleast="1.8"/>
+     </condition>
+  
+     <!-- platform -->
