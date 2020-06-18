@@ -3,7 +3,7 @@
 
 PORTNAME=	rust
 PORTVERSION?=	1.44.1
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	lang
 MASTER_SITES=	https://static.rust-lang.org/dist/:src \
 		LOCAL/tobik/rust:bootstrap \
@@ -87,7 +87,7 @@ _CARGO_BOOTSTRAP=	${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}/cargo-${CARGO_B
 EXTRA_PATCHES+=	${PATCHDIR}/${ARCH}${BOOTSTRAPS_SUFFIX}
 .endif
 
-.if ${ARCH} == powerpc64
+.if defined(PPC_ABI) && ${PPC_ABI} == ELFv1
 # The bootstrap is hardcoded to use gcc9
 # but we can build with a newer or older compiler as provided by USE_GCC=yes
 BUILD_DEPENDS+=	gcc9:lang/gcc9
