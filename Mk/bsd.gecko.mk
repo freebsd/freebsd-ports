@@ -310,6 +310,7 @@ CFLAGS+=	-B${LOCALBASE}/bin
 LDFLAGS+=	-B${LOCALBASE}/bin
 . endif
 .elif ${ARCH:Mpowerpc*}
+BUILD_DEPENDS+=	as:devel/binutils
 . if ${ARCH} == "powerpc64"
 MOZ_EXPORT+=	UNAME_m="${ARCH}"
 . endif
