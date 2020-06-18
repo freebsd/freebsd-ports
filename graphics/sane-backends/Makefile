@@ -7,7 +7,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	https://gitlab.com/sane-project/backends/uploads/c3dd60c9e054b5dee1e7b01a7edc98b0/
 
 MAINTAINER=	tobik@FreeBSD.org
-COMMENT=	API for access to scanners, digitals camera, frame grabbers etc
+COMMENT=	API for access to scanners, digital cameras, frame grabbers, etc
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
