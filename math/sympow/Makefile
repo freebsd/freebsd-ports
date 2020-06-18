@@ -27,8 +27,9 @@ HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=Configure
 
 post-build:
+	mkdir -p ${WRKDIR}/home
 	for file in `${LS} ${WRKSRC}/datafiles/*.txt`; do	\
-		${WRKSRC}/sympow -txt2bin "`${GREP} -c AT $${file}`" <$${file} $${file%txt}bin; \
+		env HOME=${WRKDIR}/home ${WRKSRC}/sympow -txt2bin "`${GREP} -c AT $${file}`" <$${file} $${file%txt}bin; \
 	done
 
 post-install:
