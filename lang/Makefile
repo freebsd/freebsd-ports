@@ -319,6 +319,7 @@
     SUBDIR += sdcc
     SUBDIR += see
     SUBDIR += seed7
+    SUBDIR += silq
     SUBDIR += siod
     SUBDIR += sisc
     SUBDIR += sketchy

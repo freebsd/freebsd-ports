@@ -1,0 +1,11 @@
+Silq is a high-level programming language for quantum computing with a strong
+static type system.
+
+The compiler is accompanied by a large collection of example files, some of
+them implementing solutions to Microsoft's Q# Summer 2018 and Winter 2019
+coding contest on Codeforces.
+
+The project web-site provides detailed information on the language and its
+concepts and use.
+
+WWW: https://silq.ethz.ch/
