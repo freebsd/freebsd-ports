@@ -1,3 +1,3 @@
-TIMESTAMP = 1562456019
-SHA256 (gnome/gtk+-3.24.10.tar.xz) = 35a8f107e2b90fda217f014c0c15cb20a6a66678f6fd7e36556d469372c01b03
-SIZE (gnome/gtk+-3.24.10.tar.xz) = 20958300
+TIMESTAMP = 1570971851
+SHA256 (gnome/gtk+-3.24.20.tar.xz) = 2dac69f716e8d04ba7a95091589e2baaec95dcace932cb15839163db479b1df3
+SIZE (gnome/gtk+-3.24.20.tar.xz) = 22726768

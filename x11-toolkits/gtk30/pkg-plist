@@ -103,6 +103,7 @@ include/gtk-3.0/gtk/a11y/gtkexpanderaccessible.h
 include/gtk-3.0/gtk/a11y/gtkflowboxaccessible.h
 include/gtk-3.0/gtk/a11y/gtkflowboxchildaccessible.h
 include/gtk-3.0/gtk/a11y/gtkframeaccessible.h
+include/gtk-3.0/gtk/a11y/gtkheaderbaraccessible.h
 include/gtk-3.0/gtk/a11y/gtkiconviewaccessible.h
 include/gtk-3.0/gtk/a11y/gtkimageaccessible.h
 include/gtk-3.0/gtk/a11y/gtkimagecellaccessible.h
@@ -474,6 +475,7 @@ share/gir-1.0/Gdk-3.0.gir
 %%X11%%share/gir-1.0/GdkX11-3.0.gir
 share/gir-1.0/Gtk-3.0.gir
 %%DATADIR%%-3.0/gtkbuilder.rng
+%%DATADIR%%-3.0/valgrind/gtk.supp
 %%DATADIR%%-doc/html/gail-libgail-util3/gail-libgail-util3-GailMisc.html
 %%DATADIR%%-doc/html/gail-libgail-util3/gail-libgail-util3-GailTextUtil.html
 %%DATADIR%%-doc/html/gail-libgail-util3/gail-libgail-util3.devhelp2
@@ -1011,7 +1013,6 @@ share/gir-1.0/Gtk-3.0.gir
 %%DATADIR%%-doc/html/gtk3/gtk-migrating-smclient-GtkApplication.html
 %%DATADIR%%-doc/html/gtk3/gtk-migrating-theme-GtkStyleContext-engines.html
 %%DATADIR%%-doc/html/gtk3/gtk-migrating-unique-GtkApplication.html
-%%DATADIR%%-doc/html/gtk3/gtk-mir.html
 %%DATADIR%%-doc/html/gtk3/gtk-osx.html
 %%DATADIR%%-doc/html/gtk3/gtk-query-immodules-3.0.html
 %%DATADIR%%-doc/html/gtk3/gtk-query-settings.html
@@ -1100,6 +1101,7 @@ share/gir-1.0/Gtk-3.0.gir
 %%DATADIR%%-doc/html/gtk3/placessidebar.png
 %%DATADIR%%-doc/html/gtk3/platform-support.html
 %%DATADIR%%-doc/html/gtk3/popup-anchors.png
+%%DATADIR%%-doc/html/gtk3/popup-at.svg
 %%DATADIR%%-doc/html/gtk3/popup-flip.png
 %%DATADIR%%-doc/html/gtk3/popup-slide.png
 %%DATADIR%%-doc/html/gtk3/printdialog.png
@@ -1202,6 +1204,8 @@ share/locale/ca/LC_MESSAGES/gtk30-properties.mo
 share/locale/ca/LC_MESSAGES/gtk30.mo
 share/locale/ca@valencia/LC_MESSAGES/gtk30-properties.mo
 share/locale/ca@valencia/LC_MESSAGES/gtk30.mo
+share/locale/ckb/LC_MESSAGES/gtk30-properties.mo
+share/locale/ckb/LC_MESSAGES/gtk30.mo
 share/locale/crh/LC_MESSAGES/gtk30-properties.mo
 share/locale/crh/LC_MESSAGES/gtk30.mo
 share/locale/cs/LC_MESSAGES/gtk30-properties.mo
