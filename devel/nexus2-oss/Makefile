@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	nexus2
-PORTVERSION=	2.14.15
+PORTVERSION=	2.14.18
 DISTVERSIONSUFFIX=	01
 CATEGORIES=	devel www java
 MASTER_SITES=	https://download.sonatype.com/nexus/oss/
