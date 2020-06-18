@@ -1,4 +1,4 @@
---- src/text-editor-component.js.orig	2020-05-18 19:34:10 UTC
+--- src/text-editor-component.js.orig	2020-06-10 09:38:09 UTC
 +++ src/text-editor-component.js
 @@ -1812,7 +1812,7 @@ module.exports = class TextEditorComponent {
      // the paste event. And since we don't use the `paste` event for any
@@ -18,7 +18,7 @@
          model.insertText(clipboard.readText('selection'));
        return;
      }
-@@ -2846,7 +2846,7 @@ module.exports = class TextEditorComponent {
+@@ -2848,7 +2848,7 @@ module.exports = class TextEditorComponent {
    didChangeSelectionRange() {
      const { model } = this.props;
  

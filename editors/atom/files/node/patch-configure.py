@@ -1,6 +1,6 @@
---- configure.orig	2020-05-09 05:50:03 UTC
-+++ configure
-@@ -668,7 +668,7 @@ def get_nasm_version(asm):
+--- configure.py.orig	2020-06-16 06:19:09 UTC
++++ configure.py
+@@ -705,7 +705,7 @@ def get_nasm_version(asm):
  
  def get_llvm_version(cc):
    return get_version_helper(

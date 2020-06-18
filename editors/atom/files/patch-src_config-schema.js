@@ -1,6 +1,6 @@
---- src/config-schema.js.orig	2019-10-21 17:33:40 UTC
+--- src/config-schema.js.orig	2020-06-10 09:38:09 UTC
 +++ src/config-schema.js
-@@ -614,12 +614,12 @@ const configSchema = {
+@@ -620,12 +620,12 @@ const configSchema = {
    }
  };
  

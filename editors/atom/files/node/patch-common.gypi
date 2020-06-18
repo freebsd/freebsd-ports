@@ -1,6 +1,6 @@
---- common.gypi.orig	2020-05-09 05:51:01 UTC
+--- common.gypi.orig	2020-04-12 11:55:35 UTC
 +++ common.gypi
-@@ -455,15 +455,6 @@
+@@ -509,15 +509,6 @@
          'libraries': [ '-lelf' ],
        }],
        ['OS=="freebsd"', {
