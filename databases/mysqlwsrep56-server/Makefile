@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	mysqlwsrep
-PORTVERSION?=	5.6.46
+PORTVERSION?=	5.6.48
 DISTVERSIONPREFIX?=	wsrep_
-DISTVERSIONSUFFIX?=	-25.28
+DISTVERSIONSUFFIX?=	-25.30
 PORTREVISION?=	0
 CATEGORIES=	databases
 PKGNAMESUFFIX=	56-server
@@ -18,8 +18,6 @@ NOT_FOR_ARCHS=		aarch64 armv6 armv7 powerpc64
 NOT_FOR_ARCHS_REASON=	error: Unsupported platform
 
 RUN_DEPENDS=	bash:shells/bash \
-		lsof:sysutils/lsof \
-		netcat:net/netcat \
 		rsync:net/rsync \
 		socat:net/socat
 LIB_DEPENDS=	libevent.so:devel/libevent liblz4.so:archivers/liblz4
@@ -34,6 +32,7 @@ USES=		bison \
 		cmake:noninja \
 		compiler:c++11-lib \
 		compiler:c11 \
+		mysql:56 \
 		libedit \
 		perl5 \
 		shebangfix \
