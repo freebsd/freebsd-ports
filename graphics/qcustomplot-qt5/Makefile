@@ -34,11 +34,10 @@ do-build:
 			qcustomplot.cpp \
 			qcustomplot_moc.cpp \
 			-o ${WRKSRC}/libQCustomPlot${SUFFIX}.so \
-			-Wl,-soname,libQCustomPlot${SUFFIX}.so && \
-		${STRIP_CMD} ${WRKSRC}/libQCustomPlot${SUFFIX}.so
+			-Wl,-soname,libQCustomPlot${SUFFIX}.so
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/qcustomplot.h ${STAGEDIR}${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/libQCustomPlot${SUFFIX}.so ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_LIB} ${WRKSRC}/libQCustomPlot${SUFFIX}.so ${STAGEDIR}${PREFIX}/lib
 
 .include <bsd.port.mk>
