@@ -14,7 +14,7 @@ LICENSE=	EPL
 
 ONLY_FOR_ARCHS=	amd64 i386 powerpc64
 
-USES=		gl gnome pkgconfig zip:infozip xorg
+USES=		compiler:c++11-lang gl gnome pkgconfig zip:infozip xorg
 
 USE_ANT=	yes
 USE_GL=		glu gl
