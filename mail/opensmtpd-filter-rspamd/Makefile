@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	opensmtpd-filter-rspamd
-PORTVERSION=	0.1.5
+PORTVERSION=	0.1.6
 CATEGORIES=	mail
 
 MAINTAINER=	manu@FreeBSD.Org
