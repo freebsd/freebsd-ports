@@ -11,7 +11,7 @@ COMMENT=	Binary I/O stream class library
 
 LICENSE=	LGPL21
 
-USES=		autoreconf libtool pathfix
+USES=		autoreconf compiler:c11 libtool pathfix
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 
