@@ -33,11 +33,8 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	atk cairo gdkpixbuf2 introspection:build pango
 USES=		compiler:c11 gettext gmake gnome libtool localbase \
-		pathfix perl5 pkgconfig tar:xz xorg
-USE_XORG=	xext xrender x11 xinerama xi xrandr xcursor xfixes xdamage \
-		xcomposite
-CONFIGURE_ARGS=	--enable-x11-backend \
-		--enable-introspection
+		pathfix perl5 pkgconfig tar:xz
+CONFIGURE_ARGS=	--enable-introspection
 CPPFLAGS+=	-fno-omit-frame-pointer
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
@@ -51,13 +48,14 @@ GLIB_SCHEMAS=	org.gtk.Demo.gschema.xml \
 		org.gtk.Settings.EmojiChooser.gschema.xml \
 		org.gtk.Settings.FileChooser.gschema.xml
 
-OPTIONS_DEFINE=	ATK_BRIDGE CUPS CLOUDPRINT COLORD DEBUG BROADWAY WAYLAND
-OPTIONS_DEFAULT=ATK_BRIDGE CUPS COLORD BROADWAY WAYLAND
+OPTIONS_DEFINE=	ATK_BRIDGE CUPS CLOUDPRINT COLORD DEBUG BROADWAY WAYLAND X11
+OPTIONS_DEFAULT=ATK_BRIDGE CUPS COLORD BROADWAY WAYLAND X11
 OPTIONS_SUB=	yes
 
-ATK_BRIDGE_DESC=AT-SPI ATK bridge support
+ATK_BRIDGE_DESC=AT-SPI ATK bridge support (requires X11)
 ATK_BRIDGE_CONFIGURE_WITH=	atk-bridge
 ATK_BRIDGE_LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-atk
+ATK_BRIDGE_IMPLIES=	X11
 
 BROADWAY_DESC=	Enable GDK Broadway backend for showing GTK+ in the webbrowser using HTML5 and web sockets.
 BROADWAY_CONFIGURE_ENABLE=	broadway-backend
@@ -89,11 +87,16 @@ WAYLAND_RUN_DEPENDS=	wayland-protocols>=0:graphics/wayland-protocols
 WAYLAND_USES=		gl
 WAYLAND_USE=		GL=egl
 
+X11_DESC=		GDK X11 backend
+X11_CONFIGURE_ENABLE=	x11-backend
+X11_USES=		xorg
+X11_USE=		XORG=x11,xcomposite,xcursor,xdamage,xext,xfixes,xi,xinerama,xrandr,xrender
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|[{]libdir[}]/locale|{datadir}/locale|g' \
 		${WRKSRC}/configure
 
-pre-configure:
+pre-configure-X11-on:
 # .if !exists() evaluates too early before cairo has a chance to be installed
 	@if ! pkg-config --exists cairo-xlib; then \
 		${ECHO_MSG} "${PKGNAME}: Needs cairo with X11 support enabled."; \
