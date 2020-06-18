@@ -2,11 +2,10 @@
 
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
-DISTVERSION=	4.2.7
+DISTVERSION=	4.2.8
 CATEGORIES=	databases net
 MASTER_SITES=	https://fastdl.mongodb.org/src/ \
-		http://fastdl.mongodb.org/src/ \
-		http://download.mongodb.org/src/
+		http://fastdl.mongodb.org/src/
 PKGNAMESUFFIX=	${DISTVERSION:R:S/.//}
 DISTNAME=	mongodb-src-${DISTVERSIONPREFIX}${DISTVERSION}
 
@@ -18,7 +17,7 @@ LICENSE=	SSPL APACHE20
 LICENSE_COMB=	multi
 
 ONLY_FOR_ARCHS=	aarch64 amd64
-ONLY_FOR_ARCHS_REASON=	"Only supported on amd64 and aarch64 (i386 deprecated in v3)"
+ONLY_FOR_ARCHS_REASON=	"Only ported to amd64 and aarch64 on FreeBSD. Upstream supports arm64, ppc64le, s390x and x86-64."
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheetah3>0:devel/py-cheetah3@${PY_FLAVOR} \
 		${PY_TYPING} \
@@ -38,7 +37,7 @@ LICENSE_NAME_SSPL=	Server Side Public License
 LICENSE_PERMS_SSPL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 CONFLICTS_BUILD=	mongo-cxx-driver
-CONFLICTS_INSTALL=	mongodb3[46] mongodb40
+CONFLICTS_INSTALL=	mongodb36 mongodb40
 
 OPTIONS_DEFINE=	SASL SSL
 OPTIONS_DEFAULT=SASL SSL
