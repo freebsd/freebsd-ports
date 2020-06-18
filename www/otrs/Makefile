@@ -2,8 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	otrs
-DISTVERSION=	6_0_25
 DISTVERSIONPREFIX=	rel-
+DISTVERSION=	6_0_25
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	m.tsatsenko@gmail.com
@@ -80,7 +81,7 @@ SUB_FILES=	pkg-message
 SUB_LIST=	OTRS_USER=${USERS} OTRS_GROUP=${USERS} WWWOWN=${WWWOWN}
 NO_ARCH=	YES
 
-ROOT_DIRS_LIST=	Kernel bin scripts
+ROOT_DIRS_LIST=	Kernel bin scripts doc
 BIN_DIRS_LIST=	"" cgi-bin fcgi-bin
 PM_DIRS_LIST=	Kernel Kernel/Config Kernel/Config/Files Kernel/Language \
 		Modules Kernel/Output/HTML Kernel/Output/HTML/Lite \

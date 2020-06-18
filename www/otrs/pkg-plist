@@ -3213,6 +3213,7 @@ otrs/var/webservices/examples/Base.pm
 @group
 @owner root
 @group wheel
+@dir otrs/doc
 @dir otrs/scripts/DBUpdateTo6
 @dir otrs/scripts
 @dir otrs/var/article
