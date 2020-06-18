@@ -888,6 +888,7 @@
     SUBDIR += py-yaswfp
     SUBDIR += pymorph
     SUBDIR += qcomicbook
+    SUBDIR += qcustomplot-qt5
     SUBDIR += qgis
     SUBDIR += qgis-ltr
     SUBDIR += qiv
