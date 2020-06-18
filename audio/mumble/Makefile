@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mumble
-PORTVERSION=	1.3.0
-PORTREVISION=	4
+PORTVERSION=	1.3.1
 CATEGORIES=	audio
 
 MAINTAINER=	feld@FreeBSD.org
@@ -35,10 +34,10 @@ GH_TUPLE=	mumble-voip:mumble:${DISTVERSION} \
 		mumble-voip:celt-0.7.0:5a16cda:mumble_celt_0_7/3rdparty/celt-0.7.0-src \
 		mumble-voip:celt-0.11.0:e18de77:mumble_celt_0_11/3rdparty/celt-0.11.0-src \
 		mumble-voip:mach_override:919148f:mumble_mach_override/3rdparty/mach-override-src \
-		mumble-voip:minhook:9fbd087:mumble_minhook/3rdparty/minhook-src \
+		mumble-voip:minhook:5e338f8:mumble_minhook/3rdparty/minhook-src \
 		mumble-voip:rnnoise:b30f2bb:mumble_rnnoise/3rdparty/rnnoise-src \
 		mumble-voip:sbcelt:045493d:mumble_sbcelt/3rdparty/sbcelt-src \
-		mumble-voip:mumble-theme:7dfb1e9:mumble_theme/themes/Mumble
+		mumble-voip:mumble-theme:9467fe8:mumble_theme/themes/Mumble
 
 USE_QT=		buildtools_build core gui l10n linguist_build network opengl sql sql-sqlite3_run svg widgets xml
 USE_LDCONFIG=	yes
