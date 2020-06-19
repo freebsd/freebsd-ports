@@ -2,20 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	Pint
-PORTVERSION=	0.8.1
+PORTVERSION=	0.11
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	alexander.nusov@nfvexpress.com
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Physical quantities module
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=0:devel/py-setuptools_scm@${PY_FLAVOR}
+
+USES=		python:3.6+ shebangfix
+USE_PYTHON=	autoplist concurrent distutils
+
 NO_ARCH=	yes
 
-USES=		python
-USE_PYTHON=	autoplist distutils
+SHEBANG_FILES=	pint/pint-convert
 
 .include <bsd.port.mk>
