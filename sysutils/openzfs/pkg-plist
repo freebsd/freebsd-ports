@@ -12,6 +12,7 @@ etc/zfs/zfs-functions
 etc/zfs/zpool.d/ata_err
 etc/zfs/zpool.d/cmd_to
 etc/zfs/zpool.d/defect
+etc/zfs/zpool.d/dm-deps
 etc/zfs/zpool.d/enc
 etc/zfs/zpool.d/encdev
 etc/zfs/zpool.d/fault_led
@@ -37,7 +38,6 @@ etc/zfs/zpool.d/rep_ucor
 etc/zfs/zpool.d/serial
 etc/zfs/zpool.d/ses
 etc/zfs/zpool.d/size
-etc/zfs/zpool.d/slaves
 etc/zfs/zpool.d/slot
 etc/zfs/zpool.d/smart
 etc/zfs/zpool.d/smart_test
@@ -333,6 +333,7 @@ lib/libzpool.so.4.0.0
 libexec/zfs/zpool.d/ata_err
 libexec/zfs/zpool.d/cmd_to
 libexec/zfs/zpool.d/defect
+libexec/zfs/zpool.d/dm-deps
 libexec/zfs/zpool.d/enc
 libexec/zfs/zpool.d/encdev
 libexec/zfs/zpool.d/fault_led
@@ -358,7 +359,6 @@ libexec/zfs/zpool.d/rep_ucor
 libexec/zfs/zpool.d/serial
 libexec/zfs/zpool.d/ses
 libexec/zfs/zpool.d/size
-libexec/zfs/zpool.d/slaves
 libexec/zfs/zpool.d/slot
 libexec/zfs/zpool.d/smart
 libexec/zfs/zpool.d/smart_test
@@ -1595,6 +1595,10 @@ share/pkgconfig/libzfs_core.pc
 %%TESTS%%share/zfs/zfs-tests/tests/functional/exec/exec_001_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/exec/exec_002_neg.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/exec/setup.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/fallocate/cleanup.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/fallocate/fallocate_prealloc.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/fallocate/fallocate_punch-hole.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/fallocate/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/fault/auto_offline_001_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/fault/auto_online_001_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/fault/auto_replace_001_pos.ksh
@@ -2058,6 +2062,7 @@ share/pkgconfig/libzfs_core.pc
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/rsend_021_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/rsend_022_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/rsend_024_pos.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send-L_toggle.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send-c_embedded_blocks.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send-c_incremental.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send-c_lz4_disabled.ksh
@@ -2172,6 +2177,7 @@ share/pkgconfig/libzfs_core.pc
 %%TESTS%%share/zfs/zfs-tests/tests/functional/trim/trim.kshlib
 %%TESTS%%share/zfs/zfs-tests/tests/functional/trim/trim_config.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/trim/trim_integrity.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/trim/trim_l2arc.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/truncate/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/truncate/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/truncate/truncate.cfg
