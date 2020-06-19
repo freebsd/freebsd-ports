@@ -1,6 +1,6 @@
---- stepmake/stepmake/texinfo-vars.make.orig	2020-03-01 14:00:51 UTC
+--- stepmake/stepmake/texinfo-vars.make.orig	2020-04-26 09:45:49 UTC
 +++ stepmake/stepmake/texinfo-vars.make
-@@ -31,7 +31,7 @@ DO_TEXI_DEP = ( echo ./$@: $(call scan-texi,$<) > $(ba
+@@ -26,7 +26,7 @@ DO_TEXI_DEP = ( echo ./$@: $(call scan-texi,$<) > $(ba
  
  TEXINFO_PAPERSIZE_OPTION= $(if $(findstring $(PAPERSIZE),a4),,-t @afourpaper)
  

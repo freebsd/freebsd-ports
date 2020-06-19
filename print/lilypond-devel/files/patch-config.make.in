@@ -1,11 +1,11 @@
---- config.make.in.orig	2020-02-04 16:12:57 UTC
+--- config.make.in.orig	2020-04-09 12:55:56 UTC
 +++ config.make.in
-@@ -73,7 +73,7 @@ sharedstatedir = @sharedstatedir@
- stepmake = @stepmake@
- 
+@@ -96,7 +96,7 @@ mandir = @mandir@
+ package = lilypond
  package_datadir = $(datadir)/$(package)
+ package_docdir = $(docdir)/$(package)
 -package_infodir = $(infodir)/$(package)
 +package_infodir = $(infodir)
  package_libdir = $(libdir)/$(package)
- package_docdir = $(docdir)/$(package)
- package_omfdir = $(omfdir)/$(package)
+ prefix = @prefix@
+ program_prefix = @program_prefix@

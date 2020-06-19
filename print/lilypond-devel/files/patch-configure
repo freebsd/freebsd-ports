@@ -1,27 +1,11 @@
---- configure.orig	2020-03-01 14:00:51 UTC
+--- configure.orig	2020-04-26 09:45:49 UTC
 +++ configure
-@@ -2298,13 +2298,8 @@ $as_echo_n "checking $r version... " >&6; }
-     ## for compatibility reasons.
- 
-     ## grab the first version number in --version output.
--    eval _ver=\"\`("$exe" --version || "$exe" -V) 2>&1 |
--        grep -E '(^| )[0-9][0-9]*\.[0-9]' |
--        head -n 1 |
--        tr ' ' '\n' |
--        sed 's/\([0-9][0-9]*\.[0-9][0-9.]*\).*/\1/g' |
--        grep -E '(^| )[0-9][0-9]*\.[0-9]' |
--        head -n 1\`\"
-+    eval _ver=\"\`("$exe" --version || "$exe" -V) 2>/dev/null |
-+        awk '$1 ~ "fontforge" { print $2 }'\`\"
- 
-     if test -z "$_ver"; then
-         ## If empty, try date [fontforge]
-@@ -11631,71 +11626,10 @@ test -n "$PKG_CONFIG" || PKG_CONFIG="no"
+@@ -9087,71 +9087,10 @@ test -n "$PKG_CONFIG" || PKG_CONFIG="no"
      if test $? -eq 0; then
          if test -n "0.9.0" -o -n ""; then
  
 -    r="`eval echo '$'"PKG_CONFIG"`"
--    { $as_echo "$as_me:$LINENO: checking $r version" >&5
+-    { $as_echo "$as_me:${as_lineno-$LINENO}: checking $r version" >&5
 -$as_echo_n "checking $r version... " >&6; }
 -    exe=`
 -    ## which doesn't work in ash, if /usr/bin/which isn't installed
@@ -82,7 +66,7 @@
 -    }
 -    {printf "%.0f\n", $1*1000000 + $2*1000 + three}'
 -`
--    { $as_echo "$as_me:$LINENO: result: $ver" >&5
+-    { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ver" >&5
 -$as_echo "$ver" >&6; }
 -    if test "$num" -lt "$min"; then
 -
@@ -91,11 +75,10 @@
      eval "REQUIRED"=\"`eval echo \"'$'REQUIRED\" \""$r >= 0.9.0 (installed: $ver)"\"`\"
  
      fi
-@@ -15001,21 +14935,6 @@ $as_echo "$ver" >&6; }
- 
+@@ -11579,21 +11518,7 @@ $as_echo "$ver" >&6; }
      eval "$DOCUMENTATION_REQUIRED"=\"`eval echo \"'$'$DOCUMENTATION_REQUIRED\" \""$r >= 1.82 (installed: $ver)"\"`\"
  
--    fi
+     fi
 -    if test -n "1.82"; then
 -        max=`
 -    echo "1.82" | awk -F. '
@@ -106,10 +89,11 @@
 -    {printf "%.0f\n", $1*1000000 + $2*1000 + three}'
 -`
 -        if test "$num" -gt "$max"; then
--
+ 
 -    eval "$DOCUMENTATION_REQUIRED"=\"`eval echo \"'$'$DOCUMENTATION_REQUIRED\" \""$r <= 1.82 (installed: $ver)"\"`\"
 -
 -        fi
-     fi
+-    fi
      vervar="`echo TEXI2HTML | tr 'a-z' 'A-Z'`_VERSION"
      eval `echo $vervar=$num`
+ ##    AC_SUBST(`eval echo $vervar`)
