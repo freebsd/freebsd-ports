@@ -2,27 +2,39 @@ bin/cvtsudoers
 bin/sudo
 bin/sudoedit
 bin/sudoreplay
-@sample etc/sudoers.dist etc/sudoers
 @sample etc/pam.d/sudo.default etc/pam.d/sudo
+@sample etc/sudo.conf.sample
+@sample etc/sudo_logsrvd.conf.sample
+@sample etc/sudoers.dist etc/sudoers
 include/sudo_plugin.h
+libexec/sudo/audit_json.so
 libexec/sudo/group_file.so
 libexec/sudo/libsudo_util.so
 libexec/sudo/libsudo_util.so.0
 libexec/sudo/libsudo_util.so.0.0.0
+%%PYTHON%%libexec/sudo/python_plugin.so
+libexec/sudo/sample_approval.so
 libexec/sudo/sudo_noexec.so
 libexec/sudo/sudoers.so
 libexec/sudo/system_group.so
 man/man1/cvtsudoers.1.gz
 man/man5/sudo.conf.5.gz
+man/man5/sudo_logsrv.proto.5.gz
+man/man5/sudo_logsrvd.conf.5.gz
 man/man5/sudoers.5.gz
 man/man5/sudoers_timestamp.5.gz
 %%LDAP%%man/man5/sudoers.ldap.5.gz
 man/man8/sudo.8.gz
+man/man8/sudo_logsrvd.8.gz
 man/man8/sudo_plugin.8.gz
+man/man8/sudo_plugin_python.8.gz
+man/man8/sudo_sendlog.8.gz
 man/man8/sudoedit.8.gz
 man/man8/sudoreplay.8.gz
 man/man8/visudo.8.gz
 sbin/visudo
+sbin/sudo_logsrvd
+sbin/sudo_sendlog
 %%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/HISTORY
@@ -38,8 +50,16 @@ sbin/visudo
 %%LDAP%%%%PORTDOCS%%%%DOCSDIR%%/schema.olcSudo
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pam.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sudo.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sudo_logsrvd.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sudoers
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/syslog.conf
+%%PYTHON%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_approval_plugin.py
+%%PYTHON%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_audit_plugin.py
+%%PYTHON%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_conversation.py
+%%PYTHON%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_debugging.py
+%%PYTHON%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_group_plugin.py
+%%PYTHON%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_io_plugin.py
+%%PYTHON%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_policy_plugin.py
 %%NLS%%share/locale/ast/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/sudoers.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/sudo.mo
@@ -85,6 +105,8 @@ sbin/visudo
 %%NLS%%share/locale/pt/LC_MESSAGES/sudoers.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/sudoers.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/sudo.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/sudoers.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/sudoers.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/sudo.mo

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sudo
-PORTVERSION=	1.8.31p1
+PORTVERSION=	1.9.1
 CATEGORIES=	security
 MASTER_SITES=	SUDO
 
@@ -29,7 +29,7 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--with-rundir=/var/run/sudo
 
 OPTIONS_DEFINE=	LDAP INSULTS DISABLE_ROOT_SUDO DISABLE_AUTH NOARGS_SHELL \
-		AUDIT OPIE PAM NLS SSSD DOCS EXAMPLES
+		AUDIT OPIE PAM PYTHON NLS SSSD DOCS EXAMPLES
 OPTIONS_RADIO=	KERBEROS
 OPTIONS_DEFAULT=	AUDIT PAM
 OPTIONS_SUB=	yes
@@ -41,6 +41,7 @@ NOARGS_SHELL_DESC=	Run a shell if no arguments are given
 AUDIT_DESC=	Enable BSM audit support
 KERBEROS_DESC=	Enable Kerberos 5 authentication (no PAM support)
 OPIE_DESC=	Enable one-time passwords (no PAM support)
+PYTHON_DESC=	Enable python plugin support
 SSSD_DESC=	Enable SSSD backend support.
 
 PAM_PREVENTS=	OPIE GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT
@@ -75,6 +76,8 @@ NOARGS_SHELL_CONFIGURE_ENABLE=	noargs-shell
 AUDIT_CONFIGURE_WITH=	bsm-audit
 PAM_CONFIGURE_ON=	--with-pam
 OPIE_CONFIGURE_ON=	--with-opie
+PYTHON_USES=	python
+PYTHON_CONFIGURE_ENABLE=	python
 SSSD_CONFIGURE_ON=	--with-sssd
 SSSD_RUN_DEPENDS=	sssd:security/sssd
 
@@ -107,12 +110,19 @@ post-patch:
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/pam.conf ${STAGEDIR}${PREFIX}/etc/pam.d/sudo.default
+	${MV} ${STAGEDIR}${PREFIX}/etc/sudo.conf ${STAGEDIR}${PREFIX}/etc/sudo.conf.sample
+	${MV} ${STAGEDIR}${PREFIX}/etc/sudo_logsrvd.conf ${STAGEDIR}${PREFIX}/etc/sudo_logsrvd.conf.sample
 	${RM} ${STAGEDIR}${PREFIX}/etc/sudoers
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/cvtsudoers
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/sudoreplay
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/sudo_logsrvd
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/sudo_sendlog
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/visudo
-.for f in group_file.so libsudo_util.so sudoers.so system_group.so
+.for f in audit_json.so group_file.so libsudo_util.so sample_approval.so sudoers.so system_group.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/sudo/${f}
 .endfor
+
+post-install-PYTHON-on:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/sudo/python_plugin.so
 
 .include <bsd.port.mk>
