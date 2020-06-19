@@ -1,3 +1,4 @@
-Standalone version of django.utils.feedgenerator
+FeedGenerator is a standalone version of Django’s feedgenerator module. It has
+evolved over time and includes numerous enhancements
 
 WWW: https://github.com/getpelican/feedgenerator
