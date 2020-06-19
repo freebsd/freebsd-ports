@@ -3,13 +3,13 @@ bin/adig
 bin/ahost
 include/ares.h
 include/ares_build.h
-include/ares_rules.h
 include/ares_dns.h
+include/ares_rules.h
 include/ares_version.h
 lib/libcares.a
 lib/libcares.so
 lib/libcares.so.2
-lib/libcares.so.2.3.0
+lib/libcares.so.2.4.0
 libdata/pkgconfig/libcares.pc
 man/man3/ares_cancel.3.gz
 man/man3/ares_create_query.3.gz
@@ -22,8 +22,10 @@ man/man3/ares_fds.3.gz
 man/man3/ares_free_data.3.gz
 man/man3/ares_free_hostent.3.gz
 man/man3/ares_free_string.3.gz
+man/man3/ares_freeaddrinfo.3.gz
 man/man3/ares_get_servers.3.gz
 man/man3/ares_get_servers_ports.3.gz
+man/man3/ares_getaddrinfo.3.gz
 man/man3/ares_gethostbyaddr.3.gz
 man/man3/ares_gethostbyname.3.gz
 man/man3/ares_gethostbyname_file.3.gz

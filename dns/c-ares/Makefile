@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	c-ares
-PORTVERSION=	1.15.0
-PORTREVISION=	1
+PORTVERSION=	1.16.1
 CATEGORIES=	dns
 MASTER_SITES=	https://c-ares.haxx.se/download/ \
-		http://obsd.isc.org/pub/OpenBSD/distfiles/ \
 		ZI
 
 MAINTAINER=	zi@FreeBSD.org
