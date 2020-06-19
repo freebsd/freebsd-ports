@@ -1,10 +1,11 @@
 Simple Viewer is small and simple OpenGL based image viewer.  Its features:
 
+  - Supported formats: PNG, JPEG, PSD, XCF, SVG, GIF, TIFF, TARGA,
+    ICO, BMP, PNM, DDS, BMP, XWD, SCR (ZX-Spectrum screen), XPM, WebP
   - Lightweight and fast: utilizes hardware-accelerated video card
   - GIF animation, embedded ICC profiles, and Exif tags support
-  - Very simple interface, minimum dependencies
+  - Very simple interface, minimum dependencies, does not require any
+    specific desktop environment
   - Suitable as default (general-purpose) desktop image viewer
-  - Desktop independent: does not require any specific desktop environment
-  - Open source, licensed under GNU GPLv2
 
 WWW: https://bitbucket.org/andreyu/simple-viewer-gl

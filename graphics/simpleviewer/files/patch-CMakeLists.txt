@@ -9,3 +9,22 @@
  else()
      message(STATUS "*       Debug Build       *")
      add_definitions("-DDEBUG" )
+@@ -316,7 +316,6 @@ endif()
+ message(STATUS "***************************")
+ 
+ add_subdirectory(third-party/imgui)
+-add_subdirectory(third-party/lz4)
+ 
+ include_directories("src")
+ 
+@@ -349,8 +348,8 @@ else()
+     add_executable(sviewgl ${SVIEW_SOURCES})
+ endif()
+ 
+-add_dependencies(sviewgl ImGui LZ4)
+-target_link_libraries(sviewgl ImGui LZ4)
++add_dependencies(sviewgl ImGui)
++target_link_libraries(sviewgl ImGui lz4)
+ 
+ if(OPENGL_FOUND)
+     target_link_libraries(sviewgl ${OPENGL_LIBRARY})
