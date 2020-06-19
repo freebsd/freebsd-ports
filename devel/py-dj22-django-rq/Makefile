@@ -13,6 +13,8 @@ COMMENT=	Provides Django integration for RQ (Redis Queue)
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=	Obsolete, please use www/py-django-rq instead
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django22>=2.0:www/py-django22@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}redis>=3:databases/py-redis@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rq>=1.2:devel/py-rq@${PY_FLAVOR}
