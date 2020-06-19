@@ -20,6 +20,16 @@ To enable evdev in such a device, run the following:
 To make it persistent across reboots, add the following to /etc/sysctl.conf:
 
 kern.evdev.rcpt_mask=6
+
+In case you're using a serial mouse or any other mouse that *only* works over
+sysmouse(4) and moused(8) on an evdev enabled kernel, please run this:
+
+# sysctl kern.evdev.rcpt_mask=3
+
+To make it persistent across reboots, add to this /etc/sysctl.conf:
+
+kern.evdev.rcpt_mask=3
+
 EOM
 }
 ]
