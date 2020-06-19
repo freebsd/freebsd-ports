@@ -2,7 +2,7 @@
 { type: install
   message: <<EOM
 There is no Tensorflow port currently in FreeBSD ports tree that is required
-by Keras by default. To make Keras work with Theano backend, one need to modify
+by Keras by default. To make Keras work with Theano backend, one needs to modify
 theirs $HOME/.keras/keras.json file and set "backend" option to "theano".
 EOM
 }
