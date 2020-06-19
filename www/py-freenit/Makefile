@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	freenit
-PORTVERSION=	0.1.8
+PORTVERSION=	0.1.9
 CATEGORIES=	www devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -39,7 +39,7 @@ MYSQL_DESC=	Support for MySQL database using PeeWee
 PGSQL_DESC=	Support for PostgreSQL database using PeeWee
 MONGO_DESC=	Support for MongoDB using Flask-MongoEngine
 
-MIGRATE_DEP=	 	${PYTHON_PKGNAMEPREFIX}peewee_migrate>=1.1.6:databases/py-peewee_migrate@${PY_FLAVOR}
+MIGRATE_DEP=		${PYTHON_PKGNAMEPREFIX}peewee_migrate>=1.1.6:databases/py-peewee_migrate@${PY_FLAVOR}
 SQLITE_USES=		sqlite
 SQLITE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}peewee>0:databases/py-peewee@${PY_FLAVOR} \
 			${MIGRATE_DEP}
