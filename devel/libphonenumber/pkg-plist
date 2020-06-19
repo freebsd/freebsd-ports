@@ -3,9 +3,17 @@ include/phonenumbers/base/basictypes.h
 include/phonenumbers/base/logging.h
 include/phonenumbers/base/memory/scoped_ptr.h
 include/phonenumbers/base/memory/singleton.h
+include/phonenumbers/base/memory/singleton_boost.h
 include/phonenumbers/base/memory/singleton_posix.h
+include/phonenumbers/base/memory/singleton_stdmutex.h
+include/phonenumbers/base/memory/singleton_unsafe.h
+include/phonenumbers/base/memory/singleton_win32.h
 include/phonenumbers/base/synchronization/lock.h
+include/phonenumbers/base/synchronization/lock_boost.h
 include/phonenumbers/base/synchronization/lock_posix.h
+include/phonenumbers/base/synchronization/lock_stdmutex.h
+include/phonenumbers/base/synchronization/lock_unsafe.h
+include/phonenumbers/base/synchronization/lock_win32.h
 include/phonenumbers/base/template_util.h
 include/phonenumbers/base/thread_checker.h
 include/phonenumbers/callback.h
