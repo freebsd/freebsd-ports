@@ -3,6 +3,7 @@ include/magic.h
 lib/libmagic.so
 lib/libmagic.so.1
 lib/libmagic.so.1.0.0
+libdata/pkgconfig/libmagic.pc
 man/man1/file.1.gz
 man/man3/libmagic.3.gz
 man/man5/magic.5.gz
