@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	azure_sdk
-PORTVERSION=	0.58.1
+PORTVERSION=	0.59.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -62,10 +62,10 @@ RUN_DEPENDS=	rubygem-azure-storage>=0.15.0.preview<0.15:devel/rubygem-azure-stor
 		rubygem-azure_mgmt_container_instance>=0.17.5<0.18:devel/rubygem-azure_mgmt_container_instance \
 		rubygem-azure_mgmt_container_registry>=0.18.4<0.19:devel/rubygem-azure_mgmt_container_registry \
 		rubygem-azure_mgmt_container_service>=0.20.2<0.21:devel/rubygem-azure_mgmt_container_service \
-		rubygem-azure_mgmt_cosmosdb>=0.21.1<0.22:devel/rubygem-azure_mgmt_cosmosdb \
+		rubygem-azure_mgmt_cosmosdb>=0.21.2<0.22:devel/rubygem-azure_mgmt_cosmosdb \
 		rubygem-azure_mgmt_cost_management>=0.17.1<0.18:devel/rubygem-azure_mgmt_cost_management \
 		rubygem-azure_mgmt_customer_insights>=0.17.3<0.18:devel/rubygem-azure_mgmt_customer_insights \
-		rubygem-azure_mgmt_data_factory>=0.18.2<0.19:devel/rubygem-azure_mgmt_data_factory \
+		rubygem-azure_mgmt_data_factory>=0.18.3<0.19:devel/rubygem-azure_mgmt_data_factory \
 		rubygem-azure_mgmt_data_migration>=0.18.1<0.19:devel/rubygem-azure_mgmt_data_migration \
 		rubygem-azure_mgmt_databox>=0.17.1<0.18:devel/rubygem-azure_mgmt_databox \
 		rubygem-azure_mgmt_datalake_analytics>=0.17.3<0.18:devel/rubygem-azure_mgmt_datalake_analytics \
@@ -76,11 +76,11 @@ RUN_DEPENDS=	rubygem-azure-storage>=0.15.0.preview<0.15:devel/rubygem-azure-stor
 		rubygem-azure_mgmt_devtestlabs>=0.18.1<0.19:devel/rubygem-azure_mgmt_devtestlabs \
 		rubygem-azure_mgmt_dns>=0.17.5<0.18:devel/rubygem-azure_mgmt_dns \
 		rubygem-azure_mgmt_edgegateway>=0.18.1<0.19:devel/rubygem-azure_mgmt_edgegateway \
-		rubygem-azure_mgmt_event_grid>=0.20.1<0.21:devel/rubygem-azure_mgmt_event_grid \
+		rubygem-azure_mgmt_event_grid>=0.20.2<0.21:devel/rubygem-azure_mgmt_event_grid \
 		rubygem-azure_mgmt_event_hub>=0.18.1<0.19:devel/rubygem-azure_mgmt_event_hub \
 		rubygem-azure_mgmt_features>=0.17.4<0.18:devel/rubygem-azure_mgmt_features \
 		rubygem-azure_mgmt_hanaonazure>=0.18.1<0.19:devel/rubygem-azure_mgmt_hanaonazure \
-		rubygem-azure_mgmt_hdinsight>=0.17.8<0.18:devel/rubygem-azure_mgmt_hdinsight \
+		rubygem-azure_mgmt_hdinsight>=0.18.0<0.19:devel/rubygem-azure_mgmt_hdinsight \
 		rubygem-azure_mgmt_import_export>=0.17.1<0.18:devel/rubygem-azure_mgmt_import_export \
 		rubygem-azure_mgmt_iot_central>=0.19.1<0.20:devel/rubygem-azure_mgmt_iot_central \
 		rubygem-azure_mgmt_iot_hub>=0.17.4<0.18:devel/rubygem-azure_mgmt_iot_hub \
@@ -128,7 +128,7 @@ RUN_DEPENDS=	rubygem-azure-storage>=0.15.0.preview<0.15:devel/rubygem-azure-stor
 		rubygem-azure_mgmt_resources_management>=0.17.2<0.18:devel/rubygem-azure_mgmt_resources_management \
 		rubygem-azure_mgmt_scheduler>=0.17.2<0.18:devel/rubygem-azure_mgmt_scheduler \
 		rubygem-azure_mgmt_search>=0.17.3<0.18:devel/rubygem-azure_mgmt_search \
-		rubygem-azure_mgmt_security>=0.18.1<0.19:devel/rubygem-azure_mgmt_security \
+		rubygem-azure_mgmt_security>=0.18.2<0.19:devel/rubygem-azure_mgmt_security \
 		rubygem-azure_mgmt_serialconsole>=0.17.1<0.18:devel/rubygem-azure_mgmt_serialconsole \
 		rubygem-azure_mgmt_service_bus>=0.17.4<0.18:devel/rubygem-azure_mgmt_service_bus \
 		rubygem-azure_mgmt_service_fabric>=0.17.3<0.18:devel/rubygem-azure_mgmt_service_fabric \
