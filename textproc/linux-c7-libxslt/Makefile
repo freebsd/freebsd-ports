@@ -4,7 +4,7 @@
 PORTNAME=	libxslt
 PORTVERSION=	1.1.28
 DISTVERSIONSUFFIX=	-5.el7
-CATEGORIES=	x11 linux
+CATEGORIES=	textproc linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	XSLT C library for GNOME (Linux CentOS ${LINUX_DIST_VER})
