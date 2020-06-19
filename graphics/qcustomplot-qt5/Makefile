@@ -14,7 +14,7 @@ COMMENT=	Qt C++ widget for plotting and data visualization
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/GPL.txt
 
-USES=		pkgconfig qt:5
+USES=		compiler:c++11-lang pkgconfig qt:5
 USE_QT=		core gui widgets printsupport buildtools_build
 USE_LDCONFIG=	yes
 
