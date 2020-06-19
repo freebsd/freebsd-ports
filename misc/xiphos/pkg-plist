@@ -234,6 +234,7 @@ share/help/it/xiphos/xiphos-60-online-help.page
 share/help/it/xiphos/xiphos-90-credits.page
 share/icons/hicolor/scalable/apps/xiphos.svg
 %%NLS%%share/locale/ar/LC_MESSAGES/xiphos.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/xiphos.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/xiphos.mo
 %%NLS%%share/locale/cy/LC_MESSAGES/xiphos.mo
 %%NLS%%share/locale/da/LC_MESSAGES/xiphos.mo
@@ -250,6 +251,7 @@ share/icons/hicolor/scalable/apps/xiphos.svg
 %%NLS%%share/locale/ko_KR/LC_MESSAGES/xiphos.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/xiphos.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/xiphos.mo
+%%NLS%%share/locale/my/LC_MESSAGES/xiphos.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/xiphos.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/xiphos.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/xiphos.mo
