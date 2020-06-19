@@ -2,17 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	clasp
-PORTVERSION=	3.1.3
+PORTVERSION=	3.3.5
+DISTVERSIONPREFIX=	v
 CATEGORIES=	math devel
-MASTER_SITES=	SOURCEFORGE/potassco/${PORTNAME}/${PORTVERSION}
-EXTRACT_SUFX=	-source.tar.gz
 
 MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	Answer set solver for (extended) normal logic programs
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 BROKEN_sparc64=	Fails to build: internal compiler error
 
 USES=	cmake
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	potassco
+GH_PROJECT=	${PORTNAME}
+GH_TUPLE=	potassco:libpotassco:6e31cff:other/libpotassco
 
 PLIST_FILES=	bin/${PORTNAME}
 

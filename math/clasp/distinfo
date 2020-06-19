@@ -1,2 +1,5 @@
-SHA256 (clasp-3.1.3-source.tar.gz) = f08684eadfa5ae5efa5c06439edc361b775fc55b7c1a9ca862eda8f5bf7e5f1f
-SIZE (clasp-3.1.3-source.tar.gz) = 520291
+TIMESTAMP = 1592574784
+SHA256 (potassco-clasp-v3.3.5_GH0.tar.gz) = faae82371f0e590225171217bfaa010e4712ca4edf42d6cbc5268460705af70e
+SIZE (potassco-clasp-v3.3.5_GH0.tar.gz) = 621349
+SHA256 (potassco-libpotassco-6e31cff_GH0.tar.gz) = 3f98761b7d5d141532130d391e2a19b6d4283341660f9572adb61bd2c3bbb56f
+SIZE (potassco-libpotassco-6e31cff_GH0.tar.gz) = 210065
