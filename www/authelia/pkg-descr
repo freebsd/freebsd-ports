@@ -4,4 +4,4 @@ web portal. It acts as a companion of reverse proxies like nginx, Traefik or
 HAProxy to let them know whether queries should pass through. Unauthenticated
 users are redirected to Authelia Sign-in portal instead.
 
-WWW: https://docs.authelia.com/
+WWW: https://www.authelia.com/docs/
