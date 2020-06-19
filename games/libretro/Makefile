@@ -127,7 +127,7 @@ NESTOPIA_RUN_DEPENDS=		libretro-nestopia>=0:games/libretro-nestopia
 NXENGINE_RUN_DEPENDS=		libretro-nxengine>=0:games/libretro-nxengine
 O2EM_RUN_DEPENDS=		libretro-o2em>=0:games/libretro-o2em
 OPERA_RUN_DEPENDS=		libretro-opera>=0:games/libretro-opera
-PARALLELN64_RUN_DEPENDS=	libretro-paralleln64:games/libretro-paralleln64
+PARALLELN64_RUN_DEPENDS=	libretro-paralleln64>=0:games/libretro-paralleln64
 PCSX_REARMED_RUN_DEPENDS=	libretro-pcsx_rearmed>=0:games/libretro-pcsx_rearmed
 PICODRIVE_RUN_DEPENDS=		libretro-picodrive>=0:games/libretro-picodrive
 PRBOOM_RUN_DEPENDS=		libretro-prboom>=0:games/libretro-prboom
