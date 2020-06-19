@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xdiskusage
-PORTVERSION=	1.51
-PORTREVISION=	1
+PORTVERSION=	1.52
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://xdiskusage.sourceforge.net/ \
 		http://www.gnu-darwin.org/distfiles/
@@ -11,9 +10,15 @@ MASTER_SITES=	http://xdiskusage.sourceforge.net/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Show where disk space is taken up
 
-LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/README
 
-USES=		gmake tar:tgz
+LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk \
+		libfontconfig.so:x11-fonts/fontconfig
+
+USES=		gmake tar:tgz xorg
+
+USE_XORG=	x11 xcursor xext xfixes xft xinerama xrender
 
 CXXFLAGS+=	`fltk-config --cxxflags`
 LDFLAGS+=	`fltk-config --ldflags`
