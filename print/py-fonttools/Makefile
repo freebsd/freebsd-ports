@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fonttools
-PORTVERSION=	4.12.0
+PORTVERSION=	4.12.1
 CATEGORIES=	print python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ufolib2>=0:print/py-ufolib2@${PY_FLAVOR}
 
 USES=		python:3.6+ zip
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
 
 MAKE_ENV=	FONTTOOLS_MANPATH="man"
 NO_ARCH=	yes
