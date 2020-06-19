@@ -1,5 +1,3 @@
-TIMESTAMP = 1587257567
-SHA256 (oneapi-src-oneDNN-v1.4_GH0.tar.gz) = 54737bcb4dc1961d32ee75da3ecc529fa48198f8b2ca863a079e19a9c4adb70f
-SIZE (oneapi-src-oneDNN-v1.4_GH0.tar.gz) = 5320976
-SHA256 (1efd9ec1eaf351d6fa4ef614db1ef09742c85e39.patch) = 14edbf9910d1ce42fec30b4305f66123812f8bacdef26e9766c055286db0e856
-SIZE (1efd9ec1eaf351d6fa4ef614db1ef09742c85e39.patch) = 855
+TIMESTAMP = 1592548152
+SHA256 (oneapi-src-oneDNN-v1.5_GH0.tar.gz) = 2aacc00129418185e0bc1269d3ef82f93f08de2c336932989c0c360279129edb
+SIZE (oneapi-src-oneDNN-v1.5_GH0.tar.gz) = 5515754

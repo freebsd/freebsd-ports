@@ -16,9 +16,13 @@ lib/cmake/dnnl/dnnl-config-version.cmake
 lib/cmake/dnnl/dnnl-config.cmake
 lib/cmake/dnnl/dnnl-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/dnnl/dnnl-targets.cmake
+lib/cmake/mkldnn/mkldnn-config-version.cmake
+lib/cmake/mkldnn/mkldnn-config.cmake
+lib/cmake/mkldnn/mkldnn-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/mkldnn/mkldnn-targets.cmake
 lib/libdnnl.so
 lib/libdnnl.so.1
-lib/libdnnl.so.1.4
+lib/libdnnl.so.1.5
 lib/libmkldnn.so
 lib/libmkldnn.so.1
-lib/libmkldnn.so.1.4
+lib/libmkldnn.so.1.5

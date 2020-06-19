@@ -2,11 +2,8 @@
 
 PORTNAME=	onednn
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4
+DISTVERSION=	1.5
 CATEGORIES=	math # machine-learning
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	1efd9ec1eaf351d6fa4ef614db1ef09742c85e39.patch:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Intel(R) Math Kernel Library for Deep Neural Networks
