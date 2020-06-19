@@ -182,6 +182,9 @@
     SUBDIR += lilyterm
     SUBDIR += linux-c7-libxkbcommon
     SUBDIR += linux-c7-pixman
+    SUBDIR += linux-c7-xcb-util
+    SUBDIR += linux-c7-xcb-util-image
+    SUBDIR += linux-c7-xcb-util-keysyms
     SUBDIR += linux-c7-xorg-libs
     SUBDIR += linux-nvidia-libs
     SUBDIR += linux-nvidia-libs-304

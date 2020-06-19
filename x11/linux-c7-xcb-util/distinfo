@@ -1,0 +1,5 @@
+TIMESTAMP = 1592332269
+SHA256 (centos/xcb-util-0.4.0-2.el7.i686.rpm) = a54c945d8d12ccb2a5b43c95101143b917985ff104010381dc7d9d2e3a6874a2
+SIZE (centos/xcb-util-0.4.0-2.el7.i686.rpm) = 16220
+SHA256 (centos/xcb-util-0.4.0-2.el7.x86_64.rpm) = 5e3365c77d8f0fa6d7f8bd42e100f885d0f75aa6177909ef8bb3db6d9701c7de
+SIZE (centos/xcb-util-0.4.0-2.el7.x86_64.rpm) = 16228

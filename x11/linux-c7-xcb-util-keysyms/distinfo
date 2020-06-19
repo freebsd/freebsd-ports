@@ -1,0 +1,7 @@
+TIMESTAMP = 1592325516
+SHA256 (centos/xcb-util-keysyms-0.4.0-1.el7.i686.rpm) = 71f09eff3578e878f9df363790690f779c2c93558fc68ae6c24c749b6a039f5e
+SIZE (centos/xcb-util-keysyms-0.4.0-1.el7.i686.rpm) = 10408
+SHA256 (centos/xcb-util-keysyms-0.4.0-1.el7.x86_64.rpm) = b26af1c981d6c263d105a3b9cc01f5fdfff998f58e267bbba4a34866068127c0
+SIZE (centos/xcb-util-keysyms-0.4.0-1.el7.x86_64.rpm) = 10388
+SHA256 (centos/xcb-util-keysyms-0.4.0-1.el7.src.rpm) = ff7c494537d9fcd80e7d341704d22418fe689f317e82f39a8c31f4ed080ea543
+SIZE (centos/xcb-util-keysyms-0.4.0-1.el7.src.rpm) = 295445
