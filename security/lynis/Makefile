@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lynis
-PORTVERSION=	2.7.5
+PORTVERSION=	3.0.0
 CATEGORIES=	security
 MASTER_SITES=	https://cisofy.com/files/
 
@@ -20,14 +20,14 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-PORTDOCS=	FAQ README
+PORTDOCS=	FAQ README *.md
 
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e '/tINCLUDE_TARGETS/ s|".*"|"${DATADIR}/include"|; \
 		/tPLUGIN_TARGETS/ s|".*"|"${DATADIR}/plugins"|; \
-		/tDB_TARGETS/ s|".*"|"${DATADIR}/db"|' ${WRKSRC}/${PORTNAME}
+		/tDB_TARGETS=/ s|\(tDB_TARGETS\)=".*"|\1="${DATADIR}/db"|' ${WRKSRC}/${PORTNAME}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}

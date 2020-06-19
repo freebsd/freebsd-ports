@@ -37,7 +37,6 @@ man/man8/lynis.8.gz
 %%DATADIR%%/db/sbl.db
 %%DATADIR%%/db/software-eol.db
 %%DATADIR%%/db/tests.db
-@mode 0400
 %%DATADIR%%/include/binaries
 %%DATADIR%%/include/consts
 %%DATADIR%%/include/data_upload
@@ -80,7 +79,7 @@ man/man8/lynis.8.gz
 %%DATADIR%%/include/tests_networking
 %%DATADIR%%/include/tests_php
 %%DATADIR%%/include/tests_ports_packages
-%%DATADIR%%/include/tests_printers_spools
+%%DATADIR%%/include/tests_printers_spoolers
 %%DATADIR%%/include/tests_scheduling
 %%DATADIR%%/include/tests_shells
 %%DATADIR%%/include/tests_snmp
@@ -95,6 +94,5 @@ man/man8/lynis.8.gz
 %%DATADIR%%/include/tests_virtualization
 %%DATADIR%%/include/tests_webservers
 %%DATADIR%%/include/tool_tips
-@mode
 %%DATADIR%%/plugins/README
 %%DATADIR%%/plugins/custom_plugin.template
