@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	parallel
-PORTVERSION=	20200122
+PORTVERSION=	20200422
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU
 
-MAINTAINER=	howeyc@gmail.com
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Shell tool for executing jobs in parallel
 
 LICENSE=	GPLv3+
@@ -23,7 +23,7 @@ NO_ARCH=	yes
 
 PORTDOCS=	*
 
-SHEBANG_FILES=	src/env_parallel src/niceload src/parcat src/sql
+SHEBANG_FILES=	src/env_parallel src/niceload src/parcat src/parsort src/sql
 
 DOCS_BUILD_DEPENDS=	pod2pdf:textproc/p5-pod2pdf \
 			pod2texi:print/texinfo

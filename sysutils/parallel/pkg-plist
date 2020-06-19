@@ -14,6 +14,7 @@ bin/niceload
 bin/parallel
 bin/parcat
 bin/parset
+bin/parsort
 bin/sem
 bin/sql
 man/man1/env_parallel.1.gz
@@ -21,6 +22,7 @@ man/man1/niceload.1.gz
 man/man1/parallel.1.gz
 man/man1/parcat.1.gz
 man/man1/parset.1.gz
+man/man1/parsort.1.gz
 man/man1/sem.1.gz
 man/man1/sql.1.gz
 man/man7/parallel_alternatives.7.gz
