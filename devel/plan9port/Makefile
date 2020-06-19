@@ -22,7 +22,7 @@ BROKEN_armv7=		fails to compile: thread.c:130:5: no member named 'arm_r0' in 'mc
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig
 
-USES=		localbase:ldflags perl5 shebangfix xorg
+USES=		compiler:c11 localbase:ldflags perl5 shebangfix xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	9fans
 GH_TAGNAME=	e995a0c101863688d5f14649ae3de45a7c43789c
@@ -61,7 +61,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|ulong|u64int|' ${WRKSRC}/src/libmach/FreeBSD.c
 
 do-configure:
-	@${ECHO_CMD} 'CFLAGS="${CFLAGS}"' > ${WRKSRC}/LOCAL.config
+	@${ECHO_CMD} 'CC9="${CC}"' > ${WRKSRC}/LOCAL.config
+	@${ECHO_CMD} 'CFLAGS="${CFLAGS}"' >> ${WRKSRC}/LOCAL.config
 	@${ECHO_CMD} 'LDFLAGS="${LDFLAGS}"' >> ${WRKSRC}/LOCAL.config
 	@${ECHO_CMD} 'FONTSRV=fontsrv' >> ${WRKSRC}/LOCAL.config
 
