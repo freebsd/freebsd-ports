@@ -12,7 +12,7 @@ COMMENT=	Real-time interactive fractal browser
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gl qmake qt:5
+USES=		compiler:c++11-lang gl qmake qt:5
 USE_QT=		core gui opengl widgets buildtools_build linguisttools_build
 USE_GL=		gl
 
