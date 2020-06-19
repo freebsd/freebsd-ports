@@ -1,0 +1,20 @@
+nbdkit is a toolkit for creating NBD servers.
+
+The key features are:
+
+ * Multithreaded NBD server written in C with good performance.
+
+ * Minimal dependencies for the basic server.
+
+ * Liberal license (BSD) allows nbdkit to be linked to proprietary
+   libraries or included in proprietary code.
+
+ * Well-documented, simple plugin API with a stable ABI guarantee.
+   Lets you export "unconventional" block devices easily.
+
+ * You can write plugins in C, Go, Lua, Perl, Python, OCaml, Ruby,
+   Rust, shell script or Tcl.
+
+ * Filters can be stacked in front of plugins to transform the output.
+
+WWW: https://github.com/libguestfs/nbdkit

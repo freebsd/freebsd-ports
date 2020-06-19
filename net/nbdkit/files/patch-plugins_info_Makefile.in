@@ -1,0 +1,14 @@
+--- plugins/info/Makefile.in.orig	2020-05-02 09:04:51 UTC
++++ plugins/info/Makefile.in
+@@ -499,7 +499,10 @@ nbdkit_info_plugin_la_CPPFLAGS = \
+ 	-I$(top_srcdir)/common/include \
+ 	$(NULL)
+ 
+-nbdkit_info_plugin_la_CFLAGS = $(WARNINGS_CFLAGS)
++nbdkit_info_plugin_la_CFLAGS = \
++	$(WARNINGS_CFLAGS) \
++	$(GNUTLS_CFLAGS)
++
+ nbdkit_info_plugin_la_LDFLAGS = \
+ 	-module -avoid-version -shared $(SHARED_LDFLAGS) \
+ 	-Wl,--version-script=$(top_srcdir)/plugins/plugins.syms \

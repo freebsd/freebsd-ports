@@ -476,6 +476,7 @@
     SUBDIR += nats-streaming-server
     SUBDIR += nats-top
     SUBDIR += nbd-server
+    SUBDIR += nbdkit
     SUBDIR += nc
     SUBDIR += ncp
     SUBDIR += ndisc6

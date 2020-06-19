@@ -1,0 +1,56 @@
+--- configure.orig	2020-05-02 09:04:50 UTC
++++ configure
+@@ -911,6 +911,7 @@ enable_largefile
+ enable_gcc_warnings
+ with_iconv
+ with_tls_priority
++with_linuxdisk
+ enable_valgrind
+ enable_libfuzzer
+ enable_plugins
+@@ -1645,6 +1646,7 @@ Optional Packages:
+                           compiler's sysroot if not specified).
+   --without-iconv         don't try to link against iconv [default=check]
+   --with-tls-priority     default TLS session priority string [default=NORMAL]
++  --without-linuxdisk     disable linuxdisk plugin [default=check]
+   --without-curl          disable curl plugin [default=check]
+   --without-ssh           disable ssh plugin [default=check]
+   --without-iso           disable iso plugin [default=check]
+@@ -18598,20 +18600,32 @@ done
+ 
+ fi
+ 
++
++# Check whether --with-linuxdisk was given.
++if test "${with_linuxdisk+set}" = set; then :
++  withval=$with_linuxdisk;
++else
++  with_linuxdisk=check
++fi
++
+ mke2fs_with_d=no
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for mke2fs supporting the -d option" >&5
++if test "$with_linuxdisk" != "no"; then :
++
++    { $as_echo "$as_me:${as_lineno-$LINENO}: checking for mke2fs supporting the -d option" >&5
+ $as_echo_n "checking for mke2fs supporting the -d option... " >&6; }
+-if mke2fs -V >/dev/null 2>&1; then :
++    if mke2fs -V >/dev/null 2>&1; then :
+ 
+-    if LANG=C mke2fs -d 2>&1 | grep -sq "option requires an argument"; then :
++        if LANG=C mke2fs -d 2>&1 | grep -sq "option requires an argument"; then :
+ 
+-        mke2fs_with_d=yes
++            mke2fs_with_d=yes
+ 
+ fi
+ 
+ fi
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $mke2fs_with_d" >&5
++    { $as_echo "$as_me:${as_lineno-$LINENO}: result: $mke2fs_with_d" >&5
+ $as_echo "$mke2fs_with_d" >&6; }
++
++fi
+  if test "x$mke2fs_with_d" = "xyes"; then
+   HAVE_MKE2FS_WITH_D_TRUE=
+   HAVE_MKE2FS_WITH_D_FALSE='#'
