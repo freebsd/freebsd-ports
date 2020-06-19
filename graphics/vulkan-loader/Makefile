@@ -5,6 +5,9 @@ DISTVERSIONPREFIX=sdk-
 DISTVERSION=	1.2.135.0
 CATEGORIES=	graphics devel
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	8d2d49a9c89d.patch:-p1 # https://github.com/KhronosGroup/Vulkan-Loader/pull/419
+
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	Driver loader for the Vulkan graphics API
 
