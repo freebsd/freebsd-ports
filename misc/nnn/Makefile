@@ -11,7 +11,7 @@ COMMENT=	Missing terminal file browser for X
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake localbase ncurses readline
+USES=		compiler:c11 gmake localbase ncurses readline
 USE_GITHUB=	yes
 GH_ACCOUNT=	jarun
 
