@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	coreutils
-PORTVERSION=	8.31
+PORTVERSION=	8.32
 CATEGORIES=	sysutils textproc
 MASTER_SITES=	GNU
 
@@ -10,8 +10,6 @@ COMMENT=	Free Software Foundation core utilities
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-CONFLICTS=	idutils-[0-9]*
 
 USES=		cpe gmake iconv perl5 charsetfix tar:xz
 CPE_VENDOR=	gnu
@@ -34,6 +32,8 @@ GMP_LIB_DEPENDS=	libgmp.so:math/gmp
 GMP_CONFIGURE_WITH=	gmp
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
+
+CONFLICTS=	idutils-[0-9]*
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
