@@ -26,8 +26,8 @@ MC=	${PORTNAME}
 .endif
 
 USE_GITHUB=	yes
-GHTAG=		RELEASE.2020-05-28T23-43-36Z
-COMMIT_ID=	2403e7a7441b85c19ff4155568b409457bd14958
+GHTAG=		RELEASE.2020-06-16T19-24-41Z
+COMMIT_ID=	975423abe2e13da84097a9ce6ce04d379d1e1155
 
 GH_TUPLE=	minio:mc:${GHTAG}:DEFAULT \
 		StackExchange:wmi:cbe66965904d:stackexchange_wmi/vendor/github.com/StackExchange/wmi \
