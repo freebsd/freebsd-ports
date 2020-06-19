@@ -3,6 +3,7 @@
 PORTNAME=	varnish
 PORTVERSION=	6.4.0
 DISTVERSIONPREFIX=	varnish-
+PORTREVISION=	1
 CATEGORIES=	www
 PKGNAMESUFFIX=	6
 
@@ -12,14 +13,15 @@ COMMENT=	High-performance HTTP accelerator
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	rst2man:textproc/py-docutils \
+BUILD_DEPENDS=	rst2man:textproc/py-docutils@${PY_FLAVOR} \
 		${PY_SPHINX}
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
-CONFLICTS=	varnish-2.* varnish-3.* varnish4-4.* varnish5-5.*
-
 USES=		autoreconf compiler cpe gmake libedit libtool ncurses pathfix \
 		pkgconfig python:3.4+,build readline shebangfix
+
+CONFLICTS=	varnish-2.* varnish-3.* varnish4-4.* varnish5-5.*
+
 SHEBANG_FILES=	lib/libvcc/*.py
 CPE_VENDOR=	varnish-cache
 CFLAGS+=	-I${LOCALBASE}/include

@@ -89,6 +89,7 @@ lib/libvarnishapi.so
 lib/libvarnishapi.so.2
 lib/libvarnishapi.so.2.0.0
 lib/varnish/vmods/libvmod_blob.so
+lib/varnish/vmods/libvmod_cookie.so
 lib/varnish/vmods/libvmod_debug.so
 lib/varnish/vmods/libvmod_directors.so
 lib/varnish/vmods/libvmod_proxy.so
@@ -106,6 +107,7 @@ man/man1/varnishstat.1.gz
 man/man1/varnishtest.1.gz
 man/man1/varnishtop.1.gz
 man/man3/vmod_blob.3.gz
+man/man3/vmod_cookie.3.gz
 man/man3/vmod_directors.3.gz
 man/man3/vmod_proxy.3.gz
 man/man3/vmod_purge.3.gz
