@@ -1,10 +1,15 @@
 bin/lxqt-transupdate
+share/cmake/lxqt-build-tools/find-modules/FindClazy.cmake
 share/cmake/lxqt-build-tools/find-modules/FindExif.cmake
 share/cmake/lxqt-build-tools/find-modules/FindGLIB.cmake
 share/cmake/lxqt-build-tools/find-modules/FindMenuCache.cmake
 share/cmake/lxqt-build-tools/find-modules/FindUDev.cmake
 share/cmake/lxqt-build-tools/find-modules/FindXCB.cmake
 share/cmake/lxqt-build-tools/find-modules/FindXKBCommon.cmake
+share/cmake/lxqt-build-tools/find-modules/FindXdgEmail.cmake
+share/cmake/lxqt-build-tools/find-modules/FindXdgMime.cmake
+share/cmake/lxqt-build-tools/find-modules/FindXdgOpen.cmake
+share/cmake/lxqt-build-tools/find-modules/FindXdgSettings.cmake
 share/cmake/lxqt-build-tools/find-modules/FindXdgUserDirs.cmake
 share/cmake/lxqt-build-tools/lxqt-build-tools-config-version.cmake
 share/cmake/lxqt-build-tools/lxqt-build-tools-config.cmake
