@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	courier-imap
-PORTVERSION=	5.0.10
+PORTVERSION=	5.0.11
 PORTEPOCH=	2
 CATEGORIES=	mail
 MASTER_SITES=	SF/courier/imap/${PORTVERSION}
@@ -13,10 +13,9 @@ COMMENT=	IMAP (and POP3) server that provides access to Maildir mailboxes
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	courierauthconfig:security/courier-authlib-base
-RUN_DEPENDS=	courierauthconfig:security/courier-authlib-base \
-		${LOCALBASE}/share/sysconftool/sysconftool:devel/sysconftool
+RUN_DEPENDS=	${LOCALBASE}/share/sysconftool/sysconftool:devel/sysconftool
 LIB_DEPENDS=	libcourier-unicode.so:devel/courier-unicode \
+		libcourierauth.so:security/courier-authlib-base \
 		libidn.so:dns/libidn
 
 USES=		compiler:c++11-lang gmake localbase:ldflags perl5 pkgconfig ssl \
