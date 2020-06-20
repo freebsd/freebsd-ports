@@ -50,7 +50,7 @@ LDFLAGS+=	-lthr
 .else
 FUSEPKG=	fuse
 .endif
-FUSE_VERSION=	"`pkgconf --version ${FUSEPKG} |	\
+FUSE_VERSION=	"`pkgconf --modversion ${FUSEPKG} |	\
 		    ${SED} -E 's,^([0-9]+)\.([0-9]+)\..*,\1\2,'`"
 
 .include <bsd.port.post.mk>
