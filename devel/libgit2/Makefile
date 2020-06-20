@@ -6,7 +6,7 @@
 # Tools/scripts/search_lib_depends_and_bump.sh devel/libgit2
 
 PORTNAME=	libgit2
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libgit2/libgit2/releases/download/v${PORTVERSION}/
 
