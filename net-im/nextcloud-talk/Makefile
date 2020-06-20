@@ -3,6 +3,7 @@
 
 PORTNAME=	talk
 PORTVERSION=	9.0.1
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	https://github.com/${PKGNAMEPREFIX:S/-//}/${DISTNAME:C/-.*//}/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	nextcloud-
@@ -29,7 +30,7 @@ NEXTCLOUD_GROUPNAME?=	${WWWGRP}
 PLIST_SUB=	NEXTCLOUD_USERNAME=${NEXTCLOUD_USERNAME} \
 		NEXTCLOUD_GROUPNAME=${NEXTCLOUD_GROUPNAME}
 
-WWWDIR=		${PREFIX}/www/nextcloud/apps-pkg/${PORTNAME}
+WWWDIR=		${PREFIX}/www/nextcloud/apps-pkg/spreed
 
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}
