@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lxqt-panel
-PORTVERSION=	0.14.1
+PORTVERSION=	0.15.0
 CATEGORIES=	x11-wm
 MASTER_SITES=	LXQT
 
@@ -21,7 +21,7 @@ RUN_DEPENDS=	lxmenu-data>=0.1.2:x11/lxmenu-data
 USES=	cmake compiler:c++14-lang gettext-runtime kde:5 qt:5 gnome \
 	localbase:ldflags lxqt pkgconfig tar:xz xorg
 USE_QT=	buildtools_build qmake_build core dbus gui svg widgets \
-	x11extras xml
+	x11extras xml concurrent
 USE_KDE=	windowsystem
 USE_LXQT=	buildtools lxqt globalkeys qtxdg
 USE_XORG=	ice sm x11 xcb xcomposite xdamage xext xfixes xrender
