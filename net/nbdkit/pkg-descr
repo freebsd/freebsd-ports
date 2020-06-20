@@ -1,4 +1,4 @@
-nbdkit is a toolkit for creating NBD servers.
+nbdkit is a toolkit for creating Network Block Device servers.
 
 The key features are:
 
