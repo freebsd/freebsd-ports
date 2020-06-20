@@ -31,8 +31,8 @@
 
 GCC_Include_MAINTAINER=		gerald@FreeBSD.org
 
-# All GCC versions supported by the ports framework.  Keep them in
-# ascending order and in sync with the table below. 
+# All GCC versions supported by this framework.
+#
 # When updating this, keep Mk/bsd.default-versions.mk in sync.
 GCCVERSIONS=	4.8 7 8 9 10 11
 
