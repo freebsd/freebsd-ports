@@ -3,4 +3,4 @@ algorithm with an extension to all printable ASCII characters.
 The utility is capable of encrypting/decrypting arguments that
 are passed to it upon invocation or process input- and outputfiles.
 
-WWW: https://www.olivermahmoudi.com/programming/vigenere-cipher/
+WWW: https://github.com/olimah/vigenere
