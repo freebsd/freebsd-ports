@@ -2,6 +2,7 @@
 
 PORTNAME=	pkg
 DISTVERSION=	1.13.99.7
+PORTREVISION=	1
 _PKG_VERSION=	${DISTVERSION}
 CATEGORIES=	ports-mgmt
 PKGNAMESUFFIX=	-devel
@@ -35,6 +36,13 @@ EXTRA_PATCHES=	${FILESDIR}/extra-patch-docs_pkg.8
 
 .include <bsd.port.pre.mk>
 
+.if !exists(/usr/libdata/pkgconfig/liblzma.pc)
+LIBLZMA_LIBS=	-llzma
+.else
+LIBLZMA_PC!=	${EGREP} ^Libs /usr/libdata/pkgconfig/liblzma.pc
+LIBLZMA_LIBS=	${LIBLZMA_PC:M-l*}
+.endif
+
 .if defined(WITH_PKG)
 .if ${WITH_PKG} != devel
 .	if !defined(PACKAGE_BUILDING)
@@ -51,6 +59,10 @@ PKG_DEPENDS=
 .if !exists(${LOCALBASE}/sbin/pkg) && !defined(CROSS_TOOLCHAIN)
 PKG_BIN=	${WRKSRC}/src/pkg-static
 .endif
+
+post-patch:
+	${REINPLACE_CMD} -e "s|-llzma|${LIBLZMA_LIBS}|g" ${WRKSRC}/auto.def \
+		${WRKSRC}/src/Makefile.autosetup ${WRKSRC}/tests/Makefile.autosetup
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/compat/pkg
