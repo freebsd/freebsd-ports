@@ -3,6 +3,8 @@ share/applications/lximage-qt-screenshot.desktop
 share/applications/lximage-qt.desktop
 share/icons/hicolor/48x48/apps/lximage-qt.png
 %%DATADIR%%/translations/lximage-qt_ar.qm
+%%DATADIR%%/translations/lximage-qt_arn.qm
+%%DATADIR%%/translations/lximage-qt_ast.qm
 %%DATADIR%%/translations/lximage-qt_ca.qm
 %%DATADIR%%/translations/lximage-qt_cs.qm
 %%DATADIR%%/translations/lximage-qt_cy.qm
@@ -27,7 +29,9 @@ share/icons/hicolor/48x48/apps/lximage-qt.png
 %%DATADIR%%/translations/lximage-qt_pl.qm
 %%DATADIR%%/translations/lximage-qt_pt.qm
 %%DATADIR%%/translations/lximage-qt_pt_BR.qm
+%%DATADIR%%/translations/lximage-qt_pt_PT.qm
 %%DATADIR%%/translations/lximage-qt_ru.qm
+%%DATADIR%%/translations/lximage-qt_sl.qm
 %%DATADIR%%/translations/lximage-qt_sv.qm
 %%DATADIR%%/translations/lximage-qt_tr.qm
 %%DATADIR%%/translations/lximage-qt_uk.qm
