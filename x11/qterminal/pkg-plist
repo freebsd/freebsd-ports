@@ -4,6 +4,9 @@ share/applications/qterminal.desktop
 share/applications/qterminal_drop.desktop
 share/icons/hicolor/64x64/apps/qterminal.png
 %%DATADIR%%/translations/qterminal_ar.qm
+%%DATADIR%%/translations/qterminal_arn.qm
+%%DATADIR%%/translations/qterminal_ast.qm
+%%DATADIR%%/translations/qterminal_bg.qm
 %%DATADIR%%/translations/qterminal_ca.qm
 %%DATADIR%%/translations/qterminal_cs.qm
 %%DATADIR%%/translations/qterminal_cy.qm
@@ -28,6 +31,7 @@ share/icons/hicolor/64x64/apps/qterminal.png
 %%DATADIR%%/translations/qterminal_pt.qm
 %%DATADIR%%/translations/qterminal_pt_BR.qm
 %%DATADIR%%/translations/qterminal_ru.qm
+%%DATADIR%%/translations/qterminal_sk_SK.qm
 %%DATADIR%%/translations/qterminal_tr.qm
 %%DATADIR%%/translations/qterminal_uk.qm
 %%DATADIR%%/translations/qterminal_zh_CN.qm
