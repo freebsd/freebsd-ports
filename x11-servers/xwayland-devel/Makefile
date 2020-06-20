@@ -2,7 +2,7 @@
 
 PORTNAME=	xwayland
 DISTVERSIONPREFIX=	xorg-server-
-DISTVERSION=	1.20.0-660
+DISTVERSION=	1.20.0-663
 DISTVERSIONSUFFIX=	-g${GL_COMMIT:C/(.{12}).*/\1/}
 CATEGORIES=	x11-servers
 PKGNAMESUFFIX=	-devel
@@ -35,7 +35,7 @@ USE_XORG=	pixman xau xdmcp xfont2 xkbfile xshmfence xtrans
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	xorg
 GL_PROJECT=	xserver
-GL_COMMIT=	fc4f248544f207ffd68303da22ea1e27beb3729f
+GL_COMMIT=	d6558477d7a264c2132bc977b51d80fc0277d1e0
 MESON_ARGS=	-Dxwayland=true \
 		-Dxorg=false \
 		-Dxnest=false \
