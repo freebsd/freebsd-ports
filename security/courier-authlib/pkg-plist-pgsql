@@ -2,4 +2,6 @@
 @(%%MAILOWN%%,%%MAILGRP%%,660) etc/authlib/authpgsqlrc.dist
 @postexec %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/authlib/authpgsqlrc
 lib/courier-authlib/libauthpgsql.so
+lib/courier-authlib/libauthpgsql.so.0
+lib/courier-authlib/libauthpgsql.so.0.0.0
 %%PORTDOCS%%%%DOCSDIR%%/README.authpostgres.html

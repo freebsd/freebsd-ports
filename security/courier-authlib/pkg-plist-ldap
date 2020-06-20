@@ -3,5 +3,7 @@
 @postexec %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/authlib/authldaprc
 @sample etc/openldap/schema/authldap.schema.dist
 lib/courier-authlib/libauthldap.so
+lib/courier-authlib/libauthldap.so.0
+lib/courier-authlib/libauthldap.so.0.0.0
 %%PORTDOCS%%%%DOCSDIR%%/README.ldap
 @dir etc/openldap/schema

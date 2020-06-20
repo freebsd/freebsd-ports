@@ -1,4 +1,6 @@
 lib/courier-authlib/libauthuserdb.so
+lib/courier-authlib/libauthuserdb.so.0
+lib/courier-authlib/libauthuserdb.so.0.0.0
 libexec/courier-authlib/makedatprog
 man/man8/makeuserdb.8.gz
 man/man8/pw2userdb.8.gz

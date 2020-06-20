@@ -2,5 +2,7 @@
 @(%%MAILOWN%%,%%MAILGRP%%,660) etc/authlib/authmysqlrc.dist
 @postexec %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/authlib/authmysqlrc
 lib/courier-authlib/libauthmysql.so
+lib/courier-authlib/libauthmysql.so.0
+lib/courier-authlib/libauthmysql.so.0.0.0
 %%PORTDOCS%%%%DOCSDIR%%/README.authmysql.html
 %%PORTDOCS%%%%DOCSDIR%%/README.authmysql.myownquery
