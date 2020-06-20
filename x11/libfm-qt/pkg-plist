@@ -94,11 +94,10 @@ include/libfm-qt/renamedialog.h
 include/libfm-qt/sidepane.h
 include/libfm-qt/utilities.h
 include/libfm-qt/utilities_p.h
-include/libfm-qt/utils.h
 include/libfm-qt/xdndworkaround.h
 lib/libfm-qt.so
-lib/libfm-qt.so.6
-lib/libfm-qt.so.6.1.0
+lib/libfm-qt.so.7
+lib/libfm-qt.so.7.0.0
 libdata/pkgconfig/libfm-qt.pc
 share/cmake/fm-qt/fm-qt-config-version.cmake
 share/cmake/fm-qt/fm-qt-config.cmake
@@ -107,6 +106,8 @@ share/cmake/fm-qt/fm-qt-targets.cmake
 %%DATADIR%%/archivers.list
 %%DATADIR%%/terminals.list
 %%DATADIR%%/translations/libfm-qt_ar.qm
+%%DATADIR%%/translations/libfm-qt_arn.qm
+%%DATADIR%%/translations/libfm-qt_ast.qm
 %%DATADIR%%/translations/libfm-qt_ca.qm
 %%DATADIR%%/translations/libfm-qt_cs.qm
 %%DATADIR%%/translations/libfm-qt_cy.qm
@@ -125,6 +126,7 @@ share/cmake/fm-qt/fm-qt-targets.cmake
 %%DATADIR%%/translations/libfm-qt_lt.qm
 %%DATADIR%%/translations/libfm-qt_nb_NO.qm
 %%DATADIR%%/translations/libfm-qt_nl.qm
+%%DATADIR%%/translations/libfm-qt_or.qm
 %%DATADIR%%/translations/libfm-qt_pl.qm
 %%DATADIR%%/translations/libfm-qt_pt.qm
 %%DATADIR%%/translations/libfm-qt_pt_BR.qm
