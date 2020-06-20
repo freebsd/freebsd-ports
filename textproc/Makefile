@@ -537,6 +537,7 @@
     SUBDIR += p5-Hash-Merge
     SUBDIR += p5-Hatena-Keyword
     SUBDIR += p5-IO-CSVHeaderFile
+    SUBDIR += p5-JSON-Validator
     SUBDIR += p5-JavaScript-Minifier
     SUBDIR += p5-JavaScript-Minifier-XS
     SUBDIR += p5-JavaScript-Packer

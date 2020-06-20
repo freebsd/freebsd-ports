@@ -1,0 +1,8 @@
+JSON::Validator validates a data structure against a schema. It can
+load schemas from JSON, YAML, and perl data structures, and includes a
+powerful schema-building DSL.
+
+JSON is processed by Mojo::JSON (which will use p5-Cpanel-JSON-XS
+if it's installed). YAML uses p5-YAML-LibYAML (YAML::XS).
+
+WWW: https://metacpan.org/pod/JSON::Validator
