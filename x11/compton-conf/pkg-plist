@@ -2,6 +2,9 @@ bin/compton-conf
 etc/xdg/autostart/lxqt-compton.desktop
 share/applications/compton-conf.desktop
 %%DATADIR%%/compton.conf.example
+%%DATADIR%%/translations/compton-conf_arn.qm
+%%DATADIR%%/translations/compton-conf_ast.qm
+%%DATADIR%%/translations/compton-conf_be.qm
 %%DATADIR%%/translations/compton-conf_ca.qm
 %%DATADIR%%/translations/compton-conf_cs.qm
 %%DATADIR%%/translations/compton-conf_cy.qm
@@ -11,6 +14,7 @@ share/applications/compton-conf.desktop
 %%DATADIR%%/translations/compton-conf_en_GB.qm
 %%DATADIR%%/translations/compton-conf_es.qm
 %%DATADIR%%/translations/compton-conf_eu.qm
+%%DATADIR%%/translations/compton-conf_fil.qm
 %%DATADIR%%/translations/compton-conf_fr.qm
 %%DATADIR%%/translations/compton-conf_gl.qm
 %%DATADIR%%/translations/compton-conf_he.qm
@@ -19,6 +23,7 @@ share/applications/compton-conf.desktop
 %%DATADIR%%/translations/compton-conf_id.qm
 %%DATADIR%%/translations/compton-conf_it.qm
 %%DATADIR%%/translations/compton-conf_ja.qm
+%%DATADIR%%/translations/compton-conf_ko.qm
 %%DATADIR%%/translations/compton-conf_lt.qm
 %%DATADIR%%/translations/compton-conf_lv.qm
 %%DATADIR%%/translations/compton-conf_nb_NO.qm
@@ -26,7 +31,10 @@ share/applications/compton-conf.desktop
 %%DATADIR%%/translations/compton-conf_pl.qm
 %%DATADIR%%/translations/compton-conf_pt.qm
 %%DATADIR%%/translations/compton-conf_pt_BR.qm
+%%DATADIR%%/translations/compton-conf_pt_PT.qm
 %%DATADIR%%/translations/compton-conf_ru.qm
+%%DATADIR%%/translations/compton-conf_sk_SK.qm
 %%DATADIR%%/translations/compton-conf_tr.qm
 %%DATADIR%%/translations/compton-conf_uk.qm
+%%DATADIR%%/translations/compton-conf_vi.qm
 %%DATADIR%%/translations/compton-conf_zh_CN.qm
