@@ -29,6 +29,8 @@ INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--enable-gio-unix \
 		--enable-notifications
 
+PORTSCOUT=	limitw:1,even
+
 OPTIONS_DEFINE=			NLS THUNAR
 OPTIONS_DEFAULT=		THUNAR
 OPTIONS_SUB=			yes
