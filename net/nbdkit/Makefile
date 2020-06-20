@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	bash:shells/bash
 
-USES=	gmake libtool
+USES=		compiler:c11 gmake libtool
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
