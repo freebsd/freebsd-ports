@@ -3,4 +3,4 @@ and perform operations on disks and storage devices
 via D-Bus API. Bsdisks is an implementation of UDisks2
 service for FreeBSD.
 
-WWW: https://bitbucket.org/arrowd/bsdisks
+WWW: https://foss.heptapod.net/bsdutils/bsdisks
