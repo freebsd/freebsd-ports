@@ -1,7 +1,8 @@
 bin/lxqt-runner
 etc/xdg/autostart/lxqt-runner.desktop
-share/man/man1/lxqt-runner.1.gz
 %%LXQT_TRANSLATIONS%%/lxqt-runner/lxqt-runner_ar.qm
+%%LXQT_TRANSLATIONS%%/lxqt-runner/lxqt-runner_arn.qm
+%%LXQT_TRANSLATIONS%%/lxqt-runner/lxqt-runner_ast.qm
 %%LXQT_TRANSLATIONS%%/lxqt-runner/lxqt-runner_ca.qm
 %%LXQT_TRANSLATIONS%%/lxqt-runner/lxqt-runner_cs.qm
 %%LXQT_TRANSLATIONS%%/lxqt-runner/lxqt-runner_cy.qm
@@ -31,6 +32,7 @@ share/man/man1/lxqt-runner.1.gz
 %%LXQT_TRANSLATIONS%%/lxqt-runner/lxqt-runner_ro_RO.qm
 %%LXQT_TRANSLATIONS%%/lxqt-runner/lxqt-runner_ru.qm
 %%LXQT_TRANSLATIONS%%/lxqt-runner/lxqt-runner_ru_RU.qm
+%%LXQT_TRANSLATIONS%%/lxqt-runner/lxqt-runner_sk.qm
 %%LXQT_TRANSLATIONS%%/lxqt-runner/lxqt-runner_sk_SK.qm
 %%LXQT_TRANSLATIONS%%/lxqt-runner/lxqt-runner_sl.qm
 %%LXQT_TRANSLATIONS%%/lxqt-runner/lxqt-runner_sr@latin.qm
@@ -41,3 +43,4 @@ share/man/man1/lxqt-runner.1.gz
 %%LXQT_TRANSLATIONS%%/lxqt-runner/lxqt-runner_uk.qm
 %%LXQT_TRANSLATIONS%%/lxqt-runner/lxqt-runner_zh_CN.qm
 %%LXQT_TRANSLATIONS%%/lxqt-runner/lxqt-runner_zh_TW.qm
+share/man/man1/lxqt-runner.1.gz
