@@ -47,6 +47,9 @@ share/cmake/lxqt/lxqt-targets-%%CMAKE_BUILD_TYPE%%.cmake
 share/cmake/lxqt/lxqt-targets.cmake
 %%LXQT_SHAREDIR%%/power.conf
 %%LXQT_TRANSLATIONS%%/liblxqt/liblxqt_ar.qm
+%%LXQT_TRANSLATIONS%%/liblxqt/liblxqt_arn.qm
+%%LXQT_TRANSLATIONS%%/liblxqt/liblxqt_ast.qm
+%%LXQT_TRANSLATIONS%%/liblxqt/liblxqt_bg.qm
 %%LXQT_TRANSLATIONS%%/liblxqt/liblxqt_ca.qm
 %%LXQT_TRANSLATIONS%%/liblxqt/liblxqt_cs.qm
 %%LXQT_TRANSLATIONS%%/liblxqt/liblxqt_cy.qm
