@@ -1,15 +1,15 @@
 # $FreeBSD$
 
 PORTNAME=	mesa
-DISTVERSION=	20.1-branchpoint-1988
-DISTVERSIONSUFFIX=	-ge8ad52f7b0c
+DISTVERSION=	20.1-branchpoint-2119
+DISTVERSIONSUFFIX=	-g19b2ac2bb9e
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	-devel
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	ee5c7790fa93.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/1598
 PATCHFILES+=	9f52b5177728.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/1598
-PATCHFILES+=	cefdea8105bf.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/1598
+PATCHFILES+=	2b9168cf579b.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/1598
 PATCHFILES+=	55822330540d.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/1598
 PATCHFILES+=	f6c7569ad9ea.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/1598
 PATCHFILES+=	c7a2ab64144b.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/1598
