@@ -5,6 +5,8 @@ bin/lxqt-admin-user-helper
 share/applications/lxqt-admin-time.desktop
 share/applications/lxqt-admin-user.desktop
 %%LXQT_TRANSLATIONS%%/lxqt-admin-time/lxqt-admin-time_ar.qm
+%%LXQT_TRANSLATIONS%%/lxqt-admin-time/lxqt-admin-time_arn.qm
+%%LXQT_TRANSLATIONS%%/lxqt-admin-time/lxqt-admin-time_ast.qm
 %%LXQT_TRANSLATIONS%%/lxqt-admin-time/lxqt-admin-time_ca.qm
 %%LXQT_TRANSLATIONS%%/lxqt-admin-time/lxqt-admin-time_cs.qm
 %%LXQT_TRANSLATIONS%%/lxqt-admin-time/lxqt-admin-time_cy.qm
@@ -31,9 +33,12 @@ share/applications/lxqt-admin-user.desktop
 %%LXQT_TRANSLATIONS%%/lxqt-admin-time/lxqt-admin-time_ru.qm
 %%LXQT_TRANSLATIONS%%/lxqt-admin-time/lxqt-admin-time_tr.qm
 %%LXQT_TRANSLATIONS%%/lxqt-admin-time/lxqt-admin-time_uk.qm
+%%LXQT_TRANSLATIONS%%/lxqt-admin-time/lxqt-admin-time_vi.qm
 %%LXQT_TRANSLATIONS%%/lxqt-admin-time/lxqt-admin-time_zh_CN.qm
 %%LXQT_TRANSLATIONS%%/lxqt-admin-time/lxqt-admin-time_zh_TW.qm
 %%LXQT_TRANSLATIONS%%/lxqt-admin-user/lxqt-admin-user_ar.qm
+%%LXQT_TRANSLATIONS%%/lxqt-admin-user/lxqt-admin-user_arn.qm
+%%LXQT_TRANSLATIONS%%/lxqt-admin-user/lxqt-admin-user_ast.qm
 %%LXQT_TRANSLATIONS%%/lxqt-admin-user/lxqt-admin-user_ca.qm
 %%LXQT_TRANSLATIONS%%/lxqt-admin-user/lxqt-admin-user_cs.qm
 %%LXQT_TRANSLATIONS%%/lxqt-admin-user/lxqt-admin-user_cy.qm
@@ -59,6 +64,7 @@ share/applications/lxqt-admin-user.desktop
 %%LXQT_TRANSLATIONS%%/lxqt-admin-user/lxqt-admin-user_ru.qm
 %%LXQT_TRANSLATIONS%%/lxqt-admin-user/lxqt-admin-user_tr.qm
 %%LXQT_TRANSLATIONS%%/lxqt-admin-user/lxqt-admin-user_uk.qm
+%%LXQT_TRANSLATIONS%%/lxqt-admin-user/lxqt-admin-user_vi.qm
 %%LXQT_TRANSLATIONS%%/lxqt-admin-user/lxqt-admin-user_zh_CN.qm
 share/polkit-1/actions/org.lxqt.lxqt-admin-time.policy
 share/polkit-1/actions/org.lxqt.lxqt-admin-user.policy
