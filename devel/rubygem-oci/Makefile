@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	oci
-PORTVERSION=	2.8.0
+PORTVERSION=	2.9.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,7 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	rubygem-inifile>=3.0.0:textproc/rubygem-inifile \
 		rubygem-json>=1.4.6:devel/rubygem-json \
-		rubygem-jwt>0:www/rubygem-jwt
+		rubygem-jwt>2.1:www/rubygem-jwt
 
 USES=		gem
 USE_RUBY=	yes
