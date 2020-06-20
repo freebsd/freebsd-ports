@@ -23,8 +23,8 @@ LIB_DEPENDS=	libid3tag.so:audio/libid3tag \
 		libsidplay.so:audio/libsidplay \
 		libvorbis.so:audio/libvorbis
 
-USES=		compiler:c11 gmake gnome iconv localbase:ldflags makeinfo \
-		ncurses pkgconfig tar:xz
+USES=		compiler:c11 dos2unix gmake gnome iconv localbase:ldflags \
+		makeinfo ncurses pkgconfig tar:xz
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mywave82
