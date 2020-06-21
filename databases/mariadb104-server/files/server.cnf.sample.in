@@ -1,0 +1,59 @@
+# Options specific to server applications, see
+# https://mariadb.com/kb/en/configuring-mariadb-with-option-files/#server-option-groups
+
+# Options specific to all server programs
+[server]
+
+# Options specific to MariaDB server programs
+[server-mariadb]
+
+#
+# Options for specific server tools
+#
+
+[mysqld]
+user				= mysql
+# port				= 3306 # set in %%ETCDIR%%/my.cnf
+# socket			= /var/run/mysql/mysql.sock # set in %%ETCDIR%%/my.cnf
+bind-address			= 127.0.0.1
+basedir				= %%PREFIX%%
+datadir				= /var/db/mysql
+net_retry_count			= 16384
+# [mysqld] configuration for ZFS
+# From https://www.percona.com/resources/technical-presentations/zfs-mysql-percona-technical-webinar
+# Create separate datasets for data and logs, eg
+# zroot/mysql      compression=on recordsize=128k atime=off
+# zroot/mysql/data recordsize=16k
+# zroot/mysql/logs
+# datadir 			= /var/db/mysql/data
+# innodb_log_group_home_dir	= /var/db/mysql/log
+# audit_log_file		= /var/db/mysql/log/audit.log
+# general_log_file		= /var/db/mysql/log/general.log
+# log_bin			= /var/db/mysql/log/mysql-bin
+# relay_log			= /var/db/mysql/log/relay-log
+# slow_query_log_file		= /var/db/mysql/log/slow.log
+# innodb_doublewrite		= 0
+# innodb_flush_method		= O_DSYNC
+
+# Options read by `mysqld_safe`
+# Renamed from [mysqld_safe] starting with MariaDB 10.4.6.
+[mariadb_safe]
+
+# Options read my `mariabackup`
+[mariabackup]
+
+# Options read by `mysql_upgrade`
+# Renamed from [mysql_upgrade] starting with MariaDB 10.4.6.
+[mariadb-upgrade]
+
+# Specific options read by the mariabackup SST method
+[sst]
+
+# Options read by `mysqlbinlog`
+# Renamed from [mysqlbinlog] starting with MariaDB 10.4.6.
+[mariadb-binlog]
+
+# Options read by `mysqladmin`
+# Renamed from [mysqladmin] starting with MariaDB 10.4.6.
+[mariadb-admin]
+
