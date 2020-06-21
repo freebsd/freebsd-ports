@@ -2,7 +2,6 @@ bin/foliate
 libexec/foliate/com.github.johnfactotum.Foliate
 share/applications/com.github.johnfactotum.Foliate.desktop
 share/applications/com.github.johnfactotum.Foliate.desktop.bak
-share/com.github.johnfactotum.Foliate/assets/.eslintrc.json
 share/com.github.johnfactotum.Foliate/assets/KindleUnpack/__init__.py
 share/com.github.johnfactotum.Foliate/assets/KindleUnpack/compatibility_utils.py
 share/com.github.johnfactotum.Foliate/assets/KindleUnpack/kindleunpack.py
@@ -54,11 +53,13 @@ share/locale/de_DE/LC_MESSAGES/com.github.johnfactotum.Foliate.mo
 share/locale/es/LC_MESSAGES/com.github.johnfactotum.Foliate.mo
 share/locale/fr_FR/LC_MESSAGES/com.github.johnfactotum.Foliate.mo
 share/locale/id_ID/LC_MESSAGES/com.github.johnfactotum.Foliate.mo
+share/locale/ie/LC_MESSAGES/com.github.johnfactotum.Foliate.mo
 share/locale/it/LC_MESSAGES/com.github.johnfactotum.Foliate.mo
 share/locale/nl/LC_MESSAGES/com.github.johnfactotum.Foliate.mo
 share/locale/pt_BR/LC_MESSAGES/com.github.johnfactotum.Foliate.mo
 share/locale/ru_RU/LC_MESSAGES/com.github.johnfactotum.Foliate.mo
 share/locale/sv/LC_MESSAGES/com.github.johnfactotum.Foliate.mo
+share/locale/uk/LC_MESSAGES/com.github.johnfactotum.Foliate.mo
 share/locale/zh_CN/LC_MESSAGES/com.github.johnfactotum.Foliate.mo
 share/locale/zh_TW/LC_MESSAGES/com.github.johnfactotum.Foliate.mo
 share/metainfo/com.github.johnfactotum.Foliate.appdata.xml
