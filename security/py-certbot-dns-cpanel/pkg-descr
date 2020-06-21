@@ -1,0 +1,6 @@
+Plugin to allow acme dns-01 authentication of a name managed in cPanel. Useful
+for automating and creating a Let's Encrypt certificate (wildcard or not) for a
+service with a name managed by cPanel, but installed on a server not managed in
+cPanel.
+
+WWW: https://pypi.org/project/certbot-dns-cpanel/
