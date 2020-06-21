@@ -3,6 +3,7 @@
 PORTNAME=	netbox
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.7.12
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	kai@FreeBSD.org
@@ -12,19 +13,19 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django22>=2.2<2.3:www/py-django22@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj22-django-cacheops>=4.2:www/py-dj22-django-cacheops@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj22-django-cors-headers>=3.2.1:www/py-dj22-django-cors-headers@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj22-django-debug-toolbar>=2.1:www/py-dj22-django-debug-toolbar@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj22-django-filter>=2.2.0:www/py-dj22-django-filter@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj22-django-mptt>=0.9.1:www/py-dj22-django-mptt@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj22-django-prometheus>=1.1.0:www/py-dj22-django-prometheus@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj22-django-rq>=2.2.0:devel/py-dj22-django-rq@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj22-django-tables2>=2.2.1:www/py-dj22-django-tables2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj22-django-taggit>=1.2.0:www/py-dj22-django-taggit@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj22-django-taggit-serializer>=0.1.7:www/py-dj22-django-taggit-serializer@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj22-django-timezone-field>=4.0:www/py-dj22-django-timezone-field@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj22-djangorestframework>=3.10.3:www/py-dj22-djangorestframework@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj22-drf-yasg>=1.17.0:www/py-dj22-drf-yasg@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-cacheops>=4.2:www/py-django-cacheops@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-cors-headers>=3.2.1:www/py-django-cors-headers@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-debug-toolbar>=2.1:www/py-django-debug-toolbar@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-filter>=2.2.0:www/py-django-filter@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-mptt>=0.9.1:www/py-django-mptt@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-prometheus>=1.1.0:www/py-django-prometheus@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-rq>=2.2.0:devel/py-django-rq@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-tables2>=2.2.1:www/py-django-tables2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-taggit>=1.2.0:www/py-django-taggit@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-taggit-serializer>=0.1.7:www/py-django-taggit-serializer@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-timezone-field>=4.0:www/py-django-timezone-field@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}djangorestframework>=3.10.3:www/py-djangorestframework@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}drf-yasg>=1.17.0:www/py-drf-yasg@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-pglocks>=1.0.4:www/py-django-pglocks@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}gfm>=0.1.4:textproc/py-gfm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=2.10.1:devel/py-Jinja2@${PY_FLAVOR} \
