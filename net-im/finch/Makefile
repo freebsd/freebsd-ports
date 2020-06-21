@@ -3,12 +3,12 @@
 #   $MCom: ports-stable/net-im/gaim-consoleui-devel/Makefile,v 1.2 2006/10/29 18:55:28 marcus Exp $
 
 PORTNAME=	finch
-PORTREVISION=	2
 
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	Finch multi-protocol messaging client (Console UI)
 
-LIB_DEPENDS=	libpurple.so:net-im/libpurple
+LIB_DEPENDS=	libpurple.so:net-im/libpurple \
+		libgnt.so:devel/libgnt
 
 MASTERDIR=	${.CURDIR}/../libpurple
 BUILD_WRKSRC=	${WRKSRC}/finch

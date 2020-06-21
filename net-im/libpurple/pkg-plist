@@ -28,6 +28,7 @@ include/libpurple/dnssrv.h
 include/libpurple/eventloop.h
 include/libpurple/ft.h
 include/libpurple/gaim-compat.h
+include/libpurple/glibcompat.h
 include/libpurple/idle.h
 include/libpurple/imgstore.h
 include/libpurple/log.h
@@ -143,11 +144,11 @@ lib/purple-2/statenotify.so
 %%DBUS%%lib/libpurple-client.a
 %%DBUS%%lib/libpurple-client.so
 %%DBUS%%lib/libpurple-client.so.0
-%%DBUS%%lib/libpurple-client.so.0.13.0
+%%DBUS%%lib/libpurple-client.so.0.14.1
 lib/libpurple.a
 lib/libpurple.so
 lib/libpurple.so.0
-lib/libpurple.so.0.13.0
+lib/libpurple.so.0.14.1
 libdata/pkgconfig/purple.pc
 %%CONSOLEUI%%man/man1/finch.1.gz
 %%GTKUI%%man/man1/pidgin.1.gz
@@ -156,6 +157,7 @@ share/aclocal/purple.m4
 share/locale/af/LC_MESSAGES/pidgin.mo
 share/locale/am/LC_MESSAGES/pidgin.mo
 share/locale/ar/LC_MESSAGES/pidgin.mo
+share/locale/ar_SA/LC_MESSAGES/pidgin.mo
 share/locale/as/LC_MESSAGES/pidgin.mo
 share/locale/ast/LC_MESSAGES/pidgin.mo
 share/locale/az/LC_MESSAGES/pidgin.mo
