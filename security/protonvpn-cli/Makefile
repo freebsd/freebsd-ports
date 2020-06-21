@@ -6,7 +6,7 @@ DISTVERSION=	1.1.2
 PORTREVISION=	1
 CATEGORIES=	security net net-vpn
 
-MAINTAINER=	salvadore@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ProtonVPN Command line tool
 
 LICENSE=			MIT GPLv3

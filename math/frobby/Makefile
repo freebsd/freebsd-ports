@@ -7,7 +7,7 @@ CATEGORIES=		math
 MASTER_SITES=		http://www.broune.com/frobby/
 DISTNAME=		${PORTNAME}_${DISTVERSIONPREFIX}${DISTVERSION}
 
-MAINTAINER=	salvadore@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Software system and project for computations with monomial ideals
 
 LICENSE=	GPLv2+

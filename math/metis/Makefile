@@ -7,7 +7,7 @@ PORTREVISION=	8
 CATEGORIES=	math
 MASTER_SITES=	http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/
 
-MAINTAINER=	salvadore@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Package for unstructured graph partitioning
 
 LICENSE=	APACHE20

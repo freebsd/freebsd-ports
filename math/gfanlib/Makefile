@@ -1,4 +1,3 @@
-# Created by: Lorenzo Salvadore
 # $FreeBSD$
 
 PORTNAME=	gfanlib
@@ -8,7 +7,7 @@ CATEGORIES=	math
 MASTER_SITES=	http://home.math.au.dk/jensen/software/gfan/
 DISTNAME=	gfan${DISTVERSION}
 
-MAINTAINER=	salvadore@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Static library for computing Groebner fans and tropical varieties
 
 LICENSE=	GPLv2+

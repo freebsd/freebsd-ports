@@ -6,7 +6,7 @@ DISTVERSION=	0.9.4
 CATEGORIES=	security devel
 MASTER_SITES=	https://www.libssh.org/files/0.9/
 
-MAINTAINER=	salvadore@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library implementing the SSH2 protocol
 
 LICENSE=	LGPL21

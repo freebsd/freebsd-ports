@@ -8,7 +8,7 @@ PORTVERSION?=	2.2.18
 PORTREVISION?=	4
 CATEGORIES=	sysutils
 
-MAINTAINER=	salvadore@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network backup and restore program
 
 LICENSE=	AGPLv3 PD

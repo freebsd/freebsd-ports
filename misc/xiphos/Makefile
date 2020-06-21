@@ -8,7 +8,7 @@ CATEGORIES=	misc gnome
 # See also: https://github.com/crosswire/xiphos/issues/1037
 MASTER_SITES=	https://github.com/crosswire/${PORTNAME}/releases/download/${DISTVERSION}/
 
-MAINTAINER=	salvadore@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bible interface utilizing the sword framework
 
 LICENSE=	GPLv2+

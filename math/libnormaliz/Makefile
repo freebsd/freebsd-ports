@@ -6,7 +6,7 @@ DISTVERSION=		3.8.5
 PORTREVISION=		2
 CATEGORIES=		math
 
-MAINTAINER=	salvadore@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Computations in affin monoids, vector configurations etc
 
 LICENSE=	GPLv3+

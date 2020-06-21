@@ -7,7 +7,7 @@ DISTVERSION=	1.12.1
 PORTEPOCH=	1
 CATEGORIES=	devel
 
-MAINTAINER=	salvadore@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Universal Plug and Play Software Development Kit
 
 LICENSE=	BSD3CLAUSE

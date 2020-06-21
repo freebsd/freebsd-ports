@@ -6,7 +6,7 @@ PORTVERSION=	1.2
 PORTEPOCH=	1
 CATEGORIES=	games
 
-MAINTAINER=	salvadore@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D arcade with unique fighting system and anthropomorphic characters
 
 LICENSE=	GPLv2+ CC-BY-SA-3.0 CC-BY-SA-4.0
