@@ -18,7 +18,7 @@ COMMENT?=	Video4Linux library
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	dual
 
-USES=		tar:bzip2
+USES=		compiler:c11 tar:bzip2
 WRKSRC=		${WRKDIR}/v4l-utils-${PORTVERSION}
 
 .if ${PORTNAME} == v4l-utils || ${PORTNAME} == libv4l
