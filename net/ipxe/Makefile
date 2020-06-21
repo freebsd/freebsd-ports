@@ -24,6 +24,7 @@ MAKE_ARGS=	AR=${AR} \
 		ARCH=${ARCH:S/amd64/i386/} \
 		AS=${AS} \
 		CC=${CC} \
+		EXTRA_CFLAGS="-fcommon" \
 		HOST_CC=${CC} \
 		LD=${LD} \
 		NM=${NM} \
