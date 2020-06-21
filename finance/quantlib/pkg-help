@@ -41,11 +41,6 @@
                           when "make" and "make install" are invoked. If
                           disabled (the default) it is built but not
                           installed.
-  --enable-unity-build    If enabled, the source files in each directory are
-                          collected into one single source file and compiled
-                          together. This can speed up the compilation of the
-                          library. If disabled (the default) each source file
-                          is compiled separately..
   --enable-intraday       If enabled, date objects will support an intraday
                           datetime resolution down to microseconds. Strickly
                           monotone daycounters (Actual360, Actual365Fixed and
