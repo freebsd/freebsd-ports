@@ -3,4 +3,8 @@ It brings pull requests, issues, and other GitHub concepts
 to the terminal next to where you are already working with
 git and your code.
 
+While in beta, GitHub CLI is available for repos hosted on
+GitHub.com only. It currently does not support repositories
+hosted on GitHub Enterprise Server or other hosting providers.
+
 WWW: https://cli.github.com

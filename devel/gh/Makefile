@@ -6,7 +6,7 @@ DISTVERSION=	0.10.0
 CATEGORIES=	devel
 
 MAINTAINER=	vulcan@wired.sh
-COMMENT=	GitHub command-line tool
+COMMENT=	GitHub's official command line tool
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
