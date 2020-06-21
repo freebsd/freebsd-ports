@@ -15088,3 +15088,9 @@ x11-themes/numix-theme|x11-themes/numix-gtk-theme|2020-06-15|Renamed to match up
 www/py-djangorestframework36|www/py-djangorestframework|2020-06-15|Has expired: Not compatible with Django 2.0+, please use www/py-djangorestframework instead
 www/py-flask-restplus|www/py-flask-restx|2020-06-17|No longer maintained upstream, use www/py-flask-restx instead
 devel/swig30|devel/swig|2020-06-17|Remove PKGNAMESUFFIX since it is the only version in ports tree
+net-mgmt/zabbix42-java|net-mgmt/zabbix44-java|2020-06-21|Has expired: End of Life
+net-mgmt/zabbix42-server|net-mgmt/zabbix44-server|2020-06-21|Has expired: End of Life
+sysutils/duplicity07|sysutils/duplicity|2020-06-21|Has expired: Uses deprecated version of Python
+net-mgmt/zabbix42-proxy|net-mgmt/zabbix44-proxy|2020-06-21|Has expired: End of Life
+net-mgmt/zabbix42-agent|net-mgmt/zabbix44-agent|2020-06-21|Has expired: End of Life
+net-mgmt/zabbix42-frontend|net-mgmt/zabbix44-frontend|2020-06-21|Has expired: End of Life

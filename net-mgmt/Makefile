@@ -391,11 +391,6 @@
     SUBDIR += zabbix4-java
     SUBDIR += zabbix4-proxy
     SUBDIR += zabbix4-server
-    SUBDIR += zabbix42-agent
-    SUBDIR += zabbix42-frontend
-    SUBDIR += zabbix42-java
-    SUBDIR += zabbix42-proxy
-    SUBDIR += zabbix42-server
     SUBDIR += zabbix44-agent
     SUBDIR += zabbix44-frontend
     SUBDIR += zabbix44-java
