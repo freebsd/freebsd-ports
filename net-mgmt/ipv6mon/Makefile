@@ -15,7 +15,7 @@ USES=		uidfix
 GH_ACCOUNT=	fgont
 GH_PROJECT=	ipv6mon
 GH_TAGNAME=	454292a393ddd79db7131b6e7a8d005a7f49bd92
-USE_GCC=	any
+USE_GCC=	yes
 USE_GITHUB=	nodefault
 CFLAGS+=	-DIPV6MON_CONF=\\\"${PREFIX}/etc/ipv6mon.conf\\\"
 USERS=		${PORTNAME}
