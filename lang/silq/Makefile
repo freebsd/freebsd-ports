@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	silq
-PORTVERSION=	20200617
+PORTVERSION=	20200621
 CATEGORIES=	lang math science
 
 MAINTAINER=	se@FreeBSD.org
@@ -17,14 +17,14 @@ BUILD_DEPENDS=	ldmd2:lang/ldc
 
 USE_GITHUB=	yes
 
-GH_TUPLE=	eth-sri:silq:27c399d \
-		tgehr:ast:2812b33:ast/ast \
+GH_TUPLE=	eth-sri:silq:7331c54 \
+		tgehr:ast:3018b4b:ast/ast \
 		tgehr:util:27168af:util/util
 
 OPTIONS_DEFINE=	EXAMPLES
 
 do-build:
-		cd ${WRKSRC}; ldmd2 -O -inline -J. -Jlibrary *.d ast/*.d util/*.d -of=silq
+		cd ${WRKSRC}; ldmd2 -O -inline -J. -Jlibrary *.d ast/*.d util/*.d -linker=lld -of=silq
 
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/silq ${STAGEDIR}${PREFIX}/bin/

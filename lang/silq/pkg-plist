@@ -74,6 +74,14 @@ bin/silq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/codeforces/summer18/warmup/g.slq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/codeforces/summer18/warmup/h.slq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/codeforces/summer18/warmup/i.slq
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/codeforces/summer20/warmup/a1.slq
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/codeforces/summer20/warmup/a2.slq
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/codeforces/summer20/warmup/a3.slq
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/codeforces/summer20/warmup/a4.slq
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/codeforces/summer20/warmup/a5.slq
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/codeforces/summer20/warmup/b1.slq
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/codeforces/summer20/warmup/b2.slq
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/codeforces/summer20/warmup/c.slq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/codeforces/winter19/contest/a1.slq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/codeforces/winter19/contest/a2.slq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/codeforces/winter19/contest/b1.slq
@@ -104,6 +112,8 @@ bin/silq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/communicationGame.slq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/conditionalMeasurement.slq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/conditionalMeasurement2.slq
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/constBlockAssign.slq
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/constBlockCapture.slq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/consumingVector.slq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/conv.slq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/convertForget.slq
@@ -192,6 +202,7 @@ bin/silq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/indexOutOfBounds7.slq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/indexOutOfBounds8.slq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/indexOutOfBounds9.slq
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/indexReplaceIfFunctionCall.slq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/innerProduct.slq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/innerProduct2.slq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/intUintBoolConversion.slq
@@ -202,6 +213,7 @@ bin/silq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ite2.slq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ite3.slq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ite4.slq
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lambdaEq.slq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/lengthMismatch.slq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/liftedAssign.slq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/liftedConstArg.slq
@@ -255,6 +267,7 @@ bin/silq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/piToRat.slq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/print.slq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/qft.slq
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/quantumBitNotMinus.slq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/quantumControlClassicalAssignment.slq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/quantumIfClassicalUpdate.slq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/quid-updates.slq
@@ -287,6 +300,7 @@ bin/silq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/reverseId2.slq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/reverseId3.slq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/reverseImplicitForget.slq
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/reverseLifted.slq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/reverseMeasureNonClassical.slq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/reversePair.slq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/reversePhase.slq
