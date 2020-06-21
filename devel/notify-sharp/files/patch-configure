@@ -1,0 +1,73 @@
+Replace the version numbers with the one in FreeBSD ports.
+
+Refer: devel/dbus-sharp and devel/dbus-sharp-glib
+--- configure.orig	2020-06-21 21:58:28 UTC
++++ configure
+@@ -3189,15 +3189,15 @@ if test -n "$DBUS_SHARP_CFLAGS"; then
+     pkg_cv_DBUS_SHARP_CFLAGS="$DBUS_SHARP_CFLAGS"
+  elif test -n "$PKG_CONFIG"; then
+     if test -n "$PKG_CONFIG" && \
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"dbus-sharp-1.0 >= \$DBUS_SHARP_REQ_VERSION \\
+-                              dbus-sharp-glib-1.0 >= \$DBUS_SHARP_GLIB_REQ_VERSION\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "dbus-sharp-1.0 >= $DBUS_SHARP_REQ_VERSION \
+-                              dbus-sharp-glib-1.0 >= $DBUS_SHARP_GLIB_REQ_VERSION") 2>&5
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"dbus-sharp-2.0 >= \$DBUS_SHARP_REQ_VERSION \\
++                              dbus-sharp-glib-2.0 >= \$DBUS_SHARP_GLIB_REQ_VERSION\""; } >&5
++  ($PKG_CONFIG --exists --print-errors "dbus-sharp-2.0 >= $DBUS_SHARP_REQ_VERSION \
++                              dbus-sharp-glib-2.0 >= $DBUS_SHARP_GLIB_REQ_VERSION") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+-  pkg_cv_DBUS_SHARP_CFLAGS=`$PKG_CONFIG --cflags "dbus-sharp-1.0 >= $DBUS_SHARP_REQ_VERSION \
+-                              dbus-sharp-glib-1.0 >= $DBUS_SHARP_GLIB_REQ_VERSION" 2>/dev/null`
++  pkg_cv_DBUS_SHARP_CFLAGS=`$PKG_CONFIG --cflags "dbus-sharp-2.0 >= $DBUS_SHARP_REQ_VERSION \
++                              dbus-sharp-glib-2.0 >= $DBUS_SHARP_GLIB_REQ_VERSION" 2>/dev/null`
+ 		      test "x$?" != "x0" && pkg_failed=yes
+ else
+   pkg_failed=yes
+@@ -3209,15 +3209,15 @@ if test -n "$DBUS_SHARP_LIBS"; then
+     pkg_cv_DBUS_SHARP_LIBS="$DBUS_SHARP_LIBS"
+  elif test -n "$PKG_CONFIG"; then
+     if test -n "$PKG_CONFIG" && \
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"dbus-sharp-1.0 >= \$DBUS_SHARP_REQ_VERSION \\
+-                              dbus-sharp-glib-1.0 >= \$DBUS_SHARP_GLIB_REQ_VERSION\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "dbus-sharp-1.0 >= $DBUS_SHARP_REQ_VERSION \
+-                              dbus-sharp-glib-1.0 >= $DBUS_SHARP_GLIB_REQ_VERSION") 2>&5
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"dbus-sharp-2.0 >= \$DBUS_SHARP_REQ_VERSION \\
++                              dbus-sharp-glib-2.0 >= \$DBUS_SHARP_GLIB_REQ_VERSION\""; } >&5
++  ($PKG_CONFIG --exists --print-errors "dbus-sharp-2.0 >= $DBUS_SHARP_REQ_VERSION \
++                              dbus-sharp-glib-2.0 >= $DBUS_SHARP_GLIB_REQ_VERSION") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+-  pkg_cv_DBUS_SHARP_LIBS=`$PKG_CONFIG --libs "dbus-sharp-1.0 >= $DBUS_SHARP_REQ_VERSION \
+-                              dbus-sharp-glib-1.0 >= $DBUS_SHARP_GLIB_REQ_VERSION" 2>/dev/null`
++  pkg_cv_DBUS_SHARP_LIBS=`$PKG_CONFIG --libs "dbus-sharp-2.0 >= $DBUS_SHARP_REQ_VERSION \
++                              dbus-sharp-glib-2.0 >= $DBUS_SHARP_GLIB_REQ_VERSION" 2>/dev/null`
+ 		      test "x$?" != "x0" && pkg_failed=yes
+ else
+   pkg_failed=yes
+@@ -3238,17 +3238,17 @@ else
+         _pkg_short_errors_supported=no
+ fi
+         if test $_pkg_short_errors_supported = yes; then
+-	        DBUS_SHARP_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "dbus-sharp-1.0 >= $DBUS_SHARP_REQ_VERSION \
+-                              dbus-sharp-glib-1.0 >= $DBUS_SHARP_GLIB_REQ_VERSION" 2>&1`
++	        DBUS_SHARP_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "dbus-sharp-2.0 >= $DBUS_SHARP_REQ_VERSION \
++                              dbus-sharp-glib-2.0 >= $DBUS_SHARP_GLIB_REQ_VERSION" 2>&1`
+         else
+-	        DBUS_SHARP_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "dbus-sharp-1.0 >= $DBUS_SHARP_REQ_VERSION \
+-                              dbus-sharp-glib-1.0 >= $DBUS_SHARP_GLIB_REQ_VERSION" 2>&1`
++	        DBUS_SHARP_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "dbus-sharp-2.0 >= $DBUS_SHARP_REQ_VERSION \
++                              dbus-sharp-glib-2.0 >= $DBUS_SHARP_GLIB_REQ_VERSION" 2>&1`
+         fi
+ 	# Put the nasty error message in config.log where it belongs
+ 	echo "$DBUS_SHARP_PKG_ERRORS" >&5
+ 
+-	as_fn_error $? "Package requirements (dbus-sharp-1.0 >= $DBUS_SHARP_REQ_VERSION \
+-                              dbus-sharp-glib-1.0 >= $DBUS_SHARP_GLIB_REQ_VERSION) were not met:
++	as_fn_error $? "Package requirements (dbus-sharp-2.0 >= $DBUS_SHARP_REQ_VERSION \
++                              dbus-sharp-glib-2.0 >= $DBUS_SHARP_GLIB_REQ_VERSION) were not met:
+ 
+ $DBUS_SHARP_PKG_ERRORS
+ 
