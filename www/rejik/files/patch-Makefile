@@ -1,6 +1,21 @@
 --- Makefile.orig	2013-11-15 10:28:02 UTC
 +++ Makefile
-@@ -40,36 +40,35 @@ cygwin: clean cygwin_vars ${REDIRECTOR_O
+@@ -13,11 +13,11 @@ REDIRECTOR_OBJ= pass.o raw_change.o load_cache.o pcre.
+ MAKE-CACHE_OBJ= load_urls.o prune_urls.o write_cache.o need_cache_update.o ${COMMON_OBJ}
+ 
+ .c.o: vars.h
+-	${CC} ${INCLUDE} -c $<
++	${CC} ${CFLAGS} ${INCLUDE} -c $<
+ 
+ all: clean ${REDIRECTOR_OBJ} ${MAKE-CACHE_OBJ}
+-	${CC} ${INCLUDE} -o redirector redirector.c ${REDIRECTOR_OBJ} ${LIBS}
+-	${CC} ${INCLUDE} -o make-cache make-cache.c ${MAKE-CACHE_OBJ} ${LIBS}
++	${CC} ${LDFLAGS} ${INCLUDE} -o redirector redirector.c ${REDIRECTOR_OBJ} ${LIBS}
++	${CC} ${LDFLAGS} ${INCLUDE} -o make-cache make-cache.c ${MAKE-CACHE_OBJ} ${LIBS}
+ 
+ clean:
+ 	rm -f ${REDIRECTOR_OBJ} ${MAKE-CACHE_OBJ} redirector make-cache OUT rejik3.zip rejik3/*
+@@ -40,36 +40,35 @@ cygwin: clean cygwin_vars ${REDIRECTOR_OBJ} ${MAKE-CAC
  
  install:
  # Make dirs

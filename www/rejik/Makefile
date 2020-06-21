@@ -3,7 +3,7 @@
 
 PORTNAME=	rejik
 PORTVERSION=	3.2.11
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	www
 MASTER_SITES=	http://www.rejik.ru/download/
 DISTNAME=	redirector-${PORTVERSION}_squid_3.4
@@ -19,6 +19,7 @@ LIB_DEPENDS=	libpcre.so:devel/pcre
 USES=		perl5 tar:tgz
 USE_GCC=	any
 MAKE_ARGS=	CC=${CC} INSTALL_PATH=${PREFIX}/rejik3
+CFLAGS+=	-fcommon
 
 USERS=		squid
 GROUPS=		squid
