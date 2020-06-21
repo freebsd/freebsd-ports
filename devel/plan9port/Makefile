@@ -62,8 +62,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|ulong|u64int|' ${WRKSRC}/src/libmach/FreeBSD.c
 
 do-configure:
-	@${ECHO_CMD} 'CC9="${CC}"' > ${WRKSRC}/LOCAL.config
-	@${ECHO_CMD} 'CFLAGS="${CFLAGS}"' >> ${WRKSRC}/LOCAL.config
+	@${ECHO_CMD} 'CFLAGS="${CFLAGS}"' > ${WRKSRC}/LOCAL.config
 	@${ECHO_CMD} 'LDFLAGS="${LDFLAGS}"' >> ${WRKSRC}/LOCAL.config
 	@${ECHO_CMD} 'FONTSRV=fontsrv' >> ${WRKSRC}/LOCAL.config
 
