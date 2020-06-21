@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libpng16.so:graphics/png
 
-USES=		gmake gnome pkgconfig python:3.4+ shebangfix xorg
+USES=		compiler:c11 gmake gnome pkgconfig python:3.4+ shebangfix xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	johanmalm
 USE_GNOME=	cairo gdkpixbuf2 glib20 librsvg2 libxml2 pango
