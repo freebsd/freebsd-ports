@@ -1,0 +1,11 @@
+Simple tool to read books in the FB2 format.  Developed using GTK+3.
+Its features:
+
+  - Supports *.fb2 and *.fb2.zip files
+  - Full 2.1 format support (without stylesheet and partial
+    table tag support)
+  - Saving reading position, window state, size, and position
+  - Search for specific text in the book
+  - Russian and English GUI, user themes, autoscrolling, hotkeys
+
+WWW: https://github.com/Cactus64k/simple-fb2-reader

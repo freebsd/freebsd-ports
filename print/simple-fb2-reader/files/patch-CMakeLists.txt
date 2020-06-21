@@ -1,0 +1,18 @@
+--- CMakeLists.txt.orig	2019-08-11 23:34:11 UTC
++++ CMakeLists.txt
+@@ -40,13 +40,14 @@ set (INCLUDES
+ #BUILD
+ 	
+ set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c99")
+-set (CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -export-dynamic")
++set (CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -rdynamic")
+ 
+ add_definitions (-DGUI_CONSTRUCT_PATH="${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_DATAROOTDIR}/${PROJECT}/${PROJECT}.glade")
+ add_definitions (-DPACKAGE_VERSION="${VERSION}")
+ add_definitions (-DPACKAGE_NAME="${PROJECT}")
+ 
+ include_directories (${INCLUDES})
++link_directories (${GTK3_LIBRARY_DIRS})
+ add_executable (${PROJECT} ${HEADERS} ${SOURCES})
+ target_link_libraries (${PROJECT} ${LIBRARIES})
+ 
