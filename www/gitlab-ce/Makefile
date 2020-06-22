@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-ce
-PORTVERSION=	13.0.6
-PORTREVISION=	1
+PORTVERSION=	13.1.0
+PORTREVISION=	0
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -14,18 +14,18 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 # the rubygems of RUN_DEPENDS matches the order of the Gemfile
 # which makes maintaining this long list much easier!
-MY_DEPENDS=	git>=2.24.3:devel/git \
+MY_DEPENDS=	git>=2.25:devel/git \
 	gitaly>=${PORTVERSION}:devel/gitaly \
 	gitlab-elasticsearch-indexer>=2.3.0:textproc/gitlab-elasticsearch-indexer \
 	gitlab-pages>=1.18.0:www/gitlab-pages \
 	gitlab-shell>=13.3.0:devel/gitlab-shell \
-	gitlab-workhorse>=8.31.1:www/gitlab-workhorse \
+	gitlab-workhorse>=8.35.0:www/gitlab-workhorse \
 	redis>=3.2.12:databases/redis \
 	yarn>=1.10.0:www/yarn \
 	gtar>0:archivers/gtar \
 	bash>0:shells/bash \
 	gtar>0:archivers/gtar \
-	rubygem-rails60>=6.0.3<6.1:www/rubygem-rails60 \
+	rubygem-rails60>=6.0.3.1<6.1:www/rubygem-rails60 \
 	rubygem-bootsnap>=1.4.6<2.0:devel/rubygem-bootsnap \
 	rubygem-nakayoshi_fork>=0.0.4<0.1.0:devel/rubygem-nakayoshi_fork \
 	rubygem-responders-rails60>=3.0<4.0:www/rubygem-responders-rails60 \
@@ -34,7 +34,7 @@ MY_DEPENDS=	git>=2.24.3:devel/git \
 	rubygem-pg>=1.1<2:databases/rubygem-pg \
 	rubygem-rugged>=0.28:devel/rubygem-rugged \
 	rubygem-grape-path-helpers>=1.2<2.0:devel/rubygem-grape-path-helpers \
-	rubygem-faraday0>=0.12<1.0:www/rubygem-faraday0 \
+	rubygem-faraday0>=0.17.3<1.0:www/rubygem-faraday0 \
 	rubygem-marginalia>=1.8.0<1.9:databases/rubygem-marginalia \
 	rubygem-devise-rails60>=4.6<5.0:devel/rubygem-devise-rails60 \
 	rubygem-doorkeeper>=5.0.3<5.1:security/rubygem-doorkeeper \
@@ -54,7 +54,7 @@ MY_DEPENDS=	git>=2.24.3:devel/git \
 	rubygem-omniauth-twitter>=1.4<2.0:net/rubygem-omniauth-twitter \
 	rubygem-omniauth_crowd22>=2.2.0<2.3.0:devel/rubygem-omniauth_crowd22 \
 	rubygem-omniauth-authentiq>=0.3.3<0.4.0:net/rubygem-omniauth-authentiq \
-	rubygem-omniauth_openid_connect>=0.3.3<0.4.0:net/rubygem-omniauth_openid_connect \
+	rubygem-omniauth_openid_connect>=0.3.5<0.4.0:net/rubygem-omniauth_openid_connect \
 	rubygem-omniauth-ultraauth>=0.0.2<0.1.0:net/rubygem-omniauth-ultraauth \
 	rubygem-omniauth-salesforce>=1.0.5<1.1.0:net/rubygem-omniauth-salesforce \
 	rubygem-rack-oauth2>=1.9.3<1.10.0:security/rubygem-rack-oauth2 \
@@ -67,7 +67,7 @@ MY_DEPENDS=	git>=2.24.3:devel/git \
 	rubygem-rqrcode-rails3>=0.1.7<0.2.0:www/rubygem-rqrcode-rails3 \
 	rubygem-attr_encrypted>=3.1.0<3.2.0:security/rubygem-attr_encrypted \
 	rubygem-u2f0>=0.2.1<0.3.0:net/rubygem-u2f0 \
-	rubygem-validates_hostname>=1.0.6<1.1.0:dns/rubygem-validates_hostname \
+	rubygem-validates_hostname>=1.0.10<1.1.0:dns/rubygem-validates_hostname \
 	rubygem-rubyzip20>=2.0.0<2.1.0:archivers/rubygem-rubyzip20 \
 	rubygem-acme-client>=2.0.5<2.1.0:security/rubygem-acme-client \
 	rubygem-browser>=2.5<3.0:www/rubygem-browser \
@@ -88,12 +88,12 @@ MY_DEPENDS=	git>=2.24.3:devel/git \
 	rubygem-mini_magick>0:graphics/rubygem-mini_magick \
 	rubygem-fog-aws>=3.5<4.0:net/rubygem-fog-aws \
 	rubygem-fog-core210=2.1.0:devel/rubygem-fog-core210 \
-	rubygem-fog-google19>=1.9<1.10:net/rubygem-fog-google19 \
+	rubygem-fog-google>=1.10<2:net/rubygem-fog-google \
 	rubygem-fog-local>=0.6<1.0:net/rubygem-fog-local \
 	rubygem-fog-openstack>=1.0<2.0:net/rubygem-fog-openstack \
 	rubygem-fog-rackspace>=0.1.1<1.2.0:net/rubygem-fog-rackspace \
 	rubygem-fog-aliyun>=0.3<1.0:net/rubygem-fog-aliyun \
-	rubygem-google-api-client>=0.23<1.0:devel/rubygem-google-api-client \
+	rubygem-google-api-client>=0.33<1:devel/rubygem-google-api-client \
 	rubygem-unf>=0.1.4<0.2.0:textproc/rubygem-unf \
 	rubygem-seed-fu>=2.3.7<2.4.0:databases/rubygem-seed-fu \
 	rubygem-elasticsearch-model6>=6.1<7:textproc/rubygem-elasticsearch-model6 \
@@ -202,7 +202,7 @@ MY_DEPENDS=	git>=2.24.3:devel/git \
 	rubygem-memory_profiler>=0.9<1.0:devel/rubygem-memory_profiler \
 	rubygem-benchmark-memory>=0.1<1.0:benchmarks/rubygem-benchmark-memory \
 	rubygem-activerecord-explain-analyze>=0.1<1.0:databases/rubygem-activerecord-explain-analyze \
-	rubygem-oauth2>=1.4<2.0:net/rubygem-oauth2 \
+	rubygem-oauth2>=1.4.4<2.0:net/rubygem-oauth2 \
 	rubygem-health_check26-rails60>=2.6.0<2.7.0:devel/rubygem-health_check26-rails60 \
 	rubygem-vmstat>=2.3.0<2.4.0:sysutils/rubygem-vmstat \
 	rubygem-sys-filesystem>=1.1.6<1.2.0:sysutils/rubygem-sys-filesystem \
@@ -211,7 +211,7 @@ MY_DEPENDS=	git>=2.24.3:devel/git \
 	rubygem-sshkey>=2.0<3.0:security/rubygem-sshkey \
 	rubygem-ed25519>=1.2<2.0:security/rubygem-ed25519 \
 	rubygem-bcrypt_pbkdf>=1.0<2.0:security/rubygem-bcrypt_pbkdf \
-	rubygem-gitaly>=13.0.0.p.r1<13.1.0:net/rubygem-gitaly \
+	rubygem-gitaly>=13.1.0.p.r1<13.1.0:net/rubygem-gitaly \
 	rubygem-grpc124>=1.24.0:net/rubygem-grpc124 \
 	rubygem-google-protobuf38>=3.8.:devel/rubygem-google-protobuf38 \
 	rubygem-toml-rb10>=1.0.0<1.1.0:www/rubygem-toml-rb10 \
@@ -219,7 +219,7 @@ MY_DEPENDS=	git>=2.24.3:devel/git \
 	rubygem-flipper-active_record>=0.17.1<0.18.0:databases/rubygem-flipper-active_record \
 	rubygem-flipper-active_support_cache_store>=0.17.1<0.18.0:devel/rubygem-flipper-active_support_cache_store \
 	rubygem-unleash>=0.1.5<0.2.0:devel/rubygem-unleash \
-	rubygem-lograge-rails60>=0.5<1.0:www/rubygem-lograge-rails60 \
+	rubygem-lograge-rails60>=0.11.2<1.0:www/rubygem-lograge-rails60 \
 	rubygem-grape_logging>=1.7<2.0:devel/rubygem-grape_logging \
 	rubygem-gitlab-net-dns>=0.9.1<0.10:dns/rubygem-gitlab-net-dns \
 	rubygem-countries>=3.0.0<4.0.0:devel/rubygem-countries \
@@ -229,7 +229,8 @@ MY_DEPENDS=	git>=2.24.3:devel/git \
 	rubygem-mail>=2.7.1<2.7.2,2:mail/rubygem-mail \
 	rubygem-lockbox>=0.3.3<0.4.0:security/rubygem-lockbox \
 	rubygem-valid_email>=0.1<1:mail/rubygem-valid_email \
-	rubygem-json>=2.3.0<2.4:devel/rubygem-json
+	rubygem-json>=2.3.0<2.4:devel/rubygem-json \
+	rubygem-json-schema>=2.8.0<2.9:devel/rubygem-json-schema
 
 BUILD_DEPENDS=	gem:devel/ruby-gems \
 	${MY_DEPENDS}
@@ -250,7 +251,7 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 GL_PROJECT=	gitlab-foss
 # Find the here: https://gitlab.com/gitlab-org/gitlab-foss/-/tags
-GL_COMMIT=	5aa982e01ea9793c71f9f1a6ac0146f4ffe52879
+GL_COMMIT=	d62ee60b669e7b637038e97b647cfa7d50951375
 SHEBANG_FILES=	bin/background_* scripts/build_assets_image scripts/clean-old-cached-assets scripts/create_postgres_user.sh scripts/prepare_postgres_fdw.sh scripts/review_apps/gcp_cleanup.sh scripts/rspec_helpers.sh scripts/security-harness
 
 USERS=	git

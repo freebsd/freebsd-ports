@@ -1,4 +1,4 @@
---- Gemfile.orig	2020-05-21 17:04:27 UTC
+--- Gemfile.orig	2020-06-19 16:45:52 UTC
 +++ Gemfile
 @@ -18,7 +18,7 @@ gem 'default_value_for', '~> 3.3.0'
  # Supported DBs
@@ -9,7 +9,7 @@
  gem 'grape-path-helpers', '~> 1.2'
  
  gem 'faraday', '~> 0.12'
-@@ -93,7 +93,6 @@ gem 'graphql', '~> 1.10.5'
+@@ -92,7 +92,6 @@ gem 'graphql', '~> 1.10.5'
  # https://gitlab.com/gitlab-org/gitlab/issues/31747
  gem 'graphiql-rails', '~> 1.4.10'
  gem 'apollo_upload_server', '~> 2.0.0.beta3'
@@ -17,7 +17,7 @@
  
  # Disable strong_params so that Mash does not respond to :permitted?
  gem 'hashie-forbidden_attributes'
-@@ -227,7 +226,7 @@ gem 'redis-rails', '~> 5.0.2'
+@@ -226,7 +225,7 @@ gem 'redis-rails', '~> 5.0.2'
  gem 'discordrb-webhooks-blackst0ne', '~> 3.3', require: false
  
  # HipChat integration
@@ -26,7 +26,7 @@
  
  # Jira integration
  gem 'jira-ruby', '~> 2.0.0'
-@@ -325,94 +324,6 @@ group :metrics do
+@@ -324,93 +323,6 @@ group :metrics do
    # Prometheus
    gem 'prometheus-client-mmap', '~> 0.10.0'
    gem 'raindrops', '~> 0.18'
@@ -48,7 +48,7 @@
 -end
 -
 -group :development, :test do
--  gem 'bullet', '~> 6.0.2', require: !!ENV['ENABLE_BULLET']
+-  gem 'bullet', '~> 6.0.2'
 -  gem 'pry-byebug', '~> 3.5.1', platform: :mri
 -  gem 'pry-rails', '~> 0.3.9'
 -
@@ -67,10 +67,10 @@
 -  gem 'spring', '~> 2.0.0'
 -  gem 'spring-commands-rspec', '~> 1.0.4'
 -
--  gem 'gitlab-styles', '~> 3.2.0', require: false
+-  gem 'gitlab-styles', '~> 4.2.0', require: false
 -  # Pin these dependencies, otherwise a new rule could break the CI pipelines
--  gem 'rubocop', '~> 0.74.0'
--  gem 'rubocop-performance', '~> 1.4.1'
+-  gem 'rubocop', '~> 0.82.0'
+-  gem 'rubocop-performance', '~> 1.5.2'
 -  gem 'rubocop-rspec', '~> 1.37.0'
 -
 -  gem 'scss_lint', '~> 0.56.0', require: false
@@ -108,7 +108,6 @@
 -
 -  gem 'shoulda-matchers', '~> 4.0.1', require: false
 -  gem 'email_spec', '~> 2.2.0'
--  gem 'json-schema', '~> 2.8.0'
 -  gem 'webmock', '~> 3.5.1'
 -  gem 'rails-controller-testing'
 -  gem 'concurrent-ruby', '~> 1.1'
