@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	meta1
-PORTVERSION=	1.1.0a.15.1
+PORTVERSION=	1.1.0a.15.2
 CATEGORIES=	mail
-MASTER_SITES=	http://www.MeTA1.org/download/.alpha/pri64/
-DISTNAME=	${PORTNAME}-1.1.Alpha15.1
+MASTER_SITES=	http://www.MeTA1.org/download/.alpha/3rdt/
+DISTNAME=	${PORTNAME}-1.1.Alpha15.2
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Secure and efficient mail gateway
@@ -26,6 +26,7 @@ IGNORE=		your system does not support sysvipc
 USES=	libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-dependency-tracking
+CPPFLAGS+=	-DMTA_NETINET6
 MAKE_ENV+=	META1CONFDIR="${META1CONFDIR}"
 PORTDOCS=	README.dvi README.html README.pdf README.ps README.txt \
 		img1.png img2.png img3.png img4.png img5.png img6.png \
@@ -80,6 +81,7 @@ INVALID_BDB_VER=	48 5 6
 CONFIGURE_ARGS+=	--disable-included-bdb
 CONFIGURE_ARGS+=	--with-bdb-incdir=${BDB_INCLUDE_DIR}
 CONFIGURE_ARGS+=	--with-bdb-libdir=${BDB_LIB_DIR}
+CONFIGURE_ARGS+=	--with-bdb-lib=${BDB_LIB_NAME}
 PLIST_SUB+=	WITH_BDBINT="@comment "
 .else
 PLIST_SUB+=	WITH_BDBINT=""
@@ -94,10 +96,6 @@ CONFLICTS+=	courier-0.* postfix-1.* postfix-2.* smail-3.* zmailer-2.* opensmtpd-
 IGNORE=		option SASL2AUTHD needs option SASL2
 .endif
 .endif
-
-post-patch:
-	${REINPLACE_CMD} -e 's| mapspec_kind;|;|' \
-		${WRKSRC}/include/sm/mapcnf.h
 
 post-configure:
 	@${CP} ${WRKSRC}/misc/sm.check.sh \
