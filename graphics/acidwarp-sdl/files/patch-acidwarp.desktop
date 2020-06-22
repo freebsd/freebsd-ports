@@ -1,0 +1,11 @@
+--- acidwarp.desktop.orig	2017-05-13 15:07:16 UTC
++++ acidwarp.desktop
+@@ -2,7 +2,7 @@
+ Encoding=UTF-8
+ Name=Acidwarp
+ GenericName=View color cycling patterns
+-Icon=acidwarp
++Icon=%%PREFIX%%/share/pixmaps/acidwarp.png
+ Exec=acidwarp
+ Terminal=false
+ Type=Application
