@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aws-sdk-medialive
-PORTVERSION=	1.47.1
+PORTVERSION=	1.48.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
