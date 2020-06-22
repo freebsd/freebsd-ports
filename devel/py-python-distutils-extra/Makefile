@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	python-distutils-extra
-PORTVERSION=	2.44
+PORTVERSION=	2.45
 CATEGORIES=	devel python
 MASTER_SITES=	DEBIAN
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,6 +18,6 @@ USES=		python tar:xz
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 .include <bsd.port.mk>
