@@ -3,6 +3,7 @@
 
 PORTNAME=	validates_hostname
 PORTVERSION=	1.0.10
+PORTREVISION=	1
 CATEGORIES=	dns rubygems
 MASTER_SITES=	RG
 
