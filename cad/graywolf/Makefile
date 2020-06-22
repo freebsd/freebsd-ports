@@ -24,4 +24,6 @@ USE_LDCONFIG=	yes
 
 USE_GCC=	any # lots of obviously incorrect C where clang fails, which gcc nevertheless magically finds a way to compile
 
+CFLAGS+=	-fcommon
+
 .include <bsd.port.mk>
