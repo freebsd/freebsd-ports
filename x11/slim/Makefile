@@ -3,12 +3,12 @@
 
 PORTNAME=	slim
 PORTVERSION=	1.3.6
-PORTREVISION=	19
+PORTREVISION=	20
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.berlios.de/pub/slim/ \
 		SF/slim.berlios
 
-MAINTAINER=	henry.hu.sh@gmail.com
+MAINTAINER= 	jsm@FreeBSD.org	
 COMMENT=	Graphical login manager for X11, derived from Login.app
 
 LICENSE=	GPLv2
