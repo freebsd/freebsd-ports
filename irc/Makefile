@@ -105,6 +105,7 @@
     SUBDIR += simpleirc
     SUBDIR += sirc
     SUBDIR += smartirc4net
+    SUBDIR += smuxi
     SUBDIR += srain
     SUBDIR += srvx
     SUBDIR += thales
