@@ -27,7 +27,8 @@ USE_LDCONFIG=	yes
 LDFLAGS_gcc=	-losgDB
 LDFLAGS+=	${LDFLAGS_${CHOSEN_COMPILER_TYPE}}
 
-CMAKE_ARGS+=	-DSYSTEM_EXPAT:BOOL=ON
+CMAKE_ARGS+=	-DSYSTEM_EXPAT:BOOL=ON \
+		-DENABLE_TESTS:BOOL=OFF
 
 post-patch:
 # Avoid conflict with C++20 <version> by adding .txt suffix
