@@ -1,0 +1,7 @@
+This library is a small collection of algorithms that can be reused when
+throttling user interactions with a resource (e.g., an API).
+
+This library strives to allow any limiter and backing store to be used together
+without needing to be worried about potential compatibility.
+
+WWW: https://github.com/sigmavirus24/rush
