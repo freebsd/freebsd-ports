@@ -15,6 +15,6 @@ man/man1/linkicc.1.gz
 man/man1/psicc.1.gz
 %%TIFFICC%%man/man1/tificc.1.gz
 man/man1/transicc.1.gz
-%%PORTDOCS%%%%DOCSDIR%%/LittleCMS%%PORTVERSION%% API.pdf
-%%PORTDOCS%%%%DOCSDIR%%/LittleCMS%%PORTVERSION%% Plugin API.pdf
-%%PORTDOCS%%%%DOCSDIR%%/LittleCMS%%PORTVERSION%% tutorial.pdf
+%%PORTDOCS%%%%DOCSDIR%%/LittleCMS%%PORTVERSION%% API.odt
+%%PORTDOCS%%%%DOCSDIR%%/LittleCMS%%PORTVERSION%% Plugin API.odt
+%%PORTDOCS%%%%DOCSDIR%%/LittleCMS%%PORTVERSION%% tutorial.odt
