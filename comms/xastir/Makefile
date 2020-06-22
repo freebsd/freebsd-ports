@@ -38,6 +38,7 @@ SHEBANG_REGEX=	./scripts/.*\.(sh|pl|py)
 USE_GITHUB=	yes
 GH_ACCOUNT=	Xastir
 GH_PROJECT=	Xastir
+CFLAGS+=	-fcommon
 
 SUB_FILES=	pkg-message
 
