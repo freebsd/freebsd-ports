@@ -2,4 +2,4 @@ Development files for the C ZooKeeper binding which is a is a centralized,
 reliable, service for maintaining configuration information, naming, providing
 distributed synchronization, and group services.
 
-WWW: http://zookeeper.apache.org/
+WWW: https://zookeeper.apache.org/
