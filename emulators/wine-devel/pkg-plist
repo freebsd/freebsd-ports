@@ -983,6 +983,7 @@ include/wine/windows/wmsdk.h
 include/wine/windows/wmsdkidl.h
 include/wine/windows/wmsdkidl.idl
 include/wine/windows/wnaspi32.h
+include/wine/windows/wownt16.h
 include/wine/windows/wownt32.h
 include/wine/windows/wpcapi.h
 include/wine/windows/wpcapi.idl
@@ -1417,7 +1418,7 @@ lib/wine/dhtmled.ocx.so
 lib/wine/difxapi.dll.so
 lib/wine/dinput.dll.so
 lib/wine/dinput8.dll.so
-%%STAGING%%lib/wine/directmanipulation.dll.so
+lib/wine/directmanipulation.dll.so
 lib/wine/dism.exe.so
 %%WINE32%%lib/wine/dispdib.dll16.so
 lib/wine/dispex.dll.so
@@ -1877,7 +1878,7 @@ lib/wine/fakedlls/dhtmled.ocx
 lib/wine/fakedlls/difxapi.dll
 lib/wine/fakedlls/dinput.dll
 lib/wine/fakedlls/dinput8.dll
-%%STAGING%%lib/wine/fakedlls/directmanipulation.dll
+lib/wine/fakedlls/directmanipulation.dll
 lib/wine/fakedlls/dism.exe
 %%WINE32%%lib/wine/fakedlls/dispdib.dll16
 lib/wine/fakedlls/dispex.dll
@@ -2223,6 +2224,7 @@ lib/wine/fakedlls/progman.exe
 lib/wine/fakedlls/propsys.dll
 lib/wine/fakedlls/psapi.dll
 lib/wine/fakedlls/pstorec.dll
+lib/wine/fakedlls/pwrshplugin.dll
 lib/wine/fakedlls/qasf.dll
 lib/wine/fakedlls/qcap.dll
 lib/wine/fakedlls/qdvd.dll
@@ -2622,6 +2624,7 @@ lib/wine/libdxerr8.a
 lib/wine/libdxerr9.a
 lib/wine/libdxgi.def
 lib/wine/libdxguid.a
+lib/wine/libevr.def
 lib/wine/libfaultrep.def
 lib/wine/libgdi32.def
 lib/wine/libgdiplus.def
@@ -2692,6 +2695,7 @@ lib/wine/libolesvr32.def
 lib/wine/libopengl32.def
 lib/wine/libpdh.def
 lib/wine/libpowrprof.def
+lib/wine/libprntvpt.def
 lib/wine/libpropsys.def
 lib/wine/libpsapi.def
 lib/wine/libquartz.def
@@ -2947,6 +2951,7 @@ lib/wine/progman.exe.so
 lib/wine/propsys.dll.so
 lib/wine/psapi.dll.so
 lib/wine/pstorec.dll.so
+lib/wine/pwrshplugin.dll.so
 lib/wine/qasf.dll.so
 lib/wine/qcap.dll.so
 lib/wine/qdvd.dll.so
