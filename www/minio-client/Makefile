@@ -26,8 +26,8 @@ MC=	${PORTNAME}
 .endif
 
 USE_GITHUB=	yes
-GHTAG=		RELEASE.2020-06-16T19-24-41Z
-COMMIT_ID=	975423abe2e13da84097a9ce6ce04d379d1e1155
+GHTAG=		RELEASE.2020-06-20T00-18-43Z
+COMMIT_ID=	dd47bdfeaa75362def0ffd352ed59a83b6dfb1a8
 
 GH_TUPLE=	minio:mc:${GHTAG}:DEFAULT \
 		StackExchange:wmi:cbe66965904d:stackexchange_wmi/vendor/github.com/StackExchange/wmi \
@@ -55,12 +55,14 @@ GH_TUPLE=	minio:mc:${GHTAG}:DEFAULT \
 		inconshreveable:go-update:8152e7eb6ccf:inconshreveable_go_update/vendor/github.com/inconshreveable/go-update \
 		json-iterator:go:v1.1.9:json_iterator_go/vendor/github.com/json-iterator/go \
 		klauspost:compress:v1.10.3:klauspost_compress/vendor/github.com/klauspost/compress \
+		klauspost:cpuid:v1.2.4:klauspost_cpuid/vendor/github.com/klauspost/cpuid \
 		kr:text:v0.2.0:kr_text/vendor/github.com/kr/text \
 		mattn:go-colorable:v0.1.4:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-isatty:v0.0.8:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		mattn:go-runewidth:v0.0.5:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
 		minio:cli:v1.22.0:minio_cli/vendor/github.com/minio/cli \
-		minio:minio-go:44a5f2e3b76b:minio_minio_go_v6/vendor/github.com/minio/minio-go/v6 \
+		minio:md5-simd:v1.1.0:minio_md5_simd/vendor/github.com/minio/md5-simd \
+		minio:minio-go:a57fec8037ec:minio_minio_go_v6/vendor/github.com/minio/minio-go/v6 \
 		minio:minio:cccf2de129da:minio_minio/vendor/github.com/minio/minio \
 		minio:sha256-simd:v0.1.1:minio_sha256_simd/vendor/github.com/minio/sha256-simd \
 		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
