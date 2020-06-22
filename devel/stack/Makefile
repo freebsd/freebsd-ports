@@ -4,6 +4,7 @@
 PORTNAME=	stack
 PORTVERSION=	2.3.1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -24,6 +25,7 @@ USES=		cabal gmake perl5
 
 USE_PERL5=	run
 
+CABAL_FLAGS=	-support_aesni
 USE_CABAL=	aeson-1.4.7.1_1 \
 		annotated-wl-pprint-0.7.0_1 \
 		ansi-terminal-0.10.3 \
