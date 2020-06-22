@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	aws-sdk-core
-PORTVERSION=	3.99.2
+PORTVERSION=	3.100.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
