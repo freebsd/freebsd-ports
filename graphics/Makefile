@@ -42,6 +42,7 @@
     SUBDIR += aalib
     SUBDIR += aaphoto
     SUBDIR += acidwarp
+    SUBDIR += acidwarp-sdl
     SUBDIR += agg
     SUBDIR += alembic
     SUBDIR += alpng
