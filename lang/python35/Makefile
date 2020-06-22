@@ -3,7 +3,7 @@
 
 PORTNAME=	python
 PORTVERSION=	${PYTHON_PORTVERSION}
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	lang python
 MASTER_SITES=	PYTHON/ftp/python/${PORTVERSION}
 PKGNAMESUFFIX=	${PYTHON_SUFFIX}
@@ -12,12 +12,17 @@ DIST_SUBDIR=	python
 
 # Resolve sinpi name clash with libm (IEEE-754 violation)
 PATCH_SITES=	https://github.com/python/cpython/commit/
-PATCHFILES=	f57cd8288dbe6aba99c057f37ad6d58f8db75350.patch:-p1
+PATCHFILES=	f57cd8288dbe6aba99c057f37ad6d58f8db75350.patch:-p1 \
+		37fe316479e0b6906a74b0c0a5e495c55037fdfd.patch:-p1 \
+		09d8172837b6985c4ad90ee025f6b5a554a9f0ac.patch:-p1
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Interpreted object-oriented programming language
 
 LICENSE=	PSFL
+
+DEPRECATED=	Deprecated upstream
+EXPIRATION_DATE=	2020-09-13
 
 USES=		cpe ncurses pathfix pkgconfig readline:port shebangfix ssl tar:xz
 USE_CSTD=	c99
