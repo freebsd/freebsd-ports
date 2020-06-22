@@ -1,0 +1,11 @@
+--- sidekiq.gemspec.orig	2020-06-21 17:11:53 UTC
++++ sidekiq.gemspec
+@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
+     s.specification_version = 4
+ 
+     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+-      s.add_runtime_dependency(%q<redis>.freeze, [">= 3.3.5", "< 4.2"])
++      s.add_runtime_dependency(%q<redis>.freeze, [">= 3.3.5", "< 5"])
+       s.add_runtime_dependency(%q<connection_pool>.freeze, ["~> 2.2", ">= 2.2.2"])
+       s.add_runtime_dependency(%q<rack>.freeze, ["~> 2.0"])
+       s.add_runtime_dependency(%q<rack-protection>.freeze, [">= 1.5.0"])
