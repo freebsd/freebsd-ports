@@ -33,6 +33,7 @@ include/harfbuzz/hb-icu.h
 @comment include/harfbuzz/hb-set.h
 @comment include/harfbuzz/hb-shape-plan.h
 @comment include/harfbuzz/hb-shape.h
+@comment include/harfbuzz/hb-style.h
 @comment include/harfbuzz/hb-subset.h
 @comment include/harfbuzz/hb-unicode.h
 @comment include/harfbuzz/hb-version.h
