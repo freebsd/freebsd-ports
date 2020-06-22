@@ -17,6 +17,7 @@ COMMENT=	C compiler for the TI89, 92, and 92+ calculators
 
 USES=		bison compiler:nestedfct gmake tar:bzip2
 USE_CSTD=	gnu89
+CFLAGS+=	-fcommon
 NO_WRKSUBDIR=	yes
 SUB_FILES=	pkg-message
 
