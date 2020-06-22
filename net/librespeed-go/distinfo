@@ -1,6 +1,6 @@
-TIMESTAMP = 1591867495
-SHA256 (librespeed-speedtest-go-v1.0.0_GH0.tar.gz) = 8d9c572bc06d0994f01757496016b180e61ab422ecc9c03a13f1bdab9bbd766a
-SIZE (librespeed-speedtest-go-v1.0.0_GH0.tar.gz) = 2232423
+TIMESTAMP = 1592422992
+SHA256 (librespeed-speedtest-go-v1.0.1_GH0.tar.gz) = 1f8bfc80326af71e27f65716c35cc09c642f7424849f013dbe566826d3dfd31e
+SIZE (librespeed-speedtest-go-v1.0.1_GH0.tar.gz) = 2233115
 SHA256 (etcd-io-bbolt-v1.3.3_GH0.tar.gz) = 089ae9a1651531dcac069370212abfe16e83af1c6f331d59e0154fa64fe9b120
 SIZE (etcd-io-bbolt-v1.3.3_GH0.tar.gz) = 94626
 SHA256 (fsnotify-fsnotify-v1.4.7_GH0.tar.gz) = b7530d973d0ab0e58ad8ce1b9a4b963d6f57b3d72f2f9e13d49846976361b1cd

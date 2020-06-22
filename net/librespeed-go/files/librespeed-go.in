@@ -2,7 +2,7 @@
 
 # $FreeBSD$
 #
-# PROVIDE: librespeed-go
+# PROVIDE: %%PORTNAME%%
 # REQUIRE: SERVERS
 # KEYWORD: shutdown
 #
@@ -10,13 +10,15 @@
 # to enable this service:
 #
 # librespeed_go_enable:		Set to NO by default.
-#				Set it to YES to enable librenms
+#				Set it to YES to enable librespeed-go
 # librespeed_go_pid:		Path of the pid file.
-#				Default /var/run/librenms/librenms.pid
+#				Default /var/run/%%PORTNAME%%/%%PORTNAME%%.pid
+# librespeed_go_user:		The user account used to run the daemon.
+#				Default: %%LIBRESPEED_USER%%
+# librespeed_go_group:		The group used to run the daemon.
+#				Default: %%LIBRESPEED_GROUP%%
 # librespeed_go_daemonflags:	Flags passed to daemon(8)
 #				Default -f which prevents any logging
-# librespeed_go_chdir:		Dir to run the daemon in
-# 				Default /usr/local/libexec/librespeed-go
 
 . /etc/rc.subr
 
@@ -27,12 +29,13 @@ command="/usr/sbin/daemon"
 load_rc_config $name
 
 : ${librespeed_go_enable:="NO"}
-: ${librespeed_go_pid:="/var/run/librespeed-go.pid"}
+: ${librespeed_go_pid:="/var/run/%%PORTNAME%%/%%PORTNAME%%.pid"}
+: ${librespeed_go_user:="%%LIBRESPEED_USER%%"}
+: ${librespeed_go_group:="%%LIBRESPEED_GROUP%%"}
 : ${librespeed_go_daemonflags:="-f"}
-: ${librespeed_go_chdir:="%%PREFIX%%/libexec/librespeed-go"}
 
 pidfile="$librespeed_go_pid"
-procname="%%PREFIX%%/libexec/librespeed-go/librespeed-go"
+procname="%%PREFIX%%/bin/%%PORTNAME%%"
 command_args="$librespeed_go_daemonflags -p $pidfile $procname"
 
 run_rc_command "$1"

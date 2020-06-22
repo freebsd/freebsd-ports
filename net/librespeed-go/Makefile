@@ -2,7 +2,7 @@
 
 PORTNAME=	librespeed-go
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.0
+DISTVERSION=	1.0.1
 CATEGORIES=	net www
 
 MAINTAINER=	driesm.michiels@gmail.com
@@ -43,21 +43,31 @@ GH_TUPLE=	etcd-io:bbolt:v1.3.3:etcd_io_bbolt/vendor/go.etcd.io/bbolt \
 		spf13:viper:v1.6.2:spf13_viper/vendor/github.com/spf13/viper \
 		subosito:gotenv:v1.2.0:subosito_gotenv/vendor/github.com/subosito/gotenv
 
-GO_TARGET=	./:${PREFIX}/libexec/librespeed-go/librespeed-go
+USERS=		librespeed
+GROUPS=		librespeed
 
 SUB_FILES=	pkg-message
+PLIST_SUB=	LIBRESPEED_USER=${USERS} LIBRESPEED_GROUP=${GROUPS}
+SUB_LIST=	LIBRESPEED_USER=${USERS} LIBRESPEED_GROUP=${GROUPS} PORTNAME=${PORTNAME}
 
 OPTIONS_DEFINE=	EXAMPLES
 
 post-patch:
 	${REINPLACE_CMD} -e 's|"."|"${ETCDIR}"|g' ${WRKSRC}/config/config.go
+	${REINPLACE_CMD} -e 's|"./assets"|"${WWWDIR}"|g' ${WRKSRC}/config/config.go
+
+pre-install:
+	${REINPLACE_CMD} -e 's|"./assets"|"${WWWDIR}"|g' ${WRKSRC}/settings.toml
+	${REINPLACE_CMD} -e 's|"speedtest.db"|"/var/db/${PORTNAME}/speedtest.db"|g' ${WRKSRC}/settings.toml
 
 post-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/${PORTNAME}/assets
-	${CP} -a ${WRKSRC}/assets/*.js ${STAGEDIR}${PREFIX}/libexec/librespeed-go/assets
-	${CP} -a ${WRKSRC}/assets/*.ttf ${STAGEDIR}${PREFIX}/libexec/librespeed-go/assets
+	${MKDIR} ${STAGEDIR}${WWWDIR}
+	${CP} -a ${WRKSRC}/assets/*.js ${STAGEDIR}${WWWDIR}
+	${CP} -a ${WRKSRC}/assets/*.ttf ${STAGEDIR}${WWWDIR}
 	${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/settings.toml ${STAGEDIR}${ETCDIR}/settings.toml.sample
+	${MKDIR} ${STAGEDIR}/var/db/${PORTNAME}
+	${MKDIR} ${STAGEDIR}/var/run/${PORTNAME}
 
 post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

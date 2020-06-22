@@ -1,9 +1,5 @@
+bin/librespeed-go
 @sample %%ETCDIR%%/settings.toml.sample
-libexec/librespeed-go/assets/NotoSansDisplay-Light.ttf
-libexec/librespeed-go/assets/NotoSansDisplay-Medium.ttf
-libexec/librespeed-go/assets/speedtest.js
-libexec/librespeed-go/assets/speedtest_worker.js
-libexec/librespeed-go/librespeed-go
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-multipleServers-full.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-multipleServers-pretty.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-singleServer-basic.html
@@ -13,3 +9,12 @@ libexec/librespeed-go/librespeed-go
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-singleServer-gauges.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-singleServer-pretty.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-singleServer-progressBar.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/index.html
+%%WWWDIR%%/NotoSansDisplay-Light.ttf
+%%WWWDIR%%/NotoSansDisplay-Medium.ttf
+%%WWWDIR%%/speedtest.js
+%%WWWDIR%%/speedtest_worker.js
+@owner %%LIBRESPEED_USER%%
+@group %%LIBRESPEED_GROUP%%
+@dir /var/db/librespeed-go
+@dir /var/run/librespeed-go

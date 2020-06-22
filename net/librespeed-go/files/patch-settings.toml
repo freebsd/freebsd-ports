@@ -1,8 +1,0 @@
---- settings.toml.orig	2020-06-02 10:10:50 UTC
-+++ settings.toml
-@@ -21,4 +21,4 @@ database_username=""
- database_password=""
- 
- # if you use `bolt` as database, set database_file to database file location
--database_file="speedtest.db"
-+database_file="/var/db/speedtest.db"
