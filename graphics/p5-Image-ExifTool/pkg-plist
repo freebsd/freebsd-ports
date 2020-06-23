@@ -26,6 +26,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/Charset/Arabic.pm
 %%SITE_PERL%%/Image/ExifTool/Charset/Baltic.pm
 %%SITE_PERL%%/Image/ExifTool/Charset/Cyrillic.pm
+%%SITE_PERL%%/Image/ExifTool/Charset/DOSCyrillic.pm
 %%SITE_PERL%%/Image/ExifTool/Charset/DOSLatin1.pm
 %%SITE_PERL%%/Image/ExifTool/Charset/DOSLatinUS.pm
 %%SITE_PERL%%/Image/ExifTool/Charset/Greek.pm
@@ -158,6 +159,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/Palm.pm
 %%SITE_PERL%%/Image/ExifTool/Panasonic.pm
 %%SITE_PERL%%/Image/ExifTool/PanasonicRaw.pm
+%%SITE_PERL%%/Image/ExifTool/Parrot.pm
 %%SITE_PERL%%/Image/ExifTool/Pentax.pm
 %%SITE_PERL%%/Image/ExifTool/PhaseOne.pm
 %%SITE_PERL%%/Image/ExifTool/PhotoCD.pm
@@ -191,6 +193,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/TagInfoXML.pm
 %%SITE_PERL%%/Image/ExifTool/TagLookup.pm
 %%SITE_PERL%%/Image/ExifTool/TagNames.pod
+%%SITE_PERL%%/Image/ExifTool/Text.pm
 %%SITE_PERL%%/Image/ExifTool/Theora.pm
 %%SITE_PERL%%/Image/ExifTool/Torrent.pm
 %%SITE_PERL%%/Image/ExifTool/Unknown.pm
@@ -327,6 +330,7 @@ bin/exiftool
 %%PERL5_MAN3%%/Image::ExifTool::Olympus.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::OpenEXR.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Opus.3.gz
+%%PERL5_MAN3%%/Image::ExifTool::Parrot.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::PCX.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::PDF.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::PGF.3.gz
@@ -371,6 +375,7 @@ bin/exiftool
 %%PERL5_MAN3%%/Image::ExifTool::TagInfoXML.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::TagLookup.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::TagNames.3.gz
+%%PERL5_MAN3%%/Image::ExifTool::Text.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Theora.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Torrent.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Unknown.3.gz
