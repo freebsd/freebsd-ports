@@ -128,6 +128,9 @@ pre-configure:
 		--prefix=${FLTKDEV-GIAC} \
 		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}")
 
+post-configure:	# malloc.h on 13-CURRENT is missing mallinfo and compilation fails after it is discovered
+	@${FIND} ${WRKSRC} -name config.h | ${XARGS} ${REINPLACE_CMD} -e 's|#define HAVE_MALLOC_H 1|/* #undef HAVE_MALLOC_H */|'
+
 pre-build:
 	@cd ${COCOALIB-GIAC} && ${DO_MAKE_BUILD} \
 		CXXFLAGS_SPECIFIC="${CXXFLAGS}" library
