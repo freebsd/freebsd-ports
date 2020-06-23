@@ -2350,6 +2350,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/textures/neb_ocln.png
 %%DATADIR%%/textures/neb_ocln_lrg.png
 %%DATADIR%%/textures/neb_pnb.png
+%%DATADIR%%/textures/neb_reg.png
 %%DATADIR%%/textures/neptune.png
 %%DATADIR%%/textures/neptune_rings.png
 %%DATADIR%%/textures/nereid.png
@@ -2918,7 +2919,7 @@ share/pixmaps/stellarium.xpm
 %%SCRIPTS%%%%DATADIR%%/webroot/js/api/viewcontrol.js
 %%SCRIPTS%%%%DATADIR%%/webroot/js/api/viewoptions.js
 %%SCRIPTS%%%%DATADIR%%/webroot/js/globalize.js
-%%SCRIPTS%%%%DATADIR%%/webroot/js/jquery-3.4.1.js
+%%SCRIPTS%%%%DATADIR%%/webroot/js/jquery-3.5.0.js
 %%SCRIPTS%%%%DATADIR%%/webroot/js/jquery-ui.js
 %%SCRIPTS%%%%DATADIR%%/webroot/js/jquery.ui.touch-punch.js
 %%SCRIPTS%%%%DATADIR%%/webroot/js/main.js
