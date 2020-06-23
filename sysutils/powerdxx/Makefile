@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	powerdxx
-DISTVERSION=	0.4.3
+DISTVERSION=	0.4.4
 CATEGORIES=	sysutils
 
 MAINTAINER=	rigoletto@FreeBSD.org
