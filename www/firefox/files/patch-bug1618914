@@ -4,8 +4,7 @@ diff --git widget/gtk/WindowSurfaceWayland.cpp widget/gtk/WindowSurfaceWayland.c
 index 9a73326399bd5..9e42a7f1c5d18 100644
 --- widget/gtk/WindowSurfaceWayland.cpp
 +++ widget/gtk/WindowSurfaceWayland.cpp
-@@ -235,23 +235,24 @@
- #ifdef HAVE_POSIX_FALLOCATE
+@@ -222,19 +222,20 @@ static int WaylandAllocateShmMemory(int aSize) {
    do {
      ret = posix_fallocate(fd, 0, aSize);
    } while (ret == EINTR);
@@ -14,9 +13,7 @@ index 9a73326399bd5..9e42a7f1c5d18 100644
 +    return fd;
 +  } else if (ret != EINVAL && ret != EOPNOTSUPP) {
      close(fd);
-     MOZ_CRASH_UNSAFE_PRINTF(
-         "posix_fallocate() fails on %s size %d error code %d\n", filename,
-         aSize, ret);
+     MOZ_CRASH("posix_fallocate() fails to allocate shm memory");
    }
 -#else
 +#endif
@@ -25,8 +22,7 @@ index 9a73326399bd5..9e42a7f1c5d18 100644
    } while (ret < 0 && errno == EINTR);
    if (ret < 0) {
      close(fd);
-     MOZ_CRASH_UNSAFE_PRINTF("ftruncate() fails on %s size %d error code %d\n",
-                             filename, aSize, ret);
+     MOZ_CRASH("ftruncate() fails to allocate shm memory");
    }
 -#endif
  

@@ -2,7 +2,7 @@ diff --git a/build/moz.configure/init.configure b/build/moz.configure/init.confi
 index 855214a..1e91d51 100644
 --- build/moz.configure/init.configure
 +++ build/moz.configure/init.configure
-@@ -252,6 +252,7 @@ option(env='PYTHON3', nargs=1, help='Python 3 interpre
+@@ -251,6 +251,7 @@ option(env='PYTHON3', nargs=1, help='Python 3 interpre
  @imports(_from='mozbuild.pythonutil', _import='find_python3_executable')
  @imports(_from='mozbuild.pythonutil', _import='python_executable_version')
  @imports(_from='six', _import='ensure_text')
@@ -10,7 +10,7 @@ index 855214a..1e91d51 100644
  def virtualenv_python3(env_python, build_env, mozconfig, help):
      # Avoid re-executing python when running configure --help.
      if help:
-@@ -284,6 +285,12 @@ def virtualenv_python3(env_python, build_env, mozconfi
+@@ -283,6 +284,12 @@ def virtualenv_python3(env_python, build_env, mozconfi
              python = mozconfig['vars']['added']['PYTHON3']
          elif 'PYTHON3' in mozconfig['vars']['modified']:
              python = mozconfig['vars']['modified']['PYTHON3'][1]
@@ -23,15 +23,15 @@ index 855214a..1e91d51 100644
  
      log.debug("python3: executable from configuration: %r" % python)
  
-@@ -373,7 +380,10 @@ def virtualenv_python3(env_python, build_env, mozconfi
-                 sys.executable, manager.python_path))
-             log.info('Re-executing in the virtualenv')
-             if env_python:
--                del os.environ['PYTHON3']
+@@ -365,7 +372,10 @@ def virtualenv_python3(env_python, build_env, mozconfi
+             sys.executable, manager.python_path))
+         log.info('Re-executing in the virtualenv')
+         if env_python:
+-            del os.environ['PYTHON3']
 +                try:
 +                    del os.environ['PYTHON3']
 +                except KeyError:
 +                    pass
-             # Homebrew on macOS will change Python's sys.executable to a custom
-             # value which messes with mach's virtualenv handling code. Override
-             # Homebrew's changes with the correct sys.executable value.
+         # Homebrew on macOS will change Python's sys.executable to a custom
+         # value which messes with mach's virtualenv handling code. Override
+         # Homebrew's changes with the correct sys.executable value.
