@@ -114,6 +114,7 @@ share/kvantummanager/translations/kvantummanager_hu.qm
 share/kvantummanager/translations/kvantummanager_id.qm
 share/kvantummanager/translations/kvantummanager_it.qm
 share/kvantummanager/translations/kvantummanager_ja.qm
+share/kvantummanager/translations/kvantummanager_ko.qm
 share/kvantummanager/translations/kvantummanager_lt.qm
 share/kvantummanager/translations/kvantummanager_nb_NO.qm
 share/kvantummanager/translations/kvantummanager_nl.qm
@@ -133,11 +134,14 @@ share/kvantumpreview/translations/kvantumpreview_fr.qm
 share/kvantumpreview/translations/kvantumpreview_hu.qm
 share/kvantumpreview/translations/kvantumpreview_id.qm
 share/kvantumpreview/translations/kvantumpreview_ja.qm
+share/kvantumpreview/translations/kvantumpreview_ko.qm
 share/kvantumpreview/translations/kvantumpreview_lt.qm
 share/kvantumpreview/translations/kvantumpreview_nb_NO.qm
 share/kvantumpreview/translations/kvantumpreview_nl.qm
 share/kvantumpreview/translations/kvantumpreview_pl.qm
 share/kvantumpreview/translations/kvantumpreview_pt_BR.qm
+share/kvantumpreview/translations/kvantumpreview_ru.qm
+share/kvantumpreview/translations/kvantumpreview_tr.qm
 share/kvantumpreview/translations/kvantumpreview_zh_CN.qm
 share/themes/KvAdapta/openbox-3/close.xbm
 share/themes/KvAdapta/openbox-3/close_hover.xbm
