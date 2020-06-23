@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	knot
-DISTVERSION=	2.9.3
-PORTREVISION=	2
+DISTVERSION=	2.9.5
 CATEGORIES=	dns
 MASTER_SITES=	https://secure.nic.cz/files/knot-dns/ \
 		https://dns.company/downloads/knot-dns/
@@ -80,7 +79,7 @@ DNSTAP_LIB_DEPENDS=		libprotobuf-c.so:devel/protobuf-c \
 # in higher line count.  Ideally this bug should be fixed upstream.
 DNSTAP_CPPFLAGS=		-I${LOCALBASE}/include
 
-DOCS_USES+=			python
+DOCS_USES=			python:build
 DOCS_CONFIGURE_OFF=		--disable-documentation
 
 FASTPARSER_DESC=		Fast zone parser (demanding compilation)
