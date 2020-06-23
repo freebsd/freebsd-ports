@@ -1443,6 +1443,7 @@ share/locale/fi/LC_MESSAGES/plasma_applet_org.kde.plasma.mediacontroller.mo
 share/locale/fi/LC_MESSAGES/plasma_applet_org.kde.plasma.notifications.mo
 share/locale/fi/LC_MESSAGES/plasma_applet_org.kde.plasma.panelspacer.mo
 share/locale/fi/LC_MESSAGES/plasma_applet_org.kde.plasma.private.systemtray.mo
+share/locale/fi/LC_MESSAGES/plasma_applet_org.kde.plasma.systemmonitor.mo
 share/locale/fi/LC_MESSAGES/plasma_containmentactions_applauncher.mo
 share/locale/fi/LC_MESSAGES/plasma_containmentactions_contextmenu.mo
 share/locale/fi/LC_MESSAGES/plasma_containmentactions_switchwindow.mo
