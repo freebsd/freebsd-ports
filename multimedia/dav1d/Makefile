@@ -20,6 +20,7 @@ USE_LDCONFIG=	yes
 GL_SITE=	https://code.videolan.org
 GL_ACCOUNT=	videolan
 GL_COMMIT=	e9df70c4348a3f9ba7269feacd17cfb57bf23852
+LDFLAGS_i386=	-Wl,-z,notext
 
 OPTIONS_DEFINE=	SDL TEST
 OPTIONS_SUB=	yes
