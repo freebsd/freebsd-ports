@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dxx-rebirth
-PORTVERSION=	20200501
+PORTVERSION=	20200601
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	games
 MASTER_SITES=	https://www.dxx-rebirth.com/download/dxx/rebirth/
@@ -24,7 +24,7 @@ LIB_DEPENDS=	libphysfs.so:devel/physfs \
 
 USES=		compiler:c++14-lang gl localbase:ldflags pkgconfig scons:python2 sdl tar:xz
 USE_GL=		gl glu
-USE_SDL=	mixer sdl
+USE_SDL=	image mixer sdl
 
 MAKE_ARGS=	ignore_unknown_variables=1
 
