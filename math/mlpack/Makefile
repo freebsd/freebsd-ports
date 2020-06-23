@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mlpack
-DISTVERSION=	3.3.1
+DISTVERSION=	3.3.2
 CATEGORIES=	math # machine-learning
 MASTER_SITES=	https://mlpack.org/files/
 
