@@ -7,6 +7,7 @@ share/glib-2.0/schemas/org.freedesktop.ibus.engine.m17n.gschema.xml
 %%DATADIR%%/setup/ibus-m17n-preferences.ui
 share/ibus/component/m17n.xml
 %%NLS%%share/locale/de/LC_MESSAGES/ibus-m17n.mo
+%%NLS%%share/locale/es/LC_MESSAGES/ibus-m17n.mo
 %%NLS%%share/locale/fa/LC_MESSAGES/ibus-m17n.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/ibus-m17n.mo
 %%NLS%%share/locale/id/LC_MESSAGES/ibus-m17n.mo
