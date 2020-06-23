@@ -40,6 +40,7 @@ TRACING_DESC=		Trade performance for more detailed errors
 SESSIONS_DESC=		See help
 
 EXAMPLES_CONFIGURE_WITH=lispdir=${EXAMPLESDIR}
+#CONFIGURE_ARGS+=	--enable-unity-build
 CONFIGURE_ARGS+=	--enable-parallel-unit-test-runner
 CONFIGURE_ARGS+=	--with-boost-include=${LOCALBASE}/include
 CONFIGURE_ARGS+=	--with-boost-lib=${LOCALBASE}/lib

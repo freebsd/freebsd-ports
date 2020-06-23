@@ -783,7 +783,6 @@ include/ql/methods/finitedifferences/impliciteuler.hpp
 include/ql/methods/finitedifferences/pde.hpp
 include/ql/methods/finitedifferences/mixedscheme.hpp
 include/ql/methods/finitedifferences/onefactoroperator.hpp
-include/ql/methods/finitedifferences/operatorfactory.hpp
 include/ql/methods/finitedifferences/operatortraits.hpp
 include/ql/methods/finitedifferences/parallelevolver.hpp
 include/ql/methods/finitedifferences/pdebsm.hpp
@@ -1244,6 +1243,7 @@ include/ql/termstructures/yield/forwardcurve.hpp
 include/ql/termstructures/yield/forwardspreadedtermstructure.hpp
 include/ql/termstructures/yield/forwardstructure.hpp
 include/ql/termstructures/yield/impliedtermstructure.hpp
+include/ql/termstructures/yield/interpolatedsimplezerocurve.hpp
 include/ql/termstructures/yield/nonlinearfittingmethods.hpp
 include/ql/termstructures/yield/oisratehelper.hpp
 include/ql/termstructures/yield/piecewiseyieldcurve.hpp
@@ -1257,6 +1257,7 @@ include/ql/termstructures/all.hpp
 include/ql/termstructures/bootstraperror.hpp
 include/ql/termstructures/bootstraphelper.hpp
 include/ql/termstructures/defaulttermstructure.hpp
+include/ql/termstructures/globalbootstrap.hpp
 include/ql/termstructures/inflationtermstructure.hpp
 include/ql/termstructures/interpolatedcurve.hpp
 include/ql/termstructures/iterativebootstrap.hpp
@@ -1266,6 +1267,7 @@ include/ql/termstructures/yieldtermstructure.hpp
 include/ql/time/calendars/all.hpp
 include/ql/time/calendars/argentina.hpp
 include/ql/time/calendars/australia.hpp
+include/ql/time/calendars/austria.hpp
 include/ql/time/calendars/bespokecalendar.hpp
 include/ql/time/calendars/botswana.hpp
 include/ql/time/calendars/brazil.hpp
