@@ -5,6 +5,10 @@ PORTVERSION=	${AVIDEMUX_VERSION}
 CATEGORIES=	multimedia
 PKGNAMESUFFIX=	-qt5
 
+# Prepare for Qt5.15
+PATCH_SITES=    https://github.com/mean00/${PORTNAME}2/commit/
+PATCHFILES=     1a8bb36c5a03.patch:-p1
+
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Simple GUI based video editor (QT5 UI)
 
