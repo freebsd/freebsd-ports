@@ -1,5 +1,5 @@
-TIMESTAMP = 1580672706
-SHA256 (prometheus-blackbox_exporter-v0.16.0_GH0.tar.gz) = 6ebfd9f590286004dacf3c93b3aa3e3c560d6f1e5994f72c180e5af94fdd0099
-SIZE (prometheus-blackbox_exporter-v0.16.0_GH0.tar.gz) = 2121367
+TIMESTAMP = 1593011494
+SHA256 (prometheus-blackbox_exporter-v0.17.0_GH0.tar.gz) = 6877bbf524dbd946ee03788dffd7bae88140fa356ad97a079eb6ea2ca83b976b
+SIZE (prometheus-blackbox_exporter-v0.17.0_GH0.tar.gz) = 2615179
 SHA256 (golang-net-83d349e8ac1a_GH0.tar.gz) = 5752c376bc6383bf2055281336101c062b881f17ded2e960d718c8256023f9c7
 SIZE (golang-net-83d349e8ac1a_GH0.tar.gz) = 1103298
