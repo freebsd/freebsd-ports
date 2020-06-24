@@ -4,6 +4,7 @@ include/igdgmm/GmmLib/CachePolicy/GmmCachePolicyUndefineConditionals.h
 include/igdgmm/GmmLib/CachePolicy/GmmGen10CachePolicy.h
 include/igdgmm/GmmLib/CachePolicy/GmmGen11CachePolicy.h
 include/igdgmm/GmmLib/CachePolicy/GmmGen12CachePolicy.h
+include/igdgmm/GmmLib/CachePolicy/GmmGen12dGPUCachePolicy.h
 include/igdgmm/GmmLib/CachePolicy/GmmGen8CachePolicy.h
 include/igdgmm/GmmLib/CachePolicy/GmmGen9CachePolicy.h
 include/igdgmm/GmmLib/Platform/GmmPlatforms.h
@@ -16,6 +17,7 @@ include/igdgmm/GmmLib/Utility/GmmUtility.h
 include/igdgmm/GmmLib/inc/External/Common/CachePolicy/GmmCachePolicyGen10.h
 include/igdgmm/GmmLib/inc/External/Common/CachePolicy/GmmCachePolicyGen11.h
 include/igdgmm/GmmLib/inc/External/Common/CachePolicy/GmmCachePolicyGen12.h
+include/igdgmm/GmmLib/inc/External/Common/CachePolicy/GmmCachePolicyGen12dGPU.h
 include/igdgmm/GmmLib/inc/External/Common/CachePolicy/GmmCachePolicyGen8.h
 include/igdgmm/GmmLib/inc/External/Common/CachePolicy/GmmCachePolicyGen9.h
 include/igdgmm/GmmLib/inc/External/Common/GmmCachePolicy.h
