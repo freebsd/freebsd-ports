@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	os-vif
-PORTVERSION=	2.0.0
+PORTVERSION=	2.1.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,7 +26,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}debtcollector>=1.19.0:devel/py-debtcollector
 		${PYTHON_PKGNAMEPREFIX}ovsdbapp>=0.12.1:devel/py-ovsdbapp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pbr>=2.0.0:devel/py-pbr@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyroute2>=0.5.2:net/py-pyroute2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}six>=1.10.0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}stevedore>=1.20.0:devel/py-stevedore@${PY_FLAVOR}
 
 USES=		python:3.6+
