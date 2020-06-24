@@ -1,3 +1,3 @@
-TIMESTAMP = 1592145441
-SHA256 (rubygem/aws-sdk-machinelearning-1.21.1.gem) = be76fd55680532d1a7899fabcf8f84d5132aaf625c672a59b88f627261993356
-SIZE (rubygem/aws-sdk-machinelearning-1.21.1.gem) = 49664
+TIMESTAMP = 1593003318
+SHA256 (rubygem/aws-sdk-machinelearning-1.22.0.gem) = 6ddb58665aaeadbbe5aeff7d806cff65d0a7ded1a6e722242ecd3c9df03ad857
+SIZE (rubygem/aws-sdk-machinelearning-1.22.0.gem) = 49664
