@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aws-sdk-cognitosync
-PORTVERSION=	1.20.1
+PORTVERSION=	1.21.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
