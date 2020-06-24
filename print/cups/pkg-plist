@@ -727,7 +727,7 @@ sbin/lpmove
 %%PORTDOCS%%%%DOCSDIR%%/help/man-filter.html
 %%PORTDOCS%%%%DOCSDIR%%/help/man-ippevepcl.html
 %%PORTDOCS%%%%DOCSDIR%%/help/man-ippeveprinter.html
-%%PORTDOCS%%%%DOCSDIR%%/help/man-ippfind.html
+%%AVAHI%%%%PORTDOCS%%%%DOCSDIR%%/help/man-ippfind.html
 %%PORTDOCS%%%%DOCSDIR%%/help/man-ipptool.html
 %%PORTDOCS%%%%DOCSDIR%%/help/man-ipptoolfile.html
 %%PORTDOCS%%%%DOCSDIR%%/help/man-lp.html
