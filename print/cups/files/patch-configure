@@ -1,14 +1,14 @@
---- configure.orig	2018-03-23 03:48:36 UTC
+--- configure.orig	2020-04-27 18:04:29 UTC
 +++ configure
-@@ -5827,7 +5827,6 @@ if test "${with_dbusdir+set}" = set; then :
+@@ -5775,7 +5775,6 @@ fi
  fi
- 
+ LIBS="$SAVELIBS"
  
 -DBUSDIR=""
  DBUS_NOTIFIER=""
  DBUS_NOTIFIERLIBS=""
  
-@@ -6688,7 +6687,6 @@ if test "$DSO" != ":"; then
+@@ -6590,7 +6589,6 @@ if test "$DSO" != ":"; then
  			if test $exec_prefix != /usr; then
  				DSOFLAGS="-Wl,-R$libdir $DSOFLAGS"
  				LDFLAGS="$LDFLAGS -Wl,-R$libdir"
@@ -16,7 +16,7 @@
  			fi
  			;;
                  linux* | gnu*)
-@@ -8802,13 +8800,7 @@ fi
+@@ -8560,13 +8558,7 @@ fi
  			PAMLIBS="-lpam"
  		fi
  

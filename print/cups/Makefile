@@ -2,17 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	cups
-PORTVERSION=	2.2.13
+PORTVERSION=	2.3.3
 DISTVERSIONPREFIX=v
 CATEGORIES=	print
 
 MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	Common UNIX Printing System
 
-LICENSE=	GPLv2 LGPL20
-LICENSE_COMB=	multi
-LICENSE_FILE_GPLv2=	${WRKSRC}/LICENSE.txt
-LICENSE_FILE_LGPL20=	${WRKSRC}/LICENSE.txt
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 CONFLICTS=	LPRng-[0-9]*
 
@@ -103,7 +101,7 @@ post-patch:
 		's|http://www.cups.org|https://www.cups.org|g' {} +
 	@${REINPLACE_CMD} '/stripopt=/s/-x//' ${WRKSRC}/install-sh
 	@${REINPLACE_CMD} 's|/etc/cups|${LOCALBASE}/etc/cups|g' \
-		${WRKSRC}/man/*.man*
+		${WRKSRC}/man/*.[1-9]
 	@${REINPLACE_CMD} -e 's|\.default|.sample|'\
 		${WRKSRC}/cgi-bin/admin.c\
 		${WRKSRC}/conf/Makefile

@@ -1,6 +1,6 @@
---- backend/socket.c.orig	2014-06-09 18:35:32 UTC
+--- backend/socket.c.orig	2020-04-27 18:04:29 UTC
 +++ backend/socket.c
-@@ -316,7 +316,6 @@ main(int  argc,				/* I - Number of comm
+@@ -292,7 +292,6 @@ main(int  argc,				/* I - Number of command-line argum
    */
  
    fprintf(stderr, "DEBUG: Connecting to %s:%d\n", hostname, port);
@@ -8,7 +8,7 @@
  
    for (delay = 5;;)
    {
-@@ -397,7 +396,6 @@ main(int  argc,				/* I - Number of comm
+@@ -372,7 +371,6 @@ main(int  argc,				/* I - Number of command-line argum
    }
  
    fputs("STATE: -connecting-to-device\n", stderr);
@@ -16,8 +16,8 @@
  
    fprintf(stderr, "DEBUG: Connected to %s:%d...\n",
  	  httpAddrString(&(addr->addr), addrname, sizeof(addrname)),
-@@ -426,7 +424,7 @@ main(int  argc,				/* I - Number of comm
-                             0, backendNetworkSideCB);
+@@ -403,7 +401,7 @@ main(int  argc,				/* I - Number of command-line argum
+       tbytes = bytes;
  
      if (print_fd != 0 && tbytes >= 0)
 -      _cupsLangPrintFilter(stderr, "INFO", _("Print file sent."));
@@ -25,7 +25,7 @@
    }
  
    fputs("STATE: +cups-waiting-for-job-completed\n", stderr);
-@@ -437,7 +435,7 @@ main(int  argc,				/* I - Number of comm
+@@ -414,7 +412,7 @@ main(int  argc,				/* I - Number of command-line argum
      * Shutdown the socket and wait for the other end to finish...
      */
  
