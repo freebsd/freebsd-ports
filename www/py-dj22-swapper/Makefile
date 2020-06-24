@@ -16,6 +16,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 DEPRECATED=	Obsolete, please use www/py-swapper instead
+EXPIRATION_DATE=2020-06-30
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=0:devel/py-setuptools_scm@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django22>=1.6:www/py-django22@${PY_FLAVOR}
