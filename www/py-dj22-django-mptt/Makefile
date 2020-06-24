@@ -14,6 +14,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 DEPRECATED=	Obsolete, please use www/py-django-mptt instead
+EXPIRATION_DATE=	2020-06-30
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django22>=1.11:www/py-django22@${PY_FLAVOR}\
 		${PYTHON_PKGNAMEPREFIX}dj22-django-js-asset>0:www/py-dj22-django-js-asset@${PY_FLAVOR}

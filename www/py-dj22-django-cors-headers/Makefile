@@ -12,6 +12,7 @@ COMMENT=	Handles server headers required for Cross-Origin Resource Sharing
 LICENSE=	MIT
 
 DEPRECATED=	Obsolete, please use www/py-django-cors-headers instead
+EXPIRATION_DATE=	2020-06-30
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django22>0:www/py-django22@${PY_FLAVOR}
 
