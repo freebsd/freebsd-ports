@@ -14321,7 +14321,6 @@ graphics/py-chart||2020-02-22|Has expired: Broken, uses EOLed python27
 japanese/tegaki-recognize||2020-02-22|Has expired: Broken, uses EOLed python27
 mail/py-zope.sendmail||2020-02-22|Has expired: Old, uses EOLed python27
 mail/pysieved||2020-02-22|Has expired: Broken, uses EOLed python27
-math/ogdf||2020-02-22|Has expired: Broken, uses EOLed python27
 math/py-viper||2020-02-22|Has expired: Broken, uses EOLed python27
 misc/fbless||2020-02-22|Has expired: Broken, uses EOLed python27
 misc/pylize||2020-02-22|Has expired: Broken, uses EOLed python27

@@ -513,6 +513,7 @@
     SUBDIR += octave-forge-zenity
     SUBDIR += octave-forge-zeromq
     SUBDIR += octomap
+    SUBDIR += ogdf
     SUBDIR += oleo
     SUBDIR += onednn
     SUBDIR += openblas
