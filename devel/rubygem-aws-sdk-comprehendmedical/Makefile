@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aws-sdk-comprehendmedical
-PORTVERSION=	1.18.1
+PORTVERSION=	1.19.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
