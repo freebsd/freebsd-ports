@@ -1,3 +1,3 @@
-TIMESTAMP = 1592145457
-SHA256 (rubygem/aws-sdk-mediaconnect-1.23.1.gem) = 5fbe06f0951f5f2c3d4dd366a5d1c49399d48192e799c75e71febd8dbf4e21b7
-SIZE (rubygem/aws-sdk-mediaconnect-1.23.1.gem) = 29696
+TIMESTAMP = 1593003334
+SHA256 (rubygem/aws-sdk-mediaconnect-1.24.0.gem) = 95288b90bf92b93df1ade8b2989d5919c136c530f29a1182465e89aec290cf21
+SIZE (rubygem/aws-sdk-mediaconnect-1.24.0.gem) = 30208
