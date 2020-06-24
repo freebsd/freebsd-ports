@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aws-sdk-secretsmanager
-PORTVERSION=	1.37.1
+PORTVERSION=	1.38.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
