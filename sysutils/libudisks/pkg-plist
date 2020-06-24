@@ -34,10 +34,10 @@ share/gir-1.0/UDisks-2.0.gir
 %%DOCS%%share/gtk-doc/html/udisks2/UDisksPartitionTable.html
 %%DOCS%%share/gtk-doc/html/udisks2/UDisksSwapspace.html
 %%DOCS%%share/gtk-doc/html/udisks2/annotation-glossary.html
-%%DOCS%%share/gtk-doc/html/udisks2/api-index-2.8.4.html
+%%DOCS%%share/gtk-doc/html/udisks2/api-index-2.9.0.html
 %%DOCS%%share/gtk-doc/html/udisks2/api-index-deprecated.html
 %%DOCS%%share/gtk-doc/html/udisks2/api-index.html
-%%DOCS%%share/gtk-doc/html/udisks2/ch02.html
+%%DOCS%%share/gtk-doc/html/udisks2/ch03.html
 %%DOCS%%share/gtk-doc/html/udisks2/gdbus-org.freedesktop.UDisks2.Block.html
 %%DOCS%%share/gtk-doc/html/udisks2/gdbus-org.freedesktop.UDisks2.Drive.Ata.html
 %%DOCS%%share/gtk-doc/html/udisks2/gdbus-org.freedesktop.UDisks2.Drive.html
@@ -55,6 +55,7 @@ share/gir-1.0/UDisks-2.0.gir
 %%DOCS%%share/gtk-doc/html/udisks2/index.html
 %%DOCS%%share/gtk-doc/html/udisks2/left-insensitive.png
 %%DOCS%%share/gtk-doc/html/udisks2/left.png
+%%DOCS%%share/gtk-doc/html/udisks2/mount_options.html
 %%DOCS%%share/gtk-doc/html/udisks2/overview.html
 %%DOCS%%share/gtk-doc/html/udisks2/ref-dbus-block-devices.html
 %%DOCS%%share/gtk-doc/html/udisks2/ref-dbus-drives.html

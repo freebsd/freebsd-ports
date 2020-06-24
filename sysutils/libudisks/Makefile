@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libudisks
-PORTVERSION=	2.8.4
+PORTVERSION=	2.9.0
 # Obviates the need to specify GH_TAGNAME and repeat the version number later
 DISTVERSIONPREFIX=	udisks-
 CATEGORIES=	sysutils

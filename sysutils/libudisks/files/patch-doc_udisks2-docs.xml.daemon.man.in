@@ -1,6 +1,9 @@
---- doc/udisks2-docs.xml.daemon.man.in.orig	2019-10-03 03:15:30 UTC
+--- doc/udisks2-docs.xml.daemon.man.in.orig	2020-05-26 15:07:07 UTC
 +++ doc/udisks2-docs.xml.daemon.man.in
-@@ -0,0 +1,4 @@
+@@ -2,3 +2,7 @@
+     <xi:include href="man/udisks.xml"/>
+     <xi:include href="man/umount.udisks2.xml"/>
+     <xi:include href="man/udisks2.conf.5.xml"/>
 +    <xi:include href="man/udisksd.xml"/>
 +    <xi:include href="man/udisks.xml"/>
 +    <xi:include href="man/umount.udisks2.xml"/>

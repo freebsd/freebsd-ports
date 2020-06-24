@@ -1,14 +1,9 @@
---- doc/udisks2-sections.txt.daemon.sections.in.orig	2019-10-03 03:15:30 UTC
+--- doc/udisks2-sections.txt.daemon.sections.in.orig	2020-05-26 15:07:07 UTC
 +++ doc/udisks2-sections.txt.daemon.sections.in
-@@ -0,0 +1,560 @@
-+<SECTION>
-+<FILE>udisksdaemon</FILE>
-+<TITLE>UDisksDaemon</TITLE>
-+UDisksDaemon
-+udisks_daemon_new
-+udisks_daemon_get_connection
-+udisks_daemon_get_object_manager
-+udisks_daemon_get_mount_monitor
+@@ -6,6 +6,566 @@ udisks_daemon_new
+ udisks_daemon_get_connection
+ udisks_daemon_get_object_manager
+ udisks_daemon_get_mount_monitor
 +udisks_daemon_get_fstab_monitor
 +udisks_daemon_get_crypttab_monitor
 +udisks_daemon_get_linux_provider
@@ -561,3 +556,14 @@
 +udisks_module_manager_get_type
 +udisks_module_object_get_type
 +</SECTION>
++<SECTION>
++<FILE>udisksdaemon</FILE>
++<TITLE>UDisksDaemon</TITLE>
++UDisksDaemon
++udisks_daemon_new
++udisks_daemon_get_connection
++udisks_daemon_get_object_manager
++udisks_daemon_get_mount_monitor
+ udisks_daemon_get_crypttab_monitor
+ udisks_daemon_get_linux_provider
+ udisks_daemon_get_authority

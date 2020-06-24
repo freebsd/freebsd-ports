@@ -1,6 +1,14 @@
---- doc/udisks2.types.daemon.in.orig	2019-10-03 03:15:30 UTC
+--- doc/udisks2.types.daemon.in.orig	2020-05-26 15:07:07 UTC
 +++ doc/udisks2.types.daemon.in
-@@ -0,0 +1,29 @@
+@@ -22,6 +22,35 @@ udisks_linux_loop_get_type
+ udisks_linux_manager_get_type
+ udisks_state_get_type
+ udisks_fstab_entry_get_type
++udisks_fstab_monitor_get_type
++udisks_crypttab_entry_get_type
++udisks_crypttab_monitor_get_type
++udisks_linux_mdraid_object_get_type
++udisks_linux_mdraid_get_type
 +udisks_daemon_get_type
 +udisks_linux_device_get_type
 +udisks_linux_block_object_get_type
@@ -25,8 +33,6 @@
 +udisks_linux_manager_get_type
 +udisks_state_get_type
 +udisks_fstab_entry_get_type
-+udisks_fstab_monitor_get_type
-+udisks_crypttab_entry_get_type
-+udisks_crypttab_monitor_get_type
-+udisks_linux_mdraid_object_get_type
-+udisks_linux_mdraid_get_type
+ udisks_crypttab_entry_get_type
+ udisks_crypttab_monitor_get_type
+ udisks_linux_mdraid_object_get_type
