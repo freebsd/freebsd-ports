@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aws-sdk-textract
-PORTVERSION=	1.16.1
+PORTVERSION=	1.17.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
