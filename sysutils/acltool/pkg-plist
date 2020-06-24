@@ -1,0 +1,8 @@
+bin/acltool
+bin/edac
+bin/lac
+bin/sac
+man/man1/acltool.1.gz
+man/man1/edac.1.gz
+man/man1/lac.1.gz
+man/man1/sac.1.gz

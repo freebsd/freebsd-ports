@@ -1,39 +1,39 @@
 # $FreeBSD$
 
-PORTNAME=	acltool
-DISTVERSIONPREFIX=v
-DISTVERSION=	1.16.1
-CATEGORIES=	sysutils security
+PORTNAME=		acltool
+DISTVERSIONPREFIX=	v
+DISTVERSION=		1.16.2
+CATEGORIES=		sysutils security
 
-MAINTAINER=	pen@lysator.liu.se
-COMMENT=	ACL manipulation utility
+MAINTAINER=		pen@lysator.liu.se
+COMMENT=		ACL manipulation tool
 
-LICENSE=	BSD3CLAUSE
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE=		BSD3CLAUSE
+LICENSE_FILE=		${WRKSRC}/LICENSE
 
-OPTIONS_DEFINE=	READLINE SAMBA
-OPTIONS_DEFAULT=READLINE
+OPTIONS_DEFINE=		SAMBA
 
-READLINE_USES=	readline
-READLINE_DESC=	Build with GNU Readline for interactive editing
+OPTIONS_RADIO=		LINE_EDITOR
+OPTIONS_RADIO_LINE_EDITOR=	READLINE LIBEDIT
+OPTIONS_DEFAULT=	READLINE
 
-SAMBA_USES=	samba
-SAMBA_DESC=	Build with Samba (libsmbclient) for SMB support
+SAMBA_USES=		samba
+SAMBA_DESC=		Build with Samba (libsmbclient) for SMB support
 
-READLINE_CONFIGURE_WITH=readline
-SAMBA_CONFIGURE_WITH=libsmbclient
+READLINE_USES=		readline
+READLINE_DESC=		Build with GNU Readline for interactive editing
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	ptrrkssn
+LIBEDIT_USES=		libedit
+LIBEDIT_DESC=		Build with BSD Libedit for interactive editing
 
-GNU_CONFIGURE=	yes
+SAMBA_CONFIGURE_WITH=	libsmbclient
+READLINE_CONFIGURE_WITH=	readline
+LIBEDIT_CONFIGURE_WITH=	libedit
 
-PLIST_FILES=	bin/acltool \
-		bin/edac bin/lac \
-		bin/sac \
-		man/man1/edac.1.gz \
-		man/man1/lac.1.gz \
-		man/man1/sac.1.gz \
-		man/man1/acltool.1.gz
+USE_GITHUB=		yes
+GH_ACCOUNT=		ptrrkssn
+
+GNU_CONFIGURE=		yes
+INSTALL_TARGET=		install-strip
 
 .include <bsd.port.mk>
