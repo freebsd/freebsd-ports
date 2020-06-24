@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aws-sdk-route53resolver
-PORTVERSION=	1.15.1
+PORTVERSION=	1.16.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
