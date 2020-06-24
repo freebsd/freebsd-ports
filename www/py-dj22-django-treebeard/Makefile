@@ -13,6 +13,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 DEPRECATED=	Obsolete after r532093, use www/py-django-treebeard instead
+EXPIRATION_DATE=2020-06-30
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django22>=0:www/py-django22@${PY_FLAVOR}
 
