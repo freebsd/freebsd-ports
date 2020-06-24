@@ -6,7 +6,7 @@ DISTVERSION=	0.1.4
 CATEGORIES=	graphics kde
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Qt based Color Picker with popup menu
+COMMENT=	Qt based Color Picker library with popup menu
 
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/LICENSE

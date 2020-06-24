@@ -1,5 +1,5 @@
-QToolButton with color popup menu with lets you select a color. The popup
-features a color dialog button which can be used to add custom colors to the
-popup menu.
+Library containing a QToolButton with color popup menu for selecting a color.
+The popup features a color dialog button which can be used to add custom
+colors to the popup menu.
 
 WWW: https://github.com/ksnip/kColorPicker
