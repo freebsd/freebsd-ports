@@ -4,7 +4,7 @@ PORTNAME=	linux-rkbin
 DISTVERSION=	g20190719
 CATEGORIES=	sysutils linux
 
-MAINTAINER=	uboot@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Firmware and tools for RockChip SoCs
 
 ONLY_FOR_ARCHS=	amd64
