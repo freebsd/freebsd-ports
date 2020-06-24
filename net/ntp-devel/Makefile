@@ -14,6 +14,8 @@ MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The Network Time Protocol Distribution
 
 FORBIDDEN=	See http://support.ntp.org/bin/view/Main/SecurityNotice#March_2020_ntp_4_2_8p14_NTP_Rele
+DEPRECATED=	Current devel branch of ntp is no longer published
+EXPIRATION_DATE=	2020-08-31
 
 LIB_DEPENDS=	libevent.so:devel/libevent
 
