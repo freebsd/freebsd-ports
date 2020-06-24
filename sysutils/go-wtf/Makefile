@@ -3,6 +3,7 @@
 PORTNAME=	wtf
 PORTVERSION=	0.30.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	go-
 
@@ -61,7 +62,7 @@ GH_TUPLE=	\
 		go-inf:inf:v0.9.1:go_inf_inf/vendor/gopkg.in/inf.v0 \
 		go-ole:go-ole:v1.2.4:go_ole_go_ole/vendor/github.com/go-ole/go-ole \
 		go-yaml:yaml:v2.2.8:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
-		godbus:dbus:v4.1.0:godbus_dbus/vendor/github.com/godbus/dbus \
+		godbus:dbus:v5.0.1:godbus_dbus/vendor/github.com/godbus/dbus \
 		gogo:protobuf:v1.2.1:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang:appengine:v1.6.5:golang_appengine/vendor/google.golang.org/appengine \
 		golang:crypto:87dc89f01550:golang_crypto/vendor/golang.org/x/crypto \

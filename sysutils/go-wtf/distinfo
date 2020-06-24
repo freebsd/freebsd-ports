@@ -1,4 +1,4 @@
-TIMESTAMP = 1592361509
+TIMESTAMP = 1592962167
 SHA256 (wtfutil-wtf-v0.30.0_GH0.tar.gz) = 71a017c1744f6d5d68eee2e4f9f0126f4da23b79eb1fea21ae8fd97c306f4b16
 SIZE (wtfutil-wtf-v0.30.0_GH0.tar.gz) = 2237858
 SHA256 (AlecAivazis-survey-v1.7.1_GH0.tar.gz) = 5856e883e2a69df86e6e080586591d746e1a88438338e419ddd1ff55843e6cc6
@@ -81,8 +81,8 @@ SHA256 (go-ole-go-ole-v1.2.4_GH0.tar.gz) = 1f30df494ffc50c133c5f276f64c94820046b
 SIZE (go-ole-go-ole-v1.2.4_GH0.tar.gz) = 51655
 SHA256 (go-yaml-yaml-v2.2.8_GH0.tar.gz) = 9632d0760e9a07c414f2b2b6cd453d6225e42ecea77906883b23f1f1d0546045
 SIZE (go-yaml-yaml-v2.2.8_GH0.tar.gz) = 72732
-SHA256 (godbus-dbus-v4.1.0_GH0.tar.gz) = e35dd6031febb2b550b765da602a6e8eaa6a45c501af7370f66d7710a23c501d
-SIZE (godbus-dbus-v4.1.0_GH0.tar.gz) = 53466
+SHA256 (godbus-dbus-v5.0.1_GH0.tar.gz) = d5ea4142fe51b852185e8022edea673467a41295654a59dca377cff84bd22cb9
+SIZE (godbus-dbus-v5.0.1_GH0.tar.gz) = 59417
 SHA256 (gogo-protobuf-v1.2.1_GH0.tar.gz) = 99e423905ba8921e86817607a5294ffeedb66fdd4a85efce5eb2848f715fdb3a
 SIZE (gogo-protobuf-v1.2.1_GH0.tar.gz) = 2017393
 SHA256 (golang-appengine-v1.6.5_GH0.tar.gz) = 4e7df5d4ec2dda0f59f26925b36a087843fd1a165adb938712068376bf791316
