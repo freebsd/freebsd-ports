@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dry-configurable
-PORTVERSION=	0.11.5
+PORTVERSION=	0.11.6
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
