@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aws-sdk-greengrass
-PORTVERSION=	1.32.1
+PORTVERSION=	1.33.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
