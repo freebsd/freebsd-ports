@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aws-sdk-firehose
-PORTVERSION=	1.29.1
+PORTVERSION=	1.30.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
