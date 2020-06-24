@@ -1,5 +1,3 @@
-TIMESTAMP = 1587049005
-SHA256 (ksnip-kImageAnnotator-v0.2.1_GH0.tar.gz) = 790c4302d56719cf6a05eaf10b2d2baef760fffa29c1a43d0642822526520aed
-SIZE (ksnip-kImageAnnotator-v0.2.1_GH0.tar.gz) = 107027
-SHA256 (643e15e45ef7474f6f4c4b01ee3c3f71ef82f022.patch) = 19a9980f78dffb1bc359791d7797685a21f117d57587b098caaab82e2de3e3cd
-SIZE (643e15e45ef7474f6f4c4b01ee3c3f71ef82f022.patch) = 1137
+TIMESTAMP = 1592991794
+SHA256 (ksnip-kImageAnnotator-v0.3.0_GH0.tar.gz) = d7818246b4278402a7acd7d0675c84a64e91284c134a88605c58bec2a36d0a26
+SIZE (ksnip-kImageAnnotator-v0.3.0_GH0.tar.gz) = 128019

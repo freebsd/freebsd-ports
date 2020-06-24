@@ -1,19 +1,30 @@
-Obtained from [1] with minor adaption to fix linking against X11
-
-[1] https://github.com/ksnip/kImageAnnotator/pull/85
-
---- CMakeLists.txt.orig	2020-02-21 21:51:32 UTC
+--- CMakeLists.txt.orig	2020-06-24 09:59:32 UTC
 +++ CMakeLists.txt
-@@ -55,10 +55,10 @@ target_include_directories(kImageAnnotator
- 						   $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
- 						   )
+@@ -8,6 +8,9 @@ set(CMAKE_CXX_EXTENSIONS OFF)
+ set(CMAKE_AUTOMOC ON)
+ set(CMAKE_AUTORCC ON)
  
-+target_link_libraries(kImageAnnotator PUBLIC Qt5::Widgets PRIVATE kColorPicker::kColorPicker)
++include(GNUInstallDirs)
++include(FeatureSummary)
 +
+ option(BUILD_TESTS "Build Unit Tests" OFF)
+ option(BUILD_EXAMPLE "Build Example Application" ON)
+ 
+@@ -27,9 +30,6 @@ if (UNIX)
+ 	find_package(X11 REQUIRED)
+ endif ()
+ 
+-include(GNUInstallDirs)
+-include(FeatureSummary)
+-
+ set(KCOLORPICKER_MIN_VERSION "0.1.4")
+ find_package(kColorPicker ${KCOLORPICKER_MIN_VERSION} REQUIRED)
+ 
+@@ -69,7 +69,7 @@ target_include_directories(kImageAnnotator
+ target_link_libraries(kImageAnnotator PUBLIC Qt5::Widgets Qt5::Svg PRIVATE kColorPicker::kColorPicker)
+ 
  if (UNIX)
--	target_link_libraries(kImageAnnotator PUBLIC Qt5::Widgets kColorPicker X11)
--else ()
--	target_link_libraries(kImageAnnotator PUBLIC Qt5::Widgets kColorPicker)
+-	target_link_libraries(kImageAnnotator PRIVATE X11)
 +	target_link_libraries(kImageAnnotator PRIVATE X11::X11)
  endif ()
  
