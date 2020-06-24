@@ -19,5 +19,6 @@ USE_QT=		buildtools_build core qmake_build testlib
 SHEBANG_FILES=	generate-24px-versions.sh
 
 NO_ARCH=	yes
+CMAKE_ARGS=	-DXMLLINT_EXE:PATH=''
 
 .include <bsd.port.mk>
