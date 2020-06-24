@@ -36,7 +36,7 @@ CONFIGURE_ARGS=	--disable-dnssd						\
 		--with-pam-module="unix"				\
 		ac_cv_path_JAVA= ac_cv_path_PERL= ac_cv_path_PHPCGI=	\
 		ac_cv_path_PHP= ac_cv_path_PYTHON=
-USES=		cpe gmake iconv localbase pkgconfig
+USES=		compiler:c++11-lang cpe gmake iconv localbase pkgconfig
 CPE_VENDOR=	apple
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	cupsd
