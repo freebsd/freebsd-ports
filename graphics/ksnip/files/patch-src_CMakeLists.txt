@@ -1,0 +1,22 @@
+--- src/CMakeLists.txt.orig	2020-06-24 10:42:56 UTC
++++ src/CMakeLists.txt
+@@ -157,8 +157,8 @@ target_link_libraries(ksnip
+ 					  Qt5::Xml
+ 					  Qt5::PrintSupport
+ 					  Qt5::DBus
+-					  kImageAnnotator
+-					  kColorPicker
++					  kImageAnnotator::kImageAnnotator
++					  kColorPicker::kColorPicker
+ 					  Qt5::Svg
+ 					  )
+ 
+@@ -168,7 +168,7 @@ elseif (UNIX)
+ 	target_link_libraries(ksnip
+             Qt5::X11Extras
+ 			XCB::XFIXES
+-            X11
++            X11::X11
+             )
+ elseif(WIN32)
+ 	target_link_libraries(ksnip

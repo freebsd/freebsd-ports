@@ -1,0 +1,19 @@
+--- CMakeLists.txt.orig	2020-06-24 10:34:13 UTC
++++ CMakeLists.txt
+@@ -32,7 +32,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
+ 
+ set(QT_MIN_VERSION "5.9.4")
+ 
+-find_package(Qt5 ${QT_MIN_VERSION} REQUIRED Widgets Network Xml PrintSupport DBus Svg)
++find_package(Qt5 ${QT_MIN_VERSION} REQUIRED Concurrent Widgets Network Xml PrintSupport DBus Svg)
+ 
+ if (WIN32)
+     find_package(Qt5 ${QT_MIN_VERSION} REQUIRED WinExtras)
+@@ -49,6 +49,7 @@ endif ()
+ 
+ set(KIMAGEANNOTATOR_MIN_VERSION "0.2.2")
+ find_package(kImageAnnotator ${KIMAGEANNOTATOR_MIN_VERSION} REQUIRED)
++find_package(kColorPicker REQUIRED)
+ 
+ set(BASEPATH "${CMAKE_SOURCE_DIR}")
+ include_directories("${BASEPATH}")

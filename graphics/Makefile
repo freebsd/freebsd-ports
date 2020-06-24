@@ -401,6 +401,7 @@
     SUBDIR += kphotoalbum
     SUBDIR += kqtquickcharts
     SUBDIR += krita
+    SUBDIR += ksnip
     SUBDIR += kudu
     SUBDIR += kxstitch
     SUBDIR += l2p
