@@ -23,12 +23,8 @@ USE_PYTHON=	flavors
 TARGET_ORDER_OVERRIDE=	510:fix-shebang # after do-patch
 SHEBANG_FILES=	${PORTNAME} git-remote-hg
 ALL_TARGET=	${PORTNAME}-helper
-.ifnmake describe
-MAKE_ENV!=	${MAKE} -V MAKE_ENV -C ${.CURDIR}/../git
-MAKE_ARGS!=	${MAKE} -V MAKE_ARGS -C ${.CURDIR}/../git
-.endif
-MAKE_ENV+=	PYTHON_PATH="${PYTHON_CMD}"
-MAKE_ARGS+=	SUBMODULE_STATUS=dummy
+MAKE_ENV=	${:!${MAKE} -V MAKE_ENV -C ${.CURDIR:H}/git!}
+MAKE_ARGS=	SUBMODULE_STATUS=dummy ${:!${MAKE} -V MAKE_ARGS -C ${.CURDIR:H}/git!}
 CFLAGS+=	-ffunction-sections -fdata-sections
 LDFLAGS+=	-Wl,--gc-sections
 .export		CPPFLAGS CFLAGS CXXFLAGS LDFLAGS # :configure
