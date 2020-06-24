@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cucumber
-PORTVERSION=	4.0.0
+PORTVERSION=	4.0.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -18,7 +18,7 @@ RUN_DEPENDS=	rubygem-builder>=3.2.3<4:devel/rubygem-builder \
 		rubygem-cucumber-html-formatter>=6.0.1<7:textproc/rubygem-cucumber-html-formatter \
 		rubygem-cucumber-messages>=12.1.1<13:devel/rubygem-cucumber-messages \
 		rubygem-cucumber-wire>=3.0.0<4:devel/rubygem-cucumber-wire \
-		rubygem-diff-lcs>=1.3<2:textproc/rubygem-diff-lcs \
+		rubygem-diff-lcs>=1.3<1.4:textproc/rubygem-diff-lcs \
 		rubygem-multi_test>=0.1.2<1:devel/rubygem-multi_test \
 		rubygem-sys-uname>=1.0.2<2:sysutils/rubygem-sys-uname
 
