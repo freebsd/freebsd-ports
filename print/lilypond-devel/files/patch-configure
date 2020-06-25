@@ -76,7 +76,7 @@
  
      fi
 @@ -11579,21 +11518,7 @@ $as_echo "$ver" >&6; }
-     eval "$DOCUMENTATION_REQUIRED"=\"`eval echo \"'$'$DOCUMENTATION_REQUIRED\" \""$r >= 1.82 (installed: $ver)"\"`\"
+     eval "$TEXI2HTML_REQUIRED"=\"`eval echo \"'$'$TEXI2HTML_REQUIRED\" \""$r >= 1.82 (installed: $ver)"\"`\"
  
      fi
 -    if test -n "1.82"; then
@@ -90,7 +90,7 @@
 -`
 -        if test "$num" -gt "$max"; then
  
--    eval "$DOCUMENTATION_REQUIRED"=\"`eval echo \"'$'$DOCUMENTATION_REQUIRED\" \""$r <= 1.82 (installed: $ver)"\"`\"
+-    eval "$TEXI2HTML_REQUIRED"=\"`eval echo \"'$'$TEXI2HTML_REQUIRED\" \""$r <= 1.82 (installed: $ver)"\"`\"
 -
 -        fi
 -    fi

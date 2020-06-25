@@ -248,8 +248,6 @@ share/emacs/site-lisp/lilypond-words.el
 %%DATADIR%%/%%DISTVERSION%%/python/__pycache__/musicexp.cpython-%%PYTHON_SUFFIX%%.pyc
 %%DATADIR%%/%%DISTVERSION%%/python/__pycache__/musicxml.cpython-%%PYTHON_SUFFIX%%.pyc
 %%DATADIR%%/%%DISTVERSION%%/python/__pycache__/musicxml2ly_conversion.cpython-%%PYTHON_SUFFIX%%.pyc
-%%DATADIR%%/%%DISTVERSION%%/python/__pycache__/rational.cpython-%%PYTHON_SUFFIX%%.pyc
-%%DATADIR%%/%%DISTVERSION%%/python/__pycache__/safeeval.cpython-%%PYTHON_SUFFIX%%.pyc
 %%DATADIR%%/%%DISTVERSION%%/python/__pycache__/utilities.cpython-%%PYTHON_SUFFIX%%.pyc
 %%DATADIR%%/%%DISTVERSION%%/python/book_base.py
 %%DATADIR%%/%%DISTVERSION%%/python/book_docbook.py
@@ -265,8 +263,6 @@ share/emacs/site-lisp/lilypond-words.el
 %%DATADIR%%/%%DISTVERSION%%/python/musicexp.py
 %%DATADIR%%/%%DISTVERSION%%/python/musicxml.py
 %%DATADIR%%/%%DISTVERSION%%/python/musicxml2ly_conversion.py
-%%DATADIR%%/%%DISTVERSION%%/python/rational.py
-%%DATADIR%%/%%DISTVERSION%%/python/safeeval.py
 %%DATADIR%%/%%DISTVERSION%%/python/utilities.py
 %%DATADIR%%/%%DISTVERSION%%/scm/accreg.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/auto-beam.scm
