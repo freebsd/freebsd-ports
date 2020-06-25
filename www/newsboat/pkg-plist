@@ -27,12 +27,13 @@ bin/podboat
 %%PORTDOCS%%%%DOCSDIR%%/contrib/urls-maintenance.sh
 %%PORTDOCS%%%%DOCSDIR%%/examples/config
 %%PORTDOCS%%%%DOCSDIR%%/examples/example-bookmark-plugin.sh
+%%PORTDOCS%%%%DOCSDIR%%/examples/example-exec-script.py
 %%PORTDOCS%%%%DOCSDIR%%/faq.html
 %%PORTDOCS%%%%DOCSDIR%%/newsboat.html
+share/icons/hicolor/scalable/apps/newsboat.svg
 share/locale/ca/LC_MESSAGES/newsboat.mo
 share/locale/de/LC_MESSAGES/newsboat.mo
 share/locale/es/LC_MESSAGES/newsboat.mo
-share/locale/es_ES/LC_MESSAGES/newsboat.mo
 share/locale/fr/LC_MESSAGES/newsboat.mo
 share/locale/hu/LC_MESSAGES/newsboat.mo
 share/locale/it/LC_MESSAGES/newsboat.mo
