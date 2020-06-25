@@ -1,6 +1,0 @@
-Plugin implements SSO authentication method in Redmine.
-
-Plugin allows transparent authentication of the User using his domain
-account through Web-server module (for ex. mod_ntlm in Apache).
-
-WWW: https://bitbucket.org/dkuk/single_auth

@@ -15093,3 +15093,16 @@ net-mgmt/zabbix42-proxy|net-mgmt/zabbix44-proxy|2020-06-21|Has expired: End of L
 net-mgmt/zabbix42-agent|net-mgmt/zabbix44-agent|2020-06-21|Has expired: End of Life
 net-mgmt/zabbix42-frontend|net-mgmt/zabbix44-frontend|2020-06-21|Has expired: End of Life
 x11/swappy|graphics/swappy|2020-06-25|Moved to a better category
+www/redmine|www/redmine4|2020-06-25|Has expired: EOLed upstream
+www/redmine-a_common_libs|www/redmine4|2020-06-25|Removed, build-time extension of www/redmine
+www/redmine-basecamp|www/redmine4|2020-06-25|Removed, build-time extension of www/redmine
+www/redmine-default_assign|www/redmine4|2020-06-25|Removed, build-time extension of www/redmine
+www/redmine-graphs|www/redmine4|2020-06-25|Removed, build-time extension of www/redmine
+www/redmine-http-auth|www/redmine4|2020-06-25|Removed, build-time extension of www/redmine
+www/redmine-issue_templates|www/redmine4|2020-06-25|Removed, build-time extension of www/redmine
+www/redmine-knowledgebase|www/redmine4|2020-06-25|Removed, build-time extension of www/redmine
+www/redmine-ldap_sync|www/redmine4|2020-06-25|Removed, build-time extension of www/redmine
+www/redmine-qa_contact|www/redmine4|2020-06-25|Removed, build-time extension of www/redmine
+www/redmine-redcarpet_formatter|www/redmine4|2020-06-25|Removed, build-time extension of www/redmine
+www/redmine-single_auth|www/redmine4|2020-06-25|Removed, build-time extension of www/redmine
+www/redmine-wiki_notes|www/redmine4|2020-06-25|Removed, build-time extension of www/redmine
