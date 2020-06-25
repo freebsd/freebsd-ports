@@ -1,0 +1,18 @@
+Unbreak build with GCC 10
+
+epsilon_main.f90:1271:72:
+
+ 1271 |         call epsinv(gvec,pol,ekin,qq,is_q0,crys,scal,kp,omega_plasma,iq)
+      |                                                                        1
+Error: Missing actual argument for argument '_formal_18' at (1)
+
+--- Epsilon/Makefile.orig	2020-06-25 06:37:46 UTC
++++ Epsilon/Makefile
+@@ -21,6 +21,7 @@ COMOBJ = bessel.o subgrp.o check_inversion.o svninfo.o
+          epsread_hdf5.o find_kpt_match.o hdf5_io.o wfn_io_hdf5.o inread_common.o tile.o \
+          elpa_interface.o
+ COMMONOBJS = $(addprefix $(COMMON)/,$(COMOBJ)) $(GLOBALOBJS) $(TILE_LIBS)
++FOPTS += -std=legacy
+ 
+ TOOLOBJEXT = epsmat_merge.o epsascbin.o epsbinasc.o ploteps.o epsinvomega.o epsomega.o printchi.o eps0sym.o
+ ifeq ($(findstring -DHDF5,$(MATHFLAG)),-DHDF5)
