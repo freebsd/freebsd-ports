@@ -4574,7 +4574,7 @@ install-rc-script:
 		_prefix=${PREFIX}; \
 		[ "${PREFIX}" = "/usr" ] && _prefix="" ; \
 		${INSTALL_SCRIPT} ${WRKDIR}/$${i} ${STAGEDIR}$${_prefix}/etc/rc.d/$${i%.sh}; \
-		${ECHO_CMD} "$${_prefix}/etc/rc.d/$${i%.sh}" >> ${TMPPLIST}; \
+		${ECHO_CMD} "@(root,wheel,0755) $${_prefix}/etc/rc.d/$${i%.sh}" >> ${TMPPLIST}; \
 	done
 .endif
 .endif
