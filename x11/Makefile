@@ -304,6 +304,7 @@
     SUBDIR += startup-notification
     SUBDIR += sterm
     SUBDIR += stjerm
+    SUBDIR += swappy
     SUBDIR += swarp
     SUBDIR += swaybg
     SUBDIR += swayidle
