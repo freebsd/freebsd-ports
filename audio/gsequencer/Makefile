@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gsequencer
-DISTVERSION=	3.0.9
+DISTVERSION=	3.4.5
 CATEGORIES=	audio
 MASTER_SITES=	SAVANNAH/gsequencer/${DISTVERSION:R}.x
 
@@ -25,9 +25,9 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libwebkit2gtk-4.0.so:www/webkit2-gtk3
 RUN_DEPENDS=	dssi>0:audio/dssi
 
-USES=		desktop-file-utils gettext-runtime gmake gnome libtool localbase pkgconfig shared-mime-info xorg
+USES=		desktop-file-utils gettext-runtime gettext-tools gmake gnome libtool localbase pkgconfig shared-mime-info xorg
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-alsa --enable-oss --enable-threads=posix --without-included-regex
+CONFIGURE_ARGS=	--disable-alsa --enable-oss --disable-introspection --disable-rt
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 libxml2 pango
 USE_XORG=	x11
 USE_GCC=	yes # the project uses gnu99 extensions, clang fails even with USE_CSTD=gnu99. Suggestions how to build with clang are welcome.
