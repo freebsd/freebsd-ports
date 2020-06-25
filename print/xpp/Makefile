@@ -7,8 +7,12 @@ PORTREVISION=	12
 CATEGORIES=	print
 MASTER_SITES=	SF/cups/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	cy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11-based printer manager for CUPS
+
+DEPRECATED=	Last update as 2004-12-09, unsupported by upstream
+EXPIRATION_DATE=	2020-06-30
+BROKEN=		Fails to build with latest CUPS, unsupported by upstream
 
 LIB_DEPENDS=	libcups.so:print/cups \
 		libfltk.so.1:x11-toolkits/fltk
