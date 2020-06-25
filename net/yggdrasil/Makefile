@@ -2,7 +2,7 @@
 
 PORTNAME=	yggdrasil
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.11
+DISTVERSION=	0.3.14
 CATEGORIES=	net
 
 MAINTAINER=	freebsd@neilalexander.dev
@@ -17,19 +17,24 @@ GH_ACCOUNT=	yggdrasil-network
 GH_PROJECT=	yggdrasil-go
 GH_TUPLE=	\
 		Arceliar:phony:d0c68492aca0:arceliar_phony/vendor/github.com/Arceliar/phony \
-		golang:crypto:87dc89f01550:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:ec77196f6094:golang_net/vendor/golang.org/x/net \
-		golang:sys:b4ff53e7a1cb:golang_sys/vendor/golang.org/x/sys \
-		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
+		VividCortex:ewma:v1.1.1:vividcortex_ewma/vendor/github.com/VividCortex/ewma \
+		cheggaaa:pb:v3.0.4:cheggaaa_pb_v3/vendor/github.com/cheggaaa/pb \
+		fatih:color:v1.7.0:fatih_color/vendor/github.com/fatih/color \
+		golang:crypto:2aa609cf4a9d:golang_crypto/vendor/golang.org/x/crypto \
+		golang:net:244492dfa37a:golang_net/vendor/golang.org/x/net \
+		golang:sys:5c8b2ff67527:golang_sys/vendor/golang.org/x/sys \
+		golang:text:929e72ca90de:golang_text/vendor/golang.org/x/text \
 		gologme:log:4e5d8ccb38e8:gologme_log/vendor/github.com/gologme/log \
 		hashicorp:go-syslog:v1.0.0:hashicorp_go_syslog/vendor/github.com/hashicorp/go-syslog \
-		hjson:hjson-go:v3.0.0:hjson_hjson_go/vendor/github.com/hjson/hjson-go \
+		hjson:hjson-go:9147687966d9:hjson_hjson_go/vendor/github.com/hjson/hjson-go \
 		kardianos:minwinsvc:cad6b2b879b0:kardianos_minwinsvc/vendor/github.com/kardianos/minwinsvc \
+		mattn:go-colorable:v0.1.2:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
+		mattn:go-isatty:v0.0.10:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
+		mattn:go-runewidth:v0.0.7:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
 		mitchellh:mapstructure:v1.1.2:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
-		songgao:packets:549a10cd4091:songgao_packets/vendor/github.com/songgao/packets \
 		vishvananda:netlink:v1.0.0:vishvananda_netlink/vendor/github.com/vishvananda/netlink \
 		vishvananda:netns:7109fa855b0f:vishvananda_netns/vendor/github.com/vishvananda/netns \
-		yggdrasil-network:water:c83fe40250f8:yggdrasil_network_water/vendor/github.com/yggdrasil-network/water
+		wireguard:wireguard-go:v0.0.20200320:wireguard_wireguard_go/vendor/golang.zx2c4.com/wireguard
 
 GO_TARGET=	./cmd/yggdrasil \
 		./cmd/yggdrasilctl
