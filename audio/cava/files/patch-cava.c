@@ -1,6 +1,6 @@
---- cava.c.orig	2020-05-26 20:29:47 UTC
+--- cava.c.orig	2020-06-24 19:18:09 UTC
 +++ cava.c
-@@ -32,13 +32,11 @@
+@@ -31,13 +31,11 @@
  #include "util.h"
  
  #ifdef NCURSES
@@ -14,7 +14,7 @@
  
  #include "input/alsa.h"
  #include "input/common.h"
-@@ -91,8 +89,6 @@ void cleanup(void) {
+@@ -90,8 +88,6 @@ void cleanup(void) {
  #else
          ;
  #endif
@@ -23,7 +23,7 @@
      }
  }
  
-@@ -338,8 +334,12 @@ as of 0.4.0 all options are specified in config file, 
+@@ -337,8 +333,12 @@ as of 0.4.0 all options are specified in config file, 
              if (strncmp(ttyname(0), "/dev/ttys", 9) == 0)
                  inAtty = 0;
              if (inAtty) {
@@ -36,20 +36,20 @@
              }
  
              // We use unicode block characters to draw the bars and
-@@ -547,12 +547,6 @@ as of 0.4.0 all options are specified in config file, 
+@@ -546,12 +546,6 @@ as of 0.4.0 all options are specified in config file, 
                  height = lines * 8;
                  break;
  #endif
 -            case OUTPUT_NONCURSES:
 -                get_terminal_dim_noncurses(&width, &lines);
--                init_terminal_noncurses(p.col, p.bgcol, width, lines, p.bar_width);
+-                init_terminal_noncurses(inAtty, p.col, p.bgcol, width, lines, p.bar_width);
 -                height = (lines - 1) * 8;
 -                break;
 -
              case OUTPUT_RAW:
                  if (strcmp(p.raw_target, "/dev/stdout") != 0) {
                      // checking if file exists
-@@ -998,10 +992,6 @@ as of 0.4.0 all options are specified in config file, 
+@@ -997,10 +991,6 @@ as of 0.4.0 all options are specified in config file, 
                                                 p.gradient);
                      break;
  #endif

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cava
-DISTVERSION=	0.7.0
+DISTVERSION=	0.7.1
 CATEGORIES=	audio
 
 MAINTAINER=	tobik@FreeBSD.org
