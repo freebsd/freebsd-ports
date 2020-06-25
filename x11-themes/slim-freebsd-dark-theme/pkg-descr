@@ -1,11 +1,4 @@
-SLiM is an acronym for "Simple Login Manager".
-
-Lightweight and easily configurable, SLiM requires minimal dependencies,
-and none from the GNOME or KDE desktop environments. It therefore contributes
-towards a lightweight system for users that also like to use lightweight
-desktops such as Xfce, Openbox, and Fluxbox.
-
-This package is a minimalist FreeBSD black/red colors theme, using
-the colors defined by the FreeBSD Foundation.
+Minimalist FreeBSD black/red colors theme for the SLiM Login Manager,
+using the logo and colors created by the FreeBSD Foundation.
 
 WWW: https://github.com/gocobachi/slim-freebsd-dark-theme

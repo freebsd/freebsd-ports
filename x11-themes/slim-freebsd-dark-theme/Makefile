@@ -3,6 +3,7 @@
 PORTNAME=	slim-freebsd-dark-theme
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	x11-themes
 
 MAINTAINER=	miguel@gocobachi.dev
@@ -27,7 +28,7 @@ _THEMEDIR=	${PREFIX}/${_THEMEDIR_REL}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${_THEMEDIR}
-	(cd ${WRKSRC} && \
-		${COPYTREE_SHARE} . ${STAGEDIR}${_THEMEDIR} '! -name LICENSE ! -name README.md')
+	${INSTALL_DATA} ${WRKSRC}/*.png ${STAGEDIR}${_THEMEDIR}/
+	${INSTALL_DATA} ${WRKSRC}/*.theme ${STAGEDIR}${_THEMEDIR}/
 
 .include <bsd.port.mk>
