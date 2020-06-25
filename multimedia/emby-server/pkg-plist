@@ -212,7 +212,6 @@ lib/emby-server/system/System.Xml.XPath.XDocument.dll
 lib/emby-server/system/System.Xml.XPath.dll
 lib/emby-server/system/System.Xml.XmlDocument.dll
 lib/emby-server/system/System.Xml.XmlSerializer.dll
-lib/emby-server/system/dashboard-ui/apikeys/apikeys.html
 lib/emby-server/system/dashboard-ui/apikeys/apikeys.js
 lib/emby-server/system/dashboard-ui/app.js
 lib/emby-server/system/dashboard-ui/apploader.js
@@ -315,7 +314,10 @@ lib/emby-server/system/dashboard-ui/bower_components/emby-webcomponents/usersett
 lib/emby-server/system/dashboard-ui/bower_components/fetch/fetch.js
 lib/emby-server/system/dashboard-ui/bower_components/hlsjs/dist/hls.min.js
 lib/emby-server/system/dashboard-ui/bower_components/howlerjs/dist/howler.min.js
-lib/emby-server/system/dashboard-ui/bower_components/javascriptsubtitlesoctopus/dist/subfont.woff
+lib/emby-server/system/dashboard-ui/bower_components/javascriptsubtitlesoctopus/dist/subtitles-octopus-worker-legacy.data
+lib/emby-server/system/dashboard-ui/bower_components/javascriptsubtitlesoctopus/dist/subtitles-octopus-worker-legacy.js
+lib/emby-server/system/dashboard-ui/bower_components/javascriptsubtitlesoctopus/dist/subtitles-octopus-worker-legacy.js.mem
+lib/emby-server/system/dashboard-ui/bower_components/javascriptsubtitlesoctopus/dist/subtitles-octopus-worker.data
 lib/emby-server/system/dashboard-ui/bower_components/javascriptsubtitlesoctopus/dist/subtitles-octopus-worker.js
 lib/emby-server/system/dashboard-ui/bower_components/javascriptsubtitlesoctopus/dist/subtitles-octopus-worker.wasm
 lib/emby-server/system/dashboard-ui/bower_components/javascriptsubtitlesoctopus/dist/subtitles-octopus.js
@@ -431,6 +433,8 @@ lib/emby-server/system/dashboard-ui/livetvsetup/schedulesdirect.html
 lib/emby-server/system/dashboard-ui/livetvsetup/schedulesdirect.js
 lib/emby-server/system/dashboard-ui/livetvsetup/xmltv.html
 lib/emby-server/system/dashboard-ui/livetvsetup/xmltv.js
+lib/emby-server/system/dashboard-ui/logs/log.css
+lib/emby-server/system/dashboard-ui/logs/log.js
 lib/emby-server/system/dashboard-ui/logs/logs.js
 lib/emby-server/system/dashboard-ui/manifest.json
 lib/emby-server/system/dashboard-ui/metadatamanager/metadatamanager.css
@@ -466,6 +470,7 @@ lib/emby-server/system/dashboard-ui/modules/cardbuilder/roundcard.css
 lib/emby-server/system/dashboard-ui/modules/chromecast/chromecasthelpers.js
 lib/emby-server/system/dashboard-ui/modules/chromecast/chromecastplayer.js
 lib/emby-server/system/dashboard-ui/modules/clearbutton.css
+lib/emby-server/system/dashboard-ui/modules/commandprocessor.js
 lib/emby-server/system/dashboard-ui/modules/confirmstillplaying/plugin.js
 lib/emby-server/system/dashboard-ui/modules/controlbox.js
 lib/emby-server/system/dashboard-ui/modules/detailbuttons.css
@@ -504,6 +509,7 @@ lib/emby-server/system/dashboard-ui/modules/emby-elements/emby-textarea/emby-tex
 lib/emby-server/system/dashboard-ui/modules/emby-elements/emby-textarea/emby-textarea.js
 lib/emby-server/system/dashboard-ui/modules/emby-elements/emby-toggle/emby-toggle.css
 lib/emby-server/system/dashboard-ui/modules/emby-elements/emby-toggle/emby-toggle.js
+lib/emby-server/system/dashboard-ui/modules/emby-elements/guide/gridrowrenderer.js
 lib/emby-server/system/dashboard-ui/modules/emby-elements/guide/guide-settings.js
 lib/emby-server/system/dashboard-ui/modules/emby-elements/guide/guide-settings.template.html
 lib/emby-server/system/dashboard-ui/modules/emby-elements/guide/guide.css
@@ -579,6 +585,7 @@ lib/emby-server/system/dashboard-ui/modules/fonts/roboto/KFOmCnqEu92Fr1Mu72xKOzY
 lib/emby-server/system/dashboard-ui/modules/fonts/roboto/KFOmCnqEu92Fr1Mu7GxKOzY.woff2
 lib/emby-server/system/dashboard-ui/modules/fonts/roboto/KFOmCnqEu92Fr1Mu7WxKOzY.woff2
 lib/emby-server/system/dashboard-ui/modules/fonts/roboto/KFOmCnqEu92Fr1Mu7mxKOzY.woff2
+lib/emby-server/system/dashboard-ui/modules/fonts/subfont.woff2
 lib/emby-server/system/dashboard-ui/modules/formdialog.css
 lib/emby-server/system/dashboard-ui/modules/formhelper.js
 lib/emby-server/system/dashboard-ui/modules/fullscreen/fullscreen-dc.js
@@ -595,7 +602,6 @@ lib/emby-server/system/dashboard-ui/modules/htmlvideoplayer/vtt.min.js
 lib/emby-server/system/dashboard-ui/modules/humanedate/humanedate.js
 lib/emby-server/system/dashboard-ui/modules/iap.js
 lib/emby-server/system/dashboard-ui/modules/imagedownloader/imagedownloader.js
-lib/emby-server/system/dashboard-ui/modules/imagedownloader/imagedownloader.template.html
 lib/emby-server/system/dashboard-ui/modules/imageeditor/imageeditor.js
 lib/emby-server/system/dashboard-ui/modules/imageeditor/imageeditor.template.html
 lib/emby-server/system/dashboard-ui/modules/imageloader/imageloader.css
@@ -773,6 +779,7 @@ lib/emby-server/system/dashboard-ui/music/suggestions.js
 lib/emby-server/system/dashboard-ui/musicvideos/musicvideos.html
 lib/emby-server/system/dashboard-ui/musicvideos/musicvideos.js
 lib/emby-server/system/dashboard-ui/musicvideos/videos.js
+lib/emby-server/system/dashboard-ui/native/operatv/input.js
 lib/emby-server/system/dashboard-ui/network/network.html
 lib/emby-server/system/dashboard-ui/network/network.js
 lib/emby-server/system/dashboard-ui/notificationsetting.html
