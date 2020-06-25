@@ -2,9 +2,9 @@
 
 PORTNAME=	wazuh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.12.3
+DISTVERSION=	3.13.0
 CATEGORIES=	security
-MASTER_SITES=	https://packages.wazuh.com/deps/3.12/
+MASTER_SITES=	https://packages.wazuh.com/deps/3.13/
 PKGNAMESUFFIX=	-agent
 DISTFILES=	cJSON.tar.gz src_cpython.tar.gz curl.tar.gz libdb.tar.gz libffi.tar.gz \
 		libyaml.tar.gz openssl.tar.gz procps.tar.gz sqlite.tar.gz  zlib.tar.gz \
