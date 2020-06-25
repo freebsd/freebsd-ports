@@ -3,7 +3,7 @@
 PORTNAME=	swappy
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.1.0
-CATEGORIES=	x11
+CATEGORIES=	graphics
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	b59700f47085.patch:-p1 # https://github.com/jtheoof/swappy/pull/42

@@ -1006,6 +1006,7 @@
     SUBDIR += svg2png
     SUBDIR += svgalib
     SUBDIR += svgbob
+    SUBDIR += swappy
     SUBDIR += swfdec
     SUBDIR += swfmill
     SUBDIR += swftools

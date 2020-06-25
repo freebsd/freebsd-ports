@@ -15092,3 +15092,4 @@ sysutils/duplicity07|sysutils/duplicity|2020-06-21|Has expired: Uses deprecated 
 net-mgmt/zabbix42-proxy|net-mgmt/zabbix44-proxy|2020-06-21|Has expired: End of Life
 net-mgmt/zabbix42-agent|net-mgmt/zabbix44-agent|2020-06-21|Has expired: End of Life
 net-mgmt/zabbix42-frontend|net-mgmt/zabbix44-frontend|2020-06-21|Has expired: End of Life
+x11/swappy|graphics/swappy|2020-06-25|Moved to a better category
