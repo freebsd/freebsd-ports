@@ -209,6 +209,7 @@
     SUBDIR += grafana4
     SUBDIR += grafana5
     SUBDIR += grafana6
+    SUBDIR += grafana7
     SUBDIR += grails
     SUBDIR += gregarius
     SUBDIR += groupoffice
