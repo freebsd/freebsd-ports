@@ -1,0 +1,34 @@
+--- configure.ac.orig	2020-05-06 06:11:56 UTC
++++ configure.ac
+@@ -707,7 +707,6 @@ fi
+ # Xft is optional, allows text rotation in plots
+ 
+ if test "x$no_x" != xyes ; then
+-    X_CFLAGS="$X_CFLAGS -I/usr/include/freetype2"
+     AC_CHECK_LIB([Xaw], [main], [X_LIBS="$X_LIBS -lXaw"],
+         [AC_MSG_ERROR([Couldn't find Xaw library])], [$X_LIBS $X_EXTRA_LIBS])
+     AC_CHECK_LIB([Xmu], [main], [X_LIBS="$X_LIBS -lXmu"],
+@@ -716,21 +715,8 @@ if test "x$no_x" != xyes ; then
+     AC_CHECK_LIB([Xext], [XShmAttach], [X_LIBS="$X_LIBS -lXext"],
+         [AC_MSG_ERROR([Couldn't find Xext library])], [$X_LIBS $X_EXTRA_LIBS])
+     X_LIBS="$X_LIBS -lX11"
+-	AC_CHECK_LIB([Xft], [main],
+-        [AC_DEFINE([HAVE_LIBXFT], [1], [Have xft routines in libxft])]
+-        X_LIBS="$X_LIBS -lXft -lfontconfig -lXrender -lfreetype"
+-        has_xft=yes,
+-        [has_xft=no], [$X_LIBS $X_EXTRA_LIBS])
+-
+-    if test "x$has_xft" = xyes ; then
+-        AC_CHECK_LIB([fontconfig], [main], [],
+-            [AC_MSG_ERROR([Couldn't find fontconfig library])], [$X_LIBS $X_EXTRA_LIBS])
+-#        AC_CHECK_LIB([Xrender], [main], [],
+-#            [AC_MSG_ERROR([Couldn't find Xrender library])], [$X_LIBS $X_EXTRA_LIBS])
+-        AC_CHECK_LIB([freetype], [main], [],
+-            [AC_MSG_ERROR([Couldn't find freetype library])], [$X_LIBS $X_EXTRA_LIBS])
+-    fi
+-
++    PKG_CHECK_MODULES([XFT], [xft], [X_CFLAGS="$X_CFLAGS $XFT_CFLAGS"; X_LIBS="$X_LIBS $XFT_LIBS"],
++                      [AC_MSG_ERROR([Couldn't find freetype library])])
+     has_no_x=false
+ else
+     AC_DEFINE([X_DISPLAY_MISSING])

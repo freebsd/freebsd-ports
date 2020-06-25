@@ -135,6 +135,7 @@ include/ngspice/twodev.h
 include/ngspice/twomesh.h
 include/ngspice/typedefs.h
 include/ngspice/wallace.h
+include/ngspice/wincolornames.h
 include/ngspice/wordlist.h
 include/ngspice/wstdio.h
 share/ngspice/scripts/ciderinit

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ngspice_rework
-PORTVERSION=	31
+PORTVERSION=	32
 CATEGORIES=	cad
 MASTER_SITES=	SF/ngspice/ng-spice-rework/${PORTVERSION}
 DISTNAME=	ngspice-${PORTVERSION}
@@ -21,7 +21,7 @@ shlib_PKGNAMESUFFIX=	-shlib
 shlib_CONFLICTS_INSTALL=	ngspice_rework-2*
 x11_CONFLICTS_INSTALL=		ngspice_rework-shlib-2*
 
-USES=		gmake libtool ncurses readline
+USES=		gmake libtool ncurses readline autoreconf pkgconfig
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
@@ -35,7 +35,7 @@ CONFIGURE_ARGS+=	--with-ngshared
 PLIST_SUB+=		SHLIB="" X11="@comment "
 .else
 USES+=			xorg
-USE_XORG=		ice sm x11 xaw xext xmu xt
+USE_XORG=		ice sm x11 xaw xext xmu xt xft
 CONFIGURE_ARGS+=	--with-x
 PLIST_SUB+=		SHLIB="@comment " X11=""
 .endif
