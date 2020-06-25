@@ -1,6 +1,6 @@
 --- src/config_rw.c.orig	2008-01-25 09:53:50 UTC
 +++ src/config_rw.c
-@@ -87,9 +87,9 @@ static struct {
+@@ -87,15 +87,15 @@ static struct {
  	{ "Encoder::Plugin", config.encoder.plugin,
  		STRING, 0, "ripperX_plugin-lame" },
  	{ "CdPlayer::Play_command", config.cd_player.play_command,
@@ -12,3 +12,10 @@
  	{ "WavPlayer::Command", config.wav_player.command,
  		STRING, 0, "play %" },
  	{ "Mp3Player::Command", config.mp3_player.command,
+ 		STRING, 0, "mpg123 %" },
+ 	{ "CDDBConfig::Server", config.cddb_config.server,
+-		STRING, 0, "freedb.freedb.org/~cddb/cddb.cgi" },
++		STRING, 0, "gnudb.gnudb.org/~cddb/cddb.cgi" },
+ 	{ "CDDBConfig::Port", &config.cddb_config.port,
+ 		INT, 0, "80" },
+ 	{ "CDDBConfig::UseHttp", &config.cddb_config.use_http,
