@@ -1,0 +1,12 @@
+--- bencode.cpp.orig
++++ bencode.cpp
+@@ -258,7 +258,8 @@
+     n -= r; 
+     if( 'e' == *pb ) break;
+     if( pathname >= endmax ) return 0;
+-    *pathname++ = PATH_SP;
++    if (q)
++      *pathname++ = PATH_SP;
+   }
+   *pathname = '\0';
+   return (pb - b + 1);
