@@ -27,7 +27,7 @@ GH_PROJECT=	asciidoc-py3
 SHEBANG_GLOB=	*.py
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^INSTALL_PROG/ s|INSTALL_PROGRAM|INSTALL_SCRIPT|; s|\.conf|&.sample|; s|python3 |${PYTHON_CMD} |' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|python3 |${PYTHON_CMD} |' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/a2x.py
 	@${FIND} ${WRKSRC} -name '*.conf' | ${XARGS} -I % ${LN} % %.sample
 

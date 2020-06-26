@@ -1,0 +1,50 @@
+--- Makefile.in.orig	2020-06-02 05:11:24 UTC
++++ Makefile.in
+@@ -10,7 +10,7 @@
+ .NOTPARALLEL:
+ 
+ INSTALL = @INSTALL@
+-INSTALL_PROG = @INSTALL_PROGRAM@
++INSTALL_PROG = @INSTALL_SCRIPT@
+ INSTALL_DATA = @INSTALL_DATA@
+ PACKAGE_TARNAME = @PACKAGE_TARNAME@
+ SED = @SED@
+@@ -37,32 +37,32 @@ progdir = $(bindir)
+ manp = $(patsubst %1.txt,%1,$(wildcard doc/*.1.txt))
+ manpdir = $(mandir)/man1
+ 
+-conf = $(wildcard *.conf)
++conf = $(wildcard *.conf.sample)
+ confdir = $(ASCIIDOCCONF)
+ 
+ filtersdir = $(ASCIIDOCCONF)/filters
+ 
+ codefilter = filters/code/code-filter.py
+ codefilterdir = $(filtersdir)/code
+-codefilterconf = filters/code/code-filter.conf
++codefilterconf = filters/code/code-filter.conf.sample
+ codefilterconfdir = $(filtersdir)/code
+ 
+ graphvizfilter = filters/graphviz/graphviz2png.py
+ graphvizfilterdir = $(filtersdir)/graphviz
+-graphvizfilterconf = filters/graphviz/graphviz-filter.conf
++graphvizfilterconf = filters/graphviz/graphviz-filter.conf.sample
+ graphvizfilterconfdir = $(filtersdir)/graphviz
+ 
+ musicfilter = filters/music/music2png.py
+ musicfilterdir = $(filtersdir)/music
+-musicfilterconf = filters/music/music-filter.conf
++musicfilterconf = filters/music/music-filter.conf.sample
+ musicfilterconfdir = $(filtersdir)/music
+ 
+-sourcefilterconf = filters/source/source-highlight-filter.conf
++sourcefilterconf = filters/source/source-highlight-filter.conf.sample
+ sourcefilterconfdir = $(filtersdir)/source
+ 
+ latexfilter = filters/latex/latex2img.py
+ latexfilterdir = $(filtersdir)/latex
+-latexfilterconf = filters/latex/latex-filter.conf
++latexfilterconf = filters/latex/latex-filter.conf.sample
+ latexfilterconfdir = $(filtersdir)/latex
+ 
+ unwraplatexfilter = filters/unwraplatex.py
