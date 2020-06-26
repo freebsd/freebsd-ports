@@ -5,7 +5,7 @@ PORTNAME=	libhid
 PORTVERSION=	0.2.16
 PORTREVISION=	4
 CATEGORIES=	devel
-MASTER_SITES=	http://alioth.debian.org/frs/download.php/1958/
+MASTER_SITES=	https://alioth-archive.debian.org/releases/libhid/libhid/${PORTVERSION}/
 
 MAINTAINER=	ntarmos@cs.uoi.gr
 COMMENT=	User-space HID access library written in C
