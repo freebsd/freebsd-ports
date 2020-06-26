@@ -3,7 +3,7 @@
 
 PORTNAME=	slim-themes
 PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://dist.codelabs.ru/fbsd/ports/slim-themes/:new_themes \
 		http://dist.codelabs.ru/fbsd/ports/slim-themes/:old_themes \
@@ -12,6 +12,8 @@ DISTFILES=
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Theme pack for SLiM login app
+
+RUN_DEPENDS=	slim>=0:x11/slim
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

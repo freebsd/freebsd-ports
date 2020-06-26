@@ -2,7 +2,7 @@
 
 PORTNAME=	slim-freebsd-black-theme
 DISTVERSION=	1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-themes
 MASTER_SITES=	https://bitbucket.org/rigoletto-freebsd/slim-freebsd-black-theme/get/
 
@@ -12,7 +12,8 @@ COMMENT=	Simple FreeBSD SLiM theme inspired on the FreeBSD SLiM theme
 LICENSE=	CC-BY-4.0
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	montserrat>=0:x11-fonts/montserrat
+RUN_DEPENDS=	montserrat>=0:x11-fonts/montserrat \
+		slim>=0:x11/slim
 
 NO_ARCH=	yes
 NO_BUILD=	yes
