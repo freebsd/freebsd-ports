@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	aws-sdk-resources
-PORTVERSION=	3.74.1
+PORTVERSION=	3.75.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -109,6 +109,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-groundstation>=1<2:devel/rubygem-aws-sdk-groundstation \
 		rubygem-aws-sdk-guardduty>=1<2:devel/rubygem-aws-sdk-guardduty \
 		rubygem-aws-sdk-health>=1<2:devel/rubygem-aws-sdk-health \
+		rubygem-aws-sdk-honeycode>=1<2:devel/rubygem-aws-sdk-honeycode \
 		rubygem-aws-sdk-iam>=1<2:devel/rubygem-aws-sdk-iam \
 		rubygem-aws-sdk-imagebuilder>=1<2:devel/rubygem-aws-sdk-imagebuilder \
 		rubygem-aws-sdk-importexport>=1<2:devel/rubygem-aws-sdk-importexport \
