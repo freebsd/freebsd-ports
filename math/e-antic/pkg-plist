@@ -1,0 +1,17 @@
+include/e-antic/e-antic.h
+include/e-antic/nf.h
+include/e-antic/nf_elem.h
+include/e-antic/poly_extra.h
+include/e-antic/renf.h
+include/e-antic/renf_elem.h
+include/e-antic/renfxx.h
+lib/libeantic.a
+lib/libeantic.so
+lib/libeantic.so.0
+lib/libeantic.so.0.0.0
+lib/libeanticxx.a
+lib/libeanticxx.so
+lib/libeanticxx.so.0
+lib/libeanticxx.so.0.0.0
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/poly_extra.txt

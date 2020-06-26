@@ -1,0 +1,5 @@
+E-ANTIC is a C/C++ library to deal with real embedded number fields built on
+top of ANTIC (ports/math/antic). Its aim is to have as fast as possible exact
+arithmetic operations and comparisons.
+
+WWW: https://github.com/videlec/e-antic
