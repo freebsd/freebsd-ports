@@ -20,6 +20,7 @@ share/zsh/site-functions/_composer
 share/zsh/site-functions/_conan
 share/zsh/site-functions/_concourse
 share/zsh/site-functions/_console
+share/zsh/site-functions/_cppcheck
 share/zsh/site-functions/_dad
 share/zsh/site-functions/_debuild
 share/zsh/site-functions/_dget
@@ -32,7 +33,9 @@ share/zsh/site-functions/_emulator
 share/zsh/site-functions/_envdir
 share/zsh/site-functions/_exportfs
 share/zsh/site-functions/_fab
+share/zsh/site-functions/_fail2ban-client
 share/zsh/site-functions/_ffind
+share/zsh/site-functions/_flameshot
 share/zsh/site-functions/_fleetctl
 share/zsh/site-functions/_flutter
 share/zsh/site-functions/_force
@@ -43,6 +46,7 @@ share/zsh/site-functions/_gist
 share/zsh/site-functions/_git-flow
 share/zsh/site-functions/_git-journal
 share/zsh/site-functions/_git-pulls
+share/zsh/site-functions/_git-revise
 share/zsh/site-functions/_git-wtf
 share/zsh/site-functions/_glances
 share/zsh/site-functions/_golang
@@ -63,6 +67,7 @@ share/zsh/site-functions/_kitchen
 share/zsh/site-functions/_knife
 share/zsh/site-functions/_language_codes
 share/zsh/site-functions/_lunchy
+share/zsh/site-functions/_mc
 share/zsh/site-functions/_middleman
 share/zsh/site-functions/_mina
 share/zsh/site-functions/_mix
@@ -84,6 +89,7 @@ share/zsh/site-functions/_pkcon
 share/zsh/site-functions/_play
 share/zsh/site-functions/_pm2
 share/zsh/site-functions/_port
+share/zsh/site-functions/_protoc
 share/zsh/site-functions/_pygmentize
 share/zsh/site-functions/_rails
 share/zsh/site-functions/_ralio
