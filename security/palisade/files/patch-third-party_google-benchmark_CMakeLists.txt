@@ -1,6 +1,15 @@
---- third-party/google-benchmark/CMakeLists.txt.orig	2019-12-20 21:44:46 UTC
+--- third-party/google-benchmark/CMakeLists.txt.orig	2020-05-06 16:28:29 UTC
 +++ third-party/google-benchmark/CMakeLists.txt
-@@ -258,7 +258,7 @@ endif()
+@@ -173,7 +173,7 @@ else()
+   endif()
+   # ICC17u2: overloaded virtual function "benchmark::Fixture::SetUp" is only partially overridden
+   # (because of deprecated overload)
+-  add_cxx_compiler_flag(-wd654)
++  #add_cxx_compiler_flag(-wd654)
+   add_cxx_compiler_flag(-Wthread-safety)
+   if (HAVE_CXX_FLAG_WTHREAD_SAFETY)
+     cxx_feature_check(THREAD_SAFETY_ATTRIBUTES)
+@@ -260,7 +260,7 @@ endif()
  cxx_feature_check(STEADY_CLOCK)
  # Ensure we have pthreads
  set(THREADS_PREFER_PTHREAD_FLAG ON)

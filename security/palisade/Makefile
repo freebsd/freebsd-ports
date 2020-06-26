@@ -2,7 +2,7 @@
 
 PORTNAME=	palisade
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.9.1
+DISTVERSION=	1.10.1
 CATEGORIES=	security math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,20 +21,23 @@ USES=		cmake:noninja compiler:c++11-lang localbase
 USE_GITLAB=	yes
 USE_GITHUB=	nodefault
 GL_PROJECT=	palisade-development # there's also palisade-release
-GL_COMMIT=	bf357ec17024f64badde23af34955d0dbb63629e
+GL_COMMIT=	1ae0b459b2c40a5760b0435c2df293cdffbaa10b
 GH_TUPLE=	\
 		JerryRyan:cereal:a384b101:cereal/third-party/cereal \
-		google:benchmark:daff5fea:benchmark/third-party/google-benchmark \
+		google:benchmark:d3ad0b9d:benchmark/third-party/google-benchmark \
 		google:googletest:8b4817e3:google_test/third-party/google-test \
 		gperftools:gperftools:c1d546d7:gperftools/third-party/gperftools
 USE_LDCONFIG=	yes
 
-CMAKE_OFF=	BUILD_UNITTESTS
+CMAKE_OFF=	BUILD_UNITTESTS BUILD_EXAMPLES BUILD_BENCHMARKS
+CMAKE_OFF+=	WITH_NTL # https://gitlab.com/palisade/palisade-development/-/issues/180
 CMAKE_ARGS=	-DWITH_NTL=Y
 
 LDFLAGS+=	${LOCALBASE}/lib/libntl.so # libntl is optional in palisade but is necessary in FreeBSD because is has an equivalent of quadmath.h that is missing in FreeBSD. -DWITH_NTL should be added by users to the compiler command lines.
 
 CXXFLAGS+=	-I${WRKSRC}/third-party/google-test/googletest
+
+BINARY_ALIAS=	git=false
 
 OPTIONS_DEFINE=		OPENMP
 OPTIONS_DEFAULT=	OPENMP

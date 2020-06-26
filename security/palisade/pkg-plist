@@ -3,6 +3,7 @@ include/palisade/abe/abecore.h
 include/palisade/abe/abeparamset.h
 include/palisade/abe/cpabe.h
 include/palisade/abe/ibe.h
+include/palisade/binfhe/CPPLINT.cfg
 include/palisade/binfhe/binfhecontext-ser.h
 include/palisade/binfhe/binfhecontext.h
 include/palisade/binfhe/fhew.h
@@ -94,6 +95,7 @@ include/palisade/cereal/types/valarray.hpp
 include/palisade/cereal/types/variant.hpp
 include/palisade/cereal/types/vector.hpp
 include/palisade/cereal/version.hpp
+include/palisade/core/config_core.h
 include/palisade/core/encoding/ckkspackedencoding.h
 include/palisade/core/encoding/coefpackedencoding.h
 include/palisade/core/encoding/encodingparams.h
@@ -121,7 +123,6 @@ include/palisade/core/lattice/trapdoor.h
 include/palisade/core/lattice/trapdoorparameters.h
 include/palisade/core/math/README.md
 include/palisade/core/math/SAMPLING_README.md
-include/palisade/core/math/armquadmath.h
 include/palisade/core/math/backend.h
 include/palisade/core/math/bigintdyn/mubintvecdyn.h
 include/palisade/core/math/bigintdyn/ubintdyn.h
@@ -142,10 +143,10 @@ include/palisade/core/math/interface.h
 include/palisade/core/math/matrix.h
 include/palisade/core/math/matrixstrassen.h
 include/palisade/core/math/nbtheory.h
-include/palisade/core/math/quadfloat.h
 include/palisade/core/math/ternaryuniformgenerator.h
 include/palisade/core/math/transfrm.h
 include/palisade/core/palisadecore.h
+include/palisade/core/testdefs.h
 include/palisade/core/utils/aesutil.h
 include/palisade/core/utils/blockAllocator/blockAllocator.h
 include/palisade/core/utils/blockAllocator/stl_allocator.h
@@ -165,6 +166,7 @@ include/palisade/core/utils/memory.h
 include/palisade/core/utils/palisadebase64.h
 include/palisade/core/utils/parallel.h
 include/palisade/core/utils/parmfactory.h
+include/palisade/core/utils/prng/CPPLINT.cfg
 include/palisade/core/utils/prng/blake2-impl.h
 include/palisade/core/utils/prng/blake2.h
 include/palisade/core/utils/prng/blake2engine.h
@@ -184,6 +186,8 @@ include/palisade/pke/cryptocontextgen.h
 include/palisade/pke/cryptocontexthelper.h
 include/palisade/pke/cryptocontextparametersets.h
 include/palisade/pke/cryptotiming.h
+include/palisade/pke/metadata-ser.h
+include/palisade/pke/metadata.h
 include/palisade/pke/palisade.h
 include/palisade/pke/pubkeylp-ser.h
 include/palisade/pke/pubkeylp.h
@@ -198,6 +202,8 @@ include/palisade/pke/scheme/bfvrnsb/bfvrnsB-ser.h
 include/palisade/pke/scheme/bfvrnsb/bfvrnsB.h
 include/palisade/pke/scheme/bgv/bgv-ser.h
 include/palisade/pke/scheme/bgv/bgv.h
+include/palisade/pke/scheme/bgvrns/bgvrns-ser.h
+include/palisade/pke/scheme/bgvrns/bgvrns.h
 include/palisade/pke/scheme/ckks/ckks-ser.h
 include/palisade/pke/scheme/ckks/ckks.h
 include/palisade/pke/scheme/null/nullscheme-ser.h
@@ -214,16 +220,16 @@ lib/CMake/Palisade/PalisadeTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/CMake/Palisade/PalisadeTargets.cmake
 lib/libPALISADEabe.so
 lib/libPALISADEabe.so.1
-lib/libPALISADEabe.so.1.9.1
+lib/libPALISADEabe.so.1.10.1
 lib/libPALISADEbinfhe.so
 lib/libPALISADEbinfhe.so.1
-lib/libPALISADEbinfhe.so.1.9.1
+lib/libPALISADEbinfhe.so.1.10.1
 lib/libPALISADEcore.so
 lib/libPALISADEcore.so.1
-lib/libPALISADEcore.so.1.9.1
+lib/libPALISADEcore.so.1.10.1
 lib/libPALISADEpke.so
 lib/libPALISADEpke.so.1
-lib/libPALISADEpke.so.1.9.1
+lib/libPALISADEpke.so.1.10.1
 lib/libPALISADEsignature.so
 lib/libPALISADEsignature.so.1
-lib/libPALISADEsignature.so.1.9.1
+lib/libPALISADEsignature.so.1.10.1
