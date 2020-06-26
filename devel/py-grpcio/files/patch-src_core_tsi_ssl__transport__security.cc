@@ -1,6 +1,6 @@
---- src/core/tsi/ssl_transport_security.cc.orig	2019-04-15 23:12:51 UTC
+--- src/core/tsi/ssl_transport_security.cc.orig	2020-06-22 21:42:25 UTC
 +++ src/core/tsi/ssl_transport_security.cc
-@@ -22,6 +22,7 @@
+@@ -20,6 +20,7 @@
  
  #include "src/core/tsi/ssl_transport_security.h"
  
