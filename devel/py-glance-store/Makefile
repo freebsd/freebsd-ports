@@ -3,6 +3,7 @@
 
 PORTNAME=	glance-store
 PORTVERSION=	2.1.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -36,14 +37,19 @@ NO_ARCH=	yes
 
 SHEBANG_GLOB=	*.sh
 
-OPTIONS_DEFINE=	CINDER VMWARE
-OPTIONS_DEFAULT=CINDER VMWARE
+OPTIONS_DEFINE=	CINDER S3 SWIFT VMWARE
+OPTIONS_DEFAULT=CINDER S3 SWIFT VMWARE
 CINDER_DESC=	Storage backend for OpenStack Cinder storage nodes
+S3_DESC=	Storage backend for Amazon S3
+SWIFT_DESC=	Storage backend for OpenStack Swift
 VMWARE_DESC=	Storage backend for VMware Datastore
 
 CINDER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}os-brick>=2.6.0:devel/py-os-brick@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}oslo.rootwrap>=5.8.0:devel/py-oslo.rootwrap@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}python-cinderclient>=4.1.0:net/py-python-cinderclient@${PY_FLAVOR}
+S3_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}boto3>=1.9.199:www/py-boto3@${PY_FLAVOR}
+SWIFT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}httplib2>=0.9.1:www/py-httplib2@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}python-swiftclient>=3.2.0:databases/py-python-swiftclient@${PY_FLAVOR}
 VMWARE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}oslo.privsep>=1.23.0:devel/py-oslo.privsep@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}oslo.vmware>=2.17.0:devel/py-oslo.vmware@${PY_FLAVOR}
 
