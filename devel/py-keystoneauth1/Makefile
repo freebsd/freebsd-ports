@@ -25,4 +25,17 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
+OPTIONS_DEFINE=	BETAMAX KERBEROS OAUTH1 SAML2
+BETAMAX_DESC=	Betamax support
+KERBEROS_DESC=	Kerberos support
+OAUTH1_DESC=	OAuth 1.0 support
+SAML2_DESC=	SAML 2.0 support
+
+BETAMAX_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}betamax>=0.7.0:www/py-betamax@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}fixtures>=3.0.0:devel/py-fixtures@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}mock>=2.0.0:devel/py-mock@${PY_FLAVOR}
+KERBEROS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests-kerberos>=0.8.0:security/py-requests-kerberos@${PY_FLAVOR}
+OAUTH1_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}oauthlib>=0.6.2:security/py-oauthlib@${PY_FLAVOR}
+SAML2_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=4.2.0:devel/py-lxml@${PY_FLAVOR}
+
 .include <bsd.port.mk>
