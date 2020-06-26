@@ -1415,6 +1415,7 @@
     SUBDIR += py-beautifulsoup
     SUBDIR += py-beautifulsoup32
     SUBDIR += py-beautifulsoup448
+    SUBDIR += py-betamax
     SUBDIR += py-biscuits
     SUBDIR += py-bjoern
     SUBDIR += py-bleach
