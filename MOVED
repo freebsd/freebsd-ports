@@ -15107,3 +15107,4 @@ www/redmine-redcarpet_formatter|www/redmine4|2020-06-25|Removed, build-time exte
 www/redmine-single_auth|www/redmine4|2020-06-25|Removed, build-time extension of www/redmine
 www/redmine-wiki_notes|www/redmine4|2020-06-25|Removed, build-time extension of www/redmine
 devel/p5-IO-stringy|devel/p5-IO-Stringy|2020-06-26|New development starts as IO-Stringy
+devel/looks|devel/jgoodies-looks|2020-06-26|Renamed to match upstream

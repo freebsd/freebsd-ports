@@ -994,6 +994,7 @@
     SUBDIR += jetbrains-goland
     SUBDIR += jetbrains-phpstorm
     SUBDIR += jetbrains-webstorm
+    SUBDIR += jgoodies-looks
     SUBDIR += jiic
     SUBDIR += jiri
     SUBDIR += jline
@@ -1422,7 +1423,6 @@
     SUBDIR += log4shib
     SUBDIR += lokalize
     SUBDIR += loki
-    SUBDIR += looks
     SUBDIR += love
     SUBDIR += love07
     SUBDIR += love08

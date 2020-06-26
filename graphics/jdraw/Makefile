@@ -3,7 +3,7 @@
 
 PORTNAME=	jdraw
 PORTVERSION=	1.1.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
 DISTNAME=	${PORTNAME}_v${PORTVERSION}
@@ -35,7 +35,7 @@ do-install:
 
 .if ${PORT_OPTIONS:MPLASTIC3D}
 PLASTIC3D=	"-Dlf=\"com.jgoodies.looks.plastic.Plastic3DLookAndFeel\""
-RUN_DEPENDS+=	${JAVALIBDIR}/looks.jar:devel/looks
+RUN_DEPENDS+=	${JAVALIBDIR}/looks.jar:devel/jgoodies-looks
 .endif
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 
 PORTNAME=	scilab
 PORTVERSION=	6.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math cad java
 MASTER_SITES=	https://www.scilab.org/download/${PORTVERSION}/
 DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX}
@@ -88,7 +88,7 @@ _GUI_DEPENDS+=	${LOCALBASE}/share/xsl/docbook/javahelp/javahelp.xsl:textproc/doc
 		${JAVALIBDIR}/xml-apis-ext.jar:textproc/xml-commons \
 		xsltproc:textproc/libxslt
 # Other gui deps:
-_GUI_DEPENDS+=	${JAVALIBDIR}/looks.jar:devel/looks \
+_GUI_DEPENDS+=	${JAVALIBDIR}/looks.jar:devel/jgoodies-looks \
 		${JAVALIBDIR}/skinlf.jar:x11-toolkits/skinlf
 
 # Can't use USE_ANT because it overrides do-build target
