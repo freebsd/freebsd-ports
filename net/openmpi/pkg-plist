@@ -1,3 +1,10 @@
+libdata/pkgconfig/ompi-c.pc
+libdata/pkgconfig/ompi-cxx.pc
+libdata/pkgconfig/ompi-f77.pc
+libdata/pkgconfig/ompi-f90.pc
+libdata/pkgconfig/ompi-fort.pc
+libdata/pkgconfig/ompi.pc
+libdata/pkgconfig/orte.pc
 %%MPIDIR%%/bin/aggregate_profile.pl
 %%MPIDIR%%/bin/mpiCC
 %%MPIDIR%%/bin/mpic++
@@ -93,7 +100,7 @@
 %%MPIDIR%%/lib/libmpi.la
 %%MPIDIR%%/lib/libmpi.so
 %%MPIDIR%%/lib/libmpi.so.40
-%%MPIDIR%%/lib/libmpi.so.40.20.3
+%%MPIDIR%%/lib/libmpi.so.40.20.4
 %%MPIDIR%%/lib/libmpi_cxx.la
 %%MPIDIR%%/lib/libmpi_cxx.so
 %%MPIDIR%%/lib/libmpi_cxx.so.40
@@ -113,11 +120,11 @@
 %%MPIDIR%%/lib/libopen-pal.la
 %%MPIDIR%%/lib/libopen-pal.so
 %%MPIDIR%%/lib/libopen-pal.so.40
-%%MPIDIR%%/lib/libopen-pal.so.40.20.3
+%%MPIDIR%%/lib/libopen-pal.so.40.20.4
 %%MPIDIR%%/lib/libopen-rte.la
 %%MPIDIR%%/lib/libopen-rte.so
 %%MPIDIR%%/lib/libopen-rte.so.40
-%%MPIDIR%%/lib/libopen-rte.so.40.20.3
+%%MPIDIR%%/lib/libopen-rte.so.40.20.4
 %%MPIDIR%%/lib/mpi.mod
 %%MPIDIR%%/lib/ompi_monitoring_prof.la
 %%MPIDIR%%/lib/ompi_monitoring_prof.so
@@ -345,13 +352,6 @@
 %%MPIDIR%%/lib/pmix/mca_ptl_tcp.so
 %%MPIDIR%%/lib/pmix/mca_ptl_usock.la
 %%MPIDIR%%/lib/pmix/mca_ptl_usock.so
-%%MPIDIR%%/libdata/pkgconfig/ompi-c.pc
-%%MPIDIR%%/libdata/pkgconfig/ompi-cxx.pc
-%%MPIDIR%%/libdata/pkgconfig/ompi-f77.pc
-%%MPIDIR%%/libdata/pkgconfig/ompi-f90.pc
-%%MPIDIR%%/libdata/pkgconfig/ompi-fort.pc
-%%MPIDIR%%/libdata/pkgconfig/ompi.pc
-%%MPIDIR%%/libdata/pkgconfig/orte.pc
 %%MPIDIR%%/man/man1/mpiCC.1.gz
 %%MPIDIR%%/man/man1/mpic++.1.gz
 %%MPIDIR%%/man/man1/mpicc.1.gz

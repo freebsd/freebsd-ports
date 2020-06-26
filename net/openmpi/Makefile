@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	openmpi
-PORTVERSION=	4.0.3
+PORTVERSION=	4.0.4
 CATEGORIES=	net parallel
 MASTER_SITES=	http://www.open-mpi.org/software/ompi/v${PORTVERSION:R}/downloads/
 
@@ -96,7 +96,7 @@ SLURM_PLIST_FILES=	${MPIDIR}/lib/openmpi/mca_ess_slurm.la \
 			${MPIDIR}/share/openmpi/help-ras-slurm.txt
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/${MPIDIR}/libdata/pkgconfig|g' \
+	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${LOCALBASE}/libdata/pkgconfig|g' \
 		${WRKSRC}/ompi/tools/wrappers/Makefile.am \
 		${WRKSRC}/ompi/tools/wrappers/Makefile.in \
 		${WRKSRC}/opal/tools/wrappers/Makefile.am \
