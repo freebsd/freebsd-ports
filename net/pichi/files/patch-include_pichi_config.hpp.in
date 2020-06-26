@@ -1,0 +1,18 @@
+--- include/pichi/config.hpp.in.orig	1970-01-01 00:00:00 UTC
++++ include/pichi/config.hpp.in
+@@ -42,6 +42,15 @@
+ #pragma warning(pop)
+ #endif // DISABLE_C4702_FOR_BEAST_FIELDS && _MSC_VER
+ 
++#ifdef __clang__
++#if !__has_feature(c_atomic)
++#pragma clang diagnostic push
++#pragma clang diagnostic ignored "-Wc11-extensions"
++#include <boost/smart_ptr/detail/sp_counted_base_clang.hpp>
++#pragma clang diagnostic pop
++#endif // !__has_feature(c_atomic)
++#endif // __clang__
++
+ #cmakedefine CMAKE_INSTALL_PREFIX "@CMAKE_INSTALL_PREFIX@"
+ 
+ #ifdef CMAKE_INSTALL_PREFIX
