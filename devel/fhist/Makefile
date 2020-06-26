@@ -4,16 +4,18 @@
 PORTNAME=	fhist
 PORTVERSION=	1.21
 DISTVERSIONSUFFIX=	.D001
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	aryeh.friedman@gmail.com
 COMMENT=	Utilities to maintain file history, do file comparisons, and merges
 
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	libexplain.so:devel/libexplain
+
+USES=		bison localbase
 
 OPTIONS_DEFINE=	NLS
 
@@ -24,9 +26,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-nlsdir=${PREFIX}/share/locale/en/LC_MESSAGES
 ALL_TARGET=	all-bin
 MAKE_JOBS_UNSAFE=yes
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/fcomp bin/fhist bin/fmerge \
 		man/man1/fcomp.1.gz man/man1/fhist.1.gz \

@@ -1,6 +1,6 @@
---- common/ac/time.h.orig	Wed Dec 18 02:09:57 2002
-+++ common/ac/time.h	Wed Dec 18 02:10:04 2002
-@@ -29,7 +29,7 @@
+--- common/ac/time.h.orig	2012-07-13 04:47:15 UTC
++++ common/ac/time.h
+@@ -26,7 +26,7 @@
   * Catch-22: Dec Alpha OSF/1: need to include time.h before sys/time.h
   * before time.h
   */
