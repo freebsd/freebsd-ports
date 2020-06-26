@@ -1,3 +1,5 @@
 nss_mdns is a plugin for libc which provides host name resolution via
 Multicast DNS, building on Avahi.
 Only name resolution is provided; nss_mdns does not advertise services.
+
+WWW: https://github.com/lathiat/nss-mdns
