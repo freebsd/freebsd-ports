@@ -28,7 +28,7 @@
 %%AUDITBEAT%%@dir %%DATADIR%%/auditbeat/module/file_integrity/monitor
 %%AUDITBEAT%%@dir %%DATADIR%%/auditbeat/module/file_integrity/schema
 %%AUDITBEAT%%@dir /var/db/beats/auditbeat
-%%AUDITBEAT%%@sample %%ETCDIR%%/auditbeat.yml.reference
+%%AUDITBEAT%%%%ETCDIR%%/auditbeat.yml.reference
 %%AUDITBEAT%%@sample %%ETCDIR%%/auditbeat.yml.sample
 %%AUDITBEAT%%sbin/auditbeat
 %%FILEBEAT%%%%DATADIR%%/filebeat/kibana/7/dashboard/Filebeat-Kafka-overview.json
@@ -334,20 +334,18 @@
 %%FILEBEAT%%%%ETCDIR%%/filebeat.modules.d/santa.yml.disabled
 %%FILEBEAT%%%%ETCDIR%%/filebeat.modules.d/system.yml.disabled
 %%FILEBEAT%%%%ETCDIR%%/filebeat.modules.d/traefik.yml.disabled
-%%FILEBEAT%%%%ETCDIR%%/filebeat.yml.reference
-%%FILEBEAT%%%%ETCDIR%%/filebeat.yml.sample
 %%FILEBEAT%%@dir %%DATADIR%%/filebeat
 %%FILEBEAT%%@dir %%DATADIR%%/filebeat/kibana
 %%FILEBEAT%%@dir %%DATADIR%%/filebeat/kibana/7
 %%FILEBEAT%%@dir %%DATADIR%%/filebeat/kibana/7/dashboard
 %%FILEBEAT%%@dir /var/db/beats/filebeat
-%%FILEBEAT%%@sample %%ETCDIR%%/filebeat.yml.reference
+%%FILEBEAT%%%%ETCDIR%%/filebeat.yml.reference
 %%FILEBEAT%%@sample %%ETCDIR%%/filebeat.yml.sample
 %%FILEBEAT%%sbin/filebeat
 %%HEARTBEAT%%@dir %%DATADIR%%/heartbeat
 %%HEARTBEAT%%@dir %%DATADIR%%/heartbeat/kibana
 %%HEARTBEAT%%@dir /var/db/beats/heartbeat
-%%HEARTBEAT%%@sample %%ETCDIR%%/heartbeat.yml.reference
+%%HEARTBEAT%%%%ETCDIR%%/heartbeat.yml.reference
 %%HEARTBEAT%%@sample %%ETCDIR%%/heartbeat.yml.sample
 %%HEARTBEAT%%sbin/heartbeat
 %%METRICBEAT%%%%DATADIR%%/metricbeat/kibana/7/dashboard/Metricbeat-Host-Services-overview.json
@@ -1222,10 +1220,11 @@
 %%METRICBEAT%%@dir %%DATADIR%%/metricbeat/kibana
 %%METRICBEAT%%@dir %%DATADIR%%/metricbeat/kibana/7
 %%METRICBEAT%%@dir %%DATADIR%%/metricbeat/kibana/7/dashboard
+%%METRICBEAT%%@dir %%DATADIR%%/metricbeat/module/ceph/mgr
 %%METRICBEAT%%@dir %%DATADIR%%/metricbeat/module/kubernetes/util
 %%METRICBEAT%%@dir %%DATADIR%%/metricbeat/module/system/raid/blockinfo
 %%METRICBEAT%%@dir /var/db/beats/metricbeat
-%%METRICBEAT%%@sample %%ETCDIR%%/metricbeat.yml.reference
+%%METRICBEAT%%%%ETCDIR%%/metricbeat.yml.reference
 %%METRICBEAT%%@sample %%ETCDIR%%/metricbeat.yml.sample
 %%METRICBEAT%%sbin/metricbeat
 %%PACKETBEAT%%%%DATADIR%%/packetbeat/kibana/7/dashboard/Packetbeat-cassandra.json
@@ -1246,7 +1245,7 @@
 %%PACKETBEAT%%@dir %%DATADIR%%/packetbeat/kibana/7
 %%PACKETBEAT%%@dir %%DATADIR%%/packetbeat/kibana/7/dashboard
 %%PACKETBEAT%%@dir /var/db/beats/packetbeat
-%%PACKETBEAT%%@sample %%ETCDIR%%/packetbeat.yml.reference
+%%PACKETBEAT%%%%ETCDIR%%/packetbeat.yml.reference
 %%PACKETBEAT%%@sample %%ETCDIR%%/packetbeat.yml.sample
 %%PACKETBEAT%%sbin/packetbeat
 @dir /var/db/beats
