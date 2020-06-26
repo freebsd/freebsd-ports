@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zim
-DISTVERSION=	0.73.0
+DISTVERSION=	0.73.1
 CATEGORIES=	deskutils python
 MASTER_SITES=	https://www.zim-wiki.org/downloads/
 
@@ -47,8 +47,7 @@ SCROT_RUN_DEPENDS=	scrot:graphics/scrot
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/.command.install /s|distutils|setuptools| ; \
-		 s|share/man|man| ; \
-		 /.skip_xdg_cmd = /s|0|1|' \
+		 s|share/man|man|' \
 		${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
