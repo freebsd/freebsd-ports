@@ -28,10 +28,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR
 USES=		localbase python
 USE_PYTHON=	autoplist concurrent distutils
 
-DO_MAKE_TEST=	${SETENV} PYTHONPATH=../ ${PYTHON_CMD}
 MAKE_ENV=	GEVENTSETUP_EMBED_CARES=0 GEVENTSETUP_EMBED_LIBEV=0 GEVENTSETUP_EMBED_LIBUV=0
-TEST_TARGET=	testrunner.py
-TEST_WRKSRC=	${WRKSRC}/greentest
 
 .include <bsd.port.pre.mk>
 
@@ -44,5 +41,8 @@ post-patch:
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
+
+do-test:
+	cd ${WRKSRC} && ${SETENV} PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR} ${PYTHON_CMD} -m gevent.tests --config known_failures.py
 
 .include <bsd.port.post.mk>
