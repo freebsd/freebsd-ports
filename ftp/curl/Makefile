@@ -165,11 +165,4 @@ post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
 	cd ${WRKSRC}/docs/examples/ && ${INSTALL_DATA} README Makefile.example makefile* *.c *.cpp ${STAGEDIR}${EXAMPLESDIR}/
 
-pre-test-PROXY-off:
-	@${ECHO_MSG} "******************************************"
-	@${ECHO_MSG} "* You have disabled curl proxy support.  *"
-	@${ECHO_MSG} "* Some tests SHALL FAIL!                 *"
-	@${ECHO_MSG} "* This is being addressed.               *"
-	@${ECHO_MSG} "******************************************"
-
 .include <bsd.port.post.mk>
