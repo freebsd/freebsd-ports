@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fog-aliyun
-PORTVERSION=	0.3.13
+PORTVERSION=	0.3.16
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,7 @@ COMMENT=	Module for the 'fog' gem to support aliyun OSS/ECS
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-aliyun-sdk>=0:devel/rubygem-aliyun-sdk \
+RUN_DEPENDS=	rubygem-aliyun-sdk>=0.7.2<0.8:devel/rubygem-aliyun-sdk \
 		rubygem-fog-core>=0:devel/rubygem-fog-core \
 		rubygem-fog-json>=0:devel/rubygem-fog-json \
 		rubygem-ipaddress>=0.8<1:net/rubygem-ipaddress \
