@@ -24,6 +24,6 @@ USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
 
 do-test:
-	cd ${WRKSRC} && ${SETENV} PYTHONPATH=${WRKSRC}/build/lib ${PYTHON_CMD} -m pytest -rs -v
+	cd ${WRKSRC} && ${SETENV} PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR} ${PYTHON_CMD} -m pytest -rs -v
 
 .include <bsd.port.mk>
