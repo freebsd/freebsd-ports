@@ -2,7 +2,7 @@
 
 PORTNAME=		ooni-probe-cli
 DISTVERSIONPREFIX=	v
-DISTVERSION=		3.0.1
+DISTVERSION=		3.0.3
 CATEGORIES=		net www benchmarks
 
 MAINTAINER=	egypcio@FreeBSD.org
@@ -31,9 +31,9 @@ GH_TUPLE=	AlecAivazis:survey:v1.8.8:alecaivazis_survey/vendor/gopkg.in/AlecAivaz
 		Psiphon-Labs:goarista:d002785f4c67:psiphon_labs_goarista/vendor/github.com/Psiphon-Labs/goarista \
 		Psiphon-Labs:goptlib:c0e32a7a3464:psiphon_labs_goptlib/vendor/github.com/Psiphon-Labs/goptlib \
 		Psiphon-Labs:net:f5d60dada742:psiphon_labs_net/vendor/github.com/Psiphon-Labs/net \
-		Psiphon-Labs:psiphon-tunnel-core:v2.0.11:psiphon_labs_psiphon_tunnel_core/vendor/github.com/Psiphon-Labs/psiphon-tunnel-core \
+		Psiphon-Labs:psiphon-tunnel-core:4698936ee666:psiphon_labs_psiphon_tunnel_core/vendor/github.com/Psiphon-Labs/psiphon-tunnel-core \
 		Psiphon-Labs:quic-go:474e74c89fab:psiphon_labs_quic_go/vendor/github.com/Psiphon-Labs/quic-go \
-		Psiphon-Labs:tls-tris:7ff412878bba:psiphon_labs_tls_tris/vendor/github.com/Psiphon-Labs/tls-tris \
+		Psiphon-Labs:tls-tris:16ab4b2ea797:psiphon_labs_tls_tris/vendor/github.com/Psiphon-Labs/tls-tris \
 		agl:ed25519:5312a6153412:agl_ed25519/vendor/github.com/agl/ed25519 \
 		ahf:goptlib:7d56ec4:ahf_goptlib/vendor/git.torproject.org/pluggable-transports/goptlib.git \
 		alecthomas:gometalinter:0262fb2:alecthomas_gometalinter/vendor/github.com/alecthomas/gometalinter \
@@ -41,6 +41,7 @@ GH_TUPLE=	AlecAivazis:survey:v1.8.8:alecaivazis_survey/vendor/gopkg.in/AlecAivaz
 		alecthomas:template:fb15b899a751:alecthomas_template/vendor/github.com/alecthomas/template \
 		alecthomas:units:c3de453c63f4:alecthomas_units/vendor/github.com/alecthomas/units \
 		apex:log:v1.1.4:apex_log/vendor/github.com/apex/log \
+		aristanetworks:goarista:db8a79a18e4a:aristanetworks_goarista/vendor/github.com/aristanetworks/goarista \
 		armon:go-proxyproto:5b7edb60ff5f:armon_go_proxyproto/vendor/github.com/armon/go-proxyproto \
 		armon:go-socks5:e75332964ef5:armon_go_socks5/vendor/github.com/armon/go-socks5 \
 		bifurcation:mint:198357931e61:bifurcation_mint/vendor/github.com/bifurcation/mint \
@@ -58,11 +59,11 @@ GH_TUPLE=	AlecAivazis:survey:v1.8.8:alecaivazis_survey/vendor/gopkg.in/AlecAivaz
 		getsentry:raven-go:919484f041ea:getsentry_raven_go/vendor/github.com/getsentry/raven-go \
 		go-gorp:gorp:v1.7.2:go_gorp_gorp/vendor/gopkg.in/gorp.v1 \
 		go-mgo:mgo:a6b53ec6cb22:go_mgo_mgo/vendor/gopkg.in/mgo.v2 \
-		golang:crypto:06a226fb4e37:golang_crypto/vendor/golang.org/x/crypto \
+		golang:crypto:4b2356b1ed79:golang_crypto/vendor/golang.org/x/crypto \
 		golang:lint:16217165b5de:golang_lint/vendor/golang.org/x/lint \
-		golang:net:a91f0712d120:golang_net/vendor/golang.org/x/net \
+		golang:net:627f9648deb9:golang_net/vendor/golang.org/x/net \
 		golang:protobuf:v1.3.3:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:417ce2331b5c:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:226ff32320da:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
 		golang:tools:e1da425f72fd:golang_tools/vendor/golang.org/x/tools \
 		gorilla:websocket:v1.4.2:gorilla_websocket/vendor/github.com/gorilla/websocket \
@@ -82,15 +83,16 @@ GH_TUPLE=	AlecAivazis:survey:v1.8.8:alecaivazis_survey/vendor/gopkg.in/AlecAivaz
 		mattn:go-sqlite3:v1.12.0:mattn_go_sqlite3/vendor/github.com/mattn/go-sqlite3 \
 		measurement-kit:measurement-kit:v0.10.11:mk_mk/vendor/github.com/measurement-kit/measurement-kit \
 		mgutz:ansi:9520e82c474b:mgutz_ansi/vendor/github.com/mgutz/ansi \
-		miekg:dns:v1.1.29:miekg_dns/vendor/github.com/miekg/dns \
+		miekg:dns:d128d10d176b:miekg_dns/vendor/github.com/miekg/dns \
 		montanaflynn:stats:v0.6.3:montanaflynn_stats/vendor/github.com/montanaflynn/stats \
-		ooni:probe-engine:v0.11.0:ooni_probe_engine/vendor/github.com/ooni/probe-engine \
+		ooni:probe-engine:v0.13.0:ooni_probe_engine/vendor/github.com/ooni/probe-engine \
 		oschwald:geoip2-golang:v1.4.0:oschwald_geoip2_golang/vendor/github.com/oschwald/geoip2-golang \
 		oschwald:maxminddb-golang:v1.6.0:oschwald_maxminddb_golang/vendor/github.com/oschwald/maxminddb-golang \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
+		pion:stun:v0.3.5:pion_stun/vendor/github.com/pion/stun \
 		redjack:marionette:360dd8f58226:redjack_marionette/vendor/github.com/redjack/marionette \
 		refraction-networking:gotapdance:3a6e1938ad70:refraction_networking_gotapdance/vendor/github.com/refraction-networking/gotapdance \
-		refraction-networking:utls:43c36d3c1f57:refraction_networking_utls/vendor/github.com/refraction-networking/utls \
+		refraction-networking:utls:ada0bb9b38a0:refraction_networking_utls/vendor/github.com/refraction-networking/utls \
 		rogpeppe:go-internal:v1.6.0:rogpeppe_go_internal/vendor/github.com/rogpeppe/go-internal \
 		rubenv:sql-migrate:ae26b214fa43:rubenv_sql_migrate/vendor/github.com/rubenv/sql-migrate \
 		sergeyfrolov:bsbuffer:94e85abb8507:sergeyfrolov_bsbuffer/vendor/github.com/sergeyfrolov/bsbuffer \
@@ -102,6 +104,7 @@ GH_TUPLE=	AlecAivazis:survey:v1.8.8:alecaivazis_survey/vendor/gopkg.in/AlecAivaz
 		uber-go:tools:2cfd321de3ee:uber_go_tools/vendor/go.uber.org/tools \
 		uber-go:zap:v1.13.0:uber_go_zap/vendor/go.uber.org/zap \
 		upper:db:v3.6.4:upper_db/vendor/upper.io/db.v3 \
+		wader:filtertransport:bdd9e61eee78:wader_filtertransport/vendor/github.com/wader/filtertransport \
 		zach-klippenstein:goregen:795b5e3961ea:zach_klippenstein_goregen/vendor/github.com/zach-klippenstein/goregen
 
 GL_TUPLE=	yawning:bsaes:26d1add596b6d800bdeeb3bc3b2c7b316c056b6d:yawning_bsaes/vendor/git.schwanenlied.me/yawning/bsaes.git \
