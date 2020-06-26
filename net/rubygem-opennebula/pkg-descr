@@ -2,5 +2,5 @@ OpenNebula is an open-source project delivering a simple but feature-rich and
 flexible solution to build and manage enterprise clouds and virtualized data
 centers. This gem provides libraries needed to talk to OpenNebula.
 
-WWW: https://opennebula.org/
+WWW: https://opennebula.io/
 WWW: https://github.com/OpenNebula/one
