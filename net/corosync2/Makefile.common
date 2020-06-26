@@ -26,8 +26,6 @@ LDFLAGS+=		-B${LOCALBASE}/bin
 INSTALL_TARGET=		install-strip
 TEST_TARGET=		check
 
-PORTSCOUT=		limit:^2*\.[4-9]*\.[0-9]*$$
-
 OPTIONS_DEFINE=		DBUS DOCS SNMP
 OPTIONS_SUB=		yes
 
