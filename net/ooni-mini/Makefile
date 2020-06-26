@@ -2,7 +2,7 @@
 
 PORTNAME=		ooni-mini
 DISTVERSIONPREFIX=	v
-DISTVERSION=		0.13.0
+DISTVERSION=		0.14.0
 CATEGORIES=		net www benchmarks
 
 MAINTAINER=	egypcio@FreeBSD.org
@@ -24,7 +24,7 @@ GH_ACCOUNT=	ooni
 GH_PROJECT=	probe-engine
 GH_TUPLE=	AndreasBriese:bbloom:28f7e881ca57:andreasbriese_bbloom/vendor/github.com/AndreasBriese/bbloom \
 		Psiphon-Inc:rotate-safe-writer:b276127301a9:psiphon_inc_rotate_safe_writer/vendor/github.com/Psiphon-Inc/rotate-safe-writer \
-		Psiphon-Labs:bolt:f3d58e369264:psiphon_labs_bolt/vendor/github.com/Psiphon-Labs/bolt \
+		Psiphon-Labs:bolt:23cedaef7ad7:psiphon_labs_bolt/vendor/github.com/Psiphon-Labs/bolt \
 		Psiphon-Labs:chacha20:899a4be52863:psiphon_labs_chacha20/vendor/github.com/Psiphon-Labs/chacha20 \
 		Psiphon-Labs:goarista:d002785f4c67:psiphon_labs_goarista/vendor/github.com/Psiphon-Labs/goarista \
 		Psiphon-Labs:goptlib:c0e32a7a3464:psiphon_labs_goptlib/vendor/github.com/Psiphon-Labs/goptlib \
@@ -34,7 +34,7 @@ GH_TUPLE=	AndreasBriese:bbloom:28f7e881ca57:andreasbriese_bbloom/vendor/github.c
 		Psiphon-Labs:tls-tris:16ab4b2ea797:psiphon_labs_tls_tris/vendor/github.com/Psiphon-Labs/tls-tris \
 		agl:ed25519:5312a6153412:agl_ed25519/vendor/github.com/agl/ed25519 \
 		ahf:goptlib:7d56ec4:ahf_goptlib/vendor/git.torproject.org/pluggable-transports/goptlib.git \
-		apex:log:v1.3.0:apex_log/vendor/github.com/apex/log \
+		apex:log:v1.4.0:apex_log/vendor/github.com/apex/log \
 		aristanetworks:goarista:db8a79a18e4a:aristanetworks_goarista/vendor/github.com/aristanetworks/goarista \
 		armon:go-proxyproto:5b7edb60ff5f:armon_go_proxyproto/vendor/github.com/armon/go-proxyproto \
 		armon:go-socks5:e75332964ef5:armon_go_socks5/vendor/github.com/armon/go-socks5 \
@@ -53,11 +53,11 @@ GH_TUPLE=	AndreasBriese:bbloom:28f7e881ca57:andreasbriese_bbloom/vendor/github.c
 		elazarl:goproxy:a96fa3a31826:elazarl_goproxy/vendor/github.com/elazarl/goproxy \
 		gobwas:glob:f00a7392b439:gobwas_glob/vendor/github.com/gobwas/glob \
 		golang:crypto:4b2356b1ed79:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:627f9648deb9:golang_net/vendor/golang.org/x/net \
+		golang:net:4c5254603344:golang_net/vendor/golang.org/x/net \
 		golang:protobuf:v1.3.3:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:226ff32320da:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:ed371f2e16b4:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
-		google:go-cmp:v0.4.1:google_go_cmp/vendor/github.com/google/go-cmp \
+		google:go-cmp:v0.5.0:google_go_cmp/vendor/github.com/google/go-cmp \
 		google:gxui:f85e0a97b3a4:google_gxui/vendor/github.com/google/gxui \
 		gorilla:websocket:v1.4.2:gorilla_websocket/vendor/github.com/gorilla/websocket \
 		grafov:m3u8:6ab8f28ed427:grafov_m3u8/vendor/github.com/grafov/m3u8 \
@@ -71,7 +71,7 @@ GH_TUPLE=	AndreasBriese:bbloom:28f7e881ca57:andreasbriese_bbloom/vendor/github.c
 		miekg:dns:d128d10d176b:miekg_dns/vendor/github.com/miekg/dns \
 		montanaflynn:stats:v0.6.3:montanaflynn_stats/vendor/github.com/montanaflynn/stats \
 		oschwald:geoip2-golang:v1.4.0:oschwald_geoip2_golang/vendor/github.com/oschwald/geoip2-golang \
-		oschwald:maxminddb-golang:v1.6.0:oschwald_maxminddb_golang/vendor/github.com/oschwald/maxminddb-golang \
+		oschwald:maxminddb-golang:v1.7.0:oschwald_maxminddb_golang/vendor/github.com/oschwald/maxminddb-golang \
 		patrickmn:go-cache:v2.1.0:patrickmn_go_cache/vendor/github.com/patrickmn/go-cache \
 		pborman:getopt:ee0cd42419d3:pborman_getopt/vendor/github.com/pborman/getopt \
 		pion:stun:v0.3.5:pion_stun/vendor/github.com/pion/stun \
