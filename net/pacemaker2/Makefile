@@ -1,8 +1,7 @@
 # Created by: David Shane Holden <dpejesh@yahoo.com>
 # $FreeBSD$
 
-PORTVERSION=		2.0.3
-PORTREVISION=		2
+PORTVERSION=		2.0.4
 PKGNAMESUFFIX=		2
 
 .include "${.CURDIR}/../pacemaker1/Makefile.common"
