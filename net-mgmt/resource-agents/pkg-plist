@@ -75,11 +75,14 @@ lib/ocf/resource.d/heartbeat/azure-events
 lib/ocf/resource.d/heartbeat/azure-lb
 lib/ocf/resource.d/heartbeat/clvm
 lib/ocf/resource.d/heartbeat/conntrackd
+lib/ocf/resource.d/heartbeat/crypt
 lib/ocf/resource.d/heartbeat/db2
 lib/ocf/resource.d/heartbeat/dhcpd
 lib/ocf/resource.d/heartbeat/dnsupdate
 lib/ocf/resource.d/heartbeat/docker
+lib/ocf/resource.d/heartbeat/docker-compose
 lib/ocf/resource.d/heartbeat/dovecot
+lib/ocf/resource.d/heartbeat/dummypy
 lib/ocf/resource.d/heartbeat/eDir88
 lib/ocf/resource.d/heartbeat/ethmonitor
 lib/ocf/resource.d/heartbeat/exportfs
@@ -103,6 +106,7 @@ lib/ocf/resource.d/heartbeat/lxc
 lib/ocf/resource.d/heartbeat/lxd-info
 lib/ocf/resource.d/heartbeat/machine-info
 lib/ocf/resource.d/heartbeat/mariadb
+lib/ocf/resource.d/heartbeat/mdraid
 lib/ocf/resource.d/heartbeat/minio
 lib/ocf/resource.d/heartbeat/mpathpersist
 lib/ocf/resource.d/heartbeat/mysql
@@ -198,11 +202,14 @@ libexec/heartbeat/findif
 %%MANPAGES%%man/man7/ocf_heartbeat_azure-lb.7.gz
 %%MANPAGES%%man/man7/ocf_heartbeat_clvm.7.gz
 %%MANPAGES%%man/man7/ocf_heartbeat_conntrackd.7.gz
+%%MANPAGES%%man/man7/ocf_heartbeat_crypt.7.gz
 %%MANPAGES%%man/man7/ocf_heartbeat_db2.7.gz
 %%MANPAGES%%man/man7/ocf_heartbeat_dhcpd.7.gz
 %%MANPAGES%%man/man7/ocf_heartbeat_dnsupdate.7.gz
 %%MANPAGES%%man/man7/ocf_heartbeat_docker.7.gz
+%%MANPAGES%%man/man7/ocf_heartbeat_docker-compose.7.gz
 %%MANPAGES%%man/man7/ocf_heartbeat_dovecot.7.gz
+%%MANPAGES%%man/man7/ocf_heartbeat_dummypy.7.gz
 %%MANPAGES%%man/man7/ocf_heartbeat_eDir88.7.gz
 %%MANPAGES%%man/man7/ocf_heartbeat_ethmonitor.7.gz
 %%MANPAGES%%man/man7/ocf_heartbeat_exportfs.7.gz
@@ -225,6 +232,7 @@ libexec/heartbeat/findif
 %%MANPAGES%%man/man7/ocf_heartbeat_lxd-info.7.gz
 %%MANPAGES%%man/man7/ocf_heartbeat_machine-info.7.gz
 %%MANPAGES%%man/man7/ocf_heartbeat_mariadb.7.gz
+%%MANPAGES%%man/man7/ocf_heartbeat_mdraid.7.gz
 %%MANPAGES%%man/man7/ocf_heartbeat_minio.7.gz
 %%MANPAGES%%man/man7/ocf_heartbeat_mpathpersist.7.gz
 %%MANPAGES%%man/man7/ocf_heartbeat_mysql-proxy.7.gz
