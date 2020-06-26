@@ -3,7 +3,7 @@
 
 PORTNAME=	ubh
 PORTVERSION=	2.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	news graphics
 MASTER_SITES=	http://ubh.sourceforge.net/download/
 
@@ -13,7 +13,7 @@ COMMENT=	Perl script to download and decode binaries posted to Usenet
 RUN_DEPENDS=	\
 	p5-News-Newsrc>=0:news/p5-News-Newsrc \
 	p5-Mail-Tools>=0:mail/p5-Mail-Tools \
-	p5-IO-stringy>=0:devel/p5-IO-stringy \
+	p5-IO-Stringy>=0:devel/p5-IO-Stringy \
 	p5-MIME-Tools>=0:mail/p5-MIME-Tools \
 	p5-String-CRC32>=0:devel/p5-String-CRC32
 

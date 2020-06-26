@@ -3,7 +3,7 @@
 
 PORTNAME=	MogileFS-Client
 PORTVERSION=	1.17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils net perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DORMANDO
@@ -13,7 +13,7 @@ MAINTAINER=	trociny@FreeBSD.org
 COMMENT=	Client library for the MogileFS distributed file system
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-IO-stringy>=2.102:devel/p5-IO-stringy \
+RUN_DEPENDS=	p5-IO-Stringy>=2.102:devel/p5-IO-Stringy \
 		p5-libwww>=0:www/p5-libwww
 
 USES=		perl5

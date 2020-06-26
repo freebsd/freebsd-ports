@@ -3,6 +3,7 @@
 
 PORTNAME=	Class-Trigger
 PORTVERSION=	0.15
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +16,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-IO-stringy>=0:devel/p5-IO-stringy
+RUN_DEPENDS=	p5-IO-Stringy>=0:devel/p5-IO-Stringy
 
 USES=		perl5
 USE_PERL5=	configure

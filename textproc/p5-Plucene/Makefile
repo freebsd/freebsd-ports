@@ -3,7 +3,7 @@
 
 PORTNAME=	Plucene
 PORTVERSION=	1.25
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:TMTM
@@ -22,7 +22,7 @@ RUN_DEPENDS=	p5-Tie-Array-Sorted>=0:devel/p5-Tie-Array-Sorted \
 		p5-Class-Accessor>=0:devel/p5-Class-Accessor \
 		p5-Lingua-Stem>=0:textproc/p5-Lingua-Stem \
 		p5-Bit-Vector-Minimal>=0:math/p5-Bit-Vector-Minimal \
-		p5-IO-stringy>=0:devel/p5-IO-stringy
+		p5-IO-Stringy>=0:devel/p5-IO-Stringy
 
 NO_ARCH=	yes
 USES=		perl5

@@ -1,0 +1,13 @@
+This toolkit primarily provides modules for performing both traditional and
+object-oriented i/o) on things other than normal filehandles; in particular,
+IO::Scalar, IO::ScalarArray, and IO::Lines.
+
+In the more-traditional IO::Handle front, we have IO::AtomicFile which may be
+used to painlessly create files which are updated atomically.
+
+And in the "this-may-prove-useful" corner, we have IO::Wrap, whose exported
+wraphandle() function will clothe anything that's not a blessed object in an
+IO::Handle-like wrapper... so you can just use OO syntax and stop worrying about
+whether your function's caller handed you a string, a globref, or a FileHandle.
+
+WWW: https://metacpan.org/release/IO-Stringy

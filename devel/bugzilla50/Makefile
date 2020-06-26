@@ -2,7 +2,7 @@
 
 PORTNAME=	bugzilla
 PORTVERSION=	5.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	MOZILLA/webtools MOZILLA/webtools/archived
 
@@ -92,7 +92,7 @@ LDAP_RUN_DEPENDS=	p5-perl-ldap>=0:net/p5-perl-ldap
 RADIUS_RUN_DEPENDS=	p5-Authen-Radius>=0:security/p5-Authen-Radius
 SMTP_AUTH_RUN_DEPENDS=	p5-Authen-SASL>=2.16:security/p5-Authen-SASL
 MIME_SNIFF_RUN_DEPENDS=	p5-File-MimeInfo>=0.16:devel/p5-File-MimeInfo \
-			p5-IO-stringy>=2.110:devel/p5-IO-stringy
+			p5-IO-Stringy>=2.110:devel/p5-IO-Stringy
 MEMCACHED_RUN_DEPENDS=	p5-Cache-Memcached>=1.30:databases/p5-Cache-Memcached
 
 .include <bsd.port.options.mk>

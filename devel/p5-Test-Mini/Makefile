@@ -3,7 +3,7 @@
 
 PORTNAME=	Test-Mini
 PORTVERSION=	v1.1.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PVANDE
@@ -15,7 +15,7 @@ COMMENT=	Provides lightweight unit testing framework
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Data-Inspect>=0.03:devel/p5-Data-Inspect \
 		p5-Exception-Class>=1.30:devel/p5-Exception-Class \
-		p5-IO-stringy>=2.110:devel/p5-IO-stringy \
+		p5-IO-Stringy>=2.110:devel/p5-IO-Stringy \
 		p5-MRO-Compat>=0.10:devel/p5-MRO-Compat \
 		p5-Text-Outdent>=0.01:devel/p5-Text-Outdent \
 		p5-Try-Tiny>=0.04:lang/p5-Try-Tiny \

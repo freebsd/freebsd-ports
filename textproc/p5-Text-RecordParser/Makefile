@@ -2,6 +2,7 @@
 
 PORTNAME=	Text-RecordParser
 PORTVERSION=	1.6.5
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,7 +14,7 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Class-Accessor>=0:devel/p5-Class-Accessor \
-		p5-IO-stringy>=0:devel/p5-IO-stringy \
+		p5-IO-Stringy>=0:devel/p5-IO-Stringy \
 		p5-List-MoreUtils>=0:lang/p5-List-MoreUtils \
 		p5-Readonly>=0:devel/p5-Readonly \
 		p5-Text-Autoformat>=0:textproc/p5-Text-Autoformat \

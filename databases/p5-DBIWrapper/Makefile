@@ -3,6 +3,7 @@
 
 PORTNAME=	DBIWrapper
 PORTVERSION=	0.30
+PORTREVISION=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	p5-
@@ -17,7 +18,7 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-DBI>=0:databases/p5-DBI \
 		p5-DateTime-HiRes>=0:devel/p5-DateTime-HiRes \
-		p5-IO-stringy>=0:devel/p5-IO-stringy \
+		p5-IO-Stringy>=0:devel/p5-IO-Stringy \
 		p5-Spreadsheet-WriteExcel>=0:textproc/p5-Spreadsheet-WriteExcel \
 		p5-XML-LibXML>=0:textproc/p5-XML-LibXML \
 		p5-XML-SAX>=0:textproc/p5-XML-SAX

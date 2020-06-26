@@ -3,6 +3,7 @@
 
 PORTNAME=	Net-Delicious
 PORTVERSION=	1.14
+PORTREVISION=	1
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +17,7 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Config-Simple>=2:devel/p5-Config-Simple \
 		p5-Crypt-SSLeay>=0:security/p5-Crypt-SSLeay \
-		p5-IO-stringy>=2.1:devel/p5-IO-stringy \
+		p5-IO-Stringy>=2.1:devel/p5-IO-Stringy \
 		p5-Log-Dispatch>=2:devel/p5-Log-Dispatch \
 		p5-TimeDate>=2.27:devel/p5-TimeDate \
 		p5-URI>=0:net/p5-URI \

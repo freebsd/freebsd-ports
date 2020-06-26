@@ -3,7 +3,7 @@
 
 PORTNAME=	Net-Flickr-Backup
 PORTVERSION=	3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +16,7 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-File-Find-Rule>=0:devel/p5-File-Find-Rule \
-		p5-IO-stringy>=2.101:devel/p5-IO-stringy \
+		p5-IO-Stringy>=2.101:devel/p5-IO-Stringy \
 		p5-Image-MetaData-JPEG>=0.15:graphics/p5-Image-MetaData-JPEG \
 		p5-Net-Flickr-RDF>=2.2:www/p5-Net-Flickr-RDF \
 		p5-TimeDate>=1.16:devel/p5-TimeDate \

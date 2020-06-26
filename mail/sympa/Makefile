@@ -3,6 +3,7 @@
 
 PORTNAME=	sympa
 DISTVERSION=	6.2.56
+PORTREVISION=	1
 CATEGORIES=	mail
 
 MAINTAINER=	dgeo@centrale-marseille.fr
@@ -33,7 +34,7 @@ RUN_DEPENDS=	\
 	p5-HTML-StripScripts-Parser>=1.03:www/p5-HTML-StripScripts-Parser	\
 	p5-HTML-Tree>=0:www/p5-HTML-Tree	\
 	p5-IO-Socket-SSL>=0.90:security/p5-IO-Socket-SSL	\
-	p5-IO-stringy>=0:devel/p5-IO-stringy	\
+	p5-IO-Stringy>=0:devel/p5-IO-Stringy	\
 	p5-Locale-libintl>=1.22:devel/p5-Locale-libintl	\
 	p5-Mail-Tools>=0:mail/p5-Mail-Tools	\
 	p5-Mail-DKIM>=0.55:mail/p5-Mail-DKIM	\

@@ -3,7 +3,7 @@
 
 PORTNAME=	Config-IniHash
 PORTVERSION=	3.01.01
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN/Config/JENDA
 PKGNAMEPREFIX=	p5-
@@ -17,7 +17,7 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Hash-Case>=0:devel/p5-Hash-Case \
 		p5-Hash-WithDefaults>=0.04:devel/p5-Hash-WithDefaults \
-		p5-IO-stringy>=0:devel/p5-IO-stringy
+		p5-IO-Stringy>=0:devel/p5-IO-Stringy
 
 USES=		dos2unix perl5
 USE_PERL5=	configure

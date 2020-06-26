@@ -3,7 +3,7 @@
 
 PORTNAME=	MailScanner
 PORTVERSION=	5.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	https://s3.amazonaws.com/msv5/release/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${PATCHLEVEL}.nix
@@ -14,7 +14,7 @@ COMMENT=	Powerful virus/spam scanning framework for mail gateways
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	\
-	p5-IO-stringy>=0:devel/p5-IO-stringy \
+	p5-IO-Stringy>=0:devel/p5-IO-Stringy \
 	p5-DBI>=0:databases/p5-DBI \
 	p5-Mail-Tools>=0:mail/p5-Mail-Tools \
 	p5-HTML-Tagset>=0:www/p5-HTML-Tagset \

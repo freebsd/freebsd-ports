@@ -3,7 +3,7 @@
 
 PORTNAME=	Sepia
 PORTVERSION=	0.992
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,7 @@ COMMENT=	Simple Emacs-Perl Interface
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Devel-Size>=0:devel/p5-Devel-Size \
-		p5-IO-stringy>=0:devel/p5-IO-stringy \
+		p5-IO-Stringy>=0:devel/p5-IO-Stringy \
 		p5-PadWalker>=0:devel/p5-PadWalker \
 		p5-Devel-LexAlias>=0:devel/p5-Devel-LexAlias \
 		p5-libwww>=0:www/p5-libwww \

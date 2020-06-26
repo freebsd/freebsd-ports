@@ -3,6 +3,7 @@
 
 PORTNAME=	MojoMojo
 PORTVERSION=	1.12
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MRAMBERG
@@ -63,7 +64,7 @@ RUN_DEPENDS=	\
 	p5-Image-ExifTool>=0:graphics/p5-Image-ExifTool \
 	p5-Imager>=0:graphics/p5-Imager \
 	p5-Image-Math-Constrain>=0:graphics/p5-Image-Math-Constrain \
-	p5-IO-stringy>=0:devel/p5-IO-stringy \
+	p5-IO-Stringy>=0:devel/p5-IO-Stringy \
 	p5-KinoSearch1>=1.00:textproc/p5-KinoSearch1 \
 	p5-Module-Pluggable-Ordered>=1.4:devel/p5-Module-Pluggable-Ordered \
 	p5-Moose>=0:devel/p5-Moose \

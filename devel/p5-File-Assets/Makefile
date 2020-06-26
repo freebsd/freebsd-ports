@@ -3,7 +3,7 @@
 
 PORTNAME=	File-Assets
 PORTVERSION=	0.064
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RKRIMEN
@@ -21,7 +21,7 @@ BUILD_DEPENDS=	p5-Test-Memory-Cycle>0:devel/p5-Test-Memory-Cycle \
 	p5-Object-Tiny>0:devel/p5-Object-Tiny \
 	p5-HTML-Declare>0:www/p5-HTML-Declare \
 	p5-XML-Tiny>0:textproc/p5-XML-Tiny \
-	p5-IO-stringy>0:devel/p5-IO-stringy \
+	p5-IO-Stringy>0:devel/p5-IO-Stringy \
 	p5-CSS-Minifier-XS>=0:textproc/p5-CSS-Minifier-XS \
 	p5-JavaScript-Minifier-XS>=0:textproc/p5-JavaScript-Minifier-XS
 RUN_DEPENDS=	p5-Test-Memory-Cycle>0:devel/p5-Test-Memory-Cycle \
@@ -33,7 +33,7 @@ RUN_DEPENDS=	p5-Test-Memory-Cycle>0:devel/p5-Test-Memory-Cycle \
 	p5-Object-Tiny>0:devel/p5-Object-Tiny \
 	p5-HTML-Declare>0:www/p5-HTML-Declare \
 	p5-XML-Tiny>0:textproc/p5-XML-Tiny \
-	p5-IO-stringy>0:devel/p5-IO-stringy \
+	p5-IO-Stringy>0:devel/p5-IO-Stringy \
 	p5-CSS-Minifier-XS>=0:textproc/p5-CSS-Minifier-XS \
 	p5-JavaScript-Minifier-XS>=0:textproc/p5-JavaScript-Minifier-XS
 

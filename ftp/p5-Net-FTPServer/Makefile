@@ -3,7 +3,7 @@
 
 PORTNAME=	Net-FTPServer
 PORTVERSION=	1.125
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ftp perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,7 +17,7 @@ RUN_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		p5-BSD-Resource>=0:devel/p5-BSD-Resource \
 		p5-DBI>=0:databases/p5-DBI \
 		p5-File-Sync>=0:devel/p5-File-Sync \
-		p5-IO-stringy>=1.126:devel/p5-IO-stringy
+		p5-IO-Stringy>=1.126:devel/p5-IO-Stringy
 
 MAKE_ENV+=	NOCONF=1
 USES=		perl5

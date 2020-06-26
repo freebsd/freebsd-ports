@@ -3,7 +3,7 @@
 
 PORTNAME=	mimedefang
 PORTVERSION=	2.83
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	http://www.mimedefang.org/static/ \
 		http://fossies.org/linux/misc/
@@ -14,7 +14,7 @@ COMMENT=	Milter based anti-spam and anti-virus filtering program
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	\
-	p5-IO-stringy>=0:devel/p5-IO-stringy \
+	p5-IO-Stringy>=0:devel/p5-IO-Stringy \
 	p5-MIME-Tools>=5.417:mail/p5-MIME-Tools \
 	p5-Mail-Tools>=0:mail/p5-Mail-Tools \
 	p5-Digest-SHA1>=0:security/p5-Digest-SHA1 \

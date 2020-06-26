@@ -3,6 +3,7 @@
 
 PORTNAME=	Test-Strict
 PORTVERSION=	0.52
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +15,7 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-TEST_DEPENDS=	p5-IO-stringy>=0:devel/p5-IO-stringy
+TEST_DEPENDS=	p5-IO-Stringy>=0:devel/p5-IO-Stringy
 
 USES=		perl5
 USE_PERL5=	configure

@@ -3,6 +3,7 @@
 
 PORTNAME=	BioPerl
 PORTVERSION=	1.007007
+PORTREVISION=	1
 CATEGORIES=	biology perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:CJFIELDS
@@ -22,7 +23,7 @@ RUN_DEPENDS=	p5-Data-Stag>=0:devel/p5-Data-Stag \
 		p5-Graph>=0:math/p5-Graph \
 		p5-HTTP-Message>=0:www/p5-HTTP-Message \
 		p5-IO-String>=0:devel/p5-IO-String \
-		p5-IO-stringy>=0:devel/p5-IO-stringy \
+		p5-IO-Stringy>=0:devel/p5-IO-Stringy \
 		p5-IPC-Run>=0:devel/p5-IPC-Run \
 		p5-List-MoreUtils>=0:lang/p5-List-MoreUtils \
 		p5-Module-Build>=0:devel/p5-Module-Build \

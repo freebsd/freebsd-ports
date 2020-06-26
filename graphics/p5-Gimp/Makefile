@@ -3,7 +3,7 @@
 
 PORTNAME=	Gimp
 PORTVERSION=	2.33
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,7 +22,7 @@ LIB_DEPENDS=	libgimp-2.0.so:graphics/gimp-app
 RUN_DEPENDS=	p5-Gtk2>=1.0:x11-toolkits/p5-Gtk2 \
 		p5-Gtk2-Ex-PodViewer>=0:x11-toolkits/p5-Gtk2-Ex-PodViewer \
 		p5-IO-All>=0:devel/p5-IO-All \
-		p5-IO-stringy>=0:devel/p5-IO-stringy \
+		p5-IO-Stringy>=0:devel/p5-IO-Stringy \
 		p5-HTML-Parser>=0:www/p5-HTML-Parser \
 		p5-Web-Scraper>=0:www/p5-Web-Scraper \
 		PDL>=2.007:math/PDL

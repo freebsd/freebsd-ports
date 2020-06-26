@@ -3,6 +3,7 @@
 
 PORTNAME=	MooseX-Storage
 PORTVERSION=	0.53
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,7 +20,7 @@ RUN_DEPENDS=	p5-JSON-MaybeXS>=1.001000:converters/p5-JSON-MaybeXS \
 		p5-Moose>=0.99:devel/p5-Moose \
 		p5-String-RewritePrefix>=0.004:textproc/p5-String-RewritePrefix \
 		p5-namespace-autoclean>=0:devel/p5-namespace-autoclean
-TEST_DEPENDS=	p5-IO-stringy>=0:devel/p5-IO-stringy \
+TEST_DEPENDS=	p5-IO-Stringy>=0:devel/p5-IO-Stringy \
 		p5-JSON-XS>=0:converters/p5-JSON-XS \
 		p5-Test-Deep>=0:devel/p5-Test-Deep \
 		p5-Test-Fatal>=0:devel/p5-Test-Fatal \

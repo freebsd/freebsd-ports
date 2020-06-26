@@ -3,7 +3,7 @@
 
 PORTNAME=	maia
 DISTVERSION=	1.0.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 
 MAINTAINER=	ek@purplehat.org
@@ -19,7 +19,7 @@ RUN_DEPENDS=	p5-Unix-Syslog>=0.94:sysutils/p5-Unix-Syslog \
 		p5-Net-CIDR-Lite>=0.18:net/p5-Net-CIDR-Lite \
 		p5-forks>=0.34:devel/p5-forks \
 		p5-Archive-Zip>=0.10:archivers/p5-Archive-Zip \
-		p5-IO-stringy>=1.203:devel/p5-IO-stringy \
+		p5-IO-Stringy>=1.203:devel/p5-IO-Stringy \
 		p5-IO-Socket-INET6>=1.27:net/p5-IO-Socket-INET6 \
 		p5-Text-CSV>=1.02:textproc/p5-Text-CSV \
 		p5-Data-UUID>=1.148:devel/p5-Data-UUID \
