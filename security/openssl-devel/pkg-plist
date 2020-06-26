@@ -29,8 +29,8 @@ include/openssl/conf_api.h
 include/openssl/conferr.h
 include/openssl/configuration.h
 include/openssl/core.h
+include/openssl/core_dispatch.h
 include/openssl/core_names.h
-include/openssl/core_numbers.h
 include/openssl/crmf.h
 include/openssl/crmferr.h
 include/openssl/crypto.h
@@ -64,6 +64,7 @@ include/openssl/idea.h
 include/openssl/kdf.h
 include/openssl/kdferr.h
 include/openssl/lhash.h
+include/openssl/mac.h
 include/openssl/macros.h
 include/openssl/md2.h
 include/openssl/md4.h
@@ -383,6 +384,7 @@ man/man1/tsget.1.gz
 %%MAN3%%man/man3/EVP_PKEY_supports_digest_nid.3.gz
 %%MAN3%%man/man3/EVP_PKEY_verify.3.gz
 %%MAN3%%man/man3/EVP_PKEY_verify_recover.3.gz
+%%MAN3%%man/man3/EVP_RAND.3.gz
 %%MAN3%%man/man3/EVP_SIGNATURE_free.3.gz
 %%MAN3%%man/man3/EVP_SealInit.3.gz
 %%MAN3%%man/man3/EVP_SignInit.3.gz
@@ -451,9 +453,9 @@ man/man1/tsget.1.gz
 %%MAN3%%man/man3/OSSL_CMP_log_open.3.gz
 %%MAN3%%man/man3/OSSL_CMP_validate_msg.3.gz
 %%MAN3%%man/man3/OSSL_CRMF_MSG_get0_tmpl.3.gz
+%%MAN3%%man/man3/OSSL_CRMF_MSG_set0_validity.3.gz
 %%MAN3%%man/man3/OSSL_CRMF_MSG_set1_regCtrl_regToken.3.gz
 %%MAN3%%man/man3/OSSL_CRMF_MSG_set1_regInfo_certReq.3.gz
-%%MAN3%%man/man3/OSSL_CRMF_MSG_set_validity.3.gz
 %%MAN3%%man/man3/OSSL_CRMF_pbmp_new.3.gz
 %%MAN3%%man/man3/OSSL_HTTP_transfer.3.gz
 %%MAN3%%man/man3/OSSL_PARAM.3.gz
@@ -778,6 +780,10 @@ man/man5/x509v3_config.5.gz
 %%MAN3%%man/man7/EVP_PKEY-FFC.7.gz
 %%MAN3%%man/man7/EVP_PKEY-RSA.7.gz
 %%MAN3%%man/man7/EVP_PKEY-X25519.7.gz
+%%MAN3%%man/man7/EVP_RAND-CTR-DRBG.7.gz
+%%MAN3%%man/man7/EVP_RAND-HASH-DRBG.7.gz
+%%MAN3%%man/man7/EVP_RAND-HMAC-DRBG.7.gz
+%%MAN3%%man/man7/EVP_RAND-TEST-RAND.7.gz
 %%MAN3%%man/man7/EVP_SIGNATURE-DSA.7.gz
 %%MAN3%%man/man7/EVP_SIGNATURE-ECDSA.7.gz
 %%MAN3%%man/man7/EVP_SIGNATURE-ED25519.7.gz
@@ -797,8 +803,8 @@ man/man5/x509v3_config.5.gz
 %%MAN3%%man/man7/des_modes.7.gz
 %%MAN3%%man/man7/evp.7.gz
 %%MAN3%%man/man7/openssl-core.h.7.gz
+%%MAN3%%man/man7/openssl-core_dispatch.h.7.gz
 %%MAN3%%man/man7/openssl-core_names.h.7.gz
-%%MAN3%%man/man7/openssl-core_numbers.h.7.gz
 %%MAN3%%man/man7/openssl-env.7.gz
 %%MAN3%%man/man7/openssl_user_macros.7.gz
 %%MAN3%%man/man7/ossl_store-file.7.gz
@@ -812,6 +818,7 @@ man/man5/x509v3_config.5.gz
 %%MAN3%%man/man7/provider-keyexch.7.gz
 %%MAN3%%man/man7/provider-keymgmt.7.gz
 %%MAN3%%man/man7/provider-mac.7.gz
+%%MAN3%%man/man7/provider-rand.7.gz
 %%MAN3%%man/man7/provider-serializer.7.gz
 %%MAN3%%man/man7/provider-signature.7.gz
 %%MAN3%%man/man7/provider.7.gz
