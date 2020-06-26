@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	keybase
-PORTVERSION=	5.4.2
+PORTVERSION=	5.5.1
 DISTVERSIONPREFIX=	v
 MASTER_SITES=	https://github.com/keybase/client/releases/download/v${PORTVERSION}/
 CATEGORIES=	security
