@@ -1,0 +1,60 @@
+Drop after FreeBSD 11.3 EOL around 2020-09-20.
+https://svnweb.freebsd.org/changeset/base/351766
+
+mozglue/baseprofiler/core/shared-libraries-linux.cc:374:34: error: use of undeclared
+      identifier 'NT_GNU_BUILD_ID'
+      if (note_header->n_type == NT_GNU_BUILD_ID) break;
+                                 ^
+In file included from Unified_cpp_mozglue_baseprofiler0.cpp:137:
+mozglue/baseprofiler/lul/LulElf.cpp:762:32: error: use of undeclared identifier
+      'NT_GNU_BUILD_ID'
+    if (note_header->n_type == NT_GNU_BUILD_ID) break;
+                               ^
+In file included from Unified_cpp_tools_profiler1.cpp:38:
+tools/profiler/lul/LulElf.cpp:776:32: error: use of undeclared identifier
+      'NT_GNU_BUILD_ID'
+    if (note_header->n_type == NT_GNU_BUILD_ID) break;
+                               ^
+
+--- mozglue/baseprofiler/core/shared-libraries-linux.cc.orig	2020-06-25 17:04:48 UTC
++++ mozglue/baseprofiler/core/shared-libraries-linux.cc
+@@ -50,6 +50,11 @@ extern "C" MOZ_EXPORT __attribute__((weak)) int dl_ite
+ #  define ElfW(type) Elf_##type
+ #endif
+ 
++#if defined(GP_OS_freebsd) && !defined(NT_GNU_BUILD_ID)
++// FreeBSD < 11.4 doesn't define NT_GNU_BUILD_ID
++#  define NT_GNU_BUILD_ID 3
++#endif
++
+ // ----------------------------------------------------------------------------
+ // Starting imports from toolkit/crashreporter/google-breakpad/, as needed by
+ // this file when moved to mozglue.
+--- mozglue/baseprofiler/lul/LulElf.cpp.orig	2020-06-25 17:04:48 UTC
++++ mozglue/baseprofiler/lul/LulElf.cpp
+@@ -79,6 +79,11 @@
+ #  define EM_AARCH64 183
+ #endif
+ 
++#if defined(GP_OS_freebsd) && !defined(NT_GNU_BUILD_ID)
++// FreeBSD < 11.4 doesn't define NT_GNU_BUILD_ID
++#  define NT_GNU_BUILD_ID 3
++#endif
++
+ // This namespace contains helper functions.
+ namespace {
+ 
+--- tools/profiler/lul/LulElf.cpp.orig	2020-06-25 17:05:05 UTC
++++ tools/profiler/lul/LulElf.cpp
+@@ -84,6 +84,11 @@
+ #  define EM_AARCH64 183
+ #endif
+ 
++#if defined(GP_OS_freebsd) && !defined(NT_GNU_BUILD_ID)
++// FreeBSD < 11.4 doesn't define NT_GNU_BUILD_ID
++#  define NT_GNU_BUILD_ID 3
++#endif
++
+ // This namespace contains helper functions.
+ namespace {
+ 
