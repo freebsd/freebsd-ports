@@ -2,10 +2,12 @@
 
 PORTNAME=	mesos
 PORTVERSION=	1.10.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
-MASTER_SITES=	APACHE/mesos/${PORTVERSION}
+MASTER_SITES=	APACHE/mesos/${PORTVERSION}:mesos
 PKGNAMEPREFIX=	apache-
+DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:mesos
+DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
 
 MAINTAINER=	james.wright@digital-chaos.com
 COMMENT=	Cluster manager providing resource isolation and sharing
@@ -65,9 +67,44 @@ CONFIGURE_ARGS=	--disable-java \
 
 INSTALL_TARGET=	install-strip
 
-OPTIONS_DEFINE=	DEPLOY
+OPTIONS_DEFINE=	DEPLOY JAVA
 OPTIONS_SUB=	yes
 
 DEPLOY_DESC=	Install deploy scripts
+JAVA_DESC=	Enable Java bindings
+
+JAVA_CONFIGURE_ENABLE=	java
+JAVA_USE=		java=yes
+JAVA_BUILD_DEPENDS=	mvn:devel/maven
+JAVA_FETCH_DEPENDS=	mvn:devel/maven
+JAVA_CONFIGURE_ENV=	PROTOBUF_JAR="${MAVEN_REPO}/com/google/protobuf/protobuf-java/${PROTOBUF_VERSION}/protobuf-java-${PROTOBUF_VERSION}.jar"
+JAVA_MAKE_ENV=		MAVEN_OPTS="${MAVEN_OPTS}"
+JAVA_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src_java_mesos.pom.in
+
+# REVIEW: Can we figure out the current Protobuf version in ports instead of hardcoding???
+PROTOBUF_VERSION=	3.12.2
+
+MAVEN_CMD=		mvn
+MAVEN_REPO=		${WRKDIR}/mesos-maven-deps-${PORTVERSION}
+MAVEN_OPTS=		-Dmaven.repo.local=${MAVEN_REPO}
+MAVEN_ENV=		PROTOBUF_VERSION="${PROTOBUF_VERSION}" MAVEN_OPTS="${MAVEN_OPTS}"
+MAVEN_POM=		${FILESDIR}/maven-deps.pom
+
+DEV_BUILD_MODE=		no
+
+.if (${DEV_BUILD_MODE} == "yes")
+# Fetch Maven build dependencies upfront into local Maven Repo
+# Needs to be after extract (as WRKDIR gets wiped) but before Configure
+post-extract-JAVA-on:
+	@${SETENV} ${MAVEN_ENV} \
+	${MAVEN_CMD} -f ${MAVEN_POM} dependency:go-offline
+.else
+MASTER_SITES+=	https://github.com/Digital-Chaos/mesos-maven-deps/archive/${DISTVERSION}/:maven
+DISTFILES+=	mesos-maven-deps-${DISTVERSION}${EXTRACT_SUFX}:maven
+.endif
+
+# Replace Protobuf version in src/java/mesos.pom.in
+do-patch-JAVA-on:
+	@${REINPLACE_CMD} -e 's|@PROTOBUF_VERSION@|${PROTOBUF_VERSION}|g' ${WRKSRC}/src/java/mesos.pom.in
 
 .include <bsd.port.mk>
