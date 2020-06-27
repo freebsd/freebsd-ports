@@ -13,6 +13,9 @@ COMMENT=	OpenID integration for django.contrib.auth
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=	No longer maintained, not compatible with Django 2.0+, please use www/py-django-allauth instead
+EXPIRATION_DATE=	2020-07-15
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django111>=1.6:www/py-django111@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
 
