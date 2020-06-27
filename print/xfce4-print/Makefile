@@ -14,6 +14,8 @@ COMMENT=	Print system support for the Xfce Desktop
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Unsupported upstream since 2009.
+
 BUILD_DEPENDS=	a2ps:print/a2ps
 RUN_DEPENDS=	a2ps:print/a2ps
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \

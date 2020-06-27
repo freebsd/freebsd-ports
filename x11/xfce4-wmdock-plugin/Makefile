@@ -14,6 +14,8 @@ COMMENT=	WMdock plugin for Xfce
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
+DEPRECATED=	Unsupported upstream since 2013, no active source repository.
+
 USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig \
 		tar:bzip2 xfce:gtk2 xorg
 USE_GNOME=	cairo gtk20 intltool libwnck

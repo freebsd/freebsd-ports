@@ -13,6 +13,8 @@ COMMENT=	Quicklauncher plugin for Xfce
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Unsupported upstream since 2009, no active source repository.
+
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 

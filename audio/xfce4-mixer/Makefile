@@ -13,6 +13,8 @@ COMMENT=	Volume control for the Xfce desktop
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Unsupported upstream since 2015. Try using audio/xfce4-pulseaudio-plugin.
+
 LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 		libdbus-1.so:devel/dbus \
 		libunique-1.0.so:x11-toolkits/unique \
