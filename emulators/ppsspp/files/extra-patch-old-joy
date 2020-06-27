@@ -8,8 +8,19 @@ https://github.com/hrydgard/ppsspp/commit/d6b81236626f
 https://github.com/hrydgard/ppsspp/commit/b058b987ad0f
 https://github.com/hrydgard/ppsspp/commit/1b699363ca4d
 https://github.com/hrydgard/ppsspp/commit/ac0052c6af92
+https://github.com/hrydgard/ppsspp/commit/53daa0d844af
 
---- SDL/SDLJoystick.cpp.orig	2017-10-04 19:26:40 UTC
+--- Core/Config.h.orig	2019-10-16 19:38:27 UTC
++++ Core/Config.h
+@@ -83,6 +83,7 @@ struct Config { (public)
+ 	bool bPauseExitsEmulator;
+ 
+ 	bool bPauseMenuExitsEmulator;
++	bool bPS3Controller;
+ 
+ 	// Core
+ 	bool bIgnoreBadMemAccess;
+--- SDL/SDLJoystick.cpp.orig	2019-10-16 19:38:27 UTC
 +++ SDL/SDLJoystick.cpp
 @@ -1,13 +1,8 @@
  #include "SDL/SDLJoystick.h"
@@ -324,11 +335,11 @@ https://github.com/hrydgard/ppsspp/commit/ac0052c6af92
 -	return it->second;
 +	return -1;
  }
---- SDL/SDLJoystick.h.orig	2017-10-04 19:26:40 UTC
+--- SDL/SDLJoystick.h.orig	2019-10-16 19:38:27 UTC
 +++ SDL/SDLJoystick.h
 @@ -1,9 +1,11 @@
  #pragma once
- #ifdef _WIN32
+ #ifdef _MSC_VER
  #include "SDL/SDL.h"
 +#include "SDL/SDL_joystick.h"
  #include "SDL/SDL_thread.h"
@@ -464,3 +475,25 @@ https://github.com/hrydgard/ppsspp/commit/ac0052c6af92
 +
 +	int getDeviceIndex(int instanceId);
  };
+--- SDL/SDLMain.cpp.orig	2019-10-16 19:38:27 UTC
++++ SDL/SDLMain.cpp
+@@ -417,7 +417,7 @@ int main(int argc, char *argv[]) {
+ 	NativeGetAppInfo(&app_name, &app_name_nice, &landscape, &version);
+ 
+ 	bool joystick_enabled = true;
+-	if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_JOYSTICK | SDL_INIT_GAMECONTROLLER | SDL_INIT_AUDIO) < 0) {
++	if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_JOYSTICK | SDL_INIT_AUDIO) < 0) {
+ 		fprintf(stderr, "Failed to initialize SDL with joystick support. Retrying without.\n");
+ 		joystick_enabled = false;
+ 		if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO) < 0) {
+--- UI/NativeApp.cpp.orig	2019-10-16 19:38:27 UTC
++++ UI/NativeApp.cpp
+@@ -555,6 +555,8 @@ void NativeInit(int argc, const char *argv[], const ch
+ 					fileToLog = argv[i] + strlen("--log=");
+ 				if (!strncmp(argv[i], "--state=", strlen("--state=")) && strlen(argv[i]) > strlen("--state="))
+ 					stateToLoad = argv[i] + strlen("--state=");
++				if (!strncmp(argv[1], "--PS3", strlen("--PS3")))
++					g_Config.bPS3Controller = true;
+ #if !defined(MOBILE_DEVICE)
+ 				if (!strncmp(argv[i], "--escape-exit", strlen("--escape-exit")))
+ 					g_Config.bPauseExitsEmulator = true;
