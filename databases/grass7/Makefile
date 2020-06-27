@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	grass
-PORTVERSION=	7.8.2
-PORTREVISION=	2
+PORTVERSION=	7.8.3
 CATEGORIES=	databases geography
 MASTER_SITES=	https://grass.osgeo.org/%SUBDIR%/ \
 		http://grass.cict.fr/%SUBDIR%/ \
@@ -40,8 +39,8 @@ LIB_DEPENDS=	libgdal.so:graphics/gdal \
 RUN_DEPENDS=	${PY_NUMPY} \
 		${PYTHON_SITELIBDIR}/six.py:devel/py-six@${PY_FLAVOR}
 
-USES=		blaslapack compiler:openmp fortran gl gmake gnome iconv \
-		jpeg perl5 pkgconfig python:3.6+ readline shebangfix tk xorg
+USES=		blaslapack compiler:c11 gl gmake gnome iconv \
+		jpeg perl5 pkgconfig python:3.6+ readline shebangfix xorg
 SHEBANG_GLOB=	*.py
 SHEBANG_LANG=	nviz
 nviz_OLD_CMD=	nviz
@@ -69,7 +68,11 @@ CONFIGURE_ARGS=	--with-includes=${LOCALBASE}/include \
 		--with-geos=${LOCALBASE}/bin/geos-config \
 		--with-gdal=${LOCALBASE}/bin/gdal-config \
 		--with-pthread=yes \
-		--with-openmp
+		--with-openmp \
+		--prefix=${LOCALBASE} \
+		--exec-prefix=${LOCALBASE}
+
+CFLAGS+=	-std=c11
 
 SUB_FILES=	pkg-message
 SUB_LIST=	PYTHON_CMD=${PYTHON_CMD}
@@ -126,8 +129,14 @@ SQLITE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_F
 ZSTD_CONFIGURE_WITH=	zstd
 ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
+.if ${ARCH} == "aarch64" || ${ARCH} == "riscv64"
+PLIST_SUB+=     WOSBRK="@comment "
+.else
+PLIST_SUB+=     WOSBRK=""
+
+.endif
 .if !defined (GRASS_INST_DIR)
 GRASS_INST_DIR=	${PORTNAME}${VER}
 .endif
@@ -135,10 +144,10 @@ GRASS_INST_DIR=	${PORTNAME}${VER}
 MANDIRS=	${PREFIX}/grass${VER}/docs/man/man1
 
 post-patch:
-	${REINPLACE_CMD} -e \
-		's|-lblas|${BLASLIB}|g ; \
-		 s|-llapack|${LAPACKLIB}|g ; \
-		 s|g2c|f2c|g' ${WRKSRC}/configure
+#	${REINPLACE_CMD} -e \
+#		's|-lblas|${BLASLIB}|g ; \
+#		 s|-llapack|${LAPACKLIB}|g ; \
+#		 s|g2c|f2c|g' ${WRKSRC}/configure
 	${REINPLACE_CMD} -e \
 		's|make -C|$$(MAKE) -C| ; \
 		 /^BINDIR/s|=.*|=	$${DESTDIR}$${UNIX_BIN}| ; \
@@ -149,11 +158,13 @@ post-patch:
 		 /rm /s| $$(INST_DIR)| $${DESTDIR}$${INST_DIR}|g ; \
 		 /$$(MAKE) /s| $$(INST_DIR)| $${DESTDIR}$${INST_DIR}|g ; \
 		 /^$$(INST_DIR)\//s|$$(INST_DIR)|$${DESTDIR}$${INST_DIR}|g ; \
-		 s|> $$(INST_DIR)|> $${DESTDIR}$${INST_DIR}|' ${WRKSRC}/include/Make/Install.make
+		 s|> $$(INST_DIR)|> $${DESTDIR}$${INST_DIR}|' \
+		${WRKSRC}/include/Make/Install.make
 	${REINPLACE_CMD} \
 		's|= python3|= ${PYTHON_CMD:T}|' ${WRKSRC}/include/Make/Platform.make.in
-	${REINPLACE_CMD} \
-		"s|'make'|'gmake'|g" ${WRKSRC}/scripts/g.extension/g.extension.py
+	${REINPLACE_CMD} -e \
+		"s|'make'|'gmake'|g; \
+		 s|gcc|${CC}|" ${WRKSRC}/scripts/g.extension/g.extension.py
 	${REINPLACE_CMD} \
 		's|$$(ARCH)|$$(TARGET)|g' ${WRKSRC}/include/Make/Grass.make
 # Replace hardcoded python interpreter to PYTHON_CMD
@@ -185,9 +196,6 @@ post-install:
 	for i in `${FIND} ${WRKSRC}/imagery -type f \( -name *jpg -o -name *png -o -name *gxm \) -print`; do \
 		${INSTALL_DATA} $$i ${STAGEDIR}${LOCALBASE}/${PORTNAME}${VER}/docs/html; \
 	done
-.for file in wms_base.py wms_drv.py wms_gdal_drv.py wms_cap_parsers.py srs.py
-	${INSTALL_SCRIPT} ${WRKSRC}/scripts/r.in.wms/${file} ${STAGEDIR}${PREFIX}/${GRASS_INST_DIR}/etc/r.in.wms/${file}
-.endfor
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/wxpyimgview/wxpyimgview_gui.py ${STAGEDIR}${PREFIX}/${GRASS_INST_DIR}/etc/wxpyimgview_gui.py
 	${MKDIR} ${STAGEDIR}${PREFIX}/${GRASS_INST_DIR}/etc/d.polar
 	${INSTALL_DATA} ${WRKSRC}/scripts/d.polar/ps_defs.eps ${STAGEDIR}${PREFIX}/${GRASS_INST_DIR}/etc/d.polar

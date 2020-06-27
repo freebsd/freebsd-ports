@@ -240,7 +240,7 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/bin/r.surf.gauss
 %%GRASS_INST_DIR%%/bin/r.surf.idw
 %%GRASS_INST_DIR%%/bin/r.surf.random
-%%GRASS_INST_DIR%%/bin/r.terraflow
+%%WOSBRK%%%%GRASS_INST_DIR%%/bin/r.terraflow
 %%GRASS_INST_DIR%%/bin/r.texture
 %%GRASS_INST_DIR%%/bin/r.thin
 %%GRASS_INST_DIR%%/bin/r.tile
@@ -318,6 +318,7 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/bin/v.in.dxf
 %%LAS%%%%GRASS_INST_DIR%%/bin/v.in.lidar
 %%GRASS_INST_DIR%%/bin/v.in.ogr
+%%GRASS_INST_DIR%%/bin/v.in.pdal
 %%GRASS_INST_DIR%%/bin/v.in.region
 %%GRASS_INST_DIR%%/bin/v.info
 %%GRASS_INST_DIR%%/bin/v.kcv
@@ -747,6 +748,7 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/docs/html/htmldriver.html
 %%GRASS_INST_DIR%%/docs/html/i_albedo_landsat5.png
 %%GRASS_INST_DIR%%/docs/html/i_albedo_landsat7.png
+%%GRASS_INST_DIR%%/docs/html/i.atcorr.html
 %%GRASS_INST_DIR%%/docs/html/i_atcorr_B02_atcorr.png
 %%GRASS_INST_DIR%%/docs/html/i_cluster_landsat_clustering.png
 %%GRASS_INST_DIR%%/docs/html/i_colors_enhance_corrected.jpg
@@ -1251,6 +1253,7 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/docs/html/r.surf.gauss.html
 %%GRASS_INST_DIR%%/docs/html/r.surf.idw.html
 %%GRASS_INST_DIR%%/docs/html/r.surf.random.html
+%%GRASS_INST_DIR%%/docs/html/r.terraflow.html
 %%GRASS_INST_DIR%%/docs/html/r.texture.html
 %%GRASS_INST_DIR%%/docs/html/r.thin.html
 %%GRASS_INST_DIR%%/docs/html/r.tile.html
@@ -1268,6 +1271,7 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/docs/html/r.unpack.html
 %%GRASS_INST_DIR%%/docs/html/r.uslek.html
 %%GRASS_INST_DIR%%/docs/html/r.usler.html
+%%GRASS_INST_DIR%%/docs/html/r.viewshed.html
 %%GRASS_INST_DIR%%/docs/html/r.viewshed.png
 %%GRASS_INST_DIR%%/docs/html/r.volume.html
 %%GRASS_INST_DIR%%/docs/html/r.walk.html
@@ -1399,6 +1403,7 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/docs/html/topic_aggregation.html
 %%GRASS_INST_DIR%%/docs/html/topic_albedo.html
 %%GRASS_INST_DIR%%/docs/html/topic_algebra.html
+%%GRASS_INST_DIR%%/docs/html/topic_atmospheric_correction.html
 %%GRASS_INST_DIR%%/docs/html/topic_attribute_table.html
 %%GRASS_INST_DIR%%/docs/html/topic_biomass.html
 %%GRASS_INST_DIR%%/docs/html/topic_buffer.html
@@ -1490,6 +1495,7 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/docs/html/topic_unit_test.html
 %%GRASS_INST_DIR%%/docs/html/topic_vector.html
 %%GRASS_INST_DIR%%/docs/html/topic_vegetation_index.html
+%%GRASS_INST_DIR%%/docs/html/topic_viewshed.html
 %%GRASS_INST_DIR%%/docs/html/topic_visualization.html
 %%GRASS_INST_DIR%%/docs/html/topic_volume.html
 %%GRASS_INST_DIR%%/docs/html/topic_voxel.html
@@ -1619,6 +1625,7 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/docs/html/v.in.lines.html
 %%GRASS_INST_DIR%%/docs/html/v.in.mapgen.html
 %%GRASS_INST_DIR%%/docs/html/v.in.ogr.html
+%%GRASS_INST_DIR%%/docs/html/v.in.pdal.html
 %%GRASS_INST_DIR%%/docs/html/v.in.region.html
 %%GRASS_INST_DIR%%/docs/html/v.in.wfs.html
 %%GRASS_INST_DIR%%/docs/html/v.info.html
@@ -1899,6 +1906,7 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/docs/man/man1/htmldriver.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/i.albedo.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/i.aster.toar.1.gz
+%%GRASS_INST_DIR%%/docs/man/man1/i.atcorr.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/i.biomass.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/i.cca.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/i.cluster.1.gz
@@ -2112,6 +2120,7 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/docs/man/man1/r.surf.gauss.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/r.surf.idw.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/r.surf.random.1.gz
+%%GRASS_INST_DIR%%/docs/man/man1/r.terraflow.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/r.texture.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/r.thin.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/r.tile.1.gz
@@ -2127,6 +2136,7 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/docs/man/man1/r.unpack.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/r.uslek.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/r.usler.1.gz
+%%GRASS_INST_DIR%%/docs/man/man1/r.viewshed.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/r.volume.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/r.walk.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/r.water.outlet.1.gz
@@ -2228,6 +2238,7 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/docs/man/man1/topic_aggregation.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/topic_albedo.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/topic_algebra.1.gz
+%%GRASS_INST_DIR%%/docs/man/man1/topic_atmospheric_correction.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/topic_attribute_table.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/topic_biomass.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/topic_buffer.1.gz
@@ -2319,6 +2330,7 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/docs/man/man1/topic_unit_test.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/topic_vector.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/topic_vegetation_index.1.gz
+%%GRASS_INST_DIR%%/docs/man/man1/topic_viewshed.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/topic_visualization.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/topic_volume.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/topic_voxel.1.gz
@@ -2369,6 +2381,7 @@ bin/grass%%VER%%
 %%LAS%%%%GRASS_INST_DIR%%/docs/man/man1/v.in.lidar.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/v.in.mapgen.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/v.in.ogr.1.gz
+%%GRASS_INST_DIR%%/docs/man/man1/v.in.pdal.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/v.in.region.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/v.in.wfs.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/v.info.1.gz

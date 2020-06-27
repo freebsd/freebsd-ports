@@ -1,0 +1,11 @@
+--- lib/python/ctypes/Makefile.orig	2020-06-03 13:29:15 UTC
++++ lib/python/ctypes/Makefile
+@@ -63,7 +63,7 @@ endif
+ 
+ SED = sed
+ CTYPESGEN = ./ctypesgen.py
+-CTYPESFLAGS = --cpp "$(CC) -E $(CPPFLAGS) $(LFS_CFLAGS) $(MAC_FLAGS) $(EXTRA_CFLAGS) $(NLS_CFLAGS) $(DEFS) $(EXTRA_INC) $(INC) -D__GLIBC_HAVE_LONG_LONG"
++CTYPESFLAGS = --cpp "$(CC) -E $(CPPFLAGS) $(LFS_CFLAGS) $(MAC_FLAGS) $(EXTRA_CFLAGS) $(NLS_CFLAGS) $(DEFS) $(EXTRA_INC) $(INC) -D__GLIBC_HAVE_LONG_LONG -D__GNUCLIKE_BUILTIN_VARARGS -D__GNUCLIKE_BUILTIN_STDARG"
+ EXTRA_CLEAN_FILES := $(wildcard ctypesgencore/*.pyc) $(wildcard ctypesgencore/*/*.pyc)
+ 
+ ifneq ($(MINGW),)
