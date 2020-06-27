@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	lidarr
-PORTVERSION=	0.6.2.883
+PORTVERSION=	0.7.1.1381
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/lidarr/Lidarr/releases/download/v${PORTVERSION}/
-DISTNAME=	Lidarr.develop.${PORTVERSION}.linux
+DISTNAME=	Lidarr.master.${PORTVERSION}.linux
 
 MAINTAINER=	michiel@vanbaak.eu
 COMMENT=	Music collection manager for Usenet and BitTorrent users
