@@ -1,5 +1,5 @@
-pkcs11-gateway is a software that allows you to use a Linux 32-bit PKCS#11
-module on FreeBSD i386/amd64.
+pkcs11-gateway is a software that allows you to use a Linux PKCS#11 module
+on FreeBSD i386/amd64.
 It consists of a FreeBSD Cryptoki wrapper library that serializes and forwards
 PKCS#11 function calls to a Linux server program that dlopen() and use the
 real module. The communication between the two components is via a UNIX socket.
