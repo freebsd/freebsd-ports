@@ -3,6 +3,7 @@
 
 PORTNAME=	twisted
 PORTVERSION=	20.3.0
+PORTREVISION=	1
 CATEGORIES=	devel net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -38,7 +39,7 @@ CONCH_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}appdirs>=1.4.0:devel/py-appdirs@${PY_F
 			${PYTHON_PKGNAMEPREFIX}pyasn1>=0:devel/py-pyasn1@${PY_FLAVOR}
 HTTP2_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}h2>=3.0<4.0:www/py-h2@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}priority>=1.1.0<2.0:www/py-priority@${PY_FLAVOR}
-SERIAL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}serial>=3.0:comms/py-serial@${PY_FLAVOR}
+SERIAL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyserial>=3.0:comms/py-pyserial@${PY_FLAVOR}
 TLS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}idna>=0.6:dns/py-idna@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}openssl>=16.0.0:security/py-openssl@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}service_identity>=18.1.0:security/py-service_identity@${PY_FLAVOR}

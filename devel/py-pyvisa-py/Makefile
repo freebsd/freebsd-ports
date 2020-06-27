@@ -22,7 +22,7 @@ OPTIONS_DEFINE=	SERIAL USB
 SERIAL_DESC=	Access to devices via RS-232
 USB_DESC=	Access to devices via USB
 
-SERIAL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}serial>=3.0:comms/py-serial@${PY_FLAVOR}
+SERIAL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyserial>=3.0:comms/py-pyserial@${PY_FLAVOR}
 USB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}usb>=0:devel/py-usb@${PY_FLAVOR}
 
 .include <bsd.port.mk>

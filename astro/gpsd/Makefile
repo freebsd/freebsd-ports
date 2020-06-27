@@ -3,6 +3,7 @@
 
 PORTNAME=	gpsd
 PORTVERSION=	3.20
+PORTREVISION=	1
 CATEGORIES=	astro geography
 MASTER_SITES=	SAVANNAH
 
@@ -134,7 +135,7 @@ RECONFIGURE_MAKE_ARGS_OFF=	reconfigure=no
 CPPBIND_MAKE_ARGS_OFF=	libgpsmm=no
 X11_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cairo>=0:graphics/py-cairo@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}gobject3>=0:devel/py-gobject3@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}serial>=0:comms/py-serial@${PY_FLAVOR}
+			${PYTHON_PKGNAMEPREFIX}pyserial>=0:comms/py-pyserial@${PY_FLAVOR}
 X11_USES=	gnome
 X11_USE=	GNOME=gtk30
 X11_MAKE_ARGS_OFF=	xgps=no

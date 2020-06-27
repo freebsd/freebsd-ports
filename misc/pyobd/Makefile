@@ -2,7 +2,7 @@
 
 PORTNAME=	pyobd
 DISTVERSION=	0.9.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	misc
 MASTER_SITES=	http://www.obdtester.com/download/
 DISTNAME=	pyobd_${PORTVERSION}
@@ -17,7 +17,7 @@ DEPRECATED=	Uses deprecated version of python
 EXPIRATION_DATE=	2020-08-15
 
 BUILD_DEPENDS=	convert:graphics/ImageMagick6
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}serial>0:comms/py-serial@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyserial>0:comms/py-pyserial@${PY_FLAVOR}
 
 USES=		dos2unix gnome python:2.7 shebangfix
 DOS2UNIX_FILES=	${PORTNAME}.desktop

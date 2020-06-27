@@ -19,7 +19,7 @@ LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
 		libsasl2.so:security/cyrus-sasl2
 RUN_DEPENDS=	wkhtmltopdf>0:converters/wkhtmltopdf \
 		${PYTHON_PKGNAMEPREFIX}psycopg2>0:databases/py-psycopg2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}serial>=0:comms/py-serial@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyserial>=0:comms/py-pyserial@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}vobject>=0:deskutils/py-vobject@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Babel>=1.3:devel/py-babel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=0:devel/py-dateutil@${PY_FLAVOR} \

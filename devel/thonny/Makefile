@@ -2,6 +2,7 @@
 
 PORTNAME=	thonny
 PORTVERSION=	3.2.7
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
@@ -19,7 +20,7 @@ RUN_DEPENDS=	pylint:devel/pylint \
 		${PYTHON_PKGNAMEPREFIX}mypy>=0.470:devel/py-mypy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mypy_extensions>=0.4.0:devel/py-mypy_extensions@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyperclip>=1.5.27:devel/py-pyperclip@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}serial>=3.2.1:comms/py-serial@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pyserial>=3.2.1:comms/py-pyserial@${PY_FLAVOR}
 
 USES=		python:3.5+
 USE_PYTHON=	autoplist distutils

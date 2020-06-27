@@ -143,8 +143,8 @@
     SUBDIR += py-hidapi
     SUBDIR += py-libconcord
     SUBDIR += py-lirc
+    SUBDIR += py-pyserial
     SUBDIR += py-qt5-serialport
-    SUBDIR += py-serial
     SUBDIR += py-xmodem
     SUBDIR += pyla
     SUBDIR += qico
