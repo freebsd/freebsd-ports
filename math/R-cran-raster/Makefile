@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	raster
-DISTVERSION=	3.1-5
-PORTREVISION=	1
+DISTVERSION=	3.3-6
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -11,7 +10,7 @@ COMMENT=	Geographic Data Analysis and Modeling
 
 LICENSE=	GPLv3
 
-CRAN_DEPENDS=	R-cran-sp>=1.2.0:math/R-cran-sp \
+CRAN_DEPENDS=	R-cran-sp>=1.4.1:math/R-cran-sp \
 		R-cran-Rcpp>0:devel/R-cran-Rcpp
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
