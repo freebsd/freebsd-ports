@@ -5,7 +5,7 @@ DISTVERSION=	0.13
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	crees@FreeBSD.org
+MAINTAINER=	bugmeister@FreeBSD.org
 COMMENT=	Python command-line interface to bugzilla
 
 LICENSE=	GPLv2
