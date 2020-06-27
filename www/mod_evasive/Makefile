@@ -3,7 +3,7 @@
 
 PORTNAME=	mod_evasive
 PORTVERSION=	1.10.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www security
 DISTNAME=	mod_evasive_${PORTVERSION}
 DIST_SUBDIR=	apache2
@@ -11,14 +11,15 @@ DIST_SUBDIR=	apache2
 MAINTAINER=	kiwi@oav.net
 COMMENT=	Apache module to try to protect the HTTP Server from DoS/DDoS attacks
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	jzdziarski
-GH_TAGNAME=	ad6e89f6c7d835945a7d329cc0f04adaefc3d114
-
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		apache:2.2+
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	jzdziarski
+GH_TAGNAME=	ad6e89f6c7d835945a7d329cc0f04adaefc3d114
+
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 MODULENAME=	${PORTNAME}20
