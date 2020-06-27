@@ -14,6 +14,10 @@ EOM
 }
 { type: upgrade
   message: <<EOM
+The default MySQL socket location has moved from /tmp to %%MARIADB_RUNDIR%%
+for both client and server packages. Make sure you update your configurations
+in /var/db/mysql and %%PREFIX%%/etc.
+
 Remember to run mariadb-upgrade (with the optional --datadir=<dbdir> flag)
 the first time you start the MySQL server after an upgrade from an
 earlier version.

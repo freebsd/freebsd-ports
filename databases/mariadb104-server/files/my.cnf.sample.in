@@ -5,7 +5,7 @@
 #
 [client-server]
 port	= 3306
-socket	= /var/run/mysql/mysql.sock
+socket	= %%MARIADB_RUNDIR%%/mysql.sock
 
 #
 # include *.cnf from the config directory

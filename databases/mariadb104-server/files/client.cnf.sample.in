@@ -3,8 +3,8 @@
 
 # Options specific to all client programs
 [client]
-# port			= 3306 # set in %%ETCDIR%%/my.cnf
-# socket		= /var/run/mysql/mysql.sock # set in %%ETCDIR%%/my.cnf
+# port			= 3306 # inherited from %%ETCDIR%%/my.cnf
+# socket		= %%MARIADB_RUNDIR%%/mysql.sock # inherited from %%ETCDIR%%/my.cnf
 
 # Options specific to MariaDB client programs
 [client-mariadb]

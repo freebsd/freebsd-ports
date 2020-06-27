@@ -440,4 +440,4 @@ man/man1/mariadb-waitpid.1.gz
 @comment man/man1/mysqltest_embedded.1.gz
 @comment man/man1/replace.1.gz
 @comment share/pkgconfig/mariadb.pc
-
+@dir(%%MARIADB_USER%%,%%MARIADB_GROUP%%,) %%MARIADB_LOGDIR%%

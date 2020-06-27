@@ -169,3 +169,4 @@ man/man1/replace.1.gz
 @comment man/man1/wsrep_sst_rsync_wan.1.gz
 @comment man/man8/mysqld.8.gz
 libdata/pkgconfig/mariadb.pc
+@dir(%%MARIADB_USER%%,%%MARIADB_GROUP%%,) %%MARIADB_RUNDIR%%
