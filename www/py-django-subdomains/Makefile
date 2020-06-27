@@ -13,6 +13,9 @@ COMMENT=	Subdomains helpers for the Django framework
 
 LICENSE=	MIT
 
+DEPRECATED=	No longer maintained, not compatible with Django 2.0+
+EXPIRATION_DATE=	2020-07-15
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django111>0:www/py-django111@${PY_FLAVOR}
 
 USES=		python
