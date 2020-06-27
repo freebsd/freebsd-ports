@@ -38,7 +38,7 @@ case "$weekly_certbot_enable" in
 	fi
 
 	anticongestion
-	if %%LOCALBASE%%/bin/certbot renew --pre-hook "$PRE_HOOK" \
+	if %%LOCALBASE%%/bin/certbot-%%PYTHON_VER%% renew --pre-hook "$PRE_HOOK" \
 	                             --post-hook "$POST_HOOK" \
 	   			     --no-random-sleep-on-renew
 	then

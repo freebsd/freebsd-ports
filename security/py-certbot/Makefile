@@ -3,6 +3,7 @@
 
 PORTNAME=	certbot
 PORTVERSION=	${ACME_VERSION}
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
@@ -34,17 +35,40 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 SUB_FILES=	500.certbot
-PLIST_FILES=	etc/periodic/weekly/500.certbot
+PLIST_FILES=	etc/periodic/weekly/500.certbot-${PYTHON_VER}
+SUB_LIST=	PYTHON_VER=${PYTHON_VER}
+
+OPTIONS_DEFINE=	MANPAGES
+OPTIONS_DEFAULT=	MANPAGES
+
+MANPAGES_BUILD_DEPENDS=	${RUN_DEPENDS} \
+			${PY_SPHINX} \
+			${PYTHON_PKGNAMEPREFIX}sphinx_rtd_theme>0:textproc/py-sphinx_rtd_theme@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}repoze.sphinx.autointerface>0:devel/py-repoze.sphinx.autointerface@${PY_FLAVOR} \
+
+MANPAGES_PLIST_FILES=	share/man/man1/certbot.1.gz \
+			share/man/man7/certbot.7.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
 		${WRKSRC}/certbot/compat/misc.py \
 		${WRKSRC}/tests/cli_test.py
 
+post-build-MANPAGES-on:
+	# Avoid gmake / ${DO_MAKE_BUILD} -C ${WRKSRC}/docs man
+	(cd ${WRKSRC}/docs && \
+		sphinx-build-${PYTHON_VER} -N -b man . _build/man)
+
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/periodic/weekly
 	${INSTALL_SCRIPT} ${WRKDIR}/500.certbot \
-		${STAGEDIR}${PREFIX}/etc/periodic/weekly
+		${STAGEDIR}${PREFIX}/etc/periodic/weekly/500.certbot-${PYTHON_VER}
+
+post-install-MANPAGES-on:
+	${INSTALL_MAN} ${WRKSRC}/docs/_build/man/certbot.1 \
+		${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/docs/_build/man/certbot.7 \
+		${STAGEDIR}${PREFIX}/share/man/man7
 
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
