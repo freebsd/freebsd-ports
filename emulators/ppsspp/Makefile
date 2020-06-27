@@ -2,13 +2,16 @@
 
 PORTNAME=	ppsspp
 DISTVERSIONPREFIX=	v
-DISTVERSION?=	1.9.4
-PORTREVISION?=	2
+DISTVERSION?=	1.10
+PORTREVISION?=	0
 CATEGORIES=	emulators
 # XXX Get from Debian once #697821 lands
 MASTER_SITES=	https://bazaar.launchpad.net/~sergio-br2/${PORTNAME}/debian-sdl/download/5/${PORTNAME}.1-20140802045408-dd26dik367ztj5xg-8/:manpage
 DISTFILES=	${PORTNAME}.1:manpage
 EXTRACT_ONLY=	${DISTFILES:N*\:manpage:C/:.*//}
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	2c7290e98b81.patch:-p1 # https://github.com/hrydgard/ppsspp/pull/13061
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	PSP emulator in C++ with dynarec JIT for x86, ARM, MIPS
@@ -27,18 +30,17 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hrydgard
-GH_TUPLE?=	hrydgard:glslang:7.11.3214-63-gf9d08a25:glslang/ext/glslang \
-		hrydgard:${PORTNAME}-lang:bfc3a51:lang/assets/lang \
+GH_TUPLE?=	hrydgard:glslang:8.13.3559-76-gd0850f87:glslang/ext/glslang \
+		hrydgard:${PORTNAME}-lang:d184ba2:lang/assets/lang \
 		KhronosGroup:SPIRV-Cross:2019-05-20-60-ga1f7c8dc:SPIRV/ext/SPIRV-Cross \
 		Kingcom:armips:v0.10.0-28-g7885552:armips/ext/armips
 
 CONFLICTS_INSTALL=	${PORTNAME}-*
 
-USES=		cmake compiler:c++11-lib gl localbase:ldflags pkgconfig sdl
+USES=		cmake compiler:c++11-lib gl localbase:ldflags pkgconfig
 EXCLUDE=	libzip zlib
 EXTRACT_AFTER_ARGS=${EXCLUDE:S,^,--exclude ,}
 USE_GL=		gl glew glu
-USE_SDL=	sdl2 # joystick
 CMAKE_ON=	USE_SYSTEM_FFMPEG USE_SYSTEM_LIBZIP USE_SYSTEM_SNAPPY USE_WAYLAND_WSI
 CMAKE_OFF=	USE_DISCORD
 SUB_FILES=	pkg-message
@@ -54,22 +56,25 @@ DESKTOP_ENTRIES="PPSSPP" \
 OPTIONS_DEFINE=	OLDJOY VULKAN
 OPTIONS_DEFAULT=VULKAN
 OPTIONS_SINGLE=	GUI
-OPTIONS_SINGLE_GUI=	QT5 SDL
-OPTIONS_SLAVE?=	LIBRETRO SDL
+OPTIONS_SINGLE_GUI=	LIBRETRO QT5 SDL
+OPTIONS_SLAVE?=	SDL
 OPTIONS_EXCLUDE:=	${OPTIONS_EXCLUDE} ${OPTIONS_SINGLE_GUI}
 
 LIBRETRO_DESC=	libretro core for games/retroarch
 LIBRETRO_CMAKE_BOOL=	LIBRETRO
 LIBRETRO_PLIST_FILES=	lib/libretro/${PORTNAME}_libretro.so
-LIBRETRO_IMPLIES=	SDL
+LIBRETRO_VARS=	CONFLICTS_INSTALL= DESKTOP_ENTRIES= PLIST= PORTDATA= PKGMESSAGE= SUB_FILES=
 OLDJOY_DESC=	Old joystick support with fixed button mappings (deprecated)
 OLDJOY_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-old-joy
-QT5_USES=	qt:5
-QT5_USE=	QT=qmake_build,buildtools_build,linguisttools_build,gui,opengl,widgets
+QT5_USES=	qt:5 sdl
+QT5_USE=	QT=qmake_build,buildtools_build,linguisttools_build,gui,multimedia,opengl,widgets
+QT5_USE+=	SDL=sdl2 # audio, joystick
 QT5_CMAKE_BOOL=	USING_QT_UI
 QT5_VARS=	EXENAME=PPSSPPQt
 SDL_BUILD_DEPENDS=	png>=1.6:graphics/png
 SDL_LIB_DEPENDS=	libpng.so:graphics/png
+SDL_USES=	sdl
+SDL_USE=	SDL=sdl2
 SDL_VARS=	EXENAME=PPSSPPSDL
 VULKAN_DESC=		Vulkan renderer
 VULKAN_RUN_DEPENDS=	${LOCALBASE}/lib/libvulkan.so:graphics/vulkan-loader
@@ -82,7 +87,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/"unknown"/"${DISTVERSIONFULL}"/' \
 		${WRKSRC}/git-version.cmake
 
-do-install:
+do-install-QT5-on do-install-SDL-on:
 # cmake doesn't pack assets into the app unlike qmake
 	(cd ${INSTALL_WRKSRC} && ${COPYTREE_SHARE} \
 		"${PORTDATA:N${PORTNAME}}" ${STAGEDIR}${DATADIR})

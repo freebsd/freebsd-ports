@@ -61,6 +61,7 @@
     SUBDIR += klh10
     SUBDIR += lib765
     SUBDIR += libdsk
+    SUBDIR += libretro-ppsspp
     SUBDIR += libspectrum
     SUBDIR += linux-c7
     SUBDIR += linux-power9-functional-sim
