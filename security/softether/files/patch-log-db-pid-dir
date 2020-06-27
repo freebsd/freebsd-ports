@@ -1,6 +1,6 @@
---- src/Cedar/Admin.c.orig	2019-09-18 07:28:47 UTC
+--- src/Cedar/Admin.c.orig	2019-09-18 01:40:24 UTC
 +++ src/Cedar/Admin.c
-@@ -10329,7 +10329,7 @@ void SiReadLocalLogFile(SERVER *s, char *filepath, UIN
+@@ -11482,7 +11482,7 @@ void SiReadLocalLogFile(SERVER *s, char *filepath, UIN
  
  	Zero(t, sizeof(RPC_READ_LOG_FILE));
  
@@ -9,9 +9,9 @@
  	Format(full_path, sizeof(full_path), "%s/%s", exe_dir, filepath);
  
  	// Read file
---- src/Cedar/Cedar.h.orig	2019-09-18 07:28:47 UTC
+--- src/Cedar/Cedar.h.orig	2019-09-18 01:40:24 UTC
 +++ src/Cedar/Cedar.h
-@@ -501,22 +501,26 @@
+@@ -502,22 +502,26 @@
  #define	LOG_ENGINE_BUFFER_CACHE_SIZE_MAX	(10 * 1024 * 1024)	// Write cache size
  
  // Constant such as a file name
@@ -46,7 +46,7 @@
  #define	CLIENT_LOG_PREFIX			"client"
  
  // Packet log settings
-@@ -582,7 +586,7 @@
+@@ -583,7 +587,7 @@
  // Expiration date of random size cache
  #define	RAND_SIZE_CACHE_EXPIRE		(24 * 60 * 60 * 1000)
  // Management allowed IP address list file name
@@ -55,7 +55,7 @@
  
  #define NON_SSL_MIN_COUNT			60
  #define NON_SSL_ENTRY_EXPIRES		(10 * 60 * 1000)
-@@ -633,9 +637,10 @@
+@@ -634,9 +638,10 @@
  //////////////////////////////////////////////////////////////////////
  
  #define	EL_ADMIN_PORT			22888
@@ -69,7 +69,7 @@
  #define	EL_PACKET_LOG_PREFIX	"pkt"
  #define	EL_LICENSE_CHECK_SPAN	(10 * 1000)
  
---- src/Cedar/Client.h.orig	2019-09-18 07:28:47 UTC
+--- src/Cedar/Client.h.orig	2019-09-18 01:40:24 UTC
 +++ src/Cedar/Client.h
 @@ -116,7 +116,7 @@
  
@@ -89,7 +89,7 @@
  
  #define	CLIENT_GLOBAL_PULSE_NAME			"clientglobalpulse"
  
---- src/Cedar/Logging.c.orig	2019-09-18 07:28:47 UTC
+--- src/Cedar/Logging.c.orig	2019-09-18 01:40:24 UTC
 +++ src/Cedar/Logging.c
 @@ -111,11 +111,11 @@ static char *delete_targets[] =
  	"backup.vpn_server.config",
@@ -116,7 +116,7 @@
  
  	e->Log = log;
  	e->MinFreeSpace = min_size;
---- src/Cedar/Nat.h.orig	2019-09-18 07:28:47 UTC
+--- src/Cedar/Nat.h.orig	2019-09-18 01:40:24 UTC
 +++ src/Cedar/Nat.h
 @@ -106,7 +106,7 @@
  #define	NAT_H
@@ -127,9 +127,9 @@
  #define	DEFAULT_NAT_ADMIN_PORT			2828		// Default port number for management
  #define	NAT_ADMIN_PORT_LISTEN_INTERVAL	1000		// Interval for trying to open a port for management
  #define	NAT_FILE_SAVE_INTERVAL			(30 * 1000)	// Interval to save
---- src/Cedar/Protocol.c.orig	2019-09-18 07:28:47 UTC
+--- src/Cedar/Protocol.c.orig	2019-09-18 01:40:24 UTC
 +++ src/Cedar/Protocol.c
-@@ -154,7 +154,7 @@ bool TryGetRootCertChain(LIST *o, X *x, bool auto_save
+@@ -874,7 +874,7 @@ bool TryGetRootCertChain(LIST *o, X *x, bool auto_save
  		wchar_t dirname[MAX_SIZE];
  		wchar_t exedir[MAX_SIZE];
  
@@ -138,7 +138,7 @@
  		CombinePathW(dirname, sizeof(dirname), exedir, L"chain_certs");
  		MakeDirExW(dirname);
  
-@@ -460,7 +460,7 @@ void AddAllChainCertsToCertList(LIST *o)
+@@ -1180,7 +1180,7 @@ void AddAllChainCertsToCertList(LIST *o)
  		return;
  	}
  
@@ -147,7 +147,7 @@
  
  	CombinePathW(dirname, sizeof(dirname), exedir, L"chain_certs");
  
---- src/Cedar/Server.c.orig	2019-09-18 07:28:47 UTC
+--- src/Cedar/Server.c.orig	2019-09-18 01:40:24 UTC
 +++ src/Cedar/Server.c
 @@ -106,12 +106,12 @@
  
@@ -185,37 +185,53 @@
  	// Enumerate in the packet_log
 -	Format(tmp, sizeof(tmp), "%s/packet_log", exe_dir);
 +	Format(tmp, sizeof(tmp), "%s/"HUB_PACKET_LOG_DIR, exe_dir);
- 	dir = EnumDir(tmp);
- 	if (dir != NULL)
- 	{
-@@ -1129,7 +1129,7 @@ LIST *EnumLogFile(char *hubname)
  
- 				if (hubname == NULL || StrCmpi(hubname, e->FileName) == 0)
+ 	if (hubname == NULL)
+ 	{
+@@ -1130,7 +1130,7 @@ LIST *EnumLogFile(char *hubname)
  				{
+ 					char dir_name[MAX_PATH];
+ 
 -					Format(dir_name, sizeof(dir_name), "packet_log/%s", e->FileName);
 +					Format(dir_name, sizeof(dir_name), HUB_PACKET_LOG_DIR"/%s", e->FileName);
+ 
  					EnumLogFileDir(o, dir_name);
  				}
- 			}
-@@ -1139,7 +1139,7 @@ LIST *EnumLogFile(char *hubname)
+@@ -1143,13 +1143,13 @@ LIST *EnumLogFile(char *hubname)
+ 	{
+ 		char dir_name[MAX_PATH];
+ 
+-		Format(dir_name, sizeof(dir_name), "packet_log/%s", hubname);
++		Format(dir_name, sizeof(dir_name), HUB_PACKET_LOG_DIR"/%s", hubname);
+ 
+ 		EnumLogFileDir(o, dir_name);
  	}
  
  	// Enumerate in the security_log
 -	Format(tmp, sizeof(tmp), "%s/security_log", exe_dir);
 +	Format(tmp, sizeof(tmp), "%s/"HUB_SECURITY_LOG_DIR, exe_dir);
- 	dir = EnumDir(tmp);
- 	if (dir != NULL)
- 	{
-@@ -1154,7 +1154,7 @@ LIST *EnumLogFile(char *hubname)
  
- 				if (hubname == NULL || StrCmpi(hubname, e->FileName) == 0)
+ 	if (hubname == NULL)
+ 	{
+@@ -1165,7 +1165,7 @@ LIST *EnumLogFile(char *hubname)
  				{
+ 					char dir_name[MAX_PATH];
+ 
 -					Format(dir_name, sizeof(dir_name), "security_log/%s", e->FileName);
 +					Format(dir_name, sizeof(dir_name), HUB_SECURITY_LOG_DIR"/%s", e->FileName);
+ 
  					EnumLogFileDir(o, dir_name);
  				}
- 			}
-@@ -1179,7 +1179,7 @@ void EnumLogFileDir(LIST *o, char *dirname)
+@@ -1178,7 +1178,7 @@ LIST *EnumLogFile(char *hubname)
+ 	{
+ 		char dir_name[MAX_PATH];
+ 
+-		Format(dir_name, sizeof(dir_name), "security_log/%s", hubname);
++		Format(dir_name, sizeof(dir_name), HUB_SECURITY_LOG_DIR"/%s", hubname);
+ 
+ 		EnumLogFileDir(o, dir_name);
+ 	}
+@@ -1199,7 +1199,7 @@ void EnumLogFileDir(LIST *o, char *dirname)
  		return;
  	}
  
@@ -224,7 +240,7 @@
  	Format(dir_full_path, sizeof(dir_full_path), "%s/%s", exe_dir, dirname);
  
  	dir = EnumDir(dir_full_path);
---- src/Cedar/Server.h.orig	2019-09-18 07:28:47 UTC
+--- src/Cedar/Server.h.orig	2019-09-18 01:40:24 UTC
 +++ src/Cedar/Server.h
 @@ -143,7 +143,7 @@ extern char *SERVER_CONFIG_FILE_NAME;
  
@@ -235,7 +251,7 @@
  #define	MEMBER_SELECTOR_CONNECT_TIMEOUT	2000
  #define	MEMBER_SELECTOR_DATA_TIMEOUT	5000
  
---- src/Mayaqua/Cfg.c.orig	2019-09-18 07:28:47 UTC
+--- src/Mayaqua/Cfg.c.orig	2019-09-18 01:40:24 UTC
 +++ src/Mayaqua/Cfg.c
 @@ -130,12 +130,12 @@ void BackupCfgWEx(CFG_RW *rw, FOLDER *f, wchar_t *orig
  	}
@@ -261,7 +277,7 @@
  	}
  
  	// Don't save if the date and time has not been changed
---- src/Mayaqua/Cfg.h.orig	2019-09-18 07:28:47 UTC
+--- src/Mayaqua/Cfg.h.orig	2019-09-18 01:40:24 UTC
 +++ src/Mayaqua/Cfg.h
 @@ -108,7 +108,7 @@
  // Macro
@@ -272,9 +288,9 @@
  
  // Constants
  #define	TAG_DECLARE			"declare"
---- src/Mayaqua/FileIO.c.orig	2019-09-18 07:28:47 UTC
+--- src/Mayaqua/FileIO.c.orig	2019-09-18 01:40:24 UTC
 +++ src/Mayaqua/FileIO.c
-@@ -1454,6 +1454,36 @@ void GetExeNameW(wchar_t *name, UINT size)
+@@ -1460,6 +1460,36 @@ void GetExeNameW(wchar_t *name, UINT size)
  	UniStrCpy(name, size, exe_file_name_w);
  }
  
@@ -311,7 +327,7 @@
  // Initialization of the aquisition of the EXE file name
  void InitGetExeName(char *arg)
  {
-@@ -2376,14 +2406,20 @@ void InnerFilePathW(wchar_t *dst, UINT size, wchar_t *
+@@ -2382,14 +2412,20 @@ void InnerFilePathW(wchar_t *dst, UINT size, wchar_t *
  		return;
  	}
  
@@ -334,7 +350,7 @@
  		ConbinePathW(dst, size, dir, &src[1]);
  	}
  }
---- src/Mayaqua/FileIO.h.orig	2019-09-18 07:28:47 UTC
+--- src/Mayaqua/FileIO.h.orig	2019-09-18 01:40:24 UTC
 +++ src/Mayaqua/FileIO.h
 @@ -340,6 +340,12 @@ void GetExeName(char *name, UINT size);
  void GetExeNameW(wchar_t *name, UINT size);
@@ -349,9 +365,9 @@
  void BuildHamcore(char *dst_filename, char *src_dir, bool unix_only);
  int CompareHamcore(void *p1, void *p2);
  void InitHamcore();
---- src/Mayaqua/Network.c.orig	2019-09-18 07:28:47 UTC
+--- src/Mayaqua/Network.c.orig	2019-09-18 01:40:24 UTC
 +++ src/Mayaqua/Network.c
-@@ -12810,7 +12810,7 @@ void AddChainSslCertOnDirectory(struct ssl_ctx_st *ctx
+@@ -13048,7 +13048,7 @@ void AddChainSslCertOnDirectory(struct ssl_ctx_st *ctx
  
  	o = NewListFast(NULL);
  
@@ -360,7 +376,7 @@
  
  	CombinePathW(dirname, sizeof(dirname), exedir, L"chain_certs");
  
---- src/Mayaqua/Network.h.orig	2019-09-18 07:28:47 UTC
+--- src/Mayaqua/Network.h.orig	2019-09-18 01:40:24 UTC
 +++ src/Mayaqua/Network.h
 @@ -150,7 +150,7 @@ struct DYN_VALUE
  #define	SSL_LOGGING_DIRNAME			"@ssl_log"
@@ -371,7 +387,7 @@
  
  // Start range of the random UDP port
  #define	RAND_UDP_PORT_START			5000
---- src/Mayaqua/Table.h.orig	2019-09-18 07:28:47 UTC
+--- src/Mayaqua/Table.h.orig	2019-09-18 01:40:24 UTC
 +++ src/Mayaqua/Table.h
 @@ -110,7 +110,7 @@
  #define	LANGLIST_FILENAME		"|languages.txt"
@@ -382,7 +398,7 @@
  #define	LANG_CONFIG_TEMPLETE	"|lang.config"
  
  // Language constant
---- src/Mayaqua/Unix.c.orig	2019-09-18 07:28:47 UTC
+--- src/Mayaqua/Unix.c.orig	2019-09-18 01:40:24 UTC
 +++ src/Mayaqua/Unix.c
 @@ -915,7 +915,7 @@ void *UnixNewSingleInstance(char *instance_name)
  		StrCpy(tmp, sizeof(tmp), instance_name);
