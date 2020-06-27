@@ -19,4 +19,4 @@ trigger a response (great for determining HTTP server versions).
 protocols, using a straightforward interface.
       It supports scanning the vulnerable Microsoft DCOM implementation.
 
-WWW: http://www.enyo.de/fw/software/doscan/
+WWW: https://www.enyo.de/fw/software/doscan/
