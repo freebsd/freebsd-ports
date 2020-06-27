@@ -13,7 +13,6 @@ COMMENT=	U-boot related tools
 LICENSE=	GPLv2
 
 BROKEN_powerpc64=	fails to build: include/config_distro_bootcmd.h:279:3: sandbox EFI support is only supported on ARM and x86
-
 BROKEN_SSL=	libressl
 BROKEN_SSL_REASON_libressl=	not supported by the upstream
 
