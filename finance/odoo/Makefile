@@ -2,6 +2,7 @@
 
 PORTNAME=	odoo
 PORTVERSION=	13.0
+PORTREVISION=	1
 CATEGORIES=	finance www
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -33,7 +34,7 @@ RUN_DEPENDS=	wkhtmltopdf>0:converters/wkhtmltopdf \
 		${PYTHON_PKGNAMEPREFIX}polib>=0:devel/py-polib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyparsing>=0:devel/py-pyparsing@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytz>=0:devel/py-pytz@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}usb>=0:devel/py-usb@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyusb>=0:devel/py-pyusb@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}vatnumber>=0:finance/py-vatnumber@${PY_FLAVOR} \
 		${PY_PILLOW} \
 		${PYTHON_PKGNAMEPREFIX}pydot>=0:graphics/py-pydot@${PY_FLAVOR} \

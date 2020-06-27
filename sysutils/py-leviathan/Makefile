@@ -2,6 +2,7 @@
 
 PORTNAME=	leviathan
 PORTVERSION=	0.1.1
+PORTREVISION=	1
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +13,7 @@ COMMENT=	Application to control and monitor NZXT (Asetek) liquid coolers
 LICENSE=	GPLv2
 #LICENSE_FILE=	Not packaged with PyPI sdist
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}usb>=0:devel/py-usb@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyusb>=0:devel/py-pyusb@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils

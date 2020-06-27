@@ -1,7 +1,8 @@
 # $FreeBSD$
 
-PORTNAME=	usb
+PORTNAME=	pyusb
 PORTVERSION=	1.0.2
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -14,9 +15,8 @@ USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	pyusb
-GH_PROJECT=	py${PORTNAME}
-GH_TAGNAME=	47ca9c3
+
+#NO_ARCH=	yes
 
 PORTDOCS=	*.rst
 

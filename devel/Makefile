@@ -4961,6 +4961,7 @@
     SUBDIR += py-pytz
     SUBDIR += py-pyudev
     SUBDIR += py-pyupgrade
+    SUBDIR += py-pyusb
     SUBDIR += py-pyutil
     SUBDIR += py-pyvalid
     SUBDIR += py-pyvisa
@@ -5174,7 +5175,6 @@
     SUBDIR += py-urlimport
     SUBDIR += py-urwid
     SUBDIR += py-urwidtrees
-    SUBDIR += py-usb
     SUBDIR += py-user_agents
     SUBDIR += py-userpath
     SUBDIR += py-utils

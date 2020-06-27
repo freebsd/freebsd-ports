@@ -15109,3 +15109,4 @@ www/redmine-wiki_notes|www/redmine4|2020-06-25|Removed, build-time extension of 
 devel/p5-IO-stringy|devel/p5-IO-Stringy|2020-06-26|New development starts as IO-Stringy
 devel/looks|devel/jgoodies-looks|2020-06-26|Renamed to match upstream
 comms/py-serial|comms/py-pyserial|2020-06-27|Rename to match upstream naming
+devel/py-usb|devel/py-pyusb|2020-06-27|Rename to match upstream naming
