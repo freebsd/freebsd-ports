@@ -2,7 +2,7 @@
 
 PORTNAME=	notcurses
 DISTVERSIONPREFIX=	v
-DISTVERSION=	${ABIVERSION}.5.0
+DISTVERSION=	${ABIVERSION}.5.2
 CATEGORIES=	devel
 
 MAINTAINER=	nickblack@linux.com
@@ -33,12 +33,5 @@ PLIST_SUB=	REL_VER=${DISTVERSION} ABI_VER=${ABIVERSION}
 OPTIONS_DEFINE=	DOCS
 
 PORTDOCS=	*
-
-.include <bsd.port.options.mk>
-
-# necessary until 1.5.1 for getrandom() in qrcode demo
-.if ${OPSYS} == "FreeBSD" && ${OSVERSION} < 1200000
-IGNORE+=requires getrandom(2) introduced in FreeBSD 12
-.endif
 
 .include <bsd.port.mk>
