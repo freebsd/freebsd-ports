@@ -1,4 +1,4 @@
---- setup.py.orig	2020-02-10 04:29:35 UTC
+--- setup.py.orig	2020-06-15 23:50:00 UTC
 +++ setup.py
 @@ -68,7 +68,7 @@ os_files = [
      # AppStream metadata
@@ -8,8 +8,8 @@
 +    ('share/pixmaps', ['xdg/icon/64/openshot-qt.png']),
      # XDG Freedesktop icon paths
      ('share/icons/hicolor/scalable/apps', ['xdg/openshot-qt.svg']),
-     ('share/icons/hicolor/64x64/apps', ['xdg/icon/64/openshot-qt.png']),
-@@ -77,7 +77,7 @@ os_files = [
+     ('share/icons/hicolor/scalable/mimetypes', ['xdg/openshot-qt-doc.svg']),
+@@ -79,7 +79,7 @@ os_files = [
      # XDG desktop mime types cache
      ('share/mime/packages', ['xdg/org.openshot.OpenShot.xml']),
      # launcher (mime.types)
@@ -18,7 +18,7 @@
  ]
  
  # Find files matching patterns
-@@ -118,26 +118,6 @@ if os.path.exists(os.path.join(PATH, "src")):
+@@ -120,26 +120,6 @@ if os.path.exists(os.path.join(PATH, "src")):
  FAILED = 'Failed to update.\n'
  
  if ROOT and dist != None:
