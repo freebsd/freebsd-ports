@@ -1,0 +1,5 @@
+qvge is a multi-platform graph editor written in C++/Qt.  Its main goal
+is to make possible visually edit two-dimensional graphs in a simple and
+intuitive way.
+
+WWW: https://github.com/ArsMasiuk/qvge

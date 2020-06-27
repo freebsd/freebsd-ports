@@ -908,6 +908,7 @@
     SUBDIR += quat-gui
     SUBDIR += quesa
     SUBDIR += quesoglc
+    SUBDIR += qvge
     SUBDIR += radiance
     SUBDIR += radius-engine
     SUBDIR += rapid-photo-downloader
