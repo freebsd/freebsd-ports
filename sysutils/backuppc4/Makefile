@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	backuppc
-PORTVERSION=	4.3.2
+PORTVERSION=	4.4.0
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/backuppc/backuppc/releases/download/${PORTVERSION}/ \
 		SF
@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	p5-CGI>0:www/p5-CGI \
 		p5-File-Listing>=0:sysutils/p5-File-Listing \
-		p5-BackupPC-XS>=0.57:sysutils/p5-BackupPC-XS
+		p5-BackupPC-XS>=0.62:sysutils/p5-BackupPC-XS
 
 USES=		perl5
 
@@ -53,7 +53,7 @@ SMB_DESC=		Install Samba (for "smb" transfer and NetBIOS lookup)
 XML_RSS_DESC=		Install Perl extension to manage RSS files
 
 ARCHIVE_ZIP_RUN_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip
-RSYNC_BPC_RUN_DEPENDS=		rsync-bpc>=3.0.9.6:net/rsync-bpc
+RSYNC_BPC_RUN_DEPENDS=		rsync-bpc>=3.0.9.15:net/rsync-bpc
 RRDTOOL_RUN_DEPENDS=		rrdtool:databases/rrdtool
 SMB_USES=			samba:run # nmblookup, smbclient
 XML_RSS_RUN_DEPENDS=		p5-XML-RSS>=0:textproc/p5-XML-RSS
