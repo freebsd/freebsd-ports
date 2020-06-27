@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	recipes
-PORTVERSION=	0.1.12
-PORTREVISION=	1
+PORTVERSION=	0.1.13
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -17,12 +16,13 @@ CRAN_DEPENDS=	R-cran-dplyr>0:math/R-cran-dplyr \
 		R-cran-glue>0:devel/R-cran-glue \
 		R-cran-gower>0:math/R-cran-gower \
 		R-cran-ipred>0:math/R-cran-ipred \
+		R-cran-lifecycle>0:devel/R-cran-lifecycle \
 		R-cran-lubridate>0:devel/R-cran-lubridate \
 		R-cran-magrittr>0:devel/R-cran-magrittr \
 		R-cran-purrr>=0.2.3:devel/R-cran-purrr \
 		R-cran-rlang>=0.4.0:devel/R-cran-rlang \
 		R-cran-tibble>0:devel/R-cran-tibble \
-		R-cran-tidyr>=0.8.3:devel/R-cran-tidyr \
+		R-cran-tidyr>=1.0.0:devel/R-cran-tidyr \
 		R-cran-tidyselect>=0.2.5:devel/R-cran-tidyselect \
 		R-cran-timeDate>0:finance/R-cran-timeDate \
 		R-cran-withr>0:devel/R-cran-withr
