@@ -2,7 +2,7 @@
 
 PORTNAME=	riot
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.4
+DISTVERSION=	1.6.6
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/vector-im/riot-web/releases/download/${DISTVERSIONFULL}/
 PKGNAMESUFFIX=	-web
