@@ -2,7 +2,7 @@
 
 PORTNAME=	dymo-cups-drivers
 PORTVERSION=	1.4.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	http://download.dymo.com/Software/Linux/
 
