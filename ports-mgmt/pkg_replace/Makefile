@@ -2,17 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	pkg_replace
-PORTVERSION=	20200622
+PORTVERSION=	20200623
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	http://member.tokoha-u.ac.jp/~kdeguchi/download/
 
 MAINTAINER=	kdeguchi@sz.tokoha-u.ac.jp
 COMMENT=	Utility for upgrading installed packages
 
-LICENSE=	PD
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	CC0-1.0
 
-USES=		tar:xz
+USE_GITHUB=	yes
+GH_ACCOUNT=	kdeguchi
 
 NO_ARCH=	yes
 NO_BUILD=	yes
