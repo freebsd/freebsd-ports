@@ -52,7 +52,8 @@ LICENSE=	EPL
 ONLY_FOR_ARCHS=	amd64 powerpc64
 
 BUILD_DEPENDS=	git:devel/git-lite \
-		${LOCALBASE}/share/java/maven/bin/mvn:devel/maven
+		${LOCALBASE}/share/java/maven/bin/mvn:devel/maven \
+		zip:archivers/zip
 LIB_DEPENDS=	libsecret-1.so:security/libsecret \
 		libwebkit2gtk-4.0.so:www/webkit2-gtk3
 USES=		compiler:c++11-lang gmake pkgconfig gnome
@@ -73,7 +74,6 @@ DESKTOP_ENTRIES="Eclipse" \
 
 SUB_FILES=	${PORTNAME}
 
-#LOCAL_P2=	file://${WRKDIR}/${GH_PROJECT}-${PORTVERSION}/${PORTVERSION}
 MAVEN_ENV=	MAVEN_OPTS=-Xmx1024m CC=${CC} JAVA_HOME=${JAVA_HOME}
 MAVEN_REPO=	-Dmaven.repo.local=${WRKDIR}/${GH_PROJECT}-${PORTVERSION}
 MAVEN_ECLIPSE=	-Dnative=gtk.freebsd.${ARCH} -DforceContextQualifier=v${ECLIPSE_TSTAMP}
