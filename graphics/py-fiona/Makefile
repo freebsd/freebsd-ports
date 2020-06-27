@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Fiona
-DISTVERSION=	1.7.13
-PORTREVISION=	2
+DISTVERSION=	1.8.13
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,5 +21,8 @@ LIB_DEPENDS+=	libgdal.so:graphics/gdal
 
 USES=		compiler:c++11-lang python
 USE_PYTHON=	autoplist distutils cython
+
+post-install:
+	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME:tl} -name *.so -exec ${STRIP_CMD} {} +
 
 .include <bsd.port.mk>
