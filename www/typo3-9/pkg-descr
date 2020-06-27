@@ -9,4 +9,13 @@ until September 2021.
 * SEO out of the box
 * Easier and faster site building
 
+System requirements
+* PHP 7.2 or later
+* MySQL 5.5+ / MariaDB / Postgres / SQLite support
+* Internet Explorer 11 and later
+
+Supported Until
+Free: 2021-09-01
+ELTS: 2024-09-01
+
 WWW: https://typo3.org/
