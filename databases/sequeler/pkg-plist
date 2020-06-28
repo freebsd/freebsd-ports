@@ -6,6 +6,10 @@ share/icons/hicolor/16x16/apps/com.github.alecaddd.sequeler.svg
 share/icons/hicolor/16x16/status/table-empty.svg
 share/icons/hicolor/16x16/status/table.svg
 share/icons/hicolor/16x16@2/apps/com.github.alecaddd.sequeler.svg
+share/icons/hicolor/24x24/actions/application-logout.svg
+share/icons/hicolor/24x24/actions/office-database-edit.svg
+share/icons/hicolor/24x24/actions/office-database-new.svg
+share/icons/hicolor/24x24/actions/office-database-remove.svg
 share/icons/hicolor/24x24/apps/com.github.alecaddd.sequeler.svg
 share/icons/hicolor/24x24@2/apps/com.github.alecaddd.sequeler.svg
 share/icons/hicolor/32x32/apps/com.github.alecaddd.sequeler.svg
