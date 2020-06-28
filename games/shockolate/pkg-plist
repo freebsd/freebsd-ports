@@ -1,0 +1,6 @@
+bin/systemshock
+%%DATADIR%%/shaders/color.frag
+%%DATADIR%%/shaders/main.vert
+%%DATADIR%%/shaders/star.frag
+%%DATADIR%%/shaders/texture.frag
+@dir %%DATADIR%%/res

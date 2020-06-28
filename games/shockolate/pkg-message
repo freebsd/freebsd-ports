@@ -1,0 +1,13 @@
+[
+{ type: install
+  message: << EOM
+To run the game, copy the game's datafiles (data and sound
+directories) into %%PREFIX%%/shared/shockolate/res, then run
+
+$ systemshock
+
+If you want to play MIDI soundtracks with fluidsynth, you need to
+manually install audio/fluid-soundfont port.
+EOM
+}
+]
