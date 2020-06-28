@@ -15111,3 +15111,4 @@ devel/looks|devel/jgoodies-looks|2020-06-26|Renamed to match upstream
 comms/py-serial|comms/py-pyserial|2020-06-27|Rename to match upstream naming
 devel/py-usb|devel/py-pyusb|2020-06-27|Rename to match upstream naming
 math/py-igraph|math/py-python-igraph|2020-06-27|Rename to match upstream naming
+net/bnxt-kmod||2020-06-28|Has expired: Unsupported on all supported FreeBSD versions

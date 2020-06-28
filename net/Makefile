@@ -60,7 +60,6 @@
     SUBDIR += bird2
     SUBDIR += bittwist
     SUBDIR += bmon
-    SUBDIR += bnxt-kmod
     SUBDIR += boinc-client
     SUBDIR += boinc_curses
     SUBDIR += bosh-bootloader
