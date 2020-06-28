@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	openpiv
-PORTVERSION=	0.21.8b
+PORTVERSION=	0.22.0
 CATEGORIES=	science python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -27,6 +27,7 @@ OPTIONS_DEFINE=	EXTRA
 EXTRA_DESC=	Install additional Python packages (for tutorial/examples)
 
 EXTRA_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>=0:math/py-matplotlib@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}natsort>=0:devel/py-natsort@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}imageio>=0:graphics/py-imageio@${PY_FLAVOR}
 
 .include <bsd.port.mk>
