@@ -1,0 +1,9 @@
+--- meson.build.orig	2020-06-27 11:47:08 UTC
++++ meson.build
+@@ -10,6 +10,5 @@ add_global_arguments('-DGETTEXT_PACKAGE="@0@"'.format(
+ 
+ 
+ subdir('src')
+-meson.add_install_script('meson/post_install.py')
+ subdir('data')
+ subdir('po')

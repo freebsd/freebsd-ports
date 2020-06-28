@@ -1,0 +1,10 @@
+--- data/io.elementary.videos.desktop.in.orig	2020-06-25 10:18:27 UTC
++++ data/io.elementary.videos.desktop.in
+@@ -1,6 +1,6 @@
+ [Desktop Entry]
+ Version=1.0
+-Name=Videos
++Name=Elementary Videos
+ GenericName=Video Player
+ Comment=Watch videos and movies
+ Exec=io.elementary.videos %U

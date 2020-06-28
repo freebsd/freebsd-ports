@@ -55,6 +55,7 @@
     SUBDIR += dvdid
     SUBDIR += dvdrip
     SUBDIR += dvdstyler
+    SUBDIR += elementary-videos
     SUBDIR += emby-server
     SUBDIR += emovix
     SUBDIR += f3d
