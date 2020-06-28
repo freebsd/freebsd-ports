@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	zfs-snap-diff
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
