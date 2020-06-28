@@ -58,7 +58,7 @@ slim_prestop()
 
 	find_pidfile
 
-	xpid=`ps -axww | grep '/bin/[X] .* -auth /var/run/slim.auth' | grep -v grep | awk '{print $1};'`
+	xpid=`pgrep -f 'Xorg .* -auth /var/run/slim.auth'`
 	[ -n "$xpid" ] && kill $xpid
 }
 
