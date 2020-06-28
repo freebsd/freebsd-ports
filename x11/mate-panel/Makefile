@@ -28,6 +28,7 @@ PORTSCOUT=	limitw:1,even
 
 USES=		gettext gmake gnome libtool localbase mate pathfix pkgconfig \
 		tar:xz xorg
+USE_CSTD=	c99
 USE_MATE=	desktop libmateweather menus
 USE_XORG=	ice sm
 USE_GNOME=	cairo dconf gnomeprefix gtk30 intltool \
