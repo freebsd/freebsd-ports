@@ -34,10 +34,13 @@
 %%T%%/lib/tomcat-api.jar
 %%T%%/lib/tomcat-coyote.jar
 %%T%%/lib/tomcat-dbcp.jar
+%%T%%/lib/tomcat-i18n-de.jar
 %%T%%/lib/tomcat-i18n-es.jar
 %%T%%/lib/tomcat-i18n-fr.jar
 %%T%%/lib/tomcat-i18n-ja.jar
+%%T%%/lib/tomcat-i18n-ko.jar
 %%T%%/lib/tomcat-i18n-ru.jar
+%%T%%/lib/tomcat-i18n-zh-CN.jar
 %%T%%/lib/tomcat-jdbc.jar
 %%T%%/lib/tomcat-util.jar
 %%T%%/lib/tomcat7-websocket.jar
@@ -57,6 +60,7 @@
 @sample %%T%%/conf/logging.properties.sample
 @sample %%T%%/conf/server.xml.sample
 @sample %%T%%/conf/tomcat-users.xml.sample
+%%T%%/conf/tomcat-users.xsd
 @sample %%T%%/conf/web.xml.sample
 %%T%%/temp/safeToDelete.tmp
 %%ROOT%%%%T%%/webapps/ROOT/RELEASE-NOTES.txt
@@ -64,7 +68,6 @@
 %%ROOT%%%%T%%/webapps/ROOT/asf-logo-wide.svg
 %%ROOT%%%%T%%/webapps/ROOT/bg-button.png
 %%ROOT%%%%T%%/webapps/ROOT/bg-middle.png
-%%ROOT%%%%T%%/webapps/ROOT/bg-nav-item.png
 %%ROOT%%%%T%%/webapps/ROOT/bg-nav.png
 %%ROOT%%%%T%%/webapps/ROOT/bg-upper.png
 %%ROOT%%%%T%%/webapps/ROOT/favicon.ico
@@ -79,6 +82,7 @@
 %%DOCS%%%%T%%/webapps/docs/RUNNING.txt
 %%DOCS%%%%T%%/webapps/docs/WEB-INF/web.xml
 %%DOCS%%%%T%%/webapps/docs/aio.html
+%%DOCS%%%%T%%/webapps/docs/annotationapi/index.html
 %%DOCS%%%%T%%/webapps/docs/api/index.html
 %%DOCS%%%%T%%/webapps/docs/appdev/build.xml.txt
 %%DOCS%%%%T%%/webapps/docs/appdev/deployment.html
@@ -214,10 +218,14 @@
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/HelloWorldExample.class
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/HelloWorldExample.java
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/LocalStrings.properties
-%%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/LocalStrings_en.properties
+%%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/LocalStrings_de.properties
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/LocalStrings_es.properties
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/LocalStrings_fr.properties
+%%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/LocalStrings_ja.properties
+%%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/LocalStrings_ko.properties
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/LocalStrings_pt.properties
+%%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/LocalStrings_ru.properties
+%%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/LocalStrings_zh_CN.properties
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/RequestHeaderExample.class
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/RequestHeaderExample.java
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/RequestInfoExample.class
@@ -282,8 +290,6 @@
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/examples/FooTagExtraInfo.java
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/examples/LogTag.class
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/examples/LogTag.java
-%%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/examples/ShowSource.class
-%%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/examples/ShowSource.java
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/examples/ValuesTag.class
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/examples/ValuesTag.java
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/filters/ExampleFilter.class
@@ -565,8 +571,6 @@
 %%EXAMPLES%%%%T%%/webapps/examples/jsp/snp/snoop.html
 %%EXAMPLES%%%%T%%/webapps/examples/jsp/snp/snoop.jsp
 %%EXAMPLES%%%%T%%/webapps/examples/jsp/snp/snoop.jsp.html
-%%EXAMPLES%%%%T%%/webapps/examples/jsp/source.jsp
-%%EXAMPLES%%%%T%%/webapps/examples/jsp/source.jsp.html
 %%EXAMPLES%%%%T%%/webapps/examples/jsp/tagplugin/choose.html
 %%EXAMPLES%%%%T%%/webapps/examples/jsp/tagplugin/choose.jsp
 %%EXAMPLES%%%%T%%/webapps/examples/jsp/tagplugin/choose.jsp.html
