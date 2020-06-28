@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gef
-DISTVERSION=	2020.03-1
+DISTVERSION=	2020.06
 CATEGORIES=	security python
 
 MAINTAINER=	0mp@FreeBSD.org
