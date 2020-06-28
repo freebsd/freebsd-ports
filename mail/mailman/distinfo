@@ -1,5 +1,5 @@
-TIMESTAMP = 1588881655
-SHA256 (mailman/mailman-2.1.33.tgz) = 6d7e81753c78120f479a275ea623194cac188a3daf301eb76aa9d39a942d5234
-SIZE (mailman/mailman-2.1.33.tgz) = 9412979
-SHA256 (mailman/msapiro-htdig-1815.patch.xz) = 740aeb99b1e25706ad32bd73ac2035f758b5ec566856d6816aed76496931563b
-SIZE (mailman/msapiro-htdig-1815.patch.xz) = 50408
+TIMESTAMP = 1593337994
+SHA256 (mailman/mailman-2.1.34.tgz) = daeec8917f75620be1397833fe81293b9a6af528aa1ed0020f5a888b86102389
+SIZE (mailman/mailman-2.1.34.tgz) = 9414225
+SHA256 (mailman/msapiro-htdig-1822.patch.xz) = fa1da6fb7c0946a6723bc2766501c222fa73c8d794566a3b6e5718a7d1840265
+SIZE (mailman/msapiro-htdig-1822.patch.xz) = 50700
