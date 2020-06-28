@@ -27,11 +27,12 @@ include/matroska/KaxTypes.h
 include/matroska/KaxVersion.h
 include/matroska/c/libmatroska.h
 include/matroska/c/libmatroska_t.h
+include/matroska/matroska_export.h
 lib/cmake/Matroska/MatroskaConfig.cmake
 lib/cmake/Matroska/MatroskaConfigVersion.cmake
 lib/cmake/Matroska/MatroskaTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Matroska/MatroskaTargets.cmake
 lib/libmatroska.so
-lib/libmatroska.so.6
-lib/libmatroska.so.6.0.0
+lib/libmatroska.so.7
+lib/libmatroska.so.7.0.0
 libdata/pkgconfig/libmatroska.pc

@@ -32,6 +32,6 @@ lib/cmake/EBML/EBMLConfigVersion.cmake
 lib/cmake/EBML/EBMLTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/EBML/EBMLTargets.cmake
 lib/libebml.so
-lib/libebml.so.4
-lib/libebml.so.4.0.0
+lib/libebml.so.5
+lib/libebml.so.5.0.0
 libdata/pkgconfig/libebml.pc

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libebml
-DISTVERSION=	1.3.10
+DISTVERSION=	1.4.0
 DISTVERSIONPREFIX=	release-
 CATEGORIES=	textproc
 
