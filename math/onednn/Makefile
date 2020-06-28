@@ -31,6 +31,12 @@ OPENMP_BROKEN_OFF=	still requires omp.h, see https://github.com/intel/mkl-dnn/is
 CXXFLAGS_amd64=	-msse4.1
 CXXFLAGS_i386=	-msse4.1
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} != aarch64 && ${ARCH} != amd64
+CMAKE_ARGS+=	-DDNNL_TARGET_ARCH:STRING="GENERIC"
+.endif
+
 post-install:
 	@${RM} -r ${STAGEDIR}${PREFIX}/share/doc
 
