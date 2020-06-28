@@ -14,8 +14,6 @@ lib/libxfprint.so.0
 lib/libxfprint.so.0.0.1
 %%LPR%%lib/xfce4/xfprint-plugins/bsdlpr_plugin.a
 %%LPR%%lib/xfce4/xfprint-plugins/bsdlpr_plugin.so
-%%CUPS%%lib/xfce4/xfprint-plugins/cups_plugin.a
-%%CUPS%%lib/xfce4/xfprint-plugins/cups_plugin.so
 libdata/pkgconfig/xfprint-1.0.pc
 share/applications/xfprint.desktop
 share/applications/xfprint-manager.desktop

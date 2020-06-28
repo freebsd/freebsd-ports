@@ -29,6 +29,7 @@ USE_XFCE=	libgui xfconf
 USE_XORG=	x11
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-cups
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 
