@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	javaservicewrapper
-PORTVERSION=	3.5.41
+PORTVERSION=	3.5.43
 CATEGORIES=	sysutils java
 MASTER_SITES=	https://wrapper.tanukisoftware.com/download/${PORTVERSION}/
 DISTNAME=	wrapper_${PORTVERSION}_src
