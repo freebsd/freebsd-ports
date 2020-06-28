@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	doctest
-DISTVERSION=	2.3.8
+DISTVERSION=	2.4.0
 CATEGORIES=	devel
 
 MAINTAINER=	nickblack@linux.com
