@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pysvn
-PORTVERSION=	1.9.3
-PORTREVISION=	1
+PORTVERSION=	1.9.12
 CATEGORIES=	devel
 MASTER_SITES=	http://pysvn.barrys-emacs.org/source_kits/
 
@@ -13,21 +12,17 @@ COMMENT=	Python binding for Subversion
 LICENSE=	APACHE11
 LICENSE_FILE=	${WRKSRC}/../LICENSE.txt
 
-DEPRECATED=	Uses deprecated version of python
-EXPIRATION_DATE=	2020-09-15
-
 LIB_DEPENDS=	libsvn_client-1.so:devel/subversion \
 		libneon.so:www/neon \
 		libexpat.so:textproc/expat2
 
-# Python3 ready
-USES=		python:-3.6
+USES=		python
 USE_PYTHON=	distutils noegginfo concurrent optsuffix
 PYDISTUTILS_CONFIGURE_TARGET=	configure
 PYDISTUTILS_CONFIGUREARGS=	--apr-inc-dir=${LOCALBASE}/include/apr-1 \
 				--svn-inc-dir=${LOCALBASE}/include/subversion-1 \
-				--pycxx-dir=${WRKSRC}/../Import/pycxx-6.2.8 \
-				--pycxx-src-dir=${WRKSRC}/../Import/pycxx-6.2.8/Src
+				--pycxx-dir=${WRKSRC}/../Import/pycxx-7.1.4 \
+				--pycxx-src-dir=${WRKSRC}/../Import/pycxx-7.1.4/Src
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/${PORTNAME}/__init__.py \
 		%%PYTHON_SITELIBDIR%%/${PORTNAME}/_pysvn_${PYTHON_VERSION:S/./_/:S/python//}.so
