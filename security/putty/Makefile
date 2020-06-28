@@ -2,6 +2,7 @@
 
 PORTNAME=	putty
 PORTVERSION=	0.74
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://the.earth.li/~sgtatham/putty/${PORTVERSION}/ \
 		ftp://ftp.chiark.greenend.org.uk/users/sgtatham/putty-latest/
@@ -11,7 +12,7 @@ COMMENT=	Secure shell and telnet client
 # test plan: test ALL 4 GSSAPI_* options, ALL 3 GTK options, WITH_DEBUG=yes build.
 
 LICENSE=	MIT
-LICENSE_FILE=	${FILESDIR}/LICENSE
+LICENSE_FILE=	${FILESDIR}/LICENCE
 
 USES=		cpe gmake pkgconfig
 CPE_VENDOR=	simon_tatham
