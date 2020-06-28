@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	raylib
-DISTVERSION=	2.6.0
+DISTVERSION=	3.0.0
 CATEGORIES=	devel
 
 MAINTAINER=	freebsd@sysctl.cz
@@ -28,7 +28,7 @@ PLIST_FILES=	include/raylib.h \
 		lib/cmake/raylib/raylib-config.cmake \
 		lib/libraylib.so \
 		lib/libraylib.so.${DISTVERSION} \
-		lib/libraylib.so.261 \
+		lib/libraylib.so.301 \
 		libdata/pkgconfig/raylib.pc
 
 .include <bsd.port.pre.mk>
