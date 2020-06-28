@@ -462,6 +462,7 @@
     SUBDIR += npm-node12
     SUBDIR += nspluginwrapper
     SUBDIR += obhttpd
+    SUBDIR += oneshot
     SUBDIR += onionbalance
     SUBDIR += onionshare
     SUBDIR += opencart
