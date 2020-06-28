@@ -3,7 +3,7 @@
 
 PORTNAME=	portaudio
 PORTVERSION=	19.6.0
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.portaudio.com/archives/
