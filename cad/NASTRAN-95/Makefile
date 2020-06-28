@@ -28,6 +28,12 @@ PLIST_SUB=	NASTHOME=${NASTHOME}
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
+.include <bsd.port.options.mk>
+
+.if ${FORTRAN_DEFAULT} == gfortran && ${GCC_DEFAULT} >= 10
+FFLAGS+=	-fallow-invalid-boz
+.endif
+
 pre-build:
 	@${REINPLACE_CMD} -e 's+%%FC%%+${FC}+g ; s+%%FFLAGS%%+${FFLAGS}+g;' \
 		${WRKSRC}/src/Makefile \
