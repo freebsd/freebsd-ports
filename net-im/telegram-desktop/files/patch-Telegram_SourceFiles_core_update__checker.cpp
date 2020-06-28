@@ -11,12 +11,12 @@
  	if (!QFile(readyFilePath).exists() || cExeName().isEmpty()) {
  		if (QDir(cWorkingDir() + qsl("tupdates/ready")).exists() || QDir(cWorkingDir() + qsl("tupdates/temp")).exists()) {
 @@ -1512,6 +1515,9 @@ bool checkReadyUpdate() {
- #elif defined Q_OS_LINUX // Q_OS_MAC
+ #elif defined Q_OS_UNIX // Q_OS_MAC
  	QString curUpdater = (cExeDir() + qsl("Updater"));
  	QFileInfo updater(cWorkingDir() + qsl("tupdates/temp/Updater"));
 +#elif defined Q_OS_FREEBSD
 +	QString curUpdater;
 +	QFileInfo updater;
- #endif // Q_OS_LINUX
+ #endif // Q_OS_UNIX
  	if (!updater.exists()) {
  		QFileInfo current(curUpdater);
