@@ -1,0 +1,29 @@
+--- src/bin/sage-env.orig	2020-06-27 14:17:22 UTC
++++ src/bin/sage-env
+@@ -460,16 +460,16 @@ unset R_HOME
+ unset R_PROFILE
+ # Do not use the global Makevars.site and ~/.R/Makevars when installing R packages
+ # Provide empty files to appease some R packages' installation scripts.
+-if [ -d "$SAGE_LOCAL/lib/R/share" ] ; then
+-   R_MAKEVARS_SITE="$SAGE_LOCAL/lib/R/share/Makevars.site" && export R_MAKEVARS_SITE
+-   if ! [ -f "$R_MAKEVARS_SITE" ] ; then
+-       if ! [ -a "$R_MAKEVARS_SITE" ] ; then
+-           echo "## Empty site-wide Makevars file for Sage's R" > "$R_MAKEVARS_SITE"
+-       else
+-           >&2 echo "Warning: $R_MAKEVARS_SITE exists and is not a file : trouble ahead..."
+-       fi
+-   fi
+-fi
++#if [ -d "$SAGE_LOCAL/lib/R/share" ] ; then
++#   R_MAKEVARS_SITE="$SAGE_LOCAL/lib/R/share/Makevars.site" && export R_MAKEVARS_SITE
++#   if ! [ -f "$R_MAKEVARS_SITE" ] ; then
++#       if ! [ -a "$R_MAKEVARS_SITE" ] ; then
++#           echo "## Empty site-wide Makevars file for Sage's R" > "$R_MAKEVARS_SITE"
++#       else
++#           >&2 echo "Warning: $R_MAKEVARS_SITE exists and is not a file : trouble ahead..."
++#       fi
++#   fi
++#fi
+ if [ -d "$DOT_SAGE" ] ; then
+     if ! [ -d "$DOT_SAGE/R" ] ; then
+         if ! [ -a  "$DOT_SAGE/R" ] ; then

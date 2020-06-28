@@ -3,8 +3,6 @@ bin/jupyter-nbextension
 bin/jupyter-notebook
 bin/jupyter-serverextension
 bin/math-readline
-bin/python
-bin/python3
 bin/sage
 bin/sage-cachegrind
 bin/sage-callgrind
@@ -8490,9 +8488,6 @@ lib/libratpoints.a
 %%PYTHON_SITELIBDIR%%/widgetsnbextension/static/extension.js
 %%PYTHON_SITELIBDIR%%/widgetsnbextension/static/extension.js.map
 lib/sage-current-location.txt
-libdata/pkgconfig/blas.pc
-libdata/pkgconfig/cblas.pc
-libdata/pkgconfig/lapack.pc
 pyvenv.cfg
 share/combinatorial_designs/MOLS_table.txt
 share/conway_polynomials/conway_polynomials.p

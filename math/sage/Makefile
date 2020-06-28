@@ -3,7 +3,7 @@
 
 PORTNAME=	sage
 PORTVERSION=	9.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	https://mirrors.xmission.com/sage/src/		\
 		http://mirrors.xmission.com/sage/src/		\
@@ -18,6 +18,9 @@ COMMENT=	Open source Mathematics software
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
+
+# See https://lists.freebsd.org/pipermail/freebsd-python/2020-June/020710.html
+BROKEN_FreeBSD_13=	Bad plist caused by changes in Python
 
 BUILD_DEPENDS=	bash:shells/bash		\
 		dash:shells/dash		\
@@ -140,6 +143,7 @@ LIB_DEPENDS=	libarb.so:math/arb		\
 		libcdd.so:math/cddlib		\
 		libcliquer.so:math/cliquer	\
 		libcurl.so:ftp/curl		\
+		libeantic.so:math/e-antic	\
 		libec.so:math/eclib		\
 		libecl.so:lang/ecl		\
 		libecm.so:math/gmp-ecm		\
@@ -304,8 +308,7 @@ USE_GNOME=	cairo glib20 pango
 USE_PYTHON=	cython
 USE_JAVA=	yes # for science/jmol
 
-CONFLICTS=	python-3.*	\
-		${PYTHON_PKGNAMEPREFIX}ipykernel5-5.*		\
+CONFLICTS=	${PYTHON_PKGNAMEPREFIX}ipykernel5-5.*		\
 		${PYTHON_PKGNAMEPREFIX}ipython-7.*		\
 		${PYTHON_PKGNAMEPREFIX}ipywidgets-7.*		\
 		${PYTHON_PKGNAMEPREFIX}notebook-6.*		\
@@ -330,18 +333,16 @@ CONFIGURE_ENV=	SAGE_PORT=yes CC=${CC} GCC=${CC} CXX=${CXX} AS=${AS} LD=${LD}	\
 		DESTDIR=${BLDDIR}/${PREFIX} PATCH=${LOCALBASE}/bin/gpatch
 CONFIGURE_ARGS=	--with-system-gcc=force		\
 		--with-system-python3=yes	\
+		--enable-build-as-root		\
 		--localstatedir=/var
 MAKE_ENV=	MAKE=${GMAKE} DESTDIR=${BLDDIR}
 REINPLACE_ARGS=	-i ''
 BINARY_ALIAS=	patch=${LOCALBASE}/bin/gpatch
 PLIST_SUB=	VER=${PORTVERSION}
+SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	DOCS
 PORTDOCS=	*
-
-.if defined(PACKAGE_BUILDING)
-CONFIGURE_ARGS+=--enable-build-as-root
-.endif
 
 .include <bsd.port.pre.mk>
 
@@ -370,8 +371,8 @@ PY_LIBS=	alabaster babel bleach certifi configparser cvxopt cycler	\
 		twisted vcversioner wcwidth webencodings werkzeug zope_interface
 PY_FILES=	sage_brial
 JS_LIBS=	jmol mathjax threejs
-SPKGCM4=	brial ecl gap gc giac libhomfly linbox maxima palp pynac rubiks	\
-		singular suitesparse sympow zn_poly
+SPKGCM4=	brial e_antic ecl gap gc giac libhomfly linbox maxima palp pynac	\
+		rubiks singular suitesparse sympow zn_poly
 
 post-patch:
 	${CP} ${FILESDIR}/psutil__arch__bsd__freebsd_socks.c.patch	\
@@ -474,10 +475,10 @@ post-build:
 .endfor
 	${RM} ${BLDDIR}${PYTHON_CMD} ${BADLN:C|^|${BLDDIR}${PREFIX}/share/jupyter/|}
 	${RM} -r ${BLDDIR}${PREFIX}/var
-	${RM} ${BLDDIR}${PREFIX}/lib64 ${BLDDIR}${PREFIX}/libdata/pkgconfig/blas.pc	\
-		${BLDDIR}${PREFIX}/libdata/pkgconfig/cblas.pc	\
-		${BLDDIR}${PREFIX}/libdata/pkgconfig/gsl.pc	\
-		${BLDDIR}${PREFIX}/libdata/pkgconfig/lapack.pc
+	${RM} ${BLDDIR}${PREFIX}/lib64 ${BLDDIR}${PREFIX}/lib/pkgconfig/blas.pc	\
+		${BLDDIR}${PREFIX}/lib/pkgconfig/cblas.pc	\
+		${BLDDIR}${PREFIX}/lib/pkgconfig/gsl.pc	\
+		${BLDDIR}${PREFIX}/lib/pkgconfig/lapack.pc
 	# Cannot use a package system for pip and setuptools
 	${RM} ${BLDDIR}${PREFIX}/bin/easy_install* ${BLDDIR}${PREFIX}/bin/pip*
 	${RM} -r ${BLDDIR}${PYTHON_SITELIBDIR}/pip-* ${BLDDIR}${PYTHON_SITELIBDIR}/pip/
@@ -498,6 +499,9 @@ post-build:
 	${RM} -r ${BLDDIR}${PREFIX}/bin/pygmentize		\
 		${BLDDIR}${PYTHON_SITELIBDIR}/Pygments-*	\
 		${BLDDIR}${PYTHON_SITELIBDIR}/pygments
+	# Remove CONFLICTS with lang/python3
+	${RM} ${BLDDIR}${PREFIX}/bin/python ${BLDDIR}${PREFIX}/bin/python3
+	${REINPLACE_CMD} -e '/exec/s|python3|${PYTHON_VERSION}|' ${BLDDIR}${PREFIX}/bin/sage
 	# ${TRUE} because compilation of some .py fails: compileall.py -q to see errors
 	(cd ${WSDIR} && (${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py	\
 	 -d ${PYTHONPREFIX_SITELIBDIR} -f ${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;} ||	\
@@ -515,6 +519,8 @@ do-install:
 		${STAGEDIR}${PREFIX}/share/jupyter/nbextensions/mathjax
 	${LN} -sf ${LOCALBASE}/www/threejs	\
 		${STAGEDIR}${PREFIX}/share/jupyter/nbextensions/threejs
+
+post-install:
 	${RM} ${STAGEDIR}${PREFIX}/lib64 ${STAGEDIR}${PREFIX}/libdata/pkgconfig/blas.pc	\
 		${STAGEDIR}${PREFIX}/libdata/pkgconfig/cblas.pc	\
 		${STAGEDIR}${PREFIX}/libdata/pkgconfig/gsl.pc	\

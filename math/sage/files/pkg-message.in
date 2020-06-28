@@ -1,0 +1,5 @@
+Before running sage, please define and export the following variables:
+
+export SAGE_ROOT=%%PREFIX%%
+export SAGE_LOCAL=%%PREFIX%%
+
