@@ -1,6 +1,6 @@
-TIMESTAMP = 1590937108
-SHA256 (gohugo/gohugoio-hugo-v0.72.0_GH0.tar.gz) = abde319397224dcaad69d2437a9aa7a45c0e9a929d734a2f75b1dc7ec2afa23f
-SIZE (gohugo/gohugoio-hugo-v0.72.0_GH0.tar.gz) = 34108545
+TIMESTAMP = 1592993670
+SHA256 (gohugo/gohugoio-hugo-v0.73.0_GH0.tar.gz) = 36e106c96b6c66bd558759a069b227f797a996235a39bb6fa0397fa32eb8434a
+SIZE (gohugo/gohugoio-hugo-v0.73.0_GH0.tar.gz) = 34600451
 SHA256 (gohugo/Azure-azure-pipeline-go-v0.1.9_GH0.tar.gz) = 365c183602d495e67399b5a4c42a41d3ce0e7d79348dc7c9fd04324b35333b8b
 SIZE (gohugo/Azure-azure-pipeline-go-v0.1.9_GH0.tar.gz) = 15849
 SHA256 (gohugo/Azure-azure-storage-blob-go-v0.6.0_GH0.tar.gz) = 69fa9d27f51ccdd9879351bc5bd4b09544ee745ec63eb473479fac73970523ef
