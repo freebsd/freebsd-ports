@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gssapi
-DISTVERSION=	1.6.1
+DISTVERSION=	1.6.5
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,11 +11,11 @@ COMMENT=	High-level and low-level Python bindings to GSSAPI C libraries
 
 LICENSE=	ISCL
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>1.4.0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}decorator>0:devel/py-decorator@${PY_FLAVOR} \
 		${PY_ENUM34}
 
-USES=	python
+USES=	python:3.6+
 USE_PYTHON=	distutils autoplist
 
 OPTIONS_RADIO=	GSSAPI
