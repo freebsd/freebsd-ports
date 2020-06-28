@@ -14,6 +14,8 @@
 %%PERL5_MAN3%%/Connector::Proxy::Config::Versioned.3.gz
 %%PERL5_MAN3%%/Connector::Proxy::DBI.3.gz
 %%PERL5_MAN3%%/Connector::Proxy::HTTP.3.gz
+%%PERL5_MAN3%%/Connector::Proxy::JSON.3.gz
+%%PERL5_MAN3%%/Connector::Proxy::YAML.3.gz
 %%PERL5_MAN3%%/Connector::Proxy::Net::FTP.3.gz
 %%PERL5_MAN3%%/Connector::Proxy::Net::LDAP.3.gz
 %%PERL5_MAN3%%/Connector::Proxy::Net::LDAP::DN.3.gz
@@ -44,6 +46,7 @@
 %%SITE_PERL%%/Connector/Proxy/Config/Versioned.pm
 %%SITE_PERL%%/Connector/Proxy/DBI.pm
 %%SITE_PERL%%/Connector/Proxy/HTTP.pm
+%%SITE_PERL%%/Connector/Proxy/JSON.pm
 %%SITE_PERL%%/Connector/Proxy/Net/FTP.pm
 %%SITE_PERL%%/Connector/Proxy/Net/LDAP.pm
 %%SITE_PERL%%/Connector/Proxy/Net/LDAP/DN.pm

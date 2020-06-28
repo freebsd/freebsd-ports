@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	Connector
-PORTVERSION=	1.28
+PORTVERSION=	1.32
 CATEGORIES=	devel perl5
-MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svysh.fbsd@gmail.com
@@ -33,6 +32,9 @@ RUN_DEPENDS=	bash:shells/bash \
 TEST_DEPENDS=	p5-DBD-SQLite>=0:databases/p5-DBD-SQLite
 
 USES=		perl5
+USE_GITHUB=	yes
+GH_ACCOUNT=	mrscotty
+GH_PROJECT=	${PORTNAME:tl}
 USE_PERL5=	configure
 NO_ARCH=	yes
 

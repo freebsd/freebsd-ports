@@ -7,4 +7,4 @@ Config::Std, Config::Versioned, or to a more complex data source
 like an LDAP server or Proc::SafeExec. The standard calling convention
 via get(KEY) makes the connectors interchangeable.
 
-WWW: https://metacpan.org/release/Connector
+WWW: https://github.com/mrscotty/connector
