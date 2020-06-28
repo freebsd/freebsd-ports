@@ -998,6 +998,7 @@
     SUBDIR += py-volatility
     SUBDIR += py-volatility3
     SUBDIR += py-vulndb
+    SUBDIR += py-xkcdpass
     SUBDIR += py-xmlsec
     SUBDIR += py-yara
     SUBDIR += py-yubikey-manager

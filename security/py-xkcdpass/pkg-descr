@@ -1,0 +1,10 @@
+A flexible and scriptable password generator which generates
+strong diceword-style passphrases, inspired by XKCD 936.
+
+  $ xkcdpass
+  > correct horse battery staple
+
+Usable as standalone script or a module within a larger
+Python project.
+
+WWW: https://github.com/jwfh/xkcdpass
