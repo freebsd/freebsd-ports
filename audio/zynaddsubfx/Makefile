@@ -86,6 +86,8 @@ CMAKE_ARGS+=	-DZYN_EXAMPLESDIR:STRING=${EXAMPLESDIR}
 
 .if ${ARCH} == "i386" || ${ARCH} == "amd64"
 CFLAGS+=	-DASM_F2I_YES
+.else
+CMAKE_ARGS+=	-DSUPPORT_SSE:BOOL=OFF
 .endif
 
 post-patch:
