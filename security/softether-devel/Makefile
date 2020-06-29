@@ -2,6 +2,7 @@
 
 PORTNAME=	softether
 DISTVERSION=	4.34-9745-beta
+PORTREVISION=	1
 CATEGORIES=	security net-vpn
 MASTER_SITES=	https://www.softether-download.com/files/softether/v${DISTVERSION}-2020.04.05-tree/Source_Code/
 PKGNAMESUFFIX=	-devel
@@ -24,17 +25,7 @@ USE_RC_SUBR=	softether_bridge softether_client softether_server
 DOS2UNIX_FILES=	ChangeLog LICENSE README *.TXT \
 		src/Cedar/*.* src/Mayaqua/*.*
 
-OPTIONS_DEFINE=	DOCS UNLOCK
-
-# Use of some functions in Japan and China is restricted.
-# This option Unlocks regional lockout following functions:
-#  - RADIUS / NT Domain user authentication function
-#  - RSA certificate user authentication function
-#  - Deep-inspect packet logging function
-#  - Source IP address control list function
-#  - syslog transfer function
-UNLOCK_DESC=	Unlock regional lockout (JP and CN)
-UNLOCK_EXTRA_PATCHES=	${FILESDIR}/extra-patch-unrestrict-enterprise-functions
+OPTIONS_DEFINE=	DOCS
 
 CONFLICTS_INSTALL=	softether-4.* softether5
 PORTDOCS=	AUTHORS.TXT ChangeLog LICENSE README THIRD_PARTY.TXT WARNING.TXT
