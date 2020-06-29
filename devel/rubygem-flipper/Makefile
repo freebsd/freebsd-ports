@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flipper
-PORTVERSION=	0.17.2
+PORTVERSION=	0.18.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
