@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	netdata
-PORTVERSION=	1.22.1
+PORTVERSION=	1.23.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	ports@FreeBSD.org
@@ -23,7 +22,8 @@ RUN_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}urllib3>0:net/py-urllib3@${PY_FLAVOR}
 
-USES=		autoreconf cpe pathfix pkgconfig:both python shebangfix ssl
+USES=		autoreconf cpe gmake pathfix pkgconfig:both python shebangfix \
+		ssl
 
 USE_GITHUB=	yes
 
