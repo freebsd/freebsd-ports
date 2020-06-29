@@ -1,0 +1,14 @@
+Time execution of blocks of code.
+
+Tested against python 3.6+, but should work with other versions.
+
+The easiest way to time something is with tic and toc:
+
+import time
+from ttictoc import tic,toc
+tic()
+time.sleep(1)
+elapsed = toc()
+print('Elapsed time:',elapsed)
+
+WWW: https://github.com/hector-sab/ttictoc

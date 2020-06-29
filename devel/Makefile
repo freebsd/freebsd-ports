@@ -5146,6 +5146,7 @@
     SUBDIR += py-tree-format
     SUBDIR += py-trimesh
     SUBDIR += py-trollius
+    SUBDIR += py-ttictoc
     SUBDIR += py-ttystatus
     SUBDIR += py-tvrage
     SUBDIR += py-tw.forms
