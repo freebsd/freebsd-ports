@@ -17,7 +17,7 @@ LIB_DEPENDS=	libfftw3.so:math/fftw3
 
 USES=		blaslapack:openblas cmake:noninja compiler:c++11-lang eigen:3 fortran localbase:ldflags shebangfix
 USE_GITHUB=	yes
-GH_TAGNAME=	patch_15Jun2020
+GH_TAGNAME=	patch_30Jun2020
 USE_LDCONFIG=	yes
 
 SHEBANG_GLOB=	*.sh *.bash

@@ -119,6 +119,12 @@ man/man1/lmp.1.gz
 %%DATADIR%%/potentials/Ge_Zuo_JPCA2020.snapparam
 %%DATADIR%%/potentials/He_He_JW2013.table
 %%DATADIR%%/potentials/InP.vashishta
+%%DATADIR%%/potentials/InP_JCPA2020.mliap
+%%DATADIR%%/potentials/InP_JCPA2020.mliap.descriptor
+%%DATADIR%%/potentials/InP_JCPA2020.mliap.model
+%%DATADIR%%/potentials/InP_JCPA2020.snap
+%%DATADIR%%/potentials/InP_JCPA2020.snapcoeff
+%%DATADIR%%/potentials/InP_JCPA2020.snapparam
 %%DATADIR%%/potentials/Li_Zuo_JPCA2020.quadratic.snap
 %%DATADIR%%/potentials/Li_Zuo_JPCA2020.quadratic.snapcoeff
 %%DATADIR%%/potentials/Li_Zuo_JPCA2020.quadratic.snapparam
@@ -186,6 +192,9 @@ man/man1/lmp.1.gz
 %%DATADIR%%/potentials/Si_Zuo_JPCA2020.snapcoeff
 %%DATADIR%%/potentials/Si_Zuo_JPCA2020.snapparam
 %%DATADIR%%/potentials/TABTP_10_10.mesont
+%%DATADIR%%/potentials/Ta06A.mliap
+%%DATADIR%%/potentials/Ta06A.mliap.descriptor
+%%DATADIR%%/potentials/Ta06A.mliap.model
 %%DATADIR%%/potentials/Ta06A.snap
 %%DATADIR%%/potentials/Ta06A.snapcoeff
 %%DATADIR%%/potentials/Ta06A.snapparam
@@ -203,6 +212,12 @@ man/man1/lmp.1.gz
 %%DATADIR%%/potentials/V6.1.mgpt.parmin
 %%DATADIR%%/potentials/V6.1.mgpt.potin
 %%DATADIR%%/potentials/VFe_mm.eam.fs
+%%DATADIR%%/potentials/W.quadratic.mliap
+%%DATADIR%%/potentials/W.quadratic.mliap.descriptor
+%%DATADIR%%/potentials/W.quadratic.mliap.model
+%%DATADIR%%/potentials/WBe_Wood_PRB2019.mliap
+%%DATADIR%%/potentials/WBe_Wood_PRB2019.mliap.descriptor
+%%DATADIR%%/potentials/WBe_Wood_PRB2019.mliap.model
 %%DATADIR%%/potentials/WBe_Wood_PRB2019.snap
 %%DATADIR%%/potentials/WBe_Wood_PRB2019.snapcoeff
 %%DATADIR%%/potentials/WBe_Wood_PRB2019.snapparam
