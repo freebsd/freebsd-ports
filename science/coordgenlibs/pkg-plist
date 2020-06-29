@@ -22,5 +22,5 @@ lib/cmake/coordgen-config-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/coordgen-config.cmake
 lib/libcoordgen.so
 lib/libcoordgen.so.1
-lib/libcoordgen.so.1.4.0
+lib/libcoordgen.so.1.4.1
 %%DATADIR%%/templates.mae
