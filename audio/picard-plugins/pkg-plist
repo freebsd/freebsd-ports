@@ -24,6 +24,8 @@
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/cuesheet.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/decode_cyrillic.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/decode_cyrillic.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/decode_greek1253.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/decode_greek1253.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/discnumber.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/discnumber.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/featartist.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
@@ -114,7 +116,11 @@
 %%PYTHON_SITELIBDIR%%/picard/plugins/classicdiscnumber.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/compatible_TXXX.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/cuesheet.py
+%%PYTHON_SITELIBDIR%%/picard/plugins/decade/__init__.py
+%%PYTHON_SITELIBDIR%%/picard/plugins/decade/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/decade/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/decode_cyrillic.py
+%%PYTHON_SITELIBDIR%%/picard/plugins/decode_greek1253.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/discnumber.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/fanarttv/__init__.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/fanarttv/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
