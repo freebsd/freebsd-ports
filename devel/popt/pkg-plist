@@ -2,7 +2,7 @@ include/popt.h
 lib/libpopt.a
 lib/libpopt.so
 lib/libpopt.so.0
-lib/libpopt.so.0.0.0
+lib/libpopt.so.0.0.1
 libdata/pkgconfig/popt.pc
 man/man3/popt.3.gz
 %%NLS%%share/locale/cs/LC_MESSAGES/popt.mo

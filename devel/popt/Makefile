@@ -2,24 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	popt
-PORTVERSION=	1.16
-PORTREVISION=	2
+PORTVERSION=	1.18
 CATEGORIES=	devel
-MASTER_SITES=	http://ftp.rpm.org/mirror/popt/ \
-		GENTOO
+MASTER_SITES=	http://ftp.rpm.org/popt/releases/popt-1.x/
 
 MAINTAINER=	jpaetzel@FreeBSD.org
 COMMENT=	Getopt(3) like library with a number of enhancements, from Redhat
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		iconv libtool pathfix
+
+TEST_TARGET=	check
 
 OPTIONS_DEFINE=	NLS
 
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
-USES=		iconv libtool pathfix
 USE_LDCONFIG=	yes
 
 NLS_CONFIGURE_ENABLE=	nls
