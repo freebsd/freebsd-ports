@@ -1,0 +1,10 @@
+--- data/io.elementary.code.desktop.in.in.orig	2020-06-28 08:36:49 UTC
++++ data/io.elementary.code.desktop.in.in
+@@ -1,6 +1,6 @@
+ [Desktop Entry]
+ Type=Application
+-Name=Code
++Name=Elementary Code
+ Comment=Edit code files
+ GenericName=Code Editor
+ Exec=@EXEC_NAME@ %U

@@ -36,6 +36,7 @@
     SUBDIR += ecrire
     SUBDIR += edith
     SUBDIR += editorconfig-core-c
+    SUBDIR += elementary-code
     SUBDIR += emacs
     SUBDIR += emacs-devel
     SUBDIR += encryptpad
