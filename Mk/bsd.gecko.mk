@@ -77,7 +77,7 @@ BINARY_ALIAS+=	python3=python${PYTHON3_DEFAULT}
 BUNDLE_LIBS=	yes
 
 BUILD_DEPENDS+=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT} \
-				rust-cbindgen>=0.13.1:devel/rust-cbindgen \
+				rust-cbindgen>=0.14.1:devel/rust-cbindgen \
 				${RUST_DEFAULT}>=1.41:lang/${RUST_DEFAULT} \
 				${LOCALBASE}/bin/python${PYTHON3_DEFAULT}:lang/python${PYTHON3_DEFAULT:S/.//g} \
 				node:www/node
