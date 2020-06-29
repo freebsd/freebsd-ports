@@ -13,6 +13,7 @@ share/applications/connectagram.desktop
 %%NLS%%%%DATADIR%%/translations/connectagram_fr.qm
 %%NLS%%%%DATADIR%%/translations/connectagram_hr.qm
 %%NLS%%%%DATADIR%%/translations/connectagram_hu.qm
+%%NLS%%%%DATADIR%%/translations/connectagram_it.qm
 %%NLS%%%%DATADIR%%/translations/connectagram_lt.qm
 %%NLS%%%%DATADIR%%/translations/connectagram_nl.qm
 %%NLS%%%%DATADIR%%/translations/connectagram_pl.qm
