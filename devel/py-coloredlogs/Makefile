@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	coloredlogs
-PORTVERSION=	12.0
+PORTVERSION=	14.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,7 @@ COMMENT=	Colored terminal output for Python logging module
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}humanfriendly>=6.1:textproc/py-humanfriendly@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}humanfriendly>=7.1:textproc/py-humanfriendly@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
