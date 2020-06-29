@@ -2,7 +2,7 @@
 
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
-DISTVERSION=	3.6.17
+DISTVERSION=	3.6.18
 CATEGORIES=	databases net
 MASTER_SITES=	https://fastdl.mongodb.org/src/ \
 		http://fastdl.mongodb.org/src/ \
@@ -13,9 +13,12 @@ DISTNAME=	mongodb-src-${DISTVERSIONPREFIX}${DISTVERSION}
 MAINTAINER=	dev@dudu.ro
 COMMENT=	Distributed document-oriented "NoSQL" database
 
-# mongodb is AGPLv3, C++ driver is APACHE20
-LICENSE=	AGPLv3 APACHE20
+# mongodb is SSPLv1, C++ driver is APACHE20
+LICENSE=	SSPLv1 APACHE20
 LICENSE_COMB=	multi
+LICENSE_NAME_SSPLv1=	Server Side Public License Version 1
+LICENSE_FILE_SSPLv1=	${WRKSRC}/LICENSE-Community.txt
+LICENSE_PERMS_SSPLv1=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 ONLY_FOR_ARCHS=	aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	"Only supported on amd64 and aarch64 (i386 deprecated in v3)"
