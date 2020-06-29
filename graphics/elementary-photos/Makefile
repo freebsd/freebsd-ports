@@ -30,8 +30,8 @@ LIB_DEPENDS=	libaccounts-glib.so:net-im/libaccounts-glib \
 		libwebp.so:graphics/webp \
 		libxml2.so:textproc/libxml2
 
-USES=			desktop-file-utils gnome meson ninja pkgconfig sqlite \
-			xorg
+USES=			desktop-file-utils gettext gnome meson ninja \
+			pkgconfig sqlite xorg
 USE_GITHUB=		yes
 GH_ACCOUNT=		elementary
 GH_PROJECT=		photos
@@ -43,10 +43,6 @@ USE_GSTREAMER1=		yes
 USE_LDCONFIG=		yes
 USE_XORG=		x11
 MESON_BUILD_DIR=	build
-OPTIONS_DEFINE=		NLS
-OPTIONS_SUB=		yes
-
-NLS_USES=	gettext
 
 _ICONSDIR=	${STAGEDIR}${PREFIX}/share/icons/elementary-photos
 
