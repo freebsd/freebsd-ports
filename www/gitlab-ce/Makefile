@@ -3,7 +3,7 @@
 
 PORTNAME=	gitlab-ce
 PORTVERSION=	13.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -215,9 +215,9 @@ MY_DEPENDS=	git>=2.25:devel/git \
 	rubygem-grpc124>=1.24.0:net/rubygem-grpc124 \
 	rubygem-google-protobuf38>=3.8.:devel/rubygem-google-protobuf38 \
 	rubygem-toml-rb10>=1.0.0<1.1.0:www/rubygem-toml-rb10 \
-	rubygem-flipper>=0.17.1<0.18.0:devel/rubygem-flipper \
-	rubygem-flipper-active_record>=0.17.1<0.18.0:databases/rubygem-flipper-active_record \
-	rubygem-flipper-active_support_cache_store>=0.17.1<0.18.0:devel/rubygem-flipper-active_support_cache_store \
+	rubygem-flipper017>=0.17.1<0.18.0:devel/rubygem-flipper017 \
+	rubygem-flipper-active_record017>=0.17.1<0.18.0:databases/rubygem-flipper-active_record017 \
+	rubygem-flipper-active_support_cache_store017>=0.17.1<0.18.0:devel/rubygem-flipper-active_support_cache_store017 \
 	rubygem-unleash>=0.1.5<0.2.0:devel/rubygem-unleash \
 	rubygem-lograge-rails60>=0.11.2<1.0:www/rubygem-lograge-rails60 \
 	rubygem-grape_logging>=1.7<2.0:devel/rubygem-grape_logging \
