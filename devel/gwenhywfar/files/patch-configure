@@ -1,9 +1,9 @@
 Fix dectection of fox libs
 Prevent linking to unneeded Qt5 libraries
 
---- configure.orig	2018-02-10 18:33:05 UTC
+--- configure.orig	2019-11-11 00:25:41 UTC
 +++ configure
-@@ -21093,7 +21093,7 @@ $as_echo_n "checking for fox libraries... " >&6; }
+@@ -21664,7 +21664,7 @@ $as_echo_n "checking for fox libraries... " >&6; }
  
  # Check whether --with-fox-libs was given.
  if test "${with_fox_libs+set}" = set; then :
@@ -12,10 +12,10 @@ Prevent linking to unneeded Qt5 libraries
  else
  
        ac_ext=cpp
-@@ -22522,43 +22522,16 @@ $as_echo_n "checking for Qt... " >&6; }
-     am_have_qt_makefile=`mktemp`
-     # http://qt-project.org/doc/qt-5/qmake-variable-reference.html#qt
-     cat > $am_have_qt_pro << EOF
+@@ -23122,43 +23122,16 @@ win32 {
+     CONFIG -= debug_and_release
+     CONFIG += release
+ }
 -qtHaveModule(axcontainer):       QT += axcontainer
 -qtHaveModule(axserver):          QT += axserver
 -qtHaveModule(concurrent):        QT += concurrent
@@ -58,7 +58,7 @@ Prevent linking to unneeded Qt5 libraries
      rm $am_have_qt_pro $am_have_qt_makefile
  
      # Look for specific tools in $PATH
-@@ -22582,8 +22555,8 @@ else
+@@ -23182,8 +23155,8 @@ else
  fi
  
  

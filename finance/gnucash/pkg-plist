@@ -406,7 +406,6 @@ lib/libgnc-backend-xml-utils.so
 lib/libgnc-core-utils.so
 lib/libgnc-gnome.so
 lib/libgnc-module.so
-%%AQBANKING%%lib/libgwengui-gtk3.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/gnucash/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/gnucash/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/gnucash/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc

@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	aqbanking
-PORTVERSION=	5.8.2
+PORTVERSION=	6.2.1
 CATEGORIES=	finance
-MASTER_SITES=	https://www.aquamaniac.de/rdm/attachments/download/107/
+MASTER_SITES=	https://www.aquamaniac.de/rdm/attachments/download/328/
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Online banking interface and financial data framework
@@ -25,7 +25,7 @@ INSTALL_TARGET=	install-strip
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 
-AQB_SHLIB_VER=	35
+AQB_SHLIB_VER=	44
 PLIST_SUB=	AQB_SHLIB_VER="${AQB_SHLIB_VER}" \
 		AQB_MAJ_MIN_VER="${PORTVERSION:R}"
 
@@ -41,7 +41,7 @@ EBICS_DESC=		Enable EBICS backend
 EBICS_LIB_DEPENDS=	libxmlsec1.so:security/xmlsec1
 EBICS_USES=		gnome
 EBICS_USE=		GNOME=libxml2,libxslt
-EBICS_CONFIGURE_OFF=	--with-backends="aqhbci aqnone aqofxconnect aqpaypal"
+EBICS_CONFIGURE_OFF=	--with-backends="aqhbci aqofxconnect aqpaypal"
 
 KTOBLZCHECK_DESC=	Enable KtoBlzCheck support
 

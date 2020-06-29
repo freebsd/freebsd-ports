@@ -3,7 +3,7 @@
 
 PORTNAME=	gnucash
 PORTVERSION=	3.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	finance gnome
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20%28stable%29/${PORTVERSION}
 
@@ -70,7 +70,7 @@ OFX_DESC=	OFX support
 OPTIONS_SUB=		yes
 AQBANKING_CMAKE_BOOL=	WITH_AQBANKING
 AQBANKING_LIB_DEPENDS=	libgwenhywfar.so:devel/gwenhywfar \
-			libgwenhywfar.so:devel/gwenhywfar \
+			libgwengui-gtk3.so:devel/gwenhywfar-gtk3 \
 			libktoblzcheck.so:finance/ktoblzcheck \
 			libaqbanking.so:finance/aqbanking
 AQBANKING_VARS=		GLIB_SCHEMAS+=org.gnucash.dialogs.import.hbci.gschema.xml
