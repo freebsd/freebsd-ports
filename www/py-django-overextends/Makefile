@@ -14,6 +14,9 @@ COMMENT=	Django reusable app enabling circular template inheritance
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	No longer maintained, not compatible with Django 2.0+
+EXPIRATION_DATE=2020-07-15
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django111>=1.11:www/py-django111@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinx-me>=0.1.2:textproc/py-sphinx-me@${PY_FLAVOR}
 
