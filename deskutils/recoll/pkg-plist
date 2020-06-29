@@ -85,6 +85,7 @@ man/man5/recoll.conf.5.gz
 %%DATADIR%%/filters/rclpdf.py
 %%DATADIR%%/filters/rclppt.py
 %%DATADIR%%/filters/rclps
+%%DATADIR%%/filters/rclpst.py
 %%DATADIR%%/filters/rclpurple
 %%DATADIR%%/filters/rclpython
 %%DATADIR%%/filters/rclrar

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	recoll
-DISTVERSION=	1.25.22
-PORTREVISION=	7
+DISTVERSION=	1.26.4
 CATEGORIES=	deskutils
 MASTER_SITES=	https://www.lesbonscomptes.com/recoll/
 
@@ -12,10 +11,6 @@ COMMENT=	Personal full text search package, based on Xapian
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-BROKEN=		configure: error: --enable-python-chm is set but libchm is not found
-DEPRECATED=	Uses deprecated version of python
-EXPIRATION_DATE=	2020-08-15
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR}
 LIB_DEPENDS=	libxapian.so:databases/xapian-core
@@ -26,7 +21,7 @@ RUN_DEPENDS=	unrar:archivers/unrar \
 		unrtf:textproc/unrtf
 
 USES=		bison compiler:c++11-lang gmake gnome iconv libtool localbase \
-		python:2.7 shebangfix
+		pkgconfig python:3.5+ shebangfix
 USE_GNOME=	libxslt
 USE_LDCONFIG=	yes
 USE_PYTHON=	py3kplist
@@ -38,6 +33,7 @@ SHEBANG_FILES=	filters/*.py filters/rcl7z filters/rclaudio \
 		filters/rclrar filters/rcltar filters/rclwar \
 		filters/rclzip desktop/hotrecoll.py
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-python-chm
 MAKE_ENV=	PYTHON_CMD=${PYTHON_CMD}
 
 PYDISTUTILS_PKGNAME=	Recoll
@@ -65,8 +61,7 @@ QT5_USE=		GL=gl
 QT5_CONFIGURE_ENABLE=	qtgui
 QT5_CONFIGURE_ENV=	QMAKE="${QMAKE}" QMAKESPEC="${QMAKESPEC}" \
 			QTDIR="${PREFIX}"
-SOUND_RUN_DEPENDS=	mutagen-pony-${PYTHON_VER}:audio/py-mutagen@${PY_FLAVOR} \
-			pykaraoke:audio/py-karaoke@${PY_FLAVOR}
+SOUND_RUN_DEPENDS=	mutagen-pony-${PYTHON_VER}:audio/py-mutagen@${PY_FLAVOR}
 X11MON_DESC=		X11 session monitoring support
 X11MON_USES=		fam xorg
 X11MON_USE=		xorg=ice,sm,x11
