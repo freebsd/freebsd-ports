@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libfluidsynth.so:audio/fluidsynth \
 		libasound.so:audio/alsa-lib
 
-USES=		cmake gl sdl pkgconfig
+USES=		cmake compiler:c++11-lang gl pkgconfig sdl
 USE_GL=		gl glu
 USE_SDL=	sdl2 mixer2
 
