@@ -2,21 +2,21 @@
 
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
-DISTVERSION=	4.0.18
+DISTVERSION=	4.0.19
 CATEGORIES=	databases net
 MASTER_SITES=	https://fastdl.mongodb.org/src/ \
-		http://fastdl.mongodb.org/src/ \
-		http://download.mongodb.org/src/
+		http://fastdl.mongodb.org/src/
 PKGNAMESUFFIX=	${PORTVERSION:R:S/.//}
 DISTNAME=	mongodb-src-${DISTVERSIONPREFIX}${DISTVERSION}
 
 MAINTAINER=	dev.ashevchuk@gmail.com
 COMMENT=	Distributed document-oriented "NoSQL" database
 
-LICENSE=	SSPLv1
-LICENSE_NAME=	Server Side Public License Version 1
-LICENSE_FILE=	${WRKSRC}/LICENSE-Community.txt
-LICENSE_PERMS=	auto-accept
+LICENSE=	SSPLv1 APACHE20
+LICENSE_COMB=	multi
+LICENSE_NAME_SSPLv1=	Server Side Public License Version 1
+LICENSE_FILE_SSPLv1=	${WRKSRC}/LICENSE-Community.txt
+LICENSE_PERMS_SSPLv1=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 ONLY_FOR_ARCHS=	aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	"Only supported on amd64 and aarch64 (i386 deprecated in v3)"
@@ -34,7 +34,7 @@ USES=		compiler:c++14-lang cpe python:2.7,build scons:python2 shebangfix
 USE_RC_SUBR=	mongod
 
 CONFLICTS_BUILD=	mongo-cxx-driver
-CONFLICTS_INSTALL=	mongodb3[46] mongodb42
+CONFLICTS_INSTALL=	mongodb36 mongodb42
 
 SHEBANG_FILES=	src/mongo/installer/compass/install_compass.in
 python_OLD_CMD=	@python_interpreter@
