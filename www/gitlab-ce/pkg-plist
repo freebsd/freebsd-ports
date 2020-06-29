@@ -6171,7 +6171,9 @@
 %%WWWDIR%%/app/services/applications/create_service.rb
 %%WWWDIR%%/app/services/audit_event_service.rb
 %%WWWDIR%%/app/services/auth/container_registry_authentication_service.rb
+%%WWWDIR%%/app/services/authorized_project_update/periodic_recalculate_service.rb
 %%WWWDIR%%/app/services/authorized_project_update/project_create_service.rb
+%%WWWDIR%%/app/services/authorized_project_update/recalculate_for_user_range_service.rb
 %%WWWDIR%%/app/services/auto_merge/base_service.rb
 %%WWWDIR%%/app/services/auto_merge/merge_when_pipeline_succeeds_service.rb
 %%WWWDIR%%/app/services/auto_merge_service.rb
@@ -8311,7 +8313,9 @@
 %%WWWDIR%%/app/workers/all_queues.yml
 %%WWWDIR%%/app/workers/archive_trace_worker.rb
 %%WWWDIR%%/app/workers/authorized_keys_worker.rb
+%%WWWDIR%%/app/workers/authorized_project_update/periodic_recalculate_worker.rb
 %%WWWDIR%%/app/workers/authorized_project_update/project_create_worker.rb
+%%WWWDIR%%/app/workers/authorized_project_update/user_refresh_over_user_range_worker.rb
 %%WWWDIR%%/app/workers/authorized_project_update/user_refresh_with_low_urgency_worker.rb
 %%WWWDIR%%/app/workers/authorized_projects_worker.rb
 %%WWWDIR%%/app/workers/auto_devops/disable_worker.rb
@@ -12460,10 +12464,11 @@
 %%WWWDIR%%/doc/user/project/time_tracking.md
 %%WWWDIR%%/doc/user/project/web_ide/img/admin_live_preview_v13_0.png
 %%WWWDIR%%/doc/user/project/web_ide/img/commit_changes_v12_9.png
-%%WWWDIR%%/doc/user/project/web_ide/img/dark_theme_v13.0.png
+%%WWWDIR%%/doc/user/project/web_ide/img/dark_theme_v13_0.png
 %%WWWDIR%%/doc/user/project/web_ide/img/live_preview_v13_0.png
 %%WWWDIR%%/doc/user/project/web_ide/img/open_web_ide.png
-%%WWWDIR%%/doc/user/project/web_ide/img/solarized_light_theme_v13.0.png
+%%WWWDIR%%/doc/user/project/web_ide/img/solarized_dark_theme_v13_1.png
+%%WWWDIR%%/doc/user/project/web_ide/img/solarized_light_theme_v13_0.png
 %%WWWDIR%%/doc/user/project/web_ide/img/terminal_status.png
 %%WWWDIR%%/doc/user/project/web_ide/index.md
 %%WWWDIR%%/doc/user/project/wiki/img/wiki_create_home_page.png
@@ -12616,6 +12621,7 @@
 %%WWWDIR%%/lib/api/entities/container_registry.rb
 %%WWWDIR%%/lib/api/entities/contributor.rb
 %%WWWDIR%%/lib/api/entities/custom_attribute.rb
+%%WWWDIR%%/lib/api/entities/deploy_key.rb
 %%WWWDIR%%/lib/api/entities/deploy_key_with_user.rb
 %%WWWDIR%%/lib/api/entities/deploy_keys_project.rb
 %%WWWDIR%%/lib/api/entities/deploy_token.rb
@@ -20793,6 +20799,8 @@
 %%WWWDIR%%/spec/lib/after_commit_queue_spec.rb
 %%WWWDIR%%/spec/lib/api/api_spec.rb
 %%WWWDIR%%/spec/lib/api/entities/branch_spec.rb
+%%WWWDIR%%/spec/lib/api/entities/deploy_key_spec.rb
+%%WWWDIR%%/spec/lib/api/entities/deploy_keys_project_spec.rb
 %%WWWDIR%%/spec/lib/api/entities/design_management/design_spec.rb
 %%WWWDIR%%/spec/lib/api/entities/job_request/image_spec.rb
 %%WWWDIR%%/spec/lib/api/entities/job_request/port_spec.rb
@@ -20801,6 +20809,7 @@
 %%WWWDIR%%/spec/lib/api/entities/project_repository_storage_move_spec.rb
 %%WWWDIR%%/spec/lib/api/entities/release_spec.rb
 %%WWWDIR%%/spec/lib/api/entities/snippet_spec.rb
+%%WWWDIR%%/spec/lib/api/entities/ssh_key_spec.rb
 %%WWWDIR%%/spec/lib/api/entities/user_spec.rb
 %%WWWDIR%%/spec/lib/api/helpers/graphql_helpers_spec.rb
 %%WWWDIR%%/spec/lib/api/helpers/label_helpers_spec.rb
@@ -23296,7 +23305,9 @@
 %%WWWDIR%%/spec/services/applications/create_service_spec.rb
 %%WWWDIR%%/spec/services/audit_event_service_spec.rb
 %%WWWDIR%%/spec/services/auth/container_registry_authentication_service_spec.rb
+%%WWWDIR%%/spec/services/authorized_project_update/periodic_recalculate_service_spec.rb
 %%WWWDIR%%/spec/services/authorized_project_update/project_create_service_spec.rb
+%%WWWDIR%%/spec/services/authorized_project_update/recalculate_for_user_range_service_spec.rb
 %%WWWDIR%%/spec/services/auto_merge/base_service_spec.rb
 %%WWWDIR%%/spec/services/auto_merge/merge_when_pipeline_succeeds_service_spec.rb
 %%WWWDIR%%/spec/services/auto_merge_service_spec.rb
@@ -24052,6 +24063,7 @@
 %%WWWDIR%%/spec/support/shared_contexts/change_access_checks_shared_context.rb
 %%WWWDIR%%/spec/support/shared_contexts/controllers/githubish_import_controller_shared_context.rb
 %%WWWDIR%%/spec/support/shared_contexts/controllers/ldap_omniauth_callbacks_controller_shared_context.rb
+%%WWWDIR%%/spec/support/shared_contexts/controllers/logging_shared_context.rb
 %%WWWDIR%%/spec/support/shared_contexts/design_management_shared_contexts.rb
 %%WWWDIR%%/spec/support/shared_contexts/email_shared_context.rb
 %%WWWDIR%%/spec/support/shared_contexts/features/error_tracking_shared_context.rb
@@ -24517,7 +24529,9 @@
 %%WWWDIR%%/spec/workers/admin_email_worker_spec.rb
 %%WWWDIR%%/spec/workers/archive_trace_worker_spec.rb
 %%WWWDIR%%/spec/workers/authorized_keys_worker_spec.rb
+%%WWWDIR%%/spec/workers/authorized_project_update/periodic_recalculate_worker_spec.rb
 %%WWWDIR%%/spec/workers/authorized_project_update/project_create_worker_spec.rb
+%%WWWDIR%%/spec/workers/authorized_project_update/user_refresh_over_user_range_worker_spec.rb
 %%WWWDIR%%/spec/workers/authorized_project_update/user_refresh_with_low_urgency_worker_spec.rb
 %%WWWDIR%%/spec/workers/authorized_projects_worker_spec.rb
 %%WWWDIR%%/spec/workers/auto_devops/disable_worker_spec.rb
