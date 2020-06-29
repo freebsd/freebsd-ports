@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gottet
-PORTVERSION=	1.1.8
+PORTVERSION=	1.1.9
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	games
 MASTER_SITES=	https://gottcode.org/gottet/
