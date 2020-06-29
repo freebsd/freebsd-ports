@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wordpress
-DISTVERSION=	5.3.3
+DISTVERSION=	5.4.2
 DISTVERSIONSUFFIX=	-ja
 CATEGORIES=	japanese www
 MASTER_SITES=	http://ja.wordpress.org/
@@ -19,7 +19,8 @@ CONFLICTS_INSTALL=	wordpress-[0-9].* de-wordpress-[0-9].* ru-wordpress-[0-9].*
 NO_ARCH=	yes
 NO_BUILD=	yes
 USES=		cpe php:web
-USE_PHP=	curl ftp gd json mysqli pcre tokenizer xml zip zlib
+USE_PHP=	curl exif fileinfo ftp gd hash json mysqli pcre tokenizer xml zip zlib
+RUN_DEPENDS=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/imagick.so:graphics/pecl-imagick@${PHP_FLAVOR}
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 CPE_LANG=	ja
