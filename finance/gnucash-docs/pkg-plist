@@ -122,6 +122,17 @@ share/gnome/help/gnucash-guide/C/figures/currency_purchase_Commodities.png
 share/gnome/help/gnucash-guide/C/figures/currency_purchase_MoveMoney.png
 share/gnome/help/gnucash-guide/C/figures/currency_purchase_SetExchangeRate.png
 share/gnome/help/gnucash-guide/C/figures/currency_purchase_ToAmount.png
+share/gnome/help/gnucash-guide/C/figures/currency_trading_Price_Database_initial.png
+share/gnome/help/gnucash-guide/C/figures/currency_trading_acct_setup.png
+share/gnome/help/gnucash-guide/C/figures/currency_trading_acct_setup_2.png
+share/gnome/help/gnucash-guide/C/figures/currency_trading_accts_after_tfr.png
+share/gnome/help/gnucash-guide/C/figures/currency_trading_accts_after_trf_back.png
+share/gnome/help/gnucash-guide/C/figures/currency_trading_balance_sheet.png
+share/gnome/help/gnucash-guide/C/figures/currency_trading_prices_after_trf_back.png
+share/gnome/help/gnucash-guide/C/figures/currency_trading_transfer_funds.png
+share/gnome/help/gnucash-guide/C/figures/currency_trading_transfer_trans1.png
+share/gnome/help/gnucash-guide/C/figures/currency_trading_transfer_trans2.png
+share/gnome/help/gnucash-guide/C/figures/currency_trading_trf_back.png
 share/gnome/help/gnucash-guide/C/figures/dep_assetmain.png
 share/gnome/help/gnucash-guide/C/figures/dep_assetreg.png
 share/gnome/help/gnucash-guide/C/figures/dep_example.png
