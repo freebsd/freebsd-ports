@@ -1,0 +1,8 @@
+--- meson_options.txt.orig	2020-04-08 20:18:53 UTC
++++ meson_options.txt
+@@ -1,3 +1,4 @@
+-option ('libunity', type : 'boolean', value : true)
++option ('libunity', type : 'boolean', value : false)
+ option ('documentation', type : 'boolean', value : false)
+ option ('plugins', type : 'boolean', value : true)
++option ('use-svg-images', type : 'boolean', value : true)

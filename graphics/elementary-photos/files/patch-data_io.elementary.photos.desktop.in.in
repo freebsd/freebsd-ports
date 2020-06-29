@@ -1,0 +1,9 @@
+--- data/io.elementary.photos.desktop.in.in.orig	2020-04-08 20:18:53 UTC
++++ data/io.elementary.photos.desktop.in.in
+@@ -1,5 +1,5 @@
+ [Desktop Entry]
+-Name=Photos
++Name=Elementary Photos
+ Comment=Organize your photos
+ Exec=@EXEC_NAME@ %U
+ Icon=multimedia-photo-manager

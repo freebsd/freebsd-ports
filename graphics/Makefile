@@ -149,6 +149,7 @@
     SUBDIR += egl-wayland
     SUBDIR += eglexternalplatform
     SUBDIR += electricsheep
+    SUBDIR += elementary-photos
     SUBDIR += embree
     SUBDIR += enblend
     SUBDIR += engauge-digitizer
