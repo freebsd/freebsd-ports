@@ -1,6 +1,6 @@
---- ./Makefile_start.orig	2014-01-25 23:16:40.000000000 +0000
-+++ ./Makefile_start	2014-01-25 23:19:20.000000000 +0000
-@@ -75,7 +75,7 @@
+--- Makefile_start.orig	2020-03-23 18:53:54 UTC
++++ Makefile_start
+@@ -80,7 +80,7 @@ install: all FORCE
  	$(MAKE) -C bin \
                  EXEEXT=$(EXEEXT) \
                  PROGSIN="$(PROGRAMS)" \

@@ -1,6 +1,6 @@
---- ./configure.orig	2013-05-28 05:21:47.000000000 +0000
-+++ ./configure	2014-01-25 23:16:40.000000000 +0000
-@@ -247,7 +247,7 @@
+--- configure.orig	2020-03-23 18:53:54 UTC
++++ configure
+@@ -263,7 +263,7 @@ elif [ "$type" = "NetBSD" ] ; then
  	RANLIB='ranlib'
  	POSTFIX='_netbsd'
  elif [ "$type" = "FreeBSD" ] ; then
