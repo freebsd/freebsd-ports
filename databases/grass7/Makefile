@@ -132,9 +132,9 @@ ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "aarch64" || ${ARCH} == "riscv64"
-PLIST_SUB+=     WOSBRK="@comment "
+PLIST_SUB+=	WOSBRK="@comment "
 .else
-PLIST_SUB+=     WOSBRK=""
+PLIST_SUB+=	WOSBRK=""
 
 .endif
 .if !defined (GRASS_INST_DIR)
@@ -212,4 +212,4 @@ post-install:
 # symlink grass7
 	${LN} -sf ${PORTNAME}${VER} \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}${PKGNAMESUFFIX}
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
