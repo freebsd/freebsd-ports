@@ -2,7 +2,7 @@
 
 PORTNAME=	softether
 DISTVERSION=	4.34-9745
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security net-vpn
 MASTER_SITES=	https://www.softether-download.com/files/softether/v${DISTVERSION}-rtm-2020.04.05-tree/Source_Code/
 DISTNAME=	${PORTNAME}-src-v${DISTVERSION}-rtm
@@ -18,7 +18,8 @@ ONLY_FOR_ARCHS_REASON=	Upstream only supports amd64 and i386: https://www.softet
 
 USES=		dos2unix gmake iconv:wchar_t localbase:ldflags ncurses \
 		readline ssl
-USE_RC_SUBR=	softether_bridge softether_client softether_server
+USE_RC_SUBR=	softether_bridge softether_client \
+		softether_server softether_trafficserver
 
 DOS2UNIX_FILES=	ChangeLog LICENSE README *.TXT \
 		src/Cedar/*.* src/Mayaqua/*.*

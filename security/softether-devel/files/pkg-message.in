@@ -1,14 +1,17 @@
 [
 { type: install
   message: <<EOM
-To run softether vpn client from startup, run
+To run SoftEtherVPN client from startup, run
 sysrc softether_client_enable=yes
 
-To run softether vpn server from startup, run
+To run SoftEtherVPN server from startup, run
 sysrc softether_server_enable=yes
 
-To run softether vpn bridge from startup, run
+To run SoftEtherVPN bridge from startup, run
 sysrc softether_bridge_enable=yes
+
+To run SoftEtherVPN traffic server from startup, run
+sysrc softether_trafficserver_enable=yes
 
 Initial and further configuration of all softether services can be
 done either by using a Windows client to connect to the running

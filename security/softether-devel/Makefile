@@ -2,7 +2,7 @@
 
 PORTNAME=	softether
 DISTVERSION=	4.34-9745-beta
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security net-vpn
 MASTER_SITES=	https://www.softether-download.com/files/softether/v${DISTVERSION}-2020.04.05-tree/Source_Code/
 PKGNAMESUFFIX=	-devel
@@ -20,7 +20,8 @@ IGNORE=		no beta version available right now, use security/softether instead
 
 USES=		dos2unix gmake iconv:wchar_t localbase:ldflags ncurses \
 		readline ssl
-USE_RC_SUBR=	softether_bridge softether_client softether_server
+USE_RC_SUBR=	softether_bridge softether_client \
+		softether_server softether_trafficserver
 
 DOS2UNIX_FILES=	ChangeLog LICENSE README *.TXT \
 		src/Cedar/*.* src/Mayaqua/*.*
