@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wordpress
-PORTVERSION=	5.3.3
+PORTVERSION=	5.4.2
 DISTVERSIONSUFFIX=	-zh_TW
 CATEGORIES=	chinese www
 MASTER_SITES=	http://tw.wordpress.org/
@@ -17,7 +17,8 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		php:web
-USE_PHP=	curl gd json mysqli pcre tokenizer xml zip ftp
+USE_PHP=	curl exif fileinfo ftp gd hash json mysqli pcre tokenizer xml zip zlib
+RUN_DEPENDS=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/imagick.so:graphics/pecl-imagick@${PHP_FLAVOR}
 NO_ARCH=	yes
 NO_BUILD=	yes
 
