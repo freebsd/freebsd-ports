@@ -4,6 +4,7 @@
 PORTNAME=	vagrant
 PORTVERSION=	2.2.9
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	sysutils rubygems devel
 
 MAINTAINER=	joe@thrallingpenguin.com
@@ -17,7 +18,7 @@ BUILD_DEPENDS=	rubygem-builder>=2.1.2:devel/rubygem-builder \
 		rubygem-main>=1.0:devel/rubygem-main
 RUN_DEPENDS=	rubygem-bcrypt_pbkdf>=1.0.0<1.1:security/rubygem-bcrypt_pbkdf \
 		rubygem-bundler>=1.12.5:sysutils/rubygem-bundler \
-		rubygem-childprocess>=3.0.0:devel/rubygem-childprocess \
+		rubygem-childprocess3>=3.0.0<3.1.0:devel/rubygem-childprocess3 \
 		rubygem-ed25519>=1.2.4<1.3:security/rubygem-ed25519 \
 		rubygem-erubis>=2.7.0<2.8:www/rubygem-erubis \
 		rubygem-hashicorp-checkpoint>=0.1.5<0.2:www/rubygem-hashicorp-checkpoint \
