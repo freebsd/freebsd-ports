@@ -19,7 +19,7 @@ LIB_DEPENDS=	libclutter-1.0.so:graphics/clutter \
 		libgstbase-1.0.so:multimedia/gstreamer1
 RUN_DEPENDS=	gstreamer1-plugins-core>=0:multimedia/gstreamer1-plugins-core
 
-USES=		desktop-file-utils gnome meson pkgconfig xorg
+USES=		desktop-file-utils gettext gnome meson pkgconfig xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	elementary
 GH_PROJECT=	videos
@@ -28,10 +28,5 @@ GLIB_SCHEMAS=	io.elementary.videos.gschema.xml
 INSTALLS_ICONS=	yes
 USE_GSTREAMER1=	yes
 USE_XORG=	x11
-
-OPTIONS_DEFINE=	NLS
-OPTIONS_SUB=	yes
-
-NLS_USES=	gettext
 
 .include <bsd.port.mk>
