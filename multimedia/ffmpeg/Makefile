@@ -3,6 +3,7 @@
 
 PORTNAME=	ffmpeg
 PORTVERSION=	4.3
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio net
 MASTER_SITES=	https://ffmpeg.org/releases/
