@@ -1,0 +1,12 @@
+--- CMakeLists.txt.orig	2020-06-29 19:00:51 UTC
++++ CMakeLists.txt
+@@ -13,9 +13,6 @@ execute_process (
+ )
+ 
+ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake-modules/")
+-include(GetGitRevisionDescription)
+-git_describe(GIT_VERSION --tags)
+-configure_file(${CMAKE_SOURCE_DIR}/sources/git-version.cpp.in ${CMAKE_BINARY_DIR}/git-version.cpp)
+ 
+ if (UNIX)
+     find_path(FUSE_INCLUDE_DIR fuse.h PATHS /usr/local/include PATH_SUFFIXES osxfuse)

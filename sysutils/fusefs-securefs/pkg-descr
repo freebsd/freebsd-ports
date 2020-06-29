@@ -1,0 +1,6 @@
+securefs mounts a regular directory onto a mount point. The mount point appears
+as a regular filesystem, where one can read/write/create files, directories and
+symbolic links. The underlying directory will be automatically updated to
+contain the encrypted and authenticated contents.
+
+WWW: https://github.com/netheril96/securefs
