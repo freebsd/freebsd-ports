@@ -1,3 +1,3 @@
-TIMESTAMP = 1577374752
-SHA256 (hashicorp-packer-v1.5.1_GH0.tar.gz) = 97ba9fd9615259cfab3601daa81d81bba88ac1107633dc7f83e3ada06306fc5f
-SIZE (hashicorp-packer-v1.5.1_GH0.tar.gz) = 15378773
+TIMESTAMP = 1591900950
+SHA256 (hashicorp-packer-v1.6.0_GH0.tar.gz) = 2a135643a837ad58df16e4acc3ac01ad32b61643722a6a027929bbd6baba9435
+SIZE (hashicorp-packer-v1.6.0_GH0.tar.gz) = 16726817
