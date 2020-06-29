@@ -20,7 +20,6 @@ RUN_DEPENDS=	p5-Tk>=800.015:x11-toolkits/p5-Tk
 USES=		perl5
 USE_PERL5=	configure
 
-ALL_TARGETS=	pure_install
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
