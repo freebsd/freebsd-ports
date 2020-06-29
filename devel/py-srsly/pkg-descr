@@ -1,0 +1,7 @@
+This package bundles some of the best Python serialization libraries into one
+standalone package, with a high-level API that makes it easy to write code
+that's correct across platforms and Pythons. This allows us to provide all the
+serialization utilities we need in a single binary wheel. Currently supports
+JSON, JSONL, MessagePack, Pickle and YAML.
+
+WWW: https://github.com/explosion/srsly

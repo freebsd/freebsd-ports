@@ -5077,6 +5077,7 @@
     SUBDIR += py-speaklater
     SUBDIR += py-spyder
     SUBDIR += py-sqlcc
+    SUBDIR += py-srsly
     SUBDIR += py-stackexchange
     SUBDIR += py-statgrab
     SUBDIR += py-statsd
