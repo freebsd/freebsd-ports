@@ -50,6 +50,10 @@ share/pixmaps/tanglet.xpm
 %%DATADIR%%/data/nl/dictionary
 %%DATADIR%%/data/nl/name
 %%DATADIR%%/data/nl/words
+%%DATADIR%%/data/ru/dice
+%%DATADIR%%/data/ru/dictionary
+%%DATADIR%%/data/ru/name
+%%DATADIR%%/data/ru/words
 %%NLS%%%%DATADIR%%/translations/tanglet_ca.qm
 %%NLS%%%%DATADIR%%/translations/tanglet_cs.qm
 %%NLS%%%%DATADIR%%/translations/tanglet_de.qm
