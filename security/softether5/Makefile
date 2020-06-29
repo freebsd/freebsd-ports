@@ -20,7 +20,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES+=		cmake:noninja compiler:c11 iconv:wchar_t \
 		localbase:ldflags ncurses readline ssl
-USE_RC_SUBR=	softether_bridge softether_client softether_server
+USE_RC_SUBR=	softether_bridge softether_client \
+		softether_server softether_trafficserver
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 
