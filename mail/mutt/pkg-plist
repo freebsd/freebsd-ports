@@ -30,7 +30,6 @@ man/man5/muttrc.5.gz
 %%PORTDOCS%%%%DOCSDIR%%/manual.txt
 %%PORTDOCS%%%%DOCSDIR%%/patch-notes.txt
 %%PORTDOCS%%%%DOCSDIR%%/smime-notes.txt
-%%NNTP%%%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.nntp
 %%HTML%%%%PORTDOCS%%%%DOCSDIR%%/advancedusage.html
 %%HTML%%%%PORTDOCS%%%%DOCSDIR%%/configuration.html
 %%HTML%%%%PORTDOCS%%%%DOCSDIR%%/gettingstarted.html
@@ -47,6 +46,8 @@ man/man5/muttrc.5.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Pine.rc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Tin.rc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ca-bundle.crt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bgedit-detectgui.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bgedit-screen-tmux.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/colors.default
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/colors.linux
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gpg.rc
@@ -71,6 +72,7 @@ man/man5/muttrc.5.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/markdown2html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mutt_xtitle
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pgp2.rc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pgp5.rc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pgp6.rc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.mailcap
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.muttrc
