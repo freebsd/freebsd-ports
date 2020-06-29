@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mp
-DISTVERSION=	5.36
+PORTVERSION=	5.41
 CATEGORIES=	editors
 MASTER_SITES=	http://triptico.com/download/mp/
 
