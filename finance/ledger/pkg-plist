@@ -27,7 +27,6 @@ include/ledger/lookup.h
 include/ledger/mask.h
 include/ledger/op.h
 include/ledger/option.h
-include/ledger/org.h
 include/ledger/output.h
 include/ledger/parser.h
 include/ledger/pool.h
@@ -48,7 +47,6 @@ include/ledger/select.h
 include/ledger/session.h
 include/ledger/stats.h
 include/ledger/stream.h
-include/ledger/strptime.h
 include/ledger/system.hh
 include/ledger/temps.h
 include/ledger/timelog.h

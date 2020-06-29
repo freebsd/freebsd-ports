@@ -2,13 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	ledger
-PORTVERSION=	3.1.1
+PORTVERSION=	3.2.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	18
 CATEGORIES=	finance
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	c18a55f9ef99.patch:-p1
 
 MAINTAINER=	woodycarey@hotmail.com
 COMMENT=	John Wiegley's command line accounting program
@@ -30,5 +26,8 @@ USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DCMAKE_INSTALL_MANDIR=${MANPREFIX}/man \
 		-DCMAKE_INCLUDE_PATH=${LOCALBASE}/include
+
+do-test:
+	@cd ${TEST_WRKSRC} && ctest -C ${CMAKE_BUILD_TYPE} ${_MAKE_JOBS}
 
 .include <bsd.port.mk>
