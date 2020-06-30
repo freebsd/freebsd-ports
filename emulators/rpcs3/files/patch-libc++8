@@ -2,6 +2,7 @@ Drop after FreeBSD 11.3/12.1 EOL.
 
 https://reviews.llvm.org/rL359211
 https://reviews.llvm.org/rL364862
+https://reviews.llvm.org/rL366170
 
 rpcs3/Emu/Io/PadHandler.cpp:191:27: error: no member named 'lerp' in namespace 'std'
                         const float pos = std::lerp(0.13f, 1.f, (mag - dzRange) / (1 - dzRange));
@@ -43,6 +44,27 @@ rpcs3/Emu/Cell/PPUAnalyser.h:1241:35: error: no member named 'countl_zero' in na
                                 const u64 mix = ~0ull >> std::countl_zero(min ^ max);
                                                          ~~~~~^
 
+Utilities/bin_patch.cpp:788:25: error: no member named 'contains' in 'std::__1::set<std::__1::basic_string<char>, std::__1::less<std::__1::basic_string<char> >, std::__1::allocator<std::__1::basic_string<char> > >'
+                        if (m_applied_groups.contains(patch.patch_group))
+                            ~~~~~~~~~~~~~~~~ ^
+rpcs3/rpcs3qt/patch_manager_dialog.cpp:338:120: error: no member named 'contains' in 'std::__1::set<std::__1::basic_string<char>, std::__1::less<std::__1::basic_string<char> >, std::__1::allocator<std::__1::basic_string<char> > >'
+                                        (m_owned_games.find(serial) == m_owned_games.end() || (app_version != patch_key::all && !m_owned_games.at(serial).contains(app_version))))
+                                                                                                                                 ~~~~~~~~~~~~~~~~~~~~~~~~ ^
+
+--- Utilities/bin_patch.cpp.orig	2020-06-29 22:45:17 UTC
++++ Utilities/bin_patch.cpp
+@@ -785,7 +785,11 @@ std::size_t patch_engine::apply_patch(const std::strin
+ 	{
+ 		if (!patch.patch_group.empty())
+ 		{
++#if defined(_LIBCPP_VERSION) && _LIBCPP_VERSION < 9000
++			if (m_applied_groups.find(patch.patch_group) != m_applied_groups.end())
++#else
+ 			if (m_applied_groups.contains(patch.patch_group))
++#endif
+ 			{
+ 				continue;
+ 			}
 --- Utilities/types.h.orig	2020-04-16 09:59:19 UTC
 +++ Utilities/types.h
 @@ -102,6 +102,203 @@ namespace std
@@ -249,3 +271,17 @@ rpcs3/Emu/Cell/PPUAnalyser.h:1241:35: error: no member named 'countl_zero' in na
  using schar  = signed char;
  using uchar  = unsigned char;
  using ushort = unsigned short;
+--- rpcs3/rpcs3qt/patch_manager_dialog.cpp.orig	2020-06-29 22:45:17 UTC
++++ rpcs3/rpcs3qt/patch_manager_dialog.cpp
+@@ -335,7 +335,11 @@ void patch_manager_dialog::filter_patches(const QStrin
+ 				const std::string app_version = item->data(0, app_version_role).toString().toStdString();
+ 
+ 				if (serial != patch_key::all &&
++#if defined(_LIBCPP_VERSION) && _LIBCPP_VERSION < 9000
++					(m_owned_games.find(serial) == m_owned_games.end() || (app_version != patch_key::all && !(m_owned_games.at(serial).find(app_version) != m_owned_games.at(serial).end()))))
++#else
+ 					(m_owned_games.find(serial) == m_owned_games.end() || (app_version != patch_key::all && !m_owned_games.at(serial).contains(app_version))))
++#endif
+ 				{
+ 					item->setHidden(true);
+ 					return 0;
