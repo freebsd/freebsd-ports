@@ -4,6 +4,10 @@
 Please note, this is an unofficial wrapper for the Steam client
 and as such it is supported on a best effort basis.
 
+Additional dependencies:
+- If you use a NVIDIA card, you need to install a suitable
+  x11/linux-nvidia-libs(-xxx) port.
+
 Setup:
 
 1. Create a dedicated FreeBSD non-wheel user account for Steam. Switch to it.

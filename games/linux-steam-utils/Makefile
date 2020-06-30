@@ -2,6 +2,7 @@
 
 PORTNAME=	steam-utils
 DISTVERSION=	20200525
+PORTREVISION=	1
 CATEGORIES=	games linux
 PKGNAMEPREFIX=	linux-
 
@@ -14,10 +15,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 IGNORE_FreeBSD_11=not tested at all
 ONLY_FOR_ARCHS=	amd64
 
-RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss
+RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss \
+		liberation-fonts-ttf>=0:x11-fonts/liberation-fonts-ttf
 
 USES=		linux
-USE_LINUX=	devtools:build dbuslibs gtk2 dri nss openal-soft
+USE_LINUX=	devtools:build dbuslibs gtk2 dri nss openal-soft alsa-plugins-oss
 USE_RUBY=	yes
 
 RUBY_NO_BUILD_DEPENDS=	yes
