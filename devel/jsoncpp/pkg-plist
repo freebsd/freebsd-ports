@@ -1,6 +1,5 @@
 include/json/allocator.h
 include/json/assertions.h
-include/json/autolink.h
 include/json/config.h
 include/json/forwards.h
 include/json/json.h
@@ -11,5 +10,5 @@ include/json/version.h
 include/json/writer.h
 lib/libjsoncpp.a
 lib/libjsoncpp.so
-lib/libjsoncpp.so.22
+lib/libjsoncpp.so.24
 libdata/pkgconfig/jsoncpp.pc
