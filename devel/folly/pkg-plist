@@ -201,6 +201,7 @@ include/folly/executors/ScheduledExecutor.h
 include/folly/executors/SequencedExecutor.h
 include/folly/executors/SerialExecutor.h
 include/folly/executors/SoftRealTimeExecutor.h
+include/folly/executors/StrandExecutor.h
 include/folly/executors/ThreadPoolExecutor.h
 include/folly/executors/ThreadedExecutor.h
 include/folly/executors/TimedDrivableExecutor.h
@@ -234,8 +235,8 @@ include/folly/experimental/JSONSchema.h
 include/folly/experimental/JemallocHugePageAllocator.h
 include/folly/experimental/JemallocNodumpAllocator.h
 include/folly/experimental/LockFreeRingBuffer.h
-include/folly/experimental/MasterPtr.h
 include/folly/experimental/NestedCommandLineApp.h
+include/folly/experimental/PrimaryPtr.h
 include/folly/experimental/ProgramOptions.h
 include/folly/experimental/QuotientMultiSet-inl.h
 include/folly/experimental/QuotientMultiSet.h
@@ -364,6 +365,13 @@ include/folly/fibers/WhenN-inl.h
 include/folly/fibers/WhenN.h
 include/folly/fibers/async/Async.h
 include/folly/fibers/async/Baton.h
+include/folly/fibers/async/Collect-inl.h
+include/folly/fibers/async/Collect.h
+include/folly/fibers/async/FiberManager.h
+include/folly/fibers/async/Future.h
+include/folly/fibers/async/Promise.h
+include/folly/fibers/async/Task.h
+include/folly/fibers/async/WaitUtils.h
 include/folly/fibers/detail/AtomicBatchDispatcher.h
 include/folly/fibers/traits.h
 include/folly/folly-config.h
