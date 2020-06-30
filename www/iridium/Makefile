@@ -3,7 +3,7 @@
 
 PORTNAME=	iridium
 PORTVERSION=	2019.04.73
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	www
 MASTER_SITES=	https://downloads.iridiumbrowser.de/source/
 PKGNAMESUFFIX=	-browser
