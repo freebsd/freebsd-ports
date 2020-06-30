@@ -2,87 +2,59 @@
 # $FreeBSD$
 
 PORTNAME=	swi-pl
-PORTVERSION=	7.6.4
-PORTREVISION=	1
+DISTVERSION=	8.2.0
 CATEGORIES=	lang
 MASTER_SITES=	http://www.swi-prolog.org/download/stable/src/
-DISTNAME=	swipl-${PORTVERSION}
+DISTNAME=	swipl-${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mailinglist@diamondbox.dk
 COMMENT=	Edinburgh-style Prolog compiler
 
 LICENSE=	BSD2CLAUSE
 
-BROKEN_mips=		fails to link: libswipl.so: undefined reference to '__sync_sub_and_fetch_4'
-BROKEN_mips64=		fails to link: libswipl.so: undefined reference to '__sync_sub_and_fetch_4'
+BROKEN_i386=	fails to link: libswipl.so: undefined reference to __atomic_compare_exchange_8
+BROKEN_mips=	fails to link: libswipl.so: undefined reference to '__sync_sub_and_fetch_4'
+BROKEN_mips64=	fails to link: libswipl.so: undefined reference to '__sync_sub_and_fetch_4'
 
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libodbc.so:databases/unixODBC \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
-		libpcre.so:devel/pcre
+		libpcre.so:devel/pcre \
+		libossp-uuid.so:misc/ossp-uuid \
+		libyaml.so:textproc/libyaml
 
-SWIPLDIR=	${PORTNAME:C/-//}-${PORTVERSION}
-
-NOPRECIOUSMAKEVARS=	yes
-
-USES=		compiler:c11 libedit gmake jpeg libarchive pathfix pkgconfig \
+USES=		compiler:c11 libedit cmake jpeg libarchive pathfix pkgconfig \
 		readline shebangfix ssl xorg
 USE_XORG=	ice sm x11 xext xft xinerama xpm xt
 
-MAKE_JOBS_UNSAFE=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	ARCH=${ARCH}-${OPSYS:tl}
-CONFIGURE_TARGET=	${ARCH}-${OPSYS:tl}
-CONFIGURE_ARGS=	--with-world --without-jpl --enable-shared
-MAKE_ARGS=	DISABLE_PKGS=jpl \
-		ac_cv_lib_ossp_uuid_uuid_create=no \
-		ac_cv_lib_uuid_uuid_create=no
-
+SHEBANG_FILES=	library/dialect/sicstus/swipl-lfr.pl
 SHEBANG_LANG=	swipl
-SHEBANG_FILES=	library/dialect/sicstus/swipl-lfr.pl \
-		packages/http/examples/demo_inetd
 
-PLIST_SUB=	DISTNAME=${SWIPLDIR} ARCH=${ARCH} OS=${OPSYS:tl} \
-		VER=${PORTVERSION}
+CMAKE_ARGS=	-DSWIPL_PACKAGES_JAVA=OFF -DSWIPL_PACKAGES_X=ON
+CMAKE_BUILD_TYPE=	Release
+
+NOPRECIOUSMAKEVARS=	yes
+
+MAKE_JOBS_SAFE=		yes
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH:M*64*}
-PLIST_SUB+=	BITS=64
-.else
-PLIST_SUB+=	BITS=32
-.endif
+USE_LDCONFIG=	${PREFIX}/lib/swipl/lib/${ARCH}-${OPSYS:tl}
 
-.if (${ARCH} == amd64)
-ARCH=		x86_64
-.endif
+PLIST_SUB=	ARCH=${ARCH} OS=${OPSYS:tl}
 
-.if (${ARCH} == aarch64)
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-skip-gnu-qsort
+.if ${ARCH} == "i386" || ${ARCH} == "amd64"
+LIB_DEPENDS+=	libunwind.so:devel/libunwind
 .endif
-
-post-configure:
-.if ${ARCH} != i386
-	@${REINPLACE_CMD} -e '/^CMFLAGS=/s/$$/ -fPIC/' \
-		${WRKSRC}/packages/Dialect.defs
-.endif
-	@{ ${ECHO} "#define HAVE_DLOPEN 1";  ${ECHO} "#define HAVE_DLADDR 1"; }\
-		>> ${WRKSRC}/src/config.h
 
 post-patch:
-	@${REINPLACE_CMD} -e 's!^mandir=@mandir@!mandir=${MANPREFIX}/man!' \
-		-e '/-o $$@ $$(PLOBJ)/s/$$/ $$(LIBS)/' \
-		${WRKSRC}/src/Makefile.in \
-		${WRKSRC}/packages/xpce/src/Makefile.in
-	@${REINPLACE_CMD} -e '/EXAMPLEEXE/s/INSTALL_PROGRAM/INSTALL_SCRIPT/' \
-		${WRKSRC}/packages/http/Makefile.in \
-		${WRKSRC}/packages/pldoc/Makefile.in
 	@${REINPLACE_CMD} -e 's/malloc\.h/stdlib.h/' \
 		${WRKSRC}/packages/cpp/SWI-cpp.h
+	@${REINPLACE_CMD} -e 's|share/pkgconfig|libdata/pkgconfig|' \
+		${WRKSRC}/CMakeLists.txt
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/xpce-client \
-		${STAGEDIR}${PREFIX}/lib/${SWIPLDIR}/lib/${ARCH}-${OPSYS:tl}/pl2xpce.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/swipl/lib/${ARCH}-${OPSYS:tl}/pl2xpce.so
 
 .include <bsd.port.post.mk>
