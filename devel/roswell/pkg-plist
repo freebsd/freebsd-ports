@@ -29,6 +29,7 @@ bin/ros
 %%ETCDIR%%/dump-ecl.lisp
 %%ETCDIR%%/dump-sbcl.lisp
 %%ETCDIR%%/dump.ros
+%%ETCDIR%%/ecl-config.ros
 %%ETCDIR%%/emacs.ros
 %%ETCDIR%%/exec.ros
 %%ETCDIR%%/extend-quicklisp-system.lisp
