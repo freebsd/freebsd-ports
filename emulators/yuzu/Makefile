@@ -1,20 +1,18 @@
 # $FreeBSD$
 
 PORTNAME=	yuzu
-PORTVERSION=	s20200629
+PORTVERSION=	s20200508
 PORTREVISION?=	0
 CATEGORIES=	emulators
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	e6085ea35f0b.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/4208
-PATCHFILES+=	dda90ce1c249.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/4209
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Nintendo Switch emulator/debugger
 
-LICENSE=	APACHE20 BSD3CLAUSE GPLv2+ ISCL LGPL21+ LGPL3+ MIT OpenSSL UNLICENSE
+LICENSE=	APACHE20 BSD2CLAUSE BSD3CLAUSE BSL GPLv2+ ISCL LGPL21+ LGPL3+ MIT OpenSSL UNLICENSE
 LICENSE_COMB=	multi
+LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/externals/fmt/LICENSE.rst
 LICENSE_FILE_BSD3CLAUSE=${WRKSRC}/externals/inih/inih/LICENSE.txt
+LICENSE_FILE_BSL=	${WRKSRC}/externals/catch/LICENSE.txt
 LICENSE_FILE_GPLv2+ =	${WRKSRC}/license.txt
 LICENSE_FILE_ISCL=	${WRKSRC}/externals/cubeb/LICENSE
 LICENSE_FILE_LGPL21+ =	${_LICENSE_STORE}/LGPL21 # soundtouch
@@ -25,36 +23,36 @@ LICENSE_FILE_OpenSSL=	${WRKSRC}/externals/libressl/COPYING
 ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64
 ONLY_FOR_ARCHS_REASON=	requires int128
 
-BUILD_DEPENDS=	catch>0:devel/catch \
-		gmake:devel/gmake \
-		nlohmann-json>0:devel/nlohmann-json
-LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
-		libzstd.so:archivers/zstd \
-		libopus.so:audio/opus \
-		libboost_context.so:devel/boost-libs \
-		libfmt.so:devel/libfmt
+BUILD_DEPENDS=	boost-libs>=1.66:devel/boost-libs \
+		gmake:devel/gmake
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yuzu-emu
-GH_TAGNAME=	f84cbf642
+GH_TAGNAME=	50c27d5ae
 GH_TUPLE=	yuzu-emu:unicorn:1.0.1-153-g73f45735:unicorn/externals/unicorn \
 		DarkLordZach:mbedtls:a280e60:mbedtls/externals/mbedtls \
 		KhronosGroup:SPIRV-Headers:2c51218:SPIRV_Headers/externals/sirit/externals/SPIRV-Headers \
 		KhronosGroup:Vulkan-Headers:v1.2.140:Vulkan_Headers/externals/Vulkan-Headers \
-		MerryMage:dynarmic:r3-220-g4f967387:dynarmic/externals/dynarmic \
-		ReinUsesLisp:sirit:eefca56:sirit/externals/sirit \
+		MerryMage:dynarmic:r3-1-ge7166e8b:dynarmic/externals/dynarmic \
+		ReinUsesLisp:sirit:414fc4d:sirit/externals/sirit \
 		arsenm:sanitizers-cmake:aab6948:sanitizers_cmake/externals/cubeb/cmake/sanitizers-cmake \
+		catchorg:Catch2:v2.3.0:catch/externals/catch \
 		citra-emu:ext-libressl-portable:7d01cb0:libressl/externals/libressl \
 		citra-emu:ext-soundtouch:060181e:soundtouch/externals/soundtouch \
-		herumi:xbyak:v5.911:xbyak/externals/xbyak \
+		facebook:zstd:v1.3.8:zstd/externals/zstd \
+		fmtlib:fmt:6.2.0:fmt/externals/fmt \
 		kinetiknz:cubeb:cubeb-0.2-1194-g616d773:cubeb/externals/cubeb \
+		lz4:lz4:v1.8.0-8-g4db65c1:lz4/externals/lz4 \
+		madler:zlib:v1.2.11:zlib/externals/zlib/zlib \
 		nih-at:libzip:rel-1-5-2-93-g89bd6d63:libzip/externals/libzip/libzip \
 		svn2github:inih:603729d:inih/externals/inih/inih \
-		weidai11:cryptopp:CRYPTOPP_7_0_0-23-gf320e7d9:cryptopp/externals/cryptopp/cryptopp
+		weidai11:cryptopp:CRYPTOPP_7_0_0-23-gf320e7d9:cryptopp/externals/cryptopp/cryptopp \
+		xiph:opus:v1.3.1-4-gad8fe90d:opus/externals/opus/opus
 
 USES=		cmake compiler:c++17-lang iconv localbase:ldflags \
 		python:build sdl ssl
 USE_SDL=	sdl2
+CMAKE_OFF=	ENABLE_GNUTLS ENABLE_MBEDTLS
 CXXFLAGS+=	-Wno-narrowing # https://github.com/yuzu-emu/yuzu/issues/3407
 LDFLAGS+=	-Wl,--as-needed # Qt5Network
 TEST_TARGET=	test

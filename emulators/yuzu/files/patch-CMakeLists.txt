@@ -1,15 +1,37 @@
 yuzu (Qt) currently needs SDL for input
 
---- CMakeLists.txt.orig	2020-06-29 05:12:38 UTC
+--- CMakeLists.txt.orig	2020-02-19 21:13:50 UTC
 +++ CMakeLists.txt
-@@ -225,7 +225,9 @@ if(ENABLE_SDL2)
-         list(APPEND CMAKE_MODULE_PATH "${CONAN_SDL2_ROOT_RELEASE}")
-         list(APPEND CMAKE_PREFIX_PATH "${CONAN_SDL2_ROOT_RELEASE}")
+@@ -157,19 +157,21 @@ if (ENABLE_SDL2)
+         target_include_directories(SDL2 INTERFACE "${SDL2_INCLUDE_DIR}")
+     else()
+         find_package(SDL2 REQUIRED)
+-
+-        # Some installations don't set SDL2_LIBRARIES
+-        if("${SDL2_LIBRARIES}" STREQUAL "")
+-            message(WARNING "SDL2_LIBRARIES wasn't set, manually setting to SDL2::SDL2")
+-            set(SDL2_LIBRARIES "SDL2::SDL2")
+-        endif()
+-
+-        include_directories(SYSTEM ${SDL2_INCLUDE_DIRS})
+-        add_library(SDL2 INTERFACE)
+-        target_link_libraries(SDL2 INTERFACE "${SDL2_LIBRARIES}")
      endif()
--    find_package(SDL2)
+ else()
+-    set(SDL2_FOUND NO)
++    find_package(SDL2)
 +endif()
-+find_package(SDL2)
-+if(ENABLE_SDL2)
-     if (NOT SDL2_FOUND)
-         # otherwise add this to the list of libraries to install
-         list(APPEND CONAN_REQUIRED_LIBS "sdl2/2.0.12@bincrafters/stable")
++
++if (SDL2_FOUND)
++    # Some installations don't set SDL2_LIBRARIES
++    if("${SDL2_LIBRARIES}" STREQUAL "")
++        message(WARNING "SDL2_LIBRARIES wasn't set, manually setting to SDL2::SDL2")
++        set(SDL2_LIBRARIES "SDL2::SDL2")
++    endif()
++
++    include_directories(SYSTEM ${SDL2_INCLUDE_DIRS})
++    add_library(SDL2 INTERFACE)
++    target_link_libraries(SDL2 INTERFACE "${SDL2_LIBRARIES}")
+ endif()
+ 
+ # If unicorn isn't found, msvc -> download bundled unicorn; everyone else -> build external
