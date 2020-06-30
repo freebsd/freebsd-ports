@@ -15,7 +15,6 @@ COMMENT=	Web browser based on the browser portion of Mozilla
 
 BUILD_DEPENDS=	nspr>=4.25:devel/nspr \
 		nss>=3.53.1:security/nss \
-		icu>=67.1,1:devel/icu \
 		libevent>=2.1.8:devel/libevent \
 		harfbuzz>=2.6.6:print/harfbuzz \
 		graphite2>=1.3.14:graphics/graphite2 \
@@ -30,7 +29,7 @@ BUILD_DEPENDS=	nspr>=4.25:devel/nspr \
 
 USE_GECKO=	gecko
 CONFLICTS_INSTALL=	firefox-esr
-USE_MOZILLA=	-sqlite
+USE_MOZILLA=	-icu -sqlite
 
 USES=		tar:xz
 
