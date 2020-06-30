@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	recoll
-DISTVERSION=	1.26.4
+PORTVERSION=	1.27.3
 CATEGORIES=	deskutils
 MASTER_SITES=	https://www.lesbonscomptes.com/recoll/
 
@@ -33,7 +33,6 @@ SHEBANG_FILES=	filters/*.py filters/rcl7z filters/rclaudio \
 		filters/rclrar filters/rcltar filters/rclwar \
 		filters/rclzip desktop/hotrecoll.py
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-python-chm
 MAKE_ENV=	PYTHON_CMD=${PYTHON_CMD}
 
 PYDISTUTILS_PKGNAME=	Recoll
@@ -42,23 +41,28 @@ PYDISTUTILS_PKGVERSION=	1.0
 PLIST_SUB=		VERSION="${PORTVERSION}" \
 			PYDISTUTILS_EGGINFO="${PYDISTUTILS_EGGINFO}"
 
-OPTIONS_DEFINE=		ASPELL DJVU LATEX IMAGE PDF PS \
+OPTIONS_DEFINE=		ASPELL CHM DJVU LATEX IMAGE PDF PS \
 			SOUND QT5 X11MON
-OPTIONS_DEFAULT=	ASPELL IMAGE PDF PS SOUND
+OPTIONS_DEFAULT=	ASPELL CHM IMAGE PDF PS QT5 SOUND
 OPTIONS_SUB=		yes
 
 ASPELL_LIB_DEPENDS=	libaspell.so:textproc/aspell
 ASPELL_CONFIGURE_WITH=	aspell
+CHM_DESC=		Python bindings for Microsoft ITSS/CHM format
+CHM_LIB_DEPENDS=	libchm.so:misc/chmlib
+CHM_CONFIGURE_OFF=	--disable-python-chm
 DJVU_RUN_DEPENDS=	djvutxt:graphics/djvulibre
 IMAGE_DESC=		Store personal tags or textual descriptions in images
 IMAGE_RUN_DEPENDS=	exiftool:graphics/p5-Image-ExifTool
 LATEX_USE=		tex=dvipsk:run,latex:run
 PDF_RUN_DEPENDS=	pdftotext:graphics/poppler-utils
 PS_RUN_DEPENDS=		pstotext:print/pstotext
-USE_QT=			core gui network printsupport widgets webkit xml buildtools_build qmake_build
+USE_QT=			core gui printsupport widgets xml \
+			buildtools_build qmake_build
 QT5_USES=		qt:5 gl
 QT5_USE=		GL=gl
 QT5_CONFIGURE_ENABLE=	qtgui
+QT5_CONFIGURE_ON=	--disable-webkit
 QT5_CONFIGURE_ENV=	QMAKE="${QMAKE}" QMAKESPEC="${QMAKESPEC}" \
 			QTDIR="${PREFIX}"
 SOUND_RUN_DEPENDS=	mutagen-pony-${PYTHON_VER}:audio/py-mutagen@${PY_FLAVOR}
