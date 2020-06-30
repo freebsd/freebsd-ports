@@ -1,6 +1,0 @@
-%%SITE_PERL%%/Catalyst/Helper/Model/Xapian.pm
-%%SITE_PERL%%/Catalyst/Model/Xapian.pm
-%%SITE_PERL%%/Catalyst/Model/Xapian/Result.pm
-%%SITE_PERL%%/Catalyst/Model/sample-indexer.pl
-%%PERL5_MAN3%%/Catalyst::Helper::Model::Xapian.3.gz
-%%PERL5_MAN3%%/Catalyst::Model::Xapian.3.gz

@@ -15112,3 +15112,36 @@ comms/py-serial|comms/py-pyserial|2020-06-27|Rename to match upstream naming
 devel/py-usb|devel/py-pyusb|2020-06-27|Rename to match upstream naming
 math/py-igraph|math/py-python-igraph|2020-06-27|Rename to match upstream naming
 net/bnxt-kmod||2020-06-28|Has expired: Unsupported on all supported FreeBSD versions
+databases/p5-Search-Xapian10|databases/p5-Search-Xapian|2020-06-30|Has expired: Depend on unsupported xapian-core. Use databases/p5-Search-Xapian instead
+databases/xapian-core10|databases/xapian-core|2020-06-30|Has expired: Unsupported by upstream. Use databases/xapian-core instead
+devel/py-dj22-django-rq|www/py-django-rq|2020-06-30|Has expired: Obsolete, please use www/py-django-rq instead
+devel/rubygem-cucumber-expressions|devel/rubygem-cucumber-cucumber-expressions|2020-06-30|Has expired: Use devel/rubygem-cucumber-cucumber-expressions instead
+devel/rubygem-cucumber-expressions6|devel/rubygem-cucumber-cucumber-expressions|2020-06-30|Has expired: Use devel/rubygem-cucumber-cucumber-expressions instead
+devel/rubygem-cucumber-tag_expressions1|devel/rubygem-cucumber-tag_expressions|2020-06-30|Has expired: Use devel/rubygem-cucumber-tag_expressions instead
+print/xpp||2020-06-30|Has expired: Last update as 2004-12-09, unsupported by upstream
+textproc/rubygem-gherkin|textproc/rubygem-cucumber-gherkin|2020-06-30|Has expired: Use textproc/rubygem-cucumber-gherkin instead
+www/p5-Catalyst-Model-Xapian10|www/p5-Catalyst-Model-Xapian|2020-06-30|Has expired: Depend on unsupported xapian-core. Use www/p5-Catalyst-Model-Xapian instead
+www/py-dj22-django-auth-ldap|www/py-django-auth-ldap|2020-06-30|Has expired: Obsolete, please use www/py-django-auth-ldap instead
+www/py-dj22-django-cacheops|www/py-django-cacheops|2020-06-30|Has expired: Obsolete, please use www/py-django-cacheops instead
+www/py-dj22-django-cors-headers|www/py-django-cors-headers|2020-06-30|Has expired: Obsolete, please use www/py-django-cors-headers instead
+www/py-dj22-django-crispy-forms|www/py-django-crispy-forms|2020-06-30|Has expired: Obsolete, please use www/py-django-crispy-forms instead
+www/py-dj22-django-debug-toolbar|www/py-django-debug-toolbar|2020-06-30|Has expired: Obsolete, please use www/py-django-debug-toolbar instead
+www/py-dj22-django-extensions|www/py-django-extensions|2020-06-30|Has expired: Obsolete, please use www/py-django-extensions instead
+www/py-dj22-django-filter|www/py-django-filter|2020-06-30|Has expired: Obsolete, please use www/py-django-filter instead
+www/py-dj22-django-js-asset|www/py-django-js-asset|2020-06-30|Has expired: Obsolete, please use www/py-django-js-asset instead
+www/py-dj22-django-model-utils|www/py-django-model-utils|2020-06-30|Has expired: Obsolete, please use www/py-django-model-utils instead
+www/py-dj22-django-mptt|www/py-django-mptt|2020-06-30|Has expired: Obsolete, please use www/py-django-mptt instead
+www/py-dj22-django-prometheus|www/py-django-prometheus|2020-06-30|Has expired: Obsolete, please use www/py-django-prometheus instead
+www/py-dj22-django-redis|www/py-django-redis|2020-06-30|Has expired: Obsolete, please use www/py-django-redis instead
+www/py-dj22-django-tables2|www/py-django-tables2|2020-06-30|Has expired: Obsolete, please use www/py-django-tables2 instead
+www/py-dj22-django-taggit|www/py-django-taggit|2020-06-30|Has expired: Obsolete after r534835, use www/py-django-taggit instead
+www/py-dj22-django-taggit-serializer|www/py-django-taggit-serializer|2020-06-30|Has expired: Obsolete, please use www/py-django-taggit-serializer instead
+www/py-dj22-django-timezone-field|www/py-django-timezone-field|2020-06-30|Has expired: Obsolete, please use www/py-django-timezone-field instead
+www/py-dj22-django-treebeard|www/py-django-treebeard|2020-06-30|Has expired: Obsolete after r532093, use www/py-django-treebeard instead
+www/py-dj22-djangorestframework|www/py-djangorestframework|2020-06-30|Has expired: Obsolete, please use www/py-djangorestframework instead
+www/py-dj22-drf-yasg|www/py-drf-yasg|2020-06-30|Has expired: Obsolete, please use www/py-drf-yasg instead
+www/py-dj22-jsonfield|www/py-jsonfield|2020-06-30|Has expired: Obsolete, please use www/py-jsonfield instead
+www/py-dj22-jsonfield2|www/py-jsonfield2|2020-06-30|Has expired: Obsolete, please use www/py-jsonfield2 instead
+www/py-dj22-swapper|www/py-swapper|2020-06-30|Has expired: Obsolete, please use www/py-swapper instead
+www/rubygem-heroics00|www/rubygem-heroics|2020-06-30|Has expired: Use www/rubygem-heroics instead
+www/typo3-8|www/typo3-9|2020-06-30|Has expired: Upstream support ended in April 2020

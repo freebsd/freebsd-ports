@@ -1,5 +1,0 @@
-Django integration with RQ, a Redis based Python queuing library. Django-RQ is a
-simple app that allows you to configure your queues in django's settings.py and
-easily use them in your project.
-
-WWW: https://github.com/rq/django-rq

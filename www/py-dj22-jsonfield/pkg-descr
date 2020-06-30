@@ -1,8 +1,0 @@
-django-jsonfield is a reusable Django field that allows you to store validated
-JSON in your model. It silently takes care of serialization. To use, simply
-add the field to one of your models.
-
-This port is not a duplicate of www/py-django-jsonfield, both ports have
-distinct but upstreams.
-
-WWW: https://github.com/rpkilby/jsonfield

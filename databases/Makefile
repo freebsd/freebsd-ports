@@ -487,7 +487,6 @@
     SUBDIR += p5-Search-InvertedIndex
     SUBDIR += p5-Search-Namazu
     SUBDIR += p5-Search-Xapian
-    SUBDIR += p5-Search-Xapian10
     SUBDIR += p5-Search-Xapian12
     SUBDIR += p5-Store-CouchDB
     SUBDIR += p5-T2
@@ -1031,7 +1030,6 @@
     SUBDIR += xapian-bindings
     SUBDIR += xapian-bindings12
     SUBDIR += xapian-core
-    SUBDIR += xapian-core10
     SUBDIR += xapian-core12
     SUBDIR += xrootd
     SUBDIR += xtrabackup

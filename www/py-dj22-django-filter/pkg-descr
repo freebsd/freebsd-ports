@@ -1,3 +1,0 @@
-A generic system for filtering Django QuerySets based on user selections.
-
-WWW: https://github.com/carltongibson/django-filter

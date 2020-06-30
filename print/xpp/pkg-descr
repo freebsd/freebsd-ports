@@ -1,8 +1,0 @@
-XPP is a graphical utility for managing printers and submitting print jobs.
-It interfaces with CUPS on the backend and allows the user to configure
-double sided printing, active tray, color adjustment, etc.  It supports the
-command line flags of lpr as well.
-
-You will first need to configure a printer via CUPS to use XPP.
-
-WWW: http://cups.sourceforge.net/xpp/
