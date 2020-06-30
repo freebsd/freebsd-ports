@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	homura
-PORTVERSION=	4.0
+PORTVERSION=	5.0
 CATEGORIES=	games
 
 MAINTAINER=	Alexander88207@protonmail.com
@@ -28,11 +28,7 @@ GH_ACCOUNT=	the-homura-project
 
 NO_BUILD=	yes
 
-PLIST_FILES=	bin/Homura \
-		share/homura/Data/Apps.hma \
-		share/homura/Data/Setups.hma \
-		share/homura/Data/Misc.hma \
-		share/homura/Data/Checks.hma
+PLIST_FILES=	bin/Homura
 
 .include <bsd.port.pre.mk>
 
@@ -43,11 +39,6 @@ RUN_DEPENDS+=	wine:emulators/i386-wine
 .endif
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/homura/Data
 	${INSTALL_SCRIPT} ${WRKSRC}/Homura ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/Data/Apps.hma ${STAGEDIR}${PREFIX}/share/homura/Data
-	${INSTALL_SCRIPT} ${WRKSRC}/Data/Setups.hma ${STAGEDIR}${PREFIX}/share/homura/Data
-	${INSTALL_SCRIPT} ${WRKSRC}/Data/Misc.hma ${STAGEDIR}${PREFIX}/share/homura/Data
-	${INSTALL_SCRIPT} ${WRKSRC}/Data/Checks.hma ${STAGEDIR}${PREFIX}/share/homura/Data
 
 .include <bsd.port.post.mk>

@@ -1,5 +1,20 @@
 [
 {
-  message: "If you use Homura for the first time, then you need open it via the commandline first."
+  message: <<EOM
+Homura was created for the gui usage in the first place, the gui can be opened via the commandline by typing Homura but also via a shortcut (if you have Homura allowed to create one).
+
+For terminal fans there are also some fast commands:
+
+Examples:
+
+    To install something use: Homura Install Steam
+    To launch something use: Homura Launch Steam
+    To uninstall something use: Homura Uninstall Steam
+
+To see what applications are currently working take a look at: 
+https://github.com/the-homura-project/homura/wiki/Status
+
+Enjoy playing!
+EOM
 }
 ]
