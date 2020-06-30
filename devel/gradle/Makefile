@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gradle
-PORTVERSION=	6.5
+PORTVERSION=	6.5.1
 CATEGORIES=	devel java
 MASTER_SITES=	https://downloads.gradle.org/distributions/
 EXTRACT_SUFX=	-bin.zip
