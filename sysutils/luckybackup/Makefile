@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	luckybackup
-PORTVERSION=	0.4.9
-PORTREVISION=	2
+PORTVERSION=	0.5.0
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/source
 
@@ -12,7 +11,8 @@ COMMENT=	Qt frontend to the backup utility rsync
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/license/gpl.txt
 
-RUN_DEPENDS=	rsync:net/rsync
+RUN_DEPENDS=	rsync:net/rsync \
+		pkexec:sysutils/polkit
 
 USES=		compiler:c++11-lang gl qmake qt:5
 
@@ -28,6 +28,8 @@ post-patch:
 	${REINPLACE_CMD} -e 's|/usr|${LOCALBASE}|g' \
 		${WRKSRC}/src/executenow.cpp
 	${REINPLACE_CMD} -e 's|/usr|${PREFIX}|g' \
+		${WRKSRC}/menu/luckybackup-pkexec \
+		${WRKSRC}/menu/net.luckybackup.su.policy \
 		${WRKSRC}/src/global.cpp \
 		${WRKSRC}/src/scheduleDialog.cpp
 

@@ -1,7 +1,8 @@
 bin/luckybackup
+bin/luckybackup-pkexec
+man/man8/luckybackup-pkexec.8.gz
 man/man8/luckybackup.8.gz
-share/applications/luckybackup-gnome-su.desktop
-share/applications/luckybackup-kde-su.desktop
+share/applications/luckybackup-su.desktop
 share/applications/luckybackup.desktop
 %%DOCSDIR%%/license/gpl.html
 %%DOCSDIR%%/license/gpl.txt
@@ -151,3 +152,4 @@ share/applications/luckybackup.desktop
 %%DATADIR%%/translations/luckybackup_zh_TW.ts
 share/pixmaps/luckybackup.png
 share/pixmaps/luckybackup.xpm
+share/polkit-1/actions/net.luckybackup.su.policy
