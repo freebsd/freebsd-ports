@@ -3,7 +3,6 @@
 %%DATADIR%%/POP3.php
 %%DATADIR%%/SMTP.php
 %%DATADIR%%/language/phpmailer.lang-af.php
-%%DATADIR%%/language/phpmailer.lang-am.php
 %%DATADIR%%/language/phpmailer.lang-ar.php
 %%DATADIR%%/language/phpmailer.lang-az.php
 %%DATADIR%%/language/phpmailer.lang-ba.php
@@ -27,6 +26,7 @@
 %%DATADIR%%/language/phpmailer.lang-hi.php
 %%DATADIR%%/language/phpmailer.lang-hr.php
 %%DATADIR%%/language/phpmailer.lang-hu.php
+%%DATADIR%%/language/phpmailer.lang-hy.php
 %%DATADIR%%/language/phpmailer.lang-id.php
 %%DATADIR%%/language/phpmailer.lang-it.php
 %%DATADIR%%/language/phpmailer.lang-ja.php
