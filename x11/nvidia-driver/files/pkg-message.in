@@ -2,16 +2,15 @@
 { type: install
   message: <<EOM
 To use these drivers, make sure that you have loaded the NVidia kernel
-module, by doing
+module, by running
 
-	# kldload nvidia	(or nvidia-modeset, see below)
+	# kldload nvidia		(or nvidia-modeset, see below)
 
-or adding
+on the command line, or by putting ``nvidia'' (or ``nvidia-modeset'',
+see below again) on ``kld_list'' variable in /etc/rc.conf, either manually
+or by running
 
-	nvidia_load="YES"	(or nvidia-modeset_load="YES", see below)
-
-to /boot/loader.conf, or putting ``nvidia'' (or ``nvidia-modeset'', see
-below again) on ``kld_list'' variable in /etc/rc.conf.
+	# sysrc kld_list+=nvidia	(or nvidia-modeset, see below)
 
 If you build this port with FreeBSD AGP GART driver, make sure you have
 agp.ko kernel module installed and loaded, since nvidia.ko will depend
