@@ -123,6 +123,7 @@ include/fizz/server/TicketTypes.h
 include/fizz/tool/Commands.h
 include/fizz/tool/FizzCommandCommon.h
 include/fizz/util/FizzUtil.h
+include/fizz/util/KeyLogWriter.h
 include/fizz/util/Parse-inl.h
 include/fizz/util/Parse.h
 include/fizz/util/Variant.h
