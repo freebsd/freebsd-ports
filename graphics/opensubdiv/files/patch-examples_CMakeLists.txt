@@ -1,0 +1,12 @@
+--- examples/CMakeLists.txt.orig	2020-06-30 16:05:15 UTC
++++ examples/CMakeLists.txt
+@@ -32,7 +32,8 @@ if (OPENGL_FOUND AND GLFW_FOUND)
+     add_subdirectory(glFVarViewer)
+     add_subdirectory(glStencilViewer)
+     add_subdirectory(glImaging)
+-    add_subdirectory(farViewer)
++# uses deprecated api
++#    add_subdirectory(farViewer)
+ 
+     if (OPENGL_4_2_FOUND)
+         add_subdirectory(glPaintTest)

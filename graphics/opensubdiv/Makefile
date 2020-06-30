@@ -2,8 +2,7 @@
 
 PORTNAME=	opensubdiv
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3_3_3
-PORTREVISION=	4
+DISTVERSION=	3_4_3
 CATEGORIES?=	graphics
 
 MAINTAINER=	FreeBSD@Shaneware.biz
@@ -58,6 +57,11 @@ TEST_CMAKE_BOOL_OFF=	NO_REGRESSION NO_TESTS NO_GL_TESTS
 TEST_LIB_DEPENDS=	libglfw.so:graphics/glfw
 TEST_USES=		xorg
 TEST_USE=		xorg=ice,sm,x11,xcursor,xext,xi,xinerama,xrandr,xxf86vm
+
+# the tutorials and tests include use of deprecated parts of the library
+# using clang 10 on 32 bit fails to build all tutorials and tests
+# currently 12.1 still works - 11.4 and current fail
+# CMake files and pkg-plist are patched to prevent failing builds
 
 TUTORIALS_DESC=		Install tutorial programs
 TUTORIALS_CMAKE_BOOL_OFF=	NO_TUTORIALS
