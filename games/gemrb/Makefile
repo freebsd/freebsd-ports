@@ -13,7 +13,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 DEPRECATED=	Uses deprecated version of python
-EXPIRATION_DATE=	2020-08-15
+EXPIRATION_DATE=	2020-12-15
 
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libvorbis.so:audio/libvorbis \
