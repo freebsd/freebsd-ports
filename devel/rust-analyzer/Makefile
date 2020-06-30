@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rust-analyzer
-DISTVERSION=	2020-06-22
+DISTVERSION=	2020-06-29
 CATEGORIES=	devel
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -16,25 +16,28 @@ USES=		cargo
 USE_GITHUB=	yes
 CARGO_CRATES=	addr2line-0.12.2 \
 		adler32-1.1.0 \
-		aho-corasick-0.7.10 \
+		aho-corasick-0.7.13 \
+		ansi_term-0.11.0 \
 		anyhow-1.0.31 \
 		anymap-0.12.1 \
 		arrayvec-0.5.1 \
 		atty-0.2.14 \
 		autocfg-1.0.0 \
 		backtrace-0.3.49 \
-		base64-0.12.2 \
+		base64-0.12.3 \
 		bitflags-1.2.1 \
 		bstr-0.2.13 \
+		byteorder-1.3.4 \
 		cargo_metadata-0.10.0 \
-		cc-1.0.54 \
+		cc-1.0.55 \
 		cfg-if-0.1.10 \
-		chalk-derive-0.11.0 \
-		chalk-engine-0.11.0 \
-		chalk-ir-0.11.0 \
-		chalk-solve-0.11.0 \
+		chalk-derive-0.15.0 \
+		chalk-engine-0.15.0 \
+		chalk-ir-0.15.0 \
+		chalk-solve-0.15.0 \
+		chrono-0.4.11 \
 		clicolors-control-1.0.1 \
-		cloudabi-0.0.3 \
+		cloudabi-0.1.0 \
 		console-0.10.3 \
 		crossbeam-0.7.3 \
 		crossbeam-channel-0.4.2 \
@@ -53,8 +56,8 @@ CARGO_CRATES=	addr2line-0.12.2 \
 		fixedbitset-0.2.0 \
 		fnv-1.0.7 \
 		fs_extra-1.1.0 \
-		fsevent-0.4.0 \
-		fsevent-sys-2.0.1 \
+		fsevent-2.0.2 \
+		fsevent-sys-3.0.2 \
 		fst-0.4.4 \
 		fuchsia-zircon-0.3.3 \
 		fuchsia-zircon-sys-0.3.3 \
@@ -67,9 +70,10 @@ CARGO_CRATES=	addr2line-0.12.2 \
 		home-0.5.3 \
 		idna-0.2.0 \
 		indexmap-1.4.0 \
-		inotify-0.7.1 \
+		inotify-0.8.3 \
 		inotify-sys-0.1.3 \
 		insta-0.16.0 \
+		instant-0.1.5 \
 		iovec-0.1.4 \
 		itertools-0.9.0 \
 		itoa-0.4.6 \
@@ -83,10 +87,11 @@ CARGO_CRATES=	addr2line-0.12.2 \
 		libc-0.2.71 \
 		libloading-0.6.2 \
 		linked-hash-map-0.5.3 \
-		lock_api-0.3.4 \
+		lock_api-0.4.0 \
 		log-0.4.8 \
 		lsp-server-0.3.3 \
 		lsp-types-0.74.2 \
+		matchers-0.0.1 \
 		matches-0.1.8 \
 		maybe-uninit-2.0.0 \
 		memchr-2.3.3 \
@@ -97,23 +102,24 @@ CARGO_CRATES=	addr2line-0.12.2 \
 		mio-extras-2.0.6 \
 		miow-0.2.1 \
 		net2-0.2.34 \
-		notify-4.0.15 \
+		notify-5.0.0-pre.3 \
+		num-integer-0.1.43 \
+		num-traits-0.2.12 \
 		num_cpus-1.13.0 \
 		object-0.20.0 \
 		once_cell-1.4.0 \
-		parking_lot-0.10.2 \
-		parking_lot_core-0.7.2 \
+		parking_lot-0.11.0 \
+		parking_lot_core-0.8.0 \
 		paste-0.1.18 \
 		paste-impl-0.1.18 \
 		percent-encoding-2.1.0 \
 		petgraph-0.5.1 \
-		pico-args-0.3.2 \
+		pico-args-0.3.3 \
 		plain-0.2.3 \
 		ppv-lite86-0.2.8 \
 		proc-macro-hack-0.5.16 \
 		proc-macro2-1.0.18 \
 		quote-1.0.7 \
-		ra_vfs-0.6.1 \
 		rand-0.7.3 \
 		rand_chacha-0.2.2 \
 		rand_core-0.5.1 \
@@ -123,15 +129,16 @@ CARGO_CRATES=	addr2line-0.12.2 \
 		rayon-core-1.7.1 \
 		redox_syscall-0.1.56 \
 		regex-1.3.9 \
+		regex-automata-0.1.9 \
 		regex-syntax-0.6.18 \
 		relative-path-1.2.1 \
 		remove_dir_all-0.5.3 \
 		rowan-0.10.0 \
-		rustc-ap-rustc_lexer-661.0.0 \
+		rustc-ap-rustc_lexer-666.0.0 \
 		rustc-demangle-0.1.16 \
 		rustc-hash-1.1.0 \
 		ryu-1.0.5 \
-		salsa-0.14.1 \
+		salsa-0.14.2 \
 		salsa-macros-0.14.1 \
 		same-file-1.0.6 \
 		scoped-tls-1.0.0 \
@@ -140,16 +147,17 @@ CARGO_CRATES=	addr2line-0.12.2 \
 		scroll_derive-0.10.2 \
 		semver-0.9.0 \
 		semver-parser-0.7.0 \
-		serde-1.0.113 \
-		serde_derive-1.0.113 \
+		serde-1.0.114 \
+		serde_derive-1.0.114 \
 		serde_json-1.0.55 \
 		serde_repr-0.1.6 \
 		serde_yaml-0.8.13 \
+		sharded-slab-0.0.9 \
 		slab-0.4.2 \
 		smallvec-1.4.0 \
 		smol_str-0.1.15 \
 		superslice-1.0.0 \
-		syn-1.0.32 \
+		syn-1.0.33 \
 		synstructure-0.12.4 \
 		tempfile-3.1.0 \
 		terminal_size-0.1.12 \
@@ -158,16 +166,23 @@ CARGO_CRATES=	addr2line-0.12.2 \
 		thin-dst-1.1.0 \
 		thread_local-1.0.1 \
 		threadpool-1.8.1 \
+		time-0.1.43 \
 		tinyvec-0.3.3 \
+		tracing-0.1.15 \
+		tracing-attributes-0.1.8 \
+		tracing-core-0.1.10 \
+		tracing-log-0.1.1 \
+		tracing-serde-0.1.1 \
+		tracing-subscriber-0.2.6 \
 		unicode-bidi-0.3.4 \
 		unicode-normalization-0.1.13 \
 		unicode-segmentation-1.6.0 \
-		unicode-xid-0.2.0 \
+		unicode-xid-0.2.1 \
 		url-2.1.1 \
 		walkdir-2.3.1 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
 		winapi-0.2.8 \
-		winapi-0.3.8 \
+		winapi-0.3.9 \
 		winapi-build-0.1.1 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
