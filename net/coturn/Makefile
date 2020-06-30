@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	coturn
-DISTVERSION=	4.5.1.2
+DISTVERSION=	4.5.1.3
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
