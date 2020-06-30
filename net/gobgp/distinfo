@@ -1,6 +1,6 @@
-TIMESTAMP = 1576519109
-SHA256 (gobgp/osrg-gobgp-v2.11.0_GH0.tar.gz) = abdc9a83d26da84f11342d4a24f52f120921f7c7981db678637c6c38a5ca4342
-SIZE (gobgp/osrg-gobgp-v2.11.0_GH0.tar.gz) = 993873
+TIMESTAMP = 1562488586
+SHA256 (gobgp/osrg-gobgp-v2.17.0_GH0.tar.gz) = 4fb228eb6140b2b8a56866f1fc37c412b776d8c46af28c50720ec6611c75e444
+SIZE (gobgp/osrg-gobgp-v2.17.0_GH0.tar.gz) = 1006712
 SHA256 (gobgp/BurntSushi-toml-v0.3.1_GH0.tar.gz) = 6593da894578ba510a470735ffbdc88ce88033094dc5a8f4d3957ab87e18803f
 SIZE (gobgp/BurntSushi-toml-v0.3.1_GH0.tar.gz) = 42077
 SHA256 (gobgp/coreos-go-systemd-95778dfbb74e_GH0.tar.gz) = 4df631756d675518bcf61e9d34e5fb8cc69310b4c9eb5878e8641121d4daedd3
