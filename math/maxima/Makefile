@@ -16,6 +16,8 @@ LICENSE_NAME_MAXIMAEXTRACLAUSE=		Maxima extra clause
 LICENSE_FILE_MAXIMAEXTRACLAUSE=		${FILESDIR}/license-extra-clause.txt
 LICENSE_PERMS_MAXIMAEXTRACLAUSE=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+BROKEN_FreeBSD_13_powerpc64=	fails to build: unhandled lisp initialization error
+
 RUN_DEPENDS=	gnuplot:math/gnuplot \
 		rlwrap:devel/rlwrap
 
