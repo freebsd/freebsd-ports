@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	nvidia-settings
-PORTVERSION=	440.82
+PORTVERSION=	440.100
 CATEGORIES=	x11
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Display Control Panel for X NVidia driver
 
 LICENSE=	GPLv2
