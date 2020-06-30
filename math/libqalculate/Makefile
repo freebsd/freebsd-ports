@@ -2,13 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	libqalculate
-PORTVERSION=	3.6.0
-PORTREVISION=	2
+PORTVERSION=	3.11.0
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/Qalculate/${PORTNAME}/releases/download/v${PORTVERSION}/
-
-PATCH_SITES=	https://github.com/Qalculate/${PORTNAME}/commit/
-PATCHFILES=	6f1aae9c99c41f5e0d4ef08fa69a2118c98d8a54.patch:-p1
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Multi-purpose desktop calculator (backend library)

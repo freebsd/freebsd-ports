@@ -16,7 +16,7 @@ include/libqalculate/util.h
 lib/libqalculate.a
 lib/libqalculate.so
 lib/libqalculate.so.21
-lib/libqalculate.so.21.5.0
+lib/libqalculate.so.21.9.0
 libdata/pkgconfig/libqalculate.pc
 man/man1/qalc.1.gz
 %%NLS%%share/locale/fr/LC_MESSAGES/libqalculate.mo
