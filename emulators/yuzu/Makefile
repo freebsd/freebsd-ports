@@ -20,6 +20,7 @@ LICENSE_FILE_ISCL=	${WRKSRC}/externals/cubeb/LICENSE
 LICENSE_FILE_LGPL21+ =	${_LICENSE_STORE}/LGPL21 # soundtouch
 LICENSE_FILE_LGPL3+ =	${_LICENSE_STORE}/LGPL3 # sirit
 LICENSE_FILE_MIT=	${WRKSRC}/externals/sirit/externals/SPIRV-Headers/LICENSE
+LICENSE_FILE_OpenSSL=	${WRKSRC}/externals/libressl/COPYING
 
 ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64
 ONLY_FOR_ARCHS_REASON=	requires int128
@@ -43,6 +44,7 @@ GH_TUPLE=	yuzu-emu:unicorn:1.0.1-153-g73f45735:unicorn/externals/unicorn \
 		MerryMage:dynarmic:r3-220-g4f967387:dynarmic/externals/dynarmic \
 		ReinUsesLisp:sirit:eefca56:sirit/externals/sirit \
 		arsenm:sanitizers-cmake:aab6948:sanitizers_cmake/externals/cubeb/cmake/sanitizers-cmake \
+		citra-emu:ext-libressl-portable:7d01cb0:libressl/externals/libressl \
 		citra-emu:ext-soundtouch:060181e:soundtouch/externals/soundtouch \
 		herumi:xbyak:v5.911:xbyak/externals/xbyak \
 		kinetiknz:cubeb:cubeb-0.2-1194-g616d773:cubeb/externals/cubeb \
@@ -53,7 +55,6 @@ GH_TUPLE=	yuzu-emu:unicorn:1.0.1-153-g73f45735:unicorn/externals/unicorn \
 USES=		cmake compiler:c++17-lang iconv localbase:ldflags \
 		python:build sdl ssl
 USE_SDL=	sdl2
-CMAKE_OFF=	ENABLE_GNUTLS ENABLE_MBEDTLS
 CXXFLAGS+=	-Wno-narrowing # https://github.com/yuzu-emu/yuzu/issues/3407
 LDFLAGS+=	-Wl,--as-needed # Qt5Network
 TEST_TARGET=	test
