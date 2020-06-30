@@ -11,6 +11,9 @@
 %%X11%%%%FONTSDIR%%/spleen-32x64.pcf.gz
 %%VT%%%%FONTSDIR%%/spleen-5x8.fnt
 %%X11%%%%FONTSDIR%%/spleen-5x8.pcf.gz
+%%VT%%%%FONTSDIR%%/spleen-6x12.fnt
+%%X11%%%%FONTSDIR%%/spleen-6x12.otf
+%%X11%%%%FONTSDIR%%/spleen-6x12.pcf.gz
 %%VT%%%%FONTSDIR%%/spleen-8x16.fnt
 %%X11%%%%FONTSDIR%%/spleen-8x16.otf
 %%X11%%%%FONTSDIR%%/spleen-8x16.pcf.gz

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	spleen
-DISTVERSION=	1.7.1
+DISTVERSION=	1.8.0
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/fcambus/spleen/releases/download/${DISTVERSION}/
 PKGNAMESUFFIX=	-font
@@ -39,7 +39,7 @@ do-build:
 	@${DO_NADA}
 
 do-build-VT-on:
-.for sz in 5x8 8x16 12x24 16x32 32x64
+.for sz in 5x8 6x12 8x16 12x24 16x32 32x64
 	vtfontcvt-ng ${WRKSRC}/spleen-${sz}.bdf ${WRKSRC}/spleen-${sz}.fnt
 .endfor
 
