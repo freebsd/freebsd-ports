@@ -5,12 +5,10 @@ PORTNAME=	ledgersmb
 PORTVERSION=	1.2.26
 PORTREVISION=	2
 CATEGORIES=	finance perl5
-MASTER_SITES=	http://download.ledgersmb.org/f/Releases/archive-1.2/${PORTVERSION}/
+MASTER_SITES=	http://download.ledgersmb.org/f/Releases/archives/${PORTVERSION:R}/${PORTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ty@eye-of-odin.com
 COMMENT=	Double entry accounting system
-
-BROKEN=		unfetchable
 
 BUILD_DEPENDS=	p5-DBD-Pg>=0:databases/p5-DBD-Pg \
 		p5-MIME-Lite>=0:mail/p5-MIME-Lite \
