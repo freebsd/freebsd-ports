@@ -58,6 +58,7 @@ bin/basic256
 %%DATADIR%%/Examples/solar_system.kbs
 %%DATADIR%%/Examples/sound/bounce.mp3
 %%DATADIR%%/Examples/sound/bounce.mp3.README
+%%DATADIR%%/Examples/sound/soundplay.kbs
 %%DATADIR%%/Examples/sound/wavplaystop.kbs
 %%DATADIR%%/Examples/sprites/ball.png
 %%DATADIR%%/Examples/sprites/beep.mp3
