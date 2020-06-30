@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	elk
-DISTVERSION=	5.2.14
-PORTREVISION=	3
+DISTVERSION=	6.8.4
 CATEGORIES=	science
 MASTER_SITES=	SF/${PORTNAME}/
 PKGNAMESUFFIX=	-chemistry
@@ -13,6 +12,10 @@ COMMENT=	All-electron full-potential linearised augmented-planewave code
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+LIB_DEPENDS=	libblis.so:math/blis \
+		libopenblas.so:math/openblas \
+		libwannier.so:science/wannier90
 
 USES=		fortran gmake tar:tgz
 
