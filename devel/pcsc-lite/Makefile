@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pcsc-lite
-PORTVERSION=	1.8.24
+PORTVERSION=	1.9.0
 PORTEPOCH=	2
 CATEGORIES=	devel security
 MASTER_SITES=	https://pcsclite.apdu.fr/files/
@@ -14,10 +14,11 @@ LICENSE=	BSD3CLAUSE GPLv3+
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		libtool pathfix perl5 pkgconfig python:build shebangfix tar:bzip2
+USES=		libtool pathfix perl5 pkgconfig python shebangfix tar:bzip2
 USE_LDCONFIG=	yes
 USE_PERL5=	build
 USE_RC_SUBR=	pcscd
+PYTHON_NO_DEPENDS=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-libsystemd \
@@ -33,17 +34,6 @@ OPTIONS_GROUP_FEATURES=	FILTER
 FEATURES_DESC=		Default features knobs
 FILTER_DESC=		Control (Ignore or Extend) reader names reported by PCSC
 FILTER_CONFIGURE_ENABLE=	filter
-
-post-patch:
-	${REINPLACE_CMD} -e "s,^datadir,#datadir,; s,^data_DATA,#data_DATA," \
-		${WRKSRC}/doc/Makefile.in
-	${REINPLACE_CMD} -e "s,libusb-1.0/libusb.h,libusb.h,; \
-		s,libusb_strerror(ret),ret," ${WRKSRC}/configure \
-			${WRKSRC}/src/hotplug_libusb.c
-	${REINPLACE_CMD} -e "s,-ldl,," ${WRKSRC}/src/spy/Makefile.in
-
-post-patch-DOCS-off:
-	${REINPLACE_CMD} -e '/^install-data-am: / s|install-docDATA||' ${WRKSRC}/doc/Makefile.in
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/pcsc/drivers
