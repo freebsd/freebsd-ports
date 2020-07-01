@@ -42,6 +42,7 @@ include/SFCGAL/algorithm/intersection.h
 include/SFCGAL/algorithm/intersects.h
 include/SFCGAL/algorithm/isValid.h
 include/SFCGAL/algorithm/length.h
+include/SFCGAL/algorithm/lineSubstring.h
 include/SFCGAL/algorithm/minkowskiSum.h
 include/SFCGAL/algorithm/normal.h
 include/SFCGAL/algorithm/offset.h
@@ -107,3 +108,4 @@ include/SFCGAL/version.h
 lib/libSFCGAL.so
 lib/libSFCGAL.so.%%SHL1%%
 lib/libSFCGAL.so.%%SHL3%%
+libdata/pkgconfig/sfcgal.pc
