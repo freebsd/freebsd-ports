@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vips
-PORTVERSION=	1.0.9
-PORTREVISION=	3
+PORTVERSION=	1.0.10
 CATEGORIES=	graphics
 
 MAINTAINER=	mops@punkt.de
