@@ -8,7 +8,7 @@ CATEGORIES=	x11-wm enlightenment
 MASTER_SITES=	# Empty
 DISTFILES=	# Empty
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	enlightenment@FreeBSD.org
 COMMENT=	Meta-port for Enlightenment modules
 
 NO_BUILD=	yes
