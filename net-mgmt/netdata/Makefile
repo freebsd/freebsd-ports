@@ -11,8 +11,6 @@ COMMENT=	Scalable distributed realtime performance and health monitoring
 
 LICENSE=	GPLv3
 
-BROKEN_SSL=	libressl libressl-devel
-
 LIB_DEPENDS=	libjson-c.so:devel/json-c \
 		libuuid.so:misc/e2fsprogs-libuuid \
 		libuv.so:devel/libuv
