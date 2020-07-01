@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libsemigroups
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	math
 
@@ -35,6 +35,8 @@ pre-configure:
 		${WRKSRC}/m4/ax_check_hpcombi.m4
 	${REINPLACE_CMD} -e 's|extern/HPCombi/include|${LOCALBASE}/include/HPCombi|'	\
 		${WRKSRC}/Makefile.am
+	${REINPLACE_CMD} -e 's|HPCombi/include|HPCombi|'	\
+		${WRKSRC}/include/libsemigroups/hpcombi.hpp
 .endif
 	${REINPLACE_CMD} -e 's|fmtinclude_HEADERS|#fmtinclude_HEADERS|'	\
 		${WRKSRC}/Makefile.am
