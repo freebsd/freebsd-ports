@@ -26,11 +26,12 @@ GH_TUPLE=	CTSRD-CHERI:qemu:${QEMU_COMMIT} \
 		qemu:keycodemapdb:6b3d716:qemu/ui/keycodemapdb \
 
 HAS_CONFIGURE=	yes
-USES=	compiler:c11 gettext-runtime gl gmake gnome libtool makeinfo pkgconfig \
-	python:build xorg
+USES=		compiler:c11 gettext-runtime gl gmake gnome iconv:wchar_t perl5 \
+		pkgconfig python:build xorg
 USE_XORG=	pixman
 USE_GNOME+=	glib20 libxml2
-USE_GL+=	gbm
+USE_PERL5=	build
+USE_GL+=	gl
 ONLY_FOR_ARCHS=	amd64 powerpc64
 
 OPTIONS_DEFINE=	DOCS
@@ -55,8 +56,6 @@ CONFIGURE_ARGS+= \
 		--localstatedir=/var
 EXTRA_CFLAGS=	-DCHERI_UNALIGNED
 
-QEMU_SYSTEM_CHERI?=	qemu-system${PKGNAMESUFFIX}
-PLIST=	/dev/null
 PLIST_FILES=	bin/qemu-system-cheri128 \
 		bin/qemu-system-cheri128magic \
 		bin/qemu-system-riscv64cheri
