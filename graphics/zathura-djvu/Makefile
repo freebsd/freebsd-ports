@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	zathura-djvu
-PORTVERSION=	0.2.8
-PORTREVISION=	3
+PORTVERSION=	0.2.9
 CATEGORIES=	graphics
-MASTER_SITES=	https://pwmt.org/projects/zathura/plugins/download/ \
+MASTER_SITES=	https://pwmt.org/projects/zathura-djvu/download/ \
 		http://www.madpilot.net/~mad/pwmt.org/
 
 MAINTAINER=	alexander.4mail@gmail.com
@@ -14,13 +13,14 @@ COMMENT=	DjVu support for zathura
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libdjvulibre.so:graphics/djvulibre
+LIB_DEPENDS=	libdjvulibre.so:graphics/djvulibre \
+		libgirara-gtk3.so:x11-toolkits/girara
 BUILD_DEPENDS=	zathura:graphics/zathura
 RUN_DEPENDS=	zathura:graphics/zathura
 
 USES=		compiler:c11 desktop-file-utils gnome meson ninja pkgconfig \
 		tar:xz
-USE_GNOME=	glib20 gtk30
+USE_GNOME=	glib20 gtk30 cairo
 
 PLIST_FILES=	lib/zathura/libdjvu.so \
 		share/appdata/org.pwmt.zathura-djvu.metainfo.xml \
