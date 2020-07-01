@@ -37,7 +37,7 @@ MESON_ARGS+=	-Ddri-drivers="" \
 
 LDFLAGS_i386=		-Wl,-znotext
 
-MESA_ARGS+=	-Dgallium-xa=true
+MESON_ARGS+=	-Dgallium-xa=true
 
 .include "${MASTERDIR}/Makefile.targets"
 .include <bsd.port.post.mk>
