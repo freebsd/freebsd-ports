@@ -10,6 +10,7 @@ MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Fast sampling profiler for ruby code
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gem python shebangfix
 USE_RUBY=	yes
