@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	supervisor
-PORTVERSION=	4.0.3
+PORTVERSION=	4.2.0
 PORTEPOCH=	1
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	hizel@vyborg.ru
+MAINTAINER=	thomas@gibfest.dk
 COMMENT=	System for controlling process state under UNIX
 
 LICENSE=	REPOZE BSD3CLAUSE MEDUSA
@@ -19,7 +19,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSES.txt
 LICENSE_PERMS_REPOZE=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_MEDUSA=	dist-mirror pkg-mirror auto-accept
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}meld3>=1.0.0:www/py-meld3@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>=0.5.0:devel/py-mock@${PY_FLAVOR}
 
 USES=		python shebangfix
