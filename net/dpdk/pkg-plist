@@ -88,6 +88,7 @@ include/rte_dev.h
 include/rte_dev_info.h
 include/rte_devargs.h
 include/rte_distributor.h
+include/rte_dpaa2_mempool.h
 include/rte_eal.h
 include/rte_eal_interrupts.h
 include/rte_eal_memconfig.h
