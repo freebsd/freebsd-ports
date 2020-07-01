@@ -46,6 +46,7 @@ man/man1/libinput.1.gz
 %%DATADIR%%/30-vendor-microsoft.quirks
 %%DATADIR%%/30-vendor-razer.quirks
 %%DATADIR%%/30-vendor-synaptics.quirks
+%%DATADIR%%/30-vendor-trust.quirks
 %%DATADIR%%/30-vendor-vmware.quirks
 %%DATADIR%%/30-vendor-wacom.quirks
 %%DATADIR%%/50-system-acer.quirks
@@ -57,6 +58,7 @@ man/man1/libinput.1.gz
 %%DATADIR%%/50-system-google.quirks
 %%DATADIR%%/50-system-hp.quirks
 %%DATADIR%%/50-system-lenovo.quirks
+%%DATADIR%%/50-system-sony.quirks
 %%DATADIR%%/50-system-system76.quirks
 %%DATADIR%%/50-system-toshiba.quirks
 share/zsh/site-functions/_libinput
