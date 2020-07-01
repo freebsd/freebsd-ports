@@ -1,6 +1,6 @@
---- device/lib/Makefile.in.orig	2019-03-21 14:49:01 UTC
+--- device/lib/Makefile.in.orig	2019-09-30 09:10:08 UTC
 +++ device/lib/Makefile.in
-@@ -574,29 +574,7 @@ clean_intermediate-pic14:
+@@ -590,29 +590,7 @@ clean_intermediate-pic14:
  # ---------------------------------------------------
  install: all installdirs
  	[ ! -d "$(BUILDDIR)" ] || $(CP_U) -r $(BUILDDIR)/* $(sdcc_libdir)
@@ -8,11 +8,11 @@
 -	                     $(srcdir)/z80 $(srcdir)/z180 $(srcdir)/ez80_z80 $(srcdir)/r2k $(srcdir)/r3ka $(srcdir)/tlcs90 $(srcdir)/gbz80 \
 -	                     $(srcdir)/hc08 $(srcdir)/s08 \
 -	                     $(srcdir)/stm8 \
--	                     $(srcdir)/pdk14 $(srcdir)/pdk15 \
+-	                     $(srcdir)/pdk13 $(srcdir)/pdk14 $(srcdir)/pdk15 \
 -	                     $(srcdir)/pic14 $(srcdir)/pic16 $(srcdir)/*.c $(sdcc_libdir)/src
--	$(CP_U) -r $(MODELS) mcs51 ds390 ds400 z80 z180 ez80_z80 r2k r3ka tlcs90 gbz80 hc08 s08 stm8 pdk14 pdk15 $(sdcc_libdir)/src
+-	$(CP_U) -r $(MODELS) mcs51 ds390 ds400 z80 z180 ez80_z80 r2k r3ka tlcs90 gbz80 hc08 s08 stm8 pdk13 pdk14 pdk15 $(sdcc_libdir)/src
  
--	for src in $(MODELS) ds390 ds400 z80 z180 ez80_z80 r2k r3ka tlcs90 gbz80 hc08 s08 stm8 pdk14 pdk15 pic14 pic16; do \
+-	for src in $(MODELS) ds390 ds400 z80 z180 ez80_z80 r2k r3ka tlcs90 gbz80 hc08 s08 stm8 pdk13 pdk14 pdk15 pic14 pic16; do \
 -	  find $(sdcc_libdir)/src/$$src -depth \
 -	    \( -name '*.rel' -o -name '*.dump*' -o -name '*.sym' -o -name '*.o' -o -name '*.lib' -o \
 -	    -name '*.lst' -o -name '*.asm' -o -name '.svn' -o -name 'autom4te.cache' -o \
@@ -30,7 +30,7 @@
  # Deleting all the installed files
  # --------------------------------
  uninstall:
-@@ -615,12 +593,6 @@ installcheck:
+@@ -631,12 +609,6 @@ installcheck:
  # Creating installation directories
  # ---------------------------------
  installdirs:
