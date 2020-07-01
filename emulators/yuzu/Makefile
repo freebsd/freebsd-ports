@@ -6,6 +6,9 @@ PORTREVISION?=	0
 CATEGORIES=	emulators
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	905e8016a04e.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/1340
+PATCHFILES+=	34635a42c0b3.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/1703
+PATCHFILES+=	1adf640d3725.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/1703
 PATCHFILES+=	e6085ea35f0b.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/4208
 PATCHFILES+=	3b1683a15261.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/4208
 PATCHFILES+=	dda90ce1c249.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/4209
