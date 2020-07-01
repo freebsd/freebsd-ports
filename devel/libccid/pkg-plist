@@ -1,4 +1,0 @@
-bin/RSA_SecurID_getpasswd
-lib/pcsc/drivers/ifd-ccid.bundle/Contents/FreeBSD/libccid.so
-lib/pcsc/drivers/ifd-ccid.bundle/Contents/Info.plist
-man/man1/RSA_SecurID_getpasswd.1.gz
