@@ -3,6 +3,7 @@
 
     COMMENT = Emulators for other operating systems
 
+    SUBDIR += Elliott-803
     SUBDIR += adamem
     SUBDIR += advancemame
     SUBDIR += advancemenu

@@ -1,0 +1,7 @@
+Elliott-803 contains an emulator for this 1960s 39 bit computer.
+Also provided are tape files of some programs, including:
+* The Algol60 compiler
+* Two versions of the H-Code compiler
+* T2 and T102 sources
+
+WWW: https://github.com/hxw/Elliott-803
