@@ -56,7 +56,6 @@ GH_TUPLE=	yuzu-emu:unicorn:1.0.1-153-g73f45735:unicorn/externals/unicorn \
 USES=		cmake compiler:c++17-lang iconv localbase:ldflags \
 		python:build sdl ssl
 USE_SDL=	sdl2
-CXXFLAGS+=	-Wno-narrowing # https://github.com/yuzu-emu/yuzu/issues/3407
 LDFLAGS+=	-Wl,--as-needed # Qt5Network
 TEST_TARGET=	test
 
