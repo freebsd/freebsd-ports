@@ -12,7 +12,7 @@ COMMENT=	Secure shell and telnet client
 # test plan: test ALL 4 GSSAPI_* options, ALL 3 GTK options, WITH_DEBUG=yes build.
 
 LICENSE=	MIT
-LICENSE_FILE=	${FILESDIR}/LICENCE
+LICENSE_FILE=	${PATCH_WRKSRC}/LICENCE
 
 USES=		cpe gmake pkgconfig
 CPE_VENDOR=	simon_tatham
