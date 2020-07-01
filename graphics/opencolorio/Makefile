@@ -70,7 +70,11 @@ PLIST=		${PKGDIR}/pkg-plist-pyglue
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR}
 LIB_DEPENDS=	libtinyxml.so:textproc/tinyxml \
 		libyaml-cpp03.so:devel/yaml-cpp03
+.if ${PORT_OPTIONS:MDOCS}
 USES+=		python:2.7,build
+.else
+USES+=		python:build
+.endif
 USE_LDCONFIG=	yes
 CMAKE_ON+=	OCIO_BUILD_SHARED OCIO_BUILD_PYGLUE
 CMAKE_OFF+=	OCIO_BUILD_APPS
