@@ -215,7 +215,7 @@ step:*:266:266::0:0:Step CA:/nonexistent:/usr/sbin/nologin
 odoo:*:267:267::0:0:Odoo ERP:/nonexistent:/usr/sbin/nologin
 # free: 268
 # free: 269
-# free: 270
+_rpki-client:*:270:270::0:0:rpki-client user:/nonexistent:/usr/sbin/nologin
 # free: 271
 # free: 272
 # free: 273

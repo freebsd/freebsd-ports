@@ -1,0 +1,8 @@
+etc/rpki/afrinic.tal
+etc/rpki/apnic.tal
+etc/rpki/lacnic.tal
+etc/rpki/ripe.tal
+man/man8/rpki-client.8.gz
+sbin/rpki-client
+@dir(%%USERS%%,,0755) /var/cache/rpki-client
+@dir(%%USERS%%,,0755) /var/db/rpki-client

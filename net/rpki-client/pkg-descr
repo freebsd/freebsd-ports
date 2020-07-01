@@ -1,0 +1,10 @@
+rpki-client is a FREE, easy-to-use implementation of the Resource Public Key
+Infrastructure (RPKI) for Relying Parties (RP) to facilitate validation of the
+Route Origin of a BGP announcement. The program queries the RPKI repository
+system and outputs Validated ROA Payloads in the configuration format of either
+OpenBGPD or BIRD, but also as CSV or JSON objects for consumption by other
+routing stacks.
+
+This version is based on the portable version of rpki-client.
+
+WWW: https://www.rpki-client.org/
