@@ -73,6 +73,7 @@
     SUBDIR += cone
     SUBDIR += coolmail
     SUBDIR += courier
+    SUBDIR += courier-analog
     SUBDIR += courier-authlib-vchkpw
     SUBDIR += courier-imap
     SUBDIR += courier-pythonfilter
