@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	elementary-videos
-DISTVERSION=	2.7.1
+DISTVERSION=	2.7.2
 CATEGORIES=	multimedia
 
 MAINTAINER=	miguel@gocobachi.dev
