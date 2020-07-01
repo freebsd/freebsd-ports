@@ -2,7 +2,7 @@
 
 PORTNAME=	teleport
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.2.10
+DISTVERSION=	4.2.11
 CATEGORIES=	security
 
 MAINTAINER=	ports@FreeBSD.org
@@ -19,9 +19,12 @@ USES=		compiler gmake go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	gravitational
-GH_TAG_COMMIT=	b3f4ecb
 
 USE_RC_SUBR=	teleport
+
+# Extra assets are stored in the binary and must not be inadvertently removed
+STRIP=
+NOPRECIOUSMAKEVARS=	YES
 
 SUB_FILES=	pkg-message
 
@@ -29,10 +32,6 @@ PLIST_FILES=	bin/teleport \
 		bin/tctl \
 		bin/tsh \
 		"@sample etc/teleport.yaml.sample"
-
-# Extra assets are stored in the binary and must not be inadvertently removed
-STRIP=
-NOPRECIOUSMAKEVARS=	YES
 
 GO_TELEPORT_SRC_DIR=	src/github.com/gravitational/teleport
 PRE_GOPATH_DIR=	${PORTNAME}-${DISTVERSION}${DISTVERSIONSUFFIX}
