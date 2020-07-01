@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	polyml
-PORTVERSION=	5.7.1
+PORTVERSION=	5.8
 DISTVERSIONPREFIX=	v
 CATEGORIES=	lang
 DIST_SUBDIR=	${PORTNAME}
@@ -12,11 +12,11 @@ COMMENT=	Fast open-source implementation of Standard ML
 
 LICENSE=	LGPL21
 
-ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS=	aarch64 amd64 i386
 
 LIB_DEPENDS=	libffi.so:devel/libffi
 
-USES=		libtool pathfix pkgconfig
+USES=		libtool localbase pathfix pkgconfig
 
 USE_GITHUB=	yes
 
@@ -26,10 +26,17 @@ USE_LDCONFIG=	yes
 
 INSTALL_TARGET=	install-strip
 
-OPTIONS_DEFINE=	MOTIF
+OPTIONS_DEFINE=	MOTIF GMP INTINF_AS_INT
+OPTIONS_DEFAULT=GMP INTINF_AS_INT
 
 MOTIF_CONFIGURE_WITH=	x
 MOTIF_USE=		motif
+
+GMP_CONFIGURE_WITH=	gmp
+GMP_LIB_DEPENDS=	libgmp.so:math/gmp
+
+INTINF_AS_INT_DESC=	Use IntInf.int as int type
+INTINF_AS_INT_CONFIGURE_ENABLE=	intinf-as-int
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lstdc++ ||' ${WRKSRC}/configure
