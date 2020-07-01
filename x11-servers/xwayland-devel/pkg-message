@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 Known issues:
 - When /dev/dri/card0 and /dev/dri/renderD128 have different major(3)
   DRI3 may fail e.g., on i915kms in I915_GETPARAM with EACCESS.
@@ -8,3 +11,6 @@ Known issues:
     $ glxinfo | fgrep Device:
         Device: llvmpipe (LLVM 8.0, 256 bits) (0xffffffff)
     $ chmod u+s `which Xwayland`
+EOM
+}
+]

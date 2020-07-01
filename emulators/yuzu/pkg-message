@@ -1,5 +1,11 @@
+[
+{ type: install
+  message: <<EOM
 Known issues:
 - Vulkan renderer on Intel/AMD GPUs requires Mesa >= 19.3.0. Until
   stable version is updated consider installing graphics/mesa-devel.
 - OpenGL renderer may glitch on Intel GPUs when using i965 Mesa driver.
   Consider switching to iris driver e.g., from graphics/mesa-devel.
+EOM
+}
+]
