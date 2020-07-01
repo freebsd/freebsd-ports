@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	uuid
-PORTVERSION=	1.0.4
-PORTREVISION=	1
+PORTVERSION=	1.1.0
 CATEGORIES=	devel pear
 
 MAINTAINER=	gasol.wu@gmail.com
