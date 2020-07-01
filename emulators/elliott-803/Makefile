@@ -11,7 +11,7 @@ COMMENT=	Emulator and compilers for Elliott 803 computer
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		ncurses
+USES=		compiler:c++17-lang ncurses
 MAKEFILE=	BSDmakefile
 MAKE_ARGS+=	DATADIR="${DATADIR}" PREFIX="${PREFIX}" VERSION="${PKGVERSION}"
 MAKE_ENV+=	LC_ALL=en_US.UTF-8
