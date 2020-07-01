@@ -163,7 +163,6 @@
 %%DRUPAL_BASE%%/misc/tree-bottom.png
 %%DRUPAL_BASE%%/misc/tree.png
 %%DRUPAL_BASE%%/misc/typo3/drupal-security/PharExtensionInterceptor.php
-%%DRUPAL_BASE%%/misc/typo3/phar-stream-wrapper/.gitignore
 %%DRUPAL_BASE%%/misc/typo3/phar-stream-wrapper/LICENSE
 %%DRUPAL_BASE%%/misc/typo3/phar-stream-wrapper/README.md
 %%DRUPAL_BASE%%/misc/typo3/phar-stream-wrapper/composer.json
@@ -762,6 +761,7 @@
 %%DRUPAL_BASE%%/modules/simpletest/tests/psr_4_test/src/Tests/ExampleTest.php
 %%DRUPAL_BASE%%/modules/simpletest/tests/psr_4_test/src/Tests/Nested/NestedExampleTest.php
 %%DRUPAL_BASE%%/modules/simpletest/tests/registry.test
+%%DRUPAL_BASE%%/modules/simpletest/tests/request_sanitizer.test
 %%DRUPAL_BASE%%/modules/simpletest/tests/requirements1_test.info
 %%DRUPAL_BASE%%/modules/simpletest/tests/requirements1_test.install
 %%DRUPAL_BASE%%/modules/simpletest/tests/requirements1_test.module
