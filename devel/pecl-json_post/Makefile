@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	json_post
-PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTVERSION=	1.0.2
 CATEGORIES=	devel
 
 MAINTAINER=	gasol.wu@gmail.com
