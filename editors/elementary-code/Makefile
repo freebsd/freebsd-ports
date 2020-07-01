@@ -28,8 +28,8 @@ LIB_DEPENDS=	libatk-1.0.so:accessibility/atk \
 		libwebkit2gtk-4.0.so:www/webkit2-gtk3 \
 		libzeitgeist-2.0.so:sysutils/zeitgeist
 
-USES=		desktop-file-utils gettext gnome meson ninja pkgconfig \
-		python:build xorg
+USES=		compiler:c++11-lang desktop-file-utils gettext gnome meson \
+		ninja pkgconfig python:build xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	elementary
 GH_PROJECT=	code
