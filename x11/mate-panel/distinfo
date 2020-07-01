@@ -1,5 +1,5 @@
 TIMESTAMP = 1591974472
 SHA256 (mate/mate-panel-1.24.0.tar.xz) = 369e088806b72c4035c4342de0f16301d9b5d8b8ba5ad16350bba2892f0830c3
 SIZE (mate/mate-panel-1.24.0.tar.xz) = 3040068
-SHA256 (mate/f4c44ad563ff.patch) = b1a985e32adb1605414962381a11aab1255d3dbfec14f7c1edaf5846f91d2d0d
-SIZE (mate/f4c44ad563ff.patch) = 768
+SHA256 (mate/9f15be59faa7.patch) = f3e7c063a122ae41809276b61a2ec306a27562ef65832eb3ffe92063868ad819
+SIZE (mate/9f15be59faa7.patch) = 804

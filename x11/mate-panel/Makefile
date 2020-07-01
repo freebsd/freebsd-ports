@@ -8,7 +8,7 @@ MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
 
 PATCH_SITES=	https://github.com/mate-desktop/${PORTNAME}/commit/
-PATCHFILES+=	f4c44ad563ff.patch:-p1 # https://github.com/mate-desktop/mate-panel/pull/1104
+PATCHFILES+=	9f15be59faa7.patch:-p1 # https://github.com/mate-desktop/mate-panel/pull/1104
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Panel component for the MATE Desktop
