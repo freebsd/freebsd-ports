@@ -73,7 +73,7 @@
              qtdir = build.env['QTDIR']
              framework_path = Qt.find_framework_libdir(qtdir, qt5)
 -            if os.path.isdir(framework_path):
-+	    if framework_path and os.path.isdir(framework_path):
++            if framework_path and os.path.isdir(framework_path):
                  build.env.Append(LINKFLAGS="-L" + framework_path)
  
          # Mixxx requires C++11 support. Windows enables C++11 features by
@@ -91,7 +91,7 @@
          # it, though might cause issues. This is safe to remove once we
          # deprecate Karmic support. rryan 2/2011
 -        build.env.Append(CPPPATH='/usr/include/taglib/')
-+	build.env.Append(CPPPATH='%%LOCALBASE%%/include/taglib/')
++        build.env.Append(CPPPATH='%%LOCALBASE%%/include/taglib/')
  
          if build.platform_is_windows and build.static_dependencies:
              build.env.Append(CPPDEFINES='TAGLIB_STATIC')

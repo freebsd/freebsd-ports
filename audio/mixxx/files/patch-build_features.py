@@ -4,8 +4,8 @@
              # -pthread tells GCC to do the right thing regardless of system
              build.env.Append(CCFLAGS='-pthread')
              build.env.Append(LINKFLAGS='-pthread')
-+	elif build.platform_is_bsd:
-+	    build.env.ParseConfig('pkg-config hidapi --silence-errors --cflags --libs')
++        elif build.platform_is_bsd:
++            build.env.ParseConfig('pkg-config hidapi --silence-errors --cflags --libs')
  
 +            conf.CheckLib(['pthread', 'libpthread'])
 +            conf.CheckLib(['rt', 'librt'])
