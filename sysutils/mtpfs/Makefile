@@ -3,9 +3,8 @@
 
 PORTNAME=	mtpfs
 PORTVERSION=	1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.adebenham.com/files/mtp/
 
 MAINTAINER=	jhixson@FreeBSD.org
 COMMENT=	MTP device filesystem
@@ -18,7 +17,11 @@ LIB_DEPENDS=	libmtp.so:multimedia/libmtp \
 		libid3tag.so:audio/libid3tag \
 		libmad.so:audio/libmad
 
-USES=		fuse gnome pkgconfig
+USES=		autoreconf fuse gnome pkgconfig
+USE_GITHUB=	yes
+GH_ACCOUNT=	cjd
+GH_TAGNAME=	fd3864dd6f0e8183fa2598d4cf890401d3a1e09a
+
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/mtpfs
