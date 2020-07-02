@@ -3,6 +3,7 @@
 
 PORTNAME=	pcsc-lite
 PORTVERSION=	1.9.0
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	devel security
 MASTER_SITES=	https://pcsclite.apdu.fr/files/
@@ -22,7 +23,8 @@ PYTHON_NO_DEPENDS=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-libsystemd \
-		--enable-usbdropdir=${PREFIX}/lib/pcsc/drivers/
+		--enable-usbdropdir=${PREFIX}/lib/pcsc/drivers/ \
+		--enable-ipcdir=/var/run
 
 INSTALL_TARGET=	install-strip
 SHEBANG_FILES=	src/spy/pcsc-spy
