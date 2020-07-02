@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-ce
-PORTVERSION=	13.1.1
+PORTVERSION=	13.1.2
 PORTREVISION=	0
 CATEGORIES=	www devel
 
@@ -82,7 +82,7 @@ MY_DEPENDS=	git>=2.25:devel/git \
 	rubygem-apollo_upload_server>=2.0.0.b.3<2.1.0:net/rubygem-apollo_upload_server \
 	rubygem-graphql-docs>=1.6.0<1.7.0:devel/rubygem-graphql-docs \
 	rubygem-hashie-forbidden_attributes>0:devel/rubygem-hashie-forbidden_attributes \
-	rubygem-kaminari-rails60>=1.0<2.0:www/rubygem-kaminari-rails60 \
+	rubygem-kaminari-rails60>=1.2.1<2.0:www/rubygem-kaminari-rails60 \
 	rubygem-hamlit>=2.11.0<2.12.0:www/rubygem-hamlit \
 	rubygem-carrierwave>=1.3<2.0:www/rubygem-carrierwave \
 	rubygem-mini_magick>0:graphics/rubygem-mini_magick \
@@ -251,7 +251,7 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 GL_PROJECT=	gitlab-foss
 # Find the here: https://gitlab.com/gitlab-org/gitlab-foss/-/tags
-GL_COMMIT=	bdb9883705a46a924818c26317268b95ea3f9e12
+GL_COMMIT=	2e7a6f64b07d018acbf2d42e5cc4c5224e4e8b42
 SHEBANG_FILES=	bin/background_* scripts/build_assets_image scripts/clean-old-cached-assets scripts/create_postgres_user.sh scripts/prepare_postgres_fdw.sh scripts/review_apps/gcp_cleanup.sh scripts/rspec_helpers.sh scripts/security-harness
 
 USERS=	git

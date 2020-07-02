@@ -1,4 +1,4 @@
-TIMESTAMP = 1593444209
+TIMESTAMP = 1593717137
 SHA256 (BurntSushi-toml-v0.3.1_GH0.tar.gz) = 6593da894578ba510a470735ffbdc88ce88033094dc5a8f4d3957ab87e18803f
 SIZE (BurntSushi-toml-v0.3.1_GH0.tar.gz) = 42077
 SHA256 (DataDog-dd-trace-go-v1.7.0_GH0.tar.gz) = d81bd47683ef9cbd228691b077373d3e15ca5fa5b9e7919099c4e87779040e84
@@ -99,8 +99,8 @@ SHA256 (uber-jaeger-client-go-v2.15.0_GH0.tar.gz) = 6b89d1a6684475fcbaed3f9d2137
 SIZE (uber-jaeger-client-go-v2.15.0_GH0.tar.gz) = 164460
 SHA256 (uber-jaeger-lib-v1.5.0_GH0.tar.gz) = 98901cc41df77858a2f601ad48b45bdf72af40c56f15bc5182416b15db0daac3
 SIZE (uber-jaeger-lib-v1.5.0_GH0.tar.gz) = 31655
-SHA256 (gitlab-org-gitaly-0fb7caf0703e3f78085054c367dcba9f640140de_GL0.tar.gz) = b2b8315f3287154c12c51d566a7b9cc5347a271c92292aed5d14855965dbd862
-SIZE (gitlab-org-gitaly-0fb7caf0703e3f78085054c367dcba9f640140de_GL0.tar.gz) = 3022370
+SHA256 (gitlab-org-gitaly-26cde441322fc0f7b51c62cda6073d4c474f2163_GL0.tar.gz) = ce632231a1f1d5c3e87263ca0f115b04c15ebb3af7ccecfb776deeea17e47e90
+SIZE (gitlab-org-gitaly-26cde441322fc0f7b51c62cda6073d4c474f2163_GL0.tar.gz) = 3022406
 SHA256 (gitlab-org-gitlab-shell-716e30c55e893ebe2385b27f85902a789f26c6ef_GL0.tar.gz) = 9a2a40a6c44802b1de7ff46bc9c6bc97c8be179d0ca4fe755c22044650d3f84c
 SIZE (gitlab-org-gitlab-shell-716e30c55e893ebe2385b27f85902a789f26c6ef_GL0.tar.gz) = 65840
 SHA256 (gitlab-org-labkit-0149780c759d60f61fcfe1648fb882ba7ec41f3f_GL0.tar.gz) = fa3a9e6a6da58375427ee1814d95dba8d55bee13537492bba19480eae772ab95

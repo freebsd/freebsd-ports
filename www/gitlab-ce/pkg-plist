@@ -66,7 +66,6 @@
 %%WWWDIR%%/.stylelintrc
 %%WWWDIR%%/.vale.ini
 %%WWWDIR%%/.yamllint
-%%WWWDIR%%/CHANGELOG-EE.md
 %%WWWDIR%%/CHANGELOG.md
 %%WWWDIR%%/CONTRIBUTING.md
 %%WWWDIR%%/Dangerfile
@@ -6680,6 +6679,7 @@
 %%WWWDIR%%/app/services/snippets/count_service.rb
 %%WWWDIR%%/app/services/snippets/create_service.rb
 %%WWWDIR%%/app/services/snippets/destroy_service.rb
+%%WWWDIR%%/app/services/snippets/repository_validation_service.rb
 %%WWWDIR%%/app/services/snippets/update_service.rb
 %%WWWDIR%%/app/services/spam/akismet_service.rb
 %%WWWDIR%%/app/services/spam/ham_service.rb
@@ -6775,6 +6775,7 @@
 %%WWWDIR%%/app/validators/cron_validator.rb
 %%WWWDIR%%/app/validators/devise_email_validator.rb
 %%WWWDIR%%/app/validators/duration_validator.rb
+%%WWWDIR%%/app/validators/html_safety_validator.rb
 %%WWWDIR%%/app/validators/js_regex_validator.rb
 %%WWWDIR%%/app/validators/json_schema_validator.rb
 %%WWWDIR%%/app/validators/json_schemas/build_report_result_data.json
@@ -20755,6 +20756,7 @@
 %%WWWDIR%%/spec/initializers/asset_proxy_setting_spec.rb
 %%WWWDIR%%/spec/initializers/attr_encrypted_no_db_connection_spec.rb
 %%WWWDIR%%/spec/initializers/attr_encrypted_thread_safe_spec.rb
+%%WWWDIR%%/spec/initializers/cookies_serializer_spec.rb
 %%WWWDIR%%/spec/initializers/database_config_spec.rb
 %%WWWDIR%%/spec/initializers/direct_upload_support_spec.rb
 %%WWWDIR%%/spec/initializers/doorkeeper_spec.rb
@@ -23762,6 +23764,7 @@
 %%WWWDIR%%/spec/services/snippets/count_service_spec.rb
 %%WWWDIR%%/spec/services/snippets/create_service_spec.rb
 %%WWWDIR%%/spec/services/snippets/destroy_service_spec.rb
+%%WWWDIR%%/spec/services/snippets/repository_validation_service_spec.rb
 %%WWWDIR%%/spec/services/snippets/update_service_spec.rb
 %%WWWDIR%%/spec/services/spam/akismet_service_spec.rb
 %%WWWDIR%%/spec/services/spam/ham_service_spec.rb
@@ -24424,6 +24427,7 @@
 %%WWWDIR%%/spec/validators/cron_freeze_period_timezone_validator_spec.rb
 %%WWWDIR%%/spec/validators/cron_validator_spec.rb
 %%WWWDIR%%/spec/validators/devise_email_validator_spec.rb
+%%WWWDIR%%/spec/validators/html_safety_validator_spec.rb
 %%WWWDIR%%/spec/validators/js_regex_validator_spec.rb
 %%WWWDIR%%/spec/validators/json_schema_validator_spec.rb
 %%WWWDIR%%/spec/validators/named_ecdsa_key_validator_spec.rb
