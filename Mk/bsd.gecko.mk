@@ -185,8 +185,7 @@ BUILD_DEPENDS+=	${-${dep}_BUILD_DEPENDS}
 MOZ_OPTIONS+=	\
 		--enable-update-channel=${PKGNAMESUFFIX:Urelease:S/^-//} \
 		--disable-updater \
-		--with-system-zlib \
-		--with-system-bz2
+		--with-system-zlib
 
 # API keys from www/chromium 
 # http://www.chromium.org/developers/how-tos/api-keys
