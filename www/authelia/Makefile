@@ -2,7 +2,7 @@
 
 PORTNAME=	authelia
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.20.0
+DISTVERSION=	4.21.0
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		go:modules
 USE_GITHUB=	yes
 GH_TUPLE=	\
+		Azure:go-ntlmssp:66371956d46c:azure_go_ntlmssp/vendor/github.com/Azure/go-ntlmssp \
 		Gurpartap:logrus-stack:89c00d8a28f4:gurpartap_logrus_stack/vendor/github.com/Gurpartap/logrus-stack \
 		Workiva:go-datastructures:v1.0.52:workiva_go_datastructures/vendor/github.com/Workiva/go-datastructures \
 		aletheia-icu:broccoli:c5ac961a357a:aletheia_icu_broccoli_fs/vendor/aletheia.icu/broccoli \
@@ -33,12 +34,12 @@ GH_TUPLE=	\
 		fsnotify:fsnotify:v1.4.7:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		go-asn1-ber:asn1-ber:v1.5.0:go_asn1_ber_asn1_ber/vendor/github.com/go-asn1-ber/asn1-ber \
 		go-ini:ini:v1.51.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
-		go-ldap:ldap:v3.1.11:go_ldap_ldap_v3/vendor/github.com/go-ldap/ldap \
+		go-ldap:ldap:v3.2.1:go_ldap_ldap_v3/vendor/github.com/go-ldap/ldap \
 		go-redis:redis:v8.0.0-beta.4:go_redis_redis_v8/vendor/github.com/go-redis/redis/v8 \
 		go-sql-driver:mysql:v1.5.0:go_sql_driver_mysql/vendor/github.com/go-sql-driver/mysql \
 		go-yaml:yaml:9f266ea9e77c:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
 		go-yaml:yaml:v2.3.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
-		golang:crypto:f7b00557c8c4:golang_crypto/vendor/golang.org/x/crypto \
+		golang:crypto:70a84ac30bf9:golang_crypto/vendor/golang.org/x/crypto \
 		golang:mock:v1.4.3:golang_mock/vendor/github.com/golang/mock \
 		golang:sys:85ca7c5b95cd:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
@@ -53,7 +54,7 @@ GH_TUPLE=	\
 		mitchellh:mapstructure:v1.1.2:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
 		onsi:ginkgo:v1.10.3:onsi_ginkgo/vendor/github.com/onsi/ginkgo \
 		onsi:gomega:v1.7.1:onsi_gomega/vendor/github.com/onsi/gomega \
-		open-telemetry:opentelemetry-go:v0.5.0:opentelemetry_go/vendor/go.opentelemetry.io/otel \
+		open-telemetry:opentelemetry-go:v0.5.0:open_telemetry_opentelemetry_go/vendor/go.opentelemetry.io/otel \
 		otiai10:copy:v1.2.0:otiai10_copy/vendor/github.com/otiai10/copy \
 		pelletier:go-toml:v1.4.0:pelletier_go_toml/vendor/github.com/pelletier/go-toml \
 		philhofer:fwd:v1.0.0:philhofer_fwd/vendor/github.com/philhofer/fwd \
