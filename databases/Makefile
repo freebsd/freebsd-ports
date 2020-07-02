@@ -742,7 +742,6 @@
     SUBDIR += py-couchdb
     SUBDIR += py-dbf
     SUBDIR += py-dbutils
-    SUBDIR += py-django-transaction-hooks
     SUBDIR += py-fakeredis
     SUBDIR += py-fdb
     SUBDIR += py-firebirdsql

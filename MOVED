@@ -15149,3 +15149,4 @@ databases/mariadb101-client|databases/mariadb103-client|2020-07-01|Has expired: 
 databases/mariadb101-server|databases/mariadb103-server|2020-07-01|Has expired: Port will be removed when 10.5 is added, please switch to a newer version
 databases/mariadb102-server|databases/mariadb103-server|2020-07-01|Has expired: Port will be removed when 10.5 is added, please switch to a newer version
 databases/mariadb102-client|databases/mariadb103-client|2020-07-01|Has expired: Port will be removed when 10.5 is added, please switch to a newer version
+databases/py-django-transaction-hooks||2020-07-02|Has expired: Unmaintained upstream and merged into Django since 1.9
