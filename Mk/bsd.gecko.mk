@@ -214,9 +214,7 @@ RUN_DEPENDS+=	libcanberra>0:audio/libcanberra
 .if ${PORT_OPTIONS:MDBUS}
 BUILD_DEPENDS+=	libnotify>0:devel/libnotify
 LIB_DEPENDS+=	libdbus-1.so:devel/dbus \
-				libdbus-glib-1.so:devel/dbus-glib \
-				libstartup-notification-1.so:x11/startup-notification
-MOZ_OPTIONS+=	--enable-startup-notification
+				libdbus-glib-1.so:devel/dbus-glib
 .else
 MOZ_OPTIONS+=	--disable-dbus
 .endif
