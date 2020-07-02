@@ -30,6 +30,7 @@ bin/stella
 %%PORTDOCS%%%%DOCSDIR%%/graphics/eventmapping.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/eventmapping_combo.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/eventmapping_devsports.png
+%%PORTDOCS%%%%DOCSDIR%%/graphics/eventmapping_mouse.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/eventmapping_remap.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/jr_pacman.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/launcher.png
@@ -44,6 +45,7 @@ bin/stella
 %%PORTDOCS%%%%DOCSDIR%%/graphics/options_developer_tia.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/options_developer_timemachine.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/options_developer_video.png
+%%PORTDOCS%%%%DOCSDIR%%/graphics/options_emulation.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/options_gameinfo_cartridge.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/options_gameinfo_console.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/options_gameinfo_controller.png
@@ -54,6 +56,7 @@ bin/stella
 %%PORTDOCS%%%%DOCSDIR%%/graphics/options_ui.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/options_video.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/options_video_dbgcolors.png
+%%PORTDOCS%%%%DOCSDIR%%/graphics/options_video_palettes.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/options_video_tv.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/pacman.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/qwertz.png
