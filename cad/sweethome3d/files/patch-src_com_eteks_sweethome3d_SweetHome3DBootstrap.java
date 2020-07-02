@@ -1,6 +1,6 @@
---- src/com/eteks/sweethome3d/SweetHome3DBootstrap.java.orig	2017-02-01 12:44:35 UTC
+--- src/com/eteks/sweethome3d/SweetHome3DBootstrap.java.orig	2020-04-15 10:23:38 UTC
 +++ src/com/eteks/sweethome3d/SweetHome3DBootstrap.java
-@@ -53,118 +53,34 @@ public class SweetHome3DBootstrap {
+@@ -54,117 +54,31 @@ public class SweetHome3DBootstrap {
      String operatingSystemName = System.getProperty("os.name");
      String javaVersion = System.getProperty("java.version");
      String java7Prefix = "1.7.0_";
@@ -10,12 +10,12 @@
 -        // Refuse to let Sweet Home 3D run under Mac OS X with Java Web Start 6
 -        String message = Locale.getDefault().getLanguage().equals(Locale.FRENCH.getLanguage())
 -            ? "Sweet Home 3D ne peut pas fonctionner avec Java\n"
--            + "Web Start 6 sous Mac OS X de façon fiable.\n" 
--            + "Merci de télécharger le programme d'installation depuis\n" 
+-            + "Web Start 6 sous Mac OS X de façon fiable.\n"
+-            + "Merci de télécharger le programme d'installation depuis\n"
 -            + "http://www.sweethome3d.com/fr/download.jsp"
--            : "Sweet Home 3D can't reliably run with Java Web Start 6\n" 
--            + "under Mac OS X.\n" 
--            + "Please download the installer version from\n" 
+-            : "Sweet Home 3D can't reliably run with Java Web Start 6\n"
+-            + "under Mac OS X.\n"
+-            + "Please download the installer version from\n"
 -            + "http://www.sweethome3d.com/download.jsp";
 -        JOptionPane.showMessageDialog(null, message);
 -        System.exit(1);
@@ -39,22 +39,22 @@
 -          && Integer.parseInt(javaVersion.substring(java7Prefix.length(), java7Prefix.length() + 2)) < 40
 -          || javaVersion.length() == java7Prefix.length() + 1 // Test whether version is on 1 digit (i.e. < 40)
 -          || !Character.isDigit(javaVersion.charAt(java7Prefix.length() + 1)))) {
--        // Refuse to let Sweet Home 3D run under Mac OS X with Java 7 before version 7u40 
+-        // Refuse to let Sweet Home 3D run under Mac OS X with Java 7 before version 7u40
 -        String message = Locale.getDefault().getLanguage().equals(Locale.FRENCH.getLanguage())
--            ? "Sous Mac OS X, Sweet Home 3D ne peut fonctionner avec Java 7\n" 
--            + "qu'à partir de la version Java 7u40. Merci de mettre à jour\n" 
+-            ? "Sous Mac OS X, Sweet Home 3D ne peut fonctionner avec Java 7\n"
+-            + "qu'à partir de la version Java 7u40. Merci de mettre à jour\n"
 -            + "votre version de Java ou de lancer Sweet Home 3D sous Java 6."
--            : "Under Mac OS X, Sweet Home 3D can run with Java 7 only\n" 
--            + "from version Java 7u40. Please, update you Java version\n" 
+-            : "Under Mac OS X, Sweet Home 3D can run with Java 7 only\n"
+-            + "from version Java 7u40. Please, update you Java version\n"
 -            + "or run Sweet Home 3D under Java 6.";
 -        JOptionPane.showMessageDialog(null, message);
 -        System.exit(1);
--      } else { // Java >= 1.7.0_40    
+-      } else { // Java >= 1.7.0_40
 -        extensionJarsAndDlls.addAll(Arrays.asList(new String [] {
 -            "java3d-1.6/j3dcore.jar", // Mac OS X Java 3D 1.6 jars and DLLs
 -            "java3d-1.6/vecmath.jar",
 -            "java3d-1.6/j3dutils.jar",
--            "java3d-1.6/gluegen-rt.jar", 
+-            "java3d-1.6/gluegen-rt.jar",
 -            "java3d-1.6/jogl-java3d.jar",
 -            "java3d-1.6/macosx/libgluegen-rt.jnilib",
 -            "java3d-1.6/macosx/libjogl_desktop.jnilib",
@@ -65,7 +65,8 @@
 -      }
 -    } else { // Other OS
 -      if ("1.5.2".equals(System.getProperty("com.eteks.sweethome3d.j3d.version", "1.6"))
--          || "d3d".equals(System.getProperty("j3d.rend", "jogl"))) {
+-          || "d3d".equals(System.getProperty("j3d.rend", "jogl"))
+-          || javaVersion.startsWith("1.5")) {
 -        extensionJarsAndDlls.addAll(Arrays.asList(new String [] {
 -            "j3dcore.jar", // Main Java 3D jars
 -            "vecmath.jar",
@@ -77,7 +78,7 @@
 -        } else {
 -          extensionJarsAndDlls.addAll(Arrays.asList(new String [] {
 -              "linux/i386/libj3dcore-ogl.so", // Linux 32 bits DLLs
--              "linux/i386/libj3dcore-ogl-cg.so", 
+-              "linux/i386/libj3dcore-ogl-cg.so",
 -              "windows/i386/j3dcore-d3d.dll", // Windows 32 bits DLLs
 -              "windows/i386/j3dcore-ogl.dll",
 -              "windows/i386/j3dcore-ogl-cg.dll",
@@ -88,7 +89,7 @@
 -            "java3d-1.6/j3dcore.jar", // Java 3D 1.6 jars
 -            "java3d-1.6/vecmath.jar",
 -            "java3d-1.6/j3dutils.jar",
--            "java3d-1.6/gluegen-rt.jar", 
+-            "java3d-1.6/gluegen-rt.jar",
 -            "java3d-1.6/jogl-java3d.jar"}));
 -        // Disable JOGL library loader
 -        System.setProperty("jogamp.gluegen.UseTempJarCache", "false");
@@ -132,17 +133,13 @@
 +      extensionJarsAndDlls.add("/usr/local/openjdk8/jre/lib/i386/libj3dcore-ogl.so");
 +    } else if (amd64 && java8) {
 +      extensionJarsAndDlls.add("/usr/local/openjdk8/jre/lib/amd64/libj3dcore-ogl.so");
-     }
--    
-+    else {
++    } else {
 +      String message = "Your combination of JDK version and\n"
 +                     + "hardware architecture is not supported.\n"
 +                     + "If you think that this is an error, please\n"
 +                     + "contact the port maintainer.";
 +      JOptionPane.showMessageDialog(null, message);
 +      System.exit(1);
-+    }
-+
+     }
+ 
      String [] applicationPackages = {
-         "com.eteks.sweethome3d",
-         "javax.media",
