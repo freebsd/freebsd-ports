@@ -226,14 +226,6 @@ MOZ_OPTIONS+=	--disable-dbus
 RUN_DEPENDS+=	ffmpeg>=0.8,1:multimedia/ffmpeg
 .endif
 
-.if ${PORT_OPTIONS:MGCONF}
-# XXX USE_GNOME+=gconf2:build is not supported
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libgconf-2.so:devel/gconf2
-MOZ_OPTIONS+=	--enable-gconf
-.else
-MOZ_OPTIONS+=	--disable-gconf
-.endif
-
 .if ${PORT_OPTIONS:MLIBPROXY}
 LIB_DEPENDS+=	libproxy.so:net/libproxy
 MOZ_OPTIONS+=	--enable-libproxy
