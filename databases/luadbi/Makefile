@@ -2,22 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	luadbi
-PORTVERSION=	0.6
+PORTVERSION=	0.7.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	databases
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
 MAINTAINER=	olexander.v.melnyk@gmail.com
-COMMENT=	LuaDBI driver
+COMMENT=	Multi-backend SQL database library for Lua
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake shebangfix lua:module
 SHEBANG_FILES=	DBI.lua
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	mwild1
+
 CFLAGS+=	-g -pedantic -Wall -Qunused-arguments -O2 -shared -fPIC -DPIC -std=c99 -I${LOCALBASE}/include
 LDFLAGS+=	-shared
 MAKE_ENV+=	COMMON_CFLAGS=""
@@ -54,7 +54,6 @@ PGSQL_PLIST_FILES=	%%LUA_MODLIBDIR%%/dbd/postgresql.so
 PGSQL_MAKE_ENV+=	PSQL_INC="-I${LOCALBASE}/include/postgresql/server"
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${LUA_MODLIBDIR}
 	@${MKDIR} ${STAGEDIR}${LUA_MODLIBDIR}/dbd
 	@${MKDIR} ${STAGEDIR}${LUA_MODSHAREDIR}
 	${CP} ${WRKSRC}/DBI.lua ${STAGEDIR}${LUA_MODSHAREDIR}

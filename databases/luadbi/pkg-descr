@@ -1,4 +1,9 @@
-LuaDBI is a database interface library for Lua.
-It is designed to provide a RDBMS agnostic API for handling database operations.
+LuaDBI is a database interface library for Lua.  It's designed to provide
+an RDBMS agnostic API for handling database operations.  It also provides
+support for prepared statement handles, placeholders, and bind parameters
+for all database operations.
+
+On FreeBSD, LuaDBI supports MySQL, PostgreSQL, and SQLite3 databases with
+native database drivers.
 
 WWW: https://github.com/mwild1/luadbi
