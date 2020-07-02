@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	grap
-PORTVERSION=	1.45
+PORTVERSION=	1.46
 CATEGORIES=	textproc graphics
 MASTER_SITES=	http://www.lunabase.org/~faber/Vault/software/grap/
 
