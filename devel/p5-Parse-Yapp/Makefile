@@ -1,9 +1,8 @@
-# Created by: Michael Lyngbøl <lyngbol@wheel.dk>
+# Created by: Michael LyngbÃ¸l <lyngbol@wheel.dk>
 # $FreeBSD$
 
 PORTNAME=	Parse-Yapp
-PORTVERSION=	1.05
-PORTREVISION=	2
+PORTVERSION=	1.21
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
