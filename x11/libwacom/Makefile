@@ -3,7 +3,7 @@
 
 PORTNAME=	libwacom
 DISTVERSIONPREFIX=libwacom-
-DISTVERSION=	1.3
+DISTVERSION=	1.4.1
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -12,6 +12,7 @@ COMMENT=	Adds tablet support to libinput
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto
 LIB_DEPENDS=	libgudev-1.0.so:devel/libgudev
 TEST_DEPENDS=	bash:shells/bash
 

@@ -3,6 +3,7 @@ include/libwacom-1.0/libwacom/libwacom.h
 lib/libwacom.so
 lib/libwacom.so.2
 lib/libwacom.so.2.6.1
+lib/udev/hwdb.d/65-libwacom.hwdb
 lib/udev/rules.d/65-libwacom.rules
 libdata/pkgconfig/libwacom.pc
 man/man1/libwacom-list-local-devices.1.gz
@@ -69,9 +70,11 @@ man/man1/libwacom-list-local-devices.1.gz
 %%DATADIR%%/dtu-1931.tablet
 %%DATADIR%%/dtu-2231.tablet
 %%DATADIR%%/ek-remote.tablet
+%%DATADIR%%/elan-0732.tablet
 %%DATADIR%%/elan-2072.tablet
 %%DATADIR%%/elan-22e2.tablet
 %%DATADIR%%/elan-24db.tablet
+%%DATADIR%%/elan-2514.tablet
 %%DATADIR%%/elan-2537.tablet
 %%DATADIR%%/elan-2627.tablet
 %%DATADIR%%/elan-2628.tablet
@@ -80,6 +83,7 @@ man/man1/libwacom-list-local-devices.1.gz
 %%DATADIR%%/elan-29a1.tablet
 %%DATADIR%%/elan-29b6.tablet
 %%DATADIR%%/elan-5515.tablet
+%%DATADIR%%/gaomon-s56k.tablet
 %%DATADIR%%/generic.tablet
 %%DATADIR%%/graphire-usb.tablet
 %%DATADIR%%/graphire-wireless-8x6.tablet
@@ -89,8 +93,10 @@ man/man1/libwacom-list-local-devices.1.gz
 %%DATADIR%%/graphire3-6x8.tablet
 %%DATADIR%%/graphire4-4x5.tablet
 %%DATADIR%%/graphire4-6x8.tablet
+%%DATADIR%%/huion-420.tablet
 %%DATADIR%%/huion-h420.tablet
 %%DATADIR%%/huion-h610-pro.tablet
+%%DATADIR%%/huion-new-1060-plus.tablet
 %%DATADIR%%/intuos-12x12.tablet
 %%DATADIR%%/intuos-12x18.tablet
 %%DATADIR%%/intuos-4x5.tablet
@@ -166,6 +172,7 @@ man/man1/libwacom-list-local-devices.1.gz
 %%DATADIR%%/isdv4-4831.tablet
 %%DATADIR%%/isdv4-4841.tablet
 %%DATADIR%%/isdv4-484c.tablet
+%%DATADIR%%/isdv4-4851.tablet
 %%DATADIR%%/isdv4-485e.tablet
 %%DATADIR%%/isdv4-4865.tablet
 %%DATADIR%%/isdv4-486a.tablet
@@ -173,9 +180,13 @@ man/man1/libwacom-list-local-devices.1.gz
 %%DATADIR%%/isdv4-4875.tablet
 %%DATADIR%%/isdv4-488f.tablet
 %%DATADIR%%/isdv4-48c9.tablet
+%%DATADIR%%/isdv4-48ca.tablet
+%%DATADIR%%/isdv4-48ce.tablet
+%%DATADIR%%/isdv4-48d6.tablet
 %%DATADIR%%/isdv4-48ec.tablet
 %%DATADIR%%/isdv4-48ed.tablet
 %%DATADIR%%/isdv4-48ee.tablet
+%%DATADIR%%/isdv4-490b.tablet
 %%DATADIR%%/isdv4-5000.tablet
 %%DATADIR%%/isdv4-5002.tablet
 %%DATADIR%%/isdv4-5010.tablet
@@ -288,6 +299,7 @@ man/man1/libwacom-list-local-devices.1.gz
 %%DATADIR%%/layouts/graphire4-6x8.svg
 %%DATADIR%%/layouts/huion-h420.svg
 %%DATADIR%%/layouts/huion-h610-pro.svg
+%%DATADIR%%/layouts/huion-new-1060-plus.svg
 %%DATADIR%%/layouts/intuos-m-p.svg
 %%DATADIR%%/layouts/intuos-m-p2.svg
 %%DATADIR%%/layouts/intuos-m-p3.svg
@@ -334,5 +346,6 @@ man/man1/libwacom-list-local-devices.1.gz
 %%DATADIR%%/one-by-wacom-s-p.tablet
 %%DATADIR%%/one-by-wacom-s-p2.tablet
 %%DATADIR%%/serial-wacf004.tablet
+%%DATADIR%%/volito-4x5.tablet
 %%DATADIR%%/wacom-one.tablet
 %%DATADIR%%/xp-pen-star03.tablet
