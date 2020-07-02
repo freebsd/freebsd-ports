@@ -7,6 +7,8 @@ share/man/man1/lowdown.1.gz
 share/man/man3/lowdown.3.gz
 share/man/man3/lowdown_buf.3.gz
 share/man/man3/lowdown_buf_diff.3.gz
+share/man/man3/lowdown_buf_free.3.gz
+share/man/man3/lowdown_buf_new.3.gz
 share/man/man3/lowdown_doc_free.3.gz
 share/man/man3/lowdown_doc_new.3.gz
 share/man/man3/lowdown_doc_parse.3.gz
