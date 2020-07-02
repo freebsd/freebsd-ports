@@ -6,4 +6,4 @@ This package contains the OpenVAS Manager which provides services on top of
 the OpenVAS Scanner to manage scan results, configurations and user access
 control.
 
-WWW: http://www.openvas.org/
+WWW: https://www.openvas.org/
