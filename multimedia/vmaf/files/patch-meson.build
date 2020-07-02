@@ -1,0 +1,16 @@
+../src/cpu_info.c:37:20: error: use of undeclared identifier '_SC_NPROCESSORS_ONLN'
+    return sysconf(_SC_NPROCESSORS_ONLN);
+                   ^
+
+--- meson.build.orig	2020-06-30 19:00:42 UTC
++++ meson.build
+@@ -26,9 +26,6 @@ if host_machine.system() == 'linux'
+ elif host_machine.system() == 'darwin'
+     test_args += '-D_DARWIN_C_SOURCE'
+     add_project_arguments('-D_DARWIN_C_SOURCE', language: 'c')
+-else
+-    test_args += '-D_POSIX_C_SOURCE=200112L'
+-    add_project_arguments('-D_POSIX_C_SOURCE=200112L', language: 'c')
+ endif
+ 
+ # Header checks

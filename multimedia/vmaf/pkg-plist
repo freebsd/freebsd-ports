@@ -3,6 +3,8 @@ include/libvmaf/libvmaf.h
 include/libvmaf/version.h
 lib/libvmaf.a
 lib/libvmaf.so
+lib/libvmaf.so.0
+lib/libvmaf.so.0.0.0
 libdata/pkgconfig/libvmaf.pc
 share/model/other_models/model_V8a.model
 share/model/other_models/nflx_v1.pkl
