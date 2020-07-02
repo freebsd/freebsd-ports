@@ -19,4 +19,13 @@ file name. To get the new download naming schema visit snort.org,
 and look at 'My Account' -> 'Subscriptions and Oinkcodes'
 EOM
 }
+{
+  type: upgrade
+  message: <<EOM
+Please compare existing files under %%ETCDIR%%
+with the new *.sample files and if required adjust 
+the line 'version='
+
+EOM
+}
 ]
