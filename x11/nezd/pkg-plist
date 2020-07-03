@@ -1,0 +1,12 @@
+bin/nezd
+%%DOCSDIR%%/README.nezd.gz
+share/man/man1/nezd.1.gz
+%%GADGETS%%bin/dbar
+%%GADGETS%%bin/gcpubar
+%%GADGETS%%bin/gdbar
+%%GADGETS%%bin/textwidth
+%%GADGETS%%%%DOCSDIR%%/README.dbar
+%%GADGETS%%%%DOCSDIR%%/README.gcpubar
+%%GADGETS%%%%DOCSDIR%%/README.gdbar
+%%GADGETS%%%%DOCSDIR%%/README.kittscanner
+%%GADGETS%%%%DOCSDIR%%/README.textwidth

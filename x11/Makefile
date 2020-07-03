@@ -225,6 +225,7 @@
     SUBDIR += mrxvt-devel
     SUBDIR += multi-aterm
     SUBDIR += mxico
+    SUBDIR += nezd
     SUBDIR += numlockx
     SUBDIR += nvidia-driver
     SUBDIR += nvidia-driver-304
