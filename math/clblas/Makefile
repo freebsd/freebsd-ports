@@ -13,7 +13,8 @@ COMMENT=	Software library containing BLAS functions written in OpenCL
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_powerpc64=	src/library/tools/tune/tune.c:137: error: 'CLOCK_REALTIME' undeclared (first use in this function)
+BROKEN_FreeBSD_11_powerpc64=	src/library/tools/tune/tune.c:137: error: 'CLOCK_REALTIME' undeclared (first use in this function)
+BROKEN_FreeBSD_12_powerpc64=	src/library/tools/tune/tune.c:137: error: 'CLOCK_REALTIME' undeclared (first use in this function)
 
 BUILD_DEPENDS=	opencl>=0:devel/opencl
 LIB_DEPENDS=	libOpenCL.so:devel/ocl-icd \
