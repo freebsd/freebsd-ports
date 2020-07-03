@@ -3,7 +3,8 @@
 PORTNAME=	webalizer-geodb
 PORTVERSION=	20200601
 CATEGORIES+=	net
-MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/geodb/
+MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/geodb/ \
+		ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Webalizer GeoDB geolocation database
