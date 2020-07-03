@@ -1,6 +1,15 @@
---- src/system_info.c.orig	2016-09-08 07:44:31 UTC
+--- src/system_info.c.orig	2019-12-25 12:35:44 UTC
 +++ src/system_info.c
-@@ -582,6 +582,20 @@ int get_sysinfo(struct fast_sysinfo*info
+@@ -62,7 +62,7 @@ int get_sys_total_mem_size(int64_t *mem_
+    size_t len;
+ 
+    mib[0] = CTL_HW;
+-   mib[1] = HW_MEMSIZE;
++   mib[1] = HW_PHYSMEM;
+    len = sizeof(*mem_size);
+    if (sysctl(mib, 2, mem_size, &len, NULL, 0) != 0)
+    {
+@@ -583,6 +583,20 @@ int get_sysinfo(struct fast_sysinfo*info
  #define ki_rgid kp_eproc.e_pcred.p_rgid
  #define GET_SIGNAL(sig) sig
  

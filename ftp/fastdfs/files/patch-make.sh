@@ -1,56 +1,6 @@
---- make.sh.orig	2016-08-08 07:17:50 UTC
+--- make.sh.orig	2019-12-30 23:36:03 UTC
 +++ make.sh
-@@ -1,58 +1,19 @@
--tmp_src_filename=fdfs_check_bits.c
--cat <<EOF > $tmp_src_filename
--#include <stdio.h>
--#include <unistd.h>
--#include <fcntl.h>
--int main()
--{
--	printf("%d\n", (int)sizeof(long));
--	printf("%d\n", (int)sizeof(off_t));
--	return 0;
--}
--EOF
--
--gcc -D_FILE_OFFSET_BITS=64 -o a.out $tmp_src_filename
--output=$(./a.out)
- 
--if [ -f /bin/expr ]; then
--  EXPR=/bin/expr
--else
--  EXPR=/usr/bin/expr
--fi
--
--count=0
--int_bytes=4
--off_bytes=8
--for col in $output; do
--    if [ $count -eq 0 ]; then
--        int_bytes=$col
--    else
--        off_bytes=$col
--    fi
--
--    count=$($EXPR $count + 1)
--done
--
--/bin/rm -f a.out $tmp_src_filename
--if [ "$int_bytes" -eq 8 ]; then
-+if [ "$(/usr/bin/uname -m)" = "amd64"  ]; then
-  OS_BITS=64
--else
-- OS_BITS=32
--fi
--
--if [ "$off_bytes" -eq 8 ]; then
-  OFF_BITS=64
- else
-+ OS_BITS=32
-  OFF_BITS=32
- fi
- 
+@@ -1,10 +1,10 @@
  ENABLE_STATIC_LIB=0
  ENABLE_SHARED_LIB=1
 -TARGET_PREFIX=$DESTDIR/usr
@@ -64,19 +14,37 @@
  
  DEBUG_FLAG=1
  
-@@ -74,7 +35,7 @@ if [ "$uname" = "Linux" ]; then
+@@ -25,15 +25,7 @@ fi
+ 
+ uname=$(uname)
+ 
+-if [ "$OS_BITS" -eq 64 ]; then
+-  if [ "$uname" = "Darwin" ]; then
+-    LIB_VERSION=lib
+-  else
+-    LIB_VERSION=lib64
+-  fi
+-else
+-  LIB_VERSION=lib
+-fi
++LIB_VERSION=lib
+ 
+ LIBS=''
+ 
+@@ -46,7 +38,7 @@ if [ "$uname" = "Linux" ]; then
    fi
    CFLAGS="$CFLAGS"
  elif [ "$uname" = "FreeBSD" ] || [ "$uname" = "Darwin" ]; then
 -  LIBS="$LIBS -L/usr/lib"
-+  LIBS="$LIBS -L/usr/local/lib"
++  LIBS="$LIBS -L$PREFIX/lib"
    CFLAGS="$CFLAGS"
    if [ "$uname" = "Darwin" ]; then
      CFLAGS="$CFLAGS -DDARWIN"
-@@ -180,26 +141,3 @@ perl -pi -e "s#\\\$\(LIBS\)#$LIBS#g" Mak
+@@ -153,29 +145,3 @@ perl -pi -e "s#\\\$\(CFLAGS\)#$CFLAGS#g"
+ perl -pi -e "s#\\\$\(LIBS\)#$LIBS#g" Makefile
  perl -pi -e "s#\\\$\(TARGET_PREFIX\)#$TARGET_PREFIX#g" Makefile
  cd ..
- 
+-
 -if [ "$1" = "install" ]; then
 -  cd ..
 -  cp -f restart.sh $TARGET_PREFIX/bin
@@ -90,6 +58,8 @@
 -        cp -f conf/storage.conf $TARGET_CONF_PATH/storage.conf.sample
 -        cp -f conf/client.conf $TARGET_CONF_PATH/client.conf.sample
 -        cp -f conf/storage_ids.conf $TARGET_CONF_PATH/storage_ids.conf.sample
+-        cp -f conf/http.conf $TARGET_CONF_PATH/http.conf.sample
+-        cp -f conf/mime.types $TARGET_CONF_PATH/mime.types.sample
 -      fi
 -      mkdir -p $TARGET_INIT_PATH
 -      cp -f init.d/fdfs_trackerd $TARGET_INIT_PATH

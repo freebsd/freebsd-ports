@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	fastdfs
-PORTVERSION=	5.0.11
-PORTREVISION=	1
+PORTVERSION=	6.0.6
 CATEGORIES=	ftp
 
 MAINTAINER=	daniel@blodan.se
@@ -25,7 +24,7 @@ GROUPS=		_fastdfs
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	happyfish100
-GH_TAGNAME=	1e50b4f
+GH_TAGNAME=	V6.06
 
 SUB_FILES=	fdfs_status
 

@@ -1,4 +1,4 @@
---- storage/Makefile.in.orig	2016-08-08 07:17:50 UTC
+--- storage/Makefile.in.orig	2019-12-30 23:36:03 UTC
 +++ storage/Makefile.in
 @@ -1,8 +1,8 @@
  .SUFFIXES: .c .o
@@ -6,12 +6,12 @@
  COMPILE = $(CC) $(CFLAGS)
 -INC_PATH = -I. -Itrunk_mgr -I../common -I../tracker -I../client -Ifdht_client -I/usr/include/fastcommon
 -LIB_PATH = $(LIBS)  -lfastcommon
-+INC_PATH = -I. -Itrunk_mgr -I../common -I../tracker -I../client -Ifdht_client -I$(LOCALBASE)/include/fastcommon
++INC_PATH = -I. -Itrunk_mgr -I../common -I../tracker -I../client -Ifdht_client -I$(LOCALBASE)/include
 +LIB_PATH = $(LIBS) -L${LOCALBASE}/lib -lfastcommon
  TARGET_PATH = $(TARGET_PREFIX)/bin
  CONFIG_PATH = $(TARGET_CONF_PATH)
  
-@@ -34,7 +34,7 @@ all: $(ALL_OBJS) $(ALL_PRGS)
+@@ -35,7 +35,7 @@ all: $(ALL_OBJS) $(ALL_PRGS)
  install:
  	mkdir -p $(TARGET_PATH)
  	mkdir -p $(CONFIG_PATH)

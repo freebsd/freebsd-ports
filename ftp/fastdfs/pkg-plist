@@ -6,6 +6,7 @@ bin/fdfs_delete_file
 bin/fdfs_download_file
 bin/fdfs_file_info
 bin/fdfs_monitor
+bin/fdfs_regenerate_filename
 bin/fdfs_status
 bin/fdfs_storaged
 bin/fdfs_test
@@ -23,6 +24,7 @@ include/fastdfs/fdfs_client.h
 include/fastdfs/fdfs_define.h
 include/fastdfs/fdfs_global.h
 include/fastdfs/fdfs_http_shared.h
+include/fastdfs/fdfs_server_id_func.h
 include/fastdfs/fdfs_shared_func.h
 include/fastdfs/mime_file_parser.h
 include/fastdfs/storage_client.h

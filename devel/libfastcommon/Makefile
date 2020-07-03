@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libfastcommon
-PORTVERSION=	1.0.36
-PORTREVISION=	1
+PORTVERSION=	1.0.43
 CATEGORIES=	devel
 
 MAINTAINER=	daniel@blodan.se
@@ -12,7 +11,7 @@ LICENSE=	GPLv3
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	happyfish100
-GH_TAGNAME=	aa4f5b2
+GH_TAGNAME=	V1.0.43
 
 USE_LDCONFIG=	yes
 

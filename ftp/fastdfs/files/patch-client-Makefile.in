@@ -1,28 +1,25 @@
---- client/Makefile.in.orig	2016-08-08 07:17:50 UTC
+--- client/Makefile.in.orig	2019-12-30 23:36:03 UTC
 +++ client/Makefile.in
-@@ -3,10 +3,10 @@
+@@ -3,8 +3,8 @@
  COMPILE = $(CC) $(CFLAGS)
  ENABLE_STATIC_LIB = $(ENABLE_STATIC_LIB)
  ENABLE_SHARED_LIB = $(ENABLE_SHARED_LIB)
 -INC_PATH = -I../common -I../tracker -I/usr/include/fastcommon
 -LIB_PATH = $(LIBS) -lfastcommon
-+INC_PATH = -I../common -I../tracker -I$(LOCALBASE)/include/fastcommon
++INC_PATH = -I../common -I../tracker -I$(LOCALBASE)/include
 +LIB_PATH = $(LIBS) -L${LOCALBASE}/lib -lfastcommon
  TARGET_PATH = $(TARGET_PREFIX)/bin
--TARGET_LIB = $(TARGET_PREFIX)/lib64
-+TARGET_LIB = $(TARGET_PREFIX)/lib
+ TARGET_LIB = $(TARGET_PREFIX)/$(LIB_VERSION)
  TARGET_INC = $(TARGET_PREFIX)/include
- CONFIG_PATH = $(TARGET_CONF_PATH)
- 
 @@ -50,7 +50,8 @@ ALL_LIBS = $(STATIC_LIBS) $(SHARED_LIBS)
  
  all: $(ALL_OBJS) $(ALL_PRGS) $(ALL_LIBS)
  libfdfsclient.so:
 -	$(COMPILE) -o $@ $< -shared $(FDFS_SHARED_OBJS) $(LIB_PATH)
 +	$(COMPILE) -o $@ $< -shared $(FDFS_SHARED_OBJS) $(LIB_PATH) \
-+	    -Wl,-soname,libfdfsclient.so
++		-Wl,-soname,libfdfsclient.so
  libfdfsclient.a:
- 	ar cru $@ $< $(FDFS_STATIC_OBJS)
+ 	ar rcs $@ $< $(FDFS_STATIC_OBJS)
  .o:
 @@ -66,9 +67,9 @@ install:
  	mkdir -p $(CONFIG_PATH)
