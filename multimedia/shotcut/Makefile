@@ -3,7 +3,6 @@
 PORTNAME=	shotcut
 DISTVERSIONPREFIX=	v
 DISTVERSION=	${FULLVERSION}
-PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	ports@FreeBSD.org
@@ -13,8 +12,7 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libmlt.so:multimedia/mlt
 RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg \
-		${LOCALBASE}/lib/libjack.so:audio/jack \
-		${LOCALBASE}/lib/libSDL.so:devel/sdl12
+		${LOCALBASE}/lib/libjack.so:audio/jack
 
 USES=		desktop-file-utils gl pkgconfig \
 		qmake qt:5 sdl shared-mime-info \
@@ -24,7 +22,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	mltframework
 
 # Needed to be able to correctly check for updates in-app.
-FULLVERSION=	20.04.12
+FULLVERSION=	20.06.28
 
 USE_GL+=	gl
 USE_QT=		buildtools_build concurrent_build core declarative \

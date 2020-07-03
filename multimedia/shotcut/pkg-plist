@@ -1,5 +1,6 @@
 bin/shotcut
 share/applications/org.shotcut.Shotcut.desktop
+share/icons/hicolor/128x128/apps/org.shotcut.Shotcut.png
 share/icons/hicolor/64x64/apps/org.shotcut.Shotcut.png
 share/man/man1/shotcut.1.gz
 share/metainfo/org.shotcut.Shotcut.appdata.xml
@@ -59,6 +60,19 @@ share/mime/packages/org.shotcut.Shotcut.xml
 %%DATADIR%%/qml/filters/audio_reverb/ui.qml
 %%DATADIR%%/qml/filters/audio_swapchannels/meta.qml
 %%DATADIR%%/qml/filters/audio_swapchannels/ui.qml
+%%DATADIR%%/qml/filters/bigsh0t_eq_mask/meta.qml
+%%DATADIR%%/qml/filters/bigsh0t_eq_mask/ui.qml
+%%DATADIR%%/qml/filters/bigsh0t_eq_to_rect/meta.qml
+%%DATADIR%%/qml/filters/bigsh0t_eq_to_rect/ui.qml
+%%DATADIR%%/qml/filters/bigsh0t_eq_to_rect/vui.qml
+%%DATADIR%%/qml/filters/bigsh0t_hemi_to_eq/meta.qml
+%%DATADIR%%/qml/filters/bigsh0t_hemi_to_eq/ui.qml
+%%DATADIR%%/qml/filters/bigsh0t_rect_to_eq/meta.qml
+%%DATADIR%%/qml/filters/bigsh0t_rect_to_eq/ui.qml
+%%DATADIR%%/qml/filters/bigsh0t_stabilize_360/meta.qml
+%%DATADIR%%/qml/filters/bigsh0t_stabilize_360/ui.qml
+%%DATADIR%%/qml/filters/bigsh0t_transform_360/meta.qml
+%%DATADIR%%/qml/filters/bigsh0t_transform_360/ui.qml
 %%DATADIR%%/qml/filters/blend_mode/meta.qml
 %%DATADIR%%/qml/filters/blend_mode/ui.qml
 %%DATADIR%%/qml/filters/bluescreen0r/meta.qml
@@ -234,6 +248,8 @@ share/mime/packages/org.shotcut.Shotcut.xml
 %%DATADIR%%/qml/filters/trails/ui.qml
 %%DATADIR%%/qml/filters/unpremultiply/meta.qml
 %%DATADIR%%/qml/filters/unpremultiply/ui.qml
+%%DATADIR%%/qml/filters/vaguedenoiser/meta.qml
+%%DATADIR%%/qml/filters/vaguedenoiser/ui.qml
 %%DATADIR%%/qml/filters/vertigo/meta.qml
 %%DATADIR%%/qml/filters/vertigo/ui.qml
 %%DATADIR%%/qml/filters/vignette/meta_movit.qml
@@ -297,7 +313,7 @@ share/mime/packages/org.shotcut.Shotcut.xml
 %%DATADIR%%/qml/filters/white/meta_movit.qml
 %%DATADIR%%/qml/filters/white/ui.qml
 %%DATADIR%%/qml/modules/Shotcut/Controls/GradientControl.qml
-%%DATADIR%%/translations/shotcut_th.qm
+%%DATADIR%%/qml/modules/Shotcut/Controls/ToolBarToggle.qml
 %%DATADIR%%/qml/htmleditor/text_outline.qml
 %%DATADIR%%/qml/htmleditor/text_shadow.qml
 %%DATADIR%%/qml/modules/Shotcut/Controls/ColorPicker.qml
@@ -343,10 +359,7 @@ share/mime/packages/org.shotcut.Shotcut.xml
 %%DATADIR%%/qml/views/timeline/TrackHead.qml
 %%DATADIR%%/qml/views/timeline/ZoomSlider.qml
 %%DATADIR%%/qml/views/timeline/timeline.qml
-%%DATADIR%%/translations/shotcut_ar.qm
-%%DATADIR%%/translations/shotcut_gl.qm
-%%DATADIR%%/translations/shotcut_nn.qm
-%%DATADIR%%/translations/shotcut_sv.qm
+%%NLS%%%%DATADIR%%/translations/shotcut_ar.qm
 %%NLS%%%%DATADIR%%/translations/shotcut_ca.qm
 %%NLS%%%%DATADIR%%/translations/shotcut_cs.qm
 %%NLS%%%%DATADIR%%/translations/shotcut_da.qm
@@ -359,6 +372,7 @@ share/mime/packages/org.shotcut.Shotcut.xml
 %%NLS%%%%DATADIR%%/translations/shotcut_fi.qm
 %%NLS%%%%DATADIR%%/translations/shotcut_fr.qm
 %%NLS%%%%DATADIR%%/translations/shotcut_gd.qm
+%%NLS%%%%DATADIR%%/translations/shotcut_gl.qm
 %%NLS%%%%DATADIR%%/translations/shotcut_hu.qm
 %%NLS%%%%DATADIR%%/translations/shotcut_it.qm
 %%NLS%%%%DATADIR%%/translations/shotcut_ja.qm
@@ -366,6 +380,7 @@ share/mime/packages/org.shotcut.Shotcut.xml
 %%NLS%%%%DATADIR%%/translations/shotcut_nb.qm
 %%NLS%%%%DATADIR%%/translations/shotcut_ne.qm
 %%NLS%%%%DATADIR%%/translations/shotcut_nl.qm
+%%NLS%%%%DATADIR%%/translations/shotcut_nn.qm
 %%NLS%%%%DATADIR%%/translations/shotcut_oc.qm
 %%NLS%%%%DATADIR%%/translations/shotcut_pl.qm
 %%NLS%%%%DATADIR%%/translations/shotcut_pt_BR.qm
@@ -373,6 +388,8 @@ share/mime/packages/org.shotcut.Shotcut.xml
 %%NLS%%%%DATADIR%%/translations/shotcut_ru.qm
 %%NLS%%%%DATADIR%%/translations/shotcut_sk.qm
 %%NLS%%%%DATADIR%%/translations/shotcut_sl.qm
+%%NLS%%%%DATADIR%%/translations/shotcut_sv.qm
+%%NLS%%%%DATADIR%%/translations/shotcut_th.qm
 %%NLS%%%%DATADIR%%/translations/shotcut_tr.qm
 %%NLS%%%%DATADIR%%/translations/shotcut_uk.qm
 %%NLS%%%%DATADIR%%/translations/shotcut_zh_CN.qm
