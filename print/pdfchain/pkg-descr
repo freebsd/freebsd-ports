@@ -1,0 +1,16 @@
+This is a port of pdfchain, a graphical user interface for the PDF Toolkit
+(PDFtk). The GUI supports all common features of the command line tool in a
+comfortable way.
+
+External Dependencies =====================
+
+The PDF Chain GUI creates a PDFTK command with all required parameters and
+starts the PDFTK console program that interprets the parameters and processes
+the files. PDFTK must therefore installed at the system and executeable by the
+command "pdftk".
+
+http://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/
+
+(PDF Chain starting from version 0.4.0 is compatible with PDFtk 1.45)
+
+WWW: https://sourceforge.net/projects/pdfchain/

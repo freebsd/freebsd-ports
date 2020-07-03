@@ -148,6 +148,7 @@
     SUBDIR += pdf-tools
     SUBDIR += pdf4tcl
     SUBDIR += pdfbox
+    SUBDIR += pdfchain
     SUBDIR += pdflib
     SUBDIR += pdflib-perl
     SUBDIR += pdfstitch
