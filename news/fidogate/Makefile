@@ -55,6 +55,7 @@ OPTIONS_DEFAULT=	INN DESCDIR FMSGID AVAIL BEST_AKA
 NO_OPTIONS_SORT=yes
 
 INN_BUILD_DEPENDS=	${PREFIX}/news/bin/innconfval:news/inn
+INN_CONFIGURE_ON=	--with-inndir=${PREFIX}/news
 INN_CONFIGURE_OFF=	--without-news
 DESCDIR_CONFIGURE_OFF=	--disable-desc-dir
 ALIASES_CONFIGURE_ON=	--enable-aliases-local
@@ -65,13 +66,13 @@ AVAIL_CONFIGURE_OFF=	--disable-af-avail
 BEST_AKA_CONFIGURE_ON=	--enable-best-aka
 
 INN_DESC=	INN news server support
-DESCDIR_DESC=	put file descriptions into files.bbs
-ALIASES_DESC=	rewrite addresses found in ALIASES
-DBC_DESC=	use msgid correspond data base
-DNT_NETMAIL_DESC=	do not toss netmail
-FMSGID_DESC=	set gate msgid into outgoing messages
-AVAIL_DESC=	change behaviour of areafix command "%list" and "%avail"
-BEST_AKA_DESC=	best AKA select
+DESCDIR_DESC=	Put file descriptions into files.bbs
+ALIASES_DESC=	Rewrite addresses found in ALIASES
+DBC_DESC=	Use msgid correspond data base
+DNT_NETMAIL_DESC=	Do not toss netmail
+FMSGID_DESC=	Set gate msgid into outgoing messages
+AVAIL_DESC=	Change behavior of "%list" and "%avail" commands
+BEST_AKA_DESC=	Best AKA select
 
 post-install:
 	${MKDIR} ${STAGEDIR}${LOGDIR}
