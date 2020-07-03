@@ -309,8 +309,10 @@ share/icons/hicolor/scalable/apps/treeline-icon.svg
 %%DATADIR%%/titlelistview.py
 %%NLS%%%%DATADIR%%/translations/qt_de.qm
 %%NLS%%%%DATADIR%%/translations/qt_es.qm
+%%NLS%%%%DATADIR%%/translations/qt_zh.qm
 %%NLS%%%%DATADIR%%/translations/treeline_de.qm
 %%NLS%%%%DATADIR%%/translations/treeline_es.qm
+%%NLS%%%%DATADIR%%/translations/treeline_zh.qm
 %%DATADIR%%/treeformats.py
 %%DATADIR%%/treeline.py
 %%DATADIR%%/treelocalcontrol.py
