@@ -2,7 +2,7 @@ Postfix attempts to be fast, easy to administer, and secure, while at the same
 time being sendmail compatible enough to not upset existing users. Thus, the
 outside has a sendmail-ish flavor, but the inside is completely different.
 
-Some feautures:
+Some features:
 
 Connection cache for SMTP, DSN status notifications, IP version 6, Plug-in
 support for multiple SASL implementations (Cyrus, Dovecot), TLS encryption and
