@@ -24,6 +24,7 @@ include/SDL2/SDL_loadso.h
 include/SDL2/SDL_log.h
 include/SDL2/SDL_main.h
 include/SDL2/SDL_messagebox.h
+include/SDL2/SDL_metal.h
 include/SDL2/SDL_mouse.h
 include/SDL2/SDL_mutex.h
 include/SDL2/SDL_name.h
@@ -72,9 +73,10 @@ include/SDL2/SDL_video.h
 include/SDL2/SDL_vulkan.h
 include/SDL2/begin_code.h
 include/SDL2/close_code.h
+lib/cmake/SDL2/sdl2-config-version.cmake
 lib/cmake/SDL2/sdl2-config.cmake
 lib/libSDL2-2.0.so.0
-lib/libSDL2-2.0.so.0.10.0
+lib/libSDL2-2.0.so.0.12.0
 lib/libSDL2.a
 lib/libSDL2.so
 lib/libSDL2_test.a
