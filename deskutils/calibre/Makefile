@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	calibre
-PORTVERSION=	4.19.0
+PORTVERSION=	4.20.0
 CATEGORIES=	deskutils python
 MASTER_SITES=	http://download.calibre-ebook.com/${PORTVERSION}/
 
@@ -51,7 +51,7 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		pdftohtml:graphics/poppler-utils
 
 USES=		desktop-file-utils gettext-runtime gl gnome localbase:ldflags \
-		pkgconfig pyqt:5 qt:5 shared-mime-info shebangfix \
+		pkgconfig pyqt:5 python:3.5+ qt:5 shared-mime-info shebangfix \
 		ssl tar:xz xorg
 USE_RC_SUBR=	calibre
 SUB_LIST+=	PYTHON_VERSION=${PYTHON_VERSION}
@@ -64,7 +64,7 @@ USE_XORG=	xrender xext x11
 EXTRACT_BEFORE_ARGS=	-x -s '/^calibre/~-src/' -f
 SHEBANG_GLOB=	*.sh *.py *.recipe
 python_OLD_CMD=	"/usr/bin/env python2" "/usr/bin/env  python2" "/usr/bin/env  python" /bin/python2 \
-		/usr/bin/python2 ${PYTHON_BIN}
+		/usr/bin/python2 ${LOCALBASE}/bin/python3
 WRKSRC=		${WRKDIR}/${PORTNAME}-src-${PORTVERSION}
 MAKE_ENV+=	FC_INC_DIR="${LOCALBASE}/include/fontconfig" \
 		FC_LIB_DIR="${LOCALBASE}/lib" \
@@ -79,22 +79,8 @@ MAKE_ENV+=	FC_INC_DIR="${LOCALBASE}/include/fontconfig" \
 		XDG_UTILS_INSTALL_MODE=system \
 		QMAKE=${QMAKE} \
 		SIP_BIN=${SIP} \
-		SIP_DIR=${PYQT_SIPDIR}
-
-OPTIONS_SINGLE= 	PYTHON
-OPTIONS_SINGLE_PYTHON=	PYTHON2 PYTHON3
-OPTIONS_DEFAULT=	PYTHON3
-
-PYTHON2_USES=		python:2.7
-PYTHON2_VARS=		PYTHON_BIN=${LOCALBASE}/bin/python2 \
-			DEPRECATED="Uses deprecated version of python" \
-			EXPIRATION_DATE=2020-09-15
-PYTHON2_PLIST_SUB=	SODIR=""
-
-PYTHON3_USES=		python:3.5+
-PYTHON3_VARS=		PYTHON_BIN=${LOCALBASE}/bin/python3
-PYTHON3_MAKE_ENV=	CALIBRE_PY3_PORT=1
-PYTHON3_PLIST_SUB=	SODIR="3/"
+		SIP_DIR=${PYQT_SIPDIR} \
+		CALIBRE_PY3_PORT=1
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|#!/usr/bin/env python{py_major_version}|#!${PYTHON_CMD}|" \
@@ -123,11 +109,6 @@ do-install:
 	@${RM} ${STAGEDIR}${PREFIX}/bin/calibre-uninstall \
 		${STAGEDIR}${PREFIX}/share/applications/defaults.list
 	@${RMDIR} ${STAGEDIR}${PREFIX}/share/desktop-directories
-
-do-install-PYTHON2-on:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/calibre/calibre/plugins/*
-
-do-install-PYTHON3-on:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/calibre/calibre/plugins/3/*
 
 .include <bsd.port.mk>
