@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	annie
-DISTVERSION=	0.10.1
+DISTVERSION=	0.10.2
 CATEGORIES=	www
 
 MAINTAINER=	vulcan@wired.sh
