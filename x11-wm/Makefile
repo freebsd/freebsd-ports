@@ -13,6 +13,7 @@
     SUBDIR += awesome-vicious
     SUBDIR += bbkeys
     SUBDIR += bbpager
+    SUBDIR += berry
     SUBDIR += blackbox
     SUBDIR += bspwm
     SUBDIR += cage

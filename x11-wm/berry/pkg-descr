@@ -1,0 +1,5 @@
+Minimal window manager, controlled via a powerful command-line client,
+allowing users to control windows via a hotkey daemon such as sxhkd or
+expand functionality via shell scripts.
+
+WWW: https://berrywm.org/
