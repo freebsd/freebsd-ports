@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mysqlclient
-DISTVERSION=	1.4.6
-PORTREVISION=	2
+DISTVERSION=	2.0.1
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +12,7 @@ COMMENT=	MySQL database connector for Python
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		compiler:c11 iconv mysql python ssl
+USES=		compiler:c11 iconv mysql python:3.5+ ssl
 USE_PYTHON=	autoplist concurrent distutils
 
 PORTDOCS=	*
