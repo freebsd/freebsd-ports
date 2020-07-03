@@ -3,7 +3,7 @@
 
 PORTNAME=	xaos
 DISTVERSIONPREFIX=	release-
-DISTVERSION=	4.0
+DISTVERSION=	4.1
 CATEGORIES=	graphics math
 
 MAINTAINER=	ports@FreeBSD.org
