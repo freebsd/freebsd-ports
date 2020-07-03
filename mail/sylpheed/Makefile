@@ -3,9 +3,9 @@
 
 PORTNAME=	sylpheed
 PORTVERSION=	3.7.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
-MASTER_SITES=	http://sylpheed.sraoss.jp/sylpheed/v${PORTVERSION:C/\.[^\.]*$//}/  \
+MASTER_SITES=	http://sylpheed.sraoss.jp/sylpheed/v${PORTVERSION:C/\.[^\.]*$//}/ \
 		LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -95,16 +95,16 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|^\(DEFS.*\.\.\)$$|\1 -I../libsylph|' \
 		${WRKSRC}/src/Makefile.in
 
-.if empty(PORT_OPTIONS:MDOCS)
+post-patch-DOCS-off:
 	@${REINPLACE_CMD} -e '/^SUBDIRS = /s/manual faq//' \
 		${WRKSRC}/Makefile.in
-.else
+
+post-patch-DOCS-on:
 .for i in ${MAKEFILES}
 	@${REINPLACE_CMD} -e 's|^faqdir = @faqdir@$$|faqdir = ${DOCSDIR}/faq|g; \
 		s|^manualdir = @manualdir@$$|manualdir = ${DOCSDIR}/manual|g' \
 		${WRKSRC}/${i}
 .endfor
-.endif
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
