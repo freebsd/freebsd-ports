@@ -2,6 +2,7 @@
 
 PORTNAME=	doas
 PORTVERSION=	6.3
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	jsmith@resonatingmedia.com
@@ -22,6 +23,7 @@ BINMODE=	4755
 
 SUB_FILES=	pkg-message
 PLIST_FILES=	bin/doas \
+		etc/doas.conf.sample \
 		man/man5/doas.conf.5.gz \
 		man/man1/doas.1.gz
 
@@ -38,5 +40,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/doas.1.final ${STAGEDIR}${MAN1PREFIX}/man/man1/doas.1
 	${INSTALL_MAN} ${WRKSRC}/doas.conf.5.final ${STAGEDIR}${MAN5PREFIX}/man/man5/doas.conf.5
+	${INSTALL_DATA} ${WRKSRC}/doas.conf.sample ${STAGEDIR}${PREFIX}/etc/doas.conf.sample
 
 .include <bsd.port.mk>

@@ -5,7 +5,8 @@ To use doas,
 
 %%PREFIX%%/etc/doas.conf
 
-must be created. Refer to doas.conf(5) for further details.
+must be created. Refer to doas.conf(5) for further details and/or follow
+%%PREFIX%%/etc/doas.conf.sample as an example.
 
 Note: In order to be able to run most desktop (GUI) applications, the user
 needs to have the keepenv keyword specified. If keepenv is not specified then
