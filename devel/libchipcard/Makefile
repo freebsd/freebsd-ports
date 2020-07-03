@@ -3,6 +3,7 @@
 
 PORTNAME=	libchipcard
 PORTVERSION=	5.0.4
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://www.aquamaniac.de/rdm/attachments/download/158/
 
@@ -24,7 +25,7 @@ INSTALL_TARGET=	install-strip
 PLIST_SUB=	GWEN_SHLIB_VER="${GWEN_SHLIB_VER}"
 USE_LDCONFIG=	yes
 
-GWEN_SHLIB_VER=	60
+GWEN_SHLIB_VER=	79
 
 OPTIONS_DEFINE=			DOXYGEN MEMDEBUG
 
