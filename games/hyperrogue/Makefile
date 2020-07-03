@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hyperrogue
-PORTVERSION=	11.3l
+PORTVERSION=	11.3o
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 
@@ -29,6 +29,8 @@ CFLAGS:=	${CFLAGS:C/-O[0-9]//} -DFHS
 CXXFLAGS:=	${CXXFLAGS:C/-O[0-9]//} -DFHS
 
 PORTDOCS=	README.md
+PORTDATA=	*
+PLIST_FILES=	bin/hyperrogue share/pixmaps/hyperrogue.ico
 
 DESKTOP_ENTRIES="HyperRogue" \
 		"" \
