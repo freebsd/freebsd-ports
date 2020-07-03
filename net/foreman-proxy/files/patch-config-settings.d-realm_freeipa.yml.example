@@ -1,5 +1,5 @@
---- config/settings.d/realm_freeipa.yml.example.orig	2017-05-08 15:18:42 UTC
-+++ config/settings.d/realm_freeipa.yml.example
+--- config/settings.d/realm_freeipa.yml.example.orig	2018-12-06 13:30:25.000000000 +0100
++++ config/settings.d/realm_freeipa.yml.example	2019-02-11 22:24:18.091737000 +0100
 @@ -1,8 +1,8 @@
  ---
  # Authentication for Kerberos-based Realms

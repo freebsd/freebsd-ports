@@ -1,0 +1,24 @@
+--- config/settings.d/puppet_proxy_legacy.yml.example	2018-12-06 13:30:25.000000000 +0100
++++ config/settings.d/puppet_proxy_legacy.yml.example	2019-02-11 22:22:20.750500000 +0100
+@@ -5,7 +5,7 @@
+ # :puppet_version setting in smart-proxy's puppet.yml configuration file.
+ #
+ ---
+-#:puppet_conf: /etc/puppet/puppet.conf
++#:puppet_conf: %%LOCALBASE%%/etc/puppet/puppet.conf
+ #
+ # Override use of Puppet's API to list environments, by default it will use only if
+ # environmentpath is given in puppet.conf, else will look for environments in puppet.conf
+@@ -16,9 +16,9 @@
+ #:puppet_url: https://puppet.example.com:8140
+ #
+ # SSL certificates used to access the environment API. Required if puppet_use_environment_api is set to true.
+-#:puppet_ssl_ca: /var/lib/puppet/ssl/certs/ca.pem
+-#:puppet_ssl_cert: /var/lib/puppet/ssl/certs/puppet.example.com.pem
+-#:puppet_ssl_key: /var/lib/puppet/ssl/private_keys/puppet.example.com.pem
++#:puppet_ssl_ca: /var/puppet/ssl/certs/ca.pem
++#:puppet_ssl_cert: /var/puppet/ssl/certs/puppet.example.com.pem
++#:puppet_ssl_key: /var/puppet/ssl/private_keys/puppet.example.com.pem
+ #
+ # Enable/disable puppet class cache
+ #:use_cache: true

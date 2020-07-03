@@ -1,0 +1,15 @@
+--- config/settings.d/puppet_proxy_puppet_api.yml.example.orig	2018-12-06 13:30:25.000000000 +0100
++++ config/settings.d/puppet_proxy_puppet_api.yml.example	2019-02-11 22:22:53.410247000 +0100
+@@ -9,9 +9,9 @@
+ #:puppet_url: https://puppet.example.com:8140
+ #
+ # SSL certificates used to access the puppet API
+-#:puppet_ssl_ca: /var/lib/puppet/ssl/certs/ca.pem
+-#:puppet_ssl_cert: /var/lib/puppet/ssl/certs/puppet.example.com.pem
+-#:puppet_ssl_key: /var/lib/puppet/ssl/private_keys/puppet.example.com.pem
++#:puppet_ssl_ca: /var/puppet/ssl/certs/ca.pem
++#:puppet_ssl_cert: /var/puppet/ssl/certs/puppet.example.com.pem
++#:puppet_ssl_key: /var/puppet/ssl/private_keys/puppet.example.com.pem
+ #
+ # Smart Proxy api timeout when Puppet's environment classes api is used and classes cache is disabled
+ #:api_timeout: 30

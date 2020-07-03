@@ -1,6 +1,6 @@
---- config/settings.d/tftp.yml.example.orig	2017-05-08 15:18:42 UTC
-+++ config/settings.d/tftp.yml.example
-@@ -2,6 +2,6 @@
+--- config/settings.d/tftp.yml.example.orig	2018-12-06 13:30:25.000000000 +0100
++++ config/settings.d/tftp.yml.example	2019-02-11 22:24:46.060855000 +0100
+@@ -2,7 +2,7 @@
  # Can be true, false, or http/https to enable just one of the protocols
  :enabled: false
  
@@ -8,3 +8,4 @@
 +#:tftproot: /tftpboot
  # Defines the TFTP Servername to use, overrides the name in the subnet declaration
  #:tftp_servername: tftp.domain.com
+ 

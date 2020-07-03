@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	foreman-proxy
-PORTVERSION=	1.15.1
-PORTREVISION=	1
+PORTVERSION=	1.21.2
 CATEGORIES=	net
 MASTER_SITES=	https://downloads.theforeman.org/foreman-proxy/
 
@@ -17,18 +16,20 @@ RUN_DEPENDS=	rubygem-bundler_ext>=0.4:sysutils/rubygem-bundler_ext \
 		rubygem-json>=1.8.1:devel/rubygem-json \
 		rubygem-rack>=2.0:www/rubygem-rack \
 		rubygem-rb-kqueue>=0.2.2:devel/rubygem-rb-kqueue \
+		rubygem-rsec>=0.4.3:devel/rubygem-rsec \
 		rubygem-sinatra>=2.0:www/rubygem-sinatra \
 		wget:ftp/wget
 
-OPTIONS_DEFINE=	BMC PUPPET5
+USES=		shebangfix tar:bzip2
+
+OPTIONS_DEFINE=	BMC PUPPET6
 BMC_DESC=	Depend on rubyipmi for BMC support
-PUPPET5_DESC=	Depend on Puppet 5
+PUPPET6_DESC=	Depend on Puppet 6
 
 NO_ARCH=	yes
 NO_BUILD=	yes
 USE_RC_SUBR=	foreman-proxy
 USE_RUBY=	yes
-USES=		shebangfix tar:bzip2
 
 FOREMAN_PROXY_USER?=	foreman_proxy
 FOREMAN_PROXY_GROUP?=	foreman_proxy
@@ -49,7 +50,7 @@ PLIST_SUB=	${SUB_LIST} MKDIR="${MKDIR}"
 SHEBANG_FILES=	extra/foreman-debug-proxy
 
 BMC_RUN_DEPENDS=	rubygem-rubyipmi>=0.10.0:sysutils/rubygem-rubyipmi
-PUPPET5_RUN_DEPENDS=	puppet:sysutils/puppet5 \
+PUPPET6_RUN_DEPENDS=	puppet:sysutils/puppet6 \
 			rubygem-ruby-augeas>=0.5:textproc/rubygem-ruby-augeas
 
 post-patch:
