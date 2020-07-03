@@ -3,7 +3,7 @@
 
 PORTNAME=	opencl
 PORTVERSION=	2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	ohartman@zedat.fu-berlin.de
