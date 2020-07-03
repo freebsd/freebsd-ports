@@ -30,19 +30,20 @@ PLIST_SUB+=	DBDIR=${DBDIR} \
 		CLAMAVUSER=${CLAMAVUSER} \
 		CLAMAVGROUP=${CLAMAVGROUP}
 
-CONFIGURE_ARGS=	--libdir=${LOCALBASE}/lib \
-		--with-dbdir=${DBDIR} \
+CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--enable-bigstack \
-		--disable-dependency-tracking \
 		--enable-clamdtop \
+		--libdir=${PREFIX}/lib \
+		--with-dbdir=${DBDIR} \
+		--with-libcurl=${LOCALBASE} \
+		--with-openssl=${OPENSSLBASE} \
 		--with-system-libmspack=${LOCALBASE}/lib/libmspack.so
 
 CFLAGS_i386=	-march=i486
-CPPFLAGS+=	-I${LOCALBASE}/include
 
 # This port has a problem with -pthread,
 # force to use -lthr until it's not fixed.
-LDFLAGS+=	-lthr -L${LOCALBASE}/lib
+LDFLAGS+=	-lthr
 
 SUB_FILES=	pkg-deinstall
 SUB_LIST+=	DBDIR=${DBDIR} \
@@ -77,15 +78,15 @@ UNZOO_DESC=		Enable zoo archives support
 
 ARC_RUN_DEPENDS=	arc:archivers/arc
 ARJ_RUN_DEPENDS=	arj:archivers/arj
-DMG_XAR_CONFIGURE_ENABLE=	xml
+DMG_XAR_CONFIGURE_WITH=	xml=${LOCALBASE}
 DMG_XAR_USE=		GNOME=libxml2
 EXPERIMENTAL_CONFIGURE_ENABLE=	experimental
 ICONV_CONFIGURE_WITH=	iconv
 ICONV_USES=		iconv
 IPV6_CONFIGURE_ENABLE=	ipv6
-JSON_CONFIGURE_WITH=	libjson
+JSON_CONFIGURE_WITH=	libjson=${LOCALBASE}
 JSON_LIB_DEPENDS=	libjson-c.so:devel/json-c
-LDAP_LDFLAGS=		-lldap
+LDAP_LDFLAGS=		-lldap -L${LOCALBASE}/lib
 LDAP_USE=		OPENLDAP=yes
 LHA_RUN_DEPENDS=	lha:archivers/lha
 MILTER_CONFIGURE_WITH=	sendmail=/usr/sbin/sendmail
