@@ -1,20 +1,12 @@
---- CMakeLists.txt.orig	2020-06-27 00:10:17 UTC
+--- CMakeLists.txt.orig	2020-06-27 22:33:56 UTC
 +++ CMakeLists.txt
-@@ -33,6 +33,7 @@ include (MacroAppendForeach)
- include (MacroAddSourceFileCompileFlags)
- include (GncAddSwigCommand)
- include (CheckIncludeFiles)
-+include (CheckSymbolExists)
- include (GncAddSchemeTargets)
- include (GncAddGSchemaTargets)
- include (GncAddTest)
-@@ -591,9 +592,9 @@ set(CMAKE_CXX_FLAGS "-std=gnu++11 ${CMAKE_CXX_FLAGS}")
- 
+@@ -562,9 +563,9 @@ set(CMAKE_C_STANDARD_REQUIRED ON)
+ set(CMAKE_C_EXTENSIONS ON)
  
  if (UNIX)
 -  set( CMAKE_C_FLAGS "-Werror -Wdeclaration-after-statement -Wno-pointer-sign -Wall -Wmissing-prototypes -Wmissing-declarations -Wno-unused ${CMAKE_C_FLAGS}")
 +  set( CMAKE_C_FLAGS "-Wdeclaration-after-statement -Wno-pointer-sign -Wall -Wmissing-prototypes -Wmissing-declarations -Wno-unused ${CMAKE_C_FLAGS}")
-   set( CMAKE_C_FLAGS "-Wno-error=deprecated-declarations -std=gnu11 -Wno-error=parentheses ${CMAKE_C_FLAGS}")
+   set( CMAKE_C_FLAGS "-Wno-error=deprecated-declarations -Wno-error=parentheses ${CMAKE_C_FLAGS}")
 -  set( CMAKE_CXX_FLAGS "-Werror -Wall -Wmissing-declarations -Wno-unused -Wno-error=parentheses ${CMAKE_CXX_FLAGS}")
 +  set( CMAKE_CXX_FLAGS "-Wall -Wmissing-declarations -Wno-unused -Wno-error=parentheses ${CMAKE_CXX_FLAGS}")
    set( CMAKE_CXX_FLAGS "-Wno-error=deprecated-declarations ${REGISTER_CXXFLAG} ${CMAKE_CXX_FLAGS}")
