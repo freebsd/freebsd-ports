@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	timg
-PORTVERSION=	0.9.5
+PORTVERSION=	0.9.8
 DISTVERSIONPREFIX=	v
-PORTREVISION=	5
 CATEGORIES=	graphics
 
 MAINTAINER=	uzsolt@uzsolt.hu
@@ -13,10 +12,10 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libMagick++-6.so:graphics/ImageMagick6
 
+USES=		compiler:c++11-lang gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	hzeller
 
-USES=		compiler:c++11-lang gmake
 ALL_TARGET=	${PORTNAME}
 WRKSRC_SUBDIR=	src
 
