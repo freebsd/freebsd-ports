@@ -17,6 +17,7 @@ include/GL/internal/dri_interface.h
 %%RADEONSI_GDRIVER%%lib/dri/radeonsi_dri.so
 %%VAAPI%%%%RADEONSI_GDRIVER%%lib/dri/radeonsi_drv_video.so
 %%SWRAST_DRIVER%%lib/dri/swrast_dri.so
+%%SWRAST_GDRIVER%%lib/dri/swrast_dri.so
 %%SVGA_GDRIVER%%lib/dri/vmwgfx_dri.so
 %%PLATFORM_X11%%%%R600_GDRIVER%%lib/libXvMCr600.so
 %%PLATFORM_X11%%%%R600_GDRIVER%%lib/libXvMCr600.so.1
