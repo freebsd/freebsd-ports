@@ -1,6 +1,6 @@
 --- lib-src/libnyquist/nyquist/xlisp/xlisp.h.orig	2016-07-26 13:34:06 UTC
 +++ lib-src/libnyquist/nyquist/xlisp/xlisp.h
-@@ -160,6 +160,15 @@ extern long ptrtoabs();
+@@ -161,6 +161,15 @@ extern long ptrtoabs();
  #endif
  #endif
  
