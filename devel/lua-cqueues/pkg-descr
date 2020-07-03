@@ -1,0 +1,7 @@
+cqueues is a type of event loop for Lua, except it's not a classic
+event loop. It doesn't use callbacks, neither as part of the API nor
+internally, but instead you communicate with an event controller by
+the yielding and resumption of Lua coroutines using objects that
+adhere to a simple interface.
+
+WWW: http://25thandclement.com/~william/projects/cqueues.html
