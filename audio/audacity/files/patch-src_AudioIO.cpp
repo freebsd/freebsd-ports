@@ -1,6 +1,6 @@
---- src/AudioIO.cpp.orig	2018-10-01 14:07:33 UTC
+--- src/AudioIO.cpp.orig	2020-06-19 15:16:47 UTC
 +++ src/AudioIO.cpp
-@@ -480,7 +480,6 @@ TimeTrack and AudioIOListener and whether the playback
+@@ -491,7 +491,6 @@ time warp info and AudioIOListener and whether the pla
     #define ROUND(x) (int) ((x)+0.5)
     //#include <string.h>
  //   #include "../lib-src/portmidi/pm_common/portmidi.h"
@@ -8,7 +8,7 @@
     #include "NoteTrack.h"
  #endif
  
-@@ -793,13 +797,22 @@ struct AudioIO::ScrubState (private)
+@@ -815,13 +814,22 @@ struct AudioIoCallback::ScrubState (private)
  // return the system time as a double
  static double streamStartTime = 0; // bias system time to small number
  

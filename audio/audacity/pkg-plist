@@ -3,6 +3,7 @@ man/man1/audacity.1.gz
 share/appdata/audacity.appdata.xml
 share/applications/audacity.desktop
 %%DATADIR%%/EQDefaultCurves.xml
+%%DATADIR%%/modules/mod-script-pipe.so
 %%DATADIR%%/nyquist/aud-do-support.lsp
 %%DATADIR%%/nyquist/dspprims.lsp
 %%DATADIR%%/nyquist/envelopes.lsp
