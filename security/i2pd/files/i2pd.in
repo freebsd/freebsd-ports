@@ -28,5 +28,7 @@ required_dirs=${i2pd_datadir}
 pidfile=${i2pd_pidfile}
 command="%%PREFIX%%/bin/${name}"
 command_args="--pidfile ${i2pd_pidfile} --service --datadir ${i2pd_datadir} --log file --logfile ${i2pd_logfile} --daemon"
+extra_commands="reload"
+reload_cmd="pkill -1 -F ${i2pd_pidfile} -x i2pd"
 
 run_rc_command "$1"
