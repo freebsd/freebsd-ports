@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	osmosis
-PORTVERSION=	0.48.0
+PORTVERSION=	0.48.1
 CATEGORIES=	astro java
 MASTER_SITES=	https://github.com/openstreetmap/osmosis/releases/download/${PORTVERSION}/
 
