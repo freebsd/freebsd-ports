@@ -7,7 +7,7 @@ CATEGORIES=	sysutils ruby
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	Leightweight Chef API client
+COMMENT=	Lightweight Chef API client
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
