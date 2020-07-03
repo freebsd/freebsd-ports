@@ -2,7 +2,7 @@
 
 PORTNAME=	step-certificates
 DISTVERSIONPREFIX=v
-DISTVERSION=	0.14.5
+DISTVERSION=	0.14.6
 CATEGORIES=	security
 
 MAINTAINER=	mw@wipp.bayern
@@ -86,11 +86,12 @@ GH_TUPLE=	\
 		shurcooL:sanitized_anchor_name:v1.0.0:shurcool_sanitized_anchor_name/vendor/github.com/shurcooL/sanitized_anchor_name \
 		sirupsen:logrus:v1.4.2:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		smallstep:assert:b99dc1097b15:smallstep_assert/vendor/github.com/smallstep/assert \
-		smallstep:cli:v0.14.5:smallstep_cli/vendor/github.com/smallstep/cli \
+		smallstep:cli:v0.14.6:smallstep_cli/vendor/github.com/smallstep/cli \
 		smallstep:nosql:v0.3.0:smallstep_nosql/vendor/github.com/smallstep/nosql \
 		spf13:cast:v1.3.1:spf13_cast/vendor/github.com/spf13/cast \
 		square:go-jose:v2.4.0:square_go_jose/vendor/gopkg.in/square/go-jose.v2 \
 		urfave:cli:v1.22.2:urfave_cli/vendor/github.com/urfave/cli
+
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/step
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
