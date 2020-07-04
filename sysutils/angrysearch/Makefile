@@ -3,6 +3,7 @@
 
 PORTNAME=	angrysearch
 PORTVERSION=	1.0.2 # untagged, but specified in the setup.py
+PORTREVISION=	1
 CATEGORIES=	sysutils python
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -10,7 +11,8 @@ COMMENT=	Quick search GUI tool for Unix-like systems
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	xdg-open:devel/xdg-utils
+RUN_DEPENDS=	xdg-open:devel/xdg-utils \
+		${PYTHON_LIBDIR}/lib-dynload/_sqlite3.so:databases/py-sqlite3@${PY_FLAVOR}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	DoTheEvo
