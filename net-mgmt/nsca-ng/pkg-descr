@@ -16,4 +16,4 @@ asynchronously written files.
 NSCA clients cannot talk to NSCA-ng servers (nor vice versa), but NSCA
 and NSCA-ng servers can happily run side by side.
 
-WWW: http://www.nsca-ng.org/
+WWW: https://github.com/weiss/nsca-ng

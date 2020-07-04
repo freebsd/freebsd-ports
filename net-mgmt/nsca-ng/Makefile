@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	nsca-ng
-PORTVERSION=	1.4
-PORTREVISION=	1
+PORTVERSION=	1.6
+DISTVERSIONPREFIX=v
 CATEGORIES=	net-mgmt
-MASTER_SITES=	https://www.nsca-ng.org/download/ http://www.nsca-ng.org/download/
 
 MAINTAINER=	alexander@sulfrian.net
 COMMENT=	Nagios Service Check Acceptor
@@ -14,23 +13,25 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libev.so:devel/libev
-
 .if !defined(PKGNAMESUFFIX)
 LIB_DEPENDS+=	libconfuse.so:devel/libconfuse
 .endif
 
-CONFLICTS?=	nsca-2.* nsca27-2.*
-
-USES=		ssl
+USES=		ssl autoreconf
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var/spool/nagios
 CPPFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
 
+USE_GITHUB=	true
+GH_ACCOUNT=	weiss
+
 .if !defined(PKGNAMESUFFIX)
 USE_RC_SUBR=	nsca-ng
 CONFIGURE_ARGS+=	--enable-server
 .endif
+
+CONFLICTS?=	nsca-2.* nsca27-2.*
 
 PORTDOCS=	NEWS COPYING README PROTOCOL TODO
 
@@ -38,13 +39,8 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 .include <bsd.port.pre.mk>
 
-.if ${SSL_DEFAULT} == base
-BROKEN_FreeBSD_12=	cannot link with OpenSSL
-BROKEN_FreeBSD_13=	cannot link with OpenSSL
-.endif
-
 .if ${SSL_DEFAULT:Mlibressl*}
-IGNORE=	Requires PSK which is unsupported by the selected LibreSSL
+IGNORE+=	requires PSK which is unsupported by the selected LibreSSL
 .endif
 
 post-install:
