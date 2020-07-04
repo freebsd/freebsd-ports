@@ -58,11 +58,15 @@
  			fprintf(stderr, "done\n");
  		else
  			fprintf(stderr, "failed\n");
-@@ -262,6 +289,7 @@ copy_ufs(const char *src_path, const cha
+@@ -262,6 +289,11 @@ copy_ufs(const char *src_path, const char *dst_path)
  		}
  	}
  	bcopy(&src, &dst, sizeof(dst));
++#if (defined(__FreeBSD_version) && __FreeBSD_version >= 1300100)
++	dst.d_si = NULL;
++#else
 +	dst.d_sbcsum = NULL;
++#endif
  	dst.d_name = dst_path;
  	dst.d_fd = open(dst_path, O_CREAT | O_WRONLY,  S_IRUSR |  S_IWUSR );
  	if (dst.d_fd < 0) {
