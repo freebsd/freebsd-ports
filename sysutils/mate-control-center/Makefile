@@ -30,6 +30,7 @@ PORTSCOUT=	limitw:1,even
 
 USES=		desktop-file-utils gettext gmake gnome libtool localbase mate \
 		pathfix pkgconfig shared-mime-info tar:xz xorg
+USE_CSTD=	c99
 USE_MATE=	desktop libmatekbd marco menus settingsdaemon
 USE_XORG=	ice sm x11 xcursor xext xft xi xrandr xscrnsaver
 USE_GNOME=	cairo dconf glib20 gtk30 intlhack libxml2 librsvg2 pango
