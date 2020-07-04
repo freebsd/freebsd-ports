@@ -2,6 +2,7 @@
 
 PORTNAME=	node
 PORTVERSION=	12.18.2
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
@@ -82,6 +83,8 @@ BROKEN_SSL+=	base
 
 .if ${ARCH} == armv6 || ${ARCH} == armv7
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-tools_v8__gypfiles_v8.gyp
+.elif defined(PPC_ABI) && ${PPC_ABI} == ELFv2
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-common.gypi
 .endif
 
 .if ${PORT_OPTIONS:MBUNDLED_SSL} && ${ARCH} != amd64
