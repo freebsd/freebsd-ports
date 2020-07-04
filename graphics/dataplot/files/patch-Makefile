@@ -1,4 +1,4 @@
---- Makefile.orig	2019-05-10 19:36:43 UTC
+--- Makefile.orig	2020-06-19 14:55:49 UTC
 +++ Makefile
 @@ -1,5 +1,5 @@
 -FC = gfortran
@@ -15,7 +15,7 @@
 -DPLIBDIR=$(PREFIX)/lib/dataplot
 +DPLIBDIR=$(DESTDIR)%%DATADIR%%
  
--FFLAGS += -O2 -DLINUX -fdefault-real-8 -fdefault-double-8
+-FFLAGS += -O2 -DLINUX -fdefault-real-8 -fdefault-double-8 -fmax-stack-var-size=1000000 -Wall
 -CFLAGS += -O2
 +FFLAGS += %%FFLAGS%%
 +CFLAGS += %%CFLAGS%% -I%%LOCALBASE%%/include
