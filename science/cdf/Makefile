@@ -28,6 +28,7 @@ MAKE_FLAGS=	INSTALLDIR=${STAGEDIR}${PREFIX} OS=freebsd ENV=gnu \
 		FORTRAN=yes FC_freebsd=${F77}
 MAKE_JOBS_UNSAFE=	yes
 TEST_TARGET=	test  # XXX: test segfaults
+FFLAGS+=	-std=legacy
 
 WRKSRC=		${WRKDIR}/cdf${VER}-dist
 SUB_FILES=	pkg-message
