@@ -10,6 +10,7 @@ MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Persistent key-value database with built-in net interface
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES+=		compiler:c11 gmake
 USE_GITHUB=	yes
