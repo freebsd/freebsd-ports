@@ -20,6 +20,7 @@ USE_GL=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libintl-prefix="${LOCALBASE}"
 USE_GCC=	any # lots of severely broken code
+CFLAGS+=	-fcommon
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 PORTDATA=	*
