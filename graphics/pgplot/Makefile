@@ -21,6 +21,7 @@ USE_XORG=	x11 xorgproto xt
 
 MAKE_ENV=	SSP_CFLAGS=
 SHEBANG_FILES=	makehtml maketex
+FFLAGS+=	-std=legacy
 SUFFIXES=	flib clib bin
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
