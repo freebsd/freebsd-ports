@@ -1,0 +1,25 @@
+--- Makefile.am.orig	2020-07-02 21:03:35 UTC
++++ Makefile.am
+@@ -23,20 +23,8 @@ EXTRA_DIST = README.md VERSION LICENSE $(tal_DATA)
+ 
+ install-data-hook:
+ 	-@if [ ! -d "$(DESTDIR)$(RPKI_BASE_DIR)" ]; then \
+-		if [ "`id -u`" = "0" ]; then \
+-			$(INSTALL) -m 755 -o $(RPKI_USER) -d "$(DESTDIR)$(RPKI_BASE_DIR)"; \
+-		else \
+-			$(INSTALL) -m 755 -d "$(DESTDIR)$(RPKI_BASE_DIR)"; \
+-			echo "Warning: Unprivileged permissions, remember to run" \
+-				"'chown $(RPKI_USER) $(DESTDIR)$(RPKI_BASE_DIR)'"; \
+-		fi \
++		$(INSTALL) -m 755 -d "$(DESTDIR)$(RPKI_BASE_DIR)"; \
+ 	fi
+ 	-@if [ ! -d "$(DESTDIR)$(RPKI_OUT_DIR)" ]; then \
+-		if [ "`id -u`" = "0" ]; then \
+-			$(INSTALL) -m 755 -o $(RPKI_USER) -d "$(DESTDIR)$(RPKI_OUT_DIR)"; \
+-		else \
+-			$(INSTALL) -m 755 -d "$(DESTDIR)$(RPKI_OUT_DIR)"; \
+-			echo "Warning: Unprivileged permissions, remember to run" \
+-				"'chown $(RPKI_USER) $(DESTDIR)$(RPKI_OUT_DIR)'"; \
+-		fi \
++		$(INSTALL) -m 755 -d "$(DESTDIR)$(RPKI_OUT_DIR)"; \
+ 	fi
