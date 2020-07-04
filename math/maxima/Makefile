@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	maxima
-PORTVERSION=	5.43.2
-PORTREVISION=	6
+PORTVERSION=	5.44.0
 CATEGORIES=	math lisp tk
 MASTER_SITES=	SF/maxima/Maxima-source/${PORTVERSION}-source
 
@@ -64,9 +63,10 @@ ECL_LIB_DEPENDS=	libgmp.so:math/gmp	\
 # details.
 ECL_CONFIGURE_ON=	--with-ecl=ecl
 ECL_PLIST_SUB=		BINDIR=binary-ecl BINNAME=maxima
-GET_ECLLIB=		ecl -eval "(princ (SI:GET-LIBRARY-PATHNAME))" -eval "(quit)"
 
-NOUSERINIT_DESC=	Do not load user init file for lisp (only for sbcl)
+NOUSERINIT_DESC=		Do not load user init file for lisp (only for sbcl)
+NOUSERINIT_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src_maxima.in
+NOUSERINIT_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-OFF-src_maxima.in
 
 SAGE_DESC=		Build with patches from Sage (implies ECL)
 SAGE_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-share_linearalgebra_matrixexp.lisp \
@@ -85,23 +85,19 @@ SBCL_PLIST_SUB=		BINDIR=binary-sbcl BINNAME=maxima_core
 TEST_TARGET=		check
 TEST_BUILD_DEPENDS=	gnuplot:math/gnuplot \
 			rlwrap:devel/rlwrap
+TEST_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-Makefile.am
+TEST_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-OFF-Makefile.am
 
 XMAXIMA_DESC=		Install xmaxima (implies DOCS and TEST)
 XMAXIMA_IMPLIES=	DOCS TEST
 XMAXIMA_USES=		tk
 XMAXIMA_CONFIGURE_WITH=	wish=${WISH}
+XMAXIMA_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-interfaces_Makefile.am
 
 post-patch:
 	${GREP} -Fe '.core' -l -r ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} 's;\.core;_core;g'
 	${FIND} -X ${WRKSRC}/interfaces/xmaxima -name 'Makefile.in' | ${XARGS} ${REINPLACE_CMD} "s;tclsh;${TCLSH};g"
 	${REINPLACE_CMD} "s;/usr;${LOCALBASE};g" ${WRKSRC}/src/intl.lisp
-	${REINPLACE_CMD} 's;demo;;' ${WRKSRC}/Makefile.am
-
-post-patch-TEST-off:
-	${REINPLACE_CMD} 's;tests;;' ${WRKSRC}/Makefile.am
-
-post-patch-XMAXIMA-off:
-	${REINPLACE_CMD} 's; xmaxima;;' ${WRKSRC}/interfaces/Makefile.am
 
 post-patch-XMAXIMA-on:
 	${REINPLACE_CMD} "s;%%DOCSDIR%%;/${DOCSDIR:S,/, ,g};" \
@@ -132,12 +128,9 @@ post-install-EXAMPLES-on:
 post-install-MANPAGES-on:
 	${INSTALL_MAN} ${WRKSRC}/doc/man/maxima.1.gz ${STAGEDIR}${PREFIX}/man/man1
 
-post-install-NOUSERINIT-on:
-	${REINPLACE_CMD} 's;--end-runtime-options;--end-runtime-options --no-userinit;' ${STAGEDIR}${PREFIX}/bin/maxima
-
 post-install-SAGE-on:
-	${MKDIR} ${STAGEDIR}$$(${GET_ECLLIB})
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/ecl
 	${INSTALL_DATA} ${WRKSRC}/src/binary-ecl/maxima.fas \
-		${STAGEDIR}$$(${GET_ECLLIB})
+		${STAGEDIR}${PREFIX}/lib/ecl
 
 .include <bsd.port.mk>
