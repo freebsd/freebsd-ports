@@ -22,6 +22,7 @@ USES=		cmake:noninja compiler:c11 fortran
 CMAKE_ON=	BUILD_SHARED_LIBS # not respected: https://jira.ecmwf.int/browse/SUP-2691
 CMAKE_OFF=	HAVE_TESTS
 
+FFLAGS+=	-std=legacy
 LDFLAGS+=	-leccodes
 
 post-stage: # installs the file from eccodes: https://jira.ecmwf.int/browse/SUP-2693
