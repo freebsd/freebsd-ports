@@ -2,6 +2,7 @@
 
 PORTNAME=	ShellCheck
 DISTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	tobik@FreeBSD.org

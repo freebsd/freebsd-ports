@@ -3,7 +3,7 @@
 PORTNAME=	yubioath-desktop
 DISTVERSIONPREFIX=	yubioath-desktop-
 DISTVERSION=	4.3.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 
 MAINTAINER=	daniel@shafer.cc

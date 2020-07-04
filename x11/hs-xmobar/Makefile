@@ -3,6 +3,7 @@
 
 PORTNAME=	xmobar
 PORTVERSION=	0.33
+PORTREVISION=	1
 CATEGORIES=	x11 haskell
 
 MAINTAINER=	haskell@FreeBSD.org

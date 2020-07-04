@@ -2,6 +2,7 @@
 
 PORTNAME=	openjdk8
 PORTVERSION=	${DISTVERSION_${JDK_ARCH}}
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	LOCAL/jkim \
 		LOCAL/pkubaj
@@ -36,7 +37,7 @@ INSTALLDIR=	${STAGEDIR}${PREFIX}/${JDK_ROOT}
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == aarch64 || ${ARCH:Marmv*}
-RUN_DEPENDS+=	${LOCALBASE}/lib/libffi.so.6:devel/libffi
+RUN_DEPENDS+=	${LOCALBASE}/lib/libffi.so:devel/libffi
 .endif
 
 .if defined(PPC_ABI) && ${PPC_ABI} == ELFv2

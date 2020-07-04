@@ -3,6 +3,7 @@
 
 PORTNAME=	ecl
 PORTVERSION=	20.4.24
+PORTREVISION=	1
 CATEGORIES=	lang lisp
 MASTER_SITES=	https://common-lisp.net/project/ecl/static/files/release/
 

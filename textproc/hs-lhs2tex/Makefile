@@ -3,6 +3,7 @@
 
 PORTNAME=	lhs2tex
 PORTVERSION=	1.23
+PORTREVISION=	1
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org

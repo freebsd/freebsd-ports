@@ -70,7 +70,7 @@ EXTRACT_DEPENDS+=	hpack:devel/hs-hpack
 iconv_ARGS=	translit
 .include "${USESDIR}/iconv.mk"
 LIB_DEPENDS+=	libgmp.so:math/gmp \
-		libffi.so.6:devel/libffi
+		libffi.so:devel/libffi
 
 DIST_SUBDIR?=	cabal
 

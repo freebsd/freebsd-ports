@@ -2,6 +2,7 @@
 
 PORTNAME=		arbtt
 PORTVERSION=		0.10.2
+PORTREVISION=		1
 CATEGORIES=		deskutils haskell
 
 MAINTAINER=		mail@dbalan.in
