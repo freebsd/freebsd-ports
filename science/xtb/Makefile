@@ -18,5 +18,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	grimme-lab
 
 USE_LDCONFIG=	yes
+FFLAGS+=	-std=legacy
 
 .include <bsd.port.mk>
