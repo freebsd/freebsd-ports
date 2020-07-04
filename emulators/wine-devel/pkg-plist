@@ -252,6 +252,7 @@ include/wine/windows/d3dcommon.h
 include/wine/windows/d3dcommon.idl
 include/wine/windows/d3dcompiler.h
 include/wine/windows/d3dhal.h
+include/wine/windows/d3dkmdt.h
 include/wine/windows/d3drm.h
 include/wine/windows/d3drmdef.h
 include/wine/windows/d3drmobj.h
@@ -414,6 +415,8 @@ include/wine/windows/evntprov.h
 include/wine/windows/evntrace.h
 include/wine/windows/evr.h
 include/wine/windows/evr.idl
+include/wine/windows/evr9.h
+include/wine/windows/evr9.idl
 include/wine/windows/excpt.h
 include/wine/windows/exdisp.h
 include/wine/windows/exdisp.idl
@@ -1010,7 +1013,7 @@ include/wine/windows/wtypes.idl
 include/wine/windows/wuapi.h
 include/wine/windows/wuapi.idl
 include/wine/windows/x3daudio.h
-%%STAGING%%include/wine/windows/xact3.h
+include/wine/windows/xact3.h
 %%STAGING%%include/wine/windows/xact3.idl
 include/wine/windows/xact3wb.h
 include/wine/windows/xapo.h
@@ -1141,6 +1144,7 @@ lib/wine/api-ms-win-core-memory-l1-1-1.dll.so
 lib/wine/api-ms-win-core-memory-l1-1-2.dll.so
 lib/wine/api-ms-win-core-memory-l1-1-4.dll.so
 lib/wine/api-ms-win-core-misc-l1-1-0.dll.so
+lib/wine/api-ms-win-core-namedpipe-ansi-l1-1-0.dll.so
 lib/wine/api-ms-win-core-namedpipe-l1-1-0.dll.so
 lib/wine/api-ms-win-core-namedpipe-l1-2-0.dll.so
 lib/wine/api-ms-win-core-namespace-l1-1-0.dll.so
@@ -1601,6 +1605,7 @@ lib/wine/fakedlls/api-ms-win-core-memory-l1-1-1.dll
 lib/wine/fakedlls/api-ms-win-core-memory-l1-1-2.dll
 lib/wine/fakedlls/api-ms-win-core-memory-l1-1-4.dll
 lib/wine/fakedlls/api-ms-win-core-misc-l1-1-0.dll
+lib/wine/fakedlls/api-ms-win-core-namedpipe-ansi-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-namedpipe-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-namedpipe-l1-2-0.dll
 lib/wine/fakedlls/api-ms-win-core-namespace-l1-1-0.dll
@@ -2377,6 +2382,7 @@ lib/wine/fakedlls/webservices.dll
 lib/wine/fakedlls/wer.dll
 lib/wine/fakedlls/wevtapi.dll
 lib/wine/fakedlls/wevtutil.exe
+lib/wine/fakedlls/where.exe
 lib/wine/fakedlls/whoami.exe
 lib/wine/fakedlls/wiaservc.dll
 lib/wine/fakedlls/wimgapi.dll
@@ -2624,6 +2630,7 @@ lib/wine/libdxerr8.a
 lib/wine/libdxerr9.a
 lib/wine/libdxgi.def
 lib/wine/libdxguid.a
+lib/wine/libdxva2.def
 lib/wine/libevr.def
 lib/wine/libfaultrep.def
 lib/wine/libgdi32.def
@@ -3104,6 +3111,7 @@ lib/wine/webservices.dll.so
 lib/wine/wer.dll.so
 lib/wine/wevtapi.dll.so
 lib/wine/wevtutil.exe.so
+lib/wine/where.exe.so
 lib/wine/whoami.exe.so
 lib/wine/wiaservc.dll.so
 lib/wine/wimgapi.dll.so
