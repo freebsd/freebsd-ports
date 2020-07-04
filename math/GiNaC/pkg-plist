@@ -50,7 +50,7 @@ include/ginac/wildcard.h
 lib/libginac.a
 lib/libginac.so
 lib/libginac.so.6
-lib/libginac.so.6.4.3
+lib/libginac.so.6.4.4
 libdata/pkgconfig/ginac.pc
 libexec/ginac-excompiler
 man/man1/ginsh.1.gz
