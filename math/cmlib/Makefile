@@ -24,6 +24,7 @@ LDADD ?=	-lgfortran -lm
 SRCCONF=	/dev/null
 MAKE_ENV=	LDADD="${LDADD}" SHLIB_MAJOR="${SHLIB_MAJOR}" \
 		SRCCONF="${SRCCONF}"
+FFLAGS+=	-std=legacy
 
 NO_WRKSUBDIR=	yes
 
