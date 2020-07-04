@@ -3,7 +3,7 @@
 
 PORTNAME=	ghc
 PORTVERSION=	${GHC_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang haskell
 MASTER_SITES=	https://www.haskell.org/ghc/dist/${PORTVERSION}/:source \
 		LOCAL/arrowd/:boot \
@@ -56,7 +56,7 @@ DYNAMIC_CONFIGURE_WITH=	system-libffi \
 			ffi-includes=${LOCALBASE}/include \
 			ffi-libraries=${LOCALBASE}/lib
 # The version number is needed as lang/gcc installs a different version
-DYNAMIC_LIB_DEPENDS=	libffi.so.6:devel/libffi
+DYNAMIC_LIB_DEPENDS=	libffi.so:devel/libffi
 DYNAMIC_SUB_LIST=	WITH_DYNAMIC="YES"
 DYNAMIC_SUB_LIST_OFF=	WITH_DYNAMIC="NO"
 
