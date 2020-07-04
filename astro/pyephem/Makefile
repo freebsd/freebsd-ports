@@ -14,6 +14,9 @@ COMMENT=	Scientific-grade astronomical computations for Python
 
 LICENSE=	LGPL3
 
+DEPRECATED=	Use py-ephem instead.
+EXPIRATION_DATE=	2020-08-04
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ephem==${PORTVERSION}:astro/py-ephem@${PY_FLAVOR}
 
 USES=		python
