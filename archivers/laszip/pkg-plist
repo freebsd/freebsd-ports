@@ -2,7 +2,7 @@ include/laszip/laszip_api.h
 include/laszip/laszip_api_version.h
 lib/liblaszip.so
 lib/liblaszip.so.8
-lib/liblaszip.so.8.0.2
+lib/liblaszip.so.8.0.5
 lib/liblaszip_api.so
 lib/liblaszip_api.so.8
-lib/liblaszip_api.so.8.0.2
+lib/liblaszip_api.so.8.0.5
