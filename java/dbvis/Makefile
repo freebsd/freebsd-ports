@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dbvis
-PORTVERSION=	9.2.14
+PORTVERSION=	11.0.3
 CATEGORIES=	java databases
 MASTER_SITES=	http://www.dbvis.com/product_download/${PORTNAME}-${PORTVERSION}/media/
 DISTNAME=	dbvis_unix_${PORTVERSION:S/./_/g}
