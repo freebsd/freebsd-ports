@@ -3,6 +3,7 @@
 
 PORTNAME=	cups-pdf
 DISTVERSION=	3.0.1
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://www.cups-pdf.de/src/ \
 		http://www.physik.uni-wuerzburg.de/~vrbehr/cups-pdf/src/
@@ -75,10 +76,10 @@ pre-everything::
 	@${ECHO_MSG} "LOG_DIRECTORY=<dir>           Place logfile into <dir>/cups-pdf_log"
 .endif
 
-post-configure:
+post-patch:
 	@${REINPLACE_CMD} ${_SUBST_CMD} ${WRKSRC}/extra/cups-pdf.conf
 	@${REINPLACE_CMD} -e \
-		's,CPCONFIG "/etc/cups/cups-pdf.conf",CPCONFIG "${ETCDIR}/cups-pdf.conf",' \
+		's,CP_CONFIG_PATH "/etc/cups",CP_CONFIG_PATH "${ETCDIR}",' \
 		${WRKSRC}/src/cups-pdf.h
 
 do-build:
