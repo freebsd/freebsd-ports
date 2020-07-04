@@ -1,4 +1,3 @@
-VERSION!=	cat VERSION
 BEMENU_LIB=	libbemenu.so.${VERSION}
 wayland_PC=	epoll-shim pangocairo wayland-client xkbcommon
 x11_PC=		pangocairo x11 xinerama
