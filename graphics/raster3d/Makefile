@@ -23,7 +23,7 @@ MAKE_ARGS=	INCDIRS="-I${LOCALBASE}/include" LIBDIRS="-L${LOCALBASE}/lib" \
 MAKE_JOBS_UNSAFE=	yes
 
 CFLAGS+=	-DLINUX -DNETWORKBYTEORDER -Dgfortran
-FFLAGS+=	-fno-range-check -ffixed-line-length-132
+FFLAGS+=	-std=legacy -fno-range-check -ffixed-line-length-132
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
@@ -33,6 +33,12 @@ OPTIONS_DEFAULT=IMAGEMAGICK
 OPTIONS_SUB=		yes
 
 IMAGEMAGICK_RUN_DEPENDS=	convert:graphics/ImageMagick6
+
+.include <bsd.port.options.mk>
+
+.if ${FORTRAN_DEFAULT} == gfortran && ${GCC_DEFAULT} >= 10
+FFLAGS+=	-fallow-invalid-boz
+.endif
 
 pre-build: # generation of Makefile.incl has to be separate from 'make all', otherwise the generated Makefile.incl isn't read by 'make all'
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} linux
