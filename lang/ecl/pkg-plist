@@ -8,6 +8,7 @@ include/ecl/configpre-int.h
 include/ecl/configpre.h
 include/ecl/cons.h
 include/ecl/cs.h
+include/ecl/ecl_atomics.h
 include/ecl/ecl-cmp.h
 include/ecl/ecl-inl.h
 include/ecl/ecl.h
@@ -21,6 +22,7 @@ include/ecl/legacy.h
 include/ecl/number.h
 include/ecl/object.h
 include/ecl/page.h
+include/ecl/stack-resize.h
 include/ecl/stacks.h
 lib/ecl
 lib/ecl-%%VERSION%%/COPYING
@@ -32,8 +34,6 @@ lib/ecl-%%VERSION%%/cmp.asd
 lib/ecl-%%VERSION%%/cmp.fas
 %%SOCKETS%%lib/ecl-%%VERSION%%/deflate.asd
 %%SOCKETS%%lib/ecl-%%VERSION%%/deflate.fas
-lib/ecl-%%VERSION%%/defsystem.asd
-lib/ecl-%%VERSION%%/defsystem.fas
 lib/ecl-%%VERSION%%/dpp
 lib/ecl-%%VERSION%%/ecl-cdb.asd
 lib/ecl-%%VERSION%%/ecl-cdb.fas
@@ -202,27 +202,20 @@ lib/ecl-%%VERSION%%/help.doc
 %%ASDF%%lib/ecl-%%VERSION%%/libasdf.a
 lib/ecl-%%VERSION%%/libcmp.a
 %%SOCKETS%%lib/ecl-%%VERSION%%/libdeflate.a
-lib/ecl-%%VERSION%%/libdefsystem.a
 lib/ecl-%%VERSION%%/libecl-cdb.a
 %%SOCKETS%%lib/ecl-%%VERSION%%/libecl-curl.a
 lib/ecl-%%VERSION%%/libecl-help.a
 %%SOCKETS%%lib/ecl-%%VERSION%%/libecl-quicklisp.a
 lib/ecl-%%VERSION%%/libpackage-locks.a
-lib/ecl-%%VERSION%%/libprofile.a
 %%SOCKETS%%lib/ecl-%%VERSION%%/libql-minitar.a
-lib/ecl-%%VERSION%%/librt.a
 %%SOCKETS%%lib/ecl-%%VERSION%%/libsb-bsd-sockets.a
 lib/ecl-%%VERSION%%/libserve-event.a
 lib/ecl-%%VERSION%%/package-locks.asd
 lib/ecl-%%VERSION%%/package-locks.fas
 %%ASDF%%lib/ecl-%%VERSION%%/prebuilt-asdf.asd
 %%SOCKETS%%lib/ecl-%%VERSION%%/libsockets.a
-lib/ecl-%%VERSION%%/profile.asd
-lib/ecl-%%VERSION%%/profile.fas
 %%SOCKETS%%lib/ecl-%%VERSION%%/ql-minitar.asd
 %%SOCKETS%%lib/ecl-%%VERSION%%/ql-minitar.fas
-lib/ecl-%%VERSION%%/rt.asd
-lib/ecl-%%VERSION%%/rt.fas
 %%SOCKETS%%lib/ecl-%%VERSION%%/sb-bsd-sockets.asd
 %%SOCKETS%%lib/ecl-%%VERSION%%/sb-bsd-sockets.fas
 lib/ecl-%%VERSION%%/serve-event.asd
@@ -230,9 +223,9 @@ lib/ecl-%%VERSION%%/serve-event.fas
 %%SOCKETS%%lib/ecl-%%VERSION%%/sockets.asd
 %%SOCKETS%%lib/ecl-%%VERSION%%/sockets.fas
 lib/libecl.so
-lib/libecl.so.16
-lib/libecl.so.16.1
 lib/libecl.so.%%VERSION%%
+lib/libecl.so.20
+lib/libecl.so.20.4
 man/man1/ecl-config.1.gz
 man/man1/ecl.1.gz
 @dir include/ecl/gc

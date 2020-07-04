@@ -1,6 +1,6 @@
---- src/aclocal.m4.orig	2016-12-19 10:25:00 UTC
+--- src/aclocal.m4.orig	2020-04-24 10:54:52 UTC
 +++ src/aclocal.m4
-@@ -231,6 +231,8 @@ AC_SUBST(LIBPREFIX)dnl	Name components of a statically
+@@ -246,6 +246,8 @@ AC_SUBST(LIBPREFIX)dnl	Name components of a statically
  AC_SUBST(LIBEXT)
  AC_SUBST(SHAREDEXT)dnl	Name components of a dynamically linked library
  AC_SUBST(SHAREDPREFIX)
@@ -9,7 +9,7 @@
  AC_SUBST(OBJEXT)dnl	These are set by autoconf
  AC_SUBST(EXEEXT)
  AC_SUBST(INSTALL_TARGET)dnl Which type of installation: flat directory or unix like.
-@@ -240,6 +242,8 @@ ECL_GC_DIR=bdwgc
+@@ -257,6 +259,8 @@ ECL_GC_DIR=bdwgc
  ECL_LDRPATH=''
  SHAREDEXT='so'
  SHAREDPREFIX='lib'
@@ -18,16 +18,16 @@
  LIBPREFIX='lib'
  LIBEXT='a'
  PICFLAG='-fPIC'
-@@ -251,6 +255,8 @@ THREAD_OBJ="$THREAD_OBJ c/threads/process c/threads/qu
+@@ -268,6 +272,8 @@ THREAD_OBJ="$THREAD_OBJ threads/process threads/queue 
  clibs='-lm'
  SONAME=''
  SONAME_LDFLAGS=''
 +IMPLIB_NAME=''
 +IMPLIB_LDFLAGS=''
  case "${host_os}" in
-         linux-androideabi)
+         linux-android*)
                  thehost='android'
-@@ -366,10 +372,14 @@ case "${host_os}" in
+@@ -385,10 +391,14 @@ case "${host_os}" in
                  shared='yes'
                  THREAD_CFLAGS='-D_THREAD_SAFE'
                  THREAD_LIBS='-lpthread'
@@ -45,14 +45,14 @@
                  PICFLAG=''
                  if test "x$host_cpu" = "xx86_64" ; then
                     # Our GMP library is too old and does not support
-@@ -387,10 +397,14 @@ case "${host_os}" in
+@@ -405,10 +415,14 @@ case "${host_os}" in
                  enable_threads='yes'
                  THREAD_CFLAGS='-D_THREAD_SAFE'
                  THREAD_GC_FLAGS='--enable-threads=win32'
--                SHARED_LDFLAGS=''
--                BUNDLE_LDFLAGS=''
-+                SHARED_LDFLAGS="-shared -Wl,--enable-auto-image-base ${LDFLAGS}"
-+                BUNDLE_LDFLAGS="-shared -Wl,--enable-auto-image-base ${LDFLAGS}"
+-                SHARED_LDFLAGS="-Wl,--stack,${ECL_DEFAULT_C_STACK_SIZE}"
+-                BUNDLE_LDFLAGS="-Wl,--stack,${ECL_DEFAULT_C_STACK_SIZE}"
++                SHARED_LDFLAGS="-shared -Wl,--stack,${ECL_DEFAULT_C_STACK_SIZE} -Wl,--enable-auto-image-base ${LDFLAGS}"
++                BUNDLE_LDFLAGS="-shared -Wl,--stack,${ECL_DEFAULT_C_STACK_SIZE} -Wl,--enable-auto-image-base ${LDFLAGS}"
                  SHAREDPREFIX=''
                  SHAREDEXT='dll'
 +                IMPLIB_PREFIX='lib'

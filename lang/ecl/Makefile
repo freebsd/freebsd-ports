@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ecl
-PORTVERSION=	16.1.3
-PORTREVISION=	2
+PORTVERSION=	20.4.24
 CATEGORIES=	lang lisp
 MASTER_SITES=	https://common-lisp.net/project/ecl/static/files/release/
 
@@ -21,7 +20,7 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 		libgc.so:devel/boehm-gc
 
 MAKE_JOBS_UNSAFE=	yes
-USES=		autoreconf gmake localbase perl5 tar:tgz
+USES=		autoreconf gmake localbase perl5 tar:tgz makeinfo
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 AUTORECONF_WRKSRC=	${WRKSRC}/src
@@ -30,6 +29,7 @@ CONFIGURE_ARGS=	--with-system-gmp \
 		--enable-boehm=system \
 		--enable-libatomic=system
 USE_LDCONFIG=	yes
+INFO=		ecl
 
 OPTIONS_DEFINE=	ASDF DFFI SAGE SOCKETS THREADS X11
 OPTIONS_DEFAULT=ASDF DFFI SAGE SOCKETS THREADS
