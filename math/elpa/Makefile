@@ -25,7 +25,7 @@ USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
 BINARY_ALIAS=	make=gmake gcc=gcc${GCC_DEFAULT} g++=g++${GCC_DEFAULT} # build fails with clang: recursively calls cc
-FCFLAGS+=	-I${LOCALBASE}/include
+FCFLAGS+=	-std=legacy -I${LOCALBASE}/include
 
 OPTIONS_DEFINE=			OPENMP MPI DOCS
 OPTIONS_DEFINE_amd64=		SSE
