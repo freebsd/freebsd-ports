@@ -14,6 +14,8 @@ LICENSE=	BSD3CLAUSE BSD4CLAUSE LGPL21+
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_aarch64=	Fails to link: missing sbrk
+
 LIB_DEPENDS=	libfftw3.so:math/fftw3
 
 FLAVORS=	x11 shlib
