@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	duplicity
-PORTVERSION=	0.8.13
+PORTVERSION=	0.8.14
 CATEGORIES=	sysutils
 MASTER_SITES=	https://code.launchpad.net/duplicity/0.8-series/${PORTVERSION}/+download/
 
@@ -64,7 +64,7 @@ post-patch:
 .endfor
 
 post-patch-NLS-off:
-	@${REINPLACE_CMD} -e '105,129d' \
+	@${REINPLACE_CMD} -e '109,133d' \
 		${WRKSRC}/setup.py
 
 post-patch-FTP-off:
