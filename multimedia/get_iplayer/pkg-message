@@ -1,8 +1,16 @@
 [
 { type: install
   message: <<EOM
-You must be in the UK, or use a UK proxy, to gain
-access to most iPlayer content.
+You must be in the UK, or use a UK proxy, to gain access to most iPlayer content.
+
+To use the web server cgi script, you must set "get_iplayer_enable="YES" in
+"/etc/rc.conf", and set "get_iplayer_chdir" to a valid directory to store
+configuration files and downloads. If "get_iplayer_chdir" is unset, the
+"get_uplayer" home directory is used.
+
+In the latter case you can set the home directory to (eg) '/home/get_iplayer", with:
+
+pw usermod get_iplayer -m -M 750 -k /var/empty -d /home/get_iplayer
 EOM
 }
 ]
