@@ -22,6 +22,7 @@ NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
 MAKE_ARGS=	CPPFLAGS=-I.
 USES=		fortran gmake
+FFLAGS+=	-std=legacy
 
 PLIST_FILES=	bin/isaac
 PORTDOCS=	man.4_2.ps.gz
