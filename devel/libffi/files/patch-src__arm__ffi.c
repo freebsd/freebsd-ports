@@ -3,11 +3,11 @@
 # PR: ports/149167 ports/184517
 # Patch by: cognet@ (to be upstreamed @ LLVM)
 
---- ./src/arm/ffi.c.orig	2013-03-16 22:19:39.000000000 +1100
-+++ ./src/arm/ffi.c	2013-12-03 19:30:58.440924300 +1100
-@@ -33,6 +33,11 @@
- 
- #include <stdlib.h>
+--- src/arm/ffi.c.orig	2019-10-31 14:49:54 UTC
++++ src/arm/ffi.c
+@@ -55,6 +55,11 @@ extern unsigned int ffi_arm_trampoline[3] FFI_HIDDEN;
+ #endif
+ #endif
  
 +#if defined(__FreeBSD__) && defined(__arm__)
 +#include <sys/types.h>
@@ -15,12 +15,13 @@
 +#endif
 +
  /* Forward declares. */
- static int vfp_type_p (ffi_type *);
+ static int vfp_type_p (const ffi_type *);
  static void layout_vfp_args (ffi_cif *);
-@@ -582,6 +587,16 @@
+@@ -568,6 +573,16 @@ void ffi_go_closure_SYSV (void) FFI_HIDDEN;
+ void ffi_go_closure_VFP (void) FFI_HIDDEN;
  
- #else
- 
+ /* the cif must already be prep'ed */
++
 +#if defined(__FreeBSD__) && defined(__arm__)
 +#define __clear_cache(start, end) do { \
 +		struct arm_sync_icache_args ua; 		\
@@ -30,7 +31,6 @@
 +		sysarch(ARM_SYNC_ICACHE, &ua);			\
 +	} while (0);
 +#endif
-+
- #define FFI_INIT_TRAMPOLINE(TRAMP,FUN,CTX)				\
- ({ unsigned char *__tramp = (unsigned char*)(TRAMP);			\
-    unsigned int  __fun = (unsigned int)(FUN);				\
+ 
+ ffi_status
+ ffi_prep_closure_loc (ffi_closure * closure,

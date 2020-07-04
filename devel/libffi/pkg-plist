@@ -1,11 +1,9 @@
 include/ffi.h
 include/ffitarget.h
-lib/libffi-%%PORTVERSION%%/include/ffi.h
-lib/libffi-%%PORTVERSION%%/include/ffitarget.h
 lib/libffi.a
 lib/libffi.so
-lib/libffi.so.6
-lib/libffi.so.6.0.4
+lib/libffi.so.7
+lib/libffi.so.7.1.0
 libdata/pkgconfig/libffi.pc
 man/man3/ffi.3.gz
 man/man3/ffi_call.3.gz

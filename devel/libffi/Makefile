@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libffi
-PORTVERSION=	3.2.1
-PORTREVISION=	3
+PORTVERSION=	3.3
 CATEGORIES=	devel
 MASTER_SITES=	SOURCEWARE/${PORTNAME}
 
@@ -19,19 +18,13 @@ USES=		libtool pathfix
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
+CONFIGURE_ARGS=	--disable-multi-os-directory
 INSTALL_TARGET=	install-strip
 INFO=		libffi
-PLIST_SUB=	PORTVERSION=${PORTVERSION}
 TEST_TARGET=	check
 
 post-patch:
 	@${REINPLACE_CMD} -e 's| -Wno-psabi||g' \
 		${WRKSRC}/testsuite/lib/libffi.exp
-
-post-install:
-	@${LN} -sf ../lib/libffi-${PORTVERSION}/include/ffi.h \
-	    ${STAGEDIR}${PREFIX}/include/
-	@${LN} -sf ../lib/libffi-${PORTVERSION}/include/ffitarget.h \
-	    ${STAGEDIR}${PREFIX}/include/
 
 .include <bsd.port.mk>
