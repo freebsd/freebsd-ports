@@ -104,6 +104,10 @@ MAKE_ENV=	INSTALL_STRIP_FLAG=${STRIP}
 
 .include <bsd.port.options.mk>
 
+.if ${PORT_OPTIONS:MDEBUG}
+WITH_DEBUG=	yes
+.endif
+
 .if ${PORT_OPTIONS:MSASL} && ${PORT_OPTIONS:MOPENLDAP}
 WANT_OPENLDAP_SASL=	yes
 .endif
