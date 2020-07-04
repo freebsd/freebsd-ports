@@ -27,6 +27,7 @@ SHARED_DESC=	Build shared libraries and PIC archives
 STATIC_DESC=	Build (non-PIC) archives
 
 MAKE_ENV=	BLASLIB="${BLASLIB}"
+FFLAGS+=	-std=legacy
 PLIST_SUB=	SVERSION="${SVERSION}"
 
 WRKSRC=			${WRKDIR}/lapack-${PORTVERSION}
