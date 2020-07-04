@@ -2,7 +2,7 @@
 
 PORTNAME=	rainloop
 DISTVERSIONPREFIX=	community-
-PKGNAMESUFFIX=	-community
+PKGNAMESUFFIX=	-community${PHP_PKGNAMESUFFIX}
 
 COMMENT=	Modern and interactive webmail - community edition
 
