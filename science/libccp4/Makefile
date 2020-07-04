@@ -25,7 +25,7 @@ INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
 CFLAGS+=	-fPIC
-FFLAGS+=	-fPIC
+FFLAGS+=	-fPIC -std=legacy
 
 post-configure:
 	${REINPLACE_CMD} -e 's| -Wl,--as-needed||; s| -Wl,--no-as-needed||' ${WRKSRC}/Makefile
