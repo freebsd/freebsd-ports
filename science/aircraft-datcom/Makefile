@@ -15,6 +15,7 @@ GH_ACCOUNT=	arktools
 GH_TAGNAME=	ed877bb
 
 USES=	fortran cmake
+FFLAGS+=	-std=legacy
 
 OPTIONS_DEFINE=	DOCS
 
