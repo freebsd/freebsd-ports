@@ -2,6 +2,7 @@ bin/mongoose
 include/suitesparse/GraphBLAS.h
 include/suitesparse/Mongoose.hpp
 include/suitesparse/RBio.h
+include/suitesparse/SLIP_LU.h
 include/suitesparse/SuiteSparseQR.hpp
 include/suitesparse/SuiteSparseQR_C.h
 include/suitesparse/SuiteSparseQR_definitions.h
@@ -89,7 +90,7 @@ lib/libcxsparse.so.3.2.0
 lib/libgraphblas.a
 lib/libgraphblas.so
 lib/libgraphblas.so.3
-lib/libgraphblas.so.3.2.2
+lib/libgraphblas.so.3.3.2
 lib/libklu.so
 lib/libklu.so.1
 lib/libklu.so.1.3.8
@@ -103,12 +104,15 @@ lib/libmongoose.so.2.0.4
 lib/librbio.so
 lib/librbio.so.2
 lib/librbio.so.2.2.6
+lib/libsliplu.so
+lib/libsliplu.so.1
+lib/libsliplu.so.1.0.1
 lib/libspqr.so
 lib/libspqr.so.2
 lib/libspqr.so.2.0.9
 lib/libsuitesparseconfig.so
 lib/libsuitesparseconfig.so.5
-lib/libsuitesparseconfig.so.5.7.2
+lib/libsuitesparseconfig.so.5.8.0
 lib/libumfpack.so
 lib/libumfpack.so.5
 lib/libumfpack.so.5.7.9
@@ -126,6 +130,8 @@ lib/libumfpack.so.5.7.9
 %%PORTDOCS%%%%DOCSDIR%%/KLU_UserGuide.pdf
 %%PORTDOCS%%%%DOCSDIR%%/LDL_README.txt
 %%PORTDOCS%%%%DOCSDIR%%/RBIO_README.txt
+%%PORTDOCS%%%%DOCSDIR%%/SLIP_LU_README.md
+%%PORTDOCS%%%%DOCSDIR%%/SLIP_LU_UserGuide.pdf
 %%PORTDOCS%%%%DOCSDIR%%/SPQR_README.txt
 %%PORTDOCS%%%%DOCSDIR%%/SUITESPARSECONFIG_README.txt
 %%PORTDOCS%%%%DOCSDIR%%/SuiteSparse_README.md
