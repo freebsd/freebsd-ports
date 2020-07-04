@@ -1,4 +1,4 @@
---- Run.orig	2017-09-04 20:35:19 UTC
+--- Run.orig	2020-06-11 08:18:10 UTC
 +++ Run
 @@ -91,10 +91,10 @@ chomp($BASEDIR);
  my $BINDIR = getDir('UB_BINDIR', $BASEDIR . "/pgms");
@@ -13,7 +13,26 @@
  
  # Directory where the tests are executed.
  my $TESTDIR = getDir('UB_TESTDIR', $BASEDIR . "/testdir");
-@@ -735,12 +735,10 @@ sub getSystemInfo {
+@@ -672,6 +672,18 @@ sub processCpuFlags {
+ # these fields:
+ # describing the model etc.  Returns undef if the information can't be got.
+ sub getCpuInfo {
++    my $ncpu = getCmdOutput("sysctl -n hw.ncpu");
++    my $cpus = [ ];
++    my $i;
++    for ($i=0;$i<$ncpu;$i++) {
++       $cpus->[$i]{'model'} = getCmdOutput("sysctl -n hw.model");
++       $cpus->[$i]{'bogo'} = 0;
++       $cpus->[$i]{'flags'} = getCmdOutput("sysctl -n hw.machine");
++    }
++    $cpus;
++}
++
++sub getCpuInfoBak {
+     open(my $fd, "<", "/proc/cpuinfo") || return undef;
+ 
+     my $cpus = [ ];
+@@ -735,12 +747,10 @@ sub getSystemInfo {
  
      # Get the language info.
      my $lang = getCmdOutput("printenv LANG");
@@ -29,7 +48,7 @@
  
      # Get details on the CPUs, if possible.
      my $cpus = getCpuInfo();
-@@ -750,10 +748,9 @@ sub getSystemInfo {
+@@ -750,10 +760,9 @@ sub getSystemInfo {
      }
  
      # Get graphics hardware info.
@@ -41,7 +60,7 @@
      $info->{'load'} = getCmdOutput("uptime");
      $info->{'numUsers'} = getCmdOutput("who | wc -l");
  
-@@ -781,6 +778,7 @@ sub abortRun {
+@@ -781,6 +790,7 @@ sub abortRun {
  
  # Do checks that everything's ready for testing.
  sub preChecks {
@@ -49,7 +68,7 @@
      # Set the language.
      $ENV{'LANG'} = $language;
  
-@@ -1386,7 +1384,7 @@ sub displaySystem {
+@@ -1386,7 +1396,7 @@ sub displaySystem {
      }
  
      # Display system load and usage info.
@@ -58,7 +77,7 @@
  }
  
  
-@@ -1603,8 +1601,8 @@ sub displaySystemHtml {
+@@ -1603,8 +1613,8 @@ sub displaySystemHtml {
      # Display system runlevel, load and usage info.
      printf $fd "<tr>\n";
      printf $fd "   <td><b>Uptime:</b></td>\n";
