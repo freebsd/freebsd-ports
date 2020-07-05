@@ -1,0 +1,11 @@
+--- SLIP_LU/Lib/Makefile.orig	2020-07-03 16:11:39 UTC
++++ SLIP_LU/Lib/Makefile
+@@ -17,7 +17,7 @@ default: library
+ include ../../SuiteSparse_config/SuiteSparse_config.mk
+ 
+ # uncomment for extra error checking:
+-CFLAGS += -Wall -Wextra -Wpedantic -Werror
++#CFLAGS += -Wall -Wextra -Wpedantic -Werror
+ 
+ # SLIP_LU depends on SuiteSparse_config, AMD, COLAMD, M, GMP, and MPFR
+ LDLIBS += -lsuitesparseconfig -lamd -lcolamd -lm -lgmp -lmpfr
