@@ -28,10 +28,10 @@ USE_QT=		core declarative dbus gui network \
 		buildtools_build linguisttools_build qmake_build
 USE_XORG=	xcb
 
+CMAKE_ON=	BUILD_MAN_PAGES
 CMAKE_ARGS=	-DUID_MIN=1000 \
 		-DUID_MAX=65000 \
 		-DCMAKE_INSTALL_SYSCONFDIR:PATH=${LOCALBASE}/etc \
-		-DBUILD_MAN_PAGES=ON \
 		-DRST2MAN_EXECUTABLE=${LOCALBASE}/bin/rst2man.py-${PYTHON_VER}
 
 USE_RC_SUBR=	sddm
