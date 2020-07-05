@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_sparc64=	Fails to build: internal compiler error
 
-USES=	cmake
+USES=	compiler:c++11-lang cmake
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	potassco
