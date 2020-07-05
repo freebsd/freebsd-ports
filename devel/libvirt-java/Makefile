@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libvirt-java
-PORTVERSION=	0.5.1
-PORTREVISION=	4
+PORTVERSION=	0.5.2
 CATEGORIES=	devel java
 MASTER_SITES=	http://libvirt.org/sources/java/ \
 		ftp://libvirt.org/libvirt/java/
