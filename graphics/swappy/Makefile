@@ -2,13 +2,8 @@
 
 PORTNAME=	swappy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.0
+DISTVERSION=	1.2.0
 CATEGORIES=	graphics
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	b59700f47085.patch:-p1 # https://github.com/jtheoof/swappy/pull/42
-PATCHFILES+=	f82390dcec74.patch:-p1 # https://github.com/jtheoof/swappy/pull/42
-PATCHFILES+=	d7df51363873.patch:-p1 # https://github.com/jtheoof/swappy/pull/42
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Snapshot editing for Wayland (a la Snappy on macOS)

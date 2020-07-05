@@ -1,9 +1,3 @@
-TIMESTAMP = 1592881518
-SHA256 (jtheoof-swappy-v1.1.0_GH0.tar.gz) = b17cd548209947f10c4f8391f2a9dd4de16544abda00fc2290b4fd3815d70a50
-SIZE (jtheoof-swappy-v1.1.0_GH0.tar.gz) = 644656
-SHA256 (b59700f47085.patch) = 3569b4b290256124c253736448fa53f98ac908eadf1a39ed74e0c1bd3bf0e26b
-SIZE (b59700f47085.patch) = 717
-SHA256 (f82390dcec74.patch) = d77b60de58eefae58e8bdc95bdd8ebb418c13b1f841c1522d2262b36a4a919ba
-SIZE (f82390dcec74.patch) = 1116
-SHA256 (d7df51363873.patch) = 98d0a1ea34145bba6640c9ba191abe7c7ecba921c07d1413db3ff6a926aa25e5
-SIZE (d7df51363873.patch) = 2355
+TIMESTAMP = 1593975243
+SHA256 (jtheoof-swappy-v1.2.0_GH0.tar.gz) = 98fc666f41e39c6ceb1e7e93274accd73b7b8b7a29d444d94f99c40a82e752eb
+SIZE (jtheoof-swappy-v1.2.0_GH0.tar.gz) = 648676
