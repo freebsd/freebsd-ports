@@ -1,6 +1,6 @@
---- mail.local/mail.local.c.orig	2014-06-12 17:30:47 UTC
+--- mail.local/mail.local.c.orig	2020-04-30 11:52:48 UTC
 +++ mail.local/mail.local.c
-@@ -153,6 +153,8 @@ int	ExitVal = EX_OK;		/* sysexits.h erro
+@@ -153,6 +153,8 @@ int	ExitVal = EX_OK;		/* sysexits.h error value. */
  bool	HoldErrs = false;		/* Hold errors in ErrBuf */
  bool	LMTPMode = false;
  bool	BounceQuota = false;		/* permanent error when over quota */
@@ -19,10 +19,10 @@
  #  if _FFR_SPOOL_PATH
 -	while ((ch = getopt(argc, argv, "7bdD:f:h:r:lp:")) != -1)
 +	while ((ch = getopt(argc, argv, "7bBdD:f:h:r:lsp:")) != -1)
- #  else /* _FFR_SPOOL_PATH */
+ #  else
 -	while ((ch = getopt(argc, argv, "7bdD:f:h:r:l")) != -1)
 +	while ((ch = getopt(argc, argv, "7bBdD:f:h:r:ls")) != -1)
- #  endif /* _FFR_SPOOL_PATH */
+ #  endif
  #endif /* HASHSPOOL */
  	{
 @@ -249,6 +251,10 @@ main(argc, argv)
@@ -89,9 +89,9 @@
  # if _FFR_SPOOL_PATH
 -	mailerr(NULL, "usage: mail.local [-7] [-b] [-d] [-l] [-f from|-r from] [-h filename] [-p path] user ...");
 +	mailerr(NULL, "usage: mail.local [-7] [-b] [-B] [-d] [-l] [-s] [-f from|-r from] [-h filename] [-p path] user ...");
- # else /* _FFR_SPOOL_PATH */
+ # else
 -	mailerr(NULL, "usage: mail.local [-7] [-b] [-d] [-l] [-f from|-r from] [-h filename] user ...");
 +	mailerr(NULL, "usage: mail.local [-7] [-b] [-B] [-d] [-l] [-s] [-f from|-r from] [-h filename] user ...");
- # endif /* _FFR_SPOOL_PATH */
+ # endif
  	sm_exit(ExitVal);
  }

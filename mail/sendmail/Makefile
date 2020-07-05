@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	sendmail
-PORTVERSION=	8.15.2
-PORTREVISION=	23
+PORTVERSION=	8.16.1
+PORTREVISION=	0
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.sendmail.org/pub/sendmail/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
@@ -105,9 +105,6 @@ IGNORE=		option CYRUSLOOKUP requires option SOCKETMAP
 .else
 EXTRA_PATCHES+=	${FILESDIR}/cyruslookup.patch
 .endif
-.endif
-.if ${PORT_OPTIONS:MSMTPUTF8}
-EXTRA_PATCHES+=	${FILESDIR}/smtputf8.patch
 .endif
 .if ${PORT_OPTIONS:MTLS}
 TLS_SUFFIX?=	+tls

@@ -1,7 +1,7 @@
---- sendmail/sendmail.h.orig	2015-06-19 12:59:29 UTC
+--- sendmail/sendmail.h.orig	2020-07-02 05:00:37 UTC
 +++ sendmail/sendmail.h
-@@ -57,6 +57,10 @@ SM_UNUSED(static char SmailId[]) = "@(#)
- #endif /* _DEFINE */
+@@ -63,6 +63,10 @@ SM_UNUSED(static char SmailId[]) = "@(#)$Id: sendmail.
+ #endif
  
  #include "bf.h"
 +#if USE_BLACKLIST
@@ -11,14 +11,14 @@
  #include "timers.h"
  #include <sm/exc.h>
  #include <sm/heap.h>
-@@ -2544,6 +2548,10 @@ EXTERN int ConnectionRateWindowSize;
- EXTERN bool	SSLEngineInitialized;
- #endif /* STARTTLS && USE_OPENSSL_ENGINE */
+@@ -2575,6 +2579,10 @@ EXTERN int Hacks;	/* bit field of run-time enabled "ha
+ #endif
  
+ EXTERN int ConnectionRateWindowSize;
++
 +#if USE_BLACKLIST
 +EXTERN bool	UseBlacklist;
 +#endif
-+
+ 
  /*
  **  Declarations of useful functions
- */

@@ -1,6 +1,6 @@
---- devtools/OS/FreeBSD.orig	2014-03-05 00:59:45 UTC
+--- devtools/OS/FreeBSD.orig	2020-05-19 19:54:32 UTC
 +++ devtools/OS/FreeBSD
-@@ -6,7 +6,7 @@ dnl	Place personal settings in devtools/
+@@ -6,7 +6,7 @@ dnl	Place personal settings in devtools/Site/site.conf
  define(`confMAPDEF', `-DNEWDB -DNIS -DMAP_REGEX')
  define(`confLIBS', `-lutil')
  
