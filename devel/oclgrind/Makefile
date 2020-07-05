@@ -29,6 +29,8 @@ CC=		clang${LLVM_DEFAULT}
 CXX=		clang++${LLVM_DEFAULT}
 CPP=		clang-cpp${LLVM_DEFAULT}
 
+# to be removed after switching to LLVM 9 or later
+CXXFLAGS_powerpc64=	-mabi=elfv2
 CMAKE_ARGS+=	-DLLVM_DIR=${LOCALBASE}/llvm${LLVM_DEFAULT}/lib/cmake/llvm
 
 .include <bsd.port.options.mk>
