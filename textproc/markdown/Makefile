@@ -5,10 +5,10 @@ PORTNAME=	markdown
 PORTVERSION=	1.0.1
 PORTREVISION=	2
 CATEGORIES=	textproc perl5
-MASTER_SITES=	http://daringfireball.net/projects/downloads/
+MASTER_SITES=	https://daringfireball.net/projects/markdown/
 DISTNAME=	Markdown_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miguel@gocobachi.dev
 COMMENT=	Text-to-HTML conversion tool for web writers
 
 LICENSE=	BSD3CLAUSE
