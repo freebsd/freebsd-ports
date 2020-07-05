@@ -3171,6 +3171,7 @@
     SUBDIR += p5-Sort-Key-DateTime
     SUBDIR += p5-Sort-Key-Top
     SUBDIR += p5-Sort-Maker
+    SUBDIR += p5-Sort-Sub
     SUBDIR += p5-Sort-Tree
     SUBDIR += p5-Sort-Versions
     SUBDIR += p5-Specio
