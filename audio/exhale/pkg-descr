@@ -1,0 +1,5 @@
+exhale is a lightweight library and application to encode uncompressed
+WAVE-format audio files into ISO/IEC 23003-3 (MPEG-D) Unified Speech and Audio
+Coding (xHE-AAC/Extended HE-AAC/USAC) format.
+
+WWW: https://gitlab.com/ecodis/exhale
