@@ -23,6 +23,7 @@ USES=		fortran
 
 CONFIGURE_ARGS=	--disable-dlmalloc --without-fftw --without-blas \
 		--without-lapack --without-bcslib --without-npsol
+FFLAGS+=	-std=legacy
 PLIST_SUB=	ALGAE_VERSION=${PORTVERSION}
 
 INFO=		${PORTNAME}
