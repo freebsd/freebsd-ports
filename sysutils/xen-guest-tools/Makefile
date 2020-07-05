@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	xen-guest-tools
-PORTVERSION=	4.13.0
-PORTREVISION=	2
+PORTVERSION=	4.13.1
+PORTREVISION=	0
 CATEGORIES=	sysutils
 MASTER_SITES=	https://downloads.xenproject.org/release/xen/${PORTVERSION}/
 DISTNAME=	xen-${PORTVERSION}
@@ -18,7 +18,7 @@ ONLY_FOR_ARCHS=		amd64 i386
 ONLY_FOR_ARCHS_REASON=	not yet ported to anything other than amd64 or i386
 CONFLICTS=	xen-tools-[0-9]*
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash \
+BUILD_DEPENDS=	bash:shells/bash \
 		${LOCALBASE}/lib/libglib-2.0.so:devel/glib20 \
 		${LOCALBASE}/lib/libargp.so:devel/argp-standalone \
 		${LOCALBASE}/lib/libyajl.so:devel/yajl \
