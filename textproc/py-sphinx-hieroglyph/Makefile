@@ -6,7 +6,7 @@ DISTVERSIONPREFIX=	hieroglyph-
 CATEGORIES=	textproc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Sphinx extension which builds HTML presentations
 
 LICENSE=	BSD3CLAUSE
