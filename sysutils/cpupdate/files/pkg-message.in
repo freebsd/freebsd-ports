@@ -9,8 +9,10 @@ NOTE: The following directories
 contain Intel and/or platomav/CPUMicrocodes collections respectively
 if you have just built the port with corresponding CPM/INTEL option(s) enabled.
 In this case you can run "make install-microcodes" to install them to
-
 %%DATADIR%%
+
+If you installed the package then you may download microcodes with following command:
+service cpupdate download
 EOM
 }
 ]

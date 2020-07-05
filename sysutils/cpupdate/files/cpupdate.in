@@ -27,11 +27,81 @@ start_postcmd="cpupdate_poststart"
 load_rc_config $name
 
 : ${cpupdate_enable:="NO"}
-: ${cpupdate_flags="-w -u"}
-: ${cpupdate_ibrs_enable="YES"}
+: ${cpupdate_flags:="-w -u"}
+: ${cpupdate_ibrs_enable:="YES"}
+: ${cpupdate_fetch:=%%FETCH_CMD%%}
+: ${cpupdate_sites:=%%MASTER_SITES%%}
+: ${cpupdate_distfiles:=%%DISTFILES%%}
+
 command=%%PREFIX%%/sbin/${name}
+download_cmd="cpupdate_download"
 resume_cmd="cpupdate_resume"
-extra_commands="resume"
+extra_commands="download resume"
+
+cpupdate_distfile() {
+  local _distfile
+
+  setvar $1 ''
+  for _distfile in $cpupdate_distfiles
+  do
+    case $_distfile in
+    *:$2) setvar $1 ${_distfile%:*}; return;;
+    esac
+  done
+}
+
+cpupdate_download() {
+  local _d _dst _file _tmpdir _url
+  local -
+
+  set -e
+  : ${TMPDIR:=/var/tmp}
+  export TMPDIR
+  trap 'rm -rf $_tmpdir' EXIT
+  _tmpdir=$(mktemp -d -t ${name})
+
+  for _url in $cpupdate_sites
+  do
+    case "$_url" in
+    *:cpm|*:intel)
+      cpupdate_distfile _file ${_url##*:}
+      _url=${_url%:*}${_file}
+      echo Downloading $_url
+      $cpupdate_fetch -o - $_url | tar -C $_tmpdir -xf - || exit
+      ;;
+    esac
+  done
+
+  echo -n Installing microcodes to %%DATADIR%% ...
+  umask 022
+  _dst=%%INTEL_DATADIR%%
+  _d=%%INTEL_DIR%%
+  _d=$_tmpdir/Intel${_d##*/Intel}
+  if [ -d $_d ]; then
+    rm -rf $_dst || true
+    mkdir -p $_dst
+    cp -Rp $_d/ $_dst
+    [ -d $_d-with-caveats ] && cp -Rp $_d-with-caveats/ $_dst
+    chmod -R 644 $_dst
+    chown -R root:wheel $_dst
+    chmod 755 $_dst
+  fi
+
+  _dst=%%CPM_DATADIR%%
+  _d=%%CPM_DIR%%
+  _d=$_tmpdir/${_d##*/}/Intel
+  if [ -d $_d ]; then
+    rm -rf $_d/LICENSE $_dst || true
+    mkdir -p $_dst
+    %%PREFIX%%/sbin/${name} -q -IC -S $_d -T $_dst >/dev/null
+  fi
+  echo ' done.'
+  echo '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
+  echo NOTE: you have to manually remove the directory
+  echo %%DATADIR%%
+  echo after deinstallation of ${name}.
+  echo '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
+}
 
 cpupdate_poststart() {
   checkyesno cpupdate_ibrs_enable && sysctl -i hw.ibrs_disable=0
