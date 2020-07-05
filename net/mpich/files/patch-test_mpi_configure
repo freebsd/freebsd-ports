@@ -1,0 +1,30 @@
+--- test/mpi/configure.orig	2020-07-05 14:40:24 UTC
++++ test/mpi/configure
+@@ -9726,7 +9726,7 @@ rm -f core conftest.err conftest.$ac_objext conftest.$
+ 	# The best solution is to turn off errors on particular routines
+ 	# if that isn't possible (e.g., too many of them), then
+ 	# just try arguments that turn off all checking
+-	for flags in  "-mismatch" ; do
++	for flags in  "-fallow-argument-mismatch" "-mismatch" ; do
+             testok=no
+             FFLAGS="$FFLAGS $flags"
+             cat > conftest.$ac_ext <<_ACEOF
+@@ -9768,17 +9768,7 @@ the same routine with arguments of different types." "
+ fi
+ 
+ addarg=$pac_cv_prog_f77_mismatched_args_parm
+-
+-    if test "X$addarg" != "X" ; then
+-        # We could add the names of all of the MPI routines that
+-        # accept different types.  Instead, we fail cleanly.
+-        # Some Fortran compilers allow you to turn off checking for
+-        # mismatched arguments for *all* routines.  Adding an argument
+-	# that turns off checking for *everything* is not something that
+-	# configure should do - if the user wants this, they can follow
+-	# the instructions in the following error message.
+-	as_fn_error $? "The Fortran compiler $F77 does not accept programs that call the same routine with arguments of different types without the option $addarg.  Rerun configure with FFLAGS=$addarg" "$LINENO" 5
+-    fi
++FFLAGS="$FFLAGS $addarg"
+ 
+     # Check whether we need -lU77 to get iargc and getarg, which
+     # are used for a few of the tests in spawn (U77 was needed with
