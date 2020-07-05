@@ -3,11 +3,14 @@
   message: <<EOM
 Astrometry was successfully installed.
 
-You'll find this distribution in %%PREFIX%%/astrometry
+You'll find this distribution under %%PREFIX%%. Examples are found
+under %%PREFIX%%/astrometry/examples. See %%PREFIX%%/astrometry/doc/
+for some info, more detailed at http://astrometry.net/use.html and
+http://astrometry.net/doc/readme.html.
 
 Although the code is released under a GPL license, you will also need
 to download some data files, and these are distributed under different
-license. See %%PREFIX%%/astrometry/doc/GETTING-INDEXES
+license. Data files (indexes) should be stored under %%DATADIR%%/
 EOM
 }
 ]

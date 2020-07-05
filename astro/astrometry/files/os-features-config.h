@@ -2,4 +2,4 @@
 #define NEED_DECLARE_QSORT_R 1
 #define NEED_QSORT_R 0
 #define NEED_SWAP_QSORT_R 0
-#define HAVE_NETPBM 0
+#define HAVE_NETPBM 1
