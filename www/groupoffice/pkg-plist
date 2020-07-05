@@ -3420,8 +3420,6 @@
 %%WWWDIR%%/modules/tasks/ContinueTaskDialog.js
 %%WWWDIR%%/modules/tasks/MainPanel.js
 %%WWWDIR%%/modules/tasks/Portlet.js
-%%WWWDIR%%/modules/tasks/ScheduleCallDialog.js
-%%WWWDIR%%/modules/tasks/ScheduleCallMenuItem.js
 %%WWWDIR%%/modules/tasks/SelectTaskStatus.js
 %%WWWDIR%%/modules/tasks/SelectTasklist.js
 %%WWWDIR%%/modules/tasks/Settings.js
