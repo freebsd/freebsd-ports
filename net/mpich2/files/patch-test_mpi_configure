@@ -1,6 +1,6 @@
---- configure.orig	2012-10-08 19:02:38 UTC
-+++ configure
-@@ -31361,7 +31361,7 @@ rm -f core conftest.err conftest.$ac_objext conftest.$
+--- test/mpi/configure.orig	2012-10-08 19:02:24 UTC
++++ test/mpi/configure
+@@ -9835,7 +9835,7 @@ rm -f core conftest.err conftest.$ac_objext conftest.$
  	# The best solution is to turn off errors on particular routines
  	# if that isn't possible (e.g., too many of them), then
  	# just try arguments that turn off all checking
@@ -9,12 +9,11 @@
              testok=no
              FFLAGS="$FFLAGS $flags"
              cat > conftest.$ac_ext <<_ACEOF
-@@ -31403,18 +31403,8 @@ the same routine with arguments of different types." "
+@@ -9877,17 +9877,7 @@ the same routine with arguments of different types." "
  fi
  
  addarg=$pac_cv_prog_f77_mismatched_args_parm
-+FFLAGS="$FFLAGS $addarg"
- 
+-
 -    if test "X$addarg" != "X" ; then
 -        # We could add the names of all of the MPI routines that
 -        # accept different types.  Instead, we fail cleanly.
@@ -25,23 +24,7 @@
 -	# the instructions in the following error message.
 -	as_fn_error $? "The Fortran compiler $F77 does not accept programs that call the same routine with arguments of different types without the option $addarg.  Rerun configure with FFLAGS=$addarg" "$LINENO" 5
 -    fi
--
-     bindings="$bindings f77"
-     bindings_dirs="$bindings_dirs src/binding/f77"
++FFLAGS="$FFLAGS $addarg"
  
-@@ -43769,12 +43759,12 @@ return thr_create ();
-   return 0;
- }
- _ACEOF
--for ac_lib in '' thread; do
-+for ac_lib in '' -lpthread; do
-   if test -z "$ac_lib"; then
-     ac_res="none required"
-   else
--    ac_res=-l$ac_lib
--    LIBS="-l$ac_lib  $ac_func_search_save_LIBS"
-+    ac_res=$ac_lib
-+    LIBS="$ac_lib  $ac_func_search_save_LIBS"
-   fi
-   if ac_fn_c_try_link "$LINENO"; then :
-   ac_cv_search_thr_create=$ac_res
+     # Check whether we need -lU77 to get iargc and getarg, which
+     # are used for a few of the tests in spawn (U77 was needed with
