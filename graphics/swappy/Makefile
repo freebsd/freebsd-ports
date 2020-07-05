@@ -11,11 +11,15 @@ COMMENT=	Snapshot editing for Wayland (a la Snappy on macOS)
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		compiler:c11 gnome meson pkgconfig
+USES=		compiler:c11 desktop-file-utils gettext-tools gnome meson pkgconfig
 USE_GITHUB=	yes
 USE_GNOME=	cairo gdkpixbuf2 gtk30
 GH_ACCOUNT=	jtheoof
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} \
+		share/applications/${PORTNAME}.desktop \
+		share/icons/hicolor/scalable/apps/${PORTNAME}.svg \
+		share/locale/en/LC_MESSAGES/${PORTNAME}.mo
+INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	CLIPBOARD ICONSFONT MANPAGES NOTIFY
 OPTIONS_DEFAULT=CLIPBOARD ICONSFONT MANPAGES NOTIFY
