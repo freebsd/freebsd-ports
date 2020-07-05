@@ -1910,6 +1910,9 @@
     SUBDIR += p5-Commands-Guarded
     SUBDIR += p5-CommitBit
     SUBDIR += p5-Compiler-Lexer
+    SUBDIR += p5-Complete-Common
+    SUBDIR += p5-Complete-Sah
+    SUBDIR += p5-Complete-Util
     SUBDIR += p5-Config-AST
     SUBDIR += p5-Config-Any
     SUBDIR += p5-Config-ApacheFormat

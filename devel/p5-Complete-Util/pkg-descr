@@ -1,0 +1,9 @@
+This package provides some generic completion routines that follow the
+Complete convention.  The main routine is complete_array_elem which
+tries to complete a word using choices from elements of supplied array.
+
+The routine will first try a simple substring prefix matching; if that
+fails, will try some other methods like word-mode, character-mode, or
+fuzzy matching.
+
+WWW: https://metacpan.org/release/Complete-Util
