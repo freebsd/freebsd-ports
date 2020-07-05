@@ -14,6 +14,8 @@ COMMENT=	Fork of TimberWolf, a placement tool in VLSI design
 
 LICENSE=	GPLv2
 
+BROKEN_aarch64=	Fails to link: missing sbrk
+
 LIB_DEPENDS=	libgsl.so:math/gsl
 
 USES=		cmake compiler:c11 pkgconfig xorg
