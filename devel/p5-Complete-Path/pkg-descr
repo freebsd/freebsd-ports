@@ -1,0 +1,10 @@
+Complete path, for anything path-like.  Meant to be used as backend for
+other completing functions provided by Complete::* modules.  Provides
+features like case-insensitive matching, expanding intermediate paths,
+and case mapping.
+
+Algorithm is to split path into path elements, then list items (using
+the supplied list_func) and perform filtering (using the supplied
+filter_func) at every level.
+
+WWW: https://metacpan.org/release/Complete-Path

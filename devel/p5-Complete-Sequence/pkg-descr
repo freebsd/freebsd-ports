@@ -1,0 +1,4 @@
+This module provides routine to complete string from a sequence of choices,
+that is, where its parts (sequence items) are formed from various pieces.
+
+WWW: https://metacpan.org/release/Complete-Sequence
