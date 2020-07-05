@@ -1,4 +1,3 @@
-# Created by: Andreas Sommer <andreas.sommer87@googlemail.com>
 # $FreeBSD$
 
 PORTNAME=	sphinx-hieroglyph
@@ -7,7 +6,7 @@ DISTVERSIONPREFIX=	hieroglyph-
 CATEGORIES=	textproc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	andreas.sommer87@googlemail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sphinx extension which builds HTML presentations
 
 LICENSE=	BSD3CLAUSE

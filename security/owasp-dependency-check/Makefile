@@ -12,7 +12,7 @@ CATEGORIES=	security java
 MASTER_SITES=	LOCAL/pi/:source2
 DISTFILES+=	owasp-dependency-check-${PORTVERSION}-maven-repository.tar.gz:source2
 
-MAINTAINER=	andreas.sommer87@googlemail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Detects publicly disclosed vulnerabilities in project dependencies
 
 LICENSE=	APACHE20

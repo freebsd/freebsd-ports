@@ -1,4 +1,3 @@
-# Created by: Andreas Sommer <andreas.sommer87@googlemail.com>
 # $FreeBSD$
 
 PORTNAME=	hhdate
@@ -7,7 +6,7 @@ DISTVERSION=	2.4
 PORTREVISION=	3
 CATEGORIES=	devel
 
-MAINTAINER=	andreas.sommer87@googlemail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Date and time library based on the C++11 (and beyond) <chrono> header
 
 LICENSE=	MIT
