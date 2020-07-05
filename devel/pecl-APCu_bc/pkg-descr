@@ -1,0 +1,5 @@
+APCu Backwards Compatibility Module.
+It provides a backwards APC compatible API
+using APCu for PHP 7.x.
+
+WWW: https://pecl.php.net/package/apcu_bc

@@ -3841,6 +3841,7 @@
     SUBDIR += pear-pdepend-staticReflection
     SUBDIR += pear-phing
     SUBDIR += pecl-APCu
+    SUBDIR += pecl-APCu_bc
     SUBDIR += pecl-ast
     SUBDIR += pecl-dio
     SUBDIR += pecl-ds
