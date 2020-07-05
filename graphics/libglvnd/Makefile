@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libglvnd
-DISTVERSION=	1.3.1
+DISTVERSION=	1.3.2
 CATEGORIES=	graphics
 
 MAINTAINER=	greg@unrelenting.technology
@@ -18,7 +18,7 @@ USE_LDCONFIG=	yes
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	glvnd
-GL_COMMIT=	1c32de07074fee8edcb274899948b6551081ed54
+GL_COMMIT=	da0edd9728d6d33aa0d058037b694ee91a7ecad5
 
 OPTIONS_DEFINE=	X11
 OPTIONS_DEFAULT=X11
