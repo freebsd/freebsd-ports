@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	tslib
-DISTVERSION=	1.21
+DISTVERSION=	1.22
 CATEGORIES=	graphics
 
 MAINTAINER=	adridg@FreeBSD.org

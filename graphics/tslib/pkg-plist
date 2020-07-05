@@ -16,7 +16,7 @@ lib/cmake/tslib/tslibTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/tslib/tslibTargets.cmake
 lib/libts.so
 lib/libts.so.0
-lib/libts.so.0.10.3
+lib/libts.so.0.10.4
 lib/ts/debounce.so
 lib/ts/dejitter.so
 lib/ts/evthres.so
