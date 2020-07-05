@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=		tevent
-PORTVERSION=		0.10.1
+PORTVERSION=		0.10.2
 PORTREVISION=		0
 PORTEPOCH=		0
 CATEGORIES=		devel
@@ -14,8 +14,8 @@ LICENSE=		LGPL3
 
 IGNORE_NONTHREAD_PYTHON=needs port lang/python${PYTHON_SUFFIX} to be build with THREADS support
 
-BUILD_DEPENDS=		talloc>=2.2.0:devel/talloc
-RUN_DEPENDS=		talloc>=2.2.0:devel/talloc
+BUILD_DEPENDS=		talloc>=2.3.1:devel/talloc
+RUN_DEPENDS=		talloc>=2.3.1:devel/talloc
 
 CONFLICTS_INSTALL=	tevent1-*
 
