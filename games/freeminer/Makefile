@@ -20,7 +20,7 @@ LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 
 USE_GITHUB=	yes
 
-USES=		compiler:c++11-lib cmake
+USES=		compiler:c++11-lib cmake localbase:ldflags
 CMAKE_ARGS=	-DCUSTOM_MANDIR="${PREFIX}/man" \
 		-DCUSTOM_EXAMPLE_CONF_DIR="${PREFIX}/etc" \
 		-DRUN_IN_PLACE=0
