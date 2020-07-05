@@ -23,7 +23,7 @@ EXTRA_PATCHES+=			${PATCHDIR}/0001-Zfs-provision-1.patch:-p1
 
 SAMBA4_BASENAME=		samba
 SAMBA4_PORTNAME=		${SAMBA4_BASENAME}4
-SAMBA4_VERSION=			4.11.8
+SAMBA4_VERSION=			4.11.11
 SAMBA4_DISTNAME=		${SAMBA4_BASENAME}-${SAMBA4_VERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
 
 WRKSRC?=			${WRKDIR}/${DISTNAME}
@@ -630,7 +630,7 @@ post-install: post-install-rm-junk post-install-fix-manpages
 					${INSTALL} -d -m 0755 "${STAGEDIR}${SAMBA4_MODULEDIR}/${dir}"
 .endfor
 .if !defined(WITH_DEBUG)
-				-${FIND} ${STAGEDIR}${PREFIX}/bin ${STAGEDIR}${PREFIX}/sbin \
+				-${FIND} ${STAGEDIR}${PREFIX}/bin ${STAGEDIR}${PREFIX}/sbin ${STAGEDIR}${PREFIX}/libexec \
 					-type f -print0 | ${XARGS} -0 -n 1 -t ${STRIP_CMD}
 				-${FIND} ${STAGEDIR}${PREFIX}/lib -name '*.so*' \
 					-type f -print0 | ${XARGS} -0 -n 1 -t ${STRIP_CMD}

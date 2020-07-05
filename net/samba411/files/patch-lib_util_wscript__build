@@ -1,6 +1,6 @@
 --- lib/util/wscript_build.orig	2019-05-07 08:38:21 UTC
 +++ lib/util/wscript_build
-@@ -151,7 +151,7 @@ else:
+@@ -170,7 +170,7 @@ else:
  
      bld.SAMBA_LIBRARY('samba-modules',
                        source='modules.c',
@@ -9,3 +9,10 @@
                        local_include=False,
                        private_library=True)
  
+@@ -285,4 +285,5 @@ else:
+     bld.SAMBA_BINARY('test_util_paths',
+                      source='tests/test_util_paths.c',
+                      deps='cmocka replace talloc samba-util',
+-                     local_include=False)
++                     local_include=False,
++                     install=False)

@@ -937,6 +937,7 @@ man/man8/winbindd.8.gz
 %%PYTHON_SITELIBDIR%%/samba/tests/dns_forwarder_helpers/server.py
 %%PYTHON_SITELIBDIR%%/samba/tests/dns_forwarder.py
 %%PYTHON_SITELIBDIR%%/samba/tests/dns_invalid.py
+%%PYTHON_SITELIBDIR%%/samba/tests/dns_packet.py
 %%PYTHON_SITELIBDIR%%/samba/tests/dns_tkey.py
 %%PYTHON_SITELIBDIR%%/samba/tests/dns_wildcard.py
 %%PYTHON_SITELIBDIR%%/samba/tests/dns.py
