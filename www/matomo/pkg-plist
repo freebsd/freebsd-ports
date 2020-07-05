@@ -389,6 +389,7 @@
 %%WWWDIR%%/core/Tracker/Db/Pdo/Mysql.php
 %%WWWDIR%%/core/Tracker/Db/Pdo/Pgsql.php
 %%WWWDIR%%/core/Tracker/Failures.php
+%%WWWDIR%%/core/Tracker/FingerprintSalt.php
 %%WWWDIR%%/core/Tracker/GoalManager.php
 %%WWWDIR%%/core/Tracker/Handler.php
 %%WWWDIR%%/core/Tracker/Handler/Factory.php
@@ -3191,6 +3192,7 @@
 %%WWWDIR%%/plugins/Installation/FormSuperUser.php
 %%WWWDIR%%/plugins/Installation/Installation.php
 %%WWWDIR%%/plugins/Installation/Menu.php
+%%WWWDIR%%/plugins/Installation/Onboarding.php
 %%WWWDIR%%/plugins/Installation/ServerFilesGenerator.php
 %%WWWDIR%%/plugins/Installation/View.php
 %%WWWDIR%%/plugins/Installation/Widgets/GetSystemCheck.php
