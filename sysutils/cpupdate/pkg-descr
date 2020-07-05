@@ -2,8 +2,4 @@ x86 CPU microcode utility for BSD.
 
 At the moment, it is for Intel processors only.
 
-Note: update FreeBSD to 11.2-RELEASE or 12.0-RELEASE or newer
-before building/using this utility if your microcode update brings
-new CPU features like Indirect Branch Restricted Speculation (IBRS).
-
 WWW: https://github.com/kernschmelze/cpupdate
