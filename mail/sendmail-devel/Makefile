@@ -251,9 +251,6 @@ post-install:
 	${RM} ${STAGEDIR}${PREFIX}/man/cat*/*
 # final perm of sendmail is 2555 (see plist), needed for strip cmd
 	${CHMOD} 755 ${STAGEDIR}${PREFIX}/sbin/sendmail
-	${RM} ${STAGEDIR}/etc/mail/submit.cf
-	${RMDIR} ${STAGEDIR}/var/spool/clientmqueue
-
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/vacation
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/rmail
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/*
