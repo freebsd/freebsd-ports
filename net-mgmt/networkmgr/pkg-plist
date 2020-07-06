@@ -1,5 +1,6 @@
 bin/netcardmgr
 bin/networkmgr
+etc/sudoers.d/networkmgr
 etc/xdg/autostart/networkmgr.desktop
 share/icons/hicolor/128x128/apps/nm-adhoc.png
 share/icons/hicolor/128x128/apps/nm-device-wired-secure.png
