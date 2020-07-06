@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	linuxdoc-tools
-PORTVERSION=	0.9.80
+PORTVERSION=	0.9.82
 CATEGORIES=	textproc
 # USE_GITLAB requires a commit hash, so construct MASTER_SITES manually
 MASTER_SITES=	https://gitlab.com/agmartin/${PORTNAME}/-/archive/${PORTVERSION}/
