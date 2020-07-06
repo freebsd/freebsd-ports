@@ -3,7 +3,8 @@
 
 PORTNAME=	bambootracker
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.3
+DISTVERSION=	0.4.3-11
+DISTVERSIONSUFFIX=	-g5e0e6ef
 CATEGORIES=	audio
 MASTER_SITES=	LOCAL/ehaupt:extras
 DISTFILES=	${PORTNAME}-extras-${EXTRASVERSION}${EXTRACT_SUFX}:extras
@@ -30,10 +31,32 @@ PORTEXAMPLES=	*
 
 EXTRASVERSION=	2
 
-OPTIONS_DEFINE=	EXAMPLES NLS
+OPTIONS_DEFINE=	ALSA EXAMPLES JACK NLS PULSEAUDIO
+OPTIONS_DEFAULT=PULSEAUDIO
+
+ALSA_DESC=	ALSA audio architecture support (EXPERIMENTAL)
+ALSA_JACK=	JACK audio server support (EXPERIMENTAL)
+
 OPTIONS_SUB=	yes
 
-.include <bsd.port.pre.mk>
+ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
+JACK_LIB_DEPENDS=	libjack.so:audio/jack
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MALSA}
+QMAKE_ARGS+=	CONFIG+="use_alsa"
+.endif
+
+.if ${PORT_OPTIONS:MJACK}
+QMAKE_ARGS+=	CONFIG+="use_jack" \
+		CONFIG+="jack_has_rename"
+.endif
+
+.if ${PORT_OPTIONS:MPULSEAUDIO}
+QMAKE_ARGS+=	CONFIG+="use_pulse"
+.endif
 
 .if (${OSVERSION} >= 1300096)
 EXTRA_PATCHES=	${PATCHDIR}/extrapatch-BambooTracker_BambooTracker.pro
@@ -58,4 +81,4 @@ do-install-EXAMPLES-on:
 		${WRKDIR}/${PORTNAME}-extras-${EXTRASVERSION}/*.btm \
 		${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
