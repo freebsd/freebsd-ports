@@ -22,6 +22,7 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 
 MAKE_JOBS_UNSAFE=	yes
 USES=		autoreconf gmake localbase perl5 tar:tgz makeinfo
+USE_CSTD=	c99
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 AUTORECONF_WRKSRC=	${WRKSRC}/src
