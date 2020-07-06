@@ -2,21 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	dikt
-PORTVERSION=	2s1
-PORTREVISION=	2
+PORTVERSION=	2s4
 PORTEPOCH=	1
 CATEGORIES=	textproc net kde
 MASTER_SITES=	https://bitbucket.org/dikt/code/downloads/
 
-MAINTAINER=	goran.tal@gmail.com
+MAINTAINER=	info@dikt.tv
 COMMENT=	Dictionary for KDE
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cmake compiler:c++11-lang kde:5 qt:5 tar:txz
-USE_KDE=	auth bookmarks codecs completion config configwidgets coreaddons dbusaddons guiaddons i18n \
-		iconthemes itemviews jobwidgets kio service solid widgetsaddons xmlgui
+USE_KDE=	auth bookmarks codecs completion config configwidgets \
+		coreaddons dbusaddons guiaddons i18n iconthemes itemviews \
+		jobwidgets kio service solid widgetsaddons windowsystem xmlgui
 USE_QT=		concurrent core dbus gui network printsupport svg widgets xml \
 		buildtools_build qmake_build
 
