@@ -3,6 +3,7 @@
 
 PORTNAME=	popt
 PORTVERSION=	1.18
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.rpm.org/popt/releases/popt-1.x/
 
@@ -23,7 +24,7 @@ INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
 NLS_CONFIGURE_ENABLE=	nls
-NLS_USES=	gettext
+NLS_USES=	gettext-runtime localbase
 OPTIONS_SUB=	yes
 
 .include <bsd.port.mk>
