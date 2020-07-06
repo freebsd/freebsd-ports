@@ -1165,6 +1165,7 @@
     SUBDIR += libfastjson
     SUBDIR += libffcall
     SUBDIR += libffi
+    SUBDIR += libffi321
     SUBDIR += libfirm
     SUBDIR += libfixposix
     SUBDIR += libflatarray

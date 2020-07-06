@@ -1,0 +1,10 @@
+The libffi library provides a portable, high level programming
+interface to various calling conventions. This allows a programmer to
+call any function specified by a call interface description at run
+time.
+
+This version has the old shared library version from libffi 3.2.1.
+It is stripped down and only brings in the shared library.  It is
+not meant to build against.
+
+WWW: http://sources.redhat.com/libffi/
