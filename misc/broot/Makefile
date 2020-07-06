@@ -2,7 +2,7 @@
 
 PORTNAME=	broot
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.16.0
+DISTVERSION=	0.18.3
 CATEGORIES=	misc
 
 MAINTAINER=	vulcan@wired.sh
@@ -139,7 +139,7 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		strsim-0.8.0 \
 		syn-1.0.31 \
 		term-0.6.1 \
-		termimad-0.8.23 \
+		termimad-0.8.24 \
 		textwrap-0.11.0 \
 		thiserror-1.0.20 \
 		thiserror-impl-1.0.20 \
@@ -180,10 +180,13 @@ PORTDOCS=	CHANGELOG.md README.md
 
 OPTIONS_DEFINE=	DOCS
 
+_BUILD_VERSION=	${DISTVERSION}
+_BUILD_DATE=	$$(date +'%Y/%m/%d')
+
 pre-build:
 	@${MV} ${WRKSRC}/man/page ${WRKSRC}/man/${PORTNAME}.1
-	@${REINPLACE_CMD} -e 's|#version|${DISTVERSION}|g' \
-		-e "s|#date|$$(date +'%Y\/%m\/%d')|g" ${WRKSRC}/man/${PORTNAME}.1
+	@${REINPLACE_CMD} -e 's|#version|${_BUILD_VERSION}|g' \
+		-e "s|#date|${_BUILD_DATE}|g" ${WRKSRC}/man/${PORTNAME}.1
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
