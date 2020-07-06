@@ -63,7 +63,6 @@ bin/sancov-devel
 %%CLANG%%bin/clang-cpp-devel
 %%CLANG%%bin/clang-extdef-mapping-devel
 %%CLANG%%bin/clang-format-devel
-%%CLANG%%bin/clang-import-test-devel
 %%CLANG%%bin/clang-offload-bundler-devel
 %%CLANG%%bin/clang-offload-wrapper-devel
 %%CLANG%%bin/clang-scan-deps-devel
@@ -130,7 +129,6 @@ llvm-devel/bin/bugpoint
 %%EXTRAS%%llvm-devel/bin/clang-doc
 %%CLANG%%llvm-devel/bin/clang-extdef-mapping
 %%CLANG%%llvm-devel/bin/clang-format
-%%CLANG%%llvm-devel/bin/clang-import-test
 %%EXTRAS%%llvm-devel/bin/clang-include-fixer
 %%EXTRAS%%llvm-devel/bin/clang-move
 %%CLANG%%llvm-devel/bin/clang-offload-bundler
@@ -261,6 +259,7 @@ llvm-devel/bin/yaml2obj
 %%EXTRAS%%llvm-devel/include/clang-tidy/abseil/RedundantStrcatCallsCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/abseil/StrCatAppendCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/abseil/StringFindStartswithCheck.h
+%%EXTRAS%%llvm-devel/include/clang-tidy/abseil/StringFindStrContainsCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/abseil/TimeComparisonCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/abseil/TimeSubtractionCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/abseil/UpgradeDurationConversionsCheck.h
@@ -434,6 +433,7 @@ llvm-devel/bin/yaml2obj
 %%EXTRAS%%llvm-devel/include/clang-tidy/modernize/RawStringLiteralCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/modernize/RedundantVoidArgCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/modernize/ReplaceAutoPtrCheck.h
+%%EXTRAS%%llvm-devel/include/clang-tidy/modernize/ReplaceDisallowCopyAndAssignMacroCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/modernize/ReplaceRandomShuffleCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/modernize/ReturnBracedInitListCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/modernize/ShrinkToFitCheck.h
@@ -516,8 +516,10 @@ llvm-devel/bin/yaml2obj
 %%EXTRAS%%llvm-devel/include/clang-tidy/readability/StringCompareCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/readability/UniqueptrDeleteReleaseCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/readability/UppercaseLiteralSuffixCheck.h
+%%EXTRAS%%llvm-devel/include/clang-tidy/readability/UseAnyOfAllOfCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/tool/ClangTidyMain.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/utils/ASTUtils.h
+%%EXTRAS%%llvm-devel/include/clang-tidy/utils/Aliasing.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/utils/DeclRefExprUtils.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/utils/ExceptionAnalyzer.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/utils/ExprSequence.h
@@ -790,6 +792,7 @@ llvm-devel/bin/yaml2obj
 %%CLANG%%llvm-devel/include/clang/Basic/DiagnosticSerializationKinds.inc
 %%CLANG%%llvm-devel/include/clang/Basic/ExceptionSpecificationType.h
 %%CLANG%%llvm-devel/include/clang/Basic/ExpressionTraits.h
+%%CLANG%%llvm-devel/include/clang/Basic/FPOptions.def
 %%CLANG%%llvm-devel/include/clang/Basic/Features.def
 %%CLANG%%llvm-devel/include/clang/Basic/FileManager.h
 %%CLANG%%llvm-devel/include/clang/Basic/FileSystemOptions.h
@@ -1047,6 +1050,7 @@ llvm-devel/bin/yaml2obj
 %%CLANG%%llvm-devel/include/clang/StaticAnalyzer/Core/BugReporter/CommonBugCategories.h
 %%CLANG%%llvm-devel/include/clang/StaticAnalyzer/Core/Checker.h
 %%CLANG%%llvm-devel/include/clang/StaticAnalyzer/Core/CheckerManager.h
+%%CLANG%%llvm-devel/include/clang/StaticAnalyzer/Core/CheckerRegistryData.h
 %%CLANG%%llvm-devel/include/clang/StaticAnalyzer/Core/IssueHash.h
 %%CLANG%%llvm-devel/include/clang/StaticAnalyzer/Core/PathDiagnosticConsumers.h
 %%CLANG%%llvm-devel/include/clang/StaticAnalyzer/Core/PathSensitive/APSIntType.h
@@ -1083,7 +1087,6 @@ llvm-devel/bin/yaml2obj
 %%CLANG%%llvm-devel/include/clang/StaticAnalyzer/Core/PathSensitive/SimpleConstraintManager.h
 %%CLANG%%llvm-devel/include/clang/StaticAnalyzer/Core/PathSensitive/Store.h
 %%CLANG%%llvm-devel/include/clang/StaticAnalyzer/Core/PathSensitive/StoreRef.h
-%%CLANG%%llvm-devel/include/clang/StaticAnalyzer/Core/PathSensitive/SubEngine.h
 %%CLANG%%llvm-devel/include/clang/StaticAnalyzer/Core/PathSensitive/SummaryManager.h
 %%CLANG%%llvm-devel/include/clang/StaticAnalyzer/Core/PathSensitive/SymExpr.h
 %%CLANG%%llvm-devel/include/clang/StaticAnalyzer/Core/PathSensitive/SymbolManager.h
@@ -1094,6 +1097,8 @@ llvm-devel/bin/yaml2obj
 %%CLANG%%llvm-devel/include/clang/StaticAnalyzer/Frontend/CheckerRegistry.h
 %%CLANG%%llvm-devel/include/clang/StaticAnalyzer/Frontend/FrontendActions.h
 %%CLANG%%llvm-devel/include/clang/StaticAnalyzer/Frontend/ModelConsumer.h
+%%CLANG%%llvm-devel/include/clang/Testing/CommandLineArgs.h
+%%CLANG%%llvm-devel/include/clang/Testing/TestClangConfig.h
 %%CLANG%%llvm-devel/include/clang/Tooling/ASTDiff/ASTDiff.h
 %%CLANG%%llvm-devel/include/clang/Tooling/ASTDiff/ASTDiffInternal.h
 %%CLANG%%llvm-devel/include/clang/Tooling/AllTUsExecution.h
@@ -1150,6 +1155,7 @@ llvm-devel/bin/yaml2obj
 %%CLANG%%llvm-devel/include/clang/Tooling/ToolExecutorPluginRegistry.h
 %%CLANG%%llvm-devel/include/clang/Tooling/Tooling.h
 %%CLANG%%llvm-devel/include/clang/Tooling/Transformer/MatchConsumer.h
+%%CLANG%%llvm-devel/include/clang/Tooling/Transformer/Parsing.h
 %%CLANG%%llvm-devel/include/clang/Tooling/Transformer/RangeSelector.h
 %%CLANG%%llvm-devel/include/clang/Tooling/Transformer/RewriteRule.h
 %%CLANG%%llvm-devel/include/clang/Tooling/Transformer/SourceCode.h
@@ -1351,7 +1357,6 @@ llvm-devel/bin/yaml2obj
 %%LLDB%%llvm-devel/include/lldb/DataFormatters/FormattersContainer.h
 %%LLDB%%llvm-devel/include/lldb/DataFormatters/FormattersHelpers.h
 %%LLDB%%llvm-devel/include/lldb/DataFormatters/LanguageCategory.h
-%%LLDB%%llvm-devel/include/lldb/DataFormatters/Mock.h
 %%LLDB%%llvm-devel/include/lldb/DataFormatters/StringPrinter.h
 %%LLDB%%llvm-devel/include/lldb/DataFormatters/TypeCategory.h
 %%LLDB%%llvm-devel/include/lldb/DataFormatters/TypeCategoryMap.h
@@ -1721,6 +1726,7 @@ llvm-devel/include/llvm/ADT/AllocatorList.h
 llvm-devel/include/llvm/ADT/Any.h
 llvm-devel/include/llvm/ADT/ArrayRef.h
 llvm-devel/include/llvm/ADT/BitVector.h
+llvm-devel/include/llvm/ADT/Bitfields.h
 llvm-devel/include/llvm/ADT/BitmaskEnum.h
 llvm-devel/include/llvm/ADT/BreadthFirstIterator.h
 llvm-devel/include/llvm/ADT/CachedHashString.h
@@ -1840,6 +1846,8 @@ llvm-devel/include/llvm/Analysis/IndirectCallPromotionAnalysis.h
 llvm-devel/include/llvm/Analysis/IndirectCallVisitor.h
 llvm-devel/include/llvm/Analysis/InlineAdvisor.h
 llvm-devel/include/llvm/Analysis/InlineCost.h
+llvm-devel/include/llvm/Analysis/InlineFeaturesAnalysis.h
+llvm-devel/include/llvm/Analysis/InlineModelFeatureMaps.h
 llvm-devel/include/llvm/Analysis/InstructionPrecedenceTracking.h
 llvm-devel/include/llvm/Analysis/InstructionSimplify.h
 llvm-devel/include/llvm/Analysis/Interval.h
@@ -1862,6 +1870,8 @@ llvm-devel/include/llvm/Analysis/LoopIterator.h
 llvm-devel/include/llvm/Analysis/LoopNestAnalysis.h
 llvm-devel/include/llvm/Analysis/LoopPass.h
 llvm-devel/include/llvm/Analysis/LoopUnrollAnalyzer.h
+llvm-devel/include/llvm/Analysis/MLInlineAdvisor.h
+llvm-devel/include/llvm/Analysis/MLModelRunner.h
 llvm-devel/include/llvm/Analysis/MemoryBuiltins.h
 llvm-devel/include/llvm/Analysis/MemoryDependenceAnalysis.h
 llvm-devel/include/llvm/Analysis/MemoryLocation.h
@@ -1887,11 +1897,12 @@ llvm-devel/include/llvm/Analysis/RegionPass.h
 llvm-devel/include/llvm/Analysis/RegionPrinter.h
 llvm-devel/include/llvm/Analysis/ScalarEvolution.h
 llvm-devel/include/llvm/Analysis/ScalarEvolutionAliasAnalysis.h
-llvm-devel/include/llvm/Analysis/ScalarEvolutionExpander.h
+llvm-devel/include/llvm/Analysis/ScalarEvolutionDivision.h
 llvm-devel/include/llvm/Analysis/ScalarEvolutionExpressions.h
 llvm-devel/include/llvm/Analysis/ScalarEvolutionNormalization.h
 llvm-devel/include/llvm/Analysis/ScopedNoAliasAA.h
 llvm-devel/include/llvm/Analysis/SparsePropagation.h
+llvm-devel/include/llvm/Analysis/StackLifetime.h
 llvm-devel/include/llvm/Analysis/StackSafetyAnalysis.h
 llvm-devel/include/llvm/Analysis/SyncDependenceAnalysis.h
 llvm-devel/include/llvm/Analysis/SyntheticCountsUtils.h
@@ -1932,6 +1943,7 @@ llvm-devel/include/llvm/BinaryFormat/ELFRelocs/PowerPC64.def
 llvm-devel/include/llvm/BinaryFormat/ELFRelocs/RISCV.def
 llvm-devel/include/llvm/BinaryFormat/ELFRelocs/Sparc.def
 llvm-devel/include/llvm/BinaryFormat/ELFRelocs/SystemZ.def
+llvm-devel/include/llvm/BinaryFormat/ELFRelocs/VE.def
 llvm-devel/include/llvm/BinaryFormat/ELFRelocs/i386.def
 llvm-devel/include/llvm/BinaryFormat/ELFRelocs/x86_64.def
 llvm-devel/include/llvm/BinaryFormat/MachO.def
@@ -2010,9 +2022,9 @@ llvm-devel/include/llvm/CodeGen/GlobalISel/MachineIRBuilder.h
 llvm-devel/include/llvm/CodeGen/GlobalISel/RegBankSelect.h
 llvm-devel/include/llvm/CodeGen/GlobalISel/RegisterBank.h
 llvm-devel/include/llvm/CodeGen/GlobalISel/RegisterBankInfo.h
-llvm-devel/include/llvm/CodeGen/GlobalISel/Types.h
 llvm-devel/include/llvm/CodeGen/GlobalISel/Utils.h
 llvm-devel/include/llvm/CodeGen/ISDOpcodes.h
+llvm-devel/include/llvm/CodeGen/IndirectThunks.h
 llvm-devel/include/llvm/CodeGen/IntrinsicLowering.h
 llvm-devel/include/llvm/CodeGen/LatencyPriorityQueue.h
 llvm-devel/include/llvm/CodeGen/LazyMachineBlockFrequencyInfo.h
@@ -2307,13 +2319,16 @@ llvm-devel/include/llvm/DebugInfo/PDB/Native/NamedStreamMap.h
 llvm-devel/include/llvm/DebugInfo/PDB/Native/NativeCompilandSymbol.h
 llvm-devel/include/llvm/DebugInfo/PDB/Native/NativeEnumGlobals.h
 llvm-devel/include/llvm/DebugInfo/PDB/Native/NativeEnumInjectedSources.h
+llvm-devel/include/llvm/DebugInfo/PDB/Native/NativeEnumLineNumbers.h
 llvm-devel/include/llvm/DebugInfo/PDB/Native/NativeEnumModules.h
 llvm-devel/include/llvm/DebugInfo/PDB/Native/NativeEnumTypes.h
 llvm-devel/include/llvm/DebugInfo/PDB/Native/NativeExeSymbol.h
 llvm-devel/include/llvm/DebugInfo/PDB/Native/NativeFunctionSymbol.h
+llvm-devel/include/llvm/DebugInfo/PDB/Native/NativeLineNumber.h
 llvm-devel/include/llvm/DebugInfo/PDB/Native/NativePublicSymbol.h
 llvm-devel/include/llvm/DebugInfo/PDB/Native/NativeRawSymbol.h
 llvm-devel/include/llvm/DebugInfo/PDB/Native/NativeSession.h
+llvm-devel/include/llvm/DebugInfo/PDB/Native/NativeSourceFile.h
 llvm-devel/include/llvm/DebugInfo/PDB/Native/NativeSymbolEnumerator.h
 llvm-devel/include/llvm/DebugInfo/PDB/Native/NativeTypeArray.h
 llvm-devel/include/llvm/DebugInfo/PDB/Native/NativeTypeBuiltin.h
@@ -2389,6 +2404,8 @@ llvm-devel/include/llvm/ExecutionEngine/GenericValue.h
 llvm-devel/include/llvm/ExecutionEngine/Interpreter.h
 llvm-devel/include/llvm/ExecutionEngine/JITEventListener.h
 llvm-devel/include/llvm/ExecutionEngine/JITLink/EHFrameSupport.h
+llvm-devel/include/llvm/ExecutionEngine/JITLink/ELF.h
+llvm-devel/include/llvm/ExecutionEngine/JITLink/ELF_x86_64.h
 llvm-devel/include/llvm/ExecutionEngine/JITLink/JITLink.h
 llvm-devel/include/llvm/ExecutionEngine/JITLink/JITLinkMemoryManager.h
 llvm-devel/include/llvm/ExecutionEngine/JITLink/MachO.h
@@ -2439,8 +2456,13 @@ llvm-devel/include/llvm/ExecutionEngine/RTDyldMemoryManager.h
 llvm-devel/include/llvm/ExecutionEngine/RuntimeDyld.h
 llvm-devel/include/llvm/ExecutionEngine/RuntimeDyldChecker.h
 llvm-devel/include/llvm/ExecutionEngine/SectionMemoryManager.h
+llvm-devel/include/llvm/Frontend/Directive/DirectiveBase.td
+llvm-devel/include/llvm/Frontend/OpenMP/OMP.cpp.inc
+llvm-devel/include/llvm/Frontend/OpenMP/OMP.h.inc
+llvm-devel/include/llvm/Frontend/OpenMP/OMP.td
 llvm-devel/include/llvm/Frontend/OpenMP/OMPConstants.h
 llvm-devel/include/llvm/Frontend/OpenMP/OMPContext.h
+llvm-devel/include/llvm/Frontend/OpenMP/OMPGridValues.h
 llvm-devel/include/llvm/Frontend/OpenMP/OMPIRBuilder.h
 llvm-devel/include/llvm/Frontend/OpenMP/OMPKinds.def
 llvm-devel/include/llvm/FuzzMutate/FuzzerCLI.h
@@ -2910,6 +2932,7 @@ llvm-devel/include/llvm/Support/Solaris/sys/regset.h
 llvm-devel/include/llvm/Support/SourceMgr.h
 llvm-devel/include/llvm/Support/SpecialCaseList.h
 llvm-devel/include/llvm/Support/StringSaver.h
+llvm-devel/include/llvm/Support/SuffixTree.h
 llvm-devel/include/llvm/Support/SwapByteOrder.h
 llvm-devel/include/llvm/Support/SymbolRemappingReader.h
 llvm-devel/include/llvm/Support/SystemUtils.h
@@ -2942,6 +2965,7 @@ llvm-devel/include/llvm/Support/WindowsError.h
 llvm-devel/include/llvm/Support/WithColor.h
 llvm-devel/include/llvm/Support/X86DisassemblerDecoderCommon.h
 llvm-devel/include/llvm/Support/X86TargetParser.def
+llvm-devel/include/llvm/Support/X86TargetParser.h
 llvm-devel/include/llvm/Support/YAMLParser.h
 llvm-devel/include/llvm/Support/YAMLTraits.h
 llvm-devel/include/llvm/Support/circular_raw_ostream.h
@@ -3123,6 +3147,7 @@ llvm-devel/include/llvm/Transforms/Utils/BypassSlowDivision.h
 llvm-devel/include/llvm/Transforms/Utils/CallGraphUpdater.h
 llvm-devel/include/llvm/Transforms/Utils/CallPromotionUtils.h
 llvm-devel/include/llvm/Transforms/Utils/CanonicalizeAliases.h
+llvm-devel/include/llvm/Transforms/Utils/CanonicalizeFreezeInLoops.h
 llvm-devel/include/llvm/Transforms/Utils/Cloning.h
 llvm-devel/include/llvm/Transforms/Utils/CodeExtractor.h
 llvm-devel/include/llvm/Transforms/Utils/CodeMoverUtils.h
@@ -3157,6 +3182,7 @@ llvm-devel/include/llvm/Transforms/Utils/SSAUpdater.h
 llvm-devel/include/llvm/Transforms/Utils/SSAUpdaterBulk.h
 llvm-devel/include/llvm/Transforms/Utils/SSAUpdaterImpl.h
 llvm-devel/include/llvm/Transforms/Utils/SanitizerStats.h
+llvm-devel/include/llvm/Transforms/Utils/ScalarEvolutionExpander.h
 llvm-devel/include/llvm/Transforms/Utils/SimplifyIndVar.h
 llvm-devel/include/llvm/Transforms/Utils/SimplifyLibCalls.h
 llvm-devel/include/llvm/Transforms/Utils/SizeOpts.h
@@ -3194,6 +3220,7 @@ llvm-devel/include/llvm/XRay/RecordPrinter.h
 llvm-devel/include/llvm/XRay/Trace.h
 llvm-devel/include/llvm/XRay/XRayRecord.h
 llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
+llvm-devel/include/ompt-multiplex.h
 %%GOLD%%llvm-devel/lib/LLVMgold.so
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/__clang_cuda_builtin_vars.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/__clang_cuda_cmath.h
@@ -3204,6 +3231,9 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/__clang_cuda_math.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/__clang_cuda_math_forward_declares.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/__clang_cuda_runtime_wrapper.h
+%%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/__clang_hip_libdevice_declares.h
+%%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/__clang_hip_math.h
+%%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/__clang_hip_runtime_wrapper.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/__stddef_max_align_t.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/__wmmintrin_aes.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/__wmmintrin_pclmul.h
@@ -3212,6 +3242,7 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/ammintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/arm64intr.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/arm_acle.h
+%%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/arm_bf16.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/arm_cde.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/arm_cmse.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/arm_fp16.h
@@ -3389,6 +3420,7 @@ llvm-devel/lib/cmake/llvm/LLVMExternalProjectUtils.cmake
 llvm-devel/lib/cmake/llvm/LLVMInstallSymlink.cmake
 llvm-devel/lib/cmake/llvm/LLVMProcessSources.cmake
 llvm-devel/lib/cmake/llvm/TableGen.cmake
+llvm-devel/lib/cmake/llvm/TensorFlowCompile.cmake
 llvm-devel/lib/cmake/llvm/UseLibtool.cmake
 llvm-devel/lib/cmake/llvm/VersionFromVCS.cmake
 llvm-devel/lib/libLLVM-%%LLVM_MAJOR%%git.so
@@ -3591,6 +3623,7 @@ llvm-devel/lib/libRemarks.so.%%LLVM_MAJOR%%git
 %%CLANG%%llvm-devel/lib/libclangStaticAnalyzerCheckers.a
 %%CLANG%%llvm-devel/lib/libclangStaticAnalyzerCore.a
 %%CLANG%%llvm-devel/lib/libclangStaticAnalyzerFrontend.a
+%%CLANG%%llvm-devel/lib/libclangTesting.a
 %%EXTRAS%%llvm-devel/lib/libclangTidy.a
 %%EXTRAS%%llvm-devel/lib/libclangTidyAbseilModule.a
 %%EXTRAS%%llvm-devel/lib/libclangTidyAndroidModule.a

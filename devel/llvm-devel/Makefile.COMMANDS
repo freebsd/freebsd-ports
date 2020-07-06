@@ -65,7 +65,6 @@ CLANG_COMMANDS=	\
 		clang-cpp \
 		clang-extdef-mapping \
 		clang-format \
-		clang-import-test \
 		clang-offload-bundler \
 		clang-offload-wrapper \
 		clang-scan-deps \
