@@ -1,4 +1,5 @@
-SHA256 (python/unoconv-0.6.tar.gz) = 790e614b8615217ef4588b187f0018b526ec2bb480c6b9b2ffb9b82f48da73d4
-SIZE (python/unoconv-0.6.tar.gz) = 91578
+TIMESTAMP = 1436398005
+SHA256 (python/unoconv-0.7.tar.gz) = 56abbec55632b19dcaff7d506ad6e2fd86f53afff412e622cc1e162afb1263fa
+SIZE (python/unoconv-0.7.tar.gz) = 95732
 SHA256 (python/unoconv.png) = 459f7dbc60e34ccce5c9d46a7317be02dd3c8275e7f7588b7b3885c67b6738eb
 SIZE (python/unoconv.png) = 744

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	unoconv
-PORTVERSION=	0.6
-PORTREVISION=	1
+PORTVERSION=	0.7
 CATEGORIES=	textproc python
 MASTER_SITES=	http://dag.wieers.com/home-made/${PORTNAME}/ \
 		SF/nemysisfreebsdp/textproc/:icons
@@ -24,13 +23,9 @@ NO_BUILD=	yes
 
 PORTDOCS=	*
 
-DOCSRCDIR1=	${WRKSRC}
-DOC_FILES1=	AUTHORS ChangeLog README.asciidoc WISHLIST
-
-DOCSRCDIR2=	${WRKSRC}/doc
-DOCSDIR2=	${DOCSDIR}/doc
-DOC_FILES2=	errcode.txt filters.txt formats.txt office-installations.txt \
-		selinux.txt unoconv.1.txt
+DOC_FILES=	AUTHORS ChangeLog README.adoc
+DOC_FILES2=	errcode.adoc filters.adoc formats.adoc \
+		office-installations.adoc selinux.adoc unoconv.1.adoc
 
 OPTIONS_DEFINE=	DOCS
 
@@ -42,22 +37,19 @@ post-patch:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
-
 	@${MKDIR} ${STAGEDIR}${DATADIR}/tests/
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${DATADIR}
-
 .for f in *.odt *.csv
 	@(cd ${WRKSRC}/tests && ${INSTALL_DATA} ${f} ${STAGEDIR}${DATADIR}/tests)
 .endfor
-
 	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/
 	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 \
 		${STAGEDIR}${MAN1PREFIX}/man/man1/
 
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR2}
-	${INSTALL_DATA} ${DOC_FILES2:S|^|${DOCSRCDIR2}/|} ${STAGEDIR}${DOCSDIR2}
+	${INSTALL_DATA} ${DOC_FILES:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DOC_FILES2:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
