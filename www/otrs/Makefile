@@ -4,7 +4,7 @@
 PORTNAME=	otrs
 DISTVERSIONPREFIX=	rel-
 DISTVERSION=	6_0_25
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 
 MAINTAINER=	m.tsatsenko@gmail.com
@@ -49,7 +49,8 @@ BUILD_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		p5-XML-Parser>=0:textproc/p5-XML-Parser \
 		p5-XML-LibXML>=0:textproc/p5-XML-LibXML \
 		p5-XML-LibXML-Simple>=0:textproc/p5-XML-LibXML-Simple \
-		p5-XML-LibXSLT>=0:textproc/p5-XML-LibXSLT
+		p5-XML-LibXSLT>=0:textproc/p5-XML-LibXSLT \
+		p5-Locale-Codes>=0:misc/p5-Locale-Codes
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		cpe shebangfix perl5 tar:bzip2
