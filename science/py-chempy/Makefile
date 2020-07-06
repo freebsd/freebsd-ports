@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	chempy
-DISTVERSION=	0.7.11
+DISTVERSION=	0.7.12
 CATEGORIES=	science python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ PY_DEPENDS=	\
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}PuLP>=1.6.8:math/py-PuLP@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyneqsys>=0.5.5:math/py-pyneqsys@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyodesys>=0.12.5:math/py-pyodesys@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyodesys>=0.13.1:math/py-pyodesys@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyparsing>=2.0.3:devel/py-pyparsing@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}quantities>=0.12.1:science/py-quantities@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=1.0.1:science/py-scipy@${PY_FLAVOR} \
