@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	nvidia-libs
-DISTVERSION?=	440.82
+DISTVERSION?=	440.100
 # Always try to set PORTREVISION as it can be overridden by the slave ports
-PORTREVISION?=	1
+PORTREVISION?=	0
 CATEGORIES=	x11 linux
 MASTER_SITES=	NVIDIA/XFree86/Linux-${ARCH_SUFX}/${DISTVERSION}/
 DISTNAME=	NVIDIA-Linux-${ARCH_SUFX}-${DISTVERSION}
