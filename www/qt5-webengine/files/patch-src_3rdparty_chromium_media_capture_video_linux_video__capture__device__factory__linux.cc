@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/media/capture/video/linux/video_capture_device_factory_linux.cc.orig	2019-11-27 21:12:25 UTC
+--- src/3rdparty/chromium/media/capture/video/linux/video_capture_device_factory_linux.cc.orig	2020-04-08 09:41:36 UTC
 +++ src/3rdparty/chromium/media/capture/video/linux/video_capture_device_factory_linux.cc
 @@ -315,6 +315,7 @@ void VideoCaptureDeviceFactoryLinux::GetSupportedForma
      supported_format.pixel_format =

@@ -1,2 +1,3 @@
 %%QT_BINDIR%%/assistant
+%%DEBUG%%%%QT_BINDIR%%/assistant.debug
 share/pixmaps/assistant-qt5.png

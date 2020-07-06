@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/base/linux_util.cc.orig	2018-11-13 18:25:11 UTC
+--- src/3rdparty/chromium/base/linux_util.cc.orig	2020-03-16 14:04:24 UTC
 +++ src/3rdparty/chromium/base/linux_util.cc
-@@ -111,12 +111,14 @@ char g_linux_distro[kDistroSize] =
+@@ -144,6 +144,8 @@ char g_linux_distro[kDistroSize] =
      "CrOS";
  #elif defined(OS_ANDROID)
      "Android";
@@ -9,6 +9,8 @@
  #else  // if defined(OS_LINUX)
      "Unknown";
  #endif
+@@ -164,7 +166,7 @@ BASE_EXPORT std::string GetKeyValueFromOSReleaseFileFo
+ }
  
  std::string GetLinuxDistro() {
 -#if defined(OS_CHROMEOS) || defined(OS_ANDROID)

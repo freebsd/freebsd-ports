@@ -52,7 +52,7 @@
 +  return result;
 +}
 +
-+__GLXextFuncPtr DebugGLXApi::glXGetProcAddressARBFn(const GLubyte* procName) {
++__GLXextFuncPtr LogGLXApi::glXGetProcAddressARBFn(const GLubyte* procName) {
 +  GL_SERVICE_LOG("glXGetProcAddressARB"
 +                 << "(" << static_cast<const void*>(procName) << ")");
 +  __GLXextFuncPtr result = glx_api_->glXGetProcAddressARBFn(procName);

@@ -9,10 +9,15 @@
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qabstracttransition_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qanimationgroup_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qbig5codec_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qbinaryjson_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qbinaryjsonarray_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qbinaryjsonobject_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qbinaryjsonvalue_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qbytearray_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qbytedata_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qcalendarbackend_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qcalendarmath_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qcborcommon_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qcborvalue_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qcfsocketnotifier_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qcollator_p.h
@@ -30,6 +35,7 @@
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qdebug_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qdir_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qdoublescanprint_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qduplicatetracker_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qelfparser_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qendian_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qeucjpcodec_p.h
@@ -182,6 +188,7 @@
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qutfcodec_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qvariant_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qvariantanimation_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qwaitcondition_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qwindowscodec_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qwindowspipereader_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qwindowspipewriter_p.h
@@ -427,6 +434,7 @@
 %%QT_INCDIR%%/QtCore/QSignalTransition
 %%QT_INCDIR%%/QtCore/QSize
 %%QT_INCDIR%%/QtCore/QSizeF
+%%QT_INCDIR%%/QtCore/QSocketDescriptor
 %%QT_INCDIR%%/QtCore/QSocketNotifier
 %%QT_INCDIR%%/QtCore/QSortFilterProxyModel
 %%QT_INCDIR%%/QtCore/QSpecialInteger
@@ -559,6 +567,8 @@
 %%QT_INCDIR%%/QtCore/qcborcommon.h
 %%QT_INCDIR%%/QtCore/qcbormap.h
 %%QT_INCDIR%%/QtCore/qcborstream.h
+%%QT_INCDIR%%/QtCore/qcborstreamreader.h
+%%QT_INCDIR%%/QtCore/qcborstreamwriter.h
 %%QT_INCDIR%%/QtCore/qcborvalue.h
 %%QT_INCDIR%%/QtCore/qchar.h
 %%QT_INCDIR%%/QtCore/qcollator.h
@@ -738,12 +748,14 @@
 %%QT_CMAKEDIR%%/Qt5Core/Qt5CoreConfigVersion.cmake
 %%QT_CMAKEDIR%%/Qt5Core/Qt5CoreMacros.cmake
 %%QT_BINDIR%%/qlalr
+%%DEBUG%%%%QT_BINDIR%%/qlalr.debug
 %%QT_LIBDIR%%/libQt5Core.prl
 %%QT_LIBDIR%%/libQt5Core.so
 %%QT_LIBDIR%%/libQt5Core.so.5
 %%QT_LIBDIR%%/libQt5Core.so.%%SHORTVER%%
 %%QT_LIBDIR%%/libQt5Core.so.%%FULLVER%%
 %%DEBUG%%%%QT_LIBDIR%%/libQt5Core.so.%%FULLVER%%.debug
+%%QT_LIBDIR%%/metatypes/qt5core_metatypes.json
 %%QT_MKSPECDIR%%/modules/qt_lib_core.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_core_private.pri
 libdata/pkgconfig/Qt5Core.pc

@@ -291,6 +291,7 @@
 %%QT_INCDIR%%/QtWidgets/QStyleOptionTabBarBaseV2
 %%QT_INCDIR%%/QtWidgets/QStyleOptionTabV2
 %%QT_INCDIR%%/QtWidgets/QStyleOptionTabV3
+%%QT_INCDIR%%/QtWidgets/QStyleOptionTabV4
 %%QT_INCDIR%%/QtWidgets/QStyleOptionTabWidgetFrame
 %%QT_INCDIR%%/QtWidgets/QStyleOptionTabWidgetFrameV2
 %%QT_INCDIR%%/QtWidgets/QStyleOptionTitleBar
@@ -486,7 +487,9 @@
 %%QT_LIBDIR%%/libQt5Widgets.so.%%SHORTVER%%
 %%QT_LIBDIR%%/libQt5Widgets.so.%%FULLVER%%
 %%DEBUG%%%%QT_LIBDIR%%/libQt5Widgets.so.%%FULLVER%%.debug
+%%QT_LIBDIR%%/metatypes/qt5widgets_metatypes.json
 %%QT_BINDIR%%/uic
+%%DEBUG%%%%QT_BINDIR%%/uic.debug
 %%QT_MKSPECDIR%%/modules/qt_lib_widgets.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_widgets_private.pri
 %%GTK3%%%%QT_PLUGINDIR%%/platformthemes/libqgtk3.so

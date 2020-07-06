@@ -182,6 +182,7 @@
 %%QT_CMAKEDIR%%/Qt5DesignerComponents/Qt5DesignerComponentsConfigVersion.cmake
 %%WEBKIT%%%%QT_CMAKEDIR%%/Qt5Designer/Qt5Designer_QWebViewPlugin.cmake
 %%QT_BINDIR%%/designer
+%%DEBUG%%%%QT_BINDIR%%/designer.debug
 %%QT_LIBDIR%%/libQt5Designer.prl
 %%QT_LIBDIR%%/libQt5Designer.so
 %%QT_LIBDIR%%/libQt5Designer.so.5

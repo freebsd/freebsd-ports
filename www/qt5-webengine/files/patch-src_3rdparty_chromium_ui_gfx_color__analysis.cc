@@ -1,14 +1,14 @@
---- src/3rdparty/chromium/ui/gfx/color_analysis.cc.orig	2019-05-23 12:39:34 UTC
+--- src/3rdparty/chromium/ui/gfx/color_analysis.cc.orig	2020-04-08 09:41:36 UTC
 +++ src/3rdparty/chromium/ui/gfx/color_analysis.cc
-@@ -16,6 +16,7 @@
- #include <vector>
- 
+@@ -18,6 +18,7 @@
+ #include "base/bind.h"
+ #include "base/callback.h"
  #include "base/logging.h"
 +#include "base/sys_byteorder.h"
+ #include "base/numerics/ranges.h"
  #include "third_party/skia/include/core/SkBitmap.h"
  #include "third_party/skia/include/core/SkUnPreMultiply.h"
- #include "ui/gfx/codec/png_codec.h"
-@@ -506,10 +507,17 @@ SkColor FindClosestColor(const uint8_t* image,
+@@ -438,10 +439,17 @@ SkColor FindClosestColor(const uint8_t* image,
    SkColor best_color = color;
    const uint8_t* byte = image;
    for (int i = 0; i < width * height; ++i) {
@@ -26,7 +26,7 @@
      // Ignore fully transparent pixels.
      if (a == 0)
        continue;
-@@ -527,7 +535,6 @@ SkColor FindClosestColor(const uint8_t* image,
+@@ -459,7 +467,6 @@ SkColor FindClosestColor(const uint8_t* image,
  
  // For a 16x16 icon on an Intel Core i5 this function takes approximately
  // 0.5 ms to run.
@@ -34,7 +34,7 @@
  SkColor CalculateKMeanColorOfBuffer(uint8_t* decoded_data,
                                      int img_width,
                                      int img_height,
-@@ -550,10 +557,17 @@ SkColor CalculateKMeanColorOfBuffer(uint8_t* decoded_d
+@@ -482,10 +489,17 @@ SkColor CalculateKMeanColorOfBuffer(uint8_t* decoded_d
          int pixel_pos = sampler->GetSample(img_width, img_height) %
              (img_width * img_height);
  
@@ -52,7 +52,7 @@
          // Skip fully transparent pixels as they usually contain black in their
          // RGB channels but do not contribute to the visual image.
          if (a == 0)
-@@ -602,10 +616,17 @@ SkColor CalculateKMeanColorOfBuffer(uint8_t* decoded_d
+@@ -534,10 +548,17 @@ SkColor CalculateKMeanColorOfBuffer(uint8_t* decoded_d
        uint8_t* pixel = decoded_data;
        uint8_t* decoded_data_end = decoded_data + (img_width * img_height * 4);
        while (pixel < decoded_data_end) {
@@ -70,7 +70,7 @@
          // Skip transparent pixels, see above.
          if (a == 0)
            continue;
-@@ -683,8 +704,12 @@ SkColor CalculateKMeanColorOfPNG(scoped_refptr<base::R
+@@ -615,8 +636,12 @@ SkColor CalculateKMeanColorOfPNG(scoped_refptr<base::R
  
    if (png.get() && png->size() &&
        gfx::PNGCodec::Decode(png->front(), png->size(),

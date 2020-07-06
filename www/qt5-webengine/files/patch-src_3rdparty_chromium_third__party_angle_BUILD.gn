@@ -1,16 +1,16 @@
---- src/3rdparty/chromium/third_party/angle/BUILD.gn.orig	2019-05-23 12:39:34 UTC
+--- src/3rdparty/chromium/third_party/angle/BUILD.gn.orig	2020-04-08 09:41:36 UTC
 +++ src/3rdparty/chromium/third_party/angle/BUILD.gn
-@@ -268,7 +268,8 @@ angle_static_library("angle_gpu_info_util") {
+@@ -381,7 +381,8 @@ angle_static_library("angle_gpu_info_util") {
    if (is_linux || is_fuchsia) {
      sources += libangle_gpu_info_util_linux_sources
  
--    if (use_x11) {
-+    # Somewhere "use_x11" is set to false, so we need to add is_bsd here
-+    if (use_x11 || is_bsd) {
+-    if (angle_use_x11) {
++    # Somewhere "angle_use_x11" is set to false, so we need to add is_bsd here
++    if (angle_use_x11 || is_bsd) {
        sources += libangle_gpu_info_util_x11_sources
        deps += [ "src/third_party/libXNVCtrl:libXNVCtrl" ]
        defines += [ "GPU_INFO_USE_X11" ]
-@@ -276,6 +277,7 @@ angle_static_library("angle_gpu_info_util") {
+@@ -389,6 +390,7 @@ angle_static_library("angle_gpu_info_util") {
          "X11",
          "Xi",
          "Xext",
@@ -18,8 +18,8 @@
        ]
      }
    }
-@@ -842,10 +844,6 @@ foreach(is_shared_library,
-     libs = []
+@@ -1107,10 +1109,6 @@ foreach(is_shared_library,
+ 
      if (is_linux) {
        sources += util_linux_sources
 -      libs += [

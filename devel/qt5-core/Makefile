@@ -2,7 +2,6 @@
 
 PORTNAME=	core
 DISTVERSION=	${QT5_VERSION}
-PORTREVISION=	3
 CATEGORIES=	devel
 PKGNAMEPREFIX=	qt5-
 
@@ -25,7 +24,7 @@ CONFIGURE_ARGS=	-no-accessibility -no-gif -no-libpng -no-libjpeg \
 		-no-iconv -no-dbus -no-opengl \
 		-no-egl -no-evdev \
 		-no-fontconfig -no-freetype -no-gtk -no-harfbuzz \
-		-no-libudev -no-xcb -no-xkb -no-xcb-xlib \
+		-no-libudev -no-xcb -no-xcb-xlib \
 		-no-xkbcommon -no-libinput
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 

@@ -1,4 +1,5 @@
 %%QT_BINDIR%%/canbusutil
+%%DEBUG%%%%QT_BINDIR%%/canbusutil.debug
 %%QT_INCDIR%%/QtSerialBus/%%FULLVER%%/QtSerialBus/private/qcanbusdevice_p.h
 %%QT_INCDIR%%/QtSerialBus/%%FULLVER%%/QtSerialBus/private/qcanbusdeviceinfo_p.h
 %%QT_INCDIR%%/QtSerialBus/%%FULLVER%%/QtSerialBus/private/qmodbus_symbols_p.h

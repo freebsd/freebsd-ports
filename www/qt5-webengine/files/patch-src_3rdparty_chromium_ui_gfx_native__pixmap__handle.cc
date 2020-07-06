@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/ui/gfx/native_pixmap_handle.cc.orig	2019-11-27 21:12:25 UTC
+--- src/3rdparty/chromium/ui/gfx/native_pixmap_handle.cc.orig	2020-03-16 14:04:24 UTC
 +++ src/3rdparty/chromium/ui/gfx/native_pixmap_handle.cc
 @@ -33,7 +33,7 @@ NativePixmapPlane::NativePixmapPlane() : stride(0), of
  NativePixmapPlane::NativePixmapPlane(int stride,
@@ -27,3 +27,12 @@
      DCHECK(plane.fd.is_valid());
      base::ScopedFD fd_dup(HANDLE_EINTR(dup(plane.fd.get())));
      if (!fd_dup.is_valid()) {
+@@ -98,7 +98,7 @@ NativePixmapHandle CloneHandleForIPC(const NativePixma
+ #endif
+   }
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   clone.modifier = handle.modifier;
+ #endif
+ 

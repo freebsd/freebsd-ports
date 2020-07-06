@@ -1,1 +1,2 @@
 %%QT_BINDIR%%/pixeltool
+%%DEBUG%%%%QT_BINDIR%%/pixeltool.debug

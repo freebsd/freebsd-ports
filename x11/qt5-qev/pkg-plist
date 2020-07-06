@@ -1,1 +1,2 @@
 %%QT_BINDIR%%/qev
+%%DEBUG%%%%QT_BINDIR%%/qev.debug

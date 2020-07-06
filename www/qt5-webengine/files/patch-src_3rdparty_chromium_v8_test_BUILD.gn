@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/v8/test/BUILD.gn.orig	2019-11-27 21:12:25 UTC
+--- src/3rdparty/chromium/v8/test/BUILD.gn.orig	2020-04-08 09:41:36 UTC
 +++ src/3rdparty/chromium/v8/test/BUILD.gn
-@@ -32,7 +32,7 @@ group("gn_all") {
+@@ -31,7 +31,7 @@ group("gn_all") {
      deps += [
        "cctest:cctest",
        "cctest:generate-bytecode-expectations",
@@ -9,10 +9,10 @@
      ]
    }
  }
-@@ -82,10 +82,10 @@ group("v8_bot_default") {
+@@ -73,10 +73,10 @@ group("v8_bot_default") {
+     "message:v8_message",
      "mjsunit:v8_mjsunit",
      "mkgrokdump:mkgrokdump",
-     "preparser:v8_preparser",
 -    "unittests:unittests",
 +    #"unittests:unittests",
      "wasm-api-tests:wasm_api_tests",
@@ -22,10 +22,10 @@
      "webkit:v8_webkit",
    ]
  }
-@@ -103,10 +103,10 @@ group("v8_default") {
+@@ -93,10 +93,10 @@ group("v8_default") {
+     "message:v8_message",
      "mjsunit:v8_mjsunit",
      "mkgrokdump:mkgrokdump",
-     "preparser:v8_preparser",
 -    "unittests:unittests",
 +    #"unittests:unittests",
      "wasm-api-tests:wasm_api_tests",

@@ -1,3 +1,3 @@
-TIMESTAMP = 1586029328
-SHA256 (KDE/Qt/5.14.2/qt-everywhere-src-5.14.2.tar.xz) = c6fcd53c744df89e7d3223c02838a33309bd1c291fcb6f9341505fe99f7f19fa
-SIZE (KDE/Qt/5.14.2/qt-everywhere-src-5.14.2.tar.xz) = 549205340
+TIMESTAMP = 1590590417
+SHA256 (KDE/Qt/5.15.0/qt-everywhere-src-5.15.0.tar.xz) = 22b63d7a7a45183865cc4141124f12b673e7a17b1fe2b91e433f6547c5d548c3
+SIZE (KDE/Qt/5.15.0/qt-everywhere-src-5.15.0.tar.xz) = 592401236

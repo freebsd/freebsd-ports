@@ -1,4 +1,46 @@
-%%QT_BINDIR%%/qwebengine_convert_dict
+%%QT_INCDIR%%/QtPdf/%%FULLVER%%/QtPdf/private/qpdfdestination_p.h
+%%QT_INCDIR%%/QtPdf/%%FULLVER%%/QtPdf/private/qpdfdocument_p.h
+%%QT_INCDIR%%/QtPdf/%%FULLVER%%/QtPdf/private/qpdflinkmodel_p.h
+%%QT_INCDIR%%/QtPdf/%%FULLVER%%/QtPdf/private/qpdflinkmodel_p_p.h
+%%QT_INCDIR%%/QtPdf/%%FULLVER%%/QtPdf/private/qpdfsearchmodel_p.h
+%%QT_INCDIR%%/QtPdf/%%FULLVER%%/QtPdf/private/qpdfsearchresult_p.h
+%%QT_INCDIR%%/QtPdf/%%FULLVER%%/QtPdf/private/qpdfselection_p.h
+%%QT_INCDIR%%/QtPdf/%%FULLVER%%/QtPdf/private/qtpdf-config_p.h
+%%QT_INCDIR%%/QtPdf/QPdfBookmarkModel
+%%QT_INCDIR%%/QtPdf/QPdfDestination
+%%QT_INCDIR%%/QtPdf/QPdfDocument
+%%QT_INCDIR%%/QtPdf/QPdfDocumentRenderOptions
+%%QT_INCDIR%%/QtPdf/QPdfPageNavigation
+%%QT_INCDIR%%/QtPdf/QPdfPageRenderer
+%%QT_INCDIR%%/QtPdf/QPdfSearchModel
+%%QT_INCDIR%%/QtPdf/QPdfSearchResult
+%%QT_INCDIR%%/QtPdf/QPdfSelection
+%%QT_INCDIR%%/QtPdf/QtPdf
+%%QT_INCDIR%%/QtPdf/QtPdfDepends
+%%QT_INCDIR%%/QtPdf/QtPdfVersion
+%%QT_INCDIR%%/QtPdf/qpdfbookmarkmodel.h
+%%QT_INCDIR%%/QtPdf/qpdfdestination.h
+%%QT_INCDIR%%/QtPdf/qpdfdocument.h
+%%QT_INCDIR%%/QtPdf/qpdfdocumentrenderoptions.h
+%%QT_INCDIR%%/QtPdf/qpdfnamespace.h
+%%QT_INCDIR%%/QtPdf/qpdfpagenavigation.h
+%%QT_INCDIR%%/QtPdf/qpdfpagerenderer.h
+%%QT_INCDIR%%/QtPdf/qpdfsearchmodel.h
+%%QT_INCDIR%%/QtPdf/qpdfsearchresult.h
+%%QT_INCDIR%%/QtPdf/qpdfselection.h
+%%QT_INCDIR%%/QtPdf/qtpdf-config.h
+%%QT_INCDIR%%/QtPdf/qtpdfglobal.h
+%%QT_INCDIR%%/QtPdf/qtpdfversion.h
+%%QT_INCDIR%%/QtPdfWidgets/%%FULLVER%%/QtPdfWidgets/private/qpdfview_p.h
+%%QT_INCDIR%%/QtPdfWidgets/%%FULLVER%%/QtPdfWidgets/private/qtpdfwidgets-config_p.h
+%%QT_INCDIR%%/QtPdfWidgets/QPdfView
+%%QT_INCDIR%%/QtPdfWidgets/QtPdfWidgets
+%%QT_INCDIR%%/QtPdfWidgets/QtPdfWidgetsDepends
+%%QT_INCDIR%%/QtPdfWidgets/QtPdfWidgetsVersion
+%%QT_INCDIR%%/QtPdfWidgets/qpdfview.h
+%%QT_INCDIR%%/QtPdfWidgets/qtpdfwidgets-config.h
+%%QT_INCDIR%%/QtPdfWidgets/qtpdfwidgetsglobal.h
+%%QT_INCDIR%%/QtPdfWidgets/qtpdfwidgetsversion.h
 %%QT_INCDIR%%/QtWebEngine/%%FULLVER%%/QtWebEngine/private/qquickwebengineaction_p.h
 %%QT_INCDIR%%/QtWebEngine/%%FULLVER%%/QtWebEngine/private/qquickwebengineaction_p_p.h
 %%QT_INCDIR%%/QtWebEngine/%%FULLVER%%/QtWebEngine/private/qquickwebenginecertificateerror_p.h
@@ -21,8 +63,8 @@
 %%QT_INCDIR%%/QtWebEngine/%%FULLVER%%/QtWebEngine/private/qquickwebenginetouchhandleprovider_p_p.h
 %%QT_INCDIR%%/QtWebEngine/%%FULLVER%%/QtWebEngine/private/qquickwebengineview_p.h
 %%QT_INCDIR%%/QtWebEngine/%%FULLVER%%/QtWebEngine/private/qquickwebengineview_p_p.h
-%%QT_INCDIR%%/QtWebEngine/%%FULLVER%%/QtWebEngine/private/qtwebengineglobal_p.h
 %%QT_INCDIR%%/QtWebEngine/%%FULLVER%%/QtWebEngine/private/qtwebengine-config_p.h
+%%QT_INCDIR%%/QtWebEngine/%%FULLVER%%/QtWebEngine/private/qtwebengineglobal_p.h
 %%QT_INCDIR%%/QtWebEngine/QQuickWebEngineProfile
 %%QT_INCDIR%%/QtWebEngine/QQuickWebEngineScript
 %%QT_INCDIR%%/QtWebEngine/QtWebEngine
@@ -30,15 +72,15 @@
 %%QT_INCDIR%%/QtWebEngine/QtWebEngineVersion
 %%QT_INCDIR%%/QtWebEngine/qquickwebengineprofile.h
 %%QT_INCDIR%%/QtWebEngine/qquickwebenginescript.h
+%%QT_INCDIR%%/QtWebEngine/qtwebengine-config.h
 %%QT_INCDIR%%/QtWebEngine/qtwebengineglobal.h
 %%QT_INCDIR%%/QtWebEngine/qtwebengineversion.h
-%%QT_INCDIR%%/QtWebEngine/qtwebengine-config.h
+%%QT_INCDIR%%/QtWebEngineCore/%%FULLVER%%/QtWebEngineCore/private/qtwebenginecore-config_p.h
 %%QT_INCDIR%%/QtWebEngineCore/%%FULLVER%%/QtWebEngineCore/private/qtwebenginecoreglobal_p.h
 %%QT_INCDIR%%/QtWebEngineCore/%%FULLVER%%/QtWebEngineCore/private/qwebenginecallback_p.h
 %%QT_INCDIR%%/QtWebEngineCore/%%FULLVER%%/QtWebEngineCore/private/qwebenginecookiestore_p.h
 %%QT_INCDIR%%/QtWebEngineCore/%%FULLVER%%/QtWebEngineCore/private/qwebenginemessagepumpscheduler_p.h
 %%QT_INCDIR%%/QtWebEngineCore/%%FULLVER%%/QtWebEngineCore/private/qwebengineurlrequestinfo_p.h
-%%QT_INCDIR%%/QtWebEngineCore/%%FULLVER%%/QtWebEngineCore/private/qtwebenginecore-config_p.h
 %%QT_INCDIR%%/QtWebEngineCore/QWebEngineCallback
 %%QT_INCDIR%%/QtWebEngineCore/QWebEngineClientCertificateStore
 %%QT_INCDIR%%/QtWebEngineCore/QWebEngineCookieStore
@@ -55,9 +97,9 @@
 %%QT_INCDIR%%/QtWebEngineCore/QtWebEngineCore
 %%QT_INCDIR%%/QtWebEngineCore/QtWebEngineCoreDepends
 %%QT_INCDIR%%/QtWebEngineCore/QtWebEngineCoreVersion
+%%QT_INCDIR%%/QtWebEngineCore/qtwebenginecore-config.h
 %%QT_INCDIR%%/QtWebEngineCore/qtwebenginecoreglobal.h
 %%QT_INCDIR%%/QtWebEngineCore/qtwebenginecoreversion.h
-%%QT_INCDIR%%/QtWebEngineCore/qtwebenginecore-config.h
 %%QT_INCDIR%%/QtWebEngineCore/qwebenginecallback.h
 %%QT_INCDIR%%/QtWebEngineCore/qwebengineclientcertificatestore.h
 %%QT_INCDIR%%/QtWebEngineCore/qwebenginecookiestore.h
@@ -71,6 +113,7 @@
 %%QT_INCDIR%%/QtWebEngineCore/qwebengineurlrequestjob.h
 %%QT_INCDIR%%/QtWebEngineCore/qwebengineurlscheme.h
 %%QT_INCDIR%%/QtWebEngineCore/qwebengineurlschemehandler.h
+%%QT_INCDIR%%/QtWebEngineWidgets/%%FULLVER%%/QtWebEngineWidgets/private/qtwebenginewidgets-config_p.h
 %%QT_INCDIR%%/QtWebEngineWidgets/%%FULLVER%%/QtWebEngineWidgets/private/qwebenginedownloaditem_p.h
 %%QT_INCDIR%%/QtWebEngineWidgets/%%FULLVER%%/QtWebEngineWidgets/private/qwebenginehistory_p.h
 %%QT_INCDIR%%/QtWebEngineWidgets/%%FULLVER%%/QtWebEngineWidgets/private/qwebenginenotificationpresenter_p.h
@@ -78,7 +121,6 @@
 %%QT_INCDIR%%/QtWebEngineWidgets/%%FULLVER%%/QtWebEngineWidgets/private/qwebengineprofile_p.h
 %%QT_INCDIR%%/QtWebEngineWidgets/%%FULLVER%%/QtWebEngineWidgets/private/qwebenginescriptcollection_p.h
 %%QT_INCDIR%%/QtWebEngineWidgets/%%FULLVER%%/QtWebEngineWidgets/private/qwebengineview_p.h
-%%QT_INCDIR%%/QtWebEngineWidgets/%%FULLVER%%/QtWebEngineWidgets/private/qtwebenginewidgets-config_p.h
 %%QT_INCDIR%%/QtWebEngineWidgets/QWebEngineCertificateError
 %%QT_INCDIR%%/QtWebEngineWidgets/QWebEngineClientCertificateSelection
 %%QT_INCDIR%%/QtWebEngineWidgets/QWebEngineContextMenuData
@@ -95,6 +137,7 @@
 %%QT_INCDIR%%/QtWebEngineWidgets/QtWebEngineWidgets
 %%QT_INCDIR%%/QtWebEngineWidgets/QtWebEngineWidgetsDepends
 %%QT_INCDIR%%/QtWebEngineWidgets/QtWebEngineWidgetsVersion
+%%QT_INCDIR%%/QtWebEngineWidgets/qtwebenginewidgets-config.h
 %%QT_INCDIR%%/QtWebEngineWidgets/qtwebenginewidgetsglobal.h
 %%QT_INCDIR%%/QtWebEngineWidgets/qtwebenginewidgetsversion.h
 %%QT_INCDIR%%/QtWebEngineWidgets/qwebenginecertificateerror.h
@@ -109,14 +152,32 @@
 %%QT_INCDIR%%/QtWebEngineWidgets/qwebenginescriptcollection.h
 %%QT_INCDIR%%/QtWebEngineWidgets/qwebenginesettings.h
 %%QT_INCDIR%%/QtWebEngineWidgets/qwebengineview.h
-%%QT_INCDIR%%/QtWebEngineWidgets/qtwebenginewidgets-config.h
 %%QT_CMAKEDIR%%/Qt5Designer/Qt5Designer_QWebEngineViewPlugin.cmake
+%%QT_CMAKEDIR%%/Qt5Gui/Qt5Gui_QPdfPlugin.cmake
+%%QT_CMAKEDIR%%/Qt5Pdf/Qt5PdfConfig.cmake
+%%QT_CMAKEDIR%%/Qt5Pdf/Qt5PdfConfigVersion.cmake
+%%QT_CMAKEDIR%%/Qt5PdfWidgets/Qt5PdfWidgetsConfig.cmake
+%%QT_CMAKEDIR%%/Qt5PdfWidgets/Qt5PdfWidgetsConfigVersion.cmake
 %%QT_CMAKEDIR%%/Qt5WebEngine/Qt5WebEngineConfig.cmake
 %%QT_CMAKEDIR%%/Qt5WebEngine/Qt5WebEngineConfigVersion.cmake
 %%QT_CMAKEDIR%%/Qt5WebEngineCore/Qt5WebEngineCoreConfig.cmake
 %%QT_CMAKEDIR%%/Qt5WebEngineCore/Qt5WebEngineCoreConfigVersion.cmake
 %%QT_CMAKEDIR%%/Qt5WebEngineWidgets/Qt5WebEngineWidgetsConfig.cmake
 %%QT_CMAKEDIR%%/Qt5WebEngineWidgets/Qt5WebEngineWidgetsConfigVersion.cmake
+%%QT_BINDIR%%/qwebengine_convert_dict
+@comment %%DEBUG%%%%QT_BINDIR%%/qwebengine_convert_dict.debug
+%%QT_LIBDIR%%/libQt5Pdf.prl
+%%QT_LIBDIR%%/libQt5Pdf.so
+%%QT_LIBDIR%%/libQt5Pdf.so.5
+%%QT_LIBDIR%%/libQt5Pdf.so.%%SHORTVER%%
+%%QT_LIBDIR%%/libQt5Pdf.so.%%FULLVER%%
+@comment %%DEBUG%%%%QT_LIBDIR%%/libQt5Pdf.so.%%FULLVER%%.debug
+%%QT_LIBDIR%%/libQt5PdfWidgets.prl
+%%QT_LIBDIR%%/libQt5PdfWidgets.so
+%%QT_LIBDIR%%/libQt5PdfWidgets.so.5
+%%QT_LIBDIR%%/libQt5PdfWidgets.so.%%SHORTVER%%
+%%QT_LIBDIR%%/libQt5PdfWidgets.so.%%FULLVER%%
+@comment %%DEBUG%%%%QT_LIBDIR%%/libQt5PdfWidgets.so.%%FULLVER%%.debug
 %%QT_LIBDIR%%/libQt5WebEngine.prl
 %%QT_LIBDIR%%/libQt5WebEngine.so
 %%QT_LIBDIR%%/libQt5WebEngine.so.5
@@ -135,6 +196,10 @@
 %%QT_LIBDIR%%/libQt5WebEngineWidgets.so.%%SHORTVER%%
 %%QT_LIBDIR%%/libQt5WebEngineWidgets.so.%%FULLVER%%
 @comment %%DEBUG%%%%QT_LIBDIR%%/libQt5WebEngineWidgets.so.%%FULLVER%%.debug
+%%QT_MKSPECDIR%%/modules/qt_lib_pdf.pri
+%%QT_MKSPECDIR%%/modules/qt_lib_pdf_private.pri
+%%QT_MKSPECDIR%%/modules/qt_lib_pdfwidgets.pri
+%%QT_MKSPECDIR%%/modules/qt_lib_pdfwidgets_private.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_webengine.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_webengine_private.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_webenginecore.pri
@@ -144,6 +209,15 @@
 %%QT_MKSPECDIR%%/modules/qt_lib_webenginewidgets_private.pri
 %%QT_PLUGINDIR%%/designer/libqwebengineview.so
 @comment %%DEBUG%%%%QT_PLUGINDIR%%/designer/libqwebengineview.so.debug
+%%QT_PLUGINDIR%%/imageformats/libqpdf.so
+@comment %%DEBUG%%%%QT_PLUGINDIR%%/imageformats/libqpdf.so.debug
+%%QT_QMLDIR%%/QtQuick/Pdf/libpdfplugin.so
+@comment %%DEBUG%%%%QT_QMLDIR%%/QtQuick/Pdf/libpdfplugin.so.debug
+%%QT_QMLDIR%%/QtQuick/Pdf/plugins.qmltypes
+%%QT_QMLDIR%%/QtQuick/Pdf/qml/PdfMultiPageView.qml
+%%QT_QMLDIR%%/QtQuick/Pdf/qml/PdfPageView.qml
+%%QT_QMLDIR%%/QtQuick/Pdf/qml/PdfScrollablePageView.qml
+%%QT_QMLDIR%%/QtQuick/Pdf/qmldir
 %%QT_QMLDIR%%/QtWebEngine/Controls1Delegates/AlertDialog.qml
 %%QT_QMLDIR%%/QtWebEngine/Controls1Delegates/AuthenticationDialog.qml
 %%QT_QMLDIR%%/QtWebEngine/Controls1Delegates/ColorDialog.qml
@@ -172,10 +246,13 @@
 @comment %%DEBUG%%%%QT_QMLDIR%%/QtWebEngine/libqtwebengineplugin.so.debug
 %%QT_QMLDIR%%/QtWebEngine/plugins.qmltypes
 %%QT_QMLDIR%%/QtWebEngine/qmldir
+libdata/pkgconfig/Qt5Pdf.pc
+libdata/pkgconfig/Qt5PdfWidgets.pc
 libdata/pkgconfig/Qt5WebEngine.pc
 libdata/pkgconfig/Qt5WebEngineCore.pc
 libdata/pkgconfig/Qt5WebEngineWidgets.pc
 %%QT_LIBEXECDIR%%/QtWebEngineProcess
+@comment %%DEBUG%%%%QT_LIBEXECDIR%%/QtWebEngineProcess.debug
 %%BE%%%%QT_DATADIR%%/resources/icudtb.dat
 %%LE%%%%QT_DATADIR%%/resources/icudtl.dat
 %%QT_DATADIR%%/resources/qtwebengine_devtools_resources.pak

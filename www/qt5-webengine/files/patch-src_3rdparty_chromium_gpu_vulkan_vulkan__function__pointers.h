@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/gpu/vulkan/vulkan_function_pointers.h.orig	2019-11-27 21:12:25 UTC
+--- src/3rdparty/chromium/gpu/vulkan/vulkan_function_pointers.h.orig	2020-03-16 14:04:24 UTC
 +++ src/3rdparty/chromium/gpu/vulkan/vulkan_function_pointers.h
-@@ -161,14 +161,14 @@ struct VulkanFunctionPointers {
+@@ -178,15 +178,15 @@ struct VulkanFunctionPointers {
        vkGetAndroidHardwareBufferPropertiesANDROIDFn = nullptr;
  #endif  // defined(OS_ANDROID)
  
@@ -14,12 +14,13 @@
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
    PFN_vkGetMemoryFdKHR vkGetMemoryFdKHRFn = nullptr;
+   PFN_vkGetMemoryFdPropertiesKHR vkGetMemoryFdPropertiesKHRFn = nullptr;
 -#endif  // defined(OS_LINUX)
 +#endif  // defined(OS_LINUX) || defined(OS_BSD)
  
  #if defined(OS_FUCHSIA)
    PFN_vkImportSemaphoreZirconHandleFUCHSIA
-@@ -342,16 +342,16 @@ struct VulkanFunctionPointers {
+@@ -374,18 +374,18 @@ struct VulkanFunctionPointers {
        ->vkGetAndroidHardwareBufferPropertiesANDROIDFn
  #endif  // defined(OS_ANDROID)
  
@@ -35,6 +36,8 @@
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
  #define vkGetMemoryFdKHR gpu::GetVulkanFunctionPointers()->vkGetMemoryFdKHRFn
+ #define vkGetMemoryFdPropertiesKHR \
+   gpu::GetVulkanFunctionPointers()->vkGetMemoryFdPropertiesKHRFn
 -#endif  // defined(OS_LINUX)
 +#endif  // defined(OS_LINUX) || defined(OS_BSD)
  

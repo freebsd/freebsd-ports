@@ -2,10 +2,16 @@
 %%QT_CMAKEDIR%%/Qt5LinguistTools/Qt5LinguistToolsConfigVersion.cmake
 %%QT_CMAKEDIR%%/Qt5LinguistTools/Qt5LinguistToolsMacros.cmake
 %%QT_BINDIR%%/lconvert
+%%DEBUG%%%%QT_BINDIR%%/lconvert.debug
 %%QT_BINDIR%%/lprodump
+%%DEBUG%%%%QT_BINDIR%%/lprodump.debug
 %%QT_BINDIR%%/lrelease
 %%QT_BINDIR%%/lrelease-pro
+%%DEBUG%%%%QT_BINDIR%%/lrelease-pro.debug
+%%DEBUG%%%%QT_BINDIR%%/lrelease.debug
 %%QT_BINDIR%%/lupdate
 %%QT_BINDIR%%/lupdate-pro
+%%DEBUG%%%%QT_BINDIR%%/lupdate-pro.debug
+%%DEBUG%%%%QT_BINDIR%%/lupdate.debug
 man/man1/lrelease.1.gz
 man/man1/lupdate.1.gz

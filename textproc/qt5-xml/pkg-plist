@@ -1,3 +1,5 @@
+%%QT_INCDIR%%/QtXml/%%FULLVER%%/QtXml/private/qdom_p.h
+%%QT_INCDIR%%/QtXml/%%FULLVER%%/QtXml/private/qdomhelpers_p.h
 %%QT_INCDIR%%/QtXml/%%FULLVER%%/QtXml/private/qtxml-config_p.h
 %%QT_INCDIR%%/QtXml/%%FULLVER%%/QtXml/private/qxml_p.h
 %%QT_INCDIR%%/QtXml/QDomAttr

@@ -45,6 +45,7 @@
 %%QT_CMAKEDIR%%/Qt5Scxml/Qt5ScxmlConfigVersion.cmake
 %%QT_CMAKEDIR%%/Qt5Scxml/Qt5ScxmlMacros.cmake
 %%QT_BINDIR%%/qscxmlc
+%%DEBUG%%%%QT_BINDIR%%/qscxmlc.debug
 %%QT_LIBDIR%%/libQt5Scxml.prl
 %%QT_LIBDIR%%/libQt5Scxml.so
 %%QT_LIBDIR%%/libQt5Scxml.so.5

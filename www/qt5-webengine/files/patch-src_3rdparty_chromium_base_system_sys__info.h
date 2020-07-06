@@ -1,6 +1,15 @@
---- src/3rdparty/chromium/base/system/sys_info.h.orig	2019-11-27 21:12:25 UTC
+--- src/3rdparty/chromium/base/system/sys_info.h.orig	2020-03-16 14:04:24 UTC
 +++ src/3rdparty/chromium/base/system/sys_info.h
-@@ -192,7 +192,7 @@ class BASE_EXPORT SysInfo {
+@@ -188,6 +188,8 @@ class BASE_EXPORT SysInfo {
+   // See also SysUtils.java, method isLowEndDevice.
+   static bool IsLowEndDevice();
+ 
++  static uint64_t MaxSharedMemorySize();
++
+  private:
+   FRIEND_TEST_ALL_PREFIXES(SysInfoTest, AmountOfAvailablePhysicalMemory);
+   FRIEND_TEST_ALL_PREFIXES(debug::SystemMetricsTest, ParseMeminfo);
+@@ -197,7 +199,7 @@ class BASE_EXPORT SysInfo {
    static bool IsLowEndDeviceImpl();
    static HardwareInfo GetHardwareInfoSync();
  

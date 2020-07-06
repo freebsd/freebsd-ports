@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/build/config/compiler/BUILD.gn.orig	2019-11-27 21:12:25 UTC
+--- src/3rdparty/chromium/build/config/compiler/BUILD.gn.orig	2020-03-16 14:04:24 UTC
 +++ src/3rdparty/chromium/build/config/compiler/BUILD.gn
 @@ -60,7 +60,7 @@ declare_args() {
    # only two architectures that are currently checked in). Turn this off when
@@ -9,16 +9,16 @@
        (current_cpu == "x64" || current_cpu == "x86")
    binutils_path = rebase_path("//third_party/binutils/Linux_x64/Release/bin",
                                root_build_dir)
-@@ -301,7 +301,7 @@ config("compiler") {
+@@ -309,7 +309,7 @@ config("compiler") {
+ 
      # Linker warnings.
      if (fatal_linker_warnings && !(is_chromeos && current_cpu == "arm") &&
-         !(is_android && use_order_profiling) && !is_mac && !is_ios &&
--        current_os != "aix") {
-+        current_os != "aix" && !is_bsd) {
+-        !is_mac && !is_ios && current_os != "aix") {
++        !is_mac && !is_ios && current_os != "aix" && !is_bsd) {
        # TODO(jochen): Enable this on chromeos on arm. http://crbug.com/356580
-       # TODO(lizeb,pasko): Fix link errors when linking with order_profiling=1
-       # crbug.com/485542
-@@ -407,7 +407,7 @@ config("compiler") {
+       ldflags += [ "-Wl,--fatal-warnings" ]
+     }
+@@ -416,7 +416,7 @@ config("compiler") {
  
      # Compiler instrumentation can introduce dependencies in DSOs to symbols in
      # the executable they are loaded into, so they are unresolved at link-time.
@@ -27,7 +27,16 @@
        ldflags += [
          "-Wl,-z,defs",
          "-Wl,--as-needed",
-@@ -786,7 +786,7 @@ config("compiler_cpu_abi") {
+@@ -516,7 +516,7 @@ config("compiler") {
+     }
+   }
+ 
+-  if (is_clang && !is_nacl && !use_xcode_clang && !use_qt) {
++  if (is_clang && !is_nacl && !use_xcode_clang && !use_qt && !is_bsd) {
+     cflags += [ "-fcrash-diagnostics-dir=" +
+                 rebase_path("//tools/clang/crashreports", root_build_dir) ]
+ 
+@@ -787,7 +787,7 @@ config("compiler_cpu_abi") {
          cflags += [ "-mtune=$arm_tune" ]
        }
      } else if (current_cpu == "arm64") {
@@ -36,7 +45,7 @@
          cflags += [ "--target=aarch64-linux-gnu" ]
          ldflags += [ "--target=aarch64-linux-gnu" ]
        }
-@@ -1147,7 +1147,7 @@ config("compiler_deterministic") {
+@@ -1138,7 +1138,7 @@ config("compiler_deterministic") {
        "-Xclang",
        ".",
      ]
@@ -45,7 +54,7 @@
        # We don't use clang -cc1as on Windows (yet? https://crbug.com/762167)
        asmflags = [ "-Wa,-fdebug-compilation-dir,." ]
      }
-@@ -1553,7 +1553,7 @@ config("default_warnings") {
+@@ -1545,7 +1545,7 @@ config("default_warnings") {
          cflags += [ "-Wno-nonportable-include-path" ]
        }
  
@@ -54,7 +63,7 @@
          # Flags NaCl (Clang 3.7) and Xcode 9.2 (Clang clang-900.0.39.2) do not
          # recognize.
          cflags += [
-@@ -1761,7 +1761,7 @@ config("thin_archive") {
+@@ -1775,7 +1775,7 @@ config("thin_archive") {
    # Mac and iOS use the mac-specific "libtool" command, not ar, which doesn't
    # have a "thin archive" mode (it does accept -T, but it means truncating
    # archive names to 16 characters, which is not what we want).
@@ -63,7 +72,7 @@
      arflags = [ "-T" ]
    } else if (is_win && use_lld) {
      arflags = [ "/llvmlibthin" ]
-@@ -2356,7 +2356,7 @@ config("symbols") {
+@@ -2373,7 +2373,7 @@ config("symbols") {
      # flag, so we can use use -g1 for pnacl and nacl-clang compiles.
      # gcc nacl is is_nacl && !is_clang, pnacl and nacl-clang are && is_clang.
      if (!is_nacl || is_clang) {
@@ -72,7 +81,7 @@
      }
  
      if (use_debug_fission && !is_nacl && !is_android) {
-@@ -2377,7 +2377,7 @@ config("symbols") {
+@@ -2394,7 +2394,7 @@ config("symbols") {
      # DWARF info may be corrupt; offsets in a range list entry are in different
      # sections" there.  Maybe just a bug in nacl_switch_32.S.
      if (!is_mac && !is_ios && !is_nacl && current_cpu != "x86" &&

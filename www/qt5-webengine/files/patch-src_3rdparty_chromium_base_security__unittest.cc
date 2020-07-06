@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/base/security_unittest.cc.orig	2018-11-13 18:25:11 UTC
+--- src/3rdparty/chromium/base/security_unittest.cc.orig	2020-04-08 09:41:36 UTC
 +++ src/3rdparty/chromium/base/security_unittest.cc
-@@ -59,7 +59,7 @@ NOINLINE Type HideValueFromCompiler(volatile Type valu
+@@ -60,7 +60,7 @@ NOINLINE Type HideValueFromCompiler(volatile Type valu
  // FAILS_ is too clunky.
  void OverflowTestsSoftExpectTrue(bool overflow_detected) {
    if (!overflow_detected) {

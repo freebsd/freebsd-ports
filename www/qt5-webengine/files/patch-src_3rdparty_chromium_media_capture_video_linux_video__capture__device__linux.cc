@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/media/capture/video/linux/video_capture_device_linux.cc.orig	2019-11-27 21:12:25 UTC
+--- src/3rdparty/chromium/media/capture/video/linux/video_capture_device_linux.cc.orig	2020-04-08 09:41:36 UTC
 +++ src/3rdparty/chromium/media/capture/video/linux/video_capture_device_linux.cc
 @@ -17,8 +17,10 @@
  #include <sys/videoio.h>

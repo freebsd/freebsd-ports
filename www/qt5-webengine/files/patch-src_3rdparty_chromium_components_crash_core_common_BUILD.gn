@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/components/crash/core/common/BUILD.gn.orig	2019-11-27 21:12:25 UTC
+--- src/3rdparty/chromium/components/crash/core/common/BUILD.gn.orig	2020-03-16 14:04:24 UTC
 +++ src/3rdparty/chromium/components/crash/core/common/BUILD.gn
 @@ -7,7 +7,7 @@ import("//components/gwp_asan/buildflags/buildflags.gn
  
@@ -9,15 +9,18 @@
  }
  
  group("common") {
-@@ -93,7 +93,6 @@ target(crash_key_target_type, "crash_key") {
+@@ -110,7 +110,9 @@ target(crash_key_target_type, "crash_key_lib") {
        ]
      }
  
 -    deps += [ "//third_party/breakpad:client" ]
-   }
- }
- 
-@@ -153,7 +152,7 @@ source_set("unit_tests") {
++    if (!is_bsd) {
++      deps += [ "//third_party/breakpad:client" ]
++    }
+     if (use_combined_annotations) {
+       public_deps += [ "//third_party/crashpad/crashpad/client" ]
+     }
+@@ -173,7 +175,7 @@ source_set("unit_tests") {
      sources += [ "objc_zombie_unittest.mm" ]
    }
  

@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/content/browser/utility_process_host.cc.orig	2019-11-27 21:12:25 UTC
+--- src/3rdparty/chromium/content/browser/utility_process_host.cc.orig	2020-04-08 09:41:36 UTC
 +++ src/3rdparty/chromium/content/browser/utility_process_host.cc
-@@ -211,7 +211,7 @@ UtilityProcessHost::UtilityProcessHost()
+@@ -209,7 +209,7 @@ UtilityProcessHost::UtilityProcessHost()
  
  UtilityProcessHost::UtilityProcessHost(std::unique_ptr<Client> client)
      : sandbox_type_(service_manager::SANDBOX_TYPE_UTILITY),

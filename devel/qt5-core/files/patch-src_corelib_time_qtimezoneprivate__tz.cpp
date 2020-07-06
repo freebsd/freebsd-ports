@@ -1,20 +1,28 @@
---- src/corelib/time/qtimezoneprivate_tz.cpp.orig	2019-11-01 21:30:15 UTC
+--- src/corelib/time/qtimezoneprivate_tz.cpp.orig	2020-05-11 08:15:08 UTC
 +++ src/corelib/time/qtimezoneprivate_tz.cpp
-@@ -1126,6 +1126,17 @@ QByteArray QTzTimeZonePrivate::systemTimeZoneId() cons
+@@ -1153,6 +1153,25 @@ QByteArray QTzTimeZonePrivate::systemTimeZoneId() cons
          }
      }
  
-+    // On many FreeBSD systems, /etc/localtime is a regular file while the actual name is in /var/db/zoneinfo
++    // On some FreeBSD systems, /etc/localtime is a regular file while 
++    // the actual name is in /var/db/zoneinfo
 +    if (ianaId.isEmpty()) {
 +        QFile tzif(QStringLiteral("/var/db/zoneinfo"));
 +        if (tzif.open(QIODevice::ReadOnly)) {
-+            // TODO QTextStream inefficient, replace later
-+            QTextStream ts(&tzif);
-+            if (!ts.atEnd())
-+                ianaId = ts.readLine().toUtf8();
++            const int maximumTZNameLength = 256;
++            QByteArray tzcontents( tzif.read( maximumTZNameLength ) );
++            if (tzcontents.size() >= 2) {
++                // Shortest TZ would be UTC, or r/z, but there's special
++                // cases "GB" and "US"
++                const int newlineIndex = tzcontents.indexOf('\n');
++                if (newlineIndex < 0) // No newline in file
++                    ianaId = tzcontents;
++                if (newlineIndex > 2) // Newline, chop it off
++                    ianaId = tzcontents.left(newlineIndex-1);
++            }
 +        }
 +    }
 +
-     // On some Red Hat distros /etc/localtime is real file with name held in /etc/sysconfig/clock
-     // in a line like ZONE="Europe/Oslo" or TIMEZONE="Europe/Oslo"
+     // Some systems (e.g. uClibc) have a default value for $TZ in /etc/TZ:
      if (ianaId.isEmpty()) {
+         QFile zone(QStringLiteral("/etc/TZ"));

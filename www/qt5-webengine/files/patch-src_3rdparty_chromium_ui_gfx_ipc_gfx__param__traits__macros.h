@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/ui/gfx/ipc/gfx_param_traits_macros.h.orig	2019-11-27 21:12:25 UTC
+--- src/3rdparty/chromium/ui/gfx/ipc/gfx_param_traits_macros.h.orig	2020-03-16 14:04:24 UTC
 +++ src/3rdparty/chromium/ui/gfx/ipc/gfx_param_traits_macros.h
 @@ -18,7 +18,7 @@
  #include "ui/gfx/selection_bound.h"
@@ -33,3 +33,12 @@
    IPC_STRUCT_TRAITS_MEMBER(fd)
  #elif defined(OS_FUCHSIA)
    IPC_STRUCT_TRAITS_MEMBER(vmo)
+@@ -80,7 +80,7 @@ IPC_STRUCT_TRAITS_END()
+ 
+ IPC_STRUCT_TRAITS_BEGIN(gfx::NativePixmapHandle)
+   IPC_STRUCT_TRAITS_MEMBER(planes)
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   IPC_STRUCT_TRAITS_MEMBER(modifier)
+ #endif
+ #if defined(OS_FUCHSIA)

@@ -76,7 +76,7 @@
 %%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/qlowenergycontroller_bluez_p.h
 %%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/qlowenergycontroller_bluezdbus_p.h
 %%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/qlowenergycontroller_darwin_p.h
-%%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/qlowenergycontroller_p.h
+%%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/qlowenergycontroller_dummy_p.h
 %%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/qlowenergycontroller_win_p.h
 %%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/qlowenergycontroller_winrt_new_p.h
 %%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/qlowenergycontroller_winrt_p.h

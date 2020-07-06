@@ -80,10 +80,8 @@
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qsslkey_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qsslpresharedkeyauthenticator_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qsslsocket_mac_p.h
-%%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qsslsocket_openssl11_symbols_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qsslsocket_openssl_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qsslsocket_openssl_symbols_p.h
-%%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qsslsocket_opensslpre11_symbols_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qsslsocket_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qsslsocket_schannel_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qsslsocket_winrt_p.h
@@ -130,6 +128,7 @@
 %%QT_INCDIR%%/QtNetwork/QNetworkRequest
 %%QT_INCDIR%%/QtNetwork/QNetworkSession
 %%QT_INCDIR%%/QtNetwork/QOcspResponse
+%%QT_INCDIR%%/QtNetwork/QPasswordDigestor
 %%QT_INCDIR%%/QtNetwork/QSctpServer
 %%QT_INCDIR%%/QtNetwork/QSctpSocket
 %%QT_INCDIR%%/QtNetwork/QSsl

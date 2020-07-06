@@ -31,10 +31,10 @@
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qsoundeffect_qaudio_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qtmultimedia-config_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qtmultimediaglobal_p.h
-%%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qvideoframe_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qvideoframeconversionhelper_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qvideooutputorientationhandler_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qvideosurfaceoutput_p.h
+%%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qvideosurfaces_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qwavedecoder_p.h
 %%QT_INCDIR%%/QtMultimedia/QAbstractAudioDeviceInfo
 %%QT_INCDIR%%/QtMultimedia/QAbstractAudioInput

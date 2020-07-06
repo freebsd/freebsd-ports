@@ -1,4 +1,5 @@
 %%QT_BINDIR%%/linguist
+%%DEBUG%%%%QT_BINDIR%%/linguist.debug
 share/pixmaps/linguist-qt5.png
 %%QT_DATADIR%%/phrasebooks/danish.qph
 %%QT_DATADIR%%/phrasebooks/dutch.qph
