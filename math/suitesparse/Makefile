@@ -66,7 +66,7 @@ MODULES=	AMD CAMD CCOLAMD CHOLMOD COLAMD CSparse CXSparse_newfiles	\
 
 .if ${ARCH} == i386
 # See PR 230888 : Missing 64 bit atomic functions for i386
-USES+=		compiler:gcc-c++11-lib
+USE_GCC=	yes
 LDFLAGS+=	-latomic
 .elif defined(PPC_ABI) && ${PPC_ABI} == ELFv1
 USE_GCC=	yes
