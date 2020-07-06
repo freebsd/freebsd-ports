@@ -3,11 +3,10 @@
 
 PORTNAME=	libconfuse
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.2.1
-PORTREVISION=	1
+DISTVERSION=	3.3
 CATEGORIES=	devel
 
-MAINTAINER=	otis@freebsd.sk
+MAINTAINER=	juraj@lutter.sk
 COMMENT=	Configuration file parsing library
 
 LICENSE=	ISCL
@@ -20,5 +19,6 @@ GH_ACCOUNT=	martinh
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls --enable-shared
 INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 
 .include <bsd.port.mk>
