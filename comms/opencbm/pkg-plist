@@ -11,6 +11,7 @@ bin/d82copy
 bin/frm_analyzer
 bin/imgcopy
 bin/samplelibtransf
+bin/testlines
 bin/xum1541cfg
 @sample etc/opencbm.conf.d/00opencbm.conf.sample
 etc/opencbm.conf.d/10xu1541.conf
@@ -21,17 +22,17 @@ include/opencbm.h
 lib/libopencbm.a
 lib/libopencbm.so
 lib/libopencbm.so.0
-lib/libopencbm.so.0.4.99.99
+lib/libopencbm.so.0.4.99.102
 lib/opencbm/plugin/libopencbm-xu1541.a
 lib/opencbm/plugin/libopencbm-xu1541.so
 lib/opencbm/plugin/libopencbm-xu1541.so.0
-lib/opencbm/plugin/libopencbm-xu1541.so.0.4.99.99
+lib/opencbm/plugin/libopencbm-xu1541.so.0.4.99.102
 lib/opencbm/plugin/xu1541/read_event_log
 lib/opencbm/plugin/xu1541/usb_echo_test
 lib/opencbm/plugin/libopencbm-xum1541.a
 lib/opencbm/plugin/libopencbm-xum1541.so
 lib/opencbm/plugin/libopencbm-xum1541.so.0
-lib/opencbm/plugin/libopencbm-xum1541.so.0.4.99.99
+lib/opencbm/plugin/libopencbm-xum1541.so.0.4.99.102
 man/man1/cbmcopy.1.gz
 man/man1/cbmctrl.1.gz
 man/man1/cbmformat.1.gz
@@ -45,6 +46,7 @@ man/man1/d82copy.1.gz
 man/man1/frm_analyzer.1.gz
 man/man1/imgcopy.1.gz
 man/man1/samplelibtransf.1.gz
+man/man1/testlines.1.gz
 man/man1/xum1541cfg.1.gz
 sbin/opencbm_plugin_helper_tools
 %%PORTDOCS%%%%DOCSDIR%%/html/opencbm-1.html

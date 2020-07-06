@@ -1,7 +1,7 @@
 # Created by: Felix Palmen <felix@palmen-it.de>
 # $FreeBSD$
 
-OCBM_VERSION=	0.4.99.99a
+OCBM_VERSION=	0.4.99.102
 DISTVERSIONPREFIX=	v
 DIST_SUBDIR=	opencbm
 DISTINFO_FILE=	${.CURDIR}/../opencbm/distinfo
@@ -18,5 +18,4 @@ PATCH_WRKSRC=	${WRKDIR}/OpenCBM-${OCBM_VERSION}
 
 MAKE_ENV=	USER_CFLAGS="${CFLAGS}"
 
-OCBM_LIBVERSION=	0.4.99.99
 PLUGINBASENAME=	${PREFIX}/lib/opencbm/plugin/libopencbm-

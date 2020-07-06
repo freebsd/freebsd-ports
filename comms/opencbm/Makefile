@@ -5,7 +5,9 @@ PORTNAME=	opencbm
 PORTVERSION=	${OCBM_VERSION}
 CATEGORIES=	comms archivers
 
-PATCHFILES=	12ef17d4cf78903c9c52d7a348a816424d549b89.diff
+PATCHFILES=	077611e1ec27b52081c45c1702ff3812233fdd5e.diff \
+		dfa9dd172e2843a661cdb6cdba09d1c6c2c1b35e.diff \
+		a5fb83548b0ed54372d7615118c8ec9ba338bb9b.diff
 
 MAINTAINER=	felix@palmen-it.de
 COMMENT=	Commodore CBM serial IEC/IEEE-488 bus utilities
@@ -15,7 +17,7 @@ LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	cc65:devel/cc65
 
-USES=		gmake
+USES=		gmake pkgconfig
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=		DOCS INFO
@@ -49,9 +51,9 @@ post-patch:
 		${WRKSRC}/opencbm/LINUX/plugin_helper_tools
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libopencbm.so.${OCBM_LIBVERSION}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libopencbm.so.${OCBM_VERSION}
 .for p in xu1541 xum1541
-	${STRIP_CMD} ${STAGEDIR}${PLUGINBASENAME}${p}.so.${OCBM_LIBVERSION}
+	${STRIP_CMD} ${STAGEDIR}${PLUGINBASENAME}${p}.so.${OCBM_VERSION}
 .endfor
 	@${RM} ${STAGEDIR}${PREFIX}/etc/opencbm.conf
 	@${MV} ${STAGEDIR}${PREFIX}/etc/opencbm.conf.d/00opencbm.conf \
