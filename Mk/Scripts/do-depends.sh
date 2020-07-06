@@ -124,6 +124,14 @@ for _line in ${dp_RAWDEPENDS} ; do
 	fi
 
 	case "${origin}" in
+	*@*/*) ;; # Ignore @ in the path which would not be a flavor
+	*@*)
+		export FLAVOR="${origin##*@}"
+		origin=${origin%@*}
+		;;
+	esac
+
+	case "${origin}" in
 	/*) ;;
 	*)
 		for overlay in ${dp_OVERLAYS} ${PORTSDIR}; do
@@ -133,13 +141,6 @@ for _line in ${dp_RAWDEPENDS} ; do
 			fi
 		done
 		origin="${orig}"
-		;;
-	esac
-	case "${origin}" in
-	*@*/*) ;; # Ignore @ in the path which would not be a flavor
-	*@*)
-		export FLAVOR="${origin##*@}"
-		origin=${origin%@*}
 		;;
 	esac
 
