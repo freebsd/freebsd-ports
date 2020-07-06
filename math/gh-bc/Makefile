@@ -30,6 +30,7 @@ CONFLICTS_INSTALL=	gnubc-[0-9]*
 pre-build:
 		${INSTALL_SCRIPT} ${WRKSRC}/gen/strgen.sh ${WRKSRC}/gen/strgen
 		iconv -f UTF-8 -t ISO8859-1 ${WRKSRC}/locales/es_ES.UTF-8.msg > ${WRKSRC}/locales/es_ES.ISO8859-1.msg
+		${LN} ${WRKSRC}/locales/es_ES.ISO8859-1.msg ${WRKSRC}/locales/es_ES.ISO8859-15.msg
 
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/bin/bc ${STAGEDIR}${PREFIX}/bin/
