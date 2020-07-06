@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	maltrail
-PORTVERSION=	0.21
+PORTVERSION=	0.22
 CATEGORIES=	security python
 
 MAINTAINER=	m.muenz@gmail.com
