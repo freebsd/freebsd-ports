@@ -191,6 +191,7 @@ lib/libyacas_mp.a
 %%DATADIR%%/scripts/simplify.rep/factorial.ys.def
 %%DATADIR%%/scripts/solve.rep/code.ys
 %%DATADIR%%/scripts/solve.rep/code.ys.def
+%%DATADIR%%/scripts/solve.rep/om.ys
 %%DATADIR%%/scripts/specfunc.rep/bernou.ys
 %%DATADIR%%/scripts/specfunc.rep/bernou.ys.def
 %%DATADIR%%/scripts/specfunc.rep/bessel.ys

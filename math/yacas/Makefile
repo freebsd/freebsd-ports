@@ -3,8 +3,8 @@
 
 PORTNAME=	yacas
 PORTVERSION=	1.9.1
-PORTREVISION=	0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	gahr@FreeBSD.org
@@ -17,6 +17,8 @@ TEST_DEPENDS=	bash:shells/bash \
 
 BUILD_DEPENDS=	googletest>0:devel/googletest
 
+USES=		cmake compiler:c++17-lang
+
 CMAKE_ARGS=	-DENABLE_DOCS:BOOL=OFF \
 		-DENABLE_CYACAS_CONSOLE:BOOL=ON \
 		-DENABLE_CYACAS_KERNEL:BOOL=OFF \
@@ -27,8 +29,6 @@ CMAKE_ARGS=	-DENABLE_DOCS:BOOL=OFF \
 
 TEST_TARGET=	test
 
-USES=		cmake compiler:c++17-lang
-USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	grzegorzmazur
 
