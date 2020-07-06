@@ -10,7 +10,8 @@ COMMENT=	Graphical user interface for the PDF Toolkit (PDFtk)
 
 LICENSE=	GPLv3
 
-USES=		desktop-file-utils
+USES=		compiler:c++11-lang
+USES+=		desktop-file-utils
 USES+=		gettext-runtime
 USES+=		gnome
 USES+=		pkgconfig
