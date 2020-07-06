@@ -15,7 +15,7 @@ LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
 ONLY_FOR_ARCHS=	amd64 powerpc64
 
-USES=		sdl cmake
+USES=		sdl cmake localbase:ldflags
 USE_GITHUB=	yes
 GH_ACCOUNT=	TerryCavanagh
 GH_PROJECT=	${PORTNAME}
