@@ -1,6 +1,6 @@
---- cogbot.gemspec.orig	2018-04-28 17:58:37 UTC
-+++ cogbot.gemspec
-@@ -23,15 +23,15 @@ Gem::Specification.new do |s|
+--- cogbot.gemspec.orig	2020-03-25 14:07:28.207063000 +0900
++++ cogbot.gemspec	2020-03-25 14:08:33.268661000 +0900
+@@ -23,15 +23,15 @@
      s.specification_version = 4
  
      if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
@@ -14,9 +14,10 @@
 +      s.add_runtime_dependency(%q<nokogiri>.freeze, ["~> 1.8"])
        s.add_runtime_dependency(%q<daemons>.freeze, ["~> 1.2.4"])
 -      s.add_runtime_dependency(%q<twitter>.freeze, ["~> 6.1.0"])
-+      s.add_runtime_dependency(%q<twitter>.freeze, [">= 6.1.0"])
-       s.add_runtime_dependency(%q<json>.freeze, ["~> 2.1.0"])
+-      s.add_runtime_dependency(%q<json>.freeze, ["~> 2.1.0"])
 -      s.add_runtime_dependency(%q<yajl-ruby>.freeze, ["~> 1.3.0"])
++      s.add_runtime_dependency(%q<twitter>.freeze, [">= 6.1.0"])
++      s.add_runtime_dependency(%q<json>.freeze, ["~> 2.1"])
 +      s.add_runtime_dependency(%q<yajl-ruby>.freeze, ["~> 1.3"])
        s.add_runtime_dependency(%q<fortune_gem>.freeze, ["~> 0.0.9"])
        s.add_development_dependency(%q<awesome_print>.freeze, [">= 0"])
