@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GNOME=	intlhack introspection:build
-USES=		gettext gnome localbase meson pkgconfig tar:xz
+USES=		compiler:c11 gettext gnome localbase meson pkgconfig tar:xz
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 CPPFLAGS+=	-Wno-error=format-nonliteral
