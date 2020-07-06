@@ -61,8 +61,6 @@ export OPENHAB_LOGDIR="${openhab2_log_dir}"
 # for UTF-8 encoding, language can be set inside openhab:
 export LC_ALL=en_US.UTF-8
 
-#command=${OPENHAB_HOME}/start.sh
-#command_args="server"
 pidfile=/var/run/${name}/${name}.pid
 
 command=/usr/sbin/daemon
@@ -70,6 +68,9 @@ command_args="-p ${pidfile} -t openhab2 ${OPENHAB_HOME}/start.sh server"
 
 openhab2_stop() {
 	${OPENHAB_RUNTIME}/bin/stop
+	if [ -e ${pidfile} ]; then
+		wait_for_pids $(cat ${pidfile})
+	fi
 }
 
 openhab2_status() {
