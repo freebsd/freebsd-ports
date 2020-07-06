@@ -1,6 +1,13 @@
 bin/node
 include/node/common.gypi
 include/node/config.gypi
+include/node/cppgc/allocation.h
+include/node/cppgc/finalizer-trait.h
+include/node/cppgc/garbage-collected.h
+include/node/cppgc/gc-info.h
+include/node/cppgc/heap.h
+include/node/cppgc/internals.h
+include/node/cppgc/platform.h
 include/node/js_native_api.h
 include/node/js_native_api_types.h
 include/node/libplatform/libplatform.h
@@ -444,6 +451,7 @@ include/node/node_version.h
 %%BUNDLED_SSL%%include/node/openssl/x509err.h
 %%BUNDLED_SSL%%include/node/openssl/x509v3.h
 %%BUNDLED_SSL%%include/node/openssl/x509v3err.h
+include/node/v8-fast-api-calls.h
 include/node/v8-internal.h
 include/node/v8-platform.h
 include/node/v8-profiler.h
