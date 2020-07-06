@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto
 LIB_DEPENDS=	libgudev-1.0.so:devel/libgudev
 TEST_DEPENDS=	bash:shells/bash
 
-USES=		gnome meson pkgconfig
+USES=		compiler:c++11-lang gnome meson pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	linuxwacom
 USE_GNOME=	glib20
