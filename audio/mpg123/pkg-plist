@@ -14,7 +14,7 @@ lib/libout123.so.0
 lib/libout123.so.0.3.0
 lib/libsyn123.so
 lib/libsyn123.so.0
-lib/libsyn123.so.0.1.0
+lib/libsyn123.so.0.1.1
 lib/mpg123/output_dummy.so
 lib/mpg123/output_oss.so
 %%SNDIO%%lib/mpg123/output_sndio.so
