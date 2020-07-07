@@ -275,6 +275,8 @@ include/folly/experimental/coro/CurrentExecutor.h
 include/folly/experimental/coro/Dematerialize-inl.h
 include/folly/experimental/coro/Dematerialize.h
 include/folly/experimental/coro/Error.h
+include/folly/experimental/coro/Filter-inl.h
+include/folly/experimental/coro/Filter.h
 include/folly/experimental/coro/FutureUtil.h
 include/folly/experimental/coro/Generator.h
 include/folly/experimental/coro/GmockHelpers.h
