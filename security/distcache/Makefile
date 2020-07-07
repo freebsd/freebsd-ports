@@ -24,12 +24,10 @@ PORTDOCS=	ANNOUNCE BUGS CHANGES FAQ README
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.pre.mk>
-
-.if ${SSL_DEFAULT} == base
-BROKEN_FreeBSD_12=	SSL/TLS libraries were missing or unusable
-BROKEN_FreeBSD_13=	SSL/TLS libraries were missing or unusable
-.endif
+post-patch:
+	@${GREP} -q 'define SSLeay_version' /usr/include/openssl/crypto.h \
+	    && ${REINPLACE_CMD} -e 's,SSLeay_version,OpenSSL_version,' \
+		${WRKSRC}/ssl/configure || :
 
 post-install:
 	# INSTALL_TARGET=install-strip isn't working!  Brute force it
@@ -39,4 +37,7 @@ post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
-.include <bsd.port.post.mk>
+do-test:
+	@cd ${WRKSRC} && ${SH} devel/test.sh
+
+.include <bsd.port.mk>
