@@ -3,6 +3,7 @@
 
 PORTNAME=	dropbear
 PORTVERSION=	2020.80
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://matt.ucc.asn.au/dropbear/releases/
 
@@ -140,7 +141,7 @@ post-patch-SHA1_96-off:
 post-patch-SHA2_256-off:
 	@${ECHO} "#define DROPBEAR_SHA2_256_HMAC 0" >> ${WRKSRC}/localoptions.h
 
-post-patch-SHA2-512-on:
+post-patch-SHA2_512-on:
 	@${ECHO} "#define DROPBEAR_SHA2_512_HMAC 1" >> ${WRKSRC}/localoptions.h
 
 post-patch-X11FWD-on:
