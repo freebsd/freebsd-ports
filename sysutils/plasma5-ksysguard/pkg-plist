@@ -81,6 +81,8 @@ share/locale/es/LC_MESSAGES/ksysguard_plugins_global.mo
 share/locale/es/LC_MESSAGES/ksysguard_plugins_process.mo
 share/locale/et/LC_MESSAGES/ksysguard.mo
 share/locale/eu/LC_MESSAGES/ksysguard.mo
+share/locale/eu/LC_MESSAGES/ksysguard_plugins_global.mo
+share/locale/eu/LC_MESSAGES/ksysguard_plugins_process.mo
 share/locale/fa/LC_MESSAGES/ksysguard.mo
 share/locale/fi/LC_MESSAGES/ksysguard.mo
 share/locale/fr/LC_MESSAGES/ksysguard.mo

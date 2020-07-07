@@ -128,8 +128,6 @@ share/doc/HTML/ca/kcontrol/componentchooser/index.cache.bz2
 share/doc/HTML/ca/kcontrol/componentchooser/index.docbook
 share/doc/HTML/ca/kcontrol/cursortheme/index.cache.bz2
 share/doc/HTML/ca/kcontrol/cursortheme/index.docbook
-share/doc/HTML/ca/kcontrol/desktopthemedetails/edit-delete.png
-share/doc/HTML/ca/kcontrol/desktopthemedetails/edit-undo.png
 share/doc/HTML/ca/kcontrol/desktopthemedetails/get-new-theme.png
 share/doc/HTML/ca/kcontrol/desktopthemedetails/index.cache.bz2
 share/doc/HTML/ca/kcontrol/desktopthemedetails/index.docbook
@@ -145,8 +143,6 @@ share/doc/HTML/ca/kcontrol/fonts/index.docbook
 share/doc/HTML/ca/kcontrol/fonts/main.png
 share/doc/HTML/ca/kcontrol/formats/index.cache.bz2
 share/doc/HTML/ca/kcontrol/formats/index.docbook
-share/doc/HTML/ca/kcontrol/icons/edit-delete.png
-share/doc/HTML/ca/kcontrol/icons/edit-undo.png
 share/doc/HTML/ca/kcontrol/icons/get-new-theme.png
 share/doc/HTML/ca/kcontrol/icons/index.cache.bz2
 share/doc/HTML/ca/kcontrol/icons/index.docbook
@@ -168,8 +164,6 @@ share/doc/HTML/ca/kcontrol/keyboard/index.cache.bz2
 share/doc/HTML/ca/kcontrol/keyboard/index.docbook
 share/doc/HTML/ca/kcontrol/keys/index.cache.bz2
 share/doc/HTML/ca/kcontrol/keys/index.docbook
-share/doc/HTML/ca/kcontrol/keys/list-add.png
-share/doc/HTML/ca/kcontrol/keys/remove.png
 share/doc/HTML/ca/kcontrol/mouse/index.cache.bz2
 share/doc/HTML/ca/kcontrol/mouse/index.docbook
 share/doc/HTML/ca/kcontrol/notifications/index.cache.bz2
@@ -203,19 +197,10 @@ share/doc/HTML/ca/knetattach/screenshot2.png
 share/doc/HTML/ca/knetattach/screenshot3.png
 share/doc/HTML/ca/knetattach/screenshot4.png
 share/doc/HTML/ca/plasma-desktop/add-widgets.png
-share/doc/HTML/ca/plasma-desktop/application-launcher-settings.png
 share/doc/HTML/ca/plasma-desktop/application-launcher.png
 share/doc/HTML/ca/plasma-desktop/application-menu.png
-share/doc/HTML/ca/plasma-desktop/device_notifier_widget.png
-share/doc/HTML/ca/plasma-desktop/device_notifier_widget_actions.png
-share/doc/HTML/ca/plasma-desktop/folder-view.png
 share/doc/HTML/ca/plasma-desktop/index.cache.bz2
 share/doc/HTML/ca/plasma-desktop/index.docbook
-share/doc/HTML/ca/plasma-desktop/krunner-configure.png
-share/doc/HTML/ca/plasma-desktop/krunner-desktop-actions.png
-share/doc/HTML/ca/plasma-desktop/plasma-desktop-annotated.png
-share/doc/HTML/ca/plasma-desktop/remove.png
-share/doc/HTML/ca/plasma-desktop/system-tray-up-arrow.png
 share/doc/HTML/de/kcontrol/autostart/index.cache.bz2
 share/doc/HTML/de/kcontrol/autostart/index.docbook
 share/doc/HTML/de/kcontrol/baloo/index.cache.bz2

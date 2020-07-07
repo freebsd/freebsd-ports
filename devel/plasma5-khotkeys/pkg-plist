@@ -4,7 +4,6 @@ lib/libkhotkeysprivate.so.%%KDE_PLASMA_VERSION%%
 %%QT_PLUGINDIR%%/kcm_hotkeys.so
 %%QT_PLUGINDIR%%/kf5/kded/khotkeys.so
 share/dbus-1/interfaces/org.kde.khotkeys.xml
-share/doc/HTML/ca/kcontrol/khotkeys/document-open.png
 share/doc/HTML/ca/kcontrol/khotkeys/shortcuts-action-command.png
 share/doc/HTML/ca/kcontrol/khotkeys/shortcuts-action-dbus.png
 share/doc/HTML/ca/kcontrol/khotkeys/shortcuts-action-keyboard.png
@@ -14,7 +13,6 @@ share/doc/HTML/ca/kcontrol/khotkeys/groups-comment.png
 share/doc/HTML/ca/kcontrol/khotkeys/index.cache.bz2
 share/doc/HTML/ca/kcontrol/khotkeys/index.docbook
 share/doc/HTML/ca/kcontrol/khotkeys/manage-export.png
-share/doc/HTML/ca/kcontrol/khotkeys/oxygen-22x22-edit-clear-locationbar-rtl.png
 share/doc/HTML/ca/kcontrol/khotkeys/settings.png
 share/doc/HTML/de/kcontrol/khotkeys/index.cache.bz2
 share/doc/HTML/de/kcontrol/khotkeys/index.docbook
@@ -40,12 +38,10 @@ share/doc/HTML/pt/kcontrol/khotkeys/index.cache.bz2
 share/doc/HTML/pt/kcontrol/khotkeys/index.docbook
 share/doc/HTML/pt_BR/kcontrol/khotkeys/index.cache.bz2
 share/doc/HTML/pt_BR/kcontrol/khotkeys/index.docbook
-share/doc/HTML/ru/kcontrol/khotkeys/document-open.png
 share/doc/HTML/ru/kcontrol/khotkeys/groups-comment.png
 share/doc/HTML/ru/kcontrol/khotkeys/index.cache.bz2
 share/doc/HTML/ru/kcontrol/khotkeys/index.docbook
 share/doc/HTML/ru/kcontrol/khotkeys/manage-export.png
-share/doc/HTML/ru/kcontrol/khotkeys/oxygen-22x22-edit-clear-locationbar-rtl.png
 share/doc/HTML/ru/kcontrol/khotkeys/settings.png
 share/doc/HTML/ru/kcontrol/khotkeys/shortcuts-action-command.png
 share/doc/HTML/ru/kcontrol/khotkeys/shortcuts-action-dbus.png
