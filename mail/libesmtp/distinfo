@@ -1,2 +1,5 @@
+TIMESTAMP = 1281387021
 SHA256 (libesmtp-1.0.6.tar.bz2) = d0a61a5c52d99fa7ce7d00ed0a07e341dbda67101dbed1ab0cdae3f37db4eb0b
 SIZE (libesmtp-1.0.6.tar.bz2) = 365506
+SHA256 (libesmtp-1.0.6-openssl-1.1-api-compatibility.patch) = d10161f8b01c7865dcb948f8e65e61b8596752856953a605632d2c09dd41494c
+SIZE (libesmtp-1.0.6-openssl-1.1-api-compatibility.patch) = 2243

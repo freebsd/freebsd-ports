@@ -10,6 +10,10 @@ MASTER_SITES=	http://www.stafford.uklinux.net/libesmtp/ \
 		http://ftp.osuosl.org/pub/blfs/svn/l/ \
 		GENTOO
 
+PATCH_SITES=	https://gitweb.gentoo.org/repo/gentoo.git/plain/net-libs/libesmtp/files/ \
+		https://raw.githubusercontent.com/gentoo/gentoo/master/net-libs/libesmtp/files/
+PATCHFILES=	libesmtp-1.0.6-openssl-1.1-api-compatibility.patch:-p1
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for posting electronic mail
 
@@ -18,7 +22,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
 BROKEN_SSL=	openssl
 
-USES=		gmake libtool tar:bzip2
+USES=		autoreconf gmake libtool tar:bzip2
 GNU_CONFIGURE=	yes
 # require-all-recipients (implied by enable-all) is required for Balsa
 CONFIGURE_ARGS=	--enable-all --disable-isoc
@@ -33,13 +37,6 @@ DEBUG_CONFIGURE_ENABLE=	debug
 OPENSSL_CONFIGURE_WITH=	openssl=${OPENSSLBASE}
 OPENSSL_USES=		ssl
 
-.include <bsd.port.pre.mk>
-
-.if ${SSL_DEFAULT} == base
-BROKEN_FreeBSD_12=	error: cannot find the ssl library
-BROKEN_FreeBSD_13=	error: cannot find the ssl library
-.endif
-
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in AUTHORS ChangeLog NEWS Notes README TODO
@@ -50,4 +47,4 @@ post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
