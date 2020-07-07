@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	godot
-DISTVERSION=	3.2.1
+DISTVERSION=	3.2.2
 DISTVERSIONSUFFIX=	-stable
 CATEGORIES=	devel games
 
@@ -47,8 +47,8 @@ AUDIO_DESC=		Audio support
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_MAKE_ARGS=		alsa=True
 ALSA_MAKE_ARGS_OFF=	alsa=False
-# master at 31/1
-EXAMPLES_GH_TUPLE=	godotengine:godot-demo-projects:a5b8cd11d992:DEMOS
+# master at 2/4 tagged for 3.2
+EXAMPLES_GH_TUPLE=	godotengine:godot-demo-projects:57baf0a1b5d1:DEMOS
 EXAMPLES_PORTEXAMPLES=	*
 # mono support doesn't build at present
 MONO_BUILD_DEPENDS=	msbuild:devel/msbuild
