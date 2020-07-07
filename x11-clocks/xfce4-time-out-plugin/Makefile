@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-time-out-plugin
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	x11-clocks xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
