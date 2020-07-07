@@ -3,7 +3,7 @@
 
 PORTNAME=	libfsntfs
 # If/When moving from experimental to alpha, switch to DISTVERSIONPREFIX to prevent PORTEPOCH
-DISTVERSION=	experimental-20200506
+DISTVERSION=	experimental-20200627
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libfsntfs/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine
