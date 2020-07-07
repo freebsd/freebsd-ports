@@ -81,7 +81,9 @@ share/locale/es/LC_MESSAGES/kdiff3.mo
 share/locale/es/LC_MESSAGES/kdiff3fileitemactionplugin.mo
 share/locale/et/LC_MESSAGES/kdiff3.mo
 share/locale/et/LC_MESSAGES/kdiff3fileitemactionplugin.mo
+share/locale/eu/LC_MESSAGES/diff_ext.mo
 share/locale/eu/LC_MESSAGES/kdiff3.mo
+share/locale/eu/LC_MESSAGES/kdiff3fileitemactionplugin.mo
 share/locale/fi/LC_MESSAGES/diff_ext.mo
 share/locale/fi/LC_MESSAGES/kdiff3.mo
 share/locale/fi/LC_MESSAGES/kdiff3fileitemactionplugin.mo
@@ -101,7 +103,6 @@ share/locale/hu/LC_MESSAGES/kdiff3fileitemactionplugin.mo
 share/locale/ia/LC_MESSAGES/diff_ext.mo
 share/locale/ia/LC_MESSAGES/kdiff3.mo
 share/locale/ia/LC_MESSAGES/kdiff3fileitemactionplugin.mo
-share/locale/is/LC_MESSAGES/kdiff3.mo
 share/locale/it/LC_MESSAGES/diff_ext.mo
 share/locale/it/LC_MESSAGES/kdiff3.mo
 share/locale/it/LC_MESSAGES/kdiff3fileitemactionplugin.mo
@@ -126,6 +127,7 @@ share/locale/nl/LC_MESSAGES/diff_ext.mo
 share/locale/nl/LC_MESSAGES/kdiff3.mo
 share/locale/nl/LC_MESSAGES/kdiff3fileitemactionplugin.mo
 share/locale/nn/LC_MESSAGES/kdiff3.mo
+share/locale/nn/LC_MESSAGES/kdiff3fileitemactionplugin.mo
 share/locale/pl/LC_MESSAGES/diff_ext.mo
 share/locale/pl/LC_MESSAGES/kdiff3.mo
 share/locale/pl/LC_MESSAGES/kdiff3fileitemactionplugin.mo
@@ -137,6 +139,7 @@ share/locale/pt_BR/LC_MESSAGES/kdiff3.mo
 share/locale/pt_BR/LC_MESSAGES/kdiff3fileitemactionplugin.mo
 share/locale/ro/LC_MESSAGES/kdiff3.mo
 share/locale/ro/LC_MESSAGES/kdiff3fileitemactionplugin.mo
+share/locale/ru/LC_MESSAGES/diff_ext.mo
 share/locale/ru/LC_MESSAGES/kdiff3.mo
 share/locale/ru/LC_MESSAGES/kdiff3fileitemactionplugin.mo
 share/locale/rw/LC_MESSAGES/kdiff3.mo
