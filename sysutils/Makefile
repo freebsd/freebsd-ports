@@ -116,6 +116,7 @@
     SUBDIR += bsd-splash-changer
     SUBDIR += bsdconfig
     SUBDIR += bsdcrashtar
+    SUBDIR += bsdfan
     SUBDIR += bsdhwmon
     SUBDIR += bsdinfo
     SUBDIR += bsdisks

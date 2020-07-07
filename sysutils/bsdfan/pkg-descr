@@ -1,0 +1,5 @@
+This is a simple utility to manage Lenovo ThinkPad fans on FreeBSD.
+It automatically regulates the fan speed by the sensor temperature
+and user configuration.
+
+WWW: https://github.com/claudiozz/bsdfan
