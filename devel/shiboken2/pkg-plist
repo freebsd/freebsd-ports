@@ -32,7 +32,7 @@ lib/cmake/Shiboken2-%%DISTVERSION%%/Shiboken2Targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Shiboken2-%%DISTVERSION%%/Shiboken2Targets.cmake
 lib/cmake/Shiboken2-%%DISTVERSION%%/shiboken_helpers.cmake
 lib/libshiboken2%%PYVERSTR%%.so
-lib/libshiboken2%%PYVERSTR%%.so.5.14
+lib/libshiboken2%%PYVERSTR%%.so.5.15
 lib/libshiboken2%%PYVERSTR%%.so.%%DISTVERSION%%
 %%PYTHON_SITELIBDIR%%/shiboken2/__init__.py
 %%PYTHON_SITELIBDIR%%/shiboken2/_config.py
