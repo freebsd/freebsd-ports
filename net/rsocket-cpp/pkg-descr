@@ -8,4 +8,4 @@ over a single connection:
 * fire-and-forget (no response)
 * channel (bi-directional streams)
 
-WWW: http://rsocket.io/
+WWW: https://rsocket.io/
