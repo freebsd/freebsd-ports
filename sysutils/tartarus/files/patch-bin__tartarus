@@ -1,6 +1,6 @@
---- bin/tartarus.orig	2018-03-30 17:57:10.233266000 +0100
-+++ bin/tartarus	2018-03-30 17:57:45.818667000 +0100
-@@ -41,6 +41,8 @@
+--- bin/tartarus.orig	2020-07-07 16:50:59 UTC
++++ bin/tartarus
+@@ -41,6 +41,8 @@ set -u
  set -f
  shopt -s nocasematch
  
@@ -9,7 +9,7 @@
  CMD_INCREMENTAL="no"
  CMD_UPDATE="no"
  PROFILE=""
-@@ -527,7 +529,7 @@
+@@ -527,7 +529,7 @@ LIMIT_DISK_IO="no"
  #
  # Disabling this option will stop Tartarus from checking its website for updates
  # of itself.
@@ -18,7 +18,7 @@
  #
  #=item FILE_LIST_CREATION
  #
-@@ -540,6 +542,37 @@
+@@ -540,6 +542,37 @@ FILE_LIST_CREATION="no"
  # This defines the directory lists of the processed files are placed in.
  FILE_LIST_DIRECTORY=""
  #
@@ -56,7 +56,7 @@
  #=back
  #
  #=cut
-@@ -616,7 +649,7 @@
+@@ -616,7 +649,7 @@ fi
  constructFilename() {
      local INC=""
      if isEnabled "$INCREMENTAL_BACKUP"; then
@@ -65,7 +65,7 @@
          INC="-inc-${BASEDON}"
      fi
      local CHUNK=""
-@@ -638,10 +671,10 @@
+@@ -638,10 +671,10 @@ constructListFilename() {
  case "$ASSEMBLY_METHOD" in
      tar|"")
          # use the traditional tar setup
@@ -78,7 +78,7 @@
              local EXITCODE=$?
              # exit code 1 means that some files have changed while backing them
              # up, we think that is OK for now
-@@ -678,21 +711,28 @@
+@@ -678,21 +711,28 @@ case "$STORAGE_METHOD" in
          # define storage procedure
          storage() {
              # stay silent, but print error messages if aborting
