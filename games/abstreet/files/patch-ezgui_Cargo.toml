@@ -1,0 +1,11 @@
+--- ezgui/Cargo.toml.orig	2020-07-06 15:59:49 UTC
++++ ezgui/Cargo.toml
+@@ -28,7 +28,7 @@ simsearch = "0.2.0"
+ stdweb  = { version = "0.4.20", optional = true }
+ stretch = "0.3.2"
+ ttf-parser = "0.6.1"
+-usvg = { git = "https://github.com/RazrFalcon/resvg", default-features=false }
++usvg = "0.11.0"
+ webgl_stdweb = { version = "0.3", optional = true }
+ winit = "0.22.2"
+ 
