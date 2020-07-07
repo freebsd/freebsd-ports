@@ -10,6 +10,7 @@ MAINTAINER=	ml@netfence.it
 COMMENT=	Concise ChartPlotter/Navigator
 
 LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING.gplv2
 
 LIB_DEPENDS=	libportaudio.so:audio/portaudio \
 		libcurl.so:ftp/curl \
