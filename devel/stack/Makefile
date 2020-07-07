@@ -15,7 +15,8 @@ LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	happy:devel/hs-happy
 RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss \
-		gmake:devel/gmake
+		gmake:devel/gmake \
+		${LOCALBASE}/lib/compat/libffi.so.6:devel/libffi321
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	commercialhaskell
