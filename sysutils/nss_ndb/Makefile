@@ -51,6 +51,7 @@ DB4_USE_LDCONFIG+=	yes
 DB4_LIB_DEPENDS=	libdb-4.8.so:databases/db48
 DB4_CONFIGURE_ON=	--with-db=4
 
+USES=			compiler:c11
 USE_GITHUB=		yes
 GH_ACCOUNT=		ptrrkssn
 
