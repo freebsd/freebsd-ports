@@ -64,7 +64,6 @@ GSL_LIB_DEPENDS=	libgsl.so:math/gsl
 MANPAGES_ALL_TARGET=	man
 MANPAGES_BUILD_DEPENDS=	texi2dvi:print/texinfo
 MANPAGES_INFO=	asy-faq
-MANPAGE_INSTALL_TARGET=	install-man
 
 OFFSCREEN_CONFIGURE_ENABLE=	offscreen
 OFFSCREEN_DESC=	Enable offscreen rendering using OSMesa library

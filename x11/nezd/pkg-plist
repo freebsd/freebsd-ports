@@ -1,5 +1,5 @@
 bin/nezd
-%%DOCSDIR%%/README.nezd.gz
+%%DOCSDIR%%/README.nezd
 share/man/man1/nezd.1.gz
 %%GADGETS%%bin/dbar
 %%GADGETS%%bin/gcpubar

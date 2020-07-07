@@ -42,7 +42,6 @@ GLPK_LIB_DEPENDS=		libglpk.so:math/glpk
 HDF5_CONFIGURE_ENABLE=		hdf5
 HDF5_LIB_DEPENDS=		libhdf5.so:science/hdf5
 MPI_CONFIGURE_ENABLE=		mpi
-FSCURVES_CONFIGURE_ENABLE=	sfc
 EXAMPLES_CONFIGURE_ENABLE=	examples
 EXAMPLES_VARS=			PKGMESSAGE=pkg-message-examples
 SUB_FILES=			pkg-message-examples

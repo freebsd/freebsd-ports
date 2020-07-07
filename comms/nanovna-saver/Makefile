@@ -18,10 +18,9 @@ PY_DEPENDS=	${PYNUMPY} \
 BUILD_DEPENDS=	${PY_DEPENDS}
 RUN_DEPENDS=	${PY_DEPENDS}
 
-USES=		python:3.3+ pyqt:5 qt:5
+USES=		python:3.3+ pyqt:5
 USE_PYTHON=	distutils autoplist noflavors
 USE_PYQT=	core_run gui_run widgets_run
-QT5_USE=	core gui widgets
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mihtjel

@@ -34,8 +34,6 @@ BROTLI_LIB_DEPENDS=	libbrotlicommon.so:archivers/brotli
 BZ2_DESC=		bz2 compression support
 BZ2_CMAKE_BOOL=		ARROW_WITH_BZ2
 
-SNAPPY_CMAKE_BOOL=	ARROW_WITH_BZ2
-
 LZ4_CMAKE_BOOL=		ARROW_WITH_LZ4
 LZ4_LIB_DEPENDS=	liblz4.so:archivers/liblz4
 

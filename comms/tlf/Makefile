@@ -17,9 +17,8 @@ RUN_DEPENDS=	rec:audio/sox \
 
 USES=		autoreconf gnome ncurses pkgconfig
 USE_GITHUB=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	PANEL_LIB=-lpanel
 USE_GNOME=	glib20
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -largp" \
 		CPPFLAGS=-I${LOCALBASE}/include
 

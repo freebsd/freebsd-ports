@@ -36,8 +36,6 @@ CMAKE_BUILD_TYPE=	Release
 
 NOPRECIOUSMAKEVARS=	yes
 
-MAKE_JOBS_SAFE=		yes
-
 .include <bsd.port.pre.mk>
 
 USE_LDCONFIG=	${PREFIX}/lib/swipl/lib/${ARCH}-${OPSYS:tl}

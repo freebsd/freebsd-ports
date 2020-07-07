@@ -32,8 +32,6 @@ CXXFLAGS_clang=	-Wno-c++11-narrowing
 MAKE_JOBS_UNSAFE=	yes
 
 USE_RC_SUBR=	telldusd
-USER=		nobody
-GROUP=		dialer
 
 SUB_FILES=	pkg-message
 

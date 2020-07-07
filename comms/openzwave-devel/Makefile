@@ -25,18 +25,16 @@ GH_TAGNAME=	14f2ba74
 MAKE_ARGS=	VERSION_REV=${VERSION_REV} LIBDIR=${WRKSRC} docdir=${DOCSDIR} CXX=${CXX}
 
 OPTIONS_DEFINE=	DOXYGEN DOCS
-OPTIONS_DEFAULT=
 OPTIONS_SUB=	yes
 
-PLIST_SUB=	PORTVERSION=${PORTVERSION}
-
-DOXYGEN_DESCR=	Build docs (requires doxygen + graphviz)
-DOXYGEN_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen dot:${PORTSDIR}/graphics/graphviz
+DOXYGEN_DESC=	Build docs (requires doxygen + graphviz)
+DOXYGEN_BUILD_DEPENDS=	dot:graphics/graphviz \
+			doxygen:devel/doxygen
 DOXYGEN_PORTDOCS=	*
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${LOCALBASE}/lib/libopenzwave.so.1.6
-	${STRIP_CMD} ${STAGEDIR}${LOCALBASE}/bin/MinOZW
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libopenzwave.so.1.6
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/MinOZW
 
 post-install-DOXYGEN-on:
 	${RM} ${STAGEDIR}${DOCSDIR}/Doxyfile.in

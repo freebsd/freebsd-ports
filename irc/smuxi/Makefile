@@ -32,7 +32,6 @@ OPTIONS_SUB=		yes
 DBUS_DESC=	Build with DBUS support
 GTKSPELL_DESC=	Support spell checking
 NLS_DESC=	Build with NLS support
-NOTIFY_DESC=	Build with Notification Support
 
 DBUS_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/ndesk-dbus-1.0.pc:devel/ndesk-dbus \
 			${LOCALBASE}/libdata/pkgconfig/ndesk-dbus-glib-1.0.pc:devel/ndesk-dbus-glib

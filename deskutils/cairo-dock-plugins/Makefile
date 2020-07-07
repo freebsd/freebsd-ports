@@ -58,7 +58,6 @@ SOUND_EFFECTS_DESC=	Sound Effects applet
 UPOWER_DESC=		D-Bus daemon for power management tasks
 #TERMINAL_DESC=		Terminal applet
 #VALA_DESC=		Vala interface
-WEBLETS_DESC=		Weblets applet
 XGAMMA_DESC=		Xgamma applet
 XFCE_INTEGRATION_DESC=	XFCE integration support
 ZEITGEIST_DESC=		User logs activities

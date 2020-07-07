@@ -28,7 +28,7 @@ OPTIONS_SUB=		yes
 
 BOSSA_DESC=		Include BOSSA GUI application using wxWidgets
 BOSSA_ALL_TARGET=	bin/bossa
-BOSSA_USE=		wx=3.0 wx_comps=wx
+BOSSA_USE=		wx=3.0
 
 BOSSASH_DESC=		Include BOSSA Shell
 BOSSASH_USES=		readline
