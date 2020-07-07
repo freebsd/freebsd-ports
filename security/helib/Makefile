@@ -2,14 +2,13 @@
 
 PORTNAME=	helib
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.1
+DISTVERSION=	1.0.2
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Implementation of homomorphic encryption
 
 LICENSE=	APACHE20
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_i386=	no matching function for call to 'assertEq', see https://github.com/homenc/HElib/issues/342
 
