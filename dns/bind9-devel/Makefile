@@ -48,13 +48,13 @@ RUN_DEPENDS=	bind-tools>0:dns/bind-tools
 # XXX: remove tar:bz2
 USES=		autoreconf compiler:c11 cpe libedit libtool pkgconfig ssl tar:bz2
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.17.0a0.2020.06.23
+ISCVERSION=	9.17.0a0.2020.07.06
 # XXX: Remove gitlab
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.isc.org
 GL_ACCOUNT=	isc-projects
 GL_PROJECT=	bind9
-GL_COMMIT=	e8fa9986bd3bc6fdb7d40b60ecebfdcafbabea4c
+GL_COMMIT=	f34b179d12f74ad1851488d0363ee1471a6926ed
 
 CPE_VENDOR=	isc
 CPE_VERSION=	${ISCVERSION:C/-.*//}
@@ -64,7 +64,6 @@ CPE_UPDATE=	${ISCVERSION:C/.*-//:tl}
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-linux-caps \
-		--disable-shared \
 		--localstatedir=/var \
 		--sysconfdir=${ETCDIR} \
 		--with-dlopen=yes \
@@ -75,6 +74,7 @@ ETCDIR=		${PREFIX}/etc/namedb
 
 .if defined(BIND_TOOLS_SLAVE)
 EXTRA_PATCHES=		${PATCHDIR}/extrapatch-bind-tools
+CONFIGURE_ARGS+=	--libdir=${PREFIX}/lib/bind-tools
 .else
 USE_RC_SUBR=		named
 # XXX: remove the big warning about it being a development version from pkg-message
@@ -272,9 +272,10 @@ post-install-DOCS-on:
 .else
 
 do-install:
-	for dir in bin doc/man; do \
+	for dir in bin lib doc/man; do \
 		(cd ${INSTALL_WRKSRC}/$$dir && ${SETENV} ${MAKE_ENV} ${FAKEROOT} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET}) ; \
 	done
+	@${RM} -r ${STAGEDIR}${PREFIX}/include
 
 .endif	# BIND_TOOLS_SLAVE
 

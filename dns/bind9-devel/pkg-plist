@@ -261,13 +261,27 @@ include/pk11/pk11.h
 include/pk11/result.h
 include/pk11/site.h
 include/pkcs11/pkcs11.h
-lib/libbind9.a
-lib/libdns.a
-lib/libirs.a
-lib/libisc.a
-lib/libisccc.a
-lib/libisccfg.a
-lib/libns.a
+lib/libbind9.so
+lib/libbind9.so.1701
+lib/libbind9.so.1701.0.0
+lib/libdns.so
+lib/libdns.so.1702
+lib/libdns.so.1702.0.0
+lib/libirs.so
+lib/libirs.so.1701
+lib/libirs.so.1701.0.0
+lib/libisc.so
+lib/libisc.so.1702
+lib/libisc.so.1702.0.0
+lib/libisccc.so
+lib/libisccc.so.1701
+lib/libisccc.so.1701.0.0
+lib/libisccfg.so
+lib/libisccfg.so.1701
+lib/libisccfg.so.1701.0.0
+lib/libns.so
+lib/libns.so.1702
+lib/libns.so.1702.0.0
 @comment lib/named/filter-aaaa.so
 @comment man/man1/arpaname.1.gz
 @comment man/man1/delv.1.gz
@@ -298,16 +312,16 @@ lib/libns.a
 %%MANPAGES%%%%NATIVE_PKCS11%%man/man1/pkcs11-tokens.1.gz
 %%MANPAGES%%man/man5/named.conf.5.gz
 %%MANPAGES%%man/man5/rndc.conf.5.gz
-%%MANPAGES%%man/man8/ddns-confgen.8.gz
 %%MANPAGES%%man/man8/filter-aaaa.8.gz
 %%MANPAGES%%man/man8/named.8.gz
 %%MANPAGES%%man/man8/rndc-confgen.8.gz
 %%MANPAGES%%man/man8/rndc.8.gz
+%%MANPAGES%%man/man8/tsig-keygen.8.gz
 sbin/ddns-confgen
 sbin/named
 sbin/rndc
 sbin/rndc-confgen
-sbin/tsig-confgen
+sbin/tsig-keygen
 @dir(bind,bind,) %%ETCDIR%%/dynamic
 @dir(bind,bind,) %%ETCDIR%%/slave
 @dir(bind,bind,) %%ETCDIR%%/working
