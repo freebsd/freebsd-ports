@@ -6,6 +6,8 @@ lib/maxima/%%PORTVERSION%%/%%BINDIR%%/%%BINNAME%%
 %%CMUCL%%lib/maxima/%%PORTVERSION%%/%%BINDIR%%/lisp
 libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%MANPAGES%%man/man1/maxima.1.gz
+%%MANPAGES%%man/de/man1/%%BINNAME%%.1.gz
+%%MANPAGES%%man/ru/man1/%%BINNAME%%.1.gz
 share/applications/net.sourceforge.maxima.xmaxima.desktop
 share/bash-completion/completions/maxima
 share/bash-completion/completions/rmaxima

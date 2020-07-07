@@ -3,7 +3,7 @@
 
 PORTNAME=	maxima
 PORTVERSION=	5.44.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math lisp tk
 MASTER_SITES=	SF/maxima/Maxima-source/${PORTVERSION}-source
 
@@ -70,6 +70,7 @@ NOUSERINIT_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src_maxima.in
 NOUSERINIT_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-OFF-src_maxima.in
 
 SAGE_DESC=		Build with patches from Sage (implies ECL)
+SAGE_BUILD_DEPENDS=	${LOCALBASE}/lib/libatomic_ops.a:devel/libatomic_ops
 SAGE_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-share_linearalgebra_matrixexp.lisp \
 			${PATCHDIR}/extra-patch-src_grind.lisp \
 			${PATCHDIR}/extra-patch-src_hayat.lisp \
