@@ -2,7 +2,7 @@
 
 PORTNAME=	lego
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.7.0
+DISTVERSION=	3.8.0
 CATEGORIES=	security
 
 MAINTAINER=	matt@matthoran.com
@@ -37,6 +37,7 @@ GH_TUPLE=	\
 		akamai:AkamaiOPEN-edgegrid-golang:v0.9.8:akamai_akamaiopen_edgegrid_golang/vendor/github.com/akamai/AkamaiOPEN-edgegrid-golang \
 		aliyun:alibaba-cloud-sdk-go:v1.61.112:aliyun_alibaba_cloud_sdk_go/vendor/github.com/aliyun/alibaba-cloud-sdk-go \
 		aws:aws-sdk-go:v1.30.20:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
+		boombuler:barcode:6c824513bacc:boombuler_barcode/vendor/github.com/boombuler/barcode \
 		cenkalti:backoff:v4.0.0:cenkalti_backoff_v4/vendor/github.com/cenkalti/backoff/v4 \
 		census-ecosystem:opencensus-go-exporter-ocagent:v0.4.12:census_ecosystem_opencensus_go_exporter_ocagent/vendor/contrib.go.opencensus.io/exporter/ocagent \
 		census-instrumentation:opencensus-go:v0.22.3:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
@@ -73,10 +74,12 @@ GH_TUPLE=	\
 		gophercloud:gophercloud:v0.3.0:gophercloud_gophercloud/vendor/github.com/gophercloud/gophercloud \
 		grpc-ecosystem:grpc-gateway:v1.8.5:grpc_ecosystem_grpc_gateway/vendor/github.com/grpc-ecosystem/grpc-gateway \
 		grpc:grpc-go:v1.27.1:grpc_grpc_go/vendor/google.golang.org/grpc \
+		hashicorp:go-cleanhttp:v0.5.1:hashicorp_go_cleanhttp/vendor/github.com/hashicorp/go-cleanhttp \
+		hashicorp:go-retryablehttp:v0.6.6:hashicorp_go_retryablehttp/vendor/github.com/hashicorp/go-retryablehttp \
 		iij:doapi:0bbf12d6d7df:iij_doapi/vendor/github.com/iij/doapi \
 		jmespath:go-jmespath:v0.3.0:jmespath_go_jmespath/vendor/github.com/jmespath/go-jmespath \
 		json-iterator:go:v1.1.7:json_iterator_go/vendor/github.com/json-iterator/go \
-		kolo:xmlrpc:07c4ee3fd181:kolo_xmlrpc/vendor/github.com/kolo/xmlrpc \
+		kolo:xmlrpc:e0350524596b:kolo_xmlrpc/vendor/github.com/kolo/xmlrpc \
 		konsorten:go-windows-terminal-sequences:v1.0.2:konsorten_go_windows_terminal_sequences/vendor/github.com/konsorten/go-windows-terminal-sequences \
 		labbsr0x:bindman-dns-webhook:v1.0.2:labbsr0x_bindman_dns_webhook/vendor/github.com/labbsr0x/bindman-dns-webhook \
 		labbsr0x:goh:v1.0.1:labbsr0x_goh/vendor/github.com/labbsr0x/goh \
@@ -84,19 +87,20 @@ GH_TUPLE=	\
 		liquidweb:liquidweb-go:v1.6.0:liquidweb_liquidweb_go/vendor/github.com/liquidweb/liquidweb-go \
 		miekg:dns:v1.1.27:miekg_dns/vendor/github.com/miekg/dns \
 		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
-		mitchellh:mapstructure:v1.1.2:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
+		mitchellh:mapstructure:v1.3.1:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
 		modern-go:concurrent:bacd9c7ef1dd:modern_go_concurrent/vendor/github.com/modern-go/concurrent \
 		modern-go:reflect2:v1.0.1:modern_go_reflect2/vendor/github.com/modern-go/reflect2 \
 		namedotcom:go:08470befbe04:namedotcom_go/vendor/github.com/namedotcom/go \
 		nrdcg:auroradns:v1.0.1:nrdcg_auroradns/vendor/github.com/nrdcg/auroradns \
 		nrdcg:dnspod-go:v0.4.0:nrdcg_dnspod_go/vendor/github.com/nrdcg/dnspod-go \
-		nrdcg:goinwx:v0.6.1:nrdcg_goinwx/vendor/github.com/nrdcg/goinwx \
+		nrdcg:goinwx:v0.7.0:nrdcg_goinwx/vendor/github.com/nrdcg/goinwx \
 		nrdcg:namesilo:v0.2.1:nrdcg_namesilo/vendor/github.com/nrdcg/namesilo \
 		ns1:ns1-go:b51389932cbc:ns1_ns1_go/vendor/gopkg.in/ns1/ns1-go.v2 \
 		oracle:oci-go-sdk:v7.0.0:oracle_oci_go_sdk/vendor/github.com/oracle/oci-go-sdk \
 		ovh:go-ovh:ba5adb4cf014:ovh_go_ovh/vendor/github.com/ovh/go-ovh \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
+		pquerna:otp:v1.2.0:pquerna_otp/vendor/github.com/pquerna/otp \
 		rainycape:memcache:1031fa0ce2f2:rainycape_memcache/vendor/github.com/rainycape/memcache \
 		russross:blackfriday:v2.0.1:russross_blackfriday_v2/vendor/github.com/russross/blackfriday/v2 \
 		sacloud:libsacloud:v1.26.1:sacloud_libsacloud/vendor/github.com/sacloud/libsacloud \
@@ -109,7 +113,7 @@ GH_TUPLE=	\
 		transip:gotransip:v6.0.2:transip_gotransip_v6/vendor/github.com/transip/gotransip/v6 \
 		uber-go:ratelimit:c15da0234277:uber_go_ratelimit/vendor/go.uber.org/ratelimit \
 		urfave:cli:v1.22.1:urfave_cli/vendor/github.com/urfave/cli \
-		vultr:govultr:v0.1.4:vultr_govultr/vendor/github.com/vultr/govultr
+		vultr:govultr:v0.4.2:vultr_govultr/vendor/github.com/vultr/govultr
 
 SAMPLE_FILES=	deploy.sh.sample lego.sh.sample
 SUB_FILES=	${SAMPLE_FILES} 604.lego pkg-message
