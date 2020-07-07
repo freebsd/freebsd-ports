@@ -3,7 +3,7 @@
 PORTNAME=	thanos
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.11.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	ler@FreeBSD.org
@@ -17,7 +17,16 @@ ONLY_FOR_ARCHS=	aarch64 amd64
 
 USES=		go:modules
 
+BUILD_DATE=	$$(date +%d-%B-%Y)
+
 GO_TARGET=	./cmd/${PORTNAME}
+GO_BUILDFLAGS=  -ldflags "\
+                -s -w \
+		-X github.com/prometheus/common/version.Version=${DISTVERSION} \
+		-X github.com/prometheus/common/version.Revision="31cacc4" \
+		-X github.com/prometheus/common/version.Branch="master" \
+		-X github.com/prometheus/common/version.BuildUser=${USER} \
+		-X github.com/prometheus/common/version.BuildDate=${BUILD_DATE}"
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	thanos-io
