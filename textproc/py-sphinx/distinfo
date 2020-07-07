@@ -1,3 +1,5 @@
-TIMESTAMP = 1590959364
-SHA256 (python/Sphinx-3.0.4.tar.gz) = ea64df287958ee5aac46be7ac2b7277305b0381d213728c3a49d8bb9b8415807
-SIZE (python/Sphinx-3.0.4.tar.gz) = 5909229
+TIMESTAMP = 1593952342
+SHA256 (python/Sphinx-3.1.2.tar.gz) = b9daeb9b39aa1ffefc2809b43604109825300300b987a24f45976c001ba1a8fd
+SIZE (python/Sphinx-3.1.2.tar.gz) = 5934433
+SHA256 (python/edf9e7091bcec256ed98024ec9adbdf74a26a8a6.patch) = 02ee72b631aca64b3033d8d954cb7ea2f3d893d02a47c626fed49c0becde50b5
+SIZE (python/edf9e7091bcec256ed98024ec9adbdf74a26a8a6.patch) = 1429
