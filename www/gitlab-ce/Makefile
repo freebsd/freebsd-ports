@@ -3,7 +3,7 @@
 
 PORTNAME=	gitlab-ce
 PORTVERSION=	13.1.3
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -148,7 +148,7 @@ MY_DEPENDS=	git>=2.25:devel/git \
 	rubygem-redis-rails-rails60>=5.0.2<5.1:www/rubygem-redis-rails-rails60 \
 	rubygem-discordrb-webhooks-blackst0ne>=3.3<4.0:net-im/rubygem-discordrb-webhooks-blackst0ne \
 	rubygem-hipchat>=1.6.0<1.7.0:net-im/rubygem-hipchat \
-	rubygem-jira-ruby>=2.0.0<2.1:devel/rubygem-jira-ruby \
+	rubygem-jira-ruby20>=2.0.0<2.1:devel/rubygem-jira-ruby20 \
 	rubygem-atlassian-jwt>=0.2.0<0.3.0:www/rubygem-atlassian-jwt \
 	rubygem-flowdock>=0.7<1.0:www/rubygem-flowdock \
 	rubygem-slack-messenger>=2.3.3<2.4.0:devel/rubygem-slack-messenger \
