@@ -6,7 +6,7 @@ PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.freediameter.net/hg/freeDiameter/archive/
 
-MAINTAINER=	koue@chaosophia.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source Diameter protocol implementation
 
 LICENSE=	BSD3CLAUSE
