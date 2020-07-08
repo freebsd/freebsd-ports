@@ -1,11 +1,13 @@
---- tty-markdown.gemspec.orig	2019-02-08 12:53:29 UTC
+--- tty-markdown.gemspec.orig	2020-07-07 13:37:43 UTC
 +++ tty-markdown.gemspec
-@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
+@@ -23,8 +23,8 @@ Gem::Specification.new do |s|
      s.specification_version = 4
  
      if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
 -      s.add_runtime_dependency(%q<kramdown>.freeze, ["~> 1.16.2"])
+-      s.add_runtime_dependency(%q<pastel>.freeze, ["~> 0.7.2"])
 +      s.add_runtime_dependency(%q<kramdown>.freeze, ["~> 1.16", ">= 1.16.2"])
-       s.add_runtime_dependency(%q<pastel>.freeze, ["~> 0.7.2"])
++      s.add_runtime_dependency(%q<pastel>.freeze, ["~> 0.7", ">= 0.7.2"])
        s.add_runtime_dependency(%q<rouge>.freeze, ["~> 3.3"])
        s.add_runtime_dependency(%q<strings>.freeze, ["~> 0.1.4"])
+       s.add_runtime_dependency(%q<tty-color>.freeze, ["~> 0.4"])
