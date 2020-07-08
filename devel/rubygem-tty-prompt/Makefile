@@ -3,6 +3,7 @@
 
 PORTNAME=	tty-prompt
 PORTVERSION=	0.21.0
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,8 +14,8 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-necromancer>=0.5.0<1:devel/rubygem-necromancer \
-		rubygem-pastel>=0.7.0<0.8:devel/rubygem-pastel \
-		rubygem-tty-reader>=0.7.0<0.8:devel/rubygem-tty-reader
+		rubygem-pastel>=0.7<1:devel/rubygem-pastel \
+		rubygem-tty-reader>=0.7<1:devel/rubygem-tty-reader
 
 USES=		gem
 USE_RUBY=	yes
