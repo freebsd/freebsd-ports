@@ -1,3 +1,3 @@
-TIMESTAMP = 1592846044
-SHA256 (dask-2.19.0.tar.gz) = e18035cebc2a32e9d483f76d7718f846e95a0f75e6b0fe192a21328c236a465b
-SIZE (dask-2.19.0.tar.gz) = 2810299
+TIMESTAMP = 1594117185
+SHA256 (dask-2.20.0.tar.gz) = 2e6eea7bbc2eaaad8facd0ea748e5a3fee3a79a6e81c8a5445c84d737bd6efce
+SIZE (dask-2.20.0.tar.gz) = 2811431
