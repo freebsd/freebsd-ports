@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sidekiq
-PORTVERSION=	6.0.7
+PORTVERSION=	6.1.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -14,8 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-connection_pool>=2.2.2:net/rubygem-connection_pool \
 		rubygem-rack>=2.0,3<3,3:www/rubygem-rack \
-		rubygem-rack-protection>=2.0.0:www/rubygem-rack-protection \
-		rubygem-redis>=4.1.0:databases/rubygem-redis
+		rubygem-redis>=4.2.0:databases/rubygem-redis
 
 USES=		gem
 USE_RUBY=	yes
