@@ -25,8 +25,7 @@ GL_COMMIT=	1ae0b459b2c40a5760b0435c2df293cdffbaa10b
 GH_TUPLE=	\
 		JerryRyan:cereal:a384b101:cereal/third-party/cereal \
 		google:benchmark:d3ad0b9d:benchmark/third-party/google-benchmark \
-		google:googletest:8b4817e3:google_test/third-party/google-test \
-		gperftools:gperftools:c1d546d7:gperftools/third-party/gperftools
+		google:googletest:8b4817e3:google_test/third-party/google-test
 USE_LDCONFIG=	yes
 
 CMAKE_OFF=	BUILD_UNITTESTS BUILD_EXAMPLES BUILD_BENCHMARKS

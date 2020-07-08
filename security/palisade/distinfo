@@ -5,7 +5,5 @@ SHA256 (google-benchmark-d3ad0b9d_GH0.tar.gz) = eb8bf051e4ded9601d51ea0836732346
 SIZE (google-benchmark-d3ad0b9d_GH0.tar.gz) = 157820
 SHA256 (google-googletest-8b4817e3_GH0.tar.gz) = c632dd39ef6729cd198bb7c3f0b20e2efa36475cf3a082883f4809a2b26e9556
 SIZE (google-googletest-8b4817e3_GH0.tar.gz) = 873457
-SHA256 (gperftools-gperftools-c1d546d7_GH0.tar.gz) = cc00b738497234a131749dd96a11d47f90df29b6bec426005164597c2ff4e4c5
-SIZE (gperftools-gperftools-c1d546d7_GH0.tar.gz) = 925949
 SHA256 (palisade-palisade-development-1ae0b459b2c40a5760b0435c2df293cdffbaa10b_GL0.tar.gz) = 01837ac97eb84d4787b5ebc456b809065ab893eda6fc15444ba85178c9440d4c
 SIZE (palisade-palisade-development-1ae0b459b2c40a5760b0435c2df293cdffbaa10b_GL0.tar.gz) = 4541724
