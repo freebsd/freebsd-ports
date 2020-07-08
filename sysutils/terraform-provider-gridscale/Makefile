@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	terraform-provider-gridscale
-PORTVERSION=	1.6.0
+PORTVERSION=	1.6.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
