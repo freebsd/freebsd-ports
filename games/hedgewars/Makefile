@@ -15,8 +15,6 @@ COMMENT=	Free Worms-like turn based strategy game
 LICENSE=	GPLv2 GFDL
 LICENSE_COMB=	multi
 
-BROKEN_i386=	uSound.pas: hGetContents: invalid argument (invalid byte sequence)
-
 LIB_DEPENDS=	libphysfs.so:devel/physfs \
 		libpng.so:graphics/png
 
@@ -39,6 +37,8 @@ PLIST_FILES=	bin/${PORTNAME} bin/hwengine \
 		lib/libphyslayer.so \
 		lib/libphyslayer.so.1.0
 PORTDATA=	*
+
+USE_LOCALE=	en_US.UTF-8
 
 OPTIONS_DEFINE=	VIDEOREC
 OPTIONS_DEFAULT=VIDEOREC
