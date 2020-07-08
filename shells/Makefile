@@ -31,6 +31,7 @@
     SUBDIR += lshell
     SUBDIR += mksh
     SUBDIR += nologinmsg
+    SUBDIR += ohmyzsh
     SUBDIR += oksh
     SUBDIR += p5-Bash-Completion
     SUBDIR += p5-Shell-Perl

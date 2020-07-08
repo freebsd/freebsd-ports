@@ -1,0 +1,16 @@
+[
+{ type: install
+  message: <<EOM
+To install Oh My Zsh:
+
+1. (optionally) Backup your existing ~/.zshrc file
+cp ~/.zshrc ~/.zshrc.orig
+
+2. Create a new zsh configuration file
+cp %%DATADIR%%/templates/zshrc.zsh-template ~/.zshrc
+
+3. Create Oh My Zsh cache directory
+mkdir -p ~/.oh-my-zsh/cache
+EOM
+}
+]
