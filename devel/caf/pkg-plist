@@ -92,7 +92,6 @@ include/caf/detail/consumer.hpp
 include/caf/detail/decorated_tuple.hpp
 include/caf/detail/default_invoke_result_visitor.hpp
 include/caf/detail/delegate_serialize.hpp
-include/caf/detail/dispatch_parse_cli.hpp
 include/caf/detail/disposer.hpp
 include/caf/detail/double_ended_queue.hpp
 include/caf/detail/dynamic_message_data.hpp
@@ -110,6 +109,7 @@ include/caf/detail/ini_consumer.hpp
 include/caf/detail/init_fun_factory.hpp
 include/caf/detail/int_list.hpp
 include/caf/detail/invoke_result_visitor.hpp
+include/caf/detail/is_complete.hpp
 include/caf/detail/is_one_of.hpp
 include/caf/detail/is_primitive_config_value.hpp
 include/caf/detail/limited_vector.hpp
@@ -219,6 +219,7 @@ include/caf/illegal_message_element.hpp
 include/caf/inbound_path.hpp
 include/caf/index_mapping.hpp
 include/caf/infer_handle.hpp
+include/caf/init_global_meta_objects.hpp
 include/caf/input_range.hpp
 include/caf/interface_mismatch.hpp
 include/caf/intrusive/drr_cached_queue.hpp
@@ -313,6 +314,7 @@ include/caf/ipv6_address.hpp
 include/caf/ipv6_endpoint.hpp
 include/caf/ipv6_subnet.hpp
 include/caf/is_actor_handle.hpp
+include/caf/is_error_code_enum.hpp
 include/caf/is_message_sink.hpp
 include/caf/is_timeout_or_catch_all.hpp
 include/caf/is_typed_actor.hpp
@@ -456,6 +458,7 @@ include/caf/timestamp.hpp
 include/caf/to_string.hpp
 include/caf/type_erased_tuple.hpp
 include/caf/type_erased_value.hpp
+include/caf/type_id.hpp
 include/caf/type_nr.hpp
 include/caf/typed_actor.hpp
 include/caf/typed_actor_pointer.hpp
