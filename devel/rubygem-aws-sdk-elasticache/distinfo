@@ -1,3 +1,3 @@
-TIMESTAMP = 1593003208
-SHA256 (rubygem/aws-sdk-elasticache-1.39.0.gem) = 8aef8a0155c9b7a4f0d6504d427b69240e2efe056cb98ace15718b17a31c78a9
-SIZE (rubygem/aws-sdk-elasticache-1.39.0.gem) = 115712
+TIMESTAMP = 1594117329
+SHA256 (rubygem/aws-sdk-elasticache-1.40.0.gem) = 6f19654c5301126bfc41d0f8a5272d1abaf666be70324843a74b8f24aaf06dff
+SIZE (rubygem/aws-sdk-elasticache-1.40.0.gem) = 115200
