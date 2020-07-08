@@ -38,7 +38,6 @@ lib/libshiboken2%%PYVERSTR%%.so.%%DISTVERSION%%
 %%PYTHON_SITELIBDIR%%/shiboken2/_config.py
 %%PYTHON_SITELIBDIR%%/shiboken2/_git_shiboken_module_version.py
 %%PYTHON_SITELIBDIR%%/shiboken2/files.dir/shibokensupport/__init__.py
-%%PYTHON2%%%%PYTHON_SITELIBDIR%%/shiboken2/files.dir/shibokensupport/backport_inspect.py
 %%PYTHON_SITELIBDIR%%/shiboken2/files.dir/shibokensupport/signature/__init__.py
 %%PYTHON_SITELIBDIR%%/shiboken2/files.dir/shibokensupport/signature/errorhandler.py
 %%PYTHON_SITELIBDIR%%/shiboken2/files.dir/shibokensupport/signature/importhandler.py
@@ -49,9 +48,7 @@ lib/libshiboken2%%PYVERSTR%%.so.%%DISTVERSION%%
 %%PYTHON_SITELIBDIR%%/shiboken2/files.dir/shibokensupport/signature/loader.py
 %%PYTHON_SITELIBDIR%%/shiboken2/files.dir/shibokensupport/signature/mapping.py
 %%PYTHON_SITELIBDIR%%/shiboken2/files.dir/shibokensupport/signature/parser.py
-%%PYTHON2%%%%PYTHON_SITELIBDIR%%/shiboken2/files.dir/shibokensupport/typing27.py
-%%PYTHON3%%%%PYTHON_SITELIBDIR%%/shiboken2/shiboken2%%PYVERSTR%%.so
-%%PYTHON2%%%%PYTHON_SITELIBDIR%%/shiboken2/shiboken2.so
+%%PYTHON_SITELIBDIR%%/shiboken2/shiboken2%%PYVERSTR%%.so
 %%PYTHON_SITELIBDIR%%/shiboken2_generator/__init__.py
 %%PYTHON_SITELIBDIR%%/shiboken2_generator/_config.py
 %%PYTHON_SITELIBDIR%%/shiboken2_generator/_git_shiboken_generator_version.py
