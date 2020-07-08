@@ -23,8 +23,6 @@ USE_RUBY=	yes
 
 NO_ARCH=	yes
 
-#PLIST_FILES=	bin/rmsgcat bin/rmsgfmt bin/rmsginit bin/rmsgmerge bin/rxgettext
-
 PORTSCOUT=	limit:^3\.2\.
 
 SHEBANG_FILES=	samples/*.rb samples/cgi/*.rb
