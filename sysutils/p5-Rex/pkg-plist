@@ -343,6 +343,8 @@ bin/rexify
 %%SITE_PERL%%/Rex/Virtualization/VBox/shutdown.pm
 %%SITE_PERL%%/Rex/Virtualization/VBox/start.pm
 %%SITE_PERL%%/Rex/Virtualization/VBox/status.pm
+%%SITE_PERL%%/auto/share/dist/Rex/rex-tab-completion.bash
+%%SITE_PERL%%/auto/share/dist/Rex/rex-tab-completion.zsh
 %%PERL5_MAN1%%/rex.1.gz
 %%PERL5_MAN1%%/rexify.1.gz
 %%PERL5_MAN3%%/Rex.3.gz

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Rex
-PORTVERSION=	1.11.0
+PORTVERSION=	1.12.0
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:FERKI
@@ -13,7 +13,8 @@ COMMENT=	Friendly automation framework
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	p5-File-ShareDir-Install>=0.06:devel/p5-File-ShareDir-Install \
+		${RUN_DEPENDS}
 RUN_DEPENDS=	p5-AWS-Signature4>=0:devel/p5-AWS-Signature4 \
 		p5-Data-Validate-IP>=0:net-mgmt/p5-Data-Validate-IP \
 		p5-Devel-Caller>=0:devel/p5-Devel-Caller \
