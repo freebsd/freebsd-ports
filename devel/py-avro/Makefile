@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	avro
-PORTVERSION=	1.9.2
+PORTVERSION=	1.10.0
 CATEGORIES=	devel
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,10 +11,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Data serialization system for python
 
 LICENSE=	APACHE20
-LICENSE_FILE=	${WRKSRC}/src/avro/LICENSE
-
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}isort>=0:devel/py-isort@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pycodestyle>=0:devel/py-pycodestyle@${PY_FLAVOR}
+LICENSE_FILE=	${WRKSRC}/avro/LICENSE
 
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
