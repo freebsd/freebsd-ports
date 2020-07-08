@@ -34,7 +34,7 @@ SUB_FILES=	hp2100.1
 .include <bsd.port.pre.mk>
 
 do-build:
-	(cd ${WRKSRC}; GCC=clang ${GMAKE} -C SCP hp2100)
+	(cd ${WRKSRC}; GCC="${CC}" ${GMAKE} -C SCP hp2100)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hp2100 ${STAGEDIR}${PREFIX}/bin
