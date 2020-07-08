@@ -3,7 +3,7 @@
 
 PORTNAME=	google-perftools
 DISTVERSIONPREFIX=	gperftools-
-DISTVERSION=	2.7.90
+DISTVERSION=	2.8
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/gperftools/gperftools/releases/download/gperftools-${PORTVERSION}/
 DISTNAME=	gperftools-${PORTVERSION}
@@ -22,8 +22,6 @@ TEST_TARGET=	check
 LIBS+=		-lexecinfo
 
 DOCSDIR=	${PREFIX}/share/doc/gperftools
-
-PLIST_SUB=	SHL3=4.5.4 SHL1=4
 
 OPTIONS_DEFINE=		DOCS
 OPTIONS_SINGLE=		PAGESIZE ALIGN
