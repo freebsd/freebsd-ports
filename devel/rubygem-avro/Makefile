@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	avro
-PORTVERSION=	1.9.2
+PORTVERSION=	1.10.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,7 @@ COMMENT=	Ruby library for Apache Avro
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-multi_json>=0:devel/rubygem-multi_json
+RUN_DEPENDS=	rubygem-multi_json>=1<2:devel/rubygem-multi_json
 
 USES=		gem
 USE_RUBY=	yes
