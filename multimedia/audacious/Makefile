@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	audacious
-PORTVERSION=	3.10.1
-PORTREVISION=	1
+PORTVERSION=	4.0.4
 CATEGORIES=	multimedia audio
 MASTER_SITES=	https://distfiles.audacious-media-player.org/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Lightweight and versatile audio player
 
 LICENSE=	BSD2CLAUSE BSD3CLAUSE
@@ -17,35 +16,45 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig
 
+FLAVORS=	qt5 gtk2
+FLAVOR?=	${FLAVORS:[1]}
+
 USES=		compiler:c++11-lib desktop-file-utils gettext-tools gmake \
-		gnome localbase pkgconfig tar:bzip2 xorg
+		iconv localbase pkgconfig tar:bzip2 xorg
 USE_XORG=	x11 sm
-USE_GNOME=	gtk20 glib20 cairo
 USE_LDCONFIG=	yes
+
+qt5_CONFLICTS_INSTALL=	audacious-gtk2
+
+gtk2_PKGNAMESUFFIX=	-gtk2
+gtk2_CONFLICTS_INSTALL=	audacious
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 SUB_FILES=	pkg-message
 
-CONFLICTS_INSTALL=	audacious-gtk3-3.*
-
 CONFIGURE_ARGS=	--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig \
-		--enable-gtk \
 		--without-buildstamp
 
-OPTIONS_DEFINE=	ICONV NLS EXECINFO
-OPTIONS_DEFAULT=ICONV EXECINFO
+.if ${FLAVOR} == qt5
+CONFIGURE_ARGS+=	--enable-qt --disable-gtk
+USES+=			qt:5
+USE_QT=			buildtools_build core gui widgets
+PLIST_SUB=		QT5="" GTK2="@comment "
+.elif ${FLAVOR} == gtk2
+CONFIGURE_ARGS+=	--disable-qt --enable-gtk
+USES+=			gnome
+USE_GNOME=		gtk20 glib20 cairo
+PLIST_SUB=		QT5="@comment " GTK2=""
+.endif
+
+OPTIONS_DEFINE=	NLS EXECINFO
+OPTIONS_DEFAULT=EXECINFO
 OPTIONS_SUB=	yes
 EXECINFO_DESC=	Build with libexecinfo support
 
-ICONV_USES=	iconv
-
 NLS_USES=	gettext-runtime
 NLS_CONFIGURE_ENABLE=	nls
-
-post-patch:
-	@${REINPLACE_CMD} -e 's| $${MFLAGS}||g' \
-		${WRKSRC}/buildsys.mk.in
 
 post-patch-NLS-off:
 	${REINPLACE_CMD} -e 's,po,,' ${WRKSRC}/Makefile

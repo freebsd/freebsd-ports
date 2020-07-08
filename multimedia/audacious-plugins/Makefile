@@ -2,45 +2,67 @@
 # $FreeBSD$
 
 PORTNAME=	audacious-plugins
-PORTVERSION=	3.10.1
-PORTREVISION=	6
+PORTVERSION=	4.0.4
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.audacious-media-player.org/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Plugins needed for audacious
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	audacious:multimedia/audacious
 LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 		libdbus-1.so:devel/dbus \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libmpg123.so:audio/mpg123
-RUN_DEPENDS=	audacious:multimedia/audacious
+
+FLAVORS=	qt5 gtk2
+FLAVOR?=	${FLAVORS:[1]}
 
 USES=		compiler:c++11-lib gettext-tools gmake gnome iconv \
 		localbase pkgconfig tar:bzip2 xorg
-USE_GNOME=	gtk20 glib20 libxml2 cairo gdkpixbuf2
+USE_GNOME=	glib20 libxml2 gdkpixbuf2
 USE_XORG=	x11
 
-CONFLICTS_INSTALL=	audacious-plugins-gtk3-3.*
+qt5_CONFLICTS_INSTALL=	audacious-plugins-gtk2
+qt5_RUN_DEPENDS=	audacious:multimedia/audacious@qt5
+qt5_BUILD_DEPENDS=	audacious:multimedia/audacious@qt5
+
+gtk2_PKGNAMESUFFIX=	-gtk2
+gtk2_CONFLICTS_INSTALL=	audacious-plugins
+gtk2_RUN_DEPENDS=	audacious:multimedia/audacious@gtk2
+gtk2_BUILD_DEPENDS=	audacious:multimedia/audacious@gtk2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-console --disable-soxr \
-		--enable-gnomeshortcuts \
-		--enable-gtk --enable-hotkey
+		--enable-gnomeshortcuts
 
-OPTIONS_DEFINE=	AAC AMIDI AOSD BS2B CDDA CUE FFMPEG FLAC LAME LIRC \
-		MMS MODPLUG MPRIS NEON NLS NOTIFY OPENGL SAMPLERATE \
+.if ${FLAVOR} == qt5
+CONFIGURE_ARGS+=	--enable-qt --disable-gtk
+USES+=			qt:5
+USE_QT=			core gui widgets
+PLIST_SUB=		QT5="" GTK2="@comment "
+.elif ${FLAVOR} == gtk2
+CONFIGURE_ARGS+=	--disable-qt --enable-gtk --enable-hotkey
+USE_GNOME+=		gtk20 cairo
+PLIST_SUB=		QT5="@comment " GTK2=""
+.endif
+
+OPTIONS_DEFINE=	AAC AMIDI BS2B CDDA CUE FFMPEG FLAC LAME LIRC \
+		MMS MODPLUG MPRIS NEON NLS NOTIFY SAMPLERATE \
 		SCROBBLER SID SNDFILE SPEEDPITCH VORBIS WAVPACK
 OPTIONS_MULTI=		OUTPUT
 OPTIONS_MULTI_OUTPUT=	ALSA FILEWRITER JACK OSS PULSEAUDIO SDL SNDIO
-OPTIONS_DEFAULT=AAC AOSD CDDA CUE FILEWRITER FFMPEG FLAC \
+OPTIONS_DEFAULT=AAC CDDA CUE FILEWRITER FFMPEG FLAC \
 		MMS MPRIS NEON NLS NOTIFY OSS SCROBBLER VORBIS WAVPACK
 OPTIONS_SUB=	yes
+
+.if ${FLAVOR} == gtk2
+OPTIONS_DEFINE+=	AOSD OPENGL
+OPTIONS_DEFAULT+=	AOSD
+.endif
 
 AMIDI_DESC=	Amidi decoder
 AOSD_DESC=	Audacious OSD
