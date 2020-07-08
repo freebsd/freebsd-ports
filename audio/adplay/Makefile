@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libadplug.so:audio/libadplug \
 		libbinio.so:devel/libbinio
 
-USES=		autoreconf libtool pkgconfig
+USES=		autoreconf compiler:c++11-lang libtool pkgconfig
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	adplug
