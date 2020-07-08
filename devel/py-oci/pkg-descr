@@ -18,6 +18,7 @@ resources. Following services are supported:
 * Marketplace, Monitoring, Notifications
 * Object Storage, OS Management, Quotas
 * Resource Manager, Search, Secret Management, Streaming
+* Usage, VMware Provisioning
 * Web Application Acceleration and Security
 
 WWW: https://github.com/oracle/oci-python-sdk/
