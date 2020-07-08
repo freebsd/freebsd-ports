@@ -3,7 +3,7 @@
 
 PORTNAME=	tty
 PORTVERSION=	0.10.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-bundler>=1.16:sysutils/rubygem-bundler \
 		rubygem-equatable>=0.5<1:devel/rubygem-equatable \
-		rubygem-pastel>=0.7.2<0.8:devel/rubygem-pastel \
+		rubygem-pastel>=0.7.2<1:devel/rubygem-pastel \
 		rubygem-thor>=0.20.0<0.21:devel/rubygem-thor \
 		rubygem-tty-box>=0.4.1<1:devel/rubygem-tty-box \
 		rubygem-tty-color>=0.5<1:devel/rubygem-tty-color \
@@ -28,7 +28,7 @@ RUN_DEPENDS=	rubygem-bundler>=1.16:sysutils/rubygem-bundler \
 		rubygem-tty-logger>=0.2.0<1:devel/rubygem-tty-logger \
 		rubygem-tty-markdown>=0.6.0<0.7:devel/rubygem-tty-markdown \
 		rubygem-tty-pager>=0.12<1:devel/rubygem-tty-pager \
-		rubygem-tty-pie>=0.3.0<0.4:devel/rubygem-tty-pie \
+		rubygem-tty-pie>=0.3<1:devel/rubygem-tty-pie \
 		rubygem-tty-platform>=0.2<1:devel/rubygem-tty-platform \
 		rubygem-tty-progressbar>=0.17<1:devel/rubygem-tty-progressbar \
 		rubygem-tty-prompt>=0.19<1:devel/rubygem-tty-prompt \
