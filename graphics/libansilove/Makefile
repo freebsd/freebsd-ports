@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libansilove
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.4
 CATEGORIES=	graphics
 
 MAINTAINER=	amdmi3@FreeBSD.org
