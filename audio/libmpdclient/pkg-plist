@@ -25,6 +25,7 @@ include/mpd/playlist.h
 include/mpd/protocol.h
 include/mpd/queue.h
 include/mpd/recv.h
+include/mpd/replay_gain.h
 include/mpd/response.h
 include/mpd/search.h
 include/mpd/send.h
@@ -38,7 +39,7 @@ include/mpd/tag.h
 include/mpd/version.h
 lib/libmpdclient.so
 lib/libmpdclient.so.2
-lib/libmpdclient.so.2.18
+lib/libmpdclient.so.2.19
 libdata/pkgconfig/libmpdclient.pc
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
