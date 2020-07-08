@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	imageio
-PORTVERSION=	2.8.0
+PORTVERSION=	2.9.0
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +19,7 @@ RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg \
 		${PY_PILLOW}
 
 USES=		python:3.5+
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
