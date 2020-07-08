@@ -1,12 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	hhdate
+PORTVERSION=	3.0.0
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.4
-PORTREVISION=	3
 CATEGORIES=	devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Date and time library based on the C++11 (and beyond) <chrono> header
 
 LICENSE=	MIT
@@ -30,11 +29,13 @@ TEST_TEST_TARGET=	test
 USE_CXXSTD=		c++11
 
 post-extract-TEST-on:
-	${INSTALL_DATA} ${FILESDIR}/Makefile.in ${WRKSRC}/Makefile
 	${INSTALL_DATA} ${FILESDIR}/test-minimal.cpp ${WRKSRC}/test/test-minimal.cpp
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/include/hhdate
 	${INSTALL_DATA} ${WRKSRC}/include/date/date.h ${STAGEDIR}${PREFIX}/include/hhdate/
+
+do-test:
+	cd ${WRKSRC}/test && ${CXX} ${CXXFLAGS} test-minimal.cpp -o test-minimal && ./test-minimal > /dev/null
 
 .include <bsd.port.mk>

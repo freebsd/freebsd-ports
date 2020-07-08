@@ -1,8 +1,0 @@
-# $FreeBSD$
-test:
-	@echo "Compiler in C++11 mode should compile minimal example"
-	${CXX} ${CXXFLAGS} test/test-minimal.cpp \
-		-o ${WRKDIR}/test-minimal && \
-		${WRKDIR}/test-minimal >/dev/null
-
-.PHONY: test
