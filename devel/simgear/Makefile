@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	simgear
-PORTVERSION=	2020.1.2
+PORTVERSION=	2020.1.3
 CATEGORIES=	devel games
 MASTER_SITES=	SF/flightgear/release-${PORTVERSION:R}
 

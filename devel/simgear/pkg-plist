@@ -354,6 +354,6 @@ lib/cmake/SimGear/SimGearConfigVersion.cmake
 lib/cmake/SimGear/SimGearTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/SimGear/SimGearTargets.cmake
 lib/libSimGearCore.so
-lib/libSimGearCore.so.2020.1.2
+lib/libSimGearCore.so.2020.1.3
 lib/libSimGearScene.so
-lib/libSimGearScene.so.2020.1.2
+lib/libSimGearScene.so.2020.1.3
