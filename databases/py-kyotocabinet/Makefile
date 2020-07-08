@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	kyotocabinet
-PORTVERSION=	1.22
+PORTVERSION=	1.23
 DISTVERSIONPREFIX=	python-
-PORTREVISION=	1
 CATEGORIES=	databases python
-MASTER_SITES=	https://fallabs.com/${PORTNAME}/pythonpkg/ \
+MASTER_SITES=	https://fallabs.com/kyotocabinet/pythonpkg/ \
 		LOCAL/sunpoet
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -14,10 +13,11 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python binding of kyotocabinet
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libkyotocabinet.so:databases/kyotocabinet
 
-USE_PYTHON=	autoplist distutils
 USES=		python:3.4+
+USE_PYTHON=	autoplist concurrent distutils
 
 .include <bsd.port.mk>
