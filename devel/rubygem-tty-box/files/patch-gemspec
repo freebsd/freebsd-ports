@@ -1,0 +1,11 @@
+--- tty-box.gemspec.orig	2020-07-07 13:32:20 UTC
++++ tty-box.gemspec
+@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
+     s.specification_version = 4
+ 
+     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+-      s.add_runtime_dependency(%q<pastel>.freeze, ["~> 0.7.2"])
++      s.add_runtime_dependency(%q<pastel>.freeze, ["~> 0.7", ">= 0.7.2"])
+       s.add_runtime_dependency(%q<tty-cursor>.freeze, ["~> 0.7"])
+       s.add_runtime_dependency(%q<strings>.freeze, ["~> 0.1.6"])
+       s.add_development_dependency(%q<bundler>.freeze, [">= 1.5"])
