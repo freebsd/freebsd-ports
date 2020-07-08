@@ -10,7 +10,7 @@
 #                               Set it to "YES" to enable minio
 # minio_config (path):          Set to "%%ETCDIR%%" by default
 #                               Set to directory to store minio config
-# minio_certs (path):           Set to "/var/tmp/minio" by default
+# minio_certs (path):           Set to "%%ETCDIR%%/certs" by default
 #                               Set to directory to certs dir
 # minio_disks (path):           Set to "/var/db/minio" by default.
 #                               Set it to directory to store minio data
@@ -41,15 +41,15 @@ load_rc_config ${name}
 
 : ${minio_enable:="NO"}
 : ${minio_config="%%ETCDIR%%"}
-: ${minio_certs="/var/tmp/minio"}
-: ${minio_disks="/var/db/minio"}
+: ${minio_certs="%%ETCDIR%%/certs"}
+: ${minio_disks="%%DBDIR%%"}
 : ${minio_address=":9000"}
 : ${minio_user:="%%USER%%"}
 : ${minio_group:="%%GROUP%%"}
 : ${minio_syslog_enable:="YES"}
 : ${minio_logfile:="/var/log/minio.log"}
 
-start_precmd="minio_startprecmd"
+start_precmd="minio_start_precmd"
 
 if checkyesno minio_syslog_enable; then
     if [ -n "${minio_syslog_output_tag}" ]; then
@@ -72,7 +72,7 @@ procname="%%PREFIX%%/bin/minio"
 command="/usr/sbin/daemon"
 command_args="-f -t ${name} ${minio_syslog_output_flags} -p ${pidfile} /usr/bin/env ${minio_env} ${procname} -C \"${minio_config}\" -S \"${minio_certs}\" --quiet server --address=\"${minio_address}\" ${minio_disks} ${minio_args}"
 
-minio_startprecmd()
+minio_start_precmd()
 {
     if [ ! -e "${pidfile}" ]; then
         install -o "${minio_user}" -g "${minio_group}" "/dev/null" "${pidfile}"
@@ -81,15 +81,10 @@ minio_startprecmd()
     if [ ! -d "${minio_config}" ]; then
         install -d -o "${minio_user}" -g "${minio_group}" "${minio_config}"
     fi
-    if [ ! -e "${minio_logfile}" ]; then
+
+    if ! checkyesno minio_syslog_enable && [ ! -e "${minio_logfile}" ]; then
         install -o "${minio_user}" -g "${minio_group}" "/dev/null" "${minio_logfile}"
     fi
-
-    for disk in "${minio_disks}"; do
-        if [ ! -d "${disk}" ]; then
-            install -d -o "${minio_user}" -g "${minio_group}" "${disk}"
-        fi
-    done
 }
 
 run_rc_command "$1"
