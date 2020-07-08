@@ -27,6 +27,7 @@
 %%LUA_MODLIBDIR%%/posix/unistd.so
 %%LUA_MODLIBDIR%%/posix/utime.so
 %%LUA_MODSHAREDIR%%/posix/_base.lua
+%%LUA_MODSHAREDIR%%/posix/_bitwise.lua
 %%LUA_MODSHAREDIR%%/posix/_strict.lua
 %%LUA_MODSHAREDIR%%/posix/compat.lua
 %%LUA_MODSHAREDIR%%/posix/deprecated.lua
