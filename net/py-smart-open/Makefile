@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	smart-open
-PORTVERSION=	2.0.0
+PORTVERSION=	2.1.0
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,13 +27,17 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	AWS GCP
-OPTIONS_DEFAULT=AWS GCP
+OPTIONS_DEFINE=	AWS AZURE GCP
+OPTIONS_DEFAULT=AWS AZURE GCP
 AWS_DESC=	Amazon Web Services (AWS) support
+AZURE_DESC=	Microsoft Azure support
 GCP_DESC=	Google Cloud Platform (GCP) support
 
 AWS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto>=0:devel/py-boto@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}boto3>=0:www/py-boto3@${PY_FLAVOR}
+AZURE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}azure-common>=0:www/py-azure-common@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}azure-core>=0:devel/py-azure-core@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}azure-storage-blob>=0:devel/py-azure-storage-blob@${PY_FLAVOR}
 GCP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-cloud-storage>=0:www/py-google-cloud-storage@${PY_FLAVOR}
 
 .include <bsd.port.mk>
