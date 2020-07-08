@@ -83,7 +83,7 @@
 %%WWWDIR%%/include/sessions.php
 %%WWWDIR%%/index.php
 %%WWWDIR%%/install/index.php
-%%WWWDIR%%/js/AppBase.js
+%%WWWDIR%%/js/App.js
 %%WWWDIR%%/js/Article.js
 %%WWWDIR%%/js/form/ComboButton.js
 %%WWWDIR%%/js/form/ValidationTextArea.js
@@ -109,6 +109,7 @@
 %%WWWDIR%%/js/prefs.js
 %%WWWDIR%%/js/tt-rss.js
 %%WWWDIR%%/js/utility.js
+%%WWWDIR%%/jsconfig.json
 %%WWWDIR%%/lib/CheckBoxStoreModel.js
 %%WWWDIR%%/lib/CheckBoxTree.js
 %%WWWDIR%%/lib/MiniTemplator.class.php

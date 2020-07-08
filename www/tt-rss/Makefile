@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tt-rss
-PORTVERSION=	g20200603
+PORTVERSION=	g20200701
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	https://git.tt-rss.org/fox/tt-rss/archive/
@@ -21,7 +21,7 @@ REINPLACE_ARGS=	-i ""
 SHEBANG_FILES=	lib/dojo-src/rebuild-dojo.sh utils/extract-i18n-js.pl
 WRKSRC=		${WRKDIR}/tt-rss
 
-GIT_TAGNAME=	06cc6e3a2
+GIT_TAGNAME=	68b78ecd3
 
 NO_BUILD=	yes
 NO_ARCH=	yes
