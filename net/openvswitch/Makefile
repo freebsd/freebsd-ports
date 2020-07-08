@@ -6,7 +6,7 @@ DISTVERSION=	2.12.0
 CATEGORIES=	net
 MASTER_SITES=	http://openvswitch.org/releases/
 
-MAINTAINER=	koue@chaosophia.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Production quality, multilayer virtual switch
 
 LICENSE=	APACHE20
