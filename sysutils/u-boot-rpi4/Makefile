@@ -4,8 +4,6 @@ MASTERDIR=	${.CURDIR}/../u-boot-master
 
 EXTRA_PATCHES=	${.CURDIR}/files/
 PATCHFILES+=	939129/raw
-# Allow variable reservation of lowest pages for increased PSCI stub size.
-PATCHFILES+=	1245351/raw 1245352/raw
 
 MODEL=		rpi4
 BOARD_CONFIG=	rpi_4_defconfig

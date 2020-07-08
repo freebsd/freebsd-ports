@@ -24,7 +24,7 @@ BUILD_DEPENDS+=	${COMPILER}:devel/${COMPILER}
 USES=		bison gmake python:3.7+,build shebangfix tar:bz2
 BINARY_ALIAS=	bison=${LOCALBASE}/bin/bison dtc=${LOCALBASE}/bin/dtc sed=gsed python3=${PYTHON_CMD}
 
-SHEBANG_FILES=	tools/binman/binman.py arch/arm/mach-rockchip/make_fit_atf.py
+SHEBANG_FILES=	tools/binman/binman arch/arm/mach-rockchip/make_fit_atf.py
 SSP_UNSAFE=	yes
 UBOOT_DIR=	share/u-boot/${PORTNAME}${PKGNAMESUFFIX}
 INST=		${PREFIX}/${UBOOT_DIR}
@@ -108,7 +108,7 @@ UBOOT_METADATA_ARMADA38X_RAW_BS=	512
 .if !defined(UBOOT_VERSION) && defined(UBOOT_VERSION_${FAMILY:tu})
 UBOOT_VERSION=${UBOOT_VERSION_${FAMILY:tu}}
 .endif
-UBOOT_VERSION?=	2020.04
+UBOOT_VERSION?=	2020.07
 
 # If a slave port defines a PORTREVISION use it
 .if defined(U_BOOT_SLAVE_PORTREVISION_${UBOOT_VERSION})
