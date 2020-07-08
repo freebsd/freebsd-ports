@@ -2,8 +2,8 @@
 
 PORTNAME=	abstreet
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.2-23
-DISTVERSIONSUFFIX=	-g35768dfb
+DISTVERSION=	0.2.2-28
+DISTVERSIONSUFFIX=	-ge50cd776
 CATEGORIES=	games
 MASTER_SITES=	LOCAL/yuri:data
 DISTFILES=	${PORTNAME}-data-${DISTVERSION}.tgz:data # updated by the update-data target
@@ -14,12 +14,12 @@ COMMENT=	Game exploring how changes to city affect drivers/cyclists/pedestrians
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cargo python:build localbase:ldflags xorg
+USES=		cargo localbase:ldflags python:build xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	dabreegster
 USE_XORG=	xcb
 
-MAKE_ENV=	ABST_DATA_DIR=${DATADIR}
+MAKE_ENV=	ABST_DATA_DIR=${DATADIR} ABST_PLAYER_HOME_DIR=1
 
 GH_TUPLE=	easbar:fast_paths:cfb19807c0dae0b6a5034d62959a6bd2abe45079:fast_paths \
 		dabreegster:seattle_traffic_signals:c5a882dcd5065f931006c1aa2963168e1fe82a51:seattle_traffic_signals
@@ -466,7 +466,9 @@ BINARY_ALIAS=	python3=${PYTHON_CMD}
 # 2. Upload the abstreet-data distfile
 # 3. Run 'make makesum clean'
 
-update-data: configure
+update-data: configure # see https://github.com/dabreegster/abstreet/blob/master/docs/dev.md#getting-started for a list of supported cities
+	@(${ECHO} "runtime: seattle,huge_seattle,austin" && \
+	  ${ECHO} "input: seattle,huge_seattle,austin") > ${WRKSRC}/data/config
 	@cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} ${CARGO_CARGO_RUN} run --bin updater && \
 		${TAR} czf ${DISTDIR}/${PORTNAME}-data-${DISTVERSION}.tgz data/system/cities data/system/maps data/system/prebaked_results data/system/scenarios data/config && \

@@ -104,6 +104,9 @@ bin/abstreet-game
 %%DATADIR%%/system/fonts/Overpass-SemiBold.ttf
 %%DATADIR%%/system/maps/ballard.bin
 %%DATADIR%%/system/maps/downtown.bin
+%%DATADIR%%/system/maps/downtown_atx.bin
+%%DATADIR%%/system/maps/huge_austin.bin
+%%DATADIR%%/system/maps/huge_seattle.bin
 %%DATADIR%%/system/maps/lakeslice.bin
 %%DATADIR%%/system/maps/montlake.bin
 %%DATADIR%%/system/maps/south_seattle.bin
@@ -118,6 +121,7 @@ bin/abstreet-game
 %%DATADIR%%/system/proposals/stay healthy lake wash blvd.json
 %%DATADIR%%/system/scenarios/ballard/weekday.bin
 %%DATADIR%%/system/scenarios/downtown/weekday.bin
+%%DATADIR%%/system/scenarios/huge_seattle/weekday.bin
 %%DATADIR%%/system/scenarios/lakeslice/weekday.bin
 %%DATADIR%%/system/scenarios/montlake/weekday.bin
 %%DATADIR%%/system/scenarios/south_seattle/weekday.bin
