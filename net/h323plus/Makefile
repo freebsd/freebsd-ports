@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=      v
 DISTVERSION=    1_27_0
 CATEGORIES=	net multimedia
 
-MAINTAINER=	koue@chaosophia.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	H323 Video Conferencing library
 
 LICENSE=	MPL10 MPL11
