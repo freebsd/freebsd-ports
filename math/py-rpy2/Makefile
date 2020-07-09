@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rpy2
-PORTVERSION=	3.3.4
+PORTVERSION=	3.3.5
 CATEGORIES=	math
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,7 +24,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.10.0:devel/py-cffi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tzlocal>=0:devel/py-tzlocal@${PY_FLAVOR}
 
 USES=		compiler:c11 fortran python:3.6+ readline
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
 
 MAKE_ENV=	RPY2_CFFI_MODE=BOTH
 
