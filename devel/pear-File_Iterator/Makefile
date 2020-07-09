@@ -13,7 +13,6 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=	pear:env
-PEAR_CHANNEL=	phpunit
 USE_GITHUB=	yes
 GH_ACCOUNT=	sebastianbergmann
 GH_PROJECT=	php-file-iterator

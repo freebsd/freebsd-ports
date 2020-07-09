@@ -15151,3 +15151,4 @@ databases/mariadb102-client|databases/mariadb103-client|2020-07-01|Has expired: 
 databases/py-django-transaction-hooks||2020-07-02|Has expired: Unmaintained upstream and merged into Django since 1.9
 multimedia/audacious-gtk3|multimedia/audacious|2020-07-08|GTK3 interface abandoned upstream
 multimedia/audacious-plugins-gtk3|multimedia/audacious-plugins|2020-07-08|GTK3 interface abandoned upstream
+devel/pear-channel-phpunit|2020-07-09|Remove obsolete

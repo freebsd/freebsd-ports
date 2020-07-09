@@ -19,7 +19,6 @@ RUN_DEPENDS=	${PEAR_PKGNAMEPREFIX}File_Iterator>=1.4.2:devel/pear-File_Iterator@
 		${PEAR_PKGNAMEPREFIX}Text_Template>=1.2.0:textproc/pear-Text_Template@${PHP_FLAVOR}
 
 USES=	pear:env
-PEAR_CHANNEL=	phpunit
 USE_GITHUB=	yes
 GH_ACCOUNT=	sebastianbergmann
 GH_PROJECT=	php-code-coverage

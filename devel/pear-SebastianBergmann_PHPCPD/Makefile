@@ -20,7 +20,6 @@ RUN_DEPENDS=	${PEAR_PKGNAMEPREFIX}ezc_ConsoleTools>=1.6.1:devel/pear-ezc_Console
 		${PEAR_PKGNAMEPREFIX}PHP_Timer>=1.0.9:devel/pear-PHP_Timer@${PHP_FLAVOR}
 
 USES=	php pear:env
-PEAR_CHANNEL=	phpunit
 USE_GITHUB=	yes
 GH_ACCOUNT=	sebastianbergmann
 GH_PROJECT=	${PORTNAME:tl}

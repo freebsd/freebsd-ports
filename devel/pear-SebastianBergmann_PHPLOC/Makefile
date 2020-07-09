@@ -18,7 +18,6 @@ RUN_DEPENDS=	${PEAR_PKGNAMEPREFIX}Symfony_Component_Console>=2.4.4:devel/pear-Sy
 		${PEAR_PKGNAMEPREFIX}SebastianBergmann_Version>=2.0.1:devel/pear-SebastianBergmann_Version@${PHP_FLAVOR} \
 
 USES=	php pear:env
-PEAR_CHANNEL=	phpunit
 USE_GITHUB=	yes
 GH_ACCOUNT=	sebastianbergmann
 GH_PROJECT=	${PORTNAME:tl}

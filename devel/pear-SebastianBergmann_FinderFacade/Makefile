@@ -21,7 +21,6 @@ RUN_DEPENDS=	${PEAR_PKGNAMEPREFIX}TheSeer_fDOMDocument>=1.6.6:devel/pear-TheSeer
 NO_ARCH=	yes
 
 USES=		pear:env
-PEAR_CHANNEL=	phpunit
 USE_GITHUB=	yes
 GH_ACCOUNT=	sebastianbergmann
 GH_PROJECT=	finder-facade

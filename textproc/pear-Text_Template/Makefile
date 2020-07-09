@@ -2,15 +2,29 @@
 # $FreeBSD$
 
 PORTNAME=	Text_Template
-PORTVERSION=	1.2.0
+PORTVERSION=	2.0.2
 CATEGORIES=	textproc www pear
-MASTER_SITES=	http://pear.phpunit.de/get/
 PKGNAMEPREFIX=	${PEAR_PKGNAMEPREFIX}
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Simple template engine
 
-USES=	pear
-PEAR_CHANNEL=	phpunit
+USES=	pear:env
+USE_GITHUB=	yes
+GH_ACCOUNT=	sebastianbergmann
+GH_PROJECT=	php-text-template
+
+NO_ARCH=	yes
+
+NO_BUILD=	yes
+
+PHP_DIR=	share/PHP
+
+PLIST_FILES=	${PHP_DIR}/${PORTNAME}/Template.php
+
+do-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/${PHP_DIR}/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKSRC}/src/Template.php \
+		${STAGEDIR}${PREFIX}/${PHP_DIR}/${PORTNAME}
 
 .include <bsd.port.mk>
