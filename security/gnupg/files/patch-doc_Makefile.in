@@ -1,0 +1,16 @@
+This works around a breakage introduced in 2.2.21.
+Hopefully the patch can be removed for 2.2.22.
+
+--- doc/Makefile.in.orig	2020-07-09 13:22:35 UTC
++++ doc/Makefile.in
+@@ -1235,8 +1235,8 @@ defsincdate: $(gnupg_TEXINFOS)
+ 	if test -e $(top_srcdir)/.git; then \
+ 	  (cd $(srcdir) && git log -1 --format='%ct' \
+                -- $(gnupg_TEXINFOS) 2>/dev/null) >>defsincdate; \
+-        elif test x"$SOURCE_DATE_EPOCH" != x; then   \
+-	   echo "$SOURCE_DATE_EPOCH" >>defsincdate ; \
++        elif test x"$$SOURCE_DATE_EPOCH" != x; then   \
++	   echo "$$SOURCE_DATE_EPOCH" >>defsincdate ; \
+ 	fi
+ 
+ defs.inc : defsincdate Makefile mkdefsinc
