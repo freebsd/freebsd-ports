@@ -1,3 +1,3 @@
-TIMESTAMP = 1591712804
-SHA256 (KDE/applications/20.04.2/filelight-20.04.2.tar.xz) = f74cfafdf2ddaf01e549de3b66fb9c31ee03c2e05e3237fe51119956dc217049
-SIZE (KDE/applications/20.04.2/filelight-20.04.2.tar.xz) = 661752
+TIMESTAMP = 1594147146
+SHA256 (KDE/release-service/20.04.3/filelight-20.04.3.tar.xz) = d0939d0a04424978c06b675ac784c6a1ecbccbb67a31f5af661c6716bf38f0a4
+SIZE (KDE/release-service/20.04.3/filelight-20.04.3.tar.xz) = 661668

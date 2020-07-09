@@ -1,3 +1,3 @@
-TIMESTAMP = 1591712796
-SHA256 (KDE/applications/20.04.2/print-manager-20.04.2.tar.xz) = dd1df3fbd48773418d6032fba687f1f7c07b241696428c9424238c9e86e50973
-SIZE (KDE/applications/20.04.2/print-manager-20.04.2.tar.xz) = 255696
+TIMESTAMP = 1594147138
+SHA256 (KDE/release-service/20.04.3/print-manager-20.04.3.tar.xz) = 9d877925cafdf7dfa0dcce5694f849b13ca8bb7c4552a800eebd26a3fc42d376
+SIZE (KDE/release-service/20.04.3/print-manager-20.04.3.tar.xz) = 255532

@@ -1,3 +1,3 @@
-TIMESTAMP = 1591712738
-SHA256 (KDE/applications/20.04.2/ktp-approver-20.04.2.tar.xz) = fad2bc7ecb15db06872ee0da14e4ce597d5cfd4db8fffa401cc431816944a0d5
-SIZE (KDE/applications/20.04.2/ktp-approver-20.04.2.tar.xz) = 37280
+TIMESTAMP = 1594147081
+SHA256 (KDE/release-service/20.04.3/ktp-approver-20.04.3.tar.xz) = 9c91d44476151f39ef02e2eeede7dee7f24689643a07d51d44ca8d98577d24a2
+SIZE (KDE/release-service/20.04.3/ktp-approver-20.04.3.tar.xz) = 37256

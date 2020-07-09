@@ -1,3 +1,3 @@
-TIMESTAMP = 1591712629
-SHA256 (KDE/applications/20.04.2/kmail-20.04.2.tar.xz) = 10fca989f68c6c477cf4c47d0b3301f6db62a4187e4d20487504a547ba166b25
-SIZE (KDE/applications/20.04.2/kmail-20.04.2.tar.xz) = 4721788
+TIMESTAMP = 1594146959
+SHA256 (KDE/release-service/20.04.3/kmail-20.04.3.tar.xz) = 5b653c680097a7be4ff53bc902bc3fcda9edac99f699a63a1375a1df81240d03
+SIZE (KDE/release-service/20.04.3/kmail-20.04.3.tar.xz) = 4719852

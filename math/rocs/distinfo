@@ -1,3 +1,3 @@
-TIMESTAMP = 1591712724
-SHA256 (KDE/applications/20.04.2/rocs-20.04.2.tar.xz) = 2162c9d925c4d9968176cc5c7da57c21505139c1464e4ecbb992ea5e840fb5db
-SIZE (KDE/applications/20.04.2/rocs-20.04.2.tar.xz) = 1507436
+TIMESTAMP = 1594147068
+SHA256 (KDE/release-service/20.04.3/rocs-20.04.3.tar.xz) = 1620ff8360568ab4201d526ea4489bd672f6715b6d200251d63ed139dcc58a94
+SIZE (KDE/release-service/20.04.3/rocs-20.04.3.tar.xz) = 1505280

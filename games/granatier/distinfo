@@ -1,3 +1,3 @@
-TIMESTAMP = 1591712649
-SHA256 (KDE/applications/20.04.2/granatier-20.04.2.tar.xz) = ff6b45ca290d8a9ad66faad1d4792ccaec7f671c8dc6fb83a7f663d411e6e391
-SIZE (KDE/applications/20.04.2/granatier-20.04.2.tar.xz) = 1944564
+TIMESTAMP = 1594146982
+SHA256 (KDE/release-service/20.04.3/granatier-20.04.3.tar.xz) = 9d06047f613a03b32d603e90bd14ca2873be9da9b4b17b98a65242e9855a7aaf
+SIZE (KDE/release-service/20.04.3/granatier-20.04.3.tar.xz) = 1944416

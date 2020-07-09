@@ -1,3 +1,3 @@
-TIMESTAMP = 1591712774
-SHA256 (KDE/applications/20.04.2/kblog-20.04.2.tar.xz) = 345fa87ddeffd237d62d16c2fbb4974883e3592e368bb087393dbf1af7c11af1
-SIZE (KDE/applications/20.04.2/kblog-20.04.2.tar.xz) = 72860
+TIMESTAMP = 1594147116
+SHA256 (KDE/release-service/20.04.3/kblog-20.04.3.tar.xz) = 5932a8ba3ec33f13aec201252abb6d0712740f52af03747e9eb0f6c0764cb9b4
+SIZE (KDE/release-service/20.04.3/kblog-20.04.3.tar.xz) = 72888

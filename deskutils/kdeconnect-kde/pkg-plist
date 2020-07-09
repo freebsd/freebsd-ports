@@ -279,6 +279,7 @@ share/locale/fi/LC_MESSAGES/kdeconnect-kded.mo
 share/locale/fi/LC_MESSAGES/kdeconnect-kio.mo
 share/locale/fi/LC_MESSAGES/kdeconnect-nautilus-extension.mo
 share/locale/fi/LC_MESSAGES/kdeconnect-plugins.mo
+share/locale/fi/LC_MESSAGES/kdeconnect-settings.mo
 share/locale/fi/LC_MESSAGES/kdeconnect-sms.mo
 share/locale/fi/LC_MESSAGES/kdeconnect-urlhandler.mo
 share/locale/fi/LC_MESSAGES/plasma_applet_org.kde.kdeconnect.mo
@@ -297,14 +298,19 @@ share/locale/fr/LC_MESSAGES/kdeconnect-settings.mo
 share/locale/fr/LC_MESSAGES/kdeconnect-sms.mo
 share/locale/fr/LC_MESSAGES/kdeconnect-urlhandler.mo
 share/locale/fr/LC_MESSAGES/plasma_applet_org.kde.kdeconnect.mo
+share/locale/gl/LC_MESSAGES/kdeconnect-app.mo
 share/locale/gl/LC_MESSAGES/kdeconnect-cli.mo
 share/locale/gl/LC_MESSAGES/kdeconnect-core.mo
 share/locale/gl/LC_MESSAGES/kdeconnect-fileitemaction.mo
+share/locale/gl/LC_MESSAGES/kdeconnect-indicator.mo
+share/locale/gl/LC_MESSAGES/kdeconnect-interfaces.mo
 share/locale/gl/LC_MESSAGES/kdeconnect-kcm.mo
 share/locale/gl/LC_MESSAGES/kdeconnect-kded.mo
 share/locale/gl/LC_MESSAGES/kdeconnect-kio.mo
 share/locale/gl/LC_MESSAGES/kdeconnect-nautilus-extension.mo
 share/locale/gl/LC_MESSAGES/kdeconnect-plugins.mo
+share/locale/gl/LC_MESSAGES/kdeconnect-settings.mo
+share/locale/gl/LC_MESSAGES/kdeconnect-sms.mo
 share/locale/gl/LC_MESSAGES/kdeconnect-urlhandler.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_org.kde.kdeconnect.mo
 share/locale/he/LC_MESSAGES/kdeconnect-core.mo

@@ -1,3 +1,3 @@
-TIMESTAMP = 1591712778
-SHA256 (KDE/applications/20.04.2/kget-20.04.2.tar.xz) = a4ec53eaac60c40b57573a8826503c78c76ea4c87cc71d996e105294846b80ca
-SIZE (KDE/applications/20.04.2/kget-20.04.2.tar.xz) = 5238908
+TIMESTAMP = 1594147119
+SHA256 (KDE/release-service/20.04.3/kget-20.04.3.tar.xz) = 930b7ed50d19e41bfead8e6d71d8ec4024d688907489c17fb9274a73e4c7c0c2
+SIZE (KDE/release-service/20.04.3/kget-20.04.3.tar.xz) = 5238644

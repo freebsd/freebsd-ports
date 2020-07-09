@@ -1,3 +1,3 @@
-TIMESTAMP = 1591712607
-SHA256 (KDE/applications/20.04.2/kmousetool-20.04.2.tar.xz) = b175ef353d9957072d7a23846c7b893ef78f327e88921f5dc7f0e3926e1b680d
-SIZE (KDE/applications/20.04.2/kmousetool-20.04.2.tar.xz) = 113348
+TIMESTAMP = 1594146929
+SHA256 (KDE/release-service/20.04.3/kmousetool-20.04.3.tar.xz) = acf710dcdc53e58d3a833345f88214b22dfbd5ab9fd26d9e26c883c18441c715
+SIZE (KDE/release-service/20.04.3/kmousetool-20.04.3.tar.xz) = 113316

@@ -1,3 +1,3 @@
-TIMESTAMP = 1591712727
-SHA256 (KDE/applications/20.04.2/klettres-20.04.2.tar.xz) = 486cdd21446f2d31142607de6f6d24523561121d403a0f2f2d33f084cb937904
-SIZE (KDE/applications/20.04.2/klettres-20.04.2.tar.xz) = 46842972
+TIMESTAMP = 1594147071
+SHA256 (KDE/release-service/20.04.3/klettres-20.04.3.tar.xz) = ed943bce624a599f7759487d0ff3b16c340f2beadbad25dab30b6607dbd2695e
+SIZE (KDE/release-service/20.04.3/klettres-20.04.3.tar.xz) = 46833040

@@ -1,3 +1,3 @@
-TIMESTAMP = 1591712785
-SHA256 (KDE/applications/20.04.2/kpimtextedit-20.04.2.tar.xz) = 02e15815d4bd9320b097abac2da7a153bbc73b056bf136df05ed9d44edd927de
-SIZE (KDE/applications/20.04.2/kpimtextedit-20.04.2.tar.xz) = 182096
+TIMESTAMP = 1594147128
+SHA256 (KDE/release-service/20.04.3/kpimtextedit-20.04.3.tar.xz) = f6cc5cf0ca2e598ba0c98590f16a8fabf87e1592ad62e6832c787cf2c3616cb8
+SIZE (KDE/release-service/20.04.3/kpimtextedit-20.04.3.tar.xz) = 183228

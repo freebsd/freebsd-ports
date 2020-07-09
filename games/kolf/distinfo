@@ -1,3 +1,3 @@
-TIMESTAMP = 1591712668
-SHA256 (KDE/applications/20.04.2/kolf-20.04.2.tar.xz) = 69309aff21098caaa9263e96e624a0de46b3ab748ff33e507c613e73c19ce573
-SIZE (KDE/applications/20.04.2/kolf-20.04.2.tar.xz) = 1020792
+TIMESTAMP = 1594147002
+SHA256 (KDE/release-service/20.04.3/kolf-20.04.3.tar.xz) = dc2fd28fbfaa21d75ad6482513adddb9bd04ac0432d2d72419f85d65140ee186
+SIZE (KDE/release-service/20.04.3/kolf-20.04.3.tar.xz) = 1021084

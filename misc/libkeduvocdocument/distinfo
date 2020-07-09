@@ -1,3 +1,3 @@
-TIMESTAMP = 1591712730
-SHA256 (KDE/applications/20.04.2/libkeduvocdocument-20.04.2.tar.xz) = 2bf9e70ffa1865ea09ad3a9fe5e899c9dd43103d35e914db974e6e72f742aae9
-SIZE (KDE/applications/20.04.2/libkeduvocdocument-20.04.2.tar.xz) = 206864
+TIMESTAMP = 1594147074
+SHA256 (KDE/release-service/20.04.3/libkeduvocdocument-20.04.3.tar.xz) = a53e17a84420fca8f9572d8439da2c63d1241a607952454003a4020104a25558
+SIZE (KDE/release-service/20.04.3/libkeduvocdocument-20.04.3.tar.xz) = 206876

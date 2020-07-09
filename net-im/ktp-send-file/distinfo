@@ -1,3 +1,3 @@
-TIMESTAMP = 1591712766
-SHA256 (KDE/applications/20.04.2/ktp-send-file-20.04.2.tar.xz) = ffe3cb454c50a73ccb4b65f8ee0ae79859aedf5378983848e3d1af5380ab5ffb
-SIZE (KDE/applications/20.04.2/ktp-send-file-20.04.2.tar.xz) = 27852
+TIMESTAMP = 1594147108
+SHA256 (KDE/release-service/20.04.3/ktp-send-file-20.04.3.tar.xz) = fa67edd7ec516ed727d5df0d30ccf6b990cee40f8062a9966a8643d6f26c8344
+SIZE (KDE/release-service/20.04.3/ktp-send-file-20.04.3.tar.xz) = 27884

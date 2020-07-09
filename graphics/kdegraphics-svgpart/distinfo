@@ -1,3 +1,3 @@
-TIMESTAMP = 1591712687
-SHA256 (KDE/applications/20.04.2/svgpart-20.04.2.tar.xz) = b419c66b02979a3f48bb86ce04ea8265311e28169c843406b867200904d3b058
-SIZE (KDE/applications/20.04.2/svgpart-20.04.2.tar.xz) = 21192
+TIMESTAMP = 1594147024
+SHA256 (KDE/release-service/20.04.3/svgpart-20.04.3.tar.xz) = 2ffb67858ac5c01f5bb5d4728526786c5b6b6a8b70d688123c52efa084fae1b4
+SIZE (KDE/release-service/20.04.3/svgpart-20.04.3.tar.xz) = 21248

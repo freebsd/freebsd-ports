@@ -1,3 +1,3 @@
-TIMESTAMP = 1591712673
-SHA256 (KDE/applications/20.04.2/kshisen-20.04.2.tar.xz) = ec21e1ceb57fb3f8d69fbf2350313f8d9e80b66e2537dcfce2ed39a23dcca4d2
-SIZE (KDE/applications/20.04.2/kshisen-20.04.2.tar.xz) = 821976
+TIMESTAMP = 1594147006
+SHA256 (KDE/release-service/20.04.3/kshisen-20.04.3.tar.xz) = ee91821b13dc13d54a0cdf64582eff820faf934df3654135c55bd3210b98bd52
+SIZE (KDE/release-service/20.04.3/kshisen-20.04.3.tar.xz) = 821832

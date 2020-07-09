@@ -1,3 +1,3 @@
-TIMESTAMP = 1591712779
-SHA256 (KDE/applications/20.04.2/kidentitymanagement-20.04.2.tar.xz) = 33dbb5fef72182da7fb70207c14ee9012e62e3902247064b0f23145bdbd86c04
-SIZE (KDE/applications/20.04.2/kidentitymanagement-20.04.2.tar.xz) = 149572
+TIMESTAMP = 1594147120
+SHA256 (KDE/release-service/20.04.3/kidentitymanagement-20.04.3.tar.xz) = 09e63cdb07bb38ba8c82d796212b1bd9d218dbe8adde215bff9c689c93b90917
+SIZE (KDE/release-service/20.04.3/kidentitymanagement-20.04.3.tar.xz) = 149608

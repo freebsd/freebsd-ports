@@ -1,3 +1,3 @@
-TIMESTAMP = 1591712651
-SHA256 (KDE/applications/20.04.2/kapman-20.04.2.tar.xz) = 653d87db55d75aa4163433cd881dd54a2c53770624ed3e27821303cfbf5405c4
-SIZE (KDE/applications/20.04.2/kapman-20.04.2.tar.xz) = 2526184
+TIMESTAMP = 1594146984
+SHA256 (KDE/release-service/20.04.3/kapman-20.04.3.tar.xz) = e3c34e94a204e6d9a4ebb35c415b8c5707313fba746867f2984fd0e95926d529
+SIZE (KDE/release-service/20.04.3/kapman-20.04.3.tar.xz) = 2526392

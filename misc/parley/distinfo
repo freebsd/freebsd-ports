@@ -1,3 +1,3 @@
-TIMESTAMP = 1591712730
-SHA256 (KDE/applications/20.04.2/parley-20.04.2.tar.xz) = 67d0daf172acbcd3aa6b2969b2204720f5312526fe00a1d4c0b3d433226d3fe2
-SIZE (KDE/applications/20.04.2/parley-20.04.2.tar.xz) = 8838228
+TIMESTAMP = 1594147074
+SHA256 (KDE/release-service/20.04.3/parley-20.04.3.tar.xz) = b5e74fbd458824d26c0ea7cb8ed5510e3f6e849c9dbda4bc7804b9b95a64da03
+SIZE (KDE/release-service/20.04.3/parley-20.04.3.tar.xz) = 8838592

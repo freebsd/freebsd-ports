@@ -1,3 +1,3 @@
-TIMESTAMP = 1591722510
-SHA256 (KDE/applications/20.04.2/kqtquickcharts-20.04.2.tar.xz) = 0c24f1f268d4e5e2342b49b50c6edc9faaa21146f6f8f508a5599dd000dceaf5
-SIZE (KDE/applications/20.04.2/kqtquickcharts-20.04.2.tar.xz) = 25624
+TIMESTAMP = 1594147029
+SHA256 (KDE/release-service/20.04.3/kqtquickcharts-20.04.3.tar.xz) = 69ff44ceb85779f7d4f52e092a8a5d18231ea0704d67d34d15ef94acf0d668c7
+SIZE (KDE/release-service/20.04.3/kqtquickcharts-20.04.3.tar.xz) = 25624

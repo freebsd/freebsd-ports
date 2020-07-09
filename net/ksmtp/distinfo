@@ -1,3 +1,3 @@
-TIMESTAMP = 1591712788
-SHA256 (KDE/applications/20.04.2/ksmtp-20.04.2.tar.xz) = b759236021688236257ecfef16d443030414332c3d1a8f133f482c7d57399162
-SIZE (KDE/applications/20.04.2/ksmtp-20.04.2.tar.xz) = 41556
+TIMESTAMP = 1594147131
+SHA256 (KDE/release-service/20.04.3/ksmtp-20.04.3.tar.xz) = 107d135e9337dfec6f16095c75dd0cf81bdc86cee6eeb6d212954a08a9c2e3ce
+SIZE (KDE/release-service/20.04.3/ksmtp-20.04.3.tar.xz) = 41520

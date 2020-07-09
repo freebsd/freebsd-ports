@@ -1,3 +1,3 @@
-TIMESTAMP = 1591712643
-SHA256 (KDE/applications/20.04.2/lokalize-20.04.2.tar.xz) = 5be017fd63f96053f49d91ca01c6bb3b760c959fc8df47a20cb1705a9b63db5c
-SIZE (KDE/applications/20.04.2/lokalize-20.04.2.tar.xz) = 1719008
+TIMESTAMP = 1594146976
+SHA256 (KDE/release-service/20.04.3/lokalize-20.04.3.tar.xz) = fccba64af9faa5cbb5dfdb303009504993fe71282f0dbc9c748c5a28a327c379
+SIZE (KDE/release-service/20.04.3/lokalize-20.04.3.tar.xz) = 1718604

@@ -29,7 +29,7 @@ lib/cmake/KAccounts/KAccountsMacros.cmake
 lib/cmake/KAccounts/KAccountsTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KAccounts/KAccountsTargets.cmake
 lib/libkaccounts.so
-lib/libkaccounts.so.1
+lib/libkaccounts.so.2
 lib/libkaccounts.so.%%KDE_APPLICATIONS_VERSION%%
 %%QT_PLUGINDIR%%/kcms/kcm_kaccounts.so
 %%QT_PLUGINDIR%%/kf5/kded/kded_accounts.so

@@ -1,3 +1,3 @@
-TIMESTAMP = 1591712760
-SHA256 (KDE/applications/20.04.2/ktp-call-ui-20.04.2.tar.xz) = bda0d68caf50133b8a0960aefafbeb9027594a9ce4b207d0b3ca8a53155784dc
-SIZE (KDE/applications/20.04.2/ktp-call-ui-20.04.2.tar.xz) = 97136
+TIMESTAMP = 1594147102
+SHA256 (KDE/release-service/20.04.3/ktp-call-ui-20.04.3.tar.xz) = b997c6252c35f7e295f2389ac76c5dc12227e8a6bbfd1b42d72b622d488bcf98
+SIZE (KDE/release-service/20.04.3/ktp-call-ui-20.04.3.tar.xz) = 97164

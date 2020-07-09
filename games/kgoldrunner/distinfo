@@ -1,3 +1,3 @@
-TIMESTAMP = 1591712658
-SHA256 (KDE/applications/20.04.2/kgoldrunner-20.04.2.tar.xz) = cb01dc0f98c5cee5386ee320e5a933016281a0acad16ed32be7c54e51fb9d107
-SIZE (KDE/applications/20.04.2/kgoldrunner-20.04.2.tar.xz) = 4429508
+TIMESTAMP = 1594146991
+SHA256 (KDE/release-service/20.04.3/kgoldrunner-20.04.3.tar.xz) = ab535067a8991a94bd7cd5a990a6120538206d241c8e8149c7b774cbdd1d0941
+SIZE (KDE/release-service/20.04.3/kgoldrunner-20.04.3.tar.xz) = 4428744

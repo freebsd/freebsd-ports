@@ -3,6 +3,7 @@ etc/xdg/kcardtheme.knsrc
 share/qlogging-categories5/kpat.categories
 etc/xdg/kpat.knsrc
 lib/libkcardgame.so
+man/ca/man6/kpat.6.gz
 man/de/man6/kpat.6.gz
 man/es/man6/kpat.6.gz
 man/et/man6/kpat.6.gz

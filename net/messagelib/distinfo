@@ -1,3 +1,3 @@
-TIMESTAMP = 1591712794
-SHA256 (KDE/applications/20.04.2/messagelib-20.04.2.tar.xz) = 8d3401f9d5fd65fe6dcff67459eb7aaea996d770a4889b2f4b2b542eeed3ce5e
-SIZE (KDE/applications/20.04.2/messagelib-20.04.2.tar.xz) = 10516720
+TIMESTAMP = 1594147136
+SHA256 (KDE/release-service/20.04.3/messagelib-20.04.3.tar.xz) = aa2c254f50ed4664b67df5857bba063d1400fe280f3a58658cfa59d3155b2adf
+SIZE (KDE/release-service/20.04.3/messagelib-20.04.3.tar.xz) = 10511452

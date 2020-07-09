@@ -1,3 +1,3 @@
-TIMESTAMP = 1591712769
-SHA256 (KDE/applications/20.04.2/akonadi-mime-20.04.2.tar.xz) = cc13e303579875d4b970bdb90130bc25a989f68ba8959ddc2334c29c46daf322
-SIZE (KDE/applications/20.04.2/akonadi-mime-20.04.2.tar.xz) = 132228
+TIMESTAMP = 1594147111
+SHA256 (KDE/release-service/20.04.3/akonadi-mime-20.04.3.tar.xz) = 92e9bab71f87c0de8e3437dd4779054332826fe2522c36a7c038c789b207f7ac
+SIZE (KDE/release-service/20.04.3/akonadi-mime-20.04.3.tar.xz) = 132240

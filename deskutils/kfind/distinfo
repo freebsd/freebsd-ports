@@ -1,3 +1,3 @@
-TIMESTAMP = 1591712628
-SHA256 (KDE/applications/20.04.2/kfind-20.04.2.tar.xz) = 917ebc1f845fba942237ae924f171dd8427f76fe7d343fbcde25c855b90c7a8e
-SIZE (KDE/applications/20.04.2/kfind-20.04.2.tar.xz) = 271592
+TIMESTAMP = 1594146958
+SHA256 (KDE/release-service/20.04.3/kfind-20.04.3.tar.xz) = ff0d412dcd4b5812eb781618c4bf52d33f4691af2b9def4ba56644b5a668ef6e
+SIZE (KDE/release-service/20.04.3/kfind-20.04.3.tar.xz) = 271464

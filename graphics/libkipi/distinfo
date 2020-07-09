@@ -1,3 +1,3 @@
-TIMESTAMP = 1591712692
-SHA256 (KDE/applications/20.04.2/libkipi-20.04.2.tar.xz) = a1dabe2910b2a8cf74c6efa7b5164eea3bb9e9ab459939905e8c9fec7f991147
-SIZE (KDE/applications/20.04.2/libkipi-20.04.2.tar.xz) = 103572
+TIMESTAMP = 1594147032
+SHA256 (KDE/release-service/20.04.3/libkipi-20.04.3.tar.xz) = 4a72f0d1423a6a6f7017bf0598c99261575feb4d9af73520074f6f0b7f9e4c25
+SIZE (KDE/release-service/20.04.3/libkipi-20.04.3.tar.xz) = 103552

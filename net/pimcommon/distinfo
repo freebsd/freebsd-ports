@@ -1,3 +1,3 @@
-TIMESTAMP = 1591712795
-SHA256 (KDE/applications/20.04.2/pimcommon-20.04.2.tar.xz) = cc9aff8c38a9ea921645bab06409297fe2d930bfa9880dc12af626ce239bda3f
-SIZE (KDE/applications/20.04.2/pimcommon-20.04.2.tar.xz) = 294416
+TIMESTAMP = 1594147137
+SHA256 (KDE/release-service/20.04.3/pimcommon-20.04.3.tar.xz) = a5d295f7174cafeb27bc1aed03a715525b132f9dca734a183dd705a2c7ffa40b
+SIZE (KDE/release-service/20.04.3/pimcommon-20.04.3.tar.xz) = 294328

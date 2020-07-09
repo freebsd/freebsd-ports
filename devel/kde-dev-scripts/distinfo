@@ -1,3 +1,3 @@
-TIMESTAMP = 1591712640
-SHA256 (KDE/applications/20.04.2/kde-dev-scripts-20.04.2.tar.xz) = 10925ff0d302f6c8fa8b419d521519324e00eb2b8c8e4b3616324ee3dee8a032
-SIZE (KDE/applications/20.04.2/kde-dev-scripts-20.04.2.tar.xz) = 378448
+TIMESTAMP = 1594146973
+SHA256 (KDE/release-service/20.04.3/kde-dev-scripts-20.04.3.tar.xz) = 0b321954ea79e829d81c9be0170babae87e5eab22c8d42b296746d5a0160fbae
+SIZE (KDE/release-service/20.04.3/kde-dev-scripts-20.04.3.tar.xz) = 378452

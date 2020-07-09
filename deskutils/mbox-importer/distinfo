@@ -1,3 +1,3 @@
-TIMESTAMP = 1591712635
-SHA256 (KDE/applications/20.04.2/mbox-importer-20.04.2.tar.xz) = 50e0b468bdcb7af5900fb9ba5ca343cd21ff734043b90505329704b396d994af
-SIZE (KDE/applications/20.04.2/mbox-importer-20.04.2.tar.xz) = 33520
+TIMESTAMP = 1594146966
+SHA256 (KDE/release-service/20.04.3/mbox-importer-20.04.3.tar.xz) = ce208091272052a909521cda31a74b2f4c8e8fabcb2937c24639673d1f43981d
+SIZE (KDE/release-service/20.04.3/mbox-importer-20.04.3.tar.xz) = 33708

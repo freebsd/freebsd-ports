@@ -1,3 +1,3 @@
-TIMESTAMP = 1591712766
-SHA256 (KDE/applications/20.04.2/ktp-text-ui-20.04.2.tar.xz) = 013330478b8fe9d8fde81cc252cc6d79a9e2a3baee66fedc78449f9b9331416c
-SIZE (KDE/applications/20.04.2/ktp-text-ui-20.04.2.tar.xz) = 469768
+TIMESTAMP = 1594147108
+SHA256 (KDE/release-service/20.04.3/ktp-text-ui-20.04.3.tar.xz) = be6253246134aa6513b0ff36d25a833d469e6850da1f5c8c05666a555bbfd9b2
+SIZE (KDE/release-service/20.04.3/ktp-text-ui-20.04.3.tar.xz) = 469772
