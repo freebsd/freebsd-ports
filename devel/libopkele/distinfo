@@ -1,2 +1,5 @@
+TIMESTAMP = 1298297231
 SHA256 (libopkele-2.0.4.tar.gz) = 57a5bc753b7e80c5ece1e5968b2051b0ce7ed9ce4329d17122c61575a9ea7648
 SIZE (libopkele-2.0.4.tar.gz) = 391054
+SHA256 (62f3ba4ecb92.diff) = 0a2d255f3f040de1fed6e1ac39c836f45217cd8e24a4ea6b965d1b2ec3d591c5
+SIZE (62f3ba4ecb92.diff) = 3354
