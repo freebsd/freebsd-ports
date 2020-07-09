@@ -781,6 +781,7 @@
     SUBDIR += py-numexpr
     SUBDIR += py-numpy
     SUBDIR += py-nzmath
+    SUBDIR += py-opt-einsum
     SUBDIR += py-osqp
     SUBDIR += py-pandas
     SUBDIR += py-pandas-datareader
