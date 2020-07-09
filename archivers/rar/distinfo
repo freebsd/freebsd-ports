@@ -1,3 +1,5 @@
-TIMESTAMP = 1594117121
+TIMESTAMP = 1594308026
+SHA256 (rarbsd-5.9.1.tar.gz) = e8494e82feb41f424cba701a9f859c4615dbc8ae3f2c48d280f377ec1a0fa48f
+SIZE (rarbsd-5.9.1.tar.gz) = 555692
 SHA256 (rarbsd-x64-5.9.1.tar.gz) = 3882ccfe5b0467d3f4efec75431b04a04706ac2fba2c664f7945fe74cc791a6f
 SIZE (rarbsd-x64-5.9.1.tar.gz) = 599430
