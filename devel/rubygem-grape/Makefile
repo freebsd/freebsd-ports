@@ -2,6 +2,7 @@
 
 PORTNAME=	grape
 PORTVERSION=	1.3.3
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +12,7 @@ COMMENT=	Framework for rapid API development with great conventions
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-activesupport52>=0:devel/rubygem-activesupport52 \
+RUN_DEPENDS=	rubygem-activesupport60>=0:devel/rubygem-activesupport60 \
 		rubygem-builder>=0:devel/rubygem-builder \
 		rubygem-dry-types>=1.1:devel/rubygem-dry-types \
 		rubygem-mustermann-grape>=1.0.0<1.1:devel/rubygem-mustermann-grape \
