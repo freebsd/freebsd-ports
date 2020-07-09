@@ -519,6 +519,7 @@
     SUBDIR += p5-HTML-FormatText-WithLinks
     SUBDIR += p5-HTML-FormatText-WithLinks-AndTables
     SUBDIR += p5-HTML-Fraction
+    SUBDIR += p5-HTML-FromANSI-Tiny
     SUBDIR += p5-HTML-HTML5-Entities
     SUBDIR += p5-HTML-HTML5-Parser
     SUBDIR += p5-HTML-HTMLDoc
