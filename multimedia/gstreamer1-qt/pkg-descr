@@ -2,4 +2,4 @@ QtGStreamer is a set of libraries providing C++ bindings for GStreamer
 with a Qt-style API, plus some helper classes and elements for
 integrating GStreamer better in Qt applications.
 
-WWW: http://gstreamer.freedesktop.org/
+WWW: https://gstreamer.freedesktop.org/
