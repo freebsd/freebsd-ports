@@ -1,11 +1,11 @@
 ltl2ba implements an algorithm of P. Gastin and D. Oddoux to generate
-Buechi automata from linear temporal logic (LTL) formulae.  This
+Buchi automata from linear temporal logic (LTL) formulae. This
 algorithm generates a very weak alternating automaton and then
-transforms it into a Buechi automaton, using a generalized Buechi
+transforms it into a Buchi automaton, using a generalized Buchi
 automaton as an intermediate step. Each automaton is simplified
 on-the-fly in order to save memory and time. As usual the LTL formula
-is simplified before any treatment.  ltl2ba is more efficient than
+is simplified before any treatment. ltl2ba is more efficient than
 Spin 3.4.1, with regard to the size of the resulting automaton,
 the time of the computation, and the memory used.
 
-WWW: http://www.lsv.ens-cachan.fr/~gastin/ltl2ba/
+WWW: http://www.lsv.fr/~gastin/ltl2ba/
