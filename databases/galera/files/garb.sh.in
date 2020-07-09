@@ -71,7 +71,7 @@ garb_prestart()
 
 	command_args="$command_args -a gcomm://$ADDRESS"
 	[ -n "$garb_galera_group" ]   && command_args="$command_args -g $garb_galera_group"
-	[ -n "$garb_galera_options" ] && command_args="$command_args -o $garb_galera_options"
+	[ -n "$garb_galera_options" ] && command_args="$command_args -o '$garb_galera_options'"
 	[ -n "$garb_log_file" ]       && command_args="$command_args -l $garb_log_file"
 	return 0
 }
