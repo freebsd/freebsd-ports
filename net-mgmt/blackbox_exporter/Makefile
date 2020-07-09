@@ -3,6 +3,7 @@
 
 PORTNAME=	blackbox_exporter
 PORTVERSION=	0.17.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=v
 CATEGORIES=	net-mgmt
 
@@ -28,9 +29,6 @@ OPTIONS_DEFINE=	EXAMPLES
 
 SUB_FILES=	pkg-message
 SUB_LIST=	GH_TAGNAME=${GH_TAGNAME}
-PLIST_FILES=	bin/blackbox_exporter \
-		${EXAMPLESDIR}/blackbox.yml \
-		${EXAMPLESDIR}/example.yml
 
 post-extract:
 	${RM} -r ${WRKSRC}/vendor/golang.org/x/net
@@ -39,5 +37,11 @@ post-extract:
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.yml ${STAGEDIR}${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}/syslog.d \
+		${STAGEDIR}${DATADIR}/newsyslog.conf.d
+	${INSTALL_DATA} ${PATCHDIR}/blackbox_exporter.syslog \
+		${STAGEDIR}${DATADIR}/syslog.d/blackbox_exporter.conf
+	${INSTALL_DATA} ${PATCHDIR}/blackbox_exporter.newsyslog \
+		${STAGEDIR}${DATADIR}/newsyslog.conf.d/blackbox_exporter.conf
 
 .include <bsd.port.mk>

@@ -16,6 +16,10 @@ blackbox_exporter_listen_address rcvar.
 To use the 'ping' module, blackbox_exporter needs to run with
 root privileges. To run blackbox_exporter with root privileges,
 run "sysrc blackbox_exporter_user=root".
+
+By default, blackbox exporter will log via syslog.  Examples for
+controlling which log file and setting up log rotation may be found in:
+%%DATADIR%%
 EOM
 }
 ]

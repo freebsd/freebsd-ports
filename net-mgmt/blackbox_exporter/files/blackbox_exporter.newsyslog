@@ -1,0 +1,3 @@
+# $FreeBSD$
+
+/var/log/blackbox_exporter.log		644  7	1000	*	J
