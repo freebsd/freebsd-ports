@@ -1,0 +1,7 @@
+This is a dumper plugin for Template::Toolkit which uses Data::Printer
+instead of Data::Dumper.
+
+Data::Printer is a colorised pretty-printer with nicely human-readable
+object output.
+
+WWW: https://metacpan.org/release/Template-Plugin-DataPrinter
