@@ -18,7 +18,7 @@
 +                if (newlineIndex < 0) // No newline in file
 +                    ianaId = tzcontents;
 +                if (newlineIndex > 2) // Newline, chop it off
-+                    ianaId = tzcontents.left(newlineIndex-1);
++                    ianaId = tzcontents.left(newlineIndex);
 +            }
 +        }
 +    }
