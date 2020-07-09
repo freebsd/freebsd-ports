@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	yoda
-DISTVERSION=	1.8.2
+DISTVERSION=	1.8.3
 CATEGORIES=	science
 MASTER_SITES=	https://yoda.hepforge.org/downloads/
 DISTNAME=	${PORTNAME:tu}-${DISTVERSION}

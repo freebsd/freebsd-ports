@@ -19,6 +19,7 @@ include/YODA/Histo2D.h
 include/YODA/HistoBin1D.h
 include/YODA/HistoBin2D.h
 include/YODA/IO.h
+include/YODA/Index.h
 include/YODA/Point.h
 include/YODA/Point1D.h
 include/YODA/Point2D.h
