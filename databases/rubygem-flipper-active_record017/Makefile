@@ -3,6 +3,7 @@
 
 PORTNAME=	flipper-active_record
 PORTVERSION=	0.17.2
+PORTREVISION=	1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	017
@@ -12,7 +13,7 @@ COMMENT=	ActiveRecord adapter for Flipper
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-activerecord50>=4.2<7:databases/rubygem-activerecord50 \
+RUN_DEPENDS=	rubygem-activerecord60>=4.2<7:databases/rubygem-activerecord60 \
 		rubygem-flipper017>=${PORTVERSION}<0.18:devel/rubygem-flipper017
 
 USES=		gem
