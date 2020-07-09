@@ -17,9 +17,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 TEST_DEPENDS=	bash:shells/bash
 
-USES=		cmake compiler:c++11-lang cpe gettext iconv pathfix \
+USES=		cmake compiler:c++11-lang cpe dos2unix gettext iconv pathfix \
 		python:3.5+,test localbase:ldflags
 USE_LDCONFIG=	yes
+DOS2UNIX_FILES=	cmake/compilerFlags.cmake
 
 TEST_TARGET=	tests
 
