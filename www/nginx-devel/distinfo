@@ -1,4 +1,4 @@
-TIMESTAMP = 1594138236
+TIMESTAMP = 1594310106
 SHA256 (nginx-1.19.1.tar.gz) = a004776c64ed3c5c7bc9b6116ba99efab3265e6b81d49a57ca4471ff90655492
 SIZE (nginx-1.19.1.tar.gz) = 1047223
 SHA256 (nginx_mogilefs_module-1.0.4.tar.gz) = 7ac230d30907f013dff8d435a118619ea6168aa3714dba62c6962d350c6295ae
@@ -17,8 +17,8 @@ SHA256 (openresty-array-var-nginx-module-v0.05_GH0.tar.gz) = c949d4be6f3442c8e29
 SIZE (openresty-array-var-nginx-module-v0.05_GH0.tar.gz) = 11280
 SHA256 (anomalizer-ngx_aws_auth-75c94e6_GH0.tar.gz) = d3c84268e42892b2875adc06f7404b9a839650b6ccdbd7dfae95d26766583971
 SIZE (anomalizer-ngx_aws_auth-75c94e6_GH0.tar.gz) = 15326
-SHA256 (google-ngx_brotli-e505dce_GH0.tar.gz) = 35ec4a8d2d9a65825efb0f875ee308751c8f9e1bada38590ccae4a0039e91ea4
-SIZE (google-ngx_brotli-e505dce_GH0.tar.gz) = 14652
+SHA256 (google-ngx_brotli-25f86f0_GH0.tar.gz) = a48d2efa717881cea9030c6f58f839ff426259f31d5614c4faeed6dd30c0d7c7
+SIZE (google-ngx_brotli-25f86f0_GH0.tar.gz) = 16201
 SHA256 (torden-ngx_cache_purge-4b02a83_GH0.tar.gz) = e7312b00c65227f57493f94c021126144f9c4bd2c17c3470f212f42577cea750
 SIZE (torden-ngx_cache_purge-4b02a83_GH0.tar.gz) = 16358
 SHA256 (nginx-clojure-nginx-clojure-eb286b9_GH0.tar.gz) = 2323468d5c12b06bb45edd708c726204b5a250f38f3a24f0867578200a7fbb07
