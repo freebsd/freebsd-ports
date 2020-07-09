@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	virt-viewer
-PORTVERSION=	8.0
-PORTREVISION=	1
+PORTVERSION=	9.0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://virt-manager.org/download/sources/${PORTNAME}/
 
@@ -27,8 +26,9 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	DATADIRNAME=share
 CONFIGURE_ARGS=	--with-spice-gtk
 USES=		autoreconf cpe desktop-file-utils gettext-tools gmake gnome \
-		libtool pkgconfig shared-mime-info
+		libtool pkgconfig shared-mime-info xorg
 USE_GNOME=	gtk30
+USE_XORG=	xorgproto
 INSTALLS_ICONS=	yes
 CPE_VENDOR=	redhat
 
