@@ -13,6 +13,9 @@ COMMENT=	Squid redirector used for blocking unwanted content
 
 LICENSE=	BSD4CLAUSE
 
+DEPRECATED=	Abandonware, requires MAKE_JOBS_UNSAFE, -fcommon,...
+EXPIRATION_DATE=2020-10-05
+
 RUN_DEPENDS=	${LOCALBASE}/sbin/squid:www/squid
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
