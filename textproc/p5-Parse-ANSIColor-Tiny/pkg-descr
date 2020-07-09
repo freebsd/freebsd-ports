@@ -1,0 +1,7 @@
+Parse a string colored with ANSI escape sequences into a structure suitable
+for reformatting (into HTML, for example).
+
+The output of terminal commands can be marked up with colors and formatting
+that in some instances you'd like to preserve.
+
+WWW: https://metacpan.org/release/Parse-ANSIColor-Tiny
