@@ -685,7 +685,6 @@
 %%WWWDIR%%/go/core/views/extjs3/util/Format.js
 %%WWWDIR%%/go/core/views/extjs3/util/Object.js
 %%WWWDIR%%/go/core/views/extjs3/util/SelectDialog.js
-%%WWWDIR%%/go/core/webclient/CSP.php
 %%WWWDIR%%/go/core/webclient/Extjs3.php
 %%WWWDIR%%/go/modules/business/newsletters/LicenseCheck.php
 %%WWWDIR%%/go/modules/business/newsletters/Module.php
