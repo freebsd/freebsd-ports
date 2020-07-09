@@ -749,6 +749,7 @@
     SUBDIR += py-fastdtw
     SUBDIR += py-ffc
     SUBDIR += py-fiat
+    SUBDIR += py-flax
     SUBDIR += py-fpconst
     SUBDIR += py-fpylll
     SUBDIR += py-gau2grid
