@@ -5,8 +5,8 @@ PORTNAME=	rdist
 PORTVERSION=	6.1.5
 PORTREVISION=	6
 CATEGORIES=	net
-MASTER_SITES=	http://www.magnicomp.com/download/rdist/ \
-		ftp://ftp.sunet.se/pub/unix/admin/mirror-magnicomp/download/rdist/
+MASTER_SITES=	https://fossies.org/linux/misc/old/ \
+		http://www.magnicomp.com/download/rdist/
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Network file distribution/synchronisation utility
