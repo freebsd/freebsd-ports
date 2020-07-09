@@ -17,7 +17,7 @@ Then, it will be started on the next boot. If this line is already
 present, the client will be started now.  Otherwise, edit
 /etc/rc.conf and execute this command:
 
-    %%ETCDIR%%/rc.d/darkice start
+    %%PREFIX%%/etc/rc.d/darkice start
 EOM
 }
 ]
