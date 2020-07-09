@@ -762,6 +762,7 @@
     SUBDIR += py-hdbscan
     SUBDIR += py-hdmedians
     SUBDIR += py-intspan
+    SUBDIR += py-jax
     SUBDIR += py-keras
     SUBDIR += py-keras-applications
     SUBDIR += py-keras-preprocessing
