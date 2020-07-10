@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pyahocorasick
-DISTVERSION=	1.1.8
+DISTVERSION=	1.4.0
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,6 +18,9 @@ USE_PYTHON=	distutils concurrent autoplist
 PORTDOCS=	README.rst
 
 OPTIONS_DEFINE=	DOCS
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/ahocorasick.so
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
