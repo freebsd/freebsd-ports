@@ -8,10 +8,6 @@
 %%LUA%%bin/miltertest
 %%LUA%%man/man3/opendkim-lua.3.gz
 %%LUA%%man/man8/miltertest.8.gz
-%%OPENDBX%%bin/opendkim-spam
-%%OPENDBX%%sbin/opendkim-importstats
-%%OPENDBX%%man/man1/opendkim-spam.1.gz
-%%OPENDBX%%man/man8/opendkim-importstats.8.gz
 %%RBL%%include/rbl/rbl.h
 %%RBL%%lib/librbl.a
 %%RBL%%lib/librbl.so
