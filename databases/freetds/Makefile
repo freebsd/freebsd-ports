@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	freetds
-PORTVERSION=	1.1.42
+PORTVERSION=	1.2.3
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://www.freetds.org/files/stable/ \
@@ -62,8 +62,7 @@ post-extract:
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.am" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|<malloc.h>|<stdlib.h>| ; \
-		 s|/freetds.conf|/freetds.conf.sample|g ; \
+		's|/freetds.conf|/freetds.conf.sample|g ; \
 		 s|/locales.conf|/locales.conf.sample|g ; \
 		 s|/pool.conf|/pool.conf.sample|g ; \
 		 s| common.h||g'
