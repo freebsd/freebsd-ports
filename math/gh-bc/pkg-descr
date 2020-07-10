@@ -13,4 +13,4 @@ single dc binary is desired, bc can be copied and renamed to dc.
 The "!" command is omitted; I believe that it poses security concerns and
 that such functionality is unnecessary.
 
-WWW: https://github.com/gavinhoward/bc
+WWW: https://git.yzena.com/gavin/bc
