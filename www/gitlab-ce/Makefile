@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-ce
-PORTVERSION=	13.1.3
-PORTREVISION=	1
+PORTVERSION=	13.1.4
+PORTREVISION=	0
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -251,7 +251,7 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 GL_PROJECT=	gitlab-foss
 # Find the here: https://gitlab.com/gitlab-org/gitlab-foss/-/tags
-GL_COMMIT=	8411f47246fd62aaa5ba7e74c633b5b6295d7a9d
+GL_COMMIT=	18c5ab32b738c0b6ecb4d0df3994000482f34bd8
 SHEBANG_FILES=	bin/background_* scripts/build_assets_image scripts/clean-old-cached-assets scripts/create_postgres_user.sh scripts/prepare_postgres_fdw.sh scripts/review_apps/gcp_cleanup.sh scripts/rspec_helpers.sh scripts/security-harness
 
 USERS=	git

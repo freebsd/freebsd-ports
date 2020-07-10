@@ -9594,6 +9594,7 @@
 %%WWWDIR%%/db/migrate/20200508050301_add_spam_check_endpoint_to_application_settings.rb
 %%WWWDIR%%/db/migrate/20200508140959_add_elasticsearch_pause_indexing_to_application_settings.rb
 %%WWWDIR%%/db/migrate/20200508203901_add_repository_storages_weighted_to_application_settings.rb
+%%WWWDIR%%/db/migrate/20200509203901_reseed_repository_storages_weighted.rb
 %%WWWDIR%%/db/migrate/20200511092246_add_epic_id_to_resource_state_events.rb
 %%WWWDIR%%/db/migrate/20200511092505_add_foreign_key_to_epic_id_on_resource_state_events.rb
 %%WWWDIR%%/db/migrate/20200511115430_add_inherit_from_to_services.rb
@@ -10111,6 +10112,7 @@
 %%WWWDIR%%/doc/administration/postgresql/standalone.md
 %%WWWDIR%%/doc/administration/pseudonymizer.md
 %%WWWDIR%%/doc/administration/raketasks/check.md
+%%WWWDIR%%/doc/administration/raketasks/doctor.md
 %%WWWDIR%%/doc/administration/raketasks/geo.md
 %%WWWDIR%%/doc/administration/raketasks/github_import.md
 %%WWWDIR%%/doc/administration/raketasks/ldap.md
@@ -22231,6 +22233,7 @@
 %%WWWDIR%%/spec/migrations/add_default_and_free_plans_spec.rb
 %%WWWDIR%%/spec/migrations/add_deploy_token_type_to_deploy_tokens_spec.rb
 %%WWWDIR%%/spec/migrations/add_incident_settings_to_all_existing_projects_spec.rb
+%%WWWDIR%%/spec/migrations/add_repository_storages_weighted_to_application_settings_spec.rb
 %%WWWDIR%%/spec/migrations/add_temporary_partial_index_on_project_id_to_services_spec.rb
 %%WWWDIR%%/spec/migrations/add_unique_constraint_to_approvals_user_id_and_merge_request_id_spec.rb
 %%WWWDIR%%/spec/migrations/backfill_and_add_not_null_constraint_to_released_at_column_on_releases_table_spec.rb
@@ -22299,6 +22302,7 @@
 %%WWWDIR%%/spec/migrations/remove_packages_deprecated_dependencies_spec.rb
 %%WWWDIR%%/spec/migrations/remove_security_dashboard_feature_flag_spec.rb
 %%WWWDIR%%/spec/migrations/rename_security_dashboard_feature_flag_to_instance_security_dashboard_spec.rb
+%%WWWDIR%%/spec/migrations/reseed_repository_storages_weighted_spec.rb
 %%WWWDIR%%/spec/migrations/save_instance_administrators_group_id_spec.rb
 %%WWWDIR%%/spec/migrations/schedule_backfill_push_rules_id_in_projects_spec.rb
 %%WWWDIR%%/spec/migrations/schedule_fill_valid_time_for_pages_domain_certificates_spec.rb
