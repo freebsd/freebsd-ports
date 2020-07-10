@@ -1,17 +1,18 @@
 --- setup.py.orig	2019-02-15 14:34:52 UTC
 +++ setup.py
-@@ -125,9 +125,7 @@ setup(
+@@ -125,25 +125,21 @@ setup(
          # cluecode
          # Some nltk version ranges are buggy
          'nltk >= 3.2, < 4.0',
 -        'publicsuffix2',
 -        'py2-ipaddress >= 2.0, <3.5',
 -        'url >= 0.1.4, < 0.1.6',
+-        'fingerprints == 0.5.4',
 +        'url >= 0.1.4',
-         'fingerprints == 0.5.4',
++        'fingerprints >= 0.5.4',
  
          # extractcode
-@@ -135,15 +133,13 @@ setup(
+         'patch >= 1.15, < 1.20 ',
          # to work around bug http://bugs.python.org/issue19839
          # on multistream bzip2 files: this can removed in Python 3.
          'bz2file >= 0.98',
@@ -29,6 +30,15 @@
          'saneyaml',
  
          # licensedcode
+@@ -151,7 +147,7 @@ setup(
+         'intbitset >= 2.3.0,  < 3.0',
+         'boolean.py >= 3.5,  < 4.0',
+         'license_expression >= 0.99,  < 1.0',
+-        'pyahocorasick >= 1.1, < 1.2',
++        'pyahocorasick >= 1.1',
+ 
+         # multiple
+         'lxml >= 4.0.0, < 5.0.0',
 @@ -167,8 +163,7 @@ setup(
          'binaryornot >= 0.4.0',
          'chardet >= 3.0.0, <4.0.0',
