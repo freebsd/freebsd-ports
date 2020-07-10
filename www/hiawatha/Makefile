@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hiawatha
-PORTVERSION=	10.10
+PORTVERSION=	10.11
 CATEGORIES=	www
 MASTER_SITES=	https://www.hiawatha-webserver.org/files/
 
@@ -56,8 +56,7 @@ post-patch:
 		${WRKSRC}/config/hiawatha.conf.in
 	@${REINPLACE_CMD} -e 's|/usr/sbin|${PREFIX}/sbin|g' \
 		-e 's|/etc/hiawatha|${ETCDIR}|g' \
-		${WRKSRC}/man/hiawatha.1.in \
-		${WRKSRC}/man/cgi-wrapper.1.in
+		${WRKSRC}/man/hiawatha.1.in
 
 post-install:
 .for f in hiawatha.conf mimetype.conf cgi-wrapper.conf toolkit.conf \
