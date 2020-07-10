@@ -13,7 +13,8 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/check.pc:devel/check \
-		gengetopt:devel/gengetopt
+		gengetopt:devel/gengetopt \
+		help2man:misc/help2man
 LIB_DEPENDS=	libpcsclite.so:devel/pcsc-lite
 
 USES=		compiler cmake:noninja gmake libtool pathfix pkgconfig ssl
