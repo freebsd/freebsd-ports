@@ -3,6 +3,7 @@
 
 PORTNAME=	sigil
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	jonc@chen.org.nz
@@ -27,14 +28,14 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	Sigil-Ebook
 GH_PROJECT=	Sigil
 
+USE_LDCONFIG=	${PREFIX}/lib/sigil
+
 USE_QT=		concurrent core declarative gui location network printsupport \
 		svg webchannel webengine widgets xml xmlpatterns \
 		buildtools_build linguisttools_build qmake_build \
 		imageformats_run
 
 CMAKE_ARGS=	-DUSE_SYSTEM_LIBS:BOOL=1
-
-USE_LDCONFIG=	${PREFIX}/lib/sigil
 
 # Upstream uses pkg-config output to pass libhunspell-1.7.so and
 # libpcre16.so to the linker. pkg-config output does not include full

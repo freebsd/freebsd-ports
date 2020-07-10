@@ -1,0 +1,12 @@
+diff -ruN ../Sigil-1.2.1/src/MainUI/MainWindow.cpp ./src/MainUI/MainWindow.cpp
+--- ../Sigil-1.2.1/src/MainUI/MainWindow.cpp	2020-03-30 09:54:01.000000000 +1300
++++ ./src/MainUI/MainWindow.cpp	2020-07-09 15:23:47.027951000 +1200
+@@ -4277,7 +4277,7 @@
+     web_settings->setAttribute(QWebEngineSettings::JavascriptCanOpenWindows, false);
+     web_settings->setAttribute(QWebEngineSettings::JavascriptCanAccessClipboard, false);
+     web_settings->setAttribute(QWebEngineSettings::LocalContentCanAccessRemoteUrls, (settings.remoteOn() == 1));
+-    web_settings->setAttribute(QWebEngineSettings::LocalContentCanAccessFileUrls, false);
++    web_settings->setAttribute(QWebEngineSettings::LocalContentCanAccessFileUrls, true);
+     web_settings->setAttribute(QWebEngineSettings::PluginsEnabled, false);
+     web_settings->setAttribute(QWebEngineSettings::AutoLoadIconsForPage, false);
+     web_settings->setAttribute(QWebEngineSettings::FocusOnNavigationEnabled, true);
