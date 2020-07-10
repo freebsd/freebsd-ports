@@ -2,8 +2,7 @@
 
 PORTNAME=		dino
 DISTVERSIONPREFIX=	v
-DISTVERSION=		0.1.0
-PORTREVISION=		3
+DISTVERSION=		0.1.0.20200710
 CATEGORIES=		net-im
 
 MAINTAINER=		ashish@FreeBSD.org
@@ -24,6 +23,7 @@ USES=		cmake desktop-file-utils gettext-tools gnome \
 		ninja pkgconfig
 
 USE_GITHUB=	yes
+GH_TAGNAME=	6aa08a3
 
 OPTIONS_DEFINE=		OMEMO UPLOAD GNUPG
 OPTIONS_DEFAULT=	OMEMO UPLOAD GNUPG
@@ -39,7 +39,7 @@ USE_GNOME=	cairo gdkpixbuf2 glib20 gnomeprefix gtk30 intlhack
 
 OMEMO_DESC=		OMEMO plugin
 UPLOAD_DESC=		HTTP file upload plugin
-OMEMO_GH_TUPLE=	signalapp:libsignal-protocol-c:v2.3.2:signalapp/plugins/signal-protocol/libsignal-protocol-c
+OMEMO_GH_TUPLE=	signalapp:libsignal-protocol-c:v2.3.3:signalapp/plugins/signal-protocol/libsignal-protocol-c
 OMEMO_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 			libqrencode.so:graphics/libqrencode
 OMEMO_VARS=		ENABLED_PLUGINS+=omemo
