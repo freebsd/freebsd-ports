@@ -52,7 +52,7 @@ TEST_TARGET=	check
 # intermediary images look fine in spite of this.
 _DISABLE_TESTS=	all-in-place palm-roundtrip pamdice pamexec pamhue \
 		pammixmulti-identity pamtopdbimg pamvalidate pj-roundtrip \
-		pnmquant ps-alt-roundtrip tiff-flate-lzw-roundtrip
+		ps-alt-roundtrip tiff-flate-lzw-roundtrip
 
 OPTIONS_DEFINE=		MANPAGES PERL STATIC SVGTOPAM X11
 OPTIONS_DEFAULT=	MANPAGES PERL
