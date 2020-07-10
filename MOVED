@@ -15152,3 +15152,4 @@ databases/py-django-transaction-hooks||2020-07-02|Has expired: Unmaintained upst
 multimedia/audacious-gtk3|multimedia/audacious|2020-07-08|GTK3 interface abandoned upstream
 multimedia/audacious-plugins-gtk3|multimedia/audacious-plugins|2020-07-08|GTK3 interface abandoned upstream
 devel/pear-channel-phpunit||2020-07-09|Remove obsolete
+multimedia/f3d|graphics/f3d|2020-07-09|Move to a proper category

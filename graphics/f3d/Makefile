@@ -3,7 +3,7 @@
 PORTNAME=	f3d
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.1
-CATEGORIES=	multimedia
+CATEGORIES=	graphics
 MASTER_SITES=	https://gitlab.kitware.com/f3d/f3d/-/archive/${DISTVERSIONPREFIX}${DISTVERSION}/
 
 MAINTAINER=	yuri@FreeBSD.org

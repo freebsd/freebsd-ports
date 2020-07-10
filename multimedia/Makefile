@@ -56,7 +56,6 @@
     SUBDIR += elementary-videos
     SUBDIR += emby-server
     SUBDIR += emovix
-    SUBDIR += f3d
     SUBDIR += ffaudioconverter
     SUBDIR += ffdec
     SUBDIR += ffmpeg
