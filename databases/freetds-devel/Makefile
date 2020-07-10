@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	freetds
-PORTVERSION=	1.1.198
+PORTVERSION=	1.2.5
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://www.freetds.org/files/current/ \
@@ -18,7 +18,6 @@ LICENSE=	LGPL20
 USES=		autoreconf compiler:c11 gettext-tools gmake iconv \
 		libtool:keepla pkgconfig tar:bzip2
 
-PORTSCOUT=	limit:^1\.1\.[0-9][0-9][0-9]$
 WRKSRC=		${WRKDIR}/${PORTNAME}-dev.${PORTVERSION}
 TDS_VER?=	7.4
 CPPFLAGS+=	"-I${LOCALBASE}/include"
