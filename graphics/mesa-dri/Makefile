@@ -3,7 +3,7 @@
 
 PORTNAME=	mesa-dri
 PORTVERSION=	${MESAVERSION}
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	graphics
 
 COMMENT=	OpenGL hardware acceleration drivers for DRI2+
@@ -42,7 +42,7 @@ ALL_DRI_DRIVERS=	I915 I965 R100 R200 SWRAST
 ALL_GALLIUM_DRIVERS=	R300 R600 RADEONSI SVGA SWRAST
 ALL_VULKAN_DRIVERS=	INTEL AMD
 
-.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == i386
+.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == i386 || ${ARCH} == powerpc64
 GALLIUM_DRIVERS+=	SWRAST	# llvmpipe
 .elif ${ARCH:Marm*} || ${ARCH:Mmips*} || ${ARCH:Mpowerpc*}
 DRI_DRIVERS+=		SWRAST # Mesa Classic swrast
