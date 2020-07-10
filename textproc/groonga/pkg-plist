@@ -26,6 +26,7 @@ bin/groonga-benchmark
 include/groonga/groonga.h
 include/groonga/groonga.hpp
 include/groonga/groonga/accessor.h
+include/groonga/groonga/aggregator.h
 include/groonga/groonga/array.h
 include/groonga/groonga/arrow.h
 include/groonga/groonga/arrow.hpp
