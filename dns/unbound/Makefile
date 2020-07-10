@@ -89,7 +89,9 @@ post-patch:
 		${WRKSRC}/Makefile.in
 
 post-patch-FILTER_AAAA-on:
-	${CAT} ${WRKSRC}/contrib/aaaa-filter-iterator.patch | ${PATCH} -d ${WRKSRC} -p1 -s
+	${SED} 's/INIT_REQUEST_STATE, FINISHED_STATE, &subq, 1/&, 0/' \
+		${WRKSRC}/contrib/aaaa-filter-iterator.patch | \
+		${PATCH} -d ${WRKSRC} -p1 -s
 
 post-build:
 	@for s in ${STRIP_FILES}; do ${STRIP_CMD} ${WRKSRC}/$$s; done
