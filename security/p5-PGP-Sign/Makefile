@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	PGP-Sign
-PORTVERSION=	0.20
-PORTREVISION=	4
+PORTVERSION=	1.00
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,7 +17,7 @@ BUILD_DEPENDS=	gpg:security/gnupg
 RUN_DEPENDS=	gpg:security/gnupg
 
 USES=		perl5
-USE_PERL5=	configure
+USE_PERL5=	modbuild
 CONFIGURE_ARGS=	PGP=${LOCALBASE}/bin/gpg PGPSTYLE=GPG
 NO_ARCH=	yes
 
