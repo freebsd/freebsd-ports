@@ -4,7 +4,4 @@ Rendezvous by Apple) for developers. It supports both acting as a Query and
 a Responder, allowing any software to participate fully on the
 .localnetwork.
 
-WWW: http://www.cs.cmu.edu/~dpelleg
-
- -- Dan Pelleg
-daniel+mdnsd@pelleg.org
+WWW: https://github.com/Pro/mdnsd/
