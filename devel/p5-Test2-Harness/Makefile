@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Test2-Harness
-PORTVERSION=	1.000019
+PORTVERSION=	1.000020
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:EXODIST
@@ -16,7 +16,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Data-UUID>=1.148:devel/p5-Data-UUID \
+RUN_DEPENDS=	p5-Data-UUID>=0:devel/p5-Data-UUID \
 		p5-Importer>=0.025:devel/p5-Importer \
 		p5-Long-Jump>=0.000001:devel/p5-Long-Jump \
 		p5-Scope-Guard>=0:devel/p5-Scope-Guard \
