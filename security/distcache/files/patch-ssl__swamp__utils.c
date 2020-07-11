@@ -8,7 +8,7 @@
  	else if(!strcmp(str_toconvert, "sslv2"))
  		*val = SWAMP_SSLMETH_SSLv2;
 +#endif
-+#ifndef OPENSSL_NO_SSL3
++#ifndef OPENSSL_NO_SSL3_METHOD
  	else if(!strcmp(str_toconvert, "sslv3"))
  		*val = SWAMP_SSLMETH_SSLv3;
 +#endif

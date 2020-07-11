@@ -38,6 +38,6 @@ post-install-DOCS-on:
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
 do-test:
-	@cd ${WRKSRC} && ${SH} devel/test.sh
+	@cd ${TEST_WRKSRC} && ${SH} devel/test.sh
 
 .include <bsd.port.mk>
