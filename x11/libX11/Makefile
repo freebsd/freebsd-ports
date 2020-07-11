@@ -3,7 +3,7 @@
 
 PORTNAME=	libX11
 PORTVERSION=	1.6.9
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	x11
 
@@ -13,7 +13,7 @@ COMMENT=	X11 library
 LICENSE=	MIT
 
 USES=		cpe perl5 xorg xorg-cat:lib
-USE_XORG=	xau xcb xdmcp xtrans xorgproto
+USE_XORG=	xcb xtrans xorgproto
 USE_PERL5=	build
 CPE_VENDOR=	x
 
