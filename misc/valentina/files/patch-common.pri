@@ -1,6 +1,6 @@
---- common.pri.orig	2018-08-11 23:09:01 UTC
+--- common.pri.orig	2020-07-11 05:51:06 UTC
 +++ common.pri
-@@ -164,11 +164,11 @@ defineTest(forceCopyToDestdir) {
+@@ -209,11 +209,11 @@ defineTest(forceCopyToDestdir) {
  # We use precompiled headers for more fast compilation source code.
  defineReplace(set_PCH){
      no_ccache{
@@ -15,3 +15,12 @@
  
          *msvc* {
              PRECOMPILED_SOURCE = stable.cpp # MSVC need also cpp file.
+@@ -311,7 +311,7 @@ defineReplace(FindLatestTagDistance){
+ }
+ 
+ # Default prefix. Use for creation install path.
+-DEFAULT_PREFIX = /usr
++DEFAULT_PREFIX = /usr/local
+ 
+ # In debug mode on Unix system we use all usefull for us compilers keys for checking errors.
+ # Also trying make all possible for speed up build time.

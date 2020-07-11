@@ -1,8 +1,8 @@
---- src/libs/vmisc/debugbreak.h.orig	2018-10-20 17:36:33 UTC
+--- src/libs/vmisc/debugbreak.h.orig	2020-07-11 05:51:16 UTC
 +++ src/libs/vmisc/debugbreak.h
-@@ -100,6 +100,13 @@ __inline__ static void trap_instruction(void)
-      * 'aarch64_default_breakpoint' */
-     __asm__ volatile(".inst 0xd4200000");
+@@ -119,6 +119,13 @@ __inline__ static void trap_instruction(void)
+      * The workaround is the same as ARM Thumb mode: use debugbreak-gdb.py
+      * or manually jump over the instruction. */
  }
 +#elif defined(__powerpc__)
 +enum { HAVE_TRAP_INSTRUCTION = 1 };
@@ -12,5 +12,5 @@
 +    __asm__ volatile(".4byte 0x7d821008");
 +}
  #else
- enum { HAVE_TRAP_INSTRUCTION = 0 };
+     #define DEBUG_BREAK_IMPL DEBUG_BREAK_USE_SIGTRAP
  #endif
