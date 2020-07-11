@@ -1,0 +1,22 @@
+Scanmem is a simple interactive debugging utility for Linux, used to locate
+various data in an executing process.  This can be used for the analysis or
+modification of a hostile process on a compromised machine, help in reverse
+engineering, or to cheat at video games.  Brief list of its features:
+
+  - Interactive command mode, with internal help
+  - Efficient and easy-to-use syntax
+  - Support for different data types: integers, floats, bytearrays, strings
+  - Support for different scan (comparison) types: equal, greater/less than,
+    changed, unchanged, increased/decreased
+  - Set any variable to any value
+  - Detailed information about mappings, allow users to eliminate regions
+
+More in GameConqueror, optional PyGTK-based GUI:
+
+  - User-friendly CheatEngline-alike interface
+  - Modify and lock (freeze) variables
+  - Memory viewer/editor
+
+It requires linprocfs(5) to be mounted under /compat/linux/proc to operate.
+
+WWW: http://code.google.com/p/scanmem/
