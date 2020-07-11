@@ -76,6 +76,7 @@
     SUBDIR += R-cran-lme4
     SUBDIR += R-cran-lpSolve
     SUBDIR += R-cran-magic
+    SUBDIR += R-cran-matrixStats
     SUBDIR += R-cran-maxLik
     SUBDIR += R-cran-mcmc
     SUBDIR += R-cran-memisc
