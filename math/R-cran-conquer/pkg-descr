@@ -1,0 +1,6 @@
+Fast and accurate convolution-type smoothed quantile regression.
+Implemented using Barzilai-Borwein gradient descent with a Huber
+regression warm start. Construct confidence intervals for regression
+coefficients using multiplier bootstrap.
+
+WWW: https://cran.r-project.org/web/packages/conquer/
