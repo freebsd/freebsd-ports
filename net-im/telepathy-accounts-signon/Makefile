@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	telepathy-accounts-signon
-PORTVERSION=	1.0
+DISTVERSION=	2.1
 PORTREVISION=	1
 CATEGORIES=	net-im
 DIST_SUBDIR=	KDE/${GL_ACCOUNT}
@@ -16,15 +16,14 @@ LIB_DEPENDS=	libaccounts-glib.so:net-im/libaccounts-glib \
 		libmission-control-plugins.so:net-im/telepathy-mission-control \
 		libsignon-glib.so:net-im/libsignon-glib
 
-USES=		gettext pkgconfig qmake qt:5 tar:bz2
-USE_QT=		buildtools_build core qmake_build
+USES=		gettext meson pkgconfig tar:bz2
 
 USE_LDCONFIG=	YES
 
 # gitlab variables
 USE_GITLAB=	yes
 GL_ACCOUNT=	accounts-sso
-GL_COMMIT=	f01a6d9eccad24a3cb4a5300fb0ae0fd426cc815
+GL_COMMIT=	0af244284e6b04c4abe5373d43bbc88a235d84aa
 
 PLIST_FILES=	lib/mission-control-plugins.0/mcp-account-manager-accounts-sso.so
 

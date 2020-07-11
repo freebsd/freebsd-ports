@@ -2,12 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	libaccounts-qt5
-PORTVERSION=	1.13
-PORTREVISION=	10
+DISTVERSION=	1.16
+PORTREVISION=	1
 CATEGORIES=	net-im
-MASTER_SITES=	https://drive.google.com/uc?export=download&id=0B8fX9XOwH_g4cTRCaktXNDRmMXM&dummy= \
-		LOCAL/rakuco
-DISTNAME=	accounts-qt-${PORTVERSION}
+DIST_SUBDIR=	KDE/${GL_ACCOUNT}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt5 wrapper for SSO framework
@@ -16,12 +14,21 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libaccounts-glib.so:net-im/libaccounts-glib
-BUILD_DEPENDS=	doxygen:devel/doxygen
 
-FETCH_BEFORE_ARGS=	-o ${DISTFILES}
-
-USES=		compiler:c++11-lib qmake pathfix pkgconfig python qt:5 tar:bz2
+USES=		compiler:c++17-lang qmake pathfix pkgconfig python qt:5 tar:bz2
 USE_QT=		buildtools_build core qmake_build testlib xml
+
+# gitlab variables
+USE_GITLAB=	yes
+GL_ACCOUNT=	accounts-sso
+GL_PROJECT=	libaccounts-qt
+GL_COMMIT=	525ec684cfa8d234f797d7e49e21c476eea04d8e
+
+OPTIONS_DEFINE=	DOCS
+OPTIONS_SUB=	yes
+
+DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen
+DOCS_QMAKE_ON=		CONFIG+=docs
 
 pre-configure:
 	${REINPLACE_CMD} -e 's,$$$${INSTALL_LIBDIR},${LOCALBASE}/libdata,' \

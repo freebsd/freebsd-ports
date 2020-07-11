@@ -2,6 +2,7 @@
 
 PORTNAME=	accounts-qml-module
 DISTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	sysutils kde
 DIST_SUBDIR=	KDE/${GL_ACCOUNT}
 

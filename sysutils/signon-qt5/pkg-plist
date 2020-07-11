@@ -36,17 +36,18 @@ include/signon-qt5/SignOn/AuthSession
 include/signon-qt5/SignOn/Error
 include/signon-qt5/SignOn/Identity
 include/signon-qt5/SignOn/IdentityInfo
+include/signon-qt5/SignOn/SecurityContext
 include/signon-qt5/SignOn/SessionData
 include/signon-qt5/SignOn/authservice.h
 include/signon-qt5/SignOn/authsession.h
 include/signon-qt5/SignOn/identity.h
 include/signon-qt5/SignOn/identityinfo.h
 include/signon-qt5/SignOn/libsignoncommon.h
+include/signon-qt5/SignOn/securitycontext.h
 include/signon-qt5/SignOn/sessiondata.h
 include/signon-qt5/SignOn/signon.h
 include/signon-qt5/SignOn/signonerror.h
 include/signond/accesscontrolmanagerhelper.h
-include/signond/backupifadaptor.h
 include/signond/credentialsaccessmanager.h
 include/signond/credentialsdb.h
 include/signond/credentialsdb_p.h
@@ -64,6 +65,7 @@ include/signond/signondisposable.h
 include/signond/signonidentity.h
 include/signond/signonidentityadaptor.h
 include/signond/signonidentityinfo.h
+include/signond/signonsecuritycontext.h
 include/signond/signonsessioncore.h
 include/signond/signonsessioncoretools.h
 include/signond/signontrace.h
@@ -96,9 +98,6 @@ libdata/pkgconfig/libsignon-qt5.pc
 libdata/pkgconfig/signon-plugins-common.pc
 libdata/pkgconfig/signon-plugins.pc
 libdata/pkgconfig/signond.pc
-share/dbus-1/interfaces/com.google.code.AccountsSSO.SingleSignOn.AuthService.xml
-share/dbus-1/interfaces/com.google.code.AccountsSSO.SingleSignOn.AuthSession.xml
-share/dbus-1/interfaces/com.google.code.AccountsSSO.SingleSignOn.Identity.xml
 share/dbus-1/services/com.google.code.AccountsSSO.SingleSignOn.service
 share/dbus-1/services/com.nokia.SingleSignOn.Backup.service
 %%PORTDOCS%%%%DOCSDIR%%-plugins-dev/example/exampledata.h

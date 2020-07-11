@@ -2,6 +2,7 @@
 
 PORTNAME=	elementary-photos
 DISTVERSION=	2.7.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	miguel@gocobachi.dev
