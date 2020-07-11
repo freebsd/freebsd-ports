@@ -16,6 +16,9 @@ RUN_DEPENDS=	rubygem-manpages>=0.6.1<0.7:devel/rubygem-manpages \
 		rubygem-paint>=2.1<3:devel/rubygem-paint
 
 USES=		gem
+
+CONFLICT_INSTALL=	lolcat
+
 USE_RUBY=	yes
 
 NO_ARCH=	yes

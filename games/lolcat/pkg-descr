@@ -1,0 +1,4 @@
+This is a high performance implementation of lolcat, which does
+the same as the unix "cat" programm, but in fancy rainbow colors.
+
+WWW: https://github.com/jaseg/lolcat
