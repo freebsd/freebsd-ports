@@ -16,16 +16,17 @@ USE_QT=		buildtools_build concurrent core gui linguisttools_build network \
 USE_GL=		gl
 USE_LDCONFIG=	yes
 
-DOS2UNIX_FILE=	src/libs/vgeometry/vellipticalarc.cpp
-
 USE_GITLAB=	yes
 GL_ACCOUNT=	smart-pattern
 GL_COMMIT=	15e731671f9471390d7ccf95c7eb5bbda8c25f95
+
+DOS2UNIX_FILE=	src/libs/vgeometry/vellipticalarc.cpp
 
 QMAKE_ARGS=	CONFIG+="noTests" CONFIG+="noRunPath"
 .if !defined(WITH_CCACHE_BUILD) || defined(NO_CCACHE)
 QMAKE_ARGS+=	CONFIG+="no_ccache"
 .endif
+
 BINARY_ALIAS=	hg=/usr/bin/true
 
 .include <bsd.port.mk>
