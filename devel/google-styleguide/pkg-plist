@@ -5,6 +5,7 @@ bin/cpplint_unittest.py
 %%PORTDOCS%%%%DOCSDIR%%/angularjs-google-style.html
 %%PORTDOCS%%%%DOCSDIR%%/cppguide.html
 %%PORTDOCS%%%%DOCSDIR%%/cpplint/README
+%%PORTDOCS%%%%DOCSDIR%%/csharp-style.md
 %%PORTDOCS%%%%DOCSDIR%%/docguide/README.md
 %%PORTDOCS%%%%DOCSDIR%%/docguide/READMEs.md
 %%PORTDOCS%%%%DOCSDIR%%/docguide/VERSION
