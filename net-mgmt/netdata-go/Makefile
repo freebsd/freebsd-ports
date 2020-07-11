@@ -2,7 +2,7 @@
 
 PORTNAME=	netdata-go
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.19.1
+DISTVERSION=	0.19.2
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	driesm.michiels@gmail.com
@@ -41,7 +41,7 @@ GH_TUPLE=	Wing924:ltsv:v0.3.1:wing924_ltsv/vendor/github.com/Wing924/ltsv \
 		mattn:go-isatty:v0.0.12:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		miekg:dns:v1.1.29:miekg_dns/vendor/github.com/miekg/dns \
 		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
-		netdata:go-orchestrator:8f1e1f11e819:netdata_go_orchestrator/vendor/github.com/netdata/go-orchestrator \
+		netdata:go-orchestrator:fa1e7549ea8b:netdata_go_orchestrator/vendor/github.com/netdata/go-orchestrator \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
 		prometheus:common:v0.10.0:prometheus_common/vendor/github.com/prometheus/common \
 		prometheus:prometheus:v2.5.0:prometheus_prometheus/vendor/github.com/prometheus/prometheus \
