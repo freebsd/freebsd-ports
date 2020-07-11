@@ -1262,6 +1262,7 @@
     SUBDIR += py-grako
     SUBDIR += py-guess-language
     SUBDIR += py-hexdump
+    SUBDIR += py-hieroglyph
     SUBDIR += py-html2text
     SUBDIR += py-html2text2018
     SUBDIR += py-humanfriendly
@@ -1367,7 +1368,6 @@
     SUBDIR += py-sphinx
     SUBDIR += py-sphinx-autoapi
     SUBDIR += py-sphinx-autodoc-typehints
-    SUBDIR += py-sphinx-hieroglyph
     SUBDIR += py-sphinx-intl
     SUBDIR += py-sphinx-me
     SUBDIR += py-sphinx-tabs

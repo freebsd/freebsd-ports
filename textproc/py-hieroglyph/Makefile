@@ -1,9 +1,9 @@
 # $FreeBSD$
 
-PORTNAME=	sphinx-hieroglyph
-PORTVERSION=	1.0.0
-DISTVERSIONPREFIX=	hieroglyph-
+PORTNAME=	hieroglyph
+PORTVERSION=	2.1.0
 CATEGORIES=	textproc python
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dbaio@FreeBSD.org
@@ -14,12 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PY_SPHINX}
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	nyergler
-GH_PROJECT=	hieroglyph
-
-USES=		python shebangfix
-USE_PYTHON=	autoplist distutils
+USES=		python:3.5+ shebangfix
+USE_PYTHON=	autoplist concurrent distutils
 SHEBANG_FILES=	src/hieroglyph/themes/slides2/static/scripts/md/render.py
 
 NO_ARCH=	yes
