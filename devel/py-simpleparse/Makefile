@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	simpleparse
-PORTVERSION=	2.2.0
+PORTVERSION=	2.2.2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python EBNF parser generator (with mx.TextTools derivative)
 
 USES=		python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/simpleparse/stt/TextTools/mxTextTools/mxTextTools.so
