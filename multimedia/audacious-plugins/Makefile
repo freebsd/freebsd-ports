@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	audacious-plugins
-PORTVERSION=	4.0.4
+PORTVERSION=	4.0.5
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.audacious-media-player.org/
 
