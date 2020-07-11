@@ -1,5 +1,3 @@
-TIMESTAMP = 1585258131
-SHA256 (oneapi-src-level-zero-v0.91.10_GH0.tar.gz) = 9193d8cc57cd63f9b0f44bbc51c9d099c6e899781edb33f9869a850865c64d3d
-SIZE (oneapi-src-level-zero-v0.91.10_GH0.tar.gz) = 291352
-SHA256 (4a42aa94cad2.patch) = 295946e6d77152e0b82bfd483b0e4bbb207c762016692a4aa62ee7d6338aa698
-SIZE (4a42aa94cad2.patch) = 2289
+TIMESTAMP = 1591979466
+SHA256 (oneapi-src-level-zero-v0.91.21_GH0.tar.gz) = d66f93a292a962a60752cd31fd5f531e52ece09b576ec3fa224ac35c8de45c34
+SIZE (oneapi-src-level-zero-v0.91.21_GH0.tar.gz) = 292522
