@@ -6,11 +6,8 @@
    - man kresd
    - https://knot-resolver.readthedocs.io/
 
-  To run as daemon see:
-   - https://knot-resolver.readthedocs.io/en/latest/daemon.html
-
   If upgrading:
-   - https://knot-resolver.readthedocs.io/en/stable/upgrading.html
+   - https://knot-resolver.readthedocs.io/en/latest/upgrading.html
 EOM
 }
 ]

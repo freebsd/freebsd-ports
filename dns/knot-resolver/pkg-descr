@@ -1,4 +1,10 @@
-The Knot DNS Resolver is a caching full resolver implementation,
-including both a resolver library and a daemon.
+Knot Resolver is a caching DNS resolver scalable from huge resolver
+farms down to home network routers.
+Knot Resolver is a modern resolver implementation designed for
+scalability, resiliency, and flexibility. Its design is
+different from other resolvers: The core architecture is tiny and
+efficient, and most of the rich features are implemented as
+optional modules, which limits attack surface and improves
+performance.
 
 WWW: https://www.knot-resolver.cz/

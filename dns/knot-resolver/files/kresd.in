@@ -1,0 +1,37 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: kresd
+# REQUIRE: NETWORKING
+# BEFORE: SERVERS
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable knot-resolver:
+#
+# kresd_enable="YES":	Set to YES to enable kresd.
+#			Set to NO by default.
+# kresd_config="":	Set to %%ETCDIR%%/kresd.conf
+#			by default.
+#
+
+. /etc/rc.subr
+
+name=kresd
+rcvar=kresd_enable
+
+load_rc_config ${name}
+
+# set defaults
+
+kresd_enable=${kresd_enable:-"NO"}
+kresd_config=${kresd_config:-"%%ETCDIR%%/${name}.conf"}
+
+pidfile="%%RUNDIR%%/${name}.pid"
+procname="%%PREFIX%%/sbin/${name}"
+required_files="${kresd_config}"
+
+command="/usr/sbin/daemon"
+command_args="-c -f -S -r -P ${pidfile} -- ${procname} -c ${kresd_config} -n -q %%RUNDIR%%"
+
+run_rc_command "$1"
