@@ -22,6 +22,11 @@
 
 import os, os.path, subprocess, sys, getopt, glob, errno, types
 
+# python3 lacks raw_input
+compat_raw_input = input
+if sys.version_info < (3,):
+    compat_raw_input = raw_input
+
 # Some global variables used as constants
 #True = 1
 #False = 0
@@ -264,7 +269,7 @@ def query_yn(message, default = False):
 		else:
 			yn = 'Y/N'
 
-		reply = raw_input('%s [%s]: ' % (message, yn))
+		reply = compat_raw_input('%s [%s]: ' % (message, yn))
 
 		if reply == 'y' or reply == 'Y':
 			return True
