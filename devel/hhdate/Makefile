@@ -3,6 +3,7 @@
 PORTNAME=	hhdate
 PORTVERSION=	3.0.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -18,9 +19,9 @@ GH_PROJECT=	date
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-PLIST_FILES=	include/hhdate/date.h
+PLIST_FILES=	include/hhdate/date.h \
+		include/hhdate/tz.h
 
-# TODO add timezone support when interest grows
 OPTIONS_DEFINE=		TEST
 TEST_DESC=		Build with minimal tests
 TEST_ENV=		${MAKE_ENV} WRKDIR=${WRKDIR}
@@ -33,7 +34,7 @@ post-extract-TEST-on:
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/include/hhdate
-	${INSTALL_DATA} ${WRKSRC}/include/date/date.h ${STAGEDIR}${PREFIX}/include/hhdate/
+	${INSTALL_DATA} ${WRKSRC}/include/date/date.h ${WRKSRC}/include/date/tz.h ${STAGEDIR}${PREFIX}/include/hhdate/
 
 do-test:
 	cd ${WRKSRC}/test && ${CXX} ${CXXFLAGS} test-minimal.cpp -o test-minimal && ./test-minimal > /dev/null
