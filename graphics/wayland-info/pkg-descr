@@ -1,0 +1,11 @@
+wayland-info is a utility for displaying information about the Wayland
+protocols supported by a Wayland compositor.
+
+It can be used to check which Wayland protocols and versions are advertised
+by the Wayland compositor.
+
+wayland-info also provides additional information for a subset of Wayland
+protocols it knows about, namely Linux DMABUF, presentation time, tablet and
+XDG output protocols.
+
+WWW: https://gitlab.freedesktop.org/ofourdan/wayland-info
