@@ -3,7 +3,7 @@
 
 PORTNAME=	certbot
 PORTVERSION=	${ACME_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
@@ -34,7 +34,7 @@ USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
-SUB_FILES=	500.certbot
+SUB_FILES=	500.certbot pkg-message
 PLIST_FILES=	etc/periodic/weekly/500.certbot-${PYTHON_VER}
 SUB_LIST=	PYTHON_VER=${PYTHON_VER}
 

@@ -29,6 +29,28 @@ In order to automatically renew the certificates, add this line to
 /etc/periodic.conf:
 
     weekly_certbot_enable="YES"
+
+More config details in the certbot periodic script:
+
+    %%LOCALBASE%%/etc/periodic/weekly/500.certbot-%%PYTHON_VER%%
+
+EOM
+}
+{
+  type: upgrade
+  maximum_version: "1.5.0_2,1"
+  message: <<EOM
+The certbot periodic script has new config options:
+
+ * weekly_certbot_pre_hook
+ * weekly_certbot_post_hook
+ * weekly_certbot_deploy_hook
+ * weekly_certbot_custom_args
+
+For config details, see the certbot periodic script:
+
+    %%LOCALBASE%%/etc/periodic/weekly/500.certbot-%%PYTHON_VER%%
+
 EOM
 }
 ]
