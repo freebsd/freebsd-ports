@@ -3,12 +3,12 @@ include/xkbcommon/xkbcommon-compat.h
 include/xkbcommon/xkbcommon-compose.h
 include/xkbcommon/xkbcommon-keysyms.h
 include/xkbcommon/xkbcommon-names.h
-include/xkbcommon/xkbcommon-x11.h
+%%X11%%include/xkbcommon/xkbcommon-x11.h
 lib/libxkbcommon.so
 lib/libxkbcommon.so.0
 lib/libxkbcommon.so.0.0.0
-lib/libxkbcommon-x11.so
-lib/libxkbcommon-x11.so.0
-lib/libxkbcommon-x11.so.0.0.0
+%%X11%%lib/libxkbcommon-x11.so
+%%X11%%lib/libxkbcommon-x11.so.0
+%%X11%%lib/libxkbcommon-x11.so.0.0.0
 libdata/pkgconfig/xkbcommon.pc
-libdata/pkgconfig/xkbcommon-x11.pc
+%%X11%%libdata/pkgconfig/xkbcommon-x11.pc
