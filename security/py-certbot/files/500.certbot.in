@@ -7,11 +7,23 @@
 # Add the following lines to /etc/periodic.conf:
 #
 # weekly_certbot_enable (bool):	Set to "NO" by default
-# weekly_certbot_service (str):	If defined, certbot will try to
-#					shutdown this this service before
-#					renewing the certificate, and restart
-#					it afterwards.  For example, set to
-#					"nginx" or "apache24"
+# weekly_certbot_service (str):	If defined, certbot will try to shutdown this
+#		service before renewing the certificate, and restart it afterwards.
+#		For example, set to "nginx" or "apache24". This is usually used to avoid
+#		conflict with the standalone plugin webserver.
+#		If any of pre_hook or post_hook is set, this behavior is disabled.
+# weekly_certbot_pre_hook (str):	Command to be run in a shell before obtaining
+#		any certificates.
+# weekly_certbot_post_hook (str):	Command to be run in a shell after
+#		attempting to obtain/renew certificates.
+#		An example to reload nginx after renewing all certificates.
+#		weekly_certbot_post_hook="service nginx onereload"
+# weekly_certbot_deploy_hook (str):	Command to be run in a shell once for each
+#		successfully issued certificate.
+# weekly_certbot_custom_args (str):	Any other misc arguments for the renewal
+#		See certbot -h renew for full list
+#		An example to force renewal for certificates not due yet
+#		weekly_certbot_custom_args="--force-renewal"
 
 # If there is a global system configuration file, suck it in.
 #
@@ -28,23 +40,41 @@ case "$weekly_certbot_enable" in
 
 	PRE_HOOK=""
 	POST_HOOK=""
-	if [ -n "$weekly_certbot_service" ]
+	DEPLOY_HOOK=""
+
+	if [ -n "$weekly_certbot_service" ] && \
+		[ -z "$weekly_certbot_pre_hook" ] && [ -z "$weekly_certbot_post_hook" ];
 	then
-	    if service "$weekly_certbot_service" onestatus
-	    then
-		PRE_HOOK="service $weekly_certbot_service onestop"
-		POST_HOOK="service $weekly_certbot_service onestart"
-	    fi
+		if service "$weekly_certbot_service" onestatus
+		then
+			PRE_HOOK="--pre-hook 'service $weekly_certbot_service onestop'"
+			POST_HOOK="--post-hook 'service $weekly_certbot_service onestart'"
+		fi
+	else
+		if [ -n "$weekly_certbot_pre_hook" ]; then
+			PRE_HOOK="--pre-hook '$weekly_certbot_pre_hook'"
+		fi
+
+		if [ -n "$weekly_certbot_post_hook" ]; then
+			POST_HOOK="--post-hook '$weekly_certbot_post_hook'"
+		fi
+	fi
+
+	if [ -n "$weekly_certbot_deploy_hook" ]; then
+		DEPLOY_HOOK="--deploy-hook '$weekly_certbot_deploy_hook'"
 	fi
 
 	anticongestion
-	if %%LOCALBASE%%/bin/certbot-%%PYTHON_VER%% renew --pre-hook "$PRE_HOOK" \
-	                             --post-hook "$POST_HOOK" \
-	   			     --no-random-sleep-on-renew
+
+	eval %%LOCALBASE%%/bin/certbot-%%PYTHON_VER%% renew "$PRE_HOOK" "$POST_HOOK" \
+		"$DEPLOY_HOOK" "$weekly_certbot_custom_args" --no-random-sleep-on-renew
+	if [ $? -gt 0 ]
 	then
-	    rc=0
+	    echo
+	    echo "Errors were reported when renewing Let's Encrypt certificate(s)."
+	    rc=3
 	else
-	    rc=1
+	    rc=0
 	fi
 	;;
     *)  rc=0;;
