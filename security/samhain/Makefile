@@ -7,7 +7,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://la-samhna.de/archive/
 DISTNAME=	samhain_signed-${PORTVERSION}
 
-MAINTAINER=	koue@chaosophia.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Samhain Intrusion Detection System
 
 LICENSE=	GPLv2

@@ -3,10 +3,9 @@
 PORTNAME=	openggsn
 PORTVERSION=	0.94
 CATEGORIES=	net
-MASTER_SITES=	http://git.osmocom.org/${PORTNAME}/snapshot/ \
-		http://chaosophia.net/downloads/osmocom/${PORTNAME}/
+MASTER_SITES=	http://git.osmocom.org/${PORTNAME}/snapshot/
 
-MAINTAINER=	koue@chaosophia.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implementation of the Gateway GPRS Support Node element
 
 LICENSE=	GPLv2

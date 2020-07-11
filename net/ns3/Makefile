@@ -6,7 +6,7 @@ CATEGORIES=	net
 MASTER_SITES=	https://www.nsnam.org/release/
 DISTNAME=	ns-allinone-${PORTVERSION}
 
-MAINTAINER=	koue@chaosophia.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network simulator for Internet systems
 
 LICENSE=	GPLv2

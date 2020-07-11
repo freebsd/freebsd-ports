@@ -3,10 +3,9 @@
 PORTNAME=	libosmocore
 PORTVERSION=	1.2.0
 CATEGORIES=	devel
-MASTER_SITES=	http://git.osmocom.org/libosmocore/snapshot/ \
-		http://chaosophia.net/downloads/osmocom/${PORTNAME}/
+MASTER_SITES=	http://git.osmocom.org/libosmocore/snapshot/
 
-MAINTAINER=	koue@chaosophia.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Common library for all Osmocom projects
 
 LICENSE=	GPLv2

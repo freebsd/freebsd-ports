@@ -6,7 +6,7 @@ PORTVERSION=	1.3
 CATEGORIES=	net security
 MASTER_SITES=	http://silicone.homelinux.org/release/netsed/
 
-MAINTAINER=	koue@chaosophia.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Alters the contents of network packets in real time
 
 USES=		gmake

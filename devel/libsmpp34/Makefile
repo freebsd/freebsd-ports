@@ -3,10 +3,9 @@
 PORTNAME=	libsmpp34
 PORTVERSION=	1.10
 CATEGORIES=	devel
-MASTER_SITES=	http://chaosophia.net/downloads/osmocom/${PORTNAME}/ \
-		http://ns1.chaosophia.net/downloads/osmocom/${PORTNAME}/
+MASTER_SITES=	http://chaosophia.net/downloads/osmocom/${PORTNAME}/
 
-MAINTAINER=	koue@chaosophia.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provide an implementation of SMPP-3.4 protocol for PDUs handling
 
 LICENSE=	LGPL21
