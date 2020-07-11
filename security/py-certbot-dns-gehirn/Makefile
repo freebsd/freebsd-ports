@@ -23,10 +23,5 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	DOCS
-
-DOCS_BUILD_DEPENDS=	${PY_SPHINX} \
-			${PYTHON_PKGNAMEPREFIX}sphinx_rtd_theme>0:textproc/py-sphinx_rtd_theme@${PY_FLAVOR}
-
 .include "${.CURDIR}/../py-acme/version.mk"
 .include <bsd.port.mk>
