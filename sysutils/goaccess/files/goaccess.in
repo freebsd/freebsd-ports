@@ -1,0 +1,45 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: goaccess
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable goaccess.
+#
+# goaccess_html (path):		Set to /var/run/goaccess/goaccess.html
+#				by default.
+# goaccess_log (path):		Set to /var/log/httpd-access.log
+#				by default.
+# goaccess_config (str):	Set to %%PREFIX%%/etc/goaccess.conf
+#				by default. Only used if the file exists.
+
+. /etc/rc.subr
+
+name=goaccess
+rcvar=goaccess_enable
+
+load_rc_config $name
+
+: ${goaccess_html:=/var/run/goaccess/goaccess.html}
+: ${goaccess_log:=/var/log/httpd-access.log}
+: ${goaccess_config:=%%PREFIX%%/etc/goaccess/goaccess.conf}
+
+command=/usr/local/bin/${name}
+pidfile=/var/run/${name}.pid
+
+# This is done to allow Directory be used for when configuring Apache
+# as Files does not allow for a full path.
+start_precmd=start_precmd
+start_precmd()
+{
+    if [ $goaccess_html = /var/run/goaccess/goaccess.html ]; then
+	if [ ! -d /var/run/goaccess ]; then
+	    mkdir /var/run/goaccess
+	fi
+    fi
+}
+
+command_args="--daemonize --real-time-html --pid-file=$pidfile -p $goaccess_config -o $goaccess_html"
+run_rc_command "$1"
