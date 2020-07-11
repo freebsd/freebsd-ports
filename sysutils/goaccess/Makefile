@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	goaccess
-PORTVERSION=	1.3
-PORTREVISION=	4
+PORTVERSION=	1.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://tar.goaccess.io/
 

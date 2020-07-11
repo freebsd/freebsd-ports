@@ -1,6 +1,6 @@
---- src/goaccess.c.orig	2018-12-16 01:14:48 UTC
+--- src/goaccess.c.orig	2020-05-17 12:34:51 UTC
 +++ src/goaccess.c
-@@ -1202,8 +1202,10 @@ set_locale (void)
+@@ -1175,8 +1175,10 @@ set_locale (void) {
    char *loc_ctype;
  
    setlocale (LC_ALL, "");
