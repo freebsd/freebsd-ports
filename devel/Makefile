@@ -5297,6 +5297,7 @@
     SUBDIR += pybugz
     SUBDIR += pycanberra
     SUBDIR += pycharm-ce
+    SUBDIR += pycharm-pro
     SUBDIR += pycos
     SUBDIR += pycount
     SUBDIR += pydbus-common
