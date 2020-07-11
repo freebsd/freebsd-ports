@@ -3,6 +3,7 @@
 PORTNAME=	openjdk
 DISTVERSIONPREFIX=	jdk-
 DISTVERSION=	${JDK_MAJOR_VERSION}.${JDK_MINOR_VERSION}.${JDK_PATCH_VERSION}+${JDK_BUILD_NUMBER}-${BSD_JDK_VERSION}
+PORTREVISION=	1
 CATEGORIES=	java devel
 PKGNAMESUFFIX?=	${JDK_MAJOR_VERSION}
 
@@ -23,7 +24,8 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libgif.so:graphics/giflib \
 		liblcms2.so:graphics/lcms2 \
 		libpng.so:graphics/png
-RUN_DEPENDS=	javavm:java/javavmwrapper
+RUN_DEPENDS=	javavm:java/javavmwrapper \
+		xorg-fonts-truetype>0:x11-fonts/xorg-fonts-truetype
 
 USES=		compiler:features gmake iconv jpeg pkgconfig xorg
 USE_XORG=	x11 xext xi xrandr xrender xt xtst
