@@ -1,5 +1,4 @@
-lib/liblua-cqueues.so.%%LUA_VER_STR%%
-lib/liblua-cqueues.so
+%%LUA_MODLIBDIR%%/_cqueues.so
 %%LUA_MODSHAREDIR%%/cqueues.lua
 %%LUA_MODSHAREDIR%%/cqueues/auxlib.lua
 %%LUA_MODSHAREDIR%%/cqueues/condition.lua
@@ -17,4 +16,3 @@ lib/liblua-cqueues.so
 %%LUA_MODSHAREDIR%%/cqueues/signal.lua
 %%LUA_MODSHAREDIR%%/cqueues/socket.lua
 %%LUA_MODSHAREDIR%%/cqueues/thread.lua
-@dir %%LUA_MODLIBDIR%%
