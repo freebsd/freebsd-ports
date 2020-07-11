@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pycountry
-PORTVERSION=	19.8.18
+PORTVERSION=	20.7.3
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ COMMENT=	ISO country, subdivision, language, currency and script definitions and
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		python:3.3+
+USES=		python:3.5+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
