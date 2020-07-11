@@ -3,7 +3,7 @@
 
 PORTNAME=	libvorbis
 PORTVERSION=	1.3.7
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	3
 CATEGORIES=	audio
 MASTER_SITES=	https://downloads.xiph.org/releases/vorbis/ \
@@ -17,13 +17,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libogg.so:audio/libogg
 
-# The included libtool is broken and loses the -lm dependency_lib.
-USES=		libtool:build pathfix tar:xz
+USES=		libtool pathfix tar:xz
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ogg=${LOCALBASE}
-MAKE_ARGS=	LIBTOOL=${PREFIX}/bin/libtool
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
