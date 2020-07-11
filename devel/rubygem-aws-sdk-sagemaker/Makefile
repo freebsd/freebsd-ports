@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aws-sdk-sagemaker
-PORTVERSION=	1.62.0
+PORTVERSION=	1.63.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
