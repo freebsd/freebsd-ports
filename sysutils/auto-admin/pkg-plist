@@ -43,6 +43,7 @@ sbin/auto-enable-service
 sbin/auto-fastest-mirror
 sbin/auto-fetch-install-media
 sbin/auto-file-secure
+sbin/auto-firewall-setup
 sbin/auto-freebsd-wip-checkout
 sbin/auto-fusefs-install
 sbin/auto-gpu-setup
@@ -71,6 +72,7 @@ sbin/auto-media-format
 sbin/auto-mount-any
 sbin/auto-network-restart
 sbin/auto-nfs-add-share
+sbin/auto-nfs-client-setup
 sbin/auto-nfs-restart
 sbin/auto-nfs-server-setup
 sbin/auto-octet-to-hex
