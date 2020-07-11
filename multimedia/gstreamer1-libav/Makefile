@@ -10,8 +10,8 @@ DISTNAME=	gst-libav-${PORTVERSION}
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	GStreamer plug-in with many audio/video decoders/encoders
 
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	LGPL20+
+LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
 BUILD_DEPENDS=	orc>=0.4.16:devel/orc
 LIB_DEPENDS=	liborc-0.4.so:devel/orc
