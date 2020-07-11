@@ -1,0 +1,52 @@
+# Options specific to client applications, see
+# https://mariadb.com/kb/en/configuring-mariadb-with-option-files/#client-option-groups
+
+# Options specific to all client programs
+[client]
+# port			= 3306 # set in %%ETCDIR%%/my.cnf
+# socket		= /var/run/mysql/mysql.sock # set in %%ETCDIR%%/my.cnf
+
+# Options specific to MariaDB client programs
+[client-mariadb]
+
+#
+## Options for specific client Tools
+#
+
+# Options read by `mysql`
+# Renamed from [mysql] starting with MariaDB 10.4.6.
+[mariadb-client]	Options read by mysql. Available starting with MariaDB 10.4.6.
+prompt			= \u@\h [\d]>\_
+no_auto_rehash
+
+# Options read by `mysqldump`
+# Renamed from [mysqldump] starting with MariaDB 10.4.6.
+[mariadb-dump]
+max_allowed_packet	= 256M
+quote_names
+quick
+
+# Options read by `mysqladmin`
+# Renamed from [mysqladmin] starting with MariaDB 10.4.6.
+[mariadb-admin]
+
+# Options read by `mysqlbinlog` 
+# Renamed from [mysqlbinlog] starting with MariaDB 10.4.6.
+[mariadb-binlog]
+
+# Options read by `mysqlcheck`
+# Renamed from [mysqlcheck] starting with MariaDB 10.4.6.
+[mariadb-check]
+
+# Options read by `mysqlimport`
+# Renamed from [mysqlimport] starting with MariaDB 10.4.6.
+[mariadb-import]
+
+# Options read by `mysqlshow`
+# Renamed from [mysqlshow] starting with MariaDB 10.4.6.
+[mariadb-show]
+
+# Options read by `mysqlslap`
+# Renamed from [mysqlslap]  starting with MariaDB 10.4.6.
+[mariadb-slap]
+
