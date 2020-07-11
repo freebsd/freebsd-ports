@@ -1,5 +1,5 @@
-TIMESTAMP = 1579551844
-SHA256 (alpine-2.22.tar.gz) = 58fd9115174af1105a5b10aa4af527ad3be0ad99a06ea5830881bc78e00cd4fa
-SIZE (alpine-2.22.tar.gz) = 19009946
+TIMESTAMP = 1594039054
+SHA256 (alpine-2.23.2.tar.gz) = 07593d4a47d48f0253ad341f0baf0d1a17eb2b9356a1c96abc0f15688d8fd3b4
+SIZE (alpine-2.23.2.tar.gz) = 20019365
 SHA256 (maildir.patch.gz) = ac68a8421c68e18d0acba9086ca595b961799b4b47b5c12a1bf430f973dc0dbd
 SIZE (maildir.patch.gz) = 34018
