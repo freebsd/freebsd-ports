@@ -1,0 +1,8 @@
+prompt_toolkit is a library for building powerful interactive command lines in
+Python. It ships with a nice interactive Python shell (called ptpython) built
+on top of the library.
+
+prompt_toolkit could be a replacement for readline, but it can be much more
+than that.
+
+WWW: https://github.com/prompt-toolkit/python-prompt-toolkit
