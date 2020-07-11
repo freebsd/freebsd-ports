@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	mesa
-DISTVERSION=	20.1-branchpoint-2769
-DISTVERSIONSUFFIX=	-g40e00c800cf
+DISTVERSION=	20.1-branchpoint-2840
+DISTVERSIONSUFFIX=	-g19ca34ed270
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	-devel
 
@@ -42,12 +42,11 @@ GH_ACCOUNT=	mesa3d
 USE_LDCONFIG=	yes
 BINARY_ALIAS=	python=${PYTHON_CMD}
 SHEBANG_FILES=	src/vulkan/overlay-layer/${PORTNAME}-overlay-control.py
-PLATFORMS=	${PORT_OPTIONS:MX11:tl} ${PORT_OPTIONS:MWAYLAND:tl} drm surfaceless
 MESON_ARGS=	-Dgallium-omx=disabled \
 		-Dgallium-opencl=disabled \
 		-Dgallium-xa=disabled \
 		-Dgallium-xvmc=disabled \
-		-Dplatforms=${PLATFORMS:ts,} \
+		-Dplatforms=${PLATFORMS:O:[-1..1]:ts,} \
 		${BINARY_ALIAS:D--native-file=binary_alias.ini} \
 		${NULL}
 PLIST_SUB=	ARCH=${ARCH:S/amd/x86_/}
@@ -126,10 +125,12 @@ radv_DESC=		Southern Islands and newer
 
 WAYLAND_BUILD_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols
 WAYLAND_LIB_DEPENDS=	libwayland-server.so:graphics/wayland
+WAYLAND_VARS=		PLATFORMS+=wayland
 
 X11_USES=		xorg
 X11_USE=		XORG=x11,xcb,xdamage,xext,xfixes,xorgproto,xrandr,xshmfence,xxf86vm
 X11_MESON_OFF=		-Dglx=disabled
+X11_VARS=		PLATFORMS+=x11
 
 ZSTD_DESC=		Use ZSTD for shader cache
 ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
