@@ -756,6 +756,7 @@
     SUBDIR += py-influxdb
     SUBDIR += py-kyotocabinet
     SUBDIR += py-leveldb
+    SUBDIR += py-litecli
     SUBDIR += py-lmdb
     SUBDIR += py-marshmallow-sqlalchemy
     SUBDIR += py-minidb
