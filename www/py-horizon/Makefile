@@ -3,6 +3,7 @@
 
 PORTNAME=	horizon
 PORTVERSION=	17.1.0
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	https://tarballs.openstack.org/horizon/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +18,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=2.0.0:devel/py-pbr@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=2.0.0:devel/py-pbr@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Babel>=2.3.4:devel/py-babel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django22>=1.11:www/py-django22@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}Pint>=0.5:devel/py-Pint@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pint>=0.5:devel/py-pint@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-babel>=0.6.2:www/py-django-babel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django_compressor>=2.0:www/py-django_compressor@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-debreach>=1.4.2:www/py-django-debreach@${PY_FLAVOR} \
