@@ -11,9 +11,6 @@ COMMENT=	Programmable completion library for Bash
 
 LICENSE=	GPLv2+
 
-BROKEN_armv6=	fails to build: gmake: install-recursive: Error 1
-BROKEN_armv7=	fails to build: gmake: install-recursive: Error 1
-
 TEST_DEPENDS=	runtest:misc/dejagnu \
 		${LOCALBASE}/lib/tcllib/cmdline/cmdline.tcl:devel/tcllib
 
