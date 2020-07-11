@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ptpython
-PORTVERSION=	2.0.6
+PORTVERSION=	3.0.2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,12 +13,12 @@ COMMENT=	Python REPL build on top of prompt_toolkit
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docopt>=0:devel/py-docopt@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}appdirs>=0:devel/py-appdirs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jedi>=0.9.0:devel/py-jedi@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}prompt_toolkit>=2.0.8<2.1.0:devel/py-prompt_toolkit@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}prompt_toolkit>=3.0.0<3.1.0:devel/py-prompt_toolkit@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pygments>=0:textproc/py-pygments@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
