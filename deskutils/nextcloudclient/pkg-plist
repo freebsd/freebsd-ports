@@ -16,7 +16,7 @@ lib/libnextcloudsync.so.%%VERSION%%
 lib/nextcloud/libocsync.so
 lib/nextcloud/libocsync.so.0
 lib/nextcloud/libocsync.so.%%VERSION%%
-share/applications/nextcloud.desktop
+share/applications/com.nextcloud.desktopclient.nextcloud.desktop
 share/caja-python/extensions/syncstate-Nextcloud.py
 share/icons/hicolor/1024x1024/apps/Nextcloud.png
 share/icons/hicolor/128x128/apps/Nextcloud.png
@@ -123,8 +123,10 @@ share/nextcloud/i18n/client_ja.qm
 share/nextcloud/i18n/client_ko.qm
 share/nextcloud/i18n/client_lt_LT.qm
 share/nextcloud/i18n/client_lv.qm
+share/nextcloud/i18n/client_mk.qm
 share/nextcloud/i18n/client_nb_NO.qm
 share/nextcloud/i18n/client_nl.qm
+share/nextcloud/i18n/client_oc.qm
 share/nextcloud/i18n/client_pl.qm
 share/nextcloud/i18n/client_pt.qm
 share/nextcloud/i18n/client_pt_BR.qm
