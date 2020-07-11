@@ -2276,7 +2276,7 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/plugins/python-ce/lib/python-ce.jar
 %%DATADIR%%/plugins/pythonIDE/lib/python-ide.jar
 %%DATADIR%%/plugins/pythonIDE/lib/resources_en.jar
-%%DATADIR%%/plugins/pythonIDE/lib/tips-pycharm-community-201.3.jar
+%%DATADIR%%/plugins/pythonIDE/lib/tips-pycharm-community-201.6.jar
 %%DATADIR%%/plugins/rest/lib/resources_en.jar
 %%DATADIR%%/plugins/rest/lib/rest.jar
 %%DATADIR%%/plugins/settings-repository/lib/jgit.jar
