@@ -129,8 +129,8 @@ WAYLAND_VARS=		PLATFORMS+=wayland
 
 X11_USES=		xorg
 X11_USE=		XORG=x11,xcb,xdamage,xext,xfixes,xorgproto,xrandr,xshmfence,xxf86vm
-X11_MESON_OFF=		-Dglx=disabled
 X11_VARS=		PLATFORMS+=x11
+X11_MESON_OFF=		-Dglx=disabled
 
 ZSTD_DESC=		Use ZSTD for shader cache
 ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
