@@ -1,8 +1,6 @@
 bin/gpsbabel
-%%GUI%%bin/gpsbabelfe-bin
+%%GUI%%bin/gpsbabelfe
 %%GUI%%share/applications/gpsbabel.desktop
-%%GUI%%%%DATADIR%%/translations/gpsbabel.qm
-%%GUI%%%%DATADIR%%/translations/gpsbabelfe.qm
 %%GUI%%%%DATADIR%%/translations/gpsbabelfe_de.qm
 %%GUI%%%%DATADIR%%/translations/gpsbabelfe_es.qm
 %%GUI%%%%DATADIR%%/translations/gpsbabelfe_fr.qm
