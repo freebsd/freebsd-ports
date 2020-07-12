@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	profanity
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.5
 CATEGORIES=	net-im
 
 MAINTAINER=	arved@FreeBSD.org
