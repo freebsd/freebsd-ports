@@ -2,6 +2,7 @@
 
 PORTNAME=	libmesode
 PORTVERSION=	0.9.3
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	arved@FreeBSD.org
