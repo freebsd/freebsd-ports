@@ -13,6 +13,8 @@ COMMENT=		LibGeoDecomp is an auto-parallelizing library for computer simulations
 LICENSE=		BSL
 LICENSE_FILE=		${WRKSRC}/LICENSE
 
+BROKEN=			WITH_SCOTCH selected but no installation of Scotch could be found
+
 LIB_DEPENDS=		libboost_system.so:devel/boost-libs libboost_date_time.so:devel/boost-libs \
 			libboost_filesystem.so:devel/boost-libs
 
