@@ -12,7 +12,8 @@ COMMENT=	High performance implementation of the famous lolcat
 LICENSE=		WTFPL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=	gmake
+USES=		gmake
+USE_CSTD=	c99
 
 CONFLICTS_INSTALL=	rubygem-lolcat
 
