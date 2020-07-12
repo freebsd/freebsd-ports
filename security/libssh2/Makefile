@@ -3,6 +3,7 @@
 
 PORTNAME=	libssh2
 PORTVERSION=	1.9.0
+PORTREVISION=	1
 PORTEPOCH=	3
 CATEGORIES=	security devel
 MASTER_SITES=	https://www.libssh2.org/download/ \
@@ -34,5 +35,15 @@ GCRYPT_USES_OFF=	ssl
 ZLIB_CONFIGURE_WITH=	libz
 
 .include <bsd.port.pre.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -e '/Libs:/s/@LIBS@//' \
+		${WRKSRC}/libssh2.pc.in
+.if ! ${PORT_OPTIONS:MGCRYPT}
+.  if ${SSL_DEFAULT} == base
+	@${REINPLACE_CMD} -e 's/LIBSREQUIRED="$$LIBSREQUIRED$${LIBSREQUIRED:+ }libssl libcrypto"/LIBS="$$LIBS -lssl -lcrypto"/' \
+		${WRKSRC}/configure
+.  endif
+.endif
 
 .include <bsd.port.post.mk>
