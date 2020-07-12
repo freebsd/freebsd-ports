@@ -23,7 +23,7 @@ shlib_PKGNAMESUFFIX=	-shlib
 shlib_CONFLICTS_INSTALL=	ngspice_rework-2*
 x11_CONFLICTS_INSTALL=		ngspice_rework-shlib-2*
 
-USES=		gmake libtool ncurses readline autoreconf pkgconfig
+USES=		compiler:c11 gmake libtool ncurses readline autoreconf pkgconfig
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
