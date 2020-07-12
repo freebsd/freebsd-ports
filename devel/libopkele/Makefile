@@ -3,7 +3,7 @@
 
 PORTNAME=	libopkele
 PORTVERSION=	2.0.4
-PORTREVISION=	18
+PORTREVISION=	19
 CATEGORIES=	devel
 MASTER_SITES=	http://kin.klever.net/dist/
 
@@ -28,7 +28,11 @@ USES=		gmake libtool localbase:ldflags pathfix \
 		pkgconfig ssl
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	"OPENSSL_CFLAGS=${CFLAGS} -l${OPENSSLINC}" \
-		OPENSSL_LIBS=-L${OPENSSLLIB}
+CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
+		OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto"
+
+post-patch:
+	@${REINPLACE_CMD} -e "/^Requires:/s,openssl ,," \
+		${WRKSRC}/libopkele.pc.in
 
 .include <bsd.port.mk>
