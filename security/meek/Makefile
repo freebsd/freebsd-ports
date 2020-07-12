@@ -12,6 +12,8 @@ COMMENT=	Pluggable transport proxy that relays through third-party server
 LICENSE=	CC0-1.0
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		go: git.torproject.org/pluggable-transports/goptlib.git@v1.1.0: Get "https://proxy.golang.org/git.torproject.org/pluggable-transports/goptlib.git/@v/v1.1.0.mod": dial tcp 172.217.17.113:443: connect: can't assign requested address
+
 USES=		go
 
 GO_TARGET=	./meek-client \
