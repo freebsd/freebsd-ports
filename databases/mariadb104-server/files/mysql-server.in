@@ -12,14 +12,17 @@
 %%LEGACY_LIMITS%%# mysql_(instance_)?limits (bool):	Set to "NO" by default.
 %%LEGACY_LIMITS%%#			Set it to yes to run `limits -e -U mysql`
 %%LEGACY_LIMITS%%#			just before mysql starts.
-# mysql_(instance_)?dbdir (str):	Default to "/var/db/mysql"
-#			Base database directory.
+# mysql_(instance_)?dbdir (str):	Base database directory.
+#			Default to "/var/db/mysql"
 # mysql_(instance_)?args (str):	Custom additional arguments to be passed
 #			to mysqld_safe (default empty).
 # mysql_(instance_)?pidfile (str): Custum PID file path and name.
 #			Default to "${mysql_dbdir}/${hostname}.pid".
-# mysql_(instance_)?user (str): User to run mysqld as
-#			Default to "mysql" created by the port
+# mysql_(instance_)?user (str): User to run mysqld as.
+#			Default to "%%MARIADB_USER%%" created by the port
+# mysql_(instance_)?socket (str): Name of the socket file.
+#			Default to "" and used from %%ETCDIR%%/my.cnf,
+#			where default is "%%MARIADB_RUNDIR%%/%%MARIADB_SOCK%%".
 # mysql_(instance_)?optfile (str): Server-specific option file.
 #			Default to "${mysql_dbdir}/my.cnf".
 # mysql_instances (str): Set to "" by default. 
@@ -34,7 +37,7 @@ load_rc_config $name
 
 : ${mysql_enable="NO"}
 %%LEGACY_LIMITS%%: ${mysql_limits="NO"}
-: ${mysql_user="mysql"}
+: ${mysql_user="%%MARIADB_USER%%"}
 %%LEGACY_LIMITS%%mysql_limits_args="-e -U ${mysql_user}"
 : ${mysql_dbdir="/var/db/mysql"}
 : ${mysql_optfile="${mysql_dbdir}/my.cnf"}
@@ -54,6 +57,7 @@ if [ -n "$2" ]; then
 		%%LEGACY_LIMITS%%eval mysql_limits="\${mysql_${instance}_limits:-\"${mysql_limits}\"}"
 		eval mysql_user="\${mysql_${instance}_user:-\"${mysql_user}\"}"
 		%%LEGACY_LIMITS%%eval mysql_limits_args="\${mysql_${instance}_limits_args:-\"-e -U $mysql_user\"}"
+		eval mysql_socket="\${mysql_${instance}_socket:-\"${mysql_socket}\"}"
 		eval mysql_optfile="\${mysql_${instance}_optfile:-\"${mysql_dbdir}/my.cnf\"}"
 		eval mysql_pidfile="\${mysql_${instance}_pidfile:-\"${mysql_dbdir}/`/bin/hostname`.pid\"}"
 	;;
@@ -99,7 +103,7 @@ fi
 pidfile=$mysql_pidfile
 mysql_install_db="%%PREFIX%%/bin/mysql_install_db"
 mysql_install_db_args="--basedir=%%PREFIX%% --datadir=${mysql_dbdir} --force"
-command_args="-c -f %%PREFIX%%/bin/mysqld_safe --defaults-extra-file=${mysql_optfile} --user=${mysql_user} --datadir=${mysql_dbdir} --pid-file=${pidfile} ${mysql_args}"
+command_args="-c -f %%PREFIX%%/bin/mysqld_safe --defaults-extra-file=${mysql_optfile} --user=${mysql_user} --datadir=${mysql_dbdir} --pid-file=${pidfile} ${mysql_socket:+--socket=${mysql_socket}} ${mysql_args}"
 
 mysql_create_auth_tables()
 {
@@ -118,6 +122,11 @@ mysql_prestart()
 	done
 	if [ ! -d "${mysql_dbdir}/mysql/." ]; then
 		mysql_create_auth_tables || return 1
+	fi
+	[ "${mysql_socket}" = "" ] && mysql_rundir="%%MARIADB_RUNDIR%%" || mysql_rundir="`/usr/bin/dirname ${mysql_socket}`"
+	if [ ! -d "${mysql_rundir}" ]; then
+		install -d -o ${mysql_user} -g %%MARIADB_GROUP%% "${mysql_rundir}"
+
 	fi
 %%LEGACY_LIMITS%%	if checkyesno mysql_limits; then
 %%LEGACY_LIMITS%%		eval `/usr/bin/limits ${mysql_limits_args}` 2>/dev/null
