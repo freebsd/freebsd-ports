@@ -9,34 +9,3 @@
      SET(LINUX TRUE)
  ENDIF()
  
-@@ -141,9 +141,6 @@ IF ("${CMAKE_BUILD_TYPE}" MATCHES "Debug")
-     ENDIF()
- ELSEIF ("${CMAKE_BUILD_TYPE}" MATCHES "Release")
-     ADD_DEFINITIONS(-DNDEBUG=1 -UDEBUG)
--    IF (NOT WINDOWS)
--        ADD_DEFINITIONS(-O3)
--    ENDIF()
- ENDIF()
- 
- IF (NOT ${WINDOWS})
-@@ -228,14 +225,18 @@ ENDIF()
- 
- # IlmBase
- INCLUDE("./cmake/AlembicIlmBase.cmake")
--INCLUDE_DIRECTORIES(${ALEMBIC_ILMBASE_INCLUDE_DIRECTORY})
-+# XXX: do not pollute global state: include directories correctly added
-+# via TARGET_INCLUDE_DIRECTORIES in the `lib/Alembic/CMakeLists.txt'
-+#INCLUDE_DIRECTORIES(${ALEMBIC_ILMBASE_INCLUDE_DIRECTORY})
- 
- # HDF5
- IF (USE_HDF5)
-     FIND_PACKAGE(ZLIB REQUIRED)
-     SET(ALEMBIC_WITH_HDF5 "1")
-     INCLUDE("./cmake/AlembicHDF5.cmake")
--    INCLUDE_DIRECTORIES(${HDF5_INCLUDE_DIRS})
-+    # XXX: do not pollute global state: include directories correctly added
-+    # via TARGET_INCLUDE_DIRECTORIES in the `lib/Alembic/CMakeLists.txt'
-+    #INCLUDE_DIRECTORIES(${HDF5_INCLUDE_DIRS})
-     SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DH5_USE_18_API")
- ENDIF()
- 
