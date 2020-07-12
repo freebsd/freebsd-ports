@@ -28,6 +28,8 @@ PLIST_FILES=	sbin/udpxy \
 		man/man1/udpxy.1.gz \
 		man/man1/udpxrec.1.gz
 
+CFLAGS+=	-Wno-error
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/udpxy ${STAGEDIR}${PREFIX}/sbin
 	${LN} -s udpxy ${STAGEDIR}${PREFIX}/sbin/udpxrec
