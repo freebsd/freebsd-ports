@@ -1,11 +1,11 @@
---- test/CMakeLists.txt.orig	2017-08-07 14:52:39 UTC
+--- test/CMakeLists.txt.orig	2020-07-07 19:32:55 UTC
 +++ test/CMakeLists.txt
-@@ -10,7 +10,7 @@ if(BUILD_TESTS)
+@@ -2,7 +2,7 @@ find_package(Boost COMPONENTS unit_test_framework REQU
  
-         enable_testing()
+ enable_testing()
  
--        INCLUDE_DIRECTORIES(BEFORE ${CMAKE_SOURCE_DIR}/src ${Boost_INCLUDE_DIRS})
-+        INCLUDE_DIRECTORIES(BEFORE ${Boost_INCLUDE_DIRS} ${CMAKE_SOURCE_DIR}/src)
+-INCLUDE_DIRECTORIES(BEFORE ${CMAKE_SOURCE_DIR}/src ${Boost_INCLUDE_DIRS})
++INCLUDE_DIRECTORIES(BEFORE ${Boost_INCLUDE_DIRS} ${CMAKE_SOURCE_DIR}/src)
  
-         set(cpp_tests
-             basic.cpp
+ set(cpp_tests basic.cpp baudrate.cpp)
+ 

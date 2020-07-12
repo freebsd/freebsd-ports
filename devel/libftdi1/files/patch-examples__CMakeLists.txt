@@ -1,13 +1,13 @@
---- examples/CMakeLists.txt.orig	2014-08-03 23:07:13.000000000 +0200
-+++ examples/CMakeLists.txt	2014-08-03 23:08:06.000000000 +0200
-@@ -36,8 +36,8 @@
-     if(FTDI_BUILD_CPP)
-         if(Boost_FOUND)
-             message(STATUS "Building libftdi++ examples.")
--            include_directories(BEFORE ${CMAKE_SOURCE_DIR}/ftdipp
--                                ${Boost_INCLUDE_DIRS})
-+            include_directories(BEFORE ${CMAKE_SOURCE_DIR}/ftdipp)
-+            include_directories(AFTER ${Boost_INCLUDE_DIRS})
+--- examples/CMakeLists.txt.orig	2020-07-07 19:32:55 UTC
++++ examples/CMakeLists.txt
+@@ -33,8 +33,8 @@ target_link_libraries(purge_test ftdi1)
  
-             # Target
-             add_executable(find_all_pp find_all_pp.cpp)
+ # libftdi++ examples
+ if( FTDIPP )
+-	include_directories(BEFORE ${CMAKE_SOURCE_DIR}/ftdipp
+-			${Boost_INCLUDE_DIRS})
++	include_directories(BEFORE ${CMAKE_SOURCE_DIR}/ftdipp)
++	include_directories(AFTER ${Boost_INCLUDE_DIRS})
+ 
+ 	# Target
+ 	add_executable(find_all_pp find_all_pp.cpp)
