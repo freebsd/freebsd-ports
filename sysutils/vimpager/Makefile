@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vimpager
-DISTVERSION=	2.06
+DISTVERSION=	2.06.20200712
 CATEGORIES=	sysutils
 
 MAINTAINER=	ports@FreeBSD.org
@@ -11,20 +11,25 @@ COMMENT=	Use ViM as a pager
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	vim:editors/vim
-
+USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	rkitover
-GH_TAGNAME=	d0bf869
+GH_TAGNAME=	85004fd
 
-PLIST_FILES=	bin/vimcat bin/${PORTNAME} etc/${PORTNAME}rc
-PORTDOCS=	vimcat.md vimpager.md
 NO_ARCH=	yes
 
 OPTIONS_DEFINE=	DOCS
+OPTIONS_SINGLE=	BACKEND
+OPTIONS_DEFAULT=VIM
 
-post-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+OPTIONS_SINGLE_BACKEND=	NEOVIM VIM VIMCONSOLE
+BACKEND_DESC=	Choose your Vim backend
+NEOVIM_DESC=	NeoVim
+VIM_DESC=	Full Vim (vim)
+VIMCONSOLE_DESC=Console-only Vim (vim-console)
+
+NEOVIM_RUN_DEPENDS=	nvim:editors/neovim
+VIM_RUN_DEPENDS=	vim:editors/vim
+VIMCONSOLE_RUN_DEPENDS=	vim:editors/vim-console
 
 .include <bsd.port.mk>
