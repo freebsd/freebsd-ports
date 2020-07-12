@@ -259,7 +259,7 @@ MAN1SRCS+=	lldb.1
 .if ${PORT_OPTIONS:MOPENMP}
 LLVM_ENABLE_PROJECTS+=	openmp
 .endif
-OPENMP_PATTERN=	libarcher|lib[ig]*omp|omp.h|ompt.h|omp-tools.h
+OPENMP_PATTERN=	libarcher|lib[ig]*omp|omp.h|ompt.h|ompt-multiplex.h|omp-tools.h
 
 .if defined(LLVM_ENABLE_PROJECTS)
 CMAKE_ARGS+=	-DLLVM_ENABLE_PROJECTS="${LLVM_ENABLE_PROJECTS:ts;}"

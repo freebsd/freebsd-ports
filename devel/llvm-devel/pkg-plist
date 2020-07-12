@@ -3220,7 +3220,7 @@ llvm-devel/include/llvm/XRay/RecordPrinter.h
 llvm-devel/include/llvm/XRay/Trace.h
 llvm-devel/include/llvm/XRay/XRayRecord.h
 llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
-llvm-devel/include/ompt-multiplex.h
+%%OPENMP%%llvm-devel/include/ompt-multiplex.h
 %%GOLD%%llvm-devel/lib/LLVMgold.so
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/__clang_cuda_builtin_vars.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/__clang_cuda_cmath.h
