@@ -34,13 +34,13 @@ load_rc_config $name
 
 : ${mysql_enable="NO"}
 %%LEGACY_LIMITS%%: ${mysql_limits="NO"}
-: ${mysql_user="%%MARIADB_USER"}
+: ${mysql_user="%%MARIADB_USER%%"}
 %%LEGACY_LIMITS%%mysql_limits_args="-e -U ${mysql_user}"
 : ${mysql_dbdir="/var/db/mysql"}
 : ${mysql_optfile="%%ETCDIR%%/my.cnf"}
 
 command="/usr/sbin/daemon"
-procname="%%PREFIX%%/libexec/mysqld"
+procname="%%PREFIX%%/libexec/mariadbd"
 start_precmd="${name}_prestart"
 start_postcmd="${name}_poststart"
 
@@ -92,7 +92,7 @@ else
 		done
 		exit 0
 	else
-		mysql_pidfile=${mysql_pidfile:-"/var/run/mysqld.pid"}
+		mysql_pidfile=${mysql_pidfile:-"%%MARIADB_RUNDIR%%/mysqld.pid"}
 	fi
 fi
 
