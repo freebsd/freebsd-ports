@@ -6,4 +6,4 @@ remote hosts. The check_nrpe plugin is called from Nagios and actually makes
 the plugin requests to the remote host. Requires that nrpe be running on the
 remote host (either as a standalone daemon or as a service under inetd).
 
-WWW: http://www.nagios.org/
+WWW: https://www.nagios.org/

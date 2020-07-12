@@ -11,7 +11,8 @@ PKGNAMESUFFIX=	3
 MAINTAINER=	zeising@FreeBSD.org
 COMMENT?=	Nagios Remote Plugin Executor
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	NagiosEnterprises
