@@ -10,7 +10,6 @@
     SUBDIR += R-cran-ADGofTest
     SUBDIR += R-cran-Amelia
     SUBDIR += R-cran-BsMD
-    SUBDIR += R-cran-conquer
     SUBDIR += R-cran-CVST
     SUBDIR += R-cran-ChangeAnomalyDetection
     SUBDIR += R-cran-DEoptimR
@@ -47,6 +46,7 @@
     SUBDIR += R-cran-coda
     SUBDIR += R-cran-combinat
     SUBDIR += R-cran-conf.design
+    SUBDIR += R-cran-conquer
     SUBDIR += R-cran-ddalpha
     SUBDIR += R-cran-deldir
     SUBDIR += R-cran-dimRed
