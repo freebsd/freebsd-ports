@@ -182,12 +182,16 @@ CONFIGURE_ARGS+=	--${SUEXEC_CONFARGS}-caller=${SUEXEC_CALLER} \
 			--${SUEXEC_CONFARGS}-userdir="${SUEXEC_USERDIR}" \
 			--${SUEXEC_CONFARGS}-docroot="${SUEXEC_DOCROOT}" \
 			--${SUEXEC_CONFARGS}-safepath="${SUEXEC_SAFEPATH}" \
-			--${SUEXEC_CONFARGS}-logfile="${SUEXEC_LOGFILE}" \
 			--${SUEXEC_CONFARGS}-bin="${PREFIX}/sbin/suexec"
 
 .	if defined(WITH_SUEXEC_UMASK)
 CONFIGURE_ARGS+=	--${SUEXEC_CONFARGS}-umask=${SUEXEC_UMASK}
 .	endif
+
+.	if !${PORT_OPTIONS:MSUEXEC_SYSLOG}
+CONFIGURE_ARGS+=	--${SUEXEC_CONFARGS}-logfile="${SUEXEC_LOGFILE}"
+.	endif
+
 .endif
 
 .if !defined(_APACHE_DISABLED_MODS)

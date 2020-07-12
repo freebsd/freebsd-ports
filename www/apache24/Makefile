@@ -91,6 +91,7 @@ SOCACHE_DC_LIB_DEPENDS=		libdistcache.so:security/distcache
 #  apu-1-config --(includes|ldflags) and apr_rules.mk
 SSL_CONFIGURE_ON=		--with-ssl=${OPENSSLBASE}
 SSL_USES=			ssl
+SUEXEC_SYSLOG_CONFIGURE_ON=	--without-suexec-logfile --with-suexec-syslog
 XML2ENC_USE=			GNOME=libxml2
 XML2ENC_USES=			gnome
 

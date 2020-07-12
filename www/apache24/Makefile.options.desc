@@ -156,6 +156,7 @@ SSL_DESC=			SSL/TLS support (mod_ssl)
 STATUS_DESC=			Process/thread monitoring
 SUBSTITUTE_DESC=		Response content rewrite-like filtering
 SUEXEC_DESC=			Set uid and gid for spawned processes
+SUEXEC_SYSLOG_DESC=		Enable syslog for suexec
 
 UNIQUE_ID_DESC=			Per-request unique ids
 UNIXD_DESC=			(required) security for Unix-family platforms
