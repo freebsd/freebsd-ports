@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sndio
-PORTVERSION=	1.6.0
+PORTVERSION=	1.7.0
 CATEGORIES=	audio
 MASTER_SITES=	http://www.sndio.org/
 
@@ -15,7 +15,7 @@ USE_LDCONFIG=	yes
 USE_RC_SUBR=	sndiod
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--mandir=${PREFIX}/man \
+CONFIGURE_ARGS=	--default-dev="rsnd/default" \
 		--prefix=${PREFIX}
 
 # Parallel build leads to problems, but sndio is very quick to compile
@@ -31,10 +31,8 @@ post-patch:
 		${WRKSRC}/sndiod/sndiod.c
 
 post-install:
-	@${STRIP_CMD} \
-		${STAGEDIR}${PREFIX}/lib/libsndio.so.6.1 \
-		${STAGEDIR}${PREFIX}/bin/sndiod \
-		${STAGEDIR}${PREFIX}/bin/aucat \
-		${STAGEDIR}${PREFIX}/bin/midicat
+	cd ${STAGEDIR}${PREFIX}/bin && ${STRIP_CMD} \
+		aucat midicat sndioctl sndiod
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsndio.so.7.1
 
 .include <bsd.port.mk>

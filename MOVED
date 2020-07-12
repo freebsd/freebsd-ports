@@ -15152,3 +15152,4 @@ devel/pear-channel-phpunit||2020-07-09|Remove obsolete
 multimedia/f3d|graphics/f3d|2020-07-09|Move to a proper category
 textproc/py-sphinx-hieroglyph|textproc/py-hieroglyph|2020-07-11|Renamed to reflect official name at PyPI
 devel/py-Pint|devel/py-pint|2020-07-11|Rename to match our py- port naming
+audio/aucatctl|audio/sndio|2020-07-12|Use sndioctl from audio/sndio instead

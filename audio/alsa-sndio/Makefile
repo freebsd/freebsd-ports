@@ -2,6 +2,7 @@
 
 PORTNAME=	alsa-sndio
 DISTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	tobik@FreeBSD.org

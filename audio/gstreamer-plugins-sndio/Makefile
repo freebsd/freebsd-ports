@@ -3,6 +3,7 @@
 PORTNAME=	gstreamer-plugins-sndio
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.10.31.1
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	tobik@FreeBSD.org

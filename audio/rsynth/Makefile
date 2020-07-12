@@ -3,7 +3,7 @@
 
 PORTNAME=	rsynth
 PORTVERSION=	2.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	audio accessibility
 MASTER_SITES=	ftp://svr-ftp.eng.cam.ac.uk/pub/comp.speech/synthesis/ \
 		ftp://ftp.enst.fr/pub/unix/multimedia/

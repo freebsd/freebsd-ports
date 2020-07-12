@@ -39,7 +39,6 @@
     SUBDIR += asunder
     SUBDIR += atunes
     SUBDIR += aubio
-    SUBDIR += aucatctl
     SUBDIR += audacity
     SUBDIR += audiere
     SUBDIR += audiocd-kio
