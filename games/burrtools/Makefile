@@ -12,6 +12,8 @@ COMMENT=	Puzzle solver
 
 LICENSE=	GPLv2+ # COPYING is GPLv3
 
+BROKEN=		fails to build
+
 BUILD_DEPENDS=	netpbm>0:graphics/netpbm
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libpng.so:graphics/png \
