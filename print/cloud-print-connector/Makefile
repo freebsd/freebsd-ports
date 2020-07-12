@@ -12,6 +12,8 @@ COMMENT=	Share CUPS printers via Google Cloud Print
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		cups.c:42:12: error: incomplete definition of type 'struct _ipp_s'
+
 LIB_DEPENDS=	libcups.so:print/cups \
 		libavahi-client.so:net/avahi-app \
 		libavahi-common.so:net/avahi-app
