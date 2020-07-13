@@ -1,0 +1,11 @@
+[
+{ type: install
+  message: <<EOM
+To make Vimpager your default pager, run `export PAGER=vimpager'
+or put it in your shell config file.
+
+Vimpager looks only for `vim'. To make Vimpager look for anything
+else, set `VIMPAGER_VIM=nvim' or `VIMPAGER_VIM=gvim'.
+EOM
+}
+]

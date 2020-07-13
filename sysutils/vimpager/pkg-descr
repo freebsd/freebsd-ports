@@ -1,10 +1,12 @@
-Use ViM as a more(1)/less(1) pager replacement.
+Vimpager uses the power of Vim to provide a powerful pager.
+It runs Vim (or NeoVim, or even GVim) and acts as a frontend,
+allowing for full Vim syntax highlighting, navigation, and
+configurability.
 
-To set as your default pager, export PAGER=vimpager in your shell's
-rcfile.
+To make Vimpager look for anything other than `vim', set
+VIMPAGER_VIM=nvim or VIMPAGER_VIM=gvim.
 
-See the manpage for various options. Of note, some options in your
-.vimrc can cause strange behaviour. Creating ~/.vimpagerrc will give
-you a clean ViM environment.
+To set Vimpager as your default pager, export PAGER=vimpager
+in your shell.
 
 WWW: https://github.com/rkitover/vimpager
