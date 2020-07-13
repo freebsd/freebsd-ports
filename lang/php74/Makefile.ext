@@ -144,7 +144,10 @@ USES+=	iconv:translit
 
 .if ${PHP_MODNAME} == "imap"
 PHP_MOD_PRIO=	30
-OPTIONS_DEFINE=	PANDA
+OPTIONS_RADIO=  CLIENT
+OPTIONS_RADIO_CLIENT=	CCLIENT PANDA
+OPTIONS_DEFAULT=PANDA
+CCLIENT_DESC=	Uses the original but unmaintained cclient
 PANDA_DESC=	Uses the forked panda-cclient instead of the original cclient
 
 CONFIGURE_ARGS+=--with-imap=${LOCALBASE} \

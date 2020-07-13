@@ -6,6 +6,18 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 
+20200713:
+  AFFECTS: users of mail/php7[2-4]-imap
+  AUTHOR: tz@FreeBSD.org
+
+  The imap module of PHP was compiled against cclient till now. But this lib is
+  unmaintained for over 7 years. When combined with modern OpenSSL there are
+  various crashes reported.
+
+  Switching to the fork panda-cclient fixes these issues. Therefore we make the
+  usage of Panda cclient the new default. If you want to use the old cclient,
+  you need to enable it now!
+  
 20200616:
   AFFECTS: users of www/baikal
   AUTHOR: gahr@FreeBSD.org
