@@ -1,15 +1,15 @@
---- Makefile.in.orig	2015-10-03 03:58:31 UTC
+--- Makefile.in.orig	2020-05-28 16:32:57 UTC
 +++ Makefile.in
-@@ -345,7 +345,7 @@ top_srcdir = @top_srcdir@
+@@ -358,7 +358,7 @@ top_srcdir = @top_srcdir@
  SUBDIRS = src po
  pixdir = $(datadir)/pixmaps
- pix_DATA = pixmaps/asunder.png
--EXTRA_DIST = asunder.desktop pixmaps/asunder.png syslogng
-+EXTRA_DIST = asunder.desktop pixmaps/asunder.png
+ pix_DATA = pixmaps/asunder.png pixmaps/asunder.svg
+-EXTRA_DIST = asunder.desktop pixmaps/asunder.png pixmaps/asunder.svg syslogng
++EXTRA_DIST = asunder.desktop pixmaps/asunder.png pixmaps/asunder.svg
  ACLOCAL_AMFLAGS = -I m4
  desktopdir = $(datadir)/applications
  desktop_DATA = asunder.desktop
-@@ -800,7 +800,6 @@ info-am:
+@@ -812,7 +812,6 @@ info-am:
  
  install-data-am: install-desktopDATA install-pixDATA
  	@$(NORMAL_INSTALL)
@@ -17,7 +17,7 @@
  install-dvi: install-dvi-recursive
  
  install-dvi-am:
-@@ -858,7 +857,7 @@ uninstall-am: uninstall-desktopDATA unin
+@@ -870,7 +869,7 @@ uninstall-am: uninstall-desktopDATA uninstall-pixDATA
  	distcheck distclean distclean-generic distclean-hdr \
  	distclean-tags distcleancheck distdir distuninstallcheck dvi \
  	dvi-am html html-am info info-am install install-am \
@@ -26,13 +26,13 @@
  	install-desktopDATA install-dvi install-dvi-am install-exec \
  	install-exec-am install-html install-html-am install-info \
  	install-info-am install-man install-pdf install-pdf-am \
-@@ -870,9 +869,6 @@ uninstall-am: uninstall-desktopDATA unin
- 	uninstall-pixDATA
+@@ -883,9 +882,6 @@ uninstall-am: uninstall-desktopDATA uninstall-pixDATA
  
+ .PRECIOUS: Makefile
  
+-
 -install-data-hook:
 -	cd syslogng && $(MAKE) install
--
+ 
  uninstall-hook: 
  	cd syslogng && $(MAKE) uninstall
- 

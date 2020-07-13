@@ -104,3 +104,4 @@ share/applications/asunder.desktop
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/asunder.mo
 %%NLS%%share/locale/zu/LC_MESSAGES/asunder.mo
 share/pixmaps/asunder.png
+share/pixmaps/asunder.svg
