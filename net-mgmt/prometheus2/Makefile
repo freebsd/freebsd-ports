@@ -2,7 +2,7 @@
 
 PORTNAME=	prometheus
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.19.1
+DISTVERSION=	2.19.2
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	dor.bsd@xm0.uk
@@ -56,7 +56,8 @@ LD_FLAG_STRING=		-s \
 		${LD_FLAG_X_PREFIX}.Version=${PORTVERSION} \
 		${LD_FLAG_X_PREFIX}.Revision=${PORTREVISION} \
 		${LD_FLAG_X_PREFIX}.Branch=release-${PORTVERSION:R} \
-		${LD_FLAG_X_PREFIX}.BuildUser=${BUILD_USER}
+		${LD_FLAG_X_PREFIX}.BuildUser=${BUILD_USER} \
+		${LD_FLAG_X_PREFIX}.BuildDate=${SOURCE_DATE_EPOCH:U${SOURCE_DATE_EPOCH_CMD:sh}}
 
 GO_BUILDFLAGS=	-v -ldflags "${LD_FLAG_STRING}" -tags netgo,builtinassets
 
@@ -65,6 +66,11 @@ GO_BUILDFLAGS=	-v -ldflags "${LD_FLAG_STRING}" -tags netgo,builtinassets
 GO_TARGET=	./cmd/prometheus \
 		./cmd/promtool \
 		./tsdb/cmd/tsdb:promtsdb
+
+# Bring DISTINFO_FILE into scope so we can get the timestamp.
+.include <bsd.port.pre.mk>
+
+SOURCE_DATE_EPOCH_CMD=	date -ur $$(${GREP} TIMESTAMP ${DISTINFO_FILE} | ${SED} -e 's/[^0-9]//g') '+%Y%m%d-%T'
 
 post-patch:
 	@${LN} -s ${WRKSRC_assets}/web/ui/assets_vfsdata.go \
@@ -90,4 +96,4 @@ post-install-DOCS-on:
 	cd ${WRKSRC}/docs && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
