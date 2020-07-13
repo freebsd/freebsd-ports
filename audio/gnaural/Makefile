@@ -22,4 +22,6 @@ USES=		desktop-file-utils gnome pkgconfig
 USE_CSTD=	gnu89
 USE_GNOME=	libglade2
 
+LDFLAGS+=	-lm
+
 .include <bsd.port.mk>
