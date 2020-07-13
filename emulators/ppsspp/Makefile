@@ -2,7 +2,7 @@
 
 PORTNAME=	ppsspp
 DISTVERSIONPREFIX=	v
-DISTVERSION?=	1.10.2
+DISTVERSION?=	1.10.3
 PORTREVISION?=	0
 CATEGORIES=	emulators
 # XXX Get from Debian once #697821 lands
@@ -28,7 +28,7 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils
 USE_GITHUB=	yes
 GH_ACCOUNT=	hrydgard
 GH_TUPLE?=	hrydgard:glslang:8.13.3559-76-gd0850f87:glslang/ext/glslang \
-		hrydgard:${PORTNAME}-lang:942934a:lang/assets/lang \
+		hrydgard:${PORTNAME}-lang:1c64b8f:lang/assets/lang \
 		KhronosGroup:SPIRV-Cross:2019-05-20-60-ga1f7c8dc:SPIRV/ext/SPIRV-Cross \
 		Kingcom:armips:v0.10.0-28-g7885552:armips/ext/armips
 
