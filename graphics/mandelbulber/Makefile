@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mandelbulber
-DISTVERSION=	2.21
+DISTVERSION=	2.22
 CATEGORIES=	graphics
 
 MAINTAINER=	amdmi3@FreeBSD.org
