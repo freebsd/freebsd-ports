@@ -623,7 +623,6 @@ bin/dm_zdump
 %%SITE_PERL%%/Date/Manip/TZ/amfort00.pm
 %%SITE_PERL%%/Date/Manip/TZ/amfort01.pm
 %%SITE_PERL%%/Date/Manip/TZ/amglac00.pm
-%%SITE_PERL%%/Date/Manip/TZ/amgodt00.pm
 %%SITE_PERL%%/Date/Manip/TZ/amgoos00.pm
 %%SITE_PERL%%/Date/Manip/TZ/amgran00.pm
 %%SITE_PERL%%/Date/Manip/TZ/amguat00.pm
@@ -667,6 +666,7 @@ bin/dm_zdump
 %%SITE_PERL%%/Date/Manip/TZ/amnipi00.pm
 %%SITE_PERL%%/Date/Manip/TZ/amnome00.pm
 %%SITE_PERL%%/Date/Manip/TZ/amnoro00.pm
+%%SITE_PERL%%/Date/Manip/TZ/amnuuk00.pm
 %%SITE_PERL%%/Date/Manip/TZ/amojin00.pm
 %%SITE_PERL%%/Date/Manip/TZ/ampana00.pm
 %%SITE_PERL%%/Date/Manip/TZ/ampang00.pm
