@@ -67,6 +67,7 @@
 %%DSO%%%%NAXSI%%libexec/nginx/ngx_http_naxsi_module.so
 %%DSO%%%%HTTP%%%%NJS%%libexec/nginx/ngx_http_js_module.so
 %%DSO%%%%STREAM%%%%NJS%%libexec/nginx/ngx_stream_js_module.so
+%%DSO%%%%OPENTRACING%%libexec/nginx/ngx_http_opentracing_module.so
 %%DSO%%%%PASSENGER%%libexec/nginx/ngx_http_passenger_module.so
 %%DSO%%%%POSTGRES%%libexec/nginx/ngx_postgres_module.so
 %%DSO%%%%RDS_CSV%%libexec/nginx/ngx_http_rds_csv_filter_module.so
