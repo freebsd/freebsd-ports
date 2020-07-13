@@ -1,5 +1,17 @@
 bin/skanlite
 share/applications/org.kde.skanlite.desktop
+share/doc/HTML/ca/skanlite/buttons-main.png
+share/doc/HTML/ca/skanlite/choose-scanner.png
+share/doc/HTML/ca/skanlite/final-button.png
+share/doc/HTML/ca/skanlite/index.cache.bz2
+share/doc/HTML/ca/skanlite/index.docbook
+share/doc/HTML/ca/skanlite/main-window.png
+share/doc/HTML/ca/skanlite/no-scanner-found.png
+share/doc/HTML/ca/skanlite/other-options.png
+share/doc/HTML/ca/skanlite/preview-button.png
+share/doc/HTML/ca/skanlite/scanning.png
+share/doc/HTML/ca/skanlite/settings.png
+share/doc/HTML/ca/skanlite/zoom-to-fit.png
 share/doc/HTML/de/skanlite/buttons-main.png
 share/doc/HTML/de/skanlite/final-button.png
 share/doc/HTML/de/skanlite/index.cache.bz2
@@ -58,7 +70,6 @@ share/doc/HTML/uk/skanlite/settings.png
 share/doc/HTML/uk/skanlite/zoom-in.png
 share/doc/HTML/uk/skanlite/zoom-to-fit.png
 share/locale/ar/LC_MESSAGES/skanlite.mo
-share/locale/ast/LC_MESSAGES/skanlite.mo
 share/locale/be/LC_MESSAGES/skanlite.mo
 share/locale/bg/LC_MESSAGES/skanlite.mo
 share/locale/bs/LC_MESSAGES/skanlite.mo
