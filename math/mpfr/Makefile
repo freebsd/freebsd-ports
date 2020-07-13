@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mpfr
-PORTVERSION=	4.0.2
+PORTVERSION=	4.1.0
 CATEGORIES=	math devel
 MASTER_SITES=	https://www.mpfr.org/mpfr-${PORTVERSION}/ \
 		GNU

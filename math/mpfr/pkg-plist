@@ -3,5 +3,5 @@ include/mpf2mpfr.h
 lib/libmpfr.a
 lib/libmpfr.so
 lib/libmpfr.so.6
-lib/libmpfr.so.6.0.2
+lib/libmpfr.so.6.1.0
 libdata/pkgconfig/mpfr.pc
