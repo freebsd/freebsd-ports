@@ -17,6 +17,8 @@ LICENSE=	LGPL3
 DEPRECATED=	Use py-ephem instead.
 EXPIRATION_DATE=	2020-08-04
 
+BROKEN=		fails to compile
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ephem==${PORTVERSION}:astro/py-ephem@${PY_FLAVOR}
 
 USES=		python
