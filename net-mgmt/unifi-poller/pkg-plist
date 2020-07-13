@@ -1,0 +1,12 @@
+bin/unifi-poller
+etc/rc.d/unifi-poller
+@sample etc/unifi-poller/up.conf.sample
+share/doc/unifi-poller/LICENSE
+share/doc/unifi-poller/MANUAL.md
+share/doc/unifi-poller/MANUAL.html
+share/doc/unifi-poller/README.md
+share/doc/unifi-poller/up.conf.example
+share/doc/unifi-poller/up.json.example
+share/doc/unifi-poller/up.xml.example
+share/doc/unifi-poller/up.yaml.example
+man/man1/unifi-poller.1.gz
