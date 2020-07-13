@@ -1,0 +1,56 @@
+Drop after multimedia/libva is updated to 2.9.0.
+
+media_driver/linux/common/ddi/media_libva.cpp:3849:23: error: use of undeclared identifier 'VA_TIMEOUT_INFINITE'
+    if (timeout_ns == VA_TIMEOUT_INFINITE)
+                      ^
+media_driver/linux/common/ddi/media_libva.cpp:3856:20: error: use of undeclared identifier 'VA_STATUS_ERROR_TIMEDOUT'
+            return VA_STATUS_ERROR_TIMEDOUT;
+                   ^
+media_driver/linux/common/ddi/media_libva.cpp:3884:24: error: use of undeclared identifier 'VA_STATUS_ERROR_TIMEDOUT'
+                return VA_STATUS_ERROR_TIMEDOUT;
+                       ^
+media_driver/linux/common/ddi/media_libva.cpp:3917:23: error: use of undeclared identifier 'VA_TIMEOUT_INFINITE'
+    if (timeout_ns == VA_TIMEOUT_INFINITE)
+                      ^
+media_driver/linux/common/ddi/media_libva.cpp:3924:20: error: use of undeclared identifier 'VA_STATUS_ERROR_TIMEDOUT'
+            return VA_STATUS_ERROR_TIMEDOUT;
+                   ^
+media_driver/linux/common/ddi/media_libva.cpp:3952:24: error: use of undeclared identifier 'VA_STATUS_ERROR_TIMEDOUT'
+                return VA_STATUS_ERROR_TIMEDOUT;
+                       ^
+media_driver/linux/common/ddi/media_libva.cpp:6764:14: error: no member named 'vaSyncSurface2' in 'VADriverVTable'
+    pVTable->vaSyncSurface2                  = DdiMedia_SyncSurface2;
+    ~~~~~~~  ^
+media_driver/linux/common/ddi/media_libva.cpp:6765:14: error: no member named 'vaSyncBuffer' in 'VADriverVTable'
+    pVTable->vaSyncBuffer                    = DdiMedia_SyncBuffer;
+    ~~~~~~~  ^
+
+--- media_driver/linux/common/ddi/media_libva.cpp.orig	2020-07-09 08:40:46 UTC
++++ media_driver/linux/common/ddi/media_libva.cpp
+@@ -3815,6 +3815,7 @@ static VAStatus DdiMedia_SyncSurface (
+     return DdiMedia_StatusCheck(mediaCtx, surface, render_target);
+ }
+ 
++#if VA_CHECK_VERSION(1,9,0)
+ /*
+  * This function blocks until all pending operations on the surface have been 
+  * completed or exceed timeout.  Upon return it is safe to use the render target for a
+@@ -3956,6 +3957,7 @@ static VAStatus DdiMedia_SyncBuffer (
+ 
+     return VA_STATUS_SUCCESS;
+ }
++#endif
+ 
+ /*
+  * Find out any pending ops on the render target
+@@ -6761,8 +6763,10 @@ VAStatus __vaDriverInit(VADriverContextP ctx )
+     pVTable->vaRenderPicture                 = DdiMedia_RenderPicture;
+     pVTable->vaEndPicture                    = DdiMedia_EndPicture;
+     pVTable->vaSyncSurface                   = DdiMedia_SyncSurface;
++#if VA_CHECK_VERSION(1,9,0)
+     pVTable->vaSyncSurface2                  = DdiMedia_SyncSurface2;
+     pVTable->vaSyncBuffer                    = DdiMedia_SyncBuffer;
++#endif
+     pVTable->vaQuerySurfaceStatus            = DdiMedia_QuerySurfaceStatus;
+     pVTable->vaQuerySurfaceError             = DdiMedia_QuerySurfaceError;
+     pVTable->vaQuerySurfaceAttributes        = DdiMedia_QuerySurfaceAttributes;
