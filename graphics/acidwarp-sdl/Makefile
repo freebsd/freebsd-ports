@@ -17,6 +17,8 @@ GH_ACCOUNT=	dreamlayers
 GH_PROJECT=	acidwarp
 GH_TAGNAME=	698c4e1
 
+PORTSCOUT=	skipv:svgalib-port,original,old-sdl-port
+
 PLIST_FILES=	bin/acidwarp \
 		share/applications/acidwarp.desktop \
 		share/pixmaps/acidwarp.png
