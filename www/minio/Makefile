@@ -13,8 +13,8 @@ LICENSE=	APACHE20
 USES=		compiler go:modules
 
 USE_GITHUB=	yes
-GHTAG=		RELEASE.2020-07-02T00-15-09Z
-COMMIT_ID=	11021b6a002c8ea32f8849f91ddd5e5c2aa47198
+GHTAG=		RELEASE.2020-07-12T19-14-17Z
+COMMIT_ID=	60d91234b9746d56fdca8aee82c1f10fa03bc757
 GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		Azure:azure-pipeline-go:v0.2.1:azure_azure_pipeline_go/vendor/github.com/Azure/azure-pipeline-go \
 		Azure:azure-storage-blob-go:v0.8.0:azure_azure_storage_blob_go/vendor/github.com/Azure/azure-storage-blob-go \
@@ -31,46 +31,49 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		cheggaaa:pb:v1.0.28:cheggaaa_pb/vendor/github.com/cheggaaa/pb \
 		colinmarc:hdfs:v2.1.1:colinmarc_hdfs_v2/vendor/github.com/colinmarc/hdfs/v2 \
 		coredns:coredns:v1.4.0:coredns_coredns/vendor/github.com/coredns/coredns \
-		coreos:etcd:v3.3.12:coreos_etcd/vendor/github.com/coreos/etcd \
+		coreos:go-semver:v0.2.0:coreos_go_semver/vendor/github.com/coreos/go-semver \
+		coreos:go-systemd:v22.0.0:coreos_go_systemd_v22/vendor/github.com/coreos/go-systemd/v22 \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
+		dchest:siphash:v1.2.1:dchest_siphash/vendor/github.com/dchest/siphash \
 		dgrijalva:jwt-go:v3.2.0:dgrijalva_jwt_go/vendor/github.com/dgrijalva/jwt-go \
 		djherbis:atime:v1.0.0:djherbis_atime/vendor/github.com/djherbis/atime \
 		dustin:go-humanize:v1.0.0:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
-		eapache:go-resiliency:v1.2.0:eapache_go_resiliency/vendor/github.com/eapache/go-resiliency \
+		eapache:go-resiliency:v1.1.0:eapache_go_resiliency/vendor/github.com/eapache/go-resiliency \
 		eapache:go-xerial-snappy:776d5712da21:eapache_go_xerial_snappy/vendor/github.com/eapache/go-xerial-snappy \
 		eapache:queue:v1.1.0:eapache_queue/vendor/github.com/eapache/queue \
 		eclipse:paho.mqtt.golang:v1.2.0:eclipse_paho_mqtt_golang/vendor/github.com/eclipse/paho.mqtt.golang \
 		elazarl:go-bindata-assetfs:v1.0.0:elazarl_go_bindata_assetfs/vendor/github.com/elazarl/go-bindata-assetfs \
+		etcd-io:etcd:58bb8ae09f8e:etcd_io_etcd/vendor/go.etcd.io/etcd/v3 \
 		fatih:color:v1.7.0:fatih_color/vendor/github.com/fatih/color \
 		fatih:structs:v1.1.0:fatih_structs/vendor/github.com/fatih/structs \
 		go-asn1-ber:asn1-ber:f715ec2f112d:go_asn1_ber_asn1_ber/vendor/gopkg.in/asn1-ber.v1 \
-		go-ini:ini:v1.57.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
+		go-ini:ini:v1.42.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
 		go-ldap:ldap:v3.0.3:go_ldap_ldap/vendor/gopkg.in/ldap.v3 \
 		go-ole:go-ole:v1.2.4:go_ole_go_ole/vendor/github.com/go-ole/go-ole \
 		go-sql-driver:mysql:v1.5.0:go_sql_driver_mysql/vendor/github.com/go-sql-driver/mysql \
 		go-yaml:yaml:v2.2.8:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
-		gogo:protobuf:v1.2.1:gogo_protobuf/vendor/github.com/gogo/protobuf \
-		golang:appengine:v1.6.0:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:70a84ac30bf9:golang_crypto/vendor/golang.org/x/crypto \
+		gogo:protobuf:v1.3.1:gogo_protobuf/vendor/github.com/gogo/protobuf \
+		golang:appengine:v1.4.0:golang_appengine/vendor/google.golang.org/appengine \
+		golang:crypto:75b288015ac9:golang_crypto/vendor/golang.org/x/crypto \
 		golang:net:627f9648deb9:golang_net/vendor/golang.org/x/net \
-		golang:oauth2:9f3314589c9a:golang_oauth2/vendor/golang.org/x/oauth2 \
-		golang:protobuf:v1.3.2:golang_protobuf/vendor/github.com/golang/protobuf \
+		golang:oauth2:e64efc72b421:golang_oauth2/vendor/golang.org/x/oauth2 \
+		golang:protobuf:v1.4.0:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:snappy:v0.0.1:golang_snappy/vendor/github.com/golang/snappy \
 		golang:sys:226ff32320da:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
 		golang:time:9d24e82272b4:golang_time/vendor/golang.org/x/time \
-		golang:tools:ed308ab3e770:golang_tools/vendor/golang.org/x/tools \
+		golang:tools:8463f397d07c:golang_tools/vendor/golang.org/x/tools \
 		golang:xerrors:9bdfabe68543:golang_xerrors/vendor/golang.org/x/xerrors \
 		gomodule:redigo:v2.0.0:gomodule_redigo/vendor/github.com/gomodule/redigo \
-		google:go-genproto:d00d292a067c:google_go_genproto/vendor/google.golang.org/genproto \
+		google:go-genproto:24fa4b261c55:google_go_genproto/vendor/google.golang.org/genproto \
 		google:uuid:v1.1.1:google_uuid/vendor/github.com/google/uuid \
 		googleapis:gax-go:v2.0.4:googleapis_gax_go_v2/vendor/github.com/googleapis/gax-go \
 		googleapis:google-api-go-client:v0.5.0:googleapis_google_api_go_client/vendor/google.golang.org/api \
 		googleapis:google-cloud-go:v0.39.0:googleapis_google_cloud_go/vendor/cloud.google.com/go \
 		gorilla:handlers:v1.4.2:gorilla_handlers/vendor/github.com/gorilla/handlers \
-		gorilla:mux:v1.7.4:gorilla_mux/vendor/github.com/gorilla/mux \
+		gorilla:mux:98cb6bf42e08:gorilla_mux/vendor/github.com/gorilla/mux \
 		gorilla:rpc:v1.2.0:gorilla_rpc/vendor/github.com/gorilla/rpc \
-		grpc:grpc-go:v1.22.0:grpc_grpc_go/vendor/google.golang.org/grpc \
+		grpc:grpc-go:v1.26.0:grpc_grpc_go/vendor/google.golang.org/grpc \
 		hashicorp:errwrap:v1.0.0:hashicorp_errwrap/vendor/github.com/hashicorp/errwrap \
 		hashicorp:go-cleanhttp:v0.5.1:hashicorp_go_cleanhttp/vendor/github.com/hashicorp/go-cleanhttp \
 		hashicorp:go-multierror:v1.0.0:hashicorp_go_multierror/vendor/github.com/hashicorp/go-multierror \
@@ -97,45 +100,45 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		klauspost:readahead:v1.3.1:klauspost_readahead/vendor/github.com/klauspost/readahead \
 		klauspost:reedsolomon:v1.9.9:klauspost_reedsolomon/vendor/github.com/klauspost/reedsolomon \
 		konsorten:go-windows-terminal-sequences:v1.0.1:konsorten_go_windows_terminal_sequences/vendor/github.com/konsorten/go-windows-terminal-sequences \
-		lib:pq:v1.1.1:lib_pq/vendor/github.com/lib/pq \
+		lib:pq:v1.7.0:lib_pq/vendor/github.com/lib/pq \
 		mailru:easyjson:03f2033d19d5:mailru_easyjson/vendor/github.com/mailru/easyjson \
 		mattn:go-colorable:v0.1.4:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
-		mattn:go-ieproxy:f9202b1cfdeb:mattn_go_ieproxy/vendor/github.com/mattn/go-ieproxy \
+		mattn:go-ieproxy:v0.0.1:mattn_go_ieproxy/vendor/github.com/mattn/go-ieproxy \
 		mattn:go-isatty:v0.0.8:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
-		mattn:go-runewidth:v0.0.4:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
+		mattn:go-runewidth:v0.0.2:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
 		matttproud:golang_protobuf_extensions:v1.0.1:matttproud_golang_protobuf_extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
 		miekg:dns:v1.1.8:miekg_dns/vendor/github.com/miekg/dns \
 		minio:cli:v1.22.0:minio_cli/vendor/github.com/minio/cli \
 		minio:highwayhash:v1.0.0:minio_highwayhash/vendor/github.com/minio/highwayhash \
 		minio:md5-simd:v1.1.0:minio_md5_simd/vendor/github.com/minio/md5-simd \
 		minio:minio-go:a57fec8037ec:minio_minio_go_v6/vendor/github.com/minio/minio-go/v6 \
-		minio:parquet-go:838cfa8aae61:minio_parquet_go/vendor/github.com/minio/parquet-go \
 		minio:sha256-simd:v0.1.1:minio_sha256_simd/vendor/github.com/minio/sha256-simd \
 		minio:simdjson-go:b17fe061ea37:minio_simdjson_go/vendor/github.com/minio/simdjson-go \
 		minio:sio:v0.2.0:minio_sio/vendor/github.com/minio/sio \
 		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
 		mitchellh:mapstructure:v1.1.2:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
-		mmcloughlin:avo:6df701fe672f:mmcloughlin_avo/vendor/github.com/mmcloughlin/avo \
+		mmcloughlin:avo:4439b6b2c061:mmcloughlin_avo/vendor/github.com/mmcloughlin/avo \
 		modern-go:concurrent:bacd9c7ef1dd:modern_go_concurrent/vendor/github.com/modern-go/concurrent \
 		modern-go:reflect2:v1.0.1:modern_go_reflect2/vendor/github.com/modern-go/reflect2 \
 		montanaflynn:stats:v0.5.0:montanaflynn_stats/vendor/github.com/montanaflynn/stats \
 		nats-io:jwt:v0.3.2:nats_io_jwt/vendor/github.com/nats-io/jwt \
-		nats-io:nats-server:v2.1.2:nats_io_nats_server_v2/vendor/github.com/nats-io/nats-server/v2 \
-		nats-io:nats.go:v1.9.1:nats_io_nats_go/vendor/github.com/nats-io/nats.go \
-		nats-io:nkeys:v0.1.3:nats_io_nkeys/vendor/github.com/nats-io/nkeys \
+		nats-io:nats-server:v2.1.7:nats_io_nats_server_v2/vendor/github.com/nats-io/nats-server/v2 \
+		nats-io:nats.go:v1.10.0:nats_io_nats_go/vendor/github.com/nats-io/nats.go \
+		nats-io:nkeys:v0.1.4:nats_io_nkeys/vendor/github.com/nats-io/nkeys \
 		nats-io:nuid:v1.0.1:nats_io_nuid/vendor/github.com/nats-io/nuid \
-		nats-io:stan.go:v0.4.5:nats_io_stan_go/vendor/github.com/nats-io/stan.go \
+		nats-io:stan.go:v0.7.0:nats_io_stan_go/vendor/github.com/nats-io/stan.go \
 		ncw:directio:v1.0.5:ncw_directio/vendor/github.com/ncw/directio \
 		nsqio:go-nsq:v1.0.7:nsqio_go_nsq/vendor/github.com/nsqio/go-nsq \
 		olivere:elastic:v5.0.80:olivere_elastic/vendor/gopkg.in/olivere/elastic.v5 \
 		philhofer:fwd:v1.0.0:philhofer_fwd/vendor/github.com/philhofer/fwd \
 		pierrec:lz4:v2.4.0:pierrec_lz4/vendor/github.com/pierrec/lz4 \
 		pkg:errors:v0.8.1:pkg_errors/vendor/github.com/pkg/errors \
-		prometheus:client_golang:v0.9.3:prometheus_client_golang/vendor/github.com/prometheus/client_golang \
-		prometheus:client_model:fd36f4220a90:prometheus_client_model/vendor/github.com/prometheus/client_model \
-		prometheus:common:v0.4.0:prometheus_common/vendor/github.com/prometheus/common \
-		prometheus:procfs:5867b95ac084:prometheus_procfs/vendor/github.com/prometheus/procfs \
-		rcrowley:go-metrics:9c2d0518ed81:rcrowley_go_metrics/vendor/github.com/rcrowley/go-metrics \
+		prometheus:client_golang:v1.0.0:prometheus_client_golang/vendor/github.com/prometheus/client_golang \
+		prometheus:client_model:14fe0d1b01d4:prometheus_client_model/vendor/github.com/prometheus/client_model \
+		prometheus:common:v0.4.1:prometheus_common/vendor/github.com/prometheus/common \
+		prometheus:procfs:v0.0.8:prometheus_procfs/vendor/github.com/prometheus/procfs \
+		protocolbuffers:protobuf-go:v1.22.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
+		rcrowley:go-metrics:3113b8401b8a:rcrowley_go_metrics/vendor/github.com/rcrowley/go-metrics \
 		rjeczalik:notify:v0.9.2:rjeczalik_notify/vendor/github.com/rjeczalik/notify \
 		rs:cors:v1.7.0:rs_cors/vendor/github.com/rs/cors \
 		ryanuber:go-glob:v1.0.0:ryanuber_go_glob/vendor/github.com/ryanuber/go-glob \
@@ -149,7 +152,10 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		tidwall:match:v1.0.1:tidwall_match/vendor/github.com/tidwall/match \
 		tidwall:pretty:v1.0.0:tidwall_pretty/vendor/github.com/tidwall/pretty \
 		tidwall:sjson:v1.0.4:tidwall_sjson/vendor/github.com/tidwall/sjson \
-		tinylib:msgp:v1.1.1:tinylib_msgp/vendor/github.com/tinylib/msgp \
+		tinylib:msgp:v1.1.2:tinylib_msgp/vendor/github.com/tinylib/msgp \
+		uber-go:atomic:v1.6.0:uber_go_atomic/vendor/go.uber.org/atomic \
+		uber-go:multierr:v1.5.0:uber_go_multierr/vendor/go.uber.org/multierr \
+		uber-go:zap:v1.14.1:uber_go_zap/vendor/go.uber.org/zap \
 		valyala:tcplisten:ceec8f93295a:valyala_tcplisten/vendor/github.com/valyala/tcplisten \
 		willf:bitset:v1.1.10:willf_bitset/vendor/github.com/willf/bitset \
 		willf:bloom:v2.0.3:willf_bloom/vendor/github.com/willf/bloom \
@@ -160,6 +166,7 @@ GO_BUILDFLAGS=	-ldflags=' \
 		-X github.com/minio/minio/cmd.Version=${GH_TAGNAME:C/RELEASE\.//:C|(..)-(..)-(..)Z|\1:\2:\3Z|} \
 		-X github.com/minio/minio/cmd.ReleaseTag=${GH_TAGNAME} \
 		-X github.com/minio/minio/cmd.CommitID=${COMMIT_ID} \
+		-X github.com/minio/minio/cmd.ShortCommitID=${COMMIT_ID:C|(............).*|\1|} \
 		-X github.com/minio/minio/cmd.GOPATH=${WRKSRC} -s -w'
 
 PLIST_FILES=	bin/${PORTNAME}
@@ -175,7 +182,6 @@ GROUPS=		${MINIO_GROUP}
 SUB_LIST=	DBDIR=${MINIO_DBDIR} \
 		GROUP="${GROUPS}" \
 		USER="${USERS}"
-
 
 post-extract:
 	@${RM} -r ${WRKSRC}/vendor/github.com/hashicorp/vault/sdk
