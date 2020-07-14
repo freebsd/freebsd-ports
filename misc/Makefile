@@ -93,6 +93,7 @@
     SUBDIR += exercism
     SUBDIR += explosions
     SUBDIR += ezc3d
+    SUBDIR += far2l
     SUBDIR += felis
     SUBDIR += figlet
     SUBDIR += figlet-fonts
