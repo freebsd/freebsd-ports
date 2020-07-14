@@ -1,6 +1,7 @@
 bin/musikcube
 bin/musikcubed
 include/musikcube/core/sdk/DataBuffer.h
+include/musikcube/core/sdk/Filesystem.h
 include/musikcube/core/sdk/HttpClient.h
 include/musikcube/core/sdk/IAnalyzer.h
 include/musikcube/core/sdk/IBlockingEncoder.h
@@ -40,6 +41,7 @@ include/musikcube/core/sdk/ITrackListEditor.h
 include/musikcube/core/sdk/IValue.h
 include/musikcube/core/sdk/IValueList.h
 include/musikcube/core/sdk/IVisualizer.h
+include/musikcube/core/sdk/String.h
 include/musikcube/core/sdk/constants.h
 %%DATADIR%%/libmusikcore.so
 %%DATADIR%%/locales/en_US.json
