@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pre-commit
-PORTVERSION=	1.18.3
+PORTVERSION=	1.21.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,7 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aspy.yaml>=0:devel/py-aspy.yaml@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}toml>=0:textproc/py-toml@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}virtualenv>=1.15.2:devel/py-virtualenv@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}virtualenv>=15.2:devel/py-virtualenv@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR}
 
 USES=		python shebangfix

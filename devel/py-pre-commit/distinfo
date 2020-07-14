@@ -1,3 +1,3 @@
-TIMESTAMP = 1570806178
-SHA256 (pre_commit-1.18.3.tar.gz) = 1d3c0587bda7c4e537a46c27f2c84aa006acc18facf9970bf947df596ce91f3f
-SIZE (pre_commit-1.18.3.tar.gz) = 133471
+TIMESTAMP = 1594693753
+SHA256 (pre_commit-1.21.0.tar.gz) = 8f48d8637bdae6fa70cc97db9c1dd5aa7c5c8bf71968932a380628c25978b850
+SIZE (pre_commit-1.21.0.tar.gz) = 145595
