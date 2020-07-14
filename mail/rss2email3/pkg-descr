@@ -5,4 +5,4 @@ generally run via cron, but can be run manually as well.
 This is a python 3 rewrite of the original rss2email project by
 Lindsey Smith at AllThingsRSS. It does not run on python 2.
 
-WWW: https://github.com/wking/rss2email
+WWW: https://github.com/rss2email/rss2email
