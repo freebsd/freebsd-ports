@@ -12,7 +12,7 @@ COMMENT=	Python TAXII client implementation from EclecticIQ
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}furl>0:devel/py-furl@${PY_FLAVOR}

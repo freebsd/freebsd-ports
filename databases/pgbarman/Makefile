@@ -20,7 +20,7 @@ RUN_DEPENDS=	rsync:net/rsync						\
 		${PYTHON_PKGNAMEPREFIX}argh>=0.21.2:devel/py-argh@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}argcomplete>0:devel/py-argcomplete@${PY_FLAVOR}
 
-USES=		pgsql python
+USES=		pgsql python:3.6+
 USE_PYTHON=	autoplist distutils concurrent optsuffix
 
 WANT_PGSQL=	client

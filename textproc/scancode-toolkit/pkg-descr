@@ -1,5 +1,0 @@
-ScanCode scans code and detects licenses, copyrights, package manifests,
-dependencies and more. It can be also used to discover and inventory open source
-and third-party packages used in your code.
-
-WWW: https://github.com/nexB/scancode-toolkit

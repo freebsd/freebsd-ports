@@ -18,12 +18,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonpatch>0:devel/py-jsonpatch@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonschema>=3.0:devel/py-jsonschema@${PY_FLAVOR}
 
-py27_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}importlib-resources>=1.0.2:devel/py-importlib-resources@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}pathlib2>=2.3.0:devel/py-pathlib2@${PY_FLAVOR}
-py35_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}importlib-resources>=1.0.2:devel/py-importlib-resources@${PY_FLAVOR}
 py36_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}importlib-resources>=1.0.2:devel/py-importlib-resources@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-fixture-config>0:devel/py-pytest-fixt
 		${PYTHON_PKGNAMEPREFIX}pytest>=4.4.0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}virtualenv>0:devel/py-virtualenv@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.6+
 
 USE_PYTHON=	autoplist concurrent distutils
 

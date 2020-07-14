@@ -25,15 +25,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aspy.yaml>=0:devel/py-aspy.yaml@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}virtualenv>=15.2:devel/py-virtualenv@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR}
 
-USES=		python shebangfix
+USES=		python:3.6+ shebangfix
 USE_PYTHON=	autoplist distutils
 
 SHEBANG_FILES=	pre_commit/resources/hook-tmpl
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 3200
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}futures>=0:devel/py-futures@${PY_FLAVOR}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

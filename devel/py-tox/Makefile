@@ -25,7 +25,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=3.0.0,<5:devel/py-pytest@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}pytest-xdist>=1.22.2,<2:devel/py-pytest-xdist@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}freezegun>=0.3.11,<1:devel/py-freezegun@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

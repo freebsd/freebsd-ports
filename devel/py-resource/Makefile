@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonform>=0.0.2:devel/py-jsonform@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}jsonsir>=0.0.2:devel/py-jsonsir@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-easyconfig>=0.1.0:devel/py-python-easyconfig@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

@@ -1680,7 +1680,6 @@
     SUBDIR += saxon-devel
     SUBDIR += saxon-he
     SUBDIR += sc-aspell
-    SUBDIR += scancode-toolkit
     SUBDIR += scdoc
     SUBDIR += scew
     SUBDIR += scim

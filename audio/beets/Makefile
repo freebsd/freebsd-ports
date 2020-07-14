@@ -25,7 +25,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}confuse>=1.0.0:devel/py-confuse@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}yaml>=0:devel/py-yaml@${PY_FLAVOR} \
 		${PY_ENUM34}
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist distutils optsuffix
 
 PLIST_FILES=	man/man1/beet.1.gz man/man5/beetsconfig.5.gz
