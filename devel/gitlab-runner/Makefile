@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-runner
-PORTVERSION=	12.6.0
+PORTVERSION=	13.1.1
 CATEGORIES=	devel
 MASTER_SITES=	https://gitlab-runner-downloads.s3.amazonaws.com/master/docker/:dockerx64 \
 		https://gitlab-runner-downloads.s3.amazonaws.com/master/docker/:dockerarm
@@ -29,14 +29,15 @@ USE_GITHUB=	nodefault
 # Find tags here:
 # https://gitlab.com/gitlab-org/gitlab-runner/tags
 GL_ACCOUNT=	gitlab-org
-GL_COMMIT=	ac8e767ac77b0be4ad5dc9e6a5566a714512bba3
-GITBRANCH=	12-6-stable
+GL_COMMIT=	6fbc747426d91528fcc5a7a3b47b2ef3e430bd3a
+GITBRANCH=	13-1-stable
 # https://gitlab-runner-downloads.s3.amazonaws.com/latest/binaries/gitlab-runner-freebsd-amd64
-BUILT=		2019-12-22T11:55:36+0000
+BUILT=		2020-07-14T19:00:00+0000
 
 GH_TUPLE=	beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
+		go-ini:ini:v1.52.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
 		go-inf:inf:v0.9.0:go_inf_inf/vendor/gopkg.in/inf.v0 \
-		go-yaml:yaml:v2.2.4:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
+		go-yaml:yaml:v2.2.8:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		golang:appengine:v1.6.1:golang_appengine/vendor/google.golang.org/appengine \
 		google:go-genproto:c23dd37a84c9:google_go_genproto/vendor/google.golang.org/genproto \
 		googleapis:google-api-go-client:v0.14.0:googleapis_google_api_go_client/vendor/google.golang.org/api \
@@ -49,6 +50,7 @@ GH_TUPLE=	beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 		kubernetes:utils:69764acb6e8e:kubernetes_utils/vendor/k8s.io/utils \
 		kubernetes-sigs:yaml:v1.1.0:kubernetes_sigs_yaml/vendor/sigs.k8s.io/yaml \
 		ayufan:golang-kardianos-service:0c8eb6d8fff2:ayufan_golang_kardianos_service/vendor/github.com/ayufan/golang-kardianos-service \
+		bmatcuk:doublestar:v1.3.0:bmatcuk_doublestar/vendor/github.com/bmatcuk/doublestar \
 		Azure:go-ansiterm:d6e3b3328b78:azure_go_ansiterm/vendor/github.com/Azure/go-ansiterm \
 		Azure:go-autorest:v13.3.1:azure_go_autorest/vendor/github.com/Azure/go-autorest \
 		BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/toml \
@@ -69,19 +71,19 @@ GH_TUPLE=	beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 		docker:spdystream:449fdfce4d96:docker_spdystream/vendor/github.com/docker/spdystream \
 		fullsailor:pkcs7:d7302db945fa:fullsailor_pkcs7/vendor/github.com/fullsailor/pkcs7 \
 		getsentry:raven-go:dffeb57df75d:getsentry_raven_go/vendor/github.com/getsentry/raven-go \
-		go-ini:ini:v1.28.2:go_ini_ini/vendor/github.com/go-ini/ini \
 		gogo:protobuf:v1.1.1:gogo_protobuf/vendor/github.com/gogo/protobuf \
-		golang:crypto:f99c8df09eb5:golang_crypto/vendor/golang.org/x/crypto \
+		golang:crypto:2aa609cf4a9d:golang_crypto/vendor/golang.org/x/crypto \
 		golang:exp:a1ab85dbe136:golang_exp/vendor/golang.org/x/exp \
 		golang:lint:fdd1cda4f05f:golang_lint/vendor/golang.org/x/lint \
 		golang:mock:v1.3.1:golang_mock/vendor/github.com/golang/mock \
-		golang:net:3b0461eec859:golang_net/vendor/golang.org/x/net \
+		golang:net:5a598a2470a0:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:0f29369cfe45:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.3.2:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:cbf593c0f2f3:golang_sys/vendor/golang.org/x/sys \
+		golang:sync:112230192c58:golang_sync/vendor/golang.org/x/sync \
+		golang:sys:d5e6a3e2c0ae:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
 		golang:time:9d24e82272b4:golang_time/vendor/golang.org/x/time \
-		golang:tools:b0650ceb63d9:golang_tools/vendor/golang.org/x/tools \
+		golang:tools:345141a36859:golang_tools/vendor/golang.org/x/tools \
 		google:gofuzz:v1.0.0:google_gofuzz/vendor/github.com/google/gofuzz \
 		googleapis:gax-go:v2.0.5:googleapis_gax_go/vendor/github.com/googleapis/gax-go \
 		googleapis:gnostic:v0.1.0:googleapis_gnostic/vendor/github.com/googleapis/gnostic \
@@ -90,19 +92,19 @@ GH_TUPLE=	beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 		gorilla:context:v1.1.1:gorilla_context/vendor/github.com/gorilla/context \
 		gorilla:mux:599cba5e7b61:gorilla_mux/vendor/github.com/gorilla/mux \
 		gorilla:websocket:v1.4.0:gorilla_websocket/vendor/github.com/gorilla/websocket \
-		hashicorp:go-version:03c5bf6be031:hashicorp_go_version/vendor/github.com/hashicorp/go-version \
+		hashicorp:go-version:v1.2.0:hashicorp_go_version/vendor/github.com/hashicorp/go-version \
 		hashicorp:golang-lru:v0.5.1:hashicorp_golang_lru/vendor/github.com/hashicorp/golang-lru \
 		imdario:mergo:v0.3.7:imdario_mergo/vendor/github.com/imdario/mergo \
 		jpillora:backoff:06c7a16c845d:jpillora_backoff/vendor/github.com/jpillora/backoff \
 		json-iterator:go:v1.1.7:json_iterator_go/vendor/github.com/json-iterator/go \
 		jstemmer:go-junit-report:af01ea7f8024:jstemmer_go_junit_report/vendor/github.com/jstemmer/go-junit-report \
 		kardianos:osext:c2c54e542fb7:kardianos_osext/vendor/github.com/kardianos/osext \
-		konsorten:go-windows-terminal-sequences:v1.0.1:konsorten_go_windows_terminal_sequences/vendor/github.com/konsorten/go-windows-terminal-sequences \
+		konsorten:go-windows-terminal-sequences:v1.0.2:konsorten_go_windows_terminal_sequences/vendor/github.com/konsorten/go-windows-terminal-sequences \
 		kr:pty:v1.1.1:kr_pty/vendor/github.com/kr/pty \
 		markelog:trie:098fa99650c0:markelog_trie/vendor/github.com/markelog/trie \
-		mattn:go-zglob:v0.0.1:mattn_go_zglob/vendor/github.com/mattn/go-zglob \
 		matttproud:golang_protobuf_extensions:v1.0.1:matttproud_golang_protobuf_extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
-		minio:minio-go:4e0f567303d4:minio_minio_go/vendor/github.com/minio/minio-go \
+		minio:minio-go:v6.0.49:minio_minio_go/vendor/github.com/minio/minio-go \
+		mitchellh:gox:v1.0.1:mitchellh_gox/vendor/github.com/mitchellh/gox \
 		modern-go:concurrent:bacd9c7ef1dd:modern_go_concurrent/vendor/github.com/modern-go/concurrent \
 		modern-go:reflect2:v1.0.1:modern_go_reflect2/vendor/github.com/modern-go/reflect2 \
 		opencontainers:go-digest:v1.0.0-rc1:opencontainers_go_digest/vendor/github.com/opencontainers/go-digest \
@@ -116,8 +118,8 @@ GH_TUPLE=	beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 		prometheus:procfs:v0.0.5:prometheus_procfs/vendor/github.com/prometheus/procfs \
 		sirupsen:logrus:v1.4.2:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		spf13:pflag:4c012f6dcd95:spf13_pflag/vendor/github.com/spf13/pflag \
-		stretchr:objx:v0.1.1:stretchr_objx/vendor/github.com/stretchr/objx \
-		stretchr:testify:v1.3.0:stretchr_testify/vendor/github.com/stretchr/testify \
+		stretchr:objx:v0.2.0:stretchr_objx/vendor/github.com/stretchr/objx \
+		stretchr:testify:v1.4.0:stretchr_testify/vendor/github.com/stretchr/testify \
 		tevino:abool:3c25f2fe7cd0:tevino_abool/vendor/github.com/tevino/abool \
 		urfave:cli:v1.20.0:urfave_cli/vendor/github.com/urfave/cli \
 		dominikh:go-tools:afd67930eec2a9ed3e9b19f684d17a062285f16a:gotools/vendor/honnef.co/go/tools \
