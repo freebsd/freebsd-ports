@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xed
-PORTVERSION=	2.6.0
+PORTVERSION=	2.6.2
 CATEGORIES=	editors
 
 MAINTAINER=	danfe@FreeBSD.org

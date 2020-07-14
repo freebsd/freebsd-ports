@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xviewer
-PORTVERSION=	2.6.0
+PORTVERSION=	2.6.2
 CATEGORIES=	graphics
 
 MAINTAINER=	danfe@FreeBSD.org
