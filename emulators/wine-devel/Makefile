@@ -104,8 +104,8 @@ OPENAL_USES=		openal
 
 STAGING_BROKEN=		fails to build
 STAGING_MASTER_SITES=	https://github.com/wine-staging/wine-staging/archive/:staging
-COMP_DIST=	v${DISTVERSION}.tar.gz
-STAGING_DISTFILES=	${COMP_DIST}:staging
+STAGING_DIST=		v${DISTVERSION}.tar.gz
+STAGING_DISTFILES=	${STAGING_DIST}:staging
 STAGING_EXTRACT_DEPENDS=	bash:shells/bash \
 				git:devel/git \
 				autoconf>0:devel/autoconf
@@ -163,7 +163,7 @@ PLIST_SUB+=		WINE32="" WINE64="@comment "
 .endif
 
 post-extract-STAGING-on: fix-shebang
-	cd ${WRKSRC} && ${TAR} xf ${DISTDIR}/${COMP_DIST} --strip-components 1
+	cd ${WRKSRC} && ${TAR} xf ${DISTDIR}/${STAGING_DIST} --strip-components 1
 	cd ${WRKSRC} && bash ./patches/patchinstall.sh --backend=patch DESTDIR=${WRKSRC} --all
 
 pre-build:
