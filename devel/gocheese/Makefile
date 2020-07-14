@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	gocheese
-PORTVERSION=	2.2.0
+PORTVERSION=	2.3.0
 CATEGORIES=	devel python
-MASTER_SITES=	http://gocheese.cypherpunks.ru/
+MASTER_SITES=	http://www.gocheese.cypherpunks.ru/
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Python private package repository and caching proxy
