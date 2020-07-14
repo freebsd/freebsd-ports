@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	envconsul
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -24,7 +24,7 @@ GH_TUPLE=	hashicorp:${PORTNAME}:${DISTVERSIONPREFIX}${PORTVERSION}:DEFAULT/src/g
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
 		golang:time:9d24e82272b4:golang_time/vendor/golang.org/x/time \
 		hashicorp:consul-template:v0.21.0:hashicorp_consul_template/vendor/github.com/hashicorp/consul-template \
-		hashicorp:consul:v1.1.0:hashicorp_consul/vendor/github.com/hashicorp/consul \
+		hashicorp:consul:v1.1.0:hashicorp_consul_api/vendor/github.com/hashicorp/consul \
 		hashicorp:errwrap:v1.0.0:hashicorp_errwrap/vendor/github.com/hashicorp/errwrap \
 		hashicorp:go-cleanhttp:v0.5.1:hashicorp_go_cleanhttp/vendor/github.com/hashicorp/go-cleanhttp \
 		hashicorp:go-gatedio:v0.5.0:hashicorp_go_gatedio/vendor/github.com/hashicorp/go-gatedio \
@@ -38,7 +38,8 @@ GH_TUPLE=	hashicorp:${PORTNAME}:${DISTVERSIONPREFIX}${PORTVERSION}:DEFAULT/src/g
 		hashicorp:hcl:v1.0.0:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
 		hashicorp:logutils:v1.0.0:hashicorp_logutils/vendor/github.com/hashicorp/logutils \
 		hashicorp:serf:v0.8.3:hashicorp_serf/vendor/github.com/hashicorp/serf \
-		hashicorp:vault:746c0b111519:hashicorp_vault/vendor/github.com/hashicorp/vault \
+		hashicorp:vault:0dc007d98cc8:hashicorp_vault_sdk/vendor/github.com/hashicorp/vault \
+		hashicorp:vault:746c0b111519:hashicorp_vault_api \
 		mattn:go-shellwords:v1.0.5:mattn_go_shellwords/vendor/github.com/mattn/go-shellwords \
 		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
 		mitchellh:hashstructure:v1.0.0:mitchellh_hashstructure/vendor/github.com/mitchellh/hashstructure \
@@ -59,6 +60,10 @@ GO_BUILDFLAGS=	-ldflags='\
 		-s -w \
 		-X github.com/hashicorp/envconsul/version.Name=${PORTNAME} \
 		-X github.com/hashicorp/envconsul/version.GitCommit=${GHTAG}'
+
+post-extract:
+	@${RM} -r ${WRKSRC}/vendor/github.com/hashicorp/vault/api
+	@${RLN} ${WRKSRC_hashicorp_vault_api}/api ${WRKSRC}/vendor/github.com/hashicorp/vault/api
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
