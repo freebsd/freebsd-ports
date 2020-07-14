@@ -1,5 +1,6 @@
 bin/asg-hevc
 bin/hevc_fei_extractor
+bin/mfx-tracer-config
 include/mfx/mfxadapter.h
 include/mfx/mfxastructures.h
 include/mfx/mfxaudio++.h
@@ -28,6 +29,9 @@ include/mfx/mfxvideo.h
 include/mfx/mfxvp8.h
 include/mfx/mfxvp9.h
 include/mfx/mfxvstructures.h
+lib/libmfx-tracer.so
+lib/libmfx-tracer.so.1
+lib/libmfx-tracer.so.1.33
 lib/libmfx.so
 lib/libmfx.so.1
 lib/libmfx.so.1.33

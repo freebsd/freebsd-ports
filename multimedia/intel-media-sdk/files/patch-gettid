@@ -1,0 +1,49 @@
+In file included from tools/tracer/dumps/dump_mfxstructures.cpp:32:
+In file included from tools/tracer/dumps/../loggers/log.h:24:
+In file included from tools/tracer/dumps/../loggers/log_console.h:23:
+In file included from tools/tracer/dumps/../loggers/ilog.h:25:
+tools/tracer/dumps/../loggers/thread_info.h:38:34: error: use of undeclared identifier 'SYS_gettid'
+            return (long)syscall(SYS_gettid);
+                                 ^
+
+--- tools/tracer/loggers/thread_info.h.orig	2020-07-02 17:50:48 UTC
++++ tools/tracer/loggers/thread_info.h
+@@ -24,8 +24,18 @@
+ #include <windows.h>
+ #else
+ #include <unistd.h>
++#if defined(__linux__)
+ #include <sys/syscall.h>
++#elif defined(__DragonFly__) || defined(__FreeBSD__)
++#include <pthread_np.h>
++#elif defined(__NetBSD__)
++#include <lwp.h>
++#elif defined(__sun)
++#include <thread.h>
++#else
++#include <stdint.h>
+ #endif
++#endif
+ 
+ class ThreadInfo
+ {
+@@ -34,8 +44,18 @@ class ThreadInfo (public)
+     {
+         #if defined(_WIN32) || defined(_WIN64)
+             return (long)GetCurrentThreadId();
+-        #else
++        #elif defined(__linux__)
+             return (long)syscall(SYS_gettid);
++        #elif defined(__DragonFly__) || defined(__FreeBSD__)
++            return (long)pthread_getthreadid_np();
++        #elif defined(__NetBSD__)
++            return (long)_lwp_self();
++        #elif defined(__OpenBSD__)
++            return (long)getthrid();
++        #elif defined(__sun)
++            return (long)thr_self()();
++        #else
++            return (long)(uintptr_t)pthread_self();
+         #endif
+     };
+ 

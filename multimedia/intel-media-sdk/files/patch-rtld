@@ -1,0 +1,28 @@
+RTLD_DEEPBIND isn't available on non-Linux.
+
+tools/tracer/tracer/tracer_linux.cpp:82:65: error: use of undeclared identifier 'RTLD_DEEPBIND'
+        loader->dlhandle = dlopen(g_mfxlib, RTLD_NOW|RTLD_LOCAL|RTLD_DEEPBIND);
+                                                                ^
+tools/tracer/tracer/tracer_linux.cpp:84:76: error: use of undeclared identifier 'RTLD_DEEPBIND'
+            loader->dlhandle = dlopen(g_mfxlib_in_dir, RTLD_NOW|RTLD_LOCAL|RTLD_DEEPBIND);
+                                                                           ^
+tools/tracer/tracer/tracer_linux.cpp:188:65: error: use of undeclared identifier 'RTLD_DEEPBIND'
+        loader->dlhandle = dlopen(g_mfxlib, RTLD_NOW|RTLD_LOCAL|RTLD_DEEPBIND);
+                                                                ^
+tools/tracer/tracer/tracer_linux.cpp:190:76: error: use of undeclared identifier 'RTLD_DEEPBIND'
+            loader->dlhandle = dlopen(g_mfxlib_in_dir, RTLD_NOW|RTLD_LOCAL|RTLD_DEEPBIND);
+                                                                           ^
+
+--- tools/tracer/tracer/tracer_linux.cpp.orig	2020-07-02 17:50:48 UTC
++++ tools/tracer/tracer/tracer_linux.cpp
+@@ -40,6 +40,10 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF S
+     #error Unsupported architecture
+ #endif
+ 
++#if !defined(RTLD_DEEPBIND)
++    #define RTLD_DEEPBIND 0
++#endif
++
+ static const char* g_mfxlib;
+ static const char* g_mfxlib_in_dir;
+ 
