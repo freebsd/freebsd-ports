@@ -11,6 +11,8 @@ LIB_DEPENDS=	libtelepathy-qt5.so:net-im/telepathy-qt \
 		libtelepathy-logger-qt.so:net-im/telepathy-logger-qt5 \
 		libKTpCommonInternals.so:net-im/ktp-common-internals
 
+LICENSE=	LGPL21+
+
 USES=		compiler:c++11-lang cmake gettext kde:5 qt:5 tar:xz
 USE_KDE=	auth codecs completion config configwidgets coreaddons \
 		dbusaddons ecm i18n iconthemes jobwidgets kcmutils kio \
