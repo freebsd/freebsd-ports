@@ -9,18 +9,24 @@ debugging their distfiles.
 
 	-mi
 
---- src/gram.y	1998-11-09 23:10:42.000000000 -0500
-+++ src/gram.y	2014-12-04 12:32:45.000000000 -0500
-@@ -61,4 +61,8 @@
+--- src/gram.y.orig	1998-11-10 04:10:42 UTC
++++ src/gram.y
+@@ -61,6 +61,13 @@ static char copyright[] =
  
  #include "defs.h"
+ 
++#define	yylex	rdist_yylex
++
 +static char * xappend(char *str, size_t *len, char c);
 +void yyerror(const char *message);
 +static char *yytext;
 +static size_t yytextlen;
- 
++
  static struct namelist *addnl(), *subnl(), *andnl();
-@@ -241,10 +245,12 @@
+ struct	cmd *cmds = NULL;
+ struct	cmd *last_cmd;
+@@ -240,12 +247,14 @@ opt_namelist:	  /* VOID */ = {
+ int	yylineno = 1;
  extern	FILE *fin;
  
 +static int
@@ -35,7 +41,9 @@ debugging their distfiles.
 +	yytextlen = 0;
  	
  again:
-@@ -286,11 +292,5 @@
+ 	switch (c = getc(fin)) {
+@@ -285,19 +294,13 @@ again:
+ 		break;
  
  	case '"':  /* STRING */
 -		cp1 = yytext;
@@ -47,14 +55,16 @@ debugging their distfiles.
 -			}
  			c = getc(fin);
  			if (c == EOF || c == '"')
-@@ -298,5 +298,5 @@
+ 				break;
  			if (c == '\\') {
  				if ((c = getc(fin)) == EOF) {
 -					*cp1++ = '\\';
 +					yytext = xappend(yytext, &yytextlen, '\\');
  					break;
  				}
-@@ -306,10 +306,9 @@
+ 			}
+@@ -305,12 +308,11 @@ again:
+ 				yylineno++;
  				c = ' '; /* can't send '\n' */
  			}
 -			*cp1++ = c;
@@ -67,7 +77,9 @@ debugging their distfiles.
 +		yylval.string = xappend(yytext, &yytextlen, '\0');
  		return(STRING);
  
-@@ -320,21 +319,16 @@
+ 	case ':':  /* : or :: */
+@@ -319,35 +321,34 @@ again:
+ 		(void) ungetc(c, fin);
  		return(COLON);
  	}
 -	cp1 = yytext;
@@ -93,7 +105,8 @@ debugging their distfiles.
 +		yytext = xappend(yytext, &yytextlen, c);
  		c = getc(fin);
  		if (c == EOF || any(c, " \"'\t()=;:\n")) {
-@@ -343,10 +337,14 @@
+ 			(void) ungetc(c, fin);
+ 			break;
  		}
  	}
 -	*cp1 = '\0';
@@ -111,26 +124,34 @@ debugging their distfiles.
 +		char ebuf[BUFSIZ];
  
  		switch (yytext[1]) {
-@@ -398,5 +396,5 @@
+ 		case 'o':
+@@ -397,7 +398,7 @@ again:
+ 	else if (!strcmp(yytext, "cmdspecial"))
  		c = CMDSPECIAL;
  	else {
 -		yylval.string = makestr(yytext);
 +		yylval.string = yytext;
  		return(NAME);
  	}
-@@ -422,4 +420,5 @@
+ 	yylval.subcmd = makesubcmd(c);
+@@ -421,6 +422,7 @@ extern int any(c, str)
+ /*
   * Insert or append ARROW command to list of hosts to be updated.
   */
 +void
  insert(label, files, hosts, subcmds)
  	char *label;
-@@ -476,4 +475,5 @@
+ 	struct namelist *files, *hosts;
+@@ -475,6 +477,7 @@ insert(label, files, hosts, subcmds)
+  * Append DCOLON command to the end of the command list since these are always
   * executed in the order they appear in the distfile.
   */
 +static void
  append(label, files, stamp, subcmds)
  	char *label;
-@@ -502,22 +502,28 @@
+ 	struct namelist *files;
+@@ -501,24 +504,30 @@ append(label, files, stamp, subcmds)
+ /*
   * Error printing routine in parser.
   */
 +void
@@ -166,3 +187,4 @@ debugging their distfiles.
 +	(*len)++;
  
  	return(cp);
+ }
