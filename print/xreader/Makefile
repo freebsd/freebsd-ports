@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	xreader
-PORTVERSION=	2.6.2
+PORTVERSION=	2.6.4
 CATEGORIES=	print
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	Generic document reader
+COMMENT=	Multi-format document reader
 
 LICENSE=	GPLv2+
 
