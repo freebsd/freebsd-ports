@@ -1,0 +1,15 @@
+Focker is a FreeBSD image orchestration tool in the vein of Docker.
+
+It provides powerful containerization primitives (images, volumes and
+containers) first introduced by the Docker platform without taking up
+the significantly more challenging task of achieving Docker
+compatibility.
+
+Supports:
+
+ * Image creation
+ * Jail creation
+ * Storage volumes
+ * Container composition
+
+WWW: https://github.com/sadaszewski/focker

@@ -969,6 +969,7 @@
     SUBDIR += py-ezjailremote
     SUBDIR += py-filelike
     SUBDIR += py-filelock
+    SUBDIR += py-focker
     SUBDIR += py-glances
     SUBDIR += py-gmailfs-fuse
     SUBDIR += py-google-compute-engine
