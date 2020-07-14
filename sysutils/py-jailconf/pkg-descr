@@ -1,0 +1,3 @@
+Parse and edit your FreeBSD jail.conf file with Python.
+
+WWW: https://github.com/leforestier/jailconf
