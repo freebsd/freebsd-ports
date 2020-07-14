@@ -14431,7 +14431,7 @@ textproc/rubygem-actionpack-xml_parser|textproc/rubygem-actionpack-xml_parser-ra
 textproc/rubygem-actionpack-xml_parser1|textproc/rubygem-actionpack-xml_parser1-rails4|2020-03-02|Renamed to match rubygem name convention
 textproc/rubygem-actionpack-xml_parser52|textproc/rubygem-actionpack-xml_parser-rails52|2020-03-02|Renamed to match rubygem name convention
 x11-toolkits/py-kivy||2020-03-02|Has expired: Old, uses EOLed python27
-lang/gcc6|lang/gcc|2020-03-07|Has expired: Unsupported by upstream. Use GCC 9 or newer instead.
+lang/gcc6|lang/gcc|2020-03-07|Has expired: Unsupported by upstream. Use GCC 9 or newer instead
 www/pycarddav|deskutils/py-khard|2020-03-07|Has expired: Deprecated by upstream, please migrate to deskutils/py-khard
 x11-wm/ccsm||2020-03-07|Has expired: Old, uses EOLed python27
 x11-toolkits/py-gtkglext||2020-03-07|Has expired: Old, uses EOLed python27
@@ -14993,7 +14993,7 @@ devel/rubygem-webpacker-rails5|devel/rubygem-webpacker4-rails5|2020-05-12|Rename
 devel/rubygem-webpacker-rails50|devel/rubygem-webpacker4-rails50|2020-05-12|Rename when rubygem-webpacker is 5.x now
 net-p2p/parity-ethereum|net-p2p/openethereum|2020-05-13|Renamed upstream for transition to a DAO ownership and maintainer model
 net-im/linux-telegram-desktop|net-im/telegram-desktop|2020-05-13|Has expired: Broken for more than 6 months, use native version
-devel/libphutil||2020-05-15|Has expired: Upstream merged functionality into downstream projects.
+devel/libphutil||2020-05-15|Has expired: Upstream merged functionality into downstream projects
 print/frescobaldi|print/py-frescobaldi|2020-05-16|Renamed to comply with Python Ports Policy
 sysutils/rdiff-backup|sysutils/py-rdiff-backup@py37|2020-05-16|Renamed comply with Python Ports Policy and flavored
 www/py-django-happenings|www/py-django-happenings-update|2020-05-17|Has expired: Doesn't work with Django 2.2+, please use www/py-django-happenings-update instead
@@ -15109,10 +15109,10 @@ math/py-igraph|math/py-python-igraph|2020-06-27|Rename to match upstream naming
 net/bnxt-kmod||2020-06-28|Has expired: Unsupported on all supported FreeBSD versions
 databases/p5-Search-Xapian10|databases/p5-Search-Xapian|2020-06-30|Has expired: Depend on unsupported xapian-core. Use databases/p5-Search-Xapian instead
 databases/xapian-core10|databases/xapian-core|2020-06-30|Has expired: Unsupported by upstream. Use databases/xapian-core instead
-devel/py-dj22-django-rq|www/py-django-rq|2020-06-30|Has expired: Obsolete, please use www/py-django-rq instead
+devel/py-dj22-django-rq|devel/py-django-rq|2020-06-30|Has expired: Obsolete, please use www/py-django-rq instead
 devel/rubygem-cucumber-expressions|devel/rubygem-cucumber-cucumber-expressions|2020-06-30|Has expired: Use devel/rubygem-cucumber-cucumber-expressions instead
 devel/rubygem-cucumber-expressions6|devel/rubygem-cucumber-cucumber-expressions|2020-06-30|Has expired: Use devel/rubygem-cucumber-cucumber-expressions instead
-devel/rubygem-cucumber-tag_expressions1|devel/rubygem-cucumber-tag_expressions|2020-06-30|Has expired: Use devel/rubygem-cucumber-tag_expressions instead
+devel/rubygem-cucumber-tag_expressions1|devel/rubygem-cucumber-tag-expressions|2020-06-30|Has expired: Use devel/rubygem-cucumber-tag_expressions instead
 print/xpp||2020-06-30|Has expired: Last update as 2004-12-09, unsupported by upstream
 textproc/rubygem-gherkin|textproc/rubygem-cucumber-gherkin|2020-06-30|Has expired: Use textproc/rubygem-cucumber-gherkin instead
 www/p5-Catalyst-Model-Xapian10|www/p5-Catalyst-Model-Xapian|2020-06-30|Has expired: Depend on unsupported xapian-core. Use www/p5-Catalyst-Model-Xapian instead
