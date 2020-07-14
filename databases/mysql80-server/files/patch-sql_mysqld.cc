@@ -1,6 +1,6 @@
 --- sql/mysqld.cc.orig	2019-09-20 08:30:51 UTC
 +++ sql/mysqld.cc
-@@ -4818,7 +4818,7 @@ static int init_thread_environment() {
+@@ -5109,7 +5109,7 @@ static int init_thread_environment() {
  
  static PSI_memory_key key_memory_openssl = PSI_NOT_INSTRUMENTED;
  
@@ -9,7 +9,7 @@
  #define FILE_LINE_ARGS
  #else
  #define FILE_LINE_ARGS , const char *, int
-@@ -4854,12 +4854,14 @@ static void init_ssl() {
+@@ -5143,12 +5143,14 @@ static void init_ssl() {
  }
  
  static int init_ssl_communication() {
@@ -21,6 +21,6 @@
      return 1;
    }
 +#endif /* LIBRESSL_VERSION_NUMBER */
-   if (SslAcceptorContext::singleton_init(opt_use_ssl)) return 1;
- 
- #if OPENSSL_VERSION_NUMBER < 0x10100000L
+   if (TLS_channel::singleton_init(&mysql_main, mysql_main_channel, opt_use_ssl,
+                                   &server_main_callback, opt_initialize))
+     return 1;

@@ -1,5 +1,5 @@
---- plugin/group_replication/libmysqlgcs/src/bindings/xcom/xcom/xcom_ssl_transport.c.orig	2019-09-20 08:30:51 UTC
-+++ plugin/group_replication/libmysqlgcs/src/bindings/xcom/xcom/xcom_ssl_transport.c
+--- plugin/group_replication/libmysqlgcs/src/bindings/xcom/xcom/xcom_ssl_transport.cc.orig	2019-09-20 08:30:51 UTC
++++ plugin/group_replication/libmysqlgcs/src/bindings/xcom/xcom/xcom_ssl_transport.cc
 @@ -329,6 +329,7 @@ error:
    return 1;
  }
