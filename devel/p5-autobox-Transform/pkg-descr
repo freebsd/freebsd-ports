@@ -1,0 +1,5 @@
+This module, autobox::Transform, provides higher level and more specific
+methods to transform and manipulate arrays and hashes, in particular when
+the values are hashrefs or objects.
+
+WWW: https://metacpan.org/release/autobox-Transform
