@@ -65,7 +65,7 @@ LINUX_DEFAULT?=		c7
 LLVM_DEFAULT?=		90
 # Possible values: 5.1, 5.2, 5.3
 LUA_DEFAULT?=		5.2
-# Possible values: 5.5, 5.6, 5.7, 8.0, 5.5m, 10.1m, 10.2m, 10.3m, 10.4m, 5.5p, 5.6p, 5.7p, 5.6w
+# Possible values: 5.5, 5.6, 5.7, 8.0, 10.3m, 10.4m, 10.5m, 5.5p, 5.6p, 5.7p, 5.6w, 5.7w
 MYSQL_DEFAULT?=		5.7
 # Possible values: 5.28, 5.30, 5.32, devel
 .if !exists(${LOCALBASE}/bin/perl) || (!defined(_PORTS_ENV_CHECK) && \
