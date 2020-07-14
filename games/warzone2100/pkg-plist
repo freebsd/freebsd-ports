@@ -1,5 +1,5 @@
 bin/warzone2100
-%%MANPAGES%%man/man6/warzone2100.6.gz
+man/man6/warzone2100.6.gz
 share/applications/warzone2100.desktop
 share/icons/warzone2100.png
 %%NLS%%share/locale/ca_ES/LC_MESSAGES/warzone2100.mo
