@@ -1,3 +1,4 @@
+# Created by: Romain Tartiere <romain@blogreen.org>
 # $FreeBSD$
 
 PORTNAME=	smuxi
@@ -14,8 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/log4net.pc:devel/log4net \
 		${LOCALBASE}/libdata/pkgconfig/mono-addins.pc:devel/mono-addins \
 		${LOCALBASE}/libdata/pkgconfig/nini-1.1.pc:devel/nini \
-		intltool-update:textproc/intltool \
-		bash:shells/bash
+		bash:shells/bash \
+		intltool-update:textproc/intltool
 LIB_DEPENDS=	libstfl.so:devel/stfl
 RUN_DEPENDS=	mono-addins>0:devel/mono-addins
 
@@ -25,23 +26,22 @@ USES=		desktop-file-utils gettext-tools:build gmake gnome mono \
 USE_GNOME=	gtksharp20
 INSTALLS_ICONS=	yes
 
-OPTIONS_DEFINE=		DBUS GTKSPELL NLS
-OPTIONS_DEFAULT=	DBUS GTKSPELL NLS
-OPTIONS_SUB=		yes
+OPTIONS_DEFINE=		DBUS NLS SPELLCHECK
+OPTIONS_DEFAULT=	DBUS NLS SPELLCHECK
+oOPTIONS_SUB=		yes
 
-DBUS_DESC=	Build with DBUS support
-GTKSPELL_DESC=	Support spell checking
-NLS_DESC=	Build with NLS support
+SPELLCHECK_DESC=	Spell checking support via GtkSpell
 
 DBUS_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/ndesk-dbus-1.0.pc:devel/ndesk-dbus \
 			${LOCALBASE}/libdata/pkgconfig/ndesk-dbus-glib-1.0.pc:devel/ndesk-dbus-glib
-GTKSPELL_LIB_DEPENDS=	libgtkspell.so:textproc/gtkspell
+SPELLCHECK_LIB_DEPENDS=	libgtkspell.so:textproc/gtkspell
 
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
 
 CONFIGURE_SHELL=	"env ${LOCALBASE}/bin/bash"
 
+# Fails due to build order dependency issue.
 MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.mk>
