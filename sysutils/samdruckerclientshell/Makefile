@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	SamDruckerClientShell
-PORTVERSION=	0.0.2
-PORTREVISION=	1
+PORTVERSION=	0.2.1
 CATEGORIES=	sysutils
 MASTER_SITES=   GH
 
@@ -18,7 +17,7 @@ GH_PROJECT=	SamDrucker
 
 NO_BUILD=	YES
 
-SUB_FILES=	999-samdrucker-client samdrucker.conf.sample
+SUB_FILES=	999-samdrucker-client
 
 RUN_DEPENDS+=	curl>0:ftp/curl
 RUN_DEPENDS+=	jo>0:textproc/jo
@@ -31,6 +30,6 @@ do-install:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/clients/samdrucker.sh
 	${INSTALL_SCRIPT} ${WRKSRC}/clients/samdrucker.sh  ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKDIR}/999-samdrucker-client  ${STAGEDIR}${PREFIX}/etc/periodic/daily
-	${INSTALL_DATA}   ${WRKDIR}/samdrucker.conf.sample ${STAGEDIR}${PREFIX}/etc/samdrucker
+	${INSTALL_DATA}   ${WRKSRC}/clients/samdrucker.conf.sample ${STAGEDIR}${PREFIX}/etc/samdrucker
 
 .include <bsd.port.post.mk>
