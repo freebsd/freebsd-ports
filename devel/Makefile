@@ -4516,6 +4516,7 @@
     SUBDIR += py-itanium_demangler
     SUBDIR += py-iterpipes
     SUBDIR += py-itypes
+    SUBDIR += py-jailconf
     SUBDIR += py-jaraco
     SUBDIR += py-jaraco.classes
     SUBDIR += py-jaraco.context
