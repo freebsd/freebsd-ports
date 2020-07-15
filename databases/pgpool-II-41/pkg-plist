@@ -25,7 +25,6 @@ bin/watchdog_setup
 @sample etc/pgpool.conf.sample-stream
 @sample etc/pgpool_remote_start.sample
 @sample etc/pool_hba.conf.sample
-etc/rc.d/pgpool
 etc/recovery_1st_stage.sample
 etc/recovery_2nd_stage.sample
 include/libpcp_ext.h
