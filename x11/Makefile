@@ -335,6 +335,7 @@
     SUBDIR += wbar
     SUBDIR += wcm
     SUBDIR += wdisplays
+    SUBDIR += wdm
     SUBDIR += wev
     SUBDIR += wf-shell
     SUBDIR += wl-clipboard
