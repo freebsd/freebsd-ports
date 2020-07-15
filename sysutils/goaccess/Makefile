@@ -3,6 +3,7 @@
 
 PORTNAME=	goaccess
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://tar.goaccess.io/
 
@@ -40,6 +41,7 @@ GEOIP2_LIB_DEPENDS=	libmaxminddb.so:net/libmaxminddb
 
 SSL_DESC=	Use SSL for WebSocket
 SSL_CONFIGURE_ON=	--with-openssl
+SSL_USES=	ssl
 
 TOKYOCABINET_DESC=	Tokyo Cabinet support
 TOKYOCABINET_BTREE_DESC=	Storage using on-disk B+ Tree
