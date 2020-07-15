@@ -3,7 +3,6 @@ bin/swaybar
 bin/swaymsg
 bin/swaynag
 @sample %%ETCDIR%%/config.sample
-%%ETCDIR%%/security.d/10-freebsd
 %%MANPAGES%%man/man1/sway.1.gz
 %%MANPAGES%%man/man1/swaymsg.1.gz
 %%MANPAGES%%man/man1/swaynag.1.gz

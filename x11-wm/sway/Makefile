@@ -1,18 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	sway
-DISTVERSION=	1.4
-PORTREVISION=	3
+DISTVERSION=	1.5
 CATEGORIES=	x11-wm
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	9d0aa0cb8396.patch:-p1 # wlroots 0.11
-PATCHFILES+=	3a5d9b3b32a3.patch:-p1 # wlroots 0.11
-PATCHFILES+=	40e87fa98afd.patch:-p1 # wlroots 0.11
-PATCHFILES+=	f55de073c2a1.patch:-p1 # wlroots 0.11
-PATCHFILES+=	91c0ffd6cf1f.patch:-p1 # wlroots 0.11
-PATCHFILES+=	76adcc3fd3ac.patch:-p1 # wlroots 0.11
-PATCHFILES+=	9f944ff05d8b.patch:-p1 # wlroots 0.11
 PATCHFILES+=	cd9d1038a822.patch:-p1 # https://github.com/swaywm/sway/pull/5090
 PATCHFILES+=	f98ca3ab7ca1.patch:-p1 # https://github.com/swaywm/sway/pull/5090
 
