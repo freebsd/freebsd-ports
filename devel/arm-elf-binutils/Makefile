@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	binutils
-PORTVERSION=	2.33.1
+PORTVERSION=	2.34
 CATEGORIES=	devel
 MASTER_SITES=	SOURCEWARE/binutils/releases
 PKGNAMEPREFIX=	arm-elf-
@@ -13,7 +13,7 @@ COMMENT=	GNU binutils for vanilla ARM cross-development
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi
 
-USES=		gettext gmake localbase tar:bzip2
+USES=		gettext gmake localbase makeinfo tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//} --disable-werror \
 		--disable-nls
