@@ -2,6 +2,7 @@
 
 PORTNAME=	hikari
 DISTVERSION=	2.0.5
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://hikari.acmelabs.space/releases/
 
@@ -13,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		wayland-protocols>=1.14:graphics/wayland-protocols \
-		wlroots>=0.9.0<0.11.0:x11-toolkits/wlroots
+		wlroots>=0.9.0<0.12.0:x11-toolkits/wlroots
 LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
 		libinput.so:x11/libinput \
 		libucl.so:textproc/libucl \

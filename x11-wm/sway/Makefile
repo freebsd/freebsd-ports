@@ -2,10 +2,17 @@
 
 PORTNAME=	sway
 DISTVERSION=	1.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-wm
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	9d0aa0cb8396.patch:-p1 # wlroots 0.11
+PATCHFILES+=	3a5d9b3b32a3.patch:-p1 # wlroots 0.11
+PATCHFILES+=	40e87fa98afd.patch:-p1 # wlroots 0.11
+PATCHFILES+=	f55de073c2a1.patch:-p1 # wlroots 0.11
+PATCHFILES+=	91c0ffd6cf1f.patch:-p1 # wlroots 0.11
+PATCHFILES+=	76adcc3fd3ac.patch:-p1 # wlroots 0.11
+PATCHFILES+=	9f944ff05d8b.patch:-p1 # wlroots 0.11
 PATCHFILES+=	cd9d1038a822.patch:-p1 # https://github.com/swaywm/sway/pull/5090
 PATCHFILES+=	f98ca3ab7ca1.patch:-p1 # https://github.com/swaywm/sway/pull/5090
 
@@ -17,7 +24,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		wayland-protocols>=1.14:graphics/wayland-protocols \
-		wlroots>=0.9.0<0.11.0:x11-toolkits/wlroots
+		wlroots>=0.11.0<0.12.0:x11-toolkits/wlroots
 LIB_DEPENDS=	libjson-c.so:devel/json-c \
 		libevdev.so:devel/libevdev \
 		libpcre.so:devel/pcre \

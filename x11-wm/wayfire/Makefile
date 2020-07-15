@@ -2,7 +2,7 @@
 
 PORTNAME=	wayfire
 DISTVERSION=	0.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		${LOCALBASE}/include/xf86drmMode.h:graphics/libdrm \
 		wayland-protocols>=1.12:graphics/wayland-protocols \
 		glm>=0.9.8:math/glm \
-		wlroots>=0.9.0<0.11.0:x11-toolkits/wlroots
+		wlroots>=0.11.0<0.12.0:x11-toolkits/wlroots
 LIB_DEPENDS=	libinotify.so:devel/libinotify \
 		libwf-config.so:devel/wf-config \
 		libpng.so:graphics/png \

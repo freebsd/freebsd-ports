@@ -43,6 +43,7 @@ include/wlr/types/wlr_input_inhibitor.h
 include/wlr/types/wlr_input_method_v2.h
 include/wlr/types/wlr_keyboard.h
 include/wlr/types/wlr_keyboard_group.h
+include/wlr/types/wlr_keyboard_shortcuts_inhibit_v1.h
 include/wlr/types/wlr_layer_shell_v1.h
 include/wlr/types/wlr_linux_dmabuf_v1.h
 include/wlr/types/wlr_list.h
@@ -51,6 +52,7 @@ include/wlr/types/wlr_output.h
 include/wlr/types/wlr_output_damage.h
 include/wlr/types/wlr_output_layout.h
 include/wlr/types/wlr_output_management_v1.h
+include/wlr/types/wlr_output_power_management_v1.h
 include/wlr/types/wlr_pointer.h
 include/wlr/types/wlr_pointer_constraints_v1.h
 include/wlr/types/wlr_pointer_gestures_v1.h
@@ -69,6 +71,7 @@ include/wlr/types/wlr_tablet_tool.h
 include/wlr/types/wlr_tablet_v2.h
 include/wlr/types/wlr_text_input_v3.h
 include/wlr/types/wlr_touch.h
+include/wlr/types/wlr_viewporter.h
 include/wlr/types/wlr_virtual_keyboard_v1.h
 include/wlr/types/wlr_virtual_pointer_v1.h
 include/wlr/types/wlr_xcursor_manager.h
@@ -83,6 +86,5 @@ include/wlr/version.h
 include/wlr/xcursor.h
 %%X11%%include/wlr/xwayland.h
 lib/libwlroots.so
-lib/libwlroots.so.5
-lib/libwlroots.so.5.9.1
+lib/libwlroots.so.6
 libdata/pkgconfig/wlroots.pc
