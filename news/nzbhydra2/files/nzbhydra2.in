@@ -39,7 +39,7 @@ load_rc_config ${name}
 
 pidfile="/var/run/nzbhydra2/nzbhydra2.pid"
 command="%%PYTHON_CMD%%"
-command_args="${nzbhydra2_dir}/nzbhydra2wrapper.py --datafolder ${nzbhydra2_data_dir} --pidfile ${pidfile} --daemon --nobrowser --java %%JAVA%%"
+command_args="${nzbhydra2_dir}/nzbhydra2wrapperPy3.py --datafolder ${nzbhydra2_data_dir} --pidfile ${pidfile} --daemon --nobrowser --java %%JAVA%%"
 start_precmd=nzbhydra2_precmd
 
 nzbhydra2_precmd() 
