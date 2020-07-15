@@ -1,6 +1,6 @@
-TIMESTAMP = 1592427918
-SHA256 (kubernetes-kops-1.17.0_GH0.tar.gz) = 2295ab02656a7b16a4b01cca0dd248ac5fe33b5bb18bae3b81232aac0b841812
-SIZE (kubernetes-kops-1.17.0_GH0.tar.gz) = 24070223
+TIMESTAMP = 1594840385
+SHA256 (kubernetes-kops-1.17.1_GH0.tar.gz) = 880414505447ae8ff4b91ea5c75e5de1a532a66f113e51db15b83672c8cb78d2
+SIZE (kubernetes-kops-1.17.1_GH0.tar.gz) = 24068101
 SHA256 (Azure-go-ansiterm-d6e3b3328b78_GH0.tar.gz) = ee1ebe2efef498be1c558bf71e143289db2d21e2d42592503ad2d4a989006821
 SIZE (Azure-go-ansiterm-d6e3b3328b78_GH0.tar.gz) = 20946
 SHA256 (Azure-go-autorest-v11.1.2_GH0.tar.gz) = d80b612306ad7f416fc21791ef02173e5bc6fc38d304ea8b8950e2c3adeeaa6c
