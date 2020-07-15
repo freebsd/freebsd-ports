@@ -6,6 +6,8 @@
 %%WWWDIR%%/app/controllers/CControllerAuthenticationUpdate.php
 %%WWWDIR%%/app/controllers/CControllerAutoregEdit.php
 %%WWWDIR%%/app/controllers/CControllerAutoregUpdate.php
+%%WWWDIR%%/app/controllers/CControllerActionOperationGet.php
+%%WWWDIR%%/app/controllers/CControllerActionOperationValidate.php
 %%WWWDIR%%/app/controllers/CControllerCharts.php
 %%WWWDIR%%/app/controllers/CControllerChartsView.php
 %%WWWDIR%%/app/controllers/CControllerChartsViewJson.php
@@ -71,9 +73,6 @@
 %%WWWDIR%%/app/controllers/CControllerPopup.php
 %%WWWDIR%%/app/controllers/CControllerPopupAcknowledgeCreate.php
 %%WWWDIR%%/app/controllers/CControllerPopupAcknowledgeEdit.php
-%%WWWDIR%%/app/controllers/CControllerPopupActionAcknowledge.php
-%%WWWDIR%%/app/controllers/CControllerPopupActionOperation.php
-%%WWWDIR%%/app/controllers/CControllerPopupActionRecovery.php
 %%WWWDIR%%/app/controllers/CControllerPopupConditionActions.php
 %%WWWDIR%%/app/controllers/CControllerPopupConditionCommon.php
 %%WWWDIR%%/app/controllers/CControllerPopupConditionEventCorr.php
@@ -92,7 +91,6 @@
 %%WWWDIR%%/app/controllers/CControllerPopupMediatypeMessage.php
 %%WWWDIR%%/app/controllers/CControllerPopupMediatypeTestEdit.php
 %%WWWDIR%%/app/controllers/CControllerPopupMediatypeTestSend.php
-%%WWWDIR%%/app/controllers/CControllerPopupOperationCommon.php
 %%WWWDIR%%/app/controllers/CControllerPopupScriptExec.php
 %%WWWDIR%%/app/controllers/CControllerPopupServices.php
 %%WWWDIR%%/app/controllers/CControllerPopupTestTriggerExpr.php
@@ -186,6 +184,7 @@
 %%WWWDIR%%/app/partials/dataoverview.table.top.php
 %%WWWDIR%%/app/partials/hostmacros.inherited.list.html.php
 %%WWWDIR%%/app/partials/hostmacros.list.html.php
+%%WWWDIR%%/app/partials/popup.operations.php
 %%WWWDIR%%/app/partials/js/common.filter.trigger.js.php
 %%WWWDIR%%/app/partials/js/configuration.tags.tab.js.php
 %%WWWDIR%%/app/partials/js/massupdate.macros.tab.js.php
@@ -262,6 +261,7 @@
 %%WWWDIR%%/app/views/js/popup.mediatype.message.js.php
 %%WWWDIR%%/app/views/js/popup.mediatypetest.edit.js.php
 %%WWWDIR%%/app/views/js/popup.triggerwizard.js.php
+%%WWWDIR%%/app/views/js/reports.auditlog.list.js.php
 %%WWWDIR%%/app/views/layout.csv.php
 %%WWWDIR%%/app/views/layout.htmlpage.php
 %%WWWDIR%%/app/views/layout.javascript.php
@@ -315,7 +315,6 @@
 %%WWWDIR%%/app/views/popup.media.php
 %%WWWDIR%%/app/views/popup.mediatype.message.php
 %%WWWDIR%%/app/views/popup.mediatypetest.edit.php
-%%WWWDIR%%/app/views/popup.operation.common.php
 %%WWWDIR%%/app/views/popup.scriptexec.php
 %%WWWDIR%%/app/views/popup.services.php
 %%WWWDIR%%/app/views/popup.testtriggerexpr.php
@@ -394,6 +393,7 @@
 %%WWWDIR%%/include/classes/api/helpers/CApiHostHelper.php
 %%WWWDIR%%/include/classes/api/helpers/CApiTagHelper.php
 %%WWWDIR%%/include/classes/api/managers/CApplicationManager.php
+%%WWWDIR%%/include/classes/api/managers/CDiscoveryRuleManager.php
 %%WWWDIR%%/include/classes/api/managers/CGraphManager.php
 %%WWWDIR%%/include/classes/api/managers/CGraphPrototypeManager.php
 %%WWWDIR%%/include/classes/api/managers/CHistoryManager.php
