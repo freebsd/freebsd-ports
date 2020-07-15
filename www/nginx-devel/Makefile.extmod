@@ -15,13 +15,13 @@ BROTLI_LIB_DEPENDS=	libbrotlicommon.so:archivers/brotli
 BROTLI_GH_TUPLE=	google:ngx_brotli:25f86f0:brotli
 BROTLI_VARS=		DSO_EXTMODS+=brotli
 
-CACHE_PURGE_GH_TUPLE=	torden:ngx_cache_purge:4b02a83:cache_purge
+CACHE_PURGE_GH_TUPLE=	torden:ngx_cache_purge:2b977cf:cache_purge
 CACHE_PURGE_VARS=	DSO_EXTMODS+=cache_purge
 
 CLOJURE_CATEGORIES+=	java
 CLOJURE_USE=		JAVA=yes JAVA_OS=native JAVA_VERSION=1.8 \
 			JAVA_VENDOR=openjdk JAVA_BUILD=yes JAVA_RUN=yes
-CLOJURE_GH_TUPLE=	nginx-clojure:nginx-clojure:eb286b9:clojure
+CLOJURE_GH_TUPLE=	nginx-clojure:nginx-clojure:4b1e964:clojure
 CLOJURE_CONFIGURE_ENV=	"JNI_INCS=-I${LOCALBASE}/openjdk8/include -I${LOCALBASE}/openjdk8/include/freebsd"
 CLOJURE_VARS=		DSO_EXTMODS+=clojure CLOJURE_SUBDIR=/src/c
 
