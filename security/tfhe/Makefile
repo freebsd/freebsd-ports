@@ -2,8 +2,8 @@
 
 PORTNAME=	tfhe
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.1-14
-DISTVERSIONSUFFIX=	-g3319e2c
+DISTVERSION=	1.0.1-30
+DISTVERSIONSUFFIX=	-ga085efe
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,7 +24,7 @@ USE_LDCONFIG=	yes
 
 BINARY_ALIAS=	make=${GMAKE}
 
-TEST_TARGET=	test
+TEST_TARGET=	test # -avx and -fma will fail where no such hardware optimization is available
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so
