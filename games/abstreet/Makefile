@@ -2,8 +2,8 @@
 
 PORTNAME=	abstreet
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.2-28
-DISTVERSIONSUFFIX=	-ge50cd776
+DISTVERSION=	0.2.3-16
+DISTVERSIONSUFFIX=	-g7880d646
 CATEGORIES=	games
 MASTER_SITES=	LOCAL/yuri:data
 DISTFILES=	${PORTNAME}-data-${DISTVERSION}.tgz:data # updated by the update-data target
@@ -466,9 +466,11 @@ BINARY_ALIAS=	python3=${PYTHON_CMD}
 # 2. Upload the abstreet-data distfile
 # 3. Run 'make makesum clean'
 
-update-data: configure # see https://github.com/dabreegster/abstreet/blob/master/docs/dev.md#getting-started for a list of supported cities
-	@(${ECHO} "runtime: seattle,huge_seattle,austin" && \
-	  ${ECHO} "input: seattle,huge_seattle,austin") > ${WRKSRC}/data/config
+update-data: configure
+	# see https://github.com/dabreegster/abstreet/blob/master/docs/dev.md#getting-started for the list of supported cities
+	# huge_seattle is excluded as per this comment: https://github.com/dabreegster/abstreet/issues/192#issuecomment-657938969
+	@(${ECHO} "runtime: seattle,krakow" && \
+	  ${ECHO} "input: seattle,krakow") > ${WRKSRC}/data/config
 	@cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} ${CARGO_CARGO_RUN} run --bin updater && \
 		${TAR} czf ${DISTDIR}/${PORTNAME}-data-${DISTVERSION}.tgz data/system/cities data/system/maps data/system/prebaked_results data/system/scenarios data/config && \
