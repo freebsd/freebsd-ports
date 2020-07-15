@@ -3,4 +3,4 @@ Nagios in a database. Storing information from Nagios in a database will allow
 for quicker retrieval and processing of that data and will help serve as a
 foundation for the development of a new PHP-based web interface in Nagios 3.0.
 
-WWW: http://www.nagios.org
+WWW: https://www.nagios.org/

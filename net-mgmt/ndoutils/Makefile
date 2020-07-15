@@ -9,6 +9,7 @@ MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Keep Nagios perfdata in MySQL database
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include -fPIC
