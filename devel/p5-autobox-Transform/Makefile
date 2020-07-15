@@ -13,7 +13,6 @@ COMMENT=	Autobox methods to transform Arrays and Hashes
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Module-Build-Tiny>=0.035:devel/p5-Module-Build-Tiny
 RUN_DEPENDS=	p5-List-MoreUtils>=0:lang/p5-List-MoreUtils \
 		p5-Sort-Maker>=0:devel/p5-Sort-Maker \
 		p5-autobox>=0:devel/p5-autobox \
