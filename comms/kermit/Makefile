@@ -2,10 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	kermit
-PORTVERSION=	9.0.304
+PORTVERSION=	9.0.304.24
 CATEGORIES=	comms ftp net
-MASTER_SITES=	ftp://ftp.kermitproject.org/kermit/test/tar/
-DISTNAME=	cku${PORTVERSION:E}-dev22
+MASTER_SITES=	http://www.kermitproject.org/ftp/kermit/test/tar/ \
+		ftp://ftp.kermitproject.org/kermit/test/tar/
+DISTNAME=	cku${PORTVERSION:R:E}-dev${PORTVERSION:E}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Portable scriptable network and serial communication program
