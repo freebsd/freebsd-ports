@@ -1,28 +1,36 @@
---- Makefile.in.orig	2018-02-11 12:50:50 UTC
+--- Makefile.in.orig	2020-02-24 21:24:10 UTC
 +++ Makefile.in
-@@ -372,8 +372,8 @@ ac_aux_dir = dist
+@@ -373,10 +373,10 @@ ac_aux_dir = dist
  tmpdir = /tmp
  
  # Directories for app-defaults file and manual page
 -appdefaultsdir = $(libdir)/$(PACKAGE)-$(VERSION)/app-defaults
 -appmandir = $(libdir)/$(PACKAGE)-$(VERSION)/man
+-install_appdefaultsdir = @DIST_DIR@/lib/$(PACKAGE)-$(VERSION)/app-defaults
+-install_appmandir = @DIST_DIR@/lib/$(PACKAGE)-$(VERSION)/man
 +appdefaultsdir = $(libdir)/X11/app-defaults
 +appmandir = $(man1dir)
++install_appdefaultsdir = $(libdir)/X11/app-defaults
++install_appmandir = $(man1dir)
+ install_bindir = @DIST_DIR@/bin
  PATHNAMES = -DPROG_VERSION=\"$(VERSION)\" \
  	-DPROG_REVISION=\"$(REVISION)\" \
- 	-DCAD_DIR=\"$(libdir)\" \
-@@ -409,8 +409,8 @@ man_MANS = lib/xcircuit.1
+@@ -413,10 +413,10 @@ man_MANS = lib/xcircuit.1
  INCLUDES = -IXw ${INC_SPECS}
  
  # Library directory and files
 -librarydir = $(libdir)/$(PACKAGE)-$(VERSION)
 -scriptsdir = $(libdir)/$(PACKAGE)-$(VERSION)
+-install_librarydir = @DIST_DIR@/lib/$(PACKAGE)-$(VERSION)
+-install_scriptsdir = @DIST_DIR@/lib/$(PACKAGE)-$(VERSION)
 +librarydir = $(pkgdatadir)
 +scriptsdir = $(pkgdatadir)
++install_librarydir = $(pkgdatadir)
++install_scriptsdir = $(pkgdatadir)
  USER_RC_FILE = .xcircuitrc
  PROLOGUE_FILE = xcircps2.pro
  CYRILLIC_ENC_FILE = cyrillic.enc
-@@ -842,7 +842,7 @@ lib/$(INTERP_PATH)/$(WRAPPER_OBJ): xcwrap.o ${xcircuit
+@@ -848,7 +848,7 @@ lib/$(INTERP_PATH)/$(WRAPPER_OBJ): xcwrap.o ${xcircuit
  	$(RM) lib/$(INTERP_PATH)/$(WRAPPER_OBJ)
  	$(SHLIB_LD) ${CFLAGS} -o $@ ${LDDL_FLAGS} xcwrap.o \
  		${xcircuit_OBJECTS} ${xcircuit_LDADD} ${SHLIB_LIB_SPECS} \

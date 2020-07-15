@@ -131,6 +131,7 @@ man/man1/xcircuit.1.gz
 %%DATADIR%%/sinusoid.tcl
 %%DATADIR%%/standard_cells.cir
 %%DATADIR%%/standard_cells_3V.cir
+%%DATADIR%%/sue.lps
 %%DATADIR%%/sue_xc.tcl
 %%DATADIR%%/symbol.tcl
 %%DATADIR%%/synopsys.tcl
