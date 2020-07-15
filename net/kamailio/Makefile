@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	kamailio
-PORTVERSION=	5.3.3
+PORTVERSION=	5.3.5
 CATEGORIES=	net
 MASTER_SITES=	http://www.kamailio.org/pub/kamailio/${PORTVERSION}/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}_src
 
-MAINTAINER=	pi@FreeBSD.org
+MAINTAINER=	dmitry.wagin@ya.ru
 COMMENT=	Very fast and configurable open source SIP proxy
 
 LICENSE=	GPLv2
@@ -126,7 +126,7 @@ CFG_ARGS+=	include_modules="${EXTRA_MODULES}"
 .endif
 
 post-patch:
-	${REINPLACE_CMD} '554s|$$(run_prefix)/$$(run_dir)|${KAMAILIO_RUNDIR}|' \
+	${REINPLACE_CMD} '563s|run_target = $$(run_prefix)/$$(run_dir)|run_target = ${KAMAILIO_RUNDIR}|' \
 		${WRKSRC}/src/Makefile.defs
 
 post-patch-DOCS-off:
@@ -137,7 +137,6 @@ pre-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${CFG_ARGS} cfg
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${KAMAILIO_RUNDIR}
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install
 	@(cd ${STAGEDIR}${ETCDIR}; for i in `${FIND} . -type f`; do ${MV} $$i $$i.sample; done)
 
@@ -147,6 +146,5 @@ post-install:
 	@${FIND} ${STAGEDIR}${PREFIX} -type f -name '*.so.1' -exec ${STRIP_CMD} {} +
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/kamailio
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/kamcmd
-	@${ECHO_CMD} "@dir(${KAMAILIO_USER},${KAMAILIO_GROUP},750) ${KAMAILIO_RUNDIR}" >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>

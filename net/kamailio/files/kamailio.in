@@ -48,7 +48,9 @@ extra_commands="configtest"
 
 kamailio_start_precmd()
 {
-	install -d -m 0750 -o ${kamailio_user} -g ${kamailio_group} "%%KAMAILIO_RUNDIR%%"
+	if [ ! -d "%%KAMAILIO_RUNDIR%%" ]; then
+		install -d -m 0750 -o ${kamailio_user} -g ${kamailio_group} "%%KAMAILIO_RUNDIR%%"
+	fi
 }
 
 kamailio_checkconfig()

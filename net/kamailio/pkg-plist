@@ -47,6 +47,7 @@
 %%DATABASE%%%%DATADIR%%/dbtext/kamailio/rtpengine
 %%DATABASE%%%%DATADIR%%/dbtext/kamailio/rtpproxy
 %%DATABASE%%%%DATADIR%%/dbtext/kamailio/sca_subscriptions
+%%DATABASE%%%%DATADIR%%/dbtext/kamailio/secfilter
 %%DATABASE%%%%DATADIR%%/dbtext/kamailio/silo
 %%DATABASE%%%%DATADIR%%/dbtext/kamailio/sip_trace
 %%DATABASE%%%%DATADIR%%/dbtext/kamailio/speed_dial
