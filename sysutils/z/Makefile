@@ -21,7 +21,7 @@ PLIST_FILES=	${DATADIR_REL}/z.sh \
 		man/man1/z.1.gz
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/z.sh ${STAGEDIR}${DATADIR}
 	${INSTALL_MAN} ${WRKSRC}/z.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 

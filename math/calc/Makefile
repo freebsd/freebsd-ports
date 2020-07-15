@@ -32,7 +32,7 @@ FULL_DESC=	Install all functions, scripts, and headers
 HELP_DESC=	Install calc help files
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/calc \
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/calc \
 		${STAGEDIR}${PREFIX}/lib/lib*.so
 
 .include <bsd.port.mk>

@@ -30,7 +30,7 @@ USE_GCC=	yes
 
 post-patch:
 # GoogleTest doesn't support C++98 consumers since 1.10.0
-	@${REINPLACE_CMD} -e 's/c++98/c++11/' ${WRKSRC}/CMakeLists.txt
+	${REINPLACE_CMD} -e 's/c++98/c++11/' ${WRKSRC}/CMakeLists.txt
 
 pre-test:
 	cd ${WRKSRC} && ${CMAKE_BIN} . && ${MAKE_CMD}

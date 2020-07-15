@@ -58,7 +58,7 @@ CFLAGS+=	-fheinous-gnu-extensions
 .endif
 
 post-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in doc/DETAILS doc/FAQ doc/HACKING doc/OpenPGP \
 	ABOUT-NLS AUTHORS BUGS COPYING INSTALL NEWS PROJECTS \
 	README THANKS TODO VERSION
