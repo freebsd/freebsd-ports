@@ -1,0 +1,8 @@
+SamDrucker is a collection of small components which create a centralized list
+of all packages on all hosts.
+
+This port installs the server component of SamDrucker.
+
+At present, only PHP and Apache are implemented.
+
+WWW: https://github.com/dlangille/SamDrucker

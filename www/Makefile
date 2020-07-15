@@ -2104,6 +2104,7 @@
     SUBDIR += sabredav
     SUBDIR += sahi
     SUBDIR += sakai
+    SUBDIR += samdruckerserver
     SUBDIR += sarg
     SUBDIR += scloader
     SUBDIR += script4rss
