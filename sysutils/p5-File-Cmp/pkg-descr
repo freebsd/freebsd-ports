@@ -1,0 +1,4 @@
+This module provides Perl function that checks whether the contents
+of two files are identical, in the spirit of the Unix cmp(1) utility.
+
+WWW: https://metacpan.org/release/File-Cmp

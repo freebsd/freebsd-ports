@@ -1,0 +1,12 @@
+The File::BackupCopy module provides functions for creating backup copies of
+files.  Two backup schemes are supported: simple and numbered backups.  In
+simple (or single) backup scheme, only one backup copy is maintained for the
+given file.  Its name is created by appending a single tilde character to the
+original file name.  In numbered backup scheme, arbitrary number of backup
+copies can be created.  The name of each backup copy is created by suffixing
+the original file name with '.~N~', where N is a decimal number starting with
+1.  Additionally, the automatic backup name scheme is implemented.  In this
+naming scheme, numbered backups are created if at least one numbered backup
+copy already exists and simple backups are created otherwise.
+
+WWW: https://metacpan.org/release/File-BackupCopy
