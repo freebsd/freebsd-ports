@@ -15,4 +15,6 @@ DESCR=		${.CURDIR}/pkg-descr
 
 BIND_TOOLS_SLAVE=	YES
 
+PORTSCOUT=	ignore:1
+
 .include "${MASTERDIR}/Makefile"
