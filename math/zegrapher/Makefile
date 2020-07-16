@@ -2,7 +2,7 @@
 
 PORTNAME=	ZeGrapher
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.1
+DISTVERSION=	3.1.1
 CATEGORIES=	math graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,7 +21,6 @@ USE_GL=		gl
 
 PLIST_FILES=	bin/${PORTNAME} \
 		share/${PORTNAME}/locale/${PORTNAME}_fr.qm \
-		share/appdata/${PORTNAME}.appdata.xml \
 		share/applications/${PORTNAME}.desktop \
 		share/icons/hicolor/128x128/apps/${PORTNAME}.png
 
