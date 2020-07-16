@@ -259,11 +259,11 @@ my $ports = join(" ", keys %DEPPORTS);
 # (don't do error checking, too complicated right now)
 #
 unless ($opt_f or $opt_n) {
-  $TMPDIR = ".bump_revsion_pl_tmpdir.$$";
+  $TMPDIR = ".bump_revision_pl_tmpdir.$$";
   print "svn checkout into $TMPDIR...\n";
   mkdir($TMPDIR, 0755);
   chdir($TMPDIR);
-  system "svn checkout --depth=immediates svn+ssh://svn.freebsd.org/ports/head/ ports" and die "SVN checkout failed (wait value $?), aborting";
+  system "svn checkout --depth=immediates svn+ssh://repo.freebsd.org/ports/head/ ports" and die "SVN checkout failed (wait value $?), aborting";
   chdir('ports');
   system "svn update --set-depth=infinity $ports" and die "SVN checkout failed (wait value $?), aborting";
 }
