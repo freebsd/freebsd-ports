@@ -4,6 +4,7 @@
 PORTNAME=	encryptpad
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.0.0
+PORTVERSION=	1
 CATEGORIES=	editors security
 
 MAINTAINER=	dmgk@FreeBSD.org
@@ -29,6 +30,12 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc64
+CONFIGURE_ARGS=	--cpu="${ARCH}"
+.endif
+
 .include <bsd.port.pre.mk>
 
 post-patch:
@@ -38,7 +45,7 @@ post-patch:
 .endif
 
 do-configure:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./configure.py
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./configure.py ${CONFIGURE_ARGS}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/release/* ${STAGEDIR}${PREFIX}/bin
