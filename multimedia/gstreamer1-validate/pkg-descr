@@ -10,4 +10,4 @@ GstPipelines from any application by using the LD_PRELOAD gstvalidate
 lib. The third way of using it is to write your own application that
 links and uses libgstvalidate.
 
-WWW: http://gstreamer.freedesktop.org/
+WWW: https://gstreamer.freedesktop.org/
