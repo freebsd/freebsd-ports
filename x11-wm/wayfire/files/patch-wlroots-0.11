@@ -2,6 +2,7 @@ https://github.com/WayfireWM/wayfire/commit/0d6cecd27799
 https://github.com/WayfireWM/wayfire/commit/187b525c16d1
 https://github.com/WayfireWM/wayfire/commit/29dcd1387700
 https://github.com/WayfireWM/wayfire/commit/0e4e29acb3e9
+https://github.com/WayfireWM/wayfire/commit/24c0d2467ce2
 
 --- meson.build.orig	2020-03-21 19:10:27 UTC
 +++ meson.build
