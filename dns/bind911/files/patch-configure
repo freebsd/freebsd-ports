@@ -3,7 +3,7 @@
 - Make sure only json-c is detected.
 - Cleanup the BDB discovery code to find more recent versions.
 
---- configure.orig	2020-03-11 12:03:48 UTC
+--- configure.orig	2020-07-03 13:08:06 UTC
 +++ configure
 @@ -15655,27 +15655,9 @@ done
  		# problems start to show up.
@@ -124,7 +124,7 @@
  			have_libjson_c="yes"
  		else
  			as_fn_error $? "$use_libjson/include/json{,-c}/json.h not found." "$LINENO" 5
-@@ -24840,7 +24769,7 @@ $as_echo "" >&6; }
+@@ -24839,7 +24768,7 @@ $as_echo "" >&6; }
  			# Check other locations for includes.
  			# Order is important (sigh).
  
