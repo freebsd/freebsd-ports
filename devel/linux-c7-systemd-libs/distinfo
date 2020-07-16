@@ -1,7 +1,7 @@
-TIMESTAMP = 1589568782
-SHA256 (centos/systemd-libs-219-73.el7_8.6.i686.rpm) = 2c3b397aad4571d2a23130b88335924debfa73ef981401c81302ccd4ef64d3dc
-SIZE (centos/systemd-libs-219-73.el7_8.6.i686.rpm) = 432492
-SHA256 (centos/systemd-libs-219-73.el7_8.6.x86_64.rpm) = 41bdc210b5a9bd672c779c9a96252089a130d7ed88b130f739a79a7ce1318c9d
-SIZE (centos/systemd-libs-219-73.el7_8.6.x86_64.rpm) = 425724
-SHA256 (centos/systemd-219-73.el7_8.6.src.rpm) = 92301d186d93c342f587fbc37a6150f864c848814c71960f68a70a6c50860560
-SIZE (centos/systemd-219-73.el7_8.6.src.rpm) = 5974676
+TIMESTAMP = 1594886288
+SHA256 (centos/systemd-libs-219-73.el7_8.8.i686.rpm) = f7940bca479a5a6710d95dcd9e2f5d688caabc3046f9db25dbd56b16fda54d46
+SIZE (centos/systemd-libs-219-73.el7_8.8.i686.rpm) = 432764
+SHA256 (centos/systemd-libs-219-73.el7_8.8.x86_64.rpm) = ac9cbb53bbc1915e7c6b2d8a08db6e87e2104bb4f2b708d9590ea6430872b9b6
+SIZE (centos/systemd-libs-219-73.el7_8.8.x86_64.rpm) = 426004
+SHA256 (centos/systemd-219-73.el7_8.8.src.rpm) = 5f51c2e9b139106137743c153bc1820ec88963eb5f638e4424c109da6465f320
+SIZE (centos/systemd-219-73.el7_8.8.src.rpm) = 5976660
