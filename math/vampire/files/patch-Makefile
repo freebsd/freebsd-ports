@@ -1,6 +1,6 @@
---- Makefile.orig	2019-08-23 07:50:16 UTC
+--- Makefile.orig	2020-07-15 09:59:04 UTC
 +++ Makefile
-@@ -557,20 +557,17 @@ VERSION_NUMBER = 4.4.0
+@@ -572,20 +572,17 @@ VERSION_NUMBER = 4.5.1
  # The dependency on .git/HEAD tracks switching between branches,
  # the dependency on .git/index tracks new commits.
  
@@ -17,7 +17,7 @@
  # separate directory for object files implementation
  
  # different directory for each configuration, so there is no need for "make clean"
- SED_CMD='s/^[(]HEAD$$/detached/'      #
+ SED_CMD='s/.*[(].*/detached/' # if branch name contains an opening bracket, replace it with detached (in order to avoid a crash during linking). This covers at least the case '(HEAD' occuring if one is in detached state, and '(no' occuring if one currently performs a rebase.
 -BRANCH=$(shell git branch | grep "\*" | cut -d ' ' -f 2 | sed -e $(SED_CMD)  )
 -COM_CNT=$(shell git rev-list HEAD --count)
 +BRANCH="master"

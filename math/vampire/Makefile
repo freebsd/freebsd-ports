@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	vampire
-DISTVERSION=	4.4
+DISTVERSION=	4.5.1
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
