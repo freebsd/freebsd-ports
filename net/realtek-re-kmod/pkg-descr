@@ -1,0 +1,24 @@
+Realtek PCIe FE / GBE / 2.5G / Gaming Ethernet Family Controller
+kernel driver.
+
+This is the official driver from Realtek and can be loaded instead of
+the FreeBSD driver built into the GENERIC kernel if you experience
+issues with it (eg. watchdog timeouts), or your card is not supported.
+
+Supported devices:
+
+* 2.5G Gigabit Ethernet
+  - RTL8125 / RTL8125B(S)
+
+* 10/100/1000M Gigabit Ethernet
+  - RTL8111B / RTL8111C / RTL8111D / RTL8111E / RTL8111F / RTL8111G(S)
+    RTL8111H(S) / RTL8118(A)(S) / RTL8119i / RTL8111L / RTL8111K
+  - RTL8168B / RTL8168E / RTL8168H
+  - RTL8111DP / RTL8111EP / RTL8111FP
+  - RTL8411 / RTL8411B
+
+* 10/100M Fast Ethernet
+  - RTL8101E / RTL8102E / RTL8103E / RTL8105E / RTL8106E / RTL8107E
+  - RTL8401 / RTL8402
+
+WWW: https://www.realtek.com/en/component/zoo/category/network-interface-controllers-10-100-1000m-gigabit-ethernet-pci-express-software

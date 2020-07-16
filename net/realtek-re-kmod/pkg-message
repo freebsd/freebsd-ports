@@ -1,0 +1,11 @@
+[
+{ type: install
+  message: <<EOM
+Add the following lines to your /boot/loader.conf
+to override the built-in FreeBSD re driver.
+
+if_re_load="YES"
+if_re_name="/boot/modules/if_re.ko"
+EOM
+}
+]
