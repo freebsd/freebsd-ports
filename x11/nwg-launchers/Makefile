@@ -23,4 +23,8 @@ USE_GITHUB=	yes
 USE_GNOME=	gtkmm30
 GH_ACCOUNT=	nwg-piotr
 
+post-patch:
+# Respect PREFIX when looking for .desktop files
+	@${REINPLACE_CMD} 's,/usr/local,${PREFIX},' ${WRKSRC}/grid/grid_tools.cc
+
 .include <bsd.port.mk>
