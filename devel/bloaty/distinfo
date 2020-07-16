@@ -1,6 +1,6 @@
-TIMESTAMP = 1546554039
-SHA256 (google-bloaty-v1.0_GH0.tar.gz) = 1aaa1363d8267202794f2e7d923a6a894e73bd2b0fc3b9e7c8f6c433dcf7ba0d
-SIZE (google-bloaty-v1.0_GH0.tar.gz) = 3382258
+TIMESTAMP = 1594942101
+SHA256 (google-bloaty-v1.1_GH0.tar.gz) = 682640678a748d043eea65df48831f807d39a1e761eacc461c756256f7ec6a26
+SIZE (google-bloaty-v1.1_GH0.tar.gz) = 3389162
 SHA256 (abseil-abseil-cpp-bea85b5_GH0.tar.gz) = 22e6d91961b2c4568b345fbbcd8a8f350265b8aa60449f9f4e3681e377ce43c3
 SIZE (abseil-abseil-cpp-bea85b5_GH0.tar.gz) = 1025885
 SHA256 (nico-demumble-01098ea_GH0.tar.gz) = 8483238a47a68ba5feb0a28e60598e77751857732f1928c3768e08f77ca673b0
