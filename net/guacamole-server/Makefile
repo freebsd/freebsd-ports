@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	guacamole-server
-DISTVERSION=	1.1.0
-PORTREVISION=	1
+DISTVERSION=	1.2.0
 CATEGORIES=	net
 
 MAINTAINER=	ultima@FreeBSD.org
@@ -88,6 +87,7 @@ WEBP_CONFIGURE_WITH=	webp
 WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
 
 post-patch:
+	@${REINPLACE_CMD} 's/-Werror//' ${WRKSRC}/src/libguac/Makefile.am
 	@${REINPLACE_CMD} 's|/etc/ssl|${PREFIX}/etc/ssl|g ; \
 			 s|/etc/guacamole|${ETCDIR}|g' \
 			 ${WRKSRC}/src/guacd/man/guacd.conf.5.in

@@ -9,5 +9,6 @@
 %%DATADIR%%/guacamole-auth-ldap.tar.gz
 %%DATADIR%%/guacamole-auth-openid.tar.gz
 %%DATADIR%%/guacamole-auth-quickconnect.tar.gz
+%%DATADIR%%/guacamole-auth-saml.tar.gz
 %%DATADIR%%/guacamole-auth-totp.tar.gz
 %%DATADIR%%/guacamole.war
