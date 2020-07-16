@@ -1,0 +1,25 @@
+--- lib/Makefile.in.orig	2020-07-12 18:02:27 UTC
++++ lib/Makefile.in
+@@ -488,11 +488,13 @@ nobase_dist_pkgdata_DATA = \
+ 	mailbox/newmail.xpm \
+ 	mailbox/nomail.xpm \
+ 	mailbox/unreadmail.xpm \
++	taskbar/bsd-daemon.xpm \
+ 	taskbar/collapse.xpm \
+ 	taskbar/debian.xpm \
+ 	taskbar/desktop.xpm \
+ 	taskbar/expand.xpm \
+ 	taskbar/icewm.xpm \
++	taskbar/icewm-logo.xpm \
+ 	taskbar/linux1.xpm \
+ 	taskbar/linux20.xpm \
+ 	taskbar/linux2.xpm \
+@@ -562,6 +564,8 @@ nobase_dist_pkgdata_DATA = \
+ 	themes/Infadel2/rollupA.xpm \
+ 	themes/Infadel2/rollupI.xpm \
+ 	themes/Infadel2/snap.pcf \
++	themes/Infadel2/taskbar/bsd-daemon.xpm \
++	themes/Infadel2/taskbar/icewm-logo.xpm \
+ 	themes/Infadel2/taskbar/linux.xpm \
+ 	themes/Infadel2/taskbar/start.xpm \
+ 	themes/Infadel2/taskbar/windows.xpm \

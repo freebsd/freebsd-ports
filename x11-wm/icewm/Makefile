@@ -2,10 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	icewm
-PORTVERSION=	1.3.8
-PORTREVISION=	5
+PORTVERSION=	1.6.6
 CATEGORIES=	x11-wm
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}/${PORTVERSION}
+MASTER_SITES=	https://github.com/ice-wm/icewm/releases/download/${PORTVERSION}/
+
+PATCH_SITES=	https://github.com/bbidulock/icewm/commit/
+PATCHFILES=	32c295c85d22.diff:-p1 f60340768c55.diff:-p1
 
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Window Manager designed for speed, usability and consistency
@@ -14,35 +16,29 @@ LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2
+		libfreetype.so:print/freetype2 \
+		libfribidi.so:converters/fribidi \
+		libsndfile.so:audio/libsndfile
 
-USES=		gmake gnome iconv:translit localbase pkgconfig xorg
-USE_CXXSTD=	c++98
+USES=		compiler:c++11-lang gmake gnome iconv:translit localbase \
+		perl5 pkgconfig shebangfix tar:lz xorg
 USE_GNOME=	gdkpixbuf2
-USE_XORG=	ice sm x11 xext xrender
+USE_PERL5=	build
+USE_XORG=	ice sm x11 xcomposite xdamage xext xfixes xpm xrender
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-guievents \
-		--with-icesound=oss \
+CONFIGURE_ARGS=	--with-icesound=oss \
 		--with-cfgdir=${DATADIR} \
 		--with-libdir=${DATADIR} \
-		--with-kdedatadir=${LOCALBASE}/share \
-		--with-docdir=${PREFIX}/share/doc \
-		--with-mkfontdir=${NONEXISTENT}
+		--with-docdir=${PREFIX}/share/doc
+SHEBANG_FILES=	contrib/icewm-menu-xrandr
 
-OPTIONS_DEFINE=		BEASTIE GNOME LITE MENUFIX NLS XFT XINERAMA \
-			XRANDR DOCS
-OPTIONS_DEFINE_i386=	ASM
-OPTIONS_DEFAULT=	BEASTIE MENUFIX XFT XINERAMA XRANDR
-OPTIONS_DEFAULT_i386=	ASM
+OPTIONS_DEFINE=		BEASTIE DOCS NLS XFT XINERAMA XRANDR
+OPTIONS_DEFAULT=	BEASTIE XFT XINERAMA XRANDR
 OPTIONS_SUB=		yes
 
 BEASTIE_DESC=		Use Beastie'fied startup button
-GNOME_DESC=		Display GNOME 2 menus
-GNOME_USE=		GNOME=gnomedesktop,libgnomeui
-GNOME_CONFIGURE_ENABLE=	menus-gnome2
-LITE_CONFIGURE_ENABLE=	lite
-MENUFIX_DESC=		MenuIconSize fix
-MENUFIX_EXTRA_PATCHES=	${FILESDIR}/extra-menu-icon-fix.patch
+BEASTIE_VARS=		STARTUP_PIXMAP=bsd-daemon.xpm
+BEASTIE_VARS_OFF=	STARTUP_PIXMAP=icewm-logo.xpm
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
 XFT_LIB_DEPENDS=	libXft.so:x11-fonts/libXft
@@ -51,41 +47,23 @@ XINERAMA_USE=		XORG=xinerama
 XINERAMA_CONFIGURE_ENABLE=	xinerama
 XRANDR_USE=		XORG=xrandr
 XRANDR_CONFIGURE_ENABLE=	xrandr
-ASM_CONFIGURE_ENABLE=	x86-asm
-BEASTIE_VARS=		STARTUP_PIXMAP=${DATADIR}/taskbar/bsd-daemon.xpm
-BEASTIE_VARS_OFF=	STARTUP_PIXMAP=icewm-logo.xpm
 
 post-extract:
 .for dir in taskbar themes/Infadel2/taskbar
 	@cd ${WRKSRC}/lib/${dir} && ${MV} start.xpm icewm-logo.xpm
+	@${LN} -sf ${FILESDIR}/bsd-daemon.xpm ${WRKSRC}/lib/${dir}
+	@${LN} -sf ${STARTUP_PIXMAP} ${WRKSRC}/lib/${dir}/start.xpm
 .endfor
-	@${CP} -f ${FILESDIR}/bsd-daemon.xpm ${WRKSRC}/lib/taskbar
 
 post-patch:
-	@${REINPLACE_CMD} -e '/test/s|==|=|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e \
-		's|/usr/share/control|${LOCALBASE}/share/control|g ; \
-		 s|/usr/share/app|${LOCALBASE}/share/app|g ; \
-		 s|/usr/share/gnome|${LOCALBASE}/share/gnome|g' \
-		 ${WRKSRC}/src/gnome2.cc
-	@${REINPLACE_CMD} -e \
-		's|SHELL=.*|SHELL=@SHELL@| ; \
-		 s|icewm-set-gnomewm||g' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e \
-		's|icewm-$$(VERSION)|icewm| ; \
-		 s|`pkg-config fontconfig --cflags`|| ; \
-		 s|`pkg-config fontconfig --libs`|| ; \
+	@${REINPLACE_CMD} -E -e \
+		'/^(icewm|icehelp|icewmbg)_LDADD =/s|$$| @LIBICONV@| ; \
 		 /@echo/s|^|#| ; \
-		 s|@$$(|$$(|' ${WRKSRC}/src/Makefile.in
-
-post-install:
-.for dir in taskbar themes/Infadel2/taskbar
-	@${LN} -s ${STARTUP_PIXMAP} ${STAGEDIR}${DATADIR}/${dir}/start.xpm
-.endfor
+		 s|@$$\(|$$(|' ${WRKSRC}/src/Makefile.in
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for f in CHANGES INSTALL README TODO doc/*.html
+.for f in ChangeLog NEWS README TODO doc/*.html
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 
