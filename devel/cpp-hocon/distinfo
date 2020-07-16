@@ -1,5 +1,3 @@
-TIMESTAMP = 1545174850
-SHA256 (puppetlabs-cpp-hocon-0.2.1_GH0.tar.gz) = 6ddd08f0ec7915fff2f07385926a137b09f6ff58506a7467fa2c954585479e36
-SIZE (puppetlabs-cpp-hocon-0.2.1_GH0.tar.gz) = 158108
-SHA256 (caab27550982.patch) = 2467e579ad5b86829fa882bf58d66e6e2bd6b4caa97258f6d3ae26064982d9bb
-SIZE (caab27550982.patch) = 1004
+TIMESTAMP = 1594767157
+SHA256 (puppetlabs-cpp-hocon-0.3.0_GH0.tar.gz) = dab02354046f05aca6275c746d7583ee5f71853aa5b1d93529564632e184c3dd
+SIZE (puppetlabs-cpp-hocon-0.3.0_GH0.tar.gz) = 159032
