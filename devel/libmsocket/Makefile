@@ -31,6 +31,8 @@ PLIST_FILES=	lib/libmsocket.so \
 CFLAGS_aarch64+=-fPIC -DPIC
 CFLAGS_amd64+=	-fPIC -DPIC
 CFLAGS_i386+=	-fPIC -DPIC
+CFLAGS_powerpc64+=	-fPIC -DPIC
+CFLAGS_powerpc+=	-fPIC -DPIC
 
 DEBUG_CONFIGURE_ON=	--enable-debug
 
