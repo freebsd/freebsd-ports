@@ -49,13 +49,13 @@ include/wcslib-%%VERSION%%/wtbarr.h
 %%PGPLOT%%lib/libpgsbox-%%VERSION%%.a
 %%PGPLOT%%lib/libpgsbox.a
 %%PGPLOT%%lib/libpgsbox.so
-%%PGPLOT%%lib/libpgsbox.so.6
+%%PGPLOT%%lib/libpgsbox.so.7
 %%PGPLOT%%lib/libpgsbox.so.%%VERSION%%
 lib/libwcs-%%VERSION%%.a
 lib/libwcs.a
 lib/libwcs.so
-lib/libwcs.so.6
-lib/libwcs.so.6.4
+lib/libwcs.so.7
+lib/libwcs.so.7.3
 libdata/pkgconfig/wcslib.pc
 %%CFITSIO%%man/man1/HPXcvt.1.gz
 man/man1/fitshdr.1.gz
@@ -173,6 +173,7 @@ man/man1/fitshdr.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/functions_e.html
 %%PORTDOCS%%%%DOCSDIR%%/html/functions_f.html
 %%PORTDOCS%%%%DOCSDIR%%/html/functions_g.html
+%%PORTDOCS%%%%DOCSDIR%%/html/functions_h.html
 %%PORTDOCS%%%%DOCSDIR%%/html/functions_i.html
 %%PORTDOCS%%%%DOCSDIR%%/html/functions_j.html
 %%PORTDOCS%%%%DOCSDIR%%/html/functions_k.html
@@ -193,6 +194,7 @@ man/man1/fitshdr.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/functions_vars_e.html
 %%PORTDOCS%%%%DOCSDIR%%/html/functions_vars_f.html
 %%PORTDOCS%%%%DOCSDIR%%/html/functions_vars_g.html
+%%PORTDOCS%%%%DOCSDIR%%/html/functions_vars_h.html
 %%PORTDOCS%%%%DOCSDIR%%/html/functions_vars_i.html
 %%PORTDOCS%%%%DOCSDIR%%/html/functions_vars_j.html
 %%PORTDOCS%%%%DOCSDIR%%/html/functions_vars_k.html
@@ -266,6 +268,7 @@ man/man1/fitshdr.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/html/intro.html
 %%PORTDOCS%%%%DOCSDIR%%/html/jquery.js
+%%PORTDOCS%%%%DOCSDIR%%/html/limits.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lin_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lin_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/html/log_8h.html
@@ -290,6 +293,7 @@ man/man1/fitshdr.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/splitbar.png
 %%PORTDOCS%%%%DOCSDIR%%/html/spx_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/html/spx_8h_source.html
+%%PORTDOCS%%%%DOCSDIR%%/html/structauxprm.html
 %%PORTDOCS%%%%DOCSDIR%%/html/structcelprm.html
 %%PORTDOCS%%%%DOCSDIR%%/html/structdisprm.html
 %%PORTDOCS%%%%DOCSDIR%%/html/structdpkey.html
