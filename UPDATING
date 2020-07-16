@@ -6,6 +6,20 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 
+20200716:
+  AFFECTS: users of shells/bash, shells/bash-static
+  AUTHOR: ehaupt@FreeBSD.org
+
+  In order to cleanly decouple bash from base, bash now reads `profile` from
+  LOCALBASE/etc insead of from /etc. If you are using system wide bash
+  configuration in /etc/profile please migrate to LOCALBASE/etc/profile
+
+  # cp /etc/profile /usr/local/etc/profile
+
+  or create a symlink
+
+  # ln -s /etc/profile /usr/local/etc/
+
 20200713:
   AFFECTS: users of mail/php7[2-4]-imap
   AUTHOR: tz@FreeBSD.org
