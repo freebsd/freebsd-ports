@@ -2,13 +2,9 @@
 
 PORTNAME=	wayvnc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.2
-PORTREVISION=	1
+DISTVERSION=	0.1.2-140
+DISTVERSIONSUFFIX=	-g1bc095b
 CATEGORIES=	net
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	720b127dee00.patch:-p1 # https://github.com/any1/wayvnc/pull/31
-PATCHFILES+=	d61007661480.patch:-p1 # https://github.com/any1/wayvnc/pull/31
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	VNC server for wlroots-based compositors
@@ -16,9 +12,9 @@ COMMENT=	VNC server for wlroots-based compositors
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
-		${LOCALBASE}/include/libdrm/drm_fourcc.h:graphics/libdrm
-LIB_DEPENDS=	libuv.so:devel/libuv \
+BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto
+LIB_DEPENDS=	libaml.so:devel/aml \
+		libdrm.so:graphics/libdrm \
 		libwayland-client.so:graphics/wayland \
 		libneatvnc.so:net/neatvnc \
 		libxkbcommon.so:x11/libxkbcommon
@@ -26,10 +22,9 @@ LIB_DEPENDS=	libuv.so:devel/libuv \
 USES=		compiler:c11 meson pkgconfig xorg
 USE_GITHUB=	yes
 USE_XORG=	pixman
-USE_GL=		egl glesv2
+USE_GL=		gbm
 USE_LDCONFIG=	yes
 GH_ACCOUNT=	any1
 PLIST_FILES=	bin/${PORTNAME}
-PORTDATA=	*
 
 .include <bsd.port.mk>

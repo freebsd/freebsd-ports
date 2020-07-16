@@ -1,0 +1,21 @@
+Andri's Main Loop
+
+Goals:
+ * Portability
+ * Utility
+ * Simplicity
+
+Non-goals:
+ * MS Windows (TM) support
+ * Solving the C10K problem
+
+Features:
+ * File descriptor event handlers
+ * Timers
+ * Tickers
+ * Signal handlers
+ * Idle dispatch callbacks
+ * Thread pool
+ * Interoperability with other event loops
+
+WWW: https://github.com/any1/aml

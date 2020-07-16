@@ -2,8 +2,8 @@
 
 PORTNAME=	neatvnc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.0
-PORTREVISION=	1
+DISTVERSION=	0.1.0-54
+DISTVERSIONSUFFIX=	-g33eda8c
 CATEGORIES=	net
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/include/libdrm/drm_fourcc.h:graphics/libdrm
-LIB_DEPENDS=	libuv.so:devel/libuv
+LIB_DEPENDS=	libaml.so:devel/aml
 
 USES=		compiler:c11 meson pkgconfig xorg
 USE_GITHUB=	yes
@@ -28,6 +28,6 @@ GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 GNUTLS_MESON_ENABLED=	tls
 
 JPEG_LIB_DEPENDS=	libturbojpeg.so:graphics/libjpeg-turbo
-JPEG_MESON_ENABLED=	tight-encoding
+JPEG_MESON_ENABLED=	jpeg
 
 .include <bsd.port.mk>
