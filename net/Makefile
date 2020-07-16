@@ -1118,6 +1118,7 @@
     SUBDIR += py-terminado
     SUBDIR += py-tofu
     SUBDIR += py-transip
+    SUBDIR += py-trio
     SUBDIR += py-twitter-tools
     SUBDIR += py-txamqp
     SUBDIR += py-txrestapi

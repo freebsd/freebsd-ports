@@ -1,0 +1,15 @@
+A permissively licensed, async/await-native I/O library for Python. Its main
+purpose is to help you write programs that do multiple things at the same time
+with parallelized I/O. A web spider that wants to fetch lots of pages in
+parallel, a web server that needs to juggle lots of downloads and websocket
+connections at the same time, a process supervisor monitoring multiple
+subprocesses. Compared to other libraries, Trio attempts to distinguish itself
+with an obsessive focus on usability and correctness. Concurrency is
+complicated; trio tries to make it easy to get things right.
+
+Trio was built from the ground up to take advantage of the latest Python
+features, and draws inspiration from many sources, in particular Dave Beazley's
+Curio. The resulting design is radically simpler than older competitors like
+asyncio and Twisted, yet just as capable.
+
+WWW: https://pypi.org/project/trio/
