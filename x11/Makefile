@@ -234,6 +234,7 @@
     SUBDIR += nvidia-driver-390
     SUBDIR += nvidia-settings
     SUBDIR += nvidia-xconfig
+    SUBDIR += nwg-launchers
     SUBDIR += nxcomp
     SUBDIR += p5-Clipboard
     SUBDIR += p5-X11-GUITest

@@ -1,0 +1,9 @@
+bin/nwgbar
+bin/nwgdmenu
+bin/nwggrid
+%%DATADIR%%/nwgbar/bar.json
+%%DATADIR%%/nwgbar/icon-missing.svg
+%%DATADIR%%/nwgbar/style.css
+%%DATADIR%%/nwgdmenu/style.css
+%%DATADIR%%/nwggrid/icon-missing.svg
+%%DATADIR%%/nwggrid/style.css

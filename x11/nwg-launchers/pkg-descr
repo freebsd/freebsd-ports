@@ -1,0 +1,4 @@
+nwg-launchers is C++ rewrite of sgtk-menu, an application launcher
+primarily developed for Sway but also works on other window managers.
+
+WWW: https://github.com/nwg-piotr/nwg-launchers
