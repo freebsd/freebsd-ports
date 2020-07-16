@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2020-05-14 11:07:56 UTC
+--- CMakeLists.txt.orig	2020-07-15 21:43:39 UTC
 +++ CMakeLists.txt
-@@ -63,7 +63,7 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CU
+@@ -99,7 +99,7 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CU
  
  include(CMakePackageConfigHelpers)
  include(CMakeParseArguments)
@@ -9,7 +9,7 @@
  include(FindPkgConfig)
  
  include(GNUInstallDirs)
-@@ -841,10 +841,10 @@ if(ARROW_BUILD_EXAMPLES)
+@@ -857,10 +857,10 @@ if(ARROW_BUILD_EXAMPLES)
    add_subdirectory(examples/arrow)
  endif()
  
@@ -22,5 +22,5 @@
 +#              ${CMAKE_CURRENT_SOURCE_DIR}/README.md
 +#        DESTINATION "${ARROW_DOC_DIR}")
  
- config_summary_message()
- if(${ARROW_BUILD_CONFIG_SUMMARY_JSON})
+ #
+ # Validate and print out Arrow configuration options
