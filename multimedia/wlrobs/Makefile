@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	wlrobs
-PORTVERSION=	s20200608
-DISTVERSIONSUFFIX=	-ee7200c60574
+PORTVERSION=	s20200622
+DISTVERSIONSUFFIX=	-1d3acaaf6404
 CATEGORIES=	multimedia
 #MASTER_SITES=	https://hg.sr.ht/~scoopta/${PORTNAME}/archive/${DISTVERSIONSUFFIX:S/^-//}${EXTRACT_SUFX}?dummy=/
 MASTER_SITES+=	LOCAL/jbeich # https://todo.sr.ht/~sircmpwn/hg.sr.ht/33
