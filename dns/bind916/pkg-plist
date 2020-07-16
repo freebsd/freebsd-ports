@@ -300,6 +300,7 @@ lib/named/filter-aaaa.so
 %%MANPAGES%%man/man8/filter-aaaa.8.gz
 %%MANPAGES%%man/man8/named-checkconf.8.gz
 %%MANPAGES%%man/man8/named-checkzone.8.gz
+%%MANPAGES%%man/man8/named-compilezone.8.gz
 %%MANPAGES%%@comment man/man8/named-journalprint.8.gz
 %%MANPAGES%%%%LMDB%%man/man8/named-nzd2nzf.8.gz
 %%MANPAGES%%man/man8/named.8.gz
@@ -310,6 +311,7 @@ lib/named/filter-aaaa.so
 %%MANPAGES%%%%NATIVE_PKCS11%%man/man8/pkcs11-tokens.8.gz
 %%MANPAGES%%man/man8/rndc-confgen.8.gz
 %%MANPAGES%%man/man8/rndc.8.gz
+%%MANPAGES%%man/man8/tsig-keygen.8.gz
 sbin/ddns-confgen
 sbin/named
 sbin/named-checkconf

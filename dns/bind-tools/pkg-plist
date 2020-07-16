@@ -33,12 +33,14 @@ bin/nsupdate
 %%MANPAGES%%@comment man/man8/filter-aaaa.8.gz
 %%MANPAGES%%@comment man/man8/named-checkconf.8.gz
 %%MANPAGES%%@comment man/man8/named-checkzone.8.gz
+%%MANPAGES%%@comment man/man8/named-compilezone.8.gz
 %%MANPAGES%%man/man8/named-journalprint.8.gz
 %%MANPAGES%%@comment man/man8/named-nzd2nzf.8.gz
 %%MANPAGES%%@comment man/man8/named.8.gz
 %%MANPAGES%%man/man8/nsec3hash.8.gz
 %%MANPAGES%%@comment man/man8/rndc-confgen.8.gz
 %%MANPAGES%%@comment man/man8/rndc.8.gz
+%%MANPAGES%%@comment man/man8/tsig-keygen.8.gz
 sbin/dnssec-cds
 %%PYTHON%%sbin/dnssec-checkds
 %%PYTHON%%sbin/dnssec-coverage
