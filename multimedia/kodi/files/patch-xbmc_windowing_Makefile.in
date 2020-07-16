@@ -1,8 +1,0 @@
---- xbmc/windowing/Makefile.in.orig	2016-10-08 UTC
-+++ xbmc/windowing/Makefile.in
-@@ -1,4 +1,5 @@
- SRCS=WinEventsSDL.cpp \
-+     WinEventsFreeBSD.cpp \
-      WinEventsLinux.cpp \
-      WinEventsX11.cpp \
-      WinSystem.cpp \
