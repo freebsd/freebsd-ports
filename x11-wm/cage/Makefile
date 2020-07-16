@@ -2,14 +2,10 @@
 
 PORTNAME=	cage
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.1-77
-DISTVERSIONSUFFIX=	-gbd961db
-PORTREVISION=	1
+DISTVERSION=	0.1.2.1
 CATEGORIES=	x11-wm
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	6a12da196068.patch:-p1 # https://github.com/Hjdskes/cage/pull/145
-PATCHFILES+=	3575c9180bc0.patch:-p1 # https://github.com/Hjdskes/cage/pull/145
 PATCHFILES+=	70ecdcb02ea0.patch:-p1 # https://github.com/Hjdskes/cage/pull/148
 
 MAINTAINER=	jbeich@FreeBSD.org
