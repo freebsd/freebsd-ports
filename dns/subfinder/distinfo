@@ -1,6 +1,6 @@
-TIMESTAMP = 1591745809
-SHA256 (projectdiscovery-subfinder-2.3.5_GH0.tar.gz) = 84c457eff858abd42bcded238366ce603ac101f09e24282adf8351cce68f780e
-SIZE (projectdiscovery-subfinder-2.3.5_GH0.tar.gz) = 1061974
+TIMESTAMP = 1594881672
+SHA256 (projectdiscovery-subfinder-v2.3.6_GH0.tar.gz) = c8ccc886cf1d0759a03c9e6c53e2b470839579f31bfaf6bbe820b80df1e66ec6
+SIZE (projectdiscovery-subfinder-v2.3.6_GH0.tar.gz) = 1063058
 SHA256 (alexbrainman-sspi-e580b900e9f5_GH0.tar.gz) = 9cbbbb19669ec85f0a569d5272fce01dad7fc579b367dc5f7430f64b7310ac4b
 SIZE (alexbrainman-sspi-e580b900e9f5_GH0.tar.gz) = 19600
 SHA256 (davecgh-go-spew-v1.1.1_GH0.tar.gz) = 7d82b9bb7291adbe7498fe946920ab3e7fc9e6cbfc3b2294693fad00bf0dd17e
@@ -57,3 +57,5 @@ SHA256 (sirupsen-logrus-v1.3.0_GH0.tar.gz) = f80cfa34148c4e25c4d3030edb1fd9878d6
 SIZE (sirupsen-logrus-v1.3.0_GH0.tar.gz) = 38452
 SHA256 (stretchr-testify-v1.5.1_GH0.tar.gz) = 6d65f92aeff186bb261dbdb885d9f3ba09db3d79eb5f212fcace1fd4a2858263
 SIZE (stretchr-testify-v1.5.1_GH0.tar.gz) = 78657
+SHA256 (tomnomnom-linkheader-02ca5825eb80_GH0.tar.gz) = 0905f5752137e019e22d2f0c6493ae969ad2cc944ceef58c2085a948c9c99e9d
+SIZE (tomnomnom-linkheader-02ca5825eb80_GH0.tar.gz) = 4318

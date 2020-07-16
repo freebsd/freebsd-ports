@@ -1,14 +1,15 @@
 # $FreeBSD$
 
 PORTNAME=	subfinder
-DISTVERSION=	2.3.5
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2.3.6
 CATEGORIES=	dns
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Subdomain discovery tool that discovers valid subdomains for websites
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 USES=		go:modules
 USE_GITHUB=	yes
@@ -41,7 +42,8 @@ GH_TUPLE=	\
 		projectdiscovery:gologger:v1.0.0:projectdiscovery_gologger/vendor/github.com/projectdiscovery/gologger \
 		rs:xid:v1.2.1:rs_xid/vendor/github.com/rs/xid \
 		sirupsen:logrus:v1.3.0:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
-		stretchr:testify:v1.5.1:stretchr_testify/vendor/github.com/stretchr/testify
+		stretchr:testify:v1.5.1:stretchr_testify/vendor/github.com/stretchr/testify \
+		tomnomnom:linkheader:02ca5825eb80:tomnomnom_linkheader/vendor/github.com/tomnomnom/linkheader
 
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
 GO_TARGET=	./cmd/${PORTNAME}
