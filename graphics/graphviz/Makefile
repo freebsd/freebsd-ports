@@ -3,7 +3,7 @@
 
 PORTNAME=	graphviz
 PORTVERSION=	2.44.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics tk
 MASTER_SITES=	https://www2.graphviz.org/Packages/stable/portable_source/
 
@@ -22,8 +22,8 @@ LIB_DEPENDS=	libltdl.so:devel/libltdl \
 		libexpat.so:textproc/expat2 \
 		libgd.so:${GD_PORT}
 
-USES=		cpe pathfix shebangfix gmake bison pkgconfig \
-		libtool:keepla autoreconf localbase:ldflags jpeg \
+USES=		compiler:c++11-lang cpe pathfix shebangfix gmake bison \
+		pkgconfig libtool:keepla autoreconf localbase:ldflags jpeg \
 		tcl:build
 
 GNU_CONFIGURE=	yes
@@ -169,12 +169,6 @@ GO_CONFIGURE_ENABLE=		go
 NVTHREADS_LDFLAGS=	-lpthread
 
 .include <bsd.port.options.mk>
-
-.if ${ARCH} == powerpc64
-USES+=		compiler:gcc-c++11-lib
-.else
-USES+=		compiler:c++11-lang
-.endif
 
 # allow the use localized gd ports in Makefile.local or slave ports.
 GD_PORT?=	graphics/gd
