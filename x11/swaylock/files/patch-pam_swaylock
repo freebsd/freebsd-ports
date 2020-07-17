@@ -1,0 +1,15 @@
+"login" has "auth sufficient pam_self.so" but a screen locker is
+supposed to ask for password regardless.
+
+--- pam/swaylock.orig	2019-01-29 19:48:00 UTC
++++ pam/swaylock
+@@ -1,6 +1,6 @@
+ #
+-# PAM configuration file for the swaylock screen locker. By default, it includes
+-# the 'login' configuration file (see /etc/pam.d/login)
++# PAM configuration for the "swaylock" service. swaylock(1) only uses
++# auth facilities.
+ #
+ 
+-auth include login
++auth include system
