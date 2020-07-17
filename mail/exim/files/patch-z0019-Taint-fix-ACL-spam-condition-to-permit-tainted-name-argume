@@ -1,0 +1,52 @@
+From 5f3e2ac9f39db5c8ef5a408929c8a5aba957b20f Mon Sep 17 00:00:00 2001
+From: Jeremy Harris <jgh146exb@wizmail.org>
+Date: Mon, 29 Jun 2020 17:26:36 +0100
+Subject: [PATCH 19/26] Taint: fix ACL "spam" condition, to permit tainted
+ name arguments.
+
+Cherry-picked from: 62b2ccce05
+---
+ doc/ChangeLog     | 4 ++++
+ src/spam.c        | 5 +----
+
+diff --git doc/ChangeLog doc/ChangeLog
+index 8a13bda87..6a867c716 100644
+--- doc/ChangeLog
++++ doc/ChangeLog
+@@ -55,6 +55,10 @@ JH/13 Fix dsearch "subdir" filter to ignore ".".  Previously only ".." was
+ JH/14 Bug 2606: Fix a segfault in sqlite lookups.  When no, or a bad, filename
+       was given for the sqlite_dbfile a trap resulted.
+ 
++JH/15 Fix "spam" ACL condition.  Previously, tainted values for the "name"
++      argument resulted in a trap.  There is no reason to disallow such; this
++      was a coding error.
++
+ 
+ Exim version 4.94
+ -----------------
+diff --git src/spam.c src/spam.c
+index 5eff1ad5c..63ced4f65 100644
+--- src/spam.c
++++ src/spam.c
+@@ -190,7 +190,6 @@ spam(const uschar **listptr)
+ int sep = 0;
+ const uschar *list = *listptr;
+ uschar *user_name;
+-uschar user_name_buffer[128];
+ unsigned long mbox_size;
+ FILE *mbox_file;
+ client_conn_ctx spamd_cctx = {.sock = -1};
+@@ -218,9 +217,7 @@ spamd_address_container * sd;
+ result = 0;
+ 
+ /* find the username from the option list */
+-if ((user_name = string_nextinlist(&list, &sep,
+-				   user_name_buffer,
+-				   sizeof(user_name_buffer))) == NULL)
++if (!(user_name = string_nextinlist(&list, &sep, NULL, 0)))
+   {
+   /* no username given, this means no scanning should be done */
+   return FAIL;
+-- 
+2.24.3 (Apple Git-128)
+

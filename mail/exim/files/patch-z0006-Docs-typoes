@@ -1,0 +1,25 @@
+From de498d230862bcc49acbc6d5e76c71b1e15596c3 Mon Sep 17 00:00:00 2001
+From: Jeremy Harris <jgh146exb@wizmail.org>
+Date: Tue, 2 Jun 2020 16:34:42 +0100
+Subject: [PATCH 06/26] Docs: typoes
+
+Cherry-picked from: 1195f8f2a4
+---
+ doc/ChangeLog     | 2 +-
+
+diff --git doc/ChangeLog doc/ChangeLog
+index 94bcea29b..f858c9121 100644
+--- doc/ChangeLog
++++ doc/ChangeLog
+@@ -8,7 +8,7 @@ Since Exim version 4.94
+ 
+ JH/02 Bug 2587: Fix pam expansion condition.  Tainted values are commonly used
+       as arguments, so an implementation trying to copy these into a local
+-      buffer was taking a taint-enformance trap.  Fix by using dynamically
++      buffer was taking a taint-enforcement trap.  Fix by using dynamically
+       created buffers.
+ 
+ JH/03 Bug 2586: Fix listcount expansion operator.  Using tainted arguments is
+-- 
+2.24.3 (Apple Git-128)
+

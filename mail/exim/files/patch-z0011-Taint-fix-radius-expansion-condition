@@ -1,0 +1,40 @@
+From 94d719d803caf2c0c902dceeb787795eac11a63b Mon Sep 17 00:00:00 2001
+From: Jeremy Harris <jgh146exb@wizmail.org>
+Date: Fri, 12 Jun 2020 00:46:34 +0100
+Subject: [PATCH 11/26] Taint: fix radius expansion condition
+
+(cherry picked from commit f91219c114a3d95792d052555664a5a7a3984a8d)
+---
+ doc/ChangeLog           | 2 +-
+ src/auths/call_radius.c | 3 +--
+
+diff --git doc/ChangeLog doc/ChangeLog
+index 612005803..41d8c6276 100644
+--- doc/ChangeLog
++++ doc/ChangeLog
+@@ -9,7 +9,7 @@ Since Exim version 4.94
+ JH/02 Bug 2587: Fix pam expansion condition.  Tainted values are commonly used
+       as arguments, so an implementation trying to copy these into a local
+       buffer was taking a taint-enforcement trap.  Fix by using dynamically
+-      created buffers.
++      created buffers.  Similar fix for radius expansion condition.
+ 
+ JH/03 Bug 2586: Fix listcount expansion operator.  Using tainted arguments is
+       reasonable, eg. to count headers.  Fix by using dynamically created
+diff --git src/auths/call_radius.c src/auths/call_radius.c
+index cc269dcd5..9d10b34c6 100644
+--- src/auths/call_radius.c
++++ src/auths/call_radius.c
+@@ -96,8 +96,7 @@ int sep = 0;
+ #endif
+ 
+ 
+-user = string_nextinlist(&radius_args, &sep, big_buffer, big_buffer_size);
+-if (!user) user = US"";
++if (!(user = string_nextinlist(&radius_args, &sep, NULL, 0))) user = US"";
+ 
+ DEBUG(D_auth) debug_printf("Running RADIUS authentication for user \"%s\" "
+                "and \"%s\"\n", user, radius_args);
+-- 
+2.24.3 (Apple Git-128)
+

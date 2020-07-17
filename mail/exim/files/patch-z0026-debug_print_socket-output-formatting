@@ -1,0 +1,51 @@
+From 73b748711caf8a4b18dd1c0d7c662b5d57798dfe Mon Sep 17 00:00:00 2001
+From: "Heiko Schlittermann (HS12-RIPE)" <hs@schlittermann.de>
+Date: Thu, 16 Jul 2020 23:53:27 +0200
+Subject: [PATCH 26/26] debug_print_socket(): output formatting
+
+---
+ src/debug.c | 8 ++++----
+
+diff --git src/debug.c src/debug.c
+index acc723a29..6d6132e39 100644
+--- src/debug.c
++++ src/debug.c
+@@ -338,7 +338,7 @@ if (fstat(fd, &s) == 0 && (s.st_mode & S_IFMT) == S_IFSOCK)
+     switch (a.ss_family)
+       {
+       case AF_INET:
+-	g = string_cat(g, US" domain AF_INET");
++	g = string_cat(g, US"domain AF_INET");
+ 	g = string_fmt_append(g, " lcl [%s]:%u",
+ 	  inet_ntoa(sinp->sin_addr), ntohs(sinp->sin_port));
+ 	alen = sizeof(*sinp);
+@@ -349,7 +349,7 @@ if (fstat(fd, &s) == 0 && (s.st_mode & S_IFMT) == S_IFSOCK)
+       case AF_INET6:
+ 	{
+ 	uschar buf[46];
+-	g = string_cat(g, US" domain AF_INET6");
++	g = string_cat(g, US"domain AF_INET6");
+ 	g = string_fmt_append(g, " lcl [%s]:%u",
+ 	  inet_ntop(AF_INET6, &sin6p->sin6_addr, CS buf, sizeof(buf)),
+ 	  ntohs(sin6p->sin6_port));
+@@ -373,7 +373,7 @@ if (fstat(fd, &s) == 0 && (s.st_mode & S_IFMT) == S_IFSOCK)
+             sunp->sun_path[0] ? sunp->sun_path : sunp->sun_path+1);
+         break;
+       default:
+-	g = string_fmt_append(g, " domain %u", sinp->sin_family);
++	g = string_fmt_append(g, "domain %u", sinp->sin_family);
+ 	break;
+       }
+   if (getsockopt(fd, SOL_SOCKET, SO_TYPE, &val, &vlen) == 0)
+@@ -388,7 +388,7 @@ if (fstat(fd, &s) == 0 && (s.st_mode & S_IFMT) == S_IFSOCK)
+     {
+     struct protoent * p = getprotobynumber(val);
+     g = p
+-      ? string_fmt_append(g, " proto %s\n", p->p_name)
++      ? string_fmt_append(g, " proto %s", p->p_name)
+       : string_fmt_append(g, " proto %d", val);
+     }
+ #endif
+-- 
+2.24.3 (Apple Git-128)
+

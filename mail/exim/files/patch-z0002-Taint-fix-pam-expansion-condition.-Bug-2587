@@ -1,0 +1,56 @@
+From 173bd1c8f9cf83ad8c0e61a9e32678e7e371d41d Mon Sep 17 00:00:00 2001
+From: Jeremy Harris <jgh146exb@wizmail.org>
+Date: Tue, 2 Jun 2020 14:50:31 +0100
+Subject: [PATCH 02/26] Taint: fix pam expansion condition.  Bug 2587
+
+(cherry picked from commit f7f933a199be8bb7362c715e0040545b514cddca)
+---
+ doc/ChangeLog        | 9 +++++++++
+ src/auths/call_pam.c | 5 ++---
+
+diff --git doc/ChangeLog doc/ChangeLog
+index 585deb042..dbdc22117 100644
+--- doc/ChangeLog
++++ doc/ChangeLog
+@@ -3,6 +3,15 @@ affect Exim's operation, with an unchanged configuration file.  For new
+ options, and new features, see the NewStuff file next to this ChangeLog.
+ 
+ 
++Since Exim version 4.94
++-----------------------
++
++JH/02 Bug 2587: Fix pam expansion condition.  Tainted values are commonly used
++      as arguments, so an implementation trying to copy these into a local
++      buffer was taking a taint-enformance trap.  Fix by using dynamically
++      created buffers.
++
++
+ Exim version 4.94
+ -----------------
+ 
+diff --git src/auths/call_pam.c src/auths/call_pam.c
+index 2959cbbf3..80bb23ec3 100644
+--- src/auths/call_pam.c
++++ src/auths/call_pam.c
+@@ -83,8 +83,7 @@ for (int i = 0; i < num_msg; i++)
+     {
+     case PAM_PROMPT_ECHO_ON:
+     case PAM_PROMPT_ECHO_OFF:
+-      arg = string_nextinlist(&pam_args, &sep, big_buffer, big_buffer_size);
+-      if (!arg)
++      if (!(arg = string_nextinlist(&pam_args, &sep, NULL, 0)))
+ 	{
+ 	arg = US"";
+ 	pam_arg_ended = TRUE;
+@@ -155,7 +154,7 @@ pam_arg_ended = FALSE;
+ fail. PAM doesn't support authentication with an empty user (it prompts for it,
+ causing a potential mis-interpretation). */
+ 
+-user = string_nextinlist(&pam_args, &sep, big_buffer, big_buffer_size);
++user = string_nextinlist(&pam_args, &sep, NULL, 0);
+ if (user == NULL || user[0] == 0) return FAIL;
+ 
+ /* Start off PAM interaction */
+-- 
+2.24.3 (Apple Git-128)
+

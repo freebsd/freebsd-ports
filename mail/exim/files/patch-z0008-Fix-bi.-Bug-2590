@@ -1,0 +1,44 @@
+From 0e8319c3edebfec2158fbaa4898af27cb3225c99 Mon Sep 17 00:00:00 2001
+From: Jeremy Harris <jgh146exb@wizmail.org>
+Date: Thu, 4 Jun 2020 15:28:15 +0100
+Subject: [PATCH 08/26]     Fix -bi.  Bug 2590
+
+    Actual fix from pierre.labastie@neuf.fr ; additional coding and testcase bu jgh
+    Broken-by: bdcc6f2bd5
+
+    (Cherry-picked from: 0e0e171628)
+---
+ doc/ChangeLog     | 4 ++++
+ src/exim.c        | 2 +-
+
+diff --git doc/ChangeLog doc/ChangeLog
+index 015959cb6..621d5b1b5 100644
+--- doc/ChangeLog
++++ doc/ChangeLog
+@@ -17,6 +17,10 @@ JH/03 Bug 2586: Fix listcount expansion operator.  Using tainted arguments is
+       "log_reject_target", "malware" and "spam"; the arguments are expanded
+       so could be handling tainted values.
+ 
++JH/04 Bug 2590: Fix -bi (newaliases).  A previous code rearrangement had
++      broken the (no-op) support for this sendmail command.  Restore it
++      to doing nothing, silently, and returning good status.
++
+ 
+ Exim version 4.94
+ -----------------
+diff --git src/exim.c src/exim.c
+index a60488e95..6143fe989 100644
+--- src/exim.c
++++ src/exim.c
+@@ -2148,7 +2148,7 @@ on the second character (the one after '-'), to save some effort. */
+ 	concept of *the* alias file, but since Sun's YP make script calls
+ 	sendmail this way, some support must be provided. */
+ 	case 'i':
+-	  if (!*++argrest) bi_option = TRUE;
++	  if (!*argrest) bi_option = TRUE;
+ 	  else badarg = TRUE;
+ 	  break;
+ 
+-- 
+2.24.3 (Apple Git-128)
+

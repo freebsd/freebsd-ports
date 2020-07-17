@@ -1,0 +1,50 @@
+From ecf1e77accda6355ebb745a0a03e97ba7eb298b2 Mon Sep 17 00:00:00 2001
+From: Jeremy Harris <jgh146exb@wizmail.org>
+Date: Sun, 14 Jun 2020 22:14:11 +0100
+Subject: [PATCH 13/26] Taint: fix verify.  Bug 2598
+
+(cherry-picked from 2b60ac1021 and 9eed571fd7)
+---
+ doc/ChangeLog            |  4 +++
+ src/acl.c                |  4 +--
+
+diff --git doc/ChangeLog doc/ChangeLog
+index 92298e7fc..859e87b00 100644
+--- doc/ChangeLog
++++ doc/ChangeLog
+@@ -36,6 +36,10 @@ JH/07 Bug 2597: Fix a resource leak.  Using a lookup in obtaining a value for
+       when the limit was exceeded.  This eventually crashed the daemon.  Fix
+       by adding a relase action in that path.
+ 
++JH/08 Bug 2598: Fix verify ACL condition.  The options for the condition are
++      expanded; previously using tainted values was rejected.  Fix by using
++      dynamically-created buffers.
++
+ 
+ Exim version 4.94
+ -----------------
+diff --git src/acl.c src/acl.c
+index 8619cd5ef..11d1fd028 100644
+--- src/acl.c
++++ src/acl.c
+@@ -1767,7 +1767,7 @@ switch(vp->value)
+ /* Remaining items are optional; they apply to sender and recipient
+ verification, including "header sender" verification. */
+ 
+-while ((ss = string_nextinlist(&list, &sep, big_buffer, big_buffer_size)))
++while ((ss = string_nextinlist(&list, &sep, NULL, 0)))
+   {
+   if (strcmpic(ss, US"defer_ok") == 0) defer_ok = TRUE;
+   else if (strcmpic(ss, US"no_details") == 0) no_details = TRUE;
+@@ -1804,7 +1804,7 @@ while ((ss = string_nextinlist(&list, &sep, big_buffer, big_buffer_size)))
+ 	uschar * opt;
+ 
+         while (isspace(*sublist)) sublist++;
+-        while ((opt = string_nextinlist(&sublist, &optsep, buffer, sizeof(buffer))))
++        while ((opt = string_nextinlist(&sublist, &optsep, NULL, 0)))
+           {
+ 	  callout_opt_t * op;
+ 	  double period = 1.0F;
+-- 
+2.24.3 (Apple Git-128)
+

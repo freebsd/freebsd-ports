@@ -1,0 +1,180 @@
+From 3fe5ec41e81831028c992f77a15292872fbbac75 Mon Sep 17 00:00:00 2001
+From: Jeremy Harris <jgh146exb@wizmail.org>
+Date: Thu, 11 Jun 2020 20:45:05 +0100
+Subject: [PATCH 10/26]     TLS: use RFC 6125 rules for certifucate name
+ checks when CNAMES are present. Bug 2594
+
+    (cherry picked from commit 0851a3bbf4667081d47f5d85b6b3a5cb33cbdba6)
+---
+ doc/ChangeLog                |  7 ++-
+ src/host.c                   | 17 +++++++
+ src/structs.h                | 19 ++++----
+ src/tls-gnu.c                |  4 +-
+ src/tls-openssl.c            | 20 ++++-----
+
+diff --git doc/ChangeLog doc/ChangeLog
+index b9c1ec29e..612005803 100644
+--- doc/ChangeLog
++++ doc/ChangeLog
+@@ -26,6 +26,11 @@ JH/05 Bug 2593: Fix "vacation" in Exim filter.  Previously, when a "once"
+       path, an error occurred on trying to open it.  Use the transport's working
+       directory.
+ 
++JH/06 Bug 2594: Change the name used for certificate name checks in the smtp
++      transport.  Previously it was the name on the DNS A-record; use instead
++      the head of the CNAME chain leading there (if there is one).  This seems
++      to align better with RFC 6125.
++
+ 
+ Exim version 4.94
+ -----------------
+@@ -331,7 +336,7 @@ JH/20 Bug 2389: fix server advertising of usable certificates, under GnuTLS in
+ 
+ JH/21 The smtp transport option "hosts_noproxy_tls" is now unset by default.
+       A single TCP connection by a client will now hold a TLS connection open
+-      for multiple message deliveries, by default.  Previoud the default was to
++      for multiple message deliveries, by default.  Previously the default was to
+       not do so.
+ 
+ JH/22 The smtp transport option "hosts_try_dane" now enables all hosts by
+diff --git src/host.c src/host.c
+index 0e0e0130b..817d4446c 100644
+--- src/host.c
++++ src/host.c
+@@ -1950,6 +1950,13 @@ BOOL temp_error = FALSE;
+ int af;
+ #endif
+ 
++#ifndef DISABLE_TLS
++/* Copy the host name at this point to the value which is used for
++TLS certificate name checking, before anything modifies it.  */
++
++host->certname = host->name;
++#endif
++
+ /* Make sure DNS options are set as required. This appears to be necessary in
+ some circumstances when the get..byname() function actually calls the DNS. */
+ 
+@@ -2117,6 +2124,9 @@ for (int i = 1; i <= times;
+       {
+       host_item *next = store_get(sizeof(host_item), FALSE);
+       next->name = host->name;
++#ifndef DISABLE_TLS
++      next->certname = host->certname;
++#endif
+       next->mx = host->mx;
+       next->address = text_address;
+       next->port = PORT_NONE;
+@@ -2260,6 +2270,13 @@ BOOL v6_find_again = FALSE;
+ BOOL dnssec_fail = FALSE;
+ int i;
+ 
++#ifndef DISABLE_TLS
++/* Copy the host name at this point to the value which is used for
++TLS certificate name checking, before any CNAME-following modifies it.  */
++
++host->certname = host->name;
++#endif
++
+ /* If allow_ip is set, a name which is an IP address returns that value
+ as its address. This is used for MX records when allow_mx_to_ip is set, for
+ those sites that feel they have to flaunt the RFC rules. */
+diff --git src/structs.h src/structs.h
+index c6700d513..206237f04 100644
+--- src/structs.h
++++ src/structs.h
+@@ -80,14 +80,17 @@ typedef enum {DS_UNK=-1, DS_NO, DS_YES} dnssec_status_t;
+ 
+ typedef struct host_item {
+   struct host_item *next;
+-  const uschar *name;             /* Host name */
+-  const uschar *address;          /* IP address in text form */
+-  int     port;                   /* port value in host order (if SRV lookup) */
+-  int     mx;                     /* MX value if found via MX records */
+-  int     sort_key;               /* MX*1000 plus random "fraction" */
+-  int     status;                 /* Usable, unusable, or unknown */
+-  int     why;                    /* Why host is unusable */
+-  int     last_try;               /* Time of last try if known */
++  const uschar *name;		/* Host name */
++#ifndef DISABLE_TLS
++  const uschar *certname;	/* Name used for certificate checks */
++#endif
++  const uschar *address;	/* IP address in text form */
++  int     port;			/* port value in host order (if SRV lookup) */
++  int     mx;			/* MX value if found via MX records */
++  int     sort_key;		/* MX*1000 plus random "fraction" */
++  int     status;		/* Usable, unusable, or unknown */
++  int     why;			/* Why host is unusable */
++  int     last_try;		/* Time of last try if known */
+   dnssec_status_t dnssec;
+ } host_item;
+ 
+diff --git src/tls-gnu.c src/tls-gnu.c
+index 24114f05e..875c82efa 100644
+--- src/tls-gnu.c
++++ src/tls-gnu.c
+@@ -2601,9 +2601,9 @@ if (verify_check_given_host(CUSS &ob->tls_verify_cert_hostnames, host) == OK)
+   {
+   state->exp_tls_verify_cert_hostnames =
+ #ifdef SUPPORT_I18N
+-    string_domain_utf8_to_alabel(host->name, NULL);
++    string_domain_utf8_to_alabel(host->certname, NULL);
+ #else
+-    host->name;
++    host->certname;
+ #endif
+   DEBUG(D_tls)
+     debug_printf("TLS: server cert verification includes hostname: \"%s\".\n",
+diff --git src/tls-openssl.c src/tls-openssl.c
+index 8c9d8aa69..a62322928 100644
+--- src/tls-openssl.c
++++ src/tls-openssl.c
+@@ -372,10 +372,10 @@ typedef struct ocsp_resp {
+ } ocsp_resplist;
+ 
+ typedef struct tls_ext_ctx_cb {
+-  tls_support * tlsp;
+-  uschar *certificate;
+-  uschar *privatekey;
+-  BOOL is_server;
++  tls_support *	tlsp;
++  uschar *	certificate;
++  uschar *	privatekey;
++  BOOL		is_server;
+ #ifndef DISABLE_OCSP
+   STACK_OF(X509) *verify_stack;		/* chain for verifying the proof */
+   union {
+@@ -390,14 +390,14 @@ typedef struct tls_ext_ctx_cb {
+     } client;
+   } u_ocsp;
+ #endif
+-  uschar *dhparam;
++  uschar *	dhparam;
+   /* these are cached from first expand */
+-  uschar *server_cipher_list;
++  uschar *	server_cipher_list;
+   /* only passed down to tls_error: */
+-  host_item *host;
++  host_item *	host;
+   const uschar * verify_cert_hostnames;
+ #ifndef DISABLE_EVENT
+-  uschar * event_action;
++  uschar *	event_action;
+ #endif
+ } tls_ext_ctx_cb;
+ 
+@@ -2915,9 +2915,9 @@ if (verify_check_given_host(CUSS &ob->tls_verify_cert_hostnames, host) == OK)
+   {
+   cbinfo->verify_cert_hostnames =
+ #ifdef SUPPORT_I18N
+-    string_domain_utf8_to_alabel(host->name, NULL);
++    string_domain_utf8_to_alabel(host->certname, NULL);
+ #else
+-    host->name;
++    host->certname;
+ #endif
+   DEBUG(D_tls) debug_printf("Cert hostname to check: \"%s\"\n",
+ 		    cbinfo->verify_cert_hostnames);
+-- 
+2.24.3 (Apple Git-128)
+

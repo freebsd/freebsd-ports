@@ -1,0 +1,193 @@
+From de99158d2927863a6826c9f5f2c6fa4547326e75 Mon Sep 17 00:00:00 2001
+From: Guillaume Outters <guillaume-exim@outters.eu>
+Date: Mon, 6 Jul 2020 22:31:51 +0100
+Subject: [PATCH 22/26] Fix DKIM signing to always ;-terminate.  Bug 2295
+
+(cherry picked from commit 65fe780259d0009354b5dfc9a4f1b48ad6513db2)
+---
+ doc/ChangeLog     |   5 ++
+ src/pdkim/pdkim.c | 116 ++++++++++++++++--------------------------
+
+diff --git doc/ChangeLog doc/ChangeLog
+index 80277f979..08c6638a9 100644
+--- doc/ChangeLog
++++ doc/ChangeLog
+@@ -67,6 +67,11 @@ JH/16 Bug 2615: Fix pause during message reception, on systems that have been
+       post-message next-tick-wait.  Also change to using CLOCK_BOOTTIME if it
+       exists, just to get a clock slightly more aligned to reality.
+ 
++JH/17 Bug 2295: Fix DKIM signing to always semicolon-terminate.  Although the
++      RFC says it is optional some validators care.  The missing char was not
++      intended but triggered by a line-wrap alignement.  Discovery and fix by
++      Guillaume Outters, hacked on by JH.
++
+ 
+ Exim version 4.94
+ -----------------
+diff --git src/pdkim/pdkim.c src/pdkim/pdkim.c
+index 7712409b5..3a6ca4e91 100644
+--- src/pdkim/pdkim.c
++++ src/pdkim/pdkim.c
+@@ -1111,14 +1111,14 @@ return string_catn(str, US"\r\n\t", 3);
+ 
+ /*
+  * RFC 5322 specifies that header line length SHOULD be no more than 78
+- * lets make it so!
+  *  pdkim_headcat
+  *
+- * returns uschar * (not nul-terminated)
++ * Returns gstring (not nul-terminated) appending to one supplied
+  *
+  * col: this int holds and receives column number (octets since last '\n')
+  * str: partial string to append to
+- * pad: padding, split line or space after before or after eg: ";"
++ * pad: padding, split line or space after before or after eg: ";".
++ *               Only the initial charater is used.
+  * intro: - must join to payload eg "h=", usually the tag name
+  * payload: eg base64 data - long data can be split arbitrarily.
+  *
+@@ -1127,7 +1127,7 @@ return string_catn(str, US"\r\n\t", 3);
+  * pairs and inside long values. it also always spaces or breaks after the
+  * "pad"
+  *
+- * no guarantees are made for output given out-of range input. like tag
++ * No guarantees are made for output given out-of range input. like tag
+  * names longer than 78, or bogus col. Input is assumed to be free of line breaks.
+  */
+ 
+@@ -1135,92 +1135,64 @@ static gstring *
+ pdkim_headcat(int * col, gstring * str,
+   const uschar * pad, const uschar * intro, const uschar * payload)
+ {
+-size_t l;
++int len, chomp, padded = 0;
+ 
+-if (pad)
+-  {
+-  l = Ustrlen(pad);
+-  if (*col + l > 78)
+-    str = pdkim_hdr_cont(str, col);
+-  str = string_catn(str, pad, l);
+-  *col += l;
+-  }
+-
+-l = (pad?1:0) + (intro?Ustrlen(intro):0);
++/* If we can fit at least the pad at the end of current line, do it now.
++Otherwise, wrap if there is a pad. */
+ 
+-if (*col + l > 78)
+-  { /*can't fit intro - start a new line to make room.*/
+-  str = pdkim_hdr_cont(str, col);
+-  l = intro?Ustrlen(intro):0;
+-  }
+-
+-l += payload ? Ustrlen(payload):0 ;
+-
+-while (l>77)
+-  { /* this fragment will not fit on a single line */
+-  if (pad)
+-    {
+-    str = string_catn(str, US" ", 1);
+-    *col += 1;
+-    pad = NULL; /* only want this once */
+-    l--;
+-    }
+-
+-  if (intro)
+-    {
+-    size_t sl = Ustrlen(intro);
+-
+-    str = string_catn(str, intro, sl);
+-    *col += sl;
+-    l -= sl;
+-    intro = NULL; /* only want this once */
+-    }
+-
+-  if (payload)
++if (pad)
++  if (*col + 1 <= 78)
+     {
+-    size_t sl = Ustrlen(payload);
+-    size_t chomp = *col+sl < 77 ? sl : 78-*col;
+-
+-    str = string_catn(str, payload, chomp);
+-    *col += chomp;
+-    payload += chomp;
+-    l -= chomp-1;
++    str = string_catn(str, pad, 1);
++    (*col)++;
++    pad = NULL;
++    padded = 1;
+     }
++  else
++    str = pdkim_hdr_cont(str, col);
+ 
+-  /* the while precondition tells us it didn't fit. */
+-  str = pdkim_hdr_cont(str, col);
+-  }
++/* Special case: if the whole addition does not fit at the end of the current
++line, but could fit on a new line, wrap to give it its full, dedicated line.  */
+ 
+-if (*col + l > 78)
++len = (pad ? 2 : padded)
++    + (intro ? Ustrlen(intro) : 0)
++    + (payload ? Ustrlen(payload) : 0);
++if (len <= 77 && *col+len > 78)
+   {
+   str = pdkim_hdr_cont(str, col);
+-  pad = NULL;
++  padded = 0;
+   }
+ 
++/* Either we already dealt with the pad or we know there is room */
++
+ if (pad)
+   {
++  str = string_catn(str, pad, 1);
+   str = string_catn(str, US" ", 1);
+-  *col += 1;
+-  pad = NULL;
++  *col += 2;
+   }
+-
+-if (intro)
++else if (padded && *col < 78)
+   {
+-  size_t sl = Ustrlen(intro);
+-
+-  str = string_catn(str, intro, sl);
+-  *col += sl;
+-  l -= sl;
+-  intro = NULL;
++  str = string_catn(str, US" ", 1);
++  (*col)++;
+   }
+ 
+-if (payload)
+-  {
+-  size_t sl = Ustrlen(payload);
++/* Call recursively with intro as payload: it gets the same, special treatment
++(that is, not split if < 78).  */
+ 
+-  str = string_catn(str, payload, sl);
+-  *col += sl;
+-  }
++if (intro)
++  str = pdkim_headcat(col, str, NULL, NULL, intro);
++
++if (payload)
++  for (len = Ustrlen(payload); len; len -= chomp)
++    {
++    if (*col >= 78)
++      str = pdkim_hdr_cont(str, col);
++    chomp = *col+len > 78 ? 78 - *col : len;
++    str = string_catn(str, payload, chomp);
++    *col += chomp;
++    payload += chomp;
++    }
+ 
+ return str;
+ }
+-- 
+2.24.3 (Apple Git-128)
+

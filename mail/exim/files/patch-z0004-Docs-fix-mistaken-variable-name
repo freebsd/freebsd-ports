@@ -1,0 +1,28 @@
+From aabe0ebe82297d7dec3abdfff9c3b1edc34fd8ab Mon Sep 17 00:00:00 2001
+From: Patrick Boutilier <boutilpj@ednet.ns.ca>
+Date: Tue, 2 Jun 2020 15:16:10 +0100
+Subject: [PATCH 04/26] Docs: fix mistaken variable name
+
+(cherry picked from commit eb55cb1d2c5552209e24345e9d21f83ec1eaccf6)
+---
+ README.UPDATING | 4 ++--
+
+diff --git README.UPDATING README.UPDATING
+index a0afa8df0..708027f2c 100644
+--- README.UPDATING
++++ README.UPDATING
+@@ -31,9 +31,9 @@ Exim version 4.94
+ 
+ Some Transports now refuse to use tainted data in constructing their delivery
+ location; this WILL BREAK configurations which are not updated accordingly.
+-In particular: any Transport use of $local_user which has been relying upon
++In particular: any Transport use of $local_part which has been relying upon
+ check_local_user far away in the Router to make it safe, should be updated to
+-replace $local_user with $local_part_data.
++replace $local_part with $local_part_data.
+ 
+ Attempting to remove, in router or transport, a header name that ends with
+ an asterisk (which is a standards-legal name) will now result in all headers
+-- 
+2.24.3 (Apple Git-128)
+
