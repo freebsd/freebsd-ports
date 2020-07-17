@@ -1,5 +1,5 @@
 bin/dMagnetic
-man/man1/dMagnetic.1.gz
-man/man5/dMagneticini.5.gz
+share/man/man1/dMagnetic.1.gz
+share/man/man5/dMagneticini.5.gz
 %%DATADIR%%/dMagnetic.ini
 %%DOCSDIR%%/README.txt
