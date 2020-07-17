@@ -1797,7 +1797,6 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/templates/new_nav.html
 %%DATADIR%%/templates/rtf.xsl
 %%DATADIR%%/toc.js
-%%DATADIR%%/tracer.epub
 %%DATADIR%%/user-agent-data.json
 %%DATADIR%%/user-manual-translation-stats.json
 %%DATADIR%%/viewer.html
