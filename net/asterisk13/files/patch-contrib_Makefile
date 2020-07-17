@@ -1,4 +1,4 @@
---- contrib/Makefile.orig	2017-04-12 21:47:53 UTC
+--- contrib/Makefile.orig	2020-07-09 15:33:47 UTC
 +++ contrib/Makefile
 @@ -24,10 +24,10 @@ install:
  	$(INSTALL) -m 755 scripts/ast_logescalator "$(DESTDIR)$(ASTDATADIR)/scripts/ast_logescalator"

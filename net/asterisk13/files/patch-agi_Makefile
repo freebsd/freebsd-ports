@@ -1,4 +1,4 @@
---- agi/Makefile.orig	2012-10-14 21:56:13 UTC
+--- agi/Makefile.orig	2020-07-09 15:33:47 UTC
 +++ agi/Makefile
 @@ -16,7 +16,9 @@ ASTTOPDIR?=..
  

@@ -1,4 +1,4 @@
---- Makefile.orig	2018-08-28 19:07:13 UTC
+--- Makefile.orig	2020-07-09 15:33:47 UTC
 +++ Makefile
 @@ -141,7 +141,7 @@ ASTTOPDIR:=$(subst $(space),\$(space),$(CURDIR))
  OVERWRITE=y
@@ -27,7 +27,7 @@
    _ASTCFLAGS+=$(shell if test $(BSDVERSION) -lt 500016 ; then echo "-D_THREAD_SAFE"; fi)
  endif
  
-@@ -466,8 +466,12 @@ endif
+@@ -470,8 +470,12 @@ endif
  			$(INSTALL) -m 644 $$n "$(DESTDIR)$(ASTDATADIR)/static-http/docs" ; \
  		done \
  	fi
@@ -41,7 +41,7 @@
  	done
  	$(MAKE) -C sounds install
  	find rest-api -name "*.json" | while read x; do \
-@@ -566,7 +570,7 @@ INSTALLDIRS="$(ASTLIBDIR)" "$(ASTMODDIR)" "$(ASTSBINDI
+@@ -569,7 +573,7 @@ INSTALLDIRS="$(ASTLIBDIR)" "$(ASTMODDIR)" "$(ASTSBINDI
  	"$(ASTDATADIR)/firmware/iax" "$(ASTDATADIR)/images" "$(ASTDATADIR)/keys" \
  	"$(ASTDATADIR)/phoneprov" "$(ASTDATADIR)/rest-api" "$(ASTDATADIR)/static-http" \
  	"$(ASTDATADIR)/sounds" "$(ASTDATADIR)/moh" "$(ASTMANDIR)/man8" "$(AGI_DIR)" "$(ASTDBDIR)" \
@@ -50,7 +50,7 @@
  
  installdirs:
  	@for i in $(INSTALLDIRS); do \
-@@ -605,10 +609,10 @@ endif
+@@ -602,10 +606,10 @@ endif
  	if [ -f contrib/firmware/iax/iaxy.bin ] ; then \
  		$(INSTALL) -m 644 contrib/firmware/iax/iaxy.bin "$(DESTDIR)$(ASTDATADIR)/firmware/iax/iaxy.bin"; \
  	fi
@@ -65,7 +65,7 @@
  
  $(SUBDIRS_INSTALL):
  	+@DESTDIR="$(DESTDIR)" ASTSBINDIR="$(ASTSBINDIR)" ASTDATADIR="$(ASTDATADIR)" $(SUBMAKE) -C $(@:-install=) install
-@@ -723,7 +727,7 @@ ifneq ($(filter ~%,$(DESTDIR)),)
+@@ -720,7 +724,7 @@ ifneq ($(filter ~%,$(DESTDIR)),)
  	@exit 1
  endif
  
@@ -74,7 +74,7 @@
  	@if [ -x /usr/sbin/asterisk-post-install ]; then \
  		/usr/sbin/asterisk-post-install "$(DESTDIR)" . ; \
  	fi
-@@ -768,23 +772,10 @@ upgrade: bininstall
+@@ -765,23 +769,10 @@ upgrade: bininstall
  #  (2) the extension to strip off
  define INSTALL_CONFIGS
  	@for x in $(1)/*$(2); do \
@@ -100,7 +100,7 @@
  		echo "Updating asterisk.conf" ; \
  		sed -e 's|^astetcdir.*$$|astetcdir => $(ASTETCDIR)|' \
  			-e 's|^astmoddir.*$$|astmoddir => $(ASTMODDIR)|' \
-@@ -797,8 +788,8 @@ define INSTALL_CONFIGS
+@@ -794,8 +785,8 @@ define INSTALL_CONFIGS
  			-e 's|^astrundir.*$$|astrundir => $(ASTVARRUNDIR)|' \
  			-e 's|^astlogdir.*$$|astlogdir => $(ASTLOGDIR)|' \
  			-e 's|^astsbindir.*$$|astsbindir => $(ASTSBINDIR)|' \
@@ -111,7 +111,7 @@
  		rm -f "$(DESTDIR)$(ASTCONFPATH).tmp" ; \
  	fi
  endef
-@@ -822,7 +813,7 @@ adsi:
+@@ -829,7 +820,7 @@ adsi:
  		else \
  			echo "Installing $$x" ; \
  		fi ; \
