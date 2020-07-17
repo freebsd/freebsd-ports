@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	racer
-DISTVERSION=	2.1.33
+DISTVERSION=	2.1.35
 CATEGORIES=	devel
 MASTER_SITES=	CRATESIO
 DISTFILES=	${CARGO_DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX}
@@ -16,6 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE-MIT
 USES=		cargo
 CARGO_CRATES=	aho-corasick-0.7.10 \
 		annotate-snippets-0.6.1 \
+		annotate-snippets-0.8.0 \
 		ansi_term-0.11.0 \
 		atty-0.2.14 \
 		autocfg-1.0.0 \
@@ -24,6 +25,7 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		block-padding-0.1.5 \
 		byte-tools-0.3.1 \
 		byteorder-1.3.4 \
+		cc-1.0.53 \
 		cfg-if-0.1.10 \
 		clap-2.33.0 \
 		cloudabi-0.0.3 \
@@ -35,7 +37,7 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		derive_more-0.99.5 \
 		digest-0.8.1 \
 		either-1.5.3 \
-		ena-0.13.1 \
+		ena-0.14.0 \
 		env_logger-0.7.1 \
 		fake-simd-0.1.2 \
 		generic-array-0.12.3 \
@@ -50,7 +52,7 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		lazy_static-1.4.0 \
 		lazycell-1.2.1 \
 		libc-0.2.68 \
-		lock_api-0.3.3 \
+		lock_api-0.3.4 \
 		log-0.4.8 \
 		maybe-uninit-2.0.0 \
 		md-5-0.8.0 \
@@ -59,16 +61,18 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		memmap-0.7.0 \
 		memoffset-0.5.4 \
 		num_cpus-1.12.0 \
+		once_cell-1.4.0 \
 		opaque-debug-0.2.3 \
 		parking_lot-0.9.0 \
-		parking_lot-0.10.0 \
+		parking_lot-0.10.2 \
 		parking_lot_core-0.6.2 \
-		parking_lot_core-0.7.0 \
+		parking_lot_core-0.7.2 \
 		ppv-lite86-0.2.6 \
 		proc-macro2-1.0.10 \
+		psm-0.1.8 \
 		quick-error-1.2.3 \
 		quote-1.0.3 \
-		racer-2.1.32 \
+		racer-2.1.34 \
 		racer-cargo-metadata-0.1.1 \
 		racer-interner-0.1.0 \
 		racer-testutils-0.1.0 \
@@ -81,38 +85,38 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		regex-syntax-0.6.17 \
 		remove_dir_all-0.5.2 \
 		rls-span-0.5.2 \
-		rustc-ap-arena-651.0.0 \
-		rustc-ap-arena-654.0.0 \
-		rustc-ap-graphviz-651.0.0 \
-		rustc-ap-graphviz-654.0.0 \
-		rustc-ap-rustc_ast-651.0.0 \
-		rustc-ap-rustc_ast-654.0.0 \
-		rustc-ap-rustc_ast_pretty-651.0.0 \
-		rustc-ap-rustc_ast_pretty-654.0.0 \
-		rustc-ap-rustc_data_structures-651.0.0 \
-		rustc-ap-rustc_data_structures-654.0.0 \
-		rustc-ap-rustc_errors-651.0.0 \
-		rustc-ap-rustc_errors-654.0.0 \
-		rustc-ap-rustc_feature-651.0.0 \
-		rustc-ap-rustc_feature-654.0.0 \
-		rustc-ap-rustc_fs_util-651.0.0 \
-		rustc-ap-rustc_fs_util-654.0.0 \
-		rustc-ap-rustc_index-651.0.0 \
-		rustc-ap-rustc_index-654.0.0 \
-		rustc-ap-rustc_lexer-651.0.0 \
-		rustc-ap-rustc_lexer-654.0.0 \
-		rustc-ap-rustc_macros-651.0.0 \
-		rustc-ap-rustc_macros-654.0.0 \
-		rustc-ap-rustc_parse-651.0.0 \
-		rustc-ap-rustc_parse-654.0.0 \
-		rustc-ap-rustc_session-651.0.0 \
-		rustc-ap-rustc_session-654.0.0 \
-		rustc-ap-rustc_span-651.0.0 \
-		rustc-ap-rustc_span-654.0.0 \
-		rustc-ap-rustc_target-651.0.0 \
-		rustc-ap-rustc_target-654.0.0 \
-		rustc-ap-serialize-651.0.0 \
-		rustc-ap-serialize-654.0.0 \
+		rustc-ap-arena-659.0.0 \
+		rustc-ap-graphviz-659.0.0 \
+		rustc-ap-rustc_arena-664.0.0 \
+		rustc-ap-rustc_ast-659.0.0 \
+		rustc-ap-rustc_ast-664.0.0 \
+		rustc-ap-rustc_ast_pretty-659.0.0 \
+		rustc-ap-rustc_ast_pretty-664.0.0 \
+		rustc-ap-rustc_data_structures-659.0.0 \
+		rustc-ap-rustc_data_structures-664.0.0 \
+		rustc-ap-rustc_errors-659.0.0 \
+		rustc-ap-rustc_errors-664.0.0 \
+		rustc-ap-rustc_feature-659.0.0 \
+		rustc-ap-rustc_feature-664.0.0 \
+		rustc-ap-rustc_fs_util-659.0.0 \
+		rustc-ap-rustc_fs_util-664.0.0 \
+		rustc-ap-rustc_graphviz-664.0.0 \
+		rustc-ap-rustc_index-659.0.0 \
+		rustc-ap-rustc_index-664.0.0 \
+		rustc-ap-rustc_lexer-659.0.0 \
+		rustc-ap-rustc_lexer-664.0.0 \
+		rustc-ap-rustc_macros-659.0.0 \
+		rustc-ap-rustc_macros-664.0.0 \
+		rustc-ap-rustc_parse-659.0.0 \
+		rustc-ap-rustc_parse-664.0.0 \
+		rustc-ap-rustc_serialize-664.0.0 \
+		rustc-ap-rustc_session-659.0.0 \
+		rustc-ap-rustc_session-664.0.0 \
+		rustc-ap-rustc_span-659.0.0 \
+		rustc-ap-rustc_span-664.0.0 \
+		rustc-ap-rustc_target-659.0.0 \
+		rustc-ap-rustc_target-664.0.0 \
+		rustc-ap-serialize-659.0.0 \
 		rustc-hash-1.1.0 \
 		rustc-rayon-0.3.0 \
 		rustc-rayon-core-0.3.0 \
@@ -129,6 +133,7 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		smallvec-0.6.13 \
 		smallvec-1.2.0 \
 		stable_deref_trait-1.1.1 \
+		stacker-0.1.9 \
 		strsim-0.8.0 \
 		syn-1.0.17 \
 		synstructure-0.12.3 \

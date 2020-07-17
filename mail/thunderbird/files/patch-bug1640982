@@ -1,0 +1,15 @@
+Unbreak build with Rust 1.45.0
+
+error: options `-C embed-bitcode=no` and `-C lto` are incompatible
+
+--- config/makefiles/rust.mk.orig	2020-06-22 22:55:02 UTC
++++ config/makefiles/rust.mk
+@@ -47,7 +47,7 @@ cargo_rustc_flags = $(CARGO_RUSTCFLAGS)
+ ifndef DEVELOPER_OPTIONS
+ ifndef MOZ_DEBUG_RUST
+ # Enable link-time optimization for release builds.
+-cargo_rustc_flags += -C lto
++cargo_rustc_flags += 
+ endif
+ endif
+ 

@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rust
-PORTVERSION=	1.44.1
-PORTREVISION=	1
+PORTVERSION=	1.45.0
 CATEGORIES=	lang
 MASTER_SITES=	https://static.rust-lang.org/dist/:rust \
 		LOCAL/tobik:armbase \
@@ -107,10 +106,6 @@ post-patch:
 # Disable vendor checksums
 	@${REINPLACE_CMD} 's,"files":{[^}]*},"files":{},' \
 		${_CARGO_VENDOR_DIR}/*/.cargo-checksum.json
-.if ${FLAVOR:Mpowerpc64_*}
-	@${REINPLACE_CMD} -e 's,powerpc64-unknown-freebsd,${_RUST_TARGET}${_RUST_FBSD_VER:S/-/ /:[1]},' \
-		${WRKSRC}/src/librustc_target/spec/powerpc64_unknown_freebsd.rs
-.endif
 .if ${FLAVOR} == powerpc64_elfv1
 	@${REINPLACE_CMD} -e 's,"c++","stdc++",g' \
 		${WRKSRC}/src/librustc_llvm/build.rs

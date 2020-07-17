@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	rust
-PORTVERSION?=	1.44.1
-PORTREVISION?=	1
+PORTVERSION?=	1.45.0
+PORTREVISION?=	0
 CATEGORIES=	lang
-MASTER_SITES=	https://static.rust-lang.org/dist/:src \
+MASTER_SITES=	https://dev-static.rust-lang.org/dist/:src \
 		LOCAL/tobik/rust:bootstrap \
 		https://static.rust-lang.org/dist/:bootstrap
 DISTNAME?=	${PORTNAME}c-${PORTVERSION}-src
@@ -28,10 +28,8 @@ ONLY_FOR_ARCHS?=	aarch64 amd64 armv6 armv7 i386 powerpc64
 ONLY_FOR_ARCHS_REASON?=	requires prebuilt bootstrap compiler
 
 BUILD_DEPENDS=	cmake:devel/cmake \
-		libgit2>=1.0.0:devel/libgit2
-.if defined(NIGHTLY_DATE)
-BUILD_DEPENDS+=	ninja:devel/ninja
-.endif
+		libgit2>=1.0.0:devel/libgit2 \
+		ninja:devel/ninja
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libgit2.so:devel/libgit2 \
 		libssh2.so:security/libssh2
@@ -57,14 +55,15 @@ WASM_DESC=	Build the WebAssembly target (wasm32-unknown-unknown)
 DOCS_VARS=		_RUST_BUILD_DOCS=true
 DOCS_VARS_OFF=		_RUST_BUILD_DOCS=false
 GDB_RUN_DEPENDS=	${LOCALBASE}/bin/gdb:devel/gdb
+SOURCES_VARS=		_RUST_TOOLS+=src
 WASM_VARS=		_RUST_BUILD_WASM=true \
 			_RUST_TARGETS+=wasm32-unknown-unknown
 WASM_VARS_OFF=		_RUST_BUILD_WASM=false
 
 # See WRKSRC/src/stage0.txt for the date and version values.
-BOOTSTRAPS_DATE?=		2020-05-07
-RUST_BOOTSTRAP_VERSION?=	1.43.1
-CARGO_BOOTSTRAP_VERSION?=	0.44.0
+BOOTSTRAPS_DATE?=		2020-06-18
+RUST_BOOTSTRAP_VERSION?=	1.44.1
+CARGO_BOOTSTRAP_VERSION?=	0.45.1
 
 BOOTSTRAPS_SUFFIX?=		${BOOTSTRAPS_SUFFIX_${ARCH}}
 BOOTSTRAPS_SUFFIX_powerpc64?=	-${PPC_ABI:tl}
@@ -76,6 +75,7 @@ _RUST_ARCH_amd64=	x86_64
 _RUST_ARCH_i386=	i686
 _RUST_TARGET=		${_RUST_ARCH_${ARCH}:U${ARCH}}-unknown-${OPSYS:tl}
 _RUST_TARGETS=		${_RUST_TARGET}
+_RUST_TOOLS=		analysis cargo clippy rls rustfmt
 
 _RUSTC_BOOTSTRAP=	${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}/rustc-${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}-${_RUST_TARGET}
 _RUST_STD_BOOTSTRAP=	${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}/rust-std-${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}-${_RUST_TARGET}
@@ -107,19 +107,9 @@ post-patch:
 .if defined(NIGHTLY_DATE)
 	@${REINPLACE_CMD} '/^rustfmt:/d' ${WRKSRC}/src/stage0.txt
 .endif
-.if ${ARCH} == powerpc64
-# Starting with 13.0 powerpc64 is ELFv2 while 12.0 is ELFv1.  Pass the correct LLVM target triple.
-	@${REINPLACE_CMD} 's,powerpc64-unknown-freebsd,powerpc64-unknown-freebsd${OSREL},' \
-		${WRKSRC}/src/librustc_target/spec/powerpc64_unknown_freebsd.rs
-.endif
 # Disable vendor checksums
 	@${REINPLACE_CMD} 's,"files":{[^}]*},"files":{},' \
 		${CARGO_VENDOR_DIR}/*/.cargo-checksum.json
-
-post-patch-SOURCES-off:
-# Mimic tools in config.toml with just src excluded
-	@${REINPLACE_CMD} 's,config.tools.*"src".*,false;,' \
-		${WRKSRC}/src/bootstrap/install.rs
 
 do-configure:
 # Check that the running kernel has COMPAT_FREEBSD11 required by lang/rust post-ino64
@@ -142,6 +132,7 @@ do-configure:
 	@${ECHO_CMD} 'target=[${_RUST_TARGETS:@.target.@"${.target.}"@:ts,}]' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'cargo="${WRKDIR}/bootstrap/bin/cargo"' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'rustc="${WRKDIR}/bootstrap/bin/rustc"' >> ${WRKSRC}/config.toml
+	@${ECHO_CMD} 'tools=[${_RUST_TOOLS:@.tool.@"${.tool.}"@:ts,}]' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} '[install]' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'prefix="${PREFIX}"' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'sysconfdir="${PREFIX}/etc"' >> ${WRKSRC}/config.toml
@@ -156,9 +147,7 @@ do-configure:
 .else
 	@${ECHO_CMD} 'ccache=false' >> ${WRKSRC}/config.toml
 .endif
-.if defined(NIGHTLY_DATE)
 	@${ECHO_CMD} 'ninja=true' >> ${WRKSRC}/config.toml
-.endif
 .if ${ARCH} == armv6
 # fails to link with base ld.bfd: rustc_codegen_llvm.e2557spx-cgu.11:(.text._ZN89_$LT$rustc_target..abi..call..CastTarget$u20$as$u20$rustc_codegen_llvm..abi..LlvmType$GT$9llvm_type17h1296210ab461fc57E+0x54): relocation truncated to fit: R_ARM_CALL against symbol `__aeabi_uldivmod' defined in .text.__aeabi_uldivmod section in /tmp/rustcdnGbao/libcompiler_builtins-ee65b414e4115a8f.rlib(compiler_builtins-ee65b414e4115a8f.compiler_builtins.ay8p39ey-cgu.13.rcgu.o)
 	@${PRINTF} '#!/bin/sh\nexec ${CC} -fuse-ld=lld "$$@"' > ${WRKDIR}/cc-wrapper
