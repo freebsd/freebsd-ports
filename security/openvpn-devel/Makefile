@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		openvpn
-DISTVERSION=		202016
+DISTVERSION=		202028
 CATEGORIES=		security net net-vpn
 MASTER_SITES=		https://secure-computing.net/files/openvpn/
 PKGNAMESUFFIX=		-devel
@@ -26,16 +26,13 @@ SHEBANG_FILES=		sample/sample-scripts/verify-cn \
 			sample/sample-scripts/auth-pam.pl \
 			sample/sample-scripts/ucn.pl
 CONFIGURE_ARGS+=	--enable-strict
-# avoid picking up CMAKE, we don't have cmocka in the tarballs..
-CONFIGURE_ENV+=		ac_cv_prog_CMAKE= CMAKE=
+# set PLUGIN_LIBDIR so that unqualified plugin paths are found:
+CONFIGURE_ENV+=		PLUGINDIR="${PREFIX}/lib/openvpn/plugins"
 
 # let OpenVPN's configure script pick up the requisite libraries,
 # but do not break the plugin build if an older version is installed
 CPPFLAGS+=		-I${WRKSRC}/include -I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib
-
-# set PLUGIN_LIBDIR so that unqualified plugin paths are found:
-CPPFLAGS+=		-DPLUGIN_LIBDIR=\\\"${PREFIX}/lib/openvpn/plugins\\\"
 
 OPTIONS_DEFINE=		PKCS11 EASYRSA DOCS EXAMPLES X509ALTUSERNAME \
 			TEST LZ4 SMALL TUNNELBLICK
@@ -81,6 +78,7 @@ SUB_FILES=		pkg-message openvpn-client
 CFLAGS+=		-DLOG_OPENVPN=${LOG_OPENVPN}
 .endif
 
+BUILD_DEPENDS+=		cmocka>=0:sysutils/cmocka
 LIB_DEPENDS+=		liblzo2.so:archivers/lzo2
 
 LZ4_LIB_DEPENDS+=	liblz4.so:archivers/liblz4
