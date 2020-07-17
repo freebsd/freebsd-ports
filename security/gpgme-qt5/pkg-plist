@@ -13,6 +13,7 @@ include/QGpgME/DeleteJob
 include/QGpgME/DownloadJob
 include/QGpgME/EncryptJob
 include/QGpgME/ExportJob
+include/QGpgME/GpgCardJob
 include/QGpgME/HierarchicalKeyKistJob
 include/QGpgME/ImportFromKeyserverJob
 include/QGpgME/ImportJob
@@ -49,6 +50,7 @@ include/qgpgme/dn.h
 include/qgpgme/downloadjob.h
 include/qgpgme/encryptjob.h
 include/qgpgme/exportjob.h
+include/qgpgme/gpgcardjob.h
 include/qgpgme/hierarchicalkeylistjob.h
 include/qgpgme/importfromkeyserverjob.h
 include/qgpgme/importjob.h
@@ -76,4 +78,4 @@ lib/cmake/QGpgme/QGpgmeConfig.cmake
 lib/cmake/QGpgme/QGpgmeConfigVersion.cmake
 lib/libqgpgme.so
 lib/libqgpgme.so.7
-lib/libqgpgme.so.7.3.4
+lib/libqgpgme.so.7.4.0
