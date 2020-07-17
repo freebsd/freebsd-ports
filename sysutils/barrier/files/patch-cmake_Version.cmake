@@ -1,6 +1,6 @@
---- cmake/Version.cmake.orig	2019-05-16 15:32:09 UTC
+--- cmake/Version.cmake.orig	2020-07-14 17:37:45 UTC
 +++ cmake/Version.cmake
-@@ -69,7 +69,6 @@ else()
+@@ -70,7 +70,6 @@ else()
      set (BARRIER_BUILD_NUMBER 1)
  endif()
  

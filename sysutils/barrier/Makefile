@@ -2,7 +2,7 @@
 
 PORTNAME=	barrier
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.2
+DISTVERSION=	2.3.3
 CATEGORIES=	sysutils
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -22,6 +22,8 @@ MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=		EXAMPLES GUI
 OPTIONS_DEFAULT=	GUI
+# no GUI option on 11.x with base SSL since qt5-network is not available
+OPTIONS_EXCLUDE=	${${OPSYS} == FreeBSD && ${OSVERSION} < 1200085 && ${SSL_DEFAULT} == base:?GUI:}
 OPTIONS_SUB=		yes
 
 GUI_DESC=	Build configuration utility (requires Qt 5)
@@ -42,7 +44,7 @@ post-install:
 	cd ${INSTALL_WRKSRC}/bin && \
 		${INSTALL_PROGRAM} barrierc barriers ${STAGEDIR}${PREFIX}/bin
 	cd ${WRKSRC}/doc && \
-		${INSTALL_MAN} barrierc.1 barriers.1 ${STAGEDIR}${MANPREFIX}/man/man1
+		${INSTALL_MAN} barrierc.1 barriers.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/barrier.conf.example-basic \
 		${STAGEDIR}${ETCDIR}/barrier.conf.sample

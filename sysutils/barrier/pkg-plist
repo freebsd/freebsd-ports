@@ -2,10 +2,10 @@
 bin/barrierc
 bin/barriers
 @sample %%ETCDIR%%/barrier.conf.sample
-man/man1/barrierc.1.gz
-man/man1/barriers.1.gz
 %%GUI%%share/applications/barrier.desktop
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/barrier.conf.example
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/barrier.conf.example-advanced
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/barrier.conf.example-basic
 %%GUI%%share/icons/hicolor/scalable/apps/barrier.svg
+share/man/man1/barrierc.1.gz
+share/man/man1/barriers.1.gz
