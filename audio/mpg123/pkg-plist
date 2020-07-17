@@ -8,7 +8,7 @@ include/out123.h
 include/syn123.h
 lib/libmpg123.so
 lib/libmpg123.so.0
-lib/libmpg123.so.0.45.1
+lib/libmpg123.so.0.45.2
 lib/libout123.so
 lib/libout123.so.0
 lib/libout123.so.0.3.0
