@@ -1,8 +1,7 @@
 lib/kodi/addons/pvr.iptvsimple/pvr.iptvsimple.so
-lib/kodi/addons/pvr.iptvsimple/pvr.iptvsimple.so.17.6
-lib/kodi/addons/pvr.iptvsimple/pvr.iptvsimple.so.2.4.14
+lib/kodi/addons/pvr.iptvsimple/pvr.iptvsimple.so.18.7
+lib/kodi/addons/pvr.iptvsimple/pvr.iptvsimple.so.3.9.8
 share/kodi/addons/pvr.iptvsimple/addon.xml
-share/kodi/addons/pvr.iptvsimple/addon.xml.in
 share/kodi/addons/pvr.iptvsimple/changelog.txt
 share/kodi/addons/pvr.iptvsimple/icon.png
 share/kodi/addons/pvr.iptvsimple/resources/language/resource.language.af_za/strings.po
