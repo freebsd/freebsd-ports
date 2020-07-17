@@ -1,5 +1,6 @@
 include/spng.h
 lib/libspng.so
+lib/libspng.so.0
 lib/libspng.so.%%SOVERSION%%
 libdata/pkgconfig/spng.pc
 %%PORTDOCS%%%%DOCSDIR%%/api.md
