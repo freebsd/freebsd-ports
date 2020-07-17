@@ -2,6 +2,7 @@
 
 PORTNAME=	swaylock
 DISTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -18,7 +19,7 @@ USES=		compiler:c11 gnome meson pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	swaywm
 USE_GNOME=	cairo pango
-PLIST_FILES=	bin/${PORTNAME} \
+PLIST_FILES=	"@(,,4755) bin/${PORTNAME}" \
 		etc/pam.d/${PORTNAME} \
 		share/bash-completion/completions/${PORTNAME} \
 		share/fish/vendor_completions.d/${PORTNAME}.fish \
