@@ -13,8 +13,8 @@ LICENSE=	APACHE20
 USES=		compiler go:modules
 
 USE_GITHUB=	yes
-GHTAG=		RELEASE.2020-07-13T18-09-56Z
-COMMIT_ID=	e7d7d5232c6047bc82374e1a87769cd25126560b
+GHTAG=		RELEASE.2020-07-14T19-14-30Z
+COMMIT_ID=	cfc5681b36e1f0349d1bb5c26705756de58d754a
 GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		Azure:azure-pipeline-go:v0.2.1:azure_azure_pipeline_go/vendor/github.com/Azure/azure-pipeline-go \
 		Azure:azure-storage-blob-go:v0.8.0:azure_azure_storage_blob_go/vendor/github.com/Azure/azure-storage-blob-go \
@@ -47,20 +47,20 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		fatih:color:v1.7.0:fatih_color/vendor/github.com/fatih/color \
 		fatih:structs:v1.1.0:fatih_structs/vendor/github.com/fatih/structs \
 		go-asn1-ber:asn1-ber:f715ec2f112d:go_asn1_ber_asn1_ber/vendor/gopkg.in/asn1-ber.v1 \
-		go-ini:ini:v1.42.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
+		go-ini:ini:v1.57.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
 		go-ldap:ldap:v3.0.3:go_ldap_ldap/vendor/gopkg.in/ldap.v3 \
 		go-ole:go-ole:v1.2.4:go_ole_go_ole/vendor/github.com/go-ole/go-ole \
 		go-sql-driver:mysql:v1.5.0:go_sql_driver_mysql/vendor/github.com/go-sql-driver/mysql \
 		go-yaml:yaml:v2.2.8:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		gogo:protobuf:v1.3.1:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang:appengine:v1.4.0:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:75b288015ac9:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:627f9648deb9:golang_net/vendor/golang.org/x/net \
+		golang:crypto:948cd5f35899:golang_crypto/vendor/golang.org/x/crypto \
+		golang:net:ab3426394381:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:e64efc72b421:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.4.0:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:snappy:v0.0.1:golang_snappy/vendor/github.com/golang/snappy \
-		golang:sys:226ff32320da:golang_sys/vendor/golang.org/x/sys \
-		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
+		golang:sys:ddb9806d33ae:golang_sys/vendor/golang.org/x/sys \
+		golang:text:v0.3.3:golang_text/vendor/golang.org/x/text \
 		golang:time:9d24e82272b4:golang_time/vendor/golang.org/x/time \
 		golang:tools:8463f397d07c:golang_tools/vendor/golang.org/x/tools \
 		golang:xerrors:9bdfabe68543:golang_xerrors/vendor/golang.org/x/xerrors \
@@ -95,11 +95,11 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		jmespath:go-jmespath:c2b33e8439af:jmespath_go_jmespath/vendor/github.com/jmespath/go-jmespath \
 		json-iterator:go:v1.1.10:json_iterator_go/vendor/github.com/json-iterator/go \
 		klauspost:compress:v1.10.3:klauspost_compress/vendor/github.com/klauspost/compress \
-		klauspost:cpuid:v1.3.0:klauspost_cpuid/vendor/github.com/klauspost/cpuid \
+		klauspost:cpuid:v1.3.1:klauspost_cpuid/vendor/github.com/klauspost/cpuid \
 		klauspost:pgzip:v1.2.1:klauspost_pgzip/vendor/github.com/klauspost/pgzip \
 		klauspost:readahead:v1.3.1:klauspost_readahead/vendor/github.com/klauspost/readahead \
 		klauspost:reedsolomon:v1.9.9:klauspost_reedsolomon/vendor/github.com/klauspost/reedsolomon \
-		konsorten:go-windows-terminal-sequences:v1.0.1:konsorten_go_windows_terminal_sequences/vendor/github.com/konsorten/go-windows-terminal-sequences \
+		konsorten:go-windows-terminal-sequences:v1.0.3:konsorten_go_windows_terminal_sequences/vendor/github.com/konsorten/go-windows-terminal-sequences \
 		lib:pq:v1.7.0:lib_pq/vendor/github.com/lib/pq \
 		mailru:easyjson:03f2033d19d5:mailru_easyjson/vendor/github.com/mailru/easyjson \
 		mattn:go-colorable:v0.1.4:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
@@ -111,7 +111,7 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		minio:cli:v1.22.0:minio_cli/vendor/github.com/minio/cli \
 		minio:highwayhash:v1.0.0:minio_highwayhash/vendor/github.com/minio/highwayhash \
 		minio:md5-simd:v1.1.0:minio_md5_simd/vendor/github.com/minio/md5-simd \
-		minio:minio-go:a57fec8037ec:minio_minio_go_v6/vendor/github.com/minio/minio-go/v6 \
+		minio:minio-go:47e386e2cde8:minio_minio_go_v7/vendor/github.com/minio/minio-go/v7 \
 		minio:sha256-simd:v0.1.1:minio_sha256_simd/vendor/github.com/minio/sha256-simd \
 		minio:simdjson-go:b17fe061ea37:minio_simdjson_go/vendor/github.com/minio/simdjson-go \
 		minio:sio:v0.2.0:minio_sio/vendor/github.com/minio/sio \
@@ -144,7 +144,7 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		ryanuber:go-glob:v1.0.0:ryanuber_go_glob/vendor/github.com/ryanuber/go-glob \
 		secure-io:sio-go:v0.3.0:secure_io_sio_go/vendor/github.com/secure-io/sio-go \
 		shirou:gopsutil:53cec6b37e6a:shirou_gopsutil/vendor/github.com/shirou/gopsutil \
-		sirupsen:logrus:v1.5.0:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
+		sirupsen:logrus:v1.6.0:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		spaolacci:murmur3:v1.1.0:spaolacci_murmur3/vendor/github.com/spaolacci/murmur3 \
 		square:go-jose:v2.3.1:square_go_jose/vendor/gopkg.in/square/go-jose.v2 \
 		streadway:amqp:75d898a42a94:streadway_amqp/vendor/github.com/streadway/amqp \
