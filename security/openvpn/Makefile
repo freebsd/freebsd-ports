@@ -32,6 +32,9 @@ CONFIGURE_ENV+=		ac_cv_prog_CMAKE= CMAKE=
 
 # let OpenVPN's configure script pick up the requisite libraries,
 # but do not break the plugin build if an older version is installed
+# XXX FIXME: once there is an opportunity for testing with older
+# versions with incompatible plugins again, try USES+=localbase:ldflags,
+# suggested by Mateusz Piotrowski 0mp@ 2020-07-17
 CPPFLAGS+=		-I${WRKSRC}/include -I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib -Wl,--as-needed
 
