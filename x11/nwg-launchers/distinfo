@@ -3,3 +3,5 @@ SHA256 (nwg-piotr-nwg-launchers-v0.2.0_GH0.tar.gz) = e5dd81d812646b1bf000bee4d49
 SIZE (nwg-piotr-nwg-launchers-v0.2.0_GH0.tar.gz) = 43240
 SHA256 (5375b8196bfc.patch) = d262ad2e76626ff41585d25a927fbb19c3da353594b718a572595006e1455604
 SIZE (5375b8196bfc.patch) = 2289
+SHA256 (2997dc9289a8.patch) = 03387adba4662af1faea9336caa66f7796c0930543352d5af07f67f56e2458f6
+SIZE (2997dc9289a8.patch) = 1336
