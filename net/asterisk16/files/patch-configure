@@ -1,4 +1,4 @@
---- configure.orig	2020-04-30 14:11:40 UTC
+--- configure.orig	2020-07-09 15:39:17 UTC
 +++ configure
 @@ -4687,8 +4687,6 @@ case "${host_os}" in
       ;;
@@ -9,7 +9,7 @@
       ;;
       openbsd*)
       ac_default_prefix=/usr/local
-@@ -20351,6 +20349,8 @@ $as_echo_n "checking for getifaddrs() support... " >&6
+@@ -20355,6 +20353,8 @@ $as_echo_n "checking for getifaddrs() support... " >&6
  
  	cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
@@ -18,7 +18,7 @@
   #include <ifaddrs.h>
  int
  main ()
-@@ -29510,6 +29510,8 @@ fi
+@@ -29514,6 +29514,8 @@ fi
  
  for ver in 5.3 5.2 5.1; do
  
@@ -27,7 +27,7 @@
  if test "x${PBX_LUA}" != "x1" -a "${USE_LUA}" != "no"; then
     pbxlibdir=""
     # if --with-LUA=DIR has been specified, use it.
-@@ -29524,13 +29526,13 @@ if test "x${PBX_LUA}" != "x1" -a "${USE_LUA}" != "no";
+@@ -29528,13 +29530,13 @@ if test "x${PBX_LUA}" != "x1" -a "${USE_LUA}" != "no";
        ast_ext_lib_check_save_CFLAGS="${CFLAGS}"
        CFLAGS="${CFLAGS} "
        as_ac_Lib=`$as_echo "ac_cv_lib_lua${ver}''_luaL_newstate" | $as_tr_sh`
@@ -44,7 +44,7 @@
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -29572,7 +29574,7 @@ fi
+@@ -29576,7 +29578,7 @@ fi
  
     # now check for the header.
     if test "${AST_LUA_FOUND}" = "yes"; then
@@ -53,7 +53,7 @@
        # if --with-LUA=DIR has been specified, use it.
        if test "x${LUA_DIR}" != "x"; then
           LUA_INCLUDE="-I${LUA_DIR}/include"
-@@ -29582,8 +29584,8 @@ fi
+@@ -29586,8 +29588,8 @@ fi
           # check for the header
           ast_ext_lib_check_saved_CPPFLAGS="${CPPFLAGS}"
           CPPFLAGS="${CPPFLAGS} ${LUA_INCLUDE}"
@@ -64,7 +64,7 @@
  if eval test \"x\$"$as_ac_Header"\" = x"yes"; then :
    LUA_HEADER_FOUND=1
  else
-@@ -29610,9 +29612,9 @@ fi
+@@ -29614,9 +29616,9 @@ fi
  
  	if test "x${PBX_LUA}" = "x1" ; then
  		if test x"${LUA_DIR}" = x; then

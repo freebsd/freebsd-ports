@@ -1,4 +1,4 @@
---- channels/sip/include/sip.h.orig	2014-07-24 17:47:29 UTC
+--- channels/sip/include/sip.h.orig	2020-07-09 15:39:17 UTC
 +++ channels/sip/include/sip.h
 @@ -192,7 +192,7 @@
  #define DEFAULT_MOHINTERPRET   "default"  /*!< The default music class */

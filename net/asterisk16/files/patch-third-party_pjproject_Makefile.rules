@@ -1,5 +1,14 @@
---- third-party/pjproject/Makefile.rules.orig	2020-03-12 14:44:05 UTC
+--- third-party/pjproject/Makefile.rules.orig	2020-07-09 15:39:17 UTC
 +++ third-party/pjproject/Makefile.rules
+@@ -7,7 +7,7 @@
+ # PACKAGE_URL ?= http://www.pjsip.org/release/$(PJPROJECT_VERSION)
+ 
+ PACKAGE_URL ?= https://raw.githubusercontent.com/asterisk/third-party/master/pjproject/$(PJPROJECT_VERSION)
+-TARBALL_FILE = pjproject-$(PJPROJECT_VERSION).tar.bz2
++TARBALL_FILE = pjsip-pjproject-$(PJPROJECT_VERSION)_GH0.tar.gz
+ 
+ # PJPROJECT_CONFIGURE_OPTS could come from the command line or could be
+ # set/modified by configure.m4 if the build or host tuples aren't the same
 @@ -37,7 +37,7 @@ PJPROJECT_CONFIG_OPTS = $(PJPROJECT_CONFIGURE_OPTS) --
  	--disable-ipp \
  	--disable-libwebrtc \

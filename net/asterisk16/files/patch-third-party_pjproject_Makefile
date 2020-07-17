@@ -1,4 +1,4 @@
---- third-party/pjproject/Makefile.orig	2020-04-30 14:11:40 UTC
+--- third-party/pjproject/Makefile.orig	2020-07-09 15:39:17 UTC
 +++ third-party/pjproject/Makefile
 @@ -88,14 +88,10 @@ _all: $(TARGETS)
  

@@ -1,17 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	asterisk
-PORTVERSION=	16.11.1
-PORTREVISION=	1
+PORTVERSION=	16.12.0
 CATEGORIES=	net
-MASTER_SITES=	https://downloads.asterisk.org/pub/telephony/%SUBDIR%/:DEFAULT,g729 \
-		http://www.pjsip.org/release/${PJSIP_VERSION}/:PJSIP
+MASTER_SITES=	https://downloads.asterisk.org/pub/telephony/%SUBDIR%/:DEFAULT,g729
 MASTER_SITE_SUBDIR=	asterisk/ \
 			asterisk/old-releases/ \
 			sounds/releases/:g729
 PKGNAMESUFFIX=	16
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		pjproject-${PJSIP_VERSION}.tar.bz2:PJSIP
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	madpilot@FreeBSD.org
@@ -20,12 +17,10 @@ COMMENT=	Open Source PBX and telephony toolkit
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid \
-		libjansson.so:devel/jansson
-
 ONLY_FOR_ARCHS=	amd64 armv6 armv7 i386 powerpc powerpc64 sparc64
 
-EXTRACT_ONLY:=	${DISTNAME}${EXTRACT_SUFX}
+LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid \
+		libjansson.so:devel/jansson
 
 USES=		bison compiler:c11 cpe gmake gnome iconv libedit localbase \
 		shebangfix sqlite ssl ncurses
@@ -34,7 +29,9 @@ USE_LDCONFIG=	yes
 USE_RC_SUBR=	asterisk
 USE_GITHUB=	nodefault
 
-PJSIP_VERSION=	2.9
+EXTRACT_ONLY:=	${DISTNAME}${EXTRACT_SUFX}
+
+PJSIP_VERSION=	2.10
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datarootdir=${DATADIR} \
 		--with-ilbc=internal \
@@ -171,6 +168,7 @@ PJSIP_USES=		pkgconfig
 PJSIP_LIB_DEPENDS=	libsrtp2.so:net/libsrtp2 \
 			libspeex.so:audio/speex \
 			libspeexdsp.so:audio/speexdsp
+PJSIP_GH_TUPLE=		pjsip:pjproject:${PJSIP_VERSION}:pjsip
 
 PORTAUDIO_CONFIGURE_WITH=	portaudio
 PORTAUDIO_LIB_DEPENDS=	libportaudio.so:audio/portaudio
