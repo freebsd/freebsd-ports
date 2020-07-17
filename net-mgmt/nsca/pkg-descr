@@ -3,4 +3,4 @@ results to a central Nagios server. This consists of the "nsca" daemon
 which runs on the main Nagios server and accepts results and the
 "send_nsca" client which is used to send results to the server.
 
-WWW: http://www.nagios.org/
+WWW: https://www.nagios.org/
