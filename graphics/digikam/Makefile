@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	digikam
-DISTVERSION=	6.4.0
-PORTREVISION=	3
+DISTVERSION=	7.0.0
 CATEGORIES=	graphics kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}
 DIST_SUBDIR=	KDE/digikam/${PORTVERSION}
@@ -42,8 +41,8 @@ USE_KDE=	archive auth bookmarks calendarcore codecs completion config \
 		kio marble libkipi notifications notifyconfig parts service \
 		solid sonnet textwidgets threadweaver unitconversion \
 		widgetsaddons windowsystem xmlgui
-USE_QT=		concurrent core dbus gui network opengl printsupport sql \
-		widgets x11extras xml xmlpatterns \
+USE_QT=		concurrent core dbus declarative gui location network opengl \
+		printsupport sql webchannel widgets x11extras xml xmlpatterns \
 		sql-sqlite3_run \
 		buildtools_build qmake_build
 USE_XORG=	ice sm x11 xext

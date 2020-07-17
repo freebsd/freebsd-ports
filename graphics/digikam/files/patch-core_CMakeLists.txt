@@ -1,22 +1,25 @@
---- core/CMakeLists.txt.orig	2019-07-31 16:12:57 UTC
+--- core/CMakeLists.txt.orig	2020-04-23 11:51:20 UTC
 +++ core/CMakeLists.txt
-@@ -8,6 +8,7 @@
+@@ -10,6 +10,7 @@ APPLY_COMMON_POLICIES()
  
- project(digikam)
+ # ==============================================================================
  
 +cmake_policy(SET CMP0063 OLD) # Suppress visibility warnings
  message(STATUS "----------------------------------------------------------------------------------")
- message(STATUS "Starting CMake configuration for: ${PROJECT_NAME}")
- 
-@@ -401,6 +402,11 @@ endif()
+ message(STATUS "Check dependencies for ${PROJECT_NAME} version ${DIGIKAM_VERSION_STRING}")
+ message(STATUS "")
+@@ -341,8 +342,13 @@ endif()
  
  find_package(Doxygen)
- find_package(Lqr-1)
+ 
+-if(NOT CMAKE_SYSTEM_NAME STREQUAL FreeBSD)
++#if(NOT CMAKE_SYSTEM_NAME STREQUAL FreeBSD)
+     find_package(Lqr-1)
++#endif()
 +if(LQR-1_FOUND)
 +    include_directories(${LQR-1_INCLUDE_DIRS})
 +    set(liblqr_LIBS ${LQR-1_LIBRARIES})
 +    link_directories(${LQR-1_LIBDIR})
-+endif()
+ endif()
  
  # -- libgphoto2 rules ----------------------------------------------------------
- 
