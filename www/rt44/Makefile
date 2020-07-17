@@ -2,6 +2,7 @@
 
 PORTNAME=	rt
 DISTVERSION=	4.4.4
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://download.bestpractical.com/pub/rt/release/
 PKGNAMESUFFIX=	44
@@ -44,8 +45,6 @@ OPTIONS_DEFAULT=	AP_MODFASTCGI GD GPG MYSQL
 
 USERS?=		www
 GROUPS?=	rt www
-
-RUN_DEPENDS+=	${LOCALBASE}/bin/jsmin:devel/jsmin
 
 .include "${.CURDIR}/Makefile.cpan"
 
