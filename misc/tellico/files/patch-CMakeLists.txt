@@ -1,0 +1,32 @@
+Update to taglib changes what CMake variables are defined (it now produces 
+modern CMake bits, but forgets backwards compatibility). 
+
+This cascades to the weak FindCDIO module, which was now missing
+library -L flags it needed.
+
+--- CMakeLists.txt.orig	2020-07-18 20:19:02 UTC
++++ CMakeLists.txt
+@@ -127,8 +127,13 @@ set_package_properties(Taglib PROPERTIES
+     URL "https://taglib.org/"
+     TYPE OPTIONAL)
+ if(TAGLIB_FOUND)
+-    add_definitions(${TAGLIB_CFLAGS})
+-    include_directories(${TAGLIB_INCLUDES})
++    if(TAGLIB_LIBRARIES)
++        # Older taglib
++        add_definitions(${TAGLIB_CFLAGS})
++        include_directories(${TAGLIB_INCLUDES})
++    else()
++        set(TAGLIB_LIBRARIES Taglib::Taglib)
++    endif()
+ endif(TAGLIB_FOUND)
+ 
+ find_package(Yaz 2.0)
+@@ -171,6 +176,7 @@ set_package_properties(CDIO PROPERTIES
+     TYPE OPTIONAL)
+ if(CDIO_FOUND)
+     include_directories(${CDIO_INCLUDE_DIRS})
++    link_directories(${CDIO_libiso9660_LIBDIR} ${CDIO_libcdio_LIBDIR})
+ endif(CDIO_FOUND)
+ 
+ find_package(Csv 3.0)
