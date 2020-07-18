@@ -8322,7 +8322,6 @@ japanese/jyuroku||2016-07-04|Has expired: Broken for more than 6 months
 japanese/mtools||2016-07-04|Has expired: Broken for more than 6 months
 palm/pdbar||2016-07-04|Has expired: Broken for more than 6 months
 graphics/gplot||2016-07-04|Has expired: Broken for more than 6 months
-graphics/white_dune||2016-07-04|Has expired: Broken for more than 6 months
 graphics/whirlgif||2016-07-04|Has expired: Broken for more than 6 months
 graphics/libaux||2016-07-04|Has expired: Broken for more than 6 months
 graphics/import-pictures||2016-07-04|Has expired: Broken for more than 6 months
@@ -15153,3 +15152,4 @@ audio/aucatctl|audio/sndio|2020-07-12|Use sndioctl from audio/sndio instead
 devel/py-freenas.dispatcher||2020-07-14|Uses deprecated version of python
 textproc/scancode-toolkit||2020-07-14|Uses deprecated version of python
 www/py-kallithea||2020-07-14|Uses deprecated version of python
+graphics/white_dune|graphics/wdune|2020-07-18|Expired in 2016, brought back under new name

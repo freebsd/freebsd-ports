@@ -1,0 +1,11 @@
+--- src/swt/tests/Makefile.in.orig	2020-07-15 22:53:38 UTC
++++ src/swt/tests/Makefile.in
+@@ -13,7 +13,7 @@ INCDIRS = -I../include
+ 
+ # WARNINGS = -Wall -Wwrite-strings
+ CFLAGS = -g $(WARNINGS) $(INCDIRS) @COMMONFLAGS@ @CFLAGS@ 
+-CXXFLAGS = $(CFLAGS)
++CXXFLAGS = @CXXFLAGS@
+ 
+ TARGETS = swTest text buttons doodle drawing tree restest draw1
+ 

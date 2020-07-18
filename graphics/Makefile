@@ -1068,6 +1068,7 @@
     SUBDIR += wayland-info
     SUBDIR += wayland-protocols
     SUBDIR += waylandpp
+    SUBDIR += wdune
     SUBDIR += webp
     SUBDIR += webp-pixbuf-loader
     SUBDIR += wings

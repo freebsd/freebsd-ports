@@ -1,0 +1,11 @@
+--- src/swt/rc/Makefile.in.orig	2020-07-15 22:53:38 UTC
++++ src/swt/rc/Makefile.in
+@@ -11,7 +11,7 @@ LIBDIRS =
+ INCDIRS = -I../include
+ # WARNINGS = -Wall -Wwrite-strings
+ CFLAGS = -g $(WARNINGS) $(INCDIRS) @CFLAGS@
+-MAKEDEPEND=gcc -MM
++MAKEDEPEND=@CC@ -MM
+ YFLAGS = -d
+ 
+ TARGET = rc
