@@ -27,6 +27,8 @@ USES=		bison compiler:c11 cpe gmake gnome iconv:wchar_t perl5 \
 USE_GNOME=	cairo glib20 libxml2
 USE_PERL5=	build
 
+DEPRECATED= 	Please consider using qemu or qemu41
+EXPIRATION_DATE=2020-08-20
 #BROKEN_powerpc64=	fails to compile: In function aio_bh_poll: internal compiler error: Segmentation fault
 
 #.if !defined(PKGNAMESUFFIX) || (${PKGNAMESUFFIX} != "-utils" && ${PKGNAMESUFFIX} != "-guest-agent")
