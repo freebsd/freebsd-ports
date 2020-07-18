@@ -1,0 +1,7 @@
+TIMESTAMP = 1595103965
+SHA256 (qemu/5.0.0/qemu-5.0.0.tar.xz) = 2f13a92a0fa5c8b69ff0796b59b86b080bbb92ebad5d301a7724dd06b5e78cb6
+SIZE (qemu/5.0.0/qemu-5.0.0.tar.xz) = 62426192
+SHA256 (qemu/5.0.0/55765822804f.patch) = 10c2cc93ad01b02d854e26a9e445ba22bb5434dda1ef25baeb979be6292fa8ef
+SIZE (qemu/5.0.0/55765822804f.patch) = 2271
+SHA256 (qemu/5.0.0/aa4d30f6618d.patch) = eeddc5f5e08a460d2c133b4193d115fa1f00f206e0833f33ec66379981473efe
+SIZE (qemu/5.0.0/aa4d30f6618d.patch) = 2211
