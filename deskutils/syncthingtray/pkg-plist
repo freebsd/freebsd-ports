@@ -16,6 +16,7 @@ share/plasma/plasmoids/martchus.syncthingplasmoid/contents/ui/DirectoriesPage.qm
 share/plasma/plasmoids/martchus.syncthingplasmoid/contents/ui/DownloadsPage.qml
 share/plasma/plasmoids/martchus.syncthingplasmoid/contents/ui/FullRepresentation.qml
 share/plasma/plasmoids/martchus.syncthingplasmoid/contents/ui/IconLabel.qml
+share/plasma/plasmoids/martchus.syncthingplasmoid/contents/ui/RecentChangesPage.qml
 share/plasma/plasmoids/martchus.syncthingplasmoid/contents/ui/StatisticsView.qml
 share/plasma/plasmoids/martchus.syncthingplasmoid/contents/ui/TinyButton.qml
 share/plasma/plasmoids/martchus.syncthingplasmoid/contents/ui/TinyButtonStyle.qml
@@ -25,7 +26,6 @@ share/plasma/plasmoids/martchus.syncthingplasmoid/contents/ui/TopLevelItem.qml
 share/plasma/plasmoids/martchus.syncthingplasmoid/contents/ui/TopLevelView.qml
 share/plasma/plasmoids/martchus.syncthingplasmoid/contents/ui/main.qml
 share/plasma/plasmoids/martchus.syncthingplasmoid/metadata.desktop
-share/plasma/plasmoids/martchus.syncthingplasmoid/metadata.json
 share/syncthingconnector/translations/syncthingconnector_cs_CZ.qm
 share/syncthingconnector/translations/syncthingconnector_de_DE.qm
 share/syncthingconnector/translations/syncthingconnector_en_US.qm
