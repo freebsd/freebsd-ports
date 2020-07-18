@@ -1,8 +1,0 @@
-A Django reusable app providing the overextends template tag, a drop-in
-replacement for Django's extends tag, which allows you to use circular
-template inheritance.
-
-The primary use-case for overextends is to simultaneously override and extend
-templates from other reusable apps, in your own Django project.
-
-WWW: https://github.com/stephenmcd/django-overextends

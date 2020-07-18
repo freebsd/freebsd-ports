@@ -1467,7 +1467,6 @@
     SUBDIR += py-django-crispy-forms
     SUBDIR += py-django-cron
     SUBDIR += py-django-csp
-    SUBDIR += py-django-datetime-widget
     SUBDIR += py-django-debreach
     SUBDIR += py-django-debug-toolbar
     SUBDIR += py-django-dpaste
@@ -1499,10 +1498,8 @@
     SUBDIR += py-django-modern-rpc
     SUBDIR += py-django-mptt
     SUBDIR += py-django-netfields
-    SUBDIR += py-django-openid-auth
     SUBDIR += py-django-otp
     SUBDIR += py-django-otp-yubikey
-    SUBDIR += py-django-overextends
     SUBDIR += py-django-pglocks
     SUBDIR += py-django-photologue
     SUBDIR += py-django-picklefield
@@ -1527,7 +1524,6 @@
     SUBDIR += py-django-statici18n
     SUBDIR += py-django-staticinline
     SUBDIR += py-django-storages
-    SUBDIR += py-django-subdomains
     SUBDIR += py-django-sudo
     SUBDIR += py-django-tables2
     SUBDIR += py-django-tagging

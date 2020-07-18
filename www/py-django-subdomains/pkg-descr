@@ -1,4 +1,0 @@
-Subdomain helpers for the Django framework, including subdomain-based URL
-routing and reversing.
-
-WWW: https://github.com/tkaemming/django-subdomains
