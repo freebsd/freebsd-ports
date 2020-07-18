@@ -135,12 +135,15 @@ diff --git a/CMakeLists.txt b/CMakeLists.txt
  
 --- src/CMakeLists.txt
 +++ src/CMakeLists.txt
-@@ -23,7 +23,7 @@ if(FREETYPE_FOUND)
+@@ -23,7 +23,10 @@ if(FREETYPE_FOUND)
      include_directories(${FREETYPE_INCLUDE_DIRS})
  endif()
  
 -add_definitions(${TAGLIB_CFLAGS} ${EXIV2_CFLAGS})
 +add_definitions(${TAGLIB_CFLAGS})
++if(NOT TAGLIB_LIBRARIES)
++    set(TAGLIB_LIBRARIES Taglib::Taglib)
++endif()
  # Exiv2 needs exceptions
  kde_enable_exceptions()
  
@@ -157,8 +160,7 @@ diff --git a/CMakeLists.txt b/CMakeLists.txt
  )
  if(TAGLIB_FOUND)
      target_link_libraries(krename
--        ${TAGLIB_LIBRARIES}
-+        Taglib::Taglib
+         ${TAGLIB_LIBRARIES}
      )
  endif()
 -if(EXIV2_FOUND)
