@@ -120,6 +120,7 @@
     SUBDIR += purple-discord
     SUBDIR += purple-facebook
     SUBDIR += purple-hangouts
+    SUBDIR += purple-plugin-pack
     SUBDIR += purple-rocketchat
     SUBDIR += purple-slack
     SUBDIR += py-fbmq
