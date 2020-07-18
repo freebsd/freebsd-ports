@@ -1187,6 +1187,7 @@ lib/wine/api-ms-win-core-synch-l1-2-1.dll.so
 lib/wine/api-ms-win-core-sysinfo-l1-1-0.dll.so
 lib/wine/api-ms-win-core-sysinfo-l1-2-0.dll.so
 lib/wine/api-ms-win-core-sysinfo-l1-2-1.dll.so
+lib/wine/api-ms-win-core-systemtopology-l1-1-0.dll.so
 lib/wine/api-ms-win-core-threadpool-l1-1-0.dll.so
 lib/wine/api-ms-win-core-threadpool-l1-2-0.dll.so
 lib/wine/api-ms-win-core-threadpool-legacy-l1-1-0.dll.so
@@ -1648,6 +1649,7 @@ lib/wine/fakedlls/api-ms-win-core-synch-l1-2-1.dll
 lib/wine/fakedlls/api-ms-win-core-sysinfo-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-sysinfo-l1-2-0.dll
 lib/wine/fakedlls/api-ms-win-core-sysinfo-l1-2-1.dll
+lib/wine/fakedlls/api-ms-win-core-systemtopology-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-threadpool-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-threadpool-l1-2-0.dll
 lib/wine/fakedlls/api-ms-win-core-threadpool-legacy-l1-1-0.dll
