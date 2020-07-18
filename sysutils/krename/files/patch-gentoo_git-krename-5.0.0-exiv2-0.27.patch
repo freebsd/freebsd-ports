@@ -153,8 +153,12 @@ diff --git a/CMakeLists.txt b/CMakeLists.txt
      set(krename_SRCS ${krename_SRCS}
          exiv2plugin.cpp
      )
-@@ -137,9 +137,9 @@ if(TAGLIB_FOUND)
-         ${TAGLIB_LIBRARIES}
+@@ -128,12 +128,12 @@ target_link_libraries(krename
+ )
+ if(TAGLIB_FOUND)
+     target_link_libraries(krename
+-        ${TAGLIB_LIBRARIES}
++        Taglib::Taglib
      )
  endif()
 -if(EXIV2_FOUND)
