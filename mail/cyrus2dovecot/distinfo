@@ -1,2 +1,3 @@
-SHA256 (cyrus2dovecot-1.2) = 69cc05e7d493b8e5030300aaa71bb87f72203f507ad726d796235619efae4917
-SIZE (cyrus2dovecot-1.2) = 52212
+TIMESTAMP = 1595099565
+SHA256 (cyrus2dovecot-1.3) = f4688f62a25a3e77bf0c852f9d3c9cac3e912cf63ea873702273fb02c1e3f823
+SIZE (cyrus2dovecot-1.3) = 54641

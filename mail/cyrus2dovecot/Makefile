@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cyrus2dovecot
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	mail
 MASTER_SITES=	http://www.cyrus2dovecot.sw.fu-berlin.de/download/
 EXTRACT_SUFX=
