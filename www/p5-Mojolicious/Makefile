@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Mojolicious
-PORTVERSION=	8.56
+PORTVERSION=	8.57
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	p5-IO-Socket-Socks>=0.64:net/p5-IO-Socket-Socks \
 		p5-Role-Tiny>=2.000001:devel/p5-Role-Tiny \
+		p5-YAML-LibYAML>0:textproc/p5-YAML-LibYAML \
 		${JSONXS_BUILD_DEPENDS}
 
 USES=		perl5

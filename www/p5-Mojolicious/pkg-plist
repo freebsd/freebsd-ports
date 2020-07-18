@@ -108,6 +108,7 @@ bin/morbo
 %%SITE_PERL%%/Mojolicious/Plugin/HeaderCondition.pm
 %%SITE_PERL%%/Mojolicious/Plugin/JSONConfig.pm
 %%SITE_PERL%%/Mojolicious/Plugin/Mount.pm
+%%SITE_PERL%%/Mojolicious/Plugin/NotYAMLConfig.pm
 %%SITE_PERL%%/Mojolicious/Plugin/TagHelpers.pm
 %%SITE_PERL%%/Mojolicious/Plugins.pm
 %%SITE_PERL%%/Mojolicious/Renderer.pm
@@ -246,6 +247,7 @@ bin/morbo
 %%PERL5_MAN3%%/Mojolicious::Plugin::HeaderCondition.3.gz
 %%PERL5_MAN3%%/Mojolicious::Plugin::JSONConfig.3.gz
 %%PERL5_MAN3%%/Mojolicious::Plugin::Mount.3.gz
+%%PERL5_MAN3%%/Mojolicious::Plugin::NotYAMLConfig.3.gz
 %%PERL5_MAN3%%/Mojolicious::Plugin::TagHelpers.3.gz
 %%PERL5_MAN3%%/Mojolicious::Plugins.3.gz
 %%PERL5_MAN3%%/Mojolicious::Renderer.3.gz
