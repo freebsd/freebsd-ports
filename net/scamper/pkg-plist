@@ -6,6 +6,7 @@ bin/sc_bdrmap
 bin/sc_erosprober
 bin/sc_filterpolicy
 bin/sc_ipiddump
+bin/sc_pinger
 bin/sc_prefixscan
 bin/sc_radargun
 bin/sc_remoted
@@ -20,10 +21,11 @@ bin/sc_warts2pcap
 bin/sc_warts2text
 bin/sc_wartscat
 bin/sc_wartsdump
+bin/sc_wartsfilter
 bin/sc_wartsfix
 lib/libscamperfile.a
-lib/libscamperfile.so.0
-lib/libscamperfile.so.0.0.0
+lib/libscamperfile.so.1
+lib/libscamperfile.so.1.0.0
 lib/libscamperfile.so
 man/man1/sc_ally.1.gz
 man/man1/sc_analysis_dump.1.gz
@@ -32,6 +34,7 @@ man/man1/sc_bdrmap.1.gz
 man/man1/sc_erosprober.1.gz
 man/man1/sc_filterpolicy.1.gz
 man/man1/sc_ipiddump.1.gz
+man/man1/sc_pinger.1.gz
 man/man1/sc_prefixscan.1.gz
 man/man1/sc_radargun.1.gz
 man/man1/sc_remoted.1.gz
@@ -46,6 +49,7 @@ man/man1/sc_warts2pcap.1.gz
 man/man1/sc_warts2text.1.gz
 man/man1/sc_wartscat.1.gz
 man/man1/sc_wartsdump.1.gz
+man/man1/sc_wartsfilter.1.gz
 man/man1/sc_wartsfix.1.gz
 man/man1/scamper.1.gz
 man/man3/libscamperfile.3.gz
