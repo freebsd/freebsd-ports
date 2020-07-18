@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	distilator
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	https://critical.ch/distilator/ \
 		LOCAL/ehaupt
