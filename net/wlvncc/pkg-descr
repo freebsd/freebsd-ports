@@ -1,0 +1,4 @@
+This is a work-in-progress implementation of a Wayland native VNC
+client. Expect bugs and missing features.
+
+WWW: https://github.com/any1/wlvncc
