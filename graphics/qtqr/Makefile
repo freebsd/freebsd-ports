@@ -3,12 +3,13 @@
 
 PORTNAME=	qtqr
 DISTVERSION=	2.0.bzr39
+PORTREVISION=	1
 CATEGORIES=	graphics python
 MASTER_SITES=	LOCAL/ehaupt
 DISTNAME=	qr-tools-${DISTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	GUI that makes easy creating and decoding the QR Codes
+COMMENT=	GUI that makes it easy to create and decode QR codes
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENCE
