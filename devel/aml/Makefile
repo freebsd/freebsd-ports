@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	aml
-PORTVERSION=	s20200716
+PORTVERSION=	s20200717
 CATEGORIES=	devel
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -16,6 +16,6 @@ USES=		compiler:c11 meson pkgconfig
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 GH_ACCOUNT=	any1
-GH_TAGNAME=	1e3bdb9
+GH_TAGNAME=	696f0ee
 
 .include <bsd.port.mk>
