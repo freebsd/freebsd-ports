@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	go-bindata-assetfs
-PORTVERSION=	g20200509
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.0.1
 CATEGORIES=	devel www
 
 MAINTAINER=	egypcio@FreeBSD.org
@@ -15,14 +16,11 @@ USES=		go
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	elazarl
-GH_TAGNAME=	234c15e
-GH_TUPLE=	golang:net:627f964:golang_net/golang.org/x/net \
-		golang:sys:226ff32:golang_sys/golang.org/x/sys
+GH_TUPLE=	golang:net:ab34263:golang_net/golang.org/x/net \
+		golang:sys:ddb9806:golang_sys/golang.org/x/sys
 
 GO_TARGET=	./${PORTNAME}
 
 PLIST_FILES=	bin/${PORTNAME}
-
-PORTSCOUT=	skipv:1.0.0
 
 .include <bsd.port.mk>
