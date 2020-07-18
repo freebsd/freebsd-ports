@@ -22,6 +22,7 @@ load_rc_config $name
 : ${gitea_facility:="daemon"}
 : ${gitea_priority:="debug"}
 : ${gitea_shared:="%%PREFIX%%/share/${name}"}
+: ${gitea_custom:="%%PREFIX%%/etc/${name}"}
 
 command="%%PREFIX%%/sbin/${name} web"
 procname="%%PREFIX%%/sbin/${name}"
@@ -36,7 +37,7 @@ gitea_start() {
 		-u ${gitea_user} -p ${pidfile} \
 		/usr/bin/env -i \
 		"GITEA_WORK_DIR=${gitea_shared}" \
-		"GITEA_CUSTOM=%%PREFIX%%/etc/${name}" \
+		"GITEA_CUSTOM=${gitea_custom}" \
 		"HOME=${githome}" \
 		"PATH=%%PREFIX%%/bin:${PATH}" \
 		"USER=${gitea_user}" \

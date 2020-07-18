@@ -1,5 +1,5 @@
 [
-{ type: install
+{ type: upgrade
   maximum_version: 1.7.6
   message: <<EOM
 When upgrading from Gitea 1.7 or earlier, Gitea requires the addition of

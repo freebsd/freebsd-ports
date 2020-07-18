@@ -2,11 +2,10 @@
 
 PORTNAME=	gitea
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.11.8
+DISTVERSION=	1.12.2
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/go-gitea/gitea/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
 DISTNAME=	gitea-src-${DISTVERSION}
-NO_WRKSUBDIR=	yes
 
 MAINTAINER=	stb@lassitu.de
 COMMENT=	Compact self-hosted Git service
@@ -18,6 +17,8 @@ RUN_DEPENDS=	git:devel/git
 
 USES=		gmake go:no_targets
 USE_RC_SUBR=	gitea
+NO_WRKSUBDIR=	yes
+PORTDATA=	*
 
 SUB_FILES+=	app.ini.sample
 SUB_LIST+=	GITUSER=${USERS}
@@ -49,9 +50,6 @@ DAEMONARGS=	-f
 SUB_LIST+=	DAEMONARGS="${DAEMONARGS}"
 
 SSP_UNSAFE=	true
-# use sane defaults for path, overriden with actual PREFIX in start script
-EXTRA_LDFLAGS=	-X code.gitea.io/gitea/modules/setting.CustomPath=${PREFIX}/etc/gitea
-EXTRA_LDFLAGS+=	-X code.gitea.io/gitea/modules/setting.AppWorkPath=${PREFIX}/share/gitea
 # Default LDFLAGS are incompatible with build
 MAKE_ENV=	LDFLAGS="${LDFLAGS} ${EXTRA_LDFLAGS}"
 MAKE_ARGS=	GOPATH=${WRKDIR} TAGS="${GO_TAGS}"
