@@ -1339,6 +1339,7 @@
 %%WWWDIR%%/3rdparty/deepdiver/zipstreamer/src/ZipStreamer.php
 %%WWWDIR%%/3rdparty/deepdiver/zipstreamer/src/lib/Count64.php
 %%WWWDIR%%/3rdparty/deepdiver1975/tarstreamer/LICENSE
+%%WWWDIR%%/3rdparty/deepdiver1975/tarstreamer/src/TarHeader.php
 %%WWWDIR%%/3rdparty/deepdiver1975/tarstreamer/src/TarStreamer.php
 %%WWWDIR%%/3rdparty/doctrine/annotations/CHANGELOG.md
 %%WWWDIR%%/3rdparty/doctrine/annotations/LICENSE
@@ -4808,6 +4809,8 @@
 %%WWWDIR%%/apps-pkg/accessibility/l10n/ar.json
 %%WWWDIR%%/apps-pkg/accessibility/l10n/bg.js
 %%WWWDIR%%/apps-pkg/accessibility/l10n/bg.json
+%%WWWDIR%%/apps-pkg/accessibility/l10n/br.js
+%%WWWDIR%%/apps-pkg/accessibility/l10n/br.json
 %%WWWDIR%%/apps-pkg/accessibility/l10n/ca.js
 %%WWWDIR%%/apps-pkg/accessibility/l10n/ca.json
 %%WWWDIR%%/apps-pkg/accessibility/l10n/cs.js
@@ -4820,6 +4823,8 @@
 %%WWWDIR%%/apps-pkg/accessibility/l10n/de_DE.json
 %%WWWDIR%%/apps-pkg/accessibility/l10n/el.js
 %%WWWDIR%%/apps-pkg/accessibility/l10n/el.json
+%%WWWDIR%%/apps-pkg/accessibility/l10n/en_GB.js
+%%WWWDIR%%/apps-pkg/accessibility/l10n/en_GB.json
 %%WWWDIR%%/apps-pkg/accessibility/l10n/eo.js
 %%WWWDIR%%/apps-pkg/accessibility/l10n/eo.json
 %%WWWDIR%%/apps-pkg/accessibility/l10n/es.js
@@ -4870,6 +4875,8 @@
 %%WWWDIR%%/apps-pkg/accessibility/l10n/lv.json
 %%WWWDIR%%/apps-pkg/accessibility/l10n/mk.js
 %%WWWDIR%%/apps-pkg/accessibility/l10n/mk.json
+%%WWWDIR%%/apps-pkg/accessibility/l10n/ms_MY.js
+%%WWWDIR%%/apps-pkg/accessibility/l10n/ms_MY.json
 %%WWWDIR%%/apps-pkg/accessibility/l10n/nb.js
 %%WWWDIR%%/apps-pkg/accessibility/l10n/nb.json
 %%WWWDIR%%/apps-pkg/accessibility/l10n/nl.js
@@ -4898,6 +4905,8 @@
 %%WWWDIR%%/apps-pkg/accessibility/l10n/sr@latin.json
 %%WWWDIR%%/apps-pkg/accessibility/l10n/sv.js
 %%WWWDIR%%/apps-pkg/accessibility/l10n/sv.json
+%%WWWDIR%%/apps-pkg/accessibility/l10n/th.js
+%%WWWDIR%%/apps-pkg/accessibility/l10n/th.json
 %%WWWDIR%%/apps-pkg/accessibility/l10n/tr.js
 %%WWWDIR%%/apps-pkg/accessibility/l10n/tr.json
 %%WWWDIR%%/apps-pkg/accessibility/l10n/uk.js
@@ -6572,6 +6581,8 @@
 %%WWWDIR%%/apps-pkg/files/l10n/bn_BD.json
 %%WWWDIR%%/apps-pkg/files/l10n/bn_IN.js
 %%WWWDIR%%/apps-pkg/files/l10n/bn_IN.json
+%%WWWDIR%%/apps-pkg/files/l10n/br.js
+%%WWWDIR%%/apps-pkg/files/l10n/br.json
 %%WWWDIR%%/apps-pkg/files/l10n/bs.js
 %%WWWDIR%%/apps-pkg/files/l10n/bs.json
 %%WWWDIR%%/apps-pkg/files/l10n/ca.js
@@ -7715,6 +7726,8 @@
 %%WWWDIR%%/apps-pkg/files_rightclick/l10n/bg.json
 %%WWWDIR%%/apps-pkg/files_rightclick/l10n/bn_BD.js
 %%WWWDIR%%/apps-pkg/files_rightclick/l10n/bn_BD.json
+%%WWWDIR%%/apps-pkg/files_rightclick/l10n/br.js
+%%WWWDIR%%/apps-pkg/files_rightclick/l10n/br.json
 %%WWWDIR%%/apps-pkg/files_rightclick/l10n/bs.js
 %%WWWDIR%%/apps-pkg/files_rightclick/l10n/bs.json
 %%WWWDIR%%/apps-pkg/files_rightclick/l10n/ca.js
@@ -8234,6 +8247,8 @@
 %%WWWDIR%%/apps-pkg/files_trashbin/l10n/bn_BD.json
 %%WWWDIR%%/apps-pkg/files_trashbin/l10n/bn_IN.js
 %%WWWDIR%%/apps-pkg/files_trashbin/l10n/bn_IN.json
+%%WWWDIR%%/apps-pkg/files_trashbin/l10n/br.js
+%%WWWDIR%%/apps-pkg/files_trashbin/l10n/br.json
 %%WWWDIR%%/apps-pkg/files_trashbin/l10n/bs.js
 %%WWWDIR%%/apps-pkg/files_trashbin/l10n/bs.json
 %%WWWDIR%%/apps-pkg/files_trashbin/l10n/ca.js
@@ -8486,6 +8501,8 @@
 %%WWWDIR%%/apps-pkg/files_versions/l10n/bn_BD.json
 %%WWWDIR%%/apps-pkg/files_versions/l10n/bn_IN.js
 %%WWWDIR%%/apps-pkg/files_versions/l10n/bn_IN.json
+%%WWWDIR%%/apps-pkg/files_versions/l10n/br.js
+%%WWWDIR%%/apps-pkg/files_versions/l10n/br.json
 %%WWWDIR%%/apps-pkg/files_versions/l10n/bs.js
 %%WWWDIR%%/apps-pkg/files_versions/l10n/bs.json
 %%WWWDIR%%/apps-pkg/files_versions/l10n/ca.js
@@ -8739,6 +8756,8 @@
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/bn_BD.js
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/bn_BD.json
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/bn_IN.php
+%%WWWDIR%%/apps-pkg/firstrunwizard/l10n/br.js
+%%WWWDIR%%/apps-pkg/firstrunwizard/l10n/br.json
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/bs.js
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/bs.json
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/ca.js
@@ -9144,6 +9163,8 @@
 %%WWWDIR%%/apps-pkg/nextcloud_announcements/l10n/ast.json
 %%WWWDIR%%/apps-pkg/nextcloud_announcements/l10n/bg.js
 %%WWWDIR%%/apps-pkg/nextcloud_announcements/l10n/bg.json
+%%WWWDIR%%/apps-pkg/nextcloud_announcements/l10n/br.js
+%%WWWDIR%%/apps-pkg/nextcloud_announcements/l10n/br.json
 %%WWWDIR%%/apps-pkg/nextcloud_announcements/l10n/ca.js
 %%WWWDIR%%/apps-pkg/nextcloud_announcements/l10n/ca.json
 %%WWWDIR%%/apps-pkg/nextcloud_announcements/l10n/cs.js
@@ -9766,6 +9787,8 @@
 %%WWWDIR%%/apps-pkg/password_policy/l10n/sv.json
 %%WWWDIR%%/apps-pkg/password_policy/l10n/tr.js
 %%WWWDIR%%/apps-pkg/password_policy/l10n/tr.json
+%%WWWDIR%%/apps-pkg/password_policy/l10n/uk.js
+%%WWWDIR%%/apps-pkg/password_policy/l10n/uk.json
 %%WWWDIR%%/apps-pkg/password_policy/l10n/zh_CN.js
 %%WWWDIR%%/apps-pkg/password_policy/l10n/zh_CN.json
 %%WWWDIR%%/apps-pkg/password_policy/l10n/zh_TW.js
@@ -9835,7 +9858,6 @@
 %%WWWDIR%%/apps-pkg/password_policy/lists/list-9.php
 %%WWWDIR%%/apps-pkg/password_policy/templates/settings-admin.php
 %%WWWDIR%%/apps-pkg/photos/.npmignore
-%%WWWDIR%%/apps-pkg/photos/.stylelintrc.js
 %%WWWDIR%%/apps-pkg/photos/COPYING
 %%WWWDIR%%/apps-pkg/photos/appinfo/app.php
 %%WWWDIR%%/apps-pkg/photos/appinfo/info.xml
@@ -9843,6 +9865,7 @@
 %%WWWDIR%%/apps-pkg/photos/appinfo/signature.json
 %%WWWDIR%%/apps-pkg/photos/babel.config.js
 %%WWWDIR%%/apps-pkg/photos/composer.json
+%%WWWDIR%%/apps-pkg/photos/composer.lock
 %%WWWDIR%%/apps-pkg/photos/css/icons.scss
 %%WWWDIR%%/apps-pkg/photos/img/app.svg
 %%WWWDIR%%/apps-pkg/photos/img/photos.svg
@@ -10052,6 +10075,7 @@
 %%WWWDIR%%/apps-pkg/photos/lib/Controller/PageController.php
 %%WWWDIR%%/apps-pkg/photos/postcss.config.js
 %%WWWDIR%%/apps-pkg/photos/screenshots/screenshot1.png
+%%WWWDIR%%/apps-pkg/photos/stylelint.config.js
 %%WWWDIR%%/apps-pkg/photos/templates/main.php
 %%WWWDIR%%/apps-pkg/privacy/.eslintignore
 %%WWWDIR%%/apps-pkg/privacy/.stylelintrc.js
@@ -10146,6 +10170,8 @@
 %%WWWDIR%%/apps-pkg/privacy/l10n/pl.json
 %%WWWDIR%%/apps-pkg/privacy/l10n/pt_BR.js
 %%WWWDIR%%/apps-pkg/privacy/l10n/pt_BR.json
+%%WWWDIR%%/apps-pkg/privacy/l10n/pt_PT.js
+%%WWWDIR%%/apps-pkg/privacy/l10n/pt_PT.json
 %%WWWDIR%%/apps-pkg/privacy/l10n/ro.js
 %%WWWDIR%%/apps-pkg/privacy/l10n/ro.json
 %%WWWDIR%%/apps-pkg/privacy/l10n/ru.js
@@ -10217,6 +10243,8 @@
 %%WWWDIR%%/apps-pkg/recommendations/l10n/ast.json
 %%WWWDIR%%/apps-pkg/recommendations/l10n/bg.js
 %%WWWDIR%%/apps-pkg/recommendations/l10n/bg.json
+%%WWWDIR%%/apps-pkg/recommendations/l10n/br.js
+%%WWWDIR%%/apps-pkg/recommendations/l10n/br.json
 %%WWWDIR%%/apps-pkg/recommendations/l10n/ca.js
 %%WWWDIR%%/apps-pkg/recommendations/l10n/ca.json
 %%WWWDIR%%/apps-pkg/recommendations/l10n/cs.js
@@ -11878,6 +11906,8 @@
 %%WWWDIR%%/apps-pkg/text/l10n/es_SV.json
 %%WWWDIR%%/apps-pkg/text/l10n/es_UY.js
 %%WWWDIR%%/apps-pkg/text/l10n/es_UY.json
+%%WWWDIR%%/apps-pkg/text/l10n/et_EE.js
+%%WWWDIR%%/apps-pkg/text/l10n/et_EE.json
 %%WWWDIR%%/apps-pkg/text/l10n/eu.js
 %%WWWDIR%%/apps-pkg/text/l10n/eu.json
 %%WWWDIR%%/apps-pkg/text/l10n/fa.js
@@ -11894,6 +11924,8 @@
 %%WWWDIR%%/apps-pkg/text/l10n/hr.json
 %%WWWDIR%%/apps-pkg/text/l10n/hu.js
 %%WWWDIR%%/apps-pkg/text/l10n/hu.json
+%%WWWDIR%%/apps-pkg/text/l10n/id.js
+%%WWWDIR%%/apps-pkg/text/l10n/id.json
 %%WWWDIR%%/apps-pkg/text/l10n/is.js
 %%WWWDIR%%/apps-pkg/text/l10n/is.json
 %%WWWDIR%%/apps-pkg/text/l10n/it.js
@@ -11908,6 +11940,8 @@
 %%WWWDIR%%/apps-pkg/text/l10n/lt_LT.json
 %%WWWDIR%%/apps-pkg/text/l10n/lv.js
 %%WWWDIR%%/apps-pkg/text/l10n/lv.json
+%%WWWDIR%%/apps-pkg/text/l10n/mk.js
+%%WWWDIR%%/apps-pkg/text/l10n/mk.json
 %%WWWDIR%%/apps-pkg/text/l10n/mn.js
 %%WWWDIR%%/apps-pkg/text/l10n/mn.json
 %%WWWDIR%%/apps-pkg/text/l10n/nb.js
@@ -12255,6 +12289,8 @@
 %%WWWDIR%%/apps-pkg/twofactor_backupcodes/l10n/sv.json
 %%WWWDIR%%/apps-pkg/twofactor_backupcodes/l10n/tr.js
 %%WWWDIR%%/apps-pkg/twofactor_backupcodes/l10n/tr.json
+%%WWWDIR%%/apps-pkg/twofactor_backupcodes/l10n/uk.js
+%%WWWDIR%%/apps-pkg/twofactor_backupcodes/l10n/uk.json
 %%WWWDIR%%/apps-pkg/twofactor_backupcodes/l10n/zh_CN.js
 %%WWWDIR%%/apps-pkg/twofactor_backupcodes/l10n/zh_CN.json
 %%WWWDIR%%/apps-pkg/twofactor_backupcodes/l10n/zh_TW.js
@@ -12875,6 +12911,8 @@
 %%WWWDIR%%/apps-pkg/viewer/l10n/ar.json
 %%WWWDIR%%/apps-pkg/viewer/l10n/bg.js
 %%WWWDIR%%/apps-pkg/viewer/l10n/bg.json
+%%WWWDIR%%/apps-pkg/viewer/l10n/br.js
+%%WWWDIR%%/apps-pkg/viewer/l10n/br.json
 %%WWWDIR%%/apps-pkg/viewer/l10n/ca.js
 %%WWWDIR%%/apps-pkg/viewer/l10n/ca.json
 %%WWWDIR%%/apps-pkg/viewer/l10n/cs.js
@@ -13460,7 +13498,6 @@
 %%WWWDIR%%/core/doc/admin/_sources/configuration_files/external_storage/sftp.rst.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration_files/external_storage/smb.rst.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration_files/external_storage/webdav.rst.txt
-%%WWWDIR%%/core/doc/admin/_sources/configuration_files/external_storage_configuration.rst.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration_files/external_storage_configuration_gui.rst.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration_files/federated_cloud_sharing_configuration.rst.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration_files/file_sharing_configuration.rst.txt
@@ -13634,7 +13671,6 @@
 %%WWWDIR%%/core/doc/admin/configuration_files/external_storage/sftp.html
 %%WWWDIR%%/core/doc/admin/configuration_files/external_storage/smb.html
 %%WWWDIR%%/core/doc/admin/configuration_files/external_storage/webdav.html
-%%WWWDIR%%/core/doc/admin/configuration_files/external_storage_configuration.html
 %%WWWDIR%%/core/doc/admin/configuration_files/external_storage_configuration_gui.html
 %%WWWDIR%%/core/doc/admin/configuration_files/federated_cloud_sharing_configuration.html
 %%WWWDIR%%/core/doc/admin/configuration_files/file_sharing_configuration.html
@@ -13751,6 +13787,7 @@
 %%WWWDIR%%/core/doc/user/_images/contact_picture.png
 %%WWWDIR%%/core/doc/user/_images/contact_picture_options.png
 %%WWWDIR%%/core/doc/user/_images/contact_picture_set.png
+%%WWWDIR%%/core/doc/user/_images/contact_uploadbutton.png
 %%WWWDIR%%/core/doc/user/_images/contacts_empty.png
 %%WWWDIR%%/core/doc/user/_images/contacts_menu.png
 %%WWWDIR%%/core/doc/user/_images/contacts_popup.png
@@ -13805,6 +13842,7 @@
 %%WWWDIR%%/core/doc/user/_images/totp_enable.png
 %%WWWDIR%%/core/doc/user/_images/totp_login_1.png
 %%WWWDIR%%/core/doc/user/_images/totp_login_2.png
+%%WWWDIR%%/core/doc/user/_images/transfer_ownership-accept.png
 %%WWWDIR%%/core/doc/user/_images/users-files.png
 %%WWWDIR%%/core/doc/user/_images/video_player_2.png
 %%WWWDIR%%/core/doc/user/_images/webdav_dolphin.png
@@ -13824,6 +13862,7 @@
 %%WWWDIR%%/core/doc/user/_sources/files/large_file_upload.rst.txt
 %%WWWDIR%%/core/doc/user/_sources/files/projects.rst.txt
 %%WWWDIR%%/core/doc/user/_sources/files/quota.rst.txt
+%%WWWDIR%%/core/doc/user/_sources/files/transfer_ownership.rst.txt
 %%WWWDIR%%/core/doc/user/_sources/files/version_control.rst.txt
 %%WWWDIR%%/core/doc/user/_sources/index.rst.txt
 %%WWWDIR%%/core/doc/user/_sources/pim/calendar.rst.txt
@@ -13933,6 +13972,7 @@
 %%WWWDIR%%/core/doc/user/files/large_file_upload.html
 %%WWWDIR%%/core/doc/user/files/projects.html
 %%WWWDIR%%/core/doc/user/files/quota.html
+%%WWWDIR%%/core/doc/user/files/transfer_ownership.html
 %%WWWDIR%%/core/doc/user/files/version_control.html
 %%WWWDIR%%/core/doc/user/genindex.html
 %%WWWDIR%%/core/doc/user/index.html
@@ -14161,6 +14201,12 @@
 %%WWWDIR%%/core/img/twitter.svg
 %%WWWDIR%%/core/js/backgroundjobs.js
 %%WWWDIR%%/core/js/core.json
+%%WWWDIR%%/core/js/dist/files_client.js
+%%WWWDIR%%/core/js/dist/files_client.js.map
+%%WWWDIR%%/core/js/dist/files_fileinfo.js
+%%WWWDIR%%/core/js/dist/files_fileinfo.js.map
+%%WWWDIR%%/core/js/dist/files_iedavclient.js
+%%WWWDIR%%/core/js/dist/files_iedavclient.js.map
 %%WWWDIR%%/core/js/dist/install.js
 %%WWWDIR%%/core/js/dist/install.js.map
 %%WWWDIR%%/core/js/dist/login.js
@@ -14221,6 +14267,8 @@
 %%WWWDIR%%/core/l10n/ast.json
 %%WWWDIR%%/core/l10n/bg.js
 %%WWWDIR%%/core/l10n/bg.json
+%%WWWDIR%%/core/l10n/br.js
+%%WWWDIR%%/core/l10n/br.json
 %%WWWDIR%%/core/l10n/ca.js
 %%WWWDIR%%/core/l10n/ca.json
 %%WWWDIR%%/core/l10n/cs.js
@@ -14708,6 +14756,7 @@
 %%WWWDIR%%/lib/private/Authentication/Listeners/RemoteWipeEmailListener.php
 %%WWWDIR%%/lib/private/Authentication/Listeners/RemoteWipeNotificationsListener.php
 %%WWWDIR%%/lib/private/Authentication/Listeners/UserDeletedStoreCleanupListener.php
+%%WWWDIR%%/lib/private/Authentication/Listeners/UserDeletedTokenCleanupListener.php
 %%WWWDIR%%/lib/private/Authentication/Login/ALoginCommand.php
 %%WWWDIR%%/lib/private/Authentication/Login/Chain.php
 %%WWWDIR%%/lib/private/Authentication/Login/ClearLostPasswordTokensCommand.php
