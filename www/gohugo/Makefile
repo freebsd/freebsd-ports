@@ -2,7 +2,7 @@
 
 PORTNAME=	hugo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.73.0
+DISTVERSION=	0.74.2
 CATEGORIES=	www
 PKGNAMEPREFIX=	go
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
@@ -36,11 +36,14 @@ GH_TUPLE=	\
 		disintegration:gift:v1.2.1:disintegration_gift/vendor/github.com/disintegration/gift \
 		dlclark:regexp2:v1.2.0:dlclark_regexp2/vendor/github.com/dlclark/regexp2 \
 		dustin:go-humanize:v1.0.0:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
+		evanw:esbuild:v0.6.2:evanw_esbuild/vendor/github.com/evanw/esbuild \
 		fortytw2:leaktest:v1.3.0:fortytw2_leaktest/vendor/github.com/fortytw2/leaktest \
 		frankban:quicktest:v1.7.2:frankban_quicktest/vendor/github.com/frankban/quicktest \
 		fsnotify:fsnotify:v1.4.7:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
+		getkin:kin-openapi:v0.14.0:getkin_kin_openapi/vendor/github.com/getkin/kin-openapi \
+		ghodss:yaml:v1.0.0:ghodss_yaml/vendor/github.com/ghodss/yaml \
 		go-ini:ini:v1.51.1:go_ini_ini/vendor/gopkg.in/ini.v1 \
-		go-yaml:yaml:v2.2.7:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
+		go-yaml:yaml:v2.3.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		gobwas:glob:v0.2.3:gobwas_glob/vendor/github.com/gobwas/glob \
 		gohugoio:testmodBuilder:c56af20f2e95:gohugoio_testmodbuilder_mods/vendor/github.com/gohugoio/testmodBuilder \
 		golang:appengine:v1.6.0:golang_appengine/vendor/google.golang.org/appengine \
@@ -49,7 +52,7 @@ GH_TUPLE=	\
 		golang:oauth2:aaccbc9213b0:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.3.1:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sync:cd5d95a43a6e:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:669c56c373c4:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:bc7a7d42d5c3:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
 		golang:xerrors:a985d3407aa7:golang_xerrors/vendor/golang.org/x/xerrors \
 		google:go-cloud:v0.15.0:google_go_cloud/vendor/gocloud.dev \
@@ -81,7 +84,7 @@ GH_TUPLE=	\
 		mitchellh:mapstructure:v1.1.2:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
 		muesli:smartcrop:v0.3.0:muesli_smartcrop/vendor/github.com/muesli/smartcrop \
 		nicksnyder:go-i18n:v1.10.0:nicksnyder_go_i18n/vendor/github.com/nicksnyder/go-i18n \
-		niklasfasching:go-org:v1.1.0:niklasfasching_go_org/vendor/github.com/niklasfasching/go-org \
+		niklasfasching:go-org:v1.3.0:niklasfasching_go_org/vendor/github.com/niklasfasching/go-org \
 		olekukonko:tablewriter:v0.0.4:olekukonko_tablewriter/vendor/github.com/olekukonko/tablewriter \
 		pelletier:go-toml:v1.6.0:pelletier_go_toml/vendor/github.com/pelletier/go-toml \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
@@ -106,12 +109,6 @@ post-extract:
 	@${RM} -r ${WRKSRC}/vendor/github.com/googleapis/gax-go/v2
 	@${RLN} ${WRKSRC_googleapis_gax_go_v2}/v2 ${WRKSRC}/vendor/github.com/googleapis/gax-go/v2
 
-GO_BUILDFLAGS=	-ldflags="\
-		-s -w \
-		-X github.com/gohugoio/hugo/hugolib.BuildDate=${SOURCE_DATE_EPOCH:U${SOURCE_DATE_EPOCH_CMD:sh}} \
-		-X github.com/gohugoio/hugo/hugolib.CommitHash=${COMMIT_ID}" \
-		${BUILD_TAGS}
-
 OPTIONS_DEFINE=		MANPAGES EXTENDED
 OPTIONS_DEFAULT=	MANPAGES EXTENDED
 OPTIONS_SUB=		yes
@@ -134,7 +131,7 @@ PORTMANS=	hugo-config.1 hugo-convert-toJSON.1 hugo-convert-toTOML.1 \
 .include <bsd.port.pre.mk>
 
 SOURCE_DATE_EPOCH_CMD=	date -r $$(grep TIMESTAMP ${DISTINFO_FILE} | ${SED} -e 's/[^0-9]//g') '+%FT%TZ%z'
-COMMIT_ID=		428907cc3437372a5d26c3c8b394ce997e536b84
+COMMIT_ID=		48565de62f1f992a2cae7b072aefdc799b34d346
 
 do-build-MANPAGES-on:
 	@cd ${GO_WRKSRC} && ${GO_WRKDIR_BIN}/${PORTNAME} gen man --dir man/man1/
