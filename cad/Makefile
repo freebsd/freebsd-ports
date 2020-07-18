@@ -74,6 +74,7 @@
     SUBDIR += logisim
     SUBDIR += magic
     SUBDIR += meshdev
+    SUBDIR += meshlab
     SUBDIR += netgen
     SUBDIR += netgen-lvs
     SUBDIR += ngspice_rework
