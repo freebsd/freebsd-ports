@@ -23,4 +23,6 @@ LDFLAGS+=	-lexecinfo
 
 PLIST_FILES=	bin/tmate-ssh-server
 
+PORTSCOUT=	skipv:2.3.0
+
 .include <bsd.port.mk>
