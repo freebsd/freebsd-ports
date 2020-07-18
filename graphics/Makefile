@@ -891,6 +891,7 @@
     SUBDIR += py-webcolors
     SUBDIR += py-willow
     SUBDIR += py-yaswfp
+    SUBDIR += py-zbar-py
     SUBDIR += pymorph
     SUBDIR += qcomicbook
     SUBDIR += qcustomplot-qt5

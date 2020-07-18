@@ -1,0 +1,5 @@
+zbar-py is a module that provides an interface to the zbar bar-code reading
+library, which can read most barcode formats as well as QR codes. Input images
+must be 2D numpy arrays of type uint8 (i.e. 2D greyscale images).
+
+WWW: https://pypi.org/project/zbar-py/
