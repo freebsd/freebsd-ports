@@ -5,6 +5,7 @@
 %%LUA_MODSHAREDIR%%/ngx/pipe.lua
 %%LUA_MODSHAREDIR%%/ngx/process.lua
 %%LUA_MODSHAREDIR%%/ngx/re.lua
+%%LUA_MODSHAREDIR%%/ngx/req.lua
 %%LUA_MODSHAREDIR%%/ngx/resp.lua
 %%LUA_MODSHAREDIR%%/ngx/semaphore.lua
 %%LUA_MODSHAREDIR%%/ngx/ssl.lua
