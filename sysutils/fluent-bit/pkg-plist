@@ -4,7 +4,10 @@ bin/fluent-bit
 %%ETCDIR%%/plugins.conf
 include/fluent-bit.h
 include/fluent-bit/flb_api.h
+include/fluent-bit/flb_aws_credentials.h
+include/fluent-bit/flb_aws_util.h
 include/fluent-bit/flb_bits.h
+include/fluent-bit/flb_callback.h
 include/fluent-bit/flb_compat.h
 include/fluent-bit/flb_config.h
 include/fluent-bit/flb_config_map.h
@@ -20,6 +23,7 @@ include/fluent-bit/flb_filter_plugin.h
 include/fluent-bit/flb_gzip.h
 include/fluent-bit/flb_hash.h
 include/fluent-bit/flb_http_client.h
+include/fluent-bit/flb_http_client_debug.h
 include/fluent-bit/flb_http_server.h
 include/fluent-bit/flb_info.h
 include/fluent-bit/flb_input.h
@@ -83,5 +87,5 @@ include/fluent-bit/flb_utf8.h
 include/fluent-bit/flb_utils.h
 include/fluent-bit/flb_version.h
 include/fluent-bit/flb_worker.h
-lib/libfluent-bit.so
+lib/fluent-bit/libfluent-bit.so
 @comment libdata/pkgconfig/msgpack.pc
