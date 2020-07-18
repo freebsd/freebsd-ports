@@ -3,9 +3,9 @@ for building rust-lld.  Attempt to improve reliability of the build
 by not using it.  llvm-config-wrapper is a hack in the first place
 that is only really needed on Windows.
 
---- src/bootstrap/native.rs.orig	2020-05-03 19:47:59 UTC
+--- src/bootstrap/native.rs.orig	2020-07-17 17:26:27 UTC
 +++ src/bootstrap/native.rs
-@@ -488,25 +488,9 @@ impl Step for Lld {
+@@ -542,26 +542,9 @@ impl Step for Lld {
          let mut cfg = cmake::Config::new(builder.src.join("src/llvm-project/lld"));
          configure_cmake(builder, target, &mut cfg, true);
  
@@ -24,6 +24,7 @@ that is only really needed on Windows.
 -        // can't build on a system where your paths require `\` on Windows, but
 -        // there's probably a lot of reasons you can't do that other than this.
 -        let llvm_config_shim = env::current_exe().unwrap().with_file_name("llvm-config-wrapper");
+-
          cfg.out_dir(&out_dir)
              .profile("Release")
 -            .env("LLVM_CONFIG_REAL", &llvm_config)
