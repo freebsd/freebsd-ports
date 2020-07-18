@@ -86,6 +86,7 @@
     SUBDIR += peksystray
     SUBDIR += pekwm
     SUBDIR += phluid
+    SUBDIR += phoc
     SUBDIR += picom
     SUBDIR += piewm
     SUBDIR += plasma5-kdecoration
