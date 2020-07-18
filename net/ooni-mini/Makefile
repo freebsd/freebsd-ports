@@ -2,7 +2,7 @@
 
 PORTNAME=		ooni-mini
 DISTVERSIONPREFIX=	v
-DISTVERSION=		0.14.0
+DISTVERSION=		0.14.1
 CATEGORIES=		net www benchmarks
 
 MAINTAINER=	egypcio@FreeBSD.org
