@@ -6,6 +6,20 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 
+20200719:
+  AFFECTS: users of emulators/qemu
+  AUTHOR: bofh@FreeBSD.org
+
+  emulators/qemu has been updated to 4.2.1. Previous 4.1.X branch has
+  been repocopied to emulators/qemu41. If someone wants to stick with 4.1.X
+  branch please use one of the following command:
+
+  # pkg install emulators/qemu41
+    or
+  # portmaster -o emulators/qemu41 emulators/qemu
+    or
+  # portupgrade -o emulators/qemu41 emulators/qemu
+
 20200716:
   AFFECTS: users of shells/bash, shells/bash-static
   AUTHOR: ehaupt@FreeBSD.org

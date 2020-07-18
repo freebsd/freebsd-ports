@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qemu
-PORTVERSION=	4.1.1
-PORTREVISION=	4
+PORTVERSION=	4.2.1
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.qemu.org/
 DIST_SUBDIR=	qemu/${PORTVERSION}
@@ -30,14 +29,14 @@ USE_GNOME=	cairo glib20 libxml2
 
 USE_PERL5=	build
 
-PORTSCOUT=	limit:^4\.1\.
+PORTSCOUT=	limit:^4\.2\.
 
 HAS_CONFIGURE=	yes
 MAKE_ENV+=	BSD_MAKE="${MAKE}" V=1
 
 OPTIONS_DEFINE=	SAMBA X11 GTK3 OPENGL GNUTLS SASL JPEG PNG CURL \
 		VDE CDROM_DMA PCAP USBREDIR X86_TARGETS \
-		STATIC_LINK DOCS ISCSI
+		STATIC_LINK DOCS ISCSI CAPSTONE
 OPTIONS_SINGLE=	NCURSES
 OPTIONS_SINGLE_NCURSES=	NCURSES_DEFAULT NCURSES_BASE NCURSES_PORT
 CDROM_DMA_DESC=		IDE CDROM DMA
@@ -55,8 +54,12 @@ STATIC_LINK_DESC=	Statically link the executables
 USBREDIR_DESC=		usb device network redirection (experimental!)
 VDE_DESC=		vde dependency (for vde networking)
 X86_TARGETS_DESC=	Build only x86 system targets
+CAPSTONE_DESC=		Disassembly framework support
 OPTIONS_DEFAULT=X11 GTK3 OPENGL GNUTLS SASL JPEG PNG CDROM_DMA CURL PCAP NCURSES_DEFAULT VDE
 OPTIONS_SUB=	yes
+CAPSTONE_CONFIGURE_ON=	--enable-capstone=system --extra-cflags=-I${LOCALBASE}/include/capstone
+CAPSTONE_CONFIGURE_OFF=	--disable-capstone
+CAPSTONE_LIB_DEPENDS=	libcapstone.so:devel/capstone4
 CURL_CONFIGURE_OFF=	--disable-curl
 CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 DOCS_BUILD_DEPENDS=	texi2html:textproc/texi2html

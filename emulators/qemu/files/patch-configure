@@ -1,6 +1,6 @@
---- configure.orig	2019-11-14 18:06:20 UTC
+--- configure.orig	2019-12-12 18:20:47 UTC
 +++ configure
-@@ -404,7 +404,7 @@ DSOSUF=".so"
+@@ -405,7 +405,7 @@ DSOSUF=".so"
  LDFLAGS_SHARED="-shared"
  modules="no"
  prefix="/usr/local"
@@ -9,7 +9,7 @@
  datadir="\${prefix}/share"
  firmwarepath="\${prefix}/share/qemu-firmware"
  qemu_docdir="\${prefix}/share/doc/qemu"
-@@ -484,6 +484,9 @@ numa=""
+@@ -489,6 +489,9 @@ numa=""
  tcmalloc="no"
  jemalloc="no"
  replication="yes"
@@ -19,7 +19,7 @@
  vxhs=""
  bochs="yes"
  cloop="yes"
-@@ -1141,6 +1144,10 @@ for opt do
+@@ -1125,6 +1128,10 @@ for opt do
    ;;
    --enable-vnc-png) vnc_png="yes"
    ;;
@@ -30,7 +30,7 @@
    --disable-slirp) slirp="no"
    ;;
    --enable-slirp=git) slirp="git"
-@@ -2998,6 +3005,14 @@ if ! check_include "ifaddrs.h" ; then
+@@ -3023,6 +3030,14 @@ if ! check_include "ifaddrs.h" ; then
  fi
  
  ##########################################
@@ -45,7 +45,7 @@
  # VTE probe
  
  if test "$vte" != "no"; then
-@@ -3655,7 +3670,7 @@ for i in $glib_modules; do
+@@ -3710,7 +3725,7 @@ for i in $glib_modules; do
          glib_libs=$($pkg_config --libs $i)
          QEMU_CFLAGS="$glib_cflags $QEMU_CFLAGS"
          LIBS="$glib_libs $LIBS"
@@ -54,7 +54,7 @@
      else
          error_exit "glib-$glib_req_ver $i is required to compile QEMU"
      fi
-@@ -4747,11 +4762,6 @@ has_sphinx_build() {
+@@ -4802,11 +4817,6 @@ has_sphinx_build() {
  if test "$docs" != "no" ; then
    if has makeinfo && has pod2man && has_sphinx_build; then
      docs=yes
@@ -66,7 +66,7 @@
    fi
  fi
  
-@@ -4885,7 +4895,7 @@ fi
+@@ -4940,7 +4950,7 @@ fi
  
  # check for libusb
  if test "$libusb" != "no" ; then
@@ -75,7 +75,7 @@
          libusb="yes"
          libusb_cflags=$($pkg_config --cflags libusb-1.0)
          libusb_libs=$($pkg_config --libs libusb-1.0)
-@@ -5275,7 +5285,51 @@ if test "$debug_stack_usage" = "yes"; then
+@@ -5330,7 +5340,51 @@ if test "$debug_stack_usage" = "yes"; then
    fi
  fi
  
@@ -127,7 +127,7 @@
  ##########################################
  # check if we have open_by_handle_at
  
-@@ -6241,27 +6295,30 @@ if ( [ "$linux_user" = yes ] || [ "$bsd_user" = yes ] 
+@@ -6352,27 +6406,30 @@ if ( [ "$linux_user" = yes ] || [ "$bsd_user" = yes ] 
      cat > $TMPC <<EOF
      int main(void) { return 0; }
  EOF
@@ -148,18 +148,18 @@
 -      fi
 +      textseg_ldflags="-Wl,-Ttext-segment=$textseg_addr"
 +      if ! compile_prog "" "$textseg_ldflags"; then
-+	# In case ld does not support -Ttext-segment, edit the default linker
-+	# script via sed to set the .text start addr.  This is needed on FreeBSD
-+	# at least.
-+	if ! $ld --verbose >/dev/null 2>&1; then
-+	  error_exit \
-+	      "We need to link the QEMU user mode binaries at a" \
-+	      "specific text address. Unfortunately your linker" \
-+	      "doesn't support either the -Ttext-segment option or" \
-+	      "printing the default linker script with --verbose." \
-+	      "If you don't want the user mode binaries, pass the" \
-+	      "--disable-user option to configure."
-+	fi
++        # In case ld does not support -Ttext-segment, edit the default linker
++        # script via sed to set the .text start addr.  This is needed on FreeBSD
++        # at least.
++        if ! $ld --verbose >/dev/null 2>&1; then
++          error_exit \
++              "We need to link the QEMU user mode binaries at a" \
++              "specific text address. Unfortunately your linker" \
++              "doesn't support either the -Ttext-segment option or" \
++              "printing the default linker script with --verbose." \
++              "If you don't want the user mode binaries, pass the" \
++              "--disable-user option to configure."
++        fi
  
 -      $ld --verbose | sed \
 -        -e '1,/==================================================/d' \
@@ -167,17 +167,17 @@
 -        -e "s/[.] = [0-9a-fx]* [+] SIZEOF_HEADERS/. = $textseg_addr + SIZEOF_HEADERS/" \
 -        -e "s/__executable_start = [0-9a-fx]*/__executable_start = $textseg_addr/" > config-host.ld
 -      textseg_ldflags="-Wl,-T../config-host.ld"
-+	$ld --verbose | sed \
-+	  -e '1,/==================================================/d' \
-+	  -e '/==================================================/,$d' \
-+	  -e "s/[.] = [0-9a-fx]* [+] SIZEOF_HEADERS/. = $textseg_addr + SIZEOF_HEADERS/" \
-+	  -e "s/__executable_start = [0-9a-fx]*/__executable_start = $textseg_addr/" > config-host.ld
-+	textseg_ldflags="-Wl,-T../config-host.ld"
++        $ld --verbose | sed \
++          -e '1,/==================================================/d' \
++          -e '/==================================================/,$d' \
++          -e "s/[.] = [0-9a-fx]* [+] SIZEOF_HEADERS/. = $textseg_addr + SIZEOF_HEADERS/" \
++          -e "s/__executable_start = [0-9a-fx]*/__executable_start = $textseg_addr/" > config-host.ld
++        textseg_ldflags="-Wl,-T../config-host.ld"
 +      fi
      fi
    fi
  fi
-@@ -6377,6 +6434,7 @@ echo "Audio drivers     $audio_drv_list"
+@@ -6497,6 +6554,7 @@ echo "Audio drivers     $audio_drv_list"
  echo "Block whitelist (rw) $block_drv_rw_whitelist"
  echo "Block whitelist (ro) $block_drv_ro_whitelist"
  echo "VirtFS support    $virtfs"
@@ -185,9 +185,9 @@
  echo "Multipath support $mpath"
  echo "VNC support       $vnc"
  if test "$vnc" = "yes" ; then
-@@ -6617,6 +6675,15 @@ fi
- if test "$profiler" = "yes" ; then
-   echo "CONFIG_PROFILER=y" >> $config_host_mak
+@@ -6739,6 +6797,15 @@ fi
+ if test "$want_tools" = "yes" ; then
+   echo "CONFIG_TOOLS=y" >> $config_host_mak
  fi
 +if test "$pcap" = "yes" ; then
 +  echo "CONFIG_PCAP=y" >> $config_host_mak
@@ -201,7 +201,7 @@
  if test "$slirp" != "no"; then
    echo "CONFIG_SLIRP=y" >> $config_host_mak
    echo "CONFIG_SMBD_COMMAND=\"$smbd\"" >> $config_host_mak
-@@ -6864,6 +6931,9 @@ fi
+@@ -6986,6 +7053,9 @@ fi
  # if this macro is set.
  if test "$have_fsxattr" = "yes" ; then
      echo "HAVE_FSXATTR=y" >> $config_host_mak

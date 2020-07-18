@@ -1,6 +1,6 @@
---- net/net.c.orig	2018-04-24 16:30:47 UTC
+--- net/net.c.orig	2020-06-25 18:12:17 UTC
 +++ net/net.c
-@@ -52,6 +52,11 @@
+@@ -55,6 +55,11 @@
  #include "net/filter.h"
  #include "qapi/string-output-visitor.h"
  
@@ -12,7 +12,7 @@
  /* Net bridge is currently not supported for W32. */
  #if !defined(_WIN32)
  # define CONFIG_NET_BRIDGE
-@@ -929,7 +934,225 @@ static int net_init_nic(const Netdev *netdev, const ch
+@@ -935,7 +940,226 @@ static int net_init_nic(const Netdev *netdev, const ch
      return idx;
  }
  
@@ -95,6 +95,7 @@
 +    struct PCAPState *s;
 +    const char *ifname;
 +    char errbuf[PCAP_ERRBUF_SIZE];
++    pcap_if_t *alldevsp;
 +#if defined(_WIN32)
 +    HANDLE h;
 +#endif
@@ -111,7 +112,7 @@
 +    nc = qemu_new_net_client(&net_pcap_info, peer, "pcap", ifname);
 +    s = DO_UPCAST(struct PCAPState, nc, nc);
 +
-+    if (ifname == NULL && (ifname = pcap_lookupdev(errbuf)) == NULL) {
++    if (ifname == NULL && (ifname = pcap_findalldevs(&alldevsp, errbuf)) == NULL) {
 +        fprintf(stderr, "qemu: pcap_create: %s\n", errbuf);
 +        goto fail;
 +    }
@@ -238,7 +239,7 @@
  static int (* const net_client_init_fun[NET_CLIENT_DRIVER__MAX])(
      const Netdev *netdev,
      const char *name,
-@@ -955,6 +1178,9 @@ static int (* const net_client_init_fun[NET_CLIENT_DRI
+@@ -961,6 +1185,9 @@ static int (* const net_client_init_fun[NET_CLIENT_DRI
  #endif
  #ifdef CONFIG_L2TPV3
          [NET_CLIENT_DRIVER_L2TPV3]    = net_init_l2tpv3,
