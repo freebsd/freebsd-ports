@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ilmbase
-PORTVERSION=	2.5.1
+PORTVERSION=	2.5.2
 CATEGORIES=	graphics devel
 
 MAINTAINER=	mandree@FreeBSD.org

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openexr
-PORTVERSION=	2.5.1
+PORTVERSION=	2.5.2
 CATEGORIES=	graphics devel
 MASTER_SITES=	LOCAL/mandree/:test
 DISTFILES=	${PORTNAME}-2.2.0-comp_dwa-test-images.tar.xz:test

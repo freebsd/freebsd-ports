@@ -116,10 +116,10 @@ lib/cmake/OpenEXR/OpenEXRTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/OpenEXR/OpenEXRTargets.cmake
 lib/libIlmImf-%%MAJORVER%%.so
 lib/libIlmImf-%%MAJORVER%%.so.%%VER%%
-lib/libIlmImf-%%MAJORVER%%.so.%%VER%%.0.0
+lib/libIlmImf-%%MAJORVER%%.so.%%VER%%.0.1
 lib/libIlmImf.so
 lib/libIlmImfUtil-%%MAJORVER%%.so
 lib/libIlmImfUtil-%%MAJORVER%%.so.%%VER%%
-lib/libIlmImfUtil-%%MAJORVER%%.so.%%VER%%.0.0
+lib/libIlmImfUtil-%%MAJORVER%%.so.%%VER%%.0.1
 lib/libIlmImfUtil.so
 libdata/pkgconfig/OpenEXR.pc
