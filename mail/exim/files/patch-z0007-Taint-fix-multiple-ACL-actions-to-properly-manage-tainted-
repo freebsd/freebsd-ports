@@ -1,0 +1,79 @@
+From 623f07cfdcaca96274ca765d0fcf0761bdf7151b Mon Sep 17 00:00:00 2001
+From: Jeremy Harris <jgh146exb@wizmail.org>
+Date: Wed, 3 Jun 2020 11:40:17 +0100
+Subject: [PATCH 07/26] Taint: fix multiple ACL actions to properly manage
+ tainted argument data
+
+(cherry picked from commit 12b7f811de4a540d0724585aecfa33b5881e2a30)
+---
+ doc/ChangeLog     |  4 +++-
+ src/acl.c         | 12 ++++++------
+
+diff --git doc/ChangeLog doc/ChangeLog
+index f858c9121..015959cb6 100644
+--- doc/ChangeLog
++++ doc/ChangeLog
+@@ -13,7 +13,9 @@ JH/02 Bug 2587: Fix pam expansion condition.  Tainted values are commonly used
+ 
+ JH/03 Bug 2586: Fix listcount expansion operator.  Using tainted arguments is
+       reasonable, eg. to count headers.  Fix by using dynamically created
+-      buffers rather than a local,
++      buffers rather than a local.  Do similar fixes for ACL actions "dcc",
++      "log_reject_target", "malware" and "spam"; the arguments are expanded
++      so could be handling tainted values.
+ 
+ 
+ Exim version 4.94
+diff --git src/acl.c src/acl.c
+index c1d60bbd9..8619cd5ef 100644
+--- src/acl.c
++++ src/acl.c
+@@ -3349,11 +3349,11 @@ for (; cb; cb = cb->next)
+       {
+       /* Separate the regular expression and any optional parameters. */
+       const uschar * list = arg;
+-      uschar *ss = string_nextinlist(&list, &sep, big_buffer, big_buffer_size);
++      uschar *ss = string_nextinlist(&list, &sep, NULL, 0);
+       /* Run the dcc backend. */
+       rc = dcc_process(&ss);
+       /* Modify return code based upon the existence of options. */
+-      while ((ss = string_nextinlist(&list, &sep, big_buffer, big_buffer_size)))
++      while ((ss = string_nextinlist(&list, &sep, NULL, 0)))
+         if (strcmpic(ss, US"defer_ok") == 0 && rc == DEFER)
+           rc = FAIL;   /* FAIL so that the message is passed to the next ACL */
+       }
+@@ -3514,7 +3514,7 @@ for (; cb; cb = cb->next)
+       int sep = 0;
+       const uschar *s = arg;
+       uschar * ss;
+-      while ((ss = string_nextinlist(&s, &sep, big_buffer, big_buffer_size)))
++      while ((ss = string_nextinlist(&s, &sep, NULL, 0)))
+         {
+         if (Ustrcmp(ss, "main") == 0) logbits |= LOG_MAIN;
+         else if (Ustrcmp(ss, "panic") == 0) logbits |= LOG_PANIC;
+@@ -3567,7 +3567,7 @@ for (; cb; cb = cb->next)
+       {
+       /* Separate the regular expression and any optional parameters. */
+       const uschar * list = arg;
+-      uschar * ss = string_nextinlist(&list, &sep, big_buffer, big_buffer_size);
++      uschar * ss = string_nextinlist(&list, &sep, NULL, 0);
+       uschar * opt;
+       BOOL defer_ok = FALSE;
+       int timeout = 0;
+@@ -3672,11 +3672,11 @@ for (; cb; cb = cb->next)
+       {
+       /* Separate the regular expression and any optional parameters. */
+       const uschar * list = arg;
+-      uschar *ss = string_nextinlist(&list, &sep, big_buffer, big_buffer_size);
++      uschar *ss = string_nextinlist(&list, &sep, NULL, 0);
+ 
+       rc = spam(CUSS &ss);
+       /* Modify return code based upon the existence of options. */
+-      while ((ss = string_nextinlist(&list, &sep, big_buffer, big_buffer_size)))
++      while ((ss = string_nextinlist(&list, &sep, NULL, 0)))
+         if (strcmpic(ss, US"defer_ok") == 0 && rc == DEFER)
+           rc = FAIL;	/* FAIL so that the message is passed to the next ACL */
+       }
+-- 
+2.24.3 (Apple Git-128)
+

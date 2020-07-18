@@ -1,0 +1,48 @@
+From 5c608b75d5bd734ddca41e4468fb22544ef96265 Mon Sep 17 00:00:00 2001
+From: Jeremy Harris <jgh146exb@wizmail.org>
+Date: Sat, 20 Jun 2020 00:54:05 +0100
+Subject: [PATCH 14/26] Fix string_copy() macro to not multiple-eval args. Bug
+ 2603
+
+Broken-by: a76d120aed
+(cherry picked from commit 80c2ec2e47c556daff00c79ee068ce68f25fd264)
+---
+ doc/ChangeLog     | 6 ++++++
+ src/functions.h   | 4 ++--
+
+diff --git doc/ChangeLog doc/ChangeLog
+index 859e87b00..1173b3651 100644
+--- doc/ChangeLog
++++ doc/ChangeLog
+@@ -40,6 +40,12 @@ JH/08 Bug 2598: Fix verify ACL condition.  The options for the condition are
+       expanded; previously using tainted values was rejected.  Fix by using
+       dynamically-created buffers.
+ 
++JH/10 Bug 2603: Fix coding of string copying to only evaluate arguments once.
++      Previously a macro used one argument twice; when called with the
++      argument as an expression having side-effects, incorrect operation
++      resulted.  Use an inlineable function.
++
++
+ 
+ Exim version 4.94
+ -----------------
+diff --git src/functions.h src/functions.h
+index 0028deb0d..0050cdeeb 100644
+--- src/functions.h
++++ src/functions.h
+@@ -767,9 +767,9 @@ string_copy_trc(const uschar * s, const char * func, int line)
+ /* Simple string-copy functions maintaining the taint */
+ 
+ #define string_copyn(s, len) \
+-	string_copyn_taint_trc((s), (len), is_tainted(s), __FUNCTION__, __LINE__)
++	string_copyn_trc((s), (len), __FUNCTION__, __LINE__)
+ #define string_copy(s) \
+-	string_copy_taint_trc((s), is_tainted(s), __FUNCTION__, __LINE__)
++	string_copy_trc((s), __FUNCTION__, __LINE__)
+ 
+ 
+ /*************************************************
+-- 
+2.24.3 (Apple Git-128)
+

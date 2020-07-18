@@ -1,0 +1,118 @@
+From cdee8a5f76cc013de5622112cd04e42d0dcf333b Mon Sep 17 00:00:00 2001
+From: Jeremy Harris <jgh146exb@wizmail.org>
+Date: Mon, 22 Jun 2020 17:27:18 +0100
+Subject: [PATCH 15/26] Cutthrough: handle request when a callout-hold is
+ active.  Bug 2604
+
+(cherry picked from commit 99bfcf2b678e7bd8125a7eb44409e46549bfc111)
+---
+ doc/ChangeLog                 |  4 +++
+ src/acl.c                     | 50 +++++++++++++++++--------------
+ src/verify.c                  |  4 +--
+
+diff --git doc/ChangeLog doc/ChangeLog
+index 1173b3651..de11b4f09 100644
+--- doc/ChangeLog
++++ doc/ChangeLog
+@@ -45,6 +45,10 @@ JH/10 Bug 2603: Fix coding of string copying to only evaluate arguments once.
+       argument as an expression having side-effects, incorrect operation
+       resulted.  Use an inlineable function.
+ 
++JH/11 Bug 2604: Fix request to cutthrough-deliver when a connection is already
++      held open for a verify callout.  Previously this wan not accounted for
++      and a corrupt onward SMTP conversation resulted.
++
+ 
+ 
+ Exim version 4.94
+diff --git src/acl.c src/acl.c
+index 11d1fd028..62cb68561 100644
+--- src/acl.c
++++ src/acl.c
+@@ -3264,37 +3264,41 @@ for (; cb; cb = cb->next)
+ 	    the case where both sides handle prdr and this-node prdr acl
+ 	    is "accept" */
+ 	    ignored = US"PRDR active";
++	  else if (f.deliver_freeze)
++	    ignored = US"frozen";
++	  else if (f.queue_only_policy)
++	    ignored = US"queue-only";
++	  else if (fake_response == FAIL)
++	    ignored = US"fakereject";
++	  else if (rcpt_count != 1)
++	    ignored = US"nonfirst rcpt";
++	  else if (cutthrough.delivery)
++	    ignored = US"repeated";
++	  else if (cutthrough.callout_hold_only)
++	    {
++	    DEBUG(D_acl)
++	      debug_printf_indent(" cutthrough request upgrades callout hold\n");
++	    cutthrough.callout_hold_only = FALSE;
++	    cutthrough.delivery = TRUE;	/* control accepted */
++	    }
+ 	  else
+ 	    {
+-	    if (f.deliver_freeze)
+-	      ignored = US"frozen";
+-	    else if (f.queue_only_policy)
+-	      ignored = US"queue-only";
+-	    else if (fake_response == FAIL)
+-	      ignored = US"fakereject";
+-	    else
++	    cutthrough.delivery = TRUE;	/* control accepted */
++	    while (*p == '/')
+ 	      {
+-	      if (rcpt_count == 1)
++	      const uschar * pp = p+1;
++	      if (Ustrncmp(pp, "defer=", 6) == 0)
+ 		{
+-		cutthrough.delivery = TRUE;	/* control accepted */
+-		while (*p == '/')
+-		  {
+-		  const uschar * pp = p+1;
+-		  if (Ustrncmp(pp, "defer=", 6) == 0)
+-		    {
+-		    pp += 6;
+-		    if (Ustrncmp(pp, "pass", 4) == 0) cutthrough.defer_pass = TRUE;
+-		    /* else if (Ustrncmp(pp, "spool") == 0) ;	default */
+-		    }
+-		  else
+-		    while (*pp && *pp != '/') pp++;
+-		  p = pp;
+-		  }
++		pp += 6;
++		if (Ustrncmp(pp, "pass", 4) == 0) cutthrough.defer_pass = TRUE;
++		/* else if (Ustrncmp(pp, "spool") == 0) ;	default */
+ 		}
+ 	      else
+-		ignored = US"nonfirst rcpt";
++		while (*pp && *pp != '/') pp++;
++	      p = pp;
+ 	      }
+ 	    }
++
+ 	  DEBUG(D_acl) if (ignored)
+ 	    debug_printf(" cutthrough request ignored on %s item\n", ignored);
+ 	  }
+diff --git src/verify.c src/verify.c
+index fba1f6e9e..5f4181de9 100644
+--- src/verify.c
++++ src/verify.c
+@@ -875,12 +875,12 @@ tls_retry_connection:
+ 		    case PENDING_OK:  done = TRUE;
+ 				      new_address_record.result = ccache_accept;
+ 				      break;
+-		    case FAIL:	    done = TRUE;
++		    case FAIL:	      done = TRUE;
+ 				      yield = FAIL;
+ 				      *failure_ptr = US"recipient";
+ 				      new_address_record.result = ccache_reject;
+ 				      break;
+-		    default:	    break;
++		    default:	      break;
+ 		    }
+ 		  break;
+ 
+-- 
+2.24.3 (Apple Git-128)
+

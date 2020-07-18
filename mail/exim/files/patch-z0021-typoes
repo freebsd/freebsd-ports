@@ -1,0 +1,24 @@
+From 436c0d208b49421d3d126f7c284bc3130b50ff14 Mon Sep 17 00:00:00 2001
+From: Jeremy Harris <jgh146exb@wizmail.org>
+Date: Fri, 3 Jul 2020 20:35:58 +0100
+Subject: [PATCH 21/26] typoes
+
+---
+ src/functions.h | 2 +-
+
+diff --git src/functions.h src/functions.h
+index 8b17531ed..afe9f1bf4 100644
+--- src/functions.h
++++ src/functions.h
+@@ -234,7 +234,7 @@ extern void    msg_event_raise(const uschar *, const address_item *);
+ extern int     exim_chown_failure(int, const uschar*, uid_t, gid_t);
+ extern const uschar * exim_errstr(int);
+ extern void    exim_exit(int) NORETURN;
+-extern void    exim_gettimg(struct timeval *);
++extern void    exim_gettime(struct timeval *);
+ extern void    exim_nullstd(void);
+ extern void    exim_setugid(uid_t, gid_t, BOOL, uschar *);
+ extern void    exim_underbar_exit(int) NORETURN;
+-- 
+2.24.3 (Apple Git-128)
+

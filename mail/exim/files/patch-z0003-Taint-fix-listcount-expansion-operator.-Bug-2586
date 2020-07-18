@@ -1,0 +1,43 @@
+From 63652bbaf66c4bdb388b08fdf3eb8ab1e4d91475 Mon Sep 17 00:00:00 2001
+From: Jeremy Harris <jgh146exb@wizmail.org>
+Date: Tue, 2 Jun 2020 15:03:36 +0100
+Subject: [PATCH 03/26] Taint: fix listcount expansion operator.  Bug 2586
+
+(cherry picked from commit 44644c2e404a3ea0191db0b0458e86924fb240bb)
+---
+ doc/ChangeLog     | 4 ++++
+ src/expand.c      | 3 +--
+
+diff --git doc/ChangeLog doc/ChangeLog
+index dbdc22117..94bcea29b 100644
+--- doc/ChangeLog
++++ doc/ChangeLog
+@@ -11,6 +11,10 @@ JH/02 Bug 2587: Fix pam expansion condition.  Tainted values are commonly used
+       buffer was taking a taint-enformance trap.  Fix by using dynamically
+       created buffers.
+ 
++JH/03 Bug 2586: Fix listcount expansion operator.  Using tainted arguments is
++      reasonable, eg. to count headers.  Fix by using dynamically created
++      buffers rather than a local,
++
+ 
+ Exim version 4.94
+ -----------------
+diff --git src/expand.c src/expand.c
+index 26f7f10ac..6ed22c14d 100644
+--- src/expand.c
++++ src/expand.c
+@@ -7208,9 +7208,8 @@ while (*s != 0)
+         {
+ 	int cnt = 0;
+ 	int sep = 0;
+-	uschar buffer[256];
+ 
+-	while (string_nextinlist(CUSS &sub, &sep, buffer, sizeof(buffer))) cnt++;
++	while (string_nextinlist(CUSS &sub, &sep, NULL, 0)) cnt++;
+ 	yield = string_fmt_append(yield, "%d", cnt);
+         continue;
+         }
+-- 
+2.24.3 (Apple Git-128)
+

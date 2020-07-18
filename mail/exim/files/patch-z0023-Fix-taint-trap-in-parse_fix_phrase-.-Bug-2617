@@ -1,0 +1,366 @@
+From 86ba540670517109809d93cd73716d320a6a0923 Mon Sep 17 00:00:00 2001
+From: Jeremy Harris <jgh146exb@wizmail.org>
+Date: Thu, 9 Jul 2020 15:30:55 +0100
+Subject: [PATCH 23/26] Fix taint trap in parse_fix_phrase().  Bug 2617
+
+(cherry picked from commit 3c90bbcdc7cf73298156f7bcd5f5e750e7814e72)
+---
+ doc/ChangeLog     |  6 +++
+ src/acl.c         |  3 +-
+ src/exim.c        |  3 +-
+ src/expand.c      |  5 +--
+ src/functions.h   |  4 +-
+ src/parse.c       | 89 +++++++++++++++----------------------------
+ src/rewrite.c     |  9 +----
+ src/sieve.c       | 17 ++-------
+
+diff --git doc/ChangeLog doc/ChangeLog
+index 08c6638a9..a1f39459e 100644
+--- doc/ChangeLog
++++ doc/ChangeLog
+@@ -72,6 +72,12 @@ JH/17 Bug 2295: Fix DKIM signing to always semicolon-terminate.  Although the
+       intended but triggered by a line-wrap alignement.  Discovery and fix by
+       Guillaume Outters, hacked on by JH.
+ 
++JH/18 Bug 2617: Fix a taint trap in parse_fix_phrase().  Previously when the
++      name being quoted was tainted a trap would be taken.  Fix by using
++      dynamicaly created buffers.  The routine could have been called by a
++      rewrite with the "h" flag, by using the "-F" command-line option, or
++      by using a "name=" option on a control=submission ACL modifier.
++
+ 
+ Exim version 4.94
+ -----------------
+diff --git src/acl.c src/acl.c
+index 62cb68561..105b1b473 100644
+--- src/acl.c
++++ src/acl.c
+@@ -3199,8 +3199,7 @@ for (; cb; cb = cb->next)
+ 	      {
+ 	      const uschar *pp = p + 6;
+ 	      while (*pp) pp++;
+-	      submission_name = string_copy(parse_fix_phrase(p+6, pp-p-6,
+-		big_buffer, big_buffer_size));
++	      submission_name = parse_fix_phrase(p+6, pp-p-6);
+ 	      p = pp;
+ 	      }
+ 	    else break;
+diff --git src/exim.c src/exim.c
+index dde991065..ac0ff5523 100644
+--- src/exim.c
++++ src/exim.c
+@@ -4769,8 +4769,7 @@ if (originator_login == NULL || f.running_in_test_harness)
+ /* Ensure that the user name is in a suitable form for use as a "phrase" in an
+ RFC822 address.*/
+ 
+-originator_name = string_copy(parse_fix_phrase(originator_name,
+-  Ustrlen(originator_name), big_buffer, big_buffer_size));
++originator_name = parse_fix_phrase(originator_name, Ustrlen(originator_name));
+ 
+ /* If a message is created by this call of Exim, the uid/gid of its originator
+ are those of the caller. These values are overridden if an existing message is
+diff --git src/expand.c src/expand.c
+index 6ed22c14d..791222324 100644
+--- src/expand.c
++++ src/expand.c
+@@ -7571,13 +7571,10 @@ while (*s != 0)
+       prescribed by the RFC, if there are characters that need to be encoded */
+ 
+       case EOP_RFC2047:
+-        {
+-        uschar buffer[2048];
+         yield = string_cat(yield,
+ 			    parse_quote_2047(sub, Ustrlen(sub), headers_charset,
+-			      buffer, sizeof(buffer), FALSE));
++			      FALSE));
+         continue;
+-        }
+ 
+       /* RFC 2047 decode */
+ 
+diff --git src/functions.h src/functions.h
+index afe9f1bf4..f4d1622dc 100644
+--- src/functions.h
++++ src/functions.h
+@@ -366,9 +366,9 @@ extern int     parse_forward_list(uschar *, int, address_item **, uschar **,
+                  const uschar *, uschar *, error_block **);
+ extern uschar *parse_find_address_end(uschar *, BOOL);
+ extern uschar *parse_find_at(uschar *);
+-extern const uschar *parse_fix_phrase(const uschar *, int, uschar *, int);
++extern const uschar *parse_fix_phrase(const uschar *, int);
+ extern uschar *parse_message_id(uschar *, uschar **, uschar **);
+-extern const uschar *parse_quote_2047(const uschar *, int, uschar *, uschar *, int, BOOL);
++extern const uschar *parse_quote_2047(const uschar *, int, uschar *, BOOL);
+ extern uschar *parse_date_time(uschar *str, time_t *t);
+ extern int     vaguely_random_number(int);
+ #ifndef DISABLE_TLS
+diff --git src/parse.c src/parse.c
+index e3b471f1a..3ea758ac9 100644
+--- src/parse.c
++++ src/parse.c
+@@ -843,8 +843,7 @@ return NULL;
+ 
+ /* This function is used for quoting text in headers according to RFC 2047.
+ If the only characters that strictly need quoting are spaces, we return the
+-original string, unmodified. If a quoted string is too long for the buffer, it
+-is truncated. (This shouldn't happen: this is normally handling short strings.)
++original string, unmodified.
+ 
+ Hmmph. As always, things get perverted for other uses. This function was
+ originally for the "phrase" part of addresses. Now it is being used for much
+@@ -856,77 +855,57 @@ Arguments:
+                  chars
+   len          the length of the string
+   charset      the name of the character set; NULL => iso-8859-1
+-  buffer       the buffer to put the answer in
+-  buffer_size  the size of the buffer
+   fold         if TRUE, a newline is inserted before the separating space when
+                  more than one encoded-word is generated
+ 
+ Returns:       pointer to the original string, if no quoting needed, or
+-               pointer to buffer containing the quoted string, or
+-               a pointer to "String too long" if the buffer can't even hold
+-               the introduction
++               pointer to allocated memory containing the quoted string
+ */
+ 
+ const uschar *
+-parse_quote_2047(const uschar *string, int len, uschar *charset, uschar *buffer,
+-  int buffer_size, BOOL fold)
++parse_quote_2047(const uschar *string, int len, uschar *charset, BOOL fold)
+ {
+-const uschar *s = string;
+-uschar *p, *t;
+-int hlen;
++const uschar * s = string;
++int hlen, l;
+ BOOL coded = FALSE;
+ BOOL first_byte = FALSE;
++gstring * g =
++  string_fmt_append(NULL, "=?%s?Q?", charset ? charset : US"iso-8859-1");
+ 
+-if (!charset) charset = US"iso-8859-1";
++hlen = l = g->ptr;
+ 
+-/* We don't expect this to fail! */
+-
+-if (!string_format(buffer, buffer_size, "=?%s?Q?", charset))
+-  return US"String too long";
+-
+-hlen = Ustrlen(buffer);
+-t = buffer + hlen;
+-p = buffer;
+-
+-for (; len > 0; len--)
++for (s = string; len > 0; s++, len--)
+   {
+-  int ch = *s++;
+-  if (t > buffer + buffer_size - hlen - 8) break;
++  int ch = *s;
+ 
+-  if ((t - p > 67) && !first_byte)
++  if (g->ptr - l > 67 && !first_byte)
+     {
+-    *t++ = '?';
+-    *t++ = '=';
+-    if (fold) *t++ = '\n';
+-    *t++ = ' ';
+-    p = t;
+-    Ustrncpy(p, buffer, hlen);
+-    t += hlen;
++    g = fold ? string_catn(g, US"?=\n ", 4) : string_catn(g, US"?= ", 3);
++    l = g->ptr;
++    g = string_catn(g, g->s, hlen);
+     }
+ 
+-  if (ch < 33 || ch > 126 ||
+-      Ustrchr("?=()<>@,;:\\\".[]_", ch) != NULL)
++  if (  ch < 33 || ch > 126
++     || Ustrchr("?=()<>@,;:\\\".[]_", ch) != NULL)
+     {
+     if (ch == ' ')
+       {
+-      *t++ = '_';
++      g = string_catn(g, US"_", 1);
+       first_byte = FALSE;
+       }
+     else
+       {
+-      t += sprintf(CS t, "=%02X", ch);
++      g = string_fmt_append(g, "=%02X", ch);
+       coded = TRUE;
+       first_byte = !first_byte;
+       }
+     }
+-  else { *t++ = ch; first_byte = FALSE; }
++  else
++    { g = string_catn(g, s, 1); first_byte = FALSE; }
+   }
+ 
+-*t++ = '?';
+-*t++ = '=';
+-*t = 0;
+-
+-return coded ? buffer : string;
++g = string_catn(g, US"?=", 2);
++return coded ? string_from_gstring(g) : string;
+ }
+ 
+ 
+@@ -969,32 +948,25 @@ August 2000: Additional code added:
+   We *could* use this for all cases, getting rid of the messy original code,
+   but leave it for now. It would complicate simple cases like "John Q. Smith".
+ 
+-The result is passed back in the buffer; it is usually going to be added to
+-some other string. In order to be sure there is going to be no overflow,
+-restrict the length of the input to 1/4 of the buffer size - this allows for
+-every single character to be quoted or encoded without overflowing, and that
+-wouldn't happen because of amalgamation. If the phrase is too long, return a
+-fixed string.
++The result is passed back in allocated memory.
+ 
+ Arguments:
+   phrase       an RFC822 phrase
+   len          the length of the phrase
+-  buffer       a buffer to put the result in
+-  buffer_size  the size of the buffer
+ 
+ Returns:       the fixed RFC822 phrase
+ */
+ 
+ const uschar *
+-parse_fix_phrase(const uschar *phrase, int len, uschar *buffer, int buffer_size)
++parse_fix_phrase(const uschar *phrase, int len)
+ {
+ int ch, i;
+ BOOL quoted = FALSE;
+ const uschar *s, *end;
++uschar * buffer;
+ uschar *t, *yield;
+ 
+ while (len > 0 && isspace(*phrase)) { phrase++; len--; }
+-if (len > buffer_size/4) return US"Name too long";
+ 
+ /* See if there are any non-printing characters, and if so, use the RFC 2047
+ encoding for the whole thing. */
+@@ -1002,11 +974,13 @@ encoding for the whole thing. */
+ for (i = 0, s = phrase; i < len; i++, s++)
+   if ((*s < 32 && *s != '\t') || *s > 126) break;
+ 
+-if (i < len) return parse_quote_2047(phrase, len, headers_charset, buffer,
+-  buffer_size, FALSE);
++if (i < len)
++  return parse_quote_2047(phrase, len, headers_charset, FALSE);
+ 
+ /* No non-printers; use the RFC 822 quoting rules */
+ 
++buffer = store_get(len*4, is_tainted(phrase));
++
+ s = phrase;
+ end = s + len;
+ yield = t = buffer + 1;
+@@ -1173,6 +1147,7 @@ while (s < end)
+   }
+ 
+ *t = 0;
++store_release_above(t+1);
+ return yield;
+ }
+ 
+@@ -2102,7 +2077,6 @@ int main(void)
+ {
+ int start, end, domain;
+ uschar buffer[1024];
+-uschar outbuff[1024];
+ 
+ big_buffer = store_malloc(big_buffer_size);
+ 
+@@ -2115,8 +2089,7 @@ while (Ufgets(buffer, sizeof(buffer), stdin) != NULL)
+   {
+   buffer[Ustrlen(buffer)-1] = 0;
+   if (buffer[0] == 0) break;
+-  printf("%s\n", CS parse_fix_phrase(buffer, Ustrlen(buffer), outbuff,
+-    sizeof(outbuff)));
++  printf("%s\n", CS parse_fix_phrase(buffer, Ustrlen(buffer)));
+   }
+ 
+ printf("Testing parse_extract_address without group syntax and without UTF-8\n");
+diff --git src/rewrite.c src/rewrite.c
+index f942bec05..7bff8a273 100644
+--- src/rewrite.c
++++ src/rewrite.c
+@@ -292,16 +292,11 @@ for (rewrite_rule * rule = rewrite_rules;
+         uschar *p1 = new + start - 1;
+         uschar *p2 = new + end + 1;
+         const uschar *pf1, *pf2;
+-        uschar buff1[256], buff2[256];
+ 
+         while (p1 > new && p1[-1] == ' ') p1--;
+-        pf1 = parse_fix_phrase(new, p1 - new, buff1, sizeof(buff1));
++        pf1 = parse_fix_phrase(new, p1 - new);
+         while (*p2 == ' ') p2++;
+-        pf2 = parse_fix_phrase(p2, Ustrlen(p2), buff2, sizeof(buff2));
+-
+-        /* Note that pf1 and pf2 are NOT necessarily buff1 and buff2. For
+-        a non-RFC 2047 phrase that does not need to be RFC 2822 quoted, they
+-        will be buff1+1 and buff2+1. */
++        pf2 = parse_fix_phrase(p2, Ustrlen(p2));
+ 
+         start = Ustrlen(pf1) + start + new - p1;
+         end = start + Ustrlen(newparsed);
+diff --git src/sieve.c src/sieve.c
+index 18aa3e609..2038f336b 100644
+--- src/sieve.c
++++ src/sieve.c
+@@ -3087,11 +3087,8 @@ while (*filter->pc)
+             if ((pid = child_open_exim2(&fd, envelope_from, envelope_from,
+ 			US"sieve-notify")) >= 1)
+               {
+-              FILE *f;
+-              uschar *buffer;
+-              int buffer_capacity;
++              FILE * f = fdopen(fd, "wb");
+ 
+-              f = fdopen(fd, "wb");
+               fprintf(f,"From: %s\n", from.length == -1
+ 		? expand_string(US"$local_part_prefix$local_part$local_part_suffix@$domain")
+ 		: from.character);
+@@ -3104,12 +3101,9 @@ while (*filter->pc)
+                 message.character=US"Notification";
+                 message.length=Ustrlen(message.character);
+                 }
+-              /* Allocation is larger than necessary, but enough even for split MIME words */
+-              buffer_capacity = 32 + 4*message.length;
+-              buffer=store_get(buffer_capacity, TRUE);
+               if (message.length != -1)
+ 		fprintf(f, "Subject: %s\n", parse_quote_2047(message.character,
+-		  message.length, US"utf-8", buffer, buffer_capacity, TRUE));
++		  message.length, US"utf-8", TRUE));
+               fprintf(f,"\n");
+               if (body.length>0) fprintf(f,"%s\n",body.character);
+               fflush(f);
+@@ -3263,8 +3257,6 @@ while (*filter->pc)
+     if (exec)
+       {
+       address_item *addr;
+-      uschar *buffer;
+-      int buffer_capacity;
+       md5 base;
+       uschar digest[16];
+       uschar hexdigest[33];
+@@ -3342,11 +3334,8 @@ while (*filter->pc)
+             addr->reply->from = expand_string(US"$local_part@$domain");
+           else
+             addr->reply->from = from.character;
+-          /* Allocation is larger than necessary, but enough even for split MIME words */
+-          buffer_capacity=32+4*subject.length;
+-          buffer = store_get(buffer_capacity, is_tainted(subject.character));
+ 	  /* deconst cast safe as we pass in a non-const item */
+-          addr->reply->subject = US parse_quote_2047(subject.character, subject.length, US"utf-8", buffer, buffer_capacity, TRUE);
++          addr->reply->subject = US parse_quote_2047(subject.character, subject.length, US"utf-8", TRUE);
+           addr->reply->oncelog = string_from_gstring(once);
+           addr->reply->once_repeat=days*86400;
+ 
+-- 
+2.24.3 (Apple Git-128)
+

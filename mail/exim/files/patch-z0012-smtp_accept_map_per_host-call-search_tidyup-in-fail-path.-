@@ -1,0 +1,42 @@
+From c165e95889471bc1a644104dd9a6129c47c56c09 Mon Sep 17 00:00:00 2001
+From: Jeremy Harris <jgh146exb@wizmail.org>
+Date: Fri, 12 Jun 2020 20:43:43 +0100
+Subject: [PATCH 12/26] smtp_accept_map_per_host: call search_tidyup in fail
+ path.  Bug 2597
+
+(cherry-picked from: d3a538c8fe)
+---
+ doc/ChangeLog     | 5 +++++
+ src/daemon.c      | 1 +
+
+diff --git doc/ChangeLog doc/ChangeLog
+index 41d8c6276..92298e7fc 100644
+--- doc/ChangeLog
++++ doc/ChangeLog
+@@ -31,6 +31,11 @@ JH/06 Bug 2594: Change the name used for certificate name checks in the smtp
+       the head of the CNAME chain leading there (if there is one).  This seems
+       to align better with RFC 6125.
+ 
++JH/07 Bug 2597: Fix a resource leak.  Using a lookup in obtaining a value for
++      smtp_accept_max_per_host allocated resources which were not released
++      when the limit was exceeded.  This eventually crashed the daemon.  Fix
++      by adding a relase action in that path.
++
+ 
+ Exim version 4.94
+ -----------------
+diff --git src/daemon.c src/daemon.c
+index 2bed143a1..9d491593f 100644
+--- src/daemon.c
++++ src/daemon.c
+@@ -336,6 +336,7 @@ if ((max_for_this_host > 0) &&
+     log_write(L_connection_reject,
+               LOG_MAIN, "Connection from %s refused: too many connections "
+       "from that IP address", whofrom->s);
++    search_tidyup();
+     goto ERROR_RETURN;
+     }
+   }
+-- 
+2.24.3 (Apple Git-128)
+

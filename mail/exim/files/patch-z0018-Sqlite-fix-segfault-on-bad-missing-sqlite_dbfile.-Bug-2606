@@ -1,0 +1,59 @@
+From 2be77199fc9009ab796ad2d67eed20d8da4773c7 Mon Sep 17 00:00:00 2001
+From: Jeremy Harris <jgh146exb@wizmail.org>
+Date: Sun, 28 Jun 2020 15:24:21 +0100
+Subject: [PATCH 18/26] Sqlite: fix segfault on bad/missing sqlite_dbfile. 
+ Bug 2606
+
+(cherry picked from commit 3d0472791a0928963a3f8184fe28479e80d1a47d)
+---
+ doc/ChangeLog             |  3 +++
+ src/lookups/sqlite.c      | 13 ++++++++++---
+
+diff --git doc/ChangeLog doc/ChangeLog
+index bae9abb85..8a13bda87 100644
+--- doc/ChangeLog
++++ doc/ChangeLog
+@@ -52,6 +52,9 @@ JH/11 Bug 2604: Fix request to cutthrough-deliver when a connection is already
+ JH/13 Fix dsearch "subdir" filter to ignore ".".  Previously only ".." was
+       excluded, not matching the documentation.
+ 
++JH/14 Bug 2606: Fix a segfault in sqlite lookups.  When no, or a bad, filename
++      was given for the sqlite_dbfile a trap resulted.
++
+ 
+ Exim version 4.94
+ -----------------
+diff --git src/lookups/sqlite.c src/lookups/sqlite.c
+index dc4439153..1638ea401 100644
+--- src/lookups/sqlite.c
++++ src/lookups/sqlite.c
+@@ -24,16 +24,23 @@ sqlite_open(const uschar * filename, uschar ** errmsg)
+ sqlite3 *db = NULL;
+ int ret;
+ 
+-if (!filename || !*filename) filename = sqlite_dbfile;
+-if (*filename != '/')
++if (!filename || !*filename)
++  {
++  DEBUG(D_lookup) debug_printf_indent("Using sqlite_dbfile: %s\n", sqlite_dbfile);
++  filename = sqlite_dbfile;
++  }
++if (!filename || *filename != '/')
+   *errmsg = US"absolute file name expected for \"sqlite\" lookup";
+ else if ((ret = sqlite3_open(CCS filename, &db)) != 0)
+   {
+   *errmsg = (void *)sqlite3_errmsg(db);
++  sqlite3_close(db);
++  db = NULL;
+   DEBUG(D_lookup) debug_printf_indent("Error opening database: %s\n", *errmsg);
+   }
+ 
+-sqlite3_busy_timeout(db, 1000 * sqlite_lock_timeout);
++if (db)
++  sqlite3_busy_timeout(db, 1000 * sqlite_lock_timeout);
+ return db;
+ }
+ 
+-- 
+2.24.3 (Apple Git-128)
+

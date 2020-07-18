@@ -1,0 +1,48 @@
+From 701af1005a6effaac5ce249f1c2086dc6c0c2a7f Mon Sep 17 00:00:00 2001
+From: Jeremy Harris <jgh146exb@wizmail.org>
+Date: Mon, 8 Jun 2020 13:00:55 +0100
+Subject: [PATCH 09/26] Filters: fix "vacation" in Exim filter.  Bug 2593
+
+Broken-by: cfb9cf20cb (4.90)
+(cherry picked from commit 59eee1bc902f106d20f507ba16f37cb8ab5a5e8d)
+---
+ doc/ChangeLog              |  5 ++
+ src/transports/autoreply.c |  6 +--
+
+diff --git doc/ChangeLog doc/ChangeLog
+index 621d5b1b5..b9c1ec29e 100644
+--- doc/ChangeLog
++++ doc/ChangeLog
+@@ -21,6 +21,11 @@ JH/04 Bug 2590: Fix -bi (newaliases).  A previous code rearrangement had
+       broken the (no-op) support for this sendmail command.  Restore it
+       to doing nothing, silently, and returning good status.
+ 
++JH/05 Bug 2593: Fix "vacation" in Exim filter.  Previously, when a "once"
++      record path was given (or the default used) without a leading directory
++      path, an error occurred on trying to open it.  Use the transport's working
++      directory.
++
+ 
+ Exim version 4.94
+ -----------------
+diff --git src/transports/autoreply.c src/transports/autoreply.c
+index 4c2c08b70..865abbf4f 100644
+--- src/transports/autoreply.c
++++ src/transports/autoreply.c
+@@ -474,10 +474,10 @@ if (oncelog && *oncelog && to)
+   else
+     {
+     EXIM_DATUM key_datum, result_datum;
+-    uschar * dirname = string_copy(oncelog);
+-    uschar * s;
++    uschar * dirname, * s;
+ 
+-    if ((s = Ustrrchr(dirname, '/'))) *s = '\0';
++    dirname = (s = Ustrrchr(oncelog, '/'))
++      ? string_copyn(oncelog, s - oncelog) : NULL;
+     EXIM_DBOPEN(oncelog, dirname, O_RDWR|O_CREAT, ob->mode, &dbm_file);
+     if (!dbm_file)
+       {
+-- 
+2.24.3 (Apple Git-128)
+

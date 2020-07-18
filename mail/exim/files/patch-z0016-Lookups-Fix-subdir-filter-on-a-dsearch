@@ -1,0 +1,53 @@
+From 777ee8ae75277c05fb72cc94f568ba4d2bfe15a6 Mon Sep 17 00:00:00 2001
+From: Jeremy Harris <jgh146exb@wizmail.org>
+Date: Thu, 25 Jun 2020 11:16:54 +0100
+Subject: [PATCH 16/26] Lookups: Fix "subdir" filter on a dsearch.
+
+(cherry picked from commit e0e21929b7426b9b5bbf5e3747797043801b1151)
+---
+ doc/ChangeLog              | 2 ++
+ src/lookups/dsearch.c      | 7 +++----
+
+diff --git doc/ChangeLog doc/ChangeLog
+index de11b4f09..bae9abb85 100644
+--- doc/ChangeLog
++++ doc/ChangeLog
+@@ -49,6 +49,8 @@ JH/11 Bug 2604: Fix request to cutthrough-deliver when a connection is already
+       held open for a verify callout.  Previously this wan not accounted for
+       and a corrupt onward SMTP conversation resulted.
+ 
++JH/13 Fix dsearch "subdir" filter to ignore ".".  Previously only ".." was
++      excluded, not matching the documentation.
+ 
+ 
+ Exim version 4.94
+diff --git src/lookups/dsearch.c src/lookups/dsearch.c
+index 455273fb1..501293ac0 100644
+--- src/lookups/dsearch.c
++++ src/lookups/dsearch.c
+@@ -125,8 +125,7 @@ if (  Ulstat(filename, &statbuf) >= 0
+        	 && S_ISDIR(statbuf.st_mode)
+ 	 && (  flags & FILTER_DIR
+ 	    || keystring[0] != '.'
+-	    || keystring[1] != '.'
+-	    || keystring[1] && keystring[2]
++	    || keystring[1] && keystring[1] != '.'
+    )  )  )  )
+   {
+   /* Since the filename exists in the filesystem, we can return a
+@@ -135,10 +134,10 @@ if (  Ulstat(filename, &statbuf) >= 0
+   return OK;
+   }
+ 
+-if (errno == ENOENT) return FAIL;
++if (errno == ENOENT || errno == 0) return FAIL;
+ 
+ save_errno = errno;
+-*errmsg = string_sprintf("%s: lstat failed", filename);
++*errmsg = string_sprintf("%s: lstat: %s", filename, strerror(errno));
+ errno = save_errno;
+ return DEFER;
+ }
+-- 
+2.24.3 (Apple Git-128)
+

@@ -1,0 +1,74 @@
+From 9681a2140b43cfc028e61b4e7ffb13539cecffe5 Mon Sep 17 00:00:00 2001
+From: Jeremy Harris <jgh146exb@wizmail.org>
+Date: Mon, 13 Jul 2020 13:46:14 +0100
+Subject: [PATCH 24/26] Taint: fix ACL "spam" condition, to permit tainted
+ name arguments
+
+Follow-on from: 62b2ccce05
+
+(cherry picked from commit 532800c8bf0e4bc2c27739477e70e0d7eef7df21)
+---
+ doc/ChangeLog     |  6 +++---
+ src/spam.c        | 15 +++++++--------
+
+diff --git doc/ChangeLog doc/ChangeLog
+index a1f39459e..aaea04caf 100644
+--- doc/ChangeLog
++++ doc/ChangeLog
+@@ -55,9 +55,9 @@ JH/13 Fix dsearch "subdir" filter to ignore ".".  Previously only ".." was
+ JH/14 Bug 2606: Fix a segfault in sqlite lookups.  When no, or a bad, filename
+       was given for the sqlite_dbfile a trap resulted.
+ 
+-JH/15 Fix "spam" ACL condition.  Previously, tainted values for the "name"
+-      argument resulted in a trap.  There is no reason to disallow such; this
+-      was a coding error.
++JH/15 Bug 2620: Fix "spam" ACL condition.  Previously, tainted values for the
++      "name" argument resulted in a trap.  There is no reason to disallow such;
++      this was a coding error.
+ 
+ JH/16 Bug 2615: Fix pause during message reception, on systems that have been
+       suspended/resumed.  The Linux CLOCK_MONOTONIC does not account for time
+diff --git src/spam.c src/spam.c
+index 63ced4f65..340f8b92f 100644
+--- src/spam.c
++++ src/spam.c
+@@ -18,7 +18,7 @@ uschar spam_score_int_buffer[16];
+ uschar spam_bar_buffer[128];
+ uschar spam_action_buffer[32];
+ uschar spam_report_buffer[32600];
+-uschar prev_user_name[128] = "";
++uschar * prev_user_name = NULL;
+ int spam_ok = 0;
+ int spam_rc = 0;
+ uschar *prev_spamd_address_work = NULL;
+@@ -393,13 +393,12 @@ if (sd->is_rspamd)
+   }
+ else
+   {				/* spamassassin variant */
+-  (void)string_format(spamd_buffer,
+-	  sizeof(spamd_buffer),
+-	  "REPORT SPAMC/1.2\r\nUser: %s\r\nContent-length: %ld\r\n\r\n",
+-	  user_name,
+-	  mbox_size);
++  int n;
++  uschar * s = string_sprintf(
++	  "REPORT SPAMC/1.2\r\nUser: %s\r\nContent-length: %ld\r\n\r\n%n",
++	  user_name, mbox_size, &n);
+   /* send our request */
+-  wrote = send(spamd_cctx.sock, spamd_buffer, Ustrlen(spamd_buffer), 0);
++  wrote = send(spamd_cctx.sock, s, n, 0);
+   }
+ 
+ if (wrote == -1)
+@@ -630,7 +629,7 @@ if (spamd_address_work != spamd_address)
+   prev_spamd_address_work = string_copy(spamd_address_work);
+ 
+ /* remember user name and "been here" for it */
+-Ustrcpy(prev_user_name, user_name);
++prev_user_name = user_name;
+ spam_ok = 1;
+ 
+ return override
+-- 
+2.24.3 (Apple Git-128)
+

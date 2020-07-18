@@ -1,0 +1,158 @@
+From cafcab0848e35047a93a8920b5105baf55f8e702 Mon Sep 17 00:00:00 2001
+From: Jeremy Harris <jgh146exb@wizmail.org>
+Date: Tue, 30 Jun 2020 21:16:42 +0100
+Subject: [PATCH 20/26] Fix message-reception clock usage.  Bug 2615
+
+Broken-by: 6906c131d1 (4.94)
+(cherry picked from commit c9bce82e3064126be34d85280d0a7fbf65b3abec)
+---
+ doc/ChangeLog     |  8 ++++++
+ src/exim.c        | 60 +++++++++++++++++++++++++------------------
+ src/functions.h   |  1 +
+ src/receive.c     |  2 +-
+
+diff --git doc/ChangeLog doc/ChangeLog
+index 6a867c716..80277f979 100644
+--- doc/ChangeLog
++++ doc/ChangeLog
+@@ -59,6 +59,14 @@ JH/15 Fix "spam" ACL condition.  Previously, tainted values for the "name"
+       argument resulted in a trap.  There is no reason to disallow such; this
+       was a coding error.
+ 
++JH/16 Bug 2615: Fix pause during message reception, on systems that have been
++      suspended/resumed.  The Linux CLOCK_MONOTONIC does not account for time
++      spent suspended, ignoring the Posix definition.  Previously we assumed
++      it did and a constant offset from real time could be used as a correction.
++      Change to using the same clock source for the start-of-message and the
++      post-message next-tick-wait.  Also change to using CLOCK_BOOTTIME if it
++      exists, just to get a clock slightly more aligned to reality.
++
+ 
+ Exim version 4.94
+ -----------------
+diff --git src/exim.c src/exim.c
+index 6143fe989..dde991065 100644
+--- src/exim.c
++++ src/exim.c
+@@ -384,14 +384,20 @@ return 0;
+ *************************************************/
+ 
+ #ifdef _POSIX_MONOTONIC_CLOCK
+-/* Amount CLOCK_MONOTONIC is behind realtime, at startup. */
++# ifdef CLOCK_BOOTTIME
++#  define EXIM_CLOCKTYPE CLOCK_BOOTTIME
++# else
++#  define EXIM_CLOCKTYPE CLOCK_MONOTONIC
++# endif
++
++/* Amount EXIM_CLOCK is behind realtime, at startup. */
+ static struct timespec offset_ts;
+ 
+ static void
+ exim_clock_init(void)
+ {
+ struct timeval tv;
+-if (clock_gettime(CLOCK_MONOTONIC, &offset_ts) != 0) return;
++if (clock_gettime(EXIM_CLOCKTYPE, &offset_ts) != 0) return;
+ (void)gettimeofday(&tv, NULL);
+ offset_ts.tv_sec = tv.tv_sec - offset_ts.tv_sec;
+ offset_ts.tv_nsec = tv.tv_usec * 1000 - offset_ts.tv_nsec;
+@@ -402,6 +408,29 @@ offset_ts.tv_nsec += 1000*1000*1000;
+ #endif
+ 
+ 
++void
++exim_gettime(struct timeval * tv)
++{
++#ifdef _POSIX_MONOTONIC_CLOCK
++struct timespec now_ts;
++
++if (clock_gettime(EXIM_CLOCKTYPE, &now_ts) == 0)
++  {
++  now_ts.tv_sec += offset_ts.tv_sec;
++  if ((now_ts.tv_nsec += offset_ts.tv_nsec) >= 1000*1000*1000)
++    {
++    now_ts.tv_sec++;
++    now_ts.tv_nsec -= 1000*1000*1000;
++    }
++  tv->tv_sec = now_ts.tv_sec;
++  tv->tv_usec = now_ts.tv_nsec / 1000;
++  }
++else
++#endif
++  (void)gettimeofday(tv, NULL);
++}
++
++
+ /* Exim uses a time + a pid to generate a unique identifier in two places: its
+ message IDs, and in file names for maildir deliveries. Because some OS now
+ re-use pids within the same second, sub-second times are now being used.
+@@ -428,28 +457,9 @@ exim_wait_tick(struct timeval * tgt_tv, int resolution)
+ struct timeval now_tv;
+ long int now_true_usec;
+ 
+-#ifdef _POSIX_MONOTONIC_CLOCK
+-struct timespec now_ts;
+-
+-if (clock_gettime(CLOCK_MONOTONIC, &now_ts) == 0)
+-  {
+-  now_ts.tv_sec += offset_ts.tv_sec;
+-  if ((now_ts.tv_nsec += offset_ts.tv_nsec) >= 1000*1000*1000)
+-    {
+-    now_ts.tv_sec++;
+-    now_ts.tv_nsec -= 1000*1000*1000;
+-    }
+-  now_tv.tv_sec = now_ts.tv_sec;
+-  now_true_usec = (now_ts.tv_nsec / (resolution * 1000)) * resolution;
+-  now_tv.tv_usec = now_true_usec;
+-  }
+-else
+-#endif
+-  {
+-  (void)gettimeofday(&now_tv, NULL);
+-  now_true_usec = now_tv.tv_usec;
+-  now_tv.tv_usec = (now_true_usec/resolution) * resolution;
+-  }
++exim_gettime(&now_tv);
++now_true_usec = now_tv.tv_usec;
++now_tv.tv_usec = (now_true_usec/resolution) * resolution;
+ 
+ while (exim_tvcmp(&now_tv, tgt_tv) <= 0)
+   {
+@@ -1728,7 +1738,7 @@ make quite sure. */
+ 
+ setlocale(LC_ALL, "C");
+ 
+-/* Get the offset between CLOCK_MONOTONIC and wallclock */
++/* Get the offset between CLOCK_MONOTONIC/CLOCK_BOOTTIME and wallclock */
+ 
+ #ifdef _POSIX_MONOTONIC_CLOCK
+ exim_clock_init();
+diff --git src/functions.h src/functions.h
+index 0050cdeeb..8b17531ed 100644
+--- src/functions.h
++++ src/functions.h
+@@ -234,6 +234,7 @@ extern void    msg_event_raise(const uschar *, const address_item *);
+ extern int     exim_chown_failure(int, const uschar*, uid_t, gid_t);
+ extern const uschar * exim_errstr(int);
+ extern void    exim_exit(int) NORETURN;
++extern void    exim_gettimg(struct timeval *);
+ extern void    exim_nullstd(void);
+ extern void    exim_setugid(uid_t, gid_t, BOOL, uschar *);
+ extern void    exim_underbar_exit(int) NORETURN;
+diff --git src/receive.c src/receive.c
+index 0fbd35f82..0db897e9e 100644
+--- src/receive.c
++++ src/receive.c
+@@ -1784,7 +1784,7 @@ if (sender_host_address) dmarc_init();	/* initialize libopendmarc */
+ ids, and fractions of a second are required. See the comments that precede the
+ message id creation below. */
+ 
+-(void)gettimeofday(&message_id_tv, NULL);
++exim_gettime(&message_id_tv);
+ 
+ /* For other uses of the received time we can operate with granularity of one
+ second, and for that we use the global variable received_time. This is for
+-- 
+2.24.3 (Apple Git-128)
+
