@@ -58,7 +58,8 @@ bin/resolveip
 %%ETCDIR%%/conf.d/enable_encryption.preset
 @comment %%ETCDIR%%/conf.d/mysql-clients.cnf
 @sample %%ETCDIR%%/conf.d/server.cnf.sample
-%%SPIDER%%@sample %%ETCDIR%%/conf.d/spider.cnf.sample 
+%%SPIDER%%@sample %%ETCDIR%%/conf.d/spider.cnf.sample
+@comment %%DATADIR%%/wsrep.cnf
 %%WSREP%%%%ETCDIR%%/conf.d/wsrep.cnf.sample
 @sample %%ETCDIR%%/user_map.conf.sample
 @comment data/test/db.opt

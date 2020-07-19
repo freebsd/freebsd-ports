@@ -20,16 +20,13 @@ COMMENT?=	Multithreaded SQL database (server)
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
-LICENSE_NAME_PerconaFT=	PerconaFT patents license
-LICENSE_FILE_PerconaFT=	${WRKSRC}/storage/tokudb/PerconaFT/PATENTS
-LICENSE_PERMS_PerconaFT=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BROKEN_i386=	compile error: undeclared identifier 'my_atomic_add32'
+# BROKEN_i386=	compile error: undeclared identifier 'my_atomic_add32'
 
 LIB_DEPENDS+=	libpcre2-8.so:devel/pcre2
 
 # Ugly workaround for MariaDB/CMake library detection
-CFLAGS+=	-L/usr/local/lib 
+CFLAGS+=	-L${LOCALBASE}/lib
 
 USES=		bison:build cmake:insource compiler:c++11-lib cpe iconv:translit libedit ncurses shebangfix ssl
 
@@ -211,10 +208,14 @@ SUB_LIST+=	LEGACY_LIMITS="" MODERN_LIMITS="@comment "
 GSSAPI_BASE_IGNORE=	GSSAPI_BASE is not compatible with OpenSSL from ports. Use other GSSAPI options or OpenSSL from base system
 .endif
 
-.include <bsd.port.pre.mk>
-
 .if ${ARCH} != amd64
 PLIST_SUB+=	WSREP="@comment "
+.endif
+
+.if ${ARCH} == i386
+USE_GCC=	yes
+CFLAGS+=	-DHAVE_GCC_C11_ATOMICS -latomic -DUSE_NEW_READLINE_INTERFACE
+CXXFLAGS+=	-fpermissive
 .endif
 
 post-patch:
@@ -232,7 +233,7 @@ post-configure:
 		${WRKSRC}/scripts/mysql_config.sh
 
 pre-install:
-	${MKDIR} -p ${STAGEDIR}${ETCDIR}/conf.d
+	${MKDIR} ${STAGEDIR}${ETCDIR}/conf.d
 
 .if ${PKGNAMESUFFIX:M*-client}
 post-install:
@@ -273,7 +274,7 @@ post-install-WSREP-on:
 post-install-SPIDER-on:
 	${MV} ${STAGEDIR}${ETCDIR}/conf.d/spider.cnf \
 		${STAGEDIR}${ETCDIR}/conf.d/spider.cnf.sample
-	
+
 .endif # ${PKGNAMESUFFIX:M*-client}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

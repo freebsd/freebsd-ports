@@ -97,9 +97,9 @@ else
 fi
 
 pidfile=$mysql_pidfile
-mysql_install_db="%%PREFIX%%/bin/mysql_install_db"
+mysql_install_db="%%PREFIX%%/bin/mariadb-install-db"
 mysql_install_db_args="--basedir=%%PREFIX%% --datadir=${mysql_dbdir} --force"
-command_args="-c -f %%PREFIX%%/bin/mysqld_safe --defaults-extra-file=${mysql_optfile} --user=${mysql_user} --datadir=${mysql_dbdir} --pid-file=${pidfile} ${mysql_args}"
+command_args="-c -f %%PREFIX%%/bin/mariadb-safe --defaults-extra-file=${mysql_optfile} --user=${mysql_user} --datadir=${mysql_dbdir} --pid-file=${pidfile} ${mysql_args}"
 
 mysql_create_auth_tables()
 {
