@@ -18,7 +18,7 @@
 
 PORTNAME=	webengine
 DISTVERSION=	${QT5_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 PKGNAMEPREFIX=	qt5-
 
@@ -32,6 +32,7 @@ BUILD_DEPENDS=	bison:devel/bison \
 		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libdbus-1.so:devel/dbus \
+		libdouble-conversion.so:devel/double-conversion \
 		libevent.so:devel/libevent \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
