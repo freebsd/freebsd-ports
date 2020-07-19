@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	weechat
-DISTVERSION=	2.8
+DISTVERSION=	2.9
 CATEGORIES=	irc
 MASTER_SITES=	https://weechat.org/files/src/
 
@@ -14,16 +14,17 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS+=	libcurl.so:ftp/curl \
 		libgcrypt.so:security/libgcrypt \
+		libgnutls.so:security/gnutls \
 		libgpg-error.so:security/libgpg-error
 
-USES=		cmake ncurses libtool tar:xz
+USES=		cmake ncurses libtool pkgconfig tar:xz
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DLIBDATADIR=${LOCALBASE}/libdata
 
-OPTIONS_DEFINE=		BACKTRACE DOCS CA_BUNDLE GNUTLS HEADLESS ICON ICONV \
+OPTIONS_DEFINE=		BACKTRACE DOCS CA_BUNDLE HEADLESS ICON ICONV \
 			MANPAGES NLS
-OPTIONS_DEFAULT=	ASPELL BACKTRACE CA_BUNDLE CHARSET GNUTLS HEADLESS \
+OPTIONS_DEFAULT=	ASPELL BACKTRACE CA_BUNDLE CHARSET HEADLESS \
 			ICON LUA MANPAGES PERL PYTHON RUBY TCL
 OPTIONS_SUB=		yes
 
@@ -55,8 +56,6 @@ CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root
 CHARSET_IMPLIES=	ICONV
 DOCS_CMAKE_BOOL=	ENABLE_DOC
 DOCS_BUILD_DEPENDS=	${LOCALBASE}/bin/asciidoctor:textproc/rubygem-asciidoctor
-GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
-GNUTLS_USES=		pkgconfig
 GUILE_LIB_DEPENDS=	libguile-2.2.so:lang/guile2
 GUILE_CMAKE_BOOL=	ENABLE_GUILE
 ICONV_USES=		iconv
@@ -82,12 +81,11 @@ CMAKE_ARGS+=	-DENABLE_PYTHON2:BOOL=true \
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} 's|$${LIBDIR}/../pkgconfig|$${CMAKE_INSTALL_PREFIX}/libdata/pkgconfig|' \
-		${WRKSRC}/CMakeLists.txt
-.for f in src/CMakeLists.txt src/core/CMakeLists.txt cmake/*.cmake
-	@${REINPLACE_CMD} 's|/usr/local|${LOCALBASE}|' \
-		${WRKSRC}/${f}
-.endfor
+.if ${LOCALBASE} != "/usr/local"
+.  for f in src/core/CMakeLists.txt cmake/*.cmake
+	@${REINPLACE_CMD} 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/$f
+.  endfor
+.endif
 	@${REINPLACE_CMD} 's|python${PYTHON_MAJOR_VER}|python-${PYTHON_VER}|' \
 		${WRKSRC}/cmake/FindPython.cmake
 
