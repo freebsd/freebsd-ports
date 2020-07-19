@@ -1,0 +1,7 @@
+This is a very resticted perl interface to GNU Scientific Library.
+The GSL is itself distributed under GPL and is available from:
+
+Only the routines relating the solving of polynomials are exported.
+It exists to provide that function to "tkscope" in Audio::Data.
+
+WWW: https://metacpan.org/release/Math-GSL

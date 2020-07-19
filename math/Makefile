@@ -580,6 +580,7 @@
     SUBDIR += p5-Math-GMPf
     SUBDIR += p5-Math-GMPq
     SUBDIR += p5-Math-GMPz
+    SUBDIR += p5-Math-GSL
     SUBDIR += p5-Math-Geometry
     SUBDIR += p5-Math-Geometry-Planar
     SUBDIR += p5-Math-Geometry-Planar-GPC
