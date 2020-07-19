@@ -126,6 +126,14 @@ VORBIS_LIB_DEPENDS=	libogg.so:audio/libogg \
 
 VST_CMAKE_BOOL=		audacity_use_vst
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} != amd64 && ${ARCH} != i386
+CMAKE_ARGS+=	-DHAVE_MMX:BOOL=OFF \
+		-DHAVE_SSE:BOOL=OFF \
+		-DHAVE_SSE2:BOOL=OFF
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,Python2,Python${PYTHON_MAJOR_VER}, ; \
 		/CMAKE_CXX_STANDARD/s,14,11,' ${WRKSRC}/CMakeLists.txt
