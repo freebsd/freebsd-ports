@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openssl
-DISTVERSION=	3.0.0-alpha4
+DISTVERSION=	3.0.0-alpha5
 CATEGORIES=	security devel
 MASTER_SITES=	https://www.openssl.org/source/ \
 		ftp://ftp.cert.dfn.de/pub/tools/net/openssl/source/
@@ -11,8 +11,8 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	TLSv1.3 capable SSL and crypto library
 
-LICENSE=	OpenSSL
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 CONFLICTS_INSTALL=	libressl-[0-9]* \
 			libressl-devel-[0-9]* \
@@ -116,11 +116,18 @@ TLS1_IMPLIES=	TLS1_1
 TLS1_1_IMPLIES=	TLS1_2
 
 EC_CONFIGURE_ON=	enable-ec_nistp_64_gcc_128
+FIPS_VARS=		shlibs+=lib/ossl-modules/fips.so
 I386_CONFIGURE_ON=	386
+LEGACY_VARS=		shlibs+=lib/ossl-modules/legacy.so
 MAN3_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-util_find-doc-nits
 SHARED_MAKE_ENV=	SHLIBVER=${OPENSSL_SHLIBVER}
 SHARED_PLIST_SUB=	SHLIBVER=${OPENSSL_SHLIBVER}
 SHARED_USE=		ldconfig=yes
+SHARED_VARS=		shlibs+="lib/libcrypto.so.${OPENSSL_SHLIBVER} \
+				lib/libssl.so.${OPENSSL_SHLIBVER} \
+				lib/engines-${OPENSSL_SHLIBVER}/capi.so \
+				lib/engines-${OPENSSL_SHLIBVER}/devcrypto.so \
+				lib/engines-${OPENSSL_SHLIBVER}/padlock.so"
 SSL3_CONFIGURE_ON+=	enable-ssl3-method
 ZLIB_CONFIGURE_ON=	zlib-dynamic
 
@@ -139,19 +146,13 @@ BROKEN_sparc64=	option ASM generates illegal instructions
 .endif
 
 post-patch:
-	${REINPLACE_CMD} \
-		-e 's|^MANDIR=.*$$|MANDIR=$$(INSTALLTOP)/man|' \
-		-e 's| install_html_docs$$||' \
-		-e 's|$$(LIBDIR)/pkgconfig|libdata/pkgconfig|g' \
+	${REINPLACE_CMD} -Ee 's|^MANDIR=.*$$|MANDIR=$$(INSTALLTOP)/man|' \
+		-e 's|^(build\|install)_docs: .*|\1_docs: \1_man_docs|' \
 		${WRKSRC}/Configurations/unix-Makefile.tmpl
-	${REINPLACE_CMD} 's|\^GNU ld|GNU|' ${WRKSRC}/Configurations/shared-info.pl
 	${REINPLACE_CMD} 's|SHLIB_VERSION=3|SHLIB_VERSION=${OPENSSL_SHLIBVER}|' \
-		${WRKSRC}/VERSION
+		${WRKSRC}/VERSION.dat
 
 post-configure:
-	${REINPLACE_CMD} \
-		-e 's|^build_docs:.*|build_docs: build_man_docs|' \
-		${WRKSRC}/Makefile
 	( cd ${WRKSRC} ; ${PERL} configdata.pm --dump )
 
 post-configure-MAN3-off:
@@ -161,13 +162,8 @@ post-configure-MAN3-off:
 		${WRKSRC}/Makefile
 
 post-install-SHARED-on:
-#.for i in libcrypto libssl
-#	${INSTALL_DATA} ${WRKSRC}/$i.so.${OPENSSL_SHLIBVER} ${STAGEDIR}${PREFIX}/lib
-#	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/$i.so.${OPENSSL_SHLIBVER}
-#	${LN} -sf $i.so.${OPENSSL_SHLIBVER} ${STAGEDIR}${PREFIX}/lib/$i.so
-#.endfor
-.for i in capi devcrypto padlock
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/engines-12/${i}.so
+.for i in ${SHLIBS}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/$i
 .endfor
 
 post-install-SHARED-off:

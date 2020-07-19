@@ -56,6 +56,7 @@ include/openssl/ess.h
 include/openssl/esserr.h
 include/openssl/evp.h
 include/openssl/evperr.h
+include/openssl/fipskey.h
 include/openssl/fips_names.h
 include/openssl/hmac.h
 include/openssl/http.h
@@ -64,7 +65,6 @@ include/openssl/idea.h
 include/openssl/kdf.h
 include/openssl/kdferr.h
 include/openssl/lhash.h
-include/openssl/mac.h
 include/openssl/macros.h
 include/openssl/md2.h
 include/openssl/md4.h
@@ -76,8 +76,8 @@ include/openssl/objects.h
 include/openssl/objectserr.h
 include/openssl/ocsp.h
 include/openssl/ocsperr.h
-include/openssl/%%OPENSSLDIR%%conf.h
-include/openssl/%%OPENSSLDIR%%v.h
+include/openssl/opensslconf.h
+include/openssl/opensslv.h
 include/openssl/ossl_typ.h
 include/openssl/param_build.h
 include/openssl/params.h
@@ -129,9 +129,9 @@ include/openssl/x509err.h
 include/openssl/x509v3.h
 include/openssl/x509v3err.h
 lib/libcrypto.a
-%%SHARED%%lib/engines-12/capi.so
-%%SHARED%%lib/engines-12/devcrypto.so
-%%SHARED%%lib/engines-12/padlock.so
+%%SHARED%%lib/engines-%%SHLIBVER%%/capi.so
+%%SHARED%%lib/engines-%%SHLIBVER%%/devcrypto.so
+%%SHARED%%lib/engines-%%SHLIBVER%%/padlock.so
 %%SHARED%%lib/libcrypto.so
 %%SHARED%%lib/libcrypto.so.%%SHLIBVER%%
 lib/libssl.a
@@ -503,7 +503,7 @@ man/man1/tsget.1.gz
 %%MAN3%%man/man3/PKCS7_verify.3.gz
 %%MAN3%%man/man3/PKCS8_pkey_add1_attr.3.gz
 %%MAN3%%man/man3/RAND_DRBG_generate.3.gz
-%%MAN3%%man/man3/RAND_DRBG_get0_master.3.gz
+%%MAN3%%man/man3/RAND_DRBG_get0_public.3.gz
 %%MAN3%%man/man3/RAND_DRBG_new.3.gz
 %%MAN3%%man/man3/RAND_DRBG_reseed.3.gz
 %%MAN3%%man/man3/RAND_DRBG_set_callbacks.3.gz
@@ -724,6 +724,7 @@ man/man1/tsget.1.gz
 %%MAN3%%man/man3/X509_load_http.3.gz
 %%MAN3%%man/man3/X509_new.3.gz
 %%MAN3%%man/man3/X509_sign.3.gz
+%%MAN3%%man/man3/X509_verify.3.gz
 %%MAN3%%man/man3/X509_verify_cert.3.gz
 %%MAN3%%man/man3/X509v3_cache_extensions.3.gz
 %%MAN3%%man/man3/X509v3_get_ext_by_NID.3.gz
@@ -826,7 +827,8 @@ man/man5/x509v3_config.5.gz
 %%MAN3%%man/man7/ssl.7.gz
 %%MAN3%%man/man7/x509.7.gz
 %%OPENSSLDIR%%/misc/CA.pl
-%%OPENSSLDIR%%/misc/tsget.pl
+@comment %%OPENSSLDIR%%/misc/tsget.pl
+%%OPENSSLDIR%%/misc/tsget
 @sample %%OPENSSLDIR%%/openssl.cnf.dist %%OPENSSLDIR%%/openssl.cnf
 @sample %%OPENSSLDIR%%/ct_log_list.cnf.dist %%OPENSSLDIR%%/ct_log_list.cnf
 @dir %%OPENSSLDIR%%/private
