@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	DBIx-Class-ResultSet-RecursiveUpdate
-PORTVERSION=	0.40
+PORTVERSION=	0.41
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -25,7 +25,7 @@ RUN_DEPENDS=	p5-Carp-Clan>=6.04:devel/p5-Carp-Clan \
 		p5-Try-Tiny>=0.30:lang/p5-Try-Tiny
 TEST_DEPENDS=	p5-Moose>=0:devel/p5-Moose \
 		p5-MooseX-NonMoose>=0:devel/p5-MooseX-NonMoose \
-		p5-Test-Exception>=0:devel/p5-Test-Exception \
+		p5-Test-Exception>=0.43:devel/p5-Test-Exception \
 		p5-Test-Trap>=0.2.2:devel/p5-Test-Trap \
 		p5-Test-Warn>=0.20:devel/p5-Test-Warn \
 		p5-namespace-autoclean>=0:devel/p5-namespace-autoclean
