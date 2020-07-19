@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	yaf
-DISTVERSION=	3.0.9
+DISTVERSION=	3.2.5
 CATEGORIES=	www
 
 MAINTAINER=	miwi@freeBSD.org
@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
-CONFIGURE_ARGS=	--with-php-config=${LOCALBASE}/bin/php-config
 USES=		localbase php:pecl
 
 .include <bsd.port.mk>
