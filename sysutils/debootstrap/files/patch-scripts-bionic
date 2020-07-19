@@ -1,0 +1,16 @@
+--- scripts/bionic.orig	2020-07-08 20:51:17.590645000 +0100
++++ scripts/bionic	2020-07-08 20:51:28.786509000 +0100
+@@ -249,10 +249,13 @@ echo \"Warning: Fake initctl called, doing nothing\"" 
+ 
+ 		info CONFBASE "Configuring the base system..."
+ 
++		# This step sometimes fails due to some missing functionality in Linuxulator.  Just ignore it.
++		set +e
+ 		smallyes '' |
+ 			(repeatn 5 in_target_failmsg CONF_BASE_FAIL_FIVE "Failure while configuring base packages.  This will be re-attempted up to five times." "" \
+ 			dpkg --status-fd 8 --force-confold --skip-same-version --configure -a 8>&1 1>&7 || echo EXITCODE $?) |
+ 			dpkg_progress $baseprog $bases CONFBASE "Configuring base system" CONFIGURING
++		set -e
+ 	fi
+ 
+ 	if [ -x "$TARGET/sbin/initctl.REAL" ]; then

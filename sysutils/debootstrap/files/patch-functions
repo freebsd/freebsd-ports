@@ -1,0 +1,20 @@
+--- functions.orig	2019-07-06 11:22:30 UTC
++++ functions
+@@ -1139,6 +1139,7 @@ setup_proc () {
+ 	case "$HOST_OS" in
+ 	    *freebsd*)
+ 		umount_on_exit /dev
++		umount_on_exit /dev/fd
+ 		umount_on_exit /proc
+ 		umount "$TARGET/proc" 2>/dev/null || true
+ 		if [ "$HOST_OS" = kfreebsd ]; then
+@@ -1224,7 +1225,8 @@ setup_dynamic_devices () {
+ 	    kfreebsd*)
+ 		in_target mount -t devfs devfs /dev ;;
+ 	    freebsd)
+-		mount -t devfs devfs "$TARGET/dev" ;;
++		mount -t devfs devfs "$TARGET/dev"
++		mount -t fdescfs -o linrdlnk fdescfs "$TARGET/dev/fd" ;;
+ 	    hurd*)
+ 	        # Use the setup-translators of the hurd package
+ 	        in_target /usr/lib/hurd/setup-translators -k ;;

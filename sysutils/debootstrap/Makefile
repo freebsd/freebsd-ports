@@ -3,6 +3,7 @@
 
 PORTNAME=	debootstrap
 PORTVERSION=	1.0.115
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	DEBIAN/pool/main/d/${PORTNAME}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -13,7 +14,8 @@ COMMENT=	Install Debian base system into a directory
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/debian/copyright
 
-RUN_DEPENDS=	wget:ftp/wget
+RUN_DEPENDS=	wget:ftp/wget \
+		bash:shells/bash
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes
@@ -29,6 +31,9 @@ post-patch:
 		${WRKSRC}/Makefile \
 		${WRKSRC}/debootstrap
 	@${REINPLACE_CMD} -e 's,%%DATADIR%%,${DATADIR},g' \
+		${WRKSRC}/Makefile \
+		${WRKSRC}/debootstrap
+	@${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},g' \
 		${WRKSRC}/Makefile \
 		${WRKSRC}/debootstrap
 

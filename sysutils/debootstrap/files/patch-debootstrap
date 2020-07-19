@@ -1,5 +1,11 @@
---- debootstrap.orig	2018-06-13 13:00:11 UTC
+--- debootstrap.orig	2019-07-06 11:22:30 UTC
 +++ debootstrap
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!%%LOCALBASE%%/bin/bash
+ set -e
+ 
+ VERSION='@VERSION@'
 @@ -14,7 +14,7 @@ if [ -z "$DEBOOTSTRAP_DIR" ]; then
  	if [ -x /debootstrap/debootstrap ]; then
  		DEBOOTSTRAP_DIR=/debootstrap
@@ -9,7 +15,7 @@
  	fi
  fi
  
-@@ -474,13 +474,7 @@ fi
+@@ -498,13 +498,7 @@ fi
  
  ###########################################################################
  
@@ -24,15 +30,15 @@
  	HOST_ARCH=$(cat "$DEBOOTSTRAP_DIR/arch")
  fi
  HOST_OS="$HOST_ARCH"
-@@ -502,6 +496,11 @@ if [ -z "$HOST_OS" ]; then
+@@ -524,6 +518,11 @@ if [ -z "$HOST_OS" ]; then
+ 			HOST_OS=freebsd
+ 		;;
  	esac
- fi
- 
++fi
++
 +if [ "$HOST_OS" = "freebsd" -a -z "$HOST_ARCH" ]; then
 +	HOST_ARCH=kfreebsd-`/sbin/sysctl -n hw.machine_arch`
 +	EXTRACTOR_OVERRIDE=ar
-+fi
-+
- if [ -z "$ARCH" ]; then
- 	ARCH="$HOST_ARCH"
  fi
+ 
+ if [ -z "$ARCH" ]; then
