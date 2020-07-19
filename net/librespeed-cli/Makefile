@@ -2,7 +2,7 @@
 
 PORTNAME=	librespeed-cli
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.6
+DISTVERSION=	1.0.7
 CATEGORIES=	net www
 
 MAINTAINER=	driesm.michiels@gmail.com
@@ -13,10 +13,16 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules
 
+GO_BUILDFLAGS+=	\
+		-ldflags "-X \"librespeed-cli/defs.ProgName=${PORTNAME}\" \
+		-X \"librespeed-cli/defs.ProgVersion=${PORTVERSION}-freebsd\" \
+		-X \"librespeed-cli/defs.BuildDate=`date -u '+%Y-%m-%d %H:%M:%S %Z'`\""
+
 USE_GITHUB=	YES
 GH_ACCOUNT=	librespeed
 GH_PROJECT=	speedtest-cli
-GH_TUPLE=	briandowns:spinner:v1.9.0:briandowns_spinner/vendor/github.com/briandowns/spinner \
+GH_TUPLE=       \
+		briandowns:spinner:v1.9.0:briandowns_spinner/vendor/github.com/briandowns/spinner \
 		cpuguy83:go-md2man:f79a8a8ca69d:cpuguy83_go_md2man_v2/vendor/github.com/cpuguy83/go-md2man/v2 \
 		fatih:color:v1.7.0:fatih_color/vendor/github.com/fatih/color \
 		gocarina:gocsv:87c60d755c58:gocarina_gocsv/vendor/github.com/gocarina/gocsv \

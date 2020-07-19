@@ -1,6 +1,6 @@
-TIMESTAMP = 1589984366
-SHA256 (librespeed-speedtest-cli-v1.0.6_GH0.tar.gz) = da126f60086805e7939cb5d5b7b34ed2892e24deeddcb2e9f7c91a82d260d2f7
-SIZE (librespeed-speedtest-cli-v1.0.6_GH0.tar.gz) = 23867
+TIMESTAMP = 1594722626
+SHA256 (librespeed-speedtest-cli-v1.0.7_GH0.tar.gz) = 0d25c98cd2fadbc1bcc57d94d35cfb88caf93f229474c990dab98236041008b0
+SIZE (librespeed-speedtest-cli-v1.0.7_GH0.tar.gz) = 23879
 SHA256 (briandowns-spinner-v1.9.0_GH0.tar.gz) = 1fee58fd24d4211cf6eeebfe2970be20c8b8bd4cf864e62e89fe4321f2a2a1ad
 SIZE (briandowns-spinner-v1.9.0_GH0.tar.gz) = 1324438
 SHA256 (cpuguy83-go-md2man-f79a8a8ca69d_GH0.tar.gz) = c117a3e3741ea39016b678b24db19b1f766277bac7c1c6d721237bb159610178
