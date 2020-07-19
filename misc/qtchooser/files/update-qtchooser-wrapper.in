@@ -2,18 +2,24 @@
 
 # $FreeBSD$
 
-# If a port installs Qt version-specific binaries (e.g. "designer" which existed as a Qt4 application
-# and exists as a Qt5 application and will probably be a Qt6 application) which should have a
-# qtchooser-based wrapper, the port should set `QT_BINARIES=yes`.
+# If a port installs Qt version-specific binaries (e.g. "designer" which
+# existed as a Qt4 application and exists as a Qt5 application and will
+# probably be a Qt6 application) which should have a qtchooser-based
+# wrapper, the port should set `QT_BINARIES=yes`.
 #
-# When QT_BINARIES is set to yes, compatibility symlinks (designer -> qtchooser, so that
-# qtchooser can run designer-qt5 or whatever is the selected Qt version) are installed by the port.
+# When QT_BINARIES is set to yes, compatibility symlinks (in bin/,
+# designer -> qtchooser, so that qtchooser can run designer-qt5 or
+# whatever is the selected Qt version) are installed by the port.
+#
+# Versioned binaries in ports are conventionally installed in <ver>/bin/,
+# so qt5/bin/designer is the versioned form of "designer".
 
 PREFIX=%%PREFIX%%
 BINDIR=${PREFIX}/bin
 QTCHOOSER=${BINDIR}/qtchooser
 VERSIONS=%%QT_SUPPORTED%%
 
+# Sanity-checking. Distinguish weird failure cases by exit code.
 if [ ! -d ${BINDIR} ] ; then
 	echo "Binary directory '${BINDIR}' missing." >&2
 	exit 1
@@ -24,17 +30,31 @@ if [ ! -x ${QTCHOOSER} ] ; then
 	exit 2
 fi
 
+# Remove links-to-qtchooser that are no longer needed.
+#
+# We check in ${BINDIR} -- only **directly** in bindir, hence the
+# `-maxdepth 1` -- for symlinks to qtchooser. Those are unversioned
+# names (e.g. designer -> qtchooser) for the case where qtchooser
+# should pick the right one.
+#
+# If there aren't any versioned names for the same, remove the link
+# (e.g. when designer is removed from the versioned bin/ directory
+# under qt5/bin/, then designer -> qtchooser can go as well).
+#
 remove_links() {
 	for file in $(find -L ${BINDIR} -maxdepth 1 -samefile ${QTCHOOSER}) ; do
+		# Only symlinks count, since qtchooser lives here too
 		if [ ! -L ${file} ] ; then
 			continue
 		fi
-		# If at least one versioned executable is found for this name, keep the
-		# qtchooser compatibility symlink for this name; otherwise, remove it.
+		# If at least one versioned executable is found for this name,
+		# keep the qtchooser compatibility symlink for this name; 
+		# otherwise, remove it.
 		local found=0
 		for version in ${VERSIONS} ; do
 			version_bin_dir=${PREFIX}/lib/qt${version}/bin
 			target=${version_bin_dir}/$(basename ${file})
+			# Only need to find **one** to keep the link.
 			if [ -x ${target} ] ; then
 				found=1
 				break
@@ -46,11 +66,22 @@ remove_links() {
 	done
 }
 
+# Create links-to-qtchooser when a versioned application is installed.
+#
+# We check directly under the versioned bin/ directories, not in subdirectories
+# of bin/ -- so we need `-maxdepth 1` -- for names which can be hooked up to
+# qtchooser. Each of the names in the versioned bin/ dir is connected to
+# qtchooser if there isn't already a link of that name.
+#
 create_links() {
 	for version in ${VERSIONS} ; do
 		version_bin_dir=${PREFIX}/lib/qt${version}/bin
 		if [ -d ${version_bin_dir} ] ; then
 			for file in $(find ${version_bin_dir} -type f -maxdepth 1) ; do
+				# target is the **unversioned** one (e.g.
+				# designer, living in bin/) which needs to
+				# be pointed at qtchooser because there is a
+				# **versioned** designer in e.g. qt5/bin/.
 				target=${BINDIR}/$(basename ${file})
 				if [ ! -L ${target} -a ! -f ${target} ] ; then
 					ln -s ${QTCHOOSER} ${target}
