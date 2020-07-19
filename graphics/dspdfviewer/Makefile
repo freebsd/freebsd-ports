@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs \
 		libpoppler-qt5.so:graphics/poppler-qt5
 
-USES=		cmake:insource pkgconfig qt:5
+USES=		cmake:insource compiler:c++11-lang pkgconfig qt:5
 USE_QT=		core gui linguisttools widgets xml buildtools_build qmake_build
 USE_LDCONFIG=	yes
 
@@ -35,22 +35,28 @@ PLIST_FILES=	bin/dspdfviewer \
 
 .include <bsd.port.pre.mk>
 
+.if ${CHOSEN_COMPILER_TYPE} == clang
 # Build fails with LLVM 4.0.  Reported upstream as #191:
 # https://github.com/dannyedel/dspdfviewer/issues/191
 CFLAGS+=	-Wno-error=undefined-func-template
+.endif
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200039
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200039 && ${CHOSEN_COMPILER_TYPE} == clang
 CFLAGS+=	-Wno-error=zero-as-null-pointer-constant
 .endif
 
 # Fixes build failure for Clang 8.0.0
-.if ${OPSYS} == FreeBSD && (${OSVERSION} >= 1300014 || (${OSVERSION} >= 1103000 && ${OSVERSION} < 1200000) || ${OSVERSION} >= 1201000)
+.if ${OPSYS} == FreeBSD && (${OSVERSION} >= 1300014 || (${OSVERSION} >= 1103000 && ${OSVERSION} < 1200000) || ${OSVERSION} >= 1201000) && ${CHOSEN_COMPILER_TYPE} == clang
 CFLAGS+=	-Wno-error=extra-semi-stmt
 .endif
 
 # Prepare for Qt5-5.15
 CFLAGS+=	-Wno-deprecated
 
+.if ${CHOSEN_COMPILER_TYPE} == clang
 CFLAGS+=	-Wno-error=redundant-parens
+.else
+CFLAGS+=	-Wno-error=deprecated-declarations
+.endif
 
 .include <bsd.port.post.mk>
