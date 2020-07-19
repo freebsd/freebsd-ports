@@ -6,8 +6,8 @@ DISTVERSION=	0.4.0
 CATEGORIES=	x11-wm
 
 PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
-PATCHFILES+=	c7bbf4fcf917.diff:-p1 # https://source.puri.sm/Librem5/phoc/-/merge_requests/153
-PATCHFILES+=	8e132eb25297.diff:-p1 # https://source.puri.sm/Librem5/phoc/-/merge_requests/153
+PATCHFILES+=	a40585b442c3.diff:-p1 # https://source.puri.sm/Librem5/phoc/-/merge_requests/153
+PATCHFILES+=	70ddc4d677fd.diff:-p1 # https://source.puri.sm/Librem5/phoc/-/merge_requests/153
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Phone compositor
@@ -37,10 +37,5 @@ GLIB_SCHEMAS=	sm.puri.phoc.gschema.xml
 post-extract:
 # Avoid confusing Meson instead of forcing -Dembed-wlroots=disabled
 	@${RMDIR} ${WRKSRC}/subprojects/wlroots
-.if defined(PATCHFILES) && ${PATCHFILES:Mc7bbf4fcf917*}
-# Pretend to be a regular file for vendor patch to apply as is
-	@${ECHO_CMD} "Subproject commit 59f7adfe2977c3cb27a8def72c0d9fc2f2926c6d" \
-		>${WRKSRC}/subprojects/wlroots
-.endif
 
 .include <bsd.port.mk>
