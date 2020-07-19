@@ -1,5 +1,5 @@
---- src/libs/xpcom18a4/xpcom/io/nsLocalFileUnix.h.orig	2017-03-08 17:21:24.000000000 +0000
-+++ src/libs/xpcom18a4/xpcom/io/nsLocalFileUnix.h	2017-03-08 22:53:39.572250000 +0000
+--- src/libs/xpcom18a4/xpcom/io/nsLocalFileUnix.h.orig	2020-05-13 19:46:34 UTC
++++ src/libs/xpcom18a4/xpcom/io/nsLocalFileUnix.h
 @@ -72,14 +72,6 @@
      #define STATFS statfs
  #endif

@@ -1,6 +1,6 @@
---- src/VBox/Additions/freebsd/vboxvfs/vboxvfs_vfsops.c.orig	2017-04-28 16:59:22.000000000 +0200
-+++ src/VBox/Additions/freebsd/vboxvfs/vboxvfs_vfsops.c	2017-07-12 19:24:26.109029000 +0200
-@@ -1,10 +1,5 @@
+--- src/VBox/Additions/freebsd/vboxvfs/vboxvfs_vfsops.c.orig	2020-05-13 19:37:06 UTC
++++ src/VBox/Additions/freebsd/vboxvfs/vboxvfs_vfsops.c
+@@ -1,8 +1,3 @@
 -/* $Id: vboxvfs_vfsops.c $ */
 -/** @file
 - * Description.
@@ -9,8 +9,6 @@
  /*
   * Copyright (C) 2008-2017 Oracle Corporation
   *
-  * This file is part of VirtualBox Open Source Edition (OSE), as
-  * available from http://www.virtualbox.org. This file is free software;
 @@ -14,245 +9,479 @@
   * VirtualBox OSE distribution. VirtualBox OSE is distributed in the
   * hope that it will be useful, but WITHOUT ANY WARRANTY of any kind.
@@ -38,20 +36,26 @@
 +#include <sys/sbuf.h>
  
 -#include <iprt/mem.h>
--
--#define VFSMP2SFGLOBINFO(mp) ((struct sf_glob_info *)mp->mnt_data)
--
--static int vboxvfs_version = VBOXVFS_VERSION;
 +#include <geom/geom.h>
 +#include <geom/geom_vfs.h>
  
++#include "vboxvfs.h"
++
+ #define VFSMP2SFGLOBINFO(mp) ((struct sf_glob_info *)mp->mnt_data)
+ 
+-static int vboxvfs_version = VBOXVFS_VERSION;
++#ifdef MALLOC_DECLARE
++MALLOC_DEFINE(M_VBOXVFS, "vboxvfs", "VBOX VFS");
++#endif
+ 
 -SYSCTL_NODE(_vfs, OID_AUTO, vboxvfs, CTLFLAG_RW, 0, "VirtualBox shared filesystem");
 -SYSCTL_INT(_vfs_vboxvfs, OID_AUTO, version, CTLFLAG_RD, &vboxvfs_version, 0, "");
-+#include "vboxvfs.h"
++static sfp_connection_t *sfprov = NULL;
  
 -/* global connection to the host service. */
 -static VBGLSFCLIENT g_vboxSFClient;
-+#define VFSMP2SFGLOBINFO(mp) ((struct sf_glob_info *)mp->mnt_data)
++static int vboxfs_version = VBOXVFS_VERSION;
++u_int vboxvfs_debug = 1;
  
 -static vfs_init_t       vboxvfs_init;
 -static vfs_uninit_t     vboxvfs_uninit;
@@ -61,7 +65,10 @@
 -static vfs_quotactl_t   vboxvfs_quotactl;
 -static vfs_statfs_t     vboxvfs_statfs;
 -static vfs_unmount_t    vboxvfs_unmount;
--
++SYSCTL_NODE(_vfs, OID_AUTO, vboxfs, CTLFLAG_RW, 0, "VirtualBox shared filesystem");
++SYSCTL_INT(_vfs_vboxfs, OID_AUTO, version, CTLFLAG_RD, &vboxfs_version, 0, "");
++SYSCTL_UINT(_vfs_vboxfs, OID_AUTO, debug, CTLFLAG_RW, &vboxvfs_debug, 0, "Debug level");
+ 
 -static struct vfsops vboxvfs_vfsops = {
 -    .vfs_init     =    vboxvfs_init,
 -    .vfs_cmount   =    vboxvfs_cmount,
@@ -72,19 +79,6 @@
 -    .vfs_sync     =    vfs_stdsync,
 -    .vfs_uninit   =    vboxvfs_uninit,
 -    .vfs_unmount  =    vboxvfs_unmount,
-+#ifdef MALLOC_DECLARE
-+MALLOC_DEFINE(M_VBOXVFS, "vboxvfs", "VBOX VFS");
-+#endif
-+
-+static sfp_connection_t *sfprov = NULL;
-+
-+static int vboxfs_version = VBOXVFS_VERSION;
-+u_int vboxvfs_debug = 1;
-+
-+SYSCTL_NODE(_vfs, OID_AUTO, vboxfs, CTLFLAG_RW, 0, "VirtualBox shared filesystem");
-+SYSCTL_INT(_vfs_vboxfs, OID_AUTO, version, CTLFLAG_RD, &vboxfs_version, 0, "");
-+SYSCTL_UINT(_vfs_vboxfs, OID_AUTO, debug, CTLFLAG_RW, &vboxvfs_debug, 0, "Debug level");
-+
 +static vfs_init_t	vboxfs_init;
 +static vfs_uninit_t	vboxfs_uninit;
 +static vfs_cmount_t	vboxfs_cmount;
@@ -141,17 +135,9 @@
  {
 -    struct vboxvfs_mount_info args;
 -    int rc = 0;
--
--    printf("%s: Enter\n", __FUNCTION__);
--
--    rc = copyin(data, &args, sizeof(struct vboxvfs_mount_info));
--    if (rc)
--        return rc;
 +	struct vboxfs_node *nnode;
  
--    ma = mount_argf(ma, "uid", "%d", args.uid);
--    ma = mount_argf(ma, "gid", "%d", args.gid);
--    ma = mount_arg(ma, "from", args.name, -1);
+-    printf("%s: Enter\n", __FUNCTION__);
 +	if ((mp->mnt_kern_flag & MNTK_UNMOUNT) != 0) {
 +		/*
 +		 * When a new tmpfs node is created for fully
@@ -169,17 +155,24 @@
 +		 */
 +		return (EBUSY);
 +	}
-+
+ 
+-    rc = copyin(data, &args, sizeof(struct vboxvfs_mount_info));
+-    if (rc)
+-        return rc;
 +	nnode = (struct vboxfs_node *)uma_zalloc_arg(
 +				vsfmp->sf_node_pool, vsfmp, M_WAITOK);
-+
+ 
+-    ma = mount_argf(ma, "uid", "%d", args.uid);
+-    ma = mount_argf(ma, "gid", "%d", args.gid);
+-    ma = mount_arg(ma, "from", args.name, -1);
 +	/* Generic initialization. */
 +	nnode->sf_type = type;
 +	nnode->sf_ino = vsfmp->sf_ino++;
 +	nnode->sf_path = strdup(fullpath, M_VBOXVFS);
 +	nnode->sf_parent = parent;
 +	nnode->vboxfsmp = vsfmp;
-+
+ 
+-    rc = kernel_mount(ma, flags);
 +	/* Type-specific initialization. */
 +	switch (nnode->sf_type) {
 +	case VBLK:
@@ -190,15 +183,12 @@
 +	case VLNK:
 +	case VREG:
 +		break;
-+
+ 
+-    printf("%s: Leave rc=%d\n", __FUNCTION__, rc);
 +	default:
 +		panic("vboxfs_alloc_node: type %p %d", nnode, (int)nnode->sf_type);
 +	}
  
--    rc = kernel_mount(ma, flags);
--
--    printf("%s: Leave rc=%d\n", __FUNCTION__, rc);
--
 -    return rc;
 +	*node = nnode;
 +	return 0;
@@ -219,33 +209,8 @@
 -    struct sf_glob_info *pShFlGlobalInfo;
 -    SHFLSTRING *pShFlShareName = NULL;
 -    int cbShFlShareName;
--
--    printf("%s: Enter\n", __FUNCTION__);
--
--    if (mp->mnt_flag & (MNT_UPDATE | MNT_ROOTFS))
--        return EOPNOTSUPP;
--
--    if (vfs_filteropt(mp->mnt_optnew, vboxvfs_opts))
--    {
--        vfs_mount_error(mp, "%s", "Invalid option");
--        return EINVAL;
--    }
--
--    rc = vfs_getopt(mp->mnt_optnew, "from", (void **)&pszShare, &cbShare);
--    if (rc || pszShare[cbShare-1] != '\0' || cbShare > 0xfffe)
--        return EINVAL;
--
--    rc = vfs_getopt(mp->mnt_optnew, "gid", (void **)&gid, &cbOption);
--    if ((rc != ENOENT) && (rc || cbOption != sizeof(gid)))
--        return EINVAL;
--
--    rc = vfs_getopt(mp->mnt_optnew, "uid", (void **)&uid, &cbOption);
--    if ((rc != ENOENT) && (rc || cbOption != sizeof(uid)))
--        return EINVAL;
  
--    pShFlGlobalInfo = RTMemAllocZ(sizeof(struct sf_glob_info));
--    if (!pShFlGlobalInfo)
--        return ENOMEM;
+-    printf("%s: Enter\n", __FUNCTION__);
 +#ifdef INVARIANTS
 +	TMPFS_NODE_LOCK(node);
 +	MPASS(node->sf_vnode == NULL);
@@ -255,47 +220,49 @@
 +	if (node->sf_path)
 +		free(node->sf_path, M_VBOXVFS);
  
--    cbShFlShareName = offsetof (SHFLSTRING, String.utf8) + cbShare + 1;
--    pShFlShareName  = RTMemAllocZ(cbShFlShareName);
--    if (!pShFlShareName)
--        return VERR_NO_MEMORY;
+-    if (mp->mnt_flag & (MNT_UPDATE | MNT_ROOTFS))
+-        return EOPNOTSUPP;
 +	uma_zfree(vboxfs->sf_node_pool, node);
 +}
  
--    pShFlShareName->u16Length = cbShare;
--    pShFlShareName->u16Size   = cbShare + 1;
--    memcpy (pShFlShareName->String.utf8, pszShare, cbShare + 1);
+-    if (vfs_filteropt(mp->mnt_optnew, vboxvfs_opts))
+-    {
+-        vfs_mount_error(mp, "%s", "Invalid option");
+-        return EINVAL;
+-    }
 +static int
 +vboxfs_cmount(struct mntarg *ma, void *data, uint64_t flags)
 +{
 +	struct vboxfs_mount_info args;
 +	int error = 0;
  
--    rc = VbglR0SfMapFolder (&g_vboxSFClient, pShFlShareName, &pShFlGlobalInfo->map);
--    RTMemFree(pShFlShareName);
+-    rc = vfs_getopt(mp->mnt_optnew, "from", (void **)&pszShare, &cbShare);
+-    if (rc || pszShare[cbShare-1] != '\0' || cbShare > 0xfffe)
+-        return EINVAL;
 +	if (data == NULL)
 +		return (EINVAL);
 +	error = copyin(data, &args, sizeof(struct vboxfs_mount_info));
 +	if (error)
 +		return (error);
-+
+ 
+-    rc = vfs_getopt(mp->mnt_optnew, "gid", (void **)&gid, &cbOption);
+-    if ((rc != ENOENT) && (rc || cbOption != sizeof(gid)))
+-        return EINVAL;
 +  	ma = mount_argf(ma, "uid", "%d", args.uid);
 +	ma = mount_argf(ma, "gid", "%d", args.gid);
 +	ma = mount_argf(ma, "file_mode", "%d", args.fmode);
 +	ma = mount_argf(ma, "dir_mode", "%d", args.dmode);
 +	ma = mount_arg(ma, "from", args.name, -1);
  
--    if (RT_FAILURE (rc))
--    {
--        RTMemFree(pShFlGlobalInfo);
--        printf("VbglR0SfMapFolder failed rc=%d\n", rc);
--        return EPROTO;
--    }
+-    rc = vfs_getopt(mp->mnt_optnew, "uid", (void **)&uid, &cbOption);
+-    if ((rc != ENOENT) && (rc || cbOption != sizeof(uid)))
+-        return EINVAL;
 +	return (kernel_mount(ma, flags));
 +}
  
--    pShFlGlobalInfo->uid = uid;
--    pShFlGlobalInfo->gid = gid;
+-    pShFlGlobalInfo = RTMemAllocZ(sizeof(struct sf_glob_info));
+-    if (!pShFlGlobalInfo)
+-        return ENOMEM;
 +static const char *vboxfs_opts[] = {
 +	"fstype",
 +	"fspath",
@@ -308,7 +275,10 @@
 +	NULL
 +};
  
--    mp->mnt_data = pShFlGlobalInfo;
+-    cbShFlShareName = offsetof (SHFLSTRING, String.utf8) + cbShare + 1;
+-    pShFlShareName  = RTMemAllocZ(cbShFlShareName);
+-    if (!pShFlShareName)
+-        return VERR_NO_MEMORY;
 +#define	VBOX_INTOPT(optname, val, base) do {				\
 +	char *ep, *optarg = NULL;					\
 +	if (vfs_getopt(opts, optname, (void **)&optarg, NULL) == 0) {	\
@@ -328,66 +298,69 @@
 +	}								\
 +} while (0)
  
--    /** @todo root vnode. */
+-    pShFlShareName->u16Length = cbShare;
+-    pShFlShareName->u16Size   = cbShare + 1;
+-    memcpy (pShFlShareName->String.utf8, pszShare, cbShare + 1);
 +static int
 +vboxfs_node_ctor(void *mem, int size, void *arg, int flags)
 +{
 +	struct vboxfs_node *node = (struct vboxfs_node *)mem;
  
--    vfs_getnewfsid(mp);
--    vfs_mountedfrom(mp, pszShare);
+-    rc = VbglR0SfMapFolder (&g_vboxSFClient, pShFlShareName, &pShFlGlobalInfo->map);
+-    RTMemFree(pShFlShareName);
 +	node->sf_vnode = NULL;
 +	node->sf_vpstate = 0;
  
--    printf("%s: Leave rc=0\n", __FUNCTION__);
+-    if (RT_FAILURE (rc))
+-    {
+-        RTMemFree(pShFlGlobalInfo);
+-        printf("VbglR0SfMapFolder failed rc=%d\n", rc);
+-        return EPROTO;
+-    }
 +	return (0);
 +}
  
--    return 0;
+-    pShFlGlobalInfo->uid = uid;
+-    pShFlGlobalInfo->gid = gid;
 +static void
 +vboxfs_node_dtor(void *mem, int size, void *arg)
 +{
 +	struct vboxfs_node *node = (struct vboxfs_node *)mem;
 +	node->sf_type = VNON;
- }
++}
  
--static int vboxvfs_unmount(struct mount *mp, int mntflags, struct thread *td)
+-    mp->mnt_data = pShFlGlobalInfo;
 +static int
 +vboxfs_node_init(void *mem, int size, int flags)
- {
--    struct sf_glob_info *pShFlGlobalInfo = VFSMP2SFGLOBINFO(mp);
--    int rc;
--    int flags = 0;
++{
 +	struct vboxfs_node *node = (struct vboxfs_node *)mem;
 +	node->sf_ino = 0;
  
--    rc = VbglR0SfUnmapFolder(&g_vboxSFClient, &pShFlGlobalInfo->map);
--    if (RT_FAILURE(rc))
--        printf("Failed to unmap shared folder\n");
+-    /** @todo root vnode. */
 +	mtx_init(&node->sf_interlock, "tmpfs node interlock", NULL, MTX_DEF);
  
--    if (mntflags & MNT_FORCE)
--        flags |= FORCECLOSE;
+-    vfs_getnewfsid(mp);
+-    vfs_mountedfrom(mp, pszShare);
 +	return (0);
 +}
  
--    /* There is 1 extra root vnode reference (vnode_root). */
--    rc = vflush(mp, 1, flags, td);
--    if (rc)
--        return rc;
+-    printf("%s: Leave rc=0\n", __FUNCTION__);
 +static void
 +vboxfs_node_fini(void *mem, int size)
 +{
 +	struct vboxfs_node *node = (struct vboxfs_node *)mem;
  
+-    return 0;
 +	mtx_destroy(&node->sf_interlock);
-+}
+ }
  
--    RTMemFree(pShFlGlobalInfo);
--    mp->mnt_data = NULL;
+-static int vboxvfs_unmount(struct mount *mp, int mntflags, struct thread *td)
 +static int
 +vboxfs_mount(struct mount *mp)
-+{
+ {
+-    struct sf_glob_info *pShFlGlobalInfo = VFSMP2SFGLOBINFO(mp);
+-    int rc;
+-    int flags = 0;
 +	struct vboxfs_mnt *vboxfsmp = NULL;
 +	struct vfsoptlist *opts = mp->mnt_optnew;
 +	sfp_mount_t *handle = NULL;
@@ -399,27 +372,38 @@
 +	uid_t uid = 0;
 +	gid_t gid = 0;
 +	struct vboxfs_node *root;
-+
+ 
+-    rc = VbglR0SfUnmapFolder(&g_vboxSFClient, &pShFlGlobalInfo->map);
+-    if (RT_FAILURE(rc))
+-        printf("Failed to unmap shared folder\n");
 +	if (mp->mnt_flag & (MNT_UPDATE | MNT_ROOTFS))
 +		return (EOPNOTSUPP);
-+
+ 
+-    if (mntflags & MNT_FORCE)
+-        flags |= FORCECLOSE;
 +	if (vfs_filteropt(opts, vboxfs_opts)) {
 +		vfs_mount_error(mp, "%s", "Invalid option");
 +		return (EINVAL);
 +	}
-+
+ 
+-    /* There is 1 extra root vnode reference (vnode_root). */
+-    rc = vflush(mp, 1, flags, td);
+-    if (rc)
+-        return rc;
 +	VBOX_INTOPT("uid", uid, 10);
 +	VBOX_INTOPT("gid", gid, 10);
 +	VBOX_INTOPT("file_mode", file_mode, 8);
 +	VBOX_INTOPT("dir_mode", dir_mode, 8);
 +	VBOX_INTOPT("ro", readonly, 10);
-+
+ 
 +	error = vfs_getopt(opts, "from", (void **)&share_name, &share_len);
 +	if (error != 0 || share_len == 0) {
 +		vfs_mount_error(mp, "Invalid from");
 +		return (EINVAL);
 +	}
-+
+ 
+-    RTMemFree(pShFlGlobalInfo);
+-    mp->mnt_data = NULL;
 +	vboxfsmp = malloc(sizeof(struct vboxfs_mnt), M_VBOXVFS, M_WAITOK | M_ZERO);
 +	vboxfsmp->sf_uid = uid;
 +	vboxfsmp->sf_gid = gid;
@@ -427,7 +411,8 @@
 +	vboxfsmp->sf_dmode = dir_mode & (S_IRWXU | S_IRWXG | S_IRWXO);
 +	vboxfsmp->sf_ino = 3;
 +	vboxfsmp->sf_stat_ttl = 200;
-+
+ 
+-    return 0;
 +	/* Invoke Hypervisor mount interface before proceeding */
 +	error = sfprov_mount(share_name, &handle);
 +	if (error)
@@ -480,8 +465,7 @@
 +#endif
 +	MNT_IUNLOCK(mp);
 +	vfs_mountedfrom(mp, share_name);
- 
--    return 0;
++
 +	return (0);
  }
  
@@ -502,80 +486,77 @@
 +	struct thread *td;
 +	int error;
 +	int flags;
-+
+ 
+-    printf("%s: Enter\n", __FUNCTION__);
 +	vboxfsmp = VFSTOVBOXFS(mp);
 +	td = curthread;
 +	flags = 0;
 +	if (mntflags & MNT_FORCE)
 +		flags |= FORCECLOSE;
-+
+ 
+-    vp = pShFlGlobalInfo->vnode_root;
+-    VREF(vp);
 +	error = vflush(mp, 0, flags, td);
 +	if (error)
 +		return (error);
-+
+ 
+-    vn_lock(vp, flags | LK_RETRY, td);
+-    *vpp = vp;
 +	/* Invoke Hypervisor unmount interface before proceeding */
 +	error = sfprov_unmount(vboxfsmp->sf_handle);
 +	if (error != 0) {
 +		/* TBD anything here? */
 +	}
-+
+ 
+-    printf("%s: Leave\n", __FUNCTION__);
 +	uma_zdestroy(vboxfsmp->sf_node_pool);
-+
+ 
+-    return rc;
 +	free(vboxfsmp, M_VBOXVFS);
 +	MNT_ILOCK(mp);
 +	mp->mnt_data = NULL;
 +	mp->mnt_flag &= ~MNT_LOCAL;
 +	MNT_IUNLOCK(mp);
- 
--    printf("%s: Enter\n", __FUNCTION__);
--
--    vp = pShFlGlobalInfo->vnode_root;
--    VREF(vp);
++
 +	return (0);
-+}
- 
--    vn_lock(vp, flags | LK_RETRY, td);
--    *vpp = vp;
-+static int
-+vboxfs_root(struct mount *mp, int flags, struct vnode **vpp)
-+{
-+	int error;
-+	error = vboxfs_alloc_vp(mp, VFSTOVBOXFS(mp)->sf_root, flags, vpp);
- 
--    printf("%s: Leave\n", __FUNCTION__);
-+	if (!error)
-+		(*vpp)->v_vflag |= VV_ROOT;
- 
--    return rc;
-+	return error;
  }
  
 -static int vboxvfs_quotactl(struct mount *mp, int cmd, uid_t uid, void *arg, struct thread *td)
++static int
++vboxfs_root(struct mount *mp, int flags, struct vnode **vpp)
+ {
+-    return EOPNOTSUPP;
++	int error;
++	error = vboxfs_alloc_vp(mp, VFSTOVBOXFS(mp)->sf_root, flags, vpp);
++
++	if (!error)
++		(*vpp)->v_vflag |= VV_ROOT;
++
++	return error;
+ }
+ 
+-int vboxvfs_init(struct vfsconf *vfsp)
 +/*
 + * Do operation associated with quotas, not supported
 + */
 +static int
 +vboxfs_quotactl(struct mount *mp, int cmd, uid_t uid, void *arg)
  {
--    return EOPNOTSUPP;
-+	return (EOPNOTSUPP);
- }
- 
--int vboxvfs_init(struct vfsconf *vfsp)
-+/*
-+ * Initialize the filesystem globals.
-+ */
-+static int
-+vboxfs_init(struct vfsconf *vfsp)
- {
 -    int rc;
-+	int error;
++	return (EOPNOTSUPP);
++}
  
 -    /* Initialize the R0 guest library. */
 -    rc = VbglR0SfInit();
 -    if (RT_FAILURE(rc))
 -        return ENXIO;
-+	DROP_GIANT();
++/*
++ * Initialize the filesystem globals.
++ */
++static int
++vboxfs_init(struct vfsconf *vfsp)
++{
++	int error;
  
 -    /* Connect to the host service. */
 -    rc = VbglR0SfConnect(&g_vboxSFClient);
@@ -585,16 +566,7 @@
 -        VbglR0SfTerm();
 -        return ENXIO;
 -    }
-+	sfprov = sfprov_connect(SFPROV_VERSION);
-+	if (sfprov == NULL) {
-+		printf("%s: couldn't connect to sf provider", __func__);
-+		return (ENODEV);
-+	}
-+
-+	error = sfprov_set_show_symlinks();
-+	if (error != 0)
-+		printf("%s: host unable to show symlinks, error=%d\n",
-+		    __func__, error);
++	DROP_GIANT();
  
 -    rc = VbglR0SfSetUtf8(&g_vboxSFClient);
 -    if (RT_FAILURE (rc))
@@ -604,9 +576,18 @@
 -        VbglR0SfTerm();
 -        return EPROTO;
 -    }
--
++	sfprov = sfprov_connect(SFPROV_VERSION);
++	if (sfprov == NULL) {
++		printf("%s: couldn't connect to sf provider", __func__);
++		return (ENODEV);
++	}
+ 
 -    printf("Successfully loaded shared folder module\n");
--
++	error = sfprov_set_show_symlinks();
++	if (error != 0)
++		printf("%s: host unable to show symlinks, error=%d\n",
++		    __func__, error);
+ 
 -    return 0;
 +	PICKUP_GIANT();
 +	return (0);

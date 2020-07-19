@@ -1,6 +1,6 @@
---- src/VBox/Main/src-server/freebsd/HostHardwareFreeBSD.cpp.orig	2015-04-14 15:41:25.000000000 -0400
-+++ src/VBox/Main/src-server/freebsd/HostHardwareFreeBSD.cpp	2015-04-14 18:25:23.156536000 -0400
-@@ -251,8 +251,9 @@
+--- src/VBox/Main/src-server/freebsd/HostHardwareFreeBSD.cpp.orig	2020-05-13 19:44:10 UTC
++++ src/VBox/Main/src-server/freebsd/HostHardwareFreeBSD.cpp
+@@ -253,8 +253,9 @@ static int getDVDInfoFromCAM(DriveInfoList *pList, boo
                          PeriphMatchPattern.pattern.periph_pattern.path_id    = paMatches[i].result.device_result.path_id;
                          PeriphMatchPattern.pattern.periph_pattern.target_id  = paMatches[i].result.device_result.target_id;
                          PeriphMatchPattern.pattern.periph_pattern.target_lun = paMatches[i].result.device_result.target_lun;

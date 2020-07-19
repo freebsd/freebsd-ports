@@ -1,6 +1,6 @@
---- src/VBox/Frontends/VirtualBox/Makefile.kmk.orig	2017-10-18 07:12:20 UTC
+--- src/VBox/Frontends/VirtualBox/Makefile.kmk.orig	2020-05-13 19:43:28 UTC
 +++ src/VBox/Frontends/VirtualBox/Makefile.kmk
-@@ -895,6 +895,7 @@ if defined(VBOX_WITH_VIDEOHWACCEL) || defined(VBOX_GUI
+@@ -897,6 +897,7 @@ if defined(VBOX_WITH_VIDEOHWACCEL) || defined(VBOX_GUI
   VirtualBox_SOURCES += \
  	src/VBoxFBOverlay.cpp \
  	src/VBoxGLSupportInfo.cpp
@@ -8,7 +8,7 @@
  endif
  
  #
-@@ -1217,6 +1218,7 @@ if defined(VBOX_WITH_VIDEOHWACCEL)
+@@ -1220,6 +1221,7 @@ if defined(VBOX_WITH_VIDEOHWACCEL)
    VBoxOGL2D_SOURCES = \
  	src/VBoxGLSupportInfo.cpp
    VBoxOGL2D_INCS = include

@@ -1,5 +1,5 @@
---- src/VBox/Additions/freebsd/vboxvfs/vboxvfs_prov.c.orig	1970-01-01 01:00:00.000000000 +0100
-+++ src/VBox/Additions/freebsd/vboxvfs/vboxvfs_prov.c	2017-07-12 19:24:26.109029000 +0200
+--- src/VBox/Additions/freebsd/vboxvfs/vboxvfs_prov.c.orig	2020-06-26 09:59:35 UTC
++++ src/VBox/Additions/freebsd/vboxvfs/vboxvfs_prov.c
 @@ -0,0 +1,1020 @@
 +/*
 + * Copyright (C) 2008-2016 Oracle Corporation

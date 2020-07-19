@@ -1,6 +1,6 @@
---- src/VBox/HostDrivers/Support/freebsd/Makefile.orig	2016-07-18 11:56:20 UTC
+--- src/VBox/HostDrivers/Support/freebsd/Makefile.orig	2020-05-13 19:43:53 UTC
 +++ src/VBox/HostDrivers/Support/freebsd/Makefile
-@@ -81,6 +81,7 @@ SRCS += \
+@@ -82,6 +82,7 @@ SRCS += \
  	assert.c \
  	handletable.c \
  	handletablectx.c \
@@ -8,7 +8,7 @@
  	once.c \
  	term.c \
  	thread.c
-@@ -92,13 +93,14 @@ SRCS += \
+@@ -94,13 +95,14 @@ SRCS += \
  	RTStrCopy.c \
  	RTStrCopyEx.c \
  	RTStrCopyP.c \

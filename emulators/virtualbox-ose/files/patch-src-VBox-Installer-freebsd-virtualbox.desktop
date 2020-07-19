@@ -1,6 +1,6 @@
---- src/VBox/Installer/freebsd/virtualbox.desktop.orig	2010-10-07 10:42:04.000000000 +0200
-+++ src/VBox/Installer/freebsd/virtualbox.desktop	2010-10-07 10:43:20.000000000 +0200
-@@ -7,7 +7,6 @@
+--- src/VBox/Installer/freebsd/virtualbox.desktop.orig	2020-05-13 19:44:01 UTC
++++ src/VBox/Installer/freebsd/virtualbox.desktop
+@@ -7,7 +7,6 @@ GenericName=Virtual Machine
  Type=Application
  Exec=VirtualBox
  TryExec=VirtualBox

@@ -1,6 +1,6 @@
---- src/VBox/Devices/PC/ipxe/Makefile.kmk.orig	2013-11-29 14:23:32.000000000 -0500
-+++ src/VBox/Devices/PC/ipxe/Makefile.kmk	2013-12-13 15:06:45.000000000 -0500
-@@ -35,7 +35,7 @@
+--- src/VBox/Devices/PC/ipxe/Makefile.kmk.orig	2020-05-13 19:42:27 UTC
++++ src/VBox/Devices/PC/ipxe/Makefile.kmk
+@@ -35,7 +35,7 @@ iPxeBiosBin_SOURCES  = $(iPxeBiosBin_0_OUTDIR)/iPxeBio
  iPxeBiosBin_CLEAN    = \
  	$(iPxeBiosBin_0_OUTDIR)/iPxeBiosBin.c \
  

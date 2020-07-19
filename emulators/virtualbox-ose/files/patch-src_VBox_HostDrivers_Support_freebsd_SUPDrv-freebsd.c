@@ -1,4 +1,4 @@
---- src/VBox/HostDrivers/Support/freebsd/SUPDrv-freebsd.c.orig	2018-10-15 14:30:57 UTC
+--- src/VBox/HostDrivers/Support/freebsd/SUPDrv-freebsd.c.orig	2020-05-13 19:43:53 UTC
 +++ src/VBox/HostDrivers/Support/freebsd/SUPDrv-freebsd.c
 @@ -46,6 +46,7 @@
  #include <sys/uio.h>
@@ -170,7 +170,7 @@
  }
  
  
-@@ -616,11 +682,25 @@ int VBOXCALL    supdrvOSMsrProberModify(RTCPUID idCpu,
+@@ -625,11 +691,25 @@ int VBOXCALL    supdrvOSMsrProberModify(RTCPUID idCpu,
  #endif /* SUPDRV_WITH_MSR_PROBER */
  
  
@@ -196,7 +196,7 @@
  
      va_start(va, pszFormat);
      cch = RTStrPrintfV(szMsg, sizeof(szMsg), pszFormat, va);
-@@ -628,12 +708,19 @@ SUPR0DECL(int) SUPR0Printf(const char *pszFormat, ...)
+@@ -637,12 +717,19 @@ SUPR0DECL(int) SUPR0Printf(const char *pszFormat, ...)
  
      printf("%s", szMsg);
  

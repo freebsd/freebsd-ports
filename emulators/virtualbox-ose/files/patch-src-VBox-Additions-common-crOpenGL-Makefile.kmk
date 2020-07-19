@@ -1,6 +1,6 @@
---- src/VBox/Additions/common/crOpenGL/Makefile.kmk.orig	2016-07-18 11:50:43 UTC
+--- src/VBox/Additions/common/crOpenGL/Makefile.kmk.orig	2020-05-13 19:37:03 UTC
 +++ src/VBox/Additions/common/crOpenGL/Makefile.kmk
-@@ -47,9 +47,7 @@ endif
+@@ -50,9 +50,7 @@ endif
  if1of ($(KBUILD_TARGET), linux solaris freebsd)
   #VBoxOGL_DRI = 1
   DLLS += VBoxEGL
@@ -11,7 +11,7 @@
  
   # Only Solaris right now needs C stubs because I can't figure out how to
   # generate the GOT based relocation ASM yet.
-@@ -184,10 +182,12 @@ VBoxOGL_CLEAN.linux        += \
+@@ -188,10 +186,12 @@ VBoxOGL_CLEAN.linux        += \
  	$(VBOX_PATH_CROGL_GENFILES)/linux_exports.c
  VBoxOGL_CLEAN.solaris        += \
  	$(VBOX_PATH_CROGL_GENFILES)/solaris_exports.c
@@ -25,7 +25,7 @@
   ifdef VBoxOGL_DRI
    VBoxOGL_CLEAN   += \
   	$(VBOX_PATH_CROGL_GENFILES)/cr_gl.h \
-@@ -200,6 +200,8 @@ if1of ($(KBUILD_TARGET), linux solaris)
+@@ -204,6 +204,8 @@ if1of ($(KBUILD_TARGET), linux solaris)
   	$(VBOX_PATH_CROGL_GENFILES)/linux_glxapi_exports.asm
    VBoxOGL_CLEAN.solaris   += \
   	$(VBOX_PATH_CROGL_GENFILES)/solaris_glxapi_exports.asm
@@ -34,7 +34,7 @@
   endif
  endif
  VBoxOGL_LIBS = \
-@@ -229,6 +231,8 @@ if1of ($(KBUILD_TARGET), linux solaris f
+@@ -244,6 +246,8 @@ if1of ($(KBUILD_TARGET), linux solaris freebsd)
   else
    VBoxOGL_SONAME.linux = libGL.so.1
    VBoxOGL_LDFLAGS.linux += -Wl,-e,LibMain
@@ -43,7 +43,7 @@
   endif
  endif
  ifdef VBOX_WITH_CRHGSMI
-@@ -237,7 +241,7 @@ endif
+@@ -252,7 +256,7 @@ endif
  ifdef VBOX_WITH_WDDM
  VBoxOGL_DEFS.win   += VBOX_WITH_WDDM
  endif
@@ -52,7 +52,7 @@
  VBoxOGL_LDFLAGS += -Wl,-z,nodelete
  endif
  ifdef VBOX_WITH_WDDM
-@@ -395,6 +399,16 @@ $(VBOX_PATH_CROGL_GENFILES)/solaris_expo
+@@ -418,6 +422,16 @@ $(VBOX_PATH_CROGL_GENFILES)/solaris_exports_dri.asm: \
  $(VBOX_PATH_CROGL_GENFILES)/solaris_glxapi_exports.asm: $(PATH_SUB_CURRENT)/SunOS_i386_glxapi_exports.py | $$(dir $$@)
  	$(call MSG_GENERATE,python,$@,$<)
  	$(QUIET)$(call VBOX_CROGL_PYTHON_ENV,$(VBOX_PATH_CROGL_PYTHON_INCLUDE),$@) $(VBOX_BLD_PYTHON) $<
@@ -69,9 +69,9 @@
  
     else
  $(VBOX_PATH_CROGL_GENFILES)/linux_exports_dri.asm: \
-@@ -712,6 +726,7 @@ VBoxEGL_SOURCES        = egl.c
- VBoxEGL_INCS           = $(VBOX_PATH_X11_ROOT)/mesa-11.0.7
- VBoxEGL_LIBS           = $(VBOX_LIB_OGL) $(VBOX_LIB_IPRT_GUEST_R3_SHARED)
+@@ -656,6 +670,7 @@ ifndef VBOX_USE_SYSTEM_GL_HEADERS
+ endif
+ VBoxEGL_LIBS           = $(VBOX_LIB_OGL) # $(VBOX_LIB_IPRT_GUEST_R3_SHARED)
  VBoxEGL_SONAME.linux   = libEGL.so.1
 +VBoxEGL_SONAME.freebsd = libEGL.so.1
  

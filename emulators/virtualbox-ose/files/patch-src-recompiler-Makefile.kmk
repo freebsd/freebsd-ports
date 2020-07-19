@@ -1,6 +1,6 @@
---- src/recompiler/Makefile.kmk.orig	2013-11-29 14:25:09.000000000 -0500
-+++ src/recompiler/Makefile.kmk	2013-12-13 14:23:11.000000000 -0500
-@@ -41,6 +41,7 @@
+--- src/recompiler/Makefile.kmk.orig	2020-05-13 19:46:49 UTC
++++ src/recompiler/Makefile.kmk
+@@ -41,6 +41,7 @@ endif
  #
  ifneq ($(KBUILD_TARGET),win)
   VBoxRemPrimary_TEMPLATE       = VBOXR3NP
