@@ -15052,7 +15052,6 @@ databases/rubygem-peek-mysql2-rails5||2020-06-05|Removed: not required by gitlab
 audio/workman||2020-06-05|Has expired: Depends on expired x11-toolkits/xview
 x11-toolkits/xview||2020-06-05|Has expired: 64-bit unsupported
 math/p5-Algorithm-KMeans||2020-06-05|Has expired: Depends on expired math/p5-Math-GSL
-math/p5-Math-GSL||2020-06-05|Has expired: Broken for more than 6 months
 net/openbsc||2020-06-05|Has expired: Depends on expired devel/libosmo-netif
 devel/libosmo-netif||2020-06-05|Has expired: Broken for more than 6 months
 audio/xvmixer||2020-06-05|Has expired: Depends on expired x11-toolkits/xview
