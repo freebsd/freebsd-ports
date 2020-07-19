@@ -1,5 +1,5 @@
---- src/VBox/VMM/VMMR0/GVMMR0.cpp.orig	2018-01-15 14:56:33.000000000 +0000
-+++ src/VBox/VMM/VMMR0/GVMMR0.cpp	2018-01-17 01:13:24.832105000 +0000
+--- src/VBox/VMM/VMMR0/GVMMR0.cpp.orig	2020-05-13 19:44:47 UTC
++++ src/VBox/VMM/VMMR0/GVMMR0.cpp
 @@ -1243,7 +1243,7 @@ static void gvmmR0CleanupVM(PGVM pGVM)
  
      GMMR0CleanupVM(pGVM);

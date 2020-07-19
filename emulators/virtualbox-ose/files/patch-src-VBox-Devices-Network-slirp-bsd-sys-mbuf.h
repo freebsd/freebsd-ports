@@ -1,6 +1,6 @@
---- src/VBox/Devices/Network/slirp/bsd/sys/mbuf.h.orig	2015-03-02 10:09:19.000000000 -0500
-+++ src/VBox/Devices/Network/slirp/bsd/sys/mbuf.h	2015-03-02 19:42:56.808020000 -0500
-@@ -241,6 +241,9 @@
+--- src/VBox/Devices/Network/slirp/bsd/sys/mbuf.h.orig	2020-05-13 19:42:23 UTC
++++ src/VBox/Devices/Network/slirp/bsd/sys/mbuf.h
+@@ -245,6 +245,9 @@ struct mbuf {
  #define	M_FRAG		0x00000800 /* packet is a fragment of a larger packet */
  #define	M_FIRSTFRAG	0x00001000 /* packet is first fragment */
  #define	M_LASTFRAG	0x00002000 /* packet is last fragment */

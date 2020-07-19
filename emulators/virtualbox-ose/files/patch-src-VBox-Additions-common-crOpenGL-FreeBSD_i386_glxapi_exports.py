@@ -1,5 +1,5 @@
---- src/VBox/Additions/common/crOpenGL/FreeBSD_i386_glxapi_exports.py.orig	2014-12-19 16:58:04.474417000 -0500
-+++ src/VBox/Additions/common/crOpenGL/FreeBSD_i386_glxapi_exports.py	2014-11-21 10:16:35.000000000 -0500
+--- src/VBox/Additions/common/crOpenGL/FreeBSD_i386_glxapi_exports.py.orig	2020-06-26 09:53:39 UTC
++++ src/VBox/Additions/common/crOpenGL/FreeBSD_i386_glxapi_exports.py
 @@ -0,0 +1,104 @@
 +"""
 +Copyright (C) 2009-2012 Oracle Corporation

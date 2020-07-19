@@ -1,6 +1,6 @@
---- src/VBox/Additions/common/VBoxGuest/freebsd/Makefile.orig	2017-10-18 07:06:43 UTC
+--- src/VBox/Additions/common/VBoxGuest/freebsd/Makefile.orig	2020-05-13 19:37:01 UTC
 +++ src/VBox/Additions/common/VBoxGuest/freebsd/Makefile
-@@ -70,6 +70,7 @@ SRCS += \
+@@ -80,6 +80,7 @@ SRCS += \
  	handletable.c \
  	handletablectx.c \
  	once.c \
@@ -8,7 +8,7 @@
  	thread.c
  
  .PATH:	${.CURDIR}/common/string
-@@ -128,6 +129,7 @@ SRCS += \
+@@ -139,6 +140,7 @@ SRCS += \
  
  .PATH:	${.CURDIR}/r0drv
  SRCS += \

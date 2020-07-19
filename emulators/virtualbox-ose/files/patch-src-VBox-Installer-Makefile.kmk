@@ -1,6 +1,6 @@
---- src/VBox/Installer/Makefile.kmk.orig	2009-10-05 14:31:40.000000000 +0200
-+++ src/VBox/Installer/Makefile.kmk	2009-10-05 14:32:09.000000000 +0200
-@@ -38,10 +38,12 @@
+--- src/VBox/Installer/Makefile.kmk.orig	2020-05-13 19:44:01 UTC
++++ src/VBox/Installer/Makefile.kmk
+@@ -41,9 +41,11 @@ ifndef VBOX_ONLY_SDK
   if "$(KBUILD_TARGET)" == "win" && "$(KBUILD_HOST)" == "win"
    include $(PATH_SUB_CURRENT)/win/Makefile.kmk
   endif
@@ -8,8 +8,7 @@
   if "$(KBUILD_TARGET)" == "freebsd" && "$(KBUILD_HOST)" == "freebsd"
    include $(PATH_SUB_CURRENT)/freebsd/Makefile.kmk
   endif
- endif
 +endif
+ endif
  
  include $(PATH_SUB_CURRENT)/common/Makefile.kmk
- 

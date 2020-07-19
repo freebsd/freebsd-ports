@@ -1,5 +1,5 @@
---- include/iprt/x86.h.orig	2014-02-25 11:59:50.000000000 -0500
-+++ include/iprt/x86.h	2014-03-11 16:46:08.000000000 -0400
+--- include/iprt/x86.h.orig	2020-05-13 19:36:52 UTC
++++ include/iprt/x86.h
 @@ -35,6 +35,16 @@
  # pragma D depends_on library vbox-types.d
  #endif

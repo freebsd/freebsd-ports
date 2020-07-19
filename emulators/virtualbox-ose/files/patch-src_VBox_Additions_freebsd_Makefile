@@ -1,6 +1,6 @@
---- src/VBox/Additions/freebsd/Makefile.orig	2017-04-28 16:59:22.000000000 +0200
-+++ src/VBox/Additions/freebsd/Makefile	2017-07-13 00:04:11.766870597 +0200
-@@ -31,6 +31,14 @@
+--- src/VBox/Additions/freebsd/Makefile.orig	2020-05-13 19:37:06 UTC
++++ src/VBox/Additions/freebsd/Makefile
+@@ -30,6 +30,14 @@ all:
  	        cp vboxvfs/vboxvfs.ko .; \
  	    fi; \
  	fi
@@ -15,7 +15,7 @@
  
  
  install:
-@@ -38,13 +46,19 @@
+@@ -37,13 +45,19 @@ install:
  	@if [ -d vboxvfs ]; then \
  	    $(MAKE) KBUILD_VERBOSE=$(KBUILD_VERBOSE) -C vboxvfs install; \
  	fi

@@ -1,7 +1,7 @@
---- src/VBox/Runtime/Makefile.kmk.orig	2014-07-15 13:25:15.000000000 -0400
-+++ src/VBox/Runtime/Makefile.kmk	2014-07-16 17:15:58.000000000 -0400
-@@ -146,6 +146,11 @@
- 	IPRT_BLDCFG_TYPE=\"$(KBUILD_TYPE)\"
+--- src/VBox/Runtime/Makefile.kmk.orig	2020-05-13 19:44:16 UTC
++++ src/VBox/Runtime/Makefile.kmk
+@@ -173,6 +173,11 @@ $(IPRT_OUT_DIR)/oiddb.h.ts +| $(IPRT_OUT_DIR)/oiddb.h:
+ 
  
  #
 +# Set the defines that utf8-posix.cpp needs. It's used by several targets.

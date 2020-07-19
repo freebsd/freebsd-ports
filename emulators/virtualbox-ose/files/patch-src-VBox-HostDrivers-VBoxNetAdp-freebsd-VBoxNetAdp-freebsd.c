@@ -1,6 +1,6 @@
---- src/VBox/HostDrivers/VBoxNetAdp/freebsd/VBoxNetAdp-freebsd.c.orig	2014-09-09 15:54:30.000000000 -0400
-+++ src/VBox/HostDrivers/VBoxNetAdp/freebsd/VBoxNetAdp-freebsd.c	2014-09-30 15:36:06.000000000 -0400
-@@ -234,7 +234,11 @@
+--- src/VBox/HostDrivers/VBoxNetAdp/freebsd/VBoxNetAdp-freebsd.c.orig	2020-05-13 19:43:54 UTC
++++ src/VBox/HostDrivers/VBoxNetAdp/freebsd/VBoxNetAdp-freebsd.c
+@@ -235,7 +235,11 @@ static void VBoxNetAdpFreeBSDNetstart(struct ifnet *if
      ifp->if_drv_flags |= IFF_DRV_OACTIVE;
      while (!IFQ_DRV_IS_EMPTY(&ifp->if_snd))
      {

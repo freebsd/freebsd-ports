@@ -1,6 +1,6 @@
---- src/VBox/Main/include/USBProxyBackend.h.orig	2017-01-17 07:27:19 UTC
+--- src/VBox/Main/include/USBProxyBackend.h.orig	2020-05-13 19:44:06 UTC
 +++ src/VBox/Main/include/USBProxyBackend.h
-@@ -359,13 +359,10 @@ public:
+@@ -365,13 +365,10 @@ class USBProxyBackendFreeBSD : public USBProxyBackend 
      virtual int releaseDevice(HostUSBDevice *aDevice);
  
  protected:

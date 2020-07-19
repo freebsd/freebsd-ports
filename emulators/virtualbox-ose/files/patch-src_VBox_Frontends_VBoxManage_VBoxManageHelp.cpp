@@ -1,6 +1,6 @@
---- src/VBox/Frontends/VBoxManage/VBoxManageHelp.cpp.orig	2016-08-16 19:59:52 UTC
+--- src/VBox/Frontends/VBoxManage/VBoxManageHelp.cpp.orig	2020-05-13 19:43:27 UTC
 +++ src/VBox/Frontends/VBoxManage/VBoxManageHelp.cpp
-@@ -797,7 +797,7 @@ void printUsage(USAGECATEGORY fCategory,
+@@ -622,7 +622,7 @@ void printUsage(USAGECATEGORY fCategory, uint32_t fSub
              RTStrmPrintf(pStrm, "|dsound");
  #endif
          }
@@ -9,10 +9,11 @@
          {
              RTStrmPrintf(pStrm, ""
  #ifdef VBOX_WITH_AUDIO_OSS
-@@ -811,22 +811,6 @@ void printUsage(USAGECATEGORY fCategory,
+@@ -635,22 +635,6 @@ void printUsage(USAGECATEGORY fCategory, uint32_t fSub
+                                 "|pulse"
  #endif
                          );
-         }
+-        }
 -        if (fFreeBSD)
 -        {
 -#ifdef VBOX_WITH_AUDIO_OSS
@@ -28,7 +29,6 @@
 -#ifdef VBOX_WITH_AUDIO_PULSE
 -            RTStrmPrintf(pStrm, "|pulse");
 -#endif
--        }
+         }
          if (fDarwin)
          {
-             RTStrmPrintf(pStrm, "|coreaudio");
