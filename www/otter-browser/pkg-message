@@ -9,8 +9,7 @@ Web=qtwebengine
 
 If you get wrong colors when watching videos while using the QtWebEngine
 backend, this is probably because your system does not support hardware
-acceleration (see bug 237277): you can disable it by starting the browser
-from command line with the --disable-gpu option.
+acceleration (see bug 237277).
 EOM
 }
 ]
