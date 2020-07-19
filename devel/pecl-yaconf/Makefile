@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	yaconf
-DISTVERSION=	1.0.8
+DISTVERSION=	1.1.0
 CATEGORIES=	devel
 
 MAINTAINER=	miwi@FreeBSD.org
