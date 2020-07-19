@@ -1,4 +1,5 @@
 man/man3/RTx::Calendar.3.gz
+%%RTHOME%%/plugins/RTx-Calendar/etc/tabs_privileged_callback.patch
 %%RTHOME%%/plugins/RTx-Calendar/html/Callbacks/RTx-Calendar/Elements/Tabs/Privileged
 %%RTHOME%%/plugins/RTx-Calendar/html/Elements/CalendarEvent
 %%RTHOME%%/plugins/RTx-Calendar/html/Elements/MyCalendar
