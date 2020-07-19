@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wdune
-PORTVERSION=	1.921
+PORTVERSION=	1.926
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.ourproject.org/pub/wdune/
 
@@ -12,12 +12,14 @@ COMMENT=	Graphical VRML97 editor and animation tool
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	cgal>0:math/cgal
-LIB_DEPENDS=	libpng.so:graphics/png \
-		libswresample.so:multimedia/ffmpeg \
+LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libexpat.so:textproc/expat2 \
-		libcurl.so:ftp/curl \
 		libfreetype.so:print/freetype2 \
-		libosdCPU.so:graphics/opensubdiv
+		libgmp.so:math/gmp \
+		libmpfr.so:math/mpfr \
+		libosdCPU.so:graphics/opensubdiv \
+		libpng.so:graphics/png \
+		libswresample.so:multimedia/ffmpeg
 
 USES=		gl jpeg motif sdl tar:bzip2 xorg
 USE_XORG=	x11 xft xi xmu xext xt

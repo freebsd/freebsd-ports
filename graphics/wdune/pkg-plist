@@ -92,6 +92,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/export_example_c++/opengl_scripting_example/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/export_example_c++/opengl_scripting_example/ScriptingExample.wrl
 %%PORTDOCS%%%%DOCSDIR%%/export_example_c++/opengl_scripting_example/main.cpp
+%%PORTDOCS%%%%DOCSDIR%%/export_example_c++/qt_opengl_example/.qmake.stash
 %%PORTDOCS%%%%DOCSDIR%%/export_example_c++/qt_opengl_example/Makefile
 %%PORTDOCS%%%%DOCSDIR%%/export_example_c++/qt_opengl_example/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/export_example_c++/qt_opengl_example/Untitled.wrl
