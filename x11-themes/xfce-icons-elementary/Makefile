@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	elementary
-PORTVERSION=	0.13.1
+PORTVERSION=	0.15.1
 DISTVERSIONPREFIX=v
 CATEGORIES=	x11-themes xfce
 PKGNAMEPREFIX=	xfce-icons-
 
-MAINTAINER=	matthias@petermann-it.de
+MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Elementary icons, extended and maintained for Xfce
 
 LICENSE=	GPLv2
@@ -25,5 +25,9 @@ GH_PROJECT=	elementary-xfce
 
 NO_ARCH=	yes
 INSTALLS_ICONS=	yes
+
+post-patch:
+	${REINPLACE_CMD} -e 's|\/$$(PREFIX)|$$(PREFIX)|g' \
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
