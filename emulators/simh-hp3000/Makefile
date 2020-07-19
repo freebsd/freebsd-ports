@@ -22,7 +22,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 RUN_DEPENDS=	${LOCALBASE}/share/doc/hpdoc/simh_doc.pdf:emulators/simh-hpdoc
 
-USES=		gmake dos2unix zip
+USES=		compiler gmake dos2unix zip
 
 NO_WRKSUBDIR=	yes
 
@@ -34,7 +34,7 @@ SUB_FILES=	hp3000.1
 .include <bsd.port.pre.mk>
 
 do-build:
-	(cd ${WRKSRC}; GCC=clang ${GMAKE} -C SCP hp3000)
+	(cd ${WRKSRC}; GCC=${CHOSEN_COMPILER_TYPE} ${GMAKE} -C SCP hp3000)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hp3000 ${STAGEDIR}${PREFIX}/bin
