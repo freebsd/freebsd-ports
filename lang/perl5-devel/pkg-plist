@@ -959,6 +959,8 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN1%%/perl5302delta.1.gz
 %%MAN1%%/perl5303delta.1.gz
 %%MAN1%%/perl5320delta.1.gz
+%%MAN1%%/perl5330delta.1.gz
+%%MAN1%%/perl5331delta.1.gz
 %%MAN1%%/perl561delta.1.gz
 %%MAN1%%/perl56delta.1.gz
 %%MAN1%%/perl581delta.1.gz
@@ -1746,6 +1748,8 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/pod/perl5302delta.pod
 %%PRIV_LIB%%/pod/perl5303delta.pod
 %%PRIV_LIB%%/pod/perl5320delta.pod
+%%PRIV_LIB%%/pod/perl5330delta.pod
+%%PRIV_LIB%%/pod/perl5331delta.pod
 %%PRIV_LIB%%/pod/perl561delta.pod
 %%PRIV_LIB%%/pod/perl56delta.pod
 %%PRIV_LIB%%/pod/perl581delta.pod
