@@ -17,7 +17,7 @@ LICENSE_FILE_GFDL=		${WRKSRC}/doc/COPYING
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libgmp.so:math/gmp
 
-USES=		shebangfix tar:tgz
+USES=		compiler:c++11-lang shebangfix tar:tgz
 
 SHEBANG_GLOB=	*.sh
 
