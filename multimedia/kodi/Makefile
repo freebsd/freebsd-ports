@@ -2,6 +2,7 @@
 
 PORTNAME=	kodi
 DISTVERSION=	18.7.1
+PORTREVISION=	1
 CATEGORIES=	multimedia java
 
 MAINTAINER=	ports@FreeBSD.org
