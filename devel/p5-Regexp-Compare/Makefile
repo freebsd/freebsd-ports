@@ -19,4 +19,10 @@ USE_PERL5=	configure
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Regexp/Compare/Compare.so
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} >= 503100
+BROKEN=                does not support 5.31+
+.endif
+
+.include <bsd.port.post.mk>
