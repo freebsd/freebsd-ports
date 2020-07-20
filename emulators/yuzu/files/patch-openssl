@@ -17,7 +17,7 @@ Revert https://github.com/yuzu-emu/yuzu/commit/2a3d4cad63f8
 @@ -152,6 +152,7 @@ macro(yuzu_find_packages)
          "Boost             1.71        boost/1.72.0"
          "Catch2            2.11        catch2/2.11.0"
-         "fmt               6.2         fmt/6.2.0"
+         "fmt               7.0         fmt/7.0.1"
 +        "OpenSSL           1.0         openssl/1.1.1f"
      # can't use until https://github.com/bincrafters/community/issues/1173
          #"libzip            1.5         libzip/1.5.2@bincrafters/stable"
