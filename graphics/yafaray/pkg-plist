@@ -1,16 +1,18 @@
 bin/yafaray-xml
 include/yafaray/cameras/angularCamera.h
 include/yafaray/cameras/architectCamera.h
+include/yafaray/cameras/equirectangularCamera.h
 include/yafaray/cameras/orthographicCamera.h
 include/yafaray/cameras/perspectiveCamera.h
-include/yafaray/cameras/equirectangularCamera.h
 include/yafaray/core_api/background.h
 include/yafaray/core_api/bound.h
 include/yafaray/core_api/camera.h
 include/yafaray/core_api/color.h
 include/yafaray/core_api/color_console.h
 include/yafaray/core_api/color_ramp.h
+include/yafaray/core_api/dynamic_library.h
 include/yafaray/core_api/environment.h
+include/yafaray/core_api/file.h
 include/yafaray/core_api/imagefilm.h
 include/yafaray/core_api/imagehandler.h
 include/yafaray/core_api/imagesplitter.h
@@ -26,7 +28,6 @@ include/yafaray/core_api/params.h
 include/yafaray/core_api/primitive.h
 include/yafaray/core_api/ray.h
 include/yafaray/core_api/renderpasses.h
-include/yafaray/core_api/sampling.h
 include/yafaray/core_api/scene.h
 include/yafaray/core_api/session.h
 include/yafaray/core_api/shader.h
@@ -36,7 +37,6 @@ include/yafaray/core_api/texture.h
 include/yafaray/core_api/tiledintegrator.h
 include/yafaray/core_api/vector3d.h
 include/yafaray/core_api/volume.h
-include/yafaray/core_api/yafsystem.h
 include/yafaray/gui/yafqtapi.h
 include/yafaray/integrators/bidirpath.h
 include/yafaray/integrators/directlight.h
@@ -129,7 +129,6 @@ include/yafaray/utilities/ColorConv.h
 include/yafaray/utilities/buffer.h
 include/yafaray/utilities/console_utils.h
 include/yafaray/utilities/curveUtils.h
-include/yafaray/utilities/fileUtils.h
 include/yafaray/utilities/geometry.h
 include/yafaray/utilities/iesUtils.h
 include/yafaray/utilities/image_buffers.h
@@ -144,18 +143,15 @@ include/yafaray/utilities/threadUtils.h
 include/yafaray/utilities/tiled_array.h
 include/yafaray/utilities/winunistd.h
 include/yafaray/utilities/y_alloc.h
-include/yafaray/yaf_version.h
 include/yafaray/yafray_config.h
 include/yafaray/yafray_constants.h
 include/yafaray/yafraycore/hashgrid.h
-include/yafaray/yafraycore/image.h
 include/yafaray/yafraycore/imageOutput.h
 include/yafaray/yafraycore/kdtree.h
 include/yafaray/yafraycore/memoryIO.h
 include/yafaray/yafraycore/meshtypes.h
 include/yafaray/yafraycore/monitor.h
 include/yafaray/yafraycore/nodematerial.h
-include/yafaray/yafraycore/octree.h
 include/yafaray/yafraycore/photon.h
 include/yafaray/yafraycore/pkdtree.h
 include/yafaray/yafraycore/ray_kdtree.h
@@ -164,7 +160,6 @@ include/yafaray/yafraycore/spectrum.h
 include/yafaray/yafraycore/std_primitives.h
 include/yafaray/yafraycore/timer.h
 include/yafaray/yafraycore/triangle.h
-include/yafaray/yafraycore/triangle_inline.h
 include/yafaray/yafraycore/xmlparser.h
 lib/libyafaray_v3_core.so
 lib/libyafaray_v3_plugin.so
@@ -215,9 +210,9 @@ lib/yafaray-plugins/libtextureback.so
 lib/yafaray-plugins/libtgaHandler.so
 lib/yafaray-plugins/libtifHandler.so
 lib/yafaray-plugins/libvolumetric.so
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
-%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS.md
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.md
+%%PORTDOCS%%%%DOCSDIR%%/README.md
 %%DATADIR%%/tests/test01/test01 - expected render result.png
 %%DATADIR%%/tests/test01/test01.xml
 %%DATADIR%%/tests/test01/test01_tex.exr
