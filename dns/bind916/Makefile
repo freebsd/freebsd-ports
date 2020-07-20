@@ -8,7 +8,7 @@ PORTVERSION=	${ISCVERSION:S/-P/P/:S/b/.b/:S/a/.a/:S/rc/.rc/}
 PORTREVISION=	0
 .else
 # dns/bind916 here
-PORTREVISION=	0
+PORTREVISION=	1
 .endif
 CATEGORIES=	dns net
 MASTER_SITES=	ISC/bind9/${ISCVERSION}
@@ -180,6 +180,7 @@ LARGE_FILE_CONFIGURE_ENABLE=	largefile
 
 LMDB_CONFIGURE_WITH=	lmdb=${LOCALBASE}
 LMDB_LIB_DEPENDS=	liblmdb.so:databases/lmdb
+LMDB_EXTRA_PATCHES=	${FILESDIR}/extrapatch-bind-lmdb-lock
 
 MANPAGES_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
 

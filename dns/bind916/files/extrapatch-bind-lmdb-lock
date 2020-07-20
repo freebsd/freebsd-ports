@@ -1,0 +1,236 @@
+--- bin/named/server.c.orig	2020-06-10 21:01:43 UTC
++++ bin/named/server.c
+@@ -7578,6 +7578,8 @@ count_newzones(dns_view_t *view, ns_cfgctx_t *nzcfg, i
+ 		      "for view '%s'",
+ 		      view->new_zone_db, view->name);
+ 
++	LOCK(&view->new_zone_lock);
++
+ 	CHECK(nzd_count(view, &n));
+ 
+ 	*num_zonesp = n;
+@@ -7592,6 +7594,8 @@ cleanup:
+ 		*num_zonesp = 0;
+ 	}
+ 
++	UNLOCK(&view->new_zone_lock);
++
+ 	return (ISC_R_SUCCESS);
+ }
+ 
+@@ -7920,6 +7924,8 @@ typedef isc_result_t (*newzone_cfg_cb_t)(const cfg_obj
+  * Immediately interrupt processing if an error is encountered while
+  * transforming NZD data into a zone configuration object or if "callback"
+  * returns an error.
++ *
++ * Caller must hold 'view->new_zone_lock'.
+  */
+ static isc_result_t
+ for_all_newzone_cfgs(newzone_cfg_cb_t callback, cfg_obj_t *config,
+@@ -8028,8 +8034,11 @@ configure_newzones(dns_view_t *view, cfg_obj_t *config
+ 		return (ISC_R_SUCCESS);
+ 	}
+ 
++	LOCK(&view->new_zone_lock);
++
+ 	result = nzd_open(view, MDB_RDONLY, &txn, &dbi);
+ 	if (result != ISC_R_SUCCESS) {
++		UNLOCK(&view->new_zone_lock);
+ 		return (ISC_R_SUCCESS);
+ 	}
+ 
+@@ -8055,6 +8064,9 @@ configure_newzones(dns_view_t *view, cfg_obj_t *config
+ 	}
+ 
+ 	(void)nzd_close(&txn, false);
++
++	UNLOCK(&view->new_zone_lock);
++
+ 	return (result);
+ }
+ 
+@@ -8075,6 +8087,8 @@ get_newzone_config(dns_view_t *view, const char *zonen
+ 
+ 	INSIST(zoneconfig != NULL && *zoneconfig == NULL);
+ 
++	LOCK(&view->new_zone_lock);
++
+ 	CHECK(nzd_open(view, MDB_RDONLY, &txn, &dbi));
+ 
+ 	isc_log_write(named_g_lctx, NAMED_LOGCATEGORY_GENERAL,
+@@ -8108,6 +8122,8 @@ get_newzone_config(dns_view_t *view, const char *zonen
+ cleanup:
+ 	(void)nzd_close(&txn, false);
+ 
++	UNLOCK(&view->new_zone_lock);
++
+ 	if (zoneconf != NULL) {
+ 		cfg_obj_destroy(named_g_addparser, &zoneconf);
+ 	}
+@@ -12566,8 +12582,6 @@ nzd_save(MDB_txn **txnp, MDB_dbi dbi, dns_zone_t *zone
+ 
+ 	nzd_setkey(&key, dns_zone_getorigin(zone), namebuf, sizeof(namebuf));
+ 
+-	LOCK(&view->new_zone_lock);
+-
+ 	if (zconfig == NULL) {
+ 		/* We're deleting the zone from the database */
+ 		status = mdb_del(*txnp, dbi, &key, NULL);
+@@ -12647,8 +12661,6 @@ cleanup:
+ 	}
+ 	*txnp = NULL;
+ 
+-	UNLOCK(&view->new_zone_lock);
+-
+ 	if (text != NULL) {
+ 		isc_buffer_free(&text);
+ 	}
+@@ -12656,6 +12668,11 @@ cleanup:
+ 	return (result);
+ }
+ 
++/*
++ * Check whether the new zone database for 'view' can be opened for writing.
++ *
++ * Caller must hold 'view->new_zone_lock'.
++ */
+ static isc_result_t
+ nzd_writable(dns_view_t *view) {
+ 	isc_result_t result = ISC_R_SUCCESS;
+@@ -12685,6 +12702,11 @@ nzd_writable(dns_view_t *view) {
+ 	return (result);
+ }
+ 
++/*
++ * Open the new zone database for 'view' and start a transaction for it.
++ *
++ * Caller must hold 'view->new_zone_lock'.
++ */
+ static isc_result_t
+ nzd_open(dns_view_t *view, unsigned int flags, MDB_txn **txnp, MDB_dbi *dbi) {
+ 	int status;
+@@ -12812,6 +12834,13 @@ cleanup:
+ 	return (result);
+ }
+ 
++/*
++ * If 'commit' is true, commit the new zone database transaction pointed to by
++ * 'txnp'; otherwise, abort that transaction.
++ *
++ * Caller must hold 'view->new_zone_lock' for the view that the transaction
++ * pointed to by 'txnp' was started for.
++ */
+ static isc_result_t
+ nzd_close(MDB_txn **txnp, bool commit) {
+ 	isc_result_t result = ISC_R_SUCCESS;
+@@ -12834,6 +12863,12 @@ nzd_close(MDB_txn **txnp, bool commit) {
+ 	return (result);
+ }
+ 
++/*
++ * Count the zones configured in the new zone database for 'view' and store the
++ * result in 'countp'.
++ *
++ * Caller must hold 'view->new_zone_lock'.
++ */
+ static isc_result_t
+ nzd_count(dns_view_t *view, int *countp) {
+ 	isc_result_t result;
+@@ -12881,6 +12916,8 @@ migrate_nzf(dns_view_t *view) {
+ 	MDB_val key, data;
+ 	ns_dzarg_t dzarg;
+ 
++	LOCK(&view->new_zone_lock);
++
+ 	/*
+ 	 * If NZF file doesn't exist, or NZD DB exists and already
+ 	 * has data, return without attempting migration.
+@@ -13016,6 +13053,8 @@ cleanup:
+ 		result = nzd_close(&txn, commit);
+ 	}
+ 
++	UNLOCK(&view->new_zone_lock);
++
+ 	if (text != NULL) {
+ 		isc_buffer_free(&text);
+ 	}
+@@ -13225,6 +13264,7 @@ do_addzone(named_server_t *server, ns_cfgctx_t *cfg, d
+ 	MDB_dbi dbi;
+ 
+ 	UNUSED(zoneconf);
++	LOCK(&view->new_zone_lock);
+ #endif /* HAVE_LMDB */
+ 
+ 	/* Zone shouldn't already exist */
+@@ -13378,6 +13418,7 @@ cleanup:
+ 	if (txn != NULL) {
+ 		(void)nzd_close(&txn, false);
+ 	}
++	UNLOCK(&view->new_zone_lock);
+ #endif /* HAVE_LMDB */
+ 
+ 	if (zone != NULL) {
+@@ -13401,6 +13442,7 @@ do_modzone(named_server_t *server, ns_cfgctx_t *cfg, d
+ #else  /* HAVE_LMDB */
+ 	MDB_txn *txn = NULL;
+ 	MDB_dbi dbi;
++	LOCK(&view->new_zone_lock);
+ #endif /* HAVE_LMDB */
+ 
+ 	/* Zone must already exist */
+@@ -13598,6 +13640,7 @@ cleanup:
+ 	if (txn != NULL) {
+ 		(void)nzd_close(&txn, false);
+ 	}
++	UNLOCK(&view->new_zone_lock);
+ #endif /* HAVE_LMDB */
+ 
+ 	if (zone != NULL) {
+@@ -13761,6 +13804,7 @@ rmzone(isc_task_t *task, isc_event_t *event) {
+ 	if (added && cfg != NULL) {
+ #ifdef HAVE_LMDB
+ 		/* Make sure we can open the NZD database */
++		LOCK(&view->new_zone_lock);
+ 		result = nzd_open(view, 0, &txn, &dbi);
+ 		if (result != ISC_R_SUCCESS) {
+ 			isc_log_write(named_g_lctx, NAMED_LOGCATEGORY_GENERAL,
+@@ -13778,6 +13822,11 @@ rmzone(isc_task_t *task, isc_event_t *event) {
+ 				      "delete zone configuration: %s",
+ 				      isc_result_totext(result));
+ 		}
++
++		if (txn != NULL) {
++			(void)nzd_close(&txn, false);
++		}
++		UNLOCK(&view->new_zone_lock);
+ #else  /* ifdef HAVE_LMDB */
+ 		result = delete_zoneconf(view, cfg->add_parser, cfg->nzf_config,
+ 					 dns_zone_getorigin(zone),
+@@ -13867,11 +13916,6 @@ rmzone(isc_task_t *task, isc_event_t *event) {
+ 		}
+ 	}
+ 
+-#ifdef HAVE_LMDB
+-	if (txn != NULL) {
+-		(void)nzd_close(&txn, false);
+-	}
+-#endif /* ifdef HAVE_LMDB */
+ 	if (raw != NULL) {
+ 		dns_zone_detach(&raw);
+ 	}
+--- lib/dns/include/dns/lmdb.h.orig	2020-06-10 21:01:43 UTC
++++ lib/dns/include/dns/lmdb.h
+@@ -10,12 +10,7 @@
+  */
+ 
+ #include <lmdb.h>
+-/*
+- * MDB_NOTLS is used to prevent problems after configuration is reloaded, due
+- * to the way LMDB's use of thread-local storage (TLS) interacts with the BIND9
+- * thread model.
+- */
+-#define DNS_LMDB_COMMON_FLAGS (MDB_CREATE | MDB_NOSUBDIR | MDB_NOTLS)
++#define DNS_LMDB_COMMON_FLAGS (MDB_CREATE | MDB_NOSUBDIR | MDB_NOLOCK)
+ #ifndef __OpenBSD__
+ #define DNS_LMDB_FLAGS (DNS_LMDB_COMMON_FLAGS)
+ #else /* __OpenBSD__ */
