@@ -1,6 +1,6 @@
---- configure.orig	2020-04-26 09:45:49 UTC
+--- configure.orig	2020-07-13 14:02:44 UTC
 +++ configure
-@@ -9087,71 +9087,10 @@ test -n "$PKG_CONFIG" || PKG_CONFIG="no"
+@@ -9035,71 +9035,10 @@ test -n "$PKG_CONFIG" || PKG_CONFIG="no"
      if test $? -eq 0; then
          if test -n "0.9.0" -o -n ""; then
  
@@ -75,25 +75,3 @@
      eval "REQUIRED"=\"`eval echo \"'$'REQUIRED\" \""$r >= 0.9.0 (installed: $ver)"\"`\"
  
      fi
-@@ -11579,21 +11518,7 @@ $as_echo "$ver" >&6; }
-     eval "$TEXI2HTML_REQUIRED"=\"`eval echo \"'$'$TEXI2HTML_REQUIRED\" \""$r >= 1.82 (installed: $ver)"\"`\"
- 
-     fi
--    if test -n "1.82"; then
--        max=`
--    echo "1.82" | awk -F. '
--    {
--      if ($3) {three = $3}
--      else {three = 0}
--    }
--    {printf "%.0f\n", $1*1000000 + $2*1000 + three}'
--`
--        if test "$num" -gt "$max"; then
- 
--    eval "$TEXI2HTML_REQUIRED"=\"`eval echo \"'$'$TEXI2HTML_REQUIRED\" \""$r <= 1.82 (installed: $ver)"\"`\"
--
--        fi
--    fi
-     vervar="`echo TEXI2HTML | tr 'a-z' 'A-Z'`_VERSION"
-     eval `echo $vervar=$num`
- ##    AC_SUBST(`eval echo $vervar`)
