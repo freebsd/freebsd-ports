@@ -28,6 +28,7 @@
 
 name="kfcgi"
 rcvar="kfcgi_enable"
+extra_commands="reload"
 
 load_rc_config $name
 
@@ -68,6 +69,6 @@ fi
 # This ensures they are actually passed to kfcgi instead.
 actual_kfcgi_flags="${kfcgi_flags}"
 kfcgi_flags=""
-command_args="-f -p ${pidfile} -- ${procname} -d ${actual_kfcgi_flags} -- ${kfcgi_prog}"
+command_args="-T ${name} -p ${pidfile} -- ${procname} -d ${actual_kfcgi_flags} -- ${kfcgi_prog}"
 
 run_rc_command "$1"
