@@ -115,18 +115,54 @@
          }
  
          switch(sc->re_type) {
-@@ -8640,7 +8644,9 @@ struct re_softc		*sc;
+@@ -8614,6 +8618,22 @@ struct re_softc		*sc;
+         return;
+ }
+ 
++#if OS_VER >= VERSION(13,0)
++static u_int
++re_hash_maddr(void *arg, struct sockaddr_dl *sdl, u_int cnt)
++{
++	uint32_t h, *hashes = arg;
++
++	h = ether_crc32_be(LLADDR(sdl), ETHER_ADDR_LEN) >> 26;
++	if (h < 32)
++		hashes[0] |= (1 << h);
++	else
++		hashes[1] |= (1 << (h - 32));
++
++	return (1);
++}
++#endif
++
+ /*
+  * Program the 64-bit multicast hash filter.
+  */
+@@ -8623,7 +8643,9 @@ struct re_softc		*sc;
+         struct ifnet		*ifp;
+         int			h = 0;
+         u_int32_t		hashes[2] = { 0, 0 };
++#if OS_VER <= VERSION(13,0)
+         struct ifmultiaddr	*ifma;
++#endif
+         u_int32_t		rxfilt;
+         int			mcnt = 0;
+ 
+@@ -8640,7 +8662,12 @@ struct re_softc		*sc;
          }
  
          /* now program new ones */
 -#if OS_VER > VERSION(6,0)
++#if OS_VER >= VERSION(13,0)
++	if_foreach_llmaddr(ifp, re_hash_maddr, hashes);
++#else
 +#if OS_VER >= VERSION(12,0)
 +	if_maddr_rlock(ifp);
 +#elif OS_VER > VERSION(6,0)
          IF_ADDR_LOCK(ifp);
  #endif
  #if OS_VER < VERSION(4,9)
-@@ -8662,7 +8668,9 @@ struct re_softc		*sc;
+@@ -8662,8 +8689,11 @@ struct re_softc		*sc;
                          hashes[1] |= (1 << (h - 32));
                  mcnt++;
          }
@@ -135,5 +171,7 @@
 +	if_maddr_runlock(ifp);
 +#elif OS_VER > VERSION(6,0)
          IF_ADDR_UNLOCK(ifp);
++#endif
  #endif
  
+         if (mcnt) {
