@@ -1,4 +1,4 @@
-TIMESTAMP = 1594158661
+TIMESTAMP = 1594756485
 SHA256 (rust/crates/aho-corasick-0.7.10.tar.gz) = 8716408b8bc624ed7f65d223ddb9ac2d044c0547b6fa4b0d554f3a9540496ada
 SIZE (rust/crates/aho-corasick-0.7.10.tar.gz) = 111039
 SHA256 (rust/crates/ansi_term-0.11.0.tar.gz) = ee49baf6cb617b853aa8d93bf420db2383fab46d314482ca2803b40d5fde979b
@@ -307,5 +307,5 @@ SHA256 (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = 712e227841d057c
 SIZE (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = 2947998
 SHA256 (rust/crates/ws2_32-sys-0.2.1.tar.gz) = d59cefebd0c892fa2dd6de581e937301d8552cb44489cdff035c6187cb63fa5e
 SIZE (rust/crates/ws2_32-sys-0.2.1.tar.gz) = 4697
-SHA256 (canop-broot-v0.18.5_GH0.tar.gz) = ec63f8223dcf7039cc9921ee9cc4a5b3196abb8df2b25a9c3dad3307db662770
-SIZE (canop-broot-v0.18.5_GH0.tar.gz) = 4449032
+SHA256 (canop-broot-v0.18.6_GH0.tar.gz) = b0ad7f172885639dc55cd1c94c606b1ac7439e3ccb5233cfa9e2ed04f3a3bbf1
+SIZE (canop-broot-v0.18.6_GH0.tar.gz) = 4550972
