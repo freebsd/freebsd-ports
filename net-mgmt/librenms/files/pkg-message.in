@@ -13,33 +13,12 @@ it from /usr/local/etc/mysql/my.cnf
 
 HEADS UP
 
-Polling via cron job is now deprecated. Please use the Dispatcher.
+Polling via cron job has been removed.. Please use the Dispatcher.
 
-LibreNMS will be dropping support for PHP 7.1 and Python 2 in the next release
-expected May 31 2020.  see https://community.librenms.org/t/dropping-support-for-php-7-1-and-python-2/11851
+LibreNMS will be dropped support for PHP 7.1 and Python 2
+see https://community.librenms.org/t/dropping-support-for-php-7-1-and-python-2/11851
 
-Your existing crontab entries for the PYPOLLER option will be going away.
-
-You can migrate to the PYSERVICE option of LibreNMS now
-(also known as the Dispatcher Service).
-
-The next release will not include the the PYPOLLER option.
-
-PYROLLER (deprecated) configuration (default):
-
-The following lines should be added to /etc/crontab:
-
-PATH=/etc:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
-33	*/6	*	*	*	www	cd %%WWWDIR%% && %%PHP%% discovery.php -h all >> /dev/null 2>&1
-*/5	*	*	*	*	www	cd %%WWWDIR%% && %%PHP%% discovery.php -h new >> /dev/null 2>&1
-*/5	*	*	*	*	www	cd %%WWWDIR%% && %%PYTHON%% poller-wrapper.py 16 >> /dev/null 2>&1
-15	0	*	*	*	www	%%LOCALBASE%%/bin/bash %%WWWDIR%%/daily.sh >> /dev/null 2>&1
-*	*	*	*	*	www	%%PHP%% %%WWWDIR%%/alerts.php >> /dev/null 2>&1
-*/5 	*	*	*	*	www	%%PHP%% %%WWWDIR%%/poll-billing.php >> /dev/null 2>&1
-01	*	*	*	*	www	%%PHP%% %%WWWDIR%%/billing-calculate.php >> /dev/null 2>&1
-*/5	*	*	*	*	www	%%PHP%% %%WWWDIR%%/check-services.php >> /dev/null 2>&1
-
-PYSERVICE configuration (non-default):
+Your existing crontab entries are no longer useful and should be deleted.
 
 Enable the poller service with this command:
 
@@ -65,8 +44,6 @@ these steps will help you get started:
 
 When setting up a new install, you need a %%WWWDIR%%/.env file.
 
-You need an APP_KEY.
-
 To create:
 
 cd %%WWWDIR%%
@@ -74,28 +51,27 @@ cp -i .env.example .env
 
 That file will eventually contain secrets.  Make sure it is not world-readable.
 
-When migrating to PYSERVICE (also known as the Dispatcher Service):
-
-It is also a good idea to:
-cd %%WWWDIR%%
-./validate
-
 Database connection details are required in that file.
 
 Then run:
 
-php artisan key:generate
+sudo php artisan key:generate
+
+It should write directly to your .env file
 
 The output should look something like this:
 
-**************************************
-*     Application In Production!     *
-**************************************
+$ sudo php artisan key:generate
+Application key set successfully.
 
- Do you really wish to run this command? (yes/no) [no]:
- > y
+When migrating to PYSERVICE (also known as the Dispatcher Service):
 
-Application key [base64:P62La9V........qw=] set successfully.
+It is also a good idea to:
+cd %%WWWDIR%%
+sudo ./validate.php
+
+You need an APP_KEY.
+
 
 After that, follow the LibreNMS documentation for configuration.
 
@@ -108,21 +84,21 @@ Depending on the version, you may have to run the upgrade script.
 cd %%WWWDIR%%
 ./build-base.php
 
+Or the database upgrade script:
+
+./lnms migrate
+
 re: https://docs.librenms.org/#General/Updating/
 
-HEADS UP HEADS UP HEADS UP HEADS UP HEADS UP HEADS UP HEADS UP HEADS UP 
+HEADS UP HEADS UP HEADS UP HEADS UP HEADS UP HEADS UP HEADS UP HEADS UP
+HEADS UP HEADS UP HEADS UP HEADS UP HEADS UP HEADS UP HEADS UP HEADS UP
 
-Polling via cron job is now deprecated. Please use the Dispatcher.
+Polling via cron job is now gone. Please use the Dispatcher.
 
-LibreNMS will be dropping support for PHP 7.1 and Python 2 in the next release
-expected May 31 2020.  see https://community.librenms.org/t/dropping-support-for-php-7-1-and-python-2/11851
+LibreNMS will be droppped support for PHP 7.1 and Python 2.
+see https://community.librenms.org/t/dropping-support-for-php-7-1-and-python-2/11851
 
-Your existing crontab entries for the PYPOLLER option will be going away.
-
-You can migrate to the PYSERVICE option of LibreNMS now
-(also known as the Dispatcher Service).
-
-The next release will not include the PYPOLLER option.
+Your existing crontab entries can be deleted.
 
 For more information, see pkg info --pkg-message librenms
 

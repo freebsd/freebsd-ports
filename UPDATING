@@ -6,6 +6,37 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 
+20200720:
+  AFFECTS: users of net-mgmt/librenms
+  AUTHOR:  dvl@FreeBSD.org
+
+  As mentioned previously in 20200503 polling via cronjob has been removed as of
+  release 1.63 - see
+  https://community.librenms.org/t/dropping-support-for-php-7-1-and-python-2/11851
+
+  A database upgrade is required:
+
+     cd /usr/local/www/librenms
+     sudo ./lnms migrate
+
+  You must  migrate to the Dispatch Service:
+  https://docs.librenms.org/Extensions/Dispatcher-Service/
+
+  You may need to add LIBRENMS_USER to .env (see .env.example).
+
+  These steps should get you running:
+  * comment out the crontab entries listed above under PYPOLLER
+  * populate %%WWWDIR%%/.env with:
+    * APP_KEY - see farther below for how to create
+    * NODE_ID - see just below for how to create
+    * DB_HOST
+    * DB_DATABASE
+    * DB_USERNAME
+    * DB_PASSWORD
+  * you can create a NODE_ID with: php -r 'echo uniqid() . "\n";'
+  * sysrc librenms_enable="YES"
+  * service librenms start
+
 20200719:
   AFFECTS: users of emulators/qemu
   AUTHOR: bofh@FreeBSD.org
@@ -190,7 +221,7 @@ you update your ports collection, before attempting any port upgrades.
   AUTHOR:  dvl@FreeBSD.org
 
   Polling via cronjob is deprecated as of release 1.63
-  see see https://community.librenms.org/t/dropping-support-for-php-7-1-and-python-2/11851
+  Please see https://community.librenms.org/t/dropping-support-for-php-7-1-and-python-2/11851
 
   Please migrate to the Dispatch Service:
   https://docs.librenms.org/Extensions/Dispatcher-Service/

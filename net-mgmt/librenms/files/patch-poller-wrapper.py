@@ -1,11 +1,11 @@
---- poller-wrapper.py.orig	2018-08-29 23:25:16 UTC
+--- poller-wrapper.py.orig	2020-07-20 20:50:23 UTC
 +++ poller-wrapper.py
-@@ -37,6 +37,8 @@ except:
-     print "threading, Queue, sys, subprocess, time, os, json"
-     sys.exit(2)
+@@ -27,6 +27,8 @@
+ 
+ import LibreNMS.library as LNMS
  
 +os.environ['PATH'] += ':/usr/local/sbin:/usr/local/bin'
 +
  try:
-     import MySQLdb
- except:
+ 
+     import json

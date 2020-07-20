@@ -1,17 +1,11 @@
---- config.php.default.orig	2020-04-28 03:52:42 UTC
+--- config.php.default.orig	2020-07-10 19:56:16 UTC
 +++ config.php.default
-@@ -2,15 +2,20 @@
+@@ -2,9 +2,14 @@
  
  ## Have a look in misc/config_definitions.json for examples of settings you can set here. DO NOT EDIT misc/config_definitions.json!
  
 +$config['installed_from_package'] = true;
 +
- ### Database config
- $config['db_host'] = 'localhost';
- $config['db_user'] = 'USERNAME';
- $config['db_pass'] = 'PASSWORD';
- $config['db_name'] = 'librenms';
- 
 +$config['log_dir']     = '/var/log/librenms';
 +$config['rrd_dir']     = '/var/db/librenms/rrd';
 +
@@ -22,7 +16,7 @@
  
  ### This should *only* be set if you want to *force* a particular hostname/port
  ### It will prevent the web interface being usable form any other hostname
-@@ -49,3 +54,22 @@ $config['enable_billing'] = 1;
+@@ -43,3 +48,22 @@ $config['enable_billing'] = 1;
  
  # Enable the in-built services support (Nagios plugins)
  $config['show_services'] = 1;
