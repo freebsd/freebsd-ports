@@ -49,7 +49,9 @@ include/casadi/core/runtime/casadi_axpy.hpp
 include/casadi/core/runtime/casadi_bfgs.hpp
 include/casadi/core/runtime/casadi_bilin.hpp
 include/casadi/core/runtime/casadi_bound_consistency.hpp
+include/casadi/core/runtime/casadi_cache.hpp
 include/casadi/core/runtime/casadi_clear.hpp
+include/casadi/core/runtime/casadi_convexify.hpp
 include/casadi/core/runtime/casadi_copy.hpp
 include/casadi/core/runtime/casadi_cvx.hpp
 include/casadi/core/runtime/casadi_de_boor.hpp
