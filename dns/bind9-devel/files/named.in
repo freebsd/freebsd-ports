@@ -385,7 +385,7 @@ named_prestart()
 
 	local checkconf
 
-	checkconf="${_named_program_root}/sbin/named-checkconf"
+	checkconf="${_named_program_root}/bin/named-checkconf"
 	if ! checkyesno named_chroot_autoupdate && [ -n "${named_chrootdir}" ]; then
 		checkconf="${checkconf} -t ${named_chrootdir}"
 	fi
