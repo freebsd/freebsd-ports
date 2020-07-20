@@ -5,10 +5,11 @@ PORTNAME=	daa2iso
 PORTVERSION=	0.1.7e
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://aluigi.altervista.org/mytoolz/
+MASTER_SITES=	http://aluigi.altervista.org/mytoolz/ \
+		http://aluigi.zenhax.com/mytoolz/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	marcel@herrbischoff.com
 COMMENT=	Convert PowerISO DAA files to ISO9660
 
 LICENSE=	GPLv2
