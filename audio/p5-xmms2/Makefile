@@ -11,6 +11,7 @@ COMMENT=	Perl Bindings for XMMS2
 DEPRECATED=	Uses deprecated version of python
 EXPIRATION_DATE=	2020-09-15
 
+BUILD_DEPENDS+=  ${P5_POD_PARSER}
 LIB_DEPENDS+=	libxmmsclient.so:audio/xmms2
 
 MASTERDIR=	${.CURDIR}/../xmms2

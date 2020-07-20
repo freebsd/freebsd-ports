@@ -14,7 +14,8 @@ COMMENT=	Displays plain old documentation
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS} \
+		${P5_POD_PARSER}
 RUN_DEPENDS=	p5-Gtk2>=0:x11-toolkits/p5-Gtk2 \
 		p5-IO-Stringy>=0:devel/p5-IO-Stringy \
 		p5-Locale-gettext>=0:devel/p5-Locale-gettext \
@@ -24,10 +25,4 @@ RUN_DEPENDS=	p5-Gtk2>=0:x11-toolkits/p5-Gtk2 \
 USES=		perl5
 USE_PERL5=	configure
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} >= 503100
-BUILD_DEPENDS+=	p5-Pod-Parser>=0:textproc/p5-Pod-Parser
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
