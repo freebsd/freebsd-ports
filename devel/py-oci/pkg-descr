@@ -1,8 +1,8 @@
 The Python SDK enables one to write code to manage Oracle Cloud Infrastructure
 resources. Following services are supported:
 
-* Analytics, Announcements, Application Migration, API Gateway, Audit, Budgets
-* Big Data
+* Analytics, Announcements, Application Migration, API Gateway, Audit
+* Big Data, Blockchain, Budgets
 * Container Engine for Kubernetes
 * Compute Autoscaling/Work Requests
 * Content and Experience
