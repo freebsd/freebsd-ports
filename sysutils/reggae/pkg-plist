@@ -51,6 +51,10 @@ man/man1/reggae.1.gz
 %%DATADIR%%/mk/bhyve-service.mk
 %%DATADIR%%/mk/chef.mk
 %%DATADIR%%/mk/common.mk
+%%DATADIR%%/mk/frameworks/freenit.project.mk
+%%DATADIR%%/mk/frameworks/freenit.service.mk
+%%DATADIR%%/mk/freenit.project.mk
+%%DATADIR%%/mk/freenit.service.mk
 %%DATADIR%%/mk/jail-service.mk
 %%DATADIR%%/mk/project.mk
 %%DATADIR%%/mk/puppet.mk
@@ -101,6 +105,7 @@ man/man1/reggae.1.gz
 %%DATADIR%%/templates/cloud-init/user-data
 %%DATADIR%%/templates/cloud-initial.sh
 %%DATADIR%%/templates/devfs.rules
+%%DATADIR%%/templates/dhcpcd.conf
 %%DATADIR%%/templates/dhcpd-hook.sh
 %%DATADIR%%/templates/dhcpd.conf
 %%DATADIR%%/templates/export-ports.sh
