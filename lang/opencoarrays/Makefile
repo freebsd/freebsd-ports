@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	opencoarrays
-DISTVERSION=	2.7.1
-PORTREVISION=	3
+DISTVERSION=	2.9.0
 CATEGORIES=	lang parallel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miguel@gocobachi.dev
 COMMENT=	Transport layer for coarray Fortran compilers
 
 LICENSE=	BSD3CLAUSE
