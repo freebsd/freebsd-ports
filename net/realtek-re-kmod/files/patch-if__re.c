@@ -142,7 +142,7 @@
          struct ifnet		*ifp;
          int			h = 0;
          u_int32_t		hashes[2] = { 0, 0 };
-+#if OS_VER <= VERSION(13,0)
++#if OS_VER < VERSION(13,0)
          struct ifmultiaddr	*ifma;
 +#endif
          u_int32_t		rxfilt;
