@@ -24,6 +24,7 @@ lib/muse-3.1/modules/libmuse_lv2host_module.so
 lib/muse-3.1/modules/libmuse_marker.so
 lib/muse-3.1/modules/libmuse_master.so
 lib/muse-3.1/modules/libmuse_memory_module.so
+lib/muse-3.1/modules/libmuse_midi_controller_module.so
 lib/muse-3.1/modules/libmuse_midiedit.so
 lib/muse-3.1/modules/libmuse_midnam_module.so
 lib/muse-3.1/modules/libmuse_mixer.so
@@ -34,6 +35,7 @@ lib/muse-3.1/modules/libmuse_plugin_cache_writer_module.so
 lib/muse-3.1/modules/libmuse_plugin_list_module.so
 lib/muse-3.1/modules/libmuse_plugin_rdf_module.so
 lib/muse-3.1/modules/libmuse_plugin_scan_module.so
+lib/muse-3.1/modules/libmuse_remote.so
 lib/muse-3.1/modules/libmuse_simpler_plugin.so
 lib/muse-3.1/modules/libmuse_simpler_plugingui.so
 lib/muse-3.1/modules/libmuse_string.so
@@ -153,6 +155,7 @@ share/mime/packages/muse.xml
 %%DATADIR%%/pybridge/museplauncher.py
 %%DATADIR%%/pybridge/musepstopserver.py
 %%DATADIR%%/pybridge/robert.py
+%%DATADIR%%/rdf/README
 %%DATADIR%%/rdf/blop.rdf
 %%DATADIR%%/rdf/swh-plugins.rdf
 %%DATADIR%%/rdf/swh-scales.rdf
@@ -191,12 +194,13 @@ share/mime/packages/muse.xml
 %%DATADIR%%/scoreglyphs/whole.png
 %%DATADIR%%/scripts/ConstantLength
 %%DATADIR%%/scripts/DoNothing
-%%DATADIR%%/scripts/DoubleSpeed
 %%DATADIR%%/scripts/RandomPosition1
 %%DATADIR%%/scripts/RandomizeVelocityRelative
 %%DATADIR%%/scripts/RemoveAftertouch
 %%DATADIR%%/scripts/RemoveShortEvents
 %%DATADIR%%/scripts/Rhythm1
+%%DATADIR%%/scripts/SpeedDouble
+%%DATADIR%%/scripts/SpeedHalf
 %%DATADIR%%/scripts/SwingQuantize1
 %%DATADIR%%/scripts/TempoDelay
 %%DATADIR%%/splash.png
@@ -207,11 +211,14 @@ share/mime/packages/muse.xml
 %%DATADIR%%/templates/midiGM.med
 %%DATADIR%%/templates/monorecord.med
 %%DATADIR%%/templates/synti.med
-%%DATADIR%%/themes/Ardour.cfg
+%%DATADIR%%/themes/Ardour.cfc
 %%DATADIR%%/themes/Ardour.qss
-%%DATADIR%%/themes/Dark Theme.cfg
+%%DATADIR%%/themes/Dark Flat.cfc
+%%DATADIR%%/themes/Dark Flat.qss
+%%DATADIR%%/themes/Dark Theme.cfc
 %%DATADIR%%/themes/Dark Theme.qss
-%%DATADIR%%/themes/Light Theme.cfg
+%%DATADIR%%/themes/Light Theme.cfc
+%%DATADIR%%/themes/Light Theme.qss
 %%DATADIR%%/themes/default.cfc
 %%DATADIR%%/themes/pastel_colors.cfc
 %%DATADIR%%/utils/muse-find-unused-wavs
