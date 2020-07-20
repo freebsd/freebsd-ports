@@ -1,8 +1,8 @@
---- configure.orig	2019-02-01 23:11:02 UTC
+--- configure.orig	2019-09-05 05:24:10 UTC
 +++ configure
 @@ -1,4 +1,4 @@
 -##!/bin/bash
-+##!/bin/sh
++#!/bin/sh
  
  
  if [ "$1" = "-h" -o "$1" = "--help" -o "$1" = "-help" ]; then
@@ -15,15 +15,6 @@
      exit
  fi
  
-@@ -129,7 +129,7 @@ if [ -z $GTK ]; then
-   echo "According to pkg-config, GTK 2.0 or 3.0 WAS NOT FOUND."
-   echo "please install rpm/package libgtk+2.0_0-devel or libgtk+3.0_0-devel"
-   rm -f config.mak
--  exits
-+  exit
- fi
- 
- echo "$GTK will be used."
 @@ -232,7 +232,7 @@ fi
  
  
@@ -50,7 +41,7 @@
 +  for i in $prefix/share/qt/bin/moc /usr/lib/qt/bin/moc /usr/lib64/qt/bin/moc /usr/lib/qt3/bin/moc $prefix/share/qt3/bin/moc /usr/lib64/qt3/bin/moc
    do
 -    [ ! -x $i ] && continue
-+    [ ! -x $i ]  continue
++    [ ! -x $i ] continue
      QT_MOC=$i
      echo "QT_MOC=$QT_MOC"
      break;
@@ -62,7 +53,7 @@
 +  for i in %%MOC%% $prefix/share/qt4/bin/moc /usr/lib/qt4/bin/moc /usr/lib64/qt4/bin/moc /usr/bin/moc
    do
 -    [ ! -x $i ] && continue
-+    [ ! -x $i ]  continue
++    [ ! -x $i ] continue
      QT4_MOC=$i
      echo "QT4_MOC=$QT4_MOC"
      break
@@ -71,10 +62,10 @@
    fi
    cd ..
 -  for i in /usr/share/qt5/bin/moc /usr/lib/qt5/bin/moc /usr/lib/x86_64-linux-gnu/qt5/bin/moc /usr/lib/i386-linux-gnu/qt5/bin/moc /usr/lib64/qt5/bin/moc /usr/bin/moc
-+  for i in $prefix/share/qt5/bin/moc /usr/lib/qt5/bin/moc /usr/lib/x86_64-linux-gnu/qt5/bin/moc /usr/lib/i386-linux-gnu/qt5/bin/moc /usr/lib64/qt5/bin/moc /usr/bin/moc
++  for i in $prefix/share/qt6/bin/moc /usr/lib/qt5/bin/moc /usr/lib/x86_64-linux-gnu/qt5/bin/moc /usr/lib/i386-linux-gnu/qt5/bin/moc /usr/lib64/qt5/bin/moc /usr/bin/moc
    do
 -    [ ! -x $i ] && continue
-+    [ ! -x $i ]  continue
++    [ ! -x $i ] continue
      QT5_MOC=$i
      echo "QT5_MOC=$QT5_MOC"
      break
@@ -115,13 +106,13 @@
 -[ $QT4_IM = 'Y' ] && echo "QT4_MOC=$QT4_MOC" >> config.mak
 -[ $QT_IM = 'Y' ] && echo "QT_MOC=$QT_MOC" >> config.mak
 +if [ $QT5_IM = 'Y' ]; then
-+ echo "QT5_MOC=$QT5_MOC" >> config.mak
++  echo "QT5_MOC=$QT5_MOC" >> config.mak
 +fi
 +if [ $QT4_IM = 'Y' ]; then
-+ echo "QT4_MOC=$QT4_MOC" >> config.mak
++  echo "QT4_MOC=$QT4_MOC" >> config.mak
 +fi
 +if [ $QT_IM = 'Y' ]; then
-+ echo "QT_MOC=$QT_MOC" >> config.mak
++  echo "QT_MOC=$QT_MOC" >> config.mak
 +fi
  
 -echo "GCIN_DEBUG=0" >> config.mak

@@ -1,6 +1,6 @@
---- gtab-buf.cpp.orig	2018-05-21 12:35:13 UTC
+--- gtab-buf.cpp.orig	2020-03-14 07:23:09 UTC
 +++ gtab-buf.cpp
-@@ -1242,7 +1242,7 @@ gboolean gtab_pre_select_shift(KeySym key, int kbstate
+@@ -1253,7 +1253,7 @@ gboolean gtab_pre_select_shift(KeySym key, int kbstate
    // If the key(123) is not defined as gtab keys, the shift keys(!@#) should be used for punc, not preselect
    int c;
    char *p;

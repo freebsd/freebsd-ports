@@ -1,4 +1,4 @@
---- Makefile.orig	2019-03-07 09:07:52 UTC
+--- Makefile.orig	2020-05-15 23:04:33 UTC
 +++ Makefile
 @@ -4,8 +4,11 @@ include config.mak
  include suffixes-rule
