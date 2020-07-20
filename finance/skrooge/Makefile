@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	skrooge
-DISTVERSION=	2.22.1
+DISTVERSION=	2.23.0
 CATEGORIES=	finance kde
 MASTER_SITES=	KDE/stable/${PORTNAME}
 DIST_SUBDIR=	KDE/${PORTNAME}
@@ -33,8 +33,9 @@ USE_QT=		concurrent core dbus declarative designer gui network printsupport \
 SHEBANG_FILES=	plugins/import/skrooge_import_backend/skrooge-sabb.py \
 		skgbankmodeler/skrooge-coinmarketcap.py \
 		skgbankmodeler/skrooge-cryptocompare.py \
-		skgbankmodeler/skrooge-yahoodl.py \
-		skgbankmodeler/skrooge-ratesapi.py
+		skgbankmodeler/skrooge-exchangerates.py \
+		skgbankmodeler/skrooge-ratesapi.py \
+		skgbankmodeler/skrooge-yahoodl.py
 
 USE_LDCONFIG=	yes
 
