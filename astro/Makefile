@@ -81,6 +81,7 @@
     SUBDIR += py-RO
     SUBDIR += py-astLib
     SUBDIR += py-astropy
+    SUBDIR += py-astropy-helpers
     SUBDIR += py-ephem
     SUBDIR += py-horoscopegenerator
     SUBDIR += py-metar

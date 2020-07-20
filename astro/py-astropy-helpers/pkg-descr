@@ -1,0 +1,7 @@
+The astropy-helpers package includes many build, installation, and
+documentation-related tools used by the Astropy project, but packaged
+separately for use by other projects that wish to leverage this work.
+The motivation behind this package and details of its implementation
+are in the accepted Astropy Proposal for Enhancement (APE) 4.
+
+WWW: https://github.com/astropy/astropy-helpers
