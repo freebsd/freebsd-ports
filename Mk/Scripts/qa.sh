@@ -1020,7 +1020,12 @@ checks="$checks license depends_blacklist pkgmessage reinplace"
 ret=0
 cd ${STAGEDIR} || exit 1
 for check in ${checks}; do
-	${check} || ret=1
+	eval check_test="\$IGNORE_QA_$check"
+	if [ -z "${check_test}" ]; then
+		${check} || ret=1
+	else
+		warn "Ignoring $check QA test"
+	fi
 done
 
 exit ${ret}
