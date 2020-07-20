@@ -21,7 +21,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	Y2Z
 GH_TAGNAME=	20713de
 
-MAKE_ARGS=	LIBS="-I${LOCALBASE}/include -L${LOCALBASE}/lib -lqrencode"
+MAKE_ARGS=	LIBS="-I${LOCALBASE}/include -L${LOCALBASE}/lib -lqrencode -lm"
 TEST_TARGET=	test
 
 PLIST_FILES=	bin/${PORTNAME}
