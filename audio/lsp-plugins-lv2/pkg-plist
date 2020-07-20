@@ -32,6 +32,8 @@
 %%JACK%%bin/lsp-plugins-latency-meter
 %%JACK%%bin/lsp-plugins-limiter-mono
 %%JACK%%bin/lsp-plugins-limiter-stereo
+%%JACK%%bin/lsp-plugins-loud-comp-mono
+%%JACK%%bin/lsp-plugins-loud-comp-stereo
 %%JACK%%bin/lsp-plugins-mb-compressor-lr
 %%JACK%%bin/lsp-plugins-mb-compressor-mono
 %%JACK%%bin/lsp-plugins-mb-compressor-ms
@@ -104,12 +106,14 @@
 %%JACK%%bin/lsp-plugins-spectrum-analyzer-x2
 %%JACK%%bin/lsp-plugins-spectrum-analyzer-x4
 %%JACK%%bin/lsp-plugins-spectrum-analyzer-x8
+%%JACK%%bin/lsp-plugins-surge-filter-mono
+%%JACK%%bin/lsp-plugins-surge-filter-stereo
 %%JACK%%bin/lsp-plugins-trigger-midi-mono
 %%JACK%%bin/lsp-plugins-trigger-midi-stereo
 %%JACK%%bin/lsp-plugins-trigger-mono
 %%JACK%%bin/lsp-plugins-trigger-stereo
 %%JACK%%etc/xdg/menus/applications-merged/lsp-plugins.menu
-%%JACK%%lib/lsp-plugins/lsp-plugins-jack-core-1.1.22.so
+%%JACK%%lib/lsp-plugins/lsp-plugins-jack-core-1.1.24.so
 %%JACK%%lib/lsp-plugins/lsp-plugins-r3d-glx.so
 lib/lv2/lsp-plugins.lv2/comp_delay_mono.ttl
 lib/lv2/lsp-plugins.lv2/comp_delay_stereo.ttl
@@ -145,6 +149,8 @@ lib/lv2/lsp-plugins.lv2/impulse_reverb_stereo.ttl
 lib/lv2/lsp-plugins.lv2/latency_meter.ttl
 lib/lv2/lsp-plugins.lv2/limiter_mono.ttl
 lib/lv2/lsp-plugins.lv2/limiter_stereo.ttl
+lib/lv2/lsp-plugins.lv2/loud_comp_mono.ttl
+lib/lv2/lsp-plugins.lv2/loud_comp_stereo.ttl
 lib/lv2/lsp-plugins.lv2/lsp-plugins-lv2.so
 lib/lv2/lsp-plugins.lv2/lsp-plugins-r3d-glx.so
 lib/lv2/lsp-plugins.lv2/manifest.ttl
@@ -220,6 +226,8 @@ lib/lv2/lsp-plugins.lv2/spectrum_analyzer_x16.ttl
 lib/lv2/lsp-plugins.lv2/spectrum_analyzer_x2.ttl
 lib/lv2/lsp-plugins.lv2/spectrum_analyzer_x4.ttl
 lib/lv2/lsp-plugins.lv2/spectrum_analyzer_x8.ttl
+lib/lv2/lsp-plugins.lv2/surge_filter_mono.ttl
+lib/lv2/lsp-plugins.lv2/surge_filter_stereo.ttl
 lib/lv2/lsp-plugins.lv2/trigger_midi_mono.ttl
 lib/lv2/lsp-plugins.lv2/trigger_midi_stereo.ttl
 lib/lv2/lsp-plugins.lv2/trigger_mono.ttl
@@ -258,6 +266,8 @@ lib/lv2/lsp-plugins.lv2/trigger_stereo.ttl
 %%JACK%%share/applications/in.lsp_plug.lsp_plugins_latency_meter.desktop
 %%JACK%%share/applications/in.lsp_plug.lsp_plugins_limiter_mono.desktop
 %%JACK%%share/applications/in.lsp_plug.lsp_plugins_limiter_stereo.desktop
+%%JACK%%share/applications/in.lsp_plug.lsp_plugins_loud_comp_mono.desktop
+%%JACK%%share/applications/in.lsp_plug.lsp_plugins_loud_comp_stereo.desktop
 %%JACK%%share/applications/in.lsp_plug.lsp_plugins_mb_compressor_lr.desktop
 %%JACK%%share/applications/in.lsp_plug.lsp_plugins_mb_compressor_mono.desktop
 %%JACK%%share/applications/in.lsp_plug.lsp_plugins_mb_compressor_ms.desktop
@@ -330,6 +340,8 @@ lib/lv2/lsp-plugins.lv2/trigger_stereo.ttl
 %%JACK%%share/applications/in.lsp_plug.lsp_plugins_spectrum_analyzer_x2.desktop
 %%JACK%%share/applications/in.lsp_plug.lsp_plugins_spectrum_analyzer_x4.desktop
 %%JACK%%share/applications/in.lsp_plug.lsp_plugins_spectrum_analyzer_x8.desktop
+%%JACK%%share/applications/in.lsp_plug.lsp_plugins_surge_filter_mono.desktop
+%%JACK%%share/applications/in.lsp_plug.lsp_plugins_surge_filter_stereo.desktop
 %%JACK%%share/applications/in.lsp_plug.lsp_plugins_trigger_midi_mono.desktop
 %%JACK%%share/applications/in.lsp_plug.lsp_plugins_trigger_midi_stereo.desktop
 %%JACK%%share/applications/in.lsp_plug.lsp_plugins_trigger_mono.desktop
