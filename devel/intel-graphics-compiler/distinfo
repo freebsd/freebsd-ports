@@ -1,5 +1,5 @@
-TIMESTAMP = 1592883851
-SHA256 (intel-intel-graphics-compiler-igc-1.0.4241_GH0.tar.gz) = 1f24daa4c4ca411a77944d466f5b3c6f59ae21f5dd266b38da68f9124e116ff9
-SIZE (intel-intel-graphics-compiler-igc-1.0.4241_GH0.tar.gz) = 5799489
+TIMESTAMP = 1593779742
+SHA256 (intel-intel-graphics-compiler-igc-1.0.4312_GH0.tar.gz) = 6a36b13639d24416cd3c47020ba917813801f0935a55c11c46a4450d918e7a7b
+SIZE (intel-intel-graphics-compiler-igc-1.0.4312_GH0.tar.gz) = 5800590
 SHA256 (b4e40a433077.patch) = 56950deb485a4c1dc844f4864f42b80907919b61132b0e797f7955989fed0597
 SIZE (b4e40a433077.patch) = 9585
