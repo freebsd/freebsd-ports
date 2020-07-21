@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	midi-matrix
-DISTVERSION=	0.24.0
+DISTVERSION=	0.26.0
 CATEGORIES=	audio
 MASTER_SITES=	https://gitlab.com/OpenMusicKontrollers/midi_matrix.lv2/repository/archive.tar.gz?ref=${DISTVERSION}&dummy=/
 PKGNAMESUFFIX=	-lv2
