@@ -1,7 +1,9 @@
 man/man3/RT::Extension::MandatoryOnTransition.3.gz
 share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/Callbacks/RT-Extension-MandatoryOnTransition/Elements/EditCustomFields/BeforeCustomFields
 share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/Callbacks/RT-Extension-MandatoryOnTransition/Elements/EditCustomFields/MassageCustomFields
+share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/Callbacks/RT-Extension-MandatoryOnTransition/Helpers/TicketUpdate/ProcessArguments
 share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/Callbacks/RT-Extension-MandatoryOnTransition/Ticket/Create.html/BeforeCreate
+share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/Callbacks/RT-Extension-MandatoryOnTransition/Ticket/Display.html/BeforeProcessArguments
 share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/Callbacks/RT-Extension-MandatoryOnTransition/Ticket/Elements/EditBasics/MassageFields
 share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/Callbacks/RT-Extension-MandatoryOnTransition/Ticket/Elements/EditCustomFields/MassageCustomFields
 share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/Callbacks/RT-Extension-MandatoryOnTransition/Ticket/Modify.html/Default

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	RT-Extension-MandatoryOnTransition
-DISTVERSION=	0.19
+DISTVERSION=	0.20
 CATEGORIES=	www net perl5
 MASTER_SITES=	CPAN
 
