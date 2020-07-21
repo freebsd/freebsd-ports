@@ -13,8 +13,8 @@ LICENSE=	APACHE20
 USES=		compiler go:modules
 
 USE_GITHUB=	yes
-GHTAG=		RELEASE.2020-07-14T19-14-30Z
-COMMIT_ID=	cfc5681b36e1f0349d1bb5c26705756de58d754a
+GHTAG=		RELEASE.2020-07-20T02-25-16Z
+COMMIT_ID=	e2c71717f82e10798ab4c51c76f4143d365d5d6a
 GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		Azure:azure-pipeline-go:v0.2.1:azure_azure_pipeline_go/vendor/github.com/Azure/azure-pipeline-go \
 		Azure:azure-storage-blob-go:v0.8.0:azure_azure_storage_blob_go/vendor/github.com/Azure/azure-storage-blob-go \
@@ -111,7 +111,7 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		minio:cli:v1.22.0:minio_cli/vendor/github.com/minio/cli \
 		minio:highwayhash:v1.0.0:minio_highwayhash/vendor/github.com/minio/highwayhash \
 		minio:md5-simd:v1.1.0:minio_md5_simd/vendor/github.com/minio/md5-simd \
-		minio:minio-go:47e386e2cde8:minio_minio_go_v7/vendor/github.com/minio/minio-go/v7 \
+		minio:minio-go:v7.0.1:minio_minio_go_v7/vendor/github.com/minio/minio-go/v7 \
 		minio:sha256-simd:v0.1.1:minio_sha256_simd/vendor/github.com/minio/sha256-simd \
 		minio:simdjson-go:b17fe061ea37:minio_simdjson_go/vendor/github.com/minio/simdjson-go \
 		minio:sio:v0.2.0:minio_sio/vendor/github.com/minio/sio \
