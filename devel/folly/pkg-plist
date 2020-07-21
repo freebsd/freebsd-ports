@@ -498,6 +498,7 @@ include/folly/lang/Cast.h
 include/folly/lang/CheckedMath.h
 include/folly/lang/CustomizationPoint.h
 include/folly/lang/Exception.h
+include/folly/lang/Keep.h
 include/folly/lang/Launder.h
 include/folly/lang/Ordering.h
 include/folly/lang/Pretty.h
