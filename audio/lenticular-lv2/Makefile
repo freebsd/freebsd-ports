@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	lv2>0:audio/lv2
 
-USES=		gmake pkgconfig
+USES=		compiler:c++11-lang gmake pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	polyeffects
 GH_PROJECT=	lenticular_lv2
