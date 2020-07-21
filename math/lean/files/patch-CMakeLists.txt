@@ -1,15 +1,24 @@
---- CMakeLists.txt.orig	2018-06-21 16:27:49 UTC
+--- CMakeLists.txt.orig	2020-07-08 16:29:47 UTC
 +++ CMakeLists.txt
-@@ -215,7 +215,7 @@ if (NOT DEFINED CMAKE_MACOSX_RPATH)
-   set(CMAKE_MACOSX_RPATH 0)
- endif()
+@@ -179,7 +179,7 @@ endif()
  
--if (${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-+if (${CMAKE_SYSTEM_NAME} MATCHES "Linux|.*BSD|DragonFly")
-   # The following options is needed to generate a shared library
-   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
- endif()
-@@ -304,13 +304,7 @@ else()
+ if(STATIC)
+   message(STATUS "Creating a static executable")
+-  if (MULTI_THREAD AND ${CMAKE_SYSTEM_NAME} MATCHES "Linux")
++  if (MULTI_THREAD AND ${CMAKE_SYSTEM_NAME} MATCHES "Linux|.*BSD|DragonFly")
+     set(LEAN_EXTRA_LINKER_FLAGS "${LEAN_EXTRA_LINKER_FLAGS} -Wl,--whole-archive -lpthread -lrt -Wl,--no-whole-archive")
+   endif()
+   set(LEAN_EXTRA_LINKER_FLAGS "${LEAN_EXTRA_LINKER_FLAGS} -static")
+@@ -212,7 +212,7 @@ endif()
+ 
+ # SPLIT_STACK
+ if (SPLIT_STACK)
+-  if ((${CMAKE_SYSTEM_NAME} MATCHES "Linux") AND ("${CMAKE_CXX_COMPILER_ID}" MATCHES "GNU"))
++  if ((${CMAKE_SYSTEM_NAME} MATCHES "Linux|.*BSD|DragonFly") AND ("${CMAKE_CXX_COMPILER_ID}" MATCHES "GNU"))
+      set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsplit-stack -D LEAN_USE_SPLIT_STACK")
+      message(STATUS "Using split-stacks")
+   else()
+@@ -299,13 +299,7 @@ else()
  endif()
  
  # DL
@@ -24,3 +33,12 @@
  
  # TRACK_MEMORY_USAGE
  if(TRACK_MEMORY_USAGE)
+@@ -568,7 +562,7 @@ if(NOT (${GIT_SHA1} MATCHES "GITDIR-NOTFOUND"))
+   set(CPACK_PACKAGE_VERSION "${CPACK_PACKAGE_VERSION}.git${GIT_SHA1}")
+ endif()
+ set(CPACK_PACKAGE_FILE_NAME "lean-${LEAN_VERSION_STRING}-${LOWER_SYSTEM_NAME}")
+-if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
++if(${CMAKE_SYSTEM_NAME} MATCHES "Linux|.*BSD|DragonFly")
+   SET(CPACK_GENERATOR TGZ)
+ else()
+   SET(CPACK_GENERATOR ZIP)
