@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	avra
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.2
 CATEGORIES=	devel
 
 MAINTAINER=	amdmi3@FreeBSD.org
