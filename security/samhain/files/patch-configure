@@ -1,0 +1,16 @@
+--- configure.orig	2020-07-21 09:51:28.253298000 -0400
++++ configure	2020-07-21 09:54:19.024797000 -0400
+@@ -13998,6 +13998,13 @@
+ then
+ 	cp -a scripts/samhainadmin-gpg.pl scripts/samhainadmin.pl
+ fi
++# Default action if building as network server but without GPG.
++# Note in that case the provided functionality won't actually work,
++# but this will keep the install-program target from barfing...
++if test "x${mygpg}" == x && test "x${mysignify}" == x
++then
++	cp -a scripts/samhainadmin-gpg.pl scripts/samhainadmin.pl
++fi
+ 
+ 
+ if test "x${cross_compiling}" = xyes
