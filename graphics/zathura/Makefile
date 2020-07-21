@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	zathura
-DISTVERSION=	0.4.3
-PORTREVISION=	2
+DISTVERSION=	0.4.5
 CATEGORIES=	graphics print
-MASTER_SITES=	https://pwmt.org/projects/zathura/download/ \
-		http://www.madpilot.net/~mad/pwmt.org/
+MASTER_SITES=	https://git.pwmt.org/pwmt/${PORTNAME}/-/archive/${DISTVERSION}/
 
 MAINTAINER=	quentin.stievenart@gmail.com
 COMMENT=	Customizable lightweight pdf viewer
@@ -21,7 +19,7 @@ BUILD_DEPENDS=	${PY_SPHINX} \
 		${PYTHON_PKGNAMEPREFIX}sphinx_rtd_theme>0:textproc/py-sphinx_rtd_theme@${PY_FLAVOR}
 
 USES=		compiler:c11 gettext-tools:build gnome meson ninja pkgconfig \
-		python tar:xz
+		python
 USE_GNOME=	glib20 gtk30 gdkpixbuf2
 INSTALLS_ICONS=	yes
 

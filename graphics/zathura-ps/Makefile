@@ -1,11 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	zathura-ps
-PORTVERSION=	0.2.6
-PORTREVISION=	3
+DISTVERSION=	0.2.6
+PORTREVISION=	4
 CATEGORIES=	graphics
-MASTER_SITES=	https://pwmt.org/projects/zathura-ps/download/ \
-		http://www.madpilot.net/~mad/pwmt.org/
+MASTER_SITES=	https://git.pwmt.org/pwmt/${PORTNAME}/-/archive/${DISTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PostScript support for Zathura PDF viewer
@@ -17,8 +16,7 @@ LIB_DEPENDS=	libspectre.so:print/libspectre
 BUILD_DEPENDS=	zathura:graphics/zathura
 RUN_DEPENDS=	zathura:graphics/zathura
 
-USES=		compiler:c11 desktop-file-utils gnome meson ninja pkgconfig ssl \
-		tar:xz
+USES=		compiler:c11 desktop-file-utils gnome meson ninja pkgconfig ssl
 USE_GNOME=	glib20 gtk30
 
 PLIST_FILES=	lib/zathura/libps.so \
@@ -26,7 +24,8 @@ PLIST_FILES=	lib/zathura/libps.so \
 		share/appdata/org.pwmt.zathura-ps.metainfo.xml
 
 pre-configure:
-	${REINPLACE_CMD} "s:join_paths(datadir, 'metainfo'):join_paths(datadir, 'appdata'):" ${WRKSRC}/meson.build
+	${REINPLACE_CMD} "s:join_paths(datadir, 'metainfo'):join_paths(datadir, 'appdata'):" \
+		${WRKSRC}/meson.build
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${LOCALBASE}/lib/zathura/libps.so

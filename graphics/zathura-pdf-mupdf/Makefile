@@ -5,7 +5,7 @@ PORTNAME=	zathura-pdf-mupdf
 DISTVERSION=	0.3.5
 PORTREVISION=	8
 CATEGORIES=	graphics
-MASTER_SITES=	https://pwmt.org/projects/zathura-pdf-mupdf/download/ \
+MASTER_SITES=	https://git.pwmt.org/pwmt/${PORTNAME}/-/archive/${DISTVERSION}/ \
 		http://freebsd.uzsolt.hu/src/
 
 MAINTAINER=	uzsolt@uzsolt.hu
@@ -26,7 +26,6 @@ LIB_DEPENDS=	libjbig2dec.so:graphics/jbig2dec \
 USES=		compiler:c11 desktop-file-utils gnome jpeg \
 		meson pkgconfig tar:xz
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30
-USE_LDCONFIG=	yes
 
 MESON_ARGS=	-Dlink-external=true
 

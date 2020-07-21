@@ -12,12 +12,14 @@ man/man5/zathurarc.5.gz
 share/applications/org.pwmt.zathura.desktop
 share/bash-completion/completions/zathura
 share/dbus-1/interfaces/org.pwmt.zathura.xml
+share/fish/completions/zathura.fish
 share/icons/hicolor/128x128/apps/org.pwmt.zathura.png
 share/icons/hicolor/16x16/apps/org.pwmt.zathura.png
 share/icons/hicolor/256x256/apps/org.pwmt.zathura.png
 share/icons/hicolor/32x32/apps/org.pwmt.zathura.png
 share/icons/hicolor/64x64/apps/org.pwmt.zathura.png
 share/icons/scalable/apps/org.pwmt.zathura.svg
+share/locale/ar/LC_MESSAGES/zathura.mo
 share/locale/ca/LC_MESSAGES/zathura.mo
 share/locale/cs/LC_MESSAGES/zathura.mo
 share/locale/de/LC_MESSAGES/zathura.mo
@@ -42,4 +44,4 @@ share/locale/ta_IN/LC_MESSAGES/zathura.mo
 share/locale/tr/LC_MESSAGES/zathura.mo
 share/locale/uk_UA/LC_MESSAGES/zathura.mo
 share/metainfo/org.pwmt.zathura.appdata.xml
-share/zsh/vendor-completions/_zathura
+share/zsh/site-functions/_zathura
