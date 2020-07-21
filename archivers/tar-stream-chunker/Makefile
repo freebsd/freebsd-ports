@@ -10,6 +10,7 @@ COMMENT=	Splits stdin of unknown size onto chunks packed as a TAR to stdout
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USES=		compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	ihoro
 
