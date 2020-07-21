@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	lv2lint
-DISTVERSION=	0.6.0
+DISTVERSION=	0.8.0
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
