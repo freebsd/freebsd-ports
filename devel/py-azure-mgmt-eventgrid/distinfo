@@ -1,3 +1,3 @@
-TIMESTAMP = 1561039264
-SHA256 (azure-mgmt-eventgrid-2.2.0.zip) = c62058923ed20db35b04491cd1ad6a692f337244d05c377ecc14a53c06651cc3
-SIZE (azure-mgmt-eventgrid-2.2.0.zip) = 125606
+TIMESTAMP = 1595365751
+SHA256 (azure-mgmt-eventgrid-3.0.0rc7.zip) = 68f9eb18b74fa86e07cf4e4d1a2ed16fe549bdd53f21a707b05798616b01a9d4
+SIZE (azure-mgmt-eventgrid-3.0.0rc7.zip) = 118036
