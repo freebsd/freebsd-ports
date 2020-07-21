@@ -13,7 +13,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libqwt6.so:x11-toolkits/qwt6
 
-USES=		cmake desktop-file-utils qt:5 shared-mime-info
+USES=		cmake compiler:c++11-lang desktop-file-utils qt:5 \
+		shared-mime-info
 USE_GITHUB=	yes
 GH_ACCOUNT=	Caneda
 GH_PROJECT=	Caneda
