@@ -5162,6 +5162,7 @@
     SUBDIR += py-transitions
     SUBDIR += py-tree-format
     SUBDIR += py-trimesh
+    SUBDIR += py-trio
     SUBDIR += py-trollius
     SUBDIR += py-ttictoc
     SUBDIR += py-ttystatus
