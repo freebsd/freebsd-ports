@@ -17,7 +17,7 @@ lib/cmake/libftdi1/LibFTDI1Config.cmake
 lib/cmake/libftdi1/LibFTDI1ConfigVersion.cmake
 lib/cmake/libftdi1/UseLibFTDI1.cmake
 include/libftdi1/ftdi.h
-%%BOOST%%include/libftdipp1/ftdi.hpp
+%%BOOST%%include/libftdi1/ftdi.hpp
 lib/libftdi1.a
 lib/libftdi1.so
 lib/libftdi1.so.2
@@ -26,7 +26,7 @@ lib/libftdi1.so.2.5.0
 %%BOOST%%lib/libftdipp1.so
 %%BOOST%%lib/libftdipp1.so.3
 %%BOOST%%lib/libftdipp1.so.2.5.0
-share/doc/libftdipp1/example.conf
+%%PORTDOCS%%%%DOCSDIR%%/example.conf
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/_ftdi1.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/ftdi1.py
 %%PYTHON%%share/libftdi/examples/cbus.py
