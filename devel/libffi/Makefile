@@ -6,6 +6,9 @@ PORTVERSION=	3.3
 CATEGORIES=	devel
 MASTER_SITES=	SOURCEWARE/${PORTNAME}
 
+PATCH_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/commit/
+PATCHFILES=	01a75ed76ea7e57f1b7a5c183e2b1e890e6aa0fd.patch:-p1
+
 MAINTAINER=	zeising@FreeBSD.org
 COMMENT=	Foreign Function Interface
 
