@@ -526,6 +526,7 @@
     SUBDIR += opensolaris-libm
     SUBDIR += openturns
     SUBDIR += optpp
+    SUBDIR += or-tools
     SUBDIR += orpie
     SUBDIR += osi
     SUBDIR += osqp
