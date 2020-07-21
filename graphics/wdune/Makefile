@@ -21,7 +21,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libpng.so:graphics/png \
 		libswresample.so:multimedia/ffmpeg
 
-USES=		gl jpeg motif sdl tar:bzip2 xorg
+USES=		compiler:c++11-lang gl jpeg motif sdl tar:bzip2 xorg
 USE_XORG=	x11 xft xi xmu xext xt
 USE_GL=		gl glu glut
 USE_SDL=	sdl
