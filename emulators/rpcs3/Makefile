@@ -2,12 +2,9 @@
 
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.11-10657 # git rev-list --count HEAD
-DISTVERSIONSUFFIX=	-ge70e534bf
+DISTVERSION=	0.0.11-10669 # git rev-list --count HEAD
+DISTVERSIONSUFFIX=	-gf8d2d8ca1
 CATEGORIES=	emulators
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	9bf356212166.patch:-p1 # https://github.com/RPCS3/rpcs3/pull/8584
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	PS3 emulator/debugger

@@ -50,6 +50,18 @@ Utilities/bin_patch.cpp:788:25: error: no member named 'contains' in 'std::__1::
 rpcs3/rpcs3qt/patch_manager_dialog.cpp:338:120: error: no member named 'contains' in 'std::__1::set<std::__1::basic_string<char>, std::__1::less<std::__1::basic_string<char> >, std::__1::allocator<std::__1::basic_string<char> > >'
                                         (m_owned_games.find(serial) == m_owned_games.end() || (app_version != patch_key::all && !m_owned_games.at(serial).contains(app_version))))
                                                                                                                                  ~~~~~~~~~~~~~~~~~~~~~~~~ ^
+In file included from rpcs3/Emu/System.cpp:1:
+In file included from rpcs3/stdafx.h:24:
+In file included from Utilities/BEType.h:5:
+rpcs3/util/endian.hpp:56:13: error: no member named 'is_constant_evaluated' in namespace 'std'
+                        if (std::is_constant_evaluated())
+                            ~~~~~^
+rpcs3/util/endian.hpp:76:13: error: no member named 'is_constant_evaluated' in namespace 'std'
+                        if (std::is_constant_evaluated())
+                            ~~~~~^
+rpcs3/util/endian.hpp:96:13: error: no member named 'is_constant_evaluated' in namespace 'std'
+                        if (std::is_constant_evaluated())
+                            ~~~~~^
 
 --- Utilities/bin_patch.cpp.orig	2020-06-29 22:45:17 UTC
 +++ Utilities/bin_patch.cpp
@@ -67,7 +79,7 @@ rpcs3/rpcs3qt/patch_manager_dialog.cpp:338:120: error: no member named 'contains
  			}
 --- Utilities/types.h.orig	2020-04-16 09:59:19 UTC
 +++ Utilities/types.h
-@@ -102,6 +102,203 @@ namespace std
+@@ -102,6 +102,208 @@ namespace std
  }
  #endif
  
@@ -264,6 +276,11 @@ rpcs3/rpcs3qt/patch_manager_dialog.cpp:338:120: error: no member named 'contains
 +popcount(_Tp __t) noexcept
 +{
 +    return __popcount(__t);
++}
++
++_LIBCPP_INLINE_VISIBILITY
++inline constexpr bool is_constant_evaluated() noexcept {
++  return __builtin_is_constant_evaluated();
 +}
 +_LIBCPP_END_NAMESPACE_STD
 +#endif
