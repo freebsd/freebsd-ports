@@ -1,0 +1,4 @@
+This is a pytest plugin to help you test projects that use Trio, a
+friendly library for concurrency and async I/O in Python.
+
+WWW: https://pypi.org/project/pytest-trio/
