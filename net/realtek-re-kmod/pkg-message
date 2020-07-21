@@ -2,10 +2,18 @@
 { type: install
   message: <<EOM
 Add the following lines to your /boot/loader.conf
-to override the built-in FreeBSD re driver.
+to override the built-in FreeBSD 're' driver.
 
 if_re_load="YES"
 if_re_name="/boot/modules/if_re.ko"
+
+By default, the size of allocated mbufs is enough
+to receive the largest ethernet frame supported
+by the card.  The value is tunable at boot time,
+eg. if you don't need Jumbo frames you can lower
+the memory requirements with:
+
+hw.re.max_rx_mbuf_sz="2048"
 EOM
 }
 ]
