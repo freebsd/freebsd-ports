@@ -1,4 +1,4 @@
-TIMESTAMP = 1595309502
+TIMESTAMP = 1595315682
 SHA256 (rust/crates/ansi_term-0.11.0.tar.gz) = ee49baf6cb617b853aa8d93bf420db2383fab46d314482ca2803b40d5fde979b
 SIZE (rust/crates/ansi_term-0.11.0.tar.gz) = 17087
 SHA256 (rust/crates/atty-0.2.14.tar.gz) = d9b39be18770d11421cdb1b9947a45dd3f37e93092cbf377614828a319d5fee8
@@ -97,5 +97,5 @@ SHA256 (rust/crates/winapi-i686-pc-windows-gnu-0.4.0.tar.gz) = ac3b87c63620426dd
 SIZE (rust/crates/winapi-i686-pc-windows-gnu-0.4.0.tar.gz) = 2918815
 SHA256 (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = 712e227841d057c1ee1cd2fb22fa7e5a5461ae8e48fa2ca79ec42cfc1931183f
 SIZE (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = 2947998
-SHA256 (HarrisonB-ruut-v0.6.0_GH0.tar.gz) = bb1206682b9e33c50fda0462b2361807ae349a7c8cbc2d52c7f432a197d2d0ef
-SIZE (HarrisonB-ruut-v0.6.0_GH0.tar.gz) = 13448
+SHA256 (HarrisonB-ruut-v0.6.1_GH0.tar.gz) = db306a022211dae74c9b4fb1e10bdb532fbcbde9d4502fde89c15b5d364d5826
+SIZE (HarrisonB-ruut-v0.6.1_GH0.tar.gz) = 13467
