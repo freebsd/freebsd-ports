@@ -1039,6 +1039,7 @@ sbin/ztest
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_share/zfs_share_009_neg.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_share/zfs_share_010_neg.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_share/zfs_share_011_pos.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_share/zfs_share_concurrent_shares.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_snapshot/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_snapshot/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_snapshot/zfs_snapshot.cfg
