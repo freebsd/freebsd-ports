@@ -274,6 +274,7 @@ lib/libKF5PlasmaQuick.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/plasma/extras/Heading.qml
 %%QT_QMLDIR%%/org/kde/plasma/extras/PageRow.qml
 %%QT_QMLDIR%%/org/kde/plasma/extras/Paragraph.qml
+%%QT_QMLDIR%%/org/kde/plasma/extras/PlaceholderMessage.qml
 %%QT_QMLDIR%%/org/kde/plasma/extras/PlasmoidHeading.qml
 %%QT_QMLDIR%%/org/kde/plasma/extras/ScrollArea.qml
 %%QT_QMLDIR%%/org/kde/plasma/extras/Title.qml
@@ -291,6 +292,7 @@ lib/libKF5PlasmaQuick.so.%%KDE_FRAMEWORKS_VERSION%%
 man/ca/man1/plasmapkg2.1.gz
 man/de/man1/plasmapkg2.1.gz
 man/es/man1/plasmapkg2.1.gz
+man/fr/man1/plasmapkg2.1.gz
 man/it/man1/plasmapkg2.1.gz
 man/man1/plasmapkg2.1.gz
 man/nl/man1/plasmapkg2.1.gz

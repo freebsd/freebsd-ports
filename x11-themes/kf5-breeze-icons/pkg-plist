@@ -1472,6 +1472,11 @@ share/icons/breeze-dark/actions/16/user.svg
 share/icons/breeze-dark/actions/16/usermenu-delete.svg
 share/icons/breeze-dark/actions/16/usermenu-down.svg
 share/icons/breeze-dark/actions/16/usermenu-up.svg
+share/icons/breeze-dark/actions/16/vcs-commit-cvs-cervisia.svg
+share/icons/breeze-dark/actions/16/vcs-diff-cvs-cervisia.svg
+share/icons/breeze-dark/actions/16/vcs-remove-cvs-cervisia.svg
+share/icons/breeze-dark/actions/16/vcs-status-cvs-cervisia.svg
+share/icons/breeze-dark/actions/16/vcs-update-cvs-cervisia.svg
 share/icons/breeze-dark/actions/16/verb.svg
 share/icons/breeze-dark/actions/16/verbatim.svg
 share/icons/breeze-dark/actions/16/videoclip-amarok.svg
@@ -1652,6 +1657,7 @@ share/icons/breeze-dark/actions/16/zoom-select-y.svg
 share/icons/breeze-dark/actions/16/zoom-select.svg
 share/icons/breeze-dark/actions/16/zoom.svg
 share/icons/breeze-dark/actions/16@2x
+share/icons/breeze-dark/actions/16@3x
 share/icons/breeze-dark/actions/22/CVnamespace.svg
 share/icons/breeze-dark/actions/22/Info-amarok.svg
 share/icons/breeze-dark/actions/22/PrePostCondition.svg
@@ -3476,6 +3482,7 @@ share/icons/breeze-dark/actions/22/zoom-select-y.svg
 share/icons/breeze-dark/actions/22/zoom-select.svg
 share/icons/breeze-dark/actions/22/zoom.svg
 share/icons/breeze-dark/actions/22@2x
+share/icons/breeze-dark/actions/22@3x
 share/icons/breeze-dark/actions/24/CVnamespace.svg
 share/icons/breeze-dark/actions/24/Info-amarok.svg
 share/icons/breeze-dark/actions/24/PrePostCondition.svg
@@ -5570,6 +5577,7 @@ share/icons/breeze-dark/actions/32/zoom-select-y.svg
 share/icons/breeze-dark/actions/32/zoom-select.svg
 share/icons/breeze-dark/actions/32/zoom.svg
 share/icons/breeze-dark/actions/32@2x
+share/icons/breeze-dark/actions/32@3x
 share/icons/breeze-dark/actions/64/media-default-album.svg
 share/icons/breeze-dark/actions/64/media-default-track.svg
 share/icons/breeze-dark/actions/symbolic/action-unavailable-symbolic.svg
@@ -5777,6 +5785,7 @@ share/icons/breeze-dark/actions/symbolic/zoom-original-symbolic.svg
 share/icons/breeze-dark/actions/symbolic/zoom-out-symbolic.svg
 share/icons/breeze-dark/animations/16/process-working.svg
 share/icons/breeze-dark/animations/16@2x
+share/icons/breeze-dark/animations/16@3x
 share/icons/breeze-dark/animations/22/process-working.svg
 share/icons/breeze-dark/applets/128/user-ada-lovelace.svg
 share/icons/breeze-dark/applets/128/user-alice-in-wonderland.svg
@@ -5952,6 +5961,7 @@ share/icons/breeze-dark/apps/16/utilities-terminal.svg
 share/icons/breeze-dark/apps/16/virt-manager.svg
 share/icons/breeze-dark/apps/16/vvave.svg
 share/icons/breeze-dark/apps/16@2x
+share/icons/breeze-dark/apps/16@3x
 share/icons/breeze-dark/apps/22/accessories-text-editor.svg
 share/icons/breeze-dark/apps/22/akregator.svg
 share/icons/breeze-dark/apps/22/elisa.svg
@@ -5974,6 +5984,7 @@ share/icons/breeze-dark/apps/22/umbrello.svg
 share/icons/breeze-dark/apps/22/utilities-terminal.svg
 share/icons/breeze-dark/apps/22/virt-manager.svg
 share/icons/breeze-dark/apps/22@2x
+share/icons/breeze-dark/apps/22@3x
 share/icons/breeze-dark/apps/32/accessories-text-editor.svg
 share/icons/breeze-dark/apps/32/hotspot.svg
 share/icons/breeze-dark/apps/32/hwinfo.svg
@@ -6047,6 +6058,7 @@ share/icons/breeze-dark/apps/48/calligrastage.svg
 share/icons/breeze-dark/apps/48/calligrawords.svg
 share/icons/breeze-dark/apps/48/cantata.svg
 share/icons/breeze-dark/apps/48/cantor.svg
+share/icons/breeze-dark/apps/48/cervisia.svg
 share/icons/breeze-dark/apps/48/choqok.svg
 share/icons/breeze-dark/apps/48/claws-mail.svg
 share/icons/breeze-dark/apps/48/clementine.svg
@@ -6424,6 +6436,7 @@ share/icons/breeze-dark/devices/16/tablet.svg
 share/icons/breeze-dark/devices/16/uav-quadcopter.svg
 share/icons/breeze-dark/devices/16/uav.svg
 share/icons/breeze-dark/devices/16@2x
+share/icons/breeze-dark/devices/16@3x
 share/icons/breeze-dark/devices/22/audio-card.svg
 share/icons/breeze-dark/devices/22/audio-headphones.svg
 share/icons/breeze-dark/devices/22/audio-headset.svg
@@ -6483,6 +6496,7 @@ share/icons/breeze-dark/devices/22/uav-quadcopter.svg
 share/icons/breeze-dark/devices/22/uav.svg
 share/icons/breeze-dark/devices/22/video-television.svg
 share/icons/breeze-dark/devices/22@2x
+share/icons/breeze-dark/devices/22@3x
 share/icons/breeze-dark/devices/24/audio-card.svg
 share/icons/breeze-dark/devices/24/audio-headphones.svg
 share/icons/breeze-dark/devices/24/audio-headset.svg
@@ -6681,6 +6695,7 @@ share/icons/breeze-dark/emblems/16/vcs-normal.svg
 share/icons/breeze-dark/emblems/16/vcs-removed.svg
 share/icons/breeze-dark/emblems/16/vcs-update-required.svg
 share/icons/breeze-dark/emblems/16@2x
+share/icons/breeze-dark/emblems/16@3x
 share/icons/breeze-dark/emblems/22/checkmark.svg
 share/icons/breeze-dark/emblems/22/emblem-added.svg
 share/icons/breeze-dark/emblems/22/emblem-checked.svg
@@ -6713,6 +6728,7 @@ share/icons/breeze-dark/emblems/22/vcs-normal.svg
 share/icons/breeze-dark/emblems/22/vcs-removed.svg
 share/icons/breeze-dark/emblems/22/vcs-update-required.svg
 share/icons/breeze-dark/emblems/22@2x
+share/icons/breeze-dark/emblems/22@3x
 share/icons/breeze-dark/emblems/8/checkmark.svg
 share/icons/breeze-dark/emblems/8/emblem-added.svg
 share/icons/breeze-dark/emblems/8/emblem-checked.svg
@@ -6790,6 +6806,7 @@ share/icons/breeze-dark/emotes/22/face-worried.svg
 share/icons/breeze-dark/emotes/22/face-yawn.svg
 share/icons/breeze-dark/emotes/22/food-cake.svg
 share/icons/breeze-dark/emotes/22@2x
+share/icons/breeze-dark/emotes/22@3x
 share/icons/breeze-dark/index.theme
 share/icons/breeze-dark/mimetypes/16/android-package-archive.svg
 share/icons/breeze-dark/mimetypes/16/application-atom+xml.svg
@@ -7261,6 +7278,7 @@ share/icons/breeze-dark/mimetypes/16/x-office-drawing.svg
 share/icons/breeze-dark/mimetypes/16/x-office-presentation.svg
 share/icons/breeze-dark/mimetypes/16/x-office-spreadsheet.svg
 share/icons/breeze-dark/mimetypes/16@2x
+share/icons/breeze-dark/mimetypes/16@3x
 share/icons/breeze-dark/mimetypes/22/android-package-archive.svg
 share/icons/breeze-dark/mimetypes/22/application-atom+xml.svg
 share/icons/breeze-dark/mimetypes/22/application-certificate.svg
@@ -7731,6 +7749,7 @@ share/icons/breeze-dark/mimetypes/22/x-office-drawing.svg
 share/icons/breeze-dark/mimetypes/22/x-office-presentation.svg
 share/icons/breeze-dark/mimetypes/22/x-office-spreadsheet.svg
 share/icons/breeze-dark/mimetypes/22@2x
+share/icons/breeze-dark/mimetypes/22@3x
 share/icons/breeze-dark/mimetypes/32/android-package-archive.svg
 share/icons/breeze-dark/mimetypes/32/application-atom+xml.svg
 share/icons/breeze-dark/mimetypes/32/application-certificate.svg
@@ -8748,6 +8767,7 @@ share/icons/breeze-dark/places/16/user-identity.svg
 share/icons/breeze-dark/places/16/user-trash-full.svg
 share/icons/breeze-dark/places/16/user-trash.svg
 share/icons/breeze-dark/places/16@2x
+share/icons/breeze-dark/places/16@3x
 share/icons/breeze-dark/places/22/certificate-server.svg
 share/icons/breeze-dark/places/22/desktop.svg
 share/icons/breeze-dark/places/22/document-multiple.svg
@@ -8824,6 +8844,7 @@ share/icons/breeze-dark/places/22/user-identity.svg
 share/icons/breeze-dark/places/22/user-trash-full.svg
 share/icons/breeze-dark/places/22/user-trash.svg
 share/icons/breeze-dark/places/22@2x
+share/icons/breeze-dark/places/22@3x
 share/icons/breeze-dark/places/24/certificate-server.svg
 share/icons/breeze-dark/places/24/desktop.svg
 share/icons/breeze-dark/places/24/document-multiple.svg
@@ -9135,6 +9156,7 @@ share/icons/breeze-dark/preferences/32/plasma.svg
 share/icons/breeze-dark/preferences/32/plasmagik.svg
 share/icons/breeze-dark/preferences/32/plasmashell.svg
 share/icons/breeze-dark/preferences/32/podcast-amarok.svg
+share/icons/breeze-dark/preferences/32/preferences-%%CMAKE_BUILD_TYPE%%notes.svg
 share/icons/breeze-dark/preferences/32/preferences-desktop-accessibility.svg
 share/icons/breeze-dark/preferences/32/preferences-desktop-activities.svg
 share/icons/breeze-dark/preferences/32/preferences-desktop-baloo.svg
@@ -9190,7 +9212,6 @@ share/icons/breeze-dark/preferences/32/preferences-kde-connect.svg
 share/icons/breeze-dark/preferences/32/preferences-log.svg
 share/icons/breeze-dark/preferences/32/preferences-other.svg
 share/icons/breeze-dark/preferences/32/preferences-plugin.svg
-share/icons/breeze-dark/preferences/32/preferences-%%CMAKE_BUILD_TYPE%%notes.svg
 share/icons/breeze-dark/preferences/32/preferences-security-apparmor.svg
 share/icons/breeze-dark/preferences/32/preferences-security-firewall.svg
 share/icons/breeze-dark/preferences/32/preferences-security-kerberos.svg
@@ -9255,6 +9276,7 @@ share/icons/breeze-dark/preferences/32/preferences.svg
 share/icons/breeze-dark/preferences/32/system-lock-screen.svg
 share/icons/breeze-dark/preferences/32/system-users.svg
 share/icons/breeze-dark/preferences/32/window-duplicate.svg
+share/icons/breeze-dark/preferences/32/yast-%%CMAKE_BUILD_TYPE%%-notes.svg
 share/icons/breeze-dark/preferences/32/yast-addon-extension.svg
 share/icons/breeze-dark/preferences/32/yast-addon.svg
 share/icons/breeze-dark/preferences/32/yast-alternatives.svg
@@ -9300,7 +9322,6 @@ share/icons/breeze-dark/preferences/32/yast-nis.svg
 share/icons/breeze-dark/preferences/32/yast-ntp-client.svg
 share/icons/breeze-dark/preferences/32/yast-printer.svg
 share/icons/breeze-dark/preferences/32/yast-proxy.svg
-share/icons/breeze-dark/preferences/32/yast-%%CMAKE_BUILD_TYPE%%-notes.svg
 share/icons/breeze-dark/preferences/32/yast-remote.svg
 share/icons/breeze-dark/preferences/32/yast-samba-client.svg
 share/icons/breeze-dark/preferences/32/yast-samba-server.svg
@@ -9431,6 +9452,7 @@ share/icons/breeze-dark/status/16/user-invisible.svg
 share/icons/breeze-dark/status/16/user-offline.svg
 share/icons/breeze-dark/status/16/user-online.svg
 share/icons/breeze-dark/status/16@2x
+share/icons/breeze-dark/status/16@3x
 share/icons/breeze-dark/status/22/TeamViewer.svg
 share/icons/breeze-dark/status/22/audio-off.svg
 share/icons/breeze-dark/status/22/audio-on.svg
@@ -9586,6 +9608,7 @@ share/icons/breeze-dark/status/22/user-offline.svg
 share/icons/breeze-dark/status/22/user-online.svg
 share/icons/breeze-dark/status/22/video-card-inactive.svg
 share/icons/breeze-dark/status/22@2x
+share/icons/breeze-dark/status/22@3x
 share/icons/breeze-dark/status/24/TeamViewer.svg
 share/icons/breeze-dark/status/24/audio-off.svg
 share/icons/breeze-dark/status/24/audio-on.svg
@@ -11507,6 +11530,7 @@ share/icons/breeze/actions/16/zoom-select-y.svg
 share/icons/breeze/actions/16/zoom-select.svg
 share/icons/breeze/actions/16/zoom.svg
 share/icons/breeze/actions/16@2x
+share/icons/breeze/actions/16x@3x
 share/icons/breeze/actions/22/CVnamespace.svg
 share/icons/breeze/actions/22/Info-amarok.svg
 share/icons/breeze/actions/22/PrePostCondition.svg
@@ -13127,6 +13151,11 @@ share/icons/breeze/actions/22/user-others.svg
 share/icons/breeze/actions/22/user-properties.svg
 share/icons/breeze/actions/22/user.svg
 share/icons/breeze/actions/22/username-copy.svg
+share/icons/breeze/actions/22/vcs-commit-cvs-cervisia.svg
+share/icons/breeze/actions/22/vcs-diff-cvs-cervisia.svg
+share/icons/breeze/actions/22/vcs-remove-cvs-cervisia.svg
+share/icons/breeze/actions/22/vcs-status-cvs-cervisia.svg
+share/icons/breeze/actions/22/vcs-update-cvs-cervisia.svg
 share/icons/breeze/actions/22/verb.svg
 share/icons/breeze/actions/22/verbatim.svg
 share/icons/breeze/actions/22/videoclip-amarok.svg
@@ -13329,6 +13358,7 @@ share/icons/breeze/actions/22/zoom-select-y.svg
 share/icons/breeze/actions/22/zoom-select.svg
 share/icons/breeze/actions/22/zoom.svg
 share/icons/breeze/actions/22@2x
+share/icons/breeze/actions/22x@3x
 share/icons/breeze/actions/24/CVnamespace.svg
 share/icons/breeze/actions/24/Info-amarok.svg
 share/icons/breeze/actions/24/PrePostCondition.svg
@@ -14949,6 +14979,11 @@ share/icons/breeze/actions/24/user-others.svg
 share/icons/breeze/actions/24/user-properties.svg
 share/icons/breeze/actions/24/user.svg
 share/icons/breeze/actions/24/username-copy.svg
+share/icons/breeze/actions/24/vcs-commit-cvs-cervisia.svg
+share/icons/breeze/actions/24/vcs-diff-cvs-cervisia.svg
+share/icons/breeze/actions/24/vcs-remove-cvs-cervisia.svg
+share/icons/breeze/actions/24/vcs-status-cvs-cervisia.svg
+share/icons/breeze/actions/24/vcs-update-cvs-cervisia.svg
 share/icons/breeze/actions/24/verb.svg
 share/icons/breeze/actions/24/verbatim.svg
 share/icons/breeze/actions/24/videoclip-amarok.svg
@@ -15419,6 +15454,7 @@ share/icons/breeze/actions/32/zoom-select-y.svg
 share/icons/breeze/actions/32/zoom-select.svg
 share/icons/breeze/actions/32/zoom.svg
 share/icons/breeze/actions/32@2x
+share/icons/breeze/actions/32x@3x
 share/icons/breeze/actions/64/media-default-album.svg
 share/icons/breeze/actions/64/media-default-track.svg
 share/icons/breeze/actions/symbolic/action-unavailable-symbolic.svg
@@ -15624,6 +15660,7 @@ share/icons/breeze/actions/symbolic/zoom-original-symbolic.svg
 share/icons/breeze/actions/symbolic/zoom-out-symbolic.svg
 share/icons/breeze/animations/16/process-working.svg
 share/icons/breeze/animations/16@2x
+share/icons/breeze/animations/16x@3x
 share/icons/breeze/animations/22/process-working.svg
 share/icons/breeze/applets/128/user-ada-lovelace.svg
 share/icons/breeze/applets/128/user-alice-in-wonderland.svg
@@ -15801,6 +15838,7 @@ share/icons/breeze/apps/16/utilities-terminal.svg
 share/icons/breeze/apps/16/virt-manager.svg
 share/icons/breeze/apps/16/vvave.svg
 share/icons/breeze/apps/16@2x
+share/icons/breeze/apps/16x@3x
 share/icons/breeze/apps/22/accessories-text-editor.svg
 share/icons/breeze/apps/22/akregator.svg
 share/icons/breeze/apps/22/elisa.svg
@@ -15823,6 +15861,7 @@ share/icons/breeze/apps/22/umbrello.svg
 share/icons/breeze/apps/22/utilities-terminal.svg
 share/icons/breeze/apps/22/virt-manager.svg
 share/icons/breeze/apps/22@2x
+share/icons/breeze/apps/22x@3x
 share/icons/breeze/apps/32/accessories-text-editor.svg
 share/icons/breeze/apps/32/hotspot.svg
 share/icons/breeze/apps/32/hwinfo.svg
@@ -16093,6 +16132,7 @@ share/icons/breeze/apps/48/kturtle.svg
 share/icons/breeze/apps/48/kube-mail.svg
 share/icons/breeze/apps/48/kubrick.svg
 share/icons/breeze/apps/48/kuiviewer.svg
+share/icons/breeze/apps/48/kup.svg
 share/icons/breeze/apps/48/kuser.svg
 share/icons/breeze/apps/48/kwalletmanager.svg
 share/icons/breeze/apps/48/kwalletmanager2.svg
@@ -16342,6 +16382,7 @@ share/icons/breeze/devices/16/tablet.svg
 share/icons/breeze/devices/16/uav-quadcopter.svg
 share/icons/breeze/devices/16/uav.svg
 share/icons/breeze/devices/16@2x
+share/icons/breeze/devices/16x@3x
 share/icons/breeze/devices/22/audio-card.svg
 share/icons/breeze/devices/22/audio-headphones.svg
 share/icons/breeze/devices/22/audio-headset.svg
@@ -16401,6 +16442,7 @@ share/icons/breeze/devices/22/uav-quadcopter.svg
 share/icons/breeze/devices/22/uav.svg
 share/icons/breeze/devices/22/video-television.svg
 share/icons/breeze/devices/22@2x
+share/icons/breeze/devices/22x@3x
 share/icons/breeze/devices/24/audio-card.svg
 share/icons/breeze/devices/24/audio-headphones.svg
 share/icons/breeze/devices/24/audio-headset.svg
@@ -16599,6 +16641,7 @@ share/icons/breeze/emblems/16/vcs-normal.svg
 share/icons/breeze/emblems/16/vcs-removed.svg
 share/icons/breeze/emblems/16/vcs-update-required.svg
 share/icons/breeze/emblems/16@2x
+share/icons/breeze/emblems/16x@3x
 share/icons/breeze/emblems/22/checkmark.svg
 share/icons/breeze/emblems/22/emblem-added.svg
 share/icons/breeze/emblems/22/emblem-checked.svg
@@ -16631,6 +16674,7 @@ share/icons/breeze/emblems/22/vcs-normal.svg
 share/icons/breeze/emblems/22/vcs-removed.svg
 share/icons/breeze/emblems/22/vcs-update-required.svg
 share/icons/breeze/emblems/22@2x
+share/icons/breeze/emblems/22x@3x
 share/icons/breeze/emblems/8/checkmark.svg
 share/icons/breeze/emblems/8/emblem-added.svg
 share/icons/breeze/emblems/8/emblem-checked.svg
@@ -16708,6 +16752,7 @@ share/icons/breeze/emotes/22/face-worried.svg
 share/icons/breeze/emotes/22/face-yawn.svg
 share/icons/breeze/emotes/22/food-cake.svg
 share/icons/breeze/emotes/22@2x
+share/icons/breeze/emotes/22x@3x
 share/icons/breeze/index.theme
 share/icons/breeze/mimetypes/16/android-package-archive.svg
 share/icons/breeze/mimetypes/16/application-atom+xml.svg
@@ -17181,6 +17226,7 @@ share/icons/breeze/mimetypes/16/x-office-drawing.svg
 share/icons/breeze/mimetypes/16/x-office-presentation.svg
 share/icons/breeze/mimetypes/16/x-office-spreadsheet.svg
 share/icons/breeze/mimetypes/16@2x
+share/icons/breeze/mimetypes/16x@3x
 share/icons/breeze/mimetypes/22/android-package-archive.svg
 share/icons/breeze/mimetypes/22/application-atom+xml.svg
 share/icons/breeze/mimetypes/22/application-certificate.svg
@@ -17653,6 +17699,7 @@ share/icons/breeze/mimetypes/22/x-office-drawing.svg
 share/icons/breeze/mimetypes/22/x-office-presentation.svg
 share/icons/breeze/mimetypes/22/x-office-spreadsheet.svg
 share/icons/breeze/mimetypes/22@2x
+share/icons/breeze/mimetypes/22x@3x
 share/icons/breeze/mimetypes/32/android-package-archive.svg
 share/icons/breeze/mimetypes/32/application-atom+xml.svg
 share/icons/breeze/mimetypes/32/application-certificate.svg
@@ -18675,6 +18722,7 @@ share/icons/breeze/places/16/user-identity.svg
 share/icons/breeze/places/16/user-trash-full.svg
 share/icons/breeze/places/16/user-trash.svg
 share/icons/breeze/places/16@2x
+share/icons/breeze/places/16x@3x
 share/icons/breeze/places/22/certificate-server.svg
 share/icons/breeze/places/22/desktop.svg
 share/icons/breeze/places/22/document-multiple.svg
@@ -18751,6 +18799,7 @@ share/icons/breeze/places/22/user-identity.svg
 share/icons/breeze/places/22/user-trash-full.svg
 share/icons/breeze/places/22/user-trash.svg
 share/icons/breeze/places/22@2x
+share/icons/breeze/places/22x@3x
 share/icons/breeze/places/24/certificate-server.svg
 share/icons/breeze/places/24/desktop.svg
 share/icons/breeze/places/24/document-multiple.svg
@@ -19062,6 +19111,7 @@ share/icons/breeze/preferences/32/plasma.svg
 share/icons/breeze/preferences/32/plasmagik.svg
 share/icons/breeze/preferences/32/plasmashell.svg
 share/icons/breeze/preferences/32/podcast-amarok.svg
+share/icons/breeze/preferences/32/preferences-%%CMAKE_BUILD_TYPE%%notes.svg
 share/icons/breeze/preferences/32/preferences-desktop-accessibility.svg
 share/icons/breeze/preferences/32/preferences-desktop-activities.svg
 share/icons/breeze/preferences/32/preferences-desktop-baloo.svg
@@ -19117,7 +19167,6 @@ share/icons/breeze/preferences/32/preferences-kde-connect.svg
 share/icons/breeze/preferences/32/preferences-log.svg
 share/icons/breeze/preferences/32/preferences-other.svg
 share/icons/breeze/preferences/32/preferences-plugin.svg
-share/icons/breeze/preferences/32/preferences-%%CMAKE_BUILD_TYPE%%notes.svg
 share/icons/breeze/preferences/32/preferences-security-apparmor.svg
 share/icons/breeze/preferences/32/preferences-security-firewall.svg
 share/icons/breeze/preferences/32/preferences-security-kerberos.svg
@@ -19182,6 +19231,7 @@ share/icons/breeze/preferences/32/preferences.svg
 share/icons/breeze/preferences/32/system-lock-screen.svg
 share/icons/breeze/preferences/32/system-users.svg
 share/icons/breeze/preferences/32/window-duplicate.svg
+share/icons/breeze/preferences/32/yast-%%CMAKE_BUILD_TYPE%%-notes.svg
 share/icons/breeze/preferences/32/yast-addon-extension.svg
 share/icons/breeze/preferences/32/yast-addon.svg
 share/icons/breeze/preferences/32/yast-alternatives.svg
@@ -19227,7 +19277,6 @@ share/icons/breeze/preferences/32/yast-nis.svg
 share/icons/breeze/preferences/32/yast-ntp-client.svg
 share/icons/breeze/preferences/32/yast-printer.svg
 share/icons/breeze/preferences/32/yast-proxy.svg
-share/icons/breeze/preferences/32/yast-%%CMAKE_BUILD_TYPE%%-notes.svg
 share/icons/breeze/preferences/32/yast-remote.svg
 share/icons/breeze/preferences/32/yast-samba-client.svg
 share/icons/breeze/preferences/32/yast-samba-server.svg
@@ -19358,6 +19407,7 @@ share/icons/breeze/status/16/user-invisible.svg
 share/icons/breeze/status/16/user-offline.svg
 share/icons/breeze/status/16/user-online.svg
 share/icons/breeze/status/16@2x
+share/icons/breeze/status/16x@3x
 share/icons/breeze/status/22/TeamViewer.svg
 share/icons/breeze/status/22/audio-off.svg
 share/icons/breeze/status/22/audio-on.svg
@@ -19513,6 +19563,7 @@ share/icons/breeze/status/22/user-offline.svg
 share/icons/breeze/status/22/user-online.svg
 share/icons/breeze/status/22/video-card-inactive.svg
 share/icons/breeze/status/22@2x
+share/icons/breeze/status/22x@3x
 share/icons/breeze/status/24/TeamViewer.svg
 share/icons/breeze/status/24/audio-off.svg
 share/icons/breeze/status/24/audio-on.svg
