@@ -1,0 +1,12 @@
+Sans-io socks 4/5 client/server library/framework.
+
+Features:
+
+ * Only tcp connect (no bind, no udp)
+ * Both client and server
+ * Socks versions: 4, 4a, 5
+ * Socks5 auth: no auth, username/password
+ * Couple io backends: asyncio, trio, socketserver
+ * One-shot socks server (python -m siosocks)
+
+WWW: https://pypi.python.org/pypi/siosocks
