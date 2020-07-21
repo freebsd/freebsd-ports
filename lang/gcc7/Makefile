@@ -14,7 +14,7 @@ LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
 DEPRECATED=	Unsupported by upstream. Use GCC 9 or newer instead.
-ONLY_FOR_ARCHS=	aarch64 amd64 arm armv6 armv7 i386 powerpc powerpc64 powerpcspe sparc64
+ONLY_FOR_ARCHS=	amd64 i386
 
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr \
@@ -42,26 +42,10 @@ OPTIONS_DEFAULT=	BOOTSTRAP
 BOOTSTRAP_DESC=		Build using a full bootstrap
 GRAPHITE_DESC=		Support for Graphite loop optimizations
 
-.if exists(/usr/lib32/libc.so)
-OPTIONS_DEFINE_powerpc64+=	MULTILIB
-OPTIONS_DEFAULT_powerpc64+=	MULTILIB
-MULTILIB_DESC=		Build support for 32-bit and 64-bit targets
-MULTILIB_CONFIGURE_ENABLE=	multilib
-.else
-CONFIGURE_ARGS+=	--disable-multilib
-.endif
-
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == amd64
 CONFIGURE_TARGET=	x86_64-portbld-${OPSYS:tl}${OSREL}
-
-.elif ${ARCH} == powerpc64
-CONFIGURE_ENV+=	UNAME_m="powerpc64"
-MAKE_ARGS+=	CFLAGS_FOR_TARGET="-O1" CXXFLAGS_FOR_TARGET="-O1" BOOT_CFLAGS="-O1" # PR235975
-
-.elif ${ARCH} == powerpcspe
-CONFIGURE_ARGS+=	--with-cpu=8548 --enable-e500_double --without-fp
 .endif
 
 LANGUAGES:=	c,c++,objc,fortran
@@ -81,6 +65,7 @@ INSTALL_TARGET=	install-strip
 BINMODE=	755
 .endif
 CONFIGURE_ARGS+=--disable-nls \
+		--disable-multilib \
 		--enable-gnu-indirect-function \
 		--libdir=${TARGLIB} \
 		--libexecdir=${LIBEXEC} \
@@ -135,11 +120,6 @@ post-stage:
 	${RM} -r ${STAGEDIR}${TARGLIB}/gcc/*/${GCC_VERSION}/include-fixed/
 	# Add target libraries and include files to packaging list.
 	${RM} ${WRKDIR}/PLIST.lib
-
-.if ${ARCH} == powerpc64 && ${PORT_OPTIONS:MMULTILIB}
-	${MKDIR} ${STAGEDIR}${TARGLIB32}
-	${MV} ${STAGEDIR}${PREFIX}/lib/lib32 ${STAGEDIR}${TARGLIB32}/gcc${SUFFIX}
-.endif
 
 .for d in ${TARGLIB:S/^${PREFIX}\///} ${TARGLIB32:S/^${PREFIX}\///} ${LIBEXEC:S/^${PREFIX}\///}
 	cd ${STAGEDIR}${PREFIX} ; if [ -d $d ]; then \
