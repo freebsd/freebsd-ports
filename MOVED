@@ -15156,3 +15156,4 @@ www/py-django-subdomains||2020-07-18|Has expired: No longer maintained, not comp
 www/py-django-datetime-widget||2020-07-18|Has expired: No longer maintained, not compatible with Django 2.1
 www/py-django-openid-auth|www/py-django-allauth|2020-07-18|Has expired: No longer maintained, not compatible with Django 2.0+, please use www/py-django-allauth instead
 www/py-django-overextends||2020-07-18|Has expired: No longer maintained, not compatible with Django 2.0+
+net/kdav|net/kf5-kdav|2020-07-21|Has become a proper KDE framework

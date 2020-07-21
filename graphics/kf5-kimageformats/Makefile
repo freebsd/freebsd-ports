@@ -2,7 +2,6 @@
 
 PORTNAME=	kimageformats
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
-PORTREVISION=	3
 CATEGORIES=	graphics kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
@@ -11,8 +10,9 @@ COMMENT=	KF5 library providing support for additional image formats
 LIB_DEPENDS=	libHalf.so:graphics/ilmbase
 
 USES=		cmake compiler:c++11-lib kde:5 pkgconfig qt:5 tar:xz
-USE_KDE=	archive ecm 
-USE_QT=		buildtools_build core gui printsupport qmake_build widgets
+USE_KDE=	archive ecm
+USE_QT=		core gui printsupport widgets \
+		buildtools_build qmake_build
 
 OPTIONS_DEFINE=	OPENEXR
 OPTIONS_DEFAULT=	OPENEXR

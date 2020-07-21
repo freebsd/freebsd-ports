@@ -18,4 +18,10 @@ just remove the package). If you want to stay with hald, don't install bsdisks, 
 you'll get duplicated entries for removable disks.
 EOM
 }
+{
+	type: upgrade,
+	maximum_version: "5.72.0",
+	message: <<EOM
+Solid now has the hald backend completely disabled.
+}
 ]

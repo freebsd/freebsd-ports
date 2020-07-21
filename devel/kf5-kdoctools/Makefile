@@ -16,6 +16,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:textproc/docbook-xs
 USES=		cmake compiler:c++11-lib gettext gnome kde:5 qt:5 tar:xz
 USE_GNOME=	libxml2 libxslt
 USE_KDE=	archive ecm i18n
-USE_QT=		buildtools_build core qmake_build
+USE_QT=		core \
+		buildtools_build qmake_build
 
 .include <bsd.port.mk>

@@ -2,7 +2,6 @@
 
 PORTNAME=	kfilemetadata
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
-PORTREVISION=	5
 CATEGORIES=	devel kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
@@ -19,10 +18,7 @@ LIB_DEPENDS=	libavutil.so:multimedia/ffmpeg \
 USES=		cmake compiler:c++11-lib gettext kde:5 pkgconfig \
 		qt:5 tar:xz
 USE_KDE=	archive config coreaddons ecm i18n
-USE_QT=		buildtools_build core qmake_build xml
-
-# Frameworks ports install localization files that conflict with some
-# KDE4 localization ports
-CONFLICTS_INSTALL=     kde4-l10n-*
+USE_QT=		core xml \
+		buildtools_build qmake_build
 
 .include <bsd.port.mk>

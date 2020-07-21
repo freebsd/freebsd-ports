@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
 USES=		cmake compiler:c++11-lib kde:5 qt:5 tar:xz
 USE_KDE=	ecm
-USE_QT=		buildtools_build concurrent core dbus gui linguisttools \
-		qmake_build testlib xml
+USE_QT=		concurrent core dbus gui linguisttools testlib xml \
+		buildtools_build qmake_build
 
 .include <bsd.port.mk>

@@ -19,7 +19,6 @@ share/ECM/find-modules/FindLibExiv2.cmake
 share/ECM/find-modules/FindLibGit2.cmake
 share/ECM/find-modules/FindOpenEXR.cmake
 share/ECM/find-modules/FindPhoneNumber.cmake
-share/ECM/find-modules/FindPng2Ico.cmake
 share/ECM/find-modules/FindPoppler.cmake
 share/ECM/find-modules/FindPulseAudio.cmake
 share/ECM/find-modules/FindPythonModuleGeneration.cmake
@@ -28,6 +27,7 @@ share/ECM/find-modules/FindQtWaylandScanner.cmake
 share/ECM/find-modules/FindSasl2.cmake
 share/ECM/find-modules/FindSeccomp.cmake
 share/ECM/find-modules/FindSharedMimeInfo.cmake
+share/ECM/find-modules/FindTaglib.cmake
 share/ECM/find-modules/FindUDev.cmake
 share/ECM/find-modules/FindWayland.cmake
 share/ECM/find-modules/FindWaylandScanner.cmake

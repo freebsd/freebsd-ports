@@ -12,6 +12,7 @@ LIB_DEPENDS=	libdmtx.so:graphics/libdmtx \
 
 USES=		cmake compiler:c++11-lang kde:5 qt:5 tar:xz
 USE_KDE=	ecm
-USE_QT=		buildtools_build core gui qmake_build testlib widgets
+USE_QT=		core gui testlib widgets \
+		buildtools_build qmake_build
 
 .include <bsd.port.mk>

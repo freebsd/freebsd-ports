@@ -807,12 +807,12 @@ share/kservices5/searchproviders/amazon.desktop
 share/kservices5/searchproviders/amazon_mp3.desktop
 share/kservices5/searchproviders/amg.desktop
 share/kservices5/searchproviders/archpkg.desktop
+share/kservices5/searchproviders/archwiki.desktop
 share/kservices5/searchproviders/backports.desktop
 share/kservices5/searchproviders/baidu.desktop
 share/kservices5/searchproviders/beolingus.desktop
 share/kservices5/searchproviders/bing.desktop
-share/kservices5/searchproviders/bugft.desktop
-share/kservices5/searchproviders/bugno.desktop
+share/kservices5/searchproviders/bug.desktop
 share/kservices5/searchproviders/call.desktop
 share/kservices5/searchproviders/cia.desktop
 share/kservices5/searchproviders/citeseer.desktop
@@ -823,6 +823,7 @@ share/kservices5/searchproviders/dbug.desktop
 share/kservices5/searchproviders/de2en.desktop
 share/kservices5/searchproviders/de2fr.desktop
 share/kservices5/searchproviders/deb.desktop
+share/kservices5/searchproviders/deepl.desktop
 share/kservices5/searchproviders/dictfr.desktop
 share/kservices5/searchproviders/docbook.desktop
 share/kservices5/searchproviders/doi.desktop

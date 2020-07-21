@@ -58,7 +58,7 @@ KDE_PLASMA_VERSION?=		5.19.3
 KDE_PLASMA_BRANCH?=		stable
 
 # Current KDE frameworks.
-KDE_FRAMEWORKS_VERSION?=	5.71.0
+KDE_FRAMEWORKS_VERSION?=	5.72.0
 KDE_FRAMEWORKS_BRANCH?= 	stable
 
 # Current KDE applications.
@@ -193,7 +193,7 @@ _USE_FRAMEWORKS_TIER2=	auth completion crash doctools \
 
 _USE_FRAMEWORKS_TIER3=	activities activities-stats baloo5 bookmarks configwidgets \
 			designerplugin emoticons globalaccel guiaddons \
-			iconthemes init kcmutils kdeclarative \
+			iconthemes init kcmutils kdav kdeclarative \
 			kded kdesu kdewebkit kio kwayland-server newstuff notifyconfig parts \
 			people plasma-framework purpose runner service texteditor \
 			textwidgets wallet xmlgui xmlrpcclient
@@ -233,7 +233,7 @@ _USE_KDEPIM5_ALL=	akonadicontacts akonadiimportwizard akonadimime akonadinotes \
 			contacts eventviews gapi grantleetheme \
 			gravatar identitymanagement imap \
 			incidenceeditor kdepim-addons kdepim-apps-libs \
-			kdepim-runtime5 kitinerary kontactinterface kpimdav kpkpass \
+			kdepim-runtime5 kitinerary kontactinterface kpkpass \
 			ksmtp ldap libkdepim libkleo libksieve mailcommon \
 			mailimporter mailtransport mbox messagelib \
 			mime pimcommon pimtextedit tnef \
@@ -659,6 +659,9 @@ kde-imap_LIB=			libKF5IMAP.so
 kde-incidenceeditor_PORT=	net/incidenceeditor
 kde-incidenceeditor_LIB=	libKF5IncidenceEditor.so
 
+kde-kdav_PORT=			net/kf5-kdav
+kde-kdav_LIB=			libKF5DAV.so
+
 kde-kdepim-addons_PORT=	deskutils/kdepim-addons
 kde-kdepim-addons_PATH=	${KDE_PREFIX}/lib/contacteditor/editorpageplugins/cryptopageplugin.so
 
@@ -673,9 +676,6 @@ kde-kitinerary_LIB=		libKPimItinerary.so
 
 kde-kontactinterface_PORT=	net/kontactinterface
 kde-kontactinterface_LIB=	libKF5KontactInterface.so
-
-kde-kpimdav_PORT=		net/kdav
-kde-kpimdav_LIB=		libKF5DAV.so
 
 kde-kpkpass_PORT=		security/kpkpass
 kde-kpkpass_LIB=		libKPimPkPass.so

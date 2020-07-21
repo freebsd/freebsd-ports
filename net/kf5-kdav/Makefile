@@ -1,8 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	kdav
-DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-CATEGORIES=	net kde kde-applications
+DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
+PORTEPOCH=	1
+CATEGORIES=	net kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	DAV protocol implementation with KJobs

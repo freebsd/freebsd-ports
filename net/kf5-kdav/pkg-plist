@@ -46,7 +46,7 @@ lib/cmake/KF5DAV/KF5DAVTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KF5DAV/KF5DAVTargets.cmake
 lib/libKF5DAV.so
 lib/libKF5DAV.so.5
-lib/libKF5DAV.so.%%KDE_APPLICATIONS_SHLIB_VER%%
+lib/libKF5DAV.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_MKSPECDIR%%/modules/qt_kdav.pri
 share/locale/ar/LC_MESSAGES/libkdav.mo
 share/locale/ca/LC_MESSAGES/libkdav.mo
@@ -71,7 +71,11 @@ share/locale/pt/LC_MESSAGES/libkdav.mo
 share/locale/pt_BR/LC_MESSAGES/libkdav.mo
 share/locale/ru/LC_MESSAGES/libkdav.mo
 share/locale/sk/LC_MESSAGES/libkdav.mo
+share/locale/sl/LC_MESSAGES/libkdav.mo
 share/locale/sr/LC_MESSAGES/libkdav.mo
+share/locale/sr@ijekavian/LC_MESSAGES/libkdav.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/libkdav.mo
+share/locale/sr@latin/LC_MESSAGES/libkdav.mo
 share/locale/sv/LC_MESSAGES/libkdav.mo
 share/locale/uk/LC_MESSAGES/libkdav.mo
 share/locale/zh_CN/LC_MESSAGES/libkdav.mo

@@ -297,12 +297,12 @@
     SUBDIR += kamailio
     SUBDIR += kblog
     SUBDIR += kcalutils
-    SUBDIR += kdav
     SUBDIR += kdenetwork
     SUBDIR += kdenetwork-filesharing
     SUBDIR += kea
     SUBDIR += kf5-kcalendarcore
     SUBDIR += kf5-kcontacts
+    SUBDIR += kf5-kdav
     SUBDIR += kf5-kholidays
     SUBDIR += kf5-kxmlrpcclient
     SUBDIR += kf5-syndication

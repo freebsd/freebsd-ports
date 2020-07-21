@@ -9,6 +9,7 @@ COMMENT=	KF5 pty abstraction
 
 USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 tar:xz
 USE_KDE=	coreaddons ecm i18n
-USE_QT=		buildtools_build core qmake_build
+USE_QT=		core \
+		buildtools_build qmake_build
 
 .include <bsd.port.mk>

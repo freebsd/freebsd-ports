@@ -14,7 +14,8 @@ LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/COPYING-CMAKE-SCRIPTS
 
 USES=		cmake compiler:c++11-lib kde:5 qt:5 shared-mime-info tar:xz
 USE_KDE=	ecm
-USE_QT=		buildtools_build core linguisttools qmake_build
+USE_QT=		core linguisttools \
+		buildtools_build qmake_build
 
 OPTIONS_DEFINE=		FAM INOTIFY
 OPTIONS_DEFAULT=	INOTIFY
@@ -34,7 +35,7 @@ FAM_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_FAM
 # corresponds to __FreeBSD_version 1300060
 .if ${OSVERSION} < 1300060
 post-patch:
-	${REINPLACE_CMD}  -e '/QStringLiteral/s|/etc/os-release|${LOCALBASE}/etc/os-release|g' \
+	${REINPLACE_CMD} -e '/QStringLiteral/s|/etc/os-release|${LOCALBASE}/etc/os-release|g' \
 		${WRKSRC}/src/lib/util/kosrelease.cpp
 .endif
 
