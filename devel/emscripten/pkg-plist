@@ -173,7 +173,6 @@ lib/emscripten/src/gl-matrix.js
 lib/emscripten/src/growableHeap.js
 lib/emscripten/src/headless.js
 lib/emscripten/src/headlessCanvas.js
-lib/emscripten/src/hello_world.js
 lib/emscripten/src/jsifier.js
 lib/emscripten/src/library.js
 lib/emscripten/src/library_asmfs.js
@@ -195,6 +194,7 @@ lib/emscripten/src/library_glew.js
 lib/emscripten/src/library_glfw.js
 lib/emscripten/src/library_glut.js
 lib/emscripten/src/library_html5.js
+lib/emscripten/src/library_html5_webgl.js
 lib/emscripten/src/library_html5_webgpu.js
 lib/emscripten/src/library_idbfs.js
 lib/emscripten/src/library_idbstore.js
@@ -428,10 +428,12 @@ lib/emscripten/system/include/emscripten/fetch.h
 lib/emscripten/system/include/emscripten/fiber.h
 lib/emscripten/system/include/emscripten/heap.h
 lib/emscripten/system/include/emscripten/html5.h
+lib/emscripten/system/include/emscripten/html5_webgl.h
 lib/emscripten/system/include/emscripten/html5_webgpu.h
 lib/emscripten/system/include/emscripten/key_codes.h
 lib/emscripten/system/include/emscripten/math.h
 lib/emscripten/system/include/emscripten/posix_socket.h
+lib/emscripten/system/include/emscripten/stack.h
 lib/emscripten/system/include/emscripten/threading.h
 lib/emscripten/system/include/emscripten/trace.h
 lib/emscripten/system/include/emscripten/val.h
@@ -2821,11 +2823,6 @@ lib/emscripten/system/lib/websocket/websocket_to_posix_socket.cpp
 lib/emscripten/system/local/include/README.txt
 lib/emscripten/third_party/WebIDL.py
 lib/emscripten/third_party/__init__.py
-lib/emscripten/third_party/acorn/CHANGELOG.md
-lib/emscripten/third_party/acorn/LICENSE
-lib/emscripten/third_party/acorn/README.md
-lib/emscripten/third_party/acorn/dist/acorn.js
-lib/emscripten/third_party/acorn/package.json
 lib/emscripten/third_party/ansidecl.h
 lib/emscripten/third_party/closure-compiler/node-externs/LICENSE
 lib/emscripten/third_party/closure-compiler/node-externs/README.md
@@ -3243,7 +3240,6 @@ lib/emscripten/tools/install.py
 lib/emscripten/tools/js-optimizer.js
 lib/emscripten/tools/js_manipulation.py
 lib/emscripten/tools/js_optimizer.py
-lib/emscripten/tools/jsrun.py
 lib/emscripten/tools/line_endings.py
 lib/emscripten/tools/lz4-compress.js
 lib/emscripten/tools/maybe_wasm2js.py
