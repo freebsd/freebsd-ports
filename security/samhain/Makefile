@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	samhain
-PORTVERSION=	4.3.3
+PORTVERSION=	4.4.1
 CATEGORIES=	security
 MASTER_SITES=	http://la-samhna.de/archive/
 DISTNAME=	samhain_signed-${PORTVERSION}
@@ -17,7 +17,7 @@ BROKEN_mips=		fails to configure: error: Could not find the libwrap library
 BROKEN_mips64=		fails to configure: error: Could not find the libwrap library
 
 OPTIONS_DEFINE=		ASM DB_RELOAD DEBUG DNMALLOC DOCS ENCRYPT GNUPG IPV6 \
-			KCHECK LIBWRAP LOGFILE_MONITOR LOGIN_WATCH MAIL \
+			LIBWRAP LOGFILE_MONITOR LOGIN_WATCH MAIL \
 			MOUNTS_CHECK PORT_CHECK POSIX_ACL PRELUDE PROCESS_CHECK \
 			PTRACE SRP STATIC SUIDCHECK UDP USERFILES XML_LOGS
 OPTIONS_DEFAULT=	ASM DNMALLOC ENCRYPT LIBWRAP MAIL SRP
@@ -29,7 +29,6 @@ DB_DESC=	Database support
 DB_RELOAD_DESC=	Enable database reload on SIGHUP
 DNMALLOC_DESC=	Enable dnmalloc
 ENCRYPT_DESC=	Enable client/server encryption
-KCHECK_DESC=	Enable rogue KLD detection
 LOGFILE_MONITOR_DESC=	Enable monitor logfiles
 LOGIN_WATCH_DESC=	Enable watch for login/logout
 MAIL_DESC=	Enable internal SMTP mailer
@@ -55,7 +54,8 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-alttimeserver=true
 
 USES=			shebangfix
-SHEBANG_FILES=		scripts/samhainadmin.pl.in
+SHEBANG_FILES=		scripts/samhainadmin-gpg.pl.in \
+			scripts/samhainadmin-sig.pl.in
 
 ASM_CONFIGURE_ENABLE=		asm
 
@@ -71,8 +71,6 @@ GNUPG_CONFIGURE_WITH=		gpg=${PREFIX}/bin/gpg
 GNUPG_BUILD_DEPENDS=		gpg:security/gnupg
 
 IPV6_CONFIGURE_ENABLE=		ipv6
-
-KCHECK_CONFIGURE_WITH=		kcheck
 
 LIBWRAP_CONFIGURE_WITH=		libwrap
 
@@ -163,14 +161,6 @@ pre-everything::
 
 .if defined(WITH_CLIENT) && defined(WITH_SERVER)
 IGNORE=		can't build client and server at once
-.endif
-
-.if ${PORT_OPTIONS:MKCHECK}
-	@${ECHO_MSG}
-	@${ECHO_MSG} "Building with kernel checking requires reading /dev/kmem"
-	@${ECHO_MSG} "and /dev/mem. If you're not building as root, please hit"
-	@${ECHO_MSG} "Control-C and restart the build as root."
-	@${ECHO_MSG}
 .endif
 
 post-extract:
