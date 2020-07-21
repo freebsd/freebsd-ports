@@ -220,6 +220,7 @@
     SUBDIR += star
     SUBDIR += stuffit
     SUBDIR += szip
+    SUBDIR += tar-stream-chunker
     SUBDIR += tardy
     SUBDIR += thunar-archive-plugin
     SUBDIR += torrentzip

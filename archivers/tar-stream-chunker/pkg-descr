@@ -1,0 +1,13 @@
+Splits stdin of unknown size onto chunks of given size and collects such chunk
+files as a TAR archive what is written to stdout.
+
+Initial motivation was to use it as a packer of a data stream what pipes it to
+https://tarsnap.com for backup purposes, with a requirement of low and more
+predictable memory consumption. And the problem solved here is that TAR file
+header should specify size of a file, but it's unknown due to the nature of
+input data stream.
+
+The following real case could be an example:
+$ pg_dump ... | tar_stream_chunker ... | tarsnap -c ... @-
+
+WWW: https://github.com/ihoro/tar-stream-chunker/
