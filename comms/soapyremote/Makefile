@@ -2,8 +2,7 @@
 
 PORTNAME=	SoapyRemote
 DISTVERSIONPREFIX=	soapy-remote-
-DISTVERSION=	0.5.1
-PORTREVISION=	1
+DISTVERSION=	0.5.2
 CATEGORIES=	comms hamradio
 
 MAINTAINER=	yuri@FreeBSD.org
