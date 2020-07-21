@@ -16,6 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 TEST_DEPENDS=	bash:shells/bash
+TEST_LIB_DEPENDS=	libgtest.so:devel/googletest
 
 USES=		cmake compiler:c++11-lang cpe dos2unix gettext iconv pathfix \
 		python:3.5+,test localbase:ldflags
