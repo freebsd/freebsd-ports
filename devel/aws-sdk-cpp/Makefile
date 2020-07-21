@@ -1,12 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	aws-sdk-cpp
-PORTVERSION=	1.7.312
-PORTREVISION=	1
+PORTVERSION=	1.8.10
 CATEGORIES=	devel
 
 MAINTAINER=	danilo@FreeBSD.org
-COMMENT=	C++11 interface for Amazon Web Services (AWS)
+COMMENT=	C++ interface for Amazon Web Services (AWS)
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
