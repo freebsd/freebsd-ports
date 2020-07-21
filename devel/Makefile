@@ -4933,6 +4933,7 @@
     SUBDIR += py-pytest-mock
     SUBDIR += py-pytest-pep8
     SUBDIR += py-pytest-pycodestyle
+    SUBDIR += py-pytest-randomly
     SUBDIR += py-pytest-relaxed
     SUBDIR += py-pytest-rerunfailures
     SUBDIR += py-pytest-runner

@@ -1,0 +1,4 @@
+Pytest plugin to randomly order tests and control random.seed. (Also available
+for nose).
+
+WWW: https://github.com/pytest-dev/pytest-randomly
