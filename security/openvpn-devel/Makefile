@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		openvpn
-DISTVERSION=		202028
+DISTVERSION=		202030
 CATEGORIES=		security net net-vpn
 MASTER_SITES=		https://secure-computing.net/files/openvpn/
 PKGNAMESUFFIX=		-devel
@@ -78,7 +78,8 @@ SUB_FILES=		pkg-message openvpn-client
 CFLAGS+=		-DLOG_OPENVPN=${LOG_OPENVPN}
 .endif
 
-BUILD_DEPENDS+=		cmocka>=0:sysutils/cmocka
+BUILD_DEPENDS+=		cmocka>=0:sysutils/cmocka \
+			rst2man:textproc/py-docutils
 LIB_DEPENDS+=		liblzo2.so:archivers/lzo2
 
 LZ4_LIB_DEPENDS+=	liblz4.so:archivers/liblz4
