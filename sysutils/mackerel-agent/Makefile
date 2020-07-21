@@ -2,7 +2,7 @@
 
 PORTNAME=	mackerel-agent
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.68.0
+DISTVERSION=	0.68.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	meta@FreeBSD.org
@@ -26,11 +26,13 @@ GH_TUPLE=	\
 		StackExchange:wmi:cbe66965904d:stackexchange_wmi/vendor/github.com/StackExchange/wmi \
 		go-ole:go-ole:v1.2.4:go_ole_go_ole/vendor/github.com/go-ole/go-ole \
 		golang:crypto:a0c6ece9d31a:golang_crypto/vendor/golang.org/x/crypto \
+		golang:lint:738671d3881b:golang_lint/vendor/golang.org/x/lint \
 		golang:sys:d101bd2416d5:golang_sys/vendor/golang.org/x/sys \
-		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
+		golang:text:v0.3.3:golang_text/vendor/golang.org/x/text \
+		golang:tools:742c5eb664c2:golang_tools/vendor/golang.org/x/tools \
 		mackerelio:go-osstat:v0.1.0:mackerelio_go_osstat/vendor/github.com/mackerelio/go-osstat \
 		mackerelio:golib:v1.0.0:mackerelio_golib/vendor/github.com/mackerelio/golib \
-		mackerelio:mackerel-client-go:v0.9.1:mackerelio_mackerel_client_go/vendor/github.com/mackerelio/mackerel-client-go \
+		mackerelio:mackerel-client-go:v0.10.1:mackerelio_mackerel_client_go/vendor/github.com/mackerelio/mackerel-client-go \
 		mattn:go-encoding:v0.0.2:mattn_go_encoding/vendor/github.com/mattn/go-encoding \
 		mattn:go-isatty:v0.0.12:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		motemen:go-cli:9961a876eb5f:motemen_go_cli/vendor/github.com/motemen/go-cli \
