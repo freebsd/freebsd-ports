@@ -1,0 +1,3 @@
+py.test plugin that allows you to add environment variables.
+
+WWW: https://github.com/MobileDynasty/pytest-env
