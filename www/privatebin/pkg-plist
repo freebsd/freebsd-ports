@@ -79,7 +79,7 @@
 %%WWWDIR%%/js/pastemeta.jsonld
 %%WWWDIR%%/js/prettify.js
 %%WWWDIR%%/js/privatebin.js
-%%WWWDIR%%/js/purify-2.0.7.js
+%%WWWDIR%%/js/purify-2.0.8.js
 %%WWWDIR%%/js/rawinflate-0.3.js
 %%WWWDIR%%/js/showdown-1.9.1.js
 %%WWWDIR%%/js/types.jsonld
