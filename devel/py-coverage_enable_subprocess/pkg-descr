@@ -1,0 +1,4 @@
+This package installs a pth file that enables the coveragepy process_startup
+feature in this python prefix/virtualenv in subsequent runs.
+
+WWW: https://github.com/bukzor/python-coverage-enable-subprocess
