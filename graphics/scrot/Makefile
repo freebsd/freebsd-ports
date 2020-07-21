@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	scrot
-DISTVERSION=	1.3
+DISTVERSION=	1.4
 CATEGORIES=	graphics
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	Command-line screen capture utility
+COMMENT=	SCReenshOT - command line screen capture utility
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -21,7 +21,7 @@ GH_ACCOUNT=	resurrecting-open-source-projects
 USES=		autoreconf xorg
 USE_CSTD=	c99
 GNU_CONFIGURE=	yes
-USE_XORG=	x11 xfixes xcursor
+USE_XORG=	x11 xfixes xcomposite
 
 PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 PORTDOCS=	AUTHORS CONTRIBUTING.md ChangeLog README
