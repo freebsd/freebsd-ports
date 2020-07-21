@@ -6,6 +6,7 @@ include/Corrade/Containers/ArrayViewStlSpan.h
 include/Corrade/Containers/Containers.h
 include/Corrade/Containers/EnumSet.h
 include/Corrade/Containers/EnumSet.hpp
+include/Corrade/Containers/GrowableArray.h
 include/Corrade/Containers/LinkedList.h
 include/Corrade/Containers/Optional.h
 include/Corrade/Containers/OptionalStl.h
@@ -17,6 +18,7 @@ include/Corrade/Containers/ScopedExit.h
 include/Corrade/Containers/StaticArray.h
 include/Corrade/Containers/StridedArrayView.h
 include/Corrade/Containers/Tags.h
+include/Corrade/Containers/constructHelpers.h
 include/Corrade/Corrade.h
 include/Corrade/Interconnect/Connection.h
 include/Corrade/Interconnect/Emitter.h
@@ -43,6 +45,7 @@ include/Corrade/TestSuite/TestSuite.h
 include/Corrade/TestSuite/Tester.h
 include/Corrade/TestSuite/visibility.h
 include/Corrade/Utility/AbstractHash.h
+include/Corrade/Utility/Algorithms.h
 include/Corrade/Utility/Arguments.h
 include/Corrade/Utility/Assert.h
 include/Corrade/Utility/Configuration.h
@@ -52,6 +55,7 @@ include/Corrade/Utility/Debug.h
 include/Corrade/Utility/DebugStl.h
 include/Corrade/Utility/Directory.h
 include/Corrade/Utility/Endianness.h
+include/Corrade/Utility/EndiannessBatch.h
 include/Corrade/Utility/FileWatcher.h
 include/Corrade/Utility/Format.h
 include/Corrade/Utility/FormatStl.h
@@ -75,18 +79,19 @@ include/Corrade/Utility/VisibilityMacros.h
 include/Corrade/Utility/utilities.h
 include/Corrade/Utility/visibility.h
 include/Corrade/configure.h
+include/Corrade/version.h
 lib/libCorradeInterconnect.so
 lib/libCorradeInterconnect.so.2
-lib/libCorradeInterconnect.so.2.3
+lib/libCorradeInterconnect.so.2.4
 lib/libCorradePluginManager.so
 lib/libCorradePluginManager.so.2
-lib/libCorradePluginManager.so.2.3
+lib/libCorradePluginManager.so.2.4
 lib/libCorradeTestSuite.so
 lib/libCorradeTestSuite.so.2
-lib/libCorradeTestSuite.so.2.3
+lib/libCorradeTestSuite.so.2.4
 lib/libCorradeUtility.so
 lib/libCorradeUtility.so.2
-lib/libCorradeUtility.so.2.3
+lib/libCorradeUtility.so.2.4
 share/cmake/Corrade/CorradeConfig.cmake
 share/cmake/Corrade/CorradeLibSuffix.cmake
 share/cmake/Corrade/FindCorrade.cmake

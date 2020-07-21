@@ -2,7 +2,7 @@
 
 PORTNAME=	corrade
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2019.10
+DISTVERSION=	2020.06
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		cmake compiler:c++14-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	mosra
-GH_TUPLE=	mosra:toolchains:a3e0aff:t/toolchains
+GH_TUPLE=	mosra:toolchains:b0ea02e:t/toolchains
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DLIB_SUFFIX:STRING=""
