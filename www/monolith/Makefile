@@ -2,8 +2,7 @@
 
 PORTNAME=	monolith
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.7
-PORTREVISION=	1
+DISTVERSION=	2.3.0
 CATEGORIES=	www
 
 MAINTAINER=	vulcan@wired.sh
@@ -19,14 +18,14 @@ GH_ACCOUNT=	Y2Z
 CARGO_CRATES=	adler32-1.0.4 \
 		ansi_term-0.11.0 \
 		anyhow-1.0.26 \
-		assert_cmd-0.12.0 \
-		async-compression-0.2.0 \
+		assert_cmd-1.0.1 \
+		async-compression-0.3.4 \
 		atty-0.2.13 \
 		autocfg-0.1.7 \
-		base64-0.11.0 \
-		base64-0.12.0 \
+		autocfg-1.0.0 \
+		base64-0.12.2 \
 		bitflags-1.2.1 \
-		block-buffer-0.7.3 \
+		block-buffer-0.8.0 \
 		block-padding-0.1.5 \
 		bumpalo-3.1.1 \
 		byte-tools-0.3.1 \
@@ -35,7 +34,8 @@ CARGO_CRATES=	adler32-1.0.4 \
 		c2-chacha-0.2.3 \
 		cc-1.0.47 \
 		cfg-if-0.1.10 \
-		clap-2.33.0 \
+		chrono-0.4.11 \
+		clap-2.33.1 \
 		cloudabi-0.0.3 \
 		core-foundation-0.6.4 \
 		core-foundation-sys-0.6.2 \
@@ -43,12 +43,11 @@ CARGO_CRATES=	adler32-1.0.4 \
 		cssparser-0.27.2 \
 		cssparser-macros-0.6.0 \
 		difference-2.0.0 \
-		digest-0.8.1 \
+		digest-0.9.0 \
 		doc-comment-0.3.1 \
 		dtoa-0.4.4 \
 		dtoa-short-0.3.2 \
 		encoding_rs-0.8.20 \
-		escargot-0.5.0 \
 		fake-simd-0.1.2 \
 		flate2-1.0.13 \
 		fnv-1.0.6 \
@@ -64,16 +63,16 @@ CARGO_CRATES=	adler32-1.0.4 \
 		futures-sink-0.3.1 \
 		futures-task-0.3.1 \
 		futures-util-0.3.1 \
-		generic-array-0.12.3 \
+		generic-array-0.14.2 \
 		getrandom-0.1.13 \
-		h2-0.2.1 \
+		h2-0.2.5 \
 		heck-0.3.1 \
 		hermit-abi-0.1.6 \
 		html5ever-0.24.1 \
 		http-0.2.0 \
 		http-body-0.3.1 \
 		httparse-1.3.4 \
-		hyper-0.13.1 \
+		hyper-0.13.6 \
 		hyper-tls-0.4.0 \
 		idna-0.2.0 \
 		indexmap-1.3.0 \
@@ -97,6 +96,8 @@ CARGO_CRATES=	adler32-1.0.4 \
 		net2-0.2.33 \
 		new_debug_unreachable-1.0.3 \
 		nom-4.2.3 \
+		num-integer-0.1.43 \
+		num-traits-0.2.12 \
 		num_cpus-1.11.1 \
 		opaque-debug-0.2.3 \
 		openssl-0.10.26 \
@@ -113,7 +114,7 @@ CARGO_CRATES=	adler32-1.0.4 \
 		phf_shared-0.8.0 \
 		pin-project-0.4.6 \
 		pin-project-internal-0.4.6 \
-		pin-project-lite-0.1.2 \
+		pin-project-lite-0.1.7 \
 		pin-utils-0.1.0-alpha.4 \
 		pkg-config-0.3.17 \
 		ppv-lite86-0.2.6 \
@@ -142,7 +143,7 @@ CARGO_CRATES=	adler32-1.0.4 \
 		rdrand-0.4.0 \
 		redox_syscall-0.1.56 \
 		remove_dir_all-0.5.2 \
-		reqwest-0.10.0 \
+		reqwest-0.10.6 \
 		ryu-1.0.2 \
 		schannel-0.1.16 \
 		security-framework-0.3.4 \
@@ -151,11 +152,12 @@ CARGO_CRATES=	adler32-1.0.4 \
 		serde_derive-1.0.103 \
 		serde_json-1.0.42 \
 		serde_urlencoded-0.6.1 \
-		sha2-0.8.1 \
+		sha2-0.9.0 \
 		siphasher-0.2.3 \
 		siphasher-0.3.2 \
 		slab-0.4.2 \
 		smallvec-1.0.0 \
+		socket2-0.3.12 \
 		sourcefile-0.1.4 \
 		string_cache-0.7.5 \
 		string_cache_codegen-0.4.4 \
@@ -168,7 +170,7 @@ CARGO_CRATES=	adler32-1.0.4 \
 		time-0.1.42 \
 		tokio-0.2.6 \
 		tokio-tls-0.3.0 \
-		tokio-util-0.2.0 \
+		tokio-util-0.3.1 \
 		tower-service-0.3.0 \
 		treeline-0.1.0 \
 		try-lock-0.2.2 \
@@ -185,6 +187,7 @@ CARGO_CRATES=	adler32-1.0.4 \
 		vec_map-0.8.1 \
 		version_check-0.1.5 \
 		version_check-0.9.1 \
+		wait-timeout-0.2.0 \
 		want-0.3.0 \
 		wasi-0.7.0 \
 		wasm-bindgen-0.2.57 \
@@ -201,7 +204,7 @@ CARGO_CRATES=	adler32-1.0.4 \
 		winapi-build-0.1.1 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		winreg-0.6.2 \
+		winreg-0.7.0 \
 		ws2_32-sys-0.2.1
 
 PLIST_FILES=	bin/${PORTNAME}
