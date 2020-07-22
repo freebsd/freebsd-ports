@@ -8,9 +8,6 @@ cp ~/.zshrc ~/.zshrc.orig
 
 2. Create a new zsh configuration file
 cp %%DATADIR%%/templates/zshrc.zsh-template ~/.zshrc
-
-3. Create Oh My Zsh cache directory
-mkdir -p ~/.oh-my-zsh/cache
 EOM
 }
 ]

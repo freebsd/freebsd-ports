@@ -307,6 +307,7 @@
 %%DATADIR%%/plugins/homestead/homestead.plugin.zsh
 %%DATADIR%%/plugins/httpie/README.md
 %%DATADIR%%/plugins/httpie/_httpie
+%%DATADIR%%/plugins/httpie/httpie.plugin.zsh
 %%DATADIR%%/plugins/ionic/README.md
 %%DATADIR%%/plugins/ionic/ionic.plugin.zsh
 %%DATADIR%%/plugins/iterm2/README.md
