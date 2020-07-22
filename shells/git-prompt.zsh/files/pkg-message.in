@@ -6,7 +6,7 @@ Final git-prompt.zsh setup instructions:
 To add the git status indicator to your prompt, source git-prompt.zsh in
 one of your Zsh startup files using
 
-source %%DATADIR%%${PORTNAME}/${PORTNAME}
+source %%DATADIR%%/%%PORTNAME%%
 
 Next, add ' $(gitprompt)%# ' to the end of the PROMPT value like in the
 example below.
