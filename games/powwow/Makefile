@@ -3,11 +3,12 @@
 
 PORTNAME=	powwow
 PORTVERSION=	1.2.17
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://hoopajoo.net/static/projects/ \
 		ftp://ftp.wilbury.sk/pub/FreeBSD/local/distfiles/
 
-MAINTAINER=	otis@sk.FreeBSD.org
+MAINTAINER=	juraj@lutter.sk
 COMMENT=	Client to play MUDs
 
 USES=		ncurses
