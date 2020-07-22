@@ -1,15 +1,15 @@
---- Makefile.INCLUDE.orig	2020-04-15 00:56:29 UTC
+--- Makefile.INCLUDE.orig	2020-07-21 18:06:10 UTC
 +++ Makefile.INCLUDE
 @@ -92,7 +92,7 @@ MISC    = AFNI_atlas_spaces.niml AFNI.Xdefaults AFNI.a
  ## AFNI package, but included because they are useful.  Some of
  ## them are Open Source programs, not from the AFNI group at all.
  
--EXTRAS   = cjpeg djpeg whirlgif mpeg_encode myget Xphace rmz aiv mycat quotize $(EXPROGS)
+-EXTRAS   = cjpeg djpeg whirlgif myget Xphace rmz aiv mycat quotize $(EXPROGS)
 +EXTRAS   = whirlgif myget Xphace rmz aiv mycat quotize $(EXPROGS)
  
  # mpegtoppm in above list
  
-@@ -105,7 +105,7 @@ EXTRAS   = cjpeg djpeg whirlgif mpeg_encode myget Xpha
+@@ -105,7 +105,7 @@ EXTRAS   = cjpeg djpeg whirlgif myget Xphace rmz aiv m
  PROGS_1  = afni to3d from3d abut 3dclust nsize 3dinfo 3dproject 3dmerge count   \
             sfim tfim ftosh 3dttest 3ddup imrotate imreg imstat 3dnvals          \
             fim2 imand FD2 sqwave immask imdump imaver 3dhistog 3dfim 3daxialize \
@@ -54,7 +54,7 @@
                 waver 3dnewid 3dcalc ccalc imcalc 1dmatcalc 3drefit 3dbucket       \
                 3dAFNItoNIML    AlphaSim 3dFWHM plugout_tt 3dnoise plugout_ijk     \
                 3dMannWhitney 3dWilcoxon 3dKruskalWallis 3dFriedman 3dRegAna       \
-@@ -4093,7 +4093,10 @@ R_Makevars_mod_linux:
+@@ -4109,7 +4109,10 @@ R_Makevars_mod_linux:
  
  R_io.so: R_io.c $(LIBMRI_OBJ) $(R_MAKEVARS_DEP)
  	( if which R >/dev/null ; then \
