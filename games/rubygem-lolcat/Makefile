@@ -17,7 +17,7 @@ RUN_DEPENDS=	rubygem-manpages>=0.6.1<0.7:devel/rubygem-manpages \
 
 USES=		gem
 
-CONFLICT_INSTALL=	lolcat
+CONFLICTS_INSTALL=	lolcat
 
 USE_RUBY=	yes
 

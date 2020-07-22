@@ -20,7 +20,7 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	smart-pattern
 GL_COMMIT=	15e731671f9471390d7ccf95c7eb5bbda8c25f95
 
-DOS2UNIX_FILE=	src/libs/vgeometry/vellipticalarc.cpp
+DOS2UNIX_FILES=	src/libs/vgeometry/vellipticalarc.cpp
 
 QMAKE_ARGS=	CONFIG+="noTests" CONFIG+="noRunPath"
 .if !defined(WITH_CCACHE_BUILD) || defined(NO_CCACHE)

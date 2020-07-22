@@ -26,7 +26,6 @@ USE_LDCONFIG=	yes
 
 CMAKE_OFF=	BUILD_DEPS INSTALL_BUILD_DEPS BUILD_PYTHON BUILD_EXAMPLES
 CONFIGURE_ENV=	UNIX_CBC_DIR=${LOCALBASE} UNIX_CLP_DIR=${LOCALBASE}
-BUILD_ENV=	UNIX_CBC_DIR=${LOCALBASE} UNIX_CLP_DIR=${LOCALBASE}
 
 post-configure: # https://github.com/google/or-tools/issues/2109
 	@${REINPLACE_CMD} -e 's|protobuf::protoc|protoc -I${LOCALBASE}/include| ; s|protobuf$$:$$:protoc||' ${BUILD_WRKSRC}/build.ninja
