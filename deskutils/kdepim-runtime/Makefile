@@ -28,7 +28,7 @@ USE_KDE=	auth bookmarks codecs completion config configwidgets \
 USE_KDE+=	akonadi akonadicontacts akonadimime akonadinotes \
 		akonadicalendar akonadisearch alarmcalendar calendarcore \
 		calendarutils contacts gapi identitymanagement imap \
-		kontactinterface kmailtransport mbox mime pimcommon \
+		kontactinterface mailtransport mbox mime pimcommon \
 		pimtextedit syndication
 USE_QT=		concurrent core dbus declarative gui location network networkauth printsupport speech \
 		script webchannel webengine widgets xml xmlpatterns \
