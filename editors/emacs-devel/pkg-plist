@@ -2690,6 +2690,8 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/eudcb-ldap.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/eudcb-mab.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/eudcb-mab.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/net/eudcb-macos-contacts.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/net/eudcb-macos-contacts.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/eww.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/eww.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/gnutls.el.gz
@@ -4032,9 +4034,6 @@ share/metainfo/emacs.appdata.xml
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/marker.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/menu.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/menu.h
-%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/mini-gmp-emacs.c
-%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/mini-gmp.c
-%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/mini-gmp.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/minibuf.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/module-env-25.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/module-env-26.h
