@@ -19,4 +19,4 @@ Features:
 * Easy to integrate into other tools with python, or a C API (< 1k lines).
 * Fast random access to frames.
 
-WWW: https://bitbucket.org/glotzer/gsd
+WWW: https://bitbucket.org/glotzer/gsd/wiki/Home
