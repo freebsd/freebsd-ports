@@ -22,6 +22,7 @@
     SUBDIR += chexedit
     SUBDIR += codelite
     SUBDIR += cooledit
+    SUBDIR += cpeditor
     SUBDIR += cream
     SUBDIR += cudatext
     SUBDIR += deforaos-editor

@@ -1,0 +1,18 @@
+--- src/Settings/settings.json.orig	2020-07-22 20:35:15 UTC
++++ src/Settings/settings.json
+@@ -120,7 +120,7 @@
+     {
+         "name": "C++/Compile Command",
+         "type": "QString",
+-        "default": "g++ -Wall",
++        "default": "c++ -Wall",
+         "tip": "The command used to compile C++. It should NOT include the path to the source file or \"-o <output file>\"."
+     },
+     {
+@@ -984,4 +984,4 @@
+         "default": "true",
+         "trtip": "tr(\"When there are file changes that are not made in CP Editor and is not automatically loaded by\\n\\\"%1\\\", ask for whether to load the changes.\\nIf this is disabled, external file changes will be ignored unless they are loaded by\\n\\\"%1\\\".\").arg(tr(\"Auto-load external file changes if there's no unsaved modification\"))"
+     }
+-]
+\ No newline at end of file
++]
