@@ -1,6 +1,6 @@
 --- rovclock.c.orig	2006-01-04 21:23:32 UTC
 +++ rovclock.c
-@@ -20,11 +20,13 @@
+@@ -20,11 +20,16 @@
   */
   /*****************************************************************************/
  
@@ -11,11 +11,14 @@
  #include <getopt.h>
 -#include <sys/io.h>
 +#include <sys/types.h>
++#if !defined(__amd64__) && !defined(__i386__)
++#include <machine/pio.h>
++#endif
 +#include <machine/cpufunc.h>
  #include <sys/mman.h>
  
  #include "pci.h"
-@@ -122,18 +124,18 @@ struct rovclock_data {
+@@ -122,18 +127,18 @@ struct rovclock_data {
  /* PCI read/write functions */
  unsigned int pci_read(u8 bus, u8 device, u8 func, u8 addr)
  {
@@ -39,7 +42,7 @@
  }
  
  /* Register read/write functions */
-@@ -144,38 +146,38 @@ u32 reg_read(struct rovclock_data *rovcl
+@@ -144,38 +149,38 @@ u32 reg_read(struct rovclock_data *rovclock, u32 addr)
  
  void reg_write(struct rovclock_data *rovclock, u32 addr, u32 data)
  {
@@ -86,7 +89,7 @@
  }
  
  /* Print usage */
-@@ -281,10 +283,11 @@ void pll_set_freq(struct rovclock_data *
+@@ -281,10 +286,11 @@ void pll_set_freq(struct rovclock_data *rovclock)
  /* Search for ATI card on PCI bus */
  int find_card(struct rovclock_data *rovclock)
  {
@@ -100,7 +103,7 @@
  	/* Check /proc/bus/pci/devices first */
  	if ((proc = fopen("/proc/bus/pci/devices", "r")) != NULL) {
  		while (fscanf(proc, "%x\t%x", &rovclock->pci_bus, &id) == 2) {
-@@ -305,8 +308,9 @@ int find_card(struct rovclock_data *rovc
+@@ -305,8 +311,9 @@ int find_card(struct rovclock_data *rovclock)
  					break;
  		}
  	}
@@ -111,7 +114,7 @@
  
  		/* Find card by scanning the PCI devices, check from bus 1 to 9 for ATI device */
  		rovclock->pci_dev = 0;
-@@ -423,7 +427,7 @@ int main(int argc, char **argv)
+@@ -423,7 +430,7 @@ int main(int argc, char **argv)
  	}
  	
  	/* Get I/O permission */
