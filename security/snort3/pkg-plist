@@ -172,6 +172,7 @@ include/snort/pub_sub/dcerpc_events.h
 include/snort/pub_sub/expect_events.h
 include/snort/pub_sub/finalize_packet_event.h
 include/snort/pub_sub/http_events.h
+include/snort/pub_sub/opportunistic_tls_event.h
 include/snort/pub_sub/sip_events.h
 include/snort/search_engines/search_common.h
 include/snort/search_engines/search_tool.h
