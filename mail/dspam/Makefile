@@ -470,6 +470,8 @@ post-patch:
 	@${REINPLACE_CMD} -e "s^%%PERL%%^${PERL}^" \
 		${WRKSRC}/src/tools/dspam_train.in \
 		${WRKSRC}/src/tools/dspam_notify.in
+	@${TEST} ${MYSQL_FLAVOUR} == mariadb && ${REINPLACE_CMD} -e \
+		's,&& defined(CR_ERROR_FIRST),,' ${WRKSRC}/configure || :
 
 pre-configure:
 .if ${PORT_OPTIONS:MVIRT_USERS} && !( ${PORT_OPTIONS:MMYSQL} || \
