@@ -4,7 +4,11 @@
 PORTNAME=	Coin
 PORTVERSION=	4.0.0
 DISTVERSIONPREFIX=	Coin-
+PORTREVISION=	1
 CATEGORIES=	graphics
+
+PATCH_SITES=	https://github.com/myfreeweb/coin/commit/
+PATCHFILES+=	3053d28b74d.patch:-p1 # Unbreak non-X11
 
 MAINTAINER=	cmt@FreeBSD.org
 COMMENT=	C++ 3D graphics library based on the Open Inventor API
