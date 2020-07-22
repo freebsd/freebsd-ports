@@ -11,8 +11,6 @@ share/applications/ltris.desktop
 %%DATADIR%%/gfx/back1.bmp
 %%DATADIR%%/gfx/back2.bmp
 %%DATADIR%%/gfx/back3.bmp
-%%DATADIR%%/gfx/back4.bmp
-%%DATADIR%%/gfx/back5.bmp
 %%DATADIR%%/gfx/balloon.bmp
 %%DATADIR%%/gfx/balloon_peek.bmp
 %%DATADIR%%/gfx/blocks.bmp

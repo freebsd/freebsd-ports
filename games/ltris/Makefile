@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	ltris
-PORTVERSION=	1.0.20
+PORTVERSION=	1.2
 PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/lgames/${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	marcel@herrbischoff.com
 COMMENT=	Tetris clone but a good one with bunch of cool features
 
 LICENSE=	GPLv2+
