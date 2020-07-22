@@ -10,5 +10,5 @@ include/enet/win32.h
 lib/libenet.a
 lib/libenet.so
 lib/libenet.so.7
-lib/libenet.so.7.0.2
+lib/libenet.so.7.0.3
 libdata/pkgconfig/libenet.pc
