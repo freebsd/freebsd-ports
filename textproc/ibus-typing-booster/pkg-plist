@@ -946,4 +946,5 @@ share/locale/tr/LC_MESSAGES/ibus-typing-booster.mo
 share/locale/uk/LC_MESSAGES/ibus-typing-booster.mo
 share/locale/zh_CN/LC_MESSAGES/ibus-typing-booster.mo
 share/locale/zh_TW/LC_MESSAGES/ibus-typing-booster.mo
+share/metainfo/emoji-picker.appdata.xml
 share/metainfo/typing-booster.appdata.xml
