@@ -50,6 +50,7 @@ man/man8/gpsdctl.8.gz
 man/man8/gpsinit.8.gz
 %%PYTHON_SITELIBDIR%%/%%PYTHON_EGGINFO%%
 %%PYTHON_SITELIBDIR%%/gps/__init__.py
+%%PYTHON_SITELIBDIR%%/gps/aiogps.py
 %%PYTHON_SITELIBDIR%%/gps/client.py
 %%PYTHON_SITELIBDIR%%/gps/clienthelpers.py
 %%PYTHON_SITELIBDIR%%/gps/fake.py

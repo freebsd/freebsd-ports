@@ -3,7 +3,7 @@
 
 PORTNAME=	gpsd
 PORTVERSION=	3.20
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro geography
 MASTER_SITES=	SAVANNAH
 
@@ -13,7 +13,7 @@ COMMENT=	Daemon that monitors one or more GPSes attached to a host computer
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe pathfix pkgconfig python:3.6+ scons:python2 shebangfix
+USES=		cpe pathfix pkgconfig python:3.6+ scons shebangfix
 CPE_VENDOR=	gpsd_project
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	gpsd
