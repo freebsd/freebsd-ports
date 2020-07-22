@@ -3,10 +3,8 @@
 
 PORTNAME=	unadf
 PORTVERSION=	0.7.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers
-MASTER_SITES=	http://lclevy.free.fr/adflib/
-DISTNAME=	adflib-${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extracts files from .adf-files used by Amiga emulators
@@ -15,6 +13,14 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		autoreconf libtool pathfix tar:bzip2
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	lclevy
+GH_PROJECT=	ADFlib
+GH_TAGNAME=	f3af9e0
+
+USE_LDCONFIG=	yes
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/adflib
 INSTALL_TARGET=	install-strip
