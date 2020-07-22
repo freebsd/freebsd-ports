@@ -9,6 +9,7 @@
     SUBDIR += blt
     SUBDIR += bwidget
     SUBDIR += c++-gtk-utils
+    SUBDIR += color-widgets-qt5
     SUBDIR += ctk
     SUBDIR += fltk
     SUBDIR += fox14
