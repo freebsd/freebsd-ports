@@ -1,0 +1,8 @@
+MultiJSON is a generic swappable back-end for JSON handling.
+
+Lots of Ruby libraries parse JSON and everyone has their favorite JSON coder.
+Instead of choosing a single JSON coder and forcing users of your library to be
+stuck with it, you can use MultiJSON instead, which will simply choose the
+fastest available JSON coder.
+
+WWW: https://github.com/intridea/multi_json
