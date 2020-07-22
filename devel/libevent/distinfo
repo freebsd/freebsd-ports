@@ -1,3 +1,3 @@
-TIMESTAMP = 1564695471
-SHA256 (libevent-libevent-release-2.1.11-stable_GH0.tar.gz) = 229393ab2bf0dc94694f21836846b424f3532585bac3468738b7bf752c03901e
-SIZE (libevent-libevent-release-2.1.11-stable_GH0.tar.gz) = 720798
+TIMESTAMP = 1594800411
+SHA256 (libevent-2.1.12-stable.tar.gz) = 92e6de1be9ec176428fd2367677e61ceffc2ee1cb119035037a27d346b0403bb
+SIZE (libevent-2.1.12-stable.tar.gz) = 1100847
