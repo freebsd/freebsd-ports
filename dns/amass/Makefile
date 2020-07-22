@@ -2,7 +2,7 @@
 
 PORTNAME=	amass
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.7.4
+DISTVERSION=	3.8.0
 CATEGORIES=	dns
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,11 +24,12 @@ GH_TUPLE=	\
 		andybalholm:cascadia:v1.2.0:andybalholm_cascadia/vendor/github.com/andybalholm/cascadia \
 		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 		boltdb:bolt:v1.3.1:boltdb_bolt/vendor/github.com/boltdb/bolt \
+		br0xen:boltbrowser:14bd1cdd41fd:br0xen_boltbrowser/vendor/github.com/br0xen/boltbrowser \
 		cayleygraph:cayley:v0.7.7:cayleygraph_cayley/vendor/github.com/cayleygraph/cayley \
 		cayleygraph:quad:v1.2.4:cayleygraph_quad/vendor/github.com/cayleygraph/quad \
 		cenkalti:backoff:v2.2.1:cenkalti_backoff/vendor/github.com/cenkalti/backoff \
 		cespare:xxhash:v2.1.1:cespare_xxhash_v2/vendor/github.com/cespare/xxhash/v2 \
-		chromedp:cdproto:0de008e41fa0:chromedp_cdproto/vendor/github.com/chromedp/cdproto \
+		chromedp:cdproto:d1f6fc58448b:chromedp_cdproto/vendor/github.com/chromedp/cdproto \
 		chromedp:chromedp:v0.5.3:chromedp_chromedp/vendor/github.com/chromedp/chromedp \
 		cjoudrey:gluaurl:31cbb9bef199:cjoudrey_gluaurl/vendor/github.com/cjoudrey/gluaurl \
 		dennwc:base:v1.0.0:dennwc_base/vendor/github.com/dennwc/base \
@@ -43,52 +44,51 @@ GH_TUPLE=	\
 		gobuffalo:packd:v1.0.0:gobuffalo_packd/vendor/github.com/gobuffalo/packd \
 		gobuffalo:packr:v2.8.0:gobuffalo_packr_v2/vendor/github.com/gobuffalo/packr \
 		gobwas:httphead:2c6c146eadee:gobwas_httphead/vendor/github.com/gobwas/httphead \
-		gobwas:pool:v0.2.0:gobwas_pool/vendor/github.com/gobwas/pool \
+		gobwas:pool:v0.2.1:gobwas_pool/vendor/github.com/gobwas/pool \
 		gobwas:ws:v1.0.3:gobwas_ws/vendor/github.com/gobwas/ws \
 		gogo:protobuf:v1.3.1:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang:appengine:v1.6.6:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:70a84ac30bf9:golang_crypto/vendor/golang.org/x/crypto \
+		golang:crypto:948cd5f35899:golang_crypto/vendor/golang.org/x/crypto \
 		golang:lint:738671d3881b:golang_lint/vendor/golang.org/x/lint \
-		golang:net:627f9648deb9:golang_net/vendor/golang.org/x/net \
+		golang:net:ab3426394381:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:bf48bf16ab8d:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.4.2:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sync:43a5402ce75a:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:6fdc65e7d980:golang_sys/vendor/golang.org/x/sys \
-		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
-		golang:tools:cef9fc3bc8f0:golang_tools/vendor/golang.org/x/tools \
+		golang:sync:6e8e738ad208:golang_sync/vendor/golang.org/x/sync \
+		golang:sys:cb9d2d5c5666:golang_sys/vendor/golang.org/x/sys \
+		golang:text:v0.3.3:golang_text/vendor/golang.org/x/text \
+		golang:tools:5ea363182e19:golang_tools/vendor/golang.org/x/tools \
 		google:go-querystring:v1.0.0:google_go_querystring/vendor/github.com/google/go-querystring \
 		google:uuid:v1.1.1:google_uuid/vendor/github.com/google/uuid \
 		gorilla:websocket:v1.4.2:gorilla_websocket/vendor/github.com/gorilla/websocket \
-		hashicorp:go-uuid:v1.0.2:hashicorp_go_uuid/vendor/github.com/hashicorp/go-uuid \
 		hidal-go:hidalgo:42e03f3b5eaa:hidal_go_hidalgo/vendor/github.com/hidal-go/hidalgo \
 		inconshreveable:mousetrap:v1.0.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
-		jcmturner:aescts:v2.0.0:jcmturner_aescts_v2/vendor/github.com/jcmturner/aescts \
-		jcmturner:dnsutils:v2.0.0:jcmturner_dnsutils_v2/vendor/github.com/jcmturner/dnsutils \
-		jcmturner:gofork:v1.0.0:jcmturner_gofork/vendor/github.com/jcmturner/gofork \
-		jcmturner:goidentity:v6.0.1:jcmturner_goidentity_v6/vendor/github.com/jcmturner/goidentity \
-		jcmturner:gokrb5:v8.3.0:jcmturner_gokrb5_v8/vendor/github.com/jcmturner/gokrb5 \
-		jcmturner:rpc:v2.0.2:jcmturner_rpc_v2/vendor/github.com/jcmturner/rpc \
+		jcmturner:aescts:v1.0.1:jcmturner_aescts/vendor/gopkg.in/jcmturner/aescts.v1 \
+		jcmturner:dnsutils:v1.0.1:jcmturner_dnsutils/vendor/gopkg.in/jcmturner/dnsutils.v1 \
+		jcmturner:goidentity:v3.0.0:jcmturner_goidentity/vendor/gopkg.in/jcmturner/goidentity.v3 \
+		jcmturner:gokrb5:v7.5.0:jcmturner_gokrb5/vendor/gopkg.in/jcmturner/gokrb5.v7 \
+		jcmturner:gokrb5:v8.4.0:jcmturner_gokrb5_v8/vendor/github.com/jcmturner/gokrb5 \
+		jcmturner:rpc:v1.1.0:jcmturner_rpc/vendor/gopkg.in/jcmturner/rpc.v1 \
 		jmoiron:sqlx:v1.2.0:jmoiron_sqlx/vendor/github.com/jmoiron/sqlx \
 		karrick:godirwalk:v1.15.6:karrick_godirwalk/vendor/github.com/karrick/godirwalk \
 		knq:sysutil:15668db23d08:knq_sysutil/vendor/github.com/knq/sysutil \
 		konsorten:go-windows-terminal-sequences:v1.0.3:konsorten_go_windows_terminal_sequences/vendor/github.com/konsorten/go-windows-terminal-sequences \
 		layeh:gopher-json:97fed8db8427:layeh_gopher_json/vendor/layeh.com/gopher-json \
-		lib:pq:v1.6.0:lib_pq/vendor/github.com/lib/pq \
+		lib:pq:v1.7.1:lib_pq/vendor/github.com/lib/pq \
 		mailru:easyjson:v0.7.1:mailru_easyjson/vendor/github.com/mailru/easyjson \
 		markbates:errx:v1.1.0:markbates_errx/vendor/github.com/markbates/errx \
 		markbates:oncer:v1.0.0:markbates_oncer/vendor/github.com/markbates/oncer \
 		markbates:safe:v1.0.1:markbates_safe/vendor/github.com/markbates/safe \
-		mattn:go-colorable:v0.1.6:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
+		mattn:go-colorable:v0.1.7:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-isatty:v0.0.12:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		matttproud:golang_protobuf_extensions:v1.0.1:matttproud_golang_protobuf_extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
-		miekg:dns:v1.1.29:miekg_dns/vendor/github.com/miekg/dns \
+		miekg:dns:v1.1.30:miekg_dns/vendor/github.com/miekg/dns \
 		northwesternmutual:grammes:v1.1.2:northwesternmutual_grammes/vendor/github.com/northwesternmutual/grammes \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
-		prometheus:client_golang:v1.6.0:prometheus_client_golang/vendor/github.com/prometheus/client_golang \
+		prometheus:client_golang:v1.7.1:prometheus_client_golang/vendor/github.com/prometheus/client_golang \
 		prometheus:client_model:v0.2.0:prometheus_client_model/vendor/github.com/prometheus/client_model \
 		prometheus:common:v0.10.0:prometheus_common/vendor/github.com/prometheus/common \
-		prometheus:procfs:v0.0.11:prometheus_procfs/vendor/github.com/prometheus/procfs \
-		protocolbuffers:protobuf-go:v1.24.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
+		prometheus:procfs:v0.1.3:prometheus_procfs/vendor/github.com/prometheus/procfs \
+		protocolbuffers:protobuf-go:v1.25.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
 		rakyll:statik:v0.1.7:rakyll_statik/vendor/github.com/rakyll/statik \
 		rogpeppe:go-internal:v1.6.0:rogpeppe_go_internal/vendor/github.com/rogpeppe/go-internal \
 		sirupsen:logrus:v1.6.0:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
