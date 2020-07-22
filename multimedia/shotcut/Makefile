@@ -22,7 +22,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	mltframework
 
 # Needed to be able to correctly check for updates in-app.
-FULLVERSION=	20.06.28
+FULLVERSION=	20.07.11
 
 USE_GL+=	gl
 USE_QT=		buildtools_build concurrent_build core declarative \
