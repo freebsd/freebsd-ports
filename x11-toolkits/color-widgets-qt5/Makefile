@@ -18,7 +18,6 @@ USE_LDCONFIG=	yes
 SUFFIX=		-qt5
 
 USE_GITLAB=	yes
-GL_SITE=	https://gitlab.com/
 GL_ACCOUNT=	mattia.basaglia
 GL_PROJECT=	Qt-Color-Widgets
 GL_COMMIT=	f2eca13bbc836cec09daae02579f10d5e85e71e8
