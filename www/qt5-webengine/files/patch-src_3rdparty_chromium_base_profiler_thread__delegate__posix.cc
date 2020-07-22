@@ -31,9 +31,15 @@
    return base_address;
  }
  
-@@ -88,11 +99,19 @@ std::vector<uintptr_t*> ThreadDelegatePosix::GetRegist
+@@ -84,15 +95,23 @@ std::vector<uintptr_t*> ThreadDelegatePosix::GetRegist
+   registers.reserve(12);
+   // Return the set of callee-save registers per the ARM 64-bit Procedure Call
+   // Standard section 5.1.1, plus the stack pointer.
+-  registers.push_back(reinterpret_cast<uintptr_t*>(&thread_context->sp));
++  registers.push_back(reinterpret_cast<uintptr_t*>(&thread_context->mc_gpregs.gp_sp));
    for (size_t i = 19; i <= 29; ++i)
-     registers.push_back(reinterpret_cast<uintptr_t*>(&thread_context->regs[i]));
+-    registers.push_back(reinterpret_cast<uintptr_t*>(&thread_context->regs[i]));
++    registers.push_back(reinterpret_cast<uintptr_t*>(&thread_context->mc_gpregs.gp_x[i]));
    return registers;
 -#elif defined(ARCH_CPU_X86_64)  // #if defined(ARCH_CPU_ARM_FAMILY) &&
 -                                // defined(ARCH_CPU_32_BITS)
