@@ -12,7 +12,7 @@ COMMENT=	IceCast, IceCast2, and ShoutCast live audio streamer
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		pkgconfig
+USES=		compiler:c++11-lang pkgconfig
 USE_RC_SUBR=	${PORTNAME}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-alsa
