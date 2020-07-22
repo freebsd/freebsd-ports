@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tcpslice
-PORTVERSION=	20140407
+PORTVERSION=	20200515
 CATEGORIES=	net
 
 MAINTAINER=	sbz@FreeBSD.org
@@ -17,6 +17,6 @@ GNU_CONFIGURE=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	the-tcpdump-group
-GH_TAGNAME=	2837b72
+GH_TAGNAME=	8ba3f89
 
 .include <bsd.port.mk>
