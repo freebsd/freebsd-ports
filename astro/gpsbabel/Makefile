@@ -4,6 +4,7 @@
 PORTNAME=	gpsbabel
 DISTVERSIONPREFIX=	${PORTNAME}_
 DISTVERSION=	1_6_0
+PORTREVISION=	1
 CATEGORIES=	astro geography
 
 MAINTAINER=	dev2@heesakkers.info
@@ -24,11 +25,12 @@ CONFIGURE_ARGS=	--with-zlib=system
 OPTIONS_DEFINE=	GUI
 OPTIONS_SUB=	yes
 
+GUI_USES=	gl
+GUI_USE=	GL=gl \
+		QT=declarative,gui,location,network,printsupport,webchannel \
+		QT=webengine,widgets,xml,buildtools_build,linguisttools_build
 GUI_ALL_TARGET=	gui
-GUI_USE=	QT=qmake_build,gui,xml,network,webkit
-GUI_USE+=	QT=linguisttools_build,webengine,buildtools
 GUI_VARS=	MAKE_JOBS_UNSAFE=yes
-GUI_QMAKE_SOURCE_PATH=	${WRKSRC}/gui
 
 do-build:
 	(cd ${WRKSRC}; ${CONFIGURE_CMD} --with-zlib-system; ${GMAKE})
