@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2020-01-15 20:28:56 UTC
+--- CMakeLists.txt.orig	2020-07-22 01:12:44 UTC
 +++ CMakeLists.txt
-@@ -151,7 +151,7 @@ endif ()
+@@ -173,7 +173,7 @@ endif ()
  # Top level setup for external backends
  ExternalBackendsInit()
  
@@ -9,3 +9,50 @@
  if(NOT LLVM_FOUND OR LLVM_VERSION VERSION_LESS 7.0)
    message(SEND_ERROR "LLVM >= 7.0 is required to build Glow")
  endif()
+@@ -186,7 +186,7 @@ if(NOT EXISTS "${GLOW_SOURCE_DIR}/tests/googlebenchmar
+   message(FATAL_ERROR "No googlebenchmark git submodule. Run: git submodule update --init --recursive")
+ endif()
+ 
+-if(NOT EXISTS "${GLOW_SOURCE_DIR}/tests/googletest/googletest")
++if(FALSE AND NOT EXISTS "${GLOW_SOURCE_DIR}/tests/googletest/googletest")
+   message(FATAL_ERROR "No googletest git submodule. Run: git submodule update --init --recursive")
+ endif()
+ 
+@@ -207,11 +207,11 @@ if(NOT EXISTS "${GLOW_THIRDPARTY_DIR}/fp16")
+ else()
+   include_directories(${GLOW_THIRDPARTY_DIR}/fp16/include)
+ endif()
+-if (MSVC)
++if (TRUE OR MSVC)
+     find_package(folly CONFIG REQUIRED)
+-    find_library(JEMALLOC_LIB jemalloc)
++    #find_library(JEMALLOC_LIB jemalloc)
+     add_library(folly_jemalloc INTERFACE)
+-    target_link_libraries(folly_jemalloc INTERFACE Folly::folly Folly::folly_deps Folly::follybenchmark Folly::folly_test_util ${JEMALLOC_LIB})
++    target_link_libraries(folly_jemalloc INTERFACE Folly::folly Folly::folly_deps Folly::follybenchmark Folly::folly_test_util)
+ elseif(NOT EXISTS "${GLOW_THIRDPARTY_DIR}/folly/folly")
+   message(FATAL_ERROR "No folly git submodule. Run: git submodule update --init --recursive")
+ else()
+@@ -231,15 +231,15 @@ else()
+   endif()
+   set(SAVE_CMAKE_CXX_STANDARD "${CMAKE_CXX_STANDARD}")
+   unset(CMAKE_CXX_STANDARD)
+-  set(CXX_STD "c++14" CACHE STRING "Force c++14 for folly")
+-  set(COMPILER_HAS_F_ALIGNED_NEW OFF CACHE BOOL "turn off -faligned_new for folly")
+-  add_subdirectory("${GLOW_THIRDPARTY_DIR}/folly" EXCLUDE_FROM_ALL)
+-  target_include_directories(folly PUBLIC "${OPENSSL_INCLUDE_DIR}")
++  #set(CXX_STD "c++14" CACHE STRING "Force c++14 for folly")
++  #set(COMPILER_HAS_F_ALIGNED_NEW OFF CACHE BOOL "turn off -faligned_new for folly")
++  #add_subdirectory("${GLOW_THIRDPARTY_DIR}/folly" EXCLUDE_FROM_ALL)
++  #target_include_directories(folly PUBLIC "${OPENSSL_INCLUDE_DIR}")
+   set(CMAKE_CXX_FLAGS "${SAVE_CMAKE_CXX_FLAGS}")
+   set(CMAKE_CXX_STANDARD "${SAVE_CMAKE_CXX_STANDARD}")
+-  find_library(JEMALLOC_LIB jemalloc)
+-  add_library(folly_jemalloc INTERFACE)
+-  target_link_libraries(folly_jemalloc INTERFACE folly ${JEMALLOC_LIB})
++  #find_library(JEMALLOC_LIB jemalloc)
++  #add_library(folly_jemalloc INTERFACE)
++  #target_link_libraries(folly_jemalloc INTERFACE folly ${JEMALLOC_LIB})
+ endif()
+ 
+ add_library(Miniz

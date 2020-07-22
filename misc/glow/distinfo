@@ -1,10 +1,8 @@
-TIMESTAMP = 1579129746
-SHA256 (pytorch-glow-g20200115-97f84e830404183375380842de914e07c0961f7f_GH0.tar.gz) = 4b7913108b8ccf4191a504be31519a472807a37d17e3ee6ef3e9fd6f7529bff2
-SIZE (pytorch-glow-g20200115-97f84e830404183375380842de914e07c0961f7f_GH0.tar.gz) = 47971229
+TIMESTAMP = 1595389132
+SHA256 (pytorch-glow-g20200721-f24d960e3cc80db95ac0bc17b1900dbf60ca044a_GH0.tar.gz) = 1cb265b9d000a096360c5a5f452bf5080ea939dda6781f700eba4151045de749
+SIZE (pytorch-glow-g20200721-f24d960e3cc80db95ac0bc17b1900dbf60ca044a_GH0.tar.gz) = 48551013
 SHA256 (google-benchmark-090faec_GH0.tar.gz) = 0699cf1ac5ef31ebc15ded60329ca8b90cf0b4ae75c18eaf7300fe8a4c914a0f
 SIZE (google-benchmark-090faec_GH0.tar.gz) = 150159
-SHA256 (google-googletest-0c799d0_GH0.tar.gz) = f102915c9507f4f6ef87131892b090e4df9d41fae157ac6b0d76c84c8e84d3b2
-SIZE (google-googletest-0c799d0_GH0.tar.gz) = 992346
 SHA256 (houseroad-foxi-8015abb_GH0.tar.gz) = 07dc191ef38426617e6180e795fb3e3c5bf122445804003afa213dd762269213
 SIZE (houseroad-foxi-8015abb_GH0.tar.gz) = 28531
 SHA256 (Maratyszcza-FP16-34d4bf0_GH0.tar.gz) = e8d1f7190aaa9a2bedb92620c5b2e93529be3be37dd1f0c23e741cbef18365b2
