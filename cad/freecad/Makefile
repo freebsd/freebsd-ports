@@ -8,6 +8,9 @@ PORTREVISION=	10
 # DISTVERSIONSUFFIX=	-g690774c0e
 CATEGORIES=	cad
 
+PATCH_SITES=	https://github.com/FreeCAD/FreeCAD/commit/
+PATCHFILES+=	6eacb17b3e03d20.patch:-p1 # Python 3.8 compat
+
 MAINTAINER=	cmt@FreeBSD.org
 COMMENT=	General purpose 3D CAD modeller
 
