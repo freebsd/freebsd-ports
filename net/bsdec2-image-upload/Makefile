@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
-USES=		ssl tar:tgz uidfix
+USES=		compiler ssl tar:tgz uidfix
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
 
@@ -23,4 +23,10 @@ MAKE_ARGS+=	BINDIR=${PREFIX}/bin
 
 PLIST_FILES=	bin/bsdec2-image-upload
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${CHOSEN_COMPILER_TYPE} == gcc
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-Makefile
+.endif
+
+.include <bsd.port.post.mk>
