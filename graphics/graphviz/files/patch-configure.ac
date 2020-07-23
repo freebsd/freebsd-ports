@@ -1,6 +1,6 @@
---- configure.ac.orig	2019-09-12 02:11:30 UTC
+--- configure.ac.orig	2020-06-29 08:47:18 UTC
 +++ configure.ac
-@@ -697,7 +697,7 @@ else
+@@ -742,7 +742,7 @@ else
        if test "x$GUILE" = "x"; then
          use_guile="No (guile not available)"
        else
@@ -9,7 +9,7 @@
          GUILE_VERSION_MAJOR=`echo $GUILE_VERSION | cut -d '.' -f 1`
          GUILE_VERSION_MINOR=`echo $GUILE_VERSION | cut -d '.' -f 2`
          if test 0$GUILE_VERSION_MAJOR -lt 2; then
-@@ -882,17 +882,17 @@ else
+@@ -972,17 +972,17 @@ else
              if test "x$PKG_CONFIG" != "x"; then
  	        AC_MSG_CHECKING(for Lua headers and libraries with pkg-config)
  	        echo
@@ -30,16 +30,16 @@
  		           LUA_LIBS="$LUA_LFLAGS "`$PKG_CONFIG --libs lualib$l`
  		        fi
                          break
-@@ -1181,7 +1181,7 @@ else
+@@ -1271,7 +1271,7 @@ else
  	use_python="No (python is too old)"
        else
-         PYTHON_PREFIX=`$PYTHON -c "import sys; print sys.prefix"`
+         PYTHON_PREFIX=`$PYTHON -c "import sys; print(sys.prefix)"`
 -        PYTHON_INCLUDES=-I$PYTHON_PREFIX/include/python$PYTHON_VERSION_SHORT
 +        PYTHON_INCLUDES=-I$PYTHON_INCLUDEDIR
  #        PYTHON_LIBS="-lpython$PYTHON_VERSION_SHORT"
  	PYTHON_LIBS="-undefined dynamic_lookup"
          PYTHON_INSTALL_DIR="`$PYTHON $srcdir/config/config_python.py archsitelib`"
-@@ -1412,6 +1412,7 @@ else
+@@ -1502,6 +1502,7 @@ else
  	    use_ruby="No (ruby not available)"
            else
              RUBY_CFLAGS="-I`$RUBY $srcdir/config/config_ruby.rb archdir`"

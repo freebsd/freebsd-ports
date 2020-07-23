@@ -289,15 +289,14 @@ man/man3/expr.3.gz
 %%TCL%%man/man3/gv.3tcl.gz
 man/man3/gvc.3.gz
 man/man3/gvpr.3.gz
-man/man3/lab_gamut.3.gz
 man/man3/pack.3.gz
 man/man3/pathplan.3.gz
 %%TCL%%man/man3/tcldot.3tcl.gz
 man/man3/xdot.3.gz
 man/man7/graphviz.7.gz
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.md
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/Dot.ref
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/addingLayout.txt
@@ -462,7 +461,6 @@ man/man7/graphviz.7.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/info/rect.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/info/rectangle.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/info/round.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/info/sdlshapes.jpg
 %%PORTDOCS%%%%DOCSDIR%%/html/info/sdlshapes.png
 %%PORTDOCS%%%%DOCSDIR%%/html/info/septagon.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/info/shapes.html
@@ -529,7 +527,6 @@ man/man7/graphviz.7.gz
 %%PORTDOCS%%%%DOCSDIR%%/pdf/gvpr.3.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/gxl2dot.1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/gxl2gv.1.pdf
-%%PORTDOCS%%%%DOCSDIR%%/pdf/lab_gamut.3.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/lefty.1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/leftyguide.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/libguide.pdf
@@ -543,7 +540,7 @@ man/man7/graphviz.7.gz
 %%PORTDOCS%%%%DOCSDIR%%/pdf/pack.3.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/patchwork.1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/pathplan.3.pdf
-%%PORTDOCS%%%%DOCSDIR%%/pdf/prune.pdf
+%%PORTDOCS%%%%DOCSDIR%%/pdf/prune.1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/sccmap.1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/sfdp.1.pdf
 %%SMYRNA%%%%PORTDOCS%%%%DOCSDIR%%/pdf/smyrna.1.pdf
