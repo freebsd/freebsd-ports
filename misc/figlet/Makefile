@@ -7,7 +7,7 @@ CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.figlet.org/pub/figlet/program/unix/ \
 		LOCAL/obrien
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	SysV banner-like program prints strings in large fancy ASCII art
 
 LICENSE=	BSD3CLAUSE
