@@ -9,7 +9,7 @@
  
  #include <fstream>
  
-+#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
++#if defined(__FreeBSD__)
 +#include <sys/param.h>
 +#include <sys/sysctl.h>
 +#include <cstdio>
@@ -20,7 +20,7 @@
  
  int Drm::getMaxGpuFrequency(HardwareInfo &hwInfo, int &maxGpuFrequency) {
      maxGpuFrequency = 0;
-+#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
++#if defined(__FreeBSD__)
 +    char name[SPECNAMELEN + 1];
 +    if (!fdevname_r(getFileDescriptor(), name, sizeof(name))) {
 +        return 0;
