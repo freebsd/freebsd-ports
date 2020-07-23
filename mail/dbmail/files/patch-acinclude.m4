@@ -1,6 +1,6 @@
---- acinclude.m4.orig	2015-01-25 10:20:50 UTC
+--- acinclude.m4.orig	2020-06-08 07:19:38 UTC
 +++ acinclude.m4
-@@ -221,7 +221,7 @@ if ( test [ "x$lookforldap" != "xno" ] || test [ "x$lo
+@@ -222,7 +222,7 @@ if ( test [ "x$lookforldap" != "xno" ] || test [ "x$lo
          dnl See if we already have the paths we need in the environment.
  	dnl ...but only if --with-ldap was given without a specific path.
          if ( test [ "x$lookforldap" = "xyes" ] || test [ "x$lookforauthldap" = "xyes" ] ); then
@@ -9,7 +9,7 @@
              if test [ "x$LDAPLIB" != "xfailed" ]; then
                  break
              fi
-@@ -233,7 +233,7 @@ if ( test [ "x$lookforldap" != "xno" ] || test [ "x$lo
+@@ -234,7 +234,7 @@ if ( test [ "x$lookforldap" != "xno" ] || test [ "x$lo
              SAVE_CFLAGS=$CFLAGS
  	    dnl The headers might be in a funny place, so we need to use -Ipath
              CFLAGS="$CFLAGS -L$TEST_PATH $LDAPINC"
@@ -18,7 +18,7 @@
              CFLAGS=$SAVE_CFLAGS
              if test [ "x$LDAPLIB" != "xfailed" ]; then
                  break 2
-@@ -247,7 +247,7 @@ if ( test [ "x$lookforldap" != "xno" ] || test [ "x$lo
+@@ -248,7 +248,7 @@ if ( test [ "x$lookforldap" != "xno" ] || test [ "x$lo
          AC_MSG_ERROR([Could not find LDAP library.])
      else
          AC_DEFINE([AUTHLDAP], 1, [Define if LDAP will be used.])
@@ -27,7 +27,7 @@
          AC_SUBST(LDAPLIB)
          AC_SUBST(LDAPINC)
          AUTHALIB="modules/.libs/libauth_ldap.a"
-@@ -339,7 +341,7 @@ AC_DEFUN([DM_CHECK_EVENT], [
+@@ -334,7 +334,7 @@ AC_DEFUN([DM_CHECK_EVENT], [
  
  AC_DEFUN([DM_CHECK_SSL], [
  	AC_CHECK_HEADERS([openssl/ssl.h],
@@ -36,7 +36,7 @@
  	if test [ "x$SSLLIB" = "xfailed" ]; then
  		AC_MSG_ERROR([Could not find OPENSSL library.])
  	else
-@@ -539,15 +541,15 @@ AC_DEFUN([CMU_SOCKETS], [
+@@ -544,15 +544,15 @@ AC_DEFUN([CMU_SOCKETS], [
  	save_LIBS="$LIBS"
  	SOCKETLIB=""
  	AC_CHECK_FUNC(connect, :,
