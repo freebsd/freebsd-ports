@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libogg.so:audio/libogg
 
-USES=		cmake iconv pkgconfig
+USES=		cmake compiler:c++14-lang iconv pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	fmang
 
