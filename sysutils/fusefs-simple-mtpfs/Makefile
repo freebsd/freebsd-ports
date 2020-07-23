@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	simple-mtpfs
-DISTVERSIONPREFIX=	${PORTNAME}-
-DISTVERSION=	0.3.0
-PORTREVISION=	5
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.4.0
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	fusefs-
 
@@ -12,12 +11,13 @@ COMMENT=	Simple MTP fuse filesystem driver
 
 LICENSE=	GPLv2+
 
+BUILD_DEPENDS=	autoconf-archive>0.2017:devel/autoconf-archive
 LIB_DEPENDS=	libmtp.so:multimedia/libmtp
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	phatina
 
-USES=		autoreconf compiler:c++11-lib fuse localbase pkgconfig
+USES=		autoreconf compiler:c++17-lang fuse localbase pkgconfig
 GNU_CONFIGURE=	yes
 MAKEFILE=	makefile
 INSTALL_TARGET=	install-strip
