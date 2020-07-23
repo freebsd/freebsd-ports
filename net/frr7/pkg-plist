@@ -98,6 +98,7 @@ include/frr/skiplist.h
 include/frr/sockopt.h
 include/frr/sockunion.h
 include/frr/srcdest_table.h
+include/frr/srv6.h
 include/frr/stream.h
 include/frr/systemd.h
 include/frr/table.h
@@ -117,6 +118,8 @@ include/frr/workqueue.h
 include/frr/zassert.h
 include/frr/zclient.h
 include/frr/zebra.h
+include/frr/zlog.h
+include/frr/zlog_targets.h
 lib/libfrr.a
 lib/libfrr.so
 lib/libfrr.so.0
@@ -157,6 +160,7 @@ sbin/bgpd
 %%LDPD%%sbin/ldpd
 sbin/eigrpd
 sbin/fabricd
+sbin/frr-reload
 sbin/ospf6d
 sbin/ospfd
 sbin/pbrd
@@ -175,6 +179,17 @@ share/yang/frr-ripd.yang
 share/yang/frr-ripngd.yang
 share/yang/frr-route-types.yang
 share/yang/frr-test-module.yang
+share/yang/frr-filter.yang
+share/yang/frr-igmp.yang
+share/yang/frr-nexthop.yang
+share/yang/frr-pim-rp.yang
+share/yang/frr-pim.yang
+share/yang/frr-route-map.yang
+share/yang/frr-routing.yang
+share/yang/frr-staticd.yang
+share/yang/frr-vrf.yang
+share/yang/frr-zebra.yang
+share/yang/ietf-interfaces.yang
 share/yang/ietf-routing-types.yang
 %%ETCDIR%%/babeld.conf.sample
 %%ETCDIR%%/bfdd.conf.sample
