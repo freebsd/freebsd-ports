@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	shiny
-PORTVERSION=	1.4.0.2
-PORTREVISION=	1
+PORTVERSION=	1.5.0
 CATEGORIES=	www
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -25,7 +24,10 @@ CRAN_DEPENDS=	R-cran-httpuv>=1.5.2:www/R-cran-httpuv \
 		R-cran-promises>=1.1.0:devel/R-cran-promises \
 		R-cran-crayon>0:devel/R-cran-crayon \
 		R-cran-rlang>=0.4.0:devel/R-cran-rlang \
-		R-cran-fastmap>=1.0.0:databases/R-cran-fastmap
+		R-cran-fastmap>=1.0.0:databases/R-cran-fastmap \
+		R-cran-withr>0:devel/R-cran-withr \
+		R-cran-commonmark>=1.7:textproc/R-cran-commonmark \
+		R-cran-glue>=1.3.2:devel/R-cran-glue
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
