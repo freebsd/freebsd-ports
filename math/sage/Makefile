@@ -343,13 +343,6 @@ PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
-# See https://lists.freebsd.org/pipermail/freebsd-python/2020-June/020710.html
-.if ${OSREL:R} < 13
-PLIST_SUB+=	EGG="" WHEEL="@comment "
-.else
-PLIST_SUB+=	EGG="@comment " WHEEL=""
-.endif
-
 WSDIR=		${BLDDIR}${PREFIX}
 SPKG_INST=	configure.ac configure build/sage_bootstrap/uninstall.py	\
 		build/make/install src/bin/sage-env
@@ -511,6 +504,12 @@ post-build:
 	 -d ${PYTHONPREFIX_SITELIBDIR} -f ${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;} ||	\
 	 ${TRUE}))
 	${FIND} ${BLDDIR}${PREFIX} -name "*.bak" -delete
+# See https://lists.freebsd.org/pipermail/freebsd-python/2020-June/020710.html
+.if exists(${PYTHON_SITELIBDIR}/path.py-7.1.dist-info/WHEEL)
+PLIST_SUB+=	EGG="@comment " WHEEL=""
+.else
+PLIST_SUB+=	EGG="" WHEEL="@comment "
+.endif
 
 do-install:
 	cd "${BLDDIR}" && ${FIND} . | ${CPIO} -pdum ${STAGEDIR}
