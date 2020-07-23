@@ -68,8 +68,6 @@ CONFIGURE_TARGET=	x86_64-unknown-${OPSYS:tl}${OSREL}
 CONFIGURE_TARGET=	${HOSTARCH}-unknown-${OPSYS:tl}${OSREL}
 .endif
 
-PLIST_SUB+=	LTO=""
-
 PLIST_SUB+=	PLUGINS=""
 
 .if ${ARCH} == "amd64" || ${ARCH} == "i386"

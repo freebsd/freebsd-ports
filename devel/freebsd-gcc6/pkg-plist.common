@@ -389,9 +389,9 @@ libexec/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/install-tools/fixinc.sh
 libexec/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/install-tools/fixincl
 libexec/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/install-tools/mkheaders
 libexec/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/install-tools/mkinstalldirs
-%%LTO%%libexec/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/liblto_plugin.so
-%%LTO%%libexec/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/liblto_plugin.so.0
-%%LTO%%libexec/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/liblto_plugin.so.0.0.0
+libexec/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/liblto_plugin.so
+libexec/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/liblto_plugin.so.0
+libexec/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/liblto_plugin.so.0.0.0
 libexec/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/lto-wrapper
-%%LTO%%libexec/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/lto1
+libexec/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/lto1
 %%PLUGINS%%libexec/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/plugin/gengtype

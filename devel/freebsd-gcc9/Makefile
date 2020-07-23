@@ -2,6 +2,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	9.2.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GCC/releases/gcc-${DISTVERSION}
 PKGNAMEPREFIX=	${TARGETARCH}-
@@ -75,15 +76,6 @@ CONFIGURE_TARGET=	${ARCH}-unknown-${OPSYS:tl}${OSREL}
 . if ${COMPILER_TYPE} == clang
 MAKE_ARGS+=CXXFLAGS=-fbracket-depth=512
 . endif
-.endif
-
-# Disable LTO on aarch64 since we force aarch64-binutils to
-# use STATIC
-.if ${TARGETARCH} == "aarch64"
-CONFIGURE_ARGS+= --disable-lto
-PLIST_SUB+=	LTO="@comment "
-.else
-PLIST_SUB+=	LTO=""
 .endif
 
 .if ${ARCH} == "aarch64"
