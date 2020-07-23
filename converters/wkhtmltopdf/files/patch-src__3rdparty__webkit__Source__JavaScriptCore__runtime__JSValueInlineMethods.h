@@ -1,6 +1,6 @@
---- ./src/3rdparty/webkit/Source/JavaScriptCore/runtime/JSValueInlineMethods.h.orig	2011-12-08 06:06:02.000000000 +0100
-+++ ./src/3rdparty/webkit/Source/JavaScriptCore/runtime/JSValueInlineMethods.h	2012-01-08 17:18:52.511348683 +0100
-@@ -227,7 +227,11 @@
+--- src/3rdparty/webkit/Source/JavaScriptCore/runtime/JSValueInlineMethods.h.orig	2018-05-29 06:56:52 UTC
++++ src/3rdparty/webkit/Source/JavaScriptCore/runtime/JSValueInlineMethods.h
+@@ -227,7 +227,11 @@ namespace JSC {
              u.asBits.tag = CellTag;
          else
              u.asBits.tag = EmptyValueTag;
@@ -12,7 +12,7 @@
  #if ENABLE(JSC_ZOMBIES)
          ASSERT(!isZombie());
  #endif
-@@ -239,7 +243,11 @@
+@@ -239,7 +243,11 @@ namespace JSC {
              u.asBits.tag = CellTag;
          else
              u.asBits.tag = EmptyValueTag;
