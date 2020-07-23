@@ -1,5 +1,5 @@
 TIMESTAMP = 1529752635
-SHA256 (icedtea-web-1.6.2.tar.gz) = ce67034096d6b960e2b6cfb5c41a7bd6b30eb2ec7f13bf3ecdb477ff6ce69300
-SIZE (icedtea-web-1.6.2.tar.gz) = 1824557
+SHA256 (icedtea-web-1.8.4.tar.gz) = a0c12cd2d7793f05428a02e49159c7f3f70694f48e23787ffdb6588b0db7c862
+SIZE (icedtea-web-1.8.4.tar.gz) = 2358591
 SHA256 (libxul-npapi-headers-45.9.0.tar.gz) = 625d86955aef95c7a0a4c192bb51a1e7833d30c2d53e390d07f97abd835744f8
 SIZE (libxul-npapi-headers-45.9.0.tar.gz) = 15637

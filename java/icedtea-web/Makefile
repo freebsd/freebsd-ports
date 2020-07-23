@@ -1,12 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	icedtea-web
-PORTVERSION=	1.6.2
-PORTREVISION=	5
+PORTVERSION=	1.8.4
 CATEGORIES=	java www
-MASTER_SITES=	http://icedtea.wildebeest.org/download/source/ \
-		http://icedtea.classpath.org/download/source/
+MASTER_SITES=	https://github.com/AdoptOpenJDK/IcedTea-Web/archive/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+WRKSRC=		${WRKDIR}/IcedTea-Web-icedtea-web-1.8.4
 
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Free Java plug-in and Java Web Start for OpenJDK
@@ -15,10 +14,12 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	zip:archivers/zip \
 		bash:shells/bash \
-		gsed:textproc/gsed
-RUN_DEPENDS=	bash:shells/bash
-TEST_DEPENDS=	${HAMCREST_JAR}:java/hamcrest \
+		gsed:textproc/gsed \
+		${HAMCREST_JAR}:java/hamcrest \
 		${JUNIT_JAR}:java/junit
+RUN_DEPENDS=	bash:shells/bash
+
+MAKE_JOBS_UNSAFE=yes
 
 GNU_CONFIGURE=	yes
 USE_JAVA=	yes
@@ -26,8 +27,8 @@ JAVA_OS=	native
 JAVA_VENDOR=	openjdk
 USE_PERL5=	build
 USE_XORG=	x11
-USES=		desktop-file-utils gmake perl5 pkgconfig shebangfix xorg
-SHEBANG_FILES=	jrunscript.in launcher/launchers.in
+USES=		autoreconf desktop-file-utils gmake perl5 pkgconfig shebangfix xorg
+SHEBANG_FILES=	jrunscript.in shell-launcher/launchers.sh.in
 
 CONFIGURE_ARGS=		--with-hamcrest="${HAMCREST_JAR}"
 CONFIGURE_ARGS+=	--with-jdk-home="${JAVA_HOME}"
@@ -35,6 +36,8 @@ CONFIGURE_ARGS+=	--with-jre-home="${JAVA_HOME}/jre"
 CONFIGURE_ARGS+=	--with-junit="${JUNIT_JAR}"
 CONFIGURE_ARGS+=	--with-rhino="${RHINO_JAR}"
 CONFIGURE_ARGS+=	--with-tagsoup="${TAGSOUP_JAR}"
+CONFIGURE_ARGS+=	--with-itw-libs="BUNDLED"
+CONFIGURE_ARGS+=	--enable-shell-launchers
 .for opt in asm chrome chromium ecj epiphany firefox jacoco midori opera
 CONFIGURE_ARGS+=	--without-${opt}
 .endfor
@@ -64,7 +67,7 @@ TAGSOUP_RUN_DEPENDS=	${TAGSOUP_BUILD_DEPENDS}
 TAGSOUP_VARS=		TAGSOUP_JAR="${JAVALIBDIR}/tagsoup.jar"
 TAGSOUP_VARS_OFF=	TAGSOUP_JAR=no
 
-PLUGIN_CONFIGURE_ENABLE=plugin
+PLUGIN_CONFIGURE_ENABLE=native-plugin
 PLUGIN_CONFIGURE_ENV=	MOZILLA_CFLAGS="-I${WRKDIR}/npapi-headers -DXP_UNIX" \
 			MOZILLA_LIBS=" " # needs to be set and non-empty!
 PLUGIN_DISTFILES=	libxul-npapi-headers-45.9.0${EXTRACT_SUFX}:npapi
@@ -95,7 +98,7 @@ pre-extract:
 post-patch:
 	${REINPLACE_CMD} -e 's|^sed\([[:space:]]\)|gsed\1|' \
 	    -e 's|\([[:space:]]\)sed\([[:space:]]\)|\1gsed\2|g' \
-	    ${WRKSRC}/Makefile.in ${WRKSRC}/html-gen.sh
+	    ${WRKSRC}/Makefile.am ${WRKSRC}/html-gen.sh
 	${REINPLACE_CMD} -e 's|^Icon=javaws|Icon=itweb-javaws|' \
 	    ${WRKSRC}/*.desktop.in
 
