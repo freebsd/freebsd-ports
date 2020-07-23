@@ -202,27 +202,25 @@ Reviewed by Anders Carlsson.
 libc++ provides std::nullptr emulation, so we don't have to.
 
 ------------------------------------------------------------------------
---- src/3rdparty/webkit/Source/JavaScriptCore/wtf/NullPtr.h
+--- src/3rdparty/webkit/Source/JavaScriptCore/wtf/NullPtr.h.orig	2018-05-29 06:56:52 UTC
 +++ src/3rdparty/webkit/Source/JavaScriptCore/wtf/NullPtr.h
-@@ -35,10 +35,14 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+@@ -35,9 +35,13 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH D
      #define __has_feature(feature) 0
  #endif
  
--#if __has_feature(cxx_nullptr) || (GCC_VERSION_AT_LEAST(4, 6, 0) && defined(__GXX_EXPERIMENTAL_CXX0X__)) || (defined(_MSC_VER) && _MSC_VER >= 1600 && !COMPILER(INTEL)) || defined(_LIBCPP_VERSION)
 +#include <ciso646>
 +
-+#if __has_feature(cxx_nullptr) || (GCC_VERSION_AT_LEAST(4, 6, 0) && defined(__GXX_EXPERIMENTAL_CXX0X__)) || (defined(_MSC_VER) && _MSC_VER >= 1600 && !COMPILER(INTEL)) || defined(_LIBCPP_VERSION)
+ #if __has_feature(cxx_nullptr) || (GCC_VERSION_AT_LEAST(4, 6, 0) && defined(__GXX_EXPERIMENTAL_CXX0X__)) || (defined(_MSC_VER) && _MSC_VER >= 1600 && !COMPILER(INTEL)) || defined(_LIBCPP_VERSION)
  
  #define HAVE_NULLPTR 1
- 
-+#include <cstddef>
 +
++#include <cstddef>
+ 
  #else
  
- namespace std {
---- src/3rdparty/webkit/Source/WebCore/dom/XMLDocumentParserQt.cpp	(revision 86528)
-+++ src/3rdparty/webkit/Source/WebCore/dom/XMLDocumentParserQt.cpp	(revision 86529)
-@@ -215,7 +215,7 @@
+--- src/3rdparty/webkit/Source/WebCore/dom/XMLDocumentParserQt.cpp.orig	2018-05-29 06:56:52 UTC
++++ src/3rdparty/webkit/Source/WebCore/dom/XMLDocumentParserQt.cpp
+@@ -215,7 +215,7 @@ void XMLDocumentParser::doEnd()
  {
  #if ENABLE(XSLT)
      if (m_sawXSLTransform) {
@@ -231,7 +229,7 @@ libc++ provides std::nullptr emulation, so we don't have to.
          document()->setParsing(false); // Make the doc think it's done, so it will apply xsl sheets.
          document()->styleSelectorChanged(RecalcStyleImmediately);
          document()->setParsing(true);
---- src/3rdparty/webkit/Source/WebCore/loader/icon/IconRecord.h
+--- src/3rdparty/webkit/Source/WebCore/loader/icon/IconRecord.h.orig	2018-05-29 06:56:52 UTC
 +++ src/3rdparty/webkit/Source/WebCore/loader/icon/IconRecord.h
 @@ -38,7 +38,7 @@
  #include <wtf/OwnPtr.h>
@@ -242,7 +240,7 @@ libc++ provides std::nullptr emulation, so we don't have to.
  #include <sys/types.h> // For time_t structure.
  #endif
  
---- src/3rdparty/webkit/Source/WebCore/page/Page.h
+--- src/3rdparty/webkit/Source/WebCore/page/Page.h.orig	2018-05-29 06:56:52 UTC
 +++ src/3rdparty/webkit/Source/WebCore/page/Page.h
 @@ -29,7 +29,7 @@
  #include <wtf/HashSet.h>
@@ -253,7 +251,7 @@ libc++ provides std::nullptr emulation, so we don't have to.
  #include <sys/time.h> // For time_t structure.
  #endif
  
---- src/3rdparty/webkit/Source/WebCore/platform/network/ResourceResponseBase.h
+--- src/3rdparty/webkit/Source/WebCore/platform/network/ResourceResponseBase.h.orig	2018-05-29 06:56:52 UTC
 +++ src/3rdparty/webkit/Source/WebCore/platform/network/ResourceResponseBase.h
 @@ -35,7 +35,7 @@
  #include <wtf/PassOwnPtr.h>
@@ -264,9 +262,9 @@ libc++ provides std::nullptr emulation, so we don't have to.
  #include <sys/time.h> // For time_t structure.
  #endif
  
---- src/3rdparty/webkit/Source/WebCore/platform/network/qt/QNetworkReplyHandler.cpp	(revision 86529)
-+++ src/3rdparty/webkit/Source/WebCore/platform/network/qt/QNetworkReplyHandler.cpp	(revision 86530)
-@@ -285,7 +285,7 @@
+--- src/3rdparty/webkit/Source/WebCore/platform/network/qt/QNetworkReplyHandler.cpp.orig	2018-05-29 06:56:52 UTC
++++ src/3rdparty/webkit/Source/WebCore/platform/network/qt/QNetworkReplyHandler.cpp
+@@ -285,7 +285,7 @@ void QNetworkReplyWrapper::receiveMetaData()
  
      Q_ASSERT(!m_sniffer);
  
@@ -275,7 +273,7 @@ libc++ provides std::nullptr emulation, so we don't have to.
  
      if (m_sniffer->isFinished()) {
          receiveSniffedMIMEType();
-@@ -666,7 +666,7 @@
+@@ -666,7 +666,7 @@ void QNetworkReplyHandler::start()
      if (!reply)
          return;
  
@@ -284,10 +282,9 @@ libc++ provides std::nullptr emulation, so we don't have to.
  
      if (m_loadType == SynchronousLoad) {
          m_replyWrapper->synchronousLoad();
-===================================================================
---- src/3rdparty/webkit/Source/WebCore/platform/text/qt/TextCodecQt.cpp	(revision 86530)
-+++ src/3rdparty/webkit/Source/WebCore/platform/text/qt/TextCodecQt.cpp	(revision 86531)
-@@ -64,7 +64,7 @@
+--- src/3rdparty/webkit/Source/WebCore/platform/text/qt/TextCodecQt.cpp.orig	2018-05-29 06:56:52 UTC
++++ src/3rdparty/webkit/Source/WebCore/platform/text/qt/TextCodecQt.cpp
+@@ -64,7 +64,7 @@ void TextCodecQt::registerEncodingNames(EncodingNameRe
  
  static PassOwnPtr<TextCodec> newTextCodecQt(const TextEncoding& encoding, const void*)
  {
@@ -296,10 +293,20 @@ libc++ provides std::nullptr emulation, so we don't have to.
  }
  
  void TextCodecQt::registerCodecs(TextCodecRegistrar registrar)
-
---- src/3rdparty/webkit/Source/WebKit/qt/Api/qgraphicswebview.cpp	(revision 86532)
-+++ src/3rdparty/webkit/Source/WebKit/qt/Api/qgraphicswebview.cpp	(revision 86533)
-@@ -504,7 +504,7 @@
+--- src/3rdparty/webkit/Source/WebCore/plugins/qt/PluginViewQt.cpp.orig	2018-05-29 06:56:52 UTC
++++ src/3rdparty/webkit/Source/WebCore/plugins/qt/PluginViewQt.cpp
+@@ -950,7 +950,7 @@ bool PluginView::platformStart()
+ 
+ #if USE(ACCELERATED_COMPOSITING) && !USE(TEXTURE_MAPPER)
+         if (shouldUseAcceleratedCompositing()) {
+-            m_platformLayer = new PluginGraphicsLayerQt(this);
++            m_platformLayer = adoptPtr(new PluginGraphicsLayerQt(this));
+             // Trigger layer computation in RenderLayerCompositor
+             m_element->setNeedsStyleRecalc(SyntheticStyleChange);
+         }
+--- src/3rdparty/webkit/Source/WebKit/qt/Api/qgraphicswebview.cpp.orig	2018-05-29 06:56:52 UTC
++++ src/3rdparty/webkit/Source/WebKit/qt/Api/qgraphicswebview.cpp
+@@ -504,7 +504,7 @@ void QGraphicsWebView::setPage(QWebPage* page)
      if (!d->page)
          return;
  
@@ -308,9 +315,9 @@ libc++ provides std::nullptr emulation, so we don't have to.
  
      if (d->overlay())
          d->overlay()->prepareGraphicsItemGeometryChange();
---- src/3rdparty/webkit/Source/WebKit/qt/Api/qwebpage.cpp	(revision 86532)
-+++ src/3rdparty/webkit/Source/WebKit/qt/Api/qwebpage.cpp	(revision 86550)
-@@ -1319,7 +1319,7 @@
+--- src/3rdparty/webkit/Source/WebKit/qt/Api/qwebpage.cpp.orig	2018-05-29 06:56:52 UTC
++++ src/3rdparty/webkit/Source/WebKit/qt/Api/qwebpage.cpp
+@@ -1343,7 +1343,7 @@ void QWebPagePrivate::adjustPointForClicking(QMouseEve
  void QWebPagePrivate::adjustPointForClicking(QGraphicsSceneMouseEvent* ev)
  {
      QtPlatformPlugin platformPlugin;
@@ -319,7 +326,7 @@ libc++ provides std::nullptr emulation, so we don't have to.
      if (!touchModifier)
          return;
  
-@@ -1328,8 +1328,7 @@
+@@ -1352,8 +1352,7 @@ void QWebPagePrivate::adjustPointForClicking(QGraphics
      unsigned bottomPadding = touchModifier->hitTestPaddingForTouch(QWebTouchModifier::Down);
      unsigned leftPadding = touchModifier->hitTestPaddingForTouch(QWebTouchModifier::Left);
  
@@ -329,7 +336,7 @@ libc++ provides std::nullptr emulation, so we don't have to.
  
      if (!topPadding && !rightPadding && !bottomPadding && !leftPadding)
          return;
-@@ -2044,7 +2044,7 @@
+@@ -2068,7 +2067,7 @@ void QWebPage::setView(QWidget* view)
      }
  
      if (view)
@@ -338,68 +345,9 @@ libc++ provides std::nullptr emulation, so we don't have to.
  }
  
  /*!
---- src/3rdparty/webkit/Source/WebKit/qt/WebCoreSupport/PopupMenuQt.h	(revision 86536)
-+++ src/3rdparty/webkit/Source/WebKit/qt/WebCoreSupport/PopupMenuQt.h	(revision 86550)
-@@ -22,6 +22,8 @@
- 
- #include "PopupMenu.h"
- #include <QObject>
-+#include <wtf/OwnPtr.h>
-+#include <wtf/PassOwnPtr.h>
- 
- class QWebSelectData;
- class QWebSelectMethod;
-@@ -49,8 +51,8 @@
- 
- private:
-     PopupMenuClient* m_popupClient;
--    QWebSelectMethod* m_popup;
--    QWebSelectData* m_selectData;
-+    OwnPtr<QWebSelectMethod> m_popup;
-+    OwnPtr<QWebSelectData> m_selectData;
-     const ChromeClientQt* m_chromeClient;
- };
- 
---- src/3rdparty/webkit/Source/WebKit/qt/WebCoreSupport/QtPlatformPlugin.h	(revision 86536)
-+++ src/3rdparty/webkit/Source/WebKit/qt/WebCoreSupport/QtPlatformPlugin.h	(revision 86550)
-@@ -22,6 +22,7 @@
- #define QtPlatformPlugin_h
- 
- #include <QPluginLoader>
-+#include <wtf/PassOwnPtr.h>
- 
- class QWebSelectMethod;
- class QWebKitPlatformPlugin;
-@@ -37,15 +38,20 @@
- 
- class QtPlatformPlugin {
- public:
--    QtPlatformPlugin() : m_loaded(false), m_plugin(0) {}
-+    QtPlatformPlugin()
-+        : m_loaded(false)
-+        , m_plugin(0)
-+    {
-+    }
-+
-     ~QtPlatformPlugin();
- 
--    QWebSelectMethod* createSelectInputMethod();
--    QWebNotificationPresenter* createNotificationPresenter();
--    QWebHapticFeedbackPlayer* createHapticFeedbackPlayer();
--    QWebTouchModifier* createTouchModifier();
-+    PassOwnPtr<QWebSelectMethod> createSelectInputMethod();
-+    PassOwnPtr<QWebNotificationPresenter> createNotificationPresenter();
-+    PassOwnPtr<QWebHapticFeedbackPlayer> createHapticFeedbackPlayer();
-+    PassOwnPtr<QWebTouchModifier> createTouchModifier();
- #if ENABLE(VIDEO) && USE(QT_MULTIMEDIA)
--    QWebFullScreenVideoHandler* createFullScreenVideoHandler();
-+    PassOwnPtr<QWebFullScreenVideoHandler> createFullScreenVideoHandler();
- #endif
- 
-     QWebKitPlatformPlugin* plugin();
---- src/3rdparty/webkit/Source/WebKit/qt/WebCoreSupport/ChromeClientQt.cpp	(revision 86536)
-+++ src/3rdparty/webkit/Source/WebKit/qt/WebCoreSupport/ChromeClientQt.cpp	(revision 86550)
-@@ -696,18 +696,18 @@
+--- src/3rdparty/webkit/Source/WebKit/qt/WebCoreSupport/ChromeClientQt.cpp.orig	2018-05-29 06:56:52 UTC
++++ src/3rdparty/webkit/Source/WebKit/qt/WebCoreSupport/ChromeClientQt.cpp
+@@ -702,18 +702,18 @@ void ChromeClientQt::exitFullscreenForNode(Node* node)
  } 
  #endif
  
@@ -424,9 +372,95 @@ libc++ provides std::nullptr emulation, so we don't have to.
  #endif
  }
  
---- src/3rdparty/webkit/Source/WebKit/qt/WebCoreSupport/PopupMenuQt.cpp	(revision 86536)
-+++ src/3rdparty/webkit/Source/WebKit/qt/WebCoreSupport/PopupMenuQt.cpp	(revision 86550)
-@@ -82,8 +82,6 @@
+--- src/3rdparty/webkit/Source/WebKit/qt/WebCoreSupport/ChromeClientQt.h.orig	2018-05-29 06:56:52 UTC
++++ src/3rdparty/webkit/Source/WebKit/qt/WebCoreSupport/ChromeClientQt.h
+@@ -34,6 +34,7 @@
+ #include "KURL.h"
+ #include "PlatformString.h"
+ #include "QtPlatformPlugin.h"
++#include <wtf/PassOwnPtr.h>
+ #include <wtf/RefCounted.h>
+ 
+ QT_BEGIN_NAMESPACE
+@@ -190,7 +191,7 @@ class ChromeClientQt : public ChromeClient { (public)
+     virtual PassRefPtr<SearchPopupMenu> createSearchPopupMenu(PopupMenuClient*) const;
+     virtual void populateVisitedLinks();
+ 
+-    QWebSelectMethod* createSelectPopup() const;
++    PassOwnPtr<QWebSelectMethod> createSelectPopup() const;
+ 
+     virtual void dispatchViewportDataDidChange(const ViewportArguments&) const;
+ 
+--- src/3rdparty/webkit/Source/WebKit/qt/WebCoreSupport/FullScreenVideoQt.cpp.orig	2018-05-29 06:56:52 UTC
++++ src/3rdparty/webkit/Source/WebKit/qt/WebCoreSupport/FullScreenVideoQt.cpp
+@@ -140,7 +140,7 @@ FullScreenVideoQt::FullScreenVideoQt(ChromeClientQt* c
+     Q_ASSERT(m_chromeClient);
+ 
+ #if USE(QT_MULTIMEDIA)
+-    m_FullScreenVideoHandler = m_chromeClient->m_platformPlugin.createFullScreenVideoHandler();
++    m_FullScreenVideoHandler = m_chromeClient->m_platformPlugin.createFullScreenVideoHandler().leakPtr();
+     if (!m_FullScreenVideoHandler)
+         m_FullScreenVideoHandler = new DefaultFullScreenVideoHandler;
+ 
+--- src/3rdparty/webkit/Source/WebKit/qt/WebCoreSupport/InspectorClientQt.cpp.orig	2018-05-29 06:56:52 UTC
++++ src/3rdparty/webkit/Source/WebKit/qt/WebCoreSupport/InspectorClientQt.cpp
+@@ -203,8 +203,9 @@ void InspectorClientQt::inspectorDestroyed()
+ void InspectorClientQt::openInspectorFrontend(WebCore::InspectorController* inspectorController)
+ {
+ #if ENABLE(INSPECTOR)
+-    QWebView* inspectorView = new QWebView;
+-    InspectorClientWebPage* inspectorPage = new InspectorClientWebPage(inspectorView);
++    OwnPtr<QWebView> inspectorView = adoptPtr(new QWebView);
++    // FIXME: Where does inspectorPage get deleted?
++    InspectorClientWebPage* inspectorPage = new InspectorClientWebPage(inspectorView.get());
+     inspectorView->setPage(inspectorPage);
+ 
+     QWebInspector* inspector = m_inspectedWebPage->d->getOrCreateInspector();
+@@ -229,11 +230,14 @@ void InspectorClientQt::openInspectorFrontend(WebCore:
+         inspectorPage->setProperty("_q_inspectorJavaScriptWindowObjects", inspectorJavaScriptWindowObjects);
+ #endif
+     inspectorView->page()->mainFrame()->load(inspectorUrl);
+-    m_inspectedWebPage->d->inspectorFrontend = inspectorView;
+-    inspector->d->setFrontend(inspectorView);
++    m_inspectedWebPage->d->inspectorFrontend = inspectorView.get();
++    inspector->d->setFrontend(inspectorView.get());
+ 
+-    m_frontendClient = new InspectorFrontendClientQt(m_inspectedWebPage, inspectorView, this);
+-    inspectorView->page()->d->page->inspectorController()->setInspectorFrontendClient(m_frontendClient);
++    // Is 'controller' the same object as 'inspectorController' (which appears to be unused)?
++    InspectorController* controller = inspectorView->page()->d->page->inspectorController();
++    OwnPtr<InspectorFrontendClientQt> frontendClient = adoptPtr(new InspectorFrontendClientQt(m_inspectedWebPage, inspectorView.release(), this));
++    m_frontendClient = frontendClient.get();
++    controller->setInspectorFrontendClient(frontendClient.release());
+     m_frontendWebPage = inspectorPage;
+ #endif
+ }
+@@ -297,7 +301,7 @@ bool InspectorClientQt::sendMessageToFrontend(const St
+ 
+ #if ENABLE(INSPECTOR)
+ InspectorFrontendClientQt::InspectorFrontendClientQt(QWebPage* inspectedWebPage, PassOwnPtr<QWebView> inspectorView, InspectorClientQt* inspectorClient)
+-    : InspectorFrontendClientLocal(inspectedWebPage->d->page->inspectorController(), inspectorView->page()->d->page, new InspectorFrontendSettingsQt())
++    : InspectorFrontendClientLocal(inspectedWebPage->d->page->inspectorController(), inspectorView->page()->d->page, adoptPtr(new InspectorFrontendSettingsQt()))
+     , m_inspectedWebPage(inspectedWebPage)
+     , m_inspectorView(inspectorView)
+     , m_destroyingInspectorView(false)
+--- src/3rdparty/webkit/Source/WebKit/qt/WebCoreSupport/NotificationPresenterClientQt.cpp.orig	2018-05-29 06:56:52 UTC
++++ src/3rdparty/webkit/Source/WebKit/qt/WebCoreSupport/NotificationPresenterClientQt.cpp
+@@ -211,9 +211,9 @@ void NotificationPresenterClientQt::displayNotificatio
+         QPixmap pixmap;
+         if (bytes.length() && pixmap.loadFromData(bytes)) {
+             QIcon icon(pixmap);
+-            wrapper->m_notificationIcon = new QSystemTrayIcon(icon);
++            wrapper->m_notificationIcon = adoptPtr(new QSystemTrayIcon(icon));
+         } else
+-            wrapper->m_notificationIcon = new QSystemTrayIcon();
++            wrapper->m_notificationIcon = adoptPtr(new QSystemTrayIcon());
+ #endif
+     }
+ 
+--- src/3rdparty/webkit/Source/WebKit/qt/WebCoreSupport/PopupMenuQt.cpp.orig	2018-05-29 06:56:52 UTC
++++ src/3rdparty/webkit/Source/WebKit/qt/WebCoreSupport/PopupMenuQt.cpp
+@@ -82,16 +82,12 @@ namespace WebCore {
  
  PopupMenuQt::PopupMenuQt(PopupMenuClient* client, const ChromeClientQt* chromeClient)
      : m_popupClient(client)
@@ -435,7 +469,6 @@ libc++ provides std::nullptr emulation, so we don't have to.
      , m_chromeClient(chromeClient)
  {
  }
-@@ -90,8 +88,6 @@
  
  PopupMenuQt::~PopupMenuQt()
  {
@@ -444,7 +477,7 @@ libc++ provides std::nullptr emulation, so we don't have to.
  }
  
  void PopupMenuQt::disconnectClient()
-@@ -107,11 +103,11 @@
+@@ -107,21 +103,19 @@ void PopupMenuQt::show(const IntRect& rect, FrameView*
  
      if (!m_popup) {
          m_popup = m_chromeClient->createSelectPopup();
@@ -459,7 +492,6 @@ libc++ provides std::nullptr emulation, so we don't have to.
          QRect geometry(rect);
          geometry.moveTopLeft(view->contentsToWindow(rect.location()));
          fallback->setGeometry(geometry);
-@@ -118,10 +114,8 @@
          fallback->setFont(m_popupClient->menuStyle().font().font());
      }
  
@@ -472,20 +504,31 @@ libc++ provides std::nullptr emulation, so we don't have to.
  #endif
  }
  
---- src/3rdparty/webkit/Source/WebKit/qt/WebCoreSupport/FullScreenVideoQt.cpp	(revision 86536)
-+++ src/3rdparty/webkit/Source/WebKit/qt/WebCoreSupport/FullScreenVideoQt.cpp	(revision 86550)
-@@ -136,7 +136,7 @@
-     Q_ASSERT(m_chromeClient);
+--- src/3rdparty/webkit/Source/WebKit/qt/WebCoreSupport/PopupMenuQt.h.orig	2018-05-29 06:56:52 UTC
++++ src/3rdparty/webkit/Source/WebKit/qt/WebCoreSupport/PopupMenuQt.h
+@@ -22,6 +22,8 @@
  
- #if USE(QT_MULTIMEDIA)
--    m_FullScreenVideoHandler = m_chromeClient->m_platformPlugin.createFullScreenVideoHandler();
-+    m_FullScreenVideoHandler = m_chromeClient->m_platformPlugin.createFullScreenVideoHandler().leakPtr();
-     if (!m_FullScreenVideoHandler)
-         m_FullScreenVideoHandler = new DefaultFullScreenVideoHandler;
+ #include "PopupMenu.h"
+ #include <QObject>
++#include <wtf/OwnPtr.h>
++#include <wtf/PassOwnPtr.h>
  
---- src/3rdparty/webkit/Source/WebKit/qt/WebCoreSupport/QtPlatformPlugin.cpp	(revision 86536)
-+++ src/3rdparty/webkit/Source/WebKit/qt/WebCoreSupport/QtPlatformPlugin.cpp	(revision 86550)
-@@ -102,36 +102,35 @@
+ class QWebSelectData;
+ class QWebSelectMethod;
+@@ -49,8 +51,8 @@ private slots:
+ 
+ private:
+     PopupMenuClient* m_popupClient;
+-    QWebSelectMethod* m_popup;
+-    QWebSelectData* m_selectData;
++    OwnPtr<QWebSelectMethod> m_popup;
++    OwnPtr<QWebSelectData> m_selectData;
+     const ChromeClientQt* m_chromeClient;
+ };
+ 
+--- src/3rdparty/webkit/Source/WebKit/qt/WebCoreSupport/QtPlatformPlugin.cpp.orig	2018-05-29 06:56:52 UTC
++++ src/3rdparty/webkit/Source/WebKit/qt/WebCoreSupport/QtPlatformPlugin.cpp
+@@ -102,36 +102,35 @@ QWebKitPlatformPlugin* QtPlatformPlugin::plugin()
      return m_plugin;
  }
  
@@ -532,89 +575,40 @@ libc++ provides std::nullptr emulation, so we don't have to.
  }
  #endif
  
---- src/3rdparty/webkit/Source/WebKit/qt/WebCoreSupport/InspectorClientQt.cpp	(revision 86536)
-+++ src/3rdparty/webkit/Source/WebKit/qt/WebCoreSupport/InspectorClientQt.cpp	(revision 86550)
-@@ -203,8 +203,9 @@
- void InspectorClientQt::openInspectorFrontend(WebCore::InspectorController* inspectorController)
- {
- #if ENABLE(INSPECTOR)
--    QWebView* inspectorView = new QWebView;
--    InspectorClientWebPage* inspectorPage = new InspectorClientWebPage(inspectorView);
-+    OwnPtr<QWebView> inspectorView = adoptPtr(new QWebView);
-+    // FIXME: Where does inspectorPage get deleted?
-+    InspectorClientWebPage* inspectorPage = new InspectorClientWebPage(inspectorView.get());
-     inspectorView->setPage(inspectorPage);
+--- src/3rdparty/webkit/Source/WebKit/qt/WebCoreSupport/QtPlatformPlugin.h.orig	2018-05-29 06:56:52 UTC
++++ src/3rdparty/webkit/Source/WebKit/qt/WebCoreSupport/QtPlatformPlugin.h
+@@ -22,6 +22,7 @@
+ #define QtPlatformPlugin_h
  
-     QWebInspector* inspector = m_inspectedWebPage->d->getOrCreateInspector();
-@@ -229,11 +230,14 @@
-         inspectorPage->setProperty("_q_inspectorJavaScriptWindowObjects", inspectorJavaScriptWindowObjects);
- #endif
-     inspectorView->page()->mainFrame()->load(inspectorUrl);
--    m_inspectedWebPage->d->inspectorFrontend = inspectorView;
--    inspector->d->setFrontend(inspectorView);
-+    m_inspectedWebPage->d->inspectorFrontend = inspectorView.get();
-+    inspector->d->setFrontend(inspectorView.get());
- 
--    m_frontendClient = new InspectorFrontendClientQt(m_inspectedWebPage, inspectorView, this);
--    inspectorView->page()->d->page->inspectorController()->setInspectorFrontendClient(m_frontendClient);
-+    // Is 'controller' the same object as 'inspectorController' (which appears to be unused)?
-+    InspectorController* controller = inspectorView->page()->d->page->inspectorController();
-+    OwnPtr<InspectorFrontendClientQt> frontendClient = adoptPtr(new InspectorFrontendClientQt(m_inspectedWebPage, inspectorView.release(), this));
-+    m_frontendClient = frontendClient.get();
-+    controller->setInspectorFrontendClient(frontendClient.release());
-     m_frontendWebPage = inspectorPage;
- #endif
- }
-@@ -297,7 +301,7 @@
- 
- #if ENABLE(INSPECTOR)
- InspectorFrontendClientQt::InspectorFrontendClientQt(QWebPage* inspectedWebPage, PassOwnPtr<QWebView> inspectorView, InspectorClientQt* inspectorClient)
--    : InspectorFrontendClientLocal(inspectedWebPage->d->page->inspectorController(), inspectorView->page()->d->page, new InspectorFrontendSettingsQt())
-+    : InspectorFrontendClientLocal(inspectedWebPage->d->page->inspectorController(), inspectorView->page()->d->page, adoptPtr(new InspectorFrontendSettingsQt()))
-     , m_inspectedWebPage(inspectedWebPage)
-     , m_inspectorView(inspectorView)
-     , m_destroyingInspectorView(false)
---- src/3rdparty/webkit/Source/WebKit/qt/WebCoreSupport/NotificationPresenterClientQt.cpp	(revision 86536)
-+++ src/3rdparty/webkit/Source/WebKit/qt/WebCoreSupport/NotificationPresenterClientQt.cpp	(revision 86550)
-@@ -211,9 +211,9 @@
-         QPixmap pixmap;
-         if (bytes.length() && pixmap.loadFromData(bytes)) {
-             QIcon icon(pixmap);
--            wrapper->m_notificationIcon = new QSystemTrayIcon(icon);
-+            wrapper->m_notificationIcon = adoptPtr(new QSystemTrayIcon(icon));
-         } else
--            wrapper->m_notificationIcon = new QSystemTrayIcon();
-+            wrapper->m_notificationIcon = adoptPtr(new QSystemTrayIcon());
- #endif
-     }
- 
---- src/3rdparty/webkit/Source/WebKit/qt/WebCoreSupport/ChromeClientQt.h	(revision 86536)
-+++ src/3rdparty/webkit/Source/WebKit/qt/WebCoreSupport/ChromeClientQt.h	(revision 86550)
-@@ -34,6 +34,7 @@
- #include "KURL.h"
- #include "PlatformString.h"
- #include "QtPlatformPlugin.h"
+ #include <QPluginLoader>
 +#include <wtf/PassOwnPtr.h>
- #include <wtf/RefCounted.h>
  
- QT_BEGIN_NAMESPACE
-@@ -189,7 +190,7 @@
-     virtual PassRefPtr<SearchPopupMenu> createSearchPopupMenu(PopupMenuClient*) const;
-     virtual void populateVisitedLinks();
+ class QWebSelectMethod;
+ class QWebKitPlatformPlugin;
+@@ -37,15 +38,20 @@ namespace WebCore {
  
--    QWebSelectMethod* createSelectPopup() const;
-+    PassOwnPtr<QWebSelectMethod> createSelectPopup() const;
+ class QtPlatformPlugin {
+ public:
+-    QtPlatformPlugin() : m_loaded(false), m_plugin(0) {}
++    QtPlatformPlugin()
++        : m_loaded(false)
++        , m_plugin(0)
++    {
++    }
++
+     ~QtPlatformPlugin();
  
-     virtual void dispatchViewportDataDidChange(const ViewportArguments&) const;
-
---- src/3rdparty/webkit/Source/WebCore/plugins/qt/PluginViewQt.cpp	(revision 86536)
-+++ src/3rdparty/webkit/Source/WebCore/plugins/qt/PluginViewQt.cpp	(revision 86550)
-@@ -950,7 +950,7 @@ bool PluginView::platformStart()
+-    QWebSelectMethod* createSelectInputMethod();
+-    QWebNotificationPresenter* createNotificationPresenter();
+-    QWebHapticFeedbackPlayer* createHapticFeedbackPlayer();
+-    QWebTouchModifier* createTouchModifier();
++    PassOwnPtr<QWebSelectMethod> createSelectInputMethod();
++    PassOwnPtr<QWebNotificationPresenter> createNotificationPresenter();
++    PassOwnPtr<QWebHapticFeedbackPlayer> createHapticFeedbackPlayer();
++    PassOwnPtr<QWebTouchModifier> createTouchModifier();
+ #if ENABLE(VIDEO) && USE(QT_MULTIMEDIA)
+-    QWebFullScreenVideoHandler* createFullScreenVideoHandler();
++    PassOwnPtr<QWebFullScreenVideoHandler> createFullScreenVideoHandler();
+ #endif
  
- #if USE(ACCELERATED_COMPOSITING) && !USE(TEXTURE_MAPPER)
-         if (shouldUseAcceleratedCompositing()) {
--            m_platformLayer = new PluginGraphicsLayerQt(this);
-+            m_platformLayer = adoptPtr(new PluginGraphicsLayerQt(this));
-             // Trigger layer computation in RenderLayerCompositor
-             m_element->setNeedsStyleRecalc(SyntheticStyleChange);
-         }
+     QWebKitPlatformPlugin* plugin();

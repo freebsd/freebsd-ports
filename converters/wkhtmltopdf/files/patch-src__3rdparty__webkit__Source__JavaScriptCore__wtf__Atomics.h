@@ -1,6 +1,6 @@
---- src/3rdparty/webkit/Source/JavaScriptCore/wtf/Atomics.h.orig	2014-04-10 20:37:11.000000000 +0200
-+++ src/3rdparty/webkit/Source/JavaScriptCore/wtf/Atomics.h	2014-04-24 16:11:40.000000000 +0200
-@@ -63,18 +63,10 @@
+--- src/3rdparty/webkit/Source/JavaScriptCore/wtf/Atomics.h.orig	2018-05-29 06:56:52 UTC
++++ src/3rdparty/webkit/Source/JavaScriptCore/wtf/Atomics.h
+@@ -63,19 +63,11 @@
  
  #if OS(WINDOWS)
  #include <windows.h>
@@ -15,20 +15,21 @@
 -#include <ext/atomicity.h>
 -#else
 -#include <bits/atomicity.h>
--#endif
  #endif
+-#endif
  
  namespace WTF {
-@@ -90,12 +82,6 @@
+ 
+@@ -89,12 +81,6 @@ inline int atomicDecrement(int* addend) { return Inter
+ inline int atomicIncrement(int volatile* addend) { return InterlockedIncrement(reinterpret_cast<long volatile*>(addend)); }
  inline int atomicDecrement(int volatile* addend) { return InterlockedDecrement(reinterpret_cast<long volatile*>(addend)); }
  #endif
- 
+-
 -#elif OS(DARWIN)
 -#define WTF_USE_LOCKFREE_THREADSAFESHARED 1
 -
 -inline int atomicIncrement(int volatile* addend) { return OSAtomicIncrement32Barrier(const_cast<int*>(addend)); }
 -inline int atomicDecrement(int volatile* addend) { return OSAtomicDecrement32Barrier(const_cast<int*>(addend)); }
--
+ 
  #elif OS(ANDROID)
  
- inline int atomicIncrement(int volatile* addend) { return android_atomic_inc(addend); }

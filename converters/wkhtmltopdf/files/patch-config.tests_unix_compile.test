@@ -1,6 +1,6 @@
---- config.tests/unix/compile.test.orig
+--- config.tests/unix/compile.test.orig	2018-05-29 06:56:52 UTC
 +++ config.tests/unix/compile.test
-@@ -13,7 +13,7 @@
+@@ -13,7 +13,7 @@ DESCRIPTION=$7
  shift 7
  LFLAGS="$SYSROOT_FLAG"
  INCLUDEPATH=""

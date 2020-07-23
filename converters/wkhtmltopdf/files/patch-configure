@@ -1,0 +1,11 @@
+--- configure.orig	2018-05-29 06:56:52 UTC
++++ configure
+@@ -7754,7 +7754,7 @@ case "$XPLATFORM" in
+     *-g++*)
+ 	# Check gcc's version
+ 	case "$(${QMAKE_CONF_COMPILER} -dumpversion)" in
+-	    8*|7*|6*|5*|4*|3.4*)
++	    11*|10*|9*|8*|7*|6*|5*|4*|3.4*)
+ 		;;
+             3.3*)
+                 canBuildWebKit="no"
