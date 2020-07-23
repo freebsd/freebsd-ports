@@ -9,10 +9,14 @@ MASTER_SITES=	http://www-users.york.ac.uk/~dm26/filepp/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic file preprocessor
 
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES=		perl5 shebangfix
 GNU_CONFIGURE=	yes
-NO_BUILD=	yes
 CONFIGURE_ENV=	PERL=${PERL}
+NO_BUILD=	yes
+NO_ARCH=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$(moduledir)|$$(DESTDIR)$$(moduledir)|' \
