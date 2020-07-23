@@ -785,6 +785,7 @@
     SUBDIR += py-nevergrad
     SUBDIR += py-numeric
     SUBDIR += py-numexpr
+    SUBDIR += py-numpoly
     SUBDIR += py-numpy
     SUBDIR += py-nzmath
     SUBDIR += py-opt-einsum

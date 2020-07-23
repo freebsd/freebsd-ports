@@ -1,0 +1,4 @@
+Numpoly is a generic library for creating, manipulating and evaluating arrays
+of polynomials based on numpy.ndarray objects.
+
+WWW: https://github.com/jonathf/numpoly
