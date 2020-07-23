@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mattermost-server
-PORTVERSION=	5.19.1
+PORTVERSION=	5.21.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -11,7 +11,7 @@ COMMENT=	Open source Slack-alternative in Golang and React
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-ONLY_FOR_ARCHS=	amd64 armv6 armv7 i386
+ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386
 
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss \
 		mattermost-webapp>=${PORTVERSION}:www/mattermost-webapp
@@ -33,6 +33,9 @@ MATTERMOSTD_GROUP=	mattermost
 
 USERS=		${MATTERMOSTD_USER}
 GROUPS=		${MATTERMOSTD_GROUP}
+
+post-extract:
+	@${RM} ${WRKSRC}/vendor/modules.txt
 
 post-install:
 	${MV} ${STAGEDIR}${PREFIX}/bin/mattermost ${STAGEDIR}${PREFIX}/bin/mattermostd
