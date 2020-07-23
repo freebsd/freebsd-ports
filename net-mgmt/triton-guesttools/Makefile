@@ -4,7 +4,7 @@ PORTNAME=	triton-guesttools
 PORTVERSION=	0.0.0.0s2017111501
 CATEGORIES=	net-mgmt
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	juraj@lutter.sk
 COMMENT=	FreeBSD guest tools for use with SmartOS
 
 RUN_DEPENDS=	bash:shells/bash \
