@@ -284,11 +284,19 @@ ktls_intelisa_free(struct ktls_session *tls)
 }
 
 static int
+#if KTLS_API_VERSION >= 7
+ktls_intelisa_try(struct socket *so, struct ktls_session *tls, int direction)
+#else
 ktls_intelisa_try(struct socket *so, struct ktls_session *tls)
+#endif
 {
 	struct isa_gcm_struct *isa;
 	int error;
 
+#if KTLS_API_VERSION >= 7
+	if (direction != KTLS_TX)
+		return (EOPNOTSUPP);
+#endif
 	if (ktls_use_intel_isa_gcm &&
 	    tls->params.cipher_algorithm == CRYPTO_AES_NIST_GCM_16) {
 		isa = malloc(sizeof (*isa), M_INTEL_ISA, M_NOWAIT | M_ZERO);
