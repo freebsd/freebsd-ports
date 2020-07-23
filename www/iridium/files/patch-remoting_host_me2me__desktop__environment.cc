@@ -1,4 +1,4 @@
---- remoting/host/me2me_desktop_environment.cc.orig	2019-03-11 22:01:01 UTC
+--- remoting/host/me2me_desktop_environment.cc.orig	2019-09-09 21:55:22 UTC
 +++ remoting/host/me2me_desktop_environment.cc
 @@ -129,7 +129,7 @@ bool Me2MeDesktopEnvironment::InitializeSecurity(
  

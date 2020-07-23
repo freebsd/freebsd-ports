@@ -12,21 +12,9 @@
 #include "base/time/time.h"
 #include "media/audio/audio_io.h"
 
-
 namespace media {
 
-class AudioParameters;
 class AudioManagerBase;
-
-// call-backs invoked from C libraries, thus requiring C linkage
-extern "C" {
-  // Invoked (on the real-time thread) at each sound card clock tick
-  void sndio_onmove(void *arg, int delta);
-  // Invoked (on the real-time thread) whenever the volume changes
-  void sndio_onvol(void *arg, unsigned int vol);
-  // Real-time thread entry point
-  void *sndio_threadstart(void *arg);
-}
 
 // Implementation of AudioOutputStream using sndio(7)
 class SndioAudioOutputStream : public AudioOutputStream {
@@ -37,14 +25,14 @@ class SndioAudioOutputStream : public AudioOutputStream {
   virtual ~SndioAudioOutputStream();
 
   // Implementation of AudioOutputStream.
-  virtual bool Open() override;
-  virtual void Close() override;
-  virtual void Start(AudioSourceCallback* callback) override;
-  virtual void Stop() override;
-  virtual void SetVolume(double volume) override;
-  virtual void GetVolume(double* volume) override;
+  bool Open() override;
+  void Close() override;
+  void Start(AudioSourceCallback* callback) override;
+  void Stop() override;
+  void SetVolume(double volume) override;
+  void GetVolume(double* volume) override;
+  void Flush() override;
 
-  // C-linkage call-backs are friends to access private data
   friend void sndio_onmove(void *arg, int delta);
   friend void sndio_onvol(void *arg, unsigned int vol);
   friend void *sndio_threadstart(void *arg);
@@ -56,22 +44,28 @@ class SndioAudioOutputStream : public AudioOutputStream {
     kRunning,           // Started, device playing
     kStopWait           // Stopping, waiting for the real-time thread to exit
   };
-  // Continuously moves data from the audio bus to the device
-  void RealTimeThread(void);
+
+  // C-style call-backs
+  static void OnMoveCallback(void *arg, int delta);
+  static void OnVolCallback(void *arg, unsigned int vol);
+  static void* ThreadEntry(void *arg);
+
+  // Continuously moves data from the producer to the device
+  void ThreadLoop(void);
+
   // Our creator, the audio manager needs to be notified when we close.
   AudioManagerBase* manager;
   // Parameters of the source
   AudioParameters params;
   // Source stores data here
   std::unique_ptr<AudioBus> audio_bus;
-  int bytes_per_frame;
   // Call-back that produces data to play
   AudioSourceCallback* source;
   // Handle of the audio device
   struct sio_hdl* hdl;
   // Current state of the stream
   enum StreamState state;
-  // High priority thread running RealTimeThread()
+  // High priority thread running ThreadLoop()
   pthread_t thread;
   // Protects vol, volpending and hw_delay
   pthread_mutex_t mutex;
@@ -79,7 +73,7 @@ class SndioAudioOutputStream : public AudioOutputStream {
   int vol;
   // Set to 1 if volumes must be refreshed in the realtime thread
   int volpending;
-  // Number of bytes buffered in the hardware
+  // Number of frames buffered in the hardware
   int hw_delay;
   // Temporary buffer where data is stored sndio-compatible format
   char* buffer;

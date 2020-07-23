@@ -1,4 +1,4 @@
---- build/config/BUILDCONFIG.gn.orig	2019-03-11 22:00:52 UTC
+--- build/config/BUILDCONFIG.gn.orig	2019-06-04 18:55:15 UTC
 +++ build/config/BUILDCONFIG.gn
 @@ -131,10 +131,10 @@ declare_args() {
    is_official_build = false
@@ -33,7 +33,7 @@
    # See comments in build/toolchain/cros/BUILD.gn about board compiles.
    if (is_clang) {
      _default_toolchain = "//build/toolchain/linux:clang_$target_cpu"
-@@ -291,10 +291,11 @@ is_android = current_os == "android"
+@@ -288,10 +288,11 @@ is_android = current_os == "android"
  is_chromeos = current_os == "chromeos"
  is_fuchsia = current_os == "fuchsia"
  is_ios = current_os == "ios"

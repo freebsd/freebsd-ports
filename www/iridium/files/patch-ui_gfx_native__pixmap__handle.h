@@ -1,28 +1,38 @@
---- ui/gfx/native_pixmap_handle.h.orig	2019-03-11 22:01:19 UTC
+--- ui/gfx/native_pixmap_handle.h.orig	2019-10-21 19:07:29 UTC
 +++ ui/gfx/native_pixmap_handle.h
-@@ -13,7 +13,7 @@
+@@ -15,7 +15,7 @@
  #include "build/build_config.h"
  #include "ui/gfx/gfx_export.h"
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
- #include "base/file_descriptor_posix.h"
+ #include "base/files/scoped_file.h"
  #endif
  
-@@ -54,14 +54,14 @@ struct GFX_EXPORT NativePixmapHandle {
- 
-   ~NativePixmapHandle();
+@@ -32,7 +32,7 @@ struct GFX_EXPORT NativePixmapPlane {
+   NativePixmapPlane(int stride,
+                     int offset,
+                     uint64_t size
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+                     ,
+                     base::ScopedFD fd
+ #elif defined(OS_FUCHSIA)
+@@ -53,7 +53,7 @@ struct GFX_EXPORT NativePixmapPlane {
+   // This is necessary to map the buffers.
+   uint64_t size;
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
-   // File descriptors for the underlying memory objects (usually dmabufs).
-   std::vector<base::FileDescriptor> fds;
- #endif
+   // File descriptor for the underlying memory object (usually dmabuf).
+   base::ScopedFD fd;
+ #elif defined(OS_FUCHSIA)
+@@ -82,7 +82,7 @@ struct GFX_EXPORT NativePixmapHandle {
+ 
    std::vector<NativePixmapPlane> planes;
- };
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
- // Returns an instance of |handle| which can be sent over IPC. This duplicates
- // the file-handles, so that the IPC code take ownership of them, without
- // invalidating |handle|.
+   // The modifier is retrieved from GBM library and passed to EGL driver.
+   // Generally it's platform specific, and we don't need to modify it in
+   // Chromium code. Also one per plane per entry.

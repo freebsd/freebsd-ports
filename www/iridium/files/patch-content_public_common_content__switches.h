@@ -1,7 +1,7 @@
---- content/public/common/content_switches.h.orig	2019-03-11 22:00:58 UTC
+--- content/public/common/content_switches.h.orig	2020-03-16 18:40:32 UTC
 +++ content/public/common/content_switches.h
-@@ -270,7 +270,7 @@ CONTENT_EXPORT extern const char kEnableOSKOverscroll[
- CONTENT_EXPORT extern const char kDisablePanelFitting[];
+@@ -278,7 +278,7 @@ CONTENT_EXPORT extern const char kRemoteDebuggingSocke
+ CONTENT_EXPORT extern const char kRendererWaitForJavaDebugger[];
  #endif
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)

@@ -1,11 +1,11 @@
---- extensions/common/features/feature.cc.orig	2019-03-11 22:00:58 UTC
+--- extensions/common/features/feature.cc.orig	2019-07-24 18:58:27 UTC
 +++ extensions/common/features/feature.cc
-@@ -26,6 +26,8 @@ Feature::Platform Feature::GetCurrentPlatform() {
+@@ -20,7 +20,7 @@ namespace extensions {
+ Feature::Platform Feature::GetCurrentPlatform() {
+ #if defined(OS_CHROMEOS)
+   return CHROMEOS_PLATFORM;
+-#elif defined(OS_LINUX)
++#elif defined(OS_LINUX) || defined(OS_BSD)
+   return LINUX_PLATFORM;
+ #elif defined(OS_MACOSX)
    return MACOSX_PLATFORM;
- #elif defined(OS_WIN)
-   return WIN_PLATFORM;
-+#elif defined(OS_BSD)
-+  return LINUX_PLATFORM;
- #else
-   return UNSPECIFIED_PLATFORM;
- #endif

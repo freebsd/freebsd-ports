@@ -1,4 +1,4 @@
---- ui/gfx/linux/client_native_pixmap_dmabuf.cc.orig	2019-03-11 22:01:19 UTC
+--- ui/gfx/linux/client_native_pixmap_dmabuf.cc.orig	2020-03-16 18:40:43 UTC
 +++ ui/gfx/linux/client_native_pixmap_dmabuf.cc
 @@ -5,7 +5,9 @@
  #include "ui/gfx/linux/client_native_pixmap_dmabuf.h"
@@ -10,9 +10,9 @@
  #include <stddef.h>
  #include <sys/ioctl.h>
  #include <sys/mman.h>
-@@ -18,11 +20,7 @@
- #include "base/trace_event/trace_event.h"
- #include "build/build_config.h"
+@@ -26,11 +28,7 @@
+ #include "ui/gfx/buffer_format_util.h"
+ #include "ui/gfx/switches.h"
  
 -#if LINUX_VERSION_CODE >= KERNEL_VERSION(4, 11, 0)
 -#include <linux/dma-buf.h>

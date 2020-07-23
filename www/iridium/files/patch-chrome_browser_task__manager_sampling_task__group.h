@@ -1,6 +1,15 @@
---- chrome/browser/task_manager/sampling/task_group.h.orig	2019-03-11 22:00:54 UTC
+--- chrome/browser/task_manager/sampling/task_group.h.orig	2019-10-21 19:06:23 UTC
 +++ chrome/browser/task_manager/sampling/task_group.h
-@@ -106,9 +106,9 @@ class TaskGroup {
+@@ -39,7 +39,7 @@ constexpr int kUnsupportedVMRefreshFlags =
+     REFRESH_TYPE_WEBCACHE_STATS | REFRESH_TYPE_NETWORK_USAGE |
+     REFRESH_TYPE_NACL | REFRESH_TYPE_IDLE_WAKEUPS | REFRESH_TYPE_HANDLES |
+     REFRESH_TYPE_START_TIME | REFRESH_TYPE_CPU_TIME | REFRESH_TYPE_PRIORITY |
+-#if defined(OS_LINUX) || defined(OS_MACOSX)
++#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_BSD)
+     REFRESH_TYPE_FD_COUNT |
+ #endif
+     REFRESH_TYPE_HARD_FAULTS;
+@@ -122,9 +122,9 @@ class TaskGroup {
    int nacl_debug_stub_port() const { return nacl_debug_stub_port_; }
  #endif  // BUILDFLAG(ENABLE_NACL)
  
@@ -11,8 +20,8 @@
 +#endif  // defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_BSD)
  
    int idle_wakeups_per_second() const { return idle_wakeups_per_second_; }
-  private:
-@@ -121,9 +121,9 @@ class TaskGroup {
+ 
+@@ -138,9 +138,9 @@ class TaskGroup {
    void RefreshNaClDebugStubPort(int child_process_unique_id);
    void OnRefreshNaClDebugStubPortDone(int port);
  #endif
@@ -24,7 +33,7 @@
  
    void OnCpuRefreshDone(double cpu_usage);
    void OnSwappedMemRefreshDone(int64_t swapped_mem_bytes);
-@@ -191,10 +191,10 @@ class TaskGroup {
+@@ -209,10 +209,10 @@ class TaskGroup {
  #if BUILDFLAG(ENABLE_NACL)
    int nacl_debug_stub_port_;
  #endif  // BUILDFLAG(ENABLE_NACL)

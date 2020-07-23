@@ -1,73 +1,56 @@
---- gpu/ipc/service/gpu_watchdog_thread.cc.orig	2019-03-11 22:00:59 UTC
+--- gpu/ipc/service/gpu_watchdog_thread.cc.orig	2020-03-16 18:40:32 UTC
 +++ gpu/ipc/service/gpu_watchdog_thread.cc
-@@ -51,8 +51,10 @@ const int kGpuTimeout = 10000;
- #endif
+@@ -63,7 +63,7 @@ void GpuWatchdogTimeoutHistogram(GpuWatchdogTimeoutEve
+   base::UmaHistogramEnumeration("GPU.WatchdogThread.V1.Timeout", timeout_event);
+ }
  
- #if defined(USE_X11)
-+#if !defined(OS_BSD)
+-#if defined(USE_X11)
++#if defined(USE_X11) && !defined(OS_BSD)
  const base::FilePath::CharType kTtyFilePath[] =
      FILE_PATH_LITERAL("/sys/class/tty/tty0/active");
-+#endif
- const unsigned char text[20] = "check";
+ #endif
+@@ -81,7 +81,7 @@ GpuWatchdogThreadImplV1::GpuWatchdogThreadImplV1()
+       arm_cpu_time_(),
+ #endif
+       suspension_counter_(this)
+-#if defined(USE_X11)
++#if defined(USE_X11) && !defined(OS_BSD)
+       ,
+       host_tty_(-1)
+ #endif
+@@ -103,7 +103,7 @@ GpuWatchdogThreadImplV1::GpuWatchdogThreadImplV1()
+   DCHECK(result);
  #endif
  
-@@ -75,8 +77,10 @@ GpuWatchdogThread::GpuWatchdogThread()
-       display_(nullptr),
-       window_(0),
-       atom_(x11::None),
-+#if !defined(OS_BSD)
-       host_tty_(-1),
- #endif
-+#endif
-       weak_factory_(this) {
-   base::subtle::NoBarrier_Store(&awaiting_acknowledge_, false);
- 
-@@ -91,7 +95,9 @@ GpuWatchdogThread::GpuWatchdogThread()
- #endif
- 
- #if defined(USE_X11)
-+#if !defined(OS_BSD)
+-#if defined(USE_X11)
++#if defined(USE_X11) && !defined(OS_BSD)
    tty_file_ = base::OpenFile(base::FilePath(kTtyFilePath), "r");
-+#endif
-   SetupXServer();
- #endif
-   base::MessageLoopCurrent::Get()->AddTaskObserver(&task_observer_);
-@@ -238,8 +244,10 @@ GpuWatchdogThread::~GpuWatchdogThread() {
-     power_monitor->RemoveObserver(this);
+   UpdateActiveTTY();
+   host_tty_ = active_tty_;
+@@ -251,7 +251,7 @@ GpuWatchdogThreadImplV1::~GpuWatchdogThreadImplV1() {
  
- #if defined(USE_X11)
-+#if !defined(OS_BSD)
+   base::PowerMonitor::RemoveObserver(this);
+ 
+-#if defined(USE_X11)
++#if defined(USE_X11) && !defined(OS_BSD)
    if (tty_file_)
      fclose(tty_file_);
-+#endif
-   if (display_) {
-     DCHECK(window_);
-     XDestroyWindow(display_, window_);
-@@ -463,7 +471,7 @@ void GpuWatchdogThread::DeliberatelyTerminateToRecover
+ #endif
+@@ -434,7 +434,7 @@ void GpuWatchdogThreadImplV1::DeliberatelyTerminateToR
      return;
  #endif
  
 -#if defined(USE_X11)
 +#if defined(USE_X11) && !defined(OS_BSD)
    // Don't crash if we're not on the TTY of our host X11 server.
-   int active_tty = GetActiveTTY();
-   if (host_tty_ != -1 && active_tty != -1 && host_tty_ != active_tty) {
-@@ -526,7 +534,9 @@ void GpuWatchdogThread::SetupXServer() {
-                       CopyFromParent, InputOutput, CopyFromParent, 0, nullptr);
-     atom_ = XInternAtom(display_, "CHECK", x11::False);
-   }
-+#if !defined(OS_BSD)
-   host_tty_ = GetActiveTTY();
-+#endif
- }
- 
- void GpuWatchdogThread::SetupXChangeProp() {
-@@ -627,7 +637,7 @@ base::ThreadTicks GpuWatchdogThread::GetWatchedThreadT
+   UpdateActiveTTY();
+   if (host_tty_ != -1 && active_tty_ != -1 && host_tty_ != active_tty_) {
+@@ -609,7 +609,7 @@ base::ThreadTicks GpuWatchdogThreadImplV1::GetWatchedT
  }
  #endif
  
 -#if defined(USE_X11)
 +#if defined(USE_X11) && !defined(OS_BSD)
- int GpuWatchdogThread::GetActiveTTY() const {
-   char tty_string[8] = {0};
-   if (tty_file_ && !fseek(tty_file_, 0, SEEK_SET) &&
+ void GpuWatchdogThreadImplV1::UpdateActiveTTY() {
+   last_active_tty_ = active_tty_;
+ 

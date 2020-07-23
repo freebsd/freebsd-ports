@@ -1,6 +1,6 @@
---- services/service_manager/sandbox/BUILD.gn.orig	2019-03-11 22:01:02 UTC
+--- services/service_manager/sandbox/BUILD.gn.orig	2020-03-16 18:40:34 UTC
 +++ services/service_manager/sandbox/BUILD.gn
-@@ -28,7 +28,7 @@ component("sandbox") {
+@@ -26,7 +26,7 @@ component("sandbox") {
      "//base",
      "//sandbox:common",
    ]

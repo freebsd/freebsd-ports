@@ -1,6 +1,6 @@
---- apps/ui/views/app_window_frame_view.cc.orig	2019-03-11 22:00:51 UTC
+--- apps/ui/views/app_window_frame_view.cc.orig	2019-06-04 18:55:14 UTC
 +++ apps/ui/views/app_window_frame_view.cc
-@@ -132,7 +132,7 @@ gfx::Rect AppWindowFrameView::GetBoundsForClientView()
+@@ -125,7 +125,7 @@ gfx::Rect AppWindowFrameView::GetBoundsForClientView()
  gfx::Rect AppWindowFrameView::GetWindowBoundsForClientBounds(
      const gfx::Rect& client_bounds) const {
    gfx::Rect window_bounds = client_bounds;

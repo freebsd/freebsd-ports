@@ -1,4 +1,4 @@
---- base/allocator/allocator_shim_unittest.cc.orig	2019-03-11 22:00:51 UTC
+--- base/allocator/allocator_shim_unittest.cc.orig	2020-03-16 18:39:41 UTC
 +++ base/allocator/allocator_shim_unittest.cc
 @@ -348,7 +348,7 @@ TEST_F(AllocatorShimTest, InterceptLibcSymbols) {
    ASSERT_GE(aligned_allocs_intercepted_by_size[61], 1u);
@@ -34,3 +34,12 @@
  
  #if !defined(OS_WIN)
    free(posix_memalign_ptr);
+@@ -550,7 +550,7 @@ static size_t GetAllocatedSize(void* ptr) {
+ static size_t GetAllocatedSize(void* ptr) {
+   return malloc_size(ptr);
+ }
+-#elif defined(OS_LINUX)
++#elif defined(OS_LINUX) || defined(OS_BSD)
+ static size_t GetAllocatedSize(void* ptr) {
+   return malloc_usable_size(ptr);
+ }

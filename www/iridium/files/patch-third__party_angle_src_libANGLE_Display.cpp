@@ -1,20 +1,11 @@
---- third_party/angle/src/libANGLE/Display.cpp.orig	2019-03-11 22:07:59 UTC
+--- third_party/angle/src/libANGLE/Display.cpp.orig	2020-03-16 18:42:05 UTC
 +++ third_party/angle/src/libANGLE/Display.cpp
-@@ -64,7 +64,7 @@
- #if defined(ANGLE_ENABLE_VULKAN)
- #    if defined(ANGLE_PLATFORM_WINDOWS)
- #        include "libANGLE/renderer/vulkan/win32/DisplayVkWin32.h"
+@@ -286,7 +286,7 @@ rx::DisplayImpl *CreateDisplayFromAttribs(EGLAttrib di
+             {
+                 impl = rx::CreateVulkanWin32Display(state);
+             }
 -#    elif defined(ANGLE_PLATFORM_LINUX)
 +#    elif defined(ANGLE_PLATFORM_POSIX)
- #        include "libANGLE/renderer/vulkan/xcb/DisplayVkXcb.h"
- #    elif defined(ANGLE_PLATFORM_ANDROID)
- #        include "libANGLE/renderer/vulkan/android/DisplayVkAndroid.h"
-@@ -216,7 +216,7 @@ rx::DisplayImpl *CreateDisplayFromAttribs(const Attrib
- #if defined(ANGLE_ENABLE_VULKAN)
- #    if defined(ANGLE_PLATFORM_WINDOWS)
-             impl = new rx::DisplayVkWin32(state);
--#    elif defined(ANGLE_PLATFORM_LINUX)
-+#    elif defined(ANGLE_PLATFORM_POSIX)
-             impl = new rx::DisplayVkXcb(state);
- #    elif defined(ANGLE_PLATFORM_ANDROID)
-             impl = new rx::DisplayVkAndroid(state);
+             if (rx::IsVulkanXcbDisplayAvailable())
+             {
+                 impl = rx::CreateVulkanXcbDisplay(state);

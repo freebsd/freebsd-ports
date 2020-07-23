@@ -1,6 +1,6 @@
---- services/device/hid/hid_service_freebsd.cc.orig	2019-04-15 17:58:16 UTC
+--- services/device/hid/hid_service_freebsd.cc.orig	2020-03-17 15:11:01 UTC
 +++ services/device/hid/hid_service_freebsd.cc
-@@ -0,0 +1,373 @@
+@@ -0,0 +1,383 @@
 +// Copyright 2014 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -19,6 +19,8 @@
 +#include "base/bind.h"
 +#include "base/files/file_descriptor_watcher_posix.h"
 +#include "base/files/file_enumerator.h"
++#include "base/files/file_util.h"
++#include "base/files/file.h"
 +#include "base/location.h"
 +#include "base/logging.h"
 +#include "base/posix/eintr_wrapper.h"
@@ -41,12 +43,12 @@
 +
 +struct HidServiceFreeBSD::ConnectParams {
 +  ConnectParams(scoped_refptr<HidDeviceInfo> device_info,
-+                const ConnectCallback& callback)
++                ConnectCallback callback)
 +      : device_info(std::move(device_info)),
-+        callback(callback),
++        callback(std::move(callback)),
 +        task_runner(base::ThreadTaskRunnerHandle::Get()),
 +        blocking_task_runner(
-+            base::CreateSequencedTaskRunnerWithTraits(kBlockingTaskTraits)) {}
++            base::CreateSequencedTaskRunner(kBlockingTaskTraits)) {}
 +  ~ConnectParams() {}
 +
 +  scoped_refptr<HidDeviceInfo> device_info;
@@ -111,7 +113,7 @@
 +
 +  void OnDeviceAdded(std::string device_id) {
 +    base::ScopedBlockingCall scoped_blocking_call(
-+        base::BlockingType::MAY_BLOCK);
++        FROM_HERE, base::BlockingType::MAY_BLOCK);
 +    std::string device_node = "/dev/" + device_id;
 +    uint16_t vendor_id = 0xffff;
 +    uint16_t product_id = 0xffff;
@@ -161,9 +163,15 @@
 +    }
 +
 +    scoped_refptr<HidDeviceInfo> device_info(new HidDeviceInfo(
-+        device_id, vendor_id, product_id, product_name, serial_number,
++        device_id,
++        /*physical_device_id*/"",
++	vendor_id,
++	product_id,
++	product_name,
++	serial_number,
 +        device::mojom::HidBusType::kHIDBusTypeUSB,
-+        report_descriptor, device_node));
++        report_descriptor,
++	device_node));
 +
 +    task_runner_->PostTask(FROM_HERE, base::Bind(&HidServiceFreeBSD::AddDevice,
 +                                                 service_, device_info));
@@ -171,7 +179,7 @@
 +
 +  void OnDeviceRemoved(std::string device_id) {
 +    base::ScopedBlockingCall scoped_blocking_call(
-+        base::BlockingType::MAY_BLOCK);
++        FROM_HERE, base::BlockingType::MAY_BLOCK);
 +    task_runner_->PostTask(
 +        FROM_HERE, base::Bind(&HidServiceFreeBSD::RemoveDevice, service_,
 +                              device_id));
@@ -296,7 +304,7 @@
 +HidServiceFreeBSD::HidServiceFreeBSD()
 +    : task_runner_(base::ThreadTaskRunnerHandle::Get()),
 +      blocking_task_runner_(
-+          base::CreateSequencedTaskRunnerWithTraits(kBlockingTaskTraits)),
++          base::CreateSequencedTaskRunner(kBlockingTaskTraits)),
 +      weak_factory_(this) {
 +  helper_ = std::make_unique<BlockingTaskHelper>(weak_factory_.GetWeakPtr());
 +  blocking_task_runner_->PostTask(
@@ -315,7 +323,8 @@
 +// static
 +void HidServiceFreeBSD::OpenOnBlockingThread(
 +    std::unique_ptr<ConnectParams> params) {
-+  base::ScopedBlockingCall scoped_blocking_call(base::BlockingType::MAY_BLOCK);
++  base::ScopedBlockingCall scoped_blocking_call(
++      FROM_HERE, base::BlockingType::MAY_BLOCK);
 +  scoped_refptr<base::SequencedTaskRunner> task_runner = params->task_runner;
 +
 +  base::FilePath device_path(params->device_info->device_node());
@@ -327,50 +336,51 @@
 +    HID_LOG(EVENT) << "Failed to open '" << params->device_info->device_node()
 +                   << "': "
 +                   << base::File::ErrorToString(device_file.error_details());
-+    task_runner->PostTask(FROM_HERE, base::Bind(params->callback, nullptr));
++    task_runner->PostTask(FROM_HERE,
++		          base::BindOnce(std::move(params->callback), nullptr));
 +    return;
 +  }
 +  params->fd.reset(device_file.TakePlatformFile());
-+  FinishOpen(std::move(params));
++  task_runner->PostTask(FROM_HERE, base::BindOnce(&HidServiceFreeBSD::FinishOpen,
++			                          std::move(params)));
 +}
 +
 +void HidServiceFreeBSD::Connect(const std::string& device_guid,
-+                            const ConnectCallback& callback) {
++                            ConnectCallback callback) {
 +  DCHECK_CALLED_ON_VALID_SEQUENCE(sequence_checker_);
 +
 +  const auto& map_entry = devices().find(device_guid);
 +  if (map_entry == devices().end()) {
 +    base::ThreadTaskRunnerHandle::Get()->PostTask(
-+        FROM_HERE, base::Bind(callback, nullptr));
++        FROM_HERE, base::BindOnce(std::move(callback), nullptr));
 +    return;
 +  }
 +
 +  scoped_refptr<HidDeviceInfo> device_info = map_entry->second;
 +
-+  auto params = std::make_unique<ConnectParams>(device_info, callback);
-+
++  auto params = std::make_unique<ConnectParams>(device_info, std::move(callback));
 +  scoped_refptr<base::SequencedTaskRunner> blocking_task_runner =
 +      params->blocking_task_runner;
++
 +  blocking_task_runner->PostTask(
-+      FROM_HERE, base::Bind(&HidServiceFreeBSD::OpenOnBlockingThread,
-+                            base::Passed(&params)));
++      FROM_HERE, base::BindOnce(&HidServiceFreeBSD::OpenOnBlockingThread,
++                                std::move(params)));
 +}
 +
 +// static
 +void HidServiceFreeBSD::FinishOpen(std::unique_ptr<ConnectParams> params) {
-+  scoped_refptr<base::SequencedTaskRunner> task_runner = params->task_runner;
-+
-+  task_runner->PostTask(
-+      FROM_HERE,
-+      base::Bind(&HidServiceFreeBSD::CreateConnection, base::Passed(&params)));
-+}
-+
-+// static
-+void HidServiceFreeBSD::CreateConnection(std::unique_ptr<ConnectParams> params) {
 +  DCHECK(params->fd.is_valid());
-+  params->callback.Run(base::MakeRefCounted<HidConnectionFreeBSD>(
-+      std::move(params->device_info), std::move(params->fd),
-+      std::move(params->blocking_task_runner)));
++
++  if (!base::SetNonBlocking(params->fd.get())) {
++    HID_PLOG(ERROR) << "Failed to set the non-blocking flag on the device fd";
++    std::move(params->callback).Run(nullptr);
++  }
++
++  std::move(params->callback).Run(base::MakeRefCounted<HidConnectionFreeBSD>(
++    std::move(params->device_info),
++    std::move(params->fd),
++    std::move(params->blocking_task_runner)
++  ));
 +}
 +
 +}  // namespace device
