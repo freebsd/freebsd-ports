@@ -7,7 +7,7 @@ CATEGORIES=	editors devel
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Lightweight and cross-platform code editor for competitive programming
 
-LICENSE=	MIT
+LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cmake compiler:c++14-lang qt:5
