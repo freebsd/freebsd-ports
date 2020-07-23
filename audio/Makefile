@@ -569,6 +569,7 @@
     SUBDIR += opus
     SUBDIR += opus-tools
     SUBDIR += opusfile
+    SUBDIR += opustags
     SUBDIR += orbit-lv2
     SUBDIR += osalp
     SUBDIR += osd-lyrics

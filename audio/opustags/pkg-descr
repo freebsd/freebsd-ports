@@ -1,0 +1,6 @@
+opustags is designed to be fast and as conservative as possible, to the point
+that if you edit tags then edit them again to their previous values, you should
+get a bit-perfect copy of the original file. No under-the-cover operation like
+writing "edited with opustags" or timestamp tagging will ever be performed.
+
+WWW: https://github.com/fmang/opustags
