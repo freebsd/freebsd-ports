@@ -94,35 +94,35 @@ PYQT_DISTNAME=		${PYQT${_PYQT_VERSION}_DISTNAME}
 PYQT_DISTINFO_FILE=	${PYQT${_PYQT_VERSION}_DISTINFO_FILE}
 PYQT_LICENSE=		${PYQT${_PYQT_VERSION}_LICENSE}
 
-py-sip_PATH=		${PYTHON_PKGNAMEPREFIX}sip>=${SIP_VERSION}
+py-sip_PATH=			${PYTHON_PKGNAMEPREFIX}sip>=${SIP_VERSION}
 
-py-assistant_PATH=	${PYQT_PY_RELNAME}-assistant>=${PYQT_VERSION}
-py-core_PATH=		${PYQT_PY_RELNAME}-core>=${PYQT_VERSION}
-py-dbus_PATH=		${PYQT_PY_RELNAME}-dbus>=${PYQT_VERSION}
-py-dbussupport_PATH=	${PYQT_PY_RELNAME}-dbussupport>=${PYQT_VERSION}
-py-declarative_PATH=	${PYQT_PY_RELNAME}-declarative>=${PYQT_VERSION}
-py-demo_PATH=		${PYQT_PY_RELNAME}-demo>=${PYQT_VERSION}
-py-designer_PATH=	${PYQT_PY_RELNAME}-designer>=${PYQT_VERSION}
-py-designerplugin_PATH=	${PYQT_PY_RELNAME}-designerplugin>=${PYQT_VERSION}
-py-doc_PATH=		${PYQT_PY_RELNAME}-doc>=${PYQT_VERSION}
-py-gui_PATH=		${PYQT_PY_RELNAME}-gui>=${PYQT_VERSION}
-py-help_PATH=		${PYQT_PY_RELNAME}-help>=${PYQT_VERSION}
-py-multimedia_PATH=	${PYQT_PY_RELNAME}-multimedia>=${PYQT_VERSION}
-py-network_PATH=	${PYQT_PY_RELNAME}-network>=${PYQT_VERSION}
-py-opengl_PATH=		${PYQT_PY_RELNAME}-opengl>=${PYQT_VERSION}
-py-phonon_PATH=		${PYQT_PY_RELNAME}-phonon>=${PYQT_VERSION}
-py-qscintilla2_PATH=	${PYQT_PY_RELNAME}-qscintilla2>=${QSCI2_VERSION}
-py-script_PATH=		${PYQT_PY_RELNAME}-script>=${PYQT_VERSION}
-py-scripttools_PATH=	${PYQT_PY_RELNAME}-scripttools>=${PYQT_VERSION}
-py-sql_PATH=		${PYQT_PY_RELNAME}-sql>=${PYQT_VERSION}
-py-svg_PATH=		${PYQT_PY_RELNAME}-svg>=${PYQT_VERSION}
-py-test_PATH=		${PYQT_PY_RELNAME}-test>=${PYQT_VERSION}
-py-webchannel_PATH=	${PYQT_PY_RELNAME}-webchannel>=${PYQT_VERSION}
-py-webengine_PATH=	${PYQT_PY_RELNAME}-webengine>=5.12.1
-py-webkit_PATH=		${PYQT_PY_RELNAME}-webkit>=${PYQT_VERSION}
-py-websockets_PATH=	${PYQT_PY_RELNAME}-websockets>=${PYQT_VERSION}
-py-xml_PATH=		${PYQT_PY_RELNAME}-xml>=${PYQT_VERSION}
-py-xmlpatterns_PATH=	${PYQT_PY_RELNAME}-xmlpatterns>=${PYQT_VERSION}
+py-assistant_PATH=		${PYQT_PY_RELNAME}-assistant>=${PYQT_VERSION}
+py-core_PATH=			${PYQT_PY_RELNAME}-core>=${PYQT_VERSION}
+py-dbus_PATH=			${PYQT_PY_RELNAME}-dbus>=${PYQT_VERSION}
+py-dbussupport_PATH=		${PYQT_PY_RELNAME}-dbussupport>=${PYQT_VERSION}
+py-declarative_PATH=		${PYQT_PY_RELNAME}-declarative>=${PYQT_VERSION}
+py-demo_PATH=			${PYQT_PY_RELNAME}-demo>=${PYQT_VERSION}
+py-designer_PATH=		${PYQT_PY_RELNAME}-designer>=${PYQT_VERSION}
+py-designerplugin_PATH=		${PYQT_PY_RELNAME}-designerplugin>=${PYQT_VERSION}
+py-doc_PATH=			${PYQT_PY_RELNAME}-doc>=${PYQT_VERSION}
+py-gui_PATH=			${PYQT_PY_RELNAME}-gui>=${PYQT_VERSION}
+py-help_PATH=			${PYQT_PY_RELNAME}-help>=${PYQT_VERSION}
+py-multimedia_PATH=		${PYQT_PY_RELNAME}-multimedia>=${PYQT_VERSION}
+py-network_PATH=		${PYQT_PY_RELNAME}-network>=${PYQT_VERSION}
+py-opengl_PATH=			${PYQT_PY_RELNAME}-opengl>=${PYQT_VERSION}
+py-phonon_PATH=			${PYQT_PY_RELNAME}-phonon>=${PYQT_VERSION}
+py-qscintilla2_PATH=		${PYQT_PY_RELNAME}-qscintilla2>=${QSCI2_VERSION}
+py-script_PATH=			${PYQT_PY_RELNAME}-script>=${PYQT_VERSION}
+py-scripttools_PATH=		${PYQT_PY_RELNAME}-scripttools>=${PYQT_VERSION}
+py-sql_PATH=			${PYQT_PY_RELNAME}-sql>=${PYQT_VERSION}
+py-svg_PATH=			${PYQT_PY_RELNAME}-svg>=${PYQT_VERSION}
+py-test_PATH=			${PYQT_PY_RELNAME}-test>=${PYQT_VERSION}
+py-webchannel_PATH=		${PYQT_PY_RELNAME}-webchannel>=${PYQT_VERSION}
+py-webengine_PATH=		${PYQT_PY_RELNAME}-webengine>=5.12.1
+py-webkit_PATH=			${PYQT_PY_RELNAME}-webkit>=${PYQT_VERSION}
+py-websockets_PATH=		${PYQT_PY_RELNAME}-websockets>=${PYQT_VERSION}
+py-xml_PATH=			${PYQT_PY_RELNAME}-xml>=${PYQT_VERSION}
+py-xmlpatterns_PATH=		${PYQT_PY_RELNAME}-xmlpatterns>=${PYQT_VERSION}
 
 py-multimediawidgets_PATH=	${PYQT_PY_RELNAME}-multimediawidgets>=${PYQT_VERSION}
 py-qml_PATH=			${PYQT_PY_RELNAME}-qml>=${PYQT_VERSION}
@@ -132,35 +132,35 @@ py-serialport_PATH=		${PYQT_PY_RELNAME}-serialport>=${PYQT_VERSION}
 py-webkitwidgets_PATH=		${PYQT_PY_RELNAME}-webkitwidgets>=${PYQT_VERSION}
 py-widgets_PATH=		${PYQT_PY_RELNAME}-widgets>=${PYQT_VERSION}
 
-py-sip_PORT=		devel/py-sip
+py-sip_PORT=			devel/py-sip
 
-py-assistant_PORT=	devel/${PYQT_RELNAME}-assistant
-py-core_PORT=		devel/${PYQT_RELNAME}-core
-py-dbus_PORT=		devel/${PYQT_RELNAME}-dbus
-py-dbussupport_PORT=	devel/${PYQT_RELNAME}-dbussupport
-py-declarative_PORT=	devel/${PYQT_RELNAME}-declarative
-py-demo_PORT=		misc/${PYQT_RELNAME}-demo
-py-designer_PORT=	devel/${PYQT_RELNAME}-designer
-py-designerplugin_PORT=	devel/${PYQT_RELNAME}-designerplugin
-py-doc_PORT=		misc/${PYQT_RELNAME}-doc
-py-gui_PORT=		x11-toolkits/${PYQT_RELNAME}-gui
-py-help_PORT=		devel/${PYQT_RELNAME}-help
-py-multimedia_PORT=	multimedia/${PYQT_RELNAME}-multimedia
-py-network_PORT=	net/${PYQT_RELNAME}-network
-py-opengl_PORT=		x11/${PYQT_RELNAME}-opengl
-py-phonon_PORT=		multimedia/${PYQT_RELNAME}-phonon
-py-qscintilla2_PORT=	devel/${PYQT_RELNAME}-qscintilla2
-py-script_PORT=		devel/${PYQT_RELNAME}-script
-py-scripttools_PORT=	devel/${PYQT_RELNAME}-scripttools
-py-sql_PORT=		databases/${PYQT_RELNAME}-sql
-py-svg_PORT=		graphics/${PYQT_RELNAME}-svg
-py-test_PORT=		devel/${PYQT_RELNAME}-test
-py-webchannel_PORT=	www/${PYQT_RELNAME}-webchannel
-py-webengine_PORT=	www/${PYQT_RELNAME}-webengine
-py-webkit_PORT=		www/${PYQT_RELNAME}-webkit
-py-websockets_PORT=	www/${PYQT_RELNAME}-websockets
-py-xml_PORT=		textproc/${PYQT_RELNAME}-xml
-py-xmlpatterns_PORT=	textproc/${PYQT_RELNAME}-xmlpatterns
+py-assistant_PORT=		devel/${PYQT_RELNAME}-assistant
+py-core_PORT=			devel/${PYQT_RELNAME}-core
+py-dbus_PORT=			devel/${PYQT_RELNAME}-dbus
+py-dbussupport_PORT=		devel/${PYQT_RELNAME}-dbussupport
+py-declarative_PORT=		devel/${PYQT_RELNAME}-declarative
+py-demo_PORT=			misc/${PYQT_RELNAME}-demo
+py-designer_PORT=		devel/${PYQT_RELNAME}-designer
+py-designerplugin_PORT=		devel/${PYQT_RELNAME}-designerplugin
+py-doc_PORT=			misc/${PYQT_RELNAME}-doc
+py-gui_PORT=			x11-toolkits/${PYQT_RELNAME}-gui
+py-help_PORT=			devel/${PYQT_RELNAME}-help
+py-multimedia_PORT=		multimedia/${PYQT_RELNAME}-multimedia
+py-network_PORT=		net/${PYQT_RELNAME}-network
+py-opengl_PORT=			x11/${PYQT_RELNAME}-opengl
+py-phonon_PORT=			multimedia/${PYQT_RELNAME}-phonon
+py-qscintilla2_PORT=		devel/${PYQT_RELNAME}-qscintilla2
+py-script_PORT=			devel/${PYQT_RELNAME}-script
+py-scripttools_PORT=		devel/${PYQT_RELNAME}-scripttools
+py-sql_PORT=			databases/${PYQT_RELNAME}-sql
+py-svg_PORT=			graphics/${PYQT_RELNAME}-svg
+py-test_PORT=			devel/${PYQT_RELNAME}-test
+py-webchannel_PORT=		www/${PYQT_RELNAME}-webchannel
+py-webengine_PORT=		www/${PYQT_RELNAME}-webengine
+py-webkit_PORT=			www/${PYQT_RELNAME}-webkit
+py-websockets_PORT=		www/${PYQT_RELNAME}-websockets
+py-xml_PORT=			textproc/${PYQT_RELNAME}-xml
+py-xmlpatterns_PORT=		textproc/${PYQT_RELNAME}-xmlpatterns
 
 py-multimediawidgets_PORT=	multimedia/py-qt5-multimediawidgets
 py-qml_PORT=			lang/py-qt5-qml
@@ -170,33 +170,33 @@ py-serialport_PORT=		comms/py-qt5-serialport
 py-webkitwidgets_PORT=		www/py-qt5-webkitwidgets
 py-widgets_PORT=		x11-toolkits/py-qt5-widgets
 
-py-assistant_DESC=	Python bindings for QtAssistant module
-py-core_DESC=		Python bindings for QtCore module
-py-dbus_DESC=		Python bindings for QtDBus module
-py-dbussupport_DESC=	Qt event loop support for dbus-python
-py-declarative_DESC=	Python bindings for QtDeclarative module
-py-demo_DESC=		PyQt demo and examples
-py-designer_DESC=	Python bindings for QtDesigner module
-py-designerplugin_DESC=	Python bindings for QtDesigner plugin
-py-doc_DESC=		PyQt documentation
-py-gui_DESC=		Python bindings for QtGui module
-py-help_DESC=		Python bindings for QtHelp module
-py-multimedia_DESC=	Python bindings for Multimedia module
-py-network_DESC=	Python bindings for QtNetwork module
-py-opengl_DESC=		Python bindings for QtOpenGL module
-py-phonon_DESC=		Python bindings for Phonon module
-py-qscintilla2_DESC=	Python bindings for QScintilla2
-py-script_DESC=		Python bindings for QtScript module
-py-scripttools_DESC=	Python bindings for QtScriptTools module
-py-sip_DESC=		Python bindings generator for C and C++ libraries
-py-sql_DESC=		Python bindings for QtSql module
-py-svg_DESC=		Python bindings for QtSvg module
-py-test_DESC=		Python bindings for QtTest module
-py-webchannel_DESC=	Python bindings for QtWebChannel module
-py-webengine_DESC=	Python bindings for QtWebEngine module
-py-webkit_DESC=		Python bindings for QtWebKit module
-py-xml_DESC=		Python bindings for QtXml module
-py-xmlpatterns_DESC=	Python bindings for QtXmlPatterns module
+py-assistant_DESC=		Python bindings for QtAssistant module
+py-core_DESC=			Python bindings for QtCore module
+py-dbus_DESC=			Python bindings for QtDBus module
+py-dbussupport_DESC=		Qt event loop support for dbus-python
+py-declarative_DESC=		Python bindings for QtDeclarative module
+py-demo_DESC=			PyQt demo and examples
+py-designer_DESC=		Python bindings for QtDesigner module
+py-designerplugin_DESC=		Python bindings for QtDesigner plugin
+py-doc_DESC=			PyQt documentation
+py-gui_DESC=			Python bindings for QtGui module
+py-help_DESC=			Python bindings for QtHelp module
+py-multimedia_DESC=		Python bindings for Multimedia module
+py-network_DESC=		Python bindings for QtNetwork module
+py-opengl_DESC=			Python bindings for QtOpenGL module
+py-phonon_DESC=			Python bindings for Phonon module
+py-qscintilla2_DESC=		Python bindings for QScintilla2
+py-script_DESC=			Python bindings for QtScript module
+py-scripttools_DESC=		Python bindings for QtScriptTools module
+py-sip_DESC=			Python bindings generator for C and C++ libraries
+py-sql_DESC=			Python bindings for QtSql module
+py-svg_DESC=			Python bindings for QtSvg module
+py-test_DESC=			Python bindings for QtTest module
+py-webchannel_DESC=		Python bindings for QtWebChannel module
+py-webengine_DESC=		Python bindings for QtWebEngine module
+py-webkit_DESC=			Python bindings for QtWebKit module
+py-xml_DESC=			Python bindings for QtXml module
+py-xmlpatterns_DESC=		Python bindings for QtXmlPatterns module
 
 py-multimediawidgets_DESC=	Python bindings for QtMultimediaWidgets module
 py-qml_DESC=			Python bindings for Qml module
