@@ -13,8 +13,8 @@ LICENSE=	APACHE20
 USES=		compiler go:modules
 
 USE_GITHUB=	yes
-GHTAG=		RELEASE.2020-07-20T02-25-16Z
-COMMIT_ID=	e2c71717f82e10798ab4c51c76f4143d365d5d6a
+GHTAG=		RELEASE.2020-07-22T00-26-33Z
+COMMIT_ID=	a88028359308aec03cb91405af25619e232f50c5
 GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		Azure:azure-pipeline-go:v0.2.1:azure_azure_pipeline_go/vendor/github.com/Azure/azure-pipeline-go \
 		Azure:azure-storage-blob-go:v0.8.0:azure_azure_storage_blob_go/vendor/github.com/Azure/azure-storage-blob-go \
