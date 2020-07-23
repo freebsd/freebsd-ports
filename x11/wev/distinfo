@@ -1,3 +1,5 @@
 TIMESTAMP = 1581011288
 SHA256 (wev-1.0.0.tar.gz) = 6f004dedf3f5ce10d2fe3cd233d59912756d8a0af021214158d6ec54d66c9d6e
 SIZE (wev-1.0.0.tar.gz) = 8619
+SHA256 (0be512fb7058.patch) = 5e0ee32b6d0c7bfeae9eb22d2191dbb48910aedb5a95753bad674d5a75d64c25
+SIZE (0be512fb7058.patch) = 1148
