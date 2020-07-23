@@ -1,0 +1,54 @@
+Broadcast a signal to all threads on FreeBSD
+
+shared/source/page_fault_manager/linux/cpu_page_fault_manager_linux.cpp:90:33: error: use of undeclared identifier '__NR_gettid'
+    auto selfThreadId = syscall(__NR_gettid);
+                                ^
+shared/source/page_fault_manager/linux/cpu_page_fault_manager_linux.cpp:113:13: error: use of undeclared identifier 'SYS_tkill'
+    syscall(SYS_tkill, threadId, SIGUSR1);
+            ^
+
+--- shared/source/page_fault_manager/linux/cpu_page_fault_manager_linux.cpp.orig	2020-07-08 11:59:33 UTC
++++ shared/source/page_fault_manager/linux/cpu_page_fault_manager_linux.cpp
+@@ -9,11 +9,15 @@
+ 
+ #include "shared/source/helpers/debug_helpers.h"
+ 
+-#include <dirent.h>
+ #include <sys/mman.h>
++#if defined(__linux__)
++#include <dirent.h>
+ #include <sys/syscall.h>
+ #include <sys/types.h>
+ #include <unistd.h>
++#elif defined(__FreeBSD__)
++#include <sys/thr.h>
++#endif
+ 
+ namespace NEO {
+ std::unique_ptr<PageFaultManager> PageFaultManager::create() {
+@@ -87,6 +91,7 @@ void PageFaultManagerLinux::callPreviousHandler(int si
+    is broadcasted to ensure that every thread received signal and is
+    stucked on PageFaultHandler's mutex before copy from GPU to CPU proceeds. */
+ void PageFaultManagerLinux::broadcastWaitSignal() {
++#if defined(__linux__)
+     auto selfThreadId = syscall(__NR_gettid);
+ 
+     auto procDir = opendir("/proc/self/task");
+@@ -107,10 +112,17 @@ void PageFaultManagerLinux::broadcastWaitSignal() {
+     }
+ 
+     closedir(procDir);
++#elif defined(__FreeBSD__)
++    sendSignalToThread(-1);
++#endif
+ }
+ 
+ void PageFaultManagerLinux::sendSignalToThread(int threadId) {
++#if defined(__linux__)
+     syscall(SYS_tkill, threadId, SIGUSR1);
++#elif defined(__FreeBSD__)
++    thr_kill(threadId, SIGUSR1);
++#endif
+ }
+ 
+ } // namespace NEO
