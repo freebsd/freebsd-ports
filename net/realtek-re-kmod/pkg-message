@@ -9,9 +9,12 @@ if_re_name="/boot/modules/if_re.ko"
 
 By default, the size of allocated mbufs is enough
 to receive the largest Ethernet frame supported
-by the card.  The value is tunable at boot time,
+by the card.  If your memory is highly fragmented,
+trying to allocate contiguous pages (more than
+4096 bytes) may result in driver hangs.
+For this reason the value is tunable at boot time,
 e.g. if you don't need Jumbo frames you can lower
-the memory requirements with:
+the memory requirements and avoid this issue with:
 
 hw.re.max_rx_mbuf_sz="2048"
 EOM
