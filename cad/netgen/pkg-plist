@@ -94,6 +94,7 @@ include/include/meshing.hpp
 include/include/myadt.hpp
 include/include/mydefs.hpp
 include/include/mystdlib.h
+include/include/netgen_version.hpp
 include/include/nginterface_v2_impl.hpp
 include/include/ngsimd.hpp
 include/include/occgeom.hpp
@@ -144,6 +145,7 @@ include/meshing/python_mesh.hpp
 include/meshing/ruler2.hpp
 include/meshing/ruler3.hpp
 include/meshing/specials.hpp
+include/meshing/surfacegeom.hpp
 include/meshing/topology.hpp
 include/meshing/validate.hpp
 include/mydefs.hpp
