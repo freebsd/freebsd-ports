@@ -2,32 +2,35 @@
 # $FreeBSD$
 
 PORTNAME=	powwow
-PORTVERSION=	1.2.17
-PORTREVISION=	1
+PORTVERSION=	1.2.22
 CATEGORIES=	games
-MASTER_SITES=	http://hoopajoo.net/static/projects/ \
-		ftp://ftp.wilbury.sk/pub/FreeBSD/local/distfiles/
+MASTER_SITES=	https://hoopajoo.net/static/projects/ \
+		https://ftp.sk.FreeBSD.org/pub/FreeBSD/local/distfiles/
 
 MAINTAINER=	juraj@lutter.sk
 COMMENT=	Client to play MUDs
 
-USES=		ncurses
-GNU_CONFIGURE=	yes
+LICENSE=	GPLv2
 
-pre-build:
-	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' ${WRKSRC}/defines.h \
-		${WRKSRC}/list.c ${WRKSRC}/main.c ${WRKSRC}/cmd2.c ${WRKSRC}/beam.c
-	@${REINPLACE_CMD} -e 's|^DEFS = |DEFS = -DPOSIX |' ${WRKSRC}/Makefile
+USES=		gmake ncurses
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=	--enable-bsd
+
+OPTIONS_DEFINE=	DOCS
+OPTIONS_SUB=	1
+
+.include <bsd.port.options.mk>
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/powwow ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/powwow-movieplay ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/powwow-muc ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/catrw ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/follow ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/powwow.6 ${STAGEDIR}${PREFIX}/man/man6
-	@${MKDIR} ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/powwow.doc ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/powwow.help ${STAGEDIR}${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/src/powwow ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/powwow-movieplay ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/powwow-muc ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/catrw ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/follow ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${MAN6PREFIX}/man/man6
+	${INSTALL_MAN} ${WRKSRC}/man/powwow.6 ${STAGEDIR}${MAN6PREFIX}/man/man6
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/powwow.doc ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/powwow.help ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
