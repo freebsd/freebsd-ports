@@ -27,7 +27,4 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	kisli
 GH_PROJECT=	vmime
 
-post-patch:
-	@${REINPLACE_CMD} 's|$${VMIME_INSTALL_LIBDIR}/pkgconfig|${PREFIX}/libdata/pkgconfig|' ${WRKSRC}/CMakeLists.txt
-
 .include <bsd.port.mk>
