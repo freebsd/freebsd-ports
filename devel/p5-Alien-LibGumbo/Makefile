@@ -19,7 +19,7 @@ BUILD_DEPENDS=	p5-Alien-Base-ModuleBuild>0:devel/p5-Alien-Base-ModuleBuild \
 		p5-PkgConfig>0:devel/p5-PkgConfig \
 		p5-URI>0:net/p5-URI
 
-USES=		libtool perl5
+USES=		perl5
 USE_PERL5=	modbuild
 
 post-extract:
