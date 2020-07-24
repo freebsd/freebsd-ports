@@ -4,7 +4,7 @@
 PORTNAME=	drive
 PORTVERSION=	0.3.9.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	net
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -26,20 +26,20 @@ GH_TUPLE=	boltdb:bolt:v1.3.1:boltdb_bolt/vendor/github.com/boltdb/bolt \
 		census-instrumentation:opencensus-go:v0.22.4:census_instrumentation_opencensus/vendor/go.opencensus.io \
 		cheggaaa:pb:v3.0.4:cheggaaa_pb/vendor/github.com/cheggaaa/pb \
 		fatih:color:v1.9.0:fatih_color/vendor/github.com/fatih/color \
-		golang:crypto:75b2880:golang_crypto/vendor/golang.org/x/crypto \
+		golang:crypto:948cd5f:golang_crypto/vendor/golang.org/x/crypto \
 		golang:groupcache:8c9f03a:golang_groupcache/vendor/github.com/golang/groupcache \
-		golang:net:627f964:golang_net/vendor/golang.org/x/net \
+		golang:net:ab34263:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:bf48bf1:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.4.2:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:ed371f2:golang_sys/vendor/golang.org/x/sys \
-		golang:text:23ae387:golang_text/vendor/golang.org/x/text \
-		google:go-genproto:64a14ca:google_go_genproto/vendor/google.golang.org/genproto \
-		google:google-api-go-client:v0.28.0:google_googleapigoclient/vendor/google.golang.org/api \
-		googleapis:google-cloud-go:v0.59.0:googleapis_googlecloudgo/vendor/cloud.google.com/go \
+		golang:sys:ddb9806:golang_sys/vendor/golang.org/x/sys \
+		golang:text:v0.3.3:golang_text/vendor/golang.org/x/text \
+		google:go-genproto:11fb19a:google_go_genproto/vendor/google.golang.org/genproto \
+		google:google-api-go-client:v0.29.0:google_googleapigoclient/vendor/google.golang.org/api \
+		googleapis:google-cloud-go:v0.61.0:googleapis_googlecloudgo/vendor/cloud.google.com/go \
 		googleapis:gax-go:v2.0.5:googleapis_gaxgo/vendor/github.com/googleapis/gax-go \
 		grpc:grpc-go:v1.30.0:grpc_grpc_go/vendor/google.golang.org/grpc \
 		hashicorp:golang-lru:v0.5.4:hashicorp_golang_lru/vendor/github.com/hashicorp/golang-lru \
-		mattn:go-colorable:v0.1.6:mattn_gocolorable/vendor/github.com/mattn/go-colorable \
+		mattn:go-colorable:v0.1.7:mattn_gocolorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-isatty:v0.0.12:mattn_goisatty/vendor/github.com/mattn/go-isatty \
 		mattn:go-runewidth:v0.0.9:mattn_gorunewidth/vendor/github.com/mattn/go-runewidth \
 		mxk:go-flowrate:cca7078:mxk_goflowrate/vendor/github.com/mxk/go-flowrate \
