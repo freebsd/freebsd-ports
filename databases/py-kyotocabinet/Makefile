@@ -5,7 +5,7 @@ PORTNAME=	kyotocabinet
 PORTVERSION=	1.23
 DISTVERSIONPREFIX=	python-
 CATEGORIES=	databases python
-MASTER_SITES=	https://fallabs.com/kyotocabinet/pythonpkg/ \
+MASTER_SITES=	https://dbmx.net/kyotocabinet/pythonpkg/ \
 		LOCAL/sunpoet
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
