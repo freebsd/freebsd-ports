@@ -21,8 +21,9 @@ RUN_DEPENDS=	p5-DateTime>=0.21:devel/p5-DateTime \
 		p5-Set-Infinite>=0:devel/p5-Set-Infinite
 TEST_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
