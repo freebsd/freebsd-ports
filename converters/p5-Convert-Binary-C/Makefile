@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Convert-Binary-C
-PORTVERSION=	0.78
+PORTVERSION=	0.79
 CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,9 +13,9 @@ COMMENT=	Binary Data Conversion using C Types
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-MAKE_JOBS_UNSAFE=	yes
-
 USES=		perl5
 USE_PERL5=	configure
+
+MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.mk>

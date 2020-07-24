@@ -2,6 +2,6 @@ bin/ccconfig
 %%SITE_ARCH%%/Convert/Binary/C.pm
 %%SITE_ARCH%%/Convert/Binary/C/Cached.pm
 %%SITE_ARCH%%/auto/Convert/Binary/C/C.so
+%%PERL5_MAN1%%/ccconfig.1.gz
 %%PERL5_MAN3%%/Convert::Binary::C.3.gz
 %%PERL5_MAN3%%/Convert::Binary::C::Cached.3.gz
-%%PERL5_MAN1%%/ccconfig.1.gz
