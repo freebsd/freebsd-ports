@@ -5,7 +5,7 @@ PORTNAME=	tokyotyrant
 PORTVERSION=	1.16
 PORTREVISION=	3
 CATEGORIES=	databases perl5
-MASTER_SITES=	https://fallabs.com/${PORTNAME}/perlpkg/
+MASTER_SITES=	https://dbmx.net/${PORTNAME}/perlpkg/
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-perl-${PORTVERSION}
 
