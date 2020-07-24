@@ -22,7 +22,7 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} >= 503100
-BROKEN=                does not support 5.31+
+BROKEN=		does not support 5.31+
 .endif
 
 .include <bsd.port.post.mk>
