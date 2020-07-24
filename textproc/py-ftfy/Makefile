@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ftfy
-PORTVERSION=	5.7
+PORTVERSION=	5.8
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}wcwidth>=0:devel/py-wcwidth@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR}
 
-USES=		python:3.4+
+USES=		python:3.5+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
