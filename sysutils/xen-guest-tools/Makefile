@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xen-guest-tools
-PORTVERSION=	4.13.1
+PORTVERSION=	4.14.0
 PORTREVISION=	0
 CATEGORIES=	sysutils
 MASTER_SITES=	https://downloads.xenproject.org/release/xen/${PORTVERSION}/
