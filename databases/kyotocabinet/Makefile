@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	kyotocabinet
-PORTVERSION=	1.2.77
+PORTVERSION=	1.2.78
 CATEGORIES=	databases
-MASTER_SITES=	https://fallabs.com/${PORTNAME}/pkg/ \
+MASTER_SITES=	https://dbmx.net/kyotocabinet/pkg/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -16,8 +16,6 @@ BROKEN_mips=		fails to link: hidden symbol '__sync_lock_test_and_set_8' in /usr/
 BROKEN_mips64=		fails to link: hidden symbol '__sync_lock_test_and_set_8' in /usr/lib/libgcc.a(stdatomic.o) is referenced by DSO
 BROKEN_powerpc=		fails to link
 
-OPTIONS_DEFINE=	DOCS
-
 USES=		gmake
 
 CPPFLAGS+=	-fPIC
@@ -27,6 +25,8 @@ MAKE_ARGS=	PCDIR=${PREFIX}/libdata/pkgconfig
 REINPLACE_ARGS=	-i ''
 TEST_TARGET=	check
 USE_LDCONFIG=	yes
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lstdc++ ||g' ${WRKSRC}/configure ${WRKSRC}/doc/spex.html ${WRKSRC}/example/Makefile ${WRKSRC}/lab/kcdict/Makefile
