@@ -16,8 +16,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	rubygem-builder>=0:devel/rubygem-builder \
 		rubygem-public_suffix>=0:dns/rubygem-public_suffix
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
