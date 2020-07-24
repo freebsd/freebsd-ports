@@ -4,7 +4,7 @@
 PORTNAME=	tokyopromenade
 PORTVERSION=	0.9.25
 CATEGORIES=	www
-MASTER_SITES=	https://fallabs.com/${PORTNAME}/pkg/
+MASTER_SITES=	https://dbmx.net/${PORTNAME}/pkg/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Content management system
