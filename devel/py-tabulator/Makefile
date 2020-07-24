@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tabulator
-PORTVERSION=	1.36.1
+PORTVERSION=	1.52.3
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,9 +14,9 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto3>=1.9:www/py-boto3@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}cchardet>=1.0:textproc/py-cchardet@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}chardet>=3.0:textproc/py-chardet@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click>=6.0:devel/py-click@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}ijson>=2.5:devel/py-ijson@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ijson>=3.0.3:devel/py-ijson@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonlines>=1.1:devel/py-jsonlines@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openpyxl>=2.6:textproc/py-openpyxl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.8:www/py-requests@${PY_FLAVOR} \
@@ -29,5 +29,10 @@ USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
+
+OPTIONS_DEFINE=	CCHARDET
+CCHARDET_DESC=	Character encoding detection via cchardet
+
+CCHARDET_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cchardet>=1.0:textproc/py-cchardet@${PY_FLAVOR}
 
 .include <bsd.port.mk>
