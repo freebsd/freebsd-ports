@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	thwait
-PORTVERSION=	0.1.0
+PORTVERSION=	0.2.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,6 +11,8 @@ COMMENT=	Watches for termination of multiple threads
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+RUN_DEPENDS=	rubygem-e2mmap>=0:devel/rubygem-e2mmap
 
 USES=		gem
 USE_RUBY=	yes
