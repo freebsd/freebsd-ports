@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bio
-PORTVERSION=	1.5.2
+PORTVERSION=	2.0.1
 CATEGORIES=	biology rubygems
 MASTER_SITES=	RG
 
@@ -18,11 +18,5 @@ USES=		gem
 USE_RUBY=	yes
 
 NO_ARCH=	yes
-
-PLIST_FILES=	bin/bioruby \
-		bin/br_biofetch.rb \
-		bin/br_bioflat.rb \
-		bin/br_biogetseq.rb \
-		bin/br_pmfetch.rb
 
 .include <bsd.port.mk>
