@@ -14,15 +14,15 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	zeising@FreeBSD.org
 COMMENT=	Memory debugging and profiling tool
 
-BB_COMMIT=	ce1acb28953f
-BB_ACCOUNT=	stass
-BB_PROJECT=	valgrind-freebsd
-
 LICENSE=	GPLv2
+
+ONLY_FOR_ARCHS=	amd64 i386
 
 CONFLICTS=	valgrind-[0-9]*
 
-ONLY_FOR_ARCHS=	i386 amd64
+BB_COMMIT=	ce1acb28953f
+BB_ACCOUNT=	stass
+BB_PROJECT=	valgrind-freebsd
 
 LIB32_PATH?=	${DESTDIR}/usr/lib32/libc.so
 
@@ -35,10 +35,10 @@ OPTIONS_DEFAULT_amd64=	32BIT
 32BIT_DESC=	Enable debugging of 32-bit programs (requires lib32)
 MPI_DESC=	Enable build of MPI wrappers
 
-DOCS_BUILD_DEPENDS=    docbook-xsl>=0:textproc/docbook-xsl \
-                       xsltproc:textproc/libxslt
-MANPAGES_BUILD_DEPENDS=        docbook-xsl>=0:textproc/docbook-xsl \
-                       xsltproc:textproc/libxslt
+DOCS_BUILD_DEPENDS=	docbook-xsl>=0:textproc/docbook-xsl \
+		xsltproc:textproc/libxslt
+MANPAGES_BUILD_DEPENDS=	docbook-xsl>=0:textproc/docbook-xsl \
+		xsltproc:textproc/libxslt
 MPI_LIB_DEPENDS=	libmpich.so:net/mpich
 
 OPTIONS_SUB=	yes
