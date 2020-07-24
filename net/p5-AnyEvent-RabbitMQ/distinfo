@@ -1,3 +1,3 @@
-TIMESTAMP = 1488262609
-SHA256 (AnyEvent-RabbitMQ-1.19.tar.gz) = a440ec2fa5a4018ad44739baaa9601cc460ad497282e89110ba8e3cf23312f0a
-SIZE (AnyEvent-RabbitMQ-1.19.tar.gz) = 86973
+TIMESTAMP = 1595416751
+SHA256 (AnyEvent-RabbitMQ-1.22.tar.gz) = 98c52a1fe700710f3e5bc55a38b25de625e9b2e8341d278dcf9e1b3f3d19acee
+SIZE (AnyEvent-RabbitMQ-1.22.tar.gz) = 79993
