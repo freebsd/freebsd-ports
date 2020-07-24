@@ -1,5 +1,11 @@
+[
+{ type: install
+  message: <<EOM
 iichid is currently in-development and EXPERIMENTAL. This port provides
 an easy and quick method for users to test this code to encourage early
 testing, feedback and bug reports.
 
 Please report successes and issues to: https://github.com/wulf7/iichid
+EOM
+}
+]
