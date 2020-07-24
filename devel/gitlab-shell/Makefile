@@ -10,7 +10,7 @@ COMMENT=	GitLab Shell handles git commands for GitLab
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	gem:devel/ruby-gems
+BUILD_DEPENDS=	rubygem-bundler1=1.17.3:sysutils/rubygem-bundler1
 
 USES=		gmake go:modules,no_targets
 MAKE_ENV=	GOFLAGS="${GO_BUILDFLAGS}"
@@ -20,8 +20,6 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find the commit hash here: https://gitlab.com/gitlab-org/gitlab-shell/tags
 GL_COMMIT=	131771a66fb9f0366d31f20229358820f3bfa07b
-
-BUILD_DEPENDS=	rubygem-bundler1=1.17.3:sysutils/rubygem-bundler1
 
 USERS=		git
 GROUPS=		git
