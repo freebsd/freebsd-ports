@@ -1,21 +1,22 @@
 Patchutils is a small collection of programs that operate on patch files.
 
- - Interdiff generates an incremental patch from two patches against a common
-   source.
- - Combinediff generates a single patch from two incremental patches, allowing
-   you to merge patches together.
- - Filterdiff will select the portions of a patch file that apply to files
-   matching (or, alternatively, not matching) a shell wildcard.
- - Fixcvsdiff is for correcting the output of 'cvs diff'.
- - Rediff corrects hand-edited patches, by comparing the original patch with
-   the modified one and adjusting the offsets and counts.
- - Lsdiff displays a short listing of affected files in a patch file, along
-   with (optionally) the line numbers of the start of each patch.
- - Splitdiff separates out patches from a patch file so that each new patch
-   file only alters any given file once.
- - Grepdiff displays a list of the files modified by a patch where the patch
-   contains a given regular expression.
- - Recountdiff fixes up counts and offsets in a unified diff.
- - Unwrapdiff fixes word-wrapped unified diffs.
+- Interdiff generates an incremental patch from two patches against a common
+  source.
+- Combinediff generates a single patch from two incremental patches, allowing
+  you to merge patches together.
+- Filterdiff will select the portions of a patch file that apply to files
+  matching (or, alternatively, not matching) a shell wildcard.
+- Fixcvsdiff is for correcting the output of 'cvs diff'.
+- Rediff corrects hand-edited patches, by comparing the original patch with the
+  modified one and adjusting the offsets and counts.
+- Lsdiff displays a short listing of affected files in a patch file, along with
+  (optionally) the line numbers of the start of each patch.
+- Splitdiff separates out patches from a patch file so that each new patch file
+  only alters any given file once.
+- Grepdiff displays a list of the files modified by a patch where the patch
+  contains a given regular expression.
+- Recountdiff fixes up counts and offsets in a unified diff.
+- Unwrapdiff fixes word-wrapped unified diffs.
 
 WWW: http://cyberelk.net/tim/software/patchutils/
+WWW: https://github.com/twaugh/patchutils
