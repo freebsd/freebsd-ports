@@ -5,7 +5,7 @@ PORTNAME=	Text-ChaSen
 PORTVERSION=	1.03
 PORTREVISION=	7
 CATEGORIES=	japanese textproc perl5
-MASTER_SITES=	OSDN/chasen-legacy/56305
+MASTER_SITES=	OSDN/chasen-legacy
 DISTNAME=	chasen-${CHASEN_VERSION}
 
 MAINTAINER=	perl@FreeBSD.org

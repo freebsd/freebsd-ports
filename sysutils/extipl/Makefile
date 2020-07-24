@@ -4,7 +4,7 @@
 PORTNAME=	extipl
 PORTVERSION=	5.04
 CATEGORIES=	sysutils
-MASTER_SITES=	OSDN/${PORTNAME}/2166
+MASTER_SITES=	OSDN/${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Partition-selectable boot loader for IBM-PC/AT compatibles

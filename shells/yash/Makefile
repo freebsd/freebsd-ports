@@ -3,7 +3,7 @@
 PORTNAME=	yash
 DISTVERSION=	2.49
 CATEGORIES=	shells
-MASTER_SITES=	OSDN/yash/71638
+MASTER_SITES=	OSDN/yash
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	POSIX-compliant command line shell

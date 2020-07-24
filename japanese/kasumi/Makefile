@@ -5,7 +5,7 @@ PORTNAME=	kasumi
 PORTVERSION=	2.5
 PORTREVISION=	8
 CATEGORIES=	japanese
-MASTER_SITES=	OSDN/${PORTNAME}/41436
+MASTER_SITES=	OSDN/${PORTNAME}
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Dictionary management tool for anthy

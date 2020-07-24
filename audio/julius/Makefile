@@ -5,7 +5,7 @@ PORTNAME=	julius
 PORTVERSION=	4.1.2
 PORTREVISION=	2
 CATEGORIES=	audio
-MASTER_SITES=	OSDN/julius/37582
+MASTER_SITES=	OSDN/julius
 
 MAINTAINER=	numisemis@yahoo.com
 COMMENT=	Large Vocabulary Continuous Speech Recognition Engine

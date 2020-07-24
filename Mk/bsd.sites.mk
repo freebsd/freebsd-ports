@@ -896,11 +896,27 @@ MASTER_SITE_OPENBSD+= \
 	https://mirror.aarnet.edu.au/pub/OpenBSD/%SUBDIR%/
 .endif
 
+# Reference: https://osdn.net/docs/FileRelease_Guide#h2-Release.20File.20URL.20Formats
 .if !defined(IGNORE_MASTER_SITE_OSDN)
-.for mirror in aarnet acc c3sl cznic gigenet iij jaist nchc onet osdn pumath rwthaachen ymu
 MASTER_SITE_OSDN+= \
-	http://${mirror}.dl.osdn.jp/%SUBDIR%/
-.endfor
+	https://osdn.net/dl/%SUBDIR%/
+.endif
+
+.if !defined(IGNORE_MASTER_SITE_OSDN_CHAMBER)
+MASTER_SITE_OSDN_CHAMBER+= \
+	https://osdn.net/downloads/users/%SUBDIR%/
+.endif
+
+# From https://osdn.net/docs/FileRelease_Guide#h2-Direct.20Download
+#   "Currently, when a release-file URL is accessed from wget, curl,
+#   libwww-perl, PowerShell, apt, dnf, or other package management
+#   tools, downloading of the file will begin right away without
+#   having to go via html page."
+# Unfortunately fetch(1) isn't included in such user agents. Therefore
+# add --user-agent option to FETCH_ARGS so access is considered as
+# that of ftp/curl.
+.if !empty(MASTER_SITES:M*OSDN*) || !empty(PATCH_SITES:M*OSDN*)
+FETCH_ARGS+=	--user-agent=curl/7.68.0
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_OSSP)

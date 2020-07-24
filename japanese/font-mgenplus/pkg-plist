@@ -1,5 +1,7 @@
 etc/fonts/conf.avail/20-unhint-mgenplus.conf
 etc/fonts/conf.avail/62-fonts-mgenplus.conf
+etc/fonts/conf.d/20-unhint-mgenplus.conf
+etc/fonts/conf.d/62-fonts-mgenplus.conf
 %%MGENPLUS_1C%%%%FONTSDIR%%/mgenplus-1c-black.ttf
 %%MGENPLUS_1C%%%%FONTSDIR%%/mgenplus-1c-bold.ttf
 %%MGENPLUS_1C%%%%FONTSDIR%%/mgenplus-1c-heavy.ttf

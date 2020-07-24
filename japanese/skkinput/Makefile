@@ -5,7 +5,7 @@ PORTNAME=	skkinput
 PORTVERSION=	2.06.4
 PORTREVISION=	2
 CATEGORIES=	japanese x11
-MASTER_SITES=	OSDN/skkinput2/6273
+MASTER_SITES=	OSDN/skkinput2
 
 MAINTAINER=	koma2@lovepeers.org
 COMMENT=	SKK-like Japanese input method for X11

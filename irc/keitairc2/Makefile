@@ -1,10 +1,10 @@
 # Created by: Makoto Matsushita <matusita@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=		keitairc
-PORTVERSION=		2.0
-CATEGORIES=		irc
-MASTER_SITES=		OSDN/${PORTNAME}/47485
+PORTNAME=	keitairc
+PORTVERSION=	2.0
+CATEGORIES=	irc
+MASTER_SITES=	OSDN/${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IRC proxy for mobilephone that have a web interface

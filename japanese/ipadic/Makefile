@@ -5,7 +5,7 @@ PORTNAME=	ipadic
 PORTVERSION=	2.7.0
 PORTREVISION=	2
 CATEGORIES=	japanese textproc
-MASTER_SITES=	OSDN/${PORTNAME}/24435
+MASTER_SITES=	OSDN/${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese Morphological Dictionary for ChaSen

@@ -5,7 +5,7 @@ PORTNAME=	bsfilter
 PORTVERSION=	1.0.19
 PORTREVISION=	3
 CATEGORIES=	mail ruby
-MASTER_SITES=	OSDN/bsfilter/59804
+MASTER_SITES=	OSDN/bsfilter
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bayesian spam filter written in Ruby

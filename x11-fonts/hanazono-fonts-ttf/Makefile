@@ -5,7 +5,7 @@ PORTNAME=	hanazono-fonts-ttf
 PORTVERSION=	20170904
 PORTREVISION=	1
 CATEGORIES=	x11-fonts
-MASTER_SITES=	OSDN/hanazono-font/68253
+MASTER_SITES=	OSDN/hanazono-font
 DISTNAME=	${PORTNAME:C/-.*//}-${PORTVERSION}
 
 MAINTAINER=	lichray@gmail.com

@@ -6,7 +6,7 @@ PORTNAME=	scim-skk
 PORTVERSION=	0.5.2
 PORTREVISION=	12
 CATEGORIES=	japanese
-MASTER_SITES=	OSDN/scim-imengine/18121
+MASTER_SITES=	OSDN/scim-imengine
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SCIM IMEngine module like SKK

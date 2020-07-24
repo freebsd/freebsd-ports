@@ -5,7 +5,7 @@ PORTNAME=	chasen
 PORTVERSION=	2.4.5
 PORTREVISION=	2
 CATEGORIES=	japanese textproc
-MASTER_SITES=	OSDN/chasen-legacy/56305
+MASTER_SITES=	OSDN/chasen-legacy
 PKGNAMESUFFIX=	-base
 
 MAINTAINER=	ports@FreeBSD.org
