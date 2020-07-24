@@ -1,4 +1,4 @@
 ChefAPI is a tiny, dependency-minimal Ruby client for interacting with a
 Chef Server. It adopts many patterns and principles from Ruby On Rails.
 
-WWW: https://github.com/tas50/chef-api
+WWW: https://github.com/chef/chef-api

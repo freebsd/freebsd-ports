@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chef-api
-PORTVERSION=	0.9.0
+PORTVERSION=	0.10.7
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	RG
 
@@ -12,8 +12,8 @@ COMMENT=	Lightweight Chef API client
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-logify>=0.1:sysutils/rubygem-logify \
-		rubygem-mime-types>=0:misc/rubygem-mime-types
+RUN_DEPENDS=	rubygem-mime-types>=0:misc/rubygem-mime-types \
+		rubygem-mixlib-log>=1<4:devel/rubygem-mixlib-log
 
 USES=		gem
 USE_RUBY=	yes
