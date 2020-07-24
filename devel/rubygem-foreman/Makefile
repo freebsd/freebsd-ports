@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	foreman
-PORTVERSION=	0.85.0
+PORTVERSION=	0.87.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,11 +10,10 @@ COMMENT=	Process manager for applications with multiple components
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-thor>=0.19.1:devel/rubygem-thor
+USES=		gem shebangfix
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-USE_RUBY=	yes
-USES=		gem shebangfix
 
 PLIST_FILES=	bin/foreman
 
