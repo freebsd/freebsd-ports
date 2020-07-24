@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	reflex
-PORTVERSION=	20191123
+PORTVERSION=	20200715
 CATEGORIES=	textproc
 MASTER_SITES=	https://invisible-mirror.net/archives/reflex/ \
 		LOCAL/sunpoet
