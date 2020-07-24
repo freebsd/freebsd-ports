@@ -1,0 +1,4 @@
+%%SITE_PERL%%/SQL/Abstract/Classic.pm
+%%SITE_PERL%%/SQL/Abstract/Util.pm
+%%PERL5_MAN3%%/SQL::Abstract::Classic.3.gz
+%%PERL5_MAN3%%/SQL::Abstract::Util.3.gz

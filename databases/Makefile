@@ -472,6 +472,7 @@
     SUBDIR += p5-Rose-DBx-Object-MoreHelpers
     SUBDIR += p5-Rose-DBx-Object-Renderer
     SUBDIR += p5-SQL-Abstract
+    SUBDIR += p5-SQL-Abstract-Classic
     SUBDIR += p5-SQL-Abstract-Limit
     SUBDIR += p5-SQL-Abstract-More
     SUBDIR += p5-SQL-Abstract-Plugin-InsertMulti
