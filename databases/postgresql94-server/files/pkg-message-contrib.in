@@ -1,9 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-The PostgreSQL contrib utilities have been installed. Please see
-%%PREFIX%%/share/doc/postgresql/contrib/README
-for more information.
-EOM
-}
-]

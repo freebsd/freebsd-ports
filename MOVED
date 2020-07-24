@@ -15158,3 +15158,11 @@ www/py-django-openid-auth|www/py-django-allauth|2020-07-18|Has expired: No longe
 www/py-django-overextends||2020-07-18|Has expired: No longer maintained, not compatible with Django 2.0+
 net/kdav|net/kf5-kdav|2020-07-21|Has become a proper KDE framework
 devel/py-trio|net/py-trio|2020-07-21|Remove duplicate port
+databases/postgresql94-client|databases/postgresql95-client|2020-07-24|Has expired: PostgreSQL-9.4 has reached end-of-life
+databases/postgresql94-contrib|databases/postgresql95-contrib|2020-07-24|Has expired: PostgreSQL-9.4 has reached end-of-life
+databases/postgresql94-docs|databases/postgresql95-docs|2020-07-24|Has expired: PostgreSQL-9.4 has reached end-of-life
+databases/postgresql94-pgtcl|databases/postgresql95-pgtcl|2020-07-24|Has expired: PostgreSQL-9.4 has reached end-of-life
+databases/postgresql94-plpython|databases/postgresql95-plpython|2020-07-24|Has expired: PostgreSQL-9.4 has reached end-of-life
+databases/postgresql94-server|databases/postgresql95-server|2020-07-24|Has expired: PostgreSQL-9.4 has reached end-of-life
+databases/postgresql94-pltcl|databases/postgresql95-pltcl|2020-07-24|Has expired: PostgreSQL-9.4 has reached end-of-life
+databases/postgresql94-plperl|databases/postgresql95-plperl|2020-07-24|Has expired: PostgreSQL-9.4 has reached end-of-life
