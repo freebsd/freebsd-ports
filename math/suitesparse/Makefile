@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	suitesparse
-PORTVERSION=	5.8.0
-PORTREVISION=	1
+PORTVERSION=	5.8.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	math
 
@@ -13,7 +12,9 @@ COMMENT=	Set of packages for sparse matrix calculation
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libmetis.so:math/metis
+LIB_DEPENDS=	libgmp.so:math/gmp	\
+		libmpfr.so:math/mpfr	\
+		libmetis.so:math/metis
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	DrTimothyAldenDavis
