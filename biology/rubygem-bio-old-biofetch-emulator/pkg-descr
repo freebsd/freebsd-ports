@@ -1,0 +1,7 @@
+bio-old-biofetch-emulator emulates Bio::Fetch object in BioRuby as if
+discontinued BioRuby BioFetch server were still alive. It overrides methods and
+objects in Bio::Fetch, and if the old BioRuby BioFetch server's URL is given, it
+intercepts all requests and converts them into existing web services such as
+TogoWS, KEGG REST API, NCBI E-Utilities, and GenomeNet(genome.jp).
+
+WWW: https://github.com/ngoto/bioruby-old-biofetch-emulator
