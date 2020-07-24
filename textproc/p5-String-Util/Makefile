@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	String-Util
-PORTVERSION=	1.26
+PORTVERSION=	1.30
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,12 +11,10 @@ COMMENT=	Perl extension for string processing utilities
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
-
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Number-Misc>=1.2:math/p5-Number-Misc
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		perl5
-USE_PERL5=	configure
+USE_PERL5=	modbuildtiny
 
 NO_ARCH=	yes
 
