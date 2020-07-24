@@ -12,6 +12,7 @@ COMMENT=	Perl5 module to get random data from online sources
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/ARTISTIC.txt
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-JSON>=0:converters/p5-JSON \
@@ -19,9 +20,9 @@ RUN_DEPENDS=	p5-JSON>=0:converters/p5-JSON \
 		p5-libwww>=0:www/p5-libwww
 TEST_DEPENDS=	p5-Test-MockObject>=0:devel/p5-Test-MockObject
 
-PORTSCOUT=	skipv:2.21,2.22
-
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
