@@ -3,6 +3,7 @@
 
 PORTNAME=	Apache-DB
 PORTVERSION=	0.18
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,5 +18,8 @@ RUN_DEPENDS=	${APACHE_PKGNAMEPREFIX}mod_perl2>=0:www/mod_perl2
 
 USES=		apache:run,2.2+ perl5
 USE_PERL5=	configure
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Apache/DB/DB.so
 
 .include <bsd.port.mk>
