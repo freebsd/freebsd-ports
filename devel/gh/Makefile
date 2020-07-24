@@ -2,7 +2,7 @@
 
 PORTNAME=	gh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.1
+DISTVERSION=	0.11.0
 CATEGORIES=	devel
 
 MAINTAINER=	vulcan@wired.sh
@@ -17,20 +17,21 @@ USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	cli
 GH_PROJECT=	${GH_ACCOUNT}
-GH_TUPLE=	AlecAivazis:survey:v2.0.7:alecaivazis_survey/vendor/github.com/AlecAivazis/survey/v2 \
+GH_TUPLE=	AlecAivazis:survey:v2.0.7:alecaivazis_survey_v2/vendor/github.com/AlecAivazis/survey/v2 \
 		MakeNowJust:heredoc:v1.0.0:makenowjust_heredoc/vendor/github.com/MakeNowJust/heredoc \
 		alecthomas:chroma:34d9c7143bf5:alecthomas_chroma/vendor/github.com/alecthomas/chroma \
 		briandowns:spinner:v1.11.1:briandowns_spinner/vendor/github.com/briandowns/spinner \
 		charmbracelet:glamour:301d3bcf3058:charmbracelet_glamour/vendor/github.com/charmbracelet/glamour \
-		cpuguy83:go-md2man:v2.0.0:cpuguy83_go_md2man/vendor/github.com/cpuguy83/go-md2man/v2 \
+		cli:shurcooL-graphql:0f7232a2bf7e:cli_shurcool_graphql/vendor/github.com/shurcooL/graphql \
+		cpuguy83:go-md2man:v2.0.0:cpuguy83_go_md2man_v2/vendor/github.com/cpuguy83/go-md2man/v2 \
 		danwakefield:fnmatch:cbb64ac3d964:danwakefield_fnmatch/vendor/github.com/danwakefield/fnmatch \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		dlclark:regexp2:v1.2.0:dlclark_regexp2/vendor/github.com/dlclark/regexp2 \
 		fatih:color:v1.7.0:fatih_color/vendor/github.com/fatih/color \
-		go-yaml:yaml:2ff61e1afc86:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
-		go-yaml:yaml:v2.2.8:go_yaml_yaml_1/vendor/gopkg.in/yaml.v2 \
-		golang:crypto:06a226fb4e37:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:0ba52f642ac2:golang_net/vendor/golang.org/x/net \
+		go-yaml:yaml:2ff61e1afc86:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
+		go-yaml:yaml:v2.2.8:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
+		golang:crypto:75b288015ac9:golang_crypto/vendor/golang.org/x/crypto \
+		golang:net:ab3426394381:golang_net/vendor/golang.org/x/net \
 		golang:sys:85ca7c5b95cd:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
 		google:go-cmp:v0.4.1:google_go_cmp/vendor/github.com/google/go-cmp \
@@ -51,9 +52,8 @@ GH_TUPLE=	AlecAivazis:survey:v2.0.7:alecaivazis_survey/vendor/github.com/AlecAiv
 		muesli:termenv:v0.4.0:muesli_termenv/vendor/github.com/muesli/termenv \
 		olekukonko:tablewriter:v0.0.4:olekukonko_tablewriter/vendor/github.com/olekukonko/tablewriter \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
-		russross:blackfriday:v2.0.1:russross_blackfriday/vendor/github.com/russross/blackfriday/v2 \
-		shurcooL:githubv4:bbc966b061dd:shurcool_githubv4/vendor/github.com/shurcooL/githubv4 \
-		shurcooL:graphql:d48a9a75455f:shurcool_graphql/vendor/github.com/shurcooL/graphql \
+		russross:blackfriday:v2.0.1:russross_blackfriday_v2/vendor/github.com/russross/blackfriday/v2 \
+		shurcooL:githubv4:e003124d66e4:shurcool_githubv4/vendor/github.com/shurcooL/githubv4 \
 		shurcooL:sanitized_anchor_name:v1.0.0:shurcool_sanitized_anchor_name/vendor/github.com/shurcooL/sanitized_anchor_name \
 		spf13:cobra:v1.0.0:spf13_cobra/vendor/github.com/spf13/cobra \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
