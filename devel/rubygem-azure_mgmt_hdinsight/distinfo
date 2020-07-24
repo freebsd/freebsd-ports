@@ -1,3 +1,3 @@
-TIMESTAMP = 1592419307
-SHA256 (rubygem/azure_mgmt_hdinsight-0.18.0.gem) = 2d4e8991e98f57741e3c11c016de1900b3b1c41b738145482bb5cf60393d2ae6
-SIZE (rubygem/azure_mgmt_hdinsight-0.18.0.gem) = 69120
+TIMESTAMP = 1595578562
+SHA256 (rubygem/azure_mgmt_hdinsight-0.18.1.gem) = 7ae44d95b82c9603374d0d204c0981211de8042567b5d86dff5fc039b8c8382b
+SIZE (rubygem/azure_mgmt_hdinsight-0.18.1.gem) = 71168
