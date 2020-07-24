@@ -1,0 +1,9 @@
+bio-executables is a collection of miscellaneous utilities for bioinformatics
+that were formerly part of the BioRuby core ("bio" gem). Because of reducing
+complexity, they were moved to this gem.
+
+This code has historically been part of the BioRuby gem, but has been split into
+its own gem as part of an effort to modularize BioRuby. bio-executables and many
+more plugins are available at biogems.info.
+
+WWW: https://github.com/bioruby/bioruby-executables

@@ -148,6 +148,7 @@
     SUBDIR += recombine
     SUBDIR += ruby-bio
     SUBDIR += rubygem-bio
+    SUBDIR += rubygem-bio-executables
     SUBDIR += samtools
     SUBDIR += scrm
     SUBDIR += seaview
