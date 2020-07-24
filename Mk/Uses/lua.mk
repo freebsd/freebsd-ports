@@ -29,10 +29,14 @@
 #
 #   core	for building Lua itself
 #
-# If more than one version is allowed, then the LUA_DEFAULT version
-# (as set in DEFAULT_VERSIONS) is chosen if it is allowed, otherwise
-# the highest allowed version is chosen. But if "flavors" was requested,
-# and FLAVOR is set, we use that version.
+# If more than one version is allowed, then the LUA_DEFAULT version (as set
+# in DEFAULT_VERSIONS) is chosen if it is in the allowed range, otherwise
+# the closest allowed version to the default is chosen, preferring the
+# larger version in case of a tie.
+#
+# But if "flavors" was requested, and FLAVOR is set, we use that version
+# exactly. (It is an error to specify a flavor that isn't supported, but
+# that is checked in bsd.port.mk, not here.)
 #
 # LUA_FLAVOR is defined to the desired flavor whether or not "flavors" was
 # selected; ports should use this to specify the flavor of dependencies
@@ -45,6 +49,8 @@
 # versions that they support, and let the default one or the latest one be
 # used. However, they should still use LUA_FLAVOR as needed when specifying
 # dependencies.
+#
+# We assume Lua versions can be represented as 2 digits.
 #
 .if !defined(_INCLUDE_USES_LUA_MK)
 _INCLUDE_USES_LUA_MK=	yes
@@ -165,15 +171,22 @@ IGNORE= USES=lua:xx-yy did not find any valid version
 _LUA_WANTED_VERSIONS:=	${_LUA_VALID_VERSIONS}
 .endif
 
-#
-# By now, _LUA_WANTED_VERSIONS is the list of valid version numbers that the
-# caller has allowed through. We want to put the default version, if it's in
-# the list, first, followed by all other versions in desc order; then the
-# first element is the one we want (or the default flavor in the flavor case)
-#
+# The "preferred" version, which must always exist, is defined as the
+# closest value to the default version, preferring higher versions in
+# case of ties. We find this by constructing values in sequence:
+#  VV VV+1 VV-1 VV+2 VV-2 ...
+# and then filtering against the allowed versions. The result is the
+# final list of "wanted" versions, with the preferred version first.
+
+_LUA_NUM_ASC:=	\
+	${:U:range=99:@_v@${${_v} > ${_LUA_DEFAULT_VERSION}:?${_v}:}@}
+_LUA_NUM_DESC:=	\
+	${:U:range=99:[-1..1]:@_v@${${_v} <= ${_LUA_DEFAULT_VERSION}:?${_v}:}@}
+_LUA_NUM_ALL:=	\
+	${:U:range=99:@_v@${_LUA_NUM_DESC:[${_v}]} ${_LUA_NUM_ASC:[${_v}]}@}
+
 _LUA_WANTED_VERSIONS:= \
-	${_LUA_WANTED_VERSIONS:M${_LUA_DEFAULT_VERSION}} \
-	${_LUA_WANTED_VERSIONS:N${_LUA_DEFAULT_VERSION}:O:u:[-1..1]}
+	${_LUA_NUM_ALL:@_v@${_LUA_WANTED_VERSIONS:M${_v}}@}
 
 .if ${_LUA_ARG_FLAVORS}
 .  if empty(FLAVORS)
