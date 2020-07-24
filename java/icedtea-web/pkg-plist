@@ -1,5 +1,9 @@
+bin/itw-modularjdk.args
+bin/itweb-javaws
 bin/itweb-javaws.sh
+bin/itweb-policyeditor
 bin/itweb-policyeditor.sh
+bin/itweb-settings
 bin/itweb-settings.sh
 %%PLUGIN%%%%WEBPLUGIN_DIR%%/IcedTeaPlugin.so
 man/cs/man1/icedtea-web-plugin.1.gz
@@ -25,7 +29,11 @@ man/pl/man1/itweb-settings.1.gz
 share/applications/itweb-javaws.desktop
 share/applications/itweb-policyeditor.desktop
 share/applications/itweb-settings.desktop
-%%DATADIR%%/javaws_splash.png
+share/bash-completion/completions/itweb-settings.bash
+share/bash-completion/completions/javaws.bash
+share/bash-completion/completions/policyeditor.bash
 %%DATADIR%%/javaws.jar
+%%DATADIR%%/javaws_splash.png
+%%PLUGIN%%%%DATADIR%%/jsobject.jar
 %%PLUGIN%%%%DATADIR%%/plugin.jar
 share/pixmaps/itweb-javaws.png
