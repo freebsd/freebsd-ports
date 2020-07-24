@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	aws-sdk-resources
-PORTVERSION=	3.75.0
+PORTVERSION=	3.76.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -125,6 +125,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-iotsecuretunneling>=1<2:devel/rubygem-aws-sdk-iotsecuretunneling \
 		rubygem-aws-sdk-iotsitewise>=1<2:devel/rubygem-aws-sdk-iotsitewise \
 		rubygem-aws-sdk-iotthingsgraph>=1<2:devel/rubygem-aws-sdk-iotthingsgraph \
+		rubygem-aws-sdk-ivs>=1<2:devel/rubygem-aws-sdk-ivs \
 		rubygem-aws-sdk-kafka>=1<2:devel/rubygem-aws-sdk-kafka \
 		rubygem-aws-sdk-kendra>=1<2:devel/rubygem-aws-sdk-kendra \
 		rubygem-aws-sdk-kinesis>=1<2:devel/rubygem-aws-sdk-kinesis \
