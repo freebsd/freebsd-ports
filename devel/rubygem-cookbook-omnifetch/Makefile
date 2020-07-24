@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cookbook-omnifetch
-PORTVERSION=	0.9.0
+PORTVERSION=	0.10.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ COMMENT=	Library to fetch Chef cookbooks from a variety of sources
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	rubygem-mixlib-archive>=0.4:devel/rubygem-mixlib-archive
+RUN_DEPENDS=	rubygem-mixlib-archive>=0.4<2.0:devel/rubygem-mixlib-archive
 
 USES=		gem
 USE_RUBY=	yes
