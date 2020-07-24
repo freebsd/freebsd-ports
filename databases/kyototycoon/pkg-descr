@@ -18,4 +18,4 @@ server supports high availability mechanisms, which are hot backup, update
 logging, and asynchronous replication. The server can embed Lua, a lightweight
 script language so that you can define arbitrary operations of the database.
 
-WWW: https://fallabs.com/kyototycoon/
+WWW: https://dbmx.net/kyototycoon/

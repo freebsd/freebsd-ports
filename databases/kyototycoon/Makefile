@@ -5,7 +5,7 @@ PORTNAME=	kyototycoon
 PORTVERSION=	0.9.56
 PORTREVISION=	6
 CATEGORIES=	databases
-MASTER_SITES=	https://fallabs.com/${PORTNAME}/pkg/ \
+MASTER_SITES=	https://dbmx.net/kyototycoon/pkg/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
