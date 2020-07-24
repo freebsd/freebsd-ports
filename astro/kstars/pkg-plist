@@ -6,10 +6,8 @@ share/doc/HTML/ca/kstars/Another_way4.png
 share/doc/HTML/ca/kstars/Another_way5.png
 share/doc/HTML/ca/kstars/Another_way6.png
 share/doc/HTML/ca/kstars/Another_way_to_add_part3.png
-share/doc/HTML/ca/kstars/add-circle.png
 share/doc/HTML/ca/kstars/advanced_tab.png
 share/doc/HTML/ca/kstars/ai-contents.docbook
-share/doc/HTML/ca/kstars/alpha.png
 share/doc/HTML/ca/kstars/altvstime.docbook
 share/doc/HTML/ca/kstars/altvstime.png
 share/doc/HTML/ca/kstars/astroinfo.docbook
@@ -51,9 +49,6 @@ share/doc/HTML/ca/kstars/csphere.docbook
 share/doc/HTML/ca/kstars/darkmatter.docbook
 share/doc/HTML/ca/kstars/detaildialog.png
 share/doc/HTML/ca/kstars/details.docbook
-share/doc/HTML/ca/kstars/dialog-ok-apply.png
-share/doc/HTML/ca/kstars/document-edit.png
-share/doc/HTML/ca/kstars/document-open.png
 share/doc/HTML/ca/kstars/dumpmode.docbook
 share/doc/HTML/ca/kstars/ecliptic.docbook
 share/doc/HTML/ca/kstars/ekos-align.docbook
@@ -77,8 +72,6 @@ share/doc/HTML/ca/kstars/faq.docbook
 share/doc/HTML/ca/kstars/fitsviewer.docbook
 share/doc/HTML/ca/kstars/flux.docbook
 share/doc/HTML/ca/kstars/flux.png
-share/doc/HTML/ca/kstars/flux1.png
-share/doc/HTML/ca/kstars/flux2.png
 share/doc/HTML/ca/kstars/geocoords.docbook
 share/doc/HTML/ca/kstars/greatcircle.docbook
 share/doc/HTML/ca/kstars/guides_tab.png
@@ -90,23 +83,14 @@ share/doc/HTML/ca/kstars/index.docbook
 share/doc/HTML/ca/kstars/indi.docbook
 share/doc/HTML/ca/kstars/indi_tab.png
 share/doc/HTML/ca/kstars/indicapture.png
-share/doc/HTML/ca/kstars/install.docbook
 share/doc/HTML/ca/kstars/jmoons.docbook
 share/doc/HTML/ca/kstars/julianday.docbook
 share/doc/HTML/ca/kstars/kepler2nd.png
-share/doc/HTML/ca/kstars/kepler3d.png
-share/doc/HTML/ca/kstars/lambda_ex.png
-share/doc/HTML/ca/kstars/lambda_max.png
 share/doc/HTML/ca/kstars/leapyear.docbook
 share/doc/HTML/ca/kstars/lightcurve.png
 share/doc/HTML/ca/kstars/lightcurves.docbook
-share/doc/HTML/ca/kstars/list-add.png
 share/doc/HTML/ca/kstars/luminosity.docbook
-share/doc/HTML/ca/kstars/luminosity.png
-share/doc/HTML/ca/kstars/luminosity_ex.png
 share/doc/HTML/ca/kstars/magnitude.docbook
-share/doc/HTML/ca/kstars/media-playback-pause.png
-share/doc/HTML/ca/kstars/media-playback-start.png
 share/doc/HTML/ca/kstars/meridian.docbook
 share/doc/HTML/ca/kstars/obsplanner.docbook
 share/doc/HTML/ca/kstars/open_dialog_ldn.png
@@ -121,9 +105,6 @@ share/doc/HTML/ca/kstars/retrograde.docbook
 share/doc/HTML/ca/kstars/satellites_tab.png
 share/doc/HTML/ca/kstars/screen1.png
 share/doc/HTML/ca/kstars/scriptbuilder.docbook
-share/doc/HTML/ca/kstars/security-high.png
-share/doc/HTML/ca/kstars/security-low.png
-share/doc/HTML/ca/kstars/security-medium.png
 share/doc/HTML/ca/kstars/sidereal.docbook
 share/doc/HTML/ca/kstars/skycoords.docbook
 share/doc/HTML/ca/kstars/solarsys.docbook
@@ -136,9 +117,6 @@ share/doc/HTML/ca/kstars/telescopes.docbook
 share/doc/HTML/ca/kstars/timezones.docbook
 share/doc/HTML/ca/kstars/tools.docbook
 share/doc/HTML/ca/kstars/utime.docbook
-share/doc/HTML/ca/kstars/view-filter.png
-share/doc/HTML/ca/kstars/view-fullscreen.png
-share/doc/HTML/ca/kstars/view-refresh.png
 share/doc/HTML/ca/kstars/viewops.png
 share/doc/HTML/ca/kstars/wut.docbook
 share/doc/HTML/ca/kstars/wut.png
@@ -889,7 +867,6 @@ share/doc/HTML/uk/kstars/Another_way_to_add_part3.png
 share/doc/HTML/uk/kstars/Delete_all_images.png
 share/doc/HTML/uk/kstars/KStars_Neptune.png
 share/doc/HTML/uk/kstars/Savin_session.png
-share/doc/HTML/uk/kstars/aavso.png
 share/doc/HTML/uk/kstars/ai-contents.docbook
 share/doc/HTML/uk/kstars/alpha.png
 share/doc/HTML/uk/kstars/altvstime.docbook
@@ -901,7 +878,6 @@ share/doc/HTML/uk/kstars/calc-angdist.docbook
 share/doc/HTML/uk/kstars/calc-angdist.png
 share/doc/HTML/uk/kstars/calc-apcoords.docbook
 share/doc/HTML/uk/kstars/calc-apcoords.png
-share/doc/HTML/uk/kstars/calc-appcoords.png
 share/doc/HTML/uk/kstars/calc-dayduration.docbook
 share/doc/HTML/uk/kstars/calc-daylength.png
 share/doc/HTML/uk/kstars/calc-ecliptic.docbook
@@ -1048,6 +1024,7 @@ share/knotifications5/kstars.notifyrc
 %%DATADIR%%/earth.R5.vsop
 %%DATADIR%%/earth.orbit
 %%DATADIR%%/ekoslive.png
+%%DATADIR%%/fr/info_url.dat
 %%DATADIR%%/geomap.png
 %%DATADIR%%/glossary.xml
 %%DATADIR%%/image_url.dat
@@ -1364,6 +1341,7 @@ share/knotifications5/kstars.notifyrc
 %%DATADIR%%/moonLR.dat
 %%DATADIR%%/moonless-night.colors
 %%DATADIR%%/namedstars.dat
+%%DATADIR%%/nds/info_url.dat
 %%DATADIR%%/neptune.B0.vsop
 %%DATADIR%%/neptune.B1.vsop
 %%DATADIR%%/neptune.B2.vsop
