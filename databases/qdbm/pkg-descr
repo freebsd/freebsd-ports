@@ -5,4 +5,4 @@ Both binary data and character string can be used as a key and a
 value.  There is neither concept of data tables nor data types.
 Records are organized in hash table or B+ tree.
 
-WWW: https://fallabs.com/qdbm/
+WWW: https://dbmx.net/qdbm/

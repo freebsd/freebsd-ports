@@ -5,7 +5,7 @@ PORTNAME=	qdbm
 PORTVERSION=	1.8.78
 PORTREVISION=	4
 CATEGORIES=	databases
-MASTER_SITES=	https://fallabs.com/qdbm/
+MASTER_SITES=	https://dbmx.net/qdbm/
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Quick Database Manager
