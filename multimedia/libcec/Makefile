@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libcec
-PORTVERSION=	6.0.0
+PORTVERSION=	6.0.2
 DISTVERSIONPREFIX=	libcec-
 CATEGORIES=	multimedia
 
