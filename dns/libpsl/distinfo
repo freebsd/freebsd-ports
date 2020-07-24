@@ -1,3 +1,3 @@
-TIMESTAMP = 1555504005
-SHA256 (rockdaboot-libpsl-libpsl-0.21.0_GH0.tar.gz) = 055aa87ec166c7afb985d0816c07ff440e1eb899881a318c51c69a0aeea8e279
-SIZE (rockdaboot-libpsl-libpsl-0.21.0_GH0.tar.gz) = 8598583
+TIMESTAMP = 1595416523
+SHA256 (rockdaboot-libpsl-0.21.1_GH0.tar.gz) = fa4339f0c832041443b1795b7ffbaf3f9b61d082ead928c514945b125fbab08d
+SIZE (rockdaboot-libpsl-0.21.1_GH0.tar.gz) = 8602264

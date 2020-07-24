@@ -1,6 +1,6 @@
---- configure.ac.orig	2018-04-26 18:18:39 UTC
+--- configure.ac.orig	2020-07-18 11:15:00 UTC
 +++ configure.ac
-@@ -37,23 +37,6 @@ AM_GNU_GETTEXT([external],[need-ngettext
+@@ -37,23 +37,6 @@ AM_GNU_GETTEXT([external],[need-ngettext])
  AM_GNU_GETTEXT_VERSION([0.18.1])
  
  #
@@ -24,11 +24,11 @@
  # enable creation of man pages
  #
  AC_ARG_ENABLE([man],
-@@ -372,7 +355,6 @@ AC_CONFIG_FILES([Makefile
+@@ -385,7 +368,6 @@ AC_CONFIG_FILES([Makefile
                   po/Makefile.in
                   fuzz/Makefile
                   tests/Makefile
 -                 docs/libpsl/Makefile docs/libpsl/version.xml
                   libpsl.pc:libpsl.pc.in
+                  meson.build
                   msvc/Makefile
-                  msvc/config.h.win32
