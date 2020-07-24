@@ -1797,6 +1797,7 @@
     SUBDIR += rsstool
     SUBDIR += rt42
     SUBDIR += rt44
+    SUBDIR += rt50
     SUBDIR += rtv
     SUBDIR += rubygem-ace-rails-ap
     SUBDIR += rubygem-actioncable5
