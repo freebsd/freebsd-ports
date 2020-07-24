@@ -229,7 +229,7 @@ NAXSI_NGINX_VER=	0.56
 NAXSI_GH_TUPLE=		nbs-system:naxsi:${NAXSI_NGINX_VER}:naxsi
 NAXSI_VARS=		DSO_EXTMODS+=naxsi NAXSI_SUBDIR=/naxsi_src
 
-NJS_GH_TUPLE=		nginx:njs:629027e:njs
+NJS_GH_TUPLE=		nginx:njs:b12fc23:njs
 NJS_VARS=		DSO_EXTMODS+=njs NJS_SUBDIR=/nginx
 
 OPENTRACING_GH_TUPLE=	opentracing-contrib:nginx-opentracing:2d81c29:opentracing
