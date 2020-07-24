@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Devel-ebug
-PORTVERSION=	0.59
+PORTVERSION=	0.60
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,6 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Class-Accessor-Chained>=0:devel/p5-Class-Accessor-Chained \
 		p5-Devel-StackTrace>=0:devel/p5-Devel-StackTrace \
+		p5-File-Which>=0:sysutils/p5-File-Which \
 		p5-Module-Pluggable>=0:devel/p5-Module-Pluggable \
 		p5-PadWalker>=0:devel/p5-PadWalker \
 		p5-Proc-Background>=0:devel/p5-Proc-Background \
@@ -24,8 +25,9 @@ RUN_DEPENDS=	p5-Class-Accessor-Chained>=0:devel/p5-Class-Accessor-Chained \
 		p5-YAML>=0:textproc/p5-YAML
 TEST_DEPENDS=	p5-Test-Expect>=0:devel/p5-Test-Expect
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
