@@ -1,6 +1,6 @@
-TIMESTAMP = 1593624722
-SHA256 (RasmusLindroth-tut-0.0.10_GH0.tar.gz) = c785451e90c9f31baa1b570b97fc53175b1c8334634b69fe1422692305f91165
-SIZE (RasmusLindroth-tut-0.0.10_GH0.tar.gz) = 124169
+TIMESTAMP = 1595527616
+SHA256 (RasmusLindroth-tut-0.0.14_GH0.tar.gz) = 6dc214018404f3ba9c28ed1e4fdf8d3aea9ee4f52dd8dec04b38a95fdd00443a
+SIZE (RasmusLindroth-tut-0.0.14_GH0.tar.gz) = 125584
 SHA256 (gdamore-encoding-v1.0.0_GH0.tar.gz) = 8fb8593a69cd86f16233d63dd6d74181136ec8f22900c509e961a25eb4b2e013
 SIZE (gdamore-encoding-v1.0.0_GH0.tar.gz) = 10886
 SHA256 (gdamore-tcell-v1.3.0_GH0.tar.gz) = 5e4d2206a459109fdd98fb1d29f2da2340b69a021b115db9049917444a0c1097
