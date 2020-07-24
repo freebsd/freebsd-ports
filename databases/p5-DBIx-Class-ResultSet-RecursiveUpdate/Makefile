@@ -12,6 +12,7 @@ COMMENT=	Like update_or_create - but recursive
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Carp-Clan>=6.04:devel/p5-Carp-Clan \
