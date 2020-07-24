@@ -1,11 +1,11 @@
---- configure.orig	2019-08-08 16:26:40 UTC
+--- configure.orig	2020-06-09 04:06:02 UTC
 +++ configure
 @@ -3507,7 +3507,7 @@ fi
  $as_echo_n "checking for python build information... " >&6; }
  { $as_echo "$as_me:${as_lineno-$LINENO}: result: " >&5
  $as_echo "" >&6; }
--for python in python3 python3.4 python3.3 python3.2 python3.1 python3.0 python python2.7; do
-+for python in python3 python3.6 python3.5 python3.4 python3.3 python3.2 python3.1 python3.0 python python2.7; do
+-for python in python3 python3.8 python3.7 python3.6 python3.5 python3.4 python3.3 python3.2 python3.1 python3.0 python python2 python2.7; do
++for python in python3 python3.8 python3.7 python3.6 python3.5 python3.0 python python2 python2.7; do
  for ac_prog in $python
  do
    # Extract the first word of "$ac_prog", so it can be a program name with args.
