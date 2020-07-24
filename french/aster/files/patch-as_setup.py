@@ -17,7 +17,7 @@
        self._print(self._fmt_title % _('Extraction'))
        if kargs.get('external')!=None:
           self._call_external(**kargs)
-@@ -518,6 +521,81 @@ class SETUP:
+@@ -518,6 +521,88 @@ class SETUP:
        if iextr_as:
           self.Clean(to_delete=path)
  
@@ -65,6 +65,13 @@
 +         sys.stdout.write(ligne)
 +      system=SYSTEM({ 'verbose' : True, 'debug' : False },
 +         **{'maxcmdlen' : 2**31, 'log' : self})
++      file2patch = os.path.join(self.workdir, self.content, 'waf.main')
++      self._print('FreeBSD patch: remove extraneous escape => modify waf.main')
++      for ligne in fileinput.input(file2patch, inplace=1):
++         nl = ligne.find("\main$")
++         if nl > 0:
++            ligne =ligne.replace("\main$", "main$")
++         sys.stdout.write(ligne)
 +      for f2p in ('waf', 'waf.main', 'waf_variant', 'waf_std', 'waf_mpi', 'bibpyt/Macro/macr_ecre_calc_ops.py'):
 +         file2patch = os.path.join(self.workdir, self.content, f2p)
 +         self._print('FreeBSD patch: /bin/bash => modify ' + file2patch)

@@ -16,7 +16,8 @@ ONLY_FOR_ARCHS=	amd64 i386 powerpc64
 BUILD_DEPENDS=	zip:archivers/zip \
 		autoconf>0:devel/autoconf \
 		${LOCALBASE}/include/cups/cups.h:print/cups \
-		bash:shells/bash
+		bash:shells/bash \
+		gsed:textproc/gsed
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
@@ -64,7 +65,8 @@ JDK_BUG_URL=	https://bugs.freebsd.org/bugzilla/enter_bug.cgi?product=Ports%20%26
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CC=${CC} \
 		CXX=${CXX} \
-		CPP=${CPP}
+		CPP=${CPP} \
+		ac_cv_path_SED=${LOCALBASE}/bin/gsed
 CONFIGURE_ARGS=	--with-boot-jdk=${BOOTSTRAPJDKDIR} \
 		--disable-ccache \
 		--disable-javac-server \

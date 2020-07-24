@@ -12,6 +12,7 @@ COMMENT=	Graphical certification authority
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
+BUILD_DEPENDS=	gsed:textproc/gsed
 LIB_DEPENDS=	libltdl.so:devel/libltdl
 
 USES=		compiler:c++11-lang desktop-file-utils gmake localbase \
@@ -20,6 +21,7 @@ USE_QT=		buildtools_build core gui linguist_build sql widgets
 USE_CXXSTD=	c++11
 
 GNU_CONFIGURE=	yes
+BINARY_ALIAS=	sed=${LOCALBASE}/bin/gsed
 CONFIGURE_ARGS=	--with-openssl=${OPENSSLDIR} \
 		--with-qt=${PREFIX} \
 		--with-qt-version=5
