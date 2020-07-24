@@ -4617,8 +4617,8 @@
     SUBDIR += py-louie
     SUBDIR += py-lunardate
     SUBDIR += py-lxml
-    SUBDIR += py-macholib
     SUBDIR += py-mac-vendor-lookup
+    SUBDIR += py-macholib
     SUBDIR += py-magic
     SUBDIR += py-mailcap-fix
     SUBDIR += py-manuel
