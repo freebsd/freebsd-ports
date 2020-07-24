@@ -1,0 +1,8 @@
+bio-shell, providing BioRuby Shell, is a command-line interface for BioRuby, an
+open source bioinformatics library for Ruby.
+
+This code has historically been part of the BioRuby gem, but has been split into
+its own gem as part of an effort to modularize BioRuby. bio-shell and many more
+plugins are available at biogems.info.
+
+WWW: https://github.com/bioruby/bioruby-shell
