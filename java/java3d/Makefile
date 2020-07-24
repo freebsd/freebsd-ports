@@ -18,7 +18,7 @@ BROKEN_armv6=		fails to compile: build.xml: Compile failed; see the compiler err
 BROKEN_armv7=		fails to compile: build.xml: Compile failed; see the compiler error output for details
 
 USES=		gl tar:bzip2 xorg
-USE_JAVA=	yes
+USE_JAVA=	8
 USE_GL=		gl
 USE_XORG=	xt
 JAVA_VENDOR=	openjdk
