@@ -1,0 +1,8 @@
+This is a module to handle the inflation and deflation of complex HTTP header
+types. In many cases header values are simple strings, but in some cases
+they are complex values with a lot of information encoded in them. The goal
+of this module is to make the parsing and analysis of these headers as easy as
+calling inflate on a compatible object.
+
+WWW: https://metacpan.org/pod/HTTP::Headers::ActionPack
+WWW: https://github.com/sartak/http-headers-actionpack
