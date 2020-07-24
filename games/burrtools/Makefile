@@ -12,9 +12,6 @@ COMMENT=	Puzzle solver
 
 LICENSE=	GPLv2+ # COPYING is GPLv3
 
-BROKEN=		fails to build
-
-BUILD_DEPENDS=	netpbm>0:graphics/netpbm
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libpng.so:graphics/png \
 		libfltk.so:x11-toolkits/fltk
@@ -39,14 +36,13 @@ DESKTOP_ENTRIES="BurrGui" "" "burricons" "burrGui" "Game;LogicGame;" ""
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
-	@${REINPLACE_CMD} -e '/GL_X_LIBS/d' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e \
+	${REINPLACE_CMD} -e '/GL_X_LIBS/d' ${WRKSRC}/configure
+	${REINPLACE_CMD} -e \
 		's|g++ |$$(CXX) | ; \
 		 s|-O2 |$$(CXXFLAGS) $$(LDFLAGS) |' ${WRKSRC}/src/Makefile.in
 
 post-build:
-	(cd ${WRKSRC} && ${CAT} burricons.ico | winicontoppm -bestqual | \
-		pnmtopng -transparent=black > burricons.png)
+	(cd ${WRKSRC} && uudecode ${FILESDIR}/burricons.png.uu)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/burrTxt ${WRKSRC}/src/burrTxt2 \
