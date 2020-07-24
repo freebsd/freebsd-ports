@@ -4,7 +4,7 @@
 PORTNAME=	tokyodystopia
 PORTVERSION=	0.9.15
 CATEGORIES=	textproc
-MASTER_SITES=	https://fallabs.com/${PORTNAME}/
+MASTER_SITES=	https://dbmx.net/${PORTNAME}/
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Full-text search system based on Tokyo Cabinet
