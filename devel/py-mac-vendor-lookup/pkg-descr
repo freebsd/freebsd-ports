@@ -1,0 +1,6 @@
+This library provides an easy way to get vendor information from a MAC address.
+It contains a local copy of the IEEE's OUI prefix list. It has an asynchronous
+interface using Python 3's asyncio as well as a regular synchronous interface
+for old-school usage.
+
+WWW: https://github.com/bauerj/mac_vendor_lookup
