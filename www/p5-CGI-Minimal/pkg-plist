@@ -1,5 +1,5 @@
-%%PERL5_MAN3%%/CGI::Minimal.3.gz
 %%SITE_PERL%%/CGI/Minimal.pm
 %%SITE_PERL%%/CGI/Minimal.pod
 %%SITE_PERL%%/CGI/Minimal/Misc.pm
 %%SITE_PERL%%/CGI/Minimal/Multipart.pm
+%%PERL5_MAN3%%/CGI::Minimal.3.gz
