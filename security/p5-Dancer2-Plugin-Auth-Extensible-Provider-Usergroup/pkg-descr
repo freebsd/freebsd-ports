@@ -1,4 +1,4 @@
 Define that a user must be logged in and have the proper permissions to
 access a route
 
-WWW: https://metacpan.org/pod/Dancer2::Plugin::Auth::Extensible::Provider::Usergroup
+WWW: https://metacpan.org/release/Dancer2-Plugin-Auth-Extensible-Provider-Usergroup
