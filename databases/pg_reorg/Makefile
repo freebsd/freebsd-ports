@@ -3,7 +3,7 @@
 
 PORTNAME=	pg_reorg
 PORTVERSION=	1.1.11
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases
 MASTER_SITES=	http://pgfoundry.org/frs/download.php/3821/ \
 		https://BSDforge.com/projects/source/databases/pg_reorg/
@@ -15,7 +15,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 MAKE_ENV=	USE_PGXS=0
-USES=		gmake pgsql:9.1-9.5 uidfix
+USES=		gmake pgsql:9.5 uidfix
 LLD_UNSAFE=	yes
 WANT_PGSQL=	server
 INSTALL_TARGET=	install-strip
