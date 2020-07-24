@@ -1,0 +1,4 @@
+StringIO is the pseudo IO class from/to String. This library is based on
+MoonWolf version written in Ruby.
+
+WWW: https://github.com/ruby/stringio
