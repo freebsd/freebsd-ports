@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	netpbm
-DISTVERSION=	10.91.00
+DISTVERSION=	10.91.01
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/t6/netpbm/releases/download/v${DISTVERSION}/
 
@@ -26,8 +26,7 @@ USES=		ghostscript:test gmake perl5 shebangfix tar:xz
 USE_LDCONFIG=	yes
 USE_PERL5=	build test
 
-SHEBANG_FILES=	buildtools/makeman converter/pbm/pbmtox10bm \
-		converter/ppm/hpcdtoppm/pcdovtoppm editor/pnmflip \
+SHEBANG_FILES=	buildtools/makeman converter/pbm/pbmtox10bm editor/pnmflip \
 		editor/pnmquant editor/ppmfade editor/ppmquant editor/ppmshadow \
 		generator/ppmrainbow test/*.test test/Available-Testprog \
 		test/Execute-Tests
@@ -52,7 +51,7 @@ TEST_TARGET=	check
 # intermediary images look fine in spite of this.
 _DISABLE_TESTS=	all-in-place palm-roundtrip pamdice pamexec pamhue \
 		pammixmulti-identity pamtopdbimg pamvalidate pj-roundtrip \
-		pnmquant ps-alt-roundtrip tiff-flate-lzw-roundtrip
+		ps-alt-roundtrip tiff-flate-lzw-roundtrip
 
 OPTIONS_DEFINE=		MANPAGES PERL STATIC SVGTOPAM X11
 OPTIONS_DEFAULT=	MANPAGES PERL
