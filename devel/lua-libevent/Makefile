@@ -16,7 +16,7 @@ LICENSE=	MIT
 LIB_DEPENDS=	libevent.so:devel/libevent
 RUN_DEPENDS=	${LUA_REFMODLIBDIR}/socket/core.so:net/luasocket@${LUA_FLAVOR}
 
-USES=		gmake pkgconfig lua:51,module
+USES=		gmake pkgconfig lua:module
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	harningt
