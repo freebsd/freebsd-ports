@@ -808,6 +808,7 @@
     SUBDIR += p5-HTML-GenToc
     SUBDIR += p5-HTML-GenerateUtil
     SUBDIR += p5-HTML-GoogleMaps
+    SUBDIR += p5-HTML-Gumbo
     SUBDIR += p5-HTML-Highlight
     SUBDIR += p5-HTML-LinkExtractor
     SUBDIR += p5-HTML-LinkList
