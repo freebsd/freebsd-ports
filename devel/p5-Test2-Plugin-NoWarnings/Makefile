@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Test2-Plugin-NoWarnings
-PORTVERSION=	0.08
+PORTVERSION=	0.09
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DROLSKY
@@ -22,9 +22,9 @@ NO_ARCH=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 502800
-BUILD_DEPENDS+=	p5-Test-Simple>=1.302096:devel/p5-Test-Simple
-RUN_DEPENDS+=	p5-Test-Simple>=1.302096:devel/p5-Test-Simple
+.if ${PERL_LEVEL} < 503200
+BUILD_DEPENDS+=	p5-Test-Simple>=1.302167:devel/p5-Test-Simple
+RUN_DEPENDS+=	p5-Test-Simple>=1.302167:devel/p5-Test-Simple
 .endif
 
 .include <bsd.port.post.mk>
