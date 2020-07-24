@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-SSL-ExpireDate
-PORTVERSION=	1.20
+PORTVERSION=	1.21
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,8 +21,9 @@ RUN_DEPENDS=	p5-Class-Accessor>=0:devel/p5-Class-Accessor \
 		p5-TimeDate>=0:devel/p5-TimeDate \
 		p5-UNIVERSAL-require>=0:devel/p5-UNIVERSAL-require
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
