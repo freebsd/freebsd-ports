@@ -9,4 +9,4 @@ requests. It's sort of like a session within a session, but tied to a request
 rather than global to the browser. (It will even chain across multiple
 redirects.)
 
-WWW: https://metacpan.org/pod/Dancer2::Plugin::Deferred
+WWW: https://metacpan.org/release/Dancer2-Plugin-Deferred
