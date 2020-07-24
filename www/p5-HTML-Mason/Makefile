@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	HTML-Mason
-PORTVERSION=	1.58
+PORTVERSION=	1.59
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,6 +11,7 @@ COMMENT=	High-performance, dynamic web site authoring system
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Cache-Cache>=1:devel/p5-Cache-Cache \
@@ -23,10 +24,12 @@ TEST_DEPENDS=	p5-CHI>=0.210:devel/p5-CHI \
 		p5-Test-Deep>=0:devel/p5-Test-Deep \
 		p5-Test-Memory-Cycle>=0:devel/p5-Test-Memory-Cycle
 
-OPTIONS_DEFINE=	MODPERL
-
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
+
+OPTIONS_DEFINE=	MODPERL
 
 MODPERL_BUILD_DEPENDS=	p5-libapreq2>=0:www/p5-libapreq2
 MODPERL_RUN_DEPENDS=	p5-libapreq2>=0:www/p5-libapreq2
