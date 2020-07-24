@@ -22,7 +22,4 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-post-patch:
-	@${REINPLACE_CMD} -e "s|'argparse', ||" ${WRKSRC}/setup.py
-
 .include <bsd.port.mk>
