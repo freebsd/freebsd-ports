@@ -13,10 +13,10 @@ RUN_DEPENDS=	rubygem-erubis>=2.6.6:www/rubygem-erubis \
 		rubygem-eventmachine>=0.12.10:devel/rubygem-eventmachine \
 		rubygem-mongo>=1.2.4:devel/rubygem-mongo
 
-NO_ARCH=	yes
-
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 PLIST_FILES=	bin/statsd
 
