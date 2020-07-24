@@ -108,14 +108,13 @@ bin/dbicadmin
 %%SITE_PERL%%/DBIx/Class/SQLAHacks/OracleJoins.pm
 %%SITE_PERL%%/DBIx/Class/SQLAHacks/SQLite.pm
 %%SITE_PERL%%/DBIx/Class/SQLMaker.pm
-%%SITE_PERL%%/DBIx/Class/SQLMaker.pod
 %%SITE_PERL%%/DBIx/Class/SQLMaker/ACCESS.pm
+%%SITE_PERL%%/DBIx/Class/SQLMaker/ClassicExtensions.pm
 %%SITE_PERL%%/DBIx/Class/SQLMaker/LimitDialects.pm
 %%SITE_PERL%%/DBIx/Class/SQLMaker/MSSQL.pm
 %%SITE_PERL%%/DBIx/Class/SQLMaker/MySQL.pm
 %%SITE_PERL%%/DBIx/Class/SQLMaker/Oracle.pm
 %%SITE_PERL%%/DBIx/Class/SQLMaker/OracleJoins.pm
-%%SITE_PERL%%/DBIx/Class/SQLMaker/OracleJoins.pod
 %%SITE_PERL%%/DBIx/Class/SQLMaker/SQLite.pm
 %%SITE_PERL%%/DBIx/Class/Schema.pm
 %%SITE_PERL%%/DBIx/Class/Schema/Versioned.pm
@@ -173,6 +172,7 @@ bin/dbicadmin
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/UniqueIdentifier.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/mysql.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBIHacks.pm
+%%SITE_PERL%%/DBIx/Class/Storage/Debug/PrettyTrace.pm
 %%SITE_PERL%%/DBIx/Class/Storage/Statistics.pm
 %%SITE_PERL%%/DBIx/Class/Storage/TxnScopeGuard.pm
 %%SITE_PERL%%/DBIx/Class/UTF8Columns.pm
@@ -229,6 +229,7 @@ bin/dbicadmin
 %%PERL5_MAN3%%/DBIx::Class::Relationship::Base.3.gz
 %%PERL5_MAN3%%/DBIx::Class::ResultClass::HashRefInflator.3.gz
 %%PERL5_MAN3%%/DBIx::Class::ResultSet.3.gz
+%%PERL5_MAN3%%/DBIx::Class::ResultSet::Pager.3.gz
 %%PERL5_MAN3%%/DBIx::Class::ResultSetColumn.3.gz
 %%PERL5_MAN3%%/DBIx::Class::ResultSetManager.3.gz
 %%PERL5_MAN3%%/DBIx::Class::ResultSource.3.gz
@@ -238,6 +239,7 @@ bin/dbicadmin
 %%PERL5_MAN3%%/DBIx::Class::ResultSourceProxy::Table.3.gz
 %%PERL5_MAN3%%/DBIx::Class::Row.3.gz
 %%PERL5_MAN3%%/DBIx::Class::SQLMaker.3.gz
+%%PERL5_MAN3%%/DBIx::Class::SQLMaker::ClassicExtensions.3.gz
 %%PERL5_MAN3%%/DBIx::Class::SQLMaker::LimitDialects.3.gz
 %%PERL5_MAN3%%/DBIx::Class::SQLMaker::OracleJoins.3.gz
 %%PERL5_MAN3%%/DBIx::Class::Schema.3.gz
@@ -293,6 +295,7 @@ bin/dbicadmin
 %%PERL5_MAN3%%/DBIx::Class::Storage::DBI::Sybase::Microsoft_SQL_Server::NoBindVars.3.gz
 %%PERL5_MAN3%%/DBIx::Class::Storage::DBI::UniqueIdentifier.3.gz
 %%PERL5_MAN3%%/DBIx::Class::Storage::DBI::mysql.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Storage::Debug::PrettyTrace.3.gz
 %%PERL5_MAN3%%/DBIx::Class::Storage::Statistics.3.gz
 %%PERL5_MAN3%%/DBIx::Class::Storage::TxnScopeGuard.3.gz
 %%PERL5_MAN3%%/DBIx::Class::UTF8Columns.3.gz

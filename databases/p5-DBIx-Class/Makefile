@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	DBIx-Class
-PORTVERSION=	0.082841
+PORTVERSION=	0.082842
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -24,14 +24,13 @@ RUN_DEPENDS=	p5-Class-Accessor-Grouped>=0.10012:devel/p5-Class-Accessor-Grouped 
 		p5-DBI>=1.57:databases/p5-DBI \
 		p5-Data-Compare>=1.2200:devel/p5-Data-Compare \
 		p5-Data-Dumper-Concise>=2.020:devel/p5-Data-Dumper-Concise \
-		p5-Data-Page>=2.00:databases/p5-Data-Page \
 		p5-Devel-GlobalDestruction>=0.09:devel/p5-Devel-GlobalDestruction \
 		p5-Hash-Merge>=0.12:textproc/p5-Hash-Merge \
 		p5-MRO-Compat>=0.09:devel/p5-MRO-Compat \
 		p5-Module-Find>=0.07:devel/p5-Module-Find \
 		p5-Moo>=2:devel/p5-Moo \
 		p5-Path-Class>=0.18:devel/p5-Path-Class \
-		p5-SQL-Abstract>=1.81:databases/p5-SQL-Abstract \
+		p5-SQL-Abstract-Classic>=1.91:databases/p5-SQL-Abstract-Classic \
 		p5-Scope-Guard>=0.03:devel/p5-Scope-Guard \
 		p5-Sub-Name>=0.04:devel/p5-Sub-Name \
 		p5-Try-Tiny>=0.07:lang/p5-Try-Tiny \
@@ -58,15 +57,16 @@ TEST_DEPENDS=	p5-Class-DBI-Plugin-DeepAbstractSearch>=0:databases/p5-Class-DBI-P
 		p5-Time-Piece-MySQL>=0:databases/p5-Time-Piece-MySQL \
 		p5-namespace-autoclean>=0:devel/p5-namespace-autoclean
 
-OPTIONS_DEFINE=	SQLT
-SQLT_DESC=	SQL::Translator (generate DDL from schema)
+USES=		perl5
+USE_PERL5=	configure
+
+CONFIGURE_ENV=	DBICTEST_NO_SQLITE_CHECK=1
+NO_ARCH=	yes
 
 PORTSCOUT=	limit:^[0-9\.]*$$
 
-NO_ARCH=	yes
-USES=		perl5
-USE_PERL5=	configure
-CONFIGURE_ENV=	DBICTEST_NO_SQLITE_CHECK=1
+OPTIONS_DEFINE=	SQLT
+SQLT_DESC=	SQL::Translator (generate DDL from schema)
 
 SQLT_RUN_DEPENDS=	p5-SQL-Translator>=0.09.004:databases/p5-SQL-Translator
 
