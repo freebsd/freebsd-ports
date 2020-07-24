@@ -1,6 +1,6 @@
---- Makefile.PL.orig	2020-03-17 16:32:19 UTC
+--- Makefile.PL.orig	2020-05-08 11:33:39 UTC
 +++ Makefile.PL
-@@ -17,13 +17,10 @@ use warnings;
+@@ -17,15 +17,12 @@ use warnings;
  
  require 5.008001;
  
@@ -8,13 +8,15 @@
  use ExtUtils::MakeMaker;
  use Config;
  
+ my $SKIP_SAX_INSTALL = $ENV{SKIP_SAX_INSTALL};
+ 
  my %ConfigReqs = (
 -  "Alien::Libxml2" => '0.14',
 -  "Alien::Base::Wrapper" => 0,
    "Config" => 0,
    "ExtUtils::MakeMaker" => 0,
  );
-@@ -69,7 +66,9 @@ my %prereqs = (
+@@ -71,7 +68,9 @@ my %prereqs = (
  my %xsbuild = (
    DEFINE  => '-DHAVE_UTF8',
    OBJECT  => '$(O_FILES)',
