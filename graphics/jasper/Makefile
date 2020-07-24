@@ -15,26 +15,25 @@ LICENSE_NAME=	JasPer License Version 2.0
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-OPTIONS_DEFINE=	OPENGL DOCS
-OPTIONS_DEFAULT=	OPENGL
-OPTIONS_SUB=	yes
-
-USE_LDCONFIG=	yes
 USES=		cmake jpeg localbase
 
-USE_GITHUB=	yes
-
-GH_ACCOUNT=	mdadams
-
-OPENGL_CMAKE_BOOL=	JAS_ENABLE_OPENGL
-OPENGL_USES=		gl xorg
-OPENGL_USE=		GL=gl,glu,glut XORG=x11,xext,xi,xmu
-
-CMAKE_ARGS=	-DJAS_ENABLE_JPEG=true \
+CMAKE_ARGS=	-DCMAKE_SKIP_RPATH=true \
 		-DJAS_ENABLE_AUTOMATIC_DEPENDENCIES=false \
-		-DCMAKE_SKIP_RPATH=true
+		-DJAS_ENABLE_JPEG=true
+USE_LDCONFIG=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/JasPer
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	jasper-software
+
+OPTIONS_DEFINE=	OPENGL DOCS
+OPTIONS_DEFAULT=OPENGL
+OPTIONS_SUB=	yes
+
+OPENGL_CMAKE_BOOL=	JAS_ENABLE_OPENGL
+OPENGL_USE=		GL=gl,glu,glut XORG=x11,xext,xi,xmu
+OPENGL_USES=		gl xorg
 
 post-install-DOCS-off:
 	rm -rf ${STAGEDIR}${DOCSDIR}
