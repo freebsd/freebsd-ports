@@ -80,10 +80,10 @@ do-build:
 	@${DO_NADA} # Do nothing: Prevent USE_ANT from running a default build target.
 
 do-build-DOCS-on:
-	@cd ${WRKSRC} && ${ANT} -Dmaven.repo.local=${REPO_DIR} -Dlocalm2=${REPO_DIR} -Dpycmd=${PYTHON_CMD} freebsd-stage-doc
+	@cd ${WRKSRC} && ANT_OPTS="${ANT_OPTS} -Xmx512m" ${ANT} -Dmaven.repo.local=${REPO_DIR} -Dlocalm2=${REPO_DIR} -Dpycmd=${PYTHON_CMD} freebsd-stage-doc
 
 do-build-DOCS-off:
-	@cd ${WRKSRC} && ${ANT} -Dmaven.repo.local=${REPO_DIR} -Dlocalm2=${REPO_DIR} freebsd-stage
+	@cd ${WRKSRC} && ANT_OPTS="${ANT_OPTS} -Xmx512m" ${ANT} -Dmaven.repo.local=${REPO_DIR} -Dlocalm2=${REPO_DIR} freebsd-stage
 
 post-build:
 .for f in ${SCRIPT_FILES}
