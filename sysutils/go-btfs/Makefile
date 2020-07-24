@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	go-btfs
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.3
 DISTVERSIONPREFIX=	btfs-v
 CATEGORIES=	sysutils
 
@@ -27,11 +27,11 @@ GH_TUPLE=	\
 		TRON-US:go-btfs-api:v0.3.0:tron_us_go_btfs_api/vendor/github.com/TRON-US/go-btfs-api \
 		TRON-US:go-btfs-chunker:v0.3.0:tron_us_go_btfs_chunker/vendor/github.com/TRON-US/go-btfs-chunker \
 		TRON-US:go-btfs-cmds:v0.2.3:tron_us_go_btfs_cmds/vendor/github.com/TRON-US/go-btfs-cmds \
-		TRON-US:go-btfs-config:v0.6.7:tron_us_go_btfs_config/vendor/github.com/TRON-US/go-btfs-config \
+		TRON-US:go-btfs-config:v0.6.8:tron_us_go_btfs_config/vendor/github.com/TRON-US/go-btfs-config \
 		TRON-US:go-btfs-files:v0.2.0:tron_us_go_btfs_files/vendor/github.com/TRON-US/go-btfs-files \
 		TRON-US:go-btfs-pinner:v0.1.1:tron_us_go_btfs_pinner/vendor/github.com/TRON-US/go-btfs-pinner \
 		TRON-US:go-btns:v0.1.0:tron_us_go_btns/vendor/github.com/TRON-US/go-btns \
-		TRON-US:go-car:v0.2.1:tron_us_go_car/vendor/github.com/ipld/go-car \
+		TRON-US:go-car:v0.2.1:tron_us_go_car_1/vendor/github.com/ipld/go-car \
 		TRON-US:go-cid:v0.2.0:tron_us_go_cid_1/vendor/github.com/ipfs/go-cid \
 		TRON-US:go-eccrypto:v0.0.1:tron_us_go_eccrypto/vendor/github.com/TRON-US/go-eccrypto \
 		TRON-US:go-graphsync:v0.1.2:tron_us_go_graphsync/vendor/github.com/ipfs/go-graphsync \
@@ -41,7 +41,7 @@ GH_TUPLE=	\
 		TRON-US:go-libp2p-kad-dht:v0.9.2:tron_us_go_libp2p_kad_dht_1/vendor/github.com/libp2p/go-libp2p-kad-dht \
 		TRON-US:go-mfs:v0.3.0:tron_us_go_mfs/vendor/github.com/TRON-US/go-mfs \
 		TRON-US:go-multiaddr:v0.3.0:tron_us_go_multiaddr/vendor/github.com/multiformats/go-multiaddr \
-		TRON-US:go-path:v0.1.0:tron_us_go_path/vendor/github.com/ipfs/go-path \
+		TRON-US:go-path:v0.1.0:tron_us_go_path_1/vendor/github.com/ipfs/go-path \
 		TRON-US:go-unixfs:v0.6.0:tron_us_go_unixfs/vendor/github.com/TRON-US/go-unixfs \
 		TRON-US:interface-go-btfs-core:v0.6.1:tron_us_interface_go_btfs_core/vendor/github.com/TRON-US/interface-go-btfs-core \
 		Workiva:go-datastructures:v1.0.52:workiva_go_datastructures/vendor/github.com/Workiva/go-datastructures \
@@ -73,7 +73,7 @@ GH_TUPLE=	\
 		dsnet:compress:v0.0.1:dsnet_compress/vendor/github.com/dsnet/compress \
 		dustin:go-humanize:v1.0.0:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
 		elgris:jsondiff:765b5c24c302:elgris_jsondiff/vendor/github.com/elgris/jsondiff \
-		ethereum:go-ethereum:v1.9.15:ethereum_go_ethereum/vendor/github.com/ethereum/go-ethereum \
+		ethereum:go-ethereum:v1.9.17:ethereum_go_ethereum/vendor/github.com/ethereum/go-ethereum \
 		facebookgo:atomicfile:2de1f203e7d5:facebookgo_atomicfile/vendor/github.com/facebookgo/atomicfile \
 		fatih:color:v1.9.0:fatih_color/vendor/github.com/fatih/color \
 		fomichev:secp256k1:00116ff8c62f:fomichev_secp256k1/vendor/github.com/fomichev/secp256k1 \
@@ -92,12 +92,13 @@ GH_TUPLE=	\
 		gobuffalo:here:v0.6.0:gobuffalo_here/vendor/github.com/gobuffalo/here \
 		gogo:protobuf:v1.3.1:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang:appengine:v1.6.5:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:4bdfaf469ed5:golang_crypto/vendor/golang.org/x/crypto \
+		golang:crypto:75b288015ac9:golang_crypto/vendor/golang.org/x/crypto \
 		golang:gddo:af0f2af80721:golang_gddo/vendor/github.com/golang/gddo \
 		golang:lint:fdd1cda4f05f:golang_lint/vendor/golang.org/x/lint \
-		golang:net:ff2c4b7c35a0:golang_net/vendor/golang.org/x/net \
+		golang:mock:v1.4.3:golang_mock/vendor/github.com/golang/mock \
+		golang:net:4c5254603344:golang_net/vendor/golang.org/x/net \
 		golang:protobuf:v1.3.3:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:snappy:v0.0.1:golang_snappy/vendor/github.com/golang/snappy \
+		golang:snappy:196ae77b8a26:golang_snappy/vendor/github.com/golang/snappy \
 		golang:sys:1957bb5e6d1f:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
 		golang:tools:8463f397d07c:golang_tools/vendor/golang.org/x/tools \
@@ -256,7 +257,7 @@ GH_TUPLE=	\
 		stretchr:testify:v1.6.1:stretchr_testify/vendor/github.com/stretchr/testify \
 		syndtr:goleveldb:758128399b1d:syndtr_goleveldb/vendor/github.com/syndtr/goleveldb \
 		texttheater:golang-levenshtein:d188e65d659e:texttheater_golang_levenshtein/vendor/github.com/texttheater/golang-levenshtein \
-		tron-us:go-btfs-common:v0.4.8:tron_us_go_btfs_common/vendor/github.com/tron-us/go-btfs-common \
+		tron-us:go-btfs-common:v0.5.5:tron_us_go_btfs_common/vendor/github.com/tron-us/go-btfs-common \
 		tron-us:go-common:v2.1.1:tron_us_go_common_v2/vendor/github.com/tron-us/go-common/v2 \
 		tron-us:protobuf:v1.3.4:tron_us_protobuf/vendor/github.com/tron-us/protobuf \
 		tyler-smith:go-bip32:2c9cfd177564:tyler_smith_go_bip32/vendor/github.com/tyler-smith/go-bip32 \
