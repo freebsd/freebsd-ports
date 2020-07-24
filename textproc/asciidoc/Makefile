@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	asciidoc
-PORTVERSION=	9.0.1
+PORTVERSION=	9.0.2
 CATEGORIES=	textproc
 
 MAINTAINER=	sunpoet@FreeBSD.org
