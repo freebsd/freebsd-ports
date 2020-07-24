@@ -17,14 +17,15 @@ RUN_DEPENDS=	rubygem-manpages>=0.6.1<0.7:devel/rubygem-manpages \
 
 USES=		gem
 
-CONFLICTS_INSTALL=	lolcat
-
 USE_RUBY=	yes
 
 NO_ARCH=	yes
 
 PLIST_FILES=	bin/lolcat \
 		share/man/man6/lolcat.6.gz
+
+# bin/lolcat
+CONFLICTS_INSTALL=	lolcat
 
 post-build:
 	@${REINPLACE_CMD} -e 's|man/lolcat.6|&.gz|' ${WRKSRC}/${GEMSPEC}
