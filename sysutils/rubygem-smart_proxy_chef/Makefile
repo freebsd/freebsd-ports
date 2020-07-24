@@ -13,17 +13,19 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	foreman-proxy>=1.8.0:net/foreman-proxy \
-		rubygem-chef-api>0:sysutils/rubygem-chef-api
+		rubygem-chef-api>=0:sysutils/rubygem-chef-api
+
+USES=		gem
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-USE_RUBY=	yes
-USES=		gem
+
+PLIST_FILES=	"@sample etc/foreman-proxy/settings.d/chef.yml.sample" \
+		share/foreman-proxy/bundler.d/chef.rb
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/foreman-proxy/settings.d ${STAGEDIR}${PREFIX}/share/foreman-proxy/bundler.d
-	${INSTALL_DATA} ${WRKSRC}/settings.d/chef.yml.example \
-		${STAGEDIR}${PREFIX}/etc/foreman-proxy/settings.d/chef.yml.sample
-	${INSTALL_DATA} ${WRKSRC}/bundler.d/chef.rb \
-		${STAGEDIR}${PREFIX}/share/foreman-proxy/bundler.d/chef.rb
+	${INSTALL_DATA} ${WRKSRC}/bundler.d/chef.rb ${STAGEDIR}${PREFIX}/share/foreman-proxy/bundler.d/chef.rb
+	${INSTALL_DATA} ${WRKSRC}/settings.d/chef.yml.example ${STAGEDIR}${PREFIX}/etc/foreman-proxy/settings.d/chef.yml.sample
 
 .include <bsd.port.mk>

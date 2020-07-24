@@ -1,2 +1,0 @@
-share/foreman-proxy/bundler.d/chef.rb
-@sample etc/foreman-proxy/settings.d/chef.yml.sample
