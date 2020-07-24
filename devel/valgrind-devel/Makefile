@@ -18,35 +18,21 @@ LICENSE=	GPLv2
 
 ONLY_FOR_ARCHS=	amd64 i386
 
-CONFLICTS=	valgrind-[0-9]*
-
-BB_COMMIT=	ce1acb28953f
-BB_ACCOUNT=	stass
-BB_PROJECT=	valgrind-freebsd
-
-LIB32_PATH?=	${DESTDIR}/usr/lib32/libc.so
-
-OPTIONS_DEFINE=		DOCS MANPAGES MPI
-OPTIONS_DEFINE_amd64=	32BIT
-OPTIONS_DEFAULT=	MANPAGES
-.if exists(${LIB32_PATH})
-OPTIONS_DEFAULT_amd64=	32BIT
-.endif
-32BIT_DESC=	Enable debugging of 32-bit programs (requires lib32)
-MPI_DESC=	Enable build of MPI wrappers
-
 DOCS_BUILD_DEPENDS=	docbook-xsl>=0:textproc/docbook-xsl \
 		xsltproc:textproc/libxslt
 MANPAGES_BUILD_DEPENDS=	docbook-xsl>=0:textproc/docbook-xsl \
 		xsltproc:textproc/libxslt
 MPI_LIB_DEPENDS=	libmpich.so:net/mpich
 
-OPTIONS_SUB=	yes
 USES=		pathfix pkgconfig gmake perl5 shebangfix autoreconf
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+OPTIONS_SUB=	yes
 SHEBANG_FILES=	callgrind/callgrind_annotate.in callgrind/callgrind_control.in
+LIB32_PATH?=	${DESTDIR}/usr/lib32/libc.so
+
+CONFLICTS=	valgrind-[0-9]*
 
 EXTRA_PATCHES=	\
 		${FILESDIR}/accept4_syscall.patch:-p1 \
@@ -56,7 +42,20 @@ EXTRA_PATCHES=	\
 
 PORTDOCS=	html
 
+BB_COMMIT=	ce1acb28953f
+BB_ACCOUNT=	stass
+BB_PROJECT=	valgrind-freebsd
+
 WRKSRC=		${WRKDIR}/${BB_ACCOUNT}-${BB_PROJECT}-${BB_COMMIT}
+
+OPTIONS_DEFINE=		DOCS MANPAGES MPI
+OPTIONS_DEFINE_amd64=	32BIT
+OPTIONS_DEFAULT=	MANPAGES
+.if exists(${LIB32_PATH})
+OPTIONS_DEFAULT_amd64=	32BIT
+.endif
+32BIT_DESC=	Enable debugging of 32-bit programs (requires lib32)
+MPI_DESC=	Enable build of MPI wrappers
 
 CONFIGURE_ENV+=	ac_cv_path_PERL=${PERL}
 
