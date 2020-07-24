@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	ncspot
-DISTVERSION=	0.1.4
-PORTREVISION=	1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.2.0
 CATEGORIES=	audio
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -22,6 +22,7 @@ CARGO_CRATES=	addr2line-0.12.1 \
 		aes-soft-0.3.3 \
 		aesni-0.6.0 \
 		ahash-0.3.5 \
+		ahash-0.4.1 \
 		aho-corasick-0.7.10 \
 		alga-0.9.3 \
 		alsa-0.2.2 \
@@ -84,7 +85,7 @@ CARGO_CRATES=	addr2line-0.12.1 \
 		crypto-mac-0.7.0 \
 		ctr-0.3.2 \
 		cursive-0.15.0 \
-		cursive_core-0.1.0 \
+		cursive_core-0.1.1 \
 		darling-0.9.0 \
 		darling-0.10.2 \
 		darling_core-0.9.0 \
@@ -196,13 +197,15 @@ CARGO_CRATES=	addr2line-0.12.1 \
 		net2-0.2.34 \
 		nix-0.9.0 \
 		nom-5.1.1 \
-		num-0.2.1 \
+		num-0.3.0 \
 		num-bigint-0.2.6 \
 		num-complex-0.2.4 \
-		num-integer-0.1.42 \
-		num-iter-0.1.40 \
+		num-complex-0.3.0 \
+		num-integer-0.1.43 \
+		num-iter-0.1.41 \
 		num-rational-0.2.4 \
-		num-traits-0.2.11 \
+		num-rational-0.3.0 \
+		num-traits-0.2.12 \
 		num_cpus-1.13.0 \
 		numtoa-0.1.0 \
 		objc-0.2.7 \
@@ -273,7 +276,7 @@ CARGO_CRATES=	addr2line-0.12.1 \
 		reqwest-0.9.24 \
 		reqwest-0.10.6 \
 		rodio-0.9.0 \
-		rspotify-0.8.0 \
+		rspotify-0.10.0 \
 		rust-argon2-0.7.0 \
 		rustc-demangle-0.1.16 \
 		rustc-hash-1.1.0 \
@@ -304,7 +307,7 @@ CARGO_CRATES=	addr2line-0.12.1 \
 		slab-0.4.2 \
 		smallvec-0.2.1 \
 		smallvec-0.6.13 \
-		smallvec-1.4.0 \
+		smallvec-1.4.1 \
 		socket2-0.3.12 \
 		stable_deref_trait-1.1.1 \
 		stdweb-0.1.3 \
@@ -397,7 +400,8 @@ CARGO_CRATES=	addr2line-0.12.1 \
 		x11-clipboard-0.3.3 \
 		xcb-0.8.2 \
 		xi-unicode-0.2.0
-CARGO_FEATURES=		--no-default-features cursive/pancurses-backend
+
+CARGO_FEATURES=	--no-default-features cursive/pancurses-backend
 
 PLIST_FILES=	bin/ncspot
 PORTDOCS=	README.md
@@ -405,8 +409,8 @@ PORTDOCS=	README.md
 OPTIONS_DEFINE=		CLIPBOARD DBUS DOCS PORTAUDIO PULSEAUDIO
 OPTIONS_DEFAULT=	CLIPBOARD PORTAUDIO
 
-CLIPBOARD_DESC=		Support for accessing X11 clipboard
-DBUS_DESC=		D-Bus MPRIS support
+CLIPBOARD_DESC=	Support for accessing X11 clipboard
+DBUS_DESC=	D-Bus MPRIS support
 
 CLIPBOARD_USES=		python:3.6+,build xorg
 CLIPBOARD_USE=		XORG=xcb
@@ -420,6 +424,7 @@ PORTAUDIO_LIB_DEPENDS=	libportaudio.so:audio/portaudio
 PORTAUDIO_VARS=		CARGO_FEATURES+=portaudio_backend
 
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
+PULSEAUDIO_USES=	localbase:ldflags
 PULSEAUDIO_VARS=	CARGO_FEATURES+=pulseaudio_backend
 
 post-install:
