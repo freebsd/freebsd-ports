@@ -10,6 +10,7 @@
 %%SITE_PERL%%/Catalyst/Manual/Deployment/DevelopmentServer.pod
 %%SITE_PERL%%/Catalyst/Manual/Deployment/FastCGI.pod
 %%SITE_PERL%%/Catalyst/Manual/Deployment/IIS/FastCGI.pod
+%%SITE_PERL%%/Catalyst/Manual/Deployment/NGINXUnit/PSGI.pod
 %%SITE_PERL%%/Catalyst/Manual/Deployment/SharedHosting.pod
 %%SITE_PERL%%/Catalyst/Manual/Deployment/lighttpd/FastCGI.pod
 %%SITE_PERL%%/Catalyst/Manual/Deployment/nginx/FastCGI.pod
@@ -44,6 +45,7 @@
 %%PERL5_MAN3%%/Catalyst::Manual::Deployment::DevelopmentServer.3.gz
 %%PERL5_MAN3%%/Catalyst::Manual::Deployment::FastCGI.3.gz
 %%PERL5_MAN3%%/Catalyst::Manual::Deployment::IIS::FastCGI.3.gz
+%%PERL5_MAN3%%/Catalyst::Manual::Deployment::NGINXUnit::PSGI.3.gz
 %%PERL5_MAN3%%/Catalyst::Manual::Deployment::SharedHosting.3.gz
 %%PERL5_MAN3%%/Catalyst::Manual::Deployment::lighttpd::FastCGI.3.gz
 %%PERL5_MAN3%%/Catalyst::Manual::Deployment::nginx::FastCGI.3.gz
