@@ -62,7 +62,7 @@ SDLUI2_DESC=	use SDL2 user interface
 SDLSOUND_DESC=	build with SDL2 sound system support
 
 GTK3UI_CONFIGURE_ENABLE=	native-gtk3ui
-GTK3UI_BUILD_DEPENDS=		${LOCALBASE}/bin/bash:shells/bash
+GTK3UI_BUILD_DEPENDS=		bash:shells/bash
 SDLUI2_USES=			sdl
 SDLUI2_USE=			SDL=sdl2
 SDLUI2_CONFIGURE_ENABLE=	sdlui2
