@@ -1,10 +1,12 @@
 [Wayland] Fall back to ftruncate if posix_fallocate isn't supported by filesystem.
 
+Taken from www/firefox
+
 diff --git widget/gtk/WindowSurfaceWayland.cpp widget/gtk/WindowSurfaceWayland.cpp
 index 9a73326399bd5..9e42a7f1c5d18 100644
 --- mozilla-release/widget/gtk/WindowSurfaceWayland.cpp
 +++ mozilla-release/widget/gtk/WindowSurfaceWayland.cpp
-@@ -235,23 +235,24 @@
+@@ -222,20 +222,21 @@ static int WaylandAllocateShmMemory(int aSize) {
  #ifdef HAVE_POSIX_FALLOCATE
    do {
      ret = posix_fallocate(fd, 0, aSize);
@@ -12,11 +14,9 @@ index 9a73326399bd5..9e42a7f1c5d18 100644
 -  if (ret != 0) {
 +  if (ret == 0) {
 +    return fd;
-+  } else if (ret != EINVAL && ret != EOPNOTSUPP) {
++  } else if (ret != ENODEV && ret != EINVAL && ret != EOPNOTSUPP) {
      close(fd);
-     MOZ_CRASH_UNSAFE_PRINTF(
-         "posix_fallocate() fails on %s size %d error code %d\n", filename,
-         aSize, ret);
+     MOZ_CRASH("posix_fallocate() fails to allocate shm memory");
    }
 -#else
 +#endif
@@ -25,10 +25,19 @@ index 9a73326399bd5..9e42a7f1c5d18 100644
    } while (ret < 0 && errno == EINTR);
    if (ret < 0) {
      close(fd);
-     MOZ_CRASH_UNSAFE_PRINTF("ftruncate() fails on %s size %d error code %d\n",
-                             filename, aSize, ret);
+     MOZ_CRASH("ftruncate() fails to allocate shm memory");
    }
 -#endif
  
    return fd;
  }
+@@ -265,8 +266,8 @@ bool WaylandShmPool::Resize(int aSize) {
+ #ifdef HAVE_POSIX_FALLOCATE
+   do {
+     errno = posix_fallocate(mShmPoolFd, 0, aSize);
+   } while (errno == EINTR);
+-  if (errno != 0) return false;
++  if (errno != 0 && errno != ENODEV && errno != EINVAL && errno != EOPNOTSUPP) return false;
+ #endif
+ 
+   wl_shm_pool_resize(mShmPool, aSize);
