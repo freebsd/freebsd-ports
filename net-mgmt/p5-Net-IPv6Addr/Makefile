@@ -15,11 +15,12 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Math-Base85>=0.2:math/p5-Math-Base85 \
-		p5-Net-IPv4Addr>=0.10:net-mgmt/p5-Net-IPv4Addr \
-		p5-Math-BigInt>=1.999813:math/p5-Math-BigInt
+		p5-Math-BigInt>=1.999813:math/p5-Math-BigInt \
+		p5-Net-IPv4Addr>=0.10:net-mgmt/p5-Net-IPv4Addr
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
