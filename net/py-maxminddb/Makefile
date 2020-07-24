@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libmaxminddb.so:net/libmaxminddb
 RUN_DEPENDS=	${PY_IPADDRESS}
 
-USES=		compiler:c11 localbase python
+USES=		compiler:c11 localbase python:3.6+
 USE_GITHUB=	yes
 GH_ACCOUNT=	maxmind
 GH_PROJECT=	MaxMind-DB-Reader-python
