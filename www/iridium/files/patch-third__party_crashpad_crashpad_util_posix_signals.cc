@@ -1,4 +1,4 @@
---- third_party/crashpad/crashpad/util/posix/signals.cc.orig	2019-03-11 22:01:15 UTC
+--- third_party/crashpad/crashpad/util/posix/signals.cc.orig	2019-12-16 21:51:05 UTC
 +++ third_party/crashpad/crashpad/util/posix/signals.cc
 @@ -45,10 +45,10 @@ constexpr int kCrashSignals[] = {
  #if defined(SIGEMT)
@@ -25,7 +25,7 @@
  };
  
  bool InstallHandlers(const std::vector<int>& signals,
-@@ -216,8 +216,12 @@ bool Signals::WillSignalReraiseAutonomously(const sigi
+@@ -224,8 +224,12 @@ bool Signals::WillSignalReraiseAutonomously(const sigi
           // remains. See 10.12.3 xnu-3789.41.3/bsd/kern/kern_sig.c
           // psignal_internal().
           (code > 0 &&

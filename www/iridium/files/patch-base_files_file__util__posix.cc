@@ -1,7 +1,7 @@
---- base/files/file_util_posix.cc.orig	2019-03-17 21:31:57 UTC
+--- base/files/file_util_posix.cc.orig	2020-02-03 21:52:37 UTC
 +++ base/files/file_util_posix.cc
-@@ -407,7 +407,7 @@ bool CopyDirectoryExcl(const FilePath& from_path,
- #endif  // !defined(OS_NACL_NONSFI)
+@@ -411,7 +411,7 @@ bool CreatePipe(ScopedFD* read_fd, ScopedFD* write_fd,
+ }
  
  bool CreateLocalNonBlockingPipe(int fds[2]) {
 -#if defined(OS_LINUX)

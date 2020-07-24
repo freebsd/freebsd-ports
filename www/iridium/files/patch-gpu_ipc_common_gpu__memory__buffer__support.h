@@ -1,4 +1,4 @@
---- gpu/ipc/common/gpu_memory_buffer_support.h.orig	2019-03-11 22:00:59 UTC
+--- gpu/ipc/common/gpu_memory_buffer_support.h.orig	2019-12-16 21:50:48 UTC
 +++ gpu/ipc/common/gpu_memory_buffer_support.h
 @@ -16,7 +16,7 @@
  #include "ui/gfx/geometry/size.h"
@@ -18,7 +18,7 @@
    gfx::ClientNativePixmapFactory* client_native_pixmap_factory() {
      return client_native_pixmap_factory_.get();
    }
-@@ -61,7 +61,7 @@ class GPU_EXPORT GpuMemoryBufferSupport {
+@@ -62,7 +62,7 @@ class GPU_EXPORT GpuMemoryBufferSupport {
        GpuMemoryBufferImpl::DestructionCallback callback);
  
   private:

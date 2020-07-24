@@ -13,22 +13,22 @@ namespace media {
 
 static const SampleFormat kSampleFormat = kSampleFormatS16;
 
-void sndio_onmove(void *arg, int delta) {
+void SndioAudioOutputStream::OnMoveCallback(void *arg, int delta) {
   SndioAudioOutputStream* self = static_cast<SndioAudioOutputStream*>(arg);
 
-  self->hw_delay = delta;
+  self->hw_delay -= delta;
 }
 
-void sndio_onvol(void *arg, unsigned int vol) {
+void SndioAudioOutputStream::OnVolCallback(void *arg, unsigned int vol) {
   SndioAudioOutputStream* self = static_cast<SndioAudioOutputStream*>(arg);
 
   self->vol = vol;
 }
 
-void *sndio_threadstart(void *arg) {
+void *SndioAudioOutputStream::ThreadEntry(void *arg) {
   SndioAudioOutputStream* self = static_cast<SndioAudioOutputStream*>(arg);
 
-  self->RealTimeThread();
+  self->ThreadLoop();
   return NULL;
 }
 
@@ -37,7 +37,6 @@ SndioAudioOutputStream::SndioAudioOutputStream(const AudioParameters& params,
     : manager(manager),
       params(params),
       audio_bus(AudioBus::Create(params)),
-      bytes_per_frame(params.GetBytesPerFrame(kSampleFormat)),
       state(kClosed),
       mutex(PTHREAD_MUTEX_INITIALIZER) {
 }
@@ -87,8 +86,8 @@ bool SndioAudioOutputStream::Open() {
   volpending = 0;
   vol = 0;
   buffer = new char[audio_bus->frames() * params.GetBytesPerFrame(kSampleFormat)];
-  sio_onmove(hdl, sndio_onmove, this);
-  sio_onvol(hdl, sndio_onvol, this);
+  sio_onmove(hdl, &OnMoveCallback, this);
+  sio_onvol(hdl, &OnVolCallback, this);
   return true;
  bad_close:
   sio_close(hdl);
@@ -111,7 +110,7 @@ void SndioAudioOutputStream::Start(AudioSourceCallback* callback) {
   hw_delay = 0;
   source = callback;
   sio_start(hdl);
-  if (pthread_create(&thread, NULL, sndio_threadstart, this) != 0) {
+  if (pthread_create(&thread, NULL, &ThreadEntry, this) != 0) {
     LOG(ERROR) << "Failed to create real-time thread.";
     sio_stop(hdl);
     state = kStopped;
@@ -140,8 +139,12 @@ void SndioAudioOutputStream::GetVolume(double* v) {
   pthread_mutex_unlock(&mutex);
 }
 
-void SndioAudioOutputStream::RealTimeThread(void) {
-  int avail, count;
+// This stream is always used with sub second buffer sizes, where it's
+// sufficient to simply always flush upon Start().
+void SndioAudioOutputStream::Flush() {}
+
+void SndioAudioOutputStream::ThreadLoop(void) {
+  int avail, count, result;
 
   while (state == kRunning) {
     // Update volume if needed
@@ -153,7 +156,8 @@ void SndioAudioOutputStream::RealTimeThread(void) {
     pthread_mutex_unlock(&mutex);
 
     // Get data to play
-    const base::TimeDelta delay = AudioTimestampHelper::FramesToTime(hw_delay, params.sample_rate() * 1000);
+    const base::TimeDelta delay = AudioTimestampHelper::FramesToTime(hw_delay,
+	params.sample_rate());
     count = source->OnMoreData(delay, base::TimeTicks::Now(), 0, audio_bus.get());
     audio_bus->ToInterleaved(count, SampleFormatToBytesPerChannel(kSampleFormat), buffer);
     if (count == 0) {
@@ -165,8 +169,8 @@ void SndioAudioOutputStream::RealTimeThread(void) {
 
     // Submit data to the device
     avail = count * params.GetBytesPerFrame(kSampleFormat);
-    count = sio_write(hdl, buffer, avail);
-    if (count == 0) {
+    result = sio_write(hdl, buffer, avail);
+    if (result == 0) {
       LOG(WARNING) << "Audio device disconnected.";
       break;
     }

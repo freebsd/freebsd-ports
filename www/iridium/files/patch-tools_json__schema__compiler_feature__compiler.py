@@ -1,6 +1,6 @@
---- tools/json_schema_compiler/feature_compiler.py.orig	2019-03-11 22:01:18 UTC
+--- tools/json_schema_compiler/feature_compiler.py.orig	2020-02-03 21:53:12 UTC
 +++ tools/json_schema_compiler/feature_compiler.py
-@@ -205,6 +205,7 @@ FEATURE_GRAMMAR = (
+@@ -218,6 +218,7 @@ FEATURE_GRAMMAR = (
          'enum_map': {
            'chromeos': 'Feature::CHROMEOS_PLATFORM',
            'linux': 'Feature::LINUX_PLATFORM',

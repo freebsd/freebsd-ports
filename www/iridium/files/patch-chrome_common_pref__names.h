@@ -1,6 +1,6 @@
---- chrome/common/pref_names.h.orig	2019-03-11 22:00:54 UTC
+--- chrome/common/pref_names.h.orig	2020-03-16 18:40:30 UTC
 +++ chrome/common/pref_names.h
-@@ -300,7 +300,7 @@ extern const char kMdHistoryMenuPromoShown[];
+@@ -334,7 +334,7 @@ extern const char kHistoryMenuPromoShown[];
  extern const char kForceGoogleSafeSearch[];
  extern const char kForceYouTubeRestrict[];
  extern const char kAllowedDomainsForApps[];
@@ -9,7 +9,7 @@
  extern const char kUsesSystemTheme[];
  #endif
  extern const char kCurrentThemePackFilename[];
-@@ -333,7 +333,7 @@ extern const char kDefaultBrowserSettingEnabled[];
+@@ -365,7 +365,7 @@ extern const char kDefaultBrowserSettingEnabled[];
  #if defined(OS_MACOSX)
  extern const char kShowUpdatePromotionInfoBar[];
  #endif
@@ -18,7 +18,7 @@
  extern const char kUseCustomChromeFrame[];
  #endif
  #if BUILDFLAG(ENABLE_PLUGINS)
-@@ -487,7 +487,7 @@ extern const char kAppWindowPlacement[];
+@@ -532,7 +532,7 @@ extern const char kAppWindowPlacement[];
  extern const char kDownloadDefaultDirectory[];
  extern const char kDownloadExtensionsToOpen[];
  extern const char kDownloadDirUpgraded[];
@@ -27,3 +27,15 @@
  extern const char kOpenPdfDownloadInSystemReader[];
  #endif
  #if defined(OS_ANDROID)
+@@ -744,9 +744,9 @@ extern const char kAllowCrossOriginAuthPrompt[];
+ extern const char kGloballyScopeHTTPAuthCacheEnabled[];
+ extern const char kAmbientAuthenticationInPrivateModesEnabled[];
+ 
+-#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+ extern const char kAuthNegotiateDelegateByKdcPolicy[];
+-#endif  // defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_CHROMEOS)
++#endif  // defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+ 
+ #if defined(OS_POSIX)
+ extern const char kNtlmV2Enabled[];

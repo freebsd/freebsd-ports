@@ -1,8 +1,8 @@
---- content/public/common/content_switches.cc.orig	2019-03-11 22:00:58 UTC
+--- content/public/common/content_switches.cc.orig	2020-03-16 18:40:32 UTC
 +++ content/public/common/content_switches.cc
-@@ -968,7 +968,7 @@ const char kDisableAudioSupportForDesktopShare[] =
- const char kDisablePanelFitting[]           = "disable-panel-fitting";
- #endif
+@@ -997,7 +997,7 @@ const char kEnableAggressiveDOMStorageFlushing[] =
+ // Enable indication that browser is controlled by automation.
+ const char kEnableAutomation[] = "enable-automation";
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
 +#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_FREEBSD)

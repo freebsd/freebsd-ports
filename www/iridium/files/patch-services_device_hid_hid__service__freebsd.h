@@ -1,6 +1,6 @@
---- services/device/hid/hid_service_freebsd.h.orig	2019-03-17 01:47:14 UTC
+--- services/device/hid/hid_service_freebsd.h.orig	2020-03-17 15:11:01 UTC
 +++ services/device/hid/hid_service_freebsd.h
-@@ -0,0 +1,48 @@
+@@ -0,0 +1,47 @@
 +// Copyright 2014 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -25,7 +25,7 @@
 +  ~HidServiceFreeBSD() override;
 +
 +  void Connect(const std::string& device_guid,
-+               const ConnectCallback& connect) override;
++               ConnectCallback connect) override;
 +  base::WeakPtr<HidService> GetWeakPtr() override;
 +
 + private:
@@ -34,7 +34,6 @@
 +
 +  static void OpenOnBlockingThread(std::unique_ptr<ConnectParams> params);
 +  static void FinishOpen(std::unique_ptr<ConnectParams> params);
-+  static void CreateConnection(std::unique_ptr<ConnectParams> params);
 +
 +  const scoped_refptr<base::SequencedTaskRunner> task_runner_;
 +  const scoped_refptr<base::SequencedTaskRunner> blocking_task_runner_;

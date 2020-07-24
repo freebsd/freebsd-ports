@@ -1,11 +1,11 @@
---- ui/views/style/platform_style.cc.orig	2019-03-11 22:01:19 UTC
+--- ui/views/style/platform_style.cc.orig	2020-02-03 21:53:14 UTC
 +++ ui/views/style/platform_style.cc
-@@ -18,7 +18,7 @@
+@@ -74,7 +74,7 @@ gfx::Range PlatformStyle::RangeToDeleteBackwards(const
  
- #if defined(OS_CHROMEOS)
- #include "ui/views/controls/scrollbar/overlay_scroll_bar.h"
--#elif defined(OS_LINUX)
-+#elif defined(OS_LINUX) || defined(OS_BSD)
- #define DESKTOP_LINUX
- #endif
+ #endif  // OS_MACOSX
  
+-#if !BUILDFLAG(ENABLE_DESKTOP_AURA) || !defined(OS_LINUX)
++#if !BUILDFLAG(ENABLE_DESKTOP_AURA) || (!defined(OS_LINUX) && !defined(OS_BSD))
+ // static
+ std::unique_ptr<Border> PlatformStyle::CreateThemedLabelButtonBorder(
+     LabelButton* button) {

@@ -1,8 +1,8 @@
---- base/process/process_handle.h.orig	2019-03-11 22:00:51 UTC
+--- base/process/process_handle.h.orig	2019-10-21 19:06:18 UTC
 +++ base/process/process_handle.h
-@@ -64,7 +64,7 @@ BASE_EXPORT ProcessId GetCurrentProcId();
- // a process's PID.
- BASE_EXPORT uint32_t GetUniqueIdForProcess();
+@@ -103,7 +103,7 @@ BASE_EXPORT ProcessId GetCurrentProcId();
+ // processes may be reused.
+ BASE_EXPORT UniqueProcId GetUniqueIdForProcess();
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)

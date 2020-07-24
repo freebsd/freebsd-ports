@@ -1,7 +1,7 @@
---- base/test/generate_fontconfig_caches.cc.orig	2019-03-11 22:00:51 UTC
+--- base/test/generate_fontconfig_caches.cc.orig	2019-12-16 21:51:21 UTC
 +++ base/test/generate_fontconfig_caches.cc
-@@ -57,7 +57,14 @@ int main() {
-   base::TearDownFontconfig();
+@@ -59,7 +59,14 @@ int main() {
+   FcFini();
  
    // Check existence of intended fontconfig cache file.
 +#if defined(OS_BSD)

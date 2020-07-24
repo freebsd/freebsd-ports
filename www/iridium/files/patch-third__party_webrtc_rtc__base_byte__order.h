@@ -1,11 +1,11 @@
---- third_party/webrtc/rtc_base/byte_order.h.orig	2019-03-11 22:08:15 UTC
+--- third_party/webrtc/rtc_base/byte_order.h.orig	2019-06-04 18:58:09 UTC
 +++ third_party/webrtc/rtc_base/byte_order.h
-@@ -79,7 +79,7 @@
- #error WEBRTC_ARCH_BIG_ENDIAN or WEBRTC_ARCH_LITTLE_ENDIAN must be defined.
+@@ -89,7 +89,7 @@
  #endif  // defined(WEBRTC_ARCH_LITTLE_ENDIAN)
+ 
  #elif defined(WEBRTC_POSIX)
 -#include <endian.h>
 +#include <sys/endian.h>
- #endif
- 
- namespace rtc {
+ #else
+ #error "Missing byte order functions for this arch."
+ #endif  // defined(WEBRTC_MAC)

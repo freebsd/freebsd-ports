@@ -1,6 +1,6 @@
---- chrome/browser/extensions/install_signer.cc.orig	2019-03-17 20:14:24 UTC
+--- chrome/browser/extensions/install_signer.cc.orig	2020-03-16 18:39:44 UTC
 +++ chrome/browser/extensions/install_signer.cc
-@@ -293,13 +293,13 @@ void LogRequestStartHistograms() {
+@@ -294,13 +294,13 @@ void LogRequestStartHistograms() {
    DCHECK(g_single_thread_checker.Get().CalledOnValidThread());
  
    // Process::Current().CreationTime is only defined on some platforms.

@@ -1,4 +1,4 @@
---- third_party/skia/third_party/vulkanmemoryallocator/include/vk_mem_alloc.h.orig	2019-03-17 01:47:13 UTC
+--- third_party/skia/third_party/vulkanmemoryallocator/include/vk_mem_alloc.h.orig	2020-04-24 08:05:43 UTC
 +++ third_party/skia/third_party/vulkanmemoryallocator/include/vk_mem_alloc.h
 @@ -2232,7 +2232,7 @@ remove them if not needed.
  #include <mutex> // for std::mutex
