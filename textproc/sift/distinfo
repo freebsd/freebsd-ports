@@ -1,10 +1,10 @@
-TIMESTAMP = 1593003032
+TIMESTAMP = 1595416541
 SHA256 (svent-sift-v0.9.0_GH0.tar.gz) = bbbd5c472c36b78896cd7ae673749d3943621a6d5523d47973ed2fc6800ae4c8
 SIZE (svent-sift-v0.9.0_GH0.tar.gz) = 37442
-SHA256 (golang-crypto-75b2880_GH0.tar.gz) = c19fbac65141e27953fdc15e597d7d0bcf9b07b55eea67f726c76876b00a8726
-SIZE (golang-crypto-75b2880_GH0.tar.gz) = 1729893
-SHA256 (golang-sys-ed371f2_GH0.tar.gz) = a5d0a24cee6555af439d565d1715ba7b8b394e28238947f8b8f9cc7d9cddd0d8
-SIZE (golang-sys-ed371f2_GH0.tar.gz) = 1054216
+SHA256 (golang-crypto-948cd5f_GH0.tar.gz) = ea8e5aa5af90a7621702e75ca128185f0ffe104d9414ff2078155afbad620f82
+SIZE (golang-crypto-948cd5f_GH0.tar.gz) = 1732460
+SHA256 (golang-sys-ddb9806_GH0.tar.gz) = c2f80314640b3c884f8941cfec5656681796dc17332c39ad83991d4dd12df91b
+SIZE (golang-sys-ddb9806_GH0.tar.gz) = 1054331
 SHA256 (svent-go-flags-4bcbad3_GH0.tar.gz) = 8fb342e5d1ad220c7040a6f185f39a38679f9c88e24716fcc6f2fef2ee09825a
 SIZE (svent-go-flags-4bcbad3_GH0.tar.gz) = 45988
 SHA256 (svent-go-nbreader-7cef48d_GH0.tar.gz) = 62e0248ba434aa54461f554afc532cd5a4393ce55c35fdf750175fa14f997448
