@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pghero
-PORTVERSION=	2.2.1
+PORTVERSION=	2.6.0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails50
@@ -12,7 +12,7 @@ COMMENT=	Performance dashboard for Postgres
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-activerecord50>=0:databases/rubygem-activerecord50
+RUN_DEPENDS=	rubygem-activerecord50>=5:databases/rubygem-activerecord50
 
 USES=		gem
 USE_RUBY=	yes
