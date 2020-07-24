@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hammer_cli
-PORTVERSION=	0.15.1
+PORTVERSION=	0.19.2
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	RG
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-apipie-bindings>=0.2.0:devel/rubygem-apipie-bindings \
 		rubygem-awesome_print>=0:devel/rubygem-awesome_print \
-		rubygem-clamp11>=1.1:devel/rubygem-clamp11 \
+		rubygem-clamp11>=1.1<1.2.0:devel/rubygem-clamp11 \
 		rubygem-fast_gettext>=0:devel/rubygem-fast_gettext \
 		rubygem-highline>=0:devel/rubygem-highline \
 		rubygem-locale>=2.0.6:devel/rubygem-locale \
