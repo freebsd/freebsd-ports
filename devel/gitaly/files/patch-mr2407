@@ -1,0 +1,45 @@
+--- Makefile.orig	2020-07-21 14:44:09 UTC
++++ Makefile
+@@ -62,17 +62,10 @@ GIT_VERSION           ?= v2.27.0
+ ifeq (${OS},Darwin)
+     PROTOC_URL            ?= https://github.com/protocolbuffers/protobuf/releases/download/v${PROTOC_VERSION}/protoc-${PROTOC_VERSION}-osx-x86_64.zip
+     PROTOC_HASH           ?= 0decc6ce5beed07f8c20361ddeb5ac7666f09cf34572cca530e16814093f9c0c
+-    GOLANGCI_LINT_ARCHIVE ?= golangci-lint-${GOLANGCI_LINT_VERSION}-darwin-amd64
+-    GOLANGCI_LINT_HASH    ?= 3fb1a1683a29c6c0a8cd76135f62b606fbdd538d5a7aeab94af1af70ffdc2fd4
+ else ifeq (${OS},Linux)
+     PROTOC_URL            ?= https://github.com/protocolbuffers/protobuf/releases/download/v${PROTOC_VERSION}/protoc-${PROTOC_VERSION}-linux-x86_64.zip
+     PROTOC_HASH           ?= 6003de742ea3fcf703cfec1cd4a3380fd143081a2eb0e559065563496af27807
+-    GOLANGCI_LINT_ARCHIVE ?= golangci-lint-${GOLANGCI_LINT_VERSION}-linux-amd64
+-    GOLANGCI_LINT_HASH    ?= 8d345e4e88520e21c113d81978e89ad77fc5b13bfdf20e5bca86b83fc4261272
+-else
+-    $(error Unsupported OS: ${OS})
+ endif
+-GOLANGCI_LINT_URL ?= https://github.com/golangci/golangci-lint/releases/download/v${GOLANGCI_LINT_VERSION}/${GOLANGCI_LINT_ARCHIVE}.tar.gz
+ 
+ # Git target
+ GIT_REPO_URL      ?= https://gitlab.com/gitlab-org/gitlab-git.git
+@@ -351,6 +344,7 @@ ${PROTOC}: ${BUILD_DIR}/protoc.zip | ${BUILD_DIR}
+ 	cd ${BUILD_DIR}/protoc && unzip ${BUILD_DIR}/protoc.zip
+ 
+ ${BUILD_DIR}/protoc.zip: | ${BUILD_DIR}
++	${Q}if [ -z "${PROTOC_URL}" ]; then echo "Cannot generate protos on unsupported platform ${OS}" && exit 1; fi
+ 	curl -o $@.tmp --silent --show-error -L ${PROTOC_URL}
+ 	${Q}printf '${PROTOC_HASH}  $@.tmp' | shasum -a256 -c -
+ 	${Q}mv $@.tmp $@
+@@ -378,14 +372,8 @@ ${PROTOC_GEN_GO}: ${BUILD_DIR}/go.mod | ${BUILD_DIR}/b
+ ${PROTOC_GEN_GITALY}: ${BUILD_DIR}/go.mod proto-lint | ${BUILD_DIR}/bin
+ 	${Q}go build -o $@ gitlab.com/gitlab-org/gitaly/proto/go/internal/cmd/protoc-gen-gitaly
+ 
+-${GOLANGCI_LINT}: ${BUILD_DIR}/golangci-lint.tar.gz | ${BUILD_DIR}/bin
+-	${Q}tar -x -z --strip-components 1 -C ${BUILD_DIR}/bin -f ${BUILD_DIR}/golangci-lint.tar.gz ${GOLANGCI_LINT_ARCHIVE}/golangci-lint
+-	touch $@
+-
+-${BUILD_DIR}/golangci-lint.tar.gz: | ${BUILD_DIR}
+-	curl -o $@.tmp --silent --show-error -L ${GOLANGCI_LINT_URL}
+-	${Q}printf '${GOLANGCI_LINT_HASH}  $@.tmp' | shasum -a256 -c -
+-	${Q}mv $@.tmp $@
++${GOLANGCI_LINT}: ${BUILD_DIR}/go.mod | ${BUILD_DIR}/bin
++	${Q}cd ${BUILD_DIR} && go get github.com/golangci/golangci-lint/cmd/golangci-lint@v${GOLANGCI_LINT_VERSION}
+ 
+ ${TEST_REPO}:
+ 	git clone --bare --quiet https://gitlab.com/gitlab-org/gitlab-test.git $@

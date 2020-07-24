@@ -135,6 +135,7 @@
 %%DATADIR%%/ruby/lib/gitlab/rails_logger.rb
 %%DATADIR%%/ruby/lib/gitlab/ref_matcher.rb
 %%DATADIR%%/ruby/lib/gitlab/utils/strong_memoize.rb
+%%DATADIR%%/ruby/lib/praefect/transaction.rb
 %%DATADIR%%/ruby/proto/README.md
 %%DATADIR%%/ruby/proto/gitaly.rb
 %%DATADIR%%/ruby/proto/gitaly/blob_pb.rb

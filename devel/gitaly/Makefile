@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitaly
-DISTVERSION=	13.1.4
+DISTVERSION=	13.2.0
 PORTREVISION=	0
 CATEGORIES=	devel
 
@@ -25,7 +25,7 @@ MY_DEPENDS=	git>=2.26:devel/git \
 		rubygem-sentry-raven29>=2.9.0<2.10.0:devel/rubygem-sentry-raven29 \
 		rubygem-faraday0>=0.12<1.0:www/rubygem-faraday0 \
 		rubygem-rbtrace>0:devel/rubygem-rbtrace \
-		rubygem-gitlab-labkit>=0.12.0<0.12.1:devel/rubygem-gitlab-labkit \
+		rubygem-gitlab-labkit>=0.12.1<0.13:devel/rubygem-gitlab-labkit \
 		rubygem-licensee8>=8.9.0<8.10.0:devel/rubygem-licensee8 \
 		rubygem-google-protobuf38>=3.8.0<3.9.0:devel/rubygem-google-protobuf38
 BUILD_DEPENDS=	gem:devel/ruby-gems \
@@ -42,7 +42,7 @@ MAKE_ENV=	GOFLAGS="${GO_BUILDFLAGS}"
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find this here: https://gitlab.com/gitlab-org/gitaly/-/tags
-GL_COMMIT=	f2fb94486d4bc5102b99960786abe8f85d8ff2fd
+GL_COMMIT=	5934aeb1ab3ddb0f89d6b1edd3089cd311d6c06d
 
 # for go dependencies
 USE_GITHUB=	nodefault

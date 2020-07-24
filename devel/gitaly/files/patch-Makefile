@@ -1,0 +1,21 @@
+--- Makefile.orig	2020-07-22 11:23:09 UTC
++++ Makefile
+@@ -44,7 +44,7 @@ PROTOC_GEN_GITALY := ${BUILD_DIR}/bin/protoc-gen-gital
+ GO_JUNIT_REPORT   := ${BUILD_DIR}/bin/go-junit-report
+ 
+ # Build information
+-BUNDLE_FLAGS    ?= $(shell test -f ${SOURCE_DIR}/../.gdk-install-root && echo --no-deployment || echo --deployment)
++BUNDLE_FLAGS    ?= $(shell test -f ${SOURCE_DIR}/../.gdk-install-root && echo --no-deployment || echo --local)
+ GITALY_PACKAGE  := gitlab.com/gitlab-org/gitaly
+ BUILD_TIME      := $(shell date +"%Y%m%d.%H%M%S")
+ GITALY_VERSION  := $(shell git describe --match v* 2>/dev/null | sed 's/^v//' || cat ${SOURCE_DIR}/VERSION 2>/dev/null || echo unknown)
+@@ -317,8 +317,7 @@ build-git:
+ # step. Both Omnibus and CNG assume it is in the Gitaly root, not in
+ # _build. Hence the '../' in front.
+ ${SOURCE_DIR}/.ruby-bundle: ${GITALY_RUBY_DIR}/Gemfile.lock ${GITALY_RUBY_DIR}/Gemfile
+-	${Q}cd ${GITALY_RUBY_DIR} && bundle config # for debugging
+-	${Q}cd ${GITALY_RUBY_DIR} && bundle install ${BUNDLE_FLAGS}
++	${Q}cd ${GITALY_RUBY_DIR} && rm -f Gemfile.lock && bundle install ${BUNDLE_FLAGS}
+ 	${Q}touch $@
+ 
+ ${SOURCE_DIR}/NOTICE: ${BUILD_DIR}/NOTICE
