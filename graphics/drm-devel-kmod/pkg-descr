@@ -1,6 +1,7 @@
-amdgpu, i915, and radeon DRM modules for the linuxkpi-based KMS components.
-Currently corresponding to Linux 5.0 DRM.
+amdgpu, i915, radeon, vmwgfx and vboxvideo DRM modules for the linuxkpi-based
+KMS components.
+Currently corresponding to Linux 5.3 DRM.
 This version is the development version and only works on FreeBSD CURRENT.
 amdgpu and radeonkms are known to fail with EFI boot.
 
-WWW: https://github.com/FreeBSDDesktop/kms-drm
+WWW: https://github.com/freebsd/drm-kmod
