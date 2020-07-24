@@ -131,7 +131,6 @@
     SUBDIR += drive
     SUBDIR += dropbox-api-command
     SUBDIR += dropbox-uploader
-    SUBDIR += dshell
     SUBDIR += dtcp
     SUBDIR += dtcpclient
     SUBDIR += dual-dhclient
