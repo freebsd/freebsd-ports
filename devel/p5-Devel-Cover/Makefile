@@ -23,18 +23,18 @@ OPTIONS_DEFINE=	CPANCOVER HTML_REPORTS POD_COVERAGE SYNTAX_HIGHLIGHTING
 OPTIONS_DEFAULT=CPANCOVER HTML_REPORTS POD_COVERAGE
 OPTIONS_SUB=	yes
 
-CPANCOVER_DESC=			Coverage statistics on CPAN modules
+CPANCOVER_DESC=		Coverage statistics on CPAN modules
 CPANCOVER_RUN_DEPENDS=	p5-Parallel-Iterator>=0:devel/p5-Parallel-Iterator \
-				p5-Template-Toolkit>=2:www/p5-Template-Toolkit
+			p5-Template-Toolkit>=2:www/p5-Template-Toolkit
 
-HTML_REPORTS_DESC=		Build HTML reports with p5-HTML-Parser
+HTML_REPORTS_DESC=	Build HTML reports with p5-HTML-Parser
 HTML_REPORTS_RUN_DEPENDS=	p5-HTML-Parser>=0:www/p5-HTML-Parser
 
-POD_COVERAGE_DESC=		POD coverage via p5-Pod-Coverage
+POD_COVERAGE_DESC=	POD coverage via p5-Pod-Coverage
 POD_COVERAGE_RUN_DEPENDS=	p5-Pod-Coverage>=0.06:devel/p5-Pod-Coverage
 
-SYNTAX_HIGHLIGHTING_DESC=		Syntax highlighting via p5-PPI-HTML
-SYNTAX_HIGHLIGHTING_RUN_DEPENDS=	p5-PPI-HTML>=1.07:textproc/p5-PPI-HTML
+SYNTAX_HIGHLIGHTING_DESC=	Syntax highlighting via p5-PPI-HTML
+SYNTAX_HIGHLIGHTING_RUN_DEPENDS=p5-PPI-HTML>=1.07:textproc/p5-PPI-HTML
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Devel/Cover/Cover.so
