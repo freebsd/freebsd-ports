@@ -65,6 +65,16 @@ you update your ports collection, before attempting any port upgrades.
 
   # ln -s /etc/profile /usr/local/etc/
 
+  If you encounter the following error, you may have the obsolete
+  /lib/libreadline.so.8 lying around after an incomplete base update:
+
+  ld-elf.so.1: Undefined symbol "rl_signal_event_hook" referenced from COPY relocation in /usr/local/bin/bash
+
+  Please refer to to (23.5.6.2) in the FreeBSD Handbook on how to
+  safely check for outdated files and libraries:
+
+  https://www.freebsd.org/doc/en/books/handbook/makeworld.html
+
 20200713:
   AFFECTS: users of mail/php7[2-4]-imap
   AUTHOR: tz@FreeBSD.org
