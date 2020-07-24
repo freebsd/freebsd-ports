@@ -1661,6 +1661,7 @@
     SUBDIR += p5-Alias
     SUBDIR += p5-Alien-Base-ModuleBuild
     SUBDIR += p5-Alien-Build
+    SUBDIR += p5-Alien-LibGumbo
     SUBDIR += p5-Alien-SDL
     SUBDIR += p5-Alzabo
     SUBDIR += p5-Any-Daemon

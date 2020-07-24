@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Alien/LibGumbo.pm
+%%SITE_PERL%%/Alien/LibGumbo/ConfigData.pm
+%%SITE_PERL%%/Alien/LibGumbo/Install/Files.pm
+%%SITE_PERL%%/auto/share/dist/Alien-LibGumbo/README
+%%PERL5_MAN3%%/Alien::LibGumbo.3.gz
+%%PERL5_MAN3%%/Alien::LibGumbo::ConfigData.3.gz
