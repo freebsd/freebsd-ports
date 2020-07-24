@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	netpbm
-DISTVERSION=	10.91.00
+DISTVERSION=	10.91.01
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/t6/netpbm/releases/download/v${DISTVERSION}/
 
@@ -26,8 +26,7 @@ USES=		ghostscript:test gmake perl5 shebangfix tar:xz
 USE_LDCONFIG=	yes
 USE_PERL5=	build test
 
-SHEBANG_FILES=	buildtools/makeman converter/pbm/pbmtox10bm \
-		converter/ppm/hpcdtoppm/pcdovtoppm editor/pnmflip \
+SHEBANG_FILES=	buildtools/makeman converter/pbm/pbmtox10bm editor/pnmflip \
 		editor/pnmquant editor/ppmfade editor/ppmquant editor/ppmshadow \
 		generator/ppmrainbow test/*.test test/Available-Testprog \
 		test/Execute-Tests
