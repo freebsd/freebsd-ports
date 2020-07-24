@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	grape-path-helpers
-PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTVERSION=	1.3.0
+PORTREVISION=	0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-activesupport60>=0:devel/rubygem-activesupport60 \
-		rubygem-grape>=1.0<2:devel/rubygem-grape \
+		rubygem-grape>=1.3<2:devel/rubygem-grape \
 		rubygem-rake>=12:devel/rubygem-rake
 
 USES=		gem
