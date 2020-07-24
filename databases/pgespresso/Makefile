@@ -3,7 +3,7 @@
 
 PORTNAME=	pgespresso
 PORTVERSION=	1.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases
 
 MAINTAINER=	matthew@FreeBSD.org
@@ -14,7 +14,7 @@ LICENSE=	PostgreSQL
 USE_GITHUB=	yes
 GH_ACCOUNT=	2ndquadrant-it
 
-USES=		gmake pgsql:9.2-9.5
+USES=		gmake pgsql:9.5
 LLD_UNSAFE=	yes
 WANT_PGSQL=	server
 
