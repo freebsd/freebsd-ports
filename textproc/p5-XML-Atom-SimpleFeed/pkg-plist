@@ -1,5 +1,3 @@
-%%PERL5_MAN3%%/XML::Atom::SimpleFeed.3.gz
 %%SITE_PERL%%/XML/Atom/SimpleFeed.pm
 %%SITE_PERL%%/XML/Atom/boilerplate.pl
-@comment %%SITE_PERL%%/XML/Atom/t.pl
-@comment %%SITE_PERL%%/XML/Atom/x.pl
+%%PERL5_MAN3%%/XML::Atom::SimpleFeed.3.gz
