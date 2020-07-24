@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Device-Modem
-PORTVERSION=	1.57
-PORTREVISION=	2
+PORTVERSION=	1.59
 CATEGORIES=	comms perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,11 +17,13 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Device-SerialPort>=0:comms/p5-Device-SerialPort
 
 USES=		perl5 shebangfix
+USE_PERL5=	configure
+
+NO_ARCH=	yes
+
 SHEBANG_FILES=	examples/xmodem.pl \
 		examples/shell.pl \
 		examples/caller-id.pl
-USE_PERL5=	configure
-NO_ARCH=	yes
 
 OPTIONS_DEFINE=	EXAMPLES
 
