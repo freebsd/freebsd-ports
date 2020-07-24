@@ -26,44 +26,47 @@ MC=	${PORTNAME}
 .endif
 
 USE_GITHUB=	yes
-GHTAG=		RELEASE.2020-06-20T00-18-43Z
-COMMIT_ID=	dd47bdfeaa75362def0ffd352ed59a83b6dfb1a8
-
+GHTAG=		RELEASE.2020-07-17T02-52-20Z
+COMMIT_ID=	f19a10dce2ab5a0fbc8c0ff63cf8e4b4572ad582
 GH_TUPLE=	minio:mc:${GHTAG}:DEFAULT \
 		StackExchange:wmi:cbe66965904d:stackexchange_wmi/vendor/github.com/StackExchange/wmi \
 		cheggaaa:pb:v1.0.28:cheggaaa_pb/vendor/github.com/cheggaaa/pb \
-		coreos:etcd:v3.3.12:coreos_etcd/vendor/github.com/coreos/etcd \
+		coreos:go-semver:v0.2.0:coreos_go_semver/vendor/github.com/coreos/go-semver \
+		coreos:go-systemd:v22.0.0:coreos_go_systemd_v22/vendor/github.com/coreos/go-systemd/v22 \
 		dgrijalva:jwt-go:v3.2.0:dgrijalva_jwt_go/vendor/github.com/dgrijalva/jwt-go \
 		dustin:go-humanize:v1.0.0:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
+		etcd-io:etcd:58bb8ae09f8e:etcd_io_etcd/vendor/go.etcd.io/etcd/v3 \
 		fatih:color:v1.7.0:fatih_color/vendor/github.com/fatih/color \
 		fatih:structs:v1.1.0:fatih_structs/vendor/github.com/fatih/structs \
 		go-check:check:8fa46927fb4f:go_check_check/vendor/gopkg.in/check.v1 \
-		go-ini:ini:v1.55.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
+		go-ini:ini:v1.57.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
 		go-ole:go-ole:v1.2.4:go_ole_go_ole/vendor/github.com/go-ole/go-ole \
 		go-yaml:yaml:v2.2.8:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
-		gogo:protobuf:v1.2.1:gogo_protobuf/vendor/github.com/gogo/protobuf \
-		golang:crypto:1d94cc7ab1c6:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:d3edc9973b7e:golang_net/vendor/golang.org/x/net \
-		golang:protobuf:v1.3.2:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:85ca7c5b95cd:golang_sys/vendor/golang.org/x/sys \
-		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
+		gogo:protobuf:v1.3.1:gogo_protobuf/vendor/github.com/gogo/protobuf \
+		golang:crypto:948cd5f35899:golang_crypto/vendor/golang.org/x/crypto \
+		golang:net:ab3426394381:golang_net/vendor/golang.org/x/net \
+		golang:protobuf:v1.4.0:golang_protobuf/vendor/github.com/golang/protobuf \
+		golang:sys:ddb9806d33ae:golang_sys/vendor/golang.org/x/sys \
+		golang:text:v0.3.3:golang_text/vendor/golang.org/x/text \
 		google:go-genproto:24fa4b261c55:google_go_genproto/vendor/google.golang.org/genproto \
-		grpc:grpc-go:v1.22.0:grpc_grpc_go/vendor/google.golang.org/grpc \
+		google:uuid:v1.1.1:google_uuid/vendor/github.com/google/uuid \
+		grpc:grpc-go:v1.26.0:grpc_grpc_go/vendor/google.golang.org/grpc \
 		h2non:filetype:v1.0.5:h2non_filetype/vendor/gopkg.in/h2non/filetype.v1 \
 		hashicorp:errwrap:v1.0.0:hashicorp_errwrap/vendor/github.com/hashicorp/errwrap \
 		hashicorp:go-multierror:v1.0.0:hashicorp_go_multierror/vendor/github.com/hashicorp/go-multierror \
 		inconshreveable:go-update:8152e7eb6ccf:inconshreveable_go_update/vendor/github.com/inconshreveable/go-update \
-		json-iterator:go:v1.1.9:json_iterator_go/vendor/github.com/json-iterator/go \
+		json-iterator:go:v1.1.10:json_iterator_go/vendor/github.com/json-iterator/go \
 		klauspost:compress:v1.10.3:klauspost_compress/vendor/github.com/klauspost/compress \
-		klauspost:cpuid:v1.2.4:klauspost_cpuid/vendor/github.com/klauspost/cpuid \
-		kr:text:v0.2.0:kr_text/vendor/github.com/kr/text \
+		klauspost:cpuid:v1.3.1:klauspost_cpuid/vendor/github.com/klauspost/cpuid \
+		kr:text:v0.1.0:kr_text/vendor/github.com/kr/text \
 		mattn:go-colorable:v0.1.4:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
+		mattn:go-ieproxy:v0.0.1:mattn_go_ieproxy/vendor/github.com/mattn/go-ieproxy \
 		mattn:go-isatty:v0.0.8:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
-		mattn:go-runewidth:v0.0.5:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
+		mattn:go-runewidth:v0.0.2:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
 		minio:cli:v1.22.0:minio_cli/vendor/github.com/minio/cli \
 		minio:md5-simd:v1.1.0:minio_md5_simd/vendor/github.com/minio/md5-simd \
-		minio:minio-go:a57fec8037ec:minio_minio_go_v6/vendor/github.com/minio/minio-go/v6 \
-		minio:minio:cccf2de129da:minio_minio/vendor/github.com/minio/minio \
+		minio:minio-go:16b4b137ee4b:minio_minio_go_v7/vendor/github.com/minio/minio-go/v7 \
+		minio:minio:778e9c864f67:minio_minio/vendor/github.com/minio/minio \
 		minio:sha256-simd:v0.1.1:minio_sha256_simd/vendor/github.com/minio/sha256-simd \
 		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
 		modern-go:concurrent:bacd9c7ef1dd:modern_go_concurrent/vendor/github.com/modern-go/concurrent \
@@ -74,9 +77,13 @@ GH_TUPLE=	minio:mc:${GHTAG}:DEFAULT \
 		pkg:profile:v1.3.0:pkg_profile/vendor/github.com/pkg/profile \
 		pkg:xattr:v0.4.1:pkg_xattr/vendor/github.com/pkg/xattr \
 		posener:complete:6ffe496ea953:posener_complete/vendor/github.com/posener/complete \
+		protocolbuffers:protobuf-go:v1.22.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
 		rjeczalik:notify:v0.9.2:rjeczalik_notify/vendor/github.com/rjeczalik/notify \
 		secure-io:sio-go:v0.3.0:secure_io_sio_go/vendor/github.com/secure-io/sio-go \
-		shirou:gopsutil:53cec6b37e6a:shirou_gopsutil/vendor/github.com/shirou/gopsutil
+		shirou:gopsutil:53cec6b37e6a:shirou_gopsutil/vendor/github.com/shirou/gopsutil \
+		uber-go:atomic:v1.6.0:uber_go_atomic/vendor/go.uber.org/atomic \
+		uber-go:multierr:v1.5.0:uber_go_multierr/vendor/go.uber.org/multierr \
+		uber-go:zap:v1.14.1:uber_go_zap/vendor/go.uber.org/zap
 
 PLIST_FILES=	bin/${MC}
 GO_BUILDFLAGS=	-ldflags=" \
