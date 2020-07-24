@@ -11,7 +11,7 @@ PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	60f45972a543.patch:-p1 # avoid patch conflict
 PATCHFILES+=	7da875d34854.patch:-p1 # wayland, see #663
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	vulcan@wired.sh
 COMMENT=	Adjusts the color temperature of your screen
 
 LICENSE=	GPLv3
