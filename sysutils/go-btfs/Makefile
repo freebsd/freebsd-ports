@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	go-btfs
-PORTVERSION=	1.3.3
+PORTVERSION=	1.3.4
 DISTVERSIONPREFIX=	btfs-v
 CATEGORIES=	sysutils
 
@@ -95,7 +95,6 @@ GH_TUPLE=	\
 		golang:crypto:75b288015ac9:golang_crypto/vendor/golang.org/x/crypto \
 		golang:gddo:af0f2af80721:golang_gddo/vendor/github.com/golang/gddo \
 		golang:lint:fdd1cda4f05f:golang_lint/vendor/golang.org/x/lint \
-		golang:mock:v1.4.3:golang_mock/vendor/github.com/golang/mock \
 		golang:net:4c5254603344:golang_net/vendor/golang.org/x/net \
 		golang:protobuf:v1.3.3:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:snappy:196ae77b8a26:golang_snappy/vendor/github.com/golang/snappy \
