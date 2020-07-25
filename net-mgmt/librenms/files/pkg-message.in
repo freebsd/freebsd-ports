@@ -75,6 +75,8 @@ You need an APP_KEY.
 
 After that, follow the LibreNMS documentation for configuration.
 
+You probably want to install lang/python3 to get validate.php clean.
+
 EOM
 }
 { type: upgrade
@@ -101,6 +103,8 @@ see https://community.librenms.org/t/dropping-support-for-php-7-1-and-python-2/1
 Your existing crontab entries can be deleted.
 
 For more information, see pkg info --pkg-message librenms
+
+You probably want to install lang/python3 to get validate.php clean.
 
 EOM
 }
