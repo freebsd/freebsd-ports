@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	liveMedia
-DISTVERSION=	2020.07.09
+DISTVERSION=	2020.07.21
 PORTEPOCH=	2
 CATEGORIES=	net devel
 MASTER_SITES=	http://www.live555.com/liveMedia/public/ \
