@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	postfix
-DISTVERSION=	3.6-20200627
+DISTVERSION=	3.6-20200720
 PORTREVISION?=	0
 PORTEPOCH=	6
 CATEGORIES=	mail
@@ -31,7 +31,7 @@ CONFLICTS_INSTALL?=	courier-0.* opensmtpd-[0-9]* sendmail-8.* sendmail+*-8.* \
 
 USERS=		postfix
 GROUPS=		mail maildrop postfix
-USES=		shebangfix cpe
+USES=		shebangfix cpe ssl
 SHEBANG_FILES=	auxiliary/qshape/qshape.pl
 
 USE_RC_SUBR=	postfix
@@ -59,6 +59,7 @@ SASLKMIT_LIB_DEPENDS=	libkrb5.so:security/krb5
 SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 SQLITE_USES=		sqlite
 TLS_USES=		ssl
+BROKEN_SSL=		openssl
 
 BLACKLISTD_DESC=	Enable blacklistd support (FreeBSD 11.0 and later only)
 CDB_DESC=	CDB maps lookups
@@ -89,6 +90,10 @@ MAKEFILEFLAGS+=	DEBUG=
 .endif
 
 MAKEFILEFLAGS+=	pie=yes CC="${CC}" OPT="${CFLAGS}"
+
+.if ${SSL_DEFAULT} == base
+BROKEN_FreeBSD_11=	error: OpenSSL-1.1.1 is the minimum supported version
+.endif
 
 .if ${PORT_OPTIONS:MINST_BASE}
 .if defined(SASL_SLAVE)
