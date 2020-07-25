@@ -2,7 +2,7 @@
 
 PORTNAME=	softether
 DISTVERSION=	4.34-9745
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security net-vpn
 MASTER_SITES=	https://www.softether-download.com/files/softether/v${DISTVERSION}-rtm-2020.04.05-tree/Source_Code/
 DISTNAME=	${PORTNAME}-src-v${DISTVERSION}-rtm
