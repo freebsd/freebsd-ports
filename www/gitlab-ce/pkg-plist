@@ -102,9 +102,6 @@
 %%WWWDIR%%/app/assets/images/auth_buttons/signin_with_google.png
 %%WWWDIR%%/app/assets/images/auth_buttons/twitter_64.png
 %%WWWDIR%%/app/assets/images/aws_logo.svg
-%%WWWDIR%%/app/assets/images/bot_avatars/alert-bot.png
-%%WWWDIR%%/app/assets/images/bot_avatars/security-bot.png
-%%WWWDIR%%/app/assets/images/bot_avatars/support-bot.png
 %%WWWDIR%%/app/assets/images/ci_favicons/canary/favicon_status_canceled.ico
 %%WWWDIR%%/app/assets/images/ci_favicons/canary/favicon_status_created.ico
 %%WWWDIR%%/app/assets/images/ci_favicons/canary/favicon_status_failed.ico
@@ -10105,6 +10102,7 @@
 %%WWWDIR%%/db/migrate/20200712084655_create_dast_sites.rb
 %%WWWDIR%%/db/migrate/20200712235622_create_dast_site_profiles.rb
 %%WWWDIR%%/db/migrate/20200713152443_add_background_migration_job_index_for_partitioning_migrations.rb
+%%WWWDIR%%/db/migrate/20200715202659_add_index_on_package_files_file_store.rb
 %%WWWDIR%%/db/migrate/20200716044023_add_entity_path_to_audit_events.rb
 %%WWWDIR%%/db/migrate/20200716120419_add_text_limit_on_entity_path_to_audit_events.rb
 %%WWWDIR%%/db/optional_migrations/composite_primary_keys.rb
@@ -13494,6 +13492,9 @@
 %%WWWDIR%%/lib/api/variables.rb
 %%WWWDIR%%/lib/api/version.rb
 %%WWWDIR%%/lib/api/wikis.rb
+%%WWWDIR%%/lib/assets/images/bot_avatars/alert-bot.png
+%%WWWDIR%%/lib/assets/images/bot_avatars/security-bot.png
+%%WWWDIR%%/lib/assets/images/bot_avatars/support-bot.png
 %%WWWDIR%%/lib/backup.rb
 %%WWWDIR%%/lib/backup/artifacts.rb
 %%WWWDIR%%/lib/backup/builds.rb
