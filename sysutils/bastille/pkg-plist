@@ -15,6 +15,7 @@ bin/bastille
 %%DATADIR%%/import.sh
 %%DATADIR%%/limits.sh
 %%DATADIR%%/list.sh
+%%DATADIR%%/mount.sh
 %%DATADIR%%/pkg.sh
 %%DATADIR%%/rdr.sh
 %%DATADIR%%/rename.sh
@@ -25,6 +26,7 @@ bin/bastille
 %%DATADIR%%/sysrc.sh
 %%DATADIR%%/template.sh
 %%DATADIR%%/top.sh
+%%DATADIR%%/umount.sh
 %%DATADIR%%/update.sh
 %%DATADIR%%/upgrade.sh
 %%DATADIR%%/verify.sh
