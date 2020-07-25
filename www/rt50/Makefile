@@ -12,6 +12,8 @@ COMMENT=	Industrial-grade ticketing system written in Perl
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		missing dependencies (FreeBSD PR 248038 and 248040)
+
 CONFLICTS_INSTALL=	rt42-4.2* rt44-4.4* brlcad-[0-9]*
 
 NO_ARCH=	yes
