@@ -1,4 +1,4 @@
-TIMESTAMP = 1588238272
+TIMESTAMP = 1595687046
 SHA256 (softether/SoftEtherVPN-SoftEtherVPN-5.01.9674_GH0.tar.gz) = 0e63188a29afc8364814139cb8a3b3eca42af9ac4f28c4b6c4b1f582b14b2690
 SIZE (softether/SoftEtherVPN-SoftEtherVPN-5.01.9674_GH0.tar.gz) = 107044686
 SHA256 (softether/6d077a2.patch) = c011272b37337dbb2fca1304e419e3f0745e0ee5c81c22e09243319d30d5e464
@@ -7,3 +7,5 @@ SHA256 (softether/9da3bd8.patch) = 3debbaf0a7eda1e1981cfbe8979f091f416555696ab73
 SIZE (softether/9da3bd8.patch) = 2014
 SHA256 (softether/7128bbc.patch) = 19c0a1e605b1b51be06d211b0d147d9cf60d81b66d1af38a0c593a3682eed134
 SIZE (softether/7128bbc.patch) = 930
+SHA256 (softether/c757899.patch) = e6bd3258e02ce4b610f3f31f6d260289ce8ac7306c266f505f3fe6a626844d0b
+SIZE (softether/c757899.patch) = 1118
