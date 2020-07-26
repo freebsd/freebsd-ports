@@ -2,8 +2,7 @@
 
 PORTNAME=	spotify-tui
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.20.0
-PORTREVISION=	2
+DISTVERSION=	0.21.0
 CATEGORIES=	audio
 
 MAINTAINER=	vulcan@wired.sh
@@ -18,6 +17,7 @@ GH_ACCOUNT=	Rigellute
 USE_XORG=	xcb
 
 CARGO_CRATES=	addr2line-0.12.0 \
+		adler32-1.1.0 \
 		aho-corasick-0.7.10 \
 		ansi_term-0.11.0 \
 		anyhow-1.0.31 \
@@ -27,7 +27,7 @@ CARGO_CRATES=	addr2line-0.12.0 \
 		atty-0.2.14 \
 		autocfg-0.1.7 \
 		autocfg-1.0.0 \
-		backtrace-0.3.48 \
+		backtrace-0.3.49 \
 		base64-0.10.1 \
 		base64-0.11.0 \
 		bitflags-1.2.1 \
@@ -110,6 +110,7 @@ CARGO_CRATES=	addr2line-0.12.0 \
 		memchr-2.3.3 \
 		mime-0.3.16 \
 		mime_guess-2.0.3 \
+		miniz_oxide-0.3.7 \
 		mio-0.6.22 \
 		mio-named-pipes-0.1.6 \
 		mio-uds-0.6.8 \
@@ -123,7 +124,7 @@ CARGO_CRATES=	addr2line-0.12.0 \
 		objc-0.2.7 \
 		objc-foundation-0.1.1 \
 		objc_id-0.1.1 \
-		object-0.19.0 \
+		object-0.20.0 \
 		once_cell-1.3.1 \
 		openssl-0.10.29 \
 		openssl-probe-0.1.2 \
@@ -141,7 +142,7 @@ CARGO_CRATES=	addr2line-0.12.0 \
 		proc-macro-hack-0.5.15 \
 		proc-macro-nested-0.1.4 \
 		proc-macro2-0.4.30 \
-		proc-macro2-1.0.12 \
+		proc-macro2-1.0.18 \
 		quick-error-1.2.3 \
 		quote-0.6.13 \
 		quote-1.0.4 \
@@ -176,11 +177,11 @@ CARGO_CRATES=	addr2line-0.12.0 \
 		scopeguard-1.1.0 \
 		security-framework-0.4.4 \
 		security-framework-sys-0.4.3 \
-		serde-1.0.110 \
-		serde_derive-1.0.110 \
-		serde_json-1.0.53 \
+		serde-1.0.114 \
+		serde_derive-1.0.114 \
+		serde_json-1.0.56 \
 		serde_urlencoded-0.6.1 \
-		serde_yaml-0.8.12 \
+		serde_yaml-0.8.13 \
 		signal-hook-0.1.15 \
 		signal-hook-registry-1.2.0 \
 		slab-0.4.2 \
@@ -189,7 +190,7 @@ CARGO_CRATES=	addr2line-0.12.0 \
 		strsim-0.7.0 \
 		strsim-0.8.0 \
 		syn-0.15.44 \
-		syn-1.0.19 \
+		syn-1.0.33 \
 		synstructure-0.12.3 \
 		tempfile-3.1.0 \
 		termcolor-1.1.0 \
@@ -198,7 +199,7 @@ CARGO_CRATES=	addr2line-0.12.0 \
 		thiserror-impl-1.0.16 \
 		thread_local-1.0.1 \
 		time-0.1.43 \
-		tokio-0.2.21 \
+		tokio-0.2.22 \
 		tokio-macros-0.2.5 \
 		tokio-socks-0.2.2 \
 		tokio-tls-0.3.1 \
@@ -210,7 +211,7 @@ CARGO_CRATES=	addr2line-0.12.0 \
 		unicode-bidi-0.3.4 \
 		unicode-normalization-0.1.12 \
 		unicode-segmentation-1.6.0 \
-		unicode-width-0.1.7 \
+		unicode-width-0.1.8 \
 		unicode-xid-0.1.0 \
 		unicode-xid-0.2.0 \
 		url-1.7.2 \
