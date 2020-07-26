@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	haproxy
-DISTVERSION=	2.2-dev12
+DISTVERSION=	2.3-dev1
 CATEGORIES=	net www
-MASTER_SITES=	http://www.haproxy.org/download/2.2/src/devel/
+MASTER_SITES=	http://www.haproxy.org/download/2.3/src/devel/
 PKGNAMESUFFIX=	-devel
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
