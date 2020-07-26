@@ -22,11 +22,6 @@ USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	DOCS
-DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pylons-sphinx-themes>=0:textproc/py-pylons-sphinx-themes@${PY_FLAVOR} \
-			${PY_SPHINX} \
-			rst2html:textproc/py-docutils@${PY_FLAVOR}
-
 do-test:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py test
 
