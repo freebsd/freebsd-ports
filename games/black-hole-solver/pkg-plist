@@ -1,0 +1,9 @@
+bin/black-hole-solve
+include/black-hole-solver/black_hole_solver.h
+include/black-hole-solver/bool.h
+include/black-hole-solver/fcs_dllexport.h
+lib/libblack_hole_solver.so
+lib/libblack_hole_solver.so.1
+lib/libblack_hole_solver.so.1.0.0
+libdata/pkgconfig/libblack-hole-solver.pc
+share/man/man6/black-hole-solve.6.gz

@@ -1,0 +1,6 @@
+This is a solver, written in C, to solve Golf solitaire, the Solitaire variant
+called "Black Hole" and the one called "All in a Row". It provides a portable C
+library, and a command line application that after being fed with a layout will
+emit the cards to move.
+
+WWW: https://www.shlomifish.org/open-source/projects/black-hole-solitaire-solver

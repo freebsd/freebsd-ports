@@ -86,6 +86,7 @@
     SUBDIR += biorythm
     SUBDIR += bitefusion
     SUBDIR += black-box
+    SUBDIR += black-hole-solver
     SUBDIR += blackjackclient
     SUBDIR += blackshadeselite
     SUBDIR += blinken
