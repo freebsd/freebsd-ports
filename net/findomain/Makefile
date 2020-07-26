@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	findomain
-DISTVERSION=	1.7.0
-PORTREVISION=	1
+DISTVERSION=	2.1.1
 CATEGORIES=	net security
 
 MAINTAINER=	vulcan@wired.sh
@@ -38,7 +37,7 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		cc-1.0.50 \
 		cfg-if-0.1.10 \
 		clap-2.33.1 \
-		cloudabi-0.0.3 \
+		cloudabi-0.1.0 \
 		config-0.10.1 \
 		core-foundation-0.6.4 \
 		core-foundation-sys-0.6.2 \
@@ -85,6 +84,7 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		hyper-tls-0.4.1 \
 		idna-0.2.0 \
 		indexmap-1.3.1 \
+		instant-0.1.6 \
 		iovec-0.1.4 \
 		ipconfig-0.2.1 \
 		itoa-0.4.4 \
@@ -92,10 +92,10 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		kernel32-sys-0.2.2 \
 		lazy_static-1.4.0 \
 		lexical-core-0.6.2 \
-		libc-0.2.66 \
+		libc-0.2.73 \
 		linked-hash-map-0.3.0 \
 		linked-hash-map-0.5.2 \
-		lock_api-0.3.3 \
+		lock_api-0.4.1 \
 		log-0.4.8 \
 		lru-cache-0.1.2 \
 		matches-0.1.8 \
@@ -116,11 +116,11 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		num-traits-0.2.11 \
 		num_cpus-1.12.0 \
 		opaque-debug-0.2.3 \
-		openssl-0.10.29 \
+		openssl-0.10.30 \
 		openssl-probe-0.1.2 \
 		openssl-sys-0.9.58 \
-		parking_lot-0.10.0 \
-		parking_lot_core-0.7.0 \
+		parking_lot-0.11.0 \
+		parking_lot_core-0.8.0 \
 		percent-encoding-2.1.0 \
 		phf-0.8.0 \
 		phf_shared-0.8.0 \
@@ -129,21 +129,21 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		pin-project-lite-0.1.4 \
 		pin-utils-0.1.0-alpha.4 \
 		pkg-config-0.3.17 \
-		postgres-0.17.3 \
+		postgres-0.17.5 \
 		postgres-protocol-0.5.0 \
-		postgres-types-0.1.1 \
+		postgres-types-0.1.2 \
 		ppv-lite86-0.2.6 \
 		proc-macro-hack-0.5.11 \
 		proc-macro-nested-0.1.3 \
-		proc-macro2-1.0.8 \
+		proc-macro2-1.0.19 \
 		quick-error-1.2.3 \
 		quote-1.0.2 \
 		rand-0.7.3 \
 		rand_chacha-0.2.1 \
 		rand_core-0.5.1 \
 		rand_hc-0.2.0 \
-		rayon-1.3.0 \
-		rayon-core-1.7.0 \
+		rayon-1.3.1 \
+		rayon-core-1.7.1 \
 		redox_syscall-0.1.56 \
 		regex-1.3.9 \
 		regex-syntax-0.6.18 \
@@ -157,7 +157,7 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		rustls-0.17.0 \
 		ryu-1.0.2 \
 		schannel-0.1.16 \
-		scopeguard-1.0.0 \
+		scopeguard-1.1.0 \
 		sct-0.6.0 \
 		security-framework-0.3.4 \
 		security-framework-sys-0.3.3 \
@@ -165,16 +165,16 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		semver-0.10.0 \
 		semver-parser-0.7.0 \
 		serde-0.8.23 \
-		serde-1.0.111 \
+		serde-1.0.114 \
 		serde-hjson-0.9.1 \
-		serde_derive-1.0.111 \
+		serde_derive-1.0.114 \
 		serde_json-1.0.44 \
 		serde_test-0.8.23 \
 		serde_urlencoded-0.6.1 \
 		sha2-0.8.1 \
 		siphasher-0.3.1 \
 		slab-0.4.2 \
-		smallvec-1.2.0 \
+		smallvec-1.4.1 \
 		socket2-0.3.11 \
 		sourcefile-0.1.4 \
 		spin-0.5.2 \
@@ -182,7 +182,7 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		stringprep-0.1.2 \
 		strsim-0.8.0 \
 		subtle-1.0.0 \
-		syn-1.0.13 \
+		syn-1.0.35 \
 		synstructure-0.12.3 \
 		tempfile-3.1.0 \
 		textwrap-0.11.0 \
@@ -191,7 +191,7 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		thread_local-1.0.1 \
 		time-0.1.42 \
 		tokio-0.2.21 \
-		tokio-postgres-0.5.4 \
+		tokio-postgres-0.5.5 \
 		tokio-rustls-0.13.1 \
 		tokio-tls-0.3.0 \
 		tokio-util-0.2.0 \
