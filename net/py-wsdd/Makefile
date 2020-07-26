@@ -2,7 +2,7 @@
 
 PORTNAME=	wsdd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6
+DISTVERSION=	0.6.1
 CATEGORIES=	net python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -22,6 +22,9 @@ NO_BUILD=	yes
 PLIST_FILES=	bin/${PORTNAME} \
 		etc/rc.d/${PORTNAME} \
 		man/man1/${PORTNAME}.1.gz
+
+post-patch:
+	${REINPLACE_CMD} 's|PYTHON|${PYTHON_CMD}|' ${WRKSRC}/etc/rc.d/${PORTNAME}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/src/${PORTNAME}.py \
