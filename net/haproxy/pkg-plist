@@ -46,6 +46,8 @@ sbin/haproxy
 %%PORTDOCS%%%%DOCSDIR%%/internals/http-cookies.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/http-docs.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/http-parsing.txt
+%%PORTDOCS%%%%DOCSDIR%%/internals/htx-api.txt
+%%PORTDOCS%%%%DOCSDIR%%/internals/initcalls.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/list.fig
 %%PORTDOCS%%%%DOCSDIR%%/internals/listener-states.fig
 %%PORTDOCS%%%%DOCSDIR%%/internals/listener-states.png
@@ -58,6 +60,7 @@ sbin/haproxy
 %%PORTDOCS%%%%DOCSDIR%%/internals/polling-states.fig
 %%PORTDOCS%%%%DOCSDIR%%/internals/repartition-be-fe-fi.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/sequence.fig
+%%PORTDOCS%%%%DOCSDIR%%/internals/ssl_cert.dia
 %%PORTDOCS%%%%DOCSDIR%%/internals/stats-v2.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/stream-sock-states.fig
 %%PORTDOCS%%%%DOCSDIR%%/intro.txt

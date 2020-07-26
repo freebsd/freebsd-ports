@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	haproxy
-DISTVERSION=	2.0.14
+DISTVERSION=	2.2.1
 CATEGORIES=	net www
-MASTER_SITES=	http://www.haproxy.org/download/2.0/src/
+MASTER_SITES=	http://www.haproxy.org/download/2.2/src/
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Reliable, high performance TCP/HTTP load balancer
