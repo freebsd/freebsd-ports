@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	antlr4-python3-runtime
-PORTVERSION=	4.7.2
+PORTVERSION=	4.8
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +11,7 @@ COMMENT=	ANother Tool for Language Recognition (python3 runtime)
 
 LICENSE=	BSD3CLAUSE
 
-USES=		python:3.4+
+USES=		python:3.5+
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes
