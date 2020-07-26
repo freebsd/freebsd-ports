@@ -13,6 +13,8 @@ COMMENT=	Interactive tool for querying Sybase database servers
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		cmd_connect.c:1897:17: error: use of undeclared identifier 'CS_MAX_CHAR'
+
 LIB_DEPENDS=	libct.so:databases/freetds
 
 USES=		readline tar:tgz
