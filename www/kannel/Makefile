@@ -31,6 +31,7 @@ USE_RC_SUBR=	${PORTNAME}_bearerbox ${PORTNAME}_smsbox ${PORTNAME}_wapbox
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-pcre=yes --enable-docs=no --with-malloc=native \
 		--enable-start-stop-daemon=no
+CFLAGS+=	-fcommon
 
 OPTIONS_DEFINE=	MYSQL PGSQL SQLITE3
 OPTIONS_DEFAULT=	MYSQL
