@@ -16,8 +16,8 @@
 %%DATADIR%%/lib/apache-cassandra-%%DISTVERSION%%.jar
 %%DATADIR%%/lib/asm-7.1.jar
 %%DATADIR%%/lib/caffeine-2.3.5.jar
-%%DATADIR%%/lib/cassandra-driver-core-3.6.0-shaded.jar
-%%DATADIR%%/lib/cassandra-driver-internal-only-3.21.0.post0-05fb2c8d.zip
+%%DATADIR%%/lib/cassandra-driver-core-3.9.0-shaded.jar
+%%DATADIR%%/lib/cassandra-driver-internal-only-3.23.0.post0-1a184b99.zip
 %%DATADIR%%/lib/chronicle-bytes-1.16.3.jar
 %%DATADIR%%/lib/chronicle-core-1.16.4.jar
 %%DATADIR%%/lib/chronicle-queue-4.16.3.jar
@@ -36,9 +36,9 @@
 %%DATADIR%%/lib/high-scale-lib-1.0.6.jar
 %%DATADIR%%/lib/hppc-0.8.1.jar
 %%DATADIR%%/lib/j2objc-annotations-1.3.jar
-%%DATADIR%%/lib/jackson-annotations-2.9.5.jar
-%%DATADIR%%/lib/jackson-core-2.9.5.jar
-%%DATADIR%%/lib/jackson-databind-2.9.5.jar
+%%DATADIR%%/lib/jackson-annotations-2.9.10.jar
+%%DATADIR%%/lib/jackson-core-2.9.10.jar
+%%DATADIR%%/lib/jackson-databind-2.9.10.4.jar
 %%DATADIR%%/lib/jamm-0.3.2.jar
 %%DATADIR%%/lib/javax.inject.jar
 %%DATADIR%%/lib/jbcrypt-0.3m.jar
@@ -95,7 +95,7 @@
 %%DATADIR%%/lib/licenses/metrics-core-3.1.5.txt
 %%DATADIR%%/lib/licenses/metrics-jvm-3.1.5.txt
 %%DATADIR%%/lib/licenses/metrics-logback-3.1.5.txt
-%%DATADIR%%/lib/licenses/netty-tcnative-2.0.25.txt
+%%DATADIR%%/lib/licenses/netty-tcnative-2.0.31.txt
 %%DATADIR%%/lib/licenses/psjava-0.1.19.txt
 %%DATADIR%%/lib/licenses/reporter-config-base-3.0.3.txt
 %%DATADIR%%/lib/licenses/reporter-config3-3.0.3.txt
@@ -114,7 +114,7 @@
 %%DATADIR%%/lib/metrics-logback-3.1.5.jar
 %%DATADIR%%/lib/mxdump-0.14.jar
 %%DATADIR%%/lib/netty.jar
-%%DATADIR%%/lib/netty-tcnative-boringssl-static-2.0.25.Final.jar
+%%DATADIR%%/lib/netty-tcnative-boringssl-static-2.0.31.Final.jar
 %%DATADIR%%/lib/psjava-0.1.19.jar
 %%DATADIR%%/lib/reporter-config-base-3.0.3.jar
 %%DATADIR%%/lib/reporter-config3-3.0.3.jar
@@ -129,7 +129,8 @@
 %%DATADIR%%/lib/snowball-stemmer-1.3.0.581.1.jar
 %%DATADIR%%/lib/ST4-4.0.8.jar
 %%DATADIR%%/lib/stream-2.5.2.jar
-%%AMD64ONLY%%%%DATADIR%%/lib/zstd-jni-1.4.4-9-freebsd_amd64.jar
+%%AMD64ONLY%%%%DATADIR%%/lib/zstd-jni-%%ZSTDJNI_VERSION%%-freebsd_amd64.jar
+%%I386ONLY%%%%DATADIR%%/lib/zstd-jni-%%ZSTDJNI_VERSION%%-freebsd_i386.jar
 %%DATADIR%%/LICENSE.txt
 %%DATADIR%%/NEWS.txt
 %%DATADIR%%/NOTICE.txt
@@ -160,8 +161,6 @@
 %%DATADIR%%/pylib/cqlshlib/tracing.py
 %%DATADIR%%/pylib/cqlshlib/util.py
 %%DATADIR%%/pylib/cqlshlib/wcwidth.py
-%%DATADIR%%/pylib/Dockerfile.ubuntu.py2
-%%DATADIR%%/pylib/Dockerfile.ubuntu.py3
 %%DATADIR%%/pylib/README.asc
 %%DATADIR%%/pylib/requirements.txt
 %%DATADIR%%/pylib/setup.py

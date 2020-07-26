@@ -1,15 +1,15 @@
 # $FreeBSD$
 
 PORTNAME=	cassandra
-DISTVERSION=	4.0-alpha4
+DISTVERSION=	4.0-beta1
 CATEGORIES=	databases java
 MASTER_SITES=	APACHE/cassandra/${DISTVERSION}:apache \
-		https://repo1.maven.org/maven2/com/github/luben/zstd-jni/1.4.4-9/:maven \
-		LOCAL/pi:repo
+		https://repo1.maven.org/maven2/com/github/luben/zstd-jni/1.4.5-4/:maven \
+		LOCAL/mikael:repo
 PKGNAMESUFFIX=	4
 DISTNAME=	apache-${PORTNAME}-${DISTVERSION}-src
 DISTFILES=	${DISTNAME}.tar.gz:apache \
-		zstd-jni-1.4.4-9-freebsd_amd64.jar:maven \
+		${ZSTD_DISTFILE} \
 		apache-${PORTNAME}-${DISTVERSION}-repo.tar.gz:repo
 EXTRACT_ONLY=	${DISTNAME}.tar.gz \
 		apache-${PORTNAME}-${DISTVERSION}-repo.tar.gz
@@ -34,7 +34,6 @@ CONFLICTS=	cassandra3
 JAVA_VERSION=	8 11
 JAVA_VENDOR=	openjdk
 
-REINPLACE_ARGS=	-i ''
 SUB_LIST=	JAVA_HOME=${JAVA_HOME}
 
 USERS=		cassandra
@@ -68,7 +67,8 @@ SCRIPT_FILES=	cassandra \
 		sstableutil \
 		sstableverify
 
-PLIST_SUB=	DISTVERSION=${DISTVERSION}
+ZSTDJNI_VERSION=${MASTER_SITES:M*\:maven:H:T}
+PLIST_SUB=	DISTVERSION=${DISTVERSION} ZSTDJNI_VERSION=${ZSTDJNI_VERSION}
 
 OPTIONS_DEFINE=		SIGAR DOCS
 OPTIONS_DEFAULT=	SIGAR
@@ -138,14 +138,25 @@ USEJDK11=	-Duse.jdk11=true
 
 .if ${ARCH} == amd64
 PLIST_SUB+=		AMD64ONLY=""
+PLIST_SUB+=		I386ONLY="@comment "
+.elif ${ARCH} == i386
+PLIST_SUB+=		AMD64ONLY="@comment "
+PLIST_SUB+=		I386ONLY=""
 .else
 PLIST_SUB+=		AMD64ONLY="@comment "
+PLIST_SUB+=		I386ONLY="@comment "
+.endif
+
+.if ${ARCH} == amd64 || ${ARCH} == i386
+ZSTD_DISTFILE=	zstd-jni-${MASTER_SITES:M*\:maven:H:T}-freebsd_${ARCH}.jar:maven
+.else
+ZSTD_DISTFILE=
 .endif
 
 post-install:
 	${LN} -s ${JAVAJARDIR}/netty.jar ${STAGEDIR}${DATADIR}/lib/netty.jar
-.if ${ARCH} == amd64
-	${CP} ${DISTDIR}/zstd-jni-1.4.4-9-freebsd_amd64.jar ${STAGEDIR}${DATADIR}/lib/
+.if ${ARCH} == amd64 || ${ARCH} == i386
+	${CP} ${DISTDIR}/zstd-jni-${ZSTDJNI_VERSION}-freebsd_${ARCH}.jar ${STAGEDIR}${DATADIR}/lib/
 .endif
 
 post-install-DOCS-on:

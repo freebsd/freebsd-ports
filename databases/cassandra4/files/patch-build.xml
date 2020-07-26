@@ -1,4 +1,4 @@
---- build.xml.orig	2020-04-10 22:29:25 UTC
+--- build.xml.orig	2020-07-17 21:24:30 UTC
 +++ build.xml
 @@ -23,6 +23,7 @@
      <property file="build.properties" />
@@ -7,8 +7,8 @@
 +    <property name="pycmd" value="python"/>
  
      <!-- default version and SCM information -->
-     <property name="base.version" value="4.0-alpha4"/>
-@@ -75,14 +76,14 @@
+     <property name="base.version" value="4.0-beta1"/>
+@@ -74,14 +75,14 @@
      <condition property="version" value="${base.version}">
        <isset property="release"/>
      </condition>
@@ -25,7 +25,7 @@
      <property name="maven-ant-tasks.url"
                value="https://repo.maven.apache.org/maven2/org/apache/maven/maven-ant-tasks" />
      <!-- details of how and which Maven repository we publish to -->
-@@ -241,7 +242,7 @@
+@@ -246,7 +247,7 @@
      </path>
      <path id="cassandra.classpath.test">
          <file file="${build.dir}/${final.name}.jar"/> <!-- we need the jar for tests and benchmarks (multi-version jar) -->
@@ -34,15 +34,7 @@
              <include name="**/*.jar" />
              <exclude name="**/*-sources.jar"/>
              <exclude name="**/ant-*.jar"/>
-@@ -262,6 +263,7 @@
-         bottom="Copyright &amp;copy; 2009-2020 The Apache Software Foundation"
-         useexternalfile="yes" encoding="UTF-8"
-         maxmemory="256m">
-+        <arg value="${jdk11-javac-exports}"/>
-         <filesets/>
-       </javadoc>
-     </sequential>
-@@ -379,8 +381,7 @@
+@@ -391,8 +392,7 @@
          <artifact:dependencies pathId="wikitext.classpath">
              <dependency groupId="com.datastax.wikitext" artifactId="wikitext-core-ant" version="1.3"/>
              <dependency groupId="org.fusesource.wikitext" artifactId="textile-core" version="1.3"/>
@@ -52,7 +44,7 @@
          </artifact:dependencies>
          <taskdef classpathref="wikitext.classpath" resource="wikitexttasks.properties" />
          <wikitext-to-html markupLanguage="Textile">
-@@ -393,6 +394,8 @@
+@@ -405,6 +405,8 @@
      <target name="gen-doc" depends="maven-ant-tasks-init" description="Generate documentation" unless="ant.gen-doc.skip">
          <exec executable="make" osfamily="unix" dir="${doc.dir}">
              <arg value="html"/>
@@ -61,7 +53,7 @@
          </exec>
          <exec executable="cmd" osfamily="dos" dir="${doc.dir}">
              <arg value="/c"/>
-@@ -435,10 +438,6 @@
+@@ -447,10 +449,6 @@
              description="Initialize Maven ANT Tasks">
        <typedef uri="antlib:org.apache.maven.artifact.ant" classpathref="maven-ant-tasks.classpath" />
  
@@ -72,7 +64,7 @@
        <macrodef name="install">
          <attribute name="pomFile"/>
          <attribute name="file"/>
-@@ -842,16 +841,14 @@
+@@ -865,16 +863,14 @@
                               filesetId="build-dependency-jars"
                               cacheDependencyRefs="true"
                               dependencyRefsBuildFile="${build.dir}/build-dependencies.xml">
@@ -91,7 +83,7 @@
        </artifact:dependencies>
        <copy todir="${build.dir.lib}/jars">
            <fileset refid="build-dependency-jars"/>
-@@ -864,7 +861,7 @@
+@@ -887,7 +883,7 @@
        <!-- code coverage tools -->
        <artifact:dependencies pomRefId="coverage-deps-pom"
                               filesetId="coverage-dependency-jars">
@@ -100,7 +92,7 @@
        </artifact:dependencies>
        <copy todir="${build.dir.lib}/jars">
            <fileset refid="coverage-dependency-jars"/>
-@@ -893,8 +890,7 @@
+@@ -916,8 +912,7 @@
                               sourcesFilesetId="test-dependency-sources"
                               cacheDependencyRefs="true"
                               dependencyRefsBuildFile="${build.dir}/test-dependencies.xml">
@@ -110,7 +102,7 @@
        </artifact:dependencies>
        <copy todir="${test.lib}/jars">
          <fileset refid="test-dependency-jars"/>
-@@ -1217,6 +1213,86 @@
+@@ -1227,6 +1222,87 @@
        </copy>
      </target>
  
@@ -150,6 +142,7 @@
 +        <fileset dir="pylib">
 +          <include name="**" />
 +          <exclude name="**/*.pyc" />
++          <exclude name="Dockerfile.ubuntu.*" />
 +        </fileset>
 +      </copy>
 +      <copy todir="${dist.dir}/">
@@ -197,7 +190,15 @@
      <!-- creates release tarballs -->
      <target name="artifacts" depends="_artifacts-init"
              description="Create Cassandra release artifacts">
-@@ -1923,8 +1999,8 @@
+@@ -1347,6 +1423,7 @@
+   <target name="_build-test">
+     <javac
+      fork="true"
++     memorymaximumsize="512M"
+      compiler="modern"
+      debug="true"
+      debuglevel="${debuglevel}"
+@@ -1938,8 +2015,8 @@
      <exec executable="nproc" outputproperty="cores.count" os="Linux,SunOS,Solaris" failifexecutionfails="false">
        <arg value="--all"/>
      </exec>
@@ -208,7 +209,7 @@
        <arg value="-n"/>
        <arg value="hw.ncpu"/>
      </exec>
-@@ -1944,6 +2020,11 @@
+@@ -1959,6 +2036,11 @@
      <exec executable="sysctl" outputproperty="mem.size" os="Mac,Mac OS X,Darwin" failifexecutionfails="false">
        <arg value="-n"/>
        <arg value="hw.memsize"/>
