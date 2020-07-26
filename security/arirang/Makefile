@@ -30,7 +30,7 @@ LDFLAGS+=	-L${OPENSSLLIB}
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's/cc/${CC}/g' ${WRKSRC}/extconf.rb
+	${REINPLACE_CMD} -e 's#cc#${CC}#g' ${WRKSRC}/extconf.rb
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/arirang ${STAGEDIR}${PREFIX}/sbin
