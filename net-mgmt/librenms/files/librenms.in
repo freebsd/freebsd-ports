@@ -17,6 +17,8 @@
 #			Default: %%GROUP%%
 # librenms_pid:		Path of the pid file.
 #			Default /var/run/librenms/librenms.pid
+# librenms_daemonflags:	Flags passed to daemon(8), overwrite this to use eg syslog 
+# 			Default "-o /var/log/librenms/librenms-service.log"
 #
 # Contributed by: Dries Michiels (driesm.michiels@gmail.com)
 
@@ -31,6 +33,7 @@ load_rc_config $name
 : ${librenms_user:="%%USER%%"}
 : ${librenms_group:="%%GROUP%%"}
 : ${librenms_pid:="/var/run/librenms/librenms.pid"}
+: ${librenms_daemonflags:="-o /var/log/$name/$name-service.log"}
 
 pidfile="$librenms_pid"
 procname="%%PYTHON%%"
@@ -44,6 +47,6 @@ librenms_precmd()
 	[ -f /var/log/$name/$name.log ]         || install -g $librenms_group -o $librenms_user -m 644 /dev/null /var/log/$name/$name.log
 }
 
-command_args="-T $name -o /var/log/$name/$name-service.log -p $pidfile $procname %%WWWDIR%%/librenms-service.py"
+command_args="$librenms_daemonflags -p $pidfile $procname %%WWWDIR%%/librenms-service.py"
 
 run_rc_command "$1"

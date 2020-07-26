@@ -3,7 +3,7 @@
 
 PORTNAME=	librenms
 PORTVERSION=	1.65.1
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	LOCAL/dvl:vendor
@@ -109,7 +109,7 @@ ROOT_FILES=	addhost.php adduser.php alerts.php artisan billing-calculate.php \
 
 SCRIPT_FILES=	daily.sh lnms
 
-ROOT_DIRS=	LibreNMS app bootstrap config contrib database doc html includes licenses logs mibs misc resources routes scripts sql-schema storage tests
+ROOT_DIRS=	LibreNMS app bootstrap config contrib database doc html includes licenses mibs misc resources routes scripts sql-schema storage tests
 
 # these are directories which require a generic @DIR entry in pkg-plist
 OTHER_DIRS=	html/js/lang \
@@ -134,6 +134,7 @@ post-patch:
 	@${REINPLACE_CMD}    's|%%PORTVERSION%%|${PORTVERSION}|g'             ${WRKSRC}/includes/common.php
 	@${REINPLACE_CMD}    's|%%RELEASE_TIMESTAMP%%|${RELEASE_TIMESTAMP}|g' ${WRKSRC}/includes/common.php
 	@${RM} ${WRKSRC}/LibreNMS/Validations/Updates.php
+	@${RM} -rf ${WRKSRC}/logs
 
 do-install:
 	${MKDIR} ${STAGEDIR}/${WWWDIR}
@@ -186,7 +187,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/.env.example ${STAGEDIR}/${WWWDIR}
 	@${ECHO_CMD} "@(root,www,0750) ${WWWDIR}/.env.example" >> ${TMPPLIST}
 
-	@${ECHO_CMD} "@dir(www,www,0775) ${WWWDIR}/logs" >> ${TMPPLIST}
 	@${ECHO_CMD} "@dir(www,www,0775) ${WWWDIR}/bootstrap/cache" >> ${TMPPLIST}
 	@${ECHO_CMD} "@dir(www,www,0775) ${WWWDIR}/storage" >> ${TMPPLIST}
 	@${ECHO_CMD} "@dir(www,www,0775) ${WWWDIR}/storage/framework/cache" >> ${TMPPLIST}

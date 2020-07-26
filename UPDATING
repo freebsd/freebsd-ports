@@ -6,6 +6,18 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 
+20200726:
+  AFFECTS: users of net-mgmt/librenms
+  AUTHOR:  dvl@FreeBSD.org
+
+  The %%WWWDIR%%%/logs directory has been relocated to /var/log/librenms/
+  via the APP_LOG directive in %%WWWDIR%%%/.env.example - this won't affect
+  existing installs, but you are strongly encouraged to update your .env file
+  settings and relocate your logs.
+
+  Logs which were going to /var/log/messages and /var/log/librenms/ now only go
+  to /var/log/librenms/
+
 20200720:
   AFFECTS: users of net-mgmt/librenms
   AUTHOR:  dvl@FreeBSD.org
