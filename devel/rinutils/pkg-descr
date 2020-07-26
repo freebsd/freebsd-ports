@@ -1,0 +1,7 @@
+This is a set of C headers containing macros and static functions that are
+expected to work on Unix-like systems and MS Windows that have been extracted
+from Shlomi Fish's projects.
+
+They are quite random and task specific and may not work for you.
+
+WWW: https://github.com/shlomif/rinutils
