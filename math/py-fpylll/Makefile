@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fpylll
-DISTVERSION=	0.5.1dev
+DISTVERSION=	0.5.2dev
 CATEGORIES=	math python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -20,6 +20,7 @@ LIB_DEPENDS=	libfplll.so:math/fplll	\
 		libpari.so:math/pari
 RUN_DEPENDS=	${PYNUMPY}	\
 		${PYTHON_PKGNAMEPREFIX}cysignals>0:devel/py-cysignals@${PY_FLAVOR}
+TEST_DEPENDS=	py.test:devel/py-pytest@${PY_FLAVOR}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	fplll
@@ -40,5 +41,8 @@ do-build-DOCS-on:
 post-build-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${CP} -R ${WRKSRC}/docs/_build/html/* ${STAGEDIR}${DOCSDIR}
+
+do-test: install
+	(cd ${WRKSRC} && PY_IGNORE_IMPORTMISMATCH=1 py.test)
 
 .include <bsd.port.mk>
