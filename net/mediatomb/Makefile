@@ -28,6 +28,7 @@ USE_RC_SUBR=	mediatomb
 # linking fails when a dependency (such as taglib) is built with clang and
 # lacking the overload. FreeBSD >= 11 is fine.
 USE_CXXSTD=	gnu++11
+CFLAGS+=	-fcommon
 
 USERS=		mediatomb
 GROUPS=		${USERS}
