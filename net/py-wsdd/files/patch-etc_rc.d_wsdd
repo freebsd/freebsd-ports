@@ -1,0 +1,74 @@
+--- etc/rc.d/wsdd.orig	2020-06-28 19:10:44 UTC
++++ etc/rc.d/wsdd
+@@ -5,25 +5,61 @@
+ # BEFORE: login
+ # KEYWORD: shutdown
+ 
++# Add the following line in /etc/rc.conf to enable wsdd:
++#
++# wsdd_enable="YES"
++# wsdd_flags="<set as needed>"
++# wsdd_domain="<set if your host is an AD member>"
++# wsdd_group="<set if you want to set the workgroup manually>"
++#
++# Do not specify -d DOMAIN or -w WORKGROUP in wsdd_flags. Instead, set
++# wsdd_domain="DOMAIN" or wsdd_group="WORKGROUP", otherwise it will be
++# overridden by automatically detected workgroup.
++#
++
+ . /etc/rc.subr
+ 
+ name=wsdd
+ rcvar=wsdd_enable
+-wsdd_group=$(/usr/local/bin/testparm -s --parameter-name workgroup 2>/dev/null)
+ 
+-: ${wsdd_smb_config_file="/usr/local/etc/smb4.conf"}
++load_rc_config ${name}
+ 
+-# try to manually extract workgroup from samba configuration if testparm failed
+-if [ -z "$wsdd_group" ] && [ -r $wsdd_smb_config_file ]; then
+-	wsdd_group="$(grep -i '^[[:space:]]*workgroup[[:space:]]*=' $wsdd_smb_config_file | cut -f2 -d= | tr -d '[:blank:]')"
++: ${wsdd_enable:="NO"}
++: ${wsdd_flags:=""}
++: ${wsdd_domain:=""}
++: ${wsdd_group:=""}
++: ${wsdd_smb_config_file:="/usr/local/etc/smb4.conf"}
++
++if [ -z "${wsdd_group}" ]; then
++	# automatic detection of workgroup
++	wsdd_group=$(/usr/local/bin/testparm -s --parameter-name workgroup 2>/dev/null)
++
++	# try to manually extract workgroup from samba configuration if testparm failed
++	if [ -z "$wsdd_group" ] && [ -r $wsdd_smb_config_file ]; then
++		wsdd_group="$(grep -i '^[[:space:]]*workgroup[[:space:]]*=' $wsdd_smb_config_file | cut -f2 -d= | tr -d '[:blank:]')"
++	fi
+ fi
+ 
+-if [ -n "$wsdd_group" ]; then
+-	wsdd_opts="-w ${wsdd_group}"
++wsdd_opts=""
++if [ -n "${wsdd_suppflags}" ]; then
++	wsdd_opts="${wsdd_flags}"
+ fi
++if [ -n "$wsdd_domain" ]; then
++	wsdd_opts="${wsdd_opts} -d ${wsdd_domain}"
++elif [ -n "$wsdd_group" ]; then
++	wsdd_opts="${wsdd_opts} -w ${wsdd_group}"
++fi
+ 
+-command="/usr/sbin/daemon"
+-command_args="-u daemon -S /usr/local/bin/wsdd $wsdd_opts"
++command="/usr/local/bin/wsdd"
++procname="PYTHON"
++pidfile="/var/run/${name}.pid"
+ 
+-load_rc_config $name
++start_cmd="${name}_start"
++
++wsdd_start()
++{
++	echo -n "Starting ${name}."
++	/usr/sbin/daemon -u daemon -S -p ${pidfile} ${command} ${wsdd_opts}
++}
++
+ run_rc_command "$1"
