@@ -99,7 +99,7 @@ include/silk/utils.h
 %%STATIC%%lib/libflowsource.a
 lib/libflowsource.so
 lib/libflowsource.so.19
-lib/libflowsource.so.19.0.0
+lib/libflowsource.so.19.0.1
 %%STATIC%%lib/libsilk-thrd.a
 lib/libsilk-thrd.so
 lib/libsilk-thrd.so.5
@@ -107,7 +107,7 @@ lib/libsilk-thrd.so.5.1.5
 %%STATIC%%lib/libsilk.a
 lib/libsilk.so
 lib/libsilk.so.25
-lib/libsilk.so.25.1.2
+lib/libsilk.so.25.1.3
 %%STATIC%%lib/silk/app-mismatch.a
 lib/silk/app-mismatch.so
 %%STATIC%%lib/silk/conficker-c.a
