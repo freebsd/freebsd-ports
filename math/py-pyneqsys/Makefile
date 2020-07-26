@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}sym>=0.3.1:math/py-sym@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sympy>=1.3:math/py-sympy@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.5+
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 

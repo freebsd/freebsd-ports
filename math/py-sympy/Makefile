@@ -14,7 +14,7 @@ LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mpmath>=0.19:math/py-mpmath@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.5+
 USE_PYTHON=	distutils concurrent autoplist
 NO_ARCH=	yes
 

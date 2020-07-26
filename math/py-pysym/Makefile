@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sympy>0:math/py-sympy@${PY_FLAVOR} \
 		${PYNUMPY}
 
-USES=		python
+USES=		python:3.5+
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 
