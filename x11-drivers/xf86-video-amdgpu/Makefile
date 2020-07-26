@@ -18,8 +18,8 @@ LIB_DEPENDS=	libdrm_amdgpu.so:graphics/libdrm
 USES=		gl xorg-cat:driver
 USE_GL=		gbm
 # No amdgpu kernel driver on non-x86 and PC98.
-ONLY_FOR_ARCHS=	i386 amd64
-ONLY_FOR_ARCHS_REASON=	KMS is required and currently only available on x86
+ONLY_FOR_ARCHS=	aarch64 i386 amd64
+ONLY_FOR_ARCHS_REASON=	KMS is required and currently only available on x86/arm64
 
 CONFIGURE_ARGS+=--disable-udev
 

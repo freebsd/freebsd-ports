@@ -19,8 +19,8 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 # No Radeon kernel driver on non-x86.
-ONLY_FOR_ARCHS=		amd64 i386 powerpc64
-ONLY_FOR_ARCHS_REASON=	KMS is required and currently only available on x86
+ONLY_FOR_ARCHS=		aarch64 amd64 i386 powerpc64
+ONLY_FOR_ARCHS_REASON=	KMS is required and currently only available on x86/arm64/powerpc64
 
 LIB_DEPENDS=	libpciaccess.so:devel/libpciaccess \
 		libdrm_radeon.so:graphics/libdrm
