@@ -10,6 +10,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast and powerful code search and cross-reference engine
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-08-26
 
 LICENSE=	CDDL APACHE20
 LICENSE_COMB=	multi

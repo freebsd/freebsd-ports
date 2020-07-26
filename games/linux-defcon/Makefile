@@ -13,6 +13,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Defcon for Linux
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-08-26
 
 ONLY_FOR_ARCHS=	i386 amd64
 USES=		linux

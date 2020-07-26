@@ -9,6 +9,8 @@ MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	SMPP library for Erlang
 
 BROKEN=		fails to build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-08-26
 
 BUILD_DEPENDS=	erlc:lang/erlang \
 		txt2tags:textproc/txt2tags

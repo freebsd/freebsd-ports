@@ -14,6 +14,8 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BROKEN=		fails to build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-08-26
 
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs
 

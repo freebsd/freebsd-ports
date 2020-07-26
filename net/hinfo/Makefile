@@ -14,6 +14,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility primarily designed to find the owner of an IP block
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-08-26
 
 RUN_DEPENDS=	p5-Net-DNS>=0:dns/p5-Net-DNS \
 		wget:ftp/wget

@@ -13,6 +13,8 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN=		Fails to build with cmake-3.16.0
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-08-26
 
 USES=		cmake compiler:c++11-lang dos2unix gl qt:5 xorg
 DOS2UNIX_FILES=	src/OpenMesh/Tools/CMakeLists.txt

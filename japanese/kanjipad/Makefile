@@ -11,6 +11,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese Handwriting recognition
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-08-26
 
 USES=		gmake gnome perl5 pkgconfig
 USE_GNOME=	gtk20

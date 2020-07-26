@@ -11,6 +11,8 @@ MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python wrapper for Embree
 
 BROKEN=		outdated version, incompatible with Embree 3 API
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-08-26
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

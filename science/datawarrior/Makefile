@@ -10,6 +10,8 @@ MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Chemistry-aware multi-purpose data visualization and analysis program
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-08-26
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/gpl.txt

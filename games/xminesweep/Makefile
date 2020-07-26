@@ -15,6 +15,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 minesweeper game
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-08-26
 
 USES=		imake tar:Z xorg
 USE_XORG=	x11 xext xmu xaw xt xpm sm ice

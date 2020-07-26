@@ -12,6 +12,8 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN=		depends on conflicting ports
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-08-26
 
 LIB_DEPENDS=	libClp.so:math/clp \
 		libOsi.so:math/osi

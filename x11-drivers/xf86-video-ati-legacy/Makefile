@@ -14,6 +14,8 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN=		does not build with xorg-server 1.20.7
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-08-26
 
 # No Radeon kernel driver on non-x86 and PC98.
 ONLY_FOR_ARCHS=		amd64 i386 powerpc64

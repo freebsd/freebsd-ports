@@ -10,6 +10,8 @@ MAINTAINER=	bkoenig@alpha-tierchen.de
 COMMENT=	Execute .NET applications from command line
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-08-26
 
 ONLY_FOR_ARCHS=		amd64 arm i386
 

@@ -12,6 +12,8 @@ MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Software for sampling trajectories of the reaction-diffusion equations
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-08-26
 
 LICENSE=	UIUC_OPEN_SOURCE_LICENSE
 LICENSE_NAME=	University of Illinois Open Source License

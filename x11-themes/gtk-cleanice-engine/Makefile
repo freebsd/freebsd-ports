@@ -15,6 +15,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simplistic GTK+ 2.x theme engine
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-08-26
 
 USES=		gnome libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes

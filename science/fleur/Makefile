@@ -14,6 +14,8 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN=		Fails to build with cmake-3.16.0
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-08-26
 
 LIB_DEPENDS=	libopenblas.so:math/openblas
 

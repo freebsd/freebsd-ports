@@ -12,6 +12,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast-action, networked, anti-social, kill-everything game
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-08-26
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/gpl.txt
