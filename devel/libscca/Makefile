@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libscca
-DISTVERSION=	alpha-20191222
+DISTVERSION=	alpha-20200717
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libscca/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine
