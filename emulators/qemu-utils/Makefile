@@ -5,6 +5,8 @@ PKGNAMESUFFIX=	-utils
 MAINTAINER=	ken@FreeBSD.org
 COMMENT=	QEMU userland utilities
 
+BROKEN=		fails to configure
+
 HAS_CONFIGURE=	yes
 USES=		compiler:c11 cpe gettext-runtime gmake gnome perl5 pkgconfig \
 		python:build tar:xz
