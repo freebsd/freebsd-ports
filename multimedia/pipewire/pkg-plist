@@ -75,6 +75,7 @@ include/spa-0.2/spa/debug/pod.h
 include/spa-0.2/spa/debug/types.h
 include/spa-0.2/spa/graph/graph.h
 include/spa-0.2/spa/monitor/device.h
+include/spa-0.2/spa/monitor/event.h
 include/spa-0.2/spa/monitor/utils.h
 include/spa-0.2/spa/node/command.h
 include/spa-0.2/spa/node/event.h
@@ -131,7 +132,7 @@ include/spa-0.2/spa/utils/type.h
 %%GSTREAMER%%lib/gstreamer-1.0/libgstpipewire.so
 lib/libpipewire-0.3.so
 lib/libpipewire-0.3.so.0
-lib/libpipewire-0.3.so.0.306.0
+lib/libpipewire-0.3.so.0.307.0
 lib/pipewire-0.3/libpipewire-module-access.so
 lib/pipewire-0.3/libpipewire-module-adapter.so
 lib/pipewire-0.3/libpipewire-module-client-device.so
