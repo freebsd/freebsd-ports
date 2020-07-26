@@ -1,0 +1,50 @@
+X-Git-Url: http://git.haproxy.org/?p=haproxy-2.0.git;a=blobdiff_plain;f=include%2Fcommon%2Fhathreads.h;h=7b94ba18b6909fc2d6b1e363aec4b306c6eb6dcb;hp=6d8716b870b37508cda74072216ea84c36105528;hb=7ef9a3a4cff7b630de2aea16be4a066726a2ee5d;hpb=d3a82110a0835b361a8ebf147e8400271ea165da
+
+diff --git a/include/common/hathreads.h b/include/common/hathreads.h
+index 6d8716b..7b94ba1 100644
+--- include/common/hathreads.h
++++ include/common/hathreads.h
+@@ -626,7 +626,7 @@ extern struct lock_stat lock_stats[LOCK_LABELS];
+ #define __SPIN_INIT(l)         ({ (*l) = 0; })
+ #define __SPIN_DESTROY(l)      ({ (*l) = 0; })
+ #define __SPIN_LOCK(l)         pl_take_s(l)
+-#define __SPIN_TRYLOCK(l)      !pl_try_s(l)
++#define __SPIN_TRYLOCK(l)      (!pl_try_s(l))
+ #define __SPIN_UNLOCK(l)       pl_drop_s(l)
+ 
+ #define __HA_RWLOCK_T		unsigned long
+@@ -634,10 +634,10 @@ extern struct lock_stat lock_stats[LOCK_LABELS];
+ #define __RWLOCK_INIT(l)          ({ (*l) = 0; })
+ #define __RWLOCK_DESTROY(l)       ({ (*l) = 0; })
+ #define __RWLOCK_WRLOCK(l)        pl_take_w(l)
+-#define __RWLOCK_TRYWRLOCK(l)     !pl_try_w(l)
++#define __RWLOCK_TRYWRLOCK(l)     (!pl_try_w(l))
+ #define __RWLOCK_WRUNLOCK(l)      pl_drop_w(l)
+ #define __RWLOCK_RDLOCK(l)        pl_take_r(l)
+-#define __RWLOCK_TRYRDLOCK(l)     !pl_try_r(l)
++#define __RWLOCK_TRYRDLOCK(l)     (!pl_try_r(l))
+ #define __RWLOCK_RDUNLOCK(l)      pl_drop_r(l)
+ 
+ #define HA_SPINLOCK_T       struct ha_spinlock
+@@ -1023,7 +1023,7 @@ static inline void __spin_unlock(enum lock_label lbl, struct ha_spinlock *l,
+ #define HA_SPIN_INIT(l)         ({ (*l) = 0; })
+ #define HA_SPIN_DESTROY(l)      ({ (*l) = 0; })
+ #define HA_SPIN_LOCK(lbl, l)    pl_take_s(l)
+-#define HA_SPIN_TRYLOCK(lbl, l) !pl_try_s(l)
++#define HA_SPIN_TRYLOCK(lbl, l) (!pl_try_s(l))
+ #define HA_SPIN_UNLOCK(lbl, l)  pl_drop_s(l)
+ 
+ #define HA_RWLOCK_T		unsigned long
+@@ -1031,10 +1031,10 @@ static inline void __spin_unlock(enum lock_label lbl, struct ha_spinlock *l,
+ #define HA_RWLOCK_INIT(l)          ({ (*l) = 0; })
+ #define HA_RWLOCK_DESTROY(l)       ({ (*l) = 0; })
+ #define HA_RWLOCK_WRLOCK(lbl,l)    pl_take_w(l)
+-#define HA_RWLOCK_TRYWRLOCK(lbl,l) !pl_try_w(l)
++#define HA_RWLOCK_TRYWRLOCK(lbl,l) (!pl_try_w(l))
+ #define HA_RWLOCK_WRUNLOCK(lbl,l)  pl_drop_w(l)
+ #define HA_RWLOCK_RDLOCK(lbl,l)    pl_take_r(l)
+-#define HA_RWLOCK_TRYRDLOCK(lbl,l) !pl_try_r(l)
++#define HA_RWLOCK_TRYRDLOCK(lbl,l) (!pl_try_r(l))
+ #define HA_RWLOCK_RDUNLOCK(lbl,l)  pl_drop_r(l)
+ 
+ #endif  /* DEBUG_THREAD */
