@@ -11,6 +11,8 @@ COMMENT=	Joystick support for Kodi
 
 LICENSE=	GPLv2+
 
+BROKEN=		depends on file: ${LOCALBASE}/lib/kodi/KodiConfig.cmake - not found
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/kodi/KodiConfig.cmake:multimedia/kodi
 LIB_DEPENDS=	libp8-platform.so:devel/p8-platform \
 		libkodiplatform.so:devel/kodi-platform \
