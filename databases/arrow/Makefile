@@ -11,6 +11,8 @@ COMMENT=	Columnar in-memory analytics layer for big data
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/../LICENSE.txt
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 
 USES=		cmake compiler:c++11-lang pkgconfig
