@@ -11,7 +11,7 @@ PKGNAMESUFFIX?=		15
 MAINTAINER=		timur@FreeBSD.org
 COMMENT=		LDAP-like embedded database
 
-LICENSE=		GPLv3
+LICENSE=		GPLv3+
 
 IGNORE_NONTHREAD_PYTHON=needs port lang/python${PYTHON_SUFFIX} to be build with THREADS support
 
