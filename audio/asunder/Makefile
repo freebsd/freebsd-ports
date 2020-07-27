@@ -17,7 +17,8 @@ LIB_DEPENDS=	libcddb.so:audio/libcddb \
 		libfreetype.so:print/freetype2
 RUN_DEPENDS=	${LOCALBASE}/bin/cdparanoia:audio/cdparanoia
 
-USES=		desktop-file-utils gettext gmake gnome pkgconfig tar:bzip2
+USES=		compiler:c11 desktop-file-utils gettext gmake gnome pkgconfig \
+		tar:bzip2
 USE_GNOME=	cairo gdkpixbuf2 gtk20 glib20 intltool intlhack
 GNU_CONFIGURE=	yes
 
