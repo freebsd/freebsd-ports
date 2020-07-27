@@ -1,6 +1,6 @@
---- configure.orig	2020-04-19 12:39:06 UTC
+--- configure.orig	2020-06-09 07:15:48 UTC
 +++ configure
-@@ -35077,7 +35077,7 @@ done
+@@ -35092,7 +35092,7 @@ done
  ##
  
  BUILD_HELPER="NIS"
@@ -9,7 +9,7 @@
  do :
    as_ac_Header=`$as_echo "ac_cv_header_$ac_header" | $as_tr_sh`
  ac_fn_cxx_check_header_compile "$LINENO" "$ac_header" "$as_ac_Header" "
-@@ -35092,8 +35092,10 @@ if eval test \"x\$"$as_ac_Header"\" = x"yes"; then :
+@@ -35107,8 +35107,10 @@ if eval test \"x\$"$as_ac_Header"\" = x"yes"; then :
  #define `$as_echo "HAVE_$ac_header" | $as_tr_cpp` 1
  _ACEOF
  
@@ -22,7 +22,7 @@
  fi
  
  done
-@@ -35566,7 +35568,7 @@ done
+@@ -35581,7 +35583,7 @@ done
  
    # unconditionally requires crypt(3), for now
    if test "x$ac_cv_func_crypt" != "x"; then
@@ -31,7 +31,7 @@
  do :
    as_ac_Header=`$as_echo "ac_cv_header_$ac_header" | $as_tr_sh`
  ac_fn_cxx_check_header_mongrel "$LINENO" "$ac_header" "$as_ac_Header" "$ac_includes_default"
-@@ -37958,7 +37960,7 @@ for ac_header in \
+@@ -37973,7 +37975,7 @@ for ac_header in \
    arpa/nameser.h \
    assert.h \
    bstring.h \
@@ -40,7 +40,7 @@
    ctype.h \
    direct.h \
    errno.h \
-@@ -38166,6 +38168,7 @@ ac_fn_cxx_check_header_compile "$LINENO" "$ac_header" 
+@@ -38181,6 +38183,7 @@ ac_fn_cxx_check_header_compile "$LINENO" "$ac_header" 
  #include <netinet/ip.h>
  #endif
  #if HAVE_NETINET_IP_COMPAT_H
@@ -48,7 +48,7 @@
  #include <netinet/ip_compat.h>
  #endif
  #if HAVE_NETINET_IP_FIL_H
-@@ -42213,6 +42216,7 @@ if test "x$enable_ipf_transparent" != "xno" ; then
+@@ -42228,6 +42231,7 @@ if test "x$enable_ipf_transparent" != "xno" ; then
  #     include <sys/ioccom.h>
  #     include <netinet/in.h>
  
@@ -56,7 +56,7 @@
  #     include <netinet/ip_compat.h>
  #     include <netinet/ip_fil.h>
  #     include <netinet/ip_nat.h>
-@@ -42243,6 +42247,7 @@ else
+@@ -42258,6 +42262,7 @@ else
  #       include <sys/ioccom.h>
  #       include <netinet/in.h>
  #undef minor_t
@@ -64,7 +64,7 @@
  #       include <netinet/ip_compat.h>
  #       include <netinet/ip_fil.h>
  #       include <netinet/ip_nat.h>
-@@ -42287,6 +42292,7 @@ _ACEOF
+@@ -42302,6 +42307,7 @@ _ACEOF
  	ip_fil_compat.h \
  	ip_fil.h \
  	ip_nat.h \
@@ -72,7 +72,7 @@
  	netinet/ip_compat.h \
  	netinet/ip_fil_compat.h \
  	netinet/ip_fil.h \
-@@ -42316,6 +42322,7 @@ ac_fn_cxx_check_header_compile "$LINENO" "$ac_header" 
+@@ -42331,6 +42337,7 @@ ac_fn_cxx_check_header_compile "$LINENO" "$ac_header" 
  #if HAVE_IP_COMPAT_H
  #include <ip_compat.h>
  #elif HAVE_NETINET_IP_COMPAT_H
@@ -80,13 +80,3 @@
  #include <netinet/ip_compat.h>
  #endif
  #if HAVE_IP_FIL_H
-@@ -42379,8 +42386,7 @@ _ACEOF
- 
- 
- fi
--ac_fn_cxx_check_member "$LINENO" "struct natlookup" "nl_realipaddr.in6"
--   "ac_cv_member_struct_natlookup_nl_realipaddr_in6___" "
-+ac_fn_cxx_check_member "$LINENO" "struct natlookup" "nl_realipaddr.in6" "ac_cv_member_struct_natlookup_nl_realipaddr_in6___" "
- #if USE_SOLARIS_IPFILTER_MINOR_T_HACK
- #define minor_t fubar
- #endif
