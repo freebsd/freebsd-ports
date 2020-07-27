@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ddgr
-PORTVERSION=	1.8.1
+PORTVERSION=	1.9
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -57,6 +57,6 @@ do-install-FISH-on:
 		${STAGEDIR}${PREFIX}/share/fish/completions/
 
 do-test:
-	cd ${WRKSRC} && ./ddgr --help
+	cd ${WRKSRC} && ./ddgr --help >/dev/null 2>&1
 
 .include <bsd.port.mk>
