@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rust-analyzer
-DISTVERSION=	2020-07-20
+DISTVERSION=	2020-07-27
 CATEGORIES=	devel
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -17,9 +17,8 @@ USE_GITHUB=	yes
 CARGO_CRATES=	addr2line-0.13.0 \
 		adler-0.2.3 \
 		aho-corasick-0.7.13 \
-		ansi_term-0.11.0 \
 		ansi_term-0.12.1 \
-		anyhow-1.0.31 \
+		anyhow-1.0.32 \
 		anymap-0.12.1 \
 		arrayvec-0.5.1 \
 		atty-0.2.14 \
@@ -31,31 +30,27 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		cargo_metadata-0.10.0 \
 		cc-1.0.58 \
 		cfg-if-0.1.10 \
-		chalk-derive-0.17.0 \
-		chalk-ir-0.17.0 \
-		chalk-recursive-0.17.0 \
-		chalk-solve-0.17.0 \
+		chalk-derive-0.18.0 \
+		chalk-ir-0.18.0 \
+		chalk-recursive-0.18.0 \
+		chalk-solve-0.18.0 \
 		chrono-0.4.13 \
 		cloudabi-0.1.0 \
 		cmake-0.1.44 \
-		console-0.11.3 \
 		crc32fast-1.2.0 \
-		crossbeam-channel-0.4.2 \
+		crossbeam-channel-0.4.3 \
 		crossbeam-deque-0.7.3 \
 		crossbeam-epoch-0.8.2 \
 		crossbeam-queue-0.2.3 \
 		crossbeam-utils-0.7.2 \
 		difference-2.0.0 \
 		drop_bomb-0.1.4 \
-		dtoa-0.4.6 \
 		either-1.5.3 \
 		ena-0.14.0 \
-		encode_unicode-0.3.6 \
 		env_logger-0.7.1 \
 		filetime-0.2.10 \
 		fixedbitset-0.2.0 \
 		flate2-1.0.16 \
-		fs_extra-1.1.0 \
 		fsevent-2.0.2 \
 		fsevent-sys-3.0.2 \
 		fst-0.4.4 \
@@ -64,33 +59,29 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		getrandom-0.1.14 \
 		gimli-0.22.0 \
 		goblin-0.2.3 \
+		hashbrown-0.8.1 \
 		heck-0.3.1 \
 		hermit-abi-0.1.15 \
 		home-0.5.3 \
 		idna-0.2.0 \
-		indexmap-1.4.0 \
+		indexmap-1.5.0 \
 		inotify-0.8.3 \
 		inotify-sys-0.1.3 \
-		insta-0.16.1 \
 		instant-0.1.6 \
 		iovec-0.1.4 \
 		itertools-0.9.0 \
 		itoa-0.4.6 \
-		jemalloc-ctl-0.3.3 \
-		jemalloc-sys-0.3.2 \
-		jemallocator-0.3.2 \
 		jod-thread-0.1.2 \
 		kernel32-sys-0.2.2 \
 		lazy_static-1.4.0 \
 		lazycell-1.2.1 \
-		libc-0.2.72 \
+		libc-0.2.73 \
 		libloading-0.6.2 \
 		libmimalloc-sys-0.1.15 \
-		linked-hash-map-0.5.3 \
 		lock_api-0.4.1 \
 		log-0.4.11 \
 		lsp-server-0.3.3 \
-		lsp-types-0.77.0 \
+		lsp-types-0.78.0 \
 		matchers-0.0.1 \
 		matches-0.1.8 \
 		maybe-uninit-2.0.0 \
@@ -111,15 +102,12 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		once_cell-1.4.0 \
 		parking_lot-0.11.0 \
 		parking_lot_core-0.8.0 \
-		paste-0.1.18 \
-		paste-impl-0.1.18 \
 		percent-encoding-2.1.0 \
 		petgraph-0.5.1 \
 		pico-args-0.3.3 \
 		plain-0.2.3 \
 		ppv-lite86-0.2.8 \
-		proc-macro-hack-0.5.16 \
-		proc-macro2-1.0.18 \
+		proc-macro2-1.0.19 \
 		quote-1.0.7 \
 		rand-0.7.3 \
 		rand_chacha-0.2.2 \
@@ -132,9 +120,8 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		regex-1.3.9 \
 		regex-automata-0.1.9 \
 		regex-syntax-0.6.18 \
-		remove_dir_all-0.5.3 \
 		rowan-0.10.0 \
-		rustc-ap-rustc_lexer-666.0.0 \
+		rustc-ap-rustc_lexer-669.0.0 \
 		rustc-demangle-0.1.16 \
 		rustc-hash-1.1.0 \
 		ryu-1.0.5 \
@@ -149,32 +136,27 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		semver-parser-0.7.0 \
 		serde-1.0.114 \
 		serde_derive-1.0.114 \
-		serde_json-1.0.56 \
+		serde_json-1.0.57 \
 		serde_repr-0.1.6 \
-		serde_yaml-0.8.13 \
 		sharded-slab-0.0.9 \
 		slab-0.4.2 \
 		smallvec-1.4.1 \
 		smol_str-0.1.16 \
-		superslice-1.0.0 \
-		syn-1.0.34 \
+		syn-1.0.36 \
 		synstructure-0.12.4 \
-		tempfile-3.1.0 \
 		termcolor-1.1.0 \
-		terminal_size-0.1.13 \
-		termios-0.3.2 \
 		text-size-1.0.0 \
 		thin-dst-1.1.0 \
 		thread_local-1.0.1 \
 		threadpool-1.8.1 \
 		time-0.1.43 \
 		tinyvec-0.3.3 \
-		tracing-0.1.16 \
+		tracing-0.1.17 \
 		tracing-attributes-0.1.9 \
 		tracing-core-0.1.11 \
 		tracing-log-0.1.1 \
 		tracing-serde-0.1.1 \
-		tracing-subscriber-0.2.7 \
+		tracing-subscriber-0.2.9 \
 		tracing-tree-0.1.4 \
 		unicode-bidi-0.3.4 \
 		unicode-normalization-0.1.13 \
@@ -189,8 +171,7 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		ws2_32-sys-0.2.1 \
-		yaml-rust-0.4.4
+		ws2_32-sys-0.2.1
 
 CARGO_INSTALL_PATH=	crates/rust-analyzer
 
