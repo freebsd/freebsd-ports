@@ -22,6 +22,8 @@ NO_MTREE=	yes
 PLIST_FILES=	bin/savvycan \
 		man/man1/savvycan.1.gz
 
+PORTSCOUT=	skipv:continuous
+
 OPTIONS_DEFINE+=	DOCS EXAMPLES
 
 PORTDOCS=	*
