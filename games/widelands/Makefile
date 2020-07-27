@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	widelands
-DISTVERSION=	build20
-PORTREVISION=	6
+DISTVERSION=	build21
 CATEGORIES=	games
 MASTER_SITES=	https://launchpad.net/widelands/${DISTVERSION}/${DISTVERSION}/+download/ \
-		http://mirror.amdmi3.ru/distfiles/
+		https://mirror.amdmi3.ru/distfiles/
+EXTRACT_SUFX=	-source.tar.gz
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Realtime strategy game inspired by Settlers II
@@ -18,8 +18,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libicuuc.so:devel/icu \
 		libboost_regex.so:devel/boost-libs
 
-USES=		cmake compiler:c++11-lib gettext gl \
-		tar:bzip2 python:build sdl
+USES=		cmake compiler:c++11-lib gettext gl python:build sdl
 CMAKE_ARGS=	-DWL_INSTALL_BASEDIR="${PREFIX}" \
 		-DWL_INSTALL_DATADIR="${DATADIR}" \
 		-DWL_INSTALL_DOCDIR="${DOCSDIR}" \

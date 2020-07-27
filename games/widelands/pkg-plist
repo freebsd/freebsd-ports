@@ -1,51 +1,12 @@
 bin/widelands
+bin/wl_create_spritesheet
 bin/wl_map_info
 bin/wl_map_object_info
-@dir %%DATADIR%%/maps/Archipelago_Sea.wmf/scripting
-@dir %%DATADIR%%/maps/Atoll.wmf/scripting
-@dir %%DATADIR%%/maps/Calvisson.wmf/scripting
-@dir %%DATADIR%%/maps/Checkmate.wmf/scripting
-@dir %%DATADIR%%/maps/Comet_Island_v2.wmf/scripting
-@dir %%DATADIR%%/maps/Crater.wmf/scripting
-@dir %%DATADIR%%/maps/Crossing_the_Horizon_v2.wmf/scripting
-@dir %%DATADIR%%/maps/Desert_Tournament.wmf/scripting
-@dir %%DATADIR%%/maps/Dolomites_v2.wmf/scripting
-@dir %%DATADIR%%/maps/Elven_Forests.wmf/scripting
-@dir %%DATADIR%%/maps/Fellowships_v2.wmf/scripting
-@dir %%DATADIR%%/maps/Finnish_Lakes.wmf/scripting
-@dir %%DATADIR%%/maps/Firegames.wmf/scripting
-@dir %%DATADIR%%/maps/Four_Castles.wmf/scripting
-@dir %%DATADIR%%/maps/Four_Mountains.wmf/scripting
-@dir %%DATADIR%%/maps/Full_Moon_v2.wmf/scripting
-@dir %%DATADIR%%/maps/Glacier_Lake_v2.wmf/scripting
-@dir %%DATADIR%%/maps/Golden_Peninsula.wmf/scripting
-@dir %%DATADIR%%/maps/Ice_wars.wmf/scripting
-@dir %%DATADIR%%/maps/Impact.wmf/scripting
-@dir %%DATADIR%%/maps/Islands_at_War.wmf/scripting
-@dir %%DATADIR%%/maps/Kings_and_Queens_v2.wmf/scripting
-@dir %%DATADIR%%/maps/Lake_of_Tranquility.wmf/scripting
-@dir %%DATADIR%%/maps/Last_Bastion_v2.wmf/scripting
-@dir %%DATADIR%%/maps/Last_Survivors.wmf/scripting
-@dir %%DATADIR%%/maps/Mystical_Maze.wmf/scripting
-@dir %%DATADIR%%/maps/Rendez-Vous.wmf/scripting
-@dir %%DATADIR%%/maps/River_Explorers.wmf/scripting
-@dir %%DATADIR%%/maps/Riverlands.wmf/scripting
-@dir %%DATADIR%%/maps/Sun_of_Fire.wmf/scripting
-@dir %%DATADIR%%/maps/Swamp_Island.wmf/scripting
-@dir %%DATADIR%%/maps/Swamp_Monks.wmf/scripting
-@dir %%DATADIR%%/maps/The_Big_Lake.wmf/scripting
-@dir %%DATADIR%%/maps/The_Far_North.wmf/scripting
-@dir %%DATADIR%%/maps/The_Long_Way.wmf/scripting
-@dir %%DATADIR%%/maps/The_Nile_v2.wmf/scripting
-@dir %%DATADIR%%/maps/The_Oasis_Triangle.wmf/scripting
-@dir %%DATADIR%%/maps/The_Pass_Through_the_Mountains.wmf/scripting
-@dir %%DATADIR%%/maps/The_Thaw.wmf/scripting
-@dir %%DATADIR%%/maps/Three_Warriors.wmf/scripting
-@dir %%DATADIR%%/maps/Together_We're_Strong.wmf/scripting
-@dir %%DATADIR%%/maps/Twin_Lagoons_v2.wmf/scripting
-@dir %%DATADIR%%/maps/Twinkling_Waves.wmf/scripting
-@dir %%DATADIR%%/maps/Two_Frontiers.wmf/scripting
-@dir %%DATADIR%%/maps/Volcanic_Winter.wmf/scripting
-@dir %%DATADIR%%/maps/Wideworld.wmf/scripting
-@dir %%DATADIR%%/maps/Wisent_Valley.wmf/scripting
-@dir %%DATADIR%%/tribes/buildings/markets/barbarians
+share/applications/org.widelands.Widelands.desktop
+share/icons/hicolor/128x128/apps/org.widelands.Widelands.png
+share/icons/hicolor/16x16/apps/org.widelands.Widelands.png
+share/icons/hicolor/32x32/apps/org.widelands.Widelands.png
+share/icons/hicolor/48x48/apps/org.widelands.Widelands.png
+share/icons/hicolor/64x64/apps/org.widelands.Widelands.png
+share/man/man6/widelands.6.gz
+share/metainfo/org.widelands.Widelands.appdata.xml

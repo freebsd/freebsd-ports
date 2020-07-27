@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2019-05-02 05:23:39 UTC
+--- CMakeLists.txt.orig	2020-07-12 19:33:44 UTC
 +++ CMakeLists.txt
-@@ -164,7 +164,6 @@ elseif(CMAKE_BUILD_TYPE STREQUAL "RelWithDebInfo")
+@@ -202,7 +202,6 @@ elseif(CMAKE_BUILD_TYPE STREQUAL "RelWithDebInfo")
    set(WL_DEBUG_FLAGS "-DNDEBUG -DNOPARACHUTE")
    option(OPTION_ASAN "Build with AddressSanitizer" ON)
  else()
@@ -8,25 +8,16 @@
  endif()
  
  wl_add_flag(WL_GENERIC_CXX_FLAGS "-std=c++11")
-@@ -181,7 +180,7 @@ endif(OPTION_ASAN)
+@@ -219,7 +218,7 @@ endif(OPTION_ASAN)
  
  # This is set to avoid linker errors when using GLVND-libs on Linux
  if("${OpenGL_GL_PREFERENCE}" STREQUAL "GLVND")
--   set (CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -lGL")
-+   set (CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${OpenGL_GL_LIBRARY}")
+-   link_libraries("GL")
++  link_libraries(${OpenGL_GL_LIBRARY})
     add_compile_definitions(WL_USE_GLVND)
     message(STATUS "Adding linker flags for GLVND.")
  endif()
-@@ -293,7 +292,7 @@ if (NOT DEFINED WL_VERSION)
- else (NOT DEFINED WL_VERSION)
-   add_custom_target (
-     InputRevision ALL
--    COMMAND ${CMAKE_COMMAND -DWL_INSTALL_BASEDIR=${WL_INSTALL_BASEDIR} -DWL_VERSION=${WL_VERSION} -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE} -DSOURCE_DIR=${CMAKE_CURRENT_SOURCE_DIR} -DBINARY_DIR=${CMAKE_CURRENT_BINARY_DIR} -P ${CMAKE_CURRENT_SOURCE_DIR}/cmake/InputRevision.cmake
-+    COMMAND ${CMAKE_COMMAND} -DWL_INSTALL_BASEDIR=${WL_INSTALL_BASEDIR} -DWL_VERSION=${WL_VERSION} -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE} -DSOURCE_DIR=${CMAKE_CURRENT_SOURCE_DIR} -DBINARY_DIR=${CMAKE_CURRENT_BINARY_DIR} -P ${CMAKE_CURRENT_SOURCE_DIR}/cmake/InputRevision.cmake
-   )
- endif (NOT DEFINED WL_VERSION)
- 
-@@ -312,7 +311,7 @@ add_custom_target(_run_all_tests ALL
+@@ -352,7 +351,7 @@ endif (OPTION_BUILD_TESTS)
  
  install (
    FILES ${CMAKE_CURRENT_BINARY_DIR}/VERSION
@@ -35,7 +26,7 @@
    CONFIGURATIONS Debug;Release
    COMPONENT CoreVersionFile
  )
-@@ -361,10 +360,9 @@ install(
+@@ -401,10 +400,9 @@ install(
  
  install(
    FILES
@@ -47,7 +38,7 @@
    CONFIGURATIONS Debug;Release
    COMPONENT CoreLicenseFiles
  )
-@@ -372,7 +370,7 @@ install(
+@@ -412,7 +410,7 @@ install(
  install(
    DIRECTORY
      doc
