@@ -6,7 +6,6 @@ DISTVERSION=	0.2.0
 CATEGORIES=	net
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	6916780389b9.patch:-p1 # https://github.com/any1/wayvnc/pull/58
 PATCHFILES+=	72dd8a159c44.patch:-p1 # https://github.com/any1/wayvnc/pull/59
 
 MAINTAINER=	jbeich@FreeBSD.org
