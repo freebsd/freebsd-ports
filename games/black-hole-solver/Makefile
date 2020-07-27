@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	rinutils>0:devel/rinutils \
 		p5-Path-Tiny>=0:devel/p5-Path-Tiny
 
-USES=		cmake tar:xz
+USES=		cmake compiler:c11 tar:xz
 USE_PERL5=	build
 
 .include <bsd.port.mk>
