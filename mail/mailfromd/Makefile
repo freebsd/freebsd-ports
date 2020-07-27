@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mailfromd
-PORTVERSION=	8.5
-PORTREVISION=	6
+PORTVERSION=	8.8
 CATEGORIES=	mail
 MASTER_SITES=	http://download.gnu.org.ua/pub/release/${PORTNAME}/ \
 		http://download.gnu.org.ua/pub/alpha/${PORTNAME}/
@@ -35,7 +34,7 @@ SUB_LIST+=	MFD_RUN_DIR=${MFD_RUN_DIR}
 INFO=		${PORTNAME}
 PORTDOCS=	AUTHORS ChangeLog NEWS README THANKS TODO
 
-OPTIONS_DEFINE=		DEBUG DOCS DSPAM NLS
+OPTIONS_DEFINE=		DOCS DSPAM NLS
 OPTIONS_DEFAULT=	GDBM
 OPTIONS_MULTI=		DB
 OPTIONS_MULTI_DB=	BDB GDBM
@@ -43,8 +42,6 @@ OPTIONS_SUB=		yes
 
 BDB_DESC=		Berkeley DB v4.8 support (last working one)
 DB_DESC=		Database configuration
-
-DEBUG_CONFIGURE_ON=	--enable-debug
 
 DSPAM_DESC=		DSPAM spam filter library support
 DSPAM_LIB_DEPENDS=	libdspam.so:mail/dspam
@@ -61,6 +58,10 @@ BDB_LDFLAGS=		-L${BDB_LIB_DIR}
 
 GDBM_LIB_DEPENDS=	libgdbm.so:databases/gdbm
 GDBM_CONFIGURE_WITH=	gdbm
+
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=	--enable-debug
+.endif
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DATABASEDIR} ${STAGEDIR}${MFD_RUN_DIR}
