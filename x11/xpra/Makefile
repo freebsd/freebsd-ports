@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xpra
-PORTVERSION=	3.0.10
+PORTVERSION=	4.0.2
 CATEGORIES=	x11
 MASTER_SITES=	http://xpra.org/src/
 
@@ -10,6 +10,7 @@ COMMENT=	Xpra gives you persistent remote applications for X
 
 LICENSE=	GPLv2
 
+BUILD_DEPENDS=	brotli:archivers/brotli
 LIB_DEPENDS=	libwebp.so:graphics/webp
 RUN_DEPENDS=	${PY_PILLOW} \
 		${PYTHON_PKGNAMEPREFIX}bencode.py>1:converters/py-bencode.py@${PY_FLAVOR} \
@@ -39,7 +40,11 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION} \
 		PYTHON_SUFFIX=${PYTHON_SUFFIX} \
 		PYTHON_VER=${PYTHON_VER}
 SHEBANG_FILES=	cups/xpraforwarder scripts/auth_dialog scripts/xdg-open \
-		scripts/xpra_udev_product_version
+		scripts/xpra_udev_product_version scripts/gnome-open \
+		scripts/gvfs-open
+SHEBANG_LANG=	sh
+sh_OLD_CMD=	/usr/bin/sh
+sh_CMD=		/bin/sh
 MAKE_ENV=	XPRA_USE_PROCESS_POLLING=1
 
 OPTIONS_DEFINE=		AVCODEC CUPS FFMPEG GSTREAMER HTML5 LIBYUV SWSCALE VPX \
@@ -87,7 +92,7 @@ PYDISTUTILS_PKGNAME=	xpra_all
 XPRA_OPTIONS_ALL+=	${XPRA_OPTIONS_DISABLED} csc_libyuv csc_swscale \
 			dec_avcodec2 enc_ffmpeg enc_x264 enc_x265 html5 \
 			printing sound vpx webcam
-XPRA_OPTIONS_DISABLED=	gtk2 mdns minify netdev uinput Xdummy Xdummy_wrapper
+XPRA_OPTIONS_DISABLED=	mdns minify netdev uinput Xdummy Xdummy_wrapper
 
 .include <bsd.port.options.mk>
 
