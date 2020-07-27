@@ -1,0 +1,12 @@
+nvi is an implementation of the ex/vi text editor.
+
+The original vi was written by William Joy. Later Mark Horton added
+a number of enhancements.
+
+nvi was written by Keith Bostic and was distributed as part of the
+Fourth Berkeley Software Distribution (4BSD) by the University of
+California, Berkeley.
+
+This version is based on a fork of nvi by Sven Verdoolaege.
+
+WWW: https://github.com/lichray/nvi2/

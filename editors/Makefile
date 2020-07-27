@@ -202,6 +202,7 @@
     SUBDIR += neovim-qt
     SUBDIR += nvi-devel
     SUBDIR += nvi-m17n
+    SUBDIR += nvi2-port
     SUBDIR += o
     SUBDIR += openoffice-4
     SUBDIR += openoffice-devel
