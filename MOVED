@@ -15168,3 +15168,4 @@ databases/postgresql94-pltcl|databases/postgresql95-pltcl|2020-07-24|Has expired
 databases/postgresql94-plperl|databases/postgresql95-plperl|2020-07-24|Has expired: PostgreSQL-9.4 has reached end-of-life
 net/dshell||2020-07-24|Uses deprecated version of python
 sysutils/openshift-install|sysutils/openshift-install45|2020-07-25|Duplicate port
+databases/sqliteodbc-sqlite2|databases/sqliteodbc|2020-07-27|Has expired: SQLite2 has stopped development in 2005, please move to SQLite3
