@@ -2,35 +2,31 @@
 # $FreeBSD$
 
 PORTNAME=	rsyncrypto
-PORTVERSION=	1.12
-PORTREVISION=	2
+PORTVERSION=	1.14
 CATEGORIES=	sysutils net
 MASTER_SITES=	SF
 
 MAINTAINER=	linpct@gmail.com
 COMMENT=	Rsync Friendly File Encryption
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libargtable2.so:devel/argtable
+LIB_DEPENDS=	libargtable2.so:devel/argtable
 RUN_DEPENDS=	rsync:net/rsync
 
-LDFLAGS+=	-L${LOCALBASE}/lib/
-CPPFLAGS+=	-I${LOCALBASE}/include/
-
+USES=		gmake localbase ssl tar:bzip2
 GNU_CONFIGURE=	yes
-USES=		gmake ssl
 
 PLIST_FILES=	bin/rsyncrypto \
 		bin/rsyncrypto_recover \
 		man/man1/rsyncrypto.1.gz \
 		man/man1/rsyncrypto_recover.1.gz
+PORTDOCS=	AUTHORS ChangeLog NEWS README
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DOCS
 
-.if ${SSL_DEFAULT} == base
-BROKEN_FreeBSD_12=	member access into incomplete type 'RSA' (aka 'rsa_st')
-BROKEN_FreeBSD_13=	member access into incomplete type 'RSA' (aka 'rsa_st')
-.endif
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
