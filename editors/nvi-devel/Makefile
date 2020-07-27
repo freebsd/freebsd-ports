@@ -11,7 +11,10 @@ MASTER_SITES=	https://mirror.csclub.uwaterloo.ca/MacPorts/mpdistfiles/nvi/ \
 MAINTAINER=	leres@FreeBSD.org
 COMMENT=	Development snapshot of the world-renown nvi editor
 
-CONFLICTS_INSTALL=	nvi-m17n-[0-9]* xnview-[0-9]*
+DEPRECATED=	Unsupported upstream since 2015, please switch to editors/nvi2
+EXPIRATION_DATE=	2020-10-25
+
+CONFLICTS_INSTALL=	nvi-m17n-[0-9]* nvi2-[0-9]* xnview-[0-9]*
 
 OPTIONS_DEFINE=	EXPANDTAB WIDECHAR
 OPTIONS_DEFAULT=WIDECHAR
