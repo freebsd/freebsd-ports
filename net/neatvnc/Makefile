@@ -2,8 +2,7 @@
 
 PORTNAME=	neatvnc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.0-60
-DISTVERSIONSUFFIX=	-gb52f5cd
+DISTVERSION=	0.2.0
 CATEGORIES=	net
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -29,5 +28,11 @@ GNUTLS_MESON_ENABLED=	tls
 
 JPEG_LIB_DEPENDS=	libturbojpeg.so:graphics/libjpeg-turbo
 JPEG_MESON_ENABLED=	jpeg
+
+post-patch:
+# Extract (snapshot) version from the port instead of meson.build
+	@${REINPLACE_CMD} -i .nogit -e 's/git.found()/false/' \
+		-e '/project_version/s/@0@/${DISTVERSIONFULL}/' \
+		${WRKSRC}/meson.build
 
 .include <bsd.port.mk>

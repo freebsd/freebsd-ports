@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	aml
-PORTVERSION=	s20200717
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.1.0
 CATEGORIES=	devel
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -16,6 +17,11 @@ USES=		compiler:c11 meson pkgconfig
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 GH_ACCOUNT=	any1
-GH_TAGNAME=	696f0ee
+
+post-patch:
+# Extract (snapshot) version from the port instead of meson.build
+	@${REINPLACE_CMD} -i .nogit -e 's/git.found()/false/' \
+		-e '/project_version/s/@0@/${DISTVERSIONFULL}/' \
+		${WRKSRC}/meson.build
 
 .include <bsd.port.mk>
