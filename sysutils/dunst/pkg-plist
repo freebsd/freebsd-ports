@@ -1,0 +1,6 @@
+bin/dunst
+bin/dunstctl
+man/man1/dunst.1.gz
+man/man1/dunstctl.1.gz
+share/dbus-1/services/org.knopwob.dunst.service
+%%DATADIR%%/dunstrc

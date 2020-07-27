@@ -3,7 +3,7 @@
 
 PORTNAME=	dunst
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.1
+DISTVERSION=	1.5.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	dmgk@FreeBSD.org
@@ -27,18 +27,13 @@ MAKE_ARGS=	MANPREFIX="${PREFIX}/man"
 ALL_TARGET=	dunst
 TEST_TARGET=	test
 
-PLIST_FILES=	bin/dunst \
-		share/dunst/dunstrc \
-		man/man1/dunst.1.gz \
-		share/dbus-1/services/org.knopwob.dunst.service
-
 OPTIONS_DEFINE=	DUNSTIFY
 OPTIONS_DEFAULT=	DUNSTIFY
 
 DUNSTIFY_DESC=	Install dunstify (alternative to the notify-send)
 
-DUNSTIFY_ALL_TARGET=	dunstify
 DUNSTIFY_LIB_DEPENDS=	libnotify.so:devel/libnotify
+DUNSTIFY_ALL_TARGET=	dunstify
 DUNSTIFY_PLIST_FILES=	bin/dunstify
 
 pre-install:
