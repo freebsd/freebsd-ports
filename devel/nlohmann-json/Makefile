@@ -3,7 +3,7 @@
 
 PORTNAME=	json
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.8.0
+DISTVERSION=	3.9.0
 CATEGORIES=	devel
 PKGNAMEPREFIX=	nlohmann-
 
@@ -25,6 +25,7 @@ CMAKE_OFF=	JSON_BuildTests
 PLIST_FILES=	lib/cmake/nlohmann_json/nlohmann_jsonConfig.cmake \
 		lib/cmake/nlohmann_json/nlohmann_jsonConfigVersion.cmake \
 		lib/cmake/nlohmann_json/nlohmann_jsonTargets.cmake \
+		libdata/pkgconfig/nlohmann_json.pc \
 		include/nlohmann/json.hpp
 
 do-test:
