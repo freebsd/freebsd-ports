@@ -1,6 +1,6 @@
-TIMESTAMP = 1589170280
-SHA256 (alecthomas-chroma-v0.7.3_GH0.tar.gz) = 1007e82cc44cea04542c282b19bab25a59cb1e53149aaa7f0e2d9ce72ba80114
-SIZE (alecthomas-chroma-v0.7.3_GH0.tar.gz) = 615181
+TIMESTAMP = 1595900094
+SHA256 (alecthomas-chroma-v0.8.0_GH0.tar.gz) = 03bbe1fd43109b125cb33cf72e26338376056b961ea1c9ab1ecc02a60651e67b
+SIZE (alecthomas-chroma-v0.8.0_GH0.tar.gz) = 623074
 SHA256 (alecthomas-assert-405dbfeb8e38_GH0.tar.gz) = 98220302569c728c0dc546ce946c4600aed4ab0729f6e9fc08b24b753cfcaa13
 SIZE (alecthomas-assert-405dbfeb8e38_GH0.tar.gz) = 71073
 SHA256 (alecthomas-colour-60882d9e2721_GH0.tar.gz) = 72c3b70db87e00ca3044c4f4dbedf08e1ae15e93bbc00e622313a58813c6b012
