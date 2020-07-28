@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	rsync
-DISTVERSION=	3.1.3
-PORTREVISION=	1
+DISTVERSION=	3.2.2
 CATEGORIES=	net
-MASTER_SITES=	https://rsync.samba.org/ftp/rsync/ \
+MASTER_SITES=   https://rsync.samba.org/ftp/rsync/ \
 		https://www.mirrorservice.org/sites/rsync.samba.org/ \
 		http://rsync.samba.org/ftp/rsync/ \
 		ftp://ftp.fu-berlin.de/pub/unix/network/rsync/ \
@@ -16,6 +15,9 @@ MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Network file distribution/synchronization utility
 
 LICENSE=	GPLv3
+
+LIB_DEPENDS=    libxxhash.so:devel/xxhash \
+		libzstd.so:archivers/zstd
 
 USES=		cpe shebangfix
 SHEBANG_FILES=	support/rrsync
@@ -34,7 +36,7 @@ TEST_TARGET=	check
 CONFIGURE_ARGS=	--disable-debug --enable-ipv6 \
 		--with-rsyncd-conf=${ETCDIR}/rsyncd.conf
 
-PORTDOCS=	NEWS README csprotocol.txt tech_report.tex
+PORTDOCS=	NEWS.md README.md csprotocol.txt tech_report.tex
 
 # define options
 OPTIONS_DEFINE=		DOCS POPT_PORT ZLIB_BASE SSH ICONV
@@ -80,15 +82,15 @@ POPT_PORT_CONFIGURE_OFF=	--with-included-popt
 SSH_CONFIGURE_ON=	--with-rsh=ssh
 SSH_CONFIGURE_OFF=	--with-rsh=rsh
 
-ACL_DISTFILES=		${PORTNAME}-patches-${PORTVERSION}${EXTRACT_SUFX}
-ATIMES_DISTFILES=	${PORTNAME}-patches-${PORTVERSION}${EXTRACT_SUFX}
-FLAGS_DISTFILES=	${PORTNAME}-patches-${PORTVERSION}${EXTRACT_SUFX}
-ICONV_DISTFILES=	${PORTNAME}-patches-${PORTVERSION}${EXTRACT_SUFX}
-RENAMED_DISTFILES=	${PORTNAME}-patches-${PORTVERSION}${EXTRACT_SUFX}
-TIMELIMIT_DISTFILES=	${PORTNAME}-patches-${PORTVERSION}${EXTRACT_SUFX}
+ACL_DISTFILES=		${PORTNAME}-patches-${DISTVERSION}${EXTRACT_SUFX}
+ATIMES_DISTFILES=	${PORTNAME}-patches-${DISTVERSION}${EXTRACT_SUFX}
+FLAGS_DISTFILES=	${PORTNAME}-patches-${DISTVERSION}${EXTRACT_SUFX}
+ICONV_DISTFILES=	${PORTNAME}-patches-${DISTVERSION}${EXTRACT_SUFX}
+RENAMED_DISTFILES=	${PORTNAME}-patches-${DISTVERSION}${EXTRACT_SUFX}
+TIMELIMIT_DISTFILES=	${PORTNAME}-patches-${DISTVERSION}${EXTRACT_SUFX}
 
 .if make(makesum)
-DISTFILES+=	${PORTNAME}-patches-${PORTVERSION}${EXTRACT_SUFX}
+DISTFILES+=	${PORTNAME}-patches-${DISTVERSION}${EXTRACT_SUFX}
 .endif
 
 .include <bsd.port.pre.mk>
