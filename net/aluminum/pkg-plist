@@ -15,4 +15,5 @@ lib/cmake/aluminum/AluminumTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/aluminum/AluminumTargets.cmake
 lib/cmake/aluminum/FindHWLOC.cmake
 lib/cmake/aluminum/FindNCCL.cmake
+lib/cmake/aluminum/TryLLVMOpenMP.cmake
 lib/libAl.so
