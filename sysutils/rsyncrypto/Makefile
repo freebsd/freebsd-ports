@@ -25,6 +25,10 @@ PORTDOCS=	AUTHORS ChangeLog NEWS README
 
 OPTIONS_DEFINE=	DOCS
 
+post-patch:
+# Inhibit the check for RSA_get0_factors() to support older OpenSSL versions
+	@${REINPLACE_CMD} -e '/RSA_get0_factors/,+49d' ${WRKSRC}/configure
+
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
