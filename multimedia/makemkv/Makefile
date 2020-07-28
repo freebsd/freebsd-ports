@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	makemkv
-PORTVERSION=	1.15.1
+PORTVERSION=	1.15.2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.makemkv.com/download/:makemkv \
 		http://www.makemkv.com/download/old/:makemkv \
@@ -88,13 +88,12 @@ MPFRVERSION=	3.1.2
 MPCVERSION=	1.0.3
 GCCVERSION=	5.5.0
 FDKAACVERSION=	2.0.1
-FFMPEGVERSION=	4.2.2
+FFMPEGVERSION=	4.3.1
 OPENSSLVERSION=	1.0.2
 OPENSSLPATCHLEVEL=	k
 OPENSSLFULLVER=	${OPENSSLVERSION}${OPENSSLPATCHLEVEL}
 
 LINUXARCH=	${ARCH:S/amd64/x86_64/}
-LINUXTRIPLET=	${LINUXARCH}-unknown-linux-gnu
 LINUX32CPUTYPE=	${${OSVERSION} >= 1300000:?i686:i486}
 LINUXTRIPLET=	${LINUXARCH:S/i386/${LINUX32CPUTYPE}/}-unknown-linux-gnu
 LINUXLIBDIR=	${LINUXBASE}/${"${LINUXARCH:Mx86_64}" != "":?lib64:lib}
@@ -164,7 +163,7 @@ pre-configure:
 		CC=${CC} CXX=${CXX} ../binutils-${BINUTILSVERSION}/configure \
 			--target=${LINUXTRIPLET} \
 			--prefix=${WRKDIR}/gnuroot \
-			--disable-multilib --disable-nls; \
+			--disable-multilib --disable-nls --without-isl; \
 		${MAKE_CMD} ${_MAKE_JOBS} && \
 		${MAKE_CMD} install
 		# GCC compiler
@@ -173,7 +172,8 @@ pre-configure:
 		CC=${CC} CXX=${CXX} ../gcc-${GCCVERSION}/configure \
 			--target=${LINUXTRIPLET} \
 			--prefix=${WRKDIR}/gnuroot \
-			--enable-languages=c,c++ --disable-multilib; \
+			--enable-languages=c,c++ --disable-multilib \
+			--without-isl; \
 		${MAKE_CMD} ${_MAKE_JOBS} all-gcc && \
 		${MAKE_CMD} install-gcc
 		# Glibc headers / startup code
@@ -207,7 +207,7 @@ pre-configure:
 		${MAKE_CMD} ${_MAKE_JOBS}; \
 		${MAKE_CMD} install
 		# GCC libstdc++
-		${ECHO_CMD} '#/bin/sh\ntrue' \
+		${ECHO_CMD} '#!/bin/sh\ntrue' \
 			>${WRKDIR}/gnuroot/bin/ldconfig
 		${CHMOD} +x ${WRKDIR}/gnuroot/bin/ldconfig
 		cd ${WRKDIR}/gcc-build; \
@@ -244,8 +244,8 @@ pre-configure:
 do-configure:
 		cd ${WRKSRC}; \
 		CC=${LINUXTRIPLET}-gcc CXX=${LINUXTRIPLET}-g++ \
-		CFLAGS="${CFLAGS:N-Wl,-rpath=*}" \
-		CXXFLAGS="${CXXFLAGS:N-Wl,-rpath=*}" \
+		CFLAGS="-std=c++11 ${CFLAGS:N-Wl,-rpath=*}" \
+		CXXFLAGS="-std=c++11 ${CXXFLAGS:N-Wl,-rpath=*}" \
 		LDFLAGS="${LDFLAGS:N-Wl,-rpath=*}" \
 		PATH=${WRKDIR}/gnuroot/bin:${PATH} \
 		PKG_CONFIG_PATH=${WRKDIR}/gnuroot/lib/pkgconfig \
@@ -268,6 +268,7 @@ post-install:
 			${STAGEDIR}${PREFIX}/bin/makemkvcon
 		${REINPLACE_CMD} -e 's:/sys/bus/scsi:/etc/makemkv/:' \
 			${STAGEDIR}${PREFIX}/bin/makemkvcon
+		${BRANDELF} -t Linux ${STAGEDIR}${PREFIX}/bin/makemkvcon
 		${INSTALL_SCRIPT} ${WRKDIR}/update-makemkv-drives \
 			${STAGEDIR}${PREFIX}/sbin
 
