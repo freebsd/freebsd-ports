@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	llvm
-DISTVERSION=	10.0.0
-PORTREVISION=	2
+DISTVERSION=	10.0.1
+PORTREVISION=	0
 CATEGORIES=	devel lang
 MASTER_SITES=	https://github.com/llvm/llvm-project/releases/download/llvmorg-${DISTVERSION:S/rc/-rc/}/ \
 		https://${PRE_}releases.llvm.org/${LLVM_RELEASE}/${RCDIR}
@@ -104,6 +104,7 @@ CLANG_USE=		GNOME=libxml2
 COMPILER_RT_DESC=	Sanitizer libraries
 COMPILER_RT_DISTFILES=	compiler-rt-${DISTVERSION}.src${EXTRACT_SUFX}
 COMPILER_RT_EXTRA_PATCHES=	${PATCHDIR}/compiler-rt
+COMPILER_RT_CMAKE_ON=	-DCOMPILER_RT_INSTALL_PATH=${LLVM_PREFIX}/lib/clang/${LLVM_RELEASE}
 COMPILER_RT_PLIST_FILES=${_COMPILER_RT_LIBS:S|^|${_CRTLIBDIR}/|} \
 			${_COMPILER_RT_BLACKLISTS:S|^|${_CRTBLDIR}/|}
 DOCS_BUILD_DEPENDS=	${PY_SPHINX} \
@@ -346,7 +347,7 @@ _BE_LIBS_${BE}+=	${_BE_LIBS_COMMON:S/^/${BE_ARCH}/} \
 BE_PATTERN=${_BE_LIBS_STANDARD:O:S/$/.a/:ts|}
 
 _CRTLIBDIR=	${LLVM_PREFIX:S|${PREFIX}/||}/lib/clang/${LLVM_RELEASE}/lib/freebsd
-_CRTBLDIR=	${LLVM_PREFIX:S|${PREFIX}/||}/share
+_CRTBLDIR=	${LLVM_PREFIX:S|${PREFIX}/||}/lib/clang/${LLVM_RELEASE}/share
 _COMPILER_RT_BLACKLISTS=	cfi_blacklist.txt
 .if ${ARCH} == "amd64"
 _COMPILER_RT_BLACKLISTS+=	asan_blacklist.txt
@@ -534,12 +535,9 @@ post-install-COMPILER_RT-on:
 	cd ${WRKDIR}/compiler-rt-build && \
 	    ${MAKE_ENV} ${MAKE_CMD} ${INSTALL_TARGET}
 .if ${ARCH} == "amd64"
-	${RM} ${STAGEDIR}${LLVM_PREFIX}/lib/freebsd/libclang_rt*i386*
+	${RM} ${STAGEDIR}${PREFIX}/${_CRTLIBDIR}/libclang_rt*i386*
 .endif
 	${MKDIR} ${STAGEDIR}${PREFIX}/${_CRTLIBDIR}
-	${MV} ${STAGEDIR}${LLVM_PREFIX}/lib/freebsd/* \
-	    ${STAGEDIR}${PREFIX}/${_CRTLIBDIR}
-	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/lib/freebsd
 
 post-install-LIT-on:
 	${INSTALL_SCRIPT} ${PATCH_WRKSRC}/utils/lit/lit.py \
