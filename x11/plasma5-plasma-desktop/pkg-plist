@@ -1703,6 +1703,7 @@ share/locale/da/LC_MESSAGES/kcm_cursortheme.mo
 share/locale/da/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/da/LC_MESSAGES/kcm_desktoptheme.mo
 share/locale/da/LC_MESSAGES/kcm_fonts.mo
+share/locale/da/LC_MESSAGES/kcm_keys.mo
 share/locale/da/LC_MESSAGES/kcm_launchfeedback.mo
 share/locale/da/LC_MESSAGES/kcm_lookandfeel.mo
 share/locale/da/LC_MESSAGES/kcm_nightcolor.mo

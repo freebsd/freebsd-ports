@@ -359,6 +359,7 @@ share/kpackage/kcms/kcm_kwinrules/metadata.json
 share/kservices5/kcm_kwin_effects.desktop
 share/kservices5/kcm_kwin_virtualdesktops.desktop
 share/kservices5/kcm_kwinrules.desktop
+share/kservices5/kwin-script-videowall.desktop
 share/kservices5/kwin/kwin4_decoration_qml_plastik.desktop
 share/kservices5/kwinactions.desktop
 share/kservices5/kwinadvanced.desktop
