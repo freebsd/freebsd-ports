@@ -95,6 +95,7 @@ include/freerdp2/freerdp/gdi/region.h
 include/freerdp2/freerdp/gdi/shape.h
 include/freerdp2/freerdp/gdi/video.h
 include/freerdp2/freerdp/graphics.h
+include/freerdp2/freerdp/heartbeat.h
 include/freerdp2/freerdp/input.h
 include/freerdp2/freerdp/license.h
 include/freerdp2/freerdp/listener.h
