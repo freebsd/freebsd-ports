@@ -136,6 +136,7 @@
 %%CACTIDIR%%/docs/SNMP-Options.html
 %%CACTIDIR%%/docs/Script-Data-Query-Walkthrough.html
 %%CACTIDIR%%/docs/Sites.html
+%%CACTIDIR%%/docs/Spikekill.html
 %%CACTIDIR%%/docs/Spine.html
 %%CACTIDIR%%/docs/Standards-Code-Formatting.html
 %%CACTIDIR%%/docs/Standards-Documentation.html
@@ -198,6 +199,7 @@
 %%CACTIDIR%%/docs/images/cacti-tree-view-page.png
 %%CACTIDIR%%/docs/images/cacti_add_device_site.JPG
 %%CACTIDIR%%/docs/images/cacti_add_sites.JPG
+%%CACTIDIR%%/docs/images/cacti_automation_flow3.JPG
 %%CACTIDIR%%/docs/images/cacti_default_tree.png
 %%CACTIDIR%%/docs/images/cacti_device_datasource.JPG
 %%CACTIDIR%%/docs/images/cacti_graph_managment.JPG
@@ -430,6 +432,7 @@
 %%CACTIDIR%%/docs/images/snmp_dqw_table1.png
 %%CACTIDIR%%/docs/images/snmp_dqw_table2.png
 %%CACTIDIR%%/docs/images/snmp_dqw_table3.png
+%%CACTIDIR%%/docs/images/spikekill.gif
 %%CACTIDIR%%/docs/images/system-utilities-boost1.png
 %%CACTIDIR%%/docs/images/system-utilities-boost2.png
 %%CACTIDIR%%/docs/images/system-utilities-main1.png
@@ -1121,6 +1124,8 @@
 %%CACTIDIR%%/include/top_general_header.php
 %%CACTIDIR%%/include/top_graph_header.php
 %%CACTIDIR%%/include/top_header.php
+%%CACTIDIR%%/include/vendor/cldr-to-gettext-plural-rules/.gitattributes
+%%CACTIDIR%%/include/vendor/cldr-to-gettext-plural-rules/.gitignore
 %%CACTIDIR%%/include/vendor/cldr-to-gettext-plural-rules/LICENSE
 %%CACTIDIR%%/include/vendor/cldr-to-gettext-plural-rules/README.md
 %%CACTIDIR%%/include/vendor/cldr-to-gettext-plural-rules/UNICODE-LICENSE.txt
@@ -1962,6 +1967,7 @@
 %%CACTIDIR%%/include/vendor/phpmailer/language/phpmailer.lang-hi.php
 %%CACTIDIR%%/include/vendor/phpmailer/language/phpmailer.lang-hr.php
 %%CACTIDIR%%/include/vendor/phpmailer/language/phpmailer.lang-hu.php
+%%CACTIDIR%%/include/vendor/phpmailer/language/phpmailer.lang-hy.php
 %%CACTIDIR%%/include/vendor/phpmailer/language/phpmailer.lang-id.php
 %%CACTIDIR%%/include/vendor/phpmailer/language/phpmailer.lang-it.php
 %%CACTIDIR%%/include/vendor/phpmailer/language/phpmailer.lang-ja.php
@@ -2092,12 +2098,12 @@
 %%CACTIDIR%%/install/upgrades/1_1_8.php
 %%CACTIDIR%%/install/upgrades/1_2_0.php
 %%CACTIDIR%%/install/upgrades/1_2_1.php
+%%CACTIDIR%%/install/upgrades/1_2_11.php
 %%CACTIDIR%%/install/upgrades/1_2_2.php
 %%CACTIDIR%%/install/upgrades/1_2_3.php
 %%CACTIDIR%%/install/upgrades/1_2_5.php
 %%CACTIDIR%%/install/upgrades/1_2_7.php
 %%CACTIDIR%%/install/upgrades/1_2_8.php
-%%CACTIDIR%%/install/upgrades/1_2_11.php
 %%CACTIDIR%%/install/upgrades/index.php
 %%CACTIDIR%%/lib/aggregate.php
 %%CACTIDIR%%/lib/api_aggregate.php
