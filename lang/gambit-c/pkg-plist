@@ -1,4 +1,9 @@
 bin/gambcomp-C
+bin/gambcomp-java
+bin/gambcomp-js
+bin/gambcomp-php
+bin/gambcomp-python
+bin/gambcomp-ruby
 bin/gambdoc
 bin/gsc-gambit
 bin/gsc-script
@@ -10,7 +15,7 @@ bin/scheme-r5rs
 bin/scheme-srfi-0
 bin/six
 bin/six-script
-include/gambit-c/gambit-not408008.h
+include/gambit-c/gambit-not409003.h
 include/gambit-c/gambit.h
 lib/gambit-c/_asm#.scm
 lib/gambit-c/_assert#.scm

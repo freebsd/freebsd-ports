@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	gambit-c
-PORTVERSION=	4.8.8
-PORTREVISION=	7
+PORTVERSION=	4.9.3
 DISTVERSIONPREFIX=	v
+PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	lang
 
@@ -14,10 +14,10 @@ COMMENT=	Gambit programming system where the compiler generates portable C code
 LICENSE=	APACHE20 LGPL21
 LICENSE_COMB=	dual
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	feeley
-GH_PROJECT=	gambit
 USES=		compiler gmake
+USE_GITHUB=	yes
+GH_ACCOUNT=	gambit
+GH_PROJECT=	gambit
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-single-host \
 		--enable-gcc-opts \
