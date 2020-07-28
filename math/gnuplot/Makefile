@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnuplot
-PORTVERSION=	5.2.8
-PORTREVISION=	2
+PORTVERSION=	5.4.0
 CATEGORIES=	math graphics
 MASTER_SITES=	SF
 
@@ -88,9 +87,9 @@ post-build-DOCS-on:
 	@cd ${WRKSRC}/docs && ${MAKE} groff
 
 pre-install:
-	${MKDIR} ${STAGEDIR}${DATADIR}/5.2 ; \
+	${MKDIR} ${STAGEDIR}${DATADIR}/5.4 ; \
 		${INSTALL_DATA} ${WRKSRC}/share/gnuplotrc \
-		${STAGEDIR}${DATADIR}/5.2/gnuplotrc.sample
+		${STAGEDIR}${DATADIR}/5.4/gnuplotrc.sample
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
@@ -104,7 +103,7 @@ post-install-DOCS-on:
 
 .if defined(LITE)
 post-stage:
-	@cd ${STAGEDIR}${PREFIX} && ${RMDIR} libexec/gnuplot/5.2 libexec/gnuplot
+	@cd ${STAGEDIR}${PREFIX} && ${RMDIR} libexec/gnuplot/5.4 libexec/gnuplot
 .endif
 
 .include <bsd.port.mk>
