@@ -13,6 +13,8 @@ COMMENT=	Framework for developing PHP web applications
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+IGNORE_WITH_PHP=	74
+
 CONFLICTS=	ZendFramework-1.*
 
 NO_ARCH=	yes

@@ -12,6 +12,8 @@ COMMENT=	Free IT and asset management software
 
 LICENSE=	GPLv2
 
+IGNORE_WITH_PHP=	74
+
 USES=		cpe gettext php tar:tgz
 CPE_VENDOR=	glpi-project
 USE_PHP=	ctype curl dom fileinfo filter gd json mbstring mysqli \
