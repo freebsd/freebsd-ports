@@ -173,6 +173,8 @@ lib/ImageMagick-%%PORTVERSION%%/config-%%QBIT%%%%HDRI%%/configure.xml
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/avs.so
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/bgr.la
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/bgr.so
+%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/ashlar.la
+%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/ashlar.so
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/bmp.la
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/bmp.so
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/braille.la
@@ -1417,6 +1419,7 @@ man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-7/www/changelog.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/clahe.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/cipher.html
+%%PORTDOCS%%%%DOCSDIR%%-7/www/cite.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/color-management.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/color-thresholding.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/color.html
@@ -1431,6 +1434,7 @@ man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-7/www/contact.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/convert.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/convex-hull.html
+%%PORTDOCS%%%%DOCSDIR%%-7/www/defines.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/develop.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/display.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/distribute-pixel-cache.html
