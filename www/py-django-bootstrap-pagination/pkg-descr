@@ -1,0 +1,8 @@
+Render Django Page objects as Bootstrap 3.x/4.x Pagination compatible HTML
+
+This application serves to make using Twitter's Bootstrap Pagination styles
+work seamlessly with Django Page objects. By passing in a Page object and one
+or more optional arguments, Bootstrap pagination bars and pagers can be
+rendered with very little effort.
+
+WWW: https://pypi.org/project/django-bootstrap-pagination/
