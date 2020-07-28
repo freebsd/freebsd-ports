@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rpki-client
-DISTVERSION=	6.7p0
+DISTVERSION=	6.7p1
 CATEGORIES=	net
 
 MAINTAINER=	zeising@FreeBSD.org
@@ -20,7 +20,7 @@ PLIST_SUB=	USERS="${USERS}"
 
 USE_GITHUB=	yes
 GH_PROJECT=	${PORTNAME}-portable ${PORTNAME}-openbsd:openbsd
-GH_TAGNAME=	3592f05:openbsd
+GH_TAGNAME=	${PORTNAME}-${DISTVERSION}:openbsd
 GH_SUBDIR=	openbsd:openbsd
 
 GNU_CONFIGURE=	yes
