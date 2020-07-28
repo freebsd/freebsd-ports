@@ -1,15 +1,21 @@
-A complete tool to interact with OneDrive on Linux.
-Built following the UNIX philosophy.
+A free Microsoft OneDrive Client which supports OneDrive Personal, OneDrive
+for Business, OneDrive for Office365 and Sharepoint.
+This Powerful and highly configurable client can run on all major Linux
+distributions, as a Docker container and on FreeBSD.
+This client is a 'fork' of skilion client which was abandoned in 2018.
 
 Features:
-    State caching
-    Real-Time file monitoring with Inotify
-    Resumable uploads
-    Support OneDrive for Business (part of Office 365)
-    Shared folders (not Business)
+    * State caching
+    * Real-Time file monitoring with Inotify
+    * File uploat / download validation to ensure data integrity
+    * Resumable uploads
+    * Support OneDrive for Business (part of Office 365)
+    * Sharepoint / Office365 Shared libraries (refer to docs/Office365.md
+      to configure)
 
 What's missing:
-    While local changes are uploaded right away, remote changes are delayed
-    No GUI
+    * While local changes are uploaded right away, remote changes are delayed
+      until next sync when using --monitor
+    * No GUI
 
-WWW: https://github.com/skilion/onedrive
+WWW: https://github.com/abraunegg/onedrive

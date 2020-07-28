@@ -1,0 +1,10 @@
+--- configure.ac.orig	2020-04-21 17:07:18 UTC
++++ configure.ac
+@@ -144,6 +144,7 @@
+ dnl Check for required modules: curl and sqlite at the moment
+ PKG_CHECK_MODULES([curl],[libcurl])
+ PKG_CHECK_MODULES([sqlite],[sqlite3])
++PKG_CHECK_MODULES([inotify],[libinotify])
+ 
+ dnl
+ dnl systemd and unit file directories

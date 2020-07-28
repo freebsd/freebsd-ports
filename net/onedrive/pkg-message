@@ -1,0 +1,11 @@
+[
+{
+  type: upgrade
+  maximum_version: "2.4.3"
+  message: <<EOM
+When upgrading from version 2.3.3, the onedrive client may fail to
+synchronize. In this case, execute onedrive --logout to logout and
+re-authenticate. For more detail, see USAGE.md.
+EOM
+}
+]
