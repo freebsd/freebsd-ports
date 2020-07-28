@@ -1,6 +1,6 @@
-TIMESTAMP = 1592144245
-SHA256 (jesseduffield-lazygit-v0.20.4_GH0.tar.gz) = 8af316bf9d0916e8b19ce590a80664314a38652af9ef115083686bc9720fa7b9
-SIZE (jesseduffield-lazygit-v0.20.4_GH0.tar.gz) = 9195728
+TIMESTAMP = 1595943458
+SHA256 (jesseduffield-lazygit-v0.20.9_GH0.tar.gz) = d0d8e0d86384bbdfc6f354f740b5396d48ca639c6c63b1d0c65cd70048fdb598
+SIZE (jesseduffield-lazygit-v0.20.9_GH0.tar.gz) = 9196030
 SHA256 (cloudfoundry-jibber_jabber-bcc4c8345a21_GH0.tar.gz) = a460da92a75eba21a3e06f5dc2bd322c73ef7ac33eb4b50434d0ec3784f117fa
 SIZE (cloudfoundry-jibber_jabber-bcc4c8345a21_GH0.tar.gz) = 7371
 SHA256 (creack-pty-8ab47f72e854_GH0.tar.gz) = 77056c58eae3298aeca994093ddc50fe5463a421ae417ac481cd05658ebf716a
