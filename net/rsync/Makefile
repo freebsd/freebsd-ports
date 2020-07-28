@@ -19,7 +19,7 @@ LICENSE=	GPLv3
 LIB_DEPENDS=    libxxhash.so:devel/xxhash \
 		libzstd.so:archivers/zstd
 
-USES=		cpe shebangfix
+USES=		cpe shebangfix ssl
 SHEBANG_FILES=	support/rrsync
 
 CPE_VENDOR=	samba
@@ -35,6 +35,8 @@ TEST_TARGET=	check
 
 CONFIGURE_ARGS=	--disable-debug --enable-ipv6 \
 		--with-rsyncd-conf=${ETCDIR}/rsyncd.conf
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 PORTDOCS=	NEWS.md README.md csprotocol.txt tech_report.tex
 
@@ -69,13 +71,9 @@ ACL_EXTRA_PATCHES=		${WRKSRC}/patches/acls.diff \
 				${FILESDIR}/extrapatch-acl
 
 ICONV_USES=	iconv:translit
-ICONV_CPPFLAGS=	-I${LOCALBASE}/include
-ICONV_LDFLAGS=	-L${LOCALBASE}/lib
 ICONV_CONFIGURE_ENABLE=	iconv iconv-open
 
 POPT_PORT_LIB_DEPENDS=	libpopt.so:devel/popt
-POPT_PORT_CPPFLAGS=	-I${LOCALBASE}/include
-POPT_PORT_LDFLAGS=	-L${LOCALBASE}/lib
 
 POPT_PORT_CONFIGURE_OFF=	--with-included-popt
 
@@ -100,9 +98,8 @@ CONFIGURE_ARGS+=ac_cv_search_libiconv_open=no
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|perl.*|${DO_NADA}|' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's:/etc/:${ETCDIR}/:g'  \
-		${WRKSRC}/rsync.h ${WRKSRC}/rsync.1 ${WRKSRC}/rsyncd.conf.5
+		${WRKSRC}/rsync.1 ${WRKSRC}/rsyncd.conf.5
 	@${REINPLACE_CMD} -e 's|/usr/bin/rsync|${PREFIX}/bin/rsync|g' ${WRKSRC}/support/rrsync
 
 post-install:
