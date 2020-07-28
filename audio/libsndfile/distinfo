@@ -1,3 +1,3 @@
-TIMESTAMP = 1494006962
-SHA256 (libsndfile-1.0.28.tar.gz) = 1ff33929f042fa333aed1e8923aa628c3ee9e1eb85512686c55092d1e5a9dfa9
-SIZE (libsndfile-1.0.28.tar.gz) = 1202833
+TIMESTAMP = 1595853607
+SHA256 (erikd-libsndfile-1.0.29pre.20200620-2ccb23f_GH0.tar.gz) = 70fee769ab60c579090edf5a43a4959a71feb14f0e531394f4e1c1a9741258c3
+SIZE (erikd-libsndfile-1.0.29pre.20200620-2ccb23f_GH0.tar.gz) = 721895
