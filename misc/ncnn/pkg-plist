@@ -1,6 +1,7 @@
 include/ncnn/allocator.h
 include/ncnn/benchmark.h
 include/ncnn/blob.h
+include/ncnn/c_api.h
 include/ncnn/command.h
 include/ncnn/cpu.h
 include/ncnn/datareader.h
@@ -17,6 +18,7 @@ include/ncnn/opencv.h
 include/ncnn/option.h
 include/ncnn/paramdict.h
 include/ncnn/pipeline.h
+include/ncnn/pipelinecache.h
 include/ncnn/platform.h
 lib/cmake/ncnn/ncnn-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/ncnn/ncnn.cmake
