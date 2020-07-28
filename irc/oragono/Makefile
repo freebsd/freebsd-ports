@@ -2,7 +2,7 @@
 
 PORTNAME=	oragono
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.0
+DISTVERSION=	2.2.0
 CATEGORIES=	irc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,16 +15,15 @@ USES=		go:modules
 USE_GITHUB=	yes
 GH_TUPLE=	\
 		cloudfoundry:bytefmt:cf55d5288a48:cloudfoundry_bytefmt/vendor/code.cloudfoundry.org/bytefmt \
+		dgrijalva:jwt-go:v3.2.0:dgrijalva_jwt_go/vendor/github.com/dgrijalva/jwt-go \
 		docopt:docopt.go:ee0de3bc6815:docopt_docopt_go/vendor/github.com/docopt/docopt-go \
-		go-asn1-ber:asn1-ber:v1.3.1:go_asn1_ber_asn1_ber/vendor/github.com/go-asn1-ber/asn1-ber \
-		go-ldap:ldap:v3.1.7:go_ldap_ldap_v3/vendor/github.com/go-ldap/ldap \
 		go-sql-driver:mysql:v1.5.0:go_sql_driver_mysql/vendor/github.com/go-sql-driver/mysql \
-		go-yaml:yaml:v2.2.8:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
+		go-test:deep:v1.0.6:go_test_deep/vendor/github.com/go-test/deep \
+		go-yaml:yaml:v2.3.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		golang:crypto:78000ba7a073:golang_crypto/vendor/golang.org/x/crypto \
-		golang:sys:bd437916bb0e:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:059865788121:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
 		gorilla:websocket:v1.4.2:gorilla_websocket/vendor/github.com/gorilla/websocket \
-		goshuirc:e-nfa:7071788e3940:goshuirc_e_nfa/vendor/github.com/goshuirc/e-nfa \
 		goshuirc:irc-go:57fd157327ac:goshuirc_irc_go/vendor/github.com/goshuirc/irc-go \
 		onsi:ginkgo:v1.12.0:onsi_ginkgo/vendor/github.com/onsi/ginkgo \
 		onsi:gomega:v1.9.0:onsi_gomega/vendor/github.com/onsi/gomega \
@@ -39,7 +38,7 @@ GH_TUPLE=	\
 		tidwall:pretty:v1.0.0:tidwall_pretty/vendor/github.com/tidwall/pretty \
 		tidwall:rtree:6cd427091e0e:tidwall_rtree/vendor/github.com/tidwall/rtree \
 		tidwall:tinyqueue:1e39f5511563:tidwall_tinyqueue/vendor/github.com/tidwall/tinyqueue \
-		toorop:go-dkim:897ad64a2eeb:toorop_go_dkim/vendor/github.com/toorop/go-dkim
+		toorop:go-dkim:76378ae5207e:toorop_go_dkim/vendor/github.com/toorop/go-dkim
 
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
 
