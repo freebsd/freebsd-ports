@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sfizz
-DISTVERSION=	0.3.2
+DISTVERSION=	0.4.0
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,8 +18,8 @@ GH_ACCOUNT=	sfztools
 GH_TUPLE=	\
 		abseil:abseil-cpp:df3ea785d8c30a9503321a3d35ee7d35808f190d:abseil_abseil_cpp/external/abseil-cpp \
 		steinbergmedia:vst3_base:4f6a7184f20f40a7c940a6717e6e0d8b35eeea63:steinbergmedia_vst3_base/vst/external/VST_SDK/VST3_SDK/base \
-		steinbergmedia:vst3_pluginterfaces:227ea1d8f749c6a66dd591582061d58682b4aa9f:steinbergmedia_vst3_pluginterfaces/vst/external/VST_SDK/VST3_SDK/pluginterfaces \
-		steinbergmedia:vst3_public_sdk:c04e9bd690f50893742e2a082abab47af2c3efc8:steinbergmedia_vst3_public_sdk/vst/external/VST_SDK/VST3_SDK/public.sdk \
+		sfztools:vst3_pluginterfaces:8c07a58d84c544a73e1ccad2efae200505796773:sfztools_vst3_pluginterfaces/vst/external/VST_SDK/VST3_SDK/pluginterfaces \
+		sfztools:vst3_public_sdk:ff836e8c02bd28c902f5e3e75353a86f65008a77:sfztools_vst3_public_sdk/vst/external/VST_SDK/VST3_SDK/public.sdk \
 		sfztools:vstgui:c6a7f607c21a7353e922a6d45e54d6c56d5a6745:sfztools_vstgui/vst/external/VST_SDK/VST3_SDK/vstgui4
 USE_LDCONFIG=	yes
 

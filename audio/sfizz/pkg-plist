@@ -1,9 +1,12 @@
 %%JACK%%bin/sfizz_jack
+bin/sfizz_render
 include/sfizz.h
 include/sfizz.hpp
 lib/libsfizz.a
 lib/libsfizz.so
 lib/libsfizz.so.0
+%%LV2%%lib/lv2/sfizz.lv2/Resources/DefaultInstrument.sfz
+%%LV2%%lib/lv2/sfizz.lv2/Resources/DefaultScale.scl
 %%LV2%%lib/lv2/sfizz.lv2/LICENSE.md
 %%LV2%%lib/lv2/sfizz.lv2/manifest.ttl
 %%LV2%%lib/lv2/sfizz.lv2/sfizz.so
