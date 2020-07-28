@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cargo-c
-DISTVERSION=	0.6.8
-PORTREVISION=	1
+DISTVERSION=	0.6.10
 CATEGORIES=	devel
 MASTER_SITES=	CRATESIO
 # XXX Teach USES=cargo to have proper default
@@ -19,7 +18,8 @@ LIB_DEPENDS=	libgit2.so:devel/libgit2 \
 		libssh2.so:security/libssh2
 
 USES=		cargo ssl
-PLIST_FILES=	bin/cargo-cbuild \
+PLIST_FILES=	bin/cargo-capi \
+		bin/cargo-cbuild \
 		bin/cargo-cinstall
 
 CARGO_CRATES=	adler-0.2.2 \
@@ -42,7 +42,7 @@ CARGO_CRATES=	adler-0.2.2 \
 		commoncrypto-sys-0.2.0 \
 		core-foundation-0.7.0 \
 		core-foundation-sys-0.7.0 \
-		crates-io-0.31.0 \
+		crates-io-0.31.1 \
 		crc32fast-1.2.0 \
 		crossbeam-utils-0.7.2 \
 		crypto-hash-0.3.4 \
@@ -154,6 +154,6 @@ CARGO_CRATES=	adler-0.2.2 \
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,libdir.join("pkgconfig,prefix.join("libdata/pkgconfig,' \
-		${WRKSRC}/src/install_paths.rs
+		${WRKSRC}/src/install.rs
 
 .include <bsd.port.mk>
