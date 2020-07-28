@@ -2,6 +2,7 @@ bin/qdirstat
 bin/qdirstat-cache-writer
 share/applications/qdirstat.desktop
 share/icons/hicolor/scalable/apps/qdirstat.svg
+%%PORTDOCS%%%%DOCSDIR%%/Btrfs-Free-Size.md
 %%PORTDOCS%%%%DOCSDIR%%/Building.md
 %%PORTDOCS%%%%DOCSDIR%%/Contributing.md
 %%PORTDOCS%%%%DOCSDIR%%/Debugging-Tips.md
