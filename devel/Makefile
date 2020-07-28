@@ -1405,6 +1405,7 @@
     SUBDIR += llvm-cheri
     SUBDIR += llvm-devel
     SUBDIR += llvm10
+    SUBDIR += llvm11
     SUBDIR += llvm60
     SUBDIR += llvm70
     SUBDIR += llvm80
