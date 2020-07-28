@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gocheese
-PORTVERSION=	2.3.0
+PORTVERSION=	2.4.0
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.gocheese.cypherpunks.ru/
 
@@ -17,6 +17,9 @@ INFO=		${PORTNAME}
 PLIST_FILES=	${DOCSDIR}/README \
 		bin/${PORTNAME} \
 		bin/pyshop2packages.sh
+
+do-build:
+	@cd ${WRKSRC} ; ${ENV} GOPATH=${WRKSRC} go build -ldflags="-s -w" -o gocheese go.cypherpunks.ru/gocheese/v2
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
