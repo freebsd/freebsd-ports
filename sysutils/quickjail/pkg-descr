@@ -1,0 +1,8 @@
+Quickjail is a utility to create transient single-command jails.
+
+This utility operates much like jail(8) -c, but the jails it creates are not
+persistent, unlike with jail(8).  This makes quickjail more convenient for
+cases where the command may need termination, which may prevent jail(8) from
+cleaning up the jail.
+
+WWW: https://git.kevans.dev/kevans/quickjail
