@@ -2,6 +2,10 @@
 #
 # MAINTAINER:	ports@FreeBSD.org
 #
+# Note: before committing to this file, contact portmgr to arrange for an
+# experimental ports run.  Untested commits may be backed out at portmgr's
+# discretion.
+#
 # Provide default versions for ports with multiple versions selectable
 # by the user.
 #
