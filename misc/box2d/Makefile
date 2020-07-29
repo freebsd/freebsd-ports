@@ -14,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/License.txt
 USES=		cmake pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	erincatto
+GH_PROJECT=	box2d
 USE_LDCONFIG=	yes
 
 WRKSRC_SUBDIR=	${PORTNAME}
