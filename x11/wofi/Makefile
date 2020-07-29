@@ -2,7 +2,7 @@
 
 PORTNAME=	wofi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.2
+DISTVERSION=	1.2.1
 CATEGORIES=	x11
 #MASTER_SITES=	https://hg.sr.ht/~scoopta/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 MASTER_SITES+=	LOCAL/jbeich # https://todo.sr.ht/~sircmpwn/hg.sr.ht/33
@@ -16,8 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING.md
 LIB_DEPENDS=	libwayland-client.so:graphics/wayland
 
 USES=		gnome meson pkgconfig
-USE_CSTD=	gnu99 # https://lists.sr.ht/~scoopta/wofi/patches/10055
-USE_GNOME=	gdkpixbuf2 gtk30
+USE_GNOME=	cairo gdkpixbuf2 gtk30
 
 post-patch:
 	@${REINPLACE_CMD} 's,/usr/local,${PREFIX},g' \

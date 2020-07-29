@@ -2,6 +2,8 @@ bin/wofi
 include/wofi-1/config.h
 include/wofi-1/map.h
 include/wofi-1/utils.h
+include/wofi-1/utils_g.h
+include/wofi-1/widget_builder_api.h
 include/wofi-1/wofi_api.h
 libdata/pkgconfig/wofi.pc
 man/man1/wofi.1.gz
