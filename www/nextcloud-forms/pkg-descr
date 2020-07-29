@@ -1,0 +1,10 @@
+The Nextcloud Forms app is a self-hosted surveys and questionaires app.
+
+* Simple design: No mass of options, only the essentials. Works well on mobile
+  of course.
+* View & export results: Results are visualized and can also be exported as CSV
+  in the same format used by Google Forms.
+* Data under your control: The survey info and responses are kept private on
+  your instance.
+
+WWW: https://apps.nextcloud.com/apps/forms

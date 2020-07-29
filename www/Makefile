@@ -436,6 +436,7 @@
     SUBDIR += nextcloud-circles
     SUBDIR += nextcloud-contacts
     SUBDIR += nextcloud-deck
+    SUBDIR += nextcloud-forms
     SUBDIR += nextcloud-notes
     SUBDIR += nextcloud-tasks
     SUBDIR += nghttp2
