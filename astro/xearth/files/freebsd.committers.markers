@@ -57,7 +57,7 @@
  3.130,		101.669,	"miwi"				# Kuala Lumpur, Malaysia
  55.033,	82.917,		"danfe,fjoe"			# Novosibirsk, Russia
  13.6325,	78.4552,	"jkoshy"			# Rishi Valley, India
- 28.599623,	77.314412	"ashish"			# Delhi, India
+ 28.599623,	77.314412,	"ashish"			# Delhi, India
  43.219564,	76.851597,	"bp"				# Almaty, Kazakhstan
  35.72689,	51.54698,	"mmokhi"			# Tehran, Iran
  51.33,		46.00,		"novel"				# Saratov, Russia
@@ -155,7 +155,7 @@
  47.23,		8.32,		"andre"				# Zurich, Switzerland
  51.68,		7.8,		"dhn"				# Hamm, Germany
  51.533,	7.683,		"stefan"			# Unna, Germany
- 51.47670,	7.60220		"flo"				# Dortmund, Germany
+ 51.47670,	7.60220,	"flo"				# Dortmund, Germany
  51.290484,	7.293945,	"markus"			# Dortmund, Germany
  50.73389,	7.09972,	"egypcio"			# Bonn, Germany
  51.385658,	7.007214,	"lofi"				# Essen, Germany
@@ -294,11 +294,11 @@
  44.89,		-93.35,		"bdrewery"			# Minneapolis, MN, USA
  42.02,		-93.67,		"ghelmer"			# Ames, IA, USA
  29.834,	-95.00,		"     ,chris"			# Houston, TX, USA
- 30.715833	-95.5525,	"ade"				# Huntsville, TX, USA
+ 30.715833,	-95.5525,	"ade"				# Huntsville, TX, USA
  37.0625,	-95.677068,	"kmacy"				# Palo Alto, CA, USA
  29.7925,	-95.8225,	"dwcjr"				# Katy, TX, USA
  39.168,	-96.620,	"kevans"			# Manhattan, KS, USA
- 30.47702408	-97.64801025	"ler"				# Pflugerville, TX, USA
+ 30.47702408,	-97.64801025,	"ler"				# Pflugerville, TX, USA
  30.343,	-97.881,	"          ,linimon"		# Austin, TX, USA
  37.972,	-100.872,	"mezz"				# Garden City, KS, USA
  39.897418,	-104.981891,	"brd"				# Northglenn, CO, USA
@@ -307,7 +307,7 @@
  40.1,		-105.3,		"gibbs,ken"			# Boulder, CO, USA
  29.067,	-110.967,	"jcamou"			# Hermosillo, Sonora, Mexico
  40.298753,	-111.696486,	"jamie"				# Orem, UT, USA
- 33.3437,	-111.9344	"kbowling"			# Tempe, Arizona, USA
+ 33.3437,	-111.9344,	"kbowling"			# Tempe, Arizona, USA
  51.083,	-114.13,	"davidc"			# Calgary, Alberta, Canada
  51.083,	-114.167,	"aaron"				# Calgary, Alberta, Canada
  47.74075,	-116.83366,	"jasone"			# Coeur d'Alene, ID, USA
@@ -339,7 +339,7 @@
  47.382689,	-122.227021,	"garys"				# Kent, WA, USA
  37.81875,	-122.2466,	"kientzle"			# Oakland, CA, USA
  37.84,		-122.25,	"jmg"				# Oakland, CA, USA
- 37.4703,	-122.2548	"dhw"				# Redwood City, CA, USA
+ 37.4703,	-122.2548,	"dhw"				# Redwood City, CA, USA
  37.887398,	-122.264896,	"gsutter,sam"			# Berkeley, CA, USA
  37.386666,	-122.268966,	"fenner"			# Sky Londa, CA, USA
  37.848966,	-122.288577,	"dteske"			# Emeryville, CA, USA
