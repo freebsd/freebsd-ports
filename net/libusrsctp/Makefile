@@ -23,4 +23,6 @@ PLIST_FILES=	include/usrsctp.h \
 		lib/libusrsctp.so.1 \
 		lib/libusrsctp.so.1.0.0
 
+CFLAGS+=	-Wno-error
+
 .include <bsd.port.mk>
