@@ -18,12 +18,13 @@ LICENSE_FILE_GPLv2+ =		${WRKSRC}/vendor/geshi/geshi/LICENSE
 LICENSE_FILE_GPLv3=		${WRKSRC}/vendor/marcusschwarz/lesserphp/LICENSE
 LICENSE_FILE_MIT=		${WRKSRC}/vendor/composer/LICENSE
 
-DIST_VER=	${PORTNAME}-2018-04-22c
-USES=		cpe tar:tgz php:web
+DIST_VER=	${PORTNAME}-2020-07-29
+USES=		cpe php:web shebangfix tar:tgz
 USE_PHP=	gd hash json mbstring openssl pcre session xml zlib
 NO_ARCH=	YES
 NO_BUILD=	YES
 
+SHEBANG_FILES=	bin/*.php
 SUB_FILES=	pkg-message
 SUB_LIST+=	PORTNAME=${PORTNAME}
 SHAREOWN=	${WWWOWN}
@@ -32,8 +33,6 @@ SHAREGRP=	${WWWGRP}
 REINPLACE_ARGS=	-i ''
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/bin|${LOCALBASE}/bin|' ${WRKSRC}/bin/*.php
-	@${FIND} ${WRKSRC} -name '*.orig' -delete
 	@${RM} ${WRKSRC}/data/deleted.files
 
 do-install:
