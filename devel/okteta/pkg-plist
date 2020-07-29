@@ -525,9 +525,12 @@ share/doc/HTML/sv/okteta/index.cache.bz2
 share/doc/HTML/sv/okteta/index.docbook
 share/doc/HTML/uk/okteta/index.cache.bz2
 share/doc/HTML/uk/okteta/index.docbook
+share/icons/hicolor/128x128/apps/okteta.png
 share/icons/hicolor/16x16/apps/okteta.png
+share/icons/hicolor/22x22/apps/okteta.png
 share/icons/hicolor/32x32/apps/okteta.png
 share/icons/hicolor/48x48/apps/okteta.png
+share/icons/hicolor/64x64/apps/okteta.png
 share/knsrcfiles/okteta-structures.knsrc
 share/kservices5/oktetapart.desktop
 share/locale/ar/LC_MESSAGES/libkasten.mo
@@ -659,6 +662,12 @@ share/locale/hu/LC_MESSAGES/liboktetagui.mo
 share/locale/hu/LC_MESSAGES/liboktetakasten.mo
 share/locale/hu/LC_MESSAGES/okteta.mo
 share/locale/hu/LC_MESSAGES/oktetapart.mo
+share/locale/ia/LC_MESSAGES/libkasten.mo
+share/locale/ia/LC_MESSAGES/liboktetacore.mo
+share/locale/ia/LC_MESSAGES/liboktetagui.mo
+share/locale/ia/LC_MESSAGES/liboktetakasten.mo
+share/locale/ia/LC_MESSAGES/okteta.mo
+share/locale/ia/LC_MESSAGES/oktetapart.mo
 share/locale/id/LC_MESSAGES/libkasten.mo
 share/locale/id/LC_MESSAGES/liboktetacore.mo
 share/locale/id/LC_MESSAGES/liboktetagui.mo
