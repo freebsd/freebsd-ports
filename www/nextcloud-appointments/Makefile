@@ -1,0 +1,40 @@
+# Created by: Bernard Spil <brnrd@freebsd.org>
+# $FreeBSD$
+
+PORTNAME=	appointments
+PORTVERSION=	1.6.6
+CATEGORIES=	www
+MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/raw/${GH_TAGNAME}/build/artifacts/appstore/
+PKGNAMEPREFIX=	nextcloud-
+PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
+DISTNAME=	${PORTNAME}
+DIST_SUBDIR=	${PKGNAMEPREFIX:S/-//}/${DISTNAME}-${DISTVERSIONPREFIX}${PORTVERSION}
+
+MAINTAINER=	brnrd@FreeBSD.org
+COMMENT=	Appointments app for Nextcloud
+
+LICENSE=	AGPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+RUN_DEPENDS=	nextcloud${PHP_PKGNAMESUFFIX}>=17:www/nextcloud@${PHP_FLAVOR}
+
+USES=		php:flavors
+NO_BUILD=	yes
+NO_ARCH=	yes
+
+GH_ACCOUNT=	SergeyMosin
+GH_TAGNAME=	54ecd01b
+
+NEXTCLOUD_USERNAME?=	${WWWOWN}
+NEXTCLOUD_GROUPNAME?=	${WWWGRP}
+
+PLIST_SUB=	NEXTCLOUD_USERNAME=${NEXTCLOUD_USERNAME} \
+		NEXTCLOUD_GROUPNAME=${NEXTCLOUD_GROUPNAME}
+
+WWWDIR=		${PREFIX}/www/nextcloud/apps-pkg/${PORTNAME}
+
+do-install:
+	${MKDIR} ${STAGEDIR}${WWWDIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR})
+
+.include <bsd.port.mk>

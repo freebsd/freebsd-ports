@@ -432,6 +432,7 @@
     SUBDIR += netsurf
     SUBDIR += newsboat
     SUBDIR += nextcloud
+    SUBDIR += nextcloud-appointments
     SUBDIR += nextcloud-calendar
     SUBDIR += nextcloud-circles
     SUBDIR += nextcloud-contacts
