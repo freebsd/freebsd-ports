@@ -1,3 +1,5 @@
+%%WWWDIR%%/.php_cs.cache
+%%WWWDIR%%/.php_cs.dist
 %%WWWDIR%%/CHANGELOG.md
 %%WWWDIR%%/COPYING
 %%WWWDIR%%/README.md
@@ -21,7 +23,8 @@
 %%WWWDIR%%/img/folder.svg
 %%WWWDIR%%/img/notes.svg
 %%WWWDIR%%/img/recent.svg
-%%WWWDIR%%/js/notes.js
+%%WWWDIR%%/js/notes-main.js
+%%WWWDIR%%/js/notes-main.js.map
 %%WWWDIR%%/l10n/.gitkeep
 %%WWWDIR%%/l10n/af.js
 %%WWWDIR%%/l10n/af.json
@@ -223,5 +226,7 @@
 %%WWWDIR%%/lib/Service/NotesService.php
 %%WWWDIR%%/lib/Service/SettingsService.php
 %%WWWDIR%%/lib/Service/TagService.php
+%%WWWDIR%%/lib/Service/Util.php
 %%WWWDIR%%/templates/dev-mode.php
 %%WWWDIR%%/templates/main.php
+%%WWWDIR%%/webpack.js
