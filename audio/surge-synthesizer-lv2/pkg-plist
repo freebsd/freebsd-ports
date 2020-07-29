@@ -4,56 +4,56 @@ lib/lv2/Surge.lv2/Surge_ui.ttl
 lib/lv2/Surge.lv2/manifest.ttl
 lib/vst/Surge.so
 %%DATADIR%%/configuration.xml
-%%DATADIR%%/patches_3rdparty/Argitoth/Arabian Flute.fxp
-%%DATADIR%%/patches_3rdparty/Argitoth/Argitoth.fxp
-%%DATADIR%%/patches_3rdparty/Argitoth/Asian Flute.fxp
-%%DATADIR%%/patches_3rdparty/Argitoth/Block.fxp
-%%DATADIR%%/patches_3rdparty/Argitoth/Blue Pad.fxp
-%%DATADIR%%/patches_3rdparty/Argitoth/Classic Strings.fxp
-%%DATADIR%%/patches_3rdparty/Argitoth/Computer Language 1.fxp
-%%DATADIR%%/patches_3rdparty/Argitoth/Computer Language 2.fxp
-%%DATADIR%%/patches_3rdparty/Argitoth/Dirty Saw Init.fxp
-%%DATADIR%%/patches_3rdparty/Argitoth/Earmelt Saw.fxp
-%%DATADIR%%/patches_3rdparty/Argitoth/Edges Rhythm.fxp
-%%DATADIR%%/patches_3rdparty/Argitoth/Garbage Man.fxp
-%%DATADIR%%/patches_3rdparty/Argitoth/Gumdrops.fxp
-%%DATADIR%%/patches_3rdparty/Argitoth/Input Osc 1 + 2.fxp
-%%DATADIR%%/patches_3rdparty/Argitoth/Input Scene A + B.fxp
-%%DATADIR%%/patches_3rdparty/Argitoth/Kick.fxp
-%%DATADIR%%/patches_3rdparty/Argitoth/Monster Feedback.fxp
-%%DATADIR%%/patches_3rdparty/Argitoth/Music Toy.fxp
-%%DATADIR%%/patches_3rdparty/Argitoth/Psyence Loop.fxp
-%%DATADIR%%/patches_3rdparty/Argitoth/Raindrops.fxp
-%%DATADIR%%/patches_3rdparty/Argitoth/Recorder.fxp
-%%DATADIR%%/patches_3rdparty/Argitoth/Reson.fxp
-%%DATADIR%%/patches_3rdparty/Argitoth/Saw-Square Pad.fxp
-%%DATADIR%%/patches_3rdparty/Argitoth/Screaming Saw.fxp
-%%DATADIR%%/patches_3rdparty/Argitoth/Scrooz Loop.fxp
-%%DATADIR%%/patches_3rdparty/Argitoth/Snare.fxp
-%%DATADIR%%/patches_3rdparty/Argitoth/Subtle Pad.fxp
-%%DATADIR%%/patches_3rdparty/Argitoth/Surge FX True Stereo 1.fxp
-%%DATADIR%%/patches_3rdparty/Argitoth/Surge FX True Stereo 2.fxp
-%%DATADIR%%/patches_3rdparty/Argitoth/Trance Lead 1.fxp
-%%DATADIR%%/patches_3rdparty/Argitoth/Trance Lead 2.fxp
-%%DATADIR%%/patches_3rdparty/Argitoth/Trance Lead 3.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Bass/Bass 1.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Bass/Bass 10.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Bass/Bass 11.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Bass/Bass 12.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Bass/Bass 13.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Bass/Bass 14.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Bass/Bass 15.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Bass/Bass 16.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Bass/Bass 17.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Bass/Bass 2.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Bass/Bass 3.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Bass/Bass 4.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Bass/Bass 5.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Bass/Bass 6.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Bass/Bass 7.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Bass/Bass 8.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Bass/Bass 9.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Bass/Bass Seq 110 BPM.fxp
+%%DATADIR%%/paramdocumentation.xml
+%%DATADIR%%/patchbrowser/patchbrowser_init.sql
+%%DATADIR%%/patches_3rdparty/Argitoth/Drums/Kick.fxp
+%%DATADIR%%/patches_3rdparty/Argitoth/Drums/Snare.fxp
+%%DATADIR%%/patches_3rdparty/Argitoth/FX/Computer Language 1.fxp
+%%DATADIR%%/patches_3rdparty/Argitoth/FX/Computer Language 2.fxp
+%%DATADIR%%/patches_3rdparty/Argitoth/FX/Monster Feedback.fxp
+%%DATADIR%%/patches_3rdparty/Argitoth/FX/Reson.fxp
+%%DATADIR%%/patches_3rdparty/Argitoth/Keys/Gumdrops.fxp
+%%DATADIR%%/patches_3rdparty/Argitoth/Keys/Music Toy.fxp
+%%DATADIR%%/patches_3rdparty/Argitoth/Leads/Argitoth.fxp
+%%DATADIR%%/patches_3rdparty/Argitoth/Leads/Earmelt Saw.fxp
+%%DATADIR%%/patches_3rdparty/Argitoth/Leads/Garbage Man.fxp
+%%DATADIR%%/patches_3rdparty/Argitoth/Leads/Screaming Saw.fxp
+%%DATADIR%%/patches_3rdparty/Argitoth/Leads/Trance Lead 1.fxp
+%%DATADIR%%/patches_3rdparty/Argitoth/Leads/Trance Lead 2.fxp
+%%DATADIR%%/patches_3rdparty/Argitoth/Leads/Trance Lead 3.fxp
+%%DATADIR%%/patches_3rdparty/Argitoth/Pads/Blue Pad.fxp
+%%DATADIR%%/patches_3rdparty/Argitoth/Pads/Classic Strings.fxp
+%%DATADIR%%/patches_3rdparty/Argitoth/Pads/Saw-Square Pad.fxp
+%%DATADIR%%/patches_3rdparty/Argitoth/Pads/Subtle Pad.fxp
+%%DATADIR%%/patches_3rdparty/Argitoth/Rhythms/Edges Rhythm.fxp
+%%DATADIR%%/patches_3rdparty/Argitoth/Rhythms/Psyence Loop.fxp
+%%DATADIR%%/patches_3rdparty/Argitoth/Rhythms/Raindrops.fxp
+%%DATADIR%%/patches_3rdparty/Argitoth/Rhythms/Scrooz Loop.fxp
+%%DATADIR%%/patches_3rdparty/Argitoth/Templates/Dirty Saw Init.fxp
+%%DATADIR%%/patches_3rdparty/Argitoth/Templates/Surge FX True Stereo 1.fxp
+%%DATADIR%%/patches_3rdparty/Argitoth/Templates/Surge FX True Stereo 2.fxp
+%%DATADIR%%/patches_3rdparty/Argitoth/Winds/Arabian Flute.fxp
+%%DATADIR%%/patches_3rdparty/Argitoth/Winds/Asian Flute.fxp
+%%DATADIR%%/patches_3rdparty/Argitoth/Winds/Block.fxp
+%%DATADIR%%/patches_3rdparty/Argitoth/Winds/Recorder.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Basses/Bass 1.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Basses/Bass 10.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Basses/Bass 11.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Basses/Bass 12.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Basses/Bass 13.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Basses/Bass 14.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Basses/Bass 15.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Basses/Bass 16.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Basses/Bass 17.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Basses/Bass 2.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Basses/Bass 3.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Basses/Bass 4.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Basses/Bass 5.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Basses/Bass 6.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Basses/Bass 7.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Basses/Bass 8.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Basses/Bass 9.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Basses/Bass Seq 110 BPM.fxp
 %%DATADIR%%/patches_3rdparty/Bluelight/Brass/Horns 1.fxp
 %%DATADIR%%/patches_3rdparty/Bluelight/Brass/Horns 2.fxp
 %%DATADIR%%/patches_3rdparty/Bluelight/Brass/Horns 3.fxp
@@ -64,111 +64,111 @@ lib/vst/Surge.so
 %%DATADIR%%/patches_3rdparty/Bluelight/Keys/Pianoish.fxp
 %%DATADIR%%/patches_3rdparty/Bluelight/Keys/Rotary Blue.fxp
 %%DATADIR%%/patches_3rdparty/Bluelight/Keys/Treated Rhodes.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Lead/A Rattle In The Old Man's Sax.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Lead/Crusher.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Lead/Distorted Cello.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Lead/Harpsick.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Lead/Ice Rain.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Lead/Lead 1.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Lead/Lead 10.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Lead/Lead 11.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Lead/Lead 2.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Lead/Lead 3.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Lead/Lead 4.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Lead/Lead 5.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Lead/Lead 6.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Lead/Lead 7.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Lead/Lead 8.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Lead/Lead 9.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Lead/Zappa Digilead.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Organ/C. Jack Dupree.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Organ/Santana Goin' Home 73.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Pad/Another Warm.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Pad/Bad News.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Pad/Broken.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Pad/China Crisis.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Pad/Delta Rhythm Boys.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Pad/Fifths 1.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Pad/Fifths 2.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Pad/Fifths 3.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Pad/Fifths 4.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Pad/Fifths 5.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Pad/Fifths 6.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Pad/Fifths Whiteboat.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Pad/Film.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Pad/Frogs With Dirty Little Lips.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Pad/Ghost Glass Harmonium.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Pad/Gods.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Pad/Hassel Lost His New Horn.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Pad/Hine's Vertigo 110 BPM.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Pad/Hit and Hesitate.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Pad/Innit Blue.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Pad/Juno.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Pad/King.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Pad/Mid Key Squeal.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Pad/Obie.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Pad/Orbit and Sub.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Pad/Out Of Tune Tin 110 BPM.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Pad/Rainy Day Dreamaway.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Pad/Res Wave Shift.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Pad/Rhythm Delay 110 BPM.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Pad/Sawdust.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Pad/Shimmer Glimmer Goes Dirt.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Pad/Skum Bolero 110 BPM.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Pad/The Lunatic.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Pad/Whatever.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Pad/White Room.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Pad/Wool 1.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Pad/Wool 2.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Perc/Tubular.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Split/Bilbo 110 BPM.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Split/Casio VL Tone 110 BPM.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Split/Dam Dam Dam 110 BPM.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Split/Diggety Doggety 110 BPM.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Split/Nu 110 BPM.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Split/Royals Straight Flushed 110 BPM.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Split/Trevor Horn Is My Mother 110 BPM.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Leads/A Rattle In The Old Man's Sax.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Leads/Crusher.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Leads/Distorted Cello.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Leads/Harpsick.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Leads/Ice Rain.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Leads/Lead 1.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Leads/Lead 10.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Leads/Lead 11.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Leads/Lead 2.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Leads/Lead 3.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Leads/Lead 4.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Leads/Lead 5.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Leads/Lead 6.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Leads/Lead 7.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Leads/Lead 8.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Leads/Lead 9.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Leads/Zappa Digilead.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Organs/C. Jack Dupree.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Organs/Santana Goin' Home 73.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Pads/Another Warm.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Pads/Bad News.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Pads/Broken.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Pads/China Crisis.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Pads/Delta Rhythm Boys.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Pads/Fifths 1.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Pads/Fifths 2.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Pads/Fifths 3.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Pads/Fifths 4.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Pads/Fifths 5.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Pads/Fifths 6.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Pads/Fifths Whiteboat.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Pads/Film.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Pads/Frogs With Dirty Little Lips.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Pads/Ghost Glass Harmonium.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Pads/Gods.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Pads/Hassel Lost His New Horn.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Pads/Hine's Vertigo 110 BPM.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Pads/Hit and Hesitate.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Pads/Innit Blue.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Pads/Juno.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Pads/King.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Pads/Mid Key Squeal.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Pads/Obie.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Pads/Orbit and Sub.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Pads/Out Of Tune Tin 110 BPM.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Pads/Rainy Day Dreamaway.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Pads/Res Wave Shift.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Pads/Rhythm Delay 110 BPM.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Pads/Sawdust.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Pads/Shimmer Glimmer Goes Dirt.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Pads/Skum Bolero 110 BPM.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Pads/The Lunatic.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Pads/Whatever.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Pads/White Room.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Pads/Wool 1.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Pads/Wool 2.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Percussion/Tubular.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Splits/Bilbo 110 BPM.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Splits/Casio VL Tone 110 BPM.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Splits/Dam Dam Dam 110 BPM.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Splits/Diggety Doggety 110 BPM.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Splits/Nu 110 BPM.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Splits/Royals Straight Flushed 110 BPM.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Splits/Trevor Horn Is My Mother 110 BPM.fxp
 %%DATADIR%%/patches_3rdparty/Bluelight/Vox/Gregorian Rant Mono.fxp
 %%DATADIR%%/patches_3rdparty/Bluelight/Vox/Gregorian Rant Poly.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Wind/Bamboo.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Wind/Basson.fxp
-%%DATADIR%%/patches_3rdparty/Bluelight/Wind/Recorder.fxp
-%%DATADIR%%/patches_3rdparty/Damon Armani/Arp/Cinematic Arp.fxp
-%%DATADIR%%/patches_3rdparty/Damon Armani/Arp/Dark & Rhythmic.fxp
-%%DATADIR%%/patches_3rdparty/Damon Armani/Arp/Lush Style.fxp
-%%DATADIR%%/patches_3rdparty/Damon Armani/Arp/Transparent.fxp
-%%DATADIR%%/patches_3rdparty/Damon Armani/Bass/Analog Magic.fxp
-%%DATADIR%%/patches_3rdparty/Damon Armani/Bass/Another Dubstep.fxp
-%%DATADIR%%/patches_3rdparty/Damon Armani/Bass/Bulky.fxp
-%%DATADIR%%/patches_3rdparty/Damon Armani/Bass/Crazy Dub.fxp
-%%DATADIR%%/patches_3rdparty/Damon Armani/Bass/Disto Bass.fxp
-%%DATADIR%%/patches_3rdparty/Damon Armani/Bass/Dubstep.fxp
-%%DATADIR%%/patches_3rdparty/Damon Armani/Bass/Fast & Furious .fxp
-%%DATADIR%%/patches_3rdparty/Damon Armani/Bass/Little Finger.fxp
-%%DATADIR%%/patches_3rdparty/Damon Armani/Bass/Massive Dubstep.fxp
-%%DATADIR%%/patches_3rdparty/Damon Armani/Bass/Satu Bass.fxp
-%%DATADIR%%/patches_3rdparty/Damon Armani/Bass/Unknowing Bass.fxp
-%%DATADIR%%/patches_3rdparty/Damon Armani/Lead/Attacky.fxp
-%%DATADIR%%/patches_3rdparty/Damon Armani/Lead/Dark Strange.fxp
-%%DATADIR%%/patches_3rdparty/Damon Armani/Lead/Funky.fxp
-%%DATADIR%%/patches_3rdparty/Damon Armani/Lead/RoboTalker.fxp
-%%DATADIR%%/patches_3rdparty/Damon Armani/Lead/Rough & Soft.fxp
-%%DATADIR%%/patches_3rdparty/Damon Armani/Pad/Church Pad.fxp
-%%DATADIR%%/patches_3rdparty/Damon Armani/Pad/Freedom Message.fxp
-%%DATADIR%%/patches_3rdparty/Damon Armani/Pad/Funky Gate.fxp
-%%DATADIR%%/patches_3rdparty/Damon Armani/Pad/Spaceship.fxp
-%%DATADIR%%/patches_3rdparty/Damon Armani/Pluck/Daft Punk.fxp
-%%DATADIR%%/patches_3rdparty/Damon Armani/Pluck/Dark Clouds.fxp
-%%DATADIR%%/patches_3rdparty/Damon Armani/Pluck/Disto.fxp
-%%DATADIR%%/patches_3rdparty/Damon Armani/Pluck/Drunk Pluck.fxp
-%%DATADIR%%/patches_3rdparty/Damon Armani/Pluck/Fun Key.fxp
-%%DATADIR%%/patches_3rdparty/Damon Armani/Pluck/Happy Snappy.fxp
-%%DATADIR%%/patches_3rdparty/Damon Armani/Pluck/Like Piano.fxp
-%%DATADIR%%/patches_3rdparty/Damon Armani/Pluck/Talking.fxp
-%%DATADIR%%/patches_3rdparty/Damon Armani/Pluck/Trance Pluck.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Bass/Lucy Louise.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Bass/Piglet.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Bass/Throated Bass.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Winds/Bamboo.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Winds/Basson.fxp
+%%DATADIR%%/patches_3rdparty/Bluelight/Winds/Recorder.fxp
+%%DATADIR%%/patches_3rdparty/Damon Armani/Arps/Cinematic Arp.fxp
+%%DATADIR%%/patches_3rdparty/Damon Armani/Arps/Dark & Rhythmic.fxp
+%%DATADIR%%/patches_3rdparty/Damon Armani/Arps/Lush Style.fxp
+%%DATADIR%%/patches_3rdparty/Damon Armani/Arps/Transparent.fxp
+%%DATADIR%%/patches_3rdparty/Damon Armani/Basses/Analog Magic.fxp
+%%DATADIR%%/patches_3rdparty/Damon Armani/Basses/Another Dubstep.fxp
+%%DATADIR%%/patches_3rdparty/Damon Armani/Basses/Bulky.fxp
+%%DATADIR%%/patches_3rdparty/Damon Armani/Basses/Crazy Dub.fxp
+%%DATADIR%%/patches_3rdparty/Damon Armani/Basses/Disto Bass.fxp
+%%DATADIR%%/patches_3rdparty/Damon Armani/Basses/Dubstep.fxp
+%%DATADIR%%/patches_3rdparty/Damon Armani/Basses/Fast & Furious .fxp
+%%DATADIR%%/patches_3rdparty/Damon Armani/Basses/Little Finger.fxp
+%%DATADIR%%/patches_3rdparty/Damon Armani/Basses/Massive Dubstep.fxp
+%%DATADIR%%/patches_3rdparty/Damon Armani/Basses/Satu Bass.fxp
+%%DATADIR%%/patches_3rdparty/Damon Armani/Basses/Unknowing Bass.fxp
+%%DATADIR%%/patches_3rdparty/Damon Armani/Leads/Attacky.fxp
+%%DATADIR%%/patches_3rdparty/Damon Armani/Leads/Dark Strange.fxp
+%%DATADIR%%/patches_3rdparty/Damon Armani/Leads/Funky.fxp
+%%DATADIR%%/patches_3rdparty/Damon Armani/Leads/RoboTalker.fxp
+%%DATADIR%%/patches_3rdparty/Damon Armani/Leads/Rough & Soft.fxp
+%%DATADIR%%/patches_3rdparty/Damon Armani/Pads/Church Pad.fxp
+%%DATADIR%%/patches_3rdparty/Damon Armani/Pads/Freedom Message.fxp
+%%DATADIR%%/patches_3rdparty/Damon Armani/Pads/Funky Gate.fxp
+%%DATADIR%%/patches_3rdparty/Damon Armani/Pads/Spaceship.fxp
+%%DATADIR%%/patches_3rdparty/Damon Armani/Plucks/Daft Punk.fxp
+%%DATADIR%%/patches_3rdparty/Damon Armani/Plucks/Dark Clouds.fxp
+%%DATADIR%%/patches_3rdparty/Damon Armani/Plucks/Disto.fxp
+%%DATADIR%%/patches_3rdparty/Damon Armani/Plucks/Drunk Pluck.fxp
+%%DATADIR%%/patches_3rdparty/Damon Armani/Plucks/Fun Key.fxp
+%%DATADIR%%/patches_3rdparty/Damon Armani/Plucks/Happy Snappy.fxp
+%%DATADIR%%/patches_3rdparty/Damon Armani/Plucks/Like Piano.fxp
+%%DATADIR%%/patches_3rdparty/Damon Armani/Plucks/Talking.fxp
+%%DATADIR%%/patches_3rdparty/Damon Armani/Plucks/Trance Pluck.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Basses/Lucy Louise.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Basses/Piglet.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Basses/Throated Bass.fxp
 %%DATADIR%%/patches_3rdparty/Dan Maurer/FX/Airplane Fly-By.fxp
 %%DATADIR%%/patches_3rdparty/Dan Maurer/FX/Cricket Song.fxp
 %%DATADIR%%/patches_3rdparty/Dan Maurer/FX/Flubber.fxp
@@ -188,259 +188,259 @@ lib/vst/Surge.so
 %%DATADIR%%/patches_3rdparty/Dan Maurer/Keys/FM Piano 3.fxp
 %%DATADIR%%/patches_3rdparty/Dan Maurer/Keys/Forte Piano.fxp
 %%DATADIR%%/patches_3rdparty/Dan Maurer/Keys/Glass Harpsichord.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Lead/By The Way....fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Lead/Positive Feedback.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Lead/Reluctant Leader.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Lead/Second Thoughts.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Lead/Sharp Lead.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Lead/Soft Sync.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Lead/Sync Sweep Lead.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Lead/Third Release.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Pad/Dark Friday.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Pad/Drone Bee.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Pad/Fingers On Wine Glass.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Pad/Galaxy Pad.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Pad/Here's Your Sine.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Pad/Jellyfish.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Pad/Lush PWM Strings.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Pad/Muted Square Pad.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Pad/The Voice.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Pad/Touch Brass.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Pad/Touch String - Brass.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Perc/Big Bells.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Perc/Morphing Bells.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Perc/Phased Gong 1.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Perc/Phased Gong 2.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Perc/Phased Gong 3.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Perc/Smooth Bells.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Perc/Synclav Bells.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Pluck/Bowed Plucked Pipe.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Pluck/Comb Harp.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Pluck/Galactic Harp.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Pluck/Hidden Tiger.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Pluck/Muther Plucker.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Pluck/Power Chord.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Pluck/Purple.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Pluck/Resonated Pluck.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Pluck/Sine Of The Times.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Pluck/Strum Up.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Sequence/Bass & Rhythm 1.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Sequence/Bass & Rhythm 2.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Sequence/Carolina Reaper.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Sequence/Drum Loop 1.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Sequence/Drum Loop 2.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Sequence/Drum Loop 3.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Sequence/Flying Squares.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Sequence/Tube Rhythm.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Synth/Big Brass.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Synth/Cascade.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Synth/Chainsaw.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Synth/Chime Charm.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Synth/Comb String Section.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Synth/Feedback Cycle.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Synth/Freeform.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Synth/Grey And Black.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Synth/Lyrica.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Synth/Metal Head.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Synth/Overdriven Cello.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Synth/Saskatoon.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Synth/Saturation.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Synth/Scrooge McDuck.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Synth/Splash Mouth.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Synth/Square Wave.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Synth/String Quartet.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Synth/Virtual Sync Sweep.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Synth/Warm Reception.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Synth/Wudang.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wave Motion/A Robotic Mind.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wave Motion/Alternate Solution.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wave Motion/Bad Influence.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wave Motion/Boidae.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wave Motion/Brave New World.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wave Motion/Catalina.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wave Motion/Certified.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wave Motion/Chime Charm.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wave Motion/Dancing Strings.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wave Motion/Dizzy Busy.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wave Motion/Dope Drummer.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wave Motion/Dropper.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wave Motion/Earfull.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wave Motion/FM Waves 01.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wave Motion/FM Waves 02.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wave Motion/Fire Breather.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wave Motion/Generator.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wave Motion/Hartsfield.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wave Motion/Ice Cream Sundae.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wave Motion/Jambourie.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wave Motion/Ka$h.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wave Motion/Lanes.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wave Motion/Moving Day.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wave Motion/Mumford's the Word.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wave Motion/North Atlantic.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wave Motion/Old Tool Motion.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wave Motion/Piano Vector.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wave Motion/Pick Me Minor Arp.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wave Motion/Pick Me.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wave Motion/Pipe Dreams.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wave Motion/Prism.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wave Motion/Pulling Strings.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wave Motion/Pulstronic.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wave Motion/Quinceanera.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wave Motion/Reanimation.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wave Motion/Rhythm and Lead.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wave Motion/Rice Paper.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wave Motion/Shuddup!.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wave Motion/Six Palms.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wave Motion/Stepping Out.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wave Motion/Sweet Sixteen.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wave Motion/Syncing Ship.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wave Motion/Tin Men.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wave Motion/Tinker Toys.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wave Motion/Twelve Step Layer.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wave Motion/Two Bit.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wave Motion/Until Then.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wave Motion/Walking Away.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wave Motion/Wave Complex.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wave Motion/What's Your Vector, Victor .fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wind/Amped Harmonica.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wind/Andes Pipes.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wind/Clarinet.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wind/Double Reed.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wind/Flute 1.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wind/Flute 2.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wind/Huangshan.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wind/Junkyard Dog.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wind/Oboe-Wan-Can-No-Be.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wind/Oscar The Grouch.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wind/Physical Therapy.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wind/Pipe Attack.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wind/Reed To Pipe Morph.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wind/Scratchy Throat.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wind/Simple Pipe.fxp
-%%DATADIR%%/patches_3rdparty/Dan Maurer/Wind/Tenor Sax.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Drum/DR Mort Chippy Bits.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Drum/DR Mort Kick Chippy.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Drum/DR Mort Kick.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Drum/DR Mort Noisey Drum.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Drum/DR Mort Snare.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Drum/DR T8 Clap VA.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Drum/DR T8 Conga.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Drum/DR T8 Cowbell.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Drum/DR T8 Cymbal.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Drum/DR T8 Kick 01.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Drum/DR T8 Kick 02 .fxp
-%%DATADIR%%/patches_3rdparty/Emu/Drum/DR T8 Snare.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Drum/DR T8 Tom.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Drum/DR T9 Snare.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Drum/DR T9 Tom.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Drum/PR Egg Shaker.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Drum/PR Hat Closed VA.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Drum/PR Hat Open VA.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Drum/PR Hat SPLIT.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Drum/WT Hat.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Drum/WT Kick Room 01.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Drum/WT Kick Room 02.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Drum/WT Snare Room 01.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Drum/WT Snare Room 02.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Drum/WT Splashy Ride.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Synth/BS Acidy FM Boy.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Synth/BS Barfy Beauty WT.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Synth/BS Beefy Boi.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Synth/BS Soft Plucks WT.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Synth/FX Noise Particles WT.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Synth/FX Robot Exhaust.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Synth/FX Sick In The Super Dome WT.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Synth/FX Signature Talker 1S.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Synth/FX Slapshot.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Synth/KY CowbellBanjo WT.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Synth/KY Crispy Key EMU.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Synth/KY FMHappy WT.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Synth/KY I Once Was A Cymbal WT.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Synth/KY Light EP WT.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Synth/KY SoftSaw WT.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Synth/KY Thin and Gaseous Organ WT.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Synth/KY Trashion EP WT.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Synth/KY Trombone Harmonica WT.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Synth/KY Yoobee Talker WT.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Synth/LD Crushed Upright Piano WT.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Synth/LD Doink Realm Organ WT.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Synth/LD Droney FM Steamer.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Synth/LD Melted Organ WT.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Synth/LD Sax Destroyer WT.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Synth/LD Square Adventure WT.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Synth/MULTI Hidden Hats FM.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Synth/MULTI pluck2pad DemonSad EMU.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Synth/PD Beautiful Flutebad WT.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Synth/PD Blazing Galaxies WT.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Synth/PD Buzzy Bees and Sitars WT.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Synth/PD Fez Pad.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Synth/PD Fuzzy Speaks WT.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Synth/PD Ghostly Voices WT.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Synth/PD Square and Back Again WT.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Synth/PD Windy Brassmen WT.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Synth/PL Banjo Like WT.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Synth/PL Bossy Saw.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Synth/PL Brass Attacks WT.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Synth/PL Horn Ring Boops WT.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Synth/SEQ Dancing Sine Boyz.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Synth/SEQ Dirty Saws.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Synth/SY 80's Future Key WT.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Synth/SY Disto Brass Pass WT.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Synth/SY Garbely Joe.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Synth/SY Golden Square VA.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Synth/SY Piercing Trumpet Morph WT.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Synth/SY Strange Declarations WT.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Synth/SY Wonky Game Pad.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Template/FM Faux Filter.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Template/FM Saw.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Template/FM Square.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Template/FM Triangle.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Template/FM Woodwind Maker.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Template/FM100 Routing #02.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Template/FM100 Routing #03.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Template/FM100 Routing #04.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Template/FM100 Routing #05.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Template/FM100 Routing #07.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Template/FM100 Routing #08.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Template/WT ENV morph.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Template/WT MOD morph.fxp
-%%DATADIR%%/patches_3rdparty/Emu/Template/WT RAMP UP morph.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Bass/Black Swarm.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Bass/Dark Notch.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Bass/Dark Trancer.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Bass/Deep Jungler.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Bass/Distorro.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Bass/Dog.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Bass/Highpass Terror.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Bass/Hoovin' Spot.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Bass/Mid Band Diver.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Bass/Module Hunter.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Bass/Multisaw Ring.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Bass/Phasing Warp.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Bass/Rave Detuner.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Bass/Ring 'n' Shape.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Bass/Shaped Tri-Saw.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Bass/Sinus To Sinus.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Bass/Sirens and Fire.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Bass/Squeezy Chaos.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Bass/Swell Reece.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Bass/Tech Cabinet.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Bass/VA Experience.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Bass/Warm Square.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Bass/Wave Joke.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Bass/Wellblech.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Bass/Wobbler.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Bass/X0X Bassline.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Chord/5th Element.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Chord/Dual Ensemble.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Chord/Happy Old Vibe.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Chord/Inside The Place.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Chord/Minor Flag.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Chord/Minor Synth Piano.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Chord/Pluck Character.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Chord/Synth Stab Minor.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Chord/Unison Minority.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Chord/Visitor's Playground.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Keys/Piano Vector.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Leads/By The Way....fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Leads/Positive Feedback.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Leads/Reluctant Leader.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Leads/Second Thoughts.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Leads/Sharp Lead.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Leads/Soft Sync.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Leads/Sync Sweep Lead.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Leads/Third Release.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Pads/Dark Friday.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Pads/Drone Bee.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Pads/Fingers On Wine Glass.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Pads/Galaxy Pad.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Pads/Here's Your Sine.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Pads/Ice Cream Sundae.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Pads/Jellyfish.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Pads/Lush PWM Strings.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Pads/Muted Square Pad.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Pads/Pulling Strings.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Pads/The Voice.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Pads/Touch Brass.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Pads/Touch String - Brass.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Pads/Until Then.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Pads/Wave Complex.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Percussion/Big Bells.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Percussion/Morphing Bells.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Percussion/Phased Gong 1.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Percussion/Phased Gong 2.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Percussion/Phased Gong 3.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Percussion/Smooth Bells.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Percussion/Synclav Bells.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Plucks/Bowed Plucked Pipe.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Plucks/Comb Harp.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Plucks/Galactic Harp.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Plucks/Hidden Tiger.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Plucks/Muther Plucker.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Plucks/Power Chord.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Plucks/Purple.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Plucks/Resonated Pluck.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Plucks/Sine Of The Times.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Plucks/Strum Up.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Rhythms/A Robotic Mind.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Rhythms/Alternate Solution.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Rhythms/Bad Influence.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Rhythms/Boidae.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Rhythms/Brave New World.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Rhythms/Certified.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Rhythms/Chime Charm.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Rhythms/Dancing Strings.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Rhythms/Dizzy Busy.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Rhythms/Dropper.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Rhythms/Earfull.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Rhythms/FM Waves 01.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Rhythms/FM Waves 02.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Rhythms/Fire Breather.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Rhythms/Generator.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Rhythms/Hartsfield.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Rhythms/Jambourie.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Rhythms/Ka$h.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Rhythms/Lanes.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Rhythms/Moving Day.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Rhythms/Mumford's the Word.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Rhythms/North Atlantic.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Rhythms/Old Tool Motion.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Rhythms/Pick Me Minor Arp.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Rhythms/Pick Me.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Rhythms/Pipe Dreams.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Rhythms/Prism.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Rhythms/Pulstronic.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Rhythms/Quinceanera.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Rhythms/Reanimation.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Rhythms/Rhythm and Lead.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Rhythms/Rice Paper.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Rhythms/Shuddup!.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Rhythms/Six Palms.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Rhythms/Stepping Out.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Rhythms/Sweet Sixteen.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Rhythms/Syncing Ship.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Rhythms/Tin Men.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Rhythms/Tinker Toys.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Rhythms/Twelve Step Layer.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Rhythms/Two Bit.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Rhythms/What's Your Vector, Victor .fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Sequences/Bass & Rhythm 1.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Sequences/Bass & Rhythm 2.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Sequences/Carolina Reaper.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Sequences/Drum Loop 1.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Sequences/Drum Loop 2.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Sequences/Drum Loop 3.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Sequences/Flying Squares.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Sequences/Tube Rhythm.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Splits/Catalina.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Splits/Dope Drummer.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Splits/Walking Away.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Synths/Big Brass.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Synths/Cascade.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Synths/Chainsaw.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Synths/Chime Charm.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Synths/Comb String Section.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Synths/Feedback Cycle.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Synths/Freeform.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Synths/Grey And Black.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Synths/Lyrica.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Synths/Metal Head.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Synths/Overdriven Cello.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Synths/Saskatoon.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Synths/Saturation.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Synths/Scrooge McDuck.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Synths/Splash Mouth.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Synths/Square Wave.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Synths/String Quartet.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Synths/Virtual Sync Sweep.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Synths/Warm Reception.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Synths/Wudang.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Winds/Amped Harmonica.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Winds/Andes Pipes.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Winds/Clarinet.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Winds/Double Reed.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Winds/Flute 1.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Winds/Flute 2.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Winds/Huangshan.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Winds/Junkyard Dog.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Winds/Oboe-Wan-Can-No-Be.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Winds/Oscar The Grouch.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Winds/Physical Therapy.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Winds/Pipe Attack.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Winds/Reed To Pipe Morph.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Winds/Scratchy Throat.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Winds/Simple Pipe.fxp
+%%DATADIR%%/patches_3rdparty/Dan Maurer/Winds/Tenor Sax.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Basses/Acidy FM Boy.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Basses/Barfy Beauty.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Basses/Beefy Boi.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Basses/Soft Plucks.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Drums/Egg Shaker.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Drums/Hat Closed.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Drums/Hat Open.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Drums/Hat Split.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Drums/Hat.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Drums/Kick Room 1.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Drums/Kick Room 2.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Drums/Mort Chippy Bits.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Drums/Mort Kick Chippy.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Drums/Mort Kick.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Drums/Mort Noisey Drum.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Drums/Mort Snare.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Drums/Snare Room 1.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Drums/Snare Room 2.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Drums/Splashy Ride.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Drums/T8 Clap.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Drums/T8 Conga.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Drums/T8 Cowbell.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Drums/T8 Cymbal.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Drums/T8 Kick 1.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Drums/T8 Kick 2.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Drums/T8 Snare.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Drums/T8 Tom.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Drums/T9 Snare.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Drums/T9 Tom.fxp
+%%DATADIR%%/patches_3rdparty/Emu/FX/Noise Particles.fxp
+%%DATADIR%%/patches_3rdparty/Emu/FX/Robot Exhaust.fxp
+%%DATADIR%%/patches_3rdparty/Emu/FX/Sick In The Super Dome.fxp
+%%DATADIR%%/patches_3rdparty/Emu/FX/Signature Talker 1S.fxp
+%%DATADIR%%/patches_3rdparty/Emu/FX/Slapshot.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Keys/CowbellBanjo.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Keys/Crispy Key.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Keys/FMHappy.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Keys/I Once Was A Cymbal.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Keys/Light EP.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Keys/SoftSaw.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Keys/Thin and Gaseous Organ.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Keys/Trashion EP.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Keys/Trombone Harmonica.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Keys/Yoobee Talker.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Leads/Crushed Upright Piano.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Leads/Doink Realm Organ.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Leads/Droney FM Steamer.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Leads/Melted Organ.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Leads/Sax Destroyer.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Leads/Square Adventure.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Pads/Beautiful Flutebad.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Pads/Blazing Galaxies.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Pads/Buzzy Bees And Sitars.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Pads/Fez Pad.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Pads/Fuzzy Speaks.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Pads/Ghostly Voices.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Pads/Square And Back Again.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Pads/Windy Brassmen.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Plucks/Banjo Like.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Plucks/Bossy Saw.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Plucks/Brass Attacks.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Plucks/Hidden Hats FM.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Plucks/Horn Ring Boops.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Plucks/Pluck 2 Pad Demon Sad.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Sequences/Dancing Sine Boyz.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Sequences/Dirty Saws.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Synths/80s Future Key.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Synths/Disto Brass Pass.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Synths/Garbely Joe.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Synths/Golden Square.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Synths/Piercing Trumpet Morph.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Synths/Strange Declarations.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Synths/Wonky Game Pad.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Templates/FM Faux Filter.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Templates/FM Saw.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Templates/FM Square.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Templates/FM Triangle.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Templates/FM Woodwind Maker.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Templates/FM100 Routing #2.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Templates/FM100 Routing #3.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Templates/FM100 Routing #4.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Templates/FM100 Routing #5.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Templates/FM100 Routing #7.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Templates/FM100 Routing #8.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Templates/WT Env Morph.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Templates/WT Mod Morph.fxp
+%%DATADIR%%/patches_3rdparty/Emu/Templates/WT Ramp Up Morph.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Basses/Black Swarm.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Basses/Dark Notch.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Basses/Dark Trancer.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Basses/Deep Jungler.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Basses/Distorro.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Basses/Dog.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Basses/Highpass Terror.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Basses/Hoovin' Spot.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Basses/Mid Band Diver.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Basses/Module Hunter.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Basses/Multisaw Ring.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Basses/Phasing Warp.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Basses/Rave Detuner.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Basses/Ring 'n' Shape.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Basses/Shaped Tri-Saw.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Basses/Sinus To Sinus.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Basses/Sirens and Fire.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Basses/Squeezy Chaos.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Basses/Swell Reece.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Basses/Tech Cabinet.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Basses/VA Experience.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Basses/Warm Square.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Basses/Wave Joke.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Basses/Wellblech.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Basses/Wobbler.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Basses/X0X Bassline.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Chords/5th Element.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Chords/Dual Ensemble.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Chords/Happy Old Vibe.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Chords/Inside The Place.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Chords/Minor Flag.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Chords/Minor Synth Piano.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Chords/Pluck Character.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Chords/Synth Stab Minor.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Chords/Unison Minority.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Chords/Visitor's Playground.fxp
 %%DATADIR%%/patches_3rdparty/Giana Brotherz/Drums/Bass Drum.fxp
 %%DATADIR%%/patches_3rdparty/Giana Brotherz/Drums/Clap.fxp
 %%DATADIR%%/patches_3rdparty/Giana Brotherz/Drums/Closed Hi-Hat.fxp
@@ -471,224 +471,284 @@ lib/vst/Surge.so
 %%DATADIR%%/patches_3rdparty/Giana Brotherz/Keys/Table Morph.fxp
 %%DATADIR%%/patches_3rdparty/Giana Brotherz/Keys/Tri Meets Saw.fxp
 %%DATADIR%%/patches_3rdparty/Giana Brotherz/Keys/Vintage Boost.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Lead/Background Sweep.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Lead/Crisp Cross.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Lead/Cut Through.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Lead/Formant Tables.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Lead/Frag 7th Syn.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Lead/Future Sax.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Lead/Guitar Vibe.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Lead/House Vibe.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Lead/Mechanic Unison.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Lead/Ravin' Stalker.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Lead/Saw Rings.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Lead/Squary Sync.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Lead/Street Parade.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Lead/Synth Surfer.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Lead/Tech Ring.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Lead/Under The Tomb.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Lead/Wave Arp.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Organ/Charmy Organ.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Organ/Deep Houser.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Organ/Draft Card.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Organ/Hammond's Hall.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Organ/Late Night.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Organ/Liquid Steel.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Organ/Lot Of Drawbars.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Organ/Morph Magic.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Organ/Wanna B3.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Pad/Back Texture.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Pad/Breath Of China.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Pad/Changing Sines.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Pad/Chorbells.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Pad/Cyborg Texture.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Pad/Dark Whisper.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Pad/Deep Choir.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Pad/Digitized Choir.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Pad/Dub Choir.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Pad/Electric City.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Pad/Horizon Opens.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Pad/Moon and Water.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Pad/OAH Choir.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Pad/Organaut.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Pad/Sci-Fi Church.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Pad/Sun Rising.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Pad/Time Shift.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Pad/Vocodarian.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Pad/Wide Vibrations.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Pad/Wood Walk.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Rhythm/Alarm Reese.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Rhythm/Bellchordian.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Rhythm/Bellistic.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Rhythm/Hard Hacked.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Rhythm/Mellow On Sync.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Rhythm/Reeseliner.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Rhythm/Sine Hammer.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Rhythm/Staccato Mellow.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Rhythm/Trance Ground.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Rhythm/Tubularity.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Rhythm/Unison Retrigger.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Wind/Clarinet.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Wind/Flute.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Wind/Horns.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Wind/Oboe.fxp
-%%DATADIR%%/patches_3rdparty/Giana Brotherz/Wind/Trumpet.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/60s Sci-Fi.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Air Spray.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Alone.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Apex Arp 1.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Apex Arp 2.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Atonal.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Bass 1.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Bass 2.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Bass 3.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Bass 4.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Bass 5.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Beautiful Thoughts 1.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Beautiful Thoughts 2.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Bell Cave.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Bellish Lead.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Blade 1.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Blade 2.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Blade 3.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Blade 4.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Blade 5.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Bloody Valentine.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Calamity 1.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Calamity.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Cat Bass.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Chiff 1.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Chiff 2.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Chiff 3.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Chiff.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Children's Lead.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Clockers 1.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Clockers 2.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Clockers 3.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Clockers 4.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Crackles.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Dark Bass.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Dark Bell.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Dark Dyson.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Delicate.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Digital Lead.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Digitalis.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Dirty Hardcore 1.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Dirty Hardcore 2.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Dirty Pad.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Distance Between Us.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Disturbances.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Dreaming.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Drone Melancholy.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Edgy.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Faint Memory.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Faraway Tree.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Fat Detuned Squares.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Fat Detuned Sync.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Fizzer 1.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Fizzer 2.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Fizzer 3.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Fizzer 4.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Fizzer 5.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Flat Oboe.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Fragile 1.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Fragile 2.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Fragile 3.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Fragile 4.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Fragile 5.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Fragile 6.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Fragile 7.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Further 1.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Further 2.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Further 3.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Go Carefully.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Going Away.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Hangars 1.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Hangars 2.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Hangars 3.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Hangars 4.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Hangars 5.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Happy Saws.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Harpsick.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Hello Little Weed.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Irreversible 1.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Irreversible 2.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Klop.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Knocks.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Ladder 1.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Ladder 2.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Ladder 3.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Ladder 4.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Melodic Line 1.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Melodic Line 2.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Melodic Line 3.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Melodic Line 4.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Melodic Organ.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Mountain Pipe.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Nasal Cavern.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/No End Drum.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Nova 1.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Nova 2.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Pad Basics.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Paddy Power.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Persistance.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Piano 1.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Piano 2.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Piano 3.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Piano 4.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Piano 5.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Piano 6.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Pops.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Rain On Top.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Ravine.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Resonant Atmosphere 1.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Resonant Atmosphere 2.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Saturn V.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Saw Pad 1.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Saw Pad 2.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Scaffold.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Sea Pipe.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Shipping.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Simply Moving.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Sine Movers 1.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Sine Movers 2.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Six Way 1.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Softer Bass.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Something At The Lighthouse.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Spook 1.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Spook 2.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Squelch 1.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Squelch 2.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Squelch 3.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Subtle Lead.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Suspense.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Sweet.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Tables Turning.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/The Softest Melody.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/The Well.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Three Way 1.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Three Way 2.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Three Way 3.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Tonal.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Trill.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Twinkle.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Undulation.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Unexpected.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Unstable Bass.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Uplifting Noise.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Warm Fuzzy Bass.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Watch Out Below.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Wobbly.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Wonk 1.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Wonk 2.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Wrong Bass.fxp
-%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Yearn.fxp
-%%DATADIR%%/patches_3rdparty/Kuniklo/Arp/Calc.fxp
-%%DATADIR%%/patches_3rdparty/Kuniklo/Arp/Chording.fxp
-%%DATADIR%%/patches_3rdparty/Kuniklo/Bass/Big Moog.fxp
-%%DATADIR%%/patches_3rdparty/Kuniklo/Bass/Big.fxp
-%%DATADIR%%/patches_3rdparty/Kuniklo/Bass/Hoover.fxp
-%%DATADIR%%/patches_3rdparty/Kuniklo/Bass/Synchro.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Leads/Background Sweep.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Leads/Crisp Cross.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Leads/Cut Through.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Leads/Formant Tables.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Leads/Frag 7th Syn.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Leads/Future Sax.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Leads/Guitar Vibe.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Leads/House Vibe.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Leads/Mechanic Unison.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Leads/Ravin' Stalker.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Leads/Saw Rings.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Leads/Squary Sync.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Leads/Street Parade.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Leads/Synth Surfer.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Leads/Tech Ring.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Leads/Under The Tomb.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Leads/Wave Arp.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Organs/Charmy Organ.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Organs/Deep Houser.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Organs/Draft Card.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Organs/Hammond's Hall.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Organs/Late Night.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Organs/Liquid Steel.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Organs/Lot Of Drawbars.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Organs/Morph Magic.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Organs/Wanna B3.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Pads/Back Texture.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Pads/Breath Of China.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Pads/Changing Sines.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Pads/Chorbells.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Pads/Cyborg Texture.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Pads/Dark Whisper.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Pads/Deep Choir.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Pads/Digitized Choir.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Pads/Dub Choir.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Pads/Electric City.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Pads/Horizon Opens.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Pads/Moon and Water.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Pads/OAH Choir.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Pads/Organaut.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Pads/Sci-Fi Church.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Pads/Sun Rising.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Pads/Time Shift.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Pads/Vocodarian.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Pads/Wide Vibrations.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Pads/Wood Walk.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Rhythms/Alarm Reese.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Rhythms/Bellchordian.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Rhythms/Bellistic.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Rhythms/Hard Hacked.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Rhythms/Mellow On Sync.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Rhythms/Reeseliner.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Rhythms/Sine Hammer.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Rhythms/Staccato Mellow.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Rhythms/Trance Ground.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Rhythms/Tubularity.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Rhythms/Unison Retrigger.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Winds/Clarinet.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Winds/Flute.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Winds/Horns.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Winds/Oboe.fxp
+%%DATADIR%%/patches_3rdparty/Giana Brotherz/Winds/Trumpet.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Atmospheres/Alone.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Atmospheres/Beautiful Thoughts 1.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Atmospheres/Beautiful Thoughts 2.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Atmospheres/Bell Cave.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Atmospheres/Bloody Valentine.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Atmospheres/Dark Bell.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Atmospheres/Disturbances.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Atmospheres/Fragile 3.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Atmospheres/Fragile 4.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Atmospheres/Fragile 5.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Atmospheres/Fragile 6.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Atmospheres/Fragile 7.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Atmospheres/Further 2.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Atmospheres/Further 3.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Atmospheres/Go Carefully.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Atmospheres/Going Away.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Atmospheres/Hangars 1.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Atmospheres/Hangars 2.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Atmospheres/Hangars 3.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Atmospheres/Hangars 4.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Atmospheres/Nasal Cavern.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Atmospheres/No End Drum.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Atmospheres/Persistance.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Atmospheres/Ravine.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Atmospheres/Resonant Atmosphere 1.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Atmospheres/Resonant Atmosphere 2.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Atmospheres/Sine Movers 1.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Atmospheres/Sine Movers 2.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Atmospheres/Something At The Lighthouse.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Atmospheres/Suspense.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Atmospheres/Tables Turning.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Atmospheres/The Well.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Atmospheres/Unexpected.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Atmospheres/Wonk 1.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Atmospheres/Wonk 2.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Atmospheres/Yearn.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Basses/Bass 1.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Basses/Bass 2.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Basses/Bass 3.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Basses/Bass 4.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Basses/Bass 5.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Basses/Cat Bass.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Basses/Dark Bass.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Basses/Digitalis.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Basses/Irreversible 1.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Basses/Irreversible 2.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Basses/Ladder 4.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Basses/Softer Bass.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Basses/Squelch 1.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Basses/Squelch 2.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Basses/Squelch 3.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Basses/Undulation.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Basses/Unstable Bass.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Basses/Warm Fuzzy Bass.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Basses/Watch Out Below.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Basses/Wrong Bass.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/FX/60s Sci-Fi.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/FX/Air Spray.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/FX/Calamity 1.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/FX/Calamity 2.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/FX/Dark Dyson.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/FX/Drone Melancholy.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/FX/Edgy.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/FX/Knocks.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/FX/Saturn V.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/FX/Sea Pipe.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/FX/Uplifting Noise.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Keys/Blade 1.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Keys/Blade 2.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Keys/Blade 3.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Keys/Blade 4.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Keys/Blade 5.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Keys/Dreaming.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Keys/Fizzer 4.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Keys/Fizzer 5.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Keys/Fragile 1.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Keys/Fragile 2.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Keys/Further 1.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Keys/Harpsick.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Keys/Melodic Organ.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Keys/Piano 1.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Keys/Piano 2.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Keys/Piano 3.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Keys/Piano 4.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Keys/Piano 5.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Keys/Piano 6.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Keys/The Softest Melody.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Leads/Apex Arp 1.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Leads/Apex Arp 2.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Leads/Atonal.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Leads/Bellish Lead.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Leads/Chiff 1.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Leads/Chiff 2.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Leads/Chiff 3.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Leads/Chiff 4.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Leads/Children's Lead.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Leads/Clockers 1.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Leads/Clockers 2.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Leads/Clockers 3.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Leads/Clockers 4.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Leads/Crackles.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Leads/Delicate.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Leads/Digital Lead.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Leads/Dirty Hardcore 1.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Leads/Dirty Hardcore 2.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Leads/Distance Between Us.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Leads/Faint Memory.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Leads/Faraway Tree.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Leads/Fat Detuned Squares.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Leads/Fat Detuned Sync.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Leads/Fizzer 1.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Leads/Fizzer 2.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Leads/Fizzer 3.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Leads/Happy Saws.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Leads/Hello Little Weed.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Leads/Klop.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Leads/Melodic Line 1.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Leads/Melodic Line 2.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Leads/Melodic Line 3.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Leads/Melodic Line 4.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Leads/Nova 1.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Leads/Nova 2.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Leads/Pops.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Leads/Rain On Top.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Leads/Scaffold.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Leads/Simply Moving.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Leads/Spook 1.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Leads/Spook 2.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Leads/Subtle Lead.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Leads/Sweet.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Leads/Trill.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Leads/Twinkle.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Leads/Wobbly.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Pads/Dirty Pad.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Pads/Hangars 5.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Pads/Pad Basics.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Pads/Paddy Power.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Pads/Saw Pad 1.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Pads/Saw Pad 2.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Pads/Tonal.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Rhythms/Ladder 1.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Rhythms/Ladder 2.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Rhythms/Ladder 3.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Rhythms/Shipping.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Rhythms/Six Way 1.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Rhythms/Three Way 1.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Rhythms/Three Way 2.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Rhythms/Three Way 3.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Winds/Flat Oboe.fxp
+%%DATADIR%%/patches_3rdparty/Inigo Kennedy/Winds/Mountain Pipe.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Atmospheres/Anticipation.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Atmospheres/Duality.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Atmospheres/Ensemble.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Atmospheres/Orchestral.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Atmospheres/Planet Surge.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Atmospheres/Reflective States.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Atmospheres/Sympathetic Vibes.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Atmospheres/Wave Sequencing.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Atmospheres/When Soaring.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Atmospheres/Written In Tone.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Basses/BackWord.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Basses/FM Sub.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Basses/Monohuge.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Basses/Play Low.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Basses/Pulse.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Basses/ResamplEmu.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Basses/Scraper.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/Afterglow.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/Arpsychord.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/Bell Song.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/EPad.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/Golden Mallets.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/Harmonicscape.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/Midnightly.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/Min-Triad Me.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/Open Windows.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/Our Stories.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/Sunny.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Leads/Shredder.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Oscillators/Classic.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Oscillators/FM2.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Oscillators/FM3.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Oscillators/S&H Noise.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Oscillators/Sine.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Oscillators/WT.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Oscillators/Window.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Plucks/Pluck 1.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Plucks/Pluck 2.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Sequences/End Credits X-Fade.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Sequences/Quartertone And The Pitch.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Sequences/Silk Sequences.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Sequences/Still Motions.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Sequences/Stranger Surges.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Soundscapes/Above.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Soundscapes/Brightly.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Soundscapes/Divaesque.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Soundscapes/Gliding.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Soundscapes/ReSurgence.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Soundscapes/Returning.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Soundscapes/Stringish.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Soundscapes/Swirling.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Soundscapes/Warm Theme.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Soundscapes/Whale Communion.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Splits/Bass Pad + Chorus Pad.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Splits/Bass Seq + Synth Pad.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Splits/Bright Pad + Slow String.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Splits/Rate Mod Pad + Slow Mod Pad.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Splits/Reverse Pad + Swirl Pad.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Splits/Soft Bass Pad + Saw Pad.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Splits/String Bass + Resonant Pad.fxp
+%%DATADIR%%/patches_3rdparty/Kuniklo/Arps/Calc.fxp
+%%DATADIR%%/patches_3rdparty/Kuniklo/Arps/Chording.fxp
+%%DATADIR%%/patches_3rdparty/Kuniklo/Basses/Big Moog.fxp
+%%DATADIR%%/patches_3rdparty/Kuniklo/Basses/Big.fxp
+%%DATADIR%%/patches_3rdparty/Kuniklo/Basses/Hoover.fxp
+%%DATADIR%%/patches_3rdparty/Kuniklo/Basses/Synchro.fxp
 %%DATADIR%%/patches_3rdparty/Kuniklo/FX/Desperation.fxp
 %%DATADIR%%/patches_3rdparty/Kuniklo/FX/Discharge.fxp
 %%DATADIR%%/patches_3rdparty/Kuniklo/FX/Hearing Voices.fxp
@@ -701,66 +761,66 @@ lib/vst/Surge.so
 %%DATADIR%%/patches_3rdparty/Kuniklo/FX/Tensioning.fxp
 %%DATADIR%%/patches_3rdparty/Kuniklo/FX/Voice Of I.fxp
 %%DATADIR%%/patches_3rdparty/Kuniklo/FX/Vox Matrix.fxp
-%%DATADIR%%/patches_3rdparty/Kuniklo/Lead/I Said.fxp
-%%DATADIR%%/patches_3rdparty/Kuniklo/Lead/Mini.fxp
-%%DATADIR%%/patches_3rdparty/Kuniklo/Lead/Moogish.fxp
-%%DATADIR%%/patches_3rdparty/Kuniklo/Lead/Next Move.fxp
-%%DATADIR%%/patches_3rdparty/Kuniklo/Lead/Rough Going.fxp
-%%DATADIR%%/patches_3rdparty/Kuniklo/Lead/Time Tourist.fxp
-%%DATADIR%%/patches_3rdparty/Kuniklo/Lead/Unstable.fxp
-%%DATADIR%%/patches_3rdparty/Kuniklo/Lead/You.fxp
-%%DATADIR%%/patches_3rdparty/Kuniklo/Organ/Big Church.fxp
-%%DATADIR%%/patches_3rdparty/Kuniklo/Pad/After Warp.fxp
-%%DATADIR%%/patches_3rdparty/Kuniklo/Pad/Giallo.fxp
-%%DATADIR%%/patches_3rdparty/Kuniklo/Pad/Jammer AT.fxp
-%%DATADIR%%/patches_3rdparty/Kuniklo/Pad/Lullabye.fxp
-%%DATADIR%%/patches_3rdparty/Kuniklo/Pad/Nebulous.fxp
-%%DATADIR%%/patches_3rdparty/Kuniklo/Sequence/All In The Wrists.fxp
-%%DATADIR%%/patches_3rdparty/Kuniklo/Sequence/And Destroy.fxp
-%%DATADIR%%/patches_3rdparty/Kuniklo/Sequence/Dancer.fxp
-%%DATADIR%%/patches_3rdparty/Kuniklo/Sequence/Deconstruct.fxp
-%%DATADIR%%/patches_3rdparty/Kuniklo/Sequence/Naive.fxp
-%%DATADIR%%/patches_3rdparty/Kuniklo/Sequence/Netlon.fxp
-%%DATADIR%%/patches_3rdparty/Kuniklo/Sequence/Old Fog.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Arp/Demon Power.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Bass/Agressor.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Bass/Basted Lead.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Bass/Black Betty.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Bass/Chicago.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Bass/China Long.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Bass/Crash Attack.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Bass/Crazy.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Bass/Deep Stack.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Bass/Dista Bass.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Bass/Drunky.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Bass/Dusty Road.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Bass/Dynamic Sawer.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Bass/Electro Shock.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Bass/FM Structure.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Bass/Fidget.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Bass/Fretless Bass.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Bass/Grizzly.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Bass/Hemera.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Bass/Hoover FM.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Bass/Juno Fire.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Bass/Key Station.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Bass/Morphine.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Bass/Odionis.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Bass/Phantom.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Bass/Plastic Dream.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Bass/Poolpad.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Bass/Rubber Bass.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Bass/Scrambler.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Bass/Serious Step.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Bass/Shot Gun.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Bass/Slide Note.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Bass/Sortier.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Bass/Strange Frog.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Bass/Strekoza.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Bass/Striply Saw.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Bass/Strode Impulse.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Bass/Super Stap.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Bass/Wooden Alien.fxp
+%%DATADIR%%/patches_3rdparty/Kuniklo/Leads/I Said.fxp
+%%DATADIR%%/patches_3rdparty/Kuniklo/Leads/Mini.fxp
+%%DATADIR%%/patches_3rdparty/Kuniklo/Leads/Moogish.fxp
+%%DATADIR%%/patches_3rdparty/Kuniklo/Leads/Next Move.fxp
+%%DATADIR%%/patches_3rdparty/Kuniklo/Leads/Rough Going.fxp
+%%DATADIR%%/patches_3rdparty/Kuniklo/Leads/Time Tourist.fxp
+%%DATADIR%%/patches_3rdparty/Kuniklo/Leads/Unstable.fxp
+%%DATADIR%%/patches_3rdparty/Kuniklo/Leads/You.fxp
+%%DATADIR%%/patches_3rdparty/Kuniklo/Organs/Big Church.fxp
+%%DATADIR%%/patches_3rdparty/Kuniklo/Pads/After Warp.fxp
+%%DATADIR%%/patches_3rdparty/Kuniklo/Pads/Giallo.fxp
+%%DATADIR%%/patches_3rdparty/Kuniklo/Pads/Jammer AT.fxp
+%%DATADIR%%/patches_3rdparty/Kuniklo/Pads/Lullabye.fxp
+%%DATADIR%%/patches_3rdparty/Kuniklo/Pads/Nebulous.fxp
+%%DATADIR%%/patches_3rdparty/Kuniklo/Sequences/All In The Wrists.fxp
+%%DATADIR%%/patches_3rdparty/Kuniklo/Sequences/And Destroy.fxp
+%%DATADIR%%/patches_3rdparty/Kuniklo/Sequences/Dancer.fxp
+%%DATADIR%%/patches_3rdparty/Kuniklo/Sequences/Deconstruct.fxp
+%%DATADIR%%/patches_3rdparty/Kuniklo/Sequences/Naive.fxp
+%%DATADIR%%/patches_3rdparty/Kuniklo/Sequences/Netlon.fxp
+%%DATADIR%%/patches_3rdparty/Kuniklo/Sequences/Old Fog.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Arps/Demon Power.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Basses/Agressor.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Basses/Basted Lead.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Basses/Black Betty.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Basses/Chicago.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Basses/China Long.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Basses/Crash Attack.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Basses/Crazy.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Basses/Deep Stack.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Basses/Dista Bass.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Basses/Drunky.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Basses/Dusty Road.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Basses/Dynamic Sawer.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Basses/Electro Shock.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Basses/FM Structure.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Basses/Fidget.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Basses/Fretless Bass.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Basses/Grizzly.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Basses/Hemera.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Basses/Hoover FM.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Basses/Juno Fire.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Basses/Key Station.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Basses/Morphine.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Basses/Odionis.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Basses/Phantom.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Basses/Plastic Dream.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Basses/Poolpad.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Basses/Rubber Bass.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Basses/Scrambler.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Basses/Serious Step.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Basses/Shot Gun.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Basses/Slide Note.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Basses/Sortier.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Basses/Strange Frog.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Basses/Strekoza.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Basses/Striply Saw.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Basses/Strode Impulse.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Basses/Super Stap.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Basses/Wooden Alien.fxp
 %%DATADIR%%/patches_3rdparty/Nick Moritz/FX/Noise Crash 1.fxp
 %%DATADIR%%/patches_3rdparty/Nick Moritz/FX/Noise Crash 2.fxp
 %%DATADIR%%/patches_3rdparty/Nick Moritz/FX/Pong Keys.fxp
@@ -780,263 +840,360 @@ lib/vst/Surge.so
 %%DATADIR%%/patches_3rdparty/Nick Moritz/Keys/Modern FM Bells.fxp
 %%DATADIR%%/patches_3rdparty/Nick Moritz/Keys/Phone Drops.fxp
 %%DATADIR%%/patches_3rdparty/Nick Moritz/Keys/Popcorn 2K.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Lead/5th House.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Lead/Chicago Key.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Lead/Demon Here.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Lead/Huge Saw.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Lead/Involved Crunch.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Lead/Modular.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Lead/Some Lead.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Pad/Brass Pad.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Pad/Nightmare.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Pad/Purple Ocean.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Pad/Saw Sweeper.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Pad/Scary Pad.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Pad/Sorrowful.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Sequence/Brain Out.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Sequence/Dark Knight.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Split/Ana Bass Pluck.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Leads/5th House.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Leads/Chicago Key.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Leads/Demon Here.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Leads/Huge Saw.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Leads/Involved Crunch.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Leads/Modular.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Leads/Some Lead.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Pads/Brass Pad.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Pads/Nightmare.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Pads/Purple Ocean.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Pads/Saw Sweeper.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Pads/Scary Pad.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Pads/Sorrowful.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Sequences/Brain Out.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Sequences/Dark Knight.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Splits/Ana Bass Pluck.fxp
 %%DATADIR%%/patches_3rdparty/Nick Moritz/Strings/Orchestral Trombone.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Synth/Adrenaline.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Synth/Dream Drops.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Synth/Forest Angels.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Synth/Moon Piano.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Synth/Morrowind.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Synth/Mystery Grotto.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Synth/Pushing Ocean.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Synth/Regressive Notes.fxp
-%%DATADIR%%/patches_3rdparty/Nick Moritz/Synth/Space Stranger.fxp
-%%DATADIR%%/patches_3rdparty/Noisegeek/Back To Tyrell.fxp
-%%DATADIR%%/patches_3rdparty/Noisegeek/Bagpipes Plugged In.fxp
-%%DATADIR%%/patches_3rdparty/Noisegeek/Busted Echobox.fxp
-%%DATADIR%%/patches_3rdparty/Noisegeek/Electric Leady Land.fxp
-%%DATADIR%%/patches_3rdparty/Noisegeek/Kinda Fearless FM.fxp
-%%DATADIR%%/patches_3rdparty/Noisegeek/Lost In Electric Woods.fxp
-%%DATADIR%%/patches_3rdparty/Noisegeek/Rubberband Fight.fxp
-%%DATADIR%%/patches_3rdparty/Noisegeek/Singing Space Saw.fxp
-%%DATADIR%%/patches_3rdparty/Noisegeek/Skyscraper Harp.fxp
-%%DATADIR%%/patches_3rdparty/Noisegeek/Slow-mo Samurai.fxp
-%%DATADIR%%/patches_3rdparty/Noisegeek/Something Clangy.fxp
-%%DATADIR%%/patches_3rdparty/Roger Linn (MPE)/LS Blues Harmonica.fxp
-%%DATADIR%%/patches_3rdparty/Roger Linn (MPE)/LS Hollow Tubes.fxp
-%%DATADIR%%/patches_3rdparty/Roger Linn (MPE)/LS Lead Guitar 2.fxp
-%%DATADIR%%/patches_3rdparty/Roger Linn (MPE)/LS Lead Guitar Shrill.fxp
-%%DATADIR%%/patches_3rdparty/Roger Linn (MPE)/LS Lead Guitar Wah Wah on Y-axis.fxp
-%%DATADIR%%/patches_3rdparty/Roger Linn (MPE)/LS Lead Guitar.fxp
-%%DATADIR%%/patches_3rdparty/Roger Linn (MPE)/LS Wurly.fxp
-%%DATADIR%%/patches_3rdparty/Roger Linn (MPE)/LS ZtoFilter YtoPulseWidth.fxp
-%%DATADIR%%/patches_3rdparty/Roger Linn (MPE)/LS ZtoOctave YtoChorus.fxp
-%%DATADIR%%/patches_3rdparty/Rozzer/6 Osc Stab.fxp
-%%DATADIR%%/patches_3rdparty/Rozzer/Badass D'n'B Bass 1.fxp
-%%DATADIR%%/patches_3rdparty/Rozzer/Badass D'n'B Bass 2.fxp
-%%DATADIR%%/patches_3rdparty/Rozzer/Click Bass.fxp
-%%DATADIR%%/patches_3rdparty/Rozzer/Cute.fxp
-%%DATADIR%%/patches_3rdparty/Rozzer/DX Tonez.fxp
-%%DATADIR%%/patches_3rdparty/Rozzer/Dark Heart.fxp
-%%DATADIR%%/patches_3rdparty/Rozzer/Delicious Square.fxp
-%%DATADIR%%/patches_3rdparty/Rozzer/Disco!.fxp
-%%DATADIR%%/patches_3rdparty/Rozzer/Enchanted.fxp
-%%DATADIR%%/patches_3rdparty/Rozzer/Evil From The Deep.fxp
-%%DATADIR%%/patches_3rdparty/Rozzer/FM Wob Bass.fxp
-%%DATADIR%%/patches_3rdparty/Rozzer/Fairy Dust.fxp
-%%DATADIR%%/patches_3rdparty/Rozzer/Far Away Places.fxp
-%%DATADIR%%/patches_3rdparty/Rozzer/Fast Fingers.fxp
-%%DATADIR%%/patches_3rdparty/Rozzer/God Gave Me Bad Acid.fxp
-%%DATADIR%%/patches_3rdparty/Rozzer/He Never Lost His Hardcore.fxp
-%%DATADIR%%/patches_3rdparty/Rozzer/Hell's Bells.fxp
-%%DATADIR%%/patches_3rdparty/Rozzer/Industry.fxp
-%%DATADIR%%/patches_3rdparty/Rozzer/Insectisoid.fxp
-%%DATADIR%%/patches_3rdparty/Rozzer/JP80x0 Pluck.fxp
-%%DATADIR%%/patches_3rdparty/Rozzer/LC Bass.fxp
-%%DATADIR%%/patches_3rdparty/Rozzer/M25 Stab.fxp
-%%DATADIR%%/patches_3rdparty/Rozzer/Modularity.fxp
-%%DATADIR%%/patches_3rdparty/Rozzer/Natural Bass.fxp
-%%DATADIR%%/patches_3rdparty/Rozzer/Night Vision.fxp
-%%DATADIR%%/patches_3rdparty/Rozzer/Nu Skool Bass 1.fxp
-%%DATADIR%%/patches_3rdparty/Rozzer/Nu Skool Bass 2.fxp
-%%DATADIR%%/patches_3rdparty/Rozzer/OOOOOoooooh Scary.....fxp
-%%DATADIR%%/patches_3rdparty/Rozzer/Old Skool Detroit Minor Stab.fxp
-%%DATADIR%%/patches_3rdparty/Rozzer/Pinhole.fxp
-%%DATADIR%%/patches_3rdparty/Rozzer/Prog Rock Octave Lead.fxp
-%%DATADIR%%/patches_3rdparty/Rozzer/Real Ether.fxp
-%%DATADIR%%/patches_3rdparty/Rozzer/She Cannae Take It.fxp
-%%DATADIR%%/patches_3rdparty/Rozzer/Sunday Organist.fxp
-%%DATADIR%%/patches_3rdparty/Rozzer/Super Thick Strings.fxp
-%%DATADIR%%/patches_3rdparty/Rozzer/Sweet Child.fxp
-%%DATADIR%%/patches_3rdparty/Rozzer/Symphonic Strings.fxp
-%%DATADIR%%/patches_3rdparty/Rozzer/Sync Alarm!.fxp
-%%DATADIR%%/patches_3rdparty/Rozzer/Tight FM Bass.fxp
-%%DATADIR%%/patches_3rdparty/Rozzer/Trance Seq Bass.fxp
-%%DATADIR%%/patches_3rdparty/Rozzer/Tuff Enough .fxp
-%%DATADIR%%/patches_3rdparty/Rozzer/Twisted.fxp
-%%DATADIR%%/patches_3rdparty/Rozzer/Unisono Mw At.fxp
-%%DATADIR%%/patches_3rdparty/Rozzer/Useful Bass.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Add Wind.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Ahead.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Arrival.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Benny.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Bibass.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Black Hawk.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Boing 1.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Boing 2.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Bottlefly.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Brain Stem.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Braqo WT.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Charmer Wah.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Charmer.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Chewsy.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Clavish.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Clingy.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Coldness 1.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Coldness 2.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Coldness 3.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Conflict.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Conjurer.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Crossover.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Current.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Disabled.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Dissonance.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Drill.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Elephant Shock.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Expansion 1.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Expansion 2.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Fish.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Fizzy.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Flutter.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Frontal.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Glow 1.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Glow 2.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Godfather.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Goose.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Growl.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Gurgle.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Harshness.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Hell Choir 1.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Hell Choir 2.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Hesitant.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Higher.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Hilo.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Iceover.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Icy Pluck.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/In The Water.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Intruder.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Jimson.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Jumper.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Lazy Motion.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Meltdown.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Mindfunk.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Modified.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Modrops 1.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Modrops 2.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Munchkin 1.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Munchkin 2.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Munchkin 3.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Mute.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Neustation.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Nightcrawler.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Oncoming.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Open Up.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Partite.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Pasty.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Plaything.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Plectrum 1.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Plectrum 2.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Quick 1.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Quick 2.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Quickspit.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Raft.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Release Me.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Rip Fat.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Seesaw.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Segur.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Shortwave.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Shuttle 1.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Shuttle 2.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Spacious.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Starfield.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Static.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Station.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Streetsweeper.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Suffer.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Swamp 1.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Swamp 2.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Tired Double.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Tragic.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Triumph.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Twitter.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Unleaded.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Unstable.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Ventricle 1.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Ventricle 2.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Wall Eye.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Warble.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Wave Bye.fxp
-%%DATADIR%%/patches_3rdparty/Zoozither/Whisper.fxp
-%%DATADIR%%/patches_factory/Bass/Attacky.fxp
-%%DATADIR%%/patches_factory/Bass/Bass 1.fxp
-%%DATADIR%%/patches_factory/Bass/Bass 2.fxp
-%%DATADIR%%/patches_factory/Bass/Bass 3.fxp
-%%DATADIR%%/patches_factory/Bass/Bass 4.fxp
-%%DATADIR%%/patches_factory/Bass/Bass 5.fxp
-%%DATADIR%%/patches_factory/Bass/Behemoth.fxp
-%%DATADIR%%/patches_factory/Bass/Crush Bass.fxp
-%%DATADIR%%/patches_factory/Bass/Deep End.fxp
-%%DATADIR%%/patches_factory/Bass/Digibass.fxp
-%%DATADIR%%/patches_factory/Bass/Distorted Bass.fxp
-%%DATADIR%%/patches_factory/Bass/Distorted FM.fxp
-%%DATADIR%%/patches_factory/Bass/Distorted MW.fxp
-%%DATADIR%%/patches_factory/Bass/Doomsday.fxp
-%%DATADIR%%/patches_factory/Bass/E-Bass.fxp
-%%DATADIR%%/patches_factory/Bass/Eighties Drone.fxp
-%%DATADIR%%/patches_factory/Bass/Evilous.fxp
-%%DATADIR%%/patches_factory/Bass/FM Bass 1.fxp
-%%DATADIR%%/patches_factory/Bass/FM Bass 2.fxp
-%%DATADIR%%/patches_factory/Bass/FM Bass 3.fxp
-%%DATADIR%%/patches_factory/Bass/FM Bass 4.fxp
-%%DATADIR%%/patches_factory/Bass/FM Bass 5.fxp
-%%DATADIR%%/patches_factory/Bass/FM Bass 6.fxp
-%%DATADIR%%/patches_factory/Bass/FM Combo.fxp
-%%DATADIR%%/patches_factory/Bass/FM Slap.fxp
-%%DATADIR%%/patches_factory/Bass/Fingered.fxp
-%%DATADIR%%/patches_factory/Bass/Helmeto.fxp
-%%DATADIR%%/patches_factory/Bass/Lord Sawtooth.fxp
-%%DATADIR%%/patches_factory/Bass/Mellow.fxp
-%%DATADIR%%/patches_factory/Bass/Metal Square.fxp
-%%DATADIR%%/patches_factory/Bass/Mmm... Pointy!.fxp
-%%DATADIR%%/patches_factory/Bass/Piano Bass.fxp
-%%DATADIR%%/patches_factory/Bass/Plain.fxp
-%%DATADIR%%/patches_factory/Bass/Ring Mayhem.fxp
-%%DATADIR%%/patches_factory/Bass/Rubber Bass.fxp
-%%DATADIR%%/patches_factory/Bass/Rumble.fxp
-%%DATADIR%%/patches_factory/Bass/Saw Lo-Fi.fxp
-%%DATADIR%%/patches_factory/Bass/Schnell.fxp
-%%DATADIR%%/patches_factory/Bass/Slow.fxp
-%%DATADIR%%/patches_factory/Bass/Smoothie.fxp
-%%DATADIR%%/patches_factory/Bass/Square Bass.fxp
-%%DATADIR%%/patches_factory/Bass/Squared.fxp
-%%DATADIR%%/patches_factory/Bass/Stable.fxp
-%%DATADIR%%/patches_factory/Bass/Static 1.fxp
-%%DATADIR%%/patches_factory/Bass/Static 2.fxp
-%%DATADIR%%/patches_factory/Bass/Stone.fxp
-%%DATADIR%%/patches_factory/Bass/Sub 1.fxp
-%%DATADIR%%/patches_factory/Bass/Sub 2.fxp
-%%DATADIR%%/patches_factory/Bass/Sub 3.fxp
-%%DATADIR%%/patches_factory/Bass/Sub 4.fxp
-%%DATADIR%%/patches_factory/Bass/Sub Square.fxp
-%%DATADIR%%/patches_factory/Bass/Tacky 1.fxp
-%%DATADIR%%/patches_factory/Bass/Tacky 2.fxp
-%%DATADIR%%/patches_factory/Bass/Theme.fxp
-%%DATADIR%%/patches_factory/Bass/WT Bass.fxp
-%%DATADIR%%/patches_factory/Chord/Inharmonic Stab.fxp
-%%DATADIR%%/patches_factory/Chord/Maj-Min Saw.fxp
-%%DATADIR%%/patches_factory/Chord/Maj-Min Stab.fxp
-%%DATADIR%%/patches_factory/Chord/Major 7 MkI.fxp
-%%DATADIR%%/patches_factory/Chord/Major 7 MkII.fxp
-%%DATADIR%%/patches_factory/Chord/Minor 7.fxp
-%%DATADIR%%/patches_factory/Chord/Minor Chord Retro Stab.fxp
-%%DATADIR%%/patches_factory/Chord/Tek Stab.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Synths/Adrenaline.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Synths/Dream Drops.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Synths/Forest Angels.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Synths/Moon Piano.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Synths/Morrowind.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Synths/Mystery Grotto.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Synths/Pushing Ocean.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Synths/Regressive Notes.fxp
+%%DATADIR%%/patches_3rdparty/Nick Moritz/Synths/Space Stranger.fxp
+%%DATADIR%%/patches_3rdparty/Noisegeek/Drones/Lost In Electric Woods.fxp
+%%DATADIR%%/patches_3rdparty/Noisegeek/FX/Singing Space Saw.fxp
+%%DATADIR%%/patches_3rdparty/Noisegeek/FX/Slow-mo Samurai.fxp
+%%DATADIR%%/patches_3rdparty/Noisegeek/Keys/Busted Echobox.fxp
+%%DATADIR%%/patches_3rdparty/Noisegeek/Keys/Kinda Fearless FM.fxp
+%%DATADIR%%/patches_3rdparty/Noisegeek/Keys/Something Clangy.fxp
+%%DATADIR%%/patches_3rdparty/Noisegeek/Leads/Back To Tyrell.fxp
+%%DATADIR%%/patches_3rdparty/Noisegeek/Leads/Bagpipes Plugged In.fxp
+%%DATADIR%%/patches_3rdparty/Noisegeek/Leads/Electric Leady Land.fxp
+%%DATADIR%%/patches_3rdparty/Noisegeek/Leads/Rubberband Fight.fxp
+%%DATADIR%%/patches_3rdparty/Noisegeek/Plucks/Skyscraper Harp.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Atmospheres/Ambient Duda.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Atmospheres/Surreal Craft.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Atmospheres/Texture 1.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Atmospheres/Texture 2.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Atmospheres/Texture 3.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Basses/Alternative.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Basses/Attack Chorus.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Basses/Barrell.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Basses/Character.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Basses/Distort.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Basses/EDM.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Basses/Electronic.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Basses/Experimental.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Basses/Expo.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Basses/FM Stalactite.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Basses/Industrial.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Basses/Metallic Electro.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Basses/Metallic FM.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Basses/POP.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Basses/Phaser Modular.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Basses/Porta Dist.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Basses/Staccato.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Basses/Standard.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Basses/Tone Reso.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Basses/Trip Bass.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/FX/Boom.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/FX/Forma.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/FX/Horror.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/FX/Hroost.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/FX/Noise Combo.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/FX/Noise Up.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/FX/Noise.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/FX/Perehod.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/FX/Pitch Model.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/FX/Rotor.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/FX/Tour.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Keys/Destructive Piano.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Keys/Gluckophone.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Leads/Chill Duda.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Leads/Flute Designer.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Leads/Panflute.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Leads/Space Viola.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Leads/Tuba Cello.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Pads/Assistant.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Pads/Favor.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Pads/Orc.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Pads/Sphere.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Pads/Texture Space.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Percussion/Aiwa.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Percussion/Aliance.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Percussion/Clap Electro.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Percussion/Cuprun.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Percussion/Dark.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Percussion/Etnic.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Percussion/Flanger Hat.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Percussion/Hat Electro.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Percussion/Hat WT.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Percussion/Herack.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Percussion/Kick Body Model.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Percussion/Kick Solar.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Percussion/Metal Percussion.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Percussion/Pluck.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Percussion/Resonator.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Percussion/Room AIW.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Percussion/Short Snare.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Percussion/Signal.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Percussion/Surreal Percussion.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Percussion/Technology.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Synths/Combination Yeah.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Synths/Eldorado.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Synths/Experiment Clock.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Synths/Hybrid String.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Synths/Neuro Mini.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Synths/Noise Make.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Synths/PSY.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Synths/Pluck Control.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Synths/Suspession.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Synths/Symbiosis.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Synths/Tremor.fxp
+%%DATADIR%%/patches_3rdparty/Psiome Send Sound/Synths/Xylo Chill.fxp
+%%DATADIR%%/patches_3rdparty/Roger Linn (MPE)/Keys/LS Wurly.fxp
+%%DATADIR%%/patches_3rdparty/Roger Linn (MPE)/Leads/LS Blues Harmonica.fxp
+%%DATADIR%%/patches_3rdparty/Roger Linn (MPE)/Leads/LS Hollow Tubes.fxp
+%%DATADIR%%/patches_3rdparty/Roger Linn (MPE)/Leads/LS Lead Guitar 1.fxp
+%%DATADIR%%/patches_3rdparty/Roger Linn (MPE)/Leads/LS Lead Guitar 2.fxp
+%%DATADIR%%/patches_3rdparty/Roger Linn (MPE)/Leads/LS Lead Guitar Shrill.fxp
+%%DATADIR%%/patches_3rdparty/Roger Linn (MPE)/Leads/LS Lead Guitar Y - Wah.fxp
+%%DATADIR%%/patches_3rdparty/Roger Linn (MPE)/Leads/LS Z - Filter, Y - Pulsewidth.fxp
+%%DATADIR%%/patches_3rdparty/Roger Linn (MPE)/Leads/LS Z - Octave, Y - Chorus.fxp
+%%DATADIR%%/patches_3rdparty/Rozzer/Basses/Badass D'n'B Bass 1.fxp
+%%DATADIR%%/patches_3rdparty/Rozzer/Basses/Badass D'n'B Bass 2.fxp
+%%DATADIR%%/patches_3rdparty/Rozzer/Basses/Click Bass.fxp
+%%DATADIR%%/patches_3rdparty/Rozzer/Basses/Evil From The Deep.fxp
+%%DATADIR%%/patches_3rdparty/Rozzer/Basses/FM Wob Bass.fxp
+%%DATADIR%%/patches_3rdparty/Rozzer/Basses/God Gave Me Bad Acid.fxp
+%%DATADIR%%/patches_3rdparty/Rozzer/Basses/Industry.fxp
+%%DATADIR%%/patches_3rdparty/Rozzer/Basses/LC Bass.fxp
+%%DATADIR%%/patches_3rdparty/Rozzer/Basses/Natural Bass.fxp
+%%DATADIR%%/patches_3rdparty/Rozzer/Basses/Nu Skool Bass 1.fxp
+%%DATADIR%%/patches_3rdparty/Rozzer/Basses/Nu Skool Bass 2.fxp
+%%DATADIR%%/patches_3rdparty/Rozzer/Basses/Tight FM Bass.fxp
+%%DATADIR%%/patches_3rdparty/Rozzer/Basses/Trance Seq Bass.fxp
+%%DATADIR%%/patches_3rdparty/Rozzer/Basses/Useful Bass.fxp
+%%DATADIR%%/patches_3rdparty/Rozzer/Bells/Enchanted.fxp
+%%DATADIR%%/patches_3rdparty/Rozzer/Bells/Hell's Bells.fxp
+%%DATADIR%%/patches_3rdparty/Rozzer/Chords/6 Osc Stab.fxp
+%%DATADIR%%/patches_3rdparty/Rozzer/Chords/M25 Stab.fxp
+%%DATADIR%%/patches_3rdparty/Rozzer/Chords/Old Skool Detroit Minor Stab.fxp
+%%DATADIR%%/patches_3rdparty/Rozzer/FX/Insectisoid.fxp
+%%DATADIR%%/patches_3rdparty/Rozzer/FX/Modularity.fxp
+%%DATADIR%%/patches_3rdparty/Rozzer/FX/Night Vision.fxp
+%%DATADIR%%/patches_3rdparty/Rozzer/FX/OOOOOoooooh Scary.....fxp
+%%DATADIR%%/patches_3rdparty/Rozzer/FX/Pinhole.fxp
+%%DATADIR%%/patches_3rdparty/Rozzer/FX/She Cannae Take It.fxp
+%%DATADIR%%/patches_3rdparty/Rozzer/Keys/Cute.fxp
+%%DATADIR%%/patches_3rdparty/Rozzer/Keys/DX Tonez.fxp
+%%DATADIR%%/patches_3rdparty/Rozzer/Keys/Fairy Dust.fxp
+%%DATADIR%%/patches_3rdparty/Rozzer/Keys/Real Ether.fxp
+%%DATADIR%%/patches_3rdparty/Rozzer/Keys/Sunday Organist.fxp
+%%DATADIR%%/patches_3rdparty/Rozzer/Keys/Sweet Child.fxp
+%%DATADIR%%/patches_3rdparty/Rozzer/Leads/Dark Heart.fxp
+%%DATADIR%%/patches_3rdparty/Rozzer/Leads/Delicious Square.fxp
+%%DATADIR%%/patches_3rdparty/Rozzer/Leads/Far Away Places.fxp
+%%DATADIR%%/patches_3rdparty/Rozzer/Leads/Fast Fingers.fxp
+%%DATADIR%%/patches_3rdparty/Rozzer/Leads/He Never Lost His Hardcore.fxp
+%%DATADIR%%/patches_3rdparty/Rozzer/Leads/Prog Rock Octave Lead.fxp
+%%DATADIR%%/patches_3rdparty/Rozzer/Leads/Tuff Enough .fxp
+%%DATADIR%%/patches_3rdparty/Rozzer/Leads/Unisono MW AT.fxp
+%%DATADIR%%/patches_3rdparty/Rozzer/Pads/Super Thick Strings.fxp
+%%DATADIR%%/patches_3rdparty/Rozzer/Pads/Symphonic Strings.fxp
+%%DATADIR%%/patches_3rdparty/Rozzer/Plucks/JP80x0 Pluck.fxp
+%%DATADIR%%/patches_3rdparty/Rozzer/Rhythms/Disco!.fxp
+%%DATADIR%%/patches_3rdparty/Rozzer/Rhythms/Sync Alarm!.fxp
+%%DATADIR%%/patches_3rdparty/Rozzer/Rhythms/Twisted.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Atmospheres/Brain Stem.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Atmospheres/Chewsy.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Atmospheres/Crossover.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Atmospheres/Dissonance.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Basses/Bibass.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Basses/Black Hawk.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Basses/Disabled.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Basses/Drill.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Basses/Elephant Shock.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Basses/Fizzy.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Basses/Godfather.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Basses/Growl.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Basses/Hesitant.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Basses/Mindfunk.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Basses/Open Up.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Basses/Pasty.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Basses/Quick 1.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Basses/Quick 2.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Basses/Rip Fat.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Basses/Shuttle 1.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Basses/Shuttle 2.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Basses/Tired Double.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/FX/Arrival.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/FX/Braqo WT.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/FX/Raft.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/FX/Shortwave.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Keys/Clavish.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Keys/Plaything.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Keys/Station.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Leads/Add Wind.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Leads/Ahead.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Leads/Benny.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Leads/Bottlefly.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Leads/Charmer Wah.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Leads/Charmer.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Leads/Clingy.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Leads/Conflict.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Leads/Current.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Leads/Expansion 1.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Leads/Expansion 2.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Leads/Fish.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Leads/Flutter.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Leads/Frontal.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Leads/Gurgle.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Leads/Higher.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Leads/Iceover.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Leads/In The Water.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Leads/Meltdown.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Leads/Modified.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Leads/Modrops 1.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Leads/Modrops 2.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Leads/Mute.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Leads/Neustation.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Leads/Partite.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Leads/Quickspit.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Leads/Seesaw.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Leads/Segur.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Leads/Spacious.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Leads/Streetsweeper.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Leads/Swamp 1.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Leads/Swamp 2.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Leads/Tragic.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Leads/Triumph.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Leads/Twitter.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Leads/Unleaded.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Leads/Unstable.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Leads/Wave Bye.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Pads/Coldness 1.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Pads/Coldness 2.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Pads/Coldness 3.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Pads/Oncoming.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Plucks/Boing 1.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Plucks/Boing 2.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Plucks/Conjurer.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Plucks/Icy Pluck.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Plucks/Suffer.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Plucks/Wall Eye.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Rhythms/Goose.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Rhythms/Intruder.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Rhythms/Jumper.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Rhythms/Lazy Motion.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Rhythms/Nightcrawler.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Rhythms/Ventricle 1.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Rhythms/Ventricle 2.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Soundscapes/Glow 1.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Soundscapes/Glow 2.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Soundscapes/Harshness.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Soundscapes/Jimson.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Soundscapes/Plectrum 1.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Soundscapes/Plectrum 2.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Soundscapes/Starfield.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Soundscapes/Static.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Soundscapes/Warble.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Splits/Hilo.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Vox/Hell Choir 1.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Vox/Hell Choir 2.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Vox/Munchkin 1.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Vox/Munchkin 2.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Vox/Munchkin 3.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Vox/Release Me.fxp
+%%DATADIR%%/patches_3rdparty/Zoozither/Vox/Whisper.fxp
+%%DATADIR%%/patches_factory/Basses/Attacky.fxp
+%%DATADIR%%/patches_factory/Basses/Bass 1.fxp
+%%DATADIR%%/patches_factory/Basses/Bass 2.fxp
+%%DATADIR%%/patches_factory/Basses/Bass 3.fxp
+%%DATADIR%%/patches_factory/Basses/Bass 4.fxp
+%%DATADIR%%/patches_factory/Basses/Bass 5.fxp
+%%DATADIR%%/patches_factory/Basses/Behemoth.fxp
+%%DATADIR%%/patches_factory/Basses/Crush Bass.fxp
+%%DATADIR%%/patches_factory/Basses/Deep End.fxp
+%%DATADIR%%/patches_factory/Basses/Digibass.fxp
+%%DATADIR%%/patches_factory/Basses/Dist Bass 1.fxp
+%%DATADIR%%/patches_factory/Basses/Dist Bass 2.fxp
+%%DATADIR%%/patches_factory/Basses/Distorted Bass.fxp
+%%DATADIR%%/patches_factory/Basses/Distorted FM.fxp
+%%DATADIR%%/patches_factory/Basses/Distorted MW.fxp
+%%DATADIR%%/patches_factory/Basses/Doomsday.fxp
+%%DATADIR%%/patches_factory/Basses/E-Bass.fxp
+%%DATADIR%%/patches_factory/Basses/Eighties Drone.fxp
+%%DATADIR%%/patches_factory/Basses/Evilous.fxp
+%%DATADIR%%/patches_factory/Basses/FM Bass 1.fxp
+%%DATADIR%%/patches_factory/Basses/FM Bass 2.fxp
+%%DATADIR%%/patches_factory/Basses/FM Bass 3.fxp
+%%DATADIR%%/patches_factory/Basses/FM Bass 4.fxp
+%%DATADIR%%/patches_factory/Basses/FM Bass 5.fxp
+%%DATADIR%%/patches_factory/Basses/FM Bass 6.fxp
+%%DATADIR%%/patches_factory/Basses/FM Combo.fxp
+%%DATADIR%%/patches_factory/Basses/FM Slap.fxp
+%%DATADIR%%/patches_factory/Basses/Fingered.fxp
+%%DATADIR%%/patches_factory/Basses/Helmeto.fxp
+%%DATADIR%%/patches_factory/Basses/Lord Sawtooth.fxp
+%%DATADIR%%/patches_factory/Basses/Mellow.fxp
+%%DATADIR%%/patches_factory/Basses/Metal Square.fxp
+%%DATADIR%%/patches_factory/Basses/Mmm... Pointy!.fxp
+%%DATADIR%%/patches_factory/Basses/Piano Bass.fxp
+%%DATADIR%%/patches_factory/Basses/Plain.fxp
+%%DATADIR%%/patches_factory/Basses/Ring Mayhem.fxp
+%%DATADIR%%/patches_factory/Basses/Rubber Bass.fxp
+%%DATADIR%%/patches_factory/Basses/Rumble.fxp
+%%DATADIR%%/patches_factory/Basses/Saw Lo-Fi.fxp
+%%DATADIR%%/patches_factory/Basses/Schnell.fxp
+%%DATADIR%%/patches_factory/Basses/Slow.fxp
+%%DATADIR%%/patches_factory/Basses/Smoothie.fxp
+%%DATADIR%%/patches_factory/Basses/Square Bass.fxp
+%%DATADIR%%/patches_factory/Basses/Squared.fxp
+%%DATADIR%%/patches_factory/Basses/Stable.fxp
+%%DATADIR%%/patches_factory/Basses/Static 1.fxp
+%%DATADIR%%/patches_factory/Basses/Static 2.fxp
+%%DATADIR%%/patches_factory/Basses/Stone.fxp
+%%DATADIR%%/patches_factory/Basses/Sub 1.fxp
+%%DATADIR%%/patches_factory/Basses/Sub 2.fxp
+%%DATADIR%%/patches_factory/Basses/Sub 3.fxp
+%%DATADIR%%/patches_factory/Basses/Sub 4.fxp
+%%DATADIR%%/patches_factory/Basses/Sub Square.fxp
+%%DATADIR%%/patches_factory/Basses/Tacky 1.fxp
+%%DATADIR%%/patches_factory/Basses/Tacky 2.fxp
+%%DATADIR%%/patches_factory/Basses/Theme.fxp
+%%DATADIR%%/patches_factory/Basses/WT Bass.fxp
+%%DATADIR%%/patches_factory/Basses/Wide Bassline.fxp
+%%DATADIR%%/patches_factory/Basses/Width.fxp
+%%DATADIR%%/patches_factory/Brass/Brassy.fxp
+%%DATADIR%%/patches_factory/Brass/Buggy Brass.fxp
+%%DATADIR%%/patches_factory/Brass/Crisp Noise Brass.fxp
+%%DATADIR%%/patches_factory/Brass/JX-10 Double Brass.fxp
+%%DATADIR%%/patches_factory/Brass/OB-8 Jump.fxp
+%%DATADIR%%/patches_factory/Brass/Plastic Brass.fxp
+%%DATADIR%%/patches_factory/Brass/Reso Brassy.fxp
+%%DATADIR%%/patches_factory/Brass/Synth Brass 1.fxp
+%%DATADIR%%/patches_factory/Brass/Synth Brass 2.fxp
+%%DATADIR%%/patches_factory/Brass/Synth Brass 3.fxp
+%%DATADIR%%/patches_factory/Brass/Toto Brass.fxp
+%%DATADIR%%/patches_factory/Chords/Inharmonic Stab.fxp
+%%DATADIR%%/patches_factory/Chords/Maj-Min Saw.fxp
+%%DATADIR%%/patches_factory/Chords/Maj-Min Stab.fxp
+%%DATADIR%%/patches_factory/Chords/Major 7 MkI.fxp
+%%DATADIR%%/patches_factory/Chords/Major 7 MkII.fxp
+%%DATADIR%%/patches_factory/Chords/Minor 7.fxp
+%%DATADIR%%/patches_factory/Chords/Minor Chord Retro Stab.fxp
+%%DATADIR%%/patches_factory/Chords/Tek Stab.fxp
+%%DATADIR%%/patches_factory/FX/Aggero.fxp
 %%DATADIR%%/patches_factory/FX/Alarm.fxp
 %%DATADIR%%/patches_factory/FX/Aliens.fxp
+%%DATADIR%%/patches_factory/FX/Bork.fxp
 %%DATADIR%%/patches_factory/FX/Busy.fxp
 %%DATADIR%%/patches_factory/FX/Chaotry.fxp
 %%DATADIR%%/patches_factory/FX/Crackling.fxp
@@ -1059,30 +1216,152 @@ lib/vst/Surge.so
 %%DATADIR%%/patches_factory/FX/Spooky Fish.fxp
 %%DATADIR%%/patches_factory/FX/Unsettler.fxp
 %%DATADIR%%/patches_factory/FX/Vinyl.fxp
-%%DATADIR%%/patches_factory/Init/Audio Passthru Mono.fxp
-%%DATADIR%%/patches_factory/Init/Audio Passthru Stereo.fxp
-%%DATADIR%%/patches_factory/Init/Init Emu VA.fxp
-%%DATADIR%%/patches_factory/Init/Init Emu WT.fxp
-%%DATADIR%%/patches_factory/Init/Init Emu.fxp
-%%DATADIR%%/patches_factory/Init/Init Env-Per-Osc.fxp
-%%DATADIR%%/patches_factory/Init/Init FM2.fxp
-%%DATADIR%%/patches_factory/Init/Init Saw.fxp
-%%DATADIR%%/patches_factory/Init/Init Sine.fxp
-%%DATADIR%%/patches_factory/Keyboard/Artificial 1.fxp
-%%DATADIR%%/patches_factory/Keyboard/Artificial 2.fxp
-%%DATADIR%%/patches_factory/Keyboard/Church.fxp
-%%DATADIR%%/patches_factory/Keyboard/Circus 1.fxp
-%%DATADIR%%/patches_factory/Keyboard/Circus 2.fxp
-%%DATADIR%%/patches_factory/Keyboard/DX EP.fxp
-%%DATADIR%%/patches_factory/Keyboard/Digi Harpsi.fxp
-%%DATADIR%%/patches_factory/Keyboard/Dirt.fxp
-%%DATADIR%%/patches_factory/Keyboard/EP 1.fxp
-%%DATADIR%%/patches_factory/Keyboard/EP 2.fxp
-%%DATADIR%%/patches_factory/Keyboard/Experiment.fxp
-%%DATADIR%%/patches_factory/Keyboard/Organ 1.fxp
-%%DATADIR%%/patches_factory/Keyboard/Organ 2.fxp
-%%DATADIR%%/patches_factory/Keyboard/Organ 3.fxp
-%%DATADIR%%/patches_factory/Keyboard/Soft Suitcase.fxp
+%%DATADIR%%/patches_factory/Keys/Artificial 1.fxp
+%%DATADIR%%/patches_factory/Keys/Artificial 2.fxp
+%%DATADIR%%/patches_factory/Keys/Church.fxp
+%%DATADIR%%/patches_factory/Keys/Circus 1.fxp
+%%DATADIR%%/patches_factory/Keys/Circus 2.fxp
+%%DATADIR%%/patches_factory/Keys/DX EP.fxp
+%%DATADIR%%/patches_factory/Keys/Digi Harpsi.fxp
+%%DATADIR%%/patches_factory/Keys/Dirt.fxp
+%%DATADIR%%/patches_factory/Keys/EP 1.fxp
+%%DATADIR%%/patches_factory/Keys/EP 2.fxp
+%%DATADIR%%/patches_factory/Keys/Experiment.fxp
+%%DATADIR%%/patches_factory/Keys/Organ 1.fxp
+%%DATADIR%%/patches_factory/Keys/Organ 2.fxp
+%%DATADIR%%/patches_factory/Keys/Organ 3.fxp
+%%DATADIR%%/patches_factory/Keys/Soft Suitcase.fxp
+%%DATADIR%%/patches_factory/Leads/Acidofil.fxp
+%%DATADIR%%/patches_factory/Leads/Agroculture.fxp
+%%DATADIR%%/patches_factory/Leads/Asymptote.fxp
+%%DATADIR%%/patches_factory/Leads/Bad Childhood.fxp
+%%DATADIR%%/patches_factory/Leads/Banjo Remains.fxp
+%%DATADIR%%/patches_factory/Leads/Banter.fxp
+%%DATADIR%%/patches_factory/Leads/Bee.fxp
+%%DATADIR%%/patches_factory/Leads/Bitten.fxp
+%%DATADIR%%/patches_factory/Leads/Boll.fxp
+%%DATADIR%%/patches_factory/Leads/Broken One.fxp
+%%DATADIR%%/patches_factory/Leads/Butter.fxp
+%%DATADIR%%/patches_factory/Leads/Caveman.fxp
+%%DATADIR%%/patches_factory/Leads/Cell.fxp
+%%DATADIR%%/patches_factory/Leads/Chatter.fxp
+%%DATADIR%%/patches_factory/Leads/Classic Lead 1.fxp
+%%DATADIR%%/patches_factory/Leads/Classic Lead 2.fxp
+%%DATADIR%%/patches_factory/Leads/Classical.fxp
+%%DATADIR%%/patches_factory/Leads/Clean Shit.fxp
+%%DATADIR%%/patches_factory/Leads/Condom.fxp
+%%DATADIR%%/patches_factory/Leads/Cottage.fxp
+%%DATADIR%%/patches_factory/Leads/Cray.fxp
+%%DATADIR%%/patches_factory/Leads/Crisp PWM.fxp
+%%DATADIR%%/patches_factory/Leads/DNA Sequencer.fxp
+%%DATADIR%%/patches_factory/Leads/Digi It.fxp
+%%DATADIR%%/patches_factory/Leads/Digi Portalead.fxp
+%%DATADIR%%/patches_factory/Leads/Distortionworks.fxp
+%%DATADIR%%/patches_factory/Leads/Dome.fxp
+%%DATADIR%%/patches_factory/Leads/Duck and Cover.fxp
+%%DATADIR%%/patches_factory/Leads/Eight.fxp
+%%DATADIR%%/patches_factory/Leads/Etwas.fxp
+%%DATADIR%%/patches_factory/Leads/FM Is Growing On Me.fxp
+%%DATADIR%%/patches_factory/Leads/FM Rock.fxp
+%%DATADIR%%/patches_factory/Leads/Fairy.fxp
+%%DATADIR%%/patches_factory/Leads/Flawed Science.fxp
+%%DATADIR%%/patches_factory/Leads/Fluff.fxp
+%%DATADIR%%/patches_factory/Leads/Formant Pulse.fxp
+%%DATADIR%%/patches_factory/Leads/Fuji.fxp
+%%DATADIR%%/patches_factory/Leads/Fundament.fxp
+%%DATADIR%%/patches_factory/Leads/Fyllo Dual.fxp
+%%DATADIR%%/patches_factory/Leads/Gallium Arsenic.fxp
+%%DATADIR%%/patches_factory/Leads/Generic.fxp
+%%DATADIR%%/patches_factory/Leads/Gliss Lead.fxp
+%%DATADIR%%/patches_factory/Leads/Harsh.fxp
+%%DATADIR%%/patches_factory/Leads/Harsher.fxp
+%%DATADIR%%/patches_factory/Leads/Hippo.fxp
+%%DATADIR%%/patches_factory/Leads/Hof.fxp
+%%DATADIR%%/patches_factory/Leads/In The Distance.fxp
+%%DATADIR%%/patches_factory/Leads/Kilkenny.fxp
+%%DATADIR%%/patches_factory/Leads/Koala 1.fxp
+%%DATADIR%%/patches_factory/Leads/Koala 2.fxp
+%%DATADIR%%/patches_factory/Leads/Kurasu.fxp
+%%DATADIR%%/patches_factory/Leads/Labcoat.fxp
+%%DATADIR%%/patches_factory/Leads/Later.fxp
+%%DATADIR%%/patches_factory/Leads/Legoland.fxp
+%%DATADIR%%/patches_factory/Leads/Lera.fxp
+%%DATADIR%%/patches_factory/Leads/Light.fxp
+%%DATADIR%%/patches_factory/Leads/Log Log.fxp
+%%DATADIR%%/patches_factory/Leads/Long Stocking.fxp
+%%DATADIR%%/patches_factory/Leads/Markov.fxp
+%%DATADIR%%/patches_factory/Leads/Moogy Saw.fxp
+%%DATADIR%%/patches_factory/Leads/Mosquito.fxp
+%%DATADIR%%/patches_factory/Leads/Motion.fxp
+%%DATADIR%%/patches_factory/Leads/Mundane.fxp
+%%DATADIR%%/patches_factory/Leads/Nastyfication.fxp
+%%DATADIR%%/patches_factory/Leads/Not Nearly As Harsh.fxp
+%%DATADIR%%/patches_factory/Leads/Octave Dodger.fxp
+%%DATADIR%%/patches_factory/Leads/Oldest Trick In The Book MW.fxp
+%%DATADIR%%/patches_factory/Leads/Organ Donor.fxp
+%%DATADIR%%/patches_factory/Leads/Owl.fxp
+%%DATADIR%%/patches_factory/Leads/Panda.fxp
+%%DATADIR%%/patches_factory/Leads/Pet.fxp
+%%DATADIR%%/patches_factory/Leads/Phase Pass.fxp
+%%DATADIR%%/patches_factory/Leads/Photon.fxp
+%%DATADIR%%/patches_factory/Leads/Play Nice.fxp
+%%DATADIR%%/patches_factory/Leads/Probability.fxp
+%%DATADIR%%/patches_factory/Leads/Qealchee.fxp
+%%DATADIR%%/patches_factory/Leads/Quick Basic.fxp
+%%DATADIR%%/patches_factory/Leads/Quirp.fxp
+%%DATADIR%%/patches_factory/Leads/Quiz.fxp
+%%DATADIR%%/patches_factory/Leads/Radon.fxp
+%%DATADIR%%/patches_factory/Leads/Resofest 1.fxp
+%%DATADIR%%/patches_factory/Leads/Resofest 2.fxp
+%%DATADIR%%/patches_factory/Leads/Resofest 3.fxp
+%%DATADIR%%/patches_factory/Leads/Resofest 4.fxp
+%%DATADIR%%/patches_factory/Leads/Riemann.fxp
+%%DATADIR%%/patches_factory/Leads/Rough.fxp
+%%DATADIR%%/patches_factory/Leads/Rundfunk Funk.fxp
+%%DATADIR%%/patches_factory/Leads/Saw Octaves.fxp
+%%DATADIR%%/patches_factory/Leads/Scooped.fxp
+%%DATADIR%%/patches_factory/Leads/Scream Lead.fxp
+%%DATADIR%%/patches_factory/Leads/Screamer.fxp
+%%DATADIR%%/patches_factory/Leads/Screamy Verby.fxp
+%%DATADIR%%/patches_factory/Leads/Semi-clip.fxp
+%%DATADIR%%/patches_factory/Leads/Serial.fxp
+%%DATADIR%%/patches_factory/Leads/Shanai.fxp
+%%DATADIR%%/patches_factory/Leads/Sharpish.fxp
+%%DATADIR%%/patches_factory/Leads/Sheep Clothing MW.fxp
+%%DATADIR%%/patches_factory/Leads/Simple ATC.fxp
+%%DATADIR%%/patches_factory/Leads/Simpler Times.fxp
+%%DATADIR%%/patches_factory/Leads/Sine Lead.fxp
+%%DATADIR%%/patches_factory/Leads/Sine-Saw Acidish.fxp
+%%DATADIR%%/patches_factory/Leads/Smoothness World Cup.fxp
+%%DATADIR%%/patches_factory/Leads/Smoothy Hollow.fxp
+%%DATADIR%%/patches_factory/Leads/Somewhere MW.fxp
+%%DATADIR%%/patches_factory/Leads/Square.fxp
+%%DATADIR%%/patches_factory/Leads/Squelch.fxp
+%%DATADIR%%/patches_factory/Leads/Squiggly.fxp
+%%DATADIR%%/patches_factory/Leads/Stepmother.fxp
+%%DATADIR%%/patches_factory/Leads/Sweepy.fxp
+%%DATADIR%%/patches_factory/Leads/Sync Harmonics.fxp
+%%DATADIR%%/patches_factory/Leads/Sync Lead.fxp
+%%DATADIR%%/patches_factory/Leads/Synth Guitar 1.fxp
+%%DATADIR%%/patches_factory/Leads/Synth Guitar 2.fxp
+%%DATADIR%%/patches_factory/Leads/Talky 1 MW.fxp
+%%DATADIR%%/patches_factory/Leads/Talky 2 MW.fxp
+%%DATADIR%%/patches_factory/Leads/Tank Top.fxp
+%%DATADIR%%/patches_factory/Leads/Tight Bassline.fxp
+%%DATADIR%%/patches_factory/Leads/Tok.fxp
+%%DATADIR%%/patches_factory/Leads/Tolk.fxp
+%%DATADIR%%/patches_factory/Leads/Triple.fxp
+%%DATADIR%%/patches_factory/Leads/Turbo Solo.fxp
+%%DATADIR%%/patches_factory/Leads/Turbo.fxp
+%%DATADIR%%/patches_factory/Leads/Untamed.fxp
+%%DATADIR%%/patches_factory/Leads/Up Down.fxp
+%%DATADIR%%/patches_factory/Leads/Very Chorus.fxp
+%%DATADIR%%/patches_factory/Leads/Violini Solo.fxp
+%%DATADIR%%/patches_factory/Leads/Vocal Lead.fxp
+%%DATADIR%%/patches_factory/Leads/WG 01.fxp
+%%DATADIR%%/patches_factory/Leads/Wombat.fxp
+%%DATADIR%%/patches_factory/Leads/Zero Zero One.fxp
+%%DATADIR%%/patches_factory/Leads/µcomputer.fxp
 %%DATADIR%%/patches_factory/MPE/Baritonosaurus Saxus.fxp
 %%DATADIR%%/patches_factory/MPE/Bloom.fxp
 %%DATADIR%%/patches_factory/MPE/Coteaux du Giennois.fxp
@@ -1092,205 +1371,71 @@ lib/vst/Surge.so
 %%DATADIR%%/patches_factory/MPE/Sticky.fxp
 %%DATADIR%%/patches_factory/MPE/The Elephant Told You.fxp
 %%DATADIR%%/patches_factory/MPE/The Shoebox.fxp
-%%DATADIR%%/patches_factory/Monosynth/Acidofil.fxp
-%%DATADIR%%/patches_factory/Monosynth/Agroculture.fxp
-%%DATADIR%%/patches_factory/Monosynth/Asymptote.fxp
-%%DATADIR%%/patches_factory/Monosynth/Bad Childhood.fxp
-%%DATADIR%%/patches_factory/Monosynth/Banjo Remains.fxp
-%%DATADIR%%/patches_factory/Monosynth/Banter.fxp
-%%DATADIR%%/patches_factory/Monosynth/Bee.fxp
-%%DATADIR%%/patches_factory/Monosynth/Bitten.fxp
-%%DATADIR%%/patches_factory/Monosynth/Boll.fxp
-%%DATADIR%%/patches_factory/Monosynth/Broken One.fxp
-%%DATADIR%%/patches_factory/Monosynth/Butter.fxp
-%%DATADIR%%/patches_factory/Monosynth/Caveman.fxp
-%%DATADIR%%/patches_factory/Monosynth/Cell.fxp
-%%DATADIR%%/patches_factory/Monosynth/Chatter.fxp
-%%DATADIR%%/patches_factory/Monosynth/Classic Lead 1.fxp
-%%DATADIR%%/patches_factory/Monosynth/Classic Lead 2.fxp
-%%DATADIR%%/patches_factory/Monosynth/Classical.fxp
-%%DATADIR%%/patches_factory/Monosynth/Clean Shit.fxp
-%%DATADIR%%/patches_factory/Monosynth/Condom.fxp
-%%DATADIR%%/patches_factory/Monosynth/Cottage.fxp
-%%DATADIR%%/patches_factory/Monosynth/Cray.fxp
-%%DATADIR%%/patches_factory/Monosynth/Crisp PWM.fxp
-%%DATADIR%%/patches_factory/Monosynth/DNA Sequencer.fxp
-%%DATADIR%%/patches_factory/Monosynth/Digi It.fxp
-%%DATADIR%%/patches_factory/Monosynth/Digi Portalead.fxp
-%%DATADIR%%/patches_factory/Monosynth/Dist Bass 1.fxp
-%%DATADIR%%/patches_factory/Monosynth/Dist Bass 2.fxp
-%%DATADIR%%/patches_factory/Monosynth/Distortionworks.fxp
-%%DATADIR%%/patches_factory/Monosynth/Dome.fxp
-%%DATADIR%%/patches_factory/Monosynth/Duck and Cover.fxp
-%%DATADIR%%/patches_factory/Monosynth/Eight.fxp
-%%DATADIR%%/patches_factory/Monosynth/Etwas.fxp
-%%DATADIR%%/patches_factory/Monosynth/FM Is Growing On Me.fxp
-%%DATADIR%%/patches_factory/Monosynth/FM Rock.fxp
-%%DATADIR%%/patches_factory/Monosynth/Fairy.fxp
-%%DATADIR%%/patches_factory/Monosynth/Flawed Science.fxp
-%%DATADIR%%/patches_factory/Monosynth/Fluff.fxp
-%%DATADIR%%/patches_factory/Monosynth/Formant Pulse.fxp
-%%DATADIR%%/patches_factory/Monosynth/Fuji.fxp
-%%DATADIR%%/patches_factory/Monosynth/Fundament.fxp
-%%DATADIR%%/patches_factory/Monosynth/Fyllo Dual.fxp
-%%DATADIR%%/patches_factory/Monosynth/Gallium Arsenic.fxp
-%%DATADIR%%/patches_factory/Monosynth/Generic.fxp
-%%DATADIR%%/patches_factory/Monosynth/Gliss Lead.fxp
-%%DATADIR%%/patches_factory/Monosynth/Harsh.fxp
-%%DATADIR%%/patches_factory/Monosynth/Harsher.fxp
-%%DATADIR%%/patches_factory/Monosynth/Hippo.fxp
-%%DATADIR%%/patches_factory/Monosynth/Hof.fxp
-%%DATADIR%%/patches_factory/Monosynth/In The Distance.fxp
-%%DATADIR%%/patches_factory/Monosynth/Kilkenny.fxp
-%%DATADIR%%/patches_factory/Monosynth/Koala 1.fxp
-%%DATADIR%%/patches_factory/Monosynth/Koala 2.fxp
-%%DATADIR%%/patches_factory/Monosynth/Kurasu.fxp
-%%DATADIR%%/patches_factory/Monosynth/Labcoat.fxp
-%%DATADIR%%/patches_factory/Monosynth/Later.fxp
-%%DATADIR%%/patches_factory/Monosynth/Legoland.fxp
-%%DATADIR%%/patches_factory/Monosynth/Lera.fxp
-%%DATADIR%%/patches_factory/Monosynth/Light.fxp
-%%DATADIR%%/patches_factory/Monosynth/Log Log.fxp
-%%DATADIR%%/patches_factory/Monosynth/Long Stocking.fxp
-%%DATADIR%%/patches_factory/Monosynth/Markov.fxp
-%%DATADIR%%/patches_factory/Monosynth/Moogy Saw.fxp
-%%DATADIR%%/patches_factory/Monosynth/Mosquito.fxp
-%%DATADIR%%/patches_factory/Monosynth/Motion.fxp
-%%DATADIR%%/patches_factory/Monosynth/Mundane.fxp
-%%DATADIR%%/patches_factory/Monosynth/Nastyfication.fxp
-%%DATADIR%%/patches_factory/Monosynth/Not Nearly As Harsh.fxp
-%%DATADIR%%/patches_factory/Monosynth/Octave Dodger.fxp
-%%DATADIR%%/patches_factory/Monosynth/Oldest Trick In The Book MW.fxp
-%%DATADIR%%/patches_factory/Monosynth/Organ Donor.fxp
-%%DATADIR%%/patches_factory/Monosynth/Owl.fxp
-%%DATADIR%%/patches_factory/Monosynth/Panda.fxp
-%%DATADIR%%/patches_factory/Monosynth/Pet.fxp
-%%DATADIR%%/patches_factory/Monosynth/Phase Pass.fxp
-%%DATADIR%%/patches_factory/Monosynth/Photon.fxp
-%%DATADIR%%/patches_factory/Monosynth/Play Nice.fxp
-%%DATADIR%%/patches_factory/Monosynth/Probability.fxp
-%%DATADIR%%/patches_factory/Monosynth/Qealchee.fxp
-%%DATADIR%%/patches_factory/Monosynth/Quick Basic.fxp
-%%DATADIR%%/patches_factory/Monosynth/Quirp.fxp
-%%DATADIR%%/patches_factory/Monosynth/Quiz.fxp
-%%DATADIR%%/patches_factory/Monosynth/Radon.fxp
-%%DATADIR%%/patches_factory/Monosynth/Resofest 1.fxp
-%%DATADIR%%/patches_factory/Monosynth/Resofest 2.fxp
-%%DATADIR%%/patches_factory/Monosynth/Resofest 3.fxp
-%%DATADIR%%/patches_factory/Monosynth/Resofest 4.fxp
-%%DATADIR%%/patches_factory/Monosynth/Riemann.fxp
-%%DATADIR%%/patches_factory/Monosynth/Rough.fxp
-%%DATADIR%%/patches_factory/Monosynth/Rundfunk Funk.fxp
-%%DATADIR%%/patches_factory/Monosynth/Saw Octaves.fxp
-%%DATADIR%%/patches_factory/Monosynth/Scooped.fxp
-%%DATADIR%%/patches_factory/Monosynth/Scream Lead.fxp
-%%DATADIR%%/patches_factory/Monosynth/Screamer.fxp
-%%DATADIR%%/patches_factory/Monosynth/Screamy Verby.fxp
-%%DATADIR%%/patches_factory/Monosynth/Semi-clip.fxp
-%%DATADIR%%/patches_factory/Monosynth/Serial.fxp
-%%DATADIR%%/patches_factory/Monosynth/Shanai.fxp
-%%DATADIR%%/patches_factory/Monosynth/Sharpish.fxp
-%%DATADIR%%/patches_factory/Monosynth/Sheep Clothing MW.fxp
-%%DATADIR%%/patches_factory/Monosynth/Simple ATC.fxp
-%%DATADIR%%/patches_factory/Monosynth/Simpler Times.fxp
-%%DATADIR%%/patches_factory/Monosynth/Sine Lead.fxp
-%%DATADIR%%/patches_factory/Monosynth/Sine-Saw Acidish.fxp
-%%DATADIR%%/patches_factory/Monosynth/Smoothness World Cup.fxp
-%%DATADIR%%/patches_factory/Monosynth/Smoothy Hollow.fxp
-%%DATADIR%%/patches_factory/Monosynth/Somewhere MW.fxp
-%%DATADIR%%/patches_factory/Monosynth/Square.fxp
-%%DATADIR%%/patches_factory/Monosynth/Squelch.fxp
-%%DATADIR%%/patches_factory/Monosynth/Squiggly.fxp
-%%DATADIR%%/patches_factory/Monosynth/Stepmother.fxp
-%%DATADIR%%/patches_factory/Monosynth/Sweepy.fxp
-%%DATADIR%%/patches_factory/Monosynth/Sync Harmonics.fxp
-%%DATADIR%%/patches_factory/Monosynth/Sync Lead.fxp
-%%DATADIR%%/patches_factory/Monosynth/Synth Guitar 1.fxp
-%%DATADIR%%/patches_factory/Monosynth/Synth Guitar 2.fxp
-%%DATADIR%%/patches_factory/Monosynth/Talky 1 MW.fxp
-%%DATADIR%%/patches_factory/Monosynth/Talky 2 MW.fxp
-%%DATADIR%%/patches_factory/Monosynth/Tank Top.fxp
-%%DATADIR%%/patches_factory/Monosynth/Tight Bassline.fxp
-%%DATADIR%%/patches_factory/Monosynth/Tok.fxp
-%%DATADIR%%/patches_factory/Monosynth/Tolk.fxp
-%%DATADIR%%/patches_factory/Monosynth/Triple.fxp
-%%DATADIR%%/patches_factory/Monosynth/Turbo Solo.fxp
-%%DATADIR%%/patches_factory/Monosynth/Turbo.fxp
-%%DATADIR%%/patches_factory/Monosynth/Untamed.fxp
-%%DATADIR%%/patches_factory/Monosynth/Up Down.fxp
-%%DATADIR%%/patches_factory/Monosynth/Very Chorus.fxp
-%%DATADIR%%/patches_factory/Monosynth/Violini Solo.fxp
-%%DATADIR%%/patches_factory/Monosynth/Vocal Lead.fxp
-%%DATADIR%%/patches_factory/Monosynth/Wide Bassline.fxp
-%%DATADIR%%/patches_factory/Monosynth/Width.fxp
-%%DATADIR%%/patches_factory/Monosynth/Wombat.fxp
-%%DATADIR%%/patches_factory/Monosynth/Zero Zero One.fxp
-%%DATADIR%%/patches_factory/Monosynth/µcomputer.fxp
-%%DATADIR%%/patches_factory/Pad/Alias Pornography.fxp
-%%DATADIR%%/patches_factory/Pad/Assymetry.fxp
-%%DATADIR%%/patches_factory/Pad/Bell Pad.fxp
-%%DATADIR%%/patches_factory/Pad/Bells and Sweep.fxp
-%%DATADIR%%/patches_factory/Pad/Bright.fxp
-%%DATADIR%%/patches_factory/Pad/Burden.fxp
-%%DATADIR%%/patches_factory/Pad/Canadians.fxp
-%%DATADIR%%/patches_factory/Pad/Choir Pad Thing.fxp
-%%DATADIR%%/patches_factory/Pad/Chowning.fxp
-%%DATADIR%%/patches_factory/Pad/Communication.fxp
-%%DATADIR%%/patches_factory/Pad/Computers In Space.fxp
-%%DATADIR%%/patches_factory/Pad/Death To Gator.fxp
-%%DATADIR%%/patches_factory/Pad/Distant.fxp
-%%DATADIR%%/patches_factory/Pad/Distorted Choir 1.fxp
-%%DATADIR%%/patches_factory/Pad/Distorted Choir 2.fxp
-%%DATADIR%%/patches_factory/Pad/Endgame.fxp
-%%DATADIR%%/patches_factory/Pad/FM Pad.fxp
-%%DATADIR%%/patches_factory/Pad/Flux Capacitor.fxp
-%%DATADIR%%/patches_factory/Pad/Formants MW.fxp
-%%DATADIR%%/patches_factory/Pad/Ghost Pad.fxp
-%%DATADIR%%/patches_factory/Pad/Gliss Movement.fxp
-%%DATADIR%%/patches_factory/Pad/Growth.fxp
-%%DATADIR%%/patches_factory/Pad/Harmonic Sweep.fxp
-%%DATADIR%%/patches_factory/Pad/Harsh Saw.fxp
-%%DATADIR%%/patches_factory/Pad/Hmm....fxp
-%%DATADIR%%/patches_factory/Pad/Legacy.fxp
-%%DATADIR%%/patches_factory/Pad/Louder.fxp
-%%DATADIR%%/patches_factory/Pad/MKS-70 Warm Pad.fxp
-%%DATADIR%%/patches_factory/Pad/MW Pulsating.fxp
-%%DATADIR%%/patches_factory/Pad/Moody Statement.fxp
-%%DATADIR%%/patches_factory/Pad/Newton Was Evil.fxp
-%%DATADIR%%/patches_factory/Pad/Ooh.fxp
-%%DATADIR%%/patches_factory/Pad/Pad 1.fxp
-%%DATADIR%%/patches_factory/Pad/Pad 2 MW.fxp
-%%DATADIR%%/patches_factory/Pad/Pad 3.fxp
-%%DATADIR%%/patches_factory/Pad/Pad 4.fxp
-%%DATADIR%%/patches_factory/Pad/Pad 5.fxp
-%%DATADIR%%/patches_factory/Pad/Pad 6.fxp
-%%DATADIR%%/patches_factory/Pad/Pad 7.fxp
-%%DATADIR%%/patches_factory/Pad/Pad 8.fxp
-%%DATADIR%%/patches_factory/Pad/Primes.fxp
-%%DATADIR%%/patches_factory/Pad/Retro Choir.fxp
-%%DATADIR%%/patches_factory/Pad/Ringing.fxp
-%%DATADIR%%/patches_factory/Pad/Robochoir 1.fxp
-%%DATADIR%%/patches_factory/Pad/Robochoir 2.fxp
-%%DATADIR%%/patches_factory/Pad/Safety.fxp
-%%DATADIR%%/patches_factory/Pad/Sawteeth.fxp
-%%DATADIR%%/patches_factory/Pad/Semiconductor.fxp
-%%DATADIR%%/patches_factory/Pad/Semihaunt.fxp
-%%DATADIR%%/patches_factory/Pad/Smooth Dist.fxp
-%%DATADIR%%/patches_factory/Pad/Sparkly.fxp
-%%DATADIR%%/patches_factory/Pad/Sprinkly.fxp
-%%DATADIR%%/patches_factory/Pad/Still.fxp
-%%DATADIR%%/patches_factory/Pad/Stretch.fxp
-%%DATADIR%%/patches_factory/Pad/Subtle Comb Strings.fxp
-%%DATADIR%%/patches_factory/Pad/Sunday.fxp
-%%DATADIR%%/patches_factory/Pad/Super.fxp
-%%DATADIR%%/patches_factory/Pad/Synth Choir MW O-Ah.fxp
-%%DATADIR%%/patches_factory/Pad/Verb Pad.fxp
-%%DATADIR%%/patches_factory/Pad/Well.fxp
-%%DATADIR%%/patches_factory/Pad/Winter Warmer.fxp
-%%DATADIR%%/patches_factory/Pad/Worried.fxp
-%%DATADIR%%/patches_factory/Pad/Xbox 1.fxp
-%%DATADIR%%/patches_factory/Pad/Xbox 2.fxp
-%%DATADIR%%/patches_factory/Pad/Yeti Funeral.fxp
+%%DATADIR%%/patches_factory/Pads/Alias Pornography.fxp
+%%DATADIR%%/patches_factory/Pads/Assymetry.fxp
+%%DATADIR%%/patches_factory/Pads/Bell Pad.fxp
+%%DATADIR%%/patches_factory/Pads/Bells and Sweep.fxp
+%%DATADIR%%/patches_factory/Pads/Bright.fxp
+%%DATADIR%%/patches_factory/Pads/Burden.fxp
+%%DATADIR%%/patches_factory/Pads/Canadians.fxp
+%%DATADIR%%/patches_factory/Pads/Choir Pad Thing.fxp
+%%DATADIR%%/patches_factory/Pads/Chowning.fxp
+%%DATADIR%%/patches_factory/Pads/Communication.fxp
+%%DATADIR%%/patches_factory/Pads/Computers In Space.fxp
+%%DATADIR%%/patches_factory/Pads/Death To Gator.fxp
+%%DATADIR%%/patches_factory/Pads/Distant.fxp
+%%DATADIR%%/patches_factory/Pads/Distorted Choir 1.fxp
+%%DATADIR%%/patches_factory/Pads/Distorted Choir 2.fxp
+%%DATADIR%%/patches_factory/Pads/Endgame.fxp
+%%DATADIR%%/patches_factory/Pads/FM Pad.fxp
+%%DATADIR%%/patches_factory/Pads/Flux Capacitor.fxp
+%%DATADIR%%/patches_factory/Pads/Formants MW.fxp
+%%DATADIR%%/patches_factory/Pads/Ghost Pad.fxp
+%%DATADIR%%/patches_factory/Pads/Gliss Movement.fxp
+%%DATADIR%%/patches_factory/Pads/Growth.fxp
+%%DATADIR%%/patches_factory/Pads/Harmonic Sweep.fxp
+%%DATADIR%%/patches_factory/Pads/Harsh Saw.fxp
+%%DATADIR%%/patches_factory/Pads/Hmm....fxp
+%%DATADIR%%/patches_factory/Pads/Legacy.fxp
+%%DATADIR%%/patches_factory/Pads/Louder.fxp
+%%DATADIR%%/patches_factory/Pads/MKS-70 Warm Pad.fxp
+%%DATADIR%%/patches_factory/Pads/MW Pulsating.fxp
+%%DATADIR%%/patches_factory/Pads/Moody Statement.fxp
+%%DATADIR%%/patches_factory/Pads/Newton Was Evil.fxp
+%%DATADIR%%/patches_factory/Pads/Ooh.fxp
+%%DATADIR%%/patches_factory/Pads/Pad 1.fxp
+%%DATADIR%%/patches_factory/Pads/Pad 2 MW.fxp
+%%DATADIR%%/patches_factory/Pads/Pad 3.fxp
+%%DATADIR%%/patches_factory/Pads/Pad 4.fxp
+%%DATADIR%%/patches_factory/Pads/Pad 5.fxp
+%%DATADIR%%/patches_factory/Pads/Pad 6.fxp
+%%DATADIR%%/patches_factory/Pads/Pad 7.fxp
+%%DATADIR%%/patches_factory/Pads/Pad 8.fxp
+%%DATADIR%%/patches_factory/Pads/Primes.fxp
+%%DATADIR%%/patches_factory/Pads/Retro Choir.fxp
+%%DATADIR%%/patches_factory/Pads/Ringing.fxp
+%%DATADIR%%/patches_factory/Pads/Robochoir 1.fxp
+%%DATADIR%%/patches_factory/Pads/Robochoir 2.fxp
+%%DATADIR%%/patches_factory/Pads/Safety.fxp
+%%DATADIR%%/patches_factory/Pads/Sawteeth.fxp
+%%DATADIR%%/patches_factory/Pads/Semiconductor.fxp
+%%DATADIR%%/patches_factory/Pads/Semihaunt.fxp
+%%DATADIR%%/patches_factory/Pads/Smooth Dist.fxp
+%%DATADIR%%/patches_factory/Pads/Sparkly.fxp
+%%DATADIR%%/patches_factory/Pads/Sprinkly.fxp
+%%DATADIR%%/patches_factory/Pads/Still.fxp
+%%DATADIR%%/patches_factory/Pads/Stretch.fxp
+%%DATADIR%%/patches_factory/Pads/Subtle Comb Strings.fxp
+%%DATADIR%%/patches_factory/Pads/Sunday.fxp
+%%DATADIR%%/patches_factory/Pads/Super.fxp
+%%DATADIR%%/patches_factory/Pads/Synth Choir MW O-Ah.fxp
+%%DATADIR%%/patches_factory/Pads/Verb Pad.fxp
+%%DATADIR%%/patches_factory/Pads/Well.fxp
+%%DATADIR%%/patches_factory/Pads/Winter Warmer.fxp
+%%DATADIR%%/patches_factory/Pads/Worried.fxp
+%%DATADIR%%/patches_factory/Pads/Xbox 1.fxp
+%%DATADIR%%/patches_factory/Pads/Xbox 2.fxp
+%%DATADIR%%/patches_factory/Pads/Yeti Funeral.fxp
 %%DATADIR%%/patches_factory/Percussion/Drum One.fxp
 %%DATADIR%%/patches_factory/Percussion/Kick 909ish.fxp
 %%DATADIR%%/patches_factory/Percussion/Kick Tech 1.fxp
@@ -1299,296 +1444,297 @@ lib/vst/Surge.so
 %%DATADIR%%/patches_factory/Percussion/Synth Tom 2.fxp
 %%DATADIR%%/patches_factory/Percussion/Synth Tom 3.fxp
 %%DATADIR%%/patches_factory/Percussion/Verber.fxp
-%%DATADIR%%/patches_factory/Pluck/80s Gliss.fxp
-%%DATADIR%%/patches_factory/Pluck/ACME.fxp
-%%DATADIR%%/patches_factory/Pluck/Agropop.fxp
-%%DATADIR%%/patches_factory/Pluck/Ambient E-Guitar.fxp
-%%DATADIR%%/patches_factory/Pluck/Artificial.fxp
-%%DATADIR%%/patches_factory/Pluck/Assymetry.fxp
-%%DATADIR%%/patches_factory/Pluck/Battered Beauty.fxp
-%%DATADIR%%/patches_factory/Pluck/Bell 1.fxp
-%%DATADIR%%/patches_factory/Pluck/Bell 2.fxp
-%%DATADIR%%/patches_factory/Pluck/Belle.fxp
-%%DATADIR%%/patches_factory/Pluck/Bite.fxp
-%%DATADIR%%/patches_factory/Pluck/Blekinge.fxp
-%%DATADIR%%/patches_factory/Pluck/Brut de Bollebygd.fxp
-%%DATADIR%%/patches_factory/Pluck/CLRKSWRD.fxp
-%%DATADIR%%/patches_factory/Pluck/Clean.fxp
-%%DATADIR%%/patches_factory/Pluck/Comb Pluck.fxp
-%%DATADIR%%/patches_factory/Pluck/Convex.fxp
-%%DATADIR%%/patches_factory/Pluck/Cuto.fxp
-%%DATADIR%%/patches_factory/Pluck/Delay Dancer.fxp
-%%DATADIR%%/patches_factory/Pluck/Delay Pops 1.fxp
-%%DATADIR%%/patches_factory/Pluck/Delay Pops 2.fxp
-%%DATADIR%%/patches_factory/Pluck/Delay Pops 3.fxp
-%%DATADIR%%/patches_factory/Pluck/Delay Pops 4.fxp
-%%DATADIR%%/patches_factory/Pluck/Delay Pops 5.fxp
-%%DATADIR%%/patches_factory/Pluck/Diamonds.fxp
-%%DATADIR%%/patches_factory/Pluck/E-Guitar.fxp
-%%DATADIR%%/patches_factory/Pluck/East.fxp
-%%DATADIR%%/patches_factory/Pluck/Enhanced Forest.fxp
-%%DATADIR%%/patches_factory/Pluck/FM Pluck.fxp
-%%DATADIR%%/patches_factory/Pluck/FM Poops.fxp
-%%DATADIR%%/patches_factory/Pluck/Falling Down.fxp
-%%DATADIR%%/patches_factory/Pluck/Fantasy Bell.fxp
-%%DATADIR%%/patches_factory/Pluck/Fluortant.fxp
-%%DATADIR%%/patches_factory/Pluck/Fog.fxp
-%%DATADIR%%/patches_factory/Pluck/Forever.fxp
-%%DATADIR%%/patches_factory/Pluck/Freedom Fries.fxp
-%%DATADIR%%/patches_factory/Pluck/Friendly.fxp
-%%DATADIR%%/patches_factory/Pluck/Frog.fxp
-%%DATADIR%%/patches_factory/Pluck/Gliss Pluck Distorted.fxp
-%%DATADIR%%/patches_factory/Pluck/Gliss Pluck.fxp
-%%DATADIR%%/patches_factory/Pluck/Good Childhood.fxp
-%%DATADIR%%/patches_factory/Pluck/Guitar.fxp
-%%DATADIR%%/patches_factory/Pluck/Half FM.fxp
-%%DATADIR%%/patches_factory/Pluck/Happy.fxp
-%%DATADIR%%/patches_factory/Pluck/Harmonics 1.fxp
-%%DATADIR%%/patches_factory/Pluck/Harmonics 2.fxp
-%%DATADIR%%/patches_factory/Pluck/Hasselhoff.fxp
-%%DATADIR%%/patches_factory/Pluck/Hybrid 1.fxp
-%%DATADIR%%/patches_factory/Pluck/Hybrid 2.fxp
-%%DATADIR%%/patches_factory/Pluck/Icebreaker.fxp
-%%DATADIR%%/patches_factory/Pluck/Late Fall.fxp
-%%DATADIR%%/patches_factory/Pluck/Light 1.fxp
-%%DATADIR%%/patches_factory/Pluck/Light 2.fxp
-%%DATADIR%%/patches_factory/Pluck/Lighter.fxp
-%%DATADIR%%/patches_factory/Pluck/Lil' Exploders.fxp
-%%DATADIR%%/patches_factory/Pluck/Lo-Fi Pluck.fxp
-%%DATADIR%%/patches_factory/Pluck/MW Morph.fxp
-%%DATADIR%%/patches_factory/Pluck/Magic Music Box.fxp
-%%DATADIR%%/patches_factory/Pluck/Magical Guitar.fxp
-%%DATADIR%%/patches_factory/Pluck/Man Machine.fxp
-%%DATADIR%%/patches_factory/Pluck/Messy.fxp
-%%DATADIR%%/patches_factory/Pluck/Metallic.fxp
-%%DATADIR%%/patches_factory/Pluck/Mol.fxp
-%%DATADIR%%/patches_factory/Pluck/Mollusk.fxp
-%%DATADIR%%/patches_factory/Pluck/Mr. Sparkle.fxp
-%%DATADIR%%/patches_factory/Pluck/Mystic.fxp
-%%DATADIR%%/patches_factory/Pluck/Nice Pluck 1.fxp
-%%DATADIR%%/patches_factory/Pluck/Nice Pluck 2.fxp
-%%DATADIR%%/patches_factory/Pluck/Nice Pluck 3.fxp
-%%DATADIR%%/patches_factory/Pluck/Nice Pluck 4.fxp
-%%DATADIR%%/patches_factory/Pluck/Nice Pluck 5.fxp
-%%DATADIR%%/patches_factory/Pluck/Nolla.fxp
-%%DATADIR%%/patches_factory/Pluck/Norrland.fxp
-%%DATADIR%%/patches_factory/Pluck/Piano Remains 1.fxp
-%%DATADIR%%/patches_factory/Pluck/Piano Remains 2.fxp
-%%DATADIR%%/patches_factory/Pluck/Pie.fxp
-%%DATADIR%%/patches_factory/Pluck/Pinkerton Tinfurter.fxp
-%%DATADIR%%/patches_factory/Pluck/Pol Pot.fxp
-%%DATADIR%%/patches_factory/Pluck/Pulsar.fxp
-%%DATADIR%%/patches_factory/Pluck/Pulsii.fxp
-%%DATADIR%%/patches_factory/Pluck/Pure Square.fxp
-%%DATADIR%%/patches_factory/Pluck/Retrofit.fxp
-%%DATADIR%%/patches_factory/Pluck/Reverend B.fxp
-%%DATADIR%%/patches_factory/Pluck/Rutherford Menskin MW.fxp
-%%DATADIR%%/patches_factory/Pluck/Saw Pluck.fxp
-%%DATADIR%%/patches_factory/Pluck/Scrape Pluck.fxp
-%%DATADIR%%/patches_factory/Pluck/Sharpness.fxp
-%%DATADIR%%/patches_factory/Pluck/Simple PW.fxp
-%%DATADIR%%/patches_factory/Pluck/Sinus Verby Pops.fxp
-%%DATADIR%%/patches_factory/Pluck/Snap.fxp
-%%DATADIR%%/patches_factory/Pluck/Soft Space Oboe Pops.fxp
-%%DATADIR%%/patches_factory/Pluck/Soft Sync Saw.fxp
-%%DATADIR%%/patches_factory/Pluck/Soift.fxp
-%%DATADIR%%/patches_factory/Pluck/Spell.fxp
-%%DATADIR%%/patches_factory/Pluck/Square Blinks.fxp
-%%DATADIR%%/patches_factory/Pluck/Square Pop.fxp
-%%DATADIR%%/patches_factory/Pluck/Sync Echo.fxp
-%%DATADIR%%/patches_factory/Pluck/Sync Pluck.fxp
-%%DATADIR%%/patches_factory/Pluck/Sync Square Pluck.fxp
-%%DATADIR%%/patches_factory/Pluck/That Comb Magic.fxp
-%%DATADIR%%/patches_factory/Pluck/The 1980s.fxp
-%%DATADIR%%/patches_factory/Pluck/Thingamajob.fxp
-%%DATADIR%%/patches_factory/Pluck/Tinker.fxp
-%%DATADIR%%/patches_factory/Pluck/Trancy.fxp
-%%DATADIR%%/patches_factory/Pluck/Ultra Violet.fxp
-%%DATADIR%%/patches_factory/Pluck/VHS Soundtrack.fxp
-%%DATADIR%%/patches_factory/Pluck/Wire MW.fxp
-%%DATADIR%%/patches_factory/Pluck/Wire.fxp
-%%DATADIR%%/patches_factory/Pluck/Woody.fxp
-%%DATADIR%%/patches_factory/Pluck/You Fairy.fxp
-%%DATADIR%%/patches_factory/Polysynth/1804.fxp
-%%DATADIR%%/patches_factory/Polysynth/Aggero.fxp
-%%DATADIR%%/patches_factory/Polysynth/Ahh Polly.fxp
-%%DATADIR%%/patches_factory/Polysynth/Analyse.fxp
-%%DATADIR%%/patches_factory/Polysynth/Anthemish 1.fxp
-%%DATADIR%%/patches_factory/Polysynth/Anthemish 2.fxp
-%%DATADIR%%/patches_factory/Polysynth/Anthemish 3.fxp
-%%DATADIR%%/patches_factory/Polysynth/Bolibompa.fxp
-%%DATADIR%%/patches_factory/Polysynth/Bork.fxp
-%%DATADIR%%/patches_factory/Polysynth/Boss.fxp
-%%DATADIR%%/patches_factory/Polysynth/Brassy.fxp
-%%DATADIR%%/patches_factory/Polysynth/Buggy Brass.fxp
-%%DATADIR%%/patches_factory/Polysynth/Call.fxp
-%%DATADIR%%/patches_factory/Polysynth/Concave.fxp
-%%DATADIR%%/patches_factory/Polysynth/Crisp Noise Brass.fxp
-%%DATADIR%%/patches_factory/Polysynth/Dirty Hole.fxp
-%%DATADIR%%/patches_factory/Polysynth/Disturbing Resonance.fxp
-%%DATADIR%%/patches_factory/Polysynth/Embrrass.fxp
-%%DATADIR%%/patches_factory/Polysynth/Eyan.fxp
-%%DATADIR%%/patches_factory/Polysynth/FM Poly.fxp
-%%DATADIR%%/patches_factory/Polysynth/Failure.fxp
-%%DATADIR%%/patches_factory/Polysynth/Fast Poly.fxp
-%%DATADIR%%/patches_factory/Polysynth/Fat Curtis.fxp
-%%DATADIR%%/patches_factory/Polysynth/Filter Mod.fxp
-%%DATADIR%%/patches_factory/Polysynth/Filter Sweep.fxp
-%%DATADIR%%/patches_factory/Polysynth/Fonk.fxp
-%%DATADIR%%/patches_factory/Polysynth/Formant Sweep.fxp
-%%DATADIR%%/patches_factory/Polysynth/Fun With Feedback.fxp
-%%DATADIR%%/patches_factory/Polysynth/Future Split.fxp
-%%DATADIR%%/patches_factory/Polysynth/Gentle.fxp
-%%DATADIR%%/patches_factory/Polysynth/Havoc.fxp
-%%DATADIR%%/patches_factory/Polysynth/Hombre.fxp
-%%DATADIR%%/patches_factory/Polysynth/Hugeness.fxp
-%%DATADIR%%/patches_factory/Polysynth/Instant Coffee PWM.fxp
-%%DATADIR%%/patches_factory/Polysynth/JX-10 Double Brass.fxp
-%%DATADIR%%/patches_factory/Polysynth/Japanese Space-ulation Wheel.fxp
-%%DATADIR%%/patches_factory/Polysynth/Japanese Unison.fxp
-%%DATADIR%%/patches_factory/Polysynth/Jim.fxp
-%%DATADIR%%/patches_factory/Polysynth/Juno-60 Strings.fxp
-%%DATADIR%%/patches_factory/Polysynth/Jupiter-8.fxp
-%%DATADIR%%/patches_factory/Polysynth/Keep 'em Coming.fxp
-%%DATADIR%%/patches_factory/Polysynth/Korg Triton.fxp
-%%DATADIR%%/patches_factory/Polysynth/Larger.fxp
-%%DATADIR%%/patches_factory/Polysynth/Licht.fxp
-%%DATADIR%%/patches_factory/Polysynth/MG.fxp
-%%DATADIR%%/patches_factory/Polysynth/MacLaurin.fxp
-%%DATADIR%%/patches_factory/Polysynth/Mega Mega.fxp
-%%DATADIR%%/patches_factory/Polysynth/Megasynth 1.fxp
-%%DATADIR%%/patches_factory/Polysynth/Megasynth 2.fxp
-%%DATADIR%%/patches_factory/Polysynth/Megasynth 3.fxp
-%%DATADIR%%/patches_factory/Polysynth/Megasynth 4.fxp
-%%DATADIR%%/patches_factory/Polysynth/Melon.fxp
-%%DATADIR%%/patches_factory/Polysynth/Messy.fxp
-%%DATADIR%%/patches_factory/Polysynth/Metal Chonk.fxp
-%%DATADIR%%/patches_factory/Polysynth/Noise Tone.fxp
-%%DATADIR%%/patches_factory/Polysynth/Notched Saws.fxp
-%%DATADIR%%/patches_factory/Polysynth/OB-8 Jump.fxp
-%%DATADIR%%/patches_factory/Polysynth/Oberheim Dreams.fxp
-%%DATADIR%%/patches_factory/Polysynth/Oiro.fxp
-%%DATADIR%%/patches_factory/Polysynth/Ol' Sampler.fxp
-%%DATADIR%%/patches_factory/Polysynth/Old Square.fxp
-%%DATADIR%%/patches_factory/Polysynth/Oldie.fxp
-%%DATADIR%%/patches_factory/Polysynth/PPG Choir.fxp
-%%DATADIR%%/patches_factory/Polysynth/PPG Dreams.fxp
-%%DATADIR%%/patches_factory/Polysynth/PWM Avenger.fxp
-%%DATADIR%%/patches_factory/Polysynth/Past Tense.fxp
-%%DATADIR%%/patches_factory/Polysynth/Phasey.fxp
-%%DATADIR%%/patches_factory/Polysynth/Plastic Brass.fxp
-%%DATADIR%%/patches_factory/Polysynth/Play Louder.fxp
-%%DATADIR%%/patches_factory/Polysynth/Ploppy.fxp
-%%DATADIR%%/patches_factory/Polysynth/Poly Ahhs.fxp
-%%DATADIR%%/patches_factory/Polysynth/Poly Lala.fxp
-%%DATADIR%%/patches_factory/Polysynth/Polymoog.fxp
-%%DATADIR%%/patches_factory/Polysynth/Prophet VS.fxp
-%%DATADIR%%/patches_factory/Polysynth/Quantization Choice.fxp
-%%DATADIR%%/patches_factory/Polysynth/Quasi.fxp
-%%DATADIR%%/patches_factory/Polysynth/Quote.fxp
-%%DATADIR%%/patches_factory/Polysynth/Ralph.fxp
-%%DATADIR%%/patches_factory/Polysynth/Reset.fxp
-%%DATADIR%%/patches_factory/Polysynth/Reso Brassy.fxp
-%%DATADIR%%/patches_factory/Polysynth/Retrofit.fxp
-%%DATADIR%%/patches_factory/Polysynth/Retrograde.fxp
-%%DATADIR%%/patches_factory/Polysynth/Rez.fxp
-%%DATADIR%%/patches_factory/Polysynth/Ring Sweep.fxp
-%%DATADIR%%/patches_factory/Polysynth/Ringo.fxp
-%%DATADIR%%/patches_factory/Polysynth/Ruler.fxp
-%%DATADIR%%/patches_factory/Polysynth/Rusty.fxp
-%%DATADIR%%/patches_factory/Polysynth/Separate Ways.fxp
-%%DATADIR%%/patches_factory/Polysynth/Serious Distortion.fxp
-%%DATADIR%%/patches_factory/Polysynth/Shenanigans.fxp
-%%DATADIR%%/patches_factory/Polysynth/Simple Waveguide.fxp
-%%DATADIR%%/patches_factory/Polysynth/Simplistic.fxp
-%%DATADIR%%/patches_factory/Polysynth/Sine Saw 7.fxp
-%%DATADIR%%/patches_factory/Polysynth/Sine Saw.fxp
-%%DATADIR%%/patches_factory/Polysynth/Sizzling Sweep.fxp
-%%DATADIR%%/patches_factory/Polysynth/Skatteverket.fxp
-%%DATADIR%%/patches_factory/Polysynth/Slow Poly MW.fxp
-%%DATADIR%%/patches_factory/Polysynth/Smooth Stabs.fxp
-%%DATADIR%%/patches_factory/Polysynth/Space FM.fxp
-%%DATADIR%%/patches_factory/Polysynth/Spacematron.fxp
-%%DATADIR%%/patches_factory/Polysynth/Spik.fxp
-%%DATADIR%%/patches_factory/Polysynth/Step Portamento.fxp
-%%DATADIR%%/patches_factory/Polysynth/Super Jupiter.fxp
-%%DATADIR%%/patches_factory/Polysynth/Synth Brass 1.fxp
-%%DATADIR%%/patches_factory/Polysynth/Synth Brass 2.fxp
-%%DATADIR%%/patches_factory/Polysynth/Synth Brass 3.fxp
-%%DATADIR%%/patches_factory/Polysynth/Taikonaut.fxp
-%%DATADIR%%/patches_factory/Polysynth/Tarnce.fxp
-%%DATADIR%%/patches_factory/Polysynth/Thynchronization.fxp
-%%DATADIR%%/patches_factory/Polysynth/Toto Brass.fxp
-%%DATADIR%%/patches_factory/Polysynth/Uni 1.fxp
-%%DATADIR%%/patches_factory/Polysynth/Uni 2.fxp
-%%DATADIR%%/patches_factory/Polysynth/Uni Saw FB.fxp
-%%DATADIR%%/patches_factory/Polysynth/Vel 2 Cutoff.fxp
-%%DATADIR%%/patches_factory/Polysynth/Violini Poly.fxp
-%%DATADIR%%/patches_factory/Polysynth/WG 01.fxp
-%%DATADIR%%/patches_factory/Polysynth/Waver.fxp
-%%DATADIR%%/patches_factory/Polysynth/Xpander 1.fxp
-%%DATADIR%%/patches_factory/Polysynth/Xpander 2.fxp
-%%DATADIR%%/patches_factory/Polysynth/Zizzly Saw.fxp
-%%DATADIR%%/patches_factory/Sequence/Acid Seq 1.fxp
-%%DATADIR%%/patches_factory/Sequence/Acid Seq 2.fxp
-%%DATADIR%%/patches_factory/Sequence/Acid Seq 3.fxp
-%%DATADIR%%/patches_factory/Sequence/Barrelish.fxp
-%%DATADIR%%/patches_factory/Sequence/Bass+Drums.fxp
-%%DATADIR%%/patches_factory/Sequence/Bell Seq.fxp
-%%DATADIR%%/patches_factory/Sequence/Bit Seq.fxp
-%%DATADIR%%/patches_factory/Sequence/Burial Ground.fxp
-%%DATADIR%%/patches_factory/Sequence/Calm.fxp
-%%DATADIR%%/patches_factory/Sequence/Comb Seq.fxp
-%%DATADIR%%/patches_factory/Sequence/Damn Aliens.fxp
-%%DATADIR%%/patches_factory/Sequence/Distorted Glassy Seq.fxp
-%%DATADIR%%/patches_factory/Sequence/Evilish.fxp
-%%DATADIR%%/patches_factory/Sequence/FB Seq.fxp
-%%DATADIR%%/patches_factory/Sequence/FM Motion Sweep.fxp
-%%DATADIR%%/patches_factory/Sequence/FM Seq.fxp
-%%DATADIR%%/patches_factory/Sequence/Fifth Seq.fxp
-%%DATADIR%%/patches_factory/Sequence/Filter Buildup.fxp
-%%DATADIR%%/patches_factory/Sequence/Fold Sseq.fxp
-%%DATADIR%%/patches_factory/Sequence/Game On 1.fxp
-%%DATADIR%%/patches_factory/Sequence/Game On 2.fxp
-%%DATADIR%%/patches_factory/Sequence/Game On 3.fxp
-%%DATADIR%%/patches_factory/Sequence/Game On 4 MW Split.fxp
-%%DATADIR%%/patches_factory/Sequence/Gate Chord.fxp
-%%DATADIR%%/patches_factory/Sequence/Hovercar Championship.fxp
-%%DATADIR%%/patches_factory/Sequence/I Want To Get Well.fxp
-%%DATADIR%%/patches_factory/Sequence/Madness.fxp
-%%DATADIR%%/patches_factory/Sequence/Multi Seq.fxp
-%%DATADIR%%/patches_factory/Sequence/Noise Bass.fxp
-%%DATADIR%%/patches_factory/Sequence/Noise Seq.fxp
-%%DATADIR%%/patches_factory/Sequence/Octave Arp.fxp
-%%DATADIR%%/patches_factory/Sequence/One Key Wonder.fxp
-%%DATADIR%%/patches_factory/Sequence/Phase 1.fxp
-%%DATADIR%%/patches_factory/Sequence/Phase 2.fxp
-%%DATADIR%%/patches_factory/Sequence/Retrig Me.fxp
-%%DATADIR%%/patches_factory/Sequence/S&H Classic.fxp
-%%DATADIR%%/patches_factory/Sequence/Seq 1234.fxp
-%%DATADIR%%/patches_factory/Sequence/Sine Sequencer 1.fxp
-%%DATADIR%%/patches_factory/Sequence/Sine Sequencer 2.fxp
-%%DATADIR%%/patches_factory/Sequence/Split Personality.fxp
-%%DATADIR%%/patches_factory/Sequence/Step Phaser.fxp
-%%DATADIR%%/patches_factory/Sequence/Sync Accident.fxp
-%%DATADIR%%/patches_factory/Sequence/Sync Arp.fxp
-%%DATADIR%%/patches_factory/Sequence/Table Seq.fxp
-%%DATADIR%%/patches_factory/Sequence/Tyskland.fxp
-%%DATADIR%%/patches_factory/Sequence/Wabbit MW.fxp
-%%DATADIR%%/patches_factory/Sequence/Wavesequence 01.fxp
-%%DATADIR%%/patches_factory/Sequence/When Good Combs Go Bad.fxp
+%%DATADIR%%/patches_factory/Plucks/80s Gliss.fxp
+%%DATADIR%%/patches_factory/Plucks/ACME.fxp
+%%DATADIR%%/patches_factory/Plucks/Agropop.fxp
+%%DATADIR%%/patches_factory/Plucks/Ambient E-Guitar.fxp
+%%DATADIR%%/patches_factory/Plucks/Artificial.fxp
+%%DATADIR%%/patches_factory/Plucks/Asymmetry.fxp
+%%DATADIR%%/patches_factory/Plucks/Battered Beauty.fxp
+%%DATADIR%%/patches_factory/Plucks/Bell 1.fxp
+%%DATADIR%%/patches_factory/Plucks/Bell 2.fxp
+%%DATADIR%%/patches_factory/Plucks/Belle.fxp
+%%DATADIR%%/patches_factory/Plucks/Bite.fxp
+%%DATADIR%%/patches_factory/Plucks/Blekinge.fxp
+%%DATADIR%%/patches_factory/Plucks/Brut de Bollebygd.fxp
+%%DATADIR%%/patches_factory/Plucks/CLRKSWRD.fxp
+%%DATADIR%%/patches_factory/Plucks/Clean.fxp
+%%DATADIR%%/patches_factory/Plucks/Comb Pluck.fxp
+%%DATADIR%%/patches_factory/Plucks/Convex.fxp
+%%DATADIR%%/patches_factory/Plucks/Cuto.fxp
+%%DATADIR%%/patches_factory/Plucks/Delay Dancer.fxp
+%%DATADIR%%/patches_factory/Plucks/Delay Pops 1.fxp
+%%DATADIR%%/patches_factory/Plucks/Delay Pops 2.fxp
+%%DATADIR%%/patches_factory/Plucks/Delay Pops 3.fxp
+%%DATADIR%%/patches_factory/Plucks/Delay Pops 4.fxp
+%%DATADIR%%/patches_factory/Plucks/Delay Pops 5.fxp
+%%DATADIR%%/patches_factory/Plucks/Diamonds.fxp
+%%DATADIR%%/patches_factory/Plucks/E-Guitar.fxp
+%%DATADIR%%/patches_factory/Plucks/East.fxp
+%%DATADIR%%/patches_factory/Plucks/Enhanced Forest.fxp
+%%DATADIR%%/patches_factory/Plucks/FM Pluck.fxp
+%%DATADIR%%/patches_factory/Plucks/FM Poops.fxp
+%%DATADIR%%/patches_factory/Plucks/Falling Down.fxp
+%%DATADIR%%/patches_factory/Plucks/Fantasy Bell.fxp
+%%DATADIR%%/patches_factory/Plucks/Fluortant.fxp
+%%DATADIR%%/patches_factory/Plucks/Fog.fxp
+%%DATADIR%%/patches_factory/Plucks/Forever.fxp
+%%DATADIR%%/patches_factory/Plucks/Freedom Fries.fxp
+%%DATADIR%%/patches_factory/Plucks/Friendly.fxp
+%%DATADIR%%/patches_factory/Plucks/Frog.fxp
+%%DATADIR%%/patches_factory/Plucks/Gliss Pluck Distorted.fxp
+%%DATADIR%%/patches_factory/Plucks/Gliss Pluck.fxp
+%%DATADIR%%/patches_factory/Plucks/Good Childhood.fxp
+%%DATADIR%%/patches_factory/Plucks/Guitar.fxp
+%%DATADIR%%/patches_factory/Plucks/Half FM.fxp
+%%DATADIR%%/patches_factory/Plucks/Happy.fxp
+%%DATADIR%%/patches_factory/Plucks/Harmonics 1.fxp
+%%DATADIR%%/patches_factory/Plucks/Harmonics 2.fxp
+%%DATADIR%%/patches_factory/Plucks/Hasselhoff.fxp
+%%DATADIR%%/patches_factory/Plucks/Hybrid 1.fxp
+%%DATADIR%%/patches_factory/Plucks/Hybrid 2.fxp
+%%DATADIR%%/patches_factory/Plucks/Icebreaker.fxp
+%%DATADIR%%/patches_factory/Plucks/Late Fall.fxp
+%%DATADIR%%/patches_factory/Plucks/Light 1.fxp
+%%DATADIR%%/patches_factory/Plucks/Light 2.fxp
+%%DATADIR%%/patches_factory/Plucks/Lighter.fxp
+%%DATADIR%%/patches_factory/Plucks/Lil' Exploders.fxp
+%%DATADIR%%/patches_factory/Plucks/Lo-Fi Pluck.fxp
+%%DATADIR%%/patches_factory/Plucks/MW Morph.fxp
+%%DATADIR%%/patches_factory/Plucks/Magic Music Box.fxp
+%%DATADIR%%/patches_factory/Plucks/Magical Guitar.fxp
+%%DATADIR%%/patches_factory/Plucks/Man Machine.fxp
+%%DATADIR%%/patches_factory/Plucks/Messy.fxp
+%%DATADIR%%/patches_factory/Plucks/Metallic.fxp
+%%DATADIR%%/patches_factory/Plucks/Mol.fxp
+%%DATADIR%%/patches_factory/Plucks/Mollusk.fxp
+%%DATADIR%%/patches_factory/Plucks/Mr. Sparkle.fxp
+%%DATADIR%%/patches_factory/Plucks/Mystic.fxp
+%%DATADIR%%/patches_factory/Plucks/Nice Pluck 1.fxp
+%%DATADIR%%/patches_factory/Plucks/Nice Pluck 2.fxp
+%%DATADIR%%/patches_factory/Plucks/Nice Pluck 3.fxp
+%%DATADIR%%/patches_factory/Plucks/Nice Pluck 4.fxp
+%%DATADIR%%/patches_factory/Plucks/Nice Pluck 5.fxp
+%%DATADIR%%/patches_factory/Plucks/Nolla.fxp
+%%DATADIR%%/patches_factory/Plucks/Norrland.fxp
+%%DATADIR%%/patches_factory/Plucks/Piano Remains 1.fxp
+%%DATADIR%%/patches_factory/Plucks/Piano Remains 2.fxp
+%%DATADIR%%/patches_factory/Plucks/Pie.fxp
+%%DATADIR%%/patches_factory/Plucks/Pinkerton Tinfurter.fxp
+%%DATADIR%%/patches_factory/Plucks/Pol Pot.fxp
+%%DATADIR%%/patches_factory/Plucks/Pulsar.fxp
+%%DATADIR%%/patches_factory/Plucks/Pulsii.fxp
+%%DATADIR%%/patches_factory/Plucks/Pure Square.fxp
+%%DATADIR%%/patches_factory/Plucks/Retrofit.fxp
+%%DATADIR%%/patches_factory/Plucks/Reverend B.fxp
+%%DATADIR%%/patches_factory/Plucks/Rutherford Menskin MW.fxp
+%%DATADIR%%/patches_factory/Plucks/Saw Pluck.fxp
+%%DATADIR%%/patches_factory/Plucks/Scrape Pluck.fxp
+%%DATADIR%%/patches_factory/Plucks/Sharpness.fxp
+%%DATADIR%%/patches_factory/Plucks/Simple PW.fxp
+%%DATADIR%%/patches_factory/Plucks/Sinus Verby Pops.fxp
+%%DATADIR%%/patches_factory/Plucks/Snap.fxp
+%%DATADIR%%/patches_factory/Plucks/Soft Space Oboe Pops.fxp
+%%DATADIR%%/patches_factory/Plucks/Soft Sync Saw.fxp
+%%DATADIR%%/patches_factory/Plucks/Soift.fxp
+%%DATADIR%%/patches_factory/Plucks/Spell.fxp
+%%DATADIR%%/patches_factory/Plucks/Square Blinks.fxp
+%%DATADIR%%/patches_factory/Plucks/Square Pop.fxp
+%%DATADIR%%/patches_factory/Plucks/Sync Echo.fxp
+%%DATADIR%%/patches_factory/Plucks/Sync Pluck.fxp
+%%DATADIR%%/patches_factory/Plucks/Sync Square Pluck.fxp
+%%DATADIR%%/patches_factory/Plucks/That Comb Magic.fxp
+%%DATADIR%%/patches_factory/Plucks/The 1980s.fxp
+%%DATADIR%%/patches_factory/Plucks/Thingamajob.fxp
+%%DATADIR%%/patches_factory/Plucks/Tinker.fxp
+%%DATADIR%%/patches_factory/Plucks/Trancy.fxp
+%%DATADIR%%/patches_factory/Plucks/Ultra Violet.fxp
+%%DATADIR%%/patches_factory/Plucks/VHS Soundtrack.fxp
+%%DATADIR%%/patches_factory/Plucks/Wire MW.fxp
+%%DATADIR%%/patches_factory/Plucks/Wire.fxp
+%%DATADIR%%/patches_factory/Plucks/Woody.fxp
+%%DATADIR%%/patches_factory/Plucks/You Fairy.fxp
+%%DATADIR%%/patches_factory/Polysynths/1804.fxp
+%%DATADIR%%/patches_factory/Polysynths/Ahh Polly.fxp
+%%DATADIR%%/patches_factory/Polysynths/Analyse.fxp
+%%DATADIR%%/patches_factory/Polysynths/Anthemish 1.fxp
+%%DATADIR%%/patches_factory/Polysynths/Anthemish 2.fxp
+%%DATADIR%%/patches_factory/Polysynths/Anthemish 3.fxp
+%%DATADIR%%/patches_factory/Polysynths/Bolibompa.fxp
+%%DATADIR%%/patches_factory/Polysynths/Boss.fxp
+%%DATADIR%%/patches_factory/Polysynths/Call.fxp
+%%DATADIR%%/patches_factory/Polysynths/Concave.fxp
+%%DATADIR%%/patches_factory/Polysynths/Dirty Hole.fxp
+%%DATADIR%%/patches_factory/Polysynths/Disturbing Resonance.fxp
+%%DATADIR%%/patches_factory/Polysynths/Embarrass.fxp
+%%DATADIR%%/patches_factory/Polysynths/Eyan.fxp
+%%DATADIR%%/patches_factory/Polysynths/FM Poly.fxp
+%%DATADIR%%/patches_factory/Polysynths/Failure.fxp
+%%DATADIR%%/patches_factory/Polysynths/Fast Poly.fxp
+%%DATADIR%%/patches_factory/Polysynths/Fat Curtis.fxp
+%%DATADIR%%/patches_factory/Polysynths/Filter Mod.fxp
+%%DATADIR%%/patches_factory/Polysynths/Filter Sweep.fxp
+%%DATADIR%%/patches_factory/Polysynths/Fonk.fxp
+%%DATADIR%%/patches_factory/Polysynths/Formant Sweep.fxp
+%%DATADIR%%/patches_factory/Polysynths/Fun With Feedback.fxp
+%%DATADIR%%/patches_factory/Polysynths/Gentle.fxp
+%%DATADIR%%/patches_factory/Polysynths/Havoc.fxp
+%%DATADIR%%/patches_factory/Polysynths/Hombre.fxp
+%%DATADIR%%/patches_factory/Polysynths/Hugeness.fxp
+%%DATADIR%%/patches_factory/Polysynths/Instant Coffee PWM.fxp
+%%DATADIR%%/patches_factory/Polysynths/Japanese Space-ulation Wheel.fxp
+%%DATADIR%%/patches_factory/Polysynths/Japanese Unison.fxp
+%%DATADIR%%/patches_factory/Polysynths/Jim.fxp
+%%DATADIR%%/patches_factory/Polysynths/Juno-60 Strings.fxp
+%%DATADIR%%/patches_factory/Polysynths/Jupiter-8.fxp
+%%DATADIR%%/patches_factory/Polysynths/Keep 'em Coming.fxp
+%%DATADIR%%/patches_factory/Polysynths/Korg Triton.fxp
+%%DATADIR%%/patches_factory/Polysynths/Larger.fxp
+%%DATADIR%%/patches_factory/Polysynths/Licht.fxp
+%%DATADIR%%/patches_factory/Polysynths/MG.fxp
+%%DATADIR%%/patches_factory/Polysynths/MacLaurin.fxp
+%%DATADIR%%/patches_factory/Polysynths/Mega Mega.fxp
+%%DATADIR%%/patches_factory/Polysynths/Megasynth 1.fxp
+%%DATADIR%%/patches_factory/Polysynths/Megasynth 2.fxp
+%%DATADIR%%/patches_factory/Polysynths/Megasynth 3.fxp
+%%DATADIR%%/patches_factory/Polysynths/Megasynth 4.fxp
+%%DATADIR%%/patches_factory/Polysynths/Melon.fxp
+%%DATADIR%%/patches_factory/Polysynths/Messy.fxp
+%%DATADIR%%/patches_factory/Polysynths/Metal Chonk.fxp
+%%DATADIR%%/patches_factory/Polysynths/Noise Tone.fxp
+%%DATADIR%%/patches_factory/Polysynths/Notched Saws.fxp
+%%DATADIR%%/patches_factory/Polysynths/Oberheim Dreams.fxp
+%%DATADIR%%/patches_factory/Polysynths/Oiro.fxp
+%%DATADIR%%/patches_factory/Polysynths/Ol' Sampler.fxp
+%%DATADIR%%/patches_factory/Polysynths/Old Square.fxp
+%%DATADIR%%/patches_factory/Polysynths/Oldie.fxp
+%%DATADIR%%/patches_factory/Polysynths/PPG Choir.fxp
+%%DATADIR%%/patches_factory/Polysynths/PPG Dreams.fxp
+%%DATADIR%%/patches_factory/Polysynths/PWM Avenger.fxp
+%%DATADIR%%/patches_factory/Polysynths/Past Tense.fxp
+%%DATADIR%%/patches_factory/Polysynths/Phasey.fxp
+%%DATADIR%%/patches_factory/Polysynths/Play Louder.fxp
+%%DATADIR%%/patches_factory/Polysynths/Ploppy.fxp
+%%DATADIR%%/patches_factory/Polysynths/Poly Ahhs.fxp
+%%DATADIR%%/patches_factory/Polysynths/Poly Lala.fxp
+%%DATADIR%%/patches_factory/Polysynths/Polymoog.fxp
+%%DATADIR%%/patches_factory/Polysynths/Prophet VS.fxp
+%%DATADIR%%/patches_factory/Polysynths/Quantization Choice.fxp
+%%DATADIR%%/patches_factory/Polysynths/Quasi.fxp
+%%DATADIR%%/patches_factory/Polysynths/Quote.fxp
+%%DATADIR%%/patches_factory/Polysynths/Ralph.fxp
+%%DATADIR%%/patches_factory/Polysynths/Reset.fxp
+%%DATADIR%%/patches_factory/Polysynths/Retrofit.fxp
+%%DATADIR%%/patches_factory/Polysynths/Retrograde.fxp
+%%DATADIR%%/patches_factory/Polysynths/Rez.fxp
+%%DATADIR%%/patches_factory/Polysynths/Ring Sweep.fxp
+%%DATADIR%%/patches_factory/Polysynths/Ringo.fxp
+%%DATADIR%%/patches_factory/Polysynths/Ruler.fxp
+%%DATADIR%%/patches_factory/Polysynths/Rusty.fxp
+%%DATADIR%%/patches_factory/Polysynths/Separate Ways.fxp
+%%DATADIR%%/patches_factory/Polysynths/Serious Distortion.fxp
+%%DATADIR%%/patches_factory/Polysynths/Shenanigans.fxp
+%%DATADIR%%/patches_factory/Polysynths/Simple Waveguide.fxp
+%%DATADIR%%/patches_factory/Polysynths/Simplistic.fxp
+%%DATADIR%%/patches_factory/Polysynths/Sine Saw 7.fxp
+%%DATADIR%%/patches_factory/Polysynths/Sine Saw.fxp
+%%DATADIR%%/patches_factory/Polysynths/Sizzling Sweep.fxp
+%%DATADIR%%/patches_factory/Polysynths/Skatteverket.fxp
+%%DATADIR%%/patches_factory/Polysynths/Slow Poly MW.fxp
+%%DATADIR%%/patches_factory/Polysynths/Smooth Stabs.fxp
+%%DATADIR%%/patches_factory/Polysynths/Space FM.fxp
+%%DATADIR%%/patches_factory/Polysynths/Spacematron.fxp
+%%DATADIR%%/patches_factory/Polysynths/Spik.fxp
+%%DATADIR%%/patches_factory/Polysynths/Step Portamento.fxp
+%%DATADIR%%/patches_factory/Polysynths/Super Jupiter.fxp
+%%DATADIR%%/patches_factory/Polysynths/Taikonaut.fxp
+%%DATADIR%%/patches_factory/Polysynths/Tarnce.fxp
+%%DATADIR%%/patches_factory/Polysynths/Thynchronization.fxp
+%%DATADIR%%/patches_factory/Polysynths/Uni 1.fxp
+%%DATADIR%%/patches_factory/Polysynths/Uni 2.fxp
+%%DATADIR%%/patches_factory/Polysynths/Uni Saw FB.fxp
+%%DATADIR%%/patches_factory/Polysynths/Vel 2 Cutoff.fxp
+%%DATADIR%%/patches_factory/Polysynths/Violini Poly.fxp
+%%DATADIR%%/patches_factory/Polysynths/Waver.fxp
+%%DATADIR%%/patches_factory/Polysynths/Xpander 1.fxp
+%%DATADIR%%/patches_factory/Polysynths/Xpander 2.fxp
+%%DATADIR%%/patches_factory/Polysynths/Zizzly Saw.fxp
+%%DATADIR%%/patches_factory/Sequences/Acid Seq 1.fxp
+%%DATADIR%%/patches_factory/Sequences/Acid Seq 2.fxp
+%%DATADIR%%/patches_factory/Sequences/Acid Seq 3.fxp
+%%DATADIR%%/patches_factory/Sequences/Barrelish.fxp
+%%DATADIR%%/patches_factory/Sequences/Bell Seq.fxp
+%%DATADIR%%/patches_factory/Sequences/Bit Seq.fxp
+%%DATADIR%%/patches_factory/Sequences/Burial Ground.fxp
+%%DATADIR%%/patches_factory/Sequences/Calm.fxp
+%%DATADIR%%/patches_factory/Sequences/Chord Me.fxp
+%%DATADIR%%/patches_factory/Sequences/Comb Seq.fxp
+%%DATADIR%%/patches_factory/Sequences/Damn Aliens.fxp
+%%DATADIR%%/patches_factory/Sequences/Distorted Glassy Seq.fxp
+%%DATADIR%%/patches_factory/Sequences/Evilish.fxp
+%%DATADIR%%/patches_factory/Sequences/FB Seq.fxp
+%%DATADIR%%/patches_factory/Sequences/FM Motion Sweep.fxp
+%%DATADIR%%/patches_factory/Sequences/FM Seq.fxp
+%%DATADIR%%/patches_factory/Sequences/Fifth Seq.fxp
+%%DATADIR%%/patches_factory/Sequences/Filter Buildup.fxp
+%%DATADIR%%/patches_factory/Sequences/Fold Sseq.fxp
+%%DATADIR%%/patches_factory/Sequences/Game On 1.fxp
+%%DATADIR%%/patches_factory/Sequences/Game On 2.fxp
+%%DATADIR%%/patches_factory/Sequences/Game On 3.fxp
+%%DATADIR%%/patches_factory/Sequences/Gate Chord.fxp
+%%DATADIR%%/patches_factory/Sequences/Hovercar Championship.fxp
+%%DATADIR%%/patches_factory/Sequences/I Want To Get Well.fxp
+%%DATADIR%%/patches_factory/Sequences/Madness.fxp
+%%DATADIR%%/patches_factory/Sequences/Multi Seq.fxp
+%%DATADIR%%/patches_factory/Sequences/Noise Bass.fxp
+%%DATADIR%%/patches_factory/Sequences/Noise Seq.fxp
+%%DATADIR%%/patches_factory/Sequences/Octave Arp.fxp
+%%DATADIR%%/patches_factory/Sequences/One Key Wonder.fxp
+%%DATADIR%%/patches_factory/Sequences/Phase 1.fxp
+%%DATADIR%%/patches_factory/Sequences/Phase 2.fxp
+%%DATADIR%%/patches_factory/Sequences/Retrig Me.fxp
+%%DATADIR%%/patches_factory/Sequences/S&H Classic.fxp
+%%DATADIR%%/patches_factory/Sequences/Seq 1234.fxp
+%%DATADIR%%/patches_factory/Sequences/Sine Sequencer 1.fxp
+%%DATADIR%%/patches_factory/Sequences/Step Phaser.fxp
+%%DATADIR%%/patches_factory/Sequences/Sync Accident.fxp
+%%DATADIR%%/patches_factory/Sequences/Sync Arp.fxp
+%%DATADIR%%/patches_factory/Sequences/Table Seq.fxp
+%%DATADIR%%/patches_factory/Sequences/Tyskland.fxp
+%%DATADIR%%/patches_factory/Sequences/Wabbit MW.fxp
+%%DATADIR%%/patches_factory/Sequences/Wavesequence 01.fxp
+%%DATADIR%%/patches_factory/Sequences/When Good Combs Go Bad.fxp
+%%DATADIR%%/patches_factory/Splits/Bass+Drums.fxp
+%%DATADIR%%/patches_factory/Splits/Future Split.fxp
+%%DATADIR%%/patches_factory/Splits/Game On 4 MW Split.fxp
+%%DATADIR%%/patches_factory/Splits/Sine Sequencer 2.fxp
+%%DATADIR%%/patches_factory/Splits/Split Personality.fxp
+%%DATADIR%%/patches_factory/Templates/Audio In Left Osc 1 + Right Osc 2.fxp
+%%DATADIR%%/patches_factory/Templates/Audio In Left Scene A + Right Scene B.fxp
+%%DATADIR%%/patches_factory/Templates/Audio In Mono Osc 1.fxp
+%%DATADIR%%/patches_factory/Templates/Audio In Stereo Osc 1.fxp
+%%DATADIR%%/patches_factory/Templates/Init Emu VA.fxp
+%%DATADIR%%/patches_factory/Templates/Init Emu WT.fxp
+%%DATADIR%%/patches_factory/Templates/Init Emu.fxp
+%%DATADIR%%/patches_factory/Templates/Init Env Per Osc.fxp
+%%DATADIR%%/patches_factory/Templates/Init FM2.fxp
+%%DATADIR%%/patches_factory/Templates/Init Saw.fxp
+%%DATADIR%%/patches_factory/Templates/Init Sine.fxp
 %%DATADIR%%/patches_factory/Vocoder/Noise.fxp
 %%DATADIR%%/patches_factory/Vocoder/Pop.fxp
 %%DATADIR%%/patches_factory/Vocoder/Solo.fxp
-%%DATADIR%%/patches_factory/Wind/Clarinet.fxp
-%%DATADIR%%/patches_factory/Wind/Cyber Flute.fxp
-%%DATADIR%%/patches_factory/Wind/Dreamy Flute.fxp
-%%DATADIR%%/patches_factory/Wind/Fake Ethno.fxp
-%%DATADIR%%/patches_factory/Wind/Flute 1.fxp
-%%DATADIR%%/patches_factory/Wind/Flute 2.fxp
-%%DATADIR%%/patches_factory/Wind/Low.fxp
-%%DATADIR%%/patches_factory/Wind/Tragic Winds.fxp
+%%DATADIR%%/patches_factory/Winds/Clarinet.fxp
+%%DATADIR%%/patches_factory/Winds/Cyber Flute.fxp
+%%DATADIR%%/patches_factory/Winds/Dreamy Flute.fxp
+%%DATADIR%%/patches_factory/Winds/Fake Ethno.fxp
+%%DATADIR%%/patches_factory/Winds/Flute 1.fxp
+%%DATADIR%%/patches_factory/Winds/Flute 2.fxp
+%%DATADIR%%/patches_factory/Winds/Low.fxp
+%%DATADIR%%/patches_factory/Winds/Tragic Winds.fxp
 %%DATADIR%%/skins/dark-mode.surge-skin/SVG/StatusButton.svg
+%%DATADIR%%/skins/dark-mode.surge-skin/SVG/StatusMPE.svg
+%%DATADIR%%/skins/dark-mode.surge-skin/SVG/StatusTune.svg
+%%DATADIR%%/skins/dark-mode.surge-skin/SVG/StatusZoom.svg
 %%DATADIR%%/skins/dark-mode.surge-skin/SVG/bmp00102.svg
 %%DATADIR%%/skins/dark-mode.surge-skin/SVG/bmp00105.svg
 %%DATADIR%%/skins/dark-mode.surge-skin/SVG/bmp00108.svg
@@ -1630,8 +1776,100 @@ lib/vst/Surge.so
 %%DATADIR%%/skins/dark-mode.surge-skin/SVG/bmp00164.svg
 %%DATADIR%%/skins/dark-mode.surge-skin/SVG/bmpTS00153.svg
 %%DATADIR%%/skins/dark-mode.surge-skin/SVG/bmpTS00157.svg
+%%DATADIR%%/skins/dark-mode.surge-skin/SVG/hover00108.svg
+%%DATADIR%%/skins/dark-mode.surge-skin/SVG/hover00113.svg
+%%DATADIR%%/skins/dark-mode.surge-skin/SVG/hover00114.svg
+%%DATADIR%%/skins/dark-mode.surge-skin/SVG/hover00117.svg
+%%DATADIR%%/skins/dark-mode.surge-skin/SVG/hover00118.svg
+%%DATADIR%%/skins/dark-mode.surge-skin/SVG/hover00119.svg
+%%DATADIR%%/skins/dark-mode.surge-skin/SVG/hover00120.svg
+%%DATADIR%%/skins/dark-mode.surge-skin/SVG/hover00121.svg
+%%DATADIR%%/skins/dark-mode.surge-skin/SVG/hover00122.svg
+%%DATADIR%%/skins/dark-mode.surge-skin/SVG/hover00123.svg
+%%DATADIR%%/skins/dark-mode.surge-skin/SVG/hover00125.svg
+%%DATADIR%%/skins/dark-mode.surge-skin/SVG/hover00126.svg
+%%DATADIR%%/skins/dark-mode.surge-skin/SVG/hover00132.svg
+%%DATADIR%%/skins/dark-mode.surge-skin/SVG/hover00134.svg
+%%DATADIR%%/skins/dark-mode.surge-skin/SVG/hover00140.svg
+%%DATADIR%%/skins/dark-mode.surge-skin/SVG/hover00143.svg
+%%DATADIR%%/skins/dark-mode.surge-skin/SVG/hover00144.svg
+%%DATADIR%%/skins/dark-mode.surge-skin/SVG/hover00146.svg
+%%DATADIR%%/skins/dark-mode.surge-skin/SVG/hover00148.svg
+%%DATADIR%%/skins/dark-mode.surge-skin/SVG/hover00149.svg
+%%DATADIR%%/skins/dark-mode.surge-skin/SVG/hover00152.svg
+%%DATADIR%%/skins/dark-mode.surge-skin/SVG/hover00153.svg
+%%DATADIR%%/skins/dark-mode.surge-skin/SVG/hover00157.svg
+%%DATADIR%%/skins/dark-mode.surge-skin/SVG/hover00159.svg
+%%DATADIR%%/skins/dark-mode.surge-skin/SVG/hover00160.svg
+%%DATADIR%%/skins/dark-mode.surge-skin/SVG/hover00161.svg
+%%DATADIR%%/skins/dark-mode.surge-skin/SVG/hover00162.svg
+%%DATADIR%%/skins/dark-mode.surge-skin/SVG/hover00164.svg
+%%DATADIR%%/skins/dark-mode.surge-skin/SVG/hoverOn00108.svg
+%%DATADIR%%/skins/dark-mode.surge-skin/SVG/hoverOn00113.svg
+%%DATADIR%%/skins/dark-mode.surge-skin/SVG/hoverOn00114.svg
+%%DATADIR%%/skins/dark-mode.surge-skin/SVG/hoverOn00117.svg
+%%DATADIR%%/skins/dark-mode.surge-skin/SVG/hoverOn00118.svg
+%%DATADIR%%/skins/dark-mode.surge-skin/SVG/hoverOn00120.svg
+%%DATADIR%%/skins/dark-mode.surge-skin/SVG/hoverOn00122.svg
+%%DATADIR%%/skins/dark-mode.surge-skin/SVG/hoverOn00123.svg
+%%DATADIR%%/skins/dark-mode.surge-skin/SVG/hoverOn00125.svg
+%%DATADIR%%/skins/dark-mode.surge-skin/SVG/hoverOn00126.svg
+%%DATADIR%%/skins/dark-mode.surge-skin/SVG/hoverOn00143.svg
+%%DATADIR%%/skins/dark-mode.surge-skin/SVG/hoverOn00144.svg
+%%DATADIR%%/skins/dark-mode.surge-skin/SVG/hoverOn00146.svg
+%%DATADIR%%/skins/dark-mode.surge-skin/SVG/hoverOn00152.svg
+%%DATADIR%%/skins/dark-mode.surge-skin/SVG/hoverOn00159.svg
+%%DATADIR%%/skins/dark-mode.surge-skin/SVG/hoverOn00160.svg
+%%DATADIR%%/skins/dark-mode.surge-skin/SVG/hoverOn00161.svg
+%%DATADIR%%/skins/dark-mode.surge-skin/SVG/hoverOn00162.svg
+%%DATADIR%%/skins/dark-mode.surge-skin/SVG/hoverStatusButton.svg
 %%DATADIR%%/skins/dark-mode.surge-skin/skin.xml
+%%DATADIR%%/skins/default.surge-skin/SVG/hover00108.svg
+%%DATADIR%%/skins/default.surge-skin/SVG/hover00112.svg
+%%DATADIR%%/skins/default.surge-skin/SVG/hover00113.svg
+%%DATADIR%%/skins/default.surge-skin/SVG/hover00114.svg
+%%DATADIR%%/skins/default.surge-skin/SVG/hover00117.svg
+%%DATADIR%%/skins/default.surge-skin/SVG/hover00118.svg
+%%DATADIR%%/skins/default.surge-skin/SVG/hover00120.svg
+%%DATADIR%%/skins/default.surge-skin/SVG/hover00121.svg
+%%DATADIR%%/skins/default.surge-skin/SVG/hover00122.svg
+%%DATADIR%%/skins/default.surge-skin/SVG/hover00123.svg
+%%DATADIR%%/skins/default.surge-skin/SVG/hover00125.svg
+%%DATADIR%%/skins/default.surge-skin/SVG/hover00126.svg
+%%DATADIR%%/skins/default.surge-skin/SVG/hover00132.svg
+%%DATADIR%%/skins/default.surge-skin/SVG/hover00134.svg
+%%DATADIR%%/skins/default.surge-skin/SVG/hover00140.svg
+%%DATADIR%%/skins/default.surge-skin/SVG/hover00143.svg
+%%DATADIR%%/skins/default.surge-skin/SVG/hover00144.svg
+%%DATADIR%%/skins/default.surge-skin/SVG/hover00146.svg
+%%DATADIR%%/skins/default.surge-skin/SVG/hover00148.svg
+%%DATADIR%%/skins/default.surge-skin/SVG/hover00149.svg
+%%DATADIR%%/skins/default.surge-skin/SVG/hover00151.svg
+%%DATADIR%%/skins/default.surge-skin/SVG/hover00152.svg
+%%DATADIR%%/skins/default.surge-skin/SVG/hover00153.svg
+%%DATADIR%%/skins/default.surge-skin/SVG/hover00157.svg
+%%DATADIR%%/skins/default.surge-skin/SVG/hover00161.svg
+%%DATADIR%%/skins/default.surge-skin/SVG/hover00162.svg
+%%DATADIR%%/skins/default.surge-skin/SVG/hover00164.svg
+%%DATADIR%%/skins/default.surge-skin/SVG/hoverOn00108.svg
+%%DATADIR%%/skins/default.surge-skin/SVG/hoverOn00112.svg
+%%DATADIR%%/skins/default.surge-skin/SVG/hoverOn00113.svg
+%%DATADIR%%/skins/default.surge-skin/SVG/hoverOn00114.svg
+%%DATADIR%%/skins/default.surge-skin/SVG/hoverOn00117.svg
+%%DATADIR%%/skins/default.surge-skin/SVG/hoverOn00118.svg
+%%DATADIR%%/skins/default.surge-skin/SVG/hoverOn00120.svg
+%%DATADIR%%/skins/default.surge-skin/SVG/hoverOn00122.svg
+%%DATADIR%%/skins/default.surge-skin/SVG/hoverOn00123.svg
+%%DATADIR%%/skins/default.surge-skin/SVG/hoverOn00144.svg
+%%DATADIR%%/skins/default.surge-skin/SVG/hoverOn00146.svg
+%%DATADIR%%/skins/default.surge-skin/SVG/hoverOn00151.svg
+%%DATADIR%%/skins/default.surge-skin/SVG/hoverOn00161.svg
+%%DATADIR%%/skins/default.surge-skin/SVG/hoverOn00162.svg
 %%DATADIR%%/skins/default.surge-skin/skin.xml
+%%DATADIR%%/skins/tests/test-minimal-position.surge-skin/SVG/AB_15x30.svg
+%%DATADIR%%/skins/tests/test-minimal-position.surge-skin/SVG/altHHandle.svg
+%%DATADIR%%/skins/tests/test-minimal-position.surge-skin/SVG/altHoverHandle.svg
+%%DATADIR%%/skins/tests/test-minimal-position.surge-skin/SVG/altTSHandle.svg
 %%DATADIR%%/skins/tests/test-minimal-position.surge-skin/skin.xml
 %%DATADIR%%/tuning-library/KBM Concert Pitch/60-262-60 Concert C.kbm
 %%DATADIR%%/tuning-library/KBM Concert Pitch/60-440-69 Concert A C.kbm
@@ -2067,33 +2305,33 @@ lib/vst/Surge.so
 %%DATADIR%%/wavetables_3rdparty/Emu VSCO/Oneshot/Trombone Fall.wav
 %%DATADIR%%/wavetables_3rdparty/Emu VSCO/Oneshot/Trombone.wav
 %%DATADIR%%/wavetables_3rdparty/Emu VSCO/Oneshot/Trumpet.wav
-%%DATADIR%%/wavetables_3rdparty/Emu VSCO/Strings/PIZZ Bass Low.wav
-%%DATADIR%%/wavetables_3rdparty/Emu VSCO/Strings/PIZZ Bass Soft.wav
-%%DATADIR%%/wavetables_3rdparty/Emu VSCO/Strings/PIZZ Cello Soft 1.wav
-%%DATADIR%%/wavetables_3rdparty/Emu VSCO/Strings/PIZZ Cello Soft 2.wav
-%%DATADIR%%/wavetables_3rdparty/Emu VSCO/Strings/PIZZ Viola.wav
-%%DATADIR%%/wavetables_3rdparty/Emu VSCO/Strings/PIZZ Violin High.wav
-%%DATADIR%%/wavetables_3rdparty/Emu VSCO/Strings/PIZZ Violin Section.wav
-%%DATADIR%%/wavetables_3rdparty/Emu VSCO/Strings/PIZZ Violin.wav
-%%DATADIR%%/wavetables_3rdparty/Emu VSCO/Strings/Pluck Harp Low.wav
-%%DATADIR%%/wavetables_3rdparty/Emu VSCO/Strings/Pluck Harp.wav
-%%DATADIR%%/wavetables_3rdparty/Emu VSCO/Strings/SPIC Bass 1.wav
-%%DATADIR%%/wavetables_3rdparty/Emu VSCO/Strings/SPIC Bass 2.wav
-%%DATADIR%%/wavetables_3rdparty/Emu VSCO/Strings/SPIC Viola.wav
-%%DATADIR%%/wavetables_3rdparty/Emu VSCO/Strings/SPIC Violin.wav
-%%DATADIR%%/wavetables_3rdparty/Emu VSCO/Strings/SUS Bass Low.wav
-%%DATADIR%%/wavetables_3rdparty/Emu VSCO/Strings/SUS Bass Noise.wav
-%%DATADIR%%/wavetables_3rdparty/Emu VSCO/Strings/SUS Bass Trem 1.wav
-%%DATADIR%%/wavetables_3rdparty/Emu VSCO/Strings/SUS Bass Trem 2.wav
-%%DATADIR%%/wavetables_3rdparty/Emu VSCO/Strings/SUS Cello Vibrato High.wav
-%%DATADIR%%/wavetables_3rdparty/Emu VSCO/Strings/SUS Cello Vibrato.wav
-%%DATADIR%%/wavetables_3rdparty/Emu VSCO/Strings/SUS Cello.wav
-%%DATADIR%%/wavetables_3rdparty/Emu VSCO/Strings/SUS Harp High.wav
-%%DATADIR%%/wavetables_3rdparty/Emu VSCO/Strings/SUS Harp.wav
-%%DATADIR%%/wavetables_3rdparty/Emu VSCO/Strings/SUS Violin High.wav
-%%DATADIR%%/wavetables_3rdparty/Emu VSCO/Strings/SUS Violin Low.wav
-%%DATADIR%%/wavetables_3rdparty/Emu VSCO/Strings/SUS Violin Trem.wav
-%%DATADIR%%/wavetables_3rdparty/Emu VSCO/Strings/SUS Violin.wav
+%%DATADIR%%/wavetables_3rdparty/Emu VSCO/String/PIZZ Bass Low.wav
+%%DATADIR%%/wavetables_3rdparty/Emu VSCO/String/PIZZ Bass Soft.wav
+%%DATADIR%%/wavetables_3rdparty/Emu VSCO/String/PIZZ Cello Soft 1.wav
+%%DATADIR%%/wavetables_3rdparty/Emu VSCO/String/PIZZ Cello Soft 2.wav
+%%DATADIR%%/wavetables_3rdparty/Emu VSCO/String/PIZZ Viola.wav
+%%DATADIR%%/wavetables_3rdparty/Emu VSCO/String/PIZZ Violin High.wav
+%%DATADIR%%/wavetables_3rdparty/Emu VSCO/String/PIZZ Violin Section.wav
+%%DATADIR%%/wavetables_3rdparty/Emu VSCO/String/PIZZ Violin.wav
+%%DATADIR%%/wavetables_3rdparty/Emu VSCO/String/Pluck Harp Low.wav
+%%DATADIR%%/wavetables_3rdparty/Emu VSCO/String/Pluck Harp.wav
+%%DATADIR%%/wavetables_3rdparty/Emu VSCO/String/SPIC Bass 1.wav
+%%DATADIR%%/wavetables_3rdparty/Emu VSCO/String/SPIC Bass 2.wav
+%%DATADIR%%/wavetables_3rdparty/Emu VSCO/String/SPIC Viola.wav
+%%DATADIR%%/wavetables_3rdparty/Emu VSCO/String/SPIC Violin.wav
+%%DATADIR%%/wavetables_3rdparty/Emu VSCO/String/SUS Bass Low.wav
+%%DATADIR%%/wavetables_3rdparty/Emu VSCO/String/SUS Bass Noise.wav
+%%DATADIR%%/wavetables_3rdparty/Emu VSCO/String/SUS Bass Trem 1.wav
+%%DATADIR%%/wavetables_3rdparty/Emu VSCO/String/SUS Bass Trem 2.wav
+%%DATADIR%%/wavetables_3rdparty/Emu VSCO/String/SUS Cello Vibrato High.wav
+%%DATADIR%%/wavetables_3rdparty/Emu VSCO/String/SUS Cello Vibrato.wav
+%%DATADIR%%/wavetables_3rdparty/Emu VSCO/String/SUS Cello.wav
+%%DATADIR%%/wavetables_3rdparty/Emu VSCO/String/SUS Harp High.wav
+%%DATADIR%%/wavetables_3rdparty/Emu VSCO/String/SUS Harp.wav
+%%DATADIR%%/wavetables_3rdparty/Emu VSCO/String/SUS Violin High.wav
+%%DATADIR%%/wavetables_3rdparty/Emu VSCO/String/SUS Violin Low.wav
+%%DATADIR%%/wavetables_3rdparty/Emu VSCO/String/SUS Violin Trem.wav
+%%DATADIR%%/wavetables_3rdparty/Emu VSCO/String/SUS Violin.wav
 %%DATADIR%%/wavetables_3rdparty/Emu VSCO/Woodwinds/STAC Bassoon High.wav
 %%DATADIR%%/wavetables_3rdparty/Emu VSCO/Woodwinds/STAC Bassoon.wav
 %%DATADIR%%/wavetables_3rdparty/Emu VSCO/Woodwinds/STAC Clarinet High.wav

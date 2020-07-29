@@ -1,24 +1,25 @@
---- CMakeLists.txt.orig	2020-04-15 15:01:57 UTC
+--- CMakeLists.txt.orig	2020-07-29 20:38:54 UTC
 +++ CMakeLists.txt
-@@ -334,7 +334,6 @@ elseif( UNIX AND NOT APPLE )
+@@ -83,7 +83,7 @@ if( CXX_STD_FS )
+ else()
+   if( UNIX AND NOT APPLE )
+     set (CMAKE_REQUIRED_FLAGS "-std=c++11")
+-    set (CMAKE_REQUIRED_LIBRARIES "stdc++fs")
++    #set (CMAKE_REQUIRED_LIBRARIES "stdc++fs")
+   endif()
+   CHECK_CXX_SYMBOL_EXISTS(std::experimental::filesystem::path::preferred_separator "experimental/filesystem" CXX_EXP_STD_FS)
+   if( UNIX AND NOT APPLE )
+@@ -461,7 +461,7 @@ elseif( UNIX AND NOT APPLE )
  
-   set(OS_LINK_LIBRARIES
-      pthread
--     stdc++fs
-      gcc_s
-      gcc
-      dl
-@@ -689,7 +688,7 @@ if( BUILD_LV2 )
-       WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-       COMMAND echo "Packaging up LV2 component"
-       COMMAND mkdir -p products/Surge.lv2 
--      COMMAND cp build/libsurge-lv2.so products/Surge.lv2/Surge.so
-+      COMMAND cp ../.build/libsurge-lv2.so products/Surge.lv2/Surge.so
-       COMMAND python scripts/linux/generate-lv2-ttl.py products/Surge.lv2/Surge.so 
-       )
- 
-@@ -759,7 +758,6 @@ if( BUILD_HEADLESS )
-     target_sources( surge-headless PUBLIC src/linux/ConfigurationXml.S )
+   set(OS_LINK_LIBRARIES_NOGUI
+     pthread
+-    stdc++fs
++    #stdc++fs
+     gcc_s
+     gcc
+     dl
+@@ -936,7 +936,6 @@ if( BUILD_HEADLESS )
+     endif()
      target_link_libraries(surge-headless
        PRIVATE
 -      stdc++fs
