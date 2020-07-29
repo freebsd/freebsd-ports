@@ -6642,6 +6642,7 @@
     SUBDIR += silc-toolkit
     SUBDIR += silentbob
     SUBDIR += simavr
+    SUBDIR += simde
     SUBDIR += simdjson
     SUBDIR += simgear
     SUBDIR += simian
