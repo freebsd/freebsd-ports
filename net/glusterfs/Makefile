@@ -1,61 +1,68 @@
 # $FreeBSD$
 
 PORTNAME=	glusterfs
-PORTVERSION=	3.11.1
-PORTREVISION=	7
+PORTVERSION=	8.0
 CATEGORIES=	net
 MASTER_SITES=	http://bits.gluster.org/pub/gluster/glusterfs/src/
 
-MAINTAINER=	craig001@lerwick.hopto.org
+MAINTAINER=	daniel@morante.net
 COMMENT=	GlusterFS distributed file system
 
 LICENSE=	GPLv2 LGPL3
 LICENSE_COMB=	dual
 
-DEPRECATED=	Uses deprecated version of python
-EXPIRATION_DATE=	2020-09-15
+LIB_DEPENDS=	libargp.so:devel/argp-standalone \
+		libcurl.so:ftp/curl \
+		liburcu-bp.so:sysutils/liburcu \
+		libuuid.so:misc/e2fsprogs-libuuid
 
-LIB_DEPENDS=	libargp.so:devel/argp-standalone liburcu-bp.so:sysutils/liburcu
-
-USES=		bison gettext gnome libtool pkgconfig python:2.7 readline \
-		shebangfix sqlite ssl
+RUN_DEPENDS=	bash:shells/bash
 
 BROKEN_SSL=	libressl
 
-SHEBANG_FILES=	extras/peer_add_secret_pub.in \
-		events/src/glustereventsd.py \
-		events/src/peer_eventsapi.py \
-		tools/glusterfind/src/nodeagent.py \
-		tools/glusterfind/src/brickfind.py \
-		tools/glusterfind/src/changelog.py \
-		tools/glusterfind/glusterfind.in \
-		tools/gfind_missing_files/gfid_to_path.py \
-		extras/pre-upgrade-script-for-quota.sh \
-		events/tools/eventsdash.py \
+USES=		autoreconf bison gettext gnome libtool pkgconfig python \
+		readline shebangfix sqlite ssl
+
+SHEBANG_FILES=	events/src/glustereventsd.py events/src/peer_eventsapi.py \
+		events/tools/eventsdash.py extras/ganesha/ocf/ganesha_grace \
+		extras/ganesha/ocf/ganesha_mon extras/ganesha/ocf/ganesha_nfsd \
+		extras/ganesha/scripts/create-export-ganesha.sh \
+		extras/ganesha/scripts/dbus-send.sh \
+		extras/ganesha/scripts/ganesha-ha.sh \
+		extras/ganesha/scripts/generate-epoch.py \
+		extras/peer_add_secret_pub.in \
 		extras/post-upgrade-script-for-quota.sh \
+		extras/pre-upgrade-script-for-quota.sh \
 		extras/snap_scheduler/gcron.py \
 		extras/snap_scheduler/snap_scheduler.py \
-		events/src/peer_eventsapi.py \
-		events/src/glustereventsd.py \
-		tools/glusterfind/S57glusterfind-delete-post.py
+		extras/stop-all-gluster-processes.sh \
+		extras/thin-arbiter/setup-thin-arbiter.sh \
+		tools/gfind_missing_files/gfid_to_path.py \
+		tools/glusterfind/glusterfind.in \
+		tools/glusterfind/S57glusterfind-delete-post.py \
+		tools/glusterfind/src/brickfind.py \
+		tools/glusterfind/src/changelog.py \
+		tools/glusterfind/src/nodeagent.py
 
 USE_GNOME=	glib20 libxml2
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	glusterd
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig \
-		--with-mountutildir=${PREFIX}/sbin \
-		--localstatedir=/var \
-		--disable-epoll \
-		--enable-glupy \
+CONFIGURE_ARGS=	--disable-epoll \
 		--disable-georeplication \
-		ac_cv_lib_aio_io_setup=no ac_cv_func_fallocate=no \
-		ac_cv_func_setfsuid=no ac_cv_func_fdatasync=no \
-		ac_cv_func_llistxattr=no ac_cv_func_malloc_stats=no
+		--localstatedir=/var \
+		--with-mountutildir=${PREFIX}/sbin \
+		--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig \
+		ac_cv_func_fallocate=no \
+		ac_cv_func_fdatasync=no \
+		ac_cv_func_llistxattr=no \
+		ac_cv_func_malloc_stats=no \
+		ac_cv_func_setfsuid=no \
+		ac_cv_lib_aio_io_setup=no
 CPPFLAGS+=	-I"${LOCALBASE}/include"
 LDFLAGS+=	-L"${LOCALBASE}/lib" -largp
 INSTALL_TARGET=	install-strip
-PLIST_SUB=	GLUSTERLIBDIR="lib/${PORTNAME}/${PORTVERSION}"
+PLIST_SUB=	GLUSTERLIBDIR="lib/${PORTNAME}"
 KMODDIR?=	/boot/modules
 
 OPTIONS_DEFINE=	DOCS

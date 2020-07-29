@@ -3,7 +3,8 @@
 # $FreeBSD$
 
 # PROVIDE: glusterd
-# REQUIRE: LOGIN
+# BEFORE: mountlate
+# REQUIRE: NETWORKING
 # KEYWORD: shutdown
 
 . /etc/rc.subr
