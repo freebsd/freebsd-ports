@@ -2,7 +2,7 @@
 
 PORTNAME=	check_mk_agent
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.0p8
+DISTVERSION=	1.6.0p14
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://raw.githubusercontent.com/tribe29/checkmk/${DISTVERSIONFULL}/agents/:agent \
 		https://raw.githubusercontent.com/tribe29/checkmk/${DISTVERSIONFULL}/doc/agents/:doc \
@@ -13,7 +13,7 @@ DISTFILES=	${_CHECKMK_AGENT}:agent \
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	0mp@FreeBSD.org
-COMMENT=	Nagios-compatible agent for the Check_MK monitoring
+COMMENT=	Nagios-compatible agent for the Checkmk monitoring
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
