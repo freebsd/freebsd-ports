@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	google-fonts
-DISTVERSION=	0.0.0.20191031
+DISTVERSION=	0.0.0.20200729
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	dmgk@FreeBSD.org
@@ -23,13 +23,13 @@ RUN_DEPENDS=	anonymous-pro>0:x11-fonts/anonymous-pro \
 
 USES=		fonts
 
-NO_ARCH=	yes
-NO_BUILD=	yes
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
 GH_PROJECT=	fonts
-GH_TAGNAME=	3fcf54a
+GH_TAGNAME=	7681237a0154e539e175afc5b42e3b2ec05e4d71
+
+NO_ARCH=	yes
+NO_BUILD=	yes
 
 SUB_FILES=	pkg-message
 
