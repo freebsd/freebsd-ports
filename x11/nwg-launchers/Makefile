@@ -16,9 +16,7 @@ COMMENT=	GTK-based launchers: application grid, button bar, dmenu for sway and o
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-# XXX Remove cmake dependency after nlohmann-json adds pkg-config support
-BUILD_DEPENDS=	cmake:devel/cmake \
-		nlohmann-json>0:devel/nlohmann-json
+BUILD_DEPENDS=	nlohmann-json>0:devel/nlohmann-json
 
 USES=		compiler:c++17-lang gnome meson pkgconfig
 USE_GITHUB=	yes
