@@ -660,6 +660,7 @@
     SUBDIR += py-fmoo-audiotools
     SUBDIR += py-gmusicapi
     SUBDIR += py-gmusicproxy
+    SUBDIR += py-gtts
     SUBDIR += py-hsaudiotag
     SUBDIR += py-karaoke
     SUBDIR += py-mpd
