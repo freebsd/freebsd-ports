@@ -6457,6 +6457,7 @@
     SUBDIR += rubygem-simple_form-rails5
     SUBDIR += rubygem-simple_form-rails50
     SUBDIR += rubygem-simplecov
+    SUBDIR += rubygem-singleton
     SUBDIR += rubygem-skiptrace
     SUBDIR += rubygem-slack-messenger
     SUBDIR += rubygem-slack-notifier
