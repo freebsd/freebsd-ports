@@ -793,6 +793,7 @@
     SUBDIR += py-pandas
     SUBDIR += py-pandas-datareader
     SUBDIR += py-patsy
+    SUBDIR += py-pdal
     SUBDIR += py-permutation
     SUBDIR += py-petsc4py
     SUBDIR += py-piranha

@@ -1,0 +1,8 @@
+PDAL Python support allows you to process data with PDAL into Numpy arrays.
+It supports embedding Python in PDAL pipelines with the readers.numpy and
+filters.python stages, and it provides a PDAL extension module to control
+Python interaction with PDAL.
+
+Additionally, you can use it to fetch schema and metadata from PDAL operations.
+
+WWW: https://pypi.python.org/pypi/pdal
