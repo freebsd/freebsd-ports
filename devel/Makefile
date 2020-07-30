@@ -6526,6 +6526,7 @@
     SUBDIR += rubygem-tilt
     SUBDIR += rubygem-tilt1
     SUBDIR += rubygem-timeliness
+    SUBDIR += rubygem-timeout
     SUBDIR += rubygem-timers
     SUBDIR += rubygem-tins
     SUBDIR += rubygem-titlecase
