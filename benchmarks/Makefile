@@ -71,6 +71,7 @@
     SUBDIR += raidtest
     SUBDIR += ramspeed
     SUBDIR += randomio
+    SUBDIR += rubygem-benchmark
     SUBDIR += rubygem-benchmark-ips
     SUBDIR += rubygem-benchmark-memory
     SUBDIR += rubygem-derailed_benchmarks
