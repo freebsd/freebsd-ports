@@ -1,0 +1,11 @@
+CGI is a large class, providing several categories of methods, many of which are
+mixed in from other modules. Some of the documentation is in this class, some in
+the modules CGI::QueryExtension and CGI::HtmlExtension. See CGI::Cookie for
+specific information on handling cookies, and cgi/session.rb (CGI::Session) for
+information on sessions.
+
+For queries, CGI provides methods to get at environmental variables, parameters,
+cookies, and multipart request data. For responses, CGI provides methods for
+writing output and generating HTML.
+
+WWW: https://github.com/ruby/cgi
