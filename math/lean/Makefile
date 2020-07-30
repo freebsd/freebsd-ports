@@ -2,7 +2,7 @@
 
 PORTNAME=	lean
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.17.1
+DISTVERSION=	3.18.2
 CATEGORIES=	math
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -17,7 +17,6 @@ LIB_DEPENDS=	libgmp.so:math/gmp
 USES=		cmake compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	leanprover-community
-USE_LDCONFIG=	yes
 
 WRKSRC_SUBDIR=	src
 
