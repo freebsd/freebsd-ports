@@ -1,0 +1,5 @@
+A Varnish module that enables the user to find the country, region, city,
+ISP and proxy information by IP address. The module reads the proxy
+information from IP2Proxy BIN data file.
+
+WWW: https://github.com/ip2location/IP2Proxy-Varnish

@@ -1,0 +1,4 @@
+lib/varnish/vmods/libvmod_ip2proxy.so
+man/man3/vmod_ip2proxy.3.gz
+share/doc/libvmod-ip2proxy/LICENSE
+share/doc/libvmod-ip2proxy/README.rst
