@@ -2,6 +2,7 @@
 
 PORTNAME=	findomain
 DISTVERSION=	2.1.1
+PORTREVISION=	1
 CATEGORIES=	net security
 
 MAINTAINER=	vulcan@wired.sh
