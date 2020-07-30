@@ -3,7 +3,7 @@
 
 PORTNAME=	wmget
 PORTVERSION=	0.6.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	ftp
 MASTER_SITES=	http://amtrickey.net/download/ \
 		LOCAL/uqs
@@ -12,10 +12,12 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	uqs@FreeBSD.org
 COMMENT=	Dock app for Window Maker providing wget functionality
 
+LICENSE=	MIT
+
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USES=		gmake xorg
-USE_XORG=	x11 xpm
+USE_XORG=	x11 xext xpm
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAKE_ENV+=	${CONFIGURE_ENV}
