@@ -1,7 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	bliss
-DISTVERSION=	1.2.0.20200615
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.2.0-6
+DISTVERSIONSUFFIX=	-ga443635
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-music-analyzer
 
@@ -17,7 +19,6 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 USES=		cmake pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	Polochon-street
-GH_TAGNAME=	fa6c62588df645b5ccee53207efc6a0d9a303b3a
 USE_LDCONFIG=	yes
 
 PLIST_FILES=	include/bliss.h \
