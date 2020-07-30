@@ -92,6 +92,7 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/badblocks
 %%DATADIR%%/completions/bind
 %%DATADIR%%/completions/bk
+%%DATADIR%%/completions/bmake
 %%DATADIR%%/completions/brctl
 %%DATADIR%%/completions/bsdtar
 %%DATADIR%%/completions/btdownloadcurses.py
@@ -314,6 +315,7 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/interdiff
 %%DATADIR%%/completions/invoke-rc.d
 %%DATADIR%%/completions/ip
+%%DATADIR%%/completions/ipcalc
 %%DATADIR%%/completions/iperf
 %%DATADIR%%/completions/iperf3
 %%DATADIR%%/completions/ipmitool
@@ -513,6 +515,7 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/povray
 %%DATADIR%%/completions/ppc-koji
 %%DATADIR%%/completions/prelink
+%%DATADIR%%/completions/printenv
 %%DATADIR%%/completions/protoc
 %%DATADIR%%/completions/psql
 %%DATADIR%%/completions/puppet
@@ -553,7 +556,14 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/pytest-3
 %%DATADIR%%/completions/python
 %%DATADIR%%/completions/python2
+%%DATADIR%%/completions/python2.7
 %%DATADIR%%/completions/python3
+%%DATADIR%%/completions/python3.3
+%%DATADIR%%/completions/python3.4
+%%DATADIR%%/completions/python3.5
+%%DATADIR%%/completions/python3.6
+%%DATADIR%%/completions/python3.7
+%%DATADIR%%/completions/python3.8
 %%DATADIR%%/completions/pyvenv
 %%DATADIR%%/completions/pyvenv-3.4
 %%DATADIR%%/completions/pyvenv-3.5
@@ -606,6 +616,7 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/screen
 %%DATADIR%%/completions/scrub
 %%DATADIR%%/completions/sdptool
+%%DATADIR%%/completions/secret-tool
 %%DATADIR%%/completions/setquota
 %%DATADIR%%/completions/sftp
 %%DATADIR%%/completions/sh
@@ -659,6 +670,7 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/tracepath
 %%DATADIR%%/completions/tracepath6
 %%DATADIR%%/completions/tshark
+%%DATADIR%%/completions/tsig-keygen
 %%DATADIR%%/completions/tune2fs
 %%DATADIR%%/completions/typeset
 %%DATADIR%%/completions/ulimit
