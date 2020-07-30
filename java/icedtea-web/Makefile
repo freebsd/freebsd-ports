@@ -44,6 +44,7 @@ CONFIGURE_ARGS+=	--enable-shell-launchers
 CONFIGURE_ARGS+=	--without-${opt}
 .endfor
 CONFIGURE_ENV=		BIN_BASH=${bash_CMD}
+CONFIGURE_ENV+=		bashcompdir=${PREFIX}/etc/bash_completion.d
 CONFIGURE_SHELL=	${bash_CMD}
 
 TEST_TARGET=	check
