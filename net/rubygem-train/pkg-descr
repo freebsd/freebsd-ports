@@ -1,0 +1,21 @@
+Train lets you talk to your local or remote operating systems and APIs with a
+unified interface.
+
+It allows you to:
+- execute commands via run_command
+- interact with files via file
+- identify the target operating system via os
+- authenticate to API-based services and treat them like a platform
+
+Train supports:
+- Local execution
+- SSH
+- WinRM
+- Docker
+- Mock (for testing and debugging)
+- AWS as an API
+- Azure as an API
+- VMware via PowerCLI
+- Habitat
+
+WWW: https://github.com/inspec/train

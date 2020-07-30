@@ -1335,6 +1335,7 @@
     SUBDIR += rubygem-stackdriver-core
     SUBDIR += rubygem-stompserver
     SUBDIR += rubygem-t
+    SUBDIR += rubygem-train
     SUBDIR += rubygem-tweetstream
     SUBDIR += rubygem-twitter
     SUBDIR += rubygem-twitter-stream
