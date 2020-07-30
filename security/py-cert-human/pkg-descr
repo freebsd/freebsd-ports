@@ -1,0 +1,11 @@
+I wanted to incorporate a method to get an SSL certificate from a server, show
+the user the same kind of information as you'd see in a browser, prompt them for
+validity, then write it to disk for use in all requests to a server.
+
+I was unable to find any great / easy ways that incorporated all of these
+concepts into one neat thing. So I made a thing.
+
+Originally this was based off of yet another lovely over-engineered solution in
+get-ca-py by Josh Peak.
+
+WWW: https://github.com/lifehackjim/cert_human
