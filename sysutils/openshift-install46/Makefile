@@ -4,9 +4,10 @@
 PORTNAME=	openshift-install
 PORTVERSION=	4.6
 DISTVERSIONPREFIX=	release-
+PORTREVISION=	1
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	${PORTVERSION:S/.//g}
-DISTNAME=	${GIT_COMMIT}.zip
+DISTNAME=	${GH_TAGNAME}.zip
 
 MAINTAINER=	jhixson@freebsd.org
 COMMENT=	RedHat OpenShift 4.6 installer
@@ -24,9 +25,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	openshift
 GH_PROJECT=	installer
 GH_SUBDIR=	src/github.com/openshift/installer
+GH_TAGNAME=	7e1937550aac0f0c71e18bd9bddf3aaf112f0e3a
 
-GIT_COMMIT=	7e1937550aac0f0c71e18bd9bddf3aaf112f0e3a
-GIT_TAG=	unreleased-master-3414-g${GIT_COMMIT}
+GIT_TAG=	unreleased-master-3414-g${GH_TAGNAME}
 GH_TUPLE=	\
 		AlecAivazis:survey:6773bdf39b7f:alecaivazis_survey/vendor/gopkg.in/AlecAivazis/survey.v1 \
 		Azure:azure-sdk-for-go:v43.2.0:azure_azure_sdk_for_go/vendor/github.com/Azure/azure-sdk-for-go \
@@ -316,7 +317,7 @@ do-install:
 
 GO_BUILDFLAGS=	-tags release -ldflags="-s -w \
 				-X github.com/openshift/installer/pkg/version.Raw=${GIT_TAG} \
-				-X github.com/openshift/installer/pkg/version.Commit=${GIT_COMMIT}" -o "${PLIST_FILES}"
+				-X github.com/openshift/installer/pkg/version.Commit=${GH_TAGNAME}" -o "${PLIST_FILES}"
 GO_TARGET=	./cmd/openshift-install
 CGO_ENABLED=	0
 
