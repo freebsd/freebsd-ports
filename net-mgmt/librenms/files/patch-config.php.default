@@ -1,22 +1,45 @@
 --- config.php.default.orig	2020-07-10 19:56:16 UTC
 +++ config.php.default
-@@ -2,9 +2,14 @@
+@@ -2,10 +2,26 @@
  
  ## Have a look in misc/config_definitions.json for examples of settings you can set here. DO NOT EDIT misc/config_definitions.json!
  
++#
++# The FreeBSD package set the following items
++#
 +$config['installed_from_package'] = true;
 +
 +$config['log_dir']     = '/var/log/librenms';
 +$config['rrd_dir']     = '/var/db/librenms/rrd';
 +
  // This is the user LibreNMS will run as
- //Please ensure this user is created and has the correct permissions to your install
+-//Please ensure this user is created and has the correct permissions to your install
 -$config['user'] = 'librenms';
++// Please ensure this user is created and has the correct permissions to your install
++// The FreeBSD package sets this.
++// It's up to you to install a webserver, such as Apache or Nginx. By default, they
++// run as the www user.
++//
 +$config['user'] = 'www';
  
++#
++# The FreeBSD package set the above items
++#
++
  ### This should *only* be set if you want to *force* a particular hostname/port
  ### It will prevent the web interface being usable form any other hostname
-@@ -43,3 +48,22 @@ $config['enable_billing'] = 1;
+ #$config['base_url']        = "/";
+@@ -27,7 +43,8 @@ $config['auth_mechanism'] = "mysql"; # default, other 
+ #$config['nets'][] = "192.168.0.0/16";
+ 
+ # Uncomment the next line to disable daily updates
+-#$config['update'] = 0;
++# FreeBSD package uncommented this line for you.
++$config['update'] = 0;
+ 
+ # Number in days of how long to keep old rrd files. 0 disables this feature
+ $config['rrd_purge'] = 0;
+@@ -43,3 +60,22 @@ $config['enable_billing'] = 1;
  
  # Enable the in-built services support (Nagios plugins)
  $config['show_services'] = 1;
