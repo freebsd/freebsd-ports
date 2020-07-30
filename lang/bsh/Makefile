@@ -16,6 +16,7 @@ GH_ACCOUNT=	beanshell
 GH_PROJECT=	beanshell
 
 USE_JAVA=	yes
+JAVA_BUILD=	8
 
 USE_ANT=	yes
 ALL_TARGET=	jarall
@@ -23,7 +24,7 @@ ALL_TARGET=	jarall
 SUB_FILES=	${PORTNAME}.sh
 SUB_LIST=	JARNAME=${PORTNAME}.jar
 
-PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar \
+PLIST_FILES=	${JAVAJARDIR}/${PORTNAME}.jar \
 		bin/${PORTNAME}
 
 do-install:
