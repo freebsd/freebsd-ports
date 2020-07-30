@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	google-resumable-media
-PORTVERSION=	0.5.1
+PORTVERSION=	0.6.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,4 +25,14 @@ REQUESTS_DESC=	Use requests
 
 REQUESTS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.18.0:www/py-requests@${PY_FLAVOR}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 3000
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}crcmod>=1.7:devel/py-crcmod@${PY_FLAVOR}
+.endif
+
+.if ${PYTHON_REL} >= 3500
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}google-crc32c>=0.1.0:devel/py-google-crc32c@${PY_FLAVOR}
+.endif
+
+.include <bsd.port.post.mk>
