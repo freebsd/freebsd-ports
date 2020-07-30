@@ -2,8 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	pgmodeler
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.3
 DISTVERSIONPREFIX=	v
+DISTVERSIONSUFFIX=	-beta
 CATEGORIES=	databases
 
 MAINTAINER=	lbartoletti@FreeBSD.org
@@ -16,8 +17,9 @@ USES=		compiler:c++11-lib gl gmake gnome pgsql pkgconfig qmake qt:5 \
 		xorg
 USE_GITHUB=	yes
 USE_GNOME=	libxml2
-USE_QT=		gui network sql svg printsupport widgets core buildtools_build uitools testlib
 USE_GL=		gl
+USE_QT=		core gui network printsupport sql svg widgets testlib uitools \
+		buildtools_build 
 USE_XORG=	x11 xext
 
 USE_LDCONFIG=	yes

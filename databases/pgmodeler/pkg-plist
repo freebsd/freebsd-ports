@@ -1,6 +1,6 @@
 bin/pgmodeler
+bin/pgmodeler-ch
 bin/pgmodeler-cli
-lib/pgmodeler/bin/pgmodeler-ch
 lib/pgmodeler/libobjrenderer.so
 lib/pgmodeler/libobjrenderer.so.1
 lib/pgmodeler/libobjrenderer.so.1.0
@@ -136,6 +136,7 @@ lib/pgmodeler/libutils.so.1.0.0
 %%DATADIR%%/schemas/catalog/index.sch
 %%DATADIR%%/schemas/catalog/language.sch
 %%DATADIR%%/schemas/catalog/notextobject.sch
+%%DATADIR%%/schemas/catalog/objcount.sch
 %%DATADIR%%/schemas/catalog/opclass.sch
 %%DATADIR%%/schemas/catalog/operator.sch
 %%DATADIR%%/schemas/catalog/opfamily.sch
@@ -208,6 +209,7 @@ lib/pgmodeler/libutils.so.1.0.0
 %%DATADIR%%/schemas/xml/appendedsql.sch
 %%DATADIR%%/schemas/xml/basetype.sch
 %%DATADIR%%/schemas/xml/cast.sch
+%%DATADIR%%/schemas/xml/changelog.sch
 %%DATADIR%%/schemas/xml/collation.sch
 %%DATADIR%%/schemas/xml/column.sch
 %%DATADIR%%/schemas/xml/comment.sch
@@ -222,6 +224,7 @@ lib/pgmodeler/libutils.so.1.0.0
 %%DATADIR%%/schemas/xml/dtd/baseelements.dtd
 %%DATADIR%%/schemas/xml/dtd/basetype.dtd
 %%DATADIR%%/schemas/xml/dtd/cast.dtd
+%%DATADIR%%/schemas/xml/dtd/changelog.dtd
 %%DATADIR%%/schemas/xml/dtd/collation.dtd
 %%DATADIR%%/schemas/xml/dtd/column.dtd
 %%DATADIR%%/schemas/xml/dtd/constraint.dtd
@@ -262,6 +265,7 @@ lib/pgmodeler/libutils.so.1.0.0
 %%DATADIR%%/schemas/xml/dtd/usertype.dtd
 %%DATADIR%%/schemas/xml/dtd/view.dtd
 %%DATADIR%%/schemas/xml/element.sch
+%%DATADIR%%/schemas/xml/entry.sch
 %%DATADIR%%/schemas/xml/eventtrigger.sch
 %%DATADIR%%/schemas/xml/excelement.sch
 %%DATADIR%%/schemas/xml/extension.sch
