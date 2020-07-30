@@ -14,11 +14,13 @@ LICENSE_NAME=	NASA OPEN SOURCE AGREEMENT VERSION 1.3
 LICENSE_FILE=	${FILESDIR}/NASTRAN95-license.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+BROKEN=		Produces bogus files on newer versions of GCC fortran
+
+USES=		fortran gmake dos2unix
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	twuerfl
 GH_TAGNAME=	a73c57a
-
-USES=		fortran gmake
 
 ALL_TARGET=	# empty
 INSTALL_TARGET=	install-strip

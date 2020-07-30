@@ -5,7 +5,7 @@ NASTRAN is the NASA Structural Analysis System, a finite element analysis
 and opened the door to computer-aided engineering. Subsections of a design
 can be modeled and then larger groupings of these elements can again be
 modeled. NASTRAN can handle elastic stability analysis, complex
-eigenvalues for vibration and dynamic stability analysis, dynamic response 
+eigenvalues for vibration and dynamic stability analysis, dynamic response
 for transient and steady state loads, and random excitation, and static
 response to concentrated and distributed loads, thermal expansion, and
 enforced deformations.
