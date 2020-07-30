@@ -20,6 +20,6 @@ USES=		localbase python
 USE_PYTHON=	autoplist concurrent distutils
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/crc32c/_crc32c_cffi.abi3.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/crc32c/_crc32c_cffi*.so
 
 .include <bsd.port.mk>
