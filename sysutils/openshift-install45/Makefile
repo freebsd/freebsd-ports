@@ -4,9 +4,10 @@
 PORTNAME=	openshift-install
 PORTVERSION=	4.5
 DISTVERSIONPREFIX=	release-
+PORTREVISION=	1
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	${PORTVERSION:S/.//g}
-DISTNAME=	${GIT_COMMIT}.zip
+DISTNAME=	${GIT_TAGNAME}.zip
 
 MAINTAINER=	jhixson@freebsd.org
 COMMENT=	RedHat OpenShift 4.5 installer
@@ -24,9 +25,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	openshift
 GH_PROJECT=	installer
 GH_SUBDIR=	src/github.com/openshift/installer
+GH_TAGNAME=	01f5643a02f154246fab0923f8828aa9ae3b76fb
 
-GIT_COMMIT=	01f5643a02f154246fab0923f8828aa9ae3b76fb
-GIT_TAG=	unreleased-master-3148-g${GIT_COMMIT}
+GIT_TAG=	unreleased-master-3148-g${GIT_TAGNAME}
 
 GH_TUPLE=	\
 		AlecAivazis:survey:6773bdf39b7f:alecaivazis_survey/vendor/gopkg.in/AlecAivazis/survey.v1 \
@@ -304,7 +305,7 @@ do-install:
 
 GO_BUILDFLAGS=	-tags release -ldflags="-s -w \
 				-X github.com/openshift/installer/pkg/version.Raw=${GIT_TAG} \
-				-X github.com/openshift/installer/pkg/version.Commit=${GIT_COMMIT}" -o "${PLIST_FILES}"
+				-X github.com/openshift/installer/pkg/version.Commit=${GIT_TAGNAME}" -o "${PLIST_FILES}"
 GO_TARGET=	./cmd/openshift-install
 CGO_ENABLED=	0
 
