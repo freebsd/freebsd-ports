@@ -1,0 +1,160 @@
+# $FreeBSD$
+
+PORTNAME=	gitui
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.9.1
+CATEGORIES=	devel
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Terminal UI for git
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
+
+LIB_DEPENDS=	libgit2.so:devel/libgit2
+
+USES=		cargo pkgconfig
+USE_GITHUB=	yes
+GH_ACCOUNT=	extrawurst
+
+CARGO_CRATES=	addr2line-0.13.0 \
+		adler-0.2.2 \
+		ahash-0.3.8 \
+		anyhow-1.0.32 \
+		arc-swap-0.4.7 \
+		arrayref-0.3.6 \
+		arrayvec-0.4.12 \
+		arrayvec-0.5.1 \
+		autocfg-1.0.0 \
+		backtrace-0.3.50 \
+		base64-0.11.0 \
+		base64-0.12.3 \
+		bitflags-1.2.1 \
+		blake2b_simd-0.5.10 \
+		bytemuck-1.2.0 \
+		bytesize-1.0.1 \
+		cassowary-0.3.0 \
+		cc-1.0.58 \
+		cfg-if-0.1.10 \
+		chrono-0.4.13 \
+		clap-2.33.1 \
+		cloudabi-0.0.3 \
+		cloudabi-0.1.0 \
+		const-random-0.1.8 \
+		const-random-macro-0.1.8 \
+		constant_time_eq-0.1.5 \
+		cpp_demangle-0.3.0 \
+		crossbeam-channel-0.4.3 \
+		crossbeam-deque-0.7.3 \
+		crossbeam-epoch-0.8.2 \
+		crossbeam-queue-0.2.3 \
+		crossbeam-utils-0.7.2 \
+		crossterm-0.17.7 \
+		crossterm_winapi-0.6.1 \
+		debugid-0.7.2 \
+		dirs-3.0.1 \
+		dirs-sys-0.3.5 \
+		either-1.5.3 \
+		failure-0.1.8 \
+		failure_derive-0.1.8 \
+		getrandom-0.1.14 \
+		gimli-0.22.0 \
+		git2-0.13.8 \
+		glob-0.3.0 \
+		hermit-abi-0.1.15 \
+		idna-0.2.0 \
+		indexmap-1.4.0 \
+		inferno-0.10.0 \
+		instant-0.1.6 \
+		itertools-0.9.0 \
+		itoa-0.4.6 \
+		jobserver-0.1.21 \
+		lazy_static-1.4.0 \
+		libc-0.2.72 \
+		libgit2-sys-0.12.9+1.0.1 \
+		libz-sys-1.0.25 \
+		lock_api-0.3.4 \
+		lock_api-0.4.1 \
+		log-0.4.11 \
+		matches-0.1.8 \
+		maybe-uninit-2.0.0 \
+		memchr-2.3.3 \
+		memmap-0.7.0 \
+		memoffset-0.5.5 \
+		miniz_oxide-0.4.0 \
+		mio-0.7.0 \
+		miow-0.3.5 \
+		msvc-demangler-0.8.0 \
+		nix-0.17.0 \
+		nodrop-0.1.14 \
+		ntapi-0.3.4 \
+		num-format-0.4.0 \
+		num-integer-0.1.43 \
+		num-traits-0.2.12 \
+		num_cpus-1.13.0 \
+		object-0.20.0 \
+		parking_lot-0.10.2 \
+		parking_lot-0.11.0 \
+		parking_lot_core-0.7.2 \
+		parking_lot_core-0.8.0 \
+		percent-encoding-2.1.0 \
+		pkg-config-0.3.17 \
+		pprof-0.3.17 \
+		ppv-lite86-0.2.8 \
+		proc-macro-hack-0.5.16 \
+		proc-macro2-1.0.18 \
+		quick-xml-0.18.1 \
+		quote-1.0.7 \
+		rand-0.7.3 \
+		rand_chacha-0.2.2 \
+		rand_core-0.5.1 \
+		rand_hc-0.2.0 \
+		rayon-core-1.7.1 \
+		redox_syscall-0.1.56 \
+		redox_users-0.3.4 \
+		remove_dir_all-0.5.3 \
+		rgb-0.8.20 \
+		ron-0.6.0 \
+		rust-argon2-0.7.0 \
+		rustc-demangle-0.1.16 \
+		scopeguard-1.1.0 \
+		serde-1.0.114 \
+		serde_derive-1.0.114 \
+		signal-hook-0.1.16 \
+		signal-hook-registry-1.2.0 \
+		simplelog-0.8.0 \
+		smallvec-1.4.1 \
+		socket2-0.3.12 \
+		stable_deref_trait-1.1.1 \
+		str_stack-0.1.0 \
+		symbolic-common-7.4.0 \
+		symbolic-demangle-7.4.0 \
+		syn-1.0.33 \
+		synstructure-0.12.4 \
+		tempfile-3.1.0 \
+		textwrap-0.11.0 \
+		thiserror-1.0.20 \
+		thiserror-impl-1.0.20 \
+		time-0.1.43 \
+		tinyvec-0.3.3 \
+		tui-0.9.5 \
+		unicode-bidi-0.3.4 \
+		unicode-normalization-0.1.13 \
+		unicode-segmentation-1.6.0 \
+		unicode-width-0.1.8 \
+		unicode-xid-0.2.1 \
+		url-2.1.1 \
+		uuid-0.8.1 \
+		vcpkg-0.2.10 \
+		void-1.0.2 \
+		wasi-0.9.0+wasi-snapshot-preview1 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-x86_64-pc-windows-gnu-0.4.0
+
+PLIST_FILES=	bin/${PORTNAME}
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+.include <bsd.port.mk>

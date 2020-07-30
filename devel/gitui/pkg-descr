@@ -1,0 +1,14 @@
+Blazing fast terminal client for git written in Rust.
+
+Features:
+* Fast and intuitive keyboard only control
+* Context based help (no need to memorize tons of hot-keys)
+* Inspect, commit, and amend changes (incl. hooks: commit-msg/post-commit)
+* Stage, unstage, revert and reset files and hunks
+* Stashing (save, apply, drop, and inspect)
+* Browse commit log, diff committed changes
+* Scalable terminal UI layout
+* Async input polling
+* Async git API for fluid control
+
+WWW: https://github.com/extrawurst/gitui
