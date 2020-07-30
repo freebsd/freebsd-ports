@@ -3,8 +3,7 @@
 
 PORTNAME=	pgrouting
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0.0
-DISTVERSIONSUFFIX=	-rc1
+DISTVERSION=	3.0.2
 CATEGORIES=	databases geography
 
 MAINTAINER=	lbartoletti@FreeBSD.org
