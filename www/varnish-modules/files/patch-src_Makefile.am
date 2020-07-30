@@ -1,38 +1,38 @@
---- src/Makefile.am.orig	2017-05-31 20:08:36 UTC
+--- src/Makefile.am.orig	2020-07-30 18:43:48 UTC
 +++ src/Makefile.am
-@@ -28,7 +28,6 @@ vmod_LTLIBRARIES = \
+@@ -27,7 +27,6 @@ vmod_LTLIBRARIES = \
+ 	libvmod_cookie.la \
  	libvmod_header.la \
  	libvmod_saintmode.la \
- 	libvmod_softpurge.la \
 -	libvmod_tcp.la \
  	libvmod_var.la \
  	libvmod_vsthrottle.la \
  	libvmod_xkey.la
-@@ -39,7 +38,6 @@ dist_man_MANS = \
+@@ -38,7 +37,6 @@ dist_man_MANS = \
+ 	vmod_cookie.3 \
  	vmod_header.3 \
  	vmod_saintmode.3 \
- 	vmod_softpurge.3 \
 -	vmod_tcp.3 \
  	vmod_var.3 \
  	vmod_vsthrottle.3 \
  	vmod_xkey.3
-@@ -52,7 +50,6 @@ libvmod_header_la_SOURCES = vmod_header.
+@@ -51,7 +49,6 @@ libvmod_cookie_la_SOURCES = vmod_cookie.
+ libvmod_header_la_SOURCES = vmod_header.c
  libvmod_vsthrottle_la_SOURCES = vmod_vsthrottle.c
  libvmod_saintmode_la_SOURCES = vmod_saintmode.c
- libvmod_softpurge_la_SOURCES = vmod_softpurge.c foreign/hash/hash_slinger.h
 -libvmod_tcp_la_SOURCES = vmod_tcp.c
  libvmod_var_la_SOURCES = vmod_var.c
  libvmod_xkey_la_SOURCES = vmod_xkey.c
  
-@@ -62,7 +59,6 @@ nodist_libvmod_header_la_SOURCES = vcc_h
+@@ -60,7 +57,6 @@ nodist_libvmod_cookie_la_SOURCES = vcc_c
+ nodist_libvmod_header_la_SOURCES = vcc_header_if.c vcc_header_if.h
  nodist_libvmod_vsthrottle_la_SOURCES = vcc_vsthrottle_if.c vcc_vsthrottle_if.h
  nodist_libvmod_saintmode_la_SOURCES = vcc_saintmode_if.c vcc_saintmode_if.h
- nodist_libvmod_softpurge_la_SOURCES = vcc_softpurge_if.c vcc_softpurge_if.h
 -nodist_libvmod_tcp_la_SOURCES = vcc_tcp_if.c vcc_tcp_if.h
  nodist_libvmod_var_la_SOURCES = vcc_var_if.c vcc_var_if.h
  nodist_libvmod_xkey_la_SOURCES = vcc_xkey_if.c vcc_xkey_if.h
  
-@@ -105,7 +101,6 @@ EXTRA_DIST = \
+@@ -179,7 +175,6 @@ EXTRA_DIST = \
  	vmod_header.vcc \
  	vmod_saintmode.vcc \
  	vmod_softpurge.vcc \

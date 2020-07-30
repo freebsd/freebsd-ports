@@ -2,27 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	varnish-modules
-DISTVERSION=	0.12.1
-PORTREVISION=	0
+PORTVERSION=	20200730
 CATEGORIES=	www
 
-MAINTAINER=	feld@FreeBSD.org
+MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Collection of Varnish Cache modules by Varnish Software
 
 LICENSE=	BSD2CLAUSE
 
-DEPRECATED=	Uses deprecated version of python
-EXPIRATION_DATE=	2020-09-15
-
 BUILD_DEPENDS=	rst2man:textproc/py-docutils
 
-USES=		autoreconf:build gmake libtool pkgconfig python:2.7,build varnish
+USES=		autoreconf:build gmake libtool pkgconfig python:build varnish:6
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static
 INSTALL_TARGET=	install-strip
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	varnish
+GH_TAGNAME=	0f695f4
 
 MAKE_JOBS_UNSAFE=	yes
 

@@ -2,7 +2,6 @@ lib/varnish/vmods/libvmod_bodyaccess.so
 lib/varnish/vmods/libvmod_cookie.so
 lib/varnish/vmods/libvmod_header.so
 lib/varnish/vmods/libvmod_saintmode.so
-lib/varnish/vmods/libvmod_softpurge.so
 lib/varnish/vmods/libvmod_var.so
 lib/varnish/vmods/libvmod_vsthrottle.so
 lib/varnish/vmods/libvmod_xkey.so
@@ -10,7 +9,6 @@ man/man3/vmod_bodyaccess.3.gz
 man/man3/vmod_cookie.3.gz
 man/man3/vmod_header.3.gz
 man/man3/vmod_saintmode.3.gz
-man/man3/vmod_softpurge.3.gz
 man/man3/vmod_var.3.gz
 man/man3/vmod_vsthrottle.3.gz
 man/man3/vmod_xkey.3.gz
