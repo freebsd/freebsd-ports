@@ -15,7 +15,7 @@ IGNORE_WITH_MYSQL=	56 80 101m 102m 103m
 
 LIB_DEPENDS=	libconfig.so:devel/libconfig
 
-USES=		gmake mysql:client,server
+USES=		compiler:c++11-lang gmake mysql:client,server
 USE_OPENLDAP=	yes
 
 USE_GITHUB=	yes
@@ -29,6 +29,8 @@ PORTDOCS=	README INSTALL
 OPTIONS_DEFINE=	DOCS
 
 SUB_FILES=	pkg-message
+
+MAKE_ARGS=	CC="${CC}"
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/mysql/plugin
