@@ -1,0 +1,4 @@
+Date is a subclass of Object that includes the Comparable module and easily
+handles date.
+
+WWW: https://github.com/ruby/date
