@@ -14,7 +14,7 @@ bin/patchview
 bin/recountdiff
 bin/rediff
 bin/splitdiff
-bin/svndiff
+bin/svndiff.patchutils
 bin/svndiffview
 bin/unwrapdiff
 share/man/man1/combinediff.1.gz

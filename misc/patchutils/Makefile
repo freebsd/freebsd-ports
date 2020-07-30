@@ -3,6 +3,7 @@
 
 PORTNAME=	patchutils
 PORTVERSION=	0.4.2
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://cyberelk.net/tim/data/patchutils/stable/
 
@@ -19,9 +20,8 @@ SHEBANG_FILES=	patchview/gitdiff scripts/*.in
 
 GNU_CONFIGURE=	yes
 
-CONFLICTS=	devel/subversion
-
 post-install:
+	${MV} ${STAGEDIR}${PREFIX}/bin/svndiff ${STAGEDIR}${PREFIX}/bin/svndiff.patchutils
 	${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>
