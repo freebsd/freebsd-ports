@@ -58,6 +58,7 @@
     SUBDIR += beets
     SUBDIR += bharvestr-lv2
     SUBDIR += bjumblr-lv2
+    SUBDIR += bliss
     SUBDIR += blop
     SUBDIR += blop-lv2
     SUBDIR += bristol

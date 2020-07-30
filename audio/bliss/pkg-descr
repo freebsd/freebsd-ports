@@ -1,0 +1,8 @@
+Bliss music library is a multithreaded C library used to compute distance
+between songs. It is especially usable through MPD with Blissify. It is can be
+useful for creating "intelligent" playlists and/or continuous play, a la
+Spotify/Grooveshark Radio.
+
+Bliss is really useful when used as a plug-in for audio players.
+
+WWW: https://github.com/Polochon-street/bliss
