@@ -1,0 +1,3 @@
+Namespace for several file utility methods for copying, moving, removing, etc.
+
+WWW: https://github.com/ruby/fileutils
