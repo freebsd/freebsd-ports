@@ -68,7 +68,7 @@
  55.702594,	37.784919,	"zont"				# Moscow, Russia
  55.795636,	37.691646,	"marck"				# Moscow, Russia
  55.869236,	37.680909,	"amdmi3"			# Moscow, Russia
- 55.709525,	37.654288,	"glebius"			# (CORE) Moscow, Russia
+ 55.709525,	37.654288,	"glebius"			# Moscow, Russia
  55.7895,	37.635261,	"dchagin"			# Moscow, Russia
  55.8,		37.6,		"ache,bsam,demon,maxim,rik,skv,vsevolod,yar"	# Moscow, Russia
  55.768764,	37.588938,	"sergei"			# Moscow, Russia
@@ -192,7 +192,7 @@
  50.7323,	3.104,		"vanhu"				# Tourcoing, France
  48.36,		2.99,		"charnier"	align=left	# Cannes Ecluse, France
  48.83,		2.36,		"antoine"			# Paris, France
- 48.79964,	2.35058 	"bapt"				# (CORE) Villejuif, France
+ 48.79964,	2.35058 	"bapt"				# Villejuif, France
  48.827111,	2.347019,	"sbz"				# Paris, France
  41.6666,	2.3333,		"jesusr"			# Barcelona, Spain
  48.87,		2.33,		"dumbbell,cognet"	align=left	# Paris, France
@@ -206,7 +206,7 @@
  52.20360,	0.14134,	"rsm"				# Cambridge, UK
  50.84121667,	0.128383333,	"joe"				# Brighton, East Sussex, UK
  52.2035,	0.1200,		"fanf"				# Cambridge, UK
- 52.21065,	0.09235,	"rwatson"			# (CORE) Cambridge, UK
+ 52.21065,	0.09235,	"rwatson"			# Cambridge, UK
  52.116761,	0.056618,	"dmlb"				# Cambridge, UK
  51.5,		0.0,		" dfr"				# London, UK
  50.819610,	-0.136490,	"sevan"				# Brighton, East Sussex, UK
@@ -214,7 +214,7 @@
  51.50,		-0.48,		"nik"		align=left	# West Drayton, Middx., UK
  52.01,		-0.75,		"tom"		align=left	# Milton Keynes, UK
  51.461916,	-1.011833,	"jesper"			# Reading, United Kingdom
- 53.955666,	-1.072605,	"gavin"				# (CORE) York, United Kingdom
+ 53.955666,	-1.072605,	"gavin"				# York, United Kingdom
  52.635,	-1.135,		"hmp"				# Leicester, East Midlands, UK
  51.782616,     -1.373806	"matthew"			# Eynsham, UK
  48.12,		-1.60,		"martymac"			# Cesson-Sevigne, France
@@ -253,7 +253,7 @@
  40.741778,	-73.903098,	"skreuzer"			# Woodside, NY, USA
  40.75,		-73.97,		"sahil"				# New York, NY, USA 
  40.86004,	-73.98038,	"jkim"				# Leonia, NJ, USA
- 43,		-75,		"gnn"				# (CORE) New York, NY, USA
+ 43,		-75,		"gnn"				# New York, NY, USA
  45.3991,	-75.6942,	"jake"				# Ottawa, ON, Canada
  45.36613,	-75.71911,	"db"				# Ottawa, ON, Canada
  42.26785,	-76.28954,	"pat"				# Ithaca, NY, USA
@@ -274,7 +274,7 @@
  43.22,		-79.86,		"allanjude"			# Hamilton, ON, Canada
  40.441667,	-80,		"rvb"				# Pittsburgh, PA, US
  37.23,		-80.41,		"mikeh"				# Blacksburg, VA, USA
- 43.48,		-80.54,		"emaste"			# (CORE) Waterloo, ON, Canada
+ 43.48,		-80.54,		"emaste"			# Waterloo, ON, Canada
  36.294167,	-82.4725,	"jsa"				# Jonesborough, TN, USA
  34.827667,	-82.553759,	"laszlof"			# Easley, SC, USA
  42.28,		-83.75,		"rees"				# Ann Arbor, MI, USA 
@@ -327,7 +327,7 @@
  38.54,		-121.76,	"mharo"				# Davis, CA, USA
  37.4014,	-121.9265,	"weongyo"			# San Jose, CA, USA
  37.40,		-121.94,	"alfred"			# Santa Clara, CA, USA
- 37.75573,	-121.947116,	"peter"				# (CORE) San Ramon, CA, USA
+ 37.75573,	-121.947116,	"peter"				# San Ramon, CA, USA
  37.96,         -121.98,        "jhb"                           # Concord, CA, USA
  37.359394,	-121.992,	"cjc"				# Santa Clara, CA, USA
  37.4,		-122.0,		"asami"				# Santa Clara, CA, USA
