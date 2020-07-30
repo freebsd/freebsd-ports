@@ -7,7 +7,6 @@ DISTVERSIONPREFIX=	release-
 PORTREVISION=	1
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	${PORTVERSION:S/.//g}
-DISTNAME=	${GH_TAGNAME}.zip
 
 MAINTAINER=	jhixson@freebsd.org
 COMMENT=	RedHat OpenShift 4.6 installer

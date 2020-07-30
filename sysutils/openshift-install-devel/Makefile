@@ -6,7 +6,6 @@ PORTVERSION=	${GH_TAGNAME:C/^([0-9]{4})(.*)/\1/}
 DISTVERSIONPREFIX=	release-
 PORTREVISION=	1
 CATEGORIES=	sysutils
-DISTNAME=	${GH_TAGNAME}.zip
 
 MAINTAINER=	jhixson@freebsd.org
 COMMENT=	RedHat OpenShift installer

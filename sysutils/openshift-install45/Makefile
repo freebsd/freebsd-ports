@@ -7,7 +7,6 @@ DISTVERSIONPREFIX=	release-
 PORTREVISION=	1
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	${PORTVERSION:S/.//g}
-DISTNAME=	${GIT_TAGNAME}.zip
 
 MAINTAINER=	jhixson@freebsd.org
 COMMENT=	RedHat OpenShift 4.5 installer
