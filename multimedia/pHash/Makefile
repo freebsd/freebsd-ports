@@ -13,7 +13,7 @@ COMMENT=	Open source perceptual hash library
 
 LICENSE=	GPLv3+
 
-USES=		gmake libtool pathfix
+USES=		compiler:c11 gmake libtool pathfix
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PTHREAD_LIBS="-lpthread"
 INSTALL_TARGET=	install-strip
