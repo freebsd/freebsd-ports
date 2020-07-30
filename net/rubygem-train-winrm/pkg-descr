@@ -1,0 +1,4 @@
+This plugin allows applications that rely on Train to communicate with the WinRM
+API. This plugin relies on the winrm and winrm-fs gems for implementation.
+
+WWW: https://github.com/inspec/train-winrm
