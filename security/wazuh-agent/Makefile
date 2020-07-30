@@ -3,6 +3,7 @@
 PORTNAME=	wazuh
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.13.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://packages.wazuh.com/deps/3.13/
 PKGNAMESUFFIX=	-agent
@@ -31,6 +32,8 @@ SHEBANG_FILES=	${WRKSRC}/contrib/util.sh \
 		${WRKSRC}/src/init/ossec-client.sh \
 		${WRKSRC}/wodles/oscap/oscap.py \
 		${WRKSRC}/active-response/*.sh
+
+USE_RC_SUBR=	${PORTNAME}-agent
 
 USERS=		ossec ossecm ossecr
 GROUPS=		ossec
