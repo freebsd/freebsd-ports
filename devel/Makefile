@@ -6604,6 +6604,7 @@
     SUBDIR += rubygem-yui-compressor
     SUBDIR += rubygem-zeitwerk
     SUBDIR += rubygem-zentest
+    SUBDIR += rubygem-zlib
     SUBDIR += rudeconfig
     SUBDIR += rudiments
     SUBDIR += runsnakerun

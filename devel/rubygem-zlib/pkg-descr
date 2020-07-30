@@ -1,0 +1,10 @@
+This module provides access to the zlib library. Zlib is designed to be a
+portable, free, general-purpose, legally unencumbered -- that is, not covered by
+any patents -- lossless data-compression library for use on virtually any
+computer hardware and operating system.
+
+The library also supports reading and writing files in gzip (.gz) format with an
+interface similar to that of IO. The gzip format is described in RFC 1952 which
+is also a wrapper around a deflate stream.
+
+WWW: https://github.com/ruby/zlib
