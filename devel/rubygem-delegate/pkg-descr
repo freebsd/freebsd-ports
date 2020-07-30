@@ -1,0 +1,15 @@
+This library provides three different ways to delegate method calls to an
+object. The easiest to use is SimpleDelegator. Pass an object to the constructor
+and all methods supported by the object will be delegated. This object can be
+changed later.
+
+Going a step further, the top level DelegateClass method allows you to easily
+setup delegation through class inheritance. This is considerably more flexible
+and thus probably the most common use for this library.
+
+Finally, if you need full control over the delegation scheme, you can inherit
+from the abstract class Delegator and customize as needed. (If you find yourself
+needing this control, have a look at Forwardable which is also in the standard
+library. It may suit your needs better.)
+
+WWW: https://github.com/ruby/delegate
