@@ -1014,7 +1014,6 @@ include/wine/windows/wuapi.h
 include/wine/windows/wuapi.idl
 include/wine/windows/x3daudio.h
 include/wine/windows/xact3.h
-%%STAGING%%include/wine/windows/xact3.idl
 include/wine/windows/xact3wb.h
 include/wine/windows/xapo.h
 include/wine/windows/xapo.idl

@@ -102,7 +102,6 @@ MPG123_LIB_DEPENDS=	libmpg123.so:audio/mpg123
 OPENAL_CONFIGURE_WITH=	openal
 OPENAL_USES=		openal
 
-STAGING_BROKEN=		fails to build
 STAGING_MASTER_SITES=	https://github.com/wine-staging/wine-staging/archive/:staging
 STAGING_DIST=		v${DISTVERSION}.tar.gz
 STAGING_DISTFILES=	${STAGING_DIST}:staging
@@ -135,6 +134,10 @@ X11_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 # i386-wine-devel slave port.
 .ifndef WINE_SLAVE_BUILD
 .include <bsd.port.pre.mk>
+
+.if !${PORT_OPTIONS:MSTAGING}
+EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-dlls-ntdll-unix-registry.c
+.endif
 .endif
 
 .if ${ARCH} == amd64
