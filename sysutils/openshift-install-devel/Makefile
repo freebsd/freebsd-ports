@@ -2,13 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	openshift-install
-PORTVERSION=	${GIT_COMMIT:C/^([0-9]{4})(.*)/\1/}
+PORTVERSION=	${GH_TAGNAME:C/^([0-9]{4})(.*)/\1/}
 DISTVERSIONPREFIX=	release-
+PORTREVISION=	1
 CATEGORIES=	sysutils
-DISTNAME=	${GIT_COMMIT}.zip
+DISTNAME=	${GH_TAGNAME}.zip
 
 MAINTAINER=	jhixson@freebsd.org
-COMMENT=	RedHat OpenShift installer 
+COMMENT=	RedHat OpenShift installer
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${GO_WRKSRC}/LICENSE
@@ -25,8 +26,7 @@ GH_PROJECT=	installer
 GH_SUBDIR=	src/github.com/openshift/installer
 GH_TAGNAME=	7287d88d35e985b72747ed64b44907a827fb3cad
 
-GIT_COMMIT=	${GH_TAGNAME}
-GIT_TAG=	unreleased-master-3416-g${GIT_COMMIT}
+GIT_TAG=	unreleased-master-3416-g${GH_TAGNAME}
 GH_TUPLE=	\
 		AlecAivazis:survey:6773bdf39b7f:alecaivazis_survey/vendor/gopkg.in/AlecAivazis/survey.v1 \
 		Azure:azure-sdk-for-go:v43.2.0:azure_azure_sdk_for_go/vendor/github.com/Azure/azure-sdk-for-go \
@@ -316,7 +316,7 @@ do-install:
 
 GO_BUILDFLAGS=	-tags release -ldflags="-s -w \
 				-X github.com/openshift/installer/pkg/version.Raw=${GIT_TAG} \
-				-X github.com/openshift/installer/pkg/version.Commit=${GIT_COMMIT}" -o "${PLIST_FILES}"
+				-X github.com/openshift/installer/pkg/version.Commit=${GH_TAGNAME}" -o "${PLIST_FILES}"
 GO_TARGET=	./cmd/openshift-install
 CGO_ENABLED=	0
 
