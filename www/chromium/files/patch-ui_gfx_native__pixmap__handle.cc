@@ -1,7 +1,7 @@
---- ui/gfx/native_pixmap_handle.cc.orig	2020-02-24 18:39:44 UTC
+--- ui/gfx/native_pixmap_handle.cc.orig	2020-07-07 21:57:59 UTC
 +++ ui/gfx/native_pixmap_handle.cc
-@@ -8,11 +8,15 @@
- 
+@@ -9,11 +9,15 @@
+ #include "base/logging.h"
  #include "build/build_config.h"
  
 -#if defined(OS_LINUX)
@@ -17,7 +17,7 @@
  #if defined(OS_FUCHSIA)
  #include <lib/zx/vmo.h>
  #include "base/fuchsia/fuchsia_logging.h"
-@@ -20,7 +24,7 @@
+@@ -21,7 +25,7 @@
  
  namespace gfx {
  
@@ -26,7 +26,7 @@
  static_assert(NativePixmapHandle::kNoModifier == DRM_FORMAT_MOD_INVALID,
                "gfx::NativePixmapHandle::kNoModifier should be an alias for"
                "DRM_FORMAT_MOD_INVALID");
-@@ -31,7 +35,7 @@ NativePixmapPlane::NativePixmapPlane() : stride(0), of
+@@ -32,7 +36,7 @@ NativePixmapPlane::NativePixmapPlane() : stride(0), of
  NativePixmapPlane::NativePixmapPlane(int stride,
                                       int offset,
                                       uint64_t size
@@ -35,7 +35,7 @@
                                       ,
                                       base::ScopedFD fd
  #elif defined(OS_FUCHSIA)
-@@ -42,7 +46,7 @@ NativePixmapPlane::NativePixmapPlane(int stride,
+@@ -43,7 +47,7 @@ NativePixmapPlane::NativePixmapPlane(int stride,
      : stride(stride),
        offset(offset),
        size(size)
@@ -44,7 +44,7 @@
        ,
        fd(std::move(fd))
  #elif defined(OS_FUCHSIA)
-@@ -70,7 +74,7 @@ NativePixmapHandle& NativePixmapHandle::operator=(Nati
+@@ -71,7 +75,7 @@ NativePixmapHandle& NativePixmapHandle::operator=(Nati
  NativePixmapHandle CloneHandleForIPC(const NativePixmapHandle& handle) {
    NativePixmapHandle clone;
    for (auto& plane : handle.planes) {
@@ -53,7 +53,7 @@
      DCHECK(plane.fd.is_valid());
      base::ScopedFD fd_dup(HANDLE_EINTR(dup(plane.fd.get())));
      if (!fd_dup.is_valid()) {
-@@ -96,7 +100,7 @@ NativePixmapHandle CloneHandleForIPC(const NativePixma
+@@ -97,7 +101,7 @@ NativePixmapHandle CloneHandleForIPC(const NativePixma
  #endif
    }
  

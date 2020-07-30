@@ -1,6 +1,6 @@
---- third_party/crashpad/crashpad/util/misc/capture_context.h.orig	2020-05-13 18:40:36 UTC
+--- third_party/crashpad/crashpad/util/misc/capture_context.h.orig	2020-07-07 21:57:56 UTC
 +++ third_party/crashpad/crashpad/util/misc/capture_context.h
-@@ -23,7 +23,7 @@
+@@ -21,7 +21,7 @@
  #include <mach/mach.h>
  #elif defined(OS_WIN)
  #include <windows.h>
@@ -9,7 +9,7 @@
  #include <ucontext.h>
  #elif defined(OS_FUCHSIA)
  #include <signal.h>
-@@ -39,7 +39,7 @@ using NativeCPUContext = x86_thread_state;
+@@ -37,7 +37,7 @@ using NativeCPUContext = arm_unified_thread_state;
  #endif
  #elif defined(OS_WIN)
  using NativeCPUContext = CONTEXT;

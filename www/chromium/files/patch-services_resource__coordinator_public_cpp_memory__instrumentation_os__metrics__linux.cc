@@ -1,4 +1,4 @@
---- services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics_linux.cc.orig	2019-07-24 18:58:35 UTC
+--- services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics_linux.cc.orig	2020-07-07 21:58:16 UTC
 +++ services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics_linux.cc
 @@ -22,8 +22,10 @@
  #include "build/build_config.h"
@@ -44,7 +44,7 @@
  
    return res;
  }
-@@ -239,6 +243,7 @@ bool OSMetrics::FillOSMemoryDump(base::ProcessId pid,
+@@ -241,6 +245,7 @@ bool OSMetrics::FillOSMemoryDump(base::ProcessId pid,
                                   mojom::RawOSMemDump* dump) {
    // TODO(chiniforooshan): There is no need to read both /statm and /status
    // files. Refactor to get everything from /status using ProcessMetric.
@@ -52,7 +52,7 @@
    auto statm_file = GetProcPidDir(pid).Append("statm");
    auto autoclose = base::ScopedFD(open(statm_file.value().c_str(), O_RDONLY));
    int statm_fd = autoclose.get();
-@@ -253,6 +258,10 @@ bool OSMetrics::FillOSMemoryDump(base::ProcessId pid,
+@@ -255,6 +260,10 @@ bool OSMetrics::FillOSMemoryDump(base::ProcessId pid,
  
    if (!success)
      return false;
@@ -63,7 +63,7 @@
  
    auto process_metrics = CreateProcessMetrics(pid);
  
-@@ -293,6 +302,10 @@ bool OSMetrics::FillOSMemoryDump(base::ProcessId pid,
+@@ -295,6 +304,10 @@ bool OSMetrics::FillOSMemoryDump(base::ProcessId pid,
  
  // static
  std::vector<VmRegionPtr> OSMetrics::GetProcessMemoryMaps(base::ProcessId pid) {
@@ -74,7 +74,7 @@
    std::vector<VmRegionPtr> maps;
    uint32_t res = 0;
    if (g_proc_smaps_for_testing) {
-@@ -310,6 +323,7 @@ std::vector<VmRegionPtr> OSMetrics::GetProcessMemoryMa
+@@ -312,6 +325,7 @@ std::vector<VmRegionPtr> OSMetrics::GetProcessMemoryMa
      return std::vector<VmRegionPtr>();
  
    return maps;
@@ -82,7 +82,7 @@
  }
  
  // static
-@@ -317,6 +331,10 @@ OSMetrics::MappedAndResidentPagesDumpState OSMetrics::
+@@ -319,6 +333,10 @@ OSMetrics::MappedAndResidentPagesDumpState OSMetrics::
      const size_t start_address,
      const size_t end_address,
      std::vector<uint8_t>* accessed_pages_bitmap) {
@@ -93,7 +93,7 @@
    const char* kPagemap = "/proc/self/pagemap";
  
    base::ScopedFILE pagemap_file(fopen(kPagemap, "r"));
-@@ -358,6 +376,7 @@ OSMetrics::MappedAndResidentPagesDumpState OSMetrics::
+@@ -360,6 +378,7 @@ OSMetrics::MappedAndResidentPagesDumpState OSMetrics::
      }
    }
    return OSMetrics::MappedAndResidentPagesDumpState::kSuccess;

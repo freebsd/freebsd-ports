@@ -1,6 +1,6 @@
---- content/renderer/BUILD.gn.orig	2020-05-19 08:32:02 UTC
+--- content/renderer/BUILD.gn.orig	2020-07-07 21:58:15 UTC
 +++ content/renderer/BUILD.gn
-@@ -463,10 +463,11 @@ target(link_target_type, "renderer") {
+@@ -454,10 +454,11 @@ target(link_target_type, "renderer") {
    }
  
    if (is_linux) {

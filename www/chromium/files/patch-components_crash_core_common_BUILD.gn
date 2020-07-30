@@ -1,4 +1,4 @@
---- components/crash/core/common/BUILD.gn.orig	2020-03-16 18:39:48 UTC
+--- components/crash/core/common/BUILD.gn.orig	2020-07-07 21:58:15 UTC
 +++ components/crash/core/common/BUILD.gn
 @@ -7,7 +7,7 @@ import("//components/gwp_asan/buildflags/buildflags.gn
  
@@ -9,7 +9,7 @@
  }
  
  group("common") {
-@@ -104,7 +104,9 @@ target(crash_key_target_type, "crash_key_lib") {
+@@ -108,7 +108,9 @@ target(crash_key_target_type, "crash_key_lib") {
        ]
      }
  
@@ -20,12 +20,12 @@
      if (use_combined_annotations) {
        public_deps += [ "//third_party/crashpad/crashpad/client" ]
      }
-@@ -167,7 +169,7 @@ source_set("unit_tests") {
-     sources += [ "objc_zombie_unittest.mm" ]
-   }
- 
--  if (!is_mac && !is_ios && !is_win && !is_fuchsia && !is_android) {
-+  if (!is_mac && !is_ios && !is_win && !is_fuchsia && !is_android && !is_bsd) {
+@@ -184,7 +186,7 @@ source_set("unit_tests") {
+     sources += [ "crash_key_breakpad_ios_unittest.cc" ]
+     deps += [ "//third_party/breakpad:client" ]
+     include_dirs = [ "//third_party/breakpad/breakpad/src/" ]
+-  } else if (!is_mac && !is_win && !is_fuchsia && !is_android) {
++  } else if (!is_mac && !is_win && !is_fuchsia && !is_android && !is_bsd) {
      include_dirs = [ "//third_party/breakpad/breakpad/src/" ]
      sources += [ "crash_key_breakpad_unittest.cc" ]
    }

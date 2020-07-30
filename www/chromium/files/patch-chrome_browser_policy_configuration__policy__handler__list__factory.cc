@@ -1,6 +1,6 @@
---- chrome/browser/policy/configuration_policy_handler_list_factory.cc.orig	2020-05-13 18:40:22 UTC
+--- chrome/browser/policy/configuration_policy_handler_list_factory.cc.orig	2020-07-07 21:58:13 UTC
 +++ chrome/browser/policy/configuration_policy_handler_list_factory.cc
-@@ -1162,11 +1162,11 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
+@@ -1193,11 +1193,11 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
      base::Value::Type::BOOLEAN },
  #endif  // !defined(OS_MACOSX) && !defined(OS_CHROMEOS)
  
@@ -14,7 +14,7 @@
  
  #if !defined(OS_MACOSX)
    { key::kFullscreenAllowed,
-@@ -1234,11 +1234,11 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
+@@ -1265,11 +1265,11 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
      base::Value::Type::BOOLEAN },
  #endif  // BUILDFLAG(ENABLE_SPELLCHECK)
  

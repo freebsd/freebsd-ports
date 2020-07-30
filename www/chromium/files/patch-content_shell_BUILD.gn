@@ -1,7 +1,7 @@
---- content/shell/BUILD.gn.orig	2020-05-13 18:40:32 UTC
+--- content/shell/BUILD.gn.orig	2020-07-07 21:58:16 UTC
 +++ content/shell/BUILD.gn
-@@ -90,7 +90,7 @@ static_library("content_shell_app") {
-     "//content/public/app:both",
+@@ -227,7 +227,7 @@ static_library("content_shell_app") {
+     "//content/public/app",
      "//v8",
    ]
 -  if (!is_fuchsia) {
@@ -9,7 +9,7 @@
      deps += [
        "//components/crash/core/app",
        "//components/crash/core/app:test_support",
-@@ -366,6 +366,13 @@ static_library("content_shell_lib") {
+@@ -495,6 +495,13 @@ static_library("content_shell_lib") {
      ]
      deps += [ "//third_party/fuchsia-sdk/sdk/fidl/fuchsia.ui.policy" ]
    }
@@ -21,9 +21,9 @@
 +    ]
 +  }
  
-   # Annoyingly, this target and web_test_support have circular includes.
-   allow_circular_includes_from = [ "//content/test:web_test_support" ]
-@@ -948,7 +955,7 @@ group("content_shell_crash_test") {
+   if (enable_plugins) {
+     deps += [
+@@ -1070,7 +1077,7 @@ group("content_shell_crash_test") {
    if (is_win) {
      data_deps += [ "//build/win:copy_cdb_to_output" ]
    }

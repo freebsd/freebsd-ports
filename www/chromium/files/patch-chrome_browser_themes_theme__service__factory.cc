@@ -1,6 +1,6 @@
---- chrome/browser/themes/theme_service_factory.cc.orig	2020-03-16 18:39:45 UTC
+--- chrome/browser/themes/theme_service_factory.cc.orig	2020-07-07 21:57:33 UTC
 +++ chrome/browser/themes/theme_service_factory.cc
-@@ -23,7 +23,7 @@
+@@ -22,7 +22,7 @@
  #include "chrome/browser/themes/theme_helper_win.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "chrome/browser/themes/theme_service_aura_linux.h"
  #include "ui/views/linux_ui/linux_ui.h"
  #endif
-@@ -78,7 +78,7 @@ ThemeServiceFactory::~ThemeServiceFactory() {}
+@@ -77,7 +77,7 @@ ThemeServiceFactory::~ThemeServiceFactory() {}
  
  KeyedService* ThemeServiceFactory::BuildServiceInstanceFor(
      content::BrowserContext* profile) const {
@@ -18,7 +18,7 @@
    using ThemeService = ThemeServiceAuraLinux;
  #endif
  
-@@ -90,7 +90,7 @@ KeyedService* ThemeServiceFactory::BuildServiceInstanc
+@@ -89,7 +89,7 @@ KeyedService* ThemeServiceFactory::BuildServiceInstanc
  
  void ThemeServiceFactory::RegisterProfilePrefs(
      user_prefs::PrefRegistrySyncable* registry) {

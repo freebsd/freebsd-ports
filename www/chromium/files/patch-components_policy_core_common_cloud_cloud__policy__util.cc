@@ -1,4 +1,4 @@
---- components/policy/core/common/cloud/cloud_policy_util.cc.orig	2020-02-03 21:52:44 UTC
+--- components/policy/core/common/cloud/cloud_policy_util.cc.orig	2020-07-07 21:58:15 UTC
 +++ components/policy/core/common/cloud/cloud_policy_util.cc
 @@ -16,7 +16,7 @@
  #include <wincred.h>
@@ -18,7 +18,7 @@
  #include <limits.h>  // For HOST_NAME_MAX
  #endif
  
-@@ -60,7 +60,7 @@
+@@ -61,7 +61,7 @@
  #include "base/system/sys_info.h"
  #endif
  
@@ -27,7 +27,7 @@
  #include "base/system/sys_info.h"
  #endif
  
-@@ -69,11 +69,24 @@ namespace policy {
+@@ -70,11 +70,24 @@ namespace policy {
  namespace em = enterprise_management;
  
  std::string GetMachineName() {
@@ -53,7 +53,7 @@
  #elif defined(OS_MACOSX)
  // TODO(crbug.com/1024115): Find a different replacement for -[NSHost
  // currentHost] on iOS.
-@@ -123,7 +136,7 @@ std::string GetMachineName() {
+@@ -124,7 +137,7 @@ std::string GetMachineName() {
  }
  
  std::string GetOSVersion() {
@@ -62,7 +62,7 @@
    return base::SysInfo::OperatingSystemVersion();
  #elif defined(OS_WIN)
    base::win::OSInfo::VersionNumber version_number =
-@@ -146,7 +159,7 @@ std::string GetOSArchitecture() {
+@@ -147,7 +160,7 @@ std::string GetOSArchitecture() {
  }
  
  std::string GetOSUsername() {

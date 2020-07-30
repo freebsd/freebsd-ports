@@ -1,6 +1,6 @@
---- ui/native_theme/native_theme_base.cc.orig	2020-05-13 18:40:37 UTC
+--- ui/native_theme/native_theme_base.cc.orig	2020-07-07 21:58:19 UTC
 +++ ui/native_theme/native_theme_base.cc
-@@ -254,7 +254,7 @@ void NativeThemeBase::Paint(cc::PaintCanvas* canvas,
+@@ -255,7 +255,7 @@ void NativeThemeBase::Paint(cc::PaintCanvas* canvas,
      case kCheckbox:
        PaintCheckbox(canvas, state, rect, extra.button, color_scheme);
        break;

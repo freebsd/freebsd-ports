@@ -1,4 +1,4 @@
---- base/process/process_metrics_posix.cc.orig	2019-10-21 19:06:18 UTC
+--- base/process/process_metrics_posix.cc.orig	2020-07-07 21:57:30 UTC
 +++ base/process/process_metrics_posix.cc
 @@ -20,6 +20,8 @@
  
@@ -9,7 +9,7 @@
  #else
  #include <malloc.h>
  #endif
-@@ -117,7 +119,7 @@ size_t ProcessMetrics::GetMallocUsage() {
+@@ -126,7 +128,7 @@ size_t ProcessMetrics::GetMallocUsage() {
  #else
    return minfo.hblkhd + minfo.arena;
  #endif

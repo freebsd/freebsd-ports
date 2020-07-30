@@ -1,6 +1,6 @@
---- chrome/browser/flag_descriptions.h.orig	2020-05-13 18:40:22 UTC
+--- chrome/browser/flag_descriptions.h.orig	2020-07-07 21:58:13 UTC
 +++ chrome/browser/flag_descriptions.h
-@@ -18,9 +18,9 @@
+@@ -19,9 +19,9 @@
  #include "ppapi/buildflags/buildflags.h"
  #include "printing/buildflags/buildflags.h"
  
@@ -12,7 +12,7 @@
  
  // This file declares strings used in chrome://flags. These messages are not
  // translated, because instead of end-users they target Chromium developers and
-@@ -2167,14 +2167,14 @@ extern const char kZeroStateFilesDescription[];
+@@ -2303,14 +2303,14 @@ extern const char kZeroStateFilesDescription[];
  
  #endif  // #if defined(OS_CHROMEOS)
  
@@ -29,7 +29,7 @@
  
  // All views-based platforms --------------------------------------------------
  
-@@ -2193,12 +2193,12 @@ extern const char kReopenTabInProductHelpDescription[]
+@@ -2332,12 +2332,12 @@ extern const char kReopenTabInProductHelpDescription[]
  
  // Random platform combinations -----------------------------------------------
  
@@ -44,7 +44,7 @@
  
  #if BUILDFLAG(ENABLE_CLICK_TO_CALL)
  
-@@ -2207,7 +2207,7 @@ extern const char kClickToCallUIDescription[];
+@@ -2346,7 +2346,7 @@ extern const char kClickToCallUIDescription[];
  
  #endif  // BUILDFLAG(ENABLE_CLICK_TO_CALL)
  
@@ -52,8 +52,8 @@
 +#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD) || \
      defined(OS_CHROMEOS)
  
- extern const char kRemoteCopyReceiverName[];
-@@ -2219,15 +2219,15 @@ extern const char kRemoteCopyImageNotificationDescript
+ extern const char kEnableMediaFeedsName[];
+@@ -2364,15 +2364,15 @@ extern const char kRemoteCopyPersistentNotificationDes
  extern const char kRemoteCopyProgressNotificationName[];
  extern const char kRemoteCopyProgressNotificationDescription[];
  

@@ -1,6 +1,6 @@
---- base/synchronization/lock_impl.h.orig	2020-03-08 08:35:16 UTC
+--- base/synchronization/lock_impl.h.orig	2020-07-07 21:58:11 UTC
 +++ base/synchronization/lock_impl.h
-@@ -67,10 +67,13 @@ void LockImpl::Unlock() {
+@@ -69,10 +69,13 @@ void LockImpl::Unlock() {
    ::ReleaseSRWLockExclusive(reinterpret_cast<PSRWLOCK>(&native_handle_));
  }
  #elif defined(OS_POSIX) || defined(OS_FUCHSIA)

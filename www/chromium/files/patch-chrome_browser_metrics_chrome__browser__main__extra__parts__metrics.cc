@@ -1,6 +1,6 @@
---- chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc.orig	2019-09-09 21:55:09 UTC
+--- chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc.orig	2020-07-07 21:58:13 UTC
 +++ chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc
-@@ -47,7 +47,9 @@
+@@ -51,7 +51,9 @@
  
  #if defined(OS_LINUX) && !defined(OS_CHROMEOS)
  #include <gnu/libc-version.h>
@@ -10,7 +10,7 @@
  #include "base/linux_util.h"
  #include "base/strings/string_split.h"
  #include "base/strings/string_util.h"
-@@ -55,7 +57,7 @@
+@@ -59,7 +61,7 @@
  #if defined(USE_X11)
  #include "ui/base/x/x11_util.h"
  #endif

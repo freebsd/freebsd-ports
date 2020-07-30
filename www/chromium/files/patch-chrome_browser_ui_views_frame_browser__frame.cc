@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/frame/browser_frame.cc.orig	2020-05-13 18:40:25 UTC
+--- chrome/browser/ui/views/frame/browser_frame.cc.orig	2020-07-07 21:58:14 UTC
 +++ chrome/browser/ui/views/frame/browser_frame.cc
 @@ -38,14 +38,14 @@
  #include "components/user_manager/user_manager.h"
@@ -23,6 +23,6 @@
    chrome::SaveWindowWorkspace(browser_view_->browser(), GetWorkspace());
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
 +#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
-   auto workspace = display::Screen::GetScreen()->GetCurrentWorkspace();
-   BrowserList::MoveBrowsersInWorkspaceToFront(workspace.empty() ? GetWorkspace()
-                                                                 : workspace);
+   // If the window was sent to a different workspace, prioritize it if
+   // it was sent to the current workspace and deprioritize it
+   // otherwise.  This is done by MoveBrowsersInWorkspaceToFront()

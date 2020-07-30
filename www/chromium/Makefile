@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chromium
-PORTVERSION=	83.0.4103.116
-PORTREVISION=	1
+PORTVERSION=	84.0.4147.105
 CATEGORIES?=	www java
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/ \
 		LOCAL/cpm/chromium/:fonts
@@ -21,10 +20,10 @@ BUILD_DEPENDS=	bash:shells/bash \
 
 .if !defined(GN_ONLY)
 BUILD_DEPENDS+=	gperf:devel/gperf \
-		yasm:devel/yasm \
 		ffmpeg>=3.2.2,1:multimedia/ffmpeg \
 		flock:sysutils/flock \
 		node:www/node \
+		xcb-proto>0:x11/xcb-proto \
 		${LOCALBASE}/bin/ar:devel/binutils \
 		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat \
 		${LOCALBASE}/share/usbids/usb.ids:misc/usbids \
@@ -255,7 +254,15 @@ pre-configure:
 	#./build/linux/unbundle/remove_bundled_libraries.py [list of preserved]
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${PYTHON_CMD} \
 		./build/linux/unbundle/replace_gn_files.py --system-libraries \
-		ffmpeg flac fontconfig freetype harfbuzz-ng libdrm libpng libwebp libxml libxslt openh264 opus snappy yasm || ${FALSE}
+		ffmpeg flac fontconfig freetype harfbuzz-ng libdrm libpng libwebp libxml libxslt openh264 opus snappy || ${FALSE}
+
+	# We need the site package from xcbgen, which installs as python3.7 (really: default version), while the chromium
+	# build still needs to use python2.7. It works, because xcbgen can run with both versions, but we want to avoid
+	# having the pre-compiled pyc files from 2.7 in the 3.7 site packages
+	# Remove this as soon as chromium uses python3.x as well
+	@${MKDIR} ${WRKDIR}/site-packages/xcbgen
+	${CP} ${PYTHONBASE}/lib/python3.7/site-packages/xcbgen/*.py \
+		${WRKDIR}/site-packages/xcbgen
 .endif
 
 do-configure:

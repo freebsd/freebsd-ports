@@ -1,4 +1,4 @@
---- third_party/angle/src/libANGLE/Display.cpp.orig	2020-05-13 18:41:47 UTC
+--- third_party/angle/src/libANGLE/Display.cpp.orig	2020-07-07 22:03:18 UTC
 +++ third_party/angle/src/libANGLE/Display.cpp
 @@ -54,7 +54,7 @@
  #        include "libANGLE/renderer/gl/cgl/DisplayCGL.h"
@@ -36,7 +36,7 @@
              if (rx::IsVulkanXcbDisplayAvailable())
              {
                  impl = rx::CreateVulkanXcbDisplay(state);
-@@ -1387,7 +1387,7 @@ static ClientExtensions GenerateClientExtensions()
+@@ -1395,7 +1395,7 @@ static ClientExtensions GenerateClientExtensions()
      extensions.x11Visual = true;
  #endif
  

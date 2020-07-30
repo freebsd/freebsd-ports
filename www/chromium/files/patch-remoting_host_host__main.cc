@@ -1,6 +1,6 @@
---- remoting/host/host_main.cc.orig	2019-10-30 16:20:58 UTC
+--- remoting/host/host_main.cc.orig	2020-07-07 21:57:41 UTC
 +++ remoting/host/host_main.cc
-@@ -49,9 +49,9 @@ int DesktopProcessMain();
+@@ -48,9 +48,9 @@ int DesktopProcessMain();
  int FileChooserMain();
  int RdpDesktopSessionMain();
  #endif  // defined(OS_WIN)
@@ -12,7 +12,7 @@
  
  namespace {
  
-@@ -146,10 +146,10 @@ MainRoutineFn SelectMainRoutine(const std::string& pro
+@@ -143,10 +143,10 @@ MainRoutineFn SelectMainRoutine(const std::string& pro
    } else if (process_type == kProcessTypeRdpDesktopSession) {
      main_routine = &RdpDesktopSessionMain;
  #endif  // defined(OS_WIN)

@@ -1,6 +1,6 @@
---- components/feature_engagement/public/feature_list.cc.orig	2020-03-16 18:39:48 UTC
+--- components/feature_engagement/public/feature_list.cc.orig	2020-07-07 21:58:15 UTC
 +++ components/feature_engagement/public/feature_list.cc
-@@ -58,7 +58,7 @@ const base::Feature* const kAllFeatures[] = {
+@@ -60,7 +60,7 @@ const base::Feature* const kAllFeatures[] = {
      &kIPHBadgedReadingListFeature,
      &kIPHBadgedTranslateManualTriggerFeature,
  #endif  // defined(OS_IOS)
@@ -9,7 +9,7 @@
      defined(OS_CHROMEOS)
      &kIPHFocusModeFeature,
      &kIPHGlobalMediaControlsFeature,
-@@ -69,7 +69,7 @@ const base::Feature* const kAllFeatures[] = {
+@@ -71,7 +71,7 @@ const base::Feature* const kAllFeatures[] = {
      &kIPHIncognitoWindowFeature,
      &kIPHNewTabFeature,
  #endif  // BUILDFLAG(ENABLE_LEGACY_DESKTOP_IN_PRODUCT_HELP)

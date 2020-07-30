@@ -1,6 +1,6 @@
---- services/network/network_context.cc.orig	2020-05-13 18:40:33 UTC
+--- services/network/network_context.cc.orig	2020-07-07 21:58:16 UTC
 +++ services/network/network_context.cc
-@@ -1805,7 +1805,7 @@ URLRequestContextOwner NetworkContext::MakeURLRequestC
+@@ -1756,7 +1756,7 @@ URLRequestContextOwner NetworkContext::MakeURLRequestC
  
      net::CookieCryptoDelegate* crypto_delegate = nullptr;
      if (params_->enable_encrypted_cookies) {

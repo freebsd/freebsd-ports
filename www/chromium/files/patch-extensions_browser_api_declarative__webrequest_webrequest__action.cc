@@ -1,6 +1,6 @@
---- extensions/browser/api/declarative_webrequest/webrequest_action.cc.orig	2019-10-21 19:06:34 UTC
+--- extensions/browser/api/declarative_webrequest/webrequest_action.cc.orig	2020-07-07 21:57:38 UTC
 +++ extensions/browser/api/declarative_webrequest/webrequest_action.cc
-@@ -27,7 +27,11 @@
+@@ -28,7 +28,11 @@
  #include "extensions/common/extension.h"
  #include "net/base/registry_controlled_domains/registry_controlled_domain.h"
  #include "net/http/http_util.h"

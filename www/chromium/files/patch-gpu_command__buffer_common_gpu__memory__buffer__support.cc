@@ -1,6 +1,6 @@
---- gpu/command_buffer/common/gpu_memory_buffer_support.cc.orig	2020-05-13 18:40:32 UTC
+--- gpu/command_buffer/common/gpu_memory_buffer_support.cc.orig	2020-07-07 21:57:38 UTC
 +++ gpu/command_buffer/common/gpu_memory_buffer_support.cc
-@@ -54,7 +54,7 @@ bool IsImageSizeValidForGpuMemoryBufferFormat(const gf
+@@ -55,7 +55,7 @@ bool IsImageSizeValidForGpuMemoryBufferFormat(const gf
  uint32_t GetPlatformSpecificTextureTarget() {
  #if defined(OS_MACOSX)
    return macos_specific_texture_target;
@@ -9,7 +9,7 @@
    return GL_TEXTURE_EXTERNAL_OES;
  #elif defined(OS_WIN) || defined(OS_FUCHSIA)
    return GL_TEXTURE_2D;
-@@ -84,7 +84,7 @@ GPU_EXPORT uint32_t GetBufferTextureTarget(gfx::Buffer
+@@ -85,7 +85,7 @@ GPU_EXPORT uint32_t GetBufferTextureTarget(gfx::Buffer
  
  GPU_EXPORT bool NativeBufferNeedsPlatformSpecificTextureTarget(
      gfx::BufferFormat format) {

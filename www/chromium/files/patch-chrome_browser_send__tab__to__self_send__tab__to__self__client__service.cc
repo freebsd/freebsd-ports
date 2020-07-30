@@ -1,6 +1,6 @@
---- chrome/browser/send_tab_to_self/send_tab_to_self_client_service.cc.orig	2019-07-29 18:57:56 UTC
+--- chrome/browser/send_tab_to_self/send_tab_to_self_client_service.cc.orig	2020-07-07 21:57:32 UTC
 +++ chrome/browser/send_tab_to_self/send_tab_to_self_client_service.cc
-@@ -41,7 +41,7 @@ void SendTabToSelfClientService::SendTabToSelfModelLoa
+@@ -40,7 +40,7 @@ void SendTabToSelfClientService::SendTabToSelfModelLoa
  void SendTabToSelfClientService::EntriesAddedRemotely(
      const std::vector<const SendTabToSelfEntry*>& new_entries) {
    for (const std::unique_ptr<ReceivingUiHandler>& handler : GetHandlers()) {
