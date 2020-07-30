@@ -1,0 +1,4 @@
+Include the English library file in a Ruby script, and you can reference the
+global variables such as $_ using less cryptic names.
+
+WWW: https://github.com/ruby/English
