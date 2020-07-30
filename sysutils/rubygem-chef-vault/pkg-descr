@@ -1,0 +1,5 @@
+Gem that allows you to encrypt a Chef Data Bag Item using the public keys of a
+list of chef nodes. This allows only those chef nodes to decrypt the encrypted
+values.
+
+WWW: https://github.com/chef/chef-vault
