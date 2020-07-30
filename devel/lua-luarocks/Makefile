@@ -36,7 +36,7 @@ LUAJIT_PLIST_SUB=	LUA_VER=${LUA_VER} \
 LUAJIT_VARS=		LUA_INCDIR=${LOCALBASE}/include/luajit-2.0 \
 			LUA_PKGNAMEPREFIX=lua51- \
 			LUA_VER=5.1
-LUAJIT_USES_OFF=	lua
+LUAJIT_USES_OFF=	lua:flavors
 
 post-patch:
 # /usr/local is a mix of site-local data and packages installs.

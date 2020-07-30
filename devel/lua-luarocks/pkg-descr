@@ -6,4 +6,4 @@ also optionally at run time, so that when a module is required, the
 correct version is loaded. LuaRocks supports both local and remote
 repositories, and multiple local rocks trees.
 
-WWW: https://luarocks.org
+WWW: https://luarocks.org/
