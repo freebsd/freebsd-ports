@@ -2,16 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	bit64
-DISTVERSION=	0.9-7.1
+DISTVERSION=	4.0.2
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	S3 Class for Vectors of 64bit Integers
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 
-CRAN_DEPENDS=	R-cran-bit>=1.1.12:devel/R-cran-bit
+CRAN_DEPENDS=	R-cran-bit>=4.0.0:devel/R-cran-bit
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
