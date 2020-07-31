@@ -1,10 +1,10 @@
---- Makefile.detect.orig	2018-02-16 11:08:45 UTC
+--- Makefile.detect.orig	2020-07-31 15:00:38 UTC
 +++ Makefile.detect
-@@ -70,6 +70,7 @@ EXE =
- CLIBFLAGS = -fPIC
+@@ -75,6 +75,7 @@ CLIBFLAGS = -fPIC
  CLINKFLAGS = -shared
  LIBDL = 
+ RLDFLAGS=-Wl,-R$(LIBDIR)
 +LIBCHIBI_FLAGS = -Wl,-soname,libchibi-scheme$(SO).$(SOVERSION_MAJOR)
  else
- ifeq ($(PLATFORM),windows)
- SO  = .dll
+ ifeq ($(PLATFORM),solaris)
+ SO = .so
