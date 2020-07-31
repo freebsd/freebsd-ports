@@ -13,6 +13,8 @@ COMMENT?=	Multithreaded SQL database (server)
 
 LICENSE=	GPLv2
 
+BROKEN_armv6=	qemu: uncaught target signal 11 (Segmentation fault) - core dumped
+
 SLAVEDIRS=	databases/mysql56-client
 USES=		bison:build cmake:noninja cpe groff:run libedit localbase \
 		perl5 shebangfix ssl
