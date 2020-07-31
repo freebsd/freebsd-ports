@@ -1,6 +1,19 @@
 [
 {
   message: <<EOF
+promtool: Changed rule numbering from 0-based to 1-based when reporting rule errors.
+Added `prometheus_remote_storage_read_queries_total` counter and
+`prometheus_remote_storage_read_request_duration_seconds` histogram, removed
+`prometheus_remote_storage_remote_read_queries_total` counter.
+Added buckets for longer durations to
+`prometheus_remote_storage_sent_batch_duration_seconds` histogram.
+WAL compression is enabled by default.
+EOF
+  maximum_version: "2.20"
+  type: upgrade
+}
+{
+  message: <<EOF
 The `prometheus_sd_kubernetes_cache_*` metrics were removed.
 The `prometheus_sd_kubernetes_workqueue_latency_seconds` and
 `prometheus_sd_kubernetes_workqueue_work_duration_seconds` now show correct
