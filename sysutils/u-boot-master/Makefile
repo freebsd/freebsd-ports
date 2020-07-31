@@ -104,6 +104,9 @@ UBOOT_METADATA_ARMADA38X_METHOD=	raw
 UBOOT_METADATA_ARMADA38X_RAW_OFFSET=	1
 UBOOT_METADATA_ARMADA38X_RAW_BS=	512
 
+# Override for QEMU family
+UBOOT_PLIST_QEMU=	u-boot.bin
+
 # Uboot variables
 .if !defined(UBOOT_VERSION) && defined(UBOOT_VERSION_${FAMILY:tu})
 UBOOT_VERSION=${UBOOT_VERSION_${FAMILY:tu}}
@@ -132,6 +135,9 @@ UBOOT_PLIST+=	boot.scr
 .elif ${UBOOT_ARCH} == aarch64
 CROSS_COMPILE=aarch64-none-elf-
 ARCHFLAGS=ARCH=arm
+.elif ${UBOOT_ARCH} == riscv64
+CROSS_COMPILE=riscv64-none-elf-
+ARCHFLAGS=ARCH=riscv
 .else
 # Best guess for other architectures
 CROSS_COMPILE=${UBOOT_ARCH}-none-elf-
