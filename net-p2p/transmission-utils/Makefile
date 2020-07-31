@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PKGNAMESUFFIX=	-utils
-PORTREVISION=	1
+PORTREVISION=	2
 
 NLS_USES=	gettext-tools:build
 

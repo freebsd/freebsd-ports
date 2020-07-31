@@ -2,7 +2,7 @@
 
 PORTNAME=	transmission
 DISTVERSION=	3.00
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES+=	net-p2p
 SLAVEPORT?=	cli
 PKGNAMESUFFIX?=	-cli
@@ -28,6 +28,10 @@ LIB_DEPENDS+=	libcurl.so:ftp/curl \
 		libminiupnpc.so:net/miniupnpc
 
 USES+=		cmake cpe iconv libtool localbase pkgconfig ssl
+
+# Workaround: PR 248326
+# https://github.com/transmission/transmission/issues/1359
+CFLAGS+=	-DNDEBUG
 
 .  if ${SLAVEPORT:Mcli}
 NLS_USES=	gettext-runtime:run
