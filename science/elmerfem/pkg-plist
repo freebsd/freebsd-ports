@@ -357,6 +357,7 @@ share/elmersolver/lib/HarmonicSignals.so
 share/elmersolver/lib/HeatSolve.so
 share/elmersolver/lib/HeatSolveVec.so
 share/elmersolver/lib/HelmholtzBEM.so
+share/elmersolver/lib/HelmholtzProjection.so
 share/elmersolver/lib/HelmholtzSolve.so
 share/elmersolver/lib/IncompressibleNSVec.so
 share/elmersolver/lib/Isosurface.so
@@ -408,6 +409,7 @@ share/elmersolver/lib/ShearrateSolver.so
 share/elmersolver/lib/ShellSolver.so
 share/elmersolver/lib/Smitc.so
 share/elmersolver/lib/Spalart-Allmaras.so
+share/elmersolver/lib/SpringAssembly.so
 share/elmersolver/lib/StatCurrentSolve.so
 share/elmersolver/lib/StatCurrentSolveVec.so
 share/elmersolver/lib/StatElecBoundary.so

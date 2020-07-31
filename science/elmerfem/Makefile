@@ -2,9 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	elmerfem
-PORTVERSION=	8.4.20200309
-PORTREVISION=	1
-DISTVERSIONPREFIX=	release-
+PORTVERSION=	8.4.20200708
 CATEGORIES=	science
 
 MAINTAINER=	henrik@gulbra.net
@@ -17,10 +15,10 @@ LIB_DEPENDS=	libmetis.so:math/metis \
 		libopenblas.so:math/openblas \
 		libparpack.so:math/arpack-ng
 
-USES=		cmake compiler:c++11-lang fortran tcl
+USES=		cmake compiler:c++11-lang fortran
 USE_GITHUB=	yes
 GH_ACCOUNT=	ElmerCSC
-GH_TAGNAME=	39f692c
+GH_TAGNAME=	679a882b
 USE_LDCONFIG=	${PREFIX}/lib/elmersolver
 
 ALL_TARGET=	# empty
@@ -35,25 +33,36 @@ CMAKE_ARGS+=	-DHAVE_INTTYPES_H=ON
 CMAKE_ARGS+=	-Wno-dev
 .endif
 
-OPTIONS_DEFINE=		GUI
-OPTIONS_DEFAULT=	GUI
+OPTIONS_DEFINE=		GUI OCC
+OPTIONS_DEFAULT=	GUI OCC
 OPTIONS_SUB=		yes
+OCC_IMPLIES=		GUI
 
-GUI_LIB_DEPENDS=	libexpat.so:textproc/expat2 \
+GUI_DESC=		Build with ElmerGUI (Graphical User Interface)
+GUI_CMAKE_BOOL=		WITH_ELMERGUI WITH_PARAVIEW
+GUI_CMAKE_ON=		-DQWT_LIBRARY=${QT_LIBDIR}/libqwt6.so \
+			-DQWT_INCLUDE_DIR=${QT_INCDIR}/qwt6 \
+			-DDESIRED_QT_VERSION=5 \
+			-DWITH_QT5:BOOL=TRUE \
+			-DQT_FOUND:BOOL=TRUE
+GUI_LIB_DEPENDS=	libqwt6.so:x11-toolkits/qwt6
+GUI_USES=		gl jpeg qt:5 xorg
+GUI_USE=		gl=gl,glu xorg=ice,sm,x11,xext,xt qt=${QT5_LIBS:ts,}
+
+OCC_DESC=		Use OpenCASCADE for CAD import in ElmerGUI
+OCC_CMAKE_BOOL=		WITH_OCC
+OCC_CMAKE_ON=		-DVTK_DIR=${LOCALBASE}/lib/vtk-8.2/cmake/vtk-8.2
+OCC_LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 			libfreetype.so:print/freetype2 \
 			libpng16.so:graphics/png \
-			libpython2.7.so:lang/python27 \
-			libqwt6.so:x11-toolkits/qwt6 \
+			libpython3.7m.so:lang/python37 \
 			libtiff.so:graphics/tiff \
-			libvtksys-6.2.so:math/vtk6
-GUI_USES=		gl jpeg qt:5 xorg
-GUI_USE=		gl=gl,glu xorg=ice,sm,x11,xext,xt \
-			qt=buildtools_build,concurrent,core,declarative,gui,location,network,opengl,printsupport,qmake_build,script,sensors,sql,svg,webchannel,webkit,widgets,xml
+			libTKernel.so:cad/opencascade \
+			libvtksys-8.2.so:math/vtk8
 
-GUI_CMAKE_BOOL=	WITH_ELMERGUI WITH_PARAVIEW WITH_QT5 QT_FOUND # WITH_OCC requires the QVTKWidget.h that is only provided by the math/vtk6 with QT5=yes
-GUI_CMAKE_ON=	-DQWT_LIBRARY=${QT_LIBDIR}/libqwt6.so \
-		-DQWT_INCLUDE_DIR=${QT_INCDIR}/qwt6 \
-		-DDESIRED_QT_VERSION=5
+QT5_LIBS=	buildtools_build concurrent core declarative gui location \
+		network opengl printsupport qmake_build script sensors \
+		sql svg webchannel webkit widgets xml
 
 .include <bsd.port.pre.mk>
 
@@ -69,11 +78,11 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,"metis.*/metis\.h",<metis.h>,' \
 		${WRKSRC}/elmergrid/src/femelmer.c
 
-post-patch-GUI-on:
-	#@${REINPLACE_CMD} -e "s|\$${VERSION}|`${PKG_QUERY} '%v' opencascade`|" \
-	#	"${WRKSRC}/cmake/Modules/FindOCE.cmake"
-	#@${REINPLACE_CMD} -e 's|$${INCLUDE}|${LOCALBASE}/include/OpenCASCADE|' \
-	#	"${WRKSRC}/cmake/Modules/FindOCE.cmake"
+post-patch-OCC-on:
+	@${REINPLACE_CMD} -e "s|\$${VERSION}|`${PKG_QUERY} '%v' opencascade`|" \
+		"${WRKSRC}/cmake/Modules/FindOCE.cmake"
+	@${REINPLACE_CMD} -e 's|$${INCLUDE}|${LOCALBASE}/include/OpenCASCADE|' \
+		"${WRKSRC}/cmake/Modules/FindOCE.cmake"
 
 post-install:
 	${LN} -sf ElmerSolver_mpi ${STAGEDIR}${PREFIX}/bin/ElmerSolver
