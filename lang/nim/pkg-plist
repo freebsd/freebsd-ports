@@ -266,6 +266,7 @@ lib/nim/pure/htmlgen.nim
 lib/nim/pure/htmlparser.nim
 lib/nim/pure/httpclient.nim
 lib/nim/pure/httpcore.nim
+lib/nim/pure/includes/decode_helpers.nim
 lib/nim/pure/includes/osenv.nim
 lib/nim/pure/includes/oserr.nim
 lib/nim/pure/includes/osseps.nim
