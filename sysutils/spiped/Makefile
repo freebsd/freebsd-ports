@@ -2,7 +2,7 @@
 
 PORTNAME=	spiped
 PORTVERSION=	1.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils security
 MASTER_SITES=	http://www.tarsnap.com/spiped/
 
@@ -20,9 +20,8 @@ USES=		compiler:c11 tar:tgz ssl
 MAKE_ARGS+=	BINDIR=${STAGEDIR}${PREFIX}/bin
 MAKE_ARGS+=	MAN1DIR=${STAGEDIR}${PREFIX}/man/man1
 
-# Force __BSD_VISIBLE on since it works and improves performance;
 # add -I and -L directories for OpenSSL
-MAKE_ARGS+=	CFLAGS="-O2 -D__BSD_VISIBLE -I${OPENSSLINC}"
+MAKE_ARGS+=	CFLAGS="-O2 -I${OPENSSLINC}"
 MAKE_ARGS+=	LDADD_EXTRA="-L${OPENSSLLIB}"
 
 PORTDOCS=	BUILDING CHANGELOG COPYRIGHT README.md STYLE
