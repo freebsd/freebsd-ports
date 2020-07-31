@@ -1,0 +1,12 @@
+U-Boot loader for QEMU RISC-V 64-bit
+
+To use this bootloader to boot a FreeBSD RISC-V image, install
+emulators/qemu50 and sysutils/opensbi and execute it as:
+
+qemu-system-riscv64 -machine virt -m 2048m -smp 2 -nographic \
+    -bios /usr/local/share/opensbi/lp64/generic/firmware/fw_jump.elf \
+    -kernel /usr/local/share/u-boot/u-boot-qemu-riscv64/u-boot.bin \
+    -drive file=/path/to/freebsd.img,format=raw,id=hd0 \
+    -device virtio-blk-device,drive=hd0
+
+WWW: https://www.denx.de/wiki/U-Boot
