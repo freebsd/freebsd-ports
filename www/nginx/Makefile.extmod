@@ -15,9 +15,8 @@ BROTLI_LIB_DEPENDS=	libbrotlicommon.so:archivers/brotli
 BROTLI_GH_TUPLE=	eustas:ngx_brotli:8104036:brotli
 BROTLI_VARS=		DSO_EXTMODS+=brotli
 
-CACHE_PURGE_MASTER_SITES=	http://labs.frickle.com/files/:cache_purge
-CACHE_PURGE_DISTFILES=		ngx_cache_purge-2.3.tar.gz:cache_purge
-CACHE_PURGE_CONFIGURE_ON=	--add-module=${WRKDIR}/ngx_cache_purge-2.3
+CACHE_PURGE_GH_TUPLE=		nginx-modules:ngx_cache_purge:23dc16a:cache_purge
+CACHE_PURGE_CONFIGURE_ON=	--add-module=${WRKDIR}/ngx_cache_purge-23dc16a
 
 CLOJURE_CATEGORIES+=	java
 CLOJURE_USE=		JAVA=yes JAVA_OS=native JAVA_VERSION=1.8 \
