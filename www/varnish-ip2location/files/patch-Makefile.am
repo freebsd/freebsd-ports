@@ -1,0 +1,25 @@
+--- Makefile.am.orig	2020-07-31 00:31:08 UTC
++++ Makefile.am
+@@ -5,18 +5,11 @@ SUBDIRS = src
+ DISTCHECK_CONFIGURE_FLAGS = \
+ 	VMOD_DIR='$${libdir}/varnish/vmods'
+ 
+-doc_DATA = README.rst LICENSE
+-dist_man_MANS = vmod_ip2location.3
+-EXTRA_DIST = README.rst LICENSE CHANGES.rst
++doc_DATA = 
++dist_man_MANS = 
++EXTRA_DIST = LICENSE CHANGES.rst
+ 
+ MAINTAINERCLEANFILES = $(dist_man_MANS)
+ 
+-vmod_ip2location.3: README.rst
+-if HAVE_RST2MAN
+-	${RST2MAN} README.rst $@
+-else
+-	@echo "========================================"
+-	@echo "You need rst2man installed to make dist"
++vmod_ip2location.3:
+ 	@echo "========================================"
+-	@false
+-endif

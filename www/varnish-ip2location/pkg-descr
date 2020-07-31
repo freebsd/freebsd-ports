@@ -1,0 +1,7 @@
+A Varnish module that enables the website or server admins to find the
+country, region, city, latitude, longitude, zip code, time zone, ISP,
+domain name, connection type, area code, weather, mobile network,
+elevation, usage type by IP address. The module reads the geo location
+information from IP2Location BIN data file.
+
+WWW: https://github.com/ip2location/IP2Location-Varnish
