@@ -13,7 +13,7 @@ LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cppy>=1.1.0:devel/py-cppy@${PY_FLAVOR}
 
-USES=		python
+USES=		compiler:c++11-lang python
 USE_PYTHON=	autoplist concurrent distutils
 
 .include <bsd.port.mk>
