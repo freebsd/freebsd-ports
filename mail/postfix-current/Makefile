@@ -58,8 +58,6 @@ PGSQL_USES=		pgsql
 SASLKMIT_LIB_DEPENDS=	libkrb5.so:security/krb5
 SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 SQLITE_USES=		sqlite
-TLS_USES=		ssl
-BROKEN_SSL=		openssl
 
 BLACKLISTD_DESC=	Enable blacklistd support (FreeBSD 11.0 and later only)
 CDB_DESC=	CDB maps lookups
