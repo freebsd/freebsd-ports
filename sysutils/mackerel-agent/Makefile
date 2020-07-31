@@ -2,7 +2,7 @@
 
 PORTNAME=	mackerel-agent
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.68.1
+DISTVERSION=	0.68.2
 CATEGORIES=	sysutils
 
 MAINTAINER=	meta@FreeBSD.org
@@ -37,7 +37,7 @@ GH_TUPLE=	\
 		mattn:go-isatty:v0.0.12:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		motemen:go-cli:9961a876eb5f:motemen_go_cli/vendor/github.com/motemen/go-cli \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
-		shirou:gopsutil:v2.20.4:shirou_gopsutil/vendor/github.com/shirou/gopsutil
+		shirou:gopsutil:v2.20.6:shirou_gopsutil/vendor/github.com/shirou/gopsutil
 
 post-patch:
 	${REINPLACE_CMD} -e "s|/etc|${PREFIX}/etc|" ${WRKSRC}/config/config_unix.go
