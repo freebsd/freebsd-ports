@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	plasma-wayland-protocols
-DISTVERSION=	1.1.0
+DISTVERSION=	1.1.1
 CATEGORIES=	x11 kde
-MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}
+MASTER_SITES=	KDE/stable/${PORTNAME}/
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma Specific Protocols for Wayland
