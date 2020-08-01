@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	maxima:math/maxima
 
-USES=		cmake desktop-file-utils shared-mime-info
+USES=		cmake compiler:c++11-lang desktop-file-utils shared-mime-info
 USE_WX=		3.0
 USE_GITHUB=	yes
 GH_ACCOUNT=	wxMaxima-Developers
