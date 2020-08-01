@@ -109,8 +109,8 @@ TS3_DESC=		Always use memory
 # https://www.sqlite.org/queryplanner-ng.html#qpstab
 OPTIONS_RADIO_STAT=	STAT3 STAT4
 STAT_DESC=		Which query planner to use, stability or ...
-STAT3_DESC=		collect histogram data from leftmost column
-STAT4_DESC=		collect histogram data from all columns
+STAT3_DESC=		Collect histogram data from leftmost column
+STAT4_DESC=		Collect histogram data from all columns
 
 # https://sqlite.org/compile.html#enable_dbpage_vtab
 DBPAGE_DESC=		Enable DBPAGE Virtual Table
@@ -132,8 +132,11 @@ RTREE_INT_DESC=		Store 32-bit sig int (no float) coordinates
 GEOPOLY_DESC=		Uses the GeoJSON notation (RFC-7946)
 GEOPOLY_IMPLIES=	RTREE
 
-OPTIONS_RADIO_RL=	READLINES READLINEP EDITLINE
+OPTIONS_RADIO_RL=	READLINES READLINEP LIBEDIT
 RL_DESC=		Command line editing library (may be off)
+READLINES_DESC=		Use libreadline from system 	 
+READLINEP_DESC=		Use GNU libreadline from ports 	 
+LIBEDIT_DESC=		Use BSD libedit from ports
 
 OPTIONS_DEFAULT=	FTS4 URI METADATA SECURE_DELETE UNLOCK_NOTIFY THREADS \
 			EXTENSION TS1 UNICODE61 RTREE DBSTAT STSHELL LIBEDIT \
@@ -203,8 +206,10 @@ UNICODE61_CPPFLAGS_OFF=	-DSQLITE_DISABLE_FTS3_UNICODE=1
 
 LIBEDIT_CONFIGURE_ENABLE=	editline
 LIBEDIT_USES=	libedit ncurses
-READLINE_CONFIGURE_ENABLE=	readline
-READLINE_USES=	readline ncurses
+READLINES_CONFIGURE_ON= --enable-readline
+READLINES_USES= readline
+READLINEP_CONFIGURE_ON= --enable-readline
+READLINEP_USES= readline:port
 
 JSON1_CONFIGURE_ENABLE=	json1
 
