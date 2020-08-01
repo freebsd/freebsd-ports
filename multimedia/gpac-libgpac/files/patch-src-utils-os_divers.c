@@ -1,6 +1,6 @@
---- src/utils/os_divers.c.orig	2012-04-04 18:47:33.000000000 +0400
-+++ src/utils/os_divers.c	2013-10-12 14:25:42.047109095 +0400
-@@ -1533,6 +1533,123 @@
+--- src/utils/os_divers.c.orig	2020-06-16 16:17:17 UTC
++++ src/utils/os_divers.c
+@@ -1680,6 +1680,123 @@ Bool gf_sys_get_rti_os(u32 refresh_time_ms, GF_SystemR
  	return 1;
  }
  
