@@ -1,6 +1,6 @@
---- chrome/browser/browser_resources.grd.orig	2020-05-13 18:40:22 UTC
+--- chrome/browser/browser_resources.grd.orig	2020-07-07 21:58:13 UTC
 +++ chrome/browser/browser_resources.grd
-@@ -63,7 +63,7 @@
+@@ -64,7 +64,7 @@
          <include name="IDR_DISCARDS_SITE_DATA_MOJOM_LITE_JS" file="${root_gen_dir}\chrome\browser\ui\webui\discards\site_data.mojom-lite.js" compress="gzip" use_base_dir="false" type="BINDATA" />
          <include name="IDR_DISCARDS_SORTED_TABLE_BEHAVIOR_JS" file="resources\discards\sorted_table_behavior.js" compress="gzip" type="BINDATA" />
        </if>

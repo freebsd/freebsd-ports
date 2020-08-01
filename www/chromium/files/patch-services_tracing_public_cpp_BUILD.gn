@@ -1,0 +1,11 @@
+--- services/tracing/public/cpp/BUILD.gn.orig	2020-07-13 12:06:56 UTC
++++ services/tracing/public/cpp/BUILD.gn
+@@ -141,7 +141,7 @@ target(tracing_lib_type, "cpp") {
+       ]
+     }
+ 
+-    if (is_linux && !is_fuchsia) {
++    if (is_linux && !is_fuchsia && !is_bsd) {
+       deps += [ "//components/crash/core/app:app" ]
+     }
+ 

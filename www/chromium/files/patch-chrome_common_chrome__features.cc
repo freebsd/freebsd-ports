@@ -1,6 +1,6 @@
---- chrome/common/chrome_features.cc.orig	2020-05-13 18:40:25 UTC
+--- chrome/common/chrome_features.cc.orig	2020-07-07 21:58:14 UTC
 +++ chrome/common/chrome_features.cc
-@@ -66,13 +66,13 @@ const base::Feature kAsyncDns {
+@@ -68,13 +68,13 @@ const base::Feature kAsyncDns {
  #endif
  };
  

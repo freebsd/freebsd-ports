@@ -1,6 +1,6 @@
---- net/socket/unix_domain_client_socket_posix.cc.orig	2019-06-07 19:59:03 UTC
+--- net/socket/unix_domain_client_socket_posix.cc.orig	2020-07-07 21:57:40 UTC
 +++ net/socket/unix_domain_client_socket_posix.cc
-@@ -56,7 +56,7 @@ bool UnixDomainClientSocket::FillAddress(const std::st
+@@ -57,7 +57,7 @@ bool UnixDomainClientSocket::FillAddress(const std::st
      return true;
    }
  

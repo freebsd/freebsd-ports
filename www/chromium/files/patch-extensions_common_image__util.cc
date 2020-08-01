@@ -1,6 +1,6 @@
---- extensions/common/image_util.cc.orig	2020-02-03 21:52:47 UTC
+--- extensions/common/image_util.cc.orig	2020-07-07 21:57:38 UTC
 +++ extensions/common/image_util.cc
-@@ -18,7 +18,11 @@
+@@ -20,7 +20,11 @@
  #include "base/strings/stringprintf.h"
  #include "base/time/time.h"
  #include "base/timer/elapsed_timer.h"

@@ -1,20 +1,20 @@
---- chrome/browser/resources/settings/appearance_page/appearance_browser_proxy.js.orig	2020-05-13 18:40:22 UTC
+--- chrome/browser/resources/settings/appearance_page/appearance_browser_proxy.js.orig	2020-07-07 21:57:32 UTC
 +++ chrome/browser/resources/settings/appearance_page/appearance_browser_proxy.js
-@@ -24,7 +24,7 @@ cr.define('settings', function() {
+@@ -23,7 +23,7 @@ export class AppearanceBrowserProxy {
  
-     useDefaultTheme() {}
+   useDefaultTheme() {}
  
--    // <if expr="is_linux and not chromeos">
-+    // <if expr="is_bsd and not chromeos">
-     useSystemTheme() {}
+-  // <if expr="is_linux and not chromeos">
++  // <if expr="is_posix and not chromeos">
+   useSystemTheme() {}
  
-     // </if>
-@@ -64,7 +64,7 @@ cr.define('settings', function() {
-       chrome.send('useDefaultTheme');
-     }
+   // </if>
+@@ -63,7 +63,7 @@ export class AppearanceBrowserProxyImpl {
+     chrome.send('useDefaultTheme');
+   }
  
--    // <if expr="is_linux and not chromeos">
-+    // <if expr="is_bsd and not chromeos">
-     /** @override */
-     useSystemTheme() {
-       chrome.send('useSystemTheme');
+-  // <if expr="is_linux and not chromeos">
++  // <if expr="is_posix and not chromeos">
+   /** @override */
+   useSystemTheme() {
+     chrome.send('useSystemTheme');

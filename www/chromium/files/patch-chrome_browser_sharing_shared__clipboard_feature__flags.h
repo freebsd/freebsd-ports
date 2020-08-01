@@ -1,4 +1,4 @@
---- chrome/browser/sharing/shared_clipboard/feature_flags.h.orig	2020-05-13 18:40:22 UTC
+--- chrome/browser/sharing/shared_clipboard/feature_flags.h.orig	2020-07-07 21:57:32 UTC
 +++ chrome/browser/sharing/shared_clipboard/feature_flags.h
 @@ -14,7 +14,7 @@
  // Feature to allow shared clipboard gets processed.
@@ -9,7 +9,7 @@
      defined(OS_CHROMEOS)
  // Feature to enable handling remote copy messages.
  extern const base::Feature kRemoteCopyReceiver;
-@@ -27,7 +27,7 @@ extern const base::Feature kRemoteCopyImageNotificatio
+@@ -30,7 +30,7 @@ extern const base::Feature kRemoteCopyPersistentNotifi
  
  // Feature to enable progress notifications for remote copy messages.
  extern const base::Feature kRemoteCopyProgressNotification;

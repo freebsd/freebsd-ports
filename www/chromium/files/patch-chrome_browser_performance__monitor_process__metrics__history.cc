@@ -1,4 +1,4 @@
---- chrome/browser/performance_monitor/process_metrics_history.cc.orig	2019-10-21 19:06:22 UTC
+--- chrome/browser/performance_monitor/process_metrics_history.cc.orig	2020-07-07 21:57:32 UTC
 +++ chrome/browser/performance_monitor/process_metrics_history.cc
 @@ -47,7 +47,7 @@ void ProcessMetricsHistory::SampleMetrics() {
  #if defined(OS_WIN)
@@ -9,7 +9,7 @@
    idle_wakeups_ = process_metrics_->GetIdleWakeupsPerSecond();
  #endif
  #if defined(OS_MACOSX)
-@@ -88,7 +88,7 @@ void ProcessMetricsHistory::RunPerformanceTriggers() {
+@@ -90,7 +90,7 @@ void ProcessMetricsHistory::UpdateHistograms() {
            kDiskUsageHistogramMin, kDiskUsageHistogramMax,
            kDiskUsageHistogramBucketCount);
  #endif
@@ -18,7 +18,7 @@
        UMA_HISTOGRAM_COUNTS_10000(
            "PerformanceMonitor.IdleWakeups.BrowserProcess", idle_wakeups_);
  #endif
-@@ -109,7 +109,7 @@ void ProcessMetricsHistory::RunPerformanceTriggers() {
+@@ -111,7 +111,7 @@ void ProcessMetricsHistory::UpdateHistograms() {
          UMA_HISTOGRAM_BOOLEAN("PerformanceMonitor.HighCPU.RendererProcess",
                                true);
        }
@@ -27,7 +27,7 @@
        UMA_HISTOGRAM_COUNTS_10000(
            "PerformanceMonitor.IdleWakeups.RendererProcess", idle_wakeups_);
  #endif
-@@ -129,7 +129,7 @@ void ProcessMetricsHistory::RunPerformanceTriggers() {
+@@ -131,7 +131,7 @@ void ProcessMetricsHistory::UpdateHistograms() {
                                    kHistogramBucketCount);
        if (cpu_usage_ > kHighCPUUtilizationThreshold)
          UMA_HISTOGRAM_BOOLEAN("PerformanceMonitor.HighCPU.GPUProcess", true);

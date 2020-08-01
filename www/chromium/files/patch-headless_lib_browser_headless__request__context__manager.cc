@@ -1,4 +1,4 @@
---- headless/lib/browser/headless_request_context_manager.cc.orig	2020-05-13 18:40:32 UTC
+--- headless/lib/browser/headless_request_context_manager.cc.orig	2020-07-07 21:58:16 UTC
 +++ headless/lib/browser/headless_request_context_manager.cc
 @@ -27,7 +27,7 @@ namespace headless {
  
@@ -6,7 +6,7 @@
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
 +#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
- static char kProductName[] = "HeadlessChrome";
+ constexpr char kProductName[] = "HeadlessChrome";
  #endif
  
 @@ -57,7 +57,7 @@ net::NetworkTrafficAnnotationTag GetProxyConfigTraffic
@@ -18,7 +18,7 @@
  ::network::mojom::CryptConfigPtr BuildCryptConfigOnce(
      const base::FilePath& user_data_path) {
    static bool done_once = false;
-@@ -205,7 +205,7 @@ HeadlessRequestContextManager::HeadlessRequestContextM
+@@ -215,7 +215,7 @@ HeadlessRequestContextManager::HeadlessRequestContextM
      proxy_config_monitor_ = std::make_unique<HeadlessProxyConfigMonitor>(
          base::ThreadTaskRunnerHandle::Get());
    }

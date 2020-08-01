@@ -1,6 +1,6 @@
---- third_party/zlib/cpu_features.c.orig	2020-05-18 20:40:28 UTC
+--- third_party/zlib/cpu_features.c.orig	2020-07-07 21:58:18 UTC
 +++ third_party/zlib/cpu_features.c
-@@ -24,11 +24,20 @@ int ZLIB_INTERNAL x86_cpu_enable_simd = 0;
+@@ -25,11 +25,20 @@ int ZLIB_INTERNAL x86_cpu_enable_simd = 0;
  
  #ifndef CPU_NO_SIMD
  
@@ -23,7 +23,7 @@
  #include <cpu-features.h>
  #elif defined(ARMV8_OS_LINUX)
  #include <asm/hwcap.h>
-@@ -49,7 +58,7 @@ int ZLIB_INTERNAL x86_cpu_enable_simd = 0;
+@@ -50,7 +59,7 @@ int ZLIB_INTERNAL x86_cpu_enable_simd = 0;
  static void _cpu_check_features(void);
  #endif
  
@@ -32,7 +32,7 @@
  static pthread_once_t cpu_check_inited_once = PTHREAD_ONCE_INIT;
  void ZLIB_INTERNAL cpu_check_features(void)
  {
-@@ -108,6 +117,13 @@ static void _cpu_check_features(void)
+@@ -109,6 +118,13 @@ static void _cpu_check_features(void)
  #elif defined(ARMV8_OS_WINDOWS)
      arm_cpu_enable_crc32 = IsProcessorFeaturePresent(PF_ARM_V8_CRC32_INSTRUCTIONS_AVAILABLE);
      arm_cpu_enable_pmull = IsProcessorFeaturePresent(PF_ARM_V8_CRYPTO_INSTRUCTIONS_AVAILABLE);
@@ -46,10 +46,3 @@
  #endif
  }
  #endif
-@@ -145,4 +161,4 @@ static void _cpu_check_features(void)
- }
- #endif
- #endif
--#endif
-\ No newline at end of file
-+#endif

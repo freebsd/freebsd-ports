@@ -1,6 +1,6 @@
---- base/process/memory.cc.orig	2020-03-16 18:39:41 UTC
+--- base/process/memory.cc.orig	2020-07-07 21:57:30 UTC
 +++ base/process/memory.cc
-@@ -42,7 +42,7 @@ void OnNoMemoryInternal(size_t size) {
+@@ -44,7 +44,7 @@ NOINLINE void OnNoMemoryInternal(size_t size) {
  }  // namespace internal
  
  // Defined in memory_win.cc for Windows.
@@ -9,7 +9,7 @@
  
  namespace {
  
-@@ -61,7 +61,7 @@ void TerminateBecauseOutOfMemory(size_t size) {
+@@ -63,7 +63,7 @@ void TerminateBecauseOutOfMemory(size_t size) {
  #endif  // !defined(OS_WIN)
  
  // Defined in memory_mac.mm for Mac.

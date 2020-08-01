@@ -1,6 +1,6 @@
---- content/app/content_main_runner_impl.cc.orig	2020-05-13 18:40:30 UTC
+--- content/app/content_main_runner_impl.cc.orig	2020-07-07 21:58:15 UTC
 +++ content/app/content_main_runner_impl.cc
-@@ -102,17 +102,17 @@
+@@ -114,17 +114,17 @@
  #include "base/posix/global_descriptors.h"
  #include "content/public/common/content_descriptors.h"
  
@@ -21,16 +21,16 @@
  #include "base/native_library.h"
  #include "base/rand_util.h"
  #include "services/service_manager/zygote/common/common_sandbox_support_linux.h"
-@@ -133,7 +133,7 @@
+@@ -145,7 +145,7 @@
  #include "content/public/common/content_client.h"
  #endif
  
 -#endif  // OS_LINUX
 +#endif  // OS_LINUX || defined(OS_BSD)
  
- #if !defined(CHROME_MULTIPLE_DLL_BROWSER)
- #include "content/child/field_trial.h"
-@@ -300,7 +300,7 @@ void InitializeZygoteSandboxForBrowserProcess(
+ #if BUILDFLAG(USE_ZYGOTE_HANDLE)
+ #include "content/browser/sandbox_host_linux.h"
+@@ -289,7 +289,7 @@ void InitializeZygoteSandboxForBrowserProcess(
  }
  #endif  // BUILDFLAG(USE_ZYGOTE_HANDLE)
  
@@ -39,7 +39,7 @@
  
  #if BUILDFLAG(ENABLE_PLUGINS)
  // Loads the (native) libraries but does not initialize them (i.e., does not
-@@ -397,7 +397,7 @@ void PreSandboxInit() {
+@@ -386,7 +386,7 @@ void PreSandboxInit() {
  }
  #endif  // BUILDFLAG(USE_ZYGOTE_HANDLE)
  
@@ -48,7 +48,7 @@
  
  }  // namespace
  
-@@ -465,7 +465,7 @@ int RunZygote(ContentMainDelegate* delegate) {
+@@ -450,7 +450,7 @@ int RunZygote(ContentMainDelegate* delegate) {
    delegate->ZygoteStarting(&zygote_fork_delegates);
    media::InitializeMediaLibrary();
  
@@ -57,7 +57,7 @@
    PreSandboxInit();
  #endif
  
-@@ -625,11 +625,11 @@ int ContentMainRunnerImpl::Initialize(const ContentMai
+@@ -594,11 +594,11 @@ int ContentMainRunnerImpl::Initialize(const ContentMai
                     base::GlobalDescriptors::kBaseDescriptor);
  #endif  // !OS_ANDROID
  

@@ -1,6 +1,6 @@
---- chrome/common/features.gni.orig	2020-05-13 18:40:25 UTC
+--- chrome/common/features.gni.orig	2020-07-07 21:58:14 UTC
 +++ chrome/common/features.gni
-@@ -55,7 +55,7 @@ declare_args() {
+@@ -54,7 +54,7 @@ declare_args() {
    # Enables password change in leaked password dialog, disabled by default.
    enable_password_change_in_leaked_dialog = false
  

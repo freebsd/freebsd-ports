@@ -1,6 +1,6 @@
---- content/public/common/BUILD.gn.orig	2020-05-19 08:31:27 UTC
+--- content/public/common/BUILD.gn.orig	2020-07-07 21:58:15 UTC
 +++ content/public/common/BUILD.gn
-@@ -254,7 +254,7 @@ jumbo_source_set("common_sources") {
+@@ -255,7 +255,7 @@ jumbo_source_set("common_sources") {
      deps += [ "//content/public/android:jni" ]
    }
  

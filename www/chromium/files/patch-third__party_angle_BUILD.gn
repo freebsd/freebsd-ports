@@ -1,6 +1,6 @@
---- third_party/angle/BUILD.gn.orig	2020-05-13 18:41:47 UTC
+--- third_party/angle/BUILD.gn.orig	2020-07-07 22:03:17 UTC
 +++ third_party/angle/BUILD.gn
-@@ -362,6 +362,7 @@ angle_static_library("angle_gpu_info_util") {
+@@ -363,6 +363,7 @@ angle_static_library("angle_gpu_info_util") {
          "X11",
          "Xi",
          "Xext",

@@ -1,6 +1,6 @@
---- base/files/file_path_watcher_unittest.cc.orig	2020-05-13 18:40:16 UTC
+--- base/files/file_path_watcher_unittest.cc.orig	2020-07-07 21:58:11 UTC
 +++ base/files/file_path_watcher_unittest.cc
-@@ -430,7 +430,7 @@ TEST_F(FilePathWatcherTest, WatchDirectory) {
+@@ -424,7 +424,7 @@ TEST_F(FilePathWatcherTest, WatchDirectory) {
    VLOG(1) << "Waiting for file1 creation";
    ASSERT_TRUE(WaitForEvents());
  
@@ -9,7 +9,7 @@
    // Mac implementation does not detect files modified in a directory.
    ASSERT_TRUE(WriteFile(file1, "content v2"));
    VLOG(1) << "Waiting for file1 modification";
-@@ -803,7 +803,7 @@ enum Permission {
+@@ -797,7 +797,7 @@ enum Permission {
    Execute
  };
  
@@ -18,7 +18,7 @@
  bool ChangeFilePermissions(const FilePath& path, Permission perm, bool allow) {
    struct stat stat_buf;
  
-@@ -832,9 +832,9 @@ bool ChangeFilePermissions(const FilePath& path, Permi
+@@ -826,9 +826,9 @@ bool ChangeFilePermissions(const FilePath& path, Permi
    }
    return chmod(path.value().c_str(), stat_buf.st_mode) == 0;
  }
@@ -30,7 +30,7 @@
  // Linux implementation of FilePathWatcher doesn't catch attribute changes.
  // http://crbug.com/78043
  // Windows implementation of FilePathWatcher catches attribute changes that
-@@ -869,7 +869,7 @@ TEST_F(FilePathWatcherTest, DirAttributesChanged) {
+@@ -863,7 +863,7 @@ TEST_F(FilePathWatcherTest, DirAttributesChanged) {
    ASSERT_TRUE(ChangeFilePermissions(test_dir1, Execute, true));
  }
  

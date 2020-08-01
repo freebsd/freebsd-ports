@@ -1,6 +1,6 @@
---- content/renderer/media/audio/audio_device_factory.cc.orig	2020-05-13 18:40:32 UTC
+--- content/renderer/media/audio/audio_device_factory.cc.orig	2020-07-07 21:58:15 UTC
 +++ content/renderer/media/audio/audio_device_factory.cc
-@@ -36,7 +36,7 @@ AudioDeviceFactory* AudioDeviceFactory::factory_ = nul
+@@ -37,7 +37,7 @@ AudioDeviceFactory* AudioDeviceFactory::factory_ = nul
  namespace {
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || \

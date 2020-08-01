@@ -1,6 +1,6 @@
---- ui/gtk/print_dialog_gtk.cc.orig	2020-03-16 18:40:30 UTC
+--- ui/gtk/print_dialog_gtk.cc.orig	2020-07-07 21:58:19 UTC
 +++ ui/gtk/print_dialog_gtk.cc
-@@ -336,7 +336,7 @@ void PrintDialogGtk::ShowDialog(
+@@ -341,7 +341,7 @@ void PrintDialogGtk::ShowDialog(
    // Since we only generate PDF, only show printers that support PDF.
    // TODO(thestig) Add more capabilities to support?
    GtkPrintCapabilities cap = static_cast<GtkPrintCapabilities>(

@@ -1,6 +1,6 @@
---- cc/layers/scrollbar_layer_impl_base.cc.orig	2019-12-16 21:50:40 UTC
+--- cc/layers/scrollbar_layer_impl_base.cc.orig	2020-07-07 21:58:11 UTC
 +++ cc/layers/scrollbar_layer_impl_base.cc
-@@ -220,8 +220,8 @@ gfx::Rect ScrollbarLayerImplBase::ComputeThumbQuadRect
+@@ -219,8 +219,8 @@ gfx::Rect ScrollbarLayerImplBase::ComputeThumbQuadRect
    int thumb_offset = TrackStart();
    if (maximum > 0) {
      float ratio = clamped_current_pos / maximum;

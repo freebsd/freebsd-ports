@@ -1,6 +1,6 @@
---- chrome/browser/chrome_browser_main_posix.cc.orig	2019-06-04 18:55:16 UTC
+--- chrome/browser/chrome_browser_main_posix.cc.orig	2020-07-07 21:58:13 UTC
 +++ chrome/browser/chrome_browser_main_posix.cc
-@@ -70,7 +70,7 @@ void ExitHandler::ExitWhenPossibleOnUIThread(int signa
+@@ -71,7 +71,7 @@ void ExitHandler::ExitWhenPossibleOnUIThread(int signa
      // ExitHandler takes care of deleting itself.
      new ExitHandler();
    } else {
@@ -9,7 +9,7 @@
      switch (signal) {
        case SIGINT:
        case SIGHUP:
-@@ -166,7 +166,7 @@ void ChromeBrowserMainPartsPosix::PostMainMessageLoopS
+@@ -167,7 +167,7 @@ void ChromeBrowserMainPartsPosix::PostMainMessageLoopS
  void ChromeBrowserMainPartsPosix::ShowMissingLocaleMessageBox() {
  #if defined(OS_CHROMEOS)
    NOTREACHED();  // Should not ever happen on ChromeOS.

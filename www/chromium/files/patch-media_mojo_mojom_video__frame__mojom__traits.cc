@@ -1,6 +1,6 @@
---- media/mojo/mojom/video_frame_mojom_traits.cc.orig	2020-05-13 18:40:32 UTC
+--- media/mojo/mojom/video_frame_mojom_traits.cc.orig	2020-07-07 21:58:16 UTC
 +++ media/mojo/mojom/video_frame_mojom_traits.cc
-@@ -20,9 +20,9 @@
+@@ -21,9 +21,9 @@
  #include "ui/gfx/mojom/buffer_types_mojom_traits.h"
  #include "ui/gfx/mojom/color_space_mojom_traits.h"
  
@@ -12,7 +12,7 @@
  
  namespace mojo {
  
-@@ -62,7 +62,7 @@ media::mojom::VideoFrameDataPtr MakeVideoFrameData(
+@@ -63,7 +63,7 @@ media::mojom::VideoFrameDataPtr MakeVideoFrameData(
              std::move(offsets)));
    }
  
@@ -21,7 +21,7 @@
    if (input->storage_type() == media::VideoFrame::STORAGE_DMABUFS) {
      std::vector<mojo::PlatformHandle> dmabuf_fds;
  
-@@ -165,7 +165,7 @@ bool StructTraits<media::mojom::VideoFrameDataView,
+@@ -166,7 +166,7 @@ bool StructTraits<media::mojom::VideoFrameDataView,
          shared_buffer_data.TakeFrameData(),
          shared_buffer_data.frame_data_size(), std::move(offsets),
          std::move(strides), timestamp);

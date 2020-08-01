@@ -1,6 +1,6 @@
---- services/tracing/public/cpp/perfetto/trace_time.cc.orig	2020-03-17 10:13:47 UTC
+--- services/tracing/public/cpp/perfetto/trace_time.cc.orig	2020-07-07 21:57:41 UTC
 +++ services/tracing/public/cpp/perfetto/trace_time.cc
-@@ -13,13 +13,17 @@ namespace tracing {
+@@ -12,13 +12,17 @@ namespace tracing {
  
  int64_t TraceBootTicksNow() {
    // On Windows and Mac, TRACE_TIME_TICKS_NOW() behaves like boottime already.

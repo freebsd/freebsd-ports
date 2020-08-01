@@ -1,8 +1,8 @@
---- chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc.orig	2020-03-16 18:40:29 UTC
+--- chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc.orig	2020-07-07 21:58:13 UTC
 +++ chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc
-@@ -295,7 +295,7 @@ void ChromeBrowserMainExtraPartsProfiles::
-   if (base::FeatureList::IsEnabled(media::kUseMediaHistoryStore))
-     media_history::MediaHistoryKeyedServiceFactory::GetInstance();
+@@ -301,7 +301,7 @@ void ChromeBrowserMainExtraPartsProfiles::
+   media_router::MediaRouterUIServiceFactory::GetInstance();
+ #endif
  #if defined(OS_WIN) || defined(OS_MACOSX) || \
 -    (defined(OS_LINUX) && !defined(OS_CHROMEOS))
 +    (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)

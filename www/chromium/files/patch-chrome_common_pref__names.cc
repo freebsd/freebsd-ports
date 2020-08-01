@@ -1,6 +1,6 @@
---- chrome/common/pref_names.cc.orig	2020-05-13 18:40:25 UTC
+--- chrome/common/pref_names.cc.orig	2020-07-07 21:58:14 UTC
 +++ chrome/common/pref_names.cc
-@@ -1108,7 +1108,7 @@ const char kForceYouTubeRestrict[] = "settings.force_y
+@@ -1076,7 +1076,7 @@ const char kForceYouTubeRestrict[] = "settings.force_y
  // only using an account that belongs to one of the domains from this pref.
  const char kAllowedDomainsForApps[] = "settings.allowed_domains_for_apps";
  
@@ -9,7 +9,7 @@
  // Linux specific preference on whether we should match the system theme.
  const char kUsesSystemTheme[] = "extensions.theme.use_system";
  #endif
-@@ -1242,7 +1242,7 @@ const char kShowUpdatePromotionInfoBar[] =
+@@ -1213,7 +1213,7 @@ const char kShowUpdatePromotionInfoBar[] =
      "browser.show_update_promotion_info_bar";
  #endif
  
@@ -18,7 +18,7 @@
  // Boolean that is false if we should show window manager decorations.  If
  // true, we draw a custom chrome frame (thicker title bar and blue border).
  const char kUseCustomChromeFrame[] = "browser.custom_chrome_frame";
-@@ -1677,7 +1677,7 @@ const char kDownloadDefaultDirectory[] = "download.def
+@@ -1651,7 +1651,7 @@ const char kDownloadDefaultDirectory[] = "download.def
  // upgrade a unsafe location to a safe location.
  const char kDownloadDirUpgraded[] = "download.directory_upgrade";
  
@@ -27,7 +27,7 @@
  const char kOpenPdfDownloadInSystemReader[] =
      "download.open_pdf_in_system_reader";
  #endif
-@@ -1973,12 +1973,12 @@ const char kGloballyScopeHTTPAuthCacheEnabled[] =
+@@ -1962,12 +1962,12 @@ const char kGloballyScopeHTTPAuthCacheEnabled[] =
  const char kAmbientAuthenticationInPrivateModesEnabled[] =
      "auth.ambient_auth_in_private_modes";
  
@@ -42,7 +42,7 @@
  
  #if defined(OS_POSIX)
  // Boolean that specifies whether NTLMv2 is enabled.
-@@ -2882,7 +2882,7 @@ const char kAutoplayWhitelist[] = "media.autoplay_whit
+@@ -2874,7 +2874,7 @@ const char kAutoplayWhitelist[] = "media.autoplay_whit
  const char kBlockAutoplayEnabled[] = "media.block_autoplay";
  #endif  // !defined(OS_ANDROID)
  

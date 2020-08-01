@@ -1,6 +1,6 @@
---- content/test/BUILD.gn.orig	2020-05-19 08:32:40 UTC
+--- content/test/BUILD.gn.orig	2020-07-07 21:58:16 UTC
 +++ content/test/BUILD.gn
-@@ -1337,15 +1337,22 @@ test("content_browsertests") {
+@@ -1330,15 +1330,22 @@ test("content_browsertests") {
    }
  
    if (is_linux) {

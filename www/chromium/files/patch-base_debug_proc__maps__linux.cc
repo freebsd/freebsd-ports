@@ -1,6 +1,6 @@
---- base/debug/proc_maps_linux.cc.orig	2020-03-16 18:39:41 UTC
+--- base/debug/proc_maps_linux.cc.orig	2020-07-07 21:57:30 UTC
 +++ base/debug/proc_maps_linux.cc
-@@ -12,7 +12,7 @@
+@@ -13,7 +13,7 @@
  #include "base/strings/string_split.h"
  #include "build/build_config.h"
  
@@ -9,7 +9,7 @@
  #include <inttypes.h>
  #endif
  
-@@ -28,6 +28,11 @@
+@@ -29,6 +29,11 @@
  namespace base {
  namespace debug {
  
@@ -21,7 +21,7 @@
  // Scans |proc_maps| starting from |pos| returning true if the gate VMA was
  // found, otherwise returns false.
  static bool ContainsGateVMA(std::string* proc_maps, size_t pos) {
-@@ -43,15 +48,16 @@ static bool ContainsGateVMA(std::string* proc_maps, si
+@@ -44,15 +49,16 @@ static bool ContainsGateVMA(std::string* proc_maps, si
    return false;
  #endif
  }
@@ -40,7 +40,7 @@
      return false;
    }
    proc_maps->clear();
-@@ -65,7 +71,7 @@ bool ReadProcMaps(std::string* proc_maps) {
+@@ -66,7 +72,7 @@ bool ReadProcMaps(std::string* proc_maps) {
  
      ssize_t bytes_read = HANDLE_EINTR(read(fd.get(), buffer, kReadSize));
      if (bytes_read < 0) {
@@ -49,7 +49,7 @@
        proc_maps->clear();
        return false;
      }
-@@ -76,6 +82,7 @@ bool ReadProcMaps(std::string* proc_maps) {
+@@ -77,6 +83,7 @@ bool ReadProcMaps(std::string* proc_maps) {
      if (bytes_read == 0)
        break;
  
@@ -57,7 +57,7 @@
      // The gate VMA is handled as a special case after seq_file has finished
      // iterating through all entries in the virtual memory table.
      //
-@@ -86,6 +93,7 @@ bool ReadProcMaps(std::string* proc_maps) {
+@@ -87,6 +94,7 @@ bool ReadProcMaps(std::string* proc_maps) {
      // Avoid this by searching for the gate VMA and breaking early.
      if (ContainsGateVMA(proc_maps, pos))
        break;
@@ -65,7 +65,7 @@
    }
  
    return true;
-@@ -114,10 +122,32 @@ bool ParseProcMaps(const std::string& input,
+@@ -115,10 +123,32 @@ bool ParseProcMaps(const std::string& input,
      MappedMemoryRegion region;
      const char* line = lines[i].c_str();
      char permissions[5] = {'\0'};  // Ensure NUL-terminated string.
@@ -99,7 +99,7 @@
  
      // Sample format from man 5 proc:
      //
-@@ -133,6 +163,7 @@ bool ParseProcMaps(const std::string& input,
+@@ -134,6 +164,7 @@ bool ParseProcMaps(const std::string& input,
        DPLOG(WARNING) << "sscanf failed for line: " << line;
        return false;
      }
@@ -107,7 +107,7 @@
  
      region.permissions = 0;
  
-@@ -151,14 +182,31 @@ bool ParseProcMaps(const std::string& input,
+@@ -152,14 +183,31 @@ bool ParseProcMaps(const std::string& input,
      else if (permissions[2] != '-')
        return false;
  

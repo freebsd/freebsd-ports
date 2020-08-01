@@ -1,6 +1,6 @@
---- base/process/process_metrics.cc.orig	2019-07-24 18:58:02 UTC
+--- base/process/process_metrics.cc.orig	2020-07-07 21:57:30 UTC
 +++ base/process/process_metrics.cc
-@@ -57,7 +57,7 @@ SystemMetrics SystemMetrics::Sample() {
+@@ -58,7 +58,7 @@ SystemMetrics SystemMetrics::Sample() {
    SystemMetrics system_metrics;
  
    system_metrics.committed_memory_ = GetSystemCommitCharge();
@@ -9,7 +9,7 @@
    GetSystemMemoryInfo(&system_metrics.memory_info_);
    GetVmStatInfo(&system_metrics.vmstat_info_);
    GetSystemDiskInfo(&system_metrics.disk_info_);
-@@ -75,7 +75,7 @@ std::unique_ptr<Value> SystemMetrics::ToValue() const 
+@@ -76,7 +76,7 @@ std::unique_ptr<Value> SystemMetrics::ToValue() const 
    std::unique_ptr<DictionaryValue> res(new DictionaryValue());
  
    res->SetIntKey("committed_memory", static_cast<int>(committed_memory_));
@@ -18,7 +18,7 @@
    std::unique_ptr<DictionaryValue> meminfo = memory_info_.ToValue();
    std::unique_ptr<DictionaryValue> vmstat = vmstat_info_.ToValue();
    meminfo->MergeDictionary(vmstat.get());
-@@ -126,7 +126,7 @@ double ProcessMetrics::GetPlatformIndependentCPUUsage(
+@@ -127,7 +127,7 @@ double ProcessMetrics::GetPlatformIndependentCPUUsage(
  }
  #endif
  
@@ -27,7 +27,7 @@
  int ProcessMetrics::CalculateIdleWakeupsPerSecond(
      uint64_t absolute_idle_wakeups) {
    return CalculateEventsPerSecond(absolute_idle_wakeups,
-@@ -138,7 +138,7 @@ int ProcessMetrics::GetIdleWakeupsPerSecond() {
+@@ -139,7 +139,7 @@ int ProcessMetrics::GetIdleWakeupsPerSecond() {
    NOTIMPLEMENTED();  // http://crbug.com/120488
    return 0;
  }

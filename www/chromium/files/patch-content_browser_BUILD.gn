@@ -1,6 +1,6 @@
---- content/browser/BUILD.gn.orig	2020-05-19 08:29:25 UTC
+--- content/browser/BUILD.gn.orig	2020-07-07 21:58:15 UTC
 +++ content/browser/BUILD.gn
-@@ -2004,6 +2004,9 @@ jumbo_source_set("browser") {
+@@ -2044,6 +2044,9 @@ jumbo_source_set("browser") {
        "//third_party/blink/public/mojom:memory_usage_monitor_linux_mojo_bindings",
      ]
    }
