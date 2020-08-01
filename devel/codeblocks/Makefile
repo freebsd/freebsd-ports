@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	codeblocks
-PORTVERSION=	17.12
-PORTREVISION=	10
+PORTVERSION=	20.03
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/Sources/${PORTVERSION}
-DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Open source, cross-platform, free C/C++ IDE
@@ -24,8 +22,8 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 USES=		autoreconf compiler:c++11-lang desktop-file-utils \
 		fam:gamin gettext-runtime gnome libtool localbase \
 		pathfix pkgconfig shared-mime-info tar:xz xorg
-USE_WX=		2.8
-USE_GNOME=	gtk20 cairo
+USE_WX=		3.0+
+USE_GNOME=	gtk30 cairo
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-wx-config=${WX_CONFIG} --with-contrib-plugins=all \
@@ -37,13 +35,4 @@ USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-.include <bsd.port.pre.mk>
-
-.if ${CHOSEN_COMPILER_TYPE} == clang
-USE_CXXSTD=	c++11
-. if ${COMPILER_VERSION} >= 35
-CXXFLAGS+=	-Wno-undefined-bool-conversion
-. endif
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
