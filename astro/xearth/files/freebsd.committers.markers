@@ -12,14 +12,14 @@
 # Style (sorted from east to west): sort -n -r -k2
 # Lat,		Long,		"name"	opt			# location
 
--37.800152,     143.751219,	"grog"				# Dereel, VIC, Australia
+-37.800152,	143.751219,	"grog"				# Dereel, VIC, Australia
  35.65757,	139.69288,	"kuriyama"			# Tokyo, Japan
  35.593,	139.688,	"bland"				# Tokyo, Japan
  35.64,		139.65,		"tota"				# Setagaya, Tokyo, Japan
- 35.7,		139.6,		"     knu,simokawa"		# Tokyo, Japan
+ 35.7,		139.6,		"knu,simokawa"			# Tokyo, Japan
  35.59,		139.59,		"tagattie"			# Kawasaki, Kanagawa, Japan
- 35.54,		139.53,		"        ,nyan,ume"		# Yokohama, Kanagawa, Japan
- 35.36,		139.31,		"                     ,daichi"	# Kawasaki, Kanagawa, Japan
+ 35.54,		139.53,		"nyan,ume"			# Yokohama, Kanagawa, Japan
+ 35.36,		139.31,		"daichi"			# Kawasaki, Kanagawa, Japan
  35.009668,	135.75497,	"takawata"			# Kyoto, Kyoto, Japan
  48.516613,	135.051836,	"fluffy"			# Khabarovsk, Russia
  31.2,		121.5,		"loader"			# Shanghai, China
@@ -57,7 +57,7 @@
  51.03686,	13.787446,	"joerg"				# Dresden, Germany
  52.521848,	13.394147,	"wosch"				# Berlin, Germany
  52.506605,	13.330695,	"0mp"				# Berlin, Germany
- 55.42, 	13.12,		"brueffer"			# Lund, Sweden
+ 55.42,		13.12,		"brueffer"			# Lund, Sweden
  58.234618,	12.832098,	"joel"				# Arentorp, Sweden
  41.90000,	12.48333,	"bar"				# Roma, Italy
  49.200270,	12.279196,	"marius"			# Cham, Germany
@@ -90,7 +90,7 @@
  51.22720,	6.80959,	"pizzamig"			# Duesseldorf, Germany
  51.126809,	6.784074,	"oliver"			# Dormagen, Germany
  45.8766,	6.633,		"lbartoletti"			# Sallanches, France
- 49.612,        6.130,          "culot"                         # Luxembourg, Luxembourg
+ 49.612,	6.130,		"culot"				# Luxembourg, Luxembourg
  51.86,		5.85,		"adridg"			# Lent, The Netherlands
  53.20460,	5.80429,	"kwm"				# Leeuwarden, The Netherlands
  51.758894,	5.739367,	"ed"				# Grave, the Netherlands
@@ -98,7 +98,7 @@
  52.088936,	5.097134,	"dim"				# Utrecht, The Netherlands
  45.636772,	4.949373,	"thierry"	align=left	# Chaponnay, France
  48.83,		2.36,		"antoine"			# Paris, France
- 48.79964,	2.35058 	"bapt"				# Villejuif, France
+ 48.79964,	2.35058,	"bapt"				# Villejuif, France
  48.827111,	2.347019,	"sbz"				# Paris, France
  48.87,		2.33,		"dumbbell,cognet"	align=left	# Paris, France
  48.8473,	2.2856,		"mat"				# Paris, France
@@ -111,7 +111,7 @@
  50.819610,	-0.136490,	"sevan"				# Brighton, East Sussex, UK
  51.53,		-0.18,		"n_hibma"	align=above	# London, UK
  53.955666,	-1.072605,	"gavin"				# York, United Kingdom
- 51.782616,     -1.373806	"matthew"			# Eynsham, UK
+ 51.782616,	-1.373806,	"matthew"			# Eynsham, UK
  48.12,		-1.60,		"martymac"			# Cesson-Sevigne, France
  48.10927,	-1.61104,	"jadawin"			# Cesson-Sevigne, France
  47.394586,	-1.658038,	"olivier"			# Heric, France
@@ -120,7 +120,7 @@
  37.1876,	-3.6149,	"cpm"				# Granada, Spain
  40.4445,	-3.6722,	"fernape"			# Madrid, Spain
  53.20,		-6.15,		"dwmalone"	align=left	# Dublin, Ireland
--22.81,         -47.06,         "alfredo"                       # Cidade Universitaria, Rio de Janeiro, Brasil
+-22.81,		-47.06,		"alfredo"			# Cidade Universitaria, Rio de Janeiro, Brasil
 -20.950,	-47.917,	"garga"				# Limeira, SP, Brazil
 -27.583,	-48.765,	"araujo"			# Florianopolis, SC, Brazil
 -25.477905,	-49.212143,	"wg"				# Curitiba, PR, Brazil
@@ -152,7 +152,7 @@
  44.89,		-93.35,		"bdrewery"			# Minneapolis, MN, USA
  39.168,	-96.620,	"kevans"			# Manhattan, KS, USA
  30.47702408,	-97.64801025,	"ler"				# Pflugerville, TX, USA
- 30.343,	-97.881,	"          ,linimon"		# Austin, TX, USA
+ 30.343,	-97.881,	"linimon"			# Austin, TX, USA
  39.897418,	-104.981891,	"brd"				# Northglenn, CO, USA
  39.897418,	-105.074891,	"will"				# Westminster, CO, USA
  40.01942534,	-105.23914289,	"imp"				# Boulder, CO, USA
@@ -161,16 +161,16 @@
  40.615069,	-111.831064,	"bcran"				# Cottonwood Heights, UT, USA
  33.3437,	-111.9344,	"kbowling"			# Tempe, Arizona, USA
  47.74075,	-116.83366,	"jasone"			# Coeur d'Alene, ID, USA
- 33.001565,	-117.068113,	"    gordon"			# San Diego, CA, USA
+ 33.001565,	-117.068113,	"gordon"			# San Diego, CA, USA
  46.070,	-118.324,	"brooks"			# Walla Walla, WA, USA
- 52.8,          -119.3,         "rmacklem"			# Valemount, BC, Canada
+ 52.8,		-119.3,		"rmacklem"			# Valemount, BC, Canada
  35.383,	-120.659,	"jgh"				# San Luis Obispo, CA, USA
  39.25,		-121.02,	"truckman"			# Nevada City, CA, USA
  37.75573,	-121.947116,	"peter"				# San Ramon, CA, USA
- 37.96,         -121.98,        "jhb"                           # Concord, CA, USA
+ 37.96,		-121.98,	"jhb"				# Concord, CA, USA
  37.368,	-121.993,	"gshapiro"			# Santa Clara, CA, USA
  37.38,		-122.05,	"obrien"			# Sunnyvale, CA, USA
- 37.40,         -122.07,        "murray"			# Mountain View, CA, USA
+ 37.40,		-122.07,	"murray"			# Mountain View, CA, USA
  37.3905,	-122.0715,	"delphij"			# Mountain View, CA, USA
  37.89,		-122.12,	"bmah"				# Lafayette, CA, USA
  37.84,		-122.25,	"jmg"				# Oakland, CA, USA
