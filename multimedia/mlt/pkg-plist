@@ -1,6 +1,7 @@
 bin/melt
 include/mlt++/Mlt.h
 include/mlt++/MltAnimation.h
+include/mlt++/MltAudio.h
 include/mlt++/MltConfig.h
 include/mlt++/MltConsumer.h
 include/mlt++/MltDeque.h
@@ -26,6 +27,7 @@ include/mlt++/MltTractor.h
 include/mlt++/MltTransition.h
 include/mlt/framework/mlt.h
 include/mlt/framework/mlt_animation.h
+include/mlt/framework/mlt_audio.h
 include/mlt/framework/mlt_cache.h
 include/mlt/framework/mlt_consumer.h
 include/mlt/framework/mlt_deque.h
@@ -63,11 +65,10 @@ lib/libmlt.so.%%PORTVERSION%%
 lib/mlt/libmltcore.so
 lib/mlt/libmltdecklink.so
 %%FREI0R%%lib/mlt/libmltfrei0r.so
-%%GTK2%%lib/mlt/libmltgtk2.so
 %%JACK%%lib/mlt/libmltjackrack.so
 lib/mlt/libmltkdenlive.so
-lib/mlt/libmltlinsys.so
 lib/mlt/libmltmotion_est.so
+%%GDK%%lib/mlt/libmltgdk.so
 lib/mlt/libmltnormalize.so
 lib/mlt/libmltoldfilm.so
 %%OPENGL%%lib/mlt/libmltopengl.so
@@ -89,6 +90,7 @@ man/man1/melt.1.gz
 %%FFMPEG%%%%DATADIR%%/avformat/blacklist.txt
 %%FFMPEG%%%%DATADIR%%/avformat/consumer_avformat.yml
 %%FFMPEG%%%%DATADIR%%/avformat/producer_avformat.yml
+%%FFMPEG%%%%DATADIR%%/avformat/yuv_only.txt
 %%DATADIR%%/core/consumer_multi.yml
 %%DATADIR%%/core/data_fx.properties
 %%DATADIR%%/core/filter_audiomap.yml
@@ -142,10 +144,9 @@ man/man1/melt.1.gz
 %%FREI0R%%%%DATADIR%%/frei0r/filter_cairoblend_mode.yml
 %%FREI0R%%%%DATADIR%%/frei0r/not_thread_safe.txt
 %%FREI0R%%%%DATADIR%%/frei0r/param_name_map.yaml
-%%GTK2%%%%DATADIR%%/gtk2/consumer_gtk2_preview.yml
-%%GTK2%%%%DATADIR%%/gtk2/filter_rescale.yml
-%%GTK2%%%%DATADIR%%/gtk2/producer_pango.yml
-%%GTK2%%%%DATADIR%%/gtk2/producer_pixbuf.yml
+%%GDK%%%%DATADIR%%/gdk/filter_rescale.yml
+%%GDK%%%%DATADIR%%/gdk/producer_pango.yml
+%%GDK%%%%DATADIR%%/gdk/producer_pixbuf.yml
 %%JACK%%%%DATADIR%%/jackrack/blacklist.txt
 %%JACK%%%%DATADIR%%/jackrack/consumer_jack.yml
 %%JACK%%%%DATADIR%%/jackrack/filter_jack.yml
@@ -156,7 +157,6 @@ man/man1/melt.1.gz
 %%DATADIR%%/kdenlive/filter_freeze.yml
 %%DATADIR%%/kdenlive/filter_wave.yml
 %%DATADIR%%/kdenlive/producer_framebuffer.yml
-%%DATADIR%%/linsys/consumer_sdi.yml
 %%DATADIR%%/metaschema.yaml
 %%DATADIR%%/motion_est/filter_autotrack_rectangle.yml
 %%DATADIR%%/motion_est/filter_motion_est.yml
@@ -228,6 +228,8 @@ man/man1/melt.1.gz
 %%DATADIR%%/presets/consumer/avformat/MPEG-2
 %%DATADIR%%/presets/consumer/avformat/MPEG-4
 %%DATADIR%%/presets/consumer/avformat/MPEG-4-ASP
+%%DATADIR%%/presets/consumer/avformat/Slide-Deck-H264
+%%DATADIR%%/presets/consumer/avformat/Slide-Deck-HEVC
 %%DATADIR%%/presets/consumer/avformat/Sony-PSP
 %%DATADIR%%/presets/consumer/avformat/Vorbis
 %%DATADIR%%/presets/consumer/avformat/WAV
