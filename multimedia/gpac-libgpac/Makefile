@@ -4,6 +4,7 @@
 PORTNAME=	gpac
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	multimedia
 PKGNAMESUFFIX=	-libgpac
@@ -35,6 +36,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 CONFIGURE_ARGS=	--prefix="${PREFIX}" --cc="${CC}" --X11-path="${LOCALBASE}" \
 		--extra-cflags="${CFLAGS}" --extra-ldflags="${LDFLAGS}" \
+		--static-modules \
 		--enable-pic \
 		--disable-wx \
 		--use-js=no --use-a52=no --use-faad=no --use-ffmpeg=no \
