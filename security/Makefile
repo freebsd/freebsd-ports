@@ -894,6 +894,7 @@
     SUBDIR += py-gpgme
     SUBDIR += py-gpsoauth
     SUBDIR += py-gssapi
+    SUBDIR += py-gtts-token
     SUBDIR += py-halberd
     SUBDIR += py-hkdf
     SUBDIR += py-htpasswd
