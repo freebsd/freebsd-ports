@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	emacs
-DISTVERSION=	28.0.50.20200715
+DISTVERSION=	28.0.50.20200801
 PORTEPOCH=	2
 CATEGORIES=	editors
 PKGNAMESUFFIX=	-devel
@@ -28,7 +28,7 @@ USES=		autoreconf:build cpe gmake localbase:ldflags ncurses pkgconfig
 CPE_VENDOR=	gnu
 USE_GITHUB=	yes
 GH_ACCOUNT=	emacs-mirror
-GH_TAGNAME=	85eaa83
+GH_TAGNAME=	fbe363f
 
 .if ${FLAVOR:U} != nox
 USES+=		desktop-file-utils gnome xorg
@@ -38,7 +38,9 @@ USE_XORG=	ice sm x11 xcb xext xfixes xinerama xmu xrandr xrender xt
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--disable-build-details \
-			--localstatedir=/var
+			--localstatedir=/var \
+			--without-libsystemd \
+			--without-selinux
 .if ${FLAVOR:U} == nox
 CONFIGURE_ARGS+=	--with-sound=no \
 			--with-x-toolkit=no \
