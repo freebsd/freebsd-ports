@@ -1,0 +1,11 @@
+--- meson.build.orig	2020-08-01 21:12:12 UTC
++++ meson.build
+@@ -23,7 +23,7 @@ configure_file(input: 'webp-pixbuf.thumbnailer.in',
+                install: true,
+                install_dir: get_option('datadir') / 'thumbnailers')
+ 
+-meson.add_install_script(gdk_pb_query_loaders.path(), '--update-cache')
++# meson.add_install_script(gdk_pb_query_loaders.path(), '--update-cache')
+ 
+ subdir('tests')
+ 
