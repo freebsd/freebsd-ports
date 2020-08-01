@@ -13,6 +13,8 @@ COMMENT=	Instruction detection and prevention engine / nginx Wrapper
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_armv6=	./configure: error: ngx_http_modsecurity_module requires the ModSecurity library.
+
 LIB_DEPENDS=	libmodsecurity.so:security/modsecurity3
 
 USES=		compiler:c11
