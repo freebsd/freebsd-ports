@@ -1,6 +1,6 @@
---- ext/luawrapper/include/LuaContext.hpp.orig	2018-03-29 15:25:58 UTC
+--- ext/luawrapper/include/LuaContext.hpp.orig	2018-11-12 08:33:58 UTC
 +++ ext/luawrapper/include/LuaContext.hpp
-@@ -2635,11 +2635,21 @@ struct LuaContext::Reader<std::string>
+@@ -2649,11 +2649,21 @@ struct LuaContext::Reader<std::string>
      static auto read(lua_State* state, int index)
          -> boost::optional<std::string>
      {
