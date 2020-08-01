@@ -7,6 +7,8 @@ nvi was written by Keith Bostic and was distributed as part of the
 Fourth Berkeley Software Distribution (4BSD) by the University of
 California, Berkeley.
 
-This version is based on a fork of nvi by Sven Verdoolaege.
+This version is based on a fork of nvi by Sven Verdoolaege. It is
+very similar to the base vi but includes the expandtab option from
+NetBSD which is handy for Python development.
 
 WWW: https://github.com/lichray/nvi2/
