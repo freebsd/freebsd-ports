@@ -2,8 +2,7 @@
 
 PORTNAME=	sd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.5
-PORTREVISION=	3
+DISTVERSION=	0.7.6
 CATEGORIES=	textproc
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -18,7 +17,7 @@ GH_ACCOUNT=	chmln
 
 CARGO_CRATES=	aho-corasick-0.7.10 \
 		ansi_term-0.11.0 \
-		anyhow-1.0.28 \
+		anyhow-1.0.32 \
 		assert_cmd-1.0.1 \
 		atty-0.2.14 \
 		autocfg-1.0.0 \
@@ -55,23 +54,23 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		rand_chacha-0.2.2 \
 		rand_core-0.5.1 \
 		rand_hc-0.2.0 \
-		rayon-1.3.0 \
-		rayon-core-1.7.0 \
+		rayon-1.3.1 \
+		rayon-core-1.7.1 \
 		redox_syscall-0.1.56 \
-		regex-1.3.7 \
-		regex-syntax-0.6.17 \
+		regex-1.3.9 \
+		regex-syntax-0.6.18 \
 		remove_dir_all-0.5.2 \
 		roff-0.1.0 \
 		scopeguard-1.1.0 \
 		strsim-0.8.0 \
-		structopt-0.3.14 \
-		structopt-derive-0.4.7 \
+		structopt-0.3.15 \
+		structopt-derive-0.4.8 \
 		syn-1.0.17 \
 		syn-mid-0.5.0 \
 		tempfile-3.1.0 \
 		textwrap-0.11.0 \
-		thiserror-1.0.15 \
-		thiserror-impl-1.0.15 \
+		thiserror-1.0.20 \
+		thiserror-impl-1.0.20 \
 		thread_local-1.0.1 \
 		treeline-0.1.0 \
 		unescape-0.1.0 \
