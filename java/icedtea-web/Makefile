@@ -49,6 +49,9 @@ CONFIGURE_SHELL=	${bash_CMD}
 
 TEST_TARGET=	check
 
+# Upstream archive contains files with UTF-8 names
+EXTRACT_CMD=	${SETENV} LC_ALL=en_US.UTF-8 /usr/bin/bsdtar
+
 OPTIONS_DEFINE=	DOCS PLUGIN RHINO TAGSOUP
 OPTIONS_DEFAULT=PLUGIN
 OPTIONS_SUB=	yes

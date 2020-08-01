@@ -29,6 +29,9 @@ USE_PYTHON=	distutils autoplist noflavors
 NO_ARCH=	yes
 PLIST_FILES=	share/applications/${PORTNAME}-${PYTHON_VER}.desktop
 
+# Upstream archive contains files with UTF-8 names
+EXTRACT_CMD=	${SETENV} LC_ALL=en_US.UTF-8 /usr/bin/bsdtar
+
 OPTIONS_MULTI=	BACKEND
 OPTIONS_MULTI_BACKEND=	WEBKIT WEBENGINE
 OPTIONS_DEFAULT=	WEBKIT

@@ -29,4 +29,7 @@ RUN_DEPENDS=	beancount>=2.1.3:finance/beancount \
 USES=		python:3.5+  # same as finance/beancount
 USE_PYTHON=	autoplist distutils noflavors
 
+# Upstream archive contains files with UTF-8 names
+EXTRACT_CMD=	${SETENV} LC_ALL=en_US.UTF-8 /usr/bin/bsdtar
+
 .include <bsd.port.mk>

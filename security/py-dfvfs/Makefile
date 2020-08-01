@@ -44,6 +44,9 @@ USE_PYTHON=	distutils autoplist concurrent
 
 NO_ARCH=	yes
 
+# Upstream archive contains files with UTF-8 names
+EXTRACT_CMD=	${SETENV} LC_ALL=en_US.UTF-8 /usr/bin/bsdtar
+
 post-patch:
 	${REINPLACE_CMD} "s,share/doc/dfvfs,${DOCSDIR_REL}," ${WRKSRC}/setup.py
 

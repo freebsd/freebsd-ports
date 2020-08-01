@@ -23,6 +23,9 @@ SUB_FILES=	pkg-install
 WRKSRC=		${WRKDIR}/${DISTNAME}
 PORTDOCS=	LICENSE_M+.txt LICENSE_OFL.txt README.md
 
+# Upstream archive contains files with UTF-8 names
+EXTRACT_CMD=	${SETENV} LC_ALL=en_US.UTF-8 /usr/bin/bsdtar
+
 OPTIONS_DEFINE=	DOCS
 
 do-install:
