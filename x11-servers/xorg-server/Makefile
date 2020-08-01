@@ -3,7 +3,7 @@
 
 PORTNAME?=	xorg-server
 PORTVERSION?=	1.20.8
-PORTREVISION?=	2
+PORTREVISION?=	3
 PORTEPOCH?=	1
 CATEGORIES=	x11-servers
 MASTER_SITES=	XORG/individual/xserver
@@ -14,6 +14,7 @@ COMMENT?=	X.Org X server and related programs
 
 PATCH_SITES=	https://gitlab.freedesktop.org/xorg/xserver/-/commit/
 PATCHFILES=	271934db9f3b1297754b29855646e0a4ee01db59.diff:-p1
+PATCHFILES+=	aac28e162e5108510065ad4c323affd6deffd816.diff:-p1
 
 LICENSE=	MIT
 
