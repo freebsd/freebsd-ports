@@ -137,6 +137,8 @@ lib/libyaz_server.a
 lib/libyaz_server.so
 lib/libyaz_server.so.5
 lib/libyaz_server.so.5.0.0
+libdata/pkgconfig/yaz-icu.pc
+libdata/pkgconfig/yaz-server.pc
 libdata/pkgconfig/yaz.pc
 man/man1/yaz-asncomp.1.gz
 man/man1/yaz-client.1.gz
