@@ -3,11 +3,11 @@
 %%WWWDIR%%/appinfo/info.xml
 %%WWWDIR%%/appinfo/routes.php
 %%WWWDIR%%/appinfo/signature.json
+%%WWWDIR%%/css/sprites-bw.scss
+%%WWWDIR%%/css/sprites-color.scss
 %%WWWDIR%%/css/src/Calendars/Calendar.scss
 %%WWWDIR%%/css/src/Calendars/CalendarShares.scss
 %%WWWDIR%%/css/src/markdown.scss
-%%WWWDIR%%/css/src/sprites-bw.scss
-%%WWWDIR%%/css/src/sprites-color.scss
 %%WWWDIR%%/css/src/style.scss
 %%WWWDIR%%/css/tasks.scss
 %%WWWDIR%%/img/circle.svg
