@@ -1,8 +1,7 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	visualvm
-PORTVERSION=	1.4.3
+PORTVERSION=	2.0.3
 CATEGORIES=	java devel
 MASTER_SITES=	https://github.com/visualvm/visualvm.src/releases/download/${PORTVERSION}/
 DISTNAME=	visualvm_${PORTVERSION:S/.//g}
@@ -24,8 +23,6 @@ SUB_FILES=	visualvm.desktop
 
 post-extract:
 	@${FIND} ${WRKSRC} -type f \( -name '*.bak' -or -name '*.dll' -or -name '*.exe' \) -delete
-	@${RM} -r ${WRKSRC}/profiler/lib/deployed
-	@${RM} -r ${WRKSRC}/profiler/lib/jfluid-server-15.jar
 
 post-patch:
 	@${REINPLACE_CMD} 's|%%JAVA_HOME%%|${JAVA_HOME}|' ${WRKSRC}/bin/visualvm
@@ -33,13 +30,13 @@ post-patch:
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/bin/visualvm ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/visualvm
-.for i in platform profiler visualvm
+.for i in platform visualvm
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${i} ${STAGEDIR}${PREFIX}/share/visualvm/)
 .endfor
 .for i in visualvm.conf visualvm.clusters visualvm.icns
 	@${INSTALL_DATA} ${WRKSRC}/etc/${i} ${STAGEDIR}${PREFIX}/etc/${i}.sample
 .endfor
-	@${UNZIP_CMD} -q -j -d ${STAGEDIR}${DATADIR} ${WRKSRC}/visualvm/modules/com-sun-tools-visualvm-application.jar com/sun/tools/visualvm/application/resources/visualvm.png
+	@${UNZIP_CMD} -q -j -d ${STAGEDIR}${DATADIR} ${WRKSRC}/visualvm/modules/org-graalvm-visualvm-application.jar org/graalvm/visualvm/application/resources/visualvm.png
 	@${INSTALL_DATA} ${WRKDIR}/*.desktop ${STAGEDIR}${PREFIX}/share/applications/
 
 .include <bsd.port.mk>
