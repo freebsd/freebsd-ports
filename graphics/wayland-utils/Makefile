@@ -1,11 +1,12 @@
 # $FreeBSD$
 
-PORTNAME=	wayland-info
-PORTVERSION=	s20200709
+PORTNAME=	wayland-utils
+DISTVERSIONPREFIX=	${PORTNAME}-
+DISTVERSION=	1.0.0
 CATEGORIES=	graphics
 
 PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
-PATCHFILES+=	e95b23f7430b.diff:-p1 # https://gitlab.freedesktop.org/ofourdan/wayland-info/-/merge_requests/2
+PATCHFILES+=	d367b894f9c8.diff:-p1 # https://gitlab.freedesktop.org/wayland/wayland-utils/-/merge_requests/1
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Display information about protocols supported by Wayland compositor
@@ -19,9 +20,9 @@ LIB_DEPENDS=	libwayland-client.so:graphics/wayland
 USES=		meson pkgconfig
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.freedesktop.org
-GL_ACCOUNT=	ofourdan
-GL_COMMIT=	f7f4e42ed46200b4bf1c1df4d26ee8f4b532439a
-PLIST_FILES=	bin/${PORTNAME} \
-		man/man1/${PORTNAME}.1.gz
+GL_ACCOUNT=	wayland
+GL_COMMIT=	1664a20eb1dfd830113a38d02ad0937de73e4f90
+PLIST_FILES=	bin/wayland-info \
+		man/man1/wayland-info.1.gz
 
 .include <bsd.port.mk>

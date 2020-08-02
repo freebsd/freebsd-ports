@@ -1065,8 +1065,8 @@
     SUBDIR += waifu2x-converter-cpp
     SUBDIR += waifu2x-ncnn-vulkan
     SUBDIR += wayland
-    SUBDIR += wayland-info
     SUBDIR += wayland-protocols
+    SUBDIR += wayland-utils
     SUBDIR += waylandpp
     SUBDIR += wdune
     SUBDIR += webp

@@ -1,0 +1,5 @@
+TIMESTAMP = 1596199568
+SHA256 (wayland-wayland-utils-1664a20eb1dfd830113a38d02ad0937de73e4f90_GL0.tar.gz) = c076d6bcce965d96022bc20703c7b40f0fcf212c9dc7f1fd2ea505b3136e4aaa
+SIZE (wayland-wayland-utils-1664a20eb1dfd830113a38d02ad0937de73e4f90_GL0.tar.gz) = 13181
+SHA256 (d367b894f9c8.diff) = cda73b2dc86e57b8642e69bccbf78e9141c8700397b17afef408afb6dede8a70
+SIZE (d367b894f9c8.diff) = 1099
