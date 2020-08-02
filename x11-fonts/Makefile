@@ -141,6 +141,7 @@
     SUBDIR += libXfont2
     SUBDIR += libXft
     SUBDIR += liberation-fonts-ttf
+    SUBDIR += libertinus
     SUBDIR += libfontenc
     SUBDIR += linden-hill
     SUBDIR += linux-c7-fontconfig
