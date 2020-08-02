@@ -22,7 +22,8 @@ LIB_DEPENDS=	libmusicbrainz5.so:audio/libmusicbrainz5 \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		desktop-file-utils gettext gmake gnome pathfix pkgconfig tar:xz
+USES=		compiler:c11 desktop-file-utils gettext gmake gnome \
+		pathfix pkgconfig tar:xz
 USE_GNOME=	gnomeprefix intlhack
 USE_GSTREAMER1=	cdparanoia flac good vorbis
 GNU_CONFIGURE=	yes
