@@ -256,12 +256,12 @@ pre-configure:
 		./build/linux/unbundle/replace_gn_files.py --system-libraries \
 		ffmpeg flac fontconfig freetype harfbuzz-ng libdrm libpng libwebp libxml libxslt openh264 opus snappy || ${FALSE}
 
-	# We need the site package from xcbgen, which installs as python3.7 (really: default version), while the chromium
+	# We need the site package from xcbgen, which installs as python3.x (really: default version), while the chromium
 	# build still needs to use python2.7. It works, because xcbgen can run with both versions, but we want to avoid
-	# having the pre-compiled pyc files from 2.7 in the 3.7 site packages
+	# having the pre-compiled pyc files from 2.7 in the 3.x site packages
 	# Remove this as soon as chromium uses python3.x as well
 	@${MKDIR} ${WRKDIR}/site-packages/xcbgen
-	${CP} ${PYTHONBASE}/lib/python3.7/site-packages/xcbgen/*.py \
+	${CP} ${PYTHONBASE}/lib/python${PYTHON_DEFAULT}/site-packages/xcbgen/*.py \
 		${WRKDIR}/site-packages/xcbgen
 .endif
 
