@@ -654,6 +654,7 @@
 %%STUN%%%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/stun-%%STUN_VER%%/ebin/stun_app.beam
 %%STUN%%%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/stun-%%STUN_VER%%/ebin/stun_codec.beam
 %%STUN%%%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/stun-%%STUN_VER%%/ebin/stun_listener.beam
+%%STUN%%%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/stun-%%STUN_VER%%/ebin/stun_logger.beam
 %%STUN%%%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/stun-%%STUN_VER%%/ebin/stun_shaper.beam
 %%STUN%%%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/stun-%%STUN_VER%%/ebin/stun_sup.beam
 %%STUN%%%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/stun-%%STUN_VER%%/ebin/stun_test.beam
@@ -662,6 +663,7 @@
 %%STUN%%%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/stun-%%STUN_VER%%/ebin/turn_sm.beam
 %%STUN%%%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/stun-%%STUN_VER%%/ebin/turn_tmp_sup.beam
 %%STUN%%%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/stun-%%STUN_VER%%/include/stun.hrl
+%%STUN%%%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/stun-%%STUN_VER%%/include/stun_logger.hrl
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/eimp-%%EIMP_VER%%/ebin/eimp.app
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/eimp-%%EIMP_VER%%/ebin/eimp.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/eimp-%%EIMP_VER%%/ebin/eimp_app.beam
