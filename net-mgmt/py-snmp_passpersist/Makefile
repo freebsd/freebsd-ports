@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	snmp_passpersist
-PORTVERSION=	1.3.0
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2.0.0
 CATEGORIES=	net-mgmt python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -12,11 +13,11 @@ LICENSE=	GPLv3
 
 RUN_DEPENDS=	net-snmp>=0:net-mgmt/net-snmp
 
+USES=		python
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	nagius
-GH_TAGNAME=	ee71064
 
-USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
