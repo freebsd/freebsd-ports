@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	oidentd
-PORTVERSION=	2.3.2
+PORTVERSION=	2.5.0
 CATEGORIES=	security
-MASTER_SITES=	https://github.com/janikrabe/oidentd/releases/download/v2.3.2/
+MASTER_SITES=	https://files.janikrabe.com/pub/oidentd/releases/2.5.0/
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Ident server that supports user-defined ident strings
@@ -21,7 +21,6 @@ MANPAGES=	oidentd.conf.5 oidentd_masq.conf.5 oidentd.8
 .for man in ${MANPAGES}
 PLIST_FILES+=	man/man${man:E}/${man}.gz
 .endfor
-USE_CSTD=	gnu89
 
 OPTIONS_DEFINE=	IPV6
 
@@ -32,10 +31,6 @@ CONFIGURE_ARGS=--disable-masq
 .if ! ${PORT_OPTIONS:MIPV6}
 CONFIGURE_ARGS+=--disable-ipv6
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's,/etc/,${PREFIX}&,g' ${WRKSRC}/src/oidentd.h
-	@${REINPLACE_CMD} -e 's|\[5-9\]||g;s|\[4-9\]||g' ${WRKSRC}/configure
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/oidentd ${STAGEDIR}${PREFIX}/sbin

@@ -1,0 +1,18 @@
+--- doc/oidentd.conf.5.orig	2020-04-16 13:34:16 UTC
++++ doc/oidentd.conf.5
+@@ -34,7 +34,7 @@ The \fBoidentd\fP configuration files are used to cont
+ sends to clients after receiving a query for a connection owned by a particular
+ user.
+ .sp
+-The system\-wide configuration file \fB/usr/local/etc/oidentd.conf\fP specifies the
++The system\-wide configuration file \fB%%PREFIX%%/etc/oidentd.conf\fP specifies the
+ types of responses individual users are permitted to send.  By default, users
+ must respond with their real username.
+ .sp
+@@ -442,4 +442,4 @@ Please report any bugs to \c
+ .SH "SEE ALSO"
+ .sp
+ \fBoidentd\fP(8)
+-\fBoidentd_masq.conf\fP(5)
+\ No newline at end of file
++\fBoidentd_masq.conf\fP(5)
