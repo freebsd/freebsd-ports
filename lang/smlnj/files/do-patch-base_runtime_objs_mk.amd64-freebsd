@@ -1,11 +1,5 @@
 --- base/runtime/objs/mk.amd64-freebsd.orig	2019-11-14 19:33:11 UTC
 +++ base/runtime/objs/mk.amd64-freebsd
-@@ -1,4 +1,4 @@
--# mk.amd64-freebst
-+# mk.amd64-freebsd
- #
- # makefile for "Free BSD" on the amd64 architecture, which is a BSD 4.4 clone.
- #
 @@ -6,9 +6,10 @@
  SHELL =		/bin/sh
  
@@ -28,5 +22,5 @@
 -#	($(MAKE) RUNTIME="$(RUNTIME_SO)" VERSION="$(VERSION)" AS="$(AS)" CC="$(CC)" CFLAGS="$(CFLAGS)" CPP="$(CPP)" TARGET=$(TARGET) DEFS="$(DEFS)" XOBJS="$(XOBJS)" XLIBS="$(XLIBS)" LD_LIBS="$(LD_LIBS)" LDFLAGS="-shared" $(RUNTIME_SO))
 -#	($(MAKE) RUNTIME_A="$(RUNTIME_A)" VERSION="$(VERSION)" AS="$(AS)" CC="$(CC)" CFLAGS="$(CFLAGS)" CPP="$(CPP)" TARGET=$(TARGET) DEFS="$(DEFS)" XOBJS="$(XOBJS)" XLIBS="$(XLIBS)" LD_LIBS="$(LD_LIBS)" LDFLAGS="" $(RUNTIME_A))
 +	($(MAKE) CHECK_HEAP=$(CHECK_HEAP) RUNTIME="$(RUNTIME)" VERSION="$(VERSION)" AS="$(AS)" ASFLAGS="$(ASFLAGS)" CC="$(CC)" CFLAGS="$(CFLAGS)" CPP="$(CPP)" TARGET=$(TARGET) DEFS="$(DEFS)" XOBJS="$(XOBJS)" XLIBS="$(XLIBS)" LD_LIBS="$(LD_LIBS)" $(RUNTIME))
-+	($(MAKE) RUNTIME="$(RUNTIME_SO)" VERSION="$(VERSION)" AS="$(AS)" ASFLAGS="$(ASFLAGS)" CC="$(CC)" CFLAGS="$(CFLAGS)" CPP="$(CPP)" TARGET=$(TARGET) DEFS="$(DEFS)" XOBJS="$(XOBJS)" XLIBS="$(XLIBS)" LD_LIBS="$(LD_LIBS)" LDFLAGS="-shared -Wl,-z,notext" $(RUNTIME_SO))
++	-($(MAKE) RUNTIME="$(RUNTIME_SO)" VERSION="$(VERSION)" AS="$(AS)" ASFLAGS="$(ASFLAGS)" CC="$(CC)" CFLAGS="$(CFLAGS)" CPP="$(CPP)" TARGET=$(TARGET) DEFS="$(DEFS)" XOBJS="$(XOBJS)" XLIBS="$(XLIBS)" LD_LIBS="$(LD_LIBS)" LDFLAGS="-shared -Wl,-z,notext" $(RUNTIME_SO))
 +	($(MAKE) RUNTIME_A="$(RUNTIME_A)" VERSION="$(VERSION)" AS="$(AS)" ASFLAGS="$(ASFLAGS)" CC="$(CC)" CFLAGS="$(CFLAGS)" CPP="$(CPP)" TARGET=$(TARGET) DEFS="$(DEFS)" XOBJS="$(XOBJS)" XLIBS="$(XLIBS)" LD_LIBS="$(LD_LIBS)" LDFLAGS="" $(RUNTIME_A))

@@ -1,4 +1,4 @@
---- config/install.sh.orig	2019-11-23 16:06:59 UTC
+--- config/install.sh.orig	2020-04-03 02:04:40 UTC
 +++ config/install.sh
 @@ -56,11 +56,36 @@ if [ x"$SIZE_OPT" = x ] ; then
      SIZE_OPT="-"$DEFAULT_SIZE
@@ -67,7 +67,7 @@
  #
  # the release version that we are installing
  #
-@@ -403,7 +449,12 @@ esac
+@@ -407,7 +453,12 @@ esac
  # the name of the bin files directory
  #
  BOOT_ARCHIVE=boot.$ARCH-unix
@@ -81,7 +81,7 @@
  
  #
  # build the run-time system
-@@ -412,9 +463,15 @@ if [ -x "$RUNDIR"/run.$ARCH-$OPSYS ]; then
+@@ -416,9 +467,15 @@ if [ -x "$RUNDIR"/run.$ARCH-$OPSYS ]; then
      vsay $this: Run-time system already exists.
  else
      "$CONFIGDIR"/unpack "$ROOT" runtime
@@ -98,7 +98,7 @@
      if [ -x run.$ARCH-$OPSYS ]; then
  	mv run.$ARCH-$OPSYS "$RUNDIR"
  	if [ -f runx.$ARCH-$OPSYS ]; then
-@@ -426,7 +483,7 @@ else
+@@ -430,7 +487,7 @@ else
  	if [ -f run.$ARCH-$OPSYS.a ]; then
  	    mv run.$ARCH-$OPSYS.a "$RUNDIR"
  	fi
@@ -107,7 +107,7 @@
      else
  	complain "$this: !!! Run-time system build failed for some reason."
      fi
-@@ -452,7 +509,7 @@ if [ -r "$HEAPDIR"/sml.$HEAP_SUFFIX ]; then
+@@ -456,7 +513,7 @@ if [ -r "$HEAPDIR"/sml.$HEAP_SUFFIX ]; then
  	complain "$this !!! Unable to re-create heap image (sml.$HEAP_SUFFIX)."
      fi
  else
@@ -116,7 +116,7 @@
  
      fish "$ROOT"/"$BOOT_FILES"/smlnj/basis
  
-@@ -487,7 +544,7 @@ else
+@@ -491,7 +548,7 @@ else
  	    cd "$ROOT"/"$BOOT_FILES"
  	    for anchor in * ; do
  		if [ -d $anchor ] ; then
@@ -125,7 +125,7 @@
  		    move $anchor "$LIBDIR"/$anchor
  		fi
  	    done
-@@ -510,6 +567,18 @@ installdriver _ml-build ml-build
+@@ -514,6 +571,18 @@ installdriver _ml-build ml-build
  
  cd "$ROOT"
  
@@ -144,7 +144,7 @@
  #
  # Now do all the rest using the precompiled installer
  # (see base/system/smlnj/installer for details)
-@@ -519,6 +588,12 @@ if [ $nolib = false ] ; then
+@@ -523,6 +592,12 @@ if [ $nolib = false ] ; then
      export ROOT INSTALLDIR CONFIGDIR BINDIR
      CM_TOLERATE_TOOL_FAILURES=true
      export CM_TOLERATE_TOOL_FAILURES
@@ -156,8 +156,8 @@
 +    [ -z "$STAGEDIR" ] || CM_PATHCONFIG=$CM_LOCAL_PATHCONFIG
      if "$BINDIR"/sml $SIZE_OPT -m \$smlnj/installer.cm
      then
- 	vsay $this: Installation complete.
-@@ -526,5 +601,20 @@ if [ $nolib = false ] ; then
+ 	# because we create heap2exec without knowing if heap2asm is going
+@@ -536,5 +611,20 @@ if [ $nolib = false ] ; then
  	complain "$this: !!! Installation of libraries and programs failed."
      fi
  fi

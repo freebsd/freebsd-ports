@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	smlnj
-PORTVERSION=	110.96
+PORTVERSION=	110.98
 CATEGORIES=	lang
 MASTER_SITES=	http://smlnj.cs.uchicago.edu/dist/working/${PORTVERSION}/ \
 		ftp://mirror.free.de/http/smlnj.cs.uchicago.edu/dist/working/${PORTVERSION}/
@@ -20,6 +20,8 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 ONLY_FOR_ARCHS=	amd64 i386
 
+USES=		compiler
+
 NO_WRKSUBDIR=	yes
 
 SUB_FILES=	pkg-install
@@ -32,6 +34,15 @@ EVERYTHING_DESC=	install everything from the SML/NJ distribution
 RECOMPILE_DESC=		recompile the SML compiler - implies EVERYTHING
 
 .include <bsd.port.pre.mk>
+
+# XXX see FreeBSD PR 247421
+.if ${COMPILER_TYPE} == "clang" && ${COMPILER_VERSION} >= 100
+RUNTIME_SO=
+PLIST_SUB+=	RUNTIME_SO="@comment "
+.else
+RUNTIME_SO=	"${STAGEDIR}${MLBIN}/.run/run.$${ARCH}-$${OPSYS}.so"
+PLIST_SUB+=	RUNTIME_SO=
+.endif
 
 .if (${ARCH} == "i386")
 MLARCH=		x86
@@ -120,7 +131,7 @@ do-configure:
 .if defined(MLTARGETS)
 	${ECHO_CMD} -n > "${WRKDIR}/.tmp.sed"
 .for t in ${MLTARGETS}
-	${ECHO_CMD} '/^#request[ 	]+${t}$$/s/^#//' >> "${WRKDIR}/.tmp.sed"
+	${ECHO_CMD} '/^#[ 	]*request[ 	]+${t}$$/s/^#//' >> "${WRKDIR}/.tmp.sed"
 .endfor
 	${SED} -i .default -E -f "${WRKDIR}/.tmp.sed" "${WRKSRC}/config/targets"
 .endif
@@ -332,7 +343,7 @@ do-install:
 	MLARCHOPSYS=`${STAGEDIR}${MLBIN}/.arch-n-opsys` && \
 	( eval $${MLARCHOPSYS} ; \
 	${STRIP_CMD} "${STAGEDIR}${MLBIN}/.run/run.$${ARCH}-$${OPSYS}" \
-	  "${STAGEDIR}${MLBIN}/.run/run.$${ARCH}-$${OPSYS}.so" )
+	  ${RUNTIME_SO} )
 .if ${PORT_OPTIONS:MEVERYTHING}
 	@${ECHO} '(* Cleaning base/runtime: *)'
 	cd ${WRKSRC}/base/runtime/objs && ${MAKE_CMD} clean
