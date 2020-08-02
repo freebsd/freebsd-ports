@@ -481,6 +481,8 @@
 %%WWWDIR%%/renderers/shaders/ShaderChunk/specularmap_pars_fragment.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/tonemapping_fragment.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/tonemapping_pars_fragment.glsl.js
+%%WWWDIR%%/renderers/shaders/ShaderChunk/transmissionmap_fragment.glsl.js
+%%WWWDIR%%/renderers/shaders/ShaderChunk/transmissionmap_pars_fragment.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/uv2_pars_fragment.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/uv2_pars_vertex.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/uv2_vertex.glsl.js
