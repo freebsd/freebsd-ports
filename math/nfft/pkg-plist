@@ -2,8 +2,8 @@ include/nfft3.h
 include/nfft3mp.h
 lib/libnfft3.a
 lib/libnfft3.so
-lib/libnfft3.so.2
-lib/libnfft3.so.2.1.0
+lib/libnfft3.so.4
+lib/libnfft3.so.4.0.1
 libdata/pkgconfig/nfft3.pc
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/accuracy_8c_source.html
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/annotated.html
