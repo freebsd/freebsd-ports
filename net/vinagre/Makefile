@@ -3,7 +3,7 @@
 
 PORTNAME=	vinagre
 PORTVERSION=	3.22.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -17,15 +17,15 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	appstream-glib>=0:devel/appstream-glib \
 		itstool:textproc/itstool \
 		gnome-autogen.sh:devel/gnome-common \
-		yelp-tools>=0:textproc/yelp-tools
+		yelp-tools>=0:textproc/yelp-tools \
+		valac:lang/vala
 LIB_DEPENDS=	libgtk-vnc-2.0.so:net/gtk-vnc \
 		libfribidi.so:converters/fribidi \
 		libgdbm.so:databases/gdbm \
 		libsecret-1.so:security/libsecret \
 		libdbus-1.so:devel/dbus \
 		libpcre2-8.so:devel/pcre2 \
-		libgnutls.so:security/gnutls \
-		libavahi-common.so:net/avahi-app
+		libgnutls.so:security/gnutls
 RUN_DEPENDS=	gnome-icon-theme>=0:misc/gnome-icon-theme
 
 PORTSCOUT=	limitw:1,even
@@ -50,7 +50,8 @@ OPTIONS_DEFAULT_armv6=		SPICE
 OPTIONS_DEFAULT_armv7=		SPICE
 OPTIONS_DEFAULT_i386=		SPICE
 AVAHI_CONFIGURE_WITH=	avahi
-AVAHI_LIB_DEPENDS=	libavahi-ui-gtk3.so:net/avahi-gtk3
+AVAHI_LIB_DEPENDS=	libavahi-ui-gtk3.so:net/avahi-gtk3 \
+			libavahi-common.so:net/avahi-app
 SPICE_DESC=	SPICE protocol support
 SPICE_CONFIGURE_ENABLE=	spice
 SPICE_BUILD_DEPENDS=	spice-gtk>=0.30_1:deskutils/spice-gtk
