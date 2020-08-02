@@ -3,7 +3,7 @@
 
 PORTNAME=	telepathy-farstream
 PORTVERSION=	0.6.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 		libtelepathy-glib.so:net-im/telepathy-glib \
 		libfarstream-0.2.so:net-im/farstream
 
-USES=		gmake gnome libtool localbase:ldflags pathfix pkgconfig python:2.7
+USES=		gmake gnome libtool localbase:ldflags pathfix pkgconfig python
 USE_GNOME=	glib20 libxslt:build introspection:build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
