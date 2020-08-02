@@ -1460,6 +1460,7 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/content-server/reset.css
 %%DATADIR%%/csscolorparser.js
 %%DATADIR%%/csslint.js
+%%DATADIR%%/dark_mode.css
 %%DATADIR%%/default_tweaks.py
 %%DATADIR%%/dictionaries/en-GB/en-GB.aff
 %%DATADIR%%/dictionaries/en-GB/en-GB.dic
