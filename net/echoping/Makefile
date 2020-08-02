@@ -12,9 +12,6 @@ COMMENT=	Ping-like program that uses TCP and/or HTTP
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-DEPRECATED=	No longer maintained upstream
-EXPIRATION_DATe=	2020-09-02
-
 LIB_DEPENDS=	libpopt.so:devel/popt \
 		libidn.so:dns/libidn
 
