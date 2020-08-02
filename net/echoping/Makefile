@@ -3,7 +3,7 @@
 
 PORTNAME=	echoping
 PORTVERSION=	6.0.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net
 
 MAINTAINER=	ports@FreeBSD.org
@@ -11,6 +11,9 @@ COMMENT=	Ping-like program that uses TCP and/or HTTP
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=	No longer maintained upstream
+EXPIRATION_DATe=	2020-09-02
 
 LIB_DEPENDS=	libpopt.so:devel/popt \
 		libidn.so:dns/libidn
@@ -26,9 +29,10 @@ INSTALL_TARGET=	install-strip
 
 PING_PLUGINS=	dns random whois
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	bortzmeyer
-GH_TAGNAME=	dfe95b5
+USE_GITLAB=	yes
+GL_SITE=	https://framagit.org
+GL_ACCOUNT=	bortzmeyer
+GL_COMMIT=	ccf3c95d9249d3065db3853486f41c852d20101e
 WRKSRC_SUBDIR=	SRC
 
 OPTIONS_DEFINE=	LDAP PGSQL
