@@ -13479,6 +13479,7 @@
 %%WWWDIR%%/lib/api/users.rb
 %%WWWDIR%%/lib/api/validations/types/comma_separated_to_array.rb
 %%WWWDIR%%/lib/api/validations/types/comma_separated_to_integer_array.rb
+%%WWWDIR%%/lib/api/validations/types/hash_of_integer_values.rb
 %%WWWDIR%%/lib/api/validations/types/workhorse_file.rb
 %%WWWDIR%%/lib/api/validations/validators/absence.rb
 %%WWWDIR%%/lib/api/validations/validators/array_none_any.rb
