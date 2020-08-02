@@ -1,6 +1,6 @@
---- make/template/main.mk.orig	2020-01-31 12:49:58 UTC
+--- make/template/main.mk.orig	2020-07-30 16:23:30 UTC
 +++ make/template/main.mk
-@@ -216,36 +216,36 @@ finishmessage: target
+@@ -217,40 +217,40 @@ finishmessage: target
  	@echo "*************************************"
  
  install: target
@@ -19,6 +19,7 @@
 -	-$(INSTALL) -g @GID@ -o @UID@ -m $(INSTMODE_BIN) "$(BUILDPATH)/bin/inspircd" $(BINPATH)
 -	-$(INSTALL) -g @GID@ -o @UID@ -m $(INSTMODE_BIN) "$(BUILDPATH)/modules/"*.so $(MODPATH)
 -	-$(INSTALL) -g @GID@ -o @UID@ -m $(INSTMODE_BIN) @CONFIGURE_DIRECTORY@/inspircd $(SCRPATH) 2>/dev/null
+-	-$(INSTALL) -g @GID@ -o @UID@ -m $(INSTMODE_TXT) @CONFIGURE_DIRECTORY@/logrotate $(SCRPATH) 2>/dev/null
 +	@-$(INSTALL) -d -m $(INSTMODE_DIR) $(BASE)
 +	@-$(INSTALL) -d -m $(INSTMODE_DIR) $(BINPATH)
 +	@-$(INSTALL) -d -m $(INSTMODE_DIR) $(CONPATH)
@@ -34,6 +35,7 @@
 +	-$(INSTALL) -m $(INSTMODE_BIN) "$(BUILDPATH)/bin/inspircd" $(BINPATH)
 +	-$(INSTALL) -m $(INSTMODE_BIN) "$(BUILDPATH)/modules/"*.so $(MODPATH)
 +	-$(INSTALL) -m $(INSTMODE_BIN) @CONFIGURE_DIRECTORY@/inspircd $(SCRPATH) 2>/dev/null
++	-$(INSTALL) -m $(INSTMODE_TXT) @CONFIGURE_DIRECTORY@/logrotate $(SCRPATH) 2>/dev/null
  ifeq ($(SYSTEM), darwin)
  	-$(INSTALL) -g @GID@ -o @UID@ -m $(INSTMODE_BIN) @CONFIGURE_DIRECTORY@/org.inspircd.plist $(SCRPATH) 2>/dev/null
  endif
@@ -42,21 +44,27 @@
  endif
 -	-$(INSTALL) -g @GID@ -o @UID@ -m $(INSTMODE_TXT) @CONFIGURE_DIRECTORY@/inspircd.1 $(MANPATH) 2>/dev/null
 -	-$(INSTALL) -g @GID@ -o @UID@ -m $(INSTMODE_TXT) @CONFIGURE_DIRECTORY@/inspircd-genssl.1 $(MANPATH) 2>/dev/null
+-	-$(INSTALL) -g @GID@ -o @UID@ -m $(INSTMODE_TXT) @CONFIGURE_DIRECTORY@/inspircd-testssl.1 $(MANPATH) 2>/dev/null
 -	-$(INSTALL) -g @GID@ -o @UID@ -m $(INSTMODE_BIN) tools/genssl $(BINPATH)/inspircd-genssl 2>/dev/null
+-	-$(INSTALL) -g @GID@ -o @UID@ -m $(INSTMODE_BIN) tools/testssl $(BINPATH)/inspircd-testssl 2>/dev/null
 -	-$(INSTALL) -g @GID@ -o @UID@ -m $(INSTMODE_TXT) docs/conf/*.example $(EXAPATH)
 -	-$(INSTALL) -g @GID@ -o @UID@ -m $(INSTMODE_TXT) docs/conf/codepages/*.example $(EXAPATH)/codepages
 -	-$(INSTALL) -g @GID@ -o @UID@ -m $(INSTMODE_TXT) docs/conf/providers/*.example $(EXAPATH)/providers
 -	-$(INSTALL) -g @GID@ -o @UID@ -m $(INSTMODE_TXT) docs/conf/services/*.example $(EXAPATH)/services
 -	-$(INSTALL) -g @GID@ -o @UID@ -m $(INSTMODE_TXT) docs/sql/*.sql $(EXAPATH)/sql
+-	-$(INSTALL) -g @GID@ -o @UID@ -m $(INSTMODE_TXT) @CONFIGURE_DIRECTORY@/help.txt $(CONPATH)
 -	-$(INSTALL) -g @GID@ -o @UID@ -m $(INSTMODE_PRV) *.pem $(CONPATH) 2>/dev/null
 +	-$(INSTALL) -m $(INSTMODE_TXT) @CONFIGURE_DIRECTORY@/inspircd.1 $(MANPATH) 2>/dev/null
 +	-$(INSTALL) -m $(INSTMODE_TXT) @CONFIGURE_DIRECTORY@/inspircd-genssl.1 $(MANPATH) 2>/dev/null
++	-$(INSTALL) -m $(INSTMODE_TXT) @CONFIGURE_DIRECTORY@/inspircd-testssl.1 $(MANPATH) 2>/dev/null
 +	-$(INSTALL) -m $(INSTMODE_BIN) tools/genssl $(BINPATH)/inspircd-genssl 2>/dev/null
++	-$(INSTALL) -m $(INSTMODE_BIN) tools/testssl $(BINPATH)/inspircd-testssl 2>/dev/null
 +	-$(INSTALL) -m $(INSTMODE_TXT) docs/conf/*.example $(EXAPATH)
 +	-$(INSTALL) -m $(INSTMODE_TXT) docs/conf/codepages/*.example $(EXAPATH)/codepages
 +	-$(INSTALL) -m $(INSTMODE_TXT) docs/conf/providers/*.example $(EXAPATH)/providers
 +	-$(INSTALL) -m $(INSTMODE_TXT) docs/conf/services/*.example $(EXAPATH)/services
 +	-$(INSTALL) -m $(INSTMODE_TXT) docs/sql/*.sql $(EXAPATH)/sql
++	-$(INSTALL) -m $(INSTMODE_TXT) @CONFIGURE_DIRECTORY@/help.txt $(CONPATH)
 +	-$(INSTALL) -m $(INSTMODE_PRV) *.pem $(CONPATH) 2>/dev/null
  	@echo ""
  	@echo "*************************************"

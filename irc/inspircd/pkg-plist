@@ -1,5 +1,6 @@
 bin/inspircd
 bin/inspircd-genssl
+bin/inspircd-testssl
 @sample %%ETCDIR%%/examples/filter.conf.example %%ETCDIR%%/filter.conf
 @sample %%ETCDIR%%/examples/helpop.conf.example %%ETCDIR%%/helpop.conf
 @sample %%ETCDIR%%/examples/inspircd.conf.example %%ETCDIR%%/inspircd.conf
@@ -14,14 +15,15 @@ bin/inspircd-genssl
 %%ETCDIR%%/examples/codepages/rfc1459.conf.example
 %%ETCDIR%%/examples/codepages/strict-rfc1459.conf.example
 %%ETCDIR%%/examples/providers/irccloud.conf.example
-%%ETCDIR%%/examples/providers/kiwiirc-com.conf.example
 %%ETCDIR%%/examples/services/anope.conf.example
 %%ETCDIR%%/examples/services/atheme.conf.example
 %%ETCDIR%%/examples/services/generic.conf.example
 %%ETCDIR%%/examples/sql/sqloper.mysql.sql
 %%ETCDIR%%/examples/sql/sqloper.pgsql.sql
 %%ETCDIR%%/examples/sql/sqloper.sqlite3.sql
+%%ETCDIR%%/help.txt
 libexec/inspircd/inspircd
+libexec/inspircd/logrotate
 libexec/inspircd/modules/core_channel.so
 libexec/inspircd/modules/core_dns.so
 libexec/inspircd/modules/core_hostname_lookup.so
@@ -224,6 +226,7 @@ libexec/inspircd/modules/m_xline_db.so
 %%SQLITE%%libexec/inspircd/modules/m_sqlite3.so
 %%SSLREHASH%%libexec/inspircd/modules/m_sslrehashsignal.so
 man/man1/inspircd-genssl.1.gz
+man/man1/inspircd-testssl.1.gz
 man/man1/inspircd.1.gz
 @dir(%%INSPIRCD_USER%%,%%INSPIRCD_GROUP%%,750) %%INSPIRCD_DBDIR%%
 @dir(%%INSPIRCD_USER%%,%%INSPIRCD_GROUP%%,755) %%INSPIRCD_LOGDIR%%
