@@ -1,6 +1,6 @@
-TIMESTAMP = 1594747005
-SHA256 (hashicorp-consul-template-v0.25.0_GH0.tar.gz) = 570fb4a309779830e9b48c02c2a9ceb4cb21b195f02cb3402face78bd031f40f
-SIZE (hashicorp-consul-template-v0.25.0_GH0.tar.gz) = 197301
+TIMESTAMP = 1596390111
+SHA256 (hashicorp-consul-template-v0.25.1_GH0.tar.gz) = f8d214733961ef3333493ce912180c5c0311c87e4b1a116308f31283b6c77419
+SIZE (hashicorp-consul-template-v0.25.1_GH0.tar.gz) = 198375
 SHA256 (BurntSushi-toml-v0.3.1_GH0.tar.gz) = 6593da894578ba510a470735ffbdc88ce88033094dc5a8f4d3957ab87e18803f
 SIZE (BurntSushi-toml-v0.3.1_GH0.tar.gz) = 42077
 SHA256 (armon-go-metrics-ec5e00d3c878_GH0.tar.gz) = de6df8b15d119c393073fb1ddc53c4859d58d7163caddffe2a78b90034fb5876

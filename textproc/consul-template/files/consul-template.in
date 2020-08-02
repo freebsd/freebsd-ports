@@ -3,7 +3,7 @@
 # $FreeBSD$
 #
 # PROVIDE: consul_template
-# REQUIRE: LOGIN
+# REQUIRE: NETWORKING SERVERS DAEMON
 # KEYWORD: shtudown
 #
 # Add the following lines to /etc/rc.conf.local or /etc/rc.conf

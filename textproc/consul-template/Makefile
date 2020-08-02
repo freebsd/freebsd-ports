@@ -1,8 +1,7 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	consul-template
-PORTVERSION=	0.25.0
+PORTVERSION=	0.25.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
 
@@ -14,7 +13,6 @@ LICENSE=	MPL20
 USES=		go:modules
 
 USE_GITHUB=	yes
-GHTAG=		edf364d
 GH_TUPLE=	hashicorp:${PORTNAME}:${DISTVERSIONPREFIX}${PORTVERSION}:DEFAULT/src/github.com/hashicorp/consul-template \
 		BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/toml \
 		armon:go-metrics:ec5e00d3c878:armon_go_metrics/vendor/github.com/armon/go-metrics \
@@ -62,7 +60,7 @@ GH_TUPLE=	hashicorp:${PORTNAME}:${DISTVERSIONPREFIX}${PORTVERSION}:DEFAULT/src/g
 
 GO_BUILDFLAGS=	-ldflags='\
 		-s -w -X github.com/hashicorp/consul-template/version.Name=${PORTNAME} \
-		-X github.com/hashicorp/consul-template/version.GitCommit=${GHTAG}'
+		-X github.com/hashicorp/consul-template/version.GitCommit=release'
 PLIST_FILES=	bin/consul-template
 
 USE_RC_SUBR=	consul-template
