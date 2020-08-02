@@ -8,7 +8,7 @@ include/libffmpegthumbnailer/videothumbnailer.h
 include/libffmpegthumbnailer/videothumbnailerc.h
 lib/libffmpegthumbnailer.so
 lib/libffmpegthumbnailer.so.4
-lib/libffmpegthumbnailer.so.4.13.1
+lib/libffmpegthumbnailer.so.4.15.1
 libdata/pkgconfig/libffmpegthumbnailer.pc
 man/man1/ffmpegthumbnailer.1.gz
 %%THUMBNAILER%%share/thumbnailers/ffmpegthumbnailer.thumbnailer
