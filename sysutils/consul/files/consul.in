@@ -3,7 +3,7 @@
 # $FreeBSD$
 #
 # PROVIDE: consul
-# REQUIRE: LOGIN
+# REQUIRE: NETWORKING SERVERS DAEMON
 # KEYWORD: shutdown
 #
 # Add consul_enable="YES" to /etc/rc.conf to enable Consul
@@ -17,7 +17,7 @@
 # consul_pidfile (string):             Set full path to pid file
 #                                      Default is "/var/run/consul.pid"
 # consul_datadir (dir):                Set dir to run consul in.
-#                                      Default is "%%DBDIR%%"
+#                                      Default is "%%CONSUL_DBDIR%%"
 # consul_syslog_output_enable (bool):  Set to YES to enable syslog output
 #                                      Default is "NO". See daemon(8).
 # consul_syslog_output_tag (str):      Set syslog tag if syslog enabled.
@@ -49,22 +49,22 @@ extra_commands="reload"
 
 # backwards compatibility
 if [ -n "${consul_dir}" ]; then
-        consul_datadir=${consul_dir}
+    consul_datadir=${consul_dir}
 fi
 
 if checkyesno consul_syslog_output_enable; then
-        if [ -n "${consul_syslog_output_tag}" ]; then
-                consul_syslog_output_flags="-T ${consul_syslog_output_tag}"
-        else
-                consul_syslog_output_flags="-T ${name}"
-        fi
-        if [ -n "${consul_syslog_output_priority}" ]; then
-                consul_syslog_output_flags="${consul_syslog_output_flags} -s ${consul_syslog_output_priority}"
-        fi  
+    if [ -n "${consul_syslog_output_tag}" ]; then
+        consul_syslog_output_flags="-T ${consul_syslog_output_tag}"
+    else
+        consul_syslog_output_flags="-T ${name}"
+    fi
+    if [ -n "${consul_syslog_output_priority}" ]; then
+        consul_syslog_output_flags="${consul_syslog_output_flags} -s ${consul_syslog_output_priority}"
+    fi  
 
-        if [ -n "${consul_syslog_output_facility}" ]; then
-                consul_syslog_output_flags="${consul_syslog_output_flags} -l ${consul_syslog_output_facility}"
-        fi  
+    if [ -n "${consul_syslog_output_facility}" ]; then
+        consul_syslog_output_flags="${consul_syslog_output_flags} -l ${consul_syslog_output_facility}"
+    fi  
 fi  
 
 pidfile=${consul_pidfile}
@@ -74,17 +74,17 @@ command_args="-f -t ${name} ${consul_syslog_output_flags} -p ${pidfile} /usr/bin
 
 consul_start_precmd()
 {
-        if [ ! -e ${pidfile} ]; then
-                install -o ${consul_user} -g ${consul_group} /dev/null ${pidfile}
-        fi
+    if [ ! -e ${pidfile} ]; then
+        install -o ${consul_user} -g ${consul_group} /dev/null ${pidfile}
+    fi
 
-        if [ ! -d ${consul_datadir} ]; then
-                install -d -m 0750 -o ${consul_user} -g ${consul_group} ${consul_datadir}
-        fi
+    if [ ! -d ${consul_datadir} ]; then
+        install -d -m 0750 -o ${consul_user} -g ${consul_group} ${consul_datadir}
+    fi
 
-        if [ ! -d %%ETCDIR%% ]; then
-                install -d -m 0750 -o ${consul_user} -g ${consul_group} %%ETCDIR%%
-        fi
+    if [ ! -d %%ETCDIR%% ]; then
+        install -d -m 0750 -o ${consul_user} -g ${consul_group} %%ETCDIR%%
+    fi
 }
 
 run_rc_command "$1"
