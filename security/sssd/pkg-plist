@@ -5,6 +5,7 @@ etc/dbus-1/system.d/org.freedesktop.sssd.infopipe.conf
 include/ipa_hbac.h
 include/sss_idmap.h
 include/sss_nss_idmap.h
+%%SMB%%lib/krb5/plugins/authdata/sssd_pac_plugin.so
 lib/krb5/plugins/libkrb5/sssd_krb5_locator_plugin.so
 lib/libipa_hbac.so
 lib/libipa_hbac.so.0
@@ -55,6 +56,7 @@ libexec/sssd/sss_signal
 libexec/sssd/sssd_be
 libexec/sssd/sssd_ifp
 libexec/sssd/sssd_nss
+%%SMB%%libexec/sssd/sssd_pac
 libexec/sssd/sssd_pam
 libexec/sssd/sssd_ssh
 libexec/sssd/sssd_sudo
