@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zint
-PORTVERSION=	2.8.0
+PORTVERSION=	2.9.0
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
@@ -19,5 +19,7 @@ USE_LDCONFIG=	yes
 USE_QT=		buildtools_build qmake_build uitools_build core gui widgets
 
 DESKTOP_ENTRIES="Zint" "Barcode generator" "" "zint-qt" "" false
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.src
 
 .include <bsd.port.mk>
