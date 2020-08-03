@@ -1,10 +1,12 @@
 include/cglm/affine-mat.h
+include/cglm/affine2d.h
 include/cglm/affine.h
 include/cglm/applesimd.h
 include/cglm/bezier.h
 include/cglm/box.h
 include/cglm/call.h
 include/cglm/call/affine.h
+include/cglm/call/affine2d.h
 include/cglm/call/bezier.h
 include/cglm/call/box.h
 include/cglm/call/cam.h
@@ -54,6 +56,7 @@ include/cglm/simd/x86.h
 include/cglm/sphere.h
 include/cglm/struct.h
 include/cglm/struct/affine.h
+include/cglm/struct/affine2d.h
 include/cglm/struct/box.h
 include/cglm/struct/cam.h
 include/cglm/struct/color.h
@@ -88,4 +91,4 @@ lib/cglm/cmake/cglm-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cglm/cmake/cglm.cmake
 lib/libcglm.so
 lib/libcglm.so.0
-lib/libcglm.so.0.7.6
+lib/libcglm.so.0.7.7
