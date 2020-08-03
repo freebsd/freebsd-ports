@@ -39,10 +39,6 @@ post-extract:
 	@(cd ${WRKDIR} && ${LN} -sf IP2Location-Varnish-${GH_TAGNAME} \
 		${PORTNAME}-${PKGNAMEPREFIX}${GH_TAGNAME})
 
-post-patch:
-	${REINPLACE_CMD} 's|$${VARNISHAPI_DATAROOTDIR}|${LOCALBASE}/share|' \
-		${WRKSRC}/Makefile.am
-
 pre-configure:
 	(cd ${WRKSRC} && ${SH} ./autogen.sh)
 
