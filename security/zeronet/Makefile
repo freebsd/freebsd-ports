@@ -4,6 +4,7 @@
 PORTNAME=	zeronet
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	security net-p2p
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,9 +13,17 @@ COMMENT=	Decentralized websites using Bitcoin crypto and BitTorrent network
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack>0:devel/py-msgpack@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coincurve>0:security/py-coincurve@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}msgpack>0:devel/py-msgpack@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}gevent>0:devel/py-gevent@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}gevent-websocket>0:www/py-gevent-websocket@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}maxminddb>0:net/py-maxminddb@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}merkletools>0:security/py-merkletools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyasn1>0:devel/py-pyasn1@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyelliptic>0:security/py-pyelliptic@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pysocks>0:net/py-pysocks@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}python-bitcoinlib>0:finance/py-python-bitcoinlib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}rsa>0:security/py-rsa@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}stem>0:security/py-stem@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 
