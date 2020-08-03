@@ -2,14 +2,9 @@
 
 PORTNAME=	surge-synthesizer
 DISTVERSIONPREFIX=	release_
-DISTVERSION=	1.7.0
+DISTVERSION=	1.7.1
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	c8271d11c25493c2addc82c963bd5e837d3b290c.patch:-p1 \
-		9b8b0663d1abf91e523744f5fa2e9528a950d0df.patch:-p1 \
-		b9525a7c62a57686ea592fa5f8038d460edb255e.patch:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Surge Synthesizer LV2 and VST plug-in
