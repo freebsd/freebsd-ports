@@ -1,0 +1,12 @@
+bin/mstconfig
+bin/mstflint
+bin/mstfwmanager
+bin/mstlink
+man/man1/mstconfig.1.gz
+man/man1/mstflint.1.gz
+man/man1/mstfwmanager.1.gz
+man/man1/mstlink.1.gz
+%%DATADIR%%/mlxconfig_dbs/mlxconfig_host.db
+%%DATADIR%%/mlxconfig_dbs/mlxconfig_switch.db
+%%DATADIR%%/prm_dbs/hca/ext/register_access_table.adb
+%%DATADIR%%/prm_dbs/switch/ext/register_access_table.adb
