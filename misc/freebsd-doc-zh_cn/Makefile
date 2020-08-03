@@ -15,6 +15,6 @@ DOCLANG_PREFIX=	zh_CN
 
 .include "${MASTERDIR}/Makefile"
 
-.if ${PORT_OPTIONS:MPDF} || ${PORT_OPTIONS:MPS}
+.if ${PORT_OPTIONS:MPDF}
 BUILD_DEPENDS+=	${LOCALBASE}/share/fonts/TrueType/gkai00mp.ttf:chinese/arphicttf
 .endif

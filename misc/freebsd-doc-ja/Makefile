@@ -14,6 +14,6 @@ DOCLANG=	ja_JP.eucJP
 
 .include "${MASTERDIR}/Makefile"
 
-.if ${PORT_OPTIONS:MPDF} || ${PORT_OPTIONS:MPS}
+.if ${PORT_OPTIONS:MPDF}
 BUILD_DEPENDS+=	${LOCALBASE}/share/fonts/ipa/ipam.otf:japanese/font-ipa
 .endif

@@ -14,6 +14,6 @@ DOCLANG=	ko_KR.UTF-8
 
 .include "${MASTERDIR}/Makefile"
 
-.if ${PORT_OPTIONS:MPDF} || ${PORT_OPTIONS:MPS}
+.if ${PORT_OPTIONS:MPDF}
 BUILD_DEPENDS+=	${LOCALBASE}/share/fonts/nanum-ttf/NanumBarunGothic.ttf:korean/nanumfonts-ttf
 .endif
