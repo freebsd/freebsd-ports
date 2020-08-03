@@ -3,7 +3,7 @@
 
 PORTNAME=	telegraf
 DISTVERSIONPREFIX=v
-DISTVERSION=	1.14.4
+DISTVERSION=	1.15.2
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	girgen@FreeBSD.org
@@ -28,7 +28,7 @@ GH_TUPLE=	\
 		Azure:azure-sdk-for-go:v37.1.0:azure_azure_sdk_for_go/vendor/github.com/Azure/azure-sdk-for-go \
 		Azure:azure-storage-queue-go:6ed74e755687:azure_azure_storage_queue_go/vendor/github.com/Azure/azure-storage-queue-go \
 		Azure:go-amqp:v0.12.6:azure_go_amqp/vendor/github.com/Azure/go-amqp \
-		Azure:go-autorest:v13.3.0:azure_go_autorest/vendor/github.com/Azure/go-autorest \
+		Azure:go-autorest:v14.1.1:azure_go_autorest/vendor/github.com/Azure/go-autorest \
 		BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/toml \
 		Mellanox:rdmamap:7c3c4763a6ee:mellanox_rdmamap/vendor/github.com/Mellanox/rdmamap \
 		Microsoft:ApplicationInsights-Go:v0.4.2:microsoft_applicationinsights_go/vendor/github.com/Microsoft/ApplicationInsights-Go \
@@ -41,7 +41,8 @@ GH_TUPLE=	\
 		apache:thrift:v0.12.0:apache_thrift/vendor/github.com/apache/thrift \
 		aristanetworks:glog:67e8567f59f3:aristanetworks_glog/vendor/github.com/aristanetworks/glog \
 		aristanetworks:goarista:a123909ec740:aristanetworks_goarista/vendor/github.com/aristanetworks/goarista \
-		aws:aws-sdk-go:v1.19.41:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
+		aws:aws-sdk-go:v1.30.9:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
+		benbjohnson:clock:v1.0.3:benbjohnson_clock/vendor/github.com/benbjohnson/clock \
 		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 		caio:go-tdigest:v2.3.0:caio_go_tdigest/vendor/github.com/caio/go-tdigest \
 		cenkalti:backoff:v2.0.0:cenkalti_backoff/vendor/github.com/cenkalti/backoff \
@@ -80,7 +81,7 @@ GH_TUPLE=	\
 		go-mgo:mgo:9856a29383ce:go_mgo_mgo/vendor/gopkg.in/mgo.v2 \
 		go-ole:go-ole:v1.2.1:go_ole_go_ole/vendor/github.com/go-ole/go-ole \
 		go-redis:redis:v6.12.0:go_redis_redis/vendor/github.com/go-redis/redis \
-		go-sql-driver:mysql:v1.4.1:go_sql_driver_mysql/vendor/github.com/go-sql-driver/mysql \
+		go-sql-driver:mysql:v1.5.0:go_sql_driver_mysql/vendor/github.com/go-sql-driver/mysql \
 		go-tomb:tomb:dd632973f1e7:go_tomb_tomb/vendor/gopkg.in/tomb.v1 \
 		go-yaml:yaml:v2.2.5:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		goburrow:modbus:v0.1.0:goburrow_modbus/vendor/github.com/goburrow/modbus \
@@ -95,7 +96,6 @@ GH_TUPLE=	\
 		golang:geo:5b978397cfec:golang_geo/vendor/github.com/golang/geo \
 		golang:groupcache:8c9f03a8e57e:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:lint:738671d3881b:golang_lint/vendor/golang.org/x/lint \
-		golang:mock:v1.4.3:golang_mock/vendor/github.com/golang/mock \
 		golang:mod:v0.2.0:golang_mod/vendor/golang.org/x/mod \
 		golang:net:244492dfa37a:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:bf48bf16ab8d:golang_oauth2/vendor/golang.org/x/oauth2 \
@@ -103,7 +103,7 @@ GH_TUPLE=	\
 		golang:snappy:v0.0.1:golang_snappy/vendor/github.com/golang/snappy \
 		golang:sync:43a5402ce75a:golang_sync/vendor/golang.org/x/sync \
 		golang:sys:12a6c2dcc1e4:golang_sys/vendor/golang.org/x/sys \
-		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
+		golang:text:v0.3.3:golang_text/vendor/golang.org/x/text \
 		golang:time:555d28b269f0:golang_time/vendor/golang.org/x/time \
 		golang:tools:63da46f3035e:golang_tools/vendor/golang.org/x/tools \
 		golang:xerrors:9bdfabe68543:golang_xerrors/vendor/golang.org/x/xerrors \
@@ -111,6 +111,7 @@ GH_TUPLE=	\
 		google:go-genproto:1f3552e48f24:google_go_genproto/vendor/google.golang.org/genproto \
 		google:go-github:v17.0.0:google_go_github/vendor/github.com/google/go-github \
 		google:go-querystring:v1.0.0:google_go_querystring/vendor/github.com/google/go-querystring \
+		google:starlark-go:caa3e9aa5008:google_starlark_go/vendor/go.starlark.net \
 		google:uuid:v1.1.1:google_uuid/vendor/github.com/google/uuid \
 		googleapis:gax-go:v2.0.5:googleapis_gax_go/vendor/github.com/googleapis/gax-go \
 		googleapis:google-api-go-client:v0.20.0:googleapis_google_api_go_client/vendor/google.golang.org/api \
@@ -127,7 +128,7 @@ GH_TUPLE=	\
 		hashicorp:go-uuid:v1.0.1:hashicorp_go_uuid/vendor/github.com/hashicorp/go-uuid \
 		hashicorp:serf:v0.8.1:hashicorp_serf/vendor/github.com/hashicorp/serf \
 		influxdata:go-syslog:v2.0.1:influxdata_go_syslog/vendor/github.com/influxdata/go-syslog/v2 \
-		influxdata:tail:c43482518d41:influxdata_tail/vendor/github.com/influxdata/tail \
+		influxdata:tail:03a791b270e4:influxdata_tail/vendor/github.com/influxdata/tail \
 		influxdata:toml:270119a8ce65:influxdata_toml/vendor/github.com/influxdata/toml \
 		influxdata:wlog:7c63b0a71ef8:influxdata_wlog/vendor/github.com/influxdata/wlog \
 		jackc:pgx:v3.6.0:jackc_pgx/vendor/github.com/jackc/pgx \
@@ -136,7 +137,7 @@ GH_TUPLE=	\
 		jcmturner:gofork:v1.0.0:jcmturner_gofork/vendor/github.com/jcmturner/gofork \
 		jcmturner:gokrb5:v7.3.0:jcmturner_gokrb5/vendor/gopkg.in/jcmturner/gokrb5.v7 \
 		jcmturner:rpc:v1.1.0:jcmturner_rpc/vendor/gopkg.in/jcmturner/rpc.v1 \
-		jmespath:go-jmespath:c2b33e8439af:jmespath_go_jmespath/vendor/github.com/jmespath/go-jmespath \
+		jmespath:go-jmespath:v0.3.0:jmespath_go_jmespath/vendor/github.com/jmespath/go-jmespath \
 		jpillora:backoff:3050d21c67d7:jpillora_backoff/vendor/github.com/jpillora/backoff \
 		jstemmer:go-junit-report:v0.9.1:jstemmer_go_junit_report/vendor/github.com/jstemmer/go-junit-report \
 		kardianos:service:v1.0.0:kardianos_service/vendor/github.com/kardianos/service \
@@ -162,6 +163,7 @@ GH_TUPLE=	\
 		nats-io:nats.go:v1.9.1:nats_io_nats_go/vendor/github.com/nats-io/nats.go \
 		nats-io:nkeys:v0.1.3:nats_io_nkeys/vendor/github.com/nats-io/nkeys \
 		nats-io:nuid:v1.0.1:nats_io_nuid/vendor/github.com/nats-io/nuid \
+		newrelic:newrelic-telemetry-sdk-go:v0.2.0:newrelic_newrelic_telemetry_sdk_go/vendor/github.com/newrelic/newrelic-telemetry-sdk-go \
 		nsqio:go-nsq:v1.0.7:nsqio_go_nsq/vendor/github.com/nsqio/go-nsq \
 		olivere:elastic:v5.0.70:olivere_elastic/vendor/gopkg.in/olivere/elastic.v5 \
 		openconfig:gnmi:33a1865c3029:openconfig_gnmi/vendor/github.com/openconfig/gnmi \
@@ -171,7 +173,7 @@ GH_TUPLE=	\
 		opentracing:opentracing-go:v1.0.2:opentracing_opentracing_go/vendor/github.com/opentracing/opentracing-go \
 		openzipkin:zipkin-go-opentracing:v0.3.4:openzipkin_zipkin_go_opentracing/vendor/github.com/openzipkin/zipkin-go-opentracing \
 		pierrec:lz4:v2.2.6:pierrec_lz4/vendor/github.com/pierrec/lz4 \
-		pkg:errors:v0.8.1:pkg_errors/vendor/github.com/pkg/errors \
+		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
 		prometheus:client_golang:v1.5.1:prometheus_client_golang/vendor/github.com/prometheus/client_golang \
 		prometheus:client_model:v0.2.0:prometheus_client_model/vendor/github.com/prometheus/client_model \
@@ -180,14 +182,14 @@ GH_TUPLE=	\
 		rcrowley:go-metrics:3113b8401b8a:rcrowley_go_metrics/vendor/github.com/rcrowley/go-metrics \
 		safchain:ethtool:f459e2d13664:safchain_ethtool/vendor/github.com/safchain/ethtool \
 		samuel:go-zookeeper:c4fab1ac1bec:samuel_go_zookeeper/vendor/github.com/samuel/go-zookeeper \
-		shirou:gopsutil:v2.20.2:shirou_gopsutil/vendor/github.com/shirou/gopsutil \
+		shirou:gopsutil:v2.20.5:shirou_gopsutil/vendor/github.com/shirou/gopsutil \
 		sirupsen:logrus:v1.4.2:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
-		soniah:gosnmp:v1.22.0:soniah_gosnmp/vendor/github.com/soniah/gosnmp \
+		soniah:gosnmp:v1.25.0:soniah_gosnmp/vendor/github.com/soniah/gosnmp \
 		streadway:amqp:e5adc2ada8b8:streadway_amqp/vendor/github.com/streadway/amqp \
 		stretchr:objx:v0.1.1:stretchr_objx/vendor/github.com/stretchr/objx \
-		stretchr:testify:v1.4.0:stretchr_testify/vendor/github.com/stretchr/testify \
+		stretchr:testify:v1.5.1:stretchr_testify/vendor/github.com/stretchr/testify \
 		tbrandon:mbserver:993e1772cc62:tbrandon_mbserver/vendor/github.com/tbrandon/mbserver \
-		tidwall:gjson:v1.3.0:tidwall_gjson/vendor/github.com/tidwall/gjson \
+		tidwall:gjson:v1.6.0:tidwall_gjson/vendor/github.com/tidwall/gjson \
 		tidwall:match:v1.0.1:tidwall_match/vendor/github.com/tidwall/match \
 		tidwall:pretty:v1.0.0:tidwall_pretty/vendor/github.com/tidwall/pretty \
 		vishvananda:netlink:b2de5d10e38e:vishvananda_netlink/vendor/github.com/vishvananda/netlink \
