@@ -1,11 +1,30 @@
---- Makefile.orig	2017-09-28 11:12:01 UTC
+--- Makefile.orig	2019-12-06 16:40:42 UTC
 +++ Makefile
-@@ -40,23 +40,22 @@ AOBJS=      bam_index.o bam_plcmd.o sam_
-             bam_tview.o bam_tview_curses.o bam_tview_html.o bam_lpileup.o \
-             bam_quickcheck.o bam_addrprg.o bam_markdup.o
+@@ -21,12 +21,12 @@
+ # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+ # DEALINGS IN THE SOFTWARE.
+ 
+-CC       = gcc
+-AR       = ar
+-CPPFLAGS =
++CC       ?= gcc
++AR       ?= ar
++# CPPFLAGS =
+ #CFLAGS   = -g -Wall -O2 -pedantic -std=c99 -D_XOPEN_SOURCE=600
+-CFLAGS   = -g -Wall -O2
+-LDFLAGS  =
++CFLAGS   ?= -g -Wall -O2
++# LDFLAGS  =
+ LIBS     =
+ 
+ LZ4DIR   = ./lz4
+@@ -47,23 +47,24 @@ AOBJS=      bam_index.o bam_plcmd.o sam_view.o bam_fas
+             bam_quickcheck.o bam_addrprg.o bam_markdup.o tmp_file.o
+ LZ4OBJS  =  $(LZ4DIR)/lz4.o
  
 -prefix      = /usr/local
-+prefix      = ${PREFIX}
++PREFIX      ?= /usr/local
++prefix      = $(PREFIX)
  exec_prefix = $(prefix)
  bindir      = $(exec_prefix)/bin
  datarootdir = $(prefix)/share
@@ -17,6 +36,7 @@
 -misc_bindir = $(bindir)
 +misc_bindir = $(bindir)/samtools_misc
  
++# Use BSD_INSTALL_PROGRAM to strip when WITH_DEBUG not set
  MKDIR_P = mkdir -p
 -INSTALL = install -p
 -INSTALL_DATA    = $(INSTALL) -m 644
