@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	e-antic
-PORTVERSION=	0.1.7
+PORTVERSION=	0.1.8
 #MASTER_SITES=	https://www.labri.fr/perso/vdelecro/e-antic/
 CATEGORIES=	math
 
