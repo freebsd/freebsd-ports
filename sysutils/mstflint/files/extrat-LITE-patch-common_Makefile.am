@@ -1,0 +1,11 @@
+--- common/Makefile.am.orig	2020-01-10 22:31:52.576485000 +0100
++++ common/Makefile.am	2020-01-10 22:32:24.068225000 +0100
+@@ -36,8 +36,6 @@ noinst_HEADERS=compatibility.h bit_slice.h tools_utils
+ 
+ commonincludedir = $(includedir)/mstflint/common/
+ 
+-commoninclude_HEADERS = compatibility.h
+-
+ update_prefix = sed -e 's,[@]MST_LIB_DIR[@]${CONF_DISABLE_PATH_UPDATE},$(libdir),g'\
+                     -e 's,[@]MST_BIN_DIR[@]${CONF_DISABLE_PATH_UPDATE},$(bindir),g'\
+                     -e 's,[@]MFTCONF_PREFIX[@],$(prefix),g'

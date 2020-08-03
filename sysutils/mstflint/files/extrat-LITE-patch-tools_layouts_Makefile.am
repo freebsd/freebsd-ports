@@ -1,0 +1,11 @@
+--- tools_layouts/Makefile.am.orig	2020-01-10 22:06:24.040554000 +0100
++++ tools_layouts/Makefile.am	2020-01-10 22:06:44.128071000 +0100
+@@ -41,8 +41,6 @@ lib_LTLIBRARIES = libtools_layouts.a
+ 
+ toolslayoutsincludedir = $(includedir)/mstflint/tools_layouts/
+ 
+-toolslayoutsinclude_HEADERS = icmd_layouts.h adb_to_c_utils.h
+-
+ libtools_layouts_a_SOURCES = prm_adb_db.cpp prm_adb_db.h \
+ 				adb_to_c_utils.c adb_to_c_utils.h\
+ 				cibfw_layouts.c cibfw_layouts.h \

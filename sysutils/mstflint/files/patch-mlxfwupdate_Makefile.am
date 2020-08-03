@@ -1,0 +1,11 @@
+--- mlxfwupdate/Makefile.am.orig	2019-11-15 19:39:03 UTC
++++ mlxfwupdate/Makefile.am
+@@ -37,7 +37,7 @@ MTCR_DIR = $(USER_DIR)/${MTCR_CONFIG_DIR}
+ bin_PROGRAMS = mstfwmanager
+ 
+ docdir=$(INSTALL_BASEDIR)/etc/mstflint
+-dist_doc_DATA=certificate/ca-bundle.crt
++#dist_doc_DATA=certificate/ca-bundle.crt
+ 
+ MTCR_UL_DIR = $(USER_DIR)/${MTCR_CONF_DIR}
+ MTCR_UL_LIB = $(MTCR_UL_DIR)/libmtcr_ul.a

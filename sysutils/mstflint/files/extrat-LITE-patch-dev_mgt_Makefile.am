@@ -1,0 +1,16 @@
+*** dev_mgt/Makefile.am.orig	Fri Jan 10 23:00:25 2020
+--- dev_mgt/Makefile.am	Fri Jan 10 23:18:29 2020
+*************** libdev_mgt_a_SOURCES = \
+*** 44,54 ****
+  						$(top_srcdir)/common/compatibility.h   \
+  						$(top_srcdir)/common/tools_version.h
+  
+- dev_mgt_pylibdir = $(libdir)/mstflint/python_tools/
+- 
+- dev_mgt_pylib_DATA = c_dev_mgt.so dev_mgt.py
+- dist_dev_mgt_pylib_DATA = dev_mgt.py
+- 
+  c_dev_mgt.so: libdev_mgt.a
+  	$(CC) -g -Wall -pthread -shared ${CFLAGS} tools_dev_types.o -o c_dev_mgt.so \
+  	-L$(USER_DIR)/reg_access -lreg_access \
+--- 44,49 ----

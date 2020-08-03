@@ -1,0 +1,8 @@
+--- mtcr_freebsd/Makefile.am.orig	2020-01-10 22:04:45.957050000 +0100
++++ mtcr_freebsd/Makefile.am	2020-01-10 22:04:59.716184000 +0100
+@@ -50,5 +50,3 @@ libmtcr_ul_a_SOURCES += ../mtcr_ul/mtcr_ib_ofed.c
+ endif
+ 
+ libraryincludedir=$(includedir)/mstflint
+-libraryinclude_HEADERS = $(top_srcdir)/include/mtcr_ul/mtcr.h  $(top_srcdir)/include/mtcr_ul/mtcr_com_defs.h
+-

@@ -1,0 +1,16 @@
+--- mlxconfig/Makefile.am.orig	2020-01-10 20:19:15.456616000 +0100
++++ mlxconfig/Makefile.am	2020-01-10 20:19:48.307817000 +0100
+@@ -55,13 +55,6 @@ AM_CPPFLAGS = -I. -I$(USER_DIR) -I$(top_srcdir)/includ
+ 
+ AM_CXXFLAGS = -pthread -Wall -W -g -MP -MD -pipe  -Wno-deprecated-declarations  $(COMPILER_FPIC) -DDATA_PATH=\"$(pkgdatadir)\"
+ bin_PROGRAMS = mstconfig
+-MLXPRIVHOST_PYTHON_WRAPPER=mstprivhost
+-bin_SCRIPTS = ${MLXPRIVHOST_PYTHON_WRAPPER}
+-${MLXPRIVHOST_PYTHON_WRAPPER}: $(PYTHON_WRAPPER_SCRIPT)
+-	cp $(PYTHON_WRAPPER_SCRIPT) $@
+-
+-mlxprivhostlibdir=$(libdir)/mstflint/python_tools/$(MLXPRIVHOST_PYTHON_WRAPPER)
+-mlxprivhostlib_SCRIPTS = $(MLXPRIVHOST_PYTHON_WRAPPER).py
+ 
+ noinst_LTLIBRARIES = libmlxcfg.a
+ 

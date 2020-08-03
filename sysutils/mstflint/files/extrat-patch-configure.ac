@@ -1,0 +1,36 @@
+--- configure.ac.orig	2020-01-05 16:50:06.000000000 +0100
++++ configure.ac	2020-01-09 00:15:46.179518000 +0100
+@@ -104,12 +104,10 @@ AC_ARG_ENABLE(fw-mgr,
+              [enable_fw_mgr="no"])
+ AC_MSG_RESULT($enable_fw_mgr)
+ if test "x$enable_fw_mgr" = "xyes"; then
+-    AC_CHECK_HEADER(curl/curl.h,,AC_MSG_ERROR([cannot find curl/curl.h . this header is needed for compiling fw manager tool]))
+     AC_CHECK_HEADER(zlib.h,,AC_MSG_ERROR([cannot find zlib.h . this header is needed for compiling fw manager tool]))
+     AC_CHECK_LIB(z, uncompress,, AC_MSG_ERROR([cannot find zlib uncompress() function.]))
+     AC_CHECK_HEADER(lzma.h,,AC_MSG_ERROR([Cannot find lzma.h.]))
+     AC_CHECK_LIB(boost_regex, regcompA,, AC_MSG_ERROR([cannot find boost_regex regcompA() function. Try re-installing the library...]))
+-    CURL_INC_DIR=/usr/include/curl/
+ fi
+ 
+ # Adabe
+@@ -133,8 +131,6 @@ if test "x$enable_adb_generic_tools" = "xyes"; then
+     AC_LANG_POP([C++])
+ fi
+ 
+-AC_SUBST(CURL_INC_DIR)
+-
+ AM_CONDITIONAL(ENABLE_FWMGR, [test "x$enable_fw_mgr" = "xyes" ])
+ AC_SUBST(ENABLE_FWMGR)
+ 
+@@ -352,11 +348,6 @@ AS_IF([test "x$enable_cs" = "xyes" || test "x$enable_o
+ AS_IF([test "x$enable_openssl" = "xyes"], [
+         AC_CONFIG_FILES(mlxsign_lib/Makefile)
+     ])
+-
+-if [ test "x$enable_openssl" = "xno" ] && \
+-    [ test "x$enable_fw_mgr" = "xyes" ] ; then
+-    AC_MSG_ERROR([--enable-fw-mgr cannot be used with --disabled-openssl.])
+-fi
+ 
+ AS_IF([test "x$enable_fw_mgr" = "xyes"], [
+         AC_CONFIG_FILES(mlxfwupdate/Makefile)

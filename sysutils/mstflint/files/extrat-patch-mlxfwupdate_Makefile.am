@@ -1,0 +1,38 @@
+--- mlxfwupdate/Makefile.am.orig	2020-01-09 18:28:23.591163000 +0100
++++ mlxfwupdate/Makefile.am	2020-01-09 18:35:23.551040000 +0100
+@@ -45,10 +45,6 @@ MTCR_UL_LIB = $(MTCR_UL_DIR)/libmtcr_ul.a
+ XML_FLAGS = -DUSE_XML -DLIBXML_STATIC
+ XML_LIBS = -lxml2 $(ZLIB_LIB)
+ 
+-CURL_LIBS = -lcurl  -lssl -lcrypto -lrt
+-
+-CURL_FLAGS = -DCURL_STATICLIB
+-
+ common_INCLUDES =  -I$(USER_DIR)/common\
+             -I$(USER_DIR)/\
+             -I$(USER_DIR)/include/mtcr_ul\
+@@ -59,7 +55,6 @@ common_INCLUDES =  -I$(USER_DIR)/common\
+             $(JSON_CFLAGS)\
+             -I$(USER_DIR)/mlxfwops/lib\
+             -I$(USER_DIR)/pldmlib\
+-            -I$(CURL_INC_DIR)\
+             -I$(USER_DIR)/mft_utils\
+             -I$(USER_DIR)/dev_mgt
+ 
+@@ -100,7 +95,6 @@ common_LDADD  = $(USER_DIR)/dev_mgt/libdev_mgt.a\
+                         $(USER_DIR)/tools_layouts/libtools_layouts.a\
+                         $(USER_DIR)/fw_comps_mgr/libfw_comps_mgr.a\
+                         $(XML_LIBS)\
+-                        $(CURL_LIBS)\
+                         -lm $(LIBSTD_CPP) ${LDL}
+                         
+ if ENABLE_OPENSSL
+@@ -118,6 +112,6 @@ common_LDADD += $(top_srcdir)/mad_ifc/libmad_ifc.a
+ else
+ endif
+ 
+-mstfwmanager_CXXFLAGS =  -DMSTFLINT -DUSE_CURL $(AM_CXXFLAGS) $(CURL_FLAGS) $(XML_FLAGS) -I$(MTCR_UL_DIR) $(common_INCLUDES) 
++mstfwmanager_CXXFLAGS =  -DMSTFLINT $(AM_CXXFLAGS) $(XML_FLAGS) -I$(MTCR_UL_DIR) $(common_INCLUDES) 
+ mstfwmanager_SOURCES  = $(common_SOURCEES)
+-mstfwmanager_LDADD    = $(common_LDADD) $(MTCR_UL_LIB) -lz
++mstfwmanager_LDADD    = $(common_LDADD) $(MTCR_UL_LIB) -lz -llzma

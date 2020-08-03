@@ -1,0 +1,12 @@
+--- reg_access/Makefile.am.orig	2020-01-05 16:50:06.000000000 +0100
++++ reg_access/Makefile.am	2020-01-10 23:33:56.588295000 +0100
+@@ -49,9 +49,6 @@ libreg_access_a_LIBADD = $(libreg_access_a_DEPENDENCIE
+ RREG_ACCESS_SO = rreg_access.so
+ reg_access_pylibdir = $(libdir)/mstflint/python_tools/
+ 
+-reg_access_pylib_DATA = ${RREG_ACCESS_SO} regaccess.py
+-dist_reg_access_pylib_DATA = regaccess.py
+-
+ ${RREG_ACCESS_SO}: libreg_access.a
+ 	$(CC) -g -Wall -pthread -shared ${CFLAGS} *.o -o ${RREG_ACCESS_SO} \
+ 	-L$(USER_DIR)/tools_layouts -ltools_layouts -L$(MTCR_DIR) -lmtcr_ul

@@ -1,0 +1,11 @@
+--- mlxreg/Makefile.am.orig	2020-01-10 20:34:08.906577000 +0100
++++ mlxreg/Makefile.am	2020-01-10 20:34:18.747595000 +0100
+@@ -58,8 +58,6 @@ libmstreg_lib_a_SOURCES = mlxreg_exception.h \
+ 
+ mstreg_SOURCES = mlxreg_ui.cpp mlxreg_ui.h
+ 
+-bin_PROGRAMS = mstreg
+-
+ mstreg_LDADD = libmstreg_lib.a \
+                 $(USER_DIR)/cmdparser/libcmdparser.a \
+                 $(MFT_UTILS_DIR)/libmftutils.a \
