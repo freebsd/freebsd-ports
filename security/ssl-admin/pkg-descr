@@ -8,4 +8,4 @@ ssl-admin will help you do the following tasks with SSL certificates:
   * Manage Certificate Revokation Lists
   * Export configurations and certificates for OpenVPN.
 
-WWW: http://www.secure-computing.net/ssl-admin/
+WWW: https://github.com/ecrist/ssl-admin/
