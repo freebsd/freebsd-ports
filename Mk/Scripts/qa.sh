@@ -1007,7 +1007,7 @@ pkgmessage()
 reinplace()
 {
 	if [ -f ${REWARNFILE} ]; then
-		warn "Possible REINPLACE_CMD issues"
+		warn "Possible REINPLACE_CMD issues:"
 		cat ${REWARNFILE}
 	fi
 }
