@@ -1,0 +1,32 @@
+--- sadmin/pmap_dirty.orig	2020-07-12 09:44:16 UTC
++++ sadmin/pmap_dirty
+@@ -25,9 +25,9 @@ my %total_counter;
+ 
+ if (scalar(@ARGV) == 0) {
+ 	@ARGV = sort { $a <=> $b } map {
+-		$_ = ($_ =~ m{^/proc/(\d+)$})[0];
++		$_ = ($_ =~ m{^/compat/linux/proc/(\d+)$})[0];
+ 		(!defined($_) || $_ eq "") ? () : $_
+-	} glob("/proc/*");
++	} glob("/compat/linux/proc/*");
+ }
+ 
+ &print_one();
+@@ -35,7 +35,7 @@ if (scalar(@ARGV) == 0) {
+ foreach my $pid (@ARGV) {
+ 	my $proc_name;
+ 	my $fh;
+-	open($fh, "< /proc/$pid/smaps");
++	open($fh, "< /compat/linux/proc/$pid/smaps");
+ 
+ 	my %counter = (
+ 		Private_Dirty => 0,
+@@ -50,7 +50,7 @@ foreach my $pid (@ARGV) {
+ 	}
+ 
+ 	close $fh;
+-	if (open($fh, "</proc/$pid/stat")) {
++	if (open($fh, "</compat/linux/proc/$pid/stat")) {
+ 		($proc_name) = (<$fh> =~ /^.*?\((.*)\)/);
+ 		close $fh;
+ 	}

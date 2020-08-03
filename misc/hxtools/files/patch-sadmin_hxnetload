@@ -1,0 +1,23 @@
+--- sadmin/hxnetload.orig	2020-07-12 09:44:16 UTC
++++ sadmin/hxnetload
+@@ -28,11 +28,11 @@ else
+ fi;
+ 
+ while :; do
+-	cat /proc/net/dev | grep " $1" | cut -f 2 -d:;
++	cat /compat/linux/proc/net/dev | grep " $1" | cut -f 2 -d:;
+ 	"$sleeper" $wait;
+ done | perl -pe '$|=1;s/.*://' | while read rxcnt rxpkt c d e f g h txcnt txpkt; do
+ 	if [ "$all" != "" ]; then
+-		now="`cat /proc/uptime | cut -f 1 -d " " | sed s/"\."//g`";
++		now="`cat /compat/linux/proc/uptime | cut -f 1 -d " " | sed s/"\."//g`";
+ 		[ $[$now-$oldtm] -eq 0 ] && continue;
+ 		rxbytes=$[($rxcnt-$oldrx)*100/($now-$oldtm)];
+ 		rxint=$[$rxbytes/1024];
+@@ -48,5 +48,5 @@ done | perl -pe '$|=1;s/.*://' | while read rxcnt rxpk
+ 	all=$[$rxcnt+$txcnt];
+ 	oldrx=$rxcnt;
+ 	oldtx=$txcnt;
+-	oldtm="`cat /proc/uptime | cut -f 1 -d " " | sed s/"\."//g`";
++	oldtm="`cat /compat/linux/proc/uptime | cut -f 1 -d " " | sed s/"\."//g`";
+ done;

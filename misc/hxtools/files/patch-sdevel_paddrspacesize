@@ -1,0 +1,11 @@
+--- sdevel/paddrspacesize.orig	2020-07-12 09:44:16 UTC
++++ sdevel/paddrspacesize
+@@ -18,7 +18,7 @@ foreach my $line (@list) {
+ 	my($pid, $reset) = ($line =~ /^\s*(\d+)\s+(.*)/);
+ 	my $bitness = 0;
+ 
+-	if (!open(FH, "</proc/$pid/maps")) {
++	if (!open(FH, "</compat/linux/proc/$pid/maps")) {
+ 		next;
+ 	}
+ 
