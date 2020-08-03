@@ -2,7 +2,7 @@
 
 PORTNAME=	icedtea-web
 PORTVERSION=	1.8.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	java www
 MASTER_SITES=	https://github.com/AdoptOpenJDK/IcedTea-Web/archive/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
