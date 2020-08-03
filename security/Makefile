@@ -912,6 +912,7 @@
     SUBDIR += py-m2crypto
     SUBDIR += py-maec
     SUBDIR += py-mcrypt
+    SUBDIR += py-merkletools
     SUBDIR += py-mixbox
     SUBDIR += py-mnemonic
     SUBDIR += py-msoffcrypto-tool
