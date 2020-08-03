@@ -186,6 +186,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/ExtUtils/Miniperl.pm
 %%PRIV_LIB%%/ExtUtils/Mkbootstrap.pm
 %%PRIV_LIB%%/ExtUtils/Mksymlists.pm
+%%PRIV_LIB%%/ExtUtils/PL2Bat.pm
 %%PRIV_LIB%%/ExtUtils/Packlist.pm
 %%PRIV_LIB%%/ExtUtils/ParseXS.pm
 %%PRIV_LIB%%/ExtUtils/ParseXS.pod
@@ -1090,7 +1091,6 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN1%%/perlsource.1.gz
 %%MAN1%%/perlstyle.1.gz
 %%MAN1%%/perlsub.1.gz
-%%MAN1%%/perlsymbian.1.gz
 %%MAN1%%/perlsyn.1.gz
 %%MAN1%%/perlsynology.1.gz
 %%MAN1%%/perlthanks.1.gz
@@ -1280,6 +1280,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN3%%/ExtUtils::Miniperl.3.gz
 %%MAN3%%/ExtUtils::Mkbootstrap.3.gz
 %%MAN3%%/ExtUtils::Mksymlists.3.gz
+%%MAN3%%/ExtUtils::PL2Bat.3.gz
 %%MAN3%%/ExtUtils::Packlist.3.gz
 %%MAN3%%/ExtUtils::ParseXS.3.gz
 %%MAN3%%/ExtUtils::ParseXS::Constants.3.gz
@@ -1877,7 +1878,6 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/pod/perlsource.pod
 %%PRIV_LIB%%/pod/perlstyle.pod
 %%PRIV_LIB%%/pod/perlsub.pod
-%%PRIV_LIB%%/pod/perlsymbian.pod
 %%PRIV_LIB%%/pod/perlsyn.pod
 %%PRIV_LIB%%/pod/perlsynology.pod
 %%PRIV_LIB%%/pod/perlthrtut.pod
