@@ -1161,6 +1161,7 @@
     SUBDIR += rdapper
     SUBDIR += rdesktop
     SUBDIR += rdist6
+    SUBDIR += read_bbrlog
     SUBDIR += realtek-re-kmod
     SUBDIR += reaver
     SUBDIR += recvnet
