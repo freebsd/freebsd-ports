@@ -15,7 +15,7 @@ LICENSE=	GPLv2+ # though COPYING has GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 DEPRECATED=	Uses deprecated version of python
-EXPIRATION_DATE=	2020-08-15
+EXPIRATION_DATE=	2020-09-15
 
 RUN_DEPENDS=	${LOCALBASE}/libexec/gimp/2.2/python/gimpfu.py:graphics/py-gimp
 BUILD_DEPENDS=	intltool-extract:textproc/intltool

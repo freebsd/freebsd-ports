@@ -11,7 +11,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Arcade-style game with elements of economy and adventure
 
 DEPRECATED=	Uses deprecated version of python
-EXPIRATION_DATE=	2020-08-15
+EXPIRATION_DATE=	2020-09-15
 
 BROKEN_armv6=		fails to compile: res/3dsloader.cpp:77:15: comparison between pointer and integer ('char *' and 'int')
 BROKEN_armv7=		fails to compile: res/3dsloader.cpp:77:15: comparison between pointer and integer ('char *' and 'int')
