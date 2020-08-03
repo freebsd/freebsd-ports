@@ -7,6 +7,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Python interface for XSLT C library for GNOME
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 MASTERDIR=	${.CURDIR}/../libxslt
 BUILD_WRKSRC=	${WRKSRC}/python
 INSTALL_WRKSRC=	${BUILD_WRKSRC}

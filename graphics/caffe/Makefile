@@ -11,6 +11,9 @@ COMMENT=	Fast open framework for deep learning
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 CONFLICTS_INSTALL=	caffe2-*
 
 BUILD_DEPENDS=	${PYNUMPY} \

@@ -22,6 +22,9 @@ LICENSE_FILE_BSD2CLAUSE=	${WRKSRC}/LICENSE_YORICK.txt
 LICENSE_FILE_APACHE11=	${WRKSRC}/LICENSE_COLORBREWER.txt
 # See ${WRKSRC}/image_LICENSE.txt for per file license information
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 BUILD_DEPENDS=	vtk6>=6.1.0_8:math/vtk6 \
 		${PY_SPHINX}
 RUN_DEPENDS=	vtk6>=6.1.0_8:math/vtk6 \

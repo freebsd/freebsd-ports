@@ -13,6 +13,9 @@ COMMENT=	Fairly strong Go/Baduk/Weiqi playing program
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libcaffe.so:graphics/caffe \
