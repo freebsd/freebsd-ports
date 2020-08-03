@@ -16,10 +16,10 @@
  35.65757,	139.69288,	"kuriyama"			# Tokyo, Japan
  35.593,	139.688,	"bland"				# Tokyo, Japan
  35.64,		139.65,		"tota"				# Setagaya, Tokyo, Japan
- 35.7,		139.6,		"knu,simokawa"			# Tokyo, Japan
+ 35.7,		139.6,		"    ,knu,simokawa"		# Tokyo, Japan
  35.59,		139.59,		"tagattie"			# Kawasaki, Kanagawa, Japan
- 35.54,		139.53,		"nyan,ume"			# Yokohama, Kanagawa, Japan
- 35.36,		139.31,		"daichi"			# Kawasaki, Kanagawa, Japan
+ 35.54,		139.53,		"        ,nyan,ume"		# Yokohama, Kanagawa, Japan
+ 35.36,		139.31,		"                 ,daichi"	# Kawasaki, Kanagawa, Japan
  35.009668,	135.75497,	"takawata"			# Kyoto, Kyoto, Japan
  48.516613,	135.051836,	"fluffy"			# Khabarovsk, Russia
  31.2,		121.5,		"loader"			# Shanghai, China
@@ -100,7 +100,7 @@
  48.83,		2.36,		"antoine"			# Paris, France
  48.79964,	2.35058,	"bapt"				# Villejuif, France
  48.827111,	2.347019,	"sbz"				# Paris, France
- 48.87,		2.33,		"dumbbell,cognet"	align=left	# Paris, France
+ 48.87,		2.33,		"dumbbell,cognet" align=left	# Paris, France
  48.8473,	2.2856,		"mat"				# Paris, France
  48.912,	2.256,		"mich"		align=left	# La Garenne-Colombes, France
  48.818344,	2.245696,	"roberto"	align=left	# Meudon, France
@@ -152,7 +152,7 @@
  44.89,		-93.35,		"bdrewery"			# Minneapolis, MN, USA
  39.168,	-96.620,	"kevans"			# Manhattan, KS, USA
  30.47702408,	-97.64801025,	"ler"				# Pflugerville, TX, USA
- 30.343,	-97.881,	"linimon"			# Austin, TX, USA
+ 30.343,	-97.881,	"   ,linimon"			# Austin, TX, USA
  39.897418,	-104.981891,	"brd"				# Northglenn, CO, USA
  39.897418,	-105.074891,	"will"				# Westminster, CO, USA
  40.01942534,	-105.23914289,	"imp"				# Boulder, CO, USA
