@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wine
-DISTVERSION=	5.13
+DISTVERSION=	5.14
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
@@ -134,10 +134,6 @@ X11_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 # i386-wine-devel slave port.
 .ifndef WINE_SLAVE_BUILD
 .include <bsd.port.pre.mk>
-
-.if !${PORT_OPTIONS:MSTAGING}
-EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-dlls-ntdll-unix-registry.c
-.endif
 .endif
 
 .if ${ARCH} == amd64

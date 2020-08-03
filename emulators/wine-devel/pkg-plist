@@ -2135,6 +2135,7 @@ lib/wine/fakedlls/msvcp110.dll
 lib/wine/fakedlls/msvcp120.dll
 lib/wine/fakedlls/msvcp120_app.dll
 lib/wine/fakedlls/msvcp140.dll
+lib/wine/fakedlls/msvcp140_1.dll
 lib/wine/fakedlls/msvcp60.dll
 lib/wine/fakedlls/msvcp70.dll
 lib/wine/fakedlls/msvcp71.dll
@@ -2590,6 +2591,7 @@ lib/wine/libcapi2032.def
 lib/wine/libcards.def
 lib/wine/libcfgmgr32.def
 lib/wine/libclusapi.def
+lib/wine/libcombase.def
 lib/wine/libcomctl32.def
 lib/wine/libcomdlg32.def
 lib/wine/libcompstui.def
@@ -2863,6 +2865,7 @@ lib/wine/msvcp110.dll.so
 lib/wine/msvcp120.dll.so
 lib/wine/msvcp120_app.dll.so
 lib/wine/msvcp140.dll.so
+lib/wine/msvcp140_1.dll.so
 lib/wine/msvcp60.dll.so
 lib/wine/msvcp70.dll.so
 lib/wine/msvcp71.dll.so
@@ -3402,4 +3405,5 @@ share/applications/wine.desktop
 %%X11%%%%DATADIR%%/fonts/vgasysg.fon
 %%X11%%%%DATADIR%%/fonts/vgasysr.fon
 %%X11%%%%DATADIR%%/fonts/vgasyst.fon
+%%X11%%%%DATADIR%%/fonts/webdings.ttf
 %%X11%%%%DATADIR%%/fonts/wingding.ttf
