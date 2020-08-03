@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gloox
-DISTVERSION=	1.0.22
+DISTVERSION=	1.0.24
 CATEGORIES=	net-im
 MASTER_SITES=	http://camaya.net/download/
 
