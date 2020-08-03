@@ -321,6 +321,7 @@
 %%WWWDIR%%/lib/Migration/SetMemberTypeToDefault.php
 %%WWWDIR%%/lib/Migration/UpdateShareTimeToTimestamp.php
 %%WWWDIR%%/lib/Migration/Version0019Date20200603080001.php
+%%WWWDIR%%/lib/Migration/Version0019Date20200702124412.php
 %%WWWDIR%%/lib/Model/BaseCircle.php
 %%WWWDIR%%/lib/Model/BaseMember.php
 %%WWWDIR%%/lib/Model/Circle.php
