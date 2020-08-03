@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gobuffalo
-PORTVERSION=	0.16.13
+PORTVERSION=	0.16.14
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -93,7 +93,7 @@ GH_TUPLE=	\
 		microcosm-cc:bluemonday:v1.0.2:microcosm_cc_bluemonday/vendor/github.com/microcosm-cc/bluemonday \
 		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
 		mitchellh:mapstructure:v1.1.2:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
-		monoculum:formam:49f0baed3a1b:monoculum_formam/vendor/github.com/monoculum/formam \
+		monoculum:formam:6f3cce7a46cf:monoculum_formam/vendor/github.com/monoculum/formam \
 		pelletier:go-toml:v1.2.0:pelletier_go_toml/vendor/github.com/pelletier/go-toml \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
