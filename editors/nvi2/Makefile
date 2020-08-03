@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nvi2
-PORTVERSION=	2.1.3.g2020801
+PORTVERSION=	2.2.0
 CATEGORIES=	editors
 
 MAINTAINER=	leres@FreeBSD.org
@@ -14,7 +14,7 @@ USES=		bdb cmake ncurses
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	lichray
-GH_TAGNAME=	6a8af80
+GH_TAGNAME=	v${PORTVERSION}
 
 CONFLICTS_INSTALL=	nvi-m17n-[0-9]* nvi-[0-9]*
 
