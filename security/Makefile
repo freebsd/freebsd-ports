@@ -867,6 +867,7 @@
     SUBDIR += py-certifi
     SUBDIR += py-certstream
     SUBDIR += py-ckcc-protocol
+    SUBDIR += py-coincurve
     SUBDIR += py-cpe
     SUBDIR += py-cracklib
     SUBDIR += py-cryptography

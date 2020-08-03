@@ -1,0 +1,5 @@
+The coincurve python library provides well-tested Python CFFI bindings for
+libsecp256k1, the heavily optimized C library used by Bitcoin Core for
+operations on elliptic curve secp256k1.
+
+WWW: https://github.com/ofek/coincurve
