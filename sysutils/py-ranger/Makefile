@@ -2,11 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	ranger
-PORTVERSION=	1.9.2
-PORTREVISION=	1
+PORTVERSION=	1.9.3
 CATEGORIES=	sysutils python
 MASTER_SITES=	https://ranger.github.io/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+# Backport PR #1852 to fix runtime issues for environments that don't have
+# sysutils/screen installed but TERM set to "screen".
+PATCH_SITES=	https://github.com/ranger/ranger/commit/
+PATCHFILES=	081e73152a9391211770fab56676d7d974413ae6.patch:-p1
 
 MAINTAINER=	linpct@gmail.com
 COMMENT=	File manager with VI key bindings
@@ -28,7 +32,6 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|setuptools|distutils.core|; \
-	       	s|share/man/man|man/man|; \
 		s|share/doc/ranger|${DOCSDIR}|; \
 		s|ranger.desktop|${PYTHON_PKGNAMEPREFIX}ranger.desktop|' ${WRKSRC}/${PYSETUP}
 	@${REINPLACE_CMD} -Ee 's|Exec=(ranger)|Exec=\1-${PYTHON_VER}|' ${WRKSRC}/doc/${PYTHON_PKGNAMEPREFIX}ranger.desktop
