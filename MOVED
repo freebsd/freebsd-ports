@@ -15170,3 +15170,4 @@ net/dshell||2020-07-24|Uses deprecated version of python
 sysutils/openshift-install|sysutils/openshift-install45|2020-07-25|Duplicate port
 databases/sqliteodbc-sqlite2|databases/sqliteodbc|2020-07-27|Has expired: SQLite2 has stopped development in 2005, please move to SQLite3
 graphics/wayland-info|graphics/wayland-utils|2020-08-02|Project renamed
+devel/rubygem-grape11|devel/rubygem-grape|2020-08-03|Has expired: use devel/rubygem-grape instead
