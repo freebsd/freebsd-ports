@@ -1,0 +1,4 @@
+This library parses a PCAPng file which contains black box records, such as the
+PCAPng files produced by net/tcplog_dumper.
+
+WWW: https://github.com/Netflix/bbparse
