@@ -2,33 +2,30 @@
 # $FreeBSD$
 
 PORTNAME=	bcftools
-PORTVERSION=	1.9
-PORTREVISION=	2
+PORTVERSION=	1.10.2
 CATEGORIES=	biology
 
-MAINTAINER=	cartwright@asu.edu
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Tools for manipulating next-generation sequencing data
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	htslib>=1.6:biology/htslib
-LIB_DEPENDS=	libhts.so:biology/htslib
+LIB_DEPENDS=	libhts.so.3:biology/htslib
 TEST_DEPENDS=	bash:shells/bash
 
-USES=		autoreconf gmake localbase \
-		perl5 python:env shebangfix
+USES=		autoreconf gmake localbase perl5 python:env shebangfix
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	samtools
-
 USE_LDCONFIG=	${PREFIX}/libexec/${PORTNAME}
 USE_PERL5=	test
+
+GH_ACCOUNT=	samtools
 GNU_CONFIGURE=	yes
 SHEBANG_FILES=	misc/* test/test.pl
 
-OPTIONS_DEFINE=	GPL
-GPL_DESC=	Enable modules that rely on GPL code
+OPTIONS_DEFINE=		GPL
+GPL_DESC=		Enable modules that rely on GPL code
 OPTIONS_DEFAULT=	GPL
 
 GPL_LIB_DEPENDS=	libgsl.so:math/gsl
@@ -43,22 +40,22 @@ LICENSE_COMB=	multi
 
 TEST_TARGET=	test
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|@PORTVERSION@|${PORTVERSION}|g' ${WRKSRC}/configure.ac
+pre-configure:
+	@${REINPLACE_CMD} -e 's|@PORTVERSION@|${PORTVERSION}|g' \
+		${WRKSRC}/configure.ac
 
 post-install:
-	${MV} ${STAGEDIR}${PREFIX}/bin/samtools_misc/color-chrs.pl \
+	${MV} ${STAGEDIR}${PREFIX}/bin/color-chrs.pl \
 		${STAGEDIR}${PREFIX}/bin/color-chrs
-	${MV} ${STAGEDIR}${PREFIX}/bin/samtools_misc/guess-ploidy.py\
+	${MV} ${STAGEDIR}${PREFIX}/bin/guess-ploidy.py\
 	       ${STAGEDIR}${PREFIX}/bin/guess-ploidy
-	${MV} /${STAGEDIR}${PREFIX}/bin/samtools_misc/plot-roh.py \
+	${MV} /${STAGEDIR}${PREFIX}/bin/plot-roh.py \
 		${STAGEDIR}${PREFIX}/bin/plot-roh
-	${MV} ${STAGEDIR}${PREFIX}/bin/samtools_misc/run-roh.pl \
+	${MV} ${STAGEDIR}${PREFIX}/bin/run-roh.pl \
 		${STAGEDIR}${PREFIX}/bin/run-roh
-	${MV} ${STAGEDIR}${PREFIX}/bin/samtools_misc/vcfutils.pl \
+	${MV} ${STAGEDIR}${PREFIX}/bin/vcfutils.pl \
 		${STAGEDIR}${PREFIX}/bin/vcfutils
-	${MV} ${STAGEDIR}${PREFIX}/bin/samtools_misc/plot-vcfstats \
+	${MV} ${STAGEDIR}${PREFIX}/bin/plot-vcfstats \
 		${STAGEDIR}${PREFIX}/bin/
-	${RMDIR} ${STAGEDIR}${PREFIX}/bin/samtools_misc/
 
 .include <bsd.port.mk>
