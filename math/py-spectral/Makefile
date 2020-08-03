@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	spectral
-DISTVERSION=	0.21
+DISTVERSION=	0.22.1
 CATEGORIES=	math
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,6 +16,7 @@ RUN_DEPENDS=	${PYNUMPY}
 
 USES=		python
 USE_PYTHON=	distutils autoplist
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
