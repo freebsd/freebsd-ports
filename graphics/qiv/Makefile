@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qiv
-PORTVERSION=	2.3.1
-PORTREVISION=	1
+PORTVERSION=	2.3.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://spiegl.de/qiv/download/ \
 		http://www.predatorlabs.net/dl/
@@ -15,13 +14,14 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libImlib2.so:graphics/imlib2 \
 		liblcms2.so:graphics/lcms2 \
-		libexif.so:graphics/libexif
+		libexif.so:graphics/libexif \
+		libtiff.so:graphics/tiff
 
-USES=		gmake gnome pkgconfig tar:tgz xorg
-USE_GNOME=	gtk20
+USES=		gmake gnome jpeg pkgconfig tar:tgz xorg
+USE_GNOME=	cairo gdkpixbuf2 gtk20
 
 PLIST_FILES=	bin/qiv man/man1/qiv.1.gz
-USE_XORG+=	x11
+USE_XORG+=	x11 xext
 
 do-configure:
 	@${REINPLACE_CMD} 's|/usr/local|${PREFIX}|; \

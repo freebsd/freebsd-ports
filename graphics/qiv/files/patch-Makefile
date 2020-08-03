@@ -1,7 +1,7 @@
---- ./Makefile.orig	2013-12-20 10:43:05.000000000 -0200
-+++ ./Makefile	2013-12-20 10:43:25.000000000 -0200
-@@ -52,8 +52,8 @@
- CC        = gcc
+--- Makefile.orig	2017-11-03 18:27:27 UTC
++++ Makefile
+@@ -57,8 +57,8 @@ endif
+ PKG_CONFIG ?= pkg-config
  #CFLAGS    = -O0 -g -Wall
  CFLAGS    = -O2 -Wall \
 -	    -fcaller-saves -ffast-math -fno-strength-reduce \
