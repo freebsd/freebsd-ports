@@ -32,10 +32,6 @@ GH_PROJECT=	${PORTNAME}-varnish
 
 OPTIONS_DEFINE=	DOCS
 
-post-patch:
-	${REINPLACE_CMD} 's|$${VARNISHAPI_DATAROOTDIR}|${LOCALBASE}/share|' \
-		${WRKSRC}/Makefile.am
-
 pre-configure:
 	(cd ${WRKSRC} && ${SH} ./autogen.sh)
 
