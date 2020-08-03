@@ -201,7 +201,6 @@ include/libzfs/sys/objlist.h
 include/libzfs/sys/pathname.h
 include/libzfs/sys/qat.h
 include/libzfs/sys/range_tree.h
-include/libzfs/sys/refcount.h
 include/libzfs/sys/rrwlock.h
 include/libzfs/sys/sa.h
 include/libzfs/sys/sa_impl.h
@@ -257,6 +256,7 @@ include/libzfs/sys/zfs_fuid.h
 include/libzfs/sys/zfs_project.h
 include/libzfs/sys/zfs_quota.h
 include/libzfs/sys/zfs_ratelimit.h
+include/libzfs/sys/zfs_refcount.h
 include/libzfs/sys/zfs_rlock.h
 include/libzfs/sys/zfs_sa.h
 include/libzfs/sys/zfs_stat.h
@@ -480,6 +480,7 @@ sbin/zpool
 sbin/zstream
 sbin/zstreamdump
 sbin/ztest
+share/pam-configs/zfs_key
 %%TESTS%%share/zfs/common.sh
 %%TESTS%%share/zfs/runfiles/common.run
 %%TESTS%%share/zfs/runfiles/freebsd.run
@@ -662,6 +663,9 @@ sbin/ztest
 %%TESTS%%share/zfs/zfs-tests/tests/functional/channel_program/lua_core/tst.return_nvlist_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/channel_program/lua_core/tst.return_recursive_table.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/channel_program/lua_core/tst.return_recursive_table.zcp
+%%TESTS%%share/zfs/zfs-tests/tests/functional/channel_program/lua_core/tst.stack_gsub.err
+%%TESTS%%share/zfs/zfs-tests/tests/functional/channel_program/lua_core/tst.stack_gsub.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/channel_program/lua_core/tst.stack_gsub.zcp
 %%TESTS%%share/zfs/zfs-tests/tests/functional/channel_program/lua_core/tst.timeout.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/channel_program/lua_core/tst.timeout.zcp
 %%TESTS%%share/zfs/zfs-tests/tests/functional/channel_program/synctask_core/cleanup.ksh
@@ -871,6 +875,10 @@ sbin/ztest
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_inherit/zfs_inherit_002_neg.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_inherit/zfs_inherit_003_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_inherit/zfs_inherit_mountpoint.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_jail/cleanup.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_jail/jail.conf
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_jail/setup.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_jail/zfs_jail_001_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_load-key/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_load-key/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_load-key/zfs_load-key.cfg
@@ -2331,5 +2339,3 @@ sbin/ztest
 %%TESTS%%share/zfs/zfs.sh
 %%TESTS%%share/zfs/zimport.sh
 %%TESTS%%share/zfs/zloop.sh
-/usr/share/pam-configs/zfs_key
-@dir /usr/share/pam-configs
