@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rust-analyzer
-DISTVERSION=	2020-07-27
-PORTREVISION=	2
+DISTVERSION=	2020-08-03
 CATEGORIES=	devel
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -28,13 +27,13 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		base64-0.12.3 \
 		bitflags-1.2.1 \
 		byteorder-1.3.4 \
-		cargo_metadata-0.10.0 \
+		cargo_metadata-0.11.1 \
 		cc-1.0.58 \
 		cfg-if-0.1.10 \
-		chalk-derive-0.18.0 \
-		chalk-ir-0.18.0 \
-		chalk-recursive-0.18.0 \
-		chalk-solve-0.18.0 \
+		chalk-derive-0.19.0 \
+		chalk-ir-0.19.0 \
+		chalk-recursive-0.19.0 \
+		chalk-solve-0.19.0 \
 		chrono-0.4.13 \
 		cloudabi-0.1.0 \
 		cmake-0.1.44 \
@@ -45,11 +44,11 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		crossbeam-queue-0.2.3 \
 		crossbeam-utils-0.7.2 \
 		difference-2.0.0 \
-		drop_bomb-0.1.4 \
+		drop_bomb-0.1.5 \
 		either-1.5.3 \
 		ena-0.14.0 \
 		env_logger-0.7.1 \
-		filetime-0.2.10 \
+		filetime-0.2.11 \
 		fixedbitset-0.2.0 \
 		flate2-1.0.16 \
 		fsevent-2.0.2 \
@@ -57,7 +56,6 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		fst-0.4.4 \
 		fuchsia-zircon-0.3.3 \
 		fuchsia-zircon-sys-0.3.3 \
-		getrandom-0.1.14 \
 		gimli-0.22.0 \
 		goblin-0.2.3 \
 		hashbrown-0.8.1 \
@@ -76,13 +74,13 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		kernel32-sys-0.2.2 \
 		lazy_static-1.4.0 \
 		lazycell-1.2.1 \
-		libc-0.2.73 \
+		libc-0.2.74 \
 		libloading-0.6.2 \
 		libmimalloc-sys-0.1.15 \
 		lock_api-0.4.1 \
 		log-0.4.11 \
 		lsp-server-0.3.3 \
-		lsp-types-0.78.0 \
+		lsp-types-0.79.0 \
 		matchers-0.0.1 \
 		matches-0.1.8 \
 		maybe-uninit-2.0.0 \
@@ -101,20 +99,17 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		num_cpus-1.13.0 \
 		object-0.20.0 \
 		once_cell-1.4.0 \
+		oorandom-11.1.2 \
 		parking_lot-0.11.0 \
 		parking_lot_core-0.8.0 \
 		percent-encoding-2.1.0 \
+		perf-event-0.4.4 \
+		perf-event-open-sys-0.3.1 \
 		petgraph-0.5.1 \
 		pico-args-0.3.3 \
 		plain-0.2.3 \
-		ppv-lite86-0.2.8 \
 		proc-macro2-1.0.19 \
 		quote-1.0.7 \
-		rand-0.7.3 \
-		rand_chacha-0.2.2 \
-		rand_core-0.5.1 \
-		rand_hc-0.2.0 \
-		rand_pcg-0.2.1 \
 		rayon-1.3.1 \
 		rayon-core-1.7.1 \
 		redox_syscall-0.1.57 \
@@ -122,18 +117,18 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		regex-automata-0.1.9 \
 		regex-syntax-0.6.18 \
 		rowan-0.10.0 \
-		rustc-ap-rustc_lexer-669.0.0 \
+		rustc-ap-rustc_lexer-671.0.0 \
 		rustc-demangle-0.1.16 \
 		rustc-hash-1.1.0 \
 		ryu-1.0.5 \
-		salsa-0.15.0 \
+		salsa-0.15.1 \
 		salsa-macros-0.15.0 \
 		same-file-1.0.6 \
 		scoped-tls-1.0.0 \
 		scopeguard-1.1.0 \
 		scroll-0.10.1 \
 		scroll_derive-0.10.2 \
-		semver-0.9.0 \
+		semver-0.10.0 \
 		semver-parser-0.7.0 \
 		serde-1.0.114 \
 		serde_derive-1.0.114 \
@@ -152,26 +147,27 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		threadpool-1.8.1 \
 		time-0.1.43 \
 		tinyvec-0.3.3 \
-		tracing-0.1.17 \
+		tracing-0.1.18 \
 		tracing-attributes-0.1.9 \
-		tracing-core-0.1.11 \
+		tracing-core-0.1.12 \
 		tracing-log-0.1.1 \
 		tracing-serde-0.1.1 \
-		tracing-subscriber-0.2.9 \
+		tracing-subscriber-0.2.10 \
 		tracing-tree-0.1.4 \
+		ungrammar-1.1.1 \
 		unicode-bidi-0.3.4 \
 		unicode-normalization-0.1.13 \
 		unicode-segmentation-1.6.0 \
 		unicode-xid-0.2.1 \
 		url-2.1.1 \
 		walkdir-2.3.1 \
-		wasi-0.9.0+wasi-snapshot-preview1 \
 		winapi-0.2.8 \
 		winapi-0.3.9 \
 		winapi-build-0.1.1 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		write-json-0.1.2 \
 		ws2_32-sys-0.2.1
 
 CARGO_INSTALL_PATH=	crates/rust-analyzer
