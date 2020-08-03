@@ -4,10 +4,9 @@
 PORTNAME=	openshift-install
 PORTVERSION=	4.5
 DISTVERSIONPREFIX=	release-
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	${PORTVERSION:S/.//g}
-DISTNAME=	${GH_TAGNAME}.zip
 
 MAINTAINER=	jhixson@freebsd.org
 COMMENT=	RedHat OpenShift 4.5 installer
