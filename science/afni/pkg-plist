@@ -324,6 +324,7 @@ bin/@Install_FATMVM_DEMO
 bin/@Install_IBT_DATASETS
 bin/@Install_InstaCorr_Demo
 bin/@Install_MACAQUE_DEMO
+bin/@Install_MACAQUE_DEMO_REST
 bin/@Install_MEICA_Demo
 bin/@Install_NIH_Marmoset
 bin/@Install_NMT
@@ -337,6 +338,7 @@ bin/@NoisySkullStrip
 bin/@Purify_1D
 bin/@Quiet_Talkers
 bin/@ROI_Corr_Mat
+bin/@ROI_modal_grow
 bin/@R_funclist
 bin/@RenamePanga
 bin/@Reorder
