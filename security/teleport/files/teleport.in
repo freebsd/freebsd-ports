@@ -3,7 +3,7 @@
 # $FreeBSD$
 #
 # PROVIDE: teleport
-# REQUIRE: LOGIN
+# REQUIRE: NETWORKING SERVERS DAEMON
 # KEYWORD: shutdown
 #
 # Add the following lines to /etc/rc.conf.local or /etc/rc.conf

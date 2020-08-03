@@ -1,0 +1,51 @@
+--- build.assets/pkg/etc/teleport.yaml.orig	2020-07-08 18:08:40 UTC
++++ build.assets/pkg/etc/teleport.yaml
+@@ -9,7 +9,7 @@ teleport:
+ 
+     # Data directory where Teleport daemon keeps its data.
+     # See "Filesystem Layout" section above for more details.
+-    # data_dir: /var/lib/teleport
++    # data_dir: /var/db/teleport
+ 
+     # Invitation token used to join a cluster. it is not used on
+     # subsequent starts
+@@ -54,8 +54,8 @@ teleport:
+         type: dir
+ 
+         # Array of locations where the audit log events will be stored. by
+-        # default they are stored in `/var/lib/teleport/log`
+-        # audit_events_uri: ['file:///var/lib/teleport/log', 'dynamodb://events_table_name', 'stdout://']
++        # default they are stored in `/var/db/teleport/log`
++        # audit_events_uri: ['file:///var/db/teleport/log', 'dynamodb://events_table_name', 'stdout://']
+ 
+         # Use this setting to configure teleport to store the recorded sessions in
+         # an AWS S3 bucket. see "Using Amazon S3" chapter for more information.
+@@ -111,7 +111,7 @@ auth_service:
+     # By default an automatically generated name is used (not recommended)
+     #
+     # IMPORTANT: if you change cluster_name, it will invalidate all generated
+-    # certificates and keys (may need to wipe out /var/lib/teleport directory)
++    # certificates and keys (may need to wipe out /var/db/teleport directory)
+     # cluster_name: "main"
+ 
+     authentication:
+@@ -185,7 +185,7 @@ auth_service:
+     #
+     # If not set, by default Teleport will look for the `license.pem` file in
+     # the configured `data_dir`.
+-    # license_file: /var/lib/teleport/license.pem
++    # license_file: /var/db/teleport/license.pem
+ 
+     # DEPRECATED in Teleport 3.2 (moved to proxy_service section)
+     # kubeconfig_file: /path/to/kubeconfig
+@@ -258,8 +258,8 @@ proxy_service:
+ 
+     # TLS certificate for the HTTPS connection. Configuring these properly is
+     # critical for Teleport security.
+-    # https_key_file: /var/lib/teleport/webproxy_key.pem
+-    # https_cert_file: /var/lib/teleport/webproxy_cert.pem
++    # https_key_file: /var/db/teleport/webproxy_key.pem
++    # https_cert_file: /var/db/teleport/webproxy_cert.pem
+ 
+     # This section configures the Kubernetes proxy service
+     # kubernetes:
