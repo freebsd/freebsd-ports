@@ -30,7 +30,7 @@ include/htslib/vcfutils.h
 lib/libhts.a
 lib/libhts.so
 lib/libhts.so.%%PORTVERSION%%
-lib/libhts.so.2
+lib/libhts.so.3
 libdata/pkgconfig/htslib.pc
 man/man1/bgzip.1.gz
 man/man1/htsfile.1.gz
@@ -38,3 +38,4 @@ man/man1/tabix.1.gz
 man/man5/faidx.5.gz
 man/man5/sam.5.gz
 man/man5/vcf.5.gz
+man/man7/htslib-s3-plugin.7.gz

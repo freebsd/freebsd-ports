@@ -2,7 +2,7 @@
 
 PORTNAME=	pbbam
 DISTVERSION=	0.18.0 # Test with biology/unanimity before upgrading!
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	biology
 
 # As of March 2018, unanimity is no longer open source.

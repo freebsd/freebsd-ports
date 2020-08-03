@@ -3,7 +3,7 @@
 
 PORTNAME=	bcftools
 PORTVERSION=	1.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	biology
 
 MAINTAINER=	cartwright@asu.edu
@@ -15,8 +15,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	htslib>=1.6:biology/htslib
 LIB_DEPENDS=	libhts.so:biology/htslib
 TEST_DEPENDS=	bash:shells/bash
-
-CONFLICTS_BUILD=openssl
 
 USES=		autoreconf gmake localbase \
 		perl5 python:env shebangfix
