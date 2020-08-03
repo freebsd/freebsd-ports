@@ -13,7 +13,7 @@ COMMENT=	GNU binutils for vanilla ARM cross-development
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi
 
-USES=		gettext gmake localbase makeinfo tar:bzip2
+USES=		gettext gmake localbase makeinfo tar:xz
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//} --disable-werror \
 		--disable-nls
