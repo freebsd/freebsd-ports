@@ -1,0 +1,13 @@
+--- tools/setup.py.in.orig	2020-08-03 20:20:27 UTC
++++ tools/setup.py.in
+@@ -46,8 +46,8 @@ setup(
+         'ortools.util',
+     ],
+     install_requires=[
+-        'protobuf >= 3.12.2',
+-        'six >= 1.10',
++        #'protobuf >= 3.12.2',
++        #'six >= 1.10',
+     ],
+     package_data={
+         'ortools.constraint_solver' : ['_pywrapcp.dll'],

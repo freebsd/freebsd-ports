@@ -1,0 +1,12 @@
+--- ortools/python/setup.py.in.orig	2020-08-03 20:33:34 UTC
++++ ortools/python/setup.py.in
+@@ -41,7 +41,8 @@ setup(
+   '@PROJECT_NAME@.util':['$<TARGET_FILE_NAME:sorted_interval_list>', '*.pyi'],
+   },
+   include_package_data=True,
+-  install_requires=['protobuf >= 3.12.2', 'six >= 1.10'],
++  #install_requires=['protobuf >= 3.12.2', 'six >= 1.10'],
++  install_requires=[],
+   classifiers=[
+   'Development Status :: 5 - Production/Stable',
+   'Intended Audience :: Developers',
