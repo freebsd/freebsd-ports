@@ -1,6 +1,6 @@
-TIMESTAMP = 1590431990
-SHA256 (junegunn-fzf-0.21.1_GH0.tar.gz) = 47adf138f17c45d390af81958bdff6f92157d41e2c4cb13773df078b905cdaf4
-SIZE (junegunn-fzf-0.21.1_GH0.tar.gz) = 163978
+TIMESTAMP = 1596448053
+SHA256 (junegunn-fzf-0.22.0_GH0.tar.gz) = 3090748bb656333ed98490fe62133760e5da40ba4cd429a8142b4a0b69d05586
+SIZE (junegunn-fzf-0.22.0_GH0.tar.gz) = 168483
 SHA256 (gdamore-encoding-v1.0.0_GH0.tar.gz) = 8fb8593a69cd86f16233d63dd6d74181136ec8f22900c509e961a25eb4b2e013
 SIZE (gdamore-encoding-v1.0.0_GH0.tar.gz) = 10886
 SHA256 (gdamore-tcell-v1.3.0_GH0.tar.gz) = 5e4d2206a459109fdd98fb1d29f2da2340b69a021b115db9049917444a0c1097

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fzf
-PORTVERSION=	0.21.1
+PORTVERSION=	0.22.0
 CATEGORIES=	textproc
 
 MAINTAINER=	sascha@root-login.org
