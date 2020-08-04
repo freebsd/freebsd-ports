@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pkg_replace
-PORTVERSION=	20200717
+PORTVERSION=	20200803
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	kdeguchi@sz.tokoha-u.ac.jp
