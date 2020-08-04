@@ -58,12 +58,11 @@ bin/sage-upgrade
 bin/sage-valgrind
 bin/sage-version.sh
 bin/sagenb-export
-default.qepcadrc
 etc/jupyter/jupyter_notebook_config.py
 etc/jupyter/nbconfig/notebook.d/widgetsnbextension.json
-etc/sage-started.txt
 include/ratpoints.h
 lib/libratpoints.a
+%%DOCS%%lib/sage-force-relocate.txt
 %%PYTHON_SITELIBDIR%%/__pycache__/backports_abc.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/__pycache__/ipykernel_launcher.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/__pycache__/path.cpython-%%PYTHON_SUFFIX%%.pyc
@@ -8587,7 +8586,6 @@ lib/libratpoints.a
 %%PYTHON_SITELIBDIR%%/widgetsnbextension/_version.py
 %%PYTHON_SITELIBDIR%%/widgetsnbextension/static/extension.js
 %%PYTHON_SITELIBDIR%%/widgetsnbextension/static/extension.js.map
-lib/sage-current-location.txt
 pyvenv.cfg
 share/combinatorial_designs/MOLS_table.txt
 share/conway_polynomials/conway_polynomials.p
