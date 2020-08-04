@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	strawberry
-DISTVERSION=	0.6.12
+DISTVERSION=	0.6.13
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/strawberrymusicplayer/${PORTNAME}/releases/download/${DISTVERSION}/ \
 		https://files.jkvinge.net/packages/strawberry/
@@ -39,7 +39,7 @@ TEST_TARGET=	strawberry_test
 # src/core/utilities.cpp always includes iconv.h and calls iconv_*().
 
 # GSTREAMER is not optional, as of 0.6.11, disabling it kills the build on
-# src/core/mainwindow.cpp:229:7: 
+# src/core/mainwindow.cpp:229:7:
 # error: member initializer 'transcode_dialog_' does not name a non-static data member or base class
 # transcode_dialog_([=]() {
 
