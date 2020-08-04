@@ -55,6 +55,7 @@ libexec/gitolite/commands/list-dangling-repos
 libexec/gitolite/commands/lock
 libexec/gitolite/commands/mirror
 libexec/gitolite/commands/motd
+libexec/gitolite/commands/newbranch
 libexec/gitolite/commands/option
 libexec/gitolite/commands/owns
 libexec/gitolite/commands/perms
