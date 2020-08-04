@@ -13,7 +13,7 @@ MASTER_SITES=	http://dukeworld.duke4.net/eduke32/synthesis/${PORTVERSION}-${SVNR
 		https://www.quaddicted.com/files/idgames2/planetquake/planetduke/:shareware \
 		https://ftp.swin.edu.au/gentoo/distfiles/:shareware \
 		ftp://ftp.3drealms.com/share/:shareware \
-		https://anongoth.pl/:voxel
+		https://github.com/NightFright2k19/voxelpack/releases/download/1.3pre4/:voxel
 DISTFILES=	${PORTNAME}_src_${PORTVERSION}-${SVNREVISION}${EXTRACT_SUFX}:eduke32
 EXTRACT_ONLY=	${PORTNAME}_src_${PORTVERSION}-${SVNREVISION}${EXTRACT_SUFX}
 
