@@ -1,5 +1,4 @@
 bin/kak
-man/man1/kak.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README.asciidoc
 %%DATADIR%%/autoload
 %%DATADIR%%/colors/base16.kak
@@ -51,9 +50,11 @@ man/man1/kak.1.gz
 %%DATADIR%%/rc/filetype/clojure.kak
 %%DATADIR%%/rc/filetype/cmake.kak
 %%DATADIR%%/rc/filetype/coffee.kak
+%%DATADIR%%/rc/filetype/coq.kak
 %%DATADIR%%/rc/filetype/crystal.kak
 %%DATADIR%%/rc/filetype/css.kak
 %%DATADIR%%/rc/filetype/cucumber.kak
+%%DATADIR%%/rc/filetype/cue.kak
 %%DATADIR%%/rc/filetype/d.kak
 %%DATADIR%%/rc/filetype/dart.kak
 %%DATADIR%%/rc/filetype/dhall.kak
@@ -61,6 +62,7 @@ man/man1/kak.1.gz
 %%DATADIR%%/rc/filetype/dockerfile.kak
 %%DATADIR%%/rc/filetype/elixir.kak
 %%DATADIR%%/rc/filetype/elm.kak
+%%DATADIR%%/rc/filetype/eruby.kak
 %%DATADIR%%/rc/filetype/etc.kak
 %%DATADIR%%/rc/filetype/exherbo.kak
 %%DATADIR%%/rc/filetype/fish.kak
@@ -91,6 +93,8 @@ man/man1/kak.1.gz
 %%DATADIR%%/rc/filetype/makefile.kak
 %%DATADIR%%/rc/filetype/markdown.kak
 %%DATADIR%%/rc/filetype/mercurial.kak
+%%DATADIR%%/rc/filetype/meson.kak
+%%DATADIR%%/rc/filetype/mlb.kak
 %%DATADIR%%/rc/filetype/moon.kak
 %%DATADIR%%/rc/filetype/nim.kak
 %%DATADIR%%/rc/filetype/nix.kak
@@ -111,6 +115,7 @@ man/man1/kak.1.gz
 %%DATADIR%%/rc/filetype/scheme.kak
 %%DATADIR%%/rc/filetype/scss.kak
 %%DATADIR%%/rc/filetype/sh.kak
+%%DATADIR%%/rc/filetype/sml.kak
 %%DATADIR%%/rc/filetype/sql.kak
 %%DATADIR%%/rc/filetype/swift.kak
 %%DATADIR%%/rc/filetype/systemd.kak
@@ -121,6 +126,7 @@ man/man1/kak.1.gz
 %%DATADIR%%/rc/filetype/tupfile.kak
 %%DATADIR%%/rc/filetype/void-linux.kak
 %%DATADIR%%/rc/filetype/yaml.kak
+%%DATADIR%%/rc/filetype/zig.kak
 %%DATADIR%%/rc/tools/autorestore.kak
 %%DATADIR%%/rc/tools/autowrap.kak
 %%DATADIR%%/rc/tools/clang.kak
@@ -137,11 +143,14 @@ man/man1/kak.1.gz
 %%DATADIR%%/rc/tools/python/jedi.kak
 %%DATADIR%%/rc/tools/rust/racer.kak
 %%DATADIR%%/rc/tools/spell.kak
+%%DATADIR%%/rc/windowing/detection.kak
 %%DATADIR%%/rc/windowing/iterm.kak
 %%DATADIR%%/rc/windowing/kitty.kak
 %%DATADIR%%/rc/windowing/new-client.kak
+%%DATADIR%%/rc/windowing/repl/kitty.kak
 %%DATADIR%%/rc/windowing/repl/tmux.kak
 %%DATADIR%%/rc/windowing/repl/x11.kak
 %%DATADIR%%/rc/windowing/screen.kak
 %%DATADIR%%/rc/windowing/tmux.kak
 %%DATADIR%%/rc/windowing/x11.kak
+share/man/man1/kak.1.gz

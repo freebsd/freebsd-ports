@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kakoune
-DISTVERSION=	2020.01.16
+DISTVERSION=	2020.08.04
 CATEGORIES=	editors
 MASTER_SITES=	https://github.com/mawww/kakoune/releases/download/v${DISTVERSION}/
 
@@ -14,7 +14,6 @@ LICENSE_FILE=	${WRKSRC:H}/UNLICENSE
 RUN_DEPENDS=	setsid:sysutils/ssid
 
 USES=		compiler:c++17-lang gmake ncurses tar:bzip2
-
 DATADIR=	${PREFIX}/share/kak
 DOCSDIR=	${PREFIX}/share/doc/kak
 PATCH_WRKSRC=	${WRKSRC:H}
@@ -22,11 +21,11 @@ WRKSRC_SUBDIR=	src
 
 OPTIONS_DEFINE=	DEBUG DOCS
 
-DEBUG_MAKE_ARGS_OFF=	debug=no
 DEBUG_MAKE_ARGS=	debug=yes
+DEBUG_MAKE_ARGS_OFF=	debug=no
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,/share/man/,/man/,' -e '/-O3/d' \
+	@${REINPLACE_CMD} -e '/-O3/d' \
 		${WRKSRC}/Makefile
 
 post-install:
