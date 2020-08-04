@@ -1,12 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	wayfire
-DISTVERSION=	0.4.0
-PORTREVISION=	2
+DISTVERSION=	0.5.0
 CATEGORIES=	x11-wm
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	e5b6f1245709.patch:-p1 # https://github.com/WayfireWM/wayfire/pull/472
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	3D Wayland compositor
@@ -15,7 +11,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
-		wf-config>=0.4.0<0.5.0:devel/wf-config \
+		wf-config>=0.5.0<0.6.0:devel/wf-config \
 		${LOCALBASE}/include/xf86drmMode.h:graphics/libdrm \
 		wayland-protocols>=1.12:graphics/wayland-protocols \
 		glm>=0.9.8:math/glm \
@@ -34,12 +30,22 @@ USE_GL=		egl glesv2
 USE_GNOME=	cairo
 USE_XORG=	pixman
 GH_ACCOUNT=	WayfireWM
+GH_TUPLE=	WayfireWM:wf-utils:f9b5eba:wfutils/subprojects/wf-utils
 
-OPTIONS_DEFINE=	SUID
-OPTIONS_DEFAULT=SUID
+OPTIONS_DEFINE=	SUID X11
+OPTIONS_DEFAULT=SUID X11
 
 SUID_DESC=		setuid bit on "${PORTNAME}" binary (required for DRM session)
 SUID_PLIST_SUB=		MAYBE_SUID="@(,,4755) "
 SUID_PLIST_SUB_OFF=	MAYBE_SUID=""
+
+X11_USE=		XORG=xcb
+X11_MESON_ENABLED=	xwayland
+
+post-patch:
+# Extract (snapshot) version from the port instead of meson.build
+	@${REINPLACE_CMD} -i .nogit -e 's/git.found()/false/' \
+		-e '/project_version/s/@0@/${DISTVERSIONFULL}/' \
+		${WRKSRC}/meson.build
 
 .include <bsd.port.mk>

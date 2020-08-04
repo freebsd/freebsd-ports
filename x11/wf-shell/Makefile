@@ -1,11 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	wf-shell
-DISTVERSION=	0.4.0
+DISTVERSION=	0.5.0
 CATEGORIES=	x11
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	d86538344ade1.patch:-p1
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	GTK3-based panel for wayfire
@@ -14,7 +11,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols \
-		wf-config>=0.4.0:devel/wf-config \
+		wf-config>=0.5.0:devel/wf-config \
 		wayfire>0:x11-wm/wayfire
 LIB_DEPENDS=	libinotify.so:devel/libinotify \
 		libwf-config.so:devel/wf-config \

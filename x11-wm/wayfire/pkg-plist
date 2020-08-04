@@ -2,12 +2,14 @@
 include/wayfire/bindings.hpp
 include/wayfire/compositor-surface.hpp
 include/wayfire/compositor-view.hpp
+include/wayfire/config.h
 include/wayfire/core.hpp
 include/wayfire/debug.hpp
 include/wayfire/decorator.hpp
 include/wayfire/geometry.hpp
 include/wayfire/img.hpp
 include/wayfire/input-device.hpp
+include/wayfire/matcher.hpp
 include/wayfire/nonstd/noncopyable.hpp
 include/wayfire/nonstd/observer_ptr.h
 include/wayfire/nonstd/reverse.hpp
@@ -18,11 +20,18 @@ include/wayfire/option-wrapper.hpp
 include/wayfire/output-layout.hpp
 include/wayfire/output.hpp
 include/wayfire/plugin.hpp
+include/wayfire/plugins/common/cairo-util.hpp
+include/wayfire/plugins/common/geometry-animation.hpp
+include/wayfire/plugins/common/preview-indication.hpp
+include/wayfire/plugins/common/simple-texture.hpp
+include/wayfire/plugins/common/view-change-viewport-signal.hpp
+include/wayfire/plugins/common/workspace-wall.hpp
 include/wayfire/render-manager.hpp
 include/wayfire/signal-definitions.hpp
 include/wayfire/singleton-plugin.hpp
 include/wayfire/surface.hpp
 include/wayfire/util.hpp
+include/wayfire/view-access-interface.hpp
 include/wayfire/view-transform.hpp
 include/wayfire/view.hpp
 include/wayfire/workspace-manager.hpp
@@ -40,7 +49,6 @@ lib/wayfire/libfisheye.so
 lib/wayfire/libgrid.so
 lib/wayfire/libidle.so
 lib/wayfire/libinvert.so
-lib/wayfire/libmatcher.so
 lib/wayfire/libmove.so
 lib/wayfire/liboswitch.so
 lib/wayfire/libplace.so
@@ -50,6 +58,7 @@ lib/wayfire/libswitcher.so
 lib/wayfire/libvswipe.so
 lib/wayfire/libvswitch.so
 lib/wayfire/libwindow-rules.so
+lib/wayfire/libwm-actions.so
 lib/wayfire/libwobbly.so
 lib/wayfire/libwrot.so
 lib/wayfire/libzoom.so
@@ -72,7 +81,6 @@ libdata/pkgconfig/wayfire.pc
 %%DATADIR%%/metadata/idle.xml
 %%DATADIR%%/metadata/input.xml
 %%DATADIR%%/metadata/invert.xml
-%%DATADIR%%/metadata/matcher.xml
 %%DATADIR%%/metadata/move.xml
 %%DATADIR%%/metadata/oswitch.xml
 %%DATADIR%%/metadata/place.xml
@@ -82,7 +90,9 @@ libdata/pkgconfig/wayfire.pc
 %%DATADIR%%/metadata/vswipe.xml
 %%DATADIR%%/metadata/vswitch.xml
 %%DATADIR%%/metadata/window-rules.xml
+%%DATADIR%%/metadata/wm-actions.xml
 %%DATADIR%%/metadata/wobbly.xml
 %%DATADIR%%/metadata/workarounds.xml
 %%DATADIR%%/metadata/wrot.xml
 %%DATADIR%%/metadata/zoom.xml
+%%DATADIR%%/protocols/unstable/wayfire-shell-unstable-v2.xml
