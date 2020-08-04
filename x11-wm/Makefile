@@ -112,6 +112,7 @@
     SUBDIR += vtwm
     SUBDIR += w9wm
     SUBDIR += wayfire
+    SUBDIR += wayfire-plugins-extra
     SUBDIR += windowmaker
     SUBDIR += wm2
     SUBDIR += wmakerconf
