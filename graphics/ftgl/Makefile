@@ -18,7 +18,8 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2
 USE_GITHUB=	yes
 GH_ACCOUNT=	frankheckenbach
 
-USES=		autoreconf gl pathfix gmake libtool pkgconfig xorg
+USES=		autoreconf compiler:c++11-lang gl pathfix gmake libtool \
+		pkgconfig xorg
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gl-inc="${LOCALBASE}/include" \
 		--without-glut-inc
