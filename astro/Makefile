@@ -91,7 +91,6 @@
     SUBDIR += py-pysofa
     SUBDIR += py-pywapi
     SUBDIR += py-spacetrack
-    SUBDIR += pyephem
     SUBDIR += pyweather
     SUBDIR += qmapshack
     SUBDIR += readosm
