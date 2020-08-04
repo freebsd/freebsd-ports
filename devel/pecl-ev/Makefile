@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ev
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.8
 CATEGORIES=	devel
 
 MAINTAINER=	miwi@FreeBSD.org
