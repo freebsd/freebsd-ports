@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	citra
-PORTVERSION=	s20200723
+PORTVERSION=	s20200728
 PORTREVISION?=	0
 CATEGORIES=	emulators
 
@@ -21,7 +21,7 @@ LICENSE_FILE_OpenSSL=	${WRKSRC}/externals/libressl/COPYING
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	citra-emu
-GH_TAGNAME=	b4ec50ba2
+GH_TAGNAME=	b94f21eac
 GH_TUPLE=	citra-emu:ext-boost:36603a1:boost/externals/boost \
 		citra-emu:ext-libressl-portable:7d01cb0:libressl/externals/libressl \
 		citra-emu:ext-soundtouch:060181e:soundtouch/externals/soundtouch \
