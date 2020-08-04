@@ -4,4 +4,4 @@ It is inspired by the django-admin package, but implemented in such
 a way that the developer has total control of the look, feel and
 functionality of the resulting application.
 
-WWW: https://github.com/mrjoes/flask-admin/
+WWW: https://github.com/flask-admin/flask-admin/
