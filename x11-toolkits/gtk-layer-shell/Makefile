@@ -2,14 +2,16 @@
 
 PORTNAME=	gtk-layer-shell
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.0
+DISTVERSION=	0.2.0
 CATEGORIES=	x11-toolkits
 
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	GTK+ library for the Wayland layer-shell protocol
 
-LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	LGPL3+ MIT
+LICENSE_COMB=	multi
+LICENSE_FILE_LGPL3+ =	${WRKSRC}/LICENSE_LGPL.txt
+LICENSE_FILE_MIT=	${WRKSRC}/LICENSE_MIT.txt
 
 LIB_DEPENDS=	libwayland-client.so:graphics/wayland
 
