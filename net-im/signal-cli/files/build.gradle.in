@@ -11,7 +11,8 @@ repositories {
 }
 
 dependencies {
-    compile fileTree(dir: '%%GRADLE_DEPS_DIR%%', include: '*.jar')
+    compileOnly fileTree(dir: '%%GRADLE_DEPS_DIR%%', include: '*.jar')
+    runtimeOnly fileTree(dir: '%%GRADLE_DEPS_DIR%%', include: '*.jar')
 }
 
 /*
@@ -23,25 +24,23 @@ dependencies {
  */
 task getURLofDependencyArtifact() {
     doFirst {
-        project.configurations.runtime.resolvedConfiguration.resolvedArtifacts.each { artifact ->
+        project.configurations.runtimeClasspath.resolvedConfiguration.resolvedArtifacts.each { artifact ->
             def dependency = artifact.moduleVersion.id
             for (ArtifactRepository repository : project.repositories.asList()) {
                 def url = repository.properties.get('url')
-                    def master_site = String.format("%s%s/%s/%s/", url.toString(),
-                            dependency.group.replace('.', '/'), dependency.name, dependency.version)
-                    def distfile = String.format("%s-%s.jar", dependency.name, dependency.version)
-                    def group = "_" + dependency.name.replaceAll('[^0-9A-Za-z_]', '_')
-                    try {
-                        def jarfile = new URL(master_site + distfile)
-                            def inStream = jarfile.openStream();
-                        if (inStream != null) {
-                            println("MASTER_SITES+=	" + master_site + ":" + group)
-                                println("DISTFILES+=	" + distfile + ":" + group)
-
-                                return
-                        }
-                    } catch (Exception ignored) {
-                }
+                def master_site = String.format("%s%s/%s/%s/", url.toString(),
+                        dependency.group.replace('.', '/'), dependency.name, dependency.version)
+                def distfile = String.format("%s-%s.jar", dependency.name, dependency.version)
+                def group = "_" + dependency.name.replaceAll('[^0-9A-Za-z_]', '_')
+                try {
+                    def jarfile = new URL(master_site + distfile)
+                    def inStream = jarfile.openStream()
+                    if (inStream != null) {
+                        println("MASTER_SITES+=	" + master_site + ":" + group)
+                        println("DISTFILES+=	" + distfile + ":" + group)
+                        return
+                    }
+                } catch (Exception ignored) {}
             }
         }
     }
