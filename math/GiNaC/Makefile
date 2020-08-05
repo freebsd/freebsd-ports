@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	GiNaC
-PORTVERSION=	1.7.10
+PORTVERSION=	1.7.11
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftpthep.physik.uni-mainz.de/pub/GiNaC/ \
 		http://www.ginac.de/
