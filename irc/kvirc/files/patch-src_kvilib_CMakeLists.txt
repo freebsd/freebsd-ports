@@ -1,0 +1,10 @@
+--- src/kvilib/CMakeLists.txt.orig	2020-01-25 22:07:57 UTC
++++ src/kvilib/CMakeLists.txt
+@@ -129,6 +129,7 @@ endif()
+ 
+ add_library(${KVILIB_BINARYNAME} SHARED ${kvilib_SRCS} ${kvilib_MOC_SRCS})
+ target_link_libraries(${KVILIB_BINARYNAME} ${LIBS})
++target_link_libraries(${KVILIB_BINARYNAME} Threads::Threads)
+ 
+ # Enable C++14
+ set_property(TARGET ${KVILIB_BINARYNAME} PROPERTY CXX_STANDARD 14)
