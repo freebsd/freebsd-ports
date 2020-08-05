@@ -1,8 +1,8 @@
---- Makefile.in.orig	2019-06-16 20:01:08.854403000 +0200
-+++ Makefile.in	2019-06-16 20:01:32.038160000 +0200
-@@ -346,7 +346,7 @@
- pmacct_examples_lg_dir = $(pmacct_examples_dir)/lg
- pmacct_examples_lg_arch_dir = $(pmacct_examples_arch_dir)/lg
+--- Makefile.in.orig	2020-06-17 22:02:42 UTC
++++ Makefile.in
+@@ -417,7 +417,7 @@ pmacct_examples_avro_dir = $(pmacct_examples_dir)/avro
+ @USING_BGP_BINS_TRUE@pmacct_examples_lg_dir = $(pmacct_examples_dir)/lg
+ @USING_BGP_BINS_TRUE@pmacct_examples_lg_arch_dir = $(pmacct_examples_arch_dir)/lg
  pmacct_examples_custom_dir = $(pmacct_examples_arch_dir)/custom
 -@USING_SQL_TRUE@pmacct_sql_dir = $(pmacct_data_dir)/sql
 +@USING_SQL_TRUE@pmacct_sql_dir = $(pmacct_data_dir)
