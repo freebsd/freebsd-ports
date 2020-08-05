@@ -340,6 +340,7 @@ include/folly/fibers/AddTasks.h
 include/folly/fibers/AtomicBatchDispatcher-inl.h
 include/folly/fibers/AtomicBatchDispatcher.h
 include/folly/fibers/BatchDispatcher.h
+include/folly/fibers/BatchSemaphore.h
 include/folly/fibers/Baton-inl.h
 include/folly/fibers/Baton.h
 include/folly/fibers/BoostContextCompatibility.h
@@ -365,6 +366,7 @@ include/folly/fibers/LoopController.h
 include/folly/fibers/Promise-inl.h
 include/folly/fibers/Promise.h
 include/folly/fibers/Semaphore.h
+include/folly/fibers/SemaphoreBase.h
 include/folly/fibers/SimpleLoopController.h
 include/folly/fibers/TimedMutex-inl.h
 include/folly/fibers/TimedMutex.h
