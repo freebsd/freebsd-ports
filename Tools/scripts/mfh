@@ -85,7 +85,7 @@ else                                         cdiffcmd=cat
 fi
 
 # I sure hope by 2030 we'll be doing something else. Yes, famous last words.
-if expr "${branch}" : '20[12][0-9]Q[1-4]' > /dev/null; then
+if expr -- "${branch}" : '20[12][0-9]Q[1-4]' > /dev/null; then
 	shift
 	if [ "${latest_branch}" != "${branch}" ]; then
 		ask "/!\\ The latest branch is ${latest_branch}, do you really want to commit to ${branch}?" || exit 1
