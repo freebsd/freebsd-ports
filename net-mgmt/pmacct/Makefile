@@ -67,7 +67,6 @@ GEOIP2_CONFIGURE_ENABLE=	geoipv2
 .include <bsd.port.options.mk>
 
 PLIST_SUB+=	SQLDOC=${SQLDOC}
-PLIST_SUB+=	WITH_KAFKA=${KAFKA}
 
 .if ${PORT_OPTIONS:MRABBITMQ} || ${PORT_OPTIONS:MKAFKA}
 LIB_DEPENDS+=	libjansson.so:devel/jansson
