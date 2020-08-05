@@ -3,7 +3,6 @@
 
 PORTNAME=	nut
 PORTVERSION=	${NUT_COMMIT_DATE}
-PORTREVISION=	1
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-devel
 # MASTER_SITES=	http://www.networkupstools.org/source/${PORTVERSION:R}/
@@ -15,8 +14,8 @@ COMMENT=	Network UPS Tools
 
 USE_GITHUB=	yes
 GH_ACCOUNT=     networkupstools 
-GH_TAGNAME=     3d88a972
-NUT_COMMIT_DATE=	2020.04.14
+GH_TAGNAME=     e24b9a84
+NUT_COMMIT_DATE=	2020.07.11
 
 BROKEN_powerpc64=	Poudriere builds fail.
 BROKEN_powerpc=		Poudriere builds fail.
