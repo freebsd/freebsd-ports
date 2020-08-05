@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	sakura
-PORTVERSION=	3.7.0
+PORTVERSION=	3.7.1
 CATEGORIES=	x11 gnome
-MASTER_SITES=	http://launchpadlibrarian.net/437074244/
+MASTER_SITES=	http://launchpadlibrarian.net/478552087/
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Terminal emulator based on GTK and VTE
@@ -14,9 +14,10 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libgnutls.so:security/gnutls \
 		libpcre2-8.so:devel/pcre2
 
+USES=		cmake gnome pkgconfig gettext perl5 tar:bz2 xorg
+
 OPTIONS_DEFINE=	DOCS
 
-USES=		cmake gnome pkgconfig gettext perl5 xorg
 USE_GNOME=	cairo gdkpixbuf2 vte3
 USE_XORG=	x11
 USE_PERL5=	build
