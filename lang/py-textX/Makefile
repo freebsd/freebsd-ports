@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	textX
-PORTVERSION=	2.1.0
+PORTVERSION=	2.2.0
 CATEGORIES=	lang python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,6 +11,7 @@ COMMENT=	Meta-language for DSL implementation inspired by Xtext
 
 LICENSE=	MIT
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}arpeggio>=1.9.0:devel/py-arpeggio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click>=7.0:devel/py-click@${PY_FLAVOR}
 
