@@ -1,24 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	waybar
-DISTVERSION=	0.9.2
-PORTREVISION=	5
+DISTVERSION=	0.9.3
 CATEGORIES=	x11
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-# https://github.com/Alexays/Waybar/pull/425
-PATCHFILES+=	903b8a9ceb9f.patch:-p1
-PATCHFILES+=	db1d7e4dc8e9.patch:-p1
-PATCHFILES+=	f9bcb7ecc4c4.patch:-p1
-PATCHFILES+=	e704078a2203.patch:-p1
-PATCHFILES+=	11ce516b45ba.patch:-p1
-PATCHFILES+=	d2ba72fb4ec7.patch:-p1
-PATCHFILES+=	3281701b98ae.patch:-p1
-PATCHFILES+=	ff6decbf39ca.patch:-p1
-PATCHFILES+=	f74df748da05.patch:-p1
-PATCHFILES+=	212195c96548.patch:-p1
-PATCHFILES+=	f73e03b563af.patch:-p1
-PATCHFILES+=	83f3cb042457.patch:-p1
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Highly customizable Wayland bar for Sway and wlroots-based compositors
@@ -64,6 +48,7 @@ MANPAGES_BUILD_DEPENDS=	scdoc:textproc/scdoc
 MANPAGES_MESON_ENABLED=	man-pages
 MANPAGES_PLIST_FILES=	man/man5/${PORTNAME}-backlight.5.gz \
 			man/man5/${PORTNAME}-battery.5.gz \
+			man/man5/${PORTNAME}-bluetooth.5.gz \
 			man/man5/${PORTNAME}-clock.5.gz \
 			man/man5/${PORTNAME}-cpu.5.gz \
 			man/man5/${PORTNAME}-custom.5.gz \
@@ -73,13 +58,16 @@ MANPAGES_PLIST_FILES=	man/man5/${PORTNAME}-backlight.5.gz \
 			man/man5/${PORTNAME}-mpd.5.gz \
 			man/man5/${PORTNAME}-network.5.gz \
 			man/man5/${PORTNAME}-pulseaudio.5.gz \
+			man/man5/${PORTNAME}-river-tags.5.gz \
 			man/man5/${PORTNAME}-states.5.gz \
 			man/man5/${PORTNAME}-sway-mode.5.gz \
 			man/man5/${PORTNAME}-sway-window.5.gz \
 			man/man5/${PORTNAME}-sway-workspaces.5.gz \
 			man/man5/${PORTNAME}-temperature.5.gz \
 			man/man5/${PORTNAME}-tray.5.gz \
+			man/man5/${PORTNAME}-wlr-taskbar.5.gz \
 			man/man5/${PORTNAME}.5.gz \
+			${NULL}
 
 MPD_DESC=		Music Player Daemon support
 MPD_LIB_DEPENDS=	libmpdclient.so:audio/libmpdclient
