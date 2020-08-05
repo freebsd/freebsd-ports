@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	git
-DISTVERSION=	2.27.0
+DISTVERSION=	2.28.0
 CATEGORIES=	devel
 MASTER_SITES=	KERNEL_ORG/software/scm/git
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -105,13 +105,12 @@ GUI_USES=		tk
 GUI_MAKE_ARGS=		TCL_PATH=${TCLSH} TCLTK_PATH=${WISH}
 GUI_MAKE_ARGS_OFF=	NO_TCLTK=yes
 
-# While this port does not explicitly honor WITH_SUBVERSION_VER knob it does
-# depend upon devel/p5-subversion, which does honor that knob. If you want
-# to have git use devel/subversion18 it will be brought in through
-# devel/p5-subversion if you set WITH_SUBVERSION_VER=18. Otherwise
-# devel/subversion will be brought in.
-SVN_RUN_DEPENDS=	p5-Term-ReadKey>=0:devel/p5-Term-ReadKey \
-			p5-subversion>=0:devel/p5-subversion
+SVN_RUN_DEPENDS=	p5-Term-ReadKey>=0:devel/p5-Term-ReadKey
+.if ${WITH_SUBVERSION_VER:U} == LTS
+SVN_RUN_DEPENDS+=	p5-subversion-lts>=0:devel/p5-subversion
+.else
+SVN_RUN_DEPENDS+=	p5-subversion>=0:devel/p5-subversion
+.endif
 
 SUBTREE_BUILD_DEPENDS=	asciidoctor:textproc/rubygem-asciidoctor\
 			xmlto:textproc/xmlto
