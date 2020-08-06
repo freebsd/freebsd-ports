@@ -37,7 +37,7 @@ INSTALLDIR=	${STAGEDIR}${PREFIX}/${JDK_ROOT}
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == aarch64 || ${ARCH:Marmv*}
-RUN_DEPENDS+=	${LOCALBASE}/lib/libffi.so:devel/libffi
+RUN_DEPENDS+=	${LOCALBASE}/lib/compat/libffi.so.6:devel/libffi321
 .endif
 
 .if defined(PPC_ABI) && ${PPC_ABI} == ELFv2
