@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	paexec
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.4
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -13,15 +13,13 @@ LICENSE=	MIT
 
 BUILD_DEPENDS=	mkcmake:devel/mk-configure \
 		runawk:lang/runawk
+LIB_DEPENDS=	libmaa.so:devel/libmaa
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-USES=		perl5
+USES=		localbase:ldflags perl5
 USE_PERL5=	build
 MAKE_ENV=	SUBPRJ_DFLT="${SUBPRJ_DFLT}"
-
-CFLAGS+=	-I${LOCALBASE}/include -Wno-error
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 SUBPRJ_DFLT=	paexec paargs doc examples
 MAKE_ENV+=	EGDIR="${STAGEDIR}${EXAMPLESDIR}" \
