@@ -10,7 +10,6 @@ MASTER_SITES=	https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/ja
 		https://repo.maven.apache.org/maven2/com/github/hypfvieh/dbus-java/3.2.1/:_dbus_java \
 		https://repo.maven.apache.org/maven2/com/github/hypfvieh/java-utils/1.0.6/:_java_utils \
 		https://repo.maven.apache.org/maven2/com/github/jnr/jffi/1.2.19/:_jffi \
-		https://repo.maven.apache.org/maven2/com/github/jnr/jffi/1.2.19/:_jffi \
 		https://repo.maven.apache.org/maven2/com/github/jnr/jnr-a64asm/1.0.0/:_jnr_a64asm \
 		https://repo.maven.apache.org/maven2/com/github/jnr/jnr-constants/0.9.12/:_jnr_constants \
 		https://repo.maven.apache.org/maven2/com/github/jnr/jnr-enxio/0.21/:_jnr_enxio \
@@ -54,7 +53,6 @@ DISTFILES=	annotations-13.0.jar:_annotations \
 		jackson-core-2.9.9.jar:_jackson_core \
 		jackson-databind-2.9.9.2.jar:_jackson_databind \
 		java-utils-1.0.6.jar:_java_utils \
-		jffi-1.2.19.jar:_jffi \
 		jffi-1.2.19.jar:_jffi \
 		jnr-a64asm-1.0.0.jar:_jnr_a64asm \
 		jnr-constants-0.9.12.jar:_jnr_constants \
