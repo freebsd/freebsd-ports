@@ -7,7 +7,7 @@ PORTREVISION?=	1
 CATEGORIES?=	mail
 MASTER_SITES=	https://notmuchmail.org/releases/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT?=	Thread-based email index, search and tagging application
 
 LICENSE=	GPLv3
