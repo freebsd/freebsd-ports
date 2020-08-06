@@ -2,6 +2,7 @@
 
 PORTNAME=	starship
 DISTVERSION=	0.44.0
+PORTREVISION=	1
 CATEGORIES=	shells
 MASTER_SITES=	CRATESIO
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -14,7 +15,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libgit2.so:devel/libgit2 \
 		libssh2.so:security/libssh2
-RUN_DEPENDS=	nerd-fonts>0:x11-fonts/nerd-fonts
 
 USES=		cargo ssl
 
@@ -177,6 +177,11 @@ CARGO_CRATES=	aho-corasick-0.7.13 \
 		yaml-rust-0.4.4
 
 PLIST_FILES=	bin/${PORTNAME}
+
+OPTIONS_DEFINE=		FONTS
+OPTIONS_DEFAULT=	FONTS
+FONTS_DESC=		Install fonts
+FONTS_RUN_DEPENDS=	nerd-fonts>0:x11-fonts/nerd-fonts
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
