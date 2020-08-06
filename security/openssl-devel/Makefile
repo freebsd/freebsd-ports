@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openssl
-DISTVERSION=	3.0.0-alpha5
+DISTVERSION=	3.0.0-alpha6
 CATEGORIES=	security devel
 MASTER_SITES=	https://www.openssl.org/source/ \
 		ftp://ftp.cert.dfn.de/pub/tools/net/openssl/source/
@@ -158,7 +158,7 @@ post-configure:
 post-configure-MAN3-off:
 	${REINPLACE_CMD} \
 		-e 's|^build_man_docs:.*|build_man_docs: $$(MANDOCS1) $$(MANDOCS7)|' \
-		-e 's|dummy $$(MANDOCS[37]); do |dummy; do continue |'
+		-e 's|dummy $$(MANDOCS[37]); do |dummy; do continue |' \
 		${WRKSRC}/Makefile
 
 post-install-SHARED-on:
