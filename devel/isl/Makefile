@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	isl
-PORTVERSION=	0.22
+PORTVERSION=	0.22.1
 CATEGORIES=	devel math
 MASTER_SITES=	http://isl.gforge.inria.fr/
 
