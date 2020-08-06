@@ -2,7 +2,7 @@
 
 PORTNAME=	tinygo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.13.1
+DISTVERSION=	0.14.0
 CATEGORIES=	devel
 
 MAINTAINER=	dmgk@FreeBSD.org
@@ -19,14 +19,22 @@ USES=		gmake go:modules,run
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	tinygo-org
-GH_TUPLE=	blakesmith:ar:8bd4349a67f2:blakesmith_ar/vendor/github.com/blakesmith/ar \
+GH_TUPLE=	\
+		blakesmith:ar:8bd4349a67f2:blakesmith_ar/vendor/github.com/blakesmith/ar \
 		bugst:go-serial:v1.0.0:bugst_go_serial/vendor/go.bug.st/serial \
+		chromedp:cdproto:4da64dd111ac:chromedp_cdproto/vendor/github.com/chromedp/cdproto \
+		chromedp:chromedp:v0.5.3:chromedp_chromedp/vendor/github.com/chromedp/chromedp \
 		creack:goselect:v0.1.1:creack_goselect/vendor/github.com/creack/goselect \
-		golang:sys:6d18c012aee9:golang_sys/vendor/golang.org/x/sys \
+		gobwas:httphead:2c6c146eadee:gobwas_httphead/vendor/github.com/gobwas/httphead \
+		gobwas:pool:v0.2.0:gobwas_pool/vendor/github.com/gobwas/pool \
+		gobwas:ws:v1.0.2:gobwas_ws/vendor/github.com/gobwas/ws \
+		golang:sys:b77594299b42:golang_sys/vendor/golang.org/x/sys \
 		golang:tools:b320d3a0f5a2:golang_tools/vendor/golang.org/x/tools \
 		google:shlex:c34317bd91bf:google_shlex/vendor/github.com/google/shlex \
-		marcinbor85:gohex:7a43cd876e46:marcinbor85_gohex/vendor/github.com/marcinbor85/gohex \
-		tinygo-org:go-llvm:8d120882fc7a:tinygo_org_go_llvm/vendor/tinygo.org/x/go-llvm
+		knq:sysutil:15668db23d08:knq_sysutil/vendor/github.com/knq/sysutil \
+		mailru:easyjson:v0.7.0:mailru_easyjson/vendor/github.com/mailru/easyjson \
+		marcinbor85:gohex:343a4b548892:marcinbor85_gohex/vendor/github.com/marcinbor85/gohex \
+		tinygo-org:go-llvm:345b2947b59d:tinygo_org_go_llvm/vendor/tinygo.org/x/go-llvm
 
 # Device files and runtime are distributed as submodules
 GH_TUPLE+=	ARM-software:CMSIS:9fe411cef1ce:cmsis/lib/CMSIS \
@@ -35,10 +43,10 @@ GH_TUPLE+=	ARM-software:CMSIS:9fe411cef1ce:cmsis/lib/CMSIS \
 		avr-rust:avr-mcu:6624554c02b2:avr/lib/avr \
 		keith-packard:picolibc:80528c684b10:picolibc/lib/picolibc \
 		llvm-mirror:compiler-rt:5bc79797e1f9:compiler_rt/lib/compiler-rt \
-		tinygo-org:cmsis-svd:15b462f152af:cmsis_svd/lib/cmsis-svd
+		tinygo-org:cmsis-svd:a155cfd832c9:cmsis_svd/lib/cmsis-svd
 
 # Bundled LLVM
-GH_TUPLE+=	llvm:llvm-project:llvmorg-10.0.0:llvm/llvm-project
+GH_TUPLE+=	llvm:llvm-project:llvmorg-10.0.1:llvm/llvm-project
 
 OPTIONS_DEFINE=	AVR QEMU SIMAVR
 
