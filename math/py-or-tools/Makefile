@@ -13,6 +13,8 @@ COMMENT=	Google's Operations Research tools (Python binding)
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE-2.0.txt
 
+BROKEN_i386=	SWIG wrapped code invalid in 32 bit architecture, regenerate code using -DSWIGWORDSIZE32 # see https://github.com/google/or-tools/issues/2130
+
 PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}protobuf>0:devel/py-protobuf@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
 BUILD_DEPENDS=	${PY_DEPENDS} \
@@ -46,7 +48,7 @@ post-configure: # https://github.com/google/or-tools/issues/2109
 do-install: # by default cmake installs the whole or-tools project without the python part, so extract the wheel and install python files manually here
 	${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 	cd ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} && \
-		unzip ${BUILD_WRKSRC}/python/dist/ortools-${DISTVERSION}.9999-cp${PYTHON_SUFFIX}-cp${PYTHON_SUFFIX}m-freebsd_*.whl && \
+		unzip ${BUILD_WRKSRC}/python/dist/ortools-${DISTVERSION}*.whl && \
 		${RM} -rf ortools-*.dist-info
 	${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} -name "*.so" -o -name "*.so.*" | ${XARGS} ${STRIP_CMD}
 
