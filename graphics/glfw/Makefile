@@ -10,7 +10,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable framework for OpenGL development
 
 LICENSE=	ZLIB
-LICENSE_FILE=	${WRKSRC}/README.md
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 USES=		cmake:insource gl localbase zip
 USE_GL=		glu

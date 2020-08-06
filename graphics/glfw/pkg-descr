@@ -3,4 +3,4 @@ OpenGL ES application development.  It provides a simple,
 platform-independent API for creating windows and contexts, reading
 input, handling events, etc.
 
-WWW: http://www.glfw.org/
+WWW: https://www.glfw.org/
