@@ -1,5 +1,7 @@
 bin/gscan2pdf
+%%SITE_PERL%%/Gscan2pdf/Bboxtree.pm
 %%SITE_PERL%%/Gscan2pdf/Canvas.pm
+%%SITE_PERL%%/Gscan2pdf/Canvas/Bbox.pm
 %%SITE_PERL%%/Gscan2pdf/ComboBoxText.pm
 %%SITE_PERL%%/Gscan2pdf/Config.pm
 %%SITE_PERL%%/Gscan2pdf/Cuneiform.pm

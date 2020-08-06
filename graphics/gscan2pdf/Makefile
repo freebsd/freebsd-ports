@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gscan2pdf
-PORTVERSION=	2.6.2
-PORTREVISION=	1
+PORTVERSION=	2.8.2
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -52,10 +51,9 @@ RUN_DEPENDS:=	p5-Proc-ProcessTable>0:devel/p5-Proc-ProcessTable \
 		p5-Goo-Canvas2>=0.06:devel/p5-Goo-Canvas2 \
 		p5-Gtk2-Ex-PodViewer>0:x11-toolkits/p5-Gtk2-Ex-PodViewer
 
-USES=		gettext gmake gnome perl5 tar:xz
-
 NO_ARCH=	yes
 
+USES=		desktop-file-utils gettext gmake gnome perl5 tar:xz
 USE_GNOME=	gtk30 librsvg2
 USE_PERL5=	configure
 
