@@ -1,8 +1,0 @@
---- caddy/caddymain/run.go.orig	2019-03-04 19:14:25 UTC
-+++ caddy/caddymain/run.go
-@@ -598,4 +598,4 @@ var (
- )
- 
- // EnableTelemetry defines whether telemetry is enabled in Run.
--var EnableTelemetry = true
-+var EnableTelemetry = false

@@ -1,0 +1,47 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: caddy
+# REQUIRE: LOGIN DAEMON NETWORKING
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+# caddy_enable (bool):   Set to NO by default. Set it to YES to enable caddy.
+#
+# caddy_config (string): Optional full path for caddy config file
+# caddy_adapter (string):  Optional adapter type if the configuration is not in caddyfile format
+# caddy_extra_flags (string):  Optional flags passed to caddy start
+# caddy_logfile (string):     Set to "/var/log/caddy.log" by default.
+#                             Defines where the process log file is written, this is not a web access log
+
+. /etc/rc.subr
+
+name=caddy
+rcvar=caddy_enable
+desc="Caddy 2 is a powerful, enterprise-ready, open source web server with automatic HTTPS written in Go"
+
+load_rc_config $name
+
+# Defaults
+: ${caddy_enable:=NO}
+: ${caddy_config:=%%ETCDIR%%/%%CADDY_CONFIG%%}
+: ${caddy_adapter:=caddyfile}
+: ${caddy_extra_flags:=""}
+: ${caddy_logfile="/var/log/caddy.log"}
+
+command="%%PREFIX%%/bin/${name}"
+caddy_flags="--config ${caddy_config} --adapter ${caddy_adapter}"
+pidfile="/var/run/${name}.pid"
+
+required_files="${caddy_config} ${command}"
+
+# Extra Commands
+extra_commands="validate reload"
+start_cmd="${command} start ${caddy_flags} ${caddy_extra_flags} --pidfile ${pidfile} >> ${caddy_logfile} 2>&1"
+validate_cmd="${command} validate ${caddy_flags}"
+reload_cmd="${command} reload ${caddy_flags}"
+
+run_rc_command "$1"

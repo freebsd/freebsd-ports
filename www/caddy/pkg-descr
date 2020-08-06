@@ -1,3 +1,23 @@
 Caddy is the HTTP/2 web server with automatic HTTPS.
 
+Features:
+
+- Easy configuration with the Caddyfile
+- Powerful configuration with its native JSON config
+- Dynamic configuration with the JSON API
+- Config adapters if you don't like JSON
+- Automatic HTTPS by default
+  - Let's Encrypt for public sites
+  - Fully-managed local CA for internal names & IPs
+  - Can coordinate with other Caddy instances in a cluster
+- Stays up when other servers go down due to TLS/OCSP/certificate-related
+  issues
+- HTTP/1.1, HTTP/2, and experimental HTTP/3 support
+- Highly extensible modular architecture lets Caddy do anything without bloat
+- Runs anywhere with no external dependencies (not even libc)
+- Written in Go, a language with higher memory safety guarantees than other
+  servers
+- Actually fun to use
+- So, so much more to discover
+
 WWW: https://caddyserver.com/

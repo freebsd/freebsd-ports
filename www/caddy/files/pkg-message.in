@@ -1,53 +1,12 @@
 [
 { type: install
   message: <<EOM
-www/caddy does not ship with any in-tree documentation. Online
-documentation can be found at https://caddyserver.com/docs.
+A sample configuration file (Caddyfile) is installed to:
+	%%ETCDIR%%/%%CADDY_SAMPLE%%
 
-To use www/caddy, create a configuration file in the Caddyfile
-format in %%PREFIX%%/www/Caddyfile and enable caddy in your
-rc.conf:
-
-# sysrc caddy_enable="YES"
-# service caddy start
-
-Example Caddyfile
-=================
-mysite.com {
-    root %%PREFIX%%/www/mysite.com
-}
-
-sub.mysite.com {
-    root %%PREFIX%%/www/sub.mysite.com
-    gzip
-    log /var/log/sub.mysite.com/access.log
-}
-
-Automatic HTTPS using letsencrypt.org
-=====================================
-
-Provide an SSL certificate issuer email in your rc.conf. By
-providing an email address you automatically agree to
-letsencrypt.org's general terms and conditions:
-
-caddy_cert_email="your.email@example.org"
-
-Telemetry
-=========
-
-Since version 0.11.0, caddy includes an optional telemetry
-client, which is disabled by this port by default.
-
-If the telemetry client is enabled, you can view global stats
-as well as stats from your caddy instance using the instance
-uuid (stored in ~/.caddy/uuid unless a different $CADDYPATH
-is specified) on https://caddyserver.com/stats.
-
-Specific metrics can be disabled at run-time using the
--disabled-metrics flag.
-
-More information about the Caddy Telemetry Project can be found
-at https://caddyserver.com/docs/telemetry.
+Copy this file as
+	%%ETCDIR%%/%%CADDY_CONFIG%%
+and modify the contents to your needs
 EOM
 }
 ]
