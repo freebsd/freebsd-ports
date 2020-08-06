@@ -1,3 +1,3 @@
-TIMESTAMP = 1594874149
-SHA256 (apache-arrow-apache-arrow-1.0.0_GH0.tar.gz) = 95c481522334bcd2ff17062f3d642e87d41df00bac119f575bcf7cf99e546351
-SIZE (apache-arrow-apache-arrow-1.0.0_GH0.tar.gz) = 6425963
+TIMESTAMP = 1596698021
+SHA256 (apache-arrow-1.0.0.tar.gz) = 86ddb9feb48203a5aaf9cc4f2827525e20a2ca4d7239e492af17e74532ccf243
+SIZE (apache-arrow-1.0.0.tar.gz) = 7099445
