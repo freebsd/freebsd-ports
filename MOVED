@@ -3016,7 +3016,6 @@ www/mod_index_rss||2012-01-01|Has expired: Depends on expired www/apache13
 www/mod_layout|www/mod_layout22|2012-01-01|Has expired: Depends on expired www/apache13
 www/mod_limitipconn|www/mod_limitipconn2|2012-01-01|Has expired: Depends on expired www/apache13
 www/mod_log_spread||2012-01-01|Has expired: Depends on expired www/apache13
-www/mod_log_sql|www/mod_log_sql2|2012-01-01|Has expired: Depends on expired www/apache13
 www/mod_macro|www/mod_macro22|2012-01-01|Has expired: Depends on expired www/apache13
 www/mod_mp3||2012-01-01|Has expired: Depends on expired www/apache13
 www/mod_mylo||2012-01-01|Has expired: Depends on expired www/apache13
@@ -15172,3 +15171,4 @@ databases/sqliteodbc-sqlite2|databases/sqliteodbc|2020-07-27|Has expired: SQLite
 graphics/wayland-info|graphics/wayland-utils|2020-08-02|Project renamed
 devel/rubygem-grape11|devel/rubygem-grape|2020-08-03|Has expired: use devel/rubygem-grape instead
 astro/pyephem|astro/py-ephem|2020-08-04|Has expired: Use py-ephem instead.
+www/mod_log_sql2|www/mod_log_sql|2020-08-06|Remove Apache major version suffix since it is the only version in ports tree

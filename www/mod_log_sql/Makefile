@@ -3,7 +3,7 @@
 
 PORTNAME=	mod_log_sql
 PORTVERSION=	1.101
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	www databases
 MASTER_SITES=	http://www.outoforder.cc/downloads/${PORTNAME}/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Allows Apache to log to a MySQL database
 
-USES=		apache:2.2+ gmake mysql tar:bzip2
+USES=		apache gmake mysql tar:bzip2
 GNU_CONFIGURE=	yes
 
 OPTIONS_SUB=	yes
