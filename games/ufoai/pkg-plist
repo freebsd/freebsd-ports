@@ -1,6 +1,6 @@
 bin/ufo
 bin/ufomodel
-%%UFOSERVER%%bin/ufoded
+%%SERVER%%bin/ufoded
 %%UFO2MAP%%bin/ufo2map
 %%UFORADIANT%%bin/uforadiant
 %%DATADIR%%/base/game.so
@@ -34,7 +34,7 @@ bin/ufomodel
 %%DATADIR%%/base/i18n/zh_TW/LC_MESSAGES/ufoai.mo
 lib/ufoai/ufo
 lib/ufoai/ufomodel
-%%UFOSERVER%%lib/ufoai/ufoded
+%%SERVER%%lib/ufoai/ufoded
 %%UFO2MAP%%lib/ufoai/ufo2map
 lib/ufoai/base
 %%UFORADIANT%%lib/ufoai/radiant/bitmaps/texwindow_hideunused.png
