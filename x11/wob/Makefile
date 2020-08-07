@@ -1,8 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	wob
-DISTVERSION=	0.8
+DISTVERSION=	0.9
 CATEGORIES=	x11
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	b4ddcee628dd.patch:-p1 # https://github.com/francma/wob/pull/41
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Lightweight overlay volume (or anything) bar for Wayland
