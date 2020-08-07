@@ -44,6 +44,7 @@
     SUBDIR += graywolf
     SUBDIR += gspiceui
     SUBDIR += gtkwave
+    SUBDIR += horizon-eda
     SUBDIR += ifcopenshell
     SUBDIR += impact
     SUBDIR += irsim

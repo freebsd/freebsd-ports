@@ -1,0 +1,9 @@
+bin/horizon-eda
+bin/horizon-imp
+share/applications/org.horizon_eda.HorizonEDA.desktop
+share/icons/hicolor/16x16/apps/org.horizon_eda.HorizonEDA.png
+share/icons/hicolor/256x256/apps/org.horizon_eda.HorizonEDA.png
+share/icons/hicolor/32x32/apps/org.horizon_eda.HorizonEDA.png
+share/icons/hicolor/64x64/apps/org.horizon_eda.HorizonEDA.png
+share/icons/hicolor/scalable/apps/org.horizon_eda.HorizonEDA.svg
+share/metainfo/org.horizon_eda.HorizonEDA.metainfo.xml
