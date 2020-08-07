@@ -3,8 +3,10 @@
 
 PORTNAME=	rsync
 DISTVERSION=	3.2.2
+PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=   https://rsync.samba.org/ftp/rsync/ \
+MASTER_SITES=	https://rsync.samba.org/ftp/rsync/ \
+		https://rsync.samba.org/ftp/rsync/src/ \
 		https://www.mirrorservice.org/sites/rsync.samba.org/ \
 		http://rsync.samba.org/ftp/rsync/ \
 		ftp://ftp.fu-berlin.de/pub/unix/network/rsync/ \
@@ -14,10 +16,12 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Network file distribution/synchronization utility
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=    libxxhash.so:devel/xxhash \
-		libzstd.so:archivers/zstd
+LIB_DEPENDS=	libxxhash.so:devel/xxhash \
+		libzstd.so:archivers/zstd \
+		liblz4.so:archivers/liblz4
 
 USES=		cpe shebangfix ssl
 SHEBANG_FILES=	support/rrsync
@@ -98,15 +102,17 @@ CONFIGURE_ARGS+=ac_cv_search_libiconv_open=no
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's:/etc/:${ETCDIR}/:g'  \
+	@${REINPLACE_CMD} -e 's:/etc/:${ETCDIR}/:g' \
 		${WRKSRC}/rsync.1 ${WRKSRC}/rsyncd.conf.5
 	@${REINPLACE_CMD} -e 's|/usr/bin/rsync|${PREFIX}/bin/rsync|g' ${WRKSRC}/support/rrsync
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${FILESDIR}/rsyncd.conf.sample ${STAGEDIR}${ETCDIR}/
+	${INSTALL_SCRIPT} ${WRKSRC}/support/rrsync ${STAGEDIR}${PREFIX}/sbin
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/support/rrsync ${STAGEDIR}${PREFIX}/sbin
 
 .include <bsd.port.post.mk>
