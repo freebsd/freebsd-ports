@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tiled
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics editors games
 
@@ -11,6 +11,8 @@ COMMENT=	General purpose tile map editor
 
 LICENSE=	BSD2CLAUSE BSD3CLAUSE GPLv2+
 LICENSE_COMB=	multi
+
+LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	bjorn
@@ -21,6 +23,7 @@ USE_QT=		core gui widgets opengl network declarative \
 		buildtools_build linguisttools_build
 USE_GL=		gl
 USE_LDCONFIG=	yes
+QMAKE_ARGS=	SYSTEM_ZSTD=yes
 
 PORTDOCS=	*
 
@@ -31,6 +34,11 @@ OPTIONS_SUB=	yes
 PYTHON_DESC=	Enable python plugin
 PYTHON_USES=	pkgconfig python:3.6+
 PYTHON_QMAKE_OFF=	DISABLE_PYTHON_PLUGIN=yes
+
+post-patch:
+	# XXX: fixed in 1.4.3+
+	@${REINPLACE_CMD} -e 's|linux:contains|unix:contains|' \
+		${WRKSRC}/src/libtiled/libtiled.pro ${WRKSRC}/src/tiled/tiled.pro
 
 post-patch-PYTHON-on:
 	@${REINPLACE_CMD} -e 's|python3|python-${PYTHON_VER}|' \
