@@ -534,6 +534,7 @@
 %%WWWDIR%%/images/icons/plugin_mgr.png
 %%WWWDIR%%/images/icons/plugin_uninstall.png
 %%WWWDIR%%/images/icons/random.png
+%%WWWDIR%%/images/icons/rating.png
 %%WWWDIR%%/images/icons/reload.png
 %%WWWDIR%%/images/icons/report.png
 %%WWWDIR%%/images/icons/right.png
@@ -857,7 +858,6 @@
 %%WWWDIR%%/include/iptc.inc.php
 %%WWWDIR%%/include/keyword.inc.php
 %%WWWDIR%%/include/lib.xml.php
-%%WWWDIR%%/include/log_header.inc.php
 %%WWWDIR%%/include/logger.inc.php
 %%WWWDIR%%/include/mailer.inc.php
 %%WWWDIR%%/include/makers/canon.php
