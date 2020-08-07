@@ -61,6 +61,8 @@ man/man3/Tss2_TctiLdr_Initialize.3.gz
 man/man3/Tss2_TctiLdr_Initialize_Ex.3.gz
 man/man3/Tss2_Tcti_Device_Init.3.gz
 man/man3/Tss2_Tcti_Mssim_Init.3.gz
+man/man5/fapi-config.5.gz
+man/man5/fapi-profile.5.gz
 man/man7/tss2-tcti-device.7.gz
 man/man7/tss2-tcti-mssim.7.gz
 man/man7/tss2-tctildr.7.gz
