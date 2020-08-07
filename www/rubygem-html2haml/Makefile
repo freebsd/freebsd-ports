@@ -17,9 +17,9 @@ RUN_DEPENDS=	rubygem-erubis>=2.7.0:www/rubygem-erubis \
 		rubygem-nokogiri>=1.6.0:textproc/rubygem-nokogiri \
 		rubygem-ruby_parser>=3.5:devel/rubygem-ruby_parser
 
+USES=		gem
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem
 
 PLIST_FILES=	bin/html2haml
 
