@@ -14,7 +14,7 @@ The memory overhead is fairly small; each item carries, besides its data, a
 prev and next pointer (i.e. a constant 16 byte overhead per item on 64-bit
 architectures).
 
-The list itself has a head and a tail pointer, plus a length variable
+The list itself has two head and tail pointers, plus a length variable
 (typically 8 bytes on 64-bit architectures) to make list length lookup constant
 in time.
 

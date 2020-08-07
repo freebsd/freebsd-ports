@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	tllist
-DISTVERSION=	1.0.0
+DISTVERSION=	1.0.2
 CATEGORIES=	devel
 MASTER_SITES=	https://codeberg.org/dnkl/tllist/archive/
 DISTNAME=	${DISTVERSION}
