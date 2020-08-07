@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	bitcoin
-PORTVERSION=	0.19.1
-PORTREVISION?=	2
+PORTVERSION=	0.20.0
+PORTREVISION?=	0
 CATEGORIES=	net-p2p finance
 MASTER_SITES=	https://bitcoincore.org/bin/bitcoin-core-${PORTVERSION}/ \
 		LOCAL/swills:icon
@@ -19,7 +19,7 @@ LICENSE=	MIT
 LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs \
 		libevent.so:devel/libevent
 
-USES=		autoreconf compiler:c++11-lib gmake libtool pkgconfig qt:5 shebangfix ssl
+USES=		autoreconf compiler:c++11-lib gmake libtool pkgconfig qt:5 shebangfix
 
 GNU_CONFIGURE=	yes
 
@@ -90,9 +90,7 @@ CONFIGURE_ARGS?=	--without-libs \
 			--without-daemon \
 			--without-utils
 
-CONFIGURE_ENV=	CRYPTO_CFLAGS="-I${OPENSSLINC}" CRYPTO_LIBS="-L${OPENSSLLIB} -lcrypto" \
-		SSL_CFLAGS="-I${OPENSSLINC}" SSL_LIBS="-L${OPENSSLLIB} -lssl" \
-		OBJCXX="${CXX}" OBJCXXFLAGS="${CXXFLAGS}"
+CONFIGURE_ENV=	OBJCXX="${CXX}" OBJCXXFLAGS="${CXXFLAGS}"
 MAKE_ENV+=	V=1
 
 PLIST_FILES?=	bin/bitcoin-qt man/man1/bitcoin-qt.1.gz \
