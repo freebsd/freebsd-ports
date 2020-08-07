@@ -1,0 +1,11 @@
+--- samples/Makefile.am.orig	2020-03-18 13:57:19.000000000 -0700
++++ samples/Makefile.am	2020-06-29 13:05:24.670094000 -0700
+@@ -13,8 +13,6 @@
+ 	$(INSTALL) -m 600 transport_ike.conf $(DESTDIR)$(sysconfdir)/transport_ike.conf.sample
+ 	$(INSTALL) -m 600 tunnel_ike.conf $(DESTDIR)$(sysconfdir)/tunnel_ike.conf.sample
+ 	$(INSTALL) -m 600 tunnel_ike_natt.conf $(DESTDIR)$(sysconfdir)/tunnel_ike_natt.conf.sample
+-	$(INSTALL) -m 600 transport_kink.conf $(DESTDIR)$(sysconfdir)/transport_kink.conf.sample
+-	$(INSTALL) -m 600 tunnel_kink.conf $(DESTDIR)$(sysconfdir)/tunnel_kink.conf.sample
+ 	$(INSTALL) -m 600 local-test.conf $(DESTDIR)$(sysconfdir)/local-test.conf.sample
+ 	$(INSTALL) -d -m 700 $(DESTDIR)$(sysconfdir)/psk
+ 	$(INSTALL) -d -m 700 $(DESTDIR)$(sysconfdir)/cert
