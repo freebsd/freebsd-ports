@@ -2,7 +2,7 @@
 
 PORTNAME=	notcurses
 DISTVERSIONPREFIX=	v
-DISTVERSION=	${ABIVERSION}.6.6
+DISTVERSION=	${ABIVERSION}.6.11
 CATEGORIES=	devel
 
 MAINTAINER=	nickblack@linux.com
@@ -12,7 +12,8 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
-		libqrcodegen.so:graphics/qr-code-generator
+		libqrcodegen.so:graphics/qr-code-generator \
+	  libunistring.so:devel/libunistring
 BUILD_DEPENDS=	${LOCALBASE}/include/doctest/doctest.h:devel/doctest \
     pandoc:textproc/hs-pandoc
 
