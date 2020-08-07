@@ -95,6 +95,7 @@
     SUBDIR += bareos18-server
     SUBDIR += bareos18-traymonitor
     SUBDIR += barrier
+    SUBDIR += bashtop
     SUBDIR += bastille
     SUBDIR += batmon
     SUBDIR += battmond
