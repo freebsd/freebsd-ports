@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hevea
-PORTVERSION=	2.32
+PORTVERSION=	2.34
 CATEGORIES=	textproc
 MASTER_SITES=	http://para.inria.fr/~maranget/hevea/distri/ \
 		ftp://ftp.inria.fr/INRIA/moscova/hevea/
@@ -21,10 +21,6 @@ PLIST_SUB=	HEVEAVERSION=${PORTVERSION}
 PORTDOCS=	*
 DOCS_DISTFILES+=	${PORTNAME}-${PORTVERSION}-manual.pdf \
 			${PORTNAME}-${PORTVERSION}-manual.tar.gz
-
-post-patch:
-	@${REINPLACE_CMD} -e '/^PREFIX=/s|/usr/local|${PREFIX}|' \
-	    ${WRKSRC}/Makefile
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/esponja
