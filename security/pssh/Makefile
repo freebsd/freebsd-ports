@@ -1,21 +1,22 @@
 # $FreeBSD$
 
 PORTNAME=	pssh
-PORTVERSION=	2.3.1
-PORTREVISION=	2
+PORTVERSION=	2.3.4
+DISTVERSIONPREFIX=	v
 CATEGORIES=	security net sysutils
-MASTER_SITES=	CHEESESHOP
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Parallel versions of the openssh tools
+MAINTAINER=	timp87@gmail.com
+COMMENT=	Parallel version of OpenSSH and related tools
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	rsync:net/rsync
 
-NO_ARCH=	yes
-USES=		python
-USE_PYTHON=	autoplist distutils concurrent optsuffix
+USES=		python:3.5+
+USE_GITHUB=	yes
+GH_ACCOUNT=	lilydjwg
+USE_PYTHON=	autoplist distutils
 
+NO_ARCH=	yes
 .include <bsd.port.mk>

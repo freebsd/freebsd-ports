@@ -1,5 +1,4 @@
-This package provides parallel versions of the openssh tools. Included
-in the distribution:
+PSSH provides parallel versions of OpenSSH and related tools, including:
 
  - Parallel ssh (pssh)
  - Parallel scp (pscp)
@@ -7,7 +6,14 @@ in the distribution:
  - Parallel nuke (pnuke)
  - Parallel slurp (pslurp)
 
-What are these tools good for? Mainly for controlling large collections
-of nodes in the wide-area.
+The project includes psshlib which can be used within custom applications.
+The source code is written in Python 3.5+.
 
-WWW: https://pypi.org/project/pssh/
+The original PSSH project was written and maintained by Brent N. Chun.
+Due to his busy schedule, Brent handed over maintenance to Andrew McNabb
+in October 2009. PSSH hasn't got any updates since 2014.
+
+This package is a fork by 'lilydjwg' github user.
+It seems the most live fork that has been accumulating fixes past years.
+
+WWW: https://github.com/lilydjwg/pssh
