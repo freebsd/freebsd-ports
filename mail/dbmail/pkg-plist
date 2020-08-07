@@ -51,6 +51,7 @@ sbin/dbmail-util
 %%DATADIR%%/mysql/upgrades/32002.mysql
 %%DATADIR%%/mysql/upgrades/32003.mysql
 %%DATADIR%%/mysql/upgrades/32004.mysql
+%%DATADIR%%/mysql/upgrades/32005.mysql
 %%DATADIR%%/oracle/dbmail_grant.sql
 %%DATADIR%%/oracle/dbmail_schema.sql
 %%DATADIR%%/oracle/dbmail_ts.sql
@@ -68,6 +69,7 @@ sbin/dbmail-util
 %%DATADIR%%/postgresql/upgrades/32002.psql
 %%DATADIR%%/postgresql/upgrades/32003.psql
 %%DATADIR%%/postgresql/upgrades/32004.psql
+%%DATADIR%%/postgresql/upgrades/32005.psql
 %%DATADIR%%/sqlite/2_1_7-2_2_0.sqlite
 %%DATADIR%%/sqlite/2_2-3_0.sqlite
 %%DATADIR%%/sqlite/2_2_5-2_3_0.sqlite
@@ -81,6 +83,7 @@ sbin/dbmail-util
 %%DATADIR%%/sqlite/upgrades/32002.sqlite
 %%DATADIR%%/sqlite/upgrades/32003.sqlite
 %%DATADIR%%/sqlite/upgrades/32004.sqlite
+%%DATADIR%%/sqlite/upgrades/32005.sqlite
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.md
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
