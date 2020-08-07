@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dwdiff
-PORTVERSION=	2.1.2
+PORTVERSION=	2.1.3
 CATEGORIES=	textproc
 MASTER_SITES=	https://os.ghalkes.nl/dist/ \
 		http://fossies.org/unix/privat/
