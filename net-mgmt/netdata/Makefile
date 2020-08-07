@@ -87,6 +87,10 @@ LTO_USES=		compiler:c11
 BROKEN=		Link-Time Optimization breaks compilation on FreeBSD 11
 .endif
 
+.if ${PORT_OPTIONS:MLTO} && ${ARCH} == powerpc64
+USE_GCC=	yes
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%NETDATA_CACHE%%|${NETDATA_CACHE}|g' \
 	    ${PATCH_WRKSRC}/configure.ac
