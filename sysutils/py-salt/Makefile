@@ -3,10 +3,16 @@
 
 PORTNAME=	salt
 PORTVERSION=	3001
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+# Unbreak the sysctl state.
+# https://github.com/saltstack/salt/issues/57826
+# https://github.com/saltstack/salt/pull/57839
+PATCH_SITES=	https://github.com/saltstack/salt/commit/
+PATCHFILES+=	0dda2fdbdc577b092c5fc894951e8a750b275c56.patch:-p1
 
 MAINTAINER=	christer.edwards@gmail.com
 COMMENT=	Distributed remote execution and configuration management system
