@@ -2,7 +2,7 @@
 
 PORTNAME=	pysmt
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.0
+DISTVERSION=	0.9.0
 CATEGORIES=	math python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -13,10 +13,13 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}z3-solver>0:math/py-z3-solver@${PY_FLAVOR} \
+		z3>0:math/z3 \
+		cvc4>0:math/cvc4
 
-# Supported Python versions: 2.7,3.5+
-USES=		python
+
+USES=		python:3.5+
 USE_GITHUB=	yes
 USE_PYTHON=	autoplist concurrent distutils
 PYDISTUTILS_PKGNAME=	PySMT
