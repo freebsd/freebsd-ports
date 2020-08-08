@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	metasploit_data_models
-PORTVERSION=	3.0.10
-PORTREVISION=	1
+PORTVERSION=	4.0.2
 PORTEPOCH=	2
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
@@ -13,19 +12,17 @@ COMMENT=	Database layer for Metasploit
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-activerecord4>=4.2.6:databases/rubygem-activerecord4 \
-		rubygem-activesupport4>=4.2.6:devel/rubygem-activesupport4 \
+RUN_DEPENDS=	rubygem-activerecord52>=5.2.2:databases/rubygem-activerecord52 \
+		rubygem-activesupport52>=5.2.2:devel/rubygem-activesupport52 \
+		rubygem-arel-helpers>=0:databases/rubygem-arel-helpers \
 		rubygem-metasploit-concern>=0:security/rubygem-metasploit-concern \
 		rubygem-metasploit-model>=0:security/rubygem-metasploit-model \
-		rubygem-railties4>=4.2.6:www/rubygem-railties4 \
-		rubygem-recog>=2.0:security/rubygem-recog \
-		rubygem-arel-helpers>=0:databases/rubygem-arel-helpers \
-		rubygem-postgres_ext>=0:databases/rubygem-postgres_ext \
-		rubygem-pg0>=0:databases/rubygem-pg0
+		rubygem-pg>=0:databases/rubygem-pg \
+		rubygem-railties52>=5.2.2:www/rubygem-railties52 \
+		rubygem-recog>=2.0:security/rubygem-recog
 
 NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
-PLIST_FILES=	bin/mdm_console
 
 .include <bsd.port.mk>
