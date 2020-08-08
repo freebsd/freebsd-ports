@@ -2,6 +2,7 @@
 
 PORTNAME=	bashtop
 DISTVERSION=	0.9.25
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	lwhsu@FreeBSD.org
@@ -11,7 +12,8 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	coreutils>0:sysutils/coreutils \
-		gsed:textproc/gsed
+		gsed:textproc/gsed \
+		${PYTHON_PKGNAMEPREFIX}psutil>0:sysutils/py-psutil@${PY_FLAVOR}
 
 USES=	python:3.5+,run
 
