@@ -2,7 +2,7 @@
 
 PORTNAME=	phoc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.1
+DISTVERSION=	0.4.2
 CATEGORIES=	x11-wm
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -25,7 +25,7 @@ USE_GNOME=	gnomedesktop3
 USE_XORG=	pixman
 GL_SITE=	https://source.puri.sm
 GL_ACCOUNT=	Librem5
-GL_COMMIT=	99aea009aae6f827e3f86050a63a48707ac183f1
+GL_COMMIT=	0be2173791e709e8d07d5916ad12adbba614a799
 CFLAGS+=	-Wno-error=format-nonliteral # clang
 PLIST_FILES=	bin/${PORTNAME}
 GLIB_SCHEMAS=	sm.puri.phoc.gschema.xml
