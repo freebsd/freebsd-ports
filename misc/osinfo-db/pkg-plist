@@ -282,6 +282,7 @@ share/osinfo/os/freebsd.org/freebsd-11.0.xml
 share/osinfo/os/freebsd.org/freebsd-11.1.xml
 share/osinfo/os/freebsd.org/freebsd-11.2.xml
 share/osinfo/os/freebsd.org/freebsd-11.3.xml
+share/osinfo/os/freebsd.org/freebsd-11.4.xml
 share/osinfo/os/freebsd.org/freebsd-12.0.xml
 share/osinfo/os/freebsd.org/freebsd-12.1.xml
 share/osinfo/os/freebsd.org/freebsd-2.0.5.xml
@@ -347,6 +348,7 @@ share/osinfo/os/mageia.org/mageia-3.xml
 share/osinfo/os/mageia.org/mageia-4.xml
 share/osinfo/os/mageia.org/mageia-5.xml
 share/osinfo/os/mageia.org/mageia-6.xml
+share/osinfo/os/mageia.org/mageia-7.xml
 share/osinfo/os/mandriva.com/mandrake-10.0.xml
 share/osinfo/os/mandriva.com/mandrake-10.1.xml
 share/osinfo/os/mandriva.com/mandrake-10.2.xml
@@ -470,6 +472,7 @@ share/osinfo/os/openbsd.org/openbsd-6.3.xml
 share/osinfo/os/openbsd.org/openbsd-6.4.xml
 share/osinfo/os/openbsd.org/openbsd-6.5.xml
 share/osinfo/os/openbsd.org/openbsd-6.6.xml
+share/osinfo/os/openbsd.org/openbsd-6.7.xml
 share/osinfo/os/opensuse.org/opensuse-10.2.xml
 share/osinfo/os/opensuse.org/opensuse-10.3.xml
 share/osinfo/os/opensuse.org/opensuse-11.0.xml
@@ -484,6 +487,7 @@ share/osinfo/os/opensuse.org/opensuse-13.1.xml
 share/osinfo/os/opensuse.org/opensuse-13.2.xml
 share/osinfo/os/opensuse.org/opensuse-15.0.xml
 share/osinfo/os/opensuse.org/opensuse-15.1.xml
+share/osinfo/os/opensuse.org/opensuse-15.2.xml
 share/osinfo/os/opensuse.org/opensuse-42.1.xml
 share/osinfo/os/opensuse.org/opensuse-42.2.xml
 share/osinfo/os/opensuse.org/opensuse-42.3.xml
@@ -662,6 +666,7 @@ share/osinfo/os/suse.com/caasp-3.0.xml
 share/osinfo/os/suse.com/caasp-unknown.xml
 share/osinfo/os/suse.com/sle-15-unknown.xml
 share/osinfo/os/suse.com/sle-15.1.xml
+share/osinfo/os/suse.com/sle-15.2.xml
 share/osinfo/os/suse.com/sle-15.xml
 share/osinfo/os/suse.com/sle-unknown.xml
 share/osinfo/os/suse.com/sled-10.1.xml
