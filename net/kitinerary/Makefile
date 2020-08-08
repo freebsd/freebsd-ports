@@ -5,6 +5,9 @@ DISTVERSION=	${KDE_APPLICATIONS_VERSION}
 PORTREVISION=	4
 CATEGORIES=	net kde kde-applications
 
+PATCH_SITES=	https://github.com/KDE/kitinerary/commit/
+PATCHFILES=	7098c8be9a5e7fabf74543308bfaf11a2ebe5484.patch:-p1
+
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Data Model and Extraction System for Travel Reservation information
 

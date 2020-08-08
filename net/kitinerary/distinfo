@@ -1,3 +1,5 @@
-TIMESTAMP = 1594147121
+TIMESTAMP = 1596867282
 SHA256 (KDE/release-service/20.04.3/kitinerary-20.04.3.tar.xz) = 8c7dab2e28891af268d22884ecbb9cd7031c4b34352ed3b576dbb6dcb5977c7e
 SIZE (KDE/release-service/20.04.3/kitinerary-20.04.3.tar.xz) = 1280676
+SHA256 (KDE/release-service/20.04.3/7098c8be9a5e7fabf74543308bfaf11a2ebe5484.patch) = b283a2431a6b2d6ff9dc90ff57d094b3054f183a7ee92ac8cccce7036393bdc6
+SIZE (KDE/release-service/20.04.3/7098c8be9a5e7fabf74543308bfaf11a2ebe5484.patch) = 1103
