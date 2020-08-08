@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	google-auth
-PORTVERSION=	1.19.2
+PORTVERSION=	1.20.0
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,7 +25,7 @@ NO_ARCH=	yes
 
 .if ${PYTHON_REL} < 3500
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}cachetools3>=2.0.0<5.0:devel/py-cachetools3@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}rsa>=3.1.4<4.1:security/py-rsa@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}rsa>=3.1.4<4.6:security/py-rsa@${PY_FLAVOR}
 .else
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}cachetools>=2.0.0<5.0:devel/py-cachetools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rsa>=3.1.4<5:security/py-rsa@${PY_FLAVOR}
