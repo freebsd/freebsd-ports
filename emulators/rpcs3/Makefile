@@ -47,14 +47,12 @@ CMAKE_ON=	CMAKE_SKIP_RPATH USE_SYSTEM_CURL USE_SYSTEM_FFMPEG USE_SYSTEM_LIBPNG
 CMAKE_OFF=	USE_NATIVE_INSTRUCTIONS USE_PRECOMPILED_HEADERS
 LDFLAGS+=	-Wl,--as-needed # GLU
 
-# XXX Drop after FreeBSD 11.3/12.1 EOL
-.if (exists(/usr/lib/clang/8.0.0) || exists(/usr/lib/clang/8.0.1)) && ${CXX} == c++
+# https://bugs.llvm.org/show_bug.cgi?id=46557
 BUILD_DEPENDS+=	clang++${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
 USES:=		${USES:Ncompiler*}
 CC=		clang${LLVM_DEFAULT}
 CXX=		clang++${LLVM_DEFAULT}
 CPP=		clang-cpp${LLVM_DEFAULT}
-.endif
 
 OPTIONS_DEFINE=	ALSA EVDEV FAUDIO PULSEAUDIO VULKAN
 OPTIONS_DEFAULT=EVDEV FAUDIO VULKAN
