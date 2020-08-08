@@ -4832,6 +4832,7 @@
     SUBDIR += py-prompt_toolkit1
     SUBDIR += py-prompt_toolkit2
     SUBDIR += py-proselint
+    SUBDIR += py-proto-plus
     SUBDIR += py-protobuf
     SUBDIR += py-protocols
     SUBDIR += py-ptable

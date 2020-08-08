@@ -1,0 +1,7 @@
+Proto Plus for Python
+
+This is a wrapper around protocol buffers. Protocol buffers is a specification
+format for APIs, such as those inside Google. This library provides protocol
+buffer message classes and objects that largely behave like native Python types.
+
+WWW: https://github.com/googleapis/proto-plus-python
