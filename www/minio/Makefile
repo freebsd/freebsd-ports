@@ -13,8 +13,9 @@ LICENSE=	APACHE20
 USES=		compiler go:modules
 
 USE_GITHUB=	yes
-GHTAG=		RELEASE.2020-07-24T22-43-05Z
-COMMIT_ID=	35212b673e0ffae841f6b870609df6677f96e5a4
+GHTAG=		RELEASE.2020-08-08T04-50-06Z
+COMMIT_ID=	2a9819aff876b2c92e3428ee6e315ec9ff523d4e
+
 GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		Azure:azure-pipeline-go:v0.2.1:azure_azure_pipeline_go/vendor/github.com/Azure/azure-pipeline-go \
 		Azure:azure-storage-blob-go:v0.8.0:azure_azure_storage_blob_go/vendor/github.com/Azure/azure-storage-blob-go \
@@ -55,6 +56,7 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		gogo:protobuf:v1.3.1:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang:appengine:v1.4.0:golang_appengine/vendor/google.golang.org/appengine \
 		golang:crypto:948cd5f35899:golang_crypto/vendor/golang.org/x/crypto \
+		golang:mod:v0.3.0:golang_mod/vendor/golang.org/x/mod \
 		golang:net:ab3426394381:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:e64efc72b421:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.4.0:golang_protobuf/vendor/github.com/golang/protobuf \
@@ -62,7 +64,7 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		golang:sys:ddb9806d33ae:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.3:golang_text/vendor/golang.org/x/text \
 		golang:time:9d24e82272b4:golang_time/vendor/golang.org/x/time \
-		golang:tools:8463f397d07c:golang_tools/vendor/golang.org/x/tools \
+		golang:tools:b5fc9d354d99:golang_tools/vendor/golang.org/x/tools \
 		golang:xerrors:9bdfabe68543:golang_xerrors/vendor/golang.org/x/xerrors \
 		gomodule:redigo:v2.0.0:gomodule_redigo/vendor/github.com/gomodule/redigo \
 		google:go-genproto:24fa4b261c55:google_go_genproto/vendor/google.golang.org/genproto \
@@ -110,8 +112,8 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		minio:cli:v1.22.0:minio_cli/vendor/github.com/minio/cli \
 		minio:highwayhash:v1.0.0:minio_highwayhash/vendor/github.com/minio/highwayhash \
 		minio:md5-simd:v1.1.0:minio_md5_simd/vendor/github.com/minio/md5-simd \
-		minio:minio-go:v7.0.1:minio_minio_go_v7/vendor/github.com/minio/minio-go/v7 \
-		minio:selfupdate:v0.3.0:minio_selfupdate/vendor/github.com/minio/selfupdate \
+		minio:minio-go:v7.0.3:minio_minio_go_v7/vendor/github.com/minio/minio-go/v7 \
+		minio:selfupdate:v0.3.1:minio_selfupdate/vendor/github.com/minio/selfupdate \
 		minio:sha256-simd:v0.1.1:minio_sha256_simd/vendor/github.com/minio/sha256-simd \
 		minio:simdjson-go:b17fe061ea37:minio_simdjson_go/vendor/github.com/minio/simdjson-go \
 		minio:sio:v0.2.0:minio_sio/vendor/github.com/minio/sio \
@@ -141,6 +143,7 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		rcrowley:go-metrics:3113b8401b8a:rcrowley_go_metrics/vendor/github.com/rcrowley/go-metrics \
 		rjeczalik:notify:v0.9.2:rjeczalik_notify/vendor/github.com/rjeczalik/notify \
 		rs:cors:v1.7.0:rs_cors/vendor/github.com/rs/cors \
+		rs:xid:v1.2.1:rs_xid/vendor/github.com/rs/xid \
 		ryanuber:go-glob:v1.0.0:ryanuber_go_glob/vendor/github.com/ryanuber/go-glob \
 		secure-io:sio-go:v0.3.0:secure_io_sio_go/vendor/github.com/secure-io/sio-go \
 		shirou:gopsutil:53cec6b37e6a:shirou_gopsutil/vendor/github.com/shirou/gopsutil \
@@ -162,6 +165,10 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		xdg:scram:7eeb5667e42c:xdg_scram/vendor/github.com/xdg/scram \
 		xdg:stringprep:v1.0.0:xdg_stringprep/vendor/github.com/xdg/stringprep
 
+post-extract:
+	@${RM} -r ${WRKSRC}/vendor/github.com/hashicorp/vault/sdk
+	@${RLN} ${WRKSRC_hashicorp_vault_sdk}/sdk ${WRKSRC}/vendor/github.com/hashicorp/vault/sdk
+
 GO_BUILDFLAGS=	-ldflags=' \
 		-X github.com/minio/minio/cmd.Version=${GH_TAGNAME:C/RELEASE\.//:C|(..)-(..)-(..)Z|\1:\2:\3Z|} \
 		-X github.com/minio/minio/cmd.ReleaseTag=${GH_TAGNAME} \
@@ -182,9 +189,5 @@ GROUPS=		${MINIO_GROUP}
 SUB_LIST=	DBDIR=${MINIO_DBDIR} \
 		GROUP="${GROUPS}" \
 		USER="${USERS}"
-
-post-extract:
-	@${RM} -r ${WRKSRC}/vendor/github.com/hashicorp/vault/sdk
-	@${RLN} ${WRKSRC_hashicorp_vault_sdk}/sdk ${WRKSRC}/vendor/github.com/hashicorp/vault/sdk
 
 .include <bsd.port.mk>
