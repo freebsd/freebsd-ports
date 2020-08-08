@@ -1,6 +1,6 @@
---- configure.orig	2019-10-07 19:19:28 UTC
+--- configure.orig	2020-08-07 04:27:42 UTC
 +++ configure
-@@ -20048,36 +20048,6 @@ $as_echo "#define HAVE_CXX11 1" >>confdefs.h
+@@ -20818,28 +20818,6 @@ $as_echo "#define HAVE_CXX11 1" >>confdefs.h
      ;;
    esac
  
@@ -26,14 +26,6 @@
 -$as_echo "$mysql_services_lib_dir" >&6; }
 -  MYSQL_LIBS="$MYSQL_LIBS \"$mysql_services_lib_dir/libmysqlservices.a\""
 -
--
--
--
--
--
--
--
--
- if test "x$ac_cv_env_PKG_CONFIG_set" != "xset"; then
- 	if test -n "$ac_tool_prefix"; then
-   # Extract the first word of "${ac_tool_prefix}pkg-config", so it can be a program name with args.
+   case "$MYSQL_MAJOR_MINOR_VERSION" in
+   10.1|10.2|10.3|10.4)
+     :
