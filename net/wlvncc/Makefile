@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	wlvncc
-PORTVERSION=	s20200719
+PORTVERSION=	s20200807
 CATEGORIES=	net
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -20,7 +20,7 @@ USES=		compiler:c11 meson pkgconfig xorg
 USE_GITHUB=	yes
 USE_XORG=	pixman
 GH_ACCOUNT=	any1
-GH_TAGNAME=	f7aab11
+GH_TAGNAME=	67bd333
 PLIST_FILES=	bin/${PORTNAME}
 
 .include <bsd.port.mk>
