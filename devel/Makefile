@@ -31,6 +31,7 @@
     SUBDIR += R-cran-cli
     SUBDIR += R-cran-clipr
     SUBDIR += R-cran-covr
+    SUBDIR += R-cran-cpp11
     SUBDIR += R-cran-crayon
     SUBDIR += R-cran-data.table
     SUBDIR += R-cran-doParallel
