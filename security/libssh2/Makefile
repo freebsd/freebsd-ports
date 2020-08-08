@@ -3,7 +3,7 @@
 
 PORTNAME=	libssh2
 PORTVERSION=	1.9.0
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	3
 CATEGORIES=	security devel
 MASTER_SITES=	https://www.libssh2.org/download/ \
@@ -27,8 +27,8 @@ TRACE_DESC=	Enable debug packet traces
 
 TRACE_CONFIGURE_ENABLE=	debug
 GCRYPT_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
-GCRYPT_CONFIGURE_ON=	--with-libgcrypt
-GCRYPT_CONFIGURE_OFF=	--with-openssl
+GCRYPT_CONFIGURE_ON=	--with-crypto=libgcrypt
+GCRYPT_CONFIGURE_OFF=	--with-crypto=openssl
 GCRYPT_CPPFLAGS=	-I${LOCALBASE}/include
 GCRYPT_LIBS=		-L${LOCALBASE}/lib
 GCRYPT_USES_OFF=	ssl
