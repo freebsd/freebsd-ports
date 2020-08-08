@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mysql-connector-python
-PORTVERSION=	8.0.20
+PORTVERSION=	8.0.21
 CATEGORIES=	databases python
 MASTER_SITES=	MYSQL/Connector-Python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,5 +21,8 @@ NO_ARCH=	yes
 .include <bsd.port.pre.mk>
 
 PYDISTUTILS_INSTALLARGS:=	${PYDISTUTILS_INSTALLARGS:N--single-version-externally-managed}
+
+do-test:
+	@(cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} ./unittests.py)
 
 .include <bsd.port.post.mk>
