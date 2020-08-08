@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PATCH_SITES=	https://github.com/afewmail/${PORTNAME}/commit/
 PATCHFILES=	1d290ab4d631fdcec60b79fd3a4f873e774adac2.patch:-p1 # fix of the documentation build
 
-MAINTAINER=	seschwar@gmail.com
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Initial tagging script for Notmuch mail
 
 LICENSE=	ISCL
