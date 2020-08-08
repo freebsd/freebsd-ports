@@ -3,6 +3,7 @@
 
 PORTNAME=	fog-vsphere
 PORTVERSION=	3.4.0
+PORTREVISION=	1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +14,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 RUN_DEPENDS=	rubygem-fog-core>=0:devel/rubygem-fog-core \
-		rubygem-rbvmomi>=1.9<3:net/rubygem-rbvmomi
+		rubygem-rbvmomi>=1.9<4:net/rubygem-rbvmomi
 
 USES=		gem
 USE_RUBY=	yes
