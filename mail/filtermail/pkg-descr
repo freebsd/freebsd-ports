@@ -1,5 +1,5 @@
 This is mail/filtermail, a port of mailfilter, renamed because another
-mailfilter exists in the ports tree.
+mailfilter previously existed in the ports tree.
 
 It filters mail on a pop3 server, allowing junk to be deleted on the
 server rather than after it has been downloaded, and integrates with other
