@@ -1,3 +1,3 @@
-TIMESTAMP = 1592835309
-SHA256 (rubygem/elasticsearch-xpack-7.8.0.gem) = 8b589d76a14c2dfac6c80b5375a4e8df2feb91e794d2373eb5972a5014e5ded1
-SIZE (rubygem/elasticsearch-xpack-7.8.0.gem) = 45568
+TIMESTAMP = 1596280248
+SHA256 (rubygem/elasticsearch-xpack-7.8.1.gem) = c8e736cbdd4b271eaadb2c15d5f5cf23678cc105560d109b45bd635a119c410d
+SIZE (rubygem/elasticsearch-xpack-7.8.1.gem) = 46080
