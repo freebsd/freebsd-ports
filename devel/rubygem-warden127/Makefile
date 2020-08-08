@@ -13,6 +13,9 @@ COMMENT=	Rack middleware that provides authentication for rack applications
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	No longer needed
+EXPIRATION_DATE=	2020-08-15
+
 RUN_DEPENDS=	rubygem-rack16>=1.6<2:www/rubygem-rack16
 
 USES=		gem
