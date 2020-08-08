@@ -191,6 +191,7 @@ include/liveMedia/RTSPClient.hh
 include/liveMedia/RTSPCommon.hh
 include/liveMedia/RTSPRegisterSender.hh
 include/liveMedia/RTSPServer.hh
+include/liveMedia/RawVideoFrameParameters.hh
 include/liveMedia/RawVideoRTPSink.hh
 include/liveMedia/RawVideoRTPSource.hh
 include/liveMedia/SIPClient.hh
