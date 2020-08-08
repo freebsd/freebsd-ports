@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	beautifultable
-PORTVERSION=	0.8.0
+PORTVERSION=	1.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,5 +16,8 @@ USES=		python:3.4+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
+
+do-test:
+	@(cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} ./test.py)
 
 .include <bsd.port.mk>
