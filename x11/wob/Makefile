@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	wob
-DISTVERSION=	0.9
+DISTVERSION=	0.10
 CATEGORIES=	x11
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
