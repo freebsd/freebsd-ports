@@ -1,0 +1,8 @@
+--- completion/javaws.bash.in.orig	2020-06-04 13:08:14.000000000 +0200
++++ completion/javaws.bash.in	2020-07-31 20:16:56.895261000 +0200
+@@ -28,4 +28,4 @@
+       return 0
+     fi
+ }
+-complete -F _javaws javaws
++complete -F _javaws itweb-javaws

@@ -1,0 +1,8 @@
+--- completion/policyeditor.bash.in.orig	2020-06-04 13:08:14.000000000 +0200
++++ completion/policyeditor.bash.in	2020-07-31 20:02:45.694743000 +0200
+@@ -10,4 +10,4 @@
+     COMPREPLY=($(compgen -W "${opts}" -- ${cur}))
+     return 0
+ }
+-complete -F _policyeditor policyeditor
++complete -F _policyeditor itweb-policyeditor

@@ -38,7 +38,7 @@ CONFIGURE_ARGS+=	--with-jdk-home="${JAVA_HOME}"
 CONFIGURE_ARGS+=	--with-junit="${JUNIT_JAR}"
 CONFIGURE_ARGS+=	--with-rhino="${RHINO_JAR}"
 CONFIGURE_ARGS+=	--with-tagsoup="${TAGSOUP_JAR}"
-CONFIGURE_ARGS+=	--with-itw-libs="BUNDLED"
+CONFIGURE_ARGS+=	--with-itw-libs="DISTRIBUTION"
 CONFIGURE_ARGS+=	--enable-shell-launchers
 .for opt in asm chrome chromium ecj epiphany firefox jacoco midori opera
 CONFIGURE_ARGS+=	--without-${opt}
