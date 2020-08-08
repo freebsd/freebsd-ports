@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	recog
-PORTVERSION=	2.3.7
+PORTVERSION=	2.3.14
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -18,8 +18,10 @@ USE_RUBY=	yes
 
 NO_ARCH=	yes
 SHEBANG_FILES=	update_cpes.py
-PLIST_FILES=	bin/recog_export \
+PLIST_FILES=	bin/recog_cleanup \
+		bin/recog_export \
 		bin/recog_match \
+		bin/recog_standardize \
 		bin/recog_verify
 
 .include <bsd.port.mk>
