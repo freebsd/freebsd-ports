@@ -13,6 +13,26 @@ COMMENT=	Command line tool and library for transferring data with URLs
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		cpe libtool localbase pathfix perl5 shebangfix tar:xz
+USE_PERL5=	build
+
+CONFIGURE_ARGS=	--disable-werror \
+		--with-fish-functions-dir=${LOCALBASE}/share/fish/completions \
+		--with-zsh-functions-dir=${LOCALBASE}/share/zsh/site-functions
+CONFIGURE_ENV=	LOCALBASE=${LOCALBASE} \
+		ac_cv_func_SSLv2_client_method=no
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+TEST_TARGET=	test
+USE_LDCONFIG=	yes
+
+CPE_VENDOR=	haxx
+
+DOCS=		BUGS FAQ FEATURES INSTALL KNOWN_BUGS MAIL-ETIQUETTE RESOURCES \
+		THANKS TODO TheArtOfHttpScripting options-in-versions
+
+SHEBANG_FILES=	*/*.pl
+
 OPTIONS_DEFINE=	ALTSVC BROTLI CA_BUNDLE COOKIES CURL_DEBUG DEBUG DOCS EXAMPLES IDN IPV6 METALINK NTLM PROXY PSL TLS_SRP
 OPTIONS_GROUP=	PROTOCOL
 OPTIONS_RADIO=	SSL
@@ -42,26 +62,6 @@ SMB_DESC=		SMB/CIFS support
 SMTP_DESC=		SMTP/SMTPS support
 THREADED_RESOLVER_DESC=	Threaded DNS resolver
 TLS_SRP_DESC=		TLS-SRP (Secure Remote Password) support
-
-USES=		cpe libtool localbase pathfix perl5 shebangfix tar:xz
-USE_PERL5=	build
-
-CONFIGURE_ARGS=	--disable-werror \
-		--with-fish-functions-dir=${LOCALBASE}/share/fish/completions \
-		--with-zsh-functions-dir=${LOCALBASE}/share/zsh/site-functions
-CONFIGURE_ENV=	LOCALBASE=${LOCALBASE} \
-		ac_cv_func_SSLv2_client_method=no
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
-TEST_TARGET=	test
-USE_LDCONFIG=	yes
-
-CPE_VENDOR=	haxx
-
-DOCS=		BUGS FAQ FEATURES INSTALL KNOWN_BUGS MAIL-ETIQUETTE RESOURCES \
-		THANKS TODO TheArtOfHttpScripting options-in-versions
-
-SHEBANG_FILES=	*/*.pl
 
 ALTSVC_CONFIGURE_ENABLE=alt-svc
 BROTLI_CONFIGURE_WITH=	brotli
