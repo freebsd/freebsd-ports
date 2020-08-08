@@ -113,6 +113,7 @@
     SUBDIR += bksh
     SUBDIR += boot-extract
     SUBDIR += boxbackup-devel
+    SUBDIR += bpytop
     SUBDIR += brasero
     SUBDIR += bsd-splash-changer
     SUBDIR += bsdconfig
