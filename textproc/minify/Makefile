@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	minify
-PORTVERSION=	2.7.7
+PORTVERSION=	2.8.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc www
 
@@ -10,7 +10,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Go minifiers for web formats
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE.md
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules
 
