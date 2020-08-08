@@ -2,7 +2,7 @@
 
 PORTNAME=	dfshow
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.0-beta
+DISTVERSION=	0.9.1-beta
 CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
