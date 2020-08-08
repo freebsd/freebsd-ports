@@ -1,6 +1,6 @@
---- src/Makefile.in.orig	Sat Nov 27 22:29:44 2004
-+++ src/Makefile.in	Mon Mar  7 22:54:36 2005
-@@ -421,8 +421,6 @@
+--- src/Makefile.in.orig	2016-10-25 18:20:29 UTC
++++ src/Makefile.in
+@@ -424,8 +424,6 @@ distclean-compile:
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/apop.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/feedback.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/filter.Po@am__quote@
@@ -9,4 +9,3 @@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/header.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/imap.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/filtermail.Po@am__quote@
-
