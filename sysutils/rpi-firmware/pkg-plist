@@ -16,6 +16,7 @@
 %%DATADIR%%/bootcode.bin
 %%DATADIR%%/config.txt
 %%DATADIR%%/config_rpi3.txt
+%%DATADIR%%/config_rpi3_edk2.txt
 %%DATADIR%%/config_rpi4.txt
 %%DATADIR%%/config_rpi_0_w.txt
 %%DATADIR%%/fixup.dat

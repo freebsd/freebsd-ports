@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rpi-firmware
-PORTVERSION=	1.20190925.g20200109
+PORTVERSION=	1.20200723.g20200723
 CATEGORIES=	sysutils
 
 MAINTAINER=	uboot@FreeBSD.org
@@ -25,7 +25,10 @@ GH_TAGNAME=	${FW_TAG} ${PSCI_TAG}:pscimon
 BUILD_WRKSRC=	${WRKSRC_pscimon}
 INSTALL_DIR=	${PREFIX}/share/${PORTNAME}
 
-CONFIG_TXT_FILES=	config.txt config_rpi_0_w.txt config_rpi3.txt \
+CONFIG_TXT_FILES=	config.txt \
+			config_rpi_0_w.txt \
+			config_rpi3.txt \
+			config_rpi3_edk2.txt \
 			config_rpi4.txt
 
 do-patch:
