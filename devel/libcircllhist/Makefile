@@ -3,6 +3,7 @@
 
 PORTNAME=	libcircllhist
 PORTVERSION=	g20200417
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	ports@FreeBSD.org
@@ -18,9 +19,8 @@ USES=		autoreconf gmake
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-PLIST_FILES=	bin/circllhist_print \
-		include/circllhist.h lib/libcircllhist.a \
-		lib/libcircllhist.so lib/libcircllhist.so.0.0.1 \
-		share/lua/5.1/ffi_libcircllhist.lua
+post-install:
+	${LN} -s libcircllhist.so.0.0.1 \
+		${STAGEDIR}${PREFIX}/lib/libcircllhist.so.0
 
 .include <bsd.port.mk>
