@@ -1,0 +1,21 @@
+commit 36d803182ceb1ef6bd8a0646e4245c6ee67e4773
+Author: Steve Wills <steve@mouf.net>
+Date:   Tue Aug 4 14:26:39 2020 -0400
+
+    Fix build on FreeBSD (#1272)
+
+diff --git src/platform/posix/posix_ipcconn.c src/platform/posix/posix_ipcconn.c
+index 8dded3a3..c5760e53 100644
+--- src/platform/posix/posix_ipcconn.c
++++ src/platform/posix/posix_ipcconn.c
+@@ -33,6 +33,10 @@
+ #define MSG_NOSIGNAL 0
+ #endif
+ 
++#ifndef SOL_LOCAL
++#define SOL_LOCAL 0
++#endif
++
+ #include "posix_ipc.h"
+ 
+ typedef struct nni_ipc_conn ipc_conn;
