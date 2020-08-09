@@ -7,3 +7,7 @@ SHA256 (90cb6d26877b.patch) = 4c3a87dca481a637457d7409d38ce2bcd8d52ba4a0b02cf16e
 SIZE (90cb6d26877b.patch) = 3965
 SHA256 (b59460944208.patch) = 8b15ed54dcec76adf231db454ece78427eeabd5466ffd180b57ec785eeb4c507
 SIZE (b59460944208.patch) = 27381
+SHA256 (be3753a4774f.patch) = 7097190a74ce45db51c6651c7780f1eb8c3fec1fcc8a2252999a28cad15a092d
+SIZE (be3753a4774f.patch) = 12350
+SHA256 (c1955ad1ab05.patch) = f32e1dfddac74b08cfbc806aac4ce9b9eecbfe3d75b4ebbb5f714fa587e85f05
+SIZE (c1955ad1ab05.patch) = 2699

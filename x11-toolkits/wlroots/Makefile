@@ -39,7 +39,7 @@ MESON_ARGS=	-Dexamples=false
 LLD_UNSAFE=	yes
 .endif
 
-OPTIONS_DEFINE=	CONSOLEKIT X11
+OPTIONS_DEFINE=	CONSOLEKIT LIBSEAT X11
 OPTIONS_DEFAULT=X11
 OPTIONS_SUB=	yes
 
@@ -51,6 +51,16 @@ CONSOLEKIT_LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 CONSOLEKIT_MESON_ENABLED=	consolekit2
 .if make(makesum)
 .MAKEFLAGS:		WITH+=CONSOLEKIT
+.endif
+
+LIBSEAT_DESC=		DRM sessions with/without root via libseat (experimental)
+LIBSEAT_PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/:libseat
+LIBSEAT_PATCHFILES=	be3753a4774f.patch:-p1:libseat # https://github.com/swaywm/wlroots/pull/2364
+LIBSEAT_PATCHFILES+=	c1955ad1ab05.patch:-p1:libseat # FreeBSD build fix
+LIBSEAT_LIB_DEPENDS=	libseat.so:sysutils/seatd
+#LIBSEAT_MESON_ENABLED=	libseat
+.if make(makesum)
+.MAKEFLAGS:		WITH+=LIBSEAT
 .endif
 
 X11_LIB_DEPENDS=libxcb-errors.so:x11/xcb-util-errors \

@@ -1,0 +1,18 @@
+seatd is a seat management deamon, that does everything it needs to
+do. Nothing more, nothing less. Depends only on libc.
+
+libseat is a seat management library allowing applications to use
+whatever seat management is available.
+
+Supports:
+- seatd
+- (e)logind
+- embedded seatd for standalone operation
+
+Each backend can be compile-time included and is runtime auto-detected
+or manually selected with the `LIBSEAT_BACKEND` environment variable.
+
+Which backend is in use is transparent to the application, providing a
+simple common interface.
+
+WWW: https://git.sr.ht/~kennylevinsen/seatd

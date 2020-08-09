@@ -1,0 +1,31 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: seatd
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable this service:
+#
+# seatd_enable (bool):	Set it to YES to run seatd on startup.
+#			Default: NO
+# seatd_args (string):	Options to pass to seatd.
+#			Default: -g video
+
+. /etc/rc.subr
+
+name="seatd"
+rcvar="${name}_enable"
+
+load_rc_config "$name"
+
+: ${seatd_enable="NO"}
+: ${seatd_args="-g video"}
+
+command="/usr/sbin/daemon"
+procname="%%PREFIX%%/bin/${name}"
+pidfile="/var/run/${name}.pid"
+command_args="-s err -T ${name} -p ${pidfile} ${procname} ${seatd_args}"
+
+run_rc_command "$1"
