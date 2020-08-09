@@ -15,11 +15,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		compiler:c11 meson pkgconfig
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	${PORTNAME}
+MESON_ARGS=	-Dbuiltin=enabled # SUID fallback
 PLIST_FILES=	bin/${PORTNAME} \
 		include/libseat.h \
 		lib/libseat.so \
 		libdata/pkgconfig/libseat.pc
-MESON_ARGS=	-Dbuiltin=enabled # SUID fallback
 
 OPTIONS_DEFINE=	MANPAGES
 OPTIONS_DEFAULT=MANPAGES
