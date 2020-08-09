@@ -3,6 +3,7 @@
 
 PORTNAME=	grpcio
 PORTVERSION=	1.31.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,11 +21,9 @@ LIB_DEPENDS=	libcares.so:dns/c-ares
 
 USES=		compiler:c++11-lib localbase:ldflags python:3.5+
 USE_PYTHON=	autoplist distutils
-MAKE_ENV+=	GRPC_PYTHON_BUILD_SYSTEM_ZLIB=true \
+MAKE_ENV+=	GRPC_PYTHON_BUILD_SYSTEM_OPENSSL=true \
+		GRPC_PYTHON_BUILD_SYSTEM_ZLIB=true \
 		GRPC_PYTHON_BUILD_SYSTEM_CARES=true
-CFLAGS+=	-Ithird_party/boringssl/include
-CFLAGS_powerpc64=	-maltivec -mvsx
-CFLAGS_powerpc=	-maltivec
 LDFLAGS+=	-lcares
 
 post-install:
