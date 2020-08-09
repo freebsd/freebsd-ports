@@ -1,7 +1,10 @@
 bin/kpa-backup.sh
+bin/kpa-thumbnailtool
 bin/kphotoalbum
 bin/open-raw.pl
 etc/xdg/kphotoalbumrc
+lib/libkpabase.so
+lib/libkpathumbnails.so
 share/applications/org.kde.kphotoalbum-import.desktop
 share/applications/org.kde.kphotoalbum.desktop
 share/applications/org.kde.kphotoalbum.open-raw.desktop
@@ -22,7 +25,6 @@ share/doc/HTML/ca/kphotoalbum/index.docbook
 share/doc/HTML/ca/kphotoalbum/introduction.docbook
 share/doc/HTML/ca/kphotoalbum/marking-zoom-rectangle.png
 share/doc/HTML/ca/kphotoalbum/options.docbook
-share/doc/HTML/ca/kphotoalbum/plugins.docbook
 share/doc/HTML/ca/kphotoalbum/setting-properties.docbook
 share/doc/HTML/ca/kphotoalbum/thumbnail-view.docbook
 share/doc/HTML/ca/kphotoalbum/usa-as-a-member.png
@@ -81,7 +83,6 @@ share/doc/HTML/en/kphotoalbum/options-member.png
 share/doc/HTML/en/kphotoalbum/options-thumbnailview.png
 share/doc/HTML/en/kphotoalbum/options-viewer.png
 share/doc/HTML/en/kphotoalbum/options.docbook
-share/doc/HTML/en/kphotoalbum/plugins.docbook
 share/doc/HTML/en/kphotoalbum/raw-external.png
 share/doc/HTML/en/kphotoalbum/redisplay-frames.png
 share/doc/HTML/en/kphotoalbum/search.png
@@ -156,7 +157,6 @@ share/doc/HTML/pt_BR/kphotoalbum/index.cache.bz2
 share/doc/HTML/pt_BR/kphotoalbum/index.docbook
 share/doc/HTML/pt_BR/kphotoalbum/introduction.docbook
 share/doc/HTML/pt_BR/kphotoalbum/options.docbook
-share/doc/HTML/pt_BR/kphotoalbum/plugins.docbook
 share/doc/HTML/pt_BR/kphotoalbum/setting-properties.docbook
 share/doc/HTML/pt_BR/kphotoalbum/thumbnail-view.docbook
 share/doc/HTML/pt_BR/kphotoalbum/viewer.docbook
@@ -207,7 +207,6 @@ share/doc/HTML/uk/kphotoalbum/options-member.png
 share/doc/HTML/uk/kphotoalbum/options-thumbnailview.png
 share/doc/HTML/uk/kphotoalbum/options-viewer.png
 share/doc/HTML/uk/kphotoalbum/options.docbook
-share/doc/HTML/uk/kphotoalbum/plugins.docbook
 share/doc/HTML/uk/kphotoalbum/raw-external.png
 share/doc/HTML/uk/kphotoalbum/redisplay-frames.png
 share/doc/HTML/uk/kphotoalbum/search.png
@@ -272,6 +271,7 @@ share/icons/hicolor/64x64/apps/kphotoalbum.png
 %%DATADIR%%/demo/wayne.jpg
 %%DATADIR%%/pics/movie-clip.png
 %%DATADIR%%/pics/multiconfig.jpg
+%%DATADIR%%/pics/pin.png
 %%DATADIR%%/pics/search.jpg
 %%DATADIR%%/pics/splash-large.png
 %%DATADIR%%/pics/splash.png

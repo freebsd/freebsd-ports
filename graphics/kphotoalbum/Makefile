@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kphotoalbum
-DISTVERSION=	5.6.1
+DISTVERSION=	5.7.0
 CATEGORIES=	graphics kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/
 DIST_SUBDIR=	KDE
@@ -15,7 +15,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libexiv2.so:graphics/exiv2 \
 		libexpat.so:textproc/expat2 \
 		libKF5KDcraw.so:graphics/libkdcraw \
-		libKF5KGeoMap.so:astro/libkgeomap \
 		libKF5Kipi.so:graphics/libkipi
 
 USES=		cmake compiler:c++11-lang desktop-file-utils jpeg kde:5 \
