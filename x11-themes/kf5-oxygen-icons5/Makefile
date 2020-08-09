@@ -21,6 +21,5 @@ CMAKE_ARGS=	-DCMAKE_DISABLE_FIND_PACKAGE_Qt5Core=TRUE \
 
 NO_ARCH=	yes
 
-CONFLICTS_INSTALL=	kde4-oxygen-icons-*
 
 .include <bsd.port.mk>

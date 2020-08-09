@@ -21,6 +21,5 @@ USE_KDE=	ecm auth config configwidgets codecs completion \
 USE_QT=		buildtools_build qmake_build \
 		core concurrent dbus gui network widgets xml
 
-CONFLICTS_INSTALL=	skanlite-kde4
 
 .include <bsd.port.mk>

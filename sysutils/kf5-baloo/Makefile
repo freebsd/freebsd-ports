@@ -17,9 +17,4 @@ USE_KDE=	auth completion config coreaddons crash dbusaddons \
 USE_QT=		buildtools_build concurrent core dbus declarative gui network qmake_build \
 		testlib widgets
 
-# Frameworks ports install localization files that conflict with some
-# KDE4 localization ports
-CONFLICTS_INSTALL=	baloo-4.* \
-			kde4-l10n-*
-
 .include <bsd.port.mk>

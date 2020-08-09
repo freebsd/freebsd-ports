@@ -17,7 +17,6 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libgdbm.so:databases/gdbm \
 		libsvn_client-1.so:devel/subversion
 
-CONFLICTS_INSTALL=	kdesvn-kde4 \
 			qsvn-[0-9]*
 
 USES=		bdb cmake compiler:c++11-lang kde:5 qt:5 tar:xz

@@ -29,6 +29,5 @@ USE_QT=		concurrent core dbus gui network networkauth webkit widgets xml \
 
 USE_LDCONFIG=	yes
 
-CONFLICTS_INSTALL=	${PORTNAME}-kde4
 
 .include <bsd.port.mk>

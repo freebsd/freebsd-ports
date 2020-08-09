@@ -28,6 +28,5 @@ USE_QT=		concurrent core dbus declarative gui location network phonon4 \
 		buildtools_build qmake_build
 SHEBANG_FILES=	scripts/open-raw.pl scripts/kpa-backup.sh
 
-CONFLICTS_INSTALL=	${PORTNAME}-kde4
 
 .include <bsd.port.mk>

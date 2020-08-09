@@ -13,7 +13,6 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	liblfcbase.so:devel/lfcbase
 
-CONFLICTS=	dragon-kde4
 
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/dragon
