@@ -116,3 +116,4 @@ lib/libexec/org-kde-kf5-kwayland-testserver
 %%QT_MKSPECDIR%%/modules/qt_KWaylandClient.pri
 %%QT_MKSPECDIR%%/modules/qt_KWaylandServer.pri
 share/qlogging-categories5/kwayland.categories
+share/qlogging-categories5/kwayland.renamecategories

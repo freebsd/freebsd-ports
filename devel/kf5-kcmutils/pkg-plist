@@ -128,3 +128,4 @@ share/locale/xh/LC_MESSAGES/kcmutils5.mo
 share/locale/zh_CN/LC_MESSAGES/kcmutils5.mo
 share/locale/zh_HK/LC_MESSAGES/kcmutils5.mo
 share/locale/zh_TW/LC_MESSAGES/kcmutils5.mo
+share/qlogging-categories5/kcmutils.categories

@@ -1,6 +1,7 @@
 include/KF5/KGuiAddons/KColorCollection
 include/KF5/KGuiAddons/KColorMimeData
 include/KF5/KGuiAddons/KColorUtils
+include/KF5/KGuiAddons/KCursorSaver
 include/KF5/KGuiAddons/KDateValidator
 include/KF5/KGuiAddons/KFontUtils
 include/KF5/KGuiAddons/KIconUtils
@@ -10,6 +11,7 @@ include/KF5/KGuiAddons/KWordWrap
 include/KF5/KGuiAddons/kcolorcollection.h
 include/KF5/KGuiAddons/kcolormimedata.h
 include/KF5/KGuiAddons/kcolorutils.h
+include/KF5/KGuiAddons/kcursorsaver.h
 include/KF5/KGuiAddons/kdatevalidator.h
 include/KF5/KGuiAddons/kfontutils.h
 include/KF5/KGuiAddons/kguiaddons_export.h
@@ -29,3 +31,4 @@ lib/libKF5GuiAddons.so.5
 lib/libKF5GuiAddons.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_MKSPECDIR%%/modules/qt_KGuiAddons.pri
 %%QT_PLUGINDIR%%/kf5/kguiaddons/kmodifierkey/kmodifierkey_xcb.so
+share/qlogging-categories5/kguiaddons.categories

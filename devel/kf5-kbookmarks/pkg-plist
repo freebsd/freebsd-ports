@@ -122,3 +122,4 @@ share/locale/xh/LC_MESSAGES/kbookmarks5_qt.qm
 share/locale/zh_CN/LC_MESSAGES/kbookmarks5_qt.qm
 share/locale/zh_TW/LC_MESSAGES/kbookmarks5_qt.qm
 share/qlogging-categories5/kbookmarks.categories
+share/qlogging-categories5/kbookmarks.renamecategories

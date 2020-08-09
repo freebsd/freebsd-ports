@@ -125,3 +125,4 @@ share/locale/zh_CN/LC_MESSAGES/kjobwidgets5_qt.qm
 share/locale/zh_HK/LC_MESSAGES/kjobwidgets5_qt.qm
 share/locale/zh_TW/LC_MESSAGES/kjobwidgets5_qt.qm
 share/qlogging-categories5/kjobwidgets.categories
+share/qlogging-categories5/kjobwidgets.renamecategories

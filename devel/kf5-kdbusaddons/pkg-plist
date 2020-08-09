@@ -70,3 +70,4 @@ share/locale/uk/LC_MESSAGES/kdbusaddons5_qt.qm
 share/locale/zh_CN/LC_MESSAGES/kdbusaddons5_qt.qm
 share/locale/zh_TW/LC_MESSAGES/kdbusaddons5_qt.qm
 share/qlogging-categories5/kdbusaddons.categories
+share/qlogging-categories5/kdbusaddons.renamecategories

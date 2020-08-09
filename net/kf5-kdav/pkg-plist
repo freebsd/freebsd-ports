@@ -81,3 +81,4 @@ share/locale/uk/LC_MESSAGES/libkdav.mo
 share/locale/zh_CN/LC_MESSAGES/libkdav.mo
 share/locale/zh_TW/LC_MESSAGES/libkdav.mo
 share/qlogging-categories5/kdav.categories
+share/qlogging-categories5/kdav.renamecategories

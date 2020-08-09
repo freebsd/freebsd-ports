@@ -125,3 +125,4 @@ share/locale/zh_CN/LC_MESSAGES/kinit5.mo
 share/locale/zh_HK/LC_MESSAGES/kinit5.mo
 share/locale/zh_TW/LC_MESSAGES/kinit5.mo
 share/qlogging-categories5/kinit.categories
+share/qlogging-categories5/kinit.renamecategories

@@ -34,6 +34,7 @@ lib/libKF5Kirigami2.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/kirigami.2/CardsLayout.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/CardsListView.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/ContextDrawer.qml
+%%QT_QMLDIR%%/org/kde/kirigami.2/FlexColumn.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/FormLayout.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/GlobalDrawer.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/Heading.qml
@@ -104,7 +105,6 @@ lib/libKF5Kirigami2.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/kirigami.2/swipenavigator/PrivateSwipeStack.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/swipenavigator/PrivateSwipeTab.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/swipenavigator/PrivateSwipeTabBar.qml
-%%QT_QMLDIR%%/org/kde/kirigami.2/swipenavigator/PrivateSwipeTabBarLoader.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/swipenavigator/SwipeNavigator.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/AbstractApplicationHeader.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/AbstractCard.qml

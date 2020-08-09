@@ -651,3 +651,4 @@ share/plasma/services/dataengineservice.operations
 share/plasma/services/plasmoidservice.operations
 share/plasma/services/storage.operations
 share/qlogging-categories5/plasma-framework.categories
+share/qlogging-categories5/plasma-framework.renamecategories

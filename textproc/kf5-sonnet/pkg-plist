@@ -141,3 +141,4 @@ share/locale/zh_CN/LC_MESSAGES/sonnet5_qt.qm
 share/locale/zh_HK/LC_MESSAGES/sonnet5_qt.qm
 share/locale/zh_TW/LC_MESSAGES/sonnet5_qt.qm
 share/qlogging-categories5/sonnet.categories
+share/qlogging-categories5/sonnet.renamecategories

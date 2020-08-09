@@ -91,3 +91,4 @@ lib/libKF5Attica.so.%%KDE_FRAMEWORKS_VERSION%%
 libdata/pkgconfig/libKF5Attica.pc
 %%QT_MKSPECDIR%%/modules/qt_Attica.pri
 share/qlogging-categories5/attica.categories
+share/qlogging-categories5/attica.renamecategories

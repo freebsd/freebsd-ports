@@ -127,3 +127,4 @@ share/locale/zh_CN/LC_MESSAGES/knotifications5_qt.qm
 share/locale/zh_HK/LC_MESSAGES/knotifications5_qt.qm
 share/locale/zh_TW/LC_MESSAGES/knotifications5_qt.qm
 share/qlogging-categories5/knotifications.categories
+share/qlogging-categories5/knotifications.renamecategories

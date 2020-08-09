@@ -22,3 +22,4 @@ lib/libKF5ActivitiesStats.so.%%KDE_FRAMEWORKS_VERSION%%
 libdata/pkgconfig/libKActivitiesStats.pc
 %%QT_MKSPECDIR%%/modules/qt_KActivitiesStats.pri
 share/qlogging-categories5/kactivities-stats.categories
+share/qlogging-categories5/kactivities-stats.renamecategories

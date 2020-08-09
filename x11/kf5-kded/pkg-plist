@@ -18,3 +18,4 @@ share/dbus-1/interfaces/org.kde.kded5.xml
 share/dbus-1/services/org.kde.kded5.service
 share/kservicetypes5/kdedmodule.desktop
 share/qlogging-categories5/kded.categories
+share/qlogging-categories5/kded.renamecategories

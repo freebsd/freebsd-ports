@@ -96,3 +96,4 @@ share/locale/uz@cyrillic/LC_MESSAGES/libkholidays5_qt.qm
 share/locale/wa/LC_MESSAGES/libkholidays5_qt.qm
 share/locale/zh_CN/LC_MESSAGES/libkholidays5_qt.qm
 share/locale/zh_TW/LC_MESSAGES/libkholidays5_qt.qm
+share/qlogging-categories5/kholidays.categories

@@ -14,3 +14,4 @@ lib/libKF5IdleTime.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_PLUGINDIR%%/kf5/org.kde.kidletime.platforms/KF5IdleTimeXcbPlugin0.so
 %%QT_PLUGINDIR%%/kf5/org.kde.kidletime.platforms/KF5IdleTimeXcbPlugin1.so
 share/qlogging-categories5/kidletime.categories
+share/qlogging-categories5/kidletime.renamecategories

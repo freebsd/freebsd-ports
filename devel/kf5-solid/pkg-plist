@@ -109,3 +109,4 @@ share/locale/uk/LC_MESSAGES/solid5_qt.qm
 share/locale/zh_CN/LC_MESSAGES/solid5_qt.qm
 share/locale/zh_TW/LC_MESSAGES/solid5_qt.qm
 share/qlogging-categories5/solid.categories
+share/qlogging-categories5/solid.renamecategories

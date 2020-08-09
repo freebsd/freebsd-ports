@@ -51,11 +51,13 @@ share/ECM/modules/ECMAddAppIcon.cmake
 share/ECM/modules/ECMAddQch.cmake
 share/ECM/modules/ECMAddQtDesignerPlugin.cmake
 share/ECM/modules/ECMAddTests.cmake
+share/ECM/modules/ECMConfiguredInstall.cmake
 share/ECM/modules/ECMCoverageOption.cmake
 share/ECM/modules/ECMCreateQmFromPoFiles.cmake
 share/ECM/modules/ECMEnableSanitizers.cmake
 share/ECM/modules/ECMFindModuleHelpers.cmake
 share/ECM/modules/ECMFindQMLModule.cmake.in
+share/ECM/modules/ECMGenerateDBusServiceFile.cmake
 share/ECM/modules/ECMGenerateExportHeader.cmake
 share/ECM/modules/ECMGenerateHeaders.cmake
 share/ECM/modules/ECMGeneratePkgConfigFile.cmake

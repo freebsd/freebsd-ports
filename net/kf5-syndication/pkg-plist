@@ -139,3 +139,4 @@ lib/libKF5Syndication.so.5
 lib/libKF5Syndication.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_MKSPECDIR%%/modules/qt_Syndication.pri
 share/qlogging-categories5/syndication.categories
+share/qlogging-categories5/syndication.renamecategories

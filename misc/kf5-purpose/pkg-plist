@@ -609,3 +609,4 @@ share/locale/zh_TW/LC_MESSAGES/purpose_youtube.mo
 %%DATADIR%%/saveasplugin_config.qml
 %%DATADIR%%/youtubeplugin_config.qml
 share/qlogging-categories5/purpose.categories
+share/qlogging-categories5/purpose.renamecategories

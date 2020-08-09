@@ -168,3 +168,4 @@ share/locale/zh_CN/LC_MESSAGES/khtml5.mo
 share/locale/zh_HK/LC_MESSAGES/khtml5.mo
 share/locale/zh_TW/LC_MESSAGES/khtml5.mo
 share/qlogging-categories5/khtml.categories
+share/qlogging-categories5/khtml.renamecategories

@@ -113,3 +113,4 @@ share/locale/xh/LC_MESSAGES/syntaxhighlighting5_qt.qm
 share/locale/zh_CN/LC_MESSAGES/syntaxhighlighting5_qt.qm
 share/locale/zh_TW/LC_MESSAGES/syntaxhighlighting5_qt.qm
 share/qlogging-categories5/ksyntaxhighlighting.categories
+share/qlogging-categories5/ksyntaxhighlighting.renamecategories

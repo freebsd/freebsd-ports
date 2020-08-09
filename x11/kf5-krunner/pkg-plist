@@ -24,3 +24,4 @@ share/dbus-1/interfaces/kf5_org.kde.krunner1.xml
 share/kdevappwizard/templates/runner.tar.bz2
 share/kservicetypes5/plasma-runner.desktop
 share/qlogging-categories5/krunner.categories
+share/qlogging-categories5/krunner.renamecategories

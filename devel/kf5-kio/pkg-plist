@@ -496,6 +496,18 @@ share/doc/HTML/fr/kioslave5/telnet/index.cache.bz2
 share/doc/HTML/fr/kioslave5/telnet/index.docbook
 share/doc/HTML/fr/kioslave5/webdav/index.cache.bz2
 share/doc/HTML/fr/kioslave5/webdav/index.docbook
+share/doc/HTML/gl/kioslave5/file/index.cache.bz2
+share/doc/HTML/gl/kioslave5/file/index.docbook
+share/doc/HTML/gl/kioslave5/ftp/index.cache.bz2
+share/doc/HTML/gl/kioslave5/ftp/index.docbook
+share/doc/HTML/gl/kioslave5/help/index.cache.bz2
+share/doc/HTML/gl/kioslave5/help/index.docbook
+share/doc/HTML/gl/kioslave5/http/index.cache.bz2
+share/doc/HTML/gl/kioslave5/http/index.docbook
+share/doc/HTML/gl/kioslave5/telnet/index.cache.bz2
+share/doc/HTML/gl/kioslave5/telnet/index.docbook
+share/doc/HTML/gl/kioslave5/webdav/index.cache.bz2
+share/doc/HTML/gl/kioslave5/webdav/index.docbook
 share/doc/HTML/it/kcontrol5/cache/index.cache.bz2
 share/doc/HTML/it/kcontrol5/cache/index.docbook
 share/doc/HTML/it/kcontrol5/cookies/index.cache.bz2
@@ -1064,3 +1076,4 @@ share/locale/xh/LC_MESSAGES/kio5.mo
 share/locale/zh_CN/LC_MESSAGES/kio5.mo
 share/locale/zh_TW/LC_MESSAGES/kio5.mo
 share/qlogging-categories5/kio.categories
+share/qlogging-categories5/kio.renamecategories

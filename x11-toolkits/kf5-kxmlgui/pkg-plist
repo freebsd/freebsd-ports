@@ -151,3 +151,4 @@ share/locale/zh_CN/LC_MESSAGES/kxmlgui5.mo
 share/locale/zh_HK/LC_MESSAGES/kxmlgui5.mo
 share/locale/zh_TW/LC_MESSAGES/kxmlgui5.mo
 share/qlogging-categories5/kxmlgui.categories
+share/qlogging-categories5/kxmlgui.renamecategories

@@ -165,3 +165,4 @@ share/locale/zh_CN/LC_MESSAGES/ktexteditor5.mo
 share/locale/zh_TW/LC_MESSAGES/ktexteditor5.mo
 share/polkit-1/actions/org.kde.ktexteditor.katetextbuffer.policy
 share/qlogging-categories5/ktexteditor.categories
+share/qlogging-categories5/ktexteditor.renamecategories

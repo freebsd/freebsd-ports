@@ -84,3 +84,4 @@ share/locale/uk/LC_MESSAGES/libkpackage5.mo
 share/locale/zh_CN/LC_MESSAGES/libkpackage5.mo
 share/locale/zh_TW/LC_MESSAGES/libkpackage5.mo
 share/qlogging-categories5/kpackage.categories
+share/qlogging-categories5/kpackage.renamecategories

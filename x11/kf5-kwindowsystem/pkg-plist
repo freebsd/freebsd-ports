@@ -144,3 +144,4 @@ share/locale/zh_CN/LC_MESSAGES/kwindowsystem5_qt.qm
 share/locale/zh_HK/LC_MESSAGES/kwindowsystem5_qt.qm
 share/locale/zh_TW/LC_MESSAGES/kwindowsystem5_qt.qm
 share/qlogging-categories5/kwindowsystem.categories
+share/qlogging-categories5/kwindowsystem.renamecategories

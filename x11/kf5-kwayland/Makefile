@@ -8,7 +8,8 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 Client and Server library wrapper for the Wayland libraries
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto \
-		wayland-protocols>=0:graphics/wayland-protocols
+		wayland-protocols>=0:graphics/wayland-protocols \
+		plasma-wayland-protocols>=0:x11/plasma-wayland-protocols
 LIB_DEPENDS=	libwayland-client.so:graphics/wayland
 
 LICENSE=	LGPL21 LGPL3
