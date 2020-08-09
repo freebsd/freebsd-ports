@@ -1,4 +1,5 @@
 lib/webmin/JSON/PP.pm
+lib/webmin/JSON/PP/Boolean.pm
 lib/webmin/LICENCE
 lib/webmin/LICENCE.ja
 lib/webmin/README.md
@@ -24719,7 +24720,6 @@ lib/webmin/lang/de.auto
 lib/webmin/lang/el
 lib/webmin/lang/el.auto
 lib/webmin/lang/en
-lib/webmin/lang/en.UTF-8
 lib/webmin/lang/es
 lib/webmin/lang/es.auto
 lib/webmin/lang/eu
