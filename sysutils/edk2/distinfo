@@ -1,0 +1,15 @@
+TIMESTAMP = 1596904500
+SHA256 (tianocore-edk2-g202005-edk2-stable202005_GH0.tar.gz) = 373c3eff3497316a48fcf4be8dcee227431cbce86dcd80a004950e992f0297e2
+SIZE (tianocore-edk2-g202005-edk2-stable202005_GH0.tar.gz) = 12721407
+SHA256 (tianocore-edk2-platforms-b716f363_GH0.tar.gz) = 22de162829ad0bd4be9e6d1eaa42b003d2449d44eff912998acfbaf82eeea1bc
+SIZE (tianocore-edk2-platforms-b716f363_GH0.tar.gz) = 7717885
+SHA256 (tianocore-edk2-non-osi-f8023973_GH0.tar.gz) = 36bf3a483350b91a98ed9b5b83210c29c9dce8ab8e5b0d106787e29810a9126a
+SIZE (tianocore-edk2-non-osi-f8023973_GH0.tar.gz) = 6903980
+SHA256 (openssl-openssl-OpenSSL_1_1_1d-2-gc3656cc594_GH0.tar.gz) = f5c33990f7319e50ede73a6689ebfbf2c63f42cca6833042d71c1c05e57bb40e
+SIZE (openssl-openssl-OpenSSL_1_1_1d-2-gc3656cc594_GH0.tar.gz) = 9017066
+SHA256 (ucb-bar-berkeley-softfloat-3-master_GH0.tar.gz) = a40ccfa8d5c04971e6af8014217c93b58fba4d08c337bc0436bb141e9e79426a
+SIZE (ucb-bar-berkeley-softfloat-3-master_GH0.tar.gz) = 148747
+SHA256 (kkos-oniguruma-v6.9.4_mark1_GH0.tar.gz) = 7f7576c926f7d4a071d594a01691c477bbb9391df250378bd5e1c003d42b4318
+SIZE (kkos-oniguruma-v6.9.4_mark1_GH0.tar.gz) = 592141
+SHA256 (google-brotli-v1.0.7-17-g666c328_GH0.tar.gz) = caed254751585590b20b4a34d6600e9c9aae153ab1f9e1ae6b67f9bc3ee09b92
+SIZE (google-brotli-v1.0.7-17-g666c328_GH0.tar.gz) = 23854268

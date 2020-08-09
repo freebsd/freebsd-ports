@@ -294,6 +294,7 @@
     SUBDIR += ec2-scripts
     SUBDIR += eclat
     SUBDIR += edid-decode
+    SUBDIR += edk2
     SUBDIR += eject
     SUBDIR += eksctl
     SUBDIR += endian
