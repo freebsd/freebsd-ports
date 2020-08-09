@@ -1,0 +1,10 @@
+--- Makefile.am.orig	2020-03-18 13:57:19.000000000 -0700
++++ Makefile.am	2020-06-29 12:53:16.217963000 -0700
+@@ -2,6 +2,6 @@
+ 
+ ACLOCAL_AMFLAGS = -I m4
+ 
+-SUBDIRS = lib spmd kinkd iked pskgen samples
++SUBDIRS = lib spmd iked pskgen samples
+ 
+ 

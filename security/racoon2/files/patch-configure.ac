@@ -1,0 +1,34 @@
+--- configure.ac.orig	2020-03-18 13:57:19.000000000 -0700
++++ configure.ac	2020-06-29 12:55:22.015784000 -0700
+@@ -16,7 +16,7 @@
+ AC_PROG_MAKE_SET
+ RC_IF_INSTALL_OPTS
+ 
+-AC_CONFIG_SUBDIRS([lib spmd iked kinkd])
++AC_CONFIG_SUBDIRS([lib spmd iked])
+ 
+ dnl Set the debug option by default for now.
+ AC_MSG_CHECKING(if --enable-debug option is specified)
+@@ -57,7 +57,7 @@
+ 	netbsd*1.[[56]]*|netbsd*[[2-9]].*)
+ 		startup_scripts=rc.d
+ 		;;
+-	freebsd[[5-9]].*)
++	freebsd*)
+ 		startup_scripts=rc.d
+ 		;;
+ 	*)
+@@ -90,13 +90,11 @@
+ 	samples/hook/Makefile
+ 	samples/Makefile
+ 	samples/rc.d/iked
+-	samples/rc.d/kinkd
+ 	samples/rc.d/racoon2
+ 	samples/rc.d/spmd
+ 	samples/rc.d/Makefile
+ 	samples/racoon2.conf
+ 	samples/init.d/iked
+-	samples/init.d/kinkd
+ 	samples/init.d/spmd
+ 	samples/init.d/Makefile
+ 	samples/vals.conf])
