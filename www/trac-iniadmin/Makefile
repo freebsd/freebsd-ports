@@ -12,10 +12,12 @@ DISTNAME=	${PORTNAME}plugin-${PORTVERSION}
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Edit all trac.ini option via the WebAdminPlugin
 
+LICENSE=	BSD
+
 RUN_DEPENDS=	tracd:www/trac
 
-WRKSRC=		${WRKDIR}/${PORTNAME}plugin/0.11
 USES=		python:2.7
+WRKSRC=		${WRKDIR}/${PORTNAME}plugin/0.11
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 
