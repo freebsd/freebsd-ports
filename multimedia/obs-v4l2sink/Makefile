@@ -11,6 +11,8 @@ COMMENT=	OBS Studio Plugin: Output as Video4Linux2 device
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_powerpc64=	fails to compile: unconditionally includes obs/sse-intrin.h
+
 BUILD_DEPENDS=	v4l_compat>0:multimedia/v4l_compat
 LIB_DEPENDS=	libobs.so:multimedia/obs-studio
 
