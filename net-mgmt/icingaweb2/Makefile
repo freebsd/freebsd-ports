@@ -2,8 +2,7 @@
 
 PORTNAME=	icingaweb2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.7.3
-PORTREVISION=	3
+DISTVERSION=	2.8.1
 CATEGORIES=	net-mgmt www
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
@@ -14,10 +13,10 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		php:build,web,flavors
-USE_PHP=	bcmath bitset ctype curl dom gd gettext hash iconv \
-		json ldap mbstring mcrypt memcache memcached \
-		opcache openssl pcre pdo pdo_sqlite posix \
-		session simplexml soap sockets sqlite3 xml zlib
+USE_PHP=	bcmath bitset ctype curl dom gd gettext hash iconv json ldap \
+		mbstring mcrypt memcache memcached opcache openssl pcre pdo \
+		pdo_sqlite posix session simplexml soap sockets sqlite3 xml \
+		zlib
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	icinga
@@ -26,25 +25,25 @@ NO_BUILD=	yes
 NO_ARCH=	yes
 
 SUB_FILES=	pkg-message
-SUB_LIST=	WWWDIR=${WWWDIR} \
-		ETCDIR=${ETCDIR} \
-		EXAMPLESDIR=${EXAMPLESDIR}
+SUB_LIST=	ETCDIR=${ETCDIR} \
+		EXAMPLESDIR=${EXAMPLESDIR} \
+		WWWDIR=${WWWDIR}
 
-PLIST_SUB=	WWWOWN=${WWWOWN} \
-		WWWGRP=${WWWGRP}
+PLIST_SUB=	WWWGRP=${WWWGRP} \
+		WWWOWN=${WWWOWN}
 
-OPTIONS_DEFINE=		NLS LDAP MYSQL PGSQL PDF SQLITE EXAMPLES
+OPTIONS_DEFINE=		EXAMPLES LDAP MYSQL NLS PDF PGSQL SQLITE
 OPTIONS_DEFAULT=	LDAP MYSQL PGSQL SQLITE
 
-PDF_DESC=	Export graphs as PDF
+PDF_DESC=		Export graphs as PDF
 PDF_RUN_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/imagick.so:graphics/pecl-imagick@${PHP_FLAVOR}
 
 NLS_USES=	gettext
-NLS_USE=	php=intl
-PGSQL_USE=	php=pdo_pgsql,pgsql
-MYSQL_USE=	php=pdo_mysql,mysqli
-SQLITE_USE=	php=pdo_sqlite,sqlite3
-LDAP_USE=	php=ldap
+NLS_USE=	PHP=intl
+PGSQL_USE=	PHP=pdo_pgsql,pgsql
+MYSQL_USE=	PHP=mysqli,pdo_mysql
+SQLITE_USE=	PHP=pdo_sqlite,sqlite3
+LDAP_USE=	PHP=ldap
 
 post-patch:
 	${REINPLACE_CMD} 's%\(/etc/icingaweb2\)%${PREFIX}\1%g' \
@@ -67,9 +66,9 @@ do-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
 .for webserver in apache nginx
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/${webserver}
-	# ICINGAWEB_CONFIGDIR is set to /nonexistent to allow staging as user.
-	# Once installed, ${ETCDIR} is not world-readable, so point icingacli to
-	# a non existing directory. The config files are generated correctly anyway.
+# ICINGAWEB_CONFIGDIR is set to /nonexistent to allow staging as user.
+# Once installed, ${ETCDIR} is not world-readable, so point icingacli to
+# a non existing directory. The config files are generated correctly anyway.
 	(cd ${STAGEDIR}${WWWDIR} && \
 	ICINGAWEB_CONFIGDIR=/nonexistent \
 	./bin/icingacli setup config webserver ${webserver} --path=/icingaweb2 \
