@@ -2,16 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	libX11
-PORTVERSION=	1.6.10
-PORTREVISION=	1
+PORTVERSION=	1.6.11
 PORTEPOCH=	1
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X11 library
-
-PATCH_SITES=	https://gitlab.freedesktop.org/xorg/lib/libx11/-/commit/
-PATCHFILES=	93fce3f4e79cbc737d6468a4f68ba3de1b83953b.diff:-p1
 
 LICENSE=	MIT
 
