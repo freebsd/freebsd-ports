@@ -4,7 +4,7 @@
 PORTNAME=	SCIP
 DISTVERSION=	7.0.1
 CATEGORIES=	math science
-MASTER_SITES=	http://scip.zib.de/download/release/
+MASTER_SITES=	https://www.scipopt.org/download/release/
 DISTNAME=	${PORTNAME:tl}-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
