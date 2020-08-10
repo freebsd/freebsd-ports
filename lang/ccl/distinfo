@@ -1,2 +1,5 @@
-SHA256 (ccl-1.11-freebsdx86.tar.gz) = 9110e5f4b1b0940c42fcc812b5ceafe6b4b2ca7706db4e2698e5d4943646273f
-SIZE (ccl-1.11-freebsdx86.tar.gz) = 44608881
+TIMESTAMP = 1590659171
+SHA256 (ccl/v1.12/freebsdx86.tar.gz) = 43d4bec7af719462807c39d2bc16c8a5482ee62084861e0997b0596c525257e3
+SIZE (ccl/v1.12/freebsdx86.tar.gz) = 6526273
+SHA256 (ccl/v1.12/Clozure-ccl-v1.12_GH0.tar.gz) = 774a06b4fb6dc4b51dfb26da8e1cc809c605e7706c12180805d1be6f2885bd52
+SIZE (ccl/v1.12/Clozure-ccl-v1.12_GH0.tar.gz) = 5014439

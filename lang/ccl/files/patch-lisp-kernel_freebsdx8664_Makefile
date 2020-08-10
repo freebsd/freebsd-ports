@@ -1,11 +1,11 @@
---- lisp-kernel/freebsdx8664/Makefile.orig	2015-11-06 20:10:02 UTC
+--- lisp-kernel/freebsdx8664/Makefile.orig	2020-04-19 21:32:56 UTC
 +++ lisp-kernel/freebsdx8664/Makefile
-@@ -21,7 +21,7 @@ AS = as
- M4 = m4
- ASFLAGS = --64
- M4FLAGS = -DFREEBSD -DX86 -DX8664 -DHAVE_TLS
--CDEFINES = -DFREEBSD -D_REENTRANT -DX86 -DX8664 -D_GNU_SOURCE -DHAVE_TLS -DSVN_REVISION=$(SVN_REVISION)
-+CDEFINES = -DFREEBSD -D_REENTRANT -DX86 -DX8664 -D_GNU_SOURCE -DHAVE_TLS
- CDEBUG = -g
- COPT = #-O2
- # Once in a while, -Wformat says something useful.  The odds are against that,
+@@ -13,7 +13,7 @@
+ # See the License for the specific language governing permissions and
+ # limitations under the License.
+ 
+-VC_REVISION != sh -c "git describe --dirty 2>/dev/null || echo unknown"
++VC_REVISION:=	%%TAG%%
+ 
+ VPATH = ..
+ RM = /bin/rm
