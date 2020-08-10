@@ -1,10 +1,10 @@
-TIMESTAMP = 1593631946
+TIMESTAMP = 1596935731
 SHA256 (caddyserver-caddy-v2.1.1_GH0.tar.gz) = 77beb13b39b670bfe9e0cc1c71b720d5b037cca60e1426a9a485bbfae34ba8d2
 SIZE (caddyserver-caddy-v2.1.1_GH0.tar.gz) = 370136
 SHA256 (AndreasBriese-bbloom-e2d15f34fcf9_GH0.tar.gz) = e88bd873a2251d70b5d2cbf9dceff24fa25ca5652ac1f99165c303e98df494a1
 SIZE (AndreasBriese-bbloom-e2d15f34fcf9_GH0.tar.gz) = 7704
-SHA256 (DataDog-zstd-v1.4.1_GH0.tar.gz) = 48c0ad82d9bc66d77ca95aa47374bed6b6466510da66a2b2f9215cb239cb8137
-SIZE (DataDog-zstd-v1.4.1_GH0.tar.gz) = 498749
+SHA256 (DataDog-zstd-v1.4.5_GH0.tar.gz) = be75f3ea541bb7bb02c2329059ad81dff504087f89970426d23252e502a0f899
+SIZE (DataDog-zstd-v1.4.5_GH0.tar.gz) = 512697
 SHA256 (Masterminds-goutils-v1.1.0_GH0.tar.gz) = 053a61c4b0d78e6978600c99562f04d053993c428d549a20b627151cf1aabbae
 SIZE (Masterminds-goutils-v1.1.0_GH0.tar.gz) = 14610
 SHA256 (Masterminds-semver-v3.1.0_GH0.tar.gz) = a91e6fe3121bb0c158bbd89721be3f44cd84e1f76a6d89840e244c1f5524ee28

@@ -4,6 +4,7 @@
 PORTNAME=	caddy
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.1.1
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	daniel.tihanyi@tetragir.com
@@ -30,7 +31,7 @@ GH_ACCOUNT=	caddyserver
 
 GH_TUPLE=	\
 		AndreasBriese:bbloom:e2d15f34fcf9:andreasbriese_bbloom/vendor/github.com/AndreasBriese/bbloom \
-		DataDog:zstd:v1.4.1:datadog_zstd/vendor/github.com/DataDog/zstd \
+		DataDog:zstd:v1.4.5:datadog_zstd/vendor/github.com/DataDog/zstd \
 		Masterminds:goutils:v1.1.0:masterminds_goutils/vendor/github.com/Masterminds/goutils \
 		Masterminds:semver:v3.1.0:masterminds_semver_v3/vendor/github.com/Masterminds/semver/v3 \
 		Masterminds:sprig:v3.1.0:masterminds_sprig_v3/vendor/github.com/Masterminds/sprig/v3 \
