@@ -10,8 +10,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Nonparametric Preprocessing for Parametric Casual Inference
 
-LICENSE=	GPLv2 GPLv3
-LICENSE_COMB=	dual
+LICENSE=	GPLv2+
 
 BUILD_DEPENDS=	R-cran-Matching>=0:math/R-cran-Matching \
 		R-cran-rgenoud>=0:math/R-cran-rgenoud
