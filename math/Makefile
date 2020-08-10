@@ -400,6 +400,7 @@
     SUBDIR += mfem
     SUBDIR += mingw32-libgmp
     SUBDIR += minisat
+    SUBDIR += minizinc
     SUBDIR += miracl
     SUBDIR += mlpack
     SUBDIR += moab

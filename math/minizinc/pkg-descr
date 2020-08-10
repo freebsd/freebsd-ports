@@ -1,0 +1,11 @@
+MiniZinc is a free and open-source constraint modeling language.
+
+You can use MiniZinc to model constraint satisfaction and optimization problems
+in a high-level, solver-independent way, taking advantage of a large library of
+pre-defined constraints. Your model is then compiled into FlatZinc, a solver
+input language that is understood by a wide range of solvers.
+
+MiniZinc is developed at Monash University in collaboration with Data61 Decision
+Sciences and the University of Melbourne.
+
+WWW: https://www.minizinc.org/
