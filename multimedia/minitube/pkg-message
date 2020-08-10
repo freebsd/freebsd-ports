@@ -17,11 +17,6 @@ To obtain a key:
 4. If you are going to build minitube from ports, set
    MINITUBE_GOOGLE_API_KEY=your_key in make.conf. If you use package
    set GOOGLE_API_KEY environment variable to your key.
-
-Make sure you also have a Phonon backend installed:
-multimedia/phonon-gstreamer
--or-
-multimedia/phonon-vlc
 EOM
 }
 ]
