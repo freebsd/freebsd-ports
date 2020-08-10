@@ -44,6 +44,7 @@
     SUBDIR += acidwarp
     SUBDIR += acidwarp-sdl
     SUBDIR += agg
+    SUBDIR += akira
     SUBDIR += alembic
     SUBDIR += alpng
     SUBDIR += ampasACES-container
