@@ -17,6 +17,7 @@ ONLY_FOR_ARCHS_REASON=	uses SSE instructions and 64-bit address space
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes \
 		xsltproc:textproc/libxslt \
+		p5-Pod-Parser>=0:textproc/p5-Pod-Parser \
 		po4a-translate:textproc/po4a
 LIB_DEPENDS=	libcolord.so:graphics/colord \
 		libcolord-gtk.so:graphics/colord-gtk \
