@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kiwix-lib
-DISTVERSION=	5.1.0
-PORTREVISION=	4
+DISTVERSION=	9.3.1
 CATEGORIES=	devel
 
 MAINTAINER=	me@int19h.org
@@ -19,7 +18,8 @@ LIB_DEPENDS=	libzim.so:devel/libzim \
 		libicuuc.so:devel/icu \
 		libxapian.so:databases/xapian-core \
 		libctpp2.so:textproc/ctpp2 \
-		libcurl.so:ftp/curl
+		libcurl.so:ftp/curl \
+		libmicrohttpd.so:www/libmicrohttpd
 
 USES=		compiler:c++11-lang meson pkgconfig python:3.6+ shebangfix
 USE_LDCONFIG=	yes
@@ -27,11 +27,13 @@ USE_GITHUB=	yes
 
 GH_ACCOUNT=	kiwix
 GH_TUPLE=	kiwix:${PORTNAME}:${PORTVERSION}:DEFAULT \
-		kainjow:Mustache:40ddfe9:mustache
+		kainjow:Mustache:a7eebc9:mustache
 
 MESON_ARGS=	-Dctpp2-install-prefix=${LOCALBASE}
 CPPFLAGS+=	-I${WRKSRC_mustache}
 CXXFLAGS+=	-I${WRKSRC_mustache}
 SHEBANG_FILES=	scripts/kiwix-compile-resources
+
+PLIST_SUB=	PORTVERSION=${PORTVERSION} PORTMAJ=${PORTVERSION:C/\..*//}
 
 .include <bsd.port.mk>

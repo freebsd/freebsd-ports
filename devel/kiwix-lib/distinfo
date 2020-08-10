@@ -1,5 +1,5 @@
-TIMESTAMP = 1559137520
-SHA256 (kiwix-kiwix-lib-5.1.0_GH0.tar.gz) = 573e1176e351fedc8b49c7746aef10746bf13c9f5a1df18186e0e6589215c546
-SIZE (kiwix-kiwix-lib-5.1.0_GH0.tar.gz) = 1343863
-SHA256 (kainjow-Mustache-40ddfe9_GH0.tar.gz) = d1e391999428818472835fe90644719ef9b0fdb0a14c4f293c2a20aee0918912
-SIZE (kainjow-Mustache-40ddfe9_GH0.tar.gz) = 98527
+TIMESTAMP = 1595030328
+SHA256 (kiwix-kiwix-lib-9.3.1_GH0.tar.gz) = b36500af589797e220d0a5fc551047f016c8914ac2d4b04666daef977aa0a4ce
+SIZE (kiwix-kiwix-lib-9.3.1_GH0.tar.gz) = 1344101
+SHA256 (kainjow-Mustache-a7eebc9_GH0.tar.gz) = 072cac4341ad8bb7eba7cc8a4169948d30757536caf3228c5a4ff9006ba105ca
+SIZE (kainjow-Mustache-a7eebc9_GH0.tar.gz) = 141903
