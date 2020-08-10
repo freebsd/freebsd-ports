@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	SCIP
-DISTVERSION=	6.0.1
-PORTREVISION=	2
+DISTVERSION=	7.0.1
 CATEGORIES=	math science
 MASTER_SITES=	http://scip.zib.de/download/release/
 DISTNAME=	${PORTNAME:tl}-${DISTVERSION}
@@ -20,13 +19,12 @@ EXTRACT_DEPENDS=	gtar:archivers/gtar
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libsoplex.so:math/SoPlex
 
-CONFLICTS_BUILD=	Ipopt
-
 USES=		compiler:c11 cmake readline tar:tgz
 EXTRACT_CMD=	gtar
 USE_LDCONFIG=	yes
-PLIST_SUB=	SHL4=${DISTVERSION}.0 SHL2=${DISTVERSION:R}
 
 CXXFLAGS+=	-I${LOCALBASE}/include/soplex
+
+CONFLICTS_BUILD=	Ipopt
 
 .include <bsd.port.mk>

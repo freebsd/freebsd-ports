@@ -50,6 +50,7 @@ include/scip/benders.h
 include/scip/benders_default.h
 include/scip/benderscut.h
 include/scip/benderscut_feas.h
+include/scip/benderscut_feasalt.h
 include/scip/benderscut_int.h
 include/scip/benderscut_nogood.h
 include/scip/benderscut_opt.h
@@ -70,6 +71,7 @@ include/scip/branch_nodereopt.h
 include/scip/branch_pscost.h
 include/scip/branch_random.h
 include/scip/branch_relpscost.h
+include/scip/branch_vanillafullstrong.h
 include/scip/clock.h
 include/scip/compr.h
 include/scip/compr_largestrepr.h
@@ -116,6 +118,7 @@ include/scip/cons_xor.h
 include/scip/cutpool.h
 include/scip/cuts.h
 include/scip/dbldblarith.h
+include/scip/dcmp.h
 include/scip/debug.h
 include/scip/def.h
 include/scip/dialog.h
@@ -123,11 +126,13 @@ include/scip/dialog_default.h
 include/scip/disp.h
 include/scip/disp_default.h
 include/scip/event.h
+include/scip/event_estim.h
 include/scip/event_globalbnd.h
 include/scip/event_softtimelimit.h
 include/scip/event_solvingphase.h
 include/scip/heur.h
 include/scip/heur_actconsdiving.h
+include/scip/heur_adaptivediving.h
 include/scip/heur_alns.h
 include/scip/heur_bound.h
 include/scip/heur_clique.h
@@ -159,6 +164,7 @@ include/scip/heur_objpscostdiving.h
 include/scip/heur_octane.h
 include/scip/heur_ofins.h
 include/scip/heur_oneopt.h
+include/scip/heur_padm.h
 include/scip/heur_proximity.h
 include/scip/heur_pscostdiving.h
 include/scip/heur_randrounding.h
@@ -175,6 +181,7 @@ include/scip/heur_subnlp.h
 include/scip/heur_sync.h
 include/scip/heur_trivial.h
 include/scip/heur_trivialnegation.h
+include/scip/heur_trustregion.h
 include/scip/heur_trysol.h
 include/scip/heur_twoopt.h
 include/scip/heur_undercover.h
@@ -209,15 +216,15 @@ include/scip/presol_domcol.h
 include/scip/presol_dualagg.h
 include/scip/presol_dualcomp.h
 include/scip/presol_dualinfer.h
+include/scip/presol_dualsparsify.h
 include/scip/presol_gateextraction.h
 include/scip/presol_implics.h
 include/scip/presol_inttobinary.h
+include/scip/presol_milp.h
 include/scip/presol_qpkktref.h
 include/scip/presol_redvub.h
 include/scip/presol_sparsify.h
 include/scip/presol_stuffing.h
-include/scip/presol_symbreak.h
-include/scip/presol_symmetry.h
 include/scip/presol_trivial.h
 include/scip/presol_tworowbnd.h
 include/scip/presolve.h
@@ -230,11 +237,11 @@ include/scip/prop_dualfix.h
 include/scip/prop_genvbounds.h
 include/scip/prop_nlobbt.h
 include/scip/prop_obbt.h
-include/scip/prop_orbitalfixing.h
 include/scip/prop_probing.h
 include/scip/prop_pseudoobj.h
 include/scip/prop_redcost.h
 include/scip/prop_rootredcost.h
+include/scip/prop_symmetry.h
 include/scip/prop_sync.h
 include/scip/prop_vbounds.h
 include/scip/pub_bandit.h
@@ -248,6 +255,7 @@ include/scip/pub_compr.h
 include/scip/pub_conflict.h
 include/scip/pub_cons.h
 include/scip/pub_cutpool.h
+include/scip/pub_dcmp.h
 include/scip/pub_dialog.h
 include/scip/pub_disp.h
 include/scip/pub_event.h
@@ -260,6 +268,7 @@ include/scip/pub_matrix.h
 include/scip/pub_message.h
 include/scip/pub_misc.h
 include/scip/pub_misc_linear.h
+include/scip/pub_misc_nonlinear.h
 include/scip/pub_misc_select.h
 include/scip/pub_misc_sort.h
 include/scip/pub_nlp.h
@@ -283,6 +292,7 @@ include/scip/reader_ccg.h
 include/scip/reader_cip.h
 include/scip/reader_cnf.h
 include/scip/reader_cor.h
+include/scip/reader_dec.h
 include/scip/reader_diff.h
 include/scip/reader_fix.h
 include/scip/reader_fzn.h
@@ -316,10 +326,12 @@ include/scip/scip_cons.h
 include/scip/scip_copy.h
 include/scip/scip_cut.h
 include/scip/scip_datastructures.h
+include/scip/scip_dcmp.h
 include/scip/scip_debug.h
 include/scip/scip_dialog.h
 include/scip/scip_disp.h
 include/scip/scip_event.h
+include/scip/scip_export.h
 include/scip/scip_expr.h
 include/scip/scip_general.h
 include/scip/scip_heur.h
@@ -389,6 +401,7 @@ include/scip/struct_conflictstore.h
 include/scip/struct_cons.h
 include/scip/struct_cutpool.h
 include/scip/struct_cuts.h
+include/scip/struct_dcmp.h
 include/scip/struct_dialog.h
 include/scip/struct_disp.h
 include/scip/struct_event.h
@@ -423,10 +436,12 @@ include/scip/struct_table.h
 include/scip/struct_tree.h
 include/scip/struct_var.h
 include/scip/struct_visual.h
+include/scip/symmetry.h
 include/scip/syncstore.h
 include/scip/table.h
 include/scip/table_default.h
 include/scip/tree.h
+include/scip/treemodel.h
 include/scip/type_bandit.h
 include/scip/type_benders.h
 include/scip/type_benderscut.h
@@ -440,6 +455,7 @@ include/scip/type_conflictstore.h
 include/scip/type_cons.h
 include/scip/type_cutpool.h
 include/scip/type_cuts.h
+include/scip/type_dcmp.h
 include/scip/type_dialog.h
 include/scip/type_disp.h
 include/scip/type_event.h
@@ -497,9 +513,10 @@ include/tpi/type_tpi_openmp.h
 include/tpi/type_tpi_tnycthrd.h
 include/xml/xml.h
 include/xml/xmldef.h
+lib/cmake/scip/scip-config-version.cmake
 lib/cmake/scip/scip-config.cmake
 lib/cmake/scip/scip-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/scip/scip-targets.cmake
 lib/libscip.so
-lib/libscip.so.%%SHL2%%
-lib/libscip.so.%%SHL4%%
+lib/libscip.so.7.0
+lib/libscip.so.7.0.1.0
