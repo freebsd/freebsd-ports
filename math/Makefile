@@ -401,6 +401,7 @@
     SUBDIR += mingw32-libgmp
     SUBDIR += minisat
     SUBDIR += minizinc
+    SUBDIR += minizinc-ide
     SUBDIR += miracl
     SUBDIR += mlpack
     SUBDIR += moab
