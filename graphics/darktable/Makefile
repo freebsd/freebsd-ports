@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	darktable
-PORTVERSION=	3.0.2
-PORTREVISION=	1
+PORTVERSION=	3.2.1
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/darktable-org/${PORTNAME}/releases/download/release-${PORTVERSION:C/\.rc/rc/}/
 
@@ -16,11 +15,11 @@ ONLY_FOR_ARCHS=		amd64
 ONLY_FOR_ARCHS_REASON=	uses SSE instructions and 64-bit address space
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes \
-		xsltproc:textproc/libxslt \
 		p5-Pod-Parser>=0:textproc/p5-Pod-Parser \
-		po4a-translate:textproc/po4a
-LIB_DEPENDS=	libcolord.so:graphics/colord \
-		libcolord-gtk.so:graphics/colord-gtk \
+		po4a-translate:textproc/po4a \
+		xsltproc:textproc/libxslt
+LIB_DEPENDS=	libcolord-gtk.so:graphics/colord-gtk \
+		libcolord.so:graphics/colord \
 		libcurl.so:ftp/curl \
 		libexiv2.so:graphics/exiv2 \
 		libjson-glib-1.0.so:devel/json-glib \
@@ -31,28 +30,29 @@ LIB_DEPENDS=	libcolord.so:graphics/colord \
 		libsoup-2.4.so:devel/libsoup \
 		libtiff.so:graphics/tiff
 
-USES=		cmake compiler:c++11-lib desktop-file-utils	\
-		gl gnome jpeg pkgconfig sqlite tar:xz xorg
+USES=		cmake compiler:c++11-lib desktop-file-utils gl gnome jpeg \
+		pkgconfig shebangfix sqlite tar:xz xorg
 USE_GL=		glu
 USE_GNOME=	cairo gtk30 intltool librsvg2 libxml2
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 USE_XORG=	ice sm x11 xext xrandr
 
-CMAKE_ARGS+=	-DBINARY_PACKAGE_BUILD=1
-CMAKE_ARGS+=	-DBUILD_CMSTEST:BOOL=ON
-CMAKE_ARGS+=	-DUSE_KWALLET:BOOL=ON
+SHEBANG_FILES=	tools/*.sh
+
+CMAKE_ARGS+=	-DBINARY_PACKAGE_BUILD=1 \
+		-DBUILD_CMSTEST:BOOL=ON \
+		-DUSE_KWALLET:BOOL=ON
 
 CFLAGS+=	-fopenmp
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\.rc/~rc/}
 
-OPTIONS_DEFINE=	DOCS GEO GPHOTO GRAPHMAGICK	\
-		LIBSECRET LUA NLS OPENEXR OPENJPEG PRINT WEBP
-OPTIONS_DEFAULT=GEO GPHOTO LUA OPENEXR OPENJPEG	\
-		PRINT WEBP
-OPTIONS_SUB=	yes
+OPTIONS_DEFINE=		DOCS GEO GPHOTO GRAPHMAGICK LIBSECRET LUA NLS OPENEXR \
+			OPENJPEG PRINT WEBP
+OPTIONS_DEFAULT=	GEO GPHOTO LUA OPENEXR OPENJPEG PRINT WEBP
+OPTIONS_SUB=		yes
 
 GEO_DESC=	Support geotagging
 LIBSECRET_DESC=	Support libsecret as password backend
