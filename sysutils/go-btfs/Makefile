@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	go-btfs
-PORTVERSION=	1.3.4
+PORTVERSION=	1.3.5
 DISTVERSIONPREFIX=	btfs-v
 CATEGORIES=	sysutils
 
@@ -26,7 +26,7 @@ GH_TUPLE=	\
 		Stebalien:go-bitfield:v0.0.1:stebalien_go_bitfield/vendor/github.com/Stebalien/go-bitfield \
 		TRON-US:go-btfs-api:v0.3.0:tron_us_go_btfs_api/vendor/github.com/TRON-US/go-btfs-api \
 		TRON-US:go-btfs-chunker:v0.3.0:tron_us_go_btfs_chunker/vendor/github.com/TRON-US/go-btfs-chunker \
-		TRON-US:go-btfs-cmds:v0.2.3:tron_us_go_btfs_cmds/vendor/github.com/TRON-US/go-btfs-cmds \
+		TRON-US:go-btfs-cmds:v0.2.4:tron_us_go_btfs_cmds/vendor/github.com/TRON-US/go-btfs-cmds \
 		TRON-US:go-btfs-config:v0.6.8:tron_us_go_btfs_config/vendor/github.com/TRON-US/go-btfs-config \
 		TRON-US:go-btfs-files:v0.2.0:tron_us_go_btfs_files/vendor/github.com/TRON-US/go-btfs-files \
 		TRON-US:go-btfs-pinner:v0.1.1:tron_us_go_btfs_pinner/vendor/github.com/TRON-US/go-btfs-pinner \
@@ -95,6 +95,7 @@ GH_TUPLE=	\
 		golang:crypto:75b288015ac9:golang_crypto/vendor/golang.org/x/crypto \
 		golang:gddo:af0f2af80721:golang_gddo/vendor/github.com/golang/gddo \
 		golang:lint:fdd1cda4f05f:golang_lint/vendor/golang.org/x/lint \
+		golang:mock:v1.4.3:golang_mock/vendor/github.com/golang/mock \
 		golang:net:4c5254603344:golang_net/vendor/golang.org/x/net \
 		golang:protobuf:v1.3.3:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:snappy:196ae77b8a26:golang_snappy/vendor/github.com/golang/snappy \
@@ -256,7 +257,7 @@ GH_TUPLE=	\
 		stretchr:testify:v1.6.1:stretchr_testify/vendor/github.com/stretchr/testify \
 		syndtr:goleveldb:758128399b1d:syndtr_goleveldb/vendor/github.com/syndtr/goleveldb \
 		texttheater:golang-levenshtein:d188e65d659e:texttheater_golang_levenshtein/vendor/github.com/texttheater/golang-levenshtein \
-		tron-us:go-btfs-common:v0.5.5:tron_us_go_btfs_common/vendor/github.com/tron-us/go-btfs-common \
+		tron-us:go-btfs-common:v0.5.8:tron_us_go_btfs_common/vendor/github.com/tron-us/go-btfs-common \
 		tron-us:go-common:v2.1.1:tron_us_go_common_v2/vendor/github.com/tron-us/go-common/v2 \
 		tron-us:protobuf:v1.3.4:tron_us_protobuf/vendor/github.com/tron-us/protobuf \
 		tyler-smith:go-bip32:2c9cfd177564:tyler_smith_go_bip32/vendor/github.com/tyler-smith/go-bip32 \
