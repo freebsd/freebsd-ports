@@ -1,10 +1,10 @@
---- src/meson.build.orig	2018-09-04 16:23:32 UTC
+--- src/meson.build.orig	2020-07-15 14:24:54 UTC
 +++ src/meson.build
-@@ -58,6 +58,10 @@ if zlib_dep.found()
-     deps += [zlib_dep]
+@@ -56,6 +56,10 @@ if zstd_dep.found()
+     deps += [zstd_dep]
  endif
  
-+if execinfo_dep.found()
++if target_machine.system() == 'freebsd'
 +    deps += [execinfo_dep]
 +endif
 +
