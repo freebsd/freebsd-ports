@@ -1,0 +1,6 @@
+NEW ultra fast grep with interactive query UI: search file systems,
+source code, text, binary files, archives (cpio/tar/pax/zip),
+compressed files (gz/Z/bz2/lzma/xz/lz4), documents, fuzzy search,
+and more. A faster, user-friendly replacement for GNU/BSD grep.
+
+WWW: https://github.com/Genivia/ugrep

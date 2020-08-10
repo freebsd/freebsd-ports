@@ -1784,6 +1784,7 @@
     SUBDIR += uchardet
     SUBDIR += ucto
     SUBDIR += uctodata
+    SUBDIR += ugrep
     SUBDIR += uim
     SUBDIR += uim-el
     SUBDIR += uim-gtk
