@@ -27,6 +27,7 @@ LLVM_COMMANDS=	\
 		llvm-ifs \
 		llvm-install-name-tool \
 		llvm-jitlink \
+		llvm-libtool-darwin \
 		llvm-link \
 		llvm-lipo \
 		llvm-mc \
@@ -55,7 +56,8 @@ LLVM_COMMANDS=	\
 		llvm-undname \
 		llvm-xray \
 		opt \
-		sancov
+		sancov \
+		split-file
 
 CLANG_COMMANDS=	\
 		c-index-test \

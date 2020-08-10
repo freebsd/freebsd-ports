@@ -3,7 +3,7 @@
 
 PORTNAME=	llvm
 PORTVERSION=	${LLVM_MAJOR}.0.d${SNAPDATE}
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-devel
 
@@ -150,6 +150,7 @@ MAN1SRCS+=	bugpoint.1 \
 		llvm-exegesis.1 \
 		llvm-extract.1 \
 		llvm-lib.1 \
+		llvm-libtool-darwin.1 \
 		llvm-lipo.1 \
 		llvm-link.1 \
 		llvm-locstats.1 \
@@ -295,6 +296,7 @@ _COMPILER_RT_LIBS= \
 	libclang_rt.dd-x86_64.a \
 	libclang_rt.dyndd-x86_64.so \
 	libclang_rt.fuzzer-x86_64.a \
+	libclang_rt.fuzzer_interceptors-x86_64.a \
 	libclang_rt.fuzzer_no_main-x86_64.a \
 	libclang_rt.msan-x86_64.a \
 	libclang_rt.msan-x86_64.a.syms \
@@ -470,7 +472,8 @@ build-plist:
 	    -e 's|${PORTVERSION}|%%PORTVERSION%%|' \
 	    -e 's|release.cmake|%%CMAKE_BUILD_TYPE%%.cmake|' \
 	    -e 's|${LLVM_RELEASE:C/\./\\./g}|%%LLVM_RELEASE%%|' \
-	    -e 's|${LLVM_MAJOR:C/\./\\./}|%%LLVM_MAJOR%%|' \
+	    -e 's|\([^0-9]\)${LLVM_MAJOR:C/\./\\./}\([^0-9]\)|\1%%LLVM_MAJOR%%\2|' \
+	    -e 's|\([^0-9]\)${LLVM_MAJOR:C/\./\\./}$$|\1%%LLVM_MAJOR%%|' \
 	    | ${SORT} >> ${PLIST}.tmp
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR}/lit${LLVM_SUFFIX} -type f | \
 	    ${SED} -e 's|${STAGEDIR}${PYTHON_SITELIBDIR}|%%LIT%%%%PYTHON_SITELIBDIR%%|' \
