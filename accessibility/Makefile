@@ -10,6 +10,7 @@
     SUBDIR += atkmm
     SUBDIR += caribou
     SUBDIR += eflite
+    SUBDIR += feedbackd
     SUBDIR += kdeaccessibility
     SUBDIR += kmag
     SUBDIR += kmousetool

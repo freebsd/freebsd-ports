@@ -1,0 +1,5 @@
+feedbackd provides a DBus daemon (feedbackd) to act on events to provide
+haptic, visual and audio feedback. It offers a library (libfeedback) and
+GObject introspection bindings to ease using it from applications.
+
+WWW: https://source.puri.sm/Librem5/feedbackd
