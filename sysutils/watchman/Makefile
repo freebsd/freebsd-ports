@@ -39,4 +39,6 @@ TEST_TARGET=	check
 
 PLIST_FILES=	bin/${PORTNAME}
 
+CONFLICTS_INSTALL=	watchman450
+
 .include <bsd.port.mk>
