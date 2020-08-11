@@ -375,6 +375,7 @@
     SUBDIR += mod_fileiri
     SUBDIR += mod_gnutls
     SUBDIR += mod_h264_streaming
+    SUBDIR += mod_http2
     SUBDIR += mod_jk
     SUBDIR += mod_limitipconn2
     SUBDIR += mod_line_edit

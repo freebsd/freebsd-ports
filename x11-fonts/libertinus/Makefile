@@ -15,7 +15,7 @@ USES=		fonts
 USE_GITHUB=	yes
 GH_ACCOUNT=	alerque
 
-MO_ARCH=	yes
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 do-install:

@@ -12,7 +12,7 @@ COMMENT=	Industrial-grade ticketing system written in Perl
 LICENSE=	GPLv2
 
 DEPRECATED=	Upstream support is ending; please migrate to RT-5.0 (www/rt50)
-EXPIRY_DATE=	2021-02-01
+EXPIRATION_DATE=	2021-02-01
 
 CONFLICTS_INSTALL=	rt44-4.4* brlcad-[0-9]*
 
