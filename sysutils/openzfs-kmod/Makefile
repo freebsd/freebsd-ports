@@ -32,6 +32,8 @@ GCOV_DESC=	Build kernel module with GCOV support (Requires gcc)
 IGNORE=	needs FreeBSD 12/13 with AES-CCM support
 .endif
 
+MAKE_OPTS+=	SYSDIR=${SRC_BASE}/sys
+
 .if ${PORT_OPTIONS:MDEBUG}
 MAKE_OPTS+=	WITH_DEBUG=true
 PLIST_FILES+=	${KMODDIR}/${KMODTARGET}.debug
