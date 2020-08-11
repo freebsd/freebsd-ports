@@ -1,0 +1,122 @@
+#!/bin/sh
+# $FreeBSD$
+#
+# PROVIDE: virtual_oss
+# BEFORE: LOGIN sndiod
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf.local, /etc/rc.conf or
+# /etc/rc.conf.d/virtual_oss to enable this service:
+#
+# virtual_oss_enable (bool):    Set to NO by default.
+#                               Set it to "YES" to enable virtual_oss.
+# virtual_oss_configs (string): List of configurations to use
+#                               Default is "dsp"
+# virtual_oss_dsp (string):     Arguments passed to virtual_oss config named dsp
+#                               Default is
+#                                   -T /dev/sndstat # register vdsp in sndstat
+#                                   -C 2 -c 2 # use two channels
+#                                   -S # resample if needed
+#                                   -i 8 # real-time priority
+#                                   -r 48000 # sample rate
+#                                   -b 24 # bit depth
+#                                   -s 1024 # buffer (can be 5.2ms)
+#                                   -f /dev/dsp0 # hardware device to use
+#                                   -d dsp # vdev to create
+#                                   -t dsp.ctl # control device
+
+. /etc/rc.subr
+
+name=virtual_oss
+desc="Virtual OSS device manager"
+rcvar=${name}_enable
+start_precmd="${name}_precmd"
+start_cmd="${name}_start"
+stop_cmd="${name}_stop"
+# required_modules="cuse"
+virtual_oss_default_args="\
+  -T /dev/sndstat \
+  -S \
+  -i 8 \
+  -C 2 -c 2 \
+  -r 48000 \
+  -b 24 \
+  -s 1024 \
+  -f /dev/dsp0 \
+  -c 2 \
+  -d dsp \
+  -t dsp.ctl"
+configs=
+
+load_rc_config $name
+
+: ${virtual_oss_enable:="NO"}
+: ${virtual_oss_configs:="dsp"}
+: ${virtual_oss_dsp:="$virtual_oss_default_args"}
+: ${virtual_oss_delay:=1}
+
+command="%%PREFIX%%/sbin/${name}"
+command_args="-B"
+
+pidpath="/var/run/${name}"
+
+virtual_oss_precmd()
+{
+  /usr/bin/install -d -m 0755 -o root ${pidpath}
+}
+
+start_instance()
+{
+  config=$*
+  instance_args=$(eval "echo \$virtual_oss_${config}")
+  if [ -z "${instance_args}" ]; then
+    echo "No such config ${config}"
+  else
+    echo -n "Starting Virtual OSS config ${config} ..."
+    ${command} \
+      ${command_args} \
+      -D ${pidpath}/${config}.pid \
+      ${instance_args}
+    echo " done"
+  fi
+}
+
+stop_instance()
+{
+  config=$*
+  instance_args=`eval "echo \$virtual_oss_${config}"`
+  if [ -z "${instance_args}" ]; then
+    echo "No such config ${config}"
+  elif [ -e "${pidpath}/${config}.pid" ]; then
+    pid=`check_pidfile ${pidpath}/${config}.pid ${command}`
+    if [ ! -z "${pid}" ]; then
+      echo -n "Stopping Virtual OSS config ${config} ... "
+      kill $pid
+      rm -f ${pidpath}/${config}.pid
+      echo "done"
+    fi
+  fi
+}
+
+virtual_oss_start()
+{
+  configs=$*
+  [ -z "${configs}" ] && configs="${virtual_oss_configs}"
+  for config in ${configs}; do
+    start_instance $config
+    sleep ${virtual_oss_delay}
+  done
+}
+
+virtual_oss_stop()
+{
+  configs=$*
+  [ -z "${configs}" ] && configs="${virtual_oss_configs}"
+  for config in ${configs}; do
+    stop_instance ${config}
+    sleep ${virtual_oss_delay}
+  done
+}
+
+run_rc_command $*
