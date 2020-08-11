@@ -1,0 +1,83 @@
+#! /bin/sh -
+#
+# $FreeBSD$
+#
+# SPDX-License-Identifier: BSD-2-Clause
+#
+# Copyright (c) 2020 Mateusz Piotrowski <0mp@FreeBSD.org>
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are met:
+#
+#     1. Redistributions of source code must retain the above copyright notice,
+#        this list of conditions and the following disclaimer.
+#     2. Redistributions in binary form must reproduce the above copyright
+#        notice, this list of conditions and the following disclaimer in the
+#        documentation and/or other materials provided with the distribution.
+#
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+# AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+# ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+# LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+# CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+# SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+# INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+# CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+# ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+# POSSIBILITY OF SUCH DAMAGE.
+
+# PROVIDE: signal_cli
+# REQUIRE: DAEMON LOGIN NETWORKING dbus
+
+. /etc/rc.subr
+
+name='signal_cli'
+rcvar='signal_cli_enable'
+
+# User-facing settings and their default values.
+: "${signal_cli_enable:=NO}"
+: "${signal_cli_phone_number}"  # No default value. Kept here for consistency.
+: "${signal_cli_config_dir:="/var/lib/signal-cli"}"
+
+pidfile="/var/run/signal_cli.pid"
+procname="%%JAVA_HOME%%/bin/java"
+
+_daemon_args="-p ${pidfile} -u signal-cli"
+_signal_cli="%%PREFIX%%/bin/signal-cli --config ${signal_cli_config_dir}"
+_signal_cli_args="-u ${signal_cli_phone_number}"
+_signal_cli_cmd="daemon"
+_signal_cli_cmd_opts="--system"
+command="/usr/sbin/daemon"
+command_args="${_daemon_args} ${_signal_cli} ${_signal_cli_args} ${_signal_cli_cmd} ${_signal_cli_cmd_opts}"
+extra_commands="runcli"
+
+start_precmd="signal_cli_prestart"
+runcli_precmd="signal_cli_preruncli"
+runcli_cmd="signal_cli_runcli"
+
+signal_cli_create_config_dir() {
+	if ! install -d -o signal-cli -g signal-cli -m 700 "${signal_cli_config_dir}"; then
+		err 1 "Failed to create a config directory at \"${signal_cli_create_config_dir}\""
+	fi
+}
+
+signal_cli_prestart() {
+	if [ -z "${signal_cli_phone_number}" ]; then
+		err 1 "Phone number not provided; please set signal_cli_phone_number"
+	fi
+	signal_cli_create_config_dir
+}
+
+signal_cli_preconfigure() {
+	signal_cli_create_config_dir
+}
+
+# The "runcli" command can be used to run any signal-cli command (for example
+# "link -n DEVICENAME") from the environment of the service.
+signal_cli_runcli() {
+	chroot -u signal-cli / ${_signal_cli} "$@"
+}
+
+load_rc_config "$name"
+run_rc_command "$@"

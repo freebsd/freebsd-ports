@@ -3,19 +3,20 @@
 PORTNAME=	signal-cli
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.8
+PORTREVISION=	1
 CATEGORIES=	net-im java
 MASTER_SITES=	https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.9.0/:_jackson_annotations \
 		https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.9.9/:_jackson_core \
 		https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.9.9.2/:_jackson_databind \
-		https://repo.maven.apache.org/maven2/com/github/hypfvieh/dbus-java/3.2.1/:_dbus_java \
+		https://repo.maven.apache.org/maven2/com/github/hypfvieh/dbus-java/3.2.2/:_dbus_java \
 		https://repo.maven.apache.org/maven2/com/github/hypfvieh/java-utils/1.0.6/:_java_utils \
-		https://repo.maven.apache.org/maven2/com/github/jnr/jffi/1.2.19/:_jffi \
+		https://repo.maven.apache.org/maven2/com/github/jnr/jffi/1.2.23/:_jffi \
 		https://repo.maven.apache.org/maven2/com/github/jnr/jnr-a64asm/1.0.0/:_jnr_a64asm \
-		https://repo.maven.apache.org/maven2/com/github/jnr/jnr-constants/0.9.12/:_jnr_constants \
-		https://repo.maven.apache.org/maven2/com/github/jnr/jnr-enxio/0.21/:_jnr_enxio \
-		https://repo.maven.apache.org/maven2/com/github/jnr/jnr-ffi/2.1.10/:_jnr_ffi \
-		https://repo.maven.apache.org/maven2/com/github/jnr/jnr-posix/3.0.50/:_jnr_posix \
-		https://repo.maven.apache.org/maven2/com/github/jnr/jnr-unixsocket/0.23/:_jnr_unixsocket \
+		https://repo.maven.apache.org/maven2/com/github/jnr/jnr-constants/0.9.15/:_jnr_constants \
+		https://repo.maven.apache.org/maven2/com/github/jnr/jnr-enxio/0.28/:_jnr_enxio \
+		https://repo.maven.apache.org/maven2/com/github/jnr/jnr-ffi/2.1.15/:_jnr_ffi \
+		https://repo.maven.apache.org/maven2/com/github/jnr/jnr-posix/3.0.58/:_jnr_posix \
+		https://repo.maven.apache.org/maven2/com/github/jnr/jnr-unixsocket/0.33/:_jnr_unixsocket \
 		https://repo.maven.apache.org/maven2/com/github/jnr/jnr-x86asm/1.0.2/:_jnr_x86asm \
 		https://repo.maven.apache.org/maven2/com/github/turasa/signal-service-java/2.15.3_unofficial_10/:_signal_service_java \
 		https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-javalite/3.10.0/:_protobuf_javalite \
@@ -48,18 +49,18 @@ DISTFILES=	annotations-13.0.jar:_annotations \
 		asm-util-7.1.jar:_asm_util \
 		bcprov-jdk15on-1.65.jar:_bcprov_jdk15on \
 		curve25519-java-0.5.0.jar:_curve25519_java \
-		dbus-java-3.2.1.jar:_dbus_java \
+		dbus-java-3.2.2.jar:_dbus_java \
 		jackson-annotations-2.9.0.jar:_jackson_annotations \
 		jackson-core-2.9.9.jar:_jackson_core \
 		jackson-databind-2.9.9.2.jar:_jackson_databind \
 		java-utils-1.0.6.jar:_java_utils \
-		jffi-1.2.19.jar:_jffi \
+		jffi-1.2.23.jar:_jffi \
 		jnr-a64asm-1.0.0.jar:_jnr_a64asm \
-		jnr-constants-0.9.12.jar:_jnr_constants \
-		jnr-enxio-0.21.jar:_jnr_enxio \
-		jnr-ffi-2.1.10.jar:_jnr_ffi \
-		jnr-posix-3.0.50.jar:_jnr_posix \
-		jnr-unixsocket-0.23.jar:_jnr_unixsocket \
+		jnr-constants-0.9.15.jar:_jnr_constants \
+		jnr-enxio-0.28.jar:_jnr_enxio \
+		jnr-ffi-2.1.15.jar:_jnr_ffi \
+		jnr-posix-3.0.58.jar:_jnr_posix \
+		jnr-unixsocket-0.33.jar:_jnr_unixsocket \
 		jnr-x86asm-1.0.2.jar:_jnr_x86asm \
 		kotlin-stdlib-1.3.71.jar:_kotlin_stdlib \
 		kotlin-stdlib-common-1.3.71.jar:_kotlin_stdlib_common \
@@ -74,6 +75,10 @@ DISTFILES=	annotations-13.0.jar:_annotations \
 		slf4j-nop-1.7.30.jar:_slf4j_nop \
 		threetenbp-1.3.6.jar:_threetenbp \
 		zkgroup-java-0.7.0.jar:_zkgroup_java
+# jffi-native is not being listed as an explicit dependency by Gradle. As a
+# workaround appended it to DISTFILES separately here as to not remove it by
+# accident when upgrading the port in the future.
+DISTFILES+=	jffi-1.2.23-native.jar:_jffi
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -90,10 +95,12 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	AsamK
 USE_JAVA=	yes
 JAVA_VERSION=	8+
+USE_RC_SUBR=	signal_cli
 
 NO_ARCH=	yes
 
-SUB_FILES=	${PORTNAME}
+SUB_FILES=	${PORTNAME} pkg-message
+SUB_LIST=	JAVA_HOME="${JAVA_HOME}"
 
 USERS=		signal-cli
 GROUPS=		signal-cli
@@ -108,16 +115,22 @@ DBUS_RUN_DEPENDS=	dbus>0:devel/dbus
 _GRADLE_CMD=		${LOCALBASE}/bin/gradle
 _GRADLE_ARGS=		--no-daemon --offline --quiet
 _GRADLE_DEPS_DIR=	${WRKDIR}/gradle-deps
+_ORIGINAL_BUILD_GRADLE=	${WRKSRC}/original-build.gradle
 
 post-extract:
 	@${MKDIR} ${_GRADLE_DEPS_DIR}
 .for distfile in ${DISTFILES:N${DISTNAME}:C/:_[0-9A-Za-z_]*$//}
 	@${CP} ${DISTDIR}/${distfile} ${_GRADLE_DEPS_DIR}/
 .endfor
-	@${MV} ${WRKSRC}/build.gradle ${WRKSRC}/original-build.gradle
+	@${MV} ${WRKSRC}/build.gradle ${_ORIGINAL_BUILD_GRADLE}
 	@${SED} -e 's|%%GRADLE_DEPS_DIR%%|${_GRADLE_DEPS_DIR}|g' \
+		-e 's|%%ORIGINAL_BUILD_GRADLE%%|${_ORIGINAL_BUILD_GRADLE}|g' \
 		${FILESDIR}/build.gradle.in \
 		> ${WRKSRC}/build.gradle
+
+post-patch:
+# This line may be removed once upstream switches to dbus-java >=3.2.2.
+	${REINPLACE_CMD} 's/dbus-java:3.2.1/dbus-java:3.2.2/' ${_ORIGINAL_BUILD_GRADLE}
 
 do-build:
 	(cd ${WRKSRC} && \
@@ -147,7 +160,7 @@ post-install-DBUS-on:
 
 # This target can be used by the maintainer to regenerate MASTER_SITES and
 # DISTFILES from project's build.gradle.
-_get-links: extract
+_get-links: patch
 	@(cd ${WRKSRC} && \
 		${_GRADLE_CMD} \
 		--build-file ${WRKSRC}/build.gradle \
