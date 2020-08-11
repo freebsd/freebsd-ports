@@ -1143,6 +1143,7 @@
     SUBDIR += qt5-networkauth
     SUBDIR += quagga
     SUBDIR += queso
+    SUBDIR += quiche
     SUBDIR += quiterss
     SUBDIR += quoted
     SUBDIR += rabbiteer
