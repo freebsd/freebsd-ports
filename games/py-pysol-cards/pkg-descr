@@ -1,0 +1,5 @@
+The pysol-cards python modules allow the python developer to generate
+the initial deals of some PySol FC games. It also supports PySol
+legacy deals and Microsoft FreeCell / Freecell Pro deals.
+
+WWW: https://pypi.org/project/pysol-cards/
