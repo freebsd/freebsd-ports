@@ -49,7 +49,7 @@ load_rc_config $name
 ### Environment variables
 RAILS_ENV=${RAILS_ENV:-'production'}
 SIDEKIQ_WORKERS=${SIDEKIQ_WORKERS:-1}
-USE_WEB_SERVER=${USE_WEB_SERVER:-'unicorn'}
+USE_WEB_SERVER=${USE_WEB_SERVER:-'puma'}
 
 case "${USE_WEB_SERVER}" in
   puma|unicorn)

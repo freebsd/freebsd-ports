@@ -3,6 +3,7 @@
 
 PORTNAME=	gitlab-puma
 DISTVERSION=	4.3.3.gitlab.2
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -22,8 +23,8 @@ PLIST_FILES=	bin/gpuma bin/gpumactl
 
 SHEBANG_FILES=	tools/jungle/init.d/run-puma
 
-post-install:
-		${MV} ${STAGEDIR}${PREFIX}/bin/puma ${STAGEDIR}${PREFIX}/bin/gpuma
-		${MV} ${STAGEDIR}${PREFIX}/bin/pumactl ${STAGEDIR}${PREFIX}/bin/gpumactl
+post-patch:
+		${MV} ${WRKSRC}/bin/puma ${WRKSRC}/bin/gpuma
+		${MV} ${WRKSRC}/bin/pumactl ${WRKSRC}/bin/gpumactl
 
 .include <bsd.port.mk>

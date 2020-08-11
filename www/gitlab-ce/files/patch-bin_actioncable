@@ -1,0 +1,11 @@
+--- bin/actioncable.orig	2020-08-11 09:44:44 UTC
++++ bin/actioncable
+@@ -10,7 +10,7 @@ puma_config="$app_root/config/puma_actioncable.rb"
+ 
+ spawn_puma()
+ {
+-  exec bundle exec puma --config "${puma_config}" --environment "$RAILS_ENV" "$@"
++  exec bundle exec gpuma --config "${puma_config}" --environment "$RAILS_ENV" "$@"
+ }
+ 
+ get_puma_pid()

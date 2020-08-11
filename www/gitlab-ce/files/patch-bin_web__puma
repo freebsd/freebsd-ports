@@ -1,0 +1,11 @@
+--- bin/web_puma.orig	2020-08-11 09:44:03 UTC
++++ bin/web_puma
+@@ -10,7 +10,7 @@ puma_config="$app_root/config/puma.rb"
+ 
+ spawn_puma()
+ {
+-  exec bundle exec puma --config "${puma_config}" --environment "$RAILS_ENV" "$@"
++  exec bundle exec gpuma --config "${puma_config}" --environment "$RAILS_ENV" "$@"
+ }
+ 
+ get_puma_pid()
