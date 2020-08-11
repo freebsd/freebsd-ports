@@ -9,16 +9,16 @@ Revert https://github.com/yuzu-emu/yuzu/commit/d5dfe34c4935
 -[submodule "opus"]
 -	path = externals/opus/opus
 -	url = https://github.com/xiph/opus.git
---- CMakeLists.txt.orig	2020-07-07 22:13:55 UTC
+--- CMakeLists.txt.orig	2020-08-10 17:53:43 UTC
 +++ CMakeLists.txt
-@@ -156,6 +156,8 @@ macro(yuzu_find_packages)
+@@ -166,6 +166,8 @@ macro(yuzu_find_packages)
          #"libzip            1.5         libzip/1.5.2@bincrafters/stable"
          "lz4               1.8         lz4/1.9.2"
-         "nlohmann_json     3.7         nlohmann_json/3.7.3"
+         "nlohmann_json     3.8         nlohmann_json/3.8.0"
 +    # we need to be careful as the version check might be broken https://github.com/xiph/opus/issues/110
 +        "opus              1.3         opus/1.3.1"
          "ZLIB              1.2         zlib/1.2.11"
-         "zstd              1.4         zstd/1.4.4"
+         "zstd              1.4         zstd/1.4.5"
      )
 --- externals/CMakeLists.txt.orig	2020-07-07 22:13:55 UTC
 +++ externals/CMakeLists.txt
