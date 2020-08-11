@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flynt
-PORTVERSION=	0.48.1
+PORTVERSION=	0.50
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -18,5 +18,8 @@ USE_GITHUB=	yes
 USE_PYTHON=	autoplist distutils
 
 GH_ACCOUNT=	ikamensh
+
+post-patch:
+	${REINPLACE_CMD} -e 's/0\.49/0.50/' ${WRKSRC}/src/flynt/__init__.py
 
 .include <bsd.port.mk>
