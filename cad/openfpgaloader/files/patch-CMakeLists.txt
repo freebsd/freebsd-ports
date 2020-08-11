@@ -1,0 +1,13 @@
+--- CMakeLists.txt.orig	2020-08-11 07:11:29 UTC
++++ CMakeLists.txt
+@@ -138,8 +138,8 @@ target_link_libraries(openFPGALoader ${LIBUDEV_LIBRARI
+ endif()
+ 
+ if(NOT HAVE_ARGP)
+-	find_library(LIBARGPSTATIC libargp.a REQUIRED)
+-	target_link_libraries(openFPGALoader ${LIBARGPSTATIC})
++	find_library(LIBARGP libargp.so REQUIRED)
++	target_link_libraries(openFPGALoader ${LIBARGP})
+ endif()
+ 
+ if (BUILD_STATIC)
