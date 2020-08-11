@@ -23,15 +23,15 @@ COMMENT=	Build cross-platform desktop apps with JavaScript, HTML, and CSS
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/electron/LICENSE
 
-FETCH_DEPENDS=	yarn-node12>0:www/yarn-node12
-EXTRACT_DEPENDS=	yarn-node12>0:www/yarn-node12
+FETCH_DEPENDS=	yarn-node${NODE_VER_MAJOR}>0:www/yarn-node${NODE_VER_MAJOR}
+EXTRACT_DEPENDS=	yarn-node${NODE_VER_MAJOR}>0:www/yarn-node${NODE_VER_MAJOR}
 PATCH_DEPENDS=	git:devel/git
 BUILD_DEPENDS=	${LOCALBASE}/bin/ar:devel/binutils \
 		gperf:devel/gperf \
 		yasm:devel/yasm \
 		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat \
-		node12>0:www/node12 \
-		npm-node12>0:www/npm-node12
+		node${NODE_VER_MAJOR}>0:www/node${NODE_VER_MAJOR} \
+		npm-node${NODE_VER_MAJOR}>0:www/npm-node${NODE_VER_MAJOR}
 LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-atk \
 		libatspi.so:accessibility/at-spi2-core \
 		libsnappy.so:archivers/snappy \
@@ -55,7 +55,7 @@ LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-atk \
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
 TEST_DEPENDS=	git:devel/git \
 		${PYTHON_PKGNAMEPREFIX}python-dbusmock>0:devel/py-python-dbusmock@${PY_FLAVOR} \
-		npm-node12>0:www/npm-node12
+		npm-node${NODE_VER_MAJOR}>0:www/npm-node${NODE_VER_MAJOR}
 
 USES=		bison dos2unix gettext-tools gl gnome jpeg localbase:ldflags \
 		ninja pkgconfig python:2.7,build,test tar:xz xorg
@@ -75,6 +75,7 @@ CHROMIUM_NODE_MODULES_HASH=	ab7f28fee456b5af5fbd3fcb5bcc7c61420788c9
 CHROMIUM_TEST_FONTS_HASH=	a22de844e32a3f720d219e3911c3da3478039f89
 # See ${WRKSRC}/electron/DEPS for NODE_VER
 NODE_VER=	12.8.1
+NODE_VER_MAJOR=	${NODE_VER:C/\..*$//}
 # See ${WRKSRC}/electron/DEPS for NAN_VER
 NAN_VER=	2ee313aaca52e2b478965ac50eb5082520380d1b
 

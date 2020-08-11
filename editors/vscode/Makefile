@@ -21,8 +21,8 @@ ONLY_FOR_ARCHS=	amd64
 BUILD_DEPENDS=	zip:archivers/zip \
 		electron${ELECTRON_VER_MAJOR}:devel/electron${ELECTRON_VER_MAJOR} \
 		rg:textproc/ripgrep \
-		npm-node10>0:www/npm-node10 \
-		yarn-node10>0:www/yarn-node10
+		npm-node${NODE_VER_MAJOR}>0:www/npm-node${NODE_VER_MAJOR} \
+		yarn-node${NODE_VER_MAJOR}>0:www/yarn-node${NODE_VER_MAJOR}
 LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-atk \
 		libatspi.so:accessibility/at-spi2-core \
 		libsnappy.so:archivers/snappy \
@@ -74,6 +74,7 @@ USE_LDCONFIG=	${DATADIR}
 
 # See ${WRKSRC}/remote/.yarnrc for NODE_VER
 NODE_VER=	12.4.0
+NODE_VER_MAJOR=	${NODE_VER:C/\..*$//}
 
 SHEBANG_REGEX=	./(extensions|resources|scripts|src)/.*\.sh$$
 PATHFIX_FILES=	src/vs/workbench/contrib/debug/node/terminals.ts
