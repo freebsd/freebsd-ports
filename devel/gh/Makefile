@@ -2,7 +2,7 @@
 
 PORTNAME=	gh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.11.0
+DISTVERSION=	0.11.1
 CATEGORIES=	devel
 
 MAINTAINER=	vulcan@wired.sh
@@ -19,9 +19,9 @@ GH_ACCOUNT=	cli
 GH_PROJECT=	${GH_ACCOUNT}
 GH_TUPLE=	AlecAivazis:survey:v2.0.7:alecaivazis_survey_v2/vendor/github.com/AlecAivazis/survey/v2 \
 		MakeNowJust:heredoc:v1.0.0:makenowjust_heredoc/vendor/github.com/MakeNowJust/heredoc \
-		alecthomas:chroma:34d9c7143bf5:alecthomas_chroma/vendor/github.com/alecthomas/chroma \
+		alecthomas:chroma:v0.7.3:alecthomas_chroma/vendor/github.com/alecthomas/chroma \
 		briandowns:spinner:v1.11.1:briandowns_spinner/vendor/github.com/briandowns/spinner \
-		charmbracelet:glamour:301d3bcf3058:charmbracelet_glamour/vendor/github.com/charmbracelet/glamour \
+		charmbracelet:glamour:1246d13c1684:charmbracelet_glamour/vendor/github.com/charmbracelet/glamour \
 		cli:shurcooL-graphql:0f7232a2bf7e:cli_shurcool_graphql/vendor/github.com/shurcooL/graphql \
 		cpuguy83:go-md2man:v2.0.0:cpuguy83_go_md2man_v2/vendor/github.com/cpuguy83/go-md2man/v2 \
 		danwakefield:fnmatch:cbb64ac3d964:danwakefield_fnmatch/vendor/github.com/danwakefield/fnmatch \
@@ -32,7 +32,7 @@ GH_TUPLE=	AlecAivazis:survey:v2.0.7:alecaivazis_survey_v2/vendor/github.com/Alec
 		go-yaml:yaml:v2.2.8:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		golang:crypto:75b288015ac9:golang_crypto/vendor/golang.org/x/crypto \
 		golang:net:ab3426394381:golang_net/vendor/golang.org/x/net \
-		golang:sys:85ca7c5b95cd:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:669c56c373c4:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
 		google:go-cmp:v0.4.1:google_go_cmp/vendor/github.com/google/go-cmp \
 		google:goterm:fc88cf888a3f:google_goterm/vendor/github.com/google/goterm \
@@ -49,7 +49,7 @@ GH_TUPLE=	AlecAivazis:survey:v2.0.7:alecaivazis_survey_v2/vendor/github.com/Alec
 		microcosm-cc:bluemonday:v1.0.2:microcosm_cc_bluemonday/vendor/github.com/microcosm-cc/bluemonday \
 		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
 		muesli:reflow:v0.1.0:muesli_reflow/vendor/github.com/muesli/reflow \
-		muesli:termenv:v0.4.0:muesli_termenv/vendor/github.com/muesli/termenv \
+		muesli:termenv:v0.6.0:muesli_termenv/vendor/github.com/muesli/termenv \
 		olekukonko:tablewriter:v0.0.4:olekukonko_tablewriter/vendor/github.com/olekukonko/tablewriter \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
 		russross:blackfriday:v2.0.1:russross_blackfriday_v2/vendor/github.com/russross/blackfriday/v2 \
@@ -58,7 +58,7 @@ GH_TUPLE=	AlecAivazis:survey:v2.0.7:alecaivazis_survey_v2/vendor/github.com/Alec
 		spf13:cobra:v1.0.0:spf13_cobra/vendor/github.com/spf13/cobra \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		stretchr:testify:v1.5.1:stretchr_testify/vendor/github.com/stretchr/testify \
-		yuin:goldmark:v1.1.24:yuin_goldmark/vendor/github.com/yuin/goldmark
+		yuin:goldmark:v1.2.0:yuin_goldmark/vendor/github.com/yuin/goldmark
 
 _BUILD_VERSION=	${DISTVERSION}
 _BUILD_DATE=	$$(date +%Y-%m-%d)
@@ -79,6 +79,9 @@ OPTIONS_SUB=		yes
 
 COMPLETIONS_DESC=	Build and install shell completions for bash, fish and zsh
 MANPAGES_DESC=		Build and install auto-generated manpages
+
+pre-build:
+	${LN} -sf ${WRKSRC_muesli_termenv}/termenv_linux.go ${WRKSRC_muesli_termenv}/termenv_freebsd.go 
 
 do-build-COMPLETIONS-on:
 .for SHELL in bash fish zsh
