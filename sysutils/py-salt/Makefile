@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	salt
-PORTVERSION=	3001
-PORTREVISION=	2
+PORTVERSION=	3001.1
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +11,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 # https://github.com/saltstack/salt/issues/57826
 # https://github.com/saltstack/salt/pull/57839
 PATCH_SITES=	https://github.com/saltstack/salt/commit/
-PATCHFILES+=	0dda2fdbdc577b092c5fc894951e8a750b275c56.patch:-p1
+PATCHFILES+=	1fa77bc846856d3a9a9d80e7643fb2f46febf827.patch:-p1
 
 MAINTAINER=	christer.edwards@gmail.com
 COMMENT=	Distributed remote execution and configuration management system
