@@ -11,7 +11,7 @@ COMMENT=	NEW ultra fast grep with interactive query UI
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		gmake
+USES=		compiler:c++11-lang gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	Genivia
 
