@@ -2,11 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	salt
-PORTVERSION=	3001
-PORTREVISION=	1
+PORTVERSION=	3001.1
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+# Unbreak the sysctl state.
+# https://github.com/saltstack/salt/issues/57826
+# https://github.com/saltstack/salt/pull/57839
+PATCH_SITES=	https://github.com/saltstack/salt/commit/
+PATCHFILES+=	1fa77bc846856d3a9a9d80e7643fb2f46febf827.patch:-p1
 
 MAINTAINER=	christer.edwards@gmail.com
 COMMENT=	Distributed remote execution and configuration management system
