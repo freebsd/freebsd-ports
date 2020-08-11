@@ -8,7 +8,7 @@ MASTER_SITES=	OSDN/vlgothic
 PKGNAMEPREFIX=	ja-font-
 DISTNAME=	VLGothic-${PORTVERSION}
 
-MAINTAINER=	meta@FreeBSD.org
+MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	VLGothic Japanese TrueType fonts
 
 LICENSE=	BSD3CLAUSE
