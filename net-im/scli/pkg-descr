@@ -1,0 +1,4 @@
+scli is a simple TUI (terminal user interface) for Signal, the messaging
+platform.  It relies on signal-cli to connect to Signal services and urwid.
+
+WWW: https://github.com/isamert/scli
