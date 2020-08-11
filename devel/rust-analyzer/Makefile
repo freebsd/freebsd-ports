@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rust-analyzer
-DISTVERSION=	2020-08-03
+DISTVERSION=	2020-08-10
 CATEGORIES=	devel
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -30,10 +30,10 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		cargo_metadata-0.11.1 \
 		cc-1.0.58 \
 		cfg-if-0.1.10 \
-		chalk-derive-0.19.0 \
-		chalk-ir-0.19.0 \
-		chalk-recursive-0.19.0 \
-		chalk-solve-0.19.0 \
+		chalk-derive-0.21.0 \
+		chalk-ir-0.21.0 \
+		chalk-recursive-0.21.0 \
+		chalk-solve-0.21.0 \
 		chrono-0.4.13 \
 		cloudabi-0.1.0 \
 		cmake-0.1.44 \
@@ -48,7 +48,7 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		either-1.5.3 \
 		ena-0.14.0 \
 		env_logger-0.7.1 \
-		filetime-0.2.11 \
+		filetime-0.2.12 \
 		fixedbitset-0.2.0 \
 		flate2-1.0.16 \
 		fsevent-2.0.2 \
@@ -121,8 +121,8 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		rustc-demangle-0.1.16 \
 		rustc-hash-1.1.0 \
 		ryu-1.0.5 \
-		salsa-0.15.1 \
-		salsa-macros-0.15.0 \
+		salsa-0.15.2 \
+		salsa-macros-0.15.2 \
 		same-file-1.0.6 \
 		scoped-tls-1.0.0 \
 		scopeguard-1.1.0 \
@@ -138,7 +138,7 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		slab-0.4.2 \
 		smallvec-1.4.1 \
 		smol_str-0.1.16 \
-		syn-1.0.36 \
+		syn-1.0.38 \
 		synstructure-0.12.4 \
 		termcolor-1.1.0 \
 		text-size-1.0.0 \
@@ -149,7 +149,7 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		tinyvec-0.3.3 \
 		tracing-0.1.18 \
 		tracing-attributes-0.1.9 \
-		tracing-core-0.1.12 \
+		tracing-core-0.1.13 \
 		tracing-log-0.1.1 \
 		tracing-serde-0.1.1 \
 		tracing-subscriber-0.2.10 \
