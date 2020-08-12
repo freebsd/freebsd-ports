@@ -6,25 +6,7 @@ POST-DEINSTALL)
 		return 0
 	fi
 	if [ -d %%TWCFG%% -o -d %%TWDB%% ]; then
-		unset ANS
-		echo
-		while [ -z "$ANS" ]; do
-			echo If permanently deleting this package,
-			echo %%TWCFG%% and %%TWDB%% may be removed.
-			echo Do you wish to delete %%TWCFG%%
-			echo -n and %%TWDB%%? '(yes/no) -: '
-			read ANS
-			case $ANS in
-			[Yy]|[Yy][Ee][Ss])
-				rm -rf %%TWCFG%% %%TWDB%%
-				;;
-			[Nn]|[Nn][Oo])
-				;;
-			*)	echo Answer must be yes or no.
-				echo
-				unset ANS
-				;;
-			esac
-		done
+		echo If permanently deleting this package,
+		echo %%TWCFG%% and %%TWDB%% may be removed.
 	fi
 esac
