@@ -1,0 +1,48 @@
+#!/bin/sh
+# $FreeBSD$
+
+# PROVIDE: mqttwarn
+# REQUIRE: LOGIN cleanvar
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable mqttwarn:
+# mqttwarn_enable (bool):	Set to "NO" by default.
+#				Set it to "YES" to enable mqttwarn
+#
+
+. /etc/rc.subr
+
+name="mqttwarn"
+rcvar=${name}_enable
+
+pidfile="/var/run/${name}/${name}.pid"
+mqttwarn_user="mqttwarn"
+mqttwarn_command="%%PREFIX%%/bin/mqttwarn"
+command="/usr/sbin/daemon"
+
+load_rc_config $name
+
+: ${mqttwarn_enable:=NO}
+: ${mqttwarn_user:=mqttwarn}
+: ${mqttwarn_group:=mqttwarn}
+: ${mqttwarn_syslog_facility:=local3}
+
+start_precmd=mqttwarn_prestart
+
+# these environment varialbes need to be set or the app will fail to start.
+mqttwarn_env="MQTTWARNINI='/usr/local/etc/mqttwarn/mqttwarn.ini' MQTTWARNLOG='/var/log/mqttwarn/mqttwarn.log'"
+
+mqttwarn_prestart()
+{
+	# create the file pid, and directory, with correct permissions
+	if [ ! -e ${pidfile} ]; then
+		install -o ${mqttwarn_user} -g ${mqttwarn_group} /dev/null ${pidfile};
+	else
+		chown ${mqttwarn_user}:${mqttwarn_group} ${pidfile};
+	fi
+}
+
+command_args="-P ${pidfile} -t ${name} -T ${name} -l ${mqttwarn_syslog_facility} ${mqttwarn_command}"
+
+run_rc_command "$1"
