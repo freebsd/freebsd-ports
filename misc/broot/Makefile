@@ -2,8 +2,7 @@
 
 PORTNAME=	broot
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.18.6
-PORTREVISION=	2
+DISTVERSION=	0.19.4
 CATEGORIES=	misc
 
 MAINTAINER=	vulcan@wired.sh
@@ -12,14 +11,16 @@ COMMENT=	Quick and easy new way to see and navigate directory trees
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libgit2.so:devel/libgit2
+LIB_DEPENDS=	libgit2.so:devel/libgit2 \
+		libonig.so:devel/oniguruma
 RUN_DEPENDS=	git:devel/git
 
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	canop
 
-CARGO_CRATES=	aho-corasick-0.7.10 \
+CARGO_CRATES=	adler-0.2.3 \
+		aho-corasick-0.7.10 \
 		ansi_term-0.11.0 \
 		arc-swap-0.4.7 \
 		arrayref-0.3.6 \
@@ -27,7 +28,9 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		atty-0.2.14 \
 		autocfg-1.0.0 \
 		base64-0.11.0 \
+		base64-0.12.3 \
 		bet-0.3.4 \
+		bincode-1.3.1 \
 		bitflags-1.2.1 \
 		blake2b_simd-0.5.10 \
 		bstr-0.2.13 \
@@ -40,6 +43,7 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		clap-2.33.1 \
 		cloudabi-0.0.3 \
 		constant_time_eq-0.1.5 \
+		crc32fast-1.2.0 \
 		criterion-0.3.2 \
 		criterion-plot-0.4.2 \
 		crossbeam-0.7.3 \
@@ -57,6 +61,8 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		dirs-2.0.2 \
 		dirs-sys-0.3.5 \
 		either-1.5.3 \
+		flate2-1.0.16 \
+		fnv-1.0.7 \
 		fuchsia-zircon-0.3.3 \
 		fuchsia-zircon-sys-0.3.3 \
 		getrandom-0.1.14 \
@@ -65,6 +71,7 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		hermit-abi-0.1.14 \
 		id-arena-2.2.1 \
 		idna-0.2.0 \
+		indexmap-1.4.0 \
 		iovec-0.1.4 \
 		is_executable-0.1.2 \
 		itertools-0.9.0 \
@@ -74,9 +81,12 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		kernel32-sys-0.2.2 \
 		lazy-regex-0.1.3 \
 		lazy_static-1.4.0 \
+		lazycell-1.2.1 \
 		libc-0.2.71 \
 		libgit2-sys-0.10.0 \
 		libz-sys-1.0.25 \
+		line-wrap-0.1.1 \
+		linked-hash-map-0.5.3 \
 		lock_api-0.3.4 \
 		log-0.4.8 \
 		matches-0.1.8 \
@@ -84,13 +94,16 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		memchr-2.3.3 \
 		memmap-0.7.0 \
 		memoffset-0.5.4 \
-		minimad-0.6.4 \
+		minimad-0.6.5 \
+		miniz_oxide-0.4.0 \
 		mio-0.6.22 \
 		miow-0.2.1 \
 		net2-0.2.34 \
 		num-integer-0.1.43 \
 		num-traits-0.2.12 \
 		num_cpus-1.13.0 \
+		onig-6.0.0 \
+		onig_sys-69.5.0 \
 		oorandom-11.1.2 \
 		open-1.4.0 \
 		parking_lot-0.10.2 \
@@ -102,6 +115,7 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		phf_macros-0.8.0 \
 		phf_shared-0.8.0 \
 		pkg-config-0.3.17 \
+		plist-1.0.0 \
 		plotters-0.2.15 \
 		ppv-lite86-0.2.8 \
 		proc-macro-hack-0.5.16 \
@@ -122,6 +136,7 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		rust-argon2-0.7.0 \
 		rustc_version-0.2.3 \
 		ryu-1.0.5 \
+		safemem-0.3.3 \
 		same-file-1.0.6 \
 		scopeguard-1.1.0 \
 		secular-0.2.0 \
@@ -136,11 +151,12 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		siphasher-0.3.3 \
 		slab-0.4.2 \
 		smallvec-1.4.0 \
-		strict-0.1.3 \
+		strict-0.1.4 \
 		strsim-0.8.0 \
 		syn-1.0.31 \
+		syntect-4.2.0 \
 		term-0.6.1 \
-		termimad-0.8.24 \
+		termimad-0.8.25 \
 		textwrap-0.11.0 \
 		thiserror-1.0.20 \
 		thiserror-impl-1.0.20 \
@@ -152,7 +168,7 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		umask-1.0.0 \
 		unicode-bidi-0.3.4 \
 		unicode-normalization-0.1.13 \
-		unicode-width-0.1.7 \
+		unicode-width-0.1.8 \
 		unicode-xid-0.2.0 \
 		url-2.1.1 \
 		users-0.9.1 \
@@ -172,14 +188,20 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		ws2_32-sys-0.2.1
+		ws2_32-sys-0.2.1 \
+		xml-rs-0.8.3 \
+		yaml-rust-0.4.4
+CARGO_FEATURES=	--no-default-features
 
 SUB_FILES=	pkg-message
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/${PORTNAME}.1.gz
-PORTDOCS=	CHANGELOG.md README.md
+PORTDOCS=	CHANGELOG.md README.md client-server.md
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	CLIENT_SERVER DOCS
+
+CLIENT_SERVER_DESC=	Enable client/server support
+CLIENT_SERVER_VARS=	CARGO_FEATURES+=client-server
 
 _BUILD_VERSION=	${DISTVERSION}
 _BUILD_DATE=	$$(date +'%Y/%m/%d')
