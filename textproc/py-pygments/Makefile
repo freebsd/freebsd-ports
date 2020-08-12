@@ -13,6 +13,7 @@ MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Syntax highlighter written in Python
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		python
 USE_PYTHON=	distutils concurrent autoplist
