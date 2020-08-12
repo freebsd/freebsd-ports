@@ -1,17 +1,17 @@
 # $FreeBSD$
 
 PORTNAME=	font-misc-ethiopic
-PORTVERSION=	1.0.3
-PORTREVISION=	4
+PORTVERSION=	1.0.4
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org miscellaneous Ethiopic font
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES=		xorg-cat:font
 FONTNAME=	TTF
-PLIST_FILES=	"@fcfontsdir ${PREFIX}/share/fonts/OTF" \
-		"@comment ${PREFIX}/share/fonts/OTF/fonts.dir" \
-		"@comment ${PREFIX}/share/fonts/OTF/fonts.scale"
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
