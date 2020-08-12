@@ -79,10 +79,10 @@ GH_TUPLE=	\
 		spf13:jwalterweatherman:v1.0.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		spf13:viper:v1.4.0:spf13_viper/vendor/github.com/spf13/viper \
-		storj:common:e5030388ee6a:storj_common/vendor/storj.io/common \
-		storj:drpc:v0.0.13:storj_drpc/vendor/storj.io/drpc \
+		storj:common:4c1ddac6fa63:storj_common/vendor/storj.io/common \
+		storj:drpc:v0.0.14:storj_drpc/vendor/storj.io/drpc \
 		storj:monkit-jaeger:80778fc3f91b:storj_monkit_jaeger/vendor/storj.io/monkit-jaeger \
-		storj:private:72be711b6edd:storj_private/vendor/storj.io/private \
+		storj:private:46794d335b51:storj_private/vendor/storj.io/private \
 		storj:uplink:c66d9eb21232:storj_uplink/vendor/storj.io/uplink \
 		stretchr:testify:v1.5.1:stretchr_testify/vendor/github.com/stretchr/testify \
 		stripe:stripe-go:v70.15.0:stripe_stripe_go/vendor/github.com/stripe/stripe-go \
