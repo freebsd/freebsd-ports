@@ -5,6 +5,29 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20200811:
+  AFFECTS: users of *-emacs26-* packages
+  AUTHOR: jrm@FreeBSD.org
+
+  With the release of Emacs version 27.1, the major version of editors/emacs has
+  changed from 26 to 27.  This means the names of some dependent packages have
+  also changed, so simply running `pkg upgrade` will not upgrade foo-emacs26-x
+  to foo-emacs27-x.  To update these packages, run these commands with superuser
+  privileges.
+
+  Binary package users:
+
+    # sh
+    # for i in $(pkg query -g %n '*-emacs26*'); do \
+        nn=$(echo "$i" | sed -e 's/emacs26/emacs27/'); \
+        pkg set -yn "$i":"$nn"; \
+      done;
+    # pkg upgrade
+
+  portmaster users:
+
+    # portmaster -r emacs
+
 20200803:
   AFFECTS: users of lang/perl5*
   AUTHOR: mat@FreeBSD.org

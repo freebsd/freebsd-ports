@@ -2,15 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	emacs
-DISTVERSION=	26.3
-PORTREVISION=	6
+DISTVERSION=	27.1
 PORTEPOCH=	3
 CATEGORIES=	editors
 MASTER_SITES=	GNU
 
 .if ${FLAVOR:U} == canna
-PATCH_SITES=		https://www.gentei.org/~yuuji/software/emacs26canna/
-PATCHFILES=		emacs26.3-canna-20190828.diff.gz
+PATCH_SITES=		https://www.gentei.org/~yuuji/software/emacs27canna/
+PATCHFILES=		emacs27.0.90-canna-20200308.diff.gz
 PATCH_DIST_STRIP=	-p1
 .endif
 
@@ -24,6 +23,8 @@ COMMENT+=	(Canna Japanese input flavor)
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+LIB_DEPENDS=	libgmp.so:math/gmp
 
 FLAVORS=			full canna nox
 canna_PKGNAMESUFFIX=		-canna
@@ -44,8 +45,7 @@ USE_XORG=	ice sm x11 xcb xext xfixes xinerama xmu xrandr xt
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--disable-build-details \
-			--localstatedir=/var \
-			--without-gpm
+			--localstatedir=/var
 .if ${FLAVOR:U} == canna
 CONFIGURE_ARGS+=	--with-canna
 .endif
@@ -81,13 +81,13 @@ CONFLICTS_INSTALL=	emacs-devel emacs-devel-nox
 SUB_FILES=	sources.el
 SUB_LIST=	EMACS_VER=${DISTVERSION}
 
-INFO=		ada-mode auth autotype bovine calc ccmode cl dbus dired-x \
-		ebrowse ede ediff edt efaq eieio eintr elisp emacs emacs-gnutls \
-		emacs-mime epa erc ert eshell eudc eww flymake forms gnus \
-		htmlfontify idlwave ido info mairix-el message mh-e newsticker \
-		nxml-mode octave-mode org pcl-cvs pgg rcirc reftex remember \
-		sasl sc semantic ses sieve smtpmail speedbar srecode todo-mode \
-		tramp url vhdl-mode vip viper widget wisent woman
+INFO=		auth autotype bovine calc ccmode cl dbus dired-x ebrowse ede \
+		ediff edt efaq eieio eintr elisp emacs emacs-gnutls emacs-mime \
+		epa erc ert eshell eudc eww flymake forms gnus htmlfontify \
+		idlwave ido info mairix-el message mh-e newsticker nxml-mode \
+		octave-mode org pcl-cvs pgg rcirc reftex remember sasl sc \
+		semantic ses sieve smtpmail speedbar srecode todo-mode tramp \
+		url vhdl-mode vip viper widget wisent woman
 INFO_PATH=	${DATADIR_REL}/info
 .if ${FLAVOR:U} == canna
 PLIST_FILES+=	${DATADIR}/${DISTVERSION}/lisp/canna.el.gz \
@@ -99,12 +99,12 @@ PLIST_SUB=	EMACS_VER=${DISTVERSION} \
 		GNU_HOST=${CONFIGURE_TARGET}
 
 OPTIONS_DEFINE=			ACL DBUS FCITXPATCH GCONF GNUTLS GSETTINGS \
-				LCMS2 M17N MAILUTILS MODULES OTF SCROLLBARS \
-				SOURCES THREADS XFT XIM XML XWIDGETS
-OPTIONS_DEFAULT=		ACL DBUS GCONF GIF GNUTLS GSETTINGS GTK3 JPEG \
-				KQUEUE LCMS2 M17N MAGICK MAILUTILS MODULES OSS \
-				OTF PNG SCROLLBARS SOURCES SVG THREADS TIFF XFT \
-				XIM XML XPM
+				HARFBUZZ JSON LCMS2 M17N MAILUTILS MODULES OTF \
+				SCROLLBARS SOURCES THREADS XFT XIM XML XWIDGETS
+OPTIONS_DEFAULT=		ACL CAIRO DBUS GIF GNUTLS GSETTINGS GTK3 \
+				HARFBUZZ JPEG JSON KQUEUE LCMS2 M17N MAILUTILS \
+				MODULES OSS OTF PNG SCROLLBARS SOURCES SVG \
+				THREADS TIFF XFT XIM XML XPM
 OPTIONS_GROUP=			GRAPHICS
 OPTIONS_GROUP_GRAPHICS=		CAIRO GIF JPEG MAGICK PNG SVG TIFF XPM
 OPTIONS_RADIO=			FILENOTIFY SOUND X11TOOLKIT
@@ -113,22 +113,24 @@ OPTIONS_RADIO_SOUND=		ALSA OSS
 OPTIONS_RADIO_X11TOOLKIT=	GTK2 GTK3 MOTIF XAW XAW3D
 .if ${FLAVOR:U} == nox
 OPTIONS_EXCLUDE=		ALSA CAIRO DBUS FCITXPATCH GCONF GFILE GIF \
-				GSETTINGS GTK2 GTK3 JPEG LCMS2 M17N MAGICK \
-				MOTIF OSS OTF PNG SCROLLBARS SVG TIFF XAW XAW3D \
-				XFT XIM XPM XWIDGETS
+				GSETTINGS GTK2 GTK3 HARFBUZZ JPEG LCMS2 M17N \
+				MAGICK MOTIF OSS OTF PNG SCROLLBARS SVG TIFF \
+				XAW XAW3D XFT XIM XPM XWIDGETS
 .endif
 OPTIONS_SUB=			YES
 
 ACL_DESC=		Access control list support
-CAIRO_DESC=		Experimental Cairo library support [implies PNG, XFT]
+CAIRO_DESC=		Cairo graphics library support [implies PNG, XFT]
 FCITXPATCH_DESC=	Patch to pass C-Space to Fcitx input method
 FILENOTIFY_DESC=	File notification support
 GFILE_DESC=		File notification via gfile
 GRAPHICS_DESC=		Graphics support
 GSETTINGS_DESC=		GSettings API for application settings
+HARFBUZZ_DESC=		HarfBuzz for text shaping
 KQUEUE_DESC=		File notification via kqueue
 #LTO_DESC=		Enable link-time optimization
 M17N_DESC=		M17N support for text-shaping [implies XFT]
+MAGICK_DESC=		ImageMagick image processing support (deprecated)
 MAILUTILS_DESC=		Mail framework via GNU Mailutils
 MODULES_DESC=		Dynamic modules support
 OTF_DESC=		Opentype fonts [implies XFT]
@@ -166,8 +168,12 @@ GTK2_USE=			GNOME=cairo,gtk20
 GTK2_CONFIGURE_ON=		--with-x-toolkit=gtk2
 GTK3_USE=			GNOME=cairo,gtk30
 GTK3_CONFIGURE_ON=		--with-x-toolkit=gtk3
+HARFBUZZ_LIB_DEPENDS=		libharfbuzz.so:print/harfbuzz
+HARFBUZZ_CONFIGURE_WITH=	harfbuzz
 JPEG_USES=			jpeg
 JPEG_CONFIGURE_WITH=		jpeg
+JSON_LIB_DEPENDS=		libjansson.so:devel/jansson
+JSON_CONFIGURE_WITH=		json
 KQUEUE_CONFIGURE_ON=		--with-file-notification=kqueue
 LCMS2_LIB_DEPENDS=		liblcms2.so:graphics/lcms2
 LCMS2_CONFIGURE_WITH=		lcms2
@@ -223,11 +229,6 @@ XWIDGETS_USE=			XORG=xcomposite
 XWIDGETS_CONFIGURE_WITH=	xwidgets
 
 .include <bsd.port.options.mk>
-
-# has graphics/ImageMagick been compiled with OPENMP?
-.if ${PORT_OPTIONS:MMAGICK} && ${:!${GREP} -sc " \-fopenmp " ${LOCALBASE}/libdata/pkgconfig/ImageMagick.pc || true!} == "1"
-USES+=		compiler:openmp
-.endif
 
 .if ${ARCH} == powerpc64
 USE_GCC=	any

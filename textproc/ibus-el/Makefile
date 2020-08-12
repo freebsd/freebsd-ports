@@ -2,7 +2,7 @@
 
 PORTNAME=	ibus-el
 PORTVERSION=	0.3.2
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	textproc elisp
 MASTER_SITES=	http://www11.atwiki.jp/s-irie/pub/emacs/ibus/
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}

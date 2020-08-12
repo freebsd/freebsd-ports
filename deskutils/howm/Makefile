@@ -2,7 +2,7 @@
 
 PORTNAME=	howm
 PORTVERSION=	1.4.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils
 MASTER_SITES=	http://howm.sourceforge.jp/a/
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
@@ -12,11 +12,6 @@ COMMENT=	Write fragmentarily and read collectively
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-.if ${FLAVOR:U} != devel && ${FLAVOR:U} != devel_nox
-# http://pkg.awarnach.mathstat.dal.ca/data/11i386-default/2018-05-30_07h36m11s/logs/errors/howm-emacs26-1.4.3_3.log
-BROKEN=		fails to build
-.endif
 
 USES=		emacs
 
