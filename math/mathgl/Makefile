@@ -12,9 +12,6 @@ COMMENT=	Library for high-quality scientific data visualization
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-DEPRECATED=	Uses deprecated version of python
-EXPIRATION_DATE=	2020-08-15
-
 LIB_DEPENDS=	libgif.so:graphics/giflib \
 		libgsl.so:math/gsl \
 		libhdf5.so:science/hdf5 \
@@ -23,8 +20,7 @@ LIB_DEPENDS=	libgif.so:graphics/giflib \
 		libpng.so:graphics/png \
 		libsz.so:science/szip
 
-USES=		cmake compiler:c++11-lang gettext-runtime gl jpeg python:2.7 \
-		xorg
+USES=		cmake compiler:c++11-lang gettext-runtime gl jpeg xorg
 USE_GL=		gl glu glut
 USE_XORG=	xi xmu
 USE_LDCONFIG=	yes
@@ -54,6 +50,8 @@ PYTHON_CMAKE_BOOL=	enable-python
 PYTHON_BUILD_DEPENDS=	swig:devel/swig \
 			${PYNUMPY}
 PYTHON_RUN_DEPENDS=	${PYNUMPY}
+PYTHON_BROKEN=		Python option needs to be fixed: lgpl needs to be enabled for it
+
 MPI_CMAKE_BOOL=		enable-mpi
 MPI_LIB_DEPENDS=	libmpi.so:net/openmpi
 
