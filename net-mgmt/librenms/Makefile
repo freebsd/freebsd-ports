@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	librenms
-PORTVERSION=	1.65.1
-PORTREVISION=	3
+PORTVERSION=	1.66
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	LOCAL/dvl:vendor
@@ -19,7 +18,7 @@ USES=		shebangfix python
 # RELEASE_TIMESTAMP is used for a patch inside the vendor code
 # it represents the release date via: git show --pretty='%H|%ct' -s 1.42.01
 # It sits here so you remember to update it with each release
-RELEASE_TIMESTAMP=	1594410976
+RELEASE_TIMESTAMP=	1596087334
 
 # perhaps we also need python-memcache python-mysqldb
 RUN_DEPENDS+=	rrdtool:databases/rrdtool \
@@ -79,19 +78,6 @@ SHEBANG_FILES=	scripts/auth_test.php \
 		scripts/Migration/XML_Conversion/mkdir.sh \
 		scripts/removespikes.pl scripts/removespikes.php scripts/watchmaillog/watchmaillog.pl \
 		poller.php poller-wrapper.py \
-		../${PORTNAME}-vendor-${PORTVERSION}/ezyang/htmlpurifier/maintenance/generate-includes.php \
-		../${PORTNAME}-vendor-${PORTVERSION}/ezyang/htmlpurifier/maintenance/flush-definition-cache.php \
-		../${PORTNAME}-vendor-${PORTVERSION}/ezyang/htmlpurifier/maintenance/old-remove-require-once.php \
-		../${PORTNAME}-vendor-${PORTVERSION}/ezyang/htmlpurifier/maintenance/config-scanner.php \
-		../${PORTNAME}-vendor-${PORTVERSION}/ezyang/htmlpurifier/maintenance/add-vimline.php \
-		../${PORTNAME}-vendor-${PORTVERSION}/ezyang/htmlpurifier/maintenance/remove-trailing-whitespace.php \
-		../${PORTNAME}-vendor-${PORTVERSION}/ezyang/htmlpurifier/maintenance/merge-library.php \
-		../${PORTNAME}-vendor-${PORTVERSION}/ezyang/htmlpurifier/maintenance/old-extract-schema.php \
-		../${PORTNAME}-vendor-${PORTVERSION}/ezyang/htmlpurifier/maintenance/rename-config.php \
-		../${PORTNAME}-vendor-${PORTVERSION}/ezyang/htmlpurifier/maintenance/generate-standalone.php \
-		../${PORTNAME}-vendor-${PORTVERSION}/ezyang/htmlpurifier/maintenance/generate-schema-cache.php \
-		../${PORTNAME}-vendor-${PORTVERSION}/ezyang/htmlpurifier/maintenance/old-remove-schema-def.php \
-		../${PORTNAME}-vendor-${PORTVERSION}/ezyang/htmlpurifier/maintenance/generate-entity-file.php \
 		../${PORTNAME}-vendor-${PORTVERSION}/swiftmailer/swiftmailer/lib/swiftmailer_generate_mimes_config.php \
 		../${PORTNAME}-vendor-${PORTVERSION}/tecnickcom/tcpdf/tools/tcpdf_addfont.php
 
@@ -150,6 +136,17 @@ do-install:
 .endfor
 	${MKDIR} ${STAGEDIR}/${WWWDIR}/vendor
 	(cd ${WRKDIR}/${PORTNAME}-vendor-${PORTVERSION} && ${COPYTREE_SHARE} . ${STAGEDIR}/${WWWDIR}/vendor)
+	
+	# As of 1.66_1, the package installs bootstrap/cache
+	# This was previously left to the code to populate.
+	# That causese problems when the code doesn't do that update.
+	${MV} ${STAGEDIR}/${WWWDIR}/vendor/bootstrap-cache/* ${STAGEDIR}/${WWWDIR}/bootstrap/cache/
+	${RM} -rf ${STAGEDIR}/${WWWDIR}/vendor/bootstrap-cache
+
+	# similarly with html/js/lang
+	${MV} ${STAGEDIR}/${WWWDIR}/vendor/html-js-lang/* ${STAGEDIR}/${WWWDIR}/html/js/lang/
+	${RM} -rf ${STAGEDIR}/${WWWDIR}/vendor/html-js-lang
+
 # Make daily.sh executable
 #	${CHMOD} 0755 ${STAGEDIR}/${WWWDIR}/daily.sh
 # lnms does not fall into any other +x category
