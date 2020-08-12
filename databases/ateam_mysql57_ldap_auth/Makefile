@@ -15,7 +15,7 @@ IGNORE_WITH_MYSQL=	56 80 101m 102m 103m
 
 LIB_DEPENDS=	libconfig.so:devel/libconfig
 
-USES=		compiler:c++11-lang gmake mysql:client,server
+USES=		compiler:c++11-lang gmake mysql:57,client,server
 USE_OPENLDAP=	yes
 
 USE_GITHUB=	yes
