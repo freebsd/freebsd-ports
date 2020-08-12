@@ -1,14 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	afew
-DISTVERSION=	1.3.0
-PORTREVISION=	3
+DISTVERSION=	3.0.0
 CATEGORIES=	mail python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-
-PATCH_SITES=	https://github.com/afewmail/${PORTNAME}/commit/
-PATCHFILES=	1d290ab4d631fdcec60b79fd3a4f873e774adac2.patch:-p1 # fix of the documentation build
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Initial tagging script for Notmuch mail
@@ -22,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}chardet>0:textproc/py-chardet@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}notmuch>0:mail/py-notmuch@${PY_FLAVOR} \
 		notmuch:mail/notmuch
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils concurrent autoplist
 NO_ARCH=	yes
 
@@ -36,16 +32,16 @@ MANPAGES_PLIST_FILES=	man/man1/afew.1.gz
 PORTDOCS=	*
 
 post-build-MANPAGES-on:
-	@${MAKE_CMD} -C ${WRKSRC}/docs SPHINXBUILD=sphinx-build-${PYTHON_VER} man
+	cd ${WRKSRC} && ${PYTHON_CMD} setup.py build_sphinx -b man
 
 post-install-MANPAGES-on:
-	${INSTALL_MAN} ${WRKSRC}/docs/build/man/afew.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/build/sphinx/man/afew.1 ${STAGEDIR}${PREFIX}/man/man1
 
 post-build-DOCS-on:
-	@${MAKE_CMD} -C ${WRKSRC}/docs SPHINXBUILD=sphinx-build-${PYTHON_VER} html
+	cd ${WRKSRC} && ${PYTHON_CMD} setup.py build_sphinx -b html
 
 post-install-DOCS-on:
-	cd ${WRKSRC}/docs/build/html && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/build/sphinx/html && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 	@${RM} ${STAGEDIR}${DOCSDIR}/.buildinfo
 
 .include <bsd.port.mk>
