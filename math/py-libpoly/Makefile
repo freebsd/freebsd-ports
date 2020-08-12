@@ -12,9 +12,6 @@ COMMENT=	Python binding for libpoly
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
-DEPRECATED=	Uses deprecated version of python
-EXPIRATION_DATE=	2020-08-15
-
 LIB_DEPENDS=	libpoly.so:math/libpoly
 
 USES=		cmake localbase:ldflags python
@@ -28,6 +25,9 @@ LDFLAGS+=	-lpoly
 
 BUILD_WRKSRC=	${WRKSRC}/python
 INSTALL_WRKSRC=	${WRKSRC}/python
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/polypy.so
 
 do-build:
 	@cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYDISTUTILS_SETUP} ${PYDISTUTILS_BUILD_TARGET} ${PYDISTUTILS_BUILDARGS}
