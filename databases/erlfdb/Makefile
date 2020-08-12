@@ -18,7 +18,7 @@ GH_ACCOUNT=	apache
 GH_PROJECT=	couchdb-${PORTNAME}
 
 post-install:
-	@${FIND} -E ${STAGEDIR} -type f  -name *.so \
+	@${FIND} ${STAGEDIR} -type f  -name *.so \
 		-exec ${STRIP_CMD} {} +
 
 .include <bsd.port.mk>

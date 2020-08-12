@@ -55,7 +55,7 @@ post-patch:
 		-e 's|-llua5.1|-llua-5.1|g' \
 		${WRKSRC}/mk/linux/configure.ac \
 		${WRKSRC}/mk/linux/mk/autoconf/*
-	@${FIND} -E ${WRKDIR} -type f -name '*.bak' -o -name '*.orig' | \
+	@${FIND} ${WRKDIR} -type f -name '*.bak' -o -name '*.orig' | \
 		${XARGS} ${RM}
 
 pre-configure:

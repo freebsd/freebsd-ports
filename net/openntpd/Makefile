@@ -53,7 +53,7 @@ LDFLAGS+=		-L${WRKDIR}/libressl/lib
 # are owned by root, which creates problems of its own.
 pre-configure:
 	@cd `${MAKE} -V STAGEDIR -C ${PORTSDIR}/security/libressl`${PREFIX} \
-	    && ${FIND} -E . ! -name *.so\* | ${CPIO} -dump ${WRKDIR}/libressl >/dev/null 2>&1
+	    && ${FIND} . ! -name *.so\* | ${CPIO} -dump ${WRKDIR}/libressl >/dev/null 2>&1
 .endif # SSL_DEFAULT
 
 .include <bsd.port.post.mk>

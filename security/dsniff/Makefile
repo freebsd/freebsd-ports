@@ -50,7 +50,7 @@ CONFIGURE_ARGS+=	--with-openssl=${WRKDIR}/libressl
 # are owned by root, which creates problems of its own.
 pre-configure:
 	@cd `${MAKE} -V STAGEDIR -C ${PORTSDIR}/security/libressl`${PREFIX} \
-	    && ${FIND} -E . ! -name *.so\* | ${CPIO} -dump ${WRKDIR}/libressl >/dev/null 2>&1
+	    && ${FIND} . ! -name *.so\* | ${CPIO} -dump ${WRKDIR}/libressl >/dev/null 2>&1
 .else
 BROKEN_SSL=	openssl
 BROKEN_SSL_REASON_openssl=	incomplete definition of type 'struct rsa_st'
