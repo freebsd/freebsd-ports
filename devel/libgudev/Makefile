@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	libgudev
-PORTVERSION=	230
-PORTREVISION=	1
+PORTVERSION=	233
 CATEGORIES=	devel
-MASTER_SITES=	https://download.gnome.org/sources/libgudev/${PORTVERSION}/
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=sources/libgudev/${PORTVERSION}
 
 MAINTAINER=	x11@FreeBSD.org
-COMMENT=	GObject bindings for libudev.
+COMMENT=	GObject bindings for libudev
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -20,5 +20,6 @@ USE_GNOME=	glib20 introspection:build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
+CONFIGURE_ARGS=	--disable-umockdev
 
 .include <bsd.port.mk>
