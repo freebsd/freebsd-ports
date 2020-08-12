@@ -1,24 +1,22 @@
---- src/rdm.pro.orig	2018-11-27 08:26:54 UTC
+--- src/rdm.pro.orig	2020-08-10 20:02:36 UTC
 +++ src/rdm.pro
-@@ -25,8 +25,6 @@ SOURCES += \
-     $$PWD/modules/connections-tree/items/*.cpp \
-     $$PWD/modules/console/*.cpp \
-     $$PWD/modules/value-editor/*.cpp \
--    $$PWD/modules/crashhandler/*.cpp \
--    $$PWD/modules/updater/*.cpp \
-     $$PWD/modules/bulk-operations/*.cpp \
-     $$PWD/modules/common/*.cpp \
-     $$PWD/modules/server-stats/*.cpp \
-@@ -41,8 +39,6 @@ HEADERS  += \
-     $$PWD/modules/connections-tree/items/*.h \
-     $$PWD/modules/console/*.h \
-     $$PWD/modules/value-editor/*.h \
--    $$PWD/modules/crashhandler/*.h \
--    $$PWD/modules/updater/*.h \
-     $$PWD/modules/*.h \
-     $$PWD/modules/bulk-operations/*.h \
-     $$PWD/modules/common/*.h \
-@@ -96,8 +92,8 @@ unix:!macx { # ubuntu & debian
+@@ -30,7 +30,6 @@ SOURCES += \
+     $$files($$PWD/modules/console/*.cpp) \
+     $$files($$PWD/modules/value-editor/*model.cpp) \
+     $$files($$PWD/modules/value-editor/embedded*.cpp) \
+-    $$files($$PWD/modules/updater/*.cpp) \
+     $$files($$PWD/modules/bulk-operations/*.cpp) \
+     $$files($$PWD/modules/bulk-operations/operations/*.cpp) \
+     $$files($$PWD/modules/common/*.cpp) \
+@@ -50,7 +49,6 @@ HEADERS  += \
+     $$files($$PWD/modules/value-editor/*factory.h) \
+     $$files($$PWD/modules/value-editor/*model.h) \
+     $$files($$PWD/modules/value-editor/embedded*.h) \
+-    $$files($$PWD/modules/updater/*.h) \
+     $$files($$PWD/modules/*.h) \
+     $$files($$PWD/modules/bulk-operations/*.h) \
+     $$files($$PWD/modules/bulk-operations/operations/*.h) \
+@@ -102,8 +100,8 @@ unix:!macx { # ubuntu & debian
  
      QMAKE_CXXFLAGS += -Wno-sign-compare    
  

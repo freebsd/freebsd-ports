@@ -1,36 +1,25 @@
---- src/main.cpp.orig	2018-09-22 00:04:41 UTC
+--- src/main.cpp.orig	2020-08-10 20:08:12 UTC
 +++ src/main.cpp
-@@ -5,9 +5,7 @@
- #include "app/app.h"
- #include "modules/crashhandler/crashhandler.h"
+@@ -13,9 +13,7 @@
+ #include "crashpad/handler.h"
+ #endif
  
 -#ifdef LINUX_SIGNALS
  #include <sigwatch.h>
 -#endif
  
- int main(int argc, char *argv[])
- {           
-@@ -15,23 +13,14 @@ int main(int argc, char *argv[])
-     QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
- #endif
+ #include "app/app.h"
  
--    #ifndef QT_DEBUG
--    QFileInfo appPath(QString::fromLocal8Bit(argv[0]));
--    QString appDir(appPath.absoluteDir().path());
--    QString crashReporterPath = QString("%1/crashreporter").arg(appDir.isEmpty() ? "." : appDir);
--    CrashHandler::instance()->Init(QDir::homePath(), appPath.absoluteFilePath(), crashReporterPath);
--    #endif
--
+@@ -50,12 +48,10 @@ int main(int argc, char *argv[])
+ 
      Application a(argc, argv);
-     a.initModels();
-     a.initQml();
  
--    #ifdef LINUX_SIGNALS
+-#ifdef LINUX_SIGNALS
      UnixSignalWatcher sigwatch;
      sigwatch.watchForSignal(SIGINT);
      sigwatch.watchForSignal(SIGTERM);
      QObject::connect(&sigwatch, SIGNAL(unixSignal(int)), &a, SLOT(quit()));
--    #endif
- 
-     return a.exec();
- }
+-#endif
+     a.initModels();
+     a.initQml();
+     returnCode = a.exec();

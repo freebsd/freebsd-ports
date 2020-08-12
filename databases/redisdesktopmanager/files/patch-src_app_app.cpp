@@ -1,14 +1,16 @@
---- src/app/app.cpp.orig	2018-11-27 08:26:54 UTC
+--- src/app/app.cpp.orig	2020-08-10 20:06:43 UTC
 +++ src/app/app.cpp
-@@ -37,7 +37,6 @@ Application::Application(int& argc, char** argv)
+@@ -43,9 +43,6 @@ Application::Application(int& argc, char** argv)
    processCmdArgs();
    initAppFonts();
    initRedisClient();
+-#ifndef RDM_APPSTORE
 -  initUpdater();
+-#endif
    installTranslator();
+   initPython();
  }
- 
-@@ -203,9 +202,6 @@ void Application::initQml() {
+@@ -254,9 +251,6 @@ void Application::initQml() {
  }
  
  void Application::initUpdater() {
@@ -17,4 +19,4 @@
 -          SLOT(OnNewUpdateAvailable(QString&)));
  }
  
- void Application::installTranslator() {
+ void Application::initPython() {
