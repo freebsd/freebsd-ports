@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	transaction
-PORTVERSION=	1.6.0
+PORTVERSION=	3.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	cs@FreeBSD.org
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Transaction management for Python
 
 LICENSE=	ZPL21
@@ -15,7 +15,7 @@ LICENSE=	ZPL21
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.interface>=3.5.2:devel/py-zope.interface@${PY_FLAVOR}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>
