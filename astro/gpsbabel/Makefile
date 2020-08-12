@@ -32,8 +32,11 @@ GUI_USE=	GL=gl \
 GUI_ALL_TARGET=	gui
 GUI_VARS=	MAKE_JOBS_UNSAFE=yes
 
+CONFIGURE_ENV=	CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
+MAKE_ENV=	CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
+
 do-build:
-	(cd ${WRKSRC}; ${CONFIGURE_CMD} --with-zlib-system; ${GMAKE})
+	(cd ${WRKSRC}; ${CONFIGURE_ENV} ${CONFIGURE_CMD} --with-zlib-system; ${MAKE_ENV} ${GMAKE})
 do-build-GUI-on:
 	(cd ${WRKSRC}/gui; ${QMAKE} USE_GUI=qt5; ${LRELEASE} *.ts; ${GMAKE})
 
