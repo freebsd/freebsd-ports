@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	notmuch
-PORTVERSION=	0.29.1
-PORTREVISION?=	1
+PORTVERSION=	0.30
+PORTREVISION?=	0
 CATEGORIES?=	mail
 MASTER_SITES=	https://notmuchmail.org/releases/
 
@@ -28,7 +28,7 @@ TEST_DEPENDS=	bash:shells/bash \
 		gwc:sysutils/coreutils \
 		${LOCALBASE}/bin/gdb:devel/gdb
 
-USES=		compiler:c++11-lang gmake gnome pkgconfig python:build,test
+USES=		gmake gnome pkgconfig python:3.5+,build,test
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 .endif

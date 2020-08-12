@@ -1,11 +1,11 @@
---- contrib/notmuch-mutt/Makefile.orig	2018-10-13 17:57:20 UTC
+--- contrib/notmuch-mutt/Makefile.orig	2020-07-11 01:25:04 UTC
 +++ contrib/notmuch-mutt/Makefile
 @@ -18,8 +18,10 @@ install: all
- 	mkdir -p $(DESTDIR)$(prefix)/bin
+ 	mkdir -p $(DESTDIR)$(prefix)/bin $(DESTDIR)$(mandir)/man1 $(DESTDIR)$(sysconfdir)/Muttrc.d
  	sed "1s|^#!.*|#! $(PERL_ABSOLUTE)|" < $(NAME) > $(DESTDIR)$(prefix)/bin/$(NAME)
  	chmod 755 $(DESTDIR)$(prefix)/bin/$(NAME)
--	install -D -m 644 $(NAME).1 $(DESTDIR)$(mandir)/man1/$(NAME).1
--	install -D -m 644 $(NAME).rc $(DESTDIR)$(sysconfdir)/Muttrc.d/$(NAME).rc
+-	install -m 644 $(NAME).1 $(DESTDIR)$(mandir)/man1/
+-	install -m 644 $(NAME).rc $(DESTDIR)$(sysconfdir)/Muttrc.d/
 +	mkdir -p $(DESTDIR)$(mandir)/man1
 +	install -m 644 $(NAME).1 $(DESTDIR)$(mandir)/man1/$(NAME).1
 +	mkdir -p $(DESTDIR)$(sysconfdir)/Muttrc.d
