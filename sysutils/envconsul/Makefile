@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	envconsul
-PORTVERSION=	0.9.3
+PORTVERSION=	0.10.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -54,7 +54,7 @@ PLIST_FILES=	bin/envconsul
 OPTIONS_DEFINE=	DOCS
 
 PORTDOCS=	README.md
-GHTAG=		fd1ee3c7
+GHTAG=		1835ce90
 
 GO_BUILDFLAGS=	-ldflags='\
 		-s -w \
