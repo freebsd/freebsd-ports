@@ -4,4 +4,4 @@ It allows python applications to use the Opus audio codec to encode
 and decode audio, usually in order to reduce the network bandwidth
 that is used by the application.
 
-WWW: https://github.com/onbeep/opuslib
+WWW: https://github.com/orion-labs/opuslib
