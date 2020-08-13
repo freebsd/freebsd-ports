@@ -1,14 +1,11 @@
 # Created by: Jin-Sih, Lin <linpct@gmail.com>
 # $FreeBSD$
 
-# sysutils/watchman is broken due to missing F_GETPATH feature, see Bug#247343
-
 PORTNAME=	watchman
-PORTVERSION=	4.5.0
-PORTREVISION=	1
+PORTVERSION=	4.5.0 # frozen at 4.5.0: the current version 2020.08.10.00 is broken because F_GETPATH isn't currently available on FreeBSD
+PORTEPOCH=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
-PKGNAMESUFFIX=	450
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	File alteration monitoring service
@@ -41,8 +38,6 @@ PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
 PCRE_CONFIGURE_WITH=	pcre
 
 CPPFLAGS+=	-Wno-error
-
-CONFLICTS_INSTALL=	watchman
 
 post-patch:
 # https://www.gnu.org/prep/standards/html_node/Directory-Variables.html

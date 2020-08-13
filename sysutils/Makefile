@@ -1445,7 +1445,7 @@
     SUBDIR += vzvol
     SUBDIR += wait_on
     SUBDIR += watchfolder
-    SUBDIR += watchman450
+    SUBDIR += watchman
     SUBDIR += watchmen
     SUBDIR += webjob
     SUBDIR += webmin
