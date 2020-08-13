@@ -1,5 +1,5 @@
---- src/os/darwin/darwin_sigar.c.orig	2014-11-17 13:46:20.000000000 -0800
-+++ src/os/darwin/darwin_sigar.c	2017-04-20 15:52:24.386676000 -0700
+--- src/os/darwin/darwin_sigar.c.orig	2014-11-17 21:46:20 UTC
++++ src/os/darwin/darwin_sigar.c
 @@ -123,6 +123,69 @@
  #endif
  
@@ -70,7 +70,7 @@
  
  #define KI_FD   ki_fd
  #define KI_PID  ki_pid
-@@ -342,24 +405,21 @@
+@@ -342,24 +405,21 @@ static int sigar_vmstat(sigar_t *sigar, vm_statistics_
      }
  }
  #elif defined(__FreeBSD__)
@@ -79,15 +79,15 @@
  {
 -    int status;
 -    size_t size = sizeof(unsigned int);
--
++    size_t size;
+ 
 -    status = kread(sigar, vmstat, sizeof(*vmstat),
 -                   sigar->koffsets[KOFFSET_VMMETER]);
 -
 -    if (status == SIGAR_OK) {
 -        return SIGAR_OK;
 -    }
-+    size_t size;
- 
+-
      SIGAR_ZERO(vmstat);
  
      /* derived from src/usr.bin/vmstat/vmstat.c */
@@ -104,7 +104,7 @@
  
      /* sys */
      GET_VM_STATS(sys, v_swtch, 0);
-@@ -399,9 +459,13 @@
+@@ -399,9 +459,13 @@ static int sigar_vmstat(sigar_t *sigar, struct vmmeter
      GET_VM_STATS(vm, v_active_count, 0);
      GET_VM_STATS(vm, v_inactive_target, 0);
      GET_VM_STATS(vm, v_inactive_count, 1);
@@ -118,7 +118,7 @@
      GET_VM_STATS(vm, v_pageout_free_min, 0);
      GET_VM_STATS(vm, v_interrupt_free_min, 0);
      GET_VM_STATS(vm, v_forks, 0);
-@@ -440,7 +504,7 @@
+@@ -440,7 +504,7 @@ int sigar_mem_get(sigar_t *sigar, sigar_mem_t *mem)
      unsigned long mem_total;
  #endif
  #if defined(__FreeBSD__)
@@ -127,7 +127,7 @@
  #elif defined(__OpenBSD__) || defined(__NetBSD__)
      struct uvmexp vmstat;
  #endif
-@@ -479,7 +543,11 @@
+@@ -479,7 +543,11 @@ int sigar_mem_get(sigar_t *sigar, sigar_mem_t *mem)
      kern *= sigar->pagesize;
  #elif defined(__FreeBSD__)
      if ((status = sigar_vmstat(sigar, &vmstat)) == SIGAR_OK) {
@@ -139,7 +139,7 @@
          kern *= sigar->pagesize;
          mem->free = vmstat.v_free_count;
          mem->free *= sigar->pagesize;
-@@ -689,7 +757,7 @@
+@@ -689,7 +757,7 @@ int sigar_swap_get(sigar_t *sigar, sigar_swap_t *swap)
      swap->page_out = vmstat.pageouts;
  #elif defined(__FreeBSD__)
      struct kvm_swap kswap[1];
@@ -148,7 +148,16 @@
  
      if (getswapinfo_sysctl(kswap, 1) != SIGAR_OK) {
          if (!sigar->kmem) {
-@@ -3055,8 +3123,13 @@
+@@ -1897,7 +1965,7 @@ int sigar_proc_fd_get(sigar_t *sigar, sigar_pid_t pid,
+     free(ofiles);
+ #else
+     /* seems the same as the above */
+-    procfd->total = filed.fd_lastfile;
++    procfd->total = filed.fd_nfiles;
+ #endif
+ 
+     return SIGAR_OK;
+@@ -3055,8 +3123,13 @@ static int net_connection_get(sigar_net_connection_wal
      int type, istcp = 0;
      char *buf;
      const char *mibvar;
@@ -162,7 +171,7 @@
      struct xinpgen *xig, *oxig;
      struct xsocket *so;
      size_t len;
-@@ -3094,6 +3167,15 @@
+@@ -3094,6 +3167,15 @@ static int net_connection_get(sigar_net_connection_wal
           xig->xig_len > sizeof(struct xinpgen);
           xig = (struct xinpgen *)((char *)xig + xig->xig_len))
      {
@@ -178,7 +187,7 @@
          if (istcp) {
              struct xtcpcb *cb = (struct xtcpcb *)xig;
              tp = &cb->xt_tp;
-@@ -3105,6 +3187,7 @@
+@@ -3105,6 +3187,7 @@ static int net_connection_get(sigar_net_connection_wal
              inp = &cb->xi_inp;
              so = &cb->xi_socket;
          }
