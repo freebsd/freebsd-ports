@@ -1,6 +1,6 @@
---- WPrefs.app/Menu.c.orig	2015-08-11 18:41:14 UTC
+--- WPrefs.app/Menu.c.orig	2020-04-05 13:41:15 UTC
 +++ WPrefs.app/Menu.c
-@@ -517,19 +517,19 @@ static void createPanel(_Panel * p)
+@@ -518,19 +518,19 @@ static void createPanel(_Panel * p)
  		data = putNewItem(panel, pad, DirectoryInfo, _("Themes"));
  		data->param.directory.command = "setstyle";
  		data->param.directory.directory =

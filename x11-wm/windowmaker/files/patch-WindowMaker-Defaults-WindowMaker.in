@@ -1,28 +1,12 @@
---- WindowMaker/Defaults/WindowMaker.in.orig	2015-08-11 18:41:14 UTC
+--- WindowMaker/Defaults/WindowMaker.in.orig	2020-04-05 13:41:16 UTC
 +++ WindowMaker/Defaults/WindowMaker.in
-@@ -13,12 +13,10 @@
-     "~/GNUstep/Library/Icons",
-     "#pkgdatadir#/Icons",
-     "#pkgdatadir#/Pixmaps",
--    "/usr/include/X11/pixmaps",
-     "~/GNUstep/Library/WindowMaker/Pixmaps",
-     "~/GNUstep/Library/WindowMaker/CachedPixmaps",
--    "/usr/share/icons",
--    "/usr/local/share/pixmaps",
--    "/usr/share/pixmaps"
-+    "#prefix#/share/icons",
-+    "#prefix#/share/pixmaps"
-   );
-   PixmapPath = (
-     "~/GNUstep/Library/WindowMaker/Pixmaps",
-@@ -26,9 +24,7 @@
-     "~/GNUstep/Library/WindowMaker/CachedPixmaps",
-     "#pkgdatadir#/Pixmaps",
-     "#pkgdatadir#/Backgrounds",
--    "/usr/include/X11/pixmaps",
--    "/usr/local/share/pixmaps",
--    "/usr/share/pixmaps"
-+    "#prefix#/share/pixmaps"
-   );
-   WindowTitleBalloons = YES;
-   IconSize = 64;
+@@ -37,7 +37,8 @@
+ 		"~/pixmaps",
+ 		"#pkgdatadir#/Icons",
+ 		"#pkgdatadir#/Pixmaps",
+-		"#pixmapdir#"
++		"#pixmapdir#",
++		"#prefix#/share/icons"
+ 	);
+ 	ColormapMode = auto;
+ 	AutoFocus = YES;

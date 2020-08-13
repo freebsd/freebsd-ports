@@ -1,6 +1,6 @@
---- Makefile.in.orig	2015-10-06 04:12:09 UTC
+--- Makefile.in.orig	2020-08-13 06:26:57 UTC
 +++ Makefile.in
-@@ -374,7 +374,7 @@ ACLOCAL_AMFLAGS = -I m4
+@@ -389,7 +389,7 @@ ACLOCAL_AMFLAGS = -I m4
  
  # Improve coverage in 'make distcheck' by checking that translations work
  AM_DISTCHECK_CONFIGURE_FLAGS = --enable-silent-rules LINGUAS='*'

@@ -1,6 +1,6 @@
---- util/Makefile.in.orig	2015-10-06 04:12:09 UTC
+--- util/Makefile.in.orig	2020-08-13 06:26:57 UTC
 +++ util/Makefile.in
-@@ -145,14 +145,13 @@ wdwrite_DEPENDENCIES = $(top_builddir)/W
+@@ -154,14 +154,13 @@ wdwrite_DEPENDENCIES = $(top_builddir)/WINGs/libWUtil.
  wmagnify_SOURCES = wmagnify.c
  wmagnify_OBJECTS = wmagnify.$(OBJEXT)
  wmagnify_DEPENDENCIES = $(top_builddir)/WINGs/libWINGs.la \
@@ -17,7 +17,7 @@
  	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
  	$(am__DEPENDENCIES_1)
  am_wmmenugen_OBJECTS = wmmenugen.$(OBJEXT) wmmenugen_misc.$(OBJEXT) \
-@@ -163,8 +162,7 @@ wmmenugen_DEPENDENCIES = $(top_builddir)
+@@ -172,8 +171,7 @@ wmmenugen_DEPENDENCIES = $(top_builddir)/WINGs/libWUti
  wmsetbg_SOURCES = wmsetbg.c
  wmsetbg_OBJECTS = wmsetbg.$(OBJEXT)
  wmsetbg_DEPENDENCIES = $(top_builddir)/WINGs/libWINGs.la \
@@ -27,7 +27,7 @@
  wxcopy_SOURCES = wxcopy.c
  wxcopy_OBJECTS = wxcopy.$(OBJEXT)
  wxcopy_DEPENDENCIES =
-@@ -477,7 +475,7 @@ AUTOMAKE_OPTIONS = 
+@@ -502,7 +500,7 @@ AUTOMAKE_OPTIONS = 
  bin_SCRIPTS = wmaker.inst wm-oldmenu2new wkdemenu.pl
  EXTRA_DIST = wmaker.inst.in bughint wm-oldmenu2new wkdemenu.pl
  AM_CPPFLAGS = \
@@ -36,7 +36,7 @@
  	@HEADER_SEARCH_PATH@ \
  	-DETCDIR=\"sysconfdir\" -DDATADIR=\"pkgdatadir\"
  
-@@ -500,13 +498,13 @@ geticonset_LDADD = $(top_builddir)/WINGs
+@@ -525,13 +523,13 @@ geticonset_LDADD = $(top_builddir)/WINGs/libWUtil.la $
  wmagnify_LDADD = \
  	$(top_builddir)/WINGs/libWINGs.la \
  	$(top_builddir)/WINGs/libWUtil.la \
@@ -52,7 +52,7 @@
  	@XLFLAGS@ @LIBXINERAMA@ @XLIBS@ @INTLIBS@
  
  wmgenmenu_LDADD = \
-@@ -523,7 +521,7 @@ wmmenugen_SOURCES = wmmenugen.c wmmenuge
+@@ -548,7 +546,7 @@ wmmenugen_SOURCES = wmmenugen.c wmmenugen.h wmmenugen_
  	wmmenugen_parse_xdg.c
  
  wmiv_LDADD = \

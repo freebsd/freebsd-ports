@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libwraster
-PORTVERSION=	0.95.8
-PORTREVISION=	1
+PORTVERSION=	0.95.9
 CATEGORIES=	x11-wm windowmaker
 MASTER_SITES=	http://windowmaker.org/pub/source/release/
 DISTNAME=	WindowMaker-${PORTVERSION}
@@ -17,7 +16,7 @@ LIB_DEPENDS=	libgif.so:graphics/giflib \
 		libjbig.so:graphics/jbigkit \
 		libtiff.so:graphics/tiff \
 		libwebp.so:graphics/webp \
-		libMagickWand-6.so:graphics/ImageMagick6
+		libMagickWand-7.so:graphics/ImageMagick7
 
 USES=		jpeg libtool localbase pathfix pkgconfig xorg
 USE_LDCONFIG=	yes
@@ -39,9 +38,5 @@ INSTALL_TARGET=	install-strip
 
 pre-build:
 	cd ${WRKSRC} && ${MAKE_CMD} config-paths.h
-
-post-install:
-	cd ${WRKSRC}/doc && ${INSTALL_MAN} \
-	    get-wraster-flags.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>

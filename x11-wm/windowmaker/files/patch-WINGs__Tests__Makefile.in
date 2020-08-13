@@ -1,6 +1,6 @@
---- WINGs/Tests/Makefile.in.orig	2015-10-06 04:12:10 UTC
+--- WINGs/Tests/Makefile.in.orig	2020-08-13 06:26:57 UTC
 +++ WINGs/Tests/Makefile.in
-@@ -109,7 +109,6 @@ am_testmywidget_OBJECTS = testmywidget.$
+@@ -118,7 +118,6 @@ am_testmywidget_OBJECTS = testmywidget.$(OBJEXT) mywid
  testmywidget_OBJECTS = $(am_testmywidget_OBJECTS)
  testmywidget_LDADD = $(LDADD)
  testmywidget_DEPENDENCIES = $(top_builddir)/WINGs/libWINGs.la \
@@ -8,7 +8,7 @@
  	$(top_builddir)/WINGs/libWUtil.la
  AM_V_lt = $(am__v_lt_@AM_V@)
  am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
-@@ -119,13 +118,11 @@ wmfile_SOURCES = wmfile.c
+@@ -128,13 +127,11 @@ wmfile_SOURCES = wmfile.c
  wmfile_OBJECTS = wmfile.$(OBJEXT)
  wmfile_LDADD = $(LDADD)
  wmfile_DEPENDENCIES = $(top_builddir)/WINGs/libWINGs.la \
@@ -22,7 +22,7 @@
  	$(top_builddir)/WINGs/libWUtil.la
  wtest_SOURCES = wtest.c
  wtest_OBJECTS = wtest.$(OBJEXT)
-@@ -355,14 +352,14 @@ top_srcdir = @top_srcdir@
+@@ -373,14 +370,14 @@ top_srcdir = @top_srcdir@
  wprefs_bindir = @wprefs_bindir@
  wprefs_datadir = @wprefs_datadir@
  AUTOMAKE_OPTIONS = 

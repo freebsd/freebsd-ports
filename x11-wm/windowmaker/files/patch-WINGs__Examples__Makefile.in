@@ -1,6 +1,6 @@
---- WINGs/Examples/Makefile.in.orig	2015-10-06 04:12:10 UTC
+--- WINGs/Examples/Makefile.in.orig	2020-08-13 06:26:57 UTC
 +++ WINGs/Examples/Makefile.in
-@@ -342,14 +342,14 @@ top_srcdir = @top_srcdir@
+@@ -359,14 +359,14 @@ top_srcdir = @top_srcdir@
  wprefs_bindir = @wprefs_bindir@
  wprefs_datadir = @wprefs_datadir@
  AUTOMAKE_OPTIONS = 

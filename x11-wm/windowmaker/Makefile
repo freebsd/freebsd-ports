@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	windowmaker
-PORTVERSION=	0.95.8
-PORTREVISION=	2
+PORTVERSION=	0.95.9
 CATEGORIES=	x11-wm windowmaker
 MASTER_SITES=	http://windowmaker.org/pub/source/release/
 DISTNAME=	WindowMaker-${PORTVERSION}
@@ -18,14 +17,15 @@ LIB_DEPENDS=	libgif.so:graphics/giflib \
 		libjbig.so:graphics/jbigkit \
 		libtiff.so:graphics/tiff \
 		libwebp.so:graphics/webp \
-		libMagickWand-6.so:graphics/ImageMagick6 \
-		libwraster.so.6:x11-wm/libwraster \
+		libMagickWand-7.so:graphics/ImageMagick7 \
+		libwraster.so:x11-wm/libwraster \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libexif.so:graphics/libexif
 RUN_DEPENDS=	${LOCALBASE}/share/WindowMaker/Themes/LeetWM.themed/style:graphics/wmicons
 
-USES=		jpeg libtool shebangfix pathfix perl5 pkgconfig xorg
+USES=		gnome jpeg libtool shebangfix pathfix perl5 pkgconfig xorg
+USE_GNOME=	pango
 USE_LDCONFIG=	yes
 USE_XORG=	x11 xext xft xinerama xmu xpm
 SHEBANG_FILES=	util/wkdemenu.pl
@@ -38,6 +38,7 @@ CONFIGURE_ARGS=	--with-pixmapdir=${PREFIX}/include/X11/pixmaps \
 		--with-incs-from="-I${LOCALBASE}/include" \
 		--with-gnustepdir="${PREFIX}/GNUstep" \
 		--enable-modelock \
+		--enable-pango \
 		--enable-xinerama \
 		--enable-usermenu \
 		--enable-wmreplace \

@@ -1,6 +1,6 @@
---- WPrefs.app/Makefile.in.orig	2015-10-06 04:12:10 UTC
+--- WPrefs.app/Makefile.in.orig	2020-08-13 06:26:57 UTC
 +++ WPrefs.app/Makefile.in
-@@ -455,13 +455,14 @@ WPrefs_SOURCES = \
+@@ -481,13 +481,14 @@ WPrefs_SOURCES = \
  #	Themes.c
  AM_CFLAGS = 
  AM_CPPFLAGS = -DRESOURCE_PATH=\"$(wpdatadir)\" -DWMAKER_RESOURCE_PATH=\"$(pkgdatadir)\" \

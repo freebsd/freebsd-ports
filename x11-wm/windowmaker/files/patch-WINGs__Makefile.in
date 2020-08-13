@@ -1,8 +1,8 @@
---- WINGs/Makefile.in.orig	2015-10-06 04:12:10 UTC
+--- WINGs/Makefile.in.orig	2020-08-13 06:26:57 UTC
 +++ WINGs/Makefile.in
-@@ -135,8 +135,7 @@ am__uninstall_files_from_dir = { \
- am__installdirs = "$(DESTDIR)$(libdir)" "$(DESTDIR)$(bindir)" \
- 	"$(DESTDIR)$(pkgconfigdir)"
+@@ -141,8 +141,7 @@ am__uninstall_files_from_dir = { \
+   }
+ am__installdirs = "$(DESTDIR)$(libdir)" "$(DESTDIR)$(pkgconfigdir)"
  LTLIBRARIES = $(lib_LTLIBRARIES)
 -libWINGs_la_DEPENDENCIES = libWUtil.la \
 -	$(top_builddir)/wrlib/libwraster.la
@@ -10,9 +10,9 @@
  am_libWINGs_la_OBJECTS = configuration.lo dragcommon.lo \
  	dragdestination.lo dragsource.lo selection.lo wappresource.lo \
  	wballoon.lo wbox.lo wbrowser.lo wbutton.lo wcolor.lo \
-@@ -438,8 +437,8 @@ libWINGs_la_LDFLAGS = -version-info @WIN
+@@ -478,8 +477,8 @@ DIST_SUBDIRS = $(SUBDIRS) Tests Examples Extras
+ libWINGs_la_LDFLAGS = -version-info @WINGS_VERSION@
  libWUtil_la_LDFLAGS = -version-info @WUTIL_VERSION@
- dist_bin_SCRIPTS = get-wings-flags get-wutil-flags
  lib_LTLIBRARIES = libWUtil.la libWINGs.la
 -LDADD = libWUtil.la libWINGs.la $(top_builddir)/wrlib/libwraster.la @INTLIBS@
 -libWINGs_la_LIBADD = libWUtil.la $(top_builddir)/wrlib/libwraster.la @XLIBS@ @XFTLIBS@ @FCLIBS@ @LIBM@ @PANGOLIBS@
@@ -21,7 +21,7 @@
  libWUtil_la_LIBADD = @LIBBSD@
  EXTRA_DIST = BUGS make-rgb Examples Extras Tests
  
-@@ -513,7 +512,8 @@ libWUtil_la_SOURCES = \
+@@ -553,7 +552,8 @@ libWUtil_la_SOURCES = \
  
  AM_CFLAGS = 
  AM_CPPFLAGS = -DRESOURCE_PATH=\"$(datadir)/WINGs\" \

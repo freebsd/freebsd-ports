@@ -1,6 +1,6 @@
---- src/Makefile.in.orig	2015-10-06 04:12:09 UTC
+--- src/Makefile.in.orig	2020-08-13 06:26:57 UTC
 +++ src/Makefile.in
-@@ -164,8 +164,7 @@ am_wmaker_OBJECTS = actions.$(OBJEXT) ap
+@@ -173,8 +173,7 @@ am_wmaker_OBJECTS = actions.$(OBJEXT) appicon.$(OBJEXT
  @USE_NESTED_FUNC_FALSE@	xmodifier.hack_nf.$(OBJEXT)
  wmaker_OBJECTS = $(am_wmaker_OBJECTS) $(nodist_wmaker_OBJECTS)
  wmaker_DEPENDENCIES = $(top_builddir)/WINGs/libWINGs.la \
@@ -10,7 +10,7 @@
  AM_V_lt = $(am__v_lt_@AM_V@)
  am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
  am__v_lt_0 = --silent
-@@ -424,13 +423,12 @@ wmaker_SOURCES = GNUstep.h WindowMaker.h
+@@ -467,13 +466,12 @@ wmaker_SOURCES = GNUstep.h WindowMaker.h actions.c act
  @USE_NESTED_FUNC_FALSE@CLEANFILES = $(nodist_wmaker_SOURCES)
  AM_CFLAGS = 
  AM_CPPFLAGS = $(DFLAGS) \

@@ -74,8 +74,6 @@ GNUstep/Applications/WPrefs.app/tiff/workspace.tiff
 GNUstep/Applications/WPrefs.app/tiff/workspacename.tiff
 GNUstep/Applications/WPrefs.app/tiff/xis.tiff
 bin/convertfonts
-bin/get-wings-flags
-bin/get-wutil-flags
 bin/geticonset
 bin/getstyle
 bin/seticons
@@ -199,6 +197,7 @@ share/WindowMaker/Pixmaps/tile.tiff
 share/WindowMaker/Pixmaps/tile.xpm
 share/WindowMaker/README
 share/WindowMaker/README.themes
+share/WindowMaker/Styles/Adwaita.style
 share/WindowMaker/Styles/Autumn.style
 share/WindowMaker/Styles/Black.style
 share/WindowMaker/Styles/BlackTexture.style
@@ -240,8 +239,12 @@ share/WindowMaker/Themes/OpenStep.style
 share/WindowMaker/Themes/Pastel.style
 share/WindowMaker/Themes/SteelBlueSilk.style
 share/WindowMaker/appearance.menu
+share/WindowMaker/appearance.menu.fy
+share/WindowMaker/appearance.menu.nl
 share/WindowMaker/autostart.sh
 share/WindowMaker/background.menu
+share/WindowMaker/background.menu.fy
+share/WindowMaker/background.menu.nl
 share/WindowMaker/exitscript.sh
 share/WindowMaker/menu
 share/WindowMaker/menu.bg
@@ -372,8 +375,6 @@ share/WindowMaker/wmmacros
 %%NLS%%man/cs/man1/wxpaste.1.gz
 man/man1/WPrefs.1.gz
 man/man1/WindowMaker.1.gz
-man/man1/get-wings-flags.1.gz
-man/man1/get-wutil-flags.1.gz
 man/man1/geticonset.1.gz
 man/man1/getstyle.1.gz
 man/man1/seticons.1.gz
@@ -388,7 +389,6 @@ man/man1/wmmenugen.1.gz
 man/man1/wmsetbg.1.gz
 man/man1/wxcopy.1.gz
 man/man1/wxpaste.1.gz
-man/man8/upgrade-windowmaker-defaults.8.gz
 %%NLS%%man/ru/man1/geticonset.1.gz
 %%NLS%%man/ru/man1/getstyle.1.gz
 %%NLS%%man/ru/man1/seticons.1.gz
