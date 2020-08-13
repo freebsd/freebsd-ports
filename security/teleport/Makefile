@@ -2,7 +2,7 @@
 
 PORTNAME=	teleport
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.3.2
+DISTVERSION=	4.3.4
 CATEGORIES=	security
 
 MAINTAINER=	swills@FreeBSD.org
@@ -20,7 +20,7 @@ USES=		compiler gmake go
 USE_GITHUB=		yes
 GH_ACCOUNT=		gravitational
 GH_TUPLE=		gravitational:webassets:e65ae13:webassets/webassets
-GH_COMMIT_SHORT=	c6d702ad8
+GH_COMMIT_SHORT=	65669d5d3
 GH_TAG_COMMIT=		${DISTVERSIONPREFIX}${DISTVERSION}-0-g${GH_COMMIT_SHORT}
 
 USE_RC_SUBR=	teleport
