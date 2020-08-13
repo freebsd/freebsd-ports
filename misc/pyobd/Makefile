@@ -2,7 +2,7 @@
 
 PORTNAME=	pyobd
 DISTVERSION=	0.9.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	misc
 MASTER_SITES=	http://www.obdtester.com/download/
 DISTNAME=	pyobd_${PORTVERSION}
@@ -13,13 +13,10 @@ COMMENT=	OBD-II compliant car diagnostic tool
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-DEPRECATED=	Uses deprecated version of python
-EXPIRATION_DATE=	2020-08-15
-
 BUILD_DEPENDS=	convert:graphics/ImageMagick6
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyserial>0:comms/py-pyserial@${PY_FLAVOR}
 
-USES=		dos2unix gnome python:2.7 shebangfix
+USES=		dos2unix gnome python shebangfix
 DOS2UNIX_FILES=	${PORTNAME}.desktop
 SHEBANG_FILES=	${PORTNAME}
 USE_WX=		3.0
