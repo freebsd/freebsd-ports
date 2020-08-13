@@ -1,6 +1,6 @@
---- Makefile.INCLUDE.orig	2020-07-21 18:06:10 UTC
+--- Makefile.INCLUDE.orig	2020-08-10 17:42:08 UTC
 +++ Makefile.INCLUDE
-@@ -92,7 +92,7 @@ MISC    = AFNI_atlas_spaces.niml AFNI.Xdefaults AFNI.a
+@@ -90,7 +90,7 @@ MISC    = AFNI_atlas_spaces.niml AFNI.Xdefaults AFNI.a
  ## AFNI package, but included because they are useful.  Some of
  ## them are Open Source programs, not from the AFNI group at all.
  
@@ -9,7 +9,7 @@
  
  # mpegtoppm in above list
  
-@@ -105,7 +105,7 @@ EXTRAS   = cjpeg djpeg whirlgif myget Xphace rmz aiv m
+@@ -103,7 +103,7 @@ EXTRAS   = cjpeg djpeg whirlgif myget Xphace rmz aiv m
  PROGS_1  = afni to3d from3d abut 3dclust nsize 3dinfo 3dproject 3dmerge count   \
             sfim tfim ftosh 3dttest 3ddup imrotate imreg imstat 3dnvals          \
             fim2 imand FD2 sqwave immask imdump imaver 3dhistog 3dfim 3daxialize \
@@ -18,16 +18,16 @@
             waver 3dnewid 3dcalc ccalc imcalc 1dmatcalc 3drefit 3dbucket         \
             3dNLfim 3dTSgen AlphaSim 3dFWHM plugout_tt 3dnoise plugout_ijk       \
             3dMannWhitney 3dWilcoxon 3dKruskalWallis 3dFriedman 3dRegAna         \
-@@ -118,7 +118,7 @@ PROGS_2  = 3dTshift 3dDetrend 1dfft 1dcat 3drename 1dn
+@@ -116,7 +116,7 @@ PROGS_2  = 3dTshift 3dDetrend 1dfft 1dcat 3drename 1dn
             3dWavelets 3dfim+ imcutup imcat 3dWinsor 3dZeropad 3dTagalign        \
             3dMean 3dAttribute cat_matvec 3dOverlap 3dClipLevel 3dZregrid        \
             3dEntropy 3ddelay ent16 3dRowFillin 1dgrayplot 3dToutcount 1dsum     \
 -           3dExtrema qhull strblast 3dConvolve 3dZcutup 3dZcat 3dTqual 3dGetrow \
 +           3dExtrema strblast 3dConvolve 3dZcutup 3dZcat 3dTqual 3dGetrow \
-            3dTcorrelate 3dAnatNudge 3dcopy Vecwarp 3dMINCtoAFNI 3dCM fdrval     \
+            3dTcorrelate 3dAnatNudge 3dcopy Vecwarp 3dCM fdrval     \
             3dAFNItoANALYZE siemens_vision ge_header mayo_analyze 3dAFNItoNIFTI  \
-            3dAutoTcorrelate 3dFDR rtfeedme 3dAutomask 3dAFNItoMINC 3dBrickStat  \
-@@ -141,7 +141,7 @@ PROGS_3  = 3dDeconvolve_f 3dAnhist 3dAFNIto3D 3dUnifor
+            3dAutoTcorrelate 3dFDR rtfeedme 3dAutomask 3dBrickStat  \
+@@ -139,7 +139,7 @@ PROGS_3  = 3dDeconvolve_f 3dAnhist 3dAFNIto3D 3dUnifor
  PROGS_4  = 3dBlurInMask 3dRank 3dFFT 1dgenARMA11 3dPeriodogram 1dAstrip         \
             3dLocalPV 3dBandpass 3dSetupGroupInCorr 3dGroupInCorr 3dTcorr1D      \
             3dClustSim 3dRetinoPhase 3dMaskToASCII 3dttest++ 3dDTtoDWI           \
@@ -36,7 +36,7 @@
             1dCorrelate 3dCountSpikes 3dNwarpCalc dicom_hinfo apsearch 1dBport   \
             3dNormalityTest 3dmask_tool FIRdesign help_format 2perm 3dClustCount \
             column_cat 3dUnifize 3dNwarpCat 3dQwarp 3dLocalHistog 3dNwarpAdjust  \
-@@ -167,7 +167,7 @@ PROGRAMS = $(PROGS_1) $(PROGS_2) $(PROGS_3) $(PROGS_4)
+@@ -165,7 +165,7 @@ PROGRAMS = $(PROGS_1) $(PROGS_2) $(PROGS_3) $(PROGS_4)
  PROGRAMS_NOPLUG = afni to3d from3d abut 3dclust nsize 3dinfo 3dproject 3dmerge      \
                    sfim tfim ftosh 3dttest 3ddup imrotate imreg imstat 3dnoise count \
                    fim2 imand FD2 sqwave immask imdump imaver 3dhistog 3dfim imupsam \
@@ -45,7 +45,7 @@
                    waver 3dnewid 3dcalc ccalc imcalc 2dImReg 3dmaskave adwarp fdrval \
                    3dMannWhitney 3dWilcoxon 3dKruskalWallis 3dFriedman 3dRegAna      \
                    imstack byteorder 3dDeconvolve 3dTcat 3drotate 3dvolreg 1dplot    \
-@@ -210,7 +210,7 @@ PROGRAMS_NOPLUG = afni to3d from3d abut 3dclust nsize 
+@@ -208,7 +208,7 @@ PROGRAMS_NOPLUG = afni to3d from3d abut 3dclust nsize 
  PROGRAMS_EXE = afni.exe to3d from3d abut 3dclust nsize 3dinfo 3dproject 3dmerge   \
                 sfim tfim ftosh 3dttest 3ddup imrotate imreg imstat 3dnvals count  \
                 fim2 imand FD2 sqwave immask imdump imaver 3dhistog 3dfim 3dGetrow \
@@ -54,7 +54,7 @@
                 waver 3dnewid 3dcalc ccalc imcalc 1dmatcalc 3drefit 3dbucket       \
                 3dAFNItoNIML    AlphaSim 3dFWHM plugout_tt 3dnoise plugout_ijk     \
                 3dMannWhitney 3dWilcoxon 3dKruskalWallis 3dFriedman 3dRegAna       \
-@@ -4109,7 +4109,10 @@ R_Makevars_mod_linux:
+@@ -4030,7 +4030,10 @@ R_Makevars_mod_linux:
  
  R_io.so: R_io.c $(LIBMRI_OBJ) $(R_MAKEVARS_DEP)
  	( if which R >/dev/null ; then \

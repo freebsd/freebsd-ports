@@ -39,7 +39,6 @@ bin/2swap
 bin/3dABoverlap
 bin/3dAFNIto3D
 bin/3dAFNItoANALYZE
-bin/3dAFNItoMINC
 bin/3dAFNItoNIFTI
 bin/3dAFNItoNIML
 bin/3dAFNItoRaw
@@ -133,7 +132,6 @@ bin/3dMEMA
 bin/3dMEMA.R
 bin/3dMEPFM
 bin/3dMEPFM.R
-bin/3dMINCtoAFNI
 bin/3dMSE
 bin/3dMVM
 bin/3dMVM.R
@@ -338,6 +336,7 @@ bin/@NoisySkullStrip
 bin/@Purify_1D
 bin/@Quiet_Talkers
 bin/@ROI_Corr_Mat
+bin/@ROI_decluster
 bin/@ROI_modal_grow
 bin/@R_funclist
 bin/@RenamePanga
