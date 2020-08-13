@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid
 
-USES=		cmake gettext-runtime
+USES=		cmake compiler:c++11-lang gettext-runtime
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	karlkleinpaste
