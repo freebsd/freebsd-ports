@@ -294,6 +294,7 @@ include/postgresql/server/commands/variable.h
 include/postgresql/server/commands/view.h
 include/postgresql/server/common/base64.h
 include/postgresql/server/common/config_info.h
+include/postgresql/server/common/connect.h
 include/postgresql/server/common/controldata_utils.h
 include/postgresql/server/common/fe_memutils.h
 include/postgresql/server/common/file_perm.h

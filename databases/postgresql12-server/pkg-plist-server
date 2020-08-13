@@ -847,6 +847,7 @@ lib/libpgcommon.a
 %%NLS%%share/locale/sv/LC_MESSAGES/pg_archivecleanup-12.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/pg_basebackup-12.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/pg_checksums-12.mo
+%%DATADIR%%/snowball_create.sql
 %%NLS%%share/locale/sv/LC_MESSAGES/pg_controldata-12.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/pg_ctl-12.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/pg_resetwal-12.mo
@@ -883,6 +884,7 @@ lib/libpgcommon.a
 %%NLS%%share/locale/uk/LC_MESSAGES/pg_test_timing-12.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/pg_waldump-12.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/plpgsql-12.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/postgres-12.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/pg_controldata-12.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/pg_test_fsync-12.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/pg_test_timing-12.mo
@@ -890,6 +892,7 @@ lib/libpgcommon.a
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/initdb-12.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/pg_archivecleanup-12.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/pg_basebackup-12.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/pg_checksums-12.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/pg_controldata-12.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/pg_ctl-12.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/pg_resetwal-12.mo
@@ -900,7 +903,6 @@ lib/libpgcommon.a
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/pg_waldump-12.mo 
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/plpgsql-12.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/postgres-12.mo
-%%DATADIR%%/snowball_create.sql
 %%TZDATA%%%%DATADIR%%/timezone/Africa/Abidjan
 %%TZDATA%%%%DATADIR%%/timezone/Africa/Accra
 %%TZDATA%%%%DATADIR%%/timezone/Africa/Addis_Ababa
