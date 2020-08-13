@@ -3,6 +3,7 @@
 
 PORTNAME=	darktable
 PORTVERSION=	3.2.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/darktable-org/${PORTNAME}/releases/download/release-${PORTVERSION:C/\.rc/rc/}/
 
@@ -14,7 +15,8 @@ LICENSE=	GPLv3
 ONLY_FOR_ARCHS=		amd64
 ONLY_FOR_ARCHS_REASON=	uses SSE instructions and 64-bit address space
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes \
+BUILD_DEPENDS=	${RUN_DEPENDS} \
+		iso-codes>=0:misc/iso-codes \
 		p5-Pod-Parser>=0:textproc/p5-Pod-Parser \
 		po4a-translate:textproc/po4a \
 		xsltproc:textproc/libxslt
@@ -29,6 +31,7 @@ LIB_DEPENDS=	libcolord-gtk.so:graphics/colord-gtk \
 		libpugixml.so:textproc/pugixml \
 		libsoup-2.4.so:devel/libsoup \
 		libtiff.so:graphics/tiff
+RUN_DEPENDS=	exiftool:graphics/p5-Image-ExifTool
 
 USES=		cmake compiler:c++11-lib desktop-file-utils gl gnome jpeg \
 		pkgconfig shebangfix sqlite tar:xz xorg
