@@ -23,7 +23,7 @@ LIB_DEPENDS=	libnspr4.so:devel/nspr \
 		libffi.so:devel/libffi \
 		libicudata.so:devel/icu
 
-USES=		compiler:c++14-lang gmake localbase pathfix pkgconfig \
+USES=		compiler gmake localbase pathfix pkgconfig \
 		python:2.7,build tar:xz
 USE_LDCONFIG=	yes
 SP_VER=		68
@@ -52,11 +52,6 @@ CONFIGURE_ENV=	HOST_CC=${CC} HOST_CXX=${CXX}
 
 CONFIGURE_ENV+=	LLVM_CONFIG=llvm-config${LLVM_DEFAULT}
 
-CPP=		${LOCALBASE}/bin/clang-cpp${LLVM_DEFAULT}
-CC=		${LOCALBASE}/bin/clang${LLVM_DEFAULT}
-CXX=		${LOCALBASE}/bin/clang++${LLVM_DEFAULT}
-USES:=		${USES:Ncompiler\:*} # XXX avoid warnings
-
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
 .include <bsd.port.pre.mk>
@@ -66,9 +61,14 @@ CONFIGURE_TARGET=x86_64-portbld-freebsd${OSREL}
 .endif
 
 # Require newer Clang than what's in base system unless user opted out
-. if ${CC} == cc && ${CXX} == c++ && exists(/usr/lib/libc++.so)
+.if ${CHOSEN_COMPILER_TYPE} == gcc
+USE_GCC=	yes
+.elif ${CC} == cc && ${CXX} == c++ && exists(/usr/lib/libc++.so)
+CPP=		${LOCALBASE}/bin/clang-cpp${LLVM_DEFAULT}
+CC=		${LOCALBASE}/bin/clang${LLVM_DEFAULT}
+CXX=		${LOCALBASE}/bin/clang++${LLVM_DEFAULT}
 BUILD_DEPENDS+=	${LOCALBASE}/bin/clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
-. endif
+.endif
 
 post-install:
 	${RM} ${STAGEDIR}${PREFIX}/lib/libjs_static.ajs
