@@ -451,8 +451,8 @@
 +
 +	MNT_ILOCK(mp);
 +	mp->mnt_data = vboxfsmp;
-+	/* f_fsid is int32_t but serial is uint32_t, convert */
-+	memcpy(&mp->mnt_stat.f_fsid, &fsinfo.serial, sizeof(mp->mnt_stat.f_fsid));
++	mp->mnt_stat.f_fsid.val[0] = fsinfo.serial;
++	mp->mnt_stat.f_fsid.val[1] = 0;
 +	mp->mnt_flag |= MNT_LOCAL;
 +	if (readonly != 0)
 +		mp->mnt_flag |= MNT_RDONLY;
