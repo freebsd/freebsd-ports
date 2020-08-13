@@ -2,7 +2,7 @@
 
 PORTNAME=	iosevka
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.3.1
+DISTVERSION=	3.4.1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/be5invis/Iosevka/releases/download/${DISTVERSIONFULL}/
 
@@ -20,106 +20,70 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-OPTIONS_DEFINE=		AILE_STYLE ANDALE_STYLE ANONYMOUS_STYLE CONSOLAS_STYLE \
-			CURLY_STYLE CURLYSLAB_STYLE DEFAULT_STYLE \
-			ENVYCODER_STYLE ETOILE_STYLE FIRAMONO_STYLE \
-			JETBRAINSMONO_STYLE LIBERATIONMONO_STYLE LUCIDA_STYLE \
-			MENLO_STYLE MONACO_STYLE PRAGMATAPRO_STYLE SLAB_STYLE \
-			SOURCECODEPRO_STYLE SPARKLE_STYLE UBUNTUMONO_STYLE \
-			XWINDOWSFIXED_STYLE
-OPTIONS_DEFAULT=	AILE_STYLE ANDALE_STYLE ANONYMOUS_STYLE CONSOLAS_STYLE \
-			CURLY_STYLE CURLYSLAB_STYLE DEFAULT_STYLE \
-			ENVYCODER_STYLE ETOILE_STYLE FIRAMONO_STYLE \
-			JETBRAINSMONO_STYLE LIBERATIONMONO_STYLE LUCIDA_STYLE \
-			MENLO_STYLE MONACO_STYLE PRAGMATAPRO_STYLE SLAB_STYLE \
-			SOURCECODEPRO_STYLE SPARKLE_STYLE UBUNTUMONO_STYLE \
-			XWINDOWSFIXED_STYLE
-OPTIONS_SUB=		yes
+_STYLES=\
+	DEFAULT		yes	-		Monospace,\ Default\
+	SLAB		yes	-slab-		Monospace,\ Slab\
+	CURLY		yes	-curly-		Monospace,\ Curly\
+	CURLYSLAB	yes	-curly-slab-	Monospace,\ Curly\ Slab\
+	ANDALE		yes	-ss01-		Monospace,\ Andale\ Mono\ Style\
+	ANONYMOUS	yes	-ss02-		Monospace,\ Anonymous\ Pro\ Style\
+	CONSOLAS	yes	-ss03-		Monospace,\ Consolas\ Style\
+	MENLO		yes	-ss04-		Monospace,\ Menlo\ Style\
+	FIRAMONO	yes	-ss05-		Monospace,\ Fira\ Mono\ Style\
+	LIBERATIONMONO	yes	-ss06-		Monospace,\ Liberation\ Mono\ Style\
+	MONACO		yes	-ss07-		Monospace,\ Monaco\ Style\
+	PRAGMATAPRO	yes	-ss08-		Monospace,\ Pragmata\ Pro\ Style\
+	SOURCECODEPRO	yes	-ss09-		Monospace,\ Source\ Code\ Pro\ Style\
+	ENVYCODER	yes	-ss10-		Monospace,\ Envy\ Code\ R\ Style\
+	XWINDOWSFIXED	yes	-ss11-		Monospace,\ X\ Windows\ Fixed\ Style\
+	UBUNTUMONO	yes	-ss12-		Monospace,\ Ubuntu\ Mono\ Style\
+	LUCIDA		yes	-ss13-		Monospace,\ Lucida\ Style\
+	JETBRAINSMONO	yes	-ss14-		Monospace,\ JetBrains\ Mono\ Style\
+	AILE		no	-aile-		Quasi-proportional,\ Sans-serif\ (Aile)\
+	ETOILE		no	-etoile-	Quasi-proportional,\ Slab-serif\ (Etoile)\
+	SPARKLE		no	-sparkle-	Quasi-proportional\ Hybrid,\ like\ iA\ Writer's\ Duo
 
-DEFAULT_STYLE_DESC=		Monospace, Default
-DEFAULT_STYLE_DISTFILES=	ttf-${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
-SLAB_STYLE_DESC=		Monospace, Slab
-SLAB_STYLE_DISTFILES=		ttf-${PORTNAME}-slab-${DISTVERSION}${EXTRACT_SUFX}
-CURLY_STYLE_DESC=		Monospace, Curly
-CURLY_STYLE_DISTFILES=		ttf-${PORTNAME}-curly-${DISTVERSION}${EXTRACT_SUFX}
-CURLYSLAB_STYLE_DESC=		Monospace, Curly Slab
-CURLYSLAB_STYLE_DISTFILES=	ttf-${PORTNAME}-curly-slab-${DISTVERSION}${EXTRACT_SUFX}
-ANDALE_STYLE_DESC=		Monospace, Andale Mono Style
-ANDALE_STYLE_DISTFILES=		ttf-${PORTNAME}-ss01-${DISTVERSION}${EXTRACT_SUFX}
-ANONYMOUS_STYLE_DESC=		Monospace, Anonymous Pro Style
-ANONYMOUS_STYLE_DISTFILES=	ttf-${PORTNAME}-ss02-${DISTVERSION}${EXTRACT_SUFX}
-CONSOLAS_STYLE_DESC=		Monospace, Consolas Style
-CONSOLAS_STYLE_DISTFILES=	ttf-${PORTNAME}-ss03-${DISTVERSION}${EXTRACT_SUFX}
-MENLO_STYLE_DESC=		Monospace, Menlo Style
-MENLO_STYLE_DISTFILES=		ttf-${PORTNAME}-ss04-${DISTVERSION}${EXTRACT_SUFX}
-FIRAMONO_STYLE_DESC=		Monospace, Fira Mono Style
-FIRAMONO_STYLE_DISTFILES=	ttf-${PORTNAME}-ss05-${DISTVERSION}${EXTRACT_SUFX}
-LIBERATIONMONO_STYLE_DESC=	Monospace, Liberation Mono Style
-LIBERATIONMONO_STYLE_DISTFILES=	ttf-${PORTNAME}-ss06-${DISTVERSION}${EXTRACT_SUFX}
-MONACO_STYLE_DESC=		Monospace, Monaco Style
-MONACO_STYLE_DISTFILES=		ttf-${PORTNAME}-ss07-${DISTVERSION}${EXTRACT_SUFX}
-PRAGMATAPRO_STYLE_DESC=		Monospace, Pragmata Pro Style
-PRAGMATAPRO_STYLE_DISTFILES=	ttf-${PORTNAME}-ss08-${DISTVERSION}${EXTRACT_SUFX}
-SOURCECODEPRO_STYLE_DESC=	Monospace, Source Code Pro Style
-SOURCECODEPRO_STYLE_DISTFILES=	ttf-${PORTNAME}-ss09-${DISTVERSION}${EXTRACT_SUFX}
-ENVYCODER_STYLE_DESC=		Monospace, Envy Code R Style
-ENVYCODER_STYLE_DISTFILES=	ttf-${PORTNAME}-ss10-${DISTVERSION}${EXTRACT_SUFX}
-XWINDOWSFIXED_STYLE_DESC=	Monospace, X Windows Fixed Style
-XWINDOWSFIXED_STYLE_DISTFILES=	ttf-${PORTNAME}-ss11-${DISTVERSION}${EXTRACT_SUFX}
-UBUNTUMONO_STYLE_DESC=		Monospace, Ubuntu Mono Style
-UBUNTUMONO_STYLE_DISTFILES=	ttf-${PORTNAME}-ss12-${DISTVERSION}${EXTRACT_SUFX}
-LUCIDA_STYLE_DESC=		Monospace, Lucida Style
-LUCIDA_STYLE_DISTFILES=		ttf-${PORTNAME}-ss13-${DISTVERSION}${EXTRACT_SUFX}
-JETBRAINSMONO_STYLE_DESC=	Monospace, JetBrains Mono Style
-JETBRAINSMONO_STYLE_DISTFILES=	ttf-${PORTNAME}-ss14-${DISTVERSION}${EXTRACT_SUFX}
-AILE_STYLE_DESC=		Quasi-proportional, Sans-serif (Aile)
-AILE_STYLE_DISTFILES=		ttf-${PORTNAME}-aile-${DISTVERSION}${EXTRACT_SUFX}
-ETOILE_STYLE_DESC=		Quasi-proportional, Slab-serif (Etoile)
-ETOILE_STYLE_DISTFILES=		ttf-${PORTNAME}-etoile-${DISTVERSION}${EXTRACT_SUFX}
-SPARKLE_STYLE_DESC=		Quasi-proportional Hybrid, like iA Writer's Duo
-SPARKLE_STYLE_DISTFILES=	ttf-${PORTNAME}-sparkle-${DISTVERSION}${EXTRACT_SUFX}
+.for name has_spacing_variants variant_id desc in ${_STYLES}
+option_variant_spacing_list:=	${name}_STYLE ${variant_id} default
+.	if ${has_spacing_variants} == yes
+option_variant_spacing_list+=	${name}_FIXED_STYLE -fixed${variant_id} fixed
+option_variant_spacing_list+=	${name}_TERM_STYLE -term${variant_id} terminal
+.	endif
+
+.	for option variant spacing in ${option_variant_spacing_list}
+OPTIONS_DEFINE+=	${option}
+OPTIONS_DEFAULT+=	${option}
+
+${option}_DESC=		${desc:S/\\ / /g}
+.		if ${has_spacing_variants} == yes
+${option}_DESC+=	(${spacing} spacing)
+.		endif
+
+${option}_DISTFILES=	ttf-${PORTNAME}${variant}${DISTVERSION}${EXTRACT_SUFX}
+
+post-install-${option}-on:
+	cd ${WRKSRC}/ttf && \
+	${FIND} -E * -regex '${PORTNAME}${variant}[a-z]+[.]ttf' | \
+	${XARGS} -J {} ${INSTALL_DATA} {} ${STAGEDIR}${FONTSDIR}
+
+_regenerate-plist: _regenerate-plist-${option}
+
+_regenerate-plist-${option}: patch _remove-pkg-plist.tmp
+	cd ${WRKSRC}/ttf && \
+	${FIND} -E * -regex '${PORTNAME}${variant}[a-z]+[.]ttf' | \
+	${XARGS} ${PRINTF} '%%%%${option}%%%%%%%%FONTSDIR%%%%/%s\n' >> ${WRKDIR}/.pkg-plist.tmp
+.	endfor
+.endfor
+
+OPTIONS_SUB=	yes
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/ttf/*.ttf ${STAGEDIR}${FONTSDIR}
 
-# First, run _regenerate-plist-sed-commands and use the output of that command
-# to update the sed commands used in _regenerate-plist to patch pkg-plist.
-_regenerate-plist-sed-commands:
-	@${AWK} ' \
-		/DEFAULT_STYLE/ { next; } \
-		/^[^#][A-Z].*_DISTFILES=/ { \
-			sub("_DISTFILES=", "", $$1); \
-			sub("ttf-\\$${PORTNAME}-", ""); \
-			sub("-\\$${DISTVERSION}.*", ""); \
-			printf "-e \"s/.*%s/%%%%%s%%%%\&/\" \\\n", $$2, $$1; \
-		} \
-	' Makefile
+_regenerate-plist:
+	${SORT} -o ${.CURDIR}/pkg-plist ${WRKDIR}/.pkg-plist.tmp
 
-_regenerate-plist: stage
-	${MAKE} makeplist 2>/dev/null | \
-		${AWK} 'NR > 1 {print}' | \
-		${SED} \
-			-e "s/.*slab/%%SLAB_STYLE%%&/" \
-			-e "s/.*curly/%%CURLY_STYLE%%&/" \
-			-e "s/.*curly-slab/%%CURLYSLAB_STYLE%%&/" \
-			-e "s/.*ss01/%%ANDALE_STYLE%%&/" \
-			-e "s/.*ss02/%%ANONYMOUS_STYLE%%&/" \
-			-e "s/.*ss03/%%CONSOLAS_STYLE%%&/" \
-			-e "s/.*ss04/%%MENLO_STYLE%%&/" \
-			-e "s/.*ss05/%%FIRAMONO_STYLE%%&/" \
-			-e "s/.*ss06/%%LIBERATIONMONO_STYLE%%&/" \
-			-e "s/.*ss07/%%MONACO_STYLE%%&/" \
-			-e "s/.*ss08/%%PRAGMATAPRO_STYLE%%&/" \
-			-e "s/.*ss09/%%SOURCECODEPRO_STYLE%%&/" \
-			-e "s/.*ss10/%%ENVYCODER_STYLE%%&/" \
-			-e "s/.*ss11/%%XWINDOWSFIXED_STYLE%%&/" \
-			-e "s/.*ss12/%%UBUNTUMONO_STYLE%%&/" \
-			-e "s/.*ss13/%%LUCIDA_STYLE%%&/" \
-			-e "s/.*ss14/%%JETBRAINSMONO_STYLE%%&/" \
-			-e "s/.*aile/%%AILE_STYLE%%&/" \
-			-e "s/.*etoile/%%ETOILE_STYLE%%&/" \
-			-e "s/.*sparkle/%%SPARKLE_STYLE%%&/" | \
-		${SED} '/_STYLE%%%%/!s/.*/%%DEFAULT_STYLE%%&/g' > pkg-plist
+_remove-pkg-plist.tmp:
+	${RM} ${WRKDIR}/.pkg-plist.tmp
 
 .include <bsd.port.mk>
