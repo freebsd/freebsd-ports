@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	PyMetis
-DISTVERSION=	2016.2
+DISTVERSION=	2019.1.1
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,13 +12,12 @@ COMMENT=	Python wrapper for the Metis graph partititioning software
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-DEPRECATED=	Uses deprecated version of python
-EXPIRATION_DATE=	2020-08-15
-
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pip>:devel/py-pip@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pybind11>0:devel/py-pybind11@${PY_FLAVOR}
+LIB_DEPENDS=	libmetis.so:math/metis
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
 
-USES=		localbase python:-3.6
+USES=		compiler:c++14-lang localbase python
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>
