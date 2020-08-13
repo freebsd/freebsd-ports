@@ -15173,3 +15173,4 @@ www/mod_log_sql2|www/mod_log_sql|2020-08-06|Remove Apache major version suffix s
 editors/nvi2-ports|editors/nvi2|2020-07-26|Rename to editors/nvi2
 net/kblog||2020-08-13|No longer shipped
 www/html|www/html3|2020-08-13|python3-compatible version is named html3
+audio/py-hsaudiotag|audio/py-hsaudiotag3k|2020-08-13|python3-compatible version is named hsaudiotag3k

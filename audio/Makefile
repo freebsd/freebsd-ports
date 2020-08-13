@@ -661,7 +661,7 @@
     SUBDIR += py-gmusicapi
     SUBDIR += py-gmusicproxy
     SUBDIR += py-gtts
-    SUBDIR += py-hsaudiotag
+    SUBDIR += py-hsaudiotag3k
     SUBDIR += py-karaoke
     SUBDIR += py-mpd
     SUBDIR += py-music21
