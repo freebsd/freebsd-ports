@@ -1,10 +1,9 @@
---- collectors/python.d.plugin/Makefile.am.orig	2020-02-21 01:50:30 UTC
+--- collectors/python.d.plugin/Makefile.am.orig	2020-08-12 20:04:44 UTC
 +++ collectors/python.d.plugin/Makefile.am
-@@ -142,109 +142,3 @@ dist_third_party_DATA = \
-     python_modules/third_party/boinc_client.py \
-     python_modules/third_party/monotonic.py \
+@@ -144,108 +144,3 @@ dist_third_party_DATA = \
+     python_modules/third_party/filelock.py \
      $(NULL)
--
+ 
 -pythonyaml2dir=$(pythonmodulesdir)/pyyaml2
 -dist_pythonyaml2_DATA = \
 -    python_modules/pyyaml2/__init__.py \

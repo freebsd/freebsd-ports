@@ -1,3 +1,4 @@
+%%ETCDIR%%/.opt-out-from-anonymous-statistics
 %%ETCDIR%%/edit-config
 @sample(netdata,netdata,0640) lib/netdata/conf.d/apps_groups.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/aws_kinesis.conf.sample
@@ -10,6 +11,7 @@
 @sample(netdata,netdata,0640) lib/netdata/conf.d/charts.d/opensips.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/charts.d/sensors.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/ebpf.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/ebpf_kernel_reject_list.txt
 @sample(netdata,netdata,0640) lib/netdata/conf.d/exporting.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/fping.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/adaptec_raid.conf.sample
@@ -212,6 +214,7 @@ libexec/netdata/plugins.d/loopsleepms.sh.inc
 libexec/netdata/plugins.d/node.d.plugin
 libexec/netdata/plugins.d/python.d.plugin
 libexec/netdata/plugins.d/request.sh
+libexec/netdata/plugins.d/reset_netdata_trace.sh
 libexec/netdata/plugins.d/system-info.sh
 libexec/netdata/plugins.d/tc-qos-helper.sh
 libexec/netdata/plugins.d/template_dim.sh
@@ -280,6 +283,7 @@ libexec/netdata/python.d/python_modules/bases/loaders.py
 libexec/netdata/python.d/python_modules/bases/loggers.py
 libexec/netdata/python.d/python_modules/third_party/__init__.py
 libexec/netdata/python.d/python_modules/third_party/boinc_client.py
+libexec/netdata/python.d/python_modules/third_party/filelock.py
 libexec/netdata/python.d/python_modules/third_party/lm_sensors.py
 libexec/netdata/python.d/python_modules/third_party/mcrcon.py
 libexec/netdata/python.d/python_modules/third_party/monotonic.py

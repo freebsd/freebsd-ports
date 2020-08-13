@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	netdata
-PORTVERSION=	1.23.1
+PORTVERSION=	1.24.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-mgmt
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Scalable distributed realtime performance and health monitoring
@@ -22,8 +23,6 @@ RUN_DEPENDS=	bash:shells/bash \
 
 USES=		autoreconf cpe gmake pathfix pkgconfig:both python shebangfix \
 		ssl
-
-USE_GITHUB=	yes
 
 SHEBANG_GLOB=	*
 
@@ -106,6 +105,7 @@ post-patch:
 post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKDIR}/netdata.conf.sample ${STAGEDIR}${ETCDIR}/netdata.conf.sample
+	${TOUCH} ${STAGEDIR}${ETCDIR}/.opt-out-from-anonymous-statistics
 	${MKDIR} ${STAGEDIR}${NETDATA_CACHE}
 	${MKDIR} ${STAGEDIR}${NETDATA_LOG}
 	${MKDIR} ${STAGEDIR}${NETDATA_PERST}
