@@ -1,0 +1,16 @@
+[
+ { type: upgrade
+   maximum_version: "27.1,3"
+   message: <<EOM
+  The major version of editors/emacs was bumped from 26 to 27.  To upgrade
+dependent packages, run these commands with superuser privileges:
+
+    # sh
+    # for i in $(pkg query -g %n '*-emacs26*'); do \
+        nn=$(echo "$i" | sed -e 's/emacs26/emacs27/'); \
+        pkg set -yn "$i":"$nn"; \
+      done;
+    # pkg upgrade
+EOM
+ }
+]
