@@ -1,6 +1,6 @@
---- src/CMakeLists.txt.orig	2020-06-24 10:42:56 UTC
+--- src/CMakeLists.txt.orig	2020-07-30 20:09:16 UTC
 +++ src/CMakeLists.txt
-@@ -157,8 +157,8 @@ target_link_libraries(ksnip
+@@ -163,8 +163,8 @@ target_link_libraries(ksnip
  					  Qt5::Xml
  					  Qt5::PrintSupport
  					  Qt5::DBus
@@ -11,7 +11,7 @@
  					  Qt5::Svg
  					  )
  
-@@ -168,7 +168,7 @@ elseif (UNIX)
+@@ -174,7 +174,7 @@ elseif (UNIX)
  	target_link_libraries(ksnip
              Qt5::X11Extras
  			XCB::XFIXES

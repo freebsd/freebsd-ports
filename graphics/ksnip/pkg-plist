@@ -1,5 +1,5 @@
 bin/ksnip
-share/applications/ksnip.desktop
+share/applications/org.ksnip.ksnip.desktop
 %%DATADIR%%/translations/ksnip_bn_BD.qm
 %%DATADIR%%/translations/ksnip_cs.qm
 %%DATADIR%%/translations/ksnip_da.qm
@@ -24,5 +24,5 @@ share/applications/ksnip.desktop
 %%DATADIR%%/translations/ksnip_tr.qm
 %%DATADIR%%/translations/ksnip_uk.qm
 %%DATADIR%%/translations/ksnip_zh_Hans.qm
-share/metainfo/ksnip.appdata.xml
-share/pixmaps/ksnip.svg
+share/icons/hicolor/scalable/apps/ksnip.svg
+share/metainfo/org.ksnip.ksnip.appdata.xml

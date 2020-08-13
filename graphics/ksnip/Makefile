@@ -2,7 +2,7 @@
 
 PORTNAME=	ksnip
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7.1
+DISTVERSION=	1.7.3
 CATEGORIES=	graphics kde
 
 MAINTAINER=	kde@FreeBSD.org
@@ -21,6 +21,6 @@ USE_KDE=	ecm_build
 USE_QT=		concurrent core dbus gui network printsupport svg testlib \
 		widgets x11extras xml \
 		buildtools_build linguisttools_build qmake_build
-USE_XORG=	xcb
+USE_XORG=	x11 xcb
 
 .include <bsd.port.mk>
