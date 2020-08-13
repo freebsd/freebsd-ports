@@ -1,10 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	scli
-DISTVERSION=	g20200713
+DISTVERSION=	g20200813
 CATEGORIES=	net-im python
-PATCH_SITES=	https://github.com/isamert/scli/commit/
-PATCHFILES=	7be89ab90a2f467abeb363c44c5558c7397c38da.patch:-p1
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Simple terminal user interface for the Signal messenger (using signal-cli)
@@ -18,7 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}urwid>=0:devel/py-urwid@${PY_FLAVOR} \
 USES=		python:run,3.5+ shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	isamert
-GH_TAGNAME=	8e068d4
+GH_TAGNAME=	157e3d1
 SHEBANG_FILES=	${PORTNAME}
 
 NO_ARCH=	yes
