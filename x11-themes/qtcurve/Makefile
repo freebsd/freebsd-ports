@@ -7,9 +7,6 @@ CATEGORIES=	x11-themes
 MASTER_SITES=	KDE/stable/${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}
 
-PATCH_SITES=	https://invent.kde.org/system/qtcurve/commit/
-PATCHFILES=	ee2228ea2f18ac5da9b434ee6089381df815aa94.patch:-p1
-
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT?=	Widget styles for Qt and GTK+ toolkits
 
@@ -29,6 +26,9 @@ KF5_RUN_DEPENDS=	kf5-style-qtcurve>=${PORTVERSION}:x11-themes/qtcurve-kf5
 QT5_RUN_DEPENDS=	qt5-style-qtcurve>=${PORTVERSION}:x11-themes/qtcurve-qt5
 
 .else # !defined(QTCURVE_SLAVE)
+PATCH_SITES=	https://invent.kde.org/system/${PORTNAME}/commit/
+PATCHFILES=	ee2228ea2f18ac5da9b434ee6089381df815aa94.patch:-p1
+
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
