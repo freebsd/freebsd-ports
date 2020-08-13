@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	akira
-PORTVERSION=	0.0.11
+PORTVERSION=	0.0.12
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics
 
@@ -28,11 +28,10 @@ INSTALLS_ICONS=	yes
 SHEBANG_FILES=	build-aux/meson/post_install.py
 
 post-patch:
-# XXX: workaround for segfault in gtk_application_set_accels_for_action(),
-# see https://github.com/akiraux/Akira/issues/392 and also potentially
-# related https://gitlab.gnome.org/GNOME/vala/-/issues/626 bug reports.
-	@${REINPLACE_CMD} -e 's,[^ ]*\.to_array (),{ &[0] },' \
-		${WRKSRC}/src/Services/ActionManager.vala
+	@${REINPLACE_CMD} -e 's,The Linux,The UI/UX,' \
+		${WRKSRC}/data/com.github.akiraux.akira.appdata.xml.in.in \
+		${WRKSRC}/data/com.github.akiraux.akira.desktop.in.in \
+		${WRKSRC}/README.md ${WRKSRC}/src/Dialogs/SettingsDialog.vala
 
 post-install:
 	${LN} -sf com.github.akiraux.akira ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
