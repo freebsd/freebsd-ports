@@ -3,7 +3,7 @@
 
 PORTNAME=	musescore
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.4.2
+DISTVERSION=	3.5
 CATEGORIES=	audio
 # DISTNAME=	MuseScore-${DISTVERSION}
 
@@ -21,10 +21,10 @@ LIB_DEPENDS=	libmp3lame.so:audio/lame \
 
 USES=		cmake compiler:c++11-lib desktop-file-utils \
 		pkgconfig qt:5 shared-mime-info
-USE_QT=		core declarative gui widgets opengl concurrent designer help \
-		location network quickcontrols2 \
-		scripttools svg sql printsupport testlib \
-		webchannel xml xmlpatterns \
+USE_QT=		concurrent core declarative designer graphicaleffects gui \
+		help location network opengl printsupport \
+		quickcontrols2 scripttools sql svg testlib \
+		webchannel widgets xml xmlpatterns \
 		buildtools_build linguisttools_build qmake_build uitools_build
 
 USE_GITHUB=	yes
@@ -33,7 +33,9 @@ GH_PROJECT=	MuseScore
 
 # Each release gets a subdir containing the distfiles for that release,
 # so hope that scanning the parent dir finds new ones.
-DATADIR=	${PREFIX}/share/mscore-${PORTVERSION:R}
+#
+# Note needs PORTVERSION:R once there is a .minor version
+DATADIR=	${PREFIX}/share/mscore-${PORTVERSION}
 
 ALL_TARGET=	lrelease manpages all
 CMAKE_ARGS+=	-DUSE_SYSTEM_FREETYPE="ON" \

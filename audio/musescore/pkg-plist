@@ -49,6 +49,7 @@ share/mime/packages/musescore.xml
 %%DATADIR%%/locale/instruments_ast.qm
 %%DATADIR%%/locale/instruments_be.qm
 %%DATADIR%%/locale/instruments_bg.qm
+%%DATADIR%%/locale/instruments_br.qm
 %%DATADIR%%/locale/instruments_ca.qm
 %%DATADIR%%/locale/instruments_ca@valencia.qm
 %%DATADIR%%/locale/instruments_cs.qm
@@ -116,6 +117,7 @@ share/mime/packages/musescore.xml
 %%DATADIR%%/locale/mscore_ast.qm
 %%DATADIR%%/locale/mscore_be.qm
 %%DATADIR%%/locale/mscore_bg.qm
+%%DATADIR%%/locale/mscore_br.qm
 %%DATADIR%%/locale/mscore_ca.qm
 %%DATADIR%%/locale/mscore_ca@valencia.qm
 %%DATADIR%%/locale/mscore_cs.qm
@@ -182,6 +184,7 @@ share/mime/packages/musescore.xml
 %%DATADIR%%/locale/tours_ast.qm
 %%DATADIR%%/locale/tours_be.qm
 %%DATADIR%%/locale/tours_bg.qm
+%%DATADIR%%/locale/tours_br.qm
 %%DATADIR%%/locale/tours_ca.qm
 %%DATADIR%%/locale/tours_ca@valencia.qm
 %%DATADIR%%/locale/tours_cs.qm
@@ -241,8 +244,6 @@ share/mime/packages/musescore.xml
 %%DATADIR%%/locale/tours_zh_CN.qm
 %%DATADIR%%/locale/tours_zh_HK.qm
 %%DATADIR%%/locale/tours_zh_TW.qm
-%%DATADIR%%/manual/plugins/manual.css
-%%DATADIR%%/manual/plugins/plugins3.html
 %%DATADIR%%/plugins/abc_import.qml
 %%DATADIR%%/plugins/colornotes.qml
 %%DATADIR%%/plugins/createscore.qml
@@ -250,6 +251,7 @@ share/mime/packages/musescore.xml
 %%DATADIR%%/plugins/helloqml/translations/locale_de.qm
 %%DATADIR%%/plugins/helloqml/translations/locale_de.ts
 %%DATADIR%%/plugins/notenames.qml
+%%DATADIR%%/plugins/notenames-interactive.qml
 %%DATADIR%%/plugins/panel.qml
 %%DATADIR%%/plugins/random.qml
 %%DATADIR%%/plugins/random2.qml
@@ -280,9 +282,10 @@ share/mime/packages/musescore.xml
 %%DATADIR%%/templates/02-Choral/05-SATB_Closed_Score_+_Organ.mscx
 %%DATADIR%%/templates/02-Choral/06-SATB_Closed_Score_+_Piano.mscx
 %%DATADIR%%/templates/02-Choral/07-Voice_+_Piano.mscx
-%%DATADIR%%/templates/02-Choral/08-Barbershop_Quartet.mscx
-%%DATADIR%%/templates/02-Choral/09-Liturgical_Unmetrical.mscx
-%%DATADIR%%/templates/02-Choral/10-Liturgical_Unmetrical_+_Organ.mscx
+%%DATADIR%%/templates/02-Choral/08-Barbershop_Quartet_(Men).mscx
+%%DATADIR%%/templates/02-Choral/09-Barbershop_Quartet_(Women).mscx
+%%DATADIR%%/templates/02-Choral/10-Liturgical_Unmetrical.mscx
+%%DATADIR%%/templates/02-Choral/11-Liturgical_Unmetrical_+_Organ.mscx
 %%DATADIR%%/templates/03-Chamber_Music/01-String_Quartet.mscx
 %%DATADIR%%/templates/03-Chamber_Music/02-Wind_Quartet.mscx
 %%DATADIR%%/templates/03-Chamber_Music/03-Wind_Quintet.mscx
