@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	yadm
-PORTVERSION=	2.4.0
+PORTVERSION=	2.5.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	vendion@gmail.com
@@ -18,6 +18,14 @@ GH_ACCOUNT=	TheLocehiliosan
 
 PLIST_FILES=	bin/yadm \
 		man/man1/yadm.1.gz
+
+OPTIONS_DEFINE=	J2CTL
+
+J2CTL_DESC=	Enable Jinja2 powered template files
+J2CTL_RUN_DEPENDS=	j2:textproc/py-j2cli@${PY_FLAVOR}
+J2CTL_USES=	python
+
+.include <bsd.port.options.mk>
 
 do-install:
 	@${MKDIR} ${STAGEDIR}
