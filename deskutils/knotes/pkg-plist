@@ -8,7 +8,7 @@ lib/libnotesharedprivate.so.5
 lib/libnotesharedprivate.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_PLUGINDIR%%/kcm_knote.so
 %%QT_PLUGINDIR%%/kcm_knotessummary.so
-%%QT_PLUGINDIR%%/kontact_knotesplugin.so
+%%QT_PLUGINDIR%%/kontact5/kontact_knotesplugin.so
 share/akonadi/agents/notesagent.desktop
 share/applications/org.kde.knotes.desktop
 share/config.kcfg/knotesglobalconfig.kcfg

@@ -78,6 +78,7 @@ share/icons/hicolor/scalable/apps/khangman.svgz
 %%DATADIR%%/qml/sounds/splash.wav
 %%DATADIR%%/qml/sounds/wrong.ogg
 %%DATADIR%%/qml/sounds/wrong.wav
+%%DATADIR%%/sk.txt
 %%DATADIR%%/sl.txt
 %%DATADIR%%/sr@latin.txt
 %%DATADIR%%/sv.txt

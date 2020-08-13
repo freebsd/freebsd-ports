@@ -5,8 +5,9 @@ lib/libkaddressbookprivate.so.5
 lib/libkaddressbookprivate.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_PLUGINDIR%%/kaddressbook_config_plugins.so
 %%QT_PLUGINDIR%%/kaddressbookpart.so
-%%QT_PLUGINDIR%%/kontact_kaddressbookplugin.so
+%%QT_PLUGINDIR%%/kontact5/kontact_kaddressbookplugin.so
 share/applications/kaddressbook-importer.desktop
+share/applications/kaddressbook-view.desktop
 share/applications/org.kde.kaddressbook.desktop
 share/icons/hicolor/128x128/apps/kaddressbook.png
 share/icons/hicolor/16x16/apps/kaddressbook.png
@@ -37,7 +38,6 @@ share/kconf_update/kaddressbook-15.08-kickoff.sh
 share/kconf_update/kaddressbook.upd
 share/kontact/ksettingsdialog/kaddressbook.setdlg
 share/kservices5/kaddressbook_config_plugins.desktop
-share/kservices5/kaddressbookpart.desktop
 share/kservices5/kontact/kaddressbookplugin.desktop
 share/locale/ar/LC_MESSAGES/kaddressbook.mo
 share/locale/bg/LC_MESSAGES/kaddressbook.mo

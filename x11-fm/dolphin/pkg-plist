@@ -1,7 +1,5 @@
 bin/dolphin
 bin/servicemenuinstaller
-share/qlogging-categories5/dolphin.categories
-etc/xdg/servicemenu.knsrc
 include/Dolphin/KVersionControlPlugin
 include/Dolphin/dolphinvcs_version.h
 include/Dolphin/kversioncontrolplugin.h
@@ -32,6 +30,7 @@ share/config.kcfg/dolphin_versioncontrolsettings.kcfg
 share/dbus-1/interfaces/org.freedesktop.FileManager1.xml
 share/dbus-1/services/org.kde.dolphin.FileManager1.service
 share/kglobalaccel/org.kde.dolphin.desktop
+share/knsrcfiles/servicemenu.knsrc
 share/kservices5/dolphinpart.desktop
 share/kservices5/kcmdolphingeneral.desktop
 share/kservices5/kcmdolphinnavigation.desktop
@@ -115,6 +114,7 @@ share/locale/ru/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/sk/LC_MESSAGES/dolphin.mo
 share/locale/sk/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/sl/LC_MESSAGES/dolphin.mo
+share/locale/sl/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/sr/LC_MESSAGES/dolphin.mo
 share/locale/sv/LC_MESSAGES/dolphin.mo
 share/locale/sv/LC_MESSAGES/dolphin_servicemenuinstaller.mo
@@ -128,3 +128,4 @@ share/locale/zh_CN/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/zh_TW/LC_MESSAGES/dolphin.mo
 share/locale/zh_TW/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/metainfo/org.kde.dolphin.appdata.xml
+share/qlogging-categories5/dolphin.categories

@@ -62,8 +62,8 @@ KDE_FRAMEWORKS_VERSION?=	5.73.0
 KDE_FRAMEWORKS_BRANCH?= 	stable
 
 # Current KDE applications.
-KDE_APPLICATIONS_VERSION?=	20.04.3
-KDE_APPLICATIONS_SHLIB_VER?=	5.14.3
+KDE_APPLICATIONS_VERSION?=	20.08.0
+KDE_APPLICATIONS_SHLIB_VER?=	5.15.0
 KDE_APPLICATIONS_BRANCH?=	stable
 # Upstream moves old software to Attic/. Specify the newest applications release there.
 # Only the major version is used for the comparison.
@@ -229,7 +229,7 @@ _USE_PLASMA_ALL=	activitymanagerd breeze breeze-gtk \
 # List of components of the KDE PIM distribution (part of applications).
 _USE_KDEPIM5_ALL=	akonadicontacts akonadiimportwizard akonadimime akonadinotes \
 			akonadicalendar akonadisearch alarmcalendar \
-			blog calendarcore calendarsupport calendarutils \
+			calendarcore calendarsupport calendarutils \
 			contacts eventviews gapi grantleetheme \
 			gravatar identitymanagement imap \
 			incidenceeditor kdepim-addons kdepim-apps-libs \
@@ -623,9 +623,6 @@ kde-akonadisearch_LIB=		libKF5AkonadiSearchCore.so
 kde-alarmcalendar_PORT=		net/kalarmcal
 kde-alarmcalendar_LIB=		libKF5AlarmCalendar.so
 
-kde-blog_PORT=			net/kblog
-kde-blog_LIB=			libKF5Blog.so
-
 kde-calendarsupport_PORT=	net/calendarsupport
 kde-calendarsupport_LIB=	libKF5CalendarSupport.so
 
@@ -666,7 +663,7 @@ kde-kdepim-addons_PORT=	deskutils/kdepim-addons
 kde-kdepim-addons_PATH=	${KDE_PREFIX}/lib/contacteditor/editorpageplugins/cryptopageplugin.so
 
 kde-kdepim-apps-libs_PORT=	deskutils/kdepim-apps-libs
-kde-kdepim-apps-libs_LIB=	libKF5SendLater.so
+kde-kdepim-apps-libs_LIB=	libKF5KaddressbookGrantlee.so
 
 kde-kdepim-runtime5_PORT=	deskutils/kdepim-runtime
 kde-kdepim-runtime5_PATH=	${KDE_PREFIX}/bin/gidmigrator

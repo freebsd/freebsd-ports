@@ -73,8 +73,6 @@ man/ca/man1/extractrc.1.gz
 man/ca/man1/fixincludes.1.gz
 man/ca/man1/pruneemptydirs.1.gz
 man/ca/man1/qtdoc.1.gz
-man/ca/man1/reportview.1.gz
-man/ca/man1/transxx.1.gz
 man/ca/man1/zonetab2pot.py.1.gz
 man/da/man1/adddebug.1.gz
 man/da/man1/cheatmake.1.gz
@@ -90,7 +88,6 @@ man/da/man1/extractrc.1.gz
 man/da/man1/fixincludes.1.gz
 man/da/man1/pruneemptydirs.1.gz
 man/da/man1/qtdoc.1.gz
-man/da/man1/reportview.1.gz
 man/da/man1/zonetab2pot.py.1.gz
 man/de/man1/adddebug.1.gz
 man/de/man1/cheatmake.1.gz
@@ -107,8 +104,6 @@ man/de/man1/extractrc.1.gz
 man/de/man1/fixincludes.1.gz
 man/de/man1/pruneemptydirs.1.gz
 man/de/man1/qtdoc.1.gz
-man/de/man1/reportview.1.gz
-man/de/man1/transxx.1.gz
 man/de/man1/zonetab2pot.py.1.gz
 man/es/man1/adddebug.1.gz
 man/es/man1/cheatmake.1.gz
@@ -125,8 +120,6 @@ man/es/man1/extractrc.1.gz
 man/es/man1/fixincludes.1.gz
 man/es/man1/pruneemptydirs.1.gz
 man/es/man1/qtdoc.1.gz
-man/es/man1/reportview.1.gz
-man/es/man1/transxx.1.gz
 man/es/man1/zonetab2pot.py.1.gz
 man/et/man1/qtdoc.1.gz
 man/fr/man1/adddebug.1.gz
@@ -144,8 +137,6 @@ man/fr/man1/extractrc.1.gz
 man/fr/man1/fixincludes.1.gz
 man/fr/man1/pruneemptydirs.1.gz
 man/fr/man1/qtdoc.1.gz
-man/fr/man1/reportview.1.gz
-man/fr/man1/transxx.1.gz
 man/fr/man1/zonetab2pot.py.1.gz
 man/gl/man1/adddebug.1.gz
 man/gl/man1/cheatmake.1.gz
@@ -161,8 +152,6 @@ man/gl/man1/extractrc.1.gz
 man/gl/man1/fixincludes.1.gz
 man/gl/man1/pruneemptydirs.1.gz
 man/gl/man1/qtdoc.1.gz
-man/gl/man1/reportview.1.gz
-man/gl/man1/transxx.1.gz
 man/gl/man1/zonetab2pot.py.1.gz
 man/it/man1/adddebug.1.gz
 man/it/man1/cheatmake.1.gz
@@ -179,8 +168,6 @@ man/it/man1/extractrc.1.gz
 man/it/man1/fixincludes.1.gz
 man/it/man1/pruneemptydirs.1.gz
 man/it/man1/qtdoc.1.gz
-man/it/man1/reportview.1.gz
-man/it/man1/transxx.1.gz
 man/it/man1/zonetab2pot.py.1.gz
 man/man1/adddebug.1.gz
 man/man1/cheatmake.1.gz
@@ -197,8 +184,6 @@ man/man1/extractrc.1.gz
 man/man1/fixincludes.1.gz
 man/man1/pruneemptydirs.1.gz
 man/man1/qtdoc.1.gz
-man/man1/reportview.1.gz
-man/man1/transxx.1.gz
 man/man1/zonetab2pot.py.1.gz
 man/nl/man1/adddebug.1.gz
 man/nl/man1/cheatmake.1.gz
@@ -215,8 +200,6 @@ man/nl/man1/extractrc.1.gz
 man/nl/man1/fixincludes.1.gz
 man/nl/man1/pruneemptydirs.1.gz
 man/nl/man1/qtdoc.1.gz
-man/nl/man1/reportview.1.gz
-man/nl/man1/transxx.1.gz
 man/nl/man1/zonetab2pot.py.1.gz
 man/pt/man1/adddebug.1.gz
 man/pt/man1/cheatmake.1.gz
@@ -233,8 +216,6 @@ man/pt/man1/extractrc.1.gz
 man/pt/man1/fixincludes.1.gz
 man/pt/man1/pruneemptydirs.1.gz
 man/pt/man1/qtdoc.1.gz
-man/pt/man1/reportview.1.gz
-man/pt/man1/transxx.1.gz
 man/pt/man1/zonetab2pot.py.1.gz
 man/pt_BR/man1/adddebug.1.gz
 man/pt_BR/man1/cheatmake.1.gz
@@ -251,8 +232,6 @@ man/pt_BR/man1/extractrc.1.gz
 man/pt_BR/man1/fixincludes.1.gz
 man/pt_BR/man1/pruneemptydirs.1.gz
 man/pt_BR/man1/qtdoc.1.gz
-man/pt_BR/man1/reportview.1.gz
-man/pt_BR/man1/transxx.1.gz
 man/pt_BR/man1/zonetab2pot.py.1.gz
 man/sv/man1/adddebug.1.gz
 man/sv/man1/cheatmake.1.gz
@@ -269,8 +248,6 @@ man/sv/man1/extractrc.1.gz
 man/sv/man1/fixincludes.1.gz
 man/sv/man1/pruneemptydirs.1.gz
 man/sv/man1/qtdoc.1.gz
-man/sv/man1/reportview.1.gz
-man/sv/man1/transxx.1.gz
 man/sv/man1/zonetab2pot.py.1.gz
 man/uk/man1/adddebug.1.gz
 man/uk/man1/cheatmake.1.gz
@@ -287,8 +264,6 @@ man/uk/man1/extractrc.1.gz
 man/uk/man1/fixincludes.1.gz
 man/uk/man1/pruneemptydirs.1.gz
 man/uk/man1/qtdoc.1.gz
-man/uk/man1/reportview.1.gz
-man/uk/man1/transxx.1.gz
 man/uk/man1/zonetab2pot.py.1.gz
 share/uncrustify/uncrustify-kf5.cfg
 share/uncrustify/uncrustify-qt.cfg

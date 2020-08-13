@@ -8,6 +8,8 @@ include/KF5/Akonadi/KMime/MessageModel
 include/KF5/Akonadi/KMime/MessageParts
 include/KF5/Akonadi/KMime/MessageStatus
 include/KF5/Akonadi/KMime/MoveCommand
+include/KF5/Akonadi/KMime/NewMailNotifierAttribute
+include/KF5/Akonadi/KMime/Pop3ResourceAttribute
 include/KF5/Akonadi/KMime/RemoveDuplicatesJob
 include/KF5/Akonadi/KMime/SpecialMailCollections
 include/KF5/Akonadi/KMime/SpecialMailCollectionsDiscoveryJob
@@ -24,6 +26,8 @@ include/KF5/akonadi/kmime/messagemodel.h
 include/KF5/akonadi/kmime/messageparts.h
 include/KF5/akonadi/kmime/messagestatus.h
 include/KF5/akonadi/kmime/movecommand.h
+include/KF5/akonadi/kmime/newmailnotifierattribute.h
+include/KF5/akonadi/kmime/pop3resourceattribute.h
 include/KF5/akonadi/kmime/removeduplicatesjob.h
 include/KF5/akonadi/kmime/specialmailcollections.h
 include/KF5/akonadi/kmime/specialmailcollectionsdiscoveryjob.h
@@ -51,6 +55,7 @@ share/locale/el/LC_MESSAGES/libakonadi-kmime5.mo
 share/locale/en_GB/LC_MESSAGES/libakonadi-kmime5.mo
 share/locale/es/LC_MESSAGES/libakonadi-kmime5.mo
 share/locale/et/LC_MESSAGES/libakonadi-kmime5.mo
+share/locale/eu/LC_MESSAGES/libakonadi-kmime5.mo
 share/locale/fi/LC_MESSAGES/libakonadi-kmime5.mo
 share/locale/fr/LC_MESSAGES/libakonadi-kmime5.mo
 share/locale/ga/LC_MESSAGES/libakonadi-kmime5.mo

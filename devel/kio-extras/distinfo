@@ -1,3 +1,3 @@
-TIMESTAMP = 1594146975
-SHA256 (KDE/release-service/20.04.3/kio-extras-20.04.3.tar.xz) = ff0edabe83ee4958ce7559e935f6b7ae3f76aee43ee5774543368ca334b21090
-SIZE (KDE/release-service/20.04.3/kio-extras-20.04.3.tar.xz) = 618056
+TIMESTAMP = 1596814116
+SHA256 (KDE/release-service/20.08.0/kio-extras-20.08.0.tar.xz) = 6bfbb92dd56755ec0b2dee0cd889d6081ae00df339c05b4cb7a173a463275e2d
+SIZE (KDE/release-service/20.08.0/kio-extras-20.08.0.tar.xz) = 629824

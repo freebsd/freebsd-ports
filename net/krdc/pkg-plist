@@ -13,8 +13,6 @@ lib/libkrdccore.so.5
 %%QT_PLUGINDIR%%/krdc/libkrdc_vncplugin.so
 share/applications/org.kde.krdc.desktop
 share/config.kcfg/krdc.kcfg
-%%DATADIR%%/pics/pointcursor.png
-%%DATADIR%%/pics/pointcursormask.png
 %%FREERDP%%share/kservices5/ServiceMenus/smb2rdc.desktop
 %%FREERDP%%share/kservices5/krdc_rdp_config.desktop
 share/kservices5/krdc_vnc_config.desktop

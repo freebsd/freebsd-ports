@@ -23,6 +23,7 @@ include/cantor/defaultvariablemodel.h
 include/cantor/epsresult.h
 include/cantor/expression.h
 include/cantor/extension.h
+include/cantor/graphicpackage.h
 include/cantor/helpresult.h
 include/cantor/htmlresult.h
 include/cantor/imageresult.h
@@ -42,7 +43,7 @@ lib/cmake/Cantor/CantorTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Cantor/CantorTargets.cmake
 lib/libcantor_config.so
 lib/libcantorlibs.so
-lib/libcantorlibs.so.24
+lib/libcantorlibs.so.27
 lib/libcantorlibs.so.%%KDE_APPLICATIONS_VERSION%%
 %%QT_PLUGINDIR%%/cantor/assistants/cantor_advancedplotassistant.so
 %%QT_PLUGINDIR%%/cantor/assistants/cantor_creatematrixassistant.so
@@ -66,16 +67,19 @@ lib/libcantorlibs.so.%%KDE_APPLICATIONS_VERSION%%
 %%R%%%%QT_PLUGINDIR%%/cantor/backends/cantor_rbackend.so
 %%QT_PLUGINDIR%%/cantor/backends/cantor_sagebackend.so
 %%QT_PLUGINDIR%%/cantor/backends/cantor_scilabbackend.so
+%%QT_PLUGINDIR%%/cantor/panels/cantor_filebrowserpanelplugin.so
 %%QT_PLUGINDIR%%/cantor/panels/cantor_helppanelplugin.so
 %%QT_PLUGINDIR%%/cantor/panels/cantor_variablemanagerplugin.so
 %%QT_PLUGINDIR%%/libcantorpart.so
 share/applications/org.kde.cantor.desktop
 %%DATADIR%%/latex/preview.sty
 %%DATADIR%%/maximabackend/cantor-initmaxima.lisp
+%%DATADIR%%/octave/graphic_packages.xml
 %%DATADIR%%/octavebackend/cantor_eigenvectors.m
 %%DATADIR%%/octavebackend/cantor_plot2d.m
 %%DATADIR%%/octavebackend/cantor_plot3d.m
 %%DATADIR%%/octavebackend/cantor_print.m
+%%DATADIR%%/python/graphic_packages.xml
 %%DATADIR%%/sagebackend/cantor-execsage
 %%DATADIR%%/xslt/latex.xsl
 share/config.kcfg/cantor.kcfg

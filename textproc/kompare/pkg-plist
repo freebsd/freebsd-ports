@@ -68,3 +68,4 @@ share/locale/uk/LC_MESSAGES/kompare.mo
 share/locale/zh_CN/LC_MESSAGES/kompare.mo
 share/locale/zh_TW/LC_MESSAGES/kompare.mo
 share/metainfo/org.kde.kompare.appdata.xml
+share/qlogging-categories5/kompare.categories

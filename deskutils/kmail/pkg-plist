@@ -16,8 +16,8 @@ lib/libkmailprivate.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_PLUGINDIR%%/kcm_kmailsummary.so
 %%QT_PLUGINDIR%%/kcm_kontactsummary.so
 %%QT_PLUGINDIR%%/kmailpart.so
-%%QT_PLUGINDIR%%/kontact_kmailplugin.so
-%%QT_PLUGINDIR%%/kontact_summaryplugin.so
+%%QT_PLUGINDIR%%/kontact5/kontact_kmailplugin.so
+%%QT_PLUGINDIR%%/kontact5/kontact_summaryplugin.so
 %%DATADIR%%2/pics/pgp-keys.png
 share/akonadi/agents/archivemailagent.desktop
 share/akonadi/agents/followupreminder.desktop
@@ -135,6 +135,8 @@ share/locale/da/LC_MESSAGES/akonadi_archivemail_agent.mo
 share/locale/da/LC_MESSAGES/akonadi_followupreminder_agent.mo
 share/locale/da/LC_MESSAGES/akonadi_mailfilter_agent.mo
 share/locale/da/LC_MESSAGES/akonadi_sendlater_agent.mo
+share/locale/da/LC_MESSAGES/akonadi_unifiedmailbox_agent.mo
+share/locale/da/LC_MESSAGES/kmail-refresh-settings.mo
 share/locale/da/LC_MESSAGES/kmail.mo
 share/locale/da/LC_MESSAGES/ktnef.mo
 share/locale/de/LC_MESSAGES/akonadi_archivemail_agent.mo
@@ -341,6 +343,8 @@ share/locale/sl/LC_MESSAGES/akonadi_archivemail_agent.mo
 share/locale/sl/LC_MESSAGES/akonadi_followupreminder_agent.mo
 share/locale/sl/LC_MESSAGES/akonadi_mailfilter_agent.mo
 share/locale/sl/LC_MESSAGES/akonadi_sendlater_agent.mo
+share/locale/sl/LC_MESSAGES/akonadi_unifiedmailbox_agent.mo
+share/locale/sl/LC_MESSAGES/kmail-refresh-settings.mo
 share/locale/sl/LC_MESSAGES/kmail.mo
 share/locale/sl/LC_MESSAGES/ktnef.mo
 share/locale/sr/LC_MESSAGES/akonadi_archivemail_agent.mo

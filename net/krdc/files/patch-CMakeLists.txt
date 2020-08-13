@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2020-03-19 23:24:52 UTC
+--- CMakeLists.txt.orig	2020-08-13 17:06:59 UTC
 +++ CMakeLists.txt
-@@ -81,24 +81,28 @@ set_package_properties("libssh" PROPERTIES
+@@ -81,24 +81,27 @@ set_package_properties("libssh" PROPERTIES
      PURPOSE "Needed to build VNC+SSH tunnel support "
  )
  
@@ -41,7 +41,6 @@
 +          TYPE RUNTIME
 +  )
 +endif()
-+
- if (EXISTS "${CMAKE_SOURCE_DIR}/.git")
-    add_definitions(-DKF_DISABLE_DEPRECATED_BEFORE_AND_AT=0x060000) 
- endif()
+ 
+ include_directories(
+     ${CMAKE_CURRENT_SOURCE_DIR}

@@ -1064,6 +1064,8 @@ share/locale/sl/LC_MESSAGES/kate-ctags-plugin.mo
 share/locale/sl/LC_MESSAGES/kate-replicode-plugin.mo
 share/locale/sl/LC_MESSAGES/kate.mo
 share/locale/sl/LC_MESSAGES/katebacktracebrowserplugin.mo
+share/locale/sl/LC_MESSAGES/kateexternaltoolsplugin.mo
+share/locale/sl/LC_MESSAGES/lspclient.mo
 share/locale/sl/LC_MESSAGES/katebuild-plugin.mo
 share/locale/sl/LC_MESSAGES/katecloseexceptplugin.mo
 share/locale/sl/LC_MESSAGES/katefilebrowserplugin.mo

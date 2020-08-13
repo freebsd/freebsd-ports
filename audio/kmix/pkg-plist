@@ -71,9 +71,6 @@ share/locale/ug/LC_MESSAGES/kmix.mo
 share/locale/uk/LC_MESSAGES/kmix.mo
 share/locale/zh_CN/LC_MESSAGES/kmix.mo
 share/locale/zh_TW/LC_MESSAGES/kmix.mo
-%%DATADIR%%/pics/kmixdocked.png
-%%DATADIR%%/pics/kmixdocked_error.png
-%%DATADIR%%/pics/kmixdocked_mute.png
 %%DATADIR%%/pics/mixer-ac97.png
 %%DATADIR%%/pics/mixer-capture.png
 %%DATADIR%%/pics/mixer-cd.png

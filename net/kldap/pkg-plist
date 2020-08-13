@@ -1,7 +1,10 @@
-share/qlogging-categories5/kldap.categories
-share/qlogging-categories5/kldap.renamecategories
+include/KF5/KLDAP/KLDAP/AddHostDialog
 include/KF5/KLDAP/KLDAP/Ber
+include/KF5/KLDAP/KLDAP/LdapClient
+include/KF5/KLDAP/KLDAP/LdapClientSearch
+include/KF5/KLDAP/KLDAP/LdapClientSearchConfig
 include/KF5/KLDAP/KLDAP/LdapConfigWidget
+include/KF5/KLDAP/KLDAP/LdapConfigureWidget
 include/KF5/KLDAP/KLDAP/LdapConnection
 include/KF5/KLDAP/KLDAP/LdapControl
 include/KF5/KLDAP/KLDAP/LdapDN
@@ -12,8 +15,13 @@ include/KF5/KLDAP/KLDAP/LdapSearch
 include/KF5/KLDAP/KLDAP/LdapServer
 include/KF5/KLDAP/KLDAP/LdapUrl
 include/KF5/KLDAP/KLDAP/Ldif
+include/KF5/KLDAP/kldap/addhostdialog.h
 include/KF5/KLDAP/kldap/ber.h
 include/KF5/KLDAP/kldap/kldap_export.h
+include/KF5/KLDAP/kldap/ldapclient.h
+include/KF5/KLDAP/kldap/ldapclientsearch.h
+include/KF5/KLDAP/kldap/ldapclientsearchconfig.h
+include/KF5/KLDAP/kldap/ldapconfigurewidget.h
 include/KF5/KLDAP/kldap/ldapconfigwidget.h
 include/KF5/KLDAP/kldap/ldapconnection.h
 include/KF5/KLDAP/kldap/ldapcontrol.h
@@ -134,3 +142,5 @@ share/locale/zh_CN/LC_MESSAGES/kio_ldap.mo
 share/locale/zh_CN/LC_MESSAGES/libkldap5.mo
 share/locale/zh_TW/LC_MESSAGES/kio_ldap.mo
 share/locale/zh_TW/LC_MESSAGES/libkldap5.mo
+share/qlogging-categories5/kldap.categories
+share/qlogging-categories5/kldap.renamecategories

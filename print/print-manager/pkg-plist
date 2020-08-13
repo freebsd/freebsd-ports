@@ -112,7 +112,6 @@ share/plasma/plasmoids/org.kde.plasma.printmanager/contents/config/config.qml
 share/plasma/plasmoids/org.kde.plasma.printmanager/contents/config/main.xml
 share/plasma/plasmoids/org.kde.plasma.printmanager/contents/ui/PopupDialog.qml
 share/plasma/plasmoids/org.kde.plasma.printmanager/contents/ui/PrinterItem.qml
-share/plasma/plasmoids/org.kde.plasma.printmanager/contents/ui/StatusView.qml
 share/plasma/plasmoids/org.kde.plasma.printmanager/contents/ui/config.qml
 share/plasma/plasmoids/org.kde.plasma.printmanager/contents/ui/printmanager.qml
 share/plasma/plasmoids/org.kde.plasma.printmanager/metadata.desktop

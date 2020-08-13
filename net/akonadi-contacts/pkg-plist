@@ -1,6 +1,9 @@
 include/KF5/Akonadi/Contact/AbstractContactFormatter
 include/KF5/Akonadi/Contact/AbstractContactGroupFormatter
 include/KF5/Akonadi/Contact/AbstractEmailAddressSelectionDialog
+include/KF5/Akonadi/Contact/AddContactJob
+include/KF5/Akonadi/Contact/AddEmailAddressJob
+include/KF5/Akonadi/Contact/AddEmailDisplayJob
 include/KF5/Akonadi/Contact/ContactDefaultActions
 include/KF5/Akonadi/Contact/ContactEditor
 include/KF5/Akonadi/Contact/ContactEditorDialog
@@ -21,6 +24,7 @@ include/KF5/Akonadi/Contact/EmailAddressSelection
 include/KF5/Akonadi/Contact/EmailAddressSelectionDialog
 include/KF5/Akonadi/Contact/EmailAddressSelectionModel
 include/KF5/Akonadi/Contact/EmailAddressSelectionWidget
+include/KF5/Akonadi/Contact/OpenEmailAddressJob
 include/KF5/Akonadi/Contact/RecipientsEditorManager
 include/KF5/Akonadi/Contact/RecipientsPickerWidget
 include/KF5/Akonadi/Contact/SelectAddressBookDialog
@@ -32,6 +36,9 @@ include/KF5/ContactEditor/ContactEditorPagePlugin
 include/KF5/akonadi/contact/abstractcontactformatter.h
 include/KF5/akonadi/contact/abstractcontactgroupformatter.h
 include/KF5/akonadi/contact/abstractemailaddressselectiondialog.h
+include/KF5/akonadi/contact/addcontactjob.h
+include/KF5/akonadi/contact/addemailaddressjob.h
+include/KF5/akonadi/contact/addemaildisplayjob.h
 include/KF5/akonadi/contact/akonadi-contact_export.h
 include/KF5/akonadi/contact/contactdefaultactions.h
 include/KF5/akonadi/contact/contacteditor.h
@@ -53,6 +60,7 @@ include/KF5/akonadi/contact/emailaddressselection.h
 include/KF5/akonadi/contact/emailaddressselectiondialog.h
 include/KF5/akonadi/contact/emailaddressselectionmodel.h
 include/KF5/akonadi/contact/emailaddressselectionwidget.h
+include/KF5/akonadi/contact/openemailaddressjob.h
 include/KF5/akonadi/contact/recipientseditormanager.h
 include/KF5/akonadi/contact/recipientspickerwidget.h
 include/KF5/akonadi/contact/selectaddressbookdialog.h

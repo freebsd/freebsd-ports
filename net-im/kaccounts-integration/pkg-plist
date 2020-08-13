@@ -31,6 +31,7 @@ lib/cmake/KAccounts/KAccountsTargets.cmake
 lib/libkaccounts.so
 lib/libkaccounts.so.2
 lib/libkaccounts.so.%%KDE_APPLICATIONS_VERSION%%
+%%QT_PLUGINDIR%%/kaccounts/daemonplugins/kaccounts_kio_webdav_plugin.so
 %%QT_PLUGINDIR%%/kcms/kcm_kaccounts.so
 %%QT_PLUGINDIR%%/kf5/kded/kded_accounts.so
 %%QT_QMLDIR%%/org/kde/kaccounts/libkaccountsdeclarativeplugin.so

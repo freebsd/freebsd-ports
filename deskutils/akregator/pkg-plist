@@ -15,7 +15,7 @@ lib/libakregatorprivate.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_PLUGINDIR%%/akregator_config_plugins.so
 %%QT_PLUGINDIR%%/akregator_mk4storage_plugin.so
 %%QT_PLUGINDIR%%/akregatorpart.so
-%%QT_PLUGINDIR%%/kontact_akregatorplugin.so
+%%QT_PLUGINDIR%%/kontact5/kontact_akregatorplugin.so
 %%DATADIR%%/grantleetheme/5.2/combinedview.html
 %%DATADIR%%/grantleetheme/5.2/defaultnormalvisitfeed.html
 %%DATADIR%%/grantleetheme/5.2/defaultnormalvisitfolder.html
@@ -42,7 +42,6 @@ share/kservices5/akregator_config_browser.desktop
 share/kservices5/akregator_config_general.desktop
 share/kservices5/akregator_config_plugins.desktop
 share/kservices5/akregator_mk4storage_plugin.desktop
-share/kservices5/akregator_part.desktop
 share/kservices5/feed.protocol
 share/kservices5/kontact/akregatorplugin.desktop
 share/kservicetypes5/akregator_plugin.desktop

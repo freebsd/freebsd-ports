@@ -15,3 +15,4 @@ lib/cmake/KF5KExiv2/KF5KExiv2Targets.cmake
 lib/libKF5KExiv2.so
 lib/libKF5KExiv2.so.15.0.0
 lib/libKF5KExiv2.so.5.0.0
+share/qlogging-categories5/libkexiv2.categories

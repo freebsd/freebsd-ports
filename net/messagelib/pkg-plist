@@ -18,6 +18,7 @@ include/KF5/MessageComposer/ConvertSnippetVariablesJob
 include/KF5/MessageComposer/ConvertSnippetVariablesUtil
 include/KF5/MessageComposer/EncryptJob
 include/KF5/MessageComposer/FollowUpReminderSelectDateDialog
+include/KF5/MessageComposer/FollowupReminder
 include/KF5/MessageComposer/FollowupReminderCreateJob
 include/KF5/MessageComposer/GlobalPart
 include/KF5/MessageComposer/ImageScalingWidget
@@ -59,6 +60,13 @@ include/KF5/MessageComposer/RecipientLine
 include/KF5/MessageComposer/RecipientsEditor
 include/KF5/MessageComposer/RichTextComposerNg
 include/KF5/MessageComposer/RichTextComposerSignatures
+include/KF5/MessageComposer/SendLaterCreateJob
+include/KF5/MessageComposer/SendLaterDialog
+include/KF5/MessageComposer/SendLaterInfo
+include/KF5/MessageComposer/SendLaterJob
+include/KF5/MessageComposer/SendLaterRemoveJob
+include/KF5/MessageComposer/SendLaterUtil
+include/KF5/MessageComposer/SignEncryptJob
 include/KF5/MessageComposer/SignJob
 include/KF5/MessageComposer/SignatureController
 include/KF5/MessageComposer/SinglepartJob
@@ -229,6 +237,7 @@ include/KF5/messagecomposer/convertsnippetvariablemenu.h
 include/KF5/messagecomposer/convertsnippetvariablesjob.h
 include/KF5/messagecomposer/convertsnippetvariablesutil.h
 include/KF5/messagecomposer/encryptjob.h
+include/KF5/messagecomposer/followupreminder.h
 include/KF5/messagecomposer/followupremindercreatejob.h
 include/KF5/messagecomposer/followupreminderselectdatedialog.h
 include/KF5/messagecomposer/globalpart.h
@@ -274,7 +283,14 @@ include/KF5/messagecomposer/recipientline.h
 include/KF5/messagecomposer/recipientseditor.h
 include/KF5/messagecomposer/richtextcomposerng.h
 include/KF5/messagecomposer/richtextcomposersignatures.h
+include/KF5/messagecomposer/sendlatercreatejob.h
+include/KF5/messagecomposer/sendlaterdialog.h
+include/KF5/messagecomposer/sendlaterinfo.h
+include/KF5/messagecomposer/sendlaterjob.h
+include/KF5/messagecomposer/sendlaterremovejob.h
+include/KF5/messagecomposer/sendlaterutil.h
 include/KF5/messagecomposer/signaturecontroller.h
+include/KF5/messagecomposer/signencryptjob.h
 include/KF5/messagecomposer/signjob.h
 include/KF5/messagecomposer/singlepartjob.h
 include/KF5/messagecomposer/skeletonmessagejob.h

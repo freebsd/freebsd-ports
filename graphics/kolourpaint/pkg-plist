@@ -2,6 +2,7 @@ bin/kolourpaint
 lib/libkolourpaint_lgpl.so
 lib/libkolourpaint_lgpl.so.5
 share/applications/org.kde.kolourpaint.desktop
+share/icons/hicolor/128x128/apps/kolourpaint.png
 share/icons/hicolor/16x16/apps/kolourpaint.png
 share/icons/hicolor/22x22/apps/kolourpaint.png
 share/icons/hicolor/32x32/apps/kolourpaint.png

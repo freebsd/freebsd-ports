@@ -123,6 +123,7 @@ share/icons/hicolor/scalable/mimetypes/video-mlt-playlist.svgz
 %%DATADIR%%/effects/dust.xml
 %%DATADIR%%/effects/dynamic_loudness.xml
 %%DATADIR%%/effects/dynamictext.xml
+%%DATADIR%%/effects/equalizer.xml
 %%DATADIR%%/effects/fade_from_black.xml
 %%DATADIR%%/effects/fade_to_black.xml
 %%DATADIR%%/effects/fadein.xml
@@ -264,6 +265,7 @@ share/icons/hicolor/scalable/mimetypes/video-mlt-playlist.svgz
 %%DATADIR%%/generators/count.xml
 %%DATADIR%%/generators/frei0r_test_pat_b.xml
 %%DATADIR%%/generators/noise.xml
+%%DATADIR%%/kdenlivedefaultlayouts.rc
 %%DATADIR%%/kdenliveeffectscategory.rc
 %%DATADIR%%/kdenlivetranscodingrc
 %%DATADIR%%/lumas/HD/bi-linear_x.pgm
@@ -314,6 +316,7 @@ share/icons/hicolor/scalable/mimetypes/video-mlt-playlist.svgz
 %%DATADIR%%/profiles/dci_2160p_50
 %%DATADIR%%/profiles/dci_2160p_5994
 %%DATADIR%%/profiles/dci_2160p_60
+%%DATADIR%%/shortcuts/Premiere
 %%DATADIR%%/timeline_athumbs.png
 %%DATADIR%%/timeline_avthumbs.png
 %%DATADIR%%/timeline_nothumbs.png

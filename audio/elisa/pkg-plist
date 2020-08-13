@@ -3,6 +3,7 @@ lib/elisa/libelisaLib.so.0
 lib/elisa/libelisaLib.so.0.1
 %%QT_QMLDIR%%/org/kde/elisa/libelisaqmlplugin.so
 %%QT_QMLDIR%%/org/kde/elisa/qmldir
+%%QT_QMLDIR%%/org/kde/elisa/plugins.qmltypes
 share/applications/org.kde.elisa.desktop
 share/icons/hicolor/128x128/apps/elisa.png
 share/icons/hicolor/16x16/apps/elisa.png
@@ -12,6 +13,7 @@ share/icons/hicolor/48x48/apps/elisa.png
 share/icons/hicolor/64x64/apps/elisa.png
 share/icons/hicolor/scalable/apps/elisa.svg
 share/locale/ar/LC_MESSAGES/elisa.mo
+share/locale/ast/LC_MESSAGES/elisa.mo
 share/locale/bs/LC_MESSAGES/elisa.mo
 share/locale/ca/LC_MESSAGES/elisa.mo
 share/locale/ca@valencia/LC_MESSAGES/elisa.mo
@@ -40,6 +42,7 @@ share/locale/pt/LC_MESSAGES/elisa.mo
 share/locale/pt_BR/LC_MESSAGES/elisa.mo
 share/locale/ru/LC_MESSAGES/elisa.mo
 share/locale/sk/LC_MESSAGES/elisa.mo
+share/locale/sl/LC_MESSAGES/elisa.mo
 share/locale/sv/LC_MESSAGES/elisa.mo
 share/locale/uk/LC_MESSAGES/elisa.mo
 share/locale/zh_CN/LC_MESSAGES/elisa.mo

@@ -240,6 +240,7 @@ share/locale/da/LC_MESSAGES/kipiplugin_flickr.mo
 share/locale/da/LC_MESSAGES/kipiplugin_googleservices.mo
 share/locale/da/LC_MESSAGES/kipiplugin_imageshack.mo
 share/locale/da/LC_MESSAGES/kipiplugin_imgur.mo
+share/locale/da/LC_MESSAGES/kipiplugin_jalbum.mo
 share/locale/da/LC_MESSAGES/kipiplugin_kmlexport.mo
 share/locale/da/LC_MESSAGES/kipiplugin_mediawiki.mo
 share/locale/da/LC_MESSAGES/kipiplugin_piwigo.mo
@@ -851,6 +852,7 @@ share/locale/sl/LC_MESSAGES/kipiplugin_flickr.mo
 share/locale/sl/LC_MESSAGES/kipiplugin_googleservices.mo
 share/locale/sl/LC_MESSAGES/kipiplugin_imageshack.mo
 share/locale/sl/LC_MESSAGES/kipiplugin_imgur.mo
+share/locale/sl/LC_MESSAGES/kipiplugin_jalbum.mo
 share/locale/sl/LC_MESSAGES/kipiplugin_kmlexport.mo
 share/locale/sl/LC_MESSAGES/kipiplugin_mediawiki.mo
 share/locale/sl/LC_MESSAGES/kipiplugin_piwigo.mo

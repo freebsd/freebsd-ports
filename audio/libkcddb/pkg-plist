@@ -1,13 +1,11 @@
 include/KF5/KCddb/Categories
 include/KF5/KCddb/Cdinfo
-include/KF5/KCddb/CdinfoDialog
 include/KF5/KCddb/Client
 include/KF5/KCddb/Genres
 include/KF5/KCddb/Kcddb
 include/KF5/KCddb/KcddbConfig
 include/KF5/KCddb/categories.h
 include/KF5/KCddb/cdinfo.h
-include/KF5/KCddb/cdinfodialog.h
 include/KF5/KCddb/client.h
 include/KF5/KCddb/configbase.h
 include/KF5/KCddb/genres.h
@@ -22,9 +20,6 @@ lib/cmake/KF5Cddb/KF5CddbTargets.cmake
 lib/libKF5Cddb.so
 lib/libKF5Cddb.so.5
 lib/libKF5Cddb.so.5.0.0
-lib/libKF5CddbWidgets.so
-lib/libKF5CddbWidgets.so.5
-lib/libKF5CddbWidgets.so.5.0.0
 %%QT_MKSPECDIR%%/modules/qt_KCddb.pri
 %%QT_PLUGINDIR%%/kcm_cddb.so
 share/config.kcfg/libkcddb5.kcfg

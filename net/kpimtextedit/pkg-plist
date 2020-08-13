@@ -14,6 +14,7 @@ include/KF5/KPIMTextEdit/KPIMTextEdit/RichTextComposerControler
 include/KF5/KPIMTextEdit/KPIMTextEdit/RichTextComposerEmailQuoteHighlighter
 include/KF5/KPIMTextEdit/KPIMTextEdit/RichTextComposerImages
 include/KF5/KPIMTextEdit/KPIMTextEdit/RichTextComposerWidget
+include/KF5/KPIMTextEdit/KPIMTextEdit/RichTextEditFindBar
 include/KF5/KPIMTextEdit/KPIMTextEdit/RichTextEditor
 include/KF5/KPIMTextEdit/KPIMTextEdit/RichTextEditorWidget
 include/KF5/KPIMTextEdit/KPIMTextEdit/RichTextExternalComposer
@@ -45,6 +46,7 @@ include/KF5/KPIMTextEdit/kpimtextedit/richtextcomposercontroler.h
 include/KF5/KPIMTextEdit/kpimtextedit/richtextcomposeremailquotehighlighter.h
 include/KF5/KPIMTextEdit/kpimtextedit/richtextcomposerimages.h
 include/KF5/KPIMTextEdit/kpimtextedit/richtextcomposerwidget.h
+include/KF5/KPIMTextEdit/kpimtextedit/richtexteditfindbar.h
 include/KF5/KPIMTextEdit/kpimtextedit/richtexteditor.h
 include/KF5/KPIMTextEdit/kpimtextedit/richtexteditorwidget.h
 include/KF5/KPIMTextEdit/kpimtextedit/richtextexternalcomposer.h

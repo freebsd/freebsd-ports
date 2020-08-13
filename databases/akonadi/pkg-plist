@@ -40,7 +40,6 @@ include/KF5/AkonadiCore/AgentInstanceModel
 include/KF5/AkonadiCore/AgentManager
 include/KF5/AkonadiCore/AgentType
 include/KF5/AkonadiCore/AgentTypeModel
-include/KF5/AkonadiCore/AkOptional
 include/KF5/AkonadiCore/Attribute
 include/KF5/AkonadiCore/AttributeFactory
 include/KF5/AkonadiCore/CachePolicy
@@ -84,7 +83,6 @@ include/KF5/AkonadiCore/ItemCreateJob
 include/KF5/AkonadiCore/ItemDeleteJob
 include/KF5/AkonadiCore/ItemFetchJob
 include/KF5/AkonadiCore/ItemFetchScope
-include/KF5/AkonadiCore/ItemModel
 include/KF5/AkonadiCore/ItemModifyJob
 include/KF5/AkonadiCore/ItemMonitor
 include/KF5/AkonadiCore/ItemMoveJob
@@ -95,11 +93,9 @@ include/KF5/AkonadiCore/Job
 include/KF5/AkonadiCore/LinkJob
 include/KF5/AkonadiCore/MimeTypeChecker
 include/KF5/AkonadiCore/Monitor
-include/KF5/AkonadiCore/NewMailNotifierAttribute
 include/KF5/AkonadiCore/NotificationSubscriber
 include/KF5/AkonadiCore/PartFetcher
 include/KF5/AkonadiCore/PersistentSearchAttribute
-include/KF5/AkonadiCore/Pop3ResourceAttribute
 include/KF5/AkonadiCore/RecursiveCollectionFilterProxyModel
 include/KF5/AkonadiCore/RecursiveItemFetchJob
 include/KF5/AkonadiCore/Relation
@@ -145,7 +141,6 @@ include/KF5/AkonadiCore/agentmanager.h
 include/KF5/AkonadiCore/agenttype.h
 include/KF5/AkonadiCore/agenttypemodel.h
 include/KF5/AkonadiCore/akonadicore_export.h
-include/KF5/AkonadiCore/akoptional.h
 include/KF5/AkonadiCore/attribute.h
 include/KF5/AkonadiCore/attributefactory.h
 include/KF5/AkonadiCore/cachepolicy.h
@@ -190,7 +185,6 @@ include/KF5/AkonadiCore/itemcreatejob.h
 include/KF5/AkonadiCore/itemdeletejob.h
 include/KF5/AkonadiCore/itemfetchjob.h
 include/KF5/AkonadiCore/itemfetchscope.h
-include/KF5/AkonadiCore/itemmodel.h
 include/KF5/AkonadiCore/itemmodifyjob.h
 include/KF5/AkonadiCore/itemmonitor.h
 include/KF5/AkonadiCore/itemmovejob.h
@@ -202,12 +196,9 @@ include/KF5/AkonadiCore/job.h
 include/KF5/AkonadiCore/linkjob.h
 include/KF5/AkonadiCore/mimetypechecker.h
 include/KF5/AkonadiCore/monitor.h
-include/KF5/AkonadiCore/newmailnotifierattribute.h
 include/KF5/AkonadiCore/notificationsubscriber.h
-include/KF5/AkonadiCore/optional.hpp
 include/KF5/AkonadiCore/partfetcher.h
 include/KF5/AkonadiCore/persistentsearchattribute.h
-include/KF5/AkonadiCore/pop3resourceattribute.h
 include/KF5/AkonadiCore/qtest_akonadi.h
 include/KF5/AkonadiCore/recursivecollectionfilterproxymodel.h
 include/KF5/AkonadiCore/recursiveitemfetchjob.h
@@ -268,6 +259,7 @@ include/KF5/AkonadiWidgets/SubscriptionDialog
 include/KF5/AkonadiWidgets/TagEditWidget
 include/KF5/AkonadiWidgets/TagManagementDialog
 include/KF5/AkonadiWidgets/TagSelectWidget
+include/KF5/AkonadiWidgets/TagSelectionComboBox
 include/KF5/AkonadiWidgets/TagSelectionDialog
 include/KF5/AkonadiWidgets/TagWidget
 include/KF5/AkonadiWidgets/agentactionmanager.h
@@ -295,6 +287,7 @@ include/KF5/AkonadiWidgets/standardactionmanager.h
 include/KF5/AkonadiWidgets/subscriptiondialog.h
 include/KF5/AkonadiWidgets/tageditwidget.h
 include/KF5/AkonadiWidgets/tagmanagementdialog.h
+include/KF5/AkonadiWidgets/tagselectioncombobox.h
 include/KF5/AkonadiWidgets/tagselectiondialog.h
 include/KF5/AkonadiWidgets/tagselectwidget.h
 include/KF5/AkonadiWidgets/tagwidget.h

@@ -57,7 +57,6 @@ share/konqsidebartng/virtual_folders/remote/virtualfolder_network.desktop
 %%SAMBA%%share/konqueror/dirtree/remote/smb-network.desktop
 share/kservices5/about.protocol
 share/kservices5/activities.protocol
-share/kservices5/ar.protocol
 %%TAGLIB%%share/kservices5/audiothumbnail.desktop
 share/kservices5/bookmarks.protocol
 share/kservices5/bzip.protocol
@@ -82,16 +81,13 @@ share/kservices5/network.protocol
 share/kservices5/opendocumentthumbnail.desktop
 share/kservices5/recentdocuments.protocol
 share/kservices5/settings.protocol
-share/kservices5/sevenz.protocol
 %%SSH%%share/kservices5/sftp.protocol
 share/kservices5/svgthumbnail.desktop
-share/kservices5/tar.protocol
 share/kservices5/textthumbnail.desktop
 share/kservices5/thumbnail.protocol
 share/kservices5/windowsexethumbnail.desktop
 share/kservices5/windowsimagethumbnail.desktop
 share/kservices5/xz.protocol
-share/kservices5/zip.protocol
 share/kservicetypes5/thumbcreator.desktop
 share/locale/ar/LC_MESSAGES/kfileaudiopreview5.mo
 share/locale/ar/LC_MESSAGES/kio5_activities.mo
@@ -403,7 +399,6 @@ share/locale/ia/LC_MESSAGES/kio5_fish.mo
 share/locale/ia/LC_MESSAGES/kio5_info.mo
 share/locale/ia/LC_MESSAGES/kio5_man.mo
 share/locale/ia/LC_MESSAGES/kio5_mtp.mo
-share/locale/ia/LC_MESSAGES/kio5_network.mo
 share/locale/ia/LC_MESSAGES/kio5_nfs.mo
 share/locale/ia/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/ia/LC_MESSAGES/kio5_sftp.mo
@@ -701,6 +696,7 @@ share/locale/sl/LC_MESSAGES/kio5_fish.mo
 share/locale/sl/LC_MESSAGES/kio5_info.mo
 share/locale/sl/LC_MESSAGES/kio5_man.mo
 share/locale/sl/LC_MESSAGES/kio5_mtp.mo
+share/locale/sl/LC_MESSAGES/kio5_network.mo
 share/locale/sl/LC_MESSAGES/kio5_nfs.mo
 share/locale/sl/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/sl/LC_MESSAGES/kio5_sftp.mo

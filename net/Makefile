@@ -296,7 +296,6 @@
     SUBDIR += kafkacat
     SUBDIR += kalarmcal
     SUBDIR += kamailio
-    SUBDIR += kblog
     SUBDIR += kcalutils
     SUBDIR += kdenetwork
     SUBDIR += kdenetwork-filesharing

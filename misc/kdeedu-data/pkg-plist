@@ -282,6 +282,10 @@ share/apps/kvtml/ru/people.kvtml
 share/apps/kvtml/ru/space.kvtml
 share/apps/kvtml/ru/transportation.kvtml
 share/apps/kvtml/ru/worldcapitals.kvtml
+share/apps/kvtml/sk/animals.kvtml
+share/apps/kvtml/sk/easy.kvtml
+share/apps/kvtml/sk/hard.kvtml
+share/apps/kvtml/sk/medium.kvtml
 share/apps/kvtml/sl/animals.kvtml
 share/apps/kvtml/sl/clothing.kvtml
 share/apps/kvtml/sl/computers.kvtml

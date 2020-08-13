@@ -17,9 +17,12 @@ include/KF5/CalendarSupport/FreePeriodModel
 include/KF5/CalendarSupport/IdentityManager
 include/KF5/CalendarSupport/IncidenceViewer
 include/KF5/CalendarSupport/KCalPrefs
+include/KF5/CalendarSupport/KDatePickerPopup
 include/KF5/CalendarSupport/MessageWidget
+include/KF5/CalendarSupport/NoteEditDialog
 include/KF5/CalendarSupport/Plugin
 include/KF5/CalendarSupport/PrintPlugin
+include/KF5/CalendarSupport/UriHandler
 include/KF5/CalendarSupport/Utils
 include/KF5/calendarsupport/archivedialog.h
 include/KF5/calendarsupport/calendarsingleton.h
@@ -40,7 +43,9 @@ include/KF5/calendarsupport/identitymanager.h
 include/KF5/calendarsupport/incidenceviewer.h
 include/KF5/calendarsupport/kcalprefs.h
 include/KF5/calendarsupport/kcalprefs_base.h
+include/KF5/calendarsupport/kdatepickerpopup.h
 include/KF5/calendarsupport/messagewidget.h
+include/KF5/calendarsupport/noteeditdialog.h
 include/KF5/calendarsupport/plugin.h
 include/KF5/calendarsupport/printplugin.h
 include/KF5/calendarsupport/ui_calprintdayconfig_base.h
@@ -48,6 +53,7 @@ include/KF5/calendarsupport/ui_calprintincidenceconfig_base.h
 include/KF5/calendarsupport/ui_calprintmonthconfig_base.h
 include/KF5/calendarsupport/ui_calprinttodoconfig_base.h
 include/KF5/calendarsupport/ui_calprintweekconfig_base.h
+include/KF5/calendarsupport/urihandler.h
 include/KF5/calendarsupport/utils.h
 include/KF5/calendarsupport_version.h
 lib/cmake/KF5CalendarSupport/KF5CalendarSupportConfig.cmake

@@ -47,9 +47,8 @@ lib/libKF5AkonadiSearchXapian.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_PLUGINDIR%%/akonadi/emailsearchstore.so
 %%QT_PLUGINDIR%%/akonadi/notesearchstore.so
 %%QT_PLUGINDIR%%/kcm_krunner_pimcontacts.so
-%%QT_PLUGINDIR%%/krunner_pimcontacts.so
+%%QT_PLUGINDIR%%/kf5/krunner/krunner_pimcontacts.so
 share/akonadi/agents/akonadiindexingagent.desktop
-share/kservices5/plasma-krunner-pimcontacts.desktop
 share/kservices5/plasma-krunner-pimcontacts_config.desktop
 share/locale/ar/LC_MESSAGES/akonadi_search.mo
 share/locale/ca/LC_MESSAGES/akonadi_search.mo
