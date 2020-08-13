@@ -1,0 +1,8 @@
+[
+{ type: upgrade
+  message: <<EOM
+	It is necessary to reindex from scratch when upgrading from
+	anything older than opengrok 1.3.0.
+EOM
+}
+]
