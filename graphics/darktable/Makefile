@@ -3,7 +3,7 @@
 
 PORTNAME=	darktable
 PORTVERSION=	3.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/darktable-org/${PORTNAME}/releases/download/release-${PORTVERSION:C/\.rc/rc/}/
 
@@ -15,8 +15,7 @@ LICENSE=	GPLv3
 ONLY_FOR_ARCHS=		amd64
 ONLY_FOR_ARCHS_REASON=	uses SSE instructions and 64-bit address space
 
-BUILD_DEPENDS=	${RUN_DEPENDS} \
-		iso-codes>=0:misc/iso-codes \
+BUILD_DEPENDS=	iso-codes>=0:misc/iso-codes \
 		p5-Pod-Parser>=0:textproc/p5-Pod-Parser \
 		po4a-translate:textproc/po4a \
 		xsltproc:textproc/libxslt
@@ -31,7 +30,6 @@ LIB_DEPENDS=	libcolord-gtk.so:graphics/colord-gtk \
 		libpugixml.so:textproc/pugixml \
 		libsoup-2.4.so:devel/libsoup \
 		libtiff.so:graphics/tiff
-RUN_DEPENDS=	exiftool:graphics/p5-Image-ExifTool
 
 USES=		cmake compiler:c++11-lib desktop-file-utils gl gnome jpeg \
 		pkgconfig shebangfix sqlite tar:xz xorg
@@ -53,12 +51,12 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\.rc/~rc/}
 
 OPTIONS_DEFINE=		DOCS GEO GPHOTO GRAPHMAGICK LIBSECRET LUA NLS OPENEXR \
-			OPENJPEG PRINT WEBP
+			OPENJPEG PRINT TOOLS WEBP
 OPTIONS_DEFAULT=	GEO GPHOTO LUA OPENEXR OPENJPEG PRINT WEBP
 OPTIONS_SUB=		yes
 
-GEO_DESC=	Support geotagging
-LIBSECRET_DESC=	Support libsecret as password backend
+GEO_DESC=		Support geotagging
+LIBSECRET_DESC=		Support libsecret as password backend
 
 GEO_LIB_DEPENDS=	libosmgpsmap-1.0.so:x11-toolkits/osm-gps-map
 GEO_CMAKE_OFF=		-DUSE_MAP:BOOL=OFF
@@ -92,6 +90,10 @@ OPENJPEG_CMAKE_OFF=	-DUSE_OPENJPEG:BOOL=OFF
 PRINT_LIB_DEPENDS=	libcups.so:print/cups
 PRINT_CMAKE_OFF=	-DBUILD_PRINT:BOOL=OFF
 
+TOOLS_DESC=		Install additional scripts
+TOOLS_BUILD_DEPENDS=	exiftool:graphics/p5-Image-ExifTool
+TOOLS_RUN_DEPENDS=	exiftool:graphics/p5-Image-ExifTool
+
 WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
 WEBP_CMAKE_OFF=		-DUSE_WEBP:BOOL=OFF
 
@@ -114,5 +116,8 @@ STRIP=
 # undefined. Remove _XOPEN_SOURCE maro definitions.
 post-patch:
 	${REINPLACE_CMD} '/add_definitions."-D_XOPEN_SOURCE=.*"/d' ${WRKSRC}/CMakeLists.txt
+
+post-install-TOOLS-off:
+	@${RM} -f ${STAGEDIR}${DATADIR}/tools/extract_wb_from_images.sh
 
 .include <bsd.port.post.mk>

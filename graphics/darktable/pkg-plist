@@ -368,7 +368,7 @@ share/applications/darktable.desktop
 %%DATADIR%%/themes/darktable-icons.css
 %%DATADIR%%/themes/darktable.css
 %%DATADIR%%/tools/common.sh
-%%DATADIR%%/tools/extract_wb_from_images.sh
+%%TOOLS%%%%DATADIR%%/tools/extract_wb_from_images.sh
 %%DATADIR%%/tools/purge_from_cache.sh
 %%DATADIR%%/tools/purge_non_existing_images.sh
 %%DATADIR%%/tools/purge_unused_tags.sh
