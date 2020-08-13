@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	pyaxo
-PORTVERSION=	0.8.2
-PORTREVISION=	1
+DISTVERSION=	0.8.2
+PORTREVISION=	2
 CATEGORIES=	security net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}passlib>=1.6.1:security/py-passlib@${PY_FLAV
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 
-USES=		python:2.7
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
