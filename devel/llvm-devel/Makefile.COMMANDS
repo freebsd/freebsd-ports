@@ -90,6 +90,12 @@ EXTRAS_COMMANDS= \
 		modularize \
 		pp-trace
 
+FLANG_COMMANDS=	\
+		f18 \
+		f18-parse-demo \
+		flang \
+		tco
+
 LIT_COMMANDS=	\
 		FileCheck \
 		lit \
@@ -108,3 +114,11 @@ LLDB_COMMANDS=	\
 		lldb-instr \
 		lldb-server \
 		lldb-vscode
+
+MLIR_COMMANDS=	\
+		mlir-cpu-runner \
+		mlir-linalg-ods-gen \
+		mlir-opt \
+		mlir-reduce \
+		mlir-tblgen \
+		mlir-translate
