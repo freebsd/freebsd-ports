@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mcron
-PORTVERSION=	1.0.8
-PORTREVISION=	3
+PORTVERSION=	1.2.0
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU
 
@@ -12,14 +11,13 @@ COMMENT=	100% compatible replacement for Vixie cron
 
 LIB_DEPENDS=	libguile-2.2.so:lang/guile2
 
-USES=		pkgconfig
+USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes
-MAKEFILE=	makefile
+TEST_TARGET=	check
 
 INFO=		mcron
 
-post-patch:
-	@${REINPLACE_CMD} -e 's,guile-2\.0,guile-2.2,' \
-		${WRKSRC}/configure
+PLIST_SUB=	GUILE_SITE=share/guile/site/2.2 \
+		GUILE_SITE_CCACHE=lib/guile/2.2/site-ccache
 
 .include <bsd.port.mk>
