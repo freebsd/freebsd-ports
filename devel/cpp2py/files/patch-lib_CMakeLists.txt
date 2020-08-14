@@ -1,8 +1,0 @@
---- lib/CMakeLists.txt.orig	2018-06-16 22:38:48 UTC
-+++ lib/CMakeLists.txt
-@@ -26,4 +26,4 @@ target_include_directories(cpp2py SYSTEM
- 
- # Install the library in lib and prepare an exported cmake file to reimport it
- install(TARGETS cpp2py DESTINATION lib EXPORT cpp2py-targets)
--install(EXPORT cpp2py-targets DESTINATION share/cmake)
-+install(EXPORT cpp2py-targets DESTINATION lib/cmake/cpp2py)
