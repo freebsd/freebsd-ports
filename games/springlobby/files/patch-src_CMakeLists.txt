@@ -1,0 +1,11 @@
+--- src/CMakeLists.txt.orig	2020-08-14 17:39:26 UTC
++++ src/CMakeLists.txt
+@@ -112,7 +112,7 @@ IF( ENABLE_DEBUG_REPORT )
+ 	ENDIF( MINGW )
+ ENDIF( ENABLE_DEBUG_REPORT )
+ 
+-FIND_PACKAGE( CURL REQUIRED libcurl )
++FIND_PACKAGE( CURL REQUIRED)
+ IF( NOT CURL_FOUND )
+ 	MESSAGE( FATAL_ERROR "required library libCURL not found" )
+ ENDIF( NOT CURL_FOUND )
