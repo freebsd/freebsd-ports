@@ -1,0 +1,5 @@
+Blessed is an easy, practical library for making terminal apps, by providing
+an elegant, well-documented interface to Colors, Keyboard input, and screen
+position and Location capabilities.
+
+WWW: https://github.com/jquast/blessed

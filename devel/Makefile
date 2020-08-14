@@ -4193,6 +4193,7 @@
     SUBDIR += py-bitarray
     SUBDIR += py-bitstring
     SUBDIR += py-black
+    SUBDIR += py-blessed
     SUBDIR += py-blessings
     SUBDIR += py-blinker
     SUBDIR += py-blist
