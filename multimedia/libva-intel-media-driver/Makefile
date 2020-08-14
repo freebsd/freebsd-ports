@@ -2,11 +2,12 @@
 
 PORTNAME=	media-driver
 DISTVERSIONPREFIX=	intel-media-
-DISTVERSION=	20.3.pre4
+DISTVERSION=	20.3.pre5
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	libva-intel-
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	c09fb26fb9d9.patch:-p1 # https://github.com/intel/media-driver/pull/991
 PATCHFILES+=	2bd42cddbe7c.patch:-p1 # https://github.com/intel/media-driver/pull/819
 PATCHFILES+=	0ef9d7bd97ac.patch:-p1 # https://github.com/intel/media-driver/pull/819
 PATCHFILES+=	b7b1ffbc5323.patch:-p1 # https://github.com/intel/media-driver/pull/819
@@ -29,8 +30,7 @@ ONLY_FOR_ARCHS_REASON=	Only Intel GPUs on x86 are supported
 
 BUILD_DEPENDS=	gmmlib>=19.3.1:multimedia/gmmlib \
 		libva>=2.7.0:multimedia/libva
-LIB_DEPENDS=	libpciaccess.so:devel/libpciaccess \
-		libigdgmm.so:multimedia/gmmlib \
+LIB_DEPENDS=	libigdgmm.so:multimedia/gmmlib \
 		libva.so:multimedia/libva
 
 USES=		cmake compiler:c++11-lib localbase pkgconfig
