@@ -3989,6 +3989,7 @@
     SUBDIR += pushmi
     SUBDIR += py-AddOns
     SUBDIR += py-Automat
+    SUBDIR += py-BTrees
     SUBDIR += py-Breve
     SUBDIR += py-BytecodeAssembler
     SUBDIR += py-DateTime
