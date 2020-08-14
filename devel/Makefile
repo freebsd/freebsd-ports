@@ -4784,6 +4784,7 @@
     SUBDIR += py-pep517
     SUBDIR += py-pep8-naming
     SUBDIR += py-period
+    SUBDIR += py-persistent
     SUBDIR += py-petname
     SUBDIR += py-pew
     SUBDIR += py-pex
