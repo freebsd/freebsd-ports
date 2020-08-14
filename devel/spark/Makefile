@@ -3,7 +3,7 @@
 
 PORTNAME=	spark
 PORTVERSION=	2.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel java
 MASTER_SITES=	APACHE/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 		LOCAL/demon/:maven \
@@ -17,16 +17,13 @@ COMMENT=	Fast big data processing engine
 
 LICENSE=	APACHE20
 
-DEPRECATED=	Uses deprecated version of python
-EXPIRATION_DATE=	2020-08-15
-
 BUILD_DEPENDS=	${LOCALBASE}/share/java/maven33/bin/mvn:devel/maven33 \
 		${LOCALBASE}/lib/libsnappyjava.so:archivers/snappy-java \
 		bash:shells/bash
 RUN_DEPENDS=	bash:shells/bash \
 		yarn:devel/hadoop2
 
-USES=		python:2.7 shebangfix
+USES=		python shebangfix
 USE_JAVA=	yes
 MAKE_ENV+=	JAVA_HOME=${JAVA_HOME} MAVEN_OPTS="-Xmx2g -XX:MaxPermSize=512M -XX:ReservedCodeCacheSize=512m"
 SHEBANG_FILES=	bin/sparkR
