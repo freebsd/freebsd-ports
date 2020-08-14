@@ -2,6 +2,7 @@
 
 PORTNAME=	kartograph
 DISTVERSION=	0.6.8
+PORTREVISION=	1
 CATEGORIES=	misc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -9,9 +10,6 @@ MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Framework for building interactive map applications
 
 LICENSE=	MIT
-
-DEPRECATED=	Uses deprecated version of python
-EXPIRATION_DATE=	2020-08-15
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}argparse>0:devel/py-argparse@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}gdal>0:graphics/py-gdal@${PY_FLAVOR} \
@@ -24,7 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}argparse>0:devel/py-argparse@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Shapely>=1.0.14:devel/py-shapely@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tinycss>0:textproc/py-tinycss@${PY_FLAVOR}
 
-USES=		python:2.7
+USES=		python
 USE_GITHUB=	yes
 GH_PROJECT=	${PORTNAME}.py
 USE_PYTHON=	distutils concurrent autoplist
