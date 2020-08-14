@@ -2,6 +2,7 @@
 
 PORTNAME=	graphlan
 DISTVERSION=	1.1.3
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	https://bitbucket.org/${BB_ACCOUNT}/${BB_PROJECT}/get/${BB_COMMIT}${EXTRACT_SUFX}?dummy=/ \
 		https://bitbucket.org/${BB_ACCOUNT}/pyphlan/get/eae40ebc0030${EXTRACT_SUFX}?dummy=/:pyphlan \
@@ -16,10 +17,7 @@ COMMENT=	High-quality circular representations of taxonomic, phylogenetic trees
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-DEPRECATED=	Uses deprecated version of python
-EXPIRATION_DATE=	2020-08-15
-
-USES=		python:2.7 shebangfix
+USES=		python shebangfix
 SHEBANG_GLOB=	*.py
 
 BB_ACCOUNT=	nsegata
