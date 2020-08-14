@@ -176,6 +176,7 @@ man/man3/ldap_objectclass2str.3.gz
 man/man3/ldap_objectclass_free.3.gz
 man/man3/ldap_open.3.gz
 man/man3/ldap_parse_extended_result.3.gz
+man/man3/ldap_parse_intermediate.3.gz
 man/man3/ldap_parse_reference.3.gz
 man/man3/ldap_parse_result.3.gz
 man/man3/ldap_parse_sasl_bind_result.3.gz
