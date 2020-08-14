@@ -1,4 +1,4 @@
---- Config.kmk.orig	2020-05-13 19:36:41 UTC
+--- Config.kmk.orig	2020-07-09 16:49:46 UTC
 +++ Config.kmk
 @@ -445,11 +445,11 @@ ifn1of ($(KBUILD_TARGET), win darwin)
   # Enable OSS audio support.
@@ -109,7 +109,7 @@
  TEMPLATE_VBoxR0_CFLAGS.amd64        = -m64 -mno-red-zone -mcmodel=kernel -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -fno-asynchronous-unwind-tables -ffreestanding
  TEMPLATE_VBoxR0_CXXFLAGS.amd64      = -m64 -mno-red-zone -mcmodel=kernel -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -fno-asynchronous-unwind-tables
  ifeq ($(KBUILD_TARGET),solaris)
-@@ -4683,7 +4686,7 @@ TEMPLATE_VBOXR0DRV_CFLAGS              =  \
+@@ -4683,13 +4686,13 @@ TEMPLATE_VBOXR0DRV_CFLAGS              =  \
  	-O2 -ffreestanding -fno-strict-aliasing -fno-common -finline-limit=8000 \
  	$(VBOX_GCC_fno-stack-protector) $(VBOX_GCC_R0_OPT) $(VBOX_GCC_R0_FP) \
  	-nostdinc -std=c99
@@ -118,6 +118,13 @@
  TEMPLATE_VBOXR0DRV_CFLAGS.amd64        = -m64 --param inline-unit-growth=100 --param large-function-growth=1000 \
  	-fno-omit-frame-pointer -mcmodel=kernel -mno-red-zone -mfpmath=387 -mno-sse -mno-sse2 -mno-mmx \
  	-mno-3dnow -msoft-float -fno-asynchronous-unwind-tables -Wundef
+ TEMPLATE_VBOXR0DRV_CXXFLAGS            = -fno-exceptions -fno-rtti \
+ 	$(VBOX_GCC_WARN) -Wpointer-arith -Winline \
+-	-O2 -fno-strict-aliasing -fno-common -finline-limit=8000 \
++	-O2 -fno-builtin -fno-strict-aliasing -fno-common -finline-limit=8000 \
+ 	$(VBOX_GCC_fno-stack-protector) $(VBOX_GCC_R0_OPT) $(VBOX_GCC_R0_FP) \
+ 	-nostdinc
+ TEMPLATE_VBOXR0DRV_CXXFLAGS.x86        = $(TEMPLATE_VBOXR0DRV_CFLAGS.x86)
 @@ -4716,7 +4719,7 @@ define TOOL_FREEBSDKMODLD_LINK_SYSMOD_CMDS
  		| xargs -J% objcopy % $(out)
  
