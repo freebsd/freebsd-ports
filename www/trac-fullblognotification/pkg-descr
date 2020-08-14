@@ -15,4 +15,4 @@ after Trac's ticket_notify_email template.
 If you are using the AnnouncerPlugin, you should use its FullBlogPlugin
 rather than the FullBlogNotificationPlugin.
 
-WWW: http://trac-hacks.org/wiki/FullBlogNotificationPlugin
+WWW: https://trac-hacks.org/wiki/FullBlogNotificationPlugin
