@@ -1,0 +1,6 @@
+The Sitemap Protocol allows you to inform search engine crawlers about URLs on
+your Web sites that are available for crawling. A Sitemap consists of a list of
+URLs and may also contain additional information about those URLs, such as when
+they were last modified, how frequently they change, etc.
+
+WWW: https://metacpan.org/release/JASONK/Search-Sitemap-2.13
