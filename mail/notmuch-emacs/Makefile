@@ -34,6 +34,8 @@ MANPAGES_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
 MANPAGES_CONFIGURE_ON=	HAVE_SPHINX=1
 MANPAGES_INSTALL_TARGET=	install-man
 
+PORTSCOUT=	limit:^[0-9\.]*$$
+
 # fake ./configure to avoid unneeded dependencies
 do-configure:
 	@${CP} ${WRKSRC}/version ${WRKSRC}/version.stamp

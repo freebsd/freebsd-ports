@@ -23,6 +23,8 @@ OPTIONS_DEFINE=	EXAMPLES MANPAGES
 OPTIONS_DEFAULT=	MANPAGES
 OPTIONS_SUB=	yes
 
+PORTSCOUT=	limit:^[0-9\.]*$$
+
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@${MV} ${STAGEDIR}${PREFIX}/etc/Muttrc.d/notmuch-mutt.rc ${STAGEDIR}${EXAMPLESDIR}/notmuch-mutt.rc

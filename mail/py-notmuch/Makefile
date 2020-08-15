@@ -21,6 +21,8 @@ OPTIONS_DEFINE=	DOCS
 
 DOCS_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
 
+PORTSCOUT=	limit:^[0-9\.]*$$
+
 do-build-DOCS-on:
 	@${MAKE_CMD} -C ${WRKSRC}/docs html
 
