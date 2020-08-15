@@ -3,6 +3,7 @@
 
 PORTNAME=	pgbouncer
 PORTVERSION=	1.14.0
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://pgbouncer.github.io/downloads/files/${PORTVERSION}/ \
 		http://pgbouncer.github.io/downloads/files/${PORTVERSION}/
