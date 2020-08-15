@@ -1,0 +1,5 @@
+Matches a Proc::ProcessTable::Process against a stack of checks.
+
+This can include cmndline, command fname, EGID, and more.
+
+WWW: https://metacpan.org/release/Proc-ProcessTable-Match
