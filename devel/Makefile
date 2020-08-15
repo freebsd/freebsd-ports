@@ -4441,6 +4441,7 @@
     SUBDIR += py-gobject3
     SUBDIR += py-google-cloud-iam
     SUBDIR += py-google-crc32c
+    SUBDIR += py-google-crc32c0
     SUBDIR += py-google-i18n-address
     SUBDIR += py-google-pasta
     SUBDIR += py-googleapis-common-protos
