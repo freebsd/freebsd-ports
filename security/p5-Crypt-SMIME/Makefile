@@ -27,10 +27,4 @@ USES=		perl5 ssl
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Crypt/SMIME/SMIME.so
 
-.include <bsd.port.pre.mk>
-
-.if ${SSL_DEFAULT:Mlibressl*}
-IGNORE=	Required CMS is disabled on LibreSSL
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
