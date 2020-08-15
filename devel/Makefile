@@ -4784,7 +4784,6 @@
     SUBDIR += py-positional
     SUBDIR += py-posix_ipc
     SUBDIR += py-poyo
-    SUBDIR += py-pp
     SUBDIR += py-prance
     SUBDIR += py-pre-commit
     SUBDIR += py-preshed

@@ -902,7 +902,6 @@
     SUBDIR += py-josepy
     SUBDIR += py-keepkey
     SUBDIR += py-kerberos
-    SUBDIR += py-keyczar
     SUBDIR += py-keyring
     SUBDIR += py-keyrings.alt
     SUBDIR += py-keystone

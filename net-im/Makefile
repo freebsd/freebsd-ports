@@ -126,7 +126,6 @@
     SUBDIR += py-nbxmpp
     SUBDIR += py-punjab
     SUBDIR += py-python-telegram-bot
-    SUBDIR += py-skype4py
     SUBDIR += py-slackclient
     SUBDIR += py-sleekxmpp
     SUBDIR += py-slixmpp
@@ -162,7 +161,6 @@
     SUBDIR += telepathy-farstream
     SUBDIR += telepathy-gabble
     SUBDIR += telepathy-glib
-    SUBDIR += telepathy-haze
     SUBDIR += telepathy-idle
     SUBDIR += telepathy-logger
     SUBDIR += telepathy-logger-qt5

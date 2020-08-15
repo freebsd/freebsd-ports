@@ -15365,3 +15365,12 @@ www/py-wsgiauth||2020-08-15|Has expired: Uses deprecated version of python
 x11-toolkits/py-wax||2020-08-15|Has expired: Uses deprecated version of python
 x11-toolkits/py-wxPython-common||2020-08-15|Has expired: Uses deprecated version of python
 x11-toolkits/py-wxPython28-common||2020-08-15|Has expired: Uses deprecated version of python
+audio/py-cddb||2020-08-15|Has expired: Uses deprecated version of python
+databases/py-sybase||2020-08-15|Has expired: Uses deprecated version of python
+devel/py-pp||2020-08-15|Has expired: Uses deprecated version of python
+security/py-keyczar||2020-08-15|Has expired: Uses deprecated version of python
+math/py-pysparse||2020-08-15|Has expired: Uses deprecated version of python
+net/py-beanstalkc||2020-08-15|Has expired: Uses deprecated version of python
+x11-toolkits/py-wxPython30||2020-08-15|Has expired: Uses deprecated version of python
+net-im/py-skype4py||2020-08-15|Has expired: Uses deprecated version of python
+net-im/telepathy-haze||2020-08-15|Has expired: Uses deprecated version of python
