@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jekyll
-PORTVERSION=	3.8.7
+PORTVERSION=	3.9.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	3
@@ -19,7 +19,7 @@ RUN_DEPENDS=	rubygem-addressable>=2.4<3:www/rubygem-addressable \
 		rubygem-i18n>=0.7,2:devel/rubygem-i18n \
 		rubygem-jekyll-sass-converter1>=1.0<2:textproc/rubygem-jekyll-sass-converter1 \
 		rubygem-jekyll-watch>=2.0<3:www/rubygem-jekyll-watch \
-		rubygem-kramdown1>=1.14<2:textproc/rubygem-kramdown1 \
+		rubygem-kramdown>=1.17<3:textproc/rubygem-kramdown \
 		rubygem-liquid>=4.0<5:textproc/rubygem-liquid \
 		rubygem-mercenary>=0.3.3<1:devel/rubygem-mercenary \
 		rubygem-pathutil>=0.9<1:devel/rubygem-pathutil \
