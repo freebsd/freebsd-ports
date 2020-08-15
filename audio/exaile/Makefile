@@ -22,12 +22,11 @@ NO_ARCH=	yes
 USES=		desktop-file-utils gmake gnome python:3.6+
 USE_GNOME=	gtk30 librsvg2 pygobject3
 USE_GSTREAMER1=	good faad
-OPTIONS_DEFINE=	DOCS NLS UDISKS2 CDDB
+OPTIONS_DEFINE=	DOCS NLS UDISKS2
 OPTIONS_SUB=	yes
 NLS_USES=	gettext
 NLS_BUILD_DEPENDS=	help2man:misc/help2man
 NLS_INSTALL_TARGET_OFF=	install_no_locale
-CDDB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cddb>0:audio/py-cddb@${PY_FLAVOR}
 UDISKS2_DESC=	UDISKS2 implementation for hardware detection
 UDISKS2_RUN_DEPENDS=	${LOCALBASE}bin/bsdisks:sysutils/bsdisks
 
