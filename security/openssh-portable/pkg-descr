@@ -12,4 +12,4 @@ are not synchronized. Portable releases are marked with a 'p' (e.g. 3.1p1).
 The official OpenBSD source will never use the 'p' suffix, but will instead
 increment the version number when they hit 'stable spots' in their development.
 
-WWW: http://www.openssh.org/portable.html
+WWW: https://www.openssh.com/portable.html
