@@ -65,6 +65,8 @@ DOXYGEN_CONFIGURE_WITH=	api-docs
 MANPAGES_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
 MANPAGES_CONFIGURE_WITH=	docs
 
+PORTSCOUT=	limit:^[0-9\.]*$$
+
 # Avoid conflict with C++20 <version> by ignoring <...> under WRKSRC
 post-patch:
 	@${REINPLACE_CMD} -i .c++20 's/-I$$(srcdir)/-iquote$$(srcdir)/' \
