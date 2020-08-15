@@ -2,9 +2,9 @@
 +++ setup.py
 @@ -54,7 +54,6 @@ def main(build_cffi=True):
      setuptools.setup(
-         packages=["crc32c"],
+         packages=["google_crc32c"],
          package_dir={"": "src"},
--        package_data={"crc32c": [os.path.join(_EXTRA_DLL, _DLL_FILENAME)]},
+-        package_data={"google_crc32c": [os.path.join(_EXTRA_DLL, _DLL_FILENAME)]},
          setup_requires=[cffi_dep] if build_cffi else [],
          cffi_modules=[builder] if build_cffi else [],
          install_requires=[cffi_dep] if build_cffi else [],

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	google-crc32c
-PORTVERSION=	0.1.0
+PORTVERSION=	1.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,6 +20,6 @@ USES=		localbase python
 USE_PYTHON=	autoplist concurrent distutils
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/crc32c/_crc32c_cffi*.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/google_crc32c/_crc32c_cffi*.so
 
 .include <bsd.port.mk>
