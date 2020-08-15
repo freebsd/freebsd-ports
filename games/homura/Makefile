@@ -3,6 +3,7 @@
 
 PORTNAME=	homura
 PORTVERSION=	5.1
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	Alexander88207@protonmail.com
@@ -35,9 +36,9 @@ PLIST_FILES=	bin/Homura
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
-RUN_DEPENDS+=	wine:emulators/wine
+RUN_DEPENDS+=	wine:emulators/wine-devel
 .else
-RUN_DEPENDS+=	wine:emulators/i386-wine
+RUN_DEPENDS+=	wine:emulators/i386-wine-devel
 .endif
 
 do-install:
