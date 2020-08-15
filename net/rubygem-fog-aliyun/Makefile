@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fog-aliyun
-PORTVERSION=	0.3.17
+PORTVERSION=	0.3.18
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
