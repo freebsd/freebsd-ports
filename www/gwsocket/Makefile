@@ -1,0 +1,66 @@
+# Created by: Daniel Morante <daniel@morante.net>
+# $FreeBSD$
+
+PORTNAME=	gwsocket
+PORTVERSION=	0.3
+CATEGORIES=	www
+MASTER_SITES=	http://tar.gwsocket.io/
+
+MAINTAINER=	daniel@morante.net
+COMMENT=	RFC6455 compliant WebSocket Server
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		alias compiler:c11 pkgconfig
+GNU_CONFIGURE=	yes
+
+PORTDOCS=	AUTHORS COPYING ChangeLog NEWS README
+
+OPTIONS_DEFINE=	DOCS DEBUG OPENSSL EXAMPLES
+OPTIONS_SUB=	yes
+
+DEBUG_CONFIGURE_ON=	--enable-debug
+
+OPENSSL_USES=		ssl autoreconf
+OPENSSL_PATCH_SITES=	https://github.com/allinurl/${PORTNAME}/commit/
+OPENSSL_PATCHFILES=	3d4e1d1585e5aa54e9500f58efede57feeed7d3d.patch:-p1 # https://github.com/allinurl/gwsocket/issues/28
+OPENSSL_LIBS=		-lcrypto
+OPENSSL_CONFIGURE_WITH=	openssl
+
+USE_RC_SUBR=	${PORTNAME}
+
+USERS=	www
+GROUPS=	www
+
+DEFAULT_RUNDIR?=	/var/run/${PORTNAME}
+DEFAULT_LOGDIR?=	/var/log/${PORTNAME}
+
+SUB_FILES=	pkg-message
+SUB_LIST+=	PORTNAME=${PORTNAME} \
+		DEFAULT_USER=${USERS} \
+		DEFAULT_GROUP=${GROUPS} \
+		DEFAULT_RUNDIR=${DEFAULT_RUNDIR} \
+		DEFAULT_LOGDIR=${DEFAULT_LOGDIR}
+
+PLIST_SUB+=	DEFAULT_USER=${USERS} \
+		DEFAULT_GROUP=${GROUPS} \
+		DEFAULT_RUNDIR=${DEFAULT_RUNDIR} \
+		DEFAULT_LOGDIR=${DEFAULT_LOGDIR}
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
+
+post-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${FILESDIR}/sample.html ${STAGEDIR}${EXAMPLESDIR}
+
+post-install:
+	@${MKDIR} ${STAGEDIR}${ETCDIR} \
+		${STAGEDIR}${DEFAULT_RUNDIR} \
+		${STAGEDIR}${DEFAULT_LOGDIR}
+	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.conf \
+		${STAGEDIR}${ETCDIR}/${PORTNAME}.conf.sample
+
+.include <bsd.port.mk>

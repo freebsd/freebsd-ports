@@ -1,0 +1,26 @@
+[
+{ type: install
+  message: <<EOM
+
+To run %%PORTNAME%% at startup, enable it in your /etc/rc.conf:
+sysrc %%PORTNAME%%_enable="YES"
+
+To start %%PORTNAME%%:
+service %%PORTNAME%% start
+
+To configure %%PORTNAME%% edit:
+%%ETCDIR%%/%%PORTNAME%%.conf
+
+A client example can be found at %%EXAMPLESDIR%%/sample.html
+
+To run multiple instances of %%PORTNAME%%, enable it in your /etc/rc.conf:
+sysrc %%PORTNAME%%_multi_enable="YES"
+
+An instance will be created for each *.conf file found in:
+%%ETCDIR%%
+
+EOM
+}
+]
+
+

@@ -1,0 +1,138 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: %%PORTNAME%%
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable %%PORTNAME%%
+# %%PORTNAME%%_enable="YES"
+#
+# Add the following lines to /etc/rc.conf to enable multiple instances of %%PORTNAME%%
+# %%PORTNAME%%_multi_enable="YES"
+# An instance is created for each *.conf file found in the configration files directory
+#
+# %%PORTNAME%%_enable (bool):		Set to YES to enable %%PORTNAME%%
+#					Default: NO
+# %%PORTNAME%%_multi_enable (bool):	Set to YES to run multiple instances (%%PORTNAME%%_config is ignored)
+#					Default: NO
+# %%PORTNAME%%_conf_d (str):		%%PORTNAME%% configration files directory
+#					Default: %%ETCDIR%%
+# %%PORTNAME%%_config (str):		%%PORTNAME%% configration file (ignored when %%PORTNAME%%_multi_enable="YES")
+#					Default: %%ETCDIR%%/%%PORTNAME%%.conf
+# %%PORTNAME%%_user (str):		%%PORTNAME%% daemon user
+#					Default: %%DEFAULT_USER%%
+# %%PORTNAME%%_group (str):		%%PORTNAME%% daemon group
+#					Default: %%DEFAULT_GROUP%%
+# %%PORTNAME%%_logdir (str):		%%PORTNAME%% log directory
+#					Default: %%DEFAULT_LOGDIR%%
+# %%PORTNAME%%_piddir (str):		%%PORTNAME%% pid file directory
+#					Default: %%DEFAULT_RUNDIR%%
+
+. /etc/rc.subr
+
+name="%%PORTNAME%%"
+rcvar=%%PORTNAME%%_enable
+load_rc_config $name
+
+: ${%%PORTNAME%%_enable:="NO"}
+: ${%%PORTNAME%%_multi_enable:="NO"}
+: ${%%PORTNAME%%_user:="%%DEFAULT_USER%%"}
+: ${%%PORTNAME%%_group:="%%DEFAULT_GROUP%%"}
+: ${%%PORTNAME%%_conf_d:="%%ETCDIR%%"}
+: ${%%PORTNAME%%_config:="${%%PORTNAME%%_conf_d%/}/${name}.conf"}
+: ${%%PORTNAME%%_logdir:="%%DEFAULT_LOGDIR%%"}
+: ${%%PORTNAME%%_piddir:="%%DEFAULT_RUNDIR%%"}
+
+required_dirs="${%%PORTNAME%%_logdir} ${%%PORTNAME%%_piddir}"
+required_files=${%%PORTNAME%%_config}
+procname="%%PREFIX%%/bin/${name}"
+procdesc="${name}"
+pidfile="${%%PORTNAME%%_piddir%/}/${name}.pid"
+logfile="${%%PORTNAME%%_logdir%/}/${name}.log"
+command=/usr/sbin/daemon
+start_precmd="%%PORTNAME%%_precmd"
+
+%%PORTNAME%%_precmd()
+{	
+	# Loads the options declared in the configuration file into "$command_args".
+	%%PORTNAME%%_conf_to_args ${%%PORTNAME%%_config}
+}
+
+%%PORTNAME%%_conf_to_args()
+{
+	local _line %%PORTNAME%%_config_param %%PORTNAME%%_config_value config_file_path=$1
+	command_args="-f -t ${procdesc} -p ${pidfile} -o ${logfile} ${procname}"
+
+	while read -r _line; do
+		# Only proceed with lines which contain variable declaration.
+		echo "${_line}" | grep -q -E \
+        	-e "^[[:blank:]]*[[:alpha:]_-][[:alnum:]_-]{0,30}=" ||
+			continue
+
+		%%PORTNAME%%_config_param=${_line%%=*}
+		%%PORTNAME%%_config_value=${_line#*=}
+
+		# Properly handle flag type paramaters
+		if %%PORTNAME%%_is_flag_param ${%%PORTNAME%%_config_param}; then
+			if checkyesno %%PORTNAME%%_config_value; then
+				command_args="$command_args --${%%PORTNAME%%_config_param}"
+			fi
+		elif [ -n "${%%PORTNAME%%_config_value}" ]; then
+			command_args="$command_args --${%%PORTNAME%%_config_param}=${%%PORTNAME%%_config_value}"
+		fi
+	done < ${config_file_path}
+}
+
+%%PORTNAME%%_find_instances()
+{
+	local instance_config
+	for instance_config in ${%%PORTNAME%%_conf_d%/}/*.conf; do
+		[ -f "$instance_config" ] || break
+		%%PORTNAME%%_instances="$%%PORTNAME%%_instances $(basename ${instance_config%.conf})";
+	done
+}
+
+%%PORTNAME%%_is_flag_param()
+{
+	case $1 in
+	'echo-mode' | 'strict' )
+		return 0
+		;;
+	*)
+		return 1
+		;;
+	esac
+}
+
+# Handles multi-instance feature
+if [ $# -eq 2 ]; then
+	# Performs action on single instance by name
+	_instance=$2
+	echo "===> Instance: ${_instance}"
+
+	# Setup for the requested instance name
+	%%PORTNAME%%_config="${%%PORTNAME%%_conf_d%/}/${_instance}.conf"
+	procdesc="${name}_${_instance}"
+	pidfile="${%%PORTNAME%%_piddir%/}/${_instance}.pid"
+	logfile="${%%PORTNAME%%_logdir%/}/${_instance}.log"
+	
+	# The config file for the named instance must exist
+	required_files="${%%PORTNAME%%_config}"
+elif checkyesno %%PORTNAME%%_multi_enable; then
+	# Compile list of all instances or given instances
+	_swap=$*; shift; _instances=$*
+	%%PORTNAME%%_find_instances
+	_instances=${_instances:-${%%PORTNAME%%_instances}}
+	set -- ${_swap}
+
+	# Performs action on each instance
+	for _instance in ${_instances}; do
+		%%PREFIX%%/etc/rc.d/${name} $1 ${_instance}
+	done	
+	exit 0
+fi
+
+run_rc_command "$1"
+

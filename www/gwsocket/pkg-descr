@@ -1,0 +1,4 @@
+gwsocket is a simple, standalone, language-agnostic, RFC6455 compliant
+WebSocket Server, written in C.
+
+WWW: https://gwsocket.io
