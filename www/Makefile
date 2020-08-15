@@ -224,7 +224,6 @@
     SUBDIR += h2o
     SUBDIR += h2o-devel
     SUBDIR += habari
-    SUBDIR += halberd
     SUBDIR += helma
     SUBDIR += hiawatha
     SUBDIR += hiawatha-monitor
