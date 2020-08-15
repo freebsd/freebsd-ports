@@ -16,6 +16,7 @@ COMMENT=	Apache module for rewriting web pages to reduce latency
 
 LICENSE=	APACHE20
 
+BROKEN=		SHA256 Checksum mismatch for mod_pagespeed/apache-httpd-2.2.29_GH0.tar.gz
 DEPRECATED=	Uses deprecated version of python
 EXPIRATION_DATE=	2020-09-15
 
