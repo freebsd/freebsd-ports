@@ -1,3 +1,7 @@
-TIMESTAMP = 1595038065
-SHA256 (syncthing-source-v1.7.1.tar.gz) = edf0d9adcc57e61efc270205ad89e594ee79cadb39d568c4628de4d6f8e8f4c8
-SIZE (syncthing-source-v1.7.1.tar.gz) = 11594346
+TIMESTAMP = 1597511561
+SHA256 (syncthing-source-v1.8.0.tar.gz) = 04d78fbe6015334c284bf46ffcf8feb6b2b690ef810f2f0c5732cdee5cd8142a
+SIZE (syncthing-source-v1.8.0.tar.gz) = 11663728
+SHA256 (lucas-clemente-quic-go-3fa290f_GH0.tar.gz) = 50b4080b5e017d3b544d976e7a72cf3b534c941080ccce1949fc61fdef5a20e5
+SIZE (lucas-clemente-quic-go-3fa290f_GH0.tar.gz) = 482644
+SHA256 (marten-seemann-qtls-go115-f94d2ad_GH0.tar.gz) = 582b4ed326fbef70ebde82b46236ae904347e37e1e69adc991af0922f684049c
+SIZE (marten-seemann-qtls-go115-f94d2ad_GH0.tar.gz) = 411269
