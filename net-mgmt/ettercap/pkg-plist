@@ -22,6 +22,7 @@ bin/etterlog
 %%PLUGINS%%lib/ettercap/ec_gre_relay.so
 %%PLUGINS%%lib/ettercap/ec_gw_discover.so
 %%PLUGINS%%lib/ettercap/ec_isolate.so
+%%PLUGINS%%lib/ettercap/ec_krb5_downgrade.so
 %%PLUGINS%%lib/ettercap/ec_link_type.so
 %%PLUGINS%%lib/ettercap/ec_mdns_spoof.so
 %%PLUGINS%%lib/ettercap/ec_nbns_spoof.so
@@ -40,13 +41,12 @@ bin/etterlog
 %%PLUGINS%%lib/ettercap/ec_smurf_attack.so
 %%PLUGINS%%lib/ettercap/ec_sslstrip.so
 %%PLUGINS%%lib/ettercap/ec_stp_mangler.so
-%%PLUGINS%%lib/ettercap/ec_krb5_downgrade.so
 lib/libettercap-ui.so
 lib/libettercap-ui.so.0
-lib/libettercap-ui.so.0.8.2
+lib/libettercap-ui.so.0.8.3.1
 lib/libettercap.so
 lib/libettercap.so.0
-lib/libettercap.so.0.8.2
+lib/libettercap.so.0.8.3.1
 man/man5/etter.conf.5.gz
 %%DESKTOP%%man/man8/ettercap-pkexec.8.gz
 man/man8/ettercap.8.gz
@@ -73,6 +73,7 @@ man/man8/etterlog.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/threads
 %%DATADIR%%/AUTHORS
 %%DATADIR%%/LICENSE
+%%DATADIR%%/etter.dns.examples
 %%DATADIR%%/etter.fields
 %%DATADIR%%/etter.filter
 %%DATADIR%%/etter.filter.examples
@@ -81,6 +82,7 @@ man/man8/etterlog.8.gz
 %%DATADIR%%/etter.filter.ssh
 %%DATADIR%%/etter.finger.mac
 %%DATADIR%%/etter.finger.os
+%%DATADIR%%/etter.mdns.examples
 %%DATADIR%%/etter.mime
 %%DATADIR%%/etter.services
 %%DATADIR%%/etter.ssl.crt

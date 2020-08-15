@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ettercap
-PORTVERSION=	0.8.3
+PORTVERSION=	0.8.3.1
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt security
@@ -39,7 +39,7 @@ DOCS=		AUTHORS CHANGELOG README README.BINARIES README.BUGS \
 		README.GIT README.PLATFORMS THANKS TODO TODO.TESTING \
 		doc/capture doc/decoders doc/dissectors doc/plugins doc/threads
 
-CPE_VENDOR=	${PORTNAME}_project
+CPE_VENDOR=	ettercap_project
 
 GH_ACCOUNT=	Ettercap
 USE_GITHUB=	yes
