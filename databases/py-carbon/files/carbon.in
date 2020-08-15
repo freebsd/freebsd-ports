@@ -96,7 +96,7 @@ stop_cmd="${name}_stop"
 required_files="${carbon_conf} %%PREFIX%%/etc/carbon/storage-schemas.conf"
 
 pidfile=${carbon_pidfile}
-command_interpreter="%%PREFIX%%/bin/python2.7"
+command_interpreter="%%PYTHON_CMD%%"
 
 if is_carbon_relay; then
     command="%%PREFIX%%/bin/carbon-relay.py"
