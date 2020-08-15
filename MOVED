@@ -15168,11 +15168,11 @@ sysutils/openshift-install|sysutils/openshift-install45|2020-07-25|Duplicate por
 databases/sqliteodbc-sqlite2|databases/sqliteodbc|2020-07-27|Has expired: SQLite2 has stopped development in 2005, please move to SQLite3
 graphics/wayland-info|graphics/wayland-utils|2020-08-02|Project renamed
 devel/rubygem-grape11|devel/rubygem-grape|2020-08-03|Has expired: use devel/rubygem-grape instead
-astro/pyephem|astro/py-ephem|2020-08-04|Has expired: Use py-ephem instead.
+astro/pyephem|astro/py-ephem|2020-08-04|Has expired: Use py-ephem instead
 www/mod_log_sql2|www/mod_log_sql|2020-08-06|Remove Apache major version suffix since it is the only version in ports tree
-editors/nvi2-port|editors/nvi2|2020-07-26|Rename to editors/nvi2
+editors/nvi2-port|editors/nvi2|2020-08-10|Rename to editors/nvi2
 net/kblog||2020-08-13|No longer shipped
-www/html|www/html3|2020-08-13|python3-compatible version is named html3
+www/py-html|www/py-html3|2020-08-13|python3-compatible version is named html3
 audio/py-hsaudiotag|audio/py-hsaudiotag3k|2020-08-13|python3-compatible version is named hsaudiotag3k
 archivers/py-backports.lzma||2020-08-15|Has expired: Uses deprecated version of python
 archivers/py-bup||2020-08-15|Has expired: Uses deprecated version of python
