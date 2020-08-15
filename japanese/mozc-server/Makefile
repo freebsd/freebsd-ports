@@ -2,16 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	mozc
-PORTVERSION=	2.23.2815.102.00
+PORTVERSION=	2.23.2815.102.01
 DISTVERSIONPREFIX=	v
-PORTREVISION?=	7
 CATEGORIES=	japanese
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT?=	Mozc Japanese Input Method, Server
 
 BUILD_DEPENDS=	ninja:devel/ninja \
-		gyp:devel/py-gyp@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}gyp>=20200512:devel/py-gyp@${PY_FLAVOR}
 EXTRACT_DEPENDS=${PYTHON_CMD}:${PYTHON_PORTSDIR}
 LIB_DEPENDS=	libprotobuf.so:devel/protobuf \
 		libzinnia.so:japanese/zinnia
@@ -27,7 +26,7 @@ GH_ACCOUNT=	hrs-allbsd
 GH_TUPLE=	hiroyuki-komatsu:japanese-usage-dictionary:e5b3425:udic
 
 USES=		compiler:c++11-lang pkgconfig gmake \
-		tar:bzip2 python:2.7,build shebangfix
+		tar:bzip2 python:3.5+,build shebangfix
 SHEBANG_FILES=	src/build_mozc.py
 BUILD_WRKSRC=	${WRKSRC}/src
 
@@ -106,7 +105,8 @@ post-patch:
 .if ${BUILD_MOZC_LIST:Mfcitx_mozc} == "fcitx_mozc"
 	${REINPLACE_CMD} 's,/po/mo},%po}mo,g' \
 	    ${BUILD_WRKSRC}/unix/fcitx/gen_fcitx_mozc_i18n.sh
-	${REINPLACE_CMD} "s,/usr,${LOCALBASE:Q}," \
+	${REINPLACE_CMD} \
+	    "s,IconName=.*,IconName=${LOCALBASE:Q}/share/fcitx/mozc/icon/mozc.png," \
 	    ${BUILD_WRKSRC}/unix/fcitx/mozc.conf
 .endif
 
@@ -138,15 +138,15 @@ GYP_DEFINES+=	use_libibus=0 \
 
 MASTER_SITES+=	LOCAL/kuriyama:zipcode
 DISTFILES+= \
-	ken_all-20181228.zip:zipcode \
-	jigyosyo-20181228.zip:zipcode
+	ken_all-20200430.zip:zipcode \
+	jigyosyo-20200430.zip:zipcode
 
 PLIST_FILES+=	bin/mozc \
 		bin/mozc_server \
 		libexec/mozc_emacs_helper
 SUB_FILES+=	mozc
 
-post-extract-mozc_server:
+post-patch-mozc_server:
 	@for F in ${DISTFILES:M*\:zipcode:C/\:zipcode//}; do \
 		${UNZIP_NATIVE_CMD} -L -d ${BUILD_WRKSRC}/data/dictionary_oss \
 		    ${DISTDIR}/$$F; \
@@ -159,7 +159,7 @@ post-extract-mozc_server:
 	${MV} ${WRKSRC_udic}/usage_dict.txt \
 	    ${BUILD_WRKSRC}/third_party/japanese_usage_dictionary
 
-post-extract: post-extract-mozc_server
+post-patch: post-patch-mozc_server
 
 do-build-mozc_server:
 	${BUILD_MOZC_CMD_BUILD} server/server.gyp:mozc_server
@@ -214,8 +214,7 @@ GYP_DEFINES+=	use_libibus=1 \
 
 LIB_DEPENDS+=	libibus-1.0.so:textproc/ibus
 RUN_DEPENDS+=	mozc_server:japanese/mozc-server \
-		mozc_tool:japanese/mozc-tool \
-		${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/__init__.py:devel/py-notify@${PY_FLAVOR}
+		mozc_tool:japanese/mozc-tool
 
 PLIST_FILES+=	libexec/mozc_renderer \
 		libexec/ibus-engine-mozc \
@@ -378,6 +377,7 @@ do-install-fcitx_mozc:
 CATEGORIES+=	elisp
 RUN_DEPENDS+=	mozc_server:japanese/mozc-server
 
+NO_ARCH=	yes
 PLIST_FILES+=	${EMACS_VERSION_SITE_LISPDIR}/mozc/mozc.elc \
 		${EMACS_VERSION_SITE_LISPDIR}/mozc/mozc.el.gz \
 		${EMACS_VERSION_SITE_LISPDIR}/mozc/leim-list.el
