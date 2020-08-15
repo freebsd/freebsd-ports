@@ -1,6 +1,6 @@
---- configure.orig	2020-03-05 17:36:02.000000000 +0300
-+++ configure	2020-03-23 13:27:59.882228000 +0300
-@@ -28652,13 +28652,13 @@
+--- configure.orig	2020-08-12 12:20:51 UTC
++++ configure
+@@ -28901,13 +28901,13 @@ fi
  
  
    if test $want_stemmer != no; then

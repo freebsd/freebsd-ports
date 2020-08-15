@@ -8,8 +8,7 @@
 ######################################################################
 
 PORTNAME=	dovecot
-PORTVERSION=	2.3.10.1
-PORTREVISION=	2
+PORTVERSION=	2.3.11.3
 CATEGORIES=	mail
 MASTER_SITES=	https://dovecot.org/releases/2.3/
 
@@ -18,6 +17,8 @@ COMMENT=	Secure, fast and powerful IMAP and POP3 server
 
 LICENSE=	LGPL21 MIT
 LICENSE_COMB=	dual
+
+LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 USES=		cpe iconv libtool pkgconfig ssl
 USE_RC_SUBR=	dovecot

@@ -1,4 +1,4 @@
---- src/lib-fts/fts-filter-stemmer-snowball.c.orig
+--- src/lib-fts/fts-filter-stemmer-snowball.c.orig	2020-08-12 12:20:41 UTC
 +++ src/lib-fts/fts-filter-stemmer-snowball.c
 @@ -6,7 +6,7 @@
  
