@@ -2097,6 +2097,7 @@
     SUBDIR += p5-Data-URIEncode
     SUBDIR += p5-Data-UUID
     SUBDIR += p5-Data-Uniqid
+    SUBDIR += p5-Data-Unixish
     SUBDIR += p5-Data-Util
     SUBDIR += p5-Data-Validate
     SUBDIR += p5-Data-Validator
