@@ -1,7 +1,0 @@
-GeoTypes is a Python library that implements both the OpenGIS/PostGIS
-and standard PostgreSQL geometry types. It integrates with the psycopg
-Python/PostgreSQL interface. It provides implementations of all of the
-OpenGIS/PostGIS classes, except (x,y,m) and (x,y,z,m). It currently
-supports the EWKB, HEXEWKB, WKB, and WKT formats.
-
-WWW: http://freecode.com/projects/geotypes

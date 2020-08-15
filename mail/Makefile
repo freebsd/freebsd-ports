@@ -205,7 +205,6 @@
     SUBDIR += mailgraph
     SUBDIR += mailhog
     SUBDIR += mailman
-    SUBDIR += mailpile
     SUBDIR += mailscanner
     SUBDIR += mailsync
     SUBDIR += mailutils

@@ -743,12 +743,9 @@
     SUBDIR += py-firebirdsql
     SUBDIR += py-flask-sqlalchemy
     SUBDIR += py-gdbm
-    SUBDIR += py-geoalchemy
     SUBDIR += py-geoalchemy2
     SUBDIR += py-hiredis
     SUBDIR += py-htsql
-    SUBDIR += py-htsql-mysql
-    SUBDIR += py-htsql-pgsql
     SUBDIR += py-influxdb
     SUBDIR += py-kyotocabinet
     SUBDIR += py-leveldb
@@ -760,9 +757,7 @@
     SUBDIR += py-motor
     SUBDIR += py-mycli
     SUBDIR += py-mysql-connector-python
-    SUBDIR += py-mysql2pgsql
     SUBDIR += py-mysqlclient
-    SUBDIR += py-oursql
     SUBDIR += py-partd
     SUBDIR += py-peewee
     SUBDIR += py-peewee_migrate
@@ -782,16 +777,13 @@
     SUBDIR += py-psycopg2
     SUBDIR += py-psycopg2cffi
     SUBDIR += py-pum
-    SUBDIR += py-pyPgSQL
     SUBDIR += py-pycql
-    SUBDIR += py-pyhs
     SUBDIR += py-pylibmc
     SUBDIR += py-pymemcache
     SUBDIR += py-pymssql
     SUBDIR += py-pymysql
     SUBDIR += py-pyodbc
     SUBDIR += py-pypuppetdb
-    SUBDIR += py-pytc
     SUBDIR += py-python-arango
     SUBDIR += py-python-memcached
     SUBDIR += py-python-rrdtool
@@ -802,7 +794,6 @@
     SUBDIR += py-rb
     SUBDIR += py-redis
     SUBDIR += py-redis2
-    SUBDIR += py-riak
     SUBDIR += py-sispy
     SUBDIR += py-south
     SUBDIR += py-sqlalchemy-migrate
@@ -823,7 +814,6 @@
     SUBDIR += py-tarantool
     SUBDIR += py-tiledb
     SUBDIR += py-txredisapi
-    SUBDIR += py-umemcache
     SUBDIR += py-unqlite
     SUBDIR += py-varstack
     SUBDIR += py-whisper

@@ -753,8 +753,6 @@
     SUBDIR += py-ecos
     SUBDIR += py-fastcluster
     SUBDIR += py-fastdtw
-    SUBDIR += py-ffc
-    SUBDIR += py-fiat
     SUBDIR += py-flax
     SUBDIR += py-fpconst
     SUBDIR += py-fpylll
@@ -790,7 +788,6 @@
     SUBDIR += py-numexpr
     SUBDIR += py-numpoly
     SUBDIR += py-numpy
-    SUBDIR += py-nzmath
     SUBDIR += py-opt-einsum
     SUBDIR += py-or-tools
     SUBDIR += py-osqp
@@ -813,7 +810,6 @@
     SUBDIR += py-pygslodeiv2
     SUBDIR += py-pyhull
     SUBDIR += py-pyipopt
-    SUBDIR += py-pymc
     SUBDIR += py-pymc3
     SUBDIR += py-pyneqsys
     SUBDIR += py-pynleq2
@@ -851,7 +847,6 @@
     SUBDIR += py-sympy
     SUBDIR += py-theano
     SUBDIR += py-triangle
-    SUBDIR += py-ufl
     SUBDIR += py-uncertainties
     SUBDIR += py-vincenty
     SUBDIR += py-yt

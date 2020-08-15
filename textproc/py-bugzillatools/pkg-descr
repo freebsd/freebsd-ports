@@ -1,5 +1,0 @@
-bugzillatools consists of the bugzilla CLI program and a Python library for
-interacting with the Bugzilla bug tracking system, and plugins for version
-control systems that enable interaction with Bugzilla installations.
-
-WWW: https://github.com/frasertweedale/bugzillatools

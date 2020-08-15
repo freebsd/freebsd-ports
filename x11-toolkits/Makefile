@@ -180,10 +180,7 @@
     SUBDIR += py-qt5-widgets
     SUBDIR += py-tkinter
     SUBDIR += py-tktreectrl
-    SUBDIR += py-wax
-    SUBDIR += py-wxPython-common
     SUBDIR += py-wxPython28
-    SUBDIR += py-wxPython28-common
     SUBDIR += py-wxPython30
     SUBDIR += py-wxPython40
     SUBDIR += py-xlib

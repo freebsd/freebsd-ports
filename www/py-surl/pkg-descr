@@ -1,7 +1,0 @@
-surl is a URL shortening command line application that supports
-various sites.  It supports stdin or filename input. It grabs the
-URLs, converts them, and returns the same text that was used in the
-input. It is known to work with a wealth of services, such as bit.ly,
-goo.gl, tinyurl.com and tr.im.
-
-WWW: https://launchpad.net/surl

@@ -69,7 +69,6 @@
     SUBDIR += p5-WWW-BitTorrent
     SUBDIR += phex
     SUBDIR += py-libtorrent-rasterbar
-    SUBDIR += py-py2play
     SUBDIR += py-transmissionrpc
     SUBDIR += py-tremc
     SUBDIR += py-vertex

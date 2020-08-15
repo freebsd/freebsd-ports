@@ -1,8 +1,0 @@
-man/man1/yolk.1.gz
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/plugins/README
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/plugins/yolk_pkg_manager/README
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/plugins/yolk_pkg_manager/setup.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/plugins/yolk_pkg_manager/yolk_acme.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/plugins/yolk_portage/README
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/plugins/yolk_portage/setup.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/plugins/yolk_portage/yolk_portage.py

@@ -1,5 +1,0 @@
-ezjail-remote is a remote control and convenience wrapper for the ezjail-admin
-command of the most excellent ezjail tool, which in turn is itself a
-convenience wrapper for jails, FreeBSD's leight-weight virtualization solution
-
-WWW: https://github.com/tomster/ezjail-remote

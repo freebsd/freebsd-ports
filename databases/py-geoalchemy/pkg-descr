@@ -1,5 +1,0 @@
-GeoAlchemy is an extension of SQLAlchemy. It provides support for Geospatial
-data types at the ORM layer using SQLAlchemy. It aims to support spatial
-operations and relations specified by the Open Geospatial Consortium (OGC).
-
-WWW: https://pypi.org/project/GeoAlchemy/

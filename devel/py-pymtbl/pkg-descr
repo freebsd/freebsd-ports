@@ -1,8 +1,0 @@
-pymtbl: Python bindings for the mtbl sorted string table library
-
-pymtbl provides a simple Pythonic wrapper for mtbl's reader, writer,
-sorter, and merger interfaces. The examples/ directory contains
-scripts demonstrating each of these interfaces. The following
-transcript shows the basic reader and writer interfaces:
-
-WWW: https://github.com/farsightsec/pymtbl

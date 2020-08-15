@@ -1,8 +1,0 @@
-HTSQL ("Hyper Text Structured Query Language") is a high-level query
-language for relational databases. The target audience for HTSQL is the
-accidental programmer -- one who is not a SQL expert, yet needs a usable,
-comprehensive query tool for data access and reporting.
-
-This port provides the MySQL backend to HTSQL
-
-WWW: http://htsql.org/

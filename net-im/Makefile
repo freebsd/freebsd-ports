@@ -19,8 +19,6 @@
     SUBDIR += echat
     SUBDIR += ejabberd
     SUBDIR += ekiga
-    SUBDIR += empathy
-    SUBDIR += farsight2
     SUBDIR += farstream
     SUBDIR += finch
     SUBDIR += folks
@@ -135,7 +133,6 @@
     SUBDIR += py-telepot
     SUBDIR += py-toxcore-c
     SUBDIR += py-unmessage
-    SUBDIR += py-xmpppy
     SUBDIR += qTox
     SUBDIR += quaternion
     SUBDIR += qxmpp-qt5
@@ -162,7 +159,6 @@
     SUBDIR += telegram-purple
     SUBDIR += telegramqml
     SUBDIR += telepathy-accounts-signon
-    SUBDIR += telepathy-farsight
     SUBDIR += telepathy-farstream
     SUBDIR += telepathy-gabble
     SUBDIR += telepathy-glib
@@ -171,9 +167,7 @@
     SUBDIR += telepathy-logger
     SUBDIR += telepathy-logger-qt5
     SUBDIR += telepathy-mission-control
-    SUBDIR += telepathy-python
     SUBDIR += telepathy-qt
-    SUBDIR += telepathy-rakia
     SUBDIR += telepathy-salut
     SUBDIR += telepathy-sofiasip
     SUBDIR += tkabber

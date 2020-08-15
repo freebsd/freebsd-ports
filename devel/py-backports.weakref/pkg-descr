@@ -1,4 +1,0 @@
-This package provides backports of new features in Python's weakref module under
-the backports namespace.
-
-WWW: https://github.com/pjdelport/backports.weakref

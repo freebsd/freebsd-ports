@@ -1,6 +1,0 @@
-sqlcc is a SQL Command Composer for Python. It make you coding SQL command
-with Python's syntax, no more string composing. You can insert, update, and
-query with sqlcc. Even you can initial a database with schema defined with
-sqlcc.
-
-WWW: https://bitbucket.org/thinker/sqlcc

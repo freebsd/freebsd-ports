@@ -1,7 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-For more information, see https://github.com/tv42/gitosis/blob/master/README.rst
-EOM
-}
-]

@@ -1,8 +1,0 @@
-json-py is a simple, pure-python implementation of a JSON (http://json.org)
-reader and writer. JSON is used to exchange data across systems written in
-various languages. It is particularly suited to dynamic languages like Python,
-Javascript, etc. JSON = Javascript Object Notation implies it is suitable for
-AJAX applications that exchange data from servers to Javascript applications
-running on web browser clients.
-
-WWW: https://sourceforge.net/projects/json-py/

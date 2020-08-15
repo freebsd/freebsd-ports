@@ -1,6 +1,0 @@
-GLEWpy aims to bring advanced OpenGL extensions to Python. This will allow the
-Python OpenGL developer to use features such as fragment and vertex shaders and
-image processing on the GPU. It serves as a complement to PyOpenGL and toolkits
-such as GLUT and SDL (pygame).
-
-WWW: http://glewpy.sourceforge.net/

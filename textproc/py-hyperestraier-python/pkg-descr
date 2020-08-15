@@ -1,5 +1,0 @@
-HyperEstraier client API implemented with pure Python. It works with
-synchronous manner. Since version 0.10, it also works with asyn manner
-based on Twisted library.
-
-WWW: http://coderepos.org/share/wiki/PyHyperEstraier

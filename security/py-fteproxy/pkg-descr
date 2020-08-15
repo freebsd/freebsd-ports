@@ -1,7 +1,0 @@
-fteproxy provides transport-layer protection to resist keyword filtering, 
-censorship and discriminatory routing policies.
-
-Its job is to relay datastreams, such as web browsing traffic, 
-by encoding streams as messages that match a user-specified regular expression. 
-
-WWW: https://fteproxy.org/

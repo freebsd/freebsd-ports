@@ -1,4 +1,0 @@
-FFC works as a compiler for multilinear forms by generating code (C++) for
-the evaluation of a multilinear form given in mathematical notation.
-
-WWW: https://launchpad.net/ffc

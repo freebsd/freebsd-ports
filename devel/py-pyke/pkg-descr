@@ -1,5 +1,0 @@
-Pyke introduces a form of Logic Programming (inspired by Prolog) to the
-Python community by providing a knowledge-based inference engine (expert
-system) written in 100% Python.
-
-WWW: http://pyke.sourceforge.net

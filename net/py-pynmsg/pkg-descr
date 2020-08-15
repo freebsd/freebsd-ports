@@ -1,5 +1,0 @@
-This is pynmsg, a Python extension module implemented in Cython for
-the nmsg C library.
-
-
-WWW: https://github.com/farsightsec/pynmsg

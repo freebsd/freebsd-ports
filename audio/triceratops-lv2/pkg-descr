@@ -1,9 +1,0 @@
-Triceratops is an analogue style polyphonic subtractive synthesizer plugin,
-for use with the LV2 plug architecture, at this time there is no standalone
-version. An up to date version of the LV2 library is required along with a
-suitable host (e.g. Qtractor, Jalv, Ardour), I highly recommend either the
-KXstudio distro or the KXstudio ubuntu repositories! The intention is for
-this synth to be part of a suite including a drum machine (Stegosaurus) and
-a wavetable synth (Dracorex), watch this space.
-
-WWW: https://sourceforge.net/projects/triceratops

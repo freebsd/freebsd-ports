@@ -1,5 +1,0 @@
-`trace2html' is a utility to convert execution coverage data obtained
-with the `trace' module of the standard python library into a set of human
-readable HTML documents showing sortable summary and annotated source files.
-
-WWW: https://pypi.org/project/trace2html/

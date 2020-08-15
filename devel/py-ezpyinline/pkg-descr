@@ -1,9 +1,0 @@
-The ezpyinline is a pure python module which requires almost no setup to
-allows you put C source code directly "inline" in a Python script or module,
-then the C code is automatically compiled and then loaded for immediate access
-from Python.
-
-ezpyinline is forked from PyInline (http://pyinline.sourceforge.net/)
-but aim to be as easy as possible and do all the magics for you.
-
-WWW: https://pypi.org/project/ezpyinline/

@@ -1,5 +1,0 @@
-Breve is a Python template engine that is designed to be clean and
-elegant with minimal syntax.  Unlike most Python template engines,
-Breve is implemented as an `internal DSL`_ rather than a parser.
-
-WWW: http://breve.twisty-industries.com/

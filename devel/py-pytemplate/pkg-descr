@@ -1,6 +1,0 @@
-Pytemplate is a small project intending to give python developpers a starting
-framework. It permits to create properly scripts without struggling with
-configuration files, logging properties development. They are already available
-through a main class that the new script will inherit.
-
-WWW: http://www.bulot.org

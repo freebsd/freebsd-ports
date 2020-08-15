@@ -1,5 +1,0 @@
-telepathy-python is a Python package containing base classes for use in
-connection managers, and proxy classes for use in clients. It's used in
-at least Cohoba and Butterfly (an MSN connection manager).
-
-WWW: http://telepathy.freedesktop.org/

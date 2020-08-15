@@ -57,7 +57,6 @@
     SUBDIR += py-pynzb
     SUBDIR += py-sabyenc
     SUBDIR += py-sabyenc3
-    SUBDIR += py-yenc
     SUBDIR += rawdog
     SUBDIR += s-news
     SUBDIR += sabnzbdplus

@@ -1,4 +1,0 @@
-A sane date/time Python interface: better epoch time, timezones, and deltas
-with Django support as well
-
-WWW: https://github.com/HubSpot/sanetime

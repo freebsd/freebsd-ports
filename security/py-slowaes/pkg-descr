@@ -1,7 +1,0 @@
-Implementation of AES in pure Python.
-
-As such it will be slow (hence the project name) but still useful when
-faster ones are not available (for example, for JavaScript clients in
-browsers, and Python servers on Google App Engine).
-
-WWW: https://code.google.com/p/slowaes/

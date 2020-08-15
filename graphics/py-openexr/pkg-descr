@@ -1,7 +1,0 @@
-OpenEXR is an image format developed by ILM. Its main innovation
-is support for high dynamic range; it supports floating point pixels.
-
-This Python module provides bindings for the OpenEXR C++ libraries.
-They allow you to read and write OpenEXR files from Python.
-
-WWW: http://www.excamera.com/sphinx/articles-openexr.html

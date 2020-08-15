@@ -215,9 +215,7 @@
     SUBDIR += plan
     SUBDIR += prn
     SUBDIR += py-jaconv
-    SUBDIR += py-mecab
     SUBDIR += py-tegaki
-    SUBDIR += py-tegaki-gtk
     SUBDIR += py-zinnia
     SUBDIR += qkc
     SUBDIR += quit

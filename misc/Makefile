@@ -401,7 +401,6 @@
     SUBDIR += py-scikit-fusion
     SUBDIR += py-serverfiles
     SUBDIR += py-soapy_power
-    SUBDIR += py-socli
     SUBDIR += py-spdx
     SUBDIR += py-spdx-lookup
     SUBDIR += py-spdx-tools
@@ -412,7 +411,6 @@
     SUBDIR += py-tqdm
     SUBDIR += py-tvm
     SUBDIR += py-xgboost
-    SUBDIR += py-yolk
     SUBDIR += pyobd
     SUBDIR += qbrew
     SUBDIR += qlas

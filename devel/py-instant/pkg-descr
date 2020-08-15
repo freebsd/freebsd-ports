@@ -1,8 +1,0 @@
-By using the class Instant a Python extension module can be created at runtime.
-For the user, it behaves somewhat like an inline module, except you have to
-import the module manually.
-
-The code can be either C or C++, but like when programming C or C++, it has to
-be inside a function or a similar C/C++ construct.
-
-WWW: https://launchpad.net/instant

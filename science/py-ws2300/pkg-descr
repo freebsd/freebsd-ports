@@ -1,5 +1,0 @@
-Ws2300 manipulates the LaCrosse WS-2300 weather station via its RS232
-interface. It can read and write values, and can continuously log data from
-WS-2300 to a file or SQL database.
-
-WWW: http://ws2300.sourceforge.net

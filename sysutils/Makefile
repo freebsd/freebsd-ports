@@ -955,7 +955,6 @@
     SUBDIR += pwol
     SUBDIR += pwsafe
     SUBDIR += pxattr
-    SUBDIR += py-analyzemft
     SUBDIR += py-ansible-lint
     SUBDIR += py-ansible-runner
     SUBDIR += py-azure-cli
@@ -965,7 +964,6 @@
     SUBDIR += py-azure-cli-telemetry
     SUBDIR += py-bitrot
     SUBDIR += py-borgmatic
-    SUBDIR += py-cdmi
     SUBDIR += py-cron-descriptor
     SUBDIR += py-croniter
     SUBDIR += py-diffoscope
@@ -975,12 +973,10 @@
     SUBDIR += py-docker
     SUBDIR += py-drmaa
     SUBDIR += py-execnet
-    SUBDIR += py-ezjailremote
     SUBDIR += py-filelike
     SUBDIR += py-filelock
     SUBDIR += py-focker
     SUBDIR += py-glances
-    SUBDIR += py-gmailfs-fuse
     SUBDIR += py-google-compute-engine
     SUBDIR += py-hared
     SUBDIR += py-hcloud
@@ -996,9 +992,7 @@
     SUBDIR += py-packet-python
     SUBDIR += py-pkginfo
     SUBDIR += py-ploy
-    SUBDIR += py-ploy_ec2
     SUBDIR += py-ploy_ezjail
-    SUBDIR += py-ploy_fabric
     SUBDIR += py-plumbum
     SUBDIR += py-power
     SUBDIR += py-psutil
@@ -1018,10 +1012,8 @@
     SUBDIR += py-salt-2019
     SUBDIR += py-scandir
     SUBDIR += py-scarab
-    SUBDIR += py-scriptine
     SUBDIR += py-shutilwhich
     SUBDIR += py-stdiff
-    SUBDIR += py-superlance
     SUBDIR += py-supervisor
     SUBDIR += py-tarsnapper
     SUBDIR += py-tmuxp

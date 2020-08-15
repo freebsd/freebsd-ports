@@ -137,9 +137,7 @@
     SUBDIR += pr
     SUBDIR += predict
     SUBDIR += py-adafruit-ampy
-    SUBDIR += py-bulksms
     SUBDIR += py-esptool
-    SUBDIR += py-gammu
     SUBDIR += py-hidapi
     SUBDIR += py-libconcord
     SUBDIR += py-lirc

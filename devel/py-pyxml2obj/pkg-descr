@@ -1,7 +1,0 @@
-This module provides only 2 methods, XMLin and XMLout. XMLin convert xml
-to python object, and XMLout python object to xml.
-
-This module is inspired by XML::Simple in CPAN, but some options of
-XML::Simple are not supported.
-
-WWW: https://pypi.org/project/pyxml2obj/

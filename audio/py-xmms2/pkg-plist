@@ -1,9 +1,0 @@
-%%PYTHON_SITELIBDIR%%/xmmsclient/__init__.py
-%%PYTHON_SITELIBDIR%%/xmmsclient/collections.py
-%%PYTHON_SITELIBDIR%%/xmmsclient/consts.py
-%%PYTHON_SITELIBDIR%%/xmmsclient/glib.py
-%%PYTHON_SITELIBDIR%%/xmmsclient/propdict.py
-%%PYTHON_SITELIBDIR%%/xmmsclient/qt3.py
-%%PYTHON_SITELIBDIR%%/xmmsclient/sync.py
-%%PYTHON_SITELIBDIR%%/xmmsclient/xmmsvalue.so
-%%PYTHON_SITELIBDIR%%/xmmsclient/xmmsapi.so

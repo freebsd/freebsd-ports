@@ -1220,7 +1220,6 @@
     SUBDIR += py-autopep8
     SUBDIR += py-awesome-slugify
     SUBDIR += py-bibtexparser
-    SUBDIR += py-bugzillatools
     SUBDIR += py-cchardet
     SUBDIR += py-chardet
     SUBDIR += py-citeproc-py
@@ -1247,10 +1246,8 @@
     SUBDIR += py-elasticsearch-dsl
     SUBDIR += py-elasticsearch5
     SUBDIR += py-elasticsearch6
-    SUBDIR += py-elib.intl
     SUBDIR += py-empy
     SUBDIR += py-enchant
-    SUBDIR += py-errorhandler
     SUBDIR += py-esmre
     SUBDIR += py-et_xmlfile
     SUBDIR += py-fastavro
@@ -1270,7 +1267,6 @@
     SUBDIR += py-html2text2018
     SUBDIR += py-humanfriendly
     SUBDIR += py-hunspell
-    SUBDIR += py-hyperestraier-python
     SUBDIR += py-hypua2jamo
     SUBDIR += py-isbnlib
     SUBDIR += py-isbntools
@@ -1328,12 +1324,10 @@
     SUBDIR += py-pyahocorasick
     SUBDIR += py-pyaml
     SUBDIR += py-pycountry
-    SUBDIR += py-pyes
     SUBDIR += py-pygccxml
     SUBDIR += py-pygments
     SUBDIR += py-pygtail
     SUBDIR += py-pyhamcrest
-    SUBDIR += py-pyhwp
     SUBDIR += py-pyjade
     SUBDIR += py-pykwalify
     SUBDIR += py-pylons-sphinx-themes
@@ -1377,7 +1371,6 @@
     SUBDIR += py-sphinx-me
     SUBDIR += py-sphinx-tabs
     SUBDIR += py-sphinx18
-    SUBDIR += py-sphinx_numfig
     SUBDIR += py-sphinx_rtd_theme
     SUBDIR += py-sphinx_wikipedia
     SUBDIR += py-sphinxcontrib-adadomain

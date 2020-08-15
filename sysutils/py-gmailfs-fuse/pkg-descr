@@ -1,4 +1,0 @@
-FUSE-based filesystem for using an IMAP server (like gmail)
-as normal storage like a hard disk.
-
-WWW: http://sr71.net/projects/gmailfs/

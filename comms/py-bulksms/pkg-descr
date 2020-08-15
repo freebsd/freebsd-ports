@@ -1,6 +1,0 @@
-This is an implementation of a client for BulkSMS.co.uk's HTTP API.
-It includes an object-oriented Python module which can be used in
-other python code, and an 'sms' program which can be used directly
-from the command line.
-
-WWW: http://botanicus.net/dw/

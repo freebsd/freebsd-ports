@@ -1,5 +1,0 @@
-This module implements a set of classes and functions to work with the Yahoo
-Search Web Services. All results from these services are properly formatted
-XML, and this package facilitates for correct parsing of these result sets.
-
-WWW: http://pysearch.sourceforge.net/

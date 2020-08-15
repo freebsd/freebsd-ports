@@ -1,5 +1,0 @@
-oursql is a set of MySQL bindings for python 2.4+ with a focus
-on wrapping the MYSQL_STMT API to provide real parameterization
-and real server-side cursors. MySQL 4.1.2 or better is required.
-
-WWW: https://launchpad.net/oursql
