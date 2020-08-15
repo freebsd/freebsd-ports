@@ -1,6 +1,6 @@
---- services/device/hid/hid_service_freebsd.cc.orig	2020-03-17 15:11:01 UTC
-+++ services/device/hid/hid_service_freebsd.cc
-@@ -0,0 +1,383 @@
+--- services/device/hid/hid_service_freebsd.cc.orig	2020-07-18 19:40:14.415772000 -0700
++++ services/device/hid/hid_service_freebsd.cc	2020-07-21 20:00:55.322907000 -0700
+@@ -0,0 +1,382 @@
 +// Copyright 2014 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -48,7 +48,7 @@
 +        callback(std::move(callback)),
 +        task_runner(base::ThreadTaskRunnerHandle::Get()),
 +        blocking_task_runner(
-+            base::CreateSequencedTaskRunner(kBlockingTaskTraits)) {}
++            base::ThreadPool::CreateSequencedTaskRunner(kBlockingTaskTraits)) {}
 +  ~ConnectParams() {}
 +
 +  scoped_refptr<HidDeviceInfo> device_info;
@@ -58,9 +58,9 @@
 +  base::ScopedFD fd;
 +};
 +
-+class HidServiceFreeBSD::BlockingTaskHelper {
++class HidServiceFreeBSD::BlockingTaskRunnerHelper {
 + public:
-+  BlockingTaskHelper(base::WeakPtr<HidServiceFreeBSD> service)
++  BlockingTaskRunnerHelper(base::WeakPtr<HidServiceFreeBSD> service)
 +      : service_(std::move(service)),
 +        task_runner_(base::ThreadTaskRunnerHandle::Get()) {
 +    DETACH_FROM_SEQUENCE(sequence_checker_);
@@ -69,7 +69,7 @@
 +    devd_buffer_ = new net::IOBufferWithSize(1024);
 +  }
 +
-+  ~BlockingTaskHelper() {
++  ~BlockingTaskRunnerHelper() {
 +  }
 +
 +  void Start() {
@@ -173,7 +173,7 @@
 +        report_descriptor,
 +	device_node));
 +
-+    task_runner_->PostTask(FROM_HERE, base::Bind(&HidServiceFreeBSD::AddDevice,
++    task_runner_->PostTask(FROM_HERE, base::BindOnce(&HidServiceFreeBSD::AddDevice,
 +                                                 service_, device_info));
 +  }
 +
@@ -231,7 +231,7 @@
 +
 +    devd_fd_.reset(devd_fd);
 +    file_watcher_ = base::FileDescriptorWatcher::WatchReadable(
-+        devd_fd_.get(), base::Bind(&BlockingTaskHelper::OnDevdMessageCanBeRead,
++        devd_fd_.get(), base::Bind(&BlockingTaskRunnerHelper::OnDevdMessageCanBeRead,
 +                                   base::Unretained(this)));
 +  }
 +
@@ -265,7 +265,7 @@
 +          if (permissions_checks_attempts_.find(device_name) == permissions_checks_attempts_.end()) {
 +            permissions_checks_attempts_.insert(std::pair<std::string, int>(device_name, kMaxPermissionChecks));
 +            timer_->Start(FROM_HERE, base::TimeDelta::FromSeconds(1),
-+                          this, &BlockingTaskHelper::CheckPendingPermissionChange);
++                          this, &BlockingTaskRunnerHelper::CheckPendingPermissionChange);
 +          }
 +        }
 +      }
@@ -298,18 +298,17 @@
 +  scoped_refptr<net::IOBufferWithSize> devd_buffer_;
 +  std::map<std::string, int> permissions_checks_attempts_;
 +
-+  DISALLOW_COPY_AND_ASSIGN(BlockingTaskHelper);
++  DISALLOW_COPY_AND_ASSIGN(BlockingTaskRunnerHelper);
 +};
 +
 +HidServiceFreeBSD::HidServiceFreeBSD()
-+    : task_runner_(base::ThreadTaskRunnerHandle::Get()),
-+      blocking_task_runner_(
-+          base::CreateSequencedTaskRunner(kBlockingTaskTraits)),
-+      weak_factory_(this) {
-+  helper_ = std::make_unique<BlockingTaskHelper>(weak_factory_.GetWeakPtr());
++    : blocking_task_runner_(
++          base::ThreadPool::CreateSequencedTaskRunner(kBlockingTaskTraits)),
++      helper_(nullptr, base::OnTaskRunnerDeleter(blocking_task_runner_)) {
++  helper_.reset(new BlockingTaskRunnerHelper(weak_factory_.GetWeakPtr()));
 +  blocking_task_runner_->PostTask(
 +      FROM_HERE,
-+      base::Bind(&BlockingTaskHelper::Start, base::Unretained(helper_.get())));
++      base::BindOnce(&BlockingTaskRunnerHelper::Start, base::Unretained(helper_.get())));
 +}
 +
 +HidServiceFreeBSD::~HidServiceFreeBSD() {
