@@ -2,7 +2,7 @@
 # $FreeBSD$
 #
 # PROVIDE: kafka_connect
-# REQUIRE: LOGIN
+# REQUIRE: NETWORKING SERVERS DAEMON
 # KEYWORD: shutdown
 #
 # Add kafka_connect_enable="YES" to /etc/rc.conf to enable Kafka Connect:
@@ -11,6 +11,8 @@
 #
 # kafka_connect_user:			Username to run Kafka Connect
 #					Default: %%KAFKA_USER%%
+# kafka_connect_group:			Group to run Kafka Connect
+#					Default: %%KAFKA_GROUP%%
 # kafka_connect_config:			Configuration file to run Kafka Connect
 #					Default: %%ETCDIR%%/connect.properties
 # kafka_connect_log4j_config:		Configuration file for Kafka Connect logging
@@ -19,10 +21,12 @@
 #					Default: %%KAFKA_LOGDIR%%
 # kafka_connect_java_opts:		Options passed to JVM to start Kafka Connect
 #					Default: None
-# kafka_connect_pidfile:		Full path of the Kafka process PID file
+# kafka_connect_pidfile:		Full path of the Kafka Connect process PID file
 #					Default: /var/run/kafka_connect.pid
 # kafka_connect_syslog_output_enable:	Set to enable syslog output.
 #					Default: YES
+# kafka_connect_syslog_output_tag:	Set syslog tag if syslog enabled.
+#					Default: kafka_connect
 # kafka_connect_syslog_output_priority:	Set syslog priority if syslog enabled.
 #					Default: info
 # kafka_connect_syslog_output_facility:	Set syslog facility if syslog enabled.
@@ -35,22 +39,24 @@ rcvar=kafka_connect_enable
 
 load_rc_config "${name}"
 
-: ${kafka_connect_enable:=NO}
-: ${kafka_connect_user:=%%KAFKA_USER%%}
-: ${kafka_connect_config:=%%ETCDIR%%/connect.properties}
-: ${kafka_connect_log4j_config:=%%ETCDIR%%/connect-log4j.properties}
-: ${kafka_connect_log_dir:=%%KAFKA_LOGDIR%%}
+: ${kafka_connect_enable:="NO"}
+: ${kafka_connect_user:="%%KAFKA_USER%%"}
+: ${kafka_connect_group:="%%KAFKA_GROUP%%"}
+: ${kafka_connect_config:="%%ETCDIR%%/connect.properties"}
+: ${kafka_connect_log4j_config:="%%ETCDIR%%/connect-log4j.properties"}
+: ${kafka_connect_log_dir:="%%KAFKA_LOGDIR%%"}
 : ${kafka_connect_pidfile:=/var/run/kafka_connect.pid}
 : ${kafka_connect_syslog_output_enable:="YES"}
 : ${kafka_connect_standalone:="YES"}
 
-_kafka_connect_user=${kafka_connect_user}
-unset kafka_connect_user
-
-kafka_connect_log4j_config="${kafka_connect_log4j_profile#file:}"
+start_precmd="kafka_connect_start_precmd"
 
 if checkyesno kafka_connect_syslog_output_enable; then
-	kafka_connect_syslog_output_flags="-T ${name}"
+	if [ -n "${kafka_syslog_output_tag}" ]; then
+		kafka_connect_syslog_output_flags="-T ${kafka_connect_syslog_output_tag}"
+	else
+		kafka_connect_syslog_output_flags="-T ${name}"
+	fi
 	if [ -n "${kafka_connect_syslog_output_priority}" ]; then
 		kafka_connect_syslog_output_flags="${kafka_connect_syslog_output_flags} -s ${kafka_connect_syslog_output_priority}"
 	fi
@@ -75,6 +81,13 @@ required_dirs="${kafka_connect_log_dir}"
 required_files="${kafka_connect_config} ${kafka_connect_log4j_config}"
 
 command="/usr/sbin/daemon"
-command_args="-f ${kafka_connect_syslog_output_flags} -P ${pidfile} -u ${_kafka_connect_user} -t ${name} ${JAVA} ${kafka_connect_main}"
+command_args="-f ${kafka_connect_syslog_output_flags} -P ${pidfile} -t ${name} ${JAVA} ${kafka_connect_main}"
+
+kafka_connect_start_precmd()
+{
+	if [ ! -e "${pidfile}" ]; then
+		install -m 0600 -o "${kafka_connect_user}" -g "${kafka_connect_group}" /dev/null "${pidfile}"
+	fi
+}
 
 run_rc_command "$1"

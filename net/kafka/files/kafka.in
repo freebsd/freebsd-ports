@@ -2,7 +2,7 @@
 # $FreeBSD$
 #
 # PROVIDE: kafka
-# REQUIRE: LOGIN
+# REQUIRE: NETWORKING SERVERS DAEMON
 # KEYWORD: shutdown
 #
 # Add kafka_enable="YES" to /etc/rc.conf to enable Kafka:
@@ -11,6 +11,8 @@
 #
 # kafka_user:				Username to run Kafka
 #					Default: %%KAFKA_USER%%
+# kafka_group:				Group to run Kafka
+#					Default: %%KAFKA_GROUP%%
 # kafka_config:				Configuration file to run Kafka
 #					Default: %%ETCDIR%%/server.properties
 # kafka_log4j_config:			Configuration file for Kafka logging
@@ -23,6 +25,8 @@
 #					Default: /var/run/kafka.pid
 # kafka_syslog_output_enable:		Set to enable syslog output.
 #					Default: YES
+# kafka_syslog_output_tag:		Set syslog tag if syslog enabled.
+#					Default: kafka
 # kafka_syslog_output_priority:		Set syslog priority if syslog enabled.
 #					Default: info
 # kafka_syslog_output_facility:		Set syslog facility if syslog enabled.
@@ -35,16 +39,16 @@ rcvar=kafka_enable
 
 load_rc_config "${name}"
 
-: ${kafka_enable:=NO}
-: ${kafka_user:=%%KAFKA_USER%%}
-: ${kafka_config:=%%ETCDIR%%/server.properties}
-: ${kafka_log4j_config:=%%ETCDIR%%/log4j.properties}
-: ${kafka_log_dir:=%%KAFKA_LOGDIR%%}
+: ${kafka_enable:="NO"}
+: ${kafka_user:="%%KAFKA_USER%%"}
+: ${kafka_group:="%%KAFKA_GROUP%%"}
+: ${kafka_config:="%%ETCDIR%%/server.properties"}
+: ${kafka_log4j_config:="%%ETCDIR%%/log4j.properties"}
+: ${kafka_log_dir:="%%KAFKA_LOGDIR%%"}
 : ${kafka_pidfile:=/var/run/kafka.pid}
 : ${kafka_syslog_output_enable:="YES"}
 
-_kafka_user=${kafka_user}
-unset kafka_user
+start_precmd="kafka_start_precmd"
 
 # backwards compatibility
 if [ -n "${kafka_log4j_profile}" ]; then
@@ -52,7 +56,11 @@ if [ -n "${kafka_log4j_profile}" ]; then
 fi
 
 if checkyesno kafka_syslog_output_enable; then
-	kafka_syslog_output_flags="-T ${name}"
+	if [ -n "${kafka_syslog_output_tag}" ]; then
+		kafka_syslog_output_flags="-T ${kafka_syslog_output_tag}"
+	else
+		kafka_syslog_output_flags="-T ${name}"
+	fi
 	if [ -n "${kafka_syslog_output_priority}" ]; then
 		kafka_syslog_output_flags="${kafka_syslog_output_flags} -s ${kafka_syslog_output_priority}"
 	fi
@@ -72,6 +80,13 @@ required_dirs="${kafka_log_dir}"
 required_files="${kafka_config} ${kafka_log4j_config}"
 
 command="/usr/sbin/daemon"
-command_args="-f ${kafka_syslog_output_flags} -P ${pidfile} -u ${_kafka_user} -t ${name} ${JAVA} ${kafka_main}"
+command_args="-f ${kafka_syslog_output_flags} -P ${pidfile} -t ${name} ${JAVA} ${kafka_main}"
+
+kafka_start_precmd()
+{
+	if [ ! -e "${pidfile}" ]; then
+		install -m 0600 -o "${kafka_user}" -g "${kafka_group}" /dev/null "${pidfile}"
+	fi
+}
 
 run_rc_command "$1"

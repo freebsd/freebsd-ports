@@ -2,9 +2,10 @@
 
 PORTNAME=	kafka
 PORTVERSION=	2.6.0
+PORTREVISION=	1
 CATEGORIES=	net java
 MASTER_SITES=	APACHE/${PORTNAME}/${PORTVERSION}
-DISTNAME=	${PORTNAME}_2.12-${PORTVERSION}
+DISTNAME=	${PORTNAME}_2.13-${PORTVERSION}
 
 MAINTAINER=	timp87@gmail.com
 COMMENT=	Distributed streaming platform
@@ -22,7 +23,7 @@ OPTIONS_DEFINE=	DOCS
 
 KAFKA_USER?=	kafka
 KAFKA_GROUP?=	kafka
-KAFKA_DATADIR?=	/var/db/${PORTNAME}
+KAFKA_DBDIR?=	/var/db/${PORTNAME}
 KAFKA_LOGDIR?=	/var/log/${PORTNAME}
 
 USERS=		${KAFKA_USER}
@@ -54,17 +55,15 @@ KAFKA_CONFIGS=	connect-console-sink.properties \
 
 USE_RC_SUBR=	kafka kafka_connect
 SUB_LIST=	JAVA=${JAVA} \
-		ETCDIR=${ETCDIR} \
 		KAFKA_USER=${KAFKA_USER} \
 		KAFKA_GROUP=${KAFKA_GROUP} \
 		KAFKA_LOGDIR=${KAFKA_LOGDIR}
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION} \
-		ETCDIR=${ETCDIR} \
 		KAFKA_USER=${KAFKA_USER} \
 		KAFKA_GROUP=${KAFKA_GROUP} \
 		KAFKA_LOGDIR=${KAFKA_LOGDIR} \
-		KAFKA_DATADIR=${KAFKA_DATADIR}
+		KAFKA_DBDIR=${KAFKA_DBDIR}
 
 NO_BUILD=	yes
 NO_ARCH=	yes
@@ -77,11 +76,11 @@ post-patch:
 	@${REINPLACE_CMD} "/LOG_DIR=/s|\$$base_dir/logs|${KAFKA_LOGDIR}|" ${WRKSRC}/bin/kafka-run-class.sh
 	@${REINPLACE_CMD} "s|\$$base_dir.*/config|${ETCDIR}|" ${WRKSRC}/bin/*.sh
 	@${REINPLACE_CMD} "s|ps ax|ps axww|" ${WRKSRC}/bin/kafka-server-stop.sh
-	@${REINPLACE_CMD} "/log.dirs/s|=.*|=${KAFKA_DATADIR}|" ${WRKSRC}/config/server.properties
+	@${REINPLACE_CMD} "/log.dirs/s|=.*|=${KAFKA_DBDIR}|" ${WRKSRC}/config/server.properties
 
 do-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}
-	${MKDIR} ${STAGEDIR}${KAFKA_DATADIR}
+	${MKDIR} ${STAGEDIR}${KAFKA_DBDIR}
 	${MKDIR} ${STAGEDIR}${KAFKA_LOGDIR}
 	${MKDIR} ${STAGEDIR}${DATADIR}/bin
 .for f in ${KAFKA_BINS}
@@ -98,6 +97,6 @@ do-install:
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${EXTRACT_CMD} -xf ${WRKSRC}/site-docs/${PORTNAME}_2.12-${PORTVERSION}-site-docs.tgz -C ${STAGEDIR}${DOCSDIR}
+	${EXTRACT_CMD} -xf ${WRKSRC}/site-docs/${PORTNAME}_2.13-${PORTVERSION}-site-docs.tgz -C ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
