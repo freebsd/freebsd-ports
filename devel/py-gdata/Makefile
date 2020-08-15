@@ -13,6 +13,9 @@ COMMENT=	GData Python Client Library
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Unmaintained upstream, superseded by www/py-google-api-python-client
+EXPIRATION_DATE=	2020-10-25
+
 USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 
