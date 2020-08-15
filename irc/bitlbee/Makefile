@@ -34,9 +34,9 @@ OPTIONS_SINGLE_EVENTS=	GLIB LIBEVENT
 OPTIONS_SINGLE_SSL=	OPENSSL GNUTLS NSS
 
 OPTIONS_MULTI=		PROTO
-OPTIONS_MULTI_PROTO=	LIBPURPLE JABBER MSN OSCAR SKYPE TWITTER
+OPTIONS_MULTI_PROTO=	LIBPURPLE JABBER MSN OSCAR TWITTER
 
-LIBPURPLE_PREVENTS=	JABBER MSN OSCAR SKYPE TWITTER
+LIBPURPLE_PREVENTS=	JABBER MSN OSCAR TWITTER
 LIBPURPLE_PREVENTS_MSG=	If libpurple is enabled, all native protocols must be disabled
 
 GLIB_DESC=		Use glib as event handler
@@ -46,7 +46,6 @@ LIBPURPLE_DESC=		Use libpurple for protocol support
 MSN_DESC=		Microsoft Messenger support
 OSCAR_DESC=		OSCAR (ICQ) support
 OTR_DESC=		Off-the-Record Messaging support
-SKYPE_DESC=		Skype support
 TWITTER_DESC=		Twitter support
 
 OPTIONS_DEFAULT=	GLIB GNUTLS JABBER OSCAR OTR TWITTER
@@ -87,9 +86,6 @@ OTR_LIB_DEPENDS=	libotr.so.5:security/libotr \
 			libgcrypt.so:security/libgcrypt \
 			libgpg-error.so:security/libgpg-error
 PAM_CONFIGURE_ON=	--pam=1
-SKYPE_CONFIGURE_ON=	--skype=1
-SKYPE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Skype4Py>0:net-im/py-skype4py@${PY_FLAVOR}
-SKYPE_USES=		python:2.7
 TWITTER_CONFIGURE_OFF=	--twitter=0
 
 USERS=		bitlbee
@@ -109,12 +105,6 @@ post-patch:
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
-
-post-install-SKYPE-on:
-	${MV} ${STAGEDIR}${PREFIX}/etc/skyped/skyped.conf \
-		${STAGEDIR}${PREFIX}/etc/skyped/skyped.conf.sample
-	${MV} ${STAGEDIR}${PREFIX}/etc/skyped/skyped.cnf \
-		${STAGEDIR}${PREFIX}/etc/skyped/skyped.cnf.sample
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

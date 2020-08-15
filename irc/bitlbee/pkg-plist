@@ -40,10 +40,5 @@ include/bitlbee/storage.h
 include/bitlbee/url.h
 include/bitlbee/xmltree.h
 libdata/pkgconfig/bitlbee.pc
-%%SKYPE%%bin/skyped
-%%SKYPE%%lib/bitlbee/skype.so
-%%SKYPE%%man/man1/skyped.1.gz
-%%SKYPE%%@sample etc/skyped/skyped.conf.sample
-%%SKYPE%%@sample etc/skyped/skyped.cnf.sample
 %%DATADIR%%/help.txt
 @dir etc/bitlbee
