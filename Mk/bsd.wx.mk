@@ -133,9 +133,6 @@ _WX_LIB_wx_2.8=		wx_base${_WX_UC}-2.8
 _WX_PORT_contrib_2.8=	x11-toolkits/wxgtk28-contrib
 _WX_LIB_contrib_2.8=	wx_gtk2${_WX_UC}_fl-2.8
 
-_WX_PORT_python_2.8=	x11-toolkits/py-wxPython28
-_WX_FILE_python_2.8=	${PYTHON_SITELIBDIR}/wx-2.8-gtk2${_WX_PYSUFX}/wx/__init__.py
-
 # wxgtk 3.0
 _WX_PORT_wx_3.0=	x11-toolkits/wxgtk30
 _WX_LIB_wx_3.0=		wx_baseu-3.0
