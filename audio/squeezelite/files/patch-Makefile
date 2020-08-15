@@ -1,0 +1,28 @@
+--- Makefile.orig	2020-06-04 15:03:39 UTC
++++ Makefile
+@@ -1,3 +1,7 @@
++# FreeBSD's portaudio lives in usr/local
++CPPFLAGS = -I/usr/local/include -I/usr/local/include/portaudio2 -I/usr/local/include/opus
++LDFLAGS = -L/usr/local/lib /usr/local/lib/libportaudio.a -lm
++
+ #Cross compile support - create a Makefile which defines these three variables and then includes this Makefile...
+ CFLAGS	?= -Wall -fPIC -O2
+ CFLAGS	+= -fcommon
+@@ -24,7 +28,7 @@ OPT_PULSEAUDIO = -DPULSEAUDIO
+ SOURCES = \
+ 	main.c slimproto.c buffer.c stream.c utils.c \
+ 	output.c output_alsa.c output_pa.c output_stdout.c output_pack.c output_pulse.c decode.c \
+-	flac.c pcm.c mad.c vorbis.c mpg.c
++	flac.c pcm.c vorbis.c mpg.c
+ 
+ SOURCES_DSD      = dsd.c dop.c dsd2pcm/dsd2pcm.c
+ SOURCES_FF       = ffmpeg.c
+@@ -45,7 +49,7 @@ LINK_PULSEAUDIO  = -lpulse
+ LINK_SSL         = -lssl -lcrypto
+ LINK_ALAC        = -lalac
+ 
+-LINKALL          = -lmad -lmpg123 -lFLAC -lvorbisfile -lvorbis -logg
++LINKALL          = -lmpg123 -lFLAC -lvorbisfile -lvorbis -logg
+ LINKALL_FF       = -lavformat -lavcodec -lavutil
+ LINKALL_RESAMPLE = -lsoxr
+ LINKALL_IR       = -llirc_client

@@ -773,6 +773,7 @@
     SUBDIR += spotify-tui
     SUBDIR += spotifyd
     SUBDIR += squash
+    SUBDIR += squeezelite
     SUBDIR += sratom
     SUBDIR += stegosaurus-lv2
     SUBDIR += stk
