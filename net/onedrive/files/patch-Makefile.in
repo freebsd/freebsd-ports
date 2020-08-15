@@ -1,4 +1,4 @@
---- Makefile.in.orig	2020-07-13 17:07:56 UTC
+--- Makefile.in.orig	2020-08-10 21:41:08 UTC
 +++ Makefile.in
 @@ -25,6 +25,7 @@ systemdsystemunitdir = @systemdsystemunitdir@
  curl_LIBS = @curl_LIBS@
@@ -8,7 +8,7 @@
  COMPLETIONS = @COMPLETIONS@
  BASH_COMPLETION_DIR = @BASH_COMPLETION_DIR@
  ZSH_COMPLETION_DIR = @ZSH_COMPLETION_DIR@
-@@ -54,7 +55,7 @@ endif
+@@ -55,7 +56,7 @@ endif
  system_unit_files = contrib/systemd/onedrive@.service
  user_unit_files = contrib/systemd/onedrive.service
  
@@ -17,7 +17,7 @@
  
  ifneq ("$(wildcard /etc/redhat-release)","")
  RHEL = $(shell cat /etc/redhat-release | grep -E "(Red Hat Enterprise Linux Server|CentOS)" | wc -l)
-@@ -66,6 +67,7 @@ endif
+@@ -67,6 +68,7 @@ endif
  
  SOURCES = \
  	src/config.d \
@@ -25,7 +25,7 @@
  	src/itemdb.d \
  	src/log.d \
  	src/main.d \
-@@ -101,14 +103,15 @@ onedrive: $(SOURCES)
+@@ -102,14 +104,15 @@ onedrive: $(SOURCES)
  	else \
  		echo $(version) > version ; \
  	fi
@@ -46,16 +46,19 @@
  ifeq ($(HAVE_SYSTEMD),yes)
  	$(INSTALL) -d -m 0755 $(DESTDIR)$(systemduserunitdir) $(DESTDIR)$(systemdsystemunitdir)
  ifeq ($(RHEL),1)
-@@ -125,8 +128,10 @@ ifeq ($(RHEL_VERSION),6)
+@@ -126,9 +129,12 @@ ifeq ($(RHEL_VERSION),6)
  endif	
  endif
  ifeq ($(COMPLETIONS),yes)
 -	$(INSTALL) -D -m 644 contrib/completions/complete.zsh $(DESTDIR)$(ZSH_COMPLETION_DIR)/_onedrive
 -	$(INSTALL) -D -m 644 contrib/completions/complete.bash $(DESTDIR)$(BASH_COMPLETION_DIR)/onedrive
+-	$(INSTALL) -D -m 644 contrib/completions/complete.fish $(DESTDIR)$(FISH_COMPLETION_DIR)/onedrive.fish
 +	mkdir -p $(DESTDIR)$(ZSH_COMPLETION_DIR)
 +	$(INSTALL) -m 644 contrib/completions/complete.zsh $(DESTDIR)$(ZSH_COMPLETION_DIR)/_onedrive
 +	mkdir -p $(DESTDIR)$(BASH_COMPLETION_DIR)
 +	$(INSTALL) -m 644 contrib/completions/complete.bash $(DESTDIR)$(BASH_COMPLETION_DIR)/onedrive
++	mkdir -p $(DESTDIR)$(FISH_COMPLETION_DIR)
++	$(INSTALL) -m 644 contrib/completions/complete.fish $(DESTDIR)$(FISH_COMPLETION_DIR)/onedrive.fish
  endif
  
  

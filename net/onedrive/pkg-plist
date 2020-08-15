@@ -3,6 +3,7 @@ etc/logrotate.d/onedrive
 man/man1/onedrive.1.gz
 %%COMPLETION%%etc/bash_completion.d/onedrive
 %%COMPLETION%%share/zsh/site-functions/_onedrive
+%%COMPLETION%%share/fish/completions/onedrive.fish
 %%DOCSDIR%%/CHANGELOG.md
 %%DOCSDIR%%/Office365.md
 %%DOCSDIR%%/README.md
