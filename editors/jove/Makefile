@@ -5,7 +5,7 @@ PORTNAME=	jove
 PORTVERSION=	4.16
 PORTREVISION=	2
 CATEGORIES=	editors
-MASTER_SITES=	ftp://ftp.cs.toronto.edu/pub/moraes/jove/ \
+MASTER_SITES=	ftp://ftp.cs.toronto.edu/pub/moraes/jove/ARCHIVE/4.16/ \
 		LOCAL/simon
 
 MAINTAINER=	ports@FreeBSD.org
