@@ -530,7 +530,11 @@ share/osinfo/os/oracle.com/ol-7.3.xml
 share/osinfo/os/oracle.com/ol-7.4.xml
 share/osinfo/os/oracle.com/ol-7.5.xml
 share/osinfo/os/oracle.com/ol-7.6.xml
+share/osinfo/os/oracle.com/ol-7.7.xml
+share/osinfo/os/oracle.com/ol-7.8.xml
 share/osinfo/os/oracle.com/ol-8.0.xml
+share/osinfo/os/oracle.com/ol-8.1.xml
+share/osinfo/os/oracle.com/ol-8.2.xml
 share/osinfo/os/oracle.com/solaris-11.xml
 share/osinfo/os/pureos.net/pureos-8.xml
 share/osinfo/os/redhat.com/rhel-2.1.1.xml
@@ -600,6 +604,7 @@ share/osinfo/os/redhat.com/rhel-8-unknown.xml
 share/osinfo/os/redhat.com/rhel-8.0.xml
 share/osinfo/os/redhat.com/rhel-8.1.xml
 share/osinfo/os/redhat.com/rhel-8.2.xml
+share/osinfo/os/redhat.com/rhel-8.3.xml
 share/osinfo/os/redhat.com/rhel-atomic-7.0.xml
 share/osinfo/os/redhat.com/rhel-atomic-7.1.xml
 share/osinfo/os/redhat.com/rhel-atomic-7.2.xml
