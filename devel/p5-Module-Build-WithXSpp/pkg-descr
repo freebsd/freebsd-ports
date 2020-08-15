@@ -1,0 +1,4 @@
+This subclass of Module::Build adds some tools and processes
+to make it easier to use for wrapping C++ using XS++ (ExtUtils::XSpp).
+
+WWW: https://metacpan.org/release/Module-Build-WithXSpp
