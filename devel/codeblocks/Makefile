@@ -26,8 +26,8 @@ USE_WX=		3.0+
 USE_GNOME=	gtk30 cairo
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-wx-config=${WX_CONFIG} --with-contrib-plugins=all \
-		--disable-pch --with-boost-system=boost_system
+CONFIGURE_ARGS=	--with-wx-config=${WX_CONFIG} --disable-pch \
+		--with-boost-system=boost_system
 PKG_CONFIG_LIBDIR=	${LOCALBASE}/libdata/pkgconfig
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
@@ -35,4 +35,14 @@ USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != amd64 && ${ARCH} != i386
+CONFIGURE_ARGS+=	--with-contrib-plugins=all,-dragscroll
+PLIST_SUB=	X86="@comment "
+.else
+CONFIGURE_ARGS+=	--with-contrib-plugins=all
+PLIST_SUB=	X86=""
+.endif
+
+.include <bsd.port.post.mk>

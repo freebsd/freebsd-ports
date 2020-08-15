@@ -355,7 +355,7 @@ lib/codeblocks/plugins/libcompiler.so
 lib/codeblocks/plugins/libcopystrings.so
 lib/codeblocks/plugins/libdebugger.so
 lib/codeblocks/plugins/libdefaultmimehandler.so
-lib/codeblocks/plugins/libdragscroll.so
+%%X86%%lib/codeblocks/plugins/libdragscroll.so
 lib/codeblocks/plugins/libenvvars.so
 lib/codeblocks/plugins/libexporter.so
 lib/codeblocks/plugins/libheaderfixup.so
@@ -632,7 +632,7 @@ share/applications/codeblocks.desktop
 %%DATADIR%%/copystrings.zip
 %%DATADIR%%/debugger.zip
 %%DATADIR%%/defaultmimehandler.zip
-%%DATADIR%%/dragscroll.zip
+%%X86%%%%DATADIR%%/dragscroll.zip
 %%DATADIR%%/envvars.zip
 %%DATADIR%%/exporter.zip
 %%DATADIR%%/headerfixup.zip
