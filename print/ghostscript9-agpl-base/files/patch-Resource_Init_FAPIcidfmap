@@ -1,4 +1,4 @@
---- Resource/Init/FAPIcidfmap.orig	2012-08-08 08:01:36 UTC
+--- Resource/Init/FAPIcidfmap.orig	2020-03-19 08:21:42 UTC
 +++ Resource/Init/FAPIcidfmap
 @@ -29,4 +29,59 @@
  %
@@ -6,7 +6,7 @@
  %  /HeiseiKakuGo-W5   << /Path (F:/WIN2000/Fonts/BATANG.TTC) /CIDFontType 0 /FAPI /UFST /CSI [(Japan1) 2] >> ;
 +%/Ryumin-Light		<< /Path (Ryumin-Light) /CIDFontType 0 /FAPI /UFST /CSI [(Japan1) 2] >> ;
 +%/GothicBBB-Medium	<< /Path (GothicBBB-Medium) /CIDFontType 0 /FAPI /UFST /CSI [(Japan1) 2] >> ;
-+
+ 
 +/Ryumin-Medium		/Ryumin-Light ;
 +/Ryumin-Regular		/Ryumin-Light ;
 +/RyuminPro-Light	/Ryumin-Light ;
@@ -28,7 +28,7 @@
 +/HiraKakuStd-W8		/GothicBBB-Medium ;
 +
 +/HiraMaruPro-W4		/GothicBBB-Medium ;
- 
++
 +/HiraMinPro-W3		/Ryumin-Light ;
 +
 +/HeiseiMin-W3		/Ryumin-Light ;
