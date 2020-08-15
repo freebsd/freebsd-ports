@@ -21,8 +21,7 @@ USES=		python${PY_MYSQL}
 USE_PYTHON=	autoplist distutils
 
 # currently MaxDB(SAP), ADODB are not supported
-OPTIONS_DEFINE=	DOCS MYSQL PGSQL SQLITE MSSQL SYBASE
-SYBASE_DESC=	sybase support
+OPTIONS_DEFINE=	DOCS MYSQL PGSQL SQLITE MSSQL
 
 PORTDOCS=	*
 
@@ -31,7 +30,6 @@ MYSQL_VARS=	PY_MYSQL=:2.7
 PGSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg2>=0:databases/py-psycopg2@${PY_FLAVOR}
 SQLITE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR}
 MSSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pymssql>=0:databases/py-pymssql@${PY_FLAVOR}
-SYBASE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sybase>=0.37:databases/py-sybase@${PY_FLAVOR}
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
