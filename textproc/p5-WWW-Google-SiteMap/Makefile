@@ -22,4 +22,7 @@ RUN_DEPENDS=	p5-XML-Twig>=0:textproc/p5-XML-Twig \
 USES=		perl5
 USE_PERL5=	configure
 
+DEPRECATED=	Deprecated upstream, see textproc/p5-Search-Sitemap
+EXPIRATION_DATE=	2020-09-15
+
 .include <bsd.port.mk>
