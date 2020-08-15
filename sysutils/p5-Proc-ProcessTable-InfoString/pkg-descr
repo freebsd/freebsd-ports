@@ -1,0 +1,4 @@
+Creates a PS like stat string showing various symbolic represenation of
+various flags/state as well as the wchan.
+
+WWW: https://metacpan.org/release/Proc-ProcessTable-InfoString

@@ -816,6 +816,7 @@
     SUBDIR += p5-Probe-Perl
     SUBDIR += p5-Proc-PidUtil
     SUBDIR += p5-Proc-ProcessTable-Colorizer
+    SUBDIR += p5-Proc-ProcessTable-InfoString
     SUBDIR += p5-Proc-ProcessTable-Match
     SUBDIR += p5-Proclet
     SUBDIR += p5-Quota
