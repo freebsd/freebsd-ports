@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jupyter_client>=0:devel/py-jupyter_client@${
 		${PYTHON_PKGNAMEPREFIX}prompt_toolkit>=2.0.0<3.1.0:devel/py-prompt_toolkit@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pygments>=1.6:textproc/py-pygments@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python:3.7+
 
 USE_PYTHON=	distutils autoplist
 USE_LOCALE=	en_US.UTF-8
