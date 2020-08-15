@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	sshguard
-PORTVERSION=	2.4.0
-PORTREVISION=	2
+PORTVERSION=	2.4.1
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	SF/sshguard/sshguard/${PORTVERSION}
 
-MAINTAINER=	dan.mcgregor@usask.ca
+MAINTAINER=	kevinz5000@gmail.com
 COMMENT=	Protect hosts from brute-force attacks against SSH and other services
 
 LICENSE=	BSD2CLAUSE
