@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xxhash
-PORTVERSION=	1.4.4
+PORTVERSION=	2.0.0
 CATEGORIES=	devel
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,6 +12,7 @@ COMMENT=	Python bindings for the xxHash library
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	xxhash>=0.8.0:devel/xxhash
 LIB_DEPENDS=	libxxhash.so:devel/xxhash
 
 USES=		localbase python
