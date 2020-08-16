@@ -1,0 +1,5 @@
+TIMESTAMP = 1589545119
+SHA256 (lavalauncher-v1.7.1.tar.gz) = ff67f599de523daf50bd4d8351fd299c1967dd622126086145f7f035a329bbdb
+SIZE (lavalauncher-v1.7.1.tar.gz) = 82550
+SHA256 (7142822a8082.patch) = 9184ff5b1d3b2bf9f16097e7a21ab635d4bf8d2c0a0592cfad7d437797e1ed9f
+SIZE (7142822a8082.patch) = 1348

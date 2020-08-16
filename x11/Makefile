@@ -129,6 +129,7 @@
     SUBDIR += kf5-kwindowsystem
     SUBDIR += kf5-plasma-framework
     SUBDIR += konsole
+    SUBDIR += lavalauncher
     SUBDIR += lemonbar
     SUBDIR += libICE
     SUBDIR += libSM
