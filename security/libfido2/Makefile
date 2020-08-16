@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libcbor.so:devel/libcbor \
 		libhidapi.so.0:comms/hidapi
 
-USES=		cmake compiler pkgconfig ssl
+USES=		cmake compiler:c11 pkgconfig ssl
 
 CFLAGS+=	-D_WITH_GETLINE
 CMAKE_ON=	USE_HIDAPI
@@ -29,8 +29,5 @@ OPTIONS_DEFINE=	DOCS
 post-patch:
 	@${REINPLACE_CMD} -e '/libcrypto/d' ${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's|endian.h|sys/&|' ${WRKSRC}/CMakeLists.txt ${WRKSRC}/openbsd-compat/openbsd-compat.h
-.if ${CHOSEN_COMPILER_TYPE} == gcc
-	@${REINPLACE_CMD} -e '/-Wno-unused-result/d; /-Wno-discarded-qualifiers/d' ${WRKSRC}/CMakeLists.txt
-.endif
 
 .include <bsd.port.post.mk>
