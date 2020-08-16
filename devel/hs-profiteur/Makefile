@@ -2,7 +2,7 @@
 
 PORTNAME=	profiteur
 PORTVERSION=	0.4.5.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -12,13 +12,14 @@ LICENSE=	BSD3CLAUSE
 
 USES=		cabal
 
-USE_CABAL=	aeson-1.4.6.0 \
-		attoparsec-0.13.2.3_1 \
+USE_CABAL=	aeson-1.4.7.1_1 \
+		attoparsec-0.13.2.4 \
 		base-compat-0.11.1 \
+		base-compat-batteries-0.11.1 \
 		base-orphans-0.8.2 \
-		dlist-0.8.0.7 \
-		ghc-prof-1.4.1.6 \
-		hashable-1.3.0.0 \
+		dlist-0.8.0.8 \
+		ghc-prof-1.4.1.7 \
+		hashable-1.3.0.0_1 \
 		integer-logarithms-1.0.3_2 \
 		js-jquery-3.3.1 \
 		primitive-0.7.0.1 \

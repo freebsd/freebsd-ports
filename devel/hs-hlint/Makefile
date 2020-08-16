@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	hlint
-PORTVERSION=	2.2.11
-PORTREVISION=	1
+PORTVERSION=	3.1.1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -29,15 +28,11 @@ USE_CABAL=	aeson-1.4.7.1_1 \
 		data-default-instances-dlist-0.0.1 \
 		data-default-instances-old-locale-0.0.1 \
 		dlist-0.8.0.8 \
-		exceptions-0.10.4_1 \
 		extra-1.7.1 \
-		file-embed-0.0.11.2 \
+		file-embed-0.0.12.0 \
 		filepattern-0.1.2 \
-		ghc-lib-parser-ex-8.8.5.8 \
-		happy-1.19.12 \
+		ghc-lib-parser-ex-8.10.0.10 \
 		hashable-1.3.0.0_1 \
-		haskell-src-exts-1.23.0 \
-		haskell-src-exts-util-0.2.5 \
 		hscolour-1.24.4 \
 		integer-logarithms-1.0.3_2 \
 		libyaml-0.1.2 \
@@ -62,6 +57,6 @@ USE_CABAL=	aeson-1.4.7.1_1 \
 		uuid-types-1.0.3_2 \
 		vector-0.12.1.2 \
 		vector-algorithms-0.8.0.3 \
-		yaml-0.11.3.0
+		yaml-0.11.4.0
 
 .include <bsd.port.mk>

@@ -2,7 +2,7 @@
 
 PORTNAME=	purescript
 PORTVERSION=	0.13.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -70,7 +70,6 @@ USE_CABAL=	Glob-0.9.3 \
 		easy-file-0.2.2 \
 		edit-distance-0.2.2.1_1 \
 		entropy-0.4.1.6 \
-		exceptions-0.10.4_1 \
 		fast-logger-3.0.1 \
 		file-embed-0.0.12.0 \
 		fsnotify-0.3.0.1_1 \

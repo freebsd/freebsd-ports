@@ -1,4 +1,4 @@
-TIMESTAMP = 1584459219
+TIMESTAMP = 1590224192
 SHA256 (cabal/scroll-1.20180421.tar.gz) = 9203353457c53550524d40216d069129389dbb94a7d8ba1a9153e794dcceff2a
 SIZE (cabal/scroll-1.20180421.tar.gz) = 266900
 SHA256 (cabal/IfElse-0.85/IfElse-0.85.tar.gz) = 8ad3bfc3e2c867e6330d9bff874b3105476c35b2e1638fd448f233e9f80addcd
@@ -33,6 +33,8 @@ SHA256 (cabal/happy-1.19.12/happy-1.19.12.tar.gz) = fb9a23e41401711a3b288f93cf0a
 SIZE (cabal/happy-1.19.12/happy-1.19.12.tar.gz) = 183254
 SHA256 (cabal/hashable-1.3.0.0/hashable-1.3.0.0.tar.gz) = 822e5413fbccca6ae884d3aba4066422c8b5d58d23d18b9ecb5c03273bb19ab4
 SIZE (cabal/hashable-1.3.0.0/hashable-1.3.0.0.tar.gz) = 29835
+SHA256 (cabal/hashable-1.3.0.0/revision/1.cabal) = 4c70f1407881059e93550d3742191254296b2737b793a742bd901348fb3e1fb1
+SIZE (cabal/hashable-1.3.0.0/revision/1.cabal) = 5206
 SHA256 (cabal/language-c-0.8.3/language-c-0.8.3.tar.gz) = f3d66c18abececb468f2b069f0c3274709456fde6938eace46dacf1c9b14202e
 SIZE (cabal/language-c-0.8.3/language-c-0.8.3.tar.gz) = 194870
 SHA256 (cabal/monad-loops-0.4.3/monad-loops-0.4.3.tar.gz) = 7eaaaf6bc43661e9e86e310ff8c56fbea16eb6bf13c31a2e28103138ac164c18

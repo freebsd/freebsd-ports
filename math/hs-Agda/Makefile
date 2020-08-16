@@ -3,7 +3,7 @@
 
 PORTNAME=	Agda
 PORTVERSION=	2.6.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -15,27 +15,28 @@ USES=		cabal
 
 USE_LOCALE=	en_US.UTF-8
 
-USE_CABAL=	STMonadTrans-0.4.4 \
-		aeson-1.4.6.0 \
+USE_CABAL=	Cabal-3.0.2.0 \
+		STMonadTrans-0.4.4 \
+		aeson-1.4.7.1_1 \
 		alex-3.2.5 \
-		async-2.2.2 \
-		attoparsec-0.13.2.3_1 \
+		async-2.2.2_1 \
+		attoparsec-0.13.2.4 \
 		base-compat-0.11.1 \
+		base-compat-batteries-0.11.1 \
 		base-orphans-0.8.2 \
 		blaze-builder-0.4.1.0 \
 		blaze-html-0.9.1.2 \
-		blaze-markup-0.8.2.3 \
+		blaze-markup-0.8.2.5 \
 		boxes-0.1.5 \
 		data-hash-0.2.0.1 \
-		dlist-0.8.0.7 \
+		dlist-0.8.0.8 \
 		edit-distance-0.2.2.1_1 \
 		equivalence-0.3.5 \
-		exceptions-0.10.4 \
 		fail-4.9.0.0 \
-		geniplate-mirror-0.7.6_2 \
+		geniplate-mirror-0.7.7 \
 		gitrev-1.3.1 \
 		happy-1.19.12 \
-		hashable-1.3.0.0 \
+		hashable-1.3.0.0_1 \
 		hashtables-1.2.3.4 \
 		ieee754-0.8.0 \
 		integer-logarithms-1.0.3_2 \
@@ -43,8 +44,8 @@ USE_CABAL=	STMonadTrans-0.4.4 \
 		network-uri-2.6.3.0 \
 		primitive-0.7.0.1 \
 		random-1.1_1 \
-		regex-base-0.94.0.0 \
-		regex-tdfa-1.3.1.0 \
+		regex-base-0.94.0.0_1 \
+		regex-tdfa-1.3.1.0_1 \
 		scientific-0.3.6.2 \
 		split-0.2.3.4 \
 		strict-0.3.2 \
@@ -57,7 +58,7 @@ USE_CABAL=	STMonadTrans-0.4.4 \
 		utf8-string-1.0.1.1_3 \
 		uuid-types-1.0.3_2 \
 		vector-0.12.1.2 \
-		zlib-0.6.2.1
+		zlib-0.6.2.1_1
 
 EXECUTABLES=		agda-mode agda
 agda_DATADIR_VARS=	Agda

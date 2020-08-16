@@ -3,7 +3,7 @@
 
 PORTNAME=	scroll
 PORTVERSION=	1.20180421
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	games haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -27,7 +27,7 @@ USE_CABAL=	IfElse-0.85 \
 		data-default-instances-old-locale-0.0.1 \
 		dlist-0.8.0.7 \
 		happy-1.19.12 \
-		hashable-1.3.0.0 \
+		hashable-1.3.0.0_1 \
 		language-c-0.8.3 \
 		monad-loops-0.4.3 \
 		ncurses-0.2.16 \

@@ -2,7 +2,7 @@
 
 PORTNAME=	postgrest
 PORTVERSION=	7.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www databases haskell
 
 MAINTAINER=	dmitry.wagin@ya.ru
@@ -12,6 +12,8 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64 i386
+
+BUILD_DEPENDS=	pg_config:databases/postgresql${PGSQL_DEFAULT}-client
 
 USES=		cabal pgsql
 

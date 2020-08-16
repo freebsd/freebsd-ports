@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	threadscope
-PORTVERSION=	0.2.12
-PORTREVISION=	1
+PORTVERSION=	0.2.13
+PORTREVISION=	2
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -18,17 +18,17 @@ USES=		cabal gnome pkgconfig
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk20
 
 USE_CABAL=	alex-3.2.5 \
-		cairo-0.13.8.0 \
+		cairo-0.13.8.1 \
 		exceptions-0.10.4 \
-		file-embed-0.0.11.2 \
-		ghc-events-0.12.0 \
-		glib-0.13.8.0 \
+		file-embed-0.0.13.0 \
+		ghc-events-0.13.0 \
+		glib-0.13.8.1 \
 		gtk2hs-buildtools-0.13.8.0 \
-		gtk-0.15.4 \
+		gtk-0.15.5 \
 		happy-1.19.12 \
-		hashable-1.3.0.0 \
+		hashable-1.3.0.0_1 \
 		hashtables-1.2.3.4 \
-		pango-0.13.8.0 \
+		pango-0.13.8.1 \
 		primitive-0.7.0.1 \
 		random-1.1_1 \
 		temporary-1.3 \

@@ -2,7 +2,7 @@
 
 PORTNAME=	elm
 PORTVERSION=	0.19.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	LOCAL/arrowd/:package_list
 DISTFILES=	elm-compiler-bootstrap-${PORTVERSION}${EXTRACT_SUFX}:package_list
@@ -44,8 +44,7 @@ USE_CABAL=	ansi-terminal-0.8.2 \
 		data-default-class-0.1.2.0 \
 		digest-0.0.1.2 \
 		edit-distance-0.2.2.1_1 \
-		exceptions-0.10.4_1 \
-		file-embed-0.0.11.2 \
+		file-embed-0.0.12.0 \
 		filelock-0.1.1.4 \
 		hashable-1.3.0.0_1 \
 		haskeline-0.8.0.0 \
@@ -57,7 +56,7 @@ USE_CABAL=	ansi-terminal-0.8.2 \
 		HUnit-1.6.0.0 \
 		integer-logarithms-1.0.3_2 \
 		io-streams-1.5.1.0_1 \
-		io-streams-haproxy-1.0.1.0_2 \
+		io-streams-haproxy-1.0.1.0_3 \
 		language-glsl-0.3.0_1 \
 		lifted-base-0.2.3.12 \
 		memory-0.15.0_1 \
@@ -77,11 +76,11 @@ USE_CABAL=	ansi-terminal-0.8.2 \
 		regex-posix-0.96.0.0_1 \
 		scientific-0.3.6.2 \
 		SHA-1.6.4.4 \
-		snap-core-1.0.4.1 \
-		snap-server-1.1.1.1_3 \
+		snap-core-1.0.4.1_1 \
+		snap-server-1.1.1.2 \
 		socks-0.6.1 \
 		streaming-commons-0.2.1.2 \
-		text-1.2.4.0 \
+		text-1.2.3.2 \
 		tls-1.5.4 \
 		transformers-base-0.4.5.2 \
 		transformers-compat-0.6.5 \

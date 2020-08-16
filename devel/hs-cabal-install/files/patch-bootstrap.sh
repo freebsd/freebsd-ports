@@ -1,4 +1,4 @@
---- bootstrap.sh.orig	2019-12-23 09:00:56 UTC
+--- bootstrap.sh.orig	2001-09-09 01:46:40 UTC
 +++ bootstrap.sh
 @@ -230,9 +230,9 @@ TRANS_VER="0.5.5.0";   TRANS_VER_REGEXP="0\.[45]\."
                         # >= 0.2.* && < 0.6
@@ -29,13 +29,16 @@
  CRYPTOHASH_SHA256_VER="0.11.101.0"; CRYPTOHASH_SHA256_VER_REGEXP="0\.11\.?"
                         # 0.11.*
 -RESOLV_VER="0.1.1.1";  RESOLV_VER_REGEXP="0\.1\.[1-9]"
-+RESOLV_VER="0.1.1.3";  RESOLV_VER_REGEXP="0\.1\.[1-9]"
++RESOLV_VER="0.1.2.0";  RESOLV_VER_REGEXP="0\.1\.[1-9]"
                         # >= 0.1.1 && < 0.2
  MINTTY_VER="0.1.2";    MINTTY_VER_REGEXP="0\.1\.?"
                         # 0.1.*
-@@ -262,11 +262,11 @@ ED25519_VER="0.0.5.0"; ED25519_VER_REGEXP="0\.0\.?"
+@@ -260,13 +260,13 @@ EDIT_DISTANCE_VER="0.2.2.1"; EDIT_DISTANCE_VER_REGEXP=
+                        # 0.2.2.*
+ ED25519_VER="0.0.5.0"; ED25519_VER_REGEXP="0\.0\.?"
                         # 0.0.*
- HACKAGE_SECURITY_VER="0.6.0.0"; HACKAGE_SECURITY_VER_REGEXP="0\.6\."
+-HACKAGE_SECURITY_VER="0.6.0.0"; HACKAGE_SECURITY_VER_REGEXP="0\.6\."
++HACKAGE_SECURITY_VER="0.6.0.1"; HACKAGE_SECURITY_VER_REGEXP="0\.6\."
                         # >= 0.7.0.0 && < 0.7
 -TAR_VER="0.5.1.0";     TAR_VER_REGEXP="0\.5\.([1-9]|1[0-9]|0\.[3-9]|0\.1[0-9])\.?"
 +TAR_VER="0.5.1.1";     TAR_VER_REGEXP="0\.5\.([1-9]|1[0-9]|0\.[3-9]|0\.1[0-9])\.?"
@@ -43,7 +46,7 @@
  DIGEST_VER="0.0.1.2"; DIGEST_REGEXP="0\.0\.(1\.[2-9]|[2-9]\.?)"
                         # >= 0.0.1.2 && < 0.1
 -LUKKO_VER="0.1.1";     LUKKO_VER_REGEXP="0\.1\.[1-9]"
-+LUKKO_VER="0.1.1.1";     LUKKO_VER_REGEXP="0\.1\.[1-9]"
++LUKKO_VER="0.1.1.2";     LUKKO_VER_REGEXP="0\.1\.[1-9]"
                         # >= 0.1.1 && <0.2
  
  HACKAGE_URL="https://hackage.haskell.org/package"

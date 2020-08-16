@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	git-annex
-PORTVERSION=	8.20200330
-PORTREVISION=	1
+PORTVERSION=	8.20200617
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -24,7 +23,7 @@ USES=		cabal perl5
 USE_PERL5=	build
 USE_LOCALE=	en_US.UTF-8
 USE_CABAL=	IfElse-0.85 \
-		QuickCheck-2.14 \
+		QuickCheck-2.14_1 \
 		SafeSemaphore-0.10.1_1 \
 		StateVar-1.2 \
 		aeson-1.4.7.1_1 \
@@ -46,7 +45,7 @@ USE_CABAL=	IfElse-0.85 \
 		bifunctors-5.5.7 \
 		blaze-builder-0.4.1.0 \
 		blaze-html-0.9.1.2 \
-		blaze-markup-0.8.2.4 \
+		blaze-markup-0.8.2.5 \
 		bloomfilter-2.0.1.0 \
 		byteable-0.1.1 \
 		cabal-doctest-1.0.8_1 \
@@ -55,48 +54,47 @@ USE_CABAL=	IfElse-0.85 \
 		cereal-0.5.8.1 \
 		clock-0.8 \
 		colour-2.3.5 \
-		comonad-5.0.6 \
-		concurrent-output-1.10.11 \
+		comonad-5.0.6_1 \
+		concurrent-output-1.10.12 \
 		conduit-1.3.2 \
 		conduit-extra-1.3.5 \
 		connection-0.3.1_1 \
 		contravariant-1.5.2 \
 		cookie-0.4.5 \
 		crypto-api-0.13.3_1 \
-		cryptohash-md5-0.11.100.1_4 \
+		cryptohash-md5-0.11.100.1_5 \
 		cryptohash-sha1-0.11.100.1_5 \
-		cryptonite-0.26 \
+		cryptonite-0.27 \
 		data-default-0.7.1.1 \
 		data-default-class-0.1.2.0 \
 		data-default-instances-containers-0.0.1 \
 		data-default-instances-dlist-0.0.1 \
 		data-default-instances-old-locale-0.0.1 \
 		disk-free-space-0.1.0.1_3 \
-		distributive-0.6.1 \
+		distributive-0.6.2_1 \
 		dlist-0.8.0.8 \
 		easy-file-0.2.2 \
 		edit-distance-0.2.2.1_1 \
-		entropy-0.4.1.5 \
-		exceptions-0.10.4_1 \
+		entropy-0.4.1.6 \
 		fast-logger-3.0.1 \
-		feed-1.3.0.1 \
+		feed-1.3.0.1_1 \
 		filepath-bytestring-1.4.2.1.6 \
 		free-5.1.3 \
 		hashable-1.3.0.0_1 \
 		hourglass-0.2.12 \
-		hsc2hs-0.68.6 \
-		hslogger-1.3.1.0 \
+		hsc2hs-0.68.7 \
+		hslogger-1.3.1.0_1 \
 		http-api-data-0.4.1.1_1 \
-		http-client-0.6.4.1 \
+		http-client-0.7.1 \
 		http-client-tls-0.3.5.3_1 \
-		http-conduit-2.3.7.3 \
+		http-conduit-2.3.7.3_1 \
 		http-types-0.12.3 \
 		integer-logarithms-1.0.3_2 \
 		lifted-base-0.2.3.12 \
 		magic-1.1 \
 		memory-0.15.0_1 \
 		microlens-0.4.11.2 \
-		microlens-th-0.4.3.4 \
+		microlens-th-0.4.3.5 \
 		mime-types-0.1.0.9 \
 		monad-control-1.0.2.3 \
 		monad-logger-0.3.32 \
@@ -120,29 +118,29 @@ USE_CABAL=	IfElse-0.85 \
 		regex-base-0.94.0.0_1 \
 		regex-tdfa-1.3.1.0_1 \
 		resource-pool-0.2.3.2 \
-		resourcet-1.2.3 \
-		safe-0.3.18_1 \
+		resourcet-1.2.4.1 \
+		safe-0.3.19 \
 		sandi-0.5_1 \
 		scientific-0.3.6.2 \
 		securemem-0.1.10 \
-		semigroupoids-5.3.4 \
+		semigroupoids-5.3.4_1 \
 		silently-1.2.5.1 \
 		socks-0.6.1 \
 		split-0.2.3.4 \
-		splitmix-0.0.4 \
+		splitmix-0.0.5 \
 		stm-chans-3.0.0.4_1 \
 		streaming-commons-0.2.1.2 \
 		syb-0.7.1 \
 		tagged-0.8.6_2 \
 		tagsoup-0.14.8 \
-		tasty-1.2.3 \
+		tasty-1.3.1 \
 		tasty-hunit-0.10.0.2 \
 		tasty-quickcheck-0.10.1.1 \
-		tasty-rerun-1.1.17 \
+		tasty-rerun-1.1.17_2 \
 		terminal-size-0.3.2.1 \
 		th-abstraction-0.3.2.0 \
 		th-lift-0.8.1 \
-		th-lift-instances-0.1.14 \
+		th-lift-instances-0.1.17 \
 		time-compat-1.9.3 \
 		time-locale-compat-0.1.1.5 \
 		tls-1.5.4 \
@@ -153,9 +151,9 @@ USE_CABAL=	IfElse-0.85 \
 		unbounded-delays-0.1.1.0 \
 		unix-compat-0.5.2_1 \
 		unix-time-0.4.7 \
-		unliftio-0.2.12.1 \
+		unliftio-0.2.13 \
 		unliftio-core-0.2.0.1_1 \
-		unordered-containers-0.2.10.0_1 \
+		unordered-containers-0.2.11.0 \
 		utf8-string-1.0.1.1_3 \
 		uuid-1.3.13_3 \
 		uuid-types-1.0.3_2 \
@@ -167,7 +165,7 @@ USE_CABAL=	IfElse-0.85 \
 		x509-system-1.6.6 \
 		x509-validation-1.6.11 \
 		xml-conduit-1.9.0.0 \
-		xml-types-0.3.6 \
+		xml-types-0.3.7 \
 		zlib-0.6.2.1_1
 
 OPTIONS_DEFINE=		S3 ASSISTANT WEBDAV WEBAPP PAIRING DBUS
@@ -175,7 +173,7 @@ OPTIONS_DEFAULT=	S3 ASSISTANT WEBDAV WEBAPP PAIRING DBUS
 
 S3_DESC=		S3 support
 S3_CABAL_FLAGS=		s3
-S3_USE_CABAL=		aws-0.22 base16-bytestring-0.1.1.6
+S3_USE_CABAL=		aws-0.22 base16-bytestring-0.1.1.7
 
 WEBDAV_DESC=		WebDAV support
 WEBDAV_CABAL_FLAGS=	webdav
@@ -210,7 +208,7 @@ WEBAPP_USE_CABAL=	adjunctions-4.4_2 \
 			crypto-random-0.0.9_1 \
 			cryptonite-conduit-0.2.2_1 \
 			css-text-0.1.3.0 \
-			email-validate-2.3.2.12 \
+			email-validate-2.3.2.13 \
 			file-embed-0.0.11.2 \
 			happy-1.19.12 \
 			hjsmin-0.2.0.4 \
@@ -228,7 +226,7 @@ WEBAPP_USE_CABAL=	adjunctions-4.4_2 \
 			skein-1.0.9.4 \
 			time-manager-0.0.0 \
 			tls-session-manager-0.0.4 \
-			vault-0.3.1.3 \
+			vault-0.3.1.4 \
 			wai-3.2.2.1 \
 			wai-app-static-3.1.7.1_1 \
 			wai-extra-3.0.29.1 \
@@ -252,7 +250,7 @@ PAIRING_USE_CABAL=	network-multicast-0.3.2
 DBUS_DESC=		D-Bus support
 DBUS_CABAL_FLAGS=	Dbus
 DBUS_USE_CABAL=		adjunctions-4.4_2 \
-			dbus-1.2.13 \
+			dbus-1.2.15.1 \
 			fdo-notify-0.3.1 \
 			invariant-0.5.3_1 \
 			kan-extensions-5.2 \

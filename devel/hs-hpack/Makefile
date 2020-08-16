@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	hpack
-PORTVERSION=	0.33.0
-PORTREVISION=	1
+PORTVERSION=	0.34.1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -13,13 +12,14 @@ LICENSE=	BSD3CLAUSE
 USES=		cabal
 
 USE_CABAL=	Glob-0.10.0_1 \
-		aeson-1.4.6.0 \
+		aeson-1.4.7.1_1 \
 		asn1-encoding-0.9.6_1 \
 		asn1-parse-0.9.5 \
-		asn1-types-0.3.3 \
-		async-2.2.2 \
-		attoparsec-0.13.2.3_1 \
+		asn1-types-0.3.4 \
+		async-2.2.2_1 \
+		attoparsec-0.13.2.4 \
 		base-compat-0.11.1 \
+		base-compat-batteries-0.11.1 \
 		base-orphans-0.8.2 \
 		basement-0.0.11_2 \
 		bifunctors-5.5.7 \
@@ -28,17 +28,16 @@ USE_CABAL=	Glob-0.10.0_1 \
 		case-insensitive-1.2.1.0 \
 		cereal-0.5.8.1 \
 		comonad-5.0.6 \
-		conduit-1.3.1.2 \
+		conduit-1.3.2 \
 		connection-0.3.1_1 \
 		cookie-0.4.5 \
 		cryptonite-0.26 \
 		data-default-class-0.1.2.0 \
-		distributive-0.6.1 \
-		dlist-0.8.0.7 \
-		exceptions-0.10.4 \
-		hashable-1.3.0.0 \
+		distributive-0.6.2 \
+		dlist-0.8.0.8 \
+		hashable-1.3.0.0_1 \
 		hourglass-0.2.12 \
-		hsc2hs-0.68.6 \
+		hsc2hs-0.68.7 \
 		http-client-0.6.4.1 \
 		http-client-tls-0.3.5.3_1 \
 		http-types-0.12.3 \
@@ -53,7 +52,7 @@ USE_CABAL=	Glob-0.10.0_1 \
 		pem-0.2.4 \
 		primitive-0.7.0.1 \
 		random-1.1_1 \
-		resourcet-1.2.3 \
+		resourcet-1.2.4 \
 		scientific-0.3.6.2 \
 		socks-0.6.1 \
 		split-0.2.3.4 \
@@ -61,10 +60,10 @@ USE_CABAL=	Glob-0.10.0_1 \
 		tagged-0.8.6_2 \
 		text-metrics-0.3.0_4 \
 		th-abstraction-0.3.2.0 \
-		time-compat-1.9.2.2_2 \
+		time-compat-1.9.3 \
 		tls-1.5.4 \
 		transformers-compat-0.6.5 \
-		unliftio-core-0.2.0.1 \
+		unliftio-core-0.2.0.1_1 \
 		unordered-containers-0.2.10.0_1 \
 		uuid-types-1.0.3_2 \
 		vector-0.12.1.2 \
@@ -73,7 +72,7 @@ USE_CABAL=	Glob-0.10.0_1 \
 		x509-store-1.6.7_1 \
 		x509-system-1.6.6 \
 		x509-validation-1.6.11 \
-		yaml-0.11.3.0 \
-		zlib-0.6.2.1
+		yaml-0.11.4.0 \
+		zlib-0.6.2.1_1
 
 .include <bsd.port.mk>

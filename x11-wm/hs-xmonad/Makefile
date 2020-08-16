@@ -3,7 +3,7 @@
 
 PORTNAME=	xmonad
 PORTVERSION=	0.15
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-wm haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -26,9 +26,9 @@ USE_CABAL=	X11-1.9.1 \
 		data-default-instances-old-locale-0.0.1 \
 		dlist-0.8.0.8 \
 		extensible-exceptions-0.1.1.4 \
-		hsc2hs-0.68.6 \
+		hsc2hs-0.68.7 \
 		old-locale-1.0.0.7_2 \
-		setlocale-1.0.0.9_1 \
+		setlocale-1.0.0.9_2 \
 		utf8-string-1.0.1.1_3
 
 OPTIONS_DEFINE=	EXAMPLES

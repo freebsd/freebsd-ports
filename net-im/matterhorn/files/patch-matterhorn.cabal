@@ -1,0 +1,11 @@
+--- matterhorn.cabal.orig	2020-06-20 15:32:56 UTC
++++ matterhorn.cabal
+@@ -150,7 +150,7 @@ executable matterhorn
+                      , config-ini           >= 0.2.2.0 && < 0.3
+                      , process              >= 1.4     && < 1.7
+                      , microlens-platform   >= 0.3     && < 0.5
+-                     , brick                >= 0.52.1  && < 0.53
++                     , brick                >= 0.52.1  && <= 0.53
+                      , brick-skylighting    >= 0.2     && < 0.4
+                      , vty                  >= 5.28    && < 5.29
+                      , word-wrap            >= 0.4.0   && < 0.5

@@ -3,7 +3,7 @@
 
 PORTNAME=	darcs
 PORTVERSION=	2.14.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -29,11 +29,10 @@ USE_CABAL=	HTTP-4000.3.14_1 \
 		data-ordlist-0.4.7.0 \
 		digest-0.0.1.2 \
 		dlist-0.8.0.8 \
-		exceptions-0.10.4_1 \
 		fgl-5.7.0.2 \
 		graphviz-2999.20.0.4 \
 		hashable-1.3.0.0_1 \
-		hsc2hs-0.68.6 \
+		hsc2hs-0.68.7 \
 		html-1.0.1.2 \
 		integer-logarithms-1.0.3_2 \
 		memory-0.15.0_1 \
