@@ -25,6 +25,10 @@ bin/ctest
 %%MANPAGES%%man/man7/cmake-variables.7.gz
 %%MANPAGES%%man/man7/cpack-generators.7.gz
 share/aclocal/cmake.m4
+share/bash-completion/completions/cmake
+share/bash-completion/completions/cpack
+share/bash-completion/completions/ctest
+%%DATADIR%%/Help/command/DEVICE_LINK_OPTIONS.txt
 %%DATADIR%%/Help/command/FIND_XXX.txt
 %%DATADIR%%/Help/command/FIND_XXX_ORDER.txt
 %%DATADIR%%/Help/command/FIND_XXX_ROOT.txt
@@ -46,6 +50,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/command/build_command.rst
 %%DATADIR%%/Help/command/build_name.rst
 %%DATADIR%%/Help/command/cmake_host_system_information.rst
+%%DATADIR%%/Help/command/cmake_language.rst
 %%DATADIR%%/Help/command/cmake_minimum_required.rst
 %%DATADIR%%/Help/command/cmake_parse_arguments.rst
 %%DATADIR%%/Help/command/cmake_policy.rst
@@ -170,6 +175,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/envvar/ASM_DIALECT.rst
 %%DATADIR%%/Help/envvar/ASM_DIALECTFLAGS.rst
 %%DATADIR%%/Help/envvar/CC.rst
+%%DATADIR%%/Help/envvar/CCMAKE_COLORS.rst
 %%DATADIR%%/Help/envvar/CFLAGS.rst
 %%DATADIR%%/Help/envvar/CMAKE_BUILD_PARALLEL_LEVEL.rst
 %%DATADIR%%/Help/envvar/CMAKE_CONFIG_TYPE.rst
@@ -182,6 +188,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/envvar/CMAKE_MSVCIDE_RUN_PATH.rst
 %%DATADIR%%/Help/envvar/CMAKE_NO_VERBOSE.rst
 %%DATADIR%%/Help/envvar/CMAKE_OSX_ARCHITECTURES.rst
+%%DATADIR%%/Help/envvar/CMAKE_PREFIX_PATH.rst
 %%DATADIR%%/Help/envvar/CSFLAGS.rst
 %%DATADIR%%/Help/envvar/CTEST_INTERACTIVE_DEBUG_MODE.rst
 %%DATADIR%%/Help/envvar/CTEST_OUTPUT_ON_FAILURE.rst
@@ -324,6 +331,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/module/CheckIncludeFiles.rst
 %%DATADIR%%/Help/module/CheckLanguage.rst
 %%DATADIR%%/Help/module/CheckLibraryExists.rst
+%%DATADIR%%/Help/module/CheckLinkerFlag.rst
 %%DATADIR%%/Help/module/CheckOBJCCompilerFlag.rst
 %%DATADIR%%/Help/module/CheckOBJCSourceCompiles.rst
 %%DATADIR%%/Help/module/CheckOBJCSourceRuns.rst
@@ -632,6 +640,12 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/policy/CMP0100.rst
 %%DATADIR%%/Help/policy/CMP0101.rst
 %%DATADIR%%/Help/policy/CMP0102.rst
+%%DATADIR%%/Help/policy/CMP0103.rst
+%%DATADIR%%/Help/policy/CMP0104.rst
+%%DATADIR%%/Help/policy/CMP0105.rst
+%%DATADIR%%/Help/policy/CMP0106.rst
+%%DATADIR%%/Help/policy/CMP0107.rst
+%%DATADIR%%/Help/policy/CMP0108.rst
 %%DATADIR%%/Help/policy/DEPRECATED.txt
 %%DATADIR%%/Help/policy/DISALLOWED_COMMAND.txt
 %%DATADIR%%/Help/prop_cache/ADVANCED.rst
@@ -728,6 +742,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/prop_sf/COMPILE_OPTIONS.rst
 %%DATADIR%%/Help/prop_sf/EXTERNAL_OBJECT.rst
 %%DATADIR%%/Help/prop_sf/Fortran_FORMAT.rst
+%%DATADIR%%/Help/prop_sf/Fortran_PREPROCESS.rst
 %%DATADIR%%/Help/prop_sf/GENERATED.rst
 %%DATADIR%%/Help/prop_sf/HEADER_FILE_ONLY.rst
 %%DATADIR%%/Help/prop_sf/INCLUDE_DIRECTORIES.rst
@@ -747,12 +762,14 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/prop_sf/SYMBOLIC.rst
 %%DATADIR%%/Help/prop_sf/Swift_DEPENDENCIES_FILE.rst
 %%DATADIR%%/Help/prop_sf/Swift_DIAGNOSTICS_FILE.rst
+%%DATADIR%%/Help/prop_sf/UNITY_GROUP.rst
 %%DATADIR%%/Help/prop_sf/VS_COPY_TO_OUT_DIR.rst
 %%DATADIR%%/Help/prop_sf/VS_CSHARP_tagname.rst
 %%DATADIR%%/Help/prop_sf/VS_DEPLOYMENT_CONTENT.rst
 %%DATADIR%%/Help/prop_sf/VS_DEPLOYMENT_LOCATION.rst
 %%DATADIR%%/Help/prop_sf/VS_INCLUDE_IN_VSIX.rst
 %%DATADIR%%/Help/prop_sf/VS_RESOURCE_GENERATOR.rst
+%%DATADIR%%/Help/prop_sf/VS_SETTINGS.rst
 %%DATADIR%%/Help/prop_sf/VS_SHADER_DISABLE_OPTIMIZATIONS.rst
 %%DATADIR%%/Help/prop_sf/VS_SHADER_ENABLE_DEBUG.rst
 %%DATADIR%%/Help/prop_sf/VS_SHADER_ENTRYPOINT.rst
@@ -796,6 +813,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/prop_tgt/ADDITIONAL_CLEAN_FILES.rst
 %%DATADIR%%/Help/prop_tgt/AIX_EXPORT_ALL_SYMBOLS.rst
 %%DATADIR%%/Help/prop_tgt/ALIASED_TARGET.rst
+%%DATADIR%%/Help/prop_tgt/ALIAS_GLOBAL.rst
 %%DATADIR%%/Help/prop_tgt/ANDROID_ANT_ADDITIONAL_OPTIONS.rst
 %%DATADIR%%/Help/prop_tgt/ANDROID_API.rst
 %%DATADIR%%/Help/prop_tgt/ANDROID_API_MIN.rst
@@ -860,6 +878,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/prop_tgt/CONFIG_OUTPUT_NAME.rst
 %%DATADIR%%/Help/prop_tgt/CONFIG_POSTFIX.rst
 %%DATADIR%%/Help/prop_tgt/CROSSCOMPILING_EMULATOR.rst
+%%DATADIR%%/Help/prop_tgt/CUDA_ARCHITECTURES.rst
 %%DATADIR%%/Help/prop_tgt/CUDA_EXTENSIONS.rst
 %%DATADIR%%/Help/prop_tgt/CUDA_PTX_COMPILATION.rst
 %%DATADIR%%/Help/prop_tgt/CUDA_RESOLVE_DEVICE_SYMBOLS.rst
@@ -891,9 +910,11 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/prop_tgt/EchoString.rst
 %%DATADIR%%/Help/prop_tgt/FOLDER.rst
 %%DATADIR%%/Help/prop_tgt/FRAMEWORK.rst
+%%DATADIR%%/Help/prop_tgt/FRAMEWORK_MULTI_CONFIG_POSTFIX_CONFIG.rst
 %%DATADIR%%/Help/prop_tgt/FRAMEWORK_VERSION.rst
 %%DATADIR%%/Help/prop_tgt/Fortran_FORMAT.rst
 %%DATADIR%%/Help/prop_tgt/Fortran_MODULE_DIRECTORY.rst
+%%DATADIR%%/Help/prop_tgt/Fortran_PREPROCESS.rst
 %%DATADIR%%/Help/prop_tgt/GENERATOR_FILE_NAME.rst
 %%DATADIR%%/Help/prop_tgt/GHS_INTEGRITY_APP.rst
 %%DATADIR%%/Help/prop_tgt/GHS_NO_SOURCE_GROUP_FILE.rst
@@ -1003,6 +1024,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/prop_tgt/OSX_ARCHITECTURES_CONFIG.rst
 %%DATADIR%%/Help/prop_tgt/OUTPUT_NAME.rst
 %%DATADIR%%/Help/prop_tgt/OUTPUT_NAME_CONFIG.rst
+%%DATADIR%%/Help/prop_tgt/PCH_WARN_INVALID.rst
 %%DATADIR%%/Help/prop_tgt/PDB_NAME.rst
 %%DATADIR%%/Help/prop_tgt/PDB_NAME_CONFIG.rst
 %%DATADIR%%/Help/prop_tgt/PDB_NOTE.txt
@@ -1042,6 +1064,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/prop_tgt/UNITY_BUILD_BATCH_SIZE.rst
 %%DATADIR%%/Help/prop_tgt/UNITY_BUILD_CODE_AFTER_INCLUDE.rst
 %%DATADIR%%/Help/prop_tgt/UNITY_BUILD_CODE_BEFORE_INCLUDE.rst
+%%DATADIR%%/Help/prop_tgt/UNITY_BUILD_MODE.rst
 %%DATADIR%%/Help/prop_tgt/VERSION.rst
 %%DATADIR%%/Help/prop_tgt/VISIBILITY_INLINES_HIDDEN.rst
 %%DATADIR%%/Help/prop_tgt/VS_CONFIGURATION_TYPE.rst
@@ -1068,12 +1091,15 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/prop_tgt/VS_MOBILE_EXTENSIONS_VERSION.rst
 %%DATADIR%%/Help/prop_tgt/VS_NO_SOLUTION_DEPLOY.rst
 %%DATADIR%%/Help/prop_tgt/VS_PACKAGE_REFERENCES.rst
+%%DATADIR%%/Help/prop_tgt/VS_PLATFORM_TOOLSET.rst
 %%DATADIR%%/Help/prop_tgt/VS_PROJECT_IMPORT.rst
 %%DATADIR%%/Help/prop_tgt/VS_SCC_AUXPATH.rst
 %%DATADIR%%/Help/prop_tgt/VS_SCC_LOCALPATH.rst
 %%DATADIR%%/Help/prop_tgt/VS_SCC_PROJECTNAME.rst
 %%DATADIR%%/Help/prop_tgt/VS_SCC_PROVIDER.rst
 %%DATADIR%%/Help/prop_tgt/VS_SDK_REFERENCES.rst
+%%DATADIR%%/Help/prop_tgt/VS_SOLUTION_DEPLOY.rst
+%%DATADIR%%/Help/prop_tgt/VS_SOURCE_SETTINGS_tool.rst
 %%DATADIR%%/Help/prop_tgt/VS_USER_PROPS.rst
 %%DATADIR%%/Help/prop_tgt/VS_WINDOWS_TARGET_PLATFORM_MIN_VERSION.rst
 %%DATADIR%%/Help/prop_tgt/VS_WINRT_COMPONENT.rst
@@ -1119,6 +1145,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/release/3.15.rst
 %%DATADIR%%/Help/release/3.16.rst
 %%DATADIR%%/Help/release/3.17.rst
+%%DATADIR%%/Help/release/3.18.rst
 %%DATADIR%%/Help/release/3.2.rst
 %%DATADIR%%/Help/release/3.3.rst
 %%DATADIR%%/Help/release/3.4.rst
@@ -1215,6 +1242,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/variable/CMAKE_CROSS_CONFIGS.rst
 %%DATADIR%%/Help/variable/CMAKE_CTEST_ARGUMENTS.rst
 %%DATADIR%%/Help/variable/CMAKE_CTEST_COMMAND.rst
+%%DATADIR%%/Help/variable/CMAKE_CUDA_ARCHITECTURES.rst
 %%DATADIR%%/Help/variable/CMAKE_CUDA_COMPILE_FEATURES.rst
 %%DATADIR%%/Help/variable/CMAKE_CUDA_EXTENSIONS.rst
 %%DATADIR%%/Help/variable/CMAKE_CUDA_HOST_COMPILER.rst
@@ -1302,12 +1330,14 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/variable/CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY.rst
 %%DATADIR%%/Help/variable/CMAKE_FOLDER.rst
 %%DATADIR%%/Help/variable/CMAKE_FRAMEWORK.rst
+%%DATADIR%%/Help/variable/CMAKE_FRAMEWORK_MULTI_CONFIG_POSTFIX_CONFIG.rst
 %%DATADIR%%/Help/variable/CMAKE_FRAMEWORK_PATH.rst
 %%DATADIR%%/Help/variable/CMAKE_Fortran_FORMAT.rst
 %%DATADIR%%/Help/variable/CMAKE_Fortran_MODDIR_DEFAULT.rst
 %%DATADIR%%/Help/variable/CMAKE_Fortran_MODDIR_FLAG.rst
 %%DATADIR%%/Help/variable/CMAKE_Fortran_MODOUT_FLAG.rst
 %%DATADIR%%/Help/variable/CMAKE_Fortran_MODULE_DIRECTORY.rst
+%%DATADIR%%/Help/variable/CMAKE_Fortran_PREPROCESS.rst
 %%DATADIR%%/Help/variable/CMAKE_GENERATOR.rst
 %%DATADIR%%/Help/variable/CMAKE_GENERATOR_INSTANCE.rst
 %%DATADIR%%/Help/variable/CMAKE_GENERATOR_PLATFORM.rst
@@ -1471,6 +1501,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/variable/CMAKE_OSX_VARIABLE.txt
 %%DATADIR%%/Help/variable/CMAKE_PARENT_LIST_FILE.rst
 %%DATADIR%%/Help/variable/CMAKE_PATCH_VERSION.rst
+%%DATADIR%%/Help/variable/CMAKE_PCH_WARN_INVALID.rst
 %%DATADIR%%/Help/variable/CMAKE_PDB_OUTPUT_DIRECTORY.rst
 %%DATADIR%%/Help/variable/CMAKE_PDB_OUTPUT_DIRECTORY_CONFIG.rst
 %%DATADIR%%/Help/variable/CMAKE_POLICY_DEFAULT_CMPNNNN.rst
@@ -1666,6 +1697,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/variable/CTEST_P4_COMMAND.rst
 %%DATADIR%%/Help/variable/CTEST_P4_OPTIONS.rst
 %%DATADIR%%/Help/variable/CTEST_P4_UPDATE_OPTIONS.rst
+%%DATADIR%%/Help/variable/CTEST_RESOURCE_SPEC_FILE.rst
 %%DATADIR%%/Help/variable/CTEST_RUN_CURRENT_SCRIPT.rst
 %%DATADIR%%/Help/variable/CTEST_SCP_COMMAND.rst
 %%DATADIR%%/Help/variable/CTEST_SITE.rst
@@ -1908,6 +1940,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Modules/CheckLanguage.cmake
 %%DATADIR%%/Modules/CheckLibraryExists.cmake
 %%DATADIR%%/Modules/CheckLibraryExists.lists.in
+%%DATADIR%%/Modules/CheckLinkerFlag.cmake
 %%DATADIR%%/Modules/CheckOBJCCompilerFlag.cmake
 %%DATADIR%%/Modules/CheckOBJCSourceCompiles.cmake
 %%DATADIR%%/Modules/CheckOBJCSourceRuns.cmake
@@ -1955,6 +1988,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Modules/Compiler/Clang-ASM.cmake
 %%DATADIR%%/Modules/Compiler/Clang-C-FeatureTests.cmake
 %%DATADIR%%/Modules/Compiler/Clang-C.cmake
+%%DATADIR%%/Modules/Compiler/Clang-CUDA.cmake
 %%DATADIR%%/Modules/Compiler/Clang-CXX-FeatureTests.cmake
 %%DATADIR%%/Modules/Compiler/Clang-CXX-TestableFeatures.cmake
 %%DATADIR%%/Modules/Compiler/Clang-CXX.cmake
@@ -2028,7 +2062,10 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Modules/Compiler/NAG-Fortran.cmake
 %%DATADIR%%/Modules/Compiler/NVIDIA-CUDA.cmake
 %%DATADIR%%/Modules/Compiler/NVIDIA-DetermineCompiler.cmake
+%%DATADIR%%/Modules/Compiler/OpenWatcom-C.cmake
+%%DATADIR%%/Modules/Compiler/OpenWatcom-CXX.cmake
 %%DATADIR%%/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake
+%%DATADIR%%/Modules/Compiler/OpenWatcom.cmake
 %%DATADIR%%/Modules/Compiler/PGI-C.cmake
 %%DATADIR%%/Modules/Compiler/PGI-CXX.cmake
 %%DATADIR%%/Modules/Compiler/PGI-DetermineCompiler.cmake
@@ -2103,6 +2140,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Modules/ExternalData.cmake
 %%DATADIR%%/Modules/ExternalData_config.cmake.in
 %%DATADIR%%/Modules/ExternalProject-download.cmake.in
+%%DATADIR%%/Modules/ExternalProject-gitupdate.cmake.in
 %%DATADIR%%/Modules/ExternalProject-verify.cmake.in
 %%DATADIR%%/Modules/ExternalProject.cmake
 %%DATADIR%%/Modules/FLTKCompatibility.cmake
@@ -2489,6 +2527,10 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Modules/Platform/CYGWIN.cmake
 %%DATADIR%%/Modules/Platform/Catamount.cmake
 %%DATADIR%%/Modules/Platform/CrayLinuxEnvironment.cmake
+%%DATADIR%%/Modules/Platform/DOS-OpenWatcom-C.cmake
+%%DATADIR%%/Modules/Platform/DOS-OpenWatcom-CXX.cmake
+%%DATADIR%%/Modules/Platform/DOS-OpenWatcom.cmake
+%%DATADIR%%/Modules/Platform/DOS.cmake
 %%DATADIR%%/Modules/Platform/Darwin-Determine-CXX.cmake
 %%DATADIR%%/Modules/Platform/Darwin-Initialize.cmake
 %%DATADIR%%/Modules/Platform/Darwin.cmake
@@ -2535,6 +2577,9 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Modules/Platform/Linux-Intel-Fortran.cmake
 %%DATADIR%%/Modules/Platform/Linux-Intel.cmake
 %%DATADIR%%/Modules/Platform/Linux-NAG-Fortran.cmake
+%%DATADIR%%/Modules/Platform/Linux-OpenWatcom-C.cmake
+%%DATADIR%%/Modules/Platform/Linux-OpenWatcom-CXX.cmake
+%%DATADIR%%/Modules/Platform/Linux-OpenWatcom.cmake
 %%DATADIR%%/Modules/Platform/Linux-PGI-C.cmake
 %%DATADIR%%/Modules/Platform/Linux-PGI-CXX.cmake
 %%DATADIR%%/Modules/Platform/Linux-PGI-Fortran.cmake
@@ -2557,6 +2602,10 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Modules/Platform/Midipix.cmake
 %%DATADIR%%/Modules/Platform/MirBSD.cmake
 %%DATADIR%%/Modules/Platform/NetBSD.cmake
+%%DATADIR%%/Modules/Platform/OS2-OpenWatcom-C.cmake
+%%DATADIR%%/Modules/Platform/OS2-OpenWatcom-CXX.cmake
+%%DATADIR%%/Modules/Platform/OS2-OpenWatcom.cmake
+%%DATADIR%%/Modules/Platform/OS2.cmake
 %%DATADIR%%/Modules/Platform/OSF1.cmake
 %%DATADIR%%/Modules/Platform/OpenBSD.cmake
 %%DATADIR%%/Modules/Platform/OpenVMS.cmake
@@ -2682,6 +2731,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Modules/TestForSTDNamespace.cxx
 %%DATADIR%%/Modules/UseEcos.cmake
 %%DATADIR%%/Modules/UseJava.cmake
+%%DATADIR%%/Modules/UseJava/ClearClassFiles.cmake
 %%DATADIR%%/Modules/UseJavaClassFilelist.cmake
 %%DATADIR%%/Modules/UseJavaSymlinks.cmake
 %%DATADIR%%/Modules/UsePkgConfig.cmake
@@ -2751,13 +2801,9 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Templates/Windows/SplashScreen.png
 %%DATADIR%%/Templates/Windows/StoreLogo.png
 %%DATADIR%%/Templates/Windows/Windows_TemporaryKey.pfx
-%%DATADIR%%/completions/cmake
-%%DATADIR%%/completions/cpack
-%%DATADIR%%/completions/ctest
-%%DATADIR%%/editors/emacs/cmake-mode.el
-%%DATADIR%%/editors/vim/indent/cmake.vim
-%%DATADIR%%/editors/vim/syntax/cmake.vim
 %%DATADIR%%/include/cmCPluginAPI.h
 %%PORTDOCS%%%%DOCSDIR%%/Copyright.txt
 %%PORTDOCS%%%%DOCSDIR%%/cmsys/Copyright.txt
 share/emacs/site-lisp/cmake-mode.el
+share/vim/vimfiles/indent/cmake.vim
+share/vim/vimfiles/syntax/cmake.vim

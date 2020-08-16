@@ -2,6 +2,7 @@
 
 PORTNAME=	kms-cmake-utils
 DISTVERSION=	6.13.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,6 +17,6 @@ GH_ACCOUNT=	Kurento
 
 NO_ARCH=	yes
 
-PLIST_SUB=	CMAKE_VERSION=3.17
+PLIST_SUB=	CMAKE_VERSION=3.18
 
 .include <bsd.port.mk>
