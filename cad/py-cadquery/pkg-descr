@@ -1,0 +1,6 @@
+CadQuery is an intuitive, easy-to-use Python module for building parametric 3D
+CAD models. Using CadQuery, you can write short, simple scripts that produce
+high quality CAD models. It is easy to make many different objects using a
+single script that can be customized.
+
+WWW: https://github.com/CadQuery/cadquery
