@@ -1,0 +1,4 @@
+OCP is a Python wrapper for OCCT (OpenCascade) generated using pywrap
+primarily used by CadQuery.
+
+WWW: https://github.com/CadQuery/OCP
