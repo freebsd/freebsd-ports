@@ -17,8 +17,7 @@ COMMENT=	Compiler for the functional language Haskell
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-# other supported arches are added based on GHC_VERSION below
-ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS=	amd64 i386 aarch64 armv6 armv7 powerpc64
 
 USES=			autoreconf compiler:c11 gmake iconv:translit \
 			localbase:ldflags ncurses perl5 tar:xz
@@ -71,6 +70,8 @@ BOOT_SUB_LIST_OFF=	HSC2HS=${BOOT_HSC2HS}
 PROFILE_SUB_LIST=	WITH_PROFILE="YES"
 PROFILE_SUB_LIST_OFF=	WITH_PROFILE="NO"
 
+PLIST_SUB=		GHC_VERSION=${GHC_VERSION} GHC_LIBDIR=${GHC_LIBDIR_REL}
+
 GHC_VERSION?=		${GHC_VERSION_DEFAULT}
 GHC_VERSION_DEFAULT=	8.10.1
 GHC_VERSION_MAJOR=	${GHC_VERSION:S/./ /g:[1]}
@@ -78,27 +79,15 @@ GHC_VERSION_MINOR=	${GHC_VERSION:S/./ /g:[2]}
 
 HSCOLOUR_VERSION=	1.24.4
 
-.if ${GHC_VERSION_MAJOR} >= 8 && ${GHC_VERSION_MINOR} >= 6
-ONLY_FOR_ARCHS+=	aarch64 armv6 armv7 powerpc64
-.endif
+LLVM_VERSION=		90
+# LLVM version that bootstrap compiler uses
+BOOT_LLVM_VERSION=	60
 
 .include <bsd.port.pre.mk>
 
 # This version of ncurses is needed by bootstrap compiler
 .if ${OSVERSION} > 1300078 && empty(PORT_OPTIONS:MBOOT) && ${ARCH} != powerpc64
 BUILD_DEPENDS+=	${LOCALBASE}/lib/compat/libncursesw.so.8:misc/compat12x
-.endif
-
-.if ${GHC_VERSION_MAJOR} == 8 && ${GHC_VERSION_MINOR} == 4
-LLVM_VERSION=		50
-# Turn off for old GHCs, see PR 228727
-CONFIGURE_ARGS+=	--enable-dtrace=0
-.elif ${GHC_VERSION_MAJOR} == 8 && ${GHC_VERSION_MINOR} == 6
-LLVM_VERSION=		60
-.elif ${GHC_VERSION_MAJOR} == 8 && ${GHC_VERSION_MINOR} == 8
-LLVM_VERSION=		70
-.else # ghc 8.10
-LLVM_VERSION=		90
 .endif
 
 .if ${ARCH} == powerpc64
@@ -113,12 +102,6 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-libraries_ghc-prim_cbits_atomic.c
 BOOT_GHC_VERSION=      8.6.3
 .else
 BOOT_GHC_VERSION=	8.6.5
-.endif
-# LLVM version that bootstrap compiler uses
-BOOT_LLVM_VERSION=	60
-
-.if "${GHC_VERSION}" != "${GHC_VERSION_DEFAULT}"
-PATCHDIR=	${.CURDIR}/files${GHC_VERSION:S/.//g}/
 .endif
 
 NO_CCACHE=	ccache: error: Failed to create directory /nonexistent/.ccache/tmp: Permission denied
@@ -182,14 +165,6 @@ IGNORE=	qemu-user-static isn't able to build lang/ghc, but it builds fine on a r
 .  endif
 .endif
 
-PLIST_SUB+=	GHC_VERSION=${GHC_VERSION} GHC_LIBDIR=${GHC_LIBDIR_REL}
-
-.if ${GHC_VERSION_MAJOR} <= 8 && ${GHC_VERSION_MINOR} < 8
-WITH_GHC=	--with-ghc
-.else
-WITH_GHC=	GHC
-.endif
-
 .if empty(PORT_OPTIONS:MBOOT)
 BOOT_DIR=	${WRKDIR}/ghc-${BOOT_GHC_VERSION}-boot
 BOOT_GHC=	${BOOT_DIR}/bin/ghc-${BOOT_GHC_VERSION}
@@ -198,15 +173,11 @@ BOOT_HSC2HS=	${BOOT_DIR}/bin/hsc2hs
 
 SLAVE_ENV=	${SETENV} PATH=${BOOT_DIR}/bin:${PATH}
 
-CONFIGURE_ARGS+=	${WITH_GHC}=${BOOT_GHC}
+CONFIGURE_ARGS+=	GHC=${BOOT_GHC}
 .else # MBOOT
 SLAVE_ENV=		# empty
-CONFIGURE_ARGS+=	${WITH_GHC}=${LOCALBASE}/bin/ghc
+CONFIGURE_ARGS+=	GHC=${LOCALBASE}/bin/ghc
 .endif # MBOOT
-
-# override TMPDIR because /tmp often doesn't have enough space
-# to build some of the larger libraries.
-#TMPDIR=		${WRKSRC}/tmp
 
 SLAVES_PREFIX=		${WRKDIR}/slaves_prefix
 SLAVES_WRKDIRPREFIX=	${WRKDIR}/slaves_wrkdirprefix
@@ -237,10 +208,6 @@ post-patch:
 		s|%%AR%%|${AR}|; \
 		s|%%LD%%|${LD}|' \
 		${WRKSRC}/libraries/Cabal/Cabal/Distribution/Simple/Program/Builtin.hs
-.if ${GHC_VERSION_MAJOR} <= 8 && ${GHC_VERSION_MINOR} < 10
-	@${REINPLACE_CMD} -e 's/@SettingsLlcCommand@/llc${LLVM_VERSION}/' ${WRKSRC}/settings.in
-	@${REINPLACE_CMD} -e 's/@SettingsOptCommand@/opt${LLVM_VERSION}/' ${WRKSRC}/settings.in
-.endif
 
 .if empty(PORT_OPTIONS:MBOOT)
 	@${REINPLACE_CMD} -e '/^mandir/d' ${BOOT_DIR}/mk/build.mk
