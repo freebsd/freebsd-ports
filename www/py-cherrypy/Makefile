@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cherrypy
-PORTVERSION=	5.4.0
-PORTREVISION=	4
+PORTVERSION=	17.4.2
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,25 +13,25 @@ COMMENT=	Pythonic, object-oriented web development framework
 
 LICENSE=	BSD3CLAUSE
 
-EXAMPLES_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheetah>=2.4.4:devel/py-cheetah@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}sqlobject>=1.5.1:databases/py-sqlobject@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pip>0:devel/py-pip@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm@${PY_FLAVOR}
+
+EXAMPLES_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlobject>=1.5.1:databases/py-sqlobject@${PY_FLAVOR}
 EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=1.11.0:devel/py-six@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}cheroot>=6.2.4:www/py-cheroot@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}portend>=2.1.1:net/py-portend@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zclockfile>0:devel/py-zclockfile@${PY_FLAVOR}
 
 OPTIONS_DEFINE=	EXAMPLES
 
 PORTEXAMPLES=	*
 
-USES=		python shebangfix
+USES=		python
 USE_PYTHON=	distutils autoplist concurrent
-SHEBANG_FILES=	cherrypy/cherryd
 
 .include <bsd.port.options.mk>
-
-# handle tutorial separately, and remove cherrypy.process from data_files
-# otherwise it confuses build_py.get_outputs() and breaks PYDISTUTILS_AUTOPLIST
-post-patch:
-	@${REINPLACE_CMD} -e '99,106d' -e '78s/"cherrypy.tutorial",//1' \
-		-e '88d' -i.bak ${WRKSRC}/${PYSETUP}
 
 .if ${PORT_OPTIONS:MEXAMPLES}
 post-install:
@@ -46,20 +45,16 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} >= 3000    # devel/py-cheetah doesn't yet build with Python 3
-.undef EXAMPLES_RUN_DEPENDS
+.if ${PYTHON_REL} < 3800
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}contextlib2>0:devel/py-contextlib2@${PY_FLAVOR}
 .endif
 
-# The package cherrypy.wsgiserver includes both Python 2 and Python 3 modules,
-# so it breaks PYDISTUTILS_AUTOPLIST.
-# Instead of defining a cherrypy_build_py.get_outputs() method in setup.py
-# we simply remove unwanted modules (see cherrypy_build_py() in setup.py)
-post-extract:
-.if ${PYTHON_REL} >= 3000
-	@(cd ${WRKSRC}/cherrypy && ${RM} _cpcompat_subprocess.py && \
-	cd wsgiserver && ${RM} ssl_pyopenssl.py wsgiserver2.py)
+.if ${PYTHON_REL} < 3000
+RUN_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}more-itertools5>0:devel/py-more-itertools5@${PY_FLAVOR}
+EXAMPLES_RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}cheetah>=2.4.4:devel/py-cheetah@${PY_FLAVOR}
 .else
-	@${RM} ${WRKSRC}/cherrypy/wsgiserver/wsgiserver3.py
+RUN_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}more-itertools>0:devel/py-more-itertools@${PY_FLAVOR}
+EXAMPLES_RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}cheetah3>0:devel/py-cheetah3@${PY_FLAVOR}
 .endif
 
 .include <bsd.port.post.mk>
