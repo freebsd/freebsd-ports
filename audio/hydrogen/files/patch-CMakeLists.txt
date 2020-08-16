@@ -1,6 +1,6 @@
 --- CMakeLists.txt.orig	2017-11-21 17:47:16 UTC
 +++ CMakeLists.txt
-@@ -196,6 +196,11 @@ ENDIF()
+@@ -206,6 +206,11 @@ ENDIF()
  FIND_HELPER(LIBARCHIVE libarchive archive.h archive)
  IF( WANT_LIBARCHIVE AND LIBARCHIVE_FOUND)
      SET(WANT_LIBTAR FALSE)
@@ -12,7 +12,7 @@
  ENDIF()
  FIND_HELPER(LIBSNDFILE sndfile sndfile.h sndfile)
  FIND_HELPER(ALSA alsa alsa/asoundlib.h asound )
-@@ -205,6 +210,8 @@ FIND_HELPER(OSC liblo lo/lo.h lo)
+@@ -215,6 +220,8 @@ FIND_HELPER(OSC liblo lo/lo.h lo)
  
  IF("${CMAKE_SYSTEM_NAME}" MATCHES "NetBSD")
  	FIND_HELPER(OSS oss sys/soundcard.h ossaudio )
@@ -21,12 +21,3 @@
  ELSE()
  	FIND_HELPER(OSS oss sys/soundcard.h OSSlib )
  ENDIF()
-@@ -368,7 +375,7 @@ ENDIF()
- IF(NOT MINGW AND NOT APPLE)
- 	INSTALL(FILES ${CMAKE_SOURCE_DIR}/linux/hydrogen.appdata.xml DESTINATION "${CMAKE_INSTALL_PREFIX}/share/appdata")
- 	INSTALL(FILES ${CMAKE_SOURCE_DIR}/linux/hydrogen.desktop DESTINATION "${CMAKE_INSTALL_PREFIX}/share/applications")
--	INSTALL(FILES ${CMAKE_SOURCE_DIR}/data/img/gray/h2-icon.svg DESTINATION "${H2_UNIX_ICON_PATH}")
-+	INSTALL(FILES ${CMAKE_SOURCE_DIR}/data/img/gray/h2-icon.svg DESTINATION "${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/scalable/apps")
- 	INSTALL(FILES ${CMAKE_SOURCE_DIR}/linux/hydrogen.1 DESTINATION "${CMAKE_INSTALL_PREFIX}/man/man1")
- ENDIF()
- 

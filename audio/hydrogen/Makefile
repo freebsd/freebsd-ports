@@ -2,9 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hydrogen
-DISTVERSION=	1.0.0-beta1-325
-DISTVERSIONSUFFIX=	-g538eaeb9
-PORTREVISION=	2
+DISTVERSION=	1.0.0
 CATEGORIES=	audio
 
 MAINTAINER=	FreeBSD@ShaneWare.Biz
@@ -78,6 +76,8 @@ TEST_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/cppunit.pc:devel/cppunit
 post-patch:
 	@${REINPLACE_CMD} 's|EXISTS(tar|EXISTS(${LOCALBASE}/lib/libtar.so|g' \
 		${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} 's|%%DATADIR%%|${DATADIR}|g' \
+		${WRKSRC}/data/i18n/CMakeLists.txt
 
 do-test-TEST-on:
 	cd ${WRKSRC} && ./src/tests/tests

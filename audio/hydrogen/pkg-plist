@@ -8,7 +8,7 @@ include/hydrogen/IO/CoreAudioDriver.h
 include/hydrogen/IO/CoreMidiDriver.h
 include/hydrogen/IO/DiskWriterDriver.h
 include/hydrogen/IO/FakeDriver.h
-include/hydrogen/IO/JackAudioDriver.h
+include/hydrogen/IO/jack_audio_driver.h
 include/hydrogen/IO/JackMidiDriver.h
 include/hydrogen/IO/MidiCommon.h
 include/hydrogen/IO/MidiInput.h
@@ -43,7 +43,6 @@ include/hydrogen/core_action_controller.h
 include/hydrogen/event_queue.h
 include/hydrogen/fx/Effects.h
 include/hydrogen/fx/LadspaFX.h
-include/hydrogen/fx/ladspa.h
 include/hydrogen/globals.h
 include/hydrogen/h2_exception.h
 include/hydrogen/helpers/files.h
@@ -69,9 +68,9 @@ include/hydrogen/timeline.h
 include/hydrogen/version.h
 lib/libhydrogen-core-1.0.0.so
 man/man1/hydrogen.1.gz
-share/appdata/hydrogen.appdata.xml
-share/applications/hydrogen.desktop
-share/icons/hicolor/scalable/apps/h2-icon.svg
+share/appdata/org.hydrogenmusic.Hydrogen.appdata.xml
+share/applications/org.hydrogenmusic.Hydrogen.desktop
+share/icons/hicolor/scalable/apps/org.hydrogenmusic.Hydrogen.svg
 %%DATADIR%%/data/DefaultSong.h2song
 %%DATADIR%%/data/click.wav
 %%DATADIR%%/data/demo_songs/GM_kit_Diddley.h2song
