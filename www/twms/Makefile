@@ -12,9 +12,6 @@ COMMENT=	Tiny WMS server
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-DEPRECATED=	Uses deprecated version of python
-EXPIRATION_DATE=	2020-09-15
-
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyproj>0:graphics/py-pyproj@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}webpy>0:www/webpy@${PY_FLAVOR} \
 		${PY_PILLOW} \
@@ -24,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyproj>0:graphics/py-pyproj@${PY_FLAVOR} \
 USE_GITHUB=	yes
 GH_ACCOUNT=	Komzpa
 
-USES=		python:2.7  # 2.7 only because of webpy dependency
+USES=		python:3.6+
 USE_PYTHON=	distutils py3kplist optsuffix
 NO_ARCH=	yes
 
