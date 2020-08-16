@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	webpy
-PORTVERSION=	0.40
+PORTVERSION=	0.61
 CATEGORIES=	www python
 MASTER_SITES=	http://webpy.org/static/ \
 		CHEESESHOP
@@ -14,7 +14,7 @@ COMMENT=	Web Framework For Python
 
 LICENSE=	PD
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
