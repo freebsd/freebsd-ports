@@ -1,6 +1,6 @@
-TIMESTAMP = 1596659396
-SHA256 (kubernetes-minikube-v1.12.2_GH0.tar.gz) = 9a439ce44db8eceb3aa8e67144641b2fb3660acb96bf6dad7ec07df4231d4ee8
-SIZE (kubernetes-minikube-v1.12.2_GH0.tar.gz) = 78927599
+TIMESTAMP = 1597579016
+SHA256 (kubernetes-minikube-v1.12.3_GH0.tar.gz) = 163138e9780940d92bd35eb48790f27dc633795a57dad4ffc8cc6747484dd12c
+SIZE (kubernetes-minikube-v1.12.3_GH0.tar.gz) = 78952715
 SHA256 (Azure-go-ansiterm-d6e3b3328b78_GH0.tar.gz) = ee1ebe2efef498be1c558bf71e143289db2d21e2d42592503ad2d4a989006821
 SIZE (Azure-go-ansiterm-d6e3b3328b78_GH0.tar.gz) = 20946
 SHA256 (BurntSushi-toml-v0.3.1_GH0.tar.gz) = 6593da894578ba510a470735ffbdc88ce88033094dc5a8f4d3957ab87e18803f
