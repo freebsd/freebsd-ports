@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libftgl.so:graphics/ftgl
 
-USES=		gl libtool sdl tar:bzip2
+USES=		compiler:c++11-lang gl libtool sdl tar:bzip2
 USE_GL=		gl
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes
