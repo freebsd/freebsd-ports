@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	renpy
-PORTVERSION?=	7.3.5
+PORTVERSION=	7.3.5
 DISTVERSIONSUFFIX=-sdk
-PORTREVISION?=	0
 CATEGORIES=	games devel
 MASTER_SITES=	https://www.renpy.org/dl/${PORTVERSION}/
 
@@ -18,25 +17,23 @@ LICENSE_PERMS_DejaVu=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 # Extend expiration if lang/python27 is also extended
 # https://github.com/renpy/renpy/issues/2003
-DEPRECATED?=	Uses deprecated version of python
-EXPIRATION_DATE?=	2020-12-31
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-12-31
 
-BUILD_DEPENDS?=	${PYTHON_PKGNAMEPREFIX}game_sdl2>0:devel/py-game_sdl2@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}game_sdl2>0:devel/py-game_sdl2@${PY_FLAVOR}
 LIB_DEPENDS=	libfribidi.so:converters/fribidi \
 		libpng.so:graphics/png \
 		libavcodec.so:multimedia/ffmpeg \
 		libfreetype.so:print/freetype2
-RUN_DEPENDS?=	${PYTHON_PKGNAMEPREFIX}game_sdl2>=${PORTVERSION}:devel/py-game_sdl2@${PY_FLAVOR}
-
-CONFLICTS_INSTALL?=	${PORTNAME}6-*
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}game_sdl2>=${PORTVERSION}:devel/py-game_sdl2@${PY_FLAVOR}
 
 # Upstream tends to reroll distfiles before moving under /release/
-PORTSCOUT?=	site:http://www.renpy.org/dl/release/
+PORTSCOUT=	site:http://www.renpy.org/dl/release/
 
 USES=		gl python:2.7 sdl shebangfix tar:bz2
 USE_GL=		glew
 USE_PYTHON=	autoplist distutils cython
-USE_SDL?=	sdl2
+USE_SDL=	sdl2
 EXCLUDE=	gen 'module/*.py[co]' 'renpy/*.py[co]'
 EXTRACT_AFTER_ARGS=${EXCLUDE:S,^,--exclude ,}
 SHEBANG_FILES=	renpy.py launcher/game/tkaskdir.py
@@ -45,8 +42,7 @@ BUILD_WRKSRC=	${WRKSRC}/module
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 MAKE_ENV+=	RENPY_DEPS_INSTALL="${LOCALBASE}" \
 		RENPY_CYTHON=cython-${PYTHON_VER}
-PORTDATA?=	gui
-PORTDATA+=	launcher renpy renpy.py
+PORTDATA=	gui launcher renpy renpy.py
 PORTDOCS=	*
 PLIST_FILES=	bin/${PORTNAME}
 
@@ -77,14 +73,9 @@ LICENSE_PERMS_${lic}=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 post-extract:
 	@${FIND} ${WRKSRC}/lib ${WRKSRC}/renpy.app -type d -empty -delete
 
-.if !target(post-patch)
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/bin/python,${PYTHON_CMD},' \
 		${WRKSRC}/launcher/game/choose_directory.rpy
-.endif
-
-post-patch:	common-post-patch
-common-post-patch:
 # Avoid having to add -I/usr/include -L/usr/lib
 	@${REINPLACE_CMD} '/library("z")/d' ${BUILD_WRKSRC}/${PYSETUP}
 
@@ -99,8 +90,7 @@ add-empty-dirs:
 		! \( -name "saves" -or -name "pysdlsound" \) | \
 		${SED} 's,^${WRKSRC},@dir ${DATADIR},' >>${TMPPLIST}
 
-post-install:	common-post-install
-common-post-install:
+post-install:
 	${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} -name \*.so \
 		-exec ${STRIP_CMD} {} +
 	${LN} -fs ../${DATADIR_REL}/renpy.py \
