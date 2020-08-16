@@ -818,6 +818,7 @@
     SUBDIR += p5-Proc-ProcessTable-Colorizer
     SUBDIR += p5-Proc-ProcessTable-InfoString
     SUBDIR += p5-Proc-ProcessTable-Match
+    SUBDIR += p5-Proc-ProcessTable-ncps
     SUBDIR += p5-Proclet
     SUBDIR += p5-Quota
     SUBDIR += p5-Rex
