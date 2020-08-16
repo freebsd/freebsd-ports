@@ -11,9 +11,9 @@
 +    sal_Int32 volatile functionIndex, vtableOffset;
 +
 +    asm volatile(
-+        "mov %0, x8\n"
-+        "mov %1, x9\n"
-+        "mov %2, x10\n"
++        "mov %0, x8\n\t"
++        "mov %0, x9\n\t"
++        "mov %0, x10\n\t"
 +        : "=r" (indirectRet), "=r" (functionIndex), "=r" (vtableOffset)
 +        ::);
 +

@@ -5,11 +5,17 @@
 MASTER_SITES=	https://download.documentfoundation.org/libreoffice/${MASTER_SITE_SUBDIR}/
 .if defined(PRERELEASE)
 MASTER_SITES+=	https://dev-builds.libreoffice.org/pre-releases/deb/x86_64/
-MASTER_SITE_SUBDIR=	testing/${PORTVERSION}/deb/x86_64
-LO_I18N_FILE=	LibreOffice_${LOVERSION}_Linux_x86-64_deb
+MASTER_SITE_SUBDIR=	testing/${LOVERSION}/deb/x86_64
+.	if defined(DEVRELEASE)
+LO_NAME=	LibreOfficeDev
+.	else
+LO_NAME=	LibreOffice
+.	endif
+LO_I18N_FILE=	${LO_NAME}_${DISTVERSION}_Linux_x86-64_deb
 .else
-MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/deb/x86_64
-LO_I18N_FILE=	LibreOffice_${PORTVERSION}_Linux_x86-64_deb
+MASTER_SITE_SUBDIR=	stable/${LOVERSION}/deb/x86_64
+LO_NAME=	LibreOffice
+LO_I18N_FILE=	${LO_NAME}_${LOVERSION}_Linux_x86-64_deb
 .endif
 PKGNAMEPREFIX=	${LO_I18N}-
 DISTFILES=	${LO_I18N_FILE}_langpack_${LO_I18N:S/_/-/}${EXTRACT_SUFX}
@@ -38,11 +44,11 @@ post-extract:
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}
-	cd ${WRKSRC}/opt/${PORTNAME}${PORTVERSION:R} ; \
+	cd ${WRKSRC}/opt/${LO_NAME:tl}${LOVERSION:R} ; \
 	    ${PAX} -rw . ${STAGEDIR}${PREFIX}/lib/${PORTNAME}
 
 post-install:
-	@cd ${WRKSRC}/opt/${PORTNAME}${PORTVERSION:R} && \
+	@cd ${WRKSRC}/opt/${LO_NAME:tl}${LOVERSION:R} && \
 		${FIND} -s * -not -type d \
 			-exec ${ECHO_CMD} "lib/${PORTNAME}/{}" \; >> ${TMPPLIST} && \
 		${FIND} -d * -type d -empty \
