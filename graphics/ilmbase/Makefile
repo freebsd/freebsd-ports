@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ilmbase
-PORTVERSION=	2.5.2
+PORTVERSION=	2.5.3
 CATEGORIES=	graphics devel
 
 MAINTAINER=	mandree@FreeBSD.org
@@ -23,7 +23,9 @@ CMAKE_ARGS+=	--target \
 WRKSRC_SUBDIR=	IlmBase
 
 PLIST_SUB=	MAJORVER=${_MAJORVER} \
-		VER=${_VER}
+		VER=${_VER} \
+		MINVER=${_MINVER} \
+		PLVER=${_PLVER}
 PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS LARGE_STACK
@@ -35,6 +37,8 @@ LARGE_STACK_CONFIGURE_ENABLE=	large-stack
 
 _MAJORVER=	2_5
 _VER=		25
+_MINVER=	0
+_PLVER=		2
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libHalf-${_MAJORVER}.so
