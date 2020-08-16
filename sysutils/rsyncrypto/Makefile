@@ -14,7 +14,7 @@ LICENSE=	GPLv2+
 LIB_DEPENDS=	libargtable2.so:devel/argtable
 RUN_DEPENDS=	rsync:net/rsync
 
-USES=		gmake localbase ssl tar:bzip2
+USES=		compiler:c++11-lang gmake localbase ssl tar:bzip2
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/rsyncrypto \
