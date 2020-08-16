@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rsync
-DISTVERSION=	3.2.2
-PORTREVISION=	1
+DISTVERSION=	3.2.3
 CATEGORIES=	net
 MASTER_SITES=	https://rsync.samba.org/ftp/rsync/ \
 		https://rsync.samba.org/ftp/rsync/src/ \
@@ -63,7 +62,7 @@ ATIMES_DESC=	Preserve access times, adds --atimes (BROKEN)
 ACL_DESC=	Add backward-compatibility for the --acls option
 
 # define default options
-OPTIONS_DEFAULT=FLAGS ICONV SSH
+OPTIONS_DEFAULT=FLAGS ICONV SSH ZLIB_BASE
 
 ZLIB_BASE_CONFIGURE_ON=	--with-included-zlib=no
 TIMELIMIT_EXTRA_PATCHES=	${WRKSRC}/patches/time-limit.diff
@@ -71,8 +70,7 @@ ATIMES_EXTRA_PATCHES=		${WRKSRC}/patches/atimes.diff
 FLAGS_EXTRA_PATCHES=		${WRKSRC}/patches/fileflags.diff \
 				${FILESDIR}/extrapatch-main.c
 RENAMED_EXTRA_PATCHES=		${WRKSRC}/patches/detect-renamed.diff
-ACL_EXTRA_PATCHES=		${WRKSRC}/patches/acls.diff \
-				${FILESDIR}/extrapatch-acl
+ACL_EXTRA_PATCHES=		${WRKSRC}/patches/acls.diff
 
 ICONV_USES=	iconv:translit
 ICONV_CONFIGURE_ENABLE=	iconv iconv-open
