@@ -1,0 +1,13 @@
+Phosh aims to be a Wayland shell for mobile phones. Currently, only
+useful for developers.
+
+Features:
+- a lockscreen
+- brightness control and nighlight
+- the gcr system-prompter interface
+- acting as a polkit auth agent
+- enough of org.gnome.Mutter.DisplayConfig to make gnome-settings-daemon happy
+- a homebutton that toggles a simple favorites menu
+- status icons for battery, wwan and wifi (WARNING: network is N/A on FreeBSD)
+
+WWW: https://source.puri.sm/Librem5/phosh

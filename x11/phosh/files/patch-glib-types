@@ -1,0 +1,17 @@
+Don't use Linux-only types in otherwise portable code.
+
+../src/system-prompter.c:25:8: error: unknown type name 'ulong'
+static ulong owner_id;
+       ^
+
+--- src/system-prompter.c.orig	2020-08-03 08:10:28 UTC
++++ src/system-prompter.c
+@@ -22,7 +22,7 @@
+  * wide modal #PhoshSystemPrompt dialogs
+  */
+ static GcrSystemPrompter *_prompter;
+-static ulong owner_id;
++static gulong owner_id;
+ static gboolean registered_prompter;
+ static gboolean acquired_prompter;
+ 

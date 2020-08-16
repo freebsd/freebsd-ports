@@ -1,0 +1,143 @@
+NetworkManager is Linux-only. FreeBSD has many alternatives but none
+implements libnm-compatible API required by Phosh and GNOME.
+
+meson.build:134:0: ERROR: Dependency "libnm" not found, tried pkgconfig
+
+--- meson.build.orig	2020-08-03 08:10:28 UTC
++++ meson.build
+@@ -131,9 +131,9 @@ libhandy_dep = dependency('libhandy-0.0',
+   fallback: ['libhandy', 'libhandy_dep'],
+   default_options: ['introspection=disabled']
+   )
+-libnm_dep = dependency('libnm', version: '>= 1.14')
++libnm_dep = dependency('libnm', version: '>= 1.14', required: false)
+ libpolkit_agent_dep = dependency('polkit-agent-1', version: '>= 0.105')
+-network_agent_dep = dependency('libsecret-1')
++network_agent_dep = dependency('libsecret-1', required: false)
+ upower_glib_dep = dependency('upower-glib', version: '>=0.99.1')
+ wayland_client_dep = dependency('wayland-client', version: '>=1.14')
+ wayland_protos_dep = dependency('wayland-protocols', version: '>=1.12')
+--- src/meson.build.orig	2020-08-03 08:10:28 UTC
++++ src/meson.build
+@@ -50,8 +50,6 @@ libphosh_tool_sources = [
+   'app-list-model.h',
+   'background.c',
+   'background.h',
+-  'connectivity-info.c',
+-  'connectivity-info.h',
+   'favorite-list-model.c',
+   'favorite-list-model.h',
+   'feedback-manager.c',
+@@ -92,8 +90,6 @@ libphosh_sources = [
+   'bt-info.h',
+   'bt-manager.c',
+   'bt-manager.h',
+-  'contrib/shell-network-agent.c',
+-  'contrib/shell-network-agent.h',
+   'fader.c',
+   'fader.h',
+   'feedbackinfo.c',
+@@ -110,8 +106,6 @@ libphosh_sources = [
+   'lockscreen.h',
+   'monitor-manager.c',
+   'monitor-manager.h',
+-  'network-auth-prompt.c',
+-  'network-auth-prompt.h',
+   'osk-manager.c',
+   'osk-manager.h',
+   'panel.c',
+@@ -144,10 +138,6 @@ libphosh_sources = [
+   'toplevel-thumbnail.h',
+   'toplevel.c',
+   'toplevel.h',
+-  'wifiinfo.c',
+-  'wifiinfo.h',
+-  'wifimanager.c',
+-  'wifimanager.h',
+   'wwaninfo.c',
+   'wwaninfo.h',
+   phosh_settings_sources,
+--- src/panel.c.orig	2020-08-03 08:10:28 UTC
++++ src/panel.c
+@@ -13,7 +13,6 @@
+ #include "config.h"
+ 
+ #include "bt-info.h"
+-#include "connectivity-info.h"
+ #include "panel.h"
+ #include "shell.h"
+ #include "session.h"
+@@ -371,7 +370,6 @@ phosh_panel_class_init (PhoshPanelClass *klass)
+       NULL, G_TYPE_NONE, 0);
+ 
+   g_type_ensure (PHOSH_TYPE_BT_INFO);
+-  g_type_ensure (PHOSH_TYPE_CONNECTIVITY_INFO);
+   g_type_ensure (PHOSH_TYPE_SETTINGS);
+ 
+   gtk_widget_class_set_template_from_resource (widget_class,
+--- src/shell.c.orig	2020-08-03 08:10:28 UTC
++++ src/shell.c
+@@ -43,7 +43,6 @@
+ #include "session.h"
+ #include "system-prompter.h"
+ #include "util.h"
+-#include "wifiinfo.h"
+ #include "wwaninfo.h"
+ #include "bt-manager.h"
+ 
+@@ -83,7 +82,6 @@ typedef struct
+   PhoshIdleManager *idle_manager;
+   PhoshOskManager  *osk_manager;
+   PhoshToplevelManager *toplevel_manager;
+-  PhoshWifiManager *wifi_manager;
+   PhoshPolkitAuthAgent *polkit_auth_agent;
+   PhoshScreenSaverManager *screen_saver_manager;
+   PhoshNotifyManager *notify_manager;
+@@ -332,7 +330,6 @@ phosh_shell_dispose (GObject *object)
+   g_clear_object (&priv->lockscreen_manager);
+   g_clear_object (&priv->monitor_manager);
+   g_clear_object (&priv->toplevel_manager);
+-  g_clear_object (&priv->wifi_manager);
+   g_clear_object (&priv->osk_manager);
+   g_clear_object (&priv->polkit_auth_agent);
+   g_clear_object (&priv->background_manager);
+@@ -477,7 +474,6 @@ static void
+ type_setup (void)
+ {
+   phosh_battery_info_get_type();
+-  phosh_wifi_info_get_type();
+   phosh_wwan_info_get_type();
+ }
+ 
+@@ -767,21 +763,6 @@ phosh_shell_get_monitor_manager (PhoshShell *self)
+   return priv->monitor_manager;
+ }
+ 
+-
+-PhoshWifiManager *
+-phosh_shell_get_wifi_manager (PhoshShell *self)
+-{
+-  PhoshShellPrivate *priv;
+-
+-  g_return_val_if_fail (PHOSH_IS_SHELL (self), NULL);
+-  priv = phosh_shell_get_instance_private (self);
+-
+-  if (!priv->wifi_manager)
+-      priv->wifi_manager = phosh_wifi_manager_new ();
+-
+-  g_return_val_if_fail (PHOSH_IS_WIFI_MANAGER (priv->wifi_manager), NULL);
+-  return priv->wifi_manager;
+-}
+ 
+ PhoshBtManager *
+ phosh_shell_get_bt_manager (PhoshShell *self)
+--- tests/meson.build.orig	2020-08-03 08:10:28 UTC
++++ tests/meson.build
+@@ -57,7 +57,6 @@ tests = [
+   'activity',
+   'app-grid-button',
+   'app-list-model',
+-  'connectivity-info',
+   'favourite-model',
+   'media-player',
+   'notification',
