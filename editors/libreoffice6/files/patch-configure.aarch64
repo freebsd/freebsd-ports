@@ -1,0 +1,14 @@
+--- configure.orig	2020-04-06 14:49:31.976007000 +0200
++++ configure	2020-04-06 14:50:04.326755000 +0200
+@@ -12532,6 +12532,11 @@ freebsd*)
+         RTL_ARCH=X86_64
+         PLATFORMID=freebsd_x86_64
+         ;;
++     aarch64)
++         CPUNAME=AARCH64
++         PLATFORMID=freebsd_aarch64
++         RTL_ARCH=AARCH64
++         ;;
+     *)
+         as_fn_error $? "Unsupported host_cpu $host_cpu for host_os $host_os" "$LINENO" 5
+         ;;

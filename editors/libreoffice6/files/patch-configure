@@ -1,0 +1,18 @@
+--- configure	2018-08-03 03:58:40.000000000 +0800
++++ configure	2018-08-10 05:28:52.021925000 +0800
+@@ -31735,7 +31735,7 @@
+ 
+ 
+ 
+-    elif test "$_os" = "NetBSD" -o "$_os" = "OpenBSD" -o "$_os" = "DragonFly" \
++    elif test "$_os" = "NetBSD" -o "$_os" = "OpenBSD" -o "$_os" = "DragonFly" -o "$_os" = "FreeBSD" \
+             && test "$with_system_openssl" != "no"; then
+         with_system_openssl=yes
+         SYSTEM_OPENSSL=TRUE
+@@ -34402,5 +34412,5 @@
+ fi
+ 
+-if test "$_os" = "SunOS" -o "$_os" = "FreeBSD" -o "$_os" = "Darwin"; then
++if test "$_os" = "SunOS" -o "$_os" = "Darwin"; then
+     if test -z "$with_gnu_patch"; then
+         GNUPATCH=$PATCH

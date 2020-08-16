@@ -1,0 +1,20 @@
+--- Makefile.in.orig	2019-02-03 18:10:00.287665000 +0800
++++ Makefile.in	2019-02-03 18:10:53.310313000 +0800
+@@ -272,7 +272,7 @@
+ #
+ # Bootstrap
+ #
+-bootstrap: check-if-root compilerplugins
++bootstrap: compilerplugins
+ 
+ #
+ # Build
+@@ -400,7 +400,7 @@
+ 	@exit 1
+ endif
+ 
+-distro-pack-install: install
++distro-pack-install: install-strip
+ 	$(SRCDIR)/bin/distro-install-clean-up
+ 	$(SRCDIR)/bin/distro-install-desktop-integration
+ 	$(SRCDIR)/bin/distro-install-sdk

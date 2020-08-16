@@ -1,0 +1,11 @@
+--- officecfg/registry/schema/org/openoffice/Office/Common.xcs.orig	2019-02-05 07:46:26.552858000 +0800
++++ officecfg/registry/schema/org/openoffice/Office/Common.xcs	2019-02-05 07:46:11.129854000 +0800
+@@ -5316,7 +5316,7 @@
+         <info>
+           <desc>Special font for rendering of emojis</desc>
+         </info>
+-        <value>EmojiOne Color</value>
++        <value>Twitter Color Emoji</value>
+       </prop>
+       <prop oor:name="FontsUseWinMetrics" oor:type="oor:string-list" oor:nillable="false">
+         <info>
