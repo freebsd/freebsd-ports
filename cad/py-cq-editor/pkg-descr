@@ -1,0 +1,14 @@
+CQ-editor is a CadQuery GUI editor based on PyQT.
+
+Graphical debugger for CadQuery scripts
+- Step through script and watch how your model changes
+
+CadQuery object stack inspector
+- Visual inspection of current workplane and selected items
+- Insight into evolution of the model
+
+Export to various formats
+- STL
+- STEP
+
+WWW: https://github.com/CadQuery/CQ-editor/
