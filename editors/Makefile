@@ -96,6 +96,7 @@
     SUBDIR += libreoffice-bs
     SUBDIR += libreoffice-ca
     SUBDIR += libreoffice-ca_valencia
+    SUBDIR += libreoffice-ckb
     SUBDIR += libreoffice-cs
     SUBDIR += libreoffice-cy
     SUBDIR += libreoffice-da
@@ -111,6 +112,7 @@
     SUBDIR += libreoffice-eu
     SUBDIR += libreoffice-fa
     SUBDIR += libreoffice-fi
+    SUBDIR += libreoffice-fur
     SUBDIR += libreoffice-fy
     SUBDIR += libreoffice-ga
     SUBDIR += libreoffice-gd
