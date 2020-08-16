@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2018-10-11 12:01:05 UTC
+--- CMakeLists.txt.orig	2020-08-03 13:43:47 UTC
 +++ CMakeLists.txt
-@@ -28,8 +28,8 @@ if(NOT CMAKE_BUILD_TYPE)
+@@ -13,8 +13,8 @@ if(NOT CMAKE_BUILD_TYPE)
      FORCE)
  endif()
  
@@ -11,16 +11,16 @@
  option(ICINGA2_WITH_CHECKER "Build the checker module" ON)
  option(ICINGA2_WITH_COMPAT "Build the compat module" ON)
  option(ICINGA2_WITH_LIVESTATUS "Build the Livestatus module" ON)
-@@ -241,6 +241,12 @@ if(CMAKE_C_COMPILER_ID STREQUAL "GNU")
+@@ -260,6 +260,12 @@ if(CMAKE_C_COMPILER_ID STREQUAL "GNU")
+     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g -pthread")
+     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -pthread")
    endif()
- endif()
- 
++endif()
++
 +if(CMAKE_SYSTEM_NAME MATCHES "FreeBSD.*")
 +    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -lexecinfo")
 +    set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -lexecinfo")
 +    set(CMAKE_STATIC_LINKER_FLAGS "${CMAKE_STATIC_LINKER_FLAGS} -lexecinfo")
-+endif()
-+
- include(CheckCXXCompilerFlag)
+ endif()
  
- function(check_cxx_linker_flag flag var)
+ include(CheckCXXCompilerFlag)

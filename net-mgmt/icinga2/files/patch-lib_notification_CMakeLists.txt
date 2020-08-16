@@ -1,6 +1,6 @@
---- lib/notification/CMakeLists.txt.orig	2018-10-11 12:01:05 UTC
+--- lib/notification/CMakeLists.txt.orig	2020-08-03 13:43:47 UTC
 +++ lib/notification/CMakeLists.txt
-@@ -35,7 +35,7 @@ set_target_properties (
+@@ -20,7 +20,7 @@ set_target_properties (
  )
  
  install_if_not_exists(
