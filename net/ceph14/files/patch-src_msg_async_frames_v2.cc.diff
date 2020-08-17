@@ -1,0 +1,13 @@
+diff --git a/src/msg/async/frames_v2.cc b/src/msg/async/frames_v2.cc
+index f047eb1846..ecc6c025eb 100644
+--- src/msg/async/frames_v2.cc
++++ src/msg/async/frames_v2.cc
+@@ -18,7 +18,7 @@
+ 
+ #undef FMT_HEADER_ONLY
+ #define FMT_HEADER_ONLY 1
+-#include "seastar/fmt/include/fmt/format.h"
++#include "fmt/format.h"
+ 
+ namespace ceph::msgr::v2 {
+ 
