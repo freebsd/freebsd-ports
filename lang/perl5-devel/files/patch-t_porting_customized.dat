@@ -1,6 +1,6 @@
 Fix tests for modified files.
 
---- t/porting/customized.dat.orig	2020-08-03 06:19:35 UTC
+--- t/porting/customized.dat.orig	2020-08-17 02:17:01 UTC
 +++ t/porting/customized.dat
 @@ -7,6 +7,7 @@ Digest::MD5 cpan/Digest-MD5/Makefile.PL 3bf781444ee671
  Digest::MD5 cpan/Digest-MD5/MD5.pm df5f0663f0f755be7eda6e3d2f008f2629246b19
@@ -10,7 +10,7 @@ Fix tests for modified files.
  Filter::Util::Call pod/perlfilter.pod e9833bf4ebc51087dfee5c553e0f8a5eef67212d
  Locale::Maketext::Simple cpan/Locale-Maketext-Simple/lib/Locale/Maketext/Simple.pm 57ed38905791a17c150210cd6f42ead22a7707b6
  Math::Complex cpan/Math-Complex/lib/Math/Complex.pm 66f28a17647e2de166909ca66e4ced26f8a0a62e
-@@ -24,7 +25,7 @@ Pod::Checker cpan/Pod-Checker/t/pod/contains_bad_pod.x
+@@ -25,7 +26,7 @@ Pod::Checker cpan/Pod-Checker/t/pod/contains_bad_pod.x
  Pod::Checker cpan/Pod-Checker/t/pod/selfcheck.t 8ce3cfd38e4b9bcf5bc7fe7f2a14195e49aed7d8
  Pod::Checker cpan/Pod-Checker/t/pod/testcmp.pl a0cd5c8eca775c7753f4464eee96fa916e3d8a16
  Pod::Checker cpan/Pod-Checker/t/pod/testpchk.pl b2072c7f4379fd050e15424175d7cac5facf5b3b
