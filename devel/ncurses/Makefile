@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ncurses
-DISTVERSION=	6.1-${SNAPSHOT}
+DISTVERSION=	6.2-${SNAPSHOT}
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.invisible-island.net/${PORTNAME}/current/ \
 		https://invisible-mirror.net/archives/ncurses/current/
@@ -16,79 +16,85 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_sparc64=	cannot build: coredump: illegal instruction
 
-SNAPSHOT=	20190525
-GNU_CONFIGURE=	yes
-CONFIGURE_SCRIPT=../configure
-CONFIGURE_ARGS=	--datadir=${PREFIX}/share/misc --disable-overwrite \
-		--enable-termcap --enable-bsdpad --enable-getcap \
-		--enable-colorfgbg --disable-home-terminfo \
-		--with-pkg-config=yes --enable-pc-files \
-		--includedir=${PREFIX}/include/ncurses \
-		--with-shared \
-		--with-termlib --program-prefix= \
-		--enable-rpath --disable-root-environ \
-		--with-manpage-format=gzip --srcdir=../ \
-		--without-manpage-renames \
-		--mandir=${MANPREFIX}/man \
-		--with-hashed-db \
-		--with-pkg-config-libdir=${PREFIX}/libdata/pkgconfig
+USES=		cpe pkgconfig shebangfix tar:tgz terminfo
+
+SNAPSHOT=		20200816
+GNU_CONFIGURE=		yes
+CONFIGURE_SCRIPT=	../configure
+CONFIGURE_ARGS=		--datadir=${PREFIX}/share/misc \
+			--disable-home-terminfo \
+			--disable-overwrite \
+			--disable-root-environ \
+			--enable-bsdpad \
+			--enable-colorfgbg \
+			--enable-getcap \
+			--enable-pc-files \
+			--enable-rpath \
+			--enable-termcap \
+			--includedir=${PREFIX}/include/ncurses \
+			--program-prefix= \
+			--srcdir=../ \
+			--with-hashed-db \
+			--with-manpage-format=gzip \
+			--with-pkg-config-libdir=${PREFIX}/libdata/pkgconfig \
+			--with-pkg-config=yes \
+			--with-shared \
+			--with-termlib \
+			--without-manpage-renames
 
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS_DEFINE=	TRACE DEBUG PROFILE EXAMPLES DOCS MANPAGES
-OPTIONS_DEFAULT= DOCS EXAMPLES MANPAGES
+OPTIONS_DEFINE=		DEBUG DOCS EXAMPLES MANPAGES PROFILE TRACE
+OPTIONS_DEFAULT=	DOCS EXAMPLES MANPAGES
 
 TRACE_DESC=	Add trace() function to all models of ncurses
 
-CONFIGURE_ENV=	gnat_exists="no"
+CONFIGURE_ENV=	gnat_exists="no" cf_cv_ld_searchpath="${LOCALBASE}/lib /usr/lib /lib"
 
 USE_LDCONFIG=	yes
-USES=		cpe pkgconfig shebangfix terminfo tar:tgz
 CPE_VENDOR=	gnu
 SHEBANG_FILES=	test/tracemunch
 
-WIDEC_WRKSRC=	${WRKSRC}/build.widec
-NOWIDEC_WRKSRC=	${WRKSRC}/build.nowidec
+WIDEC_WRKSRC=		${WRKSRC}/build.widec
+NOWIDEC_WRKSRC=		${WRKSRC}/build.nowidec
 WIDEC_EXAMPLESDIR=	${EXAMPLESDIR}/widec
 NOWIDEC_EXAMPLESDIR=	${EXAMPLESDIR}/nowidec
 EXAMPLES_TARGETS=	NOWIDEC
 
 CONFIGURE_WRKSRC=	${NOWIDEC_WRKSRC}
-BUILD_WRKSRC=	${NOWIDEC_WRKSRC}
-INSTALL_WRKSRC=	${NOWIDEC_WRKSRC}
+BUILD_WRKSRC=		${NOWIDEC_WRKSRC}
+INSTALL_WRKSRC=		${NOWIDEC_WRKSRC}
 
 PLIST_SUB+=	ABI_VER=6 \
+		NOWIDEC_EXAMPLESDIR=${NOWIDEC_EXAMPLESDIR:S,${PREFIX}/,,} \
 		REL_VER=${DISTVERSION:S/-${SNAPSHOT}//} \
-		WIDEC_EXAMPLESDIR=${WIDEC_EXAMPLESDIR:S,${PREFIX}/,,} \
-		NOWIDEC_EXAMPLESDIR=${NOWIDEC_EXAMPLESDIR:S,${PREFIX}/,,}
+		WIDEC_EXAMPLESDIR=${WIDEC_EXAMPLESDIR:S,${PREFIX}/,,}
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-DOCS=	ANNOUNCE INSTALL NEWS README TO-DO doc/html/announce.html \
-	doc/hackguide.doc doc/html/hackguide.html \
-	doc/html/index.html doc/ncurses-intro.doc \
-	doc/html/ncurses-intro.html
-EXAMPLES=	Makefile README blue.c bs.6 bs.c cardfile.c cardfile.dat \
-		ditto.c dots.c filter.c firework.c firstlast.c gdc.6 \
-		gdc.c hanoi.c hashtest.c knight.c lrtest.c ncurses.c \
-		newdemo.c railroad.c rain.c tclock.c test.priv.h \
-		testaddch.c testcurs.c testscanw.c view.c worm.c \
-		xmas.c
-EXAMPLES_CPP=	Makefile NEWS PROBLEMS README-first cursesapp.cc \
-		cursesapp.h cursesf.cc cursesf.h cursesm.cc cursesm.h \
-		cursesmain.cc cursesp.cc cursesp.h cursesw.cc \
-		cursesw.h cursslk.cc cursslk.h demo.cc etip.h \
-		internal.h
+DOCS=		ANNOUNCE doc/hackguide.doc doc/html/announce.html \
+		doc/html/hackguide.html doc/html/index.html \
+		doc/html/ncurses-intro.html doc/ncurses-intro.doc INSTALL NEWS \
+		README TO-DO
+EXAMPLES=	blue.c bs.6 bs.c cardfile.c cardfile.dat ditto.c dots.c \
+		filter.c firework.c firstlast.c gdc.6 gdc.c hanoi.c hashtest.c \
+		knight.c lrtest.c Makefile ncurses.c newdemo.c railroad.c \
+		rain.c README tclock.c test.priv.h testaddch.c testcurs.c \
+		testscanw.c view.c worm.c xmas.c
+EXAMPLES_CPP=	cursesapp.cc cursesapp.h cursesf.cc cursesf.h cursesm.cc \
+		cursesm.h cursesmain.cc cursesp.cc cursesp.h cursesw.cc \
+		cursesw.h cursslk.cc cursslk.h demo.cc etip.h internal.h \
+		Makefile NEWS PROBLEMS README-first
 
-CONFIGURE_ARGS_WIDEC=--enable-widec
+CONFIGURE_ARGS_WIDEC=	--enable-widec
 
-TRACE_CONFIGURE_ON=	--with-trace
-PROFILE_CONFIGURE_WITH=	profile
-MANPAGES_CONFIGURE_WITH=manpages
-DEBUG_CONFIGURE_WITH=	debug
+TRACE_CONFIGURE_ON=		--with-trace
+PROFILE_CONFIGURE_WITH=		profile
+MANPAGES_CONFIGURE_WITH=	manpages
+DEBUG_CONFIGURE_WITH=		debug
 
-OPTIONS_SUB=yes
+OPTIONS_SUB=	yes
 
 .include <bsd.port.options.mk>
 
@@ -103,7 +109,6 @@ post-extract:
 	@${MKDIR} ${NOWIDEC_WRKSRC}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,$$(INSTALL_PROG) ncurses-config,@INSTALL_SCRIPT@ ncurses-config,' ${WRKSRC}/misc/Makefile.in
 	@${REINPLACE_CMD} -e 's,/usr/include,${PREFIX}/include,g' ${WRKSRC}/misc/ncurses-config.in
 
 post-configure:
