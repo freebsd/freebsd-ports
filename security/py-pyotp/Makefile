@@ -6,7 +6,7 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	vlad-fbsd@acheronmedia.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python One Time Password Library
 
 LICENSE=	MIT

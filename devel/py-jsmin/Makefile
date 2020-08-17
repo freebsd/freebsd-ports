@@ -7,7 +7,7 @@ CATEGORIES=	devel www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	vlad-fbsd@acheronmedia.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JavaScript minifier written in Python
 
 LICENSE=	MIT
