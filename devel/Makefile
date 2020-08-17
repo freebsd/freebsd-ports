@@ -179,6 +179,7 @@
     SUBDIR += astyle
     SUBDIR += asyncplusplus
     SUBDIR += atf
+    SUBDIR += athens
     SUBDIR += atlas
     SUBDIR += atlas-devel
     SUBDIR += aunit
