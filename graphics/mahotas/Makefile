@@ -8,7 +8,7 @@ CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	sawp@sawp.com.br
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Computer vision and image processing library for Python
 
 BUILD_DEPENDS=	${PYNUMPY}

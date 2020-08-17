@@ -7,7 +7,7 @@ PORTREVISION=	9
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 
-MAINTAINER=	sawp@sawp.com.br
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pure implementation of image morphology functions
 
 LICENSE=	BSD3CLAUSE
