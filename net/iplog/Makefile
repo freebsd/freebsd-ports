@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	net security
 MASTER_SITES=	SF/ojnk/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	udo.schweigert@siemens.com
+MAINTAINER=	udo@schweigert-muc.de
 COMMENT=	TCP/IP traffic logging tool
 
 USES=		gmake
@@ -16,6 +16,12 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
 
 USE_RC_SUBR=	iplog
+
+.include <bsd.port.options.mk>
+
+.if ${OSVERSION} >= 1300000
+IGNORE = The iplog port is broken for FreeBSD 13.x and above
+.endif
 
 post-patch:
 .for FILE in example-iplog.conf iplog.8 iplog.conf.5 src/iplog.h
