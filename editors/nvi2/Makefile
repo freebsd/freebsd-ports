@@ -10,7 +10,7 @@ COMMENT=	Updated implementation of the ex/vi text editor
 
 LICENSE=	BSD3CLAUSE
 
-USES=		bdb cmake ncurses
+USES=		bdb cmake compiler:c11 ncurses
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	lichray
