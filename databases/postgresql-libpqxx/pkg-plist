@@ -44,6 +44,7 @@ include/pqxx/internal/result_iter.hxx
 include/pqxx/internal/sql_cursor.hxx
 include/pqxx/internal/statement_parameters.hxx
 include/pqxx/internal/stream_iterator.hxx
+include/pqxx/internal/transaction_focus.hxx
 include/pqxx/isolation
 include/pqxx/isolation.hxx
 include/pqxx/largeobject
