@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	scli
-DISTVERSION=	g20200813
+DISTVERSION=	g20200817
 CATEGORIES=	net-im python
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -16,7 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}urwid>=0:devel/py-urwid@${PY_FLAVOR} \
 USES=		python:run,3.5+ shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	isamert
-GH_TAGNAME=	157e3d1
+GH_TAGNAME=	6169d80
 SHEBANG_FILES=	${PORTNAME}
 
 NO_ARCH=	yes
