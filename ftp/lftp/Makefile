@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lftp
-PORTVERSION=	4.9.1
+PORTVERSION=	4.9.2
 CATEGORIES=	ftp
 MASTER_SITES=	http://lftp.tech/ftp/ \
 		http://lftp.tech/ftp/old/ \
