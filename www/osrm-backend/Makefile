@@ -6,6 +6,10 @@ DISTVERSION=	5.22.0
 PORTREVISION=	9
 CATEGORIES=	www
 
+PATCH_SITES=	https://github.com/Project-OSRM/osrm-backend/commit/
+PATCHFILES=	38700e207e076a391f30ef66ad90d03e7543006e.patch:-p1 \
+		018a9bc80449d85c0e40fa5215377d8a03264c88.patch:-p1
+
 MAINTAINER=	freebsd@mosedal.net
 COMMENT=	Open Source Routing Machine (Backend)
 
