@@ -3,7 +3,7 @@
 
 PORTNAME=	sqlite3
 DISTVERSION=	3.32.3
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://www.sqlite.org/2020/ http://www2.sqlite.org/2020/ http://www3.sqlite.org/2020/
@@ -132,11 +132,8 @@ RTREE_INT_DESC=		Store 32-bit sig int (no float) coordinates
 GEOPOLY_DESC=		Uses the GeoJSON notation (RFC-7946)
 GEOPOLY_IMPLIES=	RTREE
 
-OPTIONS_RADIO_RL=	READLINES READLINEP LIBEDIT
-RL_DESC=		Command line editing library (may be off)
-READLINES_DESC=		Use libreadline from system
-READLINEP_DESC=		Use GNU libreadline from ports
-LIBEDIT_DESC=		Use BSD libedit from ports
+OPTIONS_RADIO_RL=	READLINE LIBEDIT
+RL_DESC=		Command line editing library
 
 OPTIONS_DEFAULT=	FTS4 URI METADATA SECURE_DELETE UNLOCK_NOTIFY THREADS \
 			EXTENSION TS1 UNICODE61 RTREE DBSTAT STSHELL LIBEDIT \
@@ -205,11 +202,9 @@ UNICODE61_CPPFLAGS=	""
 UNICODE61_CPPFLAGS_OFF=	-DSQLITE_DISABLE_FTS3_UNICODE=1
 
 LIBEDIT_CONFIGURE_ENABLE=	editline
-LIBEDIT_USES=	libedit ncurses
-READLINES_CONFIGURE_ON=	--enable-readline
-READLINES_USES=	readline
-READLINEP_CONFIGURE_ON=	--enable-readline
-READLINEP_USES=	readline:port
+LIBEDIT_USES=	libedit
+READLINE_CONFIGURE_ENABLE=	readline
+READLINE_USES=	readline
 
 JSON1_CONFIGURE_ENABLE=	json1
 
@@ -255,6 +250,7 @@ post-build:
 
 post-install:
 	${RM} ${STAGEDIR}${PREFIX}/include/msvc.h
+	${SETENV} LD_LIBMAP_DISABLE=1 ldd -a "${STAGEDIR}${PREFIX}/bin/${PORTNAME}" "${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.so"
 
 # for compares with checksum from of the site
 sha1: checksum
