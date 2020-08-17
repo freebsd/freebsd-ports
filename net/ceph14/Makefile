@@ -3,8 +3,7 @@
 
 PORTNAME=	ceph
 DISTVERSIONPREFIX=	v
-DISTVERSION=	14.2.9
-PORTREVISION=	0
+DISTVERSION=	14.2.11
 CATEGORIES=	net
 PKGNAMESUFFIX=	14
 
@@ -39,7 +38,8 @@ LIB_DEPENDS=	\
 	liblz4.so:archivers/liblz4 \
 	libplds4.so:devel/nspr \
 	libtcmalloc.so:devel/google-perftools \
-	librabbitmq.so:net/rabbitmq-c
+	librabbitmq.so:net/rabbitmq-c \
+	libfmt.so:devel/libfmt
 RUN_DEPENDS=	\
 	bash:shells/bash \
 	flock:sysutils/flock \
@@ -52,7 +52,6 @@ RUN_DEPENDS=	\
 	${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${PY_FLAVOR} \
 	${PYTHON_PKGNAMEPREFIX}virtualenv>=0:devel/py-virtualenv@${PY_FLAVOR} \
 	${PYTHON_PKGNAMEPREFIX}protobuf>=0:devel/py-protobuf@${PY_FLAVOR} \
-	${PYTHON_PKGNAMEPREFIX}scipy>=0:science/py-scipy@${PY_FLAVOR} \
 	${PYTHON_PKGNAMEPREFIX}bcrypt>=0:security/py-bcrypt@${PY_FLAVOR} \
 	${PYTHON_PKGNAMEPREFIX}openssl>=0:security/py-openssl@${PY_FLAVOR} \
 	${PYTHON_PKGNAMEPREFIX}pyjwt>=0:www/py-pyjwt@${PY_FLAVOR} \
@@ -87,11 +86,13 @@ GH_TUPLE+=	ceph:rapidjson:f54b0e4:rapidjson/src/rapidjson
 GH_TUPLE+=	ceph:rocksdb:4c736f1:rocksdb/src/rocksdb
 GH_TUPLE+=	ceph:xxHash:1f40c65:xxHash/src/xxHash
 GH_TUPLE+=	facebook:zstd:f4340f4:zstd/src/zstd
+# GH_TUPLE+=	ceph:seastar:0cf6aa6:seastar/src/seastar
 
 CMAKE_BUILD_TYPE=	Release
 CMAKE_ON=	WITH_SYSTEM_BOOST WITH_BOOST_CONTEXT WITH_FUSE WITH_PYTHON3
 CMAKE_OFF=	WITH_LTTNG WITH_BABELTRACE WITH_KRBD WITH_XFS \
-		WITH_SPDK WITH_RDMA WITH_MGR_DASHBOARD_FRONTEND WITH_PYTHON2
+		WITH_SPDK WITH_RDMA WITH_MGR_DASHBOARD_FRONTEND WITH_PYTHON2 \
+		WITH_RADOSGW_KAFKA_ENDPOINT
 CMAKE_ARGS=	-D MGR_PYTHON_VERSION=${PYTHON_VER} \
 		-D CEPH_MAN_DIR:STRING=man
 
@@ -105,7 +106,7 @@ USE_LDCONFIG=	yes
 USERS=		ceph
 GROUPS=		ceph
 
-PLIST_SUB=	CMAKE_BUILD_TYPE_regex=\bdebug\b
+# PLIST_SUB=CMAKE_BUILD_TYPE_regex="\bdebug\b"
 
 pre-configure:
 	[ -e ${WRKSRC}/build ] || ${LN} -s ${CONFIGURE_WRKSRC} ${WRKSRC}/build

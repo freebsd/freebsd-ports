@@ -1,0 +1,13 @@
+diff --git a/src/rgw/rgw_lc.cc b/src/rgw/rgw_lc.cc
+index 9dd29627db..3ea0b70fee 100644
+--- src/rgw/rgw_lc.cc
++++ src/rgw/rgw_lc.cc
+@@ -24,7 +24,7 @@
+ // prefer header-only fmt, in general
+ #undef FMT_HEADER_ONLY
+ #define FMT_HEADER_ONLY 1
+-#include "seastar/fmt/include/fmt/format.h"
++#include "fmt/format.h"
+ 
+ #include "services/svc_sys_obj.h"
+ 
