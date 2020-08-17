@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	urllib3
-PORTVERSION=	1.25.7
+PORTVERSION=	1.25.10
 PORTEPOCH=	1
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
@@ -14,7 +14,9 @@ COMMENT=	HTTP library with thread-safe connection pooling, file post, and more
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>=0:devel/py-mock@${PY_FLAVOR} \
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flaky>=3.6.1:devel/py-flaky@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mock>=0:devel/py-mock@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}trustme>=0.6.0:security/py-trustme@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tornado>=0:www/py-tornado@${PY_FLAVOR}
 
@@ -38,6 +40,7 @@ SSL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}idna>=2.0:dns/py-idna@${PY_FLAVOR} \
 # Test 'test_ssl_read_timeout' fails with FreeBSD >= 12.0. That was already the
 # case with earlier versions of net/py-urllib3.
 do-test:
-	@cd ${WRKSRC} && ${SETENV} LC_ALL=en_US.UTF-8 ${PYTHON_CMD} -m pytest -v -rs -k 'not test_ssl_read_timeout'
+	@cd ${WRKSRC} && ${SETENV} LC_ALL=en_US.UTF-8 PYTHONPATH=${WRKSRC}/src ${TEST_ENV} \
+		${PYTHON_CMD} -m pytest -v -rs -k 'not test_ssl_read_timeout'
 
 .include <bsd.port.mk>
