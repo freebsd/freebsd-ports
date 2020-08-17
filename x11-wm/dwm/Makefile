@@ -3,7 +3,7 @@
 
 PORTNAME=	dwm
 DISTVERSION=	6.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://dl.suckless.org/${PORTNAME}/
 
@@ -23,7 +23,6 @@ USE_XORG=	x11 xft
 
 MAKE_ARGS=	CC="${CC}" \
 		FREETYPEINC="${LOCALBASE}/include/freetype2" \
-		MANPREFIX="${MANPREFIX}/man" \
 		PREFIX="${PREFIX}" \
 		VERSION="${PORTVERSION}" \
 		X11INC="${LOCALBASE}/include" \
@@ -32,7 +31,7 @@ MAKE_ARGS=	CC="${CC}" \
 SUB_FILES=	dwm.desktop
 SUB_LIST=	COMMENT="${COMMENT}"
 PLIST_FILES=	bin/dwm \
-		man/man1/dwm.1.gz \
+		share/man/man1/dwm.1.gz \
 		share/xsessions/dwm.desktop
 PORTDOCS=	README
 
