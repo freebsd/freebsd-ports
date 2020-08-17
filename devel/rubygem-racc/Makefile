@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	racc
-PORTVERSION=	1.4.16
+PORTVERSION=	1.5.0
 CATEGORIES=	devel ruby
 MASTER_SITES=	RG
 
@@ -13,6 +13,6 @@ LICENSE=	LGPL21
 
 USE_RUBY=	yes
 USES=		gem
-PLIST_FILES=	bin/racc bin/racc2y bin/y2racc
+PLIST_FILES=	bin/racc
 
 .include <bsd.port.mk>
