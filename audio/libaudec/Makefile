@@ -2,7 +2,7 @@
 
 PORTNAME=	libaudec
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.2
+DISTVERSION=	0.2.3
 CATEGORIES=	audio devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate \
 
 USES=		compiler:c11 meson pkgconfig
 USE_GITHUB=	yes
-GH_ACCOUNT=	alex-tee
+GH_ACCOUNT=	zrythm
 USE_LDCONFIG=	yes
 
 MESON_ARGS=	-Dbuild-tests=false
