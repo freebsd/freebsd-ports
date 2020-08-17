@@ -1,8 +1,8 @@
-TIMESTAMP = 1593408270
-SHA256 (Dreamacro-clash-v1.0.0_GH0.tar.gz) = eefd9fb6c413a4eca7999eb4dd1d760a5bfd61100310390ba9c24b64f0962f28
-SIZE (Dreamacro-clash-v1.0.0_GH0.tar.gz) = 117564
-SHA256 (Dreamacro-go-shadowsocks2-v0.1.5_GH0.tar.gz) = 269a4b8f2b4cd7ede5f5508ea3ef44724ac78dd4fbd99ee799c1a858a6be6ad9
-SIZE (Dreamacro-go-shadowsocks2-v0.1.5_GH0.tar.gz) = 19780
+TIMESTAMP = 1597697486
+SHA256 (Dreamacro-clash-v1.1.0_GH0.tar.gz) = 00c19e27981dd0d6e9235d588a6e913d569157879b150da1f596682f5e525cae
+SIZE (Dreamacro-clash-v1.1.0_GH0.tar.gz) = 136283
+SHA256 (Dreamacro-go-shadowsocks2-8e5c7db4f96a_GH0.tar.gz) = 68553feff702f85861aa756b943e4b013f4de70adfc27af66318b7f1498c6484
+SIZE (Dreamacro-go-shadowsocks2-8e5c7db4f96a_GH0.tar.gz) = 19916
 SHA256 (davecgh-go-spew-v1.1.1_GH0.tar.gz) = 7d82b9bb7291adbe7498fe946920ab3e7fc9e6cbfc3b2294693fad00bf0dd17e
 SIZE (davecgh-go-spew-v1.1.1_GH0.tar.gz) = 42152
 SHA256 (eapache-channels-v1.1.0_GH0.tar.gz) = 443b9361ff7db635b830e84d8eb0830477083efba53fb0c531af04e07cde3a59

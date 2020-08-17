@@ -2,7 +2,7 @@
 
 PORTNAME=	clash
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.0
+DISTVERSION=	1.1.0
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,7 +15,7 @@ USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	Dreamacro
 GH_TUPLE=	\
-		Dreamacro:go-shadowsocks2:v0.1.5:dreamacro_go_shadowsocks2/vendor/github.com/Dreamacro/go-shadowsocks2 \
+		Dreamacro:go-shadowsocks2:8e5c7db4f96a:dreamacro_go_shadowsocks2/vendor/github.com/Dreamacro/go-shadowsocks2 \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		eapache:channels:v1.1.0:eapache_channels/vendor/gopkg.in/eapache/channels.v1 \
 		eapache:queue:v1.1.0:eapache_queue/vendor/github.com/eapache/queue \
