@@ -5147,6 +5147,7 @@
     SUBDIR += py-update_checker
     SUBDIR += py-urlimport
     SUBDIR += py-urwid
+    SUBDIR += py-urwid-readline
     SUBDIR += py-urwidtrees
     SUBDIR += py-user_agents
     SUBDIR += py-userpath
