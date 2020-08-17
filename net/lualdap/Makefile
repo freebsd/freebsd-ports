@@ -6,7 +6,7 @@ PORTVERSION=	1.2.5
 CATEGORIES=	net
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
-MAINTAINER=	pf@itwf.pl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LDAP support for the Lua language
 
 LICENSE=        MIT
