@@ -5,7 +5,7 @@ PORTVERSION=	0.1.0
 PORTREVISION=	1
 CATEGORIES=	x11
 
-MAINTAINER=	trevis@silencedpoet.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General purpose messaging, notification and menuing program for X11
 
 LICENSE=	MIT
