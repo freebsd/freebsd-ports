@@ -1,3 +1,7 @@
-TIMESTAMP = 1597078364
+TIMESTAMP = 1597657392
 SHA256 (xorg/lib/libX11-1.6.11.tar.bz2) = b1cc4b802058be7e3fb438ee2490f66fcc52ac3b2a14f47a22cbf77638e33606
 SIZE (xorg/lib/libX11-1.6.11.tar.bz2) = 2389687
+SHA256 (xorg/lib/6dd618e5ea8e7558dd8e99a2777ab7b69211789c.diff) = 9e3ebb781e985372f0b10db41898873049d50094aeea58884b150ebce27b68f8
+SIZE (xorg/lib/6dd618e5ea8e7558dd8e99a2777ab7b69211789c.diff) = 1011
+SHA256 (xorg/lib/d15c24c8b44be5e4054c8ecd0ff9dcf2c8e18e5b.diff) = f0e637d850a24116c0abf7b45eff3bc926caef5df17b2664aef81c03f792bdf4
+SIZE (xorg/lib/d15c24c8b44be5e4054c8ecd0ff9dcf2c8e18e5b.diff) = 463
