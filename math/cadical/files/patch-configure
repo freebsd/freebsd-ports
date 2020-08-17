@@ -1,4 +1,4 @@
---- configure.orig	2019-12-04 05:29:57 UTC
+--- configure.orig	2019-07-12 20:22:02 UTC
 +++ configure
 @@ -154,7 +154,7 @@ do
        CXXFLAGS="`expr \"$1\" : 'CXXFLAGS=\(.*\)'`"
@@ -9,3 +9,12 @@
  
    esac
    shift
+@@ -396,7 +396,7 @@ sed \
+ -e "2c\\
+ # This 'makefile' is generated from '../makefile.in'." \
+ -e "s,@CXX@,$CXX," \
+--e "s,@CXXFLAGS@,$CXXFLAGS," \
++-e "s|@CXXFLAGS@|$CXXFLAGS|" \
+ -e "s,@MAKEFLAGS@,$MAKEFLAGS," \
+ ../makefile.in > makefile
+ 
