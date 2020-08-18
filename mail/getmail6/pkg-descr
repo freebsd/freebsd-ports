@@ -1,0 +1,20 @@
+POP3/IMAP4 mail retriever with Maildir and command delivery (python3 fork).
+
+Summary of features:
+- Retrieve mail from an unlimited number of POP3/IMAP4 mailboxes and servers.
+- Support for POP3-over-SSL and IMAP-over-SSL, as well as SDPS
+  WARNING: even with SSL, "no certificate or key validation is done." so
+  that getmail does not detect or protect from man-in-the-middle attacks.
+- Support for multidrop or domain mailboxes.
+- Safe and reliable delivery to qmail-style Maildirs, as well as program
+  (pipe) delivery for use with arbitrary external MDAs. Includes an MDA
+  for mbox files that supports mboxrd format and fcntl-type flock locking.
+- Does not destroy information by rewriting mail headers.
+- Does not cause mail loops by doing SMTP injection, and therefore does
+  not require that you run an MTA (like qmail or sendmail) on your host.
+- Can remember which mail it has already retrieved, and can be set to
+  only download new messages.
+- Written in Python, and therefore easy to extend or customize.
+- Simple to install, configure, and use.
+
+WWW: https://github.com/getmail6/getmail6/

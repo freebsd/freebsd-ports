@@ -138,6 +138,7 @@
     SUBDIR += geary
     SUBDIR += gensig
     SUBDIR += getmail
+    SUBDIR += getmail6
     SUBDIR += gmime2
     SUBDIR += gmime2-sharp
     SUBDIR += gmime24

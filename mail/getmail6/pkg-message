@@ -1,0 +1,9 @@
+[
+{ type: install
+  message: <<EOM
+This fork of getmail 5.14 was modified to work with python3. It is work in
+progress, and bugs should be reported at:
+https://github.com/getmail6/getmail6/issues
+EOM
+}
+]
