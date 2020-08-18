@@ -52,7 +52,8 @@ post-patch:
 	@${REINPLACE_CMD} -e ' \
 		s|########## LIBS AND FLAGS|CXXFLAGS+=$$$$system($$$$LLVM_CONFIG --cflags)| ; \
 		s|/use/local|${LOCALBASE}| ; \
-		s|-L/opt/local/lib$$|-L${LOCALBASE}/lib -lexecinfo|' \
+		s|-L/opt/local/lib$$|-L${LOCALBASE}/lib -lexecinfo| ; \
+		s|-L/usr/lib/||' \
 		${WRKSRC}/Build/FreeBSD/FaustLive.pro
 	@${REINPLACE_CMD} -e ' \
 		s|#!/bin/bash|#!/bin/sh|' \
