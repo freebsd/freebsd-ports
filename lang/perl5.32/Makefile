@@ -19,7 +19,7 @@ LICENSE_FILE_GPLv1+ =	${WRKSRC}/Copying
 #DEPRECATED=	Support ends three years after .0 release. Please upgrade to a more recent version of Perl
 #EXPIRATION_DATE=<Release date of .0 + 3 years>
 
-USES=		compiler cpe tar:xz
+USES=		cpe tar:xz
 
 # Give a hint of where libperl.so can be found.
 USE_LDCONFIG=	${PREFIX}/${_ARCH_LIB}/CORE
@@ -179,12 +179,6 @@ _PERL5_DEFAULT_FILE=	/tmp/PERL5_DEFAULT
 CONFIGURE_ARGS+=	-Accflags='-DUSE_THREAD_SAFE_LOCALE'
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == powerpc && ${CHOSEN_COMPILER_TYPE} == clang
-CFLAGS+=	-O1
-.endif
-
 # if this port is default due PERL5_DEFAULT
 # change PKGNAME to reflect this
 .if ${PERL_VER} == ${PERL5_DEFAULT}
@@ -296,4 +290,4 @@ post-install:
 		done
 	${INSTALL_DATA} ${WRKDIR}/perl-man.conf ${STAGEDIR}${PREFIX}/etc/man.d/perl${PKGNAMESUFFIX}.conf
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
