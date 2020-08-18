@@ -6646,6 +6646,7 @@
     SUBDIR += storm
     SUBDIR += str
     SUBDIR += strace
+    SUBDIR += string_theory
     SUBDIR += stringencoders
     SUBDIR += stxxl
     SUBDIR += subversion
