@@ -1,6 +1,6 @@
---- src/tcsd/svrside.c.orig	2016-11-19 03:09:49 UTC
+--- src/tcsd/svrside.c.orig	2014-12-20 02:37:46 UTC
 +++ src/tcsd/svrside.c
-@@ -92,12 +92,19 @@ tcsd_signal_term(int signal)
+@@ -92,20 +92,36 @@ tcsd_signal_term(int signal)
  	term = 1;
  }
  
@@ -21,8 +21,10 @@
  static TSS_RESULT
  signals_init(void)
  {
-@@ -106,6 +113,14 @@ signals_init(void)
+ 	int rc;
+ 	sigset_t sigmask;
  	struct sigaction sa;
++	struct sigaction tcsd_sa_chld;
  
  	sigemptyset(&sigmask);
 +	if ((rc = sigaddset(&sigmask, SIGCHLD))) {
@@ -36,7 +38,7 @@
  	if ((rc = sigaddset(&sigmask, SIGTERM))) {
  		LogError("sigaddset: %s", strerror(errno));
  		return TCSERR(TSS_E_INTERNAL_ERROR);
-@@ -128,12 +143,24 @@ signals_init(void)
+@@ -128,9 +144,21 @@ signals_init(void)
  		return TCSERR(TSS_E_INTERNAL_ERROR);
  	}
  
@@ -48,16 +50,13 @@
  	sa.sa_handler = tcsd_signal_hup;	
  	if ((rc = sigaction(SIGHUP, &sa, NULL))) {
  		LogError("signal SIGHUP not registered: %s", strerror(errno));
- 		return TCSERR(TSS_E_INTERNAL_ERROR);
- 	}
- 
-+	sa.sa_flags = SA_RESTART;
-+	sa.sa_handler = tcsd_signal_chld;
-+	if ((rc = sigaction(SIGCHLD, &tcsd_sa_chld, NULL))) {
-+		LogError("signal SIGCHLD not registered: %s", strerror(errno));
 +		return TCSERR(TSS_E_INTERNAL_ERROR);
 +	}
 +
- 	return TSS_SUCCESS;
- }
++	tcsd_sa_chld.sa_flags = SA_RESTART;
++	tcsd_sa_chld.sa_handler = tcsd_signal_chld;
++	if ((rc = sigaction(SIGCHLD, &tcsd_sa_chld, NULL))) {
++		LogError("signal SIGCHLD not registered: %s", strerror(errno));
+ 		return TCSERR(TSS_E_INTERNAL_ERROR);
+ 	}
  
