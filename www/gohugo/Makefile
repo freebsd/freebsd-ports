@@ -3,6 +3,7 @@
 PORTNAME=	hugo
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.74.3
+PORTREVISION=	1
 CATEGORIES=	www
 PKGNAMEPREFIX=	go
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
@@ -109,6 +110,12 @@ post-extract:
 	@${RM} -r ${WRKSRC}/vendor/github.com/googleapis/gax-go/v2
 	@${RLN} ${WRKSRC_googleapis_gax_go_v2}/v2 ${WRKSRC}/vendor/github.com/googleapis/gax-go/v2
 
+GO_BUILDFLAGS=	-ldflags="\
+		-s -w \
+		-X github.com/gohugoio/hugo/common/hugo.buildDate=${SOURCE_DATE_EPOCH:U${SOURCE_DATE_EPOCH_CMD:sh}} \
+		-X github.com/gohugoio/hugo/common/hugo.commitHash=${COMMIT_ID}" \
+		${BUILD_TAGS}
+
 OPTIONS_DEFINE=		MANPAGES EXTENDED
 OPTIONS_DEFAULT=	MANPAGES EXTENDED
 OPTIONS_SUB=		yes
@@ -131,7 +138,7 @@ PORTMANS=	hugo-config.1 hugo-convert-toJSON.1 hugo-convert-toTOML.1 \
 .include <bsd.port.pre.mk>
 
 SOURCE_DATE_EPOCH_CMD=	date -r $$(grep TIMESTAMP ${DISTINFO_FILE} | ${SED} -e 's/[^0-9]//g') '+%FT%TZ%z'
-COMMIT_ID=		da0437b481eff75508272e2b98615ed52bc157cf
+COMMIT_ID=		da0437b4
 
 do-build-MANPAGES-on:
 	@cd ${GO_WRKSRC} && ${GO_WRKDIR_BIN}/${PORTNAME} gen man --dir man/man1/
