@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chibi-scheme
-DISTVERSION=	0.9
+DISTVERSION=	0.9.1
 CATEGORIES=	lang
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -22,6 +22,7 @@ ALL_TARGET=	all libchibi-scheme.a
 TEST_TARGET=	test
 
 PORTSCOUT=	skipv:stable
+PLIST_SUB=	SOVERSION=${DISTVERSION}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's@ -g -g3 -O3 @ @' \

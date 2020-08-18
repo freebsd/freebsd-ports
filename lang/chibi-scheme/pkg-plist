@@ -41,7 +41,7 @@ lib/chibi/srfi/98/env.so
 lib/libchibi-scheme.a
 lib/libchibi-scheme.so
 lib/libchibi-scheme.so.0
-lib/libchibi-scheme.so.0.9.0
+lib/libchibi-scheme.so.%%SOVERSION%%
 libdata/pkgconfig/chibi-scheme.pc
 share/chibi/.chibi.meta
 share/chibi/.scheme.meta
@@ -404,6 +404,7 @@ share/chibi/srfi/154.sld
 share/chibi/srfi/158.scm
 share/chibi/srfi/158.sld
 share/chibi/srfi/159.sld
+share/chibi/srfi/159/base.scm
 share/chibi/srfi/159/base.sld
 share/chibi/srfi/159/color.sld
 share/chibi/srfi/159/columnar.sld
