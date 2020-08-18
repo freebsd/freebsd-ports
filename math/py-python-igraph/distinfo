@@ -1,2 +1,3 @@
-SHA256 (python-igraph-0.7.0.tar.gz) = 64ac270e80a92066d489407be1900a329df8e26844430f941ecc88771188c471
-SIZE (python-igraph-0.7.0.tar.gz) = 369325
+TIMESTAMP = 1597653394
+SHA256 (python-igraph-0.8.2.tar.gz) = 4601638d7d22eae7608cdf793efac75e6c039770ec4bd2cecf76378c84ce7d72
+SIZE (python-igraph-0.8.2.tar.gz) = 3970354
