@@ -1,14 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	verilator
-DISTVERSION=	4.038
+DISTVERSION=	4.040
 CATEGORIES=	cad
 MASTER_SITES=	https://www.veripool.org/ftp/
 
 PATCH_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/commit/
 PATCHFILES+=	39f16fb155b9e909f919a9d4ae06890395987b16.patch:-p1 # https://github.com/verilator/verilator/pull/2353
 
-MAINTAINER=	kevinz5000@gmail.com
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Synthesizable Verilog to C++ compiler
 
 LICENSE=	GPLv3
