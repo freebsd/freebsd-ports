@@ -1556,6 +1556,8 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/tests/functional/compression/compress_002_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/compression/compress_003_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/compression/compress_004_pos.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/compression/l2arc_compressed_arc.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/compression/l2arc_compressed_arc_disabled.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/compression/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cp_files/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cp_files/cp_files
