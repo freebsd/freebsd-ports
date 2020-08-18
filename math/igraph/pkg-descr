@@ -9,4 +9,4 @@ manipulating graphs, assigning attributes to vertices and edges.
 It can calculate various structural properties, includes heuristics
 for community structure detection, supports many file formats.
 
-WWW: http://igraph.org/
+WWW: https://igraph.org/

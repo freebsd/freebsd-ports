@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	igraph
-PORTVERSION=	0.7.1
+PORTVERSION=	0.8.2
 CATEGORIES=	math
-MASTER_SITES=	http://igraph.org/nightly/get/c/
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Package For Manipulating Undirected And Directed Graphs
@@ -16,13 +15,16 @@ BROKEN_sparc64=		fails to compile: uses x86 asm
 
 LIB_DEPENDS=	libgmp.so:math/gmp
 
-GNU_CONFIGURE=	yes
-USES=		gmake gnome libtool pathfix
+USES=		autoreconf bison gmake gnome libtool pathfix
+USE_GITHUB=	yes
 USE_GNOME=	libxml2
-CONFIGURE_ARGS+=	--enable-gmp
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 USE_LDCONFIG=	yes
+
+GNU_CONFIGURE=	yes
+
+INSTALL_TARGET=	install-strip
+
+pre-configure:
+	@${ECHO} ${PORTVERSION} > ${WRKSRC}/IGRAPH_VERSION
 
 .include <bsd.port.mk>

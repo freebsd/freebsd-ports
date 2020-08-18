@@ -10,6 +10,7 @@ include/igraph/igraph_centrality.h
 include/igraph/igraph_cliques.h
 include/igraph/igraph_cocitation.h
 include/igraph/igraph_cohesive_blocks.h
+include/igraph/igraph_coloring.h
 include/igraph/igraph_community.h
 include/igraph/igraph_complex.h
 include/igraph/igraph_components.h
@@ -17,9 +18,11 @@ include/igraph/igraph_constants.h
 include/igraph/igraph_constructors.h
 include/igraph/igraph_conversion.h
 include/igraph/igraph_datatype.h
+include/igraph/igraph_decls.h
 include/igraph/igraph_dqueue.h
 include/igraph/igraph_dqueue_pmt.h
 include/igraph/igraph_eigen.h
+include/igraph/igraph_embedding.h
 include/igraph/igraph_epidemics.h
 include/igraph/igraph_error.h
 include/igraph/igraph_flow.h
@@ -34,6 +37,7 @@ include/igraph/igraph_interrupt.h
 include/igraph/igraph_iterators.h
 include/igraph/igraph_lapack.h
 include/igraph/igraph_layout.h
+include/igraph/igraph_lsap.h
 include/igraph/igraph_matching.h
 include/igraph/igraph_matrix.h
 include/igraph/igraph_matrix_pmt.h
@@ -51,7 +55,7 @@ include/igraph/igraph_progress.h
 include/igraph/igraph_psumtree.h
 include/igraph/igraph_qsort.h
 include/igraph/igraph_random.h
-include/igraph/igraph_revolver.h
+include/igraph/igraph_scan.h
 include/igraph/igraph_scg.h
 include/igraph/igraph_separators.h
 include/igraph/igraph_sparsemat.h
