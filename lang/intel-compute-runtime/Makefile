@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	compute-runtime
-DISTVERSION=	20.31.17495
+DISTVERSION=	20.32.17625
 CATEGORIES=	lang
 PKGNAMEPREFIX=	intel-
 
@@ -36,11 +36,11 @@ OPTIONS_DEFINE_amd64=	L0
 OPTIONS_DEFAULT_amd64=	L0
 
 L0_DESC=		oneAPI Level Zero support
-L0_BUILD_DEPENDS=	level-zero>0:devel/level-zero
+L0_BUILD_DEPENDS=	level-zero>=1.0:devel/level-zero
 L0_CMAKE_BOOL=		BUILD_WITH_L0
 L0_CMAKE_ON=		-DNEO_VERSION_BUILD:STRING="0"
-L0_PLIST_FILES=		lib/libze_intel_gpu.so.0.8 \
-			lib/libze_intel_gpu.so.0.8.0
+L0_PLIST_FILES=		lib/libze_intel_gpu.so.1 \
+			lib/libze_intel_gpu.so.1.0.0
 
 VAAPI_BUILD_DEPENDS=	${LOCALBASE}/include/va/va.h:multimedia/libva
 VAAPI_CMAKE_BOOL_OFF=	DISABLE_LIBVA
