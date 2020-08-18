@@ -3,6 +3,7 @@
 
 PORTNAME=	libunwind
 PORTVERSION=	20200331	# This is the release date on SAVANNAH
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SAVANNAH \
 		https://github.com/libunwind/libunwind/releases/download/v${PORTVERSION}/
@@ -10,6 +11,9 @@ DISTNAME=	${PORTNAME}-1.4.0
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Generic stack unwinding library
+
+PATCH_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/commit/
+PATCHFILES+=	29e17d8d2ccbca07c423e3089a6d5ae8a1c9cb6e.diff:-p1
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
