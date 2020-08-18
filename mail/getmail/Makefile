@@ -19,20 +19,23 @@ USES=		python:2.7
 USE_PYTHON=	distutils
 
 NO_ARCH=	yes
-PORTDOCS=	README BUGS CHANGELOG THANKS TODO *.txt *.html *.css
+NO_BUILD=	yes
+
+PORTDOCS=	*.css *.html *.txt BUGS CHANGELOG README THANKS TODO
+PORTEXAMPLES=	getmailrc-examples
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-install:
 	@${CHMOD} -R 644 ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/getmailcore/*
 
-post-install-EXAMPLES-on:
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/getmailrc-examples ${STAGEDIR}${EXAMPLESDIR}
-
 post-install-DOCS-on:
 	@${CP} ${WRKSRC}/README ${WRKSRC}/docs/
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/docs/,} ${STAGEDIR}${DOCSDIR}
+
+post-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/getmailrc-examples ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
