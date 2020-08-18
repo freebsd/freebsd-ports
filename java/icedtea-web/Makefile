@@ -29,7 +29,8 @@ JAVA_OS=	native
 JAVA_VENDOR=	openjdk
 USE_PERL5=	build
 USE_XORG=	x11
-USES=		autoreconf desktop-file-utils gmake perl5 pkgconfig shebangfix xorg
+USES=		autoreconf compiler:c++11-lang desktop-file-utils gmake perl5 \
+		pkgconfig shebangfix xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	AdoptOpenJDK
 GH_PROJECT=	IcedTea-Web
