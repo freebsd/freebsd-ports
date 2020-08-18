@@ -310,7 +310,6 @@ share/emacs/site-lisp/lilypond-words.el
 %%DATADIR%%/%%DISTVERSION%%/scm/framework-null.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/framework-ps.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/framework-scm.scm
-%%DATADIR%%/%%DISTVERSION%%/scm/framework-socket.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/framework-svg.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/fret-diagrams.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/graphviz.scm
@@ -329,7 +328,6 @@ share/emacs/site-lisp/lilypond-words.el
 %%DATADIR%%/%%DISTVERSION%%/scm/music-functions.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/output-lib.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/output-ps.scm
-%%DATADIR%%/%%DISTVERSION%%/scm/output-socket.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/output-svg.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/page.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/paper-system.scm
