@@ -1,0 +1,35 @@
+media/libcubeb/src/cubeb_alsa.c:613:9: error: implicitly declaring library function 'snprintf' with type 'int (char *, unsigned int, const char *, ...)' [-Werror,-Wimplicit-function-declaration]
+    r = snprintf(node_name, sizeof(node_name), "pcm.%s", string);
+        ^
+media/libcubeb/src/cubeb_alsa.c:613:9: note: include the header <stdio.h> or explicitly provide a declaration for 'snprintf'
+media/libcubeb/src/cubeb_alsa.c:1168:3: error: implicitly declaring library function 'alloca' with type 'void *(unsigned int)' [-Werror,-Wimplicit-function-declaration]
+  snd_pcm_hw_params_alloca(&hw_params);
+  ^
+/usr/local/include/alsa/pcm.h:737:39: note: expanded from macro 'snd_pcm_hw_params_alloca'
+#define snd_pcm_hw_params_alloca(ptr) __snd_alloca(ptr, snd_pcm_hw_params)
+                                      ^
+/usr/local/include/alsa/global.h:106:57: note: expanded from macro '__snd_alloca'
+#define __snd_alloca(ptr,type) do { *ptr = (type##_t *) alloca(type##_sizeof()); memset(*ptr, 0, type##_sizeof()); } while (0)
+                                                        ^
+media/libcubeb/src/cubeb_alsa.c:1168:3: note: include the header <stdlib.h> or explicitly provide a declaration for 'alloca'
+/usr/local/include/alsa/pcm.h:737:39: note: expanded from macro 'snd_pcm_hw_params_alloca'
+#define snd_pcm_hw_params_alloca(ptr) __snd_alloca(ptr, snd_pcm_hw_params)
+                                      ^
+/usr/local/include/alsa/global.h:106:57: note: expanded from macro '__snd_alloca'
+#define __snd_alloca(ptr,type) do { *ptr = (type##_t *) alloca(type##_sizeof()); memset(*ptr, 0, type##_sizeof()); } while (0)
+                                                        ^
+2 errors generated.
+
+--- media/libcubeb/src/cubeb_alsa.c~
++++ media/libcubeb/src/cubeb_alsa.c
+@@ -5,9 +5,7 @@
+  * accompanying file LICENSE for details.
+  */
+ #undef NDEBUG
+-#define _DEFAULT_SOURCE
+-#define _BSD_SOURCE
+-#define _XOPEN_SOURCE 500
++#define _GNU_SOURCE 1
+ #include <pthread.h>
+ #include <sys/time.h>
+ #include <assert.h>
