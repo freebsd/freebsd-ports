@@ -16,7 +16,7 @@ DEPRECATED=	Uses deprecated version of python
 EXPIRATION_DATE=	2020-09-15
 
 USES=		python:2.7
-USE_PYTHON=	distutils
+USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
 NO_BUILD=	yes
