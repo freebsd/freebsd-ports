@@ -1,6 +1,6 @@
-TIMESTAMP = 1593989463
-SHA256 (elves-elvish-v0.14.0_GH0.tar.gz) = 36ed5e0318d75f7e7d616398e42477cfbd6fd2a1d1f108dee7941621cfb7378a
-SIZE (elves-elvish-v0.14.0_GH0.tar.gz) = 575655
+TIMESTAMP = 1597667743
+SHA256 (elves-elvish-v0.14.1_GH0.tar.gz) = 8a8113c0a1325785b212ed59410869bdea30ca2cb7400f95ebb3fbc8689eb6d8
+SIZE (elves-elvish-v0.14.1_GH0.tar.gz) = 575753
 SHA256 (BurntSushi-toml-v0.3.1_GH0.tar.gz) = 6593da894578ba510a470735ffbdc88ce88033094dc5a8f4d3957ab87e18803f
 SIZE (BurntSushi-toml-v0.3.1_GH0.tar.gz) = 42077
 SHA256 (etcd-io-bbolt-v1.3.4_GH0.tar.gz) = 536029610c6cd08e4a9fe2e1b0857ae539b0736850132cbbe1c18f0fbed8a4da
