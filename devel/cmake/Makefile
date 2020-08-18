@@ -46,6 +46,8 @@ CPACK_USES_OFF=		libarchive
 
 CONFLICTS_INSTALL=	cmake-modules-*
 
+CXXFLAGS+=	-D__BSD_VISIBLE
+
 .include <bsd.port.pre.mk>
 
 .if defined(STRIP) && ${STRIP} != "" && !defined(WITH_DEBUG)
