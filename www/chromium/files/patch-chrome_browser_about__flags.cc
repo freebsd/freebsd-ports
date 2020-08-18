@@ -1,4 +1,4 @@
---- chrome/browser/about_flags.cc.orig	2020-07-07 21:58:13 UTC
+--- chrome/browser/about_flags.cc.orig	2020-08-18 18:40:04 UTC
 +++ chrome/browser/about_flags.cc
 @@ -179,7 +179,7 @@
  #include "ui/gl/gl_switches.h"
@@ -77,7 +77,7 @@
      {"enable-preconnect-to-search",
       flag_descriptions::kEnablePreconnectToSearchName,
       flag_descriptions::kEnablePreconnectToSearchDescription, kOsAll,
-@@ -3399,7 +3399,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -3403,7 +3403,7 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(
           omnibox::kHistoryQuickProviderAllowMidwordContinuations)},
  
@@ -86,7 +86,7 @@
      {"omnibox-experimental-keyword-mode",
       flag_descriptions::kOmniboxExperimentalKeywordModeName,
       flag_descriptions::kOmniboxExperimentalKeywordModeDescription, kOsDesktop,
-@@ -3454,7 +3454,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -3458,7 +3458,7 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_WITH_PARAMS_VALUE_TYPE(omnibox::kRichAutocompletion,
                                      kOmniboxRichAutocompletionVariations,
                                      "OmniboxBundledExperimentV1")},
@@ -95,7 +95,7 @@
  
      {"enable-speculative-service-worker-start-on-query-input",
       flag_descriptions::kSpeculativeServiceWorkerStartOnQueryInputName,
-@@ -3670,13 +3670,13 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -3674,13 +3674,13 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kClickToOpenPDFDescription, kOsAll,
       FEATURE_VALUE_TYPE(features::kClickToOpenPDFPlaceholder)},
  
@@ -111,7 +111,7 @@
  
  #if !defined(OS_ANDROID)
      {"ntp-confirm-suggestion-removals",
-@@ -4361,7 +4361,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -4365,7 +4365,7 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(kClickToCallUI)},
  #endif  // BUILDFLAG(ENABLE_CLICK_TO_CALL)
  
@@ -120,7 +120,7 @@
      defined(OS_CHROMEOS)
      {"remote-copy-receiver", flag_descriptions::kRemoteCopyReceiverName,
       flag_descriptions::kRemoteCopyReceiverDescription, kOsDesktop,
-@@ -4378,7 +4378,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -4382,7 +4382,7 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kRemoteCopyProgressNotificationName,
       flag_descriptions::kRemoteCopyProgressNotificationDescription, kOsDesktop,
       FEATURE_VALUE_TYPE(kRemoteCopyProgressNotification)},
@@ -129,7 +129,7 @@
          // defined(OS_CHROMEOS)
  
      {"shared-clipboard-ui", flag_descriptions::kSharedClipboardUIName,
-@@ -4404,7 +4404,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -4408,7 +4408,7 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(
           send_tab_to_self::kSendTabToSelfOmniboxSendingAnimation)},
  
@@ -138,7 +138,7 @@
      defined(OS_CHROMEOS)
      {"sharing-peer-connection-receiver",
       flag_descriptions::kSharingPeerConnectionReceiverName,
-@@ -4415,7 +4415,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -4419,7 +4419,7 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kSharingPeerConnectionSenderName,
       flag_descriptions::kSharingPeerConnectionSenderDescription, kOsDesktop,
       FEATURE_VALUE_TYPE(kSharingPeerConnectionSender)},
@@ -147,7 +147,7 @@
          // defined(OS_CHROMEOS)
  
      {"sharing-prefer-vapid", flag_descriptions::kSharingPreferVapidName,
-@@ -4490,13 +4490,13 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -4494,13 +4494,13 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(printing::features::kEnableCustomMacPaperSizes)},
  #endif
  
@@ -163,7 +163,7 @@
          // defined(OS_CHROMEOS)
  
      {"enable-audio-focus-enforcement",
-@@ -4937,7 +4937,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -4941,7 +4941,7 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kEnableSyncUSSNigoriDescription, kOsAll,
       FEATURE_VALUE_TYPE(switches::kSyncUSSNigori)},
  
@@ -172,7 +172,7 @@
      {"global-media-controls", flag_descriptions::kGlobalMediaControlsName,
       flag_descriptions::kGlobalMediaControlsDescription,
       kOsWin | kOsMac | kOsLinux,
-@@ -4954,7 +4954,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -4958,7 +4958,7 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kGlobalMediaControlsPictureInPictureDescription,
       kOsWin | kOsMac | kOsLinux | kOsCrOS,
       FEATURE_VALUE_TYPE(media::kGlobalMediaControlsPictureInPicture)},

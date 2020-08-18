@@ -1,5 +1,5 @@
---- services/device/hid/hid_service_freebsd.cc.orig	2020-07-18 19:40:14.415772000 -0700
-+++ services/device/hid/hid_service_freebsd.cc	2020-07-21 20:00:55.322907000 -0700
+--- services/device/hid/hid_service_freebsd.cc.orig	2020-08-18 20:44:53 UTC
++++ services/device/hid/hid_service_freebsd.cc
 @@ -0,0 +1,382 @@
 +// Copyright 2014 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be

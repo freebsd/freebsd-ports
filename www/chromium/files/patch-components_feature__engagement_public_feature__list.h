@@ -1,6 +1,6 @@
---- components/feature_engagement/public/feature_list.h.orig	2020-07-07 21:58:15 UTC
+--- components/feature_engagement/public/feature_list.h.orig	2020-08-18 18:40:09 UTC
 +++ components/feature_engagement/public/feature_list.h
-@@ -113,7 +113,7 @@ DEFINE_VARIATION_PARAM(kIPHBadgedTranslateManualTrigge
+@@ -119,7 +119,7 @@ DEFINE_VARIATION_PARAM(kIPHBadgedTranslateManualTrigge
                         "IPH_BadgedTranslateManualTrigger");
  #endif  // defined(OS_IOS)
  
@@ -9,7 +9,7 @@
      defined(OS_CHROMEOS)
  DEFINE_VARIATION_PARAM(kIPHFocusModeFeature, "IPH_FocusMode");
  DEFINE_VARIATION_PARAM(kIPHGlobalMediaControls, "IPH_GlobalMediaControls");
-@@ -124,7 +124,7 @@ DEFINE_VARIATION_PARAM(kIPHBookmarkFeature, "IPH_Bookm
+@@ -130,7 +130,7 @@ DEFINE_VARIATION_PARAM(kIPHBookmarkFeature, "IPH_Bookm
  DEFINE_VARIATION_PARAM(kIPHIncognitoWindowFeature, "IPH_IncognitoWindow");
  DEFINE_VARIATION_PARAM(kIPHNewTabFeature, "IPH_NewTab");
  #endif  // BUILDFLAG(ENABLE_LEGACY_DESKTOP_IN_PRODUCT_HELP)
@@ -18,7 +18,7 @@
          // defined(OS_CHROMEOS)
  
  }  // namespace
-@@ -176,7 +176,7 @@ constexpr flags_ui::FeatureEntry::FeatureVariation
+@@ -185,7 +185,7 @@ constexpr flags_ui::FeatureEntry::FeatureVariation
          VARIATION_ENTRY(kIPHNewIncognitoTabTipFeature),
          VARIATION_ENTRY(kIPHBadgedReadingListFeature),
          VARIATION_ENTRY(kIPHBadgedTranslateManualTriggerFeature),
@@ -27,7 +27,7 @@
      defined(OS_CHROMEOS)
          VARIATION_ENTRY(kIPHFocusModeFeature),
          VARIATION_ENTRY(kIPHGlobalMediaControls),
-@@ -187,7 +187,7 @@ constexpr flags_ui::FeatureEntry::FeatureVariation
+@@ -196,7 +196,7 @@ constexpr flags_ui::FeatureEntry::FeatureVariation
          VARIATION_ENTRY(kIPHIncognitoWindowFeature),
          VARIATION_ENTRY(kIPHNewTabFeature),
  #endif  // BUILDFLAG(ENABLE_LEGACY_DESKTOP_IN_PRODUCT_HELP)
