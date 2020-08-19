@@ -1,3 +1,3 @@
-TIMESTAMP = 1485785797
-SHA256 (rdflib-4.2.2.tar.gz) = da1df14552555c5c7715d8ce71c08f404c988c58a1ecd38552d0da4fc261280d
-SIZE (rdflib-4.2.2.tar.gz) = 905094
+TIMESTAMP = 1597570083
+SHA256 (rdflib-5.0.0.tar.gz) = 78149dd49d385efec3b3adfbd61c87afaf1281c30d3fcaf1b323b34f603fb155
+SIZE (rdflib-5.0.0.tar.gz) = 818586
