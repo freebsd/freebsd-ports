@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aws-sigv4
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
