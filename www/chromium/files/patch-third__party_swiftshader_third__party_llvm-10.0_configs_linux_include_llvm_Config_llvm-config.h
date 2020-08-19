@@ -1,6 +1,6 @@
---- third_party/swiftshader/third_party/llvm-7.0/configs/linux/include/llvm/Config/llvm-config.h.orig	2019-09-09 21:57:03 UTC
-+++ third_party/swiftshader/third_party/llvm-7.0/configs/linux/include/llvm/Config/llvm-config.h
-@@ -38,7 +38,7 @@
+--- third_party/swiftshader/third_party/llvm-10.0/configs/linux/include/llvm/Config/llvm-config.h.orig	2020-08-18 18:42:46 UTC
++++ third_party/swiftshader/third_party/llvm-10.0/configs/linux/include/llvm/Config/llvm-config.h
+@@ -35,7 +35,7 @@
  #elif defined(__arm__)
  #define LLVM_DEFAULT_TARGET_TRIPLE "armv7-linux-gnueabihf"
  #elif defined(__aarch64__)
@@ -9,7 +9,7 @@
  #elif defined(__mips__)
  #define LLVM_DEFAULT_TARGET_TRIPLE "mipsel-linux-gnu"
  #elif defined(__mips64)
-@@ -63,7 +63,7 @@
+@@ -60,7 +60,7 @@
  #elif defined(__arm__)
  #define LLVM_HOST_TRIPLE "armv7-linux-gnueabihf"
  #elif defined(__aarch64__)

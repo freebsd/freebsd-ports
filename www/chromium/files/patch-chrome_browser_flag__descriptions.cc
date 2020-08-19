@@ -1,6 +1,6 @@
---- chrome/browser/flag_descriptions.cc.orig	2020-07-07 21:58:13 UTC
+--- chrome/browser/flag_descriptions.cc.orig	2020-08-18 18:40:05 UTC
 +++ chrome/browser/flag_descriptions.cc
-@@ -3923,7 +3923,7 @@ const char kZeroCopyVideoCaptureDescription[] =
+@@ -3929,7 +3929,7 @@ const char kZeroCopyVideoCaptureDescription[] =
  
  #endif  // defined(OS_CHROMEOS)
  
@@ -9,7 +9,7 @@
  
  #if BUILDFLAG(USE_TCMALLOC)
  const char kDynamicTcmallocName[] = "Dynamic Tcmalloc Tuning";
-@@ -3932,7 +3932,7 @@ const char kDynamicTcmallocDescription[] =
+@@ -3938,7 +3938,7 @@ const char kDynamicTcmallocDescription[] =
      "utilization.";
  #endif  // BUILDFLAG(USE_TCMALLOC)
  
@@ -18,7 +18,7 @@
  
  // All views-based platforms --------------------------------------------------
  
-@@ -3962,13 +3962,13 @@ const char kReopenTabInProductHelpDescription[] =
+@@ -3968,13 +3968,13 @@ const char kReopenTabInProductHelpDescription[] =
  
  // Random platform combinations -----------------------------------------------
  
@@ -34,7 +34,7 @@
  
  #if BUILDFLAG(ENABLE_CLICK_TO_CALL)
  
-@@ -3980,7 +3980,7 @@ const char kClickToCallUIDescription[] =
+@@ -3986,7 +3986,7 @@ const char kClickToCallUIDescription[] =
  
  #endif  // BUILDFLAG(ENABLE_CLICK_TO_CALL)
  
@@ -43,7 +43,7 @@
      defined(OS_CHROMEOS)
  
  const char kEnableMediaFeedsName[] = "Enables Media Feeds";
-@@ -4012,16 +4012,16 @@ const char kRemoteCopyProgressNotificationDescription[
+@@ -4018,16 +4018,16 @@ const char kRemoteCopyProgressNotificationDescription[
      "Enables progress notifications to be shown for the remote copy feature "
      "when receiving a message.";
  
