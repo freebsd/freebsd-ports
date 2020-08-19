@@ -9,10 +9,12 @@ MASTER_SITES=	RG
 MAINTAINER=	meta@FreeBSD.org
 COMMENT=	LALR(1) parser generator for Ruby
 
-LICENSE=	LGPL21
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
 PLIST_FILES=	bin/racc
 
 .include <bsd.port.mk>
