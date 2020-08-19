@@ -3,6 +3,7 @@
 
 PORTNAME=	check_redis
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	#
 PKGNAMEPREFIX=	nagios-
@@ -12,6 +13,7 @@ MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Nagios plugin to check redis server
 
 RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/utils.pm:net-mgmt/nagios-plugins \
+		p5-Nagios-Plugin>=0:net-mgmt/p5-Nagios-Plugin \
 		p5-Redis>=0:databases/p5-Redis \
 		p5-Net-SNMP>=0:net-mgmt/p5-Net-SNMP
 
