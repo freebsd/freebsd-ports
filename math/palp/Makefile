@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	palp
-PORTVERSION=	2.11
+PORTVERSION=	2.12
 CATEGORIES=	math
 MASTER_SITES=	http://hep.itp.tuwien.ac.at/~kreuzer/CY/palp/
 
