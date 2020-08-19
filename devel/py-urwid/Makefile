@@ -14,12 +14,11 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		python
-
-OPTIONS_DEFINE=	EXAMPLES
-
 USE_PYTHON=	autoplist concurrent distutils
 
 PORTEXAMPLES=	*
+
+OPTIONS_DEFINE=	EXAMPLES
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/urwid/str_util.so
