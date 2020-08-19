@@ -1,8 +1,5 @@
 sbin/pipsecd
 etc/ipsec/pipsecd.conf.sample
-@mode 755
-etc/rc.d/pipsecd.sh
-@mode 644
 %%PORTDOCS%%share/doc/pipsecd/README
 %%PORTDOCS%%share/doc/pipsecd/COPYRIGHT
 %%PORTDOCS%%share/doc/pipsecd/README.port
