@@ -1,0 +1,21 @@
+Install relative symlinks instead of absolute ones.
+
+This is useful when installing into a staging directory to avoid getting links
+temporarily pointing out of that directory.
+
+--- Makefile.am.orig	2020-02-09 14:53:55 UTC
++++ Makefile.am
+@@ -168,9 +168,10 @@ TESTS = tests/test1 \
+ 		tests/unit_tests
+ 
+ install-exec-hook :
+-	ln -sf $(bindir)/par2$(EXEEXT) $(DESTDIR)$(bindir)/par2create$(EXEEXT)
+-	ln -sf $(bindir)/par2$(EXEEXT) $(DESTDIR)$(bindir)/par2verify$(EXEEXT)
+-	ln -sf $(bindir)/par2$(EXEEXT) $(DESTDIR)$(bindir)/par2repair$(EXEEXT)
++	cd $(DESTDIR)$(bindir)/ && \
++	ln -sf par2$(EXEEXT) par2create$(EXEEXT) && \
++	ln -sf par2$(EXEEXT) par2verify$(EXEEXT) && \
++	ln -sf par2$(EXEEXT) par2repair$(EXEEXT)
+ 
+ uninstall-hook :
+ 	rm -f $(DESTDIR)$(bindir)/par2create$(EXEEXT)

@@ -2,27 +2,41 @@
 # $FreeBSD$
 
 PORTNAME=	par2cmdline
-PORTVERSION=	0.4
-PORTREVISION=	4
+PORTVERSION=	0.8.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	archivers
-MASTER_SITES=	SF/parchive/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Tools for using Parity v2 Archive files
 
 LICENSE=	GPLv2
 
+USES=		autoreconf
 GNU_CONFIGURE=	yes
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	Parchive
+GH_PROJECT=	par2cmdline
 
 PORTDOCS=	README
 CONFLICTS=	par2cmdline-tbb-[0-9]*
 
-PLIST_FILES=	bin/par2 bin/par2create bin/par2repair bin/par2verify
+PLIST_FILES=	bin/par2 bin/par2create bin/par2repair bin/par2verify man/man1/par2.1.gz
 
 OPTIONS_DEFINE=	DOCS
+
+TEST_TARGET=	check
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == i386
+# ld: error: undefined symbol: __atomic_load
+# See: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=230888
+USE_GCC=	yes
+.endif
+
+.include <bsd.port.post.mk>
