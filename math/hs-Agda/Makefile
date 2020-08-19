@@ -3,7 +3,7 @@
 
 PORTNAME=	Agda
 PORTVERSION=	2.6.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -65,7 +65,8 @@ agda_DATADIR_VARS=	Agda
 agda-mode_DATADIR_VARS=	Agda
 
 post-build:
-	${SETENV} Agda_datadir=${WRKSRC}/src/data $$(find ${WRKSRC}/dist-newstyle -name agda-mode -type f -perm +111) compile
+#	Do not compile Emacs mode files until https://github.com/agda/agda/issues/4610 is fixed
+#	${SETENV} Agda_datadir=${WRKSRC}/src/data $$(find ${WRKSRC}/dist-newstyle -name agda-mode -type f -perm +111) compile
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/lib/prim/Agda
