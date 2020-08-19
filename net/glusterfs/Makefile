@@ -20,8 +20,8 @@ RUN_DEPENDS=	bash:shells/bash
 
 BROKEN_SSL=	libressl
 
-USES=		autoreconf bison gettext gnome libtool pkgconfig python \
-		readline shebangfix sqlite ssl
+USES=		autoreconf bison compiler:c11 gettext gnome libtool pkgconfig \
+		python readline shebangfix sqlite ssl
 
 SHEBANG_FILES=	events/src/glustereventsd.py events/src/peer_eventsapi.py \
 		events/tools/eventsdash.py extras/ganesha/ocf/ganesha_grace \
