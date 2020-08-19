@@ -1,0 +1,24 @@
+Add hyphen to RANDR output names for consistency with modesetting(4x)
+
+--- src/sna/sna_display.c.orig	2018-12-03 09:01:25 UTC
++++ src/sna/sna_display.c
+@@ -5126,7 +5126,7 @@ sna_output_add(struct sna *sna, unsigned id, unsigned 
+ 		output_name = output_names[compat_conn.conn.connector_type];
+ 	else
+ 		output_name = "UNKNOWN";
+-	len = snprintf(name, 32, "%s%d", output_name, compat_conn.conn.connector_type_id);
++	len = snprintf(name, 32, "%s-%d", output_name, compat_conn.conn.connector_type_id);
+ 	if (output_ignored(scrn, name))
+ 		return 0;
+ 
+--- src/uxa/intel_display.c.orig	2018-12-03 09:01:25 UTC
++++ src/uxa/intel_display.c
+@@ -1484,7 +1484,7 @@ drmmode_create_name(ScrnInfoPtr pScrn, drmModeConnecto
+ 		else
+ 			output_name = "UNKNOWN";
+ 
+-		snprintf(name, 32, "%s%d",
++		snprintf(name, 32, "%s-%d",
+ 			 output_name, koutput->connector_type_id);
+ 	}
+ }

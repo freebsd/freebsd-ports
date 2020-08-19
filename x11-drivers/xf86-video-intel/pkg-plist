@@ -1,8 +1,8 @@
-lib/libI810XvMC.so
-lib/libI810XvMC.so.1
-lib/libI810XvMC.so.1.0.0
-lib/libIntelXvMC.so.1
-lib/libIntelXvMC.so
-lib/libIntelXvMC.so.1.0.0
+%%XVMC%%lib/libI810XvMC.so
+%%XVMC%%lib/libI810XvMC.so.1
+%%XVMC%%lib/libI810XvMC.so.1.0.0
+%%XVMC%%lib/libIntelXvMC.so.1
+%%XVMC%%lib/libIntelXvMC.so
+%%XVMC%%lib/libIntelXvMC.so.1.0.0
 lib/xorg/modules/drivers/intel_drv.so
 man/man4/intel.4x.gz

@@ -1,16 +1,9 @@
---- src/intel_device.c.orig	2017-02-28 20:52:19 UTC
+i915 requires KMS, so FreeBSD uses suffix to distinguish drm1 and drm2 drivers.
+drm-kmod kept the same name at the cost of conflict with in-base drm2.
+
+--- src/intel_device.c.orig	2019-02-21 22:26:50 UTC
 +++ src/intel_device.c
-@@ -28,6 +28,9 @@
- #include "config.h"
- #endif
- 
-+#define _WITH_GETLINE	/* to expose getline() in stdio.h on FreeBSD */
-+#include <stdio.h>	/* for getline() */
-+
- #include <sys/types.h>
- #include <sys/stat.h>
- #include <assert.h>
-@@ -204,6 +207,7 @@ static inline struct intel_device *intel
+@@ -204,6 +204,7 @@ static inline struct intel_device *intel_device(ScrnIn
  }
  
  static const char *kernel_module_names[] ={

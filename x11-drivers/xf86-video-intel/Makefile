@@ -2,42 +2,52 @@
 # $FreeBSD$
 
 PORTNAME=	xf86-video-intel
-PORTVERSION=	2.99.917.20181203
-PORTREVISION=	1
+DISTVERSION=	2.99.917-909
+DISTVERSIONSUFFIX=	-g${GL_COMMIT:C/(.{12}).*/\1/}
+PORTEPOCH=	1
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
-COMMENT=	Driver for Intel integrated graphics chipsets
+COMMENT=	X.Org legacy driver for Intel integrated graphics chipsets
 
 LICENSE=	MIT	# various
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 ONLY_FOR_ARCHS=	amd64 i386
-ONLY_FOR_ARCHS_REASON=	Intel integrated GPU only exists in Intel x86 processors/chipsets
+ONLY_FOR_ARCHS_REASON=	Only Intel integrated GPUs on x86 are supported
 
-LIB_DEPENDS=	libxcb-util.so:x11/xcb-util \
-		libdrm.so:graphics/libdrm
+LIB_DEPENDS=	libdrm_intel.so:graphics/libdrm
 
-USES=		cpe gl xorg xorg-cat:driver
-USE_GITLAB=	yes
-GL_COMMIT=	e5ff8e1828f97891c819c919d7115c6e18b2eb1f
-USE_GL=		gl
-USE_XORG=	pciaccess pixman x11 xcb xext xrender xv xvmc
-USE_LDCONFIG=	yes
-
+USES=		cpe localbase xorg xorg-cat:driver
 CPE_VENDOR=	x
+USE_GITLAB=	yes
+GL_COMMIT=	5ca3ac1a90af177eb111a965e9b4dd8a27cc58fc
+USE_XORG=	pciaccess pixman
+CONFIGURE_ENV=	ac_cv_header_sys_sysinfo_h=no # XXX ports/242236
+CONFIGURE_ARGS=	--with-builderstring="${DISTVERSIONFULL}"
+TEST_TARGET=	check
 
-OPTIONS_SINGLE=	ACCEL
-OPTIONS_SINGLE_ACCEL=	SNA UXA
-OPTIONS_DEFAULT=	UXA
+# XXX bug 214593: SNA crashes on pre-SandyBridge hardware
+CONFIGURE_ARGS+=--with-default-accel=uxa
+# XXX Remove after FreeBSD 11 EOL
+CPPFLAGS+=	-D_WITH_GETLINE
 
-ACCEL_DESC=	Default AccelMethod (if not specified in xorg.conf)
-SNA_DESC=	SandyBridge's New Acceleration
-UXA_DESC=	Unified Acceleration Architecture
+OPTIONS_DEFINE=	UDEV XVMC
+OPTIONS_DEFAULT=UDEV XVMC
+OPTIONS_SUB=	yes
 
-CONFIGURE_ARGS+=	--disable-udev
+UDEV_DESC=		udev-based monitor hotplug detection
+UDEV_LIB_DEPENDS=	libudev.so:devel/libudev-devd
+UDEV_CONFIGURE_ENABLE=	udev
 
-SNA_CONFIGURE_ON=	--with-default-accel=sna
-UXA_CONFIGURE_ON=	--with-default-accel=uxa
+XVMC_LIB_DEPENDS=	libxcb-util.so:x11/xcb-util
+XVMC_USE=		XORG=x11,xcb,xvmc
+XVMC_CONFIGURE_ENABLE=	xvmc
+XVMC_VARS=		USE_LDCONFIG=yes
+
+post-patch:
+.if ${CONFIGURE_ARGS:M--with-default-accel=uxa}
+	@${REINPLACE_CMD} '/^Default/s/SNA/UXA/' ${WRKSRC}/man/intel.man
+.endif
 
 .include <bsd.port.mk>
