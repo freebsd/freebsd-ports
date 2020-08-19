@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	fping
-PORTVERSION=	4.4
+PORTVERSION=	5.0
 CATEGORIES=	net
-MASTER_SITES=	https://github.com/schweikert/${PORTNAME}/releases/download/v${PORTVERSION}/
+MASTER_SITES=	http://fping.org/dist/ \
+		https://github.com/schweikert/${PORTNAME}/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	Quickly ping multiple hosts without flooding the network
