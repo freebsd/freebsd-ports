@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libmediainfo
-PORTVERSION=	20.03
+PORTVERSION=	20.08
 CATEGORIES=	multimedia
 MASTER_SITES=	https://mediaarea.net/download/binary/mediainfo/${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -45,7 +45,6 @@ post-patch:
 		-e 's|-DMEDIAINFO_LIBMMS_FROMSOURCE||g' \
 		-e 's|with_libmms/pkgconfig/|with_libmms/libdata/pkgconfig/|' \
 		-e 's|src/.libs|lib|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e '1 s|bin/bash|bin/sh|' ${WRKSRC}/libmediainfo-config.in
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/libmediainfo.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig/libmediainfo.pc
