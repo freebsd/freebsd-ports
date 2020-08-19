@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	todo
-PORTVERSION=	2.11.0
+PORTVERSION=	2.12.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	deskutils
 
@@ -14,18 +14,19 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	bash:shells/bash
 
-# bin/todo
-CONFLICTS_INSTALL=	deforaos-todo devtodo
+USES=		shebangfix
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-USES=		shebangfix
 
 PLIST_FILES=	bin/todo \
 		etc/todo.cfg \
 		etc/bash_completion.d/todo
 
-GH_ACCOUNT=	ginatrapani
+# bin/todo
+CONFLICTS_INSTALL=	deforaos-todo devtodo
+
+GH_ACCOUNT=	todotxt
 GH_PROJECT=	todo.txt-cli
 USE_GITHUB=	yes
 
