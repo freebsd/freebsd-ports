@@ -22,9 +22,6 @@ WRKSRC=		${WRKDIR}/Argyll_V${PORTVERSION}
 USES=		compiler:c11 cpe jpeg ssl xorg zip
 USE_XORG=	x11 xau xdmcp xext xinerama xrandr xscrnsaver xxf86vm
 
-post-patch:
-	@${REINPLACE_CMD} 's:711:755:g' ${WRKSRC}/Jambase
-
 do-build:
 	@cd ${WRKSRC} && ${MAKE_ENV} jam -dx -q -fJambase -j${MAKE_JOBS_NUMBER}
 
