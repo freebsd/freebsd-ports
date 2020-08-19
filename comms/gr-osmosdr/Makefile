@@ -2,7 +2,7 @@
 
 PORTNAME=	gr-osmosdr
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.0
+DISTVERSION=	0.2.2
 PORTEPOCH=	1
 CATEGORIES=	comms hamradio
 
@@ -11,10 +11,12 @@ COMMENT=	GNU Radio OsmoSDR module
 
 LICENSE=	GPLv3
 
+BUILD_DEPENDS=	swig:devel/swig \
+		cheetah:devel/py-cheetah3@${PY_FLAVOR}
 LIB_DEPENDS=	libgnuradio-runtime.so:comms/gnuradio \
 		libgnuradio-pmt.so:comms/gnuradio \
 		libgnuradio-blocks.so:comms/gnuradio \
-		libvolk.so:comms/gnuradio \
+		libvolk.so:devel/volk \
 		libboost_system.so:devel/boost-libs \
 		libboost_thread.so:devel/boost-libs \
 		liblog4cpp.so:devel/log4cpp \
@@ -22,7 +24,7 @@ LIB_DEPENDS=	libgnuradio-runtime.so:comms/gnuradio \
 		libgmp.so:math/gmp \
 		liborc-0.4.so:devel/orc
 
-USES=	cmake compiler:c++11-lang fortran pkgconfig tar:tgz
+USES=	cmake compiler:c++11-lang fortran pkgconfig python:3.7+ tar:tgz
 
 SUB_LIST=	VERSION=${PORTVERSION}
 SUB_FILES=	gnuradio-osmosdr.pc
@@ -33,12 +35,9 @@ GH_ACCOUNT=	osmocom
 USE_LDCONFIG=	yes
 
 # See lib/CMakeLists.txt to enable more components
-# XXX Python support disabled because gr-osmosdr now requires Python 3
-# while Gnuradio still uses Python 2. As a consequence, GR_PYTHON_DIR forcibly
-# points to Python 2 directory (which is incorrect to install version 3 code).
-# We will re-enable Python support once Gnuradio switches to Python 3
 CMAKE_ARGS+=	-DENABLE_FILE:BOOL=ON \
-		-DENABLE_PYTHON=OFF
+		-DENABLE_PYTHON=ON \
+		-DPYTHON_EXECUTABLE:STRING="${PYTHON_CMD}"
 
 CXXFLAGS+=	-std=c++11
 
