@@ -2,6 +2,7 @@
 
 PORTNAME=	xpra
 PORTVERSION=	4.0.2
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://xpra.org/src/
 
@@ -129,5 +130,6 @@ post-install:
 	    ${STAGEDIR}${ETCDIR}/xpra.conf.sample
 	@${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME} -name '*.so' \
 	    -exec ${STRIP_CMD} {} +
+	@${MKDIR} ${STAGEDIR}/var/run/xpra
 
 .include <bsd.port.post.mk>

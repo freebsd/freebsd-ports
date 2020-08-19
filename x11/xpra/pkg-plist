@@ -1548,3 +1548,4 @@ share/pixmaps/xpra.png
 %%HTML5%%%%DATADIR%%/www/js/lib/zlib.pretty.js.map
 %%HTML5%%%%DATADIR%%/www/js/lib/zlib.pretty.js.map.br
 %%HTML5%%%%DATADIR%%/www/js/lib/zlib.pretty.js.map.gz
+@dir(0,0,1777) /var/run/xpra
