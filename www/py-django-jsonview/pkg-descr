@@ -1,0 +1,4 @@
+django-jsonview is a simple decorator that translates Python objects to JSON and
+makes sure your view will always return JSON.
+
+WWW: https://github.com/jsocol/django-jsonview

@@ -1487,6 +1487,7 @@
     SUBDIR += py-django-jquery-js
     SUBDIR += py-django-js-asset
     SUBDIR += py-django-jsonfield
+    SUBDIR += py-django-jsonview
     SUBDIR += py-django-ldapdb
     SUBDIR += py-django-libsass
     SUBDIR += py-django-markdownx
