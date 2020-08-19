@@ -314,6 +314,7 @@
 %%WWWDIR%%/lib/GlobalScale/MemberLeave.php
 %%WWWDIR%%/lib/GlobalScale/MemberLevel.php
 %%WWWDIR%%/lib/GlobalScale/MemberRemove.php
+%%WWWDIR%%/lib/GlobalScale/MemberUpdate.php
 %%WWWDIR%%/lib/GlobalScale/Test.php
 %%WWWDIR%%/lib/GlobalScale/UserDeleted.php
 %%WWWDIR%%/lib/Hooks/UserHooks.php
