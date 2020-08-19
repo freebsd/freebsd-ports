@@ -1,6 +1,6 @@
---- src/pcheckd.c.orig	Sat Nov 22 22:27:22 2003
-+++ src/pcheckd.c	Mon Jul 11 16:20:48 2005
-@@ -511,7 +511,6 @@
+--- src/pcheckd.c.orig	2003-11-22 21:27:22 UTC
++++ src/pcheckd.c
+@@ -511,7 +511,6 @@ main(int argc, char *argv[])
  	case SIGQUIT: /* fallthrough */
  	case SIGINT:  /* fallthrough */
  	case SIGTERM: /* fallthrough */

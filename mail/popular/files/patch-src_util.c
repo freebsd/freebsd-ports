@@ -1,6 +1,6 @@
---- src/util.c.orig	Mon Apr 30 17:14:14 2001
-+++ src/util.c	Wed Jun  7 13:19:59 2006
-@@ -125,7 +125,7 @@
+--- src/util.c.orig	2001-04-30 15:14:14 UTC
++++ src/util.c
+@@ -125,7 +125,7 @@ timedesc2sec(char *desc, int min, int max)
    while (1) {
      if (*tptr == '-') return -1;
      value = strtol(tptr, &tptr, 10);

@@ -1,6 +1,6 @@
---- src/Makefile.in.orig	Sat Aug 21 12:26:23 2004
-+++ src/Makefile.in	Mon Jul 11 16:47:17 2005
-@@ -132,7 +132,7 @@
+--- src/Makefile.in.orig	2004-08-21 10:26:23 UTC
++++ src/Makefile.in
+@@ -132,7 +132,7 @@ VERSION = @VERSION@
  have_sgml = @have_sgml@
  prefix = @prefix@
  
@@ -9,7 +9,7 @@
  
  #LDFLAGS = -static -lc_p
  
-@@ -166,13 +166,13 @@
+@@ -166,13 +166,13 @@ ptestpdm_SOURCES = ptestpdm.c popular.h pconfig.h util
  
  LDADD = @LIB_STRL@ @LIB_GETOPT@
  

@@ -1,0 +1,26 @@
+--- doc/man/Makefile.in.orig	2020-08-19 11:43:47 UTC
++++ doc/man/Makefile.in
+@@ -352,23 +352,6 @@ mostlyclean-generic distclean-generic clean-generic \
+ maintainer-clean-generic clean mostlyclean distclean maintainer-clean
+ 
+ 
+-.PHONY: all man clean
+-
+-all:	man
+-
+-clean:
+-	rm -f *.1 *.7 *.8
+-
+-man: $(man_MANS)
+-
+-%.1: %.sgml $(DB2MAN) $(ADDCREDIT)
+-	$(ADDCREDIT) $< | $(DB2MAN) - >$@ || rm $@
+-
+-%.8: %.sgml $(DB2MAN) $(ADDCREDIT)
+-	$(ADDCREDIT) $< | $(DB2MAN) - >$@ || rm $@
+-
+-popular-log.7: $(top_builddir)/doc/log/messagelist.raw
+-	$(LOG_RAW2MAN) $< >$@ || rm $@
+ 
+ #-----------------------------------------------------------------------------
+ #  gzip

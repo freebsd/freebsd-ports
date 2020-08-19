@@ -3,19 +3,21 @@
 
 PORTNAME=	popular
 PORTVERSION=	1.5.5
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	mail
 MASTER_SITES=	https://www.jochentopf.com/software/popular/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Suite of programs for setting up large POP3 server systems
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	p5-XML-DOM>=0:textproc/p5-XML-DOM
 
+USES=		libtool perl5 gmake tar:bzip2 ssl
 CONFLICTS=	pserv-[0-9]* synce-librapi2-[0-9]*
 CONFLICTS_INSTALL=	ports-tools # bin/pcheck
 
-USES=		libtool perl5 gmake tar:bzip2 ssl
 GNU_CONFIGURE=	yes
 PDM_MODULES=	any master
 CONFIGURE_ARGS=	--without-bdb --disable-docbook --with-confdir=${PREFIX}/etc/popular \
@@ -24,6 +26,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 
 USE_RC_SUBR=	pcheckd pproxy pserv 0ringd
+USE_LDCONFIG=	yes
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/popular/*.so

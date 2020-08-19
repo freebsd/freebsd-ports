@@ -1,6 +1,6 @@
---- src/pproxy.c.orig	Mon Nov 24 20:23:30 2003
-+++ src/pproxy.c	Mon Jul 11 16:21:13 2005
-@@ -580,9 +580,6 @@
+--- src/pproxy.c.orig	2003-11-24 19:23:30 UTC
++++ src/pproxy.c
+@@ -580,9 +580,6 @@ main(int argc, char *argv[])
  	case SIGTERM:
  	  pproxy_shutdown(SHUTDOWN_CHILDREN | SHUTDOWN_SERVER);
  	  break;
