@@ -1,6 +1,5 @@
 # $FreeBSD$
 
-PORTREVISION=	1
 CATEGORIES=	mail
 
 MASTERDIR=	${.CURDIR}/../../lang/php73
