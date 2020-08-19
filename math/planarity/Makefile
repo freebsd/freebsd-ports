@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	planarity
-PORTVERSION=	3.0.0.5
+PORTVERSION=	3.0.1.0
 DISTVERSIONPREFIX=	Version_
 CATEGORIES=	math
 
@@ -20,5 +20,8 @@ USES=		autoreconf libtool
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+
+do-test:
+	(cd ${WRKSRC}/c && ${WRKSRC}/${PORTNAME} -test)
 
 .include <bsd.port.mk>

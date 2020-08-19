@@ -20,5 +20,5 @@ include/planarity/stack.h
 lib/libplanarity.a
 lib/libplanarity.so
 lib/libplanarity.so.0
-lib/libplanarity.so.0.0.0
+lib/libplanarity.so.0.0.1
 man/man1/planarity.1.gz
