@@ -12,10 +12,6 @@ COMMENT=	Software percussion synthesizer
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-.if exists(/usr/include/c++/v1) && !exists(/usr/include/c++/v1/filesystem)
-BROKEN=		STL feature 'filesystem' isn't available # '
-.endif
-
 BUILD_DEPENDS=	lv2>0:audio/lv2 \
 		gmake:devel/gmake \
 		rapidjson>0:devel/rapidjson \
@@ -35,4 +31,11 @@ CMAKE_ARGS=	-DFREEBSD_GMAKE=${GMAKE}
 
 #INSTALLS_ICONS=	yes # disabled because it causes: gtk-update-icon-cache: Failed to open file /usr/local/share/icons/hicolor/.icon-theme.cache : Permission denied
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${CHOSEN_COMPILER_TYPE} == clang
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-plugin_lv2_CMakeLists.txt \
+		${FILESDIR}/extra-patch-standalone_CMakeLists.txt
+.endif
+
+.include <bsd.port.post.mk>
