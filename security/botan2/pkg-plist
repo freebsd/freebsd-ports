@@ -209,6 +209,7 @@ include/botan-2/botan/polyn_gf2m.h
 include/botan-2/botan/pow_mod.h
 include/botan-2/botan/prf_tls.h
 include/botan-2/botan/prf_x942.h
+include/botan-2/botan/processor_rng.h
 include/botan-2/botan/psk_db.h
 include/botan-2/botan/psk_db_sql.h
 include/botan-2/botan/pssr.h

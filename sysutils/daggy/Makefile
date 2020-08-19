@@ -2,6 +2,7 @@
 
 PORTNAME=	daggy
 DISTVERSION=	2.0.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
