@@ -23,8 +23,10 @@ WRKSRC_SUBDIR=	src/main/cpp
 
 PLIST_FILES=	bin/tiv
 
-.if exists(/usr/include/c++/v1) && !exists(/usr/include/c++/v1/filesystem)
-BROKEN=		STL feature 'filesystem' isn't available # '
+.include <bsd.port.pre.mk>
+
+.if ${CHOSEN_COMPILER_TYPE} == clang
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-Makefile
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
