@@ -10,7 +10,7 @@ PATCH_SITES=	https://git.sr.ht/~leon_plickat/${PORTNAME}/commit/
 PATCHFILES+=	7142822a8082.patch:-p1
 
 MAINTAINER=	jbeich@FreeBSD.org
-COMMENT=	Simple launcher for Wayland
+COMMENT=	Simple launcher panel for Wayland desktops
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
