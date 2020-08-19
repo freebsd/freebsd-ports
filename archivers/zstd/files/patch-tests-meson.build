@@ -1,0 +1,27 @@
+--- tests/meson.build.orig	2020-05-22 05:04:00 UTC
++++ tests/meson.build
+@@ -143,15 +143,15 @@ checkTag = executable('checkTag',
+ # Tests (Use "meson test --list" to list all tests)
+ # =============================================================================
+ 
+-if tests_supported_oses.contains(host_machine_os)
+-  valgrind_prog = find_program('valgrind', ['/usr/bin/valgrind'], required: true)
+-  valgrindTest_py = files('valgrindTest.py')
+-  test('valgrindTest',
+-    valgrindTest_py,
+-    args: [valgrind_prog.path(), zstd, datagen, fuzzer, fullbench],
+-    depends: [zstd, datagen, fuzzer, fullbench],
+-    timeout: 600) # Timeout should work on HDD drive
+-endif
++#if tests_supported_oses.contains(host_machine_os)
++#  valgrind_prog = find_program('valgrind', ['/usr/bin/valgrind'], required: true)
++#  valgrindTest_py = files('valgrindTest.py')
++#  test('valgrindTest',
++#    valgrindTest_py,
++#    args: [valgrind_prog.path(), zstd, datagen, fuzzer, fullbench],
++#    depends: [zstd, datagen, fuzzer, fullbench],
++#    timeout: 600) # Timeout should work on HDD drive
++#endif
+ 
+ if host_machine_os != os_windows
+   playTests_sh = find_program(join_paths(zstd_rootdir, 'tests/playTests.sh'), required: true)
