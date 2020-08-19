@@ -29,10 +29,8 @@ NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=	gettext
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|LIBS = @LIBS@ -lc|LIBS = @LIBS@|" \
-		-e "s|BINOWN = bin|BINOWN = root|" \
-		-e "s|BINGRP = bin|BINGRP = wheel|" \
-		-e "s|libgdbm.la libgdbm_compat.la|& gdbm.info|" \
-			${WRKSRC}/Makefile.in
+# Fix the build with -fno-common (clang 11 and gcc 10)
+	@${REINPLACE_CMD} -e '/^char \*parseopt_program_[ad]/d' \
+		${WRKSRC}/src/parseopt.c
 
 .include <bsd.port.mk>
