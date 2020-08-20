@@ -17,6 +17,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--enable-regex \
 		--enable-stflags
 GNU_CONFIGURE=	yes
+CFLAGS+=	-fcommon
 
 PORTSCOUT=	ignore:1
 
