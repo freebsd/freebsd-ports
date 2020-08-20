@@ -107,4 +107,6 @@ USE_RC_SUBR=	${PORTNAME}
 
 PLIST_FILES=	bin/${PORTNAME}
 
+PORTSCOUT=	limit:^[0-9]*\.[0-9]*\.[0-9]*$$ # otherwise it picks up the deleted tag v011
+
 .include <bsd.port.mk>
