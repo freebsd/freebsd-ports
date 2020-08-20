@@ -3,8 +3,8 @@
 # PR: ports/149167 ports/184517
 # Patch by: cognet@ (to be upstreamed @ LLVM)
 
---- ./src/arm/ffi.c.orig	2013-03-16 22:19:39.000000000 +1100
-+++ ./src/arm/ffi.c	2013-12-03 19:30:58.440924300 +1100
+--- src/arm/ffi.c.orig	2014-11-08 12:47:24 UTC
++++ src/arm/ffi.c
 @@ -33,6 +33,11 @@
  
  #include <stdlib.h>
@@ -17,10 +17,11 @@
  /* Forward declares. */
  static int vfp_type_p (ffi_type *);
  static void layout_vfp_args (ffi_cif *);
-@@ -582,6 +587,16 @@
+@@ -750,6 +755,16 @@ ffi_closure_free (void *ptr)
+ }
  
  #else
- 
++
 +#if defined(__FreeBSD__) && defined(__arm__)
 +#define __clear_cache(start, end) do { \
 +		struct arm_sync_icache_args ua; 		\
@@ -30,7 +31,6 @@
 +		sysarch(ARM_SYNC_ICACHE, &ua);			\
 +	} while (0);
 +#endif
-+
+ 
  #define FFI_INIT_TRAMPOLINE(TRAMP,FUN,CTX)				\
  ({ unsigned char *__tramp = (unsigned char*)(TRAMP);			\
-    unsigned int  __fun = (unsigned int)(FUN);				\

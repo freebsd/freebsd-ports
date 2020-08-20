@@ -1,7 +1,5 @@
-diff --git ./src/mips/ffitarget.h.orig ./src/mips/ffitarget.h
-index 717d659..5a0c2b1 100644
---- ./src/mips/ffitarget.h.orig
-+++ ./src/mips/ffitarget.h
+--- src/mips/ffitarget.h.orig	2014-11-08 12:47:24 UTC
++++ src/mips/ffitarget.h
 @@ -41,7 +41,7 @@
  #define _MIPS_SIM_ABI32		1
  #define _MIPS_SIM_NABI32	2

@@ -42,11 +42,13 @@
      { $as_echo "$as_me:${as_lineno-$LINENO}: checking assembler supports pc related relocs" >&5
  $as_echo_n "checking assembler supports pc related relocs... " >&6; }
  if ${libffi_cv_as_x86_pcrel+:} false; then :
-@@ -18386,77 +18391,8 @@ $as_echo "$libffi_cv_as_x86_pcrel" >&6; }
+@@ -18386,78 +18391,9 @@ $as_echo "$libffi_cv_as_x86_pcrel" >&6; }
  $as_echo "#define HAVE_AS_X86_PCREL 1" >>confdefs.h
  
      fi
--
++    ;;
++esac
+ 
 -    { $as_echo "$as_me:${as_lineno-$LINENO}: checking assembler .ascii pseudo-op support" >&5
 -$as_echo_n "checking assembler .ascii pseudo-op support... " >&6; }
 -if ${libffi_cv_as_ascii_pseudo_op+:} false; then :
@@ -117,8 +119,28 @@
 -
 -    fi
 -fi
-+    ;;
-+esac
- 
+-
  # On PaX enable kernels that have MPROTECT enable we can't use PROT_EXEC.
  # Check whether --enable-pax_emutramp was given.
+ if test "${enable_pax_emutramp+set}" = set; then :
+@@ -18592,16 +18528,12 @@ if ${libffi_cv_ro_eh_frame+:} false; then :
+   $as_echo_n "(cached) " >&6
+ else
+ 
+-  	libffi_cv_ro_eh_frame=no
++  	libffi_cv_ro_eh_frame=yes
+   	echo 'extern void foo (void); void bar (void) { foo (); foo (); }' > conftest.c
+   	if $CC $CFLAGS -c -fpic -fexceptions -o conftest.o conftest.c > /dev/null 2>&1; then
+-	    objdump -h conftest.o > conftest.dump 2>&1
+-	    libffi_eh_frame_line=`grep -n eh_frame conftest.dump | cut -d: -f 1`
+-	    libffi_test_line=`expr $libffi_eh_frame_line + 1`p
+-	    sed -n $libffi_test_line conftest.dump > conftest.line
+-  	    if grep READONLY conftest.line > /dev/null; then
+-  		libffi_cv_ro_eh_frame=yes
+-  	    fi
++	    if readelf -WS conftest.o | grep -q -n 'eh_frame .* WA'; then
++	        libffi_cv_ro_eh_frame=no
++ 	    fi
+   	fi
+   	rm -f conftest.*
+ 

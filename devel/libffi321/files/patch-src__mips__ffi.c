@@ -1,7 +1,5 @@
-diff --git ./src/mips/ffi.c.orig ./src/mips/ffi.c
-index 03121e3..8b7881f 100644
---- ./src/mips/ffi.c.orig
-+++ ./src/mips/ffi.c
+--- src/mips/ffi.c.orig	2014-11-08 12:47:24 UTC
++++ src/mips/ffi.c
 @@ -38,7 +38,9 @@
  #endif
  
@@ -13,7 +11,7 @@ index 03121e3..8b7881f 100644
  #    include <mips64/sysarch.h>
  #  else
  #    include <sys/cachectl.h>
-@@ -729,11 +731,13 @@ ffi_prep_closure_loc (ffi_closure *closure,
+@@ -736,11 +738,13 @@ ffi_prep_closure_loc (ffi_closure *closure,
    closure->fun = fun;
    closure->user_data = user_data;
  
