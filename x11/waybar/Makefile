@@ -2,6 +2,7 @@
 
 PORTNAME=	waybar
 DISTVERSION=	0.9.3
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -34,8 +35,8 @@ SUB_FILES+=	date.pc
 post-patch:	apply-slist
 .endif
 
-OPTIONS_DEFINE=	DBUS GLS MANPAGES MPD PULSEAUDIO UDEV
-OPTIONS_DEFAULT=DBUS GLS MANPAGES MPD PULSEAUDIO UDEV
+OPTIONS_DEFINE=	DBUS GLS ICONSFONT MANPAGES MPD PULSEAUDIO UDEV
+OPTIONS_DEFAULT=DBUS GLS ICONSFONT MANPAGES MPD PULSEAUDIO UDEV
 
 DBUS_LIB_DEPENDS=	libdbusmenu-gtk3.so:devel/libdbusmenu
 DBUS_MESON_ENABLED=	dbusmenu-gtk
@@ -43,6 +44,9 @@ DBUS_MESON_ENABLED=	dbusmenu-gtk
 GLS_DESC=		Use gtk-layer-shell library for popups support
 GLS_LIB_DEPENDS=	libgtk-layer-shell.so:x11-toolkits/gtk-layer-shell
 GLS_MESON_ENABLED=	gtk-layer-shell
+
+ICONSFONT_DESC=		Install Font Awesome to properly render icons
+ICONSFONT_RUN_DEPENDS=	font-awesome>0:x11-fonts/font-awesome
 
 MANPAGES_BUILD_DEPENDS=	scdoc:textproc/scdoc
 MANPAGES_MESON_ENABLED=	man-pages
