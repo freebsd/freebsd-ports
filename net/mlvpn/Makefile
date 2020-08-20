@@ -14,16 +14,19 @@ LICENSE_FILE=	${WRKSRC}/LICENCE
 LIB_DEPENDS=	libev.so:devel/libev \
 		libsodium.so:security/libsodium
 
+USES=	autoreconf libtool pkgconfig localbase
+
 USE_GITHUB=	yes
 GH_PROJECT=	MLVPN
 GH_ACCOUNT=	zehome
 
-USES=	autoreconf libtool pkgconfig localbase
 GNU_CONFIGURE=	yes
 
 USERS=		mlvpn
 GROUPS=		mlvpn
 USE_RC_SUBR=	mlvpn
+
+CFLAGS+=	-fcommon
 
 OPTIONS_DEFINE=	CONTROL
 CONTROL_DESC=	Enable UNIX socket/HTTP json remote control API
