@@ -6,6 +6,7 @@ include/adns.h
 lib/libadns.a
 lib/libadns.so
 lib/libadns.so.%%LIBVERSION%%
+lib/libadns.so.%%LIBVERSION%%.6
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/GPL-vs-LGPL
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
