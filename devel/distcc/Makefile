@@ -5,6 +5,7 @@
 PORTNAME=	distcc
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.3.3
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	ports@FreeBSD.org
@@ -34,11 +35,11 @@ SUB_LIST=	DISTCCD_PIDFILE=/var/run/distccd.pid
 USERS=		distcc
 GROUPS=		distcc
 
-PLIST_FILES=	${BIN_FILES:S|^|bin/|}
-PLIST_FILES+=	${DISTCC_COMPILERS:S|^|${CCLINKDIR}/|}
-PLIST_FILES+=	${MAN_FILES:S|^|man/man1/|:S|$|.gz|}
-PLIST_FILES+=	${SBIN_FILES:S|^|sbin/|}
-PLIST_FILES+=	${CONFIG_FILES:S|^|${ETCDIR}/${PORTNAME}/|}
+PLIST_FILES=	${_BIN_FILES:S|^|bin/|}
+PLIST_FILES+=	${_DISTCC_COMPILERS:S|^|${CCLINKDIR}/|}
+PLIST_FILES+=	${_MAN_FILES:S|^|man/man1/|:S|$|.gz|}
+PLIST_FILES+=	${_SBIN_FILES:S|^|sbin/|}
+PLIST_FILES+=	${_CONFIG_FILES:S|^|${ETCDIR}/${PORTNAME}/|}
 PLIST_FILES+=	etc/default/distcc
 
 OPTIONS_DEFINE=	AVAHI CLANGLINK DOCS IPV6 LLVMLINK PUMP
@@ -54,8 +55,8 @@ PUMP_DESC=	Distribute compilation as well as preprocessing to distcc servers
 
 AVAHI_LIB_DEPENDS=	libavahi-client.so:net/avahi-app
 AVAHI_CONFIGURE_WITH=	avahi
-DOCS_PLIST_FILES=	${README_FILES:S|^|${DOCSDIR_REL}/|}
-DOCS_PLIST_FILES+=	${DOC_FILES:S|^|${DOCSDIR_REL}/|}
+DOCS_PLIST_FILES=	${_README_FILES:S|^|${DOCSDIR_REL}/|}
+DOCS_PLIST_FILES+=	${_DOC_FILES:S|^|${DOCSDIR_REL}/|}
 GNOME_USES=	gnome
 GNOME_USE=	GNOME=gtk20,libgnome,libgnomeui,pango
 GNOME_CONFIGURE_WITH=	gnome
@@ -92,38 +93,40 @@ PUMP_PLIST_FILES=	\
 	${PYTHON_SITELIBDIR}/include_server/setup.py \
 	${PYTHON_SITELIBDIR}/include_server/statistics.py
 
+# Leave CCLINKDIR without a leading underscore as it is a variable, which could
+# be set by the user.
 CCLINKDIR?=	libexec/distcc
-DISTCC_COMPILERS=	CC c++ cc
+_DISTCC_COMPILERS=	CC c++ cc
 
-CONFIG_FILES=	clients.allow commands.allow.sh hosts
-BIN_FILES=	distcc distccmon-text lsdistcc
-DOC_FILES=	protocol-1.txt protocol-2.txt protocol-3.txt \
+_CONFIG_FILES=	clients.allow commands.allow.sh hosts
+_BIN_FILES=	distcc distccmon-text lsdistcc
+_DOC_FILES=	protocol-1.txt protocol-2.txt protocol-3.txt \
 		protocol-3-impl.txt protocol-gssapi.txt \
 		reporting-bugs.txt status-1.txt survey.txt
-MAN_FILES=	distcc.1 distccd.1 distccmon-text.1 include_server.1 \
+_MAN_FILES=	distcc.1 distccd.1 distccmon-text.1 include_server.1 \
 		lsdistcc.1 pump.1
-README_FILES=	AUTHORS COPYING INSTALL NEWS README README.pump TODO
-SBIN_FILES=	distccd
+_README_FILES=	AUTHORS COPYING INSTALL NEWS README README.pump TODO
+_SBIN_FILES=	distccd
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCLANGLINK}
 CLANG_COMPILERS=	-devel 31 32 33 34 35 36 37 38 39
-DISTCC_COMPILERS+=	clang++ clang
-DISTCC_COMPILERS+=	${CLANG_COMPILERS:S|^|clang++|}
-DISTCC_COMPILERS+=	${CLANG_COMPILERS:S|^|clang|}
+_DISTCC_COMPILERS+=	clang++ clang
+_DISTCC_COMPILERS+=	${CLANG_COMPILERS:S|^|clang++|}
+_DISTCC_COMPILERS+=	${CLANG_COMPILERS:S|^|clang|}
 .endif
 GNU_COMPILERS=		34 42 43 44 45 46 47 48 49 5
-DISTCC_COMPILERS+=	gcc g++
-DISTCC_COMPILERS+=	${GNU_COMPILERS:S|^|g++|}
-DISTCC_COMPILERS+=	${GNU_COMPILERS:S|^|gcc|}
+_DISTCC_COMPILERS+=	gcc g++
+_DISTCC_COMPILERS+=	${GNU_COMPILERS:S|^|g++|}
+_DISTCC_COMPILERS+=	${GNU_COMPILERS:S|^|gcc|}
 .if ${ARCH} == "i386"
-DISTCC_COMPILERS+=	icc icpc
+_DISTCC_COMPILERS+=	icc icpc
 .endif
 .if ${PORT_OPTIONS:MLLVMLINK}
-DISTCC_COMPILERS+=	llvm-c++ llvm-g++ llvm-gcc
+_DISTCC_COMPILERS+=	llvm-c++ llvm-g++ llvm-gcc
 .endif
-DISTCC_COMPILERS+=	${EXTRA_COMPILERS}
+_DISTCC_COMPILERS+=	${EXTRA_COMPILERS}
 
 .if ${PORT_OPTIONS:MGNOME} || ${PORT_OPTIONS:MGTK}
 .if ${PORT_OPTIONS:MGNOME}
@@ -131,7 +134,7 @@ PKGNAMESUFFIX=	-gnome
 .else
 PKGNAMESUFFIX=	-gtk
 .endif
-BIN_FILES+=	distccmon-gnome
+_BIN_FILES+=	distccmon-gnome
 PLIST_FILES+=	${DESKTOPDIR}/distccmon-gnome.desktop
 PLIST_FILES+=	share/pixmaps/distccmon-gnome-icon.png
 .endif
@@ -143,12 +146,12 @@ post-patch:
 .endif
 
 .if ${PORT_OPTIONS:MPUMP}
-BIN_FILES+=	pump
+_BIN_FILES+=	pump
 .endif
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${CCLINKDIR}
-.for link in ${DISTCC_COMPILERS}
+.for link in ${_DISTCC_COMPILERS}
 	@${LN} ${STAGEDIR}${PREFIX}/bin/distcc \
 	    ${STAGEDIR}${PREFIX}/${CCLINKDIR}/${link}
 .endfor
