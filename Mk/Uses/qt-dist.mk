@@ -25,8 +25,8 @@ qmake_ARGS?=	# empty
 # Supported distribution arguments
 _QT5_DISTS=		3d activeqt androidextras base charts connectivity datavis3d \
 			declarative doc gamepad graphicaleffects imageformats location \
-			lottie macextras multimedia networkauth purchasing quickcontrols \
-			quickcontrols2 remoteobjects script scxml sensors serialbus \
+			lottie macextras multimedia networkauth purchasing quick3d quickcontrols \
+			quickcontrols2 quicktimeline remoteobjects script scxml sensors serialbus \
 			serialport speech svg tools translations virtualkeyboard wayland \
 			webchannel webengine webglplugin websockets webview winextras \
 			x11extras xmlpatterns

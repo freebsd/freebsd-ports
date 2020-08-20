@@ -190,8 +190,10 @@
     SUBDIR += qt5-gamepad
     SUBDIR += qt5-gtkplatform
     SUBDIR += qt5-gui
+    SUBDIR += qt5-quick3d
     SUBDIR += qt5-quickcontrols
     SUBDIR += qt5-quickcontrols2
+    SUBDIR += qt5-quicktimeline
     SUBDIR += qt5-uiplugin
     SUBDIR += qt5-virtualkeyboard
     SUBDIR += qt5-widgets
