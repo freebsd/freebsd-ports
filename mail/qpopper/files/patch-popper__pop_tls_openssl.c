@@ -1,5 +1,14 @@
 --- popper/pop_tls_openssl.c.orig	2011-05-30 19:13:40 UTC
 +++ popper/pop_tls_openssl.c
+@@ -89,7 +89,7 @@
+ /* ---- Globals ---- */
+ extern volatile BOOL poptimeout;
+ extern int           pop_timeout;
+-jmp_buf              env;
++static jmp_buf	env;
+ 
+ 
+ 
 @@ -312,21 +312,31 @@ openssl_init ( pop_tls *pTLS, POP *pPOP 
       * concern. 
       */
@@ -32,7 +41,7 @@
  
          case QPOP_TLSv1:       /* TLS version 1 only */
              DEBUG_LOG0 ( pPOP, "...setting method to TLSv1_server_method" );
-@@ -547,7 +547,8 @@ openssl_handshake ( pop_tls *pTLS )
+@@ -537,7 +547,8 @@ openssl_handshake ( pop_tls *pTLS )
                            "%s session-id; cipher: %s (%s), %d bits",
                            VERSION, SSL_CIPHER_get_version(ciph),
                            pTLS->m_pPOP->client, pTLS->m_pPOP->ipaddr,
