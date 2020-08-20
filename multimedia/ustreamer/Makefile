@@ -2,7 +2,7 @@
 
 PORTNAME=	ustreamer
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.19
+DISTVERSION=	1.22
 CATEGORIES=	multimedia net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libevent.so:devel/libevent \
 
 USES=		compiler:c11 gmake jpeg localbase:ldflags
 USE_GITHUB=	yes
-GH_ACCOUNT=	pi-kvm
+GH_ACCOUNT=	pikvm
 
 CFLAGS+=	-DWITH_PTHREAD_NP=0 # src/threading.h:101:4: error: thread_get_name() not implemented, you can disable it using WITH_PTHREAD_NP=0
 

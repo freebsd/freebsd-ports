@@ -4,4 +4,4 @@ format, as well as most video players such as mplayer, VLC etc. muStreamer is a
 part of the Pi-KVM project designed to stream VGA and HDMI screencast hardware
 data with the highest resolution and FPS possible.
 
-WWW: https://github.com/pi-kvm/ustreamer
+WWW: https://github.com/pikvm/ustreamer
