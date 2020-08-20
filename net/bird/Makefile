@@ -27,6 +27,8 @@ GROUPS=		birdvty
 
 PORTSCOUT=	limit:^1\.
 
+CFLAGS+=	-fcommon
+
 .if ${FLAVOR:U} == ipv6
 CONFIGURE_ARGS+=	--enable-ipv6
 PLIST_SUB=	VER=6
