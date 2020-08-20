@@ -129,8 +129,8 @@ lib/gretl-gtk2/vif.so
 %%GUI%%lib/gretl-gtk2/xlsx_import.so
 %%GUI%%lib/gretl-gtk2/xml_get.so
 lib/libgretl-1.0.so
-lib/libgretl-1.0.so.34
-lib/libgretl-1.0.so.34.0.0
+lib/libgretl-1.0.so.35
+lib/libgretl-1.0.so.35.0.0
 libdata/pkgconfig/gretl.pc
 man/man1/gretl.1.gz
 %%GUI%%share/appdata/gretl.appdata.xml
@@ -415,6 +415,10 @@ man/man1/gretl.1.gz
 %%ADDONS%%%%DATADIR%%/functions/ivpanel/ivpanel.gfn
 %%ADDONS%%%%DATADIR%%/functions/ivpanel/ivpanel.pdf
 %%DATADIR%%/functions/packages.xml
+%%DATADIR%%/functions/regls/examples/murder.gdt
+%%DATADIR%%/functions/regls/examples/winequality-red.gdt
+%%DATADIR%%/functions/regls/regls.gfn
+%%DATADIR%%/functions/regls/regls.pdf
 %%GUI%%%%DATADIR%%/gretl-logo.xpm
 %%DATADIR%%/gretl_cli_cmdref.en
 %%DATADIR%%/gretl_cli_cmdref.es
