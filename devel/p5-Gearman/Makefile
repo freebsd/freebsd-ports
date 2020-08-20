@@ -2,32 +2,31 @@
 # $FreeBSD$
 
 PORTNAME=	Gearman
-PORTVERSION=	1.11
-PORTREVISION=	1
+PORTVERSION=	2.004.015
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:DORMANDO
+MASTER_SITE_SUBDIR=CPAN:PALIK
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	vivek@khera.org
+MAINTAINER=	bokutin@bokut.in
 COMMENT=	Gearman client libraray for Perl
 
-RUN_DEPENDS+=	p5-String-CRC32>=0.0:devel/p5-String-CRC32
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	p5-File-Which>=0:sysutils/p5-File-Which \
+		p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL \
+		p5-Proc-Guard>=0.07:devel/p5-Proc-Guard
+RUN_DEPENDS=	p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL \
+		p5-List-MoreUtils>=0:lang/p5-List-MoreUtils \
+		p5-String-CRC32>=0:devel/p5-String-CRC32
+TEST_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception \
+		p5-Test-TCP>=2.17:devel/p5-Test-TCP \
+		p5-Test-Timer>=0:devel/p5-Test-Timer
 
 USES=		perl5
 USE_PERL5=	configure
 
-PLIST_FILES=	%%SITE_PERL%%/Gearman/Client.pm \
-		%%SITE_PERL%%/Gearman/JobStatus.pm \
-		%%SITE_PERL%%/Gearman/Objects.pm \
-		%%SITE_PERL%%/Gearman/ResponseParser.pm \
-		%%SITE_PERL%%/Gearman/ResponseParser/Taskset.pm \
-		%%SITE_PERL%%/Gearman/Task.pm \
-		%%SITE_PERL%%/Gearman/Taskset.pm \
-		%%SITE_PERL%%/Gearman/Util.pm \
-		%%SITE_PERL%%/Gearman/Worker.pm \
-		%%PERL5_MAN3%%/Gearman::Client.3.gz \
-		%%PERL5_MAN3%%/Gearman::Task.3.gz \
-		%%PERL5_MAN3%%/Gearman::Worker.3.gz
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
