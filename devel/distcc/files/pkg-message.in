@@ -29,4 +29,12 @@ Note that remote daemons currently won't work if they cannot
 resolve the reverse DNS of the master machine
 EOM
 }
+{ type: upgrade
+  maximum_version: "3.3"
+  message: <<EOM
+Those upgrading from pre-3.3 must run update-distcc-symlinks on
+every server machine, and add manually (see MASQUERADING of distcc(1))
+those compilers it does not detect.
+EOM
+}
 ]
