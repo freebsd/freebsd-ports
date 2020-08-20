@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	moltemplate
-DISTVERSION=	2.18.2
+DISTVERSION=	2.18.3
 CATEGORIES=	science python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,10 +12,12 @@ COMMENT=	Tool to prepare simulations of molecules, complex molecular assemblies
 LICENSE=	MIT
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-runner>0:devel/py-pytest-runner@${PY_FLAVOR}
-RUN_DEPENDS=	${PYNUMPY}
+RUN_DEPENDS=	${PYNUMPY} \
+		bash:shells/bash
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 
-USES=		python
+USES=		python shebangfix
+SHEBANG_FILES=	moltemplate/scripts/molc.sh
 USE_PYTHON=	distutils concurrent autoplist
 
 NO_ARCH=	yes

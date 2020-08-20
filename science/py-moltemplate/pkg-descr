@@ -15,4 +15,4 @@ subunits can be moved and deleted). Moltemplate is currently interoperable with:
 VMD , PACKMOL , OVITO , CellPACK , VIPSTER , and the ATB molecule server
 (by using the ltemplify.py converter).
 
-WWW: http://www.moltemplate.org/
+WWW: https://www.moltemplate.org/
