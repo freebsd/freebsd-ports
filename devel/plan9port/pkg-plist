@@ -5113,6 +5113,7 @@ plan9/src/cmd/9pfuse/main.c
 plan9/src/cmd/9pfuse/mkfile
 plan9/src/cmd/9pserve.c
 plan9/src/cmd/9term/9term.c
+plan9/src/cmd/9term/AIX.c
 plan9/src/cmd/9term/Darwin.c
 plan9/src/cmd/9term/DragonFly.c
 plan9/src/cmd/9term/FreeBSD.c
@@ -5293,6 +5294,7 @@ plan9/src/cmd/auth/secstore/util.c
 plan9/src/cmd/auth/ssh-agent.c
 plan9/src/cmd/auth/userpasswd.c
 plan9/src/cmd/auxclog.c
+plan9/src/cmd/auxstats/AIX.c
 plan9/src/cmd/auxstats/Darwin.c
 plan9/src/cmd/auxstats/DragonFly.c
 plan9/src/cmd/auxstats/FreeBSD.c
@@ -5419,7 +5421,6 @@ plan9/src/cmd/devdraw/x11-memdraw.h
 plan9/src/cmd/devdraw/x11-pixelbits.c
 plan9/src/cmd/devdraw/x11-screen.c
 plan9/src/cmd/devdraw/x11-unload.c
-plan9/src/cmd/dformat
 plan9/src/cmd/dial.c
 plan9/src/cmd/dict/ahd.c
 plan9/src/cmd/dict/canonind.awk
@@ -6090,6 +6091,7 @@ plan9/src/cmd/proof/portdate
 plan9/src/cmd/proof/proof.h
 plan9/src/cmd/proof/screen.c
 plan9/src/cmd/ramfs.c
+plan9/src/cmd/rc/checkparse
 plan9/src/cmd/rc/code.c
 plan9/src/cmd/rc/exec.c
 plan9/src/cmd/rc/exec.h
@@ -6105,6 +6107,7 @@ plan9/src/cmd/rc/io.c
 plan9/src/cmd/rc/io.h
 plan9/src/cmd/rc/lex.c
 plan9/src/cmd/rc/mkfile
+plan9/src/cmd/rc/parse.c
 plan9/src/cmd/rc/pcmd.c
 plan9/src/cmd/rc/pfnc.c
 plan9/src/cmd/rc/plan9ish.c
@@ -6112,6 +6115,7 @@ plan9/src/cmd/rc/rc.h
 plan9/src/cmd/rc/simple.c
 plan9/src/cmd/rc/subr.c
 plan9/src/cmd/rc/syn.y
+plan9/src/cmd/rc/test.rc
 plan9/src/cmd/rc/trap.c
 plan9/src/cmd/rc/tree.c
 plan9/src/cmd/rc/unixcrap.c
@@ -6567,6 +6571,7 @@ plan9/src/cmd/vbackup/diskcat.c
 plan9/src/cmd/vbackup/diskftp.c
 plan9/src/cmd/vbackup/disknfs.c
 plan9/src/cmd/vbackup/mkfile
+plan9/src/cmd/vbackup/mount-AIX.c
 plan9/src/cmd/vbackup/mount-BSD.c
 plan9/src/cmd/vbackup/mount-Darwin.c
 plan9/src/cmd/vbackup/mount-DragonFly.c
@@ -6702,7 +6707,6 @@ plan9/src/lib9/convD2M.c
 plan9/src/lib9/convM2D.c
 plan9/src/lib9/convM2S.c
 plan9/src/lib9/convS2M.c
-plan9/src/lib9/create.c
 plan9/src/lib9/crypt.c
 plan9/src/lib9/ctime.c
 plan9/src/lib9/debugmalloc.c
@@ -6710,7 +6714,6 @@ plan9/src/lib9/dial.c
 plan9/src/lib9/dirfstat.c
 plan9/src/lib9/dirfwstat.c
 plan9/src/lib9/dirmodefmt.c
-plan9/src/lib9/dirread.c
 plan9/src/lib9/dirstat.c
 plan9/src/lib9/dirwstat.c
 plan9/src/lib9/dup.c
@@ -6813,7 +6816,6 @@ plan9/src/lib9/readcons.c
 plan9/src/lib9/readn.c
 plan9/src/lib9/rfork.c
 plan9/src/lib9/searchpath.c
-plan9/src/lib9/seek.c
 plan9/src/lib9/sendfd.c
 plan9/src/lib9/sleep.c
 plan9/src/lib9/strdup.c
@@ -7141,6 +7143,7 @@ plan9/src/libhttpd/redirected.c
 plan9/src/libhttpd/unallowed.c
 plan9/src/libhttpd/urlfmt.c
 plan9/src/libhttpd/urlunesc.c
+plan9/src/libip/AIX.c
 plan9/src/libip/BSD.c
 plan9/src/libip/Darwin.c
 plan9/src/libip/DragonFly.c
@@ -7165,6 +7168,7 @@ plan9/src/libip/portdate
 plan9/src/libip/ptclbsum.c
 plan9/src/libip/testreadipifc.c
 plan9/src/libip/udp.c
+plan9/src/libmach/AIX.c
 plan9/src/libmach/Darwin.c
 plan9/src/libmach/DragonFly.c
 plan9/src/libmach/FreeBSD.c
@@ -7480,7 +7484,6 @@ plan9/src/libthread/386-ucontext.c
 plan9/src/libthread/386-ucontext.h
 plan9/src/libthread/COPYING.SPARC64-CONTEXT
 plan9/src/libthread/COPYRIGHT
-plan9/src/libthread/Darwin-x86_64-asm.s
 plan9/src/libthread/Linux-arm-asm.s
 plan9/src/libthread/Linux-sparc64-context.S
 plan9/src/libthread/NetBSD-386-asm.s

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	plan9port
-PORTVERSION=	20200330
+PORTVERSION=	20200816
 CATEGORIES=	devel plan9
 DIST_SUBDIR=	plan9port
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
@@ -25,7 +25,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 USES=		compiler:c11 localbase:ldflags perl5 shebangfix xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	9fans
-GH_TAGNAME=	4650064aa757c217fa72f8819a2cf67c689bcdef
+GH_TAGNAME=	1f098efb7370a0b28306d10681e21883fb1c1507
 USE_PERL5=	build
 USE_XORG=	x11 xext xt
 

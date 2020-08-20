@@ -1,0 +1,10 @@
+--- bin/9c.orig	2020-08-19 19:45:11 UTC
++++ bin/9c
+@@ -83,6 +83,7 @@ useclang()
+ 		-Wno-unneeded-internal-declaration \
+ 		-fsigned-char \
+ 		-fno-caret-diagnostics \
++		-fcommon \
+ 	"
+ 	cflags="$cflags -g"
+ 	cflags="$cflags $CC9FLAGS"
