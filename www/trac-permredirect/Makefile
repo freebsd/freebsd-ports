@@ -13,6 +13,8 @@ DIST_SUBDIR=	trac
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Redirect users to the login screen on PermissionError
 
+LICENSE=	BSD
+
 RUN_DEPENDS=	tracd:www/trac
 
 FETCH_BEFORE_ARGS=	-o ${DISTFILES}
