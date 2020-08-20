@@ -92,6 +92,7 @@
     SUBDIR += netrexx
     SUBDIR += netty
     SUBDIR += openjdk11
+    SUBDIR += openjdk11-jre
     SUBDIR += openjdk12
     SUBDIR += openjdk13
     SUBDIR += openjdk14

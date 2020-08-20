@@ -7,7 +7,7 @@ CATEGORIES=	java devel
 PKGNAMESUFFIX?=	${JDK_MAJOR_VERSION}
 
 MAINTAINER=	java@FreeBSD.org
-COMMENT=	Java Development Kit ${JDK_MAJOR_VERSION}
+COMMENT?=	Java Development Kit ${JDK_MAJOR_VERSION}
 
 LICENSE=	GPLv2
 
@@ -49,7 +49,11 @@ MAKE_ENV=	LANG="C" \
 
 JDK_OSARCH=	bsd-${ARCH:S/amd64/x86_64/:S/i386/x86/:S/powerpc64/ppc64/}
 JDK_BUILDDIR=	${WRKSRC}/build/${JDK_OSARCH}-normal-${JDK_BUILD_JVM}-${JDK_BUILD_TYPE}
+.if defined(BUILD_JRE)
+JDK_IMAGEDIR=	${JDK_BUILDDIR}/images/jre
+.else
 JDK_IMAGEDIR=	${JDK_BUILDDIR}/images/jdk
+.endif
 INSTALLDIR=	${PREFIX}/${PKGBASE}
 
 NOPRECIOUSMAKEVARS=	yes
@@ -97,7 +101,11 @@ CONFIGURE_ARGS=	--with-boot-jdk=${BOOTSTRAPJDKDIR} \
 
 JAVAVMS_COMMENT=	OpenJDK${JDK_MAJOR_VERSION}
 
+.if defined(BUILD_JRE)
+ALL_TARGET=		legacy-images
+.else
 ALL_TARGET=		images
+.endif
 JDK_BUILD_TYPE=		release
 
 .include <bsd.port.pre.mk>
