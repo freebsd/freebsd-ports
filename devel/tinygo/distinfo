@@ -1,6 +1,6 @@
-TIMESTAMP = 1596631349
-SHA256 (tinygo-org-tinygo-v0.14.0_GH0.tar.gz) = 77d834f1d53c1b3cc2e97e7cb3a820abc31567faa1ded48cf7bfdfd72d8da1eb
-SIZE (tinygo-org-tinygo-v0.14.0_GH0.tar.gz) = 517688
+TIMESTAMP = 1597925221
+SHA256 (tinygo-org-tinygo-v0.14.1_GH0.tar.gz) = 2def83190542b529b1be476294298ec29bd6bfdf36edcb2658d93ced813781d6
+SIZE (tinygo-org-tinygo-v0.14.1_GH0.tar.gz) = 518324
 SHA256 (blakesmith-ar-8bd4349a67f2_GH0.tar.gz) = 51d0ca71a5f31d283eb43142fadd036c9df909ebe5e5d7af031f6b9b91c65a67
 SIZE (blakesmith-ar-8bd4349a67f2_GH0.tar.gz) = 4057
 SHA256 (bugst-go-serial-v1.0.0_GH0.tar.gz) = 90bb0f44d59b04aa43d2f65c876c5c2b08bd5b85cfa019dc85afdab42cd12423
