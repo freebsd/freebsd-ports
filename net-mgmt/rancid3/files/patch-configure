@@ -1,6 +1,6 @@
---- configure.orig	2017-07-09 02:56:22 UTC
+--- configure.orig	2020-03-10 13:04:25 UTC
 +++ configure
-@@ -5471,24 +5471,25 @@ fi
+@@ -5500,24 +5500,25 @@ fi
  # ping seems to take one of two formats for count (N)
  # BSD: ping -c N host
  # SVR: ping host N

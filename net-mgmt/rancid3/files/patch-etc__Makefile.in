@@ -1,6 +1,6 @@
---- etc/Makefile.in.orig	2017-10-25 18:05:21 UTC
+--- etc/Makefile.in.orig	2020-03-10 13:04:23 UTC
 +++ etc/Makefile.in
-@@ -535,30 +535,10 @@ uninstall-am: uninstall-pkgdataDATA unin
+@@ -542,30 +542,10 @@ uninstall-am: uninstall-pkgdataDATA uninstall-sysconfD
  
  
  install-data-local: all
