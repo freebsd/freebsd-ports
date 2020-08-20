@@ -19,6 +19,7 @@ USES=		charsetfix compiler cpe gmake readline tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-camellia \
 		--enable-noexecstack
+CFLAGS+=	-fcommon
 
 INFO=		gnupg1
 DOCSDIR=	${PREFIX}/share/doc/gnupg1
