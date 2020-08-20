@@ -15,6 +15,7 @@ EXTRACT_DEPENDS=	rcs:devel/rcs57
 BROKEN_aarch64=	Fails to link: missing sbrk
 
 USES=		tar:bzip2
+LDFLAGS=	-Wl,--allow-multiple-definition
 NO_WRKSUBDIR=	yes
 PORTDOCS=	paper.ascii.gz
 

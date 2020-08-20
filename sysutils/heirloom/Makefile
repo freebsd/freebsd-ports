@@ -14,8 +14,9 @@ BUILD_DEPENDS=	ksh:shells/pdksh
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		gmake ncurses tar:bzip2
-MAKE_ARGS=	CC=${CC} CFLAGS="${CFLAGS}" ROOT="${STAGEDIR}" \
-		LCURS="-L${LOCALBASE}/lib -lncurses"
+LDFLAGS+=	-Wl,--allow-multiple-definition
+MAKE_ARGS=	CC=${CC} CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" \
+		ROOT="${STAGEDIR}" LCURS="-L${LOCALBASE}/lib -lncurses"
 MAKEFILE=	makefile
 ALL_TARGET=	#
 DATADIR=	${PREFIX}/${PORTNAME}
