@@ -373,6 +373,7 @@
     SUBDIR += ngrok
     SUBDIR += nikto
     SUBDIR += nist-kat
+    SUBDIR += nitrokey-app
     SUBDIR += nmap
     SUBDIR += nss
     SUBDIR += nss_compat_ossl
