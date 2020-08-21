@@ -19,9 +19,9 @@ RUN_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser \
 		p5-XML-SAX>=0.15:textproc/p5-XML-SAX \
 		p5-XML-SAX-Expat>=0:textproc/p5-XML-SAX-Expat
 
-MAKE_JOBS_UNSAFE=	yes
-NO_ARCH=	yes
 USES=		perl5
+NO_ARCH=	yes
 USE_PERL5=	configure
+MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.mk>
