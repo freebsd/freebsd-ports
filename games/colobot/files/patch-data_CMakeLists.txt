@@ -1,0 +1,11 @@
+--- data/CMakeLists.txt.orig	2019-02-23 19:01:32 UTC
++++ data/CMakeLists.txt
+@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 2.8)
+ option(TRANSLATIONS "Enable translations of help and level files" ON)
+ 
+ if(TRANSLATIONS)
+-    find_package(PythonInterp 2.7 REQUIRED)
++    find_package(PythonInterp REQUIRED)
+ else()
+     message(STATUS "Translations disabled; only English files will be installed")
+ endif()
