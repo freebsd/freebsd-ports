@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	protobuf
-PORTVERSION=	3.12.2
+PORTVERSION=	3.12.4
 PORTEPOCH=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
@@ -13,7 +13,8 @@ COMMENT=	Google protobuf Python Client Library
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	protoc:devel/protobuf
+BUILD_DEPENDS=	protoc:devel/protobuf \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=1.9:devel/py-six@${PY_FLAVOR}
 
 USES=		python
