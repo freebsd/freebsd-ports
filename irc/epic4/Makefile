@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	epic4
-PORTVERSION=	2.10.7
+PORTVERSION=	2.10.9
 CATEGORIES=	irc
 MASTER_SITES=	http://ftp.epicsol.org/pub/epic/EPIC4-PRODUCTION/ \
 		http://ftp.cc.uoc.gr/mirrors/irc/epic/EPIC4-PRODUCTION/
