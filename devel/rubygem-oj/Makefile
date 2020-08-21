@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	oj
-PORTVERSION=	3.10.8
+PORTVERSION=	3.10.9
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,6 +13,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libgmp.so:math/gmp
+RUN_DEPENDS=	rubygem-bigdecimal>=2.0<3:math/rubygem-bigdecimal
 
 USES=		gem
 USE_RUBY=	yes
