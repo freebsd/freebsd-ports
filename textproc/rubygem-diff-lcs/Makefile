@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	diff-lcs
-PORTVERSION=	1.3
+PORTVERSION=	1.4.4
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -15,9 +15,10 @@ LICENSE_FILE_ART20=	${WRKSRC}/docs/artistic.txt
 LICENSE_FILE_GPLv2+ =	${WRKSRC}/docs/COPYING.txt
 LICENSE_FILE_MIT=	${WRKSRC}/License.md
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem shebangfix
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 PLIST_FILES=	bin/htmldiff bin/ldiff
 
