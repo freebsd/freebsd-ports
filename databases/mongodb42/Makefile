@@ -2,7 +2,7 @@
 
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
-DISTVERSION=	4.2.8
+DISTVERSION=	4.2.9
 CATEGORIES=	databases net
 MASTER_SITES=	https://fastdl.mongodb.org/src/ \
 		http://fastdl.mongodb.org/src/
@@ -12,9 +12,12 @@ DISTNAME=	mongodb-src-${DISTVERSIONPREFIX}${DISTVERSION}
 MAINTAINER=	ronald-lists@klop.ws
 COMMENT=	Distributed document-oriented "NoSQL" database (4.2.x Branch)
 
-# mongodb is SSPL, C++ driver is APACHE20
-LICENSE=	SSPL APACHE20
+# mongodb is SSPLv1, C++ driver is APACHE20
+LICENSE=	SSPLv1 APACHE20
 LICENSE_COMB=	multi
+LICENSE_NAME_SSPLv1=	Server Side Public License
+LICENSE_FILE_SSPLv1=	${WRKSRC}/LICENSE-Community.txt
+LICENSE_PERMS_SSPLv1=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 ONLY_FOR_ARCHS=	aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	"Only ported to amd64 and aarch64 on FreeBSD. Upstream supports arm64, ppc64le, s390x and x86-64."
@@ -32,12 +35,8 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 USES=		compiler:c++17-lang cpe python:3.5+,build scons shebangfix
 USE_RC_SUBR=	mongod
 
-LICENSE_FILE_SSPL=	${WRKSRC}/LICENSE-Community.txt
-LICENSE_NAME_SSPL=	Server Side Public License
-LICENSE_PERMS_SSPL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
-
 CONFLICTS_BUILD=	mongo-cxx-driver
-CONFLICTS_INSTALL=	mongodb36 mongodb40
+CONFLICTS_INSTALL=	mongodb36 mongodb4[04]
 
 OPTIONS_DEFINE=	SASL SSL
 OPTIONS_DEFAULT=SASL SSL
