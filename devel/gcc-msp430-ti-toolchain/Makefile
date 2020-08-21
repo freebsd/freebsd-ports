@@ -9,7 +9,7 @@ MASTER_SITES=	GCC/releases/gcc-${GCC_REL_VERSION}:gcc \
 		ftp://sources.redhat.com/pub/:newlib \
 		GNU/gdb:gdb \
 		SOURCEWARE/newlib:newlib \
-		http://software-dl.ti.com/msp430/msp430_public_sw/mcu/msp430/MSPGCC/${TI_VERSION_PATCH:S/./_/g}/export/:tipatch \
+		http://software-dl.ti.com/msp430/msp430_public_sw/mcu/msp430/MSPGCC/${TI_VERSION:S/./_/g}/export/:tipatch \
 		http://software-dl.ti.com/msp430/msp430_public_sw/mcu/msp430/MSPGCC/${TI_VERSION:S/./_/g}/export/:tisupport \
 		http://www.ti.com/lit/ug/slau${DOC_VERSION}/:tidocs
 DISTFILES=	gcc-${GCC_REL_VERSION}.tar.xz:gcc \
@@ -47,17 +47,16 @@ USE_CSTD=	gnu89
 
 GNU_CONFIGURE=		yes
 
-TI_VERSION=		8.3.2.2
-TI_VERSION_PATCH=	8.3.1.0
-GCC_REL_VERSION=	8.3.0
-GCC_VERSION=		8.3.1
-SUPPORT_VERSION=	1.209
-BINUTILS_VERSION=	2.26
-GDB_VERSION=		8.1
+TI_VERSION=		9.2.0.0
+GCC_REL_VERSION=	9.2.0
+GCC_VERSION=		9.2.0
+SUPPORT_VERSION=	1.210
+BINUTILS_VERSION=	2.34
+GDB_VERSION=		9.1
 NEWLIB_VERSION=		2.4.0
-PATCHSET_VERSION=	8.3.1.25
-DOC_VERSION=		646e
-RELEASE_DATE=		20200313
+PATCHSET_VERSION=	9.2.0.50
+DOC_VERSION=		646f
+RELEASE_DATE=		20200612
 TARGET=			msp430-elf
 
 CPE_PRODUCT=	gcc
@@ -170,7 +169,27 @@ do-build:
 		${DO_MAKE_BUILD}
 	@cd ${BUILD_DIR}/gdb && \
 		${SETENV} ${MAKE_ENV} ${FAKEROOT} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install DESTDIR=''
-
+# Strip binaries
+.if !defined(DEBUG)
+	@for bin in $$(${FIND} ${INTERIM_PREFIX}/bin -type f -name ${TARGET}-\*) ; do \
+		if ! ${FILE} $$bin | ${GREP} -qs ': ELF' ; then continue ; fi ; \
+		${STRIP_CMD} $${bin} ; \
+	done
+	@for bin in $$(${FIND} ${INTERIM_PREFIX}/${TARGET}/bin -type f -maxdepth 1 -mindepth 1) ; do \
+		if ! ${FILE} $$bin | ${GREP} -qs ': ELF' ; then continue ; fi ; \
+		${STRIP_CMD} $${bin} ; \
+	done
+	@for bin in $$(${FIND} ${INTERIM_PREFIX}/libexec/gcc/${TARGET}/${GCC_VERSION} -type f) ; do \
+		if ! ${FILE} $$bin | ${GREP} -qs ': ELF' ; then continue ; fi ; \
+		${STRIP_CMD} $${bin} ; \
+	done
+	@${STRIP_CMD} ${INTERIM_PREFIX}/lib/libcc1.so.0
+	@for bin in $$(${FIND} ${INTERIM_PREFIX}/lib/gcc/${TARGET}/${GCC_VERSION} -perm +111 -and ! -type d) ; do \
+		if ! ${FILE} $$bin | ${GREP} -qs ': ELF' ; then continue ; fi ; \
+		${STRIP_CMD} $${bin} ; \
+	done
+.endif
+		
 do-install:
 	@${TAR} -cf - -C ${INTERIM_WORLD} ${PORTNAME}-${TI_VERSION} | ${TAR} -xf - -C ${STAGEDIR}${PREFIX}
 	@${ECHO_MSG} "Remove unneeded host files..."
