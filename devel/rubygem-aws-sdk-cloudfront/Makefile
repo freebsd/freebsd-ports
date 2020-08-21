@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aws-sdk-cloudfront
-PORTVERSION=	1.36.0
+PORTVERSION=	1.36.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
