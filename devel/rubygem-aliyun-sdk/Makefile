@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aliyun-sdk
-PORTVERSION=	0.7.3
+PORTVERSION=	0.8.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
