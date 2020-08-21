@@ -13,11 +13,15 @@ COMMENT=	Perform frequency scans for DVB and ATSC transmissions
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	No longer developed since September 2017, MASTER_SITES gone
+EXPIRATION_DATE=2020-09-01
+
 BUILD_DEPENDS=	v4l_compat>=1.0.20120501:multimedia/v4l_compat
 
 GNU_CONFIGURE=	yes
 USES=		dos2unix gettext iconv localbase tar:bzip2
 DOS2UNIX_GLOB=	*.c *.h
+CFLAGS+=	-fcommon
 LDFLAGS+=	${ICONV_LIB}
 
 PORTDOCS=	COPYING ChangeLog README
