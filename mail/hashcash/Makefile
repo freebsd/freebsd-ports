@@ -27,6 +27,12 @@ MAKE_ENV+=	STAGEDIR=${STAGEDIR}
 
 OPTIONS_DEFINE=	DOCS
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc || ${ARCH} == powerpc64
+USE_GCC=	any
+.endif
+
 post-patch-DOCS-off:
 	${REINPLACE_CMD} -e '/DOC_INSTALL_PATH/d' ${WRKSRC}/Makefile
 
