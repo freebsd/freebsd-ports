@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	redis_exporter
-PORTVERSION=	1.6.0
+PORTVERSION=	1.10.0
 DISTVERSIONPREFIX=v
 CATEGORIES=	databases
 
@@ -20,15 +20,16 @@ USE_RC_SUBR=	redis_exporter
 
 GH_TUPLE=	beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 		cespare:xxhash:v2.1.1:cespare_xxhash/vendor/github.com/cespare/xxhash/v2 \
-		golang:protobuf:v1.3.2:golang_protobuf/vendor/github.com/golang/protobuf \
-		gomodule:redigo:7ac8ae1:gomodule_redigo/vendor/github.com/gomodule/redigo \
+		golang:protobuf:v1.4.2:golang_protobuf/vendor/github.com/golang/protobuf \
+		golang:sys:e047566:golang_sys/vendor/golang.org/x/sys \
+		protocolbuffers:protobuf-go:v1.25.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
+		gomodule:redigo:v1.8.2:gomodule_redigo/vendor/github.com/gomodule/redigo \
 		matttproud:golang_protobuf_extensions:v1.0.1:matttproud_golang_protobuf_extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
-		prometheus:client_golang:v1.5.1:prometheus_client_golang/vendor/github.com/prometheus/client_golang \
+		prometheus:client_golang:v1.7.0:prometheus_client_golang/vendor/github.com/prometheus/client_golang \
 		prometheus:client_model:v0.2.0:prometheus_client_model/vendor/github.com/prometheus/client_model \
-		prometheus:common:v0.9.1:prometheus_common/vendor/github.com/prometheus/common \
-		prometheus:procfs:v0.0.8:prometheus_procfs/vendor/github.com/prometheus/procfs \
-		sirupsen:logrus:v1.4.2:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
-		golang:sys:e047566:golang_sys/vendor/golang.org/x/sys
+		prometheus:common:v0.10.0:prometheus_common/vendor/github.com/prometheus/common \
+		prometheus:procfs:v0.1.3:prometheus_procfs/vendor/github.com/prometheus/procfs \
+		sirupsen:logrus:v1.6.0:sirupsen_logrus/vendor/github.com/sirupsen/logrus
 
 GO_BUILDFLAGS=	-v -ldflags "${LD_FLAG_STRING}"
 
