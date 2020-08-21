@@ -1,0 +1,4 @@
+bin/dosbox-staging
+share/applications/dosbox-staging.desktop
+share/icons/hicolor/scalable/apps/dosbox-staging.svg
+share/man/man1/dosbox-staging.1.gz

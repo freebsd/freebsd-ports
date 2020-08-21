@@ -26,6 +26,7 @@
     SUBDIR += dgen-sdl
     SUBDIR += dolphin-emu
     SUBDIR += dosbox
+    SUBDIR += dosbox-staging
     SUBDIR += dtcyber
     SUBDIR += dynagen
     SUBDIR += dynamips-community
