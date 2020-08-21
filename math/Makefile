@@ -873,6 +873,7 @@
     SUBDIR += rpcalc
     SUBDIR += rubiks
     SUBDIR += rubygem-algebra
+    SUBDIR += rubygem-bigdecimal
     SUBDIR += rubygem-enumerable-statistics
     SUBDIR += rubygem-expression_parser
     SUBDIR += rubygem-fftw3

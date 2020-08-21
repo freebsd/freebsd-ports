@@ -1,0 +1,3 @@
+BigDecimal provides an arbitrary-precision decimal floating-point number class.
+
+WWW: https://github.com/ruby/bigdecimal
