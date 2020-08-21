@@ -2,18 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	firefox
-DISTVERSION=	79.0
+DISTVERSION=	80.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
-		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}-candidates/build1/source
+		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}-candidates/build2/source
 DISTFILES=	${DISTNAME}.source${EXTRACT_SUFX}
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
-BUILD_DEPENDS=	nspr>=4.25:devel/nspr \
-		nss>=3.54:security/nss \
+BUILD_DEPENDS=	nspr>=4.26:devel/nspr \
+		nss>=3.55:security/nss \
 		icu>=67.1,1:devel/icu \
 		libevent>=2.1.8:devel/libevent \
 		harfbuzz>=2.6.8:print/harfbuzz \
