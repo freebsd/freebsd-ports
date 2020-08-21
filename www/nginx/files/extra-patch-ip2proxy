@@ -1,0 +1,11 @@
+--- ../ip2proxy-nginx-f9815e3/ngx_http_ip2proxy.c.orig	2020-08-04 06:47:10.018483000 -0400
++++ ../ip2proxy-nginx-f9815e3/ngx_http_ip2proxy.c	2020-08-04 06:47:20.081413000 -0400
+@@ -537,7 +537,7 @@
+ 
+ 		v->data = *(u_char **) ((char *) ctx->record + data);
+ 
+-		if (ngx_strcmp(v->data, NOT_SUPPORTED) == 0 || ngx_strcmp(v->data, INVALID_IPV4_ADDRESS) == 0) {
++		if (ngx_strcmp(v->data, NOT_SUPPORTED) == 0 || ngx_strcmp(v->data, INVALID_IP_ADDRESS) == 0) {
+ 			v->not_found = 1;
+ 			return NGX_OK;
+ 		}
