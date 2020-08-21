@@ -16,27 +16,27 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libeb.so:japanese/eb
 
 USES=		iconv:patch
+USE_RC_SUBR=	ebhttpd ebnetd ndtpd
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=${RUNDIR} --with-logdir=${LOGDIR}
 CONFIGURE_ENV=	PERL=${PREFIX}/bin/perl
 
+SUB_FILES=	pkg-message
+
 USERS=		${EBNETD_USER}
 GROUPS=		${EBNETD_GROUP}
 
-# Local variables
-LOGDIR=		/var/log
-RUNDIR=		/var/run
-EBNETD_USER=	ebnetd
-EBNETD_GROUP=	ebnetd
-
-USE_RC_SUBR=	ebhttpd ebnetd ndtpd
-SUB_FILES=	pkg-message
+INFO=		ebnetd ebnetd-ja
 PLIST_SUB=	EBNETD_RUNDIR=${RUNDIR}/${PORTNAME} \
 		EBNETD_USER=${EBNETD_USER} \
 		EBNETD_GROUP=${EBNETD_GROUP}
 
-INFO=		ebnetd ebnetd-ja
+# Local variables
+EBNETD_GROUP=	ebnetd
+EBNETD_USER=	ebnetd
+LOGDIR=		/var/log
+RUNDIR=		/var/run
 
 post-patch:
 	${MV} ${WRKSRC}/doc-ja/ebnetd-ja.texi ${WRKSRC}/doc-ja/ebnetd-ja.texi.orig
