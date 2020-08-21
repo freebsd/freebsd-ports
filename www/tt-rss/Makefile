@@ -3,6 +3,7 @@
 
 PORTNAME=	tt-rss
 PORTVERSION=	g20200801
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	https://git.tt-rss.org/fox/tt-rss/archive/
@@ -15,10 +16,10 @@ COMMENT=	Tiny Tiny RSS: web-based news feed (RSS/Atom) aggregator
 LICENSE=	GPLv2
 
 USES=		php:cli,web shebangfix gettext-tools
-USE_PHP=	ctype dom fileinfo intl hash json mbstring pcntl posix session xmlrpc
+USE_PHP=	ctype dom fileinfo iconv intl hash json mbstring pcntl posix session xmlrpc
 
 REINPLACE_ARGS=	-i ""
-SHEBANG_FILES=	lib/dojo-src/rebuild-dojo.sh utils/extract-i18n-js.pl
+SHEBANG_FILES=	lib/dojo-src/rebuild-dojo.sh utils/extract-i18n-js.pl update_daemon2.php
 WRKSRC=		${WRKDIR}/tt-rss
 
 GIT_TAGNAME=	2b50aaed6
@@ -32,38 +33,28 @@ OPTIONS_DEFINE=	CURL GD
 OPTIONS_SINGLE=	DB
 OPTIONS_SINGLE_DB=	MYSQL PGSQL
 OPTIONS_DEFAULT=	CURL GD MYSQL
+
 CURL_DESC=	Use SimplePie instead of Magpie
+CURL_USE=	PHP=curl
+
 GD_DESC=	Use OTP QR code generation
+GD_USE=		PHP=gd
+
+PGSQL_VARS=	DB=pgsql
+PGSQL_USE=	PHP=pdo_pgsql,pgsql
+PSQL_VARS_OFF=	PGSQL="\#"
+
+MYSQL_VARS=	DB=mysql
+MYSQL_USE=	PHP=pdo_mysql,mysqli
+MYSQL_VARS_OFF=	MYSQL="\#"
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPGSQL}
-USE_PHP+=	pdo_pgsql pgsql
-DB=		pgsql
-MYSQL=		"\#"
-PGSQL=
-.endif
-
-.if ${PORT_OPTIONS:MMYSQL}
-USE_PHP+=	pdo_mysql mysqli
-DB=		mysql
-MYSQL=
-PGSQL=		"\#"
-.endif
-
-.if ${PORT_OPTIONS:MCURL}
-USE_PHP+=	curl
-.endif
-
-.if ${PORT_OPTIONS:MGD}
-USE_PHP+=	gd
-.endif
 
 SUB_FILES=	httpd-tt-rss.conf pkg-message
 SUB_LIST=	DB=${DB} WWWOWN=${WWWOWN} MYSQL=${MYSQL} PGSQL=${PGSQL}
 PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
-PHP2FIX=	config.php-dist update.php update_daemon2.php
+PHP2FIX=	config.php-dist update.php
 
 SCRIPTS=	update.php update_daemon2.php
 
@@ -74,21 +65,13 @@ pre-configure:
 		${WRKSRC}/${script}
 .endfor
 
-do-configure:
-.if ${PORT_OPTIONS:MPGSQL}
-	${REINPLACE_CMD} -e '/DB_TYPE/s|pgsql|mysql|;s|mysql$$|pgsql|'	\
-		${WRKSRC}/config.php-dist
-.endif
-
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR} ${STAGEDIR}${DATADIR}
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} "*" ${STAGEDIR}${WWWDIR} "! -name LICENSE")
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} "*" ${STAGEDIR}${WWWDIR} \
+		"! -name LICENSE ! -name .empty")
 	${RM} -r ${STAGEDIR}${WWWDIR}/debian
-	${MKDIR} ${STAGEDIR}${WWWDIR}/icons/	# Not used for fresh installation
-	${TOUCH} ${STAGEDIR}${WWWDIR}/icons/.empty
 	${INSTALL_DATA} ${WRKDIR}/httpd-tt-rss.conf ${STAGEDIR}${DATADIR}
 	${ECHO} "${OPSYS}:${PORTVERSION}:${GIT_TAGNAME}" > "${STAGEDIR}${WWWDIR}/version_static.txt"
-
-	${MV} ${STAGEDIR}${WWWDIR}/config.php-dist ${STAGEDIR}${WWWDIR}/config.php.sample
+	${RLN} ${STAGEDIR}${WWWDIR}/config.php-dist ${STAGEDIR}${WWWDIR}/config.php.sample
 
 .include <bsd.port.mk>

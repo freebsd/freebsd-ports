@@ -3,35 +3,34 @@
   message: <<EOM
 Tiny Tiny RSS is now installed, but it requires some additional setup.
 
-You now need to create the DB used by Tiny Tiny RSS as its back-end:
-create a database and a user, and source the script
-%%WWWDIR%%/schema/ttrss_schema_%%DB%%.sql .
+You now need to create a database, a database user, and
+configure the web server.  Sample apache24 configs located at
+%%DATADIR%%/httpd-tt-rss.conf
 
-Then, you need to edit the configuration file
-%%WWWDIR%%/config.php
+To use the web installer.
+    # rm %%WWWDIR%%/config.php
+    Goto http://localhost/tt-rss/install
 
-You also need to add appropriate configuration directives to your apache
-configuration file (%%PREFIX%%/etc/apache(2)/httpd.conf).
+Or configure by hand:
+    Source the script
+    %%WWWDIR%%/schema/ttrss_schema_%%DB%%.sql
 
-E.g., you could copy %%DATADIR%%/httpd-tt-rss.conf
-to %%LOCALBASE%%/etc/apache22/Includes/ if using apache22.
+    Edit the configuration file
+    %%WWWDIR%%/config.php
 
-Then, you should be able to check <http://localhost/tt-rss/> and
-<http://localhost/tt-rss/mobile/> with a browser.
-(the first time, the user is "admin", with the password "password")
+In both cases, enable the ttrssd daemon:
+    # sysrc ttrssd_enable=YES
+    # service ttrssd start
 
-And to update your feeds, you have to enable the daemon ttrssd in
-/etc/rc.conf and start %%PREFIX%%/etc/rc.d/ttrssd . You may also add an entry
-for /var/log/ttrssd.log in your /etc/newsyslog.conf .
-Note: set `ttrssd_local_db="NO"' if your database is on another server.
+If your database if on another server:
+    # sysrc ttrssd_local_db=NO
+
+Goto http://localhost/tt-rss/
+Default user is "admin", with the password "password"
 
 Important note: after an upgrade, you have to set SINGLE_USER_MODE to true
-in your config.php; remember to modify after that if needed. And your
-DB_USER must be granted to ALTER any tables of your DB_NAME. And don't
-forget to empty the cache of your browser!
-
-Please read <https://git.tt-rss.org/fox/tt-rss/wiki/InstallationNotes> and
-<https://git.tt-rss.org/fox/tt-rss/wiki/UpdatingFeeds> for important points.
+in your config.php; remember to modify after that if needed. Also your
+DB_USER must be granted to ALTER any tables of your DB_NAME.
 EOM
 }
 ]

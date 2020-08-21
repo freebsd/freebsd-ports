@@ -1,10 +1,7 @@
 # This is included in Apache's httpd.conf for Tiny Tiny RSS
 
 <Directory "%%WWWDIR%%">
-    Options Indexes FollowSymLinks MultiViews
-    AllowOverride None
-    Order allow,deny
-    Allow from all
+    Require all granted
 </Directory>
 
 <IfModule mod_alias.c>
