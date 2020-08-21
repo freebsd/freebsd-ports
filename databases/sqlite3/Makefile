@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sqlite3
-DISTVERSION=	3.32.3
-PORTREVISION=	3
+DISTVERSION=	3.33.0
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://www.sqlite.org/2020/ http://www2.sqlite.org/2020/ http://www3.sqlite.org/2020/
@@ -248,6 +247,9 @@ post-build:
 	@${ECHO_MSG} "===> WARNING: on ${ARCH} don't pass atof1-* tests"
 .endif
 
+post-stage:
+	${SETENV} LD_LIBMAP_DISABLE=1 ldd -a "${STAGEDIR}${PREFIX}/bin/${PORTNAME}"
+
 post-install:
 	${RM} ${STAGEDIR}${PREFIX}/include/msvc.h
 	${SETENV} LD_LIBMAP_DISABLE=1 ldd -a "${STAGEDIR}${PREFIX}/bin/${PORTNAME}" "${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.so"
@@ -259,5 +261,13 @@ sha1: checksum
 .else
 	@sha1 ${DISTDIR}/${ALLFILES}
 .endif
+
+# For compare with checksum from of the site. Now, this is a NIST SHA3-256 hash. sha256 not suitable for compare.
+# But the creation of a new target does not justify the emergence of dependence on the perl5.
+# sha3sum maybe installed with p5-Digest-SHA3 port.
+# EXTRACT_DEPENDS=p5-Digest-SHA3:security/p5-Digest-SHA3; USES=perl5; USE_PERL5=extract;
+# @${PERL} -MDigest::SHA3 -le 'print Digest::SHA3->new(sha_256_hex)->add(<>)->hexdigest' < ${DISTDIR}/${ALLFILES}
+sha3: checksum
+	@sha3sum -a 256 ${DISTDIR}/${ALLFILES}
 
 .include <bsd.port.mk>
