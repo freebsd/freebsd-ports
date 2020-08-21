@@ -295,6 +295,7 @@
     SUBDIR += libkpass
     SUBDIR += libksba
     SUBDIR += libmcrypt
+    SUBDIR += libnitrokey
     SUBDIR += libntlm
     SUBDIR += libotr
     SUBDIR += libotr3

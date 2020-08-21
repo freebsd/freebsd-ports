@@ -1,0 +1,6 @@
+libnitrokey is a project to communicate with Nitrokey Pro and Storage devices
+in a clean and easy manner. Written in C++14, testable with py.test
+and Catch frameworks, with C API, Python access
+(through CFFI and C API, in future with Pybind11).
+
+WWW: https://github.com/Nitrokey/libnitrokey
