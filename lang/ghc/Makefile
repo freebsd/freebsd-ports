@@ -74,7 +74,7 @@ BOOT_SUB_LIST_OFF=	HSC2HS=${BOOT_HSC2HS}
 PROFILE_SUB_LIST=	WITH_PROFILE="YES"
 PROFILE_SUB_LIST_OFF=	WITH_PROFILE="NO"
 
-GHC_VERSION=		8.10.1
+GHC_VERSION=		8.10.2
 HSCOLOUR_VERSION=	1.24.4
 LLVM_VERSION=		90
 # LLVM version that bootstrap compiler uses
@@ -92,7 +92,8 @@ CONFIGURE_ARGS+=	--enable-dtrace=0
 .endif
 
 .if ${ARCH} == i386
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-libraries_ghc-prim_cbits_atomic.c
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-libraries_ghc-prim_cbits_atomic.c \
+		${PATCHDIR}/extra-patch-rts_posix_TTY.c
 .endif
 
 .if defined(PPC_ABI) && ${PPC_ABI} == ELFv1
