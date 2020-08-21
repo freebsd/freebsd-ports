@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	wgetpaste
-PORTVERSION=	2.29
+PORTVERSION=	2.30
 CATEGORIES=	www
 MASTER_SITES=	http://wgetpaste.zlin.dk/ \
 		LOCAL/sunpoet
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${PORTNAME}.example zlin.conf
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} wgetpaste.example zlin.conf
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -23,15 +23,15 @@ NO_BUILD=	yes
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|/etc/|${PREFIX}/etc/|g' \
-		-e 's|\(INFO_COMMAND=\).*|\1"pkg_info -aE"|' \
+		-e 's|\(INFO_COMMAND=\).*|\1"pkg info -aE"|' \
 		-e 's|\(INFO_ARGS=\).*|\1|' \
-			${WRKSRC}/${PORTNAME}
+			${WRKSRC}/wgetpaste
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.d/ ${STAGEDIR}${PREFIX}/share/zsh/site-functions/
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_DATA} ${DISTDIR}/${PORTNAME}.example ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.sample
-	${INSTALL_DATA} ${DISTDIR}/zlin.conf ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.d/
-	${INSTALL_DATA} ${WRKSRC}/_${PORTNAME} ${STAGEDIR}${PREFIX}/share/zsh/site-functions/
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/wgetpaste.d/ ${STAGEDIR}${PREFIX}/share/zsh/site-functions/
+	${INSTALL_SCRIPT} ${WRKSRC}/wgetpaste ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_DATA} ${DISTDIR}/wgetpaste.example ${STAGEDIR}${PREFIX}/etc/wgetpaste.conf.sample
+	${INSTALL_DATA} ${DISTDIR}/zlin.conf ${STAGEDIR}${PREFIX}/etc/wgetpaste.d/
+	${INSTALL_DATA} ${WRKSRC}/_wgetpaste ${STAGEDIR}${PREFIX}/share/zsh/site-functions/
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
-TIMESTAMP = 1560537260
-SHA256 (wgetpaste-2.29.tar.bz2) = 42e42437f97376c9a2793839344205eff40c9f6b4a7d356e17fef83f72e7e0e6
-SIZE (wgetpaste-2.29.tar.bz2) = 12988
+TIMESTAMP = 1598029413
+SHA256 (wgetpaste-2.30.tar.bz2) = e3ec35f1ff49f2204864e3b4d784f6c032cdddb62cadf69263900c67a4896592
+SIZE (wgetpaste-2.30.tar.bz2) = 13859
 SHA256 (wgetpaste.example) = cbc0437f7e04d95ffd224011ee2a056a84dfd7143e314e6962688295f68def4d
 SIZE (wgetpaste.example) = 380
 SHA256 (zlin.conf) = 8fe8338ebd6716bac1e7e818b26163f899d7609fbac5932aaa1dabe45d6fdb19
