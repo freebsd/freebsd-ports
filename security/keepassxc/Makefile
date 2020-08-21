@@ -1,14 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	keepassxc
-DISTVERSION=	2.6.0
+DISTVERSION=	2.6.1
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/keepassxreboot/keepassxc/releases/download/${DISTVERSION}/${PORTNAME}-${DISTVERSION}-src.tar.xz?dummy=/
-
-PATCH_SITES=	https://github.com/keepassxreboot/keepassxc/commit/
-PATCHFILES=	4f1d8943d6bae8d03aef81cdc9689acc60008a0e.patch:-p1 \
-		2fe74c294774aeb2a2b32f55fe7ae4096d067215.patch:-p1 \
-		76f33237b0f387c04b840eadf37b94bf0d412dd4.patch:-p1
 
 MAINTAINER=	melanhit@gmail.com
 COMMENT=	KeePass Cross-platform Community Edition
