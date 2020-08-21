@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Test-Fake-HTTPD
-PORTVERSION=	0.08
+PORTVERSION=	0.09
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -25,11 +25,12 @@ TEST_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception \
 		p5-Test-UseAllModules>=0:devel/p5-Test-UseAllModules \
 		p5-libwww>=0:www/p5-libwww
 
-OPTIONS_DEFINE=	SSL
+USES=		perl5
+USE_PERL5=	modbuildtiny
 
 NO_ARCH=	yes
-USE_PERL5=	modbuildtiny
-USES=		perl5
+
+OPTIONS_DEFINE=	SSL
 
 SSL_BUILD_DEPENDS=	p5-HTTP-Daemon-SSL>=0:www/p5-HTTP-Daemon-SSL
 SSL_RUN_DEPENDS=	p5-HTTP-Daemon-SSL>=0:www/p5-HTTP-Daemon-SSL
