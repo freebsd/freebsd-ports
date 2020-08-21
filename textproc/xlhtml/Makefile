@@ -14,10 +14,15 @@ COMMENT=	Convert Excel and PowerPoint files to HTML and text
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-GNU_CONFIGURE=	yes
 USES=		autoreconf gmake tar:tgz
 
+GNU_CONFIGURE=	yes
+
 OPTIONS_DEFINE=	DOCS
+
+post-build:
+	@${STRIP_CMD} ${WRKSRC}/xlhtml/xlhtml
+	@${STRIP_CMD} ${WRKSRC}/ppthtml/ppthtml
 
 post-install-DOCS-on:
 .for dir in xlhtml ppthtml
@@ -26,9 +31,5 @@ post-install-DOCS-on:
 		${INSTALL_DATA} ChangeLog README THANKS \
 		${STAGEDIR}${DOCSDIR}/${dir}
 .endfor
-
-post-build:
-	@${STRIP_CMD} ${WRKSRC}/xlhtml/xlhtml
-	@${STRIP_CMD} ${WRKSRC}/ppthtml/ppthtml
 
 .include <bsd.port.mk>
