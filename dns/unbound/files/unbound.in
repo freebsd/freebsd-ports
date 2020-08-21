@@ -12,7 +12,8 @@
 # root.hints (-r).  Useful for when /etc/resolv.conf only contains 127.0.0.1
 #
 # PROVIDE: unbound
-# REQUIRE: SERVERS cleanvar
+# REQUIRE: FILESYSTEMS defaultroute netwait resolv
+# BEFORE: NETWORKING
 # KEYWORD: shutdown
 #
 # Add the following line to /etc/rc.conf to enable unbound:
@@ -21,7 +22,6 @@
 #
 # You could set alternative config with
 # unbound_config="/path/to/config"
-#
 #
 # Multiple profiles are supported with
 #
@@ -66,7 +66,7 @@ start_precmd()
 		su -m unbound -c "%%PREFIX%%/sbin/unbound-anchor ${unbound_anchorflags}"
 	fi
 	echo .
-	%%PREFIX%%/sbin/unbound-checkconf ${unbound_conf} > /dev/null
+	%%PREFIX%%/sbin/unbound-checkconf ${unbound_config} > /dev/null
 	return $?
 }
 
@@ -76,7 +76,7 @@ load_rc_config "${name}"
 : ${unbound_config:=%%PREFIX%%/etc/unbound/unbound.conf}
 
 # Set PID file
-pidfile=$(%%PREFIX%%/sbin/unbound-checkconf -o pidfile %%PREFIX%%/etc/unbound/unbound.conf)
+pidfile=$(%%PREFIX%%/sbin/unbound-checkconf -o pidfile ${unbound_config})
 
 required_files=${unbound_config}
 command="%%PREFIX%%/sbin/${name}"
@@ -84,7 +84,7 @@ command_args="-c ${unbound_config}"
 unbound_anchorflags=${unbound_anchorflags:-""}
 extra_commands="reload"
 start_precmd="start_precmd"
-reload_precmd="%%PREFIX%%/sbin/unbound-checkconf ${unbound_conf} >/dev/null"
+reload_precmd="%%PREFIX%%/sbin/unbound-checkconf ${unbound_config} >/dev/null"
 
 load_rc_config "${name}"
 
