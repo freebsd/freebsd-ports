@@ -4,6 +4,7 @@
 PORTNAME=	libconfuse
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.3
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	juraj@lutter.sk
@@ -14,7 +15,7 @@ LICENSE=	ISCL
 USES=		autoreconf gettext-tools iconv pathfix pkgconfig libtool
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
-GH_ACCOUNT=	martinh
+GH_ACCOUNT=	libconfuse
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls --enable-shared
