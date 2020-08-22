@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	wolfssl
-PORTVERSION=	4.4.0
+PORTVERSION=	4.5.0
 CATEGORIES=	security devel
 MASTER_SITES=	https://www.wolfssl.com/ \
 		LOCAL/fox
