@@ -3,7 +3,7 @@
 
 PORTNAME=	tables
 PORTVERSION=	3.5.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,9 @@ BUILD_DEPENDS=	${PYNUMPY} \
 LIB_DEPENDS=	libhdf5.so:science/hdf5 \
 		liblzo2.so:archivers/lzo2 \
 		libucl.so:archivers/ucl
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS} \
+		${PYTHON_PKGNAMEPREFIX}six>=1.9.0:devel/py-six@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mock>=2.0:devel/py-mock@${PY_FLAVOR}
 
 CONFLICTS_BUILD=	zstd # conflicting version of zstd is bundled
 
