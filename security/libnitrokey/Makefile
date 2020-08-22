@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libhidapi.so:comms/hidapi \
 		libudev.so:devel/libudev-devd
 
-USES=	cmake pkgconfig
+USES=		cmake compiler:c++14-lang pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Nitrokey
