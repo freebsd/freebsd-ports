@@ -49,8 +49,8 @@ MAX_NETMAP_OSVERSION?=	1200500  # Maximum OSVERSION for which NETMAP support wor
 
 # Fixup for slave ports that use this as a master port. sbruno
 .if ${PORTNAME} == ixl
-ONLY_FOR_ARCHS=		amd64
-ONLY_FOR_ARCHS_REASON=	Not supported on other architectures, amd64 only.
+ONLY_FOR_ARCHS=		amd64 powerpc64
+ONLY_FOR_ARCHS_REASON=	Not supported on other architectures, amd64 and powerpc64 only.
 .endif
 
 .if ${PORT_OPTIONS:MNETMAP_AUTO} && ${OSVERSION} <= ${MAX_NETMAP_OSVERSION}
