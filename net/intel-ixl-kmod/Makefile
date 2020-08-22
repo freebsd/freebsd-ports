@@ -11,6 +11,9 @@ MASTER_SITE_SUBDIR?=	25160/eng
 PKGNAMEPREFIX=	intel-
 PKGNAMESUFFIX=	-kmod
 
+PATCH_SITES=	https://svnweb.freebsd.org/base/head/sys/dev/ixl/
+PATCHFILES=	ixl_pf_main.c?view=patch&r1=358698&r2=358697&pathrev=358698:-p4
+
 MAINTAINER?=	freebsd@intel.com
 COMMENT?=	40 gigabit FreeBSD Base Driver for Intel(R) Network Connections
 
