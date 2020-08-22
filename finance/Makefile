@@ -34,6 +34,7 @@
     SUBDIR += gnucash-docs
     SUBDIR += grisbi
     SUBDIR += homebank
+    SUBDIR += hs-hledger
     SUBDIR += jgnash
     SUBDIR += kmymoney
     SUBDIR += kraft
