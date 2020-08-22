@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSES/GPLv3
 
 LIB_DEPENDS=	libnitrokey.so:security/libnitrokey
 
-USES=	cmake pkgconfig qt:5
+USES=		cmake compiler:c++11-lang pkgconfig qt:5
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Nitrokey
