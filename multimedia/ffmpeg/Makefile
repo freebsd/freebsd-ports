@@ -630,6 +630,12 @@ DOC_FILES=	Changelog CREDITS INSTALL.md LICENSE.md MAINTAINERS \
 DOC_DOCFILES=	APIchanges *.txt
 PORTDOCS=	*
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc64 && ${PORT_OPTIONS:MLTO}
+USE_GCC=	yes
+.endif
+
 post-patch:
 # {C,LD}FLAGS safeness
 	@${REINPLACE_CMD} -E \
