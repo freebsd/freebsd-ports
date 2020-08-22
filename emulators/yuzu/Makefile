@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	yuzu
-PORTVERSION=	s20200819
-PORTREVISION?=	1
+PORTVERSION=	s20200820
+PORTREVISION?=	0
 CATEGORIES=	emulators
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -37,7 +37,7 @@ LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yuzu-emu
-GH_TAGNAME=	354811e55
+GH_TAGNAME=	53fbf8e20
 GH_TUPLE=	yuzu-emu:unicorn:1.0.1-153-g73f45735:unicorn/externals/unicorn \
 		DarkLordZach:mbedtls:a280e60:mbedtls/externals/mbedtls \
 		KhronosGroup:SPIRV-Headers:2c51218:SPIRV_Headers/externals/sirit/externals/SPIRV-Headers \
