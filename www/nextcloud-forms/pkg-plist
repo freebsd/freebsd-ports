@@ -442,6 +442,7 @@
 %%WWWDIR%%/lib/Migration/Version0010Date20190000000007.php
 %%WWWDIR%%/lib/Migration/Version010102Date20200323120846.php
 %%WWWDIR%%/lib/Migration/Version010200Date20200323141300.php
+%%WWWDIR%%/lib/Migration/Version020002Date20200729205932.php
 %%WWWDIR%%/lib/Service/FormsService.php
 %%WWWDIR%%/templates/expired.php
 %%WWWDIR%%/templates/main.php
