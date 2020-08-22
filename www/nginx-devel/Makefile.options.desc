@@ -13,6 +13,7 @@ DEBUG_DESC=			Build with debugging support
 DEVEL_KIT_DESC=			3rd party Nginx Development Kit module
 DRIZZLE_DESC=			3rd party drizzle module
 DSO_DESC=			Enable dynamic modules support
+DYNAMIC_HC_DESC=		3rd party dynamic_healthcheck module
 DYNAMIC_UPSTREAM_DESC=		3rd party dynamic_upstream module
 ECHO_DESC=			3rd party echo module
 ENCRYPTSESSION_DESC=		3rd party encrypted_session module
