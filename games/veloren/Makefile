@@ -34,13 +34,17 @@ GL_COMMIT=	8f8b20c9139fbe1ddfb1937e3264e592d42f4fd0
 GL_TUPLE=	veloren:auth:b943c85e4a38f5ec60cd18c34c73097640162bfe:authcommon \
 		veloren:conrod:1ab6eccf94b16a8977a3274b31d4dbfef9cf9a30:conrod_core \
 		veloren:specs-idvs:fcb0b2306b571f62f9f85d89e79e087454d95efd:specsidvs
-LDFLAGS+=	-fuse-ld=lld
 INSTALLS_ICONS=	yes
 PLIST_FILES=	bin/${PORTNAME}-chat-cli \
 		bin/${PORTNAME}-server-cli \
 		bin/${PORTNAME}-voxygen \
 		share/icons/hicolor/192x192/apps/${PORTNAME}.png
 PORTDATA=	*
+
+.if exists(/usr/bin/ld.lld) && ${/usr/bin/ld:L:tA} != /usr/bin/ld.lld
+# veloren_voxygen*rcgu* has 71718 section headers, breaking old GNU ld.bfd in base
+LDFLAGS+=	-fuse-ld=lld
+.endif
 
 DESKTOP_ENTRIES="Veloren (client)" \
 		"" \
