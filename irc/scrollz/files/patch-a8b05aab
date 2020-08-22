@@ -1,0 +1,16 @@
+diff --git a/include/ircterm.h b/include/ircterm.h
+index 1fdbfeb..1da3fab 100644
+--- include/ircterm.h
++++ include/ircterm.h
+@@ -89,9 +89,9 @@ extern	char	*CM,
+ extern	int	SG;
+ /**************************** PATCHED by Flier ******************************/
+ #ifdef WANTANSI
+-char            *SETAF,
++extern char     *SETAF,
+                 *SETAB;
+-int             NUMCOLORS;
++extern int      NUMCOLORS;
+ #endif /* WANTANSI */
+ /****************************************************************************/
+ 
