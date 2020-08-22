@@ -3,7 +3,7 @@
 
 PORTNAME=	nec2c
 PORTVERSION=	.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://nec-archives.pa3kj.com/ \
 		LOCAL/db
@@ -13,6 +13,8 @@ MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Used to calculate antenna patterns useful to ham radio
 
 LIB_DEPENDS=	libccm.so:math/ccmath
+
+USES=		dos2unix
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

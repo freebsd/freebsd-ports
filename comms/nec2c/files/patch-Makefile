@@ -1,5 +1,5 @@
---- Makefile.orig	2004-01-27 14:53:38.000000000 -0500
-+++ Makefile	2015-04-07 17:08:29.000000000 -0400
+--- Makefile.orig	2004-01-27 19:53:38 UTC
++++ Makefile
 @@ -1,12 +1,11 @@
  #Makefile for nec2c     21 Aug 2003
  

@@ -1,6 +1,6 @@
---- nec2c.h.orig	2012-06-05 13:34:14.000000000 -0500
-+++ nec2c.h	2012-06-05 13:34:45.000000000 -0500
-@@ -201,8 +201,8 @@
+--- nec2c.h.orig	2004-01-24 13:48:26 UTC
++++ nec2c.h
+@@ -201,8 +201,8 @@ complex double cmplx(double a, double j);
  void 	secnds(double *x);
  int 	stop(int flag);
  int 	load_line(char *buff, FILE *pfile);
