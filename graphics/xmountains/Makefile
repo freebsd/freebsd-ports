@@ -4,11 +4,8 @@
 PORTNAME=	xmountains
 PORTVERSION=	2.9
 CATEGORIES=	graphics x11
-MASTER_SITES=	ftp://ftp.uwsg.indiana.edu/linux/debian/pool/main/x/xmountains/ \
-		ftp://ftp.fi.netbsd.org/.m/mirrors1/archive.ubuntu.com/pool/universe/x/xmountains/ \
-		ftp://ftp.mirrorservice.org/sites/archive.raspbian.org/raspbian/pool/main/x/xmountains/ \
-		ftp://ftp.unicamp.br/pub/debian/pool/main/x/xmountains/ \
-		ftp://ftp.debian.com/debian/pool/main/x/xmountains/
+MASTER_SITES=	ftp://ftp.mirrorservice.org/sites/archive.raspbian.org/raspbian/pool/main/x/xmountains/ \
+		ftp://ftp.unicamp.br/pub/debian/pool/main/x/xmountains/
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	ak@FreeBSD.org
