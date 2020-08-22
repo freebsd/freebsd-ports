@@ -1,3 +1,3 @@
 %%PYTHON_SITELIBDIR%%/dlib/__init__.py
-%%PYTHON_SITELIBDIR%%/dlib/__pycache__/__init__.cpython-37.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/dlib/__pycache__/__init__.cpython-37.pyc
+%%PYTHON_SITELIBDIR%%/dlib/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/dlib/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
