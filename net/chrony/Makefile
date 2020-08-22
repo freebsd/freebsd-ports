@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	chrony
-PORTVERSION=	3.5
-PORTREVISION=	3
+PORTVERSION=	3.5.1
 CATEGORIES=	net
-MASTER_SITES=	http://download.tuxfamily.org/chrony/
+MASTER_SITES=	https://download.tuxfamily.org/chrony/ \
+		LOCAL/mandree
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	System clock synchronization client and server
