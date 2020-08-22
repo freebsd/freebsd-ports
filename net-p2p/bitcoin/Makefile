@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bitcoin
-PORTVERSION=	0.20.0
+PORTVERSION=	0.20.1
 PORTREVISION?=	0
 CATEGORIES=	net-p2p finance
 MASTER_SITES=	https://bitcoincore.org/bin/bitcoin-core-${PORTVERSION}/ \
