@@ -1,0 +1,24 @@
+w_scan2 is a small channel scan tool which generates ATSC, DVB-C,
+DVB-S/S2 and DVB-T/T2 channels.conf files.
+
+It's based on the old "scan" tool from linuxtv-dvb-apps-1.1.0. The
+differences are:
+* no initial tuning data needed, because scanning without this data
+  is exactly what a scan tool like this should do.
+* it detects automatically which DVB/ATSC card to use.
+* much more output formats, interfacing to other dtv software.
+
+w_scan2 is a fork of the original w_scan from
+https://www.gen2vdr.de/wirbel/w_scan/index2.html
+
+Main changes from w_scan to w_scan2:
+* keep duplicate transponders by default because a stronger transponder
+  with the same ID might have a higher frequency and be discarded simply
+  because it's scanned later. Also don't replace the current transponder
+  with an advertised one by default. The latter may have a lower signal
+  strength. More details here:
+  https://stefantalpalaru.wordpress.com/2016/02/04/scan-all-the-things/
+  The old behaviour can be enabled with -d (--delete-duplicate-transponders).
+* re-enable VHF band III in Europe
+
+WWW: https://github.com/stefantalpalaru/w_scan2
