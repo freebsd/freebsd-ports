@@ -13,6 +13,9 @@ USES=		compiler:c11 gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	inikep
 
+# XXX: track progress at https://github.com/inikep/lzbench/issues/76
+MAKE_ENV=	MOREFLAGS=-fcommon
+
 PLIST_FILES=	bin/lzbench
 PORTDOCS=	NEWS README.md
 
