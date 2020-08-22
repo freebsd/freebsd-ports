@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hdf
-PORTVERSION=	4.2.11
-PORTREVISION=	8
+PORTVERSION=	4.2.15
 PORTEPOCH=	1
 CATEGORIES=	science archivers graphics
 MASTER_SITES=	http://www.hdfgroup.org/ftp/HDF/releases/HDF${PORTVERSION}/src/ \
@@ -14,13 +13,12 @@ COMMENT=	Hierarchical Data Format library (from NCSA)
 
 LIB_DEPENDS=	libsz.so:science/szip
 
-BROKEN_powerpc64=	Does not build: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'you'
 NOT_FOR_ARCHS=		aarch64 armv6 armv7
 NOT_FOR_ARCHS_REASON=	fails to compile: no machine type has been defined
 
 CONFLICTS_INSTALL=	netcdf-4.[0-9]*
 
-USES=		fortran jpeg libtool tar:bzip2
+USES=		fortran jpeg libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --with-jpeg=${LOCALBASE} \
 		--with-szlib=${LOCALBASE}
@@ -35,9 +33,6 @@ OPTIONS_DEFINE=	EXAMPLES
 
 post-patch:
 	@${REINPLACE_CMD} -e '/PROD_/ s|=.*|=""|' ${WRKSRC}/config/freebsd
-# Allow to build on PowerPC
-	@${REINPLACE_CMD} -e '/if defined (__APPLE__)/ \
-		s,),) || defined(__powerpc__),' ${WRKSRC}/hdf/src/hdfi.h
 	@${REINPLACE_CMD} -e 's/ || (__APPLE__.*//' \
 		${WRKSRC}/hdf/test/fortest.c
 
