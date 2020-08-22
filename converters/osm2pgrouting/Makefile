@@ -16,7 +16,7 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libexpat.so:textproc/expat2 \
 		libpqxx.so:databases/postgresql-libpqxx
 
-USES=		cmake compiler:c++11-lang pgsql
+USES=		cmake compiler:c++17-lang pgsql
 USE_GITHUB=	yes
 GH_ACCOUNT=	pgRouting
 
@@ -30,10 +30,5 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/osm2pgrouting/mapconfig.xml|${PREFIX}/etc/${PORTNAME}/mapconfig.xml|' \
 		${WRKSRC}/src/utilities/prog_options.cpp \
 		${WRKSRC}/Readme.md
-
-post-install:
-	@for cf in ${STAGEDIR}${PREFIX}/etc/${PORTNAME}/*.xml; do \
-		${MV} $${cf} $${cf}.sample; \
-	done
 
 .include <bsd.port.mk>

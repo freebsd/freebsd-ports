@@ -1,23 +1,54 @@
---- CMakeLists.txt.orig	2019-01-11 07:48:53 UTC
+--- CMakeLists.txt.orig	2020-08-20 05:32:18 UTC
 +++ CMakeLists.txt
-@@ -8,7 +8,7 @@ if ( ${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_BINARY_DIR} 
+@@ -8,7 +8,8 @@ if ( ${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_BINARY_DIR} 
  endif()
  
  LIST(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 -SET(SHARE_DIR "${CMAKE_INSTALL_PREFIX}/share/osm2pgrouting")
-+SET(SHARE_DIR "${CMAKE_INSTALL_PREFIX}/etc/osm2pgrouting")
++SET(DOC_DIR "${CMAKE_INSTALL_PREFIX}/share/doc/osm2pgrouting")
++SET(ETC_DIR "${CMAKE_INSTALL_PREFIX}/etc/osm2pgrouting")
  
  FIND_PACKAGE(PostgreSQL REQUIRED)
  find_package(LibPQXX REQUIRED)
-@@ -114,8 +114,10 @@ if(WIN32)
+@@ -37,6 +38,7 @@ include(CheckCXXCompilerFlag)
+ CHECK_CXX_COMPILER_FLAG("-std=c++0x" COMPILER_SUPPORTS_CXX0X)
+ CHECK_CXX_COMPILER_FLAG("-std=c++11" COMPILER_SUPPORTS_CXX11)
+ CHECK_CXX_COMPILER_FLAG("-std=c++14" COMPILER_SUPPORTS_CXX14)
++CHECK_CXX_COMPILER_FLAG("-std=c++17" COMPILER_SUPPORTS_CXX17)
+ if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
+     if (CMAKE_CXX_COMPILER_VERSION VERSION_LESS GNU_CXX_MINIMUM_VERSION)
+         message(FATAL_ERROR "GCC version must be at least ${GNU_CXX_MINIMUM_VERSION}!
+@@ -50,7 +52,10 @@ else()
+     message(STATUS "Unknown compiler minimum version for ${CMAKE_CXX_COMPILER_ID}")
+ endif()
+ 
+-if(COMPILER_SUPPORTS_CXX14)
++if(COMPILER_SUPPORTS_CXX17)
++    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
++    message(STATUS "Using  -std=c++17.")
++elseif(COMPILER_SUPPORTS_CXX14)
+     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
+     message(STATUS "Using  -std=c++14.")
+ elseif(COMPILER_SUPPORTS_CXX11)
+@@ -114,14 +119,14 @@ if(WIN32)
  endif()
  
  INSTALL(FILES
 -    "${CMAKE_SOURCE_DIR}/COPYING"
      "${CMAKE_SOURCE_DIR}/Readme.md"
-+    DESTINATION "${CMAKE_INSTALL_PREFIX}/share/doc/osm2pgrouting")
-+
-+INSTALL(FILES
-     "${CMAKE_SOURCE_DIR}/mapconfig.xml"
-     "${CMAKE_SOURCE_DIR}/mapconfig_for_cars.xml"
-     "${CMAKE_SOURCE_DIR}/mapconfig_for_bicycles.xml"
+-    "${CMAKE_SOURCE_DIR}/mapconfig.xml"
+-    "${CMAKE_SOURCE_DIR}/mapconfig_for_cars.xml"
+-    "${CMAKE_SOURCE_DIR}/mapconfig_for_bicycles.xml"
+-    "${CMAKE_SOURCE_DIR}/mapconfig_for_pedestrian.xml"
+-    DESTINATION "${SHARE_DIR}")
++    DESTINATION "${DOC_DIR}")
+ 
+-
++FOREACH(i mapconfig.xml mapconfig_for_cars.xml mapconfig_for_bicycles.xml mapconfig_for_pedestrian.xml)
++    INSTALL(FILES
++        "${CMAKE_SOURCE_DIR}/${i}"
++        RENAME ${i}.sample
++        DESTINATION "${ETC_DIR}")
++ENDFOREACH()
+ #INCLUDE_DIRECTORIES( ${Boost_INCLUDE_DIR} )
+ #TARGET_LINK_LIBRARIES( osm2pgrouting ${Boost_LIBRARIES} )
