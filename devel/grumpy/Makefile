@@ -7,10 +7,9 @@ CATEGORIES=	devel
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Python to Go source code transcompiler and runtime
 
+BROKEN_i386=	constant 2147762812 overflows int
 DEPRECATED=	Uses deprecated version of python
 EXPIRATION_DATE=	2020-09-15
-
-BROKEN_i386=	constant 2147762812 overflows int
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
@@ -22,11 +21,10 @@ BINARY_ALIAS=	python=${PYTHON_CMD}
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == "amd64"
-PLIST_SUB+=	ARCH=amd64
-.endif
 .if ${ARCH} == "i386"
 PLIST_SUB+=	ARCH=386
+.else
+PLIST_SUB+=	ARCH=${ARCH}
 .endif
 
 do-install:
