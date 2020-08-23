@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hitimes
-PORTVERSION=	1.3.1
+PORTVERSION=	2.0.0
 CATEGORIES=	devel ruby
 MASTER_SITES=	RG
 
@@ -14,5 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gem
 USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
