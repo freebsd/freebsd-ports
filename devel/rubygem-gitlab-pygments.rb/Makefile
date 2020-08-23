@@ -12,14 +12,16 @@ COMMENT=	Exposes the pygments syntax highlighter to Ruby
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-posix-spawn>=0.3.6:devel/rubygem-posix-spawn \
+RUN_DEPENDS=	rubygem-posix-spawn>=0.3.6<0.4:devel/rubygem-posix-spawn \
 		rubygem-yajl-ruby>=1.1.0:devel/rubygem-yajl-ruby
 
 USES=		gem python:env shebangfix
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-USE_RUBY=	yes
-SHEBANG_FILES=	lib/pygments/mentos.py vendor/pygments-main/docs/generate.py \
+
+SHEBANG_FILES=	lib/pygments/mentos.py \
+		vendor/pygments-main/docs/generate.py \
 		vendor/pygments-main/external/lasso-builtins-generator-9.lasso \
 		vendor/pygments-main/pygmentize \
 		vendor/pygments-main/scripts/check_sources.py \
