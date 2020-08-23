@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	DateTime-Format-Builder
-PORTVERSION=	0.82
+PORTVERSION=	0.83
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,11 +21,12 @@ RUN_DEPENDS=	p5-DateTime>=0.12:devel/p5-DateTime \
 TEST_DEPENDS=	p5-Devel-Cycle>=1.07:devel/p5-Devel-Cycle \
 		p5-Test-Memory-Cycle>=0:devel/p5-Test-Memory-Cycle
 
-OPTIONS_DEFINE=	EXAMPLES
-
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
+
+OPTIONS_DEFINE=	EXAMPLES
 
 PORTEXAMPLES=	Apache.pm Fall.pm ICal.pm MySQL.pm Simple.pm Tivoli.pm W3CDTF.pm
 
