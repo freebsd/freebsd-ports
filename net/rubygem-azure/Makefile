@@ -3,7 +3,7 @@
 
 PORTNAME=	azure
 PORTVERSION=	0.7.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -20,7 +20,7 @@ RUN_DEPENDS=	rubygem-addressable>=2.3<3:www/rubygem-addressable \
 		rubygem-mime-types>=1<4.0:misc/rubygem-mime-types \
 		rubygem-nokogiri>=1.6<2:textproc/rubygem-nokogiri \
 		rubygem-systemu>=2.6<3:devel/rubygem-systemu \
-		rubygem-thor>=0.19<1:devel/rubygem-thor
+		rubygem-thor0>=0.19<1:devel/rubygem-thor0
 
 USES=		gem
 USE_RUBY=	yes
