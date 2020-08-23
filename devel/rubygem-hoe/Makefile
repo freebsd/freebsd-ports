@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hoe
-PORTVERSION=	3.18.0
+PORTVERSION=	3.22.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ COMMENT=	Simple rake/rubygems helper for project Rakefiles
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-rake>=0.8:devel/rubygem-rake
+RUN_DEPENDS=	rubygem-rake>=0.8<15.0:devel/rubygem-rake
 
 USES=		gem
 USE_RUBY=	yes
