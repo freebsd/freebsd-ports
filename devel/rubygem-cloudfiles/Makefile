@@ -10,12 +10,13 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby version of the Rackspace Cloud Files API
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	rubygem-json>=0:devel/rubygem-json
 
-NO_ARCH=	yes
-
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
