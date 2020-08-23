@@ -9,11 +9,12 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Tool which helps searching/browsing/writing the Japanese Ruby docs
 
-RUN_DEPENDS=	rubygem-launchy>=2.3:devel/rubygem-launchy
+RUN_DEPENDS=	rubygem-launchy>=2.3<3:devel/rubygem-launchy
+
+USES=		gem
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-USE_RUBY=	yes
-USES=		gem
 
 PLIST_FILES=	bin/rurema
 
