@@ -7,7 +7,9 @@ CATEGORIES=	multimedia
 PKGNAMEPREFIX=	libva-
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	dfa9c8eba295.patch:-p1 b3b4d9a3a08d.patch:-p1
+PATCHFILES+=	dfa9c8eba295.patch:-p1
+PATCHFILES+=	b3b4d9a3a08d.patch:-p1 # https://github.com/intel/intel-hybrid-driver/pull/26
+PATCHFILES+=	821f87129662.patch:-p1 # https://github.com/intel/intel-hybrid-driver/pull/28
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Hybrid VP8 encoder and VP9 decoder for Intel GPUs
