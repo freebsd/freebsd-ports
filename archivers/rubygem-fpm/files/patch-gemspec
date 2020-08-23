@@ -13,7 +13,7 @@
        s.add_runtime_dependency(%q<ffi>.freeze, [">= 0"])
        s.add_development_dependency(%q<rake>.freeze, ["~> 10"])
 -      s.add_runtime_dependency(%q<ruby-xz>.freeze, ["~> 0.2.3"])
-+      s.add_runtime_dependency(%q<ruby-xz>.freeze, [">= 0"])
++      s.add_runtime_dependency(%q<ruby-xz>.freeze, [">= 0.2.3"])
        s.add_runtime_dependency(%q<pleaserun>.freeze, ["~> 0.0.29"])
        s.add_runtime_dependency(%q<stud>.freeze, [">= 0"])
        s.add_development_dependency(%q<rspec>.freeze, ["~> 3.0.0"])
