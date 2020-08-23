@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pleaserun
-PORTVERSION=	0.0.30
+PORTVERSION=	0.0.31
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
