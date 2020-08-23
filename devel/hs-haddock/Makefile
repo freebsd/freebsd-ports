@@ -10,6 +10,8 @@ COMMENT=	Documentation-generation tool for Haskell libraries
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN=		Doesn't build with current GHC
+
 USES=		cabal
 
 USE_CABAL=	ghc-paths-0.1.0.12_1 \
