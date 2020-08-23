@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	git
-PORTVERSION=	1.5.0
+PORTVERSION=	1.7.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,10 +12,12 @@ COMMENT=	Ruby wrapper library around git(1)
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	git>=1.6:devel/git
+RUN_DEPENDS=	git>=1.6:devel/git \
+		rubygem-rchardet>=1.8<2:textproc/rubygem-rchardet
+
+USES=		gem
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-USE_RUBY=	yes
-USES=		gem
 
 .include <bsd.port.mk>
