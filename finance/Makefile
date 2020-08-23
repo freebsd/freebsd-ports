@@ -36,6 +36,7 @@
     SUBDIR += homebank
     SUBDIR += hs-hledger
     SUBDIR += hs-hledger-ui
+    SUBDIR += hs-hledger-web
     SUBDIR += jgnash
     SUBDIR += kmymoney
     SUBDIR += kraft
