@@ -3,7 +3,7 @@
 
 PORTNAME=	chef
 PORTVERSION=	13.8.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	RG
 
@@ -20,7 +20,7 @@ RUN_DEPENDS=	rubygem-addressable>=0:www/rubygem-addressable \
 		rubygem-diff-lcs>=1.2.4<2:textproc/rubygem-diff-lcs \
 		rubygem-erubis>=2.7<3:www/rubygem-erubis \
 		rubygem-ffi-yajl>=2.2<3:devel/rubygem-ffi-yajl \
-		rubygem-highline>=1.6.9<2:devel/rubygem-highline \
+		rubygem-highline1>=1.6.9<2:devel/rubygem-highline1 \
 		rubygem-iniparse>=1.4<2:devel/rubygem-iniparse \
 		rubygem-iso8601>=0.9.1<1:devel/rubygem-iso8601 \
 		rubygem-mixlib-archive>=0.4<1:devel/rubygem-mixlib-archive \
@@ -43,9 +43,10 @@ RUN_DEPENDS=	rubygem-addressable>=0:www/rubygem-addressable \
 		rubygem-syslog-logger>=1.6<2:sysutils/rubygem-syslog-logger \
 		rubygem-uuidtools>=2.1.5<2.2:devel/rubygem-uuidtools
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem shebangfix
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 SUB_LIST=	RUBY=${RUBY}
 USE_RC_SUBR=	chef_client
