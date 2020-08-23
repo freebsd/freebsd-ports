@@ -1,14 +1,13 @@
---- travis.gemspec.orig	2019-12-03 18:21:43 UTC
+--- travis.gemspec.orig	2020-08-23 16:21:47 UTC
 +++ travis.gemspec
-@@ -25,10 +25,9 @@ Gem::Specification.new do |s|
-       s.add_runtime_dependency(%q<faraday>.freeze, ["~> 0.9"])
-       s.add_runtime_dependency(%q<faraday_middleware>.freeze, ["~> 0.9", ">= 0.9.1"])
-       s.add_runtime_dependency(%q<highline>.freeze, ["~> 1.6"])
--      s.add_runtime_dependency(%q<backports>.freeze, [">= 0"])
+@@ -27,8 +27,8 @@ Gem::Specification.new do |s|
+       s.add_runtime_dependency(%q<faraday_middleware>.freeze, ["~> 1.0"])
+       s.add_runtime_dependency(%q<highline>.freeze, ["~> 2.0"])
        s.add_runtime_dependency(%q<gh>.freeze, ["~> 0.13"])
-       s.add_runtime_dependency(%q<launchy>.freeze, ["~> 2.1"])
+-      s.add_runtime_dependency(%q<launchy>.freeze, ["~> 2.1", "< 2.5.0"])
 -      s.add_runtime_dependency(%q<typhoeus>.freeze, ["~> 0.6", ">= 0.6.8"])
++      s.add_runtime_dependency(%q<launchy>.freeze, ["~> 2.1"])
 +      s.add_runtime_dependency(%q<typhoeus>.freeze, [">= 0.6.8"])
+       s.add_runtime_dependency(%q<json>.freeze, ["~> 2.3"])
        s.add_runtime_dependency(%q<pusher-client>.freeze, ["~> 0.4"])
        s.add_development_dependency(%q<rspec>.freeze, ["~> 2.12"])
-       s.add_development_dependency(%q<sinatra>.freeze, ["~> 1.3"])
