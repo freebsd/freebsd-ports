@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	DateTime-Format-ISO8601
-PORTVERSION=	0.08
-PORTREVISION=	1
+PORTVERSION=	0.14
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,11 +15,16 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-DateTime>=0.18:devel/p5-DateTime \
-		p5-DateTime-Format-Builder>=0.77:devel/p5-DateTime-Format-Builder
+RUN_DEPENDS=	p5-DateTime>=1.45:devel/p5-DateTime \
+		p5-DateTime-Format-Builder>=0.77:devel/p5-DateTime-Format-Builder \
+		p5-Params-ValidationCompiler>=0.26:devel/p5-Params-ValidationCompiler \
+		p5-Specio>=0.18:devel/p5-Specio \
+		p5-namespace-autoclean>=0:devel/p5-namespace-autoclean
+TEST_DEPENDS=	p5-Test2-Suite>=0:devel/p5-Test2-Suite
+
+USES=		perl5
+USE_PERL5=	configure
 
 NO_ARCH=	yes
-USES=		perl5
-USE_PERL5=	modbuild
 
 .include <bsd.port.mk>

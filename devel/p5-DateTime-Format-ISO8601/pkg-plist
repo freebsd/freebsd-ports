@@ -1,3 +1,4 @@
 %%SITE_PERL%%/DateTime/Format/ISO8601.pm
-%%SITE_PERL%%/DateTime/Format/ISO8601.pod
+%%SITE_PERL%%/DateTime/Format/ISO8601/Types.pm
 %%PERL5_MAN3%%/DateTime::Format::ISO8601.3.gz
+%%PERL5_MAN3%%/DateTime::Format::ISO8601::Types.3.gz
