@@ -16,9 +16,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-ansi>=0:devel/rubygem-ansi \
 		rubygem-minitest>=4:devel/rubygem-minitest
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 PLIST_FILES=	bin/turn
 
