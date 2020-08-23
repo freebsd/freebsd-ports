@@ -57,6 +57,7 @@ MAKE_ENV=	BUILD_LINUX=1 SDKPATH="${LOCALBASE}" \
 MAKE_ARGS=	CC="${CC}" LIBRARIES="${LOCALBASE}/lib" \
 		TARGET_ARCH=${ARCH:S/i386/x86/} ARCHFLAGS="" \
 		TARGET_FINAL='${TARGET}' BUILD_MMX="" ECHO="${ECHO}"
+CFLAGS+=	-fcommon # https://github.com/DCurrent/openbor/issues/206
 LDFLAGS+=	-Wl,--as-needed # ogg, pthread, zlib
 SUB_FILES=	pkg-message
 SUB_LIST=	PKGBASE=${PKGBASE}
