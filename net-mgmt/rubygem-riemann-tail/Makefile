@@ -2,6 +2,7 @@
 
 PORTNAME=	riemann-tail
 DISTVERSION=	0.0.1
+PORTREVISION=	1
 CATEGORIES=	net-mgmt rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-colorize>=0:devel/rubygem-colorize \
 		rubygem-faye-websocket>=0:www/rubygem-faye-websocket \
-		rubygem-thor>=0:devel/rubygem-thor
+		rubygem-thor0>=0:devel/rubygem-thor0
 
 USES=		gem
 USE_RUBY=	yes
