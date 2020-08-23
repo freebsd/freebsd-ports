@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Astro-SpaceTrack
-PORTVERSION=	0.140
+PORTVERSION=	0.141
 CATEGORIES=	astro perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,12 +23,12 @@ RUN_DEPENDS=	p5-HTTP-Date>=0:www/p5-HTTP-Date \
 		p5-URI>=0:net/p5-URI \
 		p5-libwww>=0:www/p5-libwww
 
-PORTSCOUT=	limit:^[0-9\.]*$$
-
 USES=		perl5
 USE_PERL5=	configure
 
 CONFIGURE_ARGS=	-y
 NO_ARCH=	yes
+
+PORTSCOUT=	limit:^[0-9\.]*$$
 
 .include <bsd.port.mk>
