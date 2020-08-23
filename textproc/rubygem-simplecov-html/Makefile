@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	simplecov-html
-PORTVERSION=	0.10.2
+PORTVERSION=	0.12.2
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -11,8 +11,9 @@ COMMENT=	Default HTML formatter for SimpleCov
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
