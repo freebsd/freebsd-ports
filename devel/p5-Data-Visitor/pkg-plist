@@ -1,4 +1,4 @@
-%%PERL5_MAN3%%/Data::Visitor.3.gz
-%%PERL5_MAN3%%/Data::Visitor::Callback.3.gz
 %%SITE_PERL%%/Data/Visitor.pm
 %%SITE_PERL%%/Data/Visitor/Callback.pm
+%%PERL5_MAN3%%/Data::Visitor.3.gz
+%%PERL5_MAN3%%/Data::Visitor::Callback.3.gz
