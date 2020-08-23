@@ -1,2 +1,3 @@
-SHA256 (apache-log4cxx-0.10.0.tar.gz) = 0de0396220a9566a580166e66b39674cb40efd2176f52ad2c65486c99c920c8c
-SIZE (apache-log4cxx-0.10.0.tar.gz) = 1667425
+TIMESTAMP = 1598168840
+SHA256 (apache-log4cxx-0.11.0.tar.gz) = c316705ee3c4e5b919d3561d5f305162d21687aa6ae1f31f02f6cdadc958b393
+SIZE (apache-log4cxx-0.11.0.tar.gz) = 1145075

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	log4cxx
-PORTVERSION=	0.10.0
-PORTREVISION=	21
+PORTVERSION=	0.11.0
 CATEGORIES=	devel
 MASTER_SITES=	APACHE/logging/${PORTNAME}/${PORTVERSION}
 DISTNAME=	apache-${PORTNAME}-${PORTVERSION}
@@ -16,9 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libapr-1.so:devel/apr1
 
+USES=		autoreconf pathfix libtool
 GNU_CONFIGURE=	yes
-USES=		pathfix libtool
-USE_CXXSTD=	c++98
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 MAKE_JOBS_UNSAFE=	yes
