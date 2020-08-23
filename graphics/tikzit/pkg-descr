@@ -1,0 +1,5 @@
+TikZiT is a graphical tool for rapidly creating graphs and string diagrams
+using PGF/TikZ. It was used, for example, to make all of the 2500+ diagrams in
+this book: http://cambridge.org/pqp .
+
+WWW: http://tikzit.github.io/

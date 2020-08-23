@@ -1,0 +1,12 @@
+bin/tikzit
+share/applications/tikzit.desktop
+share/icons/hicolor/1024x1024/apps/tikzit.png
+share/icons/hicolor/128x128/apps/tikzit.png
+share/icons/hicolor/16x16/apps/tikzit.png
+share/icons/hicolor/256x256/apps/tikzit.png
+share/icons/hicolor/32x32/apps/tikzit.png
+share/icons/hicolor/512x512/apps/tikzit.png
+share/icons/hicolor/64x64/apps/tikzit.png
+share/icons/hicolor/scalable/apps/tikzit.svg
+share/man/man1/tikzit.1.gz
+share/mime/packages/user-tikz-document.xml
