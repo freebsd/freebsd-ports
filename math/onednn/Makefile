@@ -3,6 +3,7 @@
 PORTNAME=	onednn
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.6.1
+PORTREVISION=	
 CATEGORIES=	math # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -33,7 +34,7 @@ CXXFLAGS_i386=	-msse4.1
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} != aarch64 && ${ARCH} != amd64
+.if ${ARCH} != aarch64 && ${ARCH} != amd64 && ${ARCH} != powerpc64
 CMAKE_ARGS+=	-DDNNL_TARGET_ARCH:STRING="GENERIC"
 .endif
 
