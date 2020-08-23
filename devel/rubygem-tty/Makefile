@@ -3,7 +3,7 @@
 
 PORTNAME=	tty
 PORTVERSION=	0.10.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-bundler>=1.16:sysutils/rubygem-bundler \
 		rubygem-equatable>=0.5<1:devel/rubygem-equatable \
 		rubygem-pastel>=0.7.2<1:devel/rubygem-pastel \
-		rubygem-thor>=0.20.0<0.21:devel/rubygem-thor \
+		rubygem-thor0>=0.20.0<0.21:devel/rubygem-thor0 \
 		rubygem-tty-box>=0.4.1<1:devel/rubygem-tty-box \
 		rubygem-tty-color>=0.5<1:devel/rubygem-tty-color \
 		rubygem-tty-command>=0.9.0<1:devel/rubygem-tty-command \
