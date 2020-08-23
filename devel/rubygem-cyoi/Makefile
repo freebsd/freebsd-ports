@@ -2,6 +2,7 @@
 
 PORTNAME=	cyoi
 PORTVERSION=	0.11.3
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,12 +13,13 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-fog>=0:devel/rubygem-fog \
-		rubygem-highline>=1.6:devel/rubygem-highline \
+		rubygem-highline1>=1.6<2:devel/rubygem-highline1 \
 		rubygem-readwritesettings>=3.0:devel/rubygem-readwritesettings
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 PLIST_FILES=	bin/cyoi
 
