@@ -4,4 +4,4 @@ features in Unix/Unix-like kernels. Slow clients should only be served by
 placing a reverse proxy capable of fully buffering both the request and
 response in between Unicorn and slow clients.
 
-WWW: https://bogomips.org/unicorn/
+WWW: https://yhbt.net/unicorn/
