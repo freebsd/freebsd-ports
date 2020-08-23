@@ -1,3 +1,3 @@
-TIMESTAMP = 1484226483
-SHA256 (rubygem/posix-spawn-0.3.13.gem) = 5c32e71fc1773f615234ad929b2b530ab6f84e5d43af30f2caf8146de3adbdde
-SIZE (rubygem/posix-spawn-0.3.13.gem) = 28160
+TIMESTAMP = 1598175392
+SHA256 (rubygem/posix-spawn-0.3.15.gem) = a2e0109bf9b9e041e74359aba9d6e9e92c1122cbdb15f6e9779d61aab606ab32
+SIZE (rubygem/posix-spawn-0.3.15.gem) = 29696
