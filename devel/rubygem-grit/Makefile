@@ -11,13 +11,15 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Object-oriented ruby library to access git repositories
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-diff-lcs>=1.1:textproc/rubygem-diff-lcs \
-		rubygem-mime-types1>=1.15:misc/rubygem-mime-types1 \
-		rubygem-posix-spawn>=0.3.6:devel/rubygem-posix-spawn
+RUN_DEPENDS=	rubygem-diff-lcs>=1.1<2:textproc/rubygem-diff-lcs \
+		rubygem-mime-types1>=1.15<2:misc/rubygem-mime-types1 \
+		rubygem-posix-spawn>=0.3.6<0.4:devel/rubygem-posix-spawn
+
+USES=		gem
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-USE_RUBY=	yes
-USES=		gem
 
 .include <bsd.port.mk>
