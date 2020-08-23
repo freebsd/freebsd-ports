@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	hamlit-rails
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.3
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails50
@@ -17,10 +17,12 @@ RUN_DEPENDS=	rubygem-activesupport50>=0:devel/rubygem-activesupport50 \
 		rubygem-hamlit>=1.2.0:www/rubygem-hamlit \
 		rubygem-railties50>=0:www/rubygem-railties50
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem shebangfix
-bash_CMD=	${SH}
+USE_RUBY=	yes
+
+NO_ARCH=	yes
+
 SHEBANG_FILES=	bin/setup
+bash_CMD=	${SH}
 
 .include <bsd.port.mk>
