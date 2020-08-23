@@ -1,0 +1,11 @@
+--- kafo.gemspec.orig	2020-08-22 15:25:05 UTC
++++ kafo.gemspec
+@@ -32,7 +32,7 @@ Gem::Specification.new do |s|
+       s.add_runtime_dependency(%q<ansi>.freeze, [">= 0"])
+       s.add_runtime_dependency(%q<kafo_parsers>.freeze, [">= 0.1.6"])
+       s.add_runtime_dependency(%q<logging>.freeze, ["< 3.0.0"])
+-      s.add_runtime_dependency(%q<clamp>.freeze, [">= 0.6.2", "< 1.3.1"])
++      s.add_runtime_dependency(%q<clamp>.freeze, [">= 0.6.2"])
+       s.add_runtime_dependency(%q<highline>.freeze, [">= 1.6.21", "< 2.0"])
+       s.add_runtime_dependency(%q<powerbar>.freeze, [">= 0"])
+     else
