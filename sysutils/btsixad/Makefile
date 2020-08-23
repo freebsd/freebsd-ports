@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	btsixad
-PORTVERSION=	0.1
-PORTREVISION=	1
+PORTVERSION=	0.1.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://althenia.net/files/
 
