@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sql-workbench
-PORTVERSION=	118
+PORTVERSION=	127
 CATEGORIES=	databases java
 MASTER_SITES=	http://www.sql-workbench.net/ \
 	http://www.sql-workbench.net/archive/
@@ -13,7 +13,7 @@ COMMENT=	DBMS-independent, cross-platform SQL query tool
 
 LICENSE=	APACHE20
 
-USES=		desktop-file-utils zip
+USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.8+
 
@@ -30,9 +30,8 @@ pre-install:
 
 do-install:
 	(cd ${WRKSRC}/xslt && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/xslt)
-	${INSTALL_DATA} ${WRKSRC}/SQLWorkbench-Manual.pdf ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/manual/SQLWorkbench-Manual.pdf ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/sqlworkbench.jar ${STAGEDIR}${JAVAJARDIR}
-	${INSTALL_DATA} ${WRKSRC}/SQLWorkbench.desktop ${STAGEDIR}${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/workbench32.png ${STAGEDIR}${PREFIX}/share/pixmaps
 	${INSTALL_SCRIPT} ${WRKSRC}/new_sqlworkbench.sh ${STAGEDIR}${PREFIX}/bin/sqlworkbench
 

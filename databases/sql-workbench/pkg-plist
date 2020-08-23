@@ -1,5 +1,4 @@
 bin/sqlworkbench
-share/applications/SQLWorkbench.desktop
 %%PORTDOCS%%%%DOCSDIR%%
 %%JAVAJARDIR%%/sqlworkbench.jar
 share/pixmaps/workbench32.png
