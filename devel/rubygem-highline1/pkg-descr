@@ -1,0 +1,6 @@
+A high-level IO library that provides validation, type conversion, and more
+for command-line interfaces. HighLine also includes a complete menu system
+that can crank out anything from simple list selection to complete shells
+with just minutes of work.
+
+WWW: https://github.com/JEG2/highline
