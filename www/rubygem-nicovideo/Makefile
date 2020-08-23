@@ -3,7 +3,7 @@
 
 PORTNAME=	nicovideo
 PORTVERSION=	0.1.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -12,12 +12,12 @@ COMMENT=	Scraping NICONICO DOUGA utility for Ruby
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	rubygem-hoe>=1.7.0:devel/rubygem-hoe \
-		rubygem-json>=1.1.4:devel/rubygem-json \
+RUN_DEPENDS=	rubygem-json>=1.1.4:devel/rubygem-json \
 		rubygem-mechanize>=0.9.2:www/rubygem-mechanize
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
