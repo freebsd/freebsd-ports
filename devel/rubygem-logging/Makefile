@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	logging
-PORTVERSION=	2.2.2
+PORTVERSION=	2.3.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-little-plugger>=1.1<2:devel/rubygem-little-plugger \
-		rubygem-multi_json>=1.10<2:devel/rubygem-multi_json
+		rubygem-multi_json>=1.14<2:devel/rubygem-multi_json
 
 USES=		gem
 USE_RUBY=	yes
