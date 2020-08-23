@@ -19,4 +19,7 @@ USE_RUBY=	yes
 
 NO_ARCH=	yes
 
+# jbuilder 2.10.0+ requires Rails 5.0+
+PORTSCOUT=	limit:^2\.9\.
+
 .include <bsd.port.mk>
