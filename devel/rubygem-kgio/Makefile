@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kgio
-PORTVERSION=	2.11.2
+PORTVERSION=	2.11.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ COMMENT=	Provides non-blocking I/O methods
 
 LICENSE=	LGPL21+
 
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
 
 .include <bsd.port.mk>
