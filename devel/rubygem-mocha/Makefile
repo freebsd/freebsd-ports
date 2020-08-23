@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mocha
-PORTVERSION=	1.9.0
+PORTVERSION=	1.11.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,8 +12,6 @@ COMMENT=	Library for mocking and stubbing syntax like JMock and SchMock
 LICENSE=	BSD2CLAUSE RUBY MIT
 LICENSE_COMB=	dual
 LICENSE_FILE_MIT=	${WRKSRC}/MIT-LICENSE.md
-
-RUN_DEPENDS=	rubygem-metaclass>=0.0.1:devel/rubygem-metaclass
 
 USES=		gem
 USE_RUBY=	yes
