@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	librarianp
-PORTVERSION=	0.6.4
+PORTVERSION=	1.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,10 +11,11 @@ COMMENT=	Ruby framework for writing bundlers
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-thor>=0.15:devel/rubygem-thor
+RUN_DEPENDS=	rubygem-thor>=1.0<2:devel/rubygem-thor
+
+USES=		gem
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-USE_RUBY=	yes
-USES=		gem
 
 .include <bsd.port.mk>

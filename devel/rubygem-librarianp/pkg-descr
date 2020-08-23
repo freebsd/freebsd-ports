@@ -4,4 +4,4 @@ fetch, install, and isolate a project's dependencies, in Ruby.
 This is a forked version of devel/rubygem-librarian with improvements in
 order to provide better support for librarian-puppet.
 
-WWW: https://github.com/carlossg/librarian
+WWW: https://github.com/voxpupuli/librarian
