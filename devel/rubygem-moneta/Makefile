@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	moneta
-PORTVERSION=	1.1.1
+PORTVERSION=	1.3.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -17,7 +17,7 @@ USE_RUBY=	yes
 
 NO_ARCH=	yes
 
-SHEBANG_FILES=	script/install-kyotocabinet \
+SHEBANG_FILES=	script/start-couchdb \
 		script/start-services
 
 .include <bsd.port.mk>
