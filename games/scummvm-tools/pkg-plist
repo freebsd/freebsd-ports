@@ -4,12 +4,12 @@ bin/decine
 bin/decompile
 bin/degob
 bin/dekyra
-bin/deriven
+bin/deprince
 bin/descumm
 bin/desword2
 bin/extract_mohawk
 bin/gob_loadcalc
-%%WX%%bin/scummvm-tools
+%%WXGTK%%bin/scummvm-tools
 bin/scummvm-tools-cli
 %%DATADIR%%/detaillogo.jpg
 %%DATADIR%%/logo.jpg

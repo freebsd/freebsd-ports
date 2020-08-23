@@ -1,0 +1,22 @@
+--- configure.orig	2020-07-13 19:08:26 UTC
++++ configure
+@@ -1672,16 +1672,12 @@ if test "$_wxwidgets" = auto ; then
+ fi
+ 
+ if test "$_wxwidgets" = yes ; then
+-	_wxincludes="`$_wxconfig --prefix="$_wxpath" --cflags`"
+-	_wxlibs="`$_wxconfig --prefix="$_wxpath" --libs`"
+-	_wxstaticlibs="`$_wxconfig --prefix="$_wxpath" --static --libs 2> /dev/null`"
++	_wxincludes="`$_wxconfig --cflags`"
++	_wxlibs="`$_wxconfig --libs`"
++	_wxstaticlibs="`$_wxconfig --static --libs 2> /dev/null`"
+ 	_wxstaticlibs=`echo $_wxstaticlibs | sed 's|-lpng||' | sed 's|-lz||'`
+ 	# _wxstaticlibs may contain non-static libraries that we also have in _wxstaticlibs.
+ 	# remove those to avoid dependency on non-static libraries
+-
+-	# Use the compiler specified by wx-config. This is needed on some systems to get a working executable.
+-	CXX="`$_wxconfig --cxx`"
+-	LD=$CXX
+ 
+ echo_n "Checking for wxwidgets gui dev component... "
+ 	has_wx_gui_dev=no
