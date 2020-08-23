@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpoppler-qt5.so:graphics/poppler-qt5
 
-USES=	bison qmake qt:5
+USES=		bison compiler:c++11-lang qmake qt:5
 
 USE_GITHUB=	yes
 GH_TAGNAME=	v${DISTVERSION}
