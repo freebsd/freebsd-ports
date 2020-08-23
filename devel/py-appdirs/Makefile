@@ -17,5 +17,6 @@ USES=		python
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
+USE_LOCALE=	en_US.UTF-8
 
 .include <bsd.port.mk>
