@@ -29,11 +29,11 @@ post-extract:
 	@cd ${WRKSRC} && ${MKDIR} ${PROGDIRS} ${LIBDIRS}
 
 post-patch: apply-slist
-	@${INSTALL_DATA} ${WRKDIR}/BSDMakefile ${WRKSRC}
-	@for D in ${PROGDIRS}; do \
+	${INSTALL_DATA} ${WRKDIR}/BSDMakefile ${WRKSRC}
+	for D in ${PROGDIRS}; do \
 		${INSTALL_DATA} ${WRKDIR}/Makefile ${WRKSRC}/$$D; \
 	done
-	@for D in ${LIBDIRS}; do \
+	for D in ${LIBDIRS}; do \
 		${INSTALL_DATA} ${WRKDIR}/Makefile.lib ${WRKSRC}/$$D/Makefile; \
 	done
 
@@ -41,8 +41,10 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/blackhole6 ${WRKSRC}/tools/script6 \
 	    ${STAGEDIR}${PREFIX}/sbin
 
+pre-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+
 post-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
