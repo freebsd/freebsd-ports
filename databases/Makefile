@@ -879,6 +879,7 @@
     SUBDIR += rubygem-awesome_nested_set
     SUBDIR += rubygem-bdb1
     SUBDIR += rubygem-bigrecord
+    SUBDIR += rubygem-brpoplpush-redis_script
     SUBDIR += rubygem-couchrest
     SUBDIR += rubygem-dalli
     SUBDIR += rubygem-data_objects
