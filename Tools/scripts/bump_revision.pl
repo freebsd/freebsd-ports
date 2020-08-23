@@ -44,7 +44,7 @@ Options:
                       where n is the major version of the OS, or \${PORTSDIR}/INDEX if missing.
     -p <dirname>    - Set portsdir, if different from /usr/ports.
 
-Improvements, suggestions,questions -> mandree\@FreeBSD.org
+Improvements, suggestions, questions -> mandree\@FreeBSD.org
 EOF
 	exit 1;
 }
