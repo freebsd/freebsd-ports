@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tmuxinator
-PORTVERSION=	1.1.1
+PORTVERSION=	2.0.1
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	RG
 
@@ -11,21 +11,25 @@ COMMENT=	Manage complex tmux sessions easily
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-erubis>=2.6:www/rubygem-erubis \
-		rubygem-thor>=0.15.0:devel/rubygem-thor \
-		rubygem-xdg2>=2.2.5:devel/rubygem-xdg2
+RUN_DEPENDS=	rubygem-erubis>=2.6<3:www/rubygem-erubis \
+		rubygem-thor>=1.0<2:devel/rubygem-thor \
+		rubygem-xdg2>=2.2.5<3:devel/rubygem-xdg2
 
 USES=		gem
 USE_RUBY=	yes
 
 NO_ARCH=	yes
 
-OPTIONS_DEFAULT=	TMUX
-OPTIONS_SINGLE=		TMUX
-OPTIONS_SINGLE_TMUX=	TMUX TMUX23
+PLIST_FILES=	bin/tmuxinator \
+		etc/bash_completion.d/_tmuxinator.bash \
+		share/zsh/site-functions/_tmuxinator
 
-TMUX_DESC=		Enable tmux
-TMUX23_DESC=		Enable tmux23
+OPTIONS_SINGLE=	TMUX
+OPTIONS_SINGLE_TMUX=	TMUX TMUX23
+OPTIONS_DEFAULT=TMUX
+
+TMUX_DESC=	Use tmux from sysutils/tmux
+TMUX23_DESC=	Use tmux from sysutils/tmux23
 
 TMUX_RUN_DEPENDS=	tmux:sysutils/tmux
 TMUX23_RUN_DEPENDS=	tmux:sysutils/tmux23
