@@ -2,17 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	sup
-PORTVERSION=	2.0.20140517
+PORTVERSION=	2.0.20200824
+DISTVERSIONPREFIX=	v
 CATEGORIES=	net
-MASTER_SITES=	LOCAL/hrs
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	CMU's Software Update Protocol package
 
 LICENSE=	ISCL
-LICENSE_FILE=	${FILESDIR}/COPYING
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		uidfix
+USE_GITHUB=	yes
+GH_ACCOUNT=	hrs-allbsd
 
 PLIST_FILES=	bin/sup bin/supfilesrv bin/supscan \
 		man/man1/sup.1.gz man/man8/supfilesrv.8.gz \
