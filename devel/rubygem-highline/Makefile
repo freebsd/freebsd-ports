@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	highline
-PORTVERSION=	1.7.10
+PORTVERSION=	2.0.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,10 +10,11 @@ COMMENT=	High-level IO library for command-line interfaces
 
 LICENSE=	GPLv2 RUBY
 LICENSE_COMB=	dual
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
+
+USES=		gem
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-USE_RUBY=	yes
-USES=		gem
 
 .include <bsd.port.mk>
