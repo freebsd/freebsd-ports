@@ -1,5 +1,5 @@
---- Makefile.orig	1999-03-27 14:46:38.000000000 +0800
-+++ Makefile	2014-01-11 20:07:37.000000000 +0800
+--- Makefile.orig	1999-03-27 06:46:38 UTC
++++ Makefile
 @@ -1,8 +1,7 @@
 -CC     = gcc
 -CFLAGS = -O2 -Wall
