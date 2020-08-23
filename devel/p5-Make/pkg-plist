@@ -1,5 +1,10 @@
+bin/pure-perl-make
 %%SITE_PERL%%/Make.pm
+%%SITE_PERL%%/Make/Functions.pm
 %%SITE_PERL%%/Make/Rule.pm
 %%SITE_PERL%%/Make/Rule/Vars.pm
 %%SITE_PERL%%/Make/Target.pm
+%%PERL5_MAN1%%/pure-perl-make.1.gz
 %%PERL5_MAN3%%/Make.3.gz
+%%PERL5_MAN3%%/Make::Functions.3.gz
+%%PERL5_MAN3%%/Make::Rule.3.gz
