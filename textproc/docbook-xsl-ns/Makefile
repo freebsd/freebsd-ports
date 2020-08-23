@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	docbook-xsl-ns
-PORTVERSION=	1.78.1
-PORTREVISION=	4
+PORTVERSION=	1.79.1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/docbook/docbook-xsl-ns/${PORTVERSION}:src \
 		SF/docbook/docbook-xsl-doc/${PORTVERSION}:doc
@@ -42,5 +41,12 @@ do-install:
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKDIR}/docbook-xsl-${PORTVERSION}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
+
+# maintainer section:
+
+.if defined(MAINTAINER_MODE)
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src \
+		docbook-xsl-doc-${PORTVERSION}${EXTRACT_SUFX}:doc
+.endif
 
 .include <bsd.port.mk>
