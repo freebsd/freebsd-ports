@@ -2,7 +2,7 @@
 
 PORTNAME=	cogbot
 PORTVERSION=	0.1.13
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	irc rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-cinch>=2.3.3:irc/rubygem-cinch \
-		rubygem-thor>=0.19.4:devel/rubygem-thor \
+		rubygem-thor0>=0.19.4:devel/rubygem-thor0 \
 		rubygem-eventmachine>=1.2.3:devel/rubygem-eventmachine \
 		rubygem-eventmachine_httpserver>=0.2.1:www/rubygem-eventmachine_httpserver \
 		rubygem-nokogiri>=1.8.0:textproc/rubygem-nokogiri \
