@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mongo
-PORTVERSION=	2.12.2
+PORTVERSION=	2.13.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
