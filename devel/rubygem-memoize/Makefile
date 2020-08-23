@@ -13,8 +13,9 @@ LICENSE=	ART20
 
 RUN_DEPENDS=	rubygem-test-unit>=2.0.2:devel/rubygem-test-unit
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
