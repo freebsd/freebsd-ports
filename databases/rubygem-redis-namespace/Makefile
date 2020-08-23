@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	redis-namespace
-PORTVERSION=	1.6.0
+PORTVERSION=	1.8.0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -14,8 +14,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-redis>=3.0.4:databases/rubygem-redis
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
