@@ -3,6 +3,7 @@
 %%SITE_PERL%%/Dancer/Plugin/RPC/RESTRPC.pm
 %%SITE_PERL%%/Dancer/Plugin/RPC/XMLRPC.pm
 %%SITE_PERL%%/Dancer/RPCPlugin/CallbackResult.pm
+%%SITE_PERL%%/Dancer/RPCPlugin/DefaultRoute.pm
 %%SITE_PERL%%/Dancer/RPCPlugin/DispatchFromConfig.pm
 %%SITE_PERL%%/Dancer/RPCPlugin/DispatchFromPod.pm
 %%SITE_PERL%%/Dancer/RPCPlugin/DispatchItem.pm
@@ -15,6 +16,7 @@
 %%PERL5_MAN3%%/Dancer::Plugin::RPC::RESTRPC.3.gz
 %%PERL5_MAN3%%/Dancer::Plugin::RPC::XMLRPC.3.gz
 %%PERL5_MAN3%%/Dancer::RPCPlugin::CallbackResult.3.gz
+%%PERL5_MAN3%%/Dancer::RPCPlugin::DefaultRoute.3.gz
 %%PERL5_MAN3%%/Dancer::RPCPlugin::DispatchFromConfig.3.gz
 %%PERL5_MAN3%%/Dancer::RPCPlugin::DispatchFromPod.3.gz
 %%PERL5_MAN3%%/Dancer::RPCPlugin::DispatchItem.3.gz
