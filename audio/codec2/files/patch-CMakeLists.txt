@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2018-09-04 06:22:53 UTC
+--- CMakeLists.txt.orig	2020-08-24 16:23:49 UTC
 +++ CMakeLists.txt
 @@ -14,6 +14,7 @@ mark_as_advanced(CLEAR
      CMAKE_INSTALL_BINDIR
@@ -8,7 +8,7 @@
  )
  
  #
-@@ -114,7 +115,7 @@ option(INSTALL_EXAMPLES "Install example
+@@ -114,7 +115,7 @@ option(INSTALL_EXAMPLES "Install example code." OFF)
  if(INSTALL_EXAMPLES)
      install(DIRECTORY octave raw script wav
          USE_SOURCE_PERMISSIONS
@@ -17,10 +17,13 @@
  endif()
  
  
-@@ -179,6 +180,18 @@ if(UNITTEST)
-     endif()
- 
-     #
+@@ -176,6 +177,18 @@ if(UNITTEST)
+     message(STATUS "  Speex DSP library: ${SPEEXDSP_LIBRARY}")
+     if(NOT SPEEXDSP_INCLUDE_DIR AND NOT SPEEXDSP_LIBRARY)
+         message(FATAL_ERROR "Speex DSP library not found!")
++    endif()
++
++    #
 +    # Find samplerate library
 +    #
 +    message(STATUS "Looking for samplerate library.")
@@ -30,9 +33,6 @@
 +    message(STATUS "  samplerate library: ${SAMPLERATE_LIBRARY}")
 +    if(NOT SAMPLERATE_INCLUDE_DIR AND NOT SAMPLERATE_LIBRARY)
 +        message(FATAL_ERROR "samplerate library not found!")
-+    endif()
-+
-+    #
-     # Samplerate Library
+     endif()
+ 
      #
-     message(STATUS "Looking for samplerate...")

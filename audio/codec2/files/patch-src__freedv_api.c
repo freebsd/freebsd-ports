@@ -1,11 +1,11 @@
---- src/freedv_api.c.orig	2018-05-24 09:41:22 UTC
+--- src/freedv_api.c.orig	2020-08-24 17:11:35 UTC
 +++ src/freedv_api.c
-@@ -36,7 +36,7 @@
- #ifdef __APPLE__
- #include <malloc/malloc.h>
- #else
--#include <malloc.h>
-+#include <sys/malloc.h>
- #endif /* __APPLE__ */
+@@ -76,6 +76,8 @@
  
- #include "fsk.h"
+ /* OFDM payload data test frame for 700D */
+ 
++extern const struct OFDM_CONFIG * OFDM_CONFIG_700D;
++
+ extern int payload_data_bits[];
+ 
+ /*---------------------------------------------------------------------------*\
