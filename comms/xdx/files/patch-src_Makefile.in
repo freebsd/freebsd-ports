@@ -1,0 +1,15 @@
+--- src/Makefile.in.orig	2007-11-21 17:46:24 UTC
++++ src/Makefile.in
+@@ -181,11 +181,7 @@ INCLUDES = \
+ 	@GTK_CFLAGS@ -I.. \
+ 	-DPACKAGE_DATA_DIR=\"$(datadir)/xdx\" \
+ 	-DPACKAGE_LOCALE_DIR=\"$(datadir)/locale\" \
+-	-DPACKAGE_SOURCE_DIR=\"$(srcdir)\" \
+-	-DG_DISABLE_DEPRECATED \
+-	-DGDK_DISABLE_DEPRECATED \
+-	-DGDK_PIXBUF_DISABLE_DEPRECATED \
+-	-DGTK_DISABLE_DEPRECATED
++	-DPACKAGE_SOURCE_DIR=\"$(srcdir)\" 
+ 
+ xdx_SOURCES = \
+ 	gui.h \
