@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		gmake perl5 shebangfix ssl
 
 GNU_CONFIGURE=	yes
+CFLAGS+=	-fcommon
 
 SHEBANG_FILES=	tools/*.pl tools/*.sh.in
 
