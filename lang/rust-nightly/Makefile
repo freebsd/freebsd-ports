@@ -16,6 +16,8 @@ MASTERDIR=	${.CURDIR}/../rust
 PATCHDIR=	${.CURDIR}/files
 DISTINFO_FILE=	${.CURDIR}/distinfo
 
+OPTIONS_EXCLUDE=	DOCS
+
 # Get latest from top level 'date' key in
 # https://static.rust-lang.org/dist/channel-rust-nightly.toml
 NIGHTLY_DATE=	2020-08-18
