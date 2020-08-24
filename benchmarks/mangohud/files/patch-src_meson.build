@@ -1,0 +1,29 @@
+--- src/meson.build.orig	2020-08-16 16:54:20 UTC
++++ src/meson.build
+@@ -3,7 +3,7 @@ glslang = find_program('glslangValidator')
+ # Needs prefix for configure_file()
+ if get_option('append_libdir_mangohud')
+   libdir_mangohud = join_paths(get_option('libdir'), 'mangohud')
+-  ld_libdir_mangohud = get_option('prefix') + '/\$LIB/mangohud/'
++  ld_libdir_mangohud = get_option('prefix') + '/lib/mangohud/'
+ else
+   libdir_mangohud = get_option('libdir')
+   ld_libdir_mangohud = get_option('prefix') + '/\$LIB/'
+@@ -141,7 +141,7 @@ vklayer_mesa_overlay = shared_library(
+     dep_dl,
+     dep_rt,
+     dep_pthread,
+-    dep_vulkan],
++    dep_inotify],
+   include_directories : [inc_common],
+   link_args : link_args,
+   install_dir : libdir_mangohud,
+@@ -187,7 +187,7 @@ configure_file(input : '../bin/mangohud.in',
+ if get_option('include_doc')
+   install_data(
+     files('../bin/MangoHud.conf'),
+-    install_dir : join_paths(get_option('datadir'), 'doc', 'mangohud'),
++    install_dir : join_paths(get_option('datadir'), 'examples', 'mangohud'),
+     rename : ['MangoHud.conf.example']
+   )
+ endif

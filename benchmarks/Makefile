@@ -41,6 +41,7 @@
     SUBDIR += linux-vdbench
     SUBDIR += lmbench
     SUBDIR += lzbench
+    SUBDIR += mangohud
     SUBDIR += mdtest
     SUBDIR += nbench
     SUBDIR += netio

@@ -1,0 +1,20 @@
+--- meson.build.orig	2020-08-16 16:54:20 UTC
++++ meson.build
+@@ -98,7 +98,7 @@ inc_common = [
+     include_directories('include'),
+ ]
+ 
+-dep_vulkan = dependency('vulkan', required: get_option('use_system_vulkan'))
++dep_inotify = dependency('libinotify')
+ dep_pthread = dependency('threads')
+ dbus_dep = dependency('dbus-1', required: get_option('with_dbus')).partial_dependency(compile_args : true, includes : true)
+ 
+@@ -170,7 +170,7 @@ else
+   dep_rt = cc.find_library('rt')
+ endif
+ 
+-if dep_vulkan.found()
++if true
+   datadir = get_option('datadir')
+   if not datadir.startswith('/')
+     datadir = get_option('prefix') / datadir
