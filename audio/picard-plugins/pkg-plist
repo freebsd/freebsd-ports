@@ -18,6 +18,8 @@
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/apiseeds_lyrics.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/classicdiscnumber.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/classicdiscnumber.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/collect_artists.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/collect_artists.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/compatible_TXXX.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/compatible_TXXX.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/cuesheet.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
@@ -114,6 +116,7 @@
 %%PYTHON_SITELIBDIR%%/picard/plugins/classical_extras/suffixtree.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/classical_extras/ui_options_classical_extras.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/classicdiscnumber.py
+%%PYTHON_SITELIBDIR%%/picard/plugins/collect_artists.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/compatible_TXXX.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/cuesheet.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/decade/__init__.py
@@ -185,6 +188,18 @@
 %%PYTHON_SITELIBDIR%%/picard/plugins/replaygain/options_replaygain.ui
 %%PYTHON_SITELIBDIR%%/picard/plugins/replaygain/ui_options_replaygain.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/save_and_rewrite_header.py
+%%PYTHON_SITELIBDIR%%/picard/plugins/search_engine_lookup/README.md
+%%PYTHON_SITELIBDIR%%/picard/plugins/search_engine_lookup/__init__.py
+%%PYTHON_SITELIBDIR%%/picard/plugins/search_engine_lookup/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/search_engine_lookup/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/search_engine_lookup/__pycache__/ui_options_search_engine_editor.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/search_engine_lookup/__pycache__/ui_options_search_engine_editor.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/search_engine_lookup/__pycache__/ui_options_search_engine_lookup.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/search_engine_lookup/__pycache__/ui_options_search_engine_lookup.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/search_engine_lookup/options_search_engine_editor.ui
+%%PYTHON_SITELIBDIR%%/picard/plugins/search_engine_lookup/options_search_engine_lookup.ui
+%%PYTHON_SITELIBDIR%%/picard/plugins/search_engine_lookup/ui_options_search_engine_editor.py
+%%PYTHON_SITELIBDIR%%/picard/plugins/search_engine_lookup/ui_options_search_engine_lookup.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/smart_title_case.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/sort_multivalue_tags.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/soundtrack.py
