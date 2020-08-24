@@ -1,6 +1,6 @@
---- configure.orig	2020-02-02 11:58:46 UTC
+--- configure.orig	2020-08-23 11:59:54 UTC
 +++ configure
-@@ -22138,7 +22138,7 @@ $as_echo_n "checking whether pthread_t is integer... "
+@@ -22134,7 +22134,7 @@ $as_echo_n "checking whether pthread_t is integer... "
  int
  main ()
  {
@@ -9,7 +9,7 @@
    ;
    return 0;
  }
-@@ -26130,7 +26130,7 @@ for be in ${BACKENDS}; do
+@@ -26279,7 +26279,7 @@ for be in ${BACKENDS}; do
      ;;
  
      v4l)
@@ -18,7 +18,7 @@
        || test "${have_libv4l1}" != "yes"; then
        echo "*** $be backend requires v4l libraries - $DISABLE_MSG"
        backend_supported="no"
-@@ -26339,7 +26339,7 @@ for be in ${BACKENDS}; do
+@@ -26482,7 +26482,7 @@ for be in ${BACKENDS}; do
      ;;
  
      v4l)

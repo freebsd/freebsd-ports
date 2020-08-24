@@ -13,6 +13,7 @@ bin/umax_pp
 @sample etc/sane.d/dist/canon.conf etc/sane.d/canon.conf
 @sample etc/sane.d/dist/canon630u.conf etc/sane.d/canon630u.conf
 @sample etc/sane.d/dist/canon_dr.conf etc/sane.d/canon_dr.conf
+@sample etc/sane.d/dist/canon_lide70.conf etc/sane.d/canon_lide70.conf
 %%IEEE1284%%@sample etc/sane.d/dist/canon_pp.conf etc/sane.d/canon_pp.conf
 @sample etc/sane.d/dist/cardscan.conf etc/sane.d/cardscan.conf
 @sample etc/sane.d/dist/coolscan.conf etc/sane.d/coolscan.conf
@@ -121,6 +122,9 @@ lib/sane/libsane-canon630u.so.%%SOVERSION%%
 lib/sane/libsane-canon_dr.so
 lib/sane/libsane-canon_dr.so.1
 lib/sane/libsane-canon_dr.so.%%SOVERSION%%
+lib/sane/libsane-canon_lide70.so
+lib/sane/libsane-canon_lide70.so.1
+lib/sane/libsane-canon_lide70.so.%%SOVERSION%%
 %%IEEE1284%%lib/sane/libsane-canon_pp.so
 %%IEEE1284%%lib/sane/libsane-canon_pp.so.1
 %%IEEE1284%%lib/sane/libsane-canon_pp.so.%%SOVERSION%%
@@ -371,6 +375,7 @@ man/man5/sane-bh.5.gz
 man/man5/sane-canon.5.gz
 man/man5/sane-canon630u.5.gz
 man/man5/sane-canon_dr.5.gz
+man/man5/sane-canon_lide70.5.gz
 %%IEEE1284%%man/man5/sane-canon_pp.5.gz
 man/man5/sane-cardscan.5.gz
 man/man5/sane-coolscan.5.gz
