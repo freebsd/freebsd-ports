@@ -61,7 +61,7 @@ https://github.com/kinetiknz/cubeb/pull/600
  #endif
 --- /dev/null
 +++ media/libcubeb/src/cubeb_oss.c
-@@ -0,0 +1,1129 @@
+@@ -0,0 +1,1130 @@
 +/*
 + * Copyright © 2019-2020 Nia Alarie <nia@NetBSD.org>
 + * Copyright © 2020 Ka Ho Ng <khng300@gmail.com>
@@ -114,7 +114,7 @@ https://github.com/kinetiknz/cubeb/pull/600
 +#define OSS_DEFAULT_NFRAMES (32)
 +#endif
 +
-+#define ENV_AUDIO_DEVICE "AUDIODEVICE"
++#define ENV_AUDIO_DEVICE "AUDIO_DEVICE"
 +
 +#ifndef OSS_MAX_CHANNELS
 +# if defined(__FreeBSD__) || defined(__DragonFly__)
@@ -438,7 +438,8 @@ https://github.com/kinetiknz/cubeb/pull/600
 +      continue;
 +
 +    devinfop[collection_cnt].device_id = strdup(sinfo.devname);
-+    devinfop[collection_cnt].friendly_name = strdup(sinfo.desc);
++    asprintf((char **)&devinfop[collection_cnt].friendly_name, "%s: %s",
++             sinfo.devname, sinfo.desc);
 +    devinfop[collection_cnt].group_id = strdup(sinfo.devname);
 +    devinfop[collection_cnt].vendor_name = NULL;
 +    if (devinfop[collection_cnt].device_id == NULL ||
