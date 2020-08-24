@@ -1,0 +1,4 @@
+This is a stripped-down fork of fog-azure-rm that enables Azure Blob Storage
+to be used with CarrierWave and Fog.
+
+WWW: https://gitlab.com/gitlab-org/gitlab-fog-azure-rm

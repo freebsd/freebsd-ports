@@ -1,0 +1,4 @@
+A templating system for URIs, which implements RFC6570 and
+Colon based URITemplates in a clean and straight forward way.
+
+WWW: http://github.com/hannesg/uri_template

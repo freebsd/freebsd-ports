@@ -1339,6 +1339,7 @@
     SUBDIR += rubygem-u2f
     SUBDIR += rubygem-u2f0
     SUBDIR += rubygem-uri
+    SUBDIR += rubygem-uri_template
     SUBDIR += rubygem-uri-redis
     SUBDIR += rubygem-whois
     SUBDIR += rubygem-xmlrpc

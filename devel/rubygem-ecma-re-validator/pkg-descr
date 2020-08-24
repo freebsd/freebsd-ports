@@ -1,0 +1,3 @@
+Validate a regular expression string against what ECMA-262 can actually do.
+
+WWW: https://github.com/gjtorikian/ecma-re-validator
