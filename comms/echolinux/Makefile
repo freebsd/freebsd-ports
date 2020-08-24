@@ -3,7 +3,7 @@
 
 PORTNAME=	echolinux
 PORTVERSION=	0.17a
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/cqinet/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -16,7 +16,8 @@ LICENSE_FILE=	${WRKSRC}/gpl.txt
 LIB_DEPENDS=	libforms.so:x11-toolkits/xforms \
 		libgsm.so:audio/gsm
 
-USES=		tar:tgz
+USES=		tar:tgz xorg
+USE_XORG=	x11 xpm
 
 OPTIONS_DEFINE=	DOCS
 
@@ -26,11 +27,10 @@ post-patch:
 		-e 's|CARGS|CFLAGS|' -e 's|= -DNodeFont=FL_TINY_SIZE|+= -DNodeFont=FL_TINY_SIZE|' \
 		-e 's|/usr/local/bin/|${STAGEDIR}${PREFIX}/bin/|' \
 		${WRKSRC}/echogui/Makefile
-	@${REINPLACE_CMD} -e 's|<linux/soundcard.h>|<sys/soundcard.h>|' \
-		${WRKSRC}/echogui/testgui_cb.c ${WRKSRC}/echogui/testgui_main.c \
-		${WRKSRC}/echolinux/vox.c
 	@${REINPLACE_CMD} -e 's|CC = gcc -O3|#CC = gcc -O3|' -e 's|^CFLAGS =|CFLAGS +=|' \
 		${WRKSRC}/echolinux/Makefile
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+		${WRKSRC}/echolinux/vox.c ${WRKSRC}/echolinux/control.c
 	@${REINPLACE_CMD} -e 's|LFLAGS = -lm|LFLAGS = -L${LOCALBASE}/lib -lm -lgsm|' \
 		-e 's|libgsm.a||' -e 's|-Igsm/inc|-I${LOCALBASE}/include|' \
 		-e 's|/usr/local/bin/|${STAGEDIR}${PREFIX}/bin/|' \
@@ -41,6 +41,9 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/echolinux.desktop ${STAGEDIR}${PREFIX}/share/echolinux
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/echolinux/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/pixmaps/echolinux_48x48.png ${STAGEDIR}${PREFIX}/share/echolinux/pixmaps
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/echogui
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/echolinux
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/echoaudio
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

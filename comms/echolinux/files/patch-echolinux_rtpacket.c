@@ -1,5 +1,5 @@
---- echolinux/rtpacket.c.orig	2002-12-21 22:10:48.000000000 -0500
-+++ echolinux/rtpacket.c	2013-12-27 22:10:06.275393036 -0500
+--- echolinux/rtpacket.c.orig	2002-12-22 03:10:48 UTC
++++ echolinux/rtpacket.c
 @@ -1,4 +1,8 @@
  #include <stdio.h>
 +#include <stdlib.h>
@@ -9,7 +9,7 @@
  #include "rtp.h"
  #include "rtpacket.h"
  
-@@ -11,6 +15,16 @@
+@@ -11,6 +15,16 @@ extern char callsign[], name[];
  
  /*************** RTP_MAKE_SDES *************/
  
@@ -26,7 +26,7 @@
  int rtp_make_sdes(pkt, ssrc_i, strict)
    char **pkt;
    unsigned long ssrc_i;
-@@ -19,21 +33,12 @@
+@@ -19,20 +33,11 @@ int rtp_make_sdes(pkt, ssrc_i, strict)
      unsigned char zp[1500];
      unsigned char *p = zp;
      rtcp_t *rp;
@@ -36,7 +36,7 @@
      int l, hl, i;
      struct passwd *pw;
      char s[256], ev[1024];
- 
+-
 -    void addSDES(unsigned char item, char *text){
 -        *ap++ = item;
 -        *ap++ = l = strlen(text);
@@ -44,7 +44,6 @@
 -        ap += l;
 -    }
 -
--
+ 
      hl = 0;
      if (strict) {
- 	*p++ = RTP_VERSION << 6;

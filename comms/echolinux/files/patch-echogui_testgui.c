@@ -1,5 +1,5 @@
---- echogui/testgui.c.orig	2011-09-06 14:21:37.000000000 +0200
-+++ echogui/testgui.c	2011-09-06 14:21:42.000000000 +0200
+--- echogui/testgui.c.orig	2006-02-24 19:28:15 UTC
++++ echogui/testgui.c
 @@ -1,6 +1,6 @@
  /* Form definition file generated with fdesign. */
  
