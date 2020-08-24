@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rust-analyzer
-DISTVERSION=	2020-08-17
+DISTVERSION=	2020-08-24
 CATEGORIES=	devel
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -21,13 +21,13 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		anymap-0.12.1 \
 		arrayvec-0.5.1 \
 		atty-0.2.14 \
-		autocfg-1.0.0 \
+		autocfg-1.0.1 \
 		backtrace-0.3.50 \
 		base64-0.12.3 \
 		bitflags-1.2.1 \
 		byteorder-1.3.4 \
 		cargo_metadata-0.11.1 \
-		cc-1.0.58 \
+		cc-1.0.59 \
 		cfg-if-0.1.10 \
 		chalk-derive-0.23.0 \
 		chalk-ir-0.23.0 \
@@ -47,9 +47,10 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		either-1.6.0 \
 		ena-0.14.0 \
 		env_logger-0.7.1 \
+		expect-test-0.1.0 \
 		filetime-0.2.12 \
 		fixedbitset-0.2.0 \
-		flate2-1.0.16 \
+		flate2-1.0.17 \
 		fsevent-2.0.2 \
 		fsevent-sys-3.0.2 \
 		fst-0.4.4 \
@@ -73,19 +74,19 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		kernel32-sys-0.2.2 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
-		libc-0.2.74 \
+		libc-0.2.76 \
 		libloading-0.6.2 \
-		libmimalloc-sys-0.1.15 \
+		libmimalloc-sys-0.1.16 \
 		lock_api-0.4.1 \
 		log-0.4.11 \
-		lsp-server-0.3.3 \
+		lsp-server-0.3.4 \
 		lsp-types-0.79.0 \
 		matchers-0.0.1 \
 		matches-0.1.8 \
 		maybe-uninit-2.0.0 \
 		memmap-0.7.0 \
 		memoffset-0.5.5 \
-		mimalloc-0.1.19 \
+		mimalloc-0.1.20 \
 		miniz_oxide-0.4.0 \
 		mio-0.6.22 \
 		mio-extras-2.0.6 \
@@ -96,13 +97,13 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		num-traits-0.2.12 \
 		num_cpus-1.13.0 \
 		object-0.20.0 \
-		once_cell-1.4.0 \
+		once_cell-1.4.1 \
 		oorandom-11.1.2 \
 		parking_lot-0.11.0 \
 		parking_lot_core-0.8.0 \
 		percent-encoding-2.1.0 \
-		perf-event-0.4.4 \
-		perf-event-open-sys-0.3.2 \
+		perf-event-0.4.5 \
+		perf-event-open-sys-1.0.0 \
 		petgraph-0.5.1 \
 		pico-args-0.3.4 \
 		plain-0.2.3 \
@@ -144,15 +145,15 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		thread_local-1.0.1 \
 		threadpool-1.8.1 \
 		time-0.1.43 \
-		tinyvec-0.3.3 \
+		tinyvec-0.3.4 \
 		tracing-0.1.19 \
-		tracing-attributes-0.1.10 \
+		tracing-attributes-0.1.11 \
 		tracing-core-0.1.14 \
 		tracing-log-0.1.1 \
 		tracing-serde-0.1.1 \
 		tracing-subscriber-0.2.11 \
 		tracing-tree-0.1.5 \
-		ungrammar-1.1.1 \
+		ungrammar-1.1.2 \
 		unicode-bidi-0.3.4 \
 		unicode-normalization-0.1.13 \
 		unicode-segmentation-1.6.0 \
