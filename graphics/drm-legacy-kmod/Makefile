@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	drm-legacy-kmod
-PORTVERSION=	g20200306
+PORTVERSION=	g20200825
 CATEGORIES=	graphics
 
 MAINTAINER=	x11@FreeBSD.org
@@ -10,6 +10,9 @@ COMMENT=	Legacy DRM modules for the linuxkpi-based KMS components
 
 LICENSE=	BSD2CLAUSE MIT GPLv2
 LICENSE_COMB=	multi
+
+DEPRECATED=	Obsolete version, use drm-kmod
+EXPIRATION_DATE=2020-12-31
 
 BROKEN_aarch64=		src/dev/drm2/ttm/ttm_bo_util.c:453:2: error: Port me
 
@@ -27,7 +30,7 @@ CONFLICTS_INSTALL=	drm-devel-kmod \
 USE_GITHUB=	yes
 GH_ACCOUNT=	FreeBSDDesktop
 GH_PROJECT=	drm-legacy
-GH_TAGNAME=	9691917
+GH_TAGNAME=	3f527d9
 
 .include <bsd.port.options.mk>
 
