@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	4.14.0-3
 CATEGORIES=	sysutils
 
-MAINTAINER=	slavash@FreeBSD.org
+MAINTAINER=	hselasky@FreeBSD.org
 COMMENT=	Firmware Burning and Diagnostics Tools for Mellanox devices
 
 LICENSE=	GPLv2
