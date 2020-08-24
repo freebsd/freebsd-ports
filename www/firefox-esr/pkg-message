@@ -5,7 +5,6 @@
 
 Some features found on Windows, macOS and Linux are not implemented:
 
-- Native audio (requires OSS backend, feature parity with ALSA or PulseAudio)
 - Encrypted Media Extensions (requires Widevine CDM binary)
 - Process sandboxing (requires Capsicum backend)
 - Reduced memory usage (requires mozjemalloc)
