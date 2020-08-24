@@ -3,8 +3,13 @@
 
 PORTNAME=	qgis
 DISTVERSIONPREFIX=	final-
-DISTVERSION=	3_14_0
+DISTVERSION=	3_14_15
 CATEGORIES=	graphics geography
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	33192f38bc7d.patch:-p1 \
+		12203f0ce527.patch:-p1 \
+		6e9d42d70099.patch:-p1
 
 MAINTAINER=	rhurlin@gwdg.de
 COMMENT=	Free and Open Source Geographic Information System
@@ -155,6 +160,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|"-mllvm -inline-threshold=128"|"-O1"|g' \
 		${WRKSRC}/src/core/CMakeLists.txt
 .endif
+	@${REINPLACE_CMD} -e 's|%%PYQT_SIPDIR%%|${PYQT_SIPDIR}|' \
+		${WRKSRC}/cmake/FindPyQt5.py \
+		${WRKSRC}/cmake/FindSIP.py
 
 pre-configure:
 	${MKDIR} ${CONFIGURE_WRKSRC}/bin && ${LN} -s ${PYTHON_CMD} ${CONFIGURE_WRKSRC}/bin/python3
