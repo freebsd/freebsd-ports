@@ -4848,6 +4848,7 @@
     SUBDIR += py-pyhcl
     SUBDIR += py-pyicu
     SUBDIR += py-pyinotify
+    SUBDIR += py-pyinquirer
     SUBDIR += py-pyinstaller
     SUBDIR += py-pyjq
     SUBDIR += py-pyjsparser

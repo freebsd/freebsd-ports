@@ -1,0 +1,8 @@
+PyInquirer strives to be an easily embeddable and
+beautiful command line interface for Python. PyInquirer
+wants to make it easy for existing Inquirer.js users
+to write immersive command line applications in Python.
+
+Note: PyInquirer provides the user interface and the inquiry session flow.
+
+WWW: https://github.com/CITGuru/PyInquirer/
