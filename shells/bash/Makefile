@@ -4,7 +4,7 @@
 PORTNAME=		bash
 PATCHLEVEL=		18
 PORTVERSION=		5.0.${PATCHLEVEL:S/^0//g}
-PORTREVISION?=		2
+PORTREVISION?=		3
 CATEGORIES=		shells
 MASTER_SITES=		GNU
 DISTNAME=		${PORTNAME}-${PORTVERSION:R}
@@ -81,7 +81,8 @@ post-patch:
 # Ensure y.tab.c is regenerated
 	${TOUCH} ${WRKSRC}/parse.y
 	${RM} ${WRKSRC}/y.tab.c
-	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/doc/bash.1
+	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" -e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
+		${WRKSRC}/doc/bash.1
 .if ${PORT_OPTIONS:MSYSLOG}
 	@${REINPLACE_CMD} \
 	    -e "s|/\*.*#define SYSLOG_HISTORY .*\*/|#define SYSLOG_HISTORY|g" \
