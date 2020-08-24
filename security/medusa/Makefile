@@ -18,6 +18,7 @@ USES=	ssl
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-module-ncp=no --enable-module-afp=no
+CFLAGS+=	-fcommon
 
 OPTIONS_DEFINE=	SVN PGSQL DOCS
 OPTIONS_SUB=	yes
