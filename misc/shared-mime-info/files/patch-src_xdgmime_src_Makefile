@@ -1,0 +1,9 @@
+--- src/xdgmime/src/Makefile.orig	2020-08-24 07:25:48 UTC
++++ src/xdgmime/src/Makefile
+@@ -1,5 +1,5 @@
+ 
+-CFLAGS=-Wall -Wmissing-prototypes  -Wno-sign-compare -g -DXDG_PREFIX=xdg_test -DHAVE_MMAP
++CFLAGS+=-Wall -Wmissing-prototypes  -Wno-sign-compare -g -DXDG_PREFIX=xdg_test -DHAVE_MMAP
+ 
+ all: test-mime test-mime-data print-mime-data
+ 

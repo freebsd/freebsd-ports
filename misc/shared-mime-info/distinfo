@@ -1,3 +1,5 @@
-TIMESTAMP = 1550914541
-SHA256 (shared-mime-info-1.10.tar.xz) = c625a83b4838befc8cafcd54e3619946515d9e44d63d61c4adf7f5513ddfbebf
-SIZE (shared-mime-info-1.10.tar.xz) = 616800
+TIMESTAMP = 1596996473
+SHA256 (xdg-shared-mime-info-ef58b2b2f7ad4070171c6e45e3b3764daa3ff2c1_GL0.tar.gz) = b4bf90f61c6f5bb4d8bd2bd19026bc6f0fae1841ebe9d94f0b8cd27afa7d63d2
+SIZE (xdg-shared-mime-info-ef58b2b2f7ad4070171c6e45e3b3764daa3ff2c1_GL0.tar.gz) = 6515738
+SHA256 (xdg-xdgmime-6663a2288d11b37bc07f5a01b4b85dcd377787e1_GL0.tar.gz) = 2f4f47c1183b8a532e3ea8baeb8f6abec5b684ef59c4838cd31bfa39059b992e
+SIZE (xdg-xdgmime-6663a2288d11b37bc07f5a01b4b85dcd377787e1_GL0.tar.gz) = 32265
