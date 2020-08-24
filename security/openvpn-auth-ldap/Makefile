@@ -37,7 +37,7 @@ PORTDOCS=	README
 PORTEXAMPLES=	auth-ldap.conf
 PLIST_FILES=	lib/openvpn-auth-ldap.so
 OBJCFLAGS+=	-L${LOCALBASE}/lib -I${LOCALBASE}/include -fPIC
-CFLAGS+=	-fPIC
+CFLAGS+=	-fPIC -fcommon
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
