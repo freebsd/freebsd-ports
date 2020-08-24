@@ -1,0 +1,12 @@
+# Upstream did not bump the release version.  Do that for them.
+--- CMakeLists.txt.orig	2020-08-24 13:29:55 UTC
++++ CMakeLists.txt
+@@ -37,7 +37,7 @@ endif()
+ 
+ # A project name is needed for CPack
+ # Version can be overriden by git tags, see cmake/getversion.cmake
+-PROJECT("Cockatrice" VERSION 2.7.4)
++PROJECT("Cockatrice" VERSION 2.7.5)
+ 
+ # Use c++11 for all targets
+ set(CMAKE_CXX_STANDARD 11 CACHE STRING "C++ ISO Standard")
