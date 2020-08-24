@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openconnect
-PORTVERSION=	8.08
+PORTVERSION=	8.10
 CATEGORIES=	security net-vpn
 MASTER_SITES=	ftp://ftp.infradead.org/pub/openconnect/ \
 		ZI
@@ -28,6 +28,7 @@ USE_LDCONFIG=	yes
 SHEBANG_LANG+=	SH
 SH_OLD_CMD+=	/system/bin/sh
 SHEBANG_FILES=	trojans/csd-post.sh trojans/csd-wrapper.sh \
+		trojans/tncc-emulate.py \
 		trojans/hipreport-android.sh trojans/tncc-wrapper.py
 PORTDOCS=	*
 
