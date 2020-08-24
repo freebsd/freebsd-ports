@@ -1,3 +1,5 @@
-TIMESTAMP = 1478561627
+TIMESTAMP = 1598312489
 SHA256 (flowgrind-flowgrind-flowgrind-0.8.0_GH0.tar.gz) = 1b0c6c571f11430e170ee5d654ff10ba095f627f50509b6c678681566ead8cb6
 SIZE (flowgrind-flowgrind-flowgrind-0.8.0_GH0.tar.gz) = 152977
+SHA256 (f9049c589fcf1970c81c9127eec3393f399cce82.patch) = 0c0bfd90a3515c99789021e712715bdc8fb50ff4b4c01f8257dc9f51ddf04c27
+SIZE (f9049c589fcf1970c81c9127eec3393f399cce82.patch) = 1466

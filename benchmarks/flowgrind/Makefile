@@ -7,6 +7,9 @@ DISTVERSIONPREFIX=	${PORTNAME}-
 PORTREVISION=	5
 CATEGORIES=	benchmarks
 
+PATCH_SITES=	https://github.com/flowgrind/flowgrind/commit/
+PATCHFILES=	f9049c589fcf1970c81c9127eec3393f399cce82.patch:-p1
+
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Measure throughput and other metrics for TCP
 
