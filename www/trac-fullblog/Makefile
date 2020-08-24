@@ -12,6 +12,8 @@ DIST_SUBDIR=	trac
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Plugin that provides a project Blog
 
+LICENSE=	BSD
+
 RUN_DEPENDS=	htmldoc:textproc/htmldoc \
 		tracd:www/trac
 
