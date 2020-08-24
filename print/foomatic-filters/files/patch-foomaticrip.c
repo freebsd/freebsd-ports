@@ -1,6 +1,15 @@
 --- foomaticrip.c.orig	2012-07-02 14:50:46 UTC
 +++ foomaticrip.c
-@@ -180,7 +180,7 @@ char cupsfilterpath[PATH_MAX] = "/usr/lo
+@@ -109,7 +109,7 @@ jobparams_t * get_current_job()
+ }
+ 
+ 
+-dstr_t *postpipe;  /* command into which the output of this filter should be piped */
++dstr_t *postpipe = NULL;  /* command into which the output of this filter should be piped */
+ FILE *postpipe_fh = NULL;
+ 
+ FILE * open_postpipe()
+@@ -180,7 +180,7 @@ char cupsfilterpath[PATH_MAX] = "/usr/local/lib/cups/f
                                  "/opt/cups/filter:"
                                  "/usr/lib/cups/filter";
  
@@ -9,7 +18,7 @@
  
  void config_set_option(const char *key, const char *value)
  {
-@@ -1061,7 +1061,7 @@ int print_file(const char *filename, int
+@@ -1061,7 +1061,7 @@ int print_file(const char *filename, int convert)
  		   Ghostscript is not available. */
  		if (spooler == SPOOLER_CUPS)
  		  snprintf(pdf2ps_cmd, PATH_MAX,
