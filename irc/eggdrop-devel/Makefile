@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	eggdrop
-DISTVERSION=	1.9.0.a.20200301
+DISTVERSION=	1.9.0.a.20200814
 CATEGORIES=	irc
 PKGNAMESUFFIX=	-devel
 
@@ -16,7 +16,7 @@ USES=		tcl ssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	eggheads
-GH_TAGNAME=	4622c0c
+GH_TAGNAME=	ddcf4d0
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-tcllib=${LOCALBASE}/lib/libtcl${TCL_SHLIB_VER}.so \
