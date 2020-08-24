@@ -15,8 +15,6 @@ COMMENT=	Virtual Machine Controller for Gandi.net
 
 LICENSE=	BSD3CLAUSE
 
-BROKEN_aarch64=		fails to build: attempts to fetch during build stage
-
 USES=		go:modules tar:bzip2
 
 USE_GITHUB=	nodefault
