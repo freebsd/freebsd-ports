@@ -2,6 +2,7 @@ bin/r2
 bin/r2agent
 bin/r2p
 bin/r2pm
+bin/r2r
 bin/rabin2
 bin/radare2
 bin/radiff2
@@ -9,12 +10,12 @@ bin/rafind2
 bin/ragg2
 bin/rahash2
 bin/rarun2
+bin/rasign2
 bin/rasm2
 bin/rax2
 include/libr/r2naked.h
 include/libr/r_agraph.h
 include/libr/r_anal.h
-include/libr/r_anal_ex.h
 include/libr/r_asm.h
 include/libr/r_bin.h
 include/libr/r_bin_dwarf.h
@@ -26,9 +27,11 @@ include/libr/r_config.h
 include/libr/r_cons.h
 include/libr/r_core.h
 include/libr/r_crypto.h
+include/libr/r_crypto/r_aes.h
 include/libr/r_crypto/r_des.h
 include/libr/r_debug.h
 include/libr/r_diff.h
+include/libr/r_drx.h
 include/libr/r_egg.h
 include/libr/r_endian.h
 include/libr/r_flag.h
@@ -61,6 +64,7 @@ include/libr/r_userconf.h
 include/libr/r_util.h
 include/libr/r_util/pj.h
 include/libr/r_util/r_alloc.h
+include/libr/r_util/r_annotated_code.h
 include/libr/r_util/r_ascii_table.h
 include/libr/r_util/r_asn1.h
 include/libr/r_util/r_assert.h
@@ -70,7 +74,6 @@ include/libr/r_util/r_big.h
 include/libr/r_util/r_bitmap.h
 include/libr/r_util/r_buf.h
 include/libr/r_util/r_cache.h
-include/libr/r_util/r_constr.h
 include/libr/r_util/r_ctypes.h
 include/libr/r_util/r_date.h
 include/libr/r_util/r_debruijn.h
@@ -79,6 +82,7 @@ include/libr/r_util/r_file.h
 include/libr/r_util/r_graph.h
 include/libr/r_util/r_hex.h
 include/libr/r_util/r_idpool.h
+include/libr/r_util/r_intervaltree.h
 include/libr/r_util/r_itv.h
 include/libr/r_util/r_log.h
 include/libr/r_util/r_mem.h
@@ -88,6 +92,7 @@ include/libr/r_util/r_panels.h
 include/libr/r_util/r_pkcs7.h
 include/libr/r_util/r_pool.h
 include/libr/r_util/r_print.h
+include/libr/r_util/r_protobuf.h
 include/libr/r_util/r_punycode.h
 include/libr/r_util/r_queue.h
 include/libr/r_util/r_range.h
@@ -97,10 +102,12 @@ include/libr/r_util/r_signal.h
 include/libr/r_util/r_spaces.h
 include/libr/r_util/r_stack.h
 include/libr/r_util/r_str.h
+include/libr/r_util/r_str_constpool.h
 include/libr/r_util/r_str_util.h
 include/libr/r_util/r_strbuf.h
 include/libr/r_util/r_strpool.h
 include/libr/r_util/r_sys.h
+include/libr/r_util/r_table.h
 include/libr/r_util/r_time.h
 include/libr/r_util/r_tree.h
 include/libr/r_util/r_uleb128.h
@@ -124,6 +131,7 @@ include/libr/sdb/ls.h
 include/libr/sdb/sdb.h
 include/libr/sdb/sdb_version.h
 include/libr/sdb/sdbht.h
+include/libr/sdb/set.h
 include/libr/sdb/types.h
 include/libr/sflib/common/sfsocketcall.h
 include/libr/sflib/common/sftypes.h
@@ -222,6 +230,7 @@ man/man1/r2-docker.1.gz
 man/man1/r2.1.gz
 man/man1/r2agent.1.gz
 man/man1/r2pm.1.gz
+man/man1/r2r.1.gz
 man/man1/rabin2.1.gz
 man/man1/radare2.1.gz
 man/man1/radiff2.1.gz
@@ -279,6 +288,7 @@ man/man7/esil.7.gz
 %%PORTDOCS%%%%DOCSDIR%%/portscan.r2
 %%PORTDOCS%%%%DOCSDIR%%/qnx.md
 %%PORTDOCS%%%%DOCSDIR%%/r2ascii.txt
+%%PORTDOCS%%%%DOCSDIR%%/r2pipe.html
 %%PORTDOCS%%%%DOCSDIR%%/rap.md
 %%PORTDOCS%%%%DOCSDIR%%/rapatch.md
 %%PORTDOCS%%%%DOCSDIR%%/releases.md
@@ -294,6 +304,7 @@ man/man7/esil.7.gz
 %%PORTDOCS%%%%DOCSDIR%%/uncrustify.cfg
 %%PORTDOCS%%%%DOCSDIR%%/vim
 %%PORTDOCS%%%%DOCSDIR%%/vim2r2.js
+%%PORTDOCS%%%%DOCSDIR%%/vlang-example.v
 %%PORTDOCS%%%%DOCSDIR%%/windbg.md
 %%PORTDOCS%%%%DOCSDIR%%/windows.md
 %%PORTDOCS%%%%DOCSDIR%%/yara.md
@@ -328,16 +339,19 @@ man/man7/esil.7.gz
 %%DATADIR%%/%%PORTVERSION%%/cons/white2
 %%DATADIR%%/%%PORTVERSION%%/cons/xvilka
 %%DATADIR%%/%%PORTVERSION%%/cons/zenburn
+%%DATADIR%%/%%PORTVERSION%%/fcnsign/cc-arm-16.sdb
 %%DATADIR%%/%%PORTVERSION%%/fcnsign/cc-arm-32.sdb
 %%DATADIR%%/%%PORTVERSION%%/fcnsign/cc-arm-64.sdb
 %%DATADIR%%/%%PORTVERSION%%/fcnsign/cc-avr-8.sdb
+%%DATADIR%%/%%PORTVERSION%%/fcnsign/cc-hexagon-32.sdb
 %%DATADIR%%/%%PORTVERSION%%/fcnsign/cc-m68k-32.sdb
 %%DATADIR%%/%%PORTVERSION%%/fcnsign/cc-mips-32.sdb
 %%DATADIR%%/%%PORTVERSION%%/fcnsign/cc-mips-64.sdb
-%%DATADIR%%/%%PORTVERSION%%/fcnsign/cc-powerpc-32.sdb
-%%DATADIR%%/%%PORTVERSION%%/fcnsign/cc-powerpc-64.sdb
+%%DATADIR%%/%%PORTVERSION%%/fcnsign/cc-ppc-32.sdb
+%%DATADIR%%/%%PORTVERSION%%/fcnsign/cc-ppc-64.sdb
 %%DATADIR%%/%%PORTVERSION%%/fcnsign/cc-riscv-64.sdb
 %%DATADIR%%/%%PORTVERSION%%/fcnsign/cc-sparc-32.sdb
+%%DATADIR%%/%%PORTVERSION%%/fcnsign/cc-x86-16.sdb
 %%DATADIR%%/%%PORTVERSION%%/fcnsign/cc-x86-32.sdb
 %%DATADIR%%/%%PORTVERSION%%/fcnsign/cc-x86-64.sdb
 %%DATADIR%%/%%PORTVERSION%%/fcnsign/cc-xtensa-32.sdb
