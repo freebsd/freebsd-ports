@@ -18,10 +18,15 @@ Some features found on Windows, macOS and Linux are not implemented:
 
 ## Audio backend
 
-To select non-default audio backend open `about:config` page and
-create `media.cubeb.backend` preference. Supported values are: `alsa`,
-`jack`, `oss`, `pulse`, `pulse-rust`, `sndio`. Currently used backend can be
-inspected on `about:support` page.
+Currently used audio backend can be inspected on `about:support` page.
+Supported backends and default probing order is as follows:
+- `pulse-rust` if `pulseaudio` package is installed (PULSEAUDIO option)
+- `jack` if `jackit` package is installed (JACK option)
+- `sndio` if `sndio` package is installed (SNDIO option)
+- `alsa` if `alsa-lib` package is installed (ALSA option)
+- `oss` (always available)
+To force a specific backend open `about:config` page and create
+`media.cubeb.backend` preference.
 
 Microphone selection only works in `oss`, `pulse`, `pulse-rust` backends.
 Other backends are limited to `default` which is usually `/dev/dsp`,
