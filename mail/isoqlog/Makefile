@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake
 GNU_CONFIGURE=	yes
+CFLAGS+=	-fcommon
 
 SUB_FILES=	pkg-message
 
