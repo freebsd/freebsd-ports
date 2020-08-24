@@ -17,6 +17,7 @@ TEST_DEPENDS=	${LOCALBASE}/share/fonts/freefont-ttf/FreeMono.ttf:x11-fonts/freef
 		zbarimg:graphics/zbar
 
 USES=		gmake
+USE_CSTD=	c99
 USE_GITHUB=	yes
 GH_ACCOUNT=	Y2Z
 GH_TAGNAME=	20713de
