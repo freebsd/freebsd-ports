@@ -8,6 +8,9 @@ CATEGORIES=	x11-drivers
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org geode display driver
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES=		xorg-cat:driver
 
 ONLY_FOR_ARCHS=	i386
