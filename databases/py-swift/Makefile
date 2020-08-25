@@ -12,6 +12,7 @@ MAINTAINER=	trociny@FreeBSD.org
 COMMENT=	Highly available, distributed, eventually consistent object/blob store
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=0.5.21:devel/py-pbr@${PY_FLAVOR}
 
