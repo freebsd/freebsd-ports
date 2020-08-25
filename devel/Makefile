@@ -6103,7 +6103,6 @@
     SUBDIR += rubygem-jammit
     SUBDIR += rubygem-jaro_winkler
     SUBDIR += rubygem-jasmine-core
-    SUBDIR += rubygem-json_schemer
     SUBDIR += rubygem-jbuilder
     SUBDIR += rubygem-jbuilder-rails5
     SUBDIR += rubygem-jbuilder-rails50
@@ -6124,6 +6123,7 @@
     SUBDIR += rubygem-json1
     SUBDIR += rubygem-json_pure
     SUBDIR += rubygem-json_pure1
+    SUBDIR += rubygem-json_schemer
     SUBDIR += rubygem-jsonapi-renderer
     SUBDIR += rubygem-kafo
     SUBDIR += rubygem-kafo_parsers

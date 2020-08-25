@@ -445,6 +445,7 @@
     SUBDIR += vmaf
     SUBDIR += vtkmpeg2encode
     SUBDIR += w_scan
+    SUBDIR += w_scan2
     SUBDIR += webcamd
     SUBDIR += webcamoid
     SUBDIR += webvfx-qt5
