@@ -1,5 +1,5 @@
 WWW: https://github.com/miguelmota/cointop
 
-Fast and lightweight terminal based UI application
+A fast and lightweight terminal based UI application
 for tracking and monitoring cryptocurrency coins
-in real-time; inspired by htop with vim-inspired keys
+in real-time.
