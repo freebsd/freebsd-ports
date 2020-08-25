@@ -10,7 +10,7 @@ MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Regular expresionn validator against ECMA-262
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE.md
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-regexp_parser>=1.2<2:textproc/rubygem-regexp_parser
 
