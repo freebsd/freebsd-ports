@@ -1,4 +1,4 @@
---- Gemfile.orig	2020-07-21 14:46:32 UTC
+--- Gemfile.orig	2020-08-21 12:16:22 UTC
 +++ Gemfile
 @@ -18,7 +18,7 @@ gem 'default_value_for', '~> 3.3.0'
  # Supported DBs
@@ -17,7 +17,7 @@
  
  # Disable strong_params so that Mash does not respond to :permitted?
  gem 'hashie-forbidden_attributes'
-@@ -230,7 +229,7 @@ gem 'redis-rails', '~> 5.0.2'
+@@ -233,7 +232,7 @@ gem 'redis-rails', '~> 5.0.2'
  gem 'discordrb-webhooks-blackst0ne', '~> 3.3', require: false
  
  # HipChat integration
@@ -26,12 +26,10 @@
  
  # Jira integration
  gem 'jira-ruby', '~> 2.0.0'
-@@ -330,95 +329,6 @@ group :metrics do
-   # Prometheus
-   gem 'prometheus-client-mmap', '~> 0.10.0'
+@@ -335,95 +334,6 @@ group :metrics do
    gem 'raindrops', '~> 0.18'
--end
--
+ end
+ 
 -group :development do
 -  gem 'brakeman', '~> 4.2', require: false
 -  gem 'danger', '~> 6.0', require: false
@@ -104,7 +102,7 @@
 -  gem 'rspec_profiling', '~> 0.0.5'
 -  gem 'rspec-parameterized', require: false
 -
--  gem 'capybara', '~> 3.22.0'
+-  gem 'capybara', '~> 3.33.0'
 -  gem 'capybara-screenshot', '~> 1.0.22'
 -  gem 'selenium-webdriver', '~> 3.142'
 -
@@ -113,12 +111,26 @@
 -  gem 'webmock', '~> 3.5.1'
 -  gem 'rails-controller-testing'
 -  gem 'concurrent-ruby', '~> 1.1'
--  gem 'test-prof', '~> 0.10.0'
+-  gem 'test-prof', '~> 0.12.0'
 -  gem 'rspec_junit_formatter'
 -  gem 'guard-rspec'
 -
 -  # Moved in `test` because https://gitlab.com/gitlab-org/gitlab/-/issues/217527
 -  gem 'derailed_benchmarks', require: false
- end
- 
+-end
+-
  gem 'octokit', '~> 4.15'
+ 
+ # https://gitlab.com/gitlab-org/gitlab/issues/207207
+@@ -465,9 +375,9 @@ end
+ # Gitaly GRPC protocol definitions
+ gem 'gitaly', '~> 13.3.0-rc1'
+ 
+-gem 'grpc', '~> 1.30.2'
++gem 'grpc', '~> 1.24.0'
+ 
+-gem 'google-protobuf', '~> 3.12'
++gem 'google-protobuf', '~> 3.8'
+ 
+ gem 'toml-rb', '~> 1.0.0'
+ 
