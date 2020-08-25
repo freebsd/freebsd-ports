@@ -2,6 +2,7 @@
 
 PORTNAME=	nbdkit
 PORTVERSION=	1.20.4
+PORTREVISION=	1
 CATEGORIES=	net
 # XXX Although nbdkit uses github for its homepage, the release tarballs served
 # by github haven't been through autoconf.  So we must download the sources
@@ -16,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	bash:shells/bash
 
-USES=		compiler:c11 gmake libtool
+USES=		compiler:c11 gmake libtool pkgconfig
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
@@ -46,12 +47,10 @@ OPTIONS_DEFAULT=	GNUTLS MANPAGES
 OPTIONS_SUB=		yes
 
 CURL_BUILD_DEPENDS+=	curl:ftp/curl
-CURL_BUILD_DEPENDS+=	pkgconf:devel/pkgconf
 CURL_CONFIGURE_WITH=	curl
 CURL_RUN_DEPENDS+=	curl:ftp/curl
 LIBVIRT_CONFIGURE_WITH=	libvirt
 LIBVIRT_LIB_DEPENDS=	libvirt.so:devel/libvirt
-LZMA_BUILD_DEPENDS+=	pkgconf:devel/pkgconf
 LZMA_CONFIGURE_WITH=	liblzma
 LZMA_LIB_DEPENDS=	liblzma.so:archivers/lzmalib
 MANPAGES_USE+=		perl5=build
@@ -64,7 +63,6 @@ RUBY_CONFIGURE_ENABLE=	ruby
 RUBY_USE+=		ruby
 SSH_CONFIGURE_WITH=	ssh
 SSH_LIB_DEPENDS=	libssh.so:security/libssh
-ZLIB_BUILD_DEPENDS+=	pkgconf:devel/pkgconf
 ZLIB_CONFIGURE_WITH=	zlib
 
 .include <bsd.port.mk>
