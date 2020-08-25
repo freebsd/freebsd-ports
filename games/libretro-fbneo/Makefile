@@ -12,7 +12,7 @@ LICENSE_NAME=	FBNeo
 LICENSE_FILE=	${WRKSRC}/src/license.txt
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
-USES=		gmake gl
+USES=		compiler:c11 gmake gl
 USE_LDCONFIG=	yes
 USE_GL=		gl
 
