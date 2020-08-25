@@ -1,6 +1,15 @@
---- fig2dev/fig2dev.h.orig	2010-03-16 11:53:20.000000000 -0700
-+++ fig2dev/fig2dev.h	2011-06-16 22:23:27.000000000 -0700
-@@ -214,7 +214,7 @@
+--- fig2dev/fig2dev.h.orig	2010-03-16 18:53:20 UTC
++++ fig2dev/fig2dev.h
+@@ -126,7 +126,7 @@ extern int	PSisomap[];
+ extern char	*prog, *from, *to;
+ extern char	*name;
+ extern double	font_size;
+-Boolean	correct_font_size;	/* use correct font size */
++extern Boolean	correct_font_size;	/* use correct font size */
+ extern double	mag, fontmag;
+ extern FILE	*tfp;
+ 
+@@ -214,7 +214,7 @@ struct Cmap {
  #endif /* MAXPATHLEN */
  #endif /* PATH_MAX */
  
