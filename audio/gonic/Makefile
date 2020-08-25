@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gonic
-PORTVERSION=	0.10.0
+PORTVERSION=	0.11.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	audio net
 
@@ -25,6 +25,7 @@ GH_TUPLE=	Masterminds:goutils:v1.1.0:masterminds_goutils/vendor/github.com/Maste
 		Masterminds:semver:v1.5.0:masterminds_semver/vendor/github.com/Masterminds/semver \
 		Masterminds:sprig:v2.22.0:masterminds_sprig/vendor/github.com/Masterminds/sprig \
 		cespare:xxhash:v1.1.0:cespare_xxhash/vendor/github.com/cespare/xxhash \
+		disintegration:imaging:v1.6.2:disintegration_imaging/vendor/github.com/disintegration/imaging \
 		dustin:go-humanize:v1.0.0:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
 		faiface:beep:v1.0.2:faiface_beep/vendor/github.com/faiface/beep \
 		go-check:check:788fd7840127:go_check_check/vendor/gopkg.in/check.v1 \
