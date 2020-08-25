@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libgpg-error
-PORTVERSION=	1.38
+PORTVERSION=	1.39
 CATEGORIES=	security devel
 MASTER_SITES=	GNUPG
 
