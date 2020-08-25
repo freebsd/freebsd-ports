@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	file2pcap
-PORTVERSION=	1.25
+PORTVERSION=	1.27.b.${SNAPDATE}
 CATEGORIES=	net
 
 MAINTAINER=	nobutaka@FreeBSD.org
@@ -11,10 +11,12 @@ COMMENT=	Tool to make packet captures containing the content of specified file
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USE_GITHUB=	yes
+
 GH_ACCOUNT=	Cisco-Talos
 GH_PROJECT=	file2pcap
-
-USE_GITHUB=	yes
+GH_TAGNAME=	0f694c0
+SNAPDATE=	20191122
 
 ALL_TARGET=	file2pcap
 
