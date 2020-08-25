@@ -15375,3 +15375,4 @@ net-im/telepathy-haze||2020-08-15|Has expired: Uses deprecated version of python
 www/halberd||2020-08-15|Has expired: Uses deprecated version of python
 x11-toolkits/py-wxPython28||2020-08-15|Has expired: Uses deprecated version of python
 devel/codeblocks-devel||2020-08-22|Removed
+net/frr5|net/frr7|2020-08-25|Has expired: Upstream no longer maintained
