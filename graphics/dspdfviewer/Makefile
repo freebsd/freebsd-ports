@@ -50,6 +50,12 @@ CFLAGS+=	-Wno-error=zero-as-null-pointer-constant
 CFLAGS+=	-Wno-error=extra-semi-stmt
 .endif
 
+# Fixes build failure for Clang 11.0.0
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1300111 && ${CHOSEN_COMPILER_TYPE} == clang
+CFLAGS+=	-Wno-error=suggest-destructor-override
+CFLAGS+=	-Wno-error=suggest-override
+.endif
+
 # Prepare for Qt5-5.15
 CFLAGS+=	-Wno-deprecated
 
