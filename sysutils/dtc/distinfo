@@ -1,3 +1,5 @@
-TIMESTAMP = 1551032373
-SHA256 (dgibson-dtc-v1.4.7_GH0.tar.gz) = 603d6f4f5f34921b368e6febe6690c89022d098edda77187a758b8eeeeff53ea
-SIZE (dgibson-dtc-v1.4.7_GH0.tar.gz) = 191568
+TIMESTAMP = 1598352412
+SHA256 (dgibson-dtc-v1.6.0_GH0.tar.gz) = 3d15dee7126a6c4a015ab47ec908cab13e39774b0315efaaebb223cb4a4d349c
+SIZE (dgibson-dtc-v1.6.0_GH0.tar.gz) = 200316
+SHA256 (ca19c3db2b.patch) = 0026f5ece39859bbd5ad7a9bc6d7c4dd3fb2ff85b35bf88c2dd227cfdb28c9b4
+SIZE (ca19c3db2b.patch) = 735

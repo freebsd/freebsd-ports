@@ -8,7 +8,7 @@ bin/fdtput
 include/fdt.h
 include/libfdt.h
 include/libfdt_env.h
-lib/libfdt-1.4.7.so
+lib/libfdt-1.6.0.so
 lib/libfdt.a
 lib/libfdt.so
 lib/libfdt.so.1
