@@ -2,7 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	libobjc2
-PORTVERSION=	2.1
+DISTVERSIONPREFIX=v
+DISTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	lang devel gnustep
 
 MAINTAINER=	ports@FreeBSD.org
@@ -15,14 +17,12 @@ USES=		cmake compiler objc:compiler
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	gnustep
-GH_TAGNAME=	0db500a
+GH_TUPLE=	Tessil:robin-map:757de82:robin_map/third_party/robin-map
 
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS+=	-DLIB_INSTALL_PATH=lib
 CMAKE_ARGS+=	-DTESTS=OFF
-
-CFLAGS+=	-fcommon
 
 LDFLAGS_armv7=	-Wl,-znotext
 SSP_UNSAFE=	yes
