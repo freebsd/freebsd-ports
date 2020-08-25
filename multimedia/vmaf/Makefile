@@ -2,7 +2,7 @@
 
 PORTNAME=	vmaf
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.2
+DISTVERSION=	1.5.3
 CATEGORIES=	multimedia
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -17,7 +17,9 @@ LICENSE_NAME=	BSD-2-Clause Plus Patent License
 LICENSE_FILE=	${WRKSRC:H}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-ONLY_FOR_ARCHS=	amd64 i386
+BUILD_DEPENDS=	${BUILD_DEPENDS_${ARCH}}
+BUILD_DEPENDS_amd64=	nasm:devel/nasm
+BUILD_DEPENDS_i386=	nasm:devel/nasm
 
 USES=		compiler:c++11-lib meson
 USE_GITHUB=	yes
