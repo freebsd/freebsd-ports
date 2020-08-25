@@ -40,6 +40,7 @@ PLIST_SUB+=	SPOOLDIR="${SPOOLDIR}" LOGDIR="${LOGDIR}" PIDDIR="${PIDDIR}" \
 		SMSD_USER="${SMSD_USER}" SMSD_GROUP="${SMSD_GROUP}"
 SUB_FILES=	pkg-install pkg-deinstall
 
+CFLAGS+=	-fcommon
 LDFLAGS+=	-linotify
 
 PORTDOCS=	*
