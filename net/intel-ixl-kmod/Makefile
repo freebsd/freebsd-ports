@@ -11,6 +11,9 @@ MASTER_SITE_SUBDIR?=	25160/eng
 PKGNAMEPREFIX=	intel-
 PKGNAMESUFFIX=	-kmod
 
+PATCH_SITES=	https://svnweb.freebsd.org/base/head/sys/dev/ixl/
+PATCHFILES=	ixl_pf_main.c?view=patch&r1=358698&r2=358697&pathrev=358698:-p4
+
 MAINTAINER?=	freebsd@intel.com
 COMMENT?=	40 gigabit FreeBSD Base Driver for Intel(R) Network Connections
 
@@ -49,8 +52,8 @@ MAX_NETMAP_OSVERSION?=	1200500  # Maximum OSVERSION for which NETMAP support wor
 
 # Fixup for slave ports that use this as a master port. sbruno
 .if ${PORTNAME} == ixl
-ONLY_FOR_ARCHS=		amd64
-ONLY_FOR_ARCHS_REASON=	Not supported on other architectures, amd64 only.
+ONLY_FOR_ARCHS=		amd64 powerpc64
+ONLY_FOR_ARCHS_REASON=	Not supported on other architectures, amd64 and powerpc64 only.
 .endif
 
 .if ${PORT_OPTIONS:MNETMAP_AUTO} && ${OSVERSION} <= ${MAX_NETMAP_OSVERSION}
