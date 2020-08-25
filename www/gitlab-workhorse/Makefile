@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-workhorse
-PORTVERSION=	8.37.0
+PORTVERSION=	8.39.0
 PORTREVISION=	0
 CATEGORIES=	www
 
@@ -21,12 +21,12 @@ MAKE_ENV=	GOFLAGS="${GO_BUILDFLAGS}"
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find the commit hash here: https://gitlab.com/gitlab-org/gitlab-workhorse/tags
-GL_COMMIT=	06a8d941ff8d1e6820720dd45cdb9062bb4f0a99
+GL_COMMIT=	8b819cbd724084ebc490feabcb32b09e605fae56
 
 # for go dependencies
 USE_GITHUB=	nodefault
 # generated with: make gomod-vendor
-# 70dd
+# 73dd
 GH_TUPLE=	\
 		BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/toml \
 		DataDog:dd-trace-go:v1.7.0:datadog_dd_trace_go/vendor/gopkg.in/DataDog/dd-trace-go.v1 \
@@ -64,14 +64,15 @@ GH_TUPLE=	\
 		googleapis:gax-go:v2.0.5:googleapis_gax_go_v2/vendor/github.com/googleapis/gax-go \
 		googleapis:google-api-go-client:v0.15.0:googleapis_google_api_go_client/vendor/google.golang.org/api \
 		googleapis:google-cloud-go:v0.50.0:googleapis_google_cloud_go/vendor/cloud.google.com/go \
+		gopherjs:gopherjs:0766667cb4d1:gopherjs_gopherjs/vendor/github.com/gopherjs/gopherjs \
 		gorilla:websocket:v1.4.0:gorilla_websocket/vendor/github.com/gorilla/websocket \
 		grpc-ecosystem:go-grpc-middleware:v1.0.0:grpc_ecosystem_go_grpc_middleware/vendor/github.com/grpc-ecosystem/go-grpc-middleware \
 		grpc-ecosystem:go-grpc-prometheus:v1.2.0:grpc_ecosystem_go_grpc_prometheus/vendor/github.com/grpc-ecosystem/go-grpc-prometheus \
 		grpc:grpc-go:v1.24.0:grpc_grpc_go/vendor/google.golang.org/grpc \
-		jfbus:httprs:b0af8319bb15:jfbus_httprs/vendor/github.com/jfbus/httprs \
 		jmespath:go-jmespath:v0.3.0:jmespath_go_jmespath/vendor/github.com/jmespath/go-jmespath \
 		johannesboyne:gofakes3:02d71f533bec:johannesboyne_gofakes3/vendor/github.com/johannesboyne/gofakes3 \
 		jpillora:backoff:8eab2debe79d:jpillora_backoff/vendor/github.com/jpillora/backoff \
+		jtolds:gls:v4.20.0:jtolds_gls/vendor/github.com/jtolds/gls \
 		konsorten:go-windows-terminal-sequences:v1.0.2:konsorten_go_windows_terminal_sequences/vendor/github.com/konsorten/go-windows-terminal-sequences \
 		lightstep:lightstep-tracer-go:v0.15.6:lightstep_lightstep_tracer_go/vendor/github.com/lightstep/lightstep-tracer-go \
 		matttproud:golang_protobuf_extensions:v1.0.1:matttproud_golang_protobuf_extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
@@ -90,6 +91,8 @@ GH_TUPLE=	\
 		sebest:xff:6c115e0ffa35:sebest_xff/vendor/github.com/sebest/xff \
 		shabbyrobe:gocovmerge:3e036491d500:shabbyrobe_gocovmerge/vendor/github.com/shabbyrobe/gocovmerge \
 		sirupsen:logrus:v1.3.0:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
+		smartystreets:assertions:b2de0cb4f26d:smartystreets_assertions/vendor/github.com/smartystreets/assertions \
+		smartystreets:goconvey:v1.6.4:smartystreets_goconvey/vendor/github.com/smartystreets/goconvey \
 		stretchr:testify:v1.5.1:stretchr_testify/vendor/github.com/stretchr/testify \
 		tinylib:msgp:v1.1.0:tinylib_msgp/vendor/github.com/tinylib/msgp \
 		uber:jaeger-client-go:v2.15.0:uber_jaeger_client_go/vendor/github.com/uber/jaeger-client-go \
