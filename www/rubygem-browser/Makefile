@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	browser
-PORTVERSION=	2.5.3
+PORTVERSION=	4.2.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -10,8 +10,9 @@ COMMENT=	Web browser detection for Ruby
 
 LICENSE=	MIT
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
