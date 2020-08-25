@@ -1,6 +1,5 @@
 # Created by: Dominik Rothert <dr@domix.de>
 # $FreeBSD$
-#    $MCom: ports/x11-wm/wmakerconf/Makefile,v 1.2 2006/10/05 07:31:44 mezz Exp $
 
 PORTNAME=	wmakerconf
 PORTVERSION=	2.12
@@ -27,13 +26,12 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-wmakerdataprefix="${LOCALBASE}/share" \
 		--with-wmakeretcprefix="${LOCALBASE}/share"
 USE_XORG=	x11
-LIBS+=		-L${LOCALBASE}/lib -lX11
+LIBS=		-L${LOCALBASE}/lib -lX11 -lWUtil
 
 post-extract:
 	@${FIND} ${WRKSRC} -name "*.gmo" -delete
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|lynx wget|lynx fetch|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|$$(prefix)/share/locale|${STAGEDIR}${PREFIX}/share/locale|g' \
 		${WRKSRC}/data/po/Makefile.am ${WRKSRC}/data/po/Makefile.in \
 		${WRKSRC}/po/Makefile.in.in
