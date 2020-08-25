@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	eaglemode
-PORTVERSION=	0.94.2
-PORTREVISION=	9
+PORTVERSION=	0.95.0
 CATEGORIES=	x11
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -35,17 +34,24 @@ DATADIR=	${PREFIX}/lib/${PORTNAME}
 PLIST_FILES=	bin/${PORTNAME}
 PORTDATA=	*
 
-OPTIONS_DEFINE=	XINE RSVG PDF
-OPTIONS_DEFAULT=XINE RSVG PDF
+OPTIONS_DEFINE=	RSVG PDF
+OPTIONS_DEFAULT=VLC RSVG PDF
 OPTIONS_SUB=	yes
+OPTIONS_GROUP=	EMAV
+OPTIONS_GROUP_EMAV=	XINE VLC
 
 RSVG_DESC=	SVG support through librsvg
 PDF_DESC=	PDF support through poppler-glib
+EMAV_DESC=	Video preview backend
+VLC_DESC=	Multimedia support via VLC
 
 XINE_LIB_DEPENDS=	libxine.so:multimedia/libxine
+XINE_VARS=		EMAV+=xine
 RSVG_USE=		GNOME=librsvg2
 PDF_LIB_DEPENDS=	libpoppler-glib.so:graphics/poppler-glib
 PDF_USE=		GNOME=gtk20
+VLC_LIB_DEPENDS=	libvlc.so:multimedia/vlc
+VLC_VARS=		EMAV+=vlc
 
 .include <bsd.port.pre.mk>
 
@@ -57,13 +63,16 @@ USE_GCC=	yes
 BUILD_ARGS+=	xine-inc-dir="${LOCALBASE}/include" \
 		xine-lib-dir="${LOCALBASE}/lib"
 .endif
+.if !empty(EMAV)
+BUILD_ARGS+=	emAv=${EMAV:ts,}
+.endif
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.pl" | ${XARGS} \
 		${REINPLACE_CMD} -e '1s|/usr/bin/perl|${perl_CMD}|'
-
-post-patch-XINE-off:
+.if empty(EMAV)
 	@${RM} ${WRKSRC}/makers/emAv.maker.pm
+.endif
 
 post-patch-RSVG-off:
 	@${RM} ${WRKSRC}/makers/emSvg.maker.pm
@@ -86,6 +95,9 @@ do-install:
 
 do-install-XINE-on:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/eaglemode/lib/emAv/emAvServerProc_xine
+
+do-install-VLC-on:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/eaglemode/lib/emAv/emAvServerProc_vlc
 
 do-install-RSVG-on:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/eaglemode/lib/emSvg/emSvgServerProc
