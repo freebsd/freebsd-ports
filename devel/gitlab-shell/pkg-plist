@@ -27,6 +27,7 @@
 %%DATADIR%%/spec/gitlab_shell_custom_git_upload_pack_spec.rb
 %%DATADIR%%/spec/gitlab_shell_discover_spec.rb
 %%DATADIR%%/spec/gitlab_shell_lfs_authentication_spec.rb
+%%DATADIR%%/spec/gitlab_shell_personal_access_token_spec.rb
 %%DATADIR%%/spec/gitlab_shell_two_factor_recovery_spec.rb
 %%DATADIR%%/spec/spec_helper.rb
 %%DATADIR%%/spec/support/gitlab_shell_setup.rb
