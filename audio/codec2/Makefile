@@ -2,7 +2,7 @@
 
 PORTNAME=	codec2
 DISTVERSION=	0.8.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio hamradio
 MASTER_SITES=	https://hobbes1069.fedorapeople.org/freetel/codec2/
 
