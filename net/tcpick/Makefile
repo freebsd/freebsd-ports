@@ -10,6 +10,8 @@ MASTER_SITES=	SF
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Text-based TCP stream sniffer
 
+LICENSE=	GPLv2
+
 GNU_CONFIGURE=	yes
 USE_CSTD=	gnu89
 
