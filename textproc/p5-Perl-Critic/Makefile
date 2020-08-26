@@ -3,6 +3,7 @@
 
 PORTNAME=	Perl-Critic
 PORTVERSION=	1.138
+PORTREVISION=	1
 CATEGORIES=	textproc devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -30,7 +31,8 @@ RUN_DEPENDS=	p5-B-Keywords>=1.05:devel/p5-B-Keywords \
 		p5-Pod-Spell>=1:textproc/p5-Pod-Spell \
 		p5-Readonly>=2:devel/p5-Readonly \
 		p5-String-Format>=1.13:textproc/p5-String-Format \
-		p5-Task-Weaken>=0:devel/p5-Task-Weaken
+		p5-Task-Weaken>=0:devel/p5-Task-Weaken \
+		${P5_POD_PARSER}
 TEST_DEPENDS=	p5-Test-Deep>=0:devel/p5-Test-Deep
 
 USES=		perl5
