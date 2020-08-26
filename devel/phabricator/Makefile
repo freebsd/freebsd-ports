@@ -15,8 +15,6 @@ COMMENT=	Open source, software engineering platform
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-IGNORE_WITH_PHP=74
-
 RUN_DEPENDS=	arcanist-lib${PHP_PKGNAMESUFFIX}>=20200514:devel/arcanist-lib@${PHP_FLAVOR} \
 		git:devel/git
 
