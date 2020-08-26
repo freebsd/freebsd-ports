@@ -15376,3 +15376,4 @@ www/halberd||2020-08-15|Has expired: Uses deprecated version of python
 x11-toolkits/py-wxPython28||2020-08-15|Has expired: Uses deprecated version of python
 devel/codeblocks-devel||2020-08-22|Removed
 net/frr5|net/frr7|2020-08-25|Has expired: Upstream no longer maintained
+textproc/rubygem-kramdown22|textproc/rubygem-kramdown|2020-08-26|Obsolete, please use textproc/rubygem-kramdown instead
