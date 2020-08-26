@@ -28,11 +28,3 @@ and adding this line to /etc/fstab:
 Most of the time, BIND needs to start early in the boot
 process.  Enable this if BIND starts too early for you and
 you need it to start later.
-
-
-                        TUNING_LARGE
-           https://kb.isc.org/article/AA-01314/0
-Tunes certain compiled-in constants and default settings to
-values better suited to large servers with 12/16GB+ of memory.
-This can improve performance on such servers, but will consume
-more memory and may degrade performance on smaller systems.
