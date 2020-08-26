@@ -17,7 +17,6 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		gmake pgsql:9.5+
 USE_GITHUB=	yes
-#GH_TAGNAME=	VERSION_3.13.4
 LLD_UNSAFE=	yes
 
 WANT_PGSQL=	server
