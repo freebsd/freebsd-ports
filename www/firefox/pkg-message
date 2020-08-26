@@ -9,7 +9,6 @@ Some features found on Windows, macOS and Linux are not implemented:
 - Process sandboxing (requires Capsicum backend)
 - Reduced memory usage (requires mozjemalloc)
 - Crash Reporter (requires Google Breakpad and reproducible builds)
-- Performance profiling (requires GeckoProfiler)
 - Gamepad API (requires libusbhid backend)
 - WebVR (requires open source runtime)
 - TCP fast open
