@@ -214,7 +214,7 @@
 %%QT_LIBDIR%%/libQt5Quick3DRuntimeRender.so.5
 %%QT_LIBDIR%%/libQt5Quick3DRuntimeRender.so.%%SHORTVER%%
 %%QT_LIBDIR%%/libQt5Quick3DRuntimeRender.so.%%FULLVER%%
-%%QT_LIBDIR%%/libQt5Quick3DRuntimeRender.so.%%FULLVER%%.debug
+%%DEBUG%%%%QT_LIBDIR%%/libQt5Quick3DRuntimeRender.so.%%FULLVER%%.debug
 %%QT_LIBDIR%%/libQt5Quick3DUtils.prl
 %%QT_LIBDIR%%/libQt5Quick3DUtils.so
 %%QT_LIBDIR%%/libQt5Quick3DUtils.so.5
