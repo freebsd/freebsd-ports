@@ -8,8 +8,10 @@ CATEGORIES=	sysutils
 MAINTAINER=	hselasky@FreeBSD.org
 COMMENT=	Firmware Burning and Diagnostics Tools for Mellanox devices
 
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE=	BSD2CLAUSE GPLv2
+LICENSE_COMB=	dual
+LICENSE_FILE_BSD2CLAUSE= ${WRKSRC}/LICENSE
+LICENSE_FILE_GPLv2= ${WRKSRC}/LICENSE
 
 USES=		autoreconf libtool gmake
 
