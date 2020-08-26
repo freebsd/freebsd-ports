@@ -9,7 +9,7 @@ PORTREVISION=	0
 .else
 # XXX: correct version
 # dns/bind9xx here
-PORTREVISION=	1
+PORTREVISION=	2
 .endif
 CATEGORIES=	dns net
 # XXX: put the ISC master_site
@@ -262,8 +262,8 @@ post-install:
 	${INSTALL_DATA} ${FILESDIR}/BIND.chroot.local.dist ${STAGEDIR}${PREFIX}/etc/mtree/BIND.chroot.local.dist.sample
 	${INSTALL_DATA} ${WRKSRC}/bin/rndc/rndc.conf \
 		${STAGEDIR}${ETCDIR}/rndc.conf.sample
-# FIXME: these are strange.
-	@${RM} -rf ${STAGEDIR}/wrkdirs ${STAGEDIR}${PREFIX}/lib/bind
+# FIXME: this is strange.
+	@${RM} -rf ${STAGEDIR}/wrkdirs
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
