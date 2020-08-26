@@ -7,7 +7,7 @@ PORTREVISION=	43
 CATEGORIES=	multimedia
 MASTER_SITES=	https://bitbucket.org/france/transcode-tcforge/downloads/
 
-MAINTAINER=	cyberbotx@cyberbotx.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text-console utility for video stream processing
 
 LICENSE=	GPLv2
