@@ -3,7 +3,7 @@
 
 PORTNAME=	monitoring-plugins
 PORTVERSION=	2.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://www.monitoring-plugins.org/download/ LOCAL/mat/${PORTNAME}
 
@@ -65,7 +65,7 @@ CONFIGURE_ARGS+=ac_cv_path_PATH_TO_QMAIL_QSTAT=/var/qmail/bin/qmail-qstat \
 		ac_cv_path_PATH_TO_PING=/sbin/ping \
 		ac_cv_path_PATH_TO_PING6=/sbin/ping6 \
 		--with-ping-command="/sbin/ping -n -t %d -c %d %s" \
-		--with-ping6-command="/sbin/ping6 -n -X %d -c %d %s" \
+		--with-ping6-command="${_PING6_CMD}" \
 		ac_cv_path_PATH_TO_SUDO=${LOCALBASE}/bin/sudo \
 		ac_cv_path_PATH_TO_SMBCLIENT=${LOCALBASE}/bin/smbclient
 
@@ -119,6 +119,12 @@ SSH_PORTABLE_RUN_DEPENDS:=	${SSH_PORTABLE_BUILD_DEPENDS}
 SSH_PORTABLE_CONFIGURE_ON=	--with-ssh-command=${LOCALBASE}/bin/ssh
 
 .include <bsd.port.options.mk>
+
+.if ${OSVERSION} < 1300041
+_PING6_CMD=	/sbin/ping6 -n -X %d -c %d %s
+.else
+_PING6_CMD=	/sbin/ping6 -n -t %d -c %d %s
+.endif
 
 .if ${PORT_OPTIONS:MDNS_BASE}
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-dig-to-drill.diff
