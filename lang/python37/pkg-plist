@@ -5244,6 +5244,7 @@ lib/python%%XYDOT%%/test/randv2_32.pck
 lib/python%%XYDOT%%/test/randv2_64.pck
 lib/python%%XYDOT%%/test/randv3.pck
 lib/python%%XYDOT%%/test/re_tests.py
+lib/python%%XYDOT%%/test/recursion.tar
 lib/python%%XYDOT%%/test/regrtest.py
 lib/python%%XYDOT%%/test/relimport.py
 lib/python%%XYDOT%%/test/reperf.py
