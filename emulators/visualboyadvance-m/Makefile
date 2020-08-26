@@ -9,13 +9,25 @@ CATEGORIES=	emulators
 MAINTAINER=	root@cooltrainer.org
 COMMENT=	Game Boy Advance emulator with GTK frontend
 
-LICENSE=	GPLv2
-
-LIB_DEPENDS=	libpng.so:graphics/png
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/doc/gpl.txt
 
 BROKEN_aarch64=		fails to build: regparm is not valid on this platform
 BROKEN_armv6=		fails to build: regparm is not valid on this platform
 BROKEN_armv7=		fails to build: regparm is not valid on this platform
+
+LIB_DEPENDS=	libpng.so:graphics/png
+
+USES=		cmake:insource,noninja compiler:c++11-lang dos2unix gl gnome \
+		pkgconfig sdl xorg
+DOS2UNIX_REGEX=	.*\.(c|cpp|h|ypp)
+USE_XORG=	x11 xext
+USE_GL=		gl glu
+USE_SDL=	sdl
+INSTALLS_ICONS=	yes
+CMAKE_ARGS=	-DVERSION:STRING="${PORTVERSION}" \
+		-DSYSCONFDIR:STRING="${PREFIX}/etc"  \
+		-DENABLE_WX:BOOL=no
 
 USE_GITHUB=	yes
 GH_TAGNAME=	VBA-M_Beta_2
@@ -36,17 +48,6 @@ DEBUGGER_DESC=	Enable the debugger
 ASMCORE_DESC=	Enable x86 ASM CPU cores (i386 only)
 ASMSCALERS_DESC=	Enable x86 ASM graphic filters (i386 only)
 
-DOS2UNIX_REGEX=	.*\.(c|cpp|h|ypp)
-USE_XORG=	x11 xext
-USE_GL=		gl glu
-USE_SDL=	sdl
-USES=		cmake:insource,noninja compiler:c++11-lang dos2unix gl gnome \
-		pkgconfig sdl xorg
-INSTALLS_ICONS=	yes
-CMAKE_ARGS=	-DVERSION:STRING="${PORTVERSION}" \
-		-DSYSCONFDIR:STRING="${PREFIX}/etc"  \
-		-DENABLE_WX:BOOL=no
-
 ASMCORE_BUILD_DEPENDS=	as:devel/binutils
 ASMCORE_CMAKE_BOOL=	ENABLE_ASM_CORE
 
@@ -57,7 +58,7 @@ GVBAM_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 			libfreetype.so:print/freetype2 \
 			libgdkglext-x11-1.0.so:x11-toolkits/gtkglext \
 			libgdkglextmm-x11-1.2.so:x11-toolkits/gtkglextmm
-GVBAM_USES=		desktop-file-utils gnome
+GVBAM_USES=		desktop-file-utils
 GVBAM_USE=		GNOME=gtkmm24,pangox-compat
 GVBAM_CMAKE_BOOL=	ENABLE_GTK
 
