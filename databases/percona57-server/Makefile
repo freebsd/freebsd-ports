@@ -161,6 +161,9 @@ post-patch:
 
 .include <bsd.port.pre.mk>
 
+# Workaround to clang11/gcc10 with -fno-common by default
+CFLAGS+=	-fcommon
+
 .if ${CHOSEN_COMPILER_TYPE} == gcc
 CXXFLAGS+=	-fpermissive
 .endif
