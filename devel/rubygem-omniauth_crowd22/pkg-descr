@@ -1,4 +1,0 @@
-This is an OmniAuth provider for Atlassian Crowd's REST API.
-It allows you to easily integrate your Rack application in with Atlassian Crowd.
-
-WWW: https://github.com/robdimarco/omniauth_crowd

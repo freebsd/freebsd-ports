@@ -15378,3 +15378,4 @@ devel/codeblocks-devel||2020-08-22|Removed
 net/frr5|net/frr7|2020-08-25|Has expired: Upstream no longer maintained
 textproc/rubygem-kramdown22|textproc/rubygem-kramdown|2020-08-26|Obsolete, please use textproc/rubygem-kramdown instead
 devel/rubygem-health_check26-rails60|devel/rubygem-health_check|2020-08-26|Obsolete, please use devel/rubygem-health_check instead
+devel/rubygem-omniauth_crowd22|devel/rubygem-omniauth_crowd|2020-08-26|Obsolete, please use devel/rubygem-omniauth_crowd instead

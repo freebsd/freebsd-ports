@@ -6220,7 +6220,6 @@
     SUBDIR += rubygem-octopress-hooks
     SUBDIR += rubygem-oj
     SUBDIR += rubygem-omniauth_crowd
-    SUBDIR += rubygem-omniauth_crowd22
     SUBDIR += rubygem-open3_backport
     SUBDIR += rubygem-open4
     SUBDIR += rubygem-opentracing
