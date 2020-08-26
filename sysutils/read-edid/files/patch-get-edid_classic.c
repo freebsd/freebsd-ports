@@ -14,6 +14,15 @@
  #include <unistd.h>
  
  #include <libx86.h>
+@@ -26,7 +26,7 @@ typedef byte* real_ptr;
+ #define dosmemput(buffer,length,offset) memcpy(offset,buffer,length)
+ 
+ #define display(...) if (quiet == 0) { fprintf(stderr, __VA_ARGS__); }
+-int quiet;
++extern int quiet;
+ 
+ real_ptr far_ptr_to_real_ptr( uint32 farptr )
+ {
 @@ -135,8 +135,17 @@ classicmain( unsigned contr, int qit )
        return 10;
      }

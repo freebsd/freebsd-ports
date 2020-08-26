@@ -1,5 +1,14 @@
 --- get-edid/i2c.c.orig	2014-11-21 11:52:13 UTC
 +++ get-edid/i2c.c
+@@ -15,7 +15,7 @@
+ 
+ //Ideas (but not too much actual code) taken from i2c-tools. Thanks guys.
+ 
+-int quiet;
++extern int quiet;
+ 
+ #define display(...) if (quiet == 0) { fprintf(stderr, __VA_ARGS__); }
+ 
 @@ -24,7 +24,13 @@ int open_i2c_dev(int i2cbus) {
  	char filename[16];
  	unsigned long funcs;
