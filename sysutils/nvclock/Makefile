@@ -48,5 +48,8 @@ post-patch:
 		${WRKSRC}/src/qt/Makefile.in
 	@${REINPLACE_CMD} 's/-lnvcontrol/& @X11_LIBS@/' \
 		${WRKSRC}/src/gtk/Makefile.in
+# Fix the build with -fno-common (for Clang 11 and GCC 10)
+	@${REINPLACE_CMD} '/option_list/s,^,extern ,' \
+		${WRKSRC}/src/nvcontrol/nvcontrol.h
 
 .include <bsd.port.mk>
