@@ -19,7 +19,7 @@
 name=postfix_policyd_sf
 rcvar=postfix_policyd_sf_enable
 
-command=%%PREFIX%%/sbin/%%REALNAME%%
+command=%%PREFIX%%/sbin/%%PKGBASE%%
 
 stop_postcmd=stop_postcmd
 
@@ -31,8 +31,8 @@ stop_postcmd()
 # set defaults
 
 postfix_policyd_sf_enable=${postfix_policyd_sf_enable:-"NO"}
-postfix_policyd_sf_pidfile=${postfix_policyd_sf_pidfile:-"/var/run/%%REALNAME%%.pid"}
-postfix_policyd_sf_flags=${postfix_policyd_sf_flags:-"-c %%PREFIX%%/etc/%%REALNAME%%.conf"}
+postfix_policyd_sf_pidfile=${postfix_policyd_sf_pidfile:-"/var/run/%%PKGBASE%%.pid"}
+postfix_policyd_sf_flags=${postfix_policyd_sf_flags:-"-c %%PREFIX%%/etc/%%PKGBASE%%.conf"}
 
 pidfile="${postfix_policyd_sf_pidfile}"
 

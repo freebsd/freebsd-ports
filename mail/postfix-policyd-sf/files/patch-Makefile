@@ -1,8 +1,8 @@
---- Makefile.orig	Sun Jun 11 22:52:34 2006
-+++ Makefile	Sun Jun 11 22:53:50 2006
-@@ -12,9 +12,9 @@
- inc += -I/usr/pkg/include/mysql
- lib += -L/usr/pkg/lib/mysql
+--- Makefile.orig	2007-08-20 06:42:05 UTC
++++ Makefile
+@@ -15,9 +15,9 @@ lib += -L/usr/pkg/lib/mysql
+ lib += -L/usr/local/mysql
+ 
  
 -CC       := gcc
 -CPPFLAGS := -O $(inc)
@@ -13,7 +13,7 @@
  OS_NAME  := $(shell uname | tr [A-Z] [a-z])
  LDLIBS    = $(lib) -lmysqlclient -lz
  
-@@ -26,16 +26,7 @@
+@@ -29,16 +29,7 @@ endif
  	@echo "  compiling ${CFLAGS} $<"
  	@${CC} ${CPPFLAGS} ${CFLAGS} -o $@ -c $<
  
