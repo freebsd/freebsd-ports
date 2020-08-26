@@ -1,5 +1,5 @@
---- RegExp.c.old	Sun Feb 10 05:33:07 2002
-+++ RegExp.c	Sun Feb 10 05:33:24 2002
+--- RegExp.c.orig	1995-07-08 18:20:49 UTC
++++ RegExp.c
 @@ -23,7 +23,6 @@
   */ 
  

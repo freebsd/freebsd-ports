@@ -11,21 +11,22 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/^0.//}
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Receive faxes using sound card and radio
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	libXaw3d.so:x11-toolkits/Xaw3d
 
-PLIST_FILES=	bin/acfax
+USES=		imake xorg
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		imake xorg
 USE_XORG=	x11 xext xmu xt sm ice
+
+PLIST_FILES=	bin/acfax
 
 post-extract:
 	@${TOUCH} ${WRKSRC}/acfax.man
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|setup_fax(120, 288|setup_fax(120, 576|' \
-		${WRKSRC}/acfax.c
-	@${REINPLACE_CMD} -e 's|ixoc = 288|ixoc = 576|' ${WRKSRC}/fax_funcs.c
 	@${REINPLACE_CMD} -e 's|regex.h|gnuregex.h|' ${WRKSRC}/RegExp.h
 	@${REINPLACE_CMD} -e 's| -O2 -Wall||g ; \
 		 s|-lm|-lm -lgnuregex|' ${WRKSRC}/Imakefile
