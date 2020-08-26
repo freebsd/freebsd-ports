@@ -21,6 +21,8 @@ USE_RC_SUBR=	policyd
 
 ALL_TARGET=	linux
 
+CFLAGS+=	-fcommon
+
 SUB_LIST+=	PKGBASE=${PKGBASE}
 
 PLIST_FILES=	etc/${PKGBASE}.conf.sample \
