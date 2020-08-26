@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	seabios
-PORTVERSION=	1.13.0
+PORTVERSION=	1.14.0
 PORTREVISION=	0
 CATEGORIES=	misc
 MASTER_SITES=	https://www.seabios.org/downloads/
