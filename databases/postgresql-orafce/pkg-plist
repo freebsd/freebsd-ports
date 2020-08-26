@@ -1,0 +1,14 @@
+lib/postgresql/orafce.so
+share/postgresql/extension/orafce--3.10--3.11.sql
+share/postgresql/extension/orafce--3.11--3.12.sql
+share/postgresql/extension/orafce--3.12--3.13.sql
+share/postgresql/extension/orafce--3.13.sql
+share/postgresql/extension/orafce--3.2--3.3.sql
+share/postgresql/extension/orafce--3.3--3.4.sql
+share/postgresql/extension/orafce--3.4--3.5.sql
+share/postgresql/extension/orafce--3.5--3.6.sql
+share/postgresql/extension/orafce--3.6--3.7.sql
+share/postgresql/extension/orafce--3.7--3.8.sql
+share/postgresql/extension/orafce--3.8--3.9.sql
+share/postgresql/extension/orafce--3.9--3.10.sql
+share/postgresql/extension/orafce.control

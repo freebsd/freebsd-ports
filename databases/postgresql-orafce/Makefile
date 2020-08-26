@@ -1,31 +1,28 @@
 # Created by: Jov <amutu@amutu.com>
 # $FreeBSD$
 
-PORTNAME=	orafce
-PORTVERSION=	3.4.0
-PORTREVISION=	2
-CATEGORIES=	databases
-PKGNAMEPREFIX=	postgresql${PGSQL_VER:S/.//}-
+PORTNAME=		orafce
+DISTVERSIONPREFIX=	VERSION_
+DISTVERSION=		3_13_4
+CATEGORIES=		databases
+PKGNAMEPREFIX=		postgresql${PGSQL_VER:S/.//}-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Oracle's compatibility functions and packages for PostgreSQL
 
-LICENSE=	PostgreSQL
+LICENSE=	0BSD
+LICENSE_NAME=	Zero-Clause BSD / Free Public License 1.0.0
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT.orafce
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		gmake bison pgsql:9.2+
-LLD_UNSAFE=	yes
+USES=		gmake pgsql:9.5+
 USE_GITHUB=	yes
-GH_TAGNAME=	ffea9cc
+#GH_TAGNAME=	VERSION_3.13.4
+LLD_UNSAFE=	yes
 
 WANT_PGSQL=	server
 
-PLIST_FILES=	lib/postgresql/orafce.so \
-		share/postgresql/extension/orafce--3.2--3.3.sql \
-		share/postgresql/extension/orafce--3.3--3.4.sql \
-		share/postgresql/extension/orafce--3.4.sql \
-		share/postgresql/extension/orafce.control
-
-PORTDOCS=	README.asciidoc
+PORTDOCS=	COPYRIGHT.orafce NEWS README.asciidoc
 
 OPTIONS_DEFINE=	DOCS
 
@@ -37,6 +34,7 @@ post-install:
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.asciidoc ${STAGEDIR}${DOCSDIR}
+	@(for f in ${PORTDOCS}; do \
+		${INSTALL_DATA} ${WRKSRC}/$${f} ${STAGEDIR}${DOCSDIR}; done)
 
 .include <bsd.port.mk>
