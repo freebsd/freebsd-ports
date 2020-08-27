@@ -1,0 +1,46 @@
+Obtained from:
+	https://gitlab.gnome.org/GNOME/atomix/-/commit/be7f44f1945a569494d46c60eaf6e7b39b2bb48b.patch
+
+From be7f44f1945a569494d46c60eaf6e7b39b2bb48b Mon Sep 17 00:00:00 2001
+From: Hans de Goede <hdegoede@redhat.com>
+Date: Tue, 25 Feb 2020 10:15:42 +0100
+Subject: [PATCH] Fix compilation with gcc10 / -fno-common
+
+gcc10 defaults to -fno-common, meaning that non static symbols can
+only be declared once. Make the parent_class variable in level.c and
+theme.c static to fix building with gcc10.
+---
+ src/level.c | 2 +-
+ src/theme.c | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/src/level.c b/src/level.c
+index 160672d..5fbf6af 100644
+--- src/level.c
++++ src/level.c
+@@ -31,7 +31,7 @@ static void level_class_init (GObjectClass *class);
+ static void level_init (Level *level);
+ static void level_finalize (GObject *object);
+ 
+-GObjectClass *parent_class;
++static GObjectClass *parent_class;
+ 
+ /*=================================================================
+  
+diff --git a/src/theme.c b/src/theme.c
+index 45f3086..88acb00 100644
+--- src/theme.c
++++ src/theme.c
+@@ -32,7 +32,7 @@ static void theme_init (Theme *theme);
+ static void theme_finalize (GObject *object);
+ static void destroy_theme_image (gpointer data);
+ 
+-GObjectClass *parent_class;
++static GObjectClass *parent_class;
+ 
+ GType theme_get_type (void)
+ {
+-- 
+GitLab
+
+
