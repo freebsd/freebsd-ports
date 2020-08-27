@@ -24,6 +24,9 @@ X11_USES=	xorg
 X11_USE=	XORG=xpm
 X11_CONFIGURE_WITH=	x
 
+# Dead upstream, don't expect a proper fix for duplicate symbols.
+CFLAGS+=	-fcommon
+
 .include <bsd.port.options.mk>
 
 post-patch:
