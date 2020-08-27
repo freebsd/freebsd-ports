@@ -15,6 +15,9 @@ USES=		bison gmake
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+# Fix build with clang11. Seems dead upstream.
+CFLAGS+=	-fcommon
+
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/${PORTNAME}.1.gz
 
