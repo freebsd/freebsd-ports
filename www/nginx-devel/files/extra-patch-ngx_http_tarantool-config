@@ -1,5 +1,5 @@
---- ../nginx_upstream_module-27836e4/config.orig	2017-09-18 11:54:00.000000000 -0400
-+++ ../nginx_upstream_module-27836e4/config	2017-12-04 21:56:41.978227000 -0500
+--- ../nginx_upstream_module-daccb2a/config.orig	2017-09-18 11:54:00.000000000 -0400
++++ ../nginx_upstream_module-daccb2a/config	2017-12-04 21:56:41.978227000 -0500
 @@ -7,18 +7,10 @@
            $ngx_addon_dir/third_party                               \
            "
