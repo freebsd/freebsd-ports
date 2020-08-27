@@ -20,6 +20,7 @@ GH_ACCOUNT=	gnustep
 GH_TUPLE=	Tessil:robin-map:757de82:robin_map/third_party/robin-map
 
 USE_LDCONFIG=	yes
+TEST_TARGET=	test
 
 CMAKE_ARGS+=	-DLIB_INSTALL_PATH=lib
 
