@@ -14,4 +14,7 @@ GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/blame \
 		man/man1/blame.1.gz
 
+# Fix build with clang11
+CFLAGS+=	-fcommon
+
 .include <bsd.port.mk>
