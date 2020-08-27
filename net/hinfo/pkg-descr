@@ -1,9 +1,0 @@
-hinfo is a utility that will display information about a host. It is
-primarily designed to find the owner of an IP block in order to direct
-spam complaints to where they may do some good.
-
-(maintainer's note: the DATAFILES are updated without the port version
-necessarily being updated.  Expect drift on distinfo.  See hinfo-update.)
-
-Although the home page of the software is at www.blars.org/hinfo.html,
-that page is not reachable from the FreeBSD.org domain.

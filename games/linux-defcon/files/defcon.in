@@ -1,4 +1,0 @@
-#!/bin/sh
-
-cd %%DATADIR%% || exit 1
-exec ./defcon.bin.x86 "$@"

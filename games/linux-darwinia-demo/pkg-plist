@@ -1,8 +1,0 @@
-bin/linux-darwinia
-%%DATADIR%%/darwinia.bin.x86
-%%DATADIR%%/main.dat
-%%DATADIR%%/sounds.dat
-%%DATADIR%%/language.dat
-%%DATADIR%%/open-www.sh
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/README

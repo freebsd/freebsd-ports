@@ -1,7 +1,0 @@
-bin/linux-defcon
-%%DATADIR%%/defcon.bin.x86
-%%DATADIR%%/main.dat
-%%DATADIR%%/sounds.dat
-%%DATADIR%%/open-www.sh
-%%PORTDOCS%%%%DOCSDIR%%/license.txt
-%%PORTDOCS%%%%DOCSDIR%%/manual.pdf

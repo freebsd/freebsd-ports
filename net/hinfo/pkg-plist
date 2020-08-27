@@ -1,7 +1,0 @@
-bin/hinfo
-@sample etc/hinfo.conf.sample
-%%DATADIR%%/dnsbl.ins.pl
-%%DATADIR%%/whois.ins.pl
-man/man1/hinfo.1.gz
-man/man5/hinfo.conf.5.gz
-sbin/hinfo-update

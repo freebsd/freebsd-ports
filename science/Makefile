@@ -79,7 +79,6 @@
     SUBDIR += fasthenry
     SUBDIR += fastjet
     SUBDIR += fisicalab
-    SUBDIR += fleur
     SUBDIR += fsom
     SUBDIR += fvcom
     SUBDIR += fvcom-mpi
@@ -139,7 +138,6 @@
     SUBDIR += libvdwxc
     SUBDIR += libxc
     SUBDIR += liggghts
-    SUBDIR += lm
     SUBDIR += luscus
     SUBDIR += madness
     SUBDIR += maeparser

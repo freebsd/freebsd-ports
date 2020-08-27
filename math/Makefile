@@ -150,7 +150,6 @@
     SUBDIR += aspcud
     SUBDIR += asymptote
     SUBDIR += atlas
-    SUBDIR += barvinok
     SUBDIR += bcal
     SUBDIR += bitwise
     SUBDIR += blacs
@@ -524,7 +523,6 @@
     SUBDIR += openblas
     SUBDIR += openfst
     SUBDIR += openlibm
-    SUBDIR += openmesh
     SUBDIR += opensolaris-libm
     SUBDIR += openturns
     SUBDIR += optpp
@@ -865,7 +863,6 @@
     SUBDIR += reduce
     SUBDIR += reduce-psl
     SUBDIR += reed-solomon
-    SUBDIR += rehearse
     SUBDIR += rexx-regmath
     SUBDIR += rkward-kde
     SUBDIR += rngstreams

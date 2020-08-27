@@ -237,7 +237,6 @@
     SUBDIR += haproxy21
     SUBDIR += hblock
     SUBDIR += hexinject
-    SUBDIR += hinfo
     SUBDIR += hlmaster
     SUBDIR += honeyd
     SUBDIR += hostapd

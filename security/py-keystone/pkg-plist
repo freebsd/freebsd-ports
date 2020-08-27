@@ -1,6 +1,0 @@
-@owner keystone
-@dir %%ETCDIR%%
-@sample %%ETCDIR%%/keystone.conf.sample
-@sample %%ETCDIR%%/logging.conf.sample
-%%ETCDIR%%/default_catalog.templates
-%%ETCDIR%%/policy.v3cloudsample.json

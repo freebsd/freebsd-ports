@@ -687,7 +687,6 @@
     SUBDIR += monit
     SUBDIR += monitord
     SUBDIR += monitorix
-    SUBDIR += mono-kmod
     SUBDIR += moosefs2-cgi
     SUBDIR += moosefs2-cgiserv
     SUBDIR += moosefs2-chunkserver

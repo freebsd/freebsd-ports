@@ -3,7 +3,6 @@
 
     COMMENT = X11 window managers
 
-    SUBDIR += aewm
     SUBDIR += afterstep
     SUBDIR += afterstep-stable
     SUBDIR += amiwm

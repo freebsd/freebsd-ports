@@ -49,12 +49,10 @@ cos-*			java/cos		Special conditions apply for commercial use
 cosmo/*			games/cosmo		Possible copyright infringement
 CrystalSVGforGnomeIcons* x11-themes/gnome-icons-crystal Themes may contain artwork not done by the author.  Keep FreeBSD safe if theme author violated copyrights.
 cyberbit/*		x11-fonts/cyberbit-ttfonts Not free for commercial use
-darwinia-demo*		games/linux-darwinia-demo	Redistribution is limited, see license
 datamodeler		databases/datamodeler	Packaging prohibited by Oracle license
 dbvis			java/dbvis		Redistribution is not permitted
 dcl-*-C.tar.gz		science/cdcl		No commercial use
 dcl-*.tar.gz		science/dcl		No commercial use
-defcon*			games/linux-defcon	Redistribution is limited, see license
 djbdns*			dns/djbdns		No license -- see http://cr.yp.to/softwarelaw.html
 djbfft-*		math/djbfft		No license -- see http://cr.yp.to/softwarelaw.html
 dlv			lang/dlv		Not sure if we can redistribute it
@@ -197,7 +195,6 @@ tuc-*			converters/tuc		Author does not allow CD-ROM distribution
 tw_cli-*		sysutils/tw_cli		Redistribution forbidden by license
 ue*dev.zip		editors/uemacs		Resale allowed for media cost only
 unifi-5*/UniFi.unix.zip	net-mgmt/unifi5		Redistribution of bundled firmware images is not permitted
-uplink-demo*		games/linux-uplink-demo	Redistribution is limited, see license
 uzap.tar.gz		editors/uzap		This software may not be used to make a profit in any way.
 vdbench*.zip		benchmarks/linux-vdbench	Redistribution is not permitted
 vdr-markad-*		multimedia/vdr-plugin-markad	Installs station logos

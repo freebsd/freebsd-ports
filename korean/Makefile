@@ -15,7 +15,6 @@
     SUBDIR += hanyangfonts
     SUBDIR += hcode
     SUBDIR += hmconv
-    SUBDIR += hpscat
     SUBDIR += hunspell
     SUBDIR += ibus-hangul
     SUBDIR += imhangul-gtk2

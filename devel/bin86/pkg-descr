@@ -1,6 +1,0 @@
-This consists of a 16-bit assembler and loader for x86 or 6809
-CPUs.  Unlike the GNU binutils in the base system (recent versions
-of which have 16-bit capability), these are for code written with
-Intel syntax.
-
-WWW: http://www.debath.co.uk/

@@ -64,7 +64,6 @@
     SUBDIR += aview
     SUBDIR += avir
     SUBDIR += azpainter
-    SUBDIR += backfract
     SUBDIR += barbecue
     SUBDIR += barcode
     SUBDIR += batik

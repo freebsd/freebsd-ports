@@ -130,7 +130,6 @@
     SUBDIR += jls
     SUBDIR += jvim3
     SUBDIR += kakasi
-    SUBDIR += kanjipad
     SUBDIR += kasumi
     SUBDIR += kbanner
     SUBDIR += kcc
@@ -278,7 +277,6 @@
     SUBDIR += wordnet-fpw
     SUBDIR += wordpress
     SUBDIR += wwasw-fpw
-    SUBDIR += xdtp
     SUBDIR += xpdf
     SUBDIR += xshodou
     SUBDIR += xtr

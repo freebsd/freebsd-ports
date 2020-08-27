@@ -538,8 +538,6 @@
     SUBDIR += lightyears
     SUBDIR += lincity
     SUBDIR += lincity-ng
-    SUBDIR += linux-darwinia-demo
-    SUBDIR += linux-defcon
     SUBDIR += linux-doom3
     SUBDIR += linux-doom3-demo
     SUBDIR += linux-dwarffortress
@@ -561,7 +559,6 @@
     SUBDIR += linux-unigine-heaven
     SUBDIR += linux-unigine-valley
     SUBDIR += linux-unrealgold
-    SUBDIR += linux-uplink-demo
     SUBDIR += linux-ut
     SUBDIR += linux-ut2003-demo
     SUBDIR += linux-virtual-jay-peak
@@ -1047,7 +1044,6 @@
     SUBDIR += xdigger
     SUBDIR += xdino
     SUBDIR += xemeraldia
-    SUBDIR += xevil
     SUBDIR += xeyesplus
     SUBDIR += xfireworks
     SUBDIR += xfrisk
@@ -1078,7 +1074,6 @@
     SUBDIR += xmine
     SUBDIR += xminehunter
     SUBDIR += xmines
-    SUBDIR += xminesweep
     SUBDIR += xmlink
     SUBDIR += xmoto
     SUBDIR += xmris

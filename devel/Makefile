@@ -99,7 +99,6 @@
     SUBDIR += aarch64-xtoolchain-gcc
     SUBDIR += abi-compliance-checker
     SUBDIR += abseil
-    SUBDIR += ace
     SUBDIR += acsccid
     SUBDIR += activitymail
     SUBDIR += ada-util
@@ -230,7 +229,6 @@
     SUBDIR += bennugd-modules
     SUBDIR += bglibs
     SUBDIR += bicyclerepair
-    SUBDIR += bin86
     SUBDIR += binaryen
     SUBDIR += bingrep
     SUBDIR += binutils
@@ -609,7 +607,6 @@
     SUBDIR += erlang-meck
     SUBDIR += erlang-metrics
     SUBDIR += erlang-neotoma
-    SUBDIR += erlang-oserl
     SUBDIR += erlang-parse_trans
     SUBDIR += erlang-poolboy
     SUBDIR += erlang-pooler

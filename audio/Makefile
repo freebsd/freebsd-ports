@@ -803,7 +803,6 @@
     SUBDIR += timidity++-gtk
     SUBDIR += timidity++-motif
     SUBDIR += timidity++-slang
-    SUBDIR += timidity++-tcltk
     SUBDIR += timidity++-xaw
     SUBDIR += timidity++-xskin
     SUBDIR += tkeca

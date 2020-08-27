@@ -64,7 +64,6 @@
     SUBDIR += gtk-aluminumalloy-volcanic-theme
     SUBDIR += gtk-aquaextremesunken-theme
     SUBDIR += gtk-arc-themes
-    SUBDIR += gtk-cleanice-engine
     SUBDIR += gtk-digital-cream-theme
     SUBDIR += gtk-digital-harmony-theme
     SUBDIR += gtk-engines2
