@@ -15,6 +15,8 @@ LICENSE=	APACHE20
 
 USES=		apache:2.2+ tar:bzip2
 GNU_CONFIGURE=	yes
+# Seems dead upstream. Don't expect a proper fix.
+CFLAGS+=	-fcommon
 
 PLIST_FILES=	${APACHEMODDIR}/mod_auth_xradius.so
 
