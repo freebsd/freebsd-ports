@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xen
-PORTVERSION=	4.13.1
+PORTVERSION=	4.14.0
 PORTREVISION=	0
 CATEGORIES=	emulators
 MASTER_SITES=	http://downloads.xenproject.org/release/xen/${PORTVERSION}/
@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 ONLY_FOR_ARCHS=	amd64
 
-USES=		cpe gmake python:build
+USES=		cpe gmake python:build bison
 
 # Ports build environment has ARCH=amd64 set which disables Xen automatic arch
 # detection, but amd64 is not a valid arch for Xen. Hardcode x86_64 on the
@@ -24,6 +24,9 @@ NO_MTREE=	yes
 STRIP=		#
 PLIST_FILES=	/boot/xen \
 		lib/debug/boot/xen.debug
+
+# Fix build with clang 11
+EXTRA_PATCHES+= ${PATCHDIR}/0001-x86-use-constant-flags-for-section-.init.rodata.patch:-p1
 
 .include <bsd.port.options.mk>
 

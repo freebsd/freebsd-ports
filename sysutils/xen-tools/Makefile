@@ -2,7 +2,7 @@
 
 PORTNAME=	xen
 PKGNAMESUFFIX=	-tools
-PORTVERSION=	4.13.1
+PORTVERSION=	4.14.0
 PORTREVISION=	0
 CATEGORIES=	sysutils emulators
 MASTER_SITES=	http://downloads.xenproject.org/release/xen/${PORTVERSION}/
@@ -27,8 +27,7 @@ OPTIONS_DEFAULT=	DOCS
 OPTIONS_SUB=		yes
 
 SPICE_DESC=		Enable SPICE protocol for QEMU
-SPICE_CONFIGURE_ON=	--with-extra-qemuu-configure-args="--enable-spice --disable-user"
-SPICE_CONFIGURE_OFF=	--with-extra-qemuu-configure-args="--disable-user"
+SPICE_CONFIGURE_WITH=	extra-qemuu-configure-args="--enable-spice"
 SPICE_BUILD_DEPENDS=	spice-protocol>=0.12.10:devel/spice-protocol
 SPICE_LIB_DEPENDS=	libspice-server.so:devel/libspice-server
 
@@ -36,7 +35,7 @@ ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	"not yet ported to anything other than amd64"
 
 USES=		cpe gettext gmake gnome libtool localbase:ldflags perl5 \
-		pkgconfig python shebangfix iconv
+		pkgconfig python shebangfix iconv bison
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 USE_PYTHON=	py3kplist
@@ -57,10 +56,8 @@ DOCS_ALL_TARGET=	docs
 INSTALL_TARGET=		install-tools
 DOCS_INSTALL_TARGET=	install-docs
 
-# Fix build with clang 10.0 (re convert enum constant to boolean and bad
-# indentation of flex generated parser)
-EXTRA_PATCHES+= ${PATCHDIR}/0001-libfsimage-fix-clang-10-build.patch:-p1 \
-		${PATCHDIR}/0001-tools-libxl-disable-clang-indentation-check-for-the-.patch:-p1
+# Fix build with clang 11
+EXTRA_PATCHES+= ${PATCHDIR}/0001-x86-use-constant-flags-for-section-.init.rodata.patch:-p1
 
 .include <bsd.port.options.mk>
 
@@ -93,5 +90,7 @@ do-install:
 
 post-install:
 	${MKDIR} ${STAGEDIR}/var/run/xen
+	# Empty dir, purge it.
+	${RMDIR} ${STAGEDIR}/${PREFIX}/lib/xen/include
 
 .include <bsd.port.mk>

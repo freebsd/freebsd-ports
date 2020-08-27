@@ -1,0 +1,62 @@
+From 40a95cf571242cffed8b35a7301730e2b45c217d Mon Sep 17 00:00:00 2001
+From: Roger Pau Monne <roger.pau@citrix.com>
+To: xen-devel@lists.xenproject.org
+Cc: Jan Beulich <jbeulich@suse.com>
+Cc: Andrew Cooper <andrew.cooper3@citrix.com>
+Cc: Wei Liu <wl@xen.org>
+Cc: "Roger Pau Monné" <roger.pau@citrix.com>
+Date: Wed, 26 Aug 2020 15:37:24 +0200
+Subject: [PATCH] x86: use constant flags for section .init.rodata
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+LLVM 11 complains with:
+
+<instantiation>:1:1: error: changed section flags for .init.rodata, expected: 0x2
+.pushsection .init.rodata
+^
+<instantiation>:30:9: note: while in macro instantiation
+        entrypoint 0
+        ^
+entry.S:979:9: note: while in macro instantiation
+        .rept 256
+        ^
+
+And:
+
+entry.S:1015:9: error: changed section flags for .init.rodata, expected: 0x2
+        .section .init.rodata
+        ^
+
+Fix it by explicitly using the same flags and type in all the
+instances.
+
+Signed-off-by: Roger Pau Monné <roger.pau@citrix.com>
+---
+ xen/arch/x86/x86_64/entry.S | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/xen/arch/x86/x86_64/entry.S b/xen/arch/x86/x86_64/entry.S
+index 8b57a00040..1e880eb9f6 100644
+--- a/xen/arch/x86/x86_64/entry.S
++++ b/xen/arch/x86/x86_64/entry.S
+@@ -967,7 +967,7 @@ GLOBAL(trap_nop)
+ GLOBAL(autogen_entrypoints)
+         /* pop into the .init.rodata section and record an entry point. */
+         .macro entrypoint ent
+-        .pushsection .init.rodata
++        .pushsection .init.rodata, "a", @progbits
+         .quad \ent
+         .popsection
+         .endm
+@@ -1012,5 +1012,5 @@ autogen_stubs: /* Automatically generated stubs. */
+         vec = vec + 1
+         .endr
+ 
+-        .section .init.rodata
++        .section .init.rodata, "a", @progbits
+         .size autogen_entrypoints, . - autogen_entrypoints
+-- 
+2.28.0
+
