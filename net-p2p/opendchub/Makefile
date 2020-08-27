@@ -9,16 +9,18 @@ MASTER_SITES=	SF/${PORTNAME}/Open%20DC%20Hub/${PORTVERSION}
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Unofficial Unix version of the Direct Connect Hub software
 
-USES=		perl5 gmake ssl
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		perl5 gmake localbase ssl
 GNU_CONFIGURE=	yes
+# Fix build with clang 11
+CFLAGS+=	-fcommon
 
 OPTIONS_DEFINE=	DOCS
 
 PORTDOCS=	README configfiles general scriptdoc
 PLIST_FILES=	bin/${PORTNAME}
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 pre-install:
 	@${CHMOD} a+rx ${WRKSRC}/install-sh
