@@ -14,6 +14,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 LDFLAGS+=	-pthread
+# Fix build with clang11
+CFLAGS+=	-fcommon
 
 PLIST_FILES=	bin/aget man/man1/aget.1.gz
 
