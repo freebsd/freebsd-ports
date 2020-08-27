@@ -13,6 +13,8 @@ LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-pam
+# Fix build with clang 11
+CFLAGS+=	-fcommon
 
 USES=		autoreconf gmake
 
