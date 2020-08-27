@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dsbmc
-DISTVERSION=	1.0
+DISTVERSION=	1.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://freeshell.de/~mk/download/
 
