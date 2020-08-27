@@ -17,6 +17,8 @@ share/icons/hicolor/48x48/apps/treeline-icon.png
 share/icons/hicolor/scalable/apps/treeline-icon.svg
 %%DATADIR%%/__pycache__/breadcrumbview.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/__pycache__/breadcrumbview.cpython-%%PYTHON_SUFFIX%%.pyc
+%%DATADIR%%/__pycache__/colorset.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%DATADIR%%/__pycache__/colorset.cpython-%%PYTHON_SUFFIX%%.pyc
 %%DATADIR%%/__pycache__/conditional.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/__pycache__/conditional.cpython-%%PYTHON_SUFFIX%%.pyc
 %%DATADIR%%/__pycache__/configdialog.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
@@ -100,6 +102,7 @@ share/icons/hicolor/scalable/apps/treeline-icon.svg
 %%DATADIR%%/__pycache__/urltools.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/__pycache__/urltools.cpython-%%PYTHON_SUFFIX%%.pyc
 %%DATADIR%%/breadcrumbview.py
+%%DATADIR%%/colorset.py
 %%DATADIR%%/conditional.py
 %%DATADIR%%/configdialog.py
 %%DATADIR%%/dataeditors.py
@@ -184,6 +187,7 @@ share/icons/hicolor/scalable/apps/treeline-icon.svg
 %%DATADIR%%/icons/toolbar/32x32/printpreviewzoomin.png
 %%DATADIR%%/icons/toolbar/32x32/printpreviewzoomout.png
 %%DATADIR%%/icons/toolbar/32x32/printpreviewzoomwidth.png
+%%DATADIR%%/icons/toolbar/32x32/toolscolors.png
 %%DATADIR%%/icons/toolbar/32x32/toolsfiltercondition.png
 %%DATADIR%%/icons/toolbar/32x32/toolsfiltertext.png
 %%DATADIR%%/icons/toolbar/32x32/toolsfindcondition.png
@@ -309,9 +313,11 @@ share/icons/hicolor/scalable/apps/treeline-icon.svg
 %%DATADIR%%/titlelistview.py
 %%NLS%%%%DATADIR%%/translations/qt_de.qm
 %%NLS%%%%DATADIR%%/translations/qt_es.qm
+%%NLS%%%%DATADIR%%/translations/qt_pt.qm
 %%NLS%%%%DATADIR%%/translations/qt_zh.qm
 %%NLS%%%%DATADIR%%/translations/treeline_de.qm
 %%NLS%%%%DATADIR%%/translations/treeline_es.qm
+%%NLS%%%%DATADIR%%/translations/treeline_pt.qm
 %%NLS%%%%DATADIR%%/translations/treeline_zh.qm
 %%DATADIR%%/treeformats.py
 %%DATADIR%%/treeline.py
