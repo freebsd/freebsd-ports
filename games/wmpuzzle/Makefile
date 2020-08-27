@@ -21,6 +21,8 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src
 PLIST_FILES=	bin/wmpuzzle man/man6/wmpuzzle.6.gz
 
 CPPFLAGS+=	-DBSD
+# Fix build with clang 11
+CFLAGS+=	-fcommon
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmpuzzle ${STAGEDIR}${PREFIX}/bin
