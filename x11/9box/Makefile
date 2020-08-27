@@ -16,6 +16,9 @@ USE_XORG=	xbitmaps x11 xt
 
 BUILD_WRKSRC=	${WRKSRC}/src
 
+# Dead upstream. Don't expect a proper fix.
+CFLAGS+=	-fcommon
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g; \
 		s|%%CC%%|${CC}|g' \
