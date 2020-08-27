@@ -17,6 +17,9 @@ USE_SDL=	image mixer sdl
 PLIST_FILES=	bin/${PORTNAME} bin/${PORTNAME}-server
 PORTDATA=	*
 
+# Fix build with clang11
+CFLAGS+=	-fcommon
+
 DESKTOP_ENTRIES="Biloba" \
 		"A strategy board game for 2 to 4 players" \
 		"${DATADIR}/biloba_icon.png" \
