@@ -27,6 +27,9 @@ USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
 SHEBANG_FILES=	examples/rahosts/raips.pl
 
+# Fix build with clang11
+CFLAGS+=	-fcommon
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSASL}

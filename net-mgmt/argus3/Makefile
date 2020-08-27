@@ -26,6 +26,9 @@ USE_RC_SUBR=	argus
 USES=		bison perl5
 GNU_CONFIGURE=	yes
 
+# Fix build with clang11
+CFLAGS+=	-fcommon
+
 post-patch:
 	@${REINPLACE_CMD} -e 's#/usr/lib/sasl2#${LOCALBASE}/lib/sasl2#' ${WRKSRC}/argus/ArgusOutput.c
 
