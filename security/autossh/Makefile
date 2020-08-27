@@ -17,6 +17,9 @@ GNU_CONFIGURE=	yes
 
 PORTDOCS=	CHANGES README
 
+# Fix build with clang11
+CFLAGS+=	-fcommon
+
 OPTIONS_DEFINE=	DOCS SSH_PORTABLE
 
 SSH_PORTABLE_DESC=	Default to ports openssh (instead of base)
