@@ -2,7 +2,7 @@
 
 PORTNAME=	rabs
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.10.0
+DISTVERSION=	2.11.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,8 +19,8 @@ LIB_DEPENDS=	libgc-threaded.so:devel/boehm-gc-threaded
 USES=		compiler:c11 gmake localbase:ldflags sqlite
 USE_GITHUB=	yes
 GH_ACCOUNT=	wrapl
-GH_TUPLE=	wrapl:minilang:211c6449c1f2a07ab7f2aea7224c416cd9c957a3:wrapl_minilang/minilang \
-		rajamukherji:radb:4d9c68a8e51dc1bc6999a95a8fdad66a18a25b38:rajamukherji_radb/radb
+GH_TUPLE=	wrapl:minilang:7d8227fc44b8360ae6f417f06eb24b827f9e0e25:wrapl_minilang/minilang \
+		rajamukherji:radb:b2b9d9fca77fb130ffe3e5d6f11b3e8a2e99ebb8:rajamukherji_radb/radb
 
 MAKE_ARGS=	PREFIX=${PREFIX}
 BINARY_ALIAS=	make=${GMAKE}
