@@ -38,6 +38,8 @@ PKG_MESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 SUB_LIST=	PORTSDIR=${PORTSDIR}
 
+# Fix build with clang11
+CFLAGS+=	-fcommon
 MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=	GNUTAR
