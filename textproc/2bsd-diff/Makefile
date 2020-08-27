@@ -13,7 +13,8 @@ DISTNAME=	file8
 MAINTAINER=	risner@stdio.com
 COMMENT=	2.11BSD diff utility
 
-CFLAGS+=	-Wno-error=return-type
+CFLAGS+=	-Wno-error=return-type \
+		-fcommon
 EXTRACT_AFTER_ARGS=	bin/diff man/man1/diff.1
 WRKSRC=		${WRKDIR}/bin/diff
 
