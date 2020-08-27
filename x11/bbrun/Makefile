@@ -22,6 +22,9 @@ USE_CSTD=	gnu89
 PORTDOCS=	README
 PLIST_FILES=	bin/bbrun
 
+# Fix build with clang11
+CFLAGS+=	-fcommon
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bbrun ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
