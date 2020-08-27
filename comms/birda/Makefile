@@ -11,4 +11,7 @@ COMMENT=	Bohlin's IrDA utilities, ported from NetBSD's pkgsrc
 
 USES=		uidfix
 
+# Fix build with clang11
+CFLAGS+=	-fcommon
+
 .include <bsd.port.mk>
