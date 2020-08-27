@@ -2,3 +2,4 @@ bin/dsbmixer
 @(root,wheel,4750) libexec/dsbmixer_backend
 share/applications/dsbmixer.desktop
 %%DATADIR%%/dsbmixer_de.qm
+%%DATADIR%%/dsbmixer_fr.qm
