@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		tar:xz
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	CC=${CC}
+CFLAGS+=	-fcommon
 
 PLIST_FILES=	bin/asm2html man/man1/asm2html.1.gz
 
