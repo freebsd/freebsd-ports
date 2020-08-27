@@ -16,6 +16,9 @@ LIB_DEPENDS=	libfftw3.so:math/fftw3
 USES=		cmake:insource localbase:ldflags
 USE_LDCONFIG=	${PREFIX}/lib
 
+# Fix with clang11. Seems dead upstream. Don't expect a proper fix.
+CFLAGS+=	-fcommon
+
 WRKSRC_SUBDIR=	src
 
 PLIST_FILES=	bin/arss
