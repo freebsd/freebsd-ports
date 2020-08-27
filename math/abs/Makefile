@@ -17,6 +17,9 @@ USES=		xorg
 USE_XORG=	x11 xpm xaw
 WRKSRC=		${WRKDIR}/abs-src-0.908
 
+# Fix build on current
+CFLAGS+=	-fcommon
+
 post-patch:
 	@${REINPLACE_CMD} -e 's/trcasestr/strcasestr_/g' ${WRKSRC}/Database/cell.c
 
