@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-runner
-PORTVERSION=	13.2.2
+PORTVERSION=	13.3.0
 CATEGORIES=	devel
 MASTER_SITES=	https://gitlab-runner-downloads.s3.amazonaws.com/master/docker/:dockerx64 \
 		https://gitlab-runner-downloads.s3.amazonaws.com/master/docker/:dockerarm
@@ -29,10 +29,10 @@ USE_GITHUB=	nodefault
 # Find tags here:
 # https://gitlab.com/gitlab-org/gitlab-runner/tags
 GL_ACCOUNT=	gitlab-org
-GL_COMMIT=	a998cacdcee3e1b21cbb23526f5e7da54e53e047
-GITBRANCH=	13-2-stable
+GL_COMMIT=	86ad88ea230a89dc97f700bdb6375dd0be7a25c7
+GITBRANCH=	13-3-stable
 # https://gitlab-runner-downloads.s3.amazonaws.com/latest/binaries/gitlab-runner-freebsd-amd64
-BUILT=		2020-07-30T14:52:12+0000
+BUILT=		2020-08-20T06:29:23+0000
 
 GH_TUPLE=	\
 		Azure:go-ansiterm:d6e3b3328b78:azure_go_ansiterm/vendor/github.com/Azure/go-ansiterm \
