@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	diff-match-patch
-PORTVERSION=	20181111
+PORTVERSION=	20200713
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,6 +22,6 @@ python_OLD_CMD=	/usr/bin/python[0-9\.]*
 SHEBANG_GLOB=	*.py
 
 do-test:
-	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
+	cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
 .include <bsd.port.mk>
