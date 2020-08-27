@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}plugin-${PORTVERSION}
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Plugin for adding navigation items into Trac navigation bars
 
+LICENSE=	BSD
+
 RUN_DEPENDS=	tracd:www/trac
 
 USES=		python:2.7
