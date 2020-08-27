@@ -28,6 +28,9 @@ MAKE_JOBS_UNSAFE=yes
 
 USES=	dos2unix gmake zip
 
+# Upstream seems dead. Don't expect a proper fix.
+CFLAGS+=	-fcommon
+
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's,%%STAGEDIR%%,${STAGEDIR},g' \
