@@ -31,18 +31,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 SUB_FILES=	pkg-message urbackupsrv.conf.sample-daemon
 
 post-patch:
-	@(cd ${WRKSRC} && ${REINPLACE_CMD} -E -e 's|[[:<:]]byte[[:>:]]|CryptoPP::byte|g' \
-		cryptoplugin/AESDecryption.cpp \
-		cryptoplugin/AESEncryption.cpp \
-		cryptoplugin/AESGCMDecryption.cpp \
-		cryptoplugin/AESGCMEncryption.cpp \
-		cryptoplugin/CryptoFactory.cpp \
-		cryptoplugin/ECDHKeyExchange.cpp \
-		cryptoplugin/ZlibCompression.cpp \
-		cryptoplugin/ZlibDecompression.cpp \
-		md5.h \
-	)
-
 	@(cd ${WRKSRC} && ${REINPLACE_CMD} -e 's|/etc/urbackup|${PREFIX}/etc/urbackup|g' \
 		mount_helper/main.cpp \
 		urbackupserver/server.cpp \
