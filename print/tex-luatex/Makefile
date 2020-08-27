@@ -78,6 +78,10 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 MAKE_JOBS_UNSAFE=	yes
 TEX_FORMATS=	luatex
 
+# Fix build on recent current -- our tex is so outdated,
+# that it's unlikely that any upstream patches apply.
+CFLAGS+=	-fcommon
+
 # buildenv and dumpenv in Makefile uses hard-coded TEXMFCNF.
 post-extract:
 	cd ${WRKSRC}/.. && \
