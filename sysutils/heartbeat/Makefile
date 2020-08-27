@@ -16,6 +16,8 @@ COMMENT=	Subsystem for High-Availability Clustering
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
+BROKEN_FreeBSD_13=	Will not build on llvm11, expires in about two weeks anyway.
+
 DEPRECATED=	Uses deprecated version of python
 EXPIRATION_DATE=	2020-09-15
 
