@@ -20,6 +20,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 GNU_CONFIGURE=	yes
 MAKE_ENV+=	BINGRP=wheel
 
+# Upstream dead. Don't expect a proper fix.
+CFLAGS+=	-fcommon
+
 BINS=		aescrypt aesget
 
 OPTIONS_DEFINE=	DOCS
