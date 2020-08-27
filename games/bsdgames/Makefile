@@ -19,6 +19,7 @@ GH_ACCOUNT=	pianojockl
 
 CONFLICTS=	hangman-[0-9]*
 
+CFLAGS+=	-fcommon
 MAKE_ENV=	NO_WERROR=1
 MAKE_ARGS=	BINGRP=${BINGRP}
 
