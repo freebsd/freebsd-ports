@@ -1,6 +1,14 @@
 --- src/apinger.h.orig	2002-12-20 09:19:57 UTC
 +++ src/apinger.h
-@@ -119,7 +119,7 @@ extern char *config_file;
+@@ -112,14 +112,14 @@ struct piped_info {
+ };
+ #endif
+ 
+-struct target *targets;
++extern struct target *targets;
+ 
+ extern int foreground;
+ extern char *config_file;
  
  extern int icmp_sock;
  extern int icmp6_sock;
