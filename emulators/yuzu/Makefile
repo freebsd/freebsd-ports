@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	yuzu
-PORTVERSION=	s20200824
+PORTVERSION=	s20200825
 PORTREVISION?=	0
 CATEGORIES=	emulators
 
@@ -37,7 +37,7 @@ LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yuzu-emu
-GH_TAGNAME=	6fd3a1bf8
+GH_TAGNAME=	b8885aa03
 GH_TUPLE=	yuzu-emu:unicorn:1.0.1-153-g73f45735:unicorn/externals/unicorn \
 		DarkLordZach:mbedtls:a280e60:mbedtls/externals/mbedtls \
 		KhronosGroup:SPIRV-Headers:2c51218:SPIRV_Headers/externals/sirit/externals/SPIRV-Headers \
@@ -46,7 +46,7 @@ GH_TUPLE=	yuzu-emu:unicorn:1.0.1-153-g73f45735:unicorn/externals/unicorn \
 		ReinUsesLisp:sirit:eefca56:sirit/externals/sirit \
 		arsenm:sanitizers-cmake:aab6948:sanitizers_cmake/externals/cubeb/cmake/sanitizers-cmake \
 		citra-emu:ext-soundtouch:060181e:soundtouch/externals/soundtouch \
-		herumi:xbyak:v5.911:xbyak/externals/xbyak \
+		herumi:xbyak:v5.95:xbyak/externals/xbyak \
 		kinetiknz:cubeb:cubeb-0.2-1248-g957847c:cubeb/externals/cubeb \
 		svn2github:inih:603729d:inih/externals/inih/inih
 
