@@ -33,6 +33,9 @@ USE_RC_SUBR=	${PORTNAME:tl}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+# Upstream dead, don't expect a proper fix.
+CFLAGS+=	-fcommon
+
 SUB_FILES=	pkg-message
 
 CONFLICTS=	cups-base-1.[2-9]*
