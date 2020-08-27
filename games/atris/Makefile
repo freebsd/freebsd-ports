@@ -21,6 +21,8 @@ CONFIGURE_ARGS=	--program-transform-name=""
 
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
+# Upstream is dead. Don't expect a proper fix.
+CFLAGS+=	-fcommon
 
 OPTIONS_DEFINE=	DOCS
 
