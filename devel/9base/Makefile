@@ -27,6 +27,9 @@ MAKE_ARGS=	PREFIX="${PREFIX}/9" CC="${CC}" MANPREFIX="${MANPREFIX}/man" \
 		CFLAGS="${CFLAGS} -I. -c" LDFLAGS="${LDFLAGS} -L."
 MAKE_JOBS_UNSAFE=	yes
 
+# Fix build on current
+CFLAGS+=	-fcommon
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|PREFIX|"${PREFIX}/9"|' ${WRKSRC}/lib9/get9root.c
 
