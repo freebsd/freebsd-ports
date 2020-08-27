@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	lis
-DISTVERSION=	2.0.22
+DISTVERSION=	2.0.23
 CATEGORIES=	math
 MASTER_SITES=	https://www.ssisc.org/lis/dl/
 
