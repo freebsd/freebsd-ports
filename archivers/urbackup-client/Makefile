@@ -41,19 +41,6 @@ CONFFILES=	mariadbdump.conf \
 		postgresbase.conf \
 		postgresqldump.conf
 
-post-patch:
-	@(cd ${WRKSRC} && ${REINPLACE_CMD} -E -e 's|[[:<:]]byte[[:>:]]|CryptoPP::byte|g' \
-		cryptoplugin/AESDecryption.cpp \
-		cryptoplugin/AESEncryption.cpp \
-		cryptoplugin/AESGCMDecryption.cpp \
-		cryptoplugin/AESGCMEncryption.cpp \
-		cryptoplugin/CryptoFactory.cpp \
-		cryptoplugin/ECDHKeyExchange.cpp \
-		cryptoplugin/ZlibCompression.cpp \
-		cryptoplugin/ZlibDecompression.cpp \
-		md5.h \
-	)
-
 post-stage:
 	${INSTALL_DATA} ${WRKDIR}/urbackupclient.conf.sample-daemon \
 		${STAGEDIR}${PREFIX}/etc/urbackup/urbackupclient.conf.sample
