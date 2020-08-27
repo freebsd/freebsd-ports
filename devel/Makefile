@@ -5711,6 +5711,7 @@
     SUBDIR += rubygem-azure_mgmt_authorization
     SUBDIR += rubygem-azure_mgmt_automation
     SUBDIR += rubygem-azure_mgmt_azurestack
+    SUBDIR += rubygem-azure_mgmt_azurestack_hci
     SUBDIR += rubygem-azure_mgmt_batch
     SUBDIR += rubygem-azure_mgmt_batchai
     SUBDIR += rubygem-azure_mgmt_billing
