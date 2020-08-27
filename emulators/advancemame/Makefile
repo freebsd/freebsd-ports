@@ -21,7 +21,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-svgalib --disable-fb --disable-alsa --enable-oss \
 		--disable-kevent
 
-CFLAGS+=	-idirafter ${LOCALBASE}/include
+CFLAGS+=	-idirafter ${LOCALBASE}/include \
+		-fcommon
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_JOBS_UNSAFE=	yes
 
