@@ -1,0 +1,4 @@
+It provides various ANSI escape codes, used in moving the cursor in a text
+console or rendering coloured text.
+
+WWW: https://github.com/tehmaze/ansi
