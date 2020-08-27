@@ -22,6 +22,8 @@ CONFIGURE_ARGS=	--includedir="${LOCALBASE}/include" \
 		--libdir="${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+# Fix build with clang11
+CFLAGS+=	-fcommon
 
 PLIST_FILES=	bin/aumix bin/mute bin/xaumix \
 		man/man1/aumix.1.gz \
