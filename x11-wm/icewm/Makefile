@@ -2,12 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	icewm
-PORTVERSION=	1.6.6
+PORTVERSION=	1.8.0
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://github.com/ice-wm/icewm/releases/download/${PORTVERSION}/
-
-PATCH_SITES=	https://github.com/bbidulock/icewm/commit/
-PATCHFILES=	32c295c85d22.diff:-p1 f60340768c55.diff:-p1
 
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Window Manager designed for speed, usability and consistency
