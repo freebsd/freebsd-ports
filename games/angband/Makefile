@@ -6,6 +6,9 @@ PORTVERSION=	4.1.3
 CATEGORIES=	games
 MASTER_SITES=	http://rephial.org/downloads/${PORTVERSION:R}/
 
+PATCH_SITES=	https://github.com/angband/angband/commit/
+PATCHFILES=	8702eba5c070a157dfc8e9d7c2106f679b7845c2.patch:-p1
+
 MAINTAINER=	andrew@merenbach.com
 COMMENT=	Rogue-like game with color, X11 support
 
