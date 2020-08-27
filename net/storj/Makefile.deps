@@ -8,8 +8,8 @@ GH_TUPLE=	\
 		alicebob:miniredis:v2.11.1:alicebob_miniredis/vendor/github.com/alicebob/miniredis/v2 \
 		apache:thrift:v0.12.0:apache_thrift/vendor/github.com/apache/thrift \
 		blang:semver:v3.5.1:blang_semver/vendor/github.com/blang/semver \
-		btcsuite:btcutil:v1.0.1:btcsuite_btcutil/vendor/github.com/btcsuite/btcutil \
-		calebcase:tmpfile:3af473ef8439:calebcase_tmpfile/vendor/github.com/calebcase/tmpfile \
+		btcsuite:btcutil:v1.0.2:btcsuite_btcutil/vendor/github.com/btcsuite/btcutil \
+		calebcase:tmpfile:v1.0.2:calebcase_tmpfile/vendor/github.com/calebcase/tmpfile \
 		census-instrumentation:opencensus-go:v0.22.2:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
 		cheggaaa:pb:v3.0.1:cheggaaa_pb/vendor/github.com/cheggaaa/pb/v3 \
 		cloudfoundry:gosigar:v1.1.0:cloudfoundry_gosigar/vendor/github.com/cloudfoundry/gosigar \
@@ -19,16 +19,16 @@ GH_TUPLE=	\
 		fsnotify:fsnotify:v1.4.7:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		go-redis:redis:v6.14.1:go_redis_redis/vendor/github.com/go-redis/redis \
 		go-yaml:yaml:v2.2.4:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
-		gogo:protobuf:v1.2.1:gogo_protobuf/vendor/github.com/gogo/protobuf \
+		gogo:protobuf:v1.3.1:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang-migrate:migrate:v4.7.0:golang_migrate_migrate/vendor/github.com/golang-migrate/migrate/v4 \
 		golang:appengine:v1.6.5:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:75b288015ac9:golang_crypto/vendor/golang.org/x/crypto \
+		golang:crypto:123391ffb6de:golang_crypto/vendor/golang.org/x/crypto \
 		golang:groupcache:215e87163ea7:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:net:d3edc9973b7e:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:bf48bf16ab8d:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.3.2:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sync:43a5402ce75a:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:226ff32320da:golang_sys/vendor/golang.org/x/sys \
+		golang:sync:6e8e738ad208:golang_sync/vendor/golang.org/x/sync \
+		golang:sys:1030fc2bf1d9:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.3:golang_text/vendor/golang.org/x/text \
 		golang:time:555d28b269f0:golang_time/vendor/golang.org/x/time \
 		golang:xerrors:9bdfabe68543:golang_xerrors/vendor/golang.org/x/xerrors \
@@ -79,11 +79,11 @@ GH_TUPLE=	\
 		spf13:jwalterweatherman:v1.0.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		spf13:viper:v1.4.0:spf13_viper/vendor/github.com/spf13/viper \
-		storj:common:4c1ddac6fa63:storj_common/vendor/storj.io/common \
+		storj:common:40ea3df42d8e:storj_common/vendor/storj.io/common \
 		storj:drpc:v0.0.14:storj_drpc/vendor/storj.io/drpc \
 		storj:monkit-jaeger:80778fc3f91b:storj_monkit_jaeger/vendor/storj.io/monkit-jaeger \
 		storj:private:46794d335b51:storj_private/vendor/storj.io/private \
-		storj:uplink:c66d9eb21232:storj_uplink/vendor/storj.io/uplink \
+		storj:uplink:v1.2.0:storj_uplink/vendor/storj.io/uplink \
 		stretchr:testify:v1.5.1:stretchr_testify/vendor/github.com/stretchr/testify \
 		stripe:stripe-go:v70.15.0:stripe_stripe_go/vendor/github.com/stripe/stripe-go \
 		uber-go:atomic:v1.6.0:uber_go_atomic/vendor/go.uber.org/atomic \
