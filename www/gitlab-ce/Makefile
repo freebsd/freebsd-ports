@@ -3,7 +3,7 @@
 
 PORTNAME=	gitlab-ce
 PORTVERSION=	13.3.0
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -75,7 +75,7 @@ MY_DEPENDS=	git>=2.26:devel/git \
 	rubygem-gitlab_omniauth-ldap>=2.1.1<2.2.0:net/rubygem-gitlab_omniauth-ldap \
 	rubygem-net-ldap>0:net/rubygem-net-ldap \
 	rubygem-grape>=1.4.0<1.4.1:devel/rubygem-grape \
-	rubygem-grape-entity>=0.7.1<0.8.0,1:devel/rubygem-grape-entity \
+	rubygem-grape-entity07>=0.7.1<0.8.0,1:devel/rubygem-grape-entity07 \
 	rubygem-rack-cors>=1.0.6<1.1.0:www/rubygem-rack-cors \
 	rubygem-graphql>=1.10.5<1.11.0:devel/rubygem-graphql \
 	rubygem-graphiql-rails>=1.4.10<1.5.0:devel/rubygem-graphiql-rails \
