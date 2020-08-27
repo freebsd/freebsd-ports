@@ -23,6 +23,8 @@ USES=		compiler:features gmake
 USE_CSTD=	gnu89
 WRKSRC=		${WRKDIR}/${PORTNAME}/konference
 MAKE_ARGS=	ASTERISK_SRC_VERSION=1300
+# Fix build with clang11
+CFLAGS+=	-fcommon
 
 PLIST_FILES=	lib/asterisk/modules/app_konference.so
 
