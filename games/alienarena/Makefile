@@ -26,6 +26,9 @@ CONFIGURE_ARGS+=--with-xf86vm \
 		--with-xf86dga \
 		--with-system-libode
 
+# Fix build with clang11
+CFLAGS+=	-fcommon
+
 EXTRACT_AFTER_ARGS=	--exclude "data1"
 
 MAKE_ENV=	WITH_DATADIR=yes WITH_LIBDIR=yes \
