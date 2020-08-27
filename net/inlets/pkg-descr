@@ -2,4 +2,4 @@ inlets combines a reverse proxy and websocket tunnels to expose your internal
 and development endpoints to the public Internet via an exit-node. An exit-node
 may be a 5-10 USD VPS or any other computer with an IPv4 IP address.
 
-WWW: https://github.com/alexellis/inlets
+WWW: https://github.com/inlets/inlets
