@@ -23,6 +23,9 @@ CONFIGURE_ENV=	ac_cv_lib_Xm_XmCreateBulletinBoard=no \
 		ac_cv_lib_gdbm_dbm_fetch=no
 MAKE_ARGS=	prefix=${STAGEDIR}${PREFIX}/ OBVDIR=${STAGEDIR}${DATADIR}/
 
+# Fix build with clang11
+CFLAGS+=	-fcommon
+
 OPTIONS_DEFINE=	SOUND
 
 SOUND_LIB_DEPENDS=	libaudio.so:audio/nas
