@@ -78,6 +78,9 @@ PREFIXAQ_CONFIGURE_ENABLE=	prefixaq
 
 SQLMOD=		${PORTNAME}/SQLMod.tar.gz
 
+# Upstream dead, don't expect a proper fix.
+CFLAGS+=	-fcommon
+
 .if exists(${DISTDIR}/${SQLMOD})
 USES+=		mysql
 WITH_SQLMOD=	yes
