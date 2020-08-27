@@ -22,6 +22,9 @@ CONFIGURE_ARGS=	ac_cv_lib_iconv_libiconv_open=no \
 		ac_cv_lib_pq_PQconnectdb=no
 USE_CSTD=	gnu89
 
+# Fix build with clang11
+CFLAGS+=	-fcommon
+
 SUB_FILES=	bandwidthd
 
 OPTIONS_DEFINE=	DOCS
