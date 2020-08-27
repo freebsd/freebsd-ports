@@ -25,6 +25,9 @@ USE_LDCONFIG=	yes
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 
+# Fix build on recent current with clang11
+CFLAGS+=	-fcommon
+
 WRKSRC_SUBDIR=	${PORTNAME}
 
 post-stage: # https://github.com/Electrostatics/apbs-pdb2pqr/issues/522
