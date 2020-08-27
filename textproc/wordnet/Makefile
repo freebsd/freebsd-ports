@@ -23,6 +23,9 @@ USE_LDCONFIG=	yes
 SUB_FILES=	pkg-message
 SUB_LIST+=	TCL_VER=${TCL_VER}
 
+# Fix build on recent current
+CFLAGS+=	-fcommon
+
 post-patch:
 	${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},g' \
 	    ${WRKSRC}/src/wnb ${WRKSRC}/doc/man/*.?
