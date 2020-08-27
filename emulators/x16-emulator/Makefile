@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	x16-emulator
-DISTVERSION=	r37
+DISTVERSION=	r38
 CATEGORIES=	emulators
 
 MAINTAINER=	makc@FreeBSD.org
