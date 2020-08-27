@@ -111,6 +111,9 @@ post-patch:
 		${WRKSRC}/script/lib/install-application.js
 	${REINPLACE_CMD} -e 's|<%= installDir %>|${PREFIX}|' \
 		${WRKSRC}/resources/linux/atom.desktop.in
+	# Fix build with clang11: https://github.com/nodejs/node/commit/89a306bca9088a79aed3fb3fd511fff82178d3cb.patch
+	${REINPLACE_CMD} -e 's|context->VARARGS()|context->VARARGS() != nullptr|g' \
+		${WRKDIR}/node-v10.20.1/deps/v8/src/torque/ast-generator.cc
 
 pre-build: build-apm-node bootstrap-script bootstrap-apm bootstrap-atom clean-backup
 build-apm-node:
