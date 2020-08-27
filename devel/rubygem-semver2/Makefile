@@ -11,6 +11,8 @@ COMMENT=	Maintain semantic versions
 USES=		gem
 USE_RUBY=	yes
 
+NO_ARCH=	yes
+
 PLIST_FILES=	bin/semver
 
 .include <bsd.port.mk>
