@@ -39,6 +39,9 @@ GH_PROJECT=	lib${PORTNAME}
 
 SHEBANG_FILES=	util/cws2fws
 
+# https://github.com/libming/libming/issues/55
+CFLAGS+=	-fcommon
+
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/ming/ ${STAGEDIR}${PREFIX}/include/ming/blocks/ ${STAGEDIR}${PREFIX}/include/ming/util/
 	cd ${WRKSRC}/util/ && ${INSTALL_SCRIPT} cws2fws ming-config ${STAGEDIR}${PREFIX}/bin/
