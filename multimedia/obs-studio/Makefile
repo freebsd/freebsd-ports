@@ -5,6 +5,9 @@ DISTVERSION=	25.0.8
 PORTREVISION=	1
 CATEGORIES=	multimedia
 
+PATCH_SITES=	https://github.com/obsproject/obs-studio/commit/
+PATCHFILES=	c7f84f8fc4e90ef779a204ac268f5ee1a962e324.patch:-p1
+
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Open source streaming/recording software
 
