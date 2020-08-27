@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	crispy-doom
-PORTVERSION=	5.8.0
+PORTVERSION=	5.9.0
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	games
 
@@ -13,10 +13,12 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate \
 		libpng16.so:graphics/png
 
-USES=		autoreconf pkgconfig sdl
+CONFLICTS_INSTALL=	chocolate-doom
 
+USES=		autoreconf pkgconfig python:build sdl shebangfix
 USE_SDL=	mixer2 net2 sdl2
 GNU_CONFIGURE=	yes
+SHEBANG_FILES=	man/docgen man/simplecpp
 
 OPTIONS_DEFINE=	DOCS
 
