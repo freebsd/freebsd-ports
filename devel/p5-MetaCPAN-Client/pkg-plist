@@ -18,6 +18,7 @@
 %%SITE_PERL%%/MetaCPAN/Client/Role/HasUA.pm
 %%SITE_PERL%%/MetaCPAN/Client/Scroll.pm
 %%SITE_PERL%%/MetaCPAN/Client/Types.pm
+%%SITE_PERL%%/MetaCPAN/fav.pl
 %%PERL5_MAN3%%/MetaCPAN::Client.3.gz
 %%PERL5_MAN3%%/MetaCPAN::Client::Author.3.gz
 %%PERL5_MAN3%%/MetaCPAN::Client::Cover.3.gz
