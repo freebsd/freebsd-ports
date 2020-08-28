@@ -2,8 +2,7 @@
 
 PORTNAME=	dartsim
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.9.2
-PORTREVISION=	1
+DISTVERSION=	6.9.3
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,7 +11,6 @@ COMMENT=	Dynamic Animation and Robotics Toolkit
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN=		Target "cmTC_bfdf9" links to target "NLOPT::header" but the target was not found.
 BROKEN_i386=	clang failure: https://bugs.llvm.org/show_bug.cgi?id=41757
 
 BUILD_DEPENDS=	pagmo2>0:science/pagmo2
@@ -34,13 +32,16 @@ LIB_DEPENDS=	libassimp.so:multimedia/assimp \
 		libtinyxml2.so:textproc/tinyxml2 \
 		liburdfdom_world.so:devel/ros-urdfdom
 
-USES=		cmake compiler:c++11-lang eigen:3 gl localbase:ldflags \
+USES=		cmake compiler:c++17-lang eigen:3 gl localbase:ldflags \
 		pkgconfig xorg
 USE_GITHUB=	yes
 GH_PROJECT=	dart
 USE_GL=		gl glu glut
 USE_XORG=	xi xmu
+USE_CXXSTD=	c++17 # missing in the project, it uses std::void_t (through pagmo2) which is a c++17 feature
 USE_LDCONFIG=	yes
+
+CXXFLAGS+=	-I/usr/local/include/coin # because of pagmo2 headers include <IpReturnCodes.hpp>
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 
