@@ -3,11 +3,11 @@
 
 PORTNAME=	sound-of-sorting
 PORTVERSION=	0.6.5
-PORTREVISION=	1
 DISTVERSIONPREFIX=	${PORTNAME}-
+PORTREVISION=	2
 CATEGORIES=	math
 
-MAINTAINER=	se@FreeBSD.org
+MAINTAINER=	se@FreeBSD.orgC
 COMMENT=	Visualization and "Audibilization" of Sorting Algorithms
 
 LICENSE=	GPLv3
@@ -16,13 +16,14 @@ USES=		sdl
 
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl
-USE_WX=		2.8+
+USE_WX=		3.0+
 WX_CONF_ARGS=	relative
 
 OPTIONS_DEFINE=	DOCS
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	bingmann
+GH_TAGNAME=	5884a35
 
 PLIST_FILES=	bin/sound-of-sorting
 PORTDOCS=	README
