@@ -11,6 +11,11 @@ MASTER_SITES=	http://www.enderunix.org/checkdns/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Domain name server analysis and reporting tool
 
+CFLAGS+=		-fcommon
+
+EXPIRATION_DATE=	2020-09-30
+DEPRECATED=		Unmaintained and dead upstream
+
 SUB_FILES=	pkg-message
 
 PORTDOCS=	AUTHORS ChangeLog README THANKS TODO
