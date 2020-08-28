@@ -2,8 +2,7 @@
 
 PORTNAME=	just
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.1
-PORTREVISION=	2
+DISTVERSION=	0.7.2
 CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,11 +20,11 @@ CARGO_CRATES=	aho-corasick-0.7.13 \
 		ansi_term-0.12.1 \
 		atty-0.2.14 \
 		bitflags-1.2.1 \
-		cc-1.0.58 \
+		cc-1.0.59 \
 		cfg-if-0.1.10 \
-		clap-2.33.1 \
+		clap-2.33.3 \
 		ctor-0.1.15 \
-		ctrlc-3.1.5 \
+		ctrlc-3.1.6 \
 		derivative-2.1.1 \
 		difference-2.0.0 \
 		doc-comment-0.3.3 \
@@ -37,14 +36,14 @@ CARGO_CRATES=	aho-corasick-0.7.13 \
 		hermit-abi-0.1.15 \
 		humantime-1.3.0 \
 		lazy_static-1.4.0 \
-		libc-0.2.72 \
+		libc-0.2.76 \
 		log-0.4.11 \
 		memchr-2.3.3 \
 		nix-0.17.0 \
 		output_vt100-0.1.2 \
-		ppv-lite86-0.2.8 \
+		ppv-lite86-0.2.9 \
 		pretty_assertions-0.6.1 \
-		proc-macro2-1.0.18 \
+		proc-macro2-1.0.19 \
 		quick-error-1.2.3 \
 		quote-1.0.7 \
 		rand-0.7.3 \
@@ -58,7 +57,7 @@ CARGO_CRATES=	aho-corasick-0.7.13 \
 		snafu-0.6.8 \
 		snafu-derive-0.6.8 \
 		strsim-0.8.0 \
-		syn-1.0.34 \
+		syn-1.0.39 \
 		target-1.0.0 \
 		tempfile-3.1.0 \
 		termcolor-1.1.0 \
@@ -71,7 +70,7 @@ CARGO_CRATES=	aho-corasick-0.7.13 \
 		vec_map-0.8.2 \
 		void-1.0.2 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
-		which-4.0.1 \
+		which-4.0.2 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
