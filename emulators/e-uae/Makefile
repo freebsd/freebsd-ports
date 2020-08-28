@@ -23,6 +23,11 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-sdl --with-sdl-gfx
 MAKE_JOBS_UNSAFE=	yes
 
+CFLAGS+=		-fcommon
+
+EXPIRATION_DATE=	2020-09-30
+DEPRECATED=		Unmaintained and dead upstream
+
 PORTDOCS=	ChangeLog README bsdsocket.txt cmd-line.txt \
 		compiling.txt configuration.txt floppies.txt \
 		joystick.txt keyboard.txt scsi.txt
