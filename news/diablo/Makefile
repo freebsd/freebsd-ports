@@ -22,6 +22,9 @@ DES_DESC=	DES encryption support
 
 USES=		tar:tgz
 
+# Fix build with clang11
+CFLAGS+=	-fcommon
+
 post-patch:
 	@${CP} ${FILESDIR}/diablo.in ${WRKDIR}/diablo
 	@${REINPLACE_CMD} -E 's|%%PREFIX%%|${STAGEDIR}${PREFIX}|g ;\
