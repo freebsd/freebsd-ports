@@ -3,7 +3,7 @@
 
 PORTNAME=	wmbiff
 PORTVERSION=	0.4.27
-PORTREVISION=	18
+PORTREVISION=	19
 CATEGORIES=	mail windowmaker afterstep
 MASTER_SITES=	SF
 
@@ -12,20 +12,23 @@ COMMENT=	xbiff-like Window Maker dock app
 
 LICENSE=	GPLv2
 
-OPTIONS_DEFINE=	GNUTLS
-
 USES=		shebangfix xorg
+
+OPTIONS_DEFINE=	GNUTLS
 SHEBANG_FILES=	scripts/security.debian.rb
-USE_XORG=	xpm
+USE_XORG=	x11 xext xpm
 GNU_CONFIGURE=	yes
+
+# Temporary fix to build with clang11
+CFLAGS+=	-fcommon
 
 PLIST_FILES=	bin/wmbiff \
 		lib/wmbiff/security.debian.rb \
 		man/man1/wmbiff.1.gz \
 		man/man5/wmbiffrc.5.gz \
-		%%DATADIR%%/sample.wmbiffrc \
-		%%DATADIR%%/skins/wmbiff-master-contrast.xpm \
-		%%DATADIR%%/skins/wmbiff-master-led.xpm
+		${DATADIR}/sample.wmbiffrc \
+		${DATADIR}/skins/wmbiff-master-contrast.xpm \
+		${DATADIR}/skins/wmbiff-master-led.xpm
 
 GNUTLS_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 			libgnutls.so:security/gnutls
