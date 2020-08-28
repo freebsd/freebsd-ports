@@ -1,3 +1,5 @@
-TIMESTAMP = 1587086116
+TIMESTAMP = 1598642399
 SHA256 (nyyManni-dmenu-wayland-v0.1_GH0.tar.gz) = dcbc70156e138b2bb8788aeebf75af14f75e188ed78865840e341b5375ed6614
 SIZE (nyyManni-dmenu-wayland-v0.1_GH0.tar.gz) = 18436
+SHA256 (b646f4d14c627d9a4300d9d015fb8e9b5cb2abef.patch) = 960a9ed48e1914d90fb7421f8aa44f2d84851ec42c0a69ccf58134cfb0e424e9
+SIZE (b646f4d14c627d9a4300d9d015fb8e9b5cb2abef.patch) = 960
