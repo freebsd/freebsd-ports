@@ -17,6 +17,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	Netflix
 
 LDFLAGS+=	-lexecinfo
+CFLAGS+=	-fcommon
 
 PLIST_FILES=	bin/dynomite-hash-tool \
 		man/man8/dynomite.8.gz \
