@@ -15,6 +15,11 @@ USE_XORG=	x11 xext xpm xmu xaw xt sm ice
 
 MAKE_JOBS_UNSAFE=	yes
 
+CFLAGS+=		-fcommon
+
+EXPIRATION_DATE=	2020-09-30
+DEPRECATED=		Unmaintained and dead upstream
+
 PLIST_FILES=	bin/seyon lib/X11/app-defaults/Seyon \
 		lib/X11/app-defaults/Seyon-color lib/X11/seyon.help \
 		man/man1/${PORTNAME}.1.gz
