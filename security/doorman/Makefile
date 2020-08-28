@@ -24,6 +24,11 @@ SHEBANG_FILES=	ipfw_add ipfw_delete \
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	installdirs install-exec install-data
 
+CFLAGS+=		-fcommon
+
+EXPIRATION_DATE=	2020-09-30
+DEPRECATED=		Unmaintained and dead upstream
+
 SUB_FILES=	pkg-message doormand.cf.EXAMPLE
 USE_RC_SUBR=	doorman
 
