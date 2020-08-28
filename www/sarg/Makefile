@@ -26,6 +26,7 @@ CONFIGURE_ARGS=	--sysconfdir="${ETCDIR}" \
 		--enable-imagedir="${ETCDIR}/images"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
+CFLAGS+=	-fcommon
 
 NLS_USES=		gettext
 NLS_USES_OFF=		gettext-tools
