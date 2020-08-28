@@ -19,6 +19,8 @@ RUN_DEPENDS?=	${PORTNAME}-genisoimage>0:sysutils/genisoimage
 USES=		cmake iconv perl5 shebangfix
 USE_PERL5=	run
 SHEBANG_FILES=	3rd-party/dirsplit/dirsplit
+# Fix build with clang11
+CFLAGS+=	-fcommon
 
 CONFLICTS?=	cdrtools-[0-9]* cjk-cdrtools-[0-9]* cdrtools-devel-[0-9]*
 
