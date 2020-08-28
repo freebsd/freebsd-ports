@@ -20,6 +20,11 @@ DOS2UNIX_GLOB=	*.txt
 NO_WRKSUBDIR=	yes
 BUILD_WRKSRC=	${WRKSRC}/src
 
+CFLAGS+=		-fcommon
+
+EXPIRATION_DATE=	2020-09-30
+DEPRECATED=		Unmaintained and dead upstream
+
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	CRE_Manual.txt Exhaust_README.txt
 
