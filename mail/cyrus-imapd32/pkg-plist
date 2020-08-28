@@ -86,7 +86,6 @@ include/cyrus/charset.h
 include/cyrus/chartable.h
 include/cyrus/command.h
 include/cyrus/crc32.h
-include/cyrus/crc32c.h
 include/cyrus/cyr_lock.h
 include/cyrus/cyr_qsort_r.h
 include/cyrus/cyrusdb.h
