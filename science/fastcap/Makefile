@@ -20,6 +20,9 @@ HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	config
 WRKSRC=		${WRKDIR}/fastcap-2.0wr
 
+# Fix build with clang11
+CFLAGS+=	-fcommon
+
 BINFILES=	busgen capgen cubegen fastcap pipedgen pyragen
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
