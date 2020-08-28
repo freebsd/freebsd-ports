@@ -16,7 +16,7 @@ COMMENT=	Low-level ctypes wrapper for Ed25519 digital signatures
 
 LICENSE=	MIT
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=0:devel/py-nose@${FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=0:devel/py-nose@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils flavors
@@ -24,6 +24,6 @@ USE_PYTHON=	autoplist distutils flavors
 WRKSRC=		${WRKDIR}/dholth-${PORTNAME}-${DISTNAME}
 
 do-test:
-	cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test
+	cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} ${PYSETUP} test
 
 .include <bsd.port.mk>
