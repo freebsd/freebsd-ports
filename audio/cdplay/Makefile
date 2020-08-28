@@ -21,6 +21,11 @@ MAKE_ARGS=	CFLAGS="${CFLAGS} -c -ansi"	\
 		CC="${CC}"
 MAKE_JOBS_UNSAFE=	yes
 
+CFLAGS+=		-fcommon
+
+EXPIRATION_DATE=	2020-09-30
+DEPRECATED=		Unmaintained and dead upstream
+
 PLIST_FILES=	bin/cdplay \
 		share/man/man1/cdplay.1.gz
 
