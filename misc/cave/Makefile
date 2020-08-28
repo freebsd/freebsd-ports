@@ -16,6 +16,11 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	LIBS="${LDFLAGS} -lncurses"
 CPPFLAGS+=	-I${NCURSESINC} -I${LOCALBASE}/include
 
+CFLAGS+=		-fcommon
+
+EXPIRATION_DATE=	2020-09-30
+DEPRECATED=		Unmaintained and dead upstream
+
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/cave.1.gz
 
