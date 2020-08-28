@@ -44,6 +44,12 @@ X11_USE=		XORG=xxf86dga
 
 BROKEN_powerpc=		Does not install on powerpc: signal 2
 
+# Fix with clang11
+CFLAGS+=		-fcommon
+
+EXPIRATION_DATE=	2020-09-30
+DEPRECATED=		Unmaintained and out of date
+
 .include "${.CURDIR}/../quake-data/Makefile.include"
 
 .include <bsd.port.pre.mk>
