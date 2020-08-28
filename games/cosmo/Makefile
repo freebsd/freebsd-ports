@@ -25,6 +25,11 @@ DIST_SUBDIR=	cosmo
 USES=		imake:notall,noman xorg
 USE_XORG=	x11 xext
 
+CFLAGS+=		-fcommon
+
+EXPIRATION_DATE=	2020-09-30
+DEPRECATED=		Unmaintained and dead upstream
+
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/cosmo
 	${INSTALL_PROGRAM} ${WRKSRC}/cosmo ${STAGEDIR}${PREFIX}/bin
