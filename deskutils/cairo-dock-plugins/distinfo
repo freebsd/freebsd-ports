@@ -1,2 +1,5 @@
+TIMESTAMP = 1598613717
 SHA256 (Cairo-Dock-cairo-dock-plug-ins-3.4.1_GH0.tar.gz) = 321113fb8fa214d965c9827b82890651dc4cd0beb23aef0e2d3f5caf806ebdc2
 SIZE (Cairo-Dock-cairo-dock-plug-ins-3.4.1_GH0.tar.gz) = 7398005
+SHA256 (d08541a0afb4377ce2f35feb280fbe443870b587.patch) = 298f8dd8df6dd632b4b07e17be1cd204c5bb832153bfa43df077e029daddf989
+SIZE (d08541a0afb4377ce2f35feb280fbe443870b587.patch) = 5784

@@ -5,6 +5,9 @@ PORTVERSION=	3.4.1
 PORTREVISION=	7
 CATEGORIES=	deskutils
 
+PATCH_SITES=	https://github.com/Cairo-Dock/cairo-dock-plug-ins/commit/
+PATCHFILES=	d08541a0afb4377ce2f35feb280fbe443870b587.patch:-p1
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cairo-Dock-Plugins for Cairo-Dock
 
