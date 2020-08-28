@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	vault
-PORTVERSION=	1.5.2
+PORTVERSION=	1.5.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
@@ -15,8 +15,7 @@ USES=		go:modules
 
 USE_GITHUB=	yes
 GH_TUPLE=	hashicorp:${PORTNAME}:${VAULTTAG}:DEFAULT \
-		swills:vaultui:${VAULTUITAG}:vaultui \
-		hashicorp:vault-plugin-auth-gcp:07ff53341dfe:hashicorp_vault_plugin_auth_gcp
+		swills:vaultui:${VAULTUITAG}:vaultui
 
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
 COMMIT_ID=	685fdfa
@@ -42,7 +41,5 @@ PORTSCOUT=	limit:^(v?)[0-9]+\.[0-9]+\.[0-9]+$
 
 post-patch:
 	@${CP} ${WRKDIR}/vaultui-${PORTVERSION}/http/bindata_assetfs.go ${WRKDIR}/vault-${PORTVERSION}/http/bindata_assetfs.go
-	@${RM} -r ${WRKSRC}/vendor/github.com/hashicorp/vault-plugin-auth-gcp
-	@${MV} ${WRKSRC_hashicorp_vault_plugin_auth_gcp} ${WRKSRC}/vendor/github.com/hashicorp/vault-plugin-auth-gcp
 
 .include <bsd.port.mk>
