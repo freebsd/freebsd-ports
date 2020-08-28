@@ -8,6 +8,9 @@ DISTVERSION=	3.3.3
 PORTREVISION=	2
 CATEGORIES=	devel
 
+PATCH_SITES=	https://github.com/distcc/distcc/commit/
+PATCHFILES=	307f6cfe58ff3fb7e4b3ef1044a5dfc2006f95f5.patch:-p1
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Distribute compilation of C(++) code across machines on a network
 
