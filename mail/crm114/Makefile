@@ -38,6 +38,11 @@ LDFLAGS+=	-L${LOCALBASE}/lib -Wl,--as-needed
 CFLAGS+=	-DVERSION='\"${PORTVERSION}-${CRM114RELEASENAME}\"'
 CFLAGS+=	-DNO_LOGL
 
+CFLAGS+=		-fcommon
+
+EXPIRATION_DATE=	2020-09-30
+DEPRECATED=		Unmaintained and dead upstream
+
 INSTALL_TARGET=	install_binary_only
 
 CRM_FILES=	mailfilter.crm mailfilter.cf mailreaver.crm mailtrainer.crm \
