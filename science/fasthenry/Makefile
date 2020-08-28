@@ -15,6 +15,9 @@ HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	config
 WRKSRC=		${WRKDIR}/fasthenry-3.0wr
 
+# Fix build with clang11
+CFLAGS+=	-fcommon
+
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
