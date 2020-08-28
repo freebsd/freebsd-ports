@@ -1,0 +1,18 @@
+--- Makefile.orig	Wed Nov 22 07:42:41 1995
++++ Makefile	Sat Mar 30 19:22:22 2002
+@@ -11,10 +11,12 @@
+ DADVHF = -DADV_HFONT
+ #DADVHF = 
+ # define if you want to make the default paper size US letter instead of A4
+-DUS = -DUS_VERSION
+-#DUS =
+-CFLAGS = -O $(DHPS) $(DADVHF) $(DUS)
++#DUS = -DUS_VERSION
++DUS =
++CFLAGS += $(DHPS) $(DADVHF) $(DUS)
+ LDFLAGS = -s
++
++all: $(PRG)
+ 
+ $(PRG): $(OBJ)
+ 	$(CC) $(LDFLAGS) -o $@ $(OBJ)
