@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	git-codereview
-PORTVERSION=	0.0.0.2016030201
-PORTREVISION=	1
+PORTVERSION=	0.0.0.2020082801
 CATEGORIES=	devel
 
 MAINTAINER=	swills@FreeBSD.org
@@ -13,7 +12,7 @@ USES=		go
 USE_GITHUB=	yes
 GH_ACCOUNT=	golang
 GH_PROJECT=	review
-GH_TAGNAME=	77ae237
+GH_TAGNAME=	a2b90d2
 
 GO_PKGNAME=	golang.org/x/review
 GO_TARGET=	./git-codereview
