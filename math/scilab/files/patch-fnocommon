@@ -1,0 +1,30 @@
+--- modules/tclsci/src/c/TCL_Command.c.orig	2020-02-25 10:00:14 UTC
++++ modules/tclsci/src/c/TCL_Command.c
+@@ -38,6 +38,12 @@ int			TclInterpReturn;
+ // Global Tcl Return Result.
+ char *			TclInterpResult;
+ 
++/* The tclLoop thread Id
++in order to wait it ends when closing Scilab */
++__threadId TclThread;
++__threadSignal InterpReady;
++__threadSignalLock InterpReadyLock;
++
+ // Single execution
+ __threadLock		singleExecutionLock;
+ 
+--- modules/tclsci/src/c/TCL_Command.h.orig	2020-02-25 10:00:14 UTC
++++ modules/tclsci/src/c/TCL_Command.h
+@@ -85,9 +85,9 @@ char		*getTclCommandResult(void);
+ 
+ /* The tclLoop thread Id
+ in order to wait it ends when closing Scilab */
+-__threadId TclThread;
++extern __threadId TclThread;
+ 
+-__threadSignal InterpReady;
+-__threadSignalLock InterpReadyLock;
++extern __threadSignal InterpReady;
++extern __threadSignalLock InterpReadyLock;
+ 
+ #endif /* !__TCL_COMMAND_H__ */
