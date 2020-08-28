@@ -2,9 +2,8 @@
 
 PORTNAME=	pagmo2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.15.0-90
-PORTREVISION=	1
-DISTVERSIONSUFFIX=	-g61b7b393
+DISTVERSION=	2.15.0-95
+DISTVERSIONSUFFIX=	-g30257c05
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -26,6 +25,9 @@ GH_ACCOUNT=	esa
 USE_LDCONFIG=	yes
 
 CMAKE_ON=	PAGMO_WITH_EIGEN3 PAGMO_WITH_NLOPT PAGMO_WITH_IPOPT PAGMO_ENABLE_IPO
+
+post-install: # Workaround for https://github.com/esa/pagmo2/issues/445 breaking misc/dartsim
+	@${REINPLACE_CMD} 's|;NLOPT::header;IPOPT::header||' ${STAGEDIR}${PREFIX}/lib/cmake/pagmo/pagmo_export.cmake
 
 do-test: # tests fail to build: https://github.com/esa/pagmo2/issues/273
 	@cd ${BUILD_WRKSRC} && \
