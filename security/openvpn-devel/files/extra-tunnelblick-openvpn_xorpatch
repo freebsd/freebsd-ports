@@ -40,16 +40,14 @@ The patch was ported to OpenVPN 2.4 by OPNsense.
                  link_socket_write_post_size_adjust(&size, size_delta, &c->c2.to_link);
 --- src/openvpn/options.c.orig	2016-12-22 07:25:18 UTC
 +++ src/openvpn/options.c
-@@ -811,6 +811,9 @@ init_options(struct options *o, const bo
+@@ -811,4 +811,7 @@ init_options(struct options *o, const bo
      o->resolve_retry_seconds = RESOLV_RETRY_INFINITE;
      o->resolve_in_advance = false;
      o->proto_force = -1;
 +    o->ce.xormethod = 0;
 +    o->ce.xormask = "\0";
 +    o->ce.xormasklen = 0;
- #ifdef ENABLE_OCC
      o->occ = true;
- #endif
 @@ -972,6 +975,9 @@ setenv_connection_entry(struct env_set *
      setenv_str_i(es, "local_port", e->local_port, i);
      setenv_str_i(es, "remote", e->remote, i);
