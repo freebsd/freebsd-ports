@@ -13,6 +13,11 @@ COMMENT=	Very simple Tetris-style game
 ALL_TARGET=	bugs
 USES=		ncurses tar:Z
 
+CFLAGS+=		-fcommon
+
+EXPIRATION_DATE=	2020-09-30
+DEPRECATED=		Unmaintained and dead upstream
+
 OPTIONS_DEFINE=	DOCS
 
 do-install:
