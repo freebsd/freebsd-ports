@@ -20,6 +20,11 @@ USES=		iconv localbase ncurses shebangfix perl5 ssl
 SHEBANG_FILES=	src/elmoconf.pl
 USE_PERL5=	run
 
+CFLAGS+=		-fcommon
+
+EXPIRATION_DATE=	2020-09-30
+DEPRECATED=		Unmaintained and dead upstream
+
 OPTIONS_DEFINE=	GPGME NLS
 OPTIONS_SUB=	yes
 
