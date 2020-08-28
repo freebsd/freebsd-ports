@@ -14,7 +14,7 @@ LICENSE=	BSD2CLAUSE
 LIB_DEPENDS=	libjson-c.so:devel/json-c \
 		libcurl.so:ftp/curl
 
-USES=		gmake libtool pkgconfig ssl
+USES=		compiler:c11 gmake libtool pkgconfig ssl
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
