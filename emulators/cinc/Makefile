@@ -13,6 +13,11 @@ COMMENT=	Bell Laboratories cardiac computer emulator
 GNU_CONFIGURE=	yes
 USES=		gmake
 
+CFLAGS+=		-fcommon
+
+EXPIRATION_DATE=	2020-09-30
+DEPRECATED=		Unmaintained and dead upstream
+
 PLIST_FILES=	bin/cinc \
 		bin/casm
 
