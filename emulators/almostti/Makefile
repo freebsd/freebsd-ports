@@ -19,9 +19,6 @@ BUILD_WRKSRC=	${WRKSRC}/ATI85/Unix
 DESKTOP_ENTRIES=	"ATI85" "${COMMENT}" "ati85" "ati85" \
 			"Utility;Calculator;Emulator;" false
 
-# Fix build with clang11
-CFLAGS+=	-fcommon
-
 post-patch:
 	@${REINPLACE_CMD} -e 's,\./,${DATADIR}/,' ${WRKSRC}/ATI85/TI85.c
 
