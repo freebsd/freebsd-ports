@@ -2,12 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	waffle
-DISTVERSION=	1.6.0-7
+DISTVERSION=	1.6.1-15
 CATEGORIES=	graphics
 
 # Wayland xdg-shell support (to run on sway/wayfire/etc. that have removed wl-shell)
-PATCH_SITES=	https://gitlab.freedesktop.org/oreaus/${PORTNAME}/-/commit/
-PATCHFILES=	3cdce7b38cbd91cd7288e21940b279bf7ddc5757.diff:-p1
+PATCH_SITES=	https://gitlab.freedesktop.org/bl4ckb0ne/${PORTNAME}/-/commit/
+PATCHFILES=	39ad2b26f46e90cbae13a9cbc58e1f9df03f0980.diff:-p1 \
+		e4a1e7e9670b77d5b145520d60c4b7570fe3c6ea.diff:-p1 \
+		8c202f88ab4f0f851e3f19dd82bc6b5236120564.diff:-p1
+
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Library that allows to defer selection of an OpenGL API until runtime
@@ -21,7 +24,7 @@ USES=		compiler:c11 gl localbase meson pkgconfig python:3.5+,build
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	mesa
-GL_COMMIT=	b71cfa674db5828a2be04a42ce9996d6677629ee
+GL_COMMIT=	2485a41c321a29463b5c0af7813c2d1046e2f925
 USE_GL=		egl gl
 USE_LDCONFIG=	yes
 
