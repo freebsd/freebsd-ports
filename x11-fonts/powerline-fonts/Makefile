@@ -1,23 +1,23 @@
 # $FreeBSD$
 
 PORTNAME=	powerline-fonts
-PORTVERSION=	0.0.0.2017.07.26
-PORTREVISION=	1
+PORTVERSION=	0.0.0.2020.08.28
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Fixed width sans fonts for use with powerline
 
+USES=		fonts
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	powerline
 GH_PROJECT=	fonts
-GH_TAGNAME=	fe396ef
+GH_TAGNAME=	e80e3eb
 
-USES=		fonts
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-TTF_FONTS=	3270 AnonymousPro Arimo Cousine D2Coding DejaVuSansMono \
+TTF_FONTS=	3270 AnonymousPro Arimo Cousine DejaVuSansMono \
 		DroidSansMonoDotted DroidSansMonoSlashed GoMono Hack \
 		Inconsolata LiberationMono Meslo\ Dotted Meslo\ Slashed Monofur \
 		NotoMono NovaMono ProFont RobotoMono SpaceMono SymbolNeu Tinos \
@@ -25,15 +25,15 @@ TTF_FONTS=	3270 AnonymousPro Arimo Cousine D2Coding DejaVuSansMono \
 OTF_FONTS=	DroidSansMono FiraMono Inconsolata Inconsolata-g InconsolataDz \
 		SourceCodePro
 PCF_FONTS=	Terminus
-DOCDIRS=	3270 AnonymousPro Arimo Cousine D2Coding DejaVuSansMono \
-		DroidSansMono DroidSansMonoDotted DroidSansMonoSlashed FiraMono \
-		GoMono Hack Inconsolata Inconsolata-g InconsolataDz InputMono \
+DOCDIRS=	3270 AnonymousPro Arimo Cousine DejaVuSansMono DroidSansMono \
+		DroidSansMonoDotted DroidSansMonoSlashed FiraMono GoMono Hack \
+		Inconsolata Inconsolata-g InconsolataDz InputMono \
 		LiberationMono Meslo\ Dotted Meslo\ Slashed NotoMono NovaMono \
 		ProFont RobotoMono SourceCodePro SpaceMono SymbolNeu Terminus \
 		Tinos UbuntuMono
-LICDIRS=	AnonymousPro Arimo Cousine D2Coding DejaVuSansMono \
-		DroidSansMono DroidSansMonoDotted DroidSansMonoSlashed FiraMono \
-		Hack Inconsolata Inconsolata-g InconsolataDz LiberationMono \
+LICDIRS=	AnonymousPro Arimo Cousine DejaVuSansMono DroidSansMono \
+		DroidSansMonoDotted DroidSansMonoSlashed FiraMono Hack \
+		Inconsolata Inconsolata-g InconsolataDz LiberationMono \
 		Meslo\ Dotted Meslo\ Slashed Monofur NovaMono RobotoMono \
 		SourceCodePro SpaceMono SymbolNeu Terminus Tinos
 

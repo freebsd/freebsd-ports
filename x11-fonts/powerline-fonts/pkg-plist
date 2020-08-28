@@ -13,8 +13,6 @@
 %%FONTSDIR%%/Cousine Bold Italic for Powerline.ttf
 %%FONTSDIR%%/Cousine for Powerline.ttf
 %%FONTSDIR%%/Cousine Italic for Powerline.ttf
-%%FONTSDIR%%/D2Coding Bold for Powerline.ttf
-%%FONTSDIR%%/D2Coding for Powerline.ttf
 %%FONTSDIR%%/DejaVu Sans Mono Bold for Powerline.ttf
 %%FONTSDIR%%/DejaVu Sans Mono Bold Oblique for Powerline.ttf
 %%FONTSDIR%%/DejaVu Sans Mono for Powerline.ttf
@@ -134,7 +132,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE_AnonymousPro.txt
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE_Arimo.txt
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE_Cousine.txt
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE_D2Coding.txt
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE_DejaVuSansMono.txt
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE_DroidSansMono.txt
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE_DroidSansMonoDotted.txt
@@ -161,7 +158,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/README_AnonymousPro.rst
 %%PORTDOCS%%%%DOCSDIR%%/README_Arimo.rst
 %%PORTDOCS%%%%DOCSDIR%%/README_Cousine.rst
-%%PORTDOCS%%%%DOCSDIR%%/README_D2Coding.rst
 %%PORTDOCS%%%%DOCSDIR%%/README_DejaVuSansMono.rst
 %%PORTDOCS%%%%DOCSDIR%%/README_DroidSansMono.rst
 %%PORTDOCS%%%%DOCSDIR%%/README_DroidSansMonoDotted.rst
