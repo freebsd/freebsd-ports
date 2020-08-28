@@ -14,8 +14,6 @@ include/flann/algorithms/lsh_index.h
 include/flann/algorithms/nn_index.h
 include/flann/config.h
 include/flann/defines.h
-include/flann/ext/lz4.h
-include/flann/ext/lz4hc.h
 include/flann/flann.h
 include/flann/flann.hpp
 include/flann/general.h
@@ -51,11 +49,11 @@ lib/cmake/flann/flann-config.cmake
 lib/cmake/flann/flann-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/flann/flann-targets.cmake
 lib/libflann.so
-lib/libflann.so.%%SHL2%%
-lib/libflann.so.%%SHL3%%
+lib/libflann.so.1.9
+lib/libflann.so.1.9.1
 lib/libflann_cpp.so
-lib/libflann_cpp.so.%%SHL2%%
-lib/libflann_cpp.so.%%SHL3%%
-lib/libflann_cpp_s.so
-lib/libflann_s.so
+lib/libflann_cpp.so.1.9
+lib/libflann_cpp.so.1.9.1
+lib/libflann_cpp_s.a
+lib/libflann_s.a
 libdata/pkgconfig/flann.pc

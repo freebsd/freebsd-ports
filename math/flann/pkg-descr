@@ -6,4 +6,4 @@ the best algorithm and optimum parameters depending on the dataset.
 FLANN is written in C++ and contains bindings for the following languages: C,
 MATLAB and Python.
 
-WWW: https://www.cs.ubc.ca/research/flann
+WWW: https://www.cs.ubc.ca/research/flann/
