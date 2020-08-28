@@ -20,6 +20,9 @@ USES=		localbase tar:xz
 GNU_CONFIGURE=	yes
 TEST_TARGET=	check
 
+# Fix build with clang11
+CFLAGS+=	-fcommon
+
 PORTDOCS=	AUTHORS ChangeLog NEWS README THANKS TODO
 
 OPTIONS_DEFINE=	DOCS GDBM LDAP
