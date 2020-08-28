@@ -10,8 +10,6 @@ COMMENT=	Colour Management System (CMS)
 
 LICENSE=	BSD3CLAUSE
 
-BROKEN=		Does not build with Qt5-5.14
-
 RUN_DEPENDS=	${LOCALBASE}/share/color/icc/OpenICC/sRGB.icc:graphics/icc-profiles-openicc \
 		${LOCALBASE}/share/color/icc/basICColor/ISOcoated_v2_300_bas.ICC:graphics/icc-profiles-basiccolor \
 		xcalib:x11/xcalib
