@@ -21,6 +21,9 @@ CONFIGURE_ENV+=	ac_cv_header_ncurses_h=yes
 PLIST_FILES=	bin/chexedit \
 		man/man1/chexedit.1.gz
 
+# Fix build on recent current
+CFLAGS+=	-fcommon
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/hexedit ${STAGEDIR}${PREFIX}/bin/chexedit
 	${INSTALL_MAN} ${WRKSRC}/docs/hexedit.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/chexedit.1
