@@ -12,6 +12,12 @@ COMMENT=	Set of portable software build utilities
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	-p ${PREFIX} -d ${DOCSDIR}
 
+CFLAGS+=	-fcommon
+
+EXPIRATION_DATE=	2020-09-30
+DEPRECATED=		Unmaintained and dead upstream
+
+
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
