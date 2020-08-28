@@ -31,6 +31,9 @@ CONFIGURE_ARGS=	--disable-efence \
 		--libdir=${PREFIX}/libexec
 LDFLAGS+=	-lthr
 
+# Fix build with clang11
+CFLAGS+=	-fcommon
+
 PORTDOCS=	*
 
 OPTIONS_DEFINE=		COOKIES DEBUG DOCS HYPHENATION IPV6 JPEG PNG SSL \
