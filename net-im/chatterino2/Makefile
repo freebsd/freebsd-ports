@@ -51,6 +51,8 @@ QMAKE_ARGS=	INCLUDEPATH+=${LOCALBASE}/include/qt5keychain \
 PORTDOCS=	README.md docs/Commands.md docs/ENV.md docs/IMAGEUPLOADER.md \
 		docs/README.md docs/Regex.md
 
+PORTSCOUT=	skipv:v2.1.7,v2.1.0,v2.0.4,v2.0.3,v2.0.2,v2.0.1,v2.0.0
+
 post-extract:
 	@${RM} ${WRKSRC}/lib/qtkeychain.pri
 
