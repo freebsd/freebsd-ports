@@ -17,6 +17,11 @@ USES=		imake perl5 tar:Z xorg
 USE_PERL5=	build
 USE_XORG=	xaw
 
+CFLAGS+=		-fcommon
+
+EXPIRATION_DATE=	2020-09-30
+DEPRECATED=		Unmaintained and dead upstream
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/Xbricons
