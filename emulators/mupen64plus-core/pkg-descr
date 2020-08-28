@@ -5,4 +5,4 @@ amd64 systems, and necessary plugins for audio, graphical rendering (RDP),
 signal co-processor (RSP), and input. There are 3 OpenGL video plugins
 included: glN64, RiceVideoLinux, and Glide64.
 
-WWW: http://code.google.com/p/mupen64plus/
+WWW: https://www.mupen64plus.org/
