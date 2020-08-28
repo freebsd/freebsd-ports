@@ -20,6 +20,11 @@ USES=		gmake ncurses tar:bzip2
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 ALL_TARGET=	phear
 
+CFLAGS+=		-fcommon
+
+EXPIRATION_DATE=	2020-09-30
+DEPRECATED=		Unmaintained and dead upstream
+
 PORTDOCS=	ChangeLog README README-EDITOR TODO
 
 OPTIONS_DEFINE=	DOCS
