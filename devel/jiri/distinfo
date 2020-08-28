@@ -1,3 +1,7 @@
-TIMESTAMP = 1546968530
-SHA256 (jiri/56b2a541f92f3bd9d28b29e1cbcb16f96d6bc6c1.tar.gz) = 450e22775b373e3568d7ecf437c662323835f8c4cdc237a7ed9738a93da61ca7
-SIZE (jiri/56b2a541f92f3bd9d28b29e1cbcb16f96d6bc6c1.tar.gz) = 226330
+TIMESTAMP = 1598646913
+SHA256 (jiri/jiri-g2020.08.28.tar.gz) = d0200c5ee9ddb0ab898ec38746200e676cf336fc22581536bceff4d58bc01fb4
+SIZE (jiri/jiri-g2020.08.28.tar.gz) = 275099
+SHA256 (jiri/golang-net-a7b16738d86b_GH0.tar.gz) = 77cc2a72affacce9d23ef787cc88852d69d52988b0d1cda7dded0d83b5b97722
+SIZE (jiri/golang-net-a7b16738d86b_GH0.tar.gz) = 1099935
+SHA256 (jiri/golang-sync-112230192c58_GH0.tar.gz) = 6d98880ea18369550cb12d7011df8e4b21c5b7588268a412b863b5c9d2fa0313
+SIZE (jiri/golang-sync-112230192c58_GH0.tar.gz) = 16832

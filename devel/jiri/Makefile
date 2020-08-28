@@ -1,30 +1,31 @@
 # $FreeBSD$
 
 PORTNAME=	jiri
-PORTVERSION=	g2019.01.03.01
+PORTVERSION=	g${TIMESTAMP:S/-/./g:C/T.*//g}
 CATEGORIES=	devel
 MASTER_SITES=	LOCAL/swills
-DISTNAME=	${GITHASH}
+DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 DIST_SUBDIR=	jiri
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Tool for multi-repo development
 
 LICENSE=	BSD3CLAUSE
-LICENSE_FILE=	${WRKDIR}/src/fuchsia.googlesource.com/jiri/LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	cmake:devel/cmake \
 		ninja:devel/ninja
 RUN_DEPENDS=	git:devel/git
 
-USES=		go
+USES=		go:modules
 
-GITHASH=	56b2a541f92f3bd9d28b29e1cbcb16f96d6bc6c1
-TIMESTAMP=	2019-01-03T00:00:00.000000
-EXTRACT_AFTER_ARGS=	-s "!^!src/fuchsia.googlesource.com/jiri/!"
+GITHASH=	1eee1043d12d1baabae7f2466cc0b1646395e32c
+TIMESTAMP=	2020-08-28T00:00:00.000000
 PLIST_FILES=	bin/jiri
+USE_GITHUB=	nodefault
+GH_TUPLE=	golang:net:a7b16738d86b:golang_net/vendor/golang.org/x/net \
+		golang:sync:112230192c58:golang_sync/vendor/golang.org/x/sync
 
-GO_PKGNAME=	fuchsia.googlesource.com/jiri
 GO_TARGET=	./cmd/jiri
 GO_BUILDFLAGS=	-ldflags="\
 		-s -w \
