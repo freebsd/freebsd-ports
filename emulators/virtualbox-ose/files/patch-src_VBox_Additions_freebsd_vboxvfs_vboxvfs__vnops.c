@@ -12,7 +12,7 @@
   *
   * This file is part of VirtualBox Open Source Edition (OSE), as
   * available from http://www.virtualbox.org. This file is free software;
-@@ -14,228 +10,1343 @@
+@@ -14,228 +10,1347 @@
   * VirtualBox OSE distribution. VirtualBox OSE is distributed in the
   * hope that it will be useful, but WITHOUT ANY WARRANTY of any kind.
   */
@@ -272,7 +272,11 @@
 +			goto loop1;
 +		}
 +		VBOXFS_NODE_UNLOCK(node);
++#if __FreeBSD_version < 1300109
 +		error = vget(vp, lkflag | LK_INTERLOCK, curthread);
++#else
++		error = vget(vp, lkflag | LK_INTERLOCK);
++#endif
 +		if (error == ENOENT)
 +			goto loop;
 +		if (error != 0) {
