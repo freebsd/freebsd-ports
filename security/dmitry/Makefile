@@ -16,6 +16,11 @@ CONFIGURE_ARGS=	--prefix=${PREFIX}
 PLIST_FILES=	bin/dmitry man/man1/dmitry.1.gz
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README
 
+CFLAGS+=		-fcommon
+
+EXPIRATION_DATE=	2020-09-30
+DEPRECATED=		Unmaintained and dead upstream
+
 OPTIONS_DEFINE=	DOCS
 
 post-install:
