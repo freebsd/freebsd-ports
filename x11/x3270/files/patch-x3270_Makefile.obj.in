@@ -1,0 +1,11 @@
+--- x3270/Makefile.obj.in.orig	2020-08-28 17:21:58 UTC
++++ x3270/Makefile.obj.in
+@@ -107,7 +107,7 @@ install:: x3270
+ install:: x3270a
+ 	[ -d $(DESTDIR)$(BINDIR) ] || \
+ 		mkdir -p $(DESTDIR)$(BINDIR)
+-	$(INSTALL_PROGRAM) x3270a $(DESTDIR)$(BINDIR)/x3270a
++	$(INSTALL) x3270a $(DESTDIR)$(BINDIR)/x3270a
+ install:: ibm_hosts
+ 	[ -d $(DESTDIR)$(LIBX3270DIR) ] || \
+ 		mkdir -p $(DESTDIR)$(LIBX3270DIR)

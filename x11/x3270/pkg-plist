@@ -1,8 +1,10 @@
+bin/b3270
 bin/c3270
 bin/pr3287
 bin/s3270
 bin/tcl3270
 bin/x3270
+bin/x3270a
 bin/x3270if
 etc/x3270/ibm_hosts
 %%FONTSDIR%%/3270-12.pcf.gz
@@ -23,6 +25,11 @@ etc/x3270/ibm_hosts
 %%FONTSDIR%%/3270gt8.pcf.gz
 %%FONTSDIR%%/3270h.pcf.gz
 @comment %%FONTSDIR%%/fonts.dir
+man/man1/b3270.man.gz
+man/man1/c3270.man.gz
+man/man1/pr3287.man.gz
+man/man1/s3270.man.gz
+man/man1/tcl3270.man.gz
 man/man1/x3270-script.man.gz
 man/man1/x3270.man.gz
 man/man1/x3270if.man.gz
