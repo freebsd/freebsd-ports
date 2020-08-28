@@ -1,6 +1,6 @@
---- paper.h.orig	1995-11-23 02:56:27.000000000 -0500
-+++ paper.h	2013-06-12 16:57:50.000000000 -0400
-@@ -5,7 +5,7 @@
+--- paper.h.orig	1995-11-23 07:56:27 UTC
++++ paper.h
+@@ -5,7 +5,7 @@ typedef struct { char name[12];
     add other paper types like b4 and b5  before the last entry 'user' here 
     and their dimensions to the array  'papersize' in paper.c */
  typedef enum {a3,a4,a5,b4,b5,letter,t10x14,legal,executive,
@@ -9,7 +9,7 @@
  
  /* mnemonics for length unit  
     add other unit such as pica  and conversion factor to standard
-@@ -54,8 +54,8 @@
+@@ -54,8 +54,8 @@ extern void setmargin();
  #define ABS_MIN_LM 18  /* depends on printer */ 
  
  

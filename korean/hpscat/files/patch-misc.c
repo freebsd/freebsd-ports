@@ -1,5 +1,5 @@
---- misc.c.orig	1995-11-23 15:40:07.000000000 -0500
-+++ misc.c	2013-06-12 18:43:01.000000000 -0400
+--- misc.c.orig	1995-11-23 20:40:07 UTC
++++ misc.c
 @@ -2,8 +2,8 @@
  #include "hpscat.h"
  #include "paper.h"
@@ -11,7 +11,7 @@
  char  *tmpfn;
  
  void
-@@ -36,6 +36,7 @@
+@@ -36,6 +36,7 @@ convert(s)
  #endif
        case Nbyte: strcpy(args[1], fromN); break;
        case ISO:   strcpy(args[1], fromI); break;

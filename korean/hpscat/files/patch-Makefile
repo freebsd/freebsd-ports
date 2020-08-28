@@ -1,6 +1,6 @@
---- Makefile.orig	Wed Nov 22 07:42:41 1995
-+++ Makefile	Sat Mar 30 19:22:22 2002
-@@ -11,10 +11,12 @@
+--- Makefile.orig	1995-11-22 15:42:41 UTC
++++ Makefile
+@@ -11,10 +11,12 @@ DHPS =
  DADVHF = -DADV_HFONT
  #DADVHF = 
  # define if you want to make the default paper size US letter instead of A4
