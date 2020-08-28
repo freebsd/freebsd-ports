@@ -18,4 +18,9 @@ CONFIGURE_ARGS=	--datadir=${PREFIX}/share/cpu --with-ldap=${LOCALBASE}
 INSTALL_TARGET=	install-strip
 CPPFLAGS+=	-DLDAP_DEPRECATED
 
+CFLAGS+=		-fcommon
+
+EXPIRATION_DATE=	2020-09-30
+DEPRECATED=		Unmaintained and dead upstream
+
 .include <bsd.port.mk>
