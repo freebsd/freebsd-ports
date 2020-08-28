@@ -14,6 +14,9 @@ USES=		mysql
 MAKE_ENV+=	MYSQL_INC=${LOCALBASE}/include/mysql \
 		MYSQL_LIB=${LOCALBASE}/lib/mysql
 
+# Fix build with clang11
+CFLAGS+=	-fcommon
+
 post-patch:
 	@${REINPLACE_CMD} -e "s|CFLAGS=|CFLAGS+=|g" \
 			-e "s|^MYSQL_INC=|MYSQL_INC?=|" \
