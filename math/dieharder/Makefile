@@ -23,6 +23,9 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 
+# Fix build with clang11
+CFLAGS+=	-fcommon
+
 check test: build
 	${WRKSRC}/dieharder/dieharder -a
 
