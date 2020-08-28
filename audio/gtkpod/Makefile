@@ -51,6 +51,12 @@ post-patch:
 # Fix location of the <endian.h> header
 	@${REINPLACE_CMD} -e 's|endian\.h|sys/&|' ${WRKSRC}/configure \
 		${WRKSRC}/src/mp4file.c
+# Fix the build with -fno-common (for Clang 11 and GCC 10)
+	@${REINPLACE_CMD} -e '/main_window_xml/s|^|extern |' \
+		${WRKSRC}/src/display.h
+	@${REINPLACE_CMD} -e '51s|^|GladeXML *main_window_xml;|' \
+		${WRKSRC}/src/display.c
+	@${REINPLACE_CMD} -e 's|} CONF_ID|}|' ${WRKSRC}/src/confirmation.h
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
