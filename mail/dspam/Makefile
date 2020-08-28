@@ -81,6 +81,9 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+# Dead upstream. Don't expect a proper fix for clang11.
+CFLAGS+=	-fcommon
+
 SHEBANG_FILES=	src/tools/dspam_logrotate \
 		src/tools/dspam_notify.in \
 		src/tools/dspam_train.in \
