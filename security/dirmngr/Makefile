@@ -27,6 +27,7 @@ INFO=		dirmngr
 
 CONFIGURE_ARGS+=	--docdir=${DOCSDIR}
 LDFLAGS+=	-L${LOCALBASE}/lib
+CFLAGS+=	-fcommon
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
