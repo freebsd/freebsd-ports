@@ -5,6 +5,9 @@ PORTNAME=	csound
 DISTVERSION=	6.14.0
 CATEGORIES=	audio lang
 
+PATCH_SITES=	https://github.com/csound/csound/commit/
+PATCHFILES=	c444e8f752c3acc31d364b901204e09eae2e791e.patch:-p1
+
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Sound synthesizer
 
