@@ -30,6 +30,9 @@ USE_GNOME=	gconf2 intltool libxslt
 USE_XORG=	ice sm x11 xcomposite xdamage xext xfixes xinerama xorgproto xrandr xrender
 USE_LDCONFIG=	yes
 
+# Fix build with clang11
+CFLAGS+=	-fcommon
+
 GCONF_SCHEMAS=	compiz-animation.schemas \
 		compiz-colorfilter.schemas \
 		compiz-expo.schemas \
