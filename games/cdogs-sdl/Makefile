@@ -15,4 +15,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	cxong
 CMAKE_ARGS=	-DCDOGS_DATA_DIR=${DATADIR}/
 
+# Fix with clang11
+CFLAGS+=	-fcommon
+
 .include <bsd.port.mk>
