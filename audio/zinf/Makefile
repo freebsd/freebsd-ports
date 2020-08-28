@@ -36,6 +36,10 @@ INSTALL_TARGET=	install-strip
 VORBIS_CONFIGURE_OFF=	--disable-vorbis
 VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis
 
+BROKEN=		Does not build with llvm 11
+DEPRECATED=	Does not build, no upstream
+EXPIRATION_DATE=2020-09-30
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
