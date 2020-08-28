@@ -22,6 +22,8 @@ USE_XORG=	x11 xext
 USE_GNOME=	gtk20 gdkpixbuf2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-x --enable-shared
+# Fix build with clang11
+CFLAGS+=	-fcommon
 
 PLIST_SUB=	DCL_VERSION=${PORTVERSION:S/.//g}
 
