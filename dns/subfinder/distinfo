@@ -1,6 +1,6 @@
-TIMESTAMP = 1597893893
-SHA256 (projectdiscovery-subfinder-v2.4.1_GH0.tar.gz) = bb5cee73d754cb92729eb4c446fd6cda87b4709e4e32996f5eedae7cb1967dfc
-SIZE (projectdiscovery-subfinder-v2.4.1_GH0.tar.gz) = 1067370
+TIMESTAMP = 1598646211
+SHA256 (projectdiscovery-subfinder-v2.4.3_GH0.tar.gz) = 6314065e39ae4e80ec2aaac21fa0bcbb4283ee624cd8051ebdc61fee8d0df650
+SIZE (projectdiscovery-subfinder-v2.4.3_GH0.tar.gz) = 1067912
 SHA256 (alexbrainman-sspi-e580b900e9f5_GH0.tar.gz) = 9cbbbb19669ec85f0a569d5272fce01dad7fc579b367dc5f7430f64b7310ac4b
 SIZE (alexbrainman-sspi-e580b900e9f5_GH0.tar.gz) = 19600
 SHA256 (davecgh-go-spew-v1.1.1_GH0.tar.gz) = 7d82b9bb7291adbe7498fe946920ab3e7fc9e6cbfc3b2294693fad00bf0dd17e
