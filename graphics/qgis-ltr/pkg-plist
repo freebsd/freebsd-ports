@@ -362,6 +362,7 @@ include/qgis/qgsfilterlineedit.h
 include/qgis/qgsfilterlineeditplugin.h
 include/qgis/qgsfindfilesbypatternwidget.h
 include/qgis/qgsfloatingwidget.h
+include/qgis/qgsfocuskeeper.h
 include/qgis/qgsfocuswatcher.h
 include/qgis/qgsfontbutton.h
 include/qgis/qgsfontbuttonplugin.h
@@ -1352,7 +1353,6 @@ share/metainfo/org.qgis.qgis.appdata.xml
 %%DATADIR%%/doc/CONTRIBUTORS
 %%DATADIR%%/doc/DONORS
 %%DATADIR%%/doc/INSTALL
-%%DATADIR%%/doc/INSTALL.html
 %%DATADIR%%/doc/LICENSE
 %%DATADIR%%/doc/SPONSORS
 %%DATADIR%%/doc/TRANSLATORS
@@ -1395,7 +1395,6 @@ share/metainfo/org.qgis.qgis.appdata.xml
 %%DATADIR%%/doc/images/projects/thumbnails/f6379f3083e612fd47917e1f948d795b6951dde9.png.200x100_q85.png
 %%DATADIR%%/doc/images/qgis-icon-60x60.png
 %%DATADIR%%/doc/index.html
-%%DATADIR%%/doc/news
 %%DATADIR%%/doc/news.html
 %%DATADIR%%/doc/nohelp.html
 %%DATADIR%%/doc/style.css
@@ -5134,6 +5133,7 @@ share/metainfo/org.qgis.qgis.appdata.xml
 %%DATADIR%%/resources/themes/Blend of Gray/icons/handle-vertical.svg
 %%DATADIR%%/resources/themes/Blend of Gray/icons/qcheckbox-checked-disabled.svg
 %%DATADIR%%/resources/themes/Blend of Gray/icons/qcheckbox-checked.svg
+%%DATADIR%%/resources/themes/Blend of Gray/icons/qcheckbox-intermediary.svg
 %%DATADIR%%/resources/themes/Blend of Gray/icons/qcheckbox-unchecked-disabled.svg
 %%DATADIR%%/resources/themes/Blend of Gray/icons/qcheckbox-unchecked.svg
 %%DATADIR%%/resources/themes/Blend of Gray/icons/qradiobox-checked-disabled.svg
@@ -5157,6 +5157,7 @@ share/metainfo/org.qgis.qgis.appdata.xml
 %%DATADIR%%/resources/themes/Night Mapping/icons/handle-vertical.svg
 %%DATADIR%%/resources/themes/Night Mapping/icons/qcheckbox-checked-disabled.svg
 %%DATADIR%%/resources/themes/Night Mapping/icons/qcheckbox-checked.svg
+%%DATADIR%%/resources/themes/Night Mapping/icons/qcheckbox-intermediary.svg
 %%DATADIR%%/resources/themes/Night Mapping/icons/qcheckbox-unchecked-disabled.svg
 %%DATADIR%%/resources/themes/Night Mapping/icons/qcheckbox-unchecked.svg
 %%DATADIR%%/resources/themes/Night Mapping/icons/qradiobox-checked-disabled.svg
