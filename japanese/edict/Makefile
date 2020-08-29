@@ -47,6 +47,9 @@ DOCSDIR=	${PREFIX}/share/doc/xjdic
 
 NO_WRKSUBDIR=	yes
 
+# Fix build with clang11
+CFLAGS+=	-fcommon
+
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
