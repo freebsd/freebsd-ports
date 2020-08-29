@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	libtorrent-rasterbar
-DISTVERSIONPREFIX=	libtorrent-
 DISTVERSION=	1.2.8
 PORTREVISION=	1
 CATEGORIES=	net-p2p
+MASTER_SITES=	https://github.com/arvidn/libtorrent/releases/download/libtorrent-${DISTVERSION}/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ library implementing a BitTorrent client
@@ -17,13 +17,11 @@ LIB_DEPENDS=	libboost_chrono.so:devel/boost-libs \
 		libboost_random.so:devel/boost-libs \
 		libboost_system.so:devel/boost-libs
 
-USES=		cmake iconv:wchar_t libtool pathfix pkgconfig python:test shebangfix ssl # compiler:c++14-lang
-LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
+USES=		cmake iconv:wchar_t libtool localbase:ldflags pathfix pkgconfig python:test shebangfix ssl
 SHEBANG_FILES=	test/socks.py test/web_server.py
-USE_GITHUB=	yes
-GH_ACCOUNT=	arvidn
-GH_PROJECT=	libtorrent
 USE_LDCONFIG=	yes
+
+LDFLAGS+=	${ICONV_LIB}
 
 SHLIB_VER=	10
 PLIST_SUB+=	SHLIB_VER="${SHLIB_VER}"
@@ -56,9 +54,7 @@ USES+=		compiler:c++11-lang
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local/include|${PREFIX}/include|' \
-		${WRKSRC}/Jamfile
-	@${REINPLACE_CMD} -e 's|return "python";|return "${PYTHON_CMD}";|' \
+	@${REINPLACE_CMD} -e 's|return "python3";|return "${PYTHON_CMD}";|' \
 		${WRKSRC}/test/setup_transfer.cpp
 
 post-install:
