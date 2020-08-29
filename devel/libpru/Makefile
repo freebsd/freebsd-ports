@@ -13,6 +13,9 @@ LICENSE=	BSD2CLAUSE
 IGNORE_DragonFly=	only supported on FreeBSD
 USES=		cmake compiler
 
+EXPIRATION_DATE=	2020-09-30
+DEPRECATED=		Unfetchable
+
 WRKSRC=		${WRKDIR}/rpaulo-libpru-5a74157b82b8
 
 .include <bsd.port.pre.mk>
