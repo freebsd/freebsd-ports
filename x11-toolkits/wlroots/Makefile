@@ -57,6 +57,7 @@ LIBSEAT_DESC=		DRM sessions with/without root via libseat (experimental)
 LIBSEAT_PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/:libseat
 LIBSEAT_PATCHFILES=	bad1e9afa8ea.patch:-p1:libseat # https://github.com/swaywm/wlroots/pull/2364
 LIBSEAT_PATCHFILES+=	330c50b48dfe.patch:-p1:libseat # https://github.com/swaywm/wlroots/pull/2379
+LIBSEAT_PATCHFILES+=	4a85ae24c7df.patch:-p1:libseat # https://github.com/swaywm/wlroots/pull/2383
 LIBSEAT_LIB_DEPENDS=	libseat.so:sysutils/seatd
 LIBSEAT_MESON_ENABLED=	libseat
 .if make(makesum)

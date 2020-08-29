@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	seatd
-DISTVERSION=	0.1.0
+DISTVERSION=	0.2.0
 CATEGORIES=	sysutils
 MASTER_SITES=	https://git.sr.ht/~kennylevinsen/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
