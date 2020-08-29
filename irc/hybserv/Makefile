@@ -18,6 +18,11 @@ GH_PROJECT=	${PORTNAME}2
 USES=		gmake
 GNU_CONFIGURE=	yes
 
+CFLAGS+=		-fcommon
+
+EXPIRATION_DATE=	2020-09-30
+DEPRECATED=		Unmaintained and dead upstream
+
 USERS=		${PORTNAME}
 GROUPS=		${USERS}
 

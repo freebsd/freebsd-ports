@@ -12,6 +12,11 @@ COMMENT=	IRC Client similer to BitchX or ircII
 GNU_CONFIGURE=	yes
 USES=		gmake ncurses pathfix ssl
 
+CFLAGS+=		-fcommon
+
+EXPIRATION_DATE=	2020-09-30
+DEPRECATED=		Unmaintained and dead upstream
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ggdb3||g' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|-lcurses|-lncurses|' ${WRKSRC}/configure
