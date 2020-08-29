@@ -13,6 +13,11 @@ COMMENT=	GTK2 interface to livejournals, ie www.livejournal.com
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libdbus-glib-1.so:devel/dbus-glib
 
+CFLAGS+=		-fcommon
+
+EXPIRATION_DATE=	2020-09-30
+DEPRECATED=		Unmaintained and dead upstream
+
 OPTIONS_DEFINE=	GTKSPELL SQLITE GTKHTML RSVG
 OPTIONS_DEFAULT=	GTKSPELL
 OPTIONS_SUB=	yes
