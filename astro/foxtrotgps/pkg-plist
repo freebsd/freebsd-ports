@@ -50,3 +50,4 @@ share/pixmaps/foxtrotgps-photo.png
 share/pixmaps/foxtrotgps-poi.png
 share/pixmaps/foxtrotgps-wp.png
 share/pixmaps/foxtrotgps.png
+share/GConf/gsettings/org.foxtrotgps.convert

@@ -12,15 +12,6 @@
  
  static gboolean
  cb_gpsd_data(GIOChannel *src, GIOCondition condition, gpointer data)
-@@ -744,7 +749,7 @@ cb_gpsd_data(GIOChannel *src, GIOCondition condition, 
-         if (!libgps_initialized)
-             return FALSE;
- 
--	ret = gps_read(&libgps_gpsdata);
-+	ret = gps_read(&libgps_gpsdata, NULL, 0);
-         /* Note that gps_read() will never actually return 0
-            (zero-length reads are converted internally to a -1 return,
-             since they mean that the connection to the daemon has closed),
 @@ -755,7 +760,7 @@ cb_gpsd_data(GIOChannel *src, GIOCondition condition, 
  	{
  		gpsdata->satellites_used = libgps_gpsdata.satellites_used;
