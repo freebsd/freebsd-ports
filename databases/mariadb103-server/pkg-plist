@@ -50,6 +50,10 @@ bin/resolveip
 %%WSREP%%bin/wsrep_sst_rsync
 %%WSREP%%bin/wsrep_sst_rsync_wan
 @comment data/test/db.opt
+@comment etc/init.d/mysql
+etc/logrotate.d/mysql
+@comment etc/my.cnf
+@sample etc/mysql/user_map.conf.sample
 @comment include/mysql/mariadb_rpl.h
 @comment include/mysql/my_config.h
 @comment include/mysql/my_global.h
@@ -183,6 +187,7 @@ lib/mysql/plugin/ha_test_sql_discovery.so
 lib/mysql/plugin/handlersocket.so
 lib/mysql/plugin/locales.so
 lib/mysql/plugin/metadata_lock_info.so
+lib/mysql/plugin/pam_user_map.so
 lib/mysql/plugin/qa_auth_client.so
 lib/mysql/plugin/qa_auth_interface.so
 lib/mysql/plugin/qa_auth_server.so
@@ -194,6 +199,7 @@ lib/mysql/plugin/sql_errlog.so
 lib/mysql/plugin/test_versioning.so
 %%WSREP%%lib/mysql/plugin/wsrep_info.so
 libexec/mysqld
+@comment libexec/rcmysql
 man/man1/aria_chk.1.gz
 man/man1/aria_dump_log.1.gz
 man/man1/aria_ftdump.1.gz
@@ -244,6 +250,7 @@ man/man8/mysqld.8.gz
 %%DATADIR%%/maria_add_gis_sp.sql
 %%DATADIR%%/maria_add_gis_sp_bootstrap.sql
 %%MROONGA%%%%DATADIR%%/mroonga/AUTHORS
+@comment %%DATADIR%%/mroonga/COPYING
 %%MROONGA%%%%DATADIR%%/mroonga/install.sql
 %%MROONGA%%%%DATADIR%%/mroonga/uninstall.sql
 %%DATADIR%%/mysql-log-rotate
@@ -308,17 +315,12 @@ man/man8/mysqld.8.gz
 %%DATADIR%%/ukrainian/errmsg.sys
 %%WSREP%%%%DATADIR%%/wsrep.cnf
 %%WSREP%%%%DATADIR%%/wsrep_notify
-share/pam_user_map.so
-share/user_map.conf
 @comment %%DOCSDIR%%/COPYING
 @comment %%DOCSDIR%%/COPYING.thirdparty
 @comment share/groonga-normalizer-mysql/lgpl-2.0.txt
 @comment share/groonga/COPYING
-@comment storage/groonga/COPYING
-@comment share/mysql/mroonga/COPYING
 %%MROONGA%%share/groonga-normalizer-mysql/README.md
 %%MROONGA%%share/groonga/README.md
-@comment share/pkgconfig/mariadb.pc
 @comment bin/mariadb_config
 @comment bin/mysql
 @comment bin/mysqladmin

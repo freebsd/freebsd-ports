@@ -41,6 +41,10 @@ include/mysql/mysql/client_plugin.h
 include/mysql/mysql/plugin_auth.h
 include/mysql/mysql/plugin_auth_common.h
 include/mysql/mysqld_error.h
+@comment etc/init.d/mysql
+@comment etc/logrotate.d/mysql
+etc/my.cnf
+@comment libexec/rcmysql
 %%NO_GSSAPI_NONE%%lib/mysql/plugin/auth_gssapi_client.so
 lib/mysql/libmariadb.so
 lib/mysql/libmariadb.so.3
@@ -114,8 +118,6 @@ man/man1/mysqltest_embedded.1.gz
 man/man1/replace.1.gz
 @comment man/man1/resolve_stack_dump.1.gz
 @comment man/man1/resolveip.1.gz
-@comment man/man1/tokuft_logprint.1.gz
-@comment man/man1/tokuftdump.1.gz
 @comment man/man1/wsrep_sst_common.1.gz
 @comment man/man1/wsrep_sst_mariabackup.1.gz
 @comment man/man1/wsrep_sst_mysqldump.1.gz
@@ -123,3 +125,5 @@ man/man1/replace.1.gz
 @comment man/man1/wsrep_sst_rsync_wan.1.gz
 @comment man/man8/mysqld.8.gz
 @comment share/aclocal/mysql.m4
+@dir etc/mysql
+@dir etc/mysql/conf.d
