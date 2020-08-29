@@ -14,7 +14,7 @@ USES=		kmod uidfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hlh-restart
-GH_TAGNAME=	1.0g
+GH_TAGNAME=	1.0h
 
 OPTIONS_DEFINE=	INVERSION
 
