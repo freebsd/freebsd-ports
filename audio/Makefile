@@ -29,6 +29,7 @@
     SUBDIR += aqualung
     SUBDIR += ardour
     SUBDIR += ardour5
+    SUBDIR += ardour6
     SUBDIR += ario
     SUBDIR += arss
     SUBDIR += artyfx-lv2
