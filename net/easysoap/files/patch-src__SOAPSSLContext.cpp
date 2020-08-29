@@ -4,7 +4,7 @@
  
          switch(methodType)
          {
-+#ifndef OPENSSL_NO_SSL2
++#if OPENSSL_VERSION_NUMBER < 0x10100000L && !defined(OPENSSL_NO_SSL2)
          case SOAPSSLContext::SSL_v2:
 -                method = SSLv2_client_method();
 +                method = const_cast<SSL_METHOD*>(SSLv2_client_method());
