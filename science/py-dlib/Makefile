@@ -49,4 +49,12 @@ AVX_VARS_OFF=		avxargs="--no USE_AVX_INSTRUCTIONS"
 
 PYDISTUTILS_BUILDARGS=	--set BOOST_PYTHON_SUFFIX:STRING=${PYTHON_SUFFIX} ${X11ARGS} ${JPEGARGS} ${PNGARGS} ${GIFARGS} ${SQLITEARGS} ${BLASLAPACKARGS} ${AVXARGS} ${BLASLAPACK}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${FLAVOR} == py27
+PLIST_SUB+=		PYTHON2="" PYTHON3="@comment "
+.else
+PLIST_SUB+=		PYTHON2="@comment " PYTHON3=""
+.endif
+
+.include <bsd.port.post.mk>
