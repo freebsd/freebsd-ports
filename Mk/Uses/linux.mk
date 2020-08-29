@@ -84,6 +84,7 @@ _linux_${linux_ARGS}_jpeg=		linux-${linux_ARGS}-jpeg>0:graphics/linux-${linux_AR
 _linux_c7_libaio=			linux-c7-libaio>0:devel/linux-c7-libaio
 _linux_${linux_ARGS}_libasyncns=	linux-${linux_ARGS}-libasyncns>0:dns/linux-${linux_ARGS}-libasyncns
 _linux_c7_libaudiofile=			linux-c7-audiofile>0:audio/linux-c7-audiofile
+_linux_c7_libcroco=			linux-c7-libcroco>0:textproc/linux-c7-libcroco
 _linux_c7_libdrm=			linux-c7-libdrm>0:graphics/linux-c7-libdrm
 _linux_c7_libepoxy=			linux-c7-libepoxy>0:graphics/linux-c7-libepoxy
 _linux_${linux_ARGS}_libgcrypt=		linux-${linux_ARGS}-libgcrypt>0:security/linux-${linux_ARGS}-libgcrypt
