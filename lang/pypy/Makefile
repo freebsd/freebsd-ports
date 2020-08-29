@@ -19,6 +19,9 @@ BROKEN_powerpc64=	fails to compile: platcheck_109.c: fatal error: linux/auxvec.h
 ONLY_FOR_ARCHS?=	amd64 armv6 armv7 i386 powerpc64
 ONLY_FOR_ARCHS_REASON?=	PyPy JIT only supported on these architectures
 
+PATCH_SITES=	https://foss.heptapod.net/pypy/pypy/-/commit/
+PATCHFILES+=	455e1f635110df4bdc2981a3a0abf02e3d4d21b2.diff:-p1
+
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libffi.so:devel/libffi
 TEST_DEPENDS=	${LOCALBASE}/${PYPY_DIR}/lib_pypy/_gdbm_cffi.${PYPY_CFFI_VER}.so:databases/pypy-gdbm \
