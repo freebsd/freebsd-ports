@@ -10,6 +10,8 @@ PKGNAMEPREFIX=	trac-
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Theme that emulates the look of python.org
 
+LICENSE=	BSD
+
 RUN_DEPENDS=	tracd:www/trac \
 		trac-themeengine>=2.0:www/trac-themeengine
 
