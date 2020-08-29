@@ -1,0 +1,17 @@
+--- SCP/makefile.orig	2020-08-23 21:58:56 UTC
++++ SCP/makefile
+@@ -532,10 +532,12 @@ ifneq ($(DONT_USE_READER_THREAD),)
+ endif
+ 
+ 
+-# Shut up annoying clang default warnings.
++# Shut up annoying clang default warnings, and also fix
++# multiply defined symbols on clang 11 and above
+ 
+-ifeq ($(GCC),clang)
++ifeq ($(findstring clang,$(COMPILER_NAME)),clang)
+   OS_CCDEFS += -Wno-parentheses -Wno-bitwise-op-parentheses -Wno-dangling-else
++  CFLAGS_O += -fcommon
+ endif
+ 
+ 
