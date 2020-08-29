@@ -1,0 +1,13 @@
+bin/gav1_decode
+include/gav1/decoder.h
+include/gav1/decoder_buffer.h
+include/gav1/decoder_settings.h
+include/gav1/frame_buffer.h
+include/gav1/status_code.h
+include/gav1/symbol_visibility.h
+include/gav1/version.h
+lib/libgav1.a
+lib/libgav1.so
+lib/libgav1.so.0
+libdata/pkgconfig/libgav1.pc
+share/cmake/libgav1-config.cmake
