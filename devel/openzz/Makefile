@@ -20,6 +20,11 @@ CFLAGS+=	-Wno-return-type
 USES=		libtool readline
 USE_LDCONFIG=	yes
 
+CFLAGS+=		-fcommon
+
+EXPIRATION_DATE=	2020-09-30
+DEPRECATED=		Unmaintained and dead upstream
+
 post-patch:
 	@${REINPLACE_CMD} -e "s/cfree/free/g" ${WRKSRC}/src/list.c
 	@${REINPLACE_CMD} -e "s/argv\[\]/*argv/" ${WRKSRC}/src/zzbind.h
