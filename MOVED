@@ -15405,3 +15405,4 @@ security/py-keystone||2020-08-27|Has expired: Broken for more than 6 months
 sysutils/mono-kmod||2020-08-27|Has expired: mastersite disappeared, unfetchable
 x11-themes/gtk-cleanice-engine||2020-08-27|Has expired: Broken for more than 6 months
 x11-wm/aewm||2020-08-27|Has expired: Broken for more than 6 months
+security/scamp||2020-08-29|Removed at maintainer request, no longer viable
