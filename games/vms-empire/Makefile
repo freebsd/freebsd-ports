@@ -16,6 +16,11 @@ MAKE_ARGS=	LIBS="${LDFLAGS} -lncurses"
 PORTDOCS=	AUTHORS BUGS HACKING NEWS README
 OPTIONS_DEFINE=	DOCS
 
+CFLAGS+=		-fcommon
+
+EXPIRATION_DATE=	2020-09-30
+DEPRECATED=		Unmaintained and outdated
+
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man6/${PORTNAME}.6.gz \
 		share/appdata/${PORTNAME}.xml \
