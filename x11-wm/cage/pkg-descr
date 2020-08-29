@@ -5,4 +5,4 @@ outside the scope of the running application are prevented. That is, a
 kiosk compositor displays a single maximized application at a time and
 prevents the user from interacting with anything but this application.
 
-WWW: https://hjdskes.nl/projects/cage
+WWW: https://www.hjdskes.nl/projects/cage/
