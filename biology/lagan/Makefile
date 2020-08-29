@@ -18,6 +18,11 @@ USE_PERL5=	run
 SHEBANG_FILES=	slagan.pl
 MAKE_JOBS_UNSAFE=yes
 
+CFLAGS+=		-fcommon
+
+EXPIRATION_DATE=	2020-09-30
+DEPRECATED=		Unmaintained and dead upstream
+
 SUB_FILES=	pkg-message
 SUB_LIST=	LAGAN_DIR="${LAGAN_DIR}"
 

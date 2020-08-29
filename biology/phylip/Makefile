@@ -26,6 +26,11 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DUNX" \
 		DLIBS="-L${LOCALBASE}/lib -lX11 -lXaw -lXt -lm"
 USE_LDCONFIG=	yes
 
+CFLAGS+=		-fcommon
+
+EXPIRATION_DATE=	2020-09-30
+DEPRECATED=		Unmaintained and outdated
+
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS

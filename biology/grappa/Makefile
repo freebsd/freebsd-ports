@@ -14,6 +14,11 @@ LICENSE=	GPLv2
 
 USES=		gmake
 
+CFLAGS+=		-fcommon
+
+EXPIRATION_DATE=	2020-09-30
+DEPRECATED=		Unmaintained and dead upstream
+
 PLIST_FILES=	bin/grappa bin/invdist bin/distmat
 
 do-install:
