@@ -15374,7 +15374,7 @@ net-im/py-skype4py||2020-08-15|Has expired: Uses deprecated version of python
 net-im/telepathy-haze||2020-08-15|Has expired: Uses deprecated version of python
 www/halberd||2020-08-15|Has expired: Uses deprecated version of python
 x11-toolkits/py-wxPython28||2020-08-15|Has expired: Uses deprecated version of python
-devel/codeblocks-devel||2020-08-22|Removed
+devel/codeblocks-devel||2020-08-22|Retire: non-devel port was updated to newer version
 net/frr5|net/frr7|2020-08-25|Has expired: Upstream no longer maintained
 textproc/rubygem-kramdown22|textproc/rubygem-kramdown|2020-08-26|Obsolete, please use textproc/rubygem-kramdown instead
 devel/rubygem-health_check26-rails60|devel/rubygem-health_check|2020-08-26|Obsolete, please use devel/rubygem-health_check instead
