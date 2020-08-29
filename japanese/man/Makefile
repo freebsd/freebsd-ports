@@ -27,6 +27,9 @@ MAKE_ENV=	GZCAT=${GZCAT} GZIP_CMD="${GZIP_CMD}"
 USES=		shebangfix
 SHEBANG_FILES=	catman/catman.perl makewhatis/makewhatis.perl
 
+# Fix build with clang11
+CFLAGS+=	-fcommon
+
 post-patch:
 .for file in	apropos/apropos.sh catman/catman.perl \
 		makewhatis/jmakewhatis.local.man \
