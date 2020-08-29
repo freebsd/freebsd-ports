@@ -18,6 +18,11 @@ CONFIGURE_ARGS=	--with-logpath=/var/log \
 		--enable-crypt \
 		--enable-sftp
 
+CFLAGS+=		-fcommon
+
+EXPIRATION_DATE=	2020-09-30
+DEPRECATED=		Unmaintained and dead upstream
+
 OPTIONS_DEFINE=	DOCS
 
 USE_RC_SUBR=	${PORTNAME}

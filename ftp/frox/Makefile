@@ -19,6 +19,11 @@ USES=		gmake tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-configfile=${PREFIX}/etc/frox.conf
 
+CFLAGS+=		-fcommon
+
+EXPIRATION_DATE=	2020-09-30
+DEPRECATED=		Unmaintained and dead upstream
+
 USE_RC_SUBR=	frox
 SUB_FILES=	pkg-message
 

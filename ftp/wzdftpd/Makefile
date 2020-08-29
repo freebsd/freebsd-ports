@@ -19,6 +19,11 @@ CONFIGURE_ARGS=	--sysconfdir=${ETCDIR} --without-pam --disable-bonjour
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
+CFLAGS+=		-fcommon
+
+EXPIRATION_DATE=	2020-09-30
+DEPRECATED=		Unmaintained and dead upstream
+
 USE_RC_SUBR=	wzdftpd
 
 OPTIONS_DEFINE=	AVAHI ICONV IPV6 MYSQL PERL PGSQL SQLITE TCL DOCS

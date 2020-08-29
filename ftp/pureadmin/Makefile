@@ -19,6 +19,11 @@ GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 LIBS+=		-lX11 -lm
 
+CFLAGS+=		-fcommon
+
+EXPIRATION_DATE=	2020-09-30
+DEPRECATED=		Unmaintained and dead upstream
+
 PORTDOCS=	index.txt introduction.txt main_window.txt \
 		preferences.txt user_manager.txt
 

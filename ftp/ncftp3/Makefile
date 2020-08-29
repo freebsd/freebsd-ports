@@ -22,6 +22,11 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	ac_cv_header_ncurses_h=yes
 
+CFLAGS+=		-fcommon
+
+EXPIRATION_DATE=	2020-09-30
+DEPRECATED=		Unmaintained and dead upstream
+
 PORTDOCS=	*
 
 LIBNCFTP=	libncftp.so.3
