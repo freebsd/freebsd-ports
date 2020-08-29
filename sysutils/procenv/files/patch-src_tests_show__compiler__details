@@ -1,0 +1,17 @@
+--- src/tests/show_compiler_details.orig	2019-08-02 20:40:49 UTC
++++ src/tests/show_compiler_details
+@@ -9,8 +9,12 @@ CPP=${CPP:-cpp}
+ LD=${LD:-ld}
+ 
+ # handle strange environments
+-command -v gcpp >/dev/null 2>&1 && CPP=gcpp
+-command -v gcc >/dev/null 2>&1 && CC=gcc
++if ! command -v $CPP; then
++	command -v gcpp && CPP=gcpp
++fi >/dev/null 2>&1
++if ! command -v $CC; then
++	command -v gcc && CC=gcc
++fi >/dev/null 2>&1
+ 
+ echo "XXX:--------------------------------------------------"
+ echo "XXX: $0: preprocessor ('$CPP') version"

@@ -13,7 +13,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	xmlwf:textproc/expat2
 
-USES=		autoreconf gmake perl5
+#USES=		autoreconf gmake perl5
+USES=		autoreconf perl5
 USE_PERL5=	build
 
 USE_GITHUB=	yes
@@ -30,7 +31,6 @@ OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^PKG_/d' ${WRKSRC}/configure.ac
-	@${REINPLACE_CMD} -e 's|sys/capability.h|sys/capsicum.h|' ${WRKSRC}/src/platform-headers.h ${WRKSRC}/src/platform/freebsd/platform-freebsd.h
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
