@@ -14,6 +14,11 @@ USES=		gnome pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 
+CFLAGS+=		-fcommon
+
+EXPIRATION_DATE=	2020-09-30
+DEPRECATED=		Unmaintained and dead upstream
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CFLAGS=|#CFLAGS=|g' ${WRKSRC}/configure
 
