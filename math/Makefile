@@ -934,6 +934,7 @@
     SUBDIR += tvmet
     SUBDIR += ump
     SUBDIR += units
+    SUBDIR += universal
     SUBDIR += unuran
     SUBDIR += vampire
     SUBDIR += viennacl

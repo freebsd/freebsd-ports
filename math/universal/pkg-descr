@@ -1,0 +1,16 @@
+The goal of Universal Numbers, or unums, is to replace IEEE floating-point with
+a number system that is more efficient and mathematically consistent in
+concurrent execution environments.
+
+The motivation to replace IEEE floating-point had been brewing in the HPC
+community since the late 90's as most algorithms became memory bound. The
+inefficiency of IEEE floating-point has been measured and agreed upon, but it
+was the AI Deep Learning community that moved first and replaced IEEE with
+number systems that are tailored to the application to yield speed-ups of two
+to three orders of magnitude.
+
+The Universal library is a ready-to-use header-only library that provides
+plug-in replacement for native types, and provides a low-friction environment
+to start exploring alternatives to IEEE floating-point in your own algorithms.
+
+WWW: https://github.com/stillwater-sc/universal
