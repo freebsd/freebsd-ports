@@ -19,6 +19,11 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-sound
 MAKE_ARGS+=	INSTALL_PREFIX="${STAGEDIR}${PREFIX}/etc"
 
+CFLAGS+=		-fcommon
+
+EXPIRATION_DATE=	2020-09-30
+DEPRECATED=		Unmaintained and dead upstream
+
 PORTDOCS=	readme.html AUTHORS README
 PORTEXAMPLES=	*
 
