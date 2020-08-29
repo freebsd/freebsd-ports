@@ -1,0 +1,11 @@
+--- sources/PL/src/Makefile.FreeBSD.orig	2020-08-29 08:59:42 UTC
++++ sources/PL/src/Makefile.FreeBSD
+@@ -12,7 +12,7 @@ CC ?= gcc
+ 
+ # Options to CC
+ 
+-CFLAGS = -ansi                       \
++CFLAGS += -ansi                       \
+          -Wall                       \
+          -pedantic                   \
+          -ffloat-store               \

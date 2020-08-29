@@ -21,12 +21,18 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils
 WRKSRC=		${WRKDIR}/Varkon_${PORTVERSION}
 BUILD_WRKSRC=	${WRKSRC}/sources
 
-USES=		gl gmake xorg
+USES=		dos2unix gl gmake xorg
 USE_XORG=	xpm
 USE_GL=		glu
 MAKE_ENV=	PLATFORM=FreeBSD
 ALL_TARGET=	# none
 MAKE_JOBS_UNSAFE=	yes
+DOS2UNIX_FILES=	sources/PL/src/Makefile.FreeBSD
+
+CFLAGS+=		-fcommon
+
+EXPIRATION_DATE=	2020-09-30
+DEPRECATED=		Unmaintained and dead upstream
 
 VARKON_PREFIX=	${PREFIX}/lib/${PORTNAME}
 
