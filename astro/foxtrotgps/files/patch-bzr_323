@@ -1,0 +1,30 @@
+Obtained from:
+	https://bazaar.launchpad.net/~foxtrotgps-team/foxtrotgps/trunk/revision/323
+
+=== modified file 'src/callbacks.c'
+--- src/callbacks.c	2020-01-15 05:46:18 +0000
++++ src/callbacks.c	2020-01-25 00:00:46 +0000
+@@ -46,7 +46,7 @@
+ static gboolean maximized = FALSE;
+ 
+ 
+-GtkWidget *dialog10 = NULL;
++static GtkWidget *dialog10 = NULL;
+ 
+ 
+ static int local_x = 0;
+
+=== modified file 'src/tracks.c'
+--- src/tracks.c	2019-02-26 00:59:58 +0000
++++ src/tracks.c	2020-01-25 00:00:46 +0000
+@@ -30,7 +30,7 @@
+ 
+ GSList *loaded_track = NULL;
+ GtkWidget *window12;
+-GtkWidget *dialog10;
++static GtkWidget *dialog10;
+ 
+ 
+ 
+
+
