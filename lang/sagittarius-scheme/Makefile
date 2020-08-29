@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sagittarius
-PORTVERSION=	0.9.6
-PORTREVISION=	1
+PORTVERSION=	0.9.7
 CATEGORIES=	lang
 MASTER_SITES=	https://bitbucket.org/ktakashi/sagittarius-scheme/downloads/ \
 		LOCAL/ashish
