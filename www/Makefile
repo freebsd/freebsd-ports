@@ -173,6 +173,7 @@
     SUBDIR += fusionpbx
     SUBDIR += g-cows
     SUBDIR += g-gcl
+    SUBDIR += gallery-dl
     SUBDIR += gallery2
     SUBDIR += gatling
     SUBDIR += gauche-makiki
