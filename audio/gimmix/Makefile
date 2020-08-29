@@ -21,6 +21,11 @@ USE_GNOME=	gtk20 intltool libglade2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	DATADIRNAME=share
 
+CFLAGS+=		-fcommon
+
+EXPIRATION_DATE=	2020-09-30
+DEPRECATED=		Unmaintained and dead upstream
+
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 

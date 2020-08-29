@@ -23,6 +23,11 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--program-suffix=-tag-editor
 SHEBANG_FILES=	data/edit.pl
 
+CFLAGS+=		-fcommon
+
+EXPIRATION_DATE=	2020-09-30
+DEPRECATED=		Unmaintained and dead upstream
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/pixmaps|${PREFIX}/share/pixmaps|' \
 		${WRKSRC}/data/musicbox.glade

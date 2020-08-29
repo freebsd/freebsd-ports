@@ -24,6 +24,11 @@ EXTRACT_AFTER_ARGS=	--exclude CVS
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+CFLAGS+=		-fcommon
+
+EXPIRATION_DATE=	2020-09-30
+DEPRECATED=		Unmaintained and dead upstream
+
 OPTIONS_DEFINE=	DOCS
 
 post-patch:

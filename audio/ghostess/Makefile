@@ -27,6 +27,11 @@ USES=		gmake gnome pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-jackmidi
 
+CFLAGS+=		-fcommon
+
+EXPIRATION_DATE=	2020-09-30
+DEPRECATED=		Unmaintained and dead upstream
+
 PLIST_FILES=	bin/ghostess bin/ghostess_universal_gui man/man1/ghostess.1.gz
 
 CPPFLAGS+=	-I${LOCALBASE}/include

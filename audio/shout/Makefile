@@ -14,4 +14,9 @@ COMMENT=	Send mp3 streams to an icecast/shoutcast server
 
 GNU_CONFIGURE=	yes
 
+CFLAGS+=		-fcommon
+
+EXPIRATION_DATE=	2020-09-30
+DEPRECATED=		Unmaintained and dead upstream
+
 .include <bsd.port.mk>

@@ -16,6 +16,11 @@ USE_XORG=	xpm x11 xext
 MAKE_ARGS=	LIBS="-L${LOCALBASE}/lib -lXpm -lX11 -lXext" \
 		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" LIBDIR=""
 
+CFLAGS+=		-fcommon
+
+EXPIRATION_DATE=	2020-09-30
+DEPRECATED=		Unmaintained and dead upstream
+
 PLIST_FILES=	bin/wmrecord man/man1/wmrecord.1.gz
 
 do-install:

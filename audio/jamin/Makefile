@@ -22,6 +22,11 @@ USES=		desktop-file-utils gmake gnome libtool pkgconfig \
 		shared-mime-info
 USE_GNOME=	gtk20 intltool libxml2
 
+CFLAGS+=		-fcommon
+
+EXPIRATION_DATE=	2020-09-30
+DEPRECATED=		Unmaintained and dead upstream
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/ladspa/jamincont_1912.so
 

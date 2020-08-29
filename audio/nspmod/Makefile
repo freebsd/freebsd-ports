@@ -9,6 +9,11 @@ MASTER_SITES=	SUNSITE/apps/sound/players
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MOD/S3M/MTM tracker that does its own DSP, uses VoxWare v2.90+
 
+CFLAGS+=		-fcommon
+
+EXPIRATION_DATE=	2020-09-30
+DEPRECATED=		Unmaintained and dead upstream
+
 PLIST_FILES=	bin/nspmod man/man1/nspmod.1.gz
 
 do-install:
