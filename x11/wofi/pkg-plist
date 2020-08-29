@@ -11,6 +11,7 @@ man/man3/wofi-api.3.gz
 man/man3/wofi-config.3.gz
 man/man3/wofi-map.3.gz
 man/man3/wofi-utils.3.gz
+man/man3/wofi-widget-builder.3.gz
 man/man3/wofi.3.gz
 man/man5/wofi.5.gz
 man/man7/wofi-keys.7.gz
