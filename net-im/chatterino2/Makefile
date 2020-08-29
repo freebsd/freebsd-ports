@@ -14,7 +14,7 @@ BUILD_DEPENDS=	rapidjson>0:devel/rapidjson
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libqt5keychain.so:security/qtkeychain
 
-USES=		gl pkgconfig qmake qt:5 ssl
+USES=		compiler:c++17-lang gl pkgconfig qmake qt:5 ssl
 USE_QT=		concurrent core gui multimedia network svg widgets \
 		buildtools_build qmake_build
 USE_GL=		gl
