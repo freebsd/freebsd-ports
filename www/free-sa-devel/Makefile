@@ -39,6 +39,9 @@ MAKE_ARGS+=	PREFIX="${PREFIX}" \
 		MANDIR="${MANPREFIX}/man" \
 		STAGEDIR="${STAGEDIR}"
 
+# Fix build with clang11. Upstream seems dead, so don't expect a proper fix.
+CFLAGS+=	-fcommon
+
 OPTIONS_DEFINE=		OPTIMIZED_CFLAGS SA_DEBUG DOCS
 OPTIMIZED_CFLAGS_DESC=	Build with distribution-recommended CFLAGS
 SA_DEBUG_DESC=		Enable Free-SA debugging (level 1)
