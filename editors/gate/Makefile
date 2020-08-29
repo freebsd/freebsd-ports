@@ -19,6 +19,11 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-aspell=${LOCALBASE}/bin/aspell
 ALL_TARGET=	gate gate.1
 
+CFLAGS+=		-fcommon
+
+EXPIRATION_DATE=	2020-09-30
+DEPRECATED=		Unmaintained and dead upstream
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|$${res_datadir}|${DATADIR}|g' ${WRKSRC}/configure

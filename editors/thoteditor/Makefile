@@ -24,6 +24,11 @@ ALL_TARGET=	all schemas
 SUB_FILES=	thoteditor
 MAKE_JOBS_UNSAFE=	yes
 
+CFLAGS+=		-fcommon
+
+EXPIRATION_DATE=	2020-09-30
+DEPRECATED=		Unmaintained and dead upstream
+
 post-extract:
 	@${MKDIR} ${WRKSRC}
 
