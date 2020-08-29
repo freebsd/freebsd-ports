@@ -1,5 +1,3 @@
-TIMESTAMP = 1534918489
-SHA256 (gmt-4.5.18-src.tar.bz2) = 27c30b516c317fed8e44efa84a0262f866521d80cfe76a61bf12952efb522b63
-SIZE (gmt-4.5.18-src.tar.bz2) = 39791396
-SHA256 (gshhg-gmt-2.3.7.tar.gz) = 9bb1a956fca0718c083bef842e625797535a00ce81f175df08b042c2a92cfe7f
-SIZE (gshhg-gmt-2.3.7.tar.gz) = 57052180
+TIMESTAMP = 1598698714
+SHA256 (GenericMappingTools-gmt-6.1.0_GH0.tar.gz) = f76ad7f444d407dfd7e5762644eec3a719c6aeb06d877bf746fe51abd79b1a9e
+SIZE (GenericMappingTools-gmt-6.1.0_GH0.tar.gz) = 82793190
