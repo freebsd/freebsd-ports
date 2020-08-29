@@ -1,3 +1,5 @@
-TIMESTAMP = 1595926980
+TIMESTAMP = 1598684578
 SHA256 (pgpointcloud-pointcloud-v1.2.1_GH0.tar.gz) = 90742b6f5f9164e273afbb3d0f93335f44d202a8c2df3ff71769de6471d1e427
 SIZE (pgpointcloud-pointcloud-v1.2.1_GH0.tar.gz) = 317926
+SHA256 (270f3e112519.patch) = 81e4252ee94184f7572ee0a3c14d5fffe9104dd5c00b5628661ecbf5f4c79ec1
+SIZE (270f3e112519.patch) = 1571

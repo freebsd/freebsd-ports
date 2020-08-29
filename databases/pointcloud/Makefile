@@ -6,6 +6,9 @@ PORTVERSION=	1.2.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases geography
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	270f3e112519.patch:-p1
+
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	LIDAR types for PostgreSQL
 
@@ -23,5 +26,8 @@ CONFIGURE_ARGS+=	--with-lazperf=${LOCALBASE}
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	pgpointcloud
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${LOCALBASE}/lib/postgresql/pointcloud-${PORTVERSION:R}.so
 
 .include <bsd.port.mk>
