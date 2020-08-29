@@ -26,6 +26,8 @@ PORTDOCS=	*
 SHEBANG_FILES=	utils/conv_codes_gsm.py utils/conv_gen.py
 python_OLD_CMD=	/usr/bin/python2
 
+CFLAGS+=	-fcommon
+
 OPTIONS_DEFINE=	DOCS DOXYGEN
 
 DOXYGEN_IMPLIES=		DOCS
