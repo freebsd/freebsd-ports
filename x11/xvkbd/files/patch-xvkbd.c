@@ -7,9 +7,9 @@ Forwarded: no
 Author: Peter Pentchev <roam@FreeBSD.org>
 Last-Update: 2015-05-07
 
---- xvkbd.c.orig	2018-02-25 00:55:33 UTC
+--- xvkbd.c.orig	2020-05-04 04:34:19 UTC
 +++ xvkbd.c
-@@ -470,8 +470,8 @@ static int altgr_mask = 0;
+@@ -492,8 +492,8 @@ static int altgr_mask = 0;
  static int level3_shift_mask = 0;
  static KeySym altgr_keysym = NoSymbol;
  
@@ -20,16 +20,7 @@ Last-Update: 2015-05-07
  
  static Display *target_dpy = NULL;
  
-@@ -482,7 +482,7 @@ static Window focused_subwindow = None;
- static Pixmap xvkbd_pixmap = None;
- 
- static int AddKeysym(KeySym keysym, Boolean top);  /* forward */
--static void SendString(const unsigned char *str);
-+static void SendString(const char *str);
- static void MakeKeyboard(Boolean remake);
- static void MakeKeypad(Widget form, Widget from_vert, Widget from_horiz);
- static void MakeSunFunctionKey(Widget form, Widget from_vert, Widget from_horiz);
-@@ -492,6 +492,8 @@ static void PopupFunctionKeyEditor(void)
+@@ -513,6 +513,8 @@ static void PopupFunctionKeyEditor(void);
  static void DeleteWindowProc(Widget w, XEvent *event, String *pars, Cardinal *n_pars);
  static void SaveProperty(void);
  
@@ -38,7 +29,7 @@ Last-Update: 2015-05-07
  /*
   * Search for window which has specified instance name (WM_NAME)
   * or class name (WM_CLASS).
-@@ -500,8 +502,7 @@ static Window FindWindow(Window top, cha
+@@ -521,8 +523,7 @@ static Window FindWindow(Window top, char *name)
  {
    Window w;
    Window *children, dummy;
@@ -48,7 +39,7 @@ Last-Update: 2015-05-07
    XClassHint hint;
    char *win_name;
  
-@@ -824,7 +825,9 @@ static int MyErrorHandler(Display *my_dp
+@@ -846,7 +847,9 @@ static int MyErrorHandler(Display *my_dpy, XErrorEvent
   */
  static void SendEvent(XKeyEvent *event)
  {
@@ -58,7 +49,7 @@ Last-Update: 2015-05-07
  
    if (!appres.no_sync) {
      XSync(event->display, FALSE);
-@@ -1136,11 +1139,11 @@ static void SendKeyPressedEvent(KeySym k
+@@ -1157,11 +1160,11 @@ static void SendKeyPressedEvent(KeySym keysym, unsigne
  
  #ifdef USE_XTEST
    if (appres.xtest && press_release == 0) {
@@ -72,16 +63,16 @@ Last-Update: 2015-05-07
  
      event.type = KeyRelease;
      event.state = 0;
-@@ -1332,7 +1335,7 @@ static int n_word_list = 0;
+@@ -1377,7 +1380,7 @@ static	XtIntervalId save_private_dict_timer_id = (XtIn
  
  static void SetDefaultDictionary(void)
  {
--  strncpy(dict_filename, appres.dict_file, sizeof(dict_filename));
+-  strncpy(dict_filename, appres.dict_file, sizeof(dict_filename) - 1);
 +  snprintf(dict_filename, sizeof(dict_filename), "%s", appres.dict_file);
    XtVaSetValues(props_dict_entry, XtNstring, dict_filename, NULL);
  }
  
-@@ -1347,7 +1350,7 @@ static void ReadCompletionDictionary(voi
+@@ -1394,7 +1397,7 @@ static void ReadCompletionDictionary(void)
    struct WORDLIST *p;
  
    if (strcmp(cur_dict_filename, dict_filename) == 0) return;
@@ -90,40 +81,25 @@ Last-Update: 2015-05-07
  
    if (!first) {
      int cnt = 0;
-@@ -1397,7 +1400,7 @@ static void ReadCompletionDictionary(voi
+@@ -1522,7 +1525,7 @@ static void SavePrivateDictionary(void)
  
  static void AddToCompletionText(KeySym keysym)
  {
 -  int len;
 +  size_t len;
    struct WORDLIST *node_ptr;
+   char ch;
  
-   if (completion_entry != None) {
-@@ -1487,7 +1490,7 @@ static void PopupCompletionPanel(void)
- 
-   ReadCompletionDictionary();
- 
--  sprintf(msg, "%d words in the dictionary", n_completion_words);
-+  snprintf(msg, sizeof(msg), "%d words in the dictionary", n_completion_words);
-   XtVaSetValues(completion_entry, XtNlabel, msg, NULL);
- 
-   completion_text[0] = '\0';
-@@ -1502,11 +1505,11 @@ static void PopupCompletionPanel(void)
-  */
- static void KeyPressed(Widget w, char *key, char *data);
- 
--static void SendString(const unsigned char *str)
-+static void SendString(const char *str)
+@@ -1729,7 +1732,7 @@ static void SendString(const char *str)
  {
--  const unsigned char *cp, *cp2;  /* I remember "unsigned" might be required for some systems */
-+  const char *cp, *cp2;
+   const char *cp, *cp2;
    char key[50];
 -  int len;
 +  size_t len;
    int val;
    Window target_root, child, junk_w;
    int junk_i;
-@@ -1536,8 +1539,7 @@ static void SendString(const unsigned ch
+@@ -1761,8 +1764,7 @@ static void SendString(const char *str)
          } else {
            len = cp2 - cp - 1;
            if (sizeof(key) <= len) len = sizeof(key) - 1;
@@ -133,7 +109,7 @@ Last-Update: 2015-05-07
            KeyPressed(None, key, NULL);
            cp = cp2;
          }
-@@ -1584,11 +1586,12 @@ static void SendString(const unsigned ch
+@@ -1810,11 +1812,12 @@ static void SendString(const char *str)
  	if ('1' <= *cp && *cp <= '9') {
  	  usleep((*cp - '0') * 100000);
  	} else {
@@ -146,8 +122,8 @@ Last-Update: 2015-05-07
 +#ifdef USE_XTEST
  	cp++;
  	if ('1' <= *cp && *cp <= '9') {
- 	  if (appres.debug) fprintf(stderr, "XTestFakeButtonEvent(%d)\n", *cp - '0');
-@@ -1599,10 +1602,18 @@ static void SendString(const unsigned ch
+ 	  if (appres.debug) fprintf(stderr, "xvkbd: XTestFakeButtonEvent(%d)\n", *cp - '0');
+@@ -1825,10 +1828,18 @@ static void SendString(const char *str)
            fprintf(stderr, "%s: no digit after \"\\m\"\n",
                    PROGRAM_NAME);
  	}
@@ -167,16 +143,7 @@ Last-Update: 2015-05-07
  	target_root = RootWindow(target_dpy, DefaultScreen(target_dpy));
  	XQueryPointer(target_dpy, target_root, &junk_w, &child,
  		      &cur_x, &cur_y, &junk_i, &junk_i, &junk_u);
-@@ -1684,7 +1695,7 @@ static void Highlight(char *name, int st
-   char name1[50];
-   Widget w;
- 
--  sprintf(name1, "*%s", name);
-+  snprintf(name1, sizeof(name1), "*%s", name);
-   w = XtNameToWidget(toplevel, name1);
-   if (w != None) {
-     if (strstr(name, "Focus") != NULL) {
-@@ -1730,13 +1741,13 @@ static Boolean CheckShiftState(int row, 
+@@ -1956,13 +1967,13 @@ static Boolean CheckShiftState(int row, int col, int s
  static void RefreshShiftState(Boolean force)
  {
    static Boolean first = TRUE;
@@ -195,7 +162,7 @@ Last-Update: 2015-05-07
    int first_row, row, col;
    Boolean shifted;
    char *label;
-@@ -1824,7 +1835,7 @@ static void RefreshShiftState(Boolean fo
+@@ -2054,7 +2065,7 @@ static void RefreshShiftState(Boolean force)
  
      Window root, child;
      int root_x, root_y, x, y;
@@ -204,7 +171,7 @@ Last-Update: 2015-05-07
  
      XKeyEvent event;
  
-@@ -1840,28 +1851,28 @@ static void RefreshShiftState(Boolean fo
+@@ -2070,28 +2081,28 @@ static void RefreshShiftState(Boolean force)
      event.same_screen = TRUE;
      event.state = 0;
  
@@ -238,57 +205,15 @@ Last-Update: 2015-05-07
        event.keycode = XKeysymToKeycode(target_dpy, XK_Meta_L);
        event.type = (shift_state & meta_mask) ? KeyPress : KeyRelease;
        SendEvent(&event);
-@@ -1922,7 +1933,7 @@ static char *GetWindowGeometry(Widget w)
- 
-   XtVaGetValues(w, XtNx, &x0, XtNy, &y0, NULL);
-   XGetGeometry(dpy, XtWindow(w), &root, &x1, &y1, &wd, &ht, &bd, &dp);
--  sprintf(geom, "%dx%d+%d+%d", wd, ht, (int)(x0 - x1), (int)(y0 - y1));
-+  snprintf(geom, sizeof(geom), "%dx%d+%d+%d", wd, ht, (int)(x0 - x1), (int)(y0 - y1));
- 
-   return geom;
- }
-@@ -1964,7 +1975,7 @@ static void SetWindowManagerHint(Boolean
- 	       FALSE, SubstructureNotifyMask | SubstructureRedirectMask,
- 	       (XEvent *)&ev);
-     if (appres.debug)
--      fprintf(stderr, "SetWindowManagerHint: _NET_WM_STATE_ABOVE = %d\n", ev.data.l[0]);
-+      fprintf(stderr, "SetWindowManagerHint: _NET_WM_STATE_ABOVE = %ld\n", ev.data.l[0]);
-   }
- }
- 
-@@ -1986,7 +1997,7 @@ static void LayoutSelected(Widget w, cha
-   if (key != NULL) {
-     if (strcmp(key, "default") != 0) {
-       sscanf(key, "%29[^/]/%29s", customization, lang);
--      sprintf(name, "XVkbd-%s", customization);
-+      snprintf(name, sizeof(name), "XVkbd-%s", customization);
-       xenv = XtResolvePathname(dpy, "app-defaults", name, NULL, NULL, NULL, 0, NULL);
-       if (xenv == NULL) {
- 	fprintf(stderr, "%s: app-default file \"%s\" not installed\n",
-@@ -1994,12 +2005,10 @@ static void LayoutSelected(Widget w, cha
-       }
-     }
- 
--    env_lang = malloc(strlen("LC_ALL=") + strlen(lang) + 1);
--    sprintf(env_lang, "LC_ALL=%s", lang);
-+    asprintf(&env_lang, "LC_ALL=%s", lang);
-     putenv(env_lang);
-     if (xenv != NULL) {
--      env_xenv = malloc(strlen("XENVIRONMENT=") + strlen(xenv) + 1);
--      sprintf(env_xenv, "XENVIRONMENT=%s", xenv);
-+      asprintf(&env_xenv, "XENVIRONMENT=%s", xenv);
-       putenv(env_xenv);
- 
-       keyboard_layout = XtNewString(key);
-@@ -2119,6 +2128,7 @@ static void PropsItemToggled(Widget w, c
-   XtVaGetValues(XtNameToWidget(props_panel, "*jump_pointer"),
- 		XtNstate, &appres.jump_pointer, NULL);
+@@ -2354,6 +2365,7 @@ static void PropsItemToggled(Widget w, char *key, char
+   XtVaGetValues(XtNameToWidget(props_panel, "*integrate_completion_panel"),
+ 		XtNstate, &appres.integrate_completion_panel, NULL);
  
 +  /* These two lines generate warnings with -Wbad-function-cast.  Grrr. */
    appres.key_click_duration = (int)XawToggleGetCurrent(click_buttons);
    appres.autoclick_delay = (int)XawToggleGetCurrent(autoclick_buttons);
  
-@@ -2185,7 +2195,7 @@ static void PopupPropsPanel(void)
+@@ -2426,7 +2438,7 @@ static void PopupPropsPanel(void)
    if (props_panel == None) {
      Widget label, button;
      Widget form, w;
@@ -297,34 +222,16 @@ Last-Update: 2015-05-07
      int val;
  
      props_panel = XtVaCreatePopupShell("props_panel", transientShellWidgetClass,
-@@ -2211,7 +2221,7 @@ static void PopupPropsPanel(void)
-     click_buttons = button;
-     for (val = 1; val <= 50; val *= 2) {
-       char s1[10];
--      sprintf(s1, "%dms", val);
-+      snprintf(s1, sizeof(s1), "%dms", val);
-       button = XtVaCreateManagedWidget(s1, toggleWidgetClass,
- 			       form, XtNfromVert, w, XtNfromHoriz, button,
- 			       XtNradioData, (XtPointer)val,
-@@ -2233,7 +2243,7 @@ static void PopupPropsPanel(void)
-     autoclick_buttons = button;
-     for (val = 500; val <= 1000; val += 100) {
-       char s1[10];
--      sprintf(s1, "%dms", val);
-+      snprintf(s1, sizeof(s1), "%dms", val);
-       button = XtVaCreateManagedWidget(s1, toggleWidgetClass,
- 			       form, XtNfromVert, w, XtNfromHoriz, button,
- 			       XtNradioData, (XtPointer)val,
-@@ -2295,7 +2305,7 @@ static void OpenRemoteDisplay(Widget w, 
+@@ -2560,7 +2572,7 @@ static void OpenRemoteDisplay(Widget w, char *display_
    focused_subwindow = None;
    if (target_dpy != NULL && target_dpy != dpy) XCloseDisplay(target_dpy);
  
--  strncpy(name, (display_name == NULL) ? "" : display_name, sizeof(name));
+-  strncpy(name, (display_name == NULL) ? "" : display_name, sizeof(name) - 1);
 +  snprintf(name, sizeof(name), "%s", (display_name == NULL) ? "" : display_name);
    for (cp = name; isascii(*cp) && isprint(*cp); cp++) ;
    *cp = '\0';
  
-@@ -2806,7 +2816,7 @@ static Widget MakeKey(Widget parent, con
+@@ -3087,7 +3099,7 @@ static Widget MakeKey(Widget parent, const char *name,
    XtAddCallback(w, XtNcallback, (XtCallbackProc)KeyPressed, (XtPointer)name);
  
    if (label != NULL) {
@@ -333,19 +240,16 @@ Last-Update: 2015-05-07
      if (strcmp(str, "space") == 0) strcpy(str, "");
      len = strlen(str);
      if (3 <= len) {
-@@ -2878,9 +2888,9 @@ static void MakeKeypad(Widget form, Widg
+@@ -3158,7 +3170,7 @@ static void MakeKeypad(Widget form, Widget from_vert, 
  	       || (strncmp(keypad_shift[row][col], "KP_", 3) == 0
  		   && isdigit(keypad_shift[row][col][3])))
  	color = appres.general_background;
 -      strcpy(name, keypad[row][col]);
 +      snprintf(name, sizeof(name), "%s", keypad[row][col]);
        if (strcmp(name, "Focus") != 0 && strcmp(name, "Num_Lock") != 0)
--	sprintf(name, "pad%d,%d", row, col);
-+	snprintf(name, sizeof(name), "pad%d,%d", row, col);
+ 	snprintf(name, sizeof(name), "pad%d,%d", row, col);
        key = MakeKey(keypad_box, XtNewString(name),
- 		    keypad_label[row][col], color);
-       XtVaSetValues(key, XtNfont, font, NULL);
-@@ -2982,12 +2992,12 @@ static void MakeKeyboard(Boolean remake)
+@@ -3261,12 +3273,12 @@ static void MakeKeyboard(Boolean remake)
    Widget form, key, left;
    Pixel color;
    XFontStruct *font;
@@ -360,16 +264,7 @@ Last-Update: 2015-05-07
  
  #include "xvkbd.xbm"
  #include "iconify.xbm"
-@@ -3007,7 +3017,7 @@ static void MakeKeyboard(Boolean remake)
-     for (row = first_row; row < NUM_KEY_ROWS; row++) {
-       if (keys_normal[row][0] == NULL) continue;
- 
--      sprintf(name, "row%d", row);
-+      snprintf(name, sizeof(name), "row%d", row);
-       key_box[row] = XtVaCreateManagedWidget(name, formWidgetClass, form, NULL);
-       key_box[row + 1] = None;
-       if (row != first_row)
-@@ -3017,7 +3027,7 @@ static void MakeKeyboard(Boolean remake)
+@@ -3300,7 +3312,7 @@ static void MakeKeyboard(Boolean remake)
          
        left = None;
        for (col = 0; keys_normal[row][col] != NULL; col++) {
@@ -378,12 +273,8 @@ Last-Update: 2015-05-07
  	if (strcmp(name, "MainMenu") == 0) {
  	  Widget iconify_button = None;
  
-@@ -3059,11 +3069,11 @@ static void MakeKeyboard(Boolean remake)
- 	    color = appres.general_background;
- 	    font = appres.general_font;
- 	    if (isalpha(name[0])) font = appres.letter_font;
--	    if (strcmp(name, "space") != 0) sprintf(name, "%d,%d", row, col);
-+	    if (strcmp(name, "space") != 0) snprintf(name, sizeof(name), "%d,%d", row, col);
+@@ -3345,8 +3357,8 @@ static void MakeKeyboard(Boolean remake)
+ 	    if (strcmp(name, "space") != 0) snprintf(name, sizeof(name), "%d,%d", row, col);
  	  }
  	  key = MakeKey(key_box[row], XtNewString(name), label, color);
 -	  XtVaGetValues(key, XtNwidth, &wd, NULL);
@@ -393,7 +284,7 @@ Last-Update: 2015-05-07
  	    /* keys can be removed by setting its width to 1 */
  	    XtDestroyWidget(key);
  	    key = None;
-@@ -3099,7 +3109,7 @@ static void MakeKeyboard(Boolean remake)
+@@ -3382,7 +3394,7 @@ static void MakeKeyboard(Boolean remake)
      Window root;
      int x1, y1;
      unsigned int wd, ht, bd, dp;
@@ -402,7 +293,7 @@ Last-Update: 2015-05-07
  
      XGetGeometry(dpy, XtWindow(toplevel), &root, &x1, &y1, &wd, &ht, &bd, &dp);
      max_wd = XtScreen(toplevel)->width * appres.max_width_ratio;
-@@ -3118,16 +3128,16 @@ static void MakeKeyboard(Boolean remake)
+@@ -3401,16 +3413,16 @@ static void MakeKeyboard(Boolean remake)
  
    if (!appres.debug && key_box[first_row] != None) {
      if (appres.keypad) {
@@ -423,44 +314,38 @@ Last-Update: 2015-05-07
 +      XtVaSetValues(key_box[row], XtNwidth, max_dwd, NULL);
      }
    }
-   if (0 < strlen(appres.geometry)) {
-@@ -3236,11 +3246,11 @@ static void ReadProperty(void)
-   home = getenv("HOME");
-   if (appres.key_file[0] != '/' && home != NULL
+ 
+@@ -3523,9 +3535,9 @@ static void ReadProperty(void)
        && strlen(home) + strlen(appres.key_file) + 1 < sizeof(fkey_filename))
--    sprintf(fkey_filename, "%s/%s", home, appres.key_file);
-+    snprintf(fkey_filename, sizeof(fkey_filename), "%s/%s", home, appres.key_file);
+     snprintf(fkey_filename, sizeof(fkey_filename), "%s/%s", home, appres.key_file);
    else
--    strncpy(fkey_filename, appres.key_file, sizeof(fkey_filename));
+-    strncpy(fkey_filename, appres.key_file, sizeof(fkey_filename) - 1);
 +    snprintf(fkey_filename, sizeof(fkey_filename), "%s", appres.key_file);
  
--  strncpy(dict_filename, appres.dict_file, sizeof(dict_filename));
+-  strncpy(dict_filename, appres.dict_file, sizeof(dict_filename) - 1);
 +  snprintf(dict_filename, sizeof(dict_filename), "%s", appres.dict_file);
  
    fp = fopen(fkey_filename, "r");
    if (fp == NULL) return;
-@@ -3253,7 +3263,7 @@ static void ReadProperty(void)
+@@ -3538,7 +3550,7 @@ static void ReadProperty(void)
  				  keyboard_layout, getenv("XENVIRONMENT"));
  	if (getenv("XENVIRONMENT") == NULL) layout_selected = TRUE;
        } else if (sscanf(&str[1], "dict_file %s", key) == 1) {
--	strncpy(dict_filename, key, sizeof(dict_filename));
+-	strncpy(dict_filename, key, sizeof(dict_filename) - 1);
 +	snprintf(dict_filename, sizeof(dict_filename), "%s", key);
+       } else if (sscanf(&str[1], "private_dict_weight %s", key) == 1) {
+ 	strncpy(private_dict_weight_value, key, sizeof(private_dict_weight_value) - 1);
        } else if (sscanf(&str[1], "%s %d", key, &val) == 2) {
- 	if (strcmp(key, "quick_modifiers") == 0)
- 	  appres.quick_modifiers = val;
-@@ -3329,9 +3339,9 @@ static void FKeyMenuSelected(Widget w, c
-   if (key == NULL)
-     strcpy(key2, "");
+@@ -3624,7 +3636,7 @@ static void FKeyMenuSelected(Widget w, char *key)
    else if (strncmp(key, "Shift-", strlen("Shift-")) == 0)
--    sprintf(key2, "s:%s", &key[strlen("Shift-")]);
-+    snprintf(key2, sizeof(key2), "s:%s", &key[strlen("Shift-")]);
+     snprintf(key2, sizeof(key2), "s:%s", &key[strlen("Shift-")]);
    else
 -    strcpy(key2, key);
 +    snprintf(key2, sizeof(key2), "%s", key);
  
    if (strcmp(cur_fkey, key2) != 0) {
      if (strlen(cur_fkey) != 0) {
-@@ -3354,7 +3364,7 @@ static void FKeyMenuSelected(Widget w, c
+@@ -3647,7 +3659,7 @@ static void FKeyMenuSelected(Widget w, char *key)
  	prefix = "";
  	if (cur_fkey_value_mode[0] == 'c') prefix = "!";
  	else if (fkey_value[0] == '!' || fkey_value[0] == '\\') prefix = "\\";
@@ -469,7 +354,7 @@ Last-Update: 2015-05-07
        } else {  /* empty string - remove the entry for the function key */
  	if (sp != NULL) {
  	  if (sp2 != NULL) sp2->next = sp->next;
-@@ -3374,10 +3384,10 @@ static void FKeyMenuSelected(Widget w, c
+@@ -3667,10 +3679,10 @@ static void FKeyMenuSelected(Widget w, char *key)
        FKeyValueMenuSelected(None, (value[0] == '!') ? "command" : "string");
  
        if (value[0] == '!' || value[0] == '\\') value = value + 1;
@@ -482,30 +367,7 @@ Last-Update: 2015-05-07
      }
    }
  }
-@@ -3441,9 +3451,9 @@ static void PopupFunctionKeyEditor(void)
-     for (j = 0; j <= 1; j++) {
-       for (i = 1; i <= appres.editable_function_keys; i++) {
- 	if (j == 0)
--	  sprintf(label, "F%d", i);
-+	  snprintf(label, sizeof(label), "F%d", i);
- 	else 
--	  sprintf(label, "Shift-F%d", i);
-+	  snprintf(label, sizeof(label), "Shift-F%d", i);
- 	key = XtNewString(label);
- 	menu_entry = XtVaCreateManagedWidget(key, smeBSBObjectClass, menu, NULL);
- 	XtAddCallback(menu_entry, XtNcallback, (XtCallbackProc)FKeyMenuSelected,
-@@ -3514,8 +3524,8 @@ static const char *FindFunctionKeyValue(
-     else if (shift_state & ControlMask) prefix = 'c';
-     else if (shift_state & ShiftMask) prefix = 's';
-   }
--  if (prefix == '\0') sprintf(label, "%s", key);
--  else sprintf(label, "%c:%s", prefix, key);
-+  if (prefix == '\0') snprintf(label, sizeof(label), "%s", key);
-+  else snprintf(label, sizeof(label), "%c:%s", prefix, key);
-   len = strlen(label);
-   
-   for (sp = fkey_list; sp != NULL; sp = sp->next) {
-@@ -3573,8 +3583,10 @@ static void Autoclick(void)
+@@ -3870,8 +3882,10 @@ static void Autoclick(void)
  {
    StopAutoclick();
  
@@ -516,7 +378,7 @@ Last-Update: 2015-05-07
  }
  
  static void ShowBalloon(Widget w, XEvent *event, String *pars, Cardinal *n_pars)
-@@ -3703,7 +3715,9 @@ int main(int argc, char *argv[])
+@@ -4000,7 +4014,9 @@ int main(int argc, char *argv[])
    Boolean open_keypad_panel = FALSE;
    char ch;
    Window child;
@@ -526,7 +388,7 @@ Last-Update: 2015-05-07
  
    argc1 = argc;
    argv1 = malloc(sizeof(char *) * (argc1 + 5));
-@@ -3905,14 +3919,14 @@ char *setlocale(int category, const char
+@@ -4207,14 +4223,14 @@ char *setlocale(int category, const char *locale)
    if (locale == NULL) {
      return cur_locale;
    } else if (category == LC_ALL) {
