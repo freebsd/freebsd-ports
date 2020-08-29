@@ -26,6 +26,11 @@ USES=		gmake gnome pkgconfig
 USE_GNOME=	gtk20
 MAKE_ARGS=	INSTALLDIR="${PREFIX}" CC="${CC}" CXX="${CXX}"
 
+CFLAGS+=		-fcommon
+
+EXPIRATION_DATE=	2020-09-30
+DEPRECATED=		Unmaintained and dead upstream
+
 SUB_FILES=	pkg-message
 
 PORTDOCS=	${DOCS} README

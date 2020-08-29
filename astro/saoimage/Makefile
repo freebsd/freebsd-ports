@@ -16,6 +16,11 @@ ALL_TARGET=	${OPSYS}
 USES=		xorg
 USE_XORG=	x11
 
+CFLAGS+=		-fcommon
+
+EXPIRATION_DATE=	2020-09-30
+DEPRECATED=		Unmaintained and dead upstream
+
 PLIST_FILES=	bin/saoimage etc/imtoolrc.sample share/man/man1/saoimage.1.gz
 
 post-patch:
