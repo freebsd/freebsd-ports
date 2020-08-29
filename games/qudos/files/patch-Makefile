@@ -1,0 +1,15 @@
+--- Makefile.orig	2006-06-10 16:31:19 UTC
++++ Makefile
+@@ -109,10 +109,9 @@ else
+   ifeq ($(TYPE),profile)
+ CFLAGS+=	-pg
+   else
+-CFLAGS+=	-O3 -ffast-math -funroll-loops -fomit-frame-pointer \
+-		-fexpensive-optimizations
++CFLAGS+=	-fcommon -ffast-math -funroll-loops -fomit-frame-pointer
+     ifeq ($(ARCH),i386)
+-CFLAGS+=	-falign-loops=2 -falign-jumps=2 -falign-functions=2 \
++CFLAGS+=	-falign-functions=2 \
+ 		-fno-strict-aliasing
+     endif
+   endif

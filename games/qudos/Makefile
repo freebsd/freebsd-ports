@@ -175,9 +175,6 @@ post-patch:
 # Resolve name collision with jpeg-8
 	@${REINPLACE_CMD} -e 's|jpeg_mem_src|local_jpeg_mem_src|' \
 		${WRKSRC}/src/ref_gl/gl_image.c
-# Remove controversial options unsupported by modern compilers (e.g. Clang)
-	@${REINPLACE_CMD} -e 's|-falign-loops=2 -falign-jumps=2 ||' \
-		${WRKSRC}/src/ref_gl/Makefile ${WRKSRC}/Makefile
 
 post-build:
 .for bin in ${Q2BIN}
