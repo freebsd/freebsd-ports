@@ -93,6 +93,7 @@ _linux_c7_libglvnd=			linux-c7-libglvnd>0:graphics/linux-c7-libglvnd
 _linux_${linux_ARGS}_libgpg-error=	linux-${linux_ARGS}-libgpg-error>0:security/linux-${linux_ARGS}-libgpg-error
 _linux_${linux_ARGS}_libogg=		linux-${linux_ARGS}-libogg>0:audio/linux-${linux_ARGS}-libogg
 _linux_${linux_ARGS}_libpciaccess=	linux-${linux_ARGS}-libpciaccess>0:devel/linux-${linux_ARGS}-libpciaccess
+_linux_c7_librsvg2=			linux-c7-librsvg2>0:graphics/linux-c7-librsvg2
 _linux_${linux_ARGS}_libsndfile=	linux-${linux_ARGS}-libsndfile>0:audio/linux-${linux_ARGS}-libsndfile
 _linux_${linux_ARGS}_libssh2=		linux-${linux_ARGS}-libssh2>0:security/linux-${linux_ARGS}-libssh2
 _linux_${linux_ARGS}_libtasn1=		linux-${linux_ARGS}-libtasn1>0:security/linux-${linux_ARGS}-libtasn1

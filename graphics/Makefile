@@ -511,6 +511,7 @@
     SUBDIR += linux-c7-libdrm
     SUBDIR += linux-c7-libepoxy
     SUBDIR += linux-c7-libglvnd
+    SUBDIR += linux-c7-librsvg2
     SUBDIR += linux-c7-png
     SUBDIR += linux-c7-sdl_image
     SUBDIR += linux-c7-sdl_ttf
