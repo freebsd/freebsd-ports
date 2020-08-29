@@ -301,6 +301,7 @@
     SUBDIR += p5-DBD-Google
     SUBDIR += p5-DBD-InterBase
     SUBDIR += p5-DBD-LDAP
+    SUBDIR += p5-DBD-MariaDB
     SUBDIR += p5-DBD-Mock
     SUBDIR += p5-DBD-Multi
     SUBDIR += p5-DBD-ODBC
