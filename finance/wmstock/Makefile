@@ -14,6 +14,11 @@ USES=		gmake shebangfix xorg
 USE_XORG=	xpm
 SHEBANG_FILES=	getquote
 
+CFLAGS+=		-fcommon
+
+EXPIRATION_DATE=	2020-09-30
+DEPRECATED=		Unmaintained and dead upstream
+
 WRKSRC=		${WRKDIR}/wmstock/src
 
 do-install:
