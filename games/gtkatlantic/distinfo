@@ -1,4 +1,5 @@
-SHA256 (gtkatlantic-0.4.4.tar.gz) = 188e6502438948cb46246b50d761f7e3588cdd2f6fc45fa7fada996d116073ae
-SIZE (gtkatlantic-0.4.4.tar.gz) = 962568
+TIMESTAMP = 1598708229
+SHA256 (gtkatlantic-0.6.3.tar.gz) = b24e20a47688459909c08c01a01095bcc18d6a2568c7fa91115e0e0adbf734e5
+SIZE (gtkatlantic-0.6.3.tar.gz) = 618449
 SHA256 (gtkatlantic_icons.tar.gz) = 0686beae348ef8835190731ebe45af594da3db8ec7f9c38220bcb3138ef74a08
 SIZE (gtkatlantic_icons.tar.gz) = 41163

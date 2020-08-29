@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gtkatlantic
-PORTVERSION=	0.4.4
-PORTREVISION=	1
+DISTVERSION=	0.6.3
 CATEGORIES=	games
 MASTER_SITES=	http://download.tuxfamily.org/gtkatlantic/downloads/v${PORTVERSION:R}/ \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons
@@ -17,7 +16,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gnome localbase:ldflags pkgconfig
-USE_GNOME=	gtk20
+USE_GNOME=	cairo gtk30 libxml2
 GNU_CONFIGURE=	yes
 
 INSTALLS_ICONS=	yes
