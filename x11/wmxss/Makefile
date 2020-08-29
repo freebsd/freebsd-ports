@@ -10,6 +10,12 @@ MASTER_SITES=	http://www.cs.mun.ca/~gstarkes/wmaker/dockapps/files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Run xscreensaver modules inside a WindowMaker dock
 
+# Fix build with llvm 11
+CFLAGS+=	-fcommon
+
+DEPRECATED=	Unmaintained and dead upstream
+EXPIRATION_DATE=2020-09-30
+
 USES=		uidfix xorg
 USE_XORG=	x11 xpm
 PLIST_FILES=	bin/wmxss

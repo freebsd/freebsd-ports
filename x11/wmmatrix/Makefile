@@ -12,6 +12,12 @@ DISTNAME=	wmMatrix-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DockApp that runs a version of the xmatrix screenhack
 
+# Fix build with llvm 11
+CFLAGS+=	-fcommon
+
+DEPRECATED=	Unmaintained and dead upstream
+EXPIRATION_DATE=2020-09-30
+
 MAKE_JOBS_UNSAFE= yes
 
 PLIST_FILES=	bin/wmmatrix

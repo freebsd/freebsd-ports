@@ -12,6 +12,12 @@ COMMENT=	X11 events recorder and player
 
 LICENSE=	GPLv3
 
+# Fix build with llvm 11
+CFLAGS+=	-fcommon
+
+DEPRECATED=	Unmaintained and dead upstream
+EXPIRATION_DATE=2020-09-30
+
 GNU_CONFIGURE=	yes
 USES=		gmake pathfix xorg
 USE_XORG=	xtst

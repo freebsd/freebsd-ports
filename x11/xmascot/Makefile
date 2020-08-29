@@ -11,6 +11,12 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Moving mascot on your X11 screen
 
+# Fix build with llvm 11
+CFLAGS+=	-fcommon
+
+DEPRECATED=	Unmaintained and dead upstream
+EXPIRATION_DATE=2020-09-30
+
 USES=		imake xorg
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 MAKE_ARGS=	MAKE="${MAKE_CMD}"

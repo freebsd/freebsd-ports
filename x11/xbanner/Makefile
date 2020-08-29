@@ -11,6 +11,12 @@ DISTNAME=	XBanner${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Make your XDM login screen look beautiful
 
+# Fix build with llvm 11
+CFLAGS+=	-fcommon
+
+DEPRECATED=	Unmaintained and dead upstream
+EXPIRATION_DATE=2020-09-30
+
 USES=		xorg
 USE_XORG=	x11 xpm
 

@@ -10,6 +10,12 @@ MASTER_SITES=	SUNSITE/X11/desktop
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nifty set of desktop apps, including floating buttons
 
+# Fix build with llvm 11
+CFLAGS+=	-fcommon
+
+DEPRECATED=	Unmaintained and dead upstream
+EXPIRATION_DATE=2020-09-30
+
 LIB_DEPENDS=	libforms.so:x11-toolkits/xforms
 
 USES=		imake xorg

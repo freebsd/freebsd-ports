@@ -11,6 +11,12 @@ DISTNAME=	xmon.${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Raw X11 protocol analyser
 
+# Fix build with llvm 11
+CFLAGS+=	-fcommon
+
+DEPRECATED=	Unmaintained and dead upstream
+EXPIRATION_DATE=2020-09-30
+
 WRKSRC=		${WRKDIR}/xmon.${PORTVERSION}
 USES=		imake xorg
 USE_XORG=	ice sm x11 xaw xext xmu xt

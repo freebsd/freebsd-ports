@@ -16,6 +16,12 @@ BUILD_DEPENDS=	xrdb:x11/xrdb
 BROKEN_armv6=		fails to install: xrdb: Socket is not connected: Can't open display ':0'
 BROKEN_armv7=		fails to install: xrdb: Socket is not connected: Can't open display ':0'
 
+# Fix build with llvm 11
+CFLAGS+=	-fcommon
+
+DEPRECATED=	Unmaintained and dead upstream
+EXPIRATION_DATE=2020-09-30
+
 USES=		display:build imake:notall tar:Z xorg
 USE_XORG=	x11 xaw
 
