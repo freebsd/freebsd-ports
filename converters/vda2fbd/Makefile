@@ -15,6 +15,11 @@ LICENSE_FILE=	${WRKSRC}/../LICENSE
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" YACC="${YACC}"
 WRKSRC_SUBDIR=	src
 
+CFLAGS+=		-fcommon
+
+EXPIRATION_DATE=	2020-09-30
+DEPRECATED=		Unmaintained and dead upstream
+
 PORTDOCS=	model.ps.gz
 PLIST_FILES=	bin/vda2fbd
 
