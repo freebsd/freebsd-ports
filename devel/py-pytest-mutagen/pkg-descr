@@ -1,0 +1,9 @@
+Mutagen is a plugin to pytest that makes it easy to do mutation
+testing. Mutation testing is a method of testing your tests. Mutagen
+helps you to define "mutant" versions of your code - code which is
+intentionally buggy - then you run your test suite on these mutants
+and verify that your tests actually catch the bugs. Mutation testing
+helps you to gauge test coverage and verify that your tests are
+good enough to exercise interesting behaviors in your code.
+
+WWW: https://pypi.org/project/pytest-mutagen/
