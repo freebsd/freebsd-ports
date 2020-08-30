@@ -11,7 +11,7 @@ COMMENT=	Tools for using Parity v2 Archive files
 
 LICENSE=	GPLv2
 
-USES=		autoreconf
+USES=		autoreconf compiler:c++11-lang
 GNU_CONFIGURE=	yes
 
 USE_GITHUB=	yes
