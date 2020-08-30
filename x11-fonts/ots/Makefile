@@ -3,8 +3,8 @@
 
 PORTNAME=	ots
 PORTVERSION=	8.0.0
-DISTVERSIONPREFIX=	v
 CATEGORIES=	x11-fonts
+MASTER_SITES=	https://github.com/khaledhosny/ots/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	OpenType Sanitizer
@@ -18,13 +18,10 @@ LIB_DEPENDS=	libbrotlidec.so:archivers/brotli \
 		liblz4.so:archivers/liblz4 \
 		libwoff2dec.so:devel/woff2
 
-USES=		compiler:c++11-lang meson pkgconfig shebangfix
+USES=		compiler:c++11-lang meson pkgconfig shebangfix tar:xz
 
 MESON_FALSE=	debug
 MESON_TRUE=	graphite
-
-GH_ACCOUNT=	khaledhosny
-USE_GITHUB=	yes
 
 SHEBANG_FILES=	tests/*.sh
 bash_CMD=	${SH}
