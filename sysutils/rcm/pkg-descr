@@ -1,12 +1,11 @@
-The rcm suite of tools is for managing dotfiles directories. This is a
-directory containing all the .*rc files in your home directory (.zshrc,
-.vimrc, and so on). These files have gone by many names in history, such as
-"rc files" because they typically end in rc or "dotfiles" because they begin
-with a period.
+The rcm suite of tools is for managing dotfiles directories. This is a directory
+containing all the .*rc files in your home directory (.zshrc, .vimrc, and so
+on). These files have gone by many names in history, such as "rc files" because
+they typically end in rc or "dotfiles" because they begin with a period.
 
-This suite is useful for committing your rc files to a central repository
-to share, but it also scales to a more complex situation such as multiple
-source directories shared between computers with some host-specific or
-task-specific files.
+This suite is useful for committing your rc files to a central repository to
+share, but it also scales to a more complex situation such as multiple source
+directories shared between computers with some host-specific or task-specific
+files.
 
 WWW: https://github.com/thoughtbot/rcm
