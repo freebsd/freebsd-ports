@@ -2,9 +2,8 @@
 
 PORTNAME=	abstreet
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.3-16
-DISTVERSIONSUFFIX=	-g7880d646
-PORTREVISION=	4
+DISTVERSION=	0.2.9-49
+DISTVERSIONSUFFIX=	-g74aca40c0
 CATEGORIES=	games
 MASTER_SITES=	LOCAL/yuri:data
 DISTFILES=	${PORTNAME}-data-${DISTVERSION}.tgz:data # updated by the update-data target
@@ -22,8 +21,10 @@ USE_XORG=	xcb
 
 MAKE_ENV=	ABST_DATA_DIR=${DATADIR} ABST_PLAYER_HOME_DIR=1
 
-GH_TUPLE=	easbar:fast_paths:cfb19807c0dae0b6a5034d62959a6bd2abe45079:fast_paths \
-		dabreegster:seattle_traffic_signals:c5a882dcd5065f931006c1aa2963168e1fe82a51:seattle_traffic_signals
+GH_TUPLE=	dabreegster:earcutr:e029a11b66fd27f2ca2fd457dd37c403485ebba1:earcutr \
+		dabreegster:seattle_traffic_signals:c2b33cc7fc4b922c8d25d88a8b07fb824d235b9d:seattle_traffic_signals \
+		easbar:fast_paths:192ae1997f9857791826ac5ed16892b2f692920c:fast_paths \
+		michaelkirk:winit:a87ae2661263ff241e8868cbf3ce65aab205863a:michaelkirk_winit
 CARGO_CRATES=	RustyXML-0.1.1 \
 		aabb-quadtree-0.1.0 \
 		adler32-1.0.4 \
@@ -70,13 +71,16 @@ CARGO_CRATES=	RustyXML-0.1.1 \
 		cgl-0.3.2 \
 		chrono-0.4.11 \
 		clap-2.33.0 \
-		clipboard-0.5.0 \
-		clipboard-win-2.2.0 \
 		cloudabi-0.0.3 \
+		crossbeam-channel-0.4.3 \
+		crossbeam-deque-0.7.3 \
+		crossbeam-epoch-0.8.2 \
+		crossbeam-utils-0.7.2 \
 		cocoa-0.20.1 \
 		colorous-1.0.1 \
 		const-random-0.1.8 \
 		const-random-macro-0.1.8 \
+		contour-0.2.0 \
 		core-foundation-0.7.0 \
 		core-foundation-sys-0.7.0 \
 		core-graphics-0.19.0 \
@@ -153,9 +157,8 @@ CARGO_CRATES=	RustyXML-0.1.1 \
 		getrandom-0.1.14 \
 		gl_generator-0.13.1 \
 		gl_generator-0.14.0 \
-		glium-0.27.0 \
 		glob-0.3.0 \
-		glow-0.4.0 \
+		glow-0.5.0 \
 		glutin-0.24.1 \
 		glutin_egl_sys-0.1.4 \
 		glutin_emscripten_sys-0.1.1 \
@@ -175,14 +178,13 @@ CARGO_CRATES=	RustyXML-0.1.1 \
 		http-0.2.1 \
 		http-body-0.3.1 \
 		httparse-1.3.4 \
-		hyper-0.13.6 \
+		hyper-0.13.7 \
 		hyper-rustls-0.20.0 \
 		ident_case-1.0.1 \
 		idna-0.2.0 \
 		image-0.23.4 \
 		include_dir-0.5.0 \
 		include_dir_impl-0.5.0 \
-		indexmap-0.4.1 \
 		indexmap-1.3.2 \
 		inflate-0.4.5 \
 		instant-0.1.2 \
@@ -219,14 +221,13 @@ CARGO_CRATES=	RustyXML-0.1.1 \
 		mac-0.1.1 \
 		malloc_buf-0.0.6 \
 		maplit-1.0.2 \
-		marching-squares-0.1.1 \
 		matches-0.1.8 \
 		maybe-uninit-2.0.0 \
 		md5-0.7.0 \
 		memchr-2.3.3 \
 		memmap-0.7.0 \
 		memmap2-0.1.0 \
-		memoffset-0.5.4 \
+		memoffset-0.5.5 \
 		mime-0.3.16 \
 		mime_guess-2.0.3 \
 		miniz_oxide-0.3.6 \
@@ -253,13 +254,10 @@ CARGO_CRATES=	RustyXML-0.1.1 \
 		num_enum_derive-0.4.3 \
 		numtoa-0.1.0 \
 		objc-0.2.7 \
-		objc-foundation-0.1.1 \
-		objc_id-0.1.1 \
 		once_cell-1.3.1 \
 		opaque-debug-0.2.3 \
 		ordered-float-1.0.2 \
 		ordermap-0.3.5 \
-		osm-xml-0.6.2 \
 		osmesa-sys-0.1.2 \
 		parking_lot-0.10.2 \
 		parking_lot_core-0.7.1 \
@@ -273,8 +271,8 @@ CARGO_CRATES=	RustyXML-0.1.1 \
 		phf_generator-0.7.24 \
 		phf_shared-0.7.24 \
 		pico-args-0.3.3 \
-		pin-project-0.4.16 \
-		pin-project-internal-0.4.16 \
+		pin-project-0.4.23 \
+		pin-project-internal-0.4.23 \
 		pin-project-lite-0.1.5 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.17 \
@@ -283,7 +281,7 @@ CARGO_CRATES=	RustyXML-0.1.1 \
 		polylabel-2.2.0 \
 		ppv-lite86-0.2.6 \
 		precomputed-hash-0.1.1 \
-		priority-queue-0.6.0 \
+		priority-queue-1.0.0 \
 		proc-macro-crate-0.1.4 \
 		proc-macro-hack-0.5.15 \
 		proc-macro-nested-0.1.6 \
@@ -311,6 +309,8 @@ CARGO_CRATES=	RustyXML-0.1.1 \
 		rand_xorshift-0.1.1 \
 		rand_xorshift-0.2.0 \
 		raw-window-handle-0.3.3 \
+		rayon-1.4.0 \
+		rayon-core-1.8.0 \
 		rctree-0.3.3 \
 		rdrand-0.4.0 \
 		redox_syscall-0.1.56 \
@@ -326,6 +326,7 @@ CARGO_CRATES=	RustyXML-0.1.1 \
 		roxmltree-0.13.0 \
 		rstar-0.7.1 \
 		rustc-demangle-0.1.16 \
+		rustc-hash-1.1.0 \
 		rustc-serialize-0.3.24 \
 		rustc_version-0.2.3 \
 		rustls-0.17.0 \
@@ -350,10 +351,9 @@ CARGO_CRATES=	RustyXML-0.1.1 \
 		sid-0.6.1 \
 		signal-hook-registry-1.2.0 \
 		simplecss-0.2.0 \
-		simsearch-0.2.0 \
 		siphasher-0.2.3 \
 		slab-0.4.2 \
-		slotmap-0.3.0 \
+		slotmap-0.4.0 \
 		smallvec-1.3.0 \
 		smithay-client-toolkit-0.6.6 \
 		socket2-0.3.12 \
@@ -371,7 +371,6 @@ CARGO_CRATES=	RustyXML-0.1.1 \
 		string_cache_shared-0.3.0 \
 		strsim-0.8.0 \
 		strsim-0.9.3 \
-		strsim-0.10.0 \
 		svg_face-0.1.2 \
 		svgtypes-0.5.0 \
 		syn-0.11.11 \
@@ -379,7 +378,6 @@ CARGO_CRATES=	RustyXML-0.1.1 \
 		synom-0.11.3 \
 		synstructure-0.12.3 \
 		take_mut-0.2.2 \
-		takeable-option-0.5.0 \
 		tempfile-3.1.0 \
 		tendril-0.2.4 \
 		term-0.4.6 \
@@ -395,6 +393,8 @@ CARGO_CRATES=	RustyXML-0.1.1 \
 		tokio-util-0.3.1 \
 		toml-0.5.6 \
 		tower-service-0.3.0 \
+		tracing-0.1.18 \
+		tracing-core-0.1.13 \
 		try-lock-0.2.2 \
 		ttf-parser-0.6.2 \
 		typenum-1.11.2 \
@@ -445,14 +445,10 @@ CARGO_CRATES=	RustyXML-0.1.1 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.4 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		winit-0.22.2 \
 		winreg-0.7.0 \
 		ws2_32-sys-0.2.1 \
-		x11-clipboard-0.3.3 \
 		x11-dl-2.18.5 \
-		xcb-0.8.2 \
 		xdg-2.2.0 \
-		xml-rs-0.7.0 \
 		xml-rs-0.8.2 \
 		xmlparser-0.13.2 \
 		xmltree-0.10.0 \
@@ -463,15 +459,16 @@ CARGO_USE_GITHUB=	yes
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 # To update this port:
-# 1. Run 'make update-data'
-# 2. Upload the abstreet-data distfile
-# 3. Run 'make makesum clean'
+# 1. Update CARGO_CRATES based on 'make cargo-crates'
+# 2. Run 'make update-data'
+# 3. Upload the abstreet-data distfile
+# 4. Run 'make makesum clean'
 
 update-data: configure
 	# see https://github.com/dabreegster/abstreet/blob/master/docs/dev.md#getting-started for the list of supported cities
 	# huge_seattle is excluded as per this comment: https://github.com/dabreegster/abstreet/issues/192#issuecomment-657938969
-	@(${ECHO} "runtime: seattle,krakow" && \
-	  ${ECHO} "input: seattle,krakow") > ${WRKSRC}/data/config
+	@(${ECHO} "runtime: seattle,krakow,berlin" && \
+	  ${ECHO} "input: seattle,krakow,berlin") > ${WRKSRC}/data/config
 	@cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} ${CARGO_CARGO_RUN} run --bin updater && \
 		${TAR} czf ${DISTDIR}/${PORTNAME}-data-${DISTVERSION}.tgz data/system/cities data/system/maps data/system/prebaked_results data/system/scenarios data/config && \

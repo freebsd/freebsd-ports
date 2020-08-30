@@ -1,6 +1,6 @@
---- ezgui/Cargo.toml.orig	2020-07-06 15:59:49 UTC
-+++ ezgui/Cargo.toml
-@@ -28,7 +28,7 @@ simsearch = "0.2.0"
+--- widgetry/Cargo.toml.orig	2020-08-30 19:23:35 UTC
++++ widgetry/Cargo.toml
+@@ -25,7 +25,7 @@ serde = "1.0.110"
  stdweb  = { version = "0.4.20", optional = true }
  stretch = "0.3.2"
  ttf-parser = "0.6.1"

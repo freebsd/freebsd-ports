@@ -1,9 +1,11 @@
 bin/abstreet-game
 %%DATADIR%%/MANIFEST.txt
+%%DATADIR%%/bbike.sh
 %%DATADIR%%/config
 %%DATADIR%%/geojson_to_osmosis.py
 %%DATADIR%%/get_fresh_osm.sh
-%%DATADIR%%/input/krakow/polygons/huge_krakow.poly
+%%DATADIR%%/input/berlin/polygons/berlin_center.poly
+%%DATADIR%%/input/krakow/polygons/krakow_center.poly
 %%DATADIR%%/input/seattle/polygons/ballard.poly
 %%DATADIR%%/input/seattle/polygons/downtown.poly
 %%DATADIR%%/input/seattle/polygons/huge_seattle.poly
@@ -12,11 +14,21 @@ bin/abstreet-game
 %%DATADIR%%/input/seattle/polygons/south_seattle.poly
 %%DATADIR%%/input/seattle/polygons/udistrict.poly
 %%DATADIR%%/input/seattle/polygons/west_seattle.poly
-%%DATADIR%%/other_polygons/berlin.poly
+%%DATADIR%%/input/tel_aviv/polygons/tel_aviv.poly
+%%DATADIR%%/input/xian/polygons/xian.poly
 %%DATADIR%%/other_polygons/little_hulton.poly
 %%DATADIR%%/other_polygons/manchester.poly
 %%DATADIR%%/other_polygons/manhattan.poly
+%%DATADIR%%/other_polygons/san_jose.poly
+%%DATADIR%%/other_polygons/shinjuku.poly
 %%DATADIR%%/other_polygons/slu.poly
+%%DATADIR%%/other_polygons/sydney.poly
+%%DATADIR%%/regen.sh
+%%DATADIR%%/route_goldenfiles/downtown.txt
+%%DATADIR%%/route_goldenfiles/krakow_center.txt
+%%DATADIR%%/route_goldenfiles/lakeslice.txt
+%%DATADIR%%/route_goldenfiles/montlake.txt
+%%DATADIR%%/route_goldenfiles/udistrict.txt
 %%DATADIR%%/system/assets/characters/boss.svg
 %%DATADIR%%/system/assets/characters/drone.svg
 %%DATADIR%%/system/assets/characters/parents.svg
@@ -33,11 +45,13 @@ bin/abstreet-game
 %%DATADIR%%/system/assets/map/light_rail.svg
 %%DATADIR%%/system/assets/map/parked_car.svg
 %%DATADIR%%/system/assets/map/parking.svg
+%%DATADIR%%/system/assets/map/shared_left_turn.svg
 %%DATADIR%%/system/assets/map/under_construction.svg
 %%DATADIR%%/system/assets/map/walk.svg
 %%DATADIR%%/system/assets/meters/bike.svg
 %%DATADIR%%/system/assets/meters/bus.svg
 %%DATADIR%%/system/assets/meters/car.svg
+%%DATADIR%%/system/assets/meters/passenger.svg
 %%DATADIR%%/system/assets/meters/pedestrian.svg
 %%DATADIR%%/system/assets/meters/trip_histogram.svg
 %%DATADIR%%/system/assets/minimap/down.svg
@@ -73,7 +87,7 @@ bin/abstreet-game
 %%DATADIR%%/system/assets/timeline/start_pos.svg
 %%DATADIR%%/system/assets/timeline/waiting_for_bus.svg
 %%DATADIR%%/system/assets/timeline/walking.svg
-%%DATADIR%%/system/assets/tools/clipboard.svg
+%%DATADIR%%/system/assets/tools/checkbox.svg
 %%DATADIR%%/system/assets/tools/delete.svg
 %%DATADIR%%/system/assets/tools/edit.svg
 %%DATADIR%%/system/assets/tools/edit_map.svg
@@ -81,9 +95,11 @@ bin/abstreet-game
 %%DATADIR%%/system/assets/tools/hint.svg
 %%DATADIR%%/system/assets/tools/home.svg
 %%DATADIR%%/system/assets/tools/info.svg
+%%DATADIR%%/system/assets/tools/inward.svg
 %%DATADIR%%/system/assets/tools/layers.svg
 %%DATADIR%%/system/assets/tools/location.svg
 %%DATADIR%%/system/assets/tools/next.svg
+%%DATADIR%%/system/assets/tools/outward.svg
 %%DATADIR%%/system/assets/tools/pan.svg
 %%DATADIR%%/system/assets/tools/pencil.svg
 %%DATADIR%%/system/assets/tools/pin.svg
@@ -95,6 +111,10 @@ bin/abstreet-game
 %%DATADIR%%/system/assets/tools/settings.svg
 %%DATADIR%%/system/assets/tools/star.svg
 %%DATADIR%%/system/assets/tools/time.svg
+%%DATADIR%%/system/assets/tools/toggle_left.svg
+%%DATADIR%%/system/assets/tools/toggle_off.svg
+%%DATADIR%%/system/assets/tools/toggle_on.svg
+%%DATADIR%%/system/assets/tools/toggle_right.svg
 %%DATADIR%%/system/assets/tools/undo.svg
 %%DATADIR%%/system/cities/seattle.bin
 %%DATADIR%%/system/fonts/Bungee-Regular.ttf
@@ -102,9 +122,12 @@ bin/abstreet-game
 %%DATADIR%%/system/fonts/Overpass-Bold.ttf
 %%DATADIR%%/system/fonts/Overpass-Regular.ttf
 %%DATADIR%%/system/fonts/Overpass-SemiBold.ttf
+%%DATADIR%%/system/fonts/OverpassMono-Bold.ttf
+%%DATADIR%%/system/fonts/ZCOOLXiaoWei-Regular.ttf
 %%DATADIR%%/system/maps/ballard.bin
+%%DATADIR%%/system/maps/berlin_center.bin
 %%DATADIR%%/system/maps/downtown.bin
-%%DATADIR%%/system/maps/huge_krakow.bin
+%%DATADIR%%/system/maps/krakow_center.bin
 %%DATADIR%%/system/maps/lakeslice.bin
 %%DATADIR%%/system/maps/montlake.bin
 %%DATADIR%%/system/maps/south_seattle.bin
@@ -113,7 +136,6 @@ bin/abstreet-game
 %%DATADIR%%/system/prebaked_results/lakeslice/weekday.bin
 %%DATADIR%%/system/prebaked_results/montlake/car vs bike contention.bin
 %%DATADIR%%/system/prebaked_results/montlake/weekday.bin
-%%DATADIR%%/system/proposals/cap hill superblock.json
 %%DATADIR%%/system/proposals/repair west seattle bridge.json
 %%DATADIR%%/system/proposals/simplify burke corliss.json
 %%DATADIR%%/system/proposals/stay healthy lake wash blvd.json
