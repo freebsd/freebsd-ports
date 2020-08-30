@@ -1,6 +1,6 @@
---- lib/SNMP_Session.pm.orig	2008-11-21 08:25:17.000000000 +0300
-+++ lib/SNMP_Session.pm	2013-08-12 15:13:26.000000000 +0400
-@@ -146,8 +146,8 @@
+--- lib/SNMP_Session.pm.orig	2008-11-21 05:25:17 UTC
++++ lib/SNMP_Session.pm
+@@ -146,8 +146,8 @@ BEGIN {
  
      if (eval {local $SIG{__DIE__};require Socket6;} &&
         eval {local $SIG{__DIE__};require IO::Socket::INET6; IO::Socket::INET6->VERSION("1.26");}) {
@@ -11,7 +11,20 @@
  	$SNMP_Session::ipv6available = 1;
      }
      eval 'local $SIG{__DIE__};local $SIG{__WARN__};$dont_wait_flags = MSG_DONTWAIT();';
-@@ -549,7 +549,7 @@
+@@ -194,8 +194,11 @@ sub set_retries {
+ }
+ sub set_backoff {
+     my ($session, $backoff) = @_;
++    my ($_good, $_warn);
++
++    { local $SIG{__WARN__} = sub { $_warn = $_[0] }; $_good = $backoff >= 1.0; }
+     croak ("backoff ($backoff) must be a number >= 1.0")
+-	unless $backoff == int ($backoff) && $backoff >= 1.0;
++	unless $_good && !$_warn;
+     $session->{'backoff'} = $backoff; 
+ }
+ 
+@@ -549,7 +552,7 @@ sub pretty_address {
      # complaining about AF_INET6 when Socket6 is not available
  
      if( (defined $ipv6_addr_len) && (length $addr == $ipv6_addr_len)) {
@@ -20,7 +33,7 @@
  	$addrstr = inet_ntop (AF_INET6(), $addrunpack);
      } else {
  	($port,$addrunpack) = unpack_sockaddr_in ($addr);
-@@ -605,7 +605,7 @@
+@@ -605,7 +608,7 @@ use Carp;
  BEGIN {
      if($SNMP_Session::ipv6available) {
  	import IO::Socket::INET6;
@@ -29,7 +42,7 @@
      }
  }
  
-@@ -825,8 +825,8 @@
+@@ -825,8 +828,8 @@ sub sa_equal_p ($$$) {
  	($p2,$a2) = unpack_sockaddr_in ($sa2);
      } elsif($this->{'sockfamily'} == AF_INET6()) {
  	# IPv6 addresses
@@ -40,7 +53,7 @@
      } else {
  	return 0;
      }
-@@ -899,7 +899,7 @@
+@@ -899,7 +902,7 @@ sub receive_trap {
      return undef unless $remote_addr;
  
      if( (defined $ipv6_addr_len) && (length $remote_addr == $ipv6_addr_len)) {
@@ -49,7 +62,7 @@
      } else {
  	($port,$iaddr) = unpack_sockaddr_in($remote_addr);
      }
-@@ -948,7 +948,7 @@
+@@ -948,7 +951,7 @@ sub receive_request {
      return undef unless $remote_addr;
  
      if( (defined $ipv6_addr_len) && (length $remote_addr == $ipv6_addr_len)) {

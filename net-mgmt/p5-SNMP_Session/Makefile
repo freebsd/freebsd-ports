@@ -3,7 +3,7 @@
 
 PORTNAME=	SNMP_Session
 PORTVERSION=	1.13
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	http://pkgs.fedoraproject.org/repo/pkgs/perl-SNMP_Session/SNMP_Session-1.13.tar.gz/055e1065babf55f1f8606329c6bdb947/
 PKGNAMEPREFIX=	p5-
