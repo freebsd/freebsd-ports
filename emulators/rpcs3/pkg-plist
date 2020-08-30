@@ -8,10 +8,12 @@ share/metainfo/rpcs3.appdata.xml
 %%DATADIR%%/GuiConfigs/Envy.qss
 %%DATADIR%%/GuiConfigs/Kuroi (Dark) by Ani.qss
 %%DATADIR%%/GuiConfigs/ModernBlue Theme by TheMitoSan.qss
+%%DATADIR%%/GuiConfigs/Nekotekina by GooseWing.qss
 %%DATADIR%%/GuiConfigs/Skyline (Nightfall).qss
 %%DATADIR%%/GuiConfigs/Skyline.qss
 %%DATADIR%%/GuiConfigs/YoRHa by Ani.qss
 %%DATADIR%%/GuiConfigs/YoRHa-background.jpg
+%%DATADIR%%/GuiConfigs/kot-bg.png
 %%DATADIR%%/Icons/ui/L1.png
 %%DATADIR%%/Icons/ui/L2.png
 %%DATADIR%%/Icons/ui/R1.png

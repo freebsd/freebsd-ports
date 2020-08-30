@@ -2,14 +2,14 @@
 
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.11-10779 # git rev-list --count HEAD
-DISTVERSIONSUFFIX=	-gbccfb1cda
+DISTVERSION=	0.0.11-10807 # git rev-list --count HEAD
+DISTVERSIONSUFFIX=	-g9a51f2226
 CATEGORIES=	emulators
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	PS3 emulator/debugger
 
-LICENSE=	BSD3CLAUSE BSL GPLv2 MIT ZLIB
+LICENSE=	APACHE20 BSD3CLAUSE BSL GPLv2 MIT ZLIB
 LICENSE_COMB=	multi
 LICENSE_FILE_BSD3CLAUSE=${WRKSRC_cereal}/LICENSE
 LICENSE_FILE_BSL=	${WRKSRC_span}/LICENSE_1_0.txt
@@ -29,11 +29,13 @@ GH_TUPLE=	RPCS3:hidapi:hidapi-0.8.0-rc1-27-g9220f5e:hidapi/3rdparty/hidapi \
 		RPCS3:llvm-mirror:f5679565d348:llvm/llvm \
 		Cyan4973:xxHash:v0.6.5:xxHash/3rdparty/xxHash \
 		FNA-XNA:FAudio:20.05:FAudio/3rdparty/FAudio \
+		google:flatbuffers:v1.11.0:flatbuffers/3rdparty/flatbuffers \
 		jbeder:yaml-cpp:yaml-cpp-0.6.3-30-g6a211f0:yamlcpp/3rdparty/yaml-cpp \
 		kobalicek:asmjit:fc251c9:asmjit/asmjit \
 		KhronosGroup:SPIRV-Headers:1.5.3:spirv_headers/Vulkan/spirv-headers \
 		KhronosGroup:SPIRV-Tools:v2020.2-42-g49ca250b:spirv_tools/Vulkan/spirv-tools \
 		KhronosGroup:glslang:8.13.3743:glslang/Vulkan/glslang \
+		RipleyTom:wolfssl:v4.3.0-stable-424-gd0749c654:wolfssl/3rdparty/wolfssl \
 		tcbrindle:span:9d7559a:span/3rdparty/span \
 		USCiLab:cereal:v1.3.0-5-g60c69df9:cereal/3rdparty/cereal \
 		zeux:pugixml:v1.9-51-g8bf806c:pugixml/3rdparty/pugixml
