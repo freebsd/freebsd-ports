@@ -4,6 +4,7 @@
 PORTNAME=	colortail
 PORTVERSION=	0.3.3
 CATEGORIES=	misc
+MASTER_SITES=	https://github.com/joakim666/colortail/releases/download/${PORTVERSION}/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	tail(1) replacement with color support
@@ -11,11 +12,7 @@ COMMENT=	tail(1) replacement with color support
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf
 GNU_CONFIGURE=	yes
-
-GH_ACCOUNT=	joakim666
-USE_GITHUB=	yes
 
 OPTIONS_DEFINE=	EXAMPLES
 
