@@ -1,8 +1,7 @@
-DBD::mysql is the Perl5 Database Interface driver for the MySQL
-database.  In other words: DBD::mysql is an interface between the Perl
-programming language and the MySQL programming API that comes with the
-MySQL relational database management system.  Most functions provided by
-this programming API are supported.  Some rarely used functions are
-missing, mainly because noone ever requested them.
+DBD::MariaDB is the Perl5 Database Interface driver for MariaDB and MySQL
+databases. In other words: DBD::MariaDB is an interface between the Perl
+programming language and the MariaDB/MySQL programming API that comes with the
+MariaDB/MySQL relational database management system. Most functions provided by
+this programming API are supported.
 
-WWW: https://metacpan.org/release/DBD-mysql
+WWW: https://metacpan.org/release/DBD-MariaDB
