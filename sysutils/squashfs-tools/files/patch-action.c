@@ -1,6 +1,6 @@
 Hack for lack of strdupa() in BSD libc
 
---- action.c.orig
+--- action.c.orig	2014-05-10 04:54:13 UTC
 +++ action.c
 @@ -44,6 +44,12 @@
  #include "action.h"

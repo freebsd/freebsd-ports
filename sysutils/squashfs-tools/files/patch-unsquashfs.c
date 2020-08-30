@@ -1,4 +1,4 @@
---- unsquashfs.c.orig
+--- unsquashfs.c.orig	2014-05-12 22:18:35 UTC
 +++ unsquashfs.c
 @@ -31,7 +31,14 @@
  #include "unsquashfs_info.h"

@@ -15,6 +15,8 @@ COMMENT=	Set of tools to manipulate squashfs images
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/../COPYING
 
+USES=		alias cpe gmake
+
 PLIST_FILES=	bin/mksquashfs \
 		bin/unsquashfs
 
@@ -26,11 +28,13 @@ LZMA_DESC=	Build with LZMA support
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/squashfs-tools
 
-USE_CSTD=	gnu89
-
-USES=		alias cpe gmake
 CPE_PRODUCT=	squashfs
 CPE_VENDOR=	phillip_lougher
+
+USE_CSTD=	gnu89
+
+# Fix build with clang11
+CFLAGS+=	-fcommon
 
 .include <bsd.port.options.mk>
 
