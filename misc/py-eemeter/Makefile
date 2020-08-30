@@ -24,7 +24,7 @@ USE_PYTHON=	distutils concurrent autoplist
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} < 3500
+.if ${PYTHON_REL} < 3600
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}statsmodels010>0:math/py-statsmodels010@${PY_FLAVOR}
 .else
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}statsmodels>0:math/py-statsmodels@${PY_FLAVOR}
