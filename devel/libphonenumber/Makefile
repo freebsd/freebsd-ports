@@ -17,7 +17,7 @@ LIB_DEPENDS=	libboost_atomic.so:devel/boost-libs \
 
 USES=		cmake:noninja compiler:c++11-lang
 USE_GITHUB=	yes
-GH_ACCOUNT=	googlei18n
+GH_ACCOUNT=	google
 
 CMAKE_ON=	USE_STD_MAP
 
