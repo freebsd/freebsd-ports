@@ -1,18 +1,18 @@
---- daemon-control-dist.orig	2015-09-16 19:40:15 UTC
+--- daemon-control-dist.orig	2020-05-08 14:20:42 UTC
 +++ daemon-control-dist
-@@ -11,11 +11,11 @@
- #### Edit these to suit your configuration ####
+@@ -16,11 +16,11 @@ import time  # do not edit
+ #    Edit these to suit your configuration    #
  ###############################################
  
--DENYHOSTS_BIN   = "/usr/sbin/denyhosts"
--DENYHOSTS_LOCK  = "/run/denyhosts.pid"
--DENYHOSTS_CFG   = "/etc/denyhosts.conf"
-+DENYHOSTS_BIN   = "%%PREFIX%%/bin/denyhosts.py"
-+DENYHOSTS_LOCK  = "/var/run/denyhosts.pid"
-+DENYHOSTS_CFG   = "%%PREFIX%%/etc/denyhosts.conf"
+-DENYHOSTS_BIN = "/usr/sbin/denyhosts.py"
+-DENYHOSTS_LOCK = "/run/denyhosts.pid"
+-DENYHOSTS_CFG = "/etc/denyhosts.conf"
++DENYHOSTS_BIN = "%%PREFIX%%/sbin/denyhosts.py"
++DENYHOSTS_LOCK = "/var/run/denyhosts.pid"
++DENYHOSTS_CFG = "%%PREFIX%%/etc/denyhosts.conf"
  
--PYTHON_BIN      = "/usr/bin/env python"
-+PYTHON_BIN      = "%%PYTHON_CMD%%"
+-PYTHON_BIN = "/usr/bin/python3"
++PYTHON_BIN = "%%PYTHON_CMD%%"
  
- ###############################################
- ####         Do not edit below             ####
+ distro = platform.uname()[3]
+ distro2 = platform.uname()[2]
