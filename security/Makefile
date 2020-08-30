@@ -990,6 +990,7 @@
     SUBDIR += py-trustme
     SUBDIR += py-tuf
     SUBDIR += py-txtorcon
+    SUBDIR += py-uhashring
     SUBDIR += py-vici
     SUBDIR += py-virustotal-api
     SUBDIR += py-volatility3

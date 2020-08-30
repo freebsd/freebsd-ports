@@ -1,0 +1,7 @@
+uhashring implements consistent hashing in pure Python.
+
+Consistent hashing is mostly used on distributed systems/caches/databases as
+this avoid the total reshuffling of your key-node mappings when adding or
+removing a node in your ring (called continuum on libketama).
+
+WWW: https://github.com/ultrabug/uhashring
