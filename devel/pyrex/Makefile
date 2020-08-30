@@ -15,13 +15,13 @@ COMMENT=	Programming Language for writing Python extension modules
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
-
-USE_PYTHON=	autoplist distutils
 USES=		python:2.7
+USE_PYTHON=	autoplist distutils
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
