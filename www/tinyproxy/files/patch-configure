@@ -1,0 +1,234 @@
+--- configure.orig	2018-09-01 02:11:56 UTC
++++ configure
+@@ -624,14 +624,8 @@ ac_includes_default="\
+ ac_subst_vars='am__EXEEXT_FALSE
+ am__EXEEXT_TRUE
+ LTLIBOBJS
+-HAVE_XMLLINT_FALSE
+-HAVE_XMLLINT_TRUE
+ XMLLINT
+-HAVE_A2X_FALSE
+-HAVE_A2X_TRUE
+ A2X
+-HAVE_XSLTPROC_FALSE
+-HAVE_XSLTPROC_TRUE
+ XSLTPROC
+ ADDITIONAL_OBJECTS
+ LIBOBJS
+@@ -6069,173 +6063,9 @@ rm -f core conftest.err conftest.$ac_objext \
+ 
+ 
+ 
+-# Check for xml tools
+-# Extract the first word of "xsltproc", so it can be a program name with args.
+-set dummy xsltproc; ac_word=$2
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
+-$as_echo_n "checking for $ac_word... " >&6; }
+-if ${ac_cv_path_XSLTPROC+:} false; then :
+-  $as_echo_n "(cached) " >&6
+-else
+-  case $XSLTPROC in
+-  [\\/]* | ?:[\\/]*)
+-  ac_cv_path_XSLTPROC="$XSLTPROC" # Let the user override the test with a path.
+-  ;;
+-  *)
+-  as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
+-for as_dir in $PATH
+-do
+-  IFS=$as_save_IFS
+-  test -z "$as_dir" && as_dir=.
+-    for ac_exec_ext in '' $ac_executable_extensions; do
+-  if as_fn_executable_p "$as_dir/$ac_word$ac_exec_ext"; then
+-    ac_cv_path_XSLTPROC="$as_dir/$ac_word$ac_exec_ext"
+-    $as_echo "$as_me:${as_lineno-$LINENO}: found $as_dir/$ac_word$ac_exec_ext" >&5
+-    break 2
+-  fi
+-done
+-  done
+-IFS=$as_save_IFS
++ac_config_files="$ac_config_files Makefile src/Makefile data/Makefile data/templates/Makefile etc/Makefile m4macros/Makefile tests/Makefile tests/scripts/Makefile"
+ 
+-  test -z "$ac_cv_path_XSLTPROC" && ac_cv_path_XSLTPROC="no"
+-  ;;
+-esac
+-fi
+-XSLTPROC=$ac_cv_path_XSLTPROC
+-if test -n "$XSLTPROC"; then
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $XSLTPROC" >&5
+-$as_echo "$XSLTPROC" >&6; }
+-else
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+-$as_echo "no" >&6; }
+-fi
+ 
+-
+- if test "x$XSLTPROC" != "xno"; then
+-  HAVE_XSLTPROC_TRUE=
+-  HAVE_XSLTPROC_FALSE='#'
+-else
+-  HAVE_XSLTPROC_TRUE='#'
+-  HAVE_XSLTPROC_FALSE=
+-fi
+-
+-
+-# Check for asciidoc
+-# Extract the first word of "a2x", so it can be a program name with args.
+-set dummy a2x; ac_word=$2
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
+-$as_echo_n "checking for $ac_word... " >&6; }
+-if ${ac_cv_path_A2X+:} false; then :
+-  $as_echo_n "(cached) " >&6
+-else
+-  case $A2X in
+-  [\\/]* | ?:[\\/]*)
+-  ac_cv_path_A2X="$A2X" # Let the user override the test with a path.
+-  ;;
+-  *)
+-  as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
+-for as_dir in $PATH
+-do
+-  IFS=$as_save_IFS
+-  test -z "$as_dir" && as_dir=.
+-    for ac_exec_ext in '' $ac_executable_extensions; do
+-  if as_fn_executable_p "$as_dir/$ac_word$ac_exec_ext"; then
+-    ac_cv_path_A2X="$as_dir/$ac_word$ac_exec_ext"
+-    $as_echo "$as_me:${as_lineno-$LINENO}: found $as_dir/$ac_word$ac_exec_ext" >&5
+-    break 2
+-  fi
+-done
+-  done
+-IFS=$as_save_IFS
+-
+-  test -z "$ac_cv_path_A2X" && ac_cv_path_A2X="no"
+-  ;;
+-esac
+-fi
+-A2X=$ac_cv_path_A2X
+-if test -n "$A2X"; then
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $A2X" >&5
+-$as_echo "$A2X" >&6; }
+-else
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+-$as_echo "no" >&6; }
+-fi
+-
+-
+- if test "x$A2X" != "xno"; then
+-  HAVE_A2X_TRUE=
+-  HAVE_A2X_FALSE='#'
+-else
+-  HAVE_A2X_TRUE='#'
+-  HAVE_A2X_FALSE=
+-fi
+-
+-
+-# checking xmllint
+-# Extract the first word of "xmllint", so it can be a program name with args.
+-set dummy xmllint; ac_word=$2
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
+-$as_echo_n "checking for $ac_word... " >&6; }
+-if ${ac_cv_path_XMLLINT+:} false; then :
+-  $as_echo_n "(cached) " >&6
+-else
+-  case $XMLLINT in
+-  [\\/]* | ?:[\\/]*)
+-  ac_cv_path_XMLLINT="$XMLLINT" # Let the user override the test with a path.
+-  ;;
+-  *)
+-  as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
+-for as_dir in $PATH
+-do
+-  IFS=$as_save_IFS
+-  test -z "$as_dir" && as_dir=.
+-    for ac_exec_ext in '' $ac_executable_extensions; do
+-  if as_fn_executable_p "$as_dir/$ac_word$ac_exec_ext"; then
+-    ac_cv_path_XMLLINT="$as_dir/$ac_word$ac_exec_ext"
+-    $as_echo "$as_me:${as_lineno-$LINENO}: found $as_dir/$ac_word$ac_exec_ext" >&5
+-    break 2
+-  fi
+-done
+-  done
+-IFS=$as_save_IFS
+-
+-  test -z "$ac_cv_path_XMLLINT" && ac_cv_path_XMLLINT="no"
+-  ;;
+-esac
+-fi
+-XMLLINT=$ac_cv_path_XMLLINT
+-if test -n "$XMLLINT"; then
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $XMLLINT" >&5
+-$as_echo "$XMLLINT" >&6; }
+-else
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+-$as_echo "no" >&6; }
+-fi
+-
+-
+-if test "x$XMLLINT" != "xno"; then
+-  $as_echo_n "testing xmllint... "
+-  echo "TEST" > conftest.txt
+-  if $A2X -f docbook conftest.txt 2>/dev/null; then
+-    $as_echo "ok"
+-  else
+-    $as_echo "failed"
+-    XMLLINT="no"
+-  fi
+-  rm -f conftest.txt conftest.xml
+-fi
+- if test "x$XMLLINT" != "xno"; then
+-  HAVE_XMLLINT_TRUE=
+-  HAVE_XMLLINT_FALSE='#'
+-else
+-  HAVE_XMLLINT_TRUE='#'
+-  HAVE_XMLLINT_FALSE=
+-fi
+-
+-
+-ac_config_files="$ac_config_files Makefile src/Makefile data/Makefile data/templates/Makefile etc/Makefile docs/Makefile docs/man5/Makefile docs/man5/tinyproxy.conf.txt docs/man8/Makefile docs/man8/tinyproxy.txt m4macros/Makefile tests/Makefile tests/scripts/Makefile"
+-
+-
+ cat >confcache <<\_ACEOF
+ # This file is a shell script that caches the results of configure
+ # tests run on this system so they can be shared between configure
+@@ -6377,18 +6207,6 @@ if test -z "${am__fastdepCC_TRUE}" && test -z "${am__f
+   as_fn_error $? "conditional \"am__fastdepCC\" was never defined.
+ Usually this means the macro was only invoked conditionally." "$LINENO" 5
+ fi
+-if test -z "${HAVE_XSLTPROC_TRUE}" && test -z "${HAVE_XSLTPROC_FALSE}"; then
+-  as_fn_error $? "conditional \"HAVE_XSLTPROC\" was never defined.
+-Usually this means the macro was only invoked conditionally." "$LINENO" 5
+-fi
+-if test -z "${HAVE_A2X_TRUE}" && test -z "${HAVE_A2X_FALSE}"; then
+-  as_fn_error $? "conditional \"HAVE_A2X\" was never defined.
+-Usually this means the macro was only invoked conditionally." "$LINENO" 5
+-fi
+-if test -z "${HAVE_XMLLINT_TRUE}" && test -z "${HAVE_XMLLINT_FALSE}"; then
+-  as_fn_error $? "conditional \"HAVE_XMLLINT\" was never defined.
+-Usually this means the macro was only invoked conditionally." "$LINENO" 5
+-fi
+ 
+ : "${CONFIG_STATUS=./config.status}"
+ ac_write_fail=0
+@@ -7720,22 +7538,4 @@ fi
+ if test -n "$ac_unrecognized_opts" && test "$enable_option_checking" != no; then
+   { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: unrecognized options: $ac_unrecognized_opts" >&5
+ $as_echo "$as_me: WARNING: unrecognized options: $ac_unrecognized_opts" >&2;}
+-fi
+-
+-
+-# the manpages are shipped in the release tarball and we don't want them to
+-# get regenerated if a2x is not available. the intermediate files from
+-# AC_CONFIG_FILES are created with config.status, which is created at configure
+-# runtime, so we need to touch them after config.status terminated to prevent
+-# make from rebuild them.
+-
+-if test "x$A2X" = "xno"; then
+-  touch docs/man5/tinyproxy.conf.txt
+-  touch docs/man8/tinyproxy.txt
+-  if test -e docs/man5/tinyproxy.conf.5 ; then
+-      touch docs/man5/tinyproxy.conf.5
+-  fi
+-  if test -e docs/man8/tinyproxy.8 ; then
+-      touch docs/man8/tinyproxy.8
+-  fi
+ fi

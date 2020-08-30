@@ -3,6 +3,7 @@
 
 PORTNAME=	tinyproxy
 PORTVERSION=	1.10.0
+MASTER_SITES=	https://github.com/tinyproxy/tinyproxy/releases/download/${PORTVERSION}/
 PORTEPOCH=	1
 CATEGORIES=	www
 
@@ -12,19 +13,17 @@ COMMENT=	Small, efficient HTTP proxy server
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-OPTIONS_DEFINE=	REVERSE TRANSPARENT XHEADER
-REVERSE_DESC=		Reverse proxy support
-TRANSPARENT_DESC=	Transparent proxy support
-XHEADER_DESC=		X-Tinyproxy header
-
-USES=		autoreconf gmake
+USES=		gmake tar:xz
 
 CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin \
 		--program-transform-name=""
 GNU_CONFIGURE=	yes
-USE_RC_SUBR=	${PORTNAME}
+USE_RC_SUBR=	tinyproxy
 
-USE_GITHUB=	yes
+OPTIONS_DEFINE=	REVERSE TRANSPARENT XHEADER
+REVERSE_DESC=		Reverse proxy support
+TRANSPARENT_DESC=	Transparent proxy support
+XHEADER_DESC=		X-Tinyproxy header
 
 REVERSE_CONFIGURE_ENABLE=	reverse
 TRANSPARENT_CONFIGURE_ENABLE=	transparent
@@ -35,11 +34,10 @@ post-patch:
 		${WRKSRC}/docs/man5/tinyproxy.conf.txt.in \
 		${WRKSRC}/docs/man8/tinyproxy.txt.in \
 		${WRKSRC}/etc/tinyproxy.conf.in
-	@${REINPLACE_CMD} -e 's|pkgsysconf_DATA|sysconf_DATA|' ${WRKSRC}/etc/Makefile.am
 	@${REINPLACE_CMD} -e '/\/usr\/share\/tinyproxy/d; s|^#\(LogFile \)|\1|; s|^#\(PidFile \)|\1|' ${WRKSRC}/etc/tinyproxy.conf.in
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/etc/tinyproxy.conf ${STAGEDIR}${PREFIX}/etc/tinyproxy.conf.sample
+	${MV} ${STAGEDIR}${PREFIX}/etc/tinyproxy.conf ${STAGEDIR}${PREFIX}/etc/tinyproxy.conf.sample
 	${INSTALL_MAN} ${FILESDIR}/tinyproxy.conf.5 ${STAGEDIR}${PREFIX}/share/man/man5/
 	${INSTALL_MAN} ${FILESDIR}/tinyproxy.8 ${STAGEDIR}${PREFIX}/share/man/man8/
 
