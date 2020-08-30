@@ -15,7 +15,7 @@ LICENSE_NAME=	postcardware
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror pkg-mirror dist-sell pkg-sell auto-accept
 
-USES=		gmake pgsql
+USES=		compiler:c11 gmake pgsql
 
 LLD_UNSAFE=	yes
 WANT_PGSQL=	server
@@ -24,6 +24,8 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION:R}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	okbob
+
+MAKE_ARGS=	CC="${CC}"
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/postgresql/plpgsql_check.so
