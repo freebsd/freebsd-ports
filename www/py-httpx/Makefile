@@ -25,10 +25,12 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	HTTP2
+OPTIONS_DEFINE=	BROTLI HTTP2
 OPTIONS_DEFAULT=HTTP2
+BROTLI_DESC=	Brotli support
 HTTP2_DESC=	HTTP/2 support
 
+BROTLI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}brotlipy>=0.7.0<0.8:archivers/py-brotlipy@${PY_FLAVOR}
 HTTP2_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}h2>=3.0<4:www/py-h2@${PY_FLAVOR}
 
 .include <bsd.port.mk>
