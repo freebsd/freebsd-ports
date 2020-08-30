@@ -3,7 +3,7 @@
 
 PORTNAME=	thoteditor
 PORTVERSION=	2.1e
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	editors www
 MASTER_SITES=	ftp://ftp.inrialpes.fr/pub/opera/sources/thot/ \
 		ftp://ftp.ruhr-uni-bochum.de/local/jk.collection/thot/
@@ -26,8 +26,8 @@ MAKE_JOBS_UNSAFE=	yes
 
 CFLAGS+=		-fcommon
 
-EXPIRATION_DATE=	2020-09-30
-DEPRECATED=		Unmaintained and dead upstream
+DEPRECATED=	Unmaintained and dead upstream, does not build with -fno-common (llvm 11)
+EXPIRATION_DATE=2021-04-01
 
 post-extract:
 	@${MKDIR} ${WRKSRC}

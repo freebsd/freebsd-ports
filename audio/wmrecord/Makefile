@@ -3,7 +3,7 @@
 
 PORTNAME=	wmrecord
 PORTVERSION=	1.0.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio windowmaker
 MASTER_SITES=	http://linkinnovations.linux.tucows.com/files/x11/dock/ \
 		http://www.bsd-geek.de/FreeBSD/distfiles/
@@ -18,8 +18,8 @@ MAKE_ARGS=	LIBS="-L${LOCALBASE}/lib -lXpm -lX11 -lXext" \
 
 CFLAGS+=		-fcommon
 
-EXPIRATION_DATE=	2020-09-30
-DEPRECATED=		Unmaintained and dead upstream
+DEPRECATED=	Unmaintained and dead upstream, does not build with -fno-common (llvm 11)
+EXPIRATION_DATE=2021-04-01
 
 PLIST_FILES=	bin/wmrecord man/man1/wmrecord.1.gz
 

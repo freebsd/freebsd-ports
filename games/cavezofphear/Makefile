@@ -3,6 +3,7 @@
 
 PORTNAME=	cavezofphear
 PORTVERSION=	0.5.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.x86.no/cavezofphear/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -22,8 +23,8 @@ ALL_TARGET=	phear
 
 CFLAGS+=		-fcommon
 
-EXPIRATION_DATE=	2020-09-30
-DEPRECATED=		Unmaintained and dead upstream
+DEPRECATED=	Unmaintained and dead upstream, does not build with -fno-common (llvm 11)
+EXPIRATION_DATE=2021-04-01
 
 PORTDOCS=	ChangeLog README README-EDITOR TODO
 

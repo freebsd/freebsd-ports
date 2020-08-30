@@ -3,7 +3,7 @@
 
 PORTNAME=	bomberinstinct
 PORTVERSION=	0.8.9
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Bomber%20Instinct/BomberInstinct-${PORTVERSION}
 DISTNAME=	BomberInstinct-${PORTVERSION}
@@ -22,8 +22,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lintl -pthread
 # Upstream is dead.
 CFLAGS+=	-fcommon
 
-EXPIRATION_DATE=	2020-09-30
-DEPRECATED=		Unmaintained and dead upstream
+DEPRECATED=	Unmaintained and dead upstream, does not build with -fno-common (llvm 11)
+EXPIRATION_DATE=2021-04-01
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.[ch]" | ${XARGS} ${REINPLACE_CMD} -e \

@@ -3,7 +3,7 @@
 
 PORTNAME=	xmascot
 PORTVERSION=	2.6a
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11
 MASTER_SITES=	http://cclub-flying.dsl.gr.jp/products/xmascot/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -11,11 +11,11 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Moving mascot on your X11 screen
 
-# Fix build with llvm 11
+# Fix build with -fno-common (llvm 11)
 CFLAGS+=	-fcommon
 
-DEPRECATED=	Unmaintained and dead upstream
-EXPIRATION_DATE=2020-09-30
+DEPRECATED=	Unmaintained and dead upstream, does not build with -fno-common (llvm 11).
+EXPIRATION_DATE=2021-04-01
 
 USES=		imake xorg
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt

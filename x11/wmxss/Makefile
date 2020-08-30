@@ -3,18 +3,18 @@
 
 PORTNAME=	wmxss
 PORTVERSION=	0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	http://www.cs.mun.ca/~gstarkes/wmaker/dockapps/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Run xscreensaver modules inside a WindowMaker dock
 
-# Fix build with llvm 11
+# Fix build with -fno-common (llvm 11)
 CFLAGS+=	-fcommon
 
-DEPRECATED=	Unmaintained and dead upstream
-EXPIRATION_DATE=2020-09-30
+DEPRECATED=	Unmaintained and dead upstream, does not build with -fno-common (llvm 11)
+EXPIRATION_DATE=2021-04-01
 
 USES=		uidfix xorg
 USE_XORG=	x11 xpm

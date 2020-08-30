@@ -3,7 +3,7 @@
 
 PORTNAME=	pureadmin
 PORTVERSION=	0.4
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	ftp
 MASTER_SITES=	SF/purify/Default/${PORTVERSION}
 
@@ -21,8 +21,8 @@ LIBS+=		-lX11 -lm
 
 CFLAGS+=		-fcommon
 
-EXPIRATION_DATE=	2020-09-30
-DEPRECATED=		Unmaintained and dead upstream
+DEPRECATED=	Unmaintained and dead upstream, does not build with -fno-common (llvm 11)
+EXPIRATION_DATE=2021-04-01
 
 PORTDOCS=	index.txt introduction.txt main_window.txt \
 		preferences.txt user_manager.txt

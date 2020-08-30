@@ -3,7 +3,7 @@
 
 PORTNAME=	toolame
 PORTVERSION=	0.2l
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%200.2/${PORTNAME}%2002l
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//}
@@ -21,8 +21,8 @@ USE_CSTD=	gnu89
 
 CFLAGS+=		-fcommon
 
-EXPIRATION_DATE=	2020-09-30
-DEPRECATED=		Unmaintained and dead upstream
+DEPRECATED=	Unmaintained and dead upstream, does not build with -fno-common (llvm 11)
+EXPIRATION_DATE=2021-04-01
 
 PLIST_FILES=	bin/toolame
 PORTDOCS=	FUTURE HISTORY LGPL.txt README

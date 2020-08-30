@@ -3,7 +3,7 @@
 
 PORTNAME=	doorman
 PORTVERSION=	0.81
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -26,8 +26,8 @@ INSTALL_TARGET=	installdirs install-exec install-data
 
 CFLAGS+=		-fcommon
 
-EXPIRATION_DATE=	2020-09-30
-DEPRECATED=		Unmaintained and dead upstream
+DEPRECATED=	Unmaintained and dead upstream, does not build with -fno-common (llvm 11)
+EXPIRATION_DATE=2021-04-01
 
 SUB_FILES=	pkg-message doormand.cf.EXAMPLE
 USE_RC_SUBR=	doorman

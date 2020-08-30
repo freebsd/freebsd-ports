@@ -3,7 +3,7 @@
 
 PORTNAME=	e-uae
 DISTVERSION=	0.8.29.w4
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.rcdrummond.net/uae/${DISTNAME}/
 DISTNAME=	e-uae-0.8.29-WIP4
@@ -25,8 +25,8 @@ MAKE_JOBS_UNSAFE=	yes
 
 CFLAGS+=		-fcommon
 
-EXPIRATION_DATE=	2020-09-30
-DEPRECATED=		Unmaintained and dead upstream
+DEPRECATED=	Unmaintained and dead upstream, does not build with -fno-common (llvm 11)
+EXPIRATION_DATE=2021-04-01
 
 PORTDOCS=	ChangeLog README bsdsocket.txt cmd-line.txt \
 		compiling.txt configuration.txt floppies.txt \

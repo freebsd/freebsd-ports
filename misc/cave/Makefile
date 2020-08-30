@@ -3,6 +3,7 @@
 
 PORTNAME=	cave
 PORTVERSION=	1.0b
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	SF/bjk/${PORTNAME}/${PORTVERSION}
 
@@ -18,8 +19,8 @@ CPPFLAGS+=	-I${NCURSESINC} -I${LOCALBASE}/include
 
 CFLAGS+=		-fcommon
 
-EXPIRATION_DATE=	2020-09-30
-DEPRECATED=		Unmaintained and dead upstream
+DEPRECATED=	Unmaintained and dead upstream, does not build with -fno-common (llvm 11)
+EXPIRATION_DATE=2021-04-01
 
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/cave.1.gz

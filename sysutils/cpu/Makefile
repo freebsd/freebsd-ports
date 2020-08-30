@@ -3,7 +3,7 @@
 
 PORTNAME=	cpu
 PORTVERSION=	1.4.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -20,7 +20,7 @@ CPPFLAGS+=	-DLDAP_DEPRECATED
 
 CFLAGS+=		-fcommon
 
-EXPIRATION_DATE=	2020-09-30
-DEPRECATED=		Unmaintained and dead upstream
+DEPRECATED=	Unmaintained and dead upstream, does not build with -fno-common (llvm 11)
+EXPIRATION_DATE=2021-04-01
 
 .include <bsd.port.mk>

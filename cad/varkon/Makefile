@@ -3,7 +3,7 @@
 
 PORTNAME=	varkon
 PORTVERSION=	1.19E
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	cad
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Varkon_${PORTVERSION}
 DISTNAME=	Varkon_sources_${PORTVERSION}
@@ -31,8 +31,8 @@ DOS2UNIX_FILES=	sources/PL/src/Makefile.FreeBSD
 
 CFLAGS+=		-fcommon
 
-EXPIRATION_DATE=	2020-09-30
-DEPRECATED=		Unmaintained and dead upstream
+DEPRECATED=	Unmaintained and dead upstream, does not build with -fno-common (llvm 11)
+EXPIRATION_DATE=2021-04-01
 
 VARKON_PREFIX=	${PREFIX}/lib/${PORTNAME}
 

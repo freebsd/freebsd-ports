@@ -4,6 +4,7 @@
 PORTNAME=	hybserv
 DISTVERSIONPREFIX=	REL_
 DISTVERSION=	1_9_5
+PORTREVISION=	1
 CATEGORIES=	irc
 
 MAINTAINER=	ports@FreeBSD.org
@@ -20,8 +21,8 @@ GNU_CONFIGURE=	yes
 
 CFLAGS+=		-fcommon
 
-EXPIRATION_DATE=	2020-09-30
-DEPRECATED=		Unmaintained and dead upstream
+DEPRECATED=	Unmaintained and dead upstream, does not build with -fno-common (llvm 11)
+EXPIRATION_DATE=2021-04-01
 
 USERS=		${PORTNAME}
 GROUPS=		${USERS}

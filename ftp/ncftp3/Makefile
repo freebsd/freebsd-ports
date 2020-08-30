@@ -3,7 +3,7 @@
 
 PORTNAME=	ncftp
 PORTVERSION=	3.2.6
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.ncftp.com/ncftp/ \
 		ftp://ftp.mirrorservice.org/sites/ftp.ncftp.com/ncftp/
@@ -24,8 +24,8 @@ CONFIGURE_ENV+=	ac_cv_header_ncurses_h=yes
 
 CFLAGS+=		-fcommon
 
-EXPIRATION_DATE=	2020-09-30
-DEPRECATED=		Unmaintained and dead upstream
+DEPRECATED=	Unmaintained and dead upstream, does not build with -fno-common (llvm 11)
+EXPIRATION_DATE=2021-04-01
 
 PORTDOCS=	*
 

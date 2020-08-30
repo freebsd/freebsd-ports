@@ -3,7 +3,7 @@
 
 PORTNAME=	gate
 PORTVERSION=	2.06
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	http://www.unixpapa.com/software/
 
@@ -21,8 +21,8 @@ ALL_TARGET=	gate gate.1
 
 CFLAGS+=		-fcommon
 
-EXPIRATION_DATE=	2020-09-30
-DEPRECATED=		Unmaintained and dead upstream
+DEPRECATED=	Unmaintained and dead upstream, does not build with -fno-common (llvm 11)
+EXPIRATION_DATE=2021-04-01
 
 post-patch:
 	@${REINPLACE_CMD} -e \

@@ -3,6 +3,7 @@
 
 PORTNAME=	xaric
 PORTVERSION=	0.13.7
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://xaric.org/software/xaric/releases/
 
@@ -14,8 +15,8 @@ USES=		gmake ncurses pathfix ssl
 
 CFLAGS+=		-fcommon
 
-EXPIRATION_DATE=	2020-09-30
-DEPRECATED=		Unmaintained and dead upstream
+DEPRECATED=	Unmaintained and dead upstream, does not build with -fno-common (llvm 11)
+EXPIRATION_DATE=2021-04-01
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ggdb3||g' ${WRKSRC}/Makefile.in

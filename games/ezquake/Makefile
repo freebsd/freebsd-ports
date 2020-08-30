@@ -3,7 +3,7 @@
 
 PORTNAME=	ezquake
 PORTVERSION=	1.9
-PORTREVISION=	9
+PORTREVISION=	10
 PORTEPOCH=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/stable/${PORTVERSION}:ezquake \
@@ -47,8 +47,8 @@ BROKEN_powerpc=		Does not install on powerpc: signal 2
 # Fix with clang11
 CFLAGS+=		-fcommon
 
-EXPIRATION_DATE=	2020-09-30
-DEPRECATED=		Unmaintained and out of date
+DEPRECATED=	Unmaintained and dead upstream, does not build with -fno-common (llvm 11)
+EXPIRATION_DATE=2021-04-01
 
 .include "${.CURDIR}/../quake-data/Makefile.include"
 

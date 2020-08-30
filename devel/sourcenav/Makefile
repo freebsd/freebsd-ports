@@ -3,7 +3,7 @@
 
 PORTNAME=	sourcenav
 PORTVERSION=	4.5
-PORTREVISION=	9
+PORTREVISION=	10
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/NG${PORTVERSION}
@@ -28,8 +28,8 @@ CONFIGURE_ARGS+=--prefix=${PREFIX}/sourcenav
 
 CFLAGS+=		-fcommon
 
-EXPIRATION_DATE=	2020-09-30
-DEPRECATED=		Unmaintained and dead upstream
+DEPRECATED=	Unmaintained and dead upstream, does not build with -fno-common (llvm 11)
+EXPIRATION_DATE=2021-04-01
 
 post-patch:
 	${REINPLACE_CMD} -e 's|@XINCLUDES@|-I${LOCALBASE}/include|; \

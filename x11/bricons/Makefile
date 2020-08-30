@@ -4,7 +4,7 @@
 PORTNAME=	bricons
 PORTVERSION=	3.0
 DISTVERSIONPREFIX=	athena-
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	XCONTRIB/../R5contrib
 
@@ -19,8 +19,8 @@ USE_XORG=	xaw
 
 CFLAGS+=		-fcommon
 
-EXPIRATION_DATE=	2020-09-30
-DEPRECATED=		Unmaintained and dead upstream
+DEPRECATED=	Unmaintained and dead upstream, does not build with -fno-common (llvm 11)
+EXPIRATION_DATE=2021-04-01
 
 post-patch:
 	@${REINPLACE_CMD} -e \

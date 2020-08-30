@@ -3,7 +3,7 @@
 
 PORTNAME=	bugs
 PORTVERSION=	4.1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	SUNSITE/apps/crypto
 
@@ -20,8 +20,8 @@ TEST_TARGET=	test
 
 CFLAGS+=	-fcommon
 
-EXPIRATION_DATE=	2020-09-30
-DEPRECATED=		Unmaintained and dead upstream
+DEPRECATED=	Unmaintained and dead upstream, does not build with -fno-common (llvm 11)
+EXPIRATION_DATE=2021-04-01
 
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 

@@ -3,6 +3,7 @@
 
 PORTNAME=	inadyn-mt
 PORTVERSION=	02.28.10
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}.v.${PORTVERSION}/
 DISTNAME=	${PORTNAME}.v.${PORTVERSION}
@@ -21,8 +22,8 @@ MAKE_ARGS+=	INSTALL_PREFIX="${STAGEDIR}${PREFIX}/etc"
 
 CFLAGS+=		-fcommon
 
-EXPIRATION_DATE=	2020-09-30
-DEPRECATED=		Unmaintained and dead upstream
+DEPRECATED=	Unmaintained and dead upstream, does not build with -fno-common (llvm 11)
+EXPIRATION_DATE=2021-04-01
 
 PORTDOCS=	readme.html AUTHORS README
 PORTEXAMPLES=	*

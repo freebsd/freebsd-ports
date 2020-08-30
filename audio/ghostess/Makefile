@@ -3,7 +3,7 @@
 
 PORTNAME=	ghostess
 PORTVERSION=	20120105
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://www.smbolton.com/linux/
 
@@ -29,8 +29,8 @@ CONFIGURE_ARGS=	--with-jackmidi
 
 CFLAGS+=		-fcommon
 
-EXPIRATION_DATE=	2020-09-30
-DEPRECATED=		Unmaintained and dead upstream
+DEPRECATED=	Unmaintained and dead upstream, does not build with -fno-common (llvm 11)
+EXPIRATION_DATE=2021-04-01
 
 PLIST_FILES=	bin/ghostess bin/ghostess_universal_gui man/man1/ghostess.1.gz
 

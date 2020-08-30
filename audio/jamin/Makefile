@@ -3,7 +3,7 @@
 
 PORTNAME=	jamin
 PORTVERSION=	0.95.0
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -24,8 +24,8 @@ USE_GNOME=	gtk20 intltool libxml2
 
 CFLAGS+=		-fcommon
 
-EXPIRATION_DATE=	2020-09-30
-DEPRECATED=		Unmaintained and dead upstream
+DEPRECATED=	Unmaintained and dead upstream, does not build with -fno-common (llvm 11)
+EXPIRATION_DATE=2021-04-01
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/ladspa/jamincont_1912.so

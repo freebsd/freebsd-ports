@@ -3,6 +3,7 @@
 
 PORTNAME=	vms-empire
 PORTVERSION=	1.14
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.catb.org/~esr/vms-empire/
 
@@ -18,8 +19,8 @@ OPTIONS_DEFINE=	DOCS
 
 CFLAGS+=		-fcommon
 
-EXPIRATION_DATE=	2020-09-30
-DEPRECATED=		Unmaintained and outdated
+DEPRECATED=	Unmaintained and dead upstream, does not build with -fno-common (llvm 11)
+EXPIRATION_DATE=2021-04-01
 
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man6/${PORTNAME}.6.gz \

@@ -3,6 +3,7 @@
 
 PORTNAME=	pftpd
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.ifm.liu.se/pub/unix/pftpd/
 
@@ -14,8 +15,8 @@ MAKE_JOBS_UNSAFE=	yes
 
 CFLAGS+=		-fcommon
 
-EXPIRATION_DATE=	2020-09-30
-DEPRECATED=		Unmaintained and dead upstream
+DEPRECATED=	Unmaintained and dead upstream, does not build with -fno-common (llvm 11)
+EXPIRATION_DATE=2021-04-01
 
 
 PLIST_FILES=	sbin/pftpd \

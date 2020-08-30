@@ -3,7 +3,7 @@
 
 PORTNAME=	elmo
 PORTVERSION=	1.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -22,8 +22,8 @@ USE_PERL5=	run
 
 CFLAGS+=		-fcommon
 
-EXPIRATION_DATE=	2020-09-30
-DEPRECATED=		Unmaintained and dead upstream
+DEPRECATED=	Unmaintained and dead upstream, does not build with -fno-common (llvm 11)
+EXPIRATION_DATE=2021-04-01
 
 OPTIONS_DEFINE=	GPGME NLS
 OPTIONS_SUB=	yes

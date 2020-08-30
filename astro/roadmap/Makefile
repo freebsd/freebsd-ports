@@ -3,7 +3,7 @@
 
 PORTNAME=	roadmap
 PORTVERSION=	1.2.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	astro geography
 MASTER_SITES=	SF/${PORTNAME}/RoadMap/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -28,8 +28,8 @@ MAKE_ARGS=	INSTALLDIR="${PREFIX}" CC="${CC}" CXX="${CXX}"
 
 CFLAGS+=		-fcommon
 
-EXPIRATION_DATE=	2020-09-30
-DEPRECATED=		Unmaintained and dead upstream
+DEPRECATED=	Unmaintained and dead upstream, does not build with -fno-common (llvm 11)
+EXPIRATION_DATE=2021-04-01
 
 SUB_FILES=	pkg-message
 

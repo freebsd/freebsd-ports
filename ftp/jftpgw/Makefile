@@ -3,7 +3,7 @@
 
 PORTNAME=	jftpgw
 PORTVERSION=	0.13.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.mcknight.de/jftpgw/
 
@@ -20,8 +20,8 @@ CONFIGURE_ARGS=	--with-logpath=/var/log \
 
 CFLAGS+=		-fcommon
 
-EXPIRATION_DATE=	2020-09-30
-DEPRECATED=		Unmaintained and dead upstream
+DEPRECATED=	Unmaintained and dead upstream, does not build with -fno-common (llvm 11)
+EXPIRATION_DATE=2021-04-01
 
 OPTIONS_DEFINE=	DOCS
 

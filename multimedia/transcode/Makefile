@@ -3,7 +3,7 @@
 
 PORTNAME=	transcode
 PORTVERSION=	1.1.7
-PORTREVISION=	43
+PORTREVISION=	44
 CATEGORIES=	multimedia
 MASTER_SITES=	https://bitbucket.org/france/transcode-tcforge/downloads/
 
@@ -24,8 +24,8 @@ INSTALL_TARGET=	install-strip
 
 CFLAGS+=		-fcommon
 
-EXPIRATION_DATE=	2020-09-30
-DEPRECATED=		Unmaintained and dead upstream
+DEPRECATED=	Unmaintained and dead upstream, does not build with -fno-common (llvm 11)
+EXPIRATION_DATE=2021-04-01
 
 OPTIONS_DEFINE=		DOCS OPTIMIZED_CFLAGS X11 MPEG2 BKTR POSTPROC FREETYPE LAME \
 			XVID X264 OGG VORBIS THEORA DVDREAD DV QUICKTIME LZO A52 \

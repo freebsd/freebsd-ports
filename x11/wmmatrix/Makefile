@@ -3,7 +3,7 @@
 
 PORTNAME=	wmmatrix
 PORTVERSION=	0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://www.cs.mun.ca/~gstarkes/wmaker/dockapps/files/ \
 		http://ia300205.us.archive.org/0/items/tucows_10414_WMMatrix/
@@ -12,11 +12,11 @@ DISTNAME=	wmMatrix-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DockApp that runs a version of the xmatrix screenhack
 
-# Fix build with llvm 11
+# Fix build with -fno-common (llvm 11)
 CFLAGS+=	-fcommon
 
-DEPRECATED=	Unmaintained and dead upstream
-EXPIRATION_DATE=2020-09-30
+DEPRECATED=	Unmaintained and dead upstream, does not build with -fno-common (llvm 11)
+EXPIRATION_DATE=2021-04-01
 
 MAKE_JOBS_UNSAFE= yes
 

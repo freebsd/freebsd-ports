@@ -3,6 +3,7 @@
 
 PORTNAME=	dmitry
 PORTVERSION=	1.3a
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	PACKETSTORM/UNIX/misc
 DISTNAME=	DMitry-${PORTVERSION}
@@ -18,8 +19,8 @@ PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README
 
 CFLAGS+=		-fcommon
 
-EXPIRATION_DATE=	2020-09-30
-DEPRECATED=		Unmaintained and dead upstream
+DEPRECATED=	Unmaintained and dead upstream, does not build with -fno-common (llvm 11)
+EXPIRATION_DATE=2021-04-01
 
 OPTIONS_DEFINE=	DOCS
 

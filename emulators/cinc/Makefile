@@ -3,7 +3,7 @@
 
 PORTNAME=	cinc
 PORTVERSION=	2.1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/OldFiles
 
@@ -15,8 +15,8 @@ USES=		gmake
 
 CFLAGS+=		-fcommon
 
-EXPIRATION_DATE=	2020-09-30
-DEPRECATED=		Unmaintained and dead upstream
+DEPRECATED=	Unmaintained and dead upstream, does not build with -fno-common (llvm 11)
+EXPIRATION_DATE=2021-04-01
 
 PLIST_FILES=	bin/cinc \
 		bin/casm

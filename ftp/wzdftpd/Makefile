@@ -3,7 +3,7 @@
 
 PORTNAME=	wzdftpd
 PORTVERSION=	0.8.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	ftp
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-sources/${PORTNAME}-${PORTVERSION:R}
 
@@ -21,8 +21,8 @@ USE_LDCONFIG=	yes
 
 CFLAGS+=		-fcommon
 
-EXPIRATION_DATE=	2020-09-30
-DEPRECATED=		Unmaintained and dead upstream
+DEPRECATED=	Unmaintained and dead upstream, does not build with -fno-common (llvm 11)
+EXPIRATION_DATE=2021-04-01
 
 USE_RC_SUBR=	wzdftpd
 

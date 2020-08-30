@@ -3,7 +3,7 @@
 
 PORTNAME=	frox
 PORTVERSION=	0.7.18
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.hollo.org/frox/download/ \
 		http://frox.sourceforge.net/download/ \
@@ -21,8 +21,8 @@ CONFIGURE_ARGS=	--enable-configfile=${PREFIX}/etc/frox.conf
 
 CFLAGS+=		-fcommon
 
-EXPIRATION_DATE=	2020-09-30
-DEPRECATED=		Unmaintained and dead upstream
+DEPRECATED=	Unmaintained and dead upstream, does not build with -fno-common (llvm 11)
+EXPIRATION_DATE=2021-04-01
 
 USE_RC_SUBR=	frox
 SUB_FILES=	pkg-message

@@ -3,6 +3,7 @@
 
 PORTNAME=	buildtool
 PORTVERSION=	0.16
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -14,8 +15,8 @@ CONFIGURE_ARGS=	-p ${PREFIX} -d ${DOCSDIR}
 
 CFLAGS+=	-fcommon
 
-EXPIRATION_DATE=	2020-09-30
-DEPRECATED=		Unmaintained and dead upstream
+DEPRECATED=	Unmaintained and dead upstream, does not build with -fno-common (llvm 11)
+EXPIRATION_DATE=2021-04-01
 
 
 OPTIONS_DEFINE=	DOCS

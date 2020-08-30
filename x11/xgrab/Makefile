@@ -3,7 +3,7 @@
 
 PORTNAME=	xgrab
 PORTVERSION=	2.41
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11
 MASTER_SITES=	XCONTRIB/applications
 DISTNAME=	${PORTNAME}sc.2_41
@@ -16,11 +16,11 @@ BUILD_DEPENDS=	xrdb:x11/xrdb
 BROKEN_armv6=		fails to install: xrdb: Socket is not connected: Can't open display ':0'
 BROKEN_armv7=		fails to install: xrdb: Socket is not connected: Can't open display ':0'
 
-# Fix build with llvm 11
+# Fix build with -fno-common (llvm 11)
 CFLAGS+=	-fcommon
 
-DEPRECATED=	Unmaintained and dead upstream
-EXPIRATION_DATE=2020-09-30
+DEPRECATED=	Unmaintained and dead upstream, does not build with -fno-common (llvm 11)
+EXPIRATION_DATE=2021-04-01
 
 USES=		display:build imake:notall tar:Z xorg
 USE_XORG=	x11 xaw

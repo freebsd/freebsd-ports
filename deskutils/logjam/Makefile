@@ -3,7 +3,7 @@
 
 PORTNAME=	logjam
 PORTVERSION=	4.6.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	deskutils
 MASTER_SITES=	http://andy-shev.github.com/LogJam/download/
 
@@ -15,8 +15,8 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 
 CFLAGS+=		-fcommon
 
-EXPIRATION_DATE=	2020-09-30
-DEPRECATED=		Unmaintained and dead upstream
+DEPRECATED=	Unmaintained and dead upstream, does not build with -fno-common (llvm 11)
+EXPIRATION_DATE=2021-04-01
 
 OPTIONS_DEFINE=	GTKSPELL SQLITE GTKHTML RSVG
 OPTIONS_DEFAULT=	GTKSPELL

@@ -3,7 +3,7 @@
 
 PORTNAME=	cre
 DISTVERSION=	1.2beta_r2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-dev/1.2%20BETA%2C%20Release%202
 DISTNAME=	${PORTNAME}_${DISTVERSION}_src
@@ -22,8 +22,8 @@ BUILD_WRKSRC=	${WRKSRC}/src
 
 CFLAGS+=		-fcommon
 
-EXPIRATION_DATE=	2020-09-30
-DEPRECATED=		Unmaintained and dead upstream
+DEPRECATED=	Unmaintained and dead upstream, does not build with -fno-common (llvm 11)
+EXPIRATION_DATE=2021-04-01
 
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	CRE_Manual.txt Exhaust_README.txt

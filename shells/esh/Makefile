@@ -3,7 +3,7 @@
 
 PORTNAME=	esh
 PORTVERSION=	0.8.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	shells
 MASTER_SITES=	GENTOO
 
@@ -22,8 +22,8 @@ INFO=		esh
 
 CFLAGS+=		-fcommon
 
-EXPIRATION_DATE=	2020-09-30
-DEPRECATED=		Unmaintained and dead upstream
+DEPRECATED=	Unmaintained and dead upstream, does not build with -fno-common (llvm 11)
+EXPIRATION_DATE=2021-04-01
 
 post-patch:
 	@${REINPLACE_CMD} -e \

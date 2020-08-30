@@ -3,7 +3,7 @@
 
 PORTNAME=	dtcyber
 PORTVERSION=	2.0b1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	http://members.iinet.net.au/~tom-hunter/ \
 		LOCAL/trasz
@@ -22,8 +22,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 CFLAGS+=		-fcommon
 
-EXPIRATION_DATE=	2020-09-30
-DEPRECATED=		Unmaintained and dead upstream
+DEPRECATED=	Unmaintained and dead upstream, does not build with -fno-common (llvm 11)
+EXPIRATION_DATE=2021-04-01
 
 SUB_FILES=	pkg-message
 PLIST_FILES=	bin/dtcyber %%EXAMPLESDIR%%/cyber.ini %%EXAMPLESDIR%%/cos.tap

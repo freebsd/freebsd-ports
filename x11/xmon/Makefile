@@ -3,7 +3,7 @@
 
 PORTNAME=	xmon
 PORTVERSION=	1.5.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	XCONTRIB/devel_tools
 DISTNAME=	xmon.${PORTVERSION}
@@ -11,11 +11,11 @@ DISTNAME=	xmon.${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Raw X11 protocol analyser
 
-# Fix build with llvm 11
+# Fix build with -fno-common (llvm 11)
 CFLAGS+=	-fcommon
 
-DEPRECATED=	Unmaintained and dead upstream
-EXPIRATION_DATE=2020-09-30
+DEPRECATED=	Unmaintained and dead upstream, does not build with -fno-common (llvm 11)
+EXPIRATION_DATE=2021-04-01
 
 WRKSRC=		${WRKDIR}/xmon.${PORTVERSION}
 USES=		imake xorg
