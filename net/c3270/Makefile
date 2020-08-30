@@ -9,7 +9,7 @@ MASTER_SITES=	http://x3270.bgp.nu/download/03.03.14/
 MASTER_SITES_VER_PATH=	${PORTVERSION:C/(0[0-9]\.0[0-9])/}
 EXTRACT_SUFX=	-src.tgz
 
-MAINTAINER=	araujo@FreeBSD.org
+MAINTAINER=	kbowling@FreeBSD.org
 COMMENT=	Full-screen curses-based remote login to IBM mainframes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/([0-9]\.[0-9])(\..*)/\1/}
