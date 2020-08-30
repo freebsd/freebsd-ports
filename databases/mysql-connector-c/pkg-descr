@@ -2,4 +2,4 @@ MySQL Connector/C is a C client library for client/server communication. It is
 a standalone replacement for the MySQL Client Library shipped with the MySQL
 Server.
 
-WWW: http://dev.mysql.com/downloads/connector/c/
+WWW: https://dev.mysql.com/downloads/c-api/
