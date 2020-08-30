@@ -1,0 +1,20 @@
+--- Makefile.in.orig	2020-07-18 11:10:31 UTC
++++ Makefile.in
+@@ -90,8 +90,6 @@ PRE_UNINSTALL = :
+ POST_UNINSTALL = :
+ build_triplet = @build@
+ host_triplet = @host@
+-@ENABLE_GTK_DOC_TRUE@am__append_1 = docs/libpsl
+-@ENABLE_GTK_DOC_FALSE@@ENABLE_MAN_TRUE@am__append_2 = docs/libpsl
+ subdir = .
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ am__aclocal_m4_deps = $(top_srcdir)/m4/ax_check_compile_flag.m4 \
+@@ -199,7 +197,7 @@ am__define_uniq_tagged_files = \
+ ETAGS = etags
+ CTAGS = ctags
+ CSCOPE = cscope
+-DIST_SUBDIRS = po include src tools docs/libpsl fuzz tests msvc
++DIST_SUBDIRS = po include src tools fuzz tests msvc
+ am__DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/config.h.in \
+ 	$(srcdir)/libpsl.pc.in $(srcdir)/meson.build.in \
+ 	$(top_srcdir)/build-aux/ar-lib $(top_srcdir)/build-aux/compile \

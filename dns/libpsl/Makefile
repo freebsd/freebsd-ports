@@ -4,6 +4,7 @@
 PORTNAME=	libpsl
 PORTVERSION=	0.21.1
 CATEGORIES=	dns
+MASTER_SITES=	https://github.com/rockdaboot/libpsl/releases/download/${PORTVERSION}/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	C library to handle the Public Suffix List
@@ -14,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	public_suffix_list>=0:dns/public_suffix_list \
 		xsltproc:textproc/libxslt
 
-USES=		autoreconf libtool localbase:ldflags pathfix pkgconfig python:build shebangfix
+USES=		libtool localbase:ldflags pathfix pkgconfig python:build shebangfix tar:lz
 
 CONFIGURE_ARGS=	--enable-man \
 		--with-psl-file=${LOCALBASE}/share/public_suffix_list/public_suffix_list.dat \
@@ -23,9 +24,6 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 USE_LOCALE=	en_US.UTF-8
-
-GH_ACCOUNT=	rockdaboot
-USE_GITHUB=	yes
 
 SHEBANG_FILES=	src/psl-make-dafsa
 
