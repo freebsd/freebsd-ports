@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	moreutils
-PORTVERSION=	0.63
+PORTVERSION=	0.64
 CATEGORIES=	sysutils
 MASTER_SITES=	https://git.joeyh.name/index.cgi/moreutils.git/snapshot/ \
 		LOCAL/sunpoet
@@ -14,10 +14,6 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	p5-IPC-Run>=0:devel/p5-IPC-Run
-
-OPTIONS_DEFINE=	MANPAGES
-OPTIONS_DEFAULT=MANPAGES
-OPTIONS_SUB=	yes
 
 USES=		gmake perl5 shebangfix
 
@@ -41,6 +37,10 @@ PERL_MANPAGES=	chronic.1 \
 		zrun.1
 
 SHEBANG_FILES=	${PERL_MANPAGES:R}
+
+OPTIONS_DEFINE=	MANPAGES
+OPTIONS_DEFAULT=MANPAGES
+OPTIONS_SUB=	yes
 
 post-extract:
 .for file in parallel.c parallel.docbook ts
