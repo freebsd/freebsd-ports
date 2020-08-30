@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mariadb
-PORTVERSION=	3.1.7
-PORTREVISION=	1
+PORTVERSION=	3.1.9
 CATEGORIES=	databases
 MASTER_SITES=	http://ftp.osuosl.org/pub/${SITESDIR}/ \
 		http://mirrors.supportex.net/${SITESDIR}/ \
@@ -39,9 +38,10 @@ LDFLAGS+=	-L${LOCALBASE}/lib/mariadb
 
 SSL_CMAKE_ON=	-DWITH_OPENSSL=on
 
-PLIST_FILES=	lib/libmaodbc.so
+PLIST_FILES=	lib/mariadb/libmaodbc.so
 
 post-install:
-	${RM} -r ${STAGEDIR}${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
+	${RM} -r ${STAGEDIR}${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX} \
+		${STAGEDIR}${PREFIX}/docs
 
 .include <bsd.port.mk>
