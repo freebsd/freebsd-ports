@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	burp
-PORTVERSION?=	2.2.18
-# whenever PORTREVISION is increased,
-# sysutils/burp-devel's PKGVERSION must also increase
-PORTREVISION?=	4
+PORTVERSION=	2.2.18
+PORTREVISION=	4
 CATEGORIES=	sysutils
+MASTER_SITES=	https://github.com/grke/burp/releases/download/${PORTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Network backup and restore program
 
 LICENSE=	AGPLv3 PD
@@ -20,33 +19,26 @@ BUILD_DEPENDS=	${LOCALBASE}/include/uthash.h:devel/uthash \
 LIB_DEPENDS=	librsync.so:net/librsync
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		autoreconf gmake libtool ncurses pkgconfig ssl
-USE_RC_SUBR=	burp
-USE_GITHUB=	yes
-GH_ACCOUNT=	grke
+#USES=		gmake libtool ncurses pkgconfig ssl tar:bz2
+USES=		libtool ncurses pkgconfig ssl tar:bz2
 
-GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${ETCDIR}
-
+GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-all
-
-CONFLICTS_INSTALL?=	burp-devel
-PORTSCOUT?=		limit:^2\.2\.
+USE_RC_SUBR=	burp
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
-OPTIONS_DEFINE=		IPV6
+CONFLICTS_INSTALL=	burp-devel
+
+PORTSCOUT=	limit:^2\.2\.
+
+OPTIONS_DEFINE=	IPV6
 IPV6_CONFIGURE_ENABLE=	ipv6
 
-CONFIG_FILES=	CA.cnf \
-		burp-server.conf \
-		burp.conf \
-		clientconfdir/testclient
-
 post-install:
-.for FILE in ${CONFIG_FILES}
-	${MV} ${STAGEDIR}${ETCDIR}/${FILE} \
-		${STAGEDIR}${ETCDIR}/${FILE}.sample
+.for file in CA.cnf burp.conf burp-server.conf clientconfdir/testclient
+	${MV} ${STAGEDIR}${ETCDIR}/${file} ${STAGEDIR}${ETCDIR}/${file}.sample
 .endfor
 
 .include <bsd.port.mk>

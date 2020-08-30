@@ -1,9 +1,12 @@
 bin/vss_strip
-@sample %%ETCDIR%%/CA.cnf.sample
-@sample %%ETCDIR%%/burp-server.conf.sample
-@sample %%ETCDIR%%/burp.conf.sample
-%%ETCDIR%%/clientconfdir/incexc/example
-@sample %%ETCDIR%%/clientconfdir/testclient.sample
+@dir etc/burp/CA-client
+@sample etc/burp/CA.cnf.sample
+@dir etc/burp/autoupgrade/server/win32
+@dir etc/burp/autoupgrade/server/win64/%%PORTVERSION%%
+@sample etc/burp/burp-server.conf.sample
+@sample etc/burp/burp.conf.sample
+etc/burp/clientconfdir/incexc/example
+@sample etc/burp/clientconfdir/testclient.sample
 man/man8/bedup.8.gz
 man/man8/bsigs.8.gz
 man/man8/bsparse.8.gz
@@ -20,7 +23,4 @@ sbin/burp_ca
 %%DATADIR%%/scripts/ssl_extra_checks_script
 %%DATADIR%%/scripts/summary_script
 %%DATADIR%%/scripts/timer_script
-@dir %%ETCDIR%%/CA-client
-@dir %%ETCDIR%%/autoupgrade/server/win32
-@dir %%ETCDIR%%/autoupgrade/server/win64/%%PORTVERSION%%
 @dir /var/spool/burp
