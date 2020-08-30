@@ -12,7 +12,7 @@
  	struct stat st;
  	char fpath[PATH_MAX];
  
-+#if 0
++#ifdef __OpenBSD__
  	if (pledge("stdio rpath wpath cpath fattr proc exec", NULL) == -1)
  		err(1, "pledge");
 +#endif

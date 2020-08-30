@@ -13,7 +13,7 @@
  	return pa ? file_age(pa->root + name) : 0;
  }
  
-+#if 0
++#ifdef _WIN32
  bool xr_file_system::copy_file(const char* src_path, const char* src_name,
  		const char* tgt_path, const char* tgt_name) const
  {

@@ -158,7 +158,7 @@
 +	return uint32_t(age);
 +}
 +
-+#if 0
++#ifdef _WIN32
 +bool xr_file_system::copy_file(const char* src_path, const char* tgt_path) const
 +{
 +	if (read_only()) {
