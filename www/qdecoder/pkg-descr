@@ -1,18 +1,11 @@
-The qDecoder Project
-====================
+qDecoder is a simple and powerful CGI library for C/C++ programming language.
 
-qDecoder is a C/C++ language library including CGI supports.
-
-  CGI Interfaces
-    o Request Parser, Response Generator, Session, Cookies
-  Network & IPC Interfaces
-    o Socket, Shared memory, Semaphore, Database wrapper
-  Data structures
-    o Linked-list, Hash tables, Queue, qDecoder implementation of Obstack
-  Useful APIs
-    o Configuration parser, Automated file logger, Server side includes
-  Common Utilities
-    o String libraries, File libraries, Hashes & En/decoders
-  And more...
+Features:
+- Supports parsing a request encoded by GET/POST method
+- Supports parsing multipart/form-data encoding. (in-memory and direct disk)
+- Supports COOKIE handling.
+- Supports Session management.
+- Supports FastCGI
 
 WWW: http://wolkykim.github.io/qdecoder/
+WWW: https://github.com/wolkykim/qdecoder

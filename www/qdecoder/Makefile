@@ -2,35 +2,33 @@
 # $FreeBSD$
 
 PORTNAME=	qdecoder
-PORTVERSION=	12.0.5
-DISTVERSIONPREFIX=	r
+PORTVERSION=	12.0.8
+DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	C/C++ language library including CGI supports
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	C/C++ language library including CGI support
+
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		pathfix
+
+GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	wolkykim
 
-GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
-MAKE_ARGS=	exec_prefix="${PREFIX}"
-PORTEXAMPLES=	*
+OPTIONS_DEFINE=	DEBUG EXAMPLES
 
-PLIST_FILES=	include/qdecoder.h lib/libqdecoder.a \
-		lib/libqdecoder.so lib/libqdecoder.so.12
-
-OPTIONS_DEFINE=		DEBUG EXAMPLES
 DEBUG_CONFIGURE_ENABLE=	debug
 
-post-patch:
-	${REINPLACE_CMD} 's/.{[A-Z]*DIR/$${DESTDIR}&/' ${WRKSRC}/src/Makefile.in
-	${REINPLACE_CMD} '/<limits/{p;s//<errno/;}' ${WRKSRC}/src/qcgireq.c
-
 post-install:
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} "Makefile *.c *.html" \
-		${STAGEDIR}${EXAMPLESDIR}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libqdecoder.so
+
+post-install-EXAMPLES-on:
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} 'Makefile *.c *.html' ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
