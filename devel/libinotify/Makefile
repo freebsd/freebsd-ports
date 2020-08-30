@@ -5,21 +5,17 @@ PORTNAME=	libinotify
 PORTVERSION=	20180201
 PORTREVISION=	2
 CATEGORIES=	devel
+MASTER_SITES=	https://github.com/libinotify-kqueue/libinotify-kqueue/releases/download/${PORTVERSION}/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Kevent based inotify compatible library
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		autoreconf libtool
+USES=		libtool
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	libinotify-kqueue
-GH_PROJECT=	libinotify-kqueue
-
+CONFIGURE_ARGS=	--enable-skip-subfiles=fusefs,smbfs
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-skip-subfiles=smbfs,fusefs
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
