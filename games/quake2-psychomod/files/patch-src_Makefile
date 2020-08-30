@@ -1,6 +1,6 @@
 --- src/Makefile.orig	2006-02-01 23:46:55 UTC
 +++ src/Makefile
-@@ -16,20 +16,10 @@ OSTYPE := $(shell uname -s)
+@@ -16,24 +16,14 @@ OSTYPE := $(shell uname -s)
  # this nice line comes from the linux kernel makefile
  ARCH := $(shell uname -m | sed -e s/i.86/i386/ -e s/sun4u/sparc/ -e s/sparc64/sparc/ -e s/arm.*/arm/ -e s/sa110/arm/ -e s/alpha/axp/)
  
@@ -13,17 +13,23 @@
 -endif
 -endif
 -endif
--
--BUILD_DEBUG_DIR=debug$(ARCH)
--BUILD_RELEASE_DIR=release$(ARCH)
 +BUILD_DEBUG_DIR=debug
 +BUILD_RELEASE_DIR=release
  
--CC=gcc
+-BUILD_DEBUG_DIR=debug$(ARCH)
+-BUILD_RELEASE_DIR=release$(ARCH)
 +CC?=gcc
- BASE_CFLAGS=-Dstricmp=strcasecmp 
++BASE_CFLAGS=-Dstricmp=strcasecmp -fcommon
  
+-CC=gcc
+-BASE_CFLAGS=-Dstricmp=strcasecmp 
+-
  RELEASE_CFLAGS=$(BASE_CFLAGS) -ffast-math -funroll-loops \
+-	-fomit-frame-pointer -fexpensive-optimizations
++	-fomit-frame-pointer
+ 	
+ DEBUG_CFLAGS=$(BASE_CFLAGS) -g -ggdb -Wall -pipe
+ 
 @@ -53,7 +43,7 @@ SHLIBLDFLAGS=-shared
  DO_CC=$(CC) $(CFLAGS) -o $@ -c $<
  DO_SHLIB_CC=$(CC) $(CFLAGS) $(SHLIBCFLAGS) -o $@ -c $<

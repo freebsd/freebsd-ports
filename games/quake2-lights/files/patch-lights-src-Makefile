@@ -1,6 +1,6 @@
 --- ./lights/src/Makefile.orig	Tue Oct 11 19:55:43 2005
 +++ ./lights/src/Makefile	Sun Dec 24 15:09:48 2006
-@@ -1,27 +1,19 @@
+@@ -1,27 +1,18 @@
  
 -BUILD_DEBUG_DIR=debugi386
 -BUILD_RELEASE_DIR=releasei386
@@ -15,21 +15,21 @@
 -ifneq ($(ARCH),ppc)
 -ifneq ($(ARCH),sparc)
 -$(error arch $(ARCH) is currently not supported)
--endif
++CC?=gcc
++BASE_CFLAGS=-fcommon
++RELEASE_CFLAGS=$(BASE_CFLAGS) -fomit-frame-pointer
++ifeq ($(ARCH),i386)
++RELEASE_CFLAGS+=-falign-functions=2
+ endif
 -endif
 -endif
 -endif
 -
 -CC=gcc
-+CC?=gcc
- BASE_CFLAGS=
- RELEASE_CFLAGS=$(BASE_CFLAGS) -O2 -fomit-frame-pointer \
+-BASE_CFLAGS=
+-RELEASE_CFLAGS=$(BASE_CFLAGS) -O2 -fomit-frame-pointer \
 -	-fexpensive-optimizations -falign-loops=2 \
 -	-falign-jumps=2 -falign-functions=2
-+	       -fexpensive-optimizations
-+ifeq ($(ARCH),i386)
-+RELEASE_CFLAGS+=-falign-functions=2
-+endif
  DEBUG_CFLAGS=$(BASE_CFLAGS) -g
 -LDFLAGS=-ldl -lm
 +LDFLAGS=-lm
