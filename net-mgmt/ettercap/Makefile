@@ -3,9 +3,9 @@
 
 PORTNAME=	ettercap
 PORTVERSION=	0.8.3.1
-DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt security
+MASTER_SITES=	https://github.com/Ettercap/ettercap/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Network sniffer/interceptor/injector/logger for switched LANs
@@ -40,9 +40,6 @@ DOCS=		AUTHORS CHANGELOG README README.BINARIES README.BUGS \
 		doc/capture doc/decoders doc/dissectors doc/plugins doc/threads
 
 CPE_VENDOR=	ettercap_project
-
-GH_ACCOUNT=	Ettercap
-USE_GITHUB=	yes
 
 DESKTOP_CMAKE_BOOL=	INSTALL_DESKTOP
 DESKTOP_USES=		desktop-file-utils
