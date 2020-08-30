@@ -11,9 +11,9 @@ to *use* those LLVM files.
  src/bootstrap/native.rs | 5 +++++
  1 file changed, 5 insertions(+)
 
---- src/bootstrap/native.rs.orig	2020-07-31 20:16:28 UTC
+--- src/bootstrap/native.rs.orig	2020-08-24 15:00:49 UTC
 +++ src/bootstrap/native.rs
-@@ -324,6 +324,11 @@ fn configure_cmake(
+@@ -347,6 +347,11 @@ fn configure_cmake(
      // LLVM and LLD builds can produce a lot of those and hit CI limits on log size.
      cfg.define("CMAKE_INSTALL_MESSAGE", "LAZY");
  
@@ -25,7 +25,7 @@ to *use* those LLVM files.
      if builder.config.ninja {
          cfg.generator("Ninja");
      }
-@@ -480,25 +485,9 @@ impl Step for Lld {
+@@ -517,26 +522,9 @@ impl Step for Lld {
          let mut cfg = cmake::Config::new(builder.src.join("src/llvm-project/lld"));
          configure_cmake(builder, target, &mut cfg, true);
  
@@ -44,6 +44,7 @@ to *use* those LLVM files.
 -        // can't build on a system where your paths require `\` on Windows, but
 -        // there's probably a lot of reasons you can't do that other than this.
 -        let llvm_config_shim = env::current_exe().unwrap().with_file_name("llvm-config-wrapper");
+-
          cfg.out_dir(&out_dir)
              .profile("Release")
 -            .env("LLVM_CONFIG_REAL", &llvm_config)
