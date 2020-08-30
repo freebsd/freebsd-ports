@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	oj
-PORTVERSION=	3.10.12
+PORTVERSION=	3.10.13
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,8 +11,6 @@ COMMENT=	Fast JSON parser and serializer
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-RUN_DEPENDS=	rubygem-bigdecimal>=1.0<3:math/rubygem-bigdecimal
 
 USES=		gem
 USE_RUBY=	yes
