@@ -14,18 +14,29 @@
 #				Set it to YES to enable dsbdriverd.
 # dsbdriverd_flags (str):	Flags passed to dsbdriverd on startup.
 #				Default is "".
-#
+# dsbdriverd_exclude (str):	Space separated list of kernel modules (without
+#				.ko extension) to excluded from loading.
+#				Default is "".
 
 . /etc/rc.subr
 
 name=dsbdriverd
-
+desc="automatically try to load the suitable driver for your PCI and USB hardware"
 rcvar=dsbdriverd_enable
-load_rc_config ${name}
+pidfile="/var/run/dsbdriverd.pid"
+command="%%PREFIX%%/libexec/dsbdriverd"
+start_cmd="${name}_start"
+load_rc_config $name
 
-: ${dsbdriverd_enable:=NO}
+: ${dsbdriverd_enable:="NO"}
 
-command=%%PREFIX%%/libexec/dsbdriverd
-pidfile=/var/run/dsbdriverd.pid
+dsbdriverd_start() {
+	if [ -n "$dsbdriverd_exclude" ]; then
+		dsbdriverd_flags="-x $(echo $dsbdriverd_exclude |
+		    sed -E 's/[ ]+/,/g')"
+	fi
+	echo "Starting ${name}."
+	${command} $dsbdriverd_flags
+}
 
 run_rc_command "$1"

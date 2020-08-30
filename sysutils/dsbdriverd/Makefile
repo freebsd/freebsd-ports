@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dsbdriverd
-PORTVERSION=	0.6.1
+PORTVERSION=	1.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://freeshell.de/~mk/download/
 
@@ -12,7 +12,7 @@ COMMENT=	Hardware detecting, device driver loading daemon
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		tar:tgz
+USES=		lua:52 tar:tgz
 
 OPTIONS_DEFINE=	PCIIDS USBIDS
 
@@ -32,6 +32,9 @@ PORTDATA=	drivers.db
 
 USE_RC_SUBR=	dsbdriverd
 
-PLIST_FILES=	libexec/dsbdriverd man/man8/dsbdriverd.8.gz
+PLIST_FILES=	"@sample ${ETCDIR}/config.lua.sample" \
+		${ETCDIR}/netif.lua \
+		libexec/dsbdriverd \
+		man/man8/dsbdriverd.8.gz
 
 .include <bsd.port.mk>
