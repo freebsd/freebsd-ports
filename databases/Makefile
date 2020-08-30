@@ -786,6 +786,7 @@
     SUBDIR += py-pyodbc
     SUBDIR += py-pypuppetdb
     SUBDIR += py-python-arango
+    SUBDIR += py-python-binary-memcached
     SUBDIR += py-python-memcached
     SUBDIR += py-python-rrdtool
     SUBDIR += py-python-sql
