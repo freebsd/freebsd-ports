@@ -45,6 +45,11 @@ CMAKE_MODULES_DESC=	Install bash-completion modules for cmake
 BASH_SHARED_RUN_DEPENDS=bash:shells/bash
 BASH_STATIC_RUN_DEPENDS=bash:shells/bash-static
 
+.include <bsd.port.pre.mk>
+
+# See PR 248829 for details
+MAKE_CMD=	${LOCALBASE}/bin/gmake
+
 post-patch:
 	@${REINPLACE_CMD} \
 		-e '/^profiledir =/ s|(sysconfdir)/profile.d|(prefix)/share/bash-completion|' \
@@ -74,4 +79,4 @@ do-test:
 	-cd ${WRKSRC}/test && bash ${test}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
