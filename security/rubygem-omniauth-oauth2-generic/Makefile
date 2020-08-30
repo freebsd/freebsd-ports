@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	omniauth-oauth2-generic
-PORTVERSION=	0.2.4
+PORTVERSION=	0.2.5
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,8 @@ COMMENT=	Generic, Configurable OmniAuth Strategy for OAuth2 providers
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	rubygem-omniauth-oauth2>=1.0<2:net/rubygem-omniauth-oauth2
+RUN_DEPENDS=	rubygem-omniauth-oauth2>=1.0<2:net/rubygem-omniauth-oauth2 \
+		rubygem-rake>=0:devel/rubygem-rake
 
 USES=		gem
 USE_RUBY=	yes
