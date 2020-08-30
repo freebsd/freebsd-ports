@@ -5,6 +5,7 @@ PORTNAME=	github-backup-utils
 PORTVERSION=	2.21.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
+MASTER_SITES=	https://github.com/github/backup-utils/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	GitHub Enterprise Backup Utilities
@@ -22,10 +23,6 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 
 SUB_FILES=	pkg-message
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	github
-GH_PROJECT=	backup-utils
 
 SHEBANG_FILES=	bin/* share/github-backup-utils/*
 
