@@ -17,4 +17,7 @@ GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/msdl \
 		man/man1/msdl.1.gz
 
+# Fix build with clang11
+CFLAGS+=	-fcommon
+
 .include <bsd.port.mk>
