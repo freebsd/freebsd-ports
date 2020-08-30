@@ -12,3 +12,14 @@
  #include "chartype.h"
  #endif
  
+@@ -133,8 +133,8 @@ extern int wcwidth(wchar_t c);
+ #define HANDLE_T int
+ #endif
+ 
+-HANDLE_T MeToReduce[2];
+-HANDLE_T ReduceToMe[2];
++extern HANDLE_T MeToReduce[2];
++extern HANDLE_T ReduceToMe[2];
+ extern int redread(HANDLE_T h, void *buffer, int len);
+ extern int redwrite(HANDLE_T h, void *buffer, int len);
+ extern void redclose(HANDLE_T h);
