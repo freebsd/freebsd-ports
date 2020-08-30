@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	stringio
-PORTVERSION=	0.1.3
+PORTVERSION=	0.1.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
