@@ -1,5 +1,5 @@
---- ./Makefile.orig	2008-03-20 16:05:59.000000000 +0100
-+++ ./Makefile	2014-02-14 10:08:18.502223147 +0100
+--- Makefile.orig	2008-03-20 15:05:59 UTC
++++ Makefile
 @@ -1,8 +1,8 @@
  VERSION = $(shell grep '^Version' ChangeLog | head -n 1 | cut -d' ' -f2 | tr -d ' ')
  BIN = telak
