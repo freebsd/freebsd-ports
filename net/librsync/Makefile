@@ -3,8 +3,8 @@
 
 PORTNAME=	librsync
 PORTVERSION=	2.3.1
-DISTVERSIONPREFIX=	v
 CATEGORIES=	net devel
+MASTER_SITES=	https://github.com/librsync/librsync/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library for delta compression of streams
@@ -16,8 +16,6 @@ LIB_DEPENDS=	libpopt.so:devel/popt
 
 USES=		cmake compiler:c11 perl5
 USE_PERL5=	test
-
-USE_GITHUB=	yes
 
 TEST_TARGET=	check
 USE_LDCONFIG=	yes
