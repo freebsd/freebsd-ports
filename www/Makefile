@@ -1593,6 +1593,7 @@
     SUBDIR += py-flexget
     SUBDIR += py-flup6
     SUBDIR += py-folium
+    SUBDIR += py-forcediphttpsadapter
     SUBDIR += py-formencode
     SUBDIR += py-freenit
     SUBDIR += py-frozen-flask
