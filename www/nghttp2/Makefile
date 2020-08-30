@@ -3,8 +3,8 @@
 
 PORTNAME=	nghttp2
 PORTVERSION=	1.41.0
-DISTVERSIONPREFIX=	v
 CATEGORIES=	www net
+MASTER_SITES=	https://github.com/nghttp2/nghttp2/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	HTTP/2.0 C Library
@@ -20,7 +20,7 @@ OPTIONS_DEFAULT=APP HPACK
 OPTIONS_SUB=	yes
 APP_DESC=	Build h2load, nghttp, nghttpd and nghttpx
 
-USES=		autoreconf compiler:c++14-lang gmake libtool localbase pathfix pkgconfig ssl
+USES=		autoreconf compiler:c++14-lang gmake libtool localbase pathfix pkgconfig ssl tar:xz
 
 CONFIGURE_ARGS=	--disable-python-bindings --with-jemalloc
 CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
@@ -33,8 +33,6 @@ USE_RC_SUBR=	nghttpx
 PORTDATA=	fetch-ocsp-response
 PORTDOCS=	*
 PORTEXAMPLES=	*
-
-USE_GITHUB=	yes
 
 APP_BUILD_DEPENDS=	c-ares>=1.7.5:dns/c-ares \
 			libev>=4.11:devel/libev
