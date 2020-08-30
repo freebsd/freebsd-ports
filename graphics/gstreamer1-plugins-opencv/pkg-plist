@@ -1,5 +1,6 @@
 include/gstreamer-%%VERSION%%/gst/opencv/gstopencvutils.h
 include/gstreamer-%%VERSION%%/gst/opencv/gstopencvvideofilter.h
+include/gstreamer-%%VERSION%%/gst/opencv/opencv-prelude.h
 lib/gstreamer-%%VERSION%%/libgstopencv.so
 lib/libgstopencv-%%VERSION%%.so
 lib/libgstopencv-%%VERSION%%.so.0
