@@ -10,6 +10,7 @@ MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Ruby JSON schema validator
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-ecma-re-validator>=0.2<1:devel/rubygem-ecma-re-validator \
 		rubygem-hana>=1.3<2:devel/rubygem-hana \
