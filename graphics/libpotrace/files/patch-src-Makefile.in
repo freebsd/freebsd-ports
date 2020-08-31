@@ -1,6 +1,6 @@
---- src/Makefile.in.orig	2013-02-20 00:49:08 UTC
+--- src/Makefile.in.orig	2019-09-17 03:12:20 UTC
 +++ src/Makefile.in
-@@ -664,7 +664,7 @@ install-dvi: install-dvi-am
+@@ -808,7 +808,7 @@ install-dvi: install-dvi-am
  
  install-dvi-am:
  
