@@ -2,6 +2,7 @@
 
 PORTNAME=	puppetserver
 PORTVERSION=	5.3.14
+PORTREVISION=	1
 CATEGORIES=	sysutils java
 MASTER_SITES=	https://downloads.puppetlabs.com/puppet/
 PKGNAMESUFFIX=	5
@@ -35,17 +36,6 @@ GROUPS=		puppet
 
 SUB_LIST=	JAVA_HOME=${JAVA_HOME}
 SUB_FILES=	pkg-message
-
-OPTIONS_DEFAULT=	CFACTER
-OPTIONS_RADIO=		FACTER
-OPTIONS_RADIO_FACTER=	CFACTER RFACTER
-
-RFACTER_DESC=	Use facter 2.x (written in Ruby)
-CFACTER_DESC=	Use facter 3.x (experimental rewrite in C++)
-
-RFACTER_RUN_DEPENDS=	rubygem-facter>=2.0:sysutils/rubygem-facter
-
-CFACTER_RUN_DEPENDS=	facter>=3.0:sysutils/facter
 
 post-patch:
 .for file in ext/config/logback.xml ext/config/request-logging.xml \
