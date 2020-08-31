@@ -92,7 +92,7 @@ libdata/pkgconfig/orte.pc
 %%MPIDIR%%/lib/libmca_common_ompio.la
 %%MPIDIR%%/lib/libmca_common_ompio.so
 %%MPIDIR%%/lib/libmca_common_ompio.so.41
-%%MPIDIR%%/lib/libmca_common_ompio.so.41.19.3
+%%MPIDIR%%/lib/libmca_common_ompio.so.41.19.4
 %%MPIDIR%%/lib/libmca_common_sm.la
 %%MPIDIR%%/lib/libmca_common_sm.so
 %%MPIDIR%%/lib/libmca_common_sm.so.40
@@ -100,7 +100,7 @@ libdata/pkgconfig/orte.pc
 %%MPIDIR%%/lib/libmpi.la
 %%MPIDIR%%/lib/libmpi.so
 %%MPIDIR%%/lib/libmpi.so.40
-%%MPIDIR%%/lib/libmpi.so.40.20.4
+%%MPIDIR%%/lib/libmpi.so.40.20.5
 %%MPIDIR%%/lib/libmpi_cxx.la
 %%MPIDIR%%/lib/libmpi_cxx.so
 %%MPIDIR%%/lib/libmpi_cxx.so.40
@@ -120,11 +120,11 @@ libdata/pkgconfig/orte.pc
 %%MPIDIR%%/lib/libopen-pal.la
 %%MPIDIR%%/lib/libopen-pal.so
 %%MPIDIR%%/lib/libopen-pal.so.40
-%%MPIDIR%%/lib/libopen-pal.so.40.20.4
+%%MPIDIR%%/lib/libopen-pal.so.40.20.5
 %%MPIDIR%%/lib/libopen-rte.la
 %%MPIDIR%%/lib/libopen-rte.so
 %%MPIDIR%%/lib/libopen-rte.so.40
-%%MPIDIR%%/lib/libopen-rte.so.40.20.4
+%%MPIDIR%%/lib/libopen-rte.so.40.20.5
 %%MPIDIR%%/lib/mpi.mod
 %%MPIDIR%%/lib/ompi_monitoring_prof.la
 %%MPIDIR%%/lib/ompi_monitoring_prof.so
