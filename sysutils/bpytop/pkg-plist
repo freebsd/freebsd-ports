@@ -1,5 +1,6 @@
 bin/bpytop
 %%DATADIR%%/themes/default_black.theme
+%%DATADIR%%/themes/dracula.theme
 %%DATADIR%%/themes/flat-remix-light.theme
 %%DATADIR%%/themes/flat-remix.theme
 %%DATADIR%%/themes/greyscale.theme

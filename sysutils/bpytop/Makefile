@@ -20,6 +20,8 @@ GH_ACCOUNT=	aristocratos
 
 SHEBANG_FILES=	${WRKSRC}/bpytop.py
 
+NO_ARCH=	yes
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bpytop.py ${STAGEDIR}${PREFIX}/bin/bpytop
 	${MKDIR} ${STAGEDIR}${DATADIR}
