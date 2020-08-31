@@ -41,11 +41,11 @@ OPTIONS_DEFAULT=	CFACTER
 OPTIONS_RADIO=		FACTER
 OPTIONS_RADIO_FACTER=	CFACTER RFACTER
 
-RFACTER_DESC=	Use facter 2.x (legacy facter, written in Ruby)
+RFACTER_DESC=	Use facter 4.x (future facter, written in Ruby)
 CFACTER_DESC=	Use facter 3.x (written in C++)
 
-RFACTER_BUILD_DEPENDS=	rubygem-facter>=2.0:sysutils/rubygem-facter
-RFACTER_RUN_DEPENDS=	rubygem-facter>=2.0:sysutils/rubygem-facter
+RFACTER_BUILD_DEPENDS=	rubygem-facter>=4.0:sysutils/rubygem-facter
+RFACTER_RUN_DEPENDS=	rubygem-facter>=4.0:sysutils/rubygem-facter
 
 CFACTER_BUILD_DEPENDS=	facter>=3.0:sysutils/facter
 CFACTER_RUN_DEPENDS=	facter>=3.0:sysutils/facter
