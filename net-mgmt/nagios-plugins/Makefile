@@ -142,7 +142,7 @@ PLIST_SUB+=	SSH=""
 .endif
 
 post-patch:
-	# add a fake PATH so that it gets set to a correct value during build.
+# add a fake PATH so that it gets set to a correct value during build.
 	@${REINPLACE_CMD} -e "s|$$ENV{'PATH'}=''|$$ENV{'PATH'}='foo'|; \
 		s|/usr/bin/|${LOCALBASE}/bin/|g" \
 		${WRKSRC}/plugins-scripts/*.pl
