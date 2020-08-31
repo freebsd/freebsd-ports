@@ -44,7 +44,7 @@ GH_TUPLE?=	codership:mysql-wsrep:${DISTVERSIONPREFIX}${PORTVERSION}${DISTVERSION
 DATADIR=	${PREFIX}/share/mysql
 ETCDIR=		${PREFIX}/etc/mysql
 
-NOT_FOR_ARCHS=	i386 aarch64 armv6 armv7 powerpc64
+NOT_FOR_ARCHS=	i386 aarch64 armv6 armv7
 NOT_FOR_ARCHS_REASON=	Not supported platform
 
 CMAKE_ARGS+=	-DINSTALL_LAYOUT=FREEBSD \
@@ -181,8 +181,11 @@ CMAKE_ARGS+=		-DWITH_SSL=${OPENSSLBASE}
 # Also MySQL code itself needs -Wno-c++11-narrowing when Clang 6 is used.
 .if ${OSVERSION} >= 1200056
 CFLAGS+=	-DLZ4_DISABLE_DEPRECATE_WARNINGS
-CXXFLAGS+=	-DLZ4_DISABLE_DEPRECATE_WARNINGS -Wno-c++11-narrowing
+CXXFLAGS+=	-DLZ4_DISABLE_DEPRECATE_WARNINGS
 LDFLAGS+=	-L${LOCALBASE}/lib
+.  if ${CHOSEN_COMPILER_TYPE} == clang
+CXXFLAGS+=	-Wno-c++11-narrowing
+.  endif
 .endif
 
 post-extract:
