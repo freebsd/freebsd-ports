@@ -19,6 +19,7 @@ include/racket/sconfig.h
 include/racket/stypes.h
 include/racket/uconfig.h
 lib/libracket3m.a
+lib/librktio.a
 lib/racket/buildinfo
 lib/racket/gracket
 lib/racket/launchers.rktd
@@ -1140,6 +1141,8 @@ man/man1/raco.1.gz
 %%DATADIR%%/collects/racket/private/compiled/immediate-default_rkt.zo
 %%DATADIR%%/collects/racket/private/compiled/increader_rkt.dep
 %%DATADIR%%/collects/racket/private/compiled/increader_rkt.zo
+%%DATADIR%%/collects/racket/private/compiled/intdef-util_rkt.dep
+%%DATADIR%%/collects/racket/private/compiled/intdef-util_rkt.zo
 %%DATADIR%%/collects/racket/private/compiled/kernstruct_rkt.dep
 %%DATADIR%%/collects/racket/private/compiled/kernstruct_rkt.zo
 %%DATADIR%%/collects/racket/private/compiled/kw-file_rkt.dep
@@ -1313,6 +1316,7 @@ man/man1/raco.1.gz
 %%DATADIR%%/collects/racket/private/hash.rkt
 %%DATADIR%%/collects/racket/private/immediate-default.rkt
 %%DATADIR%%/collects/racket/private/increader.rkt
+%%DATADIR%%/collects/racket/private/intdef-util.rkt
 %%DATADIR%%/collects/racket/private/kernstruct.rkt
 %%DATADIR%%/collects/racket/private/kw-file.rkt
 %%DATADIR%%/collects/racket/private/kw-prop-key.rkt

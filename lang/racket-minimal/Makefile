@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	racket
-PORTVERSION=	7.7
-PORTREVISION=	1
+PORTVERSION=	7.8
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://mirror.racket-lang.org/installers/${PORTVERSION}/ \
 		http://www.cs.utah.edu/plt/installers/${PORTVERSION}/ \
@@ -22,8 +21,8 @@ LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BROKEN_armv6=		fails to compile: ./lightning/lightning.h:81:2: error: GNU lightning does not support the current target
-BROKEN_armv7=		fails to compile: ./lightning/lightning.h:81:2: error: GNU lightning does not support the current target
+BROKEN_armv6=	fails to compile: ./lightning/lightning.h:81:2: error: GNU lightning does not support the current target
+BROKEN_armv7=	fails to compile: ./lightning/lightning.h:81:2: error: GNU lightning does not support the current target
 BROKEN_powerpc64=	fails to build: jit.c: 'JIT_LOCAL4' undeclared (first use in this function)
 NOT_FOR_ARCHS=	aarch64 mips mips64 sparc64
 NOT_FOR_ARCHS_REASON=	not yet ported to this arch
@@ -44,14 +43,12 @@ USE_LDCONFIG=	yes
 REINPLACE_ARGS=	-i ""
 MAKE_JOBS_UNSAFE=	yes
 CONFLICTS=	racket-[0-9]*
+OPTIONS_DEFINE=	DOCS
 
-OPTIONS_DEFINE=		FUTURES
-OPTIONS_DEFAULT=	FUTURES
-
-OPTIONS_DEFINE_amd64=	JIT
-OPTIONS_DEFINE_i386=	JIT
-OPTIONS_DEFAULT_amd64=	JIT
-OPTIONS_DEFAULT_i386=	JIT
+OPTIONS_DEFINE_amd64=	FUTURES JIT
+OPTIONS_DEFINE_i386=	FUTURES JIT
+OPTIONS_DEFAULT_amd64=	FUTURES JIT
+OPTIONS_DEFAULT_i386=	FUTURES JIT
 
 FUTURES_DESC=	Enable futures
 JIT_DESC=	Enable JIT compiler
@@ -63,7 +60,7 @@ JIT_CONFIGURE_ENABLE=		jit
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MJIT} && ${ARCH} == "amd64"
-CFLAGS+=	-msse -msse2 -mfpmath=sse
+CFLAGS+=	-mfpmath=sse -msse -msse2
 .endif
 
 post-install:
