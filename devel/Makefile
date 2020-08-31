@@ -5342,6 +5342,7 @@
     SUBDIR += remotery
     SUBDIR += replay
     SUBDIR += replxx
+    SUBDIR += reproc
     SUBDIR += resolv_wrapper
     SUBDIR += revive
     SUBDIR += rhtvision
