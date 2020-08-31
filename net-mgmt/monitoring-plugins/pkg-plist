@@ -8,7 +8,7 @@ libexec/nagios/check_cluster
 libexec/nagios/check_dig
 libexec/nagios/check_disk
 libexec/nagios/check_disk_smb
-%%CHECK_DNS%%libexec/nagios/check_dns
+%%DNS_BINDTOOLS%%libexec/nagios/check_dns
 libexec/nagios/check_dummy
 libexec/nagios/check_file_age
 libexec/nagios/check_flexlm

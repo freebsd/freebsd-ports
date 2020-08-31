@@ -3,7 +3,7 @@
 
 PORTNAME=	monitoring-plugins
 PORTVERSION=	2.2
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://www.monitoring-plugins.org/download/ LOCAL/mat/${PORTNAME}
 
@@ -37,7 +37,7 @@ SSH_PORTABLE_DESC=	Build check_ssh with ports openssh (instead of base)
 
 DNS_DESC=	Configuration of check_dig and check_dns (see help)
 
-DNS_BASE_DESC=	>= 10 means drill for check_dig and no check_dns
+DNS_BASE_DESC=	Use drill for check_dig and no check_dns
 DNS_BINDTOOLS_DESC=	Use dig and nslookup from dns/bind-tools
 
 EXTRAOPTS_CONFIGURE_ENABLE=	extra-opts
@@ -109,6 +109,11 @@ NLS_CONFIGURE_ENABLE=	nls
 DBI_LIB_DEPENDS=	libdbi.so:databases/libdbi
 DBI_CONFIGURE_WITH=	dbi
 
+
+DNS_BASE_CONFIGURE_ON=	--with-dig-command=/usr/bin/drill \
+			ac_cv_path_PATH_TO_NSLOOKUP=
+DNS_BASE_EXTRA_PATCHES=	${FILESDIR}/extra-patch-dig-to-drill.diff
+
 DNS_BINDTOOLS_BUILD_DEPENDS=	${LOCALBASE}/bin/dig:dns/bind-tools
 DNS_BINDTOOLS_RUN_DEPENDS=	${DNS_BINDTOOLS_BUILD_DEPENDS}
 DNS_BINDTOOLS_CONFIGURE_ON=	--with-dig-command=${LOCALBASE}/bin/dig \
@@ -124,15 +129,6 @@ SSH_PORTABLE_CONFIGURE_ON=	--with-ssh-command=${LOCALBASE}/bin/ssh
 _PING6_CMD=	/sbin/ping6 -n -X %d -c %d %s
 .else
 _PING6_CMD=	/sbin/ping6 -n -t %d -c %d %s
-.endif
-
-.if ${PORT_OPTIONS:MDNS_BASE}
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-dig-to-drill.diff
-CONFIGURE_ARGS+=--with-dig-command=/usr/bin/drill \
-		ac_cv_path_PATH_TO_NSLOOKUP=
-PLIST_SUB+=	CHECK_DNS="@comment "
-.else
-PLIST_SUB+=	CHECK_DNS=""
 .endif
 
 .if !exists(/usr/bin/ssh) && empty(PORT_OPTIONS:MSSH_PORTABLE)

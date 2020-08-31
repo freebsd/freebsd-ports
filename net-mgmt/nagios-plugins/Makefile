@@ -3,7 +3,7 @@
 
 PORTNAME=	nagios-plugins
 DISTVERSION=	2.3.3
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://www.nagios-plugins.org/download/ \
@@ -70,6 +70,10 @@ SSH_PORTABLE_DESC=	Build check_ssh with ports openssh (instead of base)
 DBI_LIB_DEPENDS=	libdbi.so:databases/libdbi
 DBI_CONFIGURE_WITH=	dbi
 
+DNS_BASE_CONFIGURE_ON=	--with-dig-command=/usr/bin/drill \
+			ac_cv_path_PATH_TO_NSLOOKUP=
+DNS_BASE_EXTRA_PATCHES=	${FILESDIR}/extra-patch-dig-to-drill.diff
+
 DNS_BINDTOOLS_BUILD_DEPENDS=	${LOCALBASE}/bin/dig:dns/bind-tools
 DNS_BINDTOOLS_RUN_DEPENDS=	${DNS_BINDTOOLS_BUILD_DEPENDS}
 DNS_BINDTOOLS_CONFIGURE_ON=	--with-dig-command=${LOCALBASE}/bin/dig \
@@ -129,15 +133,6 @@ NAGIOSCGIURL?=	${NAGIOSHTMURL}/cgi-bin
 _PING6_CMD=	/sbin/ping6 -n -X %d -c %d %s
 .else
 _PING6_CMD=	/sbin/ping6 -n -t %d -c %d %s
-.endif
-
-.if ${PORT_OPTIONS:MDNS_BASE}
-EXTRA_PATCHES+=		${FILESDIR}/extra-patch-dig-to-drill.diff
-CONFIGURE_ARGS+=	--with-dig-command=/usr/bin/drill \
-			ac_cv_path_PATH_TO_NSLOOKUP=
-PLIST_SUB+=		CHECK_DNS="@comment "
-.else
-PLIST_SUB+=		CHECK_DNS=""
 .endif
 
 .if !exists(/usr/bin/ssh) && empty(PORT_OPTIONS:MSSH_PORTABLE)
