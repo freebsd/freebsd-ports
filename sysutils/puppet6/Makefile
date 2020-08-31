@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	puppet
-PORTVERSION=	6.17.0
+PORTVERSION=	6.18.0
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	6
 
@@ -13,13 +13,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_aarch64=		fails to install: Could not load facter; cannot install
 
-BUILD_DEPENDS=	facter>=3.0:sysutils/facter \
-		rubygem-deep_merge>=1.0:devel/rubygem-deep_merge \
+BUILD_DEPENDS=	rubygem-deep_merge>=1.0:devel/rubygem-deep_merge \
 		rubygem-hiera>=2.0:sysutils/rubygem-hiera \
 		rubygem-json_pure>=0:devel/rubygem-json_pure \
 		rubygem-semantic_puppet>=1:devel/rubygem-semantic_puppet
-RUN_DEPENDS=	facter>=3.0:sysutils/facter \
-		rubygem-concurrent-ruby>0:devel/rubygem-concurrent-ruby \
+RUN_DEPENDS=	rubygem-concurrent-ruby>0:devel/rubygem-concurrent-ruby \
 		rubygem-deep_merge>0:devel/rubygem-deep_merge \
 		rubygem-gettext-setup>=0:devel/rubygem-gettext-setup \
 		rubygem-hiera>=2.0:sysutils/rubygem-hiera \
@@ -47,6 +45,18 @@ SUB_FILES+=	pkg-message
 SUB_LIST=	RUBY=${RUBY}
 
 OPTIONS_DEFINE=		DOCS EXAMPLES
+OPTIONS_DEFAULT=	CFACTER
+OPTIONS_RADIO=		FACTER
+OPTIONS_RADIO_FACTER=	CFACTER RFACTER
+
+RFACTER_DESC=	Use facter 4.x (future facter, written in Ruby)
+CFACTER_DESC=	Use facter 3.x (written in C++)
+
+RFACTER_BUILD_DEPENDS=	rubygem-facter>=4.0:sysutils/rubygem-facter
+RFACTER_RUN_DEPENDS=	rubygem-facter>=4.0:sysutils/rubygem-facter
+
+CFACTER_BUILD_DEPENDS=	facter>=3.0:sysutils/facter
+CFACTER_RUN_DEPENDS=	facter>=3.0:sysutils/facter
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|/etc/puppetlabs/puppet|${ETCDIR}|" \
