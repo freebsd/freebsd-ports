@@ -11,7 +11,7 @@ COMMENT=	Header-only library for parallel tasks in modern C++
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake
+USES=		cmake compiler:c++11-lang
 USE_GITHUB=	yes
 
 CMAKE_OFF=	TF_BUILD_CUDA TF_BUILD_TESTS TF_BUILD_EXAMPLES
