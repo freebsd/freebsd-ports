@@ -1,20 +1,23 @@
 # $FreeBSD$
 
 PORTNAME=	squid
-PORTVERSION=	4.12
+PORTVERSION=	4.13
 CATEGORIES=	www
-MASTER_SITES=	http://www.squid-cache.org/Versions/v4/ \
-		http://www2.us.squid-cache.org/Versions/v4/ \
-		http://www1.at.squid-cache.org/Versions/v4/ \
-		http://www.eu.squid-cache.org/Versions/v4/ \
-		http://www1.jp.squid-cache.org/Versions/v4/
+MASTER_SITES=	http://www2.pl.squid-cache.org/Versions/v4/ \
+		http://ca.squid-cache.org/Versions/v4/ \
+		http://www1.il.squid-cache.org/Versions/v4/ \
+		http://www1.jp.squid-cache.org/Versions/v4/ \
+		http://www2.gr.squid-cache.org/Versions/v4/ \
+		http://ca2.squid-cache.org/Versions/v4/ \
+		http://www.squid-cache.org/Versions/v4/
 
-PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
-		http://www2.us.squid-cache.org/%SUBDIR%/ \
-		http://www1.at.squid-cache.org/%SUBDIR%/ \
-		http://www.eu.squid-cache.org/%SUBDIR%/ \
+PATCH_SITES=	http://www2.pl.squid-cache.org/%SUBDIR%/ \
+		http://ca.squid-cache.org/%SUBDIR%/ \
+		http://www1.il.squid-cache.org/%SUBDIR%/ \
 		http://www1.jp.squid-cache.org/%SUBDIR%/ \
-		http://master.squid-cache.org/~amosjeffries/patches/:nosid
+		http://www2.gr.squid-cache.org/%SUBDIR%/ \
+		http://ca2.squid-cache.org/%SUBDIR%/ \
+		http://www.squid-cache.org/%SUBDIR%/
 PATCH_SITE_SUBDIR=	Versions/v4/changesets
 
 MAINTAINER=	timp87@gmail.com
