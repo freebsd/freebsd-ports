@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	geeqie
-PORTVERSION=	1.5.1
-PORTREVISION=	8
+PORTVERSION=	1.5.1.git20200724
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.geeqie.org/
+PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Lightweight image viewer forked from GQview
@@ -16,19 +15,24 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libpng.so:graphics/png
 RUN_DEPENDS=	bash:shells/bash
 
-CONFLICTS=	geeqie-devel-[0-9]*
+USE_GITHUB=	yes
+GH_ACCOUNT=	BestImageViewer
+GH_TAGNAME=	d6195e5
+
+CONFLICTS=	geeqie-[0-9]*
 
 USES=		autoreconf compiler:c++11-lang gettext gmake gnome jpeg \
 		localbase pkgconfig desktop-file-utils tar:xz lua:53 shebangfix
 USE_GNOME=	intltool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-readmedir="${DOCSDIR}"
+CONFIGURE_ARGS+=--disable-j2k  # not in ports (yet), disable proactively to avoid hidden dependency
 SHEBANG_FILES=	plugins/*/geeqie-*
 
 PORTDOCS=	*
 
-OPTIONS_DEFINE=	EXIV2 LCMS LIRC MAP TIFF PDF FFMPEGTHUMBNAILER DOCS NLS
-OPTIONS_DEFAULT=EXIV2 LCMS GTK3 PDF FFMPEGTHUMBNAILER
+OPTIONS_DEFINE=	EXIV2 LCMS LIRC MAP TIFF PDF FFMPEGTHUMBNAILER DOCS NLS HEIF WEBP DJVU OPENJPEG
+OPTIONS_DEFAULT=EXIV2 LCMS GTK3 PDF FFMPEGTHUMBNAILER HEIF WEBP DJVU OPENJPEG
 OPTIONS_SINGLE=	TOOLKIT
 OPTIONS_SINGLE_TOOLKIT=GTK2 GTK3
 OPTIONS_SUB=	yes
@@ -40,6 +44,7 @@ MAP_DESC=	GPS map support via libchamplain
 TOOLKIT_DESC=	Graphical user interface toolkit
 GTK2_DESC=	Use GTK 2
 GTK3_DESC=	Use GTK 3
+HEIF_DESC=	HEIF image format support
 
 EXIV2_LIB_DEPENDS=	libexiv2.so:graphics/exiv2
 EXIV2_CONFIGURE_ENABLE=	exiv2
@@ -74,8 +79,16 @@ FFMPEGTHUMBNAILER_LIB_DEPENDS=	libffmpegthumbnailer.so:multimedia/ffmpegthumbnai
 
 NLS_CONFIGURE_ENABLE=	nls
 
-pre-build:
-	# fixes threaded build
-	@cd ${WRKSRC}/src && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} gq-marshal.c
+HEIF_CONFIGURE_ENABLE=	heif
+HEIF_LIB_DEPENDS=	libheif.so:graphics/libheif
+
+WEBP_CONFIGURE_ENABLE=	webp
+WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
+
+DJVU_CONFIGURE_ENABLE=	djvu
+DJVU_LIB_DEPENDS=	libdjvulibre.so:graphics/djvulibre
+
+OPENJPEG_CONFIGURE_ENABLE=	j2k
+OPENJPEG_LIB_DEPENDS=	libopenjp2.so:graphics/openjpeg
 
 .include <bsd.port.mk>
