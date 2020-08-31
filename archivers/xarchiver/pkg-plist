@@ -1,5 +1,6 @@
 bin/xarchiver
 libexec/thunar-archive-plugin/xarchiver.tap
+man/man1/xarchiver.1.gz
 share/applications/xarchiver.desktop
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
@@ -60,7 +61,9 @@ share/icons/hicolor/scalable/apps/xarchiver.svg
 %%NLS%%share/locale/ja/LC_MESSAGES/xarchiver.mo
 %%NLS%%share/locale/kk/LC_MESSAGES/xarchiver.mo
 %%NLS%%share/locale/ku/LC_MESSAGES/xarchiver.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/xarchiver.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/xarchiver.mo
+%%NLS%%share/locale/ms/LC_MESSAGES/xarchiver.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/xarchiver.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/xarchiver.mo
 %%NLS%%share/locale/pa/LC_MESSAGES/xarchiver.mo
@@ -72,14 +75,20 @@ share/icons/hicolor/scalable/apps/xarchiver.svg
 %%NLS%%share/locale/si/LC_MESSAGES/xarchiver.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/xarchiver.mo
 %%NLS%%share/locale/sq/LC_MESSAGES/xarchiver.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/xarchiver.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/xarchiver.mo
 %%NLS%%share/locale/te/LC_MESSAGES/xarchiver.mo
+%%NLS%%share/locale/th/LC_MESSAGES/xarchiver.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/xarchiver.mo
 %%NLS%%share/locale/ug/LC_MESSAGES/xarchiver.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/xarchiver.mo
 %%NLS%%share/locale/ur/LC_MESSAGES/xarchiver.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/xarchiver.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/xarchiver.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/xarchiver.mo
 share/pixmaps/xarchiver/xarchiver-add.png
+share/pixmaps/xarchiver/xarchiver-close.png
 share/pixmaps/xarchiver/xarchiver-extract.png
+share/pixmaps/xarchiver/xarchiver-green.png
 share/pixmaps/xarchiver/xarchiver-html.png
+share/pixmaps/xarchiver/xarchiver-red.png
