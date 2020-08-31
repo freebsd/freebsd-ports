@@ -17,7 +17,12 @@ USES=		autoreconf compiler:c++11-lib libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-sherlock265 --disable-dec265
 
-BROKEN_armv6=		fails to compile: invokes x86 assembler
-BROKEN_armv7=		fails to compile: invokes x86 assembler
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if ${ARCH} == "armv6" || ${ARCH} == "armv7"
+BUILD_DEPENDS+= ${LOCALBASE}/bin/as:devel/binutils
+CONFIGURE_ENV+= CCASFLAGS="${CFLAGS} -B${LOCALBASE}/bin -no-integrated-as"
+LLD_UNSAFE=     yes
+.endif
+
+.include <bsd.port.post.mk>
