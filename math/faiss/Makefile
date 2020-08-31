@@ -12,10 +12,8 @@ COMMENT=	Library for efficient similarity search & clustering of dense vectors
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	amd64 i386
-ONLY_FOR_ARCHS_REASON=	Links with libopenblasp-rN.N.N.so which is installed by math/openblas only on amd64,i386 architectures
-
-LIB_DEPENDS=	libopenblasp-r0.3.9.so:math/openblas
+BUILD_DEPENDS=	openblas>0:math/openblas # faiss links with libopenblasp-rN.N.N.so (installed by default only on amd64,i386), so use non-filename-specific DEPENDS commands
+RUN_DEPENDS=	openblas>0:math/openblas
 
 USES=		cmake compiler:c++11-lang
 USE_GITHUB=	yes
