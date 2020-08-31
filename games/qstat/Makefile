@@ -30,7 +30,9 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|qstat\.cfg|&.sample|' ${WRKSRC}/Makefile.am
-	@${REINPLACE_CMD} -e 's|OpenBSD|${OPSYS}|' ${WRKSRC}/qstat.c
+	@${REINPLACE_CMD} -e 's|__hpux|${OPSYS}|' ${WRKSRC}/qstat.c
+	@${ECHO_CMD} 'int do_dump = 0;' >> ${WRKSRC}/qstat.c
+	@${REINPLACE_CMD} -e 's|^int do_dump|extern &|' ${WRKSRC}/debug.h
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/info ${STAGEDIR}${DOCSDIR}/template

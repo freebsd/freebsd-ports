@@ -11,6 +11,25 @@
  
 --- src/cl_main.c.orig	2007-12-28 07:25:47.000000000 +0800
 +++ src/cl_main.c	2013-09-05 14:53:30.000000000 +0800
+@@ -23,7 +23,7 @@
+ 
+ #include "client.h"
+ 
+-cvar_t *rcon_password;
++extern cvar_t *rcon_password;
+ cvar_t *rcon_address;
+ 
+ cvar_t *cl_noskins;
+@@ -43,9 +43,6 @@ cvar_t *cl_shownet;
+ cvar_t *cl_showmiss;
+ cvar_t *cl_showclamp;
+ 
+-cvar_t *paused;
+-cvar_t *timedemo;
+-
+ cvar_t *cl_vwep;
+ 
+ cvar_t *cl_railtrailcolor;
 @@ -691,7 +691,7 @@ void CL_Ping_f(void){
  		}
  		
