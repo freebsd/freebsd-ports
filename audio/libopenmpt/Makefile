@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libopenmpt
-PORTVERSION=	0.5.1
+PORTVERSION=	0.5.2
 DISTVERSIONSUFFIX=	+release.autotools
 CATEGORIES=	audio
 MASTER_SITES=	https://lib.openmpt.org/files/libopenmpt/src/ \
