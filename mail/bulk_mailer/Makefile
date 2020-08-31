@@ -11,14 +11,17 @@ MASTER_SITES=	ftp://ftp.cs.utk.edu/pub/moore/bulk_mailer/ \
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Speeds delivery to mailing lists by sorting & batching addresses
 
-GNU_CONFIGURE=	YES
-OPTIONS_DEFINE=	DOCS
 LICENSE=	GPLv3
+
+GNU_CONFIGURE=	YES
 
 ALL_TARGET=	bulk_mailer
 
-PLIST_FILES=	bin/bulk_mailer man/man1/bulk_mailer.1.gz
+PLIST_FILES=	bin/bulk_mailer \
+		man/man1/bulk_mailer.1.gz
 PORTDOCS=	*
+
+OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bulk_mailer ${STAGEDIR}${PREFIX}/bin

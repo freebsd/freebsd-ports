@@ -14,34 +14,36 @@ COMMENT=	Policyd v2 is a multi-platform policy server for popular MTAs
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	p5-Net-Server>=0:net/p5-Net-Server \
-		gsed:textproc/gsed \
-		p5-Net-CIDR>=0:net-mgmt/p5-Net-CIDR \
+RUN_DEPENDS=	gsed:textproc/gsed \
+		p5-Cache-FastMmap>=0:devel/p5-Cache-FastMmap \
 		p5-Config-IniFiles>=0:devel/p5-Config-IniFiles \
-		p5-Cache-FastMmap>=0:devel/p5-Cache-FastMmap
+		p5-Net-CIDR>=0:net-mgmt/p5-Net-CIDR \
+		p5-Net-Server>=0:net/p5-Net-Server
 
 USES=		perl5 shebangfix tar:xz
-NO_BUILD=	yes
 USE_RC_SUBR=	policyd2
-bash_CMD=	/bin/sh
 SHEBANG_FILES=	cbpadmin \
 		cbpolicyd \
 		database/convert-tsql \
 		database/whitelists/parse*
+bash_CMD=	/bin/sh
 
 WWWDIR=		${PREFIX}/www/policyd
+
+NO_BUILD=	yes
+
 PORTDOCS=	AUTHORS ChangeLog INSTALL TODO WISHLIST
 
-OPTIONS_DEFINE=	MYSQL PGSQL SQLITE WEBUI DOCS
-OPTIONS_DEFAULT=MYSQL WEBUI
-MYSQL_DESC=	Add a dependency on DBD::mysql
-PGSQL_DESC=	Add a dependency on DBD::Pg
-SQLITE_DESC=	Add a dependency on DBD:SQLite
-WEBUI_DESC=	Add a dependency on the corresponding PHP pdo driver
+OPTIONS_DEFINE=		DOCS MYSQL PGSQL SQLITE WEBUI
+OPTIONS_DEFAULT=	MYSQL WEBUI
+MYSQL_DESC=		Add a dependency on DBD::mysql
+PGSQL_DESC=		Add a dependency on DBD::Pg
+SQLITE_DESC=		Add a dependency on DBD:SQLite
+WEBUI_DESC=		Add a dependency on the corresponding PHP pdo driver
 
 MYSQL_RUN_DEPENDS=	p5-DBD-mysql>=0:databases/p5-DBD-mysql
-SQLITE_RUN_DEPENDS=	p5-DBD-SQLite>=0:databases/p5-DBD-SQLite
 PGSQL_RUN_DEPENDS=	p5-DBD-Pg>=0:databases/p5-DBD-Pg
+SQLITE_RUN_DEPENDS=	p5-DBD-SQLite>=0:databases/p5-DBD-SQLite
 
 .include <bsd.port.options.mk>
 

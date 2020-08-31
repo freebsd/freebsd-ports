@@ -10,22 +10,23 @@ PKGNAMESUFFIX=	-master
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Collector part of Munin
 
-BUILD_DEPENDS=	p5-Module-Build>=0:devel/p5-Module-Build \
-		munin-common>=${MUNIN_VERSION}:sysutils/munin-common \
-		rrdtool>=0:databases/rrdtool \
+BUILD_DEPENDS=	munin-common>=${MUNIN_VERSION}:sysutils/munin-common \
 		p5-CGI>=0:www/p5-CGI \
 		p5-DateTime-HiRes>=0:devel/p5-DateTime-HiRes \
 		p5-File-Copy-Recursive>=0:devel/p5-File-Copy-Recursive \
 		p5-HTML-Template>=0:www/p5-HTML-Template \
 		p5-IO-Socket-INET6>=0:net/p5-IO-Socket-INET6 \
 		p5-Log-Log4perl>=0:devel/p5-Log-Log4perl \
+		p5-Module-Build>=0:devel/p5-Module-Build \
 		p5-Net-SSLeay>=0:security/p5-Net-SSLeay \
-		p5-Params-Validate>=0:devel/p5-Params-Validate
+		p5-Params-Validate>=0:devel/p5-Params-Validate \
+		rrdtool>=0:databases/rrdtool
 RUN_DEPENDS=	munin-common>=${MUNIN_VERSION}:sysutils/munin-common \
-		rrdtool>=0:databases/rrdtool \
-		p5-CGI>=0:www/p5-CGI \
 		p5-CGI-Fast>=0:www/p5-CGI-Fast \
+		p5-CGI>=0:www/p5-CGI \
+		p5-Date-Manip>=0:devel/p5-Date-Manip \
 		p5-DateTime-HiRes>=0:devel/p5-DateTime-HiRes \
+		p5-FCGI>=0:www/p5-FCGI \
 		p5-File-Copy-Recursive>=0:devel/p5-File-Copy-Recursive \
 		p5-HTML-Template>=0:www/p5-HTML-Template \
 		p5-IO-Socket-INET6>=0:net/p5-IO-Socket-INET6 \
@@ -33,21 +34,22 @@ RUN_DEPENDS=	munin-common>=${MUNIN_VERSION}:sysutils/munin-common \
 		p5-Net-SSLeay>=0:security/p5-Net-SSLeay \
 		p5-Params-Validate>=0:devel/p5-Params-Validate \
 		p5-URI>=0:net/p5-URI \
-		p5-Date-Manip>=0:devel/p5-Date-Manip \
-		p5-FCGI>=0:www/p5-FCGI
+		rrdtool>=0:databases/rrdtool
 
-USES=		gmake perl5 cpe
+USES=		cpe gmake perl5
 
 .include "${.CURDIR}/../munin-common/munin.mk"
 
 ALL_TARGET=	infiles build-master build-man
 INSTALL_TARGET=	install-master-prime
+
 NO_ARCH=	yes
 
-SUB_FILES=	pkg-message
-PLIST_SUB+=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
-
 PORTSCOUT=	ignore:1
+
+SUB_FILES=	pkg-message
+PLIST_SUB+=	WWWGRP=${WWWGRP} \
+		WWWOWN=${WWWOWN}
 
 post-install:
 	(cd ${WRKSRC}/build/doc; \

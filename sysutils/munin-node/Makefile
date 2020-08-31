@@ -10,58 +10,64 @@ PKGNAMESUFFIX=	-node
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Node-specific part of Munin
 
-BUILD_DEPENDS=	p5-Module-Build>=0:devel/p5-Module-Build \
+BUILD_DEPENDS=	bash:shells/bash \
+		munin-common>=${MUNIN_VERSION}:sysutils/munin-common \
 		p5-DateTime-HiRes>=0:devel/p5-DateTime-HiRes \
 		p5-Log-Log4perl>=0:devel/p5-Log-Log4perl \
+		p5-Module-Build>=0:devel/p5-Module-Build \
+		p5-Net-Server>=0:net/p5-Net-Server
+RUN_DEPENDS=	bash:shells/bash \
 		munin-common>=${MUNIN_VERSION}:sysutils/munin-common \
-		p5-Net-Server>=0:net/p5-Net-Server \
-		bash:shells/bash
-RUN_DEPENDS=	p5-Cache-Cache>=0:devel/p5-Cache-Cache \
+		p5-Cache-Cache>=0:devel/p5-Cache-Cache \
 		p5-DateTime-HiRes>=0:devel/p5-DateTime-HiRes \
-		p5-Log-Log4perl>=0:devel/p5-Log-Log4perl \
-		munin-common>=${MUNIN_VERSION}:sysutils/munin-common \
-		p5-Net-Server>=0:net/p5-Net-Server \
-		p5-List-MoreUtils>0:lang/p5-List-MoreUtils \
-		p5-Net-CIDR>=0:net-mgmt/p5-Net-CIDR \
 		p5-libwww>=0:www/p5-libwww \
-		bash:shells/bash
+		p5-List-MoreUtils>0:lang/p5-List-MoreUtils \
+		p5-Log-Log4perl>=0:devel/p5-Log-Log4perl \
+		p5-Net-CIDR>=0:net-mgmt/p5-Net-CIDR \
+		p5-Net-Server>=0:net/p5-Net-Server
 
-USES=		gmake perl5 shebangfix cpe
-REINPLACE_ARGS=	-i ""
+USES=		cpe gmake perl5 shebangfix
+USE_RC_SUBR=	munin-asyncd munin-node
+
 SHEBANG_FILES=	node/bin/munindoc node/sbin/munin-node \
-		node/sbin/munin-run node/sbin/munin-node-configure
+		node/sbin/munin-node-configure node/sbin/munin-run
 
 .include "${.CURDIR}/../munin-common/munin.mk"
 
-ALL_TARGET=	build-node build-plugins build/node/_bin/munin-async build/node/_bin/munin-asyncd
+ALL_TARGET=	build-node build-plugins build/node/_bin/munin-async \
+		build/node/_bin/munin-asyncd
 INSTALL_TARGET=	install-node-prime install-async-prime install-plugins-prime
+REINPLACE_ARGS=	-i ""
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	SNMP PERL PYTHON JAVA
-OPTIONS_DEFAULT=	SNMP PERL PYTHON
-OPTIONS_SUB=	yes
-SNMP_DESC=	Include SNMP plugins
-PERL_DESC=	Include all Perl modules (adds dependencies)
+PORTSCOUT=	ignore:1
+
+SUB_FILES=	pkg-message plugins.conf
+
+OPTIONS_DEFINE=		JAVA PERL PYTHON SNMP
+OPTIONS_DEFAULT=	PERL PYTHON SNMP
+OPTIONS_SUB=		yes
+
 JAVA_DESC=	Include JAVA plugins
+PERL_DESC=	Include all Perl modules (adds dependencies)
 PYTHON_DESC=	Include Python plugins
+SNMP_DESC=	Include SNMP plugins
+
+JAVA_USE=		JAVA=yes
+JAVA_INSTALL_TARGET=	install-plugins-java
+JAVA_VARS=		JAVA_BUILD=yes \
+			JAVA_RUN=yes
+
+PERL_RUN_DEPENDS=	p5-DBD-Pg>=0:databases/p5-DBD-Pg \
+			p5-Net-DNS>=0:dns/p5-Net-DNS \
+			p5-Net-IP>=0:net-mgmt/p5-Net-IP \
+			p5-XML-LibXML>=0:textproc/p5-XML-LibXML \
+			p5-XML-Parser>=0:textproc/p5-XML-Parser
+
+PYTHON_USES=	python
 
 SNMP_BUILD_DEPENDS=	p5-Net-SNMP>=0:net-mgmt/p5-Net-SNMP
 SNMP_RUN_DEPENDS=	p5-Net-SNMP>=0:net-mgmt/p5-Net-SNMP
-PERL_RUN_DEPENDS=	p5-DBD-Pg>=0:databases/p5-DBD-Pg \
-		p5-Net-DNS>=0:dns/p5-Net-DNS \
-		p5-Net-IP>=0:net-mgmt/p5-Net-IP \
-		p5-XML-Parser>=0:textproc/p5-XML-Parser \
-		p5-XML-LibXML>=0:textproc/p5-XML-LibXML
-PYTHON_USES=	python
-JAVA_USE=	java=yes
-JAVA_INSTALL_TARGET=	install-plugins-java
-JAVA_BUILD=	yes
-JAVA_RUN=	yes
-
-SUB_FILES=	pkg-message plugins.conf
-USE_RC_SUBR=	munin-asyncd munin-node
-
-PORTSCOUT=	ignore:1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \

@@ -13,22 +13,24 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	munin-node>=0:sysutils/munin-node
 
-USES=	shebangfix uniquefiles:dirs python:env
-SHEBANG_REGEX=	./(${EXAMPLES_DIRS:ts|})/.*
-SHEBANG_LANG=	python3 expect gawk zsh
-ruby_OLD_CMD=	/opt/csw/bin/ruby
-zsh_CMD=	${LOCALBASE}/bin/zsh
-python3_CMD=	${LOCALBASE}/bin/python${PYTHON3_DEFAULT}
+USES=		python:env shebangfix uniquefiles:dirs
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	munin-monitoring
 GH_TAGNAME=	33270dd
 GH_TUPLE=	shuque:bind9stats:a920ded:bind9stats
 
-NO_BUILD=	yes
-NO_ARCH=	yes
+SHEBANG_REGEX=	./(${EXAMPLES_DIRS:ts|})/.*
+SHEBANG_LANG=	expect gawk python3 zsh
+python3_CMD=	${LOCALBASE}/bin/python${PYTHON3_DEFAULT}
+zsh_CMD=	${LOCALBASE}/bin/zsh
+ruby_OLD_CMD=	/opt/csw/bin/ruby
 
 # Most of the installed files are scripts, so give them a "correct" mode.
 BINMODE=	755
+
+NO_ARCH=	yes
+NO_BUILD=	yes
 
 SUB_FILES=	pkg-message
 

@@ -4,14 +4,6 @@ man/man5/vtund.conf.5.gz
 man/man8/vtund.8.gz
 man/man8/vtun.8.gz
 man/man1/vtun.1.gz
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/Credits
-%%PORTDOCS%%%%DOCSDIR%%/FAQ
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.LZO
-%%PORTDOCS%%%%DOCSDIR%%/README.Setup
-%%PORTDOCS%%%%DOCSDIR%%/README.Shaper
-%%PORTDOCS%%%%DOCSDIR%%/TODO
 @dir /var/log/vtund
 @dir /var/lock/vtund
 @dir /var/lock
