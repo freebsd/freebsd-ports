@@ -43,17 +43,12 @@ PERL_CONFIGURE_WITH=	perl
 
 PORTDOCS=	README ChangeLog
 
-.include <bsd.port.pre.mk>
-
-.if ${SSL_DEFAULT} == base
-BROKEN_FreeBSD_12=	variable has incomplete type 'EVP_CIPHER_CTX' (aka 'struct evp_cipher_ctx_st')
-BROKEN_FreeBSD_13=	variable has incomplete type 'EVP_CIPHER_CTX' (aka 'struct evp_cipher_ctx_st')
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|\(MIME_TYPES\).*|\1 "${LOCALBASE}/etc/mime.types"|' \
 		${WRKSRC}/src/constants.h
+	@${REINPLACE_CMD} -e 's|^struct socket_config|extern &|' \
+		${WRKSRC}/src/htconfig.h
 	@${REINPLACE_CMD} -e 's|mime.types ||g' \
 		${WRKSRC}/config/Makefile.in
 	@${REINPLACE_CMD} -e '/libdir/ s|(INSTALL_DATA)|& -s|' \
@@ -67,4 +62,4 @@ post-install:
 		${STAGEDIR}/var/db/xshttpd/sessions
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
