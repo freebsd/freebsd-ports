@@ -2,43 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	facter
-PORTVERSION=	2.5.1
-PORTREVISION=	2
+PORTVERSION=	4.0.35
 CATEGORIES=	sysutils rubygems
-MASTER_SITES=	RG \
-		http://downloads.puppetlabs.com/facter/
+MASTER_SITES=	RG
 
-MAINTAINER=	robak@FreeBSD.org
+MAINTAINER=	puppet@FreeBSD.org
 COMMENT=	Cross-platform Ruby library for retrieving facts from OS
 
 LICENSE=	APACHE20
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USE_RUBY=	yes
+RUN_DEPENDS=	rubygem-hocon>=1.3:devel/rubygem-hocon \
+		rubygem-thor>=1.0.1:devel/rubygem-thor
+
 USES=		gem
+USE_RUBY=	yes
 
 PLIST_FILES=	bin/facter ${GEMS_DIR}/facter
 
-OPTIONS_DEFINE=	EC2_FACTS ZFS_FACTS
-EC2_FACTS_DESC=	Generate AWS EC2 related facts
-ZFS_FACTS_DESC=	Generate ZFS related facts
-
-OPTIONS_DEFAULT=	EC2_FACTS ZFS_FACTS
-
 .include <bsd.port.pre.mk>
-
-# Restrict dmidecode dependency to x86-based systems
-.if ${ARCH} == "amd64" || ${ARCH} == "i386"
-RUN_DEPENDS+=	dmidecode:sysutils/dmidecode
-.endif
-
-post-patch-EC2_FACTS-off:
-	@${REINPLACE_CMD} -e 's/\,\ \"lib\/facter\/ec2.rb\"//' ${WRKSRC}/${PORTNAME}.gemspec
-	@${REINPLACE_CMD} -e 's/\,\ \"lib\/facter\/ec2\/rest.rb\"//' ${WRKSRC}/${PORTNAME}.gemspec
-
-post-patch-ZFS_FACTS-off:
-	@${REINPLACE_CMD} -e 's/\,\ \"lib\/facter\/zfs_version.rb\"//' ${WRKSRC}/${PORTNAME}.gemspec
-	@${REINPLACE_CMD} -e 's/\,\ \"lib\/facter\/zpool_version.rb\"//' ${WRKSRC}/${PORTNAME}.gemspec
 
 post-install:
 	${RLN} ${STAGEDIR}/${PREFIX}/${GEMS_DIR}/facter-${PORTVERSION} ${STAGEDIR}/${PREFIX}/${GEMS_DIR}/facter
