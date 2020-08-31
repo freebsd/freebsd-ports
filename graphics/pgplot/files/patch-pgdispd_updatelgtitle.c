@@ -13,7 +13,7 @@
  	int i;
  
 -#ifndef _AIX
-+#if defined(_AIX) && !defined(__FreeBSD__)
++#if !defined(_AIX) && !defined(__FreeBSD__)
  	char *sprintf();
  #endif
  
