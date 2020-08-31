@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	radicale
-PORTVERSION=	3.0.4
+PORTVERSION=	3.0.5
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -29,7 +29,7 @@ USERS=		radicale
 GROUPS=		radicale
 USE_RC_SUBR=	radicale
 NO_ARCH=	yes
-SHEBANG_FILES=	radicale.fcgi radicale.wsgi
+SHEBANG_FILES=	radicale.wsgi
 
 SUB_LIST=	USERS="${USERS}" GROUPS="${GROUPS}" PYTHON_CMD="${PYTHON_CMD}"
 
@@ -48,7 +48,6 @@ post-install:
 	@${MKDIR} ${STAGEDIR}/${ETCDIR} ${STAGEDIR}/${DATADIR} ${STAGEDIR}/${WWWDIR}
 	${INSTALL_DATA} ${WRKSRC}/config ${STAGEDIR}/${ETCDIR}/config.sample
 	${INSTALL_DATA} ${WRKSRC}/rights ${STAGEDIR}/${ETCDIR}/rights.sample
-	${INSTALL_SCRIPT} ${WRKSRC}/radicale.fcgi ${STAGEDIR}${WWWDIR}/radicale.fcgi
 	${INSTALL_SCRIPT} ${WRKSRC}/radicale.wsgi ${STAGEDIR}${WWWDIR}/radicale.wsgi
 
 do-test:

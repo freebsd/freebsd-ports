@@ -1,5 +1,4 @@
 @sample %%ETCDIR%%/config.sample
 @sample %%ETCDIR%%/rights.sample
 @dir(radicale,radicale,0755) %%DATADIR%%
-%%WWWDIR%%/radicale.fcgi
 %%WWWDIR%%/radicale.wsgi
