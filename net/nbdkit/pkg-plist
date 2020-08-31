@@ -128,3 +128,4 @@ libdata/pkgconfig/nbdkit.pc
 %%MANPAGES%%%%PYTHON%%man/man3/nbdkit-python-plugin.3.gz
 %%MANPAGES%%man/man3/nbdkit-sh-plugin.3.gz
 sbin/nbdkit
+share/bash-completion/completions/nbdkit
