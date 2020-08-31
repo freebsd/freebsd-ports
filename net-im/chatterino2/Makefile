@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	chatterino2
-PORTVERSION=	g2020082701
+PORTVERSION=	g2020083001
 CATEGORIES=	net-im
 
 MAINTAINER=	swills@FreeBSD.org
@@ -34,11 +34,11 @@ PLIST_FILES=	bin/chatterino \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	chatterino
-GH_TAGNAME=	279a80b
+GH_TAGNAME=	9ae79e65
 GH_TUPLE=	Chatterino:libcommuni:f3e7f97:communi/lib/libcommuni \
-		pajlada:humanize:1386737:humanize/lib/humanize \
-		pajlada:serialize:86bfa5a:serialize/lib/serialize \
-		pajlada:settings:4fe0ff9:settings/lib/settings \
+		pajlada:humanize:4e00a03:humanize/lib/humanize \
+		pajlada:serialize:130ffc3:serialize/lib/serialize \
+		pajlada:settings:6de3a27:settings/lib/settings \
 		pajlada:signals:6665cca:signals/lib/signals \
 		ziocleto:websocketpp:1e0138c:websocketpp/lib/websocketpp
 
