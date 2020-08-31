@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcares.so:dns/c-ares
 
-USES=		tar:bzip2
+USES=		autoreconf tar:bzip2
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib -lcrypto
 CFLAGS+=	-I${LOCALBASE}/include
@@ -39,14 +39,13 @@ SSL_USES=		ssl
 
 .include <bsd.port.pre.mk>
 
-.if ${SSL_DEFAULT} == base
-BROKEN_FreeBSD_12=	gnutls library not found. Install gnutls or use --with-openssl
-BROKEN_FreeBSD_13=	gnutls library not found. Install gnutls or use --with-openssl
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|EUSER="ircproxy"|EUSER="ircproxyd"|g; \
 		s|EGROUP="users"|EGROUP="ircproxyd"|g' ${WRKSRC}/data/${PORTNAME}d.conf
+.if ${OSVERSION} > 1200084
+	@${REINPLACE_CMD} -e '/gnutls/!s,SSL_library_init,OPENSSL_init_ssl,' \
+		${WRKSRC}/configure.in
+.endif
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/imkpasswd ${STAGEDIR}${PREFIX}/bin/ircproxyd
