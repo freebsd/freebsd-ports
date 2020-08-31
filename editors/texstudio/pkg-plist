@@ -1,7 +1,7 @@
 bin/texstudio
-share/appdata/texstudio.appdata.xml
 share/applications/texstudio.desktop
 share/icons/hicolor/scalable/apps/texstudio.svg
+share/metainfo/texstudio.appdata.xml
 %%DATADIR%%/AUTHORS
 %%DATADIR%%/CHANGELOG.txt
 %%DATADIR%%/COPYING
