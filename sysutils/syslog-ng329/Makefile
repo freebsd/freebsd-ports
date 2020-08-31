@@ -2,19 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	syslog-ng
-DISTVERSION=	3.26.1
-PORTREVISION=	1
+DISTVERSION=	3.29.1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/balabit/syslog-ng/releases/download/syslog-ng-${DISTVERSION}/
 .if !defined(MASTERDIR)
-PKGNAMESUFFIX=	326
+PKGNAMESUFFIX=	329
 .endif
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Powerful syslogd replacement
-
-DEPRECATED=	Agreed upon upstream one year deprecation policy
-EXPIRATION_DATE=	2021-08-30
 
 BROKEN_sparc64=		fails to link: Internal error: Segmentation fault (program ld)
 
@@ -89,9 +85,9 @@ REDIS_CONFIGURE_ENABLE=		redis
 REDIS_LIB_DEPENDS=		libhiredis.so:databases/hiredis
 REDIS_PLIST_FILES=		lib/syslog-ng/libredis.so
 
-SNMPDEST_CONFIGURE_ENABLE=	snmp-dest
+SNMPDEST_CONFIGURE_ENABLE=	afsnmp
 SNMPDEST_LIB_DEPENDS=		libnetsnmp.so:net-mgmt/net-snmp
-SNMPDEST_PLIST_FILES=		lib/syslog-ng/libsnmpdest.so
+SNMPDEST_PLIST_FILES=		lib/syslog-ng/libafsnmp.so
 
 SMTP_CONFIGURE_ON=		--with-libesmtp=${LOCALBASE} --enable-smtp
 SMTP_CONFIGURE_OFF=		--without-libesmtp --disable-smtp
@@ -192,8 +188,10 @@ PYTHON_PLIST_FILES=		lib/syslog-ng/libmod-python.so \
 		lib/syslog-ng/python/syslogng/debuggercli/__pycache__/tflang.cpython-${PYTHON_SUFFIX}.pyc
 
 CURL_CONFIGURE_OFF=		--with-libcurl=off
+CURL_CONFIGURE_ON=		--enable-http
 CURL_LIB_DEPENDS=		libcurl.so:ftp/curl
-CURL_PLIST_FILES=		lib/syslog-ng/libhttp.so
+CURL_PLIST_FILES=		lib/syslog-ng/libhttp.so \
+				include/syslog-ng/modules/http/http-signals.h
 
 RIEMANN_CONFIGURE_ON=		--enable-riemann
 RIEMANN_CONFIGURE_OFF=		--disable-riemann
