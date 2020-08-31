@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	chatterino2
-PORTVERSION=	g2020083001
+PORTVERSION=	g2020083101
 CATEGORIES=	net-im
 
 MAINTAINER=	swills@FreeBSD.org
@@ -21,20 +21,15 @@ USE_GL=		gl
 
 OPTIONS_DEFINE=	DOCS
 
-DESKTOP_ENTRIES=	"Chatterino" \
-			"" \
-			"chatterino" \
-			"chatterino" \
-			"Network;InstantMessaging;" \
-			""
-
 PLIST_FILES=	bin/chatterino \
 		share/appdata/com.chatterino.chatterino.appdata.xml \
+		share/applications/com.chatterino.chatterino.desktop \
 		share/icons/hicolor/256x256/apps/chatterino.png
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	chatterino
-GH_TAGNAME=	9ae79e65
+COMMIT_ID=	36b9466f8985769489ed8b05d23fe057bbb75660
+GH_TAGNAME=	${COMMIT_ID:C|(.......).*|\1|}
 GH_TUPLE=	Chatterino:libcommuni:f3e7f97:communi/lib/libcommuni \
 		pajlada:humanize:4e00a03:humanize/lib/humanize \
 		pajlada:serialize:130ffc3:serialize/lib/serialize \
@@ -42,7 +37,7 @@ GH_TUPLE=	Chatterino:libcommuni:f3e7f97:communi/lib/libcommuni \
 		pajlada:signals:6665cca:signals/lib/signals \
 		ziocleto:websocketpp:1e0138c:websocketpp/lib/websocketpp
 
-QMAKE_ENV=	GIT_COMMIT=${GH_TAGNAME} \
+QMAKE_ENV=	GIT_COMMIT=${COMMIT_ID} \
 		GIT_RELEASE=${DISTVERSIONPREFIX}${PORTVERSION}
 QMAKE_ARGS=	INCLUDEPATH+=${LOCALBASE}/include/qt5keychain \
 		LIBS+=-lqt5keychain PREFIX=${STAGEDIR}${PREFIX} \
@@ -53,13 +48,11 @@ PORTDOCS=	README.md docs/Commands.md docs/ENV.md docs/IMAGEUPLOADER.md \
 
 PORTSCOUT=	skipv:v2.1.7,v2.1.0,v2.0.4,v2.0.3,v2.0.2,v2.0.1,v2.0.0
 
-post-extract:
-	@${RM} ${WRKSRC}/lib/qtkeychain.pri
-
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/chatterino ${STAGEDIR}${PREFIX}/bin/
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/256x256/apps/ ${STAGEDIR}${PREFIX}/share/appdata/
 	${INSTALL_DATA} ${WRKSRC}/resources/icon.png ${STAGEDIR}${PREFIX}/share/icons/hicolor/256x256/apps/chatterino.png
+	${INSTALL_DATA} ${WRKSRC}/resources/com.chatterino.chatterino.desktop ${STAGEDIR}${DESKTOPDIR}
 	${INSTALL_DATA} ${WRKSRC}/resources/com.chatterino.chatterino.appdata.xml ${STAGEDIR}${PREFIX}/share/appdata/
 
 post-install-DOCS-on:
