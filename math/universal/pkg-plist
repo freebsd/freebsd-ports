@@ -1,9 +1,13 @@
 %%TOOLS%%bin/compd
 %%TOOLS%%bin/compf
 %%TOOLS%%bin/compfp
+%%TOOLS%%bin/compieee
 %%TOOLS%%bin/compld
+%%TOOLS%%bin/complns
 %%TOOLS%%bin/compp
-%%TOOLS%%bin/convert
+%%TOOLS%%bin/compsi
+%%TOOLS%%bin/compui
+%%TOOLS%%bin/float2posit
 %%TOOLS%%bin/propenv
 %%TOOLS%%bin/propp
 include/universal/abstract/triple.hpp
