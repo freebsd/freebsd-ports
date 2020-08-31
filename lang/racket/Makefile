@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	racket
-PORTVERSION=	7.7
-PORTREVISION=	1
+PORTVERSION=	7.8
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://mirror.racket-lang.org/installers/${PORTVERSION}/ \
 		http://www.cs.utah.edu/plt/installers/${PORTVERSION}/ \
@@ -39,7 +38,7 @@ REINPLACE_ARGS=	-i ""
 MAKE_JOBS_UNSAFE=	yes
 CONFLICTS=	racket-minimal-[0-9]*
 
-OPTIONS_DEFINE=		DOCS
+OPTIONS_DEFINE=	DOCS
 
 OPTIONS_DEFINE_amd64=	FUTURES JIT
 OPTIONS_DEFINE_i386=	FUTURES JIT
@@ -56,7 +55,7 @@ JIT_CONFIGURE_ENABLE=		jit
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MJIT} && ${ARCH} == "amd64"
-CFLAGS+=	-msse -msse2 -mfpmath=sse
+CFLAGS+=	-mfpmath=sse -msse -msse2
 .endif
 
 post-install:
