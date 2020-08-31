@@ -2,8 +2,7 @@
 
 PORTNAME=	gitui
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.1
-PORTREVISION=	3
+DISTVERSION=	0.10.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,9 +13,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 LIB_DEPENDS=	libgit2.so:devel/libgit2
 
-USES=		cargo pkgconfig
+USES=		cargo pkgconfig localbase:ldflags python:build xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	extrawurst
+USE_XORG=	xcb
 
 CARGO_CRATES=	addr2line-0.13.0 \
 		adler-0.2.2 \
@@ -32,13 +32,16 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		base64-0.12.3 \
 		bitflags-1.2.1 \
 		blake2b_simd-0.5.10 \
+		block-0.1.6 \
 		bytemuck-1.2.0 \
 		bytesize-1.0.1 \
 		cassowary-0.3.0 \
 		cc-1.0.58 \
 		cfg-if-0.1.10 \
-		chrono-0.4.13 \
-		clap-2.33.1 \
+		chrono-0.4.15 \
+		clap-2.33.3 \
+		clipboard-0.5.0 \
+		clipboard-win-2.2.0 \
 		cloudabi-0.0.3 \
 		cloudabi-0.1.0 \
 		const-random-0.1.8 \
@@ -48,7 +51,6 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		crossbeam-channel-0.4.3 \
 		crossbeam-deque-0.7.3 \
 		crossbeam-epoch-0.8.2 \
-		crossbeam-queue-0.2.3 \
 		crossbeam-utils-0.7.2 \
 		crossterm-0.17.7 \
 		crossterm_winapi-0.6.1 \
@@ -60,7 +62,7 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		failure_derive-0.1.8 \
 		getrandom-0.1.14 \
 		gimli-0.22.0 \
-		git2-0.13.8 \
+		git2-0.13.10 \
 		glob-0.3.0 \
 		hermit-abi-0.1.15 \
 		idna-0.2.0 \
@@ -72,11 +74,12 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		jobserver-0.1.21 \
 		lazy_static-1.4.0 \
 		libc-0.2.72 \
-		libgit2-sys-0.12.9+1.0.1 \
-		libz-sys-1.0.25 \
+		libgit2-sys-0.12.12+1.0.1 \
+		libz-sys-1.1.0 \
 		lock_api-0.3.4 \
 		lock_api-0.4.1 \
 		log-0.4.11 \
+		malloc_buf-0.0.6 \
 		matches-0.1.8 \
 		maybe-uninit-2.0.0 \
 		memchr-2.3.3 \
@@ -93,6 +96,9 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		num-integer-0.1.43 \
 		num-traits-0.2.12 \
 		num_cpus-1.13.0 \
+		objc-0.2.7 \
+		objc-foundation-0.1.1 \
+		objc_id-0.1.1 \
 		object-0.20.0 \
 		parking_lot-0.10.2 \
 		parking_lot-0.11.0 \
@@ -100,7 +106,7 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		parking_lot_core-0.8.0 \
 		percent-encoding-2.1.0 \
 		pkg-config-0.3.17 \
-		pprof-0.3.17 \
+		pprof-0.3.18 \
 		ppv-lite86-0.2.8 \
 		proc-macro-hack-0.5.16 \
 		proc-macro2-1.0.18 \
@@ -110,17 +116,17 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		rand_chacha-0.2.2 \
 		rand_core-0.5.1 \
 		rand_hc-0.2.0 \
-		rayon-core-1.7.1 \
+		rayon-core-1.8.0 \
 		redox_syscall-0.1.56 \
 		redox_users-0.3.4 \
 		remove_dir_all-0.5.3 \
 		rgb-0.8.20 \
-		ron-0.6.0 \
+		ron-0.6.1 \
 		rust-argon2-0.7.0 \
 		rustc-demangle-0.1.16 \
 		scopeguard-1.1.0 \
-		serde-1.0.114 \
-		serde_derive-1.0.114 \
+		serde-1.0.115 \
+		serde_derive-1.0.115 \
 		signal-hook-0.1.16 \
 		signal-hook-registry-1.2.0 \
 		simplelog-0.8.0 \
@@ -134,6 +140,7 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		synstructure-0.12.4 \
 		tempfile-3.1.0 \
 		textwrap-0.11.0 \
+		textwrap-0.12.1 \
 		thiserror-1.0.20 \
 		thiserror-impl-1.0.20 \
 		time-0.1.43 \
@@ -151,9 +158,12 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
-		winapi-x86_64-pc-windows-gnu-0.4.0
-
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		x11-clipboard-0.3.3 \
+		xcb-0.8.2
 PLIST_FILES=	bin/${PORTNAME}
+
+BINARY_ALIAS=	python3=${PYTHON_CMD} # xcb requires python3
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
