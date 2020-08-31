@@ -19,7 +19,7 @@ LIB_DEPENDS=	libsigc-2.0.so:devel/libsigc++20 \
 		libvorbisfile.so:audio/libvorbis \
 		libsmpeg.so:multimedia/smpeg
 
-USES=		lua:51 openal:al pkgconfig python:build scons:python2 sdl tar:bzip2
+USES=		lua:51 openal:al pkgconfig python:build scons sdl tar:bzip2
 USE_CXXSTD=	gnu++98
 USE_LDCONFIG=	yes
 USE_SDL=	image sdl
@@ -37,6 +37,10 @@ OPTIONS_DEFINE=	DOCS
 post-patch:
 	@${REINPLACE_CMD} -e 's/lua5\.1/lua-${LUA_VER}/' \
 		${WRKSRC}/engine/SConscript
+# Prevent the clash with /usr/include/semaphore.h
+	@${MV} ${WRKSRC}/sdlx/semaphore.h ${WRKSRC}/sdlx/sdlx_semaphore.h
+	@${REINPLACE_CMD} -e 's/semaphore\.h"/sdlx_&/' \
+		${WRKSRC}/sdlx/semaphore.cpp ${WRKSRC}/sdlx/thread.h
 
 pre-build:
 # Regenerate `sl08.h' after we patch `sl08.py' (patching the header itself

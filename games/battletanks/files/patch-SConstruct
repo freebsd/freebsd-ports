@@ -1,5 +1,5 @@
---- SConstruct.orig	2009-12-10 15:58:55.000000000 +0100
-+++ SConstruct	2010-01-16 17:07:22.000000000 +0100
+--- SConstruct.orig	2009-12-10 14:58:55 UTC
++++ SConstruct
 @@ -16,7 +16,7 @@ picLibBuilder = Builder(
  env['BUILDERS']['StaticLibrary'] = picLibBuilder
  env['BUILDERS']['Library'] = picLibBuilder
@@ -25,11 +25,26 @@
  
  opts.Update(env)
  opts.Save('options.cache', env.Clone())
-@@ -57,6 +58,8 @@ if os.environ.has_key('CXXFLAGS'):
+@@ -47,16 +48,18 @@ debug = buildmode == "debug"
+ Export('debug')
+ 
+ import SCons.Util
+-if os.environ.has_key('CC'):
++if 'CC' in os.environ:
+ 	env['CC'] = os.environ['CC']
+-if os.environ.has_key('CFLAGS'):
++if 'CFLAGS' in os.environ:
+ 	env['CCFLAGS'] += SCons.Util.CLVar(os.environ['CFLAGS'])
+-if os.environ.has_key('CXX'):
++if 'CXX' in os.environ:
+ 	env['CXX'] = os.environ['CXX']
+-if os.environ.has_key('CXXFLAGS'):
++if 'CXXFLAGS' in os.environ:
  	env['CXXFLAGS'] += SCons.Util.CLVar(os.environ['CXXFLAGS'])
- if os.environ.has_key('LDFLAGS'):
+-if os.environ.has_key('LDFLAGS'):
++if 'LDFLAGS' in os.environ:
  	env['LINKFLAGS'] += SCons.Util.CLVar(os.environ['LDFLAGS'])
-+if os.environ.has_key('CPPPATH'):
++if 'CPPPATH' in os.environ:
 +	env['CPPPATH'] = os.environ['CPPPATH'].split()
  
  if (sys.platform != "win32" and env['gcc_visibility']): 
@@ -44,7 +59,36 @@
  		
  	env.Append(CPPFLAGS=['-Wall', '-Wno-deprecated', '-pedantic', '-Wno-long-long', '-pipe', '-pthread'])
  	env.Append(CCFLAGS=['-Wall', '-Wno-deprecated', '-pedantic', '-Wno-long-long', '-pipe', '-pthread'])
-@@ -253,24 +253,28 @@ env.Append(CPPPATH=['#'])
+@@ -205,7 +205,7 @@ try : 
+ 
+ 	except: 
+ 		info = sys.exc_info()
+-		print "%s %s %s" %(info[0], info[1], info[2])
++		print("%s %s %s" %(info[0], info[1], info[2]))
+ except : 
+ 	svnversion = os.popen('svnversion -n .', 'r')
+ 	version = svnversion.readline().strip()
+@@ -238,7 +238,10 @@ except : 
+ 			env.Append(CPPDEFINES='PLUGINS_DIR="\\"' + plugins_dir + '\\""')
+ 
+ version = version[version.rfind(':') + 1:]
+-revision = int(version.replace('M', ''))
++try:
++    revision = int(version.replace('M', ''))
++except ValueError:
++    revision = 0
+ 
+ Export('version')
+ Export('revision')
+@@ -246,31 +249,35 @@ Export('lib_dir')
+ Export('plugins_dir')
+ 
+ version = '0.9.%s' %version
+-print "version: %s" %version
++print("version: %s" %version)
+ 
+ bt_sublibs = ['mrt', 'sdlx', 'objects', 'clunk']
+ env.Append(CPPPATH=['#'])
  
  if (os.path.exists('private')):
  	dir = 'private'
