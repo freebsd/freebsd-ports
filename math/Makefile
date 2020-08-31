@@ -248,6 +248,7 @@
     SUBDIR += eval
     SUBDIR += exprtk
     SUBDIR += facile
+    SUBDIR += faiss
     SUBDIR += fann
     SUBDIR += fcl
     SUBDIR += fcl05
