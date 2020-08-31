@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	eksctl
-PORTVERSION=	0.25.0
+PORTVERSION=	0.26.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	danilo@FreeBSD.org
@@ -35,6 +35,7 @@ GH_TUPLE=	\
 		aws:aws-sdk-go:v1.30.11:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
 		bazelbuild:bazel-gazelle:70208cbdc798:bazelbuild_bazel_gazelle/vendor/github.com/bazelbuild/bazel-gazelle \
 		bazelbuild:buildtools:69366ca98f89:bazelbuild_buildtools/vendor/github.com/bazelbuild/buildtools \
+		benjamintf1:unmarshalledmatchers:bb1c1f34eaea:benjamintf1_unmarshalledmatchers/vendor/github.com/benjamintf1/unmarshalledmatchers \
 		beorn7:perks:v1.0.0:beorn7_perks/vendor/github.com/beorn7/perks \
 		blakesmith:ar:809d4375e1fb:blakesmith_ar/vendor/github.com/blakesmith/ar \
 		blang:semver:v3.5.1:blang_semver/vendor/github.com/blang/semver \
@@ -132,7 +133,7 @@ GH_TUPLE=	\
 		google:wire:v0.3.0:google_wire/vendor/github.com/google/wire \
 		googleapis:gax-go:v2.0.2:googleapis_gax_go/vendor/github.com/googleapis/gax-go \
 		googleapis:gax-go:v2.0.5:googleapis_gax_go_v2 \
-		googleapis:gnostic:v0.3.1:googleapis_gnostic/vendor/github.com/googleapis/gnostic \
+		googleapis:gnostic:v0.3.1:googleapis_gnostic_1/vendor/github.com/googleapis/gnostic \
 		googleapis:google-api-go-client:v0.9.0:googleapis_google_api_go_client/vendor/google.golang.org/api \
 		googleapis:google-cloud-go:v0.44.3:googleapis_google_cloud_go/vendor/cloud.google.com/go \
 		gophercloud:gophercloud:v0.1.0:gophercloud_gophercloud/vendor/github.com/gophercloud/gophercloud \
@@ -176,7 +177,7 @@ GH_TUPLE=	\
 		kubernetes:client-go:v0.16.8:kubernetes_client_go/vendor/k8s.io/client-go \
 		kubernetes:cloud-provider:v0.16.8:kubernetes_cloud_provider/vendor/k8s.io/cloud-provider \
 		kubernetes:cluster-bootstrap:v0.16.8:kubernetes_cluster_bootstrap/vendor/k8s.io/cluster-bootstrap \
-		kubernetes:code-generator:v0.16.8:kubernetes_code_generator_1/vendor/k8s.io/code-generator \
+		kubernetes:code-generator:v0.16.8:kubernetes_code_generator/vendor/k8s.io/code-generator \
 		kubernetes:component-base:v0.16.8:kubernetes_component_base/vendor/k8s.io/component-base \
 		kubernetes:cri-api:v0.16.8:kubernetes_cri_api/vendor/k8s.io/cri-api \
 		kubernetes:csi-translation-lib:v0.16.8:kubernetes_csi_translation_lib_1/vendor/k8s.io/csi-translation-lib \
@@ -269,7 +270,7 @@ GH_TUPLE=	\
 		vmware:govmomi:v0.20.1:vmware_govmomi/vendor/github.com/vmware/govmomi \
 		voxelbrain:goptions:58cddc247ea2:voxelbrain_goptions/vendor/github.com/voxelbrain/goptions \
 		weaveworks:go-git-providers:v0.1.2:weaveworks_go_git_providers/vendor/github.com/weaveworks/go-git-providers \
-		weaveworks:goformation:ff3cf0bbf42c:weaveworks_goformation_v4/vendor/github.com/weaveworks/goformation/v4 \
+		weaveworks:goformation:9ad99f6e397d:weaveworks_goformation_v4/vendor/github.com/weaveworks/goformation/v4 \
 		weaveworks:launcher:1ca323f1de15:weaveworks_launcher/vendor/github.com/weaveworks/launcher \
 		whilp:git-urls:6db9661140c0:whilp_git_urls/vendor/github.com/whilp/git-urls \
 		xanzy:go-gitlab:v0.31.0:xanzy_go_gitlab/vendor/github.com/xanzy/go-gitlab \
