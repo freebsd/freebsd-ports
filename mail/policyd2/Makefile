@@ -3,7 +3,7 @@
 
 PORTNAME=	policyd2
 PORTVERSION=	2.0.14
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	http://download.policyd.org/v${PORTVERSION}/
 DISTNAME=	cluebringer-v${PORTVERSION}
@@ -23,7 +23,7 @@ RUN_DEPENDS=	p5-Net-Server>=0:net/p5-Net-Server \
 USES=		perl5 shebangfix tar:xz
 NO_BUILD=	yes
 USE_RC_SUBR=	policyd2
-BASH_CMD=	/bin/sh
+bash_CMD=	/bin/sh
 SHEBANG_FILES=	cbpadmin \
 		cbpolicyd \
 		database/convert-tsql \
