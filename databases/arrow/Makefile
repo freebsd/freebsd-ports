@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	arrow
-DISTVERSION=	1.0.0
-PORTREVISION=	1
+DISTVERSION=	1.0.1
 CATEGORIES=	databases
 MASTER_SITES=	https://mirrors.advancedhosters.com/apache/${PORTNAME}/${PORTNAME}-${DISTVERSION}/
 DISTNAME=	apache-${PORTNAME}-${DISTVERSION}

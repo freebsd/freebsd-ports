@@ -189,5 +189,5 @@ lib/cmake/arrow/FindArrow.cmake
 lib/cmake/arrow/arrow-config.cmake
 lib/libarrow.so
 lib/libarrow.so.100
-lib/libarrow.so.100.0.0
+lib/libarrow.so.100.1.0
 libdata/pkgconfig/arrow.pc
