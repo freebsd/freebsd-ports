@@ -811,6 +811,7 @@
     SUBDIR += gitinspector
     SUBDIR += gitlab-runner
     SUBDIR += gitlab-shell
+    SUBDIR += gitleaks
     SUBDIR += gitlist
     SUBDIR += gitolite
     SUBDIR += gitolite2
