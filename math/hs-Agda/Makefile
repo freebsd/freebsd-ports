@@ -9,6 +9,8 @@ CATEGORIES=	math haskell
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Dependently typed functional programming language and proof assistant
 
+BROKEN_i386=	Compiler goes out of memory
+
 BUILD_DEPENDS=	emacs:editors/emacs
 
 USES=		cabal
