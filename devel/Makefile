@@ -6678,6 +6678,7 @@
     SUBDIR += tablist
     SUBDIR += tailor
     SUBDIR += talloc
+    SUBDIR += taskflow
     SUBDIR += tass64
     SUBDIR += tbb
     SUBDIR += tcl-memchan
