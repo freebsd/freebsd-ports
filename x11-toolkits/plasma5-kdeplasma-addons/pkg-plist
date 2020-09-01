@@ -655,6 +655,9 @@ share/locale/he/LC_MESSAGES/plasma_applet_org.kde.plasma.userswitcher.mo
 share/locale/he/LC_MESSAGES/plasma_runner_converterrunner.mo
 share/locale/he/LC_MESSAGES/plasma_runner_katesessions.mo
 share/locale/he/LC_MESSAGES/plasma_runner_spellcheckrunner.mo
+share/locale/hi/LC_MESSAGES/plasma_applet_org.kde.plasma.fuzzyclock.mo
+share/locale/hi/LC_MESSAGES/plasma_runner_krunner_dictionary.mo
+share/locale/hi/LC_MESSAGES/plasma_runner_spellcheckrunner.mo
 share/locale/hr/LC_MESSAGES/plasma_applet_org.kde.plasma.binaryclock.mo
 share/locale/hr/LC_MESSAGES/plasma_applet_org.kde.plasma.calculator.mo
 share/locale/hr/LC_MESSAGES/plasma_applet_org.kde.plasma.colorpicker.mo

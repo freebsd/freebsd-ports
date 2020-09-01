@@ -87,6 +87,8 @@ share/locale/eu/LC_MESSAGES/ksysguard_plugins_global.mo
 share/locale/eu/LC_MESSAGES/ksysguard_plugins_process.mo
 share/locale/fa/LC_MESSAGES/ksysguard.mo
 share/locale/fi/LC_MESSAGES/ksysguard.mo
+share/locale/fi/LC_MESSAGES/ksysguard_plugins_global.mo
+share/locale/fi/LC_MESSAGES/ksysguard_plugins_process.mo
 share/locale/fr/LC_MESSAGES/ksysguard.mo
 share/locale/fr/LC_MESSAGES/ksysguard_plugins_global.mo
 share/locale/fr/LC_MESSAGES/ksysguard_plugins_process.mo
@@ -102,6 +104,8 @@ share/locale/hsb/LC_MESSAGES/ksysguard.mo
 share/locale/hu/LC_MESSAGES/ksysguard.mo
 share/locale/ia/LC_MESSAGES/ksysguard.mo
 share/locale/id/LC_MESSAGES/ksysguard.mo
+share/locale/id/LC_MESSAGES/ksysguard_plugins_global.mo
+share/locale/id/LC_MESSAGES/ksysguard_plugins_process.mo
 share/locale/is/LC_MESSAGES/ksysguard.mo
 share/locale/it/LC_MESSAGES/ksysguard.mo
 share/locale/it/LC_MESSAGES/ksysguard_plugins_global.mo

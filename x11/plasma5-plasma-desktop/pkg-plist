@@ -3905,6 +3905,7 @@ share/locale/ro/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/ro/LC_MESSAGES/kcm5_icons.mo
 share/locale/ro/LC_MESSAGES/kcm5_joystick.mo
 share/locale/ro/LC_MESSAGES/kcm5_kded.mo
+share/locale/ro/LC_MESSAGES/kcm_activities5.mo
 share/locale/ro/LC_MESSAGES/kcm_autostart.mo
 share/locale/ro/LC_MESSAGES/kcm_baloofile.mo
 share/locale/ro/LC_MESSAGES/kcm_colors.mo
@@ -3914,6 +3915,7 @@ share/locale/ro/LC_MESSAGES/kcm_desktoptheme.mo
 share/locale/ro/LC_MESSAGES/kcm_fonts.mo
 share/locale/ro/LC_MESSAGES/kcm_launchfeedback.mo
 share/locale/ro/LC_MESSAGES/kcm_lookandfeel.mo
+share/locale/ro/LC_MESSAGES/kcm_nightcolor.mo
 share/locale/ro/LC_MESSAGES/kcm_search.mo
 share/locale/ro/LC_MESSAGES/kcm_solid_actions.mo
 share/locale/ro/LC_MESSAGES/kcm_splashscreen.mo
@@ -3932,8 +3934,10 @@ share/locale/ro/LC_MESSAGES/knetattach5.mo
 share/locale/ro/LC_MESSAGES/krdb.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_org.kde.kimpanel.mo
+share/locale/ro/LC_MESSAGES/plasma_applet_org.kde.panel.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_org.kde.plasma.kicker.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_org.kde.plasma.kickoff.mo
+share/locale/ro/LC_MESSAGES/plasma_applet_org.kde.plasma.minimizeall.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_org.kde.plasma.pager.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_org.kde.plasma.showActivityManager.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesktop.mo
@@ -3941,9 +3945,12 @@ share/locale/ro/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_touchpad.mo
+share/locale/ro/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/ro/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/ro/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
 share/locale/ro/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
+share/locale/ro/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
+share/locale/ro/LC_MESSAGES/plasmaactivitymanager.mo
 share/locale/ru/LC_MESSAGES/attica_kde_plugin.mo
 share/locale/ru/LC_MESSAGES/kaccess.mo
 share/locale/ru/LC_MESSAGES/kcm5_componentchooser.mo
