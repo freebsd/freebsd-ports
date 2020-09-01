@@ -596,7 +596,8 @@ _RELLIBDIR=		${PYTHONPREFIX_LIBDIR:S;${PREFIX}/;;}
 
 _USES_stage+=	934:add-plist-pymod
 add-plist-pymod:
-	@${SED} -e 's|^${STAGEDIR}${PREFIX}/||' \
+	@${SED} -e 's|^"\(.*\)"$$|\1|' \
+		-e 's|^${STAGEDIR}${PREFIX}/||' \
 		-e 's|^${PREFIX}/||' \
 		-e 's|^\(man/.*man[0-9]\)/\(.*\.[0-9]\)$$|\1/\2.gz|' \
 		-e 's|^\(share/man/.*man[0-9]\)/\(.*\.[0-9]\)$$|\1/\2.gz|' \
