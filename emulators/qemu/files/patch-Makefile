@@ -5,7 +5,7 @@
  
  ifdef BUILD_DOCS
 +ifdef NOPORTDOCS
-+DOCS=qemu.1 qemu-img.1 qemu-nbd.8 qemu-ga.8
++DOCS=qemu.1 qemu-img.1 qemu-nbd.8 $(MANUAL_BUILDDIR)/interop/qemu-ga.8
 +DOCS+=docs/interop/qemu-qmp-ref.7 docs/interop/qemu-ga-ref.7
 +else
  DOCS=qemu-doc.html qemu-doc.txt qemu.1 qemu-img.1 qemu-nbd.8 $(MANUAL_BUILDDIR)/interop/qemu-ga.8
