@@ -1,5 +1,5 @@
---- include/defs.h	Mon Nov  9 23:23:54 1998
-+++ include/defs.h	Tue Jan 18 15:41:40 2005
+--- include/defs.h.orig	1998-11-10 04:23:54 UTC
++++ include/defs.h
 @@ -17,10 +17,9 @@
  /*
   * POSIX settings
@@ -12,7 +12,7 @@
  #include <stdio.h>
  #include <ctype.h>
  #include <errno.h>
-@@ -357,7 +355,6 @@
+@@ -357,7 +356,6 @@ extern void			cleanup();
  extern void			complain();
  extern void			docmds();
  extern void			finish();
@@ -20,7 +20,7 @@
  extern void			logmsg();
  extern void			lostconn();
  extern void			markassigned();
-@@ -366,7 +363,6 @@
+@@ -366,7 +364,6 @@ extern void			note();
  extern void			runcmdspecial();
  extern void			runcommand();
  extern void			server();
@@ -28,7 +28,7 @@
  extern void			sighandler();
  extern void			waitup();
  struct namelist		       *expand();
-@@ -379,7 +375,9 @@
+@@ -379,7 +376,9 @@ extern void			debugmsg(int, char *, ...);
  extern void			error(char *, ...);
  extern void			fatalerr(char *, ...);
  extern void			message(int, char *, ...);

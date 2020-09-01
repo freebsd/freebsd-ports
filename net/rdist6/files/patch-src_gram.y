@@ -1,14 +1,3 @@
-This patch replaces the character-buffer (which needed to be static,
-BTW) with a dynamically (re)allocated one.
-
-This reduces the memory requirements in most cases, while still
-allowing LARGE lines to be properly processed.
-
-While here, make the error-reporting a tad more useful to people
-debugging their distfiles.
-
-	-mi
-
 --- src/gram.y.orig	1998-11-10 04:10:42 UTC
 +++ src/gram.y
 @@ -61,6 +61,13 @@ static char copyright[] =

@@ -1,12 +1,15 @@
---- src/filesys-os.c.dist	Fri Feb 16 03:01:04 1996
-+++ src/filesys-os.c	Wed Feb  3 23:38:46 1999
-@@ -180,4 +180,5 @@
+--- src/filesys-os.c.orig	1998-11-10 04:09:59 UTC
++++ src/filesys-os.c
+@@ -187,6 +187,7 @@ mntent_t *getmountent(fptr)
+ 	if (mnt->f_flags & M_RDONLY)
  		mntstruct.me_flags |= MEFLAG_READONLY;
  #endif
 +#ifdef MOUNT_NFS
  	switch ((ulong)((struct statfs*)mnt)->f_type) {
  	      case MOUNT_NFS:
-@@ -191,4 +192,14 @@
+ 		(void) sprintf(remote_dev, "%s", mnt->f_mntfromname);
+@@ -198,6 +199,16 @@ mntent_t *getmountent(fptr)
+ 		mntstruct.me_type = METYPE_OTHER;
  		break;
  	}
 +#else
@@ -21,3 +24,4 @@
 +#endif
  
  	mnt++;
+ 	entries_left--;

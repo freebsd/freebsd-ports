@@ -1,6 +1,6 @@
---- config/os-freebsd2.h	Mon Nov  9 22:59:55 1998
-+++ config/os-freebsd2.h	Tue Jan 18 15:13:07 2005
-@@ -116,18 +116,23 @@
+--- config/os-freebsd2.h.orig	1998-11-10 03:59:55 UTC
++++ config/os-freebsd2.h
+@@ -116,18 +116,23 @@ typedef void POINTER;
   */
  #define HAVE_FCHOWN			/* Have fchown() */
  #define HAVE_FCHMOD			/* Have fchmod() */

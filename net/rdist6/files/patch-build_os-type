@@ -1,4 +1,4 @@
---- build/os-type.orig	1998-11-09 22:37:27.000000000 -0500
+--- build/os-type.orig	1998-11-10 03:37:27 UTC
 +++ build/os-type
 @@ -83,7 +83,7 @@ fi
  if [ -z "${OS}" -a ! -z "${uname}" ]; then
@@ -9,7 +9,7 @@
  		*" dcosx "*)	OS=dcosx;;
  		*"cx/ux"*)	OS=cxux;;
  		*"hp-ux"*)	# HP-UX 9.x
-@@ -111,7 +111,8 @@ if [ -z "${OS}" -a ! -z "${uname}" ]; th
+@@ -111,7 +111,8 @@ if [ -z "${OS}" -a ! -z "${uname}" ]; then
  				OS="${osname}${osmajver}"
  				;;
  		"linux"*)	OS=linux;;

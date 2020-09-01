@@ -1,5 +1,5 @@
---- doc/Makefile.real.orig	1998-11-09 21:40:06.000000000 -0800
-+++ doc/Makefile.real	2014-05-29 19:32:52.700090356 -0700
+--- doc/Makefile.real.orig	1998-11-10 05:40:06 UTC
++++ doc/Makefile.real
 @@ -10,7 +10,7 @@
  
  CLIENT_DEST 	= ${MAN_1_DIR}/${CLIENT}.${MAN_1_SECT}

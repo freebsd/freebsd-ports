@@ -1,40 +1,26 @@
-*** Makefile.local.dist	Tue Feb  6 02:50:27 1996
---- Makefile.local	Fri May 17 16:45:19 1996
-***************
-*** 8,14 ****
-  # BIN_DIR variable, you would uncomment the following line
-  # or add your own line.
-  #
-! #BIN_DIR	= /usr/bin
-  
-  #
-  # Add any local definitions you want pass to the compiler to DEFS_LOCAL
---- 8,16 ----
-  # BIN_DIR variable, you would uncomment the following line
-  # or add your own line.
-  #
-! BIN_DIR       =       ${STAGEDIR}$(PREFIX)/bin
-! OPT =         $(BUILD_OPT)
-! CLIENT =      $(BUILD_CLIENT)
-  
-  #
-  # Add any local definitions you want pass to the compiler to DEFS_LOCAL
-***************
-*** 45,52 ****
-  #
-  # Site specific Man Page configuration.
-  #
-! #MAN_1_DIR	= /usr/local/man/man1
-! #MAN_8_DIR	= /usr/local/man/man8
-! #MAN_OWNER	= bin
-! #MAN_GROUP	= bin
-  #MAN_MODE	= 644
---- 47,54 ----
-  #
-  # Site specific Man Page configuration.
-  #
-! MAN_1_DIR	= ${STAGEDIR}$(PREFIX)/man/man1
-! MAN_8_DIR	= ${STAGEDIR}$(PREFIX)/man/man8
-! MAN_OWNER	= bin
-! MAN_GROUP	= bin
-  #MAN_MODE	= 644
+--- Makefile.local.orig	1998-11-10 03:36:31 UTC
++++ Makefile.local
+@@ -14,7 +14,9 @@
+ # BIN_DIR variable, you would uncomment the following line
+ # or add your own line.
+ #
+-#BIN_DIR	= /usr/bin
++BIN_DIR       =       ${STAGEDIR}$(PREFIX)/bin
++OPT =         $(BUILD_OPT)
++CLIENT =      $(BUILD_CLIENT)
+ 
+ #
+ # Add any local definitions you want pass to the compiler to DEFS_LOCAL
+@@ -51,8 +53,8 @@ LIBS_LOCAL	=
+ #
+ # Site specific Man Page configuration.
+ #
+-#MAN_1_DIR	= /usr/local/man/man1
+-#MAN_8_DIR	= /usr/local/man/man8
+-#MAN_OWNER	= bin
+-#MAN_GROUP	= bin
++MAN_1_DIR	= ${STAGEDIR}$(PREFIX)/man/man1
++MAN_8_DIR	= ${STAGEDIR}$(PREFIX)/man/man8
++MAN_OWNER	= bin
++MAN_GROUP	= bin
+ #MAN_MODE	= 644
