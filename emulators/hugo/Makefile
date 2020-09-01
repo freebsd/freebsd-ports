@@ -3,7 +3,7 @@
 
 PORTNAME=	hugo
 PORTVERSION=	2.12
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.zeograd.com/download/ \
 		http://www.sourcefiles.org/Emulators/Videogames/
@@ -38,8 +38,10 @@ IGNORE=	NETPLAY support requires GTK2 support
 .endif
 
 .if ${PORT_OPTIONS:MGTK2}
+LIB_DEPENDS+=	libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
 USES+=		gnome
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 cairo gdkpixbuf2
 .else
 CONFIGURE_ARGS+=	--disable-gui --disable-gtktest
 .endif
