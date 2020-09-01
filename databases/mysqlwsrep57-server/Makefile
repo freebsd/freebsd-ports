@@ -44,9 +44,6 @@ GH_TUPLE?=	codership:mysql-wsrep:${DISTVERSIONPREFIX}${PORTVERSION}${DISTVERSION
 DATADIR=	${PREFIX}/share/mysql
 ETCDIR=		${PREFIX}/etc/mysql
 
-NOT_FOR_ARCHS=	i386 aarch64 armv6 armv7
-NOT_FOR_ARCHS_REASON=	Not supported platform
-
 CMAKE_ARGS+=	-DINSTALL_LAYOUT=FREEBSD \
 		-DINSTALL_PKGCONFIGDIR="${LOCALBASE}/libdata/pkgconfig" \
 		-DINSTALL_DOCDIR="share/doc/mysql" \
@@ -200,9 +197,5 @@ post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}/keyring
 	${MKDIR} ${STAGEDIR}${MY_SECDIR}
 	${MKDIR} ${STAGEDIR}${MY_TMPDIR}
-
-.if ${ARCH} == armv6 || ${ARCH} == armv7
-EXTRA_PATCHES+=		${FILESDIR}/extra-patch-config.h.cmake
-.endif
 
 .include <bsd.port.post.mk>
