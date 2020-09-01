@@ -12,14 +12,13 @@ COMMENT=	Library and graphical tools for running SPH and N-body simulations
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libwx_baseu-3.1.so:x11-toolkits/wxgtk31
-
 USES=		compiler:c++14-lang eigen:3 qmake qt:5
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.com
 GL_ACCOUNT=	sevecekp
 GL_PROJECT=	sph
 GL_COMMIT=	06686fa7f7307bdf8c9261e55b9875aafa278a13
+USE_WX=		3.1
 
 QMAKE_SOURCE_PATH=	${WRKSRC}/sph.pro
 
