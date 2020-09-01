@@ -28,7 +28,7 @@ post-patch:
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's,=gcc,=@CC@,' \
 		${WRKSRC}/lib/Makefile.in
-	@${REINPLACE_CMD} -e 's,-O2 -g,@CFLAGS@, ; \
+	@${REINPLACE_CMD} -e 's,-O2 -g,@CFLAGS@ -fcommon, ; \
 		 s, $${BINDIR}, $${DESTDIR}$${BINDIR},' \
 		${WRKSRC}/src/Makefile.in
 	@${REINPLACE_CMD} -E 's,^([[:blank:]]+)\([^\)]+\) ,\1,' \
