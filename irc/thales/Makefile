@@ -41,6 +41,9 @@ post-patch: .SILENT
 	${FIND} -d ${WRKSRC} -type d -name CVS -exec ${RM} -r {} \;
 	${REINPLACE_CMD} -e 's,thales.conf,${PREFIX}/etc/&,' \
 		${WRKSRC}/src/conf.h
+# Fix the build with -fno-common (for Clang 11 and GCC 10)
+	${REINPLACE_CMD} -e '/total_read, total_written/s,^,extern ,' \
+		${WRKSRC}/src/sockutil.h
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
