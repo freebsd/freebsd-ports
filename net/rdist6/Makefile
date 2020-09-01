@@ -3,7 +3,7 @@
 
 PORTNAME=	rdist
 PORTVERSION=	6.1.5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net
 MASTER_SITES=	https://fossies.org/linux/misc/old/ \
 		http://www.magnicomp.com/download/rdist/
