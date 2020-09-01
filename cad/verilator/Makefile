@@ -2,11 +2,9 @@
 
 PORTNAME=	verilator
 DISTVERSION=	4.040
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	https://www.veripool.org/ftp/
-
-PATCH_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/commit/
-PATCHFILES+=	39f16fb155b9e909f919a9d4ae06890395987b16.patch:-p1 # https://github.com/verilator/verilator/pull/2353
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Synthesizable Verilog to C++ compiler
@@ -14,7 +12,9 @@ COMMENT=	Synthesizable Verilog to C++ compiler
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		bison compiler:c++14-lang gmake pathfix perl5 python:test tar:tgz
+LIB_DEPENDS=	libsystemc.so:devel/systemc
+
+USES=		bison compiler:c++14-lang gmake localbase:ldflags pathfix perl5 python:build,test tar:tgz
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	INSTALL_PROGRAM="${INSTALL_SCRIPT}"
