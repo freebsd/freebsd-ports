@@ -3,7 +3,7 @@
 
 PORTNAME=	tt-rss
 PORTVERSION=	g20200801
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	https://git.tt-rss.org/fox/tt-rss/archive/
@@ -42,7 +42,7 @@ GD_USE=		PHP=gd
 
 PGSQL_VARS=	DB=pgsql
 PGSQL_USE=	PHP=pdo_pgsql,pgsql
-PSQL_VARS_OFF=	PGSQL="\#"
+PGSQL_VARS_OFF=	PGSQL="\#"
 
 MYSQL_VARS=	DB=mysql
 MYSQL_USE=	PHP=pdo_mysql,mysqli
