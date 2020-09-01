@@ -1,3 +1,4 @@
+sbin/c_example.x
 sbin/pcm-core.x
 sbin/pcm-iio.x
 sbin/pcm-latency.x
@@ -9,6 +10,7 @@ sbin/pcm-numa.x
 sbin/pcm-pcicfg.x
 sbin/pcm-pcie.x
 sbin/pcm-power.x
+sbin/pcm-raw.x
 sbin/pcm-sensor.x
 sbin/pcm-tsx.x
 sbin/pcm.x
