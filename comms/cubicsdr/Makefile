@@ -18,10 +18,10 @@ LIB_DEPENDS=	libSoapySDR.so:misc/soapysdr \
 		libliquid.so:comms/liquid-dsp \
 		libpulse.so:audio/pulseaudio \
 		libhamlib.so:comms/hamlib \
-		libEGL.so:graphics/mesa-libs \
-		libwx_gtk3u_core-3.1.so:x11-toolkits/wxgtk31
+		libEGL.so:graphics/mesa-libs
 
 USES=		cmake compiler:c++0x gl python
+USE_WX=		3.1
 USE_GL+=	glu
 
 OPTIONS_DEFINE=	HAMLIB
