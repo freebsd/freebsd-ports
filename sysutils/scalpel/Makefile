@@ -14,19 +14,18 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libtre.so:textproc/libtre
 
-USES=		alias
+USES=		alias localbase
 GNU_CONFIGURE=	yes
 SUB_FILES=	pkg-message
 
 PLIST_FILES=	etc/scalpel.conf.sample bin/scalpel man/man1/scalpel.1.gz
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's/#ifdef __APPLE__/#if defined(__APPLE__) || defined(__FreeBSD__)/' \
 		${WRKSRC}/src/scalpel.h
+	@${REINPLACE_CMD} -e 's,__progname,__${PORTNAME}&,' \
+		${WRKSRC}/src/scalpel.? ${WRKSRC}/src/helpers.c
 
 post-install:
 	@${CP} -p ${WRKSRC}/scalpel.conf ${STAGEDIR}${PREFIX}/etc/scalpel.conf.sample
