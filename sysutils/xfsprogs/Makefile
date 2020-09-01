@@ -19,9 +19,10 @@ CPE_PRODUCT=	${PORTNAME}
 CPE_VENDOR=	sgi
 USES=		cpe gettext gmake libtool:build readline
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	OPTIMIZER=" "
+CONFIGURE_ENV=	OPTIMIZER=-fcommon
 CONFIGURE_ARGS=	--disable-shared --enable-readline
 ALL_TARGET=	# empty
+MAKE_ARGS=	V=1
 
 OPTIONS_DEFINE=	DOCS
 
