@@ -27,5 +27,7 @@ NLS_MAKE_ENV_OFF=	WITHOUT_NLS=yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/-o root -g wheel//' ${WRKSRC}/src/Makefile
+	@${REINPLACE_CMD} -e '/conf_/s,^struct conflist,extern &,' \
+		${WRKSRC}/src/wifimgr.h
 
 .include <bsd.port.mk>
