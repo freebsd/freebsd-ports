@@ -77,6 +77,7 @@ etc/rc.d/xrdp-sesman
 %%ETCDIR%%/km-00000813.ini
 %%ETCDIR%%/km-00000816.ini
 %%ETCDIR%%/km-0000100c.ini
+%%ETCDIR%%/km-19360409.ini
 %%ETCDIR%%/pulse/default.pa
 @postunexec if cmp -s %D/etc/xrdp/sesman.ini.sample %D/etc/xrdp/sesman.ini; then rm -f %D/etc/xrdp/sesman.ini; fi
 @postunexec if cmp -s %D/etc/xrdp/startwm.sh.sample %D/etc/xrdp/startwm.sh; then rm -f %D/etc/xrdp/startwm.sh; fi
