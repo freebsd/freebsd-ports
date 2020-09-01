@@ -13,12 +13,6 @@ COMMENT=	Multithreaded anonymous FTP daemon
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 
-CFLAGS+=		-fcommon
-
-DEPRECATED=	Unmaintained and dead upstream, does not build with -fno-common (llvm 11)
-EXPIRATION_DATE=2021-04-01
-
-
 PLIST_FILES=	sbin/pftpd \
 		man/man1/pftpd.1.gz \
 		man/man1/rpad.1.gz
