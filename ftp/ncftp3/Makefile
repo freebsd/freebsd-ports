@@ -3,7 +3,7 @@
 
 PORTNAME=	ncftp
 PORTVERSION=	3.2.6
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.ncftp.com/ncftp/ \
 		ftp://ftp.mirrorservice.org/sites/ftp.ncftp.com/ncftp/
@@ -21,11 +21,6 @@ WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	ac_cv_header_ncurses_h=yes
-
-CFLAGS+=		-fcommon
-
-DEPRECATED=	Unmaintained and dead upstream, does not build with -fno-common (llvm 11)
-EXPIRATION_DATE=2021-04-01
 
 PORTDOCS=	*
 
