@@ -16,7 +16,8 @@ BUILD_DEPENDS=	zip:archivers/zip \
 LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs \
 		libphysfs.so:devel/physfs
 
-USES=		cmake gettext localbase:ldflags pkgconfig sdl shebangfix
+USES=		cmake compiler:c++11-lib gettext localbase:ldflags \
+		pkgconfig sdl shebangfix
 USE_GITHUB=	yes
 USE_SDL=	image2 mixer2 ttf2
 GH_PROJECT=	${PORTNAME}-game
