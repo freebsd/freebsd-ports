@@ -61,8 +61,6 @@ post-patch:
 		's|/usr/X11R6|${PREFIX}|g' ${WRKSRC}/configs/Xsession.in
 	@${REINPLACE_CMD} -e \
 		's|$$(DESTDIR)$$(PAMDIR)/wdm||g' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|-ldl||g ; \
-		 s|/authdir||g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e \
 		's|@FAILSAFE@|@FAILSAFE_PATH@|g' ${WRKSRC}/configs/Xsession.in
 	@${REINPLACE_CMD} -e \
