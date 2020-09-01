@@ -2,4 +2,4 @@
 #
 # $FreeBSD$
 
-"%%LOCALBASE%%/bin/java" -jar "%%DATADIR%%/fidocadj.jar" "$@"
+"%%JAVA%%" -jar "%%DATADIR%%/fidocadj-%%PORTVERSION%%.jar" "$@"
