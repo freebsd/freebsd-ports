@@ -3,7 +3,7 @@
 
 PORTNAME=	simh
 PORTVERSION=	3.9.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	emulators
 MASTER_SITES=	http://simh.trailing-edge.com/sources/:src \
 		http://www.ml1.org.uk/distfiles/:pdf \

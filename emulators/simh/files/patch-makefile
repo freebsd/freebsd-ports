@@ -1,11 +1,11 @@
---- makefile.orig	2016-12-01 22:43:43 UTC
+--- makefile.orig	2020-09-01 10:06:51 UTC
 +++ makefile
-@@ -110,7 +110,7 @@ ifeq ($(WIN32),)  #*nix Environments (&&
+@@ -110,7 +110,7 @@ ifeq ($(WIN32),)  #*nix Environments (&& cygwin)
              PCAPLIB = wpcap
              LIBEXT = a
            else
 -            LDSEARCH :=$(shell ldconfig -r | grep 'search directories' | awk '{print $$3}' | sed 's/:/ /g')
-+##########            LDSEARCH :=$(shell ldconfig -r | grep 'search directories' | awk '{print $$3}' | sed 's/:/ /g')
++###########            LDSEARCH :=$(shell ldconfig -r | grep 'search directories' | awk '{print $$3}' | sed 's/:/ /g')
              ifneq (,$(LDSEARCH))
                LIBPATH := $(LDSEARCH)
              endif
@@ -52,3 +52,21 @@
    BUILD_FEATURES = - compiler optimizations and no debugging support
  endif
  ifneq (3,$(GCC_MAJOR_VERSION))
+@@ -523,7 +525,7 @@ IBM1130 = ${IBM1130D}/ibm1130_cpu.c ${IBM1130D}/ibm113
+ 	${IBM1130D}/ibm1130_fmt.c ${IBM1130D}/ibm1130_ptrp.c \
+ 	${IBM1130D}/ibm1130_plot.c ${IBM1130D}/ibm1130_sca.c \
+ 	${IBM1130D}/ibm1130_t2741.c
+-IBM1130_OPT = -I ${IBM1130D}
++IBM1130_OPT = -I ${IBM1130D} -D HAVE_VM_INIT
+ 
+ 
+ ID16D = Interdata
+@@ -570,7 +572,7 @@ ALTAIRZ80 = ${ALTAIRZ80D}/altairz80_cpu.c ${ALTAIRZ80D
+ 	${ALTAIRZ80D}/s100_scp300f.c ${ALTAIRZ80D}/sim_imd.c \
+ 	${ALTAIRZ80D}/wd179x.c ${ALTAIRZ80D}/s100_hdc1001.c \
+ 	${ALTAIRZ80D}/s100_if3.c ${ALTAIRZ80D}/s100_adcs6.c
+-ALTAIRZ80_OPT = -I ${ALTAIRZ80D}
++ALTAIRZ80_OPT = -I ${ALTAIRZ80D} -D HAVE_VM_INIT
+ 
+ 
+ GRID = GRI

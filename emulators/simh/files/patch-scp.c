@@ -1,6 +1,23 @@
---- scp.c.orig	2016-12-01 22:43:43 UTC
+--- scp.c.orig	2020-09-01 10:06:51 UTC
 +++ scp.c
-@@ -678,14 +678,14 @@ else if (*argv[0]) {                    
+@@ -266,10 +266,14 @@ extern t_stat fprint_sym (FILE *ofile, t_addr addr, t_
+ extern t_stat parse_sym (char *cptr, t_addr addr, UNIT *uptr, t_value *val,
+     int32 sw);
+ 
+-/* The per-simulator init routine is a weak global that defaults to NULL
++/* The per-simulator init routine is only required for a few machines
+    The other per-simulator pointers can be overrriden by the init routine */
+ 
+-void (*sim_vm_init) (void);
++#ifdef HAVE_VM_INIT
++extern void (*sim_vm_init) (void);
++#else
++void (*sim_vm_init) (void) = NULL;
++#endif
+ char* (*sim_vm_read) (char *ptr, int32 size, FILE *stream) = NULL;
+ void (*sim_vm_post) (t_bool from_scp) = NULL;
+ CTAB *sim_vm_cmd = NULL;
+@@ -678,14 +682,14 @@ else if (*argv[0]) {                                  
      char nbuf[PATH_MAX + 7], *np;                       /* "path.ini" */
      nbuf[0] = '"';                                      /* starting " */
      strncpy (nbuf + 1, argv[0], PATH_MAX + 1);          /* copy sim name */
@@ -17,7 +34,7 @@
          printf ("sim> %s\n", cptr);                     /* echo */
      else if (sim_vm_read != NULL) {                     /* sim routine? */
          printf ("sim> ");                               /* prompt */
-@@ -700,7 +700,7 @@ while (stat != SCPE_EXIT) {             
+@@ -700,7 +704,7 @@ while (stat != SCPE_EXIT) {                           
          fprintf (sim_log, "sim> %s\n", cptr);
      cptr = get_glyph (cptr, gbuf, 0);                   /* get command glyph */
      sim_switches = 0;                                   /* init switches */
@@ -26,7 +43,7 @@
          stat = cmdp->action (cmdp->arg, cptr);          /* if found, exec */
      else stat = SCPE_UNK;
      if (stat >= SCPE_BASE) {                            /* error? */
-@@ -767,7 +767,7 @@ if (*cptr) {
+@@ -767,7 +771,7 @@ if (*cptr) {
      cptr = get_glyph (cptr, gbuf, 0);
      if (*cptr)
          return SCPE_2MARG;
@@ -35,7 +52,7 @@
          fputs (cmdp->help, stdout);
          if (sim_log)
              fputs (cmdp->help, sim_log);
-@@ -911,7 +911,7 @@ do {
+@@ -911,7 +915,7 @@ do {
      cptr = get_glyph (cptr, gbuf, 0);                   /* get command glyph */
      sim_switches = 0;                                   /* init switches */
      isdo = FALSE;
@@ -44,7 +61,7 @@
          isdo = (cmdp->action == &do_cmd);
          if (isdo) {                                     /* DO command? */
              if (flag >= DO_NEST_LVL)                    /* nest too deep? */
-@@ -1091,18 +1091,18 @@ if (*cptr == 0)                         
+@@ -1091,18 +1095,18 @@ if (*cptr == 0)                                       
      return SCPE_2FARG;
  cptr = get_glyph (cptr, gbuf, 0);                       /* get glob/dev/unit */
  
@@ -66,7 +83,7 @@
      return gcmdp->action (gcmdp->arg, cptr);            /* do the rest */
  else return SCPE_NXDEV;                                 /* no match */
  if (*cptr == 0)                                         /* must be more */
-@@ -1110,7 +1110,7 @@ if (*cptr == 0)                         
+@@ -1110,7 +1114,7 @@ if (*cptr == 0)                                       
  
  while (*cptr != 0) {                                    /* do all mods */
      cptr = get_glyph (svptr = cptr, gbuf, ',');         /* get modifier */
@@ -75,7 +92,7 @@
          *cvptr++ = 0;
      for (mptr = dptr->modifiers; mptr && (mptr->mask != 0); mptr++) {
          if ((mptr->mstring) &&                          /* match string */
-@@ -1123,7 +1123,7 @@ while (*cptr != 0) {                    
+@@ -1123,7 +1127,7 @@ while (*cptr != 0) {                                  
                  if (mptr->valid) {                      /* validation rtn? */
                      if (cvptr && (mptr->mask & MTAB_NC)) {
                          get_glyph_nc (svptr, gbuf, ',');
@@ -84,7 +101,7 @@
                              *cvptr++ = 0;
                          }
                      r = mptr->valid (uptr, mptr->match, cvptr, mptr->desc);
-@@ -1156,7 +1156,7 @@ while (*cptr != 0) {                    
+@@ -1156,7 +1160,7 @@ while (*cptr != 0) {                                  
              }                                           /* end if match */
          }                                               /* end for */
      if (!mptr || (mptr->mask == 0)) {                   /* no match? */
@@ -93,7 +110,7 @@
              r = glbr->action (dptr, uptr, glbr->arg, cvptr);    /* do global */
              if (r != SCPE_OK)
                  return r;
-@@ -1349,15 +1349,15 @@ GET_SWITCHES (cptr);                    
+@@ -1349,15 +1353,15 @@ GET_SWITCHES (cptr);                                  
  if (*cptr == 0)                                         /* must be more */
      return SCPE_2FARG;
  cptr = get_glyph (cptr, gbuf, 0);                       /* get next glyph */
@@ -112,7 +129,7 @@
      if (uptr == NULL)                                   /* invalid unit */
          return SCPE_NXUN;
      if (uptr->flags & UNIT_DIS)                         /* disabled? */
-@@ -1377,7 +1377,7 @@ if (dptr->modifiers == NULL)            
+@@ -1377,7 +1381,7 @@ if (dptr->modifiers == NULL)                          
  
  while (*cptr != 0) {                                    /* do all mods */
      cptr = get_glyph (cptr, gbuf, ',');                 /* get modifier */
@@ -121,7 +138,7 @@
          *cvptr++ = 0;
      for (mptr = dptr->modifiers; mptr->mask != 0; mptr++) {
          if (((mptr->mask & MTAB_XTD)?                   /* right level? */
-@@ -1396,7 +1396,7 @@ while (*cptr != 0) {                    
+@@ -1396,7 +1400,7 @@ while (*cptr != 0) {                                  
              }                                           /* end if */
          }                                               /* end for */
      if (mptr->mask == 0) {                              /* no match? */
@@ -130,7 +147,7 @@
              shptr->action (ofile, dptr, uptr, shptr->arg, cptr);
          else return SCPE_ARG;
          }                                               /* end if */
-@@ -1800,7 +1800,7 @@ if (sim_brk_types == 0) 
+@@ -1800,7 +1804,7 @@ if (sim_brk_types == 0) 
      return SCPE_NOFNC;
  if ((dptr == NULL) || (uptr == NULL))
      return SCPE_IERR;
@@ -139,7 +156,7 @@
      if (flg != SSH_ST)                                  /* only on SET */
          return SCPE_ARG;
      *aptr++ = 0;                                        /* separate strings */
-@@ -3699,7 +3699,7 @@ if ((cptr == NULL) || (*cptr == 0))
+@@ -3699,7 +3703,7 @@ if ((cptr == NULL) || (*cptr == 0))
      return SCPE_ARG;
  strncpy (gbuf, cptr, CBUFSIZE);
  addrp = gbuf;                                           /* default addr */
@@ -148,7 +165,7 @@
      *portp++ = 0;
  else if (strchr (gbuf, '.'))                            /* x.y...? */
      portp = NULL;
-@@ -3782,7 +3782,7 @@ DEVICE *dptr;
+@@ -3782,7 +3786,7 @@ DEVICE *dptr;
  
  if (uptr == NULL)                                       /* arg error? */
      return NULL;
@@ -157,7 +174,7 @@
      if (qdisable (dptr))                                /* disabled? */
          return NULL;
      *uptr = dptr->units;                                /* unit 0 */
-@@ -3862,7 +3862,7 @@ REG *rptr, *srptr = NULL;
+@@ -3862,7 +3866,7 @@ REG *rptr, *srptr = NULL;
  for (i = 0; (dptr = sim_devices[i]) != 0; i++) {        /* all dev */
      if (dptr->flags & DEV_DIS)                          /* skip disabled */
          continue;
@@ -166,7 +183,7 @@
          if (srptr)                                      /* ambig? err */
              return NULL;
          srptr = rptr;                                   /* save reg */
-@@ -4080,15 +4080,15 @@ const char logstr[] = "|&^", cmpstr[] = 
+@@ -4080,15 +4084,15 @@ const char logstr[] = "|&^", cmpstr[] = "=!><";
  logval = cmpval = 0;
  if (*cptr == 0)                                         /* check for clause */
      return NULL;
@@ -185,7 +202,7 @@
          cmpop = (int32)(sptr - cmpstr);
          if (*cptr == '=') {
              cmpop = cmpop + strlen (cmpstr);
-@@ -4753,7 +4753,7 @@ while (isspace (*sim_brk_act))          
+@@ -4753,7 +4757,7 @@ while (isspace (*sim_brk_act))                        
      sim_brk_act++;
  if (*sim_brk_act == 0)                              /* now empty? */
      return (sim_brk_act = NULL);
