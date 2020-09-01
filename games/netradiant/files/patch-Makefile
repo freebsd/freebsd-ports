@@ -1,5 +1,14 @@
---- Makefile.orig	2013-06-30 22:04:34.000000000 +0800
-+++ Makefile	2013-09-06 16:56:05.000000000 +0800
+--- Makefile.orig	2015-06-21 12:05:51 UTC
++++ Makefile
+@@ -112,7 +112,7 @@ ifeq ($(OS),Windows_NT)
+ 	OS = Win32
+ endif
+ 
+-CFLAGS_COMMON = -MMD -W -Wall -Wcast-align -Wcast-qual -Wno-unused-parameter -fno-strict-aliasing
++CFLAGS_COMMON = -MMD -W -Wall -Wcast-align -Wcast-qual -Wno-unused-parameter -fcommon
+ CPPFLAGS_COMMON =
+ LDFLAGS_COMMON =
+ LIBS_COMMON =
 @@ -153,7 +153,7 @@
  else
  
