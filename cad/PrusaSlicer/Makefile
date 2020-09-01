@@ -16,7 +16,6 @@ LIB_DEPENDS=	libtbb.so:devel/tbb \
 		libboost_log.so:devel/boost-libs \
 		libHalf.so:graphics/ilmbase \
 		libnlopt.so:math/nlopt \
-		libwx_gtk3u_core-3.1.so:x11-toolkits/wxgtk31 \
 		libcurl.so:ftp/curl \
 		libexpat.so:textproc/expat2 \
 		libopenvdb.so:misc/openvdb \
@@ -43,6 +42,7 @@ CMAKE_INSTALL_PREFIX=	${PREFIX}/${PORTNAME}
 USE_GITHUB=	yes
 GH_ACCOUNT=	prusa3d
 GH_TUPLE=	CGAL:cgal:releases/CGAL-5.0.2:cgal
+USE_WX=		3.1
 USE_GL=		gl glu glew
 
 post-patch:
