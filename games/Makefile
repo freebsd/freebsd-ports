@@ -94,6 +94,7 @@
     SUBDIR += blobby
     SUBDIR += blobwars
     SUBDIR += block
+    SUBDIR += blockattack
     SUBDIR += blockout
     SUBDIR += blockrage
     SUBDIR += blokish

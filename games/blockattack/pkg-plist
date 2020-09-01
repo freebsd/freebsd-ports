@@ -1,0 +1,12 @@
+bin/blockattack
+share/applications/blockattack.desktop
+%%DATADIR%%/blockattack.data
+%%DATADIR%%/locale/da/LC_MESSAGES/blockattack_roftb.mo
+share/icons/hicolor/128x128/apps/blockattack.xpm
+share/icons/hicolor/16x16/apps/blockattack.xpm
+share/icons/hicolor/256x256/apps/blockattack.xpm
+share/icons/hicolor/32x32/apps/blockattack.xpm
+share/icons/hicolor/48x48/apps/blockattack.xpm
+share/icons/hicolor/64x64/apps/blockattack.xpm
+share/man/man6/blockattack.6.gz
+share/metainfo/net.blockattack.game.metainfo.xml
