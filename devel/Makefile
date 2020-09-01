@@ -713,6 +713,7 @@
     SUBDIR += gcc-arm-embedded
     SUBDIR += gcc-msp430-ti-toolchain
     SUBDIR += gccmakedep
+    SUBDIR += gcem
     SUBDIR += gconf2
     SUBDIR += gconf2-reference
     SUBDIR += gconfmm26
