@@ -2,7 +2,7 @@
 
 PORTNAME=	wx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.1.3
+DISTVERSION=	3.1.4
 CATEGORIES=	x11-toolkits
 PKGNAMESUFFIX=	31-gtk3
 
@@ -20,13 +20,15 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libpng.so:graphics/png \
 		libsecret-1.so:security/libsecret \
 		libsoup-2.4.so:devel/libsoup \
-		libtiff.so:graphics/tiff \
+		libtiff.so:graphics/tiff
 
 USES=		compiler:c++11-lib gl gmake gnome iconv jpeg localbase \
 		pkgconfig xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	wxWidgets
 GH_PROJECT=	wxWidgets
+GH_TUPLE=	wxWidgets:Catch:ee4acb6:wxWidgets_Catch/3rdparty/catch
+
 GNU_CONFIGURE=	yes
 USE_XORG=	x11 sm xxf86vm xtst
 USE_GL=		gl glu
