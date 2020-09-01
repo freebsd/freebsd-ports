@@ -7,7 +7,7 @@ CATEGORIES=	x11
 MASTER_SITES=	http://dl.suckless.org/tools/
 
 MAINTAINER=	mp39590@gmail.com
-COMMENT=	Simple generic tabbed fronted to xembed aware applications
+COMMENT=	Tabbed frontend to Xembed-aware applications
 
 LICENSE=	MIT
 
@@ -29,8 +29,6 @@ post-extract:
 	@${ECHO_MSG} "creating config.h from ${TABBED_CONF}"
 	@${CP} ${TABBED_CONF} ${WRKSRC}/config.h
 .endif
-	@${REINPLACE_CMD} 's|-std=c99 -pedantic -Wall -O0|${CFLAGS}|' \
-		${WRKSRC}/config.mk
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
