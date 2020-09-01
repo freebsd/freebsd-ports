@@ -6,7 +6,7 @@
 #include <string.h>
 #include <sys/ioccom.h>
 
-#include "rtc.h"
+#include <rtc.h>
 
 
 int main(void)
@@ -21,7 +21,7 @@ int main(void)
 
 	rtc = open("/dev/rtc", O_RDONLY);	
 	if (rtc<0) {
-		perror("/dec/rtc");
+		perror("/dev/rtc");
 		return 1;
 	}
 

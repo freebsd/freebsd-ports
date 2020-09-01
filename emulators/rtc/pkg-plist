@@ -1,6 +1,3 @@
-etc/rc.d/rtc.sh
 include/rtc.h
-modules/rtc.ko
+/%%KMODDIR%%/rtc.ko
 %%EXAMPLESDIR%%/test.c
-@postexec rm -f %%DEVDIR%%/rtc
-@postunexec rm -f /dev/rtc

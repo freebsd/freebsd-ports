@@ -26,23 +26,13 @@
 #
 
 SYS?=		/sys
-NOMAN=		YES
 KMOD=		rtc
-MODULE_DEPEND=	linux
-CDEV_MAJOR?=	202
-DEVNAME= 	${KMOD}
 SRCS=		rtc.c rtc_linux.c vnode_if.h
 
 INCLUDE=	-I${.CURDIR} -I${SYS}
 
-CFLAGS+=	${INCLUDE} -DCDEV_MAJOR_=${CDEV_MAJOR}
+CFLAGS+=	${INCLUDE}
 
 all:	vnode_if.h
-
-#afterinstall: device
-
-device:
-	rm -f /dev/${DEVNAME}
-	mknod /dev/${DEVNAME} c ${CDEV_MAJOR} 0
 
 .include <bsd.kmod.mk>

@@ -50,11 +50,6 @@
 MODULE_DEPEND(rtc, linux, 1, 1, 1);
 #endif
 
-#define CDEV_MAJOR 202
-#if defined(CDEV_MAJOR_) && CDEV_MAJOR != CDEV_MAJOR_
-#error "CDEV_MAJOR != CDEV_MAJOR_"
-#endif
-
 #define	DEVICE_NAME	"rtc"
 
 enum rtc_log_level {Lenter=0, Lexit=1, Linfo, Lwarning, Lfail};
@@ -68,11 +63,7 @@ enum rtc_log_level {Lenter=0, Lexit=1, Linfo, Lwarning, Lfail};
 #endif /* DEBUG */
 
 struct rtc_softc {
-#if __FreeBSD_version >= 502117
 	struct cdev	*dev; /* Back reference to device */
-#else
-	dev_t		dev; /* Back reference to device */
-#endif
 	struct {
 	 int	freq;
 	 struct {
@@ -97,40 +88,14 @@ static void rtc_callback(void *xtp);
 static int rtc_modeevent(module_t mod, int cmd, void *arg);
 
 static struct cdevsw rtc_cdevsw = {
-#if __FreeBSD_version >= 500104
-#if __FreeBSD_version >= 502103
 	.d_version =    D_VERSION,
 	.d_flags =      D_NEEDGIANT,
-#else 
-	.d_maj =	CDEV_MAJOR,
-#endif
 	.d_open =	rtc_open,
 	.d_close =	rtc_close,
 	.d_ioctl =	rtc_ioctl,
 	.d_poll =	rtc_poll,
 	.d_read =	rtc_read,
 	.d_name =	DEVICE_NAME,
-#else
-	/* open */	rtc_open,
-	/* close */	rtc_close,
-	/* read */	rtc_read,
-	/* write */	nowrite,
-	/* ioctl */	rtc_ioctl,
-	/* poll */	rtc_poll,
-	/* mmap */	nommap,
-	/* strategy */	nostrategy,
-	/* name */	DEVICE_NAME,
-	/* maj */	CDEV_MAJOR,
-	/* dump */	nodump,
-	/* psize */	nopsize,
-	/* flags */	0,
-#if __FreeBSD_version <= 500018
-	/* bmaj */	-1,
-#endif
-#if __FreeBSD_version >= 500018 || __FreeBSD_version >= 430000
-	/* kqfilter */	nokqfilter,
-#endif
-#endif 
 };
 
 /* 
@@ -139,31 +104,22 @@ static struct cdevsw rtc_cdevsw = {
  */
 DEV_MODULE(rtc, rtc_modeevent, 0);
 
-
 /* -=-=-=-=-=-=-=-=-= attach/detach device stuff -=-=-=-=-=-=-=-=-= */
 
 static struct rtc_softc *
-#if __FreeBSD_version >= 502017
 rtc_attach(struct cdev *dev)
-#else
-rtc_attach(dev_t dev)
-#endif
 {
 	struct rtc_softc *sc;
 	int unit;
 
-#if __FreeBSD_version >= 500014
 	unit = dev2unit(dev);
-#else
-	unit = lminor(dev);
-#endif
 	DLog(Lenter, "%d %p", unit, dev);
 	if (dev->si_drv1) {
 		DLog(Lexit, "old %p, %p", dev, dev->si_drv1);
 		return dev->si_drv1;
 	}
 
-	MALLOC(sc, struct rtc_softc*, sizeof(*sc), M_DEVBUF, M_WAITOK);
+	sc = malloc(sizeof(*sc), M_DEVBUF, M_WAITOK);
 	if (sc==NULL)
 		return NULL;
 
@@ -172,22 +128,14 @@ rtc_attach(dev_t dev)
 	sc->dev = dev;
 	sc->var.freq = 1;
 
-#if __FreeBSD_version >= 500000
 	callout_init(&sc->var.rtc_handle, 1);
-#else
-	callout_init(&sc->var.rtc_handle);
-#endif
 	
 	DLog(Lexit, "new %p,%p", dev, sc);
 	return sc;
 }
 
 static int
-#if __FreeBSD_version >= 502017
 rtc_detach(struct cdev *dev, struct rtc_softc *sc)
-#else
-rtc_detach(dev_t dev, struct rtc_softc *sc) 
-#endif
 {
 	int error=0;
 
@@ -196,7 +144,7 @@ rtc_detach(dev_t dev, struct rtc_softc *sc)
 	}
 
 	callout_stop(&sc->var.rtc_handle);
-	FREE(sc, M_DEVBUF);
+	free(sc, M_DEVBUF);
 	dev->si_drv1 = NULL;
 	return error;
 }
@@ -204,13 +152,7 @@ rtc_detach(dev_t dev, struct rtc_softc *sc)
 /* -=-=-=-=-=-=-=-=-= character device stuff -=-=-=-=-=-=-=-=-= */
 
 static int 
-#if __FreeBSD_version >= 502017
 rtc_open(struct cdev *dev, int oflag, int otyp, struct thread *p)
-#elif __FreeBSD_version >= 500023
-rtc_open(dev_t dev, int oflag, int otyp, struct thread *p)
-#else
-rtc_open(dev_t dev, int oflag, int otyp, struct proc *p)
-#endif
 {
 	struct rtc_softc *sc;
 	
@@ -228,13 +170,7 @@ rtc_open(dev_t dev, int oflag, int otyp, struct proc *p)
 }
 
 int 
-#if __FreeBSD_version >= 502017
 rtc_close(struct cdev *dev, int fflag, int otyp, struct thread *p)
-#elif __FreeBSD_version >= 500023
-rtc_close(dev_t dev, int fflag, int otyp, struct thread *p)
-#else
-rtc_close(dev_t dev, int fflag, int otyp, struct proc *p)
-#endif
 {
 	struct rtc_softc *sc = (struct rtc_softc *) dev->si_drv1;
 
@@ -244,13 +180,7 @@ rtc_close(dev_t dev, int fflag, int otyp, struct proc *p)
 }
 
 int 
-#if __FreeBSD_version >= 502017
 rtc_ioctl(struct cdev *dev, u_long cmd, caddr_t arg, int mode, struct thread *p)
-#elif __FreeBSD_version >= 500023
-rtc_ioctl(dev_t dev, u_long cmd, caddr_t arg, int mode, struct thread *p)
-#else
-rtc_ioctl(dev_t dev, u_long cmd, caddr_t arg, int mode, struct proc *p)
-#endif
 {
 	struct rtc_softc *sc = (struct rtc_softc *) dev->si_drv1;
 	int error=0, freq, sleep;
@@ -292,13 +222,7 @@ rtc_ioctl(dev_t dev, u_long cmd, caddr_t arg, int mode, struct proc *p)
 }
 
 int 
-#if __FreeBSD_version >= 502017
 rtc_poll(struct cdev *dev, int events, struct thread *p)
-#elif __FreeBSD_version >= 500023
-rtc_poll(dev_t dev, int events, struct thread *p)
-#else
-rtc_poll(dev_t dev, int events, struct proc *p)
-#endif
 {
 	struct rtc_softc *sc = (struct rtc_softc *) dev->si_drv1;
    	int revents = 0;
@@ -318,11 +242,7 @@ rtc_poll(dev_t dev, int events, struct proc *p)
 }
 
 int 
-#if __FreeBSD_version >= 502017
 rtc_read(struct cdev *dev, struct uio *uio, int flags __unused)
-#else
-rtc_read(dev_t dev, struct uio *uio, int flags __unused)
-#endif
 {
 	struct rtc_softc *sc = (struct rtc_softc *) dev->si_drv1;
 	int error = 0;
@@ -351,22 +271,12 @@ rtc_read(dev_t dev, struct uio *uio, int flags __unused)
 }
 
 /* -=-=-=-=-=-=-=-=-= module load/unload stuff -=-=-=-=-=-=-=-=-= */
-#if __FreeBSD_version >= 502017
 static struct cdev *rtc_dev = NULL;
-#else
-static dev_t rtc_dev = NULL;
-#endif
 
 static int
 init_module(void)
 {
 	int error = 0;
-
-#if __FreeBSD_version < 500104
-   	error = cdevsw_add(&rtc_cdevsw);
-	if (error) 
-		return error;
-#endif
 
 	rtc_dev = make_dev(&rtc_cdevsw, 0, UID_ROOT, GID_WHEEL, 0644, DEVICE_NAME);
 	if (rtc_dev==NULL)
@@ -375,17 +285,12 @@ init_module(void)
 	return error;
 }
 
-
-
 static int
 cleanup_module(void)
 {
 	int error = 0;
 
 	destroy_dev(rtc_dev);
-#if __FreeBSD_version < 500104
-	error = cdevsw_remove(&rtc_cdevsw);
-#endif
 	DLog(Linfo, "return %d", error);
 	return error;
 }
@@ -433,23 +338,37 @@ rtc_callback(void *xtp)
 restart:
 	increment.tv_sec = 0;
 	increment.tv_nsec = 1000000000 / sc->var.freq;
+#if P_OSREL_MAJOR(__FreeBSD_version) >= 12
+	timespecadd(&sc->var.lasttime, &increment, &sc->var.lasttime);
+	timespecadd(&sc->var.lasttime, &increment, &nexttime);
+#else
 	timespecadd(&sc->var.lasttime, &increment);
 	nexttime.tv_sec = sc->var.lasttime.tv_sec;
 	nexttime.tv_nsec = sc->var.lasttime.tv_nsec;
 	timespecadd(&nexttime, &increment);
+#endif
 	if (timespeccmp(&nexttime, &curtime, <)) {
 		/* Catch up if we lag curtime */
-		sc->var.lasttime.tv_sec = curtime.tv_sec;
-		sc->var.lasttime.tv_nsec = curtime.tv_nsec;
-		timespecsub(&sc->var.lasttime, &increment);
-		timespecsub(&nexttime, &curtime);
+#if P_OSREL_MAJOR(__FreeBSD_version) >= 12
+               timespecsub(&curtime, &increment, &sc->var.lasttime);
+               timespecsub(&nexttime, &curtime, &nexttime);
+#else
+               sc->var.lasttime.tv_sec = curtime.tv_sec;
+               sc->var.lasttime.tv_nsec = curtime.tv_nsec;
+               timespecsub(&sc->var.lasttime, &increment);
+               timespecsub(&nexttime, &curtime);
+#endif
 #if 0
 		printf("lagging curtime by %d.%ld\n", nexttime.tv_sec, nexttime.tv_nsec);
 #endif
 		goto restart;
 	} else {
+#if P_OSREL_MAJOR(__FreeBSD_version) >= 12
+		timespecsub(&nexttime, &curtime, &nexttime);
+#else
 		timespecsub(&nexttime, &curtime);
-		sleep = nexttime.tv_nsec / (1000000000 / hz);
-	}
-	callout_reset(&sc->var.rtc_handle, sleep, &rtc_callback, xtp);
+#endif
+ 		sleep = nexttime.tv_nsec / (1000000000 / hz);
+ 	}
+ 	callout_reset(&sc->var.rtc_handle, sleep, &rtc_callback, xtp);
 }
