@@ -11,7 +11,7 @@ LICENSE=	LGPL3 # based on license headers
 
 LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
 
-USES=		compiler:c++14-lang pkgconfig qmake qt:5
+USES=		compiler:c++11-lib pkgconfig qmake qt:5
 USE_GITHUB=	yes
 USE_QT=		qmake_build buildtools_build core gui network widgets
 GH_ACCOUNT=	SaschaWillems
