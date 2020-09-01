@@ -1,0 +1,24 @@
+--- src/network/meson.build.orig	2020-09-01 07:09:12 UTC
++++ src/network/meson.build
+@@ -100,7 +100,7 @@ if conf.has('WITH_NETWORK')
+       ],
+       capture: true,
+       install: true,
+-      install_dir: confdir / 'qemu' / 'networks',
++      install_dir: datadir / 'examples' / 'libvirt' / 'networks',
+     )
+   else
+     configure_file(
+@@ -111,12 +111,6 @@ if conf.has('WITH_NETWORK')
+       install_dir: confdir / 'qemu' / 'networks',
+     )
+   endif
+-
+-  meson.add_install_script(
+-    meson_python_prog.path(), python3_prog.path(), meson_install_symlink_prog.path(),
+-    confdir / 'qemu' / 'networks' / 'autostart',
+-    '../default.xml', 'default.xml',
+-  )
+ 
+   if conf.has('WITH_FIREWALLD_ZONE')
+     install_data(

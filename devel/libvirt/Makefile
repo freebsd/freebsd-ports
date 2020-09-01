@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libvirt
-PORTVERSION=	6.6.0
+PORTVERSION=	6.7.0
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/ \
 		ftp://libvirt.org/libvirt/
@@ -30,7 +30,7 @@ OPTIONS_DEFAULT_amd64+=	BHYVE
 .else
 PLIST_SUB+=		BHYVE="@comment "
 SUB_LIST+=		BHYVE="@comment "
-CONFIGURE_ARGS+=	--without-bhyve
+MESON_ARGS+=	-Ddriver_bhyve=disabled
 .endif
 QEMU_DESC=	QEMU driver
 BHYVE_DESC=	bhyve driver
@@ -42,50 +42,50 @@ ZFS_DESC=	ZFS storage driver
 
 OPTIONS_SUB=	yes
 
-BHYVE_CONFIGURE_WITH=	bhyve
+BHYVE_MESON_ENABLED=	driver_bhyve
 
-QEMU_CONFIGURE_WITH=	qemu
+QEMU_MESON_ENABLED=	driver_qemu
 QEMU_RUN_DEPENDS=	dmidecode:sysutils/dmidecode \
 			qemu-io:emulators/qemu
 
 NLS_USES=	gettext
-NLS_CONFIGURE_ENABLE=	nls
+NLS_MESON_ENABLED=	nls
 NLS_CFLAGS=	-I${LOCALBASE}/include
 
-NSS_CONFIGURE_WITH=	nss-plugin
+NSS_MESON_ENABLED=	nss
 
-READLINE_CONFIGURE_WITH=	readline
+READLINE_MESON_ENABLED=	readline
 READLINE_USES=		readline
 
-SASL_CONFIGURE_WITH=	sasl=${LOCALBASE}
+SASL_MESON_ENABLED=	sasl
 SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 
-XEN_CONFIGURE_WITH=	libxl
+XEN_MESON_ENABLED=	driver_libxl
 XEN_CFLAGS=	-I${LOCALBASE}/include
 XEN_LIB_DEPENDS=	libxenlight.so:sysutils/xen-tools
 
-LIBSSH_CONFIGURE_WITH=	libssh
+LIBSSH_MESON_ENABLED=	libssh
 LIBSSH_LIB_DEPENDS=	libssh.so:security/libssh
 
-LIBSSH2_CONFIGURE_WITH=	ssh2
+LIBSSH2_MESON_ENABLED=	libssh2
 LIBSSH2_LIB_DEPENDS=	libssh2.so:security/libssh2
 
-ZFS_CONFIGURE_WITH=	storage-zfs
+ZFS_MESON_ENABLED=	storage_zfs
 
 VARDIR=		/var
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	\
-		--without-dbus \
-		--without-polkit \
-		--without-hal \
-		--without-udev \
-		--without-netcf \
-		--without-sysctl \
-		--without-login-shell \
-		--without-wireshark-dissector \
-		--localstatedir=${VARDIR}
-CONFIGURE_OUTSOURCE=yes
+MESON_ARGS+=	\
+		-Ddbus=disabled \
+		-Dpolkit=disabled \
+		-Dhal=disabled \
+		-Dudev=disabled \
+		-Dnetcf=disabled \
+		-Dsysctl_config=disabled \
+		-Dlogin_shell=disabled \
+		-Dwireshark_dissector=disabled \
+		-Dinit_script=none \
+		-Dbash_completion=disabled \
+		-Dlocalstatedir=${VARDIR}
 
 # random_data fix can be removed when 8.x is eol
 CONFIGURE_ENV=	ac_cv_type_struct_random_data=""
@@ -95,8 +95,8 @@ PORTSCOUT=	limit:\d+\.\d+\.\d+$$
 
 LDFLAGS+=	-L${LOCALBASE}/lib -fstack-protector
 
-USES=		gnome charsetfix compiler:c++0x cpe gettext-runtime gmake libtool pathfix \
-		perl5 python:3.6+,build pkgconfig shebangfix tar:xz
+USES=		gnome charsetfix compiler:c++0x cpe gettext-runtime gmake libtool \
+	        meson pathfix perl5 python:3.6+,build pkgconfig shebangfix tar:xz
 USE_GNOME=	glib20
 USE_RC_SUBR=	libvirtd virtlogd
 CPE_VENDOR=	redhat
@@ -104,10 +104,11 @@ USE_PERL5=	build
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
-SHLIB_VER=	0.6006.0
+SHLIB_VER=	0.6007.0
 PLIST_SUB+=	SHLIB_VER=${SHLIB_VER}
 PORTDOCS=	*
 SHEBANG_FILES=	src/keycodemapdb/tools/keymap-gen
+BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 SUB_FILES=	pkg-message
 
@@ -115,9 +116,9 @@ SUB_FILES=	pkg-message
 
 .if ${PORT_OPTIONS:MQEMU} || ${PORT_OPTIONS:MNSS}
 LIB_DEPENDS+=		libyajl.so:devel/yajl
-CONFIGURE_ARGS+=	--with-yajl
+MESON_ARGS+=	-Dyajl=enabled
 .else
-CONFIGURE_ARGS+=	--without-yajl
+MESON_ARGS+=	-Dyajl=disabled
 .endif
 
 .if !${PLIST_SUB:MXEN}
@@ -143,18 +144,14 @@ CONF_FILES=	\
 		virtxend.conf
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|$$(LN_S) ../default.xml default.xml|true|' \
-			  -e 's|$$(DESTDIR)$$(confdir)/qemu/networks|${STAGEDIR}${EXAMPLESDIR}/networks|' \
-			  ${WRKSRC}/src/Makefile.in
-
-	@${REINPLACE_CMD} -e 's|cp $$(DESTDIR)|cp -f $$(DESTDIR)|' \
-		${WRKSRC}/src/Makefile.in
+	${REINPLACE_CMD} -e 's|HAVE_BSD_NSS|WITH_BSD_NSS|' \
+		${WRKSRC}/tools/nss/libvirt_nss.c \
+		${WRKSRC}/tools/nss/libvirt_nss.h
 
 post-install:
-	@${RMDIR} ${STAGEDIR}${EXAMPLESDIR}/networks/autostart
 	@${MKDIR} ${STAGEDIR}${ETCDIR}/qemu/networks/autostart
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for doc in AUTHORS ChangeLog NEWS.rst README.rst
+.for doc in AUTHORS NEWS.rst README.rst
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor
 
