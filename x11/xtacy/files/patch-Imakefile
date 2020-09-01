@@ -1,26 +1,21 @@
---- Imakefile.orig	Fri Dec 18 23:35:27 1998
-+++ Imakefile	Fri Dec 18 23:39:50 1998
-@@ -1,20 +1,16 @@
+--- Imakefile.orig	1998-12-15 17:54:32 UTC
++++ Imakefile
+@@ -1,7 +1,6 @@
  # Imakefile
  
 -# For RedHat Linux , uncomment -lcrypt 
 -LOCAL_LIBRARIES = $(XLIB) -lm # -lcrypt
 +LOCAL_LIBRARIES = $(XLIB) -lm -lcrypt
  
--SRCS = bezier.c blob.c color.c cursor.c fields.c frame.c gravity.c\
-+SRCS=	bezier.c blob.c color.c cursor.c fields.c frame.c gravity.c\
+ SRCS = bezier.c blob.c color.c cursor.c fields.c frame.c gravity.c\
  	kaleid.c life.c lightning.c lunch.c math.c password.c plasma.c\
- 	rose.c rotate.c starback.c swarm.c tag.c trippy.c waves.c xguts.c\
- 	mirrors.c fractals.c modes.c
- 
--OBJS=bezier.o blob.o color.o cursor.o fields.o frame.o gravity.o kaleid.o \
-+OBJS=	bezier.o blob.o color.o cursor.o fields.o frame.o gravity.o kaleid.o \
- 	life.o lightning.o lunch.o math.o password.o plasma.o rose.o rotate.o \
+@@ -13,8 +12,7 @@ OBJS=bezier.o blob.o color.o cursor.o fields.o frame.o
  	starback.o swarm.o tag.o trippy.o waves.o xguts.o mirrors.o \
  	fractals.o modes.o
--
+ 
 -CDEBUGFLAGS = -O3 -Wall -g
 -CFLAGS = -O3 
++CFLAGS += -fcommon
  
  ComplexProgramTarget(xtacy)
  
