@@ -14,10 +14,14 @@ COMMENT=	Synthesizable Verilog to C++ compiler
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		bison compiler:c++14-lang gmake pathfix perl5 tar:tgz
+USES=		bison compiler:c++14-lang gmake pathfix perl5 python:test tar:tgz
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	INSTALL_PROGRAM="${INSTALL_SCRIPT}"
+
+TEST_TARGET=	test
+
+BINARY_ALIAS=	make=${GMAKE} python3=${PYTHON_CMD} # aliasas are only for tests
 
 post-patch:
 	${REINPLACE_CMD} -e 's|@pkgconfigdir@|${PREFIX}/libdata/pkgconfig|' \
