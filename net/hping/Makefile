@@ -31,6 +31,12 @@ OPTIONS_DEFINE=	DOCS
 
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-sendip.c
 
+post-patch:
+	@${REINPLACE_CMD} -e '/^struct ars_layer_info ars_linfo/d' \
+		${WRKSRC}/ars.h
+	@${REINPLACE_CMD} -e '/^volatile struct delaytable_element/d' \
+		${WRKSRC}/hping2.h
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hping2 ${STAGEDIR}${PREFIX}/sbin/hping
 	${INSTALL_MAN} ${WRKSRC}/docs/hping2.8 \

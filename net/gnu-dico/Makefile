@@ -59,6 +59,8 @@ post-patch:
 		-e 's/python-config/$${PYTHON_CONFIG}/' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} 's/mergesort/xmergesort/' ${WRKSRC}/lib/mergesort.c
+	@${REINPLACE_CMD} -E '/(dico_markup_list|text_udb_def);/s,^,extern ,' \
+		${WRKSRC}/include/dico/markup.h ${WRKSRC}/dicod/dicod.h
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/dicod.conf ${STAGEDIR}${PREFIX}/etc/dicod.conf.sample
