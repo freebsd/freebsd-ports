@@ -1,19 +1,19 @@
---- plugins_tools/eid-viewer/Makefile.am.orig	2019-07-11 14:08:46 UTC
+--- plugins_tools/eid-viewer/Makefile.am.orig	2020-07-09 08:00:33 UTC
 +++ plugins_tools/eid-viewer/Makefile.am
-@@ -121,7 +121,7 @@ dist_eidvinclude_HEADERS = \
+@@ -120,7 +120,7 @@ dist_eidvinclude_HEADERS = \
  eid_viewer_LDADD = @GTK_LIBS@ @GIO_LIBS@ @SSL_LIBS@ @XML2_LIBS@ @CURL_LIBS@ @libproxy_LIBS@ $(top_builddir)/plugins_tools/util/liblabels.la libeidviewer.la
  libeidviewer_la_LIBADD = $(top_builddir)/plugins_tools/util/liblabels.la $(top_builddir)/cardcomm/pkcs11/src/libbeidpkcs11.la @SSL_LIBS@ @XML2_LIBS@
  libeidviewer_la_LDFLAGS = -version-info 1:0:1
--AM_CFLAGS = @GTK_CFLAGS@ -I. -I$(srcdir)/include -Igtk -DDATAROOTDIR='"$(datarootdir)"' -I$(top_srcdir)/doc/sdk/include/rsaref220 -I$(top_srcdir)/plugins_tools/util @SSL_CFLAGS@ @GIO_CFLAGS@ @XML2_CFLAGS@ @CURL_CFLAGS@ @libproxy_CFLAGS@ -fvisibility=hidden
-+AM_CPPFLAGS = -I. -I$(srcdir)/include -Igtk -DDATAROOTDIR='"$(datarootdir)"' -I$(top_srcdir)/doc/sdk/include/rsaref220 -I$(top_srcdir)/plugins_tools/util @GTK_CFLAGS@ @SSL_CFLAGS@ @GIO_CFLAGS@ @XML2_CFLAGS@ @CURL_CFLAGS@ @libproxy_CFLAGS@ -fvisibility=hidden
+-AM_CFLAGS = @GTK_CFLAGS@ -I. -I$(srcdir)/include -Igtk -DDATAROOTDIR='"$(datarootdir)"' -I$(top_srcdir)/doc/sdk/include/rsaref220 -I$(top_srcdir)/plugins_tools/util @SSL_CFLAGS@ @GIO_CFLAGS@ @XML2_CFLAGS@ @CURL_CFLAGS@ @libproxy_CFLAGS@ -fvisibility=hidden @FUZZING@
++AM_CPPFLAGS = -I. -I$(srcdir)/include -Igtk -DDATAROOTDIR='"$(datarootdir)"' -I$(top_srcdir)/doc/sdk/include/rsaref220 -I$(top_srcdir)/plugins_tools/util @GTK_CFLAGS@ @SSL_CFLAGS@ @GIO_CFLAGS@ @XML2_CFLAGS@ @CURL_CFLAGS@ @libproxy_CFLAGS@ -fvisibility=hidden @FUZZING@
  AM_CXXFLAGS = $(AM_CFLAGS) -std=c++98
- SUBDIRS = . gtk/po test
+ SUBDIRS = . gtk/po test uml
  
-@@ -200,7 +200,9 @@ dist_trust_DATA = \
+@@ -199,7 +199,9 @@ dist_trust_DATA = \
  	certs/belgiumrca4.pem
  
  install-data-hook:
--	if ( $(SSL_PREFIX)/bin/openssl help | grep -q rehash); then $(SSL_PREFIX)/bin/openssl rehash $(DESTDIR)/$(trustdir); else $(SSL_PREFIX)/bin/c_rehash $(DESTDIR)/$(trustdir); fi
+-	if ( $(SSL_PREFIX)/bin/openssl help 2>&1 | grep -q rehash); then $(SSL_PREFIX)/bin/openssl rehash $(DESTDIR)/$(trustdir); else $(SSL_PREFIX)/bin/c_rehash $(DESTDIR)/$(trustdir); fi
 +	(cd $(DESTDIR)$(trustdir) && for i in *.pem; do \
 +	ln -sfh $$i $$($(SSL_PREFIX)/bin/openssl x509 -hash -noout -in $$i).0; \
 +	done)

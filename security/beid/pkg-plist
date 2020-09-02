@@ -21,14 +21,8 @@ lib/libeidviewer.so.0.1.0
 lib/mozilla/pkcs11-modules/beidp11kit.json
 lib/mozilla/pkcs11-modules/beidpkcs11.json
 lib/pkcs11/beidpkcs11.so
-lib/firefox/browser/extensions/belgiumeid@eid.belgium.be.xpi
+lib/firefox/distribution/extensions/belgiumeid@eid.belgium.be.xpi
 libdata/pkgconfig/libbeidpkcs11.pc
-libexec/beid-askaccess
-libexec/beid-askpin
-libexec/beid-badpin
-libexec/beid-changepin
-libexec/beid-spr-askpin
-libexec/beid-spr-changepin
 share/applications/eid-viewer.desktop
 share/eid-mw/eidv4.xsd
 share/eid-mw/trustdir/143b8e8e.0
@@ -43,11 +37,8 @@ share/icons/hicolor/256x256/apps/eid-viewer.png
 share/icons/hicolor/32x32/apps/eid-viewer.png
 share/icons/hicolor/48x48/apps/eid-viewer.png
 share/icons/hicolor/512x512/apps/eid-viewer.png
-%%NLS%%share/locale/de/LC_MESSAGES/dialogs-beid.mo
 %%NLS%%share/locale/de/LC_MESSAGES/eid-viewer.mo
-%%NLS%%share/locale/fr/LC_MESSAGES/dialogs-beid.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/eid-viewer.mo
-%%NLS%%share/locale/nl/LC_MESSAGES/dialogs-beid.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/eid-viewer.mo
 share/metainfo/be.belgium.eid.eidmw.metainfo.xml
 share/metainfo/eid-viewer.appdata.xml

@@ -15,8 +15,10 @@ Make sure you have installed a pcsc-lite driver for your card reader (such
 as devel/libccid) and that pcscd is running (add pcscd_enable="YES" to
 /etc/rc.conf and start the service by running "service pcscd start").
 
-To use your eID in Firefox you have to enable the "eID Belgium" extension
-in the Add-ons Manager.
+To use your eID card in Firefox you must have the "eID Belgium" extension
+installed.  Normally this happens automatically.  If not, you can find it
+at https://addons.mozilla.org/en-US/firefox/addon/belgium-eid/.  The eID card
+must be inserted before starting Firefox.
 EOM
 }
 ]

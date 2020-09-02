@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	beid
-PORTVERSION=	4.4.21
+PORTVERSION=	5.0.8
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
@@ -11,9 +11,11 @@ COMMENT=	Belgian eID middleware
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libcurl.so:ftp/curl \
+LIB_DEPENDS=	libassuan.so:security/libassuan \
+		libcurl.so:ftp/curl \
 		libpcsclite.so:devel/pcsc-lite \
 		libproxy.so:net/libproxy
+RUN_DEPENDS=	pinentry:security/pinentry
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Fedict
@@ -27,7 +29,7 @@ GLIB_SCHEMAS=	eid-viewer.gschema.xml
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-p11kit --disable-static --with-gtkvers=3 \
 		--enable-webextension \
-		--with-mozext=${PREFIX}/lib/firefox/browser/extensions \
+		--with-mozext=${PREFIX}/lib/firefox/distribution/extensions \
 		SSL_CFLAGS="-I${OPENSSLINC}" \
 		SSL_LIBS="-L${OPENSSLLIB} -lcrypto" \
 		SSL_PREFIX="${OPENSSLBASE}"
@@ -41,6 +43,9 @@ NLS_USES=		gettext-runtime
 
 post-patch:
 	@${ECHO_CMD} ${PORTVERSION}-release > ${WRKSRC}/.version
+	@${REINPLACE_CMD} -e 's,/usr/bin/pinentry,${LOCALBASE}/bin/pinentry,' \
+		-e 's,/proc/%d/exe,/proc/%d/file,' \
+		${WRKSRC}/cardcomm/pkcs11/src/dialogs/dialogspinentry/dlgs_pinentry.cpp
 	@${REINPLACE_CMD} -e '/^MODUTIL=/s,/usr/bin,${LOCALBASE}/bin,' \
 		-e '/^CERTUTIL=/s,/usr/bin,${LOCALBASE}/bin,' \
 		-e '/^LIBS=/s,=.*,=${PREFIX}/lib,' \
