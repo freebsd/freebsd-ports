@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libbpfjit
-PORTVERSION=	g2019052401
-PORTREVISION=	1
+PORTVERSION=	g2020082801
 CATEGORIES=	devel
 
 MAINTAINER=	swills@FreeBSD.org
@@ -14,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/../LICENCE
 USES=		gmake
 
 USE_GITHUB=	yes
-GH_TUPLE=	rmind:bpfjit:5fa111b:DEFAULT \
+GH_TUPLE=	rmind:bpfjit:38b515b:DEFAULT \
 		zherczeg:sljit:849950a:sljit
 WRKSRC_SUBDIR=	src
 USE_LDCONFIG=	yes
