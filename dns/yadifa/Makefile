@@ -38,6 +38,11 @@ USE_RC_SUBR=	${PORTNAME}d
 PORTDOCS=	AUTHORS COPYING ChangeLog \
 		INSTALL NEWS README TODO VERSION
 
+post-patch:
+# Fix the build with -fno-common (for Clang 11 and GCC 10)
+	@${REINPLACE_CMD} -e '/\*g_client_logger/d' \
+		${WRKSRC}/bin/yadifa/yadifa.c
+
 post-configure:
 	${REINPLACE_CMD} -e 's|^docdir = .*|docdir = ${EXAMPLESDIR}|' ${WRKSRC}/etc/Makefile
 	${REINPLACE_CMD} -e 's|/usr/local/var|/var|' -e 's|/var/zones|/var/${PORTNAME}|' ${WRKSRC}/etc/yadifad.conf.example
