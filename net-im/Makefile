@@ -7,6 +7,7 @@
     SUBDIR += beebeep
     SUBDIR += centerim
     SUBDIR += centerim-devel
+    SUBDIR += chatterino2
     SUBDIR += climm
     SUBDIR += coccinella
     SUBDIR += convey

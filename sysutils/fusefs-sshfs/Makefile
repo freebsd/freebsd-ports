@@ -18,12 +18,10 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		compiler:c11 fuse:3 gnome meson pkgconfig
-USE_GNOME=	glib20
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	libfuse
-
 USE_GNOME=	glib20
+
 CFLAGS+=	-DNDEBUG
 
 PLIST_FILES=	bin/sshfs

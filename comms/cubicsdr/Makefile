@@ -36,8 +36,6 @@ CMAKE_ARGS+=	-DUSE_HAMLIB=1
 .endif
 
 CMAKE_ARGS+=	-DwxWidgets_CONFIG_EXECUTABLE=${LOCALBASE}/bin/wxgtk3u-3.1-config
-USE_WX=		3.1
-WX_COMPS=	wx
 USE_GITHUB=	yes
 GH_ACCOUNT=	cjcliffe
 GH_PROJECT=	CubicSDR
