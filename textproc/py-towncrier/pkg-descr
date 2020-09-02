@@ -4,4 +4,4 @@ newer tools to produce it, or having one single file which
 developers all write to, towncrier reads "news fragments"
 which contain information useful to end users.
 
-WWW: https://github.com/hawkowl/towncrier
+WWW: https://github.com/twisted/towncrier
