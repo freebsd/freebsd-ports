@@ -40,11 +40,9 @@ man/man7/timew-durations.7.gz
 man/man7/timew-hints.7.gz
 man/man7/timew-ranges.7.gz
 %%DOCSDIR%%/AUTHORS
-%%DOCSDIR%%/COPYING
 %%DOCSDIR%%/ChangeLog
 %%DOCSDIR%%/INSTALL
 %%DOCSDIR%%/LICENSE
-%%DOCSDIR%%/NEWS
 %%DOCSDIR%%/README.md
 %%DOCSDIR%%/doc/holidays/README
 %%DOCSDIR%%/doc/holidays/holidays.en-US
