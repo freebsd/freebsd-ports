@@ -2,7 +2,7 @@
 
 PORTNAME=	lego
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.8.0
+DISTVERSION=	3.9.0
 CATEGORIES=	security
 
 MAINTAINER=	matt@matthoran.com
@@ -34,7 +34,7 @@ GH_TUPLE=	\
 		Azure:go-autorest:tracing/v0.1.0:azure_go_autorest_tracing \
 		BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/toml \
 		OpenDNS:vegadns2client:a3fa4a771d87:opendns_vegadns2client/vendor/github.com/OpenDNS/vegadns2client \
-		akamai:AkamaiOPEN-edgegrid-golang:v0.9.8:akamai_akamaiopen_edgegrid_golang/vendor/github.com/akamai/AkamaiOPEN-edgegrid-golang \
+		akamai:AkamaiOPEN-edgegrid-golang:v0.9.18:akamai_akamaiopen_edgegrid_golang/vendor/github.com/akamai/AkamaiOPEN-edgegrid-golang \
 		aliyun:alibaba-cloud-sdk-go:v1.61.112:aliyun_alibaba_cloud_sdk_go/vendor/github.com/aliyun/alibaba-cloud-sdk-go \
 		aws:aws-sdk-go:v1.30.20:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
 		boombuler:barcode:6c824513bacc:boombuler_barcode/vendor/github.com/boombuler/barcode \
@@ -53,6 +53,7 @@ GH_TUPLE=	\
 		fatih:structs:v1.1.0:fatih_structs/vendor/github.com/fatih/structs \
 		go-errors:errors:v1.0.1:go_errors_errors/vendor/github.com/go-errors/errors \
 		go-resty:resty:v1.12.0:go_resty_resty/vendor/gopkg.in/resty.v1 \
+		go-yaml:yaml:9f266ea9e77c:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
 		go-yaml:yaml:v2.2.8:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		gofrs:uuid:v3.2.0:gofrs_uuid/vendor/github.com/gofrs/uuid \
 		golang:appengine:v1.6.5:golang_appengine/vendor/google.golang.org/appengine \
@@ -64,14 +65,15 @@ GH_TUPLE=	\
 		golang:sync:cd5d95a43a6e:golang_sync/vendor/golang.org/x/sync \
 		golang:sys:5c8b2ff67527:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
-		golang:time:555d28b269f0:golang_time/vendor/golang.org/x/time \
+		golang:time:3af7569d3a1e:golang_time/vendor/golang.org/x/time \
 		google:go-genproto:506484158171:google_go_genproto/vendor/google.golang.org/genproto \
 		google:go-querystring:v1.0.0:google_go_querystring/vendor/github.com/google/go-querystring \
 		google:uuid:v1.1.1:google_uuid/vendor/github.com/google/uuid \
 		googleapis:gax-go:v2.0.5:googleapis_gax_go_v2/vendor/github.com/googleapis/gax-go \
 		googleapis:google-api-go-client:v0.20.0:googleapis_google_api_go_client/vendor/google.golang.org/api \
 		googleapis:google-cloud-go:v0.54.0:googleapis_google_cloud_go/vendor/cloud.google.com/go \
-		gophercloud:gophercloud:v0.3.0:gophercloud_gophercloud/vendor/github.com/gophercloud/gophercloud \
+		gophercloud:gophercloud:v0.7.0:gophercloud_gophercloud/vendor/github.com/gophercloud/gophercloud \
+		gophercloud:utils:b0167b94122c:gophercloud_utils/vendor/github.com/gophercloud/utils \
 		grpc-ecosystem:grpc-gateway:v1.8.5:grpc_ecosystem_grpc_gateway/vendor/github.com/grpc-ecosystem/grpc-gateway \
 		grpc:grpc-go:v1.27.1:grpc_grpc_go/vendor/google.golang.org/grpc \
 		hashicorp:go-cleanhttp:v0.5.1:hashicorp_go_cleanhttp/vendor/github.com/hashicorp/go-cleanhttp \
@@ -92,12 +94,14 @@ GH_TUPLE=	\
 		modern-go:reflect2:v1.0.1:modern_go_reflect2/vendor/github.com/modern-go/reflect2 \
 		namedotcom:go:08470befbe04:namedotcom_go/vendor/github.com/namedotcom/go \
 		nrdcg:auroradns:v1.0.1:nrdcg_auroradns/vendor/github.com/nrdcg/auroradns \
+		nrdcg:desec:v0.5.0:nrdcg_desec/vendor/github.com/nrdcg/desec \
 		nrdcg:dnspod-go:v0.4.0:nrdcg_dnspod_go/vendor/github.com/nrdcg/dnspod-go \
 		nrdcg:goinwx:v0.7.0:nrdcg_goinwx/vendor/github.com/nrdcg/goinwx \
 		nrdcg:namesilo:v0.2.1:nrdcg_namesilo/vendor/github.com/nrdcg/namesilo \
 		ns1:ns1-go:b51389932cbc:ns1_ns1_go/vendor/gopkg.in/ns1/ns1-go.v2 \
 		oracle:oci-go-sdk:v7.0.0:oracle_oci_go_sdk/vendor/github.com/oracle/oci-go-sdk \
 		ovh:go-ovh:ba5adb4cf014:ovh_go_ovh/vendor/github.com/ovh/go-ovh \
+		patrickmn:go-cache:v2.1.0:patrickmn_go_cache/vendor/github.com/patrickmn/go-cache \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
 		pquerna:otp:v1.2.0:pquerna_otp/vendor/github.com/pquerna/otp \
@@ -108,7 +112,7 @@ GH_TUPLE=	\
 		sirupsen:logrus:v1.4.2:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		square:go-jose:v2.3.1:square_go_jose/vendor/gopkg.in/square/go-jose.v2 \
 		stretchr:objx:v0.1.1:stretchr_objx/vendor/github.com/stretchr/objx \
-		stretchr:testify:v1.5.1:stretchr_testify/vendor/github.com/stretchr/testify \
+		stretchr:testify:v1.6.1:stretchr_testify/vendor/github.com/stretchr/testify \
 		timewasted:linode:37e84520dcf7:timewasted_linode/vendor/github.com/timewasted/linode \
 		transip:gotransip:v6.0.2:transip_gotransip_v6/vendor/github.com/transip/gotransip/v6 \
 		uber-go:ratelimit:c15da0234277:uber_go_ratelimit/vendor/go.uber.org/ratelimit \
