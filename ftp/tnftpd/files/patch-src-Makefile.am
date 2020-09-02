@@ -1,25 +1,23 @@
 FreeBSD does have support for utmp/utmpx, so include relevant files into
 a build.
 
---- src/Makefile.am.orig	2010-01-04 06:46:29.000000000 +0100
-+++ src/Makefile.am	2010-01-04 06:46:29.000000000 +0100
-@@ -7,7 +7,9 @@
- 	conf.c \
+--- src/Makefile.am.orig	2019-01-29 12:51:38 UTC
++++ src/Makefile.am
+@@ -8,7 +8,9 @@ tnftpd_SOURCES = \
  	ftpd.c \
  	ftpcmd.y \
+ 	pfilter.c \
 -	popen.c
 +	popen.c \
 +	logutmp.c \
 +	logwtmp.c
  
- AM_CPPFLAGS = \
- 	-DHAVE_TNFTPD_H=1 \
-@@ -45,8 +47,6 @@
+ noinst_HEADERS = \
  	extern.h \
+@@ -51,6 +53,4 @@ seddotin = \
+ EXTRA_DIST = \
  	ftpd.conf.manin \
  	ftpusers.manin \
 -	logutmp.c \
 -	logwtmp.c \
- 	pathnames.h \
- 	tnftpd.manin \
- 	version.h
+ 	tnftpd.manin

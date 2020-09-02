@@ -3,9 +3,9 @@ header files sys/socket.h and netdb.h for getaddrinfo() and getnameinfo().
 If host name is longer than UT_HOSTSIZE (16 characters), log numeric
 address to utmp. Rewrite utmpx support.
 
---- src/logwtmp.c.orig	2008-09-21 16:44:01.000000000 +0200
-+++ src/logwtmp.c	2008-09-21 16:44:01.000000000 +0200
-@@ -46,11 +46,13 @@
+--- src/logwtmp.c.orig	2019-01-29 12:14:57 UTC
++++ src/logwtmp.c
+@@ -46,11 +46,13 @@ __RCSID(" NetBSD: logwtmp.c,v 1.27 2015/08/09 20:34:24
  
  #include <sys/types.h>
  #include <sys/param.h>
@@ -19,7 +19,7 @@ address to utmp. Rewrite utmpx support.
  #include <signal.h>
  #include <stdio.h>
  #include <string.h>
-@@ -63,7 +65,6 @@
+@@ -63,7 +65,6 @@ __RCSID(" NetBSD: logwtmp.c,v 1.27 2015/08/09 20:34:24
  #ifdef SUPPORT_UTMPX
  #include <utmpx.h>
  #endif
@@ -27,7 +27,7 @@ address to utmp. Rewrite utmpx support.
  
  #ifdef KERBEROS5
  #include <krb5/krb5.h>
-@@ -95,6 +96,26 @@
+@@ -95,6 +96,26 @@ ftpd_logwtmp(const char *line, const char *name, const
  	struct utmp ut;
  	struct stat buf;
  
@@ -54,7 +54,7 @@ address to utmp. Rewrite utmpx support.
  	if (fd < 0)
  		return;
  	if (fstat(fd, &buf) == 0) {
-@@ -109,7 +130,7 @@
+@@ -109,7 +130,7 @@ ftpd_logwtmp(const char *line, const char *name, const
  }
  #endif
  
