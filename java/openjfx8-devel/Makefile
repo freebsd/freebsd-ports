@@ -36,7 +36,7 @@ JAVA_VERSION=	1.8
 USE_LDCONFIG=	yes
 USE_XORG=	x11 xtst xxf86vm
 
-CFLAGS+=	-Wno-unused-command-line-argument
+CFLAGS+=	-fcommon -Wno-unused-command-line-argument
 
 WRKSRC=		${WRKDIR}/rt-${DISTVERSION}
 

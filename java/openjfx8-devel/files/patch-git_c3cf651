@@ -1,0 +1,77 @@
+Partial backport of:
+
+From c3cf651016e4cdcb4350598d4a586821071f91bf Mon Sep 17 00:00:00 2001
+From: "cturner@igalia.com"
+ <cturner@igalia.com@268f45cc-cd09-0410-ab3c-d52691b4dbfc>
+Date: Thu, 30 Apr 2020 15:12:36 +0000
+Subject: [PATCH] [clang 11] fix build errors due to -WWc++11-narrowing
+ https://bugs.webkit.org/show_bug.cgi?id=211193
+
+Reviewed by Adrian Perez de Castro.
+
+Fixes the following errors,
+
+Source/WebCore/html/MediaElementSession.cpp:1059:9: error: type 'WebCore::RenderMedia *' cannot be narrowed to 'bool' in initializer list [-Wc++11-narrowing]
+m_element.renderer(),
+^~~~~~~~~~~~~~~~~~~~
+
+Source/WebCore/style/StyleResolver.cpp:106:55: error: type 'const char [4]' cannot be narrowed to 'bool' in initializer list [-Wc++11-narrowing]
+m_mediaQueryEvaluator = MediaQueryEvaluator { "all" };
+                                              ^~~~~
+Source/WebCore/style/StyleResolver.cpp:106:55: note: insert an explicit cast to silence this issue
+m_mediaQueryEvaluator = MediaQueryEvaluator { "all" };
+                                              ^~~~~
+                                              static_cast<bool>( )
+
+* html/HTMLMediaElement.h:
+(WebCore::HTMLMediaElement::hasRenderer const):
+MediaElementSession was implicitly casting a pointer to a bool,
+which is not allowed with modern Clang checks. Add a helper method
+to encapsulate the now required static_cast<bool>.
+* html/MediaElementSession.cpp: Use the new helper method to see
+if the HTMLMediaElement has an associated renderer.
+(WebCore::MediaElementSession::updateMediaUsageIfChanged):
+* style/StyleResolver.cpp: This was calling MediaQueryEvaluator {
+"all" }; and seemingly expecting to cast a const char[] to a bool,
+or maybe String? It's confusing because of the MediaQueryEvaluator
+API. If it was implicitly converting to bool then that could be
+unintentional. Such casts are not allowed either now. The
+MediaQueryEvaluator's default constructor says it returns true for
+"all", which appears to be the original intent of this call, so I
+replaced it with that.
+(WebCore::Style::Resolver::Resolver):
+
+
+git-svn-id: http://svn.webkit.org/repository/webkit/trunk@260951 268f45cc-cd09-0410-ab3c-d52691b4dbfc
+---
+ Source/WebCore/ChangeLog                    | 39 +++++++++++++++++++++
+ Source/WebCore/html/HTMLMediaElement.h      |  1 +
+ Source/WebCore/html/MediaElementSession.cpp |  2 +-
+ Source/WebCore/style/StyleResolver.cpp      |  2 +-
+ 4 files changed, 42 insertions(+), 2 deletions(-)
+
+diff --git a/Source/WebCore/html/HTMLMediaElement.h b/Source/WebCore/html/HTMLMediaElement.h
+index b466dfc139d7..444f349df87b 100644
+--- modules/web/src/main/native/Source/WebCore/html/HTMLMediaElement.h
++++ modules/web/src/main/native/Source/WebCore/html/HTMLMediaElement.h
+@@ -155,6 +155,7 @@ class HTMLMediaElement
+     virtual bool isVideo() const { return false; }
+     bool hasVideo() const override { return false; }
+     bool hasAudio() const override;
++    bool hasRenderer() const { return static_cast<bool>(renderer()); }
+ 
+     static HashSet<HTMLMediaElement*>& allMediaElements();
+ 
+diff --git a/Source/WebCore/style/StyleResolver.cpp b/Source/WebCore/style/StyleResolver.cpp
+index 651f8f1e2d78..9333b83913a4 100644
+--- modules/web/src/main/native/Source/WebCore/css/StyleResolver.cpp
++++ modules/web/src/main/native/Source/WebCore/css/StyleResolver.cpp
+@@ -103,7 +103,7 @@ Resolver::Resolver(Document& document)
+     if (view)
+         m_mediaQueryEvaluator = MediaQueryEvaluator { view->mediaType() };
+     else
+-        m_mediaQueryEvaluator = MediaQueryEvaluator { "all" };
++        m_mediaQueryEvaluator = MediaQueryEvaluator { };
+ 
+     if (root) {
+         m_rootDefaultStyle = styleForElement(*root, m_document.renderStyle(), nullptr, RuleMatchingBehavior::MatchOnlyUserAgentRules).renderStyle;
