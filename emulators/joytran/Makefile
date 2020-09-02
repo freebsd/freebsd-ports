@@ -13,12 +13,16 @@ COMMENT=	Joystick to keyboard/mouse events translator written in C
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-USE_SDL=	sdl2
 USES=		cmake:insource pkgconfig sdl tar:bzip2 xorg
-CMAKE_ARGS=	-DLOCALBASE="${LOCALBASE}" -DPREFIX="${PREFIX}"
+USE_SDL=	sdl2
 USE_XORG=	x11 xtst
+CMAKE_ARGS=	-DLOCALBASE:PATH="${LOCALBASE}"
 
 OPTIONS_DEFINE=	DOCS
+
+post-patch:
+	@${REINPLACE_CMD} -e '/WARNING_FLAGS/s,-pedantic,& -fcommon,' \
+		${WRKSRC}/CMakeLists.txt
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
