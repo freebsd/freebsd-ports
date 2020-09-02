@@ -1,6 +1,15 @@
---- configure.ac.orig	2016-03-28 16:04:04 UTC
+--- configure.ac.orig	2019-04-03 20:14:33 UTC
 +++ configure.ac
-@@ -191,7 +191,7 @@ if test -n "${pkcs11_module}"; then
+@@ -39,7 +39,7 @@ case "`$PKG_CONFIG --modversion --silence-errors libcr
+ 	    LIBP11_LT_OLDEST="2"
+ 	    debian_ssl_prefix="openssl-1.0.0";;
+ 	*) # Engines directory prefix for OpenSSL 0.9.x
+-	    LIBP11_LT_OLDEST="2"
++	    LIBP11_LT_OLDEST="3" # FreeBSD base has openssl 1.1.*
+ 	    debian_ssl_prefix="ssl";;
+ esac
+ 
+@@ -208,7 +208,7 @@ if test -n "${pkcs11_module}"; then
  		[Default PKCS#11 module.])
  fi
  
