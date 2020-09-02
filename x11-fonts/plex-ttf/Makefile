@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	plex-ttf
-DISTVERSION=	5.0.0
+DISTVERSION=	5.1.3
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/IBM/plex/releases/download/v${DISTVERSION}/TrueType${EXTRACT_SUFX}?dummy=/
 
