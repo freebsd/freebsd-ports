@@ -60,7 +60,7 @@ GTK2_CONFIGURE_WITH=	gtk
 
 USES+=		desktop-file-utils gnome makeinfo perl5 pkgconfig \
 		shared-mime-info shebangfix xorg
-USE_XORG+=	xt xpm
+USE_XORG+=	ice sm x11 xmu xt xpm
 USE_GNOME+=	librsvg2
 .if ${PORT_OPTIONS:MXAW}
 USE_XORG+=	xaw
@@ -72,7 +72,7 @@ SHEBANG_FILES=	texi2man
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=MKDIR_P="${MKDIR}" PERLPATH=${PERL}
-CFLAGS+=	-I${LOCALBASE}/include
+CFLAGS+=	-I${LOCALBASE}/include -fcommon
 LDFLAGS+=	-L${LOCALBASE}/lib
 INFO=		xboard
 USE_PERL5=	build
