@@ -2,8 +2,7 @@
 
 PORTNAME=	ncspot
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.1
-PORTREVISION=	1
+DISTVERSION=	0.2.2
 CATEGORIES=	audio
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -11,6 +10,8 @@ COMMENT=	Ncurses Spotify client
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+LIB_DEPENDS=	libdbus-1.so:devel/dbus
 
 USES=		cargo ncurses ssl
 USE_GITHUB=	yes
@@ -60,9 +61,9 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		cc-1.0.58 \
 		cexpr-0.4.0 \
 		cfg-if-0.1.10 \
-		chrono-0.4.13 \
+		chrono-0.4.15 \
 		clang-sys-0.29.3 \
-		clap-2.33.2 \
+		clap-2.33.3 \
 		clipboard-0.5.0 \
 		clipboard-win-2.2.0 \
 		cloudabi-0.0.3 \
@@ -93,11 +94,12 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		darling_core-0.10.2 \
 		darling_macro-0.9.0 \
 		darling_macro-0.10.2 \
-		dbus-0.6.5 \
+		dbus-0.8.4 \
 		derive_builder-0.7.2 \
 		derive_builder_core-0.5.0 \
 		digest-0.8.1 \
 		directories-2.0.2 \
+		dirs-1.0.5 \
 		dirs-sys-0.3.5 \
 		dotenv-0.13.0 \
 		dtoa-0.4.6 \
@@ -167,7 +169,7 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
 		lewton-0.9.4 \
-		libc-0.2.74 \
+		libc-0.2.76 \
 		libdbus-sys-0.2.1 \
 		libloading-0.5.2 \
 		libm-0.2.1 \
@@ -181,6 +183,7 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		lock_api-0.3.4 \
 		log-0.3.9 \
 		log-0.4.11 \
+		mac-notification-sys-0.3.0 \
 		malloc_buf-0.0.6 \
 		maplit-1.0.2 \
 		matches-0.1.8 \
@@ -200,6 +203,7 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		net2-0.2.34 \
 		nix-0.9.0 \
 		nom-5.1.2 \
+		notify-rust-4.0.0 \
 		num-0.3.0 \
 		num-bigint-0.2.6 \
 		num-complex-0.2.4 \
@@ -216,7 +220,7 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		objc_id-0.1.1 \
 		object-0.20.0 \
 		ogg-0.7.0 \
-		once_cell-1.4.0 \
+		once_cell-1.4.1 \
 		opaque-debug-0.2.3 \
 		openssl-0.10.30 \
 		openssl-probe-0.1.2 \
@@ -247,6 +251,7 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		protobuf-codegen-pure-2.14.0 \
 		publicsuffix-1.5.4 \
 		quick-error-1.2.3 \
+		quote-0.3.15 \
 		quote-0.6.13 \
 		quote-1.0.7 \
 		rand-0.3.23 \
@@ -318,11 +323,15 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		strsim-0.7.0 \
 		strsim-0.8.0 \
 		strsim-0.9.3 \
+		strum-0.8.0 \
 		strum-0.17.1 \
+		strum_macros-0.8.0 \
 		strum_macros-0.17.1 \
 		subtle-1.0.0 \
+		syn-0.11.11 \
 		syn-0.15.44 \
 		syn-1.0.38 \
+		synom-0.11.3 \
 		synstructure-0.12.4 \
 		take-0.1.0 \
 		tempfile-3.1.0 \
@@ -334,7 +343,7 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		thiserror-impl-1.0.20 \
 		thread_local-1.0.1 \
 		time-0.1.43 \
-		tinyvec-0.3.3 \
+		tinyvec-0.3.4 \
 		tokio-0.1.22 \
 		tokio-0.2.22 \
 		tokio-buf-0.1.1 \
@@ -369,6 +378,7 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		unicode-normalization-0.1.13 \
 		unicode-segmentation-1.6.0 \
 		unicode-width-0.1.8 \
+		unicode-xid-0.0.4 \
 		unicode-xid-0.1.0 \
 		unicode-xid-0.2.1 \
 		url-1.7.2 \
@@ -401,29 +411,31 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		winreg-0.5.1 \
 		winreg-0.6.2 \
 		winreg-0.7.0 \
+		winrt-0.4.0 \
+		winrt-notification-0.2.2 \
 		ws2_32-sys-0.2.1 \
 		x11-clipboard-0.3.3 \
 		xcb-0.8.2 \
-		xi-unicode-0.2.1
+		xi-unicode-0.2.1 \
+		xml-rs-0.6.1
 
 CARGO_FEATURES=	--no-default-features cursive/pancurses-backend
 
 PLIST_FILES=	bin/ncspot
 PORTDOCS=	README.md
 
-OPTIONS_DEFINE=		CLIPBOARD DBUS DOCS PORTAUDIO PULSEAUDIO
-OPTIONS_DEFAULT=	CLIPBOARD PORTAUDIO
+OPTIONS_DEFINE=		CLIPBOARD DOCS MPRIS PORTAUDIO PULSEAUDIO
+OPTIONS_DEFAULT=	CLIPBOARD MPRIS PORTAUDIO
 
 CLIPBOARD_DESC=	Support for accessing X11 clipboard
-DBUS_DESC=	D-Bus MPRIS support
+MPRIS_DESC=	D-Bus MPRIS support
 
 CLIPBOARD_USES=		python:3.6+,build xorg
 CLIPBOARD_USE=		XORG=xcb
 CLIPBOARD_BINARY_ALIAS=	python3=${PYTHON_CMD}
 CLIPBOARD_VARS=		CARGO_FEATURES+=share_clipboard
 
-DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
-DBUS_VARS=		CARGO_FEATURES+=mpris
+MPRIS_VARS=	CARGO_FEATURES+=mpris
 
 PORTAUDIO_LIB_DEPENDS=	libportaudio.so:audio/portaudio
 PORTAUDIO_VARS=		CARGO_FEATURES+=portaudio_backend
