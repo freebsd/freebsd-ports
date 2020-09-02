@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lzbench
-PORTVERSION=	1.8
+PORTVERSION=	1.8.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	benchmarks
 
@@ -12,9 +12,6 @@ COMMENT=	In-memory benchmark of open-source LZ77/LZSS/LZMA compressors
 USES=		compiler:c11 gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	inikep
-
-# XXX: track progress at https://github.com/inikep/lzbench/issues/76
-MAKE_ENV=	MOREFLAGS=-fcommon
 
 PLIST_FILES=	bin/lzbench
 PORTDOCS=	NEWS README.md
