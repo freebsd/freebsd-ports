@@ -1,0 +1,4 @@
+Ansible module to load kernel modules and manipulate
+/boot/loader.conf on a FreeBSD system.
+
+WWW: https://github.com/dlundgren/ansible-freebsd-modules/

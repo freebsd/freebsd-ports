@@ -40,6 +40,7 @@
     SUBDIR += android-file-transfer-qt5
     SUBDIR += angrysearch
     SUBDIR += ansible
+    SUBDIR += ansible-kld
     SUBDIR += ansible-sysrc
     SUBDIR += ansible27
     SUBDIR += ansible28
