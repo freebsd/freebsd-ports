@@ -6,4 +6,4 @@ This program re-broadcast mDNS packets from one interface to other interfaces.
 It can be used to bridge zeroconf devices to work properly across the two
 subnets.
 
-WWW: https://bitbucket.org/geekman/mdns-repeater/
+WWW: https://github.com/kennylevinsen/mdns-repeater/

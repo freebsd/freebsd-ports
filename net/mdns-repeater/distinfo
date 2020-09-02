@@ -1,2 +1,3 @@
-SHA256 (mdns-repeater-1.10.tar.gz) = 9c49c4256f6a4962c2b3fcb69f05c5f2eb76eb2c0a56f1e6153b2928d1360606
-SIZE (mdns-repeater-1.10.tar.gz) = 10608
+TIMESTAMP = 1599045643
+SHA256 (kennylevinsen-mdns-repeater-1.11_GH0.tar.gz) = e9595a75a0511236892f69fde66cbf81bc08f9cec5363b1f726ff56299ad9968
+SIZE (kennylevinsen-mdns-repeater-1.11_GH0.tar.gz) = 11220
