@@ -16,7 +16,7 @@ LIB_DEPENDS=	libnet.so:net/libnet \
 		libfreetype.so:print/freetype2
 
 USES=		autoreconf gnome ncurses pkgconfig
-USE_GNOME+=	cairo gdkpixbuf2 gtk20 
+USE_GNOME=	cairo gdkpixbuf2 gtk20
 PKGNAMESUFFIX=	-gtk
 USE_GITHUB=	yes
 GH_TUPLE=	tomac:yersinia:8c0d7c5
@@ -24,6 +24,10 @@ GNU_CONFIGURE=	yes
 
 PLIST_FILES=	sbin/yersinia \
 		man/man8/yersinia.8.gz
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,-O3 -Wall -g,${CFLAGS} -fcommon,' \
+		${WRKSRC}/configure.ac
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/yersinia ${STAGEDIR}${PREFIX}/sbin/
