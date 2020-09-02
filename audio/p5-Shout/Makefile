@@ -11,6 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl glue for libshout MP3 streaming source library
 
+LICENSE=	NONE
+
 LIB_DEPENDS=	libshout.so:audio/libshout
 
 USES=		perl5 pkgconfig shebangfix
@@ -19,20 +21,20 @@ USE_PERL5=	configure
 DOCSDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 SHEBANG_FILES=	*.pl
 
-MAKE_ENV+=	DESTDIR="${STAGEDIR}"
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	${REINPLACE_CMD} -i '' -e 's/CCFLAGS/INC/' ${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -i '' -e 's/CCFLAGS/INC/' ${WRKSRC}/Makefile.PL
 
 post-configure:
 	@${PERL} -i -pe '$$_ .= " -lpthread" if /^LDDLFLAGS/;' \
 		${WRKSRC}/Makefile
 
-OPTIONS_DEFINE=	DOCS
-
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Shout/Shout.so
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Shout/Shout.so
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/example*.pl ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
