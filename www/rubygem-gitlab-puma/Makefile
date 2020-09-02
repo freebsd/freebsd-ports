@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-puma
-DISTVERSION=	4.3.3.gitlab.2
-PORTREVISION=	1
+PORTVERSION=	4.3.5.gitlab.3
+PORTREVISION=	0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
