@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cordless
-DISTVERSION=	2020-08-11
+DISTVERSION=	2020-08-30
 CATEGORIES=	net-im
 
 MAINTAINER=	vulcan@wired.sh
@@ -20,30 +20,31 @@ GH_TUPLE=	Bios-Marcel:discordemojimap:v1.0.1:bios_marcel_discordemojimap/vendor/
 		alecthomas:chroma:v0.6.6:alecthomas_chroma/vendor/github.com/alecthomas/chroma \
 		atotto:clipboard:v0.1.2:atotto_clipboard/vendor/github.com/atotto/clipboard \
 		danwakefield:fnmatch:cbb64ac3d964:danwakefield_fnmatch/vendor/github.com/danwakefield/fnmatch \
-		dlclark:regexp2:v1.1.6:dlclark_regexp2/vendor/github.com/dlclark/regexp2 \
+		dlclark:regexp2:v1.2.0:dlclark_regexp2/vendor/github.com/dlclark/regexp2 \
 		gdamore:encoding:v1.0.0:gdamore_encoding/vendor/github.com/gdamore/encoding \
-		gdamore:tcell:bac2bbc5b394:gdamore_tcell/vendor/github.com/gdamore/tcell \
-		gen2brain:beeep:aa3d7c1499fd:gen2brain_beeep/vendor/github.com/gen2brain/beeep \
+		gdamore:tcell:v1.4.0:gdamore_tcell/vendor/github.com/gdamore/tcell \
+		gen2brain:beeep:e9c15c258e28:gen2brain_beeep/vendor/github.com/gen2brain/beeep \
 		go-sourcemap:sourcemap:v1.0.5:go_sourcemap_sourcemap/vendor/gopkg.in/sourcemap.v1 \
-		go-toast:toast:0a84660828b2:go_toast_toast/vendor/gopkg.in/toast.v1 \
-		godbus:dbus:v4.1.0:godbus_dbus/vendor/github.com/godbus/dbus \
-		golang:crypto:75b288015ac9:golang_crypto/vendor/golang.org/x/crypto \
-		golang:sys:ed371f2e16b4:golang_sys/vendor/golang.org/x/sys \
+		go-toast:toast:01e6764cf0a4:go_toast_toast/vendor/github.com/go-toast/toast \
+		godbus:dbus:v5.0.3:godbus_dbus_v5/vendor/github.com/godbus/dbus/v5 \
+		golang:crypto:8e1b8d32e692:golang_crypto/vendor/golang.org/x/crypto \
+		golang:sys:669c56c373c4:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.0:golang_text/vendor/golang.org/x/text \
-		google:go-github:v29.0.2:google_go_github_v29/vendor/github.com/google/go-github/v29 \
+		google:go-github:v29.0.3:google_go_github_v29/vendor/github.com/google/go-github/v29 \
 		google:go-querystring:v1.0.0:google_go_querystring/vendor/github.com/google/go-querystring \
 		gopherjs:gopherjs:0210a2f0f73c:gopherjs_gopherjs/vendor/github.com/gopherjs/gopherjs \
 		gopherjs:gopherwasm:v1.1.0:gopherjs_gopherwasm/vendor/github.com/gopherjs/gopherwasm \
-		gorilla:websocket:v1.4.2:gorilla_websocket/vendor/github.com/gorilla/websocket \
+		gorilla:websocket:v1.4.0:gorilla_websocket/vendor/github.com/gorilla/websocket \
 		lucasb-eyer:go-colorful:v1.0.3:lucasb_eyer_go_colorful/vendor/github.com/lucasb-eyer/go-colorful \
 		mattn:go-runewidth:v0.0.9:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
 		mdp:qrterminal:v3.0.0:mdp_qrterminal_v3/vendor/github.com/mdp/qrterminal/v3 \
 		nu7hatch:gouuid:179d4d0c4d8d:nu7hatch_gouuid/vendor/github.com/nu7hatch/gouuid \
-		pkg:errors:v0.8.1:pkg_errors/vendor/github.com/pkg/errors \
+		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		rivo:uniseg:v0.1.0:rivo_uniseg/vendor/github.com/rivo/uniseg \
-		robertkrimen:otto:15f95af6e78d:robertkrimen_otto/vendor/github.com/robertkrimen/otto \
+		robertkrimen:otto:c382bd3c16ff:robertkrimen_otto/vendor/github.com/robertkrimen/otto \
 		rsc:qr:v0.2.0:rsc_qr/vendor/rsc.io/qr \
 		sergi:go-diff:v1.1.0:sergi_go_diff/vendor/github.com/sergi/go-diff \
+		skratchdot:open-golang:eef842397966:skratchdot_open_golang/vendor/github.com/skratchdot/open-golang \
 		tadvi:systray:11a2b8fa57af:tadvi_systray/vendor/github.com/tadvi/systray
 
 PLIST_FILES=	bin/${PORTNAME}
