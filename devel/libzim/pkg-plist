@@ -13,5 +13,5 @@ include/zim/writer/url.h
 include/zim/zim.h
 lib/libzim.so
 lib/libzim.so.%%PORTMAJ%%
-lib/libzim.so.%%PORTVERSION%%
+lib/libzim.so.6.2.0
 libdata/pkgconfig/libzim.pc
