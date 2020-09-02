@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rust-analyzer
-DISTVERSION=	2020-08-24
-PORTREVISION=	1
+DISTVERSION=	2020-08-31
 CATEGORIES=	devel
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -41,17 +40,17 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		crossbeam-channel-0.4.3 \
 		crossbeam-deque-0.7.3 \
 		crossbeam-epoch-0.8.2 \
-		crossbeam-queue-0.2.3 \
 		crossbeam-utils-0.7.2 \
 		difference-2.0.0 \
 		drop_bomb-0.1.5 \
 		either-1.6.0 \
 		ena-0.14.0 \
 		env_logger-0.7.1 \
-		expect-test-0.1.0 \
+		expect-test-1.0.0 \
 		filetime-0.2.12 \
 		fixedbitset-0.2.0 \
 		flate2-1.0.17 \
+		fs-err-2.3.0 \
 		fsevent-2.0.2 \
 		fsevent-sys-3.0.2 \
 		fst-0.4.4 \
@@ -76,7 +75,7 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
 		libc-0.2.76 \
-		libloading-0.6.2 \
+		libloading-0.6.3 \
 		libmimalloc-sys-0.1.16 \
 		lock_api-0.4.1 \
 		log-0.4.11 \
@@ -85,10 +84,11 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		matchers-0.0.1 \
 		matches-0.1.8 \
 		maybe-uninit-2.0.0 \
+		memchr-2.3.3 \
 		memmap-0.7.0 \
 		memoffset-0.5.5 \
 		mimalloc-0.1.20 \
-		miniz_oxide-0.4.0 \
+		miniz_oxide-0.4.1 \
 		mio-0.6.22 \
 		mio-extras-2.0.6 \
 		miow-0.2.1 \
@@ -104,14 +104,16 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		parking_lot_core-0.8.0 \
 		percent-encoding-2.1.0 \
 		perf-event-0.4.5 \
-		perf-event-open-sys-1.0.0 \
+		perf-event-open-sys-1.0.1 \
 		petgraph-0.5.1 \
 		pico-args-0.3.4 \
 		plain-0.2.3 \
 		proc-macro2-1.0.19 \
+		pulldown-cmark-0.7.2 \
+		pulldown-cmark-to-cmark-5.0.0 \
 		quote-1.0.7 \
-		rayon-1.3.1 \
-		rayon-core-1.7.1 \
+		rayon-1.4.0 \
+		rayon-core-1.8.0 \
 		redox_syscall-0.1.57 \
 		regex-1.3.9 \
 		regex-automata-0.1.9 \
@@ -138,29 +140,32 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		slab-0.4.2 \
 		smallvec-1.4.2 \
 		smol_str-0.1.16 \
-		syn-1.0.38 \
+		syn-1.0.39 \
 		synstructure-0.12.4 \
 		termcolor-1.1.0 \
 		text-size-1.0.0 \
 		thin-dst-1.1.0 \
 		thread_local-1.0.1 \
 		threadpool-1.8.1 \
-		time-0.1.43 \
+		time-0.1.44 \
 		tinyvec-0.3.4 \
 		tracing-0.1.19 \
 		tracing-attributes-0.1.11 \
-		tracing-core-0.1.14 \
+		tracing-core-0.1.15 \
 		tracing-log-0.1.1 \
 		tracing-serde-0.1.1 \
 		tracing-subscriber-0.2.11 \
 		tracing-tree-0.1.5 \
-		ungrammar-1.1.2 \
+		ungrammar-1.1.4 \
+		unicase-2.6.0 \
 		unicode-bidi-0.3.4 \
 		unicode-normalization-0.1.13 \
 		unicode-segmentation-1.6.0 \
 		unicode-xid-0.2.1 \
 		url-2.1.1 \
+		version_check-0.9.2 \
 		walkdir-2.3.1 \
+		wasi-0.10.0+wasi-snapshot-preview1 \
 		winapi-0.2.8 \
 		winapi-0.3.9 \
 		winapi-build-0.1.1 \
