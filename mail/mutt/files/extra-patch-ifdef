@@ -1,10 +1,10 @@
---- PATCHES.orig	2020-05-05 02:09:32 UTC
+--- PATCHES.orig	2020-08-29 22:13:50 UTC
 +++ PATCHES
 @@ -0,0 +1 @@
 +patch-1.5.4.cd.ifdef.1
---- init.c.orig	2020-05-02 21:08:56 UTC
+--- init.c.orig	2020-08-29 19:37:53 UTC
 +++ init.c
-@@ -643,6 +643,52 @@ static mbchar_table *parse_mbchar_table (const char *s
+@@ -648,6 +648,52 @@ static mbchar_table *parse_mbchar_table (const char *s
    return t;
  }
  
@@ -57,7 +57,7 @@
  static int parse_unignore (BUFFER *buf, BUFFER *s, union pointer_long_t udata, BUFFER *err)
  {
    do
---- init.h.orig	2020-05-05 02:09:32 UTC
+--- init.h.orig	2020-08-29 22:13:50 UTC
 +++ init.h
 @@ -4594,6 +4594,7 @@ static int parse_lists (BUFFER *, BUFFER *, union poin
  static int parse_unlists (BUFFER *, BUFFER *, union pointer_long_t, BUFFER *);
