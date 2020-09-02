@@ -2,6 +2,7 @@
 
 PORTNAME=	towncrier
 PORTVERSION=	19.2.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,6 +23,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}toml>=0:textproc/py-toml@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils concurrent autoplist
 
 .include <bsd.port.mk>
