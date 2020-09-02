@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	FAudio
-DISTVERSION=	20.08
+DISTVERSION=	20.09
 CATEGORIES=	audio
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -10,17 +10,23 @@ COMMENT=	Accuracy-focused XAudio reimplementation
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
-
 USES=		cmake compiler:c11 sdl
 USE_GITHUB=	yes
 GH_ACCOUNT=	FNA-XNA
 USE_LDCONFIG=	yes
 USE_SDL=	sdl2
 
-CMAKE_ON=	FFMPEG
-
 PLIST_SUB=	SOVERSION=${DISTVERSION:S,., ,g:[1..2]:ts.}
+
+OPTIONS_DEFINE=		GSTREAMER
+OPTIONS_DEFAULT=	GSTREAMER
+
+GSTREAMER_DESC=	WMA/XMA support via GStreamer
+
+GSTREAMER_USES=		gettext-runtime pkgconfig
+GSTREAMER_USE=		GNOME=glib20 \
+			GSTREAMER1=yes
+GSTREAMER_CMAKE_BOOL=	GSTREAMER
 
 do-test:
 	@cd ${BUILD_WRKSRC} && \
