@@ -1,0 +1,4 @@
+Ansible module for the iocage utility: convenient, lightweight
+and easy jail management.
+
+WWW: https://github.com/fractalcells/ansible-iocage

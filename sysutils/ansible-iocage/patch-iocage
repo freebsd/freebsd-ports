@@ -1,0 +1,27 @@
+See: https://github.com/fractalcells/ansible-iocage/pull/18
+--- iocage.orig	2019-11-03 14:19:54 UTC
++++ iocage
+@@ -148,10 +148,11 @@ def _get_iocage_facts(module, iocage_path, argument="a
+                 # non-iocage jails: skip all
+                 break
+             elif re.match('(\d+|-)',_jid):
+-                if l.count('\t') == 10:
+-                    (_jid,_name,_boot,_state,_type,_release,_ip4,_ip6,_template,_basejail) = l.split('\t')
++                _fragments = l.split('\t')
++                if len(_fragments) == 10:
++                    (_jid,_name,_boot,_state,_type,_release,_ip4,_ip6,_template,_basejail) = _fragments
+                 else:
+-                    (_jid,_name,_boot,_state,_type,_release,_ip4,_ip6,_template) = l.split('\t')
++                    (_jid,_name,_boot,_state,_type,_release,_ip4,_ip6,_template) = _fragments
+                 if _name != "":
+                     _properties = _jail_get_properties(module, iocage_path, _name)
+                     _jails[_name] = { "jid": _jid, "name": _name, "state": _state, "properties": _properties }
+@@ -504,7 +505,7 @@ def main():
+             cmd          = dict(default="", required=False),
+             clone_from   = dict(default="", required=False),
+             release      = dict(default="", required=False),
+-            update       = dict(default="", required=False, type='bool'),
++            update       = dict(default=False, required=False, type='bool'),
+             components   = dict(default="", aliases=["files","component"], required=False, type='list')),
+         supports_check_mode = True
+     )
