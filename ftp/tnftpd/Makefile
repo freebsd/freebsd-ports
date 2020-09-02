@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tnftpd
-PORTVERSION=	20130325
+PORTVERSION=	20200704
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/misc/tnftp/
 
@@ -12,15 +12,18 @@ COMMENT=	Enhanced FTP server from NetBSD
 USES=		autoreconf libtool
 GNU_CONFIGURE=	yes
 
-CFLAGS+=	-DSUPPORT_UTMPX
+CFLAGS+=	-DSUPPORT_UTMPX -fcommon
+
+SUB_FILES=	pkg-message
 
 PLIST_FILES=	libexec/tnftpd \
-		man/man5/ftpd.conf.5.gz man/man5/ftpusers.5.gz man/man8/tnftpd.8.gz
-PORTDOCS=	ChangeLog NEWS README THANKS COPYING
+		man/man5/ftpd.conf.5.gz \
+		man/man5/ftpusers.5.gz \
+		man/man8/tnftpd.8.gz
+PORTDOCS=	COPYING ChangeLog NEWS README THANKS
 PORTEXAMPLES=	ftpd.conf ftpusers
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
-SUB_FILES=	pkg-message
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/tnftpd ${STAGEDIR}${PREFIX}/libexec
