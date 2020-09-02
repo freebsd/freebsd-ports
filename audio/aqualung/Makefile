@@ -53,4 +53,10 @@ SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
 SNDIO_CONFIGURE_ON=	--with-sndio=yes
 SNDIO_CONFIGURE_OFF=	--with-sndio=no
 
+post-patch:
+# Remove unused duplicate global symbols (-fno-common)
+	@${REINPLACE_CMD} -E '/^g?char command/d' \
+		${WRKSRC}/src/gui_main.c \
+		${WRKSRC}/src/playlist.c
+
 .include <bsd.port.mk>
