@@ -2,6 +2,7 @@
 
 PORTNAME=	hledger-ui
 DISTVERSION=	1.18.1
+PORTREVISION=	1
 CATEGORIES=	finance haskell
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,7 +20,7 @@ USE_CABAL=	\
 		Only-0.1_1 \
 		QuickCheck-2.14.1 \
 		StateVar-1.2 \
-		aeson-1.5.3.0 \
+		aeson-1.5.4.0 \
 		aeson-pretty-0.8.8 \
 		ansi-terminal-0.11 \
 		ansi-wl-pprint-0.6.9_2 \
@@ -56,12 +57,11 @@ USE_CABAL=	\
 		data-fix-0.3.0 \
 		distributive-0.6.2_2 \
 		dlist-1.0 \
-		exceptions-0.10.4_1 \
-		extra-1.7.6 \
+		extra-1.7.7 \
 		fgl-5.7.0.3 \
 		file-embed-0.0.13.0 \
 		fsnotify-0.3.0.1_1 \
-		happy-1.19.12 \
+		happy-1.20.0 \
 		hashable-1.3.0.0_1 \
 		hashtables-1.2.3.4 \
 		haskell-lexer-1.1 \
@@ -85,16 +85,16 @@ USE_CABAL=	\
 		parser-combinators-1.2.1 \
 		pretty-show-1.10 \
 		primitive-0.7.1.0 \
-		random-1.2.0 \
+		random-1.2.0_1 \
 		regex-base-0.94.0.0_1 \
 		regex-tdfa-1.3.1.0_1 \
 		safe-0.3.19 \
 		scientific-0.3.6.2 \
-		shakespeare-2.0.24.1 \
+		shakespeare-2.0.25 \
 		split-0.2.3.4 \
 		splitmix-0.1.0.1 \
 		strict-0.4 \
-		tabular-0.2.2.7 \
+		tabular-0.2.2.8 \
 		tagged-0.8.6_2 \
 		tasty-1.3.1 \
 		tasty-hunit-0.10.0.2 \
