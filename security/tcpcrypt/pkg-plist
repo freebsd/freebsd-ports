@@ -1,6 +1,6 @@
 bin/tcnetstat
 bin/tcpcryptd
-include/tcpcrypt/socket_address.h
+bin/tcs
 include/tcpcrypt/tcpcrypt.h
 lib/libtcpcrypt.a
 lib/libtcpcrypt.so
