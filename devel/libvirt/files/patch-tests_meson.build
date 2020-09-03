@@ -1,0 +1,16 @@
+--- tests/meson.build.orig	2020-09-03 01:56:27 UTC
++++ tests/meson.build
+@@ -10,11 +10,13 @@ tests_dep = declare_dependency(
+     dlopen_dep,
+     glib_dep,
+     gnutls_dep,
++    kvm_dep,
+     libnl_dep,
+     libxml_dep,
+     rpc_dep,
+     sasl_dep,
+     selinux_dep,
++    util_dep,
+     xdr_dep,
+     yajl_dep,
+   ],
