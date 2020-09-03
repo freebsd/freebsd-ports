@@ -19,11 +19,16 @@ USES=		cmake compiler:c++11-lang gettext kde:5 pkgconfig \
 		qt:5 tar:xz
 USE_KDE=	config coreaddons ecm i18n kio marble service textwidgets
 USE_QT=		concurrent core dbus declarative gui location network \
-		printsupport webchannel webengine webkit widgets xml \
+		printsupport webchannel webkit widgets xml \
 		buildtools_build qmake_build
 
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS WEBENGINE
+OPTIONS_DEFAULT_amd64=	WEBENGINE
+OPTIONS_DEFAULT_i386=	WEBENGINE
+
+WEBENGINE_DESC=	Add dependency on qt5-webengine
+WEBENGINE_USE=	QT=webengine
 
 .include <bsd.port.mk>
