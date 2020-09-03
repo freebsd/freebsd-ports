@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	tar-stream-chunker
-PORTVERSION=	1.0.6
+PORTVERSION=	1.0.7
 CATEGORIES=	archivers
 
 MAINTAINER=	igor.ostapenko@pm.me
