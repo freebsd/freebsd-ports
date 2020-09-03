@@ -1,4 +1,3 @@
-etc/rc.d/rubywarden-api
 %%WWWDIR%%/.gitignore
 %%WWWDIR%%/API.md
 %%WWWDIR%%/AR-MIGRATE.md
