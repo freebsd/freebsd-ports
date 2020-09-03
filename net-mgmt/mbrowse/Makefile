@@ -2,13 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	mbrowse
-PORTVERSION=	0.4.0
-PORTREVISION=	4
+PORTVERSION=	0.4.3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	eg@fbsd.lt
 COMMENT=	SNMP MIB Browser for X
+
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 
