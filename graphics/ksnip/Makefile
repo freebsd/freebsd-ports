@@ -23,4 +23,6 @@ USE_QT=		concurrent core dbus gui network printsupport svg testlib \
 		buildtools_build linguisttools_build qmake_build
 USE_XORG=	x11 xcb
 
+PORTSCOUT=	limit:^[0-9]
+
 .include <bsd.port.mk>
