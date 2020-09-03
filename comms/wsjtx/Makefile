@@ -2,7 +2,7 @@
 
 PORTNAME=	wsjtx
 DISTVERSION=	2.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/wsjt/${PORTNAME}-${PORTVERSION}${DISTVERSIONSUFFIX}
 
@@ -30,6 +30,8 @@ USE_QT=		core gui network widgets \
 
 CMAKE_ARGS+=	-DCMAKE_PREFIX_PATH+=${LOCALBASE}/wsjtx/lib \
 		-DLOCALBASE::STRING="${LOCALBASE}"
+# for detailed debugging uncomment the next line
+#CMAKE_ARGS+=   --debug-output --trace
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
 _PATCHES=	wsjtx.patch hamlib.patch
@@ -44,7 +46,7 @@ post-patch:
 
 post-build:
 	# With cmake 3.18, the patching stage in the internal build
-	# is ran again, trick it by removing the patch again.
+	# is run again, trick it by removing the patch again.
 .  for _patch in ${_PATCHES}
 	${MV} ${WRKSRC}/${_patch}.orig  ${WRKSRC}/${_patch}
 .  endfor
