@@ -3,7 +3,6 @@ bin/1dAstrip
 bin/1dBandpass
 bin/1dBport
 bin/1dCorrelate
-bin/1dDW_Grad_o_Mat
 bin/1dDW_Grad_o_Mat++
 bin/1dFlagMotion
 bin/1dGC.R
@@ -42,15 +41,12 @@ bin/3dAFNItoANALYZE
 bin/3dAFNItoNIFTI
 bin/3dAFNItoNIML
 bin/3dAFNItoRaw
-bin/3dANALYZEtoAFNI
 bin/3dANOVA
 bin/3dANOVA2
 bin/3dANOVA3
-bin/3dAOV.R
 bin/3dAcost
 bin/3dAllineate
 bin/3dAmpToRSFC
-bin/3dAnatNudge
 bin/3dAnhist
 bin/3dAttribute
 bin/3dAutoTcorrelate
@@ -71,7 +67,6 @@ bin/3dClusterize
 bin/3dCompareAffine
 bin/3dConformist
 bin/3dConvolve
-bin/3dCountSpikes
 bin/3dDFT
 bin/3dDTeig
 bin/3dDTtoDWI
@@ -79,7 +74,6 @@ bin/3dDTtoNoisyDWI
 bin/3dDWItoDT
 bin/3dDWUncert
 bin/3dDeconvolve
-bin/3dDeconvolve_f
 bin/3dDegreeCentrality
 bin/3dDespike
 bin/3dDetrend
@@ -93,9 +87,7 @@ bin/3dExtractGroupInCorr
 bin/3dExtrema
 bin/3dFDR
 bin/3dFFT
-bin/3dFWHM
 bin/3dFWHMx
-bin/3dFourier
 bin/3dFriedman
 bin/3dGC.R
 bin/3dGenFeatureDist
@@ -107,7 +99,6 @@ bin/3dHist
 bin/3dICA.R
 bin/3dICC
 bin/3dICC.R
-bin/3dICC_REML.R
 bin/3dISC
 bin/3dISC.R
 bin/3dIntracranial
@@ -139,7 +130,6 @@ bin/3dMVM_validator
 bin/3dMannWhitney
 bin/3dMaskToASCII
 bin/3dMatch
-bin/3dMax
 bin/3dMean
 bin/3dMedianFilter
 bin/3dMultiThresh
@@ -160,7 +150,6 @@ bin/3dPFM.R
 bin/3dPVmap
 bin/3dPeriodogram
 bin/3dPolyfit
-bin/3dProbTrackID
 bin/3dPval
 bin/3dQwarp
 bin/3dREMLfit
@@ -214,13 +203,11 @@ bin/3dTto1D
 bin/3dTwotoComplex
 bin/3dUndump
 bin/3dUnifize
-bin/3dUniformize
 bin/3dUpsample
 bin/3dVecRGB_to_HSL
 bin/3dVol2Surf
 bin/3dWarp
 bin/3dWarpDrive
-bin/3dWavelets
 bin/3dWilcoxon
 bin/3dWinsor
 bin/3dXClustSim
@@ -232,7 +219,6 @@ bin/3dZipperZapper
 bin/3dZregrid
 bin/3danisosmooth
 bin/3daxialize
-bin/3dbuc2fim
 bin/3dbucket
 bin/3dcalc
 bin/3dclust
@@ -240,9 +226,7 @@ bin/3dcopy
 bin/3ddelay
 bin/3ddot
 bin/3ddot_beta
-bin/3ddup
 bin/3dedge3
-bin/3dfim
 bin/3dfim+
 bin/3dfractionize
 bin/3dhistog
@@ -258,10 +242,8 @@ bin/3dmatmult
 bin/3dmaxima
 bin/3dmerge
 bin/3dnewid
-bin/3dnoise
 bin/3dnvals
 bin/3dpc
-bin/3dproject
 bin/3drefit
 bin/3drename
 bin/3dresample
@@ -270,7 +252,6 @@ bin/3drotate
 bin/3dsvm
 bin/3dsvm_linpredict
 bin/3dtoXdataset
-bin/3dttest
 bin/3dttest++
 bin/3dvolreg
 bin/4swap
@@ -291,7 +272,6 @@ bin/@ClustExp_CatLab
 bin/@ClustExp_run_shiny
 bin/@CommandGlobb
 bin/@DO.examples
-bin/@DTI_studio_reposition
 bin/@DeblankFileNames
 bin/@DiceMetric
 bin/@DriveAfni
@@ -359,7 +339,6 @@ bin/@SurfSmooth.HEAT_07.examples
 bin/@T1scale
 bin/@TimeDiff
 bin/@ToRAI
-bin/@UpdateAfni
 bin/@VolCenter
 bin/@afni.run.me
 bin/@afni_R_package_install
@@ -369,7 +348,6 @@ bin/@afni_refacer_make_onebigA12
 bin/@afni_refacer_run
 bin/@align_partial_oblique
 bin/@animal_warper
-bin/@auto_align
 bin/@auto_tlrc
 bin/@build_afni_Xlib
 bin/@chauffeur_afni
@@ -404,7 +382,6 @@ bin/@grayplot
 bin/@help.AFNI
 bin/@isOblique
 bin/@make_plug_diff
-bin/@make_stim_file
 bin/@measure_bb_thick
 bin/@measure_erosion_thick
 bin/@measure_in2out
@@ -415,7 +392,6 @@ bin/@parse_name
 bin/@radial_correlate
 bin/@simulate_motion
 bin/@snapshot_volreg
-bin/@snapshot_volreg3
 bin/@statauxcode
 bin/@suma_acknowledge
 bin/@suma_reprefixize_spec
@@ -430,7 +406,6 @@ bin/AFNI_atlas_spaces.niml
 bin/AFNI_version.txt
 bin/AFNIio.R
 bin/AFNIplot.R
-bin/AlphaSim
 bin/AnalyzeTrace
 bin/BayesianGroupAna.R
 bin/BayesianGroupAna.py
@@ -445,18 +420,14 @@ bin/ConvexHull
 bin/CreateIcosahedron
 bin/DTIStudioFibertoSegments
 bin/Dimon
-bin/Dimon1
-bin/DoPerRoi.py
 bin/DriveSuma
 bin/ExamineXmat
 bin/ExamineXmat.R
 bin/FATCAT_matplot
-bin/FD2
 bin/FIRdesign
 bin/FSread_annot
 bin/GLTsymtest
 bin/HalloSuma
-bin/Ifile
 bin/InstaTract
 bin/IsoSurface
 bin/Level2.R
@@ -498,7 +469,6 @@ bin/Xphace
 bin/abids_json_info.py
 bin/abids_json_tool.py
 bin/abids_tool.py
-bin/abut
 bin/adjunct_aw_tableize_roi_info.py
 bin/adjunct_calc_mont_dims.py
 bin/adjunct_combine_str.py
@@ -515,7 +485,6 @@ bin/afni_history
 bin/afni_open
 bin/afni_proc.py
 bin/afni_python_wrapper.py
-bin/afni_restproc.py
 bin/afni_run_R
 bin/afni_seeds_per_space.txt
 bin/afni_skeleton.py
@@ -530,7 +499,6 @@ bin/auto_warp.py
 bin/byteorder
 bin/cat_matvec
 bin/ccalc
-bin/check_dset_for_fs.py
 bin/cifti_tool
 bin/column_cat
 bin/convert_cdiflist_to_grads.py
@@ -544,15 +512,12 @@ bin/dicom_hinfo
 bin/dicom_to_raw
 bin/dsetstat2p
 bin/eg_main_chrono.py
-bin/ent16
 bin/epi_b0_correct.py
-bin/fat_lat_csv.py
 bin/fat_mat2d_plot.py
 bin/fat_mat_sel.py
 bin/fat_mat_tableize.py
 bin/fat_mvm_gridconv.py
 bin/fat_mvm_prep.py
-bin/fat_mvm_review.py
 bin/fat_mvm_scripter.py
 bin/fat_proc_align_anat_pair
 bin/fat_proc_axialize_anat
@@ -562,7 +527,6 @@ bin/fat_proc_convert_dcm_dwis
 bin/fat_proc_decmap
 bin/fat_proc_dwi_to_dt
 bin/fat_proc_filter_dwis
-bin/fat_proc_grad_plot
 bin/fat_proc_imit2w_from_t1w
 bin/fat_proc_map_to_dti
 bin/fat_proc_select_vols
@@ -573,8 +537,6 @@ bin/file_tool
 bin/fim2
 bin/float_scan
 bin/from3d
-bin/ftosh
-bin/ge_header
 bin/gen_epi_review.py
 bin/gen_group_command.py
 bin/gen_ss_review_scripts.py
@@ -599,14 +561,11 @@ bin/imstack
 bin/imstat
 bin/imupsam
 bin/inspec
-bin/lpc_align.py
 bin/make_pq_script.py
 bin/make_random_timing.py
 bin/make_stim_times.py
 bin/map_TrackID
-bin/mayo_analyze
 bin/meica.py
-bin/mritopgm
 bin/mycat
 bin/myget
 bin/neuro_deconvolve.py
@@ -638,10 +597,8 @@ bin/rotcom
 bin/rtfeedme
 bin/serial_helper
 bin/sfim
-bin/siemens_vision
 bin/slow_surf_clustsim.py
 bin/smooth.R
-bin/sqwave
 bin/stimband
 bin/strblast
 bin/suma
@@ -690,6 +647,7 @@ include/afni/mri_warpfield.h
 include/afni/mrilib.h
 include/afni/multivector.h
 include/afni/nifti1.h
+include/afni/nifti2.h
 include/afni/nifti2_io.h
 include/afni/nifticdf.h
 include/afni/niml.h
@@ -745,7 +703,6 @@ lib/afni/model_trnglwave_apf.so
 lib/afni/model_zero.so
 lib/afni/plug_3Ddump_V2.so
 lib/afni/plug_3ddot.so
-lib/afni/plug_3ddup.so
 lib/afni/plug_3dsvm.so
 lib/afni/plug_4Ddump.so
 lib/afni/plug_L1fit.so
@@ -823,10 +780,8 @@ lib/afni/plug_zeropad.so
 %%PYTHON_SITELIBDIR%%/afnipy/lib_csv.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_decay_timing.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_dti_sundry.py
-%%PYTHON_SITELIBDIR%%/afnipy/lib_fat_Rfactor.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_fat_funcs.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_fat_plot_sel.py
-%%PYTHON_SITELIBDIR%%/afnipy/lib_fs.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_gershgorin.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_info_dict.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_mat2d_base.py
