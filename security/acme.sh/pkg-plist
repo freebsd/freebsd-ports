@@ -18,6 +18,7 @@ sbin/acme.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/deploy/mysqld.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/deploy/nginx.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/deploy/opensshd.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/deploy/openstack.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/deploy/panos.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/deploy/pureftpd.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/deploy/qiniu.sh
@@ -73,6 +74,7 @@ sbin/acme.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_gd.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_gdnsdk.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_he.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_hetzner.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_hexonet.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_hostingde.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_infoblox.sh
@@ -81,6 +83,7 @@ sbin/acme.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_ispconfig.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_jd.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_joker.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_kappernet.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_kas.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_kinghost.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_knot.sh
@@ -103,7 +106,9 @@ sbin/acme.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_nederhost.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_neodigit.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_netcup.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_netlify.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_nic.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_njalla.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_nm.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_nsd.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_nsone.sh
@@ -112,6 +117,7 @@ sbin/acme.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_one.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_online.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_openprovider.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_openstack.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_opnsense.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_ovh.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_pdns.sh
@@ -125,6 +131,7 @@ sbin/acme.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_servercow.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_tele3.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_ultra.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_transip.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_unoeuro.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_variomedia.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_vscale.sh
@@ -144,6 +151,7 @@ sbin/acme.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/notify/sendgrid.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/notify/slack.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/notify/smtp.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notify/teams.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/notify/xmpp.sh
 @sample(acme,acme,0640) /var/db/acme/.acme.sh/account.conf.sample
 %%PORTEXAMPLES%%/var/db/acme/.acme.sh/deploy
