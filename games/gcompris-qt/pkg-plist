@@ -183,12 +183,14 @@ share/doc/HTML/en/gcompris-qt/traffic-select-mode.png
 %%DATADIR%%/translations/gcompris_ga.qm
 %%DATADIR%%/translations/gcompris_gd.qm
 %%DATADIR%%/translations/gcompris_gl.qm
+%%DATADIR%%/translations/gcompris_he.qm
 %%DATADIR%%/translations/gcompris_hi.qm
 %%DATADIR%%/translations/gcompris_hu.qm
 %%DATADIR%%/translations/gcompris_id.qm
 %%DATADIR%%/translations/gcompris_it.qm
 %%DATADIR%%/translations/gcompris_ja.qm
 %%DATADIR%%/translations/gcompris_ko.qm
+%%DATADIR%%/translations/gcompris_lt.qm
 %%DATADIR%%/translations/gcompris_lv.qm
 %%DATADIR%%/translations/gcompris_mk.qm
 %%DATADIR%%/translations/gcompris_ml.qm
