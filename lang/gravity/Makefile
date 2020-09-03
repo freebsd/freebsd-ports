@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gravity
-DISTVERSION=	0.7.8
+DISTVERSION=	0.7.9
 CATEGORIES=	lang
 PKGNAMESUFFIX=	-lang
 
@@ -15,6 +15,8 @@ USES=		cmake compiler:c11
 USE_GITHUB=	yes
 GH_ACCOUNT=	marcobambini
 
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} \
+		lib/libgravityapi.so \
+		lib/libgravityapi_s.a
 
 .include <bsd.port.mk>
