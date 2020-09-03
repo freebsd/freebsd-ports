@@ -1,6 +1,6 @@
 Revert https://github.com/yuzu-emu/yuzu/commit/2a3d4cad63f8
 
---- .gitmodules.orig	2020-06-29 05:12:38 UTC
+--- .gitmodules.orig	2020-09-02 16:49:39 UTC
 +++ .gitmodules
 @@ -13,9 +13,6 @@
  [submodule "soundtouch"]
@@ -9,9 +9,9 @@ Revert https://github.com/yuzu-emu/yuzu/commit/2a3d4cad63f8
 -[submodule "libressl"]
 -    path = externals/libressl
 -    url = https://github.com/citra-emu/ext-libressl-portable.git
- [submodule "discord-rpc"]
-     path = externals/discord-rpc
-     url = https://github.com/discordapp/discord-rpc.git
+ [submodule "libusb"]
+ 	path = externals/libusb/libusb
+ 	url = https://github.com/libusb/libusb.git
 --- CMakeLists.txt.orig	2020-06-30 00:16:03 UTC
 +++ CMakeLists.txt
 @@ -152,6 +152,7 @@ macro(yuzu_find_packages)
