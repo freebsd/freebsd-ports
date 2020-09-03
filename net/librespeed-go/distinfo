@@ -1,6 +1,6 @@
-TIMESTAMP = 1598627021
-SHA256 (librespeed-speedtest-go-v1.1.0_GH0.tar.gz) = 1a3c536e608c687bf70dfbc7ee6028030054b40b56bdac3e10317c8cd9b32835
-SIZE (librespeed-speedtest-go-v1.1.0_GH0.tar.gz) = 2240907
+TIMESTAMP = 1599161588
+SHA256 (librespeed-speedtest-go-v1.1.1_GH0.tar.gz) = 9ccbe9c19e5b43ad2e547a505653e4e3c6b499723e10e05e12baf4459e22e36f
+SIZE (librespeed-speedtest-go-v1.1.1_GH0.tar.gz) = 2240967
 SHA256 (etcd-io-bbolt-v1.3.5_GH0.tar.gz) = 63fed2e9bbdcc2aa279c2a7ea4a59c39bc21616ec2c96abff0020872beb3dbad
 SIZE (etcd-io-bbolt-v1.3.5_GH0.tar.gz) = 96494
 SHA256 (fsnotify-fsnotify-v1.4.9_GH0.tar.gz) = 4f888b1cb132026227826751d156c0a2958e7d492e5e38386cde8848ef494dcb
@@ -55,3 +55,5 @@ SHA256 (spf13-viper-v1.7.1_GH0.tar.gz) = de85215b50e9fbb2cdf63b0aa9df826a866dff8
 SIZE (spf13-viper-v1.7.1_GH0.tar.gz) = 82641
 SHA256 (subosito-gotenv-v1.2.0_GH0.tar.gz) = 5f6826992c11981018c77377f33dbc56d0be932e0d38a2f51e795c99725e7ba5
 SIZE (subosito-gotenv-v1.2.0_GH0.tar.gz) = 7359
+SHA256 (umahmood-haversine-808ab04add26_GH0.tar.gz) = 8a122ea546c13278ea4f3029ad6e8041b301687e1bc6b75582d541f05620f598
+SIZE (umahmood-haversine-808ab04add26_GH0.tar.gz) = 3364

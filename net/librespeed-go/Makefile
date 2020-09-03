@@ -2,7 +2,7 @@
 
 PORTNAME=	librespeed-go
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.0
+DISTVERSION=	1.1.1
 CATEGORIES=	net www
 
 MAINTAINER=	driesm.michiels@gmail.com
@@ -42,7 +42,8 @@ GH_TUPLE=	etcd-io:bbolt:v1.3.5:etcd_io_bbolt/vendor/go.etcd.io/bbolt \
 		spf13:jwalterweatherman:v1.1.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		spf13:viper:v1.7.1:spf13_viper/vendor/github.com/spf13/viper \
-		subosito:gotenv:v1.2.0:subosito_gotenv/vendor/github.com/subosito/gotenv
+		subosito:gotenv:v1.2.0:subosito_gotenv/vendor/github.com/subosito/gotenv \
+		umahmood:haversine:808ab04add26:umahmood_haversine/vendor/github.com/umahmood/haversine
 
 USERS=		librespeed
 GROUPS=		librespeed
