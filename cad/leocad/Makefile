@@ -30,4 +30,6 @@ PLIST_FILES=	bin/leocad \
 		share/mime/packages/leocad.xml \
 		share/pixmaps/leocad.png
 
+PORTSCOUT=	limit:^[0-9\.]*$$ # to ignore the 'continuous'
+
 .include <bsd.port.mk>
