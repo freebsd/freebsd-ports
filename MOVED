@@ -15409,3 +15409,4 @@ security/scamp||2020-08-29|Removed at maintainer request, no longer viable
 graphics/gmt5|graphics/gmt|2020-08-29|Obsolete, please use graphics/gmt instead
 graphics/gmt5-dcw|graphics/gmt-dcw|2020-08-29|Rename to align port name with graphics/gmt
 graphics/gmt5-gshhg|graphics/gmt-gshhg|2020-08-29|Rename to align port name with graphics/gmt
+net/dhcpcd-devel|net/dhcpcd|2020-09-03|Development version no longer necessary following 9.1.0 stable release which saw dhcpcd capsicumized with privilege separation
