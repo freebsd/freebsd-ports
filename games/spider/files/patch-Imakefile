@@ -1,5 +1,5 @@
---- Imakefile.orig	Sat Sep 28 19:46:02 1991
-+++ Imakefile	Wed Oct 15 15:15:06 2003
+--- Imakefile.orig	1991-09-28 17:46:02 UTC
++++ Imakefile
 @@ -1,6 +1,6 @@
 -/**/# Run imake -DUseInstalled -I/usr/lib/X11/config to make a Makefile.
 -/**/# This is an R5 style Imakefile, so will need the R5 config files to
@@ -39,7 +39,7 @@
          XVTOP = $(XVIEWHOME)
          XVLIBSRC = $(XVTOP)/lib
  # if UseInstalled
-@@ -253,7 +253,7 @@
+@@ -253,7 +253,7 @@ MakeDirectories(install.man, $(MANDIR))
  ComplexProgramTarget($(TARGET))
  
  #ifdef SparcArchitecture

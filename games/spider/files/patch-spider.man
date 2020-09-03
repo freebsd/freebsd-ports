@@ -1,6 +1,6 @@
---- spider.man.orig	Sun Sep 29 02:46:06 1991
-+++ spider.man	Wed Jan 18 00:00:00 2000
-@@ -53,7 +53,7 @@
+--- spider.man.orig	1991-09-28 17:46:06 UTC
++++ spider.man
+@@ -53,7 +53,7 @@ is "true".
  Specifies the time (in microseconds) to pause between each move when
  showing a Replay.  The default is 200.
  .TP 8
