@@ -334,6 +334,16 @@ include/folly/experimental/observer/detail/ObserverManager.h
 include/folly/experimental/settings/Settings.h
 include/folly/experimental/settings/SettingsMetadata.h
 include/folly/experimental/settings/detail/SettingsImpl.h
+include/folly/experimental/symbolizer/Dwarf.h
+include/folly/experimental/symbolizer/Elf-inl.h
+include/folly/experimental/symbolizer/Elf.h
+include/folly/experimental/symbolizer/ElfCache.h
+include/folly/experimental/symbolizer/LineReader.h
+include/folly/experimental/symbolizer/SignalHandler.h
+include/folly/experimental/symbolizer/StackTrace.h
+include/folly/experimental/symbolizer/SymbolizePrinter.h
+include/folly/experimental/symbolizer/SymbolizedFrame.h
+include/folly/experimental/symbolizer/Symbolizer.h
 include/folly/external/farmhash/farmhash.h
 include/folly/fibers/AddTasks-inl.h
 include/folly/fibers/AddTasks.h
