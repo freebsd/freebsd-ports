@@ -5,7 +5,8 @@ PORTNAME=	stuffit
 PORTVERSION=	5.2.0.611
 PORTREVISION=	1
 CATEGORIES=	archivers linux
-MASTER_SITES=	http://my.smithmicro.com/downloads/files/
+MASTER_SITES=	https://webdiis.unizar.es/pub/unix/archive/ \
+		http://mirror.sobukus.de/files/grimoire/z-archive/
 DISTNAME=	stuffit520.611linux-i386
 
 MAINTAINER=	ports@FreeBSD.org
