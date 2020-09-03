@@ -1,13 +1,13 @@
---- hydra.h.orig	2019-01-02 12:38:23 UTC
+--- hydra.h.orig	2020-07-29 07:36:37 UTC
 +++ hydra.h
-@@ -38,10 +38,6 @@
-   #endif
+@@ -44,10 +44,6 @@
+ #endif
  #endif
  
 -#ifdef LIBSSH
--  #include <libssh/libssh.h>
+-#include <libssh/libssh.h>
 -#endif
 -
  #ifdef HAVE_ZLIB
-   #include <zlib.h>
+ #include <zlib.h>
  #endif
