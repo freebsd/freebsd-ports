@@ -239,6 +239,7 @@
     SUBDIR += texmacs
     SUBDIR += texmaker
     SUBDIR += texstudio
+    SUBDIR += textadept
     SUBDIR += texworks
     SUBDIR += the
     SUBDIR += thoteditor

@@ -1,0 +1,80 @@
+--- src/Makefile.orig	2020-08-01 05:21:40 UTC
++++ src/Makefile
+@@ -1,10 +1,9 @@
+ # Copyright 2007-2020 Mitchell mitchell.att.foicica.com. See LICENSE.
+ 
+-CC = gcc
+-CFLAGS = -Os
+-CXX = g++
+-CXXFLAGS = -Os -std=c++11
+-MAKE = make
++CC ?= gcc
++CFLAGS ?= -Os
++CXX ?= g++
++CXXFLAGS ?= -Os -std=c++11
+ ifeq (win, $(findstring win, $(MAKECMDGOALS)))
+   # Cross-compile for Win32.
+   CROSS = i686-w64-mingw32-
+@@ -60,20 +59,21 @@ else ifeq (osx, $(findstring osx, $(MAKECMDGOALS)))
+ else
+   # Build for Linux/BSD.
+   LUA_CFLAGS = -DLUA_USE_LINUX
+-  LDFLAGS = -rdynamic -Wl,--retain-symbols-file -Wl,$(shell pwd)/lua.sym
++  # See PR https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=220103
++  #LDFLAGS = -rdynamic -Wl,--retain-symbols-file -Wl,$(shell pwd)/lua.sym
+   ifeq (Linux, $(shell uname -s))
+     LDFLAGS += -ldl
+   else
+-    CC = cc
+-    CXX = c++
+-    LDFLAGS += -liconv
+-    MAKE = gmake
++    CC ?= cc
++    CXX ?= c++
++    # Correct spelling on FreeBSD is USES+=iconv :)
++    #LDFLAGS += -liconv
+   endif
+   PREFIX ?= /usr/local
+   bin_dir = $(PREFIX)/bin
+   data_dir = $(PREFIX)/share/textadept
+   XDG_DATA_DIR ?= $(PREFIX)/share/applications
+-  PIXMAPS_DIR ?= /usr/share/pixmaps
++  PIXMAPS_DIR ?= $(PREFIX)/share/pixmaps
+   desktop_files := $(wildcard *.desktop)
+   ifeq (, $(findstring curses, $(MAKECMDGOALS)))
+     plat_flag = -DGTK
+@@ -101,7 +101,7 @@ else
+ endif
+ version = $(shell grep -m 1 _RELEASE ../core/init.lua | cut -d ' ' -f4- | \
+                   tr ' ' '_' | tr -d "'")
+-WGET = wget -O $@
++WGET = : wget -O $@
+ 
+ # Scintilla.
+ 
+@@ -236,20 +236,21 @@ textadept-curses.exe: $(sci_objs) $(sci_lex_objs) LexL
+ 
+ # Install/uninstall.
+ 
+-install: $(install_targets) | ../core ../doc ../init.lua ../lexers ../LICENSE \
++install: $(install_targets) | ../core ../doc ../init.lua ../lexers \
+                               ../modules ../themes
+ 	install -d $(DESTDIR)$(bin_dir) $(DESTDIR)$(data_dir)
+ 	install $^ $(DESTDIR)$(data_dir)
+ 	cp -rL $| $(DESTDIR)$(data_dir)
+-	ln -s $(subst .., $(data_dir), $^) $(DESTDIR)$(bin_dir)
++	ln -s $(subst ..,..$(subst $(PREFIX),,$(data_dir)),$^) $(DESTDIR)$(bin_dir)
+ 	if [ -d "$(XDG_DATA_DIR)" ]; then \
+ 		install -d $(DESTDIR)$(XDG_DATA_DIR); \
+ 		install $(desktop_files) $(DESTDIR)$(XDG_DATA_DIR); \
+ 	fi
+ 	if [ -d "$(PIXMAPS_DIR)" ]; then \
+ 		install -d $(DESTDIR)$(PIXMAPS_DIR); \
+-		ln -s $(data_dir)/core/images/textadept.svg $(DESTDIR)$(PIXMAPS_DIR); \
+-		ln -s $(data_dir)/core/images/ta_48x48.png \
++		ln -s ../..$(subst $(PREFIX),,$(data_dir))/core/images/textadept.svg \
++			$(DESTDIR)$(PIXMAPS_DIR); \
++		ln -s ../..$(subst $(PREFIX),,$(data_dir))/core/images/ta_48x48.png \
+ 			$(DESTDIR)$(PIXMAPS_DIR)/textadept.png; \
+ 	fi
+ uninstall:
