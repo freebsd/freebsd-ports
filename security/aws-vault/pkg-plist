@@ -1,0 +1,5 @@
+bin/aws-vault
+%%YUBIKEY%%bin/aws-iam-create-yubikey-mfa.sh
+etc/bash_completion.d/aws-vault.bash
+share/fish/completions/aws-vault.fish
+share/zsh/site-functions/aws-vault.zsh
