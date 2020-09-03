@@ -1,4 +1,4 @@
-TIMESTAMP = 1598821562
+TIMESTAMP = 1599149253
 SHA256 (rust/crates/addr2line-0.13.0.tar.gz) = 1b6a2d3371669ab3ca9797670853d61402b03d0b4b9ebf33d677dfa720203072
 SIZE (rust/crates/addr2line-0.13.0.tar.gz) = 29996
 SHA256 (rust/crates/adler-0.2.2.tar.gz) = ccc9a9dd069569f212bc4330af9f17c4afb5e8ce185e83dbb14f1349dda18b10
@@ -285,5 +285,5 @@ SHA256 (rust/crates/x11-clipboard-0.3.3.tar.gz) = 89bd49c06c9eb5d98e6ba6536cf64a
 SIZE (rust/crates/x11-clipboard-0.3.3.tar.gz) = 7357
 SHA256 (rust/crates/xcb-0.8.2.tar.gz) = 5e917a3f24142e9ff8be2414e36c649d47d6cc2ba81f16201cdef96e533e02de
 SIZE (rust/crates/xcb-0.8.2.tar.gz) = 129071
-SHA256 (extrawurst-gitui-v0.10.0_GH0.tar.gz) = 79cb81dbe3c3293825e9f2be13e3455dd2e6d6289fd11b0a039f206acf6bf25c
-SIZE (extrawurst-gitui-v0.10.0_GH0.tar.gz) = 8149316
+SHA256 (extrawurst-gitui-v0.10.1_GH0.tar.gz) = 2d6fa87d88002716cf0fedef9d4332b7212ee05fbfa4b8c536ae4270bef99bce
+SIZE (extrawurst-gitui-v0.10.1_GH0.tar.gz) = 8149504
