@@ -2,7 +2,6 @@
 
 PORTNAME=	ark
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	archivers kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -42,6 +41,6 @@ ZIP_LIB_DEPENDS=	libzip.so:archivers/libzip
 ZIP_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_LibZip
 
 # Override shared library version
-KDE_APPLICATIONS_SHLIB_VER=20.8.0
+KDE_APPLICATIONS_SHLIB_VER=20.8.1
 
 .include <bsd.port.mk>

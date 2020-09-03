@@ -150,6 +150,8 @@ share/locale/pt_BR/LC_MESSAGES/fileviewgitplugin.mo
 share/locale/pt_BR/LC_MESSAGES/fileviewhgplugin.mo
 share/locale/pt_BR/LC_MESSAGES/fileviewsvnplugin.mo
 share/locale/pt_BR/LC_MESSAGES/mountisoaction.mo
+share/locale/ro/LC_MESSAGES/fileviewgitplugin.mo
+share/locale/ro/LC_MESSAGES/mountisoaction.mo
 share/locale/ru/LC_MESSAGES/fileviewbazaarplugin.mo
 share/locale/ru/LC_MESSAGES/fileviewgitplugin.mo
 share/locale/ru/LC_MESSAGES/fileviewhgplugin.mo

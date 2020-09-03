@@ -1,3 +1,3 @@
-TIMESTAMP = 1596814089
-SHA256 (KDE/release-service/20.08.0/akonadi-import-wizard-20.08.0.tar.xz) = d742ced3b498f39edff33f7fc73db1e882bf4b1e17b35d5f734f8732cb1e7bde
-SIZE (KDE/release-service/20.08.0/akonadi-import-wizard-20.08.0.tar.xz) = 505776
+TIMESTAMP = 1598945361
+SHA256 (KDE/release-service/20.08.1/akonadi-import-wizard-20.08.1.tar.xz) = d895c866a05f0a55ca8f2d852ed0ae3fdc13aa160cbcbaf9f1017443458d9526
+SIZE (KDE/release-service/20.08.1/akonadi-import-wizard-20.08.1.tar.xz) = 505800

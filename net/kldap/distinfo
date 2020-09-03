@@ -1,3 +1,3 @@
-TIMESTAMP = 1596814260
-SHA256 (KDE/release-service/20.08.0/kldap-20.08.0.tar.xz) = db358a6ec50f5d3988583096ccc5fe1389999b4dd3a3c787d7797f6e0b32ee53
-SIZE (KDE/release-service/20.08.0/kldap-20.08.0.tar.xz) = 164176
+TIMESTAMP = 1598945520
+SHA256 (KDE/release-service/20.08.1/kldap-20.08.1.tar.xz) = 098fb07b280ef25dcf04b18f627223014257f6c0874b2959f2a8e68cacdb74a7
+SIZE (KDE/release-service/20.08.1/kldap-20.08.1.tar.xz) = 164268
