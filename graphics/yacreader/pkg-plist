@@ -53,7 +53,5 @@ share/man/man1/YACReaderLibrary.1.gz
 %%DATADIR%%/server/docroot/images/up.png
 %%DATADIR%%/server/docroot/images/up@2x.png
 %%DATADIR%%/server/docroot/login.html
-%%DATADIR%%/server/templates/folder_ipad.tpl
-%%DATADIR%%/server/templates/folder_iphone.tpl
-%%DATADIR%%/server/templates/libraries_ipad.tpl
-%%DATADIR%%/server/templates/libraries_iphone.tpl
+%%DATADIR%%/server/templates/folder.tpl
+%%DATADIR%%/server/templates/libraries.tpl
