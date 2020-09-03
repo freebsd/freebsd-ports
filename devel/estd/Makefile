@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	estd
-DISTVERSION=	0.3.4
+DISTVERSION=	0.4.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,7 +10,10 @@ COMMENT=	Header-only C++ utilities in the style of the standard library
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake compiler:c++17-lang
+BUILD_DEPENDS=	catch>0:devel/catch
+RUN_DEPENDS=	catch>0:devel/catch
+
+USES=		cmake compiler:c++17-lang localbase
 USE_GITHUB=	yes
 GH_ACCOUNT=	fizyr
 

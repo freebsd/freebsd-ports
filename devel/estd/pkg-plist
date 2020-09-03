@@ -22,6 +22,7 @@ include/estd/range/detail/deref_proxy.hpp
 include/estd/range/enumerate.hpp
 include/estd/range/range.hpp
 include/estd/result.hpp
+include/estd/result/catch_string_conversions.hpp
 include/estd/result/detail/copyable.hpp
 include/estd/result/detail/map.hpp
 include/estd/result/detail/result_storage.hpp
