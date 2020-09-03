@@ -326,6 +326,7 @@ include/asterisk/udptl.h
 include/asterisk/ulaw.h
 include/asterisk/unaligned.h
 include/asterisk/uri.h
+include/asterisk/utf8.h
 include/asterisk/utils.h
 include/asterisk/uuid.h
 include/asterisk/vector.h
