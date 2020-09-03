@@ -25,6 +25,8 @@ CONFIGURE_ARGS=	--with-htmldir=${STAGEDIR}${PREFIX}/share/doc/hypermail \
 		--with-external-pcre=${LOCALBASE}/bin/pcre-config \
 		--enable-system-libtrio
 
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -L${LOCALBASE}/lib"
+
 MAKE_ARGS=	INSTALL_PROG=${INSTALL}
 
 OPTIONS_DEFINE=	DOCS
