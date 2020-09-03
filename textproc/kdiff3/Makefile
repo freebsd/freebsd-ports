@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kdiff3
-DISTVERSION=	1.8.3
+DISTVERSION=	1.8.4
 CATEGORIES=	textproc kde
 MASTER_SITES=	KDE/stable/${PORTNAME}
 
