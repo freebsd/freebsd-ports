@@ -1,10 +1,10 @@
-TIMESTAMP = 1598533511
-SHA256 (minio/minio-minio-2020.08.27.05.16.20-RELEASE.2020-08-27T05-16-20Z_GH0.tar.gz) = c68c3cd6d21ca8dcd88ba5ebec6742d5a1e9ee1fc6c67d81fc1b2744de725421
-SIZE (minio/minio-minio-2020.08.27.05.16.20-RELEASE.2020-08-27T05-16-20Z_GH0.tar.gz) = 10182498
-SHA256 (minio/Azure-azure-pipeline-go-v0.2.1_GH0.tar.gz) = 97738fe9fe1c5bab41b89fc97cef08537e53cd3f38f5686e3853d2aecb20133d
-SIZE (minio/Azure-azure-pipeline-go-v0.2.1_GH0.tar.gz) = 16378
-SHA256 (minio/Azure-azure-storage-blob-go-v0.8.0_GH0.tar.gz) = e50db03bc05b952159e0a1d393c841c217c3aecd6ce745f8b9c42fd498e476c7
-SIZE (minio/Azure-azure-storage-blob-go-v0.8.0_GH0.tar.gz) = 174822
+TIMESTAMP = 1599144376
+SHA256 (minio/minio-minio-2020.09.02.18.19.50-RELEASE.2020-09-02T18-19-50Z_GH0.tar.gz) = ce2f65b1e9690eb62223fdfd6fb5f875bf6644732bbb327eeb201b328a6e2401
+SIZE (minio/minio-minio-2020.09.02.18.19.50-RELEASE.2020-09-02T18-19-50Z_GH0.tar.gz) = 10183078
+SHA256 (minio/Azure-azure-pipeline-go-v0.2.2_GH0.tar.gz) = dc0d15949088e17e74da35c3ae2730f52240ad73e25cf795f532b7282de68e2f
+SIZE (minio/Azure-azure-pipeline-go-v0.2.2_GH0.tar.gz) = 16443
+SHA256 (minio/Azure-azure-storage-blob-go-v0.10.0_GH0.tar.gz) = e3d4304b9fcb7dc5911d648a236fa69c06cb3b33ffb05ac4be6bf3d69125f71e
+SIZE (minio/Azure-azure-storage-blob-go-v0.10.0_GH0.tar.gz) = 214912
 SHA256 (minio/Shopify-sarama-v1.24.1_GH0.tar.gz) = 12f19e13ef052ce07ea39d2619bfda725ae4d1c6254602424e1e6667df7720cb
 SIZE (minio/Shopify-sarama-v1.24.1_GH0.tar.gz) = 249989
 SHA256 (minio/StackExchange-wmi-cbe66965904d_GH0.tar.gz) = 14dbc4af6952acdb1b941d002cd36fd2299aa6b3144cbcbddbb032c47f816da5
