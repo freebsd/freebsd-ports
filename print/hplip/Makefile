@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	SF
 
-MAINTAINER=	woodsb02@FreeBSD.org
+MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	Drivers and utilities for HP printers and All-in-One devices
 
 LICENSE=	GPLv2+ MIT BSD3CLAUSE
