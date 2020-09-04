@@ -1,24 +1,10 @@
---- setup.py.orig	2020-08-18 15:00:41 UTC
+--- setup.py.orig      2020-08-30 11:47:16 UTC
 +++ setup.py
-@@ -35,12 +35,11 @@ GETMAILDOCDIR = os.path.join(
-     datadir or prefix,
-     'share',
-     'doc',
--    'getmail-%s' % __version__
-+    'getmail'
- )
- 
- GETMAILMANDIR = os.path.join(
-     datadir or prefix,
--    'share',
-     'man',
-     'man1'
- )
-@@ -96,23 +95,6 @@ setup(
+@@ -85,23 +85,6 @@ setup(
          'getmail-gmail-xoauth-tokens',
      ],
      data_files=[
--        (GETMAILDOCDIR, [
+-        (DOCDIR, [
 -            './README',
 -            'docs/BUGS',
 -            'docs/COPYING',
@@ -35,6 +21,6 @@
 -            'docs/troubleshooting.html',
 -            'docs/troubleshooting.txt',
 -        ]),
-         (GETMAILMANDIR, [
+         (MANDIR, [
              'docs/getmail.1',
              'docs/getmail_fetch.1',
