@@ -20,7 +20,10 @@ LIB_DEPENDS=	libgdal.so:graphics/gdal \
 		libxml2.so:textproc/libxml2 \
 		liblaszip.so:archivers/laszip \
 		libzstd.so:archivers/zstd \
-		libunwind.so:devel/libunwind
+		${LIB_DEPENDS_${ARCH}}
+LIB_DEPENDS_aarch64=	libunwind.so:devel/libunwind
+LIB_DEPENDS_amd64=	libunwind.so:devel/libunwind
+LIB_DEPENDS_i386=	libunwind.so:devel/libunwind
 
 USES=		cmake compiler:c++11-lib pathfix pkgconfig ssl
 USE_LDCONFIG=	yes
