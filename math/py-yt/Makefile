@@ -22,23 +22,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sympy>=1.0:math/py-sympy@${PY_FLAVOR} \
 USES=		dos2unix localbase python:3.5+
 USE_PYTHON=	distutils cython autoplist concurrent
 
-OPTIONS_DEFINE=	EMBREE
-#OPTIONS_DEFAULT=	EMBREE
-EMBREE_DESC=	Embree ray-tracing engine support
-
-EMBREE_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyembree>0:graphics/py-pyembree@${PY_FLAVOR}
-EMBREE_LIB_DEPENDS=	libembree.so:graphics/embree
-EMBREE_RUN_DEPENDS=	${EMBREE_BUILD_DEPENDS}
-
-post-patch-EMBREE-on:
-	@${REINPLACE_CMD} -e "s|check_for_pyembree() is not None|True|" \
-		${WRKSRC}/setup.py
-
-post-patch-EMBREE-off:
+post-patch:
 	@${REINPLACE_CMD} -e "s|check_for_pyembree() is not None|False|" \
 		${WRKSRC}/setup.py
-
-post-patch:
 	@${REINPLACE_CMD} -e "s|check_for_openmp() is True|True|" \
 		${WRKSRC}/setup.py
 	@${REINPLACE_CMD} -e "s|\['-fopenmp', filename\]|['-I${LOCALBASE}/include', '-L${LOCALBASE}/lib', '-lm', '-fopenmp', filename]|" \
