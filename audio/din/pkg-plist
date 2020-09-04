@@ -294,6 +294,7 @@ share/applications/din.desktop
 %%DATADIR%%/factory/d_countries
 %%DATADIR%%/factory/d_curve_picker
 %%DATADIR%%/factory/d_dotter
+%%DATADIR%%/factory/d_dpeu
 %%DATADIR%%/factory/d_fft
 %%DATADIR%%/factory/d_fractaliser
 %%DATADIR%%/factory/d_lissajous
@@ -320,9 +321,12 @@ share/applications/din.desktop
 %%DATADIR%%/factory/din.osc
 %%DATADIR%%/factory/din_info
 %%DATADIR%%/factory/dot.crv
+%%DATADIR%%/factory/dp_bpm.crv
+%%DATADIR%%/factory/dp_depth.crv
 %%DATADIR%%/factory/drone-mod-am.crv
 %%DATADIR%%/factory/drone-mod-fm.crv
 %%DATADIR%%/factory/drone-modulation.ed
+%%DATADIR%%/factory/drone-pend.ed
 %%DATADIR%%/factory/drone.crv
 %%DATADIR%%/factory/drone.ed
 %%DATADIR%%/factory/droner.help.tcl
@@ -351,6 +355,7 @@ share/applications/din.desktop
 %%DATADIR%%/factory/get-style.help.tcl
 %%DATADIR%%/factory/get-var.help.tcl
 %%DATADIR%%/factory/globals
+%%DATADIR%%/factory/harmonics
 %%DATADIR%%/factory/harmonics.help.tcl
 %%DATADIR%%/factory/harmonics.patch.tcl
 %%DATADIR%%/factory/help.tcl
@@ -410,6 +415,7 @@ share/applications/din.desktop
 %%DATADIR%%/factory/p_Spiraler
 %%DATADIR%%/factory/p_Starrer
 %%DATADIR%%/factory/p_Superformula
+%%DATADIR%%/factory/phases
 %%DATADIR%%/factory/pitch-vol.ed
 %%DATADIR%%/factory/pitch.crv
 %%DATADIR%%/factory/point-modulation.ed
@@ -455,7 +461,6 @@ share/applications/din.desktop
 %%DATADIR%%/factory/settings.tcl
 %%DATADIR%%/factory/setup-user-dir.tcl
 %%DATADIR%%/factory/sin.lib
-%%DATADIR%%/factory/sine_levels
 %%DATADIR%%/factory/sine_mixer_sin.crv
 %%DATADIR%%/factory/sine_mixer_sin.ed
 %%DATADIR%%/factory/sounding-board.osc
