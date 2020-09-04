@@ -3,7 +3,7 @@
 # $FreeBSD: net/kamailio/files/kamailio.in
 #
 # PROVIDE: kamailio
-# REQUIRE: LOGIN
+# REQUIRE: NETWORKING SERVERS DAEMON
 # KEYWORD: shutdown
 #
 # Add the following line to /etc/rc.conf to enable this service

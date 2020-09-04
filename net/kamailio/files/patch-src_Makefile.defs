@@ -1,4 +1,4 @@
---- src/Makefile.defs.orig	2020-05-06 13:20:45 UTC
+--- src/Makefile.defs.orig	2020-07-29 10:22:39 UTC
 +++ src/Makefile.defs
 @@ -257,7 +257,7 @@ YACC := $(shell echo "$${YACC}")
  
@@ -27,12 +27,18 @@
  else
  	LIBDIR = lib
  endif
-@@ -1830,7 +1830,7 @@ ifeq ($(YACC),)
- endif
- YACC_FLAGS=-d -b core/cfg
- # on solaris add -lxnet (e.g. LIBS= -lxnet)
--LIBS= -ldl -lresolv
-+LIBS=
- LIB_PREFIX:=lib
- LIB_SUFFIX:=.so
- 
+@@ -1979,12 +1979,11 @@ ifeq ($(OS), freebsd)
+ 	ifeq ($(RAW_SOCKS), yes)
+ 		C_DEFS+= -DUSE_RAW_SOCKS
+ 	endif
++	LIBS= -lm   # resolv and dlopen is in libc
+ 	ifneq ($(found_lock_method), yes)
+ 		C_DEFS+= -DUSE_PTHREAD_MUTEX  # try pthread sems
+ 		found_lock_method=yes
+-		LIBS+= -pthread   #dlopen is in libc
+-	else
+-		LIBS=   #dlopen is in libc
++		LIBS+= -pthread
+ 	endif
+ 	# check for ver >= 4.1
+ 	ifeq ($(shell [ $(OSREL_N) -gt 4001 ] && echo has_kqueue), has_kqueue)

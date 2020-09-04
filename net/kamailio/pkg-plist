@@ -319,6 +319,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.print
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.print_lib
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.pv
+%%PORTDOCS%%%%DOCSDIR%%/modules/README.pv_headers
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.qos
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.ratelimit
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.rr
@@ -426,8 +427,6 @@ lib/kamailio/libprint.so
 lib/kamailio/libprint.so.1
 lib/kamailio/libsrdb1.so
 lib/kamailio/libsrdb1.so.1
-lib/kamailio/libsrutils.so
-lib/kamailio/libsrutils.so.1
 lib/kamailio/libtrie.so
 lib/kamailio/libtrie.so.1
 lib/kamailio/modules/acc_diameter.so
@@ -477,6 +476,7 @@ lib/kamailio/modules/pike.so
 lib/kamailio/modules/print.so
 lib/kamailio/modules/print_lib.so
 lib/kamailio/modules/pv.so
+lib/kamailio/modules/pv_headers.so
 lib/kamailio/modules/qos.so
 lib/kamailio/modules/ratelimit.so
 lib/kamailio/modules/rr.so
