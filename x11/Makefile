@@ -453,6 +453,7 @@
     SUBDIR += xman
     SUBDIR += xmangekyou
     SUBDIR += xmascot
+    SUBDIR += xmenu
     SUBDIR += xmessage
     SUBDIR += xmh
     SUBDIR += xmodmap

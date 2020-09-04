@@ -1,0 +1,15 @@
+--- Makefile.orig	2020-07-23 20:39:33 UTC
++++ Makefile
+@@ -17,8 +17,10 @@ clean:
+ 	-rm ${OBJS} ${PROG}
+ 
+ install: all
+-	install -D -m 755 ${PROG} ${DESTDIR}${PREFIX}/bin/${PROG}
+-	install -D -m 644 ${PROG}.1 ${DESTDIR}${MANPREFIX}/man1/${PROG}.1
++	mkdir -p ${DESTDIR}${MANPREFIX}/man1
++	mkdir -p ${DESTDIR}${PREFIX}/bin
++	${BSD_INSTALL_PROGRAM} ${PROG} ${DESTDIR}${PREFIX}/bin
++	${BSD_INSTALL_MAN} ${PROG}.1 ${DESTDIR}${MANPREFIX}/man1
+ 
+ uninstall:
+ 	rm -f ${DESTDIR}${PREFIX}/bin/${PROG}
