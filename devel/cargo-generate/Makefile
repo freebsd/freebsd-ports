@@ -3,6 +3,7 @@
 PORTNAME=	cargo-generate
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	vulcan@wired.sh
@@ -18,7 +19,6 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libssh2.so:security/libssh2
 
 USES=		cargo ssl
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	ashleygwilliams
 
@@ -133,7 +133,6 @@ CARGO_CRATES=	adler32-1.0.4 \
 		opaque-debug-0.2.3 \
 		openssl-0.10.25 \
 		openssl-probe-0.1.2 \
-		openssl-src-111.6.0+1.1.1d \
 		openssl-sys-0.9.52 \
 		parking_lot-0.9.0 \
 		parking_lot_core-0.6.2 \
@@ -229,9 +228,9 @@ CARGO_CRATES=	adler32-1.0.4 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		wincolor-1.0.2
 
+PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md README.md \
 		TEMPLATES.md
-PLIST_FILES=	bin/${PORTNAME}
 
 OPTIONS_DEFINE=	DOCS
 
