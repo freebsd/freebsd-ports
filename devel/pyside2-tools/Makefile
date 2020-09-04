@@ -24,7 +24,7 @@ USE_PYTHON=	flavors
 USE_QT=		3d buildtools charts core datavis3d declarative \
 		designer gui help location multimedia network opengl \
 		printsupport qmake_build script scripttools scxml sensors \
-		speech sql svg testlib uitools webchannel webengine \
+		speech sql svg testlib uitools webchannel \
 		websockets widgets x11extras xml xmlpatterns
 
 SHEBANG_FILES=	pyside_tool.py
@@ -34,5 +34,9 @@ CMAKE_ARGS+=	"-DUSE_PYTHON_VERSION=${PYTHON_VER}"
 .include <bsd.port.pre.mk>
 
 WRKSRC=		${WRKDIR}/pyside-setup-opensource-src-${DISTVERSION:C/^([0-9].[0-9]+.[0-9])(.[0-9])?/\1/}/sources/pyside2-tools
+
+.if ${ARCH} == amd64 || ${ARCH} == i386
+USE_QT+=	webengine
+.endif
 
 .include <bsd.port.post.mk>
