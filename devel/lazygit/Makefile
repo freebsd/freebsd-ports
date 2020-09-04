@@ -2,7 +2,7 @@
 
 PORTNAME=	lazygit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.20.9
+DISTVERSION=	0.22.1
 CATEGORIES=	devel
 
 MAINTAINER=	meta@FreeBSD.org
@@ -16,13 +16,14 @@ USE_GITHUB=	yes
 
 GH_ACCOUNT=	jesseduffield
 GH_TUPLE=	\
+		atotto:clipboard:v0.1.2:atotto_clipboard/vendor/github.com/atotto/clipboard \
 		cloudfoundry:jibber_jabber:bcc4c8345a21:cloudfoundry_jibber_jabber/vendor/github.com/cloudfoundry/jibber_jabber \
-		creack:pty:8ab47f72e854:creack_pty/vendor/github.com/creack/pty \
+		creack:pty:v1.1.11:creack_pty/vendor/github.com/creack/pty \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		emirpasic:gods:v1.12.0:emirpasic_gods/vendor/github.com/emirpasic/gods \
 		fatih:color:v1.7.0:fatih_color/vendor/github.com/fatih/color \
 		fsnotify:fsnotify:v1.4.7:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
-		go-errors:errors:v1.0.2:go_errors_errors/vendor/github.com/go-errors/errors \
+		go-errors:errors:v1.1.1:go_errors_errors/vendor/github.com/go-errors/errors \
 		go-git:gcfg:v1.5.0:go_git_gcfg/vendor/github.com/go-git/gcfg \
 		go-git:go-billy:v5.0.0:go_git_go_billy_v5/vendor/github.com/go-git/go-billy/v5 \
 		go-git:go-git:v5.0.0:go_git_go_git_v5/vendor/github.com/go-git/go-git/v5 \
@@ -33,14 +34,14 @@ GH_TUPLE=	\
 		golang:crypto:78000ba7a073:golang_crypto/vendor/golang.org/x/crypto \
 		golang:net:244492dfa37a:golang_net/vendor/golang.org/x/net \
 		golang:protobuf:v1.3.2:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:5c8b2ff67527:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:c12d262b63d8:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
 		google:go-cmp:v0.3.1:google_go_cmp/vendor/github.com/google/go-cmp \
 		hashicorp:hcl:v1.0.0:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
 		integrii:flaggy:v1.4.0:integrii_flaggy/vendor/github.com/integrii/flaggy \
 		jbenet:go-context:d14ea06fba99:jbenet_go_context/vendor/github.com/jbenet/go-context \
-		jesseduffield:gocui:8cde0b9be542:jesseduffield_gocui/vendor/github.com/jesseduffield/gocui \
-		jesseduffield:termbox-go:4dc645f7e8ba:jesseduffield_termbox_go/vendor/github.com/jesseduffield/termbox-go \
+		jesseduffield:gocui:1b6ec5d7d449:jesseduffield_gocui/vendor/github.com/jesseduffield/gocui \
+		jesseduffield:termbox-go:a2289ed6aafe:jesseduffield_termbox_go/vendor/github.com/jesseduffield/termbox-go \
 		kardianos:osext:2bc1f35cddc0:kardianos_osext/vendor/github.com/kardianos/osext \
 		kevinburke:ssh_config:01f96b0aa0cd:kevinburke_ssh_config/vendor/github.com/kevinburke/ssh_config \
 		konsorten:go-windows-terminal-sequences:v1.0.2:konsorten_go_windows_terminal_sequences/vendor/github.com/konsorten/go-windows-terminal-sequences \
