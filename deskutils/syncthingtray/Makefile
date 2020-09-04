@@ -26,7 +26,7 @@ GH_TUPLE=	Martchus:${PORTNAME}:${DISTVERSIONPREFIX}${DISTVERSION}:syncthingtray/
 
 USE_KDE=	plasma-framework
 USE_QT=		concurrent core dbus declarative gui location network \
-		printsupport qdbus quickcontrols2 svg webchannel webengine \
+		printsupport qdbus quickcontrols2 svg webchannel \
 		widgets x11extras buildtools_build doc_build linguist_build \
 		qmake_build
 
@@ -36,6 +36,15 @@ CONFIGURE_WRKSRC=	${WRKDIR}
 BUILD_WRKSRC=		${WRKDIR}
 INSTALL_WRKSRC=		${WRKDIR}
 CMAKE_SOURCE_PATH=	${WRKDIR}/subdirs/syncthingtray
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == amd64 || ${ARCH} == i386
+USE_QT+=	webengine
+.else
+CMAKE_ARGS+=	-DWEBVIEW_PROVIDER=webkit
+USE_QT+=	webkit
+.endif
 
 post-install:
 	${RM} -r \
@@ -66,4 +75,4 @@ post-install:
 		${STAGEDIR}${QT_PLUGINDIR} \
 		${STAGEDIR}${QT_LIBDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
