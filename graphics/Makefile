@@ -846,7 +846,6 @@
     SUBDIR += py-pycha
     SUBDIR += py-pycollada
     SUBDIR += py-pydot
-    SUBDIR += py-pyembree
     SUBDIR += py-pyepsg
     SUBDIR += py-pygal
     SUBDIR += py-pyganim

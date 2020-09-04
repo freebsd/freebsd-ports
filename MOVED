@@ -15410,3 +15410,8 @@ graphics/gmt5|graphics/gmt|2020-08-29|Obsolete, please use graphics/gmt instead
 graphics/gmt5-dcw|graphics/gmt-dcw|2020-08-29|Rename to align port name with graphics/gmt
 graphics/gmt5-gshhg|graphics/gmt-gshhg|2020-08-29|Rename to align port name with graphics/gmt
 net/dhcpcd-devel|net/dhcpcd|2020-09-03|Development version no longer necessary following 9.1.0 stable release which saw dhcpcd capsicumized with privilege separation
+multimedia/w_scan|multimedia/w_scan2|2020-09-04|Has expired: No longer developed since September 2017, MASTER_SITES gone
+net/ntp-devel||2020-09-04|Has expired: Current devel branch of ntp is no longer published
+mail/postfix-policyd-spf-python|mail/py-spf-engine|2020-09-04|Has expired: Use mail/py-spf-engine instead (Project is superseded by successor)
+graphics/py-pyembree||2020-09-04|Has expired: Broken for more than 6 months
+games/asteroid||2020-09-04|Has expired: Broken for more than 6 months

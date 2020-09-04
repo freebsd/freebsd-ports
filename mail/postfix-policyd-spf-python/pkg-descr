@@ -1,4 +1,0 @@
-python-policyd-spf is a Postfix SMTPd policy engine for SPF checking. It is
-implemented in pure Python and uses the python-spf module.
-
-WWW: https://launchpad.net/pypolicyd-spf/

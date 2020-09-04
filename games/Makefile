@@ -55,7 +55,6 @@
     SUBDIR += ascii-invaders
     SUBDIR += asciiquarium
     SUBDIR += assaultcube
-    SUBDIR += asteroid
     SUBDIR += asteroids3d
     SUBDIR += astromenace
     SUBDIR += asylum

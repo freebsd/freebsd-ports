@@ -513,7 +513,6 @@
     SUBDIR += ntimed
     SUBDIR += ntopng
     SUBDIR += ntp
-    SUBDIR += ntp-devel
     SUBDIR += ntpa
     SUBDIR += ntpsec
     SUBDIR += ntraceroute

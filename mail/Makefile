@@ -483,7 +483,6 @@
     SUBDIR += postfix-logwatch
     SUBDIR += postfix-policyd-sf
     SUBDIR += postfix-policyd-spf-perl
-    SUBDIR += postfix-policyd-spf-python
     SUBDIR += postfix-policyd-weight
     SUBDIR += postfix-postfwd
     SUBDIR += postfix-sasl
