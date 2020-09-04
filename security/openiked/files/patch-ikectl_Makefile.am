@@ -1,0 +1,10 @@
+--- ikectl/Makefile.am.orig	2020-09-04 14:25:33 UTC
++++ ikectl/Makefile.am
+@@ -28,7 +28,6 @@ $(MANPAGES): $(MANPAGES_IN)
+ 
+ install-exec-hook: $(MANPAGES)
+ 	$(MKDIR_P) $(DESTDIR)$(sysconfdir)/iked/
+-	$(MKDIR_P) $(DESTDIR)$(SSLDIR)
+ 	$(MKDIR_P) $(DESTDIR)$(sbindir)
+ 	$(MKDIR_P) $(DESTDIR)$(mandir)/$(mansubdir)8
+ 
