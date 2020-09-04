@@ -1,0 +1,33 @@
+# $FreeBSD$
+
+PORTNAME=	xob
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.2
+CATEGORIES=	x11
+
+MAINTAINER=	vulcan@wired.sh
+COMMENT=	Lightweight overlay volume (or anything) bar for the X Window System
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+LIB_DEPENDS=	libconfig.so:devel/libconfig
+
+USES=		compiler:c11 gmake pkgconfig xorg
+USE_GITHUB=	yes
+GH_ACCOUNT=	florentc
+USE_XORG=	x11
+
+PORTDOCS=	CHANGELOG.md CONTRIBUTING.md README.md
+
+OPTIONS_DEFINE=	DOCS
+
+PLIST_FILES=	${ETCDIR}/styles.cfg \
+		bin/xob \
+		share/man/man1/xob.1.gz
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+
+.include <bsd.port.mk>
