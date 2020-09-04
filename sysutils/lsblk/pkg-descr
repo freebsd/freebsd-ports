@@ -1,4 +1,4 @@
-Lists information about block devices in the system in a similar way
-that util-linux's lsblk(8) does.
+Lists information about block devices in the FreeBSD system in a similar way
+that lsblk(8) from Linux systems does. An example is shown below.
 
-WWW: https://github.com/vermaden/scripts/blob/master/lsblk.sh
+WWW: https://github.com/vermaden/lsblk
