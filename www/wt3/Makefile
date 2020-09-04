@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wt3
-PORTVERSION=	3.6.1
+PORTVERSION=	3.7.0
 CATEGORIES=	www
 
 MAINTAINER=	info@babaei.net
@@ -10,6 +10,9 @@ COMMENT=	Widget-centric C++ library for developing web applications
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	Upstream end of life, switch to www/wt instead
+EXPIRATION_DATE=	2021-01-01
 
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libboost_system.so:devel/boost-libs \
