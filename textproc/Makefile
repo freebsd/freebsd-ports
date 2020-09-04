@@ -41,6 +41,7 @@
     SUBDIR += align
     SUBDIR += am-aspell
     SUBDIR += amberfish
+    SUBDIR += angle-grinder
     SUBDIR += ansifilter
     SUBDIR += antiword
     SUBDIR += apache-commons-csv

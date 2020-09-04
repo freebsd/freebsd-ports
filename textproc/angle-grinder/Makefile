@@ -1,0 +1,291 @@
+# $FreeBSD$
+
+PORTNAME=	angle-grinder
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.13.0
+CATEGORIES=	textproc
+
+MAINTAINER=	vulcan@wired.sh
+COMMENT=	Slice and dice logs on the command line
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		cargo ssl
+USE_GITHUB=	yes
+GH_ACCOUNT=	rcoh
+
+CARGO_CRATES=	adler32-1.0.4 \
+		aho-corasick-0.7.8 \
+		annotate-snippets-0.5.0 \
+		ansi_term-0.11.0 \
+		anyhow-1.0.26 \
+		assert_cli-0.6.3 \
+		atty-0.2.14 \
+		autocfg-0.1.7 \
+		autocfg-1.0.0 \
+		backtrace-0.3.43 \
+		backtrace-sys-0.1.32 \
+		base64-0.9.3 \
+		base64-0.10.1 \
+		bitflags-1.2.1 \
+		bstr-0.2.11 \
+		bumpalo-3.2.0 \
+		bytecount-0.3.2 \
+		byteorder-1.3.4 \
+		bytes-0.4.12 \
+		bzip2-0.3.3 \
+		bzip2-sys-0.1.7 \
+		c2-chacha-0.2.3 \
+		cast-0.2.3 \
+		cc-1.0.50 \
+		cfg-if-0.1.10 \
+		clap-2.33.0 \
+		clap-verbosity-flag-0.2.0 \
+		cloudabi-0.0.3 \
+		colored-1.9.2 \
+		cookie-0.12.0 \
+		cookie_store-0.7.0 \
+		core-foundation-0.6.4 \
+		core-foundation-sys-0.6.2 \
+		crc32fast-1.2.0 \
+		criterion-0.3.1 \
+		criterion-plot-0.4.1 \
+		crossbeam-channel-0.3.9 \
+		crossbeam-channel-0.4.0 \
+		crossbeam-deque-0.7.2 \
+		crossbeam-epoch-0.8.0 \
+		crossbeam-queue-0.2.1 \
+		crossbeam-utils-0.6.6 \
+		crossbeam-utils-0.7.0 \
+		csv-1.1.3 \
+		csv-core-0.1.6 \
+		difference-2.0.0 \
+		dtoa-0.4.5 \
+		either-1.5.3 \
+		encoding_rs-0.8.22 \
+		env_logger-0.5.13 \
+		environment-0.1.1 \
+		error-chain-0.12.1 \
+		exitfailure-0.5.1 \
+		failure-0.1.6 \
+		failure_derive-0.1.6 \
+		filetime-0.2.8 \
+		flate2-1.0.13 \
+		fnv-1.0.6 \
+		foreign-types-0.3.2 \
+		foreign-types-shared-0.1.1 \
+		fuchsia-cprng-0.1.1 \
+		fuchsia-zircon-0.3.3 \
+		fuchsia-zircon-sys-0.3.3 \
+		futures-0.1.29 \
+		futures-cpupool-0.1.8 \
+		getopts-0.2.21 \
+		getrandom-0.1.14 \
+		glob-0.2.11 \
+		globset-0.4.4 \
+		globwalk-0.3.1 \
+		h2-0.1.26 \
+		heck-0.3.1 \
+		hermit-abi-0.1.6 \
+		http-0.1.21 \
+		http-body-0.1.0 \
+		httparse-1.3.4 \
+		human-panic-1.0.1 \
+		humantime-1.3.0 \
+		hyper-0.12.35 \
+		hyper-old-types-0.11.0 \
+		hyper-tls-0.3.2 \
+		idna-0.1.5 \
+		idna-0.2.0 \
+		ignore-0.4.11 \
+		im-13.0.0 \
+		include_dir-0.2.1 \
+		include_dir_impl-0.2.1 \
+		indexmap-1.3.2 \
+		iovec-0.1.4 \
+		itertools-0.8.2 \
+		itoa-0.4.5 \
+		js-sys-0.3.35 \
+		kernel32-sys-0.2.2 \
+		language-tags-0.2.2 \
+		lazy_static-1.4.0 \
+		libc-0.2.66 \
+		lock_api-0.3.3 \
+		log-0.4.8 \
+		logfmt-0.0.2 \
+		maplit-1.0.2 \
+		matches-0.1.8 \
+		maybe-uninit-2.0.0 \
+		memchr-2.3.0 \
+		memoffset-0.5.3 \
+		mime-0.3.16 \
+		mime_guess-2.0.1 \
+		miniz_oxide-0.3.6 \
+		mio-0.6.21 \
+		miow-0.2.1 \
+		native-tls-0.2.3 \
+		net2-0.2.33 \
+		nom-4.2.3 \
+		nom_locate-0.3.1 \
+		num-derive-0.2.5 \
+		num-traits-0.2.11 \
+		num_cpus-1.12.0 \
+		numtoa-0.1.0 \
+		oorandom-11.1.0 \
+		openssl-0.10.28 \
+		openssl-probe-0.1.2 \
+		openssl-sys-0.9.54 \
+		ordered-float-1.0.2 \
+		os_type-2.2.0 \
+		parking_lot-0.9.0 \
+		parking_lot_core-0.6.2 \
+		pbr-1.0.2 \
+		percent-encoding-1.0.1 \
+		percent-encoding-2.1.0 \
+		pkg-config-0.3.17 \
+		plotters-0.2.12 \
+		podio-0.1.6 \
+		ppv-lite86-0.2.6 \
+		proc-macro-hack-0.4.2 \
+		proc-macro-hack-impl-0.4.2 \
+		proc-macro2-0.4.30 \
+		proc-macro2-1.0.8 \
+		publicsuffix-1.5.4 \
+		pulldown-cmark-0.2.0 \
+		quantiles-0.7.1 \
+		quick-error-1.2.3 \
+		quicli-0.4.0 \
+		quote-0.6.13 \
+		quote-1.0.2 \
+		rand-0.4.6 \
+		rand-0.6.5 \
+		rand-0.7.3 \
+		rand_chacha-0.1.1 \
+		rand_chacha-0.2.1 \
+		rand_core-0.3.1 \
+		rand_core-0.4.2 \
+		rand_core-0.5.1 \
+		rand_hc-0.1.0 \
+		rand_hc-0.2.0 \
+		rand_isaac-0.1.1 \
+		rand_jitter-0.1.4 \
+		rand_os-0.1.3 \
+		rand_pcg-0.1.2 \
+		rand_xorshift-0.1.1 \
+		rayon-1.3.0 \
+		rayon-core-1.7.0 \
+		rdrand-0.4.0 \
+		redox_syscall-0.1.56 \
+		redox_termios-0.1.1 \
+		regex-1.3.4 \
+		regex-automata-0.1.8 \
+		regex-syntax-0.6.14 \
+		remove_dir_all-0.5.2 \
+		reqwest-0.9.24 \
+		rustc-demangle-0.1.16 \
+		rustc_version-0.2.3 \
+		ryu-1.0.2 \
+		safemem-0.3.3 \
+		same-file-1.0.6 \
+		schannel-0.1.17 \
+		scopeguard-1.0.0 \
+		security-framework-0.3.4 \
+		security-framework-sys-0.3.3 \
+		self_update-0.5.1 \
+		semver-0.9.0 \
+		semver-parser-0.7.0 \
+		serde-1.0.104 \
+		serde_derive-1.0.104 \
+		serde_json-1.0.47 \
+		serde_urlencoded-0.5.5 \
+		sized-chunks-0.3.1 \
+		slab-0.4.2 \
+		smallvec-0.6.13 \
+		smallvec-1.2.0 \
+		sourcefile-0.1.4 \
+		strfmt-0.1.6 \
+		string-0.2.1 \
+		strsim-0.8.0 \
+		structopt-0.2.18 \
+		structopt-derive-0.2.18 \
+		syn-0.14.9 \
+		syn-0.15.44 \
+		syn-1.0.14 \
+		synstructure-0.12.3 \
+		tar-0.4.26 \
+		tempdir-0.3.7 \
+		tempfile-3.1.0 \
+		termcolor-0.3.6 \
+		termcolor-1.1.0 \
+		terminal_size-0.1.10 \
+		termion-1.5.5 \
+		textwrap-0.11.0 \
+		thread_local-1.0.1 \
+		time-0.1.42 \
+		tinytemplate-1.0.3 \
+		tokio-0.1.22 \
+		tokio-buf-0.1.1 \
+		tokio-current-thread-0.1.7 \
+		tokio-executor-0.1.10 \
+		tokio-io-0.1.13 \
+		tokio-reactor-0.1.12 \
+		tokio-sync-0.1.8 \
+		tokio-tcp-0.1.4 \
+		tokio-threadpool-0.1.18 \
+		tokio-timer-0.2.13 \
+		toml-0.4.10 \
+		try-lock-0.2.2 \
+		try_from-0.3.2 \
+		typenum-1.11.2 \
+		unicase-2.6.0 \
+		unicode-bidi-0.3.4 \
+		unicode-normalization-0.1.12 \
+		unicode-segmentation-1.6.0 \
+		unicode-width-0.1.7 \
+		unicode-xid-0.1.0 \
+		unicode-xid-0.2.0 \
+		url-1.7.2 \
+		url-2.1.1 \
+		uuid-0.6.5 \
+		uuid-0.7.4 \
+		vcpkg-0.2.8 \
+		vec_map-0.8.1 \
+		version_check-0.1.5 \
+		version_check-0.9.1 \
+		walkdir-2.3.1 \
+		want-0.2.0 \
+		wasi-0.9.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.58 \
+		wasm-bindgen-backend-0.2.58 \
+		wasm-bindgen-macro-0.2.58 \
+		wasm-bindgen-macro-support-0.2.58 \
+		wasm-bindgen-shared-0.2.58 \
+		wasm-bindgen-webidl-0.2.58 \
+		web-sys-0.3.35 \
+		weedle-0.10.0 \
+		winapi-0.2.8 \
+		winapi-0.3.8 \
+		winapi-build-0.1.1 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.3 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		wincolor-0.1.6 \
+		winreg-0.6.2 \
+		ws2_32-sys-0.2.1 \
+		xattr-0.2.2 \
+		zip-0.5.4
+
+PLIST_FILES=	bin/agrind
+PORTDOCS=	README.md
+
+OPTIONS_DEFINE=	DOCS
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/agrind
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+
+.include <bsd.port.mk>
