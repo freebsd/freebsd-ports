@@ -24,7 +24,7 @@ USE_QT=		3d buildtools_build charts concurrent core datavis3d declarative \
 		designer gamepad gui help location multimedia network opengl \
 		printsupport qmake_build quickcontrols2 remoteobjects serialport \
 		script scripttools scxml sensors speech sql svg testlib uitools \
-		webchannel webengine websockets widgets x11extras xml xmlpatterns
+		webchannel websockets widgets x11extras xml xmlpatterns
 
 CMAKE_ARGS+=	"-DUSE_PYTHON_VERSION=${PYTHON_VER}" \
 		"-DPYTHON_EXECUTABLE=${PYTHON_CMD}"
@@ -35,5 +35,12 @@ PLIST_SUB+=	PYVERSTR=.cpython-${PYTHON_SUFFIX}${PYTHON_ABIVER}
 PLIST_SUB+=	DISTVERSION=${DISTVERSION}
 
 WRKSRC=		${WRKDIR}/pyside-setup-opensource-src-${DISTVERSION:C/^([0-9].[0-9]+.[0-9])(.[0-9])?/\1/}/sources/pyside2
+
+.if ${ARCH} == amd64 || ${ARCH} == i386
+PLIST_SUB+=	WEBENGINE=""
+USE_QT+=	webengine
+.else
+PLIST_SUB+=	WEBENGINE="@comment "
+.endif
 
 .include <bsd.port.post.mk>

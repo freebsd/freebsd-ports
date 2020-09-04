@@ -35,9 +35,9 @@ include/PySide2/QtTest/pyside2_qttest_python.h
 include/PySide2/QtTextToSpeech/pyside2_qttexttospeech_python.h
 include/PySide2/QtUiTools/pyside2_qtuitools_python.h
 include/PySide2/QtWebChannel/pyside2_qtwebchannel_python.h
-include/PySide2/QtWebEngine/pyside2_qtwebengine_python.h
-include/PySide2/QtWebEngineCore/pyside2_qtwebenginecore_python.h
-include/PySide2/QtWebEngineWidgets/pyside2_qtwebenginewidgets_python.h
+%%WEBENGINE%%include/PySide2/QtWebEngine/pyside2_qtwebengine_python.h
+%%WEBENGINE%%include/PySide2/QtWebEngineCore/pyside2_qtwebenginecore_python.h
+%%WEBENGINE%%include/PySide2/QtWebEngineWidgets/pyside2_qtwebenginewidgets_python.h
 include/PySide2/QtWebSockets/pyside2_qtwebsockets_python.h
 include/PySide2/QtWidgets/pyside2_qtwidgets_python.h
 include/PySide2/QtX11Extras/pyside2_qtx11extras_python.h
@@ -99,9 +99,9 @@ lib/libpyside2%%PYVERSTR%%.so.%%DISTVERSION%%
 %%PYTHON_SITELIBDIR%%/PySide2/QtTextToSpeech%%PYVERSTR%%.so
 %%PYTHON_SITELIBDIR%%/PySide2/QtUiTools%%PYVERSTR%%.so
 %%PYTHON_SITELIBDIR%%/PySide2/QtWebChannel%%PYVERSTR%%.so
-%%PYTHON_SITELIBDIR%%/PySide2/QtWebEngine%%PYVERSTR%%.so
-%%PYTHON_SITELIBDIR%%/PySide2/QtWebEngineCore%%PYVERSTR%%.so
-%%PYTHON_SITELIBDIR%%/PySide2/QtWebEngineWidgets%%PYVERSTR%%.so
+%%WEBENGINE%%%%PYTHON_SITELIBDIR%%/PySide2/QtWebEngine%%PYVERSTR%%.so
+%%WEBENGINE%%%%PYTHON_SITELIBDIR%%/PySide2/QtWebEngineCore%%PYVERSTR%%.so
+%%WEBENGINE%%%%PYTHON_SITELIBDIR%%/PySide2/QtWebEngineWidgets%%PYVERSTR%%.so
 %%PYTHON_SITELIBDIR%%/PySide2/QtWebSockets%%PYVERSTR%%.so
 %%PYTHON_SITELIBDIR%%/PySide2/QtWidgets%%PYVERSTR%%.so
 %%PYTHON_SITELIBDIR%%/PySide2/QtX11Extras%%PYVERSTR%%.so
@@ -123,7 +123,7 @@ share/PySide2/glue/qtqml.cpp
 share/PySide2/glue/qtquick.cpp
 share/PySide2/glue/qtscript.cpp
 share/PySide2/glue/qtuitools.cpp
-share/PySide2/glue/qtwebenginewidgets.cpp
+%%WEBENGINE%%share/PySide2/glue/qtwebenginewidgets.cpp
 share/PySide2/glue/qtwidgets.cpp
 share/PySide2/glue/qtxml.cpp
 share/PySide2/glue/qtxmlpatterns.cpp
@@ -205,9 +205,9 @@ share/PySide2/typesystems/typesystem_test.xml
 share/PySide2/typesystems/typesystem_texttospeech.xml
 share/PySide2/typesystems/typesystem_uitools.xml
 share/PySide2/typesystems/typesystem_webchannel.xml
-share/PySide2/typesystems/typesystem_webengine.xml
-share/PySide2/typesystems/typesystem_webenginecore.xml
-share/PySide2/typesystems/typesystem_webenginewidgets.xml
+%%WEBENGINE%%share/PySide2/typesystems/typesystem_webengine.xml
+%%WEBENGINE%%share/PySide2/typesystems/typesystem_webenginecore.xml
+%%WEBENGINE%%share/PySide2/typesystems/typesystem_webenginewidgets.xml
 share/PySide2/typesystems/typesystem_websockets.xml
 share/PySide2/typesystems/typesystem_widgets.xml
 share/PySide2/typesystems/typesystem_widgets_common.xml
