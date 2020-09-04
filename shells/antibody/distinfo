@@ -1,6 +1,6 @@
-TIMESTAMP = 1594589976
-SHA256 (getantibody-antibody-v6.1.0_GH0.tar.gz) = b2cf67af801ebf10c0d52b1767cbdb5e3ab5a1713e6c3d28616a109e1d7906a7
-SIZE (getantibody-antibody-v6.1.0_GH0.tar.gz) = 53689
+TIMESTAMP = 1599186197
+SHA256 (getantibody-antibody-v6.1.1_GH0.tar.gz) = 87bced5fba8cf5d587ea803d33dda72e8bcbd4e4c9991a9b40b2de4babbfc24f
+SIZE (getantibody-antibody-v6.1.1_GH0.tar.gz) = 53625
 SHA256 (alecthomas-kingpin-v2.2.6_GH0.tar.gz) = 4624eae43489de8a71ea60efaf6744c581b6bd62909f7514c484c1ea0efaba5a
 SIZE (alecthomas-kingpin-v2.2.6_GH0.tar.gz) = 44383
 SHA256 (alecthomas-template-fb15b89_GH0.tar.gz) = edc515063323c61120740ef930ce60e659e9ae82e2b21062ec451ff675b8d6be
