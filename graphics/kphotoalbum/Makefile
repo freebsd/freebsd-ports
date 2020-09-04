@@ -24,9 +24,15 @@ USE_KDE=	archive auth codecs completion config \
 		iconthemes jobwidgets kio marble purpose service \
 		sonnet textwidgets widgetsaddons xmlgui
 USE_QT=		concurrent core dbus declarative gui location network phonon4 \
-		printsupport sql webchannel webengine widgets xml \
+		printsupport sql webchannel widgets xml \
 		buildtools_build qmake_build
 SHEBANG_FILES=	scripts/open-raw.pl scripts/kpa-backup.sh
 
+OPTIONS_DEFINE=	WEBENGINE
+OPTIONS_DEFAULT_amd64=	WEBENGINE
+OPTIONS_DEFAULT_i386=	WEBENGINE
+
+WEBENGINE_DESC=	Add dependency on qt5-webengine
+WEBENGINE_USE=	QT=webengine
 
 .include <bsd.port.mk>
