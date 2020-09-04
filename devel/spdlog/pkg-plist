@@ -34,6 +34,7 @@ include/spdlog/details/thread_pool-inl.h
 include/spdlog/details/thread_pool.h
 include/spdlog/details/windows_include.h
 include/spdlog/fmt/bin_to_hex.h
+include/spdlog/fmt/chrono.h
 include/spdlog/fmt/fmt.h
 include/spdlog/fmt/ostr.h
 include/spdlog/formatter.h
@@ -72,6 +73,7 @@ include/spdlog/sinks/wincolor_sink.h
 include/spdlog/sinks/win_eventlog_sink.h
 include/spdlog/spdlog-inl.h
 include/spdlog/spdlog.h
+include/spdlog/stopwatch.h
 include/spdlog/tweakme.h
 include/spdlog/version.h
 lib/cmake/spdlog/spdlogConfig.cmake
@@ -80,5 +82,5 @@ lib/cmake/spdlog/spdlogConfigTargets.cmake
 lib/cmake/spdlog/spdlogConfigVersion.cmake
 lib/libspdlog.so
 lib/libspdlog.so.1
-lib/libspdlog.so.1.7.0
+lib/libspdlog.so.1.8.0
 libdata/pkgconfig/spdlog.pc
