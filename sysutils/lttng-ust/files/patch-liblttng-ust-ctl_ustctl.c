@@ -20,3 +20,12 @@
  
  #include <usterr-signal-safe.h>
  #include <ust-comm.h>
+@@ -76,7 +88,7 @@ extern void lttng_ring_buffer_client_discard_exit(void
+ extern void lttng_ring_buffer_client_discard_rt_exit(void);
+ extern void lttng_ring_buffer_metadata_client_exit(void);
+ 
+-volatile enum ust_loglevel ust_loglevel;
++extern volatile enum ust_loglevel ust_loglevel;
+ 
+ int ustctl_release_handle(int sock, int handle)
+ {
