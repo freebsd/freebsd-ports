@@ -1,0 +1,88 @@
+--- relayd/relayd.conf.5.orig	2014-08-10 20:08:47 UTC
++++ relayd/relayd.conf.5
+@@ -90,7 +90,7 @@ Additional configuration files can be included with th
+ .Ic include
+ keyword, for example:
+ .Bd -literal -offset indent
+-include "/usr/local/etc/relayd.conf.local"
++include "%%PREFIX%%/etc/relayd.conf.local"
+ .Ed
+ .Sh MACROS
+ Macros can be defined that will later be expanded in context.
+@@ -304,7 +304,7 @@ Execute an external program to check the host state.
+ The program will be executed for each host by specifying the hostname
+ on the command line:
+ .Bd -literal -offset indent
+-/usr/local/bin/checkload.pl front-www1.private.example.com
++%%PREFIX%%/bin/checkload.pl front-www1.private.example.com
+ .Ed
+ .Pp
+ .Xr relayd 8
+@@ -624,18 +624,18 @@ If the
+ keyword is present, the relay will accept connections using the
+ encrypted SSL protocol.
+ The relay will attempt to look up a private key in
+-.Pa /usr/local/etc/ssl/private/address:port.key
++.Pa %%PREFIX%%/etc/ssl/private/address:port.key
+ and a public certificate in
+-.Pa /usr/local/etc/ssl/address:port.crt ,
++.Pa %%PREFIX%%/etc/ssl/address:port.crt ,
+ where
+ .Ar address
+ is the specified IP address and
+ .Ar port
+ is the specified port that the relay listens on.
+ If these files are not present, the relay will continue to look in
+-.Pa /usr/local/etc/ssl/private/address.key
++.Pa %%PREFIX%%/etc/ssl/private/address.key
+ and
+-.Pa /usr/local/etc/ssl/address.crt .
++.Pa %%PREFIX%%/etc/ssl/address.crt .
+ See
+ .Xr ssl 8
+ for details about SSL server certificates.
+@@ -1256,18 +1256,18 @@ as detailed for the
+ directive above.
+ .El
+ .Sh FILES
+-.Bl -tag -width "/usr/local/etc/ssl/private/address.keyXX" -compact
+-.It Pa /usr/local/etc/relayd.conf
++.Bl -tag -width "%%PREFIX%%/etc/ssl/private/address.keyXX" -compact
++.It Pa %%PREFIX%%/etc/relayd.conf
+ .Xr relayd 8
+ configuration file.
+ .Pp
+ .It Pa /etc/services
+ Service name database.
+ .Pp
+-.It Pa /usr/local/etc/ssl/address.crt
+-.It Pa /usr/local/etc/ssl/address:port.crt
+-.It Pa /usr/local/etc/ssl/private/address.key
+-.It Pa /usr/local/etc/ssl/private/address:port.key
++.It Pa %%PREFIX%%/etc/ssl/address.crt
++.It Pa %%PREFIX%%/etc/ssl/address:port.crt
++.It Pa %%PREFIX%%/etc/ssl/private/address.key
++.It Pa %%PREFIX%%/etc/ssl/private/address:port.key
+ Location of the relay SSL server certificates, where
+ .Ar address
+ is the configured IP address
+@@ -1275,7 +1275,7 @@ and
+ .Ar port
+ is the configured port number of the relay.
+ .Pp
+-.It Pa /usr/local/etc/ssl/cert.pem
++.It Pa %%PREFIX%%/etc/ssl/cert.pem
+ Default location of the CA bundle that can be used with
+ .Xr relayd 8 .
+ .El
+@@ -1383,8 +1383,8 @@ section.
+ To start, first generate a new local CA key and certificate:
+ .Bd -literal -offset indent
+ # openssl req -x509 -days 365 -newkey rsa:2048 \e
+-	-keyout /usr/local/etc/ssl/private/ca.key \e
+-	-out /usr/local/etc/etc/ssl/ca.crt
++	-keyout %%PREFIX%%/etc/ssl/private/ca.key \e
++	-out %%PREFIX%%/etc/etc/ssl/ca.crt
+ .Ed
+ .Pp
+ An SSL server key and self-signed cert for 127.0.0.1 are also required;

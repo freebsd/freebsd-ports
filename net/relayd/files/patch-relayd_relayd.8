@@ -1,0 +1,20 @@
+--- relayd/relayd.8.orig	2014-08-10 20:08:47 UTC
++++ relayd/relayd.8
+@@ -114,7 +114,7 @@ will run in the foreground and log to
+ .It Fl f Ar file
+ Specify an alternative configuration file.
+ The default is
+-.Pa /usr/local/etc/relayd.conf .
++.Pa %%PREFIX%%/etc/relayd.conf .
+ .It Fl n
+ Configtest mode.
+ Only check the configuration file for validity.
+@@ -123,7 +123,7 @@ Produce more verbose output.
+ .El
+ .Sh FILES
+ .Bl -tag -width "/var/run/relayd.sockXX" -compact
+-.It /usr/local/etc/relayd.conf
++.It %%PREFIX%%/etc/relayd.conf
+ Default configuration file.
+ .It /var/run/relayd.sock
+ .Ux Ns -domain
