@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	samhain
-PORTVERSION=	4.4.1
+PORTVERSION=	4.4.2
 CATEGORIES=	security
 MASTER_SITES=	http://la-samhna.de/archive/
 DISTNAME=	samhain_signed-${PORTVERSION}
@@ -15,6 +15,10 @@ LICENSE=	GPLv2
 BROKEN_aarch64=		fails to build: undefined reference to sbrk
 BROKEN_mips=		fails to configure: error: Could not find the libwrap library
 BROKEN_mips64=		fails to configure: error: Could not find the libwrap library
+
+USES=			shebangfix
+SHEBANG_FILES=		scripts/samhainadmin-gpg.pl.in \
+			scripts/samhainadmin-sig.pl.in
 
 OPTIONS_DEFINE=		ASM DB_RELOAD DEBUG DNMALLOC DOCS ENCRYPT GNUPG IPV6 \
 			LIBWRAP LOGFILE_MONITOR LOGIN_WATCH MAIL \
@@ -52,10 +56,6 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-altlogserver=true \
 		--with-timeserver=true \
 		--with-alttimeserver=true
-
-USES=			shebangfix
-SHEBANG_FILES=		scripts/samhainadmin-gpg.pl.in \
-			scripts/samhainadmin-sig.pl.in
 
 ASM_CONFIGURE_ENABLE=		asm
 

@@ -27,5 +27,6 @@
 %%YULE%%man/man8/yule.8.gz
 %%YULE%%sbin/yule
 %%YULE%%sbin/yule_setpwd
-%%YULE%%sbin/yuleadmin.pl
+%%YULE%%sbin/yuleadmin-gpg.pl
+%%YULE%%sbin/yuleadmin-sig.pl
 %%YULE%%sbin/yulectl
