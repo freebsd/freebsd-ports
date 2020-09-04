@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2017-06-21 05:05:37.000000000 -0500
-+++ CMakeLists.txt	2017-07-28 23:43:57.479141000 -0500
-@@ -155,7 +155,7 @@
+--- CMakeLists.txt.orig	2017-06-21 10:05:37 UTC
++++ CMakeLists.txt
+@@ -155,7 +155,7 @@ if (NOT LIBDIR)
  endif (NOT LIBDIR)
  
  if (NOT LOCALSTATEDIR)
@@ -9,7 +9,7 @@
  endif (NOT LOCALSTATEDIR)
  
  if (NOT DATADIR)
-@@ -291,7 +291,7 @@
+@@ -291,7 +291,7 @@ configure_file (tools/openvas-manage-certs.in tools/op
  
  ## Program
  

@@ -1,6 +1,6 @@
---- src/omp.c	2017-06-21 04:56:09.000000000 -0500
-+++ src/omp.c	2017-07-28 23:49:52.393994000 -0500
-@@ -18078,11 +18078,11 @@
+--- src/omp.c.orig	2017-06-21 09:56:09 UTC
++++ src/omp.c
+@@ -18078,11 +18078,11 @@ handle_get_schedules (omp_parser_t *omp_parser, GError
              "<timezone_abbrev>%s</timezone_abbrev>",
              iso,
              (next_time == 0 ? "over" : iso_time_tz (&next_time, timezone, NULL)),

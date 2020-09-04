@@ -1,6 +1,6 @@
---- src/CMakeLists.txt.orig	2017-02-01 05:17:47.000000000 -0500
-+++ src/CMakeLists.txt	2017-07-28 23:47:12.492628000 -0500
-@@ -74,7 +74,7 @@
+--- src/CMakeLists.txt.orig	2017-02-01 10:17:47 UTC
++++ src/CMakeLists.txt
+@@ -74,7 +74,7 @@ else (BACKEND STREQUAL SQLITE3)
  endif (BACKEND STREQUAL SQLITE3)
  
  add_executable (${BINARY_NAME} openvasmd.c ompd.c)

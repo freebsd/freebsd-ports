@@ -1,5 +1,5 @@
---- src/scanner.c	2016-11-10 04:58:06.000000000 -0500
-+++ src/scanner.c	2017-08-06 21:58:23.868844000 -0500
+--- src/scanner.c.orig	2016-11-10 09:58:06 UTC
++++ src/scanner.c
 @@ -33,6 +33,7 @@
  #include <assert.h>
  #include <unistd.h>
@@ -8,7 +8,7 @@
  #include <sys/time.h>
  #include <sys/stat.h>
  #include <sys/un.h>
-@@ -586,7 +587,6 @@
+@@ -586,7 +587,6 @@ int
  openvas_scanner_connect_unix ()
  {
    struct sockaddr_un addr;
@@ -16,7 +16,7 @@
  
    openvas_scanner_socket = socket (AF_UNIX, SOCK_STREAM, 0);
    if (openvas_scanner_socket == -1)
-@@ -596,10 +596,12 @@
+@@ -596,10 +596,12 @@ openvas_scanner_connect_unix ()
        return -1;
      }
  

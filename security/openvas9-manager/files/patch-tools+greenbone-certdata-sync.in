@@ -1,6 +1,6 @@
---- tools/greenbone-certdata-sync.in	2016-11-10 04:58:06.000000000 -0500
-+++ tools/greenbone-certdata-sync.in	2017-08-06 13:11:30.155406000 -0500
-@@ -99,7 +99,7 @@
+--- tools/greenbone-certdata-sync.in.orig	2016-11-10 09:58:06 UTC
++++ tools/greenbone-certdata-sync.in
+@@ -99,7 +99,7 @@ fi
  
  # Delay between retries
  if [ -z "$SQL_RETRY_DELAY" ]; then
@@ -9,7 +9,7 @@
  fi
  
  # LOG_CMD defines the command to use for logging. To have logger log to stderr
-@@ -766,7 +766,7 @@
+@@ -766,7 +766,7 @@ update_cert_db() {
      for certfile in $CERT_DIR/CB-K*.xml
      do
        [ -e "$certfile" ] || break  # No file found
@@ -18,7 +18,7 @@
        filedate=$(( $filedate - ( $filedate % 60 ) ))
        if [ $filedate -gt $DB_LASTUPDATE ]
        then
-@@ -801,7 +801,7 @@
+@@ -801,7 +801,7 @@ update_cert_db() {
      for certfile in $CERT_DIR/dfn-cert-*.xml
      do
        [ -e "$certfile" ] || break  # no file found
@@ -27,7 +27,7 @@
        filedate=$(( $filedate - ( $filedate % 60 ) ))
        if [ $filedate -gt $DB_LASTUPDATE ]
        then
-@@ -831,7 +831,7 @@
+@@ -831,7 +831,7 @@ update_cert_db() {
  
    update_cvss
  
@@ -36,7 +36,7 @@
  
    reset_sql_tries
    until [ "$try_sql" -eq 0 ]
-@@ -1045,7 +1045,7 @@
+@@ -1045,7 +1045,7 @@ fi
  
  if [ -f "$CERT_DB" ]
  then
