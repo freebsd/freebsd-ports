@@ -48,7 +48,7 @@
  version = $(shell grep -m 1 _RELEASE ../core/init.lua | cut -d ' ' -f4- | \
                    tr ' ' '_' | tr -d "'")
 -WGET = wget -O $@
-+WGET = : wget -O $@
++WGET = : wget-is-forbidden-during-build -O $@
  
  # Scintilla.
  
@@ -63,12 +63,14 @@
  	install $^ $(DESTDIR)$(data_dir)
  	cp -rL $| $(DESTDIR)$(data_dir)
 -	ln -s $(subst .., $(data_dir), $^) $(DESTDIR)$(bin_dir)
+-	if [ -d "$(XDG_DATA_DIR)" ]; then \
 +	ln -s $(subst ..,..$(subst $(PREFIX),,$(data_dir)),$^) $(DESTDIR)$(bin_dir)
- 	if [ -d "$(XDG_DATA_DIR)" ]; then \
++	if : ; then \
  		install -d $(DESTDIR)$(XDG_DATA_DIR); \
  		install $(desktop_files) $(DESTDIR)$(XDG_DATA_DIR); \
  	fi
- 	if [ -d "$(PIXMAPS_DIR)" ]; then \
+-	if [ -d "$(PIXMAPS_DIR)" ]; then \
++	if : ; then \
  		install -d $(DESTDIR)$(PIXMAPS_DIR); \
 -		ln -s $(data_dir)/core/images/textadept.svg $(DESTDIR)$(PIXMAPS_DIR); \
 -		ln -s $(data_dir)/core/images/ta_48x48.png \
