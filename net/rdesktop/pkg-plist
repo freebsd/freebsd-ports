@@ -10,7 +10,6 @@ man/man1/rdesktop.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/lspci-channel.txt
 %%PORTDOCS%%%%DOCSDIR%%/makerelease.txt
 %%PORTDOCS%%%%DOCSDIR%%/patches.txt
-%%PORTDOCS%%%%DOCSDIR%%/rdpsnd-rec.txt
 %%PORTDOCS%%%%DOCSDIR%%/rdpsnd.txt
 %%PORTDOCS%%%%DOCSDIR%%/redirection.txt
 %%PORTDOCS%%%%DOCSDIR%%/seamlessrdp-channel.txt
@@ -34,8 +33,8 @@ man/man1/rdesktop.1.gz
 %%DATADIR%%/keymaps/fr-bepo
 %%DATADIR%%/keymaps/fr-ca
 %%DATADIR%%/keymaps/fr-ch
-%%DATADIR%%/keymaps/hr
 %%DATADIR%%/keymaps/he
+%%DATADIR%%/keymaps/hr
 %%DATADIR%%/keymaps/hu
 %%DATADIR%%/keymaps/is
 %%DATADIR%%/keymaps/it

@@ -2,17 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	rdesktop
-PORTVERSION=	1.8.6
+PORTVERSION=	1.9.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net comms
 
-MAINTAINER=	gregf@hugops.pw
+MAINTAINER=	freebsd@gregv.net
 COMMENT=	RDP client for Windows NT/2000/2003 Terminal Server
 
 LICENSE=	GPLv3
 
-USES=		autoreconf gmake iconv pkgconfig ssl xorg
-USE_XORG=	x11 xrandr
+LIB_DEPENDS=	libgmp.so:math/gmp \
+		libgnutls.so:security/gnutls \
+		libnettle.so:security/nettle \
+		libtasn1.so:security/libtasn1
+
+USES=		autoreconf gmake iconv pkgconfig xorg
+USE_XORG=	x11 xcursor xrandr
 USE_GITHUB=	yes
 
 CONFIGURE_ARGS+=	${ICONV_CONFIGURE_ARG} \
@@ -61,6 +66,10 @@ CONFIGURE_ARGS+=	--with-debug-smartcard
 post-configure:
 	${ECHO} "#define WITH_DEBUG_SERIAL 1" >> ${WRKSRC}/rdesktop.h
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e '/-o rdesktop/s,-lX11,& -lgmp,' \
+		${WRKSRC}/Makefile.in
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rdesktop ${STAGEDIR}${PREFIX}/bin
