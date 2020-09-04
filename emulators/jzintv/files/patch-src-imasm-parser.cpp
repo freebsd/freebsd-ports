@@ -1,6 +1,6 @@
---- src/imasm/parser.cpp.orig	2010-11-01 07:19:01.000000000 +0100
-+++ src/imasm/parser.cpp	2013-10-29 06:17:34.000000000 +0100
-@@ -65,7 +65,7 @@
+--- src/imasm/parser.cpp.orig	2010-11-01 06:19:01 UTC
++++ src/imasm/parser.cpp
+@@ -65,7 +65,7 @@ int stricmp_(const char *str1, const char *str2)
  
  Parser::~Parser()
  {
@@ -9,7 +9,7 @@
      
      for (itr = m_macroMap.begin(); itr != m_macroMap.end(); itr++)
      {
-@@ -583,7 +583,7 @@
+@@ -583,7 +583,7 @@ int Parser::FindMacros(string &sLine, string &sOut)
  
  macro *Parser::GetMacroPtr(const char *macName)
  {

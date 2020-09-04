@@ -1,6 +1,6 @@
---- src/Makefile.freebsd.orig	2007-11-06 09:31:28.000000000 +0100
-+++ src/Makefile.freebsd	2013-03-26 18:17:55.000000000 +0100
-@@ -18,8 +18,8 @@
+--- src/Makefile.freebsd.orig	2007-11-06 08:31:28 UTC
++++ src/Makefile.freebsd
+@@ -18,8 +18,8 @@ R=../rom
  ##############################################################################
  P           = export PATH;
  
@@ -11,7 +11,7 @@
  
  # Set "X" to be the executable extension
  X =        
-@@ -45,14 +45,14 @@
+@@ -45,14 +45,14 @@ RM = rm -f 
  #OPT_FLAGS = -ggdb 
  #OPT_FLAGS = -O
  #OPT_FLAGS = -O2 -ggdb
@@ -30,7 +30,7 @@
  
  
  OBJS=jzintv.o
-@@ -61,8 +61,8 @@
+@@ -61,8 +61,8 @@ TOCLEAN=$(B)/jzintv core
  
  PROGS=$(PROG)
  

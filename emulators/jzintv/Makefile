@@ -14,10 +14,11 @@ COMMENT=	Portable Intellivision(TM) Emulator
 
 LICENSE=	GPLv2
 
-USES=		alias gmake sdl xorg zip
+USES=		alias dos2unix gmake sdl xorg zip
 USE_XORG=	x11 xau xdmcp
 USE_SDL=	sdl
 
+DOS2UNIX_GLOB=	*.[ch]
 CPPFLAGS+=	-I${LOCALBASE}/include `${SDL_CONFIG} --cflags`
 LDFLAGS+=	-L${LOCALBASE}/lib `${SDL_CONFIG} --libs` -lm
 WRKSRC=		${WRKDIR}/jzintv-1.0-beta4
