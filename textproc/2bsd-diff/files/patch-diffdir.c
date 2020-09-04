@@ -1,5 +1,14 @@
 --- diffdir.c.orig	1991-11-12 20:31:29 UTC
 +++ diffdir.c
+@@ -2,7 +2,7 @@
+ static	char *sccsid = "@(#)diffdir.c	4.9 (Berkeley) 8/28/84";
+ #endif
+ 
+-#include "diff.h"
++#include "diffextern.h"
+ /*
+  * diff - directory comparison
+  */
 @@ -24,7 +24,15 @@ struct	dir *setupdir();
  int	header;
  char	title[2*BUFSIZ], *etitle;

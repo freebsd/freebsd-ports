@@ -1,5 +1,14 @@
 --- diffreg.c.orig	1994-01-11 05:39:33 UTC
 +++ diffreg.c
+@@ -2,7 +2,7 @@
+ static	char sccsid[] = "@(#)diffreg.c 4.16.1 (2.11BSD) 1/1/94";
+ #endif
+ 
+-#include "diff.h"
++#include "diffextern.h"
+ /*
+  * diff - compare two files.
+  */
 @@ -84,6 +84,25 @@ struct line {
  	int	serial;
  	int	value;
