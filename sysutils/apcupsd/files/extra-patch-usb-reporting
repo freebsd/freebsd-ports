@@ -1,0 +1,51 @@
+--- include/HidUps.h.orig	2015-02-08 18:00:05 UTC
++++ include/HidUps.h
+@@ -107,6 +107,7 @@ class HidUps (private)
+    /* Fetch a descriptor from an interface (as opposed to from the device) */
+    int GetIntfDescr(
+       unsigned char type, unsigned char index, void *buf, int size);
++   int GetIntfDescrLength(unsigned char index);
+ 
+    bool init_device(struct usb_device *dev, const char *serno);
+ 
+--- src/libusbhid/HidUps.cpp.orig	2015-02-08 18:00:05 UTC
++++ src/libusbhid/HidUps.cpp
+@@ -244,6 +244,26 @@ int HidUps::GetIntfDescr(
+                          (type << 8) + index, 0, (char*)buf, size, 1000);
+ }
+ 
++/* Get the interface descriptor's length */
++int HidUps::GetIntfDescrLength(unsigned char index)
++{
++   /* usb_hid_descriptor  */
++   char buf[9];
++   memset(buf, 0, sizeof(buf));
++   int ret = usb_control_msg(_fd, USB_ENDPOINT_IN | USB_RECIP_INTERFACE,
++                            USB_REQ_GET_DESCRIPTOR,
++                            (USB_DT_HID << 8) + index, 0, (char*)buf, sizeof(buf), 1000);
++   
++   int len = MAX_SANE_DESCRIPTOR_LEN;
++   if (ret >= 0) {
++      /* wDescriptorLength */
++      int desclen = buf[7] | (buf[8] << 8);
++      if (desclen > 0)
++         len = desclen;
++   }
++   return len;
++}
++
+ /*
+  * Fetch the report descriptor from the device given an _fd for the
+  * device's control endpoint. Descriptor length is written to the
+@@ -255,8 +275,9 @@ unsigned char *HidUps::FetchReportDescr(int *rlen)
+    unsigned char *ptr;
+    int rdesclen;
+ 
+-   ptr = (unsigned char*)malloc(MAX_SANE_DESCRIPTOR_LEN);
+-   rdesclen = GetIntfDescr(USB_DT_REPORT, 0, ptr, MAX_SANE_DESCRIPTOR_LEN);
++   int desclen = GetIntfDescrLength(0);
++   ptr = (unsigned char*)malloc(desclen);
++   rdesclen = GetIntfDescr(USB_DT_REPORT, 0, ptr, desclen);
+    if (rdesclen <= 0) {
+       Dmsg(100, "Unable to get REPORT descriptor (%d).\n", rdesclen);
+       free(ptr);

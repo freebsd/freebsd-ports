@@ -18,6 +18,10 @@ For default, apcupsd starts with `--kill-on-powerfail` parameter.
 Please, read its man page, and if this is not the intended behavior you want,
 change it accordingly.
 
+If connected via USB and apcaccess reports incomplete data consider enabling
+the USB_REPORTING options via 'make config'.  This contains an experimental
+patch that may fix some USB attach APC UPS. PR #249041
+
 In some systems where the shutdown can take a while (like in bhyve environment),
 you may want to change this behavior as follows:
 
