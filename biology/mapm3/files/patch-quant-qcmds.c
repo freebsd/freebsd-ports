@@ -1,6 +1,6 @@
---- quant/qcmds.c.orig	2008-04-04 20:05:29.000000000 +0000
-+++ quant/qcmds.c	2008-03-27 21:30:08.000000000 +0000
-@@ -1348,7 +1348,7 @@
+--- quant/qcmds.c.orig	1993-02-09 21:12:33 UTC
++++ quant/qcmds.c
+@@ -1348,7 +1348,7 @@ command load_data() 
      if (nullstr(args)) {
  	if (!data_loaded()) print(NO_LOADED_DATA); else {
  	    strcpy(tfile,raw.file);
@@ -9,7 +9,7 @@
  	    sf(ps,LOADED_DATA,raw.file,tfile,"",raw.n_indivs,
  	       (raw.data_type==BACKCROSS ? "backcross":"intercross"),
  	       raw.n_loci,raw.n_traits,maybe_s(raw.n_traits)); pr();
-@@ -1363,9 +1363,9 @@
+@@ -1363,9 +1363,9 @@ command load_data() 
  	nstoken(&args,sREQUIRED,dfile,PATH_LENGTH); tfile[0]='\0';
  	nomore_args(num_args);
  	run {
@@ -21,7 +21,7 @@
  
  	    if (streq(ln,"prepared data f2 backcross")) {
  		strcpy(geno_chars,default_backcross_chars);
-@@ -1384,11 +1384,11 @@
+@@ -1384,11 +1384,11 @@ command load_data() 
  	    }
  
  	    strcpy(tfile,dfile);
@@ -35,7 +35,7 @@
  	      send(CANTOPEN);
  	    fpc = open_file(mfile,READ);
  
-@@ -1449,7 +1449,7 @@
+@@ -1449,7 +1449,7 @@ command prep_data()
  
  	out_name = get_temp_string();
  	strcpy(out_name,in_name);
@@ -44,7 +44,7 @@
  
   fp = open_file(in_name,READ);
  	getdataln(fp);  crunch(ln);
-@@ -1488,7 +1488,7 @@
+@@ -1488,7 +1488,7 @@ command save_status()
      name = mkstrcpy(raw.file);
      name3 = mkstrcpy(raw.file);
      name2 = "dummy.qtls";
@@ -53,7 +53,7 @@
  
      /* The following accounts for the case where there is no file 'name'
         (i.e. it makes one)  */
-@@ -1500,7 +1500,7 @@
+@@ -1500,7 +1500,7 @@ command save_status()
  	close_file(fp);
      }
  
@@ -62,7 +62,7 @@
      run {
  	fp = open_file(name2, WRITE);
  	sf(ps,"Now saving %s...\n",name);  pr();
-@@ -1520,8 +1520,8 @@
+@@ -1520,8 +1520,8 @@ command save_status()
      }
  
      name2="dummy.traits";
@@ -73,7 +73,7 @@
      run {
  	fp = open_file(name2, WRITE);
  	sf(ps,"Now saving %s...\n",name);  pr();
-@@ -1560,7 +1560,7 @@
+@@ -1560,7 +1560,7 @@ FILE *fp;
  	save_wiggle(fp,i);
      }
      
@@ -82,7 +82,7 @@
      
      fprintf(fp,"%d %d\n",num_compares,first_compare);
      for(i = 0; i < num_compares; i++) {
-@@ -1587,7 +1587,7 @@
+@@ -1587,7 +1587,7 @@ void load_qtl_files()
  
      run {
  	strcpy(name,raw.file);

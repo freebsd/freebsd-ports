@@ -1,6 +1,6 @@
---- mapm/two_cmds.c.orig	2008-04-04 20:05:29.000000000 +0000
-+++ mapm/two_cmds.c	2008-04-03 19:58:42.000000000 +0000
-@@ -698,11 +698,11 @@
+--- mapm/two_cmds.c.orig	1993-02-09 16:35:06 UTC
++++ mapm/two_cmds.c
+@@ -698,11 +698,11 @@ command three_point()
  
  	if (!print_names) {
  print("\n                    log-likelihood differences\n");

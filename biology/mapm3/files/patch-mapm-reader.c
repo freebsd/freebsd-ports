@@ -1,6 +1,6 @@
---- mapm/reader.c.orig	2008-04-04 20:05:29.000000000 +0000
-+++ mapm/reader.c	2008-03-27 21:10:18.000000000 +0000
-@@ -81,7 +81,7 @@
+--- mapm/reader.c.orig	1993-02-09 16:35:05 UTC
++++ mapm/reader.c
+@@ -81,7 +81,7 @@ void data_init()
  
  void getdataln(fp) /* get next nonblank,noncomment data file line */
  FILE *fp;
@@ -9,7 +9,7 @@
  
    
  void baddata(reason) /* send data reading error message */
-@@ -135,7 +135,7 @@
+@@ -135,7 +135,7 @@ bool *exists;
      char tmpname[PATH_LENGTH+1];
  
      make_filename(name,FORCE_EXTENSION,ext);
@@ -18,7 +18,7 @@
     
      fp=NULL; *exists=FALSE;
      run {
-@@ -162,7 +162,7 @@
+@@ -162,7 +162,7 @@ char *name, *oldext;
  bool exists;
  {
      char tmpname[PATH_LENGTH+1], oldname[PATH_LENGTH+1];
@@ -27,7 +27,7 @@
      strcpy(oldname,name); make_filename(oldname,FORCE_EXTENSION,oldext);
  
      if (exists) { rename_file(name,oldname); }
-@@ -214,7 +214,7 @@
+@@ -214,7 +214,7 @@ bool israw;
  		raw.data.f2.cross_type);
      print(" ok\n");
  
@@ -36,7 +36,7 @@
      run {
  	fp2=NULL;
          fp2=open_file(name,READ);
-@@ -228,7 +228,7 @@
+@@ -228,7 +228,7 @@ bool israw;
  	close_file(fp2);
      } except_when(CANTOPEN) { } /* need a better handler */
  
@@ -45,7 +45,7 @@
      run {
  	fp2=NULL;
  	fp2=open_file(name,READ);
-@@ -240,7 +240,7 @@
+@@ -240,7 +240,7 @@ bool israw;
  	close_file(fp2);
      } except_when(CANTOPEN) { } /* need a better handler */
  
@@ -54,7 +54,7 @@
      run {
  	fp2=NULL;
          fp2=open_file(name,READ);
-@@ -285,39 +285,39 @@
+@@ -285,39 +285,39 @@ bool save_genos_too;
      run {
  	strcpy(name,base_name);
  	if (save_genos_too) {
@@ -104,7 +104,7 @@
  	    free_traits();
  	}
  	two_pt_touched= FALSE;
-@@ -576,15 +576,15 @@
+@@ -576,15 +576,15 @@ FILE *fp;
      char header[MAXLINE+1];
  
      if (raw.data.f2.cross_type==F2_INTERCROSS) 
@@ -125,7 +125,7 @@
      
      sf(header,"%d %d %d\n",raw.filenumber,raw.data.f2.num_indivs,
         raw.num_markers); fprint(fp,header);
-@@ -593,7 +593,7 @@
+@@ -593,7 +593,7 @@ FILE *fp;
  	sf(ps,"*%-10s   ", raw.locus_name[i]);
  	fpr(fp);
  	for (j=0; j<raw.data.f2.num_indivs; j++) {
@@ -134,7 +134,7 @@
  	    sf(ps,"%c",raw.data.f2.allele[i][j]);
  	    fpr(fp);
  	    }
-@@ -828,9 +828,7 @@
+@@ -828,9 +828,7 @@ int chr;
  char *symb;
  {
      /* CHANGED FOR THIS VERION - NOW READS "-AHBCD" */
@@ -145,7 +145,7 @@
      else if (chr==symb[2]) return(HYBRID_TYPE_H);
      else if (chr==symb[3]) return(PARENTAL_TYPE_B);
      else if (chr==symb[4]) return(TYPE_NOT_A);
-@@ -856,26 +854,26 @@
+@@ -856,26 +854,26 @@ FILE *fp;
  	fnl(fp);
      }
      fnl(fp);

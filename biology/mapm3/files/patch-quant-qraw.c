@@ -1,6 +1,6 @@
---- quant/qraw.c.orig	2008-04-04 20:05:29.000000000 +0000
-+++ quant/qraw.c	2008-03-27 21:30:39.000000000 +0000
-@@ -124,7 +124,7 @@
+--- quant/qraw.c.orig	1993-02-09 16:35:59 UTC
++++ quant/qraw.c
+@@ -124,7 +124,7 @@ int data_loaded() { return(raw.file[0]!='\0'); }
  
  void getdataln(fp) /* get next nonblank/noncomment data file line */
  FILE *fp;
@@ -9,7 +9,7 @@
    BADDATA_ln= ln; }
  real read_map_distance();
  void read_map_locus();
-@@ -426,13 +426,13 @@
+@@ -426,13 +426,13 @@ FILE *fp;
  
  	    for(j=0;j<raw.n_indivs;j++) {
  		if(j % 5 == 0 && j != 0)
@@ -25,7 +25,7 @@
  	sf(ps,"*Print mapm loci: %d\n", print_mapm_loci);fpr(fp);
  	sf(ps,"*Like tolerance: %lf\n",like_tolerance);fpr(fp);
  	sf(ps,"*Brute force: %d\n",brute_force);fpr(fp);
-@@ -452,21 +452,21 @@
+@@ -452,21 +452,21 @@ FILE *fp;
  	    sf(ps, "chr%d %d\n", i+1, raw.chrom_n_loci[i]); fpr(fp);
  	    for(j=0;j<raw.chrom_n_loci[i];j++) {
  		if(j % 18 == 0 && j != 0)

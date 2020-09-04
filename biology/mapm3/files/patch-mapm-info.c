@@ -1,6 +1,6 @@
---- mapm/info.c.orig	2008-04-04 20:05:29.000000000 +0000
-+++ mapm/info.c	2008-03-27 21:26:18.000000000 +0000
-@@ -966,9 +966,9 @@
+--- mapm/info.c.orig	1993-02-09 16:35:03 UTC
++++ mapm/info.c
+@@ -966,9 +966,9 @@ FILE *fp;
  	   class[locus]);
  	fpr(fp);
      }
@@ -12,7 +12,7 @@
  }
  
  
-@@ -980,12 +980,12 @@
+@@ -980,12 +980,12 @@ FILE *fp;
      real rate;
      char temp_locus_name[NAME_LEN+2], word[TOKLEN+1];
  
@@ -27,7 +27,7 @@
  
  	if (!nstoken(&ln,sREQUIRED,temp_locus_name,NAME_LEN+1) || 
  	    temp_locus_name[0]!='*' || len(temp_locus_name)<2)
-@@ -1007,9 +1007,9 @@
+@@ -1007,9 +1007,9 @@ FILE *fp;
  	order_next[locus]= ord_next;
  	class[locus]= class_num;
      }

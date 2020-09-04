@@ -1,6 +1,6 @@
---- lib/iolib.h.orig	2008-04-04 20:05:29.000000000 +0000
-+++ lib/iolib.h	2008-04-03 20:00:49.000000000 +0000
-@@ -53,9 +53,9 @@
+--- lib/iolib.h.orig	1993-02-09 16:35:27 UTC
++++ lib/iolib.h
+@@ -53,9 +53,9 @@ sprintf() can spew out some very large strings of char
  conditions. Assume its really only one (or maybe 2-3) lines. ps_ is similar, 
  but for internal use only by the functions in this library.
  
@@ -12,7 +12,7 @@
  However, the string space used to hold the input line is reused, and
  any pointers into the ln string which you saved may point to trash
  after one of these calls. Ln is alloced for 2K chars, leaving lots of
-@@ -66,7 +66,7 @@
+@@ -66,7 +66,7 @@ processing on the output string, including trying to w
  word breaks, converting tabs to spaces (every 8 chars), buffering
  output (perhaps multiple lines!) and more. The do_fwrite() function does
  not do this. Similarly, the getln() function despace()es,
@@ -21,7 +21,7 @@
  finput() functions do not [yes, it's a somewhat odd inconsistancy, but
  it's handy].
  
-@@ -254,6 +254,14 @@
+@@ -254,6 +254,14 @@ bool string_editor(); /* args: char *prompt, *str; int
     files! (The obvious exception is logging and input redirection, for which
     you should use the rather carefuly crafted routines described above!) */
  
@@ -36,7 +36,7 @@
  bool make_filename(); /* args: char *name; int mode; char *extension; 
     This turns name into a perfectly valid file name, and returns TRUE if this
     was possible. The name may include a directory specification - otherwise it
-@@ -277,7 +285,7 @@
+@@ -277,7 +285,7 @@ FILE *open_file();  /* args: char *name, *mode; on fai
  #define APPEND "a"
  void close_file();  /* args: FILE *fp; */
  
@@ -45,7 +45,7 @@
     will be able to grab a new line from the file. */
  bool end_of_text(); /* args: FILE *fp; Like an end-of-file test, except it also
    returns TRUE if rest of the file is white. As a side-effect, it will step
-@@ -289,17 +297,17 @@
+@@ -289,17 +297,17 @@ void do_fwrite(); /* args: FILE *fp; char *string; no 
  
  #define fpr(fp) fprint(fp,ps)
  #define fwp(fp) fwrite(fp,ps)
@@ -67,7 +67,7 @@
     beginning with a '#' in the leftmost position. Also, each time any line is
     read from the file (data, null, or comment), *count is incremented. */
  		     
-@@ -329,7 +337,7 @@
+@@ -329,7 +337,7 @@ extern int num_file_args, dos_output, prep_it, append_
  
  extern char *ps_, *ln_;     /* input and output strings for the library only */
  extern char *linebuf;       /* tty output buffer */

@@ -1,6 +1,6 @@
---- lib/makehelp.c.orig	2008-04-04 20:05:29.000000000 +0000
-+++ lib/makehelp.c	2008-03-27 21:52:37.000000000 +0000
-@@ -131,7 +131,7 @@
+--- lib/makehelp.c.orig	1993-02-09 21:19:35 UTC
++++ lib/makehelp.c
+@@ -131,7 +131,7 @@ char *name;
  {
      close_file(file);
  
@@ -9,7 +9,7 @@
      close_file(hlp);
  
      write_topics_and_end();
-@@ -172,9 +172,9 @@
+@@ -172,9 +172,9 @@ char *argv[];
  	strcpy(man_name, argv[4]);
  
  	strcpy(code_failed,code_name);
@@ -21,7 +21,7 @@
  			     FORCE_DIR,argv[5]);
  
  	file= open_file(file_name,READ);
-@@ -187,16 +187,16 @@
+@@ -187,16 +187,16 @@ char *argv[];
  	matrix(entry,MAX_COMMANDS,MAXLINE+1,char);
  
  	/* start help file 12345678901234567890123456789012345 */
@@ -43,7 +43,7 @@
  
  	/* man file */
  	man_write_title();
-@@ -242,7 +242,7 @@
+@@ -242,7 +242,7 @@ char *argv[];
  	    strcpy(name,str+i); despace(name);
  	    nextstr();
  	    sf(ps,"\t%s...  ",name); pr(); flush();
@@ -52,7 +52,7 @@
  	    if      (streq(type,"cmd"))   parse_entry(CMD,name,abbreviation); 
  	    else if (streq(type,"opt"))   parse_entry(OPT,name,abbreviation); 
  	    else if (streq(type,"param")) parse_entry(PAR,name,abbreviation);
-@@ -419,7 +419,7 @@
+@@ -419,7 +419,7 @@ void write_topics_and_end()
  	sf(ps," mktopic(%d,\"%s\",TOP,%ldl);\n",s,temp,position[s]);
  	fpr(code); s++;
      }
@@ -61,7 +61,7 @@
  }
  
  
-@@ -681,7 +681,7 @@
+@@ -681,7 +681,7 @@ void man_write_contents()
  	    case TOP:
  	      man_write_line("");
  	      strcpy(upcase,section[s]); uppercase(upcase);
@@ -70,7 +70,7 @@
  	    case CMD: 
  	      strcpy(upcase,entry[i]); uppercase(upcase);
  	      sf(temp,"      %s Command ",upcase); break;
-@@ -718,7 +718,7 @@
+@@ -718,7 +718,7 @@ void man_write_contents()
  	if (entry_type[i]==TOP) {
  	    man_write_line("");
  	    strcpy(upcase,section[s]); uppercase(upcase);

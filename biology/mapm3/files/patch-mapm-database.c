@@ -1,6 +1,6 @@
---- mapm/database.c.orig	2008-04-04 20:05:29.000000000 +0000
-+++ mapm/database.c	2008-03-27 21:26:48.000000000 +0000
-@@ -45,7 +45,7 @@
+--- mapm/database.c.orig	1993-02-09 16:35:02 UTC
++++ mapm/database.c
+@@ -45,7 +45,7 @@ command import()
      get_one_arg(stoken, sREQUIRED, out_name);
  
      /* force file extension to be ".data" */

@@ -1,6 +1,6 @@
---- mapm/map_info.h.orig	2008-04-04 20:05:29.000000000 +0000
-+++ mapm/map_info.h	2008-03-31 00:14:48.000000000 +0000
-@@ -215,7 +215,7 @@
+--- mapm/map_info.h.orig	1993-02-09 16:35:06 UTC
++++ mapm/map_info.h
+@@ -215,7 +215,7 @@ typedef struct {  /* working data for place cmd and ex
  /***** Chromosome framework, assignment, and placement stuff - chroms.c *****/
  
  extern SAVED_LIST *chromosome;  /* malloced by allocate_mapping_structs() */

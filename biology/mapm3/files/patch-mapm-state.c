@@ -1,6 +1,6 @@
---- mapm/state.c.orig	2008-04-04 20:05:29.000000000 +0000
-+++ mapm/state.c	2008-04-03 19:37:40.000000000 +0000
-@@ -734,7 +734,7 @@
+--- mapm/state.c.orig	1993-02-09 16:35:05 UTC
++++ mapm/state.c
+@@ -734,7 +734,7 @@ FILE *fp;
  {
      int i, usenum;
  
@@ -9,7 +9,7 @@
  
      sf(ps,"*PrintNames: %d\n",print_names); fpr(fp);
      sf(ps,"*Tolerance: %lf\n",tolerance); fpr(fp);
-@@ -852,5 +852,5 @@
+@@ -852,5 +852,5 @@ FILE *fp;
  	load_table(context[i]->sequence_history,fp,INDEX_BY_NUMBER,num);
      }
  

@@ -1,6 +1,6 @@
---- lib/syscode.c.orig	2008-04-04 20:05:29.000000000 +0000
-+++ lib/syscode.c	2008-03-27 21:03:12.000000000 +0000
-@@ -198,7 +198,7 @@
+--- lib/syscode.c.orig	1993-02-09 16:35:26 UTC
++++ lib/syscode.c
+@@ -198,7 +198,7 @@ long index;
      long fseekvalue= 0L;
      frewind(fp);
      run while (fseekvalue < index-1) {
@@ -9,7 +9,7 @@
  	fseekvalue+=len(ln)+1;
      } except_when(ENDOFILE) return(FALSE);
      return(TRUE);
-@@ -742,26 +742,26 @@
+@@ -742,26 +742,26 @@ char *argv[];
  
  	} else if (matches(argv[i]+1,"load")) {
  	    check_file_arg(*argc_ptr-i,argv[i+1],file_arg[LOAD_FILE_ARG],

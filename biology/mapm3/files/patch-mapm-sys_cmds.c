@@ -1,6 +1,6 @@
---- mapm/sys_cmds.c.orig	2008-04-04 20:05:29.000000000 +0000
-+++ mapm/sys_cmds.c	2008-03-27 21:28:05.000000000 +0000
-@@ -98,7 +98,7 @@
+--- mapm/sys_cmds.c.orig	1993-02-09 16:35:06 UTC
++++ mapm/sys_cmds.c
+@@ -98,7 +98,7 @@ bool prev_data, raw;
  	close_file(fp);
  	if (raw) {
  	    strcpy(run_file,name); 
@@ -9,7 +9,7 @@
  	    if (!redirect_input(run_file,FALSE)) {
  		sf(ps,"unable to run file '%s'... skipping initialization\n",
  		   run_file); pr();
-@@ -145,7 +145,7 @@
+@@ -145,7 +145,7 @@ command new_load_data()
  	if (!prev_data) print("no data are loaded\n");
  	else { sf(ps,DATA_LOADED,raw.filename,data_info(TRUE)); pr(); }
      } else {
@@ -18,7 +18,7 @@
  	if (prev_data) try_to_unload(fp,TRUE,auto_save,TRUE,just_prepared);
  	try_to_load(fp,name,prev_data,FALSE);
  	just_prepared=FALSE;
-@@ -169,7 +169,7 @@
+@@ -169,7 +169,7 @@ command new_prepare()
         if (streq(&name[end-4],DATA_EXT) || streq(&name[end-4],DATA_OLD) ||...
         error(RAW_EXTENSION); */
  
@@ -27,7 +27,7 @@
      if (prev_data) try_to_unload(fp,TRUE,auto_save,TRUE,just_prepared);
      try_to_load(fp,name,prev_data,TRUE);
      just_prepared=TRUE;
-@@ -186,7 +186,7 @@
+@@ -186,7 +186,7 @@ command new_save_data()
      get_one_arg(stoken,"",name); new_name= !nullstr(name);
      /* want to change this so it sets raw.filename only AFTER it writes OK */
  
@@ -36,7 +36,7 @@
        { sf(ps,BAD_FILENAME,name); error(ps); }
  
      run {
-@@ -621,7 +621,7 @@
+@@ -621,7 +621,7 @@ command new_insert()
  	for (j=num_seq_tokens-1; j>i; j--)
  	  strcpy(seq_tokens[j+1],seq_tokens[j]);
  	/* this is severly broken, if len(appendage) > TOKLEN */

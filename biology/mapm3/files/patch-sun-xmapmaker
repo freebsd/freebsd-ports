@@ -1,6 +1,6 @@
---- sun/xmapmaker.orig	2008-04-04 20:05:29.000000000 +0000
-+++ sun/xmapmaker	2008-04-04 19:59:32.000000000 +0000
-@@ -10,5 +10,5 @@
+--- sun/xmapmaker.orig	1993-02-10 05:57:29 UTC
++++ sun/xmapmaker
+@@ -10,5 +10,5 @@ if (-e /usr/openwin/bin/xterm) then
  else if (-e /usr/openwin/demo/xterm) then
  	exec /usr/openwin/demo/xterm $xoptions $fontsize -e $program $*
  else
