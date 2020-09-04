@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mod_setenvifplus
-PORTVERSION=	0.38
+PORTVERSION=	0.40
 CATEGORIES=	www
 MASTER_SITES=	SF/modsetenvifplus
 EXTRACT_SUFX=	-src.tar.gz
