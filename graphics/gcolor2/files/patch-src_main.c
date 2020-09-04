@@ -1,6 +1,6 @@
---- src/main.c.orig	2010-06-21 22:38:34.000000000 +0200
-+++ src/main.c	2010-06-21 22:36:23.000000000 +0200
-@@ -9,6 +9,11 @@
+--- src/main.c.orig	2005-07-11 14:55:49 UTC
++++ src/main.c
+@@ -9,11 +9,19 @@
  #include "support.h"
  #include "callbacks.h"
  
@@ -12,7 +12,15 @@
  GtkListStore *liststore;
  GdkWindow    *gdkwin;
  gchar        *user_filename;
-@@ -48,8 +53,6 @@
+ gchar        *sys_filename;
+ 
++GtkWidget *gcolor2;
++GtkWidget *menu;
++GdkColor   colorvalue;
+ 
+ void set_user_file ()
+ {
+@@ -48,8 +56,6 @@
  
  void add_list_color (gchar *spec, gchar *name, gchar *type, gboolean is_new_color)
  {
@@ -21,7 +29,7 @@
  	GdkPixbuf   *buf;
  	GtkTreeIter  iter;
  	
-@@ -103,7 +106,7 @@
+@@ -103,7 +109,7 @@
  	gchar *name;
  	gchar  buffer[512];
  	gchar  spec[8];
@@ -30,7 +38,7 @@
  	
  	fp = fopen (filename, "r");
  	if (!fp)
-@@ -140,7 +143,6 @@
+@@ -140,7 +146,6 @@
  	GtkTreeViewColumn *column;
  	GtkWidget         *treeview;
  	GtkTreeSelection  *select;
