@@ -16,7 +16,7 @@
 %%QT_INCDIR%%/QtWebView/qwebview_global.h
 %%QT_CMAKEDIR%%/Qt5WebView/Qt5WebViewConfig.cmake
 %%QT_CMAKEDIR%%/Qt5WebView/Qt5WebViewConfigVersion.cmake
-%%QT_CMAKEDIR%%/Qt5WebView/Qt5WebView_QWebEngineWebViewPlugin.cmake
+%%WEBENGINE%%%%QT_CMAKEDIR%%/Qt5WebView/Qt5WebView_QWebEngineWebViewPlugin.cmake
 %%QT_LIBDIR%%/libQt5WebView.prl
 %%QT_LIBDIR%%/libQt5WebView.so
 %%QT_LIBDIR%%/libQt5WebView.so.5
@@ -25,7 +25,7 @@
 %%DEBUG%%%%QT_LIBDIR%%/libQt5WebView.so.%%FULLVER%%.debug
 %%QT_MKSPECDIR%%/modules/qt_lib_webview.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_webview_private.pri
-%%QT_PLUGINDIR%%/webview/libqtwebview_webengine.so
+%%WEBENGINE%%%%QT_PLUGINDIR%%/webview/libqtwebview_webengine.so
 %%DEBUG%%%%QT_PLUGINDIR%%/webview/libqtwebview_webengine.so.debug
 %%QT_QMLDIR%%/QtWebView/libdeclarative_webview.so
 %%DEBUG%%%%QT_QMLDIR%%/QtWebView/libdeclarative_webview.so.debug
