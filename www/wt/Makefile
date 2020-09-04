@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wt
-DISTVERSION=	4.3.1
+DISTVERSION=	4.4.0
 CATEGORIES=	www
 
 MAINTAINER=	info@babaei.net
