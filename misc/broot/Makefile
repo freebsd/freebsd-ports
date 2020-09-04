@@ -2,7 +2,7 @@
 
 PORTNAME=	broot
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.20.3
+DISTVERSION=	1.0.0
 CATEGORIES=	misc
 
 MAINTAINER=	vulcan@wired.sh
@@ -29,7 +29,6 @@ CARGO_CRATES=	adler-0.2.3 \
 		arrayvec-0.5.1 \
 		atty-0.2.14 \
 		autocfg-1.0.1 \
-		base64-0.11.0 \
 		base64-0.12.3 \
 		bet-0.3.4 \
 		bincode-1.3.1 \
@@ -37,7 +36,7 @@ CARGO_CRATES=	adler-0.2.3 \
 		blake2b_simd-0.5.10 \
 		bstr-0.2.13 \
 		bumpalo-3.4.0 \
-		bytemuck-1.3.1 \
+		bytemuck-1.4.0 \
 		byteorder-1.3.4 \
 		cast-0.2.3 \
 		cc-1.0.59 \
@@ -78,7 +77,7 @@ CARGO_CRATES=	adler-0.2.3 \
 		hermit-abi-0.1.15 \
 		id-arena-2.2.1 \
 		idna-0.2.0 \
-		image-0.23.8 \
+		image-0.23.9 \
 		indexmap-1.5.1 \
 		is_executable-0.1.2 \
 		itertools-0.9.0 \
@@ -91,7 +90,7 @@ CARGO_CRATES=	adler-0.2.3 \
 		lazycell-1.3.0 \
 		libc-0.2.76 \
 		libgit2-sys-0.10.0 \
-		libz-sys-1.1.0 \
+		libz-sys-1.1.1 \
 		line-wrap-0.1.1 \
 		linked-hash-map-0.5.3 \
 		lock_api-0.3.4 \
@@ -138,14 +137,14 @@ CARGO_CRATES=	adler-0.2.3 \
 		rand_core-0.5.1 \
 		rand_hc-0.2.0 \
 		rand_pcg-0.2.1 \
-		rayon-1.3.1 \
-		rayon-core-1.7.1 \
+		rayon-1.4.0 \
+		rayon-core-1.8.0 \
 		redox_syscall-0.1.57 \
-		redox_users-0.3.4 \
+		redox_users-0.3.5 \
 		regex-1.3.9 \
 		regex-automata-0.1.9 \
 		regex-syntax-0.6.18 \
-		rust-argon2-0.7.0 \
+		rust-argon2-0.8.2 \
 		rustc_version-0.2.3 \
 		ryu-1.0.5 \
 		safemem-0.3.3 \
@@ -176,7 +175,7 @@ CARGO_CRATES=	adler-0.2.3 \
 		thiserror-impl-1.0.20 \
 		thread_local-1.0.1 \
 		tiff-0.5.0 \
-		time-0.1.43 \
+		time-0.1.44 \
 		tinytemplate-1.1.0 \
 		tinyvec-0.3.4 \
 		toml-0.5.6 \
@@ -191,6 +190,7 @@ CARGO_CRATES=	adler-0.2.3 \
 		vec_map-0.8.2 \
 		walkdir-2.3.1 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
+		wasi-0.10.0+wasi-snapshot-preview1 \
 		wasm-bindgen-0.2.67 \
 		wasm-bindgen-backend-0.2.67 \
 		wasm-bindgen-macro-0.2.67 \
