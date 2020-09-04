@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnupg
-PORTVERSION=	2.2.22
+PORTVERSION=	2.2.23
 CATEGORIES=	security
 MASTER_SITES=	GNUPG
 
@@ -31,6 +31,7 @@ CONFIGURE_ARGS=	--disable-ntbtls --enable-gpg-is-gpg2 --enable-symcryptrun
 GNU_CONFIGURE=	yes
 INFO=		gnupg
 TEST_TARGET=	check
+TEST_ARGS=	TESTARGS=--parallel
 
 SUB_FILES=	pkg-message
 
