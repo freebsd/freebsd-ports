@@ -1,5 +1,5 @@
---- Telegram/lib_base/base/platform/linux/base_info_linux.cpp.orig	2020-06-24 20:32:27.483667000 +0300
-+++ Telegram/lib_base/base/platform/linux/base_info_linux.cpp	2020-06-24 20:45:44.399296000 +0300
+--- Telegram/lib_base/base/platform/linux/base_info_linux.cpp.orig	2020-08-10 11:25:13 UTC
++++ Telegram/lib_base/base/platform/linux/base_info_linux.cpp
 @@ -13,7 +13,6 @@
  #include <QtCore/QVersionNumber>
  #include <QtCore/QDate>
@@ -8,7 +8,7 @@
  
  namespace Platform {
  namespace {
-@@ -72,11 +71,9 @@
+@@ -72,11 +71,9 @@ QString SystemVersionPretty() {
  	const auto value = result ? QString::fromLatin1(result) : QString();
  	const auto list = value.split(':', QString::SkipEmptyParts);
  
@@ -22,32 +22,29 @@
  }
  
  QString SystemCountry() {
-@@ -92,13 +89,6 @@
- }
- 
+@@ -94,10 +91,6 @@ QString SystemLanguage() {
  QDate WhenSystemBecomesOutdated() {
--	if (IsLinux32Bit()) {
--		return QDate(2020, 9, 1);
+ 	if (IsLinux32Bit()) {
+ 		return QDate(2020, 9, 1);
 -	} else if (const auto version = GetGlibCVersion(); !version.isEmpty()) {
 -		if (QVersionNumber::fromString(version) < QVersionNumber(2, 23)) {
 -			return QDate(2020, 9, 1); // Older than Ubuntu 16.04.
 -		}
--	}
+ 	}
  	return QDate();
  }
- 
-@@ -120,14 +110,6 @@
+@@ -118,14 +111,6 @@ QString AutoUpdateKey() {
+ 	} else {
+ 		Unexpected("Platform in AutoUpdateKey.");
  	}
- }
- 
+-}
+-
 -QString GetGlibCVersion() {
 -	static const auto result = [&] {
 -		const auto version = QString::fromLatin1(gnu_get_libc_version());
 -		return QVersionNumber::fromString(version).isNull() ? QString() : version;
 -	}();
 -	return result;
--}
--
- bool IsWayland() {
- 	return QGuiApplication::platformName().startsWith("wayland", Qt::CaseInsensitive);
  }
+ 
+ bool IsWayland() {
