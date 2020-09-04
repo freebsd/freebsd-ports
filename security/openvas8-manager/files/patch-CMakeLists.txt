@@ -1,6 +1,6 @@
---- CMakeLists.txt	2017-06-21 05:04:50.000000000 -0500
-+++ CMakeLists.txt	2017-08-04 00:45:04.904399000 -0500
-@@ -153,7 +153,7 @@
+--- CMakeLists.txt.orig	2017-06-21 10:04:50 UTC
++++ CMakeLists.txt
+@@ -153,7 +153,7 @@ if (NOT LIBDIR)
  endif (NOT LIBDIR)
  
  if (NOT LOCALSTATEDIR)
@@ -9,7 +9,7 @@
  endif (NOT LOCALSTATEDIR)
  
  if (NOT DATADIR)
-@@ -196,6 +196,8 @@
+@@ -196,6 +196,8 @@ set (OPENVAS_CA_CERTIFICATE      "${OPENVAS_STATE_DIR}
  
  set (OPENVAS_NVT_DIR             "${OPENVAS_STATE_DIR}/plugins/")
  
@@ -18,7 +18,7 @@
  message ("-- Install prefix: ${CMAKE_INSTALL_PREFIX}")
  
  ## Dependency checks
-@@ -284,7 +286,7 @@
+@@ -284,7 +286,7 @@ configure_file (tools/openvas-migrate-to-postgres.in t
  
  ## Program
  

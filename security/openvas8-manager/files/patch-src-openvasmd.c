@@ -1,6 +1,6 @@
---- src/openvasmd.c	2017-06-16 03:06:07.000000000 -0500
-+++ src/openvasmd.c	2017-08-03 13:21:58.536708000 -0500
-@@ -634,7 +634,7 @@
+--- src/openvasmd.c.orig	2017-06-16 08:06:07 UTC
++++ src/openvasmd.c
+@@ -634,7 +634,7 @@ cleanup ()
      }
  #endif /* LOG */
    tracef ("   Exiting.\n");
@@ -9,7 +9,7 @@
  
    /* Tear down authentication system conf, if any. */
    openvas_auth_tear_down ();
-@@ -887,7 +887,7 @@
+@@ -887,7 +887,7 @@ update_or_rebuild_nvt_cache (int update_nvt_cache, int
          break;
        case -2:
          g_critical ("%s: database is wrong version\n", __FUNCTION__);
@@ -18,7 +18,7 @@
          exit (EXIT_FAILURE);
          break;
        case -3:
-@@ -895,7 +895,7 @@
+@@ -895,7 +895,7 @@ update_or_rebuild_nvt_cache (int update_nvt_cache, int
        case -1:
        default:
          g_critical ("%s: failed to initialise OMP daemon\n", __FUNCTION__);
@@ -27,7 +27,7 @@
          exit (EXIT_FAILURE);
      }
  
-@@ -905,7 +905,7 @@
+@@ -905,7 +905,7 @@ update_or_rebuild_nvt_cache (int update_nvt_cache, int
      {
        g_critical ("%s: failed to register `atexit' cleanup function\n",
                    __FUNCTION__);
@@ -36,7 +36,7 @@
        exit (EXIT_FAILURE);
      }
  
-@@ -1234,6 +1234,7 @@
+@@ -1234,6 +1234,7 @@ manager_listen (const char *address_str, const char *p
    struct sockaddr_storage address;
    struct sockaddr_in *addr4 = (struct sockaddr_in *) &address;
    struct sockaddr_in6 *addr6 = (struct sockaddr_in6 *) &address;
@@ -44,7 +44,7 @@
    int port, optval;
  
    if (!address_str)
-@@ -1262,11 +1263,13 @@
+@@ -1262,11 +1263,13 @@ manager_listen (const char *address_str, const char *p
      {
        address.ss_family = AF_INET6;
        addr6->sin6_port = port;
@@ -58,7 +58,7 @@
      }
    else
      {
-@@ -1297,7 +1300,7 @@
+@@ -1297,7 +1300,7 @@ manager_listen (const char *address_str, const char *p
        return -1;
      }
  
@@ -67,7 +67,7 @@
        == -1)
      {
        g_warning ("Failed to bind manager socket: %s", strerror (errno));
-@@ -1556,25 +1559,25 @@
+@@ -1556,25 +1559,25 @@ main (int argc, char** argv)
        switch (manage_optimize (log_config, database, optimize))
          {
            case 0:
@@ -98,7 +98,7 @@
              return EXIT_FAILURE;
          }
        return EXIT_SUCCESS;
-@@ -1612,7 +1615,7 @@
+@@ -1612,7 +1615,7 @@ main (int argc, char** argv)
                                     scanner_ca_pub, scanner_key_pub,
                                     scanner_key_priv);
        g_free (stype);
@@ -107,7 +107,7 @@
        switch (ret)
          {
            case 0:
-@@ -1664,7 +1667,7 @@
+@@ -1664,7 +1667,7 @@ main (int argc, char** argv)
                                     stype, scanner_ca_pub, scanner_key_pub,
                                     scanner_key_priv);
        g_free (stype);
@@ -116,7 +116,7 @@
        switch (ret)
          {
            case 0:
-@@ -1694,22 +1697,22 @@
+@@ -1694,22 +1697,22 @@ main (int argc, char** argv)
        switch (manage_create_user (log_config, database, create_user, role))
          {
            case 0:
@@ -143,7 +143,7 @@
              return EXIT_FAILURE;
          }
        return EXIT_SUCCESS;
-@@ -1723,32 +1726,32 @@
+@@ -1723,32 +1726,32 @@ main (int argc, char** argv)
        switch (manage_delete_user (log_config, database, delete_user))
          {
            case 0:
@@ -182,7 +182,7 @@
              return EXIT_FAILURE;
          }
      }
-@@ -1759,22 +1762,22 @@
+@@ -1759,22 +1762,22 @@ main (int argc, char** argv)
        switch (manage_get_users (log_config, database, role))
          {
            case 0:
@@ -209,7 +209,7 @@
              return EXIT_FAILURE;
          }
      }
-@@ -1783,7 +1786,7 @@
+@@ -1783,7 +1786,7 @@ main (int argc, char** argv)
      {
        /* List the users and then exit. */
        int ret = manage_get_scanners (log_config, database);
@@ -218,7 +218,7 @@
        switch (ret)
          {
            case 0:
-@@ -1806,7 +1809,7 @@
+@@ -1806,7 +1809,7 @@ main (int argc, char** argv)
      {
        /* List the slaves and then exit. */
        int ret = manage_get_slaves (log_config, database);
@@ -227,7 +227,7 @@
        switch (ret)
          {
            case 0:
-@@ -1831,7 +1834,7 @@
+@@ -1831,7 +1834,7 @@ main (int argc, char** argv)
  
        /* Delete the scanner and then exit. */
        ret = manage_delete_scanner (log_config, database, delete_scanner);
@@ -236,7 +236,7 @@
        switch (ret)
          {
            case 0:
-@@ -1859,7 +1862,7 @@
+@@ -1859,7 +1862,7 @@ main (int argc, char** argv)
  
        /* Delete the scanner and then exit. */
        ret = manage_verify_scanner (log_config, database, verify_scanner);
@@ -245,7 +245,7 @@
        switch (ret)
          {
            case 0:
-@@ -1894,26 +1897,26 @@
+@@ -1894,26 +1897,26 @@ main (int argc, char** argv)
        switch (manage_set_password (log_config, database, user, new_password))
          {
            case 0:
@@ -277,7 +277,7 @@
              return EXIT_FAILURE;
          }
      }
-@@ -1996,24 +1999,24 @@
+@@ -1996,24 +1999,24 @@ main (int argc, char** argv)
            case -2:
              g_critical ("%s: database is wrong version\n", __FUNCTION__);
              fprintf (stderr, "Decryption failed.\n");
@@ -306,7 +306,7 @@
        return EXIT_SUCCESS;
      }
  
-@@ -2027,24 +2030,24 @@
+@@ -2027,24 +2030,24 @@ main (int argc, char** argv)
            case -2:
              g_critical ("%s: database is wrong version\n", __FUNCTION__);
              fprintf (stderr, "Decryption failed.\n");
@@ -335,7 +335,7 @@
        return EXIT_SUCCESS;
      }
  
-@@ -2116,12 +2119,12 @@
+@@ -2116,12 +2119,12 @@ main (int argc, char** argv)
              g_critical ("%s: failed to fork into background: %s\n",
                          __FUNCTION__,
                          strerror (errno));
@@ -350,7 +350,7 @@
              exit (EXIT_SUCCESS);
              break;
          }
-@@ -2137,25 +2140,25 @@
+@@ -2137,25 +2140,25 @@ main (int argc, char** argv)
          break;
        case -2:
          g_critical ("%s: database is wrong version\n", __FUNCTION__);
@@ -380,7 +380,7 @@
          exit (EXIT_FAILURE);
      }
  
-@@ -2165,7 +2168,7 @@
+@@ -2165,7 +2168,7 @@ main (int argc, char** argv)
      {
        g_critical ("%s: failed to register `atexit' cleanup function\n",
                    __FUNCTION__);

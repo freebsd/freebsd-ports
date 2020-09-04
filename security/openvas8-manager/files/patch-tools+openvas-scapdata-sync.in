@@ -1,6 +1,6 @@
---- tools/openvas-scapdata-sync.in	2017-05-02 02:32:45.000000000 -0500
-+++ tools/openvas-scapdata-sync.in	2017-08-05 22:40:11.310734000 -0500
-@@ -63,7 +63,7 @@
+--- tools/openvas-scapdata-sync.in.orig	2017-05-02 07:32:45 UTC
++++ tools/openvas-scapdata-sync.in
+@@ -63,7 +63,7 @@ fi
  
  # Delay between retries
  if [ -z "$SQL_RETRY_DELAY" ]; then
@@ -9,7 +9,7 @@
  fi
  
  TIMESTAMP="$SCAP_DIR/timestamp"
-@@ -885,11 +885,11 @@
+@@ -885,11 +885,11 @@ update_sec_db_private () {
        then
          for ovalfile in $oval_files_sorted_private
          do
@@ -23,7 +23,7 @@
  
              if [ 1 = "$REBUILD_OVAL" ]
              then
-@@ -958,7 +958,7 @@
+@@ -958,7 +958,7 @@ update_sec_db_private () {
      DIR_STR_LENGTH=$((`echo "$SCAP_DIR" | wc -c` + 1))
  
      oval_files_shortened=""
@@ -32,7 +32,7 @@
      then
        for ovalfile in $oval_files_sorted_private
        do
-@@ -968,7 +968,7 @@
+@@ -968,7 +968,7 @@ update_sec_db_private () {
      fi
  
      oval_files_clause=""
@@ -41,7 +41,7 @@
      then
        oval_files_clause="AND (xml_file NOT IN ($oval_files_shortened))"
      fi
-@@ -993,7 +993,7 @@
+@@ -993,7 +993,7 @@ update_sec_db_private () {
      fi
  
      # TODO: This is not quite accurate as it uses the timestamp of the non-private data.
@@ -50,7 +50,7 @@
  
      reset_sql_tries
      until [ "$try_sql" -eq 0 ]
-@@ -1012,13 +1012,13 @@
+@@ -1012,13 +1012,13 @@ update_sec_db () {
    CPEBASE="$SCAP_DIR/official-cpe-dictionary_v2.2.xml"
    if [ -e $CPEBASE ]
    then
@@ -66,7 +66,7 @@
        if [ "0" -ne "$SPLIT_PART_SIZE" ] && [ "$filesize" -gt $(($SPLIT_PART_SIZE * 1024))  ]
        then
          echo "[i] File is larger than ${SPLIT_PART_SIZE}k. Splitting into multiple parts"
-@@ -1075,13 +1075,13 @@
+@@ -1075,13 +1075,13 @@ update_sec_db () {
    then
      for cvefile in `ls $SCAP_DIR/nvdcve-2.0-*.xml`
      do
@@ -82,7 +82,7 @@
          if [ "0" -ne "$SPLIT_PART_SIZE" ] && [ "$filesize" -gt $(($SPLIT_PART_SIZE * 1024))  ]
          then
            echo "[i] File is larger than ${SPLIT_PART_SIZE}k. Splitting into multiple parts"
-@@ -1151,11 +1151,11 @@
+@@ -1151,11 +1151,11 @@ update_sec_db () {
  
      for ovalfile in $oval_files_sorted
      do
@@ -96,7 +96,7 @@
  
          if [ 1 = "$REBUILD_OVAL" ]
          then
-@@ -1206,7 +1206,7 @@
+@@ -1206,7 +1206,7 @@ update_sec_db () {
    update_cvss
    update_placeholders
  

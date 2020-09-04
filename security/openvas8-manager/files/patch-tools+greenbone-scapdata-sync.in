@@ -1,6 +1,6 @@
---- tools/greenbone-scapdata-sync.in	2015-12-08 02:09:31.000000000 -0500
-+++ tools/greenbone-scapdata-sync.in	2017-08-05 22:00:27.817110000 -0500
-@@ -297,7 +297,7 @@
+--- tools/greenbone-scapdata-sync.in.orig	2015-12-08 07:09:31 UTC
++++ tools/greenbone-scapdata-sync.in
+@@ -297,7 +297,7 @@ is_feed_current () {
        then
          log_err "Could not determine credentials, aborting synchronization."
          rm -rf $FEED_INFO_TEMP_DIR
@@ -9,7 +9,7 @@
        fi
  
        # --protocol=29 is a workaround for a known bug in rsync 3.0.3
-@@ -321,12 +321,12 @@
+@@ -321,12 +321,12 @@ is_feed_current () {
        then
          log_err "rsync failed, aborting synchronization."
          rm -rf $FEED_INFO_TEMP_DIR
@@ -24,7 +24,7 @@
      fi
  
      FEED_VERSION_SERVER=`cat $FEED_INFO_TEMP_DIR/timestamp`
-@@ -335,7 +335,7 @@
+@@ -335,7 +335,7 @@ is_feed_current () {
      then
        log_err "Could not determine server feed version."
        rm -rf $FEED_INFO_TEMP_DIR
@@ -33,7 +33,7 @@
      fi
  
      # Check against FEED_VERSION
-@@ -962,11 +962,11 @@
+@@ -962,11 +962,11 @@ update_scap_db_private () {
        then
          for ovalfile in $oval_files_sorted_private
          do
@@ -47,7 +47,7 @@
  
              if [ 1 = "$REBUILD_OVAL" ]
              then
-@@ -1068,8 +1068,8 @@
+@@ -1068,8 +1068,8 @@ update_scap_db_private () {
      fi
  
      # TODO: This is not quite accurate as it uses the timestamp of the non-private data.
@@ -58,7 +58,7 @@
      reset_sql_tries
      until [ "$try_sql" -eq 0 ]
      do
-@@ -1090,12 +1090,12 @@
+@@ -1090,12 +1090,12 @@ update_scap_db() {
      CPEBASE="$SCAP_DIR/official-cpe-dictionary_v2.2.xml"
      if [ -e $CPEBASE ]
      then
@@ -73,7 +73,7 @@
          if [ "0" -ne "$SPLIT_PART_SIZE" ] && [ "$filesize" -gt $(($SPLIT_PART_SIZE * 1024))  ]
          then
            log_info "File is larger than ${SPLIT_PART_SIZE}k. Splitting into multiple parts"
-@@ -1152,13 +1152,13 @@
+@@ -1152,13 +1152,13 @@ update_scap_db() {
      then
        for cvefile in `ls $SCAP_DIR/nvdcve-2.0-*.xml`
        do
@@ -89,7 +89,7 @@
            if [ "0" -ne "$SPLIT_PART_SIZE" ] && [ "$filesize" -gt $(($SPLIT_PART_SIZE * 1024)) ]
            then
              log_info "File is larger than ${SPLIT_PART_SIZE}k. Splitting into multiple parts"
-@@ -1228,11 +1228,11 @@
+@@ -1228,11 +1228,11 @@ update_scap_db() {
  
        for ovalfile in $oval_files_sorted
        do
@@ -103,7 +103,7 @@
  
            if [ 1 = "$REBUILD_OVAL" ]
            then
-@@ -1284,7 +1284,7 @@
+@@ -1284,7 +1284,7 @@ update_scap_db() {
    update_cvss
    update_placeholders
  
@@ -112,7 +112,7 @@
  
    reset_sql_tries
    until [ "$try_sql" -eq 0 ]
-@@ -1469,7 +1469,7 @@
+@@ -1469,7 +1469,7 @@ then
    exit 1
  fi
  
