@@ -7,7 +7,6 @@ lib/libnumbertext-1.0.so
 lib/libnumbertext-1.0.so.0
 lib/libnumbertext-1.0.so.0.0.0
 libdata/pkgconfig/libnumbertext.pc
-%%DATADIR%%/Hung.sor
 %%DATADIR%%/Roman.sor
 %%DATADIR%%/Suzhou.sor
 %%DATADIR%%/af.sor
@@ -27,6 +26,7 @@ libdata/pkgconfig/libnumbertext.pc
 %%DATADIR%%/he.sor
 %%DATADIR%%/hr.sor
 %%DATADIR%%/hu.sor
+%%DATADIR%%/hu_Hung.sor
 %%DATADIR%%/id.sor
 %%DATADIR%%/is.sor
 %%DATADIR%%/it.sor
