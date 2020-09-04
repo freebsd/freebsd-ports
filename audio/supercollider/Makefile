@@ -22,7 +22,7 @@ USES=		cmake compiler:c++11-lang iconv localbase pkgconfig \
 		qt:5 readline shared-mime-info tar:bzip2 xorg
 USE_QT=		buildtools_build concurrent core declarative gui linguisttools location \
 		network opengl printsupport qmake_build sensors \
-		sql widgets webengine websockets webchannel svg
+		sql widgets websockets webchannel svg
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 
@@ -53,7 +53,9 @@ SUPERNOVA_CMAKE_BOOL=	SUPERNOVA
 .include <bsd.port.pre.mk>
 
 .if ! ${ARCH} == amd64 && ! ${ARCH} == i386
-CMAKE_ARGS+=	-DSSE:BOOL=FALSE -DSSE2:BOOL=FALSE
+CMAKE_ARGS+=	-DSSE:BOOL=FALSE -DSSE2:BOOL=FALSE -DSC_USE_QTWEBENGINE:BOOL=FALSE
+.else
+USE_QT+=	webengine
 .endif
 
 .include <bsd.port.post.mk>
