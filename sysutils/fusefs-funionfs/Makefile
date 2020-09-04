@@ -10,11 +10,15 @@ PKGNAMEPREFIX=	fusefs-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Union filesystem for the FUSE driver
 
-LDFLAGS+=	-L${LOCALBASE}/lib
-CFLAGS+=	-I${LOCALBASE}/include
+LICENSE=	GPLv2+
+
+USES=		fuse localbase
 GNU_CONFIGURE=	yes
-USES=		fuse
 
 PLIST_FILES=	bin/funionfs man/man1/${PORTNAME}.1.gz
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,^struct unionfs_desc,extern &,' \
+		${WRKSRC}/control.c
 
 .include <bsd.port.mk>
