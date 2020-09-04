@@ -40,7 +40,7 @@ LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 		libxkbcommon.so:x11/libxkbcommon \
 		libxxhash.so:devel/xxhash
 
-USES=		cmake compiler:c++17-lang desktop-file-utils \
+USES=		cmake compiler:c++17-lang desktop-file-utils gl \
 		gnome pkgconfig python:3.7,build qt:5 ssl xorg
 
 # see Bugzilla #245452 for details
