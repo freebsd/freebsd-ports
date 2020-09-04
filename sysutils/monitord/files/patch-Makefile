@@ -1,6 +1,6 @@
---- Makefile.orig	2003-08-22 06:36:42.000000000 +0800
-+++ Makefile	2013-11-15 23:14:43.000000000 +0800
-@@ -6,7 +6,7 @@ OBJECTS	=	monitord.o mail.o
+--- Makefile.orig	2003-08-21 22:36:42 UTC
++++ Makefile
+@@ -6,14 +6,14 @@ OBJECTS	=	monitord.o mail.o
  
  TARGET =	monitord
  
@@ -9,6 +9,14 @@
  
  .SUFFIXES:
  .SUFFIXES: .c .o
+ 
+ .c.o:
+ 
+-	$(CC) $(CFLAGS) -c -pipe -Wall $<
++	$(CC) $(CFLAGS) -c  -Wall $<
+ 
+ $(TARGET): $(OBJECTS)
+ 	$(CC) $(OBJECTS) -o $(TARGET)
 @@ -24,10 +24,8 @@ clean:
  
  all: $(TARGET)

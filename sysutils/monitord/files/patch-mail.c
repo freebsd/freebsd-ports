@@ -1,6 +1,23 @@
---- ./mail.c.orig	Thu Aug 21 15:44:20 2003
-+++ ./mail.c	Wed Mar 15 11:09:01 2006
-@@ -81,13 +81,13 @@
+--- mail.c.orig	2003-08-21 18:44:20 UTC
++++ mail.c
+@@ -47,11 +47,11 @@ int mail ( char *address, char *eserver, char *subject
+ 	username = (char *) malloc ( (size_t) _BUFSIZE ); // init the username buffer
+ 	hostname = (char *) malloc ( (size_t) _BUFSIZE ); // init the hostname buffer
+ 	thisname = (char *) malloc ( (size_t) _BUFSIZE ); // init the hostname buffer
+-	bzero (buf, sizeof (buf) );
+-	bzero (token, sizeof (token) );
+-	bzero (username, sizeof (username) );
+-	bzero (hostname, sizeof (hostname) );
+-	bzero (thisname, sizeof (thisname) );
++	bzero (buf, sizeof (*buf) );
++	bzero (token, sizeof (*token) );
++	bzero (username, sizeof (*username) );
++	bzero (hostname, sizeof (*hostname) );
++	bzero (thisname, sizeof (*thisname) );
+ 
+ 	strncpy (buf, address, _BUFSIZE);
+ 	username = strtok (buf, "@");
+@@ -81,13 +81,13 @@ int mail ( char *address, char *eserver, char *subject
  	read (serversd, buf, _BUFSIZE);
  
  	// Set "MAIL FROM"
@@ -16,7 +33,7 @@
  	write(serversd, buf, strlen(buf));
  	read (serversd, buf, _BUFSIZE);
  
-@@ -97,17 +97,17 @@
+@@ -97,17 +97,17 @@ int mail ( char *address, char *eserver, char *subject
  	read (serversd, buf, _BUFSIZE);
  
  	// Set "FROM"

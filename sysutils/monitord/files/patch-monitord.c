@@ -1,6 +1,24 @@
---- monitord.c.orig	2003-01-16 21:39:44.000000000 +0000
-+++ monitord.c	2011-11-24 23:12:13.468148722 +0000
-@@ -85,8 +85,8 @@
+--- monitord.c.orig	2003-01-16 21:39:44 UTC
++++ monitord.c
+@@ -30,6 +30,8 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.  */
+ #include "monitord.h"
+ #include "config.h"
+ 
++static int HUP;
++
+ int main (int argc, char *arga[]) {
+ 
+ 	int i, num, interval;
+@@ -69,7 +71,7 @@ int main (int argc, char *arga[]) {
+ 	// init the *file[];
+ 	for ( i = 0; i < _MAXLINE; i++ ) {		
+ 		file[i] = (char *) malloc ( (size_t) sizeof(char) * _BUFSIZE );
+-		bzero ( file[i], sizeof (file[i]) );
++		bzero ( file[i], sizeof (*file[i]) );
+ 	}
+ 
+ //	file = (char **) calloc (1000, (size_t) sizeof(char) * _BUFSIZE );
+@@ -85,8 +87,8 @@ int main (int argc, char *arga[]) {
  			setsid ();
  			break;
  		}
@@ -11,7 +29,87 @@
  	}
  
  	/* Read the configuration file, saving it in *file[] and return the number of lines
-@@ -454,13 +454,13 @@
+@@ -119,7 +121,7 @@ int read_conf ( char ***file, char *filename ) {
+ 	char *buf;
+ 
+         buf = (char *) malloc ( (size_t) _BUFSIZE ); // init & zero the buffer
+-        bzero (buf, sizeof (buf) );
++        bzero (buf, sizeof (*buf) );
+ 
+ 	line_count = 0;
+ 
+@@ -146,7 +148,7 @@ int read_conf ( char ***file, char *filename ) {
+ 			strncpy ( (char *) file[line_count], buf, _BUFSIZE );
+ //			realloc ( & file[1], (size_t) sizeof(char) * _BUFSIZE * (line_count + 1) );
+ 			// zero out the buffer so we don't have it hold old garbage
+-			bzero (buf, sizeof (buf));
++			bzero (buf, sizeof (*buf));
+ 
+ 			line_count++; // Advance the counter
+ 	
+@@ -197,9 +199,9 @@ int loop ( char **file, char *filename, int max_proc, 
+ 	buf = (char *) malloc ( (size_t) _BUFSIZE ); // init the all purpose buffer
+ 	buf2 = (char *) malloc ( (size_t) _BUFSIZE ); // init another all purpose buffer
+ 	token = (char *) malloc ( (size_t) _BUFSIZE ); // init the token buffer
+-	bzero (buf, sizeof (buf) );
+-	bzero (buf2, sizeof (buf) );
+-	bzero (token, sizeof (token) );
++	bzero (buf, sizeof (*buf) );
++	bzero (buf2, sizeof (*buf) );
++	bzero (token, sizeof (*token) );
+ 
+ 	FOUND = 0;
+ 	
+@@ -290,8 +292,8 @@ int loop ( char **file, char *filename, int max_proc, 
+ 
+ 			bzero (param, sizeof(param));
+ 			while ((token = strtok(NULL, " \t"))) {
+-				strncat (param, " ", sizeof(param));
+-				strncat (param, token, sizeof(param));
++				strncat (param, " ", sizeof(*param));
++				strncat (param, token, sizeof(*param));
+ 			}
+ 
+ 			/* Each line has a \n at the end which must be removed
+@@ -355,7 +357,7 @@ int loop ( char **file, char *filename, int max_proc, 
+ //					printf("Couldn't open %s\n", buf);
+ 				}
+ 				// Set the FOUND flag if the process we're checking for is found
+-				if (!strncmp (buf, proc, sizeof(buf))) FOUND = TRUE;
++				if (!strncmp (buf, proc, sizeof(*buf))) FOUND = TRUE;
+ 			}
+ 			closedir (dirp);   // Close the /proc directory
+ 
+@@ -365,8 +367,8 @@ int loop ( char **file, char *filename, int max_proc, 
+ 				/* Email admin that the service has died, if the "mail"
+ 				option has been set in the options */
+ 				if (options.alert) {
+-					bzero (buf, sizeof(buf));
+-					bzero (buf2, sizeof(buf2));
++					bzero (buf, sizeof(*buf));
++					bzero (buf2, sizeof(*buf2));
+ 					sprintf (buf, "[%s] Service \"%s\" has died\n", getdate(), proc);
+ 					sprintf (buf2, "(monitord) SYSTEM ALERT, \"%s\" has died\n", proc);
+ 					mail (email, eserver, buf2, buf);
+@@ -405,7 +407,7 @@ int loop ( char **file, char *filename, int max_proc, 
+ 						/* Email the admin that the service has been
+ 						restarted if "mail" option is set */
+ 						if (options.alert) {
+-							bzero (buf, sizeof(buf));
++							bzero (buf, sizeof(*buf));
+ 							sprintf (buf, "[%s] restarted \"%s\" using \"%s %s\"\n", getdate(), proc, script_path, param);
+ 							sprintf (buf2, "(monitord) \"%s\" restarted\n", proc);
+ 							mail (email, eserver, buf2, buf);
+@@ -418,7 +420,7 @@ int loop ( char **file, char *filename, int max_proc, 
+ 						been able to be	restarted if "mail" option
+ 						is set */
+ 						if (options.alert) {
+-							bzero (buf, sizeof(buf));
++							bzero (buf, sizeof(*buf));
+ 							sprintf (buf, "[%s] unable to restart \"%s\"\n", getdate(), proc);
+ 							sprintf (buf2, "(monitord) SYSTEM ALERT: \"%s\" unable to restart\n", proc);
+ 							mail (email, eserver, buf2, buf);
+@@ -454,13 +456,13 @@ char *getdate () {
  
  	struct timeval *tp;
  	struct timezone *tzp;
