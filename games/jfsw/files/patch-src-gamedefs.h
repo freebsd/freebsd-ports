@@ -1,9 +1,9 @@
 Avoid buffer overflow @src/config.c:255 where JoystickDigitalAxes[6] overrides
 RTSName.
 
---- src/gamedefs.h.orig	2014-11-19 08:03:04.589718681 +0100
-+++ src/gamedefs.h	2014-11-19 08:03:37.128424065 +0100
-@@ -125,7 +125,7 @@
+--- src/gamedefs.h.orig	2020-09-03 06:19:21 UTC
++++ src/gamedefs.h
+@@ -125,7 +125,7 @@ extern "C" {
  
  // Number of JOY axes
  

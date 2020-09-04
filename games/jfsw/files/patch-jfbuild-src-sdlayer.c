@@ -1,8 +1,8 @@
 Ensure jfsw and build files get created within $HOME/.jfsw
 
---- jfbuild/src/sdlayer.c.orig	2014-11-19 11:24:19.905905262 +0100
-+++ jfbuild/src/sdlayer.c	2014-11-19 11:36:43.045765953 +0100
-@@ -152,6 +152,16 @@
+--- jfbuild/src/sdlayer.c.orig	2020-09-03 06:19:21 UTC
++++ jfbuild/src/sdlayer.c
+@@ -152,6 +152,16 @@ int main(int argc, char *argv[])
  {
  	int r;
  	

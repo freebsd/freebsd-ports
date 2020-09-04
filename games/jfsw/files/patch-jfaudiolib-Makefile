@@ -1,8 +1,8 @@
 Do not enforce compilers / flags
 
---- jfaudiolib/Makefile.orig	2014-11-13 09:26:16.821946185 +0100
-+++ jfaudiolib/Makefile	2014-11-13 09:42:05.999047069 +0100
-@@ -8,9 +8,9 @@
+--- jfaudiolib/Makefile.orig	2020-09-03 06:19:21 UTC
++++ jfaudiolib/Makefile
+@@ -8,9 +8,9 @@ else
   OPTLEVEL=-O2
  endif
  

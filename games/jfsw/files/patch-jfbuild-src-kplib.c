@@ -1,8 +1,8 @@
 Make return-free function void
 
---- jfbuild/src/kplib.c.orig	2014-11-13 08:27:09.882066653 +0100
-+++ jfbuild/src/kplib.c	2014-11-13 08:27:25.864964483 +0100
-@@ -2495,7 +2495,7 @@
+--- jfbuild/src/kplib.c.orig	2020-09-03 06:19:21 UTC
++++ jfbuild/src/kplib.c
+@@ -2495,7 +2495,7 @@ static int kddsrend (const char *buf, int leng,
  //===============================  DDS ends ==================================
  //=================== External picture interface begins ======================
  

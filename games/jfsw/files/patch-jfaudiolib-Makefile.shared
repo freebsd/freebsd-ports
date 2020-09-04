@@ -1,9 +1,9 @@
 Disable ALSA and FluidSynth (MIDI) support : use SDL for PCM/CD/Music support.
 See jfaudiolib/src/drivers.c for the exact role of each driver.
 
---- jfaudiolib/Makefile.shared.orig	2013-06-01 02:16:56.000000000 +0200
-+++ jfaudiolib/Makefile.shared	2014-11-25 06:23:00.693738002 +0100
-@@ -18,12 +18,12 @@
+--- jfaudiolib/Makefile.shared.orig	2013-06-01 00:16:56 UTC
++++ jfaudiolib/Makefile.shared
+@@ -18,12 +18,12 @@ else
    JFAUDIOLIB_HAVE_SDL=1
    JFAUDIOLIB_LDFLAGS+= $(shell pkg-config --libs sdl)
   endif
