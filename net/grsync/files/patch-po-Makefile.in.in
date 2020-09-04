@@ -1,6 +1,6 @@
---- po/Makefile.in.in.orig	2008-12-08 11:44:27.794971692 +0100
-+++ po/Makefile.in.in	2008-12-08 11:44:42.679745595 +0100
-@@ -34,7 +34,7 @@
+--- po/Makefile.in.in.orig	2013-04-30 11:48:54 UTC
++++ po/Makefile.in.in
+@@ -34,7 +34,7 @@ datadir = @datadir@
  datarootdir = @datarootdir@
  libdir = @libdir@
  DATADIRNAME = @DATADIRNAME@
