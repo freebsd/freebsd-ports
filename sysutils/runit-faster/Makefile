@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	runit
-DISTVERSION=	2.1.3.6
-PORTREVISION=	2
+DISTVERSION=	2.1.3.7
 CATEGORIES=	sysutils
-MASTER_SITES=	https://github.com/t6/freebsd-runit/releases/download/v${DISTVERSION}/ \
-		LOCAL/tobik
+MASTER_SITES=	https://github.com/t6/freebsd-runit/releases/download/v${DISTVERSION}/
 PKGNAMESUFFIX=	-faster
 DISTNAME=	freebsd-runit-${DISTVERSION}
 
