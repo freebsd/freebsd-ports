@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	PDF-API2
-PORTVERSION=	2.037
+PORTVERSION=	2.038
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,8 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Font-TTF>=0:x11-fonts/p5-Font-TTF
+RUN_DEPENDS=	p5-Font-TTF>=0:x11-fonts/p5-Font-TTF \
+		p5-PDF-API2-XS>=0:textproc/p5-PDF-API2-XS
 TEST_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception \
 		p5-Test-Memory-Cycle>=0:devel/p5-Test-Memory-Cycle
 
