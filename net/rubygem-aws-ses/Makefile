@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aws-ses
-PORTVERSION=	0.6.0
-PORTREVISION=	1
+PORTVERSION=	0.7.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -11,6 +10,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Client library for REST API of Amazon SES
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-builder>=0:devel/rubygem-builder \
 		rubygem-mail>=2.2.5:mail/rubygem-mail \
