@@ -16,7 +16,7 @@ LICENSE=	BSD3CLAUSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cython>=0.24:lang/cython@${PY_FLAVOR} \
 		${RUN_DEPENDS}
 RUN_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}pandas>=0.19:math/py-pandas@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pandas>=0.19,1:math/py-pandas@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}patsy>=0.4.0:math/py-patsy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=0.18:science/py-scipy@${PY_FLAVOR}
 
