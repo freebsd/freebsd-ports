@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	omniauth-oauth2-generic
-PORTVERSION=	0.2.5
+PORTVERSION=	0.2.6
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
