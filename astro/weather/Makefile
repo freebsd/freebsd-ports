@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	weather
-PORTVERSION=	2.4
+PORTVERSION=	2.4.1
 CATEGORIES=	astro python
 MASTER_SITES=	http://fungi.yuggoth.org/weather/src/ \
 		LOCAL/sunpoet
