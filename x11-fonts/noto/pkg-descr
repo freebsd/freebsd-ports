@@ -10,12 +10,14 @@ comprehensive set of fonts and tools used in our development is available in our
 GitHub repositories.
 
 x11-fonts/noto is a meta port which includes:
-- x11-fonts/noto-basic: basic fonts set with emoji
+- x11-fonts/noto-basic: basic fonts set
+- x11-fonts/noto-emoji: emoji fonts set
 - x11-fonts/noto-extra: extra fonts set
+- x11-fonts/noto-kr: Traditional Chinese Hong Kong fonts set
 - x11-fonts/noto-jp: Japanese fonts set
 - x11-fonts/noto-kr: Korean fonts set
 - x11-fonts/noto-sc: Simplified Chinese fonts set
 - x11-fonts/noto-tc: Traditional Chinese fonts set
 
 WWW: https://www.google.com/get/noto/
-WWW: https://github.com/googlei18n?q=noto
+WWW: https://github.com/googlefonts?q=noto
