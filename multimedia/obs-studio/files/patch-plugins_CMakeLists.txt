@@ -1,12 +1,11 @@
---- plugins/CMakeLists.txt.orig	2020-04-26 23:47:36 UTC
+--- plugins/CMakeLists.txt.orig	2020-08-29 01:04:44 UTC
 +++ plugins/CMakeLists.txt
-@@ -46,7 +46,8 @@ elseif("${CMAKE_SYSTEM_NAME}" MATCHES "FreeBSD")
+@@ -46,7 +46,7 @@ elseif("${CMAKE_SYSTEM_NAME}" MATCHES "FreeBSD")
  	add_subdirectory(linux-pulseaudio)
  	add_subdirectory(linux-v4l2)
  	add_subdirectory(linux-jack)
 -	add_subdirectory(linux-alsa)
 +	#add_subdirectory(linux-alsa)
-+	add_subdirectory(vlc-video)
+ 	add_subdirectory(vlc-video)
+ 	add_subdirectory(oss-audio)
  endif()
- 
- option(BUILD_BROWSER "Build browser plugin" OFF)

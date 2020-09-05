@@ -78,11 +78,13 @@ include/obs/util/profiler.h
 include/obs/util/profiler.hpp
 include/obs/util/serializer.h
 include/obs/util/sse-intrin.h
+include/obs/util/sse2neon.h
 include/obs/util/text-lookup.h
 include/obs/util/threading-posix.h
 include/obs/util/threading.h
 include/obs/util/utf8.h
 include/obs/util/util_uint128.h
+include/obs/util/util_uint64.h
 lib/cmake/LibObs/LibObsConfig.cmake
 lib/cmake/LibObs/LibObsConfigVersion.cmake
 lib/cmake/LibObs/LibObsTarget-%%CMAKE_BUILD_TYPE%%.cmake
@@ -113,6 +115,7 @@ lib/obs-plugins/obs-libfdk.so
 lib/obs-plugins/obs-outputs.so
 lib/obs-plugins/obs-transitions.so
 lib/obs-plugins/obs-x264.so
+lib/obs-plugins/oss-audio.so
 lib/obs-plugins/rtmp-services.so
 lib/obs-plugins/text-freetype2.so
 lib/obs-plugins/vlc-video.so
@@ -755,6 +758,7 @@ share/obs/obs-plugins/obs-x264/locale/ur-PK.ini
 share/obs/obs-plugins/obs-x264/locale/vi-VN.ini
 share/obs/obs-plugins/obs-x264/locale/zh-CN.ini
 share/obs/obs-plugins/obs-x264/locale/zh-TW.ini
+share/obs/obs-plugins/oss-audio/locale/en-US.ini
 share/obs/obs-plugins/rtmp-services/locale/ar-SA.ini
 share/obs/obs-plugins/rtmp-services/locale/bg-BG.ini
 share/obs/obs-plugins/rtmp-services/locale/bn-BD.ini
@@ -975,8 +979,15 @@ share/obs/obs-studio/themes/Dark.qss
 share/obs/obs-studio/themes/Dark/close.svg
 share/obs/obs-studio/themes/Dark/down.svg
 share/obs/obs-studio/themes/Dark/expand.svg
+share/obs/obs-studio/themes/Dark/filter.svg
 share/obs/obs-studio/themes/Dark/locked.svg
 share/obs/obs-studio/themes/Dark/media-pause.svg
+share/obs/obs-studio/themes/Dark/media/media_next.svg
+share/obs/obs-studio/themes/Dark/media/media_pause.svg
+share/obs/obs-studio/themes/Dark/media/media_play.svg
+share/obs/obs-studio/themes/Dark/media/media_previous.svg
+share/obs/obs-studio/themes/Dark/media/media_restart.svg
+share/obs/obs-studio/themes/Dark/media/media_stop.svg
 share/obs/obs-studio/themes/Dark/minus.svg
 share/obs/obs-studio/themes/Dark/mute.svg
 share/obs/obs-studio/themes/Dark/no_sources.svg
