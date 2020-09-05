@@ -7,6 +7,13 @@
 %%FONTSDIR%%/NotoSansCJKtc-Thin.otf
 %%FONTSDIR%%/NotoSansMonoCJKtc-Bold.otf
 %%FONTSDIR%%/NotoSansMonoCJKtc-Regular.otf
+%%FONTSDIR%%/NotoSansTC-Black.otf
+%%FONTSDIR%%/NotoSansTC-Bold.otf
+%%FONTSDIR%%/NotoSansTC-DemiLight.otf
+%%FONTSDIR%%/NotoSansTC-Light.otf
+%%FONTSDIR%%/NotoSansTC-Medium.otf
+%%FONTSDIR%%/NotoSansTC-Regular.otf
+%%FONTSDIR%%/NotoSansTC-Thin.otf
 %%FONTSDIR%%/NotoSerifCJKtc-Black.otf
 %%FONTSDIR%%/NotoSerifCJKtc-Bold.otf
 %%FONTSDIR%%/NotoSerifCJKtc-ExtraLight.otf
@@ -14,3 +21,10 @@
 %%FONTSDIR%%/NotoSerifCJKtc-Medium.otf
 %%FONTSDIR%%/NotoSerifCJKtc-Regular.otf
 %%FONTSDIR%%/NotoSerifCJKtc-SemiBold.otf
+%%FONTSDIR%%/NotoSerifTC-Black.otf
+%%FONTSDIR%%/NotoSerifTC-Bold.otf
+%%FONTSDIR%%/NotoSerifTC-ExtraLight.otf
+%%FONTSDIR%%/NotoSerifTC-Light.otf
+%%FONTSDIR%%/NotoSerifTC-Medium.otf
+%%FONTSDIR%%/NotoSerifTC-Regular.otf
+%%FONTSDIR%%/NotoSerifTC-SemiBold.otf
