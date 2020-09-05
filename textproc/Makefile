@@ -1296,6 +1296,7 @@
     SUBDIR += py-markdown
     SUBDIR += py-markdown-math
     SUBDIR += py-markdown2
+    SUBDIR += py-markuppy
     SUBDIR += py-markups
     SUBDIR += py-misaka
     SUBDIR += py-mistune
