@@ -616,6 +616,7 @@
     SUBDIR += p5-OpenOffice-OODoc
     SUBDIR += p5-PDF-API2
     SUBDIR += p5-PDF-API2-Simple
+    SUBDIR += p5-PDF-API2-XS
     SUBDIR += p5-PDF-API3
     SUBDIR += p5-PDF-Create
     SUBDIR += p5-PDF-FromHTML

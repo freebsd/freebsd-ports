@@ -1,0 +1,4 @@
+PDF::API2 will make use of this distribution, if it's installed, to speed up
+some operations that are significantly faster in C than in Perl.
+
+WWW: https://metacpan.org/release/PDF-API2-XS

@@ -1,0 +1,4 @@
+%%SITE_ARCH%%/PDF/API2/XS.pm
+%%SITE_ARCH%%/PDF/API2/XS/ImagePNG.pm
+%%SITE_ARCH%%/auto/PDF/API2/XS/ImagePNG/ImagePNG.so
+%%PERL5_MAN3%%/PDF::API2::XS.3.gz
