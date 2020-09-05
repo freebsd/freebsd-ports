@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	azure-storage-queue
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
