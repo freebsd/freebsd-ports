@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	django
-PORTVERSION=	2.2.15
+PORTVERSION=	2.2.16
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP \
 		https://www.djangoproject.com/m/releases/${PORTVERSION}/
@@ -21,28 +21,28 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlparse>=0:databases/py-sqlparse@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tblib>0:devel/py-tblib@${PY_FLAVOR}
 
-NO_ARCH=	yes
 USES=		cpe python:3.5+ shebangfix
 USE_PYTHON=	autoplist distutils
+
+NO_ARCH=	yes
+
+DOCSDIR=	${PREFIX}/share/doc/py-django
+PLIST_FILES=	man/man1/django-admin.1.gz
+PORTDOCS=	*
+
 SHEBANG_FILES=	django/bin/django-admin.py \
 		django/conf/project_template/manage.py-tpl
 
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}django111 ${PYTHON_PKGNAMEPREFIX}django30 \
 			${PYTHON_PKGNAMEPREFIX}django31
-CPE_VENDOR=		djangoproject
 
-DOCSDIR=		${PREFIX}/share/doc/py-django
-PORTDOCS=	*
+CPE_VENDOR=	djangoproject
 
-OPTIONS_DEFINE=		DOCS HTMLDOCS
-OPTIONS_DEFAULT=	SQLITE
-
-OPTIONS_GROUP=		DATABASE
+OPTIONS_DEFINE=	DOCS HTMLDOCS
+OPTIONS_GROUP=	DATABASE
 OPTIONS_GROUP_DATABASE=	PGSQL MYSQL SQLITE
-
-HTMLDOCS_DESC=		Install HTML documentation (requires Sphinx)
-
-PLIST_FILES=		man/man1/django-admin.1.gz
+OPTIONS_DEFAULT=SQLITE
+HTMLDOCS_DESC=	Install HTML documentation (requires Sphinx)
 
 HTMLDOCS_BUILD_DEPENDS=	${PY_SPHINX}
 HTMLDOCS_IMPLIES=	DOCS
