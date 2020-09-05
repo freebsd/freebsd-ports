@@ -8,7 +8,7 @@ CATEGORIES=	editors
 MASTER_SITES=	http://xcoral.free.fr/
 
 PATCH_SITES=	http://aldan.algebra.com/~mi/port-stuff/
-PATCHFILES=	xcoral-alpheus-and-peneus-2019.patch.bz2
+PATCHFILES=	xcoral-alpheus-and-peneus-2020.patch.bz2
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Multiwindow mouse-based text editor for X
@@ -20,6 +20,7 @@ USE_XORG=	x11
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir=${PREFIX}/share
 LIBS+=		-lgnuregex
+EXTRACT_AFTER_ARGS=	--exclude BR_Parser.[ch]
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
