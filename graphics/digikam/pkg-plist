@@ -129,6 +129,7 @@ lib/libdigikamgui.so.%%SHLIB_VER%%
 %%QT_PLUGINDIR%%/digikam/bqm/Bqm_CurvesAdjust_Plugin.so
 %%QT_PLUGINDIR%%/digikam/bqm/Bqm_FilmGrain_Plugin.so
 %%QT_PLUGINDIR%%/digikam/bqm/Bqm_Flip_Plugin.so
+%%QT_PLUGINDIR%%/digikam/bqm/Bqm_HotPixels_Plugin.so
 %%QT_PLUGINDIR%%/digikam/bqm/Bqm_HslCorrection_Plugin.so
 %%QT_PLUGINDIR%%/digikam/bqm/Bqm_IccConvert_Plugin.so
 %%QT_PLUGINDIR%%/digikam/bqm/Bqm_Invert_Plugin.so
@@ -141,6 +142,7 @@ lib/libdigikamgui.so.%%SHLIB_VER%%
 %%QT_PLUGINDIR%%/digikam/bqm/Bqm_Restoration_Plugin.so
 %%QT_PLUGINDIR%%/digikam/bqm/Bqm_Rotate_Plugin.so
 %%QT_PLUGINDIR%%/digikam/bqm/Bqm_Sharpen_Plugin.so
+%%QT_PLUGINDIR%%/digikam/bqm/Bqm_Texture_Plugin.so
 %%QT_PLUGINDIR%%/digikam/bqm/Bqm_TimeAdjust_Plugin.so
 %%QT_PLUGINDIR%%/digikam/bqm/Bqm_UserScript_Plugin.so
 %%QT_PLUGINDIR%%/digikam/bqm/Bqm_WaterMark_Plugin.so

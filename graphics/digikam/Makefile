@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	digikam
-DISTVERSION=	7.0.0
+DISTVERSION=	7.1.0
 CATEGORIES=	graphics kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}
 DIST_SUBDIR=	KDE/digikam/${PORTVERSION}
@@ -12,8 +12,7 @@ COMMENT=	KDE digital photo management application
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libKF5KGeoMap.so:astro/libkgeomap \
-		libKF5Sane.so:graphics/libksane \
+LIB_DEPENDS=	libKF5Sane.so:graphics/libksane \
 		libboost_graph.so:devel/boost-libs \
 		libexiv2.so:graphics/exiv2 \
 		libexpat.so:textproc/expat2 \
