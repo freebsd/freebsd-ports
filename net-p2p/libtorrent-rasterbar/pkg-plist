@@ -1,4 +1,3 @@
-include/libtorrent/ConvertUTF.h
 include/libtorrent/add_torrent_params.hpp
 include/libtorrent/address.hpp
 include/libtorrent/alert.hpp
@@ -249,7 +248,7 @@ lib/cmake/LibtorrentRasterbar/LibtorrentRasterbarConfigVersion.cmake
 lib/cmake/LibtorrentRasterbar/LibtorrentRasterbarTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/LibtorrentRasterbar/LibtorrentRasterbarTargets.cmake
 lib/libtorrent-rasterbar.so
-lib/libtorrent-rasterbar.so.1.2.8
+lib/libtorrent-rasterbar.so.1.2.10
 lib/libtorrent-rasterbar.so.%%SHLIB_VER%%
 libdata/pkgconfig/libtorrent-rasterbar.pc
 share/cmake/Modules/FindLibtorrentRasterbar.cmake
