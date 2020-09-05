@@ -1,12 +1,13 @@
 # Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
 
-PORTNAME=	RO
+PORTNAME=	ro
 PORTVERSION=	3.6.9
 PORTREVISION=	4
 CATEGORIES=	astro python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	RO-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Package of Python astronomical utilities
