@@ -1,11 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	kio-gdrive
-DISTVERSION=	1.3.0
-PORTREVISION=	1
-CATEGORIES=	net kde
-MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/src
-DIST_SUBDIR=	KDE/${PORTNAME}
+DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE IOSlave for accessing gdrive
@@ -25,5 +22,7 @@ USE_KDE=	completion config coreaddons ecm i18n jobwidgets kio \
 		gapi
 USE_QT=		core dbus gui network widgets xml \
 		buildtools_build  qmake_build
+
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.mk>
