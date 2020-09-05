@@ -1400,7 +1400,6 @@
     SUBDIR += pserv
     SUBDIR += publicfile
     SUBDIR += punbb
-    SUBDIR += py-MechanicalSoup
     SUBDIR += py-Tenjin
     SUBDIR += py-WebError
     SUBDIR += py-WebFlash
@@ -1645,6 +1644,7 @@
     SUBDIR += py-lesscpy
     SUBDIR += py-libsass
     SUBDIR += py-livereload
+    SUBDIR += py-mechanicalsoup
     SUBDIR += py-mechanize
     SUBDIR += py-meld3
     SUBDIR += py-multidict

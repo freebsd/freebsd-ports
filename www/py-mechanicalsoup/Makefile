@@ -1,11 +1,12 @@
 # Created by: Thomas Zander <riggs@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	MechanicalSoup
+PORTNAME=	mechanicalsoup
 PORTVERSION=	0.12.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	MechanicalSoup-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python library for automating interaction with websites
