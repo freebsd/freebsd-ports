@@ -1,0 +1,11 @@
+--- azure-storage-table.gemspec.orig	2020-09-01 15:57:14 UTC
++++ azure-storage-table.gemspec
+@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
+ 
+     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+       s.add_runtime_dependency(%q<azure-storage-common>.freeze, ["~> 2.0"])
+-      s.add_runtime_dependency(%q<nokogiri>.freeze, ["~> 1.11.0.rc2"])
++      s.add_runtime_dependency(%q<nokogiri>.freeze, ["~> 1.10.4"])
+       s.add_development_dependency(%q<dotenv>.freeze, ["~> 2.0"])
+       s.add_development_dependency(%q<minitest>.freeze, ["~> 5"])
+       s.add_development_dependency(%q<minitest-reporters>.freeze, ["~> 1"])
