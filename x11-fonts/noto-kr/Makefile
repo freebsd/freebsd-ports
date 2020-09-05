@@ -5,7 +5,23 @@ PORTVERSION=	2.001
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/googlefonts/noto-cjk/raw/NotoSansV2.001/
 PKGNAMESUFFIX=	-kr
-DISTFILES=	NotoSansCJKkr-Black.otf \
+DISTFILES=	LICENSE \
+		${NOTO_KR_FONTS}
+DIST_SUBDIR=	Noto
+EXTRACT_ONLY=	# empty
+
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Google Noto Fonts family (Korean)
+
+LICENSE=	OFL11
+LICENSE_FILE=	${DISTDIR}/${DIST_SUBDIR}/LICENSE
+
+USES=		fonts
+
+NO_ARCH=	yes
+NO_BUILD=	yes
+
+NOTO_KR_FONTS=	NotoSansCJKkr-Black.otf \
 		NotoSansCJKkr-Bold.otf \
 		NotoSansCJKkr-DemiLight.otf \
 		NotoSansCJKkr-Light.otf \
@@ -35,21 +51,9 @@ DISTFILES=	NotoSansCJKkr-Black.otf \
 		NotoSerifKR-Medium.otf \
 		NotoSerifKR-Regular.otf \
 		NotoSerifKR-SemiBold.otf
-DIST_SUBDIR=	Noto
-EXTRACT_ONLY=	# empty
-
-MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Google Noto Fonts family (Korean)
-
-LICENSE=	OFL11
-
-USES=		fonts
-
-NO_ARCH=	yes
-NO_BUILD=	yes
 
 do-install:
 	${MKDIR} ${STAGEDIR}${FONTSDIR}
-	cd ${DISTDIR}/${DIST_SUBDIR} && ${INSTALL_DATA} ${DISTFILES} ${STAGEDIR}${FONTSDIR}
+	cd ${DISTDIR}/${DIST_SUBDIR} && ${INSTALL_DATA} ${NOTO_KR_FONTS} ${STAGEDIR}${FONTSDIR}
 
 .include <bsd.port.mk>
