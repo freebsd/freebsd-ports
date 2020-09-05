@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pysmartdl
-PORTVERSION=	1.2.5
+PORTVERSION=	1.3.3
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,9 +11,10 @@ DISTNAME=	pySmartDL-${PORTVERSION}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Smart download manager for Python
 
-RUN_DEPENDS=	${PY_FUTURES}
+LICENSE=	UNLICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		python
+USES=		python:3.4+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
