@@ -289,6 +289,7 @@
     SUBDIR += sakura
     SUBDIR += sbxkb
     SUBDIR += screen-message
+    SUBDIR += screenkey
     SUBDIR += scripts
     SUBDIR += sddm
     SUBDIR += sessreg

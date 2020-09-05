@@ -1,0 +1,14 @@
+This is a screencast tool to display pressed keys, inspired by Screenflick.
+Its most notable features are:
+
+  - Several keyboard translation methods
+  - Key composition/input method support
+  - Configurable font/size/position
+  - Highlighting of recent keystrokes
+  - Improved backspace processing
+  - Normal/Emacs/Mac caps modes
+  - Multi-monitor support
+  - Dynamic recording control
+  - Switch for visible shift and modifier sequences only
+
+WWW: https://www.thregr.org/~wavexx/software/screenkey/
