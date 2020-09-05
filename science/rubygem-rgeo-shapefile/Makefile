@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rgeo-shapefile
-PORTVERSION=	2.0.1
+PORTVERSION=	3.0.0
 CATEGORIES=	science rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,7 @@ COMMENT=	RGeo module for reading the ESRI shapefile format
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-dbf>=3.0:databases/rubygem-dbf \
+RUN_DEPENDS=	rubygem-dbf>=4.0<5:databases/rubygem-dbf \
 		rubygem-rgeo>=1.0:science/rubygem-rgeo
 
 USES=		gem
