@@ -1,28 +1,55 @@
 # $FreeBSD$
 
 PORTNAME=	noto
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	2.001
 CATEGORIES=	x11-fonts
-MASTER_SITES=	https://noto-website-2.storage.googleapis.com/pkgs/
-DISTNAME=	Noto-hinted
+MASTER_SITES=	https://github.com/googlefonts/noto-cjk/raw/NotoSansV2.001/
 PKGNAMESUFFIX=	-sc
+DISTFILES=	NotoSansCJKsc-Black.otf \
+		NotoSansCJKsc-Bold.otf \
+		NotoSansCJKsc-DemiLight.otf \
+		NotoSansCJKsc-Light.otf \
+		NotoSansCJKsc-Medium.otf \
+		NotoSansCJKsc-Regular.otf \
+		NotoSansCJKsc-Thin.otf \
+		NotoSansMonoCJKsc-Bold.otf \
+		NotoSansMonoCJKsc-Regular.otf \
+		NotoSansSC-Black.otf \
+		NotoSansSC-Bold.otf \
+		NotoSansSC-DemiLight.otf \
+		NotoSansSC-Light.otf \
+		NotoSansSC-Medium.otf \
+		NotoSansSC-Regular.otf \
+		NotoSansSC-Thin.otf \
+		NotoSerifCJKsc-Black.otf \
+		NotoSerifCJKsc-Bold.otf \
+		NotoSerifCJKsc-ExtraLight.otf \
+		NotoSerifCJKsc-Light.otf \
+		NotoSerifCJKsc-Medium.otf \
+		NotoSerifCJKsc-Regular.otf \
+		NotoSerifCJKsc-SemiBold.otf \
+		NotoSerifSC-Black.otf \
+		NotoSerifSC-Bold.otf \
+		NotoSerifSC-ExtraLight.otf \
+		NotoSerifSC-Light.otf \
+		NotoSerifSC-Medium.otf \
+		NotoSerifSC-Regular.otf \
+		NotoSerifSC-SemiBold.otf
+DIST_SUBDIR=	Noto
+EXTRACT_ONLY=	# empty
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Google Noto Fonts family (Simplified Chinese)
 
 LICENSE=	OFL11
-LICENSE_FILE=	${WRKSRC}/LICENSE_OFL.txt
 
-USES=		fonts zip
+USES=		fonts
 
-EXTRACT_AFTER_ARGS=	-d ${EXTRACT_WRKDIR} '*CJKsc*.otf'
 NO_ARCH=	yes
 NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
 
 do-install:
 	${MKDIR} ${STAGEDIR}${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*CJKsc*.otf ${STAGEDIR}${FONTSDIR}
+	cd ${DISTDIR}/${DIST_SUBDIR} && ${INSTALL_DATA} ${DISTFILES} ${STAGEDIR}${FONTSDIR}
 
 .include <bsd.port.mk>
