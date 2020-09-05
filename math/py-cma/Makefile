@@ -20,11 +20,9 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	PLOTTING SKOPT
+OPTIONS_DEFINE=	PLOTTING
 PLOTTING_DESC=	Plotting support
-SKOPT_DESC=	Scikit-Optimize (skopt) support
 
 PLOTTING_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>=0:math/py-matplotlib@${PY_FLAVOR}
-SKOPT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scikit-optimize>=0:science/py-scikit-optimize@${PY_FLAVOR}
 
 .include <bsd.port.mk>
