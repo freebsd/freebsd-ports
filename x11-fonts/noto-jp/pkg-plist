@@ -7,6 +7,13 @@
 %%FONTSDIR%%/NotoSansCJKjp-Thin.otf
 %%FONTSDIR%%/NotoSansMonoCJKjp-Bold.otf
 %%FONTSDIR%%/NotoSansMonoCJKjp-Regular.otf
+%%FONTSDIR%%/NotoSansJP-Black.otf
+%%FONTSDIR%%/NotoSansJP-Bold.otf
+%%FONTSDIR%%/NotoSansJP-DemiLight.otf
+%%FONTSDIR%%/NotoSansJP-Light.otf
+%%FONTSDIR%%/NotoSansJP-Medium.otf
+%%FONTSDIR%%/NotoSansJP-Regular.otf
+%%FONTSDIR%%/NotoSansJP-Thin.otf
 %%FONTSDIR%%/NotoSerifCJKjp-Black.otf
 %%FONTSDIR%%/NotoSerifCJKjp-Bold.otf
 %%FONTSDIR%%/NotoSerifCJKjp-ExtraLight.otf
@@ -14,3 +21,10 @@
 %%FONTSDIR%%/NotoSerifCJKjp-Medium.otf
 %%FONTSDIR%%/NotoSerifCJKjp-Regular.otf
 %%FONTSDIR%%/NotoSerifCJKjp-SemiBold.otf
+%%FONTSDIR%%/NotoSerifJP-Black.otf
+%%FONTSDIR%%/NotoSerifJP-Bold.otf
+%%FONTSDIR%%/NotoSerifJP-ExtraLight.otf
+%%FONTSDIR%%/NotoSerifJP-Light.otf
+%%FONTSDIR%%/NotoSerifJP-Medium.otf
+%%FONTSDIR%%/NotoSerifJP-Regular.otf
+%%FONTSDIR%%/NotoSerifJP-SemiBold.otf
