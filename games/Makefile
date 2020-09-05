@@ -16,6 +16,7 @@
     SUBDIR += CaribbeanStud
     SUBDIR += HeroesOfMightAndMagic
     SUBDIR += KnightCap
+    SUBDIR += NBlood
     SUBDIR += OpenTomb
     SUBDIR += abbayedesmorts
     SUBDIR += abe
@@ -625,7 +626,6 @@
     SUBDIR += naev-data
     SUBDIR += narcissu2
     SUBDIR += nazghul
-    SUBDIR += NBlood
     SUBDIR += nehquake
     SUBDIR += nethack32
     SUBDIR += nethack33
