@@ -5,7 +5,23 @@ PORTVERSION=	2.001
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/googlefonts/noto-cjk/raw/NotoSansV2.001/
 PKGNAMESUFFIX=	-jp
-DISTFILES=	NotoSansCJKjp-Black.otf \
+DISTFILES=	LICENSE \
+		${NOTO_JP_FONTS}
+DIST_SUBDIR=	Noto
+EXTRACT_ONLY=	# empty
+
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Google Noto Fonts family (Japanese)
+
+LICENSE=	OFL11
+LICENSE_FILE=	${DISTDIR}/${DIST_SUBDIR}/LICENSE
+
+USES=		fonts
+
+NO_ARCH=	yes
+NO_BUILD=	yes
+
+NOTO_JP_FONTS=	NotoSansCJKjp-Black.otf \
 		NotoSansCJKjp-Bold.otf \
 		NotoSansCJKjp-DemiLight.otf \
 		NotoSansCJKjp-Light.otf \
@@ -35,21 +51,9 @@ DISTFILES=	NotoSansCJKjp-Black.otf \
 		NotoSerifJP-Medium.otf \
 		NotoSerifJP-Regular.otf \
 		NotoSerifJP-SemiBold.otf
-DIST_SUBDIR=	Noto
-EXTRACT_ONLY=	# empty
-
-MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Google Noto Fonts family (Japanese)
-
-LICENSE=	OFL11
-
-USES=		fonts
-
-NO_ARCH=	yes
-NO_BUILD=	yes
 
 do-install:
 	${MKDIR} ${STAGEDIR}${FONTSDIR}
-	cd ${DISTDIR}/${DIST_SUBDIR} && ${INSTALL_DATA} ${DISTFILES} ${STAGEDIR}${FONTSDIR}
+	cd ${DISTDIR}/${DIST_SUBDIR} && ${INSTALL_DATA} ${NOTO_JP_FONTS} ${STAGEDIR}${FONTSDIR}
 
 .include <bsd.port.mk>
