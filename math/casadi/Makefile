@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	casadi
-DISTVERSION=	3.5.3
+DISTVERSION=	3.5.4
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
