@@ -29,7 +29,7 @@ BENCHMARK_DESC=	Run benchmark functions
 BENCHMARK_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gym>=0.12.1:math/py-gym@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}hiplot>=0:graphics/py-hiplot@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}matplotlib>=2.2.3:math/py-matplotlib@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}pandas>=0.23.4:math/py-pandas@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}pandas>=0.23.4,1:math/py-pandas@${PY_FLAVOR} \
 			${PY_PILLOW} \
 			${PYTHON_PKGNAMEPREFIX}requests>=2.21.0:www/py-requests@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}tqdm>=0:misc/py-tqdm@${PY_FLAVOR} \
