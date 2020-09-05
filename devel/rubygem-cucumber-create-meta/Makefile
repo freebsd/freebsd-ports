@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cucumber-create-meta
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
