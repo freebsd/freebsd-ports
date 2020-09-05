@@ -20,9 +20,7 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-BASIC_FONTS=	NotoColorEmoji.ttf \
-		NotoEmoji-Regular.ttf \
-		NotoMono-Regular.ttf \
+BASIC_FONTS=	NotoMono-Regular.ttf \
 		NotoSans-Bold.ttf \
 		NotoSans-BoldItalic.ttf \
 		NotoSans-Italic.ttf \
@@ -33,9 +31,11 @@ BASIC_FONTS=	NotoColorEmoji.ttf \
 		NotoSerif-BoldItalic.ttf \
 		NotoSerif-Italic.ttf \
 		NotoSerif-Regular.ttf
+EMOJI_FONTS=	NotoColorEmoji.ttf \
+		NotoEmoji-Regular.ttf
 
 post-extract:
-	@cd ${WRKSRC} && ${RM} ${BASIC_FONTS}
+	@cd ${WRKSRC} && ${RM} ${BASIC_FONTS} ${EMOJI_FONTS}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${FONTSDIR}
