@@ -3,6 +3,7 @@
 
 PORTNAME=	drm-devel-kmod
 PORTVERSION=	5.4.62.g20200905
+PORTREVISION=	1
 CATEGORIES=	graphics kld
 
 MAINTAINER=	x11@FreeBSD.org
@@ -14,7 +15,7 @@ LICENSE_COMB=	multi
 ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc64
 ONLY_FOR_ARCHS_REASON=	the new KMS components are only supported on amd64, arm64, i386 and powerpc64
 
-RUN_DEPENDS=	gpu-firmware-kmod>=g20180319:graphics/gpu-firmware-kmod
+RUN_DEPENDS=	gpu-firmware-kmod>=g20200503:graphics/gpu-firmware-kmod
 
 CONFLICTS_INSTALL=	drm-current-kmod \
 			drm-fbsd11.2-kmod \
