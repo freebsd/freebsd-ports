@@ -1,6 +1,14 @@
---- setup.py.orig	2016-02-04 04:39:06 UTC
+--- setup.py.orig	2020-09-02 05:16:18 UTC
 +++ setup.py
-@@ -815,7 +815,6 @@ if __name__ == "__main__":
+@@ -923,7 +923,6 @@ in COPYING-LGPL_ and COPYING-MIT_ files in the source 
+     ],
+     packages=[PY_PACKAGE],
+     package_dir={ PY_PACKAGE: os.path.join('python', 'curl') },
+-    python_requires='>=3.5',
+ )
+ 
+ if sys.platform == "win32":
+@@ -980,7 +979,6 @@ if __name__ == "__main__":
      elif len(sys.argv) > 1 and sys.argv[1] == 'docstrings-sources':
          gen_docstrings_sources()
      else:
