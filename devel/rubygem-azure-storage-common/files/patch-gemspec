@@ -1,0 +1,11 @@
+--- azure-storage-common.gemspec.orig	2020-09-01 15:53:15 UTC
++++ azure-storage-common.gemspec
+@@ -25,7 +25,7 @@ Gem::Specification.new do |s|
+       s.add_runtime_dependency(%q<faraday>.freeze, ["~> 1.0"])
+       s.add_runtime_dependency(%q<faraday_middleware>.freeze, ["~> 1.0.0.rc1"])
+       s.add_runtime_dependency(%q<net-http-persistent>.freeze, ["~> 4.0"])
+-      s.add_runtime_dependency(%q<nokogiri>.freeze, ["~> 1.11.0.rc2"])
++      s.add_runtime_dependency(%q<nokogiri>.freeze, ["~> 1.10.4"])
+       s.add_development_dependency(%q<dotenv>.freeze, ["~> 2.0"])
+       s.add_development_dependency(%q<minitest>.freeze, ["~> 5"])
+       s.add_development_dependency(%q<minitest-reporters>.freeze, ["~> 1"])
