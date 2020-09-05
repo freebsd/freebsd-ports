@@ -7,6 +7,13 @@
 %%FONTSDIR%%/NotoSansCJKkr-Thin.otf
 %%FONTSDIR%%/NotoSansMonoCJKkr-Bold.otf
 %%FONTSDIR%%/NotoSansMonoCJKkr-Regular.otf
+%%FONTSDIR%%/NotoSansKR-Black.otf
+%%FONTSDIR%%/NotoSansKR-Bold.otf
+%%FONTSDIR%%/NotoSansKR-DemiLight.otf
+%%FONTSDIR%%/NotoSansKR-Light.otf
+%%FONTSDIR%%/NotoSansKR-Medium.otf
+%%FONTSDIR%%/NotoSansKR-Regular.otf
+%%FONTSDIR%%/NotoSansKR-Thin.otf
 %%FONTSDIR%%/NotoSerifCJKkr-Black.otf
 %%FONTSDIR%%/NotoSerifCJKkr-Bold.otf
 %%FONTSDIR%%/NotoSerifCJKkr-ExtraLight.otf
@@ -14,3 +21,10 @@
 %%FONTSDIR%%/NotoSerifCJKkr-Medium.otf
 %%FONTSDIR%%/NotoSerifCJKkr-Regular.otf
 %%FONTSDIR%%/NotoSerifCJKkr-SemiBold.otf
+%%FONTSDIR%%/NotoSerifKR-Black.otf
+%%FONTSDIR%%/NotoSerifKR-Bold.otf
+%%FONTSDIR%%/NotoSerifKR-ExtraLight.otf
+%%FONTSDIR%%/NotoSerifKR-Light.otf
+%%FONTSDIR%%/NotoSerifKR-Medium.otf
+%%FONTSDIR%%/NotoSerifKR-Regular.otf
+%%FONTSDIR%%/NotoSerifKR-SemiBold.otf
