@@ -168,6 +168,7 @@
     SUBDIR += nexfontsel
     SUBDIR += noto
     SUBDIR += noto-basic
+    SUBDIR += noto-emoji
     SUBDIR += noto-extra
     SUBDIR += noto-jp
     SUBDIR += noto-kr

@@ -1,0 +1,28 @@
+# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
+# $FreeBSD$
+
+PORTNAME=	noto
+PORTVERSION=	2.018
+CATEGORIES=	x11-fonts
+MASTER_SITES=	https://github.com/googlefonts/noto-emoji/raw/v2020-07-22-unicode13_0/fonts/
+PKGNAMESUFFIX=	-emoji
+DISTFILES=	NotoColorEmoji.ttf \
+		NotoEmoji-Regular.ttf
+DIST_SUBDIR=	Noto
+EXTRACT_ONLY=	# empty
+
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Google Noto Fonts family (Emoji)
+
+LICENSE=	APACHE20
+
+USES=		fonts
+
+NO_ARCH=	yes
+NO_BUILD=	yes
+
+do-install:
+	${MKDIR} ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${DISTDIR}/NotoColorEmoji.ttf ${DISTDIR}/NotoEmoji-Regular.ttf ${STAGEDIR}${FONTSDIR}
+
+.include <bsd.port.mk>
