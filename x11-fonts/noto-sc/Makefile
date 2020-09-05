@@ -5,7 +5,23 @@ PORTVERSION=	2.001
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/googlefonts/noto-cjk/raw/NotoSansV2.001/
 PKGNAMESUFFIX=	-sc
-DISTFILES=	NotoSansCJKsc-Black.otf \
+DISTFILES=	LICENSE \
+		${NOTO_SC_FONTS}
+DIST_SUBDIR=	Noto
+EXTRACT_ONLY=	# empty
+
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Google Noto Fonts family (Simplified Chinese)
+
+LICENSE=	OFL11
+LICENSE_FILE=	${DISTDIR}/${DIST_SUBDIR}/LICENSE
+
+USES=		fonts
+
+NO_ARCH=	yes
+NO_BUILD=	yes
+
+NOTO_SC_FONTS=	NotoSansCJKsc-Black.otf \
 		NotoSansCJKsc-Bold.otf \
 		NotoSansCJKsc-DemiLight.otf \
 		NotoSansCJKsc-Light.otf \
@@ -35,21 +51,9 @@ DISTFILES=	NotoSansCJKsc-Black.otf \
 		NotoSerifSC-Medium.otf \
 		NotoSerifSC-Regular.otf \
 		NotoSerifSC-SemiBold.otf
-DIST_SUBDIR=	Noto
-EXTRACT_ONLY=	# empty
-
-MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Google Noto Fonts family (Simplified Chinese)
-
-LICENSE=	OFL11
-
-USES=		fonts
-
-NO_ARCH=	yes
-NO_BUILD=	yes
 
 do-install:
 	${MKDIR} ${STAGEDIR}${FONTSDIR}
-	cd ${DISTDIR}/${DIST_SUBDIR} && ${INSTALL_DATA} ${DISTFILES} ${STAGEDIR}${FONTSDIR}
+	cd ${DISTDIR}/${DIST_SUBDIR} && ${INSTALL_DATA} ${NOTO_SC_FONTS} ${STAGEDIR}${FONTSDIR}
 
 .include <bsd.port.mk>
