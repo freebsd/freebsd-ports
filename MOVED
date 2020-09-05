@@ -15417,3 +15417,4 @@ graphics/py-pyembree||2020-09-04|Has expired: Broken for more than 6 months
 games/asteroid||2020-09-04|Has expired: Broken for more than 6 months
 www/py-pySmartDL|www/py-pysmartdl|2020-09-05|Rename to match our py- port naming
 astro/py-RO|astro/py-ro|2020-09-05|Rename to match our py- port naming
+astro/py-astLib|astro/py-astlib|2020-09-05|Rename to match our py- port naming

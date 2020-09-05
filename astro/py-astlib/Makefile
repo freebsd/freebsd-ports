@@ -1,11 +1,12 @@
 # Created by: Wen Heping <wenheping@gmail.com>
 # $FreeBSD$
 
-PORTNAME=	astLib
+PORTNAME=	astlib
 PORTVERSION=	0.11.4
 CATEGORIES=	astro python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	astLib-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Astronomy modules for Python
