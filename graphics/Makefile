@@ -838,6 +838,7 @@
     SUBDIR += py-opencv
     SUBDIR += py-openimageio
     SUBDIR += py-photocollage
+    SUBDIR += py-piexif
     SUBDIR += py-pillow
     SUBDIR += py-pillow6
     SUBDIR += py-pivy
