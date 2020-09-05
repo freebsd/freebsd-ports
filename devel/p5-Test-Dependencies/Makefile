@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Test-Dependencies
-PORTVERSION=	0.24
+PORTVERSION=	0.28
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -25,4 +25,11 @@ USE_PERL5=	configure
 
 NO_ARCH=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} <= 503200
+BUILD_DEPENDS+=	p5-Module-CoreList>=5.20200620:devel/p5-Module-CoreList
+RUN_DEPENDS+=	p5-Module-CoreList>=5.20200620:devel/p5-Module-CoreList
+.endif
+
+.include <bsd.port.post.mk>
