@@ -2,10 +2,10 @@ include/sleef.h
 include/sleefdft.h
 lib/libsleef.so
 lib/libsleef.so.3
-lib/libsleef.so.3.4.0
+lib/libsleef.so.3.5.0
 lib/libsleefdft.so
 lib/libsleefdft.so.3
-lib/libsleefdft.so.3.4.0
+lib/libsleefdft.so.3.5.0
 %%NO_PPC64%%lib/libsleefgnuabi.so
 %%NO_PPC64%%lib/libsleefgnuabi.so.3
-%%NO_PPC64%%lib/libsleefgnuabi.so.3.4
+%%NO_PPC64%%lib/libsleefgnuabi.so.3.5
