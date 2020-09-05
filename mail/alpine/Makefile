@@ -64,7 +64,7 @@ LDAP_CFLAGS=			-I${LOCALBASE}/include
 LDAP_LDFLAGS=			-L${LOCALBASE}/lib
 
 # Option MAILDIR
-MAILDIR_PATCH_SITES=		http://alpine.x10host.com/alpine/alpha/patches/alpine-2.23/
+MAILDIR_PATCH_SITES=		http://alpine.x10host.com/alpine/patches/alpine-2.23/
 MAILDIR_PATCHFILES+=		maildir.patch.gz:-p1
 
 # Option MOUSE
