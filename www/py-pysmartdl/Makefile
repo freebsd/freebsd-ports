@@ -1,11 +1,12 @@
 # Created by: Mark Felder <feld@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	pySmartDL
+PORTNAME=	pysmartdl
 PORTVERSION=	1.2.5
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	pySmartDL-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Smart download manager for Python
