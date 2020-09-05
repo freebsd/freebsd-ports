@@ -16,6 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 TEST_DEPENDS=	p5-PDF-API2>=0:textproc/p5-PDF-API2
 
 USES=		gmake perl5
+USE_CSTD=	c99
 USE_PERL5=	configure
 
 post-install:
