@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	hledger-ui
-DISTVERSION=	1.18.1
-PORTREVISION=	1
+DISTVERSION=	1.19
 CATEGORIES=	finance haskell
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -65,8 +64,8 @@ USE_CABAL=	\
 		hashable-1.3.0.0_1 \
 		hashtables-1.2.3.4 \
 		haskell-lexer-1.1 \
-		hledger-1.18.1_1 \
-		hledger-lib-1.18.1_1 \
+		hledger-1.19 \
+		hledger-lib-1.19 \
 		html-1.0.1.2 \
 		integer-logarithms-1.0.3_2 \
 		lucid-2.9.12_1 \
@@ -85,7 +84,7 @@ USE_CABAL=	\
 		parser-combinators-1.2.1 \
 		pretty-show-1.10 \
 		primitive-0.7.1.0 \
-		random-1.2.0_1 \
+		random-1.2.0_2 \
 		regex-base-0.94.0.0_1 \
 		regex-tdfa-1.3.1.0_1 \
 		safe-0.3.19 \
@@ -118,6 +117,6 @@ USE_CABAL=	\
 		vty-5.30 \
 		wcwidth-0.0.2 \
 		wizards-1.0.3_1 \
-		word-wrap-0.4.1_1
+		word-wrap-0.4.1
 
 .include <bsd.port.mk>
