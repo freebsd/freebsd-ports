@@ -3,18 +3,13 @@
 
 PORTNAME=	openblas
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.9
-PORTREVISION=	2
+DISTVERSION=	0.3.10
 PORTEPOCH=	1
 CATEGORIES=	math
 MASTER_SITES=	NL/lapack/timing/:lapack_tmg
 DISTFILES=	large.tgz:lapack_tmg \
 		timing.tgz:lapack_tmg
 DIST_SUBDIR=	openblas
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	ee2e758278b5d82b7242f505ea694f082ef65879.patch:-p1 # fixes the regression: https://github.com/xianyi/OpenBLAS/pull/2512
-PATCHFILES+=	3eda3d34c3d9bfabb29e1d8a69860932334a815d.patch:-p1 # fixes build on powerpc (PPCG4)
 
 MAINTAINER=	phd_kimberlite@yahoo.co.jp
 COMMENT=	Optimized BLAS library based on GotoBLAS2
@@ -44,9 +39,11 @@ OPTIONS_DEFINE=			DYNAMIC_ARCH INTERFACE64 OPENMP
 OPTIONS_DEFAULT=		OPENMP
 OPTIONS_DEFINE_i386=		AVX AVX2
 OPTIONS_DEFINE_amd64=		AVX AVX2
-OPTIONS_DEFINE_powerpc64=	POWER6
 OPTIONS_EXCLUDE_powerpc64=	OPENMP
 OPTIONS_EXCLUDE_powerpc=	OPENMP
+OPTIONS_RADIO=	${OPTIONS_RADIO_${ARCH}}
+OPTIONS_RADIO_powerpc64=	POWER
+OPTIONS_RADIO_POWER=	POWER6 POWER8
 OPTIONS_SUB=	yes
 
 .if defined(BATCH) || defined(PACKAGE_BUILDING)
@@ -60,6 +57,7 @@ OPENMP_DESC=		Use OpenMP for threading
 AVX_DESC=		Support Advanced Vector Extensions (AVX)
 AVX2_DESC=		Support Advanced Vector Extensions 2 (AVX2)
 POWER6_DESC=		Optimize for POWER6, instead of the default PPC970
+POWER8_DESC=		Optimize for POWER8, instead of the default PPC970
 
 .include <bsd.port.options.mk>
 
@@ -67,6 +65,8 @@ POWER6_DESC=		Optimize for POWER6, instead of the default PPC970
 USE_GCC=		yes
 .  if ${PORT_OPTIONS:MPOWER6}
 TARGET_CPU_ARCH=	POWER6
+.  elif ${PORT_OPTIONS:MPOWER8}
+TARGET_CPU_ARCH=	POWER8
 .else
 TARGET_CPU_ARCH=	PPC970
 .  endif
