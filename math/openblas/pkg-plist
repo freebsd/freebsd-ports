@@ -10,6 +10,7 @@ lib/cmake/openblas/OpenBLASConfig.cmake
 lib/cmake/openblas/OpenBLASConfigVersion.cmake
 lib/libopenblas.a
 lib/libopenblas.so
+lib/libopenblas.so.0
 %%DYNAMIC_ARCH%%lib/libopenblasp-r%%PORTVERSION%%.a
 %%DYNAMIC_ARCH%%lib/libopenblasp-r%%PORTVERSION%%.so
 libdata/pkgconfig/openblas.pc
