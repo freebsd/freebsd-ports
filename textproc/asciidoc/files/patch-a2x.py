@@ -5,7 +5,7 @@
          for attr in self.attributes:
              self.asciidoc_opts += ' --attribute "%s"' % attr
 -#        self.xsltproc_opts += ' --nonet'
-+        self.xsltproc_opts += ' --nonet --path /usr/local/share/xsl/docbook/manpages/'
++        self.xsltproc_opts += ' --nonet --path %%LOCALBASE%%/share/xsl/docbook/manpages/'
          if self.verbose:
              self.asciidoc_opts += ' --verbose'
              self.dblatex_opts += ' -V'

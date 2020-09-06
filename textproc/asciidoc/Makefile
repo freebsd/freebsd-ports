@@ -25,7 +25,7 @@ SHEBANG_GLOB=	*.py
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|python3 |${PYTHON_CMD} |' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/a2x.py
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/a2x.py
 	@${FIND} ${WRKSRC} -name '*.conf' | ${XARGS} -I % ${LN} % %.sample
 
 post-install:
