@@ -1,4 +1,4 @@
 Linux binaries for fsck.vfat and mkfs.vfat utilities, which check
 and create file systems of the FAT family.
 
-WWW: http://github.com/dosfstools/dosfstools
+WWW: https://github.com/dosfstools/dosfstools
