@@ -678,7 +678,6 @@ MASTER_SITE_GNU+= \
 	ftp://mirrors.rit.edu/gnu/%SUBDIR%/ \
 	ftp://ftp.fu-berlin.de/unix/gnu/%SUBDIR%/ \
 	ftp://ftp.mirrorservice.org/sites/ftp.gnu.org/gnu/%SUBDIR%/ \
-	ftp://ftp.cse.yzu.edu.tw/gnu/%SUBDIR%/ \
 	https://ftp.gnu.org/gnu/%SUBDIR%/
 .endif
 
