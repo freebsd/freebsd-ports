@@ -1,0 +1,22 @@
+--- packaging/CMakeLists.txt.orig	2020-09-06 15:39:31 UTC
++++ packaging/CMakeLists.txt
+@@ -22,16 +22,16 @@ install(TARGETS Halide Halide_Generator Halide_RunGenM
+         EXPORT Halide_Targets
+ 
+         RUNTIME
+-        DESTINATION ${CMAKE_INSTALL_BINDIR}/${CONFIG_DIR}
++        DESTINATION ${CMAKE_INSTALL_BINDIR}
+         COMPONENT Halide_Runtime
+ 
+         LIBRARY
+-        DESTINATION ${CMAKE_INSTALL_LIBDIR}/${CONFIG_DIR}
++        DESTINATION ${CMAKE_INSTALL_LIBDIR}
+         COMPONENT Halide_Runtime
+         NAMELINK_COMPONENT Halide_Development
+ 
+         ARCHIVE
+-        DESTINATION ${CMAKE_INSTALL_LIBDIR}/${CONFIG_DIR}
++        DESTINATION ${CMAKE_INSTALL_LIBDIR}
+         COMPONENT Halide_Development
+ 
+         INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})

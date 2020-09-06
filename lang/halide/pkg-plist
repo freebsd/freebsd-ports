@@ -12,7 +12,11 @@ include/HalideRuntimeOpenCL.h
 include/HalideRuntimeOpenGL.h
 include/HalideRuntimeOpenGLCompute.h
 include/HalideRuntimeQurt.h
-lib/cmake/halide.cmake
-lib/cmake/halide_config.cmake
+lib/cmake/Halide/Halide-Interfaces.cmake
+lib/cmake/Halide/Halide-Targets-shared-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/Halide/Halide-Targets-shared.cmake
+lib/cmake/Halide/HalideConfig.cmake
+lib/cmake/Halide/HalideConfigVersion.cmake
+lib/cmake/Halide/HalideGeneratorHelpers.cmake
+lib/cmake/Halide/HalideTargetHelpers.cmake
 lib/libHalide.so
-%%DATADIR%%/halide_config.make
