@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Rex
-PORTVERSION=	1.12.1
+PORTVERSION=	1.12.2
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:FERKI
@@ -38,6 +38,7 @@ RUN_DEPENDS=	p5-AWS-Signature4>=0:devel/p5-AWS-Signature4 \
 		p5-libwww>=0:www/p5-libwww
 TEST_DEPENDS=	p5-String-Escape>=0:textproc/p5-String-Escape \
 		p5-Test-Deep>=0:devel/p5-Test-Deep \
+		p5-Test-Output>=0:devel/p5-Test-Output \
 		p5-Test-UseAllModules>=0.15:devel/p5-Test-UseAllModules
 
 USES=		perl5 shebangfix
