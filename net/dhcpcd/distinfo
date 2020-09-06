@@ -1,3 +1,3 @@
-TIMESTAMP = 1599103299
-SHA256 (dhcpcd-9.1.4.tar.xz) = 5fe133e5497d8af6d26bd6e6b8dd48ab12d124d6cc4cefe6de6536ff97f76820
-SIZE (dhcpcd-9.1.4.tar.xz) = 249648
+TIMESTAMP = 1599432418
+SHA256 (dhcpcd-9.2.0.tar.xz) = fcb2d19672d445bbfd38678fdee4f556ef967a3ea6bd81092d10545df2cb9666
+SIZE (dhcpcd-9.2.0.tar.xz) = 250584
