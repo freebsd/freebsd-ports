@@ -15,7 +15,7 @@ LIB_DEPENDS=	libhdf5.so:science/hdf5 \
 		liblz4.so:archivers/liblz4 \
 		libsz.so:science/szip
 
-USES=		cmake localbase:ldflags pkgconfig
+USES=		cmake compiler:c++11-lang localbase:ldflags pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	mariusmuja
 USE_LDCONFIG=	yes
