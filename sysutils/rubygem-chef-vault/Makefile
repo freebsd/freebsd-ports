@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chef-vault
-PORTVERSION=	4.0.1
+PORTVERSION=	4.0.11
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
