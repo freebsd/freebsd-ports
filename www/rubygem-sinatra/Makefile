@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sinatra
-PORTVERSION=	2.0.8.1
+PORTVERSION=	2.1.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-mustermann>=1.0<2:devel/rubygem-mustermann \
-		rubygem-rack>=2.0,3<3,3:www/rubygem-rack \
+		rubygem-rack>=2.2,3<3,3:www/rubygem-rack \
 		rubygem-rack-protection>=${PORTVERSION}:www/rubygem-rack-protection \
 		rubygem-tilt>=2.0<3:devel/rubygem-tilt
 
