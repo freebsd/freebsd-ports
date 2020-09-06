@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kokkos
-DISTVERSION=	3.1.01
+DISTVERSION=	3.2.00
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,8 +18,5 @@ USE_LDCONFIG=	yes
 SHEBANG_FILES=	bin/nvcc_wrapper
 
 CMAKE_ON=	BUILD_SHARED_LIBS
-
-post-install:
-	@cd ${STAGEDIR}${PREFIX}/include/eti && ${RMDIR} Cuda HPX OpenMP ROCm Serial Threads
 
 .include <bsd.port.mk>
