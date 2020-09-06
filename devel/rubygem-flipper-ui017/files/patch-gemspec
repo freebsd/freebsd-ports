@@ -1,0 +1,11 @@
+--- flipper-ui.gemspec.orig	2020-09-06 11:54:44 UTC
++++ flipper-ui.gemspec
+@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
+ 
+     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+       s.add_runtime_dependency(%q<rack>.freeze, [">= 1.4", "< 3"])
+-      s.add_runtime_dependency(%q<rack-protection>.freeze, [">= 1.5.3", "< 2.1.0"])
++      s.add_runtime_dependency(%q<rack-protection>.freeze, [">= 1.5.3", "< 2.2.0"])
+       s.add_runtime_dependency(%q<flipper>.freeze, ["~> 0.17.2"])
+       s.add_runtime_dependency(%q<erubi>.freeze, [">= 1.0.0", "< 2.0.0"])
+     else
