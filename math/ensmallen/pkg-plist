@@ -3,8 +3,6 @@ include/ensmallen_bits/ada_bound/ada_bound.hpp
 include/ensmallen_bits/ada_bound/ada_bound_impl.hpp
 include/ensmallen_bits/ada_bound/ada_bound_update.hpp
 include/ensmallen_bits/ada_bound/ams_bound_update.hpp
-include/ensmallen_bits/lookahead/lookahead.hpp
-include/ensmallen_bits/lookahead/lookahead_impl.hpp
 include/ensmallen_bits/ada_delta/ada_delta.hpp
 include/ensmallen_bits/ada_delta/ada_delta_impl.hpp
 include/ensmallen_bits/ada_delta/ada_delta_update.hpp
@@ -85,6 +83,10 @@ include/ensmallen_bits/katyusha/katyusha_impl.hpp
 include/ensmallen_bits/lbfgs/lbfgs.hpp
 include/ensmallen_bits/lbfgs/lbfgs_impl.hpp
 include/ensmallen_bits/log.hpp
+include/ensmallen_bits/lookahead/lookahead.hpp
+include/ensmallen_bits/lookahead/lookahead_impl.hpp
+include/ensmallen_bits/nsga2/nsga2.hpp
+include/ensmallen_bits/nsga2/nsga2_impl.hpp
 include/ensmallen_bits/padam/padam.hpp
 include/ensmallen_bits/padam/padam_update.hpp
 include/ensmallen_bits/parallel_sgd/decay_policies/constant_step.hpp
@@ -111,6 +113,7 @@ include/ensmallen_bits/problems/easom_function.hpp
 include/ensmallen_bits/problems/easom_function_impl.hpp
 include/ensmallen_bits/problems/eggholder_function.hpp
 include/ensmallen_bits/problems/eggholder_function_impl.hpp
+include/ensmallen_bits/problems/fonseca_fleming_function.hpp
 include/ensmallen_bits/problems/fw_test_function.hpp
 include/ensmallen_bits/problems/generalized_rosenbrock_function.hpp
 include/ensmallen_bits/problems/generalized_rosenbrock_function_impl.hpp
@@ -137,6 +140,7 @@ include/ensmallen_bits/problems/rosenbrock_function.hpp
 include/ensmallen_bits/problems/rosenbrock_function_impl.hpp
 include/ensmallen_bits/problems/rosenbrock_wood_function.hpp
 include/ensmallen_bits/problems/rosenbrock_wood_function_impl.hpp
+include/ensmallen_bits/problems/schaffer_function_n1.hpp
 include/ensmallen_bits/problems/schaffer_function_n2.hpp
 include/ensmallen_bits/problems/schaffer_function_n2_impl.hpp
 include/ensmallen_bits/problems/schaffer_function_n4.hpp

@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ensmallen
-DISTVERSION=	2.13.0
-PORTREVISION=	1
+DISTVERSION=	2.14.1
 CATEGORIES=	math
 MASTER_SITES=	https://ensmallen.org/files/
 
@@ -21,7 +20,7 @@ CMAKE_OFF=	BUILD_TESTS
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-do-test:
+do-test: # tests for 2.14.1 fail: https://github.com/mlpack/ensmallen/issues/225
 	@cd ${BUILD_WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DBUILD_TESTS:BOOL=ON ${CMAKE_SOURCE_PATH} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
