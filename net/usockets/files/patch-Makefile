@@ -1,13 +1,18 @@
---- Makefile.orig	2019-12-26 21:03:09 UTC
+--- Makefile.orig	2020-09-05 12:33:36 UTC
 +++ Makefile
-@@ -38,8 +38,8 @@ override LDFLAGS += uSockets.a
+@@ -39,12 +39,12 @@ override LDFLAGS += uSockets.a
  # By default we build the uSockets.a static library
  default:
  	rm -f *.o
 -	$(CC) $(CFLAGS) -flto -O3 -c src/*.c src/eventing/*.c src/crypto/*.c
--	$(AR) rvs uSockets.a *.o
 +	$(CC) $(CFLAGS) -fPIC -flto -c src/*.c src/eventing/*.c src/crypto/*.c
-+	$(CC) -shared -o libusockets.so *.o
+ # For now we do rely on C++17 for OpenSSL support but we will be porting this work to C11
+ ifeq ($(WITH_OPENSSL),1)
+-	$(CXX) $(CXXFLAGS) -std=c++17 -flto -O3 -c src/crypto/*.cpp
++	$(CXX) $(CXXFLAGS) -fPIC -std=c++17 -flto -O3 -c src/crypto/*.cpp
+ endif
+-	$(AR) rvs uSockets.a *.o
++	$(CXX) -shared -o libuSockets.so *.o -lssl
  
  # Builds all examples
  .PHONY: examples
