@@ -16,6 +16,9 @@ COMMENT=	Sane, simple release creation for Erlang
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Script removed upstream, library included in devel/rebar3
+EXPIRATION_DATE=2021-03-01
+
 BUILD_DEPENDS=	${LOCALBASE}/bin/erl:lang/erlang \
 		rebar3>=0:devel/rebar3
 RUN_DEPENDS:=	${BUILD_DEPENDS}
