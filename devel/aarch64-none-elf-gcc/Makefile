@@ -8,7 +8,7 @@ MASTER_SITES=	GCC
 PKGNAMEPREFIX?=	aarch64-none-elf-
 
 MAINTAINER=	manu@FreeBSD.org
-COMMENT=	GNU Compiler Collection for bare metal arm cross-development
+COMMENT?=	GNU Compiler Collection for bare metal aarch64 cross-development
 
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
