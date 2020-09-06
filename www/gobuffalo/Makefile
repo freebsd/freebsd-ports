@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gobuffalo
-PORTVERSION=	0.16.14
+PORTVERSION=	0.16.15
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -37,7 +37,7 @@ GH_TUPLE=	\
 		gobuffalo:envy:v1.9.0:gobuffalo_envy/vendor/github.com/gobuffalo/envy \
 		gobuffalo:events:v1.4.1:gobuffalo_events/vendor/github.com/gobuffalo/events \
 		gobuffalo:fizz:v1.9.8:gobuffalo_fizz/vendor/github.com/gobuffalo/fizz \
-		gobuffalo:flect:v0.2.1:gobuffalo_flect/vendor/github.com/gobuffalo/flect \
+		gobuffalo:flect:v0.2.2:gobuffalo_flect/vendor/github.com/gobuffalo/flect \
 		gobuffalo:genny:v2.0.6:gobuffalo_genny_v2/vendor/github.com/gobuffalo/genny/v2 \
 		gobuffalo:github_flavored_markdown:v1.1.0:gobuffalo_github_flavored_markdown/vendor/github.com/gobuffalo/github_flavored_markdown \
 		gobuffalo:helpers:v0.6.1:gobuffalo_helpers/vendor/github.com/gobuffalo/helpers \
@@ -93,7 +93,7 @@ GH_TUPLE=	\
 		microcosm-cc:bluemonday:v1.0.2:microcosm_cc_bluemonday/vendor/github.com/microcosm-cc/bluemonday \
 		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
 		mitchellh:mapstructure:v1.1.2:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
-		monoculum:formam:6f3cce7a46cf:monoculum_formam/vendor/github.com/monoculum/formam \
+		monoculum:formam:d7a8fbd33677:monoculum_formam/vendor/github.com/monoculum/formam \
 		pelletier:go-toml:v1.2.0:pelletier_go_toml/vendor/github.com/pelletier/go-toml \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
