@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	hledger-web
-DISTVERSION=	1.18.1
-PORTREVISION=	1
+DISTVERSION=	1.19
 CATEGORIES=	finance haskell
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -85,8 +84,8 @@ USE_CABAL=	\
 		hashtables-1.2.3.4 \
 		haskell-lexer-1.1 \
 		hjsmin-0.2.0.4 \
-		hledger-1.18.1_1 \
-		hledger-lib-1.18.1_1 \
+		hledger-1.19 \
+		hledger-lib-1.19 \
 		hourglass-0.2.12 \
 		hsc2hs-0.68.7 \
 		html-1.0.1.2 \
@@ -126,7 +125,7 @@ USE_CABAL=	\
 		pretty-show-1.10 \
 		primitive-0.7.1.0 \
 		psqueues-0.2.7.2_1 \
-		random-1.2.0_1 \
+		random-1.2.0_2 \
 		regex-base-0.94.0.0_1 \
 		regex-tdfa-1.3.1.0_1 \
 		resource-pool-0.2.3.2 \
@@ -197,7 +196,6 @@ USE_CABAL=	\
 		yesod-form-1.6.7 \
 		yesod-persistent-1.6.0.4 \
 		yesod-static-1.6.1.0 \
-		zlib-0.6.2.2 \
-		hsc2hs-0.68.7
+		zlib-0.6.2.2
 
 .include <bsd.port.mk>
