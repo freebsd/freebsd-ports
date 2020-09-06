@@ -2,6 +2,7 @@
 
 PORTNAME=	git-remote-hg
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel python
 
@@ -15,7 +16,7 @@ DEPRECATED=	Uses deprecated version of python
 EXPIRATION_DATE=	2020-09-15
 
 BUILD_DEPENDS=	a2x:textproc/asciidoc
-RUN_DEPENDS=	hg:devel/mercurial
+RUN_DEPENDS=	${PY_MERCURIAL}
 
 USES=		gmake python:2.7 shebangfix
 

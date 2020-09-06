@@ -3,7 +3,7 @@
 
 PORTNAME=	hgsvn
 PORTVERSION=	0.5.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ COMMENT=	Scripts to work locally on Subversion checkouts using Mercurial
 LICENSE=	GPLv3
 
 RUN_DEPENDS=	svn:devel/subversion \
-		hg:devel/mercurial \
+		${PY_MERCURIAL} \
 		${PYTHON_PKGNAMEPREFIX}hglib>0:devel/py-hglib@${PY_FLAVOR}
 
 USES=		python

@@ -1,20 +1,19 @@
---- hgext/convert/__init__.py.orig	2015-07-18 22:33:53 UTC
-+++ hgext/convert/__init__.py
-@@ -31,6 +31,7 @@ testedwith = 'internal'
-     ('d', 'dest-type', '', _('destination repository type'), _('TYPE')),
-     ('r', 'rev', [], _('import up to source revision REV'), _('REV')),
-     ('A', 'authormap', '', _('remap usernames using this file'), _('FILE')),
-+    ('', 'authormapsuffix', '', _('append this suffix to remapped author names'), _('SUFFIX')),
-     ('', 'filemap', '', _('remap file names using contents of file'),
-      _('FILE')),
-     ('', 'full', None,
---- hgext/convert/convcmd.py.orig	2015-07-18 22:33:53 UTC
-+++ hgext/convert/convcmd.py
-@@ -136,12 +136,16 @@ class converter(object):
+--- hgext/convert/convcmd.py.orig	2020-06-05 21:21:27.000000000 +0200
++++ hgext/convert/convcmd.py	2020-06-06 17:13:20.086884000 +0200
+@@ -74,7 +74,7 @@
+                 continue
+ 
+             srcauthor = srcauthor.strip()
+-            dstauthor = dstauthor.strip()
++            dstauthor = dstauthor.strip() + self.authormapsuffix
+             if authors.get(srcauthor) in (None, dstauthor):
+                 msg = _(b'mapping author %s to %s\n')
+                 ui.debug(msg % (srcauthor, dstauthor))
+@@ -209,12 +209,16 @@
          self.commitcache = {}
          self.authors = {}
          self.authorfile = None
-+        self.authormapsuffix = ''
++        self.authormapsuffix = b''
  
          # Record converted revisions persistently: maps source revision
          # ID to target revision ID (both strings).  (This is how
@@ -27,16 +26,7 @@
          # Read first the dst author map if any
          authorfile = self.dest.authorfile()
          if authorfile and os.path.exists(authorfile):
-@@ -395,7 +399,7 @@ class converter(object):
-                 continue
- 
-             srcauthor = srcauthor.strip()
--            dstauthor = dstauthor.strip()
-+            dstauthor = dstauthor.strip() + self.authormapsuffix
-             if self.authors.get(srcauthor) in (None, dstauthor):
-                 msg = _('mapping author %s to %s\n')
-                 self.ui.debug(msg % (srcauthor, dstauthor))
-@@ -409,7 +413,7 @@ class converter(object):
+@@ -482,7 +486,7 @@
  
      def cachecommit(self, rev):
          commit = self.source.getcommit(rev)

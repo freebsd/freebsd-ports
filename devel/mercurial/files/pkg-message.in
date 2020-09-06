@@ -1,6 +1,11 @@
 [
 { type: install
   message: <<EOM
+devel/mercurial is now flavored for Python versions.
+If you have custom extensions installed, you may need
+to install the Python 2 version unless all your extensions
+are Python 3 compatible.
+
 Note that we now install a few more files in %%PREFIX%%/share/mercurial:
 - shell completion scripts (bash, tcsh and zsh)
 - FastCGI / WSGI scripts for web access to repositories

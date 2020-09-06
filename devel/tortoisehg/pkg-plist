@@ -1,4 +1,8 @@
 bin/thg
+%%PYTHON_SITELIBDIR%%/tortoisehg-unknown-py%%PYTHON_VER%%.egg-info/PKG-INFO
+%%PYTHON_SITELIBDIR%%/tortoisehg-unknown-py%%PYTHON_VER%%.egg-info/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/tortoisehg-unknown-py%%PYTHON_VER%%.egg-info/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/tortoisehg-unknown-py%%PYTHON_VER%%.egg-info/top_level.txt
 %%PYTHON_SITELIBDIR%%/hgext3rd/thg.py
 %%PYTHON_SITELIBDIR%%/hgext3rd/thg.pyc
 %%PYTHON_SITELIBDIR%%/hgext3rd/thg.pyo
@@ -38,6 +42,9 @@ bin/thg
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/clone.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/clone.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/clone.pyo
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/close_branch.py
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/close_branch.pyc
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/close_branch.pyo
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/cmdcore.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/cmdcore.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/cmdcore.pyo
@@ -155,6 +162,9 @@ bin/thg
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/phabreview_ui.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/phabreview_ui.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/phabreview_ui.pyo
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/pick.py
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/pick.pyc
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/pick.pyo
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/postreview.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/postreview.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/postreview.pyo
@@ -284,9 +294,9 @@ bin/thg
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/thgstrip.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/thgstrip.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/thgstrip.pyo
-%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/topics.py
-%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/topics.pyc
-%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/topics.pyo
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/topic.py
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/topic.pyc
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/topic.pyo
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/update.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/update.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/update.pyo
@@ -308,9 +318,6 @@ bin/thg
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/__init__.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/__init__.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/__init__.pyo
-%%PYTHON_SITELIBDIR%%/tortoisehg/util/__version__.py
-%%PYTHON_SITELIBDIR%%/tortoisehg/util/__version__.pyc
-%%PYTHON_SITELIBDIR%%/tortoisehg/util/__version__.pyo
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/bugtraq.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/bugtraq.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/bugtraq.pyo

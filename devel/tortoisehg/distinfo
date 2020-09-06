@@ -1,3 +1,3 @@
-TIMESTAMP = 1586604799
-SHA256 (tortoisehg/5.3.2.tar.gz) = 4e4c974945cdec0b9db05c206f283f8f1eccb180758889adfb4c0225cfea66d1
-SIZE (tortoisehg/5.3.2.tar.gz) = 8576605
+TIMESTAMP = 1597922152
+SHA256 (mercurial/tortoisehg-thg-1605d6fba195f02c0c689fe4aff5d7160aa2b15d_GL0.tar.gz) = 67cf4c30f9df7f84877da553e9f5332b27f25e7ee102e21cf48d82a61313d481
+SIZE (mercurial/tortoisehg-thg-1605d6fba195f02c0c689fe4aff5d7160aa2b15d_GL0.tar.gz) = 8623598

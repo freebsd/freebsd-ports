@@ -1,12 +1,14 @@
---- setup.py.orig	2016-09-01 19:01:36 UTC
+--- setup.py.orig	2020-08-03 17:43:51 UTC
 +++ setup.py
-@@ -235,30 +235,7 @@ class hgbuildmo(build):
+@@ -477,32 +477,7 @@ class hgbuildmo(build):
      description = "build translations (.mo files)"
  
      def run(self):
 -        if not find_executable('msgfmt'):
--            self.warn("could not find msgfmt executable, no translations "
--                     "will be built")
+-            self.warn(
+-                "could not find msgfmt executable, no translations "
+-                "will be built"
+-            )
 -            return
 -
 -        podir = 'i18n'

@@ -3,6 +3,7 @@
 
 PORTNAME=	hg-git
 DISTVERSION=	0.8.12
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://bitbucket.org/durin42/${PORTNAME}/get/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +19,7 @@ DEPRECATED=	Uses deprecated version of python
 EXPIRATION_DATE=	2020-09-15
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dulwich>=*:devel/dulwich@${PY_FLAVOR} \
-		mercurial>=*:devel/mercurial
+		${PY_MERCURIAL}
 
 PORTDOCS=	README.md
 

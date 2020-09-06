@@ -2,6 +2,7 @@
 
 PORTNAME=	setuptools_scm
 PORTVERSION=	3.4.3
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pip>0:devel/py-pip@${PY_FLAVOR} \
 		git:devel/git \
-		hg:devel/mercurial
+		${PY_MERCURIAL}
 
 USES=		python
 USE_PYTHON=	autoplist distutils

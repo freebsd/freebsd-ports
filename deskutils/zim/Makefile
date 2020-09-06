@@ -3,6 +3,7 @@
 
 PORTNAME=	zim
 DISTVERSION=	0.73.2
+PORTREVISION=	1
 CATEGORIES=	deskutils python
 MASTER_SITES=	https://www.zim-wiki.org/downloads/
 
@@ -40,7 +41,7 @@ GNUR_RUN_DEPENDS=	R:math/R
 GRAPHVIZ_RUN_DEPENDS=	fdp:graphics/graphviz
 LATEX_USE=		tex=latex:run
 MERCURIAL_DESC=		Version control for notebooks using hg
-MERCURIAL_RUN_DEPENDS=	hg:devel/mercurial
+MERCURIAL_RUN_DEPENDS=	${PY_MERCURIAL}
 SCROT_DESC=		Screenshot taking and inserting support
 SCROT_RUN_DEPENDS=	scrot:graphics/scrot
 

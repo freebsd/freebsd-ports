@@ -2,6 +2,7 @@
 
 PORTNAME=	hglib
 PORTVERSION=	2.6.1
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +13,7 @@ COMMENT=	Library with a fast, convenient interface to Mercurial
 
 LICENSE=	MIT
 
-RUN_DEPENDS+=	hg:devel/mercurial
+RUN_DEPENDS+=	${PY_MERCURIAL}
 
 USES=		python
 USE_PYTHON=	distutils autoplist

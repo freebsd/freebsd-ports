@@ -2,7 +2,7 @@
 
 PORTNAME=	mercurial
 PORTVERSION=	1.0.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www devel python
 MASTER_SITES=	LOCAL/rm
 PKGNAMEPREFIX=	trac-
@@ -15,7 +15,7 @@ COMMENT=	Plugin to use Mercurial instead of Subversion in Trac
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	hg:devel/mercurial \
+RUN_DEPENDS=	${PY_MERCURIAL} \
 		tracd:www/trac
 
 USES=		python:2.7

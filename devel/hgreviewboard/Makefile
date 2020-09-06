@@ -2,7 +2,7 @@
 
 PORTNAME=	hgreviewboard
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	https://bitbucket.org/ccaughie/hgreviewboard/get/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ COMMENT=	Mercurial reviewboard extension
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	hg:devel/mercurial \
+RUN_DEPENDS=	${PY_MERCURIAL} \
 		rbt:devel/rbtools
 
 WRKSRC=		${WRKDIR}/ccaughie-hgreviewboard-e461a0baf62d
