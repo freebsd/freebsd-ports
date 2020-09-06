@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sidekiq-unique-jobs
-PORTVERSION=	6.0.22
-PORTREVISION=	1
+PORTVERSION=	6.0.23
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-concurrent-ruby>=1.0.5<2:devel/rubygem-concurrent-ruby \
 		rubygem-sidekiq>=4.0<7.0:devel/rubygem-sidekiq \
-		rubygem-thor0>=0<1:devel/rubygem-thor0
+		rubygem-thor>=0.20<2.0:devel/rubygem-thor
 
 USES=		gem
 USE_RUBY=	yes
