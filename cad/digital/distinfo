@@ -1,5 +1,5 @@
-TIMESTAMP = 1590803589
-SHA256 (digital-0.24-deps.tar.gz) = 22aeefe40eae7bd4bb9e7c0ebb6dcdfb62b558cf780d9802da4e4e27d4873f2e
-SIZE (digital-0.24-deps.tar.gz) = 64789742
-SHA256 (hneemann-Digital-v0.24_GH0.tar.gz) = 77f1fb9e96affc3cf401dd4c8e256d7fe833b98c5a2fb736daf73eb9a0aedd3e
-SIZE (hneemann-Digital-v0.24_GH0.tar.gz) = 4799156
+TIMESTAMP = 1599405359
+SHA256 (digital-0.25-deps.tar.gz) = 86215257f6c1cbd8f77059987741cca9fb75fdc4a0458aa1e77941b69d886750
+SIZE (digital-0.25-deps.tar.gz) = 65001565
+SHA256 (hneemann-Digital-v0.25_GH0.tar.gz) = c07501e92b028217f601606e1af4e3b2f5b8b486e5e2fd2ea2e4d20cade884ac
+SIZE (hneemann-Digital-v0.25_GH0.tar.gz) = 11489450
