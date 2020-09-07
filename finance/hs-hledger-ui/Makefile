@@ -10,6 +10,8 @@ COMMENT=	UI for hledger, the accounting software package
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_FreeBSD_11=	needs the the C.UTF-8 locale
+
 USES=		cabal
 USE_LOCALE=	C.UTF-8
 USE_CABAL=	\
