@@ -2,7 +2,7 @@
 
 PORTNAME=	libfmt
 # Make sure to check devel/spdlog consumers too
-DISTVERSION=	7.0.2
+DISTVERSION=	7.0.3
 CATEGORIES=	devel
 
 MAINTAINER=	tobik@FreeBSD.org
