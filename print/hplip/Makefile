@@ -21,8 +21,7 @@ RUN_DEPENDS=	cups-filters>=0:print/cups-filters \
 CONFLICTS_INSTALL=	hpijs-[0-9]*
 
 INSTALL_TARGET=	install-strip
-USES=		dos2unix gnome jpeg libtool pkgconfig python shebangfix
-USE_GNOME=	pygobject3
+USES=		dos2unix jpeg libtool pkgconfig python shebangfix
 USE_LDCONFIG=	yes
 SHEBANG_GLOB=	*.py hpps pstotiff
 DOS2UNIX_FILES=	scan/sane/orblite.c
@@ -69,6 +68,14 @@ X11_USE=		PYQT=core_run,dbussupport_run,gui_run,widgets_run
 XSANE_DESC=		Install XSane for scanning (implies SCAN)
 XSANE_IMPLIES=		SCAN
 XSANE_RUN_DEPENDS=	xsane:graphics/xsane
+
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_MAJOR_VER} >= 3
+RUN_DEPENDS+=  ${PYTHON_PKGNAMEPREFIX}gobject3>=0:devel/py-gobject3@${PY_FLAVOR}
+.else
+RUN_DEPENDS+=  ${PYTHON_PKGNAMEPREFIX}gobject>=0:devel/py-gobject@${PY_FLAVOR}
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldld||g;' \
@@ -131,4 +138,4 @@ post-install-SCAN-on:
 	${MV} ${STAGEDIR}${PREFIX}/etc/sane.d/dll.conf \
 		${STAGEDIR}${PREFIX}/etc/sane.d/dll.d/hpaio
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
