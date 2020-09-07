@@ -17,7 +17,7 @@ GH_ACCOUNT=	SaschaWillems
 GH_PROJECT=	glCapsViewer
 GH_TAGNAME=	26e160c
 
-USES=		cmake gl qt:5 xorg
+USES=		cmake compiler:c++11-lang gl qt:5 xorg
 USE_GL=		gl glew glu
 USE_QT=		buildtools_build qmake_build core gui network widgets
 USE_XORG=	ice sm x11 xext
