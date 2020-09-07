@@ -8,13 +8,14 @@ CATEGORIES=	science
 MASTER_SITES=	https://confluence.ecmwf.int/download/attachments/45757960/ \
 		LOCAL/sunpoet
 
+PATCH_SITES=	https://github.com/ecmwf/eccodes/commit/
+PATCHFILES=	7a618fa90aaafa3a28cacae130939c3268e15876.patch:-p1
+
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	ECMWF API for WMO FM-92 GRIB and FM-94 BUFR messages
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN_powerpc64=	fails to compile: lib/libeccodes.so: undefined reference to `grib_decode_size_t'
 
 LIB_DEPENDS=	libnetcdf.so:science/netcdf \
 		libpng.so:graphics/png
