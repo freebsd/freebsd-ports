@@ -41,8 +41,8 @@ CONFIGURE_ENV+=	PYTHONINCLUDEDIR=${PYTHON_INCLUDEDIR}
 CPPFLAGS+=	-I${LOCALBASE}/include -I${PYTHON_INCLUDEDIR}
 LIBS+=		-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=		DOCS FAX SCAN SNMP X11 XSANE QT5
-OPTIONS_DEFAULT=	QT5 SCAN SNMP X11
+OPTIONS_DEFINE=		DOCS FAX SCAN SNMP X11 XSANE
+OPTIONS_DEFAULT=	SCAN SNMP X11
 OPTIONS_SUB=		yes
 
 DOCS_CONFIGURE_ENABLE=	doc-build
@@ -62,25 +62,13 @@ SNMP_LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 SNMP_CONFIGURE_ENABLE=	network-build
 
 X11_DESC=		Graphical User Interface (Qt)
-X11_CONFIGURE_ENABLE=	gui-build
+X11_CONFIGURE_ENABLE=	gui-build qt5
+X11_USES=		pyqt:5
+X11_USE=		PYQT=core_run,dbussupport_run,gui_run,widgets_run
 
 XSANE_DESC=		Install XSane for scanning (implies SCAN)
 XSANE_IMPLIES=		SCAN
 XSANE_RUN_DEPENDS=	xsane:graphics/xsane
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MQT5} && ${PORT_OPTIONS:MX11}
-USES+=			pyqt:5
-USE_PYQT=		core_run dbussupport_run gui_run sip widgets_run
-CONFIGURE_ARGS+=	--enable-qt5
-.else
-CONFIGURE_ARGS+=	--disable-qt5
-.endif
-
-.if ${PORT_OPTIONS:MX11} && ! ${PORT_OPTIONS:MQT5}
-BROKEN=			The X11 option requires the QT5 option
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldld||g;' \
