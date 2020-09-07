@@ -1,4 +1,4 @@
-From 19df2c6f7457c62884fe087f08f913443acf0267 Mon Sep 17 00:00:00 2001
+From d27594754dc2257ac55070450fb96dba5a757d03 Mon Sep 17 00:00:00 2001
 From: Greg V <greg@unrelenting.technology>
 Date: Sun, 25 Aug 2019 16:54:24 +0300
 Subject: [PATCH 1/2] Fix build on aarch64 on arbitrary OS (without a feature
@@ -10,12 +10,12 @@ at the top of each file I changed.
  src/cpu.rs | 18 ++++++++++++------
  1 file changed, 12 insertions(+), 6 deletions(-)
 
-diff --git cargo-crates/ring-0.16.11/src/cpu.rs cargo-crates/ring-0.16.11/src/cpu.rs
-index 822aae4e3..bfd87c8de 100644
---- cargo-crates/ring-0.16.11/src/cpu.rs
-+++ cargo-crates/ring-0.16.11/src/cpu.rs
-@@ -170,10 +170,10 @@ pub(crate) mod arm {
- 
+diff --git cargo-crates/ring-0.16.15/src/cpu.rs cargo-crates/ring-0.16.15/src/cpu.rs
+index 4492da391..d00ef3e76 100644
+--- cargo-crates/ring-0.16.15/src/cpu.rs
++++ cargo-crates/ring-0.16.15/src/cpu.rs
+@@ -171,10 +171,10 @@ pub(crate) mod arm {
+     #[cfg(not(target_arch = "wasm32"))]
      pub(crate) struct Feature {
          #[cfg_attr(
 -            any(
@@ -29,7 +29,7 @@ index 822aae4e3..bfd87c8de 100644
              allow(dead_code)
          )]
          mask: u32,
-@@ -198,7 +198,10 @@ pub(crate) mod arm {
+@@ -200,7 +200,10 @@ pub(crate) mod arm {
                  return self.mask == self.mask & unsafe { GFp_armcap_P };
              }
  
@@ -41,7 +41,7 @@ index 822aae4e3..bfd87c8de 100644
              {
                  return false;
              }
-@@ -206,7 +209,10 @@ pub(crate) mod arm {
+@@ -208,7 +211,10 @@ pub(crate) mod arm {
      }
  
      // Keep in sync with `ARMV7_NEON`.
@@ -53,8 +53,10 @@ index 822aae4e3..bfd87c8de 100644
      pub(crate) const NEON: Feature = Feature {
          mask: 1 << 0,
          ios: true,
+-- 
+2.28.0
 
-From 300516a643a1019e5bb99663ab76acc0fb05e7ae Mon Sep 17 00:00:00 2001
+From e8674734c31136678fb87e9dbaabe928d67f4aae Mon Sep 17 00:00:00 2001
 From: Greg V <greg@unrelenting.technology>
 Date: Sun, 25 Aug 2019 17:52:18 +0300
 Subject: [PATCH 2/2] Add CPU feature detection for FreeBSD/aarch64
@@ -68,23 +70,23 @@ at the top of each file I changed.
  3 files changed, 69 insertions(+), 4 deletions(-)
  create mode 100644 crypto/cpu-aarch64.c
 
-diff --git cargo-crates/ring-0.16.11/build.rs cargo-crates/ring-0.16.11/build.rs
-index c6cb3a700..62b150170 100644
---- cargo-crates/ring-0.16.11/build.rs
-+++ cargo-crates/ring-0.16.11/build.rs
-@@ -65,6 +65,7 @@ const RING_SRCS: &[(&[&str], &str)] = &[
-     (&[], "third_party/fiat/curve25519.c"),
+diff --git cargo-crates/ring-0.16.15/build.rs cargo-crates/ring-0.16.15/build.rs
+index d7c8466b2..9b6580a79 100644
+--- cargo-crates/ring-0.16.15/build.rs
++++ cargo-crates/ring-0.16.15/build.rs
+@@ -68,6 +68,7 @@ const RING_SRCS: &[(&[&str], &str)] = &[
+     (&[AARCH64, ARM, X86_64, X86], "crypto/fipsmodule/ec/gfp_p384.c"),
  
      (&[X86_64, X86], "crypto/cpu-intel.c"),
 +    (&[AARCH64], "crypto/cpu-aarch64.c"),
  
-     (&[X86], "crypto/fipsmodule/aes/asm/aes-586.pl"),
      (&[X86], "crypto/fipsmodule/aes/asm/aesni-x86.pl"),
-diff --git cargo-crates/ring-0.16.11/crypto/cpu-aarch64.c cargo-crates/ring-0.16.11/crypto/cpu-aarch64.c
+     (&[X86], "crypto/fipsmodule/aes/asm/vpaes-x86.pl"),
+diff --git cargo-crates/ring-0.16.15/crypto/cpu-aarch64.c cargo-crates/ring-0.16.15/crypto/cpu-aarch64.c
 new file mode 100644
 index 000000000..8bb537b78
 --- /dev/null
-+++ cargo-crates/ring-0.16.11/crypto/cpu-aarch64.c
++++ cargo-crates/ring-0.16.15/crypto/cpu-aarch64.c
 @@ -0,0 +1,32 @@
 +// Copyright 2019 Greg V
 +//
@@ -118,10 +120,10 @@ index 000000000..8bb537b78
 +  __asm __volatile("mrs %0, ID_AA64ISAR0_EL1" : "=&r" (val));
 +  return val;
 +}
-diff --git cargo-crates/ring-0.16.11/src/cpu.rs cargo-crates/ring-0.16.11/src/cpu.rs
-index bfd87c8de..d65d36a6a 100644
---- cargo-crates/ring-0.16.11/src/cpu.rs
-+++ cargo-crates/ring-0.16.11/src/cpu.rs
+diff --git cargo-crates/ring-0.16.15/src/cpu.rs cargo-crates/ring-0.16.15/src/cpu.rs
+index d00ef3e76..7b7801706 100644
+--- cargo-crates/ring-0.16.15/src/cpu.rs
++++ cargo-crates/ring-0.16.15/src/cpu.rs
 @@ -60,6 +60,11 @@ pub(crate) fn features() -> Features {
              {
                  arm::fuchsia_setup();
@@ -134,7 +136,7 @@ index bfd87c8de..d65d36a6a 100644
          });
      }
  
-@@ -168,10 +173,37 @@ pub(crate) mod arm {
+@@ -168,11 +173,38 @@ pub(crate) mod arm {
          }
      }
  
@@ -165,6 +167,7 @@ index bfd87c8de..d65d36a6a 100644
 +        unsafe { GFp_armcap_P = features };
 +    }
 +
+     #[cfg(not(target_arch = "wasm32"))]
      pub(crate) struct Feature {
          #[cfg_attr(
              not(all(
@@ -173,7 +176,7 @@ index bfd87c8de..d65d36a6a 100644
                  any(target_arch = "arm", target_arch = "aarch64")
              )),
              allow(dead_code)
-@@ -191,7 +223,7 @@ pub(crate) mod arm {
+@@ -193,7 +225,7 @@ pub(crate) mod arm {
              }
  
              #[cfg(all(
@@ -182,7 +185,7 @@ index bfd87c8de..d65d36a6a 100644
                  any(target_arch = "arm", target_arch = "aarch64")
              ))]
              {
-@@ -199,7 +231,7 @@ pub(crate) mod arm {
+@@ -201,7 +233,7 @@ pub(crate) mod arm {
              }
  
              #[cfg(not(all(
@@ -191,7 +194,7 @@ index bfd87c8de..d65d36a6a 100644
                  any(target_arch = "arm", target_arch = "aarch64")
              )))]
              {
-@@ -231,7 +263,7 @@ pub(crate) mod arm {
+@@ -245,7 +277,7 @@ pub(crate) mod arm {
      };
  
      #[cfg(all(
@@ -200,3 +203,6 @@ index bfd87c8de..d65d36a6a 100644
          any(target_arch = "arm", target_arch = "aarch64")
      ))]
      extern "C" {
+-- 
+2.28.0
+
