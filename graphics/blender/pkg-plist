@@ -131,6 +131,7 @@ share/applications/blender.desktop
 %%DATADIR%%/%%VER%%/datafiles/icons/ops.mesh.bisect.dat
 %%DATADIR%%/%%VER%%/datafiles/icons/ops.mesh.dupli_extrude_cursor.dat
 %%DATADIR%%/%%VER%%/datafiles/icons/ops.mesh.extrude_faces_move.dat
+%%DATADIR%%/%%VER%%/datafiles/icons/ops.mesh.extrude_manifold.dat
 %%DATADIR%%/%%VER%%/datafiles/icons/ops.mesh.extrude_region_move.dat
 %%DATADIR%%/%%VER%%/datafiles/icons/ops.mesh.extrude_region_shrink_fatten.dat
 %%DATADIR%%/%%VER%%/datafiles/icons/ops.mesh.inset.dat
@@ -161,6 +162,7 @@ share/applications/blender.desktop
 %%DATADIR%%/%%VER%%/datafiles/icons/ops.pose.relax.dat
 %%DATADIR%%/%%VER%%/datafiles/icons/ops.sculpt.border_hide.dat
 %%DATADIR%%/%%VER%%/datafiles/icons/ops.sculpt.border_mask.dat
+%%DATADIR%%/%%VER%%/datafiles/icons/ops.sculpt.cloth_filter.dat
 %%DATADIR%%/%%VER%%/datafiles/icons/ops.sculpt.lasso_mask.dat
 %%DATADIR%%/%%VER%%/datafiles/icons/ops.sculpt.mesh_filter.dat
 %%DATADIR%%/%%VER%%/datafiles/icons/ops.sequencer.blade.dat
@@ -695,18 +697,6 @@ share/applications/blender.desktop
 %%CYCLES%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/source/kernel/bvh/bvh_types.h
 %%CYCLES%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/source/kernel/bvh/bvh_volume.h
 %%CYCLES%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/source/kernel/bvh/bvh_volume_all.h
-%%CYCLES%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/source/kernel/bvh/obvh_local.h
-%%CYCLES%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/source/kernel/bvh/obvh_nodes.h
-%%CYCLES%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/source/kernel/bvh/obvh_shadow_all.h
-%%CYCLES%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/source/kernel/bvh/obvh_traversal.h
-%%CYCLES%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/source/kernel/bvh/obvh_volume.h
-%%CYCLES%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/source/kernel/bvh/obvh_volume_all.h
-%%CYCLES%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/source/kernel/bvh/qbvh_local.h
-%%CYCLES%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/source/kernel/bvh/qbvh_nodes.h
-%%CYCLES%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/source/kernel/bvh/qbvh_shadow_all.h
-%%CYCLES%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/source/kernel/bvh/qbvh_traversal.h
-%%CYCLES%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/source/kernel/bvh/qbvh_volume.h
-%%CYCLES%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/source/kernel/bvh/qbvh_volume_all.h
 %%CYCLES%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/source/kernel/closure/alloc.h
 %%CYCLES%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/source/kernel/closure/bsdf.h
 %%CYCLES%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/source/kernel/closure/bsdf_ashikhmin_shirley.h
@@ -773,6 +763,8 @@ share/applications/blender.desktop
 %%CYCLES%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/source/kernel/kernel_id_passes.h
 %%CYCLES%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/source/kernel/kernel_jitter.h
 %%CYCLES%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/source/kernel/kernel_light.h
+%%CYCLES%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/source/kernel/kernel_light_background.h
+%%CYCLES%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/source/kernel/kernel_light_common.h
 %%CYCLES%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/source/kernel/kernel_math.h
 %%CYCLES%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/source/kernel/kernel_montecarlo.h
 %%CYCLES%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/source/kernel/kernel_passes.h
@@ -980,6 +972,7 @@ share/applications/blender.desktop
 %%DATADIR%%/%%VER%%/scripts/addons/io_coat3D/__init__.py
 %%DATADIR%%/%%VER%%/scripts/addons/io_coat3D/data.json
 %%DATADIR%%/%%VER%%/scripts/addons/io_coat3D/tex.py
+%%DATADIR%%/%%VER%%/scripts/addons/io_coat3D/texVR.py
 %%DATADIR%%/%%VER%%/scripts/addons/io_curve_svg/__init__.py
 %%DATADIR%%/%%VER%%/scripts/addons/io_curve_svg/import_svg.py
 %%DATADIR%%/%%VER%%/scripts/addons/io_curve_svg/svg_colors.py
@@ -1006,6 +999,7 @@ share/applications/blender.desktop
 %%DATADIR%%/%%VER%%/scripts/addons/io_export_dxf/test2.txt
 %%DATADIR%%/%%VER%%/scripts/addons/io_export_paper_model.py
 %%DATADIR%%/%%VER%%/scripts/addons/io_export_pc2.py
+%%DATADIR%%/%%VER%%/scripts/addons/io_import_BrushSet.py
 %%DATADIR%%/%%VER%%/scripts/addons/io_import_dxf/__init__.py
 %%DATADIR%%/%%VER%%/scripts/addons/io_import_dxf/dxfgrabber/__init__.py
 %%DATADIR%%/%%VER%%/scripts/addons/io_import_dxf/dxfgrabber/acdsdata.py
@@ -1108,7 +1102,7 @@ share/applications/blender.desktop
 %%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/exp/gltf2_blender_gltf2_exporter.py
 %%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/exp/gltf2_blender_image.py
 %%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/exp/gltf2_blender_search_node_tree.py
-%%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/exp/gltf2_blender_utils.py
+%%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/imp/gltf2_blender_KHR_materials_clearcoat.py
 %%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/imp/gltf2_blender_KHR_materials_pbrSpecularGlossiness.py
 %%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/imp/gltf2_blender_KHR_materials_unlit.py
 %%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/imp/gltf2_blender_animation.py
@@ -1123,7 +1117,6 @@ share/applications/blender.desktop
 %%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/imp/gltf2_blender_mesh.py
 %%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/imp/gltf2_blender_node.py
 %%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/imp/gltf2_blender_pbrMetallicRoughness.py
-%%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/imp/gltf2_blender_primitive.py
 %%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/imp/gltf2_blender_scene.py
 %%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/imp/gltf2_blender_texture.py
 %%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/imp/gltf2_blender_vnode.py
@@ -1552,7 +1545,7 @@ share/applications/blender.desktop
 %%DATADIR%%/%%VER%%/scripts/addons/presets/operator/mesh.primitive_xyz_function_surface/sterosphere.py
 %%DATADIR%%/%%VER%%/scripts/addons/presets/operator/mesh.primitive_xyz_function_surface/torus.py
 %%DATADIR%%/%%VER%%/scripts/addons/presets/operator/mesh.primitive_xyz_function_surface/twisted_torus.py
-%%DATADIR%%/%%VER%%/scripts/addons/presets/pov/light/01_(5400K)_Direct_Sun.py
+%%DATADIR%%/%%VER%%/scripts/addons/presets/pov/light/01_(4800K)_Direct_Sun.py
 %%DATADIR%%/%%VER%%/scripts/addons/presets/pov/light/02_(5400K)_High_Noon_Sun.py
 %%DATADIR%%/%%VER%%/scripts/addons/presets/pov/light/03_(6000K)_Daylight_Window.py
 %%DATADIR%%/%%VER%%/scripts/addons/presets/pov/light/04_(6000K)_2500W_HMI_(Halogen_Metal_Iodide).py
@@ -2089,6 +2082,7 @@ share/applications/blender.desktop
 %%DATADIR%%/%%VER%%/scripts/startup/bl_operators/constraint.py
 %%DATADIR%%/%%VER%%/scripts/startup/bl_operators/file.py
 %%DATADIR%%/%%VER%%/scripts/startup/bl_operators/freestyle.py
+%%DATADIR%%/%%VER%%/scripts/startup/bl_operators/gpencil_mesh_bake.py
 %%DATADIR%%/%%VER%%/scripts/startup/bl_operators/image.py
 %%DATADIR%%/%%VER%%/scripts/startup/bl_operators/mesh.py
 %%DATADIR%%/%%VER%%/scripts/startup/bl_operators/node.py
@@ -2100,6 +2094,7 @@ share/applications/blender.desktop
 %%DATADIR%%/%%VER%%/scripts/startup/bl_operators/rigidbody.py
 %%DATADIR%%/%%VER%%/scripts/startup/bl_operators/screen_play_rendered_anim.py
 %%DATADIR%%/%%VER%%/scripts/startup/bl_operators/sequencer.py
+%%DATADIR%%/%%VER%%/scripts/startup/bl_operators/simulation.py
 %%DATADIR%%/%%VER%%/scripts/startup/bl_operators/userpref.py
 %%DATADIR%%/%%VER%%/scripts/startup/bl_operators/uvcalc_follow_active.py
 %%DATADIR%%/%%VER%%/scripts/startup/bl_operators/uvcalc_lightmap.py

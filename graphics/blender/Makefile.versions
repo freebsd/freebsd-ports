@@ -2,5 +2,5 @@
 
 # Versions of Blender and its python dependency for use by depending ports, like add-ons
 
-BLENDER_BL_VERSION=	2.83.0
-BLENDER_PY_VERSION=	3.7
+BLENDER_BL_VERSION=	2.90.0
+BLENDER_PY_VERSION=	3.8

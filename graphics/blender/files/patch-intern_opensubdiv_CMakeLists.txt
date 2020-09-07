@@ -1,11 +1,11 @@
---- intern/opensubdiv/CMakeLists.txt.orig	2019-07-24 17:11:39 UTC
+--- intern/opensubdiv/CMakeLists.txt.orig     2020-08-31 21:29:44 UTC
 +++ intern/opensubdiv/CMakeLists.txt
-@@ -83,7 +83,7 @@ if(WITH_OPENSUBDIV)
-     internal/opensubdiv_util.h
-   )
+@@ -97,7 +97,7 @@ if(WITH_OPENSUBDIV)
+     )
+   endif()
  
 -  OPENSUBDIV_DEFINE_COMPONENT(OPENSUBDIV_HAS_OPENMP)
 +#  OPENSUBDIV_DEFINE_COMPONENT(OPENSUBDIV_HAS_OPENMP)
-   # TODO(sergey): OpenCL is not tested and totally unstable atm.
-   # OPENSUBDIV_DEFINE_COMPONENT(OPENSUBDIV_HAS_OPENCL)
-   # TODO(sergey): CUDA stays disabled for util it's ported to drievr API.
+   OPENSUBDIV_DEFINE_COMPONENT(OPENSUBDIV_HAS_OPENCL)
+   OPENSUBDIV_DEFINE_COMPONENT(OPENSUBDIV_HAS_CUDA)
+   OPENSUBDIV_DEFINE_COMPONENT(OPENSUBDIV_HAS_GLSL_TRANSFORM_FEEDBACK)
