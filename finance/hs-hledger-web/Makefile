@@ -10,10 +10,8 @@ COMMENT=	Web interface for hledger, the accounting software
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_FreeBSD_11=	needs the the C.UTF-8 locale
-
 USES=		cabal
-USE_LOCALE=	C.UTF-8
+USE_LOCALE=	en_US.UTF-8
 USE_CABAL=	\
 		Decimal-0.5.1 \
 		Diff-0.4.0 \
