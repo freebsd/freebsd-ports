@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mpd
-DISTVERSION=	5.8
-PORTREVISION=	10
+DISTVERSION=	5.9
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/Mpd5/Mpd-${PORTVERSION}
 PKGNAMESUFFIX=	5
@@ -35,7 +34,7 @@ RUN_DEPENDS+=	/boot/modules/ng_ipacct.ko:net-mgmt/ng_ipacct
 .endif
 .else
 CONFIGURE_ENV+=	USE_NG_IPACCT=no
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-no-ng_ipacct
+MAKE_ARGS+=	USE_NG_IPACCT=no
 .endif
 
 USE_RC_SUBR=	mpd5
