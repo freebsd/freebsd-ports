@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	adminer
-PORTVERSION=	4.7.6
+PORTVERSION=	4.7.7
 CATEGORIES=	databases www
 MASTER_SITES=	https://github.com/vrana/adminer/releases/download/v${PORTVERSION}/
 EXTRACT_SUFX=	.php
