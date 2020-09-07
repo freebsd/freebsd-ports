@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rust-analyzer
-DISTVERSION=	2020-08-31
+DISTVERSION=	2020-09-07
 CATEGORIES=	devel
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -29,10 +29,10 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		cargo_metadata-0.11.1 \
 		cc-1.0.59 \
 		cfg-if-0.1.10 \
-		chalk-derive-0.23.0 \
-		chalk-ir-0.23.0 \
-		chalk-recursive-0.23.0 \
-		chalk-solve-0.23.0 \
+		chalk-derive-0.25.0 \
+		chalk-ir-0.25.0 \
+		chalk-recursive-0.25.0 \
+		chalk-solve-0.25.0 \
 		chrono-0.4.15 \
 		cloudabi-0.1.0 \
 		cmake-0.1.44 \
@@ -46,7 +46,7 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		either-1.6.0 \
 		ena-0.14.0 \
 		env_logger-0.7.1 \
-		expect-test-1.0.0 \
+		expect-test-1.0.1 \
 		filetime-0.2.12 \
 		fixedbitset-0.2.0 \
 		flate2-1.0.17 \
@@ -63,7 +63,7 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		hermit-abi-0.1.15 \
 		home-0.5.3 \
 		idna-0.2.0 \
-		indexmap-1.5.1 \
+		indexmap-1.5.2 \
 		inotify-0.8.3 \
 		inotify-sys-0.1.3 \
 		instant-0.1.6 \
@@ -80,7 +80,7 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		lock_api-0.4.1 \
 		log-0.4.11 \
 		lsp-server-0.3.4 \
-		lsp-types-0.79.0 \
+		lsp-types-0.80.0 \
 		matchers-0.0.1 \
 		matches-0.1.8 \
 		maybe-uninit-2.0.0 \
@@ -108,7 +108,7 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		petgraph-0.5.1 \
 		pico-args-0.3.4 \
 		plain-0.2.3 \
-		proc-macro2-1.0.19 \
+		proc-macro2-1.0.20 \
 		pulldown-cmark-0.7.2 \
 		pulldown-cmark-to-cmark-5.0.0 \
 		quote-1.0.7 \
