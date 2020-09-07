@@ -1,4 +1,5 @@
 bin/driverless
+bin/driverless-fax
 bin/foomatic-rip
 bin/ttfread
 @sample etc/cups/cups-browsed.conf.sample
@@ -27,11 +28,13 @@ libdata/pkgconfig/libcupsfilters.pc
 libdata/pkgconfig/libfontembed.pc
 libexec/cups/backend/beh
 %%BRAILLE%%@(,,0700) libexec/cups/backend/cups-brf
-@(,,0700) libexec/cups/backend/driverless
-libexec/cups/backend/implicitclass
+libexec/cups/backend/driverless
+libexec/cups/backend/driverless-fax
+@(,,0700) libexec/cups/backend/implicitclass
 libexec/cups/backend/parallel
 libexec/cups/backend/serial
 libexec/cups/driver/driverless
+libexec/cups/driver/driverless-fax
 libexec/cups/filter/bannertopdf
 %%BRAILLE%%libexec/cups/filter/brftoembosser
 %%BRAILLE%%libexec/cups/filter/brftopagedbrf
