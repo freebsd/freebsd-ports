@@ -9696,7 +9696,7 @@ java/bootstrap-openjdk|java/bootstrap-openjdk6|2017-12-01|Has expired: supersede
 lang/gcc46|lang/gcc6|2017-12-01|Has expired: Unsupported by upstream. Use GCC 6 or newer instead
 security/krb5-113|security/krb5-114|2017-12-03|Has expired: EOL twelve months after release of krb5-1.15
 net/bird6|net/bird@ipv6|2017-12-06|Moved to a flavored version
-devel/kore-notls|devel/kore@notls|2017-12-06|Moved to a flavored version
+devel/kore-notls|devel/kore|2017-12-06|Moved to a flavored version
 devel/llvm-cheri128|devel/llvm-cheri|2017-12-07|A single cheri compiler can now target 128-bit and 256-bit capabilities
 audio/cd-console||2017-12-13|Has expired: No public distfiles
 textproc/pecl-cld||2017-12-13|Has expired: Depends on expired devel/cld
@@ -15419,3 +15419,5 @@ www/py-pySmartDL|www/py-pysmartdl|2020-09-05|Rename to match our py- port naming
 astro/py-RO|astro/py-ro|2020-09-05|Rename to match our py- port naming
 astro/py-astLib|astro/py-astlib|2020-09-05|Rename to match our py- port naming
 www/py-MechanicalSoup|www/py-mechanicalsoup|2020-09-05|Rename to match our py- port naming
+devel/kore@default|devel/kore|2020-09-07|Flavor removed
+devel/kore@notls|devel/kore|2020-09-07|Flavor removed
