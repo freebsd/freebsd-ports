@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	slibtool
-PORTVERSION=	0.5.28
+PORTVERSION=	0.5.29
 CATEGORIES=	devel
 MASTER_SITES=	http://dl.midipix.org/${PORTNAME}/
 
@@ -15,7 +15,9 @@ HAS_CONFIGURE=	yes
 USES=		gmake tar:xz
 
 post-patch:
-	${REINPLACE_CMD} -e "s/make/${MAKE_CMD}/g" ${WRKSRC}/configure
+	${REINPLACE_CMD} -e "s/make/${MAKE_CMD}/g" \
+		${WRKSRC}/configure \
+		${WRKSRC}/sofort/ccenv/ccenv.sh
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/slibtool
