@@ -16,6 +16,9 @@ PATCH_DIST_STRIP=	-p2
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Qhull computes convex hulls, Delaunay triangulations, and halfspaces
 
+DEPRECATED=	Legacy version of port no longer required by math/octave
+EXPIRATION_DATE=	2021-01-01
+
 CONFLICTS=	qhull-2011* afni-[0-9]*
 
 USES=		libtool gmake
