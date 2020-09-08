@@ -2,8 +2,7 @@
 
 PORTNAME=	acmed
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.0
-PORTREVISION=	6
+DISTVERSION=	0.10.0
 CATEGORIES=	security
 
 MAINTAINER=	greg@unrelenting.technology
@@ -14,119 +13,121 @@ LICENSE_COMB=	dual
 LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE-2.0.txt
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT.txt
 
+NOT_FOR_ARCHS=		i386
+NOT_FOR_ARCHS_REASON=	32-bit time-related error - see https://github.com/breard-r/acmed/issues/37
+
 USES=		cargo gmake ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	breard-r
 
 CARGO_INSTALL_PATH=	./acmed ./tacd
-CARGO_CRATES=	aho-corasick-0.7.10 \
+CARGO_CRATES=	aho-corasick-0.7.13 \
 		ansi_term-0.11.0 \
-		arrayvec-0.4.12 \
+		arrayvec-0.5.1 \
+		attohttpc-0.15.0 \
 		atty-0.2.14 \
-		autocfg-1.0.0 \
-		backtrace-0.3.41 \
-		backtrace-sys-0.1.34 \
-		base64-0.11.0 \
-		base64-0.12.0 \
+		autocfg-1.0.1 \
+		base64-0.12.3 \
 		bitflags-1.2.1 \
 		block-buffer-0.7.3 \
 		block-padding-0.1.5 \
 		boxfnonce-0.1.1 \
 		byte-tools-0.3.1 \
 		byteorder-1.3.4 \
-		cc-1.0.50 \
-		cfg-if-0.1.9 \
-		clap-2.33.0 \
+		bytes-0.5.6 \
+		cc-1.0.59 \
+		cfg-if-0.1.10 \
+		clap-2.33.3 \
 		core-foundation-0.7.0 \
 		core-foundation-sys-0.7.0 \
 		daemonize-0.4.1 \
-		der-parser-3.0.4 \
 		digest-0.8.1 \
+		encoding_rs-0.8.24 \
+		encoding_rs_io-0.1.7 \
 		env_logger-0.7.1 \
-		error-chain-0.11.0 \
+		error-chain-0.12.4 \
 		fake-simd-0.1.2 \
+		fnv-1.0.7 \
 		foreign-types-0.3.2 \
 		foreign-types-shared-0.1.1 \
 		generic-array-0.12.3 \
 		getrandom-0.1.14 \
-		handlebars-3.0.1 \
-		hermit-abi-0.1.8 \
-		http_req-0.5.5 \
+		glob-0.3.0 \
+		handlebars-3.4.0 \
+		hermit-abi-0.1.15 \
+		http-0.2.1 \
 		humantime-1.3.0 \
-		itoa-0.4.5 \
+		idna-0.2.0 \
+		itoa-0.4.6 \
 		lazy_static-1.4.0 \
-		lexical-core-0.6.7 \
-		libc-0.2.67 \
-		log-0.4.8 \
+		lexical-core-0.7.4 \
+		libc-0.2.76 \
+		log-0.4.11 \
 		maplit-1.0.2 \
+		matches-0.1.8 \
 		memchr-2.3.3 \
 		native-tls-0.2.4 \
-		nix-0.17.0 \
-		nodrop-0.1.14 \
-		nom-5.1.1 \
-		num-bigint-0.2.6 \
-		num-integer-0.1.42 \
-		num-traits-0.2.11 \
+		nix-0.18.0 \
+		nom-5.1.2 \
 		opaque-debug-0.2.3 \
-		openssl-0.10.28 \
+		openssl-0.10.30 \
 		openssl-probe-0.1.2 \
-		openssl-sys-0.9.54 \
+		openssl-sys-0.9.58 \
+		percent-encoding-2.1.0 \
 		pest-2.1.3 \
 		pest_derive-2.1.0 \
 		pest_generator-2.1.3 \
 		pest_meta-2.1.3 \
-		pkg-config-0.3.17 \
-		ppv-lite86-0.2.6 \
-		proc-macro2-1.0.9 \
+		pkg-config-0.3.18 \
+		ppv-lite86-0.2.9 \
+		proc-macro2-1.0.19 \
 		punycode-0.4.1 \
 		quick-error-1.2.3 \
-		quote-1.0.3 \
+		quick-error-2.0.0 \
+		quote-1.0.7 \
 		rand-0.7.3 \
 		rand_chacha-0.2.2 \
 		rand_core-0.5.1 \
 		rand_hc-0.2.0 \
-		redox_syscall-0.1.56 \
-		regex-1.3.5 \
-		regex-syntax-0.6.17 \
-		remove_dir_all-0.5.2 \
-		rustc-demangle-0.1.16 \
-		rustc_version-0.2.3 \
-		rusticata-macros-2.0.4 \
-		ryu-1.0.3 \
-		schannel-0.1.17 \
-		security-framework-0.4.1 \
-		security-framework-sys-0.4.1 \
-		semver-0.9.0 \
-		semver-parser-0.7.0 \
-		serde-1.0.104 \
-		serde_derive-1.0.104 \
-		serde_json-1.0.48 \
+		redox_syscall-0.1.57 \
+		regex-1.3.9 \
+		regex-syntax-0.6.18 \
+		remove_dir_all-0.5.3 \
+		ryu-1.0.5 \
+		schannel-0.1.19 \
+		security-framework-0.4.4 \
+		security-framework-sys-0.4.3 \
+		serde-1.0.115 \
+		serde_derive-1.0.115 \
+		serde_json-1.0.57 \
 		sha-1-0.8.2 \
-		static_assertions-0.3.4 \
+		static_assertions-1.1.0 \
 		strsim-0.8.0 \
-		syn-1.0.16 \
-		syslog-4.0.1 \
+		syn-1.0.39 \
+		syslog-5.0.0 \
 		tempfile-3.1.0 \
 		termcolor-1.1.0 \
 		textwrap-0.11.0 \
 		thread_local-1.0.1 \
-		time-0.1.42 \
+		time-0.1.44 \
+		tinyvec-0.3.4 \
 		toml-0.5.6 \
-		typenum-1.11.2 \
+		typenum-1.12.0 \
 		ucd-trie-0.1.3 \
-		unicase-2.6.0 \
-		unicode-width-0.1.7 \
-		unicode-xid-0.2.0 \
-		vcpkg-0.2.8 \
-		vec_map-0.8.1 \
-		version_check-0.9.1 \
-		void-1.0.2 \
+		unicode-bidi-0.3.4 \
+		unicode-normalization-0.1.13 \
+		unicode-width-0.1.8 \
+		unicode-xid-0.2.1 \
+		url-2.1.1 \
+		vcpkg-0.2.10 \
+		vec_map-0.8.2 \
+		version_check-0.9.2 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
-		winapi-0.3.8 \
+		wasi-0.10.0+wasi-snapshot-preview1 \
+		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
-		winapi-util-0.1.3 \
-		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		x509-parser-0.6.5
+		winapi-util-0.1.5 \
+		winapi-x86_64-pc-windows-gnu-0.4.0
 
 post-patch:
 	${REINPLACE_CMD} -e 's|"/etc/acmed/acmed.toml"|"${PREFIX}/etc/acmed/acmed.toml"|' \
