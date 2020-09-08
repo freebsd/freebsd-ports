@@ -1,3 +1,3 @@
-TIMESTAMP = 1599584108
-SHA256 (freebsd-pkg-1.15.2_GH0.tar.gz) = edbbdf74693483fff3bfe4d85dc28d22f12e2683bb6e61fc5e72bd90aae36928
-SIZE (freebsd-pkg-1.15.2_GH0.tar.gz) = 3822758
+TIMESTAMP = 1599592906
+SHA256 (freebsd-pkg-1.15.3_GH0.tar.gz) = 058af35d06d4718e98047d4c247ca2c16659d955292151dc3e481c67bf5cefa3
+SIZE (freebsd-pkg-1.15.3_GH0.tar.gz) = 3822796
