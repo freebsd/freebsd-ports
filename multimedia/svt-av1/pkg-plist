@@ -1,5 +1,6 @@
 bin/SvtAv1DecApp
 bin/SvtAv1EncApp
+include/svt-av1/EbDebugMacros.h
 include/svt-av1/EbSvtAv1.h
 include/svt-av1/EbSvtAv1Dec.h
 include/svt-av1/EbSvtAv1Enc.h
@@ -8,9 +9,9 @@ include/svt-av1/EbSvtAv1ExtFrameBuf.h
 include/svt-av1/EbSvtAv1Formats.h
 lib/libSvtAv1Dec.so
 lib/libSvtAv1Dec.so.0
-lib/libSvtAv1Dec.so.0.8.4
+lib/libSvtAv1Dec.so.0.8.5
 lib/libSvtAv1Enc.so
 lib/libSvtAv1Enc.so.0
-lib/libSvtAv1Enc.so.0.8.4
+lib/libSvtAv1Enc.so.0.8.5
 libdata/pkgconfig/SvtAv1Dec.pc
 libdata/pkgconfig/SvtAv1Enc.pc
