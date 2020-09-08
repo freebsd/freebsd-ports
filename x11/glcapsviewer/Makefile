@@ -31,8 +31,14 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,__linux__,__${OPSYS}__, ; /ifstream\
 		enumListxml/s,[^"]*ist\.xml",${DATADIR}/&,' \
 		${WRKSRC}/glCapsViewer.cpp ${WRKSRC}/glCapsViewerCore.cpp
+# We install provided `capslist.xml' in the ${DATADIR}, hence disable
+# checking for ./capslist.xml and needlessly downloading it
 	@${REINPLACE_CMD} -e 's,!capsXmlFile\.exists,false \&\& &,' \
 		${WRKSRC}/main.cpp
+# Spell XML correctly (it is an abbreviation)
+	@${REINPLACE_CMD} -e 's, xml, XML,' ${WRKSRC}/glCapsViewer.ui
+# Copyright information does not belong in the window title
+	@${REINPLACE_CMD} -e 's, - [^"]*,,' ${WRKSRC}/glCapsViewerCore.h
 
 do-install:
 	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/${PORTNAME} \
