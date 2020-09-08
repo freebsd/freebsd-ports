@@ -6,7 +6,7 @@ DISTVERSION=	2020.09.07.00
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
-COMMENT=	Framework building services in a consistent/modular/composable way
+COMMENT=	Framework for building services in a consistent/modular/composable way
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/../LICENSE
