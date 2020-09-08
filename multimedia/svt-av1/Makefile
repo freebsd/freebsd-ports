@@ -13,14 +13,14 @@ LICENSE_COMB=	multi
 LICENSE_FILE_BSD2CLAUSE=	${WRKSRC}/LICENSE.md
 LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/third_party/fastfeat/LICENSE
 
-BROKEN_i386=	https://github.com/OpenVisualCloud/SVT-AV1/issues/1231
+BROKEN_i386=	https://github.com/AOMediaCodec/SVT-AV1/issues/1231
 
 BUILD_DEPENDS=	nasm:devel/nasm
 
 USES=		cmake compiler:c11
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
-GH_ACCOUNT=	OpenVisualCloud
+GH_ACCOUNT=	AOMediaCodec
 GH_PROJECT=	SVT-AV1
 CMAKE_ON=	ENABLE_NASM
 CMAKE_OFF=	NATIVE
