@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kdev-php
-DISTVERSION=	5.5.2
+DISTVERSION=	5.6.0
 CATEGORIES=	devel kde
 MASTER_SITES=	KDE/stable/kdevelop/${DISTVERSION}/src
 DIST_SUBDIR=	KDE/kdevelop
@@ -23,7 +23,7 @@ USE_QT=		concurrent core dbus gui network webkit widgets xml \
 		buildtools_build qmake_build
 
 # Versioning values, to reduce plist churn (match with devel/kdevelop)
-PLATFORM_VER=	33
+PLATFORM_VER=	34
 PLIST_SUB+=	PLATFORM_VER=${PLATFORM_VER} PRIVATE_VER=${DISTVERSION:R}
 
 # Does not build with jobs.

@@ -413,6 +413,7 @@ lib/libKDevPlatformUtil.so.%%SO_VER%%
 lib/libKDevPlatformVcs.so
 lib/libKDevPlatformVcs.so.%%SO_VER_LONG%%
 lib/libKDevPlatformVcs.so.%%SO_VER%%
+lib/libKDevelopSessionsWatch.so
 %%QT_PLUGINDIR%%/grantlee/%%GRANTLEE_VERSION_SHORT%%/kdev_filters.so
 %%QT_PLUGINDIR%%/kdevplatform/%%PLATFORM_VER%%/kdevandroid.so
 %%QT_PLUGINDIR%%/kdevplatform/%%PLATFORM_VER%%/kdevappwizard.so
@@ -475,10 +476,11 @@ lib/libKDevPlatformVcs.so.%%SO_VER%%
 %%QT_PLUGINDIR%%/kdevplatform/%%PLATFORM_VER%%/kdevtestview.so
 %%QT_PLUGINDIR%%/kdevplatform/%%PLATFORM_VER%%/kdevvcschangesviewplugin.so
 %%QT_PLUGINDIR%%/kdevplatform/%%PLATFORM_VER%%/kdevwelcomepage.so
-%%QT_PLUGINDIR%%/krunner_kdevelopsessions.so
-%%QT_PLUGINDIR%%/plasma/dataengine/plasma_engine_kdevelopsessions.so
+%%QT_PLUGINDIR%%/kf5/krunner/krunner_kdevelopsessions.so
 %%QT_QMLDIR%%/org/kde/kdevplatform/libkdevelopdashboarddeclarativeplugin.so
 %%QT_QMLDIR%%/org/kde/kdevplatform/qmldir
+%%QT_QMLDIR%%/org/kde/plasma/private/kdevelopsessions/libkdevelopsessionsplugin.so
+%%QT_QMLDIR%%/org/kde/plasma/private/kdevelopsessions/qmldir
 share/applications/org.kde.kdevelop.desktop
 share/applications/org.kde.kdevelop_bzr.desktop
 share/applications/org.kde.kdevelop_git.desktop
@@ -552,6 +554,7 @@ share/icons/hicolor/16x16/apps/kdevgh.png
 share/icons/hicolor/16x16/apps/subversion.png
 share/icons/hicolor/22x22/actions/breakpoint.png
 share/icons/hicolor/256x256/apps/kdevelop.png
+share/icons/hicolor/32x32/actions/breakpoint.png
 share/icons/hicolor/32x32/apps/cmake.png
 share/icons/hicolor/32x32/apps/kdevelop.png
 share/icons/hicolor/32x32/apps/kdevgh.png
@@ -752,9 +755,7 @@ share/knotifications5/kdevelop.notifyrc
 share/knsrcfiles/kdevappwizard.knsrc
 share/knsrcfiles/kdevelop-qthelp.knsrc
 share/knsrcfiles/kdevfiletemplates.knsrc
-share/kservices5/kdevelopsessions.desktop
 share/kservices5/plasma-applet-kdevelopsessions.desktop
-share/kservices5/plasma-dataengine-kdevelopsessions.desktop
 share/kservicetypes5/kdevelopplugin.desktop
 share/locale/af/LC_MESSAGES/kdevelop.mo
 share/locale/ar/LC_MESSAGES/kdevclassbrowser.mo
@@ -1439,11 +1440,13 @@ share/locale/et/LC_MESSAGES/plasma_runner_kdevelopsessions.mo
 share/locale/eu/LC_MESSAGES/kdevelop.mo
 share/locale/eu/LC_MESSAGES/kdevokteta.mo
 share/locale/fa/LC_MESSAGES/kdevelop.mo
+share/locale/fi/LC_MESSAGES/kdevandroid.mo
 share/locale/fi/LC_MESSAGES/kdevappwizard.mo
 share/locale/fi/LC_MESSAGES/kdevastyle.mo
 share/locale/fi/LC_MESSAGES/kdevbazaar.mo
 share/locale/fi/LC_MESSAGES/kdevclangtidy.mo
 share/locale/fi/LC_MESSAGES/kdevclassbrowser.mo
+share/locale/fi/LC_MESSAGES/kdevclazy.mo
 share/locale/fi/LC_MESSAGES/kdevcmake.mo
 share/locale/fi/LC_MESSAGES/kdevcmakebuilder.mo
 share/locale/fi/LC_MESSAGES/kdevcodeutils.mo
@@ -1468,9 +1471,11 @@ share/locale/fi/LC_MESSAGES/kdevgrepview.mo
 share/locale/fi/LC_MESSAGES/kdevkonsole.mo
 share/locale/fi/LC_MESSAGES/kdevmakebuilder.mo
 share/locale/fi/LC_MESSAGES/kdevmanpage.mo
+share/locale/fi/LC_MESSAGES/kdevmesonmanager.mo
 share/locale/fi/LC_MESSAGES/kdevninja.mo
 share/locale/fi/LC_MESSAGES/kdevokteta.mo
 share/locale/fi/LC_MESSAGES/kdevopenwith.mo
+share/locale/fi/LC_MESSAGES/kdevoutlineview.mo
 share/locale/fi/LC_MESSAGES/kdevpatchreview.mo
 share/locale/fi/LC_MESSAGES/kdevperforce.mo
 share/locale/fi/LC_MESSAGES/kdevplatform.mo
@@ -1608,6 +1613,7 @@ share/locale/gl/LC_MESSAGES/kdevclazy.mo
 share/locale/gl/LC_MESSAGES/kdevcmake.mo
 share/locale/gl/LC_MESSAGES/kdevcmakebuilder.mo
 share/locale/gl/LC_MESSAGES/kdevcodeutils.mo
+share/locale/gl/LC_MESSAGES/kdevcompileanalyzercommon.mo
 share/locale/gl/LC_MESSAGES/kdevcontextbrowser.mo
 share/locale/gl/LC_MESSAGES/kdevcppcheck.mo
 share/locale/gl/LC_MESSAGES/kdevcustombuildsystem.mo
@@ -2478,6 +2484,7 @@ share/locale/pt_BR/LC_MESSAGES/plasma_applet_kdevelopsessions.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_runner_kdevelopsessions.mo
 share/locale/ro/LC_MESSAGES/kdevappwizard.mo
 share/locale/ro/LC_MESSAGES/kdevastyle.mo
+share/locale/ro/LC_MESSAGES/kdevbazaar.mo
 share/locale/ro/LC_MESSAGES/kdevclassbrowser.mo
 share/locale/ro/LC_MESSAGES/kdevcmake.mo
 share/locale/ro/LC_MESSAGES/kdevcmakebuilder.mo
@@ -2504,6 +2511,7 @@ share/locale/ro/LC_MESSAGES/kdevqmakebuilder.mo
 share/locale/ro/LC_MESSAGES/kdevqmakemanager.mo
 share/locale/ro/LC_MESSAGES/kdevqthelp.mo
 share/locale/ro/LC_MESSAGES/kdevquickopen.mo
+share/locale/ro/LC_MESSAGES/kdevsourceformatter.mo
 share/locale/ro/LC_MESSAGES/kdevstandardoutputview.mo
 share/locale/ro/LC_MESSAGES/kdevsubversion.mo
 share/locale/ru/LC_MESSAGES/kdevandroid.mo
@@ -3055,6 +3063,5 @@ share/mime/packages/kdevelop.xml
 share/mime/packages/kdevgit.xml
 share/plasma/plasmoids/kdevelopsessions/contents/ui/kdevelopsessions.qml
 share/plasma/plasmoids/kdevelopsessions/metadata.desktop
-share/plasma/services/org.kde.plasma.dataengine.kdevelopsessions.operations
 share/qlogging-categories5/kdevelop.categories
 share/qlogging-categories5/kdevplatform.categories
