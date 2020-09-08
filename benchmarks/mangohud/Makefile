@@ -6,6 +6,9 @@ PORTVERSION=	0.5.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	benchmarks graphics
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	cec98369ae34d910476b78f98adece96016ab603.diff:-p1
+
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Vulkan/OpenGL overlay for CPU/GPU monitoring
 
@@ -15,8 +18,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	glslangValidator:devel/glslang \
 		${LOCALBASE}/share/vulkan/registry/vk.xml:devel/vulkan-headers \
 		${PYTHON_PKGNAMEPREFIX}mako>=0:textproc/py-mako@${PY_FLAVOR}
-LIB_DEPENDS=	libdbus-1.so:devel/dbus \
-		libinotify.so:devel/libinotify
+LIB_DEPENDS=	libinotify.so:devel/libinotify
 
 USES=		compiler:c++14-lang meson pkgconfig python:build xorg
 USE_GITHUB=	yes
@@ -30,7 +32,11 @@ PLIST_FILES=	bin/mangohud lib/mangohud/libMangoHud.so \
 		share/vulkan/implicit_layer.d/MangoHud.json
 PORTEXAMPLES=	MangoHud.conf.example
 
-OPTIONS_DEFINE=	EXAMPLES
+OPTIONS_DEFINE=	DBUS EXAMPLES
+OPTIONS_DEFAULT=	DBUS
+
+DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
+DBUS_MESON_OFF=	-Dwith_dbus=disabled
 
 post-patch:
 	@${REINPLACE_CMD} -e '/version : /s,0\.4\.0,${PORTVERSION}, ; \
