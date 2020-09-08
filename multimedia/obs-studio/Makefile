@@ -2,6 +2,7 @@
 
 PORTNAME=	obs-studio
 DISTVERSION=	26.0.0-rc1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -47,6 +48,8 @@ USE_LDCONFIG=	yes
 CMAKE_ON=	UNIX_STRUCTURE
 CMAKE_ARGS=	-DOBS_VERSION_OVERRIDE:STRING="${PORTVERSION}"
 CFLAGS+=	-D_WITH_GETLINE
+
+LDFLAGS+=	-fPIC # pending https://github.com/obsproject/obs-studio/issues/3436
 
 .include <bsd.port.options.mk>
 
