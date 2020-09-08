@@ -3,6 +3,7 @@
 
 PORTNAME=	jumpnbump
 PORTVERSION=	1.61
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	https://gitlab.com/LibreGames/jumpnbump/repository/${PORTVERSION}/archive.tar.bz2?dummy=/
 
@@ -11,9 +12,6 @@ COMMENT=	Play cute bunnies jumping on each other's heads #'
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-DEPRECATED=	Uses deprecated version of python
-EXPIRATION_DATE=	2020-09-15
 
 USES=		compiler:c11 gettext-tools gmake sdl shebangfix tar:bzip2
 SHEBANG_FILES=	${WRKSRC}/menu/jumpnbump_menu.py.pre
@@ -29,7 +27,7 @@ OPTIONS_DEFAULT=LAUNCHER
 OPTIONS_SUB=	yes
 
 LAUNCHER_DESC=		Install pygtk launcher
-LAUNCHER_USES=		python:2.7,run
+LAUNCHER_USES=		python:run
 LAUNCHER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gobject3>0:devel/py-gobject3@${PY_FLAVOR}
 LAUNCHER_ALL_TARGET=	jnbmenu
 LAUNCHER_INSTALL_TARGET=jnbmenuinstall
