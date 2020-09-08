@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	azure_key_vault
-PORTVERSION=	0.17.4
+PORTVERSION=	0.18.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
