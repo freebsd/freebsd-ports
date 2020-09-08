@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	dpdk
-DISTVERSION=	19.11.3
+DISTVERSION=	19.11.4
 CATEGORIES=	net
 MASTER_SITES=	http://fast.dpdk.org/rel/
 
@@ -16,9 +16,9 @@ ONLY_FOR_ARCHS_REASON=	Only works on 64-bit x86 hardware
 LIB_DEPENDS=	libjansson.so:devel/jansson
 BUILD_DEPENDS=	objdump:devel/binutils
 
-USES=		meson kmod pkgconfig shebangfix tar:xz python:3.5+
+USES=		meson kmod pkgconfig:both shebangfix tar:xz python:3.5+
 WRKSRC=	${WRKDIR}/${PORTNAME}-stable-${PORTVERSION}
-MESON_ARGS=	-Dmachine=default -Ddefault_library=shared
+MESON_ARGS=	-Dmachine=default -Ddefault_library=shared -Denable_kmods=true
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	usertools/dpdk-pmdinfo.py \
 	usertools/dpdk-telemetry-client.py \
