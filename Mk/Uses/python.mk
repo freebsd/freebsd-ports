@@ -20,7 +20,7 @@
 #
 #			USES=python:2.7		# Supports Python 2.7 Only
 #			USES=python:3.5+	# Supports Python 3.5 or later
-#			USES=python:3.5-3.7	# Supports Python 3.5 to 3.7
+#			USES=python:3.5-3.8	# Supports Python 3.5 to 3.8
 #			USES=python:-3.6	# Supports Python up to 3.6
 #			USES=python		# Supports any/all Python versions
 #
