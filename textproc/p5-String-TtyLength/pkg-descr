@@ -1,0 +1,6 @@
+String::TtyLength provides a single function, tty_length, which returns the
+length of a string excluding any ANSI tty / terminal escape codes. I.e. the
+number of characters that will appear on screen. This is useful if you're
+working out the width of columns, or aligning text.
+
+WWW: https://metacpan.org/release/String-TtyLength
