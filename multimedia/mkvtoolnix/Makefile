@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mkvtoolnix
-PORTVERSION=	48.0.0
-PORTREVISION=	1
+PORTVERSION=	50.0.0
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www.bunkus.org/videotools/mkvtoolnix/sources/ \
 		https://mkvtoolnix.download/sources/
@@ -24,7 +23,8 @@ LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
 		libebml.so:textproc/libebml \
 		libboost_regex.so:devel/boost-libs \
 		libpugixml.so:textproc/pugixml \
-		libmatroska.so:multimedia/libmatroska
+		libmatroska.so:multimedia/libmatroska \
+		libpcre2-8.so:devel/pcre2
 
 USES=		compiler:c++17-lang iconv localbase pkgconfig tar:xz
 
