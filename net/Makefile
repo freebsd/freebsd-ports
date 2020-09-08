@@ -862,6 +862,7 @@
     SUBDIR += p5-URI-SmartURI
     SUBDIR += p5-URI-Template
     SUBDIR += p5-URI-Template-Restrict
+    SUBDIR += p5-URI-cpan
     SUBDIR += p5-URI-db
     SUBDIR += p5-URI-ws
     SUBDIR += p5-VM-EC2
