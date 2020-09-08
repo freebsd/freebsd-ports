@@ -1,6 +1,6 @@
---- plugins/dfcdrom/cdr.h.orig	2011-01-27 06:48:33.209766794 +0100
-+++ plugins/dfcdrom/cdr.h	2011-01-27 06:52:51.789416162 +0100
-@@ -78,7 +78,7 @@
+--- plugins/dfcdrom/cdr.h.orig	2017-02-18 21:40:07 UTC
++++ plugins/dfcdrom/cdr.h
+@@ -104,7 +104,7 @@ struct cdrom_msf {
  #define CD_FRAMESIZE_SUB	96
  
  #if defined (__FreeBSD__)

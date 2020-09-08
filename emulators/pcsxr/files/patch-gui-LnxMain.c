@@ -1,6 +1,16 @@
---- gui/LnxMain.c.orig	2010-06-01 07:51:28.324517082 +0000
-+++ gui/LnxMain.c	2010-06-01 08:01:34.204348317 +0000
-@@ -186,6 +186,9 @@
+--- gui/LnxMain.c.orig	2020-09-07 22:26:22 UTC
++++ gui/LnxMain.c
+@@ -42,6 +42,9 @@
+ 
+ #include <X11/extensions/XTest.h>
+ 
++char cfgfile[MAXPATHLEN];
++char cfgfile_basename[MAXPATHLEN];
++
+ enum {
+ 	RUN = 0,
+ 	RUN_CD,
+@@ -187,6 +190,9 @@ static void ScanAllPlugins (void) {
  	gchar *currentdir;
  
  	// scan some default locations to find plugins
@@ -10,7 +20,7 @@
  	ScanPlugins("/usr/lib/games/psemu/");
  	ScanPlugins("/usr/lib/games/psemu/lib/");
  	ScanPlugins("/usr/lib/games/psemu/config/");
-@@ -211,6 +214,8 @@
+@@ -212,6 +218,8 @@ static void ScanAllPlugins (void) {
  	ScanPlugins(DEF_PLUGIN_DIR "/config");
  
  	// scan some default locations to find bioses

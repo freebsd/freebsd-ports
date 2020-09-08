@@ -1,7 +1,7 @@
 Disable doc installation (handled by the port's Makefile)
 
---- doc/CMakeLists.txt.orig	2017-02-18 22:40:07.000000000 +0100
-+++ doc/CMakeLists.txt	2018-06-08 22:33:26.240772000 +0200
+--- doc/CMakeLists.txt.orig	2017-02-18 21:40:07 UTC
++++ doc/CMakeLists.txt
 @@ -1,8 +1,8 @@
 -install(FILES pcsxr.1 DESTINATION ${CMAKE_INSTALL_PREFIX}/share/man/man1)
 -install(FILES keys.txt DESTINATION ${CMAKE_INSTALL_PREFIX}/share/doc/pcsxr)

@@ -1,6 +1,6 @@
---- plugins/bladesio1/CMakeLists.txt.orig	2017-02-18 22:40:07.000000000 +0100
-+++ plugins/bladesio1/CMakeLists.txt	2018-06-07 22:01:58.035345000 +0200
-@@ -17,6 +17,11 @@
+--- plugins/bladesio1/CMakeLists.txt.orig	2017-02-18 21:40:07 UTC
++++ plugins/bladesio1/CMakeLists.txt
+@@ -17,6 +17,11 @@ endif(NOT GTK3_FOUND)
  include_directories(${GTK3_INCLUDE_DIRS})
  set(GTK_LIBRARIES ${GTK3_LIBRARY} ${GDK3_LIBRARY} ${GDKPixbuf_LIBRARY} ${Pango_LIBRARY} ${Cairo_LIBRARY} ${GObject_LIBRARY} ${GLib_LIBRARY} ${GIO_LIBRARY})
  
@@ -12,7 +12,7 @@
  
  #defs
  add_definitions(-DLOCALE_DIR="${CMAKE_INSTALL_FULL_DATAROOTDIR}/locale/" -DPSEMU_DATA_DIR="${CMAKE_INSTALL_FULL_DATAROOTDIR}/psemu" -DDEF_PLUGIN_DIR="${CMAKE_INSTALL_FULL_LIBDIR}/games/psemu")
-@@ -55,7 +60,7 @@
+@@ -55,7 +60,7 @@ add_library(BladeSio1 MODULE ${PLUGIN_SRCS})
  
  add_executable(cfgBladeSio1 ${GUI_SRCS} ${RESOURCE_FILE})
  add_dependencies(cfgBladeSio1 bladesio1_resource)

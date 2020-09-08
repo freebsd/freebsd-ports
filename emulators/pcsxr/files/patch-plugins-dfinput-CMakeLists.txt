@@ -1,6 +1,6 @@
---- plugins/dfinput/CMakeLists.txt.orig	2018-06-07 22:36:37.371859000 +0200
-+++ plugins/dfinput/CMakeLists.txt	2018-06-07 22:37:27.408684000 +0200
-@@ -17,6 +17,12 @@
+--- plugins/dfinput/CMakeLists.txt.orig	2017-02-18 21:40:07 UTC
++++ plugins/dfinput/CMakeLists.txt
+@@ -17,6 +17,12 @@ endif(NOT GTK3_FOUND)
  include_directories(${GTK3_INCLUDE_DIRS})
  set(GTK_LIBRARIES ${GTK3_LIBRARY} ${GDK3_LIBRARY} ${GDKPixbuf_LIBRARY} ${Pango_LIBRARY} ${Cairo_LIBRARY} ${GObject_LIBRARY} ${GLib_LIBRARY} ${GIO_LIBRARY})
  
@@ -13,7 +13,7 @@
  set(USE_SDL2 0)
  find_package(SDL2)
  if(NOT SDL2_FOUND)
-@@ -76,7 +82,7 @@
+@@ -76,7 +82,7 @@ target_link_libraries(DFInput ${SDL_LIBRARY} ${SDL2_LI
  
  add_executable(cfgDFInput ${GUI_SRCS} ${RESOURCE_FILE})
  add_dependencies(cfgDFInput dfinput_resource)

@@ -1,5 +1,5 @@
---- plugins/bladesio1/gui.c.orig	2013-09-10 15:56:22.000000000 +0200
-+++ plugins/bladesio1/gui.c	2013-09-10 15:59:32.000000000 +0200
+--- plugins/bladesio1/gui.c.orig	2020-09-07 22:26:23 UTC
++++ plugins/bladesio1/gui.c
 @@ -26,8 +26,6 @@
  #include <gtk/gtk.h>
  
@@ -21,10 +21,11 @@
  #define MAXINTERFACES 16
  
  void sockGetIP(char *IPAddress) {
-@@ -67,6 +70,22 @@
+@@ -66,6 +69,22 @@ void sockGetIP(char *IPAddress) {
+ 		close(fd);
  	}
  }
- 
++
 +#else
 +
 +void sockGetIP(char *IPAddress) {
@@ -40,7 +41,6 @@
 +}
 +
 +#endif
-+
+ 
  void cfgSysMessage(const char *fmt, ...) {
  	GtkWidget *MsgDlg;
- 	va_list list;

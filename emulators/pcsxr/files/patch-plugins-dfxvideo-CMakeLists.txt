@@ -1,6 +1,6 @@
---- plugins/dfxvideo/CMakeLists.txt.orig	2017-02-18 22:40:07.000000000 +0100
-+++ plugins/dfxvideo/CMakeLists.txt	2018-06-06 22:18:56.790161000 +0200
-@@ -20,6 +20,12 @@
+--- plugins/dfxvideo/CMakeLists.txt.orig	2017-02-18 21:40:07 UTC
++++ plugins/dfxvideo/CMakeLists.txt
+@@ -20,6 +20,12 @@ set(GTK_LIBRARIES ${GTK3_LIBRARY} ${GDK3_LIBRARY} ${GD
  
  find_package(X11 REQUIRED)
  
@@ -13,7 +13,7 @@
  #defs
  add_definitions(-DLOCALE_DIR="${CMAKE_INSTALL_FULL_DATAROOTDIR}/locale/" -DPSEMU_DATA_DIR="${CMAKE_INSTALL_FULL_DATAROOTDIR}/psemu" -DDEF_PLUGIN_DIR="${CMAKE_INSTALL_FULL_LIBDIR}/games/psemu")
  
-@@ -63,7 +69,7 @@
+@@ -63,7 +69,7 @@ target_link_libraries(DFXVideo ${X11_LIBRARIES} ${X11_
  
  add_executable(cfgDFXVideo ${GUI_SRCS} ${RESOURCE_FILE})
  add_dependencies(cfgDFXVideo dfxvideo_resource)

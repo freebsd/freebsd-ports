@@ -1,6 +1,6 @@
---- libpcsxcore/CMakeLists.txt.orig	2017-02-18 22:40:07.000000000 +0100
-+++ libpcsxcore/CMakeLists.txt	2018-06-07 22:13:45.312645000 +0200
-@@ -18,6 +18,12 @@
+--- libpcsxcore/CMakeLists.txt.orig	2017-02-18 21:40:07 UTC
++++ libpcsxcore/CMakeLists.txt
+@@ -18,6 +18,12 @@ if (USE_LIBARCHIVE)
    add_definitions(-DHAVE_LIBARCHIVE)
  endif()
  
@@ -13,12 +13,12 @@
  # Architecture detection and arch specific settings
  message(${CMAKE_SYSTEM_PROCESSOR})
  if (${CMAKE_SYSTEM_PROCESSOR} MATCHES "^powerpc")
-@@ -26,6 +32,8 @@
+@@ -25,6 +31,8 @@ if (${CMAKE_SYSTEM_PROCESSOR} MATCHES "^powerpc")
+ elseif(${CMAKE_SYSTEM_PROCESSOR} MATCHES "^i.86")
      set(_ARCH_32 1)
  elseif(${CMAKE_SYSTEM_PROCESSOR} MATCHES "^x86_64")
-     set(_ARCH_64 1)
-+elseif(${CMAKE_SYSTEM_PROCESSOR} MATCHES "^amd64")
 +    set(_ARCH_64 1)
++elseif(${CMAKE_SYSTEM_PROCESSOR} MATCHES "^amd64")
+     set(_ARCH_64 1)
  else()
      message("Unsupported arch. Will not build dynarec")
-     add_definitions(-DNOPSXREC)

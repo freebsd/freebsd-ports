@@ -1,5 +1,5 @@
---- gui/po/CMakeLists.txt.orig	2018-06-08 22:12:44.486045000 +0200
-+++ gui/po/CMakeLists.txt	2018-06-08 22:14:13.363502000 +0200
+--- gui/po/CMakeLists.txt.orig	2017-02-18 21:40:07 UTC
++++ gui/po/CMakeLists.txt
 @@ -1,6 +1,9 @@
 -message("Configuring langs")
 -include(Gettext)

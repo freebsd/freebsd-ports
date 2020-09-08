@@ -1,6 +1,6 @@
---- plugins/peopsxgl/CMakeLists.txt.orig	2018-06-07 22:22:14.308996000 +0200
-+++ plugins/peopsxgl/CMakeLists.txt	2018-06-07 22:24:14.627266000 +0200
-@@ -17,6 +17,12 @@
+--- plugins/peopsxgl/CMakeLists.txt.orig	2017-02-18 21:40:07 UTC
++++ plugins/peopsxgl/CMakeLists.txt
+@@ -17,6 +17,12 @@ endif(NOT GTK3_FOUND)
  include_directories(${GTK3_INCLUDE_DIRS})
  set(GTK_LIBRARIES ${GTK3_LIBRARY} ${GDK3_LIBRARY} ${GDKPixbuf_LIBRARY} ${Pango_LIBRARY} ${Cairo_LIBRARY} ${GObject_LIBRARY} ${GLib_LIBRARY} ${GIO_LIBRARY})
  
@@ -13,7 +13,7 @@
  find_package(X11 REQUIRED)
  
  find_package(OpenGL REQUIRED)
-@@ -69,7 +75,7 @@
+@@ -69,7 +75,7 @@ target_link_libraries(peopsxgl ${X11_LIBRARIES} ${X11_
  
  add_executable(cfgpeopsxgl ${GUI_SRCS} ${RESOURCE_FILE})
  add_dependencies(cfgpeopsxgl dfinput_resource)

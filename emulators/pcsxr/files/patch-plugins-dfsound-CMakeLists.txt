@@ -1,6 +1,6 @@
---- plugins/dfsound/CMakeLists.txt.orig	2017-02-18 22:40:07.000000000 +0100
-+++ plugins/dfsound/CMakeLists.txt	2018-06-07 22:32:10.505879000 +0200
-@@ -20,6 +20,11 @@
+--- plugins/dfsound/CMakeLists.txt.orig	2017-02-18 21:40:07 UTC
++++ plugins/dfsound/CMakeLists.txt
+@@ -20,6 +20,11 @@  endif(NOT GTK3_FOUND)
  include_directories(${GTK3_INCLUDE_DIRS})
  set(GTK_LIBRARIES ${GTK3_LIBRARY} ${GDK3_LIBRARY} ${GDKPixbuf_LIBRARY} ${Pango_LIBRARY} ${Cairo_LIBRARY} ${GObject_LIBRARY} ${GLib_LIBRARY} ${GIO_LIBRARY})
  
@@ -12,7 +12,7 @@
  
  if (${SND_BACKEND} STREQUAL "oss")
    find_package(OSS REQUIRED)
-@@ -129,7 +134,7 @@
+@@ -129,7 +134,7 @@ endif()
  
  add_executable(cfgDFSound ${GUI_SRCS} ${RESOURCE_FILE})
  add_dependencies(cfgDFSound dfsound_resource)

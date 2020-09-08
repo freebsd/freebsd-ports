@@ -1,6 +1,6 @@
---- libpcsxcore/psxcommon.h.orig	2018-06-07 22:26:55.136610000 +0200
-+++ libpcsxcore/psxcommon.h	2018-06-07 22:27:17.357957000 +0200
-@@ -71,7 +71,7 @@
+--- libpcsxcore/psxcommon.h.orig	2020-09-07 22:26:22 UTC
++++ libpcsxcore/psxcommon.h
+@@ -71,7 +71,7 @@ typedef uint8_t boolean;
  #include "system.h"
  #include "debug.h"
  

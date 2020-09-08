@@ -1,6 +1,6 @@
---- plugins/dfcdrom/CMakeLists.txt.orig	2017-02-18 22:40:07.000000000 +0100
-+++ plugins/dfcdrom/CMakeLists.txt	2018-06-07 22:20:24.492042000 +0200
-@@ -27,6 +27,12 @@
+--- plugins/dfcdrom/CMakeLists.txt.orig	2017-02-18 21:40:07 UTC
++++ plugins/dfcdrom/CMakeLists.txt
+@@ -27,6 +27,12 @@ set(GTK_LIBRARIES ${GTK3_LIBRARY} ${GDK3_LIBRARY} ${GD
  
  find_package(Threads REQUIRED)
  
@@ -13,7 +13,7 @@
  #defs
  add_definitions(-DLOCALE_DIR="${CMAKE_INSTALL_FULL_DATAROOTDIR}/locale/" -DPSEMU_DATA_DIR="${CMAKE_INSTALL_FULL_DATAROOTDIR}/psemu" -DDEF_PLUGIN_DIR="${CMAKE_INSTALL_FULL_LIBDIR}/games/psemu")
  
-@@ -66,7 +72,7 @@
+@@ -66,7 +72,7 @@ target_link_libraries(DFCdrom ${CDIO_LIBRARIES} ${CMAK
  
  add_executable(cfgDFCdrom ${GUI_SRCS} ${RESOURCE_FILE})
  add_dependencies(cfgDFCdrom dfcdrom_resource)
