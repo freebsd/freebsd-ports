@@ -6,6 +6,7 @@ include/folly/AtomicIntrusiveLinkedList.h
 include/folly/AtomicLinkedList.h
 include/folly/AtomicUnorderedMap.h
 include/folly/Benchmark.h
+include/folly/BenchmarkUtil.h
 include/folly/Bits.h
 include/folly/CPortability.h
 include/folly/CancellationToken-inl.h
