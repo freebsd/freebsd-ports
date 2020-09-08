@@ -1397,6 +1397,7 @@
     SUBDIR += privatebin
     SUBDIR += privoxy
     SUBDIR += protovis
+    SUBDIR += proxygen
     SUBDIR += pserv
     SUBDIR += publicfile
     SUBDIR += punbb
