@@ -14,6 +14,7 @@ man/man1/emacs.1.gz
 man/man1/emacsclient.1.gz
 man/man1/etags.1.gz
 share/applications/emacs.desktop
+share/applications/emacsclient.desktop
 share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/etc/AUTHORS
 %%DATADIR%%/%%EMACS_VER%%/etc/AUTHORS
@@ -1599,6 +1600,8 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/gv.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/helper.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/helper.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/hierarchy.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/hierarchy.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/inline.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/inline.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/let-alist.el.gz
@@ -1731,8 +1734,6 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-button.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-capab.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-capab.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-compat.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-compat.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-dcc.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-dcc.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-desktop-notifications.el.gz
@@ -2891,6 +2892,8 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/crisp.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/cust-print.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/cust-print.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/erc-compat.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/erc-compat.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/erc-hecomplete.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/erc-hecomplete.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/eudcb-ph.el.gz
@@ -3600,6 +3603,8 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/rxvt.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/screen.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/screen.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/term/st.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/term/st.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/sun.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/sun.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/tmux.el.gz
@@ -4049,13 +4054,13 @@ share/metainfo/emacs.appdata.xml
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/msdos.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/nsgui.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/nsterm.h
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/nsxwidget.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/pdumper.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/pdumper.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/print.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/process.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/process.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/profiler.c
-%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/ptr-bounds.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/puresize.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/ralloc.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/regex-emacs.c
