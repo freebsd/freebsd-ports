@@ -12,13 +12,13 @@ COMMENT=	High performance DNS/DNSSEC zone validator
 
 LICENSE=	BSD2CLAUSE
 
-BROKEN_SSL=	openssl
-
 LIB_DEPENDS=	libJudy.so:devel/judy
+TEST_DEPENDS=	p5-Test-Command-Simple>=0:devel/p5-Test-Command-Simple
 
 USES=		ssl
 
-ALL_TARGET=
+ALL_TARGET=	${PORTNAME}
+TEST_TARGET=	test
 
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/${PORTNAME}.1.gz
@@ -26,17 +26,7 @@ PLIST_FILES=	bin/${PORTNAME} \
 PORTDOCS=	Changes README installation.mdwn notes.mdwn \
 		technical-notes.mdwn todo.mdwn usage.mdwn
 
-MAKE_ARGS+=	INCPATH=-I${LOCALBASE}/include
-MAKE_ARGS+=	EXTRALPATH=-L${LOCALBASE}/lib
-
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.pre.mk>
-
-.if ${SSL_DEFAULT} == base
-BROKEN_FreeBSD_12=	field has incomplete type 'EVP_MD_CTX' (aka 'struct evp_md_ctx_st')
-BROKEN_FreeBSD_13=	field has incomplete type 'EVP_MD_CTX' (aka 'struct evp_md_ctx_st')
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
@@ -44,4 +34,4 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

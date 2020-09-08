@@ -1,0 +1,13 @@
+--- Makefile.orig	2014-02-11 20:08:39 UTC
++++ Makefile
+@@ -1,7 +1,7 @@
+ # The following options seem to work fine on Linux, FreeBSD, and Darwin
+-OPTIMIZE=-O2 -g
+-CFLAGS=-Wall -Werror -pthread -fno-strict-aliasing
+-INCPATH=-I/usr/local/include -I/opt/local/include -I/usr/local/ssl/include
++#OPTIMIZE=-O2 -g
++CFLAGS+=-Wall -Wno-unused-function -Werror -pthread
++INCPATH=-I$(LOCALBASE)/include -I$(OPENSSLINC)
+ CC?=cc
+ 
+ # These additional options work on Solaris/gcc to which I have an access
