@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	azure_mgmt_mariadb
-PORTVERSION=	0.17.3
+PORTVERSION=	0.17.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
