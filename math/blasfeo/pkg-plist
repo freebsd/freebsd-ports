@@ -15,6 +15,7 @@ include/blasfeo_d_kernel.h
 include/blasfeo_i_aux_ext_dep.h
 include/blasfeo_m_aux.h
 include/blasfeo_naming.h
+include/blasfeo_processor_features.h
 include/blasfeo_s_aux.h
 include/blasfeo_s_aux_ext_dep.h
 include/blasfeo_s_aux_ext_dep_ref.h
@@ -26,6 +27,7 @@ include/blasfeo_s_blas_api.h
 include/blasfeo_s_blasfeo_api.h
 include/blasfeo_s_blasfeo_api_ref.h
 include/blasfeo_s_kernel.h
+include/blasfeo_stdlib.h
 include/blasfeo_target.h
 include/blasfeo_timing.h
 include/blasfeo_v_aux_ext_dep.h

@@ -1,24 +1,6 @@
---- CMakeLists.txt.orig	2019-02-04 20:56:09 UTC
+--- CMakeLists.txt.orig	2020-08-13 11:04:25 UTC
 +++ CMakeLists.txt
-@@ -95,7 +95,7 @@ configure_file(${PROJECT_SOURCE_DIR}/blasfeo_target.h.
- #set(BUILD_SHARED_LIBS ON CACHE STRING "Build shared libraries")
- 
- # installation directory
--if(CMAKE_INSTALL_PREFIX MATCHES "/usr/local")
-+if(FALSE AND CMAKE_INSTALL_PREFIX MATCHES "/usr/local")
- 	set(CMAKE_INSTALL_PREFIX "/opt/blasfeo")
- endif()
- 
-@@ -171,7 +171,7 @@ if(${MACRO_LEVEL} MATCHES 2)
- endif()
- 
- #
--if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-+if(${CMAKE_SYSTEM_NAME} MATCHES "Linux|FreeBSD|DragonFly")
- 	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DOS_LINUX")
- 	set(CMAKE_ASM_FLAGS "${CMAKE_C_FLAGS} -DOS_LINUX")
- endif()
-@@ -827,7 +827,7 @@ install(TARGETS blasfeo EXPORT blasfeoConfig
+@@ -1117,7 +1117,7 @@ install(TARGETS blasfeo EXPORT blasfeoConfig
  	RUNTIME DESTINATION bin)
  
  
