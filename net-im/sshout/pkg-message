@@ -5,4 +5,9 @@ In order to start sshout service you need some more configuration:
 
 If you installed SSHOUT for the first time, use sshoutcfg(8) to add users.
 You must have SSH server running and accepting public key authentication.
+
+For HTML messages be properly displayed in CLI frontend, elinks(1) version
+0.12 or later is required; however the ports tree currently doesn't have an
+up-to-date elinks version available. You will have to install the required
+version manually, if such support is needed.
 #### END

@@ -1,0 +1,5 @@
+libexec/sshoutd
+man/man8/sshoutcfg.8.gz
+sbin/sshoutcfg
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/sshout.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/sshout.mo
