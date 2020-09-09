@@ -1,12 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	seatd
-DISTVERSION=	0.2.0
+DISTVERSION=	0.3.0
 CATEGORIES=	sysutils
 MASTER_SITES=	https://git.sr.ht/~kennylevinsen/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
-
-PATCH_SITES=	https://git.sr.ht/~kennylevinsen/${PORTNAME}/commit/
-PATCHFILES+=	8e1bf10d9dec.patch:-p1
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Minimal seat management daemon and universal library
@@ -21,6 +18,7 @@ MESON_ARGS=	-Dbuiltin=enabled # SUID fallback
 PLIST_FILES=	bin/${PORTNAME} \
 		include/libseat.h \
 		lib/libseat.so \
+		lib/libseat.so.1 \
 		libdata/pkgconfig/libseat.pc
 
 OPTIONS_DEFINE=	MANPAGES
