@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pip
-PORTVERSION=	20.2.2
+PORTVERSION=	20.2.3
 CATEGORIES=	devel python
 MASTER_SITES=	https://files.pythonhosted.org/packages/f9/d3/955738b20d3832dfa3cd3d9b07e29a8162edb480bf988332f5e6e48ca444/:test_setuptools \
 		https://files.pythonhosted.org/packages/a7/00/3df031b3ecd5444d572141321537080b40c1c25e1caa3d86cdd12e5e919c/:test_wheel
