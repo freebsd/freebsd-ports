@@ -4,6 +4,7 @@ man/man1/remote-viewer.1.gz
 man/man1/virt-viewer.1.gz
 share/appdata/remote-viewer.appdata.xml
 share/applications/remote-viewer.desktop
+@comment share/bash-completion/completions/virt-viewer
 share/icons/hicolor/16x16/apps/virt-viewer.png
 share/icons/hicolor/22x22/apps/virt-viewer.png
 share/icons/hicolor/24x24/apps/virt-viewer.png
