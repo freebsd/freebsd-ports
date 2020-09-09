@@ -2,7 +2,7 @@
 
 PORTNAME=	step-cli
 DISTVERSIONPREFIX=v
-DISTVERSION=	0.15.0
+DISTVERSION=	0.15.2
 CATEGORIES=	security
 
 MAINTAINER=	mw@wipp.bayern
@@ -71,7 +71,7 @@ GH_TUPLE=	\
 		gobwas:glob:v0.2.3:gobwas_glob/vendor/github.com/gobwas/glob \
 		gofrs:flock:5135e617513b:gofrs_flock/vendor/github.com/gofrs/flock \
 		gogo:protobuf:v1.3.1:gogo_protobuf/vendor/github.com/gogo/protobuf \
-		golang:crypto:948cd5f35899:golang_crypto/vendor/golang.org/x/crypto \
+		golang:crypto:123391ffb6de:golang_crypto/vendor/golang.org/x/crypto \
 		golang:glog:23def4e6c14b:golang_glog/vendor/github.com/golang/glog \
 		golang:groupcache:215e87163ea7:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:lint:fdd1cda4f05f:golang_lint/vendor/golang.org/x/lint \
@@ -157,9 +157,9 @@ GH_TUPLE=	\
 		shurcooL:sanitized_anchor_name:v1.0.0:shurcool_sanitized_anchor_name/vendor/github.com/shurcooL/sanitized_anchor_name \
 		sirupsen:logrus:v1.4.2:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		smallstep:assert:82e2b9b3b262:smallstep_assert/vendor/github.com/smallstep/assert \
-		smallstep:certificates:v0.15.0:smallstep_certificates/vendor/github.com/smallstep/certificates \
+		smallstep:certificates:v0.15.1:smallstep_certificates/vendor/github.com/smallstep/certificates \
 		smallstep:certinfo:v1.3.0:smallstep_certinfo/vendor/github.com/smallstep/certinfo \
-		smallstep:crypto:v0.1.1:smallstep_crypto/vendor/go.step.sm/crypto \
+		smallstep:crypto:v0.2.0:smallstep_crypto/vendor/go.step.sm/crypto \
 		smallstep:nosql:v0.3.0:smallstep_nosql/vendor/github.com/smallstep/nosql \
 		smallstep:truststore:v0.9.6:smallstep_truststore/vendor/github.com/smallstep/truststore \
 		smallstep:zcrypto:fbc32cf76bce:smallstep_zcrypto/vendor/github.com/smallstep/zcrypto \
