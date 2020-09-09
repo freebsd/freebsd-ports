@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	syncthing
-PORTVERSION=	1.8.0
-PORTREVISION=	1
+PORTVERSION=	1.9.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/syncthing/syncthing/releases/download/v${PORTVERSION}/
@@ -16,10 +15,6 @@ LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/${PORTNAME}/LICENSE
 
 USES=		go
-
-USE_GITHUB=	nodefault
-GH_TUPLE=	lucas-clemente:quic-go:3fa290f:quicgo \
-		marten-seemann:qtls-go115:f94d2ad:qtlsgo115
 
 USE_RC_SUBR=	syncthing syncthing-discosrv syncthing-relaysrv syncthing-relaypoolsrv
 
@@ -37,11 +32,6 @@ GROUPS=		syncthing
 OPTIONS_DEFINE=	DOCS
 
 NO_WRKSUBDIR=	yes
-
-post-patch:
-	${RM} -r ${WRKSRC}/syncthing/vendor/github.com/lucas-clemente/quic-go
-	${MV} ${WRKSRC}/quic-go-3fa290f ${WRKSRC}/syncthing/vendor/github.com/lucas-clemente/quic-go
-	${MV} ${WRKSRC}/qtls-go115-f94d2ad ${WRKSRC}/syncthing/vendor/github.com/marten-seemann/qtls-go115
 
 do-build:
 	@( cd ${WRKSRC}/${PORTNAME} ; \
