@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-pages
-PORTVERSION=	1.22.0
+PORTVERSION=	1.24.0
 CATEGORIES=	www
 
 MAINTAINER=	swills@FreeBSD.org
@@ -17,10 +17,9 @@ USE_GITHUB=	nodefault
 
 GL_ACCOUNT=	gitlab-org
 # Find the here: https://gitlab.com/gitlab-org/gitlab-pages/tags
-GL_COMMIT=	a80b882db23677bad7a115afd342d8f29cbce1db
+GL_COMMIT=	ef47843327c85f1539347014f885d9b178e8411d
 
 # Build with: make gomod-vendor
-# 56dd
 GH_TUPLE=	\
 		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 		cenkalti:backoff:v4.0.2:cenkalti_backoff_v4/vendor/github.com/cenkalti/backoff/v4 \
