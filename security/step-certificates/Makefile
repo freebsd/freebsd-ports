@@ -2,7 +2,7 @@
 
 PORTNAME=	step-certificates
 DISTVERSIONPREFIX=v
-DISTVERSION=	0.15.0
+DISTVERSION=	0.15.4
 CATEGORIES=	security
 
 MAINTAINER=	mw@wipp.bayern
@@ -41,7 +41,7 @@ GH_TUPLE=	\
 		go-piv:piv-go:cd2ae481f8d1:go_piv_piv_go/vendor/github.com/go-piv/piv-go \
 		go-sql-driver:mysql:v1.5.0:go_sql_driver_mysql/vendor/github.com/go-sql-driver/mysql \
 		golang:appengine:v1.6.5:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:948cd5f35899:golang_crypto/vendor/golang.org/x/crypto \
+		golang:crypto:123391ffb6de:golang_crypto/vendor/golang.org/x/crypto \
 		golang:groupcache:215e87163ea7:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:net:16171245cfb2:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:858c2ad4c8b6:golang_oauth2/vendor/golang.org/x/oauth2 \
@@ -76,10 +76,10 @@ GH_TUPLE=	\
 		sirupsen:logrus:v1.4.2:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		smallstep:assert:82e2b9b3b262:smallstep_assert/vendor/github.com/smallstep/assert \
 		smallstep:cli:v0.15.0:smallstep_cli/vendor/github.com/smallstep/cli \
-		smallstep:crypto:v0.1.1:smallstep_crypto/vendor/go.step.sm/crypto \
+		smallstep:crypto:v0.6.0:smallstep_crypto/vendor/go.step.sm/crypto \
 		smallstep:nosql:v0.3.0:smallstep_nosql/vendor/github.com/smallstep/nosql \
 		spf13:cast:v1.3.1:spf13_cast/vendor/github.com/spf13/cast \
-		square:go-jose:v2.4.0:square_go_jose/vendor/gopkg.in/square/go-jose.v2 \
+		square:go-jose:v2.5.1:square_go_jose/vendor/gopkg.in/square/go-jose.v2 \
 		urfave:cli:v1.22.2:urfave_cli/vendor/github.com/urfave/cli
 
 USE_RC_SUBR=	step-ca
