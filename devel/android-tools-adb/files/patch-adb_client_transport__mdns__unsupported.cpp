@@ -1,5 +1,5 @@
 --- /dev/null	1970-01-01 00:00:00 UTC
-+++ adb/transport_mdns_unsupported.cpp
++++ adb/client/transport_mdns_unsupported.cpp
 @@ -0,0 +1,18 @@
 +/*
 + * Copyright (C) 2016 The Android Open Source Project
