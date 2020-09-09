@@ -1,3 +1,5 @@
-This library implements DKIM (DomainKeys Identified Mail).
+This is a C++ library which allows incorporating DKIM into existing MTA
+or other application.  It provides full support for signing, verifying,
+and SSP.  It is compliant with RFC 4871.
 
 WWW: http://dkim.org/
