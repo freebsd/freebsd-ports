@@ -4,6 +4,7 @@ PORTNAME=	loganalyzer
 PORTVERSION=	4.1.11
 CATEGORIES=	sysutils www
 MASTER_SITES=	http://download.adiscon.com/loganalyzer/
+PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Web Syslog and IT Event Viewer
