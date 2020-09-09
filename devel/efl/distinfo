@@ -1,7 +1,3 @@
-TIMESTAMP = 1598379985
-SHA256 (enlightenment/efl-1.20.7.tar.xz) = b0a9b765bcd7b012f1072da1d491fc8671aa089473f746901d93f5807a2c76fe
-SIZE (enlightenment/efl-1.20.7.tar.xz) = 65509444
-SHA256 (enlightenment/fa97d86d0fa7301399f7b2b783c5de9b0c8d5ebe.patch) = f19a221ed81936f69ae1c56f3495d6ffb7ce5453ceefe58ea8e4099a2741d3e9
-SIZE (enlightenment/fa97d86d0fa7301399f7b2b783c5de9b0c8d5ebe.patch) = 1359
-SHA256 (enlightenment/c245b576aad09ac5faeb800de7f7c4fef87c6363.patch) = c7aed047151a34a5afdc178f0d07fa9b262d17f7b7542e759d62556ee31321a9
-SIZE (enlightenment/c245b576aad09ac5faeb800de7f7c4fef87c6363.patch) = 10485
+TIMESTAMP = 1592479254
+SHA256 (enlightenment/efl-1.24.3.tar.xz) = de95c6e673c170c1e21382918b122417c091c643e7dcaced89aa785529625c2a
+SIZE (enlightenment/efl-1.24.3.tar.xz) = 72278592

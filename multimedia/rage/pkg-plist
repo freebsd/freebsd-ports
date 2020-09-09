@@ -1,5 +1,5 @@
 bin/rage
 lib/rage/utils/rage_thumb
 share/applications/rage.desktop
-share/icons/rage.png
+share/icons/hicolor/128x128/apps/rage.png
 %%DATADIR%%/themes/default.edj

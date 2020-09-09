@@ -1,0 +1,8 @@
+--- src/bin/meson.build.orig	2020-08-23 16:03:57 UTC
++++ src/bin/meson.build
+@@ -18,5 +18,4 @@ executable('evisum', src,
+    install              : true)
+ 
+ if host_os == 'freebsd' or host_os == 'dragonfly'
+-   meson.add_install_script('perms.sh')
+ endif

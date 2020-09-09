@@ -18,6 +18,7 @@ man/man1/tysend.1.gz
 share/applications/terminology.desktop
 share/icons/hicolor/128x128/apps/terminology.png
 share/locale/ca/LC_MESSAGES/terminology.mo
+share/locale/da/LC_MESSAGES/terminology.mo
 share/locale/de/LC_MESSAGES/terminology.mo
 share/locale/el/LC_MESSAGES/terminology.mo
 share/locale/eo/LC_MESSAGES/terminology.mo
@@ -25,9 +26,12 @@ share/locale/es/LC_MESSAGES/terminology.mo
 share/locale/fi/LC_MESSAGES/terminology.mo
 share/locale/fr/LC_MESSAGES/terminology.mo
 share/locale/hi/LC_MESSAGES/terminology.mo
+share/locale/hr/LC_MESSAGES/terminology.mo
 share/locale/it/LC_MESSAGES/terminology.mo
 share/locale/ko/LC_MESSAGES/terminology.mo
 share/locale/ms/LC_MESSAGES/terminology.mo
+share/locale/nl/LC_MESSAGES/terminology.mo
+share/locale/pl/LC_MESSAGES/terminology.mo
 share/locale/sl/LC_MESSAGES/terminology.mo
 share/locale/sr/LC_MESSAGES/terminology.mo
 share/locale/tr/LC_MESSAGES/terminology.mo
