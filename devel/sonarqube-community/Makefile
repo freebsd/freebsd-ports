@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sonarqube
-DISTVERSION=	8.4.1.35646
+DISTVERSION=	8.4.2.36762
 PORTREVISION=	0
 CATEGORIES=	devel security www java
 MASTER_SITES=	https://binaries.sonarsource.com/Distribution/sonarqube/:m_core \
