@@ -1,18 +1,10 @@
 [
 { type: install
   message: <<EOM
-After restarting the Gimp you should find the following new items
+After restarting the Gimp you should find the following new item
 in the menu:
 
- * Edit/Fill with pattern seamless
- * Filters/Enhance/Enlarge & sharpen
- * Filters/Enhance/Heal selection
- * Filters/Enhance/Heal transparency
- * Filters/Enhance/Sharpen by synthesis
- * Filters/Enhance/Uncrop
  * Filters/Map/Resynthesize
- * Filters/Map/Style
- * Filters/Render/Texture
 EOM
 }
 ]
