@@ -12,6 +12,8 @@ COMMENT=	Five star plugin for voting on Trac resources
 
 RUN_DEPENDS=	tracd:www/trac
 
+LICENSE=	BSD
+
 USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes

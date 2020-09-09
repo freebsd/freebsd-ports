@@ -3,4 +3,4 @@ This plugin is a modified version of the VotePlugin (www/trac-vote).
 Instead of having up and down arrows, this plugin uses a 5-star approach
 to rate resources.
 
-WWW: http://trac-hacks.org/wiki/FiveStarVotePlugin
+WWW: https://trac-hacks.org/wiki/FiveStarVotePlugin
