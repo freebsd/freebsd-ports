@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}appdirs>=1.4.3:devel/py-appdirs@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}distro>=1.3.0:sysutils/py-distro@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}future>=0.16.0:devel/py-future@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}GitPython>=2.1.8:devel/py-gitpython@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}grandalf==0.6:math/py-grandalf@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}grandalf==0.7:math/py-grandalf@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonpath-rw>0:devel/py-jsonpath-rw@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}nanotime>=0.5.2:devel/py-nanotime@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}networkx>=2.1:math/py-networkx@${PY_FLAVOR} \
