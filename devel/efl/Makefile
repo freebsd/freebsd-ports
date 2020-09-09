@@ -26,7 +26,7 @@ RUN_DEPENDS=	update-mime-database:misc/shared-mime-info
 # lib/libeio.so.1
 CONFLICTS_INSTALL=	libeio
 
-USES=		compiler:c++14-lang gettext-tools iconv \
+USES=		compiler:c++14-lang gettext-tools gnome iconv \
 		jpeg libtool meson ninja ssl pathfix pkgconfig python:3.5+ shared-mime-info \
 		shebangfix tar:xz xorg
 SHEBANG_FILES=  src/tests/elementary/spec/generator.py \
@@ -51,11 +51,12 @@ OPTIONS_GROUP_INPUT=	IBUS SCIM XIM
 OPTIONS_GROUP_LOADER=	OPENJPEG PDF PS RAW SVG WEBP XCF
 OPTIONS_GROUP_BINDINGS=	LUA CXX
 OPTIONS_GROUP_WAYLAND=	WAYLAND
-OPTIONS_SINGLE=		ENGINE LUAL
+OPTIONS_SINGLE=		CRYPTO ENGINE LUAL
+OPTIONS_SINGLE_CRYPTO=	OPENSSL GNUTLS
 OPTIONS_SINGLE_ENGINE=	OPENGL OPENGLES NONE
 OPTIONS_SINGLE_LUAL=	LUAJIT LUALANG
 OPTIONS_DEFAULT=	FRIBIDI HARFBUZZ PHYSICS PULSEAUDIO EFLONE EXAMPLES GSTREAMER V4L SCIM XIM \
-			OPENJPEG PDF PS RAW SVG WEBP XCF OPENGL LUAJIT CXX
+			OPENSSL OPENJPEG PDF PS RAW SVG WEBP XCF OPENGL LUAJIT CXX
 OPTIONS_DEFAULT_powerpc64=	FRIBIDI HARFBUZZ PHYSICS PULSEAUDIO EFLONE EXAMPLES GSTREAMER V4L SCIM XIM \
 				OPENJPEG PDF PS RAW SVG WEBP XCF OPENGL LUALANG CXX
 OPTIONS_DEFAULT_sparc64=	FRIBIDI HARFBUZZ PHYSICS PULSEAUDIO EFLONE EXAMPLES GSTREAMER V4L SCIM XIM \
@@ -125,9 +126,6 @@ WAYLAND_LIB_DEPENDS=		libepoll-shim.so:devel/libepoll-shim \
 		libwayland-cursor.so:graphics/wayland
 WAYLAND_CFLAGS=			-I${LOCALBASE}/include/libepoll-shim
 WAYLAND_LDFLAGS=		-lepoll-shim
-# WL BROKEN: ../src/lib/ecore_wl2/ecore_wl2_buffer.c:20:10:
-# fatal error: 'linux/dma-buf.h' file not found
-# UNTIL FIXED WL-DEPRECATED IS ONLY POSSIBLE
 WAYLAND_MESON_TRUE=		wl
 
 GSTREAMER_USE=			GSTREAMER1=core
@@ -147,6 +145,13 @@ OPENJPEG_LIB_DEPENDS=		libopenjp2.so:graphics/openjpeg
 # PR 247427
 OPENJPEG_PREVENTS=		DOXYGEN
 OPENJPEG_PREVENTS_MSG=		devel/doxygen installs graphics/openjpeg15 which breaks build of all ports that depend on graphics/openjpeg
+
+GNUTLS_LIB_DEPENDS=		libgcrypt.so:security/libgcrypt \
+				libgnutls.so:security/gnutls
+GNUTLS_MESON_ON=		-Dcrypto=gnutls
+GNUTLS_MESON_OFF=		-Dcrypto=openssl
+GNUTLS_CFLAGS=			-I${LOCALBASE}/include/gnutls/
+GNUTLS_BROKEN=			GNUTLS option is broken by the upstream bug: https://phab.enlightenment.org/T8807
 
 PDF_LIB_DEPENDS=		libpoppler.so:graphics/poppler
 
