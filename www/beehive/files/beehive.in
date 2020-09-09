@@ -1,0 +1,76 @@
+#!/bin/sh
+
+# PROVIDE: beehive
+# REQUIRE: DAEMON NETWORKING
+# KEYWORD: shutdown
+#
+# beehive_enable (bool):  Set to NO by default.
+#                         Set it to YES to enable beehive.
+#
+# beehive_bind (string):  Set to localhost:8181 by default.
+#		          Which address to bind Beehive's API &
+#                         admin interface to.
+#
+# beehive_url (string):   Set to http://localhost:8181 by default.
+#                         Canonical URL for the API & admin interface.
+#
+# beehive_config (path):  Set to %%PREFIX%%/etc/beehive.conf by default.
+#		          Config-file to use.
+
+. /etc/rc.subr
+
+name="beehive"
+rcvar="${name}_enable"
+
+load_rc_config $name
+
+: ${beehive_enable:="NO"}
+: ${beehive_bind:="localhost:8181"}
+: ${beehive_url:="http://localhost:8181"}
+: ${beehive_config:="%%ETCDIR%%/${name}.conf"}
+: ${beehive_user:="%%USERS%%"}
+: ${beehive_group:="%%GROUPS%%"}
+
+pidfile="/var/run/${name}.pid"
+procname="%%PREFIX%%/bin/${name}"
+command="/usr/sbin/daemon"
+command_args="-f -p ${pidfile} ${procname} -bind ${beehive_bind} -canonicalurl ${beehive_url} -config ${beehive_config}"
+
+start_precmd="${name}_pre"
+stop_cmd="${name}_stop"
+stop_postcmd="${name}_poststop"
+
+beehive_pre()
+{
+	/usr/bin/install -o ${beehive_user} -g ${beehive_group} -m 755 -- /dev/null ${pidfile}
+
+	if [ ! -d %%ETCDIR%% ]; then
+		/bin/mkdir -p %%ETCDIR%%	
+	fi
+
+	/usr/sbin/chown ${beehive_user}:${beehive_group} %%ETCDIR%%
+	/bin/chmod 0700 %%ETCDIR%%
+	
+	if [ -f ${beehive_config} ]; then
+		/usr/sbin/chown ${beehive_user}:${beehive_group} ${beehive_config}
+		/bin/chmod 0600 ${beehive_config}
+	fi
+}
+
+beehive_stop()
+{
+	if [ -f ${pidfile} ]; then
+		echo "Stopping ${name}."
+		kill -INT `cat ${pidfile}` 2>/dev/null
+	else
+		echo "${name} is not running."
+		return 1
+	fi
+}
+
+beehive_poststop()
+{
+	rm -f ${pidfile}
+}
+
+run_rc_command "$1"

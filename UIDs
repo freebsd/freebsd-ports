@@ -777,7 +777,7 @@ statsd:*:826:826::0:0:Statsd Daemon:/nonexistent:/sbin/nologin
 # free: 829
 # free: 830
 # free: 831
-# free: 832
+beehive:*:832:832::0:0:beehive user:/nonexistent:/usr/sbin/nologin
 # free: 833
 # free: 834
 # free: 835
