@@ -25,6 +25,7 @@ libdata/pkgconfig/girara-gtk3.pc
 %%NLS%%share/locale/el/LC_MESSAGES/libgirara-gtk3-3.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/libgirara-gtk3-3.mo
 %%NLS%%share/locale/es/LC_MESSAGES/libgirara-gtk3-3.mo
+%%NLS%%share/locale/fa_IR/LC_MESSAGES/libgirara-gtk3-3.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/libgirara-gtk3-3.mo
 %%NLS%%share/locale/he/LC_MESSAGES/libgirara-gtk3-3.mo
 %%NLS%%share/locale/it/LC_MESSAGES/libgirara-gtk3-3.mo
@@ -34,3 +35,4 @@ libdata/pkgconfig/girara-gtk3.pc
 %%NLS%%share/locale/ru/LC_MESSAGES/libgirara-gtk3-3.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/libgirara-gtk3-3.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/libgirara-gtk3-3.mo
+%%NLS%%share/locale/uk_UA/LC_MESSAGES/libgirara-gtk3-3.mo
