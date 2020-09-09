@@ -3,7 +3,7 @@
 
 PORTNAME=	pgplot
 PORTVERSION=	5.2.2
-PORTREVISION=	27
+PORTREVISION=	28
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.astro.caltech.edu/pub/pgplot/
 DISTNAME=	${PORTNAME}${PORTVERSION:R}
@@ -11,13 +11,18 @@ DISTNAME=	${PORTNAME}${PORTVERSION:R}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C/FORTRAN library for drawing graphs on a variety of display devices
 
-LIB_DEPENDS=	libpng.so:graphics/png
+LICENSE=	PGPLOT
+LICENSE_NAME=	PGPLOT License
+LICENSE_FILE=	${WRKSRC}/copyright.notice
+LICENSE_PERMS=	no-dist-sell no-pkg-sell
 
-MAKE_JOBS_UNSAFE=	yes
+LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		fortran shebangfix xorg
 USE_LDCONFIG=	yes
 USE_XORG=	x11 xorgproto xt
+
+MAKE_JOBS_UNSAFE=	yes
 
 MAKE_ENV=	SSP_CFLAGS=
 SHEBANG_FILES=	makehtml maketex

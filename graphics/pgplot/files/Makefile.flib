@@ -38,7 +38,7 @@ GR_ROUTINES=	grarea.f grbpic.f grchsz.f grclip.f grclos.f grclpl.f \
 	grpixl.f grpocl.f grprom.f grpxpo.f grpxps.f grpxpx.f grpxre.f \
 	grqcap.f grqci.f grqcol.f grqcr.f grqdev.f grqdt.f grqfnt.f grqls.f \
 	grqlw.f grqpos.f grqtxt.f grqtyp.f grquit.f grrec0.f grrect.f grsci.f \
-	grscr.f grsetc.f grscrl.f grsetc.f grsets.f grsfnt.f grsize.f grskpb.f \
+	grscr.f grscrl.f grsetc.f grsets.f grsfnt.f grsize.f grskpb.f \
 	grslct.f grsls.f grslw.f grsyds.f grsymk.f grsyxd.f grterm.f grtext.f \
 	grtoup.f grtrim.f grtrn0.f grtxy0.f grvct0.f grwarn.f grxhls.f \
 	grxrgb.f
