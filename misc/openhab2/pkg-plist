@@ -405,6 +405,7 @@ libexec/openhab2/start_debug.sh
 @sample %%DATADIR%%/etc/org.apache.karaf.command.acl.system.cfg /var/db/openhab2/userdata/etc/org.apache.karaf.command.acl.system.cfg
 @sample %%DATADIR%%/etc/org.apache.karaf.features.cfg /var/db/openhab2/userdata/etc/org.apache.karaf.features.cfg
 @sample %%DATADIR%%/etc/org.apache.karaf.features.repos.cfg /var/db/openhab2/userdata/etc/org.apache.karaf.features.repos.cfg
+@sample %%DATADIR%%/etc/org.apache.karaf.features.xml /var/db/openhab2/userdata/etc/org.apache.karaf.features.xml
 @sample %%DATADIR%%/etc/org.apache.karaf.jaas.cfg /var/db/openhab2/userdata/etc/org.apache.karaf.jaas.cfg
 @sample %%DATADIR%%/etc/org.apache.karaf.kar.cfg /var/db/openhab2/userdata/etc/org.apache.karaf.kar.cfg
 @sample %%DATADIR%%/etc/org.apache.karaf.log.cfg /var/db/openhab2/userdata/etc/org.apache.karaf.log.cfg
@@ -455,16 +456,16 @@ libexec/openhab2/start_debug.sh
 @sample(openhab,openhab,640) %%ETCDIR%%/transform/de.map.sample
 @sample(openhab,openhab,640) %%ETCDIR%%/transform/en.map.sample
 %%ETCDIR%%/transform/readme.txt
-@dir /var/run/openhab2
-@dir /var/db/openhab2/home
-@dir /var/db/openhab2/persistence/db4o
-@dir /var/db/openhab2/persistence/mapdb
-@dir /var/db/openhab2/persistence/rrd4j
-@dir /var/db/openhab2/persistence
-@dir /var/db/openhab2/backups
+@dir /var/db/openhab2/userdata/tmp
 @dir /var/db/openhab2/userdata/etc/scripts
 @dir /var/db/openhab2/userdata/etc
-@dir /var/db/openhab2/userdata/tmp
 @dir /var/db/openhab2/userdata
+@dir /var/db/openhab2/persistence/rrd4j
+@dir /var/db/openhab2/persistence/mapdb
+@dir /var/db/openhab2/persistence/db4o
+@dir /var/db/openhab2/persistence
+@dir /var/db/openhab2/home
+@dir /var/db/openhab2/backups
 @dir /var/db/openhab2
 @dir /var/log/openhab2
+@dir /var/run/openhab2
