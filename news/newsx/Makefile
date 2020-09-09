@@ -20,6 +20,7 @@ RUN_DEPENDS=	${LOCALBASE}/news/lib/libinn.so:news/inn
 .endif
 
 GNU_CONFIGURE=	yes
+CFLAGS+=	-fcommon
 
 CONFLICTS=	leafnode-1.*
 
