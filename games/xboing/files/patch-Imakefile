@@ -1,6 +1,6 @@
---- Imakefile.orig	1996-11-22 02:28:46.000000000 +0100
-+++ Imakefile	2014-03-30 17:51:01.000000000 +0200
-@@ -24,23 +24,28 @@
+--- Imakefile.orig	1996-11-22 01:28:46 UTC
++++ Imakefile
+@@ -24,23 +24,28 @@ XCOMM ================================================
  XCOMM This is the directory where the highscore, level & sound data will be 
  XCOMM placed. Default will be the current directory.
  
@@ -33,7 +33,7 @@
  
  XCOMM Uncomment this if you want to use ANY of the AUDIO sound systems
  #define COMPILE_IN_AUDIO    
-@@ -132,8 +137,8 @@
+@@ -132,8 +137,8 @@ XCOMM hasn't a usleep() function.
          -DLEVEL_INSTALL_DIR=\"$(LEVEL_INSTALL_DIR)\" \
          -DAUDIO_AVAILABLE=\"$(AUDIO_AVAILABLE)\" \
          -DSOUNDS_DIR=\"$(SOUNDS_DIR)\" \
@@ -44,7 +44,7 @@
  XCOMM   -DNEED_USLEEP=\"True\" \
  XCOMM   -DNO_LOCKING=\"True\" 
  
-@@ -182,30 +187,30 @@
+@@ -182,30 +187,30 @@ install:: $(PROGRAMS)
  	@echo "XBoing directory is " $(XBOING_DIR)
  	@:
  	@echo "Creating directory " $(XBOING_DIR)

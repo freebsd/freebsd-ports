@@ -1,6 +1,6 @@
---- init.c.orig	1996-11-22 02:28:46.000000000 +0100
-+++ init.c	2014-03-30 18:05:40.000000000 +0200
-@@ -438,7 +438,7 @@
+--- init.c.orig	1996-11-22 01:28:46 UTC
++++ init.c
+@@ -438,7 +438,7 @@ static void HandleDisplayErrors(displayName)
  		WarningMessage("Your X Window system display variable is not set.");
  	else
  	{
@@ -9,7 +9,7 @@
  		WarningMessage(string);
  	}
  }
-@@ -471,10 +471,10 @@
+@@ -471,10 +471,10 @@ static void PrintUsage()
  		"Usage: XBoing [-version] [-usage] [-help] [-sync] ",
  		"[-display <displayName>]\n"); 
      fprintf(stdout, "%s%s\n%s%s\n%s\n",
@@ -22,7 +22,7 @@
  		"              [-nickname <name>] [-noicon]");
  
  	/* Exit now */
-@@ -548,10 +548,11 @@
+@@ -548,10 +548,11 @@ static void PrintHelp()
          "    -scores                 - Print out the current highscores.\n",
          "    -keys                   - Use keys instead of mouse control.\n",
          "    -sound                  - Turn audio ON for game.\n",
@@ -35,7 +35,7 @@
  		"    -nickname <name>        - Use nickname instead of real name.\n",
          "    -noicon                 - Do not create a custom icon.\n",
          "    -display <display>      - Set the display for the game.\n");
-@@ -599,13 +600,13 @@
+@@ -599,13 +600,13 @@ static void InitialiseSettings()
  	syncOn = False;
  	debug = False;
  	grabPointer = False;
@@ -52,7 +52,7 @@
  	noicon 	= False;
  
  	/* So the audio code will use system default */
-@@ -687,6 +688,13 @@
+@@ -687,6 +688,13 @@ static void ParseCommandLine(argv, argc)
  			/* Print out the version information and quit */
  			PrintVersion();
  
@@ -66,17 +66,17 @@
  		} else if (!compareArgument(argv[i], "-sound", 5))
  		{
  			/* Enable the sound in the game */
-@@ -751,6 +759,13 @@
+@@ -750,6 +758,13 @@ static void ParseCommandLine(argv, argc)
+ 			useDefaultColourmap = True;
  
  			DEBUG("Using default colourmap please.")
- 
++
 +		} else if (!compareArgument(argv[i], "-no-usedefcmap", 13))
 +		{
 +			/* Try to use the default colourmap */
 +			useDefaultColourmap = False;
 +
 +			DEBUG("Not using default colourmap.")
-+
+ 
  		} else if (!compareArgument(argv[i], "-speed", 5))
  		{
- 			/* Set the speed for the game */
