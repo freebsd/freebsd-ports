@@ -1,0 +1,28 @@
+From 976ef0e5fa7896394fe045e824dfb3e7d7502a68 Mon Sep 17 00:00:00 2001
+From: Gavan <gavan@coolfactor.org>
+Date: Fri, 21 Aug 2020 15:46:01 +0100
+Subject: [PATCH 31/37] Taint: fix off-by-one in is_tainted().  Bug 2634
+
+(cherry picked from commit e0ae68c8ee6788508da4989ee0d6fcbaf40c7b97)
+---
+ doc/ChangeLog | 5 +++++
+
+diff --git doc/ChangeLog doc/ChangeLog
+index 6d944f204..ae4050322 100644
+--- doc/ChangeLog
++++ doc/ChangeLog
+@@ -87,6 +87,11 @@ JH/24 Bug 2634: Fix a taint trap seen on NetBSD: the testing coded for
+       Find and fix by Gavan.  Although NetBSD is not a supported platform for
+       4.94 this bug could affect other platforms.
+ 
++JH/24 Bug 2634: Fix a taint trap seen on NetBSD: the testing coded for
++      is_tainted() had an off-by-one error in the overenthusiastic direction.
++      Find and fix by Gavan.  Although NetBSD is not a supported platform for
++      4.94 this bug could affect other platforms.
++
+ 
+ Exim version 4.94
+ -----------------
+-- 
+2.28.0
+

@@ -1,0 +1,92 @@
+From 7dad62cced33eebd10d13fd1f6cd59696175fa44 Mon Sep 17 00:00:00 2001
+From: Jeremy Harris <jgh146exb@wizmail.org>
+Date: Sun, 23 Aug 2020 17:27:30 +0100
+Subject: [PATCH 34/37] Fix non-DANE build
+
+(cherry picked from commit 79b19a30d9fc64a7b7f70928cdefe4f51064280b)
+---
+ src/transports/smtp.c | 15 +++++++++++----
+
+diff --git src/transports/smtp.c src/transports/smtp.c
+index 6ca4552a6..d63379e37 100644
+--- src/transports/smtp.c
++++ src/transports/smtp.c
+@@ -2023,8 +2023,7 @@ if (!continue_hostname)
+ 				ob->tls_sni = sx->first_addr->domain;	/* force SNI */
+ 				break;
+ 	  case FAIL_FORCED:	break;
+-	  default:
+-	  set_errno_nohost(sx->addrlist, ERRNO_DNSDEFER,
++	  default:		set_errno_nohost(sx->addrlist, ERRNO_DNSDEFER,
+ 				  string_sprintf("DANE error: tlsa lookup %s",
+ 				    rc_to_string(rc)),
+ 				  rc, FALSE, &sx->delivery_start);
+@@ -3431,7 +3430,9 @@ BOOL pass_message = FALSE;
+ uschar *message = NULL;
+ uschar new_message_id[MESSAGE_ID_LENGTH + 1];
+ smtp_context * sx = store_get(sizeof(*sx), TRUE);	/* tainted, for the data buffers */
++#if !defined(DISABLE_TLS) && defined(SUPPORT_DANE)
+ BOOL dane_held;
++#endif
+ 
+ suppress_tls = suppress_tls;  /* stop compiler warning when no TLS support */
+ *message_defer = FALSE;
+@@ -3448,8 +3449,10 @@ sx->conn_args.tblock = tblock;
+ gettimeofday(&sx->delivery_start, NULL);
+ sx->sync_addr = sx->first_addr = addrlist;
+ 
++#if !defined(DISABLE_TLS) && defined(SUPPORT_DANE)
+ DANE_DOMAINS:
+ dane_held = FALSE;
++#endif
+ 
+ /* Get the channel set up ready for a message, MAIL FROM being the next
+ SMTP command to send. */
+@@ -3461,7 +3464,7 @@ if ((rc = smtp_setup_conn(sx, suppress_tls)) != OK)
+   goto TIDYUP;
+   }
+ 
+-/*XXX*/
++#if !defined(DISABLE_TLS) && defined(SUPPORT_DANE)
+ /* If the connection used DANE, ignore for now any addresses with incompatible
+ domains.  The SNI has to be the domain.  Arrange a whole new TCP conn later,
+ just in case only TLS isn't enough. */
+@@ -3479,6 +3482,7 @@ if (sx->conn_args.dane)
+       a->transport_return = DANE;
+       }
+   }
++#endif
+ 
+ /* If there is a filter command specified for this transport, we can now
+ set it up. This cannot be done until the identity of the host is known. */
+@@ -4395,7 +4399,7 @@ if (sx->send_quit)
+ (void) event_raise(tblock->event_action, US"tcp:close", NULL);
+ #endif
+ 
+-/*XXX*/
++#if !defined(DISABLE_TLS) && defined(SUPPORT_DANE)
+ if (dane_held)
+   {
+   sx->first_addr = NULL;
+@@ -4414,15 +4418,18 @@ if (dane_held)
+       }
+   goto DANE_DOMAINS;
+   }
++#endif
+ 
+ continue_transport = NULL;
+ continue_hostname = NULL;
+ return yield;
+ 
+ TIDYUP:
++#if !defined(DISABLE_TLS) && defined(SUPPORT_DANE)
+ if (dane_held) for (address_item * a = sx->addrlist->next; a; a = a->next)
+   if (a->transport_return == DANE)
+     a->transport_return = PENDING_DEFER;
++#endif
+ return yield;
+ }
+ 
+-- 
+2.28.0
+

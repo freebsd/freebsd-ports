@@ -1,0 +1,32 @@
+From 4970c58b394eb0778542c97e3f86b565f9e3daa7 Mon Sep 17 00:00:00 2001
+From: Jeremy Harris <jgh146exb@wizmail.org>
+Date: Mon, 24 Aug 2020 20:14:34 +0100
+Subject: [PATCH 30/37] Build: ifdef guard for EXPERIMENTAL_QUEUEFILE
+
+(cherry picked from commit 1f5d0a9551205febf6729c7ee36c27626a76b4a4)
+---
+ src/transports/queuefile.c | 4 ++++
+
+diff --git src/transports/queuefile.c src/transports/queuefile.c
+index 21ed3527f..97218548b 100644
+--- src/transports/queuefile.c
++++ src/transports/queuefile.c
+@@ -8,7 +8,10 @@
+ /* See the file NOTICE for conditions of use and distribution. */
+ 
+ 
++
+ #include "../exim.h"
++
++#ifdef EXPERIMENTAL_QUEUEFILE	/* whole file */
+ #include "queuefile.h"
+ 
+ /* Options specific to the appendfile transport. They must be in alphabetic
+@@ -276,3 +279,4 @@ return FALSE;
+ }
+ 
+ #endif /*!MACRO_PREDEF*/
++#endif /*EXPERIMENTAL_QUEUEFILE*/
+-- 
+2.28.0
+

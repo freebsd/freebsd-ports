@@ -50,6 +50,7 @@ OPTIONS_DEFAULT+=	AUTH_CRAM_MD5 \
 			PAM \
 			PASSWD \
 			PRDR \
+			SPF \
 			SUID \
 			TLS
 
