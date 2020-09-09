@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	enlightenment
-PORTVERSION=	0.24.1
+PORTVERSION=	0.24.2
 PORTEPOCH=	2
 CATEGORIES=	x11-wm enlightenment
 MASTER_SITES=	http://download.enlightenment.org/rel/apps/${PORTNAME}/
@@ -52,7 +52,7 @@ ENLIGHTENMENT_ARCH=     ${OPSYS:tl}-${CURRENT_ARCH}
 .endif
 .endif
 
-ENLIGHTENMENT_VERSION=	0.24.1
+ENLIGHTENMENT_VERSION=	0.24.2
 PLIST_SUB=              ENLIGHTENMENT_ARCH=${ENLIGHTENMENT_ARCH}-${ENLIGHTENMENT_VERSION}
 
 .include <bsd.port.mk>
