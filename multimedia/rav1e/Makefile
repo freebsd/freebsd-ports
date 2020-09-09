@@ -2,14 +2,9 @@
 
 PORTNAME=	rav1e
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.3
-PORTREVISION?=	4
+DISTVERSION=	0.3.4
+PORTREVISION?=	0
 CATEGORIES=	multimedia
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	9c4c1111deb8.patch:-p1 # https://github.com/xiph/rav1e/pull/2361
-PATCHFILES+=	faaee6685f7c.patch:-p1 # https://github.com/xiph/rav1e/pull/2361
-PATCHFILES+=	dfc0e67eb1e4.patch:-p1 # https://github.com/xiph/rav1e/pull/2361
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Fast and safe AV1 encoder
@@ -25,110 +20,112 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	xiph
 PLIST_FILES?=	bin/${PORTNAME}
 
-CARGO_CRATES=	addr2line-0.12.1 \
-		adler32-1.0.4 \
-		aho-corasick-0.7.10 \
+CARGO_CRATES=	addr2line-0.13.0 \
+		adler-0.2.3 \
+		adler32-1.2.0 \
+		aho-corasick-0.7.13 \
 		ansi_term-0.11.0 \
-		aom-sys-0.1.4 \
+		aom-sys-0.2.1 \
 		arbitrary-0.2.0 \
 		arc-swap-0.4.7 \
 		arg_enum_proc_macro-0.3.0 \
 		arrayvec-0.5.1 \
 		assert_cmd-1.0.1 \
 		atty-0.2.14 \
-		autocfg-1.0.0 \
-		backtrace-0.3.48 \
-		bindgen-0.53.3 \
+		autocfg-1.0.1 \
+		backtrace-0.3.50 \
 		bindgen-0.54.0 \
 		bitflags-1.2.1 \
 		bitstream-io-0.8.5 \
 		bstr-0.2.13 \
 		bumpalo-3.4.0 \
-		bytemuck-1.2.0 \
+		bytemuck-1.4.1 \
 		byteorder-1.3.4 \
 		cast-0.2.3 \
-		cc-1.0.54 \
+		cc-1.0.59 \
 		cexpr-0.4.0 \
 		cfg-if-0.1.10 \
-		chrono-0.4.11 \
+		chrono-0.4.15 \
 		clang-sys-0.29.3 \
-		clap-2.33.1 \
+		clap-2.33.3 \
 		cmake-0.1.44 \
 		console-0.11.3 \
 		crc32fast-1.2.0 \
-		criterion-0.3.2 \
-		criterion-plot-0.4.2 \
+		criterion-0.3.3 \
+		criterion-plot-0.4.3 \
+		crossbeam-channel-0.4.4 \
 		crossbeam-deque-0.7.3 \
 		crossbeam-epoch-0.8.2 \
-		crossbeam-queue-0.2.2 \
 		crossbeam-utils-0.7.2 \
 		csv-1.1.3 \
 		csv-core-0.1.10 \
-		ctor-0.1.14 \
+		ctor-0.1.15 \
 		dav1d-sys-0.3.2 \
-		deflate-0.8.4 \
+		deflate-0.8.6 \
 		difference-2.0.0 \
 		doc-comment-0.3.3 \
-		either-1.5.3 \
+		either-1.6.0 \
 		encode_unicode-0.3.6 \
 		env_logger-0.7.1 \
 		error-chain-0.10.0 \
 		fern-0.6.0 \
 		getrandom-0.1.14 \
-		gimli-0.21.0 \
+		gimli-0.22.0 \
 		glob-0.3.0 \
-		hermit-abi-0.1.13 \
+		half-1.6.0 \
+		hermit-abi-0.1.15 \
 		humantime-1.3.0 \
-		image-0.23.4 \
-		inflate-0.4.5 \
+		image-0.23.9 \
 		interpolate_name-0.2.3 \
 		itertools-0.8.2 \
 		itertools-0.9.0 \
-		itoa-0.4.5 \
+		itoa-0.4.6 \
 		jobserver-0.1.21 \
-		js-sys-0.3.40 \
+		js-sys-0.3.45 \
 		lazy_static-1.4.0 \
-		lazycell-1.2.1 \
-		libc-0.2.71 \
+		lazycell-1.3.0 \
+		libc-0.2.76 \
 		libloading-0.5.2 \
-		log-0.4.8 \
+		log-0.4.11 \
 		maybe-uninit-2.0.0 \
 		memchr-2.3.3 \
-		memoffset-0.5.4 \
+		memoffset-0.5.5 \
 		metadeps-1.1.2 \
-		nasm-rs-0.1.7 \
-		nom-5.1.1 \
+		miniz_oxide-0.3.7 \
+		miniz_oxide-0.4.1 \
+		nasm-rs-0.2.0 \
+		nom-5.1.2 \
 		noop_proc_macro-0.2.1 \
-		num-derive-0.3.0 \
-		num-integer-0.1.42 \
-		num-iter-0.1.40 \
-		num-rational-0.2.4 \
-		num-traits-0.2.11 \
+		num-derive-0.3.2 \
+		num-integer-0.1.43 \
+		num-iter-0.1.41 \
+		num-rational-0.3.0 \
+		num-traits-0.2.12 \
 		num_cpus-1.13.0 \
-		object-0.19.0 \
-		oorandom-11.1.1 \
+		object-0.20.0 \
+		oorandom-11.1.2 \
 		output_vt100-0.1.2 \
-		paste-0.1.16 \
-		paste-impl-0.1.16 \
+		paste-0.1.18 \
+		paste-impl-0.1.18 \
 		peeking_take_while-0.1.2 \
-		pkg-config-0.3.17 \
+		pkg-config-0.3.18 \
 		plotters-0.2.15 \
-		png-0.16.4 \
-		ppv-lite86-0.2.8 \
-		predicates-1.0.4 \
+		png-0.16.7 \
+		ppv-lite86-0.2.9 \
+		predicates-1.0.5 \
 		predicates-core-1.0.0 \
 		predicates-tree-1.0.0 \
 		pretty_assertions-0.6.1 \
-		proc-macro-hack-0.5.16 \
-		proc-macro2-1.0.18 \
+		proc-macro-hack-0.5.18 \
+		proc-macro2-1.0.20 \
 		quick-error-1.2.3 \
-		quote-1.0.6 \
+		quote-1.0.7 \
 		rand-0.7.3 \
 		rand_chacha-0.2.2 \
 		rand_core-0.5.1 \
 		rand_hc-0.2.0 \
-		rayon-1.3.0 \
-		rayon-core-1.7.0 \
+		rayon-1.4.0 \
+		rayon-core-1.8.0 \
 		regex-1.3.9 \
 		regex-automata-0.1.9 \
 		regex-syntax-0.6.18 \
@@ -145,42 +142,44 @@ CARGO_CRATES=	addr2line-0.12.1 \
 		scopeguard-1.1.0 \
 		semver-0.9.0 \
 		semver-parser-0.7.0 \
-		serde-1.0.111 \
-		serde_derive-1.0.111 \
-		serde_json-1.0.53 \
+		serde-1.0.115 \
+		serde_cbor-0.11.1 \
+		serde_derive-1.0.115 \
+		serde_json-1.0.57 \
 		shlex-0.1.1 \
-		signal-hook-0.1.15 \
-		signal-hook-registry-1.2.0 \
+		signal-hook-0.1.16 \
+		signal-hook-registry-1.2.1 \
 		simd_helpers-0.1.0 \
 		strsim-0.8.0 \
-		syn-1.0.30 \
+		syn-1.0.40 \
 		termcolor-1.1.0 \
-		terminal_size-0.1.12 \
+		terminal_size-0.1.13 \
 		termios-0.3.2 \
 		textwrap-0.11.0 \
-		thiserror-1.0.19 \
-		thiserror-impl-1.0.19 \
+		thiserror-1.0.20 \
+		thiserror-impl-1.0.20 \
 		thread_local-1.0.1 \
-		time-0.1.43 \
+		time-0.1.44 \
 		tinytemplate-1.1.0 \
 		toml-0.2.1 \
 		toml-0.5.6 \
 		treeline-0.1.0 \
-		unicode-width-0.1.7 \
-		unicode-xid-0.2.0 \
+		unicode-width-0.1.8 \
+		unicode-xid-0.2.1 \
 		vec_map-0.8.2 \
 		version_check-0.9.2 \
 		wait-timeout-0.2.0 \
 		walkdir-2.3.1 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.63 \
-		wasm-bindgen-backend-0.2.63 \
-		wasm-bindgen-macro-0.2.63 \
-		wasm-bindgen-macro-support-0.2.63 \
-		wasm-bindgen-shared-0.2.63 \
-		web-sys-0.3.40 \
+		wasi-0.10.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.68 \
+		wasm-bindgen-backend-0.2.68 \
+		wasm-bindgen-macro-0.2.68 \
+		wasm-bindgen-macro-support-0.2.68 \
+		wasm-bindgen-shared-0.2.68 \
+		web-sys-0.3.45 \
 		which-3.1.1 \
-		winapi-0.3.8 \
+		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
