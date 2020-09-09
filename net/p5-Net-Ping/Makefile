@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-Ping
-PORTVERSION=	2.73
+PORTVERSION=	2.74
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,6 +12,8 @@ COMMENT=	Check a remote host for reachability
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+
+TEST_DEPENDS=	p5-Test-Pod>=1.22:devel/p5-Test-Pod
 
 USES=		perl5
 USE_PERL5=	configure
