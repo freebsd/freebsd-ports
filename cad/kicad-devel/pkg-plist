@@ -154,13 +154,12 @@ share/icons/hicolor/scalable/mimetypes/application-x-kicad-schematic.svg
 %%DATADIR%%/demos/flat_hierarchy/pic_sockets.sch
 %%DATADIR%%/demos/flat_hierarchy/sym-lib-table
 %%DATADIR%%/demos/interf_u/fp-lib-table
-%%DATADIR%%/demos/interf_u/interf_u-cache.lib
 %%DATADIR%%/demos/interf_u/interf_u.kicad_pcb
+%%DATADIR%%/demos/interf_u/interf_u.kicad_sch
 %%DATADIR%%/demos/interf_u/interf_u.net
 %%DATADIR%%/demos/interf_u/interf_u.pretty/BUS_PC.kicad_mod
 %%DATADIR%%/demos/interf_u/interf_u.pretty/PGA120.kicad_mod
 %%DATADIR%%/demos/interf_u/interf_u.pro
-%%DATADIR%%/demos/interf_u/interf_u.sch
 %%DATADIR%%/demos/interf_u/interf_u_schlib.dcm
 %%DATADIR%%/demos/interf_u/interf_u_schlib.lib
 %%DATADIR%%/demos/interf_u/pagelayout_logo.kicad_wks
@@ -227,9 +226,10 @@ share/icons/hicolor/scalable/mimetypes/application-x-kicad-schematic.svg
 %%DATADIR%%/demos/simulation/pspice/schematic_libspice.dcm
 %%DATADIR%%/demos/simulation/pspice/schematic_libspice.lib
 %%DATADIR%%/demos/simulation/pspice/sym-lib-table
+%%DATADIR%%/demos/simulation/rectifier/diode.mod
 %%DATADIR%%/demos/simulation/rectifier/rectifier-cache.lib
+%%DATADIR%%/demos/simulation/rectifier/rectifier.kicad_sch
 %%DATADIR%%/demos/simulation/rectifier/rectifier.pro
-%%DATADIR%%/demos/simulation/rectifier/rectifier.sch
 %%DATADIR%%/demos/simulation/rectifier/rectifier_schlib.lib
 %%DATADIR%%/demos/simulation/rectifier/sym-lib-table
 %%DATADIR%%/demos/simulation/sallen_key/ad8051.lib
@@ -308,6 +308,7 @@ share/icons/hicolor/scalable/mimetypes/application-x-kicad-schematic.svg
 %%DATADIR%%/scripting/plugins/circular_pad_array_wizard.py
 %%DATADIR%%/scripting/plugins/kicad_qrcode.py
 %%DATADIR%%/scripting/plugins/microMatch_connectors.py
+%%DATADIR%%/scripting/plugins/mutualcap_button_wizard.py
 %%DATADIR%%/scripting/plugins/qfn_wizard.py
 %%DATADIR%%/scripting/plugins/qfp_wizard.py
 %%DATADIR%%/scripting/plugins/qrcode_footprint_wizard.py
@@ -315,6 +316,6 @@ share/icons/hicolor/scalable/mimetypes/application-x-kicad-schematic.svg
 %%DATADIR%%/scripting/plugins/touch_slider_wizard.py
 %%DATADIR%%/scripting/plugins/uss39_barcode.py
 %%DATADIR%%/scripting/plugins/zip_wizard.py
-%%DATADIR%%/template/kicad.pro
+%%DATADIR%%/template/kicad.kicad_pro
 share/mime/packages/kicad-gerbers.xml
 share/mime/packages/kicad-kicad.xml
