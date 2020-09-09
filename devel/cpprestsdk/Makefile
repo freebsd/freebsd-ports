@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	cpprestsdk
-PORTVERSION=	2.9.1
+PORTVERSION=	2.10.16
 DISTVERSIONPREFIX=	v
-PORTREVISION=	13
 CATEGORIES=	devel
 
 MAINTAINER=	projects@phess.net
@@ -14,20 +13,21 @@ LICENSE_FILE=	${WRKSRC}/../license.txt
 
 BROKEN_powerpc64=	fails to compile: threadpool.h:59:25: conversion to 'int' from 'size_t {aka long unsigned int}' may alter its value
 
+BUILD_DEPENDS=	${LOCALBASE}/include/websocketpp/client.hpp:devel/websocketpp
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 
-USES=		cmake compiler:c++11-lib ssl
+USES=		cmake compiler:c++11-lang pkgconfig ssl
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	Microsoft
 WRKSRC_SUBDIR=	Release
 CMAKE_OFF=	BUILD_SAMPLES BUILD_TESTS
 
-.include <bsd.port.pre.mk>
+CXXFLAGS+=	-Wno-c11-extensions
 
-.if ${SSL_DEFAULT} == base
-BROKEN_FreeBSD_12=	use of undeclared identifier 'SSL_R_SHORT_READ'
-BROKEN_FreeBSD_13=	use of undeclared identifier 'SSL_R_SHORT_READ'
-.endif
+OPTIONS_DEFINE=	BROTLI
 
-.include <bsd.port.post.mk>
+BROTLI_LIB_DEPENDS=	libbrotlidec.so:archivers/brotli
+BROTLI_CMAKE_ON=	-DCPPREST_EXCLUDE_BROTLI:BOOL=OFF
+
+.include <bsd.port.mk>
