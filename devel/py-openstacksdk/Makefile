@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openstacksdk
-PORTVERSION=	0.48.0
+PORTVERSION=	0.49.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -36,4 +36,10 @@ NO_ARCH=	yes
 
 SHEBANG_GLOB=	*.sh
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 3800
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=1.7.0:devel/py-importlib-metadata@${PY_FLAVOR}
+.endif
+
+.include <bsd.port.post.mk>
