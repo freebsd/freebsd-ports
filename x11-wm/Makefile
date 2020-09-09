@@ -28,14 +28,6 @@
     SUBDIR += cwm
     SUBDIR += devilspie
     SUBDIR += dwm
-    SUBDIR += e-module-alarm
-    SUBDIR += e-module-cpu
-    SUBDIR += e-module-deskshow
-    SUBDIR += e-module-everything-places
-    SUBDIR += e-module-mem
-    SUBDIR += e-module-rmb
-    SUBDIR += e-module-wlan
-    SUBDIR += e-modules
     SUBDIR += e16
     SUBDIR += e16-docs
     SUBDIR += echinus

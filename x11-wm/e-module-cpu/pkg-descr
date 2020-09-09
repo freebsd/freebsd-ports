@@ -1,5 +1,0 @@
-This e17 module allows users to monitor current cpu load. It can draw
-load graph and display cpu load percentage. The polling interval is
-fully configurable.
-
-WWW: https://www.enlightenment.org/

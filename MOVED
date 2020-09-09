@@ -15421,3 +15421,11 @@ astro/py-astLib|astro/py-astlib|2020-09-05|Rename to match our py- port naming
 www/py-MechanicalSoup|www/py-mechanicalsoup|2020-09-05|Rename to match our py- port naming
 devel/kore@default|devel/kore|2020-09-07|Flavor removed
 devel/kore@notls|devel/kore|2020-09-07|Flavor removed
+x11-wm/e-module-alarm||2020-09-09|Removed
+x11-wm/e-module-cpu||2020-09-09|Removed
+x11-wm/e-module-deskshow||2020-09-09|Removed
+x11-wm/e-module-everything-places||2020-09-09|Removed
+x11-wm/e-module-mem||2020-09-09|Removed
+x11-wm/e-module-rmb||2020-09-09|Removed
+x11-wm/e-module-wlan||2020-09-09|Removed
+x11-wm/e-modules||2020-09-09|Removed
