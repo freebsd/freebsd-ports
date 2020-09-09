@@ -1,20 +1,11 @@
---- CMakeLists.txt.orig	2019-03-23 01:25:59 UTC
+--- CMakeLists.txt.orig	2020-07-15 18:02:29 UTC
 +++ CMakeLists.txt
-@@ -1053,7 +1053,7 @@ IF(NOT WIN32 AND NOT APPLE AND NOT QT_ANDROID)
-     set(wxWidgets_CONFIG_OPTIONS ${wxWidgets_CONFIG_OPTIONS} --toolkit=gtk3)
-     MESSAGE(STATUS "Building against GTK3...")
-   ENDIF(GTK2_FOUND)
--  FIND_PACKAGE(wxWidgets)
-+  FIND_PACKAGE(wxWidgets COMPONENTS ${wxWidgets_USE_LIBS})
-   if (wxWidgets_FOUND)
-     message(STATUS "Found wxWidgets webview add-on")
-     add_definitions(-DOCPN_USE_WEBVIEW)
-@@ -2422,7 +2422,7 @@ IF(NOT APPLE)
-     INSTALL(FILES src/bitmaps/other_svg_src/opencpn.svg DESTINATION ${PREFIX_DATA}/icons/hicolor/scalable/apps PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ)
-     INSTALL(FILES data/opencpn.desktop DESTINATION ${PREFIX_DATA}/applications PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ )
-     INSTALL(FILES data/opencpn.appdata.xml DESTINATION ${PREFIX_DATA}/appdata PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ )
--    INSTALL(FILES opencpn.1 DESTINATION ${PREFIX_DATA}/man/man1 PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ )
-+    INSTALL(FILES opencpn.1 DESTINATION ${PREFIX_DATA}/../man/man1 PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ )
-   ENDIF(UNIX)
+@@ -2221,7 +2221,7 @@ if (NOT APPLE)
+       FILES ${CMAKE_BINARY_DIR}/opencpn.appdata.xml
+       DESTINATION ${PREFIX_DATA}/metainfo
+     )
+-    install(FILES opencpn.1 DESTINATION ${PREFIX_DATA}/man/man1)
++    install(FILES opencpn.1 DESTINATION ${PREFIX_DATA}/../man/man1)
+   endif (UNIX)
  
- ENDIF(NOT APPLE)
+   IF(PACKAGE_FORMAT MATCHES "DEB")

@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	opencpn
-PORTVERSION=	5.0.0
-PORTREVISION=	1
+PORTVERSION=	5.2.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	astro geography
 
@@ -31,20 +30,20 @@ USE_LDCONFIG=	${PREFIX}/lib/opencpn
 USE_WX=		3.0+
 USE_XORG=	ice sm x11 xext
 
-CMAKE_ARGS=	-DBUNDLE_GSHHS=CRUDE
-CMAKE_ON=	BUNDLE_TCDATA OCPN_FORCE_GTK3
-CMAKE_OFF=	OCPN_NEW_SERIAL
+CMAKE_ARGS=	-DOCPN_BUNDLE_GSHHS=CRUDE
+CMAKE_ON=	OCPN_BUNDLE_TCDATA OCPN_FORCE_GTK3
+CMAKE_OFF=	OCPN_USE_NEWSERIAL
 
 OPTIONS_DEFINE=	DOCS
-DOCS_CMAKE_ON=	-DBUNDLE_DOCS:STRING="ON"
-DOCS_CMAKE_OFF=	-DBUNDLE_DOCS:STRING="OFF"
+DOCS_CMAKE_ON=	-DOCPN_BUNDLE_DOCS:STRING="ON"
+DOCS_CMAKE_OFF=	-DOCPN_BUNDLE_DOCS:STRING="OFF"
 
 .include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},' \
-		${WRKSRC}/src/mygdal/cpl_csv.cpp \
-		${WRKSRC}/src/mygdal/cpl_findfile.cpp \
+		${WRKSRC}/libs/gdal/src/cpl_csv.cpp \
+		${WRKSRC}/libs/gdal/src/cpl_findfile.cpp \
 		${WRKSRC}/data/doc/help_en_US.html
 .if ${ARCH} != amd64 && ${ARCH} != i386
 	@${REINPLACE_CMD} -e '/-msse/d' -e '/-mssse3/d' \
