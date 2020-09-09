@@ -1,6 +1,6 @@
---- Makefile.orig	2020-08-26 07:20:35 UTC
+--- Makefile.orig	2020-09-08 19:35:30 UTC
 +++ Makefile
-@@ -46,12 +46,6 @@ ifneq ("$(DEBUG)", "")
+@@ -48,12 +48,6 @@ ifneq ("$(DEBUG)", "")
  	FEATURES+=-DKORE_DEBUG
  endif
  
@@ -13,12 +13,3 @@
  ifneq ("$(NOSENDFILE)", "")
  	CFLAGS+=-DKORE_NO_SENDFILE
  endif
-@@ -202,6 +196,8 @@ uninstall:
- 
- $(OBJDIR)/%.o: src/%.c
- 	$(CC) $(CFLAGS) -c $< -o $@
-+
-+src/python.c: $(PYTHON_CURLOPT)
- 
- clean:
- 	rm -f $(VERSION)

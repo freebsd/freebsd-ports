@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kore
-PORTVERSION=	4.0.0
+PORTVERSION=	4.0.1
 CATEGORIES=	devel www
 MASTER_SITES=	https://kore.io/releases/
 
@@ -58,20 +58,11 @@ post-patch:
 	@${REINPLACE_CMD} 's|%%OPENSSLINC%%|${OPENSSLINC}|g' \
 		${WRKSRC}/src/cli.c
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/kore \
-		${WRKSRC}/kodev/kodev \
-		${STAGEDIR}${PREFIX}/bin
-	@${MKDIR} ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/kore.features \
-		${STAGEDIR}${DATADIR}/features
-	@${MKDIR} ${STAGEDIR}${PREFIX}/include/kore
-	@cd ${WRKSRC}/include && \
-		${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/include/kore
-	${INSTALL_DATA} ${WRKSRC}/share/man/kodev.1 \
-		${STAGEDIR}${PREFIX}/share/man/man1
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/kodev \
+		${STAGEDIR}${PREFIX}/bin/kore
 
-do-install-EXAMPLES-on:
+post-install-EXAMPLES-on:
 	@cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 	@cd ${WRKSRC}/conf && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 
