@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cargo-c
-DISTVERSION=	0.6.12
-PORTREVISION=	1
+DISTVERSION=	0.6.13
 CATEGORIES=	devel
 MASTER_SITES=	CRATESIO
 # XXX Teach USES=cargo to have proper default
@@ -57,7 +56,7 @@ CARGO_CRATES=	adler-0.2.3 \
 		foreign-types-shared-0.1.1 \
 		fwdansi-1.1.0 \
 		getrandom-0.1.14 \
-		git2-0.13.10 \
+		git2-0.13.11 \
 		git2-curl-0.14.1 \
 		glob-0.3.0 \
 		globset-0.4.5 \
@@ -76,10 +75,10 @@ CARGO_CRATES=	adler-0.2.3 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
 		libc-0.2.76 \
-		libgit2-sys-0.12.12+1.0.1 \
+		libgit2-sys-0.12.13+1.0.1 \
 		libnghttp2-sys-0.1.4+1.41.0 \
 		libssh2-sys-0.2.19 \
-		libz-sys-1.1.0 \
+		libz-sys-1.1.2 \
 		log-0.4.11 \
 		matches-0.1.8 \
 		memchr-2.3.3 \
@@ -95,7 +94,7 @@ CARGO_CRATES=	adler-0.2.3 \
 		ppv-lite86-0.2.9 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.19 \
+		proc-macro2-1.0.20 \
 		quick-error-1.2.3 \
 		quote-1.0.7 \
 		rand-0.7.3 \
@@ -125,8 +124,8 @@ CARGO_CRATES=	adler-0.2.3 \
 		strsim-0.8.0 \
 		structopt-0.3.17 \
 		structopt-derive-0.4.10 \
-		syn-1.0.39 \
-		tar-0.4.29 \
+		syn-1.0.40 \
+		tar-0.4.30 \
 		tempfile-3.1.0 \
 		termcolor-1.1.0 \
 		textwrap-0.11.0 \
