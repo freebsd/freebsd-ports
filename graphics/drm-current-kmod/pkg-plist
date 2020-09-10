@@ -7,6 +7,7 @@
 %%VBOXVIDEO%%/%%KMODDIR%%/vboxvideo.ko
 %%VMWGFX%%/%%KMODDIR%%/vmwgfx.ko
 %%SOURCE%%%%KMODSRC%%/Makefile
+%%SOURCE%%%%KMODSRC%%/kconfig.mk
 %%SOURCE%%%%KMODSRC%%/amd/Makefile
 %%SOURCE%%%%KMODSRC%%/amd/amdgpu/Makefile
 %%SOURCE%%%%KMODSRC%%/amd/amdkfd/Makefile

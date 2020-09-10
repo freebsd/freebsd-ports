@@ -3,6 +3,7 @@
 
 PORTNAME=	drm-current-kmod
 PORTVERSION=	5.4.62.g20200905
+PORTREVISION=	1
 CATEGORIES=	graphics kld
 
 MAINTAINER=	x11@FreeBSD.org
@@ -81,6 +82,7 @@ pre-build:
 post-install-SOURCE-on:
 		${MKDIR} ${KMODSRC}
 		${INSTALL_DATA} ${WRKSRC}/Makefile ${KMODSRC}
+		${INSTALL_DATA} ${WRKSRC}/kconfig.mk ${KMODSRC}
 .for dir in ${SRCDIRS}
 		cd ${WRKSRC} && ${COPYTREE_SHARE} ${dir} ${KMODSRC}
 .endfor
