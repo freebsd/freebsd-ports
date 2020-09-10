@@ -287,6 +287,7 @@ include/lean_ext/library/vm/vm_float.h
 include/lean_ext/library/vm/vm_format.h
 include/lean_ext/library/vm/vm_int.h
 include/lean_ext/library/vm/vm_io.h
+include/lean_ext/library/vm/vm_json.h
 include/lean_ext/library/vm/vm_level.h
 include/lean_ext/library/vm/vm_list.h
 include/lean_ext/library/vm/vm_module_info.h
@@ -394,7 +395,6 @@ lib/lean/leanpkg/leanpkg/manifest.lean
 lib/lean/leanpkg/leanpkg/proc.lean
 lib/lean/leanpkg/leanpkg/resolve.lean
 lib/lean/leanpkg/leanpkg/toml.lean
-lib/lean/library/data/bitvec.lean
 lib/lean/library/data/buffer.lean
 lib/lean/library/data/buffer/parser.lean
 lib/lean/library/data/dlist.lean
@@ -528,6 +528,7 @@ lib/lean/library/init/meta/injection_tactic.lean
 lib/lean/library/init/meta/interaction_monad.lean
 lib/lean/library/init/meta/interactive.lean
 lib/lean/library/init/meta/interactive_base.lean
+lib/lean/library/init/meta/json.lean
 lib/lean/library/init/meta/lean/parser.lean
 lib/lean/library/init/meta/level.lean
 lib/lean/library/init/meta/local_context.lean
