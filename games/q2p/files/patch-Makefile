@@ -1,5 +1,5 @@
---- ./Makefile.orig	Sun Dec 31 14:01:34 2006
-+++ ./Makefile	Fri Jan  5 15:51:35 2007
+--- Makefile.orig	2006-12-31 17:01:34 UTC
++++ Makefile
 @@ -9,7 +9,7 @@
  
  # Check OS type.
@@ -162,14 +162,25 @@
  
  BASE_CFLAGS+=-I$(LOCALBASE)/include \
              -I$(X11BASE)/include \
-@@ -168,15 +165,11 @@ RELEASE_CFLAGS+=$(BASE_CFLAGS) \
+@@ -158,25 +155,18 @@ BASE_CFLAGS+=-I$(LOCALBASE)/include \
+             -DGAME_NAME='\"$(GAME_NAME)\"' \
+             -DQ2P_VERSION='\"$(VERSION)\"' \
+             -DCC_VERSION='\"$(CC_VERSION)\"' \
+-	    -Wall \
++	    -Wall -fcommon \
+ 	    -pipe #-Werror
+ 
+ RELEASE_CFLAGS+=$(BASE_CFLAGS) \
+-               -ffloat-store \
+ 	       -fno-strict-aliasing \
+ 	       -DNDEBUG
  
  ifeq ($(strip $(OPTIMIZE)),YES)
   RELEASE_CFLAGS+=-O3 \
 -                 -march=$(MARCH) \
                   -funroll-loops \
-                  -fstrength-reduce \
-                  -fexpensive-optimizations \
+-                 -fstrength-reduce \
+-                 -fexpensive-optimizations \
 -                 -falign-loops=2 \
 -                 -falign-jumps=2 \
 -                 -falign-functions=2
@@ -230,10 +241,3 @@
  	@echo
  	@echo "**Built $@ with cflags:"
  	@echo "$(CC) $(CC_VERSION) $(CFLAGS)";
-@@ -935,4 +928,4 @@ bz2:
- 	@tar cjvf $(Q2P_VERSION_BZ2)-$(OSTYPE)-$(DATE).tar.bz2 $(BINDIR)
- 	@printf ".... Done.\n"
- 	
--	
-\ No newline at end of file
-+	

@@ -26,7 +26,7 @@
 -X11_LDFLAGS=-L/usr/X11R6/lib -lX11 -lXext
 +
 +# Compiler flags.
-+SHARED_FLAGS:=-Isource -I./ -I../ $(CFLAGS)
++SHARED_FLAGS:=-Isource -I./ -I../ $(CFLAGS) -fcommon
 +RELEASE_CFLAGS=$(SHARED_FLAGS)
 +DEBUG_CFLAGS=$(SHARED_FLAGS) -g -DC_ONLY
 +
@@ -80,7 +80,7 @@
  
 -ifeq ($(wildcard /usr/include/X11/extensions/xf86vmode.h),/usr/include/X11/extensions/xf86vmode.h)
 +ifeq ($(strip $(WITH_OPT_CFLAGS)),YES)
-+RELEASE_CFLAGS += -O2 -fno-strict-aliasing -ffast-math -fexpensive-optimizations
++RELEASE_CFLAGS += -O2 -fno-strict-aliasing -ffast-math
 +endif
 +
 +ifeq ($(strip $(WITH_HOMEDIR)),YES)
