@@ -149,6 +149,7 @@
     SUBDIR += exabgp4
     SUBDIR += exaddos
     SUBDIR += fb
+    SUBDIR += fbzmq
     SUBDIR += fiche
     SUBDIR += file2pcap
     SUBDIR += findmtu
