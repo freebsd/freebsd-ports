@@ -1,0 +1,51 @@
+From d2671b04d025dee3b8311d2d83e0a0342c670f52 Mon Sep 17 00:00:00 2001
+From: Gavan <gavan@coolfactor.org>
+Date: Fri, 21 Aug 2020 15:46:01 +0100
+Subject: [PATCH 29/37] Taint: fix off-by-one in is_tainted().  Bug 2634
+
+(cherry picked from commit e0ae68c8ee6788508da4989ee0d6fcbaf40c7b97)
+---
+ doc/ChangeLog | 5 +++++
+ src/store.c       | 4 ++--
+ 2 files changed, 7 insertions(+), 2 deletions(-)
+
+diff --git doc/ChangeLog doc/ChangeLog
+index 2d2dc1f9f..6d944f204 100644
+--- doc/ChangeLog
++++ doc/ChangeLog
+@@ -82,6 +82,11 @@ JH/21 Bug 2630: Fix eol-replacement string for the ${readsocket } expansion.
+       Previously when a whitespace character was specified it was not inserted
+       after removing the newline.
+ 
++JH/24 Bug 2634: Fix a taint trap seen on NetBSD: the testing coded for
++      is_tainted() had an off-by-one error in the overenthusiastic direction.
++      Find and fix by Gavan.  Although NetBSD is not a supported platform for
++      4.94 this bug could affect other platforms.
++
+ 
+ Exim version 4.94
+ -----------------
+diff --git src/store.c src/store.c
+index c460ba383..7d08c9804 100644
+--- src/store.c
++++ src/store.c
+@@ -188,14 +188,14 @@ for (int pool = POOL_TAINT_BASE; pool < nelem(chainbase); pool++)
+   if ((b = current_block[pool]))
+     {
+     uschar * bc = US b + ALIGNED_SIZEOF_STOREBLOCK;
+-    if (US p >= bc && US p <= bc + b->length) return TRUE;
++    if (US p >= bc && US p < bc + b->length) return TRUE;
+     }
+ 
+ for (int pool = POOL_TAINT_BASE; pool < nelem(chainbase); pool++)
+   for (b = chainbase[pool]; b; b = b->next)
+     {
+     uschar * bc = US b + ALIGNED_SIZEOF_STOREBLOCK;
+-    if (US p >= bc && US p <= bc + b->length) return TRUE;
++    if (US p >= bc && US p < bc + b->length) return TRUE;
+     }
+ return FALSE;
+ }
+-- 
+2.28.0
+

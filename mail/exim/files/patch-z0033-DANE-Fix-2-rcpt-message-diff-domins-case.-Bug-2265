@@ -1,0 +1,217 @@
+From a505cf777f90755bce69ab53a899b284a304127b Mon Sep 17 00:00:00 2001
+From: Jeremy Harris <jgh146exb@wizmail.org>
+Date: Sun, 23 Aug 2020 15:32:48 +0100
+Subject: [PATCH 33/37] DANE: Fix 2-rcpt message, diff domins case.  Bug 2265
+
+(cherry picked from commit 99350dede64ad634300ddf15d0d97a81fd75d330)
+---
+ src/debug.c              | 11 ++++-
+ src/deliver.c            |  3 ++
+ src/macros.h             |  1 +
+ src/transports/smtp.c    | 71 ++++++++++++++++++++++++----
+ src/verify.c             |  2 +-
+
+diff --git src/debug.c src/debug.c
+index 6d6132e39..819e83331 100644
+--- src/debug.c
++++ src/debug.c
+@@ -30,7 +30,16 @@ const uschar * rc_names[] = {		/* Mostly for debug output */
+   [UNEXPECTED] =	US"UNEXPECTED",
+   [CANCELLED] =		US"CANCELLED",
+   [FAIL_SEND] =		US"FAIL_SEND",
+-  [FAIL_DROP] =		US"FAIL_DROP"
++  [FAIL_DROP] =		US"FAIL_DROP",
++  [DANE] =		US"DANE",
++};
++
++const uschar * dns_rc_names[] = {
++  [DNS_SUCCEED] =	US"DNS_SUCCEED",
++  [DNS_NOMATCH] =	US"DNS_NOMATCH",
++  [DNS_NODATA] =	US"DNS_NODATA",
++  [DNS_AGAIN] =		US"DNS_AGAIN",
++  [DNS_FAIL] =		US"DNS_FAIL",
+ };
+ 
+ 
+diff --git src/deliver.c src/deliver.c
+index 40db50084..f5e28941f 100644
+--- src/deliver.c
++++ src/deliver.c
+@@ -460,6 +460,9 @@ TRUE if the lists refer to the same hosts in the same order, except that
+ This enables Exim to use a single SMTP transaction for sending to two entirely
+ different domains that happen to end up pointing at the same hosts.
+ 
++We do not try to batch up different A-record host names that refer to the
++same IP.
++
+ Arguments:
+   one       points to the first host list
+   two       points to the second host list
+diff --git src/macros.h src/macros.h
+index 2378773cb..6fd5db94c 100644
+--- src/macros.h
++++ src/macros.h
+@@ -304,6 +304,7 @@ Use rc_names[] for debug strings. */
+ #define CANCELLED     13    /* Authentication cancelled */
+ #define FAIL_SEND     14    /* send() failed in authenticator */
+ #define FAIL_DROP     15    /* Fail and drop connection (used in ACL) */
++#define DANE	      16    /* Deferred for domain mismatch (used in transport) */
+ 
+ /* Returns from the deliver_message() function */
+ 
+diff --git src/transports/smtp.c src/transports/smtp.c
+index 28dd8ff24..6ca4552a6 100644
+--- src/transports/smtp.c
++++ src/transports/smtp.c
+@@ -2019,11 +2019,12 @@ if (!continue_hostname)
+ 	switch (rc = tlsa_lookup(sx->conn_args.host, &sx->conn_args.tlsa_dnsa, sx->dane_required))
+ 	  {
+ 	  case OK:		sx->conn_args.dane = TRUE;
+-				ob->tls_tempfail_tryclear = FALSE;
+-				ob->tls_sni = sx->addrlist->domain;
++				ob->tls_tempfail_tryclear = FALSE;	/* force TLS */
++				ob->tls_sni = sx->first_addr->domain;	/* force SNI */
+ 				break;
+ 	  case FAIL_FORCED:	break;
+-	  default:		set_errno_nohost(sx->addrlist, ERRNO_DNSDEFER,
++	  default:
++	  set_errno_nohost(sx->addrlist, ERRNO_DNSDEFER,
+ 				  string_sprintf("DANE error: tlsa lookup %s",
+ 				    rc_to_string(rc)),
+ 				  rc, FALSE, &sx->delivery_start);
+@@ -3430,6 +3431,7 @@ BOOL pass_message = FALSE;
+ uschar *message = NULL;
+ uschar new_message_id[MESSAGE_ID_LENGTH + 1];
+ smtp_context * sx = store_get(sizeof(*sx), TRUE);	/* tainted, for the data buffers */
++BOOL dane_held;
+ 
+ suppress_tls = suppress_tls;  /* stop compiler warning when no TLS support */
+ *message_defer = FALSE;
+@@ -3446,13 +3448,36 @@ sx->conn_args.tblock = tblock;
+ gettimeofday(&sx->delivery_start, NULL);
+ sx->sync_addr = sx->first_addr = addrlist;
+ 
+-/* Get the channel set up ready for a message (MAIL FROM being the next
+-SMTP command to send */
++DANE_DOMAINS:
++dane_held = FALSE;
++
++/* Get the channel set up ready for a message, MAIL FROM being the next
++SMTP command to send. */
+ 
+ if ((rc = smtp_setup_conn(sx, suppress_tls)) != OK)
+   {
+   timesince(&addrlist->delivery_time, &sx->delivery_start);
+-  return rc;
++  yield = rc;
++  goto TIDYUP;
++  }
++
++/*XXX*/
++/* If the connection used DANE, ignore for now any addresses with incompatible
++domains.  The SNI has to be the domain.  Arrange a whole new TCP conn later,
++just in case only TLS isn't enough. */
++
++if (sx->conn_args.dane)
++  {
++  const uschar * dane_domain = sx->first_addr->domain;
++
++  for (address_item * a = sx->first_addr->next; a; a = a->next)
++    if (  a->transport_return == PENDING_DEFER
++       && Ustrcmp(dane_domain, a->domain) != 0)
++      {
++      DEBUG(D_transport) debug_printf("DANE: holding %s for later\n", a->domain);
++      dane_held = TRUE;
++      a->transport_return = DANE;
++      }
+   }
+ 
+ /* If there is a filter command specified for this transport, we can now
+@@ -4203,7 +4228,7 @@ if (sx->completed_addr && sx->ok && sx->send_quit)
+ 
+ 
+       if (sx->first_addr != NULL)	/* More addresses still to be sent */
+-        {				/*   in this run of the transport */
++        {				/*   on this connection            */
+         continue_sequence++;		/* Causes * in logging */
+ 	pipelining_active = sx->pipelining_used;    /* was cleared at DATA */
+         goto SEND_MESSAGE;
+@@ -4235,7 +4260,7 @@ if (sx->completed_addr && sx->ok && sx->send_quit)
+ 				      '2', ob->command_timeout);
+ 
+ 	  if (sx->ok && f.continue_more)
+-	    return yield;		/* More addresses for another run */
++	    goto TIDYUP;		/* More addresses for another run */
+ 	  }
+ 	else
+ 	  {
+@@ -4255,7 +4280,7 @@ if (sx->completed_addr && sx->ok && sx->send_quit)
+       else
+ #endif
+ 	if (f.continue_more)
+-	  return yield;			/* More addresses for another run */
++	  goto TIDYUP;			/* More addresses for another run */
+ 
+       /* If the socket is successfully passed, we mustn't send QUIT (or
+       indeed anything!) from here. */
+@@ -4295,7 +4320,7 @@ propagate it from the initial
+ 	    sx->cctx.sock = -1;
+ 	    continue_transport = NULL;
+ 	    continue_hostname = NULL;
+-	    return yield;
++	    goto TIDYUP;
+ 	    }
+ 	  log_write(0, LOG_PANIC_DIE, "fork failed");
+ 	  }
+@@ -4370,9 +4395,35 @@ if (sx->send_quit)
+ (void) event_raise(tblock->event_action, US"tcp:close", NULL);
+ #endif
+ 
++/*XXX*/
++if (dane_held)
++  {
++  sx->first_addr = NULL;
++  for (address_item * a = sx->addrlist->next; a; a = a->next)
++    if (a->transport_return == DANE)
++      {
++      a->transport_return = PENDING_DEFER;
++      if (!sx->first_addr)
++	{
++	/* Remember the new start-point in the addrlist, for smtp_setup_conn()
++	to get the domain string for SNI */
++
++	sx->first_addr = a;
++	DEBUG(D_transport) debug_printf("DANE: go-around for %s\n", a->domain);
++	}
++      }
++  goto DANE_DOMAINS;
++  }
++
+ continue_transport = NULL;
+ continue_hostname = NULL;
+ return yield;
++
++TIDYUP:
++if (dane_held) for (address_item * a = sx->addrlist->next; a; a = a->next)
++  if (a->transport_return == DANE)
++    a->transport_return = PENDING_DEFER;
++return yield;
+ }
+ 
+ 
+diff --git src/verify.c src/verify.c
+index 5f4181de9..43343a646 100644
+--- src/verify.c
++++ src/verify.c
+@@ -674,7 +674,7 @@ coding means skipping this whole loop and doing the append separately.  */
+     if (!sx) sx = store_get(sizeof(*sx), TRUE);	/* tainted buffers */
+     memset(sx, 0, sizeof(*sx));
+ 
+-    sx->addrlist = addr;
++    sx->addrlist = sx->first_addr = addr;
+     sx->conn_args.host = host;
+     sx->conn_args.host_af = host_af,
+     sx->port = port;
+-- 
+2.28.0
+

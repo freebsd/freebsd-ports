@@ -1,0 +1,525 @@
+From 569be4bc51fd4806edcf6b3abcf550dbbba90df5 Mon Sep 17 00:00:00 2001
+From: Jeremy Harris <jgh146exb@wizmail.org>
+Date: Wed, 26 Aug 2020 23:43:54 +0100
+Subject: [PATCH 35/37] DANE: Fix 2 messages from queue case
+
+(cherry picked from commit b6054898ace169a0e5143117397a4f666a5e7283)
+---
+ src/deliver.c            |  12 +++-
+ src/exim.c               |  14 +++-
+ src/globals.c            |   2 +
+ src/globals.h            |   2 +
+ src/spool_in.c           |  24 +++----
+ src/tls-gnu.c            |   6 +-
+ src/transport.c          |  32 ++++++---
+ src/transports/smtp.c    |  89 ++++++++++++++++++++---
+ src/transports/smtp.h    |   2 +-
+
+diff --git src/deliver.c src/deliver.c
+index f5e28941f..8f21c607e 100644
+--- src/deliver.c
++++ src/deliver.c
+@@ -1195,7 +1195,7 @@ else
+   if (addr->host_used)
+     {
+     g = d_hostlog(g, addr);
+-    if (continue_sequence > 1)
++    if (continue_sequence > 1)		/*XXX this is wrong for a dropped proxyconn.  Would have to pass back from transport */
+       g = string_catn(g, US"*", 1);
+ 
+ #ifndef DISABLE_EVENT
+@@ -4275,6 +4275,10 @@ for (int delivery_count = 0; addr_remote; delivery_count++)
+       }
+     }
+ 
++/*XXX need to defeat this when DANE is used - but we don't know that yet.
++So look out for the place it gets used.
++*/
++
+   /* Get the flag which specifies whether the transport can handle different
+   domains that nevertheless resolve to the same set of hosts. If it needs
+   expanding, get variables set: $address_data, $domain_data, $localpart_data,
+@@ -4353,6 +4357,11 @@ for (int delivery_count = 0; addr_remote; delivery_count++)
+   /************************************************************************/
+ 
+ 
++/*XXX don't know yet if DANE will be used.  So tpt will have to
++check at the point if gets next addr from list, and skip/defer any
++nonmatch domains
++*/
++
+   /* Pick off all addresses which have the same transport, errors address,
+   destination, and extra headers. In some cases they point to the same host
+   list, but we also need to check for identical host lists generated from
+@@ -4499,6 +4508,7 @@ for (int delivery_count = 0; addr_remote; delivery_count++)
+   if (continue_transport)
+     {
+     BOOL ok = Ustrcmp(continue_transport, tp->name) == 0;
++/*XXX do we need to check for a DANEd conn vs. a change of domain? */
+ 
+     /* If the transport is about to override the host list do not check
+     it here but take the cost of running the transport process to discover
+diff --git src/exim.c src/exim.c
+index ac0ff5523..630ac4038 100644
+--- src/exim.c
++++ src/exim.c
+@@ -2806,10 +2806,22 @@ on the second character (the one after '-'), to save some effort. */
+ 	case 'S': smtp_peer_options |= OPTION_SIZE; break;
+ 
+ #ifndef DISABLE_TLS
++    /* -MCs: used with -MCt; SNI was sent */
++    /* -MCr: ditto, DANE */
++
++	case 'r':
++	case 's': if (++i < argc)
++		    {
++		    continue_proxy_sni = string_copy_taint(argv[i], TRUE);
++		    if (argrest[1] == 'r') continue_proxy_dane = TRUE;
++		    }
++		  else badarg = TRUE;
++		  break;
++
+     /* -MCt: similar to -MCT below but the connection is still open
+     via a proxy process which handles the TLS context and coding.
+     Require three arguments for the proxied local address and port,
+-    and the TLS cipher.  */
++    and the TLS cipher. */
+ 
+ 	case 't': if (++i < argc)
+ 		    sending_ip_address = string_copy_taint(argv[i], TRUE);
+diff --git src/globals.c src/globals.c
+index fc3086f72..c34ac9ddd 100644
+--- src/globals.c
++++ src/globals.c
+@@ -729,6 +729,8 @@ uid_t   config_uid             = 0;
+ 
+ int     connection_max_messages= -1;
+ uschar *continue_proxy_cipher  = NULL;
++BOOL    continue_proxy_dane    = FALSE;
++uschar *continue_proxy_sni     = NULL;
+ uschar *continue_hostname      = NULL;
+ uschar *continue_host_address  = NULL;
+ int     continue_sequence      = 1;
+diff --git src/globals.h src/globals.h
+index c80c8532f..a4c1143b7 100644
+--- src/globals.h
++++ src/globals.h
+@@ -425,6 +425,8 @@ extern uschar *config_main_filename;   /* File name actually used */
+ extern uschar *config_main_directory;  /* Directory where the main config file was found */
+ extern uid_t   config_uid;             /* Additional owner */
+ extern uschar *continue_proxy_cipher;  /* TLS cipher for proxied continued delivery */
++extern BOOL    continue_proxy_dane;    /* proxied conn is DANE */
++extern uschar *continue_proxy_sni;     /* proxied conn SNI */
+ extern uschar *continue_hostname;      /* Host for continued delivery */
+ extern uschar *continue_host_address;  /* IP address for ditto */
+ extern int     continue_sequence;      /* Sequence num for continued delivery */
+diff --git src/spool_in.c src/spool_in.c
+index a0147d5ee..1b4cefdb2 100644
+--- src/spool_in.c
++++ src/spool_in.c
+@@ -55,7 +55,7 @@ for (int i = 0; i < 2; i++)
+ 
+   set_subdir_str(message_subdir, id, i);
+   fname = spool_fname(US"input", message_subdir, id, US"-D");
+-  DEBUG(D_deliver) debug_printf("Trying spool file %s\n", fname);
++  DEBUG(D_deliver) debug_printf_indent("Trying spool file %s\n", fname);
+ 
+   /* We protect against symlink attacks both in not propagating the
+    * file-descriptor to other processes as we exec, and also ensuring that we
+@@ -367,7 +367,7 @@ for (int n = 0; n < 2; n++)
+ errno = 0;
+ 
+ #ifndef COMPILE_UTILITY
+-DEBUG(D_deliver) debug_printf("reading spool file %s\n", name);
++DEBUG(D_deliver) debug_printf_indent("reading spool file %s\n", name);
+ #endif  /* COMPILE_UTILITY */
+ 
+ /* The first line of a spool file contains the message id followed by -H (i.e.
+@@ -430,7 +430,7 @@ if (f.running_in_test_harness)
+ #endif
+ 
+ #ifndef COMPILE_UTILITY
+-DEBUG(D_deliver) debug_printf("user=%s uid=%ld gid=%ld sender=%s\n",
++DEBUG(D_deliver) debug_printf_indent("user=%s uid=%ld gid=%ld sender=%s\n",
+   originator_login, (long int)originator_uid, (long int)originator_gid,
+   sender_address);
+ #endif
+@@ -715,7 +715,7 @@ host_build_sender_fullhost();
+ 
+ #ifndef COMPILE_UTILITY
+ DEBUG(D_deliver)
+-  debug_printf("sender_local=%d ident=%s\n", f.sender_local,
++  debug_printf_indent("sender_local=%d ident=%s\n", f.sender_local,
+     sender_ident ? sender_ident : US"unset");
+ #endif  /* COMPILE_UTILITY */
+ 
+@@ -743,7 +743,7 @@ if (sscanf(CS big_buffer, "%d", &rcount) != 1 || rcount > 16384)
+   goto SPOOL_FORMAT_ERROR;
+ 
+ #ifndef COMPILE_UTILITY
+-DEBUG(D_deliver) debug_printf("recipients_count=%d\n", rcount);
++DEBUG(D_deliver) debug_printf_indent("recipients_count=%d\n", rcount);
+ #endif  /* COMPILE_UTILITY */
+ 
+ recipients_list_max = rcount;
+@@ -814,7 +814,7 @@ for (recipients_count = 0; recipients_count < rcount; recipients_count++)
+     {
+     int dummy;
+ #if !defined (COMPILE_UTILITY)
+-    DEBUG(D_deliver) debug_printf("**** SPOOL_IN - Exim 3 spool file\n");
++    DEBUG(D_deliver) debug_printf_indent("**** SPOOL_IN - Exim 3 spool file\n");
+ #endif
+     while (isdigit(*(--p)) || *p == ',');
+     if (*p == ' ')
+@@ -829,7 +829,7 @@ for (recipients_count = 0; recipients_count < rcount; recipients_count++)
+   else if (*p == ' ')
+     {
+ #if !defined (COMPILE_UTILITY)
+-    DEBUG(D_deliver) debug_printf("**** SPOOL_IN - early Exim 4 spool file\n");
++    DEBUG(D_deliver) debug_printf_indent("**** SPOOL_IN - early Exim 4 spool file\n");
+ #endif
+     *p++ = 0;
+     (void)sscanf(CS p, "%d", &pno);
+@@ -842,7 +842,7 @@ for (recipients_count = 0; recipients_count < rcount; recipients_count++)
+     int flags;
+ 
+ #if !defined (COMPILE_UTILITY)
+-    DEBUG(D_deliver) debug_printf("**** SPOOL_IN - Exim standard format spoolfile\n");
++    DEBUG(D_deliver) debug_printf_indent("**** SPOOL_IN - Exim standard format spoolfile\n");
+ #endif
+ 
+     (void)sscanf(CS p+1, "%d", &flags);
+@@ -878,13 +878,13 @@ for (recipients_count = 0; recipients_count < rcount; recipients_count++)
+     }
+ #if !defined(COMPILE_UTILITY)
+   else
+-    { DEBUG(D_deliver) debug_printf("**** SPOOL_IN - No additional fields\n"); }
++    { DEBUG(D_deliver) debug_printf_indent("**** SPOOL_IN - No additional fields\n"); }
+ 
+   if (orcpt || dsn_flags)
+-    DEBUG(D_deliver) debug_printf("**** SPOOL_IN - address: <%s> orcpt: <%s> dsn_flags: 0x%x\n",
++    DEBUG(D_deliver) debug_printf_indent("**** SPOOL_IN - address: <%s> orcpt: <%s> dsn_flags: 0x%x\n",
+       big_buffer, orcpt, dsn_flags);
+   if (errors_to)
+-    DEBUG(D_deliver) debug_printf("**** SPOOL_IN - address: <%s> errorsto: <%s>\n",
++    DEBUG(D_deliver) debug_printf_indent("**** SPOOL_IN - address: <%s> errorsto: <%s>\n",
+       big_buffer, errors_to);
+ #endif
+ 
+@@ -956,7 +956,7 @@ line count by adding the body linecount to the header linecount. Close the file
+ and give a positive response. */
+ 
+ #ifndef COMPILE_UTILITY
+-DEBUG(D_deliver) debug_printf("body_linecount=%d message_linecount=%d\n",
++DEBUG(D_deliver) debug_printf_indent("body_linecount=%d message_linecount=%d\n",
+   body_linecount, message_linecount);
+ #endif  /* COMPILE_UTILITY */
+ 
+diff --git src/tls-gnu.c src/tls-gnu.c
+index a34633390..dafe1be0c 100644
+--- src/tls-gnu.c
++++ src/tls-gnu.c
+@@ -545,7 +545,10 @@ else
+ 
+ /* peercert is set in peer_status() */
+ tlsp->peerdn = state->peerdn;
+-tlsp->sni =    state->received_sni;
++
++/* do not corrupt sni sent by client; record sni rxd by server */
++if (!state->host)
++  tlsp->sni = state->received_sni;
+ 
+ /* record our certificate */
+   {
+@@ -2890,6 +2893,7 @@ if (!cipher_list)
+       cipher_list, &state, tlsp, errstr) != OK)
+     return FALSE;
+ 
++
+ #ifdef MEASURE_TIMING
+   report_time_since(&t0, US"client tls_init (delta)");
+ #endif
+diff --git src/transport.c src/transport.c
+index 2d8426f29..b1cda55fd 100644
+--- src/transport.c
++++ src/transport.c
+@@ -1661,6 +1661,7 @@ DEBUG(D_transport)
+   debug_printf("transport_check_waiting entered\n");
+   debug_printf("  sequence=%d local_max=%d global_max=%d\n",
+     continue_sequence, local_message_max, connection_max_messages);
++  acl_level++;
+   }
+ 
+ /* Do nothing if we have hit the maximum number that can be send down one
+@@ -1670,23 +1671,23 @@ if (connection_max_messages >= 0) local_message_max = connection_max_messages;
+ if (local_message_max > 0 && continue_sequence >= local_message_max)
+   {
+   DEBUG(D_transport)
+-    debug_printf("max messages for one connection reached: returning\n");
+-  return FALSE;
++    debug_printf_indent("max messages for one connection reached: returning\n");
++  goto retfalse;
+   }
+ 
+ /* Open the waiting information database. */
+ 
+ if (!(dbm_file = dbfn_open(string_sprintf("wait-%.200s", transport_name),
+ 			  O_RDWR, &dbblock, TRUE, TRUE)))
+-  return FALSE;
++  goto retfalse;
+ 
+ /* See if there is a record for this host; if not, there's nothing to do. */
+ 
+ if (!(host_record = dbfn_read(dbm_file, hostname)))
+   {
+   dbfn_close(dbm_file);
+-  DEBUG(D_transport) debug_printf("no messages waiting for %s\n", hostname);
+-  return FALSE;
++  DEBUG(D_transport) debug_printf_indent("no messages waiting for %s\n", hostname);
++  goto retfalse;
+   }
+ 
+ /* If the data in the record looks corrupt, just log something and
+@@ -1697,7 +1698,7 @@ if (host_record->count > WAIT_NAME_MAX)
+   dbfn_close(dbm_file);
+   log_write(0, LOG_MAIN|LOG_PANIC, "smtp-wait database entry for %s has bad "
+     "count=%d (max=%d)", hostname, host_record->count, WAIT_NAME_MAX);
+-  return FALSE;
++  goto retfalse;
+   }
+ 
+ /* Scan the message ids in the record from the end towards the beginning,
+@@ -1835,8 +1836,8 @@ while (1)
+   if (host_length <= 0)
+     {
+     dbfn_close(dbm_file);
+-    DEBUG(D_transport) debug_printf("waiting messages already delivered\n");
+-    return FALSE;
++    DEBUG(D_transport) debug_printf_indent("waiting messages already delivered\n");
++    goto retfalse;
+     }
+ 
+   /* we were not able to find an acceptable message, nor was there a
+@@ -1847,7 +1848,7 @@ while (1)
+     {
+     Ustrcpy(new_message_id, message_id);
+     dbfn_close(dbm_file);
+-    return FALSE;
++    goto retfalse;
+     }
+   }		/* we need to process a continuation record */
+ 
+@@ -1865,7 +1866,12 @@ if (host_length > 0)
+   }
+ 
+ dbfn_close(dbm_file);
++DEBUG(D_transport) {acl_level--; debug_printf("transport_check_waiting: TRUE\n"); }
+ return TRUE;
++
++retfalse:
++DEBUG(D_transport) {acl_level--; debug_printf("transport_check_waiting: FALSE\n"); }
++return FALSE;
+ }
+ 
+ /*************************************************
+@@ -1877,7 +1883,7 @@ void
+ transport_do_pass_socket(const uschar *transport_name, const uschar *hostname,
+   const uschar *hostaddress, uschar *id, int socket_fd)
+ {
+-int i = 20;
++int i = 22;
+ const uschar **argv;
+ 
+ /* Set up the calling arguments; use the standard function for the basics,
+@@ -1898,6 +1904,12 @@ if (smtp_peer_options & OPTION_TLS)
+     argv[i++] = sending_ip_address;
+     argv[i++] = string_sprintf("%d", sending_port);
+     argv[i++] = tls_out.active.sock >= 0 ? tls_out.cipher : continue_proxy_cipher;
++
++    if (tls_out.sni)
++      {
++      argv[i++] = tls_out.dane_verified ? US"-MCr" : US"-MCs";
++      argv[i++] = tls_out.sni;
++      }
+     }
+   else
+     argv[i++] = US"-MCT";
+diff --git src/transports/smtp.c src/transports/smtp.c
+index d63379e37..7fc2a48bb 100644
+--- src/transports/smtp.c
++++ src/transports/smtp.c
+@@ -1620,8 +1620,8 @@ return FALSE;
+ 
+ typedef struct smtp_compare_s
+ {
+-    uschar                          *current_sender_address;
+-    struct transport_instance       *tblock;
++    uschar *			current_sender_address;
++    struct transport_instance *	tblock;
+ } smtp_compare_t;
+ 
+ 
+@@ -1991,6 +1991,74 @@ if (sx->smtps)
+   }
+ #endif
+ 
++#ifdef SUPPORT_DANE
++/* If we have a proxied TLS connection, check usability for this message */
++
++if (continue_hostname && continue_proxy_cipher)
++  {
++  int rc;
++  const uschar * sni = US"";
++
++  /* Check if the message will be DANE-verified; if so force its SNI */
++
++  smtp_port_for_connect(sx->conn_args.host, sx->port);
++  if (  sx->conn_args.host->dnssec == DS_YES
++     && (  sx->dane_required
++	|| verify_check_given_host(CUSS &ob->hosts_try_dane, sx->conn_args.host) == OK
++     )  )
++    switch (rc = tlsa_lookup(sx->conn_args.host, &sx->conn_args.tlsa_dnsa, sx->dane_required))
++      {
++      case OK:		sx->conn_args.dane = TRUE;
++			ob->tls_tempfail_tryclear = FALSE;	/* force TLS */
++			ob->tls_sni = sx->first_addr->domain;	/* force SNI */
++			break;
++      case FAIL_FORCED:	break;
++      default:		set_errno_nohost(sx->addrlist, ERRNO_DNSDEFER,
++			      string_sprintf("DANE error: tlsa lookup %s",
++				rc_to_string(rc)),
++			      rc, FALSE, &sx->delivery_start);
++# ifndef DISABLE_EVENT
++			    (void) event_raise(sx->conn_args.tblock->event_action,
++			      US"dane:fail", sx->dane_required
++				?  US"dane-required" : US"dnssec-invalid");
++# endif
++			    return rc;
++      }
++
++  /* If the SNI required for the new message differs from the existing conn
++  drop the connection to force a new one. */
++
++  if (ob->tls_sni && !(sni = expand_cstring(ob->tls_sni)))
++    log_write(0, LOG_MAIN|LOG_PANIC,
++      "<%s>: failed to expand transport's tls_sni value: %s",
++      sx->addrlist->address, expand_string_message);
++
++  if (  (continue_proxy_sni ? (Ustrcmp(continue_proxy_sni, sni) == 0) : !*sni)
++     && continue_proxy_dane == sx->conn_args.dane)
++    {
++    tls_out.sni = US sni;
++    if ((tls_out.dane_verified = continue_proxy_dane))
++      sx->conn_args.host->dnssec = DS_YES;
++    }
++  else
++    {
++    DEBUG(D_transport)
++      debug_printf("Closing proxied-TLS connection due to SNI mismatch\n");
++
++    HDEBUG(D_transport|D_acl|D_v) debug_printf_indent("  SMTP>> QUIT\n");
++    write(0, "QUIT\r\n", 6);
++    close(0);
++    tls_out.dane_verified = FALSE;
++    continue_hostname = continue_proxy_cipher = NULL;
++    f.continue_more = FALSE;
++    continue_sequence = 1;	/* Unfortunately, this process cannot affect success log
++    				which is done by delivery proc.  Would have to pass this
++				back through reporting pipe. */
++    }
++  }
++#endif
++
++
+ /* Make a connection to the host if this isn't a continued delivery, and handle
+ the initial interaction and HELO/EHLO/LHLO. Connect timeout errors are handled
+ specially so they can be identified for retries. */
+@@ -3430,7 +3498,7 @@ BOOL pass_message = FALSE;
+ uschar *message = NULL;
+ uschar new_message_id[MESSAGE_ID_LENGTH + 1];
+ smtp_context * sx = store_get(sizeof(*sx), TRUE);	/* tainted, for the data buffers */
+-#if !defined(DISABLE_TLS) && defined(SUPPORT_DANE)
++#ifdef SUPPORT_DANE
+ BOOL dane_held;
+ #endif
+ 
+@@ -3449,7 +3517,7 @@ sx->conn_args.tblock = tblock;
+ gettimeofday(&sx->delivery_start, NULL);
+ sx->sync_addr = sx->first_addr = addrlist;
+ 
+-#if !defined(DISABLE_TLS) && defined(SUPPORT_DANE)
++#ifdef SUPPORT_DANE
+ DANE_DOMAINS:
+ dane_held = FALSE;
+ #endif
+@@ -3464,7 +3532,7 @@ if ((rc = smtp_setup_conn(sx, suppress_tls)) != OK)
+   goto TIDYUP;
+   }
+ 
+-#if !defined(DISABLE_TLS) && defined(SUPPORT_DANE)
++#ifdef SUPPORT_DANE
+ /* If the connection used DANE, ignore for now any addresses with incompatible
+ domains.  The SNI has to be the domain.  Arrange a whole new TCP conn later,
+ just in case only TLS isn't enough. */
+@@ -4184,8 +4252,8 @@ if (sx->completed_addr && sx->ok && sx->send_quit)
+   t_compare.tblock = tblock;
+   t_compare.current_sender_address = sender_address;
+ 
+-  if (  sx->first_addr != NULL
+-     || f.continue_more
++  if (  sx->first_addr != NULL		/* more addrs for this message */
++     || f.continue_more			/* more addrs for coninued-host */
+      || (
+ #ifndef DISABLE_TLS
+ 	   (  tls_out.active.sock < 0  &&  !continue_proxy_cipher
+@@ -4232,7 +4300,7 @@ if (sx->completed_addr && sx->ok && sx->send_quit)
+ 
+ 
+       if (sx->first_addr != NULL)	/* More addresses still to be sent */
+-        {				/*   on this connection            */
++        {				/*   for this message              */
+         continue_sequence++;		/* Causes * in logging */
+ 	pipelining_active = sx->pipelining_used;    /* was cleared at DATA */
+         goto SEND_MESSAGE;
+@@ -4256,6 +4324,7 @@ if (sx->completed_addr && sx->ok && sx->send_quit)
+ 
+ 	  tls_close(sx->cctx.tls_ctx, TLS_SHUTDOWN_WAIT);
+ 	  sx->cctx.tls_ctx = NULL;
++	  tls_out.active.sock = -1;
+ 	  smtp_peer_options = smtp_peer_options_wrap;
+ 	  sx->ok = !sx->smtps
+ 	    && smtp_write_command(sx, SCMD_FLUSH, "EHLO %s\r\n", sx->helo_data)
+@@ -4399,7 +4468,7 @@ if (sx->send_quit)
+ (void) event_raise(tblock->event_action, US"tcp:close", NULL);
+ #endif
+ 
+-#if !defined(DISABLE_TLS) && defined(SUPPORT_DANE)
++#ifdef SUPPORT_DANE
+ if (dane_held)
+   {
+   sx->first_addr = NULL;
+@@ -4425,7 +4494,7 @@ continue_hostname = NULL;
+ return yield;
+ 
+ TIDYUP:
+-#if !defined(DISABLE_TLS) && defined(SUPPORT_DANE)
++#ifdef SUPPORT_DANE
+ if (dane_held) for (address_item * a = sx->addrlist->next; a; a = a->next)
+   if (a->transport_return == DANE)
+     a->transport_return = PENDING_DEFER;
+diff --git src/transports/smtp.h src/transports/smtp.h
+index 6e63a002d..213bca1a8 100644
+--- src/transports/smtp.h
++++ src/transports/smtp.h
+@@ -87,7 +87,7 @@ typedef struct {
+ # ifdef EXPERIMENTAL_TLS_RESUME
+   uschar *tls_resumption_hosts;
+ # endif
+-  uschar *tls_sni;
++  const uschar *tls_sni;
+   uschar *tls_verify_certificates;
+   int     tls_dh_min_bits;
+   BOOL    tls_tempfail_tryclear;
+-- 
+2.28.0
+
