@@ -20,6 +20,7 @@ include/ncnn/paramdict.h
 include/ncnn/pipeline.h
 include/ncnn/pipelinecache.h
 include/ncnn/platform.h
+include/ncnn/simplestl.h
 lib/cmake/ncnn/ncnn-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/ncnn/ncnn.cmake
 lib/cmake/ncnn/ncnnConfig.cmake
