@@ -169,7 +169,6 @@
     SUBDIR += freerdp
     SUBDIR += freeswitch
     SUBDIR += freevrrpd
-    SUBDIR += frr6
     SUBDIR += frr7
     SUBDIR += frr7-pythontools
     SUBDIR += fspclient

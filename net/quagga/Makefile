@@ -18,7 +18,7 @@ BUILD_DEPENDS=	gawk:lang/gawk
 USES=		compiler:c11 cpe gmake libtool makeinfo \
 		perl5 readline ssl
 
-CONFLICTS=	frr5 frr6 frr7 openbgpd pimd zebra
+CONFLICTS=	frr7 openbgpd pimd zebra
 
 GNU_CONFIGURE=	yes
 CFLAGS+=	-fcommon
