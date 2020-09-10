@@ -637,6 +637,7 @@
     SUBDIR += fam
     SUBDIR += fastcrc
     SUBDIR += fb-adb
+    SUBDIR += fbthrift
     SUBDIR += fc++
     SUBDIR += fhist
     SUBDIR += fifechan
