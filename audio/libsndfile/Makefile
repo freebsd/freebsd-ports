@@ -2,8 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	libsndfile
-DISTVERSION=	1.0.29pre.20200620
+DISTVERSION=	1.0.29
 CATEGORIES=	audio
+MASTER_SITES=	https://github.com/erikd/${PORTNAME}/releases/download/v1.0.29/
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Reading and writing files containing sampled sound (like WAV or AIFF)
@@ -11,23 +12,26 @@ COMMENT=	Reading and writing files containing sampled sound (like WAV or AIFF)
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake cpe localbase pkgconfig python:build,test shebangfix
+USES=		cmake cpe localbase pkgconfig python:build,test shebangfix \
+		tar:bz2
 SHEBANG_FILES=	programs/test-sndfile-metadata-set.py \
 		src/binheader_writef_check.py \
 		src/create_symbols_file.py
 
 CPE_VENDOR=	${CPE_PRODUCT}_project
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	erikd
-GH_TAGNAME=	2ccb23f
-
 USE_LDCONFIG=	yes
+
+CMAKE_ARGS=	-DCMAKE_DISABLE_FIND_PACKAGE_ALSA:BOOL=True \
+		-DCMAKE_DISABLE_FIND_PACKAGE_Sndio:BOOL=True \
+		-DCMAKE_DISABLE_FIND_PACKAGE_Speex:BOOL=True \
+		-DCMAKE_DISABLE_FIND_PACKAGE_SQLite3:BOOL=True
 
 OPTIONS_DEFINE=	DOCS EXTERNAL STATIC TEST
 OPTIONS_SUB=	yes
 OPTIONS_DEFAULT=	EXTERNAL
 EXTERNAL_DESC=	Enable FLAC, Ogg Vorbis, Opus support
+TEST_DESC=	Build tests (forces static library only)
 TEST_IMPLIES=	STATIC
 
 EXTERNAL_LIB_DEPENDS=	libFLAC.so:audio/flac \
