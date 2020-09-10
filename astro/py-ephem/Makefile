@@ -7,7 +7,7 @@ CATEGORIES=	astro math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rhurlin@gwdg.de
+MAINTAINER=	rhurlin@FreeBSD.org
 COMMENT=	Compute positions of the planets and stars
 
 LICENSE=	LGPL3

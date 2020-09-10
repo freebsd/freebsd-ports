@@ -9,7 +9,7 @@ MASTER_SITES=	http://ess.r-project.org/downloads/ess/ \
 		http://stat.ethz.ch/ESS/downloads/ess/
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
-MAINTAINER=	rhurlin@gwdg.de
+MAINTAINER=	rhurlin@FreeBSD.org
 COMMENT=	R support for Emacsen
 
 LICENSE=	GPLv2+

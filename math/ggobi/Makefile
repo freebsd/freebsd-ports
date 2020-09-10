@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	math graphics
 MASTER_SITES=	http://www.ggobi.org/downloads/
 
-MAINTAINER=	rhurlin@gwdg.de
+MAINTAINER=	rhurlin@FreeBSD.org
 COMMENT=	Data visualization system
 
 LICENSE=	EPL

@@ -6,7 +6,7 @@ PORTVERSION=	1.2.1
 PORTREVISION=	1
 CATEGORIES=	devel
 
-MAINTAINER=	rhurlin@gwdg.de
+MAINTAINER=	rhurlin@FreeBSD.org
 COMMENT=	Library For Reading And Writing LAS-Format Data
 
 LICENSE=	BSD3CLAUSE BSL MIT

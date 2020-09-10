@@ -7,7 +7,7 @@ CATEGORIES=	databases java geography
 MASTER_SITES=	http://postgis.net/stuff/
 EXTRACT_SUFX=	.jar
 
-MAINTAINER=	rhurlin@gwdg.de
+MAINTAINER=	rhurlin@FreeBSD.org
 COMMENT=	PostGIS spatial data structures for JDBC
 
 LICENSE=	GPLv2 LGPL21

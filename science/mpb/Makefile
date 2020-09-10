@@ -7,7 +7,7 @@ PORTREVISION=	15
 CATEGORIES=	science
 MASTER_SITES=	http://ab-initio.mit.edu/mpb/
 
-MAINTAINER=	rhurlin@gwdg.de
+MAINTAINER=	rhurlin@FreeBSD.org
 COMMENT=	MIT Photonic-Bands
 
 LICENSE=	GPLv2

@@ -6,7 +6,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	2.6.2
 CATEGORIES=	math
 
-MAINTAINER=	rhurlin@gwdg.de
+MAINTAINER=	rhurlin@FreeBSD.org
 COMMENT=	Nonlinear optimization library
 
 LICENSE=	LGPL21 MIT

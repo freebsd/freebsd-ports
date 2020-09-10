@@ -8,7 +8,7 @@ CATEGORIES=	astro
 MASTER_SITES=	http://astrometry.net/downloads/
 DISTNAME=	${PORTNAME}.net-${PORTVERSION}
 
-MAINTAINER=	rhurlin@gwdg.de
+MAINTAINER=	rhurlin@FreeBSD.org
 COMMENT=	Astronomic calibration service
 
 LICENSE=	GPLv2

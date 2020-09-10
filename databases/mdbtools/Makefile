@@ -5,7 +5,7 @@ PORTNAME=	mdbtools
 DISTVERSION=	0.8.2
 CATEGORIES=	databases
 
-MAINTAINER=	rhurlin@gwdg.de
+MAINTAINER=	rhurlin@FreeBSD.org
 COMMENT=	Utilities and libraries to export data from MS Access databases (.mdb)
 
 LICENSE=	GPLv2

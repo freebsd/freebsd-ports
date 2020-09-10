@@ -6,7 +6,7 @@ PORTVERSION=	7.7.0
 CATEGORIES=	math
 MASTER_SITES=	SF/saga-gis/SAGA%20-%20${PORTVERSION:C/\.[[:digit:]]\.[[:digit:]]*$//}/SAGA%20-%20${PORTVERSION}
 
-MAINTAINER=	rhurlin@gwdg.de
+MAINTAINER=	rhurlin@FreeBSD.org
 COMMENT=	System for Automated Geoscientific Analyses
 
 LICENSE=	GPLv2 LGPL21
