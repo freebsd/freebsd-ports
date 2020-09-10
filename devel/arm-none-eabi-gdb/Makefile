@@ -7,17 +7,22 @@ PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 PKGNAMEPREFIX=	arm-none-eabi-
-DISTNAME=	gdb-${PORTVERSION}
 
-MAINTAINER=	imp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU GDB for the arm bare metal target
+
+LICENSE=	GPLv3
+
+DEPRECATED=	This is an old, obsolete version of gdb
+EXPIRATION_DATA=2020-12-31
+
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 USES=		gmake tar:xz iconv gmake libtool
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--target=arm-none-eabi --program-prefix=arm-none-eabi- --disable-nls \
-		--disable-werror
+		--disable-werror --with-python=no
 
 pre-configure:
 	cd ${WRKSRC} ; ${RM} -r dejagnu expect tcl texinfo
