@@ -8,7 +8,7 @@ CATEGORIES=	devel
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Extensible I/O abstraction for dealing with structured file formats
 
 LICENSE=	GPLv2 LGPL21

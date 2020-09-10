@@ -7,7 +7,7 @@ PORTVERSION=	0.2.9
 CATEGORIES=	print
 MASTER_SITES=	http://libspectre.freedesktop.org/releases/
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Small library for rendering Postscript documents
 
 LICENSE=	GPLv2

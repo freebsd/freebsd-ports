@@ -10,7 +10,7 @@ MASTER_SITES=	GNOME/sources/GConf/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 DISTNAME=	GConf-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Configuration database system for GNOME
 
 LICENSE=	LGPL20

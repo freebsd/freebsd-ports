@@ -7,7 +7,7 @@ CATEGORIES=	accessibility x11-toolkits
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Assisted Technology Provider module for GTK+
 
 LICENSE=	LGPL21

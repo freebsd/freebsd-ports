@@ -11,7 +11,7 @@ PKGNAMESUFFIX=	3
 DISTNAME=	gtk+-${PORTVERSION}
 DIST_SUBDIR=	gnome
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Gimp Toolkit for X11 GUI (current stable version)
 
 LICENSE=	LGPL20

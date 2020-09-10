@@ -8,7 +8,7 @@ MASTER_SITES=	GNOME
 DISTNAME=	dconf-${PORTVERSION}
 DIST_SUBDIR=	gnome3
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Configuration database system for GNOME
 
 LICENSE=	LGPL21

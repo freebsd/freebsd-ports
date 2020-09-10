@@ -6,7 +6,7 @@ PORTVERSION=	0.54.3
 CATEGORIES=	devel python
 MASTER_SITES=	https://github.com/mesonbuild/${PORTNAME}/releases/download/${PORTVERSION}/
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	High performance build system
 
 LICENSE=	APACHE20

@@ -6,7 +6,7 @@ PORTVERSION=	1.0
 CATEGORIES=	sysutils
 DISTFILES=	# none
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Common startup and shutdown subroutines used by GNOME scripts
 
 LICENSE=	BSD2CLAUSE

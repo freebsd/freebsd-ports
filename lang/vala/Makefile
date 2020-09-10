@@ -7,7 +7,7 @@ PORTEPOCH=	1
 CATEGORIES=	lang gnome
 MASTER_SITES=	GNOME
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Programming language and compiler that converts Vala code into C code
 
 LICENSE=	LGPL21

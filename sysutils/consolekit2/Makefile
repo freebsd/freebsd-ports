@@ -9,7 +9,7 @@ MASTER_SITES=	https://github.com/ConsoleKit2/ConsoleKit2/releases/download/${POR
 PKGNAMESUFFIX=	2
 DISTNAME=	ConsoleKit2-${PORTVERSION}
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Framework for defining and tracking users
 
 LICENSE=	GPLv2

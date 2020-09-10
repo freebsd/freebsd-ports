@@ -9,7 +9,7 @@ CATEGORIES=	devel
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Library for creating trees of CORBA IDL files
 
 USES=		bison:alias gettext gmake gnome libtool:keepla localbase \

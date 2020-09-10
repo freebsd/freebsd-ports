@@ -8,7 +8,7 @@ CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Open-source framework for the layout and rendering of i18n text
 
 LICENSE=	LGPL20

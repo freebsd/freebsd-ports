@@ -8,7 +8,7 @@ CATEGORIES=	net
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Network-related giomodules for glib
 
 LICENSE=	LGPL21

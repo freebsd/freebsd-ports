@@ -11,7 +11,7 @@ PKGNAMESUFFIX?=	3-common
 DISTNAME=	pygobject-${PORTVERSION}
 DIST_SUBDIR=	gnome
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	desktop@FreeBSD.org
 COMMENT?=	Common files for the Python bindings for GObject
 
 LICENSE=	LGPL21

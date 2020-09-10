@@ -6,7 +6,7 @@ DISTVERSION=	2.7.2
 PORTREVISION?=	0
 CATEGORIES=	print
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	desktop@FreeBSD.org
 COMMENT?=	OpenType text shaping engine
 
 LICENSE=	MIT

@@ -6,7 +6,7 @@ PORTVERSION=	0.24
 CATEGORIES=	devel
 MASTER_SITES=	http://freedesktop.org/software/${PORTNAME}/releases/
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Couple of command line utilities for working with desktop entries
 
 LICENSE=	GPLv2+

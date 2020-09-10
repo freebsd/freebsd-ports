@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	GNOME
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Code documentation system, originally for GTK+
 
 LICENSE=	GPLv2

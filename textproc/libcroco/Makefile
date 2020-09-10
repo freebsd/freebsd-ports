@@ -6,7 +6,7 @@ PORTVERSION=	0.6.13
 CATEGORIES=	textproc gnome
 MASTER_SITES=	GNOME
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	CSS2 parsing library
 
 LICENSE=	LGPL21

@@ -6,7 +6,7 @@ PORTVERSION=	3.24.20
 CATEGORIES=	graphics
 DIST_SUBDIR=	gnome
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Gtk-update-icon-cache utility from the Gtk+ toolkit
 
 LICENSE=	LGPL20

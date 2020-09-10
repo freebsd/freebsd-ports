@@ -7,7 +7,7 @@ CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	SOAP (Simple Object Access Protocol) implementation in C
 
 LICENSE=	LGPL20

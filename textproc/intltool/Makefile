@@ -8,7 +8,7 @@ CATEGORIES=	textproc gnome
 MASTER_SITES=	https://launchpad.net/intltool/trunk/${PORTVERSION}/+download/
 DIST_SUBDIR=	gnome
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Tools to internationalize various kinds of data files
 
 LICENSE=	GPLv2

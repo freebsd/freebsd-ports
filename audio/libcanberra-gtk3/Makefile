@@ -5,7 +5,7 @@
 CATEGORIES=	audio devel
 PKGNAMESUFFIX=	-gtk3
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Implementation of the Freedesktop sound theme spec
 
 MASTERDIR=	${.CURDIR}/../../audio/libcanberra

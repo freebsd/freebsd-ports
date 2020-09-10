@@ -6,7 +6,7 @@ PORTVERSION=	1.16
 CATEGORIES=	converters devel
 MASTER_SITES=	GNU
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Character set conversion library
 
 LICENSE=	GPLv3

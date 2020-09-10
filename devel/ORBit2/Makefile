@@ -9,7 +9,7 @@ CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	High-performance CORBA ORB with support for the C language
 
 USES=		tar:bzip2

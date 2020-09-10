@@ -8,7 +8,7 @@ MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	2
 DIST_SUBDIR=	gnome
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Graphic library for GTK+
 
 LICENSE=	LGPL20+

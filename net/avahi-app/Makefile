@@ -8,7 +8,7 @@ CATEGORIES?=	net dns
 MASTER_SITES=	http://www.avahi.org/download/
 PKGNAMESUFFIX?=	-app
 
-MAINTAINER?=	gnome@FreeBSD.org
+MAINTAINER?=	desktop@FreeBSD.org
 COMMENT?=	Service discovery on a local network
 
 LICENSE=	LGPL21+

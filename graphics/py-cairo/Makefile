@@ -9,7 +9,7 @@ MASTER_SITES=	https://github.com/pygobject/pycairo/releases/download/v${PORTVERS
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Python 2 bindings for Cairo
 
 LICENSE=	LGPL21 MPL11

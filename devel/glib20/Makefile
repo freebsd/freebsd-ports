@@ -9,7 +9,7 @@ CATEGORIES=	devel
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Some useful routines of C programming (current stable version)
 
 LICENSE=	LGPL20

@@ -6,7 +6,7 @@ PORTVERSION=	0.7.8
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Library for desktop notifications
 
 LICENSE=	LGPL21

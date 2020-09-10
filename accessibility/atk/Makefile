@@ -8,7 +8,7 @@ CATEGORIES=	accessibility devel
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	GNOME accessibility toolkit (ATK)
 
 LICENSE=	LGPL20+

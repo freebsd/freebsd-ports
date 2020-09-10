@@ -5,7 +5,7 @@ PORTREVISION=	0
 CATEGORIES=	net
 PKGNAMESUFFIX=	-libdns
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	mDNSResponder compatibility from Avahi
 
 LIB_DEPENDS=	libavahi-common.so:net/avahi-app

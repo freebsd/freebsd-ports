@@ -6,7 +6,7 @@ PORTVERSION=	0.17
 CATEGORIES=	misc gnome
 MASTER_SITES=	http://icon-theme.freedesktop.org/releases/
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	High-color icon theme shell from the FreeDesktop project
 
 LICENSE=	GPLv2
