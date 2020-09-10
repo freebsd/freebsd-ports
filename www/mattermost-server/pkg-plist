@@ -40,4 +40,5 @@ etc/mattermost/config.json.sample
 %%WWWDIR%%/templates/unsupported_browser.html
 %%WWWDIR%%/templates/unsupported_browser.js
 %%WWWDIR%%/templates/verify_body.html
+%%WWWDIR%%/templates/warn_metric_ack.html
 %%WWWDIR%%/templates/welcome_body.html
