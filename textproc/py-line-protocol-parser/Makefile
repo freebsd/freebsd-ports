@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	line-protocol-parser
-PORTVERSION=	1.0.2
+PORTVERSION=	1.1.0
 CATEGORIES=	textproc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
