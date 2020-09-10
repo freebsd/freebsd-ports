@@ -13,8 +13,6 @@ COMMENT=	Window manager that arranges windows in a tree
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_i386=	constant expression evaluates to -2147483648 which cannot be narrowed to type 'unsigned long'
-
 USES=		gmake imake:env tar:bzip2 xorg
 USE_XORG=	x11 ice sm xext xmu xpm xt xxf86vm
 
@@ -28,6 +26,8 @@ post-patch:
 		'/^PREFIX/s| =| ?=| ; \
 		 /^CXXFLAGS/s| =| ?=| ; \
 		 s|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e \
+		'/DF_GRABKEYBOARD/s|1L|1UL|' ${WRKSRC}/src/client.h
 
 do-install:
 	(cd ${WRKSRC}/src && ${INSTALL_PROGRAM} treewm \
