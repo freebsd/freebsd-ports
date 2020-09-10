@@ -1,4 +1,4 @@
---- metricbeat/metricbeat.yml.orig	2020-03-25 18:24:22 UTC
+--- metricbeat/metricbeat.yml.orig	2020-08-11 15:19:45 UTC
 +++ metricbeat/metricbeat.yml
 @@ -123,8 +123,8 @@ output.elasticsearch:
  processors:
@@ -9,5 +9,5 @@
 +#  - add_docker_metadata: ~
 +#  - add_kubernetes_metadata: ~
  
- #================================ Logging =====================================
  
+ # ================================== Logging ===================================

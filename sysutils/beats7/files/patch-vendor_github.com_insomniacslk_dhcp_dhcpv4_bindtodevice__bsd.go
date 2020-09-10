@@ -1,4 +1,4 @@
---- vendor/github.com/insomniacslk/dhcp/dhcpv4/bindtodevice_bsd.go.orig	2020-05-24 10:11:07 UTC
+--- vendor/github.com/insomniacslk/dhcp/dhcpv4/bindtodevice_bsd.go.orig	2020-08-22 20:10:53 UTC
 +++ vendor/github.com/insomniacslk/dhcp/dhcpv4/bindtodevice_bsd.go
 @@ -0,0 +1,18 @@
 +// build freebsd openbsd netbsd

@@ -30,7 +30,7 @@ load_rc_config $name
 start_precmd=filebeat_prestart
 command=/usr/sbin/daemon
 pidfile="/var/run/${name}"
-command_args="-rP ${pidfile} %%PREFIX%%/sbin/${name} ${filebeat_flags} -path.config ${filebeat_config} --path.home ${filebeat_home} --path.data ${filebeat_data} --path.logs ${filebeat_logs}"
+command_args="-frP ${pidfile} %%PREFIX%%/sbin/${name} ${filebeat_flags} -path.config ${filebeat_config} --path.home ${filebeat_home} --path.data ${filebeat_data} --path.logs ${filebeat_logs}"
 
 filebeat_prestart() {
 # Have to empty rc_flags so they don't get passed to daemon(8)
