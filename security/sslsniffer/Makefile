@@ -21,13 +21,6 @@ PLIST_FILES=	bin/sslsniffer
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.pre.mk>
-
-.if ${SSL_DEFAULT} == base
-BROKEN_FreeBSD_12=	incomplete definition of type 'struct evp_pkey_st'
-BROKEN_FreeBSD_13=	incomplete definition of type 'struct evp_pkey_st'
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sslsniffer ${STAGEDIR}${PREFIX}/bin
 
@@ -35,4 +28,4 @@ do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

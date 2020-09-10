@@ -21,13 +21,6 @@ USE_GNOME=	libxml2
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${SSL_DEFAULT} == base
-BROKEN_FreeBSD_12=	variable has incomplete type 'EVP_CIPHER_CTX' (aka 'evp_cipher_ctx_st')
-BROKEN_FreeBSD_13=	variable has incomplete type 'EVP_CIPHER_CTX' (aka 'evp_cipher_ctx_st')
-.endif
-
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} \
 		${REINPLACE_CMD} -e 's|dclib-0.3/||g'
@@ -35,4 +28,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-D_XOPEN_SOURCE=500||g; \
 		s|-D_BSD_SOURCE||g' ${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
