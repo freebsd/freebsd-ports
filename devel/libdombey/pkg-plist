@@ -6,5 +6,5 @@ lib/libdombeythreads.so
 lib/libdombeythreads.so.%%PORTVERSION%%
 lib/libdombeyevents.so
 lib/libdombeyevents.so.%%PORTVERSION%%
-man/man8/libdombey.8.gz
-man/man8/libdombeyevents.8.gz
+man/man3/libdombey.3.gz
+man/man3/libdombeyevents.3.gz
