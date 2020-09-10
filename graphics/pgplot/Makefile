@@ -3,7 +3,7 @@
 
 PORTNAME=	pgplot
 PORTVERSION=	5.2.2
-PORTREVISION=	28
+PORTREVISION=	29
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.astro.caltech.edu/pub/pgplot/
 DISTNAME=	${PORTNAME}${PORTVERSION:R}
@@ -14,7 +14,7 @@ COMMENT=	C/FORTRAN library for drawing graphs on a variety of display devices
 LICENSE=	PGPLOT
 LICENSE_NAME=	PGPLOT License
 LICENSE_FILE=	${WRKSRC}/copyright.notice
-LICENSE_PERMS=	no-dist-sell no-pkg-sell
+LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
