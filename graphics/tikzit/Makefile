@@ -2,6 +2,7 @@
 
 PORTNAME=	tikzit
 DISTVERSION=	2.1.6
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	lwhsu@FreeBSD.org

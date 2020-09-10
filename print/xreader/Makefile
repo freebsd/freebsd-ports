@@ -3,6 +3,7 @@
 
 PORTNAME=	xreader
 PORTVERSION=	2.6.4
+PORTREVISION=	1
 CATEGORIES=	print
 
 MAINTAINER=	danfe@FreeBSD.org
