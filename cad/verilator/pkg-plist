@@ -1,6 +1,8 @@
 bin/verilator
 bin/verilator_bin
+%%INSTALL_DBG_EXECUTABLES%%bin/verilator_bin_dbg
 bin/verilator_coverage
+%%INSTALL_DBG_EXECUTABLES%%bin/verilator_coverage_bin_dbg
 bin/verilator_gantt
 bin/verilator_profcfunc
 libdata/pkgconfig/verilator.pc
