@@ -1,6 +1,6 @@
---- man/Makefile.orig
+--- man/Makefile.orig	2010-04-27 06:31:00 UTC
 +++ man/Makefile
-@@ -3,13 +3,10 @@
+@@ -3,12 +3,9 @@
  
  include ../Config
  
@@ -8,10 +8,9 @@
 +MAN_PAGES := $(wildcard *.1)
  
  man: $(MAN_PAGES)
- 
+-
 -%.1.gz: %.1
 -	@gzip -c $< > $@
--
+ 
  install: $(MAN_PAGES)
  	@install -d $(MAN_DIR)
- 	@install -m 0644 $^ $(MAN_DIR)

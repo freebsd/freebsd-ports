@@ -1,4 +1,4 @@
---- doc/eukleides.texi.orig
+--- doc/eukleides.texi.orig	2010-04-27 06:31:00 UTC
 +++ doc/eukleides.texi
 @@ -6,12 +6,14 @@
  

@@ -1,6 +1,6 @@
---- build/Makefile.orig
+--- build/Makefile.orig	2010-04-27 06:31:00 UTC
 +++ build/Makefile
-@@ -12,12 +12,12 @@
+@@ -12,12 +12,12 @@ LFLAGS = -8
  YACC = bison
  YFLAGS = -d
  CC = gcc
@@ -9,8 +9,9 @@
  ifneq ($(strip $(LOCALES)),)
  MOFLAGS = -DMO_DIR=\"$(MO_DIR)\" 
  endif
- CFLAGS = -Wall -D__$(BINARY)__ $(IFLAGS) $(MOFLAGS)
+-CFLAGS = -Wall -D__$(BINARY)__ $(IFLAGS) $(MOFLAGS)
 -LDFLAGS = -lncurses -lreadline -lm
++CFLAGS = -Wall -D__$(BINARY)__ $(IFLAGS) $(MOFLAGS) %%CFLAGS%%
 +LDFLAGS = -lncurses -lreadline -lm "-L%%LOCALBASE%%/lib" -lintl
  VPATH = $(COMMON_DIR):$(MAIN_DIR):$(BUILD_DIR)
  

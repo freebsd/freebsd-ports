@@ -1,6 +1,6 @@
---- bash/euktoeps.orig
+--- bash/euktoeps.orig	2010-04-27 06:31:00 UTC
 +++ bash/euktoeps
-@@ -31,7 +31,7 @@
+@@ -31,7 +31,7 @@ USAGE
  exit $1
  }
  
