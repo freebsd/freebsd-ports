@@ -5,6 +5,11 @@ bin/gh
 %%MANPAGES%%man/man1/gh-alias-set.1.gz
 %%MANPAGES%%man/man1/gh-alias.1.gz
 %%MANPAGES%%man/man1/gh-api.1.gz
+%%MANPAGES%%man/man1/gh-auth-login.1.gz
+%%MANPAGES%%man/man1/gh-auth-logout.1.gz
+%%MANPAGES%%man/man1/gh-auth-refresh.1.gz
+%%MANPAGES%%man/man1/gh-auth-status.1.gz
+%%MANPAGES%%man/man1/gh-auth.1.gz
 %%MANPAGES%%man/man1/gh-completion.1.gz
 %%MANPAGES%%man/man1/gh-config-get.1.gz
 %%MANPAGES%%man/man1/gh-config-set.1.gz

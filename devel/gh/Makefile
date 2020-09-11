@@ -2,7 +2,7 @@
 
 PORTNAME=	gh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.11.1
+DISTVERSION=	0.12.0
 CATEGORIES=	devel
 
 MAINTAINER=	vulcan@wired.sh
@@ -33,7 +33,7 @@ GH_TUPLE=	AlecAivazis:survey:v2.0.7:alecaivazis_survey_v2/vendor/github.com/Alec
 		golang:crypto:75b288015ac9:golang_crypto/vendor/golang.org/x/crypto \
 		golang:net:ab3426394381:golang_net/vendor/golang.org/x/net \
 		golang:sys:669c56c373c4:golang_sys/vendor/golang.org/x/sys \
-		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
+		golang:text:v0.3.3:golang_text/vendor/golang.org/x/text \
 		google:go-cmp:v0.4.1:google_go_cmp/vendor/github.com/google/go-cmp \
 		google:goterm:fc88cf888a3f:google_goterm/vendor/github.com/google/goterm \
 		google:shlex:e7afc7fbc510:google_shlex/vendor/github.com/google/shlex \
@@ -81,7 +81,7 @@ COMPLETIONS_DESC=	Build and install shell completions for bash, fish and zsh
 MANPAGES_DESC=		Build and install auto-generated manpages
 
 pre-build:
-	${LN} -sf ${WRKSRC_muesli_termenv}/termenv_linux.go ${WRKSRC_muesli_termenv}/termenv_freebsd.go 
+	${LN} -sf ${WRKSRC_muesli_termenv}/termenv_linux.go ${WRKSRC_muesli_termenv}/termenv_freebsd.go
 
 do-build-COMPLETIONS-on:
 .for SHELL in bash fish zsh
