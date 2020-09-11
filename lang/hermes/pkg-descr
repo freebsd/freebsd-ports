@@ -1,0 +1,4 @@
+Hermes is a JavaScript engine optimized for fast start-up of React Native apps
+on Android. It features ahead-of-time static optimization and compact bytecode.
+
+WWW: https://github.com/facebook/hermes

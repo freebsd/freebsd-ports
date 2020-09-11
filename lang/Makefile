@@ -126,6 +126,7 @@
     SUBDIR += halide
     SUBDIR += harbour
     SUBDIR += haskell-mode.el
+    SUBDIR += hermes
     SUBDIR += hla
     SUBDIR += hs-brainfuck
     SUBDIR += hs-unlambda
