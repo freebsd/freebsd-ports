@@ -128,6 +128,7 @@ WAYLAND_LIB_DEPENDS=		libepoll-shim.so:devel/libepoll-shim \
 WAYLAND_CFLAGS=			-I${LOCALBASE}/include/libepoll-shim
 WAYLAND_LDFLAGS=		-lepoll-shim
 WAYLAND_MESON_TRUE=		wl
+WAYLAND_BROKEN=			Wayland bits compile but don't yet work at runtime
 
 GSTREAMER_USE=			GSTREAMER1=core
 GSTREAMER_MESON_TRUE=		gstreamer
