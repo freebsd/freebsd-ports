@@ -2,6 +2,7 @@
 
 PORTNAME=	sniproxy
 DISTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	krion@FreeBSD.org
@@ -23,6 +24,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	dlundquist
 
 GNU_CONFIGURE=	yes
+CFLAGS+=	-fcommon
 USE_LDCONFIG=	yes
 
 PLIST_FILES=	man/man5/sniproxy.conf.5.gz \
