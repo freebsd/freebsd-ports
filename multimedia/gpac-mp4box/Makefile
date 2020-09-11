@@ -7,7 +7,7 @@ DISTVERSION=	1.0.0
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	gpac-
 
-MAINTAINER=	pvizeli@yahoo.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for merge mpg4 from Gpac
 
 LICENSE=	LGPL21
