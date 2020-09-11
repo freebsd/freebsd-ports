@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pdal
-DISTVERSION=	2.1.0
+DISTVERSION=	2.2.0
 CATEGORIES=	math databases graphics
 
 MAINTAINER=	lbartoletti@FreeBSD.org
