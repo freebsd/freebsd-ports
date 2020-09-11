@@ -1,0 +1,9 @@
+include/virtualpg.h
+lib/libvirtualpg.a
+lib/libvirtualpg.so
+lib/libvirtualpg.so.0
+lib/libvirtualpg.so.0.1.1
+lib/mod_virtualpg.so
+lib/mod_virtualpg.so.0
+lib/mod_virtualpg.so.0.1.1
+libdata/pkgconfig/virtualpg.pc
