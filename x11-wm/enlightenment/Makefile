@@ -41,10 +41,10 @@ CURRENT_ARCH=	${ARCH}
 .if ${CURRENT_ARCH} == amd64
 ENLIGHTENMENT_ARCH=     ${OPSYS:tl}-x86_64
 .else
-.if ${CURRENT_ARCH} == 'i386'
+.if ${CURRENT_ARCH} == i386
 ENLIGHTENMENT_ARCH=     ${OPSYS:tl}-x86
 .else
-.if ${CURRENT_ARCH} == 'aarch64'
+.if ${CURRENT_ARCH} == aarch64
 ENLIGHTENMENT_ARCH=     ${OPSYS:tl}-arm
 .else
 ENLIGHTENMENT_ARCH=     ${OPSYS:tl}-${CURRENT_ARCH}
