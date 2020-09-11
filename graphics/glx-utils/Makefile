@@ -13,6 +13,7 @@ LICENSE=	MIT
 CONFLICTS_INSTALL=	mesa-demos
 
 USES=		gl localbase:ldflags xorg
+USE_CSTD=	c99
 USE_GITLAB=	yes
 USE_GL=		gl
 USE_XORG=	x11
