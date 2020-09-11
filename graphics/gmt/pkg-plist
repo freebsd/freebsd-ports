@@ -78,10 +78,10 @@ include/gmt/x2sys/x2sys.h
 lib/gmt/plugins/supplements.so
 lib/libgmt.so
 lib/libgmt.so.6
-lib/libgmt.so.6.1.0
+lib/libgmt.so.6.1.1
 lib/libpostscriptlight.so
 lib/libpostscriptlight.so.6
-lib/libpostscriptlight.so.6.1.0
+lib/libpostscriptlight.so.6.1.1
 %%DATADIR%%/cpt/abyss.cpt
 %%DATADIR%%/cpt/acton.cpt
 %%DATADIR%%/cpt/bamako.cpt

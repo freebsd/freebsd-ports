@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gmt
-DISTVERSION=	6.1.0
+DISTVERSION=	6.1.1
 CATEGORIES=	graphics
 
 MAINTAINER=	lbartoletti@FreeBSD.org
@@ -20,7 +20,7 @@ RUN_DEPENDS=	bash:shells/bash \
 		GraphicsMagick>0:graphics/GraphicsMagick \
 		ffmpeg>0:multimedia/ffmpeg \
 		xdg-open:devel/xdg-utils \
-		
+
 BUILD_DEPENDS=	${LOCALBASE}/share/dcw-gmt/dcw-gmt.nc:graphics/gmt-dcw \
 		${LOCALBASE}/share/gshhg-gmt/binned_GSHHS_c.nc:graphics/gmt-gshhg
 
