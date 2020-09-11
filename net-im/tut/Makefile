@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	tut
-DISTVERSION=	0.0.16
+DISTVERSION=	0.0.17
 CATEGORIES=	net-im
 
 MAINTAINER=	vulcan@wired.sh
@@ -23,6 +23,7 @@ GH_TUPLE=	aymerick:douceur:v0.2.0:aymerick_douceur/vendor/github.com/aymerick/do
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
 		gorilla:css:v1.0.0:gorilla_css/vendor/github.com/gorilla/css \
 		gorilla:websocket:v1.4.1:gorilla_websocket/vendor/github.com/gorilla/websocket \
+		icza:gox:7dc3510ae515:icza_gox/vendor/github.com/icza/gox \
 		kyoh86:xdg:v1.2.0:kyoh86_xdg/vendor/github.com/kyoh86/xdg \
 		lucasb-eyer:go-colorful:v1.0.3:lucasb_eyer_go_colorful/vendor/github.com/lucasb-eyer/go-colorful \
 		mattn:go-mastodon:315df7d9162e:mattn_go_mastodon/vendor/github.com/mattn/go-mastodon \
