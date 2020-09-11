@@ -170,6 +170,17 @@ CMake Error at IGC/CMakeLists.txt:1974 (message):
  
  // Linux, Android
  #define MY_EXTERN_C    extern "C"
+--- IGC/CMFE/AdaptorCM/InputArgsWrapper.cpp.orig	2020-08-29 06:30:46 UTC
++++ IGC/CMFE/AdaptorCM/InputArgsWrapper.cpp
+@@ -55,7 +55,7 @@ void InputArgsWrapper::processSupportDirectories(const
+     return;
+ 
+ // TODO: enable this for Windows
+-#if __linux__
++#if !defined(_WIN32)
+   // process files
+   std::error_code EC;
+   SeqStrT IncludeFiles;
 --- IGC/GenISAIntrinsics/GenIntrinsics.h.orig	2020-02-10 06:06:31 UTC
 +++ IGC/GenISAIntrinsics/GenIntrinsics.h
 @@ -67,7 +67,7 @@ namespace GenISAIntrinsic {
