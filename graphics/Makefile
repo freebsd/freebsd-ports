@@ -261,6 +261,7 @@
     SUBDIR += glosm
     SUBDIR += glpng
     SUBDIR += gltt
+    SUBDIR += glx-utils
     SUBDIR += gmic
     SUBDIR += gmic-qt
     SUBDIR += gmt

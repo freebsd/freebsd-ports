@@ -14,6 +14,8 @@ LICENSE=	MIT
 
 LIB_DEPENDS=	libdrm.so:graphics/libdrm
 
+CONFLICTS_INSTALL=	glx-utils
+
 USES=		gmake gl localbase pkgconfig tar:bzip2 xorg
 GNU_CONFIGURE=	yes
 USE_GL=		egl gbm gl glesv2 glew glu glut

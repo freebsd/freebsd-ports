@@ -1,0 +1,6 @@
+A few popular OpenGL X11 demos from Mesa:
+
+- glxinfo prints capabilities of OpenGL driver
+- glxgears draws rotating gears and prints FPS
+
+WWW: https://www.mesa3d.org/
