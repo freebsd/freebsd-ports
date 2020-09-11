@@ -27,7 +27,7 @@ BINARY_ALIAS=	python=${PYTHON_CMD} python3=${PYTHON_CMD}
 .include <bsd.port.options.mk>
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1201518
-BROKEN=		missing pthread_getname_np
+BROKEN=		needs pthread_getname_np from OSVERSION 1201518 or above
 .endif
 
 do-test: # some tests are known to fail: https://github.com/facebook/hermes/issues/347
