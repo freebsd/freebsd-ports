@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	snort2pfcd
-PORTVERSION=	2.9
+PORTVERSION=	3.0
 CATEGORIES=	security
 MASTER_SITES=	http://www.tworoutes.com/oss/
 
