@@ -13,6 +13,7 @@
     SUBDIR += bbdate
     SUBDIR += bclock
     SUBDIR += buici-clock
+    SUBDIR += cairo-clock
     SUBDIR += dclock
     SUBDIR += emiclock
     SUBDIR += eyeclock
