@@ -2,9 +2,8 @@
 
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.12-10860 # git rev-list --count HEAD
-DISTVERSIONSUFFIX=	-g676fed7cf
-PORTREVISION=	1
+DISTVERSION=	0.0.12-10870 # git rev-list --count HEAD
+DISTVERSIONSUFFIX=	-g9d034ea4a
 CATEGORIES=	emulators
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -36,9 +35,9 @@ GH_TUPLE=	RPCS3:hidapi:hidapi-0.8.0-rc1-27-g9220f5e:hidapi/3rdparty/hidapi \
 		KhronosGroup:SPIRV-Headers:1.5.3.reservations1:spirv_headers/Vulkan/spirv-headers \
 		KhronosGroup:SPIRV-Tools:v2020.4:spirv_tools/Vulkan/spirv-tools \
 		KhronosGroup:glslang:8.13.3743-225-g517f39ee:glslang/Vulkan/glslang \
-		RipleyTom:wolfssl:v4.3.0-stable-424-gd0749c654:wolfssl/3rdparty/wolfssl \
 		tcbrindle:span:9d7559a:span/3rdparty/span \
 		USCiLab:cereal:v1.3.0-5-g60c69df9:cereal/3rdparty/cereal \
+		wolfSSL:wolfssl:v4.5.0-stable-80-g39b544860:wolfssl/3rdparty/wolfssl \
 		zeux:pugixml:v1.9-51-g8bf806c:pugixml/3rdparty/pugixml
 
 USES=		cmake compiler:c++17-lang gl iconv:wchar_t localbase:ldflags \
