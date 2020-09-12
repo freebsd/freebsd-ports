@@ -1,4 +1,4 @@
-TIMESTAMP = 1598907915
+TIMESTAMP = 1599930592
 SHA256 (rust/crates/addr2line-0.12.1.tar.gz) = a49806b9dadc843c61e7c97e72490ad7f7220ae249012fbda9ad0609457c0543
 SIZE (rust/crates/addr2line-0.12.1.tar.gz) = 119746
 SHA256 (rust/crates/adler32-1.1.0.tar.gz) = 567b077b825e468cc974f0020d4082ee6e03132512f207ef1a02fd5d00d1f32d
@@ -163,5 +163,5 @@ SHA256 (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = 712e227841d057c
 SIZE (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = 2947998
 SHA256 (rust/crates/yaml-rust-0.4.4.tar.gz) = 39f0c922f1a334134dc2f7a8b67dc5d25f0735263feec974345ff706bcf20b0d
 SIZE (rust/crates/yaml-rust-0.4.4.tar.gz) = 48359
-SHA256 (imsnif-diskonaut-0.9.0_GH0.tar.gz) = 93564a195a62796f95eacc154ad10df8f1050c8a0b2e2e22a0612228c930c1f5
-SIZE (imsnif-diskonaut-0.9.0_GH0.tar.gz) = 2777794
+SHA256 (imsnif-diskonaut-0.10.0_GH0.tar.gz) = dd33580ffdfb145a9e199350a50d5bc752f2e4161ab32c824b2a9c25005f0e62
+SIZE (imsnif-diskonaut-0.10.0_GH0.tar.gz) = 2784940
