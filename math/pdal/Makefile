@@ -3,6 +3,7 @@
 
 PORTNAME=	pdal
 DISTVERSION=	2.2.0
+PORTREVISIO=	1
 CATEGORIES=	math databases graphics
 
 MAINTAINER=	lbartoletti@FreeBSD.org
@@ -24,6 +25,7 @@ LIB_DEPENDS=	libgdal.so:graphics/gdal \
 LIB_DEPENDS_aarch64=	libunwind.so:devel/libunwind
 LIB_DEPENDS_amd64=	libunwind.so:devel/libunwind
 LIB_DEPENDS_i386=	libunwind.so:devel/libunwind
+LIB_DEPENDS_powerpc64=	libunwind.so:devel/libunwind
 
 USES=		cmake compiler:c++11-lib pathfix pkgconfig ssl
 USE_LDCONFIG=	yes
