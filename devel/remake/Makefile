@@ -17,6 +17,7 @@ GNU_CONFIGURE=	yes
 USES=		readline
 INFO=		remake
 CONFIGURE_ARGS=	--without-guile
+CFLAGS+=	-fcommon
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
