@@ -31,46 +31,22 @@ load_rc_config $name
 : ${beehive_user:="%%USERS%%"}
 : ${beehive_group:="%%GROUPS%%"}
 
-pidfile="/var/run/${name}.pid"
+pidfiledir="/var/run/${name}"
+pidfile="${pidfiledir}/${name}.pid"
 procname="%%PREFIX%%/bin/${name}"
 command="/usr/sbin/daemon"
 command_args="-f -p ${pidfile} ${procname} -bind ${beehive_bind} -canonicalurl ${beehive_url} -config ${beehive_config}"
 
-start_precmd="${name}_pre"
-stop_cmd="${name}_stop"
-stop_postcmd="${name}_poststop"
+start_precmd="${name}_prestart"
 
-beehive_pre()
+beehive_prestart()
 {
-	/usr/bin/install -o ${beehive_user} -g ${beehive_group} -m 755 -- /dev/null ${pidfile}
-
+	if [ ! -d ${pidfiledir} ]; then
+		install -d -o ${beehive_user} -g ${beehive_group} ${pidfiledir}
+	fi
 	if [ ! -d %%ETCDIR%% ]; then
-		/bin/mkdir -p %%ETCDIR%%	
+		install -d -o ${beehive_user} -g ${beehive_group} %%ETCDIR%%
 	fi
-
-	/usr/sbin/chown ${beehive_user}:${beehive_group} %%ETCDIR%%
-	/bin/chmod 0700 %%ETCDIR%%
-	
-	if [ -f ${beehive_config} ]; then
-		/usr/sbin/chown ${beehive_user}:${beehive_group} ${beehive_config}
-		/bin/chmod 0600 ${beehive_config}
-	fi
-}
-
-beehive_stop()
-{
-	if [ -f ${pidfile} ]; then
-		echo "Stopping ${name}."
-		kill -INT `cat ${pidfile}` 2>/dev/null
-	else
-		echo "${name} is not running."
-		return 1
-	fi
-}
-
-beehive_poststop()
-{
-	rm -f ${pidfile}
 }
 
 run_rc_command "$1"

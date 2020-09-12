@@ -3,6 +3,7 @@
 PORTNAME=	beehive
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.0
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	vulcan@wired.sh
@@ -145,6 +146,7 @@ _BEEHIVE_USER=	${PORTNAME}
 USERS=		${_BEEHIVE_USER}
 GROUPS=		${_BEEHIVE_USER}
 
+PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS
@@ -156,9 +158,6 @@ post-extract:
 pre-build:
 	(cd ${WRKSRC} && \
 		${LOCALBASE}/bin/go-bindata ${_BUILD_TAGS} --pkg api -o api/bindata.go --ignore config/.git assets/... config/...)
-
-post-install:
-	@${MKDIR} ${STAGEDIR}${ETCDIR}
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
