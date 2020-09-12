@@ -26,8 +26,8 @@ MC=	${PORTNAME}
 .endif
 
 USE_GITHUB=	yes
-GHTAG=		RELEASE.2020-08-08T02-33-58Z
-COMMIT_ID=	7e52c104bee14baed3377931f0df49d4c4b435fc
+GHTAG=		RELEASE.2020-09-03T00-08-28Z
+COMMIT_ID=	f99232260606ae4a6ef16613838d202765efa18c
 GH_TUPLE=	minio:mc:${GHTAG}:DEFAULT \
 		StackExchange:wmi:cbe66965904d:stackexchange_wmi/vendor/github.com/StackExchange/wmi \
 		cheggaaa:pb:v1.0.28:cheggaaa_pb/vendor/github.com/cheggaaa/pb \
@@ -59,14 +59,14 @@ GH_TUPLE=	minio:mc:${GHTAG}:DEFAULT \
 		klauspost:compress:v1.10.3:klauspost_compress/vendor/github.com/klauspost/compress \
 		klauspost:cpuid:v1.3.1:klauspost_cpuid/vendor/github.com/klauspost/cpuid \
 		kr:text:v0.1.0:kr_text/vendor/github.com/kr/text \
-		mattn:go-colorable:v0.1.4:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
+		mattn:go-colorable:v0.1.7:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-ieproxy:v0.0.1:mattn_go_ieproxy/vendor/github.com/mattn/go-ieproxy \
-		mattn:go-isatty:v0.0.8:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
-		mattn:go-runewidth:v0.0.2:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
+		mattn:go-isatty:v0.0.12:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
+		mattn:go-runewidth:v0.0.9:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
 		minio:cli:v1.22.0:minio_cli/vendor/github.com/minio/cli \
 		minio:md5-simd:v1.1.0:minio_md5_simd/vendor/github.com/minio/md5-simd \
-		minio:minio-go:d7db33ea7618:minio_minio_go_v7/vendor/github.com/minio/minio-go/v7 \
-		minio:minio:adcaa6f9de88:minio_minio/vendor/github.com/minio/minio \
+		minio:minio-go:5f8d15bbc5fd:minio_minio_go_v7/vendor/github.com/minio/minio-go/v7 \
+		minio:minio:cd380251b39d:minio_minio/vendor/github.com/minio/minio \
 		minio:sha256-simd:v0.1.1:minio_sha256_simd/vendor/github.com/minio/sha256-simd \
 		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
 		modern-go:concurrent:bacd9c7ef1dd:modern_go_concurrent/vendor/github.com/modern-go/concurrent \
@@ -93,5 +93,9 @@ GO_BUILDFLAGS=	-ldflags=" \
 		-X github.com/minio/mc/cmd.CommitID=${COMMIT_ID} \
 		-X github.com/minio/mc/cmd.GOPATH=${WRKSRC} -s -w"
 GO_TARGET=	:${MC}
+
+post-extract:
+	${RM} ${WRKSRC}/cmd/client-fs_freebsd_netbsd.go
+	${RM} ${WRKSRC}/pkg/disk/stat_freebsd_netbsd.go
 
 .include <bsd.port.mk>
