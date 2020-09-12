@@ -140,6 +140,10 @@ WOLFSSL_LIB_DEPENDS=	libwolfssl.so:security/wolfssl
 
 .include <bsd.port.pre.mk>
 
+.if !${PORT_OPTIONS:MCA_BUNDLE} && (${PORT_OPTIONS:MGNUTLS} || ${PORT_OPTIONS:MOPENSSL})
+CONFIGURE_ARGS+=--with-ca-fallback
+.endif
+
 .if ((!${PORT_OPTIONS:MGNUTLS} && !${PORT_OPTIONS:MOPENSSL}) || (${PORT_OPTIONS:MOPENSSL} && ${SSL_DEFAULT:Mlibressl*})) && ${PORT_OPTIONS:MTLS_SRP}
 IGNORE=		only supports TLS-SRP with either OpenSSL or GnuTLS
 .endif
