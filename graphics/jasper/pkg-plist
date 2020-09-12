@@ -3,6 +3,7 @@ bin/imginfo
 bin/jasper
 %%OPENGL%%bin/jiv
 include/jasper/jas_cm.h
+include/jasper/jas_compiler.h
 include/jasper/jas_config.h
 include/jasper/jas_debug.h
 include/jasper/jas_dll.h
