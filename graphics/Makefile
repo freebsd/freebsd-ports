@@ -873,6 +873,7 @@
     SUBDIR += py-qt5-svg
     SUBDIR += py-rasterio
     SUBDIR += py-rawkit
+    SUBDIR += py-s2
     SUBDIR += py-scikit-image
     SUBDIR += py-seqdiag
     SUBDIR += py-sorl-thumbnail
