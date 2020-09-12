@@ -12,9 +12,6 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING
 LICENSE_FILE_LGPL21+ =	${WRKSRC}/COPYING.LIB
 
-DEPRECATED=	Uses deprecated version of python
-EXPIRATION_DATE=	2020-09-15
-
 LIB_DEPENDS=	libKTpCommonInternals.so:net-im/ktp-common-internals \
 		libQt5GStreamer-1.0.so:multimedia/gstreamer1-qt \
 		libboost_thread.so:devel/boost-libs \
@@ -24,7 +21,7 @@ LIB_DEPENDS=	libKTpCommonInternals.so:net-im/ktp-common-internals \
 		libtelepathy-qt5-farstream.so:net-im/telepathy-qt
 
 USES=		cmake compiler:c++11-lang gettext gnome kde:5 pkgconfig \
-		python:2.7 qt:5 tar:xz
+		python qt:5 tar:xz
 USE_GNOME=	glib20
 USE_GSTREAMER1=	yes
 USE_KDE=	auth codecs config configwidgets coreaddons ecm iconthemes \
