@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	alembic
-PORTVERSION=	1.7.14
+PORTVERSION=	1.7.15
 CATEGORIES=	graphics
 
 MAINTAINER=	danfe@FreeBSD.org
