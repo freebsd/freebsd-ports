@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	mod_auth_mellon
-DISTVERSION=	v0_16_0
+PORTVERSION=	0.17.0
 CATEGORIES=	www
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
+DISTVERSIONPREFIX=	v
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Apache module with a simple SAML 2.0 service provider
