@@ -106,9 +106,6 @@ bin/%%TDIARY_SCRIPT%%
 %%WWWDIR%%/lib/tdiary/view.rb
 %%WWWDIR%%/lib/tdiary/view_helper.rb
 %%WWWDIR%%/misc/convert2.rb
-%%WWWDIR%%/misc/docker-devel/Dockerfile
-%%WWWDIR%%/misc/docker-devel/README.md
-%%WWWDIR%%/misc/docker-devel/run-app.sh
 %%WWWDIR%%/misc/filter/antispamservice.rb
 %%WWWDIR%%/misc/filter/limitdays.rb
 %%WWWDIR%%/misc/filter/linkcheck.rb
