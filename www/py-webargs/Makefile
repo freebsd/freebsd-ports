@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	webargs
-PORTVERSION=	6.1.0
+PORTVERSION=	6.1.1
 CATEGORIES=	www devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -22,7 +22,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django*>=1.11.16:www/py-django22@${PY_FLAVOR}
 
 # To be updated
-# TEST_DEPENDS+= 	${PYTHON_PKGNAMEPREFIX}pyramid>=1.9.1:www/py-django22@${PY_FLAVOR}
+# TEST_DEPENDS+= 	${PYTHON_PKGNAMEPREFIX}pyramid>=1.9.1:www/py-pyramid@${PY_FLAVOR}
 # To be ported
 # TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}webapp2>=3.0.0b1:www/py-webapp2@${PY_FLAVOR}
 #			${PYTHON_PKGNAMEPREFIX}webtest_aiohttp>=2.0.0:www/py-webtest_aiohttp@${PY_FLAVOR}
