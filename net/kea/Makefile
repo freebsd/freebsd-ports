@@ -4,7 +4,6 @@ PORTNAME=	kea
 PORTVERSION=	${ISCVERSION:S/-P/P/:S/-beta/b/:S/a/.a/:S/rc/.rc/}
 CATEGORIES=	net
 MASTER_SITES=	ISC/kea/${ISCVERSION}
-DISTNAME=	${PORTNAME}-${ISCVERSION}
 
 MAINTAINER=	apevnev@me.com
 COMMENT=	Alternative DHCP implementation by ISC
@@ -18,7 +17,7 @@ LIB_DEPENDS=	liblog4cplus.so:devel/log4cplus \
 USES=		autoreconf compiler:c++11-lang iconv libtool pathfix ssl cpe
 
 # ISC releases things like 1.4.0-P1, which our versioning doesn't like
-ISCVERSION=	1.6.3
+ISCVERSION=	1.8.0
 
 CPE_VENDOR=	isc
 CPE_VERSION=	${ISCVERSION:C/-.*//}
@@ -38,7 +37,8 @@ INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
 PORTDOCS=	AUTHORS COPYING ChangeLog README \
-		CONTRIBUTING.md examples
+		CONTRIBUTING.md examples code_of_conduct.md \
+		platforms.rst
 
 OPTIONS_DEFINE=	DOCS MYSQL PGSQL
 OPTIONS_SUB=	yes
