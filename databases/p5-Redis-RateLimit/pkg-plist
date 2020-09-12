@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Redis/RateLimit.pm
+%%SITE_PERL%%/auto/share/dist/Redis-RateLimit/check_limit.lua
+%%SITE_PERL%%/auto/share/dist/Redis-RateLimit/unpack_args.lua
+%%SITE_PERL%%/auto/share/dist/Redis-RateLimit/check_incr_limit.lua
+%%SITE_PERL%%/auto/share/dist/Redis-RateLimit/check_whitelist_blacklist.lua
+%%PERL5_MAN3%%/Redis::RateLimit.3.gz

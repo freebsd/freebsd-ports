@@ -1,0 +1,6 @@
+A Perl library for efficient rate limiting using sliding windows
+stored in Redis.
+
+This is a port of RateLimit.js without the non-blocking goodness.
+
+WWW: https://metacpan.org/pod/Redis::RateLimit
