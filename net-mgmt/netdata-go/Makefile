@@ -2,7 +2,7 @@
 
 PORTNAME=	netdata-go
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.21.0
+DISTVERSION=	0.22.0
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	driesm.michiels@gmail.com
@@ -54,7 +54,9 @@ GH_TUPLE=	\
 		smartystreets:goconvey:v1.6.4:smartystreets_goconvey/vendor/github.com/smartystreets/goconvey \
 		stretchr:testify:v1.6.0:stretchr_testify/vendor/github.com/stretchr/testify \
 		tomasen:fcgi_client:2bb3d819fd19:tomasen_fcgi_client/vendor/github.com/tomasen/fcgi_client \
+		valyala:fastjson:v1.5.4:valyala_fastjson/vendor/github.com/valyala/fastjson \
 		vmware:govmomi:v0.22.2:vmware_govmomi/vendor/github.com/vmware/govmomi
+
 GO_TARGET=	./cmd/godplugin:${PREFIX}/libexec/netdata/plugins.d/god.plugin
 
 post-patch:

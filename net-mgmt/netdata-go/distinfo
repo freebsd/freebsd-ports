@@ -1,6 +1,6 @@
-TIMESTAMP = 1599307659
-SHA256 (netdata-go.d.plugin-v0.21.0_GH0.tar.gz) = 4a385d65e5a4af865fe170f9f4166e964b919878d209b5b18642f2ec7476db06
-SIZE (netdata-go.d.plugin-v0.21.0_GH0.tar.gz) = 607179
+TIMESTAMP = 1599812359
+SHA256 (netdata-go.d.plugin-v0.22.0_GH0.tar.gz) = 18cd6d81c41903621696827116e22149e21b0255cd33840813cd293b57d686a4
+SIZE (netdata-go.d.plugin-v0.22.0_GH0.tar.gz) = 608910
 SHA256 (DATA-DOG-go-sqlmock-v1.4.1_GH0.tar.gz) = 50a4e370447d4096b288cdbe929fd15fad1196c0e153f068ffdca720196f7f37
 SIZE (DATA-DOG-go-sqlmock-v1.4.1_GH0.tar.gz) = 32714
 SHA256 (Wing924-ltsv-v0.3.1_GH0.tar.gz) = b20c4ed0b836044bd59bbf5ecde4afc1b6eda3879652e8485e42ea5f7db8c087
@@ -75,5 +75,7 @@ SHA256 (stretchr-testify-v1.6.0_GH0.tar.gz) = a5c33d77640da2fc2d8db091f9ecdf9921
 SIZE (stretchr-testify-v1.6.0_GH0.tar.gz) = 84517
 SHA256 (tomasen-fcgi_client-2bb3d819fd19_GH0.tar.gz) = 8ca824cbc5788ba3ee8e8bbc63f135a6f3d77a1f7173b796f2c6fc8903171641
 SIZE (tomasen-fcgi_client-2bb3d819fd19_GH0.tar.gz) = 8646
+SHA256 (valyala-fastjson-v1.5.4_GH0.tar.gz) = 6e7fa3fa6f6065e36476027cb3410905e7051e1d939c29d38f4edd0b1ebafd9a
+SIZE (valyala-fastjson-v1.5.4_GH0.tar.gz) = 730112
 SHA256 (vmware-govmomi-v0.22.2_GH0.tar.gz) = 738c294440cb7124035c3eab2f0934671dfbafc75c85f0ebfd48fcc584e7d8ac
 SIZE (vmware-govmomi-v0.22.2_GH0.tar.gz) = 1312611
