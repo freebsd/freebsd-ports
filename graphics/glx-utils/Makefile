@@ -2,7 +2,7 @@
 
 PORTNAME=	glx-utils
 DISTVERSIONPREFIX=	${GL_ACCOUNT}-${GL_PROJECT}-
-DISTVERSION=	8.4.0-43
+DISTVERSION=	8.4.0-44
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -20,7 +20,7 @@ USE_XORG=	x11
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	mesa
 GL_PROJECT=	demos
-GL_COMMIT=	0de7436be906b720f503668609404c97ea3a124b
+GL_COMMIT=	67db4a25821142d042f9f09ca4dbe7ed67ec5c63
 WRKSRC_SUBDIR=	src/xdemos
 PLIST_FILES=	bin/glxgears \
 		bin/glxinfo \
