@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	oauth
-PORTVERSION=	2.0.5
+PORTVERSION=	2.0.6
 CATEGORIES=	net pear
 
 MAINTAINER=	dbaio@FreeBSD.org
