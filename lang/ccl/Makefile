@@ -29,6 +29,10 @@ USE_ASDF=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 1200000
+IGNORE=         does not build on FreeBSD < 12.0
+.endif
+
 LISP_ARCH=	x8664
 FX86CL=		fx86cl64
 
