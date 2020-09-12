@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	redisdesktopmanager
-PORTVERSION=	2020.2
+PORTVERSION=	2020.3
 CATEGORIES=	databases
 
 MAINTAINER=	swills@FreeBSD.org
@@ -32,7 +32,7 @@ DESKTOP_ENTRIES=	"Redis Desktop Manager" \
 GH_TUPLE=		uglide:RedisDesktopManager:${PORTVERSION}:DEFAULT/RedisDesktopManager-${PORTVERSION} \
 			benlau:asyncfuture:4579d53:asyncfuture/3rdparty/qredisclient/3rdparty/asyncfuture \
 			RedisDesktop:CrashReporter:0202f9b:crashreporter/3rdparty/crashreporter \
-			uglide:qredisclient:9fe79f7:qredisclient/3rdparty/qredisclient \
+			uglide:qredisclient:470b76c:qredisclient/3rdparty/qredisclient \
 			sijk:qt-unix-signals:d6a1d12:qtunixsignals/3rdparty/qt-unix-signals \
 			uglide:qsshclient:6fa7fb7:qsshclient/3rdparty/qredisclient/3rdparty/qsshclient \
 			uglide:pyotherside:c1a8cc0:pyotherside/3rdparty/pyotherside \
