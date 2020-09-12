@@ -21,7 +21,7 @@ bin/notmuch
 include/notmuch.h
 lib/libnotmuch.so
 lib/libnotmuch.so.5
-lib/libnotmuch.so.5.2.0
+lib/libnotmuch.so.5.3.0
 share/bash-completion/completions/notmuch
 share/zsh/site-functions/_email-notmuch
 share/zsh/site-functions/_notmuch

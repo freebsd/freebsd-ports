@@ -57,6 +57,8 @@ do-configure:
 		WITH_EMACS=1 \
 		${CONFIGURE_ARGS} \
 		> ${WRKSRC}/Makefile.config
+	@${PRINTF} "tags.add('WITH_EMACS')\nrsti_dir = '${WRKSRC}/emacs'\n" \
+		> ${WRKSRC}/sphinx.config
 
 post-install:
 	@${GZIP_CMD} ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}/*.el
