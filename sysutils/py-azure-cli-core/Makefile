@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	azure-cli-core
-PORTVERSION=	2.10.1
+PORTVERSION=	2.11.1
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -29,9 +29,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}adal>=1.2.3:net-mgmt/py-adal@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.22:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.12:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0.30.0:devel/py-wheel@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}azure-mgmt-resource>=10.1.0:devel/py-azure-mgmt-resource@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}azure-mgmt-resource>=10.2.0:devel/py-azure-mgmt-resource@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}antlr4-python3-runtime>=0:devel/py-antlr4-python3-runtime@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}azure-mgmt-core>=1.0.0:devel/py-azure-mgmt-core@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pkginfo>=1.5.0.1:sysutils/py-pkginfo@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}azure-mgmt-core>=1.2.0:devel/py-azure-mgmt-core@${PY_FLAVOR}
 
 USES=		azurepy python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
