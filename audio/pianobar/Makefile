@@ -2,10 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	pianobar
-PORTVERSION=	2019.02.14
-PORTREVISION=	3
+PORTVERSION=	2020.04.05
 CATEGORIES=	audio
-MASTER_SITES=	https://6xq.net/${PORTNAME}/
 
 MAINTAINER=	jhixson@FreeBSD.org
 COMMENT=	Command-line Pandora online radio player
@@ -25,6 +23,9 @@ USES=		alias gmake localbase pkgconfig tar:bzip2
 
 PLIST_FILES=	bin/pianobar \
 		man/man1/pianobar.1.gz
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	PromyLOPh
 
 post-install:
 		${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/pianobar
