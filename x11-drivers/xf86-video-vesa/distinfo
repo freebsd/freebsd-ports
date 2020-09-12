@@ -1,3 +1,3 @@
-TIMESTAMP = 1528487734
-SHA256 (xorg/driver/xf86-video-vesa-2.4.0.tar.bz2) = bf443c94d7bf6cd4e248f8a3147f4647be04dc4c80250d9405006263bbdee38c
-SIZE (xorg/driver/xf86-video-vesa-2.4.0.tar.bz2) = 324599
+TIMESTAMP = 1599909377
+SHA256 (xorg/driver/xf86-video-vesa-2.5.0.tar.bz2) = 1f1624f3c73906801ad1bc98335a2cb5676a7a4d18e5374d9a1d18464e54c659
+SIZE (xorg/driver/xf86-video-vesa-2.5.0.tar.bz2) = 304322
