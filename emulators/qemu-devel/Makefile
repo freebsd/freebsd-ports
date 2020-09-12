@@ -2,10 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	qemu
-PORTVERSION=	4.2.0
-PORTREVISION=	1
+DISTVERSION=	5.1.0.20200909
 CATEGORIES=	emulators
-MASTER_SITES=	https://download.qemu.org/
 PKGNAMESUFFIX=	-devel
 DIST_SUBDIR=	qemu/${PORTVERSION}
 
@@ -14,7 +12,8 @@ COMMENT=	QEMU CPU Emulator - development version
 
 LICENSE=	GPLv2
 
-ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64
+ONLY_FOR_ARCHS=	amd64 powerpc powerpc64
+IGNORE_FreeBSD_11=	Unable to produce Position Independent Code
 
 LIB_DEPENDS=	libnettle.so:security/nettle \
 		libfontconfig.so:x11-fonts/fontconfig \
@@ -24,75 +23,89 @@ LIB_DEPENDS=	libnettle.so:security/nettle \
 
 USES=		bison compiler:c11 cpe gmake gnome iconv:wchar_t perl5 \
 		pkgconfig python:build tar:xz xorg
+USE_GITHUB=	yes
 USE_GNOME=	cairo glib20 libxml2
 USE_PERL5=	build
 USE_XORG=	pixman
 
+GH_TUPLE=	qemu:qemu:9435a8b \
+		qemu:keycodemapdb:6b3d716:keycodemapdb/ui/keycodemapdb \
+		qemu:dtc:85e5d83:dtc/dtc \
+		mesonbuild:meson:68ed748:meson/meson \
+		cota:berkeley-softfloat-3:b64af41:berkeleysoftfloat3/tests/fp/berkeley-softfloat-3 \
+		cota:berkeley-testfloat-3:5a59dce:berkeleytestfloat3/tests/fp/berkeley-testfloat-3
 #BROKEN_powerpc64=	fails to compile: In function aio_bh_poll: internal compiler error: Segmentation fault
 
 #.if !defined(PKGNAMESUFFIX) || (${PKGNAMESUFFIX} != "-utils" && ${PKGNAMESUFFIX} != "-guest-agent")
 #.endif
 
 HAS_CONFIGURE=	yes
-MAKE_ENV+=	BSD_MAKE="${MAKE}" V=1
 
-OPTIONS_DEFINE=	SAMBA X11 GTK3 OPENGL GNUTLS SASL JPEG PNG CURL \
-		VDE CDROM_DMA PCAP USBREDIR X86_TARGETS \
-		STATIC_LINK DOCS NCURSES
-SAMBA_DESC=		samba dependency (for -smb)
-GNUTLS_DESC=		gnutls dependency (vnc encryption)
-SASL_DESC=		cyrus-sasl dependency (vnc encryption)
-JPEG_DESC=		jpeg dependency (vnc lossy compression)
-PNG_DESC=		png dependency (vnc compression)
-CDROM_DMA_DESC=		IDE CDROM DMA
-PCAP_DESC=		pcap dependency (networking with bpf)
-USBREDIR_DESC=		usb device network redirection (experimental!)
-X86_TARGETS_DESC=	Build only x86 system targets
-STATIC_LINK_DESC=	Statically link the executables
-VDE_DESC=		vde dependency (for vde networking)
-OPTIONS_DEFAULT=X11 GTK3 OPENGL GNUTLS SASL JPEG PNG CDROM_DMA CURL PCAP NCURSES VDE
+OPTIONS_SINGLE=	NCURSES
+OPTIONS_SINGLE_NCURSES=	NCURSES_DEFAULT NCURSES_BASE NCURSES_PORT
+OPTIONS_DEFINE=	SAMBA X11 GTK3 OPENGL GNUTLS SASL JPEG PNG CURL VDE \
+		CDROM_DMA USBREDIR X86_TARGETS STATIC_LINK DOCS CAPSTONE
+OPTIONS_DEFAULT=X11 GTK3 OPENGL GNUTLS SASL JPEG PNG CDROM_DMA CURL NCURSES_DEFAULT VDE \
+		CAPSTONE
 OPTIONS_SUB=	yes
-X11_USE=	SDL=sdl2 XORG=x11,xext GNOME=gdkpixbuf2
-X11_USES=	sdl
-X11_CONFIGURE_ENABLE=	sdl
+CAPSTONE_DESC=		Disassembly framework support
+CDROM_DMA_DESC=		IDE CDROM DMA
+GNUTLS_DESC=		gnutls dependency (vnc encryption)
+JPEG_DESC=		jpeg dependency (vnc lossy compression)
+NCURSES_DEFAULT_DESC=	Depend on ncurses (ports if installed, otherwise base)
+NCURSES_BASE_DESC=	Depend on ncurses in base
+NCURSES_PORT_DESC=	Depend on devel/ncurses in ports
+PNG_DESC=		png dependency (vnc compression)
+SAMBA_DESC=		samba dependency (for -smb)
+SASL_DESC=		cyrus-sasl dependency (vnc encryption)
+STATIC_LINK_DESC=	Statically link the executables
+USBREDIR_DESC=		usb device network redirection (experimental!)
+VDE_DESC=		vde dependency (for vde networking)
+X86_TARGETS_DESC=	Build only x86 system targets
+CAPSTONE_CONFIGURE_ON=	--enable-capstone=system --extra-cflags=-I${LOCALBASE}/include/capstone
+CAPSTONE_CONFIGURE_OFF=	--disable-capstone
+CAPSTONE_LIB_DEPENDS=	libcapstone.so:devel/capstone4
+CURL_CONFIGURE_OFF=	--disable-curl
+CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
+DOCS_BUILD_DEPENDS=	texi2html:textproc/texi2html \
+			sphinx-build:textproc/py-sphinx
+DOCS_CONFIGURE_ENABLE=	docs
+DOCS_USES=		makeinfo
+GNUTLS_CONFIGURE_OFF=	--disable-gnutls
+GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
+GTK3_CONFIGURE_OFF=	--disable-gtk --disable-vte
 GTK3_LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon
 GTK3_USE=	GNOME=gdkpixbuf2,gtk30,vte3 XORG=x11,xext
 GTK3_USES=	gettext gl
-GTK3_CONFIGURE_OFF=	--disable-gtk --disable-vte
-GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
-GNUTLS_CONFIGURE_OFF=	--disable-gnutls
-SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
-SASL_CONFIGURE_OFF=	--disable-vnc-sasl
-JPEG_USES=		jpeg
 JPEG_CONFIGURE_OFF=	--disable-vnc-jpeg
-PNG_LIB_DEPENDS=	libpng.so:graphics/png
-PNG_CONFIGURE_OFF=	--disable-vnc-png
-CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
-CURL_CONFIGURE_OFF=	--disable-curl
+JPEG_USES=		jpeg
+NCURSES_DEFAULT_USES=	ncurses
+NCURSES_BASE_USES=	ncurses:base
+NCURSES_PORT_USES=	ncurses:port
+OPENGL_CONFIGURE_OFF=	--disable-opengl
 OPENGL_USE=	GL=gl
 OPENGL_USES=	gl
-OPENGL_CONFIGURE_OFF=	--disable-opengl
-USBREDIR_BUILD_DEPENDS=	usbredir>=0.6:net/usbredir
-USBREDIR_RUN_DEPENDS=	usbredir>=0.6:net/usbredir
-USBREDIR_CONFIGURE_OFF=	--disable-usb-redir
-PCAP_CONFIGURE_ON=	--enable-pcap
-PCAP_EXTRA_PATCHES=	${FILESDIR}/pcap-patch-qapi_net.json ${FILESDIR}/pcap-patch-net_net.c \
-			${FILESDIR}/pcap-patch-net_clients.h
-VDE_LIB_DEPENDS=	libvdeplug.so:net/vde2
-VDE_CONFIGURE_OFF=	--disable-vde
+PNG_CONFIGURE_OFF=	--disable-vnc-png
+PNG_LIB_DEPENDS=	libpng.so:graphics/png
+SAMBA_CONFIGURE_ON=	--smbd=${LOCALBASE}/sbin/smbd
+SASL_CONFIGURE_OFF=	--disable-vnc-sasl
+SAMBA_USES=		samba:run # smbd
+SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 STATIC_LINK_CONFIGURE_ON=	--static
 STATIC_LINK_PREVENTS=		GTK3 X11
 STATIC_LINK_PREVENTS_MSG=	X11 ui cannot be built static
-NCURSES_USES=		ncurses:base
-SAMBA_USES=		samba:run # smbd
-SAMBA_CONFIGURE_ON=	--smbd=${LOCALBASE}/sbin/smbd
-DOCS_BUILD_DEPENDS=	texi2html:textproc/texi2html \
-			sphinx-build:textproc/py-sphinx
-DOCS_USES=		makeinfo
-DOCS_MAKE_ARGS_OFF=	NOPORTDOCS=1
+USBREDIR_BUILD_DEPENDS=	usbredir>=0.6:net/usbredir
+USBREDIR_CONFIGURE_OFF=	--disable-usb-redir
+USBREDIR_RUN_DEPENDS=	usbredir>=0.6:net/usbredir
+VDE_CONFIGURE_OFF=	--disable-vde
+VDE_LIB_DEPENDS=	libvdeplug.so:net/vde2
+X11_CONFIGURE_ENABLE=	sdl
+X11_USE=	SDL=sdl2 XORG=x11,xext GNOME=gdkpixbuf2
+X11_USES=	sdl
 
-PORTDOCS=	docs interop/.buildinfo interop/* qemu-doc.html qemu-doc.txt qemu-ga-ref.html qemu-ga-ref.txt \
-	       	qemu-qmp-ref.html qemu-qmp-ref.txt specs/.buildinfo specs/*
+PORTDOCS=	docs index.html interop/.buildinfo interop/* \
+	       	specs/.buildinfo specs/* system/.buildinfo system/* \
+		tools/.buildinfo tools/* user/.buildinfo user/*
 
 WITHOUT_CPU_CFLAGS=yes	#to avoid problems with register allocation
 CFLAGS:=	${CFLAGS:C/-fno-tree-vrp//}
@@ -128,26 +141,19 @@ CONFIGURE_ARGS+=	--sparc_cpu=v9
 
 PLIST_SUB+=	LINUXBOOT_DMA=""
 
-# -lprocstat actually only _needs_ -lelf after r249666 or r250870 (MFC)
-# but it shouldn't matter much
 post-patch:
-	@${REINPLACE_CMD} -e '/LIBS/s|-lprocstat|-lprocstat -lelf|' \
-		 -e '/libusb/s/ --atleast-version=1\.0\.[0-9]*//' \
-		${WRKSRC}/configure
-	@${REINPLACE_CMD} -E \
-		-e "s|^(CFLAGS=).*|\1${CFLAGS} -fno-strict-aliasing -I.|" \
-		-e "s|^(LDFLAGS=).*|\1${LDFLAGS}|" \
-		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|/etc/qemu-ifup|${PREFIX}/etc/qemu-ifup|' \
+		-e 's|/etc/qemu-ifdown|${PREFIX}/etc/qemu-ifdown|' \
+		${WRKSRC}/include/net/net.h
 
 post-patch-CDROM_DMA-off:
 	@${REINPLACE_CMD} -e '/USE_DMA_CDROM/d' ${WRKSRC}/include/hw/ide/internal.h
 
-# XXX need to disable usb host code on head while it's not ported to the
-# new usb stack yet
-post-configure:
-	@${REINPLACE_CMD} -E \
-		-e "s|^(HOST_USB=)bsd|\1stub|" \
-		${WRKSRC}/config-host.mak
+do-build:
+	cd ${WRKSRC} && ${GMAKE}
+
+do-install:
+	cd ${WRKSRC} && ${SETENV} DESTDIR=${STAGEDIR} ${GMAKE} install
 
 .if !target(post-install)
 post-install:

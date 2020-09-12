@@ -1,3 +1,13 @@
-TIMESTAMP = 1580929824
-SHA256 (qemu/4.2.0/qemu-4.2.0.tar.xz) = d3481d4108ce211a053ef15be69af1bdd9dde1510fda80d92be0f6c3e98768f0
-SIZE (qemu/4.2.0/qemu-4.2.0.tar.xz) = 62222068
+TIMESTAMP = 1599741546
+SHA256 (qemu/5.1.0.20200909/qemu-qemu-5.1.0.20200909-9435a8b_GH0.tar.gz) = c1a6fef66638e4c691e340e56fac64b43088020c02578931a540931ba00b3746
+SIZE (qemu/5.1.0.20200909/qemu-qemu-5.1.0.20200909-9435a8b_GH0.tar.gz) = 29466042
+SHA256 (qemu/5.1.0.20200909/qemu-keycodemapdb-6b3d716_GH0.tar.gz) = c9d3412510aac999865d01aaa14b1fa8dc0385db55c5cf6c4d95d160bd0eaee9
+SIZE (qemu/5.1.0.20200909/qemu-keycodemapdb-6b3d716_GH0.tar.gz) = 47905
+SHA256 (qemu/5.1.0.20200909/qemu-dtc-85e5d83_GH0.tar.gz) = 3507d8e96d1942493128591b518c522cfd56d7779ce53283b2cf33661b809479
+SIZE (qemu/5.1.0.20200909/qemu-dtc-85e5d83_GH0.tar.gz) = 200566
+SHA256 (qemu/5.1.0.20200909/mesonbuild-meson-68ed748_GH0.tar.gz) = 4e49eae5684774dbe5503c4fccb8b3e8744d2c9dc4ad5ae489a5d8f21cedc7ac
+SIZE (qemu/5.1.0.20200909/mesonbuild-meson-68ed748_GH0.tar.gz) = 2309591
+SHA256 (qemu/5.1.0.20200909/cota-berkeley-softfloat-3-b64af41_GH0.tar.gz) = f22bf52cc980b122c663f2e22f8098fa60d8e468e0095f1da58231235a6b324e
+SIZE (qemu/5.1.0.20200909/cota-berkeley-softfloat-3-b64af41_GH0.tar.gz) = 148768
+SHA256 (qemu/5.1.0.20200909/cota-berkeley-testfloat-3-5a59dce_GH0.tar.gz) = 3bfd602c8563bc05b540aa4d50e3231b283bf4fddc67e9edb80bf9bcb617df4a
+SIZE (qemu/5.1.0.20200909/cota-berkeley-testfloat-3-5a59dce_GH0.tar.gz) = 138950
