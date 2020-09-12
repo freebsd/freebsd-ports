@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libunrar5
-PORTVERSION=	5.6.8
-PORTREVISION=	1
+PORTVERSION=	5.9.4
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.rarlab.com/rar/
 DISTNAME=	unrarsrc-${PORTVERSION}
@@ -46,7 +45,7 @@ PLIST_FILES=	lib/libunrar.a \
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libunrar.a ${STAGEDIR}${PREFIX}/lib/libunrar.a
 	${INSTALL_LIB} ${WRKSRC}/libunrar.so ${STAGEDIR}${PREFIX}/lib/${SONAME}
-	(cd ${STAGEDIR}${PREFIX}/lib; ${LN} -sf ${SONAME} libunrar.so)
+	${RLN} ${STAGEDIR}${PREFIX}/lib/${SONAME} ${STAGEDIR}${PREFIX}/lib/${SONAME:R}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/include/libunrar5
 	${INSTALL_DATA} ${WRKSRC}/dll.hpp ${STAGEDIR}${PREFIX}/include/libunrar5/dll.hpp
 
