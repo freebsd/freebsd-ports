@@ -1,0 +1,5 @@
+Protocol::WebSocket provides a low-level implementation of the WebSocket
+protocol according to RFC6455. It only implements the latest stable version
+(13).
+
+WWW: https://github.com/socketry/protocol-websocket
