@@ -3,7 +3,7 @@
 
 PORTNAME=	firefox
 DISTVERSION=	80.0.1
-PORTEPOCH=	1
+PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
 		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}-candidates/build1/source
