@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	snmp
-PORTVERSION=	5.7.3
-PORTREVISION=	20
+PORTVERSION=	5.9
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/net-${PORTNAME}/net-${PORTNAME}/${PORTVERSION} \
@@ -22,7 +21,7 @@ NOT_FOR_ARCHS_REASON=	SSP is currently broken on MIPS
 
 OPTIONS_DEFINE=	IPV6 MFD_REWRITES PERL PERL_EMBEDDED PYTHON DUMMY TKMIB \
 		MYSQL AX_SOCKONLY UNPRIVILEGED SMUX DOCS JAIL AX_DISABLE_TRAP \
-		TLS NEWSYSLOG
+		TLS NEWSYSLOG NOLIBPKG
 OPTIONS_DEFAULT=PERL PERL_EMBEDDED DUMMY SMUX NEWSYSLOG
 OPTIONS_SUB=	yes
 
@@ -36,6 +35,7 @@ UNPRIVILEGED_DESC=	Allow unprivileged users to execute net-snmp
 SMUX_DESC=		Build with SNMP multiplexing (SMUX) support
 JAIL_DESC=		Options for running snmpd within a jail(8)
 NEWSYSLOG_DESC=		Automatically rotate snmpd.log via newsyslog
+NOLIBPKG_DESC=		Build without libpkg
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -74,10 +74,6 @@ TLS_CONFIGURE_ON=	--with-security-modules=tsm --with-transports=TLSTCP,DTLSUDP
 
 .include <bsd.port.options.mk>
 
-.if (${OPSYS} == FreeBSD && ${OSVERSION} >= 1200085) || ${SSL_DEFAULT:Mopenssl}
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-openssl11
-.endif
-
 .if ${PORT_OPTIONS:MPYTHON}
 PYDISTUTILS_PKGNAME?=		netsnmp-python
 PYDISTUTILS_PKGVERSION?=	1.0a1
@@ -100,7 +96,6 @@ CONFIGURE_ARGS+=--with-dummy-values
 .endif
 
 .if ! ${PORT_OPTIONS:MTKMIB}
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-local_Makefile.in
 PLIST_SUB+=	WITH_TKMIB="@comment "
 .else
 RUN_DEPENDS+=	p5-Tk>=0:x11-toolkits/p5-Tk
@@ -150,8 +145,8 @@ PLIST_SUB+=	WITH_IPV6="@comment "
 CONFIGURE_ARGS+=--without-root-access
 .endif
 
-SHLIB_VERSION=	30
-SHLIB_VERSION2=	.0.3
+SHLIB_VERSION=	40
+SHLIB_VERSION2=	.0.0
 PLIST_SUB+=	SHLIB_VERSION=${SHLIB_VERSION} SHLIB_VERSION2=${SHLIB_VERSION2}
 SCRIPTS_SUB=	PREFIX=${PREFIX} PERL=${PERL}
 
@@ -196,7 +191,8 @@ CONFIGURE_ARGS+=--with-out-mib-modules="${NET_SNMP_WITHOUT_MIB_MODULE_LIST}"
 BIN_FILES=	snmpbulkwalk snmpget snmpgetnext snmpset \
 		snmpstatus snmptest snmptranslate snmptrap snmpwalk \
 		snmptable snmpbulkget snmpdelta snmpdf agentxtrap \
-		snmpvacm snmpusm encode_keychange snmpnetstat
+		snmpps snmpping snmppcap snmpvacm snmpusm \
+		encode_keychange snmpnetstat
 LIB_FILES=	libnetsnmp.so.${SHLIB_VERSION}${SHLIB_VERSION2} \
 		libnetsnmpagent.so.${SHLIB_VERSION}${SHLIB_VERSION2} \
 		libnetsnmpmibs.so.${SHLIB_VERSION}${SHLIB_VERSION2} \
@@ -242,11 +238,6 @@ pre-everything::
 	@${ECHO_MSG}
 
 post-patch:
-.for filename in ${SCRIPT_FILES}
-	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' ${WRKSRC}/local/${filename}
-.endfor
-	@${REINPLACE_CMD} -e 's!utmp_p->ut_name!utmp_p->ut_user!' \
-	    ${WRKSRC}/agent/mibgroup/host/hr_system.c
 	@${REINPLACE_CMD} -E -e 's|return pci_lookup_name|disabled broken|g' \
 		${WRKSRC}/configure
 .if (${OPSYS} == FreeBSD && ${OSVERSION} >= 1200085) || ${SSL_DEFAULT:Mopenssl}
@@ -255,6 +246,19 @@ post-patch:
 .endif
 	@${CP} ${WRKSRC}/include/net-snmp/system/freebsd12.h \
 		${WRKSRC}/include/net-snmp/system/freebsd13.h
+.for header in darwin7.h darwin8.h darwin9.h darwin10.h darwin11.h darwin12.h \
+	darwin13.h darwin14.h darwin15.h darwin16.h darwin17.h
+	@${CP} ${WRKSRC}/include/net-snmp/system/darwin.h \
+		${WRKSRC}/include/net-snmp/system/${header}
+.endfor
+
+.if ${PORT_OPTIONS:MNOLIBPKG}
+pre-configure:
+	${REINPLACE_CMD} \
+		-e 's|pkg[.]h|ignore-pkg.h|g' \
+		-e 's|in pkg ;|in ignore-pkg ;|' \
+		${WRKSRC}/configure
+.endif
 
 post-configure:
 	@${FIND} ${WRKSRC} -name Makefile | \
@@ -294,7 +298,7 @@ post-install: strip-files install-config-files install-doc-files
 	@(cd ${STAGEDIR}${PREFIX}/lib && ${LN} -sf libnetsnmptrapd.so.${SHLIB_VERSION} libnetsnmptrapd.so)
 .if ${PORT_OPTIONS:MNEWSYSLOG}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d
-	${INSTALL_DATA} ${FILESDIR}/net-snmp.conf ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d/
+	${INSTALL_DATA} ${FILESDIR}/net-snmp.conf ${STAGEDIR}${DATADIR}/newsyslog.conf.sample
 .endif
 
 strip-files:

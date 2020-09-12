@@ -1,4 +1,5 @@
 bin/agentxtrap
+bin/checkbandwidth
 bin/encode_keychange
 bin/fixproc
 bin/ipf-mod.pl
@@ -10,6 +11,7 @@ bin/net-snmp-create-v3-user
 bin/snmp-bridge-mib
 bin/snmpbulkget
 bin/snmpbulkwalk
+bin/snmppcap
 bin/snmpcheck
 bin/snmpconf
 bin/snmpdelta
@@ -18,10 +20,13 @@ bin/snmpget
 bin/snmpgetnext
 bin/snmpinform
 bin/snmpnetstat
+bin/snmpping
+bin/snmpps
 bin/snmpset
 bin/snmpstatus
 bin/snmptable
 bin/snmptest
+bin/snmptop
 %%TLS%%bin/snmptls
 bin/snmptranslate
 bin/snmptrap
@@ -30,7 +35,8 @@ bin/snmpvacm
 bin/snmpwalk
 %%WITH_TKMIB%%bin/tkmib
 bin/traptoemail
-%%NEWSYSLOG%%etc/newsyslog.conf.d/net-snmp.conf
+%%NEWSYSLOG%%@dir etc/newsyslog.conf.d
+%%NEWSYSLOG%%@sample %%DATADIR%%/newsyslog.conf.sample etc/newsyslog.conf.d/net-snmp.conf
 include/net-snmp/agent/agent_callbacks.h
 include/net-snmp/agent/agent_handler.h
 include/net-snmp/agent/agent_index.h
@@ -53,6 +59,7 @@ include/net-snmp/agent/mib_module_includes.h
 include/net-snmp/agent/mib_modules.h
 include/net-snmp/agent/mode_end_call.h
 include/net-snmp/agent/multiplexer.h
+include/net-snmp/agent/netsnmp_close_fds.h
 include/net-snmp/agent/net-snmp-agent-includes.h
 include/net-snmp/agent/null.h
 include/net-snmp/agent/old_api.h
@@ -110,6 +117,7 @@ include/net-snmp/library/lcd_time.h
 include/net-snmp/library/md5.h
 include/net-snmp/library/mib.h
 include/net-snmp/library/mt_support.h
+include/net-snmp/library/netsnmp-attribute-format.h
 include/net-snmp/library/oid_stash.h
 include/net-snmp/library/parse.h
 include/net-snmp/library/read_config.h
@@ -119,6 +127,7 @@ include/net-snmp/library/snmp.h
 include/net-snmp/library/snmpAliasDomain.h
 include/net-snmp/library/snmpCallbackDomain.h
 %%TLS%%include/net-snmp/library/snmpDTLSUDPDomain.h
+include/net-snmp/library/snmpIPBaseDomain.h
 include/net-snmp/library/snmpTCPDomain.h
 %%WITH_IPV6%%include/net-snmp/library/snmpTCPIPv6Domain.h
 %%TLS%%include/net-snmp/library/snmpTLSBaseDomain.h
@@ -177,6 +186,13 @@ include/net-snmp/system/darwin7.h
 include/net-snmp/system/darwin8.h
 include/net-snmp/system/darwin9.h
 include/net-snmp/system/darwin10.h
+include/net-snmp/system/darwin11.h
+include/net-snmp/system/darwin12.h
+include/net-snmp/system/darwin13.h
+include/net-snmp/system/darwin14.h
+include/net-snmp/system/darwin15.h
+include/net-snmp/system/darwin16.h
+include/net-snmp/system/darwin17.h
 include/net-snmp/system/dragonfly.h
 include/net-snmp/system/dynix.h
 include/net-snmp/system/freebsd.h
@@ -192,16 +208,20 @@ include/net-snmp/system/freebsd10.h
 include/net-snmp/system/freebsd11.h
 include/net-snmp/system/freebsd12.h
 include/net-snmp/system/freebsd13.h
+include/net-snmp/system/freebsd14.h
 include/net-snmp/system/generic.h
 include/net-snmp/system/hpux.h
 include/net-snmp/system/irix.h
 include/net-snmp/system/linux.h
 include/net-snmp/system/mingw32.h
+include/net-snmp/system/mingw32msvc.h
 include/net-snmp/system/mips.h
 include/net-snmp/system/netbsd.h
+include/net-snmp/system/nto-qnx6.h
 include/net-snmp/system/openbsd.h
 include/net-snmp/system/openbsd4.h
 include/net-snmp/system/openbsd5.h
+include/net-snmp/system/openbsd6.h
 include/net-snmp/system/osf5.h
 include/net-snmp/system/solaris.h
 include/net-snmp/system/solaris2.3.h
@@ -236,6 +256,8 @@ lib/libnetsnmptrapd.a
 lib/libnetsnmptrapd.so
 lib/libnetsnmptrapd.so.%%SHLIB_VERSION%%
 lib/libnetsnmptrapd.so.%%SHLIB_VERSION%%%%SHLIB_VERSION2%%
+libdata/pkgconfig/netsnmp-agent.pc
+libdata/pkgconfig/netsnmp.pc
 man/man1/agentxtrap.1.gz
 man/man1/encode_keychange.1.gz
 man/man1/fixproc.1.gz
@@ -254,10 +276,12 @@ man/man1/snmpget.1.gz
 man/man1/snmpgetnext.1.gz
 man/man1/snmpinform.1.gz
 man/man1/snmpnetstat.1.gz
+man/man1/snmpps.1.gz
 man/man1/snmpset.1.gz
 man/man1/snmpstatus.1.gz
 man/man1/snmptable.1.gz
 man/man1/snmptest.1.gz
+man/man1/snmptop.1.gz
 man/man1/snmptranslate.1.gz
 man/man1/snmptrap.1.gz
 man/man1/snmpusm.1.gz
@@ -376,7 +400,7 @@ man/man8/snmptrapd.8.gz
 %%WITH_PERL%%man/man3/NetSNMP::default_store.3.gz
 %%WITH_PERL%%man/man3/NetSNMP::netsnmp_request_infoPtr.3.gz
 %%WITH_PERL%%man/man3/SNMP.3.gz
-%%WITH_PERL%%%%SITE_ARCH%%/Bundle/Makefile.subs.pl
+%%WITH_PERL%%%%SITE_ARCH%%/Bundle/MakefileSubs.pm
 %%WITH_PERL%%%%SITE_ARCH%%/NetSNMP/ASN.pm
 %%WITH_PERL%%%%SITE_ARCH%%/NetSNMP/OID.pm
 %%WITH_PERL%%%%SITE_ARCH%%/NetSNMP/TrapReceiver.pm
@@ -431,6 +455,7 @@ sbin/snmptrapd
 %%DATADIR%%/mib2c.mfd.conf
 %%DATADIR%%/mib2c.notify.conf
 %%DATADIR%%/mib2c.old-api.conf
+%%DATADIR%%/mib2c.org-mode.conf
 %%DATADIR%%/mib2c.perl.conf
 %%DATADIR%%/mib2c.raw-table.conf
 %%DATADIR%%/mib2c.scalar.conf
@@ -553,6 +578,7 @@ sbin/snmptrapd
 %%DATADIR%%/mibs/SNMP-USER-BASED-SM-MIB.txt
 %%DATADIR%%/mibs/SNMP-USM-AES-MIB.txt
 %%DATADIR%%/mibs/SNMP-USM-DH-OBJECTS-MIB.txt
+%%DATADIR%%/mibs/SNMP-USM-HMAC-SHA2-MIB.txt
 %%DATADIR%%/mibs/SNMP-VIEW-BASED-ACM-MIB.txt
 %%DATADIR%%/mibs/SNMPv2-CONF.txt
 %%DATADIR%%/mibs/SNMPv2-MIB.txt
@@ -568,7 +594,7 @@ sbin/snmptrapd
 %%DATADIR%%/mibs/UCD-IPFWACC-MIB.txt
 %%DATADIR%%/mibs/UCD-SNMP-MIB.txt
 %%DATADIR%%/mibs/UDP-MIB.txt
-@unexec rm -f %D/%%DATADIR%%/mibs/.index 2>/dev/null || true
+@postunexec rm -f %D/%%DATADIR%%/mibs/.index 2>/dev/null || true
 %%WITH_PERL_EMBEDDED%%%%DATADIR%%/snmp_perl.pl
 %%DATADIR%%/snmpconf-data/snmp-data/authopts
 %%DATADIR%%/snmpconf-data/snmp-data/debugging
