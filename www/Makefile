@@ -1815,6 +1815,7 @@
     SUBDIR += rubygem-async-http
     SUBDIR += rubygem-async-pool
     SUBDIR += rubygem-async-rest
+    SUBDIR += rubygem-async-websocket
     SUBDIR += rubygem-async_sinatra
     SUBDIR += rubygem-atlassian-jwt
     SUBDIR += rubygem-best_in_place
