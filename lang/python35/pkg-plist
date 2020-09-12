@@ -4832,7 +4832,6 @@ lib/python%%XYDOT%%/test/decimaltestdata/testall.decTest
 lib/python%%XYDOT%%/test/decimaltestdata/tointegral.decTest
 lib/python%%XYDOT%%/test/decimaltestdata/tointegralx.decTest
 lib/python%%XYDOT%%/test/decimaltestdata/xor.decTest
-lib/python%%XYDOT%%/test/dh1024.pem
 lib/python%%XYDOT%%/test/dis_module.py
 lib/python%%XYDOT%%/test/doctest_aliases.py
 lib/python%%XYDOT%%/test/double_const.py
@@ -4854,6 +4853,7 @@ lib/python%%XYDOT%%/test/encoded_modules/__pycache__/module_koi8_r.cpython-%%XY%
 lib/python%%XYDOT%%/test/encoded_modules/module_iso_8859_1.py
 lib/python%%XYDOT%%/test/encoded_modules/module_koi8_r.py
 lib/python%%XYDOT%%/test/exception_hierarchy.txt
+lib/python%%XYDOT%%/test/ffdh3072.pem
 lib/python%%XYDOT%%/test/final_a.py
 lib/python%%XYDOT%%/test/final_b.py
 lib/python%%XYDOT%%/test/floating_points.txt
@@ -4914,6 +4914,7 @@ lib/python%%XYDOT%%/test/randv2_32.pck
 lib/python%%XYDOT%%/test/randv2_64.pck
 lib/python%%XYDOT%%/test/randv3.pck
 lib/python%%XYDOT%%/test/re_tests.py
+lib/python%%XYDOT%%/test/recursion.tar
 lib/python%%XYDOT%%/test/regrtest.py
 lib/python%%XYDOT%%/test/relimport.py
 lib/python%%XYDOT%%/test/reperf.py
