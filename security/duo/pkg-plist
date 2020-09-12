@@ -12,6 +12,7 @@ man/man3/duo.3.gz
 man/man8/login_duo.8.gz
 man/man8/pam_duo.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTING.md
+@comment %%PORTDOCS%%%%DOCSDIR%%_unix/duo_unix_support/README.md
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
@@ -19,3 +20,4 @@ man/man8/pam_duo.8.gz
 %%SUID%%@mode 4555
 sbin/login_duo
 %%SUID%%@mode
+@comment sbin/duo_unix_support.sh
