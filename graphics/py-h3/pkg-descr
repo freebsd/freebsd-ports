@@ -1,0 +1,7 @@
+H3 is a geospatial indexing system using a hexagonal grid that can be
+(approximately) subdivided into finer and finer hexagonal grids, combining the
+benefits of a hexagonal grid with S2's hierarchical subdivisions.
+
+This port is the Python binding for H3 core library.
+
+WWW: https://github.com/uber/h3-py

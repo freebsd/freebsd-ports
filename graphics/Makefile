@@ -822,6 +822,7 @@
     SUBDIR += py-graphviz
     SUBDIR += py-graphy
     SUBDIR += py-gvgen
+    SUBDIR += py-h3
     SUBDIR += py-hiplot
     SUBDIR += py-imageio
     SUBDIR += py-imageio-ffmpeg
