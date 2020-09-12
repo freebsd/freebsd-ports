@@ -8,7 +8,7 @@ CATEGORIES=	www python
 MASTER_SITES=	https://tarballs.openstack.org/horizon/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	alexander.nusov@nfvexpress.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenStack Dashboard (Horizon)
 
 LICENSE=	APACHE20
