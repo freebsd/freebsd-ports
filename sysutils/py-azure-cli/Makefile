@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	azure-cli
-PORTVERSION=	2.10.1
+PORTVERSION=	2.11.1
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,7 @@ RUN_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}azure-cli-core>=${PORTVERSION}:sysutils/py-azure-cli-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-cli-telemetry>=1.0.2<2.0:sysutils/py-azure-cli-telemetry@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-cosmos>=3.0.2:devel/py-azure-cosmos@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}azure-datalake-store>=0.0.48:devel/py-azure-datalake-store@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}azure-datalake-store>=0.0.49:devel/py-azure-datalake-store@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-functions-devops-build>=0.0.22:devel/py-azure-functions-devops-build@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-graphrbac>=0.60.0:devel/py-azure-graphrbac@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-keyvault>=1.1:devel/py-azure-keyvault@${PY_FLAVOR} \
@@ -49,12 +49,12 @@ RUN_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-dns>=2.1:devel/py-azure-mgmt-dns@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-eventgrid>=3.0.0.r7:devel/py-azure-mgmt-eventgrid@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-eventhub>=4.0.0:devel/py-azure-mgmt-eventhub@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}azure-mgmt-hdinsight>=1.6.0:devel/py-azure-mgmt-hdinsight@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}azure-mgmt-hdinsight>=1.7.0:devel/py-azure-mgmt-hdinsight@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-imagebuilder>=0.4.0:devel/py-azure-mgmt-imagebuilder@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-iotcentral>=3.0.0:devel/py-azure-mgmt-iotcentral@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-iothub>=0.12.0:devel/py-azure-mgmt-iothub@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-iothubprovisioningservices>=0.2.0:devel/py-azure-mgmt-iothubprovisioningservices@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}azure-mgmt-keyvault>=2.2.0:devel/py-azure-mgmt-keyvault@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}azure-mgmt-keyvault>=7.0.0.b2:devel/py-azure-mgmt-keyvault@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-kusto>=0.3.0:devel/py-azure-mgmt-kusto@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-loganalytics>=0.7.0:devel/py-azure-mgmt-loganalytics@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-managedservices>=1.0:devel/py-azure-mgmt-managedservices@${PY_FLAVOR} \
@@ -65,7 +65,7 @@ RUN_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-monitor>=0.11.0:devel/py-azure-mgmt-monitor@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-msi>=0.2:devel/py-azure-mgmt-msi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-network>=11.0.0:devel/py-azure-mgmt-network@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}azure-mgmt-netapp>=0.11.0:devel/py-azure-mgmt-netapp@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}azure-mgmt-netapp>=0.12.0:devel/py-azure-mgmt-netapp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-policyinsights>=0.5.0:devel/py-azure-mgmt-policyinsights@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-privatedns>=0.1.0:devel/py-azure-mgmt-privatedns@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-rdbms>=2.2.0:devel/py-azure-mgmt-rdbms@${PY_FLAVOR} \
@@ -86,8 +86,11 @@ RUN_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-storage>=11.1.0:devel/py-azure-mgmt-storage@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-trafficmanager>=0.51.0:devel/py-azure-mgmt-trafficmanager@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-web>=0.47.0:devel/py-azure-mgmt-web@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}azure-multiapi-storage>=0.3.2:devel/py-azure-multiapi-storage@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}azure-mgmt-synapse>=0.3.0:devel/py-azure-mgmt-synapse@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}azure-multiapi-storage>=0.4.1:devel/py-azure-multiapi-storage@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-storage-blob>=1.3.1:devel/py-azure-storage-blob@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}azure-synapse-accesscontrol>=0.2.0:devel/py-azure-synapse-accesscontrol@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}azure-synapse-spark>=0.2.0:devel/py-azure-synapse-spark@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}colorama>=0.4.1:devel/py-colorama@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cryptography>=2.3.1:security/py-cryptography@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}fabric>=2.4:devel/py-fabric@${PY_FLAVOR} \
@@ -114,6 +117,8 @@ USES=		azurepy python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
+
+PLIST_FILES=	${PYTHON_SITELIBDIR}/azure/cli/__main__.py
 
 post-patch:
 	@${REINPLACE_CMD} -e "s#python#${PYTHON_CMD}#g" ${WRKSRC}/az
