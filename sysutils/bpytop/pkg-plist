@@ -5,6 +5,7 @@ bin/bpytop
 %%DATADIR%%/themes/flat-remix.theme
 %%DATADIR%%/themes/greyscale.theme
 %%DATADIR%%/themes/gruvbox_dark.theme
+%%DATADIR%%/themes/kyli0x.theme
 %%DATADIR%%/themes/monokai.theme
 %%DATADIR%%/themes/nord.theme
 %%DATADIR%%/themes/solarized_dark.theme
