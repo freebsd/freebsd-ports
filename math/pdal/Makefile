@@ -3,7 +3,7 @@
 
 PORTNAME=	pdal
 DISTVERSION=	2.2.0
-PORTREVISIO=	1
+PORTREVISION=	1
 CATEGORIES=	math databases graphics
 
 MAINTAINER=	lbartoletti@FreeBSD.org
