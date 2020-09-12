@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		hitch
-PORTVERSION=		1.5.2
+PORTVERSION=		1.6.0
 CATEGORIES=		security
 MASTER_SITES=		http://hitch-tls.org/source/ \
 			ZI
@@ -31,7 +31,7 @@ PLIST_SUB=		CACHE_DIR=${CACHE_DIR}
 SUB_LIST+=		CACHE_DIR="${CACHE_DIR}"
 SUB_FILES=		${PORTNAME}.conf.sample
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=		DOCS
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc ${STAGEDIR}${CACHE_DIR}
