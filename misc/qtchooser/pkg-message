@@ -1,12 +1,13 @@
 [
 { type: install
   message: <<EOM
-qtchooser is a wrapper that allows selecting whether Qt4 or Qt5 binaries for
+qtchooser is a wrapper that allows to specify Qt version of binaries for
 qmake, moc and other tools will be run when invoking the binaries in $PATH.
 
 By default, the Qt5 versions are run. It is possible to change the behavior by
-setting the QT_SELECT environment variable to "qt4". See qtchooser(1) for more
-information.
+setting the QT_SELECT environment variable to "qtX", where X is desired Qt
+version, provided that it is offered by the Ports Collection. See qtchooser(1)
+for more information.
 EOM
 }
 ]
