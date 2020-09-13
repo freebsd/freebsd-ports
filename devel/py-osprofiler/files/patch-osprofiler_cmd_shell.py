@@ -5,7 +5,7 @@
  
      def _append_subcommands(self, parent_parser):
 -        subcommands = parent_parser.add_subparsers(help="<subcommands>")
-+	# Fix CLI for Python 3.x
++        # Fix CLI for Python 3.x
 +        subcommands = parent_parser.add_subparsers(help="<subcommands>", dest="too few arguments")
 +        subcommands.required = True
          for group_cls in commands.BaseCommand.__subclasses__():
