@@ -172,5 +172,5 @@ lib/cmake/ZXing/ZXingTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/ZXing/ZXingTargets.cmake
 lib/libZXing.so
 lib/libZXing.so.1
-lib/libZXing.so.1.1.0
+lib/libZXing.so.1.1.1
 libdata/pkgconfig/zxing.pc
