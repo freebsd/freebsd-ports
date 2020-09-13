@@ -1,0 +1,5 @@
+Perl's system command, qx``, etc. the process termination status gets put into
+$? as an integer. Process::Status just provides a few simple methods to make
+it easier to inspect $?.
+
+WWW: https://metacpan.org/release/Process-Status
