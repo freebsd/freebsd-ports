@@ -1,0 +1,30 @@
+--- CMakeLists.txt.orig	2019-03-04 16:53:16 UTC
++++ CMakeLists.txt
+@@ -61,9 +61,6 @@ endif()
+ find_package(OpenSSL REQUIRED)
+ # pthreads isn't used directly, but this is still required for std::thread.
+ find_package(Threads REQUIRED)
+-find_package(SWIG)
+-find_package(PythonInterp)
+-find_package(PythonLibs)
+ 
+ if (WIN32)
+     # Use unsigned characters
+@@ -86,7 +83,7 @@ endif()
+ # OPENSSL_ROOT_DIR=/usr/local/opt/openssl cmake ..
+ include_directories(
+     ${GFLAGS_INCLUDE_DIRS} ${GLOG_INCLUDE_DIRS} ${OPENSSL_INCLUDE_DIR}
+-    ${PYTHON_INCLUDE_DIRS})
++)
+ include_directories(src)
+ 
+ add_library(s2
+@@ -529,8 +526,4 @@ endif()
+ 
+ if (BUILD_EXAMPLES)
+   add_subdirectory("doc/examples" examples)
+-endif()
+-
+-if (${SWIG_FOUND} AND ${PYTHONLIBS_FOUND})
+-  add_subdirectory("src/python" python)
+ endif()
