@@ -1,0 +1,12 @@
+This tool computes (dis)similarity between two or more PNG images
+using an algorithm approximating human vision.
+
+Comparison is done in L*a*b* color space (D65 white point, sRGB gamma)
+using a multi-scale variant of the SSIM algorithm.
+
+Features:
+- Supports alpha channel
+- Supports gamma correction
+- No OpenCV or MATLAB needed: uses C (C99) and libpng
+
+WWW: https://kornel.ski/dssim

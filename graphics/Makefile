@@ -141,6 +141,7 @@
     SUBDIR += drm-legacy-kmod
     SUBDIR += drm_info
     SUBDIR += dspdfviewer
+    SUBDIR += dssim
     SUBDIR += duhdraw
     SUBDIR += dynamechs
     SUBDIR += ebsynth
