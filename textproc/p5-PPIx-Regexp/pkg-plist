@@ -6,7 +6,6 @@
 %%SITE_PERL%%/PPIx/Regexp/Node.pm
 %%SITE_PERL%%/PPIx/Regexp/Node/Range.pm
 %%SITE_PERL%%/PPIx/Regexp/Node/Unknown.pm
-%%SITE_PERL%%/PPIx/Regexp/StringTokenizer.pm
 %%SITE_PERL%%/PPIx/Regexp/Structure.pm
 %%SITE_PERL%%/PPIx/Regexp/Structure/Assertion.pm
 %%SITE_PERL%%/PPIx/Regexp/Structure/Atomic_Script_Run.pm
@@ -72,7 +71,6 @@
 %%PERL5_MAN3%%/PPIx::Regexp::Node.3.gz
 %%PERL5_MAN3%%/PPIx::Regexp::Node::Range.3.gz
 %%PERL5_MAN3%%/PPIx::Regexp::Node::Unknown.3.gz
-%%PERL5_MAN3%%/PPIx::Regexp::StringTokenizer.3.gz
 %%PERL5_MAN3%%/PPIx::Regexp::Structure.3.gz
 %%PERL5_MAN3%%/PPIx::Regexp::Structure::Assertion.3.gz
 %%PERL5_MAN3%%/PPIx::Regexp::Structure::Atomic_Script_Run.3.gz
