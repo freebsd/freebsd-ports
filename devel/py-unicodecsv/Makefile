@@ -7,13 +7,14 @@ CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Drop-in replacement for Python 2.7 csv module
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Drop-in replacement for Python 2 csv module with Unicode support
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 USES=		python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
