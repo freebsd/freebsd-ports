@@ -13,7 +13,8 @@ COMMENT=	Python binding of S2 Geometry Library
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/../../LICENSE
 
-BUILD_DEPENDS=	swig:devel/swig
+BUILD_DEPENDS=	s2>=${PORTVERSION}:graphics/s2 \
+		swig:devel/swig
 LIB_DEPENDS=	libs2.so:graphics/s2
 
 USES=		cmake compiler:c++11-lang localbase:ldflags python
