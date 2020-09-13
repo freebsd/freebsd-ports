@@ -1,0 +1,12 @@
+A TACACS+ client that supports authentication, authorization and
+accounting.
+
+Unlike RADIUS, which was designed for similar purposes, the TACACS+
+protocol offers basic packet encryption but, as with most crypto
+designed back then, it's not secure and definitely should not be used
+over untrusted networks.
+
+This package has been successfully used with the free tac_plus TACACS+
+server on a variety of operating systems.
+
+WWW: https://github.com/ansible/tacacs_plus
