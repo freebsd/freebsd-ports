@@ -12,6 +12,8 @@ DISTNAME=	${PORTNAME}plugin-${PORTVERSION}
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Produce detailed range-based estimations for Trac tickets
 
+LICENSE=	MIT
+
 RUN_DEPENDS=	tracd:www/trac
 
 WRKSRC=		${WRKDIR}/${PORTNAME}plugin/0.11
