@@ -23,6 +23,7 @@ USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_aux_dir="."
+CFLAGS+=	-fcommon
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 
