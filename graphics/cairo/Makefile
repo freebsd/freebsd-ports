@@ -2,10 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	cairo
-DISTVERSION=	1.17.2
-PORTEPOCH=	2
+PORTVERSION=	1.16.0 # update to 1.17.2 causes problems, see bug#249290
+PORTEPOCH=	3
 CATEGORIES=	graphics
-MASTER_SITES=	https://cairographics.org/snapshots/
+MASTER_SITES=	http://cairographics.org/releases/ \
+		http://cairographics.org/snapshots/
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Vector graphics library with cross-device output support
@@ -64,7 +65,7 @@ MIPS_BUILD_DEPENDS=	${LOCALBASE}/include/atomic_ops.h:devel/libatomic_ops
 MIPS_USES=	localbase
 MIPS_CONFIGURE_ENV=	cairo_cv_atomic_primitives="libatomic-ops"
 
-PLIST_SUB+=	LIBVER=2.11702.0
+PLIST_SUB+=	LIBVER=2.11600.0
 
 post-patch:
 	@${REINPLACE_CMD} -e '/strings/s/ - / -a /' \
