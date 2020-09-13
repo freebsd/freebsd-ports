@@ -1,7 +1,7 @@
---- src/CMakeLists.txt.orig	2020-06-18 10:04:32 UTC
+--- src/CMakeLists.txt.orig	2020-09-11 02:37:02 UTC
 +++ src/CMakeLists.txt
-@@ -361,7 +361,13 @@ if (TARGET RESVG::resvg)
-   set(CMAKE_SWIG_FLAGS "-DUSE_RESVG=1")
+@@ -384,7 +384,13 @@ if (TARGET RESVG::resvg)
+ 
  endif()
  
 +find_library(EXECINFO_LIBRARY NAMES execinfo)
@@ -13,4 +13,4 @@
 +
  # Link remaining dependency libraries
  target_link_libraries(openshot PUBLIC
- 	${LIBOPENSHOT_AUDIO_LIBRARIES}
+   ${LIBOPENSHOT_AUDIO_LIBRARIES}

@@ -1,6 +1,6 @@
---- src/FFmpegReader.cpp.orig	2020-02-10 17:52:00 UTC
+--- src/FFmpegReader.cpp.orig	2020-09-11 02:37:02 UTC
 +++ src/FFmpegReader.cpp
-@@ -162,7 +162,7 @@ static enum AVPixelFormat get_hw_dec_format(AVCodecCon
+@@ -165,7 +165,7 @@ static enum AVPixelFormat get_hw_dec_format(AVCodecCon
  
  	for (p = pix_fmts; *p != AV_PIX_FMT_NONE; p++) {
  		switch (*p) {
@@ -9,7 +9,7 @@
  			// Linux pix formats
  			case AV_PIX_FMT_VAAPI:
  				hw_de_av_pix_fmt_global = AV_PIX_FMT_VAAPI;
-@@ -318,7 +318,7 @@ void FFmpegReader::Open() {
+@@ -321,7 +321,7 @@ void FFmpegReader::Open() {
  					pCodecCtx->get_format = get_hw_dec_format;
  
  					if (adapter_num < 3 && adapter_num >=0) {
@@ -18,7 +18,7 @@
  						snprintf(adapter,sizeof(adapter),"/dev/dri/renderD%d", adapter_num+128);
  						adapter_ptr = adapter;
  						i_decoder_hw = openshot::Settings::Instance()->HARDWARE_DECODER;
-@@ -381,11 +381,13 @@ void FFmpegReader::Open() {
+@@ -384,11 +384,13 @@ void FFmpegReader::Open() {
  					}
  
  					// Check if it is there and writable

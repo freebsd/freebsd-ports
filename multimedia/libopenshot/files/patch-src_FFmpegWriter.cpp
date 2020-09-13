@@ -1,4 +1,4 @@
---- src/FFmpegWriter.cpp.orig	2020-06-18 10:04:32 UTC
+--- src/FFmpegWriter.cpp.orig	2020-09-11 02:37:02 UTC
 +++ src/FFmpegWriter.cpp
 @@ -172,7 +172,7 @@ void FFmpegWriter::SetVideoOptions(bool has_video, std
  		AVCodec *new_codec;
@@ -21,7 +21,7 @@
  #else // not ffmpeg 3
  		new_codec = avcodec_find_encoder_by_name(codec.c_str());
  #endif // HAVE_HW_ACCEL
-@@ -554,6 +554,7 @@ void FFmpegWriter::SetOption(StreamType stream, std::s
+@@ -556,6 +556,7 @@ void FFmpegWriter::SetOption(StreamType stream, std::s
  						else {
  							av_opt_set_int(c->priv_data, "crf", std::min(std::stoi(value),63), 0);
  						}
@@ -29,7 +29,7 @@
  					case AV_CODEC_ID_HEVC :
  						c->bit_rate = 0;
  						if (strstr(info.vcodec.c_str(), "svt_hevc") != NULL) {
-@@ -562,6 +563,8 @@ void FFmpegWriter::SetOption(StreamType stream, std::s
+@@ -564,6 +565,8 @@ void FFmpegWriter::SetOption(StreamType stream, std::s
  							av_opt_set_int(c->priv_data, "forced-idr",1,0);
  						}
  						break;
@@ -38,7 +38,7 @@
  				}
  #endif
  		} else {
-@@ -1447,7 +1450,7 @@ void FFmpegWriter::open_video(AVFormatContext *oc, AVS
+@@ -1456,7 +1459,7 @@ void FFmpegWriter::open_video(AVFormatContext *oc, AVS
  		adapter_num = openshot::Settings::Instance()->HW_EN_DEVICE_SET;
  		fprintf(stderr, "\n\nEncodiing Device Nr: %d\n", adapter_num);
  		if (adapter_num < 3 && adapter_num >=0) {
@@ -47,7 +47,7 @@
  				snprintf(adapter,sizeof(adapter),"/dev/dri/renderD%d", adapter_num+128);
  				// Maybe 127 is better because the first card would be 1?!
  				adapter_ptr = adapter;
-@@ -1455,17 +1458,21 @@ void FFmpegWriter::open_video(AVFormatContext *oc, AVS
+@@ -1464,17 +1467,21 @@ void FFmpegWriter::open_video(AVFormatContext *oc, AVS
  				adapter_ptr = NULL;
  #elif defined(__APPLE__)
  				adapter_ptr = NULL;

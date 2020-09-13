@@ -51,6 +51,7 @@ include/libopenshot/QtHtmlReader.h
 include/libopenshot/QtImageReader.h
 include/libopenshot/QtPlayer.h
 include/libopenshot/QtTextReader.h
+include/libopenshot/QtUtilities.h
 include/libopenshot/ReaderBase.h
 include/libopenshot/RendererBase.h
 include/libopenshot/Settings.h
