@@ -1,15 +1,15 @@
---- src/windows/preferences.py.orig	2020-06-15 23:50:00 UTC
+--- src/windows/preferences.py.orig	2020-09-11 19:59:04 UTC
 +++ src/windows/preferences.py
 @@ -293,7 +293,7 @@ class Preferences(QDialog):
                                  value_list.remove(value_item)
-                             elif os_platform == "Windows" and v not in ("0", "3", "4", "7"):
+                             elif os_platform == "Windows" and v not in ("0", "3", "4"):
                                  value_list.remove(value_item)
--                            elif os_platform == "Linux" and v not in ("0", "1", "2", "6", "7"):
-+                            elif (os_platform == "FreeBSD" or os_platform == "Linux") and v not in ("0", "1", "2", "6", "7"):
+-                            elif os_platform == "Linux" and v not in ("0", "1", "2", "6"):
++                            elif (os_platform == "FreeBSD" or os_platform == "Linux") and v not in ("0", "1", "2", "6"):
                                  value_list.remove(value_item)
  
                          # Remove hardware mode items which cannot decode the example video
-@@ -305,6 +305,7 @@ class Preferences(QDialog):
+@@ -307,6 +307,7 @@ class Preferences(QDialog):
  
                      # Replace %s dropdown values for hardware acceleration
                      if param["setting"] in ("graca_number_en", "graca_number_de"):
