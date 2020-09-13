@@ -13,12 +13,13 @@ LICENSE=	APACHE20
 USES=		compiler go:modules
 
 USE_GITHUB=	yes
-GHTAG=		RELEASE.2020-09-08T23-05-18Z
-COMMIT_ID=	0987069e373f6ae4f7391c3d2a00f76e416f2000
+GHTAG=		RELEASE.2020-09-10T22-02-45Z
+COMMIT_ID=	eb2934f0c1a9c2e5f2dc23ebc729617ada578970
 
 GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		Azure:azure-pipeline-go:v0.2.2:azure_azure_pipeline_go/vendor/github.com/Azure/azure-pipeline-go \
 		Azure:azure-storage-blob-go:v0.10.0:azure_azure_storage_blob_go/vendor/github.com/Azure/azure-storage-blob-go \
+		Azure:go-autorest:8f84370b53ea:azure_go_autorest_adal/vendor/github.com/Azure/go-autorest \
 		Shopify:sarama:v1.24.1:shopify_sarama/vendor/github.com/Shopify/sarama \
 		StackExchange:wmi:cbe66965904d:stackexchange_wmi/vendor/github.com/StackExchange/wmi \
 		alecthomas:participle:v0.2.1:alecthomas_participle/vendor/github.com/alecthomas/participle \
@@ -75,6 +76,7 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		gorilla:handlers:v1.4.2:gorilla_handlers/vendor/github.com/gorilla/handlers \
 		gorilla:mux:v1.8.0:gorilla_mux/vendor/github.com/gorilla/mux \
 		gorilla:rpc:v1.2.0:gorilla_rpc/vendor/github.com/gorilla/rpc \
+		gorilla:websocket:v1.4.2:gorilla_websocket/vendor/github.com/gorilla/websocket \
 		grpc:grpc-go:v1.26.0:grpc_grpc_go/vendor/google.golang.org/grpc \
 		hashicorp:errwrap:v1.0.0:hashicorp_errwrap/vendor/github.com/hashicorp/errwrap \
 		hashicorp:go-cleanhttp:v0.5.1:hashicorp_go_cleanhttp/vendor/github.com/hashicorp/go-cleanhttp \
@@ -122,6 +124,7 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		montanaflynn:stats:v0.5.0:montanaflynn_stats/vendor/github.com/montanaflynn/stats \
 		nats-io:jwt:v0.3.2:nats_io_jwt/vendor/github.com/nats-io/jwt \
 		nats-io:nats-server:v2.1.7:nats_io_nats_server_v2/vendor/github.com/nats-io/nats-server/v2 \
+		nats-io:nats-streaming-server:v0.18.0:nats_io_nats_streaming_server/vendor/github.com/nats-io/nats-streaming-server \
 		nats-io:nats.go:v1.10.0:nats_io_nats_go/vendor/github.com/nats-io/nats.go \
 		nats-io:nkeys:v0.1.4:nats_io_nkeys/vendor/github.com/nats-io/nkeys \
 		nats-io:nuid:v1.0.1:nats_io_nuid/vendor/github.com/nats-io/nuid \
