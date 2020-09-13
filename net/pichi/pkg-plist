@@ -37,7 +37,7 @@ bin/pichi
 %%DEVEL%%include/pichi/net/spawn.hpp
 %%DEVEL%%include/pichi/net/ssaead.hpp
 %%DEVEL%%include/pichi/net/ssstream.hpp
+%%DEVEL%%include/pichi/net/stream.hpp
 %%DEVEL%%include/pichi/net/tunnel.hpp
-%%DEVEL%%include/pichi/test/socket.hpp
 %%DEVEL%%include/pichi/uri.hpp
 %%DEVEL%%include/pichi.h

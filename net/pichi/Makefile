@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pichi
-DISTVERSION=	1.3.0
+DISTVERSION=	1.3.1
 CATEGORIES=	net
 
 MAINTAINER=	pichi@elude.in

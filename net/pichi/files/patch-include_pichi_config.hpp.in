@@ -1,18 +1,63 @@
 --- include/pichi/config.hpp.in.orig	1970-01-01 00:00:00 UTC
 +++ include/pichi/config.hpp.in
-@@ -42,6 +42,15 @@
- #pragma warning(pop)
- #endif // DISABLE_C4702_FOR_BEAST_FIELDS && _MSC_VER
+@@ -25,7 +25,7 @@
+ #pragma clang diagnostic ignored "-Wreturn-std-move"
+ #include <boost/asio/ip/basic_resolver.hpp>
+ #pragma clang diagnostic pop
+-#endif // NO_RETURN_STD_MOVE_FOR_BOOST_ASIO && __clang__
++#endif  // NO_RETURN_STD_MOVE_FOR_BOOST_ASIO && __clang__
  
-+#ifdef __clang__
-+#if !__has_feature(c_atomic)
+ #cmakedefine DISABLE_SHORTEN_64_TO_32_WARNING
+ #if defined(DISABLE_SHORTEN_64_TO_32_WARNING) && defined(__clang__)
+@@ -33,7 +33,7 @@
+ #pragma clang diagnostic ignored "-Wshorten-64-to-32"
+ #include <boost/asio/basic_socket.hpp>
+ #pragma clang diagnostic pop
+-#endif // NO_RETURN_STD_MOVE_FOR_BOOST_ASIO && __clang__
++#endif  // NO_RETURN_STD_MOVE_FOR_BOOST_ASIO && __clang__
+ 
+ #cmakedefine DISABLE_C4702_FOR_BEAST_FIELDS
+ #if defined(DISABLE_C4702_FOR_BEAST_FIELDS) && defined(_MSC_VER)
+@@ -41,7 +41,7 @@
+ #pragma warning(disable : 4702)
+ #include <boost/beast/http/fields.hpp>
+ #pragma warning(pop)
+-#endif // DISABLE_C4702_FOR_BEAST_FIELDS && _MSC_VER
++#endif  // DISABLE_C4702_FOR_BEAST_FIELDS && _MSC_VER
+ 
+ #ifdef __clang__
+ #if !__has_feature(c_atomic)
+@@ -49,18 +49,28 @@
+ #pragma clang diagnostic ignored "-Wc11-extensions"
+ #include <boost/smart_ptr/detail/sp_counted_base_clang.hpp>
+ #pragma clang diagnostic pop
+-#endif // !__has_feature(c_atomic)
+-#endif // __clang__
++#endif  // !__has_feature(c_atomic)
++#endif  // __clang__
+ 
++#cmakedefine DEPRECATED_ALLOCATOR_VOID
++#if defined(DEPRECATED_ALLOCATOR_VOID) && defined(__clang__)
 +#pragma clang diagnostic push
-+#pragma clang diagnostic ignored "-Wc11-extensions"
-+#include <boost/smart_ptr/detail/sp_counted_base_clang.hpp>
++#pragma clang diagnostic ignored "-Wdeprecated-declarations"
++#include <boost/asio/associated_allocator.hpp>
++#include <boost/asio/impl/executor.hpp>
++#include <boost/beast/core/async_base.hpp>
 +#pragma clang diagnostic pop
-+#endif // !__has_feature(c_atomic)
-+#endif // __clang__
++#endif  // DEPRECATED_ALLOCATOR_VOID && __clang__
 +
  #cmakedefine CMAKE_INSTALL_PREFIX "@CMAKE_INSTALL_PREFIX@"
  
  #ifdef CMAKE_INSTALL_PREFIX
+ #define PICHI_PREFIX CMAKE_INSTALL_PREFIX
+-#else // CMAKE_INSTALL_PREFIX
++#else  // CMAKE_INSTALL_PREFIX
+ #error "CMAKE_INSTALL_PREFIX not defined"
+-#endif // CMAKE_INSTALL_PREFIX
++#endif  // CMAKE_INSTALL_PREFIX
+ 
+ #cmakedefine ENABLE_TLS
+ #cmakedefine BUILD_TEST
+ 
+-#endif // PICHI_CONFIG_H
++#endif  // PICHI_CONFIG_H
