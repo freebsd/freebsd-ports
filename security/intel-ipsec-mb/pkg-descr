@@ -1,0 +1,5 @@
+Intel Multi-Buffer Crypto for IPsec Library is highly-optimized software
+implementations of the core cryptographic processing for IPsec, which
+provides industry-leading performance on a range of Intel(R) Processors.
+
+WWW: https://github.com/intel/intel-ipsec-mb
