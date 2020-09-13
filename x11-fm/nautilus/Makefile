@@ -3,7 +3,7 @@
 
 PORTNAME=	nautilus
 PORTVERSION=	3.28.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -31,5 +31,10 @@ MESON_ARGS=	-Denable-packagekit=false \
 BINARY_ALIAS=	python3=${PYTHON_VERSION}
 
 GLIB_SCHEMAS=	org.gnome.nautilus.gschema.xml
+
+OPTIONS_DEFINE=	GVFS
+OPTIONS_DEFAULT=GVFS
+
+GVFS_USE=	GNOME=gvfs
 
 .include <bsd.port.mk>

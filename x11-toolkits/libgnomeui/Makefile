@@ -4,7 +4,7 @@
 
 PORTNAME=	libgnomeui
 PORTVERSION=	2.24.5
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -22,7 +22,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:misc/gnome-icon-theme
 
 USES+=		bison gettext gmake gnome localbase libtool:keepla pathfix \
 		pkgconfig xorg
-USE_GNOME=	gnomeprefix intltool libbonoboui referencehack gvfs
+USE_GNOME=	gnomeprefix intltool libbonoboui referencehack
 USE_XORG=	sm
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
