@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	code_saturne
-PORTVERSION=	6.1.1
+PORTVERSION=	6.1.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	science parallel
 
