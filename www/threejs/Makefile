@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	three.js
-PORTVERSION=	119
+PORTVERSION=	120
 DISTVERSIONPREFIX=	r
 CATEGORIES=	www
 
@@ -33,5 +33,8 @@ do-install-DOCS-on:
 do-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
+
+do-test:
+	@${ECHO_CMD} "Tests skipped: they require npm and too many node packages."
 
 .include <bsd.port.mk>
