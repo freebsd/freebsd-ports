@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2020-09-13 01:22:29 UTC
+--- CMakeLists.txt.orig	2020-08-28 19:43:13 UTC
 +++ CMakeLists.txt
-@@ -45,7 +45,7 @@ set(ISPC_BUILD TRUE)
+@@ -45,12 +45,17 @@ set(ISPC_BUILD TRUE)
  project(${PROJECT_NAME})
  
  set(X86_HOST FALSE)
@@ -9,3 +9,14 @@
      set(X86_HOST TRUE)
  endif()
  
++set(ARM_HOST FALSE)
++if (${CMAKE_HOST_SYSTEM_PROCESSOR} MATCHES "aarch64")
++    set(ARM_HOST TRUE)
++endif()
++
+ option(X86_ENABLED "Enable x86 support" ${X86_HOST})
+-option(ARM_ENABLED "Enable ARM support" ON)
++option(ARM_ENABLED "Enable ARM support" ${ARM_HOST})
+ option(WASM_ENABLED "Enable experimental Web Assembly support" OFF)
+ option(GENX_ENABLED "Enable GenX support" OFF)
+ option(ISPC_INCLUDE_EXAMPLES "Generate build targets for the ISPC examples" ON)

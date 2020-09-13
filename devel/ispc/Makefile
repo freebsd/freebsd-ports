@@ -4,7 +4,7 @@
 PORTNAME=	ispc
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.14.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,13 +17,15 @@ ONLY_FOR_ARCHS=		aarch64 amd64 i386
 ONLY_FOR_ARCHS_REASON=	only available for these architectures
 
 BUILD_DEPENDS=	m4:devel/m4
-LIB_DEPENDS=	libLLVM.so:devel/llvm${LLVM_DEFAULT}
+LIB_DEPENDS=	libLLVM.so:devel/llvm${LLVM_VERSION}
 
-USES=		bison cmake compiler:c++14-lang python:build shebangfix
+USES=		bison cmake compiler:c++14-lang python:build,test shebangfix
 USE_GITHUB=	yes
 SHEBANG_FILES=	*.py
 
-CONFIGURE_ENV=	PATH=${LOCALBASE}/llvm${LLVM_DEFAULT}/bin:${PATH}
+LLVM_VERSION=	${LLVM_DEFAULT}
+
+CONFIGURE_ENV=	PATH=${LOCALBASE}/llvm${LLVM_VERSION}/bin:${PATH}
 CMAKE_OFF=	ISPC_INCLUDE_EXAMPLES
 
 BINARY_ALIAS=	python=${PYTHON_CMD} m4=${LOCALBASE}/bin/gm4
@@ -31,8 +33,11 @@ BINARY_ALIAS=	python=${PYTHON_CMD} m4=${LOCALBASE}/bin/gm4
 PLIST_FILES=	bin/ispc \
 		bin/check_isa
 
-do-test: # tests are broken with python-3.6
-	@cd ${WRKSRC} && ISPC_HOME=${WRKSRC} ./run_tests.py
+do-test: # some tests fail: https://github.com/ispc/ispc/issues/1868
+	@cd ${WRKSRC} && ISPC_HOME=${BUILD_WRKSRC}/bin ./run_tests.py
+
+test-check-all:
+	@cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} check-all
 
 run-examples: build
 	@[ -f ${LOCALBASE}/lib/libtbb.so ] || ! echo "ERROR run-examples target requires devel/tbb package installed"
