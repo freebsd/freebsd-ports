@@ -2,7 +2,6 @@
 
 PORTNAME=	dssim
 DISTVERSION=	2.11.3
-PORTREVISION?=	0
 CATEGORIES=	graphics
 MASTER_SITES=	CRATESIO
 # XXX Teach USES=cargo to have proper default
@@ -15,7 +14,7 @@ LICENSE=	AGPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cargo
-PLIST_FILES?=	bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME}
 
 CARGO_CRATES=	adler-0.2.3 \
 		arrayvec-0.5.1 \
