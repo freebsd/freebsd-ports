@@ -5,6 +5,22 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20200914:
+  AFFECTS: users of lang/php72
+  AUTHOR: tz@FreeBSD.org
+
+  The default version of PHP has been switched from 7.2 to 7.4.
+
+  If you use binary packages you should make a list of php packages
+  before running 'pkg upgrade':
+
+  # pkg info php7\* > ~/installed-php-ports-list
+
+  After the upgrade, check with such list if all your php extensions
+  are still installed, and reinstall them if needed.
+
+  If you use mod_php72 you need to deinstall it and install mod_php74.
+
 20200811:
   AFFECTS: users of *-emacs26-* packages
   AUTHOR: jrm@FreeBSD.org
