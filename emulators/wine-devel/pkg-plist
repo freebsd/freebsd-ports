@@ -27,7 +27,6 @@ include/wine/debug.h
 include/wine/exception.h
 include/wine/itss.h
 include/wine/itss.idl
-include/wine/library.h
 include/wine/svcctl.h
 include/wine/svcctl.idl
 include/wine/msvcrt/assert.h
@@ -2768,7 +2767,6 @@ lib/wine/libvulkan-1.def
 lib/wine/libwbemuuid.a
 lib/wine/libwebservices.def
 lib/wine/libwer.def
-%%STAGING%%lib/wine/windows.gaming.input.dll.so
 lib/wine/libwindowscodecs.a
 lib/wine/libwindowscodecsext.def
 lib/wine/libwinecrt0.a
@@ -3138,6 +3136,7 @@ lib/wine/wimgapi.dll.so
 %%WINE32%%lib/wine/win87em.dll16.so
 %%WINE32%%lib/wine/winaspi.dll16.so
 %%WINE32%%lib/wine/windebug.dll16.so
+%%STAGING%%lib/wine/windows.gaming.input.dll.so
 lib/wine/windowscodecs.dll.so
 lib/wine/windowscodecsext.dll.so
 lib/wine/wineboot.exe.so
