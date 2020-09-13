@@ -7,6 +7,6 @@ using a multi-scale variant of the SSIM algorithm.
 Features:
 - Supports alpha channel
 - Supports gamma correction
-- No OpenCV or MATLAB needed: uses C (C99) and libpng
+- No OpenCV or MATLAB needed: uses safe Rust without external dependencies
 
 WWW: https://kornel.ski/dssim

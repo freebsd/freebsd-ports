@@ -435,6 +435,7 @@
     SUBDIR += libchamplain
     SUBDIR += libdmtx
     SUBDIR += libdrm
+    SUBDIR += libdssim
     SUBDIR += libecwj2
     SUBDIR += libemf
     SUBDIR += libepoxy

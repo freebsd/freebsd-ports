@@ -1,0 +1,6 @@
+include/dssim/dssim.h
+lib/libdssim.a
+lib/libdssim.so
+lib/libdssim.so.2
+lib/libdssim.so.%%VERSION%%
+libdata/pkgconfig/dssim.pc
