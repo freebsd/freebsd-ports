@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 DEPRECATED=	Uses deprecated version of python
-EXPIRATION_DATE=	2020-09-15
+EXPIRATION_DATE=	2020-12-31
 
 BUILD_DEPENDS=	ca_root_nss>=0:security/ca_root_nss \
 		gnome-autogen.sh:devel/gnome-common
