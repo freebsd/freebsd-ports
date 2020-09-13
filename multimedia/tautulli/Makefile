@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tautulli
-PORTVERSION=	2.2.4
+PORTVERSION=	2.5.5
 DISTVERSIONPREFIX=v
 CATEGORIES=	multimedia python
 
@@ -12,14 +12,12 @@ COMMENT=	Monitoring, analytics, and notifications for Plex Media Server
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-DEPRECATED=	Uses deprecated version of python
-EXPIRATION_DATE=	2020-09-15
-
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openssl>0:security/py-openssl@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pycryptodomex>0:security/py-pycryptodomex@${PY_FLAVOR} \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
-USES=		python:2.7 shebangfix
+USES=		python:3.5+ shebangfix
 USE_GITHUB=	yes
 USE_RC_SUBR=	${PORTNAME}
 
@@ -29,7 +27,6 @@ python_OLD_CMD=	/bin/sh
 GH_ACCOUNT=	Tautulli
 GH_PROJECT=	Tautulli
 
-NO_BUILD=	yes
 NO_ARCH=	yes
 PORTDOCS=	API.md CHANGELOG.md README.md
 
@@ -40,6 +37,10 @@ OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	${FIND} ${WRKSRC} -name '*.orig' -delete
+
+do-build:
+	@${PYTHON_CMD} -m compileall ${WRKSRC}
+	@${PYTHON_CMD} -O -m compileall ${WRKSRC}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}/data ${STAGEDIR}${WWWDIR}/lib \
