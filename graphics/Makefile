@@ -706,6 +706,7 @@
     SUBDIR += p5-ming
     SUBDIR += panoglview
     SUBDIR += panomatic
+    SUBDIR += partio
     SUBDIR += pastel
     SUBDIR += pcl-pointclouds
     SUBDIR += pdf2svg
