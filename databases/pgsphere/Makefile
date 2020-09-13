@@ -3,7 +3,7 @@
 
 PORTNAME=	pgsphere
 PORTVERSION=	1.1.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases geography
 
 MAINTAINER=	sunpoet@FreeBSD.org
