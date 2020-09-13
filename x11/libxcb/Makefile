@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libxcb
-PORTVERSION=	1.13.1
+PORTVERSION=	1.14
 CATEGORIES=	x11 python
 MASTER_SITES=	https://xcb.freedesktop.org/dist/
 
@@ -12,33 +12,16 @@ COMMENT=	The X protocol C-language Binding (XCB) library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libcheck.a:devel/check \
-		xcb-proto>=1.9:x11/xcb-proto \
+BUILD_DEPENDS=	xcb-proto>=1.9:x11/xcb-proto \
 		${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:devel/libpthread-stubs
-RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:devel/libpthread-stubs
 
-CONFIGURE_ARGS+=	--disable-build-docs --without-doxygen --enable-xinput
+CONFIGURE_ARGS=	--disable-devel-docs --without-doxygen --enable-xinput --enable-xkb
 
-USES=		cpe gmake gnome python:build xorg xorg-cat:lib
-USE_GNOME=	libxslt:build
+USES=		cpe python:build tar:xz xorg xorg-cat:lib
 USE_XORG=	xau xdmcp
 INSTALL_TARGET=	install-strip
 CPE_VENDOR=	x
 
 OPTIONS_DEFINE=	DOCS
-
-.for f in XPROTO_CFLAGS XPROTO_LIBS XDMCP_CFLAGS XDMCP_LIBS NEEDED_CFLAGS NEEDED_LIBS
-CONFIGURE_ARGS+=${f}="${${f}}"
-.endfor
-CONFIGURE_ARGS+=--enable-xkb
-
-NEEDED_CFLAGS=	-I${LOCALBASE}/include
-NEEDED_LIBS=	-L${LOCALBASE}/lib -lXau `pkg-config --libs pthread-stubs`
-
-XDMCP_CFLAGS=	-I${LOCALBASE}/include
-XDMCP_LIBS=	-L${LOCALBASE}/lib -lXdmcp
-
-XPROTO_CFLAGS=	-I${LOCALBASE}/include
-XPROTO_LIBS=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>
