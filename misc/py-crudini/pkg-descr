@@ -1,4 +1,5 @@
-Crudini is the utility for handling ini files from the command line and
-shell scripts.
+crudini is a utility to simplify reading and updating ini files from shell
+scripts, so named as it provides CRUD functionality.
 
-WWW: https://pypi.org/project/crudini/
+WWW: https://www.pixelbeat.org/programs/crudini/
+WWW: https://github.com/pixelb/crudini
