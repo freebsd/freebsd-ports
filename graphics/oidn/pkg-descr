@@ -12,4 +12,4 @@ orders of magnitude (depending on the desired closeness to the ground truth).
 A simple but flexible C/C++ API ensures that the library can be easily
 integrated into most existing or new rendering solutions.
 
-WWW: https://openimagedenoise.github.io/
+WWW: https://www.openimagedenoise.org/

@@ -1,4 +1,6 @@
-bin/denoise
+bin/oidnBenchmark
+bin/oidnDenoise
+bin/oidnTest
 include/OpenImageDenoise/oidn.h
 include/OpenImageDenoise/oidn.hpp
 include/OpenImageDenoise/version.h
@@ -7,7 +9,4 @@ lib/cmake/OpenImageDenoise/OpenImageDenoiseConfig.cmake
 lib/cmake/OpenImageDenoise/OpenImageDenoiseConfigVersion.cmake
 lib/libOpenImageDenoise.so
 lib/libOpenImageDenoise.so.0
-lib/libOpenImageDenoise.so.1.1.0
-%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.md
-%%PORTDOCS%%%%DOCSDIR%%/README.md
-%%PORTDOCS%%%%DOCSDIR%%/readme.pdf
+lib/libOpenImageDenoise.so.1.2.3
