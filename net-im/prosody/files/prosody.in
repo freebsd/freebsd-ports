@@ -16,25 +16,16 @@
 
 name="prosody"
 rcvar="prosody_enable"
-command="%%PREFIX%%/bin/prosodyctl"
+command="%%PREFIX%%/bin/prosody"
+command_args="-D"
+command_interpreter="%%LUA_PREFIX%%/bin/%%LUA_CMD%%"
+extra_commands="reload"
+prosody_user="%%USERS%%"
+prosody_group="%%GROUPS%%"
 
 load_rc_config $name
 
 prosody_enable=${prosody_enable:-"NO"}
 pidfile=${prosody_pidfile:-"/var/run/prosody/prosody.pid"}
-
-extra_commands="reload"
-start_cmd="prosody_cmd start"
-stop_cmd="prosody_cmd stop"
-reload_cmd="prosody_cmd reload"
-restart_cmd="prosody_cmd restart"
-status_cmd="prosody_cmd status"
-
-export PATH="%%PREFIX%%/bin:$PATH"
-
-prosody_cmd()
-{
-	$command $1
-}
 
 run_rc_command "$1"

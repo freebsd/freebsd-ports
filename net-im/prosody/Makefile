@@ -3,6 +3,7 @@
 
 PORTNAME=	prosody
 PORTVERSION=	0.11.6
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	https://prosody.im/downloads/source/
 
@@ -19,7 +20,8 @@ RUN_DEPENDS=	${LUA_REFMODLIBDIR}/socket/core.so:net/luasocket@${LUA_FLAVOR} \
 		${LUA_REFMODLIBDIR}/bit.so:devel/lua-bitop@${LUA_FLAVOR}
 LIB_DEPENDS=	libidn.so:dns/libidn
 
-USES=		compiler:c11 cpe gmake lua:52 ssl
+USES=		compiler:c11 cpe gmake lua:52 shebangfix ssl
+SHEBANG_FILES=	prosody prosodyctl tools/migration/prosody-migrator.lua
 LUA_PREMK=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix="${PREFIX}" \
@@ -43,7 +45,7 @@ GROUPS=		${USERS}
 
 USE_RC_SUBR=	prosody
 SUB_FILES=	pkg-deinstall
-SUB_LIST=	USERS=${USERS} GROUPS=${GROUPS}
+SUB_LIST=	USERS=${USERS} GROUPS=${GROUPS} LUA_PREFIX=${LUA_PREFIX} LUA_CMD=${LUA_CMD}
 PLIST_SUB=	PROSODY_USER=${USERS} \
 		PROSODY_USER_regex=\b${USERS}\b \
 		PROSODY_GROUP=${GROUPS} \

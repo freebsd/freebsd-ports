@@ -1,12 +1,20 @@
 [
 { type: install
   message: <<EOM
-    If you're running Prosody in a jail and experience problems, please add
-    the following to the global section of your prosody.cfg.lua:
+If you're running Prosody in a jail and experience problems, please add
+the following to the global section of your prosody.cfg.lua:
 
-    interfaces = { 'x.x.x.x' }
+interfaces = { 'x.x.x.x' }
 
-    where 'x.x.x.x' is the public IP you wish Prosody to bind to.
+where 'x.x.x.x' is the public IP you wish Prosody to bind to.
+EOM
+},
+{ type: install
+  message: <<EOM
+Make sure your prosody.cfg.lua contains the following line
+or else the init script won't work:
+
+pidfile = "/var/run/prosody/prosody.pid"
 EOM
 }
 ]
