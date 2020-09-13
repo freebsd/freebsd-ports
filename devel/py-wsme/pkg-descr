@@ -1,8 +1,14 @@
 Web Services Made Easy (WSME) simplifies the writing of REST web services by
 providing simple yet powerful typing, removing the need to directly manipulate
-the request and the response objects.  WSME can work standalone or on top of
-your favorite Python web (micro)framework, so you can use both your preferred
-way of routing your REST requests and most of the features of WSME that rely
-on the typing system.
+the request and the response objects.
 
-WWW: https://pypi.org/project/WSME/
+WSME can work standalone or on top of your favorite Python web (micro)framework,
+so you can use both your preferred way of routing your REST requests and most of
+the features of WSME that rely on the typing system like:
+- Alternate protocols, including those supporting batch-calls
+- Easy documentation through a Sphinx extension
+
+WSME is originally a rewrite of TGWebServices with a focus on extensibility,
+framework-independence and better type handling.
+
+WWW: https://opendev.org/x/wsme
