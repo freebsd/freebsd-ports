@@ -3,22 +3,21 @@ implementation by the mean of a library. The complete control of the client is
 made by the programmer. With libssh, you can remotely execute programs, transfer
 files, use a secure and transparent tunnel for your remote programs.
 With its Secure FTP implementation, you can play with remote files easily,
-without third-party programs others than libcrypto (from openssl).
+without third-party programs others than libcrypto (from OpenSSL).
 
 libssh features:
+- Full C library functions for manipulating a client-side SSH connection
+- SSH2 protocol compliant
+- Fully configurable sessions
+- Server support, SSH agent authentication support
+- Support for AES-128, AES-192, AES-256, Blowfish, 3DES in CBC mode
+- Use multiple SSH connections in a same process, at same time
+- Use multiple channels in the same connection
+- Thread safety when using different sessions at same time
+- POSIX-like SFTP implementation with openssh extension support
+- SCP implementation
+- RSA and DSS server public key supported
+- Compression support (with zlib)
+- Public key (RSA and DSS), password and keyboard-interactive authentication
 
- * Full C library functions for manipulating a client-side SSH connection
- * SSH2 protocol compliant
- * Fully configurable sessions
- * Server support, SSH agent authentication support
- * Support for AES-128, AES-192, AES-256, Blowfish, 3DES in CBC mode
- * Use multiple SSH connections in a same process, at same time
- * Use multiple channels in the same connection
- * Thread safety when using different sessions at same time
- * POSIX-like SFTP implementation with openssh extension support
- * SCP implementation
- * RSA and DSS server public key supported
- * Compression support (with zlib)
- * Public key (RSA and DSS), password and keyboard-interactive authentication
-
-WWW: http://www.libssh.org/
+WWW: https://www.libssh.org/
