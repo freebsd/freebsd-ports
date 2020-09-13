@@ -4,6 +4,7 @@
 PORTNAME=	ispc
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.14.1
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -33,7 +34,7 @@ PLIST_FILES=	bin/ispc \
 do-test: # tests are broken with python-3.6
 	@cd ${WRKSRC} && ISPC_HOME=${WRKSRC} ./run_tests.py
 
-run-examples:
+run-examples: build
 	@[ -f ${LOCALBASE}/lib/libtbb.so ] || ! echo "ERROR run-examples target requires devel/tbb package installed"
 .for e in simple sort mandelbrot stencil
 	@cd ${WRKSRC}/examples/${e} && \
