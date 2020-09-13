@@ -47,7 +47,7 @@
 -if [ -n "$wsdd_group" ]; then
 -	wsdd_opts="-w ${wsdd_group}"
 +wsdd_opts=""
-+if [ -n "${wsdd_suppflags}" ]; then
++if [ -n "${wsdd_flags}" ]; then
 +	wsdd_opts="${wsdd_flags}"
  fi
 +if [ -n "$wsdd_domain" ]; then
