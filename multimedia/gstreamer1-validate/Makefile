@@ -17,13 +17,14 @@ LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		compiler:c11 gettext-runtime gmake gnome libtool pathfix \
-		pkgconfig python:2.7 shebangfix tar:xz
+		pkgconfig python shebangfix tar:xz
 SHEBANG_FILES=	tools/gst-validate-launcher.in
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	cairo gdkpixbuf2 gtk30 introspection:build
 USE_GSTREAMER1=	yes
 INSTALL_TARGET=	install-strip
+USE_PYTHON=	noflavors
 
 PLIST_SUB=	VERSION=1.0 SOVERSION=0.1601.0
 
