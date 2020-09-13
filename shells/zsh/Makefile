@@ -88,6 +88,10 @@ SUB_FILES=	pkg-message
 CONFIGURE_ENV+=	ac_cv_lib_iconv_libiconv=no
 .endif
 
+.if ${ncurses_ARGS} == port
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-Src_Modules_curses__keys.awk
+.endif
+
 post-patch:
 # FreeBSD's clock_gettime(2) is in libc, not librt; see PR 167857
 	@${REINPLACE_CMD} -e '/LIBS/s|-lrt||' ${WRKSRC}/configure
