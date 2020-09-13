@@ -1,4 +1,4 @@
+%%PYTHON_SITELIBDIR%%/__pycache__/mlt.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/__pycache__/mlt.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/_mlt.so
 %%PYTHON_SITELIBDIR%%/mlt.py
-%%PYTHON_SITELIBDIR%%/mlt.pyc
-%%PYTHON_SITELIBDIR%%/mlt.pyo
