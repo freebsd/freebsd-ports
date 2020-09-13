@@ -1,6 +1,6 @@
---- JuceLibraryCode/modules/juce_events/juce_events.h.orig	2019-04-17 16:56:20 UTC
+--- JuceLibraryCode/modules/juce_events/juce_events.h.orig	2020-09-11 12:10:25 UTC
 +++ JuceLibraryCode/modules/juce_events/juce_events.h
-@@ -89,7 +89,7 @@
+@@ -90,7 +90,7 @@
  #include "interprocess/juce_ConnectedChildProcess.h"
  #include "interprocess/juce_NetworkServiceDiscovery.h"
  

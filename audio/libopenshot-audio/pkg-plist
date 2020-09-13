@@ -47,9 +47,8 @@ include/libopenshot-audio/juce_audio_devices/audio_io/juce_AudioIODevice.h
 include/libopenshot-audio/juce_audio_devices/audio_io/juce_AudioIODeviceType.h
 include/libopenshot-audio/juce_audio_devices/audio_io/juce_SystemAudioVolume.h
 include/libopenshot-audio/juce_audio_devices/juce_audio_devices.h
-include/libopenshot-audio/juce_audio_devices/midi_io/juce_MidiInput.h
+include/libopenshot-audio/juce_audio_devices/midi_io/juce_MidiDevices.h
 include/libopenshot-audio/juce_audio_devices/midi_io/juce_MidiMessageCollector.h
-include/libopenshot-audio/juce_audio_devices/midi_io/juce_MidiOutput.h
 include/libopenshot-audio/juce_audio_devices/native/juce_MidiDataConcatenator.h
 include/libopenshot-audio/juce_audio_devices/native/juce_ios_Audio.h
 include/libopenshot-audio/juce_audio_devices/sources/juce_AudioSourcePlayer.h
@@ -207,7 +206,6 @@ include/libopenshot-audio/juce_core/memory/juce_WeakReference.h
 include/libopenshot-audio/juce_core/misc/juce_ConsoleApplication.h
 include/libopenshot-audio/juce_core/misc/juce_Result.h
 include/libopenshot-audio/juce_core/misc/juce_RuntimePermissions.h
-include/libopenshot-audio/juce_core/misc/juce_StdFunctionCompat.h
 include/libopenshot-audio/juce_core/misc/juce_Uuid.h
 include/libopenshot-audio/juce_core/misc/juce_WindowsRegistry.h
 include/libopenshot-audio/juce_core/native/juce_BasicNativeHeaders.h
@@ -272,6 +270,7 @@ include/libopenshot-audio/juce_core/time/juce_PerformanceCounter.h
 include/libopenshot-audio/juce_core/time/juce_RelativeTime.h
 include/libopenshot-audio/juce_core/time/juce_Time.h
 include/libopenshot-audio/juce_core/unit_tests/juce_UnitTest.h
+include/libopenshot-audio/juce_core/unit_tests/juce_UnitTestCategories.h
 include/libopenshot-audio/juce_core/xml/juce_XmlDocument.h
 include/libopenshot-audio/juce_core/xml/juce_XmlElement.h
 include/libopenshot-audio/juce_core/zip/juce_GZIPCompressorOutputStream.h

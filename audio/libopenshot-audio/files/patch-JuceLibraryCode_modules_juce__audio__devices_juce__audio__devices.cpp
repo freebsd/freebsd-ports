@@ -1,4 +1,4 @@
---- JuceLibraryCode/modules/juce_audio_devices/juce_audio_devices.cpp.orig	2019-04-17 16:56:20 UTC
+--- JuceLibraryCode/modules/juce_audio_devices/juce_audio_devices.cpp.orig	2020-09-11 12:10:25 UTC
 +++ JuceLibraryCode/modules/juce_audio_devices/juce_audio_devices.cpp
 @@ -119,7 +119,7 @@
   #endif
@@ -9,7 +9,7 @@
   #if JUCE_ALSA
    /* Got an include error here? If so, you've either not got ALSA installed, or you've
       not got your paths set up correctly to find its header files.
-@@ -212,7 +212,7 @@
+@@ -211,7 +211,7 @@
   #endif
  
  //==============================================================================

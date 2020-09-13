@@ -1,7 +1,7 @@
---- JuceLibraryCode/modules/juce_core/system/juce_StandardHeader.h.orig	2019-04-17 16:56:20 UTC
+--- JuceLibraryCode/modules/juce_core/system/juce_StandardHeader.h.orig	2020-09-11 12:10:25 UTC
 +++ JuceLibraryCode/modules/juce_core/system/juce_StandardHeader.h
-@@ -72,7 +72,7 @@
-  #include <xlocale.h>
+@@ -80,7 +80,7 @@
+  #endif
  #endif
  
 -#if JUCE_LINUX

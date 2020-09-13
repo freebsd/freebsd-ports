@@ -1,11 +1,11 @@
---- JuceLibraryCode/modules/juce_core/native/juce_BasicNativeHeaders.h.orig	2019-04-17 16:56:20 UTC
+--- JuceLibraryCode/modules/juce_core/native/juce_BasicNativeHeaders.h.orig	2020-09-11 12:10:25 UTC
 +++ JuceLibraryCode/modules/juce_core/native/juce_BasicNativeHeaders.h
-@@ -261,6 +261,8 @@
-  #include <sys/types.h>
+@@ -272,6 +272,8 @@
   #include <sys/wait.h>
   #include <utime.h>
-+ #include <pthread_np.h>
+  #include <poll.h>
 + #include <net/if_dl.h>
++ #include <pthread_np.h>
  
  //==============================================================================
  #elif JUCE_ANDROID

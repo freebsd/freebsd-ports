@@ -1,6 +1,6 @@
---- JuceLibraryCode/modules/juce_core/native/juce_posix_SharedCode.h.orig	2019-04-17 16:56:20 UTC
+--- JuceLibraryCode/modules/juce_core/native/juce_posix_SharedCode.h.orig	2020-09-11 12:10:25 UTC
 +++ JuceLibraryCode/modules/juce_core/native/juce_posix_SharedCode.h
-@@ -148,7 +148,7 @@ void JUCE_CALLTYPE Process::terminate()
+@@ -59,7 +59,7 @@ void JUCE_CALLTYPE Process::terminate()
  }
  
  
@@ -9,7 +9,16 @@
  bool Process::setMaxNumberOfFileHandles (int newMaxNumber) noexcept
  {
      rlimit lim;
-@@ -987,6 +987,8 @@ void JUCE_CALLTYPE Thread::setCurrentThreadName (const
+@@ -253,7 +253,7 @@ uint64 File::getFileIdentifier() const
+ 
+ static bool hasEffectiveRootFilePermissions()
+ {
+-   #if JUCE_LINUX
++   #if JUCE_BSD || JUCE_LINUX
+     return geteuid() == 0;
+    #else
+     return false;
+@@ -924,6 +924,8 @@ void JUCE_CALLTYPE Thread::setCurrentThreadName (const
      {
          [[NSThread currentThread] setName: juceStringToNS (name)];
      }
@@ -18,20 +27,20 @@
     #elif JUCE_LINUX || JUCE_ANDROID
      #if ((JUCE_LINUX && (__GLIBC__ * 1000 + __GLIBC_MINOR__) >= 2012) \
            || JUCE_ANDROID && __ANDROID_API__ >= 9)
-@@ -1040,14 +1042,20 @@ void JUCE_CALLTYPE Thread::yield()
+@@ -977,14 +979,20 @@ void JUCE_CALLTYPE Thread::yield()
  void JUCE_CALLTYPE Thread::setCurrentThreadAffinityMask (uint32 affinityMask)
  {
     #if SUPPORT_AFFINITIES
-+     #if JUCE_BSD
++    #if JUCE_BSD
 +    cpuset_t affinity;
-+     #else
++    #else
      cpu_set_t affinity;
-+     #endif
++    #endif
      CPU_ZERO (&affinity);
  
      for (int i = 0; i < 32; ++i)
-         if ((affinityMask & (1 << i)) != 0)
-             CPU_SET (i, &affinity);
+         if ((affinityMask & (uint32) (1 << i)) != 0)
+             CPU_SET ((size_t) i, &affinity);
  
 -   #if (! JUCE_ANDROID) && ((! JUCE_LINUX) || ((__GLIBC__ * 1000 + __GLIBC_MINOR__) >= 2004))
 +   #if JUCE_BSD

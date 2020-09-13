@@ -1,6 +1,6 @@
---- JuceLibraryCode/modules/juce_core/files/juce_File.cpp.orig	2019-04-17 16:56:20 UTC
+--- JuceLibraryCode/modules/juce_core/files/juce_File.cpp.orig	2020-09-11 12:10:25 UTC
 +++ JuceLibraryCode/modules/juce_core/files/juce_File.cpp
-@@ -211,7 +211,7 @@ String File::addTrailingSeparator (const String& path)
+@@ -231,7 +231,7 @@ String File::addTrailingSeparator (const String& path)
  }
  
  //==============================================================================
@@ -9,7 +9,7 @@
   #define NAMES_ARE_CASE_SENSITIVE 1
  #endif
  
-@@ -953,7 +953,7 @@ bool File::createSymbolicLink (const File& linkFileToC
+@@ -973,7 +973,7 @@ bool File::createSymbolicLink (const File& linkFileToC
              linkFileToCreate.deleteFile();
      }
  
