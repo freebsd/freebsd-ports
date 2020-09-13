@@ -236,6 +236,7 @@
     SUBDIR += py-geolinks
     SUBDIR += py-geomet
     SUBDIR += py-geometer
+    SUBDIR += py-geometric
     SUBDIR += py-gpaw
     SUBDIR += py-gsd
     SUBDIR += py-h5json
