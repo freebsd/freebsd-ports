@@ -121,6 +121,7 @@ share/applications/ibus-setup-typing-booster.desktop
 %%DATADIR%%/data/annotations/de.xml
 %%DATADIR%%/data/annotations/dje_NE.xml
 %%DATADIR%%/data/annotations/dje.xml
+%%DATADIR%%/data/annotations/doi.xml
 %%DATADIR%%/data/annotations/dsb_DE.xml
 %%DATADIR%%/data/annotations/dsb.xml
 %%DATADIR%%/data/annotations/dua_CM.xml
@@ -472,6 +473,7 @@ share/applications/ibus-setup-typing-booster.desktop
 %%DATADIR%%/data/annotations/luy.xml
 %%DATADIR%%/data/annotations/lv_LV.xml
 %%DATADIR%%/data/annotations/lv.xml
+%%DATADIR%%/data/annotations/mai.xml
 %%DATADIR%%/data/annotations/mas_KE.xml
 %%DATADIR%%/data/annotations/mas_TZ.xml
 %%DATADIR%%/data/annotations/mas.xml
@@ -485,12 +487,14 @@ share/applications/ibus-setup-typing-booster.desktop
 %%DATADIR%%/data/annotations/mgh.xml
 %%DATADIR%%/data/annotations/mgo_CM.xml
 %%DATADIR%%/data/annotations/mgo.xml
+%%DATADIR%%/data/annotations/mi.xml
 %%DATADIR%%/data/annotations/mk_MK.xml
 %%DATADIR%%/data/annotations/mk.xml
 %%DATADIR%%/data/annotations/ml_IN.xml
 %%DATADIR%%/data/annotations/ml.xml
 %%DATADIR%%/data/annotations/mn_MN.xml
 %%DATADIR%%/data/annotations/mn.xml
+%%DATADIR%%/data/annotations/mni.xml
 %%DATADIR%%/data/annotations/mr_IN.xml
 %%DATADIR%%/data/annotations/mr.xml
 %%DATADIR%%/data/annotations/ms_BN.xml
@@ -594,10 +598,12 @@ share/applications/ibus-setup-typing-booster.desktop
 %%DATADIR%%/data/annotations/rw.xml
 %%DATADIR%%/data/annotations/rwk_TZ.xml
 %%DATADIR%%/data/annotations/rwk.xml
+%%DATADIR%%/data/annotations/sa.xml
 %%DATADIR%%/data/annotations/sah_RU.xml
 %%DATADIR%%/data/annotations/sah.xml
 %%DATADIR%%/data/annotations/saq_KE.xml
 %%DATADIR%%/data/annotations/saq.xml
+%%DATADIR%%/data/annotations/sat.xml
 %%DATADIR%%/data/annotations/sbp_TZ.xml
 %%DATADIR%%/data/annotations/sbp.xml
 %%DATADIR%%/data/annotations/sc.xml
@@ -648,6 +654,7 @@ share/applications/ibus-setup-typing-booster.desktop
 %%DATADIR%%/data/annotations/sr_Latn_XK.xml
 %%DATADIR%%/data/annotations/sr_Latn.xml
 %%DATADIR%%/data/annotations/sr.xml
+%%DATADIR%%/data/annotations/su.xml
 %%DATADIR%%/data/annotations/sv_AX.xml
 %%DATADIR%%/data/annotations/sv_FI.xml
 %%DATADIR%%/data/annotations/sv_SE.xml
@@ -803,6 +810,7 @@ share/applications/ibus-setup-typing-booster.desktop
 %%DATADIR%%/data/annotationsDerived/km.xml
 %%DATADIR%%/data/annotationsDerived/kn.xml
 %%DATADIR%%/data/annotationsDerived/ko.xml
+%%DATADIR%%/data/annotationsDerived/kok.xml
 %%DATADIR%%/data/annotationsDerived/ku.xml
 %%DATADIR%%/data/annotationsDerived/ky.xml
 %%DATADIR%%/data/annotationsDerived/lo.xml

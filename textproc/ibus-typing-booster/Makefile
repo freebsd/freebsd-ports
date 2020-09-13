@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ibus-typing-booster
-PORTVERSION=	2.9.5
+PORTVERSION=	2.9.7
 CATEGORIES=	textproc
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -26,6 +26,7 @@ TEST_DEPENDS=	${LOCALBASE}/share/hunspell/de_DE.dic:german/hunspell		\
 		${LOCALBASE}/libexec/ibus-engine-m17n:textproc/ibus-m17n	\
 		${LOCALBASE}/share/hunspell/en_US.aff:textproc/en-hunspell	\
 		${LOCALBASE}/share/m17n/hi-inscript2.mim:devel/m17n-inscript2	\
+		${PYTHON_SITELIBDIR}/mock/mock.py:devel/py-mock@${PY_FLAVOR}	\
 		gmake:devel/gmake
 
 USE_GITHUB=	yes
