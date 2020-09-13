@@ -236,11 +236,6 @@ lib/gnumeric/%%VERSION%%/plugins/fn-tsa/plugin.xml
 %%GDA%%lib/gnumeric/%%VERSION%%/plugins/gdaif/ui.xml
 lib/gnumeric/%%VERSION%%/plugins/glpk/glpk.so
 lib/gnumeric/%%VERSION%%/plugins/glpk/plugin.xml
-lib/gnumeric/%%VERSION%%/plugins/gnome-glossary/glossary-po-header
-lib/gnumeric/%%VERSION%%/plugins/gnome-glossary/gnome_glossary.py
-lib/gnumeric/%%VERSION%%/plugins/gnome-glossary/gnome_glossary.pyc
-lib/gnumeric/%%VERSION%%/plugins/gnome-glossary/gnome_glossary.pyo
-lib/gnumeric/%%VERSION%%/plugins/gnome-glossary/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/html/html.so
 lib/gnumeric/%%VERSION%%/plugins/html/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/lotus/lotus.so
@@ -263,13 +258,6 @@ lib/gnumeric/%%VERSION%%/plugins/plan_perfect/plan_perfect.so
 lib/gnumeric/%%VERSION%%/plugins/plan_perfect/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/psiconv/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/psiconv/psiconv.so
-lib/gnumeric/%%VERSION%%/plugins/py-func/plugin.xml
-lib/gnumeric/%%VERSION%%/plugins/py-func/py_func.py
-lib/gnumeric/%%VERSION%%/plugins/py-func/py_func.pyc
-lib/gnumeric/%%VERSION%%/plugins/py-func/py_func.pyo
-lib/gnumeric/%%VERSION%%/plugins/python-loader/plugin.xml
-lib/gnumeric/%%VERSION%%/plugins/python-loader/python_loader.so
-lib/gnumeric/%%VERSION%%/plugins/python-loader/ui-console-menu.xml
 lib/gnumeric/%%VERSION%%/plugins/qpro/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/qpro/qpro.so
 lib/gnumeric/%%VERSION%%/plugins/sample_datasource/plugin.xml
