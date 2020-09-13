@@ -27,7 +27,6 @@ lib/emscripten/emcmake
 lib/emscripten/emcmake.py
 lib/emscripten/emconfigure
 lib/emscripten/emconfigure.py
-lib/emscripten/emlink.py
 lib/emscripten/emmake
 lib/emscripten/emmake.py
 lib/emscripten/emranlib
@@ -180,6 +179,7 @@ lib/emscripten/src/library_bootstrap.js
 lib/emscripten/src/library_browser.js
 lib/emscripten/src/library_cyberdwarf.js
 lib/emscripten/src/library_debugger_toolkit.js
+lib/emscripten/src/library_dylink.js
 lib/emscripten/src/library_egl.js
 lib/emscripten/src/library_emmalloc.js
 lib/emscripten/src/library_exceptions.js
@@ -247,7 +247,6 @@ lib/emscripten/src/runtime_functions.js
 lib/emscripten/src/runtime_init_memory.js
 lib/emscripten/src/runtime_init_table.js
 lib/emscripten/src/runtime_math.js
-lib/emscripten/src/runtime_sab_polyfill.js
 lib/emscripten/src/runtime_safe_heap.js
 lib/emscripten/src/runtime_stack_check.js
 lib/emscripten/src/runtime_strings.js
@@ -795,6 +794,7 @@ lib/emscripten/system/include/libcxx/vector
 lib/emscripten/system/include/libcxx/version
 lib/emscripten/system/include/libcxx/wchar.h
 lib/emscripten/system/include/libcxx/wctype.h
+lib/emscripten/system/include/neon/arm_neon.h
 lib/emscripten/system/include/uuid/uuid.h
 lib/emscripten/system/include/wasi/api.h
 lib/emscripten/system/include/wasi/wasi-helpers.h
@@ -3283,8 +3283,6 @@ lib/emscripten/third_party/websockify/wstelnet.html
 lib/emscripten/tools/__init__.py
 lib/emscripten/tools/acorn-optimizer.js
 lib/emscripten/tools/add_license.py
-lib/emscripten/tools/asm_module.py
-lib/emscripten/tools/autodebugger.py
 lib/emscripten/tools/building.py
 lib/emscripten/tools/cache.py
 lib/emscripten/tools/check_clean.py
@@ -3330,17 +3328,6 @@ lib/emscripten/tools/line_endings.py
 lib/emscripten/tools/lz4-compress.js
 lib/emscripten/tools/maybe_wasm2js.py
 lib/emscripten/tools/minimal_runtime_shell.py
-lib/emscripten/tools/optimizer/CMakeLists.txt
-lib/emscripten/tools/optimizer/istring.h
-lib/emscripten/tools/optimizer/optimizer-main.cpp
-lib/emscripten/tools/optimizer/optimizer-shared.cpp
-lib/emscripten/tools/optimizer/optimizer.cpp
-lib/emscripten/tools/optimizer/optimizer.h
-lib/emscripten/tools/optimizer/parser.cpp
-lib/emscripten/tools/optimizer/parser.h
-lib/emscripten/tools/optimizer/simple_ast.cpp
-lib/emscripten/tools/optimizer/simple_ast.h
-lib/emscripten/tools/optimizer/snprintf.h
 lib/emscripten/tools/ports/__init__.py
 lib/emscripten/tools/ports/boost_headers.py
 lib/emscripten/tools/ports/bullet.py
@@ -3367,9 +3354,9 @@ lib/emscripten/tools/response_file.py
 lib/emscripten/tools/run_python.sh
 lib/emscripten/tools/scons/site_scons/site_tools/emscripten/__init__.py
 lib/emscripten/tools/scons/site_scons/site_tools/emscripten/emscripten.py
-lib/emscripten/tools/separate_asm.py
 lib/emscripten/tools/settings_template.py
 lib/emscripten/tools/shared.py
+lib/emscripten/tools/simde_update.py
 lib/emscripten/tools/source-maps/sourcemap2json.js
 lib/emscripten/tools/source-maps/sourcemapper.js
 lib/emscripten/tools/system_libs.py
