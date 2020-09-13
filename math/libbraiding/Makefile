@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libbraiding
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	math
 
 MAINTAINER=	thierry@FreeBSD.org
