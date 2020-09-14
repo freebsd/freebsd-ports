@@ -2,7 +2,7 @@
 
 PORTNAME=	zrythm
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.694
+DISTVERSION=	0.8.911
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,6 +24,7 @@ LIB_DEPENDS=	libaudec.so:audio/libaudec \
 		liblilv-0.so:audio/lilv \
 		libpcre.so:devel/pcre \
 		libportaudio.so:audio/portaudio \
+		libreproc.so:devel/reproc \
 		librubberband.so:audio/rubberband \
 		libsamplerate.so:audio/libsamplerate \
 		libserd-0.so:devel/serd \
@@ -47,7 +48,7 @@ USE_XORG=	x11
 GLIB_SCHEMAS=	org.zrythm.Zrythm.gschema.xml
 INSTALLS_ICONS=	yes
 
-BINARY_ALIAS=	python3=${PYTHON_CMD}
+BINARY_ALIAS=	git=false python3=${PYTHON_CMD}
 
 post-patch: # https://git.zrythm.org/zrythm/zrythm/issues/299
 	@${REINPLACE_CMD} 's|<malloc.h>|<stdlib.h>|' ${WRKSRC}/ext/midilib/src/*.c
