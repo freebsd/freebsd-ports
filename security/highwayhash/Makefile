@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	highwayhash
-PORTVERSION=	g20200527
+PORTVERSION=	g20200803
 PORTEPOCH=	1
 CATEGORIES=	security
 
@@ -22,5 +22,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	google
 GH_TAGNAME=	954e56589a7e75bad04f1063174d78f8c17a9b3a
 USE_LDCONFIG=	yes
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libhighwayhash.so
 
 .include <bsd.port.mk>
