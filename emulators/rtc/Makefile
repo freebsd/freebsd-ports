@@ -12,7 +12,7 @@ COMMENT=	Kernel module which provides /dev/rtc device support
 
 LICENSE=	BSD2CLAUSE
 
-USES=		kmod
+USES=		kmod uidfix
 
 WRKSRC=		${WRKDIR}/files
 
