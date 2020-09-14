@@ -9,7 +9,10 @@ include/adept/BinaryOperation.h
 include/adept/Expression.h
 include/adept/ExpressionSize.h
 include/adept/FixedArray.h
+include/adept/GradientIndex.h
 include/adept/IndexedArray.h
+include/adept/Minimizer.h
+include/adept/Optimizable.h
 include/adept/Packet.h
 include/adept/RangeIndex.h
 include/adept/ScratchVector.h
@@ -32,6 +35,7 @@ include/adept/inv.h
 include/adept/matmul.h
 include/adept/noalias.h
 include/adept/outer_product.h
+include/adept/quick_e.h
 include/adept/reduce.h
 include/adept/scalar_shortcuts.h
 include/adept/settings.h
@@ -42,6 +46,7 @@ include/adept/traits.h
 include/adept/vector_utilities.h
 include/adept/where.h
 include/adept_arrays.h
+include/adept_optimize.h
 lib/libadept.so
 lib/libadept.so.0
 lib/libadept.so.0.0.0
