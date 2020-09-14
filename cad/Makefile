@@ -83,6 +83,7 @@
     SUBDIR += opencascade
     SUBDIR += openctm
     SUBDIR += openfpgaloader
+    SUBDIR += openroad
     SUBDIR += openscad
     SUBDIR += openscad-devel
     SUBDIR += opensta

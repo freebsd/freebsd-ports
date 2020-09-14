@@ -1,0 +1,4 @@
+OpenROAD is a chip physical design tool. It uses the OpenDB database as a design
+database and representation. OpenSTA is used for static timing analysis.
+
+WWW: https://theopenroadproject.org/
