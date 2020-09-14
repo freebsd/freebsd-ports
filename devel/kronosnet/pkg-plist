@@ -21,7 +21,7 @@ lib/kronosnet/crypto_nss.so
 lib/libknet.a
 lib/libknet.so
 lib/libknet.so.1
-lib/libknet.so.1.3.0
+lib/libknet.so.1.4.0
 lib/libnozzle.a
 lib/libnozzle.so
 lib/libnozzle.so.1
@@ -38,6 +38,9 @@ libdata/pkgconfig/libnozzle.pc
 %%MANPAGES%%man/man3/knet_handle_clear_stats.3.gz
 %%MANPAGES%%man/man3/knet_handle_compress.3.gz
 %%MANPAGES%%man/man3/knet_handle_crypto.3.gz
+%%MANPAGES%%man/man3/knet_handle_crypto_rx_clear_traffic.3.gz
+%%MANPAGES%%man/man3/knet_handle_crypto_set_config.3.gz
+%%MANPAGES%%man/man3/knet_handle_crypto_use_config.3.gz
 %%MANPAGES%%man/man3/knet_handle_enable_filter.3.gz
 %%MANPAGES%%man/man3/knet_handle_enable_access_lists.3.gz
 %%MANPAGES%%man/man3/knet_handle_enable_pmtud_notify.3.gz
