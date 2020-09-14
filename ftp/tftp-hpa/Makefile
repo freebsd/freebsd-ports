@@ -2,17 +2,20 @@
 
 PORTNAME=	tftp-hpa
 PORTVERSION=	5.2
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	KERNEL_ORG/software/network/tftp/tftp-hpa
 
-MAINTAINER=	brooks@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced TFTP server
 
-OPTIONS_DEFINE=	DOCS
+LICENSE=	BSD4CLAUSE
 
-GNU_CONFIGURE=	yes
 USES=		gmake tar:xz
+GNU_CONFIGURE=	yes
 USE_RC_SUBR=	tftpd
+
+OPTIONS_DEFINE=	DOCS
 
 DESTDIRNAME=	INSTALLROOT
 
@@ -30,14 +33,11 @@ post-patch:
 	    ${WRKSRC}/MCONFIG.in
 	@${REINPLACE_CMD} -e 's,SBINDIR,LIBEXECDIR,g' \
 	    ${WRKSRC}/tftpd/Makefile
-	@${REINPLACE_CMD} -e 's,LOG_DAEMON,LOG_FTP,g' \
-	    -e 's,openlog(,tzset();openlog(,g' \
-	    ${WRKSRC}/tftpd/tftpd.c
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for docfile in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${docfile} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${docfile} ${STAGEDIR}${DOCSDIR}
 .endfor
 
 .include <bsd.port.mk>
