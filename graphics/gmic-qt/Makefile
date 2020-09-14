@@ -3,12 +3,12 @@
 PORTNAME=	gmic-qt
 DISTVERSIONPREFIX=	v.
 DISTVERSION=	2.3.6
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	http://gmic.eu/:stdlib \
 		LOCAL/tcberner/${PORTNAME}/${PORTVERSION}:stdlib
-DISTFILES=	gmic_stdlib.h:stdlib
+DISTFILES=	gmic_stdlib${DISTVERSION:S/.//g}.h:stdlib
 DIST_SUBDIR=	KDE/${PORTNAME}/${PORTVERSION}
 EXTRACT_ONLY=	${DISTNAME}.tar.gz ${DISTFILE_gmic} ${DISTFILE_cimg}
 
@@ -61,7 +61,7 @@ USE_GNOME=	cairo gdkpixbuf2 glib20
 pre-configure:
 # Copy the necessary files
 	${CP} ${WRKSRC_cimg}/CImg.h ${WRKSRC_gmic}/src
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/gmic_stdlib.h ${WRKSRC_gmic}/src
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/gmic_stdlib${DISTVERSION:S/.//g}.h ${WRKSRC_gmic}/src/gmic_stdlib.h
 
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/gmic_${FLAVOR:S/$/_/:S/none_//}qt ${STAGEDIR}${PREFIX}/bin
