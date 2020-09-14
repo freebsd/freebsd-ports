@@ -6,4 +6,4 @@ ARM assembly variants are ignored for now.
 The module is a standalone version of the SHA-3 implemention of Python 3.4
 (currently under development).
 
-WWW: http://bitbucket.org/tiran/pykeccak
+WWW: https://bitbucket.org/tiran/pykeccak
