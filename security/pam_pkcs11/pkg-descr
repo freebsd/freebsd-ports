@@ -1,0 +1,18 @@
+pam_pkcs11 is a login module allowing a X.509 certificate
+based user login. The certificate and its dedicated private
+key are thereby accessed by means of an appropriate PKCS#11
+module. For the verification of the users' certificates,
+locally stored CA certificates as well as either online or
+locally accessible CRLs are used.
+
+PAM-PKCS#11 package provides:
+
+    A PAM module able to:
+        Use certificates to get user credentials
+        Deduce a login based on provided certificate
+    Several tools:
+        Standalone cert-to-login finder tool
+        Certificate contents viewer
+        Card Event status monitor, to trigger actions on card insert/removal
+
+WWW: https://github.com/OpenSC/pam_pkcs11
