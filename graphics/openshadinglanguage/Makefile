@@ -3,14 +3,14 @@
 
 PORTNAME=	openshadinglanguage
 DISTVERSIONPREFIX=	Release-
-DISTVERSION=	1.10.10
-PORTREVISION=	2
+DISTVERSION=	1.11.7.3
 CATEGORIES=	graphics devel
 
 MAINTAINER=	FreeBSD@Shaneware.biz
 COMMENT=	Advanced shading language for production GI renderers
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 BROKEN_FreeBSD_12_powerpc64=	fails to compile: llvm_ops.cpp:101:10: fatal error: 'iostream' file not found
 
@@ -22,8 +22,7 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libpugixml.so:textproc/pugixml
 RUN_DEPENDS=	llvm-config${LLVM_VER}:devel/llvm${LLVM_VER}
 
-USES=		bison cmake compiler:c++11-lang ncurses python:build
-USE_LDCONFIG=	yes
+USES=		bison cmake compiler:c++14-lang ncurses
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	imageworks
@@ -55,15 +54,37 @@ OSLTOY_USE=		QT=buildtools,core,gui,qmake_build,widgets
 
 CXXFLAGS+=	-I${STAGEDIR}/include
 
-PLIST_SUB+=	LIBVERS=${DISTVERSION}
+# DISTVERSION has an extra digit which isn't in the lib name
+# for LIBVERS we want the first three digits
+PLIST_SUB+=	LIBVERS=${DISTVERSION:C/([0-9]*)\.([0-9]*)\.([0-9]*)(.*)/\1.\2.\3/}
+
+.include <bsd.port.options.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,bash,sh,' \
-		${WRKSRC}/src/liboslexec/serialize-bc.bash
 	@${REINPLACE_CMD} -e 's,%%DATADIR%%,${DATADIR},' \
 		-e 's,%%PYCMD%%,${PYTHON_CMD},' \
 		${WRKSRC}/src/shaders/CMakeLists.txt \
 		${WRKSRC}/src/shaders/MaterialX/CMakeLists.txt \
-		${WRKSRC}/src/doc/CMakeLists.txt
+		${WRKSRC}/src/doc/CMakeLists.txt \
+		${WRKSRC}/src/liboslexec/CMakeLists.txt
+
+.if ${SLAVE_PORT} == yes
+BUILD_DEPENDS+=	${PREFIX}/share/cmake/pybind11/pybind11Config.cmake:devel/pybind11
+LIB_DEPENDS+=	liboslquery.so:graphics/openshadinglanguage
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}openimageio>0:graphics/py-openimageio@${PY_FLAVOR}
+PLIST=		${PKGDIR}/pkg-plist-pybind
+USES+=		python
+USE_PYTHON=	flavors
+CMAKE_ON+=	USE_PYTHON
+CMAKE_ARGS+=	-DPYTHON_VERSION=${PYTHON_VER}
+
+do-install:
+	${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
+	${INSTALL_LIB} ${BUILD_WRKSRC}/lib/python/site-packages/oslquery.so ${STAGEDIR}${PYTHON_SITELIBDIR}
+.else # SLAVE_PORT != yes
+USES+=		python:build
+CMAKE_OFF+=	USE_PYTHON
+USE_LDCONFIG=	yes
+.endif # SLAVE_PORT
 
 .include <bsd.port.mk>
