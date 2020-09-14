@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		crmsh
-PORTVERSION=		3.0.4
+PORTVERSION=		3.0.5
 CATEGORIES=		net-mgmt python
 
 MAINTAINER=		egypcio@FreeBSD.org
@@ -34,6 +34,7 @@ NO_ARCH=		yes
 SHEBANG_FILES=		bin/crm \
 			scripts/*/*.py \
 			test/cib-tests.sh \
+			test/docker_scripts.sh \
 			test/evaltest.sh \
 			test/list-undocumented-commands.py \
 			utils/crm_clean.py \

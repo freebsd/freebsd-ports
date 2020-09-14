@@ -63,6 +63,8 @@
 %%PYTHON_SITELIBDIR%%/crmsh/orderedset.pyc
 %%PYTHON_SITELIBDIR%%/crmsh/pacemaker.py
 %%PYTHON_SITELIBDIR%%/crmsh/pacemaker.pyc
+%%PYTHON_SITELIBDIR%%/crmsh/parallax_helper.py
+%%PYTHON_SITELIBDIR%%/crmsh/parallax_helper.pyc
 %%PYTHON_SITELIBDIR%%/crmsh/parse.py
 %%PYTHON_SITELIBDIR%%/crmsh/parse.pyc
 %%PYTHON_SITELIBDIR%%/crmsh/ra.py
@@ -196,7 +198,18 @@ bin/crm
 %%DATADIR%%/tests/crm-interface
 %%DATADIR%%/tests/defaults
 %%DATADIR%%/tests/descriptions
+%%DATADIR%%/tests/docker_scripts.sh
 %%DATADIR%%/tests/evaltest.sh
+%%DATADIR%%/tests/features/bootstrap_bugs.feature
+%%DATADIR%%/tests/features/bootstrap_init_join_remove.feature
+%%DATADIR%%/tests/features/bootstrap_options.feature
+%%DATADIR%%/tests/features/bootstrap_sbd.feature
+%%DATADIR%%/tests/features/environment.py
+%%DATADIR%%/tests/features/geo_setup.feature
+%%DATADIR%%/tests/features/steps/__init__.py
+%%DATADIR%%/tests/features/steps/const.py
+%%DATADIR%%/tests/features/steps/step_implenment.py
+%%DATADIR%%/tests/features/steps/utils.py
 %%DATADIR%%/tests/history-test.tar.bz2
 %%DATADIR%%/tests/list-undocumented-commands.py
 %%DATADIR%%/tests/profile-history.sh
@@ -285,6 +298,7 @@ bin/crm
 %%DATADIR%%/tests/unittests/scripts/vipinc/main.yml
 %%DATADIR%%/tests/unittests/scripts/workflows/10-webserver.xml
 %%DATADIR%%/tests/unittests/test.conf
+%%DATADIR%%/tests/unittests/test_bootstrap.py
 %%DATADIR%%/tests/unittests/test_bugs.py
 %%DATADIR%%/tests/unittests/test_cib.py
 %%DATADIR%%/tests/unittests/test_cliformat.py
@@ -292,6 +306,7 @@ bin/crm
 %%DATADIR%%/tests/unittests/test_gv.py
 %%DATADIR%%/tests/unittests/test_handles.py
 %%DATADIR%%/tests/unittests/test_objset.py
+%%DATADIR%%/tests/unittests/test_parallax.py
 %%DATADIR%%/tests/unittests/test_parse.py
 %%DATADIR%%/tests/unittests/test_resource.py
 %%DATADIR%%/tests/unittests/test_scripts.py
