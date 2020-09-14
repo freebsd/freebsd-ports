@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2020-08-14 21:41:47 UTC
++++ Makefile.in
+@@ -235,7 +235,7 @@ pythonmodules: subdirs
+         fi
+ 
+ pythoninstall:
+-	@(dir=`pwd`; cd python; $(PYMAKE) install --basedir=$$dir --root=$(DESTDIR) --prefix=$(prefix)) ; \
++	@(dir=`pwd`; cd python; $(PYMAKE) install --basedir=$$dir --root=$(DESTDIR) --prefix=$(prefix) ${PYDISTUTILS_INSTALLARGS}); \
+         if test $$? != 0 ; then \
+            exit 1 ; \
+         fi
