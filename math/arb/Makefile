@@ -14,9 +14,7 @@ LIB_DEPENDS=	libflint.so:math/flint2 \
 		libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr
 
-USES=		gmake
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-static
+USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	fredrik-johansson
 USE_LDCONFIG=	yes
