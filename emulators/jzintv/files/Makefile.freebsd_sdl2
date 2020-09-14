@@ -1,0 +1,87 @@
+##############################################################################
+## Source-level Makefile for jzintv
+##
+## The whole make process is driven from the top-level Makefile.  In contrast
+## to the (poor) advice given in the Make documentation, I do _not_ call make
+## recursively to build the source of this project.
+##############################################################################
+
+##############################################################################
+## Project directory structure
+##############################################################################
+B=../bin
+L=../lib
+R=../rom
+
+##############################################################################
+## Project-wide build flags
+##############################################################################
+P           = export PATH;
+
+SDL2_CFLAGS := $(shell sdl2-config --cflags) -DUSE_SDL2
+SDL2_LFLAGS := $(shell sdl2-config --libs) 
+
+# Set "X" to be the executable extension, and "O" to be the object extension.
+X = 
+O = o
+
+# Set "RM" to be the remove/delete command
+RM = rm -f 
+
+WARN    = -Wall -W -Wshadow -Wpointer-arith \
+          -Wbad-function-cast -Wcast-qual 
+WARNXX  = -Wall -W -Wshadow -Wpointer-arith -Wcast-qual 
+
+ CC  ?= $(P) cc
+ CXX ?= $(P) c++
+#CC  = $(P) /usr/local/bin/gcc -V4.1.1
+#CXX = $(P) /usr/local/bin/g++ 
+#CC  = $(P) icc
+#CC  = $(P) /usr/bin/gcc
+#CXX = $(P) /usr/bin/g++
+
+#DEF_FLAGS = -DDIRECT_INTV2PC
+#DEF_FLAGS = -DNEED_INOUT
+
+#OPT_FLAGS = -ggdb 
+#OPT_FLAGS = -O
+#OPT_FLAGS = -O2 -ggdb
+ OPT_FLAGS = -O3 -fomit-frame-pointer -fprefetch-loop-arrays #-DBENCHMARK_STIC
+#OPT_FLAGS = -O2 -pg -ggdb -DLOCAL=
+#OPT_FLAGS = -tpp6 -axMiKW -ip -vec_report3 -opt_report -ansi_alias -restrict -DHAVE_RESTRICT -align -O3 -Ob1 # -ipo # intel icc flags
+
+CFLAGS   ?= $(OPT_FLAGS) $(WARN)   $(DEF_FLAGS) $(EXTRA)
+CXXFLAGS ?= $(OPT_FLAGS) $(WARNXX) $(DEF_FLAGS) $(EXTRA)
+#LFLAGS   = /usr/local/lib/libgcc_s.so -L../lib 
+LFLAGS   ?= -L../lib 
+
+OBJS      = jzintv.$(O)
+PROG_SDL2 = $(B)/jzintv
+TOCLEAN   = $(B)/jzintv core
+
+CFLAGS += $(SDL2_CFLAGS) -I. -I..
+CXXFLAGS += $(SDL2_CFLAGS) -I. -I..
+LFLAGS += $(SDL2_LFLAGS) -L../lib -lm
+
+##############################################################################
+## Generic build-rules
+##############################################################################
+
+all: build
+
+$(PROG_SDL2): $(OBJS) $(OBJS_SDL2)
+	$(CXX) -o $(PROG_SDL2) $(OBJS) $(OBJS_SDL2) $(CFLAGS) $(LFLAGS)
+
+clean:
+	$(RM) $(OBJS)
+	$(RM) $(OBJS_SDL2)
+	$(RM) $(TOCLEAN)
+
+%.$(O): %.c
+	$(CC) -o $@ $(CFLAGS) -c $<
+
+##############################################################################
+## Makefile.common includes all the subMakefiles and such
+##############################################################################
+include Makefile.common
+build: jzIntv SDK-1600
