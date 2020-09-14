@@ -1,0 +1,14 @@
+%%SITE_PERL%%/ColorTheme/Test/Dynamic.pm
+%%SITE_PERL%%/ColorTheme/Test/Static.pm
+%%SITE_PERL%%/ColorThemeBase/Base.pm
+%%SITE_PERL%%/ColorThemeBase/Constructor.pm
+%%SITE_PERL%%/ColorThemeBase/Static.pm
+%%SITE_PERL%%/ColorThemeBase/Static/FromObjectColors.pm
+%%SITE_PERL%%/ColorThemeBase/Static/FromStructColors.pm
+%%PERL5_MAN3%%/ColorTheme::Test::Dynamic.3.gz
+%%PERL5_MAN3%%/ColorTheme::Test::Static.3.gz
+%%PERL5_MAN3%%/ColorThemeBase::Base.3.gz
+%%PERL5_MAN3%%/ColorThemeBase::Constructor.3.gz
+%%PERL5_MAN3%%/ColorThemeBase::Static.3.gz
+%%PERL5_MAN3%%/ColorThemeBase::Static::FromObjectColors.3.gz
+%%PERL5_MAN3%%/ColorThemeBase::Static::FromStructColors.3.gz
