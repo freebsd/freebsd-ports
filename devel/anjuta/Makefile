@@ -2,14 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	anjuta
-PORTVERSION=	3.28.0
-PORTREVISION=	3
+PORTVERSION=	3.34.0
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Integrated Development Environment for C and C++
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	autogen:devel/autogen \
 		itstool:textproc/itstool
@@ -118,12 +120,6 @@ post-patch:
 		-e 's|libvala-0.28|libvala-${VALA_VER}|g' \
 		-e 's|valaver="-0.28"|valaver="-${VALA_VER}"|g' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|values.h|limits.h|g' \
-		${WRKSRC}/plugins/project-wizard/property.h \
-		${WRKSRC}/plugins/project-wizard/install.h
-	@${REINPLACE_CMD} -e 's|-fprofile-arcs||g' \
-		${WRKSRC}/libanjuta/tests/Makefile.in \
-		${WRKSRC}/libanjuta/tests/Makefile.am
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${PREFIX}|g' \
 		${WRKSRC}/plugins/gdb/debugger.c
 
