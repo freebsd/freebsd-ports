@@ -1089,6 +1089,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN1%%/perlriscos.1.gz
 %%MAN1%%/perlrun.1.gz
 %%MAN1%%/perlsec.1.gz
+%%MAN1%%/perlsecpolicy.1.gz
 %%MAN1%%/perlsolaris.1.gz
 %%MAN1%%/perlsource.1.gz
 %%MAN1%%/perlstyle.1.gz
@@ -1877,6 +1878,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/pod/perlriscos.pod
 %%PRIV_LIB%%/pod/perlrun.pod
 %%PRIV_LIB%%/pod/perlsec.pod
+%%PRIV_LIB%%/pod/perlsecpolicy.pod
 %%PRIV_LIB%%/pod/perlsolaris.pod
 %%PRIV_LIB%%/pod/perlsource.pod
 %%PRIV_LIB%%/pod/perlstyle.pod
