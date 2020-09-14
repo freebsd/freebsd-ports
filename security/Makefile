@@ -205,6 +205,7 @@
     SUBDIR += hardening-check
     SUBDIR += hashcat
     SUBDIR += hashcat-legacy
+    SUBDIR += heaan
     SUBDIR += heimdal
     SUBDIR += helib
     SUBDIR += highwayhash

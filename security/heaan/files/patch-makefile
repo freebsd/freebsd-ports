@@ -1,0 +1,19 @@
+--- makefile.orig	2020-02-08 04:35:40 UTC
++++ makefile
+@@ -38,13 +38,13 @@ endif
+ # Add inputs and outputs from these tool invocations to the build variables 
+ 
+ # All Target
+-all: libHEAAN.a
++all: libHEAAN.so
+ 
+ # Tool invocations
+-libHEAAN.a: $(OBJS) $(USER_OBJS)
++libHEAAN.so: $(OBJS) $(USER_OBJS)
+ 	@echo 'Building target: $@'
+ 	@echo 'Invoking: GCC Archiver'
+-	ar -r  "libHEAAN.a" $(OBJS) $(USER_OBJS) $(LIBS)
++	$(CXX) -shared -o "libHEAAN.so" $(OBJS) $(USER_OBJS) $(LIBS) $(LOCALBASE)/lib/libntl.so
+ 	@echo 'Finished building target: $@'
+ 	@echo ' '
+ 
