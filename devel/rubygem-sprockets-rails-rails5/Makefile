@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	sprockets-rails
-PORTVERSION=	3.2.1
+PORTVERSION=	3.2.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails5
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Sprockets Rails integration
 
 LICENSE=	MIT
