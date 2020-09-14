@@ -62,6 +62,11 @@ CPE_VENDOR=	gnome
 
 GLIB_SCHEMAS=	org.gnome.shell.gschema.xml
 
+.if exists(/usr/bin/ld.lld) && ${/usr/bin/ld:L:tA} != /usr/bin/ld.lld
+# Work around "New rpath must not be longer than the old one."
+LDFLAGS+=	-fuse-ld=lld
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|python3|${PYTHON_VERSION}|g' \
 		${WRKSRC}/meson.build
