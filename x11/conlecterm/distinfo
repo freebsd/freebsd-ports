@@ -1,4 +1,4 @@
-TIMESTAMP = 1597635381
+TIMESTAMP = 1599641069
 SHA256 (cabal/X11-1.9.1/X11-1.9.1.tar.gz) = 7581e7b3c1c8313d1f7d224d57b20c689e5f757404c9f0ec47f4d15c4541e63d
 SIZE (cabal/X11-1.9.1/X11-1.9.1.tar.gz) = 190698
 SHA256 (cabal/aeson-1.5.3.0/aeson-1.5.3.0.tar.gz) = 958ef96a31ad0807e307f92d61a2b51827f7b06afed52cf06f76c64c6aed986a
@@ -103,5 +103,5 @@ SHA256 (cabal/uuid-types-1.0.3/revision/3.cabal) = 4e27aa142cb37f391e78f36d13139
 SIZE (cabal/uuid-types-1.0.3/revision/3.cabal) = 2496
 SHA256 (cabal/vector-0.12.1.2/vector-0.12.1.2.tar.gz) = 3b6e27683f6f20b37b8a35d0fab9e34b57dad72ac64cb16f428726780d4011bd
 SIZE (cabal/vector-0.12.1.2/vector-0.12.1.2.tar.gz) = 131049
-SHA256 (cabal/hxw-conlecterm-v1.4.2.0_GH0.tar.gz) = ab50f0d9588c3e33e30a238080e572ae62aff10b3b3211f6a7defa5caafb37cb
-SIZE (cabal/hxw-conlecterm-v1.4.2.0_GH0.tar.gz) = 19792
+SHA256 (cabal/hxw-conlecterm-v1.4.3.0_GH0.tar.gz) = 5aed1c28a9969be10cc69bb725100e7138d36c42ad84143dcecda86cdb0da50b
+SIZE (cabal/hxw-conlecterm-v1.4.3.0_GH0.tar.gz) = 20075
