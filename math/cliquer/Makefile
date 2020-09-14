@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cliquer
-PORTVERSION=	1.21
+PORTVERSION=	1.22
 DISTVERSIONPREFIX=	v
 CATEGORIES=	math
 #MASTER_SITES=	http://users.aalto.fi/~pat/cliquer/
