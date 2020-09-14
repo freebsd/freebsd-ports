@@ -18,7 +18,7 @@ BUILD_DEPENDS=	base64:converters/base64 \
 		swig:devel/swig
 LIB_DEPENDS=	libcudd.so:math/cudd
 
-USES=		bison compiler:c++17-lang cmake eigen:3 python qt:5 tcl:86 # the code asks for tcl-87, but build fails: https://github.com/The-OpenROAD-Project/OpenROAD/issues/508
+USES=		bison compiler:c++17-lang cmake eigen:3 qt:5 tcl:86 # the code asks for tcl-87, but build fails: https://github.com/The-OpenROAD-Project/OpenROAD/issues/508
 USE_GITHUB=	yes
 GH_ACCOUNT=	The-OpenROAD-Project
 GH_PROJECT=	OpenROAD
@@ -33,8 +33,7 @@ GH_TUPLE=	\
 
 CMAKE_ARGS=	-DFREEBSD_TCL_VER=${TCL_VER:S/.//} -DFREEBSD_TCL_INCLUDEDIR=${TCL_INCLUDEDIR}
 
-CXXFLAGS+=	-I${TCL_INCLUDEDIR} -I${LOCALBASE}/include/eigen3
-LDFLAGS+=	-pthread
+CXXFLAGS+=	-I${LOCALBASE}/include/eigen3
 
 BINARY_ALIAS=	tclsh=${TCLSH}
 
