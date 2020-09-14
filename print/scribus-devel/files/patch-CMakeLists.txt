@@ -1,0 +1,20 @@
+--- CMakeLists.txt.orig	2020-09-13 18:32:23 UTC
++++ CMakeLists.txt
+@@ -845,17 +845,6 @@ else()
+ endif()
+ #<< JPEG, TIFF
+ 
+-#<< PYTHON
+-#set(PythonLibs_FIND_VERSION 2)
+-find_package(PythonInterp 2)
+-find_package(PythonLibs 2 REQUIRED)
+-if (PYTHON_LIBRARY)
+-	message("Python Library Found OK")
+-	set(HAVE_PYTHON ON)
+-	set(COMPILE_PYTHON ON)
+-endif()
+-#>> PYTHON
+-
+ #<< FreeType2
+ find_package(Freetype REQUIRED)
+ if (FREETYPE_FOUND)

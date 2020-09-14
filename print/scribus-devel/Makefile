@@ -3,7 +3,7 @@
 
 PORTNAME=	scribus
 PORTVERSION=	1.5.5
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	print editors
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}${PKGNAMESUFFIX}/${PORTVERSION}/ \
 		http://www.scribus.net/downloads/${PORTVERSION}/
@@ -14,9 +14,6 @@ COMMENT=	Comprehensive desktop publishing program (development version)
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-DEPRECATED=	Uses deprecated version of python
-EXPIRATION_DATE=	2020-09-15
 
 LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
 		libboost_thread.so:devel/boost-libs \
@@ -40,14 +37,15 @@ LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
 		libicuuc.so:devel/icu
 
 USES=		cmake compiler:gcc-c++11-lib desktop-file-utils dos2unix gnome \
-		jpeg pkgconfig python:2.7 qt:5 shared-mime-info ssl tar:xz
+		jpeg pkgconfig qt:5 shared-mime-info ssl tar:xz
 USE_QT=		buildtools_build core declarative gui linguisttools_build \
 		network opengl printsupport qmake_build widgets xml
 USE_GNOME=	libxml2
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 
-CMAKE_ARGS+=	-DWANT_HUNSPELL=YES -Wno-ferror-limit -DCMAKE_COLOR_MAKEFILE:BOOL=ON
+CMAKE_ARGS+=	-DWANT_HUNSPELL=YES -DWANT_SCRIPTER2=YES \
+		-Wno-ferror-limit -DCMAKE_COLOR_MAKEFILE:BOOL=ON
 
 OPTIONS_DEFINE=	DOCS
 

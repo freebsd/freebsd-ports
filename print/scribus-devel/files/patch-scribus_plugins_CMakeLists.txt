@@ -1,0 +1,13 @@
+--- scribus/plugins/CMakeLists.txt.orig	2020-09-13 18:32:25 UTC
++++ scribus/plugins/CMakeLists.txt
+@@ -15,8 +15,8 @@ if(NOT WANT_SCRIPTER2)
+   endif()
+ else()
+   #scripter2
+-  message(STATUS "Building with Scripter 2")
+-  add_subdirectory(scripter)
++#  message(STATUS "Building with Scripter 2")
++#  add_subdirectory(scripter)
+ endif()
+ add_subdirectory(short-words)
+ add_subdirectory(tools)
