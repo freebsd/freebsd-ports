@@ -4,7 +4,7 @@
 PORTNAME=	openlibm
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 
 MAINTAINER=	iblis@hs.ntnu.edu.tw
@@ -14,12 +14,12 @@ LICENSE=	MIT ISCL BSD2CLAUSE
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-BROKEN_armv6=		fails to compile: a parameter list without types is only allowed in a function definition
-BROKEN_armv7=		fails to compile: a parameter list without types is only allowed in a function definition
-BROKEN_mips=		fails to compile: No rule to make target mips/Make.files
-BROKEN_mips64=		fails to compile: No rule to make target mips64/Make.files
+BROKEN_armv6=	fails to compile: a parameter list without types is only allowed in a function definition
+BROKEN_armv7=	fails to compile: a parameter list without types is only allowed in a function definition
+BROKEN_mips=	fails to compile: No rule to make target mips/Make.files
+BROKEN_mips64=	fails to compile: No rule to make target mips64/Make.files
 
-USES=	gmake
+USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	JuliaMath
 GH_PROJECT=	openlibm
@@ -47,5 +47,5 @@ post-patch:
 		-e 's/USECLANG =/USECLANG ?=/g' \
 		-e '/TOOLPREFIX)gcc/s/$$/${GCC_DEFAULT}/g' \
 		${WRKSRC}/Make.inc
-		
+
 .include <bsd.port.post.mk>
