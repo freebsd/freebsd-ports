@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rankwidth	# Also known as: rw
-PORTVERSION=	0.8
+PORTVERSION=	0.9
 CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}/
 DISTNAME=	rw-${PORTVERSION}
