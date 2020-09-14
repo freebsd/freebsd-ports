@@ -12,8 +12,10 @@ COMMENT=	Menu based USENET newsreader
 
 BROKEN_aarch64=	Fails to link: missing sbrk
 
+SUB_FILES=	pkg-message
+
 USES=		tar:Z
-MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -Iconf" LDFLAGS="${LDFLAGS} -s"
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -Iconf -fcommon" LDFLAGS="${LDFLAGS} -s"
 
 pre-patch:
 	@${CP} ${WRKSRC}/config.h-dist ${WRKSRC}/config.h.unparsed
@@ -24,5 +26,10 @@ pre-build:
 
 post-build:
 	@${REINPLACE_CMD} 's#${PREFIX}#$${DESTDIR}&#' ${WRKSRC}/inst
+
+post-install:
+	${INSTALL_DATA} ${FILESDIR}/nntp_domain.dist \
+			${FILESDIR}/nntp_server.dist \
+			${STAGEDIR}${PREFIX}/etc
 
 .include <bsd.port.mk>

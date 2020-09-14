@@ -10,9 +10,8 @@ bin/nngrep
 bin/nnpost
 bin/nnbatch
 bin/nnview
-@unexec if cmp -s %D/etc/nntp_domain %D/etc/nntp_domain.dist; then rm -f %D/etc/nntp_domain; fi
-@unexec if cmp -s %D/etc/nntp_server %D/etc/nntp_server.dist; then rm -f %D/etc/nntp_server; fi
-@unexec rm -f %D/etc/nntp_domain.dist %D/etc/nntp_server.dist
+@sample etc/nntp_domain.dist etc/nntp_domain
+@sample etc/nntp_server.dist etc/nntp_server
 lib/nn/aux
 lib/nn/upgrade_rc
 lib/nn/conf
