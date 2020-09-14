@@ -47,6 +47,7 @@ lib/libKF5QuickAddons.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_MKSPECDIR%%/modules/qt_QuickAddons.pri
 %%QT_QMLDIR%%/org/kde/draganddrop/libdraganddropplugin.so
 %%QT_QMLDIR%%/org/kde/draganddrop/qmldir
+%%QT_QMLDIR%%/org/kde/kcm/AbstractKCM.qml
 %%QT_QMLDIR%%/org/kde/kcm/GridDelegate.qml
 %%QT_QMLDIR%%/org/kde/kcm/GridView.qml
 %%QT_QMLDIR%%/org/kde/kcm/GridViewKCM.qml

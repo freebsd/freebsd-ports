@@ -66,7 +66,6 @@ lib/libKF5Kirigami2.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/kirigami.2/private/ActionButton.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/private/ActionIconGroup.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/private/ActionMenuItem.qml
-%%QT_QMLDIR%%/org/kde/kirigami.2/private/ActionToolBarLayoutDetails.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/private/ActionsMenu.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/private/BannerImage.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/private/CardsGridViewPrivate.qml

@@ -53,6 +53,7 @@ include/KF5/KWidgetsAddons/KPixmapSequenceWidget
 include/KF5/KWidgetsAddons/KPopupFrame
 include/KF5/KWidgetsAddons/KRatingPainter
 include/KF5/KWidgetsAddons/KRatingWidget
+include/KF5/KWidgetsAddons/KRecentFilesMenu
 include/KF5/KWidgetsAddons/KRuler
 include/KF5/KWidgetsAddons/KSelectAction
 include/KF5/KWidgetsAddons/KSelector
@@ -124,6 +125,7 @@ include/KF5/KWidgetsAddons/kpixmapsequencewidget.h
 include/KF5/KWidgetsAddons/kpopupframe.h
 include/KF5/KWidgetsAddons/kratingpainter.h
 include/KF5/KWidgetsAddons/kratingwidget.h
+include/KF5/KWidgetsAddons/krecentfilesmenu.h
 include/KF5/KWidgetsAddons/kruler.h
 include/KF5/KWidgetsAddons/kselectaction.h
 include/KF5/KWidgetsAddons/kselector.h

@@ -40,9 +40,9 @@ lib/cmake/KF5WindowSystem/KF5WindowSystemTargets.cmake
 lib/libKF5WindowSystem.so
 lib/libKF5WindowSystem.so.5
 lib/libKF5WindowSystem.so.%%KDE_FRAMEWORKS_VERSION%%
-%%QT_PLUGINDIR%%/kf5/org.kde.kwindowsystem.platforms/KF5WindowSystemWaylandPlugin.so
-%%QT_PLUGINDIR%%/kf5/org.kde.kwindowsystem.platforms/KF5WindowSystemX11Plugin.so
 %%QT_MKSPECDIR%%/modules/qt_KWindowSystem.pri
+%%QT_PLUGINDIR%%/kf5/kwindowsystem/KF5WindowSystemWaylandPlugin.so
+%%QT_PLUGINDIR%%/kf5/kwindowsystem/KF5WindowSystemX11Plugin.so
 share/locale/af/LC_MESSAGES/kwindowsystem5_qt.qm
 share/locale/ar/LC_MESSAGES/kwindowsystem5_qt.qm
 share/locale/as/LC_MESSAGES/kwindowsystem5_qt.qm

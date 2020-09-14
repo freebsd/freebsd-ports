@@ -1,3 +1,3 @@
-TIMESTAMP = 1596319765
-SHA256 (KDE/frameworks/5.73.0/kio-5.73.0.tar.xz) = 05da159e6cf5ef9aa4dd7ede86ce28a5581624a1b3f0b4718c5b7e30c4aa2a66
-SIZE (KDE/frameworks/5.73.0/kio-5.73.0.tar.xz) = 3257112
+TIMESTAMP = 1600101546
+SHA256 (KDE/frameworks/5.74.0/kio-5.74.1.tar.xz) = 2f88a383b751194d4f327d3f87f8ea25fe882f8cc5c58a368529d9ab7143a6e7
+SIZE (KDE/frameworks/5.74.0/kio-5.74.1.tar.xz) = 3281248

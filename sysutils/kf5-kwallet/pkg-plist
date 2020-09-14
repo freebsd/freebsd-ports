@@ -31,14 +31,15 @@ share/locale/bn_IN/LC_MESSAGES/kwalletd5.mo
 share/locale/bs/LC_MESSAGES/kwalletd5.mo
 share/locale/ca/LC_MESSAGES/kwallet-query.mo
 share/locale/ca/LC_MESSAGES/kwalletd5.mo
-share/locale/ca@valencia/LC_MESSAGES/kwalletd5.mo
 share/locale/ca@valencia/LC_MESSAGES/kwallet-query.mo
+share/locale/ca@valencia/LC_MESSAGES/kwalletd5.mo
 share/locale/cs/LC_MESSAGES/kwallet-query.mo
 share/locale/cs/LC_MESSAGES/kwalletd5.mo
 share/locale/da/LC_MESSAGES/kwallet-query.mo
 share/locale/da/LC_MESSAGES/kwalletd5.mo
 share/locale/de/LC_MESSAGES/kwallet-query.mo
 share/locale/de/LC_MESSAGES/kwalletd5.mo
+share/locale/el/LC_MESSAGES/kwallet-query.mo
 share/locale/el/LC_MESSAGES/kwalletd5.mo
 share/locale/en_GB/LC_MESSAGES/kwallet-query.mo
 share/locale/en_GB/LC_MESSAGES/kwalletd5.mo
@@ -47,8 +48,8 @@ share/locale/es/LC_MESSAGES/kwallet-query.mo
 share/locale/es/LC_MESSAGES/kwalletd5.mo
 share/locale/et/LC_MESSAGES/kwallet-query.mo
 share/locale/et/LC_MESSAGES/kwalletd5.mo
-share/locale/eu/LC_MESSAGES/kwalletd5.mo
 share/locale/eu/LC_MESSAGES/kwallet-query.mo
+share/locale/eu/LC_MESSAGES/kwalletd5.mo
 share/locale/fa/LC_MESSAGES/kwalletd5.mo
 share/locale/fi/LC_MESSAGES/kwallet-query.mo
 share/locale/fi/LC_MESSAGES/kwalletd5.mo
@@ -87,8 +88,8 @@ share/locale/lt/LC_MESSAGES/kwalletd5.mo
 share/locale/lv/LC_MESSAGES/kwalletd5.mo
 share/locale/mai/LC_MESSAGES/kwalletd5.mo
 share/locale/mk/LC_MESSAGES/kwalletd5.mo
-share/locale/ml/LC_MESSAGES/kwalletd5.mo
 share/locale/ml/LC_MESSAGES/kwallet-query.mo
+share/locale/ml/LC_MESSAGES/kwalletd5.mo
 share/locale/mr/LC_MESSAGES/kwalletd5.mo
 share/locale/ms/LC_MESSAGES/kwalletd5.mo
 share/locale/nb/LC_MESSAGES/kwalletd5.mo
@@ -98,6 +99,7 @@ share/locale/nl/LC_MESSAGES/kwalletd5.mo
 share/locale/nn/LC_MESSAGES/kwallet-query.mo
 share/locale/nn/LC_MESSAGES/kwalletd5.mo
 share/locale/or/LC_MESSAGES/kwalletd5.mo
+share/locale/pa/LC_MESSAGES/kwallet-query.mo
 share/locale/pa/LC_MESSAGES/kwalletd5.mo
 share/locale/pl/LC_MESSAGES/kwallet-query.mo
 share/locale/pl/LC_MESSAGES/kwalletd5.mo

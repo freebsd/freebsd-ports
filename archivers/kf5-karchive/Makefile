@@ -9,7 +9,6 @@ COMMENT=	KF5 library that provides classes for handling archive formats
 
 # Sources say LGPL20, KDE policy says LGPL21+, license file is LGPL21
 LICENSE=	LGPL20
-LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
 USES=		cmake compiler:c++11-lib kde:5 qt:5 tar:xz
 USE_KDE=	ecm

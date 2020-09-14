@@ -11,7 +11,6 @@ COMMENT=	Open Collaboration Services API library KDE5 version
 # so use the OR of existing license versions. COPYING is LGPL21.
 LICENSE=	LGPL21 LGPL3
 LICENSE_COMB=	dual
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cmake compiler:c++11-lib kde:5 pathfix qt:5 tar:xz
 USE_KDE=	ecm

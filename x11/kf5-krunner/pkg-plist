@@ -22,6 +22,7 @@ lib/libKF5Runner.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_MKSPECDIR%%/modules/qt_KRunner.pri
 share/dbus-1/interfaces/kf5_org.kde.krunner1.xml
 share/kdevappwizard/templates/runner.tar.bz2
+share/kdevappwizard/templates/runnerpython.tar.bz2
 share/kservicetypes5/plasma-runner.desktop
 share/qlogging-categories5/krunner.categories
 share/qlogging-categories5/krunner.renamecategories
