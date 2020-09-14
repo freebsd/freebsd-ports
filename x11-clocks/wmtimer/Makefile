@@ -5,7 +5,7 @@ PORTNAME=	wmtimer
 PORTVERSION=	2.92
 PORTREVISION=	11
 CATEGORIES=	x11-clocks windowmaker
-MASTER_SITES=	http://www.darkops.net/wmtimer/ \
+MASTER_SITES=	https://github.com/bbidulock/wmtimer/releases/download/${PORTVERSION}/ \
 		LOCAL/uqs
 
 MAINTAINER=	uqs@FreeBSD.org

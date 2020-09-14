@@ -4,4 +4,4 @@ mode, you can either execute a command or sound the system bell
 when the time is reached. Wmtimer is configurable through the
 command line or the GTK GUI.
 
-WWW: http://www.darkops.net/wmtimer/
+WWW: https://github.com/bbidulock/wmtimer
