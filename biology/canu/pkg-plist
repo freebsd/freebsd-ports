@@ -5,6 +5,7 @@ bin/canu
 bin/canu-time
 bin/canu.defaults
 bin/correctOverlaps
+bin/draw-tig
 bin/dumpBlob
 bin/edalign
 bin/errorEstimate
@@ -13,14 +14,14 @@ bin/filterCorrectionLayouts
 bin/filterCorrectionOverlaps
 bin/findErrors
 bin/findErrors-Dump
+bin/fixErrors
 bin/generateCorrectionLayouts
+bin/layoutReads
 bin/loadCorrectedReads
 bin/loadErates
 bin/loadTrimmedReads
 bin/mergeRanges
 bin/meryl
-bin/meryl-import
-bin/meryl-lookup
 bin/mhapConvert
 bin/mmapConvert
 bin/ovStoreBucketizer
@@ -37,7 +38,6 @@ bin/overlapInCore
 bin/overlapInCorePartition
 bin/overlapPair
 bin/prefixEditDistance-matchLimitGenerate
-bin/sequence
 bin/splitHaplotype
 bin/splitReads
 bin/sqStoreCreate
@@ -45,12 +45,10 @@ bin/sqStoreDumpFASTQ
 bin/sqStoreDumpMetaData
 bin/tgStoreCompress
 bin/tgStoreDump
-bin/tgStoreFilter
 bin/tgStoreLoad
 bin/tgTigDisplay
 bin/trimReads
 bin/utgcns
-bin/wtdbgConvert
 lib/libcanu.a
 %%SITE_PERL%%/canu/Configure.pm
 %%SITE_PERL%%/canu/Consensus.pm
@@ -77,6 +75,3 @@ lib/libcanu.a
 %%SITE_PERL%%/canu/SequenceStore.pm
 %%SITE_PERL%%/canu/Unitig.pm
 %%JAVAJARDIR%%/mhap-2.1.3.jar
-share/sequence/pacbio
-share/sequence/pacbio-hifi
-share/sequence/ultra-long-nanopore

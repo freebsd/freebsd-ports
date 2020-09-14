@@ -1,17 +1,6 @@
---- pipelines/canu/Execution.pm.orig	2018-10-22 16:47:31 UTC
+--- pipelines/canu/Execution.pm.orig	2020-09-07 19:08:24 UTC
 +++ pipelines/canu/Execution.pm
-@@ -333,10 +333,6 @@ sub resetIteration ($) {
- sub getInstallDirectory () {
-     my $installDir = $FindBin::RealBin;
- 
--    if ($installDir =~ m!^(.*)/\w+-\w+/bin$!) {
--        $installDir = $1;
--    }
--
-     return($installDir);
- }
- 
-@@ -784,8 +780,8 @@ sub submitScript ($$) {
+@@ -762,8 +762,8 @@ sub submitScript ($$) {
  
  
  
@@ -22,7 +11,7 @@
      my  $off = 0;
  
      #  In some grids (SGE)   this is the maximum size of an array job.
-@@ -823,8 +819,42 @@ sub buildGridArray ($$$$) {
+@@ -803,9 +803,43 @@ sub buildGridArray ($$$$) {
          $off = "-F \"$off\"";
      }
  
@@ -35,7 +24,7 @@
 +    elsif( $opt =~ m/(ARRAY_JOBS)/ )
 +    {
 +	$opt =~ s/$1/$bgn-$end/; # Replace ARRAY_JOBS with 'bgn-end'
-+
+ 
 +	if( lc( getGlobal( 'gridEngine' ) ) eq 'slurm' && $end > 1 )
 +	{
 +	    if( $name =~ m/^cormhap_/i && defined getGlobal( 'slurmCormhapCoreLimit' ) )
@@ -64,10 +53,11 @@
 +	    }
 +	}
 +    }
- 
++
      return($opt, $off);
  }
-@@ -973,7 +1003,7 @@ sub buildGridJob ($$$$$$$$$) {
+ 
+@@ -951,7 +985,7 @@ sub buildGridJob ($$$$$$$$$) {
      my $jobNameT               = makeUniqueJobName($jobType, $asm);
  
      my ($jobName,  $jobOff)    = buildGridArray($jobNameT, $bgnJob, $endJob, getGlobal("gridEngineArrayName"));
