@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	String-TtyLength
-PORTVERSION=	0.01
+PORTVERSION=	0.02
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,6 +14,8 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Unicode-EastAsianWidth>=12.0:textproc/p5-Unicode-EastAsianWidth
 TEST_DEPENDS=	p5-Test2-Suite>=0:devel/p5-Test2-Suite
 
 USES=		perl5
