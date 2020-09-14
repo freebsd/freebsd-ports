@@ -10,7 +10,7 @@ Instructions to use Piglit are available in:
   %%DOCSDIR%%/README.md
 
 The same documentation is also available online:
-  http://cgit.freedesktop.org/piglit/tree/README
+  https://gitlab.freedesktop.org/mesa/piglit/-/blob/master/README.md
 EOM
 }
 ]

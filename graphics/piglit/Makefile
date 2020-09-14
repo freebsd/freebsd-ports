@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	piglit
-PORTVERSION=	20180910
-PORTREVISION=	3
+PORTVERSION=	20200910
 CATEGORIES=	graphics
 
 MAINTAINER=	x11@FreeBSD.org
@@ -13,35 +12,43 @@ LICENSE=	MIT GPLv2 GPLv3 LGPL20
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-DEPRECATED=	Uses deprecated version of python
-EXPIRATION_DATE=	2020-09-15
-
-BUILD_DEPENDS=	${LOCALBASE}/include/CL/opencl.h:devel/opencl \
-		${PYNUMPY} \
+BUILD_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}mako>0:textproc/py-mako@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
-LIB_DEPENDS=	libcaca.so:graphics/libcaca \
-		libdrm.so:graphics/libdrm \
-		libOpenCL.so:devel/ocl-icd \
+		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
+		vulkan-headers>0:devel/vulkan-headers \
+		wayland-protocols>=0:graphics/wayland-protocols
+LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 		libpng.so:graphics/png \
-		libwaffle-1.so:graphics/waffle
+		libvulkan.so:graphics/vulkan-loader \
+		libwaffle-1.so:graphics/waffle \
+		libwayland-egl.so:graphics/wayland \
+		libxkbcommon.so:x11/libxkbcommon
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}mako>0:textproc/py-mako@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	dumbbell
-GH_PROJECT=	piglit
-GH_TAGNAME=	a0db4427446ab50882a721ae3084fa26cc9e751a
+USE_GITLAB=	yes
+GL_SITE=	https://gitlab.freedesktop.org
+GL_ACCOUNT=	mesa
+GL_PROJECT=	piglit
+GL_COMMIT=	136a7f5fa0703603be1ffb338abe4865e76a8058
 
-USES=		cmake compiler:c11 gl pkgconfig python:2.7 shebangfix xorg
+PATCH_SITES=		https://gitlab.freedesktop.org/mesa/piglit/-/commit/
+PATCH_DIST_STRIP=	-p1
+PATCHFILES+=		7f1916da04fc.patch # https://gitlab.freedesktop.org/mesa/piglit/-/merge_requests/383
+PATCHFILES+=		c6a4d8aa8e68.patch # https://gitlab.freedesktop.org/mesa/piglit/-/merge_requests/383
+PATCHFILES+=		0443b6a18648.patch # https://gitlab.freedesktop.org/mesa/piglit/-/merge_requests/383
+PATCHFILES+=		96d8ddd0a658.patch # https://gitlab.freedesktop.org/mesa/piglit/-/merge_requests/383
+PATCHFILES+=		d5f4cfd3b0da.patch # https://gitlab.freedesktop.org/mesa/piglit/-/merge_requests/383
+PATCHFILES+=		64c468c6c7e3.patch # https://gitlab.freedesktop.org/mesa/piglit/-/merge_requests/383
+PATCHFILES+=		681e86f53c2e.patch # https://gitlab.freedesktop.org/mesa/piglit/-/merge_requests/383
+
+USES=		cmake compiler:c11 gl pkgconfig python:3.5+ shebangfix xorg
 USE_GL=		egl gbm gl glu
 USE_XORG=	x11 xcb xext xrender
 SHEBANG_FILES=	piglit
 
-CMAKE_ARGS+=	-DPIGLIT_BUILD_CL_TESTS:BOOL=ON
-
-CMAKE_ARGS+=	-DCMAKE_POLICY_DEFAULT_CMP0056:STRING=NEW
+CMAKE_ON=	PIGLIT_BUILD_GLES2_TESTS PIGLIT_BUILD_GLES3_TESTS
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 SUB_FILES=	pkg-message
@@ -49,14 +56,6 @@ SUB_FILES=	pkg-message
 DATADIR=	${PREFIX}/lib/piglit
 PORTDATA=	*
 
-OPTIONS_DEFINE=	DOCS WAYLAND
-OPTIONS_DEFAULT=WAYLAND
-
-WAYLAND_LIB_DEPENDS=	libwayland-egl.so:graphics/wayland \
-			libxkbcommon.so:x11/libxkbcommon
-
-post-patch-WAYLAND-off:
-	@${REINPLACE_CMD} -e '/pkg_check_modules.*wayland/d' \
-		${WRKSRC}/CMakeLists.txt
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.mk>
