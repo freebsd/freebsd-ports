@@ -12,8 +12,8 @@ COMMENT=	Processor fuzzer for x86 CPUs
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-DEPRECATED=	Uses deprecated version of python
-EXPIRATION_DATE=	2020-09-15
+DEPRECATED=	Uses deprecated version of python, see https://github.com/rigred/sandsifter/issues/10
+EXPIRATION_DATE=	2020-12-31
 
 ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=Designed for x86
