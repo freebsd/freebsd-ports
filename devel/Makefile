@@ -4665,6 +4665,7 @@
     SUBDIR += py-nose-timer
     SUBDIR += py-nose2
     SUBDIR += py-noseofyeti
+    SUBDIR += py-nosexcover
     SUBDIR += py-notify
     SUBDIR += py-notify2
     SUBDIR += py-num2words
