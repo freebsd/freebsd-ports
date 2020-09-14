@@ -623,6 +623,7 @@ man/man5/icewm-winoptions.5.gz
 %%NLS%%share/locale/nl/LC_MESSAGES/icewm.mo
 %%NLS%%share/locale/no/LC_MESSAGES/icewm.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/icewm.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/icewm.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/icewm.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/icewm.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/icewm.mo
