@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	super
-PORTVERSION=	3.30.2
+PORTVERSION=	3.30.3
 CATEGORIES=	security sysutils
 MASTER_SITES=	ftp://ftp.ucolick.org/pub/users/will/ \
 		http://www.ucolick.org/~will/RUE/super/
