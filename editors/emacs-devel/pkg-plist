@@ -1786,6 +1786,8 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-spelling.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-stamp.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-stamp.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-status-sidebar.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-status-sidebar.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-track.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-track.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-truncate.el.gz
@@ -2095,6 +2097,8 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/nnregistry.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/nnrss.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/nnrss.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/gnus/nnselect.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/gnus/nnselect.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/nnspool.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/nnspool.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/nntp.el.gz
