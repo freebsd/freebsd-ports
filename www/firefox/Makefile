@@ -30,7 +30,7 @@ BUILD_DEPENDS=	nspr>=4.26:devel/nspr \
 
 USE_GECKO=	gecko
 CONFLICTS_INSTALL=	firefox-esr
-USE_MOZILLA=	-vpx
+USE_MOZILLA=	-sqlite
 
 USES=		tar:xz
 
