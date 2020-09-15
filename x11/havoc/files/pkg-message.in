@@ -1,0 +1,14 @@
+[
+{ type: install
+  message: <<EOM
+Havoc is installed
+
+Before using this program, copy
+
+%%EXAMPLESDIR%%/havoc.cfg
+
+in $HOME/.config/ and edit it based on your needs.
+
+EOM
+}
+]
