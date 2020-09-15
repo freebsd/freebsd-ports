@@ -5,18 +5,16 @@ diff --git browser/app/profile/firefox.js browser/app/profile/firefox.js
 index 75c2c5e435e35..4d8c09c02759b 100644
 --- browser/app/profile/firefox.js
 +++ browser/app/profile/firefox.js
-@@ -45,8 +45,8 @@ pref("extensions.webextOptionalPermissionPrompts", tru
+@@ -37,7 +37,7 @@ pref("extensions.webextOptionalPermissionPrompts", true);
+ // Preferences for AMO integration
  pref("extensions.getAddons.cache.enabled", true);
  pref("extensions.getAddons.get.url", "https://services.addons.mozilla.org/api/v3/addons/search/?guid=%IDS%&lang=%LOCALE%");
- pref("extensions.getAddons.compatOverides.url", "https://services.addons.mozilla.org/api/v3/addons/compat-override/?guid=%IDS%&lang=%LOCALE%");
 -pref("extensions.getAddons.search.browseURL", "https://addons.mozilla.org/%LOCALE%/firefox/search?q=%TERMS%&platform=%OS%&appver=%VERSION%");
--pref("extensions.webservice.discoverURL", "https://discovery.addons.mozilla.org/%LOCALE%/firefox/discovery/pane/%VERSION%/%OS%/%COMPATIBILITY_MODE%");
 +pref("extensions.getAddons.search.browseURL", "https://addons.mozilla.org/%LOCALE%/firefox/search?q=%TERMS%&platform=Linux&appver=%VERSION%");
-+pref("extensions.webservice.discoverURL", "https://discovery.addons.mozilla.org/%LOCALE%/firefox/discovery/pane/%VERSION%/Linux/%COMPATIBILITY_MODE%");
  pref("extensions.getAddons.link.url", "https://addons.mozilla.org/%LOCALE%/firefox/");
- pref("extensions.getAddons.themes.browseURL", "https://addons.mozilla.org/%LOCALE%/firefox/themes/?src=firefox");
- 
-@@ -186,8 +186,8 @@ pref("app.update.service.enabled", true);
+ pref("extensions.getAddons.langpacks.url", "https://services.addons.mozilla.org/api/v3/addons/language-tools/?app=firefox&type=language&appversion=%VERSION%");
+ pref("extensions.getAddons.discovery.api_url", "https://services.addons.mozilla.org/api/v4/discovery/?lang=%LOCALE%&edition=%DISTRIBUTION%");
+@@ -168,8 +168,8 @@ pref("app.update.staging.enabled", true);
  //  .. etc ..
  //
  pref("extensions.update.enabled", true);
@@ -26,7 +24,7 @@ index 75c2c5e435e35..4d8c09c02759b 100644
 +pref("extensions.update.background.url", "https://versioncheck-bg.addons.mozilla.org/update/VersionCheck.php?reqVersion=%REQ_VERSION%&id=%ITEM_ID%&version=%ITEM_VERSION%&maxAppVersion=%ITEM_MAXAPPVERSION%&status=%ITEM_STATUS%&appID=%APP_ID%&appVersion=%APP_VERSION%&appOS=Linux&appABI=%APP_ABI%&locale=%APP_LOCALE%&currentAppVersion=%CURRENT_APP_VERSION%&updateType=%UPDATE_TYPE%&compatMode=%COMPATIBILITY_MODE%");
  pref("extensions.update.interval", 86400);  // Check for updates to Extensions and
                                              // Themes every day
- // Non-symmetric (not shared by extensions) extension-specific [update] preferences
+ 
 diff --git toolkit/mozapps/extensions/internal/AddonRepository.jsm toolkit/mozapps/extensions/internal/AddonRepository.jsm
 index f70fd8d7e3bd8..81e8cd7764fdf 100644
 --- toolkit/mozapps/extensions/internal/AddonRepository.jsm
