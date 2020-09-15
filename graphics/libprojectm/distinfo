@@ -1,3 +1,9 @@
-TIMESTAMP = 1587447984
-SHA256 (projectM-visualizer-projectm-v3.1.3_GH0.tar.gz) = 7e6328950552a5d8f01142644c35b55c1f627fa25ad0faf078d0229827716d71
-SIZE (projectM-visualizer-projectm-v3.1.3_GH0.tar.gz) = 54503797
+TIMESTAMP = 1600148725
+SHA256 (projectM-visualizer-projectm-v3.1.7-105-gbe446c4b_GH0.tar.gz) = 614c663919e291a92ba52802faf9cc697122cdecd2eb63334540e6a87bf49def
+SIZE (projectM-visualizer-projectm-v3.1.7-105-gbe446c4b_GH0.tar.gz) = 55484238
+SHA256 (d9be77d60d10b579972d1213ab9f26c37b23c224.patch) = ed7535d5007e011dd0c00c5d5dedddf0873e7bb76129e9fb0c6c9c43ca6c1a9b
+SIZE (d9be77d60d10b579972d1213ab9f26c37b23c224.patch) = 6398
+SHA256 (beb39a760351ccf5cc208b269257f4439eabac53.patch) = 2157da814af4d4df85a5b817d3a2f8087d324bb8d9bd3b613ef5b26fe8c3a49e
+SIZE (beb39a760351ccf5cc208b269257f4439eabac53.patch) = 1303
+SHA256 (c25c5d8e96707c5aca6ca504b2d94b2f83c6f703.patch) = a1a61bb75d83f255d8ce277f5373dcaac1a8b06dab80a1876f1612d371cba5ed
+SIZE (c25c5d8e96707c5aca6ca504b2d94b2f83c6f703.patch) = 2727
