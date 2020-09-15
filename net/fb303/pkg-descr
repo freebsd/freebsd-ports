@@ -1,0 +1,4 @@
+fb303 is a base Thrift service and a common set of functionality for querying
+stats, options, and other information from a service.
+
+WWW: https://github.com/facebook/fb303
