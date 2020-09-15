@@ -1,0 +1,397 @@
+https://github.com/Aegisub/Aegisub/commit/ebc76c8a1168
+https://github.com/Aegisub/Aegisub/commit/1aa9215e7fc3
+
+src/video_provider_ffmpegsource.cpp:81:38: error: use of undeclared identifier 'FFMS_CS_BT470BG'
+                        FFMS_SetInputFormatV(VideoSource, FFMS_CS_BT470BG, CR, FFMS_GetPixFmt(""), nullptr);
+                                                          ^
+src/video_provider_ffmpegsource.cpp:106:8: error: use of undeclared identifier 'FFMS_CS_RGB'
+                case FFMS_CS_RGB:
+                     ^
+src/video_provider_ffmpegsource.cpp:108:8: error: use of undeclared identifier 'FFMS_CS_BT709'
+                case FFMS_CS_BT709:
+                     ^
+src/video_provider_ffmpegsource.cpp:110:8: error: use of undeclared identifier 'FFMS_CS_FCC'
+                case FFMS_CS_FCC:
+                     ^
+src/video_provider_ffmpegsource.cpp:112:8: error: use of undeclared identifier 'FFMS_CS_BT470BG'
+                case FFMS_CS_BT470BG:
+                     ^
+src/video_provider_ffmpegsource.cpp:113:8: error: use of undeclared identifier 'FFMS_CS_SMPTE170M'
+                case FFMS_CS_SMPTE170M:
+                     ^
+src/video_provider_ffmpegsource.cpp:115:8: error: use of undeclared identifier 'FFMS_CS_SMPTE240M'
+                case FFMS_CS_SMPTE240M:
+                     ^
+src/video_provider_ffmpegsource.cpp:211:69: error: use of undeclared identifier 'FFMS_GetSourceType'; did you mean 'FFMS_GetTrackType'?
+        if (FFMS_GetVersion() < ((2 << 24) | (17 << 16) | (2 << 8) | 1) && FFMS_GetSourceType(Index) == FFMS_SOURCE_LAVF)
+                                                                           ^~~~~~~~~~~~~~~~~~
+                                                                           FFMS_GetTrackType
+/usr/local/include/ffms.h:430:15: note: 'FFMS_GetTrackType' declared here
+FFMS_API(int) FFMS_GetTrackType(FFMS_Track *T);
+              ^
+src/video_provider_ffmpegsource.cpp:211:88: error: no viable conversion from 'agi::scoped_holder<FFMS_Index *, void (*)(FFMS_Index *)>' (aka 'scoped_holder<FFMS_Index *, void (*)(FFMS_Index *)>') to 'FFMS_Track *'
+        if (FFMS_GetVersion() < ((2 << 24) | (17 << 16) | (2 << 8) | 1) && FFMS_GetSourceType(Index) == FFMS_SOURCE_LAVF)
+                                                                                              ^~~~~
+libaegisub/include/libaegisub/scoped_ptr.h:31:2: note: candidate function
+        operator T() const { return value; }
+        ^
+/usr/local/include/ffms.h:430:45: note: passing argument to parameter 'T' here
+FFMS_API(int) FFMS_GetTrackType(FFMS_Track *T);
+                                            ^
+src/video_provider_ffmpegsource.cpp:211:98: error: use of undeclared identifier 'FFMS_SOURCE_LAVF'
+        if (FFMS_GetVersion() < ((2 << 24) | (17 << 16) | (2 << 8) | 1) && FFMS_GetSourceType(Index) == FFMS_SOURCE_LAVF)
+                                                                                                        ^
+src/video_provider_ffmpegsource.cpp:243:12: error: use of undeclared identifier 'FFMS_CS_UNSPECIFIED'; did you mean 'FFMS_CR_UNSPECIFIED'?
+        if (CS == FFMS_CS_UNSPECIFIED)
+                  ^~~~~~~~~~~~~~~~~~~
+                  FFMS_CR_UNSPECIFIED
+/usr/local/include/ffms.h:220:5: note: 'FFMS_CR_UNSPECIFIED' declared here
+    FFMS_CR_UNSPECIFIED = 0,
+    ^
+src/video_provider_ffmpegsource.cpp:244:40: error: use of undeclared identifier 'FFMS_CS_BT709'
+                CS = Width > 1024 || Height >= 600 ? FFMS_CS_BT709 : FFMS_CS_BT470BG;
+                                                     ^
+src/video_provider_ffmpegsource.cpp:244:56: error: use of undeclared identifier 'FFMS_CS_BT470BG'
+                CS = Width > 1024 || Height >= 600 ? FFMS_CS_BT709 : FFMS_CS_BT470BG;
+                                                                     ^
+src/video_provider_ffmpegsource.cpp:248:12: error: use of undeclared identifier 'FFMS_CS_RGB'
+        if (CS != FFMS_CS_RGB && CS != FFMS_CS_BT470BG && ColorSpace != colormatrix && (colormatrix == "TV.601" || OPT_GET("Video/Force BT.601")->GetBool())) {
+                  ^
+src/video_provider_ffmpegsource.cpp:248:33: error: use of undeclared identifier 'FFMS_CS_BT470BG'
+        if (CS != FFMS_CS_RGB && CS != FFMS_CS_BT470BG && ColorSpace != colormatrix && (colormatrix == "TV.601" || OPT_GET("Video/Force BT.601")->GetBool())) {
+                                       ^
+src/video_provider_ffmpegsource.cpp:249:41: error: use of undeclared identifier 'FFMS_CS_BT470BG'
+                if (FFMS_SetInputFormatV(VideoSource, FFMS_CS_BT470BG, CR, FFMS_GetPixFmt(""), &ErrInfo))
+                                                      ^
+src/video_provider_ffmpegsource.cpp:251:40: error: use of undeclared identifier 'FFMS_CS_BT470BG'
+                ColorSpace = colormatrix_description(FFMS_CS_BT470BG, CR);
+                                                     ^
+src/ffmpegsource_common.cpp:101:11: error: use of undeclared identifier 'FFMS_DoIndexing'
+                Index = FFMS_DoIndexing(Indexer, Trackmask, FFMS_TRACKMASK_NONE,
+                        ^
+17 errors generated.
+
+--- src/audio_provider_ffmpegsource.cpp.orig	2014-12-08 00:07:09 UTC
++++ src/audio_provider_ffmpegsource.cpp
+@@ -91,18 +91,20 @@ void FFmpegSourceAudioProvider::LoadAudio(agi::fs::pat
+ 	}
+ 
+ 	std::map<int, std::string> TrackList = GetTracksOfType(Indexer, FFMS_TYPE_AUDIO);
+-	if (TrackList.empty())
+-		throw agi::AudioDataNotFound("no audio tracks found");
+ 
+ 	// initialize the track number to an invalid value so we can detect later on
+ 	// whether the user actually had to choose a track or not
+ 	int TrackNumber = -1;
+ 	if (TrackList.size() > 1) {
+-		TrackNumber = AskForTrackSelection(TrackList, FFMS_TYPE_AUDIO);
+-		// if it's still -1 here, user pressed cancel
+-		if (TrackNumber == -1)
++		auto Selection = AskForTrackSelection(TrackList, FFMS_TYPE_AUDIO);
++		if (Selection == TrackSelection::None)
+ 			throw agi::UserCancelException("audio loading canceled by user");
++		TrackNumber = static_cast<int>(Selection);
+ 	}
++	else if (TrackList.size() == 1)
++		TrackNumber = TrackList.begin()->first;
++	else
++		throw agi::AudioDataNotFound("no audio tracks found");
+ 
+ 	// generate a name for the cache file
+ 	agi::fs::path CacheName = GetCacheFilename(filename);
+@@ -114,24 +116,13 @@ void FFmpegSourceAudioProvider::LoadAudio(agi::fs::pat
+ 	if (Index && FFMS_IndexBelongsToFile(Index, filename.string().c_str(), &ErrInfo))
+ 		Index = nullptr;
+ 
+-	// index valid but track number still not set?
+ 	if (Index) {
+-		// track number not set? just grab the first track
+-		if (TrackNumber < 0)
+-			TrackNumber = FFMS_GetFirstTrackOfType(Index, FFMS_TYPE_AUDIO, &ErrInfo);
+-		if (TrackNumber < 0)
+-			throw agi::AudioDataNotFound(std::string("Couldn't find any audio tracks: ") + ErrInfo.Buffer);
+-
+-		// index is valid and track number is now set,
+-		// but do we have indexing info for the desired audio track?
++		// we already have an index, but the desired track may not have been
++		// indexed, and if it wasn't we need to reindex
+ 		FFMS_Track *TempTrackData = FFMS_GetTrackFromIndex(Index, TrackNumber);
+ 		if (FFMS_GetNumFrames(TempTrackData) <= 0)
+ 			Index = nullptr;
+ 	}
+-	// no valid index exists and the file only has one audio track, index it
+-	else if (TrackNumber < 0)
+-		TrackNumber = FFMS_TRACKMASK_ALL;
+-	// else: do nothing (keep track mask as it is)
+ 
+ 	// reindex if the error handling mode has changed
+ 	FFMS_IndexErrorHandling ErrorHandling = GetErrorHandlingMode();
+@@ -142,17 +133,10 @@ void FFmpegSourceAudioProvider::LoadAudio(agi::fs::pat
+ 
+ 	// moment of truth
+ 	if (!Index) {
+-		int TrackMask;
+-		if (OPT_GET("Provider/FFmpegSource/Index All Tracks")->GetBool() || TrackNumber == FFMS_TRACKMASK_ALL)
+-			TrackMask = FFMS_TRACKMASK_ALL;
+-		else
+-			TrackMask = (1 << TrackNumber);
+-
++		TrackSelection TrackMask = static_cast<TrackSelection>(TrackNumber);
++		if (OPT_GET("Provider/FFmpegSource/Index All Tracks")->GetBool())
++			TrackMask = TrackSelection::All;
+ 		Index = DoIndexing(Indexer, CacheName, TrackMask, ErrorHandling);
+-
+-		// if tracknumber still isn't set we need to set it now
+-		if (TrackNumber == FFMS_TRACKMASK_ALL)
+-			TrackNumber = FFMS_GetFirstTrackOfType(Index, FFMS_TYPE_AUDIO, &ErrInfo);
+ 	}
+ 	else
+ 		FFMS_CancelIndexing(Indexer);
+--- src/ffmpegsource_common.cpp.orig	2014-12-08 00:07:09 UTC
++++ src/ffmpegsource_common.cpp
+@@ -80,7 +80,10 @@ FFmpegSourceProvider::FFmpegSourceProvider(agi::Backgr
+ /// @param Indexer		A pointer to the indexer object representing the file to be indexed
+ /// @param CacheName    The filename of the output index file
+ /// @param Trackmask    A binary mask of the track numbers to index
+-FFMS_Index *FFmpegSourceProvider::DoIndexing(FFMS_Indexer *Indexer, agi::fs::path const& CacheName, int Trackmask, FFMS_IndexErrorHandling IndexEH) {
++FFMS_Index *FFmpegSourceProvider::DoIndexing(FFMS_Indexer *Indexer,
++	                                         agi::fs::path const& CacheName,
++	                                         TrackSelection Track,
++	                                         FFMS_IndexErrorHandling IndexEH) {
+ 	char FFMSErrMsg[1024];
+ 	FFMS_ErrorInfo ErrInfo;
+ 	ErrInfo.Buffer		= FFMSErrMsg;
+@@ -98,8 +101,22 @@ FFMS_Index *FFmpegSourceProvider::DoIndexing(FFMS_Inde
+ 			ps->SetProgress(Current, Total);
+ 			return ps->IsCancelled();
+ 		};
+-		Index = FFMS_DoIndexing(Indexer, Trackmask, FFMS_TRACKMASK_NONE,
++#if FFMS_VERSION >= ((2 << 24) | (21 << 16) | (0 << 8) | 0)
++		if (Track == TrackSelection::All)
++			FFMS_TrackTypeIndexSettings(Indexer, FFMS_TYPE_AUDIO, 1, 0);
++		else if (Track != TrackSelection::None)
++			FFMS_TrackIndexSettings(Indexer, static_cast<int>(Track), 1, 0);
++		FFMS_SetProgressCallback(Indexer, callback, ps);
++		Index = FFMS_DoIndexing2(Indexer, IndexEH, &ErrInfo);
++#else
++		int Trackmask = 0;
++		if (Track == TrackSelection::All)
++			Trackmask = std::numeric_limits<int>::max();
++		else if (Track != TrackSelection::None)
++			Trackmask = 1 << static_cast<int>(Track);
++		Index = FFMS_DoIndexing(Indexer, Trackmask, 0,
+ 			nullptr, nullptr, IndexEH, callback, ps, &ErrInfo);
++#endif
+ 	});
+ 
+ 	if (Index == nullptr)
+@@ -119,21 +136,24 @@ std::map<int, std::string> FFmpegSourceProvider::GetTr
+ 	std::map<int,std::string> TrackList;
+ 	int NumTracks = FFMS_GetNumTracksI(Indexer);
+ 
++	// older versions of ffms2 can't index audio tracks past 31
++#if FFMS_VERSION < ((2 << 24) | (21 << 16) | (0 << 8) | 0)
++	if (Type == FFMS_TYPE_AUDIO)
++		NumTracks = std::min(NumTracks, std::numeric_limits<int>::digits);
++#endif
++
+ 	for (int i=0; i<NumTracks; i++) {
+ 		if (FFMS_GetTrackTypeI(Indexer, i) == Type) {
+-			const char *CodecName = FFMS_GetCodecNameI(Indexer, i);
+-			if (CodecName)
+-				TrackList.insert(std::pair<int,std::string>(i, CodecName));
++			if (auto CodecName = FFMS_GetCodecNameI(Indexer, i))
++				TrackList[i] = CodecName;
+ 		}
+ 	}
+ 	return TrackList;
+ }
+ 
+-/// @brief Ask user for which track he wants to load
+-/// @param TrackList	A std::map with the track numbers as keys and codec names as values
+-/// @param Type			The track type to ask about
+-/// @return				Returns the track number chosen (an integer >= 0) on success, or a negative integer if the user cancelled.
+-int FFmpegSourceProvider::AskForTrackSelection(const std::map<int, std::string> &TrackList, FFMS_TrackType Type) {
++FFmpegSourceProvider::TrackSelection
++FFmpegSourceProvider::AskForTrackSelection(const std::map<int, std::string> &TrackList,
++                                           FFMS_TrackType Type) {
+ 	std::vector<int> TrackNumbers;
+ 	wxArrayString Choices;
+ 
+@@ -148,8 +168,8 @@ int FFmpegSourceProvider::AskForTrackSelection(const s
+ 		Choices);
+ 
+ 	if (Choice < 0)
+-		return Choice;
+-	return TrackNumbers[Choice];
++		return TrackSelection::None;
++	return static_cast<TrackSelection>(TrackNumbers[Choice]);
+ }
+ 
+ /// @brief Set ffms2 log level according to setting in config.dat
+--- src/ffmpegsource_common.h.orig	2014-12-08 00:07:09 UTC
++++ src/ffmpegsource_common.h
+@@ -42,11 +42,6 @@
+ 
+ namespace agi { class BackgroundRunner; }
+ 
+-/// Index all tracks
+-#define FFMS_TRACKMASK_ALL		-1
+-/// Index no tracks
+-#define FFMS_TRACKMASK_NONE		0
+-
+ /// @class FFmpegSourceProvider
+ /// @brief Base class for FFMS2 source providers; contains common functions etc
+ class FFmpegSourceProvider {
+@@ -57,24 +52,18 @@ class FFmpegSourceProvider {
+ public:
+ 	FFmpegSourceProvider(agi::BackgroundRunner *br);
+ 
+-	/// Logging level constants from avutil/log.h
+-	enum FFMS_LogLevel {
+-		/// nothing printed
+-		FFMS_LOG_QUIET		= -8,
+-		FFMS_LOG_PANIC		= 0,
+-		FFMS_LOG_FATAL		= 8,
+-		FFMS_LOG_ERROR		= 16,
+-		FFMS_LOG_WARNING	= 24,
+-		FFMS_LOG_INFO		= 32,
+-		FFMS_LOG_VERBOSE	= 40,
+-		FFMS_LOG_DEBUG		= 48,
++	enum class TrackSelection : int {
++		None = -1,
++		All = -2
+ 	};
+ 
+ 	void CleanCache();
+ 
+-	FFMS_Index *DoIndexing(FFMS_Indexer *Indexer, agi::fs::path const& Cachename, int Trackmask, FFMS_IndexErrorHandling IndexEH);
++	FFMS_Index *DoIndexing(FFMS_Indexer *Indexer, agi::fs::path const& Cachename,
++		                   TrackSelection Track,
++		                   FFMS_IndexErrorHandling IndexEH);
+ 	std::map<int, std::string> GetTracksOfType(FFMS_Indexer *Indexer, FFMS_TrackType Type);
+-	int AskForTrackSelection(const std::map<int, std::string>& TrackList, FFMS_TrackType Type);
++	TrackSelection AskForTrackSelection(const std::map<int, std::string>& TrackList, FFMS_TrackType Type);
+ 	agi::fs::path GetCacheFilename(agi::fs::path const& filename);
+ 	void SetLogLevel();
+ 	FFMS_IndexErrorHandling GetErrorHandlingMode();
+--- src/video_provider_ffmpegsource.cpp.orig	2014-12-08 00:07:09 UTC
++++ src/video_provider_ffmpegsource.cpp
+@@ -44,6 +44,23 @@
+ #include <libaegisub/make_unique.h>
+ 
+ namespace {
++typedef enum AGI_ColorSpaces {
++	AGI_CS_RGB = 0,
++	AGI_CS_BT709 = 1,
++	AGI_CS_UNSPECIFIED = 2,
++	AGI_CS_FCC = 4,
++	AGI_CS_BT470BG = 5,
++	AGI_CS_SMPTE170M = 6,
++	AGI_CS_SMPTE240M = 7,
++	AGI_CS_YCOCG = 8,
++	AGI_CS_BT2020_NCL = 9,
++	AGI_CS_BT2020_CL = 10,
++	AGI_CS_SMPTE2085 = 11,
++	AGI_CS_CHROMATICITY_DERIVED_NCL = 12,
++	AGI_CS_CHROMATICITY_DERIVED_CL = 13,
++	AGI_CS_ICTCP = 14
++} AGI_ColorSpaces;
++
+ /// @class FFmpegSourceVideoProvider
+ /// @brief Implements video loading through the FFMS library.
+ class FFmpegSourceVideoProvider final : public VideoProvider, FFmpegSourceProvider {
+@@ -78,7 +95,7 @@ class FFmpegSourceVideoProvider final : public VideoPr
+ 		if (matrix == RealColorSpace)
+ 			FFMS_SetInputFormatV(VideoSource, CS, CR, FFMS_GetPixFmt(""), nullptr);
+ 		else if (matrix == "TV.601")
+-			FFMS_SetInputFormatV(VideoSource, FFMS_CS_BT470BG, CR, FFMS_GetPixFmt(""), nullptr);
++			FFMS_SetInputFormatV(VideoSource, AGI_CS_BT470BG, CR, FFMS_GetPixFmt(""), nullptr);
+ 		else
+ 			return;
+ 		ColorSpace = matrix;
+@@ -103,16 +120,16 @@ std::string colormatrix_description(int cs, int cr) {
+ 	std::string str = cr == FFMS_CR_JPEG ? "PC" : "TV";
+ 
+ 	switch (cs) {
+-		case FFMS_CS_RGB:
++		case AGI_CS_RGB:
+ 			return "None";
+-		case FFMS_CS_BT709:
++		case AGI_CS_BT709:
+ 			return str + ".709";
+-		case FFMS_CS_FCC:
++		case AGI_CS_FCC:
+ 			return str + ".FCC";
+-		case FFMS_CS_BT470BG:
+-		case FFMS_CS_SMPTE170M:
++		case AGI_CS_BT470BG:
++		case AGI_CS_SMPTE170M:
+ 			return str + ".601";
+-		case FFMS_CS_SMPTE240M:
++		case AGI_CS_SMPTE240M:
+ 			return str + ".240M";
+ 		default:
+ 			throw VideoOpenError("Unknown video color space");
+@@ -149,14 +166,12 @@ void FFmpegSourceVideoProvider::LoadVideo(agi::fs::pat
+ 	if (TrackList.size() <= 0)
+ 		throw VideoNotSupported("no video tracks found");
+ 
+-	// initialize the track number to an invalid value so we can detect later on
+-	// whether the user actually had to choose a track or not
+ 	int TrackNumber = -1;
+ 	if (TrackList.size() > 1) {
+-		TrackNumber = AskForTrackSelection(TrackList, FFMS_TYPE_VIDEO);
+-		// if it's still -1 here, user pressed cancel
+-		if (TrackNumber == -1)
++		auto Selection = AskForTrackSelection(TrackList, FFMS_TYPE_VIDEO);
++		if (Selection == TrackSelection::None)
+ 			throw agi::UserCancelException("video loading cancelled by user");
++		TrackNumber = static_cast<int>(Selection);
+ 	}
+ 
+ 	// generate a name for the cache file
+@@ -180,9 +195,9 @@ void FFmpegSourceVideoProvider::LoadVideo(agi::fs::pat
+ 
+ 	// moment of truth
+ 	if (!Index) {
+-		int TrackMask = FFMS_TRACKMASK_NONE;
++		auto TrackMask = TrackSelection::None;
+ 		if (OPT_GET("Provider/FFmpegSource/Index All Tracks")->GetBool() || OPT_GET("Video/Open Audio")->GetBool())
+-			TrackMask = FFMS_TRACKMASK_ALL;
++			TrackMask = TrackSelection::All;
+ 		Index = DoIndexing(Indexer, CacheName, TrackMask, GetErrorHandlingMode());
+ 	}
+ 	else {
+@@ -208,8 +223,10 @@ void FFmpegSourceVideoProvider::LoadVideo(agi::fs::pat
+ 
+ 	// set thread count
+ 	int Threads = OPT_GET("Provider/Video/FFmpegSource/Decoding Threads")->GetInt();
++#if FFMS_VERSION < ((2 << 24) | (30 << 16) | (0 << 8) | 0)
+ 	if (FFMS_GetVersion() < ((2 << 24) | (17 << 16) | (2 << 8) | 1) && FFMS_GetSourceType(Index) == FFMS_SOURCE_LAVF)
+ 		Threads = 1;
++#endif
+ 
+ 	// set seekmode
+ 	// TODO: give this its own option?
+@@ -240,15 +257,15 @@ void FFmpegSourceVideoProvider::LoadVideo(agi::fs::pat
+ 	CS = TempFrame->ColorSpace;
+ 	CR = TempFrame->ColorRange;
+ 
+-	if (CS == FFMS_CS_UNSPECIFIED)
+-		CS = Width > 1024 || Height >= 600 ? FFMS_CS_BT709 : FFMS_CS_BT470BG;
++	if (CS == AGI_CS_UNSPECIFIED)
++		CS = Width > 1024 || Height >= 600 ? AGI_CS_BT709 : AGI_CS_BT470BG;
+ 	RealColorSpace = ColorSpace = colormatrix_description(CS, CR);
+ 
+ #if FFMS_VERSION >= ((2 << 24) | (17 << 16) | (1 << 8) | 0)
+-	if (CS != FFMS_CS_RGB && CS != FFMS_CS_BT470BG && ColorSpace != colormatrix && (colormatrix == "TV.601" || OPT_GET("Video/Force BT.601")->GetBool())) {
+-		if (FFMS_SetInputFormatV(VideoSource, FFMS_CS_BT470BG, CR, FFMS_GetPixFmt(""), &ErrInfo))
++	if (CS != AGI_CS_RGB && CS != AGI_CS_BT470BG && ColorSpace != colormatrix && (colormatrix == "TV.601" || OPT_GET("Video/Force BT.601")->GetBool())) {
++		if (FFMS_SetInputFormatV(VideoSource, AGI_CS_BT470BG, CR, FFMS_GetPixFmt(""), &ErrInfo))
+ 			throw VideoOpenError(std::string("Failed to set input format: ") + ErrInfo.Buffer);
+-		ColorSpace = colormatrix_description(FFMS_CS_BT470BG, CR);
++		ColorSpace = colormatrix_description(AGI_CS_BT470BG, CR);
+ 	}
+ #endif
+ 
