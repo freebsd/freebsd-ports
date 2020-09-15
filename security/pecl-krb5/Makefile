@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	krb5
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.4
 CATEGORIES=	security pear
 
 MAINTAINER=	girgen@FreeBSD.org
