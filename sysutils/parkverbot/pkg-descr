@@ -4,4 +4,4 @@ in an effort to reset the inactivity timer in the hardware and so prevent
 the dreaded head unloading.  As such, its operation is non-destructive and
 interoperable across different brands of hard drives.
 
-WWW: http://parkverbot.sourceforge.net/
+WWW: https://inai.de/projects/parkverbot/

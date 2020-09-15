@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	parkverbot
-PORTVERSION=	1.2
-PORTREVISION=	1
+PORTVERSION=	1.3
 CATEGORIES=	sysutils
-MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	https://inai.de/files/parkverbot/
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Hard disk head parking inhibitor
