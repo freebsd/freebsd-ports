@@ -1,0 +1,4 @@
+The tiny lambda calculus interpreter is a portable interpreter
+for an untyped lambda calculus in C99.
+
+WWW: https://gitlab.com/herrhotzenplotz/tlci

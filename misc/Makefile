@@ -480,6 +480,7 @@
     SUBDIR += tkinfo
     SUBDIR += tkregexp
     SUBDIR += tkrunit
+    SUBDIR += tlci
     SUBDIR += toilet
     SUBDIR += translate
     SUBDIR += ttyrec
