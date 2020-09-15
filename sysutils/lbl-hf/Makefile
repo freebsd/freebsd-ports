@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hf
-PORTVERSION=	1.8
+PORTVERSION=	1.9
 CATEGORIES=	sysutils
 MASTER_SITES=	https://ee.lbl.gov/downloads/hf/ \
 		LOCAL/leres/hf
