@@ -1,4 +1,4 @@
-# Created by: Neal Nelson <ports@nicandneal.net>
+ Created by: Neal Nelson <ports@nicandneal.net>
 # $FreeBSD$
 
 PORTNAME=	nim
@@ -18,7 +18,7 @@ BROKEN_sparc64=		fails to build: build.sh: clang: not found
 
 TEST_DEPENDS=	node>=0:www/node
 
-USES=		compiler tar:xz
+USES=		compiler:c11 tar:xz
 USE_LDCONFIG=	yes
 
 TOOLS_DESC=	Build and install nim tools
@@ -36,15 +36,17 @@ MAKE_JOBS_UNSAFE=	yes
 
 TLIST=	nimfind nimgrep nimpretty nimsuggest testament
 
-.if ${ARCH} == "powerpc64"
-.  if defined(PPC_ABI) && ${PPC_ABI} == ELFv1
+.if ${CHOSEN_COMPILER_TYPE} == "gcc"
 EXTRA_PATCHES=	${PATCHDIR}/elfv1-patch-build.sh
-.  endif
+.else
+EXTRA_PATCHES=	${PATCHDIR}/clang-patch-build.sh
 .endif
 
 post-patch:
 .if defined(PPC_ABI) && ${PPC_ABI} == ELFv1
 	@${REINPLACE_CMD} -e '/cc =/s/clang/gcc/' ${WRKSRC}/config/nim.cfg
+	@${REINPLACE_CMD} -e s/%%GCC_DEFAULT%%/${GCC_DEFAULT}/ \
+		${WRKSRC}/build.sh ${WRKSRC}/config/nim.cfg
 .endif
 
 do-build:
