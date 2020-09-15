@@ -3,15 +3,17 @@
 PORTNAME=	zrythm
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.8.911
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Modern music production system, also known as DAW
 
-LICENSE=	GPLv3
+LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	fftw3>0:math/fftw3 \
+		fftw3-float>0:math/fftw3-float \
 		help2man:misc/help2man \
 		kf5-breeze-icons>0:x11-themes/kf5-breeze-icons
 LIB_DEPENDS=	libaudec.so:audio/libaudec \
@@ -47,6 +49,8 @@ USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 gtksourceview3 libxml2 pango
 USE_XORG=	x11
 GLIB_SCHEMAS=	org.zrythm.Zrythm.gschema.xml
 INSTALLS_ICONS=	yes
+
+LDFLAGS+=	${LOCALBASE}/lib/libfftw3_threads.so ${LOCALBASE}/lib/libfftw3f_threads.so # these libs are required but aren't returned by pkg-config for fftw3
 
 BINARY_ALIAS=	git=false python3=${PYTHON_CMD}
 

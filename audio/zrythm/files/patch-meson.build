@@ -1,3 +1,5 @@
+Workaround for the bug in meson.build: fftw3_threads and fftw3f_threads libraries aren't returned by pkg-config
+
 --- meson.build.orig	2020-06-06 18:03:44 UTC
 +++ meson.build
 @@ -638,8 +638,8 @@ zrythm_deps = [
