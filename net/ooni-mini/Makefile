@@ -2,7 +2,7 @@
 
 PORTNAME=		ooni-mini
 DISTVERSIONPREFIX=	v
-DISTVERSION=		0.14.1
+DISTVERSION=		0.16.0
 CATEGORIES=		net www benchmarks
 
 MAINTAINER=	egypcio@FreeBSD.org
@@ -29,18 +29,16 @@ GH_TUPLE=	AndreasBriese:bbloom:28f7e881ca57:andreasbriese_bbloom/vendor/github.c
 		Psiphon-Labs:goarista:d002785f4c67:psiphon_labs_goarista/vendor/github.com/Psiphon-Labs/goarista \
 		Psiphon-Labs:goptlib:c0e32a7a3464:psiphon_labs_goptlib/vendor/github.com/Psiphon-Labs/goptlib \
 		Psiphon-Labs:net:f5d60dada742:psiphon_labs_net/vendor/github.com/Psiphon-Labs/net \
-		Psiphon-Labs:psiphon-tunnel-core:4698936ee666:psiphon_labs_psiphon_tunnel_core/vendor/github.com/Psiphon-Labs/psiphon-tunnel-core \
+		Psiphon-Labs:psiphon-tunnel-core:10cb0192d244:psiphon_labs_psiphon_tunnel_core/vendor/github.com/Psiphon-Labs/psiphon-tunnel-core \
 		Psiphon-Labs:quic-go:474e74c89fab:psiphon_labs_quic_go/vendor/github.com/Psiphon-Labs/quic-go \
-		Psiphon-Labs:tls-tris:16ab4b2ea797:psiphon_labs_tls_tris/vendor/github.com/Psiphon-Labs/tls-tris \
+		Psiphon-Labs:tls-tris:7d791789810f:psiphon_labs_tls_tris/vendor/github.com/Psiphon-Labs/tls-tris \
 		agl:ed25519:5312a6153412:agl_ed25519/vendor/github.com/agl/ed25519 \
 		ahf:goptlib:7d56ec4:ahf_goptlib/vendor/git.torproject.org/pluggable-transports/goptlib.git \
-		apex:log:v1.4.0:apex_log/vendor/github.com/apex/log \
-		aristanetworks:goarista:db8a79a18e4a:aristanetworks_goarista/vendor/github.com/aristanetworks/goarista \
+		apex:log:v1.9.0:apex_log/vendor/github.com/apex/log \
+		aristanetworks:goarista:4cb0e71f3c0e:aristanetworks_goarista/vendor/github.com/aristanetworks/goarista \
 		armon:go-proxyproto:5b7edb60ff5f:armon_go_proxyproto/vendor/github.com/armon/go-proxyproto \
 		armon:go-socks5:e75332964ef5:armon_go_socks5/vendor/github.com/armon/go-socks5 \
 		bifurcation:mint:198357931e61:bifurcation_mint/vendor/github.com/bifurcation/mint \
-		boltdb:bolt:v1.3.1:boltdb_bolt/vendor/github.com/boltdb/bolt \
-		certifi:gocertifi:c7c1fbc02894:certifi_gocertifi/vendor/github.com/certifi/gocertifi \
 		cheekybits:genny:v1.0.0:cheekybits_genny/vendor/github.com/cheekybits/genny \
 		cognusion:go-cache-lru:f73e2280ecea:cognusion_go_cache_lru/vendor/github.com/cognusion/go-cache-lru \
 		creack:goselect:v0.1.1:creack_goselect/vendor/github.com/creack/goselect \
@@ -51,35 +49,41 @@ GH_TUPLE=	AndreasBriese:bbloom:28f7e881ca57:andreasbriese_bbloom/vendor/github.c
 		dgryski:go-farm:2de33835d102:dgryski_go_farm/vendor/github.com/dgryski/go-farm \
 		dsnet:compress:v0.0.1:dsnet_compress/vendor/github.com/dsnet/compress \
 		elazarl:goproxy:a96fa3a31826:elazarl_goproxy/vendor/github.com/elazarl/goproxy \
+		fatih:color:v1.7.0:fatih_color/vendor/github.com/fatih/color \
 		gobwas:glob:f00a7392b439:gobwas_glob/vendor/github.com/gobwas/glob \
-		golang:crypto:4b2356b1ed79:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:4c5254603344:golang_net/vendor/golang.org/x/net \
+		golang:crypto:75b288015ac9:golang_crypto/vendor/golang.org/x/crypto \
+		golang:net:3edf25e44fcc:golang_net/vendor/golang.org/x/net \
 		golang:protobuf:v1.3.3:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:ed371f2e16b4:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:d785dc25833f:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
-		google:go-cmp:v0.5.0:google_go_cmp/vendor/github.com/google/go-cmp \
+		google:go-cmp:v0.5.1:google_go_cmp/vendor/github.com/google/go-cmp \
 		google:gxui:f85e0a97b3a4:google_gxui/vendor/github.com/google/gxui \
+		google:martian:v3.0.0:google_martian_v3/vendor/github.com/google/martian/v3 \
+		google:shlex:e7afc7fbc510:google_shlex/vendor/github.com/google/shlex \
+		google:uuid:v1.1.1:google_uuid/vendor/github.com/google/uuid \
 		gorilla:websocket:v1.4.2:gorilla_websocket/vendor/github.com/gorilla/websocket \
 		grafov:m3u8:6ab8f28ed427:grafov_m3u8/vendor/github.com/grafov/m3u8 \
 		hashicorp:golang-lru:v0.5.4:hashicorp_golang_lru/vendor/github.com/hashicorp/golang-lru \
-		iancoleman:strcase:16388991a334:iancoleman_strcase/vendor/github.com/iancoleman/strcase \
+		iancoleman:strcase:v0.1.0:iancoleman_strcase/vendor/github.com/iancoleman/strcase \
 		juju:ratelimit:f60b32039441:juju_ratelimit/vendor/github.com/juju/ratelimit \
 		konsorten:go-windows-terminal-sequences:v1.0.1:konsorten_go_windows_terminal_sequences/vendor/github.com/konsorten/go-windows-terminal-sequences \
 		marten-seemann:qpack:v0.1.0:marten_seemann_qpack/vendor/github.com/marten-seemann/qpack \
 		marten-seemann:qtls:v0.4.1:marten_seemann_qtls/vendor/github.com/marten-seemann/qtls \
 		marusama:semaphore:565ffd8e868a:marusama_semaphore/vendor/github.com/marusama/semaphore \
-		miekg:dns:d128d10d176b:miekg_dns/vendor/github.com/miekg/dns \
+		mattn:go-colorable:v0.1.2:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
+		mattn:go-isatty:v0.0.8:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
+		miekg:dns:v1.1.31:miekg_dns/vendor/github.com/miekg/dns \
 		montanaflynn:stats:v0.6.3:montanaflynn_stats/vendor/github.com/montanaflynn/stats \
 		oschwald:geoip2-golang:v1.4.0:oschwald_geoip2_golang/vendor/github.com/oschwald/geoip2-golang \
 		oschwald:maxminddb-golang:v1.7.0:oschwald_maxminddb_golang/vendor/github.com/oschwald/maxminddb-golang \
 		patrickmn:go-cache:v2.1.0:patrickmn_go_cache/vendor/github.com/patrickmn/go-cache \
-		pborman:getopt:ee0cd42419d3:pborman_getopt/vendor/github.com/pborman/getopt \
+		pborman:getopt:v2.1.0:pborman_getopt/vendor/github.com/pborman/getopt \
 		pion:stun:v0.3.5:pion_stun/vendor/github.com/pion/stun \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		redjack:marionette:360dd8f58226:redjack_marionette/vendor/github.com/redjack/marionette \
 		refraction-networking:gotapdance:3a6e1938ad70:refraction_networking_gotapdance/vendor/github.com/refraction-networking/gotapdance \
-		refraction-networking:utls:ada0bb9b38a0:refraction_networking_utls/vendor/github.com/refraction-networking/utls \
-		rogpeppe:go-internal:v1.6.0:rogpeppe_go_internal/vendor/github.com/rogpeppe/go-internal \
+		refraction-networking:utls:186025ac7b77:refraction_networking_utls/vendor/github.com/refraction-networking/utls \
+		rogpeppe:go-internal:v1.6.1:rogpeppe_go_internal/vendor/github.com/rogpeppe/go-internal \
 		ryanuber:go-glob:256dc444b735:ryanuber_go_glob/vendor/github.com/ryanuber/go-glob \
 		sergeyfrolov:bsbuffer:94e85abb8507:sergeyfrolov_bsbuffer/vendor/github.com/sergeyfrolov/bsbuffer \
 		sirupsen:logrus:v1.4.2:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
