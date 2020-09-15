@@ -12,6 +12,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/UserManual/OnAccess.html
 %%PORTDOCS%%%%DOCSDIR%%/html/UserManual/Signatures.html
 %%PORTDOCS%%%%DOCSDIR%%/html/UserManual/Signatures/AuthenticodeRules.html
+%%PORTDOCS%%%%DOCSDIR%%/html/UserManual/Signatures/AllowLists.html
 %%PORTDOCS%%%%DOCSDIR%%/html/UserManual/Signatures/BodySignatureFormat.html
 %%PORTDOCS%%%%DOCSDIR%%/html/UserManual/Signatures/BytecodeSignatures.html
 %%PORTDOCS%%%%DOCSDIR%%/html/UserManual/Signatures/ContainerMetadata.html
@@ -25,7 +26,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/UserManual/Signatures/HashSignatures.html
 %%PORTDOCS%%%%DOCSDIR%%/html/UserManual/Signatures/LogicalSignatures.html
 %%PORTDOCS%%%%DOCSDIR%%/html/UserManual/Signatures/PhishSigs.html
-%%PORTDOCS%%%%DOCSDIR%%/html/UserManual/Signatures/Whitelists.html
 %%PORTDOCS%%%%DOCSDIR%%/html/UserManual/Signatures/YaraRules.html
 %%PORTDOCS%%%%DOCSDIR%%/html/UserManual/Usage.html
 %%PORTDOCS%%%%DOCSDIR%%/html/UserManual/Usage/Configuration.html
@@ -36,10 +36,10 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/UserManual/libclamav.html
 %%UNRAR%%lib/libclamunrar.so
 %%UNRAR%%lib/libclamunrar.so.9
-%%UNRAR%%lib/libclamunrar.so.9.0.4
+%%UNRAR%%lib/libclamunrar.so.9.0.5
 %%UNRAR%%lib/libclamunrar_iface.so
 %%UNRAR%%lib/libclamunrar_iface.so.9
-%%UNRAR%%lib/libclamunrar_iface.so.9.0.4
+%%UNRAR%%lib/libclamunrar_iface.so.9.0.5
 @dir(%%CLAMAVUSER%%,%%CLAMAVGROUP%%,0755) %%DBDIR%%
 @dir(%%CLAMAVUSER%%,%%CLAMAVGROUP%%,0755) %%LOGDIR%%
 @dir(%%CLAMAVUSER%%,%%CLAMAVGROUP%%,0755) %%RUNDIR%%
@@ -60,10 +60,10 @@ include/clamav.h
 include/libfreshclam.h
 lib/libclamav.so
 lib/libclamav.so.9
-lib/libclamav.so.9.0.4
+lib/libclamav.so.9.0.5
 lib/libfreshclam.so
 lib/libfreshclam.so.2
-lib/libfreshclam.so.2.0.0
+lib/libfreshclam.so.2.0.1
 libdata/pkgconfig/libclamav.pc
 man/man1/clambc.1.gz
 man/man1/clamconf.1.gz
