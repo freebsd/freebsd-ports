@@ -1,0 +1,11 @@
+--- js/moz.configure.orig	2020-08-17 18:33:37 UTC
++++ js/moz.configure
+@@ -696,7 +696,7 @@ def editline(js_shell, is_windows, compile_environment
+ js_option('--enable-readline', help='Link js shell to system readline library',
+           when=editline)
+ 
+-has_readline = check_symbol('readline', flags=['-lreadline'], when='--enable-readline',
++has_readline = check_symbol('readline', flags=['-lreadline', '-L%%LOCALBASE%%/lib'], when='--enable-readline',
+                             onerror=lambda: die('No system readline library found'))
+ 
+ set_config('EDITLINE_LIBS', ['-lreadline'], when=has_readline)
