@@ -3,7 +3,7 @@
 
 PORTNAME=	efl
 DISTVERSION=	1.24.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel enlightenment
 MASTER_SITES=	http://download.enlightenment.org/rel/libs/${PORTNAME}/
 DIST_SUBDIR=	enlightenment
@@ -21,6 +21,7 @@ LIB_DEPENDS=	libgif.so:graphics/giflib \
 		libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libdbus-1.so:devel/dbus \
+		libcurl.so:ftp/curl \
 		libsndfile.so:audio/libsndfile
 RUN_DEPENDS=	update-mime-database:misc/shared-mime-info
 
