@@ -3,6 +3,7 @@
 
 PORTNAME=	kodi-addon-pvr-hts
 PORTVERSION=	4.4.21
+DISTVERSIONSUFFIX=	-Leia
 CATEGORIES=	multimedia
 
 MAINTAINER=	decke@FreeBSD.org
@@ -20,6 +21,5 @@ USES=		cmake:noninja
 USE_GITHUB=	yes
 GH_ACCOUNT=	kodi-pvr
 GH_PROJECT=	pvr.hts
-GH_TAGNAME=	${PORTVERSION}-Leia
 
 .include <bsd.port.mk>

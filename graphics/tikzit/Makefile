@@ -1,6 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	tikzit
+DISTVERSIONPREFIX=	v
 DISTVERSION=	2.1.6
 PORTREVISION=	1
 CATEGORIES=	graphics
@@ -16,7 +17,6 @@ LIB_DEPENDS=	libpoppler-qt5.so:graphics/poppler-qt5
 USES=		bison compiler:c++11-lang qmake qt:5
 
 USE_GITHUB=	yes
-GH_TAGNAME=	v${DISTVERSION}
 
 USE_QT=	buildtools core gui widgets network
 

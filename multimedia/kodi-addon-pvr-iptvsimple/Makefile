@@ -3,6 +3,7 @@
 
 PORTNAME=	kodi-addon-pvr-iptvsimple
 PORTVERSION=	3.9.8
+DISTVERSIONSUFFIX=	-Leia
 CATEGORIES=	multimedia
 
 MAINTAINER=	decke@FreeBSD.org
@@ -21,7 +22,6 @@ USES=		cmake:noninja
 USE_GITHUB=	yes
 GH_ACCOUNT=	kodi-pvr
 GH_PROJECT=	pvr.iptvsimple
-GH_TAGNAME=	${PORTVERSION}-Leia
 
 post-patch:
 	@${REINPLACE_CMD} 's|rapidxml/rapidxml.hpp|rapidxml.hpp|' \

@@ -3,6 +3,7 @@
 
 PORTNAME=	nvi2
 PORTVERSION=	2.2.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
 
 MAINTAINER=	leres@FreeBSD.org
@@ -14,7 +15,6 @@ USES=		bdb cmake compiler:c11 ncurses
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	lichray
-GH_TAGNAME=	v${PORTVERSION}
 
 CONFLICTS_INSTALL=	nvi-m17n-[0-9]* nvi-[0-9]*
 

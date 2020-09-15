@@ -3,6 +3,7 @@
 
 PORTNAME=	kodi-addon-peripheral-joystick
 PORTVERSION=	1.4.9
+DISTVERSIONSUFFIX=	-Leia
 CATEGORIES=	multimedia
 
 MAINTAINER=	rozhuk.im@gmail.com
@@ -23,7 +24,6 @@ USES=		cmake:noninja
 USE_GITHUB=	yes
 GH_ACCOUNT=	xbmc
 GH_PROJECT=	peripheral.joystick
-GH_TAGNAME=	${PORTVERSION}-Leia
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|if(CORE_SYSTEM_NAME STREQUAL linux)|if(1)|g' \

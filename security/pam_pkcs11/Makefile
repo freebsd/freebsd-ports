@@ -3,6 +3,7 @@
 
 PORTNAME=	pam_pkcs11
 PORTVERSION=	0.6.11
+DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	security
 
 MAINTAINER=	khng300@gmail.com
@@ -16,7 +17,6 @@ USES=		autoreconf gmake libtool pkgconfig shebangfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenSC
-GH_TAGNAME=	${PORTNAME}-${PORTVERSION}
 
 GNU_CONFIGURE=	yes
 
