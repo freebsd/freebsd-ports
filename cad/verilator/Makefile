@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	verilator
-DISTVERSION=	4.040
-PORTREVISION=	2
+DISTVERSION=	4.100
 CATEGORIES=	cad
 MASTER_SITES=	https://www.veripool.org/ftp/
 
