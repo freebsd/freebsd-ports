@@ -28,6 +28,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	"transform="
 CONFIGURE_ARGS=	--program-prefix="" --program-suffix="" --enable-dirty \
 		--enable-demo --enable-burst --enable-intervals
+CFLAGS+=	-fcommon
 
 INFO_INFO=	netperf
 
