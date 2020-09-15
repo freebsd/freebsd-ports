@@ -6,4 +6,4 @@ However, Haml avoids the need for explicitly coding HTML into the template,
 because it itself is a description of the HTML, with some code to generate
 dynamic content.
 
-WWW: http://haml.info/
+WWW: https://haml.info/
