@@ -21,7 +21,7 @@
 #                                   -i 8 # real-time priority
 #                                   -r 48000 # sample rate
 #                                   -b 24 # bit depth
-#                                   -s 1024 # buffer (can be 5.2ms)
+#                                   -s 8.0ms # buffer delay
 #                                   -f /dev/dsp0 # hardware device to use
 #                                   -d dsp # vdev to create
 #                                   -t dsp.ctl # control device
@@ -42,7 +42,7 @@ virtual_oss_default_args="\
   -C 2 -c 2 \
   -r 48000 \
   -b 24 \
-  -s 1024 \
+  -s 8.0ms \
   -f /dev/dsp0 \
   -c 2 \
   -d dsp \
