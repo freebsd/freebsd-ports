@@ -1,0 +1,99 @@
+--- cargo-crates/rusty_v8-0.10.0/build/config/compiler/BUILD.gn.orig	2020-09-11 17:42:05 UTC
++++ cargo-crates/rusty_v8-0.10.0/build/config/compiler/BUILD.gn
+@@ -126,7 +126,7 @@ declare_args() {
+   # 'is_android' breaks content_shell_test_apk on android-kitkat-arm-rel.
+   # 'use_xcode_clang' may call old clang.
+   init_stack_vars = !is_android && !use_xcode_clang &&
+-                    (!is_official_build || is_linux || is_chromeos)
++                    (!is_official_build || is_linux || is_chromeos) && !is_bsd
+ 
+   # This argument is to control whether enabling text section splitting in the
+   # final binary. When enabled, the separated text sections with prefix
+@@ -304,7 +304,7 @@ config("compiler") {
+     }
+ 
+     # Linker warnings.
+-    if (fatal_linker_warnings && !is_mac && !is_ios && current_os != "aix") {
++    if (fatal_linker_warnings && !is_mac && !is_ios && !is_bsd && current_os != "aix") {
+       ldflags += [ "-Wl,--fatal-warnings" ]
+     }
+     if (fatal_linker_warnings && is_apple &&
+@@ -402,13 +402,13 @@ config("compiler") {
+ 
+     # Compiler instrumentation can introduce dependencies in DSOs to symbols in
+     # the executable they are loaded into, so they are unresolved at link-time.
+-    if (!using_sanitizer) {
++    if (!using_sanitizer && !is_bsd) {
+       ldflags += [
+         "-Wl,-z,defs",
+         "-Wl,--as-needed",
+       ]
+     }
+-    if (use_lld && !is_chromeos_device) {
++    if (use_lld && !is_chromeos_device && !is_bsd) {
+       # TODO(thakis): Fix dump_syms to not need this and then remove it,
+       # https://crbug.com/1105559
+       ldflags += [
+@@ -501,7 +501,7 @@ config("compiler") {
+     ldflags += [ "-Wl,-z,keep-text-section-prefix" ]
+   }
+ 
+-  if (is_clang && !is_nacl && !use_xcode_clang) {
++  if (is_clang && !is_nacl && !use_xcode_clang && !is_bsd) {
+     cflags += [ "-fcrash-diagnostics-dir=" + clang_diagnostic_dir ]
+ 
+     cflags += [
+@@ -787,7 +787,7 @@ config("compiler_cpu_abi") {
+         cflags += [ "-mtune=$arm_tune" ]
+       }
+     } else if (current_cpu == "arm64") {
+-      if (is_clang && !is_android && !is_nacl && !is_fuchsia) {
++      if (is_clang && !is_android && !is_nacl && !is_fuchsia && !is_bsd) {
+         cflags += [ "--target=aarch64-linux-gnu" ]
+         ldflags += [ "--target=aarch64-linux-gnu" ]
+       }
+@@ -1140,7 +1140,7 @@ config("compiler_deterministic") {
+       "-Xclang",
+       ".",
+     ]
+-    if (!is_win) {
++    if (!is_win && !is_bsd) {
+       # We don't use clang -cc1as on Windows (yet? https://crbug.com/762167)
+       asmflags = [ "-Wa,-fdebug-compilation-dir,." ]
+     }
+@@ -1523,7 +1523,7 @@ config("default_warnings") {
+         cflags += [ "-Wno-nonportable-include-path" ]
+       }
+ 
+-      if (current_toolchain == host_toolchain || !use_xcode_clang) {
++      if ((current_toolchain == host_toolchain || !use_xcode_clang) && !is_bsd) {
+         # Flags NaCl (Clang 3.7) and Xcode 9.2 (Clang clang-900.0.39.2) do not
+         # recognize.
+         cflags += [
+@@ -1775,7 +1775,7 @@ config("thin_archive") {
+   # Mac and iOS use the mac-specific "libtool" command, not ar, which doesn't
+   # have a "thin archive" mode (it does accept -T, but it means truncating
+   # archive names to 16 characters, which is not what we want).
+-  if ((is_posix && !is_nacl && !is_mac && !is_ios) || is_fuchsia) {
++  if ((is_posix && !is_nacl && !is_mac && !is_ios && !is_bsd) || is_fuchsia) {
+     arflags = [ "-T" ]
+   } else if (is_win && use_lld) {
+     arflags = [ "/llvmlibthin" ]
+@@ -2308,7 +2308,7 @@ config("symbols") {
+     # flag, so we can use use -g1 for pnacl and nacl-clang compiles.
+     # gcc nacl is is_nacl && !is_clang, pnacl and nacl-clang are && is_clang.
+     if (!is_nacl || is_clang) {
+-      cflags += [ "-g2" ]
++      cflags += [ "-g0" ]
+     }
+ 
+     # TODO(https://crbug.com/1050118): Investigate missing debug info on mac.
+@@ -2353,7 +2353,7 @@ config("symbols") {
+     # DWARF info may be corrupt; offsets in a range list entry are in different
+     # sections" there.  Maybe just a bug in nacl_switch_32.S.
+     if (!is_mac && !is_ios && !is_nacl && current_cpu != "x86" &&
+-        (use_gold || use_lld)) {
++        (use_gold || use_lld) && !is_bsd) {
+       if (is_clang) {
+         # This flag enables the GNU-format pubnames and pubtypes sections,
+         # which lld needs in order to generate a correct GDB index.

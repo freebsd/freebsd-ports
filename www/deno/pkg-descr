@@ -1,0 +1,7 @@
+Deno is a JavaScript/TypeScript runtime with secure defaults and a great
+developer experience.
+
+Deno aims to provide a productive and secure scripting environment for the
+modern programmer. It is built on top of V8, Rust, and TypeScript.
+
+WWW: https://github.com/denoland
