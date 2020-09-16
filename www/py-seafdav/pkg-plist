@@ -23,6 +23,8 @@
 %%SITEPACKAGEDIR%%/wsgidav/__pycache__/lock_manager.cpython-%%PYTHON_SUFFIX%%.pyc
 %%SITEPACKAGEDIR%%/wsgidav/__pycache__/lock_storage.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%SITEPACKAGEDIR%%/wsgidav/__pycache__/lock_storage.cpython-%%PYTHON_SUFFIX%%.pyc
+%%SITEPACKAGEDIR%%/wsgidav/__pycache__/lock_storage_redis.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%SITEPACKAGEDIR%%/wsgidav/__pycache__/lock_storage_redis.cpython-%%PYTHON_SUFFIX%%.pyc
 %%SITEPACKAGEDIR%%/wsgidav/__pycache__/middleware.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%SITEPACKAGEDIR%%/wsgidav/__pycache__/middleware.cpython-%%PYTHON_SUFFIX%%.pyc
 %%SITEPACKAGEDIR%%/wsgidav/__pycache__/request_resolver.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
@@ -99,6 +101,7 @@
 %%SITEPACKAGEDIR%%/wsgidav/interfaces/propertymanagerinterface.py
 %%SITEPACKAGEDIR%%/wsgidav/lock_manager.py
 %%SITEPACKAGEDIR%%/wsgidav/lock_storage.py
+%%SITEPACKAGEDIR%%/wsgidav/lock_storage_redis.py
 %%SITEPACKAGEDIR%%/wsgidav/middleware.py
 %%SITEPACKAGEDIR%%/wsgidav/prop_man/__init__.py
 %%SITEPACKAGEDIR%%/wsgidav/prop_man/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
