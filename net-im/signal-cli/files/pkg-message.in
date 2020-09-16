@@ -14,7 +14,7 @@ Quick start
 
 3. Send a test message to yourself:
 
-       signal-cli -u NUMBER send  -m "This is a test" NUMBER
+       signal-cli -u NUMBER send -m "This is a test" NUMBER
 
 See the signal-cli wiki for more details:
 https://github.com/AsamK/signal-cli/wiki

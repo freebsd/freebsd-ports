@@ -3,6 +3,7 @@
 PORTNAME=	signal-cli
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.10
+PORTREVISION=	1
 CATEGORIES=	net-im java
 MASTER_SITES=	https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.9.0/:_jackson_annotations \
 		https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.9.9/:_jackson_core \
