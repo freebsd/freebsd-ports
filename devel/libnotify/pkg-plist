@@ -8,4 +8,5 @@ lib/libnotify.so
 lib/libnotify.so.4
 lib/libnotify.so.4.0.0
 libdata/pkgconfig/libnotify.pc
+man/man1/notify-send.1.gz
 share/gir-1.0/Notify-0.7.gir
