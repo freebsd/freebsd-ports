@@ -13107,6 +13107,7 @@
 %%WWWDIR%%/doc/install/openshift_and_gitlab/img/web-console.png
 %%WWWDIR%%/doc/install/openshift_and_gitlab/index.md
 %%WWWDIR%%/doc/install/pivotal/index.md
+%%WWWDIR%%/doc/install/postgresql_extensions.md
 %%WWWDIR%%/doc/install/redis.md
 %%WWWDIR%%/doc/install/relative_url.md
 %%WWWDIR%%/doc/install/requirements.md
@@ -22256,6 +22257,8 @@
 %%WWWDIR%%/spec/frontend/helpers/dom_shims/size_properties.js
 %%WWWDIR%%/spec/frontend/helpers/dom_shims/window_scroll_to.js
 %%WWWDIR%%/spec/frontend/helpers/event_hub_factory_spec.js
+%%WWWDIR%%/spec/frontend/helpers/fake_date.js
+%%WWWDIR%%/spec/frontend/helpers/fake_date_spec.js
 %%WWWDIR%%/spec/frontend/helpers/fake_request_animation_frame.js
 %%WWWDIR%%/spec/frontend/helpers/filtered_search_spec_helper.js
 %%WWWDIR%%/spec/frontend/helpers/fixtures.js
