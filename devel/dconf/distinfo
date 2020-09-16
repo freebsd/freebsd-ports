@@ -1,3 +1,3 @@
-TIMESTAMP = 1592252835
-SHA256 (gnome3/dconf-0.36.0.tar.xz) = 9fe6bb22191fc2a036ad86fd8e7d165e9983c687b9fedccf85d46c799301da2d
-SIZE (gnome3/dconf-0.36.0.tar.xz) = 114828
+TIMESTAMP = 1600242835
+SHA256 (gnome3/dconf-0.38.0.tar.xz) = 45f60f41330d27715cce1315af123f94f1c2cdedb68b6bed3b309866eec44f58
+SIZE (gnome3/dconf-0.38.0.tar.xz) = 115876
