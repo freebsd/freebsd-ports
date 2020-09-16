@@ -2,6 +2,7 @@
 
 PORTNAME=	lrslib
 DISTVERSION=	071
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://cgm.cs.mcgill.ca/~avis/C/lrslib/archive/
 
@@ -11,11 +12,9 @@ COMMENT=	Reverse search algorithm for vertex enumeration/convex hull problems
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
-		libgmp.so:math/gmp \
-		libmpi.so:net/mpich
+LIB_DEPENDS=	libgmp.so:math/gmp
 
-USES=		fortran gmake libtool localbase:ldflags # fortran because it's built with mpic++
+USES=		gmake libtool localbase:ldflags
 USE_LDCONFIG=	yes
 
 MAKEFILE=	makefile
