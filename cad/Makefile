@@ -24,6 +24,7 @@
     SUBDIR += cura-engine
     SUBDIR += digital
     SUBDIR += dinotrace
+    SUBDIR += ecpprog
     SUBDIR += electric
     SUBDIR += electric-ng
     SUBDIR += fasm
