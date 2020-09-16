@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	json-glib
-PORTVERSION=	1.4.4
+PORTVERSION=	1.6.0
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 
@@ -21,10 +21,11 @@ PORTDOCS=	*
 OPTIONS_DEFINE=	GIR DOCS
 OPTIONS_DEFAULT=GIR
 OPTIONS_SUB=	yes
+MESON_ARGS=	-Dgtk_doc=disabled
 
 GIR_DESC=	Build introspection data
 GIR_USE=	gnome=introspection
-GIR_MESON_TRUE=	introspection
+GIR_MESON_ENABLED=	introspection
 
 post-install:
 	@${RM} -r ${STAGEDIR}${PREFIX}/libexec/installed-tests
