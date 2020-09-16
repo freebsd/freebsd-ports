@@ -1,0 +1,41 @@
+--- makefile.orig	2020-05-27 03:16:28 UTC
++++ makefile
+@@ -194,7 +194,7 @@ SHLIBBIN=lrs-shared lrsnash-shared
+ # Building (linking) the shared library, and relevant symlinks.
+ 
+ ${SHLIB}: ${SHLIBOBJ}
+-	$(CC) -shared -Wl,-soname=$(SONAME) $(SHLIBFLAGS) -o $@ ${SHLIBOBJ} -lgmp
++	$(CC) -shared -Wl,-soname=$(SONAME) $(SHLIBFLAGS) -o $@ ${SHLIBOBJ} $(LDFLAGS) -lgmp
+ 
+ ${SONAME}: ${SHLIB}
+ 	ln -sf ${SHLIB} ${SONAME}
+@@ -207,11 +207,11 @@ ${SHLINK}: ${SONAME}
+ all-shared: ${SHLIBBIN}
+ 
+ lrs-shared: ${SHLINK} lrs.o
+-	$(CC) lrs.o -o $@ -L . -llrs
++	$(CC) lrs.o -o $@ -L . $(LDFLAGS) -llrs
+ 
+ 
+ lrsnash-shared: ${SHLINK}  lrsnash.c
+-	$(CC) -DGMP -DMA lrsnash.c  lrsnashlib.c -I${INCLUDEDIR} -o $@ -L . -llrs -lgmp
++	$(CC) -DGMP -DMA lrsnash.c  lrsnashlib.c -I${INCLUDEDIR} -o $@ -L . -llrs $(LDFLAGS) -lgmp
+ 
+ # build object files for the shared library
+ 
+@@ -246,13 +246,13 @@ install: all-shared install-common
+ 	mkdir -p $(DESTDIR)${prefix}/bin
+ 	for file in ${SHLIBBIN}; do cp $${file} $(DESTDIR)${prefix}/bin/$$(basename $$file -shared); done
+ 	mkdir -p $(DESTDIR)${prefix}/lib
+-	install -t $(DESTDIR)${prefix}/lib $(SHLIB)
++	install $(SHLIB) $(DESTDIR)${prefix}/lib
+ 	cd $(DESTDIR)${prefix}/lib && ln -sf $(SHLIB) $(SHLINK)
+ 	cd $(DESTDIR)${prefix}/lib && ln -sf $(SHLIB) $(SONAME)
+ 
+ install-common:
+ 	mkdir -p $(DESTDIR)${prefix}/include/lrslib
+-	install -t $(DESTDIR)${prefix}/include/lrslib ${INSTALL_INCLUDES}
++	install ${INSTALL_INCLUDES} $(DESTDIR)${prefix}/include/lrslib
+ 
+ ######################################################################
+ clean:		
