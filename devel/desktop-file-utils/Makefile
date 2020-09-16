@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	desktop-file-utils
-PORTVERSION=	0.24
+PORTVERSION=	0.26
 CATEGORIES=	devel
 MASTER_SITES=	http://freedesktop.org/software/${PORTNAME}/releases/
 
@@ -12,11 +12,8 @@ COMMENT=	Couple of command line utilities for working with desktop entries
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gettext gmake gnome localbase:ldflags pkgconfig tar:xz
+USES=		gettext meson gnome pkgconfig tar:xz
 USE_GNOME=	glib20
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--without-lispdir
-CONFIGURE_ENV=	EMACS="no"
 
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
