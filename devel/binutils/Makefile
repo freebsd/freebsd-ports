@@ -8,7 +8,7 @@ PORTEPOCH?=	1
 CATEGORIES?=	devel
 MASTER_SITES=	SOURCEWARE/binutils/releases
 
-MAINTAINER?=	bapt@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	GNU binary tools
 
 LICENSE=	GPLv3 LGPL3
