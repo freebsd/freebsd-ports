@@ -2,8 +2,12 @@
 
 PORTNAME=	verilator
 DISTVERSION=	4.100
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	https://www.veripool.org/ftp/
+
+PATCH_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/commit/
+PATCHFILES=	d750a54e90df1161cfe9502ca56f298005283372.diff:-p1 # make->gmake patch
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Synthesizable Verilog to C++ compiler
@@ -12,6 +16,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libsystemc.so:devel/systemc
+RUN_DEPENDS=	gmake:devel/gmake # verilator runs gmake for the --hierarchical option when the 'gmake' method is chosen
 
 USES=		bison compiler:c++14-lang gmake localbase:ldflags pathfix perl5 python:build,test tar:tgz
 
