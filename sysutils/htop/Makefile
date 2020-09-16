@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	htop
-DISTVERSION=	2.2.0
-PORTREVISION=	1
+DISTVERSION=	3.0.2
 CATEGORIES=	sysutils
 
 MAINTAINER=	gaod@hychen.org
@@ -16,8 +15,7 @@ USES=		autoreconf libtool localbase ncurses pkgconfig python:build shebangfix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-unicode
 USE_GITHUB=	yes
-GH_ACCOUNT=	hishamhm
-SHEBANG_FILES=	scripts/MakeHeader.py
+GH_ACCOUNT=	htop-dev
 
 PLIST_FILES=	bin/htop \
 		man/man1/htop.1.gz \
