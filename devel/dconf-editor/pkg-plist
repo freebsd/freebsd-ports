@@ -10,6 +10,8 @@ share/icons/hicolor/256x256/apps/ca.desrt.dconf-editor.png
 share/icons/hicolor/32x32/apps/ca.desrt.dconf-editor.png
 share/icons/hicolor/48x48/apps/ca.desrt.dconf-editor.png
 share/icons/hicolor/64x64/apps/ca.desrt.dconf-editor.png
+share/icons/hicolor/scalable/actions/ca.desrt.dconf-editor.big-rows-symbolic.svg
+share/icons/hicolor/scalable/actions/ca.desrt.dconf-editor.small-rows-symbolic.svg
 share/icons/hicolor/scalable/apps/ca.desrt.dconf-editor-symbolic.svg
 share/locale/an/LC_MESSAGES/dconf-editor.mo
 share/locale/ar/LC_MESSAGES/dconf-editor.mo
@@ -73,5 +75,7 @@ share/locale/uk/LC_MESSAGES/dconf-editor.mo
 share/locale/vi/LC_MESSAGES/dconf-editor.mo
 share/locale/zh_CN/LC_MESSAGES/dconf-editor.mo
 share/locale/zh_HK/LC_MESSAGES/dconf-editor.mo
+share/locale/af/LC_MESSAGES/dconf-editor.mo
+share/locale/ms/LC_MESSAGES/dconf-editor.mo
 share/locale/zh_TW/LC_MESSAGES/dconf-editor.mo
 share/metainfo/ca.desrt.dconf-editor.appdata.xml
