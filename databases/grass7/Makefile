@@ -39,7 +39,7 @@ LIB_DEPENDS=	libgdal.so:graphics/gdal \
 RUN_DEPENDS=	${PY_NUMPY} \
 		${PYTHON_SITELIBDIR}/six.py:devel/py-six@${PY_FLAVOR}
 
-USES=		blaslapack compiler:features gl gmake gnome iconv \
+USES=		blaslapack compiler:c11 gl gmake gnome iconv \
 		jpeg perl5 pkgconfig python:3.6+ readline shebangfix xorg
 SHEBANG_GLOB=	*.py
 SHEBANG_LANG=	nviz
