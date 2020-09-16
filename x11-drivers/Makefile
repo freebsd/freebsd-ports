@@ -19,7 +19,6 @@
     SUBDIR += xf86-video-ark
     SUBDIR += xf86-video-ast
     SUBDIR += xf86-video-ati
-    SUBDIR += xf86-video-ati-legacy
     SUBDIR += xf86-video-chips
     SUBDIR += xf86-video-cirrus
     SUBDIR += xf86-video-dummy

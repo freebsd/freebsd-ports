@@ -15429,3 +15429,4 @@ x11-wm/e-modules||2020-09-09|Removed
 net/frr6|net/frr7|2020-09-10|Has expired: Uses deprecated version of python and upstream no longer maintained
 graphics/libdssim||2020-09-13|Removed: C API is empty, only usable from Rust
 cad/opensta|cad/openroad|2020-09-14|OpenSTA is included in OpenRoad and isn't needed as a standalone port
+x11-drivers/xf86-video-ati-legacy||2020-09-16|Has expired: Broken for more than 6 months
