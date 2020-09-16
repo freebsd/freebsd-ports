@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libyaml.so:textproc/libyaml
 
-USES=		bison gmake pkgconfig shebangfix
+USES=		bison compiler:c11 gmake pkgconfig shebangfix
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	dtdiff
 
