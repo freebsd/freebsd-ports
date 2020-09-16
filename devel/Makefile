@@ -636,6 +636,7 @@
     SUBDIR += f77flow
     SUBDIR += fam
     SUBDIR += fastcrc
+    SUBDIR += fatal
     SUBDIR += fb-adb
     SUBDIR += fbthrift
     SUBDIR += fc++
