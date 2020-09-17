@@ -58,6 +58,7 @@
     SUBDIR += gtksourceview3-reference
     SUBDIR += gtksourceview4
     SUBDIR += gtksourceviewmm3
+    SUBDIR += guile-gnome-platform
     SUBDIR += irrlicht
     SUBDIR += itk
     SUBDIR += iwidgets
