@@ -1,0 +1,11 @@
+--- meson.build.orig	2020-09-12 03:40:20 UTC
++++ meson.build
+@@ -7,7 +7,7 @@ sound_juicer_libdir = join_paths(sound_juicer_prefix, 
+ sound_juicer_libexecdir = join_paths(sound_juicer_prefix, get_option('libexecdir'))
+ sound_juicer_localedir = join_paths(sound_juicer_prefix, get_option('localedir'))
+ 
+-sound_juicer_docdir = join_paths(sound_juicer_prefix, 'doc', meson.project_name())
++sound_juicer_docdir = join_paths(sound_juicer_prefix, 'share/doc', meson.project_name())
+ 
+ gnome = import('gnome')
+ i18n = import('i18n')
