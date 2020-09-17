@@ -12,3 +12,10 @@ share/yelp-tools/xslt/mal-opf.xsl
 share/yelp-tools/xslt/mal-rng.xsl
 share/yelp-tools/xslt/mal-status.xsl
 share/yelp-tools/xslt/media.xsl
+%%DATADIR%%/templates/concept.duck
+%%DATADIR%%/templates/concept.page
+%%DATADIR%%/templates/guide.duck
+%%DATADIR%%/templates/guide.page
+%%DATADIR%%/templates/reference.duck
+%%DATADIR%%/templates/reference.page
+%%DATADIR%%/templates/task.duck

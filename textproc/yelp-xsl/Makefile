@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	yelp-xsl
-PORTVERSION=	3.28.0
+PORTVERSION=	3.38.0
 CATEGORIES=	textproc gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -19,7 +19,7 @@ PORTSCOUT=	limitw:1,even
 
 USES=		gettext gmake gnome localbase pathfix \
 		pkgconfig tar:xz
-USE_GNOME=	gnomeprefix intlhack libxml2 libxslt
+USE_GNOME=	libxml2 libxslt
 GNU_CONFIGURE=	yes
 NO_ARCH=	yes
 
