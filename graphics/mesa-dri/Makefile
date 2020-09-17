@@ -8,9 +8,6 @@ CATEGORIES=	graphics
 
 COMMENT=	OpenGL hardware acceleration drivers for DRI2+
 
-USES=		xorg
-USE_XORG=	xorgproto x11 xdamage xext xfixes xshmfence
-
 OPTIONS_GROUP=			PLATFORM
 OPTIONS_GROUP_PLATFORM=		PLATFORM_X11 PLATFORM_WAYLAND PLATFORM_DRM PLATFORM_SURFACELESS
 PLATFORM_X11_DESC=		Enable X11 support for GBM/EGL
@@ -54,8 +51,8 @@ DRI_DRIVERS+=		R100 R200
 GALLIUM_DRIVERS+=	R300 R600 RADEONSI
 VULKAN_DRIVERS+=	AMD
 . if ${PORT_OPTIONS:MPLATFORM_X11}
-USE_XORG+=		xv xvmc
 MESON_ARGS+=		-Dgallium-xvmc=true
+USE_XORG+=		xvmc
 . endif
 .endif
 .if ${ARCH} == amd64 || ${ARCH} == i386
@@ -67,14 +64,14 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-src_mesa_drivers_dri_i965_intel__screen.c
 VULKAN_DRIVERS+=	INTEL
 .endif
 
-.if defined(VULKAN_DRIVERS)
-USE_XORG+=		xcb xrandr
-.endif
-
 LDFLAGS_i386=		-Wl,-znotext
 
 .if ${PORT_OPTIONS:MPLATFORM_X11}
 MESA_PLATFORMS+=	x11
+USE_XORG+=		xorgproto x11 xdamage xext xfixes xshmfence xv
+.if defined(VULKAN_DRIVERS)
+USE_XORG+=		xcb xrandr
+.endif
 .endif
 
 .if ${PORT_OPTIONS:MPLATFORM_DRM}

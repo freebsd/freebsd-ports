@@ -33,7 +33,9 @@ BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:devel/libpthread
 		${PYTHON_PKGNAMEPREFIX}mako>0:textproc/py-mako@${PY_FLAVOR}
 LIB_DEPENDS+=	libexpat.so:textproc/expat2
 .if ${COMPONENT} != clover
-USES+=		xorg
+.if ${PORT_OPTIONS:MPLATFORM_X11}
+USES+=	xorg
+.endif
 .endif
 .if ${COMPONENT} != osmesa
 LIB_DEPENDS+=	libdrm.so:graphics/libdrm
