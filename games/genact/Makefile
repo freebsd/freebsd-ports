@@ -2,8 +2,7 @@
 
 PORTNAME=	genact
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.0
-PORTREVISION=	1
+DISTVERSION=	0.10.0
 CATEGORIES=	games
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -24,19 +23,22 @@ CARGO_CRATES=	aho-corasick-0.7.13 \
 		anyhow-1.0.32 \
 		async-attributes-1.1.1 \
 		async-channel-1.4.0 \
-		async-std-1.6.2 \
+		async-executor-0.1.2 \
+		async-io-0.1.11 \
+		async-mutex-1.1.5 \
+		async-std-1.6.3 \
 		async-task-3.0.0 \
 		atomic-waker-1.0.0 \
 		atty-0.2.14 \
 		autocfg-1.0.0 \
 		bitflags-1.2.1 \
-		blocking-0.4.7 \
+		blocking-0.5.1 \
 		bumpalo-3.4.0 \
 		cache-padded-1.1.1 \
 		cc-1.0.58 \
 		cfg-if-0.1.10 \
-		chrono-0.4.13 \
-		clap-2.33.2 \
+		chrono-0.4.15 \
+		clap-2.33.3 \
 		concurrent-queue-1.2.2 \
 		console_error_panic_hook-0.1.6 \
 		crossbeam-utils-0.7.2 \
@@ -49,7 +51,7 @@ CARGO_CRATES=	aho-corasick-0.7.13 \
 		futures-core-0.3.5 \
 		futures-executor-0.3.5 \
 		futures-io-0.3.5 \
-		futures-lite-0.1.10 \
+		futures-lite-0.1.11 \
 		futures-macro-0.3.5 \
 		futures-sink-0.3.5 \
 		futures-task-0.3.5 \
@@ -66,20 +68,24 @@ CARGO_CRATES=	aho-corasick-0.7.13 \
 		kv-log-macro-1.0.7 \
 		lazy_static-1.4.0 \
 		libc-0.2.74 \
+		libm-0.2.1 \
 		log-0.4.11 \
 		matches-0.1.8 \
 		memchr-2.3.3 \
+		multitask-0.2.0 \
 		nix-0.17.0 \
 		num-integer-0.1.43 \
 		num-traits-0.2.12 \
 		num_cpus-1.13.0 \
 		once_cell-1.4.0 \
 		parking-1.0.6 \
+		parking-2.0.0 \
 		percent-encoding-2.1.0 \
 		pin-project-0.4.23 \
 		pin-project-internal-0.4.23 \
 		pin-project-lite-0.1.7 \
 		pin-utils-0.1.0 \
+		polling-0.1.4 \
 		ppv-lite86-0.2.8 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
@@ -91,18 +97,17 @@ CARGO_CRATES=	aho-corasick-0.7.13 \
 		rand-0.7.3 \
 		rand_chacha-0.2.2 \
 		rand_core-0.5.1 \
-		rand_distr-0.2.2 \
+		rand_distr-0.3.0 \
 		rand_hc-0.2.0 \
 		redox_syscall-0.1.57 \
 		regex-1.3.9 \
 		regex-syntax-0.6.18 \
 		scoped-tls-1.0.0 \
 		slab-0.4.2 \
-		smol-0.1.18 \
 		socket2-0.3.12 \
 		strsim-0.8.0 \
-		structopt-0.3.16 \
-		structopt-derive-0.4.9 \
+		structopt-0.3.17 \
+		structopt-derive-0.4.10 \
 		syn-1.0.38 \
 		term_size-1.0.0-beta1 \
 		textwrap-0.11.0 \
@@ -115,6 +120,7 @@ CARGO_CRATES=	aho-corasick-0.7.13 \
 		unicode-width-0.1.8 \
 		unicode-xid-0.2.1 \
 		url-2.1.1 \
+		vec-arena-0.5.0 \
 		vec_map-0.8.2 \
 		version_check-0.9.2 \
 		void-1.0.2 \
