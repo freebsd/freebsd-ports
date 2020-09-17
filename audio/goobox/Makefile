@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	goobox
-PORTVERSION=	3.4.2
+PORTVERSION=	3.6.0
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -19,14 +19,15 @@ LIB_DEPENDS=	libdiscid.so:audio/libdiscid \
 		libbrasero-media3.so:sysutils/brasero \
 		libunique-1.0.so:x11-toolkits/unique
 
-USES=		desktop-file-utils gettext gmake gnome localbase pkgconfig \
-		tar:xz xorg
+USES=		desktop-file-utils gettext gnome meson pkgconfig \
+		python:3.5+,build tar:xz xorg
 USE_GNOME=	glib20 gtk30 intlhack
+USE_MESON=	yes
 USE_XORG=	x11
 USE_GSTREAMER1=	yes
-GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
+BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 GLIB_SCHEMAS=	org.gnome.Goobox.gschema.xml
 
@@ -34,6 +35,6 @@ OPTIONS_DEFINE=	NOTIFY
 OPTIONS_DEFAULT=NOTIFY
 
 NOTIFY_LIB_DEPENDS=	libnotify.so:devel/libnotify
-NOTIFY_CONFIGURE_ENABLE=notification
+NOTIFY_MESON_TRUE=disable-libnotify
 
 .include <bsd.port.mk>

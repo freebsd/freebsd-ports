@@ -1,7 +1,5 @@
 bin/goobox
-share/GConf/gsettings/goobox.convert
-share/appdata/goobox.appdata.xml
-share/applications/goobox.desktop
+share/applications/org.gnome.Goobox.desktop
 share/help/C/goobox/index.page
 share/help/C/goobox/legal.xml
 share/help/C/goobox/preferences.page
@@ -34,6 +32,18 @@ share/help/oc/goobox/index.page
 share/help/oc/goobox/legal.xml
 share/help/oc/goobox/preferences.page
 share/help/oc/goobox/shortcuts.page
+share/help/pl/goobox/index.page
+share/help/pl/goobox/legal.xml
+share/help/pl/goobox/preferences.page
+share/help/pl/goobox/shortcuts.page
+share/help/pt_BR/goobox/index.page
+share/help/pt_BR/goobox/legal.xml
+share/help/pt_BR/goobox/preferences.page
+share/help/pt_BR/goobox/shortcuts.page
+share/help/ro/goobox/index.page
+share/help/ro/goobox/legal.xml
+share/help/ro/goobox/preferences.page
+share/help/ro/goobox/shortcuts.page
 share/help/sl/goobox/index.page
 share/help/sl/goobox/legal.xml
 share/help/sl/goobox/preferences.page
@@ -60,6 +70,7 @@ share/locale/es/LC_MESSAGES/goobox.mo
 share/locale/eu/LC_MESSAGES/goobox.mo
 share/locale/fi/LC_MESSAGES/goobox.mo
 share/locale/fr/LC_MESSAGES/goobox.mo
+share/locale/fur/LC_MESSAGES/goobox.mo
 share/locale/gl/LC_MESSAGES/goobox.mo
 share/locale/he/LC_MESSAGES/goobox.mo
 share/locale/hu/LC_MESSAGES/goobox.mo
@@ -89,3 +100,4 @@ share/locale/tr/LC_MESSAGES/goobox.mo
 share/locale/vi/LC_MESSAGES/goobox.mo
 share/locale/zh_CN/LC_MESSAGES/goobox.mo
 share/locale/zh_TW/LC_MESSAGES/goobox.mo
+share/metainfo/org.gnome.Goobox.appdata.xml
