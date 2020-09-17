@@ -275,6 +275,19 @@ share/help/sv/baobab/scan-file-system.page
 share/help/sv/baobab/scan-folder.page
 share/help/sv/baobab/scan-home.page
 share/help/sv/baobab/scan-remote.page
+share/help/uk/baobab/index.page
+share/help/uk/baobab/introduction.page
+share/help/uk/baobab/legal.xml
+share/help/uk/baobab/media/hicolor_apps_48x48_baobab.png
+share/help/uk/baobab/pref-view-chart.page
+share/help/uk/baobab/problem-permissions.page
+share/help/uk/baobab/problem-slow-scan.page
+share/help/uk/baobab/question-open-folder.page
+share/help/uk/baobab/question-trash.page
+share/help/uk/baobab/scan-file-system.page
+share/help/uk/baobab/scan-folder.page
+share/help/uk/baobab/scan-home.page
+share/help/uk/baobab/scan-remote.page
 share/help/zh_CN/baobab/index.page
 share/help/zh_CN/baobab/introduction.page
 share/help/zh_CN/baobab/legal.xml
@@ -288,6 +301,7 @@ share/help/zh_CN/baobab/scan-file-system.page
 share/help/zh_CN/baobab/scan-folder.page
 share/help/zh_CN/baobab/scan-home.page
 share/help/zh_CN/baobab/scan-remote.page
+share/icons/hicolor/scalable/apps/org.gnome.baobab.Devel.svg
 share/icons/hicolor/scalable/apps/org.gnome.baobab.svg
 share/icons/hicolor/symbolic/apps/org.gnome.baobab-symbolic.svg
 share/locale/af/LC_MESSAGES/baobab.mo
@@ -306,6 +320,7 @@ share/locale/br/LC_MESSAGES/baobab.mo
 share/locale/bs/LC_MESSAGES/baobab.mo
 share/locale/ca/LC_MESSAGES/baobab.mo
 share/locale/ca@valencia/LC_MESSAGES/baobab.mo
+share/locale/ckb/LC_MESSAGES/baobab.mo
 share/locale/crh/LC_MESSAGES/baobab.mo
 share/locale/cs/LC_MESSAGES/baobab.mo
 share/locale/cy/LC_MESSAGES/baobab.mo
