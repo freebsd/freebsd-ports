@@ -3,6 +3,7 @@
 PORTNAME=	pcl
 DISTVERSIONPREFIX=	${PORTNAME}-
 DISTVERSION=	1.11.1
+PORTREVISION=	1
 CATEGORIES=	graphics math
 PKGNAMESUFFIX=	-pointclouds
 
@@ -47,7 +48,7 @@ PNG_LIB_DEPENDS=	libpng.so:graphics/png
 
 QHULL_DESC=		Include convex-hull operations
 QHULL_CMAKE_BOOL=	WITH_QHULL
-QHULL_LIB_DEPENDS=	libqhull.so:math/qhull5
+QHULL_LIB_DEPENDS=	libqhull.so:math/qhull
 
 QT5_CMAKE_BOOL=		WITH_QT
 QT5_BROKEN=		WITH_QT doesn't do anything, should be used by apps, but apps is also broken: see https://github.com/PointCloudLibrary/pcl/issues/2642
