@@ -1,5 +1,3 @@
-TIMESTAMP = 1599553735
-SHA256 (nwg-piotr-nwg-launchers-v0.3.3_GH0.tar.gz) = e02f751f42e38aa80c51585cae5af67bbd2abdfbb8fed0d33d2d4144bdb5cc8f
-SIZE (nwg-piotr-nwg-launchers-v0.3.3_GH0.tar.gz) = 46793
-SHA256 (e16d2e114b2f.patch) = 27d21cbfbdd160f1b0741e945b804a27320b0456ffac0354f889f41013a9546f
-SIZE (e16d2e114b2f.patch) = 1916
+TIMESTAMP = 1600293487
+SHA256 (nwg-piotr-nwg-launchers-v0.3.4_GH0.tar.gz) = e5b333d23f847e67d6c48dc7c834157f3277bdd8a017dab1c00c03c9ad2a0988
+SIZE (nwg-piotr-nwg-launchers-v0.3.4_GH0.tar.gz) = 47142

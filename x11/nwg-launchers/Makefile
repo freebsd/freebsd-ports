@@ -2,11 +2,8 @@
 
 PORTNAME=	nwg-launchers
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.3
+DISTVERSION=	0.3.4
 CATEGORIES=	x11
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	e16d2e114b2f.patch:-p1 # https://github.com/nwg-piotr/nwg-launchers/pull/112
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	GTK-based launchers: application grid, button bar, dmenu for sway and other window managers
@@ -23,6 +20,8 @@ GH_ACCOUNT=	nwg-piotr
 
 post-patch:
 # Respect PREFIX when looking for .desktop files
-	@${REINPLACE_CMD} 's,/usr/local,${PREFIX},' ${WRKSRC}/grid/grid_tools.cc
+	@${REINPLACE_CMD} 's,/usr/local,${PREFIX},' \
+		${WRKSRC}/common/nwg_tools.cc \
+		${WRKSRC}/grid/grid_tools.cc
 
 .include <bsd.port.mk>
