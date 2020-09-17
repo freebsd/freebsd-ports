@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	yelp
-PORTVERSION=	3.28.1
-PORTREVISION=	2
+PORTVERSION=	3.38.0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -27,19 +26,12 @@ PORTSCOUT=	limitw:1,even
 USES=		compiler:c11 desktop-file-utils gettext gmake gnome \
 		libtool pathfix pkgconfig sqlite tar:xz xorg
 USE_XORG=	x11 ice
-USE_GNOME=	cairo gtk30 intlhack libxml2 libxslt
+USE_GNOME=	cairo gtk30 libxml2 libxslt
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 GLIB_SCHEMAS=	org.gnome.yelp.gschema.xml
 INSTALL_TARGET=	install-strip
-
-.include <bsd.port.options.mk>
-
-.if !exists(/usr/libdata/pkgconfig/liblzma.pc)
-CONFIGURE_ENV+=	YELP_LZMA_CFLAGS="-I/usr/include" \
-		YELP_LZMA_LIBS="-L/usr/lib -llzma"
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LIBEXECDIR%%|${PREFIX}/libexec|g' \
