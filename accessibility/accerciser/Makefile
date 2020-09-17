@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	accerciser
-PORTVERSION=	3.22.0
+PORTVERSION=	3.38.0
 CATEGORIES=	accessibility gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
