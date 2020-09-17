@@ -873,6 +873,7 @@
     SUBDIR += goprotobuf
     SUBDIR += gorm
     SUBDIR += goswagger
+    SUBDIR += got
     SUBDIR += govendor
     SUBDIR += gperf
     SUBDIR += gpm

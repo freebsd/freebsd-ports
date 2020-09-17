@@ -1,0 +1,8 @@
+--- Makefile.orig	2020-09-09 15:30:46 UTC
++++ Makefile
+@@ -1,4 +1,4 @@
+-SUBDIR = libexec got tog
++SUBDIR = openbsd-compat libexec got tog
+ 
+ .PHONY: release dist
+ 

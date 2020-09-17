@@ -1,0 +1,12 @@
+--- regress/fetch/Makefile.orig	2020-09-11 17:05:16 UTC
++++ regress/fetch/Makefile
+@@ -11,7 +11,7 @@ LDADD = -lutil -lz
+ 
+ NOMAN = yes
+ 
+-run-regress-fetch_test:
++regress: ${PROG} .PHONY
+ 	${.OBJDIR}/fetch_test -q
+ 
+-.include <bsd.regress.mk>
++.include <bsd.prog.mk>
