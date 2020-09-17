@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	graphene
-PORTVERSION=	1.10.0
+PORTVERSION=	1.10.2
 CATEGORIES=	graphics devel
 MASTER_SITES=	GNOME
 
@@ -27,10 +27,6 @@ USE_GNOME+=		introspection:build
 
 DOCS_MESON_TRUE=	gtk_doc
 DOCS_BUILD_DEPENDS=	gtk-doc>0:textproc/gtk-doc
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|=python |=${PYTHON_VERSION} |g' \
-		${WRKSRC}/src/meson.build
 
 # We don't want install tests
 post-install:
