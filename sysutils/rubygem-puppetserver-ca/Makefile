@@ -2,6 +2,7 @@
 
 PORTNAME=	puppetserver-ca
 PORTVERSION=	1.8.0
+PORTREVISION=	1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -10,8 +11,6 @@ COMMENT=	Ruby CLI tool to interact with the Puppet Server Certificate Authority
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-RUN_DEPENDS=	facter:sysutils/facter
 
 USES=		gem
 USE_RUBY=	yes
