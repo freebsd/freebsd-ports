@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	uhttpmock
-PORTVERSION=	0.5.2
+PORTVERSION=	0.5.3
 CATEGORIES=	net gnome
 MASTER_SITES=	http://tecnocode.co.uk/downloads/uhttpmock/
 DIST_SUBDIR=	gnome3
