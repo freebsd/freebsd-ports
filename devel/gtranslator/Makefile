@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gtranslator
-PORTVERSION=	2.91.7
-PORTREVISION=	2
+PORTVERSION=	3.36.0
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 
@@ -17,29 +16,23 @@ BUILD_DEPENDS=	iso-codes>=0:misc/iso-codes \
 		gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
 LIB_DEPENDS=	libpeas-1.0.so:devel/libpeas \
 		libgdl-3.so:x11-toolkits/gdl \
-		libjson-glib-1.0.so:devel/json-glib
+		libjson-glib-1.0.so:devel/json-glib \
+		libdazzle-1.0.so:x11-toolkits/libdazzle \
+		libgspell-1.so:textproc/gspell
 RUN_DEPENDS=	iso-codes>=0:misc/iso-codes \
 		gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
 
-USE_GNOME=	intlhack gnomeprefix gtk30 libgda5 gtksourceview3 libxml2 \
+USE_GNOME=	gtk30 libgda5 gtksourceview4 libxml2 \
 		introspection:build
-USES=		desktop-file-utils gettext gmake gnome libtool pathfix \
+USES=		desktop-file-utils gettext localbase:ldflags gnome meson \
 		pkgconfig python tar:xz
 USE_PYTHON=	py3kplist
-GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS=	--disable-debug \
-		--with-gda=5.0 \
-		--without-dictionary \
-		--enable-compile-warnings=no
+MESON_ARGS=	-Dgtk_doc=false
 INSTALL_TARGET=	install-strip
 
-GLIB_SCHEMAS=	org.gnome.gtranslator.gschema.xml \
-		org.gnome.gtranslator.plugins.codeview.gschema.xml \
-		org.gnome.gtranslator.plugins.open-tran.gschema.xml \
+GLIB_SCHEMAS=	org.gnome.Gtranslator.gschema.xml \
 		org.gnome.gtranslator.plugins.translation-memory.gschema.xml
 
 .include <bsd.port.mk>
