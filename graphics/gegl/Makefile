@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gegl
-PORTVERSION=	0.4.24
+PORTVERSION=	0.4.26
 PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	GIMP
@@ -23,8 +23,8 @@ LIB_DEPENDS=	libbabl-0.1.so:x11/babl \
 		libpng.so:graphics/png
 
 USES=		compiler:c++14-lang cpe gettext gnome jpeg localbase \
-		meson pathfix pkgconfig shebangfix uniquefiles tar:xz
-USE_GNOME=	glib20 intltool introspection:build
+		meson pkgconfig shebangfix uniquefiles tar:xz
+USE_GNOME=	glib20 introspection:build
 USE_LDCONFIG=	yes
 MESON_ARGS=	-Ddocs=false \
 		-Dworkshop=false \
@@ -38,7 +38,7 @@ MESON_ARGS=	-Ddocs=false \
 		-Dvapigen=disabled \
 		-Dlua=disabled
 
-GEGL_SHLIB=	0.423.1
+GEGL_SHLIB=	0.425.1
 GEGL_VER=	0.4
 PLIST_SUB+=	GEGL_SHLIB=${GEGL_SHLIB} GEGL_VER=${GEGL_VER}
 
