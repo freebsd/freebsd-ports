@@ -37,6 +37,7 @@ CONFIGURE_ARGS=	--disable-debug \
 		--disable-debug-symbols \
 		--disable-gold \
 		--disable-jemalloc \
+		--disable-tests \
 		--enable-optimize \
 		--enable-readline \
 		--enable-shared-js \
