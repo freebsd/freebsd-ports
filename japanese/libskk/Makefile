@@ -21,7 +21,7 @@ USES=		autoreconf gmake gnome libtool pathfix pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	ueno
 GNU_CONFIGURE=	yes
-USE_GNOME=	intlhack introspection:build
+USE_GNOME=	introspection:build
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
