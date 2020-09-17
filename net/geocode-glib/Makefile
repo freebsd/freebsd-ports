@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	geocode-glib
-PORTVERSION=	3.26.1
+PORTVERSION=	3.26.2
 CATEGORIES=	net devel gnome
 MASTER_SITES=	GNOME
 
