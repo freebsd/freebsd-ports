@@ -526,7 +526,6 @@ share/help/sv/pluma/index.docbook
 share/help/sv/pluma/legal.xml
 share/help/ta/pluma/figures/pluma_recent_files_menu_icon.png
 share/help/ta/pluma/figures/pluma_window.png
-share/help/ta/pluma/index.docbook
 share/help/ta/pluma/legal.xml
 share/help/te/pluma/figures/pluma_recent_files_menu_icon.png
 share/help/te/pluma/figures/pluma_window.png
@@ -637,6 +636,7 @@ share/locale/it/LC_MESSAGES/pluma.mo
 share/locale/ja/LC_MESSAGES/pluma.mo
 share/locale/jv/LC_MESSAGES/pluma.mo
 share/locale/ka/LC_MESSAGES/pluma.mo
+share/locale/kab/LC_MESSAGES/pluma.mo
 share/locale/kk/LC_MESSAGES/pluma.mo
 share/locale/kn/LC_MESSAGES/pluma.mo
 share/locale/ko/LC_MESSAGES/pluma.mo
@@ -754,3 +754,4 @@ share/metainfo/pluma.appdata.xml
 %%DATADIR%%/ui/pluma-print-preferences.ui
 %%DATADIR%%/ui/pluma-search-dialog.ui
 %%DATADIR%%/ui/pluma-ui.xml
+share/help/ta/pluma/index.docbook
