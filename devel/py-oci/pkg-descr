@@ -3,7 +3,7 @@ resources. Following services are supported:
 
 * Analytics, Announcements, Application Migration, API Gateway, Audit
 * Big Data, Blockchain, Budgets
-* Container Engine for Kubernetes
+* Cloud Guard Service, Container Engine for Kubernetes
 * Compute Autoscaling/Work Requests
 * Content and Experience
 * Core Services (Networking, Compute, Block Volume)
