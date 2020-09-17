@@ -9,6 +9,8 @@
 %%DATADIR%%/tables/ar-ar-comp8.utb
 %%DATADIR%%/tables/ar-ar-g1.utb
 %%DATADIR%%/tables/ar-ar-g2.ctb
+%%DATADIR%%/tables/ar-ar-g1-core.uti
+%%DATADIR%%/tables/ar-ar-math.uti
 %%DATADIR%%/tables/ar.tbl
 %%DATADIR%%/tables/as-in-g1.utb
 %%DATADIR%%/tables/as.tbl
@@ -37,6 +39,7 @@
 %%DATADIR%%/tables/ckb-translation.cti
 %%DATADIR%%/tables/compress.cti
 %%DATADIR%%/tables/controlchars.cti
+%%DATADIR%%/tables/cop-eg-comp8.utb
 %%DATADIR%%/tables/corrections.cti
 %%DATADIR%%/tables/countries.cti
 %%DATADIR%%/tables/cs-chardefs.cti
@@ -50,7 +53,6 @@
 %%DATADIR%%/tables/cy.tbl
 %%DATADIR%%/tables/da-dk-6miscChars.cti
 %%DATADIR%%/tables/da-dk-8miscChars.cti
-%%DATADIR%%/tables/da-dk.dis
 %%DATADIR%%/tables/da-dk-g08.ctb
 %%DATADIR%%/tables/da-dk-g16.ctb
 %%DATADIR%%/tables/da-dk-g16-lit.ctb
@@ -62,7 +64,6 @@
 %%DATADIR%%/tables/da-dk-g28.ctb
 %%DATADIR%%/tables/da-dk-g28l.ctb
 %%DATADIR%%/tables/da-dk-octobraille.dis
-%%DATADIR%%/tables/da-lt.ctb
 %%DATADIR%%/tables/de-accents-detailed.cti
 %%DATADIR%%/tables/de-accents.cti
 %%DATADIR%%/tables/de-chardefs6.cti
@@ -73,6 +74,10 @@
 %%DATADIR%%/tables/de-eurobrl6.dis
 %%DATADIR%%/tables/de-eurobrl6u.dis
 %%DATADIR%%/tables/de-g0-core.uti
+%%DATADIR%%/tables/de-g0-bidi-core.uti
+%%DATADIR%%/tables/de-g0-bidi.utb
+%%DATADIR%%/tables/de-g1-bidi-core.cti
+%%DATADIR%%/tables/de-g1-bidi.ctb
 %%DATADIR%%/tables/de-g1-core.cti
 %%DATADIR%%/tables/de-g2-core.cti
 %%DATADIR%%/tables/de-g0.utb
@@ -128,8 +133,6 @@
 %%DATADIR%%/tables/eurodefs.cti
 %%DATADIR%%/tables/fa-ir-comp8.ctb
 %%DATADIR%%/tables/fa-ir-g1.utb
-%%DATADIR%%/tables/fi1.ctb
-%%DATADIR%%/tables/fi2.ctb
 %%DATADIR%%/tables/fi-fi-8dot.ctb
 %%DATADIR%%/tables/fi.utb
 %%DATADIR%%/tables/fr-bfu-comp68.cti
@@ -155,6 +158,8 @@
 %%DATADIR%%/tables/haw-us-g1.ctb
 %%DATADIR%%/tables/he.ctb
 %%DATADIR%%/tables/he.tbl
+%%DATADIR%%/tables/he-IL-comp8.utb
+%%DATADIR%%/tables/he-IL.utb
 %%DATADIR%%/tables/hi-in-g1.utb
 %%DATADIR%%/tables/hi.tbl
 %%DATADIR%%/tables/hr-chardefs.cti
@@ -243,6 +248,7 @@
 %%DATADIR%%/tables/mni.tbl
 %%DATADIR%%/tables/mr-in-g1.utb
 %%DATADIR%%/tables/mr.tbl
+%%DATADIR%%/tables/ms-my-g2.ctb
 %%DATADIR%%/tables/mt.ctb
 %%DATADIR%%/tables/mt.tbl
 %%DATADIR%%/tables/mun.ctb
@@ -343,6 +349,7 @@
 %%DATADIR%%/tables/ukmaths_single_cell_defs.cti
 %%DATADIR%%/tables/ukmaths_unicode_defs.cti
 %%DATADIR%%/tables/uk.utb
+%%DATADIR%%/tables/uk-comp.utb
 %%DATADIR%%/tables/unicode-braille.utb
 %%DATADIR%%/tables/unicode.dis
 %%DATADIR%%/tables/unicode-without-blank.dis
@@ -350,10 +357,12 @@
 %%DATADIR%%/tables/ur-pk-g1.utb
 %%DATADIR%%/tables/ur-pk-g2.ctb
 %%DATADIR%%/tables/us-table.dis
+%%DATADIR%%/tables/uz-g1.utb
 %%DATADIR%%/tables/vi.ctb
 %%DATADIR%%/tables/vi-g1.ctb
 %%DATADIR%%/tables/vi.tbl
 %%DATADIR%%/tables/wiskunde-chardefs.cti
+%%DATADIR%%/tables/wordcx.dis
 %%DATADIR%%/tables/zh_CHN.tbl
 %%DATADIR%%/tables/zh_HK.tbl
 %%DATADIR%%/tables/zh_TW.tbl
@@ -386,7 +395,7 @@ libdata/pkgconfig/liblouis.pc
 lib/liblouis.a
 lib/liblouis.so
 lib/liblouis.so.20
-lib/liblouis.so.20.0.0
+lib/liblouis.so.20.0.3
 man/man1/lou_allround.1.gz
 man/man1/lou_checkhyphens.1.gz
 man/man1/lou_checktable.1.gz
