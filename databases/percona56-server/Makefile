@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	percona
-DISTVERSION=	5.6.45-86.1
+DISTVERSION=	5.6.49-89.0
 PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	http://www.percona.com/downloads/Percona-Server-5.6/Percona-Server-${DISTVERSION}/source/tarball/
@@ -94,6 +94,9 @@ MANPAGES=	my_print_defaults.1 myisam_ftdump.1 myisamchk.1 myisamlog.1 myisampack
 CMAKE_ARGS+=	-DWITH_EMBEDDED_SERVER="ON"
 
 .include <bsd.port.options.mk>
+
+# Workaround to clang11/gcc10 with -fno-common by default
+CFLAGS+=        -fcommon
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200057
 SUB_LIST+=	LEGACY_LIMITS="@comment " MODERN_LIMITS=""

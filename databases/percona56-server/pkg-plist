@@ -34,6 +34,7 @@ lib/mysql/plugin/auth.so
 lib/mysql/plugin/auth_test_plugin.so
 lib/mysql/plugin/connection_control.so
 lib/mysql/plugin/daemon_example.ini
+lib/mysql/plugin/ha_example.so
 %%TOKUDB%%lib/mysql/plugin/ha_tokudb.so
 lib/mysql/plugin/handlersocket.so
 %%INNODBMEMCACHED%%lib/mysql/plugin/innodb_engine.so

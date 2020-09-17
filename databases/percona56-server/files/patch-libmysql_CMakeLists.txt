@@ -1,15 +1,15 @@
---- libmysql/CMakeLists.txt.orig	2014-03-15 18:08:38.000000000 +0100
-+++ libmysql/CMakeLists.txt	2014-03-22 19:48:26.793800547 +0100
-@@ -180,7 +180,7 @@
+--- libmysql/CMakeLists.txt.orig
++++ libmysql/CMakeLists.txt
+@@ -205,7 +205,7 @@
  ENDIF()
  
  # Merge several convenience libraries into one big perconaserverclient
--MERGE_LIBRARIES(perconaserverclient STATIC ${LIBS} COMPONENT Development)
-+MERGE_LIBRARIES(perconaserverclient STATIC ${LIBS} COMPONENT Development NOINSTALL)
+-MERGE_LIBRARIES(perconaserverclient STATIC ${LIBS_TO_MERGE} COMPONENT Development)
++MERGE_LIBRARIES(perconaserverclient STATIC ${LIBS_TO_MERGE} COMPONENT Development NOINSTALL)
+ TARGET_LINK_LIBRARIES(perconaserverclient ${LIBS_TO_LINK})
  
  # Visual Studio users need debug  static library for debug projects
- INSTALL_DEBUG_SYMBOLS(clientlib)
-@@ -195,6 +195,7 @@
+@@ -220,6 +220,7 @@
    SET(${out_name} ${name})
  ENDMACRO()
  
@@ -17,7 +17,7 @@
  IF(UNIX)
    MACRO(GET_VERSIONED_LIBNAME LIBNAME EXTENSION VERSION OUTNAME)
      SET(DOT_VERSION ".${VERSION}")
-@@ -215,13 +216,15 @@
+@@ -240,14 +241,16 @@
      ${lib_name} ${CMAKE_STATIC_LIBRARY_PREFIX}perconaserverclient_r.a
      ${INSTALL_LIBDIR} Development)
  ENDIF()
@@ -26,16 +26,18 @@
  IF(NOT DISABLE_SHARED)
    # Merge several convenience libraries into one big perconaserverclient
    # and link them together into shared library.
-   MERGE_LIBRARIES(libmysql SHARED ${LIBS}
+   MERGE_LIBRARIES(libmysql SHARED ${LIBS_TO_MERGE}
      EXPORTS ${CLIENT_API_FUNCTIONS}
 -    COMPONENT SharedLibraries)
 +    COMPONENT SharedLibraries NOINSTALL)
+   TARGET_LINK_LIBRARIES(libmysql ${LIBS_TO_LINK})
 +IF(FALSE)
    IF(UNIX)
      # libtool compatability
      IF(CMAKE_SYSTEM_NAME MATCHES "FreeBSD" OR APPLE)
-@@ -281,3 +284,4 @@
+@@ -316,4 +319,5 @@
+         ${INSTALL_LIBDIR} SharedLibraries)
      ENDFOREACH()
    ENDIF()
- ENDIF()
 +ENDIF()
+ ENDIF()
