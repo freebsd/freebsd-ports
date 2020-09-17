@@ -3,6 +3,7 @@
 PORTNAME=	phosh
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.3
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -18,7 +19,7 @@ LIB_DEPENDS=	libfeedback-0.0.so:accessibility/feedbackd \
 		libgcr-ui-3.so:security/gcr \
 		libpolkit-agent-1.so:sysutils/polkit \
 		libupower-glib.so:sysutils/upower \
-		libhandy-0.0.so:x11-toolkits/libhandy
+		libhandy-0.0.so:x11-toolkits/libhandy0
 RUN_DEPENDS=	phoc:x11-wm/phoc \
 		gnome-session:x11/gnome-session
 
