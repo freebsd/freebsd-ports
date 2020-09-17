@@ -3,6 +3,7 @@
 
 PORTNAME=	alsa-utils
 PORTVERSION=	1.1.2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.alsa-project.org/pub/utils/ \
 		GENTOO
@@ -12,7 +13,8 @@ COMMENT=	ALSA compatibility utils
 
 LICENSE=	GPLv2+
 
-LIB_DEPENDS=	libasound.so:audio/alsa-lib
+LIB_DEPENDS=	libasound.so:audio/alsa-lib \
+		libfftw3f.so:math/fftw3-float
 RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-plugins
 
 USES=		gmake localbase ncurses shebangfix tar:bzip2
