@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-documents
-PORTVERSION=	3.28.2
-PORTREVISION=	2
+PORTVERSION=	3.34.0
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -38,7 +37,6 @@ USE_LDCONFIG=	yes
 BINARY_ALIAS=	python3=${PYTHON_VERSION}
 
 GLIB_SCHEMAS=	org.gnome.Documents.enums.xml \
-		org.gnome.books.gschema.xml \
 		org.gnome.documents.gschema.xml
 
 .include <bsd.port.mk>
