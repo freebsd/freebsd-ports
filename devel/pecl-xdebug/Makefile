@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xdebug
-DISTVERSION=	2.9.6
+DISTVERSION=	2.9.7
 CATEGORIES=	devel pear
 
 MAINTAINER=	pizzamig@FreeBSD.org
