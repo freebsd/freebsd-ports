@@ -25,7 +25,7 @@
 .\"
 .\" $FreeBSD$
 .\"
-.Dd January 3, 2020
+.Dd September 17, 2020
 .Dt PAPERLESS 7
 .Os
 .Sh NAME
@@ -105,79 +105,88 @@ can be tuned in the same configuration file to limit
 the impact on system performance.
 .Pp
 To use paperless, the consumer is enabled
-.Pp
-.Dl "sysrc paperless_consumer_enable=YES"
+.Bd -literal -offset indent
+sysrc paperless_consumer_enable=YES
+.Ed
 .Pp
 and subsequently started
-.Pp
-.Dl "service paperless-consumer start"
+.Bd -literal -offset indent
+service paperless-consumer start
+.Ed
 .Pp
 (which also creates/updates the paperless SQLite database).
 .Pp
 Therefore, restarting the consumer after updates
-.Pp
-.Dl "service paperless-consumer restart"
+.Bd -literal -offset indent
+service paperless-consumer restart
+.Ed
 .Pp
 updates the database before starting the new program version.
 .Sh WEB UI SETUP
 Before using the web ui, make sure to create a super user and assign
 a password
-.Pp
-.Dl "su -l paperless -c '%%PREFIX%%/bin/paperless createsuperuser'"
+.Bd -literal -offset indent
+su -l paperless -c '%%PREFIX%%/bin/paperless createsuperuser'
+.Ed
 .Pp
 It is recommended to host the web component using a real
 web server, e.g., nginx + uwsgi.
 .Pp
 Install and configure uwsgi:
-.Pp
-.Dl "pkg install uwsgi"
-.Dl "mkdir -p %%PREFIX%%/etc/uwsgi"
-.Dl "cp %%EXAMPLESDIR%%/uwsgi.ini \\"
-.Dl "    %%PREFIX%%/etc/uwsgi/paperless.ini"
-.Dl "sysrc uwsgi_enable=YES"
-.Dl "sysrc uwsgi_profiles+=paperless"
-.Dl "sysrc uwsgi_paperless_socket_owner=paperless:www"
-.Dl "sysrc uwsgi_paperless_uid=paperless"
-.Dl "sysrc uwsgi_paperless_gid=paperless"
-.Dl "sysrc uwsgi_paperless_configfile=%%PREFIX%%/etc/uwsgi/paperless.ini"
+.Bd -literal -offset indent
+pkg install uwsgi
+mkdir -p %%PREFIX%%/etc/uwsgi
+cp %%EXAMPLESDIR%%/uwsgi.ini \\
+    %%PREFIX%%/etc/uwsgi/paperless.ini
+sysrc uwsgi_enable=YES
+sysrc uwsgi_profiles+=paperless
+sysrc uwsgi_paperless_socket_owner=paperless:www
+sysrc uwsgi_paperless_uid=paperless
+sysrc uwsgi_paperless_gid=paperless
+sysrc uwsgi_paperless_configfile=%%PREFIX%%/etc/uwsgi/paperless.ini
+.Ed
 .Pp
 Start the uwsgi process:
-.Pp
-.Dl "service uwsgi start paperless"
+.Bd -literal -offset indent
+service uwsgi start paperless
+.Ed
 .Pp
 Install nginx:
-.Pp
-.Dl "pkg install nginx"
+.Bd -literal -offset indent
+pkg install nginx
+.Ed
 .Pp
 Create a basic server configuration (
 .Pa %%PREFIX%%/etc/nginx/nginx.conf
 ), example snippet:
-.Pp
-.Dl "server {"
-.Dl "    listen 80;"
-.Dl "    server_name localhost;"
-.Dl ""
-.Dl "    location /static/ {"
-.Dl "        alias %%WWWDIR%%/static/;"
-.Dl "    }"
-.Dl ""
-.Dl "    location / {"
-.Dl "        uwsgi_pass unix:/tmp/uwsgi-paperless.sock;"
-.Dl "        include uwsgi_params;"
-.Dl "    }"
-.Dl ""
-.Dl "    error_page   500 502 503 504  /50x.html;"
-.Dl "    location = /50x.html {"
-.Dl "        root   %%PREFIX%%/www/nginx-dist;"
-.Dl "    }"
-.Dl "}"
+.Bd -literal -offset indent
+server {
+    listen 80;
+    server_name localhost;
+
+    location /static/ {
+        alias %%WWWDIR%%/static/;
+    }
+
+    location / {
+        uwsgi_pass unix:/tmp/uwsgi-paperless.sock;
+        include uwsgi_params;
+    }
+
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+        root   %%PREFIX%%/www/nginx-dist;
+    }
+}
+.Ed
 .Pp
 Enable and start nginx:
+.Bd -literal -offset indent
+sysrc nginx_enable=YES
+service nginx start
+.Ed
 .Pp
-.Dl "sysrc nginx_enable=YES"
-.Dl "service nginx start"
-.Pp
-.Em \In the real world, nginx should be configured to use TLS
+.Em \In a real world setup, nginx should be configured to use TLS
 .Em and (potentially) client certificates .
 .Sh SFTP SETUP
 Setting up
@@ -193,40 +202,45 @@ In case paperless is using a dedicated instance of
 access can be limited to the paperless user by adding
 these lines to
 .Pa /etc/ssh/sshd_config :
-.Pp
-.Dl "# Only include if sshd is dedicated to paperless"
-.Dl "# otherwise you'll lock yourself out"
-.Dl "AllowUsers paperless"
+.Bd -literal -offset indent
+# Only include if sshd is dedicated to paperless
+# otherwise you'll lock yourself out
+AllowUsers paperless
+.Ed
 .Pp
 The following block limits the paperless user to using the
 .Xr sftp 1
 protocol and locks it into the consume directory:
-.Pp
-.Dl "# paperless can only do sftp and is dropped into correct directory"
-.Dl "Match User paperless"
-.Dl "	ChrootDirectory %h/consume"
-.Dl "	ForceCommand internal-sftp -u 0077 -d /input"
-.Dl "	AllowTcpForwarding no"
-.Dl "	X11Forwarding no"
-.Dl "	PasswordAuthentication no"
+.Bd -literal -offset indent
+# paperless can only do sftp and is dropped into correct directory
+Match User paperless
+	ChrootDirectory %h/consume
+	ForceCommand internal-sftp -u 0077 -d /input
+	AllowTcpForwarding no
+	X11Forwarding no
+	PasswordAuthentication no
+.Ed
 .Pp
 The public keys of authorized users/devices need to be added to
 .Pa /var/db/paperless/.ssh/authorized_keys :
-.Pp
-.Dl "mkdir -p /var/db/paperless/.ssh"
-.Dl "cat path/to/pubkey >>/var/db/paperless/.ssh/authorized_keys"
+.Bd -literal -offset indent
+mkdir -p /var/db/paperless/.ssh
+cat path/to/pubkey >>/var/db/paperless/.ssh/authorized_keys
+.Ed
 .Pp
 Make sure
 .Xr sshd 8
 is enabled and restart (or reload) it:
-.Pp
-.Dl "sysrc sshd_enable=YES"
-.Dl "service sshd restart"
+.Bd -literal -offset indent
+sysrc sshd_enable=YES
+service sshd restart
+.Ed
 .Pp
 The user will be dropped into the correct directory, so uploading
 a file is as simple as:
-.Pp
-.Dl "echo put file.pdf | sftp -b - paperless@host"
+.Bd -literal -offset indent
+echo put file.pdf | sftp -b - paperless@host
+.Ed
 .Sh FILES
 .Bl -tag -width ".Pa %%PREFIX%%/etc/paperless.conf" -compact
 .It Pa %%PREFIX%%/etc/paperless.conf
