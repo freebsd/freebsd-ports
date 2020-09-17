@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-screenshot
-PORTVERSION=	3.26.0
+PORTVERSION=	3.38.0
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -15,12 +15,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	appstream-builder:devel/appstream-glib
 LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
-		libcanberra-gtk3.so:audio/libcanberra-gtk3
+		libcanberra-gtk3.so:audio/libcanberra-gtk3 \
+		libhandy-1.so:x11-toolkits/libhandy
 
 CONFLICTS=	gnome-utils-2.[0-9]*
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gnome localbase meson pkgconfig python:3.4+,build \
+USES=		gettext gnome meson pkgconfig python:3.4+,build \
 		shebangfix tar:xz xorg
 USE_GNOME=	cairo gdkpixbuf2 gtk30
 USE_XORG=	x11 xext
