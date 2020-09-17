@@ -12,7 +12,7 @@ COMMENT=	Couple of command line utilities for working with desktop entries
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gettext meson gnome pkgconfig tar:xz
+USES=		compiler:c11 gettext meson gnome pkgconfig tar:xz
 USE_GNOME=	glib20
 
 PKGINSTALL=	${WRKDIR}/pkg-install
