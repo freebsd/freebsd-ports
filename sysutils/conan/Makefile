@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	conan
-DISTVERSION=	1.29.0
+DISTVERSION=	1.29.1
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 
@@ -20,7 +20,7 @@ PY_DEPENDS=	\
 		${PYTHON_PKGNAMEPREFIX}fasteners>=0.14.1:devel/py-fasteners@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}future>=0.16.0,<0.19.0:devel/py-future@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=2.3,<3:devel/py-Jinja2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}node-semver>0:devel/py-node-semver@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}node-semver>=0.6.1:devel/py-node-semver@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}patch-ng>=1.17.4,<1.18:devel/py-patch-ng@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pluginbase>=0.5:devel/py-pluginbase@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pygments>=2.0,<3.0:textproc/py-pygments@${PY_FLAVOR} \
