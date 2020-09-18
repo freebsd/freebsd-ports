@@ -11,7 +11,7 @@ MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Semi-automated, largely passive web application security audit tool
 
 USES=		shebangfix ssl
-CFLAGS+=	-I${OPENSSLINC}
+CFLAGS+=	-I${OPENSSLINC} -fcommon
 LDFLAGS+=	-L${OPENSSLLIB}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
