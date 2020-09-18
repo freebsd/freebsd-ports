@@ -18,8 +18,11 @@ PORTSCOUT=	limitw:1,even
 BUILD_DEPENDS=	valac:lang/vala \
 		itstool:textproc/itstool
 
-USES=		desktop-file-utils gettext gnome meson pkgconfig tar:xz
+USES=		desktop-file-utils gettext gnome meson pkgconfig \
+		python:3.5+,build tar:xz
 USE_GNOME=	cairo gtk30
+
+BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 GLIB_SCHEMAS=	org.gnome.baobab.gschema.xml
 
