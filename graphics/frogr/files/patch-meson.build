@@ -1,0 +1,11 @@
+--- meson.build.orig	2020-01-10 22:37:55 UTC
++++ meson.build
+@@ -3,7 +3,7 @@ project('frogr', 'c',
+         license: 'GPL3',
+         default_options: [
+             'warnlevel=2',
+-            'werror=true'
++            'werror=false'
+         ])
+ 
+ project_name = meson.project_name()
