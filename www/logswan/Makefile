@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	logswan
-PORTVERSION=	2.1.6
+PORTVERSION=	2.1.7
 CATEGORIES=	www
 
 MAINTAINER=	juraj@lutter.sk
