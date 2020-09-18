@@ -609,7 +609,7 @@ post-extract-gl-DEFAULT:
 .  endif
 .  if !empty(_GITLAB_GROUPS:NDEFAULT)
 .    for _group in ${_GITLAB_GROUPS:NDEFAULT}
-# We set GL_SITE earlier, we need to verify its not empty
+# We set GL_SITE earlier, we need to verify it's not empty
 .      if empty(GL_SITE_${_group})
 GL_SITE_${_group}=	${GL_SITE_DEFAULT}
 .      endif
