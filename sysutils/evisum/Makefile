@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	evisum
-PORTVERSION=	0.5.4
+PORTVERSION=	0.5.6
 CATEGORIES=	sysutils enlightenment
 MASTER_SITES=	http://download.enlightenment.org/rel/apps/${PORTNAME}/
 
