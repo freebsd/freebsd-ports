@@ -1,0 +1,9 @@
+--- doc/meson.build.orig	2020-09-18 20:50:20 UTC
++++ doc/meson.build
+@@ -1,5 +1,5 @@
+ valadoc = find_program ('valadoc', required: false)
+-if valadoc.found()
++if false
+ 	gtkdoc_outdir = CAMEL_CASE_NAME+'-'+API_VERSION
+ 	docsdir = join_paths (get_option ('datadir'), 'devhelp','books')
+ 
