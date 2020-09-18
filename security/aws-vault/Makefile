@@ -2,7 +2,7 @@
 
 PORTNAME=	aws-vault
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.0.1
+DISTVERSION=	6.1.0
 CATEGORIES=	security
 
 MAINTAINER=	dmgk@FreeBSD.org
@@ -32,6 +32,7 @@ GH_TUPLE=	\
 		gsterjov:go-libsecret:a6f4afe4910c:gsterjov_go_libsecret/vendor/github.com/gsterjov/go-libsecret \
 		jmespath:go-jmespath:v0.3.0:jmespath_go_jmespath/vendor/github.com/jmespath/go-jmespath \
 		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
+		mtibben:androiddnsfix:ff0280446354:mtibben_androiddnsfix/vendor/github.com/mtibben/androiddnsfix \
 		mtibben:percent:v0.2.1:mtibben_percent/vendor/github.com/mtibben/percent \
 		skratchdot:open-golang:eef842397966:skratchdot_open_golang/vendor/github.com/skratchdot/open-golang \
 		smartystreets:goconvey:v1.6.4:smartystreets_goconvey/vendor/github.com/smartystreets/goconvey
