@@ -1,0 +1,9 @@
+GpuTest is a cross-platform GPU stress test and benchmarking utility, based
+on OpenGL.  It comes with a number of different tests, including the famous
+stress test based on FurMark (OpenGL 2.1 or 3.2), a tessellation test based
+on TessMark (OpenGL 4.0), and geometry instancing test (OpenGL 3.3).
+
+An optional GUI (graphical user interface) program made with Python/Tkinter
+is available since GpuTest version 0.6.0.
+
+WWW: http://www.Geeks3D.com/GpuTest/

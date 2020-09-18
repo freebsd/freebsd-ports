@@ -38,6 +38,7 @@
     SUBDIR += iperf3
     SUBDIR += libcelero
     SUBDIR += libmicro
+    SUBDIR += linux-gputest
     SUBDIR += linux-vdbench
     SUBDIR += lmbench
     SUBDIR += lzbench
