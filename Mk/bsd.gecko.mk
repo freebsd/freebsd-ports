@@ -311,9 +311,6 @@ BUILD_DEPENDS+=	as:devel/binutils
 . if ${ARCH} == "powerpc64"
 MOZ_EXPORT+=	UNAME_m="${ARCH}"
 . endif
-.elif ${ARCH} == "sparc64"
-# Work around miscompilation/mislinkage of the sCanonicalVTable hacks.
-MOZ_OPTIONS+=	--disable-v1-string-abi
 .endif
 
 .else # bsd.port.post.mk
