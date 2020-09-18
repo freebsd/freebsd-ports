@@ -691,6 +691,7 @@
     SUBDIR += thunderbird-dictionaries
     SUBDIR += tlb
     SUBDIR += tmda
+    SUBDIR += tmpmail
     SUBDIR += tpop3d
     SUBDIR += trojita
     SUBDIR += tumgreyspf

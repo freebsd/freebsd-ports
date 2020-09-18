@@ -1,0 +1,10 @@
+tmpmail is a command line utility that allows you to create a temporary
+email address and receive emails to the temporary email address. It uses
+1secmail's API to receive emails.
+
+By default w3m is used to render the HTML emails on the terminal. But if
+you prefer another text based web browser or would rather view the email
+in a GUI web browser such as Firefox, simply use the --browser argument
+followed by the command needed to launch the web browser of your choice.
+
+WWW: https://github.com/sdushantha/tmpmail
