@@ -11,7 +11,6 @@ include/hermes/Public/CtorConfig.h
 include/hermes/Public/DebuggerTypes.h
 include/hermes/Public/GCConfig.h
 include/hermes/Public/GCTripwireContext.h
-include/hermes/Public/MemoryEventTracker.h
 include/hermes/Public/RuntimeConfig.h
 include/hermes/SynthTrace.h
 include/hermes/SynthTraceParser.h
