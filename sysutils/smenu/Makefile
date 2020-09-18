@@ -2,7 +2,7 @@
 
 PORTNAME=	smenu
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.15
+DISTVERSION=	0.9.16
 CATEGORIES=	sysutils
 
 MAINTAINER=	dbaio@FreeBSD.org
@@ -11,7 +11,7 @@ COMMENT=	Terminal utility to interactively filter text
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
-USES=	localbase ncurses:port
+USES=	localbase ncurses
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	p-gen
