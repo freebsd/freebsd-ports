@@ -18,6 +18,7 @@ USES=		gmake localbase:ldflags
 
 MAKEFILE=	${FILESDIR}/Makefile.pkg
 WRKSRC_SUBDIR=	src
+CFLAGS+=	-fcommon
 INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>
