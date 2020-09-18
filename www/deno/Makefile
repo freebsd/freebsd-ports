@@ -37,6 +37,7 @@ CARGO_ENV+=	CLANG_BASE_PATH=/usr \
 		GN=${PREFIX}/bin/gn \
 		NINJA=${PREFIX}/bin/ninja \
 		V8_FROM_SOURCE=1
+RUSTFLAGS+=	-C link-arg=-fuse-ld=lld
 
 PLIST_FILES=	bin/${PORTNAME}
 
