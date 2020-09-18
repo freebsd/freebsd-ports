@@ -25,8 +25,6 @@ ONLY_FOR_ARCHS_REASON=	KMS is required and currently only available on x86/arm64
 LIB_DEPENDS=	libpciaccess.so:devel/libpciaccess \
 		libdrm_radeon.so:graphics/libdrm
 
-CONFLICTS_INSTALL=	xf86-video-ati-legacy
-
 USES=		gl xorg xorg-cat:driver
 USE_GL=		gl
 USE_XORG=	pciaccess
