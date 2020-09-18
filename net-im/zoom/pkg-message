@@ -1,0 +1,27 @@
+[
+{ type: install
+  message: <<EOM
+You installed Zoom: A video conferencing client.
+
+CAVEAT: Sound doesn't yet work in Zoom on FreeBSD.
+
+In order to run Zoom you need:
+1. Linux emulation enabled. For this you should execute:
+   # sysrc linux_enable=YES
+   and reboot and/or execute:
+   # kldload linux
+2. Have devfs mounted for the Linux emulator.
+   For this you should execute:
+   # mount -t devfs none /compat/linux/dev
+   and reboot and/or add this line to /etc/fstab:
+   devfs /compat/linux/dev devfs rw 0 0
+3. Have Linux OpenGL package for your video card is installed.
+   It could be one of linux-nvidia-libs*, etc.
+4. Have multimedia/webcamd installed and running. The usual way to
+   start webcamd is to have these two lines in /etc/rc.conf:
+   webcamd_enable="YES"
+   webcamd_flags="-H"
+
+EOM
+}
+]
