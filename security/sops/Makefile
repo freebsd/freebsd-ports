@@ -2,7 +2,7 @@
 
 PORTNAME=	sops
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.6.0
+DISTVERSION=	3.6.1
 CATEGORIES=	security editors
 
 MAINTAINER=	dmgk@FreeBSD.org
@@ -27,7 +27,7 @@ GH_TUPLE=	\
 		Azure:go-autorest:tracing/v0.5.0:azure_go_autorest_tracing \
 		Microsoft:go-winio:v0.4.14:microsoft_go_winio/vendor/github.com/Microsoft/go-winio \
 		Nvveen:Gotty:cd527374f1e5:nvveen_gotty/vendor/github.com/Nvveen/Gotty \
-		aws:aws-sdk-go:v1.23.13:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
+		aws:aws-sdk-go:v1.33.18:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
 		blang:semver:v3.5.1:blang_semver/vendor/github.com/blang/semver \
 		cenkalti:backoff:v2.2.1:cenkalti_backoff/vendor/github.com/cenkalti/backoff \
 		census-instrumentation:opencensus-go:v0.22.0:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
@@ -39,9 +39,10 @@ GH_TUPLE=	\
 		docker:go-units:v0.4.0:docker_go_units/vendor/github.com/docker/go-units \
 		fatih:color:v1.7.0:fatih_color/vendor/github.com/fatih/color \
 		go-ini:ini:v1.44.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
+		go-yaml:yaml:v2.2.2:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		golang:appengine:v1.6.1:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:4def268fd1a4:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:ca1201d0de80:golang_net/vendor/golang.org/x/net \
+		golang:crypto:87dc89f01550:golang_crypto/vendor/golang.org/x/crypto \
+		golang:net:0de0cce0169b:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:0f29369cfe45:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.3.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:snappy:v0.0.1:golang_snappy/vendor/github.com/golang/snappy \
@@ -67,7 +68,7 @@ GH_TUPLE=	\
 		hashicorp:vault:api/v1.0.4:hashicorp_vault_api/vendor/github.com/hashicorp/vault \
 		hashicorp:vault:sdk/v0.1.13:hashicorp_vault_sdk \
 		howeyc:gopass:bf9dde6d0d2c:howeyc_gopass/vendor/github.com/howeyc/gopass \
-		jmespath:go-jmespath:c2b33e8439af:jmespath_go_jmespath/vendor/github.com/jmespath/go-jmespath \
+		jmespath:go-jmespath:v0.3.0:jmespath_go_jmespath/vendor/github.com/jmespath/go-jmespath \
 		konsorten:go-windows-terminal-sequences:v1.0.1:konsorten_go_windows_terminal_sequences/vendor/github.com/konsorten/go-windows-terminal-sequences \
 		lib:pq:v1.2.0:lib_pq/vendor/github.com/lib/pq \
 		mattn:go-colorable:v0.0.9:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
@@ -82,13 +83,13 @@ GH_TUPLE=	\
 		opencontainers:runc:v0.1.1:opencontainers_runc/vendor/github.com/opencontainers/runc \
 		ory:dockertest:v3.3.4:ory_dockertest/vendor/github.com/ory/dockertest \
 		pierrec:lz4:v2.0.5:pierrec_lz4/vendor/github.com/pierrec/lz4 \
-		pkg:errors:v0.8.1:pkg_errors/vendor/github.com/pkg/errors \
+		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
 		ryanuber:go-glob:v1.0.0:ryanuber_go_glob/vendor/github.com/ryanuber/go-glob \
 		sirupsen:logrus:v1.4.2:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		square:go-jose:v2.3.1:square_go_jose/vendor/gopkg.in/square/go-jose.v2 \
 		stretchr:objx:v0.1.1:stretchr_objx/vendor/github.com/stretchr/objx \
-		stretchr:testify:v1.3.0:stretchr_testify/vendor/github.com/stretchr/testify \
+		stretchr:testify:v1.5.1:stretchr_testify/vendor/github.com/stretchr/testify \
 		urfave:cli:v1.20.0:urfave_cli/vendor/gopkg.in/urfave/cli.v1
 
 GO_TARGET=	./cmd/sops
