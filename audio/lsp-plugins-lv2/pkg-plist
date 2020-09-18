@@ -5,6 +5,10 @@
 %%JACK%%bin/lsp-plugins-compressor-mono
 %%JACK%%bin/lsp-plugins-compressor-ms
 %%JACK%%bin/lsp-plugins-compressor-stereo
+%%JACK%%bin/lsp-plugins-crossover-lr
+%%JACK%%bin/lsp-plugins-crossover-mono
+%%JACK%%bin/lsp-plugins-crossover-ms
+%%JACK%%bin/lsp-plugins-crossover-stereo
 %%JACK%%bin/lsp-plugins-dyna-processor-lr
 %%JACK%%bin/lsp-plugins-dyna-processor-mono
 %%JACK%%bin/lsp-plugins-dyna-processor-ms
@@ -113,7 +117,7 @@
 %%JACK%%bin/lsp-plugins-trigger-mono
 %%JACK%%bin/lsp-plugins-trigger-stereo
 %%JACK%%etc/xdg/menus/applications-merged/lsp-plugins.menu
-%%JACK%%lib/lsp-plugins/lsp-plugins-jack-core-1.1.24.so
+%%JACK%%lib/lsp-plugins/lsp-plugins-jack-core-1.1.26.so
 %%JACK%%lib/lsp-plugins/lsp-plugins-r3d-glx.so
 lib/lv2/lsp-plugins.lv2/comp_delay_mono.ttl
 lib/lv2/lsp-plugins.lv2/comp_delay_stereo.ttl
@@ -122,6 +126,10 @@ lib/lv2/lsp-plugins.lv2/compressor_lr.ttl
 lib/lv2/lsp-plugins.lv2/compressor_mono.ttl
 lib/lv2/lsp-plugins.lv2/compressor_ms.ttl
 lib/lv2/lsp-plugins.lv2/compressor_stereo.ttl
+lib/lv2/lsp-plugins.lv2/crossover_lr.ttl
+lib/lv2/lsp-plugins.lv2/crossover_mono.ttl
+lib/lv2/lsp-plugins.lv2/crossover_ms.ttl
+lib/lv2/lsp-plugins.lv2/crossover_stereo.ttl
 lib/lv2/lsp-plugins.lv2/dyna_processor_lr.ttl
 lib/lv2/lsp-plugins.lv2/dyna_processor_mono.ttl
 lib/lv2/lsp-plugins.lv2/dyna_processor_ms.ttl
@@ -239,6 +247,10 @@ lib/lv2/lsp-plugins.lv2/trigger_stereo.ttl
 %%JACK%%share/applications/in.lsp_plug.lsp_plugins_compressor_mono.desktop
 %%JACK%%share/applications/in.lsp_plug.lsp_plugins_compressor_ms.desktop
 %%JACK%%share/applications/in.lsp_plug.lsp_plugins_compressor_stereo.desktop
+%%JACK%%share/applications/in.lsp_plug.lsp_plugins_crossover_lr.desktop
+%%JACK%%share/applications/in.lsp_plug.lsp_plugins_crossover_mono.desktop
+%%JACK%%share/applications/in.lsp_plug.lsp_plugins_crossover_ms.desktop
+%%JACK%%share/applications/in.lsp_plug.lsp_plugins_crossover_stereo.desktop
 %%JACK%%share/applications/in.lsp_plug.lsp_plugins_dyna_processor_lr.desktop
 %%JACK%%share/applications/in.lsp_plug.lsp_plugins_dyna_processor_mono.desktop
 %%JACK%%share/applications/in.lsp_plug.lsp_plugins_dyna_processor_ms.desktop
