@@ -18,7 +18,8 @@ LIB_DEPENDS=	libgnome-games-support-1.so:games/libgnome-games-support
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake gnome meson pkgconfig tar:xz
+USES=		gettext gnome meson pkgconfig tar:xz
 USE_GNOME=	cairo gdkpixbuf2 gtk30
+LDFLAGS=	-lm
 
 .include <bsd.port.mk>
