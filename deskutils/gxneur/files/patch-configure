@@ -1,0 +1,11 @@
+--- configure.orig	2016-11-23 08:04:58 UTC
++++ configure
+@@ -15363,7 +15363,7 @@ $as_echo "#define HAVE_GCONF 1" >>confdefs.h
+ 	fi
+ fi
+ 
+-DEFAULT_CFLAGS="-Wall -Wextra -Werror -g0 -fPIC -std=gnu99"
++DEFAULT_CFLAGS="-Wall -Wextra -g0 -fPIC -std=gnu99"
+ 
+ 
+ ac_config_files="$ac_config_files Makefile gxneur.desktop src/Makefile pixmaps/Makefile ui/Makefile po/Makefile.in"
