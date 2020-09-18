@@ -1,6 +1,6 @@
---- deps/v8/src/compiler/backend/instruction-selector.cc.orig	2020-04-21 11:38:50 UTC
+--- deps/v8/src/compiler/backend/instruction-selector.cc.orig	2020-07-20 22:18:45 UTC
 +++ deps/v8/src/compiler/backend/instruction-selector.cc
-@@ -2783,7 +2783,7 @@ void InstructionSelector::VisitCall(Node* node, BasicB
+@@ -2808,7 +2808,7 @@ void InstructionSelector::VisitCall(Node* node, BasicB
    switch (call_descriptor->kind()) {
      case CallDescriptor::kCallAddress: {
        int misc_field = static_cast<int>(call_descriptor->ParameterCount());
