@@ -56,12 +56,12 @@ https://github.com/kinetiknz/cubeb/pull/600
 +#if defined (USE_OSS)
 +    oss_init,
 +#endif
- #if defined(USE_AUDIOUNIT)
-     audiounit_rust,
+ #if defined(USE_AUDIOUNIT_RUST)
+     audiounit_rust_init,
  #endif
 --- /dev/null
 +++ media/libcubeb/src/cubeb_oss.c
-@@ -0,0 +1,1151 @@
+@@ -0,0 +1,1152 @@
 +/*
 + * Copyright © 2019-2020 Nia Alarie <nia@NetBSD.org>
 + * Copyright © 2020 Ka Ho Ng <khng300@gmail.com>
@@ -1208,6 +1208,7 @@ https://github.com/kinetiknz/cubeb/pull/600
 +    .stream_reset_default_device = NULL,
 +    .stream_get_position = oss_stream_get_position,
 +    .stream_get_latency = oss_stream_get_latency,
++    .stream_get_input_latency = NULL,
 +    .stream_set_volume = oss_stream_set_volume,
 +    .stream_get_current_device = oss_get_current_device,
 +    .stream_device_destroy = oss_stream_device_destroy,

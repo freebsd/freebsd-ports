@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	thunderbird
-DISTVERSION=	68.12.0
-PORTREVISION=	2
+DISTVERSION=	78.2.2
 CATEGORIES=	mail news net-im
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
 		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}-candidates/build1/source
@@ -14,27 +13,31 @@ COMMENT=	Mozilla Thunderbird is standalone mail and news that stands above
 
 BROKEN_powerpc64=	fails to build: gmake[4]: *** [backend.mk:47: .deps/node.stub.stub] Error 246
 
-BUILD_DEPENDS=	nspr>=4.21:devel/nspr \
-		nss>=3.52.1:security/nss \
-		icu>=63.1,1:devel/icu \
+BUILD_DEPENDS=	nspr>=4.26:devel/nspr \
+		nss>=3.56:security/nss \
+		icu>=67.1,1:devel/icu \
 		libevent>=2.1.8:devel/libevent \
-		harfbuzz>=2.4.0:print/harfbuzz \
-		graphite2>=1.3.13:graphics/graphite2 \
+		harfbuzz>=2.6.6:print/harfbuzz \
+		graphite2>=1.3.14:graphics/graphite2 \
 		png>=1.6.35:graphics/png \
-		libvpx>=1.5.0:multimedia/libvpx \
-		sqlite3>=3.28.0:databases/sqlite3 \
+		libvpx>=1.8.2:multimedia/libvpx \
+		py${PYTHON3_DEFAULT:S/.//}-sqlite3>0:databases/py-sqlite3@py${PYTHON3_DEFAULT:S/.//} \
 		v4l_compat>0:multimedia/v4l_compat \
 		autoconf-2.13:devel/autoconf213 \
 		nasm:devel/nasm \
+		yasm:devel/yasm \
 		zip:archivers/zip
+LIB_DEPENDS=	libjson-c.so:devel/json-c \
+		libbotan-2.so:security/botan2
 
 SSP_UNSAFE=	yes
 USE_GECKO=	gecko
-USE_MOZILLA=	-vpx
+USE_MOZILLA=	-sqlite
 
 USES=		tar:xz
 
 MOZ_OPTIONS=	--enable-application=comm/mail --enable-official-branding
+MOZ_OPTIONS+=	--with-system-bz2 --with-system-jsonc --with-system-botan
 MOZ_MK_OPTIONS=	MOZ_THUNDERBIRD=1 MAIL_PKG_SHARED=1
 MOZ_EXPORT=		MOZ_THUNDERBIRD=1 MAIL_PKG_SHARED=1
 

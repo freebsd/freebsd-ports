@@ -5,6 +5,23 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20200918:
+  AFFECTS: users of mail/thunderbird
+  AUTHOR: cmt@FreeBSD.org
+
+  Thunderbird has been updated to the 78esr series. Thunderbird will
+  try to convert old profiles on first start, but conversion may fail
+  especially on old profiles. Also, older versions of Thunderbird will
+  not be able to use a profile once it has been converted. It is
+  strongly recommended to move any ~/.thunderbird folder away before
+  starting Thunderbird 78 for the first time, thus creating a new and
+  empty profile.
+  Also note that OpenPGP functionality has been integrated into Thunderbird,
+  obsoleting the Enigmail extension.
+  Check https://wiki.mozilla.org/Thunderbird:OpenPGP for details, and
+  especially https://wiki.mozilla.org/Thunderbird:OpenPGP:Smartcards
+  if your private key lives on a smartcard.
+
 20200914:
   AFFECTS: users of lang/php72
   AUTHOR: tz@FreeBSD.org

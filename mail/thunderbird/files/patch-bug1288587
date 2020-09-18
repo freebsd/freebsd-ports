@@ -2,66 +2,36 @@ diff --git a/build/moz.configure/init.configure b/build/moz.configure/init.confi
 index 855214a..1e91d51 100644
 --- build/moz.configure/init.configure
 +++ build/moz.configure/init.configure
-@@ -165,16 +165,17 @@ option(env='PYTHON', nargs=1, help='Python interpreter')
- # ==============================================================
- @depends('PYTHON', check_build_environment, mozconfig, '--help')
- @imports('os')
- @imports('sys')
- @imports('subprocess')
- @imports(_from='mozbuild.configure.util', _import='LineIO')
- @imports(_from='mozbuild.virtualenv', _import='VirtualenvManager')
- @imports(_from='mozbuild.virtualenv', _import='verify_python_version')
+@@ -251,6 +251,7 @@ option(env='PYTHON3', nargs=1, help='Python 3 interpre
+ @imports(_from='mozbuild.pythonutil', _import='find_python3_executable')
+ @imports(_from='mozbuild.pythonutil', _import='python_executable_version')
+ @imports(_from='six', _import='ensure_text')
 +@imports(_from='__builtin__', _import='KeyError')
- @imports('distutils.sysconfig')
- def virtualenv_python(env_python, build_env, mozconfig, help):
+ def virtualenv_python3(env_python, build_env, mozconfig, help):
+     # Avoid re-executing python when running configure --help.
      if help:
-         return
- 
-     python = env_python[0] if env_python else None
- 
-     # Ideally we'd rely on the mozconfig injection from mozconfig_options,
-@@ -184,16 +185,22 @@ def virtualenv_python(env_python, build_env, mozconfig, help):
-         if 'PYTHON' in mozconfig['env']['added']:
-             python = mozconfig['env']['added']['PYTHON']
-         elif 'PYTHON' in mozconfig['env']['modified']:
-             python = mozconfig['env']['modified']['PYTHON'][1]
-         elif 'PYTHON' in mozconfig['vars']['added']:
-             python = mozconfig['vars']['added']['PYTHON']
-         elif 'PYTHON' in mozconfig['vars']['modified']:
-             python = mozconfig['vars']['modified']['PYTHON'][1]
+@@ -283,6 +284,12 @@ def virtualenv_python3(env_python, build_env, mozconfi
+             python = mozconfig['vars']['added']['PYTHON3']
+         elif 'PYTHON3' in mozconfig['vars']['modified']:
+             python = mozconfig['vars']['modified']['PYTHON3'][1]
 +        for i in ('env', 'vars'):
 +            for j in ('added', 'modified'):
 +                try:
-+                    del mozconfig[i][j]['PYTHON']
++                    del mozconfig[i][j]['PYTHON3']
 +                except KeyError:
 +                    pass
  
-     with LineIO(lambda l: log.error(l)) as out:
-         verify_python_version(out)
-     topsrcdir, topobjdir = build_env.topsrcdir, build_env.topobjdir
-     if topobjdir.endswith('/js/src'):
-         topobjdir = topobjdir[:-7]
+     log.debug("python3: executable from configuration: %r" % python)
  
-     with LineIO(lambda l: log.info(l)) as out:
-@@ -255,17 +262,20 @@ def virtualenv_python(env_python, build_env, mozconfig
-         log.info('Creating Python environment')
-         manager.build(python)
- 
-     python = normsep(manager.python_path)
- 
-     if not normsep(sys.executable).startswith(normsep(virtualenvs_root)):
-         log.info('Reexecuting in the virtualenv')
+@@ -365,7 +372,10 @@ def virtualenv_python3(env_python, build_env, mozconfi
+             sys.executable, manager.python_path))
+         log.info('Re-executing in the virtualenv')
          if env_python:
--            del os.environ['PYTHON']
-+            try:
-+                del os.environ['PYTHON']
-+            except KeyError:
-+                pass
-         # One would prefer to use os.execl, but that's completely borked on
-         # Windows.
-         sys.exit(subprocess.call([python] + sys.argv))
- 
-     # We are now in the virtualenv
-     if not distutils.sysconfig.get_python_lib():
-         die('Could not determine python site packages directory')
- 
+-            del os.environ['PYTHON3']
++                try:
++                    del os.environ['PYTHON3']
++                except KeyError:
++                    pass
+         # Homebrew on macOS will change Python's sys.executable to a custom
+         # value which messes with mach's virtualenv handling code. Override
+         # Homebrew's changes with the correct sys.executable value.
