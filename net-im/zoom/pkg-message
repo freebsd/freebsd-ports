@@ -25,6 +25,10 @@ In order to run Zoom you need:
 Zoom stores configuration values in ~/.config/zoomus.conf, some
 of which you can adjust.
 
+If you have linux-c7-pulseaudio-libs or linux-c7-alsa-plugins-pulseaudio
+installed and zoom asserts in pulseaudio, please change system.audio.type
+to "alsa" in ~/.config/zoomus.conf
+
 EOM
 }
 ]
