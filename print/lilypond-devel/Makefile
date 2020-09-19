@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lilypond
-DISTVERSION=	2.21.5
+DISTVERSION=	2.21.6
 CATEGORIES=	print audio
 MASTER_SITES=	http://lilypond.org/download/source/v${DISTVERSION:R}/
 PKGNAMESUFFIX=	-devel
@@ -72,9 +72,11 @@ NLS_USES=	gettext
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|<FlexLexer.h>|"/usr/include/FlexLexer.h"|' \
-	    ${WRKSRC}/lily/include/includable-lexer.hh
-		${SED} -e 's|%%FONTDIR%%|${WRKDIR}/fontconfig/cache/|'  \
-			${FILESDIR}/fonts.conf > ${WRKDIR}/.fonts.conf
+		${WRKSRC}/lily/include/includable-lexer.hh
+	@${REINPLACE_CMD} -e 's|$save_CXXFLAGS -Werror=suggest-override|$save_CXXFLAGS|' \
+		${WRKSRC}/configure
+	@${SED} -e 's|%%FONTDIR%%|${WRKDIR}/fontconfig/cache/|'  \
+		${FILESDIR}/fonts.conf > ${WRKDIR}/.fonts.conf
 
 post-patch-NLS-off:
 	@${REINPLACE_CMD} -e '/po \\$$/d' ${WRKSRC}/${MAKEFILE}.in
