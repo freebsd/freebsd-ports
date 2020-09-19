@@ -6,7 +6,7 @@ PKGNAMESUFFIX=	-gn
 MAINTAINER=	pizzamig@FreeBSD.org
 COMMENT=	Gn meta build framework
 
-DEPRECATED=	Uses deprecated version of python
+DEPRECATED=	Uses deprecated version of python, use devel/gn instead
 EXPIRATION_DATE=	2020-12-31
 
 MASTERDIR=	${.CURDIR}/../../www/chromium
