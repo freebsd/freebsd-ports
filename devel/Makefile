@@ -835,7 +835,6 @@
     SUBDIR += gnome-builder
     SUBDIR += gnome-common
     SUBDIR += gnome-vfs
-    SUBDIR += gnome-vfsmm
     SUBDIR += gnu-efi
     SUBDIR += gnucflow
     SUBDIR += gnulib
