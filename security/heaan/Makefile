@@ -11,6 +11,8 @@ COMMENT=	Library that implements homomorphic encryption
 LICENSE=	CC-BY-3.0
 LICENSE_FILE=	${WRKSRC}/../../LICENSE
 
+BROKEN_i386=	error: __int128 is not supported on this target
+
 LIB_DEPENDS=	libntl.so:math/ntl
 
 USES=		compiler:c++11-lang gmake localbase:ldflags
