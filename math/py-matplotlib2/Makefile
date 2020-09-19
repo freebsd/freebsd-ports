@@ -2,22 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	matplotlib
-PORTVERSION=	3.3.1
+DISTVERSION=	2.2.4
+PORTREVISION=	2
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	mainland@apeiron.net
-COMMENT=	Plotting library uses a syntax familiar to MATLAB users
+COMMENT=	Plotting library uses a syntax familiar to MATLAB users (legacy)
 
 LICENSE=	PSFL
 
-BUILD_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}pillow>=6.2:graphics/py-pillow@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyparsing>=0:devel/py-pyparsing@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}certifi>=0.10:security/py-certifi@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYNUMPY}
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
-		libqhull.so:math/qhull \
 		libpng.so:graphics/png \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libtcl86.so:lang/tcl86
@@ -27,14 +24,13 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}pytz>=0:devel/py-pytz@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyparsing>=0:devel/py-pyparsing@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tornado>0:www/py-tornado@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pluggy>0:devel/py-pluggy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pillow>=6.2:graphics/py-pillow@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyparsing>=0:devel/py-pyparsing@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}certifi>=0.10:security/py-certifi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}kiwisolver>=1.0.0:math/py-kiwisolver@${PY_FLAVOR}
+py27_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}backports.functools_lru_cache>0:devel/py-backports.functools_lru_cache@${PY_FLAVOR}
 
-USES=		compiler:c++11-lib gettext gnome localbase pkgconfig python shebangfix uniquefiles:dirs
-USE_PYTHON=	distutils
+USES=		compiler:c++11-lib gettext gnome pkgconfig python shebangfix uniquefiles:dirs
+USE_PYTHON=	autoplist distutils
+
+CFLAGS+=	-I${LOCALBASE}/include
 
 OPTIONS_DEFINE=		EXAMPLES \
 			QT5AGGBACKEND TKAGGBACKEND
@@ -53,18 +49,19 @@ TKAGGBACKEND_USES=	display tk:run
 TKAGGBACKEND_VARS=	TKAGG_BACKEND=True
 TKAGGBACKEND_VARS_OFF=	TKAGG_BACKEND=False
 
-PLIST_SUB=	VER=${PORTVERSION}
 PORTEXAMPLES=	*
 
 post-extract:
 	@${FIND} ${WRKSRC} -name '*.py' | ${XARGS} ${CHMOD} -x
 
-pre-configure:
-	${REINPLACE_CMD} -e 's|%%QT5AGG_BACKEND%%|${QT5AGG_BACKEND}|g' \
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%QT5AGG_BACKEND%%|${QT5AGG_BACKEND}|g' \
 			 -e 's|%%TKAGG_BACKEND%%|${TKAGG_BACKEND}|g' \
 		${WRKSRC}/setup.cfg
 
 post-install:
+	${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}/matplotlib/backends/web_backend/jquery-ui-1.12.1
+	cd ${WRKSRC}/lib/matplotlib/backends/web_backend/jquery-ui-1.12.1 && ${COPYTREE_SHARE} . ${STAGEDIR}${PYTHON_SITELIBDIR}/matplotlib/backends/web_backend/jquery-ui-1.12.1
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR}/matplotlib -name '*.so' \
 		| ${XARGS} ${STRIP_CMD}
 

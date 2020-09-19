@@ -773,6 +773,7 @@
     SUBDIR += py-luminol
     SUBDIR += py-matplotlib
     SUBDIR += py-matplotlib-scalebar
+    SUBDIR += py-matplotlib2
     SUBDIR += py-mip
     SUBDIR += py-mpmath
     SUBDIR += py-munkres
