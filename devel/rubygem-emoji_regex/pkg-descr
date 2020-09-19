@@ -1,0 +1,10 @@
+Ruby Emoji Regex provides a pair of Ruby regular expressions for matching
+Unicode Emoji symbols.
+
+This is based upon the fantastic work from Mathias Bynens' emoji-regex
+Javascript package. emoji-regex is cleverly assembled based upon data from the
+Unicode Consortium.
+
+The regular expressions provided herein are derived from that pacakge.
+
+WWW: https://github.com/ticky/ruby-emoji-regex
