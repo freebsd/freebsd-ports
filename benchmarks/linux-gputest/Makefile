@@ -21,8 +21,11 @@ LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 ONLY_FOR_ARCHS=	amd64
 
-USES=		linux zip
+PATCH_DEPENDS=	p5-Sys-Mmap>0:devel/p5-Sys-Mmap
+
+USES=		linux perl5 zip
 USE_LINUX=	dri libglvnd xorglibs
+USE_PERL5=	patch
 NO_BUILD=	yes
 
 OPTIONS_DEFINE=	DOCS GUI
@@ -36,10 +39,8 @@ GUI_USES=	python:run
 post-patch:
 	@${REINPLACE_CMD} -e '1s,bash,sh,' ${WRKSRC}/start_*.sh
 	@${RM} ${WRKSRC}/data/.DS_Store
-# Save log file in writable location instead of ${PREFIX}/lib/${PORTNAME}
-	@${REINPLACE_CMD} -e \
-	    's,_geeks3d_gputest_log\.txt,/tmp/geeks3d_gputest.log,' \
-		${WRKSRC}/GpuTest
+	@cd ${WRKSRC} && ${PERL} ${FILESDIR}/apply-binary-patch.pl < \
+		${FILESDIR}/fix-logfile-path.crk
 
 # We cannot just embed shebang line in the patch because 210:fix-shebang
 # happens before 500:do-patch :(
