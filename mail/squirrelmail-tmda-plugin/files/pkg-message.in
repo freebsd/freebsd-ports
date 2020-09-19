@@ -1,8 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-Refer to %%TMDATOOLDIR%%/INSTALL and README for
-final installation/configuration instructions.
-EOM
-}
-]

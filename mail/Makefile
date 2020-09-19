@@ -663,7 +663,6 @@
     SUBDIR += squirrelmail-spam-buttons-plugin
     SUBDIR += squirrelmail-squirrel_logger-plugin
     SUBDIR += squirrelmail-timeout_user-plugin
-    SUBDIR += squirrelmail-tmda-plugin
     SUBDIR += squirrelmail-translations
     SUBDIR += squirrelmail-unsafe_image_rules-plugin
     SUBDIR += squirrelmail-user_special_mailboxes-plugin
@@ -681,7 +680,6 @@
     SUBDIR += thunderbird
     SUBDIR += thunderbird-dictionaries
     SUBDIR += tlb
-    SUBDIR += tmda
     SUBDIR += tmpmail
     SUBDIR += tpop3d
     SUBDIR += trojita

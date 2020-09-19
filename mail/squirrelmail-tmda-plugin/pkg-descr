@@ -1,8 +1,0 @@
-This is a port of tmdatools plugin for Squirrelmail.
-
-This plugin allows a TMDA enabled account to be managed from within the
-SquirrelMail interface, including the ability to edit list files, add
-control headers to outgoing email, manage pending messages and create
-tagged addresses for use outside SquirrelMail.
-
-WWW: http://www.morison.net/squirrelmail-plugins/tmdatools.html
