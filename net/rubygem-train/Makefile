@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	train
-PORTVERSION=	3.3.16
+PORTVERSION=	3.3.21
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -18,7 +18,7 @@ RUN_DEPENDS=	rubygem-activesupport52>=5.2.4.3<6.0.0:devel/rubygem-activesupport5
 		rubygem-azure_mgmt_resources>=0.15<1:devel/rubygem-azure_mgmt_resources \
 		rubygem-azure_mgmt_security>=0.18<1:devel/rubygem-azure_mgmt_security \
 		rubygem-azure_mgmt_storage>=0.18<1:devel/rubygem-azure_mgmt_storage \
-		rubygem-docker-api>=1.26<2:net/rubygem-docker-api \
+		rubygem-docker-api>=1.26<3.0:net/rubygem-docker-api \
 		rubygem-google-api-client>=0.23.9:devel/rubygem-google-api-client \
 		rubygem-googleauth>=0.6.6:security/rubygem-googleauth \
 		rubygem-inifile>=3.0<4:textproc/rubygem-inifile \
