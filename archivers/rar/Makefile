@@ -14,7 +14,7 @@ COMMENT=	File archiver (binary port)
 LICENSE=	RAR
 LICENSE_NAME=	RAR license
 LICENSE_FILE=	${WRKSRC}/license.txt
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE_PERMS=	auto-accept dist-mirror pkg-mirror
 
 ONLY_FOR_ARCHS=	amd64 i386
 RESTRICTED=	only unmodified original package can be distributed
