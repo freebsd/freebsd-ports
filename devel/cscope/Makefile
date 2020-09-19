@@ -6,7 +6,7 @@ PORTVERSION=	15.9
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/v${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	moritz@schmi.tt
 COMMENT=	Interactive C program browser
 
 LICENSE=	BSD3CLAUSE
