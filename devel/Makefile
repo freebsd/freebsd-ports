@@ -6640,7 +6640,6 @@
     SUBDIR += stfl
     SUBDIR += stlfilt
     SUBDIR += stlink
-    SUBDIR += storm
     SUBDIR += str
     SUBDIR += strace
     SUBDIR += string_theory
