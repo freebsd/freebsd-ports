@@ -262,9 +262,7 @@
     SUBDIR += opensmtpd
     SUBDIR += opensmtpd-devel
     SUBDIR += opensmtpd-extras
-    SUBDIR += opensmtpd-extras-queue-python
     SUBDIR += opensmtpd-extras-queue-ram
-    SUBDIR += opensmtpd-extras-scheduler-python
     SUBDIR += opensmtpd-extras-scheduler-ram
     SUBDIR += opensmtpd-extras-table-ldap
     SUBDIR += opensmtpd-extras-table-mysql
