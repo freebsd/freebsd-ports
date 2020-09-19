@@ -1,16 +1,17 @@
 # $FreeBSD$
 
 PORTNAME=	cloud-init
-PORTVERSION=	20.2
-PORTREVISION=	1
+PORTVERSION=	20.3
 CATEGORIES=	net python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	andrey@bsdnir.info
 COMMENT=	Init scripts for use on cloud images
 
-LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE=	APACHE20 GPLv3
+LICENSE_COMB=	dual
+LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-Apache2.0
+LICENSE_FILE_GPLv3=	${WRKSRC}/LICENSE-GPLv3
 
 ONLY_FOR_ARCHS=		amd64 i386
 ONLY_FOR_ARCHS_REASON=	currently depends on dmidecode which is x86-only
@@ -40,13 +41,14 @@ ETCDIR=		${PREFIX}/etc/cloud
 
 PYDISTUTILS_INSTALLARGS+=	"--init-system=sysvinit_freebsd"
 
+NO_ARCH=	yes
+
 post-patch:
 	${REINPLACE_CMD} -e 's|"etc"|"${STAGEDIR}${PREFIX}/etc"|g' ${WRKSRC}/setup.py
 	${REINPLACE_CMD} -e 's|/etc/|${PREFIX}/etc/|g' ${WRKSRC}/cloudinit/settings.py
 	@${RM} ${WRKSRC}/sysvinit/freebsd/*.orig
 
 post-build:
-	(cd ${WRKSRC} && ${MV} sysvinit/freebsd/cloudconfig config/cloud.cfg)
 	@cd ${WRKSRC} && ${MV} config/cloud.cfg.d/05_logging.cfg config/cloud.cfg.d/05_logging.cfg.sample
 
 .include <bsd.port.mk>
