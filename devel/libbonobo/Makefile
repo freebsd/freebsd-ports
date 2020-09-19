@@ -13,8 +13,6 @@ COMMENT=	Component and compound document system for GNOME2
 
 USES=		tar:bzip2
 
-.if !defined(REFERENCE_PORT)
-
 LICENSE=	GPLv2 LGPL21  # former for tools, latter for library
 LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
@@ -38,5 +36,3 @@ post-patch:
 		${WRKSRC}/activation-server/Makefile.in
 
 .include <bsd.port.mk>
-
-.endif

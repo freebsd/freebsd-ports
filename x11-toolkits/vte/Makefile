@@ -15,8 +15,6 @@ USES+=		tar:xz
 
 PORTSCOUT=	ignore:1
 
-.if !defined(REFERENCE_PORT)
-
 RUN_DEPENDS+=	${LOCALBASE}/libexec/gnome-pty-helper:x11-toolkits/gnome-pty-helper
 
 USES+=		cpe gettext gmake gnome libtool pathfix pkgconfig
@@ -37,5 +35,3 @@ CONFIGURE_ARGS?=--disable-python \
 CPE_VENDOR=	nalin_dahyabhai
 
 .include <bsd.port.mk>
-
-.endif

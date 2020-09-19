@@ -15430,3 +15430,26 @@ net/frr6|net/frr7|2020-09-10|Has expired: Uses deprecated version of python and 
 graphics/libdssim||2020-09-13|Removed: C API is empty, only usable from Rust
 cad/opensta|cad/openroad|2020-09-14|OpenSTA is included in OpenRoad and isn't needed as a standalone port
 x11-drivers/xf86-video-ati-legacy||2020-09-16|Has expired: Broken for more than 6 months
+devel/ORBit2-reference||2020-09-19|Remove outdated reference documentation
+devel/gnome-vfs-reference||2020-09-19|Remove outdated reference documentation
+devel/gconf2-reference||2020-09-19|Remove outdated reference documentation
+devel/libbonobo-reference||2020-09-19|Remove outdated reference documentation
+devel/glibmm-reference||2020-09-19|Remove outdated reference documentation
+devel/glib20-reference||2020-09-19|Remove outdated reference documentation
+devel/libglade2-reference||2020-09-19|Remove outdated reference documentation
+x11-fonts/fontconfig-reference||2020-09-19|Remove outdated reference documentation
+x11/libgnome-reference||2020-09-19|Remove outdated reference documentation
+x11-toolkits/libgnomeui-reference||2020-09-19|Remove outdated reference documentation
+x11-toolkits/libbonoboui-reference||2020-09-19|Remove outdated reference documentation
+x11-toolkits/gtkmm20-reference||2020-09-19|Remove outdated reference documentation
+x11-toolkits/gtkmm24-reference||2020-09-19|Remove outdated reference documentation
+x11-toolkits/gtksourceview2-reference||2020-09-19|Remove outdated reference documentation
+x11-toolkits/gtksourceview3-reference||2020-09-19|Remove outdated reference documentation
+x11-toolkits/libwnck-reference||2020-09-19|Remove outdated reference documentation
+x11-toolkits/gtk20-reference||2020-09-19|Remove outdated reference documentation
+x11-toolkits/gtkmm30-reference||2020-09-19|Remove outdated reference documentation
+x11-toolkits/vte-reference||2020-09-19|Remove outdated reference documentation
+graphics/libgnomecanvas-reference||2020-09-19|Remove outdated reference documentation
+textproc/libxslt-reference||2020-09-19|Remove outdated reference documentation
+textproc/gtkspell-reference||2020-09-19|Remove outdated reference documentation
+textproc/libxml2-reference||2020-09-19|Remove outdated reference documentation

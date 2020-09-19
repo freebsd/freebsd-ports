@@ -16,8 +16,6 @@ USES=		tar:xz
 
 PORTSCOUT=	ignore:1
 
-.if !defined(REFERENCE_PORT)
-
 LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
@@ -37,5 +35,3 @@ STARTUP_LIB_DEPENDS=	libstartup-notification-1.so:x11/startup-notification
 STARTUP_CONFIGURE_ENABLE=	startup-notification
 
 .include <bsd.port.mk>
-
-.endif

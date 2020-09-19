@@ -35,7 +35,6 @@
     SUBDIR += gtk-sharp20
     SUBDIR += gtk-sharp30
     SUBDIR += gtk20
-    SUBDIR += gtk20-reference
     SUBDIR += gtk30
     SUBDIR += gtkada
     SUBDIR += gtkada3
@@ -47,15 +46,10 @@
     SUBDIR += gtkimageview
     SUBDIR += gtkmathview
     SUBDIR += gtkmm20
-    SUBDIR += gtkmm20-reference
     SUBDIR += gtkmm24
-    SUBDIR += gtkmm24-reference
     SUBDIR += gtkmm30
-    SUBDIR += gtkmm30-reference
     SUBDIR += gtksourceview2
-    SUBDIR += gtksourceview2-reference
     SUBDIR += gtksourceview3
-    SUBDIR += gtksourceview3-reference
     SUBDIR += gtksourceview4
     SUBDIR += gtksourceviewmm3
     SUBDIR += guile-gnome-platform
@@ -79,11 +73,9 @@
     SUBDIR += libXmu
     SUBDIR += libXt
     SUBDIR += libbonoboui
-    SUBDIR += libbonoboui-reference
     SUBDIR += libdazzle
     SUBDIR += libgdiplus
     SUBDIR += libgnomeui
-    SUBDIR += libgnomeui-reference
     SUBDIR += libgnomeuimm26
     SUBDIR += libhandy
     SUBDIR += libhandy0
@@ -91,7 +83,6 @@
     SUBDIR += libsexymm
     SUBDIR += libunique3
     SUBDIR += libwnck
-    SUBDIR += libwnck-reference
     SUBDIR += libwnck3
     SUBDIR += libxaw3dxft
     SUBDIR += libxfce4gui
@@ -240,7 +231,6 @@
     SUBDIR += vdk
     SUBDIR += viewklass
     SUBDIR += vte
-    SUBDIR += vte-reference
     SUBDIR += vte3
     SUBDIR += wlroots
     SUBDIR += wmapp

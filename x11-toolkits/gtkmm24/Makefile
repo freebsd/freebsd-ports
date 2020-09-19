@@ -16,8 +16,6 @@ USES+=		tar:xz
 
 PORTSCOUT=	ignore:1
 
-.if !defined(REFERENCE_PORT)
-
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig
 
@@ -40,5 +38,3 @@ post-patch:
 		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
-
-.endif

@@ -11,8 +11,6 @@ MASTER_SITES=	LOCAL/marcus
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GTK+ 2 spell checking component
 
-.if !defined(REFERENCE_PORT)
-
 LIB_DEPENDS=	libenchant.so:textproc/enchant
 
 USES=		gettext gmake gnome libtool:keepla pathfix pkgconfig
@@ -26,5 +24,3 @@ post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS/ s|docs||' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
-
-.endif

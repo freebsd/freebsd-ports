@@ -164,7 +164,6 @@
     SUBDIR += libfm-extra
     SUBDIR += libfm-qt
     SUBDIR += libgnome
-    SUBDIR += libgnome-reference
     SUBDIR += libgnomekbd
     SUBDIR += libgnomemm26
     SUBDIR += libinput

@@ -13,8 +13,6 @@ COMMENT=	Libraries for GNOME, a GNU desktop environment
 
 USES=	tar:bzip2
 
-.if !defined(REFERENCE_PORT)
-
 BUILD_DEPENDS=	rarian-sk-config:textproc/rarian
 LIB_DEPENDS=	libcanberra-gtk.so:audio/libcanberra \
 		libpopt.so:devel/popt
@@ -57,5 +55,3 @@ post-patch:
 		${WRKSRC}/libgnome/Makefile.in
 
 .include <bsd.port.mk>
-
-.endif

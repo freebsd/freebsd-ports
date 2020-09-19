@@ -14,8 +14,6 @@ COMMENT=	High-performance CORBA ORB with support for the C language
 
 USES=		tar:bzip2
 
-.if !defined(REFERENCE_PORT)
-
 GNU_CONFIGURE=	yes
 USES+=		gettext gmake gnome libtool:keepla pathfix pkgconfig
 USE_GNOME=	libidl referencehack
@@ -41,5 +39,3 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/orbit-2.0/idl-backends
 
 .include <bsd.port.mk>
-
-.endif

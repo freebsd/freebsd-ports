@@ -18,8 +18,6 @@ USES=		tar:xz
 
 PORTSCOUT=	limitw:0,even
 
-.if !defined(REFERENCE_PORT)
-
 RUN_DEPENDS+=	update-mime-database:misc/shared-mime-info \
 		${LOCALBASE}/share/icons/hicolor/index.theme:misc/hicolor-icon-theme
 
@@ -67,5 +65,3 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/gtk-2.0/${GTK2_VERSION}/modules
 
 .include <bsd.port.mk>
-
-.endif

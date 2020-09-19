@@ -11,8 +11,6 @@ DIST_SUBDIR=	gnome2
 MAINTAINER?=	desktop@FreeBSD.org
 COMMENT?=	XML parser library for GNOME
 
-.if !defined(REFERENCE_PORT)
-
 LICENSE=	MIT TRIO
 LICENSE_COMB=	multi
 LICENSE_NAME_TRIO=	Trio License
@@ -77,5 +75,3 @@ post-patch:
 .endif
 
 .include <bsd.port.post.mk>
-
-.endif

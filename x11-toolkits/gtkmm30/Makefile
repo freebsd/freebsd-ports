@@ -18,8 +18,6 @@ USES+=		tar:xz
 
 PORTSCOUT=	limitw:1,even
 
-.if !defined(REFERENCE_PORT)
-
 USES+=		gettext gmake gnome libtool pathfix pkgconfig \
 		compiler:c++11-lang
 USE_CXXSTD=	c++11
@@ -37,5 +35,3 @@ post-patch:
 		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
-
-.endif

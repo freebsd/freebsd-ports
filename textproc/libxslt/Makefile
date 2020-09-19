@@ -12,8 +12,6 @@ DIST_SUBDIR=	gnome2
 MAINTAINER?=	desktop@FreeBSD.org
 COMMENT?=	The XSLT C library for GNOME
 
-.if !defined(REFERENCE_PORT)
-
 USES+=		cpe gmake gnome localbase libtool pathfix
 CPE_VENDOR=	xmlsoft
 GNU_CONFIGURE=	yes
@@ -47,5 +45,3 @@ post-patch:
 		${WRKSRC}/doc/Makefile.in
 
 .include <bsd.port.mk>
-
-.endif

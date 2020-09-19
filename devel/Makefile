@@ -7,7 +7,6 @@
     SUBDIR += ChipmunkPhysics
     SUBDIR += ElectricFence
     SUBDIR += ORBit2
-    SUBDIR += ORBit2-reference
     SUBDIR += R-cran-BH
     SUBDIR += R-cran-Defaults
     SUBDIR += R-cran-Hmisc
@@ -718,7 +717,6 @@
     SUBDIR += gccmakedep
     SUBDIR += gcem
     SUBDIR += gconf2
-    SUBDIR += gconf2-reference
     SUBDIR += gconfmm26
     SUBDIR += gdb
     SUBDIR += gdcm
@@ -824,9 +822,7 @@
     SUBDIR += glade
     SUBDIR += glademm
     SUBDIR += glib20
-    SUBDIR += glib20-reference
     SUBDIR += glibmm
-    SUBDIR += glibmm-reference
     SUBDIR += gllvm
     SUBDIR += global
     SUBDIR += glog
@@ -839,7 +835,6 @@
     SUBDIR += gnome-builder
     SUBDIR += gnome-common
     SUBDIR += gnome-vfs
-    SUBDIR += gnome-vfs-reference
     SUBDIR += gnome-vfsmm
     SUBDIR += gnu-efi
     SUBDIR += gnucflow
@@ -1111,7 +1106,6 @@
     SUBDIR += libbfd
     SUBDIR += libbinio
     SUBDIR += libbonobo
-    SUBDIR += libbonobo-reference
     SUBDIR += libbpfjit
     SUBDIR += libbson
     SUBDIR += libburn
@@ -1198,7 +1192,6 @@
     SUBDIR += libgit2
     SUBDIR += libgit2-glib
     SUBDIR += libglade2
-    SUBDIR += libglade2-reference
     SUBDIR += libglademm24
     SUBDIR += libgnt
     SUBDIR += libgpc

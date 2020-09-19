@@ -18,8 +18,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		tar:xz
 
-.if !defined(REFERENCE_PORT)
-
 LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 		libpolkit-gobject-1.so:sysutils/polkit
 
@@ -49,5 +47,3 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/gconf/gconf.xml.system
 
 .include <bsd.port.mk>
-
-.endif

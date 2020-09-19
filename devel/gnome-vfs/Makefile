@@ -18,8 +18,6 @@ LICENSE_FILE_LGPL20+ =	${WRKSRC}/COPYING.LIB
 
 USES=		tar:bzip2
 
-.if !defined(REFERENCE_PORT)
-
 RUN_DEPENDS=	update-mime-database:misc/shared-mime-info
 LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 		libdbus-1.so:devel/dbus
@@ -106,5 +104,3 @@ pre-configure:
 .endif
 
 .include <bsd.port.mk>
-
-.endif

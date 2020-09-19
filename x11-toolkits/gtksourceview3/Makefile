@@ -18,8 +18,6 @@ USES=		compiler:c11 tar:xz
 
 PORTSCOUT=	limitw:1,even
 
-.if !defined(REFERENCE_PORT)
-
 BUILD_DEPENDS=	vala:lang/vala
 LIB_DEPENDS=	libfribidi.so:converters/fribidi
 
@@ -46,5 +44,3 @@ post-patch:
 		${WRKSRC}/gtksourceview/Makefile.in
 
 .include <bsd.port.mk>
-
-.endif
