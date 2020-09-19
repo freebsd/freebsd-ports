@@ -36,7 +36,7 @@ load_rc_config $name
 pidfile=/var/run/grok_exporter.pid
 command=/usr/sbin/daemon
 procname=%%PREFIX%%/bin/grok_exporter
-command_args="-p ${pidfile} /usr/bin/env ${procname} -config ${grok_exporter_config} >>${grok_exporter_log_file} 2>&1"
+command_args="-f -p ${pidfile} /usr/bin/env ${procname} -config ${grok_exporter_config} >>${grok_exporter_log_file} 2>&1"
 
 start_precmd=grok_exporter_startprecmd
 

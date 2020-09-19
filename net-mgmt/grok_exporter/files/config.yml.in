@@ -1,15 +1,21 @@
 global:
-    config_version: 2
+  config_version: 3
 
-grok:
-    patterns_dir: %%DATADIR%%/patterns
+input:
+  type: file
+  path: /var/log/messages
+  readall: true
+
+imports:
+- type: grok_patterns
+  dir: %%DATADIR%%/patterns
 
 metrics:
-    - type: counter
-      name: log_messages_total
-      help: Number of lines in /var/log/messages
-      match: '%{GREEDYDATA}'
+- type: counter
+  name: log_messages_total
+  help: Number of lines in /var/log/messages
+  match: '%{GREEDYDATA}'
 
 server:
-    host: localhost
-    port: 9144
+  host: localhost
+  port: 9144

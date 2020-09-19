@@ -1,7 +1,8 @@
 bin/grok_exporter
-%%ETCDIR%%/config.yml
+@sample %%ETCDIR%%/config.yml.sample
 %%DATADIR%%/example/config.yml
 %%DATADIR%%/example/exim-rejected-RCPT-examples.log
+%%DATADIR%%/example/config_logstash_http_input_ipv6.yml
 %%DATADIR%%/patterns/aws
 %%DATADIR%%/patterns/bacula
 %%DATADIR%%/patterns/bro
