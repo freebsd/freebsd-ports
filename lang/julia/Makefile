@@ -23,24 +23,20 @@ PLIST_FILES=	bin/julia \
 		man/man1/julia.1.gz\
 		etc/julia
 
-OPTIONS_DEFINE=	V10 V11
+OPTIONS_DEFINE=	V10
 OPTIONS_DEFAULT=	V${JULIA_DEFAULT:S/.//} D${JULIA_DEFAULT:S/.//}
 OPTIONS_SINGLE=	DEFAULTVER
-OPTIONS_SINGLE_DEFAULTVER=	D10 D11  # D stands for default
+OPTIONS_SINGLE_DEFAULTVER=	D10  # D stands for default
 
 V10_DESC=	Install v${:!${MAKE} -C ${PORTSDIR}/lang/julia10 -v PORTVERSION!} release \
 	(1.x long-term support branch)
-V11_DESC=	Install v${:!${MAKE} -C ${PORTSDIR}/lang/julia11 -v PORTVERSION!} release
 
 V10_RUN_DEPENDS=	julia10:lang/julia10
-V11_RUN_DEPENDS=	julia11:lang/julia11
 
 DEFAULTVER_DESC=	Select default version
-D10_DESC=	Please select a version for setting up symbolic links of
-D11_DESC=	bin/julia, manpage and etc/startup.jl.
+D10_DESC=	Set up symbolic links of bin/julia, manual page and etc/startup.jl for 1.0
 
 D10_IMPLIES=	V10
-D11_IMPLIES=	V11
 
 .include <bsd.port.options.mk>
 
