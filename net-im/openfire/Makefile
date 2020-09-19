@@ -2,13 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	openfire
-PORTVERSION=	4.5.2
+PORTVERSION=	4.5.3
 PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	net-im java
 MASTER_SITES=	https://github.com/igniterealtime/${PORTNAME}/releases/download/v${PORTVERSION}/ \
-		LOCAL/pi:maven
-DISTFILES=	${PORTNAME}_src_${PORTVERSION:S/./_/g}.tar.gz FreeBSD-${PORTNAME}-${PORTVERSION}-maven-repository.tar.gz:maven
+		LOCAL/yuri:maven
+DISTFILES=	${PORTNAME}_src_${PORTVERSION:S/./_/g}.tar.gz \
+		FreeBSD-${PORTNAME}-${PORTVERSION}-maven-repository.tar.gz:maven
 
 MAINTAINER=	nikita@druba.su
 COMMENT=	Enterprise instant messaging server
