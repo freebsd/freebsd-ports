@@ -2,7 +2,7 @@
 
 PORTNAME=	deno
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.0
+DISTVERSION=	1.4.1
 CATEGORIES=	www
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -53,6 +53,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		alloc-no-stdlib-2.0.1 \
 		alloc-stdlib-0.2.1 \
 		ansi_term-0.11.0 \
+		anyhow-1.0.32 \
 		anymap-0.12.1 \
 		arc-swap-0.4.7 \
 		arrayvec-0.5.1 \
@@ -84,7 +85,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		const-random-macro-0.1.8 \
 		cpuid-bool-0.1.2 \
 		crc32fast-1.2.0 \
-		crossbeam-channel-0.4.3 \
+		crossbeam-channel-0.4.4 \
 		crossbeam-utils-0.7.2 \
 		darling-0.10.2 \
 		darling_core-0.10.2 \
@@ -97,7 +98,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		dissimilar-1.0.2 \
 		dlopen-0.1.8 \
 		dlopen_derive-0.1.4 \
-		downcast-rs-1.2.0 \
 		dprint-core-0.28.0 \
 		dprint-plugin-typescript-0.31.3 \
 		dtoa-0.4.6 \
@@ -129,9 +129,9 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		fxhash-0.2.1 \
 		generic-array-0.12.3 \
 		generic-array-0.14.4 \
-		getrandom-0.1.14 \
+		getrandom-0.1.15 \
 		h2-0.2.6 \
-		hashbrown-0.8.2 \
+		hashbrown-0.9.0 \
 		headers-0.3.2 \
 		headers-core-0.2.0 \
 		hermit-abi-0.1.15 \
@@ -144,7 +144,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		ident_case-1.0.1 \
 		idna-0.2.0 \
 		if_chain-1.0.0 \
-		indexmap-1.5.2 \
+		indexmap-1.6.0 \
 		inotify-0.8.3 \
 		inotify-sys-0.1.3 \
 		input_buffer-0.3.1 \
@@ -152,20 +152,21 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		ipnet-2.3.0 \
 		is-macro-0.1.8 \
 		itoa-0.4.6 \
-		js-sys-0.3.44 \
-		jsdoc-0.5.0 \
+		js-sys-0.3.45 \
+		jsdoc-0.5.1 \
 		jsonc-parser-0.14.0 \
 		kernel32-sys-0.2.2 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
 		lexical-core-0.7.4 \
-		libc-0.2.76 \
+		libc-0.2.77 \
 		log-0.4.11 \
 		matches-0.1.8 \
+		maybe-uninit-2.0.0 \
 		memchr-2.3.3 \
 		mime-0.3.16 \
 		mime_guess-2.0.3 \
-		miniz_oxide-0.4.1 \
+		miniz_oxide-0.4.2 \
 		mio-0.6.22 \
 		mio-extras-2.0.6 \
 		mio-named-pipes-0.1.7 \
@@ -173,9 +174,9 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		miow-0.2.1 \
 		miow-0.3.5 \
 		multipart-0.17.0 \
-		net2-0.2.34 \
+		net2-0.2.35 \
 		new_debug_unreachable-1.0.4 \
-		nix-0.17.0 \
+		nix-0.18.0 \
 		nom-5.1.2 \
 		notify-5.0.0-pre.3 \
 		num-bigint-0.2.6 \
@@ -203,7 +204,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		proc-macro-hack-0.5.18 \
 		proc-macro-nested-0.1.6 \
 		proc-macro2-0.4.30 \
-		proc-macro2-1.0.20 \
+		proc-macro2-1.0.21 \
 		pty-0.2.2 \
 		quick-error-1.2.3 \
 		quote-0.6.13 \
@@ -234,7 +235,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		rustc_version-0.2.3 \
 		rustls-0.18.1 \
 		rusty_v8-0.10.0 \
-		rustyline-6.2.0 \
+		rustyline-6.3.0 \
 		ryu-1.0.5 \
 		safemem-0.3.3 \
 		same-file-1.0.6 \
@@ -244,8 +245,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		semver-0.9.0 \
 		semver-parser-0.7.0 \
 		semver-parser-0.9.0 \
-		serde-1.0.115 \
-		serde_derive-1.0.115 \
+		serde-1.0.116 \
+		serde_derive-1.0.116 \
 		serde_json-1.0.57 \
 		serde_urlencoded-0.6.1 \
 		sha-1-0.8.2 \
@@ -254,7 +255,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		siphasher-0.3.3 \
 		slab-0.4.2 \
 		smallvec-1.4.2 \
-		socket2-0.3.12 \
+		socket2-0.3.15 \
 		sourcemap-6.0.1 \
 		spin-0.5.2 \
 		stable_deref_trait-1.2.0 \
@@ -281,7 +282,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		swc_visit-0.2.0 \
 		swc_visit_macros-0.2.0 \
 		syn-0.15.44 \
-		syn-1.0.39 \
+		syn-1.0.41 \
 		sys-info-0.7.0 \
 		tempfile-3.1.0 \
 		termcolor-1.1.0 \
@@ -299,7 +300,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		toml-0.5.6 \
 		tower-service-0.3.0 \
 		tracing-0.1.19 \
-		tracing-core-0.1.15 \
+		tracing-core-0.1.16 \
 		tracing-futures-0.2.4 \
 		try-lock-0.2.3 \
 		tungstenite-0.11.1 \
@@ -320,19 +321,18 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		uuid-0.8.1 \
 		vec_map-0.8.2 \
 		version_check-0.9.2 \
-		void-1.0.2 \
 		walkdir-2.3.1 \
 		want-0.3.0 \
 		warp-0.2.5 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
 		wasi-0.10.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.67 \
-		wasm-bindgen-backend-0.2.67 \
-		wasm-bindgen-futures-0.4.17 \
-		wasm-bindgen-macro-0.2.67 \
-		wasm-bindgen-macro-support-0.2.67 \
-		wasm-bindgen-shared-0.2.67 \
-		web-sys-0.3.44 \
+		wasm-bindgen-0.2.68 \
+		wasm-bindgen-backend-0.2.68 \
+		wasm-bindgen-futures-0.4.18 \
+		wasm-bindgen-macro-0.2.68 \
+		wasm-bindgen-macro-support-0.2.68 \
+		wasm-bindgen-shared-0.2.68 \
+		web-sys-0.3.45 \
 		webpki-0.21.3 \
 		webpki-roots-0.19.0 \
 		which-4.0.2 \
