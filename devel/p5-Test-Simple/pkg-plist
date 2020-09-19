@@ -18,6 +18,11 @@
 %%SITE_PERL%%/Test2/API/Breakage.pm
 %%SITE_PERL%%/Test2/API/Context.pm
 %%SITE_PERL%%/Test2/API/Instance.pm
+%%SITE_PERL%%/Test2/API/InterceptResult.pm
+%%SITE_PERL%%/Test2/API/InterceptResult/Event.pm
+%%SITE_PERL%%/Test2/API/InterceptResult/Facet.pm
+%%SITE_PERL%%/Test2/API/InterceptResult/Hub.pm
+%%SITE_PERL%%/Test2/API/InterceptResult/Squasher.pm
 %%SITE_PERL%%/Test2/API/Stack.pm
 %%SITE_PERL%%/Test2/Event.pm
 %%SITE_PERL%%/Test2/Event/Bail.pm
@@ -71,6 +76,10 @@
 %%PERL5_MAN3%%/Test2::API::Breakage.3.gz
 %%PERL5_MAN3%%/Test2::API::Context.3.gz
 %%PERL5_MAN3%%/Test2::API::Instance.3.gz
+%%PERL5_MAN3%%/Test2::API::InterceptResult.3.gz
+%%PERL5_MAN3%%/Test2::API::InterceptResult::Event.3.gz
+%%PERL5_MAN3%%/Test2::API::InterceptResult::Hub.3.gz
+%%PERL5_MAN3%%/Test2::API::InterceptResult::Squasher.3.gz
 %%PERL5_MAN3%%/Test2::API::Stack.3.gz
 %%PERL5_MAN3%%/Test2::Event.3.gz
 %%PERL5_MAN3%%/Test2::Event::Bail.3.gz
