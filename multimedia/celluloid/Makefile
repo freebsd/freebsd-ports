@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	celluloid
-PORTVERSION=	0.19
+DISTVERSION=	0.20
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/${PORTNAME}-player/${PORTNAME}/releases/download/v${PORTVERSION}/
 
