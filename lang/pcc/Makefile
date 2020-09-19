@@ -3,6 +3,7 @@
 
 PORTNAME=	pcc
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://pcc.ludd.ltu.se/pub/pcc-releases/ \
 		http://pcc.ludd.ltu.se/ftp/pub/pcc-releases/ \
