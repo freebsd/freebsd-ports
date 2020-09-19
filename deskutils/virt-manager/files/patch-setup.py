@@ -1,6 +1,6 @@
---- setup.py.orig	2018-10-13 18:26:55 UTC
+--- setup.py.orig	2020-09-19 02:24:26 UTC
 +++ setup.py
-@@ -618,8 +618,8 @@ class VMMDistribution(distutils.dist.Distribution):
+@@ -419,8 +419,8 @@ class VMMDistribution(distutils.dist.Distribution):
      ]
  
      def __init__(self, *args, **kwargs):
@@ -11,10 +11,10 @@
          distutils.dist.Distribution.__init__(self, *args, **kwargs)
  
  
-@@ -647,11 +647,9 @@ distutils.core.setup(
-             "virt-convert",
-             "virt-xml",
-         ]),
+@@ -492,11 +492,9 @@ distutils.core.setup(
+         "build/virt-xml"]),
+ 
+     data_files=[
 -        ("share/glib-2.0/schemas",
 -         ["data/org.virt-manager.virt-manager.gschema.xml"]),
          ("share/virt-manager/ui", glob.glob("ui/*.ui")),
@@ -24,8 +24,8 @@
              "man/virt-manager.1",
              "man/virt-install.1",
              "man/virt-clone.1",
-@@ -676,7 +674,6 @@ distutils.core.setup(
-         'sdist': my_sdist,
+@@ -528,7 +526,6 @@ distutils.core.setup(
+ 
          'install': my_install,
          'install_data': my_install_data,
 -        'install_egg_info': my_egg_info,

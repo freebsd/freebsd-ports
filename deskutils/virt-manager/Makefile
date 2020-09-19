@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	virt-manager
-PORTVERSION=	2.2.1
-PORTREVISION=	1
+PORTVERSION=	3.0.0
 CATEGORIES=	deskutils net-mgmt
 MASTER_SITES=	https://virt-manager.org/download/sources/${PORTNAME}/
 
@@ -12,6 +11,7 @@ COMMENT=	Toolkit to interact with virtualization capabilities
 LICENSE=	LGPL3
 
 LIB_DEPENDS=	libvirt.so:devel/libvirt
+BUILD_DEPENDS=	rst2man:textproc/py-docutils@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83.2:devel/py-dbus@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}libxml2>=2.7.8:textproc/py-libxml2@${PY_FLAVOR} \
 		vte3>=0:x11-toolkits/vte3 \
@@ -39,8 +39,8 @@ INSTALLS_ICONS=	yes
 SHEBANG_FILES=	virt-manager \
 		virt-install \
 		virt-clone \
-		virt-convert \
-		virt-xml
+		virt-xml \
+		virtManager/virtmanager.py
 
 GLIB_SCHEMAS=	org.virt-manager.virt-manager.gschema.xml
 
