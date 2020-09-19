@@ -24,11 +24,9 @@ USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	DJANGO GAE WEBTEST
+OPTIONS_DEFINE=	DJANGO WEBTEST
 DJANGO_DESC=		Use the library with Django
 DJANGO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django111>=1.3:www/py-django111@${PY_FLAVOR}
-GAE_DESC=		Use the library with Google App Engine
-GAE_RUN_DEPENDS=	google-appengine>=1.4.3:www/google-appengine
 WEBTEST_DESC=		Use WebTest helper to test WSGI apps
 WEBTEST_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}WebTest>=1.3.3:www/py-WebTest@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}openssl>=0.13:security/py-openssl@${PY_FLAVOR}
