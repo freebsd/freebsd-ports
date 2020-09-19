@@ -15,6 +15,9 @@ bin/gh
 %%MANPAGES%%man/man1/gh-config-set.1.gz
 %%MANPAGES%%man/man1/gh-config.1.gz
 %%MANPAGES%%man/man1/gh-gist-create.1.gz
+%%MANPAGES%%man/man1/gh-gist-edit.1.gz
+%%MANPAGES%%man/man1/gh-gist-list.1.gz
+%%MANPAGES%%man/man1/gh-gist-view.1.gz
 %%MANPAGES%%man/man1/gh-gist.1.gz
 %%MANPAGES%%man/man1/gh-issue-close.1.gz
 %%MANPAGES%%man/man1/gh-issue-create.1.gz
@@ -24,6 +27,7 @@ bin/gh
 %%MANPAGES%%man/man1/gh-issue-view.1.gz
 %%MANPAGES%%man/man1/gh-issue.1.gz
 %%MANPAGES%%man/man1/gh-pr-checkout.1.gz
+%%MANPAGES%%man/man1/gh-pr-checks.1.gz
 %%MANPAGES%%man/man1/gh-pr-close.1.gz
 %%MANPAGES%%man/man1/gh-pr-create.1.gz
 %%MANPAGES%%man/man1/gh-pr-diff.1.gz
@@ -35,6 +39,13 @@ bin/gh
 %%MANPAGES%%man/man1/gh-pr-status.1.gz
 %%MANPAGES%%man/man1/gh-pr-view.1.gz
 %%MANPAGES%%man/man1/gh-pr.1.gz
+%%MANPAGES%%man/man1/gh-release-create.1.gz
+%%MANPAGES%%man/man1/gh-release-delete.1.gz
+%%MANPAGES%%man/man1/gh-release-download.1.gz
+%%MANPAGES%%man/man1/gh-release-list.1.gz
+%%MANPAGES%%man/man1/gh-release-upload.1.gz
+%%MANPAGES%%man/man1/gh-release-view.1.gz
+%%MANPAGES%%man/man1/gh-release.1.gz
 %%MANPAGES%%man/man1/gh-repo-clone.1.gz
 %%MANPAGES%%man/man1/gh-repo-create.1.gz
 %%MANPAGES%%man/man1/gh-repo-fork.1.gz
