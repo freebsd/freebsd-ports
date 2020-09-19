@@ -14,7 +14,7 @@ SQUIRRELDIR?=	${PREFIX}/www/squirrelmail
 
 OPTIONS_DEFINE=	BUTTONS CALENDAR LDAPPW LGAUTH LGNOTES MAILFT MLOGIN \
 	NOTES NOTIFY PUPDATE PW4GET QMADMIN QUOTA SASQL SIEVE SLOGIN \
-	SQLPW TIMEOUT TMDA VLOGIN WEBSEARCH WETTER
+	SQLPW TIMEOUT VLOGIN WEBSEARCH WETTER
 
 BUTTONS_DESC=	Custom (spam/ham/etc.) buttons
 BUTTONS_RUN_DEPENDS=	squirrelmail-spam-buttons-plugin${PHP_PKGNAMESUFFIX}>0:mail/squirrelmail-spam-buttons-plugin@${PHP_FLAVOR}
@@ -69,9 +69,6 @@ SQLPW_RUN_DEPENDS=	squirrelmail-change-sqlpass-plugin${PHP_PKGNAMESUFFIX}>0:mail
 
 TIMEOUT_DESC=	User session timeout plugin
 TIMEOUT_RUN_DEPENDS=	squirrelmail-timeout_user-plugin${PHP_PKGNAMESUFFIX}>0:mail/squirrelmail-timeout_user-plugin@${PHP_FLAVOR}
-
-TMDA_DESC=	TMDA plugin
-TMDA_RUN_DEPENDS=	squirrelmail-tmda-plugin${PHP_PKGNAMESUFFIX}>0:mail/squirrelmail-tmda-plugin@${PHP_FLAVOR}
 
 VLOGIN_DESC=	Multi-site-hosting capabilities plugin
 VLOGIN_RUN_DEPENDS=	squirrelmail-vlogin-plugin${PHP_PKGNAMESUFFIX}>0:mail/squirrelmail-vlogin-plugin@${PHP_FLAVOR}
