@@ -11,6 +11,8 @@ COMMENT=	Miniscule eventing, networking & crypto for async applications
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_FreeBSD_11=	error: unknown type name 'u_short'; did you mean 'short'?, etc
+
 USES=		compiler:c++17-lang gmake ssl # c++17 only for temp C_++ code, otherwise it is c11
 USE_GITHUB=	yes
 GH_ACCOUNT=	uNetworking
