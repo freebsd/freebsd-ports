@@ -1906,6 +1906,7 @@
     SUBDIR += rubygem-innate
     SUBDIR += rubygem-jekyll
     SUBDIR += rubygem-jekyll-sanity
+    SUBDIR += rubygem-jekyll-seo-tag
     SUBDIR += rubygem-jekyll-watch
     SUBDIR += rubygem-jekyll3
     SUBDIR += rubygem-journey
