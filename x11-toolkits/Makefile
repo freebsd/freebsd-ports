@@ -75,7 +75,6 @@
     SUBDIR += libdazzle
     SUBDIR += libgdiplus
     SUBDIR += libgnomeui
-    SUBDIR += libgnomeuimm26
     SUBDIR += libhandy
     SUBDIR += libhandy0
     SUBDIR += libsexy
