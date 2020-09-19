@@ -13,13 +13,12 @@ LICENSE=	GPLv3+
 LIB_DEPENDS=	libepoxy.so:graphics/libepoxy \
 		libmpv.so:multimedia/mpv
 
-USES=		compiler:c11 desktop-file-utils gettext-tools gmake gnome \
-		pkgconfig tar:xz
+USES=		compiler:c11 desktop-file-utils gettext-tools gnome \
+		meson pkgconfig python:3.5+,build shebangfix tar:xz
 USE_GNOME=	cairo gtk30
-GNU_CONFIGURE=	yes
+SHEBANG_FILES=	src/generate-authors.py meson-post-install.py
 GLIB_SCHEMAS=	io.github.GnomeMpv.gschema.xml \
 		io.github.celluloid_player.Celluloid.gschema.xml
 INSTALLS_ICONS=	yes
-LDFLAGS+=	-Wl,--as-needed # gdkpixbuf2
 
 .include <bsd.port.mk>
