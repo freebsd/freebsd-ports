@@ -1,6 +1,0 @@
-The open source Calendar and Contacts Server project is a standards-compliant
-server implementing the CalDAV and CardDAV protocols (RFC 4791, RFC 6352).
-It provides a shared location on the network allowing multiple users to store
-and edit calendaring and contact information.
-
-WWW: http://www.calendarserver.org

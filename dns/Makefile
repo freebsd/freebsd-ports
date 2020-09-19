@@ -110,7 +110,6 @@
     SUBDIR += nextdns
     SUBDIR += noip
     SUBDIR += nsd
-    SUBDIR += nsec3walker
     SUBDIR += nslint
     SUBDIR += nsnotifyd
     SUBDIR += nsping
@@ -219,7 +218,6 @@
     SUBDIR += scavenge
     SUBDIR += sheerdns
     SUBDIR += sleuth
-    SUBDIR += sshfp
     SUBDIR += subfinder
     SUBDIR += tinystats
     SUBDIR += totd

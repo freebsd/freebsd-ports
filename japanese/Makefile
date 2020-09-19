@@ -152,7 +152,6 @@
     SUBDIR += lsd-fpw
     SUBDIR += lynx
     SUBDIR += lynx-current
-    SUBDIR += mailman
     SUBDIR += man
     SUBDIR += man-doc
     SUBDIR += mecab

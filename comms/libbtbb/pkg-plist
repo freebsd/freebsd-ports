@@ -1,6 +1,0 @@
-bin/btaptap
-include/btbb.h
-lib/libbtbb.so
-lib/libbtbb.so.1
-lib/libbtbb.so.1.0
-libdata/pkgconfig/libbtbb.pc

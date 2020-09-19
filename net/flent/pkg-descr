@@ -1,5 +1,0 @@
-Flent is a Python wrapper to run multiple simultaneous netperf/iperf/ping
-instances and aggregate the results. It was previously known as
-'netperf-wrapper'.
-
-WWW: https://flent.org

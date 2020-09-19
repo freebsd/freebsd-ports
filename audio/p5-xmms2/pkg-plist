@@ -1,9 +1,0 @@
-%%SITE_ARCH%%/Audio/XMMSClient.pm
-%%SITE_ARCH%%/Audio/XMMSClient/Collection.pm
-%%SITE_ARCH%%/Audio/XMMSClient/Glib.pm
-%%SITE_ARCH%%/Audio/XMMSClient/Sync.pm
-%%SITE_ARCH%%/auto/Audio/XMMSClient/XMMSClient.so
-%%SITE_ARCH%%/Audio/XMMSClient/Collection.pod
-%%SITE_ARCH%%/Audio/XMMSClient/Playlist.pod
-%%SITE_ARCH%%/Audio/XMMSClient/Result.pod
-%%SITE_ARCH%%/Audio/XMMSClient.pod

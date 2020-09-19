@@ -1,6 +1,0 @@
-Splat is a set of utilities designed to help keep information
-in an LDAP directory in sync with information outside of an
-LDAP directory. This information can be any set of attributes on
-any object in the LDAP directory.
-
-WWW: https://github.com/threerings/splatd

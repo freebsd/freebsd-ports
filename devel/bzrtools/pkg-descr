@@ -1,4 +1,0 @@
-bzrtools is intended to be a useful collection of utilities (all plugins, right
-now) for devel/bazaar-ng. Features include: baz-import, annotate,
-shelve/unshelve, clean-tree, conflicts, resolve, graph-ancestry, fetch-missing,
-patch.

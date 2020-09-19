@@ -1,6 +1,0 @@
-pyspatialite is an interface to the SQLite 3.x embedded relational database
-engine with spatialite extensions.
-It is almost fully compliant with the Python database API version 2.0 also
-exposes the unique features of SQLite and spatialite.
-
-WWW: https://github.com/lokkju/pyspatialite

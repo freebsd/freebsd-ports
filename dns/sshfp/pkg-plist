@@ -1,5 +1,0 @@
-bin/dane
-bin/sshfp
-man/man1/dane.1.gz
-man/man1/sshfp.1.gz
-%%PYTHON_SITELIBDIR%%/daneldnsx.py

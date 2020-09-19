@@ -1,4 +1,0 @@
-Tool to incrementally import changesets from CVS into a Git repository with
-stable commit hashes.
-
-WWW: https://github.com/ustuehler/git-cvs/

@@ -22,7 +22,6 @@
     SUBDIR += chu
     SUBDIR += comserv
     SUBDIR += concordance
-    SUBDIR += congruity
     SUBDIR += conserver-com
     SUBDIR += cqrlog
     SUBDIR += cubicsdr
@@ -75,7 +74,6 @@
     SUBDIR += kb
     SUBDIR += kermit
     SUBDIR += klog
-    SUBDIR += libbtbb
     SUBDIR += libconcord
     SUBDIR += libfap
     SUBDIR += libfec
@@ -154,7 +152,6 @@
     SUBDIR += qt5-serialbus
     SUBDIR += qt5-serialport
     SUBDIR += qtel
-    SUBDIR += quisk
     SUBDIR += redsea
     SUBDIR += remserial
     SUBDIR += rtl-sdr

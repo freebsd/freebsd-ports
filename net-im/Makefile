@@ -6,7 +6,6 @@
     SUBDIR += 6cord
     SUBDIR += beebeep
     SUBDIR += centerim
-    SUBDIR += centerim-devel
     SUBDIR += chatterino2
     SUBDIR += climm
     SUBDIR += coccinella
@@ -25,7 +24,6 @@
     SUBDIR += folks
     SUBDIR += fractal
     SUBDIR += freetalk
-    SUBDIR += fugu
     SUBDIR += gajim
     SUBDIR += gitterdone
     SUBDIR += gloox
@@ -114,7 +112,6 @@
     SUBDIR += profanity
     SUBDIR += prosody
     SUBDIR += prosody-modules
-    SUBDIR += proxy65
     SUBDIR += psi
     SUBDIR += purple-discord
     SUBDIR += purple-facebook

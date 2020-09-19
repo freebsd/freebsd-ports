@@ -1,6 +1,0 @@
-bin/nohtml.py
-man/man1/nohtml.1.gz
-%%PORTDOCS%%%%DOCSDIR%%/nohtml.html
-%%PORTDOCS%%%%DOCSDIR%%/nohtml.pdf
-%%PORTDOCS%%%%DOCSDIR%%/nohtml.ps
-%%PORTDOCS%%%%DOCSDIR%%/nohtml.txt

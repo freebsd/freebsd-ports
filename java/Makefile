@@ -34,7 +34,6 @@
     SUBDIR += eclipse-drjava
     SUBDIR += eclipse-ecj
     SUBDIR += eclipse-findbugs
-    SUBDIR += eclipse-pydev
     SUBDIR += eclipse-shelled
     SUBDIR += hamcrest
     SUBDIR += icedtea-web

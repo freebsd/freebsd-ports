@@ -1,5 +1,0 @@
-SMTP user enumeration (RCPT TO and VRFY), internal spoofing, and open relay. A
-tool that tested for all three and with great flexibility. iSMTP does just
-that, making it much easier to knock that process out of the way.
-
-WWW: https://github.com/altjx/ipwn/tree/master/iSMTP

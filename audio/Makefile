@@ -11,7 +11,6 @@
     SUBDIR += abcde
     SUBDIR += abcselect
     SUBDIR += abgate-lv2
-    SUBDIR += abraca
     SUBDIR += adplay
     SUBDIR += afsp
     SUBDIR += aften
@@ -28,7 +27,6 @@
     SUBDIR += amsynth
     SUBDIR += aqualung
     SUBDIR += ardour
-    SUBDIR += ardour5
     SUBDIR += ardour6
     SUBDIR += ario
     SUBDIR += arss
@@ -91,8 +89,6 @@
     SUBDIR += cmus
     SUBDIR += codec2
     SUBDIR += cpige
-    SUBDIR += cplay
-    SUBDIR += cpp-xmms2
     SUBDIR += crip
     SUBDIR += csound
     SUBDIR += csoundqt
@@ -612,7 +608,6 @@
     SUBDIR += p5-Test-Corpus-Audio-MPD
     SUBDIR += p5-libvorbis
     SUBDIR += p5-tagged
-    SUBDIR += p5-xmms2
     SUBDIR += pacpl
     SUBDIR += padthv1-lv2
     SUBDIR += paman

@@ -16,7 +16,6 @@
     SUBDIR += bitmark-recorder
     SUBDIR += btpd
     SUBDIR += c-lightning
-    SUBDIR += couchpotato
     SUBDIR += cpuminer
     SUBDIR += createtorrent
     SUBDIR += ctcs

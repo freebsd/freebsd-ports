@@ -75,7 +75,6 @@
     SUBDIR += calendarsupport
     SUBDIR += ccxstream
     SUBDIR += ceph12
-    SUBDIR += ceph13
     SUBDIR += ceph14
     SUBDIR += cf
     SUBDIR += charm
@@ -84,7 +83,6 @@
     SUBDIR += cjdns
     SUBDIR += clash
     SUBDIR += cloud-init
-    SUBDIR += cloud-init-azure
     SUBDIR += cloudflared
     SUBDIR += clusterit
     SUBDIR += cnd
@@ -145,19 +143,14 @@
     SUBDIR += eternalterminal
     SUBDIR += evans
     SUBDIR += eventviews
-    SUBDIR += exabgp
     SUBDIR += exabgp4
-    SUBDIR += exaddos
-    SUBDIR += fb
     SUBDIR += fb303
     SUBDIR += fbzmq
     SUBDIR += fiche
     SUBDIR += file2pcap
     SUBDIR += findmtu
     SUBDIR += findomain
-    SUBDIR += flent
     SUBDIR += flower
-    SUBDIR += flowgrep
     SUBDIR += foreman-proxy
     SUBDIR += fpc-ldap
     SUBDIR += fpc-pcap
@@ -197,7 +190,6 @@
     SUBDIR += gogoc
     SUBDIR += google-cloud-sdk
     SUBDIR += google-cloud-sdk-app-engine-go
-    SUBDIR += googlecl
     SUBDIR += gopher
     SUBDIR += goreplay
     SUBDIR += gotthard
@@ -440,7 +432,6 @@
     SUBDIR += micro_proxy
     SUBDIR += microsocks
     SUBDIR += minidlna
-    SUBDIR += mininet
     SUBDIR += minisapserver
     SUBDIR += minissdpd
     SUBDIR += miniupnpc
@@ -494,7 +485,6 @@
     SUBDIR += netselect
     SUBDIR += netstrain
     SUBDIR += netwib
-    SUBDIR += nfs-ganesha
     SUBDIR += nfs-ganesha-kmod
     SUBDIR += nfsshell
     SUBDIR += ng_mikrotik_eoip
@@ -546,7 +536,6 @@
     SUBDIR += opennx
     SUBDIR += openpgm
     SUBDIR += openradius
-    SUBDIR += opensips
     SUBDIR += openslp
     SUBDIR += opentracker
     SUBDIR += openvswitch
@@ -1080,7 +1069,6 @@
     SUBDIR += py-python-neutronclient
     SUBDIR += py-python-novaclient
     SUBDIR += py-python-novaclient16
-    SUBDIR += py-python-ntlm
     SUBDIR += py-python-openstackclient
     SUBDIR += py-python-twitter
     SUBDIR += py-pytradfri
@@ -1393,7 +1381,6 @@
     SUBDIR += socketw
     SUBDIR += sofia-sip
     SUBDIR += spideroak
-    SUBDIR += splatd
     SUBDIR += spoofer
     SUBDIR += spread
     SUBDIR += spread-j

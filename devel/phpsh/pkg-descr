@@ -1,7 +1,0 @@
-phpsh is an interactive shell for php that features readline
-history, tab completion, quick access to documentation. It
-was developed at Facebook and ironically, is written mostly
-in python. It is open source and released under a modified
-BSD license.
-
-WWW: http://phpsh.org/

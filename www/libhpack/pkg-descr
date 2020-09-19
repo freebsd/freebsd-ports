@@ -1,5 +1,0 @@
-libhpack implements HPACK (Header Compression for HTTP/2.0), a format adapted to
-efficiently represent HTTP header fields in the context of the upcoming HTTP/2.0
-protocol.
-
-WWW: https://github.com/alobbs/libhpack

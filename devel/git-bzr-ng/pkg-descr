@@ -1,5 +1,0 @@
-git-bzr-ng is a bidirectional bridge between git and bzr that lets
-you stop worrying which version control the code you love is using -
-as long as they are using git or bzr
-
-WWW: https://github.com/termie/git-bzr-ng

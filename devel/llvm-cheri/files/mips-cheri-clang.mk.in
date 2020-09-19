@@ -1,7 +1,0 @@
-# $FreeBSD$
-
-XCC=%%PREFIX%%/llvm%%LLVM_SUFFIX%%/bin/clang
-XCXX=%%PREFIX%%/llvm%%LLVM_SUFFIX%%/bin/clang++
-XCPP=%%PREFIX%%/llvm%%LLVM_SUFFIX%%/bin/clang-cpp
-XCFLAGS=-integrated-as %%STACK_ALIGN%%
-X_COMPILER_TYPE=clang

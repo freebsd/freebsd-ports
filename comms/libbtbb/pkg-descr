@@ -1,5 +1,0 @@
- A Bluetooth baseband decoding library
-
-This is a Bluetooth baseband decoding library. It can be used to
-extract Bluetooth packet and piconet information from Ubertooth
-devices as well as GR-Bluetooth/USRP.

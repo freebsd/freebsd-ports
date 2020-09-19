@@ -15,7 +15,6 @@
     SUBDIR += asprint
     SUBDIR += auctex
     SUBDIR += bibcursed
-    SUBDIR += biblio-py
     SUBDIR += bibview
     SUBDIR += brlaser
     SUBDIR += c2ps

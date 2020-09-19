@@ -51,7 +51,6 @@
     SUBDIR += graphlan
     SUBDIR += grappa
     SUBDIR += groopm
-    SUBDIR += haplohseq
     SUBDIR += hhsuite
     SUBDIR += hisat2
     SUBDIR += hmmer
@@ -166,7 +165,6 @@
     SUBDIR += subread
     SUBDIR += tRNAscan-SE
     SUBDIR += tabixpp
-    SUBDIR += tophat
     SUBDIR += treekin
     SUBDIR += treepuzzle
     SUBDIR += trimadap

@@ -1,8 +1,0 @@
---- MANIFEST.in.orig	2014-06-20 11:53:26.000000000 -0700
-+++ MANIFEST.in	2014-06-20 11:53:44.000000000 -0700
-@@ -1,4 +1,4 @@
--recursive-include Codeville *.py *.pyd
-+recursive-include Codeville *.py
- include cdv cdvserver cdvpasswd cdv-agent cdvupgrade LICENSE.txt
- include cdvserver.conf.sample
- include src/winrand.c

@@ -1,7 +1,0 @@
-bin/hb.py
-man/man1/hb.1.gz
-%%PORTDOCS%%%%DOCSDIR%%/hb.txt
-%%PORTDOCS%%%%DOCSDIR%%/0-StartHere.txt
-%%PORTDOCS%%%%DOCSDIR%%/2-HowToUse.txt
-%%PORTDOCS%%%%DOCSDIR%%/3-UnderTheHood.txt
-%%PORTDOCS%%%%DOCSDIR%%/4-Limitations-Enhancements.txt

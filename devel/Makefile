@@ -92,7 +92,6 @@
     SUBDIR += R-cran-zeallot
     SUBDIR += RStudio
     SUBDIR += SpecTcl
-    SUBDIR += aap
     SUBDIR += aarch64-gcc
     SUBDIR += aarch64-none-elf-gcc
     SUBDIR += aarch64-xtoolchain-gcc
@@ -138,7 +137,6 @@
     SUBDIR += app-builder
     SUBDIR += appstream-glib
     SUBDIR += apr1
-    SUBDIR += apr2
     SUBDIR += arachne-pnr
     SUBDIR += arcanist
     SUBDIR += arcanist-lib
@@ -217,7 +215,6 @@
     SUBDIR += bazel
     SUBDIR += bazel-buildtools
     SUBDIR += bazel029
-    SUBDIR += bbfreeze-loader
     SUBDIR += bbparse
     SUBDIR += bcc
     SUBDIR += bcpp
@@ -227,7 +224,6 @@
     SUBDIR += bennugd-core
     SUBDIR += bennugd-modules
     SUBDIR += bglibs
-    SUBDIR += bicyclerepair
     SUBDIR += binaryen
     SUBDIR += bingrep
     SUBDIR += binutils
@@ -266,7 +262,6 @@
     SUBDIR += byaccj
     SUBDIR += bzr
     SUBDIR += bzr-fastimport
-    SUBDIR += bzrtools
     SUBDIR += c2mdoc
     SUBDIR += caf
     SUBDIR += calibrator
@@ -355,7 +350,6 @@
     SUBDIR += codeblocks
     SUBDIR += codequery
     SUBDIR += codesearch-py
-    SUBDIR += codeville
     SUBDIR += codeworker
     SUBDIR += collada-dom
     SUBDIR += colorgcc
@@ -412,7 +406,6 @@
     SUBDIR += cvs2cl
     SUBDIR += cvs2darcs
     SUBDIR += cvs2html
-    SUBDIR += cvs2svn
     SUBDIR += cvsadmin
     SUBDIR += cvsbook
     SUBDIR += cvschangelogbuilder
@@ -435,7 +428,6 @@
     SUBDIR += cvswrap
     SUBDIR += cweb
     SUBDIR += cwrap
-    SUBDIR += cx_Freeze
     SUBDIR += cxmon
     SUBDIR += cxref
     SUBDIR += cxxopts
@@ -625,11 +617,9 @@
     SUBDIR += etcd33
     SUBDIR += etcd34
     SUBDIR += etl
-    SUBDIR += euca2ools
     SUBDIR += evdev-proto
     SUBDIR += evemu
     SUBDIR += eventxx
-    SUBDIR += evolution-gconf-tools
     SUBDIR += exercisix
     SUBDIR += f18
     SUBDIR += f77flow
@@ -788,11 +778,9 @@
     SUBDIR += git
     SUBDIR += git-absorb
     SUBDIR += git-bug
-    SUBDIR += git-bzr-ng
     SUBDIR += git-cinnabar
     SUBDIR += git-codereview
     SUBDIR += git-cola
-    SUBDIR += git-cvs
     SUBDIR += git-delta
     SUBDIR += git-extras
     SUBDIR += git-gui
@@ -800,7 +788,6 @@
     SUBDIR += git-lite
     SUBDIR += git-merge-changelog
     SUBDIR += git-modes
-    SUBDIR += git-remote-hg
     SUBDIR += git-review
     SUBDIR += git-subrepo
     SUBDIR += git-town
@@ -879,7 +866,6 @@
     SUBDIR += gradle62
     SUBDIR += grantlee5
     SUBDIR += grpc
-    SUBDIR += grumpy
     SUBDIR += grv
     SUBDIR += gsettings-desktop-schemas
     SUBDIR += gsoap
@@ -910,7 +896,6 @@
     SUBDIR += heimdall
     SUBDIR += hexcompare
     SUBDIR += hexd
-    SUBDIR += hg-git
     SUBDIR += hgreviewboard
     SUBDIR += hgsvn
     SUBDIR += hhdate
@@ -1246,7 +1231,6 @@
     SUBDIR += libnfc
     SUBDIR += libnotify
     SUBDIR += libnsutils
-    SUBDIR += libnxt
     SUBDIR += liboil
     SUBDIR += libolecf
     SUBDIR += libopenbsd
@@ -1284,7 +1268,6 @@
     SUBDIR += librcc
     SUBDIR += librcd
     SUBDIR += libreadline-java
-    SUBDIR += libredblack
     SUBDIR += libregf
     SUBDIR += librelp
     SUBDIR += librest
@@ -1402,7 +1385,6 @@
     SUBDIR += llbuild
     SUBDIR += llnextgen
     SUBDIR += llvm
-    SUBDIR += llvm-cheri
     SUBDIR += llvm-devel
     SUBDIR += llvm10
     SUBDIR += llvm11
@@ -3929,7 +3911,6 @@
     SUBDIR += php74-sysvsem
     SUBDIR += php74-sysvshm
     SUBDIR += php74-tokenizer
-    SUBDIR += phpsh
     SUBDIR += phpunit6
     SUBDIR += phpunit7
     SUBDIR += phpunit8
@@ -4184,7 +4165,6 @@
     SUBDIR += py-backports.functools_lru_cache
     SUBDIR += py-backports.os
     SUBDIR += py-backports.shutil_get_terminal_size
-    SUBDIR += py-backports.shutil_which
     SUBDIR += py-backports_abc
     SUBDIR += py-banal
     SUBDIR += py-bandit
@@ -4660,7 +4640,6 @@
     SUBDIR += py-nose2
     SUBDIR += py-noseofyeti
     SUBDIR += py-nosexcover
-    SUBDIR += py-notify
     SUBDIR += py-notify2
     SUBDIR += py-num2words
     SUBDIR += py-numba
@@ -4824,7 +4803,6 @@
     SUBDIR += py-pyasn1-modules
     SUBDIR += py-pybind11
     SUBDIR += py-pybix
-    SUBDIR += py-pybloomfiltermmap
     SUBDIR += py-pycadf
     SUBDIR += py-pycadf2
     SUBDIR += py-pycalendar
@@ -4966,7 +4944,6 @@
     SUBDIR += py-pyxb
     SUBDIR += py-pyyaml-include
     SUBDIR += py-q
-    SUBDIR += py-qserve
     SUBDIR += py-qt5
     SUBDIR += py-qt5-core
     SUBDIR += py-qt5-dbus
@@ -5080,7 +5057,6 @@
     SUBDIR += py-stsci.distutils
     SUBDIR += py-subprocess32
     SUBDIR += py-subversion
-    SUBDIR += py-subvertpy
     SUBDIR += py-sure
     SUBDIR += py-swagger-spec-validator
     SUBDIR += py-sysctl
@@ -5264,7 +5240,6 @@
     SUBDIR += py-zope.traversing
     SUBDIR += py-zsm-lib
     SUBDIR += py3c
-    SUBDIR += py_static_check
     SUBDIR += pybind11
     SUBDIR += pybugz
     SUBDIR += pycanberra
@@ -5281,7 +5256,6 @@
     SUBDIR += pyrex
     SUBDIR += pyside2
     SUBDIR += pyside2-tools
-    SUBDIR += pyst
     SUBDIR += pysvn
     SUBDIR += pythk
     SUBDIR += pythontidy
@@ -6577,7 +6551,6 @@
     SUBDIR += rubygem-zlib
     SUBDIR += rudeconfig
     SUBDIR += rudiments
-    SUBDIR += runsnakerun
     SUBDIR += rust-analyzer
     SUBDIR += rust-bindgen
     SUBDIR += rust-cbindgen
@@ -6690,7 +6663,6 @@
     SUBDIR += t1lib
     SUBDIR += ta-lib
     SUBDIR += tablist
-    SUBDIR += tailor
     SUBDIR += talloc
     SUBDIR += taskflow
     SUBDIR += tass64
@@ -6752,7 +6724,6 @@
     SUBDIR += trio
     SUBDIR += truc
     SUBDIR += ua_parser-core
-    SUBDIR += uatraits
     SUBDIR += uclcmd
     SUBDIR += ucommon
     SUBDIR += ucpp

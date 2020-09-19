@@ -23,7 +23,6 @@
     SUBDIR += c
     SUBDIR += cbmbasic
     SUBDIR += ccl
-    SUBDIR += cdent
     SUBDIR += ceylon
     SUBDIR += cfortran
     SUBDIR += chaiscript
@@ -142,10 +141,7 @@
     SUBDIR += jimtcl
     SUBDIR += jruby
     SUBDIR += julia
-    SUBDIR += julia06
-    SUBDIR += julia07
     SUBDIR += julia10
-    SUBDIR += julia11
     SUBDIR += jython
     SUBDIR += kawa
     SUBDIR += kf5-kross
@@ -350,7 +346,6 @@
     SUBDIR += tcl86
     SUBDIR += tcl87
     SUBDIR += tclX
-    SUBDIR += tinypy
     SUBDIR += tolua
     SUBDIR += tolua++
     SUBDIR += tuareg-mode.el

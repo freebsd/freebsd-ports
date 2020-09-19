@@ -1,7 +1,0 @@
-Spot The Difference is a file integrity checker. Its goal is to detect signs of
-intrusion by looking for suspicious changes in system files. Crackers, in fact,
-to do their evil or just to make sure they can work their way back into the
-system, often change some configuration files, executables and/or log files
-(usually with rootkits); thus leaving signs of the break-in.
-
-WWW: http://www.kernel-panic.it/software/stdiff/

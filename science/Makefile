@@ -35,7 +35,6 @@
     SUBDIR += bddsolve
     SUBDIR += berkeleygw
     SUBDIR += bodr
-    SUBDIR += brian
     SUBDIR += buddy
     SUBDIR += cdcl
     SUBDIR += cdf
@@ -209,7 +208,6 @@
     SUBDIR += packmol
     SUBDIR += pagmo2
     SUBDIR += paje
-    SUBDIR += paraview
     SUBDIR += pcmsolver
     SUBDIR += plumed
     SUBDIR += pnetcdf

@@ -1,5 +1,0 @@
-This module provides a sqlite-backed dictionary conforming to the
-dbm interface, along with a shelve class that wraps the dict and
-provides serialization for it.
-
-WWW: https://github.com/YelpArchive/sqlite3dbm

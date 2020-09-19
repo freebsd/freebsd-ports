@@ -187,7 +187,6 @@
     SUBDIR += defendguin
     SUBDIR += devilutionX
     SUBDIR += dhewm3
-    SUBDIR += diameter
     SUBDIR += diaspora
     SUBDIR += digger-vgl
     SUBDIR += divide-and-succeed
@@ -430,7 +429,6 @@
     SUBDIR += kgoldrunner
     SUBDIR += khangman
     SUBDIR += kigo
-    SUBDIR += kiki
     SUBDIR += killbots
     SUBDIR += kiriki
     SUBDIR += kjumpingcube
@@ -537,7 +535,6 @@
     SUBDIR += libshhcards
     SUBDIR += libtmcg
     SUBDIR += lightsoff
-    SUBDIR += lightyears
     SUBDIR += lincity
     SUBDIR += lincity-ng
     SUBDIR += linux-doom3
@@ -707,7 +704,6 @@
     SUBDIR += orbital_eunuchs_sniper
     SUBDIR += orthorobot
     SUBDIR += osgg
-    SUBDIR += outerspace
     SUBDIR += p5-Acme-GuessNumber
     SUBDIR += p5-Algorithm-Pair-Best2
     SUBDIR += p5-Algorithm-Pair-Swiss
@@ -721,7 +717,6 @@
     SUBDIR += p5-Games-GuessWord
     SUBDIR += p5-Games-Tournament-RoundRobin
     SUBDIR += pachi
-    SUBDIR += pachi-game-engine
     SUBDIR += pacmanarena
     SUBDIR += palapeli
     SUBDIR += palomino

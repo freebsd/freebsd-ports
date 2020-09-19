@@ -1,8 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-Please edit %%ETCDIR%%/exaddos.conf based on one of the examples and
-add exaddos_enable="YES" to /etc/rc.conf
-EOM
-}
-]

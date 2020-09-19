@@ -1,9 +1,0 @@
---- configure.ac.orig	2017-04-20 14:12:56 UTC
-+++ configure.ac
-@@ -1,5 +1,5 @@
- AC_PREREQ([2.68])
--AC_INIT([libvmod-awsrest], [0.1], [], [vmod-awsrest])
-+AC_INIT([libvmod-awsrest], [0.1], [], [libvmod-awsrest])
- AC_COPYRIGHT([Copyright (c) 2012-2017 Shohei Tanaka(@xcir)])
- AC_CONFIG_MACRO_DIR([m4])
- AC_CONFIG_AUX_DIR([build-aux])

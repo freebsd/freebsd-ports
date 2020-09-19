@@ -1,5 +1,0 @@
-[proxy65]
-rhost = 127.0.0.1
-rport = 6000
-secret = changeme
-proxyips = 0.0.0.0:7777

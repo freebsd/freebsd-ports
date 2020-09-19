@@ -1,9 +1,0 @@
-@sample etc/farbot.conf.sample
-%%PORTDOCS%%%%DOCSDIR%%/xhtml/ch01.html
-%%PORTDOCS%%%%DOCSDIR%%/xhtml/ch01s02.html
-%%PORTDOCS%%%%DOCSDIR%%/xhtml/ch01s03.html
-%%PORTDOCS%%%%DOCSDIR%%/xhtml/ch01s04.html
-%%PORTDOCS%%%%DOCSDIR%%/xhtml/ch02.html
-%%PORTDOCS%%%%DOCSDIR%%/xhtml/docbook.css
-%%PORTDOCS%%%%DOCSDIR%%/xhtml/index.html
-%%PORTDOCS%%%%DOCSDIR%%/xhtml/pr01.html

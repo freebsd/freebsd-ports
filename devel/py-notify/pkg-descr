@@ -1,7 +1,0 @@
-A python bindings for libnotify. The Desktop Notifications framework provides
-a standard way of doing passive pop-up notifications on the desktop. These are
-designed to notify the user of something without interrupting their work with
-a dialog box that they must close. Passive popups can automatically disappear
-after a short period of time.
-
-WWW: http://www.galago-project.org/specs/notification/index.php

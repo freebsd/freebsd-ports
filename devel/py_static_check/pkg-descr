@@ -1,9 +1,0 @@
-py_static_check can statically check your Python code
-for a lot of common errors. It uses a modified pyflakes
-code and extends with following things:
-
-    Ability to specify what star imports resolve to (-s argument)
-    Ability to ignore unused import warnings (-i argument)
-    Better sorting of warnings/errors
-
-WWW: https://pypi.org/project/py_static_check/

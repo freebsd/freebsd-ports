@@ -1,6 +1,0 @@
-This is QP, a package for defining and running multiple web applications based
-on Durus for persistence, standard persistent Session and User classes, easy
-interactive database sessions, qpy for assembling html, and Quixote2-style forms
-and path traversal. QP makes it easier than ever to use these tools together.
-
-WWW: http://www.mems-exchange.org/software/qp/

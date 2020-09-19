@@ -1,7 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-GEBEN functionality included in phpsh is not tested yet. Patches are welcome.
-EOM
-}
-]

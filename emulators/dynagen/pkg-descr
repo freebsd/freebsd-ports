@@ -1,9 +1,0 @@
-Dynagen is a front-end for use with the Dynamips Cisco router
-emulator. It uses an INI-like configuration file to provision
-Dynamips emulator networks. It takes care of specifying the right
-port adapters, generating and matching up those pesky NIO descriptors,
-specifying bridges, frame-relay, ATM switches, etc. It also provides
-a management CLI for listing devices, suspending and reloading
-instances, etc.
-
-WWW: http://dyna-gen.sourceforge.net/

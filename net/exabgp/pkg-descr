@@ -1,6 +1,0 @@
-A BGP route injector which can inject routes with arbitrary next-hops into
-your network (source some ipv4/ipv6 routes using both IPv4 and IPv6 TCP
-connections), mitigate DDOS using flowspec, or pass the route it receives
-in textual form to third party application.
-
-WWW: https://github.com/Exa-Networks/exabgp

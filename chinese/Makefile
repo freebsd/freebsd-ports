@@ -47,7 +47,6 @@
     SUBDIR += gcin-qt5
     SUBDIR += gydict
     SUBDIR += hc
-    SUBDIR += ibus-array
     SUBDIR += ibus-cangjie
     SUBDIR += ibus-chewing
     SUBDIR += ibus-libpinyin

@@ -1,5 +1,0 @@
-dbx is a simple SQL database abstraction layer for Python.  The goal
-of dbx is to make using a SQL database as simple as possible while
-providing a consistent API across different databases.
-
-WWW: http://david.acz.org/pydbx/

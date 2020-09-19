@@ -1,9 +1,0 @@
-bin/fwexec
-bin/fwflash
-include/libnxt/error.h
-include/libnxt/firmware.h
-include/libnxt/flash.h
-include/libnxt/flash_routine.h
-include/libnxt/lowlevel.h
-include/libnxt/samba.h
-lib/libnxt.a

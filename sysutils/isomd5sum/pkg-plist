@@ -1,9 +1,0 @@
-bin/implantisomd5
-bin/checkisomd5
-man/man1/checkisomd5.1.gz
-man/man1/implantisomd5.1.gz
-include/libimplantisomd5.h
-include/libcheckisomd5.h
-lib/libimplantisomd5.a
-lib/libcheckisomd5.a
-%%PYTHON_SITELIBDIR%%/pyisomd5sum.so

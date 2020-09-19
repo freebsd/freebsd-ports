@@ -1,9 +1,0 @@
-This is an implementation of Python bindings for the Subversion
-version control system, aiming to be complete, fast and feel native
-to Python programmers.
-
-Bindings are provided for the working copy, client, delta, remote
-access and repository APIs. A hookable server side implementation
-of the custom Subversion protocol (svn_ra) is also provided.
-
-WWW: https://launchpad.net/subvertpy

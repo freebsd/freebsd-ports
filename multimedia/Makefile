@@ -67,7 +67,6 @@
     SUBDIR += flvtool++
     SUBDIR += fpc-dts
     SUBDIR += fpc-libvlc
-    SUBDIR += freevo
     SUBDIR += fxtv
     SUBDIR += gaupol
     SUBDIR += gavl
@@ -355,7 +354,6 @@
     SUBDIR += qmmp-qt5
     SUBDIR += qt-faststart
     SUBDIR += qt5-multimedia
-    SUBDIR += quodlibet
     SUBDIR += quvi
     SUBDIR += quvi09
     SUBDIR += rage
@@ -403,7 +401,6 @@
     SUBDIR += tivodecode
     SUBDIR += totem
     SUBDIR += totem-pl-parser
-    SUBDIR += tovid
     SUBDIR += transcode
     SUBDIR += tstools
     SUBDIR += tvheadend

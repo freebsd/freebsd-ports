@@ -22,7 +22,6 @@
     SUBDIR += compiz-plugins-main
     SUBDIR += compiz-plugins-unsupported
     SUBDIR += compizconfig-backend-gconf
-    SUBDIR += compizconfig-python
     SUBDIR += compton
     SUBDIR += ctwm
     SUBDIR += cwm
@@ -40,7 +39,6 @@
     SUBDIR += fluxbox
     SUBDIR += fluxter
     SUBDIR += flwm
-    SUBDIR += fvwm-crystal
     SUBDIR += fvwm2
     SUBDIR += gcompmgr
     SUBDIR += herbstluftwm

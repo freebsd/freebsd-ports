@@ -1,7 +1,0 @@
-PyMorph is a image morphology toolbox implements the basic binary and greyscale
-morphology operations, working with numpy arrays representing images.
-
-Includes basic operations for morphological image processing such as erode,
-dilate, open, tophat opening, watershed and more.
-
-WWW: https://pypi.org/project/pymorph/

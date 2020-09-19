@@ -28,7 +28,6 @@
     SUBDIR += dosbox
     SUBDIR += dosbox-staging
     SUBDIR += dtcyber
-    SUBDIR += dynagen
     SUBDIR += dynamips-community
     SUBDIR += e-uae
     SUBDIR += edumips64
@@ -169,7 +168,6 @@
     SUBDIR += wine-mono
     SUBDIR += wine-mono-devel
     SUBDIR += winetricks
-    SUBDIR += wxmupen64plus
     SUBDIR += x16-emulator
     SUBDIR += x16-rom
     SUBDIR += x48

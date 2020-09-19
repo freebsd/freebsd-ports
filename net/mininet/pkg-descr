@@ -1,9 +1,0 @@
-Mininet creates a realistic virtual network, running real kernel, switch
-and application code, on a single machine (VM, cloud or native), in
-seconds, with a single command.
-
-Because you can easily interact with your network using the Mininet CLI
-(and API), customize it, share it with others, or deploy it on real
-hardware, Mininet is useful for development, teaching, and research.
-
-WWW: https://github.com/mininet/mininet

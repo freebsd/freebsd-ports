@@ -1,9 +1,0 @@
-WadcomBlog is a simple open-source static blog engine written in Python
-by Vlad Skvortsov and distributed under BSD license.
-It doesn't use any backend database but instead reads a set of plain i
-text files (in RFC2822 format) and creates a tree of interlinked HTML pages
-that may be then published. To update a blog one just needs to add a file
-to the source tree and run the command-line WadcomBlog script
-to regenerate the output.
-
-WWW: http://vss.73rus.com/wadcomblog/

@@ -192,9 +192,7 @@
     SUBDIR += mongodb42-tools
     SUBDIR += mongodb44
     SUBDIR += mroonga
-    SUBDIR += mtools-mongodb
     SUBDIR += mtop
-    SUBDIR += mydbf2mysql
     SUBDIR += mydumper
     SUBDIR += mysac
     SUBDIR += mysql-connector-c
@@ -229,7 +227,6 @@
     SUBDIR += nagios-check_redis
     SUBDIR += namazu2
     SUBDIR += neo4j
-    SUBDIR += ntdb
     SUBDIR += ocaml-dbm
     SUBDIR += ocaml-mysql
     SUBDIR += ocaml-sqlite3
@@ -575,7 +572,6 @@
     SUBDIR += pgdbf
     SUBDIR += pgespresso
     SUBDIR += pgfouine
-    SUBDIR += pgloader
     SUBDIR += pgloader3
     SUBDIR += pglogical
     SUBDIR += pgmetrics
@@ -592,7 +588,6 @@
     SUBDIR += pgsphere
     SUBDIR += pgtcl
     SUBDIR += pgtop
-    SUBDIR += pgtune
     SUBDIR += pguri
     SUBDIR += php-tarantool
     SUBDIR += php-xapian
@@ -651,8 +646,6 @@
     SUBDIR += postgresql-jdbc
     SUBDIR += postgresql-libpgeasy
     SUBDIR += postgresql-libpqxx
-    SUBDIR += postgresql-libpqxx3
-    SUBDIR += postgresql-libpqxx4
     SUBDIR += postgresql-mysql_fdw
     SUBDIR += postgresql-odbc
     SUBDIR += postgresql-ogr_fdw
@@ -806,7 +799,6 @@
     SUBDIR += py-sqlalchemy12
     SUBDIR += py-sqlalchemy13
     SUBDIR += py-sqlite3
-    SUBDIR += py-sqlite3dbm
     SUBDIR += py-sqlobject
     SUBDIR += py-sqlparse
     SUBDIR += py-sqlparse020
@@ -821,11 +813,9 @@
     SUBDIR += py-whisper
     SUBDIR += py-xapian
     SUBDIR += py-zodbpickle
-    SUBDIR += pydbx
     SUBDIR += pymongo
     SUBDIR += pypy-gdbm
     SUBDIR += pypy-sqlite3
-    SUBDIR += pyspatialite
     SUBDIR += qdbm
     SUBDIR += qdbm-plus
     SUBDIR += qof

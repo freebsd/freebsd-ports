@@ -1,4 +1,0 @@
-bbfreeze-loader provides binary dependencies for bbfreeze, utility to create
-standalone executables from Python scripts.
-
-WWW: https://pypi.org/project/bbfreeze-loader/

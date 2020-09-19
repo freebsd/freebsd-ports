@@ -145,7 +145,6 @@
     SUBDIR += docbook2mdoc
     SUBDIR += docbook2odf
     SUBDIR += docbookrx
-    SUBDIR += doclifter
     SUBDIR += docproj
     SUBDIR += dom4j
     SUBDIR += domc
@@ -271,7 +270,6 @@
     SUBDIR += hyphen
     SUBDIR += ia-aspell
     SUBDIR += ibus
-    SUBDIR += ibus-el
     SUBDIR += ibus-kmfl
     SUBDIR += ibus-m17n
     SUBDIR += ibus-table
@@ -970,7 +968,6 @@
     SUBDIR += p5-Version-Next
     SUBDIR += p5-Vroom
     SUBDIR += p5-WDDX
-    SUBDIR += p5-WWW-Google-SiteMap
     SUBDIR += p5-WWW-Wordnik-API
     SUBDIR += p5-WordNet-QueryData
     SUBDIR += p5-WordNet-Similarity
@@ -1199,7 +1196,6 @@
     SUBDIR += php74-xmlwriter
     SUBDIR += php74-xsl
     SUBDIR += pict
-    SUBDIR += plover
     SUBDIR += po4a
     SUBDIR += pod2mdoc
     SUBDIR += popup
@@ -1252,7 +1248,6 @@
     SUBDIR += py-elasticsearch6
     SUBDIR += py-empy
     SUBDIR += py-enchant
-    SUBDIR += py-esmre
     SUBDIR += py-et_xmlfile
     SUBDIR += py-fastavro
     SUBDIR += py-feedparser
@@ -1286,7 +1281,6 @@
     SUBDIR += py-langdetect
     SUBDIR += py-laserhammer
     SUBDIR += py-libxml2
-    SUBDIR += py-libxslt
     SUBDIR += py-license-expression
     SUBDIR += py-line-protocol-parser
     SUBDIR += py-m2r
@@ -1317,7 +1311,6 @@
     SUBDIR += py-parsimonious
     SUBDIR += py-parso
     SUBDIR += py-patiencediff
-    SUBDIR += py-pdfminer
     SUBDIR += py-pdfminer.six
     SUBDIR += py-pdfminer3k
     SUBDIR += py-pdfrw
@@ -1773,7 +1766,6 @@
     SUBDIR += tokyodystopia
     SUBDIR += tr-aspell
     SUBDIR += trang
-    SUBDIR += translate-toolkit
     SUBDIR += trdsql
     SUBDIR += ts-hunspell
     SUBDIR += tth
