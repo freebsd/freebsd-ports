@@ -11,6 +11,9 @@ COMMENT=	Secure JavaScript and TypeScript runtime
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Depends on expired devel/chromium-gn (py27)
+EXPIRATION_DATE=2020-12-31
+
 BUILD_DEPENDS=	binutils>0:devel/binutils \
 		gn:devel/chromium-gn \
 		libunwind>0:devel/libunwind
