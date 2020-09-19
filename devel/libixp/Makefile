@@ -3,17 +3,21 @@
 
 PORTNAME=	libixp
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://dl.suckless.org/libs/
 
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Standalone client/server 9P library
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/libixp/LICENSE
+
 USE_LDCONFIG=	yes
-CFLAGS+=	-I. -I${WRKSRC}/include -fPIC
-LDFLAGS+=	-L. -L${WRKSRC}/lib
 MAKE_ARGS=	PREFIX="${PREFIX}" CC="${CC} -c" LD="${CC}" \
 		CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
+CFLAGS+=	-I. -I${WRKSRC}/include -fPIC
+LDFLAGS+=	-L. -L${WRKSRC}/lib
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|\.a|.so|g; s|(AR)|(LD) -shared -fPIC -o|' \
