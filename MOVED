@@ -15453,3 +15453,4 @@ graphics/libgnomecanvas-reference||2020-09-19|Remove outdated reference document
 textproc/libxslt-reference||2020-09-19|Remove outdated reference documentation
 textproc/gtkspell-reference||2020-09-19|Remove outdated reference documentation
 textproc/libxml2-reference||2020-09-19|Remove outdated reference documentation
+x11-toolkits/gnomemm||2020-09-19|Remove metaport for non maintained gnome2 libraries
