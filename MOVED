@@ -15622,3 +15622,4 @@ x11-wm/compizconfig-python||2020-09-19|Has expired: Uses deprecated version of p
 x11-wm/fvwm-crystal||2020-09-19|Has expired: Uses deprecated version of python
 mail/opensmtpd-extras-queue-python||2020-09-19|Has expired: Uses deprecated version of python
 mail/opensmtpd-extras-scheduler-python||2020-09-19|Has expired: Uses deprecated version of python
+lang/python35|lang/python36|2020-09-19|Has expired: Deprecated upstream

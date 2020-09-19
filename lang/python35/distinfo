@@ -1,5 +1,0 @@
-TIMESTAMP = 1599542846
-SHA256 (python/Python-3.5.10.tar.xz) = 0f0fa8685c1dc1f1dacb0b4e7779796b90aef99dc1fa4967a71b9da7b57d4a28
-SIZE (python/Python-3.5.10.tar.xz) = 15385904
-SHA256 (python/f57cd8288dbe6aba99c057f37ad6d58f8db75350.patch) = 44340896504b297bbab06db0bb0a71ddf9f25bbe02ab3dcdfeec2772c957b69f
-SIZE (python/f57cd8288dbe6aba99c057f37ad6d58f8db75350.patch) = 2542
