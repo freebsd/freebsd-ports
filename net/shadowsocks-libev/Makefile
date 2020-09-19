@@ -3,7 +3,7 @@
 
 PORTNAME=	shadowsocks-libev
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.3.2
+DISTVERSION=	3.3.5
 PORTREVISION=	0
 CATEGORIES=	net
 
@@ -24,7 +24,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared
 USE_GITHUB=	yes
 GH_ACCOUNT=	shadowsocks
-GH_TUPLE=	shadowsocks:libbloom:7a9deb8:libbloom/libbloom \
+GH_TUPLE=	shadowsocks:libbloom:437e1ad:libbloom/libbloom \
 		shadowsocks:libcork:074e074:libcork/libcork \
 		shadowsocks:ipset:3ea7fe3:libipset/libipset
 INSTALL_TARGET=	install-strip
