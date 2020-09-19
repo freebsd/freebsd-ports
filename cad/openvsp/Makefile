@@ -13,7 +13,6 @@ LICENSE_NAME=	NASA Open Source Agreement version 1.3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BROKEN=		fails to link
 BROKEN_aarch64=		fails to compile: invokes x86 asm
 
 LIB_DEPENDS=	libdrm.so:graphics/libdrm \
@@ -56,7 +55,7 @@ USE_GNOME=	libxml2
 
 # See https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=230888
 .if ${OPSYS} == FreeBSD
-.if (${OSVERSION} < 1200000 || ${OSVERSION} >=1300000)
+.if (${OSVERSION} < 1104507) || (${OSVERSION} >= 1200000 && ${OSVERSION} < 1202000) || (${OSVERSION} >= 1300000 && ${OSVERSION} < 1300115)
 BROKEN=	undefined reference to __atomic_load
 .endif
 .endif
