@@ -790,7 +790,6 @@
     SUBDIR += proj
     SUBDIR += pstoedit
     SUBDIR += ptex
-    SUBDIR += py-openshadinglanguage
     SUBDIR += py-OWSLib
     SUBDIR += py-PyOpenGL
     SUBDIR += py-PyOpenGL-accelerate
@@ -842,6 +841,7 @@
     SUBDIR += py-opencolorio
     SUBDIR += py-opencv
     SUBDIR += py-openimageio
+    SUBDIR += py-openshadinglanguage
     SUBDIR += py-photocollage
     SUBDIR += py-piexif
     SUBDIR += py-pillow
