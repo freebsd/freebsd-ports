@@ -33,7 +33,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}certifi>=0.10:security/py-certifi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}kiwisolver>=1.0.0:math/py-kiwisolver@${PY_FLAVOR}
 
-USES=		compiler:c++11-lib gettext gnome localbase pkgconfig python shebangfix uniquefiles:dirs
+USES=		compiler:c++11-lib gettext gnome localbase pkgconfig python:3.6+ shebangfix uniquefiles:dirs
 USE_PYTHON=	distutils
 
 OPTIONS_DEFINE=		EXAMPLES \

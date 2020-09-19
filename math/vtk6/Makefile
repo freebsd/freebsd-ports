@@ -3,7 +3,7 @@
 
 PORTNAME=	vtk
 PORTVERSION=	6.2.0
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	math graphics
 MASTER_SITES=	http://www.vtk.org/files/release/${VTK_SHORT_VER}/
 PKGNAMESUFFIX=	6
@@ -173,7 +173,7 @@ CMAKE_ARGS+=	-DVTK_WRAP_PYTHON:BOOL=ON \
 		-DModule_vtkRenderingMatplotlib:BOOL=ON \
 		-DModule_vtkPythonInterpreter:BOOL=ON
 PLIST_SUB+=	PYTHON=""
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/matplotlib/__init__.py:math/py-matplotlib@${PY_FLAVOR}
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/matplotlib/__init__.py:math/py-matplotlib2@${PY_FLAVOR}
 .else
 CMAKE_ARGS+=	-DVTK_WRAP_PYTHON:BOOL=OFF
 PLIST_SUB+=	PYTHON="@comment "

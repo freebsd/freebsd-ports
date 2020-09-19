@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}bottleneck>=1.0:math/py-bottleneck@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}autograd>=1.2:math/py-autograd@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes

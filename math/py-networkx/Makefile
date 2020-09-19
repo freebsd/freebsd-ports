@@ -18,7 +18,7 @@ RUN_DEPENDS:=	${PYTHON_PKGNAMEPREFIX}decorator>=4.1.0:devel/py-decorator@${PY_FL
 #		${PY_SPHINX} \
 #		${PYTHON_PKGNAMEPREFIX}docutils>=0.12:textproc/py-docutils@${PY_FLAVOR}
 
-USES=		python shebangfix zip
+USES=		python:3.6+ shebangfix zip
 USE_PYTHON=	autoplist concurrent distutils
 SHEBANG_GLOB=	*.py
 NO_ARCH=	yes

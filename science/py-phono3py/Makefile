@@ -25,7 +25,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}phonopy>=1.13.2:science/py-phonopy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR}
 
-USES=		blaslapack:openblas localbase python
+USES=		blaslapack:openblas localbase python:3.6+
 USE_PYTHON=	distutils cython autoplist
 
 .include <bsd.port.mk>
