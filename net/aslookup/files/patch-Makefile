@@ -1,11 +1,42 @@
---- ./Makefile.orig	Wed Apr  5 05:36:20 2000
-+++ ./Makefile	Wed Nov  9 22:52:32 2005
-@@ -34,7 +34,7 @@
- # CFLAGS  = -DJPIXDB -DJPNICDB -DAPNICDB
- # CFLAGS  = -DRALOCAL -DJPNICDB -DAPNICDB 
- # CFLAGS  = -DJPNICDB -DAPNICDB -DLOG -DSOLARIS
--CFLAGS  = -DARINDB -DJPNICDB -DAPNICDB -DLOG -DDEBUG
-+CFLAGS  = -DARINDB -DJPNICDB -DAPNICDB 
+--- Makefile.orig	2009-09-20 11:00:57 UTC
++++ Makefile
+@@ -2,9 +2,9 @@
+ # Makefile,v 1.7 2005/12/07 02:57:18 kuniaki Exp
+ 
+ PROGS		= aslookup
+-VERSION		= beta0.13c
++VERSION		= beta0.13d
+ DISTNAME	= $(PROGS)-$(VERSION)
+-CVSTAG		= b013c
++CVSTAG		= b013d
+ CVS_COMMAND	= cvs
+ INSTALLCMD	= /usr/bin/install
+ 
+@@ -22,7 +22,7 @@ TARCMD	=/usr/bin/tar
+ SHELL	=/bin/sh
+ .SUFFIXES: .c .o
+ 
+-CC	= gcc
++CC	?= gcc
+ 
+ BINDIR	=/usr/local/bin
+ 
+@@ -34,12 +34,12 @@ MANDIR	=/usr/local/man/man1
+ # if you have radb mirror server (trawhois), you specify RALOCAL flag.
+ # Because aslookup will use local radb server.
+ # AND, If you are using solaris, Please add option "-DSOLARIS".
+-# CFLAGS  =
+-# CFLAGS  = -DJPIXDB -DJPNICDB -DAPNICDB -g -O
+-CFLAGS  = -DRALOCAL -DJPNICDB -DAPNICDB -g -O
+-# CFLAGS  = -DJPNICDB -DAPNICDB -DLOG -DSOLARIS -g -O
+-# CFLAGS  = -DARINDB -DJPNICDB -DAPNICDB -DLOG -DDEBUG -g -O
+-# CFLAGS  = -DARINDB -DJPNICDB -DAPNICDB -g -O
++# CFLAGS  +=
++# CFLAGS  += -DJPIXDB -DJPNICDB -DAPNICDB -g -O
++# CFLAGS  += -DRALOCAL -DJPNICDB -DAPNICDB -g -O
++# CFLAGS  += -DJPNICDB -DAPNICDB -DLOG -DSOLARIS -g -O
++# CFLAGS  += -DARINDB -DJPNICDB -DAPNICDB -DLOG -DDEBUG -g -O
++# CFLAGS  += -DARINDB -DJPNICDB -DAPNICDB -g -O
  INCDIR	= -I./
  
  # This line is for solaris.
