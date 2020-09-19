@@ -3,7 +3,7 @@
 
 PORTNAME=	scribus
 PORTVERSION=	1.5.5
-PORTREVISION=	18
+PORTREVISION=	19
 CATEGORIES=	print editors
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}${PKGNAMESUFFIX}/${PORTVERSION}/ \
 		http://www.scribus.net/downloads/${PORTVERSION}/
@@ -40,6 +40,7 @@ USES=		cmake compiler:gcc-c++11-lib desktop-file-utils dos2unix gnome \
 		jpeg pkgconfig qt:5 shared-mime-info ssl tar:xz
 USE_QT=		buildtools_build core declarative gui linguisttools_build \
 		network opengl printsupport qmake_build widgets xml
+DOS2UNIX_REGEX=	.*\.(cpp|h|txt)
 USE_GNOME=	libxml2
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
