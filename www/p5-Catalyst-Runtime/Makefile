@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Catalyst-Runtime
-PORTVERSION=	5.90126
+PORTVERSION=	5.90128
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -32,7 +32,7 @@ RUN_DEPENDS=	p5-CGI-Simple>=1.109:www/p5-CGI-Simple \
 		p5-JSON-MaybeXS>=1:converters/p5-JSON-MaybeXS \
 		p5-MRO-Compat>=0:devel/p5-MRO-Compat \
 		p5-Module-Pluggable>=4.7:devel/p5-Module-Pluggable \
-		p5-Moose>=2.1300:devel/p5-Moose \
+		p5-Moose>=2.1400,1:devel/p5-Moose \
 		p5-MooseX-Emulate-Class-Accessor-Fast>=0.00903:devel/p5-MooseX-Emulate-Class-Accessor-Fast \
 		p5-MooseX-Getopt>=0.48:devel/p5-MooseX-Getopt \
 		p5-MooseX-MethodAttributes>=0.24:devel/p5-MooseX-MethodAttributes \
