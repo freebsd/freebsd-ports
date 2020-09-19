@@ -1,0 +1,5 @@
+stegify is a simple command line tool capable of fully transparent hiding any
+file within an image or set of images. This technique is known as LSB (Least
+Significant Bit) steganography
+
+WWW: https://github.com/DimitarPetrov/stegify

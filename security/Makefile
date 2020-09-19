@@ -1212,6 +1212,7 @@
     SUBDIR += sst
     SUBDIR += starttls
     SUBDIR += steghide
+    SUBDIR += stegify
     SUBDIR += step-certificates
     SUBDIR += step-cli
     SUBDIR += stoken
