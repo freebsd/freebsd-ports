@@ -7,7 +7,7 @@ MAINTAINER=	pizzamig@FreeBSD.org
 COMMENT=	Gn meta build framework
 
 DEPRECATED=	Uses deprecated version of python
-EXPIRATION_DATE=	2020-09-15
+EXPIRATION_DATE=	2020-12-31
 
 MASTERDIR=	${.CURDIR}/../../www/chromium
 
