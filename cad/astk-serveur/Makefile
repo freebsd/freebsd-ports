@@ -16,7 +16,7 @@ COMMENT?=	Graphical interface for Code_Aster (server side)
 
 LICENSE=	GPLv2
 
-NOT_FOR_ARCHS=		armv6 armv7 i386 mips powerpc
+NOT_FOR_ARCHS=		armv6 armv7 i386 mips powerpc powerpcspe
 NOT_FOR_ARCHS_REASON=	ARG_MAX is too small for Code_Aster on 32 bits systems
 
 #-----------------------------------------------------------------------
