@@ -11,6 +11,10 @@ include/GL/glext.h
 %%GLX%%include/GL/glx_mangle.h
 %%GLX%%include/GL/glxext.h
 @comment include/GL/internal/dri_interface.h
+include/GLES/egl.h
+include/GLES/gl.h
+include/GLES/glext.h
+include/GLES/glplatform.h
 include/GLES2/gl2.h
 include/GLES2/gl2ext.h
 include/GLES2/gl2platform.h
@@ -28,6 +32,9 @@ lib/libEGL.so.1.0.0
 %%GLX%%lib/libGL.so
 %%GLX%%lib/libGL.so.1
 %%GLX%%lib/libGL.so.1.2.0
+lib/libGLESv1_CM.so
+lib/libGLESv1_CM.so.1
+lib/libGLESv1_CM.so.1.1.0
 lib/libGLESv2.so
 lib/libGLESv2.so.2
 lib/libGLESv2.so.2.0.0
@@ -41,5 +48,6 @@ lib/libglapi.so.0.0.0
 libdata/pkgconfig/egl.pc
 libdata/pkgconfig/gbm.pc
 %%GLX%%libdata/pkgconfig/gl.pc
+libdata/pkgconfig/glesv1_cm.pc
 libdata/pkgconfig/glesv2.pc
 @comment share/drirc.d/00-mesa-defaults.conf

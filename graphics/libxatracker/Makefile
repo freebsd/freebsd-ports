@@ -3,7 +3,7 @@
 
 PORTNAME=	libxatracker
 PORTVERSION=	${MESAVERSION}
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 
 COMMENT=	Mesa XA state tracker
@@ -28,6 +28,7 @@ MESON_ARGS+=	-Ddri-drivers="" \
 		-Dgallium-nine=false \
 		-Degl=false \
 		-Dgbm=false \
+		-Dgles1=false \
 		-Dgles2=false \
 		-Dglx=disabled \
 		-Dopengl=false \

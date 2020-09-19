@@ -106,6 +106,3 @@ MESON_ARGS+=	--native-file="${WRKSRC}/llvm.ini"
 LDFLAGS+=	-Wl,-rpath=${LOCALBASE}/llvm${LLVM_DEFAULT}/lib
 MESON_ARGS+=	-Dllvm=true
 
-# we don't care about GLes v1
-MESON_ARGS+=	-Dgles1=false
-
