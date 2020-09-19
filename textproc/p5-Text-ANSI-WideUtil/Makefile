@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Text-ANSI-WideUtil
-PORTVERSION=	0.22
+PORTVERSION=	0.230
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Text-ANSI-Util>=0.22:textproc/p5-Text-ANSI-Util \
+RUN_DEPENDS=	p5-Text-ANSI-Util>=0.19:textproc/p5-Text-ANSI-Util \
 		p5-Text-WideChar-Util>=0.100:textproc/p5-Text-WideChar-Util
 TEST_DEPENDS=	p5-Data-Dump>=0:devel/p5-Data-Dump
 
