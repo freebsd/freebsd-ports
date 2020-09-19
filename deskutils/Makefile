@@ -137,7 +137,6 @@
     SUBDIR += latte-dock
     SUBDIR += libkdepim
     SUBDIR += ljclive
-    SUBDIR += logjam
     SUBDIR += lookbook
     SUBDIR += lumina-archiver
     SUBDIR += lumina-calculator
