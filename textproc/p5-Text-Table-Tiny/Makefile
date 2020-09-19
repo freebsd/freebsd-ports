@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Text-Table-Tiny
-PORTVERSION=	1.01
+PORTVERSION=	1.02
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,8 +15,8 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Ref-Util>=0:devel/p5-Ref-Util \
-		p5-String-TtyLength>=0:textproc/p5-String-TtyLength
+RUN_DEPENDS=	p5-Ref-Util>=0.202:devel/p5-Ref-Util \
+		p5-String-TtyLength>=0.02:textproc/p5-String-TtyLength
 TEST_DEPENDS=	p5-Test-Fatal>=0:devel/p5-Test-Fatal
 
 USES=		perl5
