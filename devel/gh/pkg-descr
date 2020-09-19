@@ -1,10 +1,13 @@
-GitHub on the command line, and it's now available in beta.
+GitHub CLI brings GitHub to your terminal.
+
+It reduces context switching, helps you focus, and enables
+you to more easily script and create your own workflows. 
+
 It brings pull requests, issues, and other GitHub concepts
 to the terminal next to where you are already working with
 git and your code.
 
-While in beta, GitHub CLI is available for repos hosted on
-GitHub.com only. It currently does not support repositories
-hosted on GitHub Enterprise Server or other hosting providers.
+The release version supports GitHub Enterprise Server in
+addition to GitHub.com.
 
 WWW: https://cli.github.com
