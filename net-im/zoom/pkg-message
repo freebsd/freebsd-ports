@@ -22,6 +22,9 @@ In order to run Zoom you need:
    webcamd_enable="YES"
    webcamd_flags="-H"
 
+Zoom stores configuration values in ~/.config/zoomus.conf, some
+of which you can adjust.
+
 EOM
 }
 ]

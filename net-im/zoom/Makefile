@@ -2,6 +2,7 @@
 
 PORTNAME=	zoom
 DISTVERSION=	5.2.458699.0906
+PORTREVISION=	1
 CATEGORIES=	net-im net-p2p
 MASTER_SITES=	https://zoom.us/client/${DISTVERSION}/
 PKGNAMESUFFIX=	-video-conferencing-client
@@ -15,7 +16,7 @@ RUN_DEPENDS=	linux-c7-xcb-util-image>0:x11/linux-c7-xcb-util-image \
 		linux-c7-xcb-util>0:x11/linux-c7-xcb-util
 
 USES=		desktop-file-utils linux tar:xz
-USE_LINUX=	alsalib alsa-plugins-oss dbuslibs libglvnd xorglibs
+USE_LINUX=	alsalib alsa-plugins-oss atk cairo-gobject dbuslibs fontconfig freetype gdkpixbuf2 gtk3 libdrm libglvnd pango pulseaudio-libs xorglibs
 
 NO_BUILD=	yes
 
