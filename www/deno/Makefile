@@ -3,6 +3,7 @@
 PORTNAME=	deno
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4.1
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -11,11 +12,8 @@ COMMENT=	Secure JavaScript and TypeScript runtime
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-DEPRECATED=	Depends on expired devel/chromium-gn (py27)
-EXPIRATION_DATE=2020-12-31
-
 BUILD_DEPENDS=	binutils>0:devel/binutils \
-		gn:devel/chromium-gn \
+		gn:devel/gn \
 		libunwind>0:devel/libunwind
 
 .include <bsd.port.options.mk>
