@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://marcin.studio4plus.com/files/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johntdarrah@gmail.com
 COMMENT=	Automatic ZFS snapshot management tool
 
 USE_RUBY=	yes
