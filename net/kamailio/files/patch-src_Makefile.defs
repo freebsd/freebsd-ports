@@ -1,4 +1,4 @@
---- src/Makefile.defs.orig	2020-07-29 10:22:39 UTC
+--- src/Makefile.defs.orig	2020-09-01 08:11:08 UTC
 +++ src/Makefile.defs
 @@ -257,7 +257,7 @@ YACC := $(shell echo "$${YACC}")
  
@@ -16,9 +16,9 @@
 -	CC_NAME=gcc
 +	CC_NAME=clang
  	RPAREN=)
- 	CC_VER:=$(word 1,$(CC)) $(shell $(CC) - --version|head -n 1|\
+ 	CC_VER:=$(word 1,$(CC)) $(shell $(CC) - --version 2>/dev/null|head -n 1|\
  				sed  -e 's/([^$(RPAREN)]*)//g' \
-@@ -456,7 +456,7 @@ LIBDIR ?=
+@@ -458,7 +458,7 @@ LIBDIR ?=
  ifeq ($(LIBDIR),)
  ARCHBSZ= $(shell echo $(ARCH) | sed -e 's/.*64.*/64b/')
  ifeq ($(ARCHBSZ),64b)
@@ -27,18 +27,3 @@
  else
  	LIBDIR = lib
  endif
-@@ -1979,12 +1979,11 @@ ifeq ($(OS), freebsd)
- 	ifeq ($(RAW_SOCKS), yes)
- 		C_DEFS+= -DUSE_RAW_SOCKS
- 	endif
-+	LIBS= -lm   # resolv and dlopen is in libc
- 	ifneq ($(found_lock_method), yes)
- 		C_DEFS+= -DUSE_PTHREAD_MUTEX  # try pthread sems
- 		found_lock_method=yes
--		LIBS+= -pthread   #dlopen is in libc
--	else
--		LIBS=   #dlopen is in libc
-+		LIBS+= -pthread
- 	endif
- 	# check for ver >= 4.1
- 	ifeq ($(shell [ $(OSREL_N) -gt 4001 ] && echo has_kqueue), has_kqueue)
