@@ -1036,6 +1036,7 @@
     SUBDIR += tumble
     SUBDIR += tweeny
     SUBDIR += ufraw
+    SUBDIR += uniconvertor
     SUBDIR += unpaper
     SUBDIR += urho3d
     SUBDIR += urt
