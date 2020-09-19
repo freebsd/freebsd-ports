@@ -1574,6 +1574,7 @@
     SUBDIR += rubygem-loofah
     SUBDIR += rubygem-ltsv
     SUBDIR += rubygem-markaby
+    SUBDIR += rubygem-minima
     SUBDIR += rubygem-multi_xml
     SUBDIR += rubygem-nokogiri
     SUBDIR += rubygem-nokogiri-diff
