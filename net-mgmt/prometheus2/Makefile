@@ -2,7 +2,7 @@
 
 PORTNAME=	prometheus
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.20.0
+DISTVERSION=	2.21.0
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	dor.bsd@xm0.uk
@@ -61,11 +61,8 @@ LD_FLAG_STRING=		-s \
 
 GO_BUILDFLAGS=	-v -ldflags "${LD_FLAG_STRING}" -tags netgo,builtinassets
 
-# A tsdb binary already exists in databases/opentsdb. Rename ours to
-# avoid issues.
 GO_TARGET=	./cmd/prometheus \
-		./cmd/promtool \
-		./tsdb/cmd/tsdb:promtsdb
+		./cmd/promtool
 
 # Bring DISTINFO_FILE into scope so we can get the timestamp.
 .include <bsd.port.pre.mk>
