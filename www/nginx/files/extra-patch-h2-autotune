@@ -1,0 +1,449 @@
+diff -r 7015f26aef90 -r 1739da077a8e auto/modules
+--- auto/modules	Wed Jul 29 13:28:04 2020 +0300
++++ auto/modules	Wed Aug 26 15:51:41 2020 -0700
+@@ -420,6 +420,15 @@
+         ngx_module_libs=
+         ngx_module_link=$HTTP_V2
+ 
++        if [ $HTTP_V2 = YES -a $HTTP_V2_AUTOTUNE_UPLOAD = YES ]; then
++             have=NGX_HTTP_V2_AUTOTUNE_UPLOAD . auto/have
++
++             ngx_module_deps="$ngx_module_deps \
++                             src/http/v2/ngx_autotune_upload.h"
++             ngx_module_srcs="$ngx_module_srcs \
++                             src/http/v2/ngx_autotune_upload.c"
++        fi
++
+         . auto/module
+     fi
+ 
+diff -r 7015f26aef90 -r 1739da077a8e auto/options
+--- auto/options	Wed Jul 29 13:28:04 2020 +0300
++++ auto/options	Wed Aug 26 15:51:41 2020 -0700
+@@ -59,6 +59,7 @@
+ HTTP_GZIP=YES
+ HTTP_SSL=NO
+ HTTP_V2=NO
++HTTP_V2_AUTOTUNE_UPLOAD=NO
+ HTTP_SSI=YES
+ HTTP_REALIP=NO
+ HTTP_XSLT=NO
+@@ -224,6 +225,7 @@
+ 
+         --with-http_ssl_module)          HTTP_SSL=YES               ;;
+         --with-http_v2_module)           HTTP_V2=YES                ;;
++        --with-http_v2_autotune_upload)  HTTP_V2_AUTOTUNE_UPLOAD=YES;;
+         --with-http_realip_module)       HTTP_REALIP=YES            ;;
+         --with-http_addition_module)     HTTP_ADDITION=YES          ;;
+         --with-http_xslt_module)         HTTP_XSLT=YES              ;;
+diff -r 7015f26aef90 -r 1739da077a8e src/http/v2/ngx_autotune_upload.c
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ src/http/v2/ngx_autotune_upload.c	Wed Aug 26 15:51:41 2020 -0700
+@@ -0,0 +1,198 @@
++/*
++ * Copyright (C) 2020 Cloudflare, Inc.
++ */
++
++#include <ngx_http.h>
++#include <ngx_http_v2_module.h>
++#include <ngx_autotune_upload.h>
++
++static void *ngx_prealloc(ngx_pool_t *pool, void *p, size_t size);
++static void *ngx_realloc(void *oldp, size_t size, ngx_log_t *log);
++
++static ngx_int_t ngx_resize_buf(ngx_pool_t *pool, ngx_buf_t *buf, size_t nsize);
++
++
++static void *
++ngx_prealloc(ngx_pool_t *pool, void *p, size_t size)
++{
++    ngx_pool_large_t *l;
++    void *newp;
++
++    for (l = pool->large; l; l = l->next) {
++        if (p == l->alloc) {
++            ngx_log_debug1(NGX_LOG_DEBUG_ALLOC, pool->log, 0,
++                           "prealloc: %p", l->alloc);
++
++            newp = ngx_realloc(l->alloc, size, pool->log);
++            if (newp) {
++                l->alloc = newp;
++
++                return newp;
++            } else {
++                return NULL;
++           }
++        }
++    }
++
++    /* not found */
++    return NULL;
++}
++
++
++static void *
++ngx_realloc(void *oldp, size_t size, ngx_log_t *log)
++{
++    void *newp;
++
++    newp = realloc(oldp, size);
++    if (newp == NULL) {
++        ngx_log_error(NGX_LOG_EMERG, log, ngx_errno,
++                      "realloc(%uz) failed", size);
++    }
++
++    ngx_log_debug2(NGX_LOG_DEBUG_ALLOC, log, 0, "realloc: %p:%uz", newp, size);
++
++    return newp;
++}
++
++
++/* resize the buffer to the new size */
++static ngx_int_t
++ngx_resize_buf(ngx_pool_t *pool, ngx_buf_t *buf, size_t nsize)
++{
++    void *nbuf = ngx_prealloc(pool, buf->start, nsize);
++
++    if (!nbuf) {
++        return NGX_ERROR;
++    }
++
++    /* if buf->start is moved to a new location */
++    if (nbuf != buf->start) {
++        buf->pos = (u_char *)nbuf + (buf->pos - buf->start);
++        buf->last = (u_char *)nbuf + (buf->last - buf->start);
++    }
++
++    /* resize buffer */
++    buf->start = nbuf;
++    buf->end = (u_char *)nbuf + nsize;
++
++    return NGX_OK;
++}
++
++
++/* get current TCP RTT (ms) of the connection */
++ngx_int_t
++ngx_tcp_rtt_ms(int fd)
++{
++#if (NGX_HAVE_TCP_INFO)
++    struct tcp_info  ti;
++    socklen_t        len;
++
++    len = sizeof(struct tcp_info);
++    if (getsockopt(fd, IPPROTO_TCP, TCP_INFO, &ti, &len) == 0) {
++        return ti.tcpi_rtt / 1000;
++    }
++#endif
++
++    return NGX_ERROR;
++}
++
++
++/* return current timestamp (ms) */
++ngx_msec_int_t
++ngx_timestamp_ms()
++{
++    ngx_time_t *tp = ngx_timeofday();
++
++    return tp->sec * 1000 + tp->msec;
++}
++
++
++/*
++ * double the buffer size based on the current BDP.
++ * returns the new window size if resized.
++ * returns the current window size if not resized.
++ * if resizing fails, returns 0.
++ */
++size_t
++ngx_autotune_client_body_buffer(ngx_http_request_t *r,
++    size_t window)
++{
++    ngx_buf_t                 *buf;
++    ngx_http_v2_stream_t      *stream;
++    ngx_msec_int_t             ts_now;
++    ngx_http_v2_loc_conf_t    *h2lcf;
++    size_t                     max_window;
++
++    h2lcf = ngx_http_get_module_loc_conf(r, ngx_http_v2_module);
++    max_window = h2lcf->max_client_body_buffer_size;
++
++    /* no autotuning configured */
++    if (!max_window) {
++        return window;
++    }
++
++    /* if max_window is smaller than the current window, do nothing */
++    if (window >= max_window) {
++        return window;
++    }
++
++    stream = r->stream;
++    buf = r->request_body->buf;
++
++    /* if rtt is not available, do nothing */
++    if (stream->rtt == NGX_ERROR) {
++        return window;
++    }
++
++    ts_now = ngx_timestamp_ms();
++
++    if (ts_now >= (stream->ts_checkpoint + stream->rtt)) {
++        size_t cur_win = (buf->end - buf->start);
++        size_t new_win = ngx_min(cur_win * 2 , max_window);
++
++        /* if already on the max size, do nothing */
++        if (cur_win >= max_window) {
++            return window;
++        }
++
++        /* min rtt is 1ms to prevent BDP from becoming zero. */
++        ngx_uint_t rtt = ngx_max(stream->rtt, 1);
++
++        /*
++         * elapsed time (ms) from last checkpoint. mininum value is 1 to
++         * prevent from dividing by zero in BDP calculation
++         */
++        ngx_uint_t elapsed = ngx_max(ts_now - stream->ts_checkpoint, 1);
++
++        /* calculate BDP (bytes) = rtt * bw */
++        ngx_uint_t bdp = rtt * stream->bytes_body_read / elapsed;
++
++        ngx_log_debug4(NGX_LOG_DEBUG_HTTP, stream->connection->connection->log, 0,
++                       "http2 autotune sid:%ui rtt:%z bdp:%z win:%z",
++                       stream->node->id, stream->rtt, bdp, window);
++
++        stream->bytes_body_read = 0;
++        stream->ts_checkpoint = ts_now;
++
++        /*
++         * check if we need to bump the buffer size
++         * based on the heuristic condition
++         */
++        if (bdp > (window / 4)) {
++            if (ngx_resize_buf(r->pool, buf, new_win) != NGX_OK) {
++                return 0;
++            }
++
++            ngx_log_debug4(NGX_LOG_DEBUG_HTTP,
++                           stream->connection->connection->log, 0,
++                           "http2 autotune sid:%ui rtt:%z resized:%z->%z",
++                           stream->node->id, stream->rtt, window,
++                           window + (new_win - cur_win));
++
++            return window + (new_win - cur_win);
++        }
++    }
++
++    return window;
++}
+diff -r 7015f26aef90 -r 1739da077a8e src/http/v2/ngx_autotune_upload.h
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ src/http/v2/ngx_autotune_upload.h	Wed Aug 26 15:51:41 2020 -0700
+@@ -0,0 +1,25 @@
++/*
++ * Copyright (C) 2020 Cloudflare, Inc.
++ */
++
++#ifndef _NGX_AUTOTUNE_UPLOAD_H_INCLUDED_
++#define _NGX_AUTOTUNE_UPLOAD_H_INCLUDED_
++
++#include <ngx_core.h>
++
++
++/* the maximum size of the receiver window */
++#define NGX_HTTP_V2_MAX_CLIENT_BODY_BUFFER_SIZE (64*1024*1024)
++
++
++/* get current TCP RTT (ms) of the connection */
++ngx_int_t ngx_tcp_rtt_ms(int fd);
++
++/* return current timestamp (ms) */
++ngx_msec_int_t ngx_timestamp_ms();
++
++/* auto resize the buffer */
++size_t ngx_autotune_client_body_buffer(ngx_http_request_t *r, size_t window);
++
++
++#endif
+diff -r 7015f26aef90 -r 1739da077a8e src/http/v2/ngx_http_v2.c
+--- src/http/v2/ngx_http_v2.c	Wed Jul 29 13:28:04 2020 +0300
++++ src/http/v2/ngx_http_v2.c	Wed Aug 26 15:51:41 2020 -0700
+@@ -11,6 +11,10 @@
+ #include <ngx_http_v2_module.h>
+ 
+ 
++#if (NGX_HTTP_V2_AUTOTUNE_UPLOAD)
++#include <ngx_autotune_upload.h>
++#endif
++
+ typedef struct {
+     ngx_str_t           name;
+     ngx_uint_t          offset;
+@@ -1122,6 +1126,10 @@
+     pos += size;
+     h2c->state.length -= size;
+ 
++#if (NGX_HTTP_V2_AUTOTUNE_UPLOAD)
++    stream->bytes_body_read += size;
++#endif
++
+     if (h2c->state.length) {
+         return ngx_http_v2_state_save(h2c, pos, end,
+                                       ngx_http_v2_state_read_data);
+@@ -3211,6 +3219,12 @@
+ 
+     h2c->priority_limit += h2scf->concurrent_streams;
+ 
++#if (NGX_HTTP_V2_AUTOTUNE_UPLOAD)
++    stream->bytes_body_read = 0;
++    stream->rtt = ngx_tcp_rtt_ms(r->connection->fd);
++    stream->ts_checkpoint = ngx_timestamp_ms();
++#endif
++
+     return stream;
+ }
+ 
+@@ -4323,6 +4337,15 @@
+         return NGX_AGAIN;
+     }
+ 
++#if (NGX_HTTP_V2_AUTOTUNE_UPLOAD)
++    window = ngx_autotune_client_body_buffer(r, window);
++
++    /* resizing failed */
++    if (!window) {
++        return NGX_HTTP_INTERNAL_SERVER_ERROR;
++    }
++#endif
++
+     if (ngx_http_v2_send_window_update(h2c, stream->node->id,
+                                        window - stream->recv_window)
+         == NGX_ERROR)
+diff -r 7015f26aef90 -r 1739da077a8e src/http/v2/ngx_http_v2.h
+--- src/http/v2/ngx_http_v2.h	Wed Jul 29 13:28:04 2020 +0300
++++ src/http/v2/ngx_http_v2.h	Wed Aug 26 15:51:41 2020 -0700
+@@ -210,6 +210,15 @@
+ 
+     ngx_pool_t                      *pool;
+ 
++#if (NGX_HTTP_V2_AUTOTUNE_UPLOAD)
++    /* how much client request body read */
++    ngx_uint_t                       bytes_body_read;
++    /* timestamp of next checkpoint */
++    ngx_msec_int_t                   ts_checkpoint;
++    /* rtt(ms) of the connection */
++    ngx_int_t                        rtt;
++#endif
++
+     unsigned                         waiting:1;
+     unsigned                         blocked:1;
+     unsigned                         exhausted:1;
+diff -r 7015f26aef90 -r 1739da077a8e src/http/v2/ngx_http_v2_module.c
+--- src/http/v2/ngx_http_v2_module.c	Wed Jul 29 13:28:04 2020 +0300
++++ src/http/v2/ngx_http_v2_module.c	Wed Aug 26 15:51:41 2020 -0700
+@@ -10,6 +10,9 @@
+ #include <ngx_http.h>
+ #include <ngx_http_v2_module.h>
+ 
++#if (NGX_HTTP_V2_AUTOTUNE_UPLOAD)
++#include <ngx_autotune_upload.h>
++#endif
+ 
+ static ngx_int_t ngx_http_v2_add_variables(ngx_conf_t *cf);
+ 
+@@ -38,6 +41,10 @@
+ static char *ngx_http_v2_chunk_size(ngx_conf_t *cf, void *post, void *data);
+ static char *ngx_http_v2_spdy_deprecated(ngx_conf_t *cf, ngx_command_t *cmd,
+     void *conf);
++#if (NGX_HTTP_V2_AUTOTUNE_UPLOAD)
++static char *ngx_http_v2_max_client_body_buffer_size(ngx_conf_t *cf, void *post,
++    void *data);
++#endif
+ 
+ 
+ static ngx_conf_post_t  ngx_http_v2_recv_buffer_size_post =
+@@ -50,6 +57,10 @@
+     { ngx_http_v2_streams_index_mask };
+ static ngx_conf_post_t  ngx_http_v2_chunk_size_post =
+     { ngx_http_v2_chunk_size };
++#if (NGX_HTTP_V2_AUTOTUNE_UPLOAD)
++static ngx_conf_post_t  ngx_http_v2_max_client_body_buffer_size_post =
++    { ngx_http_v2_max_client_body_buffer_size };
++#endif
+ 
+ 
+ static ngx_command_t  ngx_http_v2_commands[] = {
+@@ -208,6 +219,15 @@
+       0,
+       NULL },
+ 
++#if (NGX_HTTP_V2_AUTOTUNE_UPLOAD)
++    { ngx_string("http2_max_client_body_buffer_size"),
++      NGX_HTTP_MAIN_CONF|NGX_HTTP_SRV_CONF|NGX_HTTP_LOC_CONF|NGX_CONF_TAKE1,
++      ngx_conf_set_size_slot,
++      NGX_HTTP_LOC_CONF_OFFSET,
++      offsetof(ngx_http_v2_loc_conf_t, max_client_body_buffer_size),
++      &ngx_http_v2_max_client_body_buffer_size_post },
++#endif
++
+       ngx_null_command
+ };
+ 
+@@ -423,6 +443,10 @@
+     h2lcf->push_preload = NGX_CONF_UNSET;
+     h2lcf->push = NGX_CONF_UNSET;
+ 
++#if (NGX_HTTP_V2_AUTOTUNE_UPLOAD)
++    h2lcf->max_client_body_buffer_size = NGX_CONF_UNSET_SIZE;
++#endif
++
+     return h2lcf;
+ }
+ 
+@@ -443,6 +467,12 @@
+ 
+     ngx_conf_merge_value(conf->push_preload, prev->push_preload, 0);
+ 
++#if (NGX_HTTP_V2_AUTOTUNE_UPLOAD)
++    /* default is 0: no auto tuning */
++    ngx_conf_merge_size_value(conf->max_client_body_buffer_size,
++                              prev->max_client_body_buffer_size, 0);
++#endif
++
+     return NGX_CONF_OK;
+ }
+ 
+@@ -608,3 +638,19 @@
+ 
+     return NGX_CONF_OK;
+ }
++
++
++#if (NGX_HTTP_V2_AUTOTUNE_UPLOAD)
++static char *
++ngx_http_v2_max_client_body_buffer_size(ngx_conf_t *cf, void *post,
++    void *data)
++{
++    size_t *sp = data;
++
++    if (*sp > NGX_HTTP_V2_MAX_CLIENT_BODY_BUFFER_SIZE) {
++        *sp = NGX_HTTP_V2_MAX_CLIENT_BODY_BUFFER_SIZE;
++    }
++
++    return NGX_CONF_OK;
++}
++#endif
+diff -r 7015f26aef90 -r 1739da077a8e src/http/v2/ngx_http_v2_module.h
+--- src/http/v2/ngx_http_v2_module.h	Wed Jul 29 13:28:04 2020 +0300
++++ src/http/v2/ngx_http_v2_module.h	Wed Aug 26 15:51:41 2020 -0700
+@@ -41,6 +41,10 @@
+ 
+     ngx_flag_t                      push;
+     ngx_array_t                    *pushes;
++
++#if (NGX_HTTP_V2_AUTOTUNE_UPLOAD)
++    size_t                          max_client_body_buffer_size;
++#endif
+ } ngx_http_v2_loc_conf_t;

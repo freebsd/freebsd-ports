@@ -194,6 +194,10 @@ HTTP_VIDEO_THUMBEXTRACTOR_VARS=		DSO_EXTMODS+=vte
 HTTP_ZIP_GH_TUPLE=	rtm-ctrlz:mod_zip:cfd0be4:mod_zip
 HTTP_ZIP_VARS=		DSO_EXTMODS+=mod_zip
 
+HTTPV2_AUTOTUNE_IMPLIES=HTTPV2
+HTTPV2_AUTOTUNE_CONFIGURE_ON=	--with-http_v2_autotune_upload
+HTTPV2_AUTOTUNE_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-h2-autotune
+
 ICONV_IMPLIES=		DEVEL_KIT
 ICONV_USES=		iconv
 ICONV_GH_TUPLE=		calio:iconv-nginx-module:v0.14:iconv
