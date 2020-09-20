@@ -1,0 +1,7 @@
+Simple library to make working with STL files
+(and 3D objects in general) fast and easy.
+
+Due to all operations heavily relying on numpy this is one of the fastest
+STL editing libraries for Python available.
+
+WWW: https://github.com/WoLpH/numpy-stl

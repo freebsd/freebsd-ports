@@ -785,6 +785,7 @@
     SUBDIR += py-numexpr
     SUBDIR += py-numpoly
     SUBDIR += py-numpy
+    SUBDIR += py-numpy-stl
     SUBDIR += py-opt-einsum
     SUBDIR += py-or-tools
     SUBDIR += py-osqp
