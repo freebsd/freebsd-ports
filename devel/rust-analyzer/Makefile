@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rust-analyzer
-DISTVERSION=	2020-09-07
+DISTVERSION=	2020-09-14
 CATEGORIES=	devel
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -26,7 +26,7 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		base64-0.12.3 \
 		bitflags-1.2.1 \
 		byteorder-1.3.4 \
-		cargo_metadata-0.11.1 \
+		cargo_metadata-0.11.2 \
 		cc-1.0.59 \
 		cfg-if-0.1.10 \
 		chalk-derive-0.25.0 \
@@ -37,7 +37,7 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		cloudabi-0.1.0 \
 		cmake-0.1.44 \
 		crc32fast-1.2.0 \
-		crossbeam-channel-0.4.3 \
+		crossbeam-channel-0.4.4 \
 		crossbeam-deque-0.7.3 \
 		crossbeam-epoch-0.8.2 \
 		crossbeam-utils-0.7.2 \
@@ -58,12 +58,12 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		fuchsia-zircon-sys-0.3.3 \
 		gimli-0.22.0 \
 		goblin-0.2.3 \
-		hashbrown-0.8.2 \
+		hashbrown-0.9.0 \
 		heck-0.3.1 \
 		hermit-abi-0.1.15 \
 		home-0.5.3 \
 		idna-0.2.0 \
-		indexmap-1.5.2 \
+		indexmap-1.6.0 \
 		inotify-0.8.3 \
 		inotify-sys-0.1.3 \
 		instant-0.1.6 \
@@ -74,7 +74,7 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		kernel32-sys-0.2.2 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
-		libc-0.2.76 \
+		libc-0.2.77 \
 		libloading-0.6.3 \
 		libmimalloc-sys-0.1.16 \
 		lock_api-0.4.1 \
@@ -88,11 +88,11 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		memmap-0.7.0 \
 		memoffset-0.5.5 \
 		mimalloc-0.1.20 \
-		miniz_oxide-0.4.1 \
+		miniz_oxide-0.4.2 \
 		mio-0.6.22 \
 		mio-extras-2.0.6 \
 		miow-0.2.1 \
-		net2-0.2.34 \
+		net2-0.2.35 \
 		notify-5.0.0-pre.3 \
 		num-integer-0.1.43 \
 		num-traits-0.2.12 \
@@ -108,7 +108,7 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		petgraph-0.5.1 \
 		pico-args-0.3.4 \
 		plain-0.2.3 \
-		proc-macro2-1.0.20 \
+		proc-macro2-1.0.21 \
 		pulldown-cmark-0.7.2 \
 		pulldown-cmark-to-cmark-5.0.0 \
 		quote-1.0.7 \
@@ -132,15 +132,15 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		scroll_derive-0.10.2 \
 		semver-0.10.0 \
 		semver-parser-0.7.0 \
-		serde-1.0.115 \
-		serde_derive-1.0.115 \
+		serde-1.0.116 \
+		serde_derive-1.0.116 \
 		serde_json-1.0.57 \
 		serde_repr-0.1.6 \
 		sharded-slab-0.0.9 \
 		slab-0.4.2 \
 		smallvec-1.4.2 \
 		smol_str-0.1.16 \
-		syn-1.0.39 \
+		syn-1.0.40 \
 		synstructure-0.12.4 \
 		termcolor-1.1.0 \
 		text-size-1.0.0 \
@@ -151,10 +151,10 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		tinyvec-0.3.4 \
 		tracing-0.1.19 \
 		tracing-attributes-0.1.11 \
-		tracing-core-0.1.15 \
+		tracing-core-0.1.16 \
 		tracing-log-0.1.1 \
-		tracing-serde-0.1.1 \
-		tracing-subscriber-0.2.11 \
+		tracing-serde-0.1.2 \
+		tracing-subscriber-0.2.12 \
 		tracing-tree-0.1.5 \
 		ungrammar-1.1.4 \
 		unicase-2.6.0 \
