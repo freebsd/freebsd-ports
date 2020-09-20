@@ -76,6 +76,7 @@ share/metainfo/photoflow.appdata.xml
 %%DATADIR%%/icons-inverted/edit_inactive.svg
 %%DATADIR%%/icons-inverted/expand.png
 %%DATADIR%%/icons-inverted/expand.svg
+%%DATADIR%%/icons-inverted/flash.svg
 %%DATADIR%%/icons-inverted/gimp-layers.png
 %%DATADIR%%/icons-inverted/group.png
 %%DATADIR%%/icons-inverted/group.svg

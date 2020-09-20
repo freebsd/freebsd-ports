@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	photoflow
-DISTVERSION=	0.2.8-1398
-PORTREVISION=	2
+DISTVERSION=	0.2.8.20200828
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,6 +14,10 @@ BROKEN_i386=	see https://github.com/aferrero2707/PhotoFlow/issues/192
 
 LIB_DEPENDS=	libexiv2.so:graphics/exiv2 \
 		libfftw3.so:math/fftw3 \
+		libfftw3f.so:math/fftw3-float \
+		libiptcdata.so:graphics/libiptcdata \
+		libIex.so:graphics/ilmbase \
+		libIlmImf.so:graphics/openexr \
 		liblcms2.so:graphics/lcms2 \
 		liblensfun.so:graphics/lensfun \
 		libtiff.so:graphics/tiff \
@@ -25,7 +28,7 @@ USES=		cmake compiler:c++11-lang desktop-file-utils gettext gnome jpeg pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	aferrero2707
 GH_PROJECT=	PhotoFlow
-GH_TAGNAME=	d92c3989
+GH_TAGNAME=	8472024f
 USE_GNOME=	atkmm cairomm glib20 glibmm gtk20 gtkmm24 libsigc++20 pangomm
 
 CMAKE_OFF=	BUNDLED_LENSFUN
