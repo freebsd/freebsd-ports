@@ -3,8 +3,7 @@
 
 PORTNAME=	openimageio
 DISTVERSIONPREFIX=	Release-
-DISTVERSION=	2.1.15.0
-PORTREVISION=	6
+DISTVERSION=	2.2.6.1
 CATEGORIES?=	graphics multimedia
 
 MAINTAINER?=	FreeBSD@Shaneware.biz
@@ -15,29 +14,26 @@ LICENSE=	BSD3CLAUSE
 BUILD_DEPENDS=	${LOCALBASE}/include/tsl/robin_map.h:devel/robin-map
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libfmt.so:devel/libfmt \
+		libhdf5.so:science/hdf5 \
 		libheif.so:graphics/libheif \
 		libImath.so:graphics/ilmbase \
 		libIlmImf.so:graphics/openexr \
 		libpng.so:graphics/png \
 		libsquish.so:graphics/squish \
 		libtiff.so:graphics/tiff \
-		libwebp.so:graphics/webp \
-		libhdf5.so:science/hdf5
+		libwebp.so:graphics/webp
 
 USES=		cmake jpeg compiler:c++11-lib iconv:wchar_t
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenImageIO
 GH_PROJECT=	oiio
 
-# fbm also installs bin/idiff
-CONFLICTS=	fbm-[0-9]*
-
 CMAKE_OFF=	BUILDSTATIC INSTALL_FONTS LINKSTATIC NOTHREADS \
 		STOP_ON_WARNING USE_OPENSSL
 
 OPTIONS_DEFINE=		DICOM DOCS FFMPEG FREETYPE GIF IMAGEVIEWER OCIO \
-			OPENCV OPENJPEG RAW TBB TEST TOOLS VDB
-OPTIONS_DEFAULT=	DICOM FREETYPE GIF OCIO OPENJPEG TOOLS
+			OPENCV OPENJPEG PTEX RAW TBB TEST TOOLS VDB
+OPTIONS_DEFAULT=	DICOM FREETYPE GIF OCIO OPENJPEG PTEX TOOLS
 OPTIONS_SUB=		yes
 
 DOCS_CMAKE_BOOL=	INSTALL_DOCS
@@ -77,6 +73,9 @@ OPENCV_LIB_DEPENDS=	libopencv_highgui.so:graphics/opencv \
 OPENJPEG_CMAKE_BOOL=	USE_OPENJPEG
 OPENJPEG_LIB_DEPENDS=	libopenjp2.so:graphics/openjpeg
 
+PTEX_DESC=		ptex support
+PTEX_LIB_DEPENDS=	libPtex.so:graphics/ptex
+
 RAW_CMAKE_BOOL=		USE_LIBRAW
 RAW_LIB_DEPENDS=	libraw_r.so:graphics/libraw
 
@@ -97,17 +96,21 @@ VDB_LIB_DEPENDS=	libopenvdb.so:misc/openvdb
 # for LIBVERS we want the first three digits
 PLIST_SUB+=	LIBVERS=${DISTVERSION:C/([0-9]*)\.([0-9]*)\.([0-9]*)(.*)/\1.\2.\3/}
 
+post-patch:
+	@${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE}," ${WRKSRC}/src/cmake/modules/FindPTex.cmake
+
 .include <bsd.port.options.mk>
 
 .if ${SLAVE_PORT} == yes
-BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pybind11>0:devel/py-pybind11@${PY_FLAVOR}
+BUILD_DEPENDS+=	${PREFIX}/share/cmake/pybind11/pybind11Config.cmake:devel/pybind11
 LIB_DEPENDS+=	libOpenImageIO.so:graphics/openimageio
 PLIST=		${PKGDIR}/pkg-plist-pybind
 USES+=		python
 USE_PYTHON=	flavors
 CMAKE_ON+=	USE_PYTHON
-CMAKE_ARGS+=	-DPYTHON_VERSION:STRING=${PYTHON_VER} \
-		-DPYBIND11_INCLUDE_DIR:STRING="${PYTHONPREFIX_INCLUDEDIR}"
+# we don't need the apps built - only libs.
+CMAKE_OFF+=	USE_QT USE_OPENGL OIIO_BUILD_TOOLS OIIO_BUILD_TESTS
+CMAKE_ARGS+=	-DPYTHON_VERSION:STRING=${PYTHON_VER}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
@@ -117,9 +120,9 @@ USE_LDCONFIG=	yes
 CMAKE_OFF+=	USE_PYTHON
 
 post-install:
-	${LN} -sf libOpenImageIO.so.2.1 \
+	${LN} -sf libOpenImageIO.so.2.2 \
 		${STAGEDIR}${PREFIX}/lib/libOpenImageIO.so.2
-	${LN} -sf libOpenImageIO_Util.so.2.1 \
+	${LN} -sf libOpenImageIO_Util.so.2.2 \
 		${STAGEDIR}${PREFIX}/lib/libOpenImageIO_Util.so.2
 
 do-test-TEST-on:
