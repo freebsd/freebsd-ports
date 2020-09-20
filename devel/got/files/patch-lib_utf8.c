@@ -1,3 +1,4 @@
+XXX remove after 0.39
 --- lib/utf8.c.orig	2020-09-10 16:01:39 UTC
 +++ lib/utf8.c
 @@ -15,6 +15,8 @@
