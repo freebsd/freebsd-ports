@@ -19,7 +19,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	zrythm
 USE_LDCONFIG=	yes
 
-MESON_ARGS=	-Dbuild-tests=false
+MESON_ARGS=	-Dtests=false
 
 PLIST_FILES=	bin/audec \
 		include/audec/audec.h \
