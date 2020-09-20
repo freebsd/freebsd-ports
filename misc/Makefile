@@ -215,6 +215,7 @@
     SUBDIR += libpostal
     SUBDIR += libpredict
     SUBDIR += libpri
+    SUBDIR += libsolv
     SUBDIR += libsupertone
     SUBDIR += libsweep-lidar
     SUBDIR += libutf

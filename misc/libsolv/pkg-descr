@@ -1,0 +1,15 @@
+This is libsolv, a free package dependency solver using a satisfiability
+algorithm.
+
+The code is based on two major, but independent, blocks:
+1. Using a dictionary approach to store and retrieve package and dependency
+   information in a fast and space efficient manner.
+2. Using satisfiability, a well known and researched topic, for resolving
+   package dependencies.
+
+The sat-solver code has been written to aim for the newest packages, record the
+decision tree to provide introspection, and also allows to provide the user with
+suggestions on how to deal with unsolvable problems. It also takes advantage of
+the repository storage to minimize memory usage.
+
+WWW: https://github.com/rpm-software-management/libsolv
