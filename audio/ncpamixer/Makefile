@@ -19,7 +19,7 @@ GH_ACCOUNT=	fulhax
 
 WRKSRC_SUBDIR=	src
 
-CFLAGS+=	-I/usr/local/include/ncurses # USES=ncurses:port fails to add this
+CFLAGS+=	-I${LOCALBASE}/include/ncurses # USES=ncurses:port fails to add this
 
 PLIST_FILES=	bin/${PORTNAME}
 
