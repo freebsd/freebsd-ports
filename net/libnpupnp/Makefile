@@ -18,7 +18,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libexpat.so:textproc/expat2 \
 		libmicrohttpd.so:www/libmicrohttpd
 
-USES=		autoreconf libtool localbase pkgconfig
+USES=		autoreconf compiler:c++11-lang libtool localbase pkgconfig
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
