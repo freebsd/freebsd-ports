@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	spoofer
-PORTVERSION=	1.4.5
-PORTREVISION=	6
+DISTVERSION=	1.4.6
 CATEGORIES=	net
 MASTER_SITES=	https://www.caida.org/projects/spoofer/downloads/
 

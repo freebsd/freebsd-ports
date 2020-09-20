@@ -2,4 +2,4 @@ Spoofer helps the CAIDA Spoofer Project better understand the current state of
 filtering in the Internet. It attempts to send a series of spoofed UDP packets
 to a central server which logs and summarizes the results.
 
-WWW: https://spoofer.caida.org/
+WWW: https://www.caida.org/projects/spoofer/
