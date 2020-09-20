@@ -12,9 +12,10 @@ LICENSE=	APACHE20
 
 BROKEN_i386=	always_inline function '_mm_set1_ps' requires target feature 'sse', but would be inlined into function 'Vec4' that is compiled without support for 'sse'
 
-BUILD_DEPENDS=	bash:shells/bash
+BUILD_DEPENDS=	bash:shells/bash \
+		flatc:devel/flatbuffers
 
-USES=		cmake compiler:c++11-lang shebangfix
+USES=		cmake compiler:c++11-lang localbase shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	alibaba
 GH_PROJECT=	MNN
@@ -49,7 +50,7 @@ CMAKE_ARGS+=	-DMNN_USE_AVX:BOOL=OFF \
 .endif
 
 pre-build: # https://github.com/alibaba/MNN/issues/648
-	@cd ${WRKSRC}/schema && ./generate.sh
+	@cd ${WRKSRC}/schema && FREEBSD_FLATC=${LOCALBASE}/bin/flatc ./generate.sh
 
 do-install-APPS-on:
 .for f in	MNNConvert MNNV2Basic.out mobilenetTest.out backendTest.out testModel.out testModelWithDescrisbe.out getPerformance.out checkInvalidValue.out timeProfile.out quantized.out \
