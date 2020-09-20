@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/../LICENSE
 
 LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 
-USES=		cmake ncurses:port
+USES=		cmake compiler:c++17-lang ncurses:port
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	fulhax
