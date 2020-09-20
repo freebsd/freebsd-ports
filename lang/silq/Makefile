@@ -5,7 +5,7 @@ PORTVERSION=	20200919
 CATEGORIES=	lang math science
 
 MAINTAINER=	se@FreeBSD.org
-COMMENT=	Silq from ETH Zürich
+COMMENT=	Silq from ETH Zuerich
 
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE
