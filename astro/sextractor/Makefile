@@ -3,13 +3,16 @@
 
 PORTNAME=	sextractor
 PORTVERSION=	2.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro
 MASTER_SITES=	ftp://ftp.iap.fr/pub/from_users/bertin/sextractor/ \
 		http://download.gna.org/kanicule/freebsd/distfiles/
 
 MAINTAINER=	mathias@monnerville.com
 COMMENT=	Catalogue of objects builder from astronomical images
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 USES=		gmake
