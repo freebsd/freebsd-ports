@@ -94,6 +94,21 @@
 /%%KMODDIR%%/amdgpu_navi10_sos_bin.ko
 /%%KMODDIR%%/amdgpu_navi10_ta_bin.ko
 /%%KMODDIR%%/amdgpu_navi10_vcn_bin.ko
+/%%KMODDIR%%/amdgpu_navi12_asd_bin.ko
+/%%KMODDIR%%/amdgpu_navi12_ce_bin.ko
+/%%KMODDIR%%/amdgpu_navi12_dmcu_bin.ko
+/%%KMODDIR%%/amdgpu_navi12_gpu_info_bin.ko
+/%%KMODDIR%%/amdgpu_navi12_me_bin.ko
+/%%KMODDIR%%/amdgpu_navi12_mec2_bin.ko
+/%%KMODDIR%%/amdgpu_navi12_mec_bin.ko
+/%%KMODDIR%%/amdgpu_navi12_pfp_bin.ko
+/%%KMODDIR%%/amdgpu_navi12_rlc_bin.ko
+/%%KMODDIR%%/amdgpu_navi12_sdma1_bin.ko
+/%%KMODDIR%%/amdgpu_navi12_sdma_bin.ko
+/%%KMODDIR%%/amdgpu_navi12_smc_bin.ko
+/%%KMODDIR%%/amdgpu_navi12_sos_bin.ko
+/%%KMODDIR%%/amdgpu_navi12_ta_bin.ko
+/%%KMODDIR%%/amdgpu_navi12_vcn_bin.ko
 /%%KMODDIR%%/amdgpu_navi14_asd_bin.ko
 /%%KMODDIR%%/amdgpu_navi14_ce_bin.ko
 /%%KMODDIR%%/amdgpu_navi14_ce_wks_bin.ko
@@ -120,6 +135,7 @@
 /%%KMODDIR%%/amdgpu_oland_pfp_bin.ko
 /%%KMODDIR%%/amdgpu_oland_rlc_bin.ko
 /%%KMODDIR%%/amdgpu_oland_smc_bin.ko
+/%%KMODDIR%%/amdgpu_oland_uvd_bin.ko
 /%%KMODDIR%%/amdgpu_picasso_asd_bin.ko
 /%%KMODDIR%%/amdgpu_picasso_ce_bin.ko
 /%%KMODDIR%%/amdgpu_picasso_gpu_info_bin.ko
@@ -139,6 +155,7 @@
 /%%KMODDIR%%/amdgpu_pitcairn_pfp_bin.ko
 /%%KMODDIR%%/amdgpu_pitcairn_rlc_bin.ko
 /%%KMODDIR%%/amdgpu_pitcairn_smc_bin.ko
+/%%KMODDIR%%/amdgpu_pitcairn_uvd_bin.ko
 /%%KMODDIR%%/amdgpu_polaris10_ce_2_bin.ko
 /%%KMODDIR%%/amdgpu_polaris10_ce_bin.ko
 /%%KMODDIR%%/amdgpu_polaris10_k2_smc_bin.ko
@@ -251,6 +268,7 @@
 /%%KMODDIR%%/amdgpu_tahiti_pfp_bin.ko
 /%%KMODDIR%%/amdgpu_tahiti_rlc_bin.ko
 /%%KMODDIR%%/amdgpu_tahiti_smc_bin.ko
+/%%KMODDIR%%/amdgpu_tahiti_uvd_bin.ko
 /%%KMODDIR%%/amdgpu_tonga_ce_bin.ko
 /%%KMODDIR%%/amdgpu_tonga_k_smc_bin.ko
 /%%KMODDIR%%/amdgpu_tonga_mc_bin.ko
@@ -315,6 +333,7 @@
 /%%KMODDIR%%/amdgpu_vega20_sdma_bin.ko
 /%%KMODDIR%%/amdgpu_vega20_smc_bin.ko
 /%%KMODDIR%%/amdgpu_vega20_sos_bin.ko
+/%%KMODDIR%%/amdgpu_vega20_ta_bin.ko
 /%%KMODDIR%%/amdgpu_vega20_uvd_bin.ko
 /%%KMODDIR%%/amdgpu_vega20_vce_bin.ko
 /%%KMODDIR%%/amdgpu_vegam_ce_bin.ko
@@ -335,6 +354,7 @@
 /%%KMODDIR%%/amdgpu_verde_pfp_bin.ko
 /%%KMODDIR%%/amdgpu_verde_rlc_bin.ko
 /%%KMODDIR%%/amdgpu_verde_smc_bin.ko
+/%%KMODDIR%%/amdgpu_verde_uvd_bin.ko
 /%%KMODDIR%%/i915_bxt_dmc_ver1_07_bin.ko
 /%%KMODDIR%%/i915_bxt_guc_ver8_7_bin.ko
 /%%KMODDIR%%/i915_bxt_huc_ver01_07_bin.ko
