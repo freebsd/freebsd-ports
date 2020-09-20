@@ -18,11 +18,6 @@ TEST_DEPENDS=	p5-Test-Pod>=1:devel/p5-Test-Pod
 USES=		perl5
 USE_PERL5=	configure
 
-OPTIONS_DEFINE=	LZMALIB
-LZMALIB_DESC=	Use archivers/lzmalia instead of liblzma in base
-
-LZMALIB_LIB_DEPENDS=	liblzma.so.1:archivers/lzmalib
-
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Compress/Raw/Lzma/Lzma.so
 
