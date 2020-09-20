@@ -1,0 +1,12 @@
+--- tool/Makefile.orig	2020-08-31 20:15:50 UTC
++++ tool/Makefile
+@@ -6,7 +6,8 @@ SQ	?= $(CARGO_TARGET_DIR)/debug/sq
+ 
+ # Tools.
+ CARGO	?= cargo
+-ifeq ($(shell uname -s), Darwin)
++
++ifneq ($(filter Darwin FreeBSD,$(shell uname -s)),"")
+ 	INSTALL		?= ginstall
+ else
+ 	INSTALL		?= install

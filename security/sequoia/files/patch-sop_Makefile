@@ -1,0 +1,12 @@
+--- sop/Makefile.orig	2020-08-31 20:14:59 UTC
++++ sop/Makefile
+@@ -6,7 +6,8 @@ SOP			?= $(CARGO_TARGET_DIR)/debug/sqop
+ 
+ # Tools.
+ CARGO	?= cargo
+-ifeq ($(shell uname -s), Darwin)
++
++ifneq ($(filter Darwin FreeBSD,$(shell uname -s)),"")
+ 	INSTALL		?= ginstall
+ else
+ 	INSTALL		?= install

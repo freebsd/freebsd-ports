@@ -1,0 +1,11 @@
+--- ffi/Makefile.orig	2020-08-31 20:13:38 UTC
++++ ffi/Makefile
+@@ -20,7 +20,7 @@ else
+ endif
+ 
+ # Tools.
+-ifeq ($(shell uname -s), Darwin)
++ifneq ($(filter Darwin FreeBSD,$(shell uname -s)),"")
+ 	INSTALL		?= ginstall
+ else
+ 	INSTALL		?= install

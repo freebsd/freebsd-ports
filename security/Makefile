@@ -1154,6 +1154,7 @@
     SUBDIR += sectok
     SUBDIR += secure_delete
     SUBDIR += sedutil
+    SUBDIR += sequoia
     SUBDIR += setaudit
     SUBDIR += sha
     SUBDIR += sha1collisiondetection

@@ -1,0 +1,4 @@
+Sequoia is a cool new OpenPGP implementation. It consists of several crates,
+providing both a low-level and a high-level API for dealing with OpenPGP data.
+
+WWW: https://sequoia-pgp.org/

@@ -1,0 +1,11 @@
+prefix=%%PREFIX%%
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: Sequoia-OpenPGP
+Description: A modern OpenPGP implementation.
+URL: https://sequoia-pgp.org/
+Version: %%VERSION%%
+Requires.private: nettle
+Cflags: -I${includedir}
+Libs: -L${libdir} -lsequoia_openpgp_ffi
