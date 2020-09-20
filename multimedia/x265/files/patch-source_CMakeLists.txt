@@ -1,34 +1,32 @@
-===> Checking for items in STAGEDIR missing from pkg-plist
-Error: Orphaned: bin/libSvtHevcEnc.so
-Error: Orphaned: include/EbApi.h
-Error: Orphaned: include/EbErrorCodes.h
-Error: Orphaned: include/EbTime.h
-
-libx265.so.179: undefined reference to `compute_vmaf'
-
---- source/CMakeLists.txt.orig	2019-01-23 09:47:18 UTC
+--- source/CMakeLists.txt.orig	2020-06-06 08:18:40 UTC
 +++ source/CMakeLists.txt
-@@ -570,13 +570,6 @@ if(ENABLE_HDR10_PLUS)
+@@ -122,3 +122,4 @@
+     if(ENABLE_LIBVMAF)
+         add_definitions(-DENABLE_LIBVMAF)
++        include_directories(${VMAF_INCLUDE_DIR})
+     endif()
+@@ -592,12 +592,6 @@ if(ENABLE_HDR10_PLUS)
          ARCHIVE DESTINATION ${LIB_INSTALL_DIR})
  endif()
  
 -if(SVTHEVC_FOUND)
 -    install(FILES "${SVT_HEVC_INCLUDE_DIR}/EbApi.h" DESTINATION include)
 -    install(FILES "${SVT_HEVC_INCLUDE_DIR}/EbErrorCodes.h" DESTINATION include)
--    install(FILES "${SVT_HEVC_INCLUDE_DIR}/EbTime.h" DESTINATION include)
--    install(FILES "${SVT_HEVC_LIBRARY}" DESTINATION ${BIN_INSTALL_DIR})
+-    install(FILES "${SVT_HEVC_LIBRARY}" DESTINATION ${LIB_INSTALL_DIR})
 -endif()
 -
  install(FILES x265.h "${PROJECT_BINARY_DIR}/x265_config.h" DESTINATION include)
  if((WIN32 AND ENABLE_CLI) OR (WIN32 AND ENABLE_SHARED))
      if(MSVC_IDE)
-@@ -627,6 +620,9 @@ if(ENABLE_SHARED)
-     endif()
+@@ -649,7 +643,10 @@ if(ENABLE_SHARED)
      if(EXTRA_LIB)
          target_link_libraries(x265-shared ${EXTRA_LIB})
-+    endif()
-+    if(ENABLE_LIBVMAF)
-+        target_link_libraries(x265-shared ${VMAF})
      endif()
- 	 target_link_libraries(x265-shared ${PLATFORM_LIBS})
+-	 target_link_libraries(x265-shared ${PLATFORM_LIBS})
++    if(ENABLE_LIBVMAF)
++	target_link_libraries(x265-shared ${VMAF})
++    endif()
++	target_link_libraries(x265-shared ${PLATFORM_LIBS})
      if(SVTHEVC_FOUND)
+         target_link_libraries(x265-shared ${SVT_HEVC_LIBRARY})
+     endif(SVTHEVC_FOUND)
