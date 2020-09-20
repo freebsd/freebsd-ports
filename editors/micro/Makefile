@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	micro
-PORTVERSION=	2.0.6
+PORTVERSION=	2.0.7
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
 
@@ -12,11 +12,9 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	zyedidia
-GH_TUPLE=	\
-		blang:semver:v3.5.1:blang_semver/vendor/github.com/blang/semver \
+GH_TUPLE=	blang:semver:v3.5.1:blang_semver/vendor/github.com/blang/semver \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		dustin:go-humanize:v1.0.0:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
 		gdamore:encoding:v1.0.0:gdamore_encoding/vendor/github.com/gdamore/encoding \
@@ -34,34 +32,41 @@ GH_TUPLE=	\
 		robertkrimen:otto:c382bd3c16ff:robertkrimen_otto/vendor/github.com/robertkrimen/otto \
 		sergi:go-diff:v1.1.0:sergi_go_diff/vendor/github.com/sergi/go-diff \
 		stretchr:testify:v1.4.0:stretchr_testify/vendor/github.com/stretchr/testify \
+		xo:terminfo:454e5b68f9e8:xo_terminfo/vendor/github.com/xo/terminfo \
 		yuin:gopher-lua:ab39c6098bdb:yuin_gopher_lua/vendor/github.com/yuin/gopher-lua \
-		zyedidia:clipboard:7c45b8673834:zyedidia_clipboard/vendor/github.com/zyedidia/clipboard \
+		zyedidia:clipboard:v1.0.3:zyedidia_clipboard/vendor/github.com/zyedidia/clipboard \
 		zyedidia:glob:dd4023a66dc3:zyedidia_glob/vendor/github.com/zyedidia/glob \
 		zyedidia:go-shellquote:eccd813c0655:zyedidia_go_shellquote/vendor/github.com/kballard/go-shellquote \
 		zyedidia:highlight:201131ce5cf5:zyedidia_highlight/vendor/github.com/zyedidia/highlight \
 		zyedidia:json5:2da050b1a98d:zyedidia_json5/vendor/github.com/zyedidia/json5 \
 		zyedidia:poller:v1.0.1:zyedidia_poller/vendor/github.com/zyedidia/poller \
 		zyedidia:pty:v2.0.0:zyedidia_pty/vendor/github.com/zyedidia/pty \
-		zyedidia:tcell:v1.4.8:zyedidia_tcell/vendor/github.com/zyedidia/tcell \
+		zyedidia:tcell:v2.0.2:zyedidia_tcell_v2/vendor/github.com/zyedidia/tcell/v2 \
 		zyedidia:terminal:533c623e2415:zyedidia_terminal/vendor/github.com/zyedidia/terminal
 
-GO_TARGET=	./cmd/micro
+_BUILD_VERSION=	${DISTVERSION}
+_BUILD_HASH=	5044ccf
+_BUILD_DATE=	$$(date '+%B %d, %Y')
+_BUILD_DEBUG=	OFF
+
+GO_TARGET=	./cmd/${PORTNAME}
 GO_BUILDFLAGS=	-ldflags "\
 		-s -w \
-		-X github.com/zyedidia/micro/v2/internal/util.Version=${PORTVERSION} \
-		-X github.com/zyedidia/micro/v2/internal/util.CommitHash=${BUILD_HASH} \
-		-X 'github.com/zyedidia/micro/v2/internal/util.CompileDate=${BUILD_DATE}'"
+		-X github.com/${GH_ACCOUNT}/${GH_PROJECT}/v2/internal/util.Version=${_BUILD_VERSION} \
+		-X github.com/${GH_ACCOUNT}/${GH_PROJECT}/v2/internal/util.CommitHash=${_BUILD_HASH} \
+		-X 'github.com/${GH_ACCOUNT}/${GH_PROJECT}/v2/internal/util.CompileDate=${_BUILD_DATE}' \
+		-X github.com/${GH_ACCOUNT}/${GH_PROJECT}/v2/internal/util.Debug=${_BUILD_DEBUG}"
 
-BUILD_HASH=	60846f5
-BUILD_DATE=	Jun 24, 2020
-
-PLIST_FILES=	bin/micro
+PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	README.md
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DEBUG DOCS
 
-post-install:
+DEBUG_DESC=	Enable debug logging
+DEBUG_VARS=	_BUILD_DEBUG=ON
+
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
