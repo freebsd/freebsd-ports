@@ -1,4 +1,4 @@
- Created by: Neal Nelson <ports@nicandneal.net>
+# Created by: Neal Nelson <ports@nicandneal.net>
 # $FreeBSD$
 
 PORTNAME=	nim

@@ -22,7 +22,6 @@ LIB_DEPENDS=	libdiscid.so:audio/libdiscid \
 USES=		desktop-file-utils gettext gnome meson pkgconfig \
 		python:3.5+,build tar:xz xorg
 USE_GNOME=	glib20 gtk30 intlhack
-USE_MESON=	yes
 USE_XORG=	x11
 USE_GSTREAMER1=	yes
 INSTALLS_ICONS=	yes

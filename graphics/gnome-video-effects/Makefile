@@ -10,7 +10,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Collection of Gstreamer effects
 
 LICENSE=	GPLv2
-LICENSE_FILES=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gettext meson tar:xz
 USE_GSTREAMER1=	good bad

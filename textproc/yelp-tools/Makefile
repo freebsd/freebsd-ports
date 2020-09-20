@@ -11,7 +11,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Utilities to help manage documentation for Yelp and the web
 
 LICENSE=	GPLv2
-LICENSE_FILES=	${WRKSRC}/COPYING.GPL
+LICENSE_FILE=	${WRKSRC}/COPYING.GPL
 
 BUILD_DEPENDS=	yelp-xsl>=0:textproc/yelp-xsl \
 		itstool:textproc/itstool

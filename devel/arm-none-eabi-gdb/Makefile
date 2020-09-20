@@ -14,7 +14,7 @@ COMMENT=	GNU GDB for the arm bare metal target
 LICENSE=	GPLv3
 
 DEPRECATED=	This is an old, obsolete version of gdb
-EXPIRATION_DATA=2020-12-31
+EXPIRATION_DATE=2020-12-31
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 

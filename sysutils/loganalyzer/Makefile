@@ -32,7 +32,6 @@ PDO_SQLITE_DESC=	SQLite PDO driver
 .if !defined(WITHOUT_PHP_DEPENDS)
 USE_PHP=	session pdo gd xml zlib
 .endif
-WANT_PHP_WEB=	YES
 
 PHP_MYSQL_USE=	php=mysqli
 PDO_DBLIB_RUN_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/pdo_dblib.so:${PORTSDIR}/databases/php5-pdo_dblib
