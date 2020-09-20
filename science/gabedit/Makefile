@@ -1,13 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	gabedit
-DISTVERSION=	2.5.1
-PORTREVISION=	4
+DISTVERSION=	2.5.1-300720 # the last number is "snapshot"
 CATEGORIES=	science
-#MASTER_SITES=	http://prdownloads.sourceforge.net/${PORTNAME}/ # old SF-based source
-#DISTNAME=	GabeditSrc${DISTVERSION:S/.//g}
-MASTER_SITES=	https://sites.google.com/site/allouchear/Home/gabedit/download/ # development version now on sites.google.com, browse to the same URL for details
-DISTNAME=	GabeditSrc${DISTVERSION:S/.//g}_061218
+MASTER_SITES=	https://sites.google.com/site/allouchear/Home/gabedit/download/
+DISTNAME=	GabeditSrc${DISTVERSION:C/([0-9])\.([0-9])\.([0-9])-([0-9])/\1\2\3_\4/}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Graphical user interface for several chemistry software packages
@@ -27,6 +24,8 @@ USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 pango pangox-compat
 USE_GL=		gl glu
 USE_XORG=	ice sm x11 xmu xt
 INSTALLS_ICONS=	yes
+
+CFLAGS+=	-fcommon # change the default because GlobalOrb.h has many common definitions
 
 BINARY_ALIAS=	make=gmake
 
