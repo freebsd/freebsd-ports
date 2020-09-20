@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	protocol-http
-PORTVERSION=	0.20.0
+PORTVERSION=	0.20.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
