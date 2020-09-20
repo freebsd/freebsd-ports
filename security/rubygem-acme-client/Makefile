@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	acme-client
-PORTVERSION=	2.0.6
+PORTVERSION=	2.0.7
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
