@@ -3,11 +3,21 @@
 
 PORTNAME=	pathchirp
 PORTVERSION=	2.4.1
+PORTREVISION=	1
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.spin.rice.edu/Software/pathChirp/
 
 MAINTAINER=	dikshie@lapi.itb.ac.id
 COMMENT=	Measurement tool for available bandwidth estimation
+
+LICENSE=		RICE MARYLAND
+LICENSE_COMB=		multi
+LICENSE_NAME_RICE=	Rice University License
+LICENSE_FILE_RICE=	${PATCHDIR}/LICENSE-RICE
+LICENSE_PERMS_RICE=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE_NAME_MARYLAND=	University of Maryland License
+LICENSE_FILE_MARYLAND=	${PATCHDIR}/LICENSE-MARYLAND
+LICENSE_PERMS_MARYLAND=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 GNU_CONFIGURE=	yes
 USES=		gmake
