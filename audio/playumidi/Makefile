@@ -1,10 +1,10 @@
-# Created by: Koine Yuusuke(koinec) <koinec@yahoo.co.jp>
+# Created by: Koine Yuusuke(koinec) <koinec@users.osdn.me>
 # $FreeBSD$
 
 PORTNAME=		playumidi
-PORTVERSION=		0.8.2
+PORTVERSION=		0.8.3
 CATEGORIES=		audio
-MASTER_SITES=		OSDN/playumidi/71406
+MASTER_SITES=		OSDN/${PORTNAME}
 
 MAINTAINER=		koinec@users.osdn.me
 COMMENT=		Standard MIDI format 0/1 player for FreeBSD USB-MIDI(umidi) device
