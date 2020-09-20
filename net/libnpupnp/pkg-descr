@@ -1,0 +1,4 @@
+libpnupnp is a C++ reimplementation of the venerable libupnp,
+a.k.a. Portable UPnP* library.
+
+WWW: https://www.lesbonscomptes.com/upmpdcli/npupnp-doc/libnpupnp.html

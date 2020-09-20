@@ -366,6 +366,7 @@
     SUBDIR += libnfs
     SUBDIR += libngtcp2
     SUBDIR += libnids
+    SUBDIR += libnpupnp
     SUBDIR += libnss-cache
     SUBDIR += libnss-mysql
     SUBDIR += libnss-pgsql
