@@ -46,7 +46,7 @@ SQLITE_MAKE_ARGS=	sqlite=true
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == powerpc || ${ARCH} == powerpc64
+.if ${ARCH:Mpowerpc*}
 PLIST_SUB+=	PPC="" \
 		X86="@comment "
 .elif ${ARCH} == amd64 || ${ARCH} == i386
