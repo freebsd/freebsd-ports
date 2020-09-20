@@ -15,7 +15,7 @@ LICENSE_FILE_GPLv2=	${WRKSRC}/octovis/LICENSE.txt
 
 LIB_DEPENDS=	libQGLViewer-qt5.so:graphics/libQGLViewer
 
-USES=		cmake localbase:ldflags gl qt:5
+USES=		cmake compiler:c++11- lang localbase:ldflags gl qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	OctoMap
 GH_TAGNAME=	a3f3809
