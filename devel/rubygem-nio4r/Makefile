@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nio4r
-PORTVERSION=	2.5.3
+PORTVERSION=	2.5.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
