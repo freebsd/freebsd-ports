@@ -25,4 +25,6 @@ GH_PROJECT=	pygmo2
 
 CMAKE_ON=	PYGMO_ENABLE_IPO
 
+CXXFLAGS+=	-I${LOCALBASE}/include/coin # see https://github.com/esa/pygmo2/issues/58
+
 .include <bsd.port.mk>
