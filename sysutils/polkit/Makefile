@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	polkit
-PORTVERSION=	0.116
+PORTVERSION=	0.118
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	https://www.freedesktop.org/software/polkit/releases/
 
@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
-		libmozjs-60.so:lang/spidermonkey60
+		libmozjs-78.so:lang/spidermonkey78
 RUN_DEPENDS=	dbus-launch:devel/dbus
 
 USERS=		polkitd
