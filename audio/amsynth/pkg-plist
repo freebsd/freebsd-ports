@@ -23,6 +23,7 @@ lib/lv2/amsynth.lv2/BriansBank19.amSynth.bank.ttl
 lib/lv2/amsynth.lv2/BriansBank20.amSynth.bank.ttl
 lib/lv2/amsynth.lv2/BriansBank21.amSynth.bank.ttl
 lib/lv2/amsynth.lv2/BriansBank22.amSynth.bank.ttl
+lib/lv2/amsynth.lv2/PatriksBank01.bank.ttl
 lib/lv2/amsynth.lv2/amsynth.ttl
 lib/lv2/amsynth.lv2/amsynth_factory.bank.ttl
 lib/lv2/amsynth.lv2/amsynth_lv2.so
@@ -54,6 +55,7 @@ lib/vst/amsynth_vst.so
 %%DATADIR%%/banks/BriansBank20.amSynth.bank
 %%DATADIR%%/banks/BriansBank21.amSynth.bank
 %%DATADIR%%/banks/BriansBank22.amSynth.bank
+%%DATADIR%%/banks/PatriksBank01.bank
 %%DATADIR%%/banks/amsynth_factory.bank
 %%DATADIR%%/rc
 %%DATADIR%%/skins/default/background.png
