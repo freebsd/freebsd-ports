@@ -9,9 +9,27 @@
                        local_include=False,
                        private_library=True)
  
-@@ -285,4 +285,5 @@ else:
-     bld.SAMBA_BINARY('test_util_paths',
-                      source='tests/test_util_paths.c',
+@@ -222,7 +222,7 @@ else:
+                         local_include=False,
+                         public_deps='ldb',
+                         public_headers='util_ldb.h'
+-		        )
++                        )
+ 
+ 
+     bld.SAMBA_SUBSYSTEM('UTIL_RUNCMD',
+@@ -235,7 +235,7 @@ else:
+                         source='util_pw.c',
+                         local_include=False,
+                         public_deps='talloc'
+-	                )
++                        )
+ 
+     bld.SAMBA_LIBRARY('server_id_db',
+                       source='server_id_db.c',
+@@ -291,4 +291,5 @@ else:
+     bld.SAMBA_BINARY('test_util',
+                      source='tests/test_util.c',
                       deps='cmocka replace talloc samba-util',
 -                     local_include=False)
 +                     local_include=False,

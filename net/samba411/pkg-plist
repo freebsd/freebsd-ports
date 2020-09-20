@@ -1034,6 +1034,9 @@ man/man8/winbindd.8.gz
 %%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/sites.py
 %%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/timecmd.py
 %%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/user_check_password_script.py
+%%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/user_virtualCryptSHA_base.py
+%%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/user_virtualCryptSHA_gpg.py
+%%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/user_virtualCryptSHA_userPassword.py
 %%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/user_virtualCryptSHA.py
 %%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/user_wdigest.py
 %%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/user.py

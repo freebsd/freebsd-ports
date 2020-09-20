@@ -23,7 +23,7 @@ EXTRA_PATCHES+=			${PATCHDIR}/0001-Zfs-provision-1.patch:-p1
 
 SAMBA4_BASENAME=		samba
 SAMBA4_PORTNAME=		${SAMBA4_BASENAME}4
-SAMBA4_VERSION=			4.11.11
+SAMBA4_VERSION=			4.11.13
 SAMBA4_DISTNAME=		${SAMBA4_BASENAME}-${SAMBA4_VERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
 
 WRKSRC?=			${WRKDIR}/${DISTNAME}
@@ -253,8 +253,12 @@ TEST_ENV+=			PYTHON="${PYTHON_CMD}" \
 				SHA256SUM=/sbin/sha256 \
 				MD5SUM=/sbin/md5 \
 				PYTHONDONTWRITEBYTECODE=1
+
 TEST_DEPENDS+=			bash:shells/bash \
 				tshark:net/tshark
+# External Python modules
+TEST_BUILD_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}iso8601>=0.1.11:devel/py-iso8601@${PY_FLAVOR}
+TEST_RUN_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}iso8601>=0.1.11:devel/py-iso8601@${PY_FLAVOR}
 ##############################################################################
 CONFIGURE_ARGS+=		\
 				--with-pam \
@@ -280,7 +284,7 @@ FRUIT_VARS=			SAMBA4_MODULES+=vfs_fruit
 FRUIT_PLIST_FILES+=		man/man8/vfs_fruit.8.gz
 
 GLUSTERFS_CONFIGURE_ENABLE=	glusterfs
-GLUSTERFS_LIB_DEPENDS=		libglusterfs.so:net/glusterfs
+GLUSTERFS_LIB_DEPENDS=		libglusterfs.so:net/glusterfs7-libs
 GLUSTERFS_VARS=			SAMBA4_MODULES+=vfs_glusterfs
 GLUSTERFS_PLIST_FILES+=		man/man8/vfs_glusterfs.8.gz
 ##############################################################################
@@ -412,32 +416,37 @@ SUB_LIST+=			SAMBA4_PYTHON=""
 CONFIGURE_ARGS+=		--nopycache
 MAKE_ENV+=			PYTHONDONTWRITEBYTECODE=1
 
-.if defined(SAMBA4_BUNDLED_TALLOC) && ${SAMBA4_BUNDLED_TALLOC} == yes
+.	if defined(SAMBA4_BUNDLED_TALLOC) && ${SAMBA4_BUNDLED_TALLOC} == yes
 SAMBA4_BUNDLED_LIBS+=		pytalloc-util
-.else
+.	else
 SAMBA4_BUNDLED_LIBS+=		!pytalloc-util
-.endif
+.	endif
 
-.if defined(SAMBA4_BUNDLED_TEVENT) && ${SAMBA4_BUNDLED_TEVENT} == yes
+.	if defined(SAMBA4_BUNDLED_TEVENT) && ${SAMBA4_BUNDLED_TEVENT} == yes
 SAMBA4_BUNDLED_LIBS+=		pytevent
-.else
+.	else
 SAMBA4_BUNDLED_LIBS+=		!pytevent
-.endif
+.	endif
 
-.if defined(SAMBA4_BUNDLED_TDB) && ${SAMBA4_BUNDLED_TDB} == yes
+.	if defined(SAMBA4_BUNDLED_TDB) && ${SAMBA4_BUNDLED_TDB} == yes
 SAMBA4_BUNDLED_LIBS+=		pytdb
-.else
+.	else
 SAMBA4_BUNDLED_LIBS+=		!pytdb
-.endif
+.	endif
 
-.if defined(SAMBA4_BUNDLED_LDB) && ${SAMBA4_BUNDLED_LDB} == yes
+.	if defined(SAMBA4_BUNDLED_LDB) && ${SAMBA4_BUNDLED_LDB} == yes
 SAMBA4_BUNDLED_LIBS+=		pyldb pyldb-util
-.else
+.	else
 SAMBA4_BUNDLED_LIBS+=		!pyldb !pyldb-util
-.endif
-# External Python modules
-BUILD_DEPENDS+=			${PYTHON_PKGNAMEPREFIX}iso8601>=0.1.11:devel/py-iso8601@${PY_FLAVOR}
-RUN_DEPENDS+=			${PYTHON_PKGNAMEPREFIX}iso8601>=0.1.11:devel/py-iso8601@${PY_FLAVOR}
+.	endif
+# samba-tool requires those for *upgrade
+.	if ${PORT_OPTIONS:MAD_DC}
+BUILD_DEPENDS+=			${PYTHON_PKGNAMEPREFIX}dnspython>=1.15.0:dns/py-dnspython@${PY_FLAVOR}
+RUN_DEPENDS+=			${PYTHON_PKGNAMEPREFIX}dnspython>=1.15.0:dns/py-dnspython@${PY_FLAVOR}
+
+BUILD_DEPENDS+=			${PYTHON_PKGNAMEPREFIX}markdown>=2.6.11:textproc/py-markdown@${PY_FLAVOR}
+RUN_DEPENDS+=			${PYTHON_PKGNAMEPREFIX}markdown>=2.6.11:textproc/py-markdown@${PY_FLAVOR}
+.	endif
 .endif
 
 .if defined(WANT_EXP_MODULES) && !empty(WANT_EXP_MODULES)
@@ -474,7 +483,6 @@ PLIST_FILES+=			lib/samba4/private/libaesni-intel-samba4.so
 .else
 CONFIGURE_ARGS+=		--accel-aes=none
 .endif
-
 
 # Only for 64-bit architectures
 .if ${ARCH} != armv6 && ${ARCH} != armv7 && ${ARCH} != i386 && ${ARCH} != mips && ${ARCH} != powerpc && ${ARCH} != powerpcspe
