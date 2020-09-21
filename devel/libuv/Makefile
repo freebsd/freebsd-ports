@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	libuv
-PORTVERSION=	1.38.0
+PORTVERSION=	1.39.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
-MAINTAINER=	thierry@FreeBSD.org
+MAINTAINER=	bhughes@FreeBSD.org
 COMMENT=	Multi-platform support library with a focus on asynchronous I/O
 
 LICENSE=	NODE
