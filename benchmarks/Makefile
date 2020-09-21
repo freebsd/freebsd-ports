@@ -16,6 +16,7 @@
     SUBDIR += dhrystone
     SUBDIR += dkftpbench
     SUBDIR += fhourstones
+    SUBDIR += filebench
     SUBDIR += fio
     SUBDIR += flamegraph
     SUBDIR += flops
