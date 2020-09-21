@@ -8,8 +8,6 @@ lib/libEGL_nvidia.so
 lib/libEGL_nvidia.so.0
 lib/libGL-NVIDIA.so
 lib/libGL-NVIDIA.so.1
-lib/libGLESv1_CM.so
-lib/libGLESv1_CM.so.1
 lib/libGLESv1_CM_nvidia.so
 lib/libGLESv1_CM_nvidia.so.1
 lib/libGLESv2-NVIDIA.so

@@ -6,6 +6,9 @@ libGL.so.1	libGL-NVIDIA.so.1
 %%NVGL%%libEGL.so	libEGL-NVIDIA.so
 %%NVGL%%libEGL.so.1	libEGL-NVIDIA.so.1
 
+%%NVGL%%libGLESv1_CM.so	libGLESv1_CM_nvidia.so
+%%NVGL%%libGLESv1_CM.so.1	libGLESv1_CM_nvidia.so.1
+
 %%NVGL%%libGLESv2.so	libGLESv2-NVIDIA.so
 %%NVGL%%libGLESv2.so.2	libGLESv2-NVIDIA.so.2
 
