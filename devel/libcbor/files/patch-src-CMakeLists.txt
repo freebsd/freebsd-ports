@@ -1,7 +1,7 @@
---- src/CMakeLists.txt.orig	2020-03-26 21:12:22 UTC
+--- src/CMakeLists.txt.orig	2020-09-20 17:15:03 UTC
 +++ src/CMakeLists.txt
-@@ -23,12 +23,12 @@ set_target_properties(cbor_shared PROPERTIES
- 		OUTPUT_NAME cbor
+@@ -26,7 +26,7 @@ endif()
+ set_target_properties(cbor PROPERTIES
  		VERSION ${CBOR_VERSION}
  		MACHO_COMPATIBILITY_VERSION ${CBOR_VERSION_MAJOR}.${CBOR_VERSION_MINOR}.0
 -		SOVERSION ${CBOR_VERSION_MAJOR}.${CBOR_VERSION_MINOR})
@@ -9,9 +9,3 @@
  
  configure_file(libcbor.pc.in libcbor.pc @ONLY)
  
- # http://www.cmake.org/Wiki/CMake:Install_Commands
--install(TARGETS cbor_shared
-+install(TARGETS cbor cbor_shared
- 	ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
- 	LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
- 	RUNTIME DESTINATION bin)

@@ -2,6 +2,7 @@ include/cbor.h
 include/cbor/arrays.h
 include/cbor/bytestrings.h
 include/cbor/callbacks.h
+include/cbor/cbor_export.h
 include/cbor/common.h
 include/cbor/configuration.h
 include/cbor/data.h
@@ -19,7 +20,6 @@ include/cbor/serialization.h
 include/cbor/streaming.h
 include/cbor/strings.h
 include/cbor/tags.h
-lib/libcbor.a
 lib/libcbor.so
 lib/libcbor.so.0
 lib/libcbor.so.%%PORTVERSION%%
