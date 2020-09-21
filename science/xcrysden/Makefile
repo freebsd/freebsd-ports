@@ -26,6 +26,8 @@ USE_XORG=	x11 xmu
 
 MAKE_ARGS=	prefix=${STAGEDIR}${PREFIX}
 
+CFLAGS+=	-fcommon # notified xcrysden ML on Sep 20, 2020
+
 BINARY_ALIAS=	make=gmake gcc=cc gfortran=gfortran${GCC_DEFAULT}
 
 OPTIONS_DEFINE=	EXAMPLES
