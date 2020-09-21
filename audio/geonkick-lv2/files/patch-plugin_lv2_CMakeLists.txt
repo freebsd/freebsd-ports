@@ -1,11 +1,11 @@
---- plugin/lv2/CMakeLists.txt.orig	2019-08-07 16:22:12 UTC
+--- plugin/lv2/CMakeLists.txt.orig	2020-07-27 09:04:39 UTC
 +++ plugin/lv2/CMakeLists.txt
 @@ -6,7 +6,7 @@ add_library(geonkick_lv2 SHARED
    ${GKICK_LV2_SOURCES})
  
- target_link_libraries(geonkick_lv2  geonkick_common api_lv2)
+ target_link_libraries(geonkick_lv2  geonkick_common api_plugin)
 -target_link_libraries(geonkick_lv2 "-lstdc++fs")
 +#target_link_libraries(geonkick_lv2 "-lstdc++fs")
  target_link_libraries(geonkick_lv2 "-lredkite -lX11 -lsndfile -lrt -lm -ldl -lpthread -lcairo")
- add_dependencies(geonkick_lv2 api_lv2)
+ add_dependencies(geonkick_lv2 api_plugin)
  
