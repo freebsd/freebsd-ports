@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	jamulus
-DISTVERSION=	3.5.10
+DISTVERSION=	3.5.11
 CATEGORIES=	audio
 MASTER_SITES=	SF/llcon/${NAME}/${DISTVERSION}/
 DISTNAME=	${NAME}-${PORTVERSION}
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libjack.so:audio/jack
 
 USES=		compiler:c++11-lang pkgconfig qmake qt:5
-USE_QT=		core gui network widgets xml buildtools_build linguisttools_build
+USE_QT=		concurrent core gui network widgets xml buildtools_build linguisttools_build
 
 NAME=		Jamulus
 
