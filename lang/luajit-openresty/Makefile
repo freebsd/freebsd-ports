@@ -7,14 +7,16 @@ DISTVERSION=	2.1-20200102
 CATEGORIES=	lang
 PKGNAMESUFFIX=	-openresty
 
+PATCH_SITES=	https://github.com/openresty/luajit2/commit/
+PATCHFILES=	981ec8d2aac5cac76bdedd4015b6d32447b29597.patch:-p1 \
+		2763a421d6219c8cb2bbd39246de619dc796bab6.patch:-p1
+
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Just-In-Time Compiler for Lua (OpenResty branch)
 
 LICENSE=	MIT PD
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
-
-BROKEN_powerpc64=	fails to build: gmake[2]: *** No rule to make target 'vm_ppc64.dasc', needed by 'host/buildvm_arch.h'.
 
 USES=		gmake
 
