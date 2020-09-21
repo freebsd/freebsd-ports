@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	passman
-PORTVERSION=	2.3.5
+PORTVERSION=	2.3.6
 CATEGORIES=	security
 MASTER_SITES=	https://releases.passman.cc/
 PKGNAMEPREFIX=	nextcloud-
@@ -28,8 +28,5 @@ WWWDIR=		${PREFIX}/www/nextcloud/apps-pkg/${PORTNAME}
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR})
-
-post-install:
-	${RM} ${STAGEDIR}${WWWDIR}/COPYING ${STAGEDIR}${WWWDIR}/LICENSE
 
 .include <bsd.port.mk>
