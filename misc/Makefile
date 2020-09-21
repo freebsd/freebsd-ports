@@ -57,6 +57,7 @@
     SUBDIR += compat7x
     SUBDIR += compat8x
     SUBDIR += compat9x
+    SUBDIR += concourse
     SUBDIR += countrycodes
     SUBDIR += cpuid
     SUBDIR += crosti
