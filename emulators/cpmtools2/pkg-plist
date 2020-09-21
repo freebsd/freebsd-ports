@@ -15,4 +15,5 @@ man/man1/mkfs.cpm.1.gz
 man/man1/fsck.cpm.1.gz
 man/man1/fsed.cpm.1.gz
 man/man5/cpm.5.gz
+man/man5/diskdefs.5.gz
 %%DATADIR%%/diskdefs
