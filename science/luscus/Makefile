@@ -28,6 +28,8 @@ USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 pango pangox-compat
 USE_GL=		gl glu
 USE_XORG=	x11
 
+CFLAGS+=	-fcommon # variables n_geometries/move_molecule/window/pix/etc are defined in the header
+
 post-patch:
 	@${REINPLACE_CMD} 's|/etc/luscus|${DATADIR}|' ${WRKSRC}/gv_system.c
 	@${REINPLACE_CMD} -i '' 's|$$HOME/\.${PORTNAME}/|${LOCALBASE}/bin/|' ${WRKSRC}/*/*/*.sh
