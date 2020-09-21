@@ -1,3 +1,3 @@
-TIMESTAMP = 1580562317
-SHA256 (django-debug-toolbar-2.2.tar.gz) = eabbefe89881bbe4ca7c980ff102e3c35c8e8ad6eb725041f538988f2f39a943
-SIZE (django-debug-toolbar-2.2.tar.gz) = 106804
+TIMESTAMP = 1600709932
+SHA256 (django-debug-toolbar-3.0.tar.gz) = 23129b4f771605c7ccf8733cc53558a68c5d463d60cdc83408d34b713acf4f5f
+SIZE (django-debug-toolbar-3.0.tar.gz) = 116046
