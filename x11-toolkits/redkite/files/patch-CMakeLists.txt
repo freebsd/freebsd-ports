@@ -1,11 +1,11 @@
---- CMakeLists.txt.orig	2019-08-06 19:58:51 UTC
+--- CMakeLists.txt.orig	2020-08-12 18:05:20 UTC
 +++ CMakeLists.txt
-@@ -10,6 +10,8 @@ elseif(CMAKE_SYSTEM_NAME MATCHES Darwin)
-   message(FATAL_ERROR "Redkite not implemented yet for Mac OS X")
+@@ -12,6 +12,8 @@ elseif(CMAKE_SYSTEM_NAME MATCHES Darwin)
+   message(FATAL_ERROR "Redkite is not implemented yet for Mac OS X")
  elseif (CMAKE_SYSTEM_NAME MATCHES Linux)
    message(STATUS " Build Redkite for GNU/Linux")
 +elseif (CMAKE_SYSTEM_NAME MATCHES "^(FreeBSD|DragonFly)$")
 +  message(STATUS " Build Redkite for FreeBSD")
  else()
-   message(FATAL_ERROR "Redkite not implemented yet for ${CMAKE_SYSTEM_NAME}")
+   message(FATAL_ERROR "Redkite is not implemented yet for ${CMAKE_SYSTEM_NAME}")
  endif()

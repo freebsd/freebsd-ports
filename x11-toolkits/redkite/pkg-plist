@@ -1,7 +1,12 @@
 bin/rkpng2c
 include/redkite/Rk.h
+include/redkite/RkAction.h
+include/redkite/RkButton.h
 include/redkite/RkCanvas.h
 include/redkite/RkColor.h
+include/redkite/RkContainer.h
+include/redkite/RkContainerItem.h
+include/redkite/RkContainerWidgetItem.h
 include/redkite/RkEvent.h
 include/redkite/RkEventQueue.h
 include/redkite/RkFont.h
@@ -10,6 +15,8 @@ include/redkite/RkLabel.h
 include/redkite/RkLineEdit.h
 include/redkite/RkLog.h
 include/redkite/RkMain.h
+include/redkite/RkObject.h
+include/redkite/RkObserver.h
 include/redkite/RkPainter.h
 include/redkite/RkPen.h
 include/redkite/RkPlatform.h
@@ -19,5 +26,7 @@ include/redkite/RkRealPoint.h
 include/redkite/RkRect.h
 include/redkite/RkSize.h
 include/redkite/RkTimer.h
+include/redkite/RkTransition.h
 include/redkite/RkWidget.h
 lib/libredkite.a
+share/man/man1/rkpng2c.1.gz

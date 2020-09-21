@@ -2,7 +2,7 @@
 
 PORTNAME=	redkite
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.1
+DISTVERSION=	1.0.3
 CATEGORIES=	x11-toolkits
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,9 +11,9 @@ COMMENT=	GUI toolkit
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake compiler:c++14-lang gnome localbase:ldflags
+USES=		cmake compiler:c++17-lang gnome localbase:ldflags
 USE_GITHUB=	yes
-GH_ACCOUNT=	quamplex
+GH_ACCOUNT=	iurie-sw
 USE_GNOME=	cairo
 
 CMAKE_ARGS=	-DCMAKE_INSTALL_LIBDIR=${PREFIX}/lib
