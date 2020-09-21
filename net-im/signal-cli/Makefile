@@ -88,6 +88,8 @@ COMMENT=	Command-line and D-Bus interface for Signal and libsignal-service-java
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_FreeBSD_11_amd64=	fails to build: Gradle build daemon disappeared unexpectedly
+
 BUILD_DEPENDS=	asciidoc>0:textproc/asciidoc \
 		gradle>0:devel/gradle
 
