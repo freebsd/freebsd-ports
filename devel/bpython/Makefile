@@ -3,6 +3,7 @@
 
 PORTNAME=	bpython
 PORTVERSION=	0.19
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP \
 		https://bpython-interpreter.org/releases/
@@ -17,7 +18,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PY_SPHINX}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}curtsies>=0.1.18:devel/py-curtsies@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}greenlet>=0:devel/py-greenlet@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pygments>=0:textproc/py-pygments@${PY_FLAVOR} \
+		${PY_PYGMENTS} \
 		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.5:devel/py-six@${PY_FLAVOR}
 

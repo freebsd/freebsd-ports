@@ -4,6 +4,7 @@
 PORTNAME=	searx
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.16.0
+PORTREVISION=	1
 CATEGORIES=	www python
 
 MAINTAINER=	loic.blot@unix-experience.fr
@@ -22,7 +23,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}certifi>0:security/py-certifi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ndg_httpsclient>0:net/py-ndg_httpsclient@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openssl>0:security/py-openssl@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pygments>0:textproc/py-pygments@${PY_FLAVOR} \
+		${PY_PYGMENTS} \
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}splinter>0:www/py-splinter@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR} \

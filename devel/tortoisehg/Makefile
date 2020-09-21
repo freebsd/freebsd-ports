@@ -2,6 +2,7 @@
 
 PORTNAME=	tortoisehg
 DISTVERSION=	5.5.1
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -13,9 +14,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING.txt
 BUILD_DEPENDS=	${PY_MERCURIAL}
 RUN_DEPENDS=	${PY_MERCURIAL} \
 		${PYTHON_PKGNAMEPREFIX}iniparse>=0.4:devel/py-iniparse@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pygments>=0:textproc/py-pygments@${PY_FLAVOR}
+		${PY_PYGMENTS}
 
-USES=		pyqt:5 python:2.7+
+USES=		pyqt:5 python
 USE_PYQT=	core gui network qscintilla2 xml
 USE_PYTHON=	distutils autoplist
 

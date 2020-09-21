@@ -3,6 +3,7 @@
 
 PORTNAME=	pyface
 PORTVERSION=	6.1.2
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,7 +24,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}traits>0:devel/py-traits@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pygments>0:textproc/py-pygments@${PY_FLAVOR}
+		${PY_PYGMENTS}
 
 USES=		python
 USE_PYTHON=	autoplist distutils
@@ -35,7 +36,7 @@ NO_ARCH=	yes
 OPTIONS_DEFINE=		QT5
 OPTIONS_DEFAULT=	QT5
 
-QT5_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygments>0:textproc/py-pygments@${PY_FLAVOR}
+QT5_RUN_DEPENDS=	${PY_PYGMENTS}
 QT5_USES=		pyqt:5
 QT5_USE=		PYQT=core_run,gui_run,network_test,opengl_test,printsupport_run,svg_run,test_test,webkit_test,webkitwidgets_test,widgets_run
 

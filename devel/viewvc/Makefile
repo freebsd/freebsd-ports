@@ -3,7 +3,7 @@
 
 PORTNAME=	viewvc
 DISTVERSION=	1.2.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel python
 
 MAINTAINER=	ohauer@FreeBSD.org
@@ -37,7 +37,7 @@ MYSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=0:databases/py-MySQLdb@${PY_F
 
 SVN_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}subversion-lts>=0:devel/py-subversion@${PY_FLAVOR}
 
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pygments>=1.6:textproc/py-pygments@${PY_FLAVOR}
+RUN_DEPENDS+=		${PY_PYGMENTS}
 
 .include <bsd.port.options.mk>
 
