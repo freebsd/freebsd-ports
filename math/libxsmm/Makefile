@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libxsmm
-DISTVERSION=	1.10
-PORTREVISION=	6
+DISTVERSION=	1.16.1
 CATEGORIES=	math science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -26,5 +25,8 @@ MAKE_ARGS=	STATIC=0 DEPSTATIC=0 MAKE_PARALLEL=1
 LDFLAGS+=	-lm
 
 BINARY_ALIAS=	python=${PYTHON_CMD}
+
+post-install: # https://github.com/hfp/libxsmm/issues/413
+	${RMDIR} ${STAGEDIR}${PREFIX}/share/modules
 
 .include <bsd.port.mk>
