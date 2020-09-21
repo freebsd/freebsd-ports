@@ -4,8 +4,7 @@
 PORTNAME=	x265
 PORTVERSION=	3.4
 CATEGORIES=	multimedia
-MASTER_SITES=	https://bitbucket.org/multicoreware/x265/downloads/
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+MASTER_SITES=	https://bitbucket.org/multicoreware/x265_git/get/${BB_TAG}.tar.gz?meow=/
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	H.265/High Efficiency Video Coding (HEVC) format
@@ -14,6 +13,8 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC:H}/COPYING
 
 USES=		cmake compiler:c++14-lang pathfix dos2unix
+
+BB_TAG=	25b2c07035ff	# Top of the Release_3.4 branch at this time
 
 OPTIONS_DEFINE=		DEBUG OPTIMIZED_FLAGS VMAF
 OPTIONS_DEFAULT=	OPTIMIZED_FLAGS HI8P HI10P HI12P
@@ -50,9 +51,9 @@ VMAF_DESC=	Per frame and aggregate VMAF score
 USE_LDCONFIG=	yes
 CMAKE_ARGS=	-DENABLE_TESTS=on -DENABLE_HDR10_PLUS:BOOL=true
 LDFLAGS_i386=	-Wl,-znotext
-EXTRACT_AFTER_ARGS+=	--exclude compat
+EXTRACT_AFTER_ARGS+=	--exclude compat --strip-components=1
 PATCH_WRKSRC=	${WRKSRC:H}
-WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}/source
+WRKSRC=		${WRKDIR}/source
 
 .include <bsd.port.options.mk>
 
