@@ -1,0 +1,47 @@
+#!/bin/sh
+
+# $FreeBSD$
+# 
+# PROVIDE: mailman
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+# 
+# Add these lines to /etc/rc.conf or /etc/rc.conf.local to enable
+# mailman:
+# 
+# mailman_enable (bool):	Set to NO by default.
+# 				Set it to YES to enable mailman.
+# mailman_config (path):	Set to %%PREFIX%%/mailman/etc/mailman.cfg
+#				by default.
+
+. /etc/rc.subr
+
+name=mailman
+rcvar=mailman_enable
+
+load_rc_config $name
+
+: ${mailman_enable:=NO}
+: ${mailman_config="%%PREFIX%%/mailman/etc/mailman.cfg"}
+
+command_interpreter=%%PYTHON_CMD%%
+command=%%PREFIX%%/bin/${name}
+
+start_cmd="mailman_command start"
+stop_cmd="mailman_command stop"
+restart_cmd="mailman_command restart"
+status_cmd="mailman_command status"
+info_cmd="mailman_command info"
+extra_commands=info
+
+required_files="%%PREFIX%%/${name}/etc/${name}.cfg"
+pidfile="%%PREFIX%%/${name}/master.pid"
+
+command_args="-C ${mailman_config}"
+
+mailman_command()
+{
+	LANG=en_US.UTF-8 /usr/bin/su -m ${name} -c "${command_interpreter} ${command} ${command_args} ${rc_arg}"
+}
+
+run_rc_command "$1"

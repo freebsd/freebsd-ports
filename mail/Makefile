@@ -203,6 +203,7 @@
     SUBDIR += mailgraph
     SUBDIR += mailhog
     SUBDIR += mailman
+    SUBDIR += mailman3
     SUBDIR += mailscanner
     SUBDIR += mailsync
     SUBDIR += mailutils

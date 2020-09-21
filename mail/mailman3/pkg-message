@@ -1,0 +1,8 @@
+To initialise Mailman's runtime directories, log files and database
+for the first time, run
+
+  service mailman info
+
+You can then start Mailman by running:
+
+  service mailman start
