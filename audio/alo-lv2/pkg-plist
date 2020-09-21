@@ -1,0 +1,12 @@
+lib/lv2/alo.lv2/alo.so
+lib/lv2/alo.lv2/alo.ttl
+lib/lv2/alo.lv2/manifest.ttl
+lib/lv2/alo.lv2/modgui.ttl
+lib/lv2/alo.lv2/modgui/background.png
+lib/lv2/alo.lv2/modgui/greenlight.png
+lib/lv2/alo.lv2/modgui/icon-alo.html
+lib/lv2/alo.lv2/modgui/knob.png
+lib/lv2/alo.lv2/modgui/screenshot-alo.png
+lib/lv2/alo.lv2/modgui/stylesheet-alo.css
+lib/lv2/alo.lv2/modgui/switch-001.png
+lib/lv2/alo.lv2/modgui/thumbnail-alo.png

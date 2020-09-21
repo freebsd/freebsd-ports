@@ -16,6 +16,7 @@
     SUBDIR += aften
     SUBDIR += alac
     SUBDIR += alienwah
+    SUBDIR += alo-lv2
     SUBDIR += alsa-lib
     SUBDIR += alsa-plugins
     SUBDIR += alsa-sndio
