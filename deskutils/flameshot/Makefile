@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	flameshot
-PORTVERSION=	0.6.0
-PORTREVISION=	3
+PORTVERSION=	0.8.0
+#PORTREVISION=	0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	deskutils
 
@@ -13,7 +13,9 @@ COMMENT=	Powerful yet simple to use screenshot software
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		compiler:c++11-lang gl qmake qt:5
+USES=		cmake compiler:c++11-lang gl qmake qt:5
+
+CMAKE_INSTALL_PREFIX=	${STAGEDIR}/${PREFIX}
 
 GH_ACCOUNT=	lupoDharkael
 
