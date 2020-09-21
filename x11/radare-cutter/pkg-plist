@@ -17,10 +17,11 @@ include/cutter/common/CutterLayout.h
 include/cutter/common/CutterSeekable.h
 include/cutter/common/Decompiler.h
 include/cutter/common/DirectionalComboBox.h
+include/cutter/common/DecompilerHighlighter.h
+include/cutter/dialogs/preferences/AnalOptionsWidget.h
+include/cutter/menus/DecompilerContextMenu.h
 include/cutter/common/FunctionsTask.h
 include/cutter/common/Helpers.h
-include/cutter/common/HexAsciiHighlighter.h
-include/cutter/common/HexHighlighter.h
 include/cutter/common/HighDpiPixmap.h
 include/cutter/common/Highlighter.h
 include/cutter/common/IOModesController.h
