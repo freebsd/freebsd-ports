@@ -2,8 +2,7 @@
 
 PORTNAME=	ffsend
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.65
-PORTREVISION=	1
+DISTVERSION=	0.2.66
 CATEGORIES=	www
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -26,11 +25,11 @@ RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss \
 USES=		cargo localbase:ldflags python:build,3.5+ ssl xorg
 USE_GITLAB=	yes
 GL_ACCOUNT=	timvisee
-GL_COMMIT=	4de467a86f406677d2202e4b5c6bc9aa4c6a4720
+GL_COMMIT=	3a90b0b0b1b787c9170afa934f884326c14ca908
 USE_XORG=	xcb
 
 CARGO_CRATES=	addr2line-0.13.0 \
-		adler-0.2.2 \
+		adler-0.2.3 \
 		aho-corasick-0.7.13 \
 		ansi_term-0.11.0 \
 		arc-swap-0.4.7 \
@@ -38,12 +37,11 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		arrayvec-0.5.1 \
 		atty-0.2.14 \
 		autocfg-0.1.7 \
-		autocfg-1.0.0 \
+		autocfg-1.0.1 \
 		backtrace-0.3.50 \
 		base-x-0.2.6 \
 		base64-0.9.3 \
 		base64-0.10.1 \
-		base64-0.11.0 \
 		base64-0.12.3 \
 		bitflags-1.2.1 \
 		blake2b_simd-0.5.10 \
@@ -55,23 +53,24 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		byte-tools-0.3.1 \
 		byteorder-1.3.4 \
 		bytes-0.4.12 \
-		bytes-0.5.5 \
-		cc-1.0.58 \
+		bytes-0.5.6 \
+		cc-1.0.60 \
 		cfg-if-0.1.10 \
 		chbs-0.0.10 \
 		checked_int_cast-1.0.0 \
-		chrono-0.4.13 \
-		clap-2.33.1 \
+		chrono-0.4.15 \
+		clap-2.33.3 \
 		clipboard-0.5.0 \
 		clipboard-win-2.2.0 \
 		cloudabi-0.0.3 \
-		colored-1.9.3 \
+		colored-2.0.0 \
+		const_fn-0.4.2 \
 		constant_time_eq-0.1.5 \
 		core-foundation-0.7.0 \
 		core-foundation-sys-0.7.0 \
-		crossbeam-channel-0.4.2 \
+		crossbeam-channel-0.4.4 \
 		crossbeam-utils-0.7.2 \
-		crossterm-0.17.6 \
+		crossterm-0.17.7 \
 		crossterm_winapi-0.6.1 \
 		crypto-mac-0.7.0 \
 		csv-1.1.3 \
@@ -82,18 +81,18 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		derive_builder-0.9.0 \
 		derive_builder_core-0.9.0 \
 		digest-0.8.1 \
-		directories-2.0.2 \
+		directories-3.0.1 \
 		dirs-1.0.5 \
 		dirs-sys-0.3.5 \
 		discard-1.0.4 \
 		dtoa-0.4.6 \
 		encode_unicode-0.3.6 \
-		encoding_rs-0.8.23 \
+		encoding_rs-0.8.24 \
 		failure-0.1.8 \
 		failure_derive-0.1.8 \
 		fake-simd-0.1.2 \
-		ffsend-api-0.6.0 \
-		filetime-0.2.10 \
+		ffsend-api-0.6.2 \
+		filetime-0.2.12 \
 		fnv-1.0.7 \
 		foreign-types-0.3.2 \
 		foreign-types-shared-0.1.1 \
@@ -109,36 +108,37 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		futures-sink-0.3.5 \
 		futures-task-0.3.5 \
 		futures-util-0.3.5 \
-		generator-0.6.21 \
 		generic-array-0.12.3 \
-		getrandom-0.1.14 \
+		getrandom-0.1.15 \
 		gimli-0.22.0 \
-		h2-0.2.5 \
+		h2-0.2.6 \
+		hashbrown-0.9.0 \
 		hermit-abi-0.1.15 \
 		hkdf-0.8.0 \
 		hmac-0.7.1 \
 		http-0.2.1 \
 		http-body-0.3.1 \
 		httparse-1.3.4 \
+		httpdate-0.3.2 \
 		hyper-0.10.16 \
-		hyper-0.13.6 \
-		hyper-rustls-0.20.0 \
+		hyper-0.13.8 \
+		hyper-rustls-0.21.0 \
 		hyper-tls-0.4.3 \
 		ident_case-1.0.1 \
 		idna-0.1.5 \
 		idna-0.2.0 \
-		indexmap-1.4.0 \
+		indexmap-1.6.0 \
 		iovec-0.1.4 \
+		ipnet-2.3.0 \
 		itoa-0.4.6 \
-		js-sys-0.3.41 \
+		js-sys-0.3.45 \
 		kernel32-sys-0.2.2 \
 		language-tags-0.2.2 \
 		lazy_static-1.4.0 \
-		libc-0.2.72 \
+		libc-0.2.77 \
 		lock_api-0.3.4 \
 		log-0.3.9 \
-		log-0.4.8 \
-		loom-0.3.4 \
+		log-0.4.11 \
 		malloc_buf-0.0.6 \
 		matches-0.1.8 \
 		maybe-uninit-2.0.0 \
@@ -146,13 +146,13 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		mime-0.2.6 \
 		mime-0.3.16 \
 		mime_guess-2.0.3 \
-		miniz_oxide-0.4.0 \
+		miniz_oxide-0.4.2 \
 		mio-0.6.22 \
 		mio-0.7.0 \
 		miow-0.2.1 \
 		miow-0.3.5 \
 		native-tls-0.2.4 \
-		net2-0.2.34 \
+		net2-0.2.35 \
 		ntapi-0.3.4 \
 		num-integer-0.1.43 \
 		num-traits-0.2.12 \
@@ -161,7 +161,7 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		objc-foundation-0.1.1 \
 		objc_id-0.1.1 \
 		object-0.20.0 \
-		once_cell-1.4.0 \
+		once_cell-1.4.1 \
 		opaque-debug-0.2.3 \
 		open-1.4.0 \
 		openssl-0.10.30 \
@@ -175,16 +175,16 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		pbr-1.0.3 \
 		percent-encoding-1.0.1 \
 		percent-encoding-2.1.0 \
-		pin-project-0.4.22 \
-		pin-project-internal-0.4.22 \
+		pin-project-0.4.23 \
+		pin-project-internal-0.4.23 \
 		pin-project-lite-0.1.7 \
 		pin-utils-0.1.0 \
-		pkg-config-0.3.17 \
-		ppv-lite86-0.2.8 \
+		pkg-config-0.3.18 \
+		ppv-lite86-0.2.9 \
 		prettytable-rs-0.8.0 \
-		proc-macro-hack-0.5.16 \
+		proc-macro-hack-0.5.18 \
 		proc-macro-nested-0.1.6 \
-		proc-macro2-1.0.18 \
+		proc-macro2-1.0.21 \
 		qr2term-0.2.1 \
 		qrcode-0.12.0 \
 		quote-1.0.7 \
@@ -203,43 +203,42 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		rand_pcg-0.1.2 \
 		rand_xorshift-0.1.1 \
 		rdrand-0.4.0 \
-		redox_syscall-0.1.56 \
-		redox_users-0.3.4 \
+		redox_syscall-0.1.57 \
+		redox_users-0.3.5 \
 		regex-1.3.9 \
 		regex-automata-0.1.9 \
 		regex-syntax-0.6.18 \
 		remove_dir_all-0.5.3 \
-		reqwest-0.10.6 \
+		reqwest-0.10.8 \
 		ring-0.16.15 \
-		rpassword-4.0.5 \
-		rust-argon2-0.7.0 \
+		rpassword-5.0.0 \
+		rust-argon2-0.8.2 \
 		rustc-demangle-0.1.16 \
 		rustc_version-0.2.3 \
-		rustls-0.17.0 \
+		rustls-0.18.1 \
 		ryu-1.0.5 \
 		safemem-0.3.3 \
 		schannel-0.1.19 \
-		scoped-tls-0.1.2 \
 		scopeguard-1.1.0 \
 		sct-0.6.0 \
 		security-framework-0.4.4 \
 		security-framework-sys-0.4.3 \
 		semver-0.9.0 \
 		semver-parser-0.7.0 \
-		serde-1.0.114 \
-		serde_derive-1.0.114 \
-		serde_json-1.0.56 \
+		serde-1.0.116 \
+		serde_derive-1.0.116 \
+		serde_json-1.0.57 \
 		serde_urlencoded-0.6.1 \
 		sha1-0.6.0 \
 		sha2-0.8.2 \
 		signal-hook-0.1.16 \
-		signal-hook-registry-1.2.0 \
+		signal-hook-registry-1.2.1 \
 		slab-0.4.2 \
 		smallvec-0.6.13 \
-		smallvec-1.4.1 \
-		socket2-0.3.12 \
+		smallvec-1.4.2 \
+		socket2-0.3.15 \
 		spin-0.5.2 \
-		standback-0.2.9 \
+		standback-0.2.10 \
 		stdweb-0.4.20 \
 		stdweb-derive-0.5.3 \
 		stdweb-internal-macros-0.2.9 \
@@ -247,26 +246,26 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		strsim-0.8.0 \
 		strsim-0.9.3 \
 		subtle-1.0.0 \
-		syn-1.0.33 \
+		syn-1.0.41 \
 		synstructure-0.12.4 \
-		tar-0.4.29 \
+		tar-0.4.30 \
 		tempfile-3.1.0 \
 		term-0.5.2 \
 		textwrap-0.11.0 \
 		thiserror-1.0.20 \
 		thiserror-impl-1.0.20 \
 		thread_local-1.0.1 \
-		time-0.1.43 \
-		time-0.2.16 \
+		time-0.1.44 \
+		time-0.2.21 \
 		time-macros-0.1.0 \
 		time-macros-impl-0.1.1 \
-		tinyvec-0.3.3 \
-		tokio-0.2.21 \
+		tinyvec-0.3.4 \
+		tokio-0.2.22 \
 		tokio-codec-0.1.2 \
 		tokio-executor-0.1.10 \
 		tokio-io-0.1.13 \
 		tokio-reactor-0.1.12 \
-		tokio-rustls-0.13.1 \
+		tokio-rustls-0.14.1 \
 		tokio-sync-0.1.8 \
 		tokio-tcp-0.1.4 \
 		tokio-tls-0.2.1 \
@@ -274,8 +273,10 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		tokio-util-0.3.1 \
 		toml-0.5.6 \
 		tower-service-0.3.0 \
+		tracing-0.1.19 \
+		tracing-core-0.1.16 \
 		traitobject-0.1.0 \
-		try-lock-0.2.2 \
+		try-lock-0.2.3 \
 		typeable-0.1.2 \
 		typenum-1.12.0 \
 		unicase-1.4.2 \
@@ -291,22 +292,24 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		vcpkg-0.2.10 \
 		vec_map-0.8.2 \
 		version-compare-0.0.10 \
+		version-compare-0.0.11 \
 		version_check-0.1.5 \
 		version_check-0.9.2 \
 		want-0.3.0 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.64 \
-		wasm-bindgen-backend-0.2.64 \
-		wasm-bindgen-futures-0.4.14 \
-		wasm-bindgen-macro-0.2.64 \
-		wasm-bindgen-macro-support-0.2.64 \
-		wasm-bindgen-shared-0.2.64 \
-		web-sys-0.3.41 \
+		wasi-0.10.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.68 \
+		wasm-bindgen-backend-0.2.68 \
+		wasm-bindgen-futures-0.4.18 \
+		wasm-bindgen-macro-0.2.68 \
+		wasm-bindgen-macro-support-0.2.68 \
+		wasm-bindgen-shared-0.2.68 \
+		web-sys-0.3.45 \
 		webpki-0.21.3 \
 		webpki-roots-0.19.0 \
 		websocket-0.24.0 \
 		websocket-base-0.24.0 \
-		which-4.0.1 \
+		which-4.0.2 \
 		winapi-0.2.8 \
 		winapi-0.3.9 \
 		winapi-build-0.1.1 \
