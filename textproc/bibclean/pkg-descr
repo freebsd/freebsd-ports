@@ -1,0 +1,6 @@
+Bibclean is a prettyprinter, portability verifier, and syntax checker for
+BibTeX bibliography databases.  It can be used to find errors in .bib files, as
+well as to standardize their format for readability and editing convenience. It
+can also be used to convert Scribe-format bibliographies to BibTeX form.
+
+WWW: http://ftp.math.utah.edu/pub//bibclean/

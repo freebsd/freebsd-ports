@@ -1,0 +1,7 @@
+bin/bibclean
+bin/bibclean-%%VERSION%%
+share/man/man1/bibclean.1.gz
+share/man/man1/bibclean-%%VERSION%%.1.gz
+%%DATADIR%%/%%VERSION%%/bibclean.ini
+%%DATADIR%%/%%VERSION%%/bibclean.isbn
+%%DATADIR%%/%%VERSION%%/bibclean.key

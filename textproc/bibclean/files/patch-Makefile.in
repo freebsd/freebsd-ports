@@ -1,0 +1,29 @@
+--- Makefile.in.orig	2020-09-21 14:24:41 UTC
++++ Makefile.in
+@@ -94,10 +94,10 @@ BIBCLEANNAME	= bibclean
+ prefix		= @prefix@
+ exec_prefix     = ${prefix}
+ 
+-bindir          = ${exec_prefix}/bin
+-srcdir          = @srcdir@
++bindir          = ${DESTDIR}/${exec_prefix}/bin
++srcdir          = ${DESTDIR}/@srcdir@
+ 
+-datarootdir	= @datarootdir@
++datarootdir	= ${DESTDIR}/@datarootdir@
+ datadir		= @datadir@
+ bibcleandir	= ${datadir}/${BIBCLEANNAME}
+ initdir		= ${bibcleandir}/${VERSION}
+@@ -117,10 +117,10 @@ LIBS            = @LIBS@
+ 
+ OPT		=
+ 
+-VPATH           = @srcdir@
++VPATH           = ${DESTDIR}/@srcdir@
+ 
+ ### Where to install the manual pages.
+-mandir          = ${prefix}/man/man1
++mandir          = ${DESTDIR}${prefix}/share/man/man1
+ ### Extension (not including `.') for the installed manual page filenames.
+ manext          = 1
+ 

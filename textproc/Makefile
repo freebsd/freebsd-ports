@@ -68,6 +68,7 @@
     SUBDIR += bg-hyphen
     SUBDIR += bg-mythes
     SUBDIR += bib2html
+    SUBDIR += bibclean
     SUBDIR += bibtex2html
     SUBDIR += bibtool
     SUBDIR += bibutils
