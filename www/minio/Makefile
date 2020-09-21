@@ -13,8 +13,8 @@ LICENSE=	APACHE20
 USES=		compiler go:modules
 
 USE_GITHUB=	yes
-GHTAG=		RELEASE.2020-09-10T22-02-45Z
-COMMIT_ID=	eb2934f0c1a9c2e5f2dc23ebc729617ada578970
+GHTAG=		RELEASE.2020-09-17T04-49-20Z
+COMMIT_ID=	ed78854cead490ca6de6fe2e3255d000519a65e4
 
 GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		Azure:azure-pipeline-go:v0.2.2:azure_azure_pipeline_go/vendor/github.com/Azure/azure-pipeline-go \
@@ -55,14 +55,14 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		go-yaml:yaml:v2.2.8:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		gogo:protobuf:v1.3.1:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang:appengine:v1.4.0:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:948cd5f35899:golang_crypto/vendor/golang.org/x/crypto \
+		golang:crypto:5c72a883971a:golang_crypto/vendor/golang.org/x/crypto \
 		golang:groupcache:869f871628b6:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:mod:v0.3.0:golang_mod/vendor/golang.org/x/mod \
-		golang:net:ab3426394381:golang_net/vendor/golang.org/x/net \
+		golang:net:62affa334b73:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:e64efc72b421:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.4.0:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:snappy:v0.0.1:golang_snappy/vendor/github.com/golang/snappy \
-		golang:sys:ddb9806d33ae:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:288bc346aa39:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.3:golang_text/vendor/golang.org/x/text \
 		golang:time:9d24e82272b4:golang_time/vendor/golang.org/x/time \
 		golang:tools:c4923e618c08:golang_tools/vendor/golang.org/x/tools \
