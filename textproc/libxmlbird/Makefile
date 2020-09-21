@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libxmlbird
-DISTVERSION=	1.2.11
+DISTVERSION=	1.2.12
 CATEGORIES=	textproc devel
 MASTER_SITES=	https://birdfont.org/xmlbird-releases/
 
