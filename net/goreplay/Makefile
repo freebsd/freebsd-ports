@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	goreplay
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -18,7 +18,7 @@ GH_ACCOUNT=	buger
 GH_TUPLE=	buger:${PORTNAME}:${DISTVERSIONPREFIX}${PORTVERSION}:DEFAULT \
 		Shopify:sarama:v1.26.4:shopify_sarama/vendor/github.com/Shopify/sarama \
 		araddon:gou:c797efecbb61:araddon_gou/vendor/github.com/araddon/gou \
-		aws:aws-sdk-go:v1.32.7:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
+		aws:aws-sdk-go:v1.33.2:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
 		bitly:go-hostpool:v0.1.0:bitly_go_hostpool/vendor/github.com/bitly/go-hostpool \
 		bmizerany:assert:b7ed37b82869:bmizerany_assert/vendor/github.com/bmizerany/assert \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
@@ -26,9 +26,10 @@ GH_TUPLE=	buger:${PORTNAME}:${DISTVERSIONPREFIX}${PORTVERSION}:DEFAULT \
 		eapache:go-xerial-snappy:776d5712da21:eapache_go_xerial_snappy/vendor/github.com/eapache/go-xerial-snappy \
 		eapache:queue:v1.1.0:eapache_queue/vendor/github.com/eapache/queue \
 		golang:crypto:75b288015ac9:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:627f9648deb9:golang_net/vendor/golang.org/x/net \
+		golang:net:ab3426394381:golang_net/vendor/golang.org/x/net \
 		golang:snappy:v0.0.1:golang_snappy/vendor/github.com/golang/snappy \
-		google:gopacket:v1.1.17:google_gopacket/vendor/github.com/google/gopacket \
+		golang:sys:85ca7c5b95cd:golang_sys/vendor/golang.org/x/sys \
+		google:gopacket:v1.1.18:google_gopacket/vendor/github.com/google/gopacket \
 		hashicorp:go-uuid:v1.0.2:hashicorp_go_uuid/vendor/github.com/hashicorp/go-uuid \
 		jcmturner:aescts:v1.0.1:jcmturner_aescts/vendor/gopkg.in/jcmturner/aescts.v1 \
 		jcmturner:dnsutils:v1.0.1:jcmturner_dnsutils/vendor/gopkg.in/jcmturner/dnsutils.v1 \
