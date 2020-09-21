@@ -39,6 +39,7 @@
     SUBDIR += dfshow
     SUBDIR += docear
     SUBDIR += dosage
+    SUBDIR += dstask
     SUBDIR += easystroke
     SUBDIR += egroupware
     SUBDIR += fasd

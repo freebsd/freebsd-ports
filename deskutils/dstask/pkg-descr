@@ -1,0 +1,21 @@
+Dstask is a personal task tracker designed to help you focus. It is
+similar to taskwarrior but uses git to synchronise instead of a
+proprietary protocol.
+
+Dstask is mature enough for daily use.
+
+Features:
+ o Powerful context system (automatically applies filter/tags to
+    queries and new tasks)
+ o Git powered sync/undo/resolve (passwordstore.org style) which means
+   no need to set up a sync server, and sync between devices is easy!
+ o Task listing won't break with long task text (unlike taskwarrior,
+   currently)
+ o note command -- edit a full markdown note for each task. Checklists
+   are useful here.
+ o open command -- open URLs found in specified task (including notes)
+   in the browser
+ o zsh/bash completion for speed
+ o A single statically-linked binary
+
+WWW: https://github.com/naggie/dstask
