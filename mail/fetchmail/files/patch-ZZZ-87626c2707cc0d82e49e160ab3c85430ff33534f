@@ -16,23 +16,24 @@ This requires C99's new long long type.
  pop3.c      | 4 ++--
  8 files changed, 18 insertions(+), 10 deletions(-)
 
-diff --git a/NEWS b/NEWS
-index c01f9df9..9485edca 100644
+diff -up work/fetchmail-6.4.10/NEWS.orig work/fetchmail-6.4.10/NEWS
 --- a/NEWS
 +++ b/NEWS
-@@ -63,5 +63,12 @@
+@@ -63,7 +63,13 @@ removed from a 6.5.0 or newer release.)
+ * Fetchmail does not guarantee compatibility with EOL OpenSSL versions. Support
+   for end-of-life OpenSSL versions may be removed even from patchlevel releases.
  
- --------------------------------------------------------------------------------
- 
+----------------------------------------------------------------------------------
++--------------------------------------------------------------------------------
 +## BUG FIXES
 +* fetchmail can now report mailbox sizes of 2^31 octets and beyond.
 +  This requires C99 support (for the long long type).
 +  Fixes Debian Bug#873668, reported by Andreas Schmidt.
 +
 +--------------------------------------------------------------------------------
-+
- fetchmail-6.4.1 (released 2019-09-28, 27473 LoC):
+ fetchmail-6.4.10 (released 2020-08-27, 27596 LoC):
  
+ # REGRESSION FIX:
 diff --git a/driver.c b/driver.c
 index d21a32ab..a5033729 100644
 --- a/driver.c

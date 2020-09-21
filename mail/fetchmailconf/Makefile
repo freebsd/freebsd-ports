@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>=0:x11-toolkits/py-tkinter@${PY_FL
 		fetchmail>=${PORTVERSION}:mail/fetchmail
 RUN_DEPENDS+=	${BUILD_DEPENDS}
 
-USES=		python shebangfix tar:lz
+USES=		python shebangfix tar:xz
 USE_PYTHON=	py3kplist
 
 FILESDIR=	${.CURDIR}/files
