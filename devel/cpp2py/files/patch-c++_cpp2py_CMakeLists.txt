@@ -1,0 +1,8 @@
+--- c++/cpp2py/CMakeLists.txt.orig	2020-08-17 21:09:23 UTC
++++ c++/cpp2py/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-add_library(cpp2py signal_handler.cpp exceptions.cpp numpy_proxy.cpp)
++add_library(cpp2py SHARED signal_handler.cpp exceptions.cpp numpy_proxy.cpp)
+ add_library(cpp2py::cpp2py ALIAS cpp2py)
+ 
+ target_compile_options(cpp2py PRIVATE -std=c++17 -fPIC)

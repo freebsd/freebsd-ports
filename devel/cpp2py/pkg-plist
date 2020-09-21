@@ -1,7 +1,6 @@
 bin/c++2cxx
 bin/c++2py
 bin/c++2rst
-bin/cp_rs
 include/cpp2py/converters/basic_types.hpp
 include/cpp2py/converters/complex.hpp
 include/cpp2py/converters/function.hpp
@@ -29,7 +28,7 @@ lib/cmake/Cpp2Py/Cpp2PyConfig.cmake
 lib/cmake/Cpp2Py/Cpp2PyConfigVersion.cmake
 lib/cmake/Cpp2Py/Cpp2PyTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Cpp2Py/Cpp2PyTargets.cmake
-lib/libcpp2py.a
+lib/libcpp2py.so
 %%PYTHON_SITELIBDIR%%/cpp2cxx/__init__.py
 %%PYTHON_SITELIBDIR%%/cpp2cxx/cpp2cxx.py
 %%PYTHON_SITELIBDIR%%/cpp2py/__init__.py

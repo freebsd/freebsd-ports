@@ -1,8 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	cpp2py
-DISTVERSION=	1.5.20200812
+DISTVERSION=	2.0.0
 CATEGORIES=	devel
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	44d5238ab4f05ed4064736ffd2f2b63438d3f64c.patch:-p1 # fix build on i386
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Reflection tools based on clang
@@ -19,19 +22,22 @@ BUILD_DEPENDS=	${PY_DEPENDS} \
 RUN_DEPENDS=	${PY_DEPENDS} \
 		llvm${LLVM_VER}>0:devel/llvm${LLVM_VER}
 
-USES=		cmake compiler:c++14-lang python shebangfix
+USES=		cmake compiler:c++14-lang gettext-runtime python shebangfix
+USE_LDCONFIG=	yes
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	TRIQS
-GH_TAGNAME=	10ab97d2e5e56656227a74118943de02e2265292
+
 SHEBANG_FILES=	bin/c*
+
 CMAKE_ARGS=	-DPYTHON_INTERPRETER:STRING=${PYTHON_CMD} \
 		-DFREEBSD_LLVM_VER:STRING=${LLVM_VER}
 
-LLVM_VER=	60
+LLVM_VER=	10
 
 PORTSCOUT=	limit:^[0-9\.]*$$
 
-post-install: # remove unnecessary files
-	@cd ${STAGEDIR}${PREFIX} && ${RM} share/cpp2py.modulefile share/cpp2pyvars.sh
+post-install: # remove the unnecessary file: https://github.com/TRIQS/cpp2py/issues/41
+	@${RM} ${STAGEDIR}${PREFIX}/share/cpp2pyvars.sh
 
 .include <bsd.port.mk>
