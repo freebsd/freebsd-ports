@@ -1,4 +1,3 @@
-XXX remove second hunk after 0.39
 --- regress/cmdline/common.sh.orig	2020-09-13 18:20:00 UTC
 +++ regress/cmdline/common.sh
 @@ -24,6 +24,20 @@ export GOT_LOG_DEFAULT_LIMIT=0
@@ -22,25 +21,6 @@ XXX remove second hunk after 0.39
  git_init()
  {
  	git init -q "$1"
-@@ -96,13 +110,13 @@ git_show_tree()
- 
- trim_obj_id()
- {
--	let trimcount=$1
--	id=$2
-+	local trimcount=$1
-+	local id=$2
- 
--	pat=""
--	while [ trimcount -gt 0 ]; do
-+	local pat=""
-+	while [ "$trimcount" -gt 0 ]; do
- 		pat="[0-9a-f]$pat"
--		let trimcount--
-+		trimcount=$((trimcount - 1))
- 	done
- 
- 	echo ${id%$pat}
 @@ -168,7 +182,7 @@ test_init()
  		echo "No test name provided" >&2
  		return 1
