@@ -3,8 +3,7 @@
 
 PORTNAME=	xastir
 DISTVERSIONPREFIX=	Release-
-DISTVERSION=	2.1.4
-PORTREVISION=	3
+DISTVERSION=	2.1.6
 CATEGORIES=	comms hamradio
 
 MAINTAINER=	carl@stagecraft.cx
@@ -24,7 +23,8 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libtiff.so:graphics/tiff \
 		libwebp.so:graphics/webp \
 		libwebpmux.so:graphics/webp \
-		libwmflite.so:graphics/libwmf
+		libwmflite.so:graphics/libwmf \
+		libpcre.so:devel/pcre
 
 USES=		gettext gmake gnome jpeg motif python:run shebangfix xorg
 
@@ -38,11 +38,11 @@ SHEBANG_REGEX=	./scripts/.*\.(sh|pl|py)
 USE_GITHUB=	yes
 GH_ACCOUNT=	Xastir
 GH_PROJECT=	Xastir
-CFLAGS+=	-fcommon
+#CFLAGS+=	-fcommon
 
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=		BDB CURL DAVIS DBFAWK ERRORPOP FESTIVAL GEOTIFF GPSMAN
+OPTIONS_DEFINE=		BDB CURL DAVIS ERRORPOP FESTIVAL GEOTIFF GPSMAN
 OPTIONS_RADIO=		MGG
 OPTIONS_RADIO_MGG=	GMAGICK IMAGICK
 
@@ -68,9 +68,6 @@ IMAGICK_CONFIGURE_WITH=	imagemagick
 GMAGICK_LIB_DEPENDS=	libGraphicsMagickWand.so:graphics/GraphicsMagick
 GMAGICK_CONFIGURE_WITH=	graphicsmagick
 GMAGICK_USES=		compiler:gcc-c++11-lib
-
-DBFAWK_LIB_DEPENDS=	libpcre.so:devel/pcre
-DBFAWK_CONFIGURE_WITH=	dbfawk
 
 CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 

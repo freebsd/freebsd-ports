@@ -63,6 +63,7 @@ man/man1/xastir_udp_client.1.gz
 %%DATADIR%%/config/nwsc_ddmmyy_10a.dbfawk
 %%DATADIR%%/config/nwsc_ddmmyy_13.dbfawk
 %%DATADIR%%/config/nwsc_ddmmyy_15.dbfawk
+%%DATADIR%%/config/nwsfz_ddmmyy_19.dbfawk
 %%DATADIR%%/config/nwshzddmmyy.dbfawk
 %%DATADIR%%/config/nwshzddmmyy_old14.dbfawk
 %%DATADIR%%/config/nwsmzddmmyy.dbfawk
@@ -84,6 +85,7 @@ man/man1/xastir_udp_client.1.gz
 %%DATADIR%%/config/nwsw_ddmmyy_14.dbfawk
 %%DATADIR%%/config/nwsw_ddmmyy_14a.dbfawk
 %%DATADIR%%/config/nwsw_ddmmyy_17.dbfawk
+%%DATADIR%%/config/nwsw_ddmmyy_20.dbfawk
 %%DATADIR%%/config/nwsz1ddmmyy.dbfawk
 %%DATADIR%%/config/nwsz_ddmmyy.dbfawk
 %%DATADIR%%/config/nwsz_ddmmyy_09.dbfawk
@@ -92,6 +94,7 @@ man/man1/xastir_udp_client.1.gz
 %%DATADIR%%/config/nwsz_ddmmyy_10c.dbfawk
 %%DATADIR%%/config/nwsz_ddmmyy_11.dbfawk
 %%DATADIR%%/config/nwsz_ddmmyy_13.dbfawk
+%%DATADIR%%/config/nwsz_ddmmyy_19.dbfawk
 %%DATADIR%%/config/nwszoddmmyy.dbfawk
 %%DATADIR%%/config/pointlm.dbfawk
 %%DATADIR%%/config/predefined_EVENT.sys
@@ -166,7 +169,6 @@ man/man1/xastir_udp_client.1.gz
 %%DATADIR%%/maps/Online/nationalmap.gov/WMS_USGS_Topo.geo
 %%DATADIR%%/maps/worldhi.map
 %%DATADIR%%/scripts/Coordinate.pm
-%%DATADIR%%/scripts/Xastir_tigerpoly.py
 %%DATADIR%%/scripts/ads-b.pl
 %%DATADIR%%/scripts/ais.pl
 %%DATADIR%%/scripts/ais_pp.pl
