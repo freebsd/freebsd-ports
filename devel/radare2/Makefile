@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	radare2
-DISTVERSION=	4.5.0
+DISTVERSION=	4.5.1
 CATEGORIES=	devel
 
-MAINTAINER=	mizhka@gmail.com
+MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Tools to disasm, debug, analyze, and manipulate binary files
 
 LICENSE=	GPLv3
