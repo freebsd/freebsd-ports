@@ -1,6 +1,6 @@
---- daemons/ir_remote.c.orig
+--- daemons/ir_remote.c.orig	2011-03-25 22:28:18 UTC
 +++ daemons/ir_remote.c
-@@ -490,7 +490,7 @@ int write_message(char *buffer, size_t s
+@@ -490,7 +490,7 @@ int write_message(char *buffer, size_t size, const cha
  {
  	int len;
  

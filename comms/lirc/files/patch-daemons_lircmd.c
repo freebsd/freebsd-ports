@@ -1,4 +1,4 @@
---- daemons/lircmd.c.orig
+--- daemons/lircmd.c.orig	2011-03-25 22:28:18 UTC
 +++ daemons/lircmd.c
 @@ -277,9 +277,9 @@ setup_error:
  	return -1;
@@ -11,7 +11,7 @@
  	struct input_event event;
  
  	memset(&event, 0, sizeof(event));
-@@ -299,8 +299,8 @@ void write_uinput(__u16 type, __u16 code
+@@ -299,8 +299,8 @@ void write_uinput(__u16 type, __u16 code, __s32 value)
  			syslog(LOG_ERR, "%m");
  		}
  	}

@@ -1,6 +1,6 @@
---- tools/irsend.c.orig
+--- tools/irsend.c.orig	2011-03-25 22:28:18 UTC
 +++ tools/irsend.c
-@@ -40,6 +40,9 @@
+@@ -41,6 +41,9 @@
  #include <errno.h>
  #include <signal.h>
  #include <limits.h>
@@ -8,5 +8,5 @@
 +#include <netinet/in.h>
 +#endif
  
- #define PACKET_SIZE 256
- /* three seconds */
+ #include <stdint.h>
+ 

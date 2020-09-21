@@ -1,4 +1,4 @@
---- daemons/Makefile.am.orig
+--- daemons/Makefile.am.orig	2011-03-25 22:28:18 UTC
 +++ daemons/Makefile.am
 @@ -83,7 +83,7 @@ irrecord_SOURCES = irrecord.c \
  		transmit.c transmit.h

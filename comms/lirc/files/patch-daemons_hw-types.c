@@ -1,4 +1,4 @@
---- daemons/hw-types.c.orig
+--- daemons/hw-types.c.orig	2011-03-25 22:28:18 UTC
 +++ daemons/hw-types.c
 @@ -105,7 +105,7 @@ struct hardware *hw_list[] = {
  	&hw_awlibusb,

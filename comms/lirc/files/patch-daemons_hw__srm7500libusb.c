@@ -1,4 +1,4 @@
---- daemons/hw_srm7500libusb.c.orig
+--- daemons/hw_srm7500libusb.c.orig	2011-03-25 22:28:18 UTC
 +++ daemons/hw_srm7500libusb.c
 @@ -54,6 +54,23 @@
  #define USB_TIMEOUT (1000*10)

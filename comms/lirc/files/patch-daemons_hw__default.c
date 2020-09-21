@@ -1,4 +1,4 @@
---- daemons/hw_default.c.orig
+--- daemons/hw_default.c.orig	2011-03-25 22:28:18 UTC
 +++ daemons/hw_default.c
 @@ -38,6 +38,20 @@
  #include "transmit.h"

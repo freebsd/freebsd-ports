@@ -1,4 +1,4 @@
---- daemons/hw_hiddev.c.orig
+--- daemons/hw_hiddev.c.orig	2011-03-25 22:28:18 UTC
 +++ daemons/hw_hiddev.c
 @@ -22,9 +22,17 @@
  #include <stdio.h>
@@ -47,7 +47,7 @@
  		return 0;
  	}
  
-@@ -235,8 +249,40 @@ int hiddev_decode(struct ir_remote *remo
+@@ -235,8 +249,40 @@ int hiddev_decode(struct ir_remote *remote, ir_code * 
  	return 1;
  }
  
@@ -88,7 +88,7 @@
  	struct hiddev_event event;
  	struct hiddev_event asus_events[8];
  	int rd;
-@@ -253,9 +299,41 @@ char *hiddev_rec(struct ir_remote *remot
+@@ -253,9 +299,41 @@ char *hiddev_rec(struct ir_remote *remotes)
  
  	last = end;
  	gettimeofday(&start, NULL);
@@ -131,7 +131,7 @@
  		logperror(LOG_ERR, NULL);
  		hiddev_deinit();
  		return 0;
-@@ -515,6 +593,7 @@ char *sb0540_rec(struct ir_remote *remot
+@@ -515,6 +593,7 @@ char *sb0540_rec(struct ir_remote *remotes)
  }
  #endif
  
@@ -139,7 +139,7 @@
  /*
   * Apple Mac mini USB IR Receiver specific code.
   *
-@@ -566,6 +645,7 @@ char *macmini_rec(struct ir_remote *remo
+@@ -566,6 +645,7 @@ char *macmini_rec(struct ir_remote *remotes)
  
  	return decode_all(remotes);
  }

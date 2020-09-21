@@ -1,4 +1,4 @@
---- configure.ac.orig
+--- configure.ac.orig	2011-03-25 22:28:18 UTC
 +++ configure.ac
 @@ -97,6 +97,14 @@ case "${host_os}" in
      devdir_default="/usr/lirc/dev/"
@@ -15,7 +15,7 @@
    *)
      dnl Unix OSS configuration
  
-@@ -318,70 +326,22 @@ AH_TEMPLATE([SYSCONFDIR],
+@@ -310,70 +318,22 @@ AH_TEMPLATE([SYSCONFDIR],
  AH_TEMPLATE([USE_SYSLOG],
  	[define if you want to log to syslog instead of logfile])
  
@@ -90,7 +90,7 @@
  dnl dev_input driver requires linux input device api
  AC_CHECK_HEADERS(linux/input.h,[
    AC_DEFINE(HAVE_LINUX_DEVINPUT)
-@@ -411,17 +371,18 @@ AC_CHECK_HEADERS([linux/hiddev.h],[
+@@ -403,17 +363,18 @@ AC_CHECK_HEADERS([linux/hiddev.h],[
  #endif
  ]
  )
@@ -113,4 +113,113 @@
 -)
  
  dnl here we see what driver the user wants.
+ 
+@@ -498,8 +459,8 @@ if test "$driver" = "userspace" -o "$driver" = "all"; 
+ 		;;
+ 	atilibusb)
+ 		hw_module="${hw_module} hw_atilibusb.o receive.o"
+-		atilibusb_lib=`${LIBUSB_CONFIG} --libs`
+-		CFLAGS="$CFLAGS `${LIBUSB_CONFIG} --cflags`"
++		atilibusb_lib=-lusb
++		CFLAGS="$CFLAGS "
+ 		;;
+ 	atwf83)
+ 		hw_module="${hw_module} hw_atwf83.o"
+@@ -515,8 +476,8 @@ if test "$driver" = "userspace" -o "$driver" = "all"; 
+ 		;;
+ 	awlibusb)
+ 		hw_module="${hw_module} hw_awlibusb.o receive.o"
+-		awlibusb_lib=`${LIBUSB_CONFIG} --libs`
+-		CFLAGS="$CFLAGS `${LIBUSB_CONFIG} --cflags`"
++		awlibusb_lib=-lusb
++		CFLAGS="$CFLAGS "
+ 		;;
+ 	bte)
+ 		hw_module="${hw_module} hw_bte.o serial.o"
+@@ -536,16 +497,16 @@ if test "$driver" = "userspace" -o "$driver" = "all"; 
+ 		;;
+ 	commandir)
+ 		hw_module="${hw_module} hw_commandir.o receive.o"
+-		commandir_lib=`${LIBUSB_CONFIG} --libs`
+-		CFLAGS="$CFLAGS `${LIBUSB_CONFIG} --cflags`"
++		commandir_lib=-lusb
++		CFLAGS="$CFLAGS "
+ 		;;
+ 	devinput)
+ 		hw_module="${hw_module} hw_devinput.o"
+ 		;;
+ 	dfclibusb)
+ 		hw_module="${hw_module} hw_dfclibusb.o receive.o"
+-		dfclibusb_lib=`${LIBUSB_CONFIG} --libs`
+-		CFLAGS="$CFLAGS `${LIBUSB_CONFIG} --cflags`"
++		dfclibusb_lib=-lusb
++		CFLAGS="$CFLAGS "
+ 		;;
+ 	dsp)
+ 		hw_module="${hw_module} hw_dsp.o receive.o"
+@@ -665,8 +626,8 @@ if test "$driver" = "userspace" -o "$driver" = "all"; 
+ 		#;;
+ 	srm7500libusb)
+ 		hw_module="${hw_module} hw_srm7500libusb.o receive.o"
+-		srm7500libusb_lib=`${LIBUSB_CONFIG} --libs`
+-		CFLAGS="$CFLAGS `${LIBUSB_CONFIG} --cflags`"
++		srm7500libusb_lib=-lusb
++		CFLAGS="$CFLAGS "
+ 		;;
+ 	tira|tira_raw)
+ 		hw_module="${hw_module} hw_tira.o receive.o transmit.o"
+@@ -758,8 +719,8 @@ if test "$driver" = "atilibusb"; then
+   HW_DEFAULT="hw_atilibusb"
+   lircd_conf="atiusb/lircd.conf.atilibusb"
+   if test -n "${LIBUSB_CONFIG}"; then
+-    atilibusb_lib=`${LIBUSB_CONFIG} --libs`
+-    CFLAGS="$CFLAGS `${LIBUSB_CONFIG} --cflags`"
++    atilibusb_lib=-lusb
++    CFLAGS="$CFLAGS "
+   fi
+ fi
+ 
+@@ -777,8 +738,8 @@ if test "$driver" = "awlibusb"; then
+   HW_DEFAULT="hw_awlibusb"
+   lircd_conf="awlibusb/lircd.conf.awlibusb"
+   if test -n "${LIBUSB_CONFIG}"; then
+-    awlibusb_lib=`${LIBUSB_CONFIG} --libs`
+-    CFLAGS="$CFLAGS `${LIBUSB_CONFIG} --cflags`"
++    awlibusb_lib=-lusb
++    CFLAGS="$CFLAGS "
+   fi
+ fi
+ 
+@@ -893,8 +854,8 @@ if test "$driver" = "commandir"; then
+   lircd_conf="hauppauge/lircd.conf.hauppauge"
+   lircmd_conf="hauppauge/lircmd.conf.hauppauge"
+   if test -n "${LIBUSB_CONFIG}"; then
+-    commandir_lib=`${LIBUSB_CONFIG} --libs`
+-    CFLAGS="$CFLAGS `${LIBUSB_CONFIG} --cflags`"
++    commandir_lib=-lusb
++    CFLAGS="$CFLAGS "
+   fi
+ fi
+ 
+@@ -931,8 +892,8 @@ if test "$driver" = "dfclibusb"; then
+   hw_module="hw_dfclibusb.o receive.o"
+   HW_DEFAULT="hw_dfclibusb"
+   if test -n "${LIBUSB_CONFIG}"; then
+-    dfclibusb_lib=`${LIBUSB_CONFIG} --libs`
+-    CFLAGS="$CFLAGS `${LIBUSB_CONFIG} --cflags`"
++    dfclibusb_lib=-lusb
++    CFLAGS="$CFLAGS "
+   fi
+ fi
+ 
+@@ -1332,8 +1293,8 @@ if test "$driver" = "srm7500libusb"; then
+   HW_DEFAULT="hw_srm7500libusb"
+   lircd_conf="philips/lircd.conf.srm7500libusb"
+   if test -n "${LIBUSB_CONFIG}"; then
+-    srm7500libusb_lib=`${LIBUSB_CONFIG} --libs`
+-    CFLAGS="$CFLAGS `${LIBUSB_CONFIG} --cflags`"
++    srm7500libusb_lib=-lusb
++    CFLAGS="$CFLAGS "
+   fi
+ fi
  

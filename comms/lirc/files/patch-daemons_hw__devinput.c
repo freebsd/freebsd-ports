@@ -1,6 +1,6 @@
---- daemons/hw_devinput.c.orig
+--- daemons/hw_devinput.c.orig	2011-03-25 22:28:18 UTC
 +++ daemons/hw_devinput.c
-@@ -376,9 +376,15 @@ int devinput_decode(struct ir_remote *re
+@@ -376,9 +376,15 @@ int devinput_decode(struct ir_remote *remote, ir_code 
  	return 1;
  }
  
@@ -16,7 +16,7 @@
  	int rd;
  	ir_code value;
  
-@@ -399,6 +405,56 @@ char *devinput_rec(struct ir_remote *rem
+@@ -399,6 +405,56 @@ char *devinput_rec(struct ir_remote *remotes)
  	LOGPRINTF(1, "time %ld.%06ld  type %d  code %d  value %d", event.time.tv_sec, event.time.tv_usec, event.type,
  		  event.code, event.value);
  
@@ -73,7 +73,7 @@
  	value = (unsigned)event.value;
  #ifdef EV_SW
  	if (value == 2 && (event.type == EV_KEY || event.type == EV_SW)) {
-@@ -418,6 +474,9 @@ char *devinput_rec(struct ir_remote *rem
+@@ -418,6 +474,9 @@ char *devinput_rec(struct ir_remote *remotes)
  		if (event.value == 2) {
  			repeat_state = RPT_YES;
  		} else {

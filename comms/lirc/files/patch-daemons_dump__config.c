@@ -1,6 +1,6 @@
---- daemons/dump_config.c.orig
+--- daemons/dump_config.c.orig	2011-03-25 22:28:18 UTC
 +++ daemons/dump_config.c
-@@ -120,11 +120,11 @@ void fprint_remote_head(FILE * f, struct
+@@ -120,11 +120,11 @@ void fprint_remote_head(FILE * f, struct ir_remote *re
  	if (!is_raw(rem)) {
  		if (rem->pre_data_bits > 0) {
  			fprintf(f, "  pre_data_bits   %d\n", rem->pre_data_bits);
@@ -14,7 +14,7 @@
  		}
  		if (rem->pre_p != 0 && rem->pre_s != 0) {
  			fprintf(f, "  pre         %5u %5u\n", (__u32) rem->pre_p, (__u32) rem->pre_s);
-@@ -151,15 +151,15 @@ void fprint_remote_head(FILE * f, struct
+@@ -151,15 +151,15 @@ void fprint_remote_head(FILE * f, struct ir_remote *re
  		if (rem->min_code_repeat > 0) {
  			fprintf(f, "  min_code_repeat %d\n", rem->min_code_repeat);
  		}

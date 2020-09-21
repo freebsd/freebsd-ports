@@ -3,13 +3,16 @@
 
 PORTNAME=	lirc
 PORTVERSION=	0.9.0
-PORTREVISION=	10
+PORTREVISION=	11
 PORTEPOCH=	1
 CATEGORIES=	comms
 MASTER_SITES=	SF/${PORTNAME}/LIRC/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Linux Infrared Remote Control
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto
 
@@ -28,9 +31,10 @@ PORTDOCS=	html images irxevent.keys lirc.css lirc.hwdb
 PORTEXAMPLES=	remotes
 SUB_FILES=	pkg-message lircd.conf
 
+# SMODE2 requires svgalib which is only available on x86
 OPTIONS_DEFINE=	MINIMAL DEBUG UARTLIRC DOCS EXAMPLES
-OPTIONS_DEFINE_i386=	SMODE2 # requires svgalib which is...
-OPTIONS_DEFINE_amd64=	SMODE2 # ...only available on x86
+OPTIONS_DEFINE_i386=	SMODE2
+OPTIONS_DEFINE_amd64=	SMODE2
 OPTIONS_SUB=	yes
 
 MINIMAL_DESC=	Build with minimal dependencies
