@@ -1,5 +1,14 @@
---- meson.build.orig	2018-05-29 20:27:08 UTC
+--- meson.build.orig	2018-06-09 02:31:51 UTC
 +++ meson.build
+@@ -225,7 +225,7 @@ conf_data = configuration_data()
+ conf_data.set('URBIT_VERSION', '"0.6.0"')
+ 
+ osdet = build_machine.system()
+-os_c_flags = ['-funsigned-char','-ffast-math']
++os_c_flags = ['-funsigned-char','-ffast-math','-fcommon']
+ os_deps = []
+ os_link_flags = []
+ 
 @@ -254,12 +254,12 @@ elif osdet == 'darwin'
  
    os_deps = os_deps + [ncurses_dep]
