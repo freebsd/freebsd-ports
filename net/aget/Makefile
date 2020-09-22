@@ -3,6 +3,7 @@
 
 PORTNAME=	aget
 PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.enderunix.org/aget/
 
@@ -14,8 +15,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 LDFLAGS+=	-pthread
-# Fix build with clang11
-CFLAGS+=	-fcommon
 
 PLIST_FILES=	bin/aget man/man1/aget.1.gz
 
