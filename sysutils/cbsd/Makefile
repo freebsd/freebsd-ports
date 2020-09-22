@@ -32,6 +32,13 @@ BIN_FILES=	\
 		bin/cbsdsh/mknodes \
 		bin/cbsdsh/mksyntax
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} != amd64 && ${ARCH} != i386
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-Makefile \
+		${FILESDIR}/extra-patch-sudoexec_initenv
+.endif
+
 do-install:
 	@${ECHO} "Installing in ${CBSD_HOME}"
 	${MKDIR} ${STAGEDIR}${CBSD_HOME}
