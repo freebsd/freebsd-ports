@@ -1,5 +1,5 @@
---- Makefile.in.orig	2000-05-30 14:07:38.000000000 +0800
-+++ Makefile.in	2013-11-16 23:47:26.000000000 +0800
+--- Makefile.in.orig	2000-05-30 06:07:38 UTC
++++ Makefile.in
 @@ -1,6 +1,6 @@
 -CC = @CC@
 -CFLAGS = @CFLAGS@
@@ -10,7 +10,7 @@
  LIBS = @LIBS@
  LDFLAGS = @LDFLAGS@
  
-@@ -31,10 +31,8 @@ xysstats.o: xsysstats.c xsysstats.h conf
+@@ -31,10 +31,8 @@ xysstats.o: xsysstats.c xsysstats.h config.h headers.h
  porting.o: xsysstats.c xsysstats.h config.h headers.h
  
  install:
