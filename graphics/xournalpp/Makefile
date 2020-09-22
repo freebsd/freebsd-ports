@@ -10,6 +10,8 @@ COMMENT=	Handwriting notetaking software with PDF annotation support
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	non-constant-expression cannot be narrowed from type 'unsigned long long' to 'size_t' (aka 'unsigned int') in initializer list: https://github.com/xournalpp/xournalpp/issues/2267
+
 LIB_DEPENDS=	libpoppler-glib.so:graphics/poppler-glib \
 		libportaudio.so:audio/portaudio \
 		libsndfile.so:audio/libsndfile \
