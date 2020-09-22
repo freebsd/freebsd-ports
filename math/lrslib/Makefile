@@ -12,6 +12,8 @@ COMMENT=	Reverse search algorithm for vertex enumeration/convex hull problems
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_i386=	error: __int128 is not supported on this target
+
 LIB_DEPENDS=	libgmp.so:math/gmp
 
 USES=		gmake libtool localbase:ldflags
