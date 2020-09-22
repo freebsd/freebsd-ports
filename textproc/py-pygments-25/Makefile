@@ -23,6 +23,8 @@ CONFLICTS_INSTALL=	py??-pygments
 
 NO_ARCH=	yes
 
+PORTSCOUT=	limit:^2\.5\.
+
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_VER} == ${PYTHON_DEFAULT}
