@@ -1,22 +1,22 @@
 # $FreeBSD$
 
 PORTNAME=	libpru
-PORTVERSION=	0.4
+DISTVERSION=	0.4
 CATEGORIES=	devel
-MASTER_SITES=	https://bitbucket.org/rpaulo/libpru/get/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jmg@FreeBSD.org
+# The maintainer says, if you're actively using this you are free to
+# take this port.
 COMMENT=	Library to interface with PRUs
 
 LICENSE=	BSD2CLAUSE
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	rpaulo
+GH_TAGNAME=	v0.4
+
 IGNORE_DragonFly=	only supported on FreeBSD
 USES=		cmake compiler
-
-EXPIRATION_DATE=	2020-09-30
-DEPRECATED=		Unfetchable
-
-WRKSRC=		${WRKDIR}/rpaulo-libpru-5a74157b82b8
 
 .include <bsd.port.pre.mk>
 
