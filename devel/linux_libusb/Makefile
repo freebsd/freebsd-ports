@@ -3,6 +3,7 @@
 
 PORTNAME=	linux_libusb
 PORTVERSION=	13.0r${FSVN_REV}
+PORTREVISION=	1
 CATEGORIES=	devel linux
 MASTER_SITES=	http://www.selasky.org/hans_petter/distfiles/ \
 		http://home.selasky.org/distfiles/
@@ -13,14 +14,20 @@ COMMENT=	Linux-compatibility libusb
 LICENSE=	BSD2CLAUSE
 
 ONLY_FOR_ARCHS=	amd64 i386
+
 USES=		linux tar:bzip2
 USE_LDCONFIG=	yes
-USE_LINUX=	devtools:build
+USE_LINUX=	base devtools:build
 USE_LINUX_PREFIX=	yes
-PLIST_FILES=		usr/lib/libusb.so	\
-			usr/lib/libusb.so.3	\
-			usr/lib/libusb-0.1.so.4
+
+LIBDIR_amd64=	lib64
+LIBDIR_i386=	lib
+PLIST_FILES=	usr/${LIBDIR_${ARCH}}/libusb.so \
+		usr/${LIBDIR_${ARCH}}/libusb.so.3 \
+		usr/${LIBDIR_${ARCH}}/libusb-0.1.so.4
+
 CC=		${LINUXBASE}/usr/bin/gcc
+CFLAGS:=	${CFLAGS:N-march=*}
 CFLAGS+=	-I${WRKDIR}/${DISTNAME}/include
 SSP_CFLAGS?=	-fstack-protector # XXX -strong isn't supported by GCC < 4.9
 MAKE_ARGS+=	LIBUSB_GLOBAL_INCLUDE_FILE=libusb_global_linux.h
@@ -37,16 +44,41 @@ FSVNDIR=	lib/libusb
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
-MAKE_ARGS+=	COMPAT_32BIT=YES
+.if ${ARCH} == amd64
+PLIST_FILES+=	usr/lib/libusb.so \
+		usr/lib/libusb.so.3 \
+		usr/lib/libusb-0.1.so.4
+.endif
+
+do-build:
+	${MKDIR} ${WRKSRC}/${LIBDIR_${ARCH}}
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} MAKEOBJDIR=${LIBDIR_${ARCH}} \
+		${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} \
+		${MAKE_ARGS:N${DESTDIRNAME}=*}
+.if ${ARCH} == amd64
+	${MKDIR} ${WRKSRC}/lib
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} MAKEOBJDIR=lib \
+		${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} \
+		${MAKE_ARGS:N${DESTDIRNAME}=*} COMPAT_32BIT=yes
 .endif
 
 do-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/usr/${LIBDIR_${ARCH}}
+	${INSTALL_LIB} ${WRKSRC}/${LIBDIR_${ARCH}}/libusb.so.3 \
+		${STAGEDIR}${PREFIX}/usr/${LIBDIR_${ARCH}}
+	${LN} -s libusb.so.3 \
+		${STAGEDIR}${PREFIX}/usr/${LIBDIR_${ARCH}}/libusb.so
+	${LN} -s libusb.so.3 \
+		${STAGEDIR}${PREFIX}/usr/${LIBDIR_${ARCH}}/libusb-0.1.so.4
+.if ${ARCH} == amd64
 	${MKDIR} ${STAGEDIR}${PREFIX}/usr/lib
-	${INSTALL_LIB} ${WRKSRC}/libusb.so.3 ${STAGEDIR}${PREFIX}/usr/lib
-	${LN} -s libusb.so.3 ${STAGEDIR}${PREFIX}/usr/lib/libusb.so
-# Xilinx ISE requirement.
-	${LN} -s libusb.so.3 ${STAGEDIR}${PREFIX}/usr/lib/libusb-0.1.so.4
+	${INSTALL_LIB} ${WRKSRC}/lib/libusb.so.3 \
+		${STAGEDIR}${PREFIX}/usr/lib
+	${LN} -s libusb.so.3 \
+		${STAGEDIR}${PREFIX}/usr/lib/libusb.so
+	${LN} -s libusb.so.3 \
+		${STAGEDIR}${PREFIX}/usr/lib/libusb-0.1.so.4
+.endif
 
 .if defined(BOOTSTRAP) || defined(SVN_FETCH)
 SVN?=		svnlite
