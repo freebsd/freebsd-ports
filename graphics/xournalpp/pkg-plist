@@ -40,6 +40,8 @@ share/locale/zh/LC_MESSAGES/xournalpp.mo
 share/locale/zh_CN/LC_MESSAGES/xournalpp.mo
 share/locale/zh_HK/LC_MESSAGES/xournalpp.mo
 share/locale/zh_TW/LC_MESSAGES/xournalpp.mo
+%%DATADIR%%/plugins/ColorCycle/main.lua
+%%DATADIR%%/plugins/ColorCycle/plugin.ini
 %%DATADIR%%/plugins/Example/main.lua
 %%DATADIR%%/plugins/Example/plugin.ini
 %%DATADIR%%/plugins/Example/var_dump.lua
