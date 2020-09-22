@@ -1,6 +1,6 @@
---- Makefile.am.orig	2019-08-02 12:14:29 UTC
+--- Makefile.am.orig	2020-06-30 11:08:57 UTC
 +++ Makefile.am
-@@ -122,7 +122,6 @@ include watchfrr/subdir.am
+@@ -134,7 +134,6 @@ include watchfrr/subdir.am
  include qpb/subdir.am
  include fpm/subdir.am
  include grpc/subdir.am
