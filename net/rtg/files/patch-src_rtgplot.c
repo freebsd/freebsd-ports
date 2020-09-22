@@ -1,6 +1,16 @@
 --- src/rtgplot.c.orig	2003-10-02 15:27:52 UTC
 +++ src/rtgplot.c
-@@ -221,7 +221,10 @@ int main(int argc, char **argv) {
+@@ -54,6 +54,9 @@
+ #include "rtgplot.h"
+ #include "cgi.h"
+ 
++config_t set;
++char config_paths[CONFIG_PATHS][BUFSIZE];
++
+ /* dfp is a debug file pointer.  Points to stderr unless debug=level is set */
+ FILE *dfp = NULL;
+ 
+@@ -221,7 +224,10 @@ int main(int argc, char **argv) {
  						plot_line(data[i][j], &img, &graph, colors->shade, TRUE);
  					else
  						plot_line(data[i][j], &img, &graph, colors->shade, FALSE);
@@ -12,7 +22,7 @@
  					plot_legend(&img, rate[i][j], &graph, colors->shade, intname, offset);
  					offset++;
  				}
-@@ -629,15 +632,15 @@ void plot_legend(gdImagePtr * img, rate_
+@@ -629,15 +635,15 @@ void plot_legend(gdImagePtr * img, rate_t rate, graph_
  	if (set.verbose >= HIGH)
  		fprintf(dfp, "Plotting legend (%s).\n", __FUNCTION__);
  
@@ -34,7 +44,7 @@
  	}
  	snprintf(string, sizeof(string), "%s", interface);
  	for (i = 0; i < (17 - strlen(interface)); i++) {
-@@ -662,7 +665,7 @@ void plot_legend(gdImagePtr * img, rate_
+@@ -662,7 +668,7 @@ void plot_legend(gdImagePtr * img, rate_t rate, graph_
  			units(rate.cur, cur), graph->units,
  			units((float)rate.total, total));
  	}
@@ -43,7 +53,7 @@
  		      BORDER_T + graph->image.yplot_area + 33 + (10 * offset), string, std_colors[black]);
  }
  
-@@ -866,6 +869,13 @@ void plot_labels(gdImagePtr * img, graph
+@@ -866,6 +872,13 @@ void plot_labels(gdImagePtr * img, graph_t * graph) {
  	title_offset = 1 - (0.01 * (strlen(VERSION) + strlen(COPYRIGHT) + 2));
  	snprintf(string, sizeof(string), "%s %s", COPYRIGHT, VERSION);
  	gdImageString(*img, gdFontSmall, BORDER_L + (graph->image.xplot_area * title_offset), BORDER_T - 15, string, std_colors[black]);
@@ -57,7 +67,7 @@
  }
  
  
-@@ -1342,10 +1352,14 @@ void parseWeb(arguments_t *arguments, gr
+@@ -1342,10 +1355,14 @@ void parseWeb(arguments_t *arguments, graph_t *graph) 
  			}
  		}
  /* XXX REB - Warning: Deprecated, tN argument will go away in RTG 0.8 XXX */

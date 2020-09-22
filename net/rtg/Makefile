@@ -3,7 +3,7 @@
 
 PORTNAME=	rtg
 PORTVERSION=	0.7.4
-PORTREVISION=	20
+PORTREVISION=	21
 CATEGORIES=	net
 MASTER_SITES=	SF \
 		ftp://ftpmirror.uk/freebsd-ports/rtg/
