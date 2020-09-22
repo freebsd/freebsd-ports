@@ -3,6 +3,7 @@
 
 PORTNAME=	spacezero
 PORTVERSION=	0.86.00
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20${PORTVERSION:R}/
 
@@ -12,10 +13,12 @@ COMMENT=	2D Real Time Strategy space combat game
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis
+LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
 
 USES=		openal:al,alut gnome pkgconfig xorg
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 cairo gdkpixbuf2
 USE_XORG=	x11
 MAKE_ARGS=	DATADIR="${DATADIR}" \
 		INSTALL_DATA_DIR="${DATADIR}"
