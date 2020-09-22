@@ -3,20 +3,23 @@
 
 PORTNAME=	pnm2ppa
 PORTVERSION=	1.13
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	print
 MASTER_SITES=	SF
 
 MAINTAINER=	000.fbsd@quip.cz
 COMMENT=	Convert PNM images to PPA for some HP printers
 
-OPTIONS_DEFINE=	A4SIZE
-A4SIZE_DESC=	Set A4 (not Letter) as a default paper size
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/docs/en/LICENSE
 
 USES=	gmake ghostscript:run
 GNU_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	A4SIZE
+A4SIZE_DESC=	Set A4 (not Letter) as a default paper size
+
+.include <bsd.port.options.mk>
 
 .if defined(A4) || !empty(PORT_OPTIONS:MA4SIZE)
 RUN_DEPENDS+=	enscript:print/enscript-a4
@@ -46,4 +49,4 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/pnm2ppa.1 ${STAGEDIR}${PREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/pnm2ppa.conf.sample ${STAGEDIR}${PREFIX}/etc
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

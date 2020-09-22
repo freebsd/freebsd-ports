@@ -1,5 +1,5 @@
---- text-en.h.orig	Sat Oct 14 17:35:25 2000
-+++ text-en.h	Tue Jan 30 21:42:43 2001
+--- text-en.h.orig	2002-02-11 15:38:30 UTC
++++ text-en.h
 @@ -73,7 +73,7 @@
    
    /* 24 */ "Verbose logging to console\n",
