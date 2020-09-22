@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2020-06-16 15:27:08 UTC
+--- CMakeLists.txt.orig	2020-09-21 20:35:03 UTC
 +++ CMakeLists.txt
-@@ -134,7 +134,7 @@ else()
+@@ -119,7 +119,7 @@ else()
  		endif()
  	endif()
  	if(NOT BEOS AND NOT HAIKU)
