@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	labplot
-PORTVERSION=	2.7.0
-PORTREVISION=	11
+DISTVERSION=	2.8.0
 CATEGORIES=	math kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}
 
@@ -20,7 +19,7 @@ LIB_DEPENDS=	libgsl.so:math/gsl \
 
 USES=		bison cmake compiler:c++11-lang desktop-file-utils kde:5 qt:5 \
 		shared-mime-info tar:xz
-USE_KDE=	archive auth bookmarks codecs completion config configwidgets \
+USE_KDE=	archive attica auth bookmarks codecs completion config configwidgets \
 		coreaddons crash ecm_build guiaddons i18n iconthemes itemviews \
 		jobwidgets kdelibs4support kio newstuff notifications parts \
 		service solid sonnet syntaxhighlighting textwidgets unitconversion \
