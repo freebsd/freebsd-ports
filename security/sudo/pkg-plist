@@ -27,7 +27,7 @@ man/man5/sudoers_timestamp.5.gz
 man/man8/sudo.8.gz
 man/man8/sudo_logsrvd.8.gz
 man/man8/sudo_plugin.8.gz
-man/man8/sudo_plugin_python.8.gz
+%%PYTHON%%man/man8/sudo_plugin_python.8.gz
 man/man8/sudo_sendlog.8.gz
 man/man8/sudoedit.8.gz
 man/man8/sudoreplay.8.gz
