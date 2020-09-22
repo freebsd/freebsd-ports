@@ -5,6 +5,7 @@ PORTNAME=	crf++
 # 0.59 as defined in
 # https://github.com/taku910/crfpp/commit/d78526835e4cfcc4822156724edda8a3839327c2
 DISTVERSION=	0.59
+PORTREVISION=	1
 CATEGORIES=	science math
 PATCH_SITES=	https://patch-diff.githubusercontent.com/raw/taku910/crfpp/pull/:pr
 PATCHFILES=	15.patch:-p1:pr \
