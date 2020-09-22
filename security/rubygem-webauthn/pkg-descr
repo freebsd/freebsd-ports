@@ -1,0 +1,5 @@
+WebAuthn ruby server library.
+Make your application a W3C Web Authentication conformant Relying Party
+and allow your users to authenticate with U2F and FIDO2 authenticators.
+
+WWW: https://github.com/cedarcode/webauthn-ruby

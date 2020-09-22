@@ -5414,6 +5414,7 @@
     SUBDIR += rubygem-authlogic
     SUBDIR += rubygem-avro
     SUBDIR += rubygem-awesome_print
+    SUBDIR += rubygem-awrence
     SUBDIR += rubygem-aws-eventstream
     SUBDIR += rubygem-aws-partitions
     SUBDIR += rubygem-aws-sdk
@@ -5828,6 +5829,7 @@
     SUBDIR += rubygem-cairo-gobject
     SUBDIR += rubygem-capybara
     SUBDIR += rubygem-capybara-screenshot
+    SUBDIR += rubygem-cbor
     SUBDIR += rubygem-celluloid
     SUBDIR += rubygem-celluloid-essentials
     SUBDIR += rubygem-celluloid-extras

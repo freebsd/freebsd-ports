@@ -1,0 +1,9 @@
+Have you ever needed to automatically convert Rubyish snake_case
+to JSON-style camelBack or CamelCase hash keys?
+
+Awrence to the rescue.
+
+This gem recursively converts all snake_case keys in a hash structure
+to camelBack or CamelCase.
+
+WWW: https://github.com/futurechimp/awrence

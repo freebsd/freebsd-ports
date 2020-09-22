@@ -1,0 +1,4 @@
+An Atlassian OAuth2 strategy for OmniAuth 1.x.
+This allows you to login to Atlassian with your ruby app.
+
+WWW: https://github.com/aguynamedben/omniauth-atlassian-oauth2

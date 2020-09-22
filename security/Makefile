@@ -1037,10 +1037,12 @@
     SUBDIR += rubygem-acme-client
     SUBDIR += rubygem-aes_key_wrap
     SUBDIR += rubygem-airbrussh
+    SUBDIR += rubygem-android_key_attestation
     SUBDIR += rubygem-attr_encrypted
     SUBDIR += rubygem-bcrypt
     SUBDIR += rubygem-bcrypt-ruby
     SUBDIR += rubygem-bcrypt_pbkdf
+    SUBDIR += rubygem-cose
     SUBDIR += rubygem-devise-two-factor
     SUBDIR += rubygem-devise-two-factor-rails5
     SUBDIR += rubygem-devise-two-factor-rails60
@@ -1083,6 +1085,7 @@
     SUBDIR += rubygem-nexpose
     SUBDIR += rubygem-nmap-parser
     SUBDIR += rubygem-omniauth
+    SUBDIR += rubygem-omniauth-atlassian-oauth2
     SUBDIR += rubygem-omniauth-bitbucket
     SUBDIR += rubygem-omniauth-cas
     SUBDIR += rubygem-omniauth-cas3
@@ -1095,6 +1098,7 @@
     SUBDIR += rubygem-openssl
     SUBDIR += rubygem-openssl-ccm
     SUBDIR += rubygem-openssl-cmac
+    SUBDIR += rubygem-openssl-signature_algorithm
     SUBDIR += rubygem-openvas-omp
     SUBDIR += rubygem-origami
     SUBDIR += rubygem-pbkdf2-ruby
@@ -1128,6 +1132,7 @@
     SUBDIR += rubygem-ruby-hmac
     SUBDIR += rubygem-ruby-rc4
     SUBDIR += rubygem-ruby-saml
+    SUBDIR += rubygem-safety_net_attestation
     SUBDIR += rubygem-scrypt
     SUBDIR += rubygem-securecompare
     SUBDIR += rubygem-signet
@@ -1135,7 +1140,9 @@
     SUBDIR += rubygem-sshkey
     SUBDIR += rubygem-sshkit
     SUBDIR += rubygem-timfel-krb5
+    SUBDIR += rubygem-tpm-key_attestation
     SUBDIR += rubygem-twitter_oauth
+    SUBDIR += rubygem-webauthn
     SUBDIR += rubygem-webpush
     SUBDIR += s2n
     SUBDIR += safesh
