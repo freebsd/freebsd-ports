@@ -33,7 +33,7 @@ PLIST_FILES=	include/raylib.h \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == powerpc64
+.if ${ARCH:Mpowerpc*}
 USE_GCC=	any
 .endif
 
