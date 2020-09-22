@@ -2,6 +2,7 @@
 
 PORTNAME=	raylib
 DISTVERSION=	3.0.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	freebsd@sysctl.cz
@@ -31,14 +32,8 @@ PLIST_FILES=	include/raylib.h \
 		lib/libraylib.so.301 \
 		libdata/pkgconfig/raylib.pc
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH:Mpowerpc*}
-USE_GCC=	any
-.endif
-
 post-extract:
 	# Remove bundled files.
 	@${RM} -r ${WRKSRC}/src/external/glfw ${WRKSRC}/src/external/include ${WRKSRC}/src/rglfw.c
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
