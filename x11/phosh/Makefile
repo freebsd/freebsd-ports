@@ -22,7 +22,7 @@ LIB_DEPENDS=	libfeedback-0.0.so:accessibility/feedbackd \
 RUN_DEPENDS=	phoc:x11-wm/phoc \
 		gnome-session:x11/gnome-session
 
-USES=		compiler:c11 gnome meson pkgconfig
+USES=		compiler:c11 gettext gnome meson pkgconfig
 USE_GITLAB=	yes
 USE_GNOME=	cairo gdkpixbuf2 gnomedesktop3
 GL_SITE=	https://source.puri.sm
