@@ -12,6 +12,8 @@ COMMENT=	Next generation of ADIOS developed in the Exascale Computing Program
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	constant expression evaluates to 18446744073709551613 which cannot be narrowed to type 'unsigned int': https://github.com/ornladios/ADIOS2/issues/2469
+
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libblosc.so:archivers/c-blosc \
 		libepoll-shim.so:devel/libepoll-shim \
