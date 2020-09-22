@@ -41,6 +41,7 @@ CMAKE_ARGS=	-DFREEBSD_LLVM_VERSION:STRING=${LLVM_VER} -DGIT_SHA1:STRING="\"${GH_
 CMAKE_OFF=	GLOW_BUILD_EXAMPLES GLOW_BUILD_TESTS
 
 BINARY_ALIAS=	python=${PYTHON_CMD}
+BINARY_ALIAS+=	c++=${LOCALBASE}/bin/clang++${LLVM_VER:S/.//} # workaround for the llvm version mixup: https://github.com/pytorch/glow/issues/4910
 
 LLVM_VER=	${LLVM_DEFAULT:C/(.)(.)/\1.\2/}
 
