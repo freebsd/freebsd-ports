@@ -1,4 +1,4 @@
 bin/cal
-@sample %%ETCDIR%%/calcol.sample
-@sample %%ETCDIR%%/caldat.sample
-man/man1/cal.1.gz
+@sample %%ETCDIR%%/cal.col.sample
+@sample %%ETCDIR%%/cal.dat.sample
+share/man/man1/cal.1.gz
