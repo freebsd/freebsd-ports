@@ -2,9 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	librime
-PORTVERSION=	1.2.9
-DISTVERSIONPREFIX=	rime-
-PORTREVISION=	20
+PORTVERSION=	1.6.1
 CATEGORIES=	chinese textproc
 
 MAINTAINER=	lichray@gmail.com
@@ -13,17 +11,20 @@ COMMENT=	Rime Input Method Engine, the core library
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
+		libcapnp.so:devel/capnproto \
 		libgflags.so:devel/gflags \
 		libglog.so:devel/glog \
 		libleveldb.so:databases/leveldb \
 		libmarisa.so:devel/marisa-trie \
 		libopencc.so:chinese/opencc \
-		libyaml-cpp.so:devel/yaml-cpp
+		libyaml-cpp.so:devel/yaml-cpp \
 
-USES=		cmake compiler:c++11-lib gettext pathfix perl5 pkgconfig xorg
+USES=		cmake compiler:c++14-lang gettext pathfix perl5 pkgconfig xorg
 USE_PERL5=	build patch
 
-USE_CXXSTD=	c++11
+CMAKE_OFF=	BUILD_TEST
+
+USE_CXXSTD=	c++14
 USE_LDCONFIG=	yes
 USE_XORG=	xorgproto
 LDFLAGS+=	-lintl

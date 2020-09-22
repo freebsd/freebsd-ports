@@ -1,6 +1,8 @@
 bin/rime_deployer
 bin/rime_dict_manager
+bin/rime_patch
 include/rime_api.h
+include/rime_levers_api.h
 lib/librime.so
 lib/librime.so.%%VER%%
 lib/librime.so.1
