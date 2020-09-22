@@ -2,7 +2,7 @@
 
 PORTNAME=	zoom
 DISTVERSION=	5.2.458699.0906
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-im net-p2p
 MASTER_SITES=	https://zoom.us/client/${DISTVERSION}/
 PKGNAMESUFFIX=	-video-conferencing-client
@@ -20,11 +20,14 @@ USE_LINUX=	alsalib alsa-plugins-oss atk cairo-gobject dbuslibs fontconfig freety
 
 NO_BUILD=	yes
 
+PLIST_SUB=	LINUXBASE=${LINUXBASE}
+
 do-install:
-	cd ${WRKDIR} && ${CP} -r opt ${STAGEDIR}
+	${MKDIR} ${STAGEDIR}${LINUXBASE}
+	cd ${WRKDIR} && ${CP} -r opt ${STAGEDIR}${LINUXBASE}
 	(echo "#!/bin/sh"; \
 	  echo ""; \
-	  echo "LD_LIBRARY_PATH=/opt/zoom /opt/zoom/zoom \"$$"@"\"" \
+	  echo "LD_LIBRARY_PATH=${LINUXBASE}/opt/zoom ${LINUXBASE}/opt/zoom/zoom \"$$"@"\"" \
 	) > ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${CHMOD} +x ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${INSTALL_DATA} ${WRKDIR}/usr/share/applications/Zoom.desktop ${STAGEDIR}${PREFIX}/share/applications
