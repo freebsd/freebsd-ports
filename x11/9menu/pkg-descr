@@ -4,3 +4,5 @@ with 9wm, but can be used with any other window manager.
 
 The idea of a command line menu generator is from xmenu, but xmenu is
 exclusively a pop-up menu, not what everyone wants.
+
+WWW: https://github.com/arnoldrobbins/9menu
