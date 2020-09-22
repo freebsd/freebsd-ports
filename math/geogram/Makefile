@@ -22,6 +22,8 @@ USE_LDCONFIG=	yes
 
 CMAKE_ON=	GEOGRAM_USE_SYSTEM_GLFW3 VORPALINE_BUILD_DYNAMIC
 CMAKE_ARGS=	-DVORPALINE_PLATFORM:STRING=FreeBSD
+CFLAGS+=	-fcommon # https://github.com/alicevision/geogram/issues/16
+CXXFLAGS+=	-fcommon # https://github.com/alicevision/geogram/issues/16
 LDFLAGS+=	-pthread
 
 .include <bsd.port.mk>
