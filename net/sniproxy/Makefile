@@ -2,7 +2,7 @@
 
 PORTNAME=	sniproxy
 DISTVERSION=	0.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 
 MAINTAINER=	krion@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libev.so:devel/libev \
-  		libpcre.so:devel/pcre \
+		libpcre.so:devel/pcre \
 		libudns.so:dns/udns
 
 USES=		autoreconf:build gettext pkgconfig
@@ -24,7 +24,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	dlundquist
 
 GNU_CONFIGURE=	yes
-CFLAGS+=	-fcommon
 USE_LDCONFIG=	yes
 
 PLIST_FILES=	man/man5/sniproxy.conf.5.gz \
