@@ -2,8 +2,7 @@
 
 PORTNAME=	phosh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.3
-PORTREVISION=	1
+DISTVERSION=	0.4.4
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -19,7 +18,7 @@ LIB_DEPENDS=	libfeedback-0.0.so:accessibility/feedbackd \
 		libgcr-ui-3.so:security/gcr \
 		libpolkit-agent-1.so:sysutils/polkit \
 		libupower-glib.so:sysutils/upower \
-		libhandy-0.0.so:x11-toolkits/libhandy0
+		libhandy-1.so:x11-toolkits/libhandy
 RUN_DEPENDS=	phoc:x11-wm/phoc \
 		gnome-session:x11/gnome-session
 
@@ -28,15 +27,11 @@ USE_GITLAB=	yes
 USE_GNOME=	cairo gdkpixbuf2 gnomedesktop3
 GL_SITE=	https://source.puri.sm
 GL_ACCOUNT=	Librem5
-GL_COMMIT=	99d18088f1e44a19db870649559451e91adf204e
+GL_COMMIT=	0592c987a6784312651ab3fec416d2bfd6291e6d
 GL_TUPLE=	https://gitlab.gnome.org:GNOME:libgnome-volume-control:ae1a34aafce7026b8c0f65a43c9192d756fe1057:gvc/subprojects/gvc
 MESON_ARGS=	-Dgvc:alsa=false
-PLIST_FILES=	bin/${PORTNAME} \
-		bin/${PORTNAME}-osk-stub \
-		libexec/${PORTNAME} \
-		${DATADIR}/phoc.ini \
-		share/wayland-sessions/${PORTNAME}.desktop
-GLIB_SCHEMAS=	sm.puri.phosh.gschema.xml
+GLIB_SCHEMAS=	sm.puri.phosh.enums.xml \
+		sm.puri.phosh.gschema.xml
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/bash -l/sh -/' \
