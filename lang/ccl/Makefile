@@ -3,6 +3,7 @@
 PORTNAME=	ccl
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.12
+PORTREVISION=	1
 CATEGORIES=	lang lisp
 MASTER_SITES+=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${PORTVERSION}/:bootstrap
 DISTFILES=	freebsdx86.tar.gz:bootstrap
