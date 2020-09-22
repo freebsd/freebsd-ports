@@ -3,6 +3,7 @@
 
 PORTNAME=	window
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://people.FreeBSD.org/~trhodes/
 
