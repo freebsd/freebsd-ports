@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libpqxx
-PORTVERSION=	7.1.2
+PORTVERSION=	7.2.0
 CATEGORIES=	databases
 PKGNAMEPREFIX=	postgresql-
 DIST_SUBDIR=	postgresql

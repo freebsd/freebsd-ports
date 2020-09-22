@@ -3,6 +3,8 @@ include/pqxx/array.hxx
 include/pqxx/binarystring
 include/pqxx/binarystring.hxx
 include/pqxx/compiler-public.hxx
+include/pqxx/composite
+include/pqxx/composite.hxx
 include/pqxx/config-public-compiler.h
 include/pqxx/connection
 include/pqxx/connection.hxx
@@ -16,6 +18,7 @@ include/pqxx/except
 include/pqxx/except.hxx
 include/pqxx/field
 include/pqxx/field.hxx
+include/pqxx/internal/array-composite.hxx
 include/pqxx/internal/callgate.hxx
 include/pqxx/internal/compiler-internal-post.hxx
 include/pqxx/internal/compiler-internal-pre.hxx
