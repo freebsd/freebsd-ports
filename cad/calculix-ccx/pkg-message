@@ -2,8 +2,8 @@
 { type: install
   message: <<EOM
 Spooles: by default the single-threaded solver is used unless you set the
-CCX_NPROC_EQUATION_SOLVER environment variable with the number of
-cores you want to use.
+CCX_NPROC_EQUATION_SOLVER or the OMP_NUM_THREADS environment variables with
+the number of cores you want to use.
 EOM
 }
 ]
