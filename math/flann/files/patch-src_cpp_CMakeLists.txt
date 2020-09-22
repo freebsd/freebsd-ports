@@ -1,6 +1,6 @@
 --- src/cpp/CMakeLists.txt.orig	2019-04-07 03:21:23 UTC
 +++ src/cpp/CMakeLists.txt
-@@ -25,6 +25,6 @@ if (BUILD_CUDA_LIB)
+@@ -25,7 +25,7 @@ if (BUILD_CUDA_LIB)
      else()
  	    set(CUDA_NVCC_FLAGS "${CUDA_NVCC_FLAGS};" )
      endif()
@@ -8,3 +8,31 @@
 +    cuda_add_library(flann_cuda_s SHARED ${CU_SOURCES})
      set_property(TARGET flann_cuda_s PROPERTY COMPILE_DEFINITIONS FLANN_STATIC)
  endif()
+ 
+@@ -43,7 +43,7 @@ if(CMAKE_SYSTEM_NAME STREQUAL "Linux" AND CMAKE_COMPIL
+     endif()
+ else()
+     add_library(flann_cpp SHARED ${CPP_SOURCES})
+-    target_link_libraries(flann_cpp -Wl,--push-state,--no-as-needed ${LZ4_LIBRARIES} -Wl,--pop-state)
++    target_link_libraries(flann_cpp -Wl,--no-as-needed ${LZ4_LIBRARIES}) # clang-8 in FreeBSD 11 doesn't know -Wl,--push-state / -Wl,--pop-state
+     # export lz4 headers, so that MSVC to creates flann_cpp.lib
+     set_target_properties(flann_cpp PROPERTIES WINDOWS_EXPORT_ALL_SYMBOLS YES)
+     if (BUILD_CUDA_LIB)
+@@ -81,7 +81,7 @@ endif()
+ 
+ if (BUILD_C_BINDINGS)
+     add_library(flann_s STATIC ${C_SOURCES})
+-    target_link_libraries(flann_s -Wl,--push-state,--no-as-needed ${LZ4_LIBRARIES} -Wl,--pop-state)
++    target_link_libraries(flann_s -Wl,--no-as-needed ${LZ4_LIBRARIES})
+     if(CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMPILER_IS_CLANG)
+         set_target_properties(flann_s PROPERTIES COMPILE_FLAGS -fPIC)
+     endif()
+@@ -93,7 +93,7 @@ if (BUILD_C_BINDINGS)
+         target_link_libraries(flann -Wl,-whole-archive flann_s -Wl,-no-whole-archive)
+     else()
+         add_library(flann SHARED ${C_SOURCES})
+-        target_link_libraries(flann -Wl,--push-state,--no-as-needed ${LZ4_LIBRARIES} -Wl,--pop-state)
++        target_link_libraries(flann -Wl,--no-as-needed ${LZ4_LIBRARIES})
+ 
+         if(MINGW AND OPENMP_FOUND)
+           target_link_libraries(flann gomp)
