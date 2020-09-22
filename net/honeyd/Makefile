@@ -3,7 +3,7 @@
 
 PORTNAME=	honeyd
 PORTVERSION=	1.5c
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	net
 MASTER_SITES=	http://www.honeyd.org/uploads/ \
 		http://www.citi.umich.edu/u/provos/honeyd/

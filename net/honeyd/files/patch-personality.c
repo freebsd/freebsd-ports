@@ -1,10 +1,13 @@
 --- personality.c.orig	Thu Apr 14 16:07:26 2005
 +++ personality.c	Thu Apr 14 12:57:11 2005
-@@ -64,6 +64,8 @@
+@@ -64,6 +64,11 @@
  #include "xprobe_assoc.h"
  #include "template.h"
  
 +//#define DEBUG_XPROBE_STRUCT
++
++personalities_t personalities;
++xp_fprints_t xp_fprints;
 +
  /* ET - Moved SPLAY_HEAD to personality.h so xprobe_assoc.c could use it. */
  int npersons;
