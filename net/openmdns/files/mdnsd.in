@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD$
+# $FreeBSD: head/net/openmdns/files/mdnsd.in 478837 2018-09-03 00:21:45Z jbeich $
 #
 # PROVIDE: mdnsd
 # REQUIRE: NETWORKING
