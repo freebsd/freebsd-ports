@@ -11,14 +11,13 @@ MAINTAINER=	jjachuf@gmail.com
 COMMENT=	Firebird RDBMS bindings for Python
 
 LICENSE=	ISCL
+LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
 py27_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}future>0:devel/py-future@${PY_FLAVOR}
 
-NO_ARCH=	yes
 USES=		firebird python
+NO_ARCH=	yes
 USE_PYTHON=	autoplist distutils
-
-.include <bsd.port.pre.mk>
 
 post-patch:
 	@${ECHO_MSG}
@@ -27,4 +26,4 @@ post-patch:
 	@${ECHO_MSG} "The build of py-fdb will fail otherwise."
 	@${ECHO_MSG}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
