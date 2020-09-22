@@ -2,18 +2,37 @@
 # $FreeBSD$
 
 PORTNAME=	crf++
-PORTVERSION=	0.54
-PORTREVISION=	1
+# 0.59 as defined in
+# https://github.com/taku910/crfpp/commit/d78526835e4cfcc4822156724edda8a3839327c2
+DISTVERSION=	0.59
 CATEGORIES=	science math
-MASTER_SITES=	SF/crfpp/crfpp/${PORTVERSION}
-DISTNAME=	CRF++-${PORTVERSION}
+PATCH_SITES=	https://patch-diff.githubusercontent.com/raw/taku910/crfpp/pull/:pr
+PATCHFILES=	15.patch:-p1:pr \
+		16.patch:-p1:pr
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet Another CRF toolkit
 
+LICENSE=	BSD3CLAUSE LGPL21+
+LICENSE_COMB=	dual
+LICENS_BSD3CLAUSE=	${WRKSRC}/BSD
+LICENS_LGPLv21+ =	${WRKSRC}/LGPL
+
+USES=		libtool
+USE_GITHUB=	yes
+GH_ACCOUNT=	taku910
+GH_PROJECT=	crfpp
+GH_TAGNAME=	1dc92a606f874a4fe52603803364cc1d90f952fb
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		libtool
-USE_LDCONFIG=	yes
+
+PORTEXAMPLES=	JapaneseNE basenp chunking seg
+
+OPTIONS_DEFINE=	EXAMPLES
+
+post-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAPLESDIR}
+	(cd ${WRKSRC}/example && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>
