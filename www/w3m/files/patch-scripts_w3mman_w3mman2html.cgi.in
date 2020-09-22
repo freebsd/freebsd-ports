@@ -1,0 +1,11 @@
+--- scripts/w3mman/w3mman2html.cgi.in.orig	2020-05-07 12:51:46 UTC
++++ scripts/w3mman/w3mman2html.cgi.in
+@@ -81,7 +81,7 @@ if ($query{"local"}) {
+   if (! ($file =~ /^\//)) {
+     $file = $query{"pwd"} . '/' . $file;
+   }
+-  open(F, "MAN_KEEP_FORMATTING=1 $MAN -l $file 2> /dev/null |");
++  open(F, "MAN_KEEP_FORMATTING=1 $MAN $file 2> /dev/null |");
+ } else {
+   $man = $query{"man"};
+   if ($man =~ s/\((\w+)\)$//) {
