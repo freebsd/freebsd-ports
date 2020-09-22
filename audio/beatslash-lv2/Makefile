@@ -3,7 +3,7 @@
 PORTNAME=	beatslash
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 
@@ -28,5 +28,8 @@ USE_GNOME=	atkmm gdkpixbuf2 gtkmm24
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|#include <lvtk-1/lvtk|#include <lvtk-2/lvtk|' ${WRKSRC}/src/*.?pp
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lv2/beatslash.lv2/*.so
 
 .include <bsd.port.mk>
