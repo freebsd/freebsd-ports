@@ -11,10 +11,10 @@ COMMENT=	Fast, multithreaded XML+XSLT transformation library
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+ONLY_FOR_ARCHS=		amd64 powerpc64 powerpc64le sparc64
+
 LIB_DEPENDS=	libck.so:devel/concurrencykit \
 		libmemcached.so:databases/libmemcached
-
-ONLY_FOR_ARCHS=		amd64 powerpc64 sparc64
 
 USES=		autoreconf libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
