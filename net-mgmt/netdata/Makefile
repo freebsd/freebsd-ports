@@ -16,7 +16,6 @@ LICENSE=	GPLv3
 LIB_DEPENDS=	libjson-c.so:devel/json-c \
 		libuuid.so:misc/e2fsprogs-libuuid \
 		libuv.so:devel/libuv
-
 RUN_DEPENDS=	bash:shells/bash \
 		curl:ftp/curl \
 		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR} \
@@ -87,7 +86,7 @@ LTO_USES=		compiler:c11
 BROKEN=		Link-Time Optimization breaks compilation on FreeBSD 11
 .endif
 
-.if ${PORT_OPTIONS:MLTO} && ${ARCH} == powerpc64
+.if ${PORT_OPTIONS:MLTO} && ${ARCH:Mpowerpc*}
 USE_GCC=	yes
 .endif
 
