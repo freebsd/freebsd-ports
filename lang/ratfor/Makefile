@@ -3,7 +3,7 @@
 
 PORTNAME=	ratfor
 PORTVERSION=	1985.06
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	lang
 MASTER_SITES=	LOCAL/obrien \
 		http://sepwww.stanford.edu/sep/prof/
@@ -11,6 +11,9 @@ DISTFILES=	ratfor.shar.2 local.ratfor77.shar
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Rational FORTRAN compiler
+
+LICENSE=	PD
+LICENSE_FILE=	${WRKSRC}/README
 
 BROKEN_aarch64=		./ratfor -o test.f test.r keeps creating huge output file
 BROKEN_powerpc=		./ratfor -o test.f test.r keeps creating huge output file
@@ -30,7 +33,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ratfor77 ${STAGEDIR}${PREFIX}/bin
-	${LN} -sf ${PREFIX}/bin/ratfor77 ${STAGEDIR}${PREFIX}/bin/ratfor
+	${INSTALL} -lr ${STAGEDIR}${PREFIX}/bin/ratfor77 ${STAGEDIR}${PREFIX}/bin/ratfor
 	${INSTALL_MAN} ${WRKSRC}/ratfor.1 ${STAGEDIR}${PREFIX}/man/man1
 
 .include <bsd.port.mk>
