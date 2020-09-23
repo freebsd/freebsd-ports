@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tty-editor
-PORTVERSION=	0.5.1
+PORTVERSION=	0.6.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,8 +12,7 @@ COMMENT=	Opens a file or text in the user preferred editor
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-tty-prompt>=0.19<1:devel/rubygem-tty-prompt \
-		rubygem-tty-which>=0.4<1:devel/rubygem-tty-which
+RUN_DEPENDS=	rubygem-tty-prompt>=0.22<1:devel/rubygem-tty-prompt
 
 USES=		gem
 USE_RUBY=	yes
