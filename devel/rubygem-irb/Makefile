@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	irb
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.7
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ COMMENT=	Interactive Ruby
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-reline>=0.0.1:devel/rubygem-reline
+RUN_DEPENDS=	rubygem-reline>=0.1.5:devel/rubygem-reline
 
 USES=		gem
 USE_RUBY=	yes
