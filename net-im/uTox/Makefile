@@ -46,12 +46,13 @@ _LLD_EMUL_armv7=	armelf_fbsd
 _LLD_EMUL_i386=		elf_i386_fbsd
 _LLD_EMUL_powerpc=	elf32ppc_fbsd
 _LLD_EMUL_powerpc64=	elf64ppc_fbsd
+_LLD_EMUL_powerpc64le=	elf64ppc_fbsd
 
 post-patch:
 	@${REINPLACE_CMD} 's,[[:<:]]ld[[:>:]],ld -m${_LLD_EMUL_${ARCH}},' \
 		${WRKSRC}/src/xlib/CMakeLists.txt
 .endif
-	
+
 do-test:
 	@cd ${TEST_WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} \
