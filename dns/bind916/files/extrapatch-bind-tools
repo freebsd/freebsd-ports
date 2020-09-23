@@ -1,8 +1,8 @@
 Only select the "tools" part of bind for building.
 
---- Makefile.in.orig	2020-06-10 21:01:43 UTC
+--- Makefile.in.orig	2020-09-04 10:44:49 UTC
 +++ Makefile.in
-@@ -14,7 +14,7 @@ top_builddir =  @top_builddir@
+@@ -17,7 +17,7 @@ W3M = @W3M@
  
  VERSION=@BIND9_VERSION@
  
@@ -11,7 +11,7 @@ Only select the "tools" part of bind for building.
  TARGETS =
  PREREQS =	bind.keys.h
  
-@@ -50,7 +50,6 @@ installdirs:
+@@ -53,7 +53,6 @@ installdirs:
  	$(SHELL) ${top_srcdir}/mkinstalldirs ${DESTDIR}${mandir}/man1
  
  install:: installdirs
@@ -19,7 +19,7 @@ Only select the "tools" part of bind for building.
  
  uninstall::
  	rm -f ${DESTDIR}${sysconfdir}/bind.keys
---- bin/Makefile.in.orig	2020-06-10 21:01:43 UTC
+--- bin/Makefile.in.orig	2020-09-04 10:44:49 UTC
 +++ bin/Makefile.in
 @@ -11,8 +11,8 @@ srcdir =	@srcdir@
  VPATH =		@srcdir@
