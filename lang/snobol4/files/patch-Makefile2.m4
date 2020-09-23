@@ -1,17 +1,17 @@
---- Makefile2.m4.orig	2014-12-31 08:04:21.000000000 +0100
-+++ Makefile2.m4	2015-01-24 16:39:40.000000000 +0100
-@@ -614,8 +614,8 @@ snopea.1: snopea snolib/snopea.sno snobo
+--- Makefile2.m4.orig	2020-06-22 02:02:06 UTC
++++ Makefile2.m4
+@@ -615,8 +615,8 @@ snopea.1: snopea snolib/snopea.sno snobol4
  snopea.1.html: snopea snolib/snopea.sno snobol4
  	$(SNOPEA) snopea snopea.1.html
  
--$(GENERATED_DOCS_DOCDIR): snopea snolib/snopea.sno snobol4
+-docs $(GENERATED_DOCS_DOCDIR): snopea snolib/snopea.sno snobol4 always
 -	cd doc; make
-+$(GENERATED_DOCS_DOCDIR): snopea snolib/snopea.sno xsnobol4
-+	cd doc; $(MAKE)
++docs $(GENERATED_DOCS_DOCDIR): snopea snolib/snopea.sno xsnobol4 always
++	cd doc; ${MAKE}
  
- #################
- # installation
-@@ -628,17 +628,18 @@ INSTALL_H=[include]/h.h [include]/snotyp
+ always:
+ 
+@@ -631,17 +631,18 @@ INSTALL_H=[include]/h.h [include]/snotypes.h [include]
  # generated SNOLIB files (host.sno generated at top level)
  GENSNOLIB=host.sno config.sno
  
@@ -35,7 +35,7 @@
  	$(INSTALL) -d $(MAN1DIR)
  	for F in $(GENERATED_DOCS_DOCDIR1); do \
  		$(INSTALL) -m 644 $$F $(MAN1DIR); \
-@@ -664,15 +665,12 @@ install: snobol4 sdb timing.out $(GENERA
+@@ -668,15 +669,12 @@ install: snobol4 sdb timing.out $(GENERATED_DOCS)
  	for F in $(SNOLIB_FILES); do \
  		$(INSTALL) -m 644 $$F $(SNOLIB_LIB); \
  	done
@@ -51,4 +51,4 @@
 +	for F in doc/load.txt doc/*.html; do \
  		$(INSTALL) -m 644 $$F $(DOC_DIR); \
  	done
- ifdef([INSTALL_SYSDEP],	INSTALL_SYSDEP
+ ifdef([INSTALL_SYSDEP],[	]INSTALL_SYSDEP
