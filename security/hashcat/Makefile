@@ -12,7 +12,7 @@ COMMENT=	Advanced CPU-based password recovery utility
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/docs/license.txt
 
-NOT_FOR_ARCHS=		powerpc powerpc64 sparc64
+NOT_FOR_ARCHS=		powerpc powerpc64 powerpcspe sparc64
 NOT_FOR_ARCHS_REASON=	fails to compile: compiling for big-endian architecture not supported
 
 BUILD_DEPENDS=	gsed:textproc/gsed
