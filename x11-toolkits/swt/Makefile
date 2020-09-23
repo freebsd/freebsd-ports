@@ -12,7 +12,7 @@ COMMENT=	Standard Widget Toolkit for Java
 
 LICENSE=	EPL
 
-ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc64
+ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc64 powerpc64le
 
 USES=		compiler:c++11-lang gl gnome pkgconfig zip:infozip xorg
 
@@ -49,6 +49,7 @@ DISTNAME_i386=		${PORTNAME}-${DISTVERSION}-gtk-linux-x86
 # The source code for x86_64 and ppc64 is identical, so prefer x86_64 tarball
 # to save space and time
 DISTNAME_powerpc64=	${PORTNAME}-${DISTVERSION}-gtk-linux-x86_64
+DISTNAME_powerpc64le=	${PORTNAME}-${DISTVERSION}-gtk-linux-x86_64
 
 .if ${.TARGETS:Mmakesum}
 . for i in ${ONLY_FOR_ARCHS}
