@@ -11,10 +11,9 @@ COMMENT=	Scriptable database and system performance benchmark
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libck.so:devel/concurrencykit \
-		libluajit-5.1.so:lang/luajit
+LIB_DEPENDS=	libck.so:devel/concurrencykit
 
-USES=		autoreconf gmake libtool pkgconfig
+USES=		autoreconf compiler:c11 gmake libtool pkgconfig
 
 CONFIGURE_ARGS=	--with-system-ck --with-system-luajit
 GNU_CONFIGURE=	yes
@@ -30,6 +29,14 @@ MYSQL_CONFIGURE_WITH=	mysql
 MYSQL_USES=		mysql
 PGSQL_CONFIGURE_WITH=	pgsql
 PGSQL_USES=		pgsql
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc64
+LIB_DEPENDS+=	libluajit-5.1.so:lang/luajit-openresty
+.else
+LIB_DEPENDS+=	libluajit-5.1.so:lang/luajit
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS = / s| doc||' ${WRKSRC}/Makefile.am
