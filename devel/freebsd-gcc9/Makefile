@@ -21,7 +21,7 @@ BUILD_DEPENDS=	${BU_PREFIX}-as:devel/binutils@${TARGETARCH} \
 		objdump:devel/binutils
 RUN_DEPENDS=	${BU_PREFIX}-as:devel/binutils@${TARGETARCH}
 
-FLAVORS=	aarch64 amd64 i386 mips mips64 powerpc powerpc64 riscv64 sparc64
+FLAVORS=	aarch64 amd64 i386 mips mips64 powerpc powerpc64 powerpc64le riscv64 sparc64
 TARGETARCH=	${FLAVOR}
 
 USES=	gmake iconv libtool tar:xz makeinfo compiler:c++11-lang
@@ -107,7 +107,7 @@ PLIST+=		${.CURDIR}/pkg-plist.i386
 .if ${TARGETARCH:Mmips*}
 PLIST+=		${.CURDIR}/pkg-plist.mips
 .endif
-.if ${TARGETARCH} == "powerpc64"
+.if ${TARGETARCH:Mpowerpc64*}
 PLIST+=		${.CURDIR}/pkg-plist.powerpc64
 .elif ${TARGETARCH:Mpowerpc*}
 PLIST+=		${.CURDIR}/pkg-plist.powerpc
