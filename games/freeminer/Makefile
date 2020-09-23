@@ -3,7 +3,7 @@
 
 PORTNAME=	freeminer
 PORTVERSION=	0.4.10.4
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
@@ -31,7 +31,6 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=	CLIENT SERVER CURL SOUND FREETYPE LEVELDB LUAJIT NLS DOCS EXAMPLES
 OPTIONS_DEFAULT=CLIENT SERVER CURL SOUND FREETYPE LEVELDB LUAJIT
-OPTIONS_EXCLUDE_powerpc64=	LUAJIT
 OPTIONS_SUB=	yes
 
 CLIENT_DESC=	Build client
@@ -68,6 +67,10 @@ FREETYPE_LIB_DEPENDS=	libfreetype.so:print/freetype2
 LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit
 
 .include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc64
+LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
+.endif
 
 .if ${PORT_OPTIONS:MCLIENT} && ${PORT_OPTIONS:MSOUND}
 USES+=		openal
