@@ -9,7 +9,7 @@ COMMENT=	NAT punching tool based on udptunnel
 
 LICENSE=	GPLv3
 
-ONLY_FOR_ARCHS=		amd64 i386 powerpc64
+ONLY_FOR_ARCHS=		amd64 i386 powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	Fails to patch while running in embedded systems
 
 USES=		gmake
