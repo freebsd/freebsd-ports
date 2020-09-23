@@ -3,7 +3,7 @@
 
 PORTNAME=	mboxgrep
 PORTVERSION=	0.7.9
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
@@ -29,7 +29,7 @@ OPTIONS_DEFINE=	DOCS PCRE
 
 PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
 
-post-patch:
+pre-build:
 	@${REINPLACE_CMD} -e 's,void \*tmpp,FILE \*tmpp,g' ${WRKSRC}/src/main.c
 	@${REINPLACE_CMD} -e 's,$$(prefix),$$(DESTDIR)$$(prefix),g' \
 		-e 's,$$(mandir),$$(DESTDIR)$$(mandir),g' \

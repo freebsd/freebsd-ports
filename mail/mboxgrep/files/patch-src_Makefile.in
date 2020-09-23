@@ -1,0 +1,28 @@
+--- src/Makefile.in.orig	2003-03-30 23:07:10 UTC
++++ src/Makefile.in
+@@ -21,12 +21,12 @@ srcdir		=	@srcdir@
+ 
+ CC		= 	@CC@
+ OBJS		=	info.o main.o mh.o scan.o maildir.o mbox.o misc.o \
+-			wrap.o getopt.o getopt1.o md5.o
++			wrap.o
+ SRCS		= 	info.c main.c mh.c scan.c maildir.c mbox.c misc.c \
+-			wrap.c getopt.c getopt1.c md5.c
++			wrap.c
+ TARGET		=	mboxgrep
+ CFLAGS		=	@CFLAGS@
+-LIBS		=	@LIBS@
++LIBS		=	@LIBS@ -lcrypto
+ INSTALL		=	@INSTALL@
+ prefix		=	@prefix@
+ SHELL 		= 	/bin/sh
+@@ -51,7 +51,7 @@ distclean:
+ 
+ .PHONY: install
+ install: mboxgrep
+-	$(INSTALL) -d $(prefix)/bin
+-	$(INSTALL) -s $(TARGET) $(prefix)/bin
++	$(INSTALL) -d $(DESTDIR)$(prefix)/bin
++	$(INSTALL) -s $(TARGET) $(DESTDIR)$(prefix)/bin
+ 
+ .NOEXPORT:
