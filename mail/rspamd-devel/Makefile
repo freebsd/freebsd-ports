@@ -2,7 +2,7 @@
 
 PORTNAME=	rspamd
 PORTVERSION=	2.6.a1.20200402
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-devel
 
@@ -18,8 +18,7 @@ LIB_DEPENDS=	libpcre.so:devel/pcre \
 BUILD_DEPENDS=	ragel:devel/ragel
 RUN_DEPENDS=	ca_root_nss>=3.*:security/ca_root_nss
 
-USES=		cmake compiler:c11 gnome perl5 pkgconfig \
-		sqlite ssl
+USES=		cmake gnome perl5 pkgconfig sqlite ssl
 USE_LDCONFIG=	yes
 USE_PERL5=	build run
 USE_GNOME=	glib20
@@ -35,6 +34,7 @@ OPTIONS_DEFAULT_amd64=		LUAJIT
 OPTIONS_DEFAULT_armv7=		LUAJIT
 OPTIONS_DEFAULT_i386=		LUAJIT
 OPTIONS_DEFAULT_powerpc=	LUAJIT
+OPTIONS_DEFAULT_powerpc64=	LUAJIT
 OPTIONS_SUB=	yes
 
 BLAS_DESC=	Use OpenBLAS to accelerate KANN
@@ -80,6 +80,15 @@ CGP_RUN_DEPENDS+=	\
 	p5-AnyEvent>=0:devel/p5-AnyEvent \
 	p5-EV>=0:devel/p5-EV \
 	p5-JSON-XS>=0:converters/p5-JSON-XS
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc64
+LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
+USES+=		compiler:gcc-c++11-lib
+.else
+USES+=		compiler:c11
+.endif
 
 post-install:
 	@${MKDIR} \
