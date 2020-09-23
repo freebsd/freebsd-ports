@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	hexpeek
+DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.20200804
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	https://www.hexpeek.com/releases/${DISTNAME}/
-DISTVERSIONPREFIX=	v
 
 MAINTAINER=	se@freebsd.org
 COMMENT=	Hex file editor
@@ -15,6 +15,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		tar:bzip2 libedit ncurses
+USE_CSTD=	c99
 
 CFLAGS+=	-Isrc -D_WITH_GETLINE -L${LOCALBASE}/lib
 
