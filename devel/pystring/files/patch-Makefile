@@ -1,0 +1,15 @@
+--- Makefile.orig	2012-10-16 21:31:17 UTC
++++ Makefile
+@@ -9,10 +9,10 @@ pystring.lo: pystring.h pystring.cpp
+ 	$(LIBTOOL) --mode=compile --tag=CXX $(CXX) $(CXXFLAGS) -c pystring.cpp
+ 
+ libpystring.la: pystring.lo
+-	$(LIBTOOL) --mode=link --tag=CXX $(CXX) -o $@ $< -rpath $(LIBDIR)
++	$(LIBTOOL) --mode=link --tag=CXX $(CXX) -o libpystring.la pystring.lo -rpath $(LIBDIR)
+ 
+ install: libpystring.la
+-	$(LIBTOOL) --mode=install install -c $< $(LIBDIR)/$<
++	$(LIBTOOL) --mode=install install -c libpystring.la $(LIBDIR)/libpystring.la
+ 
+ clean:
+ 	$(RM) -fr pystring.lo pystring.o libpystring.la .libs
