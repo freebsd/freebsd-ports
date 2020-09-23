@@ -1,12 +1,13 @@
---- Makefile.orig	2019-08-08 19:18:25.578250000 +0000
-+++ Makefile	2019-08-08 19:20:21.482341000 +0000
-@@ -355,14 +355,10 @@
+--- Makefile.orig	2020-09-18 12:03:57 UTC
++++ Makefile
+@@ -344,14 +344,11 @@ endif
  ifdef BUILD_DOCS
  ifdef NOPORTDOCS
- DOCS=qemu.1 qemu-img.1 qemu-nbd.8 qemu-ga.8
+ DOCS=qemu.1 qemu-img.1 qemu-nbd.8 $(MANUAL_BUILDDIR)/interop/qemu-ga.8
 -DOCS+=docs/interop/qemu-qmp-ref.7 docs/interop/qemu-ga-ref.7
++DOCS+=docs/interop/qemu-ga-ref.7
  else
- DOCS=qemu-doc.html qemu-doc.txt qemu.1 qemu-img.1 qemu-nbd.8 qemu-ga.8
+ DOCS=qemu-doc.html qemu-doc.txt qemu.1 qemu-img.1 qemu-nbd.8 $(MANUAL_BUILDDIR)/interop/qemu-ga.8
 -DOCS+=docs/interop/qemu-qmp-ref.html docs/interop/qemu-qmp-ref.txt docs/interop/qemu-qmp-ref.7
  DOCS+=docs/interop/qemu-ga-ref.html docs/interop/qemu-ga-ref.txt docs/interop/qemu-ga-ref.7
  endif
@@ -15,7 +16,7 @@
  ifdef CONFIG_VIRTFS
  DOCS+=fsdev/virtfs-proxy-helper.1
  endif
-@@ -832,16 +828,10 @@
+@@ -828,16 +825,10 @@ ifndef NOPORTDOCS
  	$(INSTALL_DIR) "$(DESTDIR)$(qemu_docdir)"
  	$(INSTALL_DATA) qemu-doc.html "$(DESTDIR)$(qemu_docdir)"
  	$(INSTALL_DATA) qemu-doc.txt "$(DESTDIR)$(qemu_docdir)"
@@ -29,12 +30,12 @@
 -	$(INSTALL_DATA) docs/interop/qemu-qmp-ref.7 "$(DESTDIR)$(mandir)/man7"
 -	$(INSTALL_DATA) docs/qemu-block-drivers.7 "$(DESTDIR)$(mandir)/man7"
 -	$(INSTALL_DATA) docs/qemu-cpu-models.7 "$(DESTDIR)$(mandir)/man7"
- ifneq ($(TOOLS),)
+ ifeq ($(CONFIG_TOOLS),y)
  	$(INSTALL_DATA) qemu-img.1 "$(DESTDIR)$(mandir)/man1"
  	$(INSTALL_DIR) "$(DESTDIR)$(mandir)/man8"
-@@ -895,11 +885,6 @@
- ifdef CONFIG_GTK
- 	$(MAKE) -C po $@
+@@ -942,11 +933,6 @@ endif
+ ifeq ($(CONFIG_PLUGIN),y)
+ 	$(INSTALL_DATA) $(SRC_PATH)/include/qemu/qemu-plugin.h "$(DESTDIR)$(includedir)/qemu-plugin.h"
  endif
 -	$(INSTALL_DIR) "$(DESTDIR)$(qemu_datadir)/keymaps"
 -	set -e; for x in $(KEYMAPS); do \
