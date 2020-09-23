@@ -1,6 +1,6 @@
---- Makefile.orig	Wed Jan 11 16:55:21 2006
-+++ Makefile	Mon Aug  7 16:31:23 2006
-@@ -17,15 +17,16 @@
+--- Makefile.orig	2006-01-11 13:03:20 UTC
++++ Makefile
+@@ -17,15 +17,16 @@ ARCH := $(shell uname -m | sed -e s/i.86/i386/ -e s/su
  #OPTIONS
  ######################################
  
@@ -26,9 +26,12 @@
  
  ######################################
  
-@@ -38,14 +39,17 @@
+@@ -36,16 +37,19 @@ MOUNT_DIR=.
+ BINDIR=quake2
+ 
  CC?=gcc
- BASE_CFLAGS= #-Wall -pipe 
+-BASE_CFLAGS= #-Wall -pipe 
++BASE_CFLAGS= -Wall -fcommon #-pipe
  DEBUG_CFLAGS=$(BASE_CFLAGS) -g -ggdb
 -RELEASE_CFLAGS=$(BASE_CFLAGS) -O2 -ffast-math -funroll-loops -fomit-frame-pointer -fexpensive-optimizations
 +RELEASE_CFLAGS=$(BASE_CFLAGS)
@@ -36,7 +39,7 @@
 -ifeq ($(ARCH),i386)
 -  RELEASE_CFLAGS+=-falign-loops=2 -falign-jumps=2 -falign-functions=2 -fno-strict-aliasing
 +ifeq ($(WITH_OPTIMIZED_CFLAGS),YES)
-+  RELEASE_CFLAGS+=-O2 -ffast-math -fomit-frame-pointer -fexpensive-optimizations
++  RELEASE_CFLAGS+=-ffast-math -fomit-frame-pointer
 +  ifeq ($(ARCH),i386)
 +    RELEASE_CFLAGS+=-falign-functions=2 -fno-strict-aliasing
 +  endif
