@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}2-${DISTVERSION}
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Virtual versatile amplification for Jack and set of LV2 plugins
 
-#BROKEN=		Does not build with glib 2.66.0
+BROKEN=		Does not build with glib 2.66.0
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
