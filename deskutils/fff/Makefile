@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	fff
-DISTVERSION=	2.1
+DISTVERSION=	2.2
 CATEGORIES=	deskutils
 
 MAINTAINER=	0mp@FreeBSD.org
