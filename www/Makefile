@@ -1624,6 +1624,7 @@
     SUBDIR += py-httplib2
     SUBDIR += py-httptools
     SUBDIR += py-httpx
+    SUBDIR += py-httpx013
     SUBDIR += py-hyper
     SUBDIR += py-hyperframe
     SUBDIR += py-hyperlink
