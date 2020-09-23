@@ -598,7 +598,6 @@
 %%WWWDIR%%/go/core/views/extjs3/form/TimeField.js
 %%WWWDIR%%/go/core/views/extjs3/form/multiselect/Field.js
 %%WWWDIR%%/go/core/views/extjs3/form/multiselect/Window.js
-%%WWWDIR%%/go/core/views/extjs3/go.js
 %%WWWDIR%%/go/core/views/extjs3/grid/ColumnRenderers.js
 %%WWWDIR%%/go/core/views/extjs3/grid/DateColumn.js
 %%WWWDIR%%/go/core/views/extjs3/grid/EditorGridPanel.js
@@ -639,6 +638,7 @@
 %%WWWDIR%%/go/core/views/extjs3/modules/ModulePanel.js
 %%WWWDIR%%/go/core/views/extjs3/modules/PermissionsWindow.js
 %%WWWDIR%%/go/core/views/extjs3/modules/SystemSettingsModuleGrid.js
+%%WWWDIR%%/go/core/views/extjs3/namespaces.js
 %%WWWDIR%%/go/core/views/extjs3/oauth/ClientDialog.js
 %%WWWDIR%%/go/core/views/extjs3/oauth/ClientGrid.js
 %%WWWDIR%%/go/core/views/extjs3/oauth/SystemSettingsPanel.js
@@ -1280,9 +1280,12 @@
 %%WWWDIR%%/go/modules/community/notes/views/extjs3/NoteDialog.js
 %%WWWDIR%%/go/modules/community/notes/views/extjs3/NoteGrid.js
 %%WWWDIR%%/go/modules/community/notes/views/extjs3/SettingsPanel.js
+%%WWWDIR%%/go/modules/community/notes/views/extjs3/scripts.js
+%%WWWDIR%%/go/modules/community/notes/views/extjs3/scripts.js.map
 %%WWWDIR%%/go/modules/community/notes/views/extjs3/scripts.txt
 %%WWWDIR%%/go/modules/community/notes/views/extjs3/themes/default/images/notes.png
 %%WWWDIR%%/go/modules/community/notes/views/extjs3/themes/default/style.css
+%%WWWDIR%%/go/modules/community/notes/views/extjs3/tsconfig.json
 %%WWWDIR%%/go/modules/community/notesencrypt/Module.php
 %%WWWDIR%%/go/modules/community/notesencrypt/language/de.php
 %%WWWDIR%%/go/modules/community/notesencrypt/language/en.php
