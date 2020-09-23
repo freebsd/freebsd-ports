@@ -1,0 +1,39 @@
+#!/bin/sh
+# $FreeBSD$
+#
+# PROVIDE: reggae_pf
+# REQUIRE: pf
+# AFTER: NETWORKING local_unbound named nsd unbound
+
+# Add the following lines to /etc/rc.conf.local, /etc/rc.conf or
+# /etc/rc.conf.d/reggae_pf to enable this service:
+#
+# reggae_pf_enable (bool):      Set to NO by default.
+#                               Set it to "YES" to enable virtual_oss.
+# reggae_pf_directory (string): Directory containing PF anchor files
+#                               Default is "/etc/pf.d"
+
+. /etc/rc.subr
+
+name=reggae_pf
+desc="Reggae helper to load PF anchors"
+rcvar=${name}_enable
+start_precmd="${name}_precmd"
+
+load_rc_config $name
+
+: ${reggae_pf_enable:="NO"}
+: ${reggae_pf_directory:="/etc/pf.d"}
+
+command="%%PREFIX%%/bin/reggae"
+command_args="pf ${reggae_pf_directory}"
+
+reggae_pf_precmd()
+{
+  if [ ! -d "${reggae_pf_directory}" ]; then
+    echo "${reggae_pf_directory} is not directory" >&2
+    exit 1
+  fi
+}
+
+run_rc_command $*

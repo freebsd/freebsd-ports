@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	reggae
-PORTVERSION=	0.1.15
+PORTVERSION=	0.1.16
 CATEGORIES=	sysutils
 
 MAINTAINER=	meka@tilda.center
@@ -13,9 +13,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${LOCALBASE}/bin/cbsd:sysutils/cbsd \
 		sudo:security/sudo
 
-NO_ARCH=	yes
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	cbsd
+USE_RC_SUBR=	reggae_pf
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
