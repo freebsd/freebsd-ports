@@ -4,7 +4,7 @@
 PORTNAME=	fastnetmon
 PORTVERSION=	1.1.4
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-mgmt security
 
 MAINTAINER=	farrokhi@FreeBSD.org
@@ -48,6 +48,10 @@ CMAKE_INSTALL_PREFIX=	${PREFIX}
 
 .if ${ARCH} == amd64 || ${ARCH} == i386
 LIB_DEPENDS+=	libluajit-5.1.so:lang/luajit
+.elif ${ARCH} == powerpc64
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-src_fast__library.h \
+		${FILESDIR}/extra-patch-src_netflow__plugin_netflow__collector.cpp
+LIB_DEPENDS+=	libluajit-5.1.so:lang/luajit-openresty
 .else
 CMAKE_ARGS+=	-DENABLE_LUA_SUPPORT:BOOL=OFF
 .endif
