@@ -48,7 +48,7 @@ CPE_VENDOR=	gnu
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == armv6 || ${ARCH} == armv7 || ${ARCH} == i386 || \
-    ${ARCH} == powerpc64
+    ${ARCH:Mpowerpc*}
 SSP_CFLAGS?=	-fno-stack-protector
 .endif
 
