@@ -33,7 +33,7 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == powerpc64
+.if ${ARCH:Mpowerpc*}
 USE_GCC=	yes
 .endif
 
