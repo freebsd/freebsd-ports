@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Apache-Session
-PORTVERSION=	1.93
-PORTREVISION=	1
+PORTVERSION=	1.94
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,11 +15,13 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-DBI>=0:databases/p5-DBI
-TEST_DEPENDS+=	p5-Test-Deep>=0.082:devel/p5-Test-Deep \
-		p5-Test-Exception>=0.15:devel/p5-Test-Exception \
-		p5-Test-Database>=0:databases/p5-Test-Database
+TEST_DEPENDS=	p5-Test-Database>=0:databases/p5-Test-Database \
+		p5-Test-Deep>=0.082:devel/p5-Test-Deep \
+		p5-Test-Exception>=0.15:devel/p5-Test-Exception
 
-USES=		perl5
+USES=		dos2unix perl5
 USE_PERL5=	modbuild
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
