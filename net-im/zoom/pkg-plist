@@ -1,6 +1,3 @@
-bin/zoom
-share/applications/Zoom.desktop
-share/pixmaps/Zoom.png
 %%LINUXBASE%%/opt/zoom/Droplet.pcm
 %%LINUXBASE%%/opt/zoom/Embedded.properties
 %%LINUXBASE%%/opt/zoom/Qt/WebSockets/qmldir
@@ -24,6 +21,9 @@ share/pixmaps/Zoom.png
 %%LINUXBASE%%/opt/zoom/Qt/labs/settings/qmldir
 %%LINUXBASE%%/opt/zoom/Qt/labs/sharedimage/libsharedimageplugin.so
 %%LINUXBASE%%/opt/zoom/Qt/labs/sharedimage/qmldir
+%%LINUXBASE%%/opt/zoom/QtGraphicalEffects/DropShadow.qml
+%%LINUXBASE%%/opt/zoom/QtGraphicalEffects/GaussianBlur.qml
+%%LINUXBASE%%/opt/zoom/QtGraphicalEffects/Glow.qml
 %%LINUXBASE%%/opt/zoom/QtGraphicalEffects/LinearGradient.qml
 %%LINUXBASE%%/opt/zoom/QtGraphicalEffects/LinearGradient.qmlc
 %%LINUXBASE%%/opt/zoom/QtGraphicalEffects/OpacityMask.qml
@@ -31,6 +31,9 @@ share/pixmaps/Zoom.png
 %%LINUXBASE%%/opt/zoom/QtGraphicalEffects/RadialGradient.qml
 %%LINUXBASE%%/opt/zoom/QtGraphicalEffects/RadialGradient.qmlc
 %%LINUXBASE%%/opt/zoom/QtGraphicalEffects/libqtgraphicaleffectsplugin.so
+%%LINUXBASE%%/opt/zoom/QtGraphicalEffects/private/DropShadowBase.qml
+%%LINUXBASE%%/opt/zoom/QtGraphicalEffects/private/GaussianDirectionalBlur.qml
+%%LINUXBASE%%/opt/zoom/QtGraphicalEffects/private/GaussianGlow.qml
 %%LINUXBASE%%/opt/zoom/QtGraphicalEffects/private/libqtgraphicaleffectsprivate.so
 %%LINUXBASE%%/opt/zoom/QtGraphicalEffects/private/qmldir
 %%LINUXBASE%%/opt/zoom/QtGraphicalEffects/qmldir
@@ -1087,7 +1090,6 @@ share/pixmaps/Zoom.png
 %%LINUXBASE%%/opt/zoom/libQt5XcbQpa.so.5
 %%LINUXBASE%%/opt/zoom/libQt5XcbQpa.so.5.9
 %%LINUXBASE%%/opt/zoom/libQt5XcbQpa.so.5.9.9
-%%LINUXBASE%%/opt/zoom/libfaac1.so
 %%LINUXBASE%%/opt/zoom/libicudata.so
 %%LINUXBASE%%/opt/zoom/libicudata.so.56
 %%LINUXBASE%%/opt/zoom/libicudata.so.56.1
@@ -1099,12 +1101,11 @@ share/pixmaps/Zoom.png
 %%LINUXBASE%%/opt/zoom/libicuuc.so.56.1
 %%LINUXBASE%%/opt/zoom/libmpg123.so
 %%LINUXBASE%%/opt/zoom/libquazip.so
-%%LINUXBASE%%/opt/zoom/libquazip.so.1.0.0
 %%LINUXBASE%%/opt/zoom/libturbojpeg.so
-%%LINUXBASE%%/opt/zoom/libturbojpeg.so.0.1.0
 %%LINUXBASE%%/opt/zoom/meeting_chat_chime.pcm
 %%LINUXBASE%%/opt/zoom/meeting_raisehand_chime.pcm
 %%LINUXBASE%%/opt/zoom/platforminputcontexts/libcomposeplatforminputcontextplugin.so
+%%LINUXBASE%%/opt/zoom/platforminputcontexts/libfcitxplatforminputcontextplugin.so
 %%LINUXBASE%%/opt/zoom/platforminputcontexts/libibusplatforminputcontextplugin.so
 %%LINUXBASE%%/opt/zoom/platforms/libqeglfs.so
 %%LINUXBASE%%/opt/zoom/platforms/libqlinuxfb.so
@@ -1163,6 +1164,9 @@ share/pixmaps/Zoom.png
 %%LINUXBASE%%/opt/zoom/zoom
 %%LINUXBASE%%/opt/zoom/zoom.sh
 %%LINUXBASE%%/opt/zoom/zopen
+bin/zoom
+share/applications/Zoom.desktop
+share/pixmaps/Zoom.png
 @dir %%LINUXBASE%%/opt/zoom/Qt/WebSockets
 @dir %%LINUXBASE%%/opt/zoom/Qt/labs/calendar
 @dir %%LINUXBASE%%/opt/zoom/Qt/labs/folderlistmodel

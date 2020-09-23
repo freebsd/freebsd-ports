@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	zoom
-DISTVERSION=	5.2.458699.0906
-PORTREVISION=	3
+DISTVERSION=	5.3.465578.0920
 CATEGORIES=	net-im net-p2p
 MASTER_SITES=	https://zoom.us/client/${DISTVERSION}/
 PKGNAMESUFFIX=	-video-conferencing-client
@@ -31,7 +30,7 @@ do-install:
 	) > ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${CHMOD} +x ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${INSTALL_DATA} ${WRKDIR}/usr/share/applications/Zoom.desktop ${STAGEDIR}${PREFIX}/share/applications
-	${REINPLACE_CMD} -e 's|/usr/bin/zoom|${LOCALBASE}/bin/zoom|' ${STAGEDIR}${PREFIX}/share/applications/Zoom.desktop
+	${REINPLACE_CMD} -i '' -e 's|/usr/bin/zoom|${LOCALBASE}/bin/zoom|' ${STAGEDIR}${PREFIX}/share/applications/Zoom.desktop
 	${INSTALL_DATA} ${WRKDIR}/usr/share/pixmaps/Zoom.png ${STAGEDIR}${PREFIX}/share/pixmaps/Zoom.png
 
 .include <bsd.port.mk>
