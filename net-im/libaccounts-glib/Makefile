@@ -20,6 +20,7 @@ USES=		gnome libtool meson pathfix pkgconfig python sqlite:3
 USE_GNOME=	pygobject3 introspection libxml2
 USE_PYTHON=	py3kplist
 CFLAGS_powerpc64=	-Wno-error
+CFLAGS_powerpc64le=	-Wno-error
 
 CONFIGURE_ARGS=	-Dtests=false
 
