@@ -150,6 +150,7 @@
     SUBDIR += aspcud
     SUBDIR += asymptote
     SUBDIR += atlas
+    SUBDIR += barvinok
     SUBDIR += bcal
     SUBDIR += bitwise
     SUBDIR += blacs
