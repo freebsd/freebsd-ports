@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gindent
-PORTVERSION=	2.2.10
-PORTREVISION=	5
+PORTVERSION=	2.2.12
 CATEGORIES=	devel
 MASTER_SITES=	GNU/indent
 DISTNAME=	indent-${PORTVERSION}
@@ -14,7 +13,7 @@ COMMENT=	GNU indent
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		localbase:ldflags
+USES=		localbase:ldflags makeinfo
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g
 MAKE_JOBS_UNSAFE=	yes
@@ -34,6 +33,9 @@ post-patch:
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/indent.html ${STAGEDIR}${DOCSDIR}
+	# XXX: Would be nice to use "configure --htmldir" or something similar
+	# to install this document into an appropriate directory automatically.
+	${INSTALL_DATA} ${STAGEDIR}${PREFIX}/doc/indent/indent.html ${STAGEDIR}${DOCSDIR}
+	${RM} -r ${STAGEDIR}${PREFIX}/doc
 
 .include <bsd.port.mk>

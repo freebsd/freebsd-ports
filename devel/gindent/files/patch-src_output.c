@@ -1,6 +1,6 @@
---- src/output.c.orig	2008-03-11 18:50:42 UTC
+--- src/output.c.orig	2018-09-05 16:47:56 UTC
 +++ src/output.c
-@@ -71,7 +71,7 @@
+@@ -74,7 +74,7 @@
  
  RCSTAG_CC ("$Id$");
  
@@ -8,4 +8,4 @@
 +FILE                   * output       = NULL;
  static BOOLEAN           inhibited    = 0;
  static buf_break_st_ty * buf_break_list = NULL;
- 
+ buf_break_st_ty * buf_break = NULL;

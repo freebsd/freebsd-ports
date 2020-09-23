@@ -1,6 +1,6 @@
---- src/indent.h.orig	2008-03-11 18:50:42 UTC
+--- src/indent.h.orig	2018-09-02 20:25:26 UTC
 +++ src/indent.h
-@@ -135,9 +135,9 @@ typedef enum bb_code
+@@ -141,9 +141,9 @@ typedef enum bb_code
    bb_cast
  } bb_code_ty;
  
