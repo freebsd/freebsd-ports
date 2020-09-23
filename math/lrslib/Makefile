@@ -16,7 +16,7 @@ BROKEN_i386=	error: __int128 is not supported on this target
 
 LIB_DEPENDS=	libgmp.so:math/gmp
 
-USES=		gmake libtool localbase:ldflags
+USES=		compiler:c11 gmake libtool localbase:ldflags
 USE_LDCONFIG=	yes
 
 MAKEFILE=	makefile
