@@ -1,0 +1,8 @@
+hexpeek is a binary editor designed for efficient operation on huge files,
+but works on any file.
+
+Operations supported are searching, patching, and insertions and deletions
+of binary data in a file. An undo feature allows to revert changes made in
+error.
+
+WWW: https://www.hexpeek.com/
