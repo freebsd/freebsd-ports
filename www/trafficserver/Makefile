@@ -3,6 +3,7 @@
 
 PORTNAME=	trafficserver
 PORTVERSION=	8.0.8
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	APACHE/${PORTNAME}
 
@@ -20,6 +21,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libbrotlienc.so:archivers/brotli \
 		${LIB_DEPENDS_${ARCH}}
 LIB_DEPENDS_amd64=	libluajit-5.1.so:lang/luajit
+LIB_DEPENDS_powerpc64=	libluajit-5.1.so:lang/luajit-openresty
 
 USES=		compiler:c++17-lang cpe gmake libtool localbase ncurses \
 		pathfix perl5 pkgconfig sqlite ssl tar:bzip2 tcl
@@ -60,12 +62,6 @@ MEMCACHED_DESC=		Enable memcache & memcached_remap plugin
 IMAGEMAGICK_DESC=	Enable ats-magick & webp convert plugin
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == amd64
-PLIST_SUB+=	LUAJIT=""
-.else
-PLIST_SUB+=	LUAJIT="@comment "
-.endif
 
 .if ${PORT_OPTIONS:MMEMCACHED}
 LIB_DEPENDS+=	libmemcached.so:databases/libmemcached
