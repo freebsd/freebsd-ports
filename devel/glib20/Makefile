@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	glib
-PORTVERSION=	2.56.3
-PORTREVISION=	9
+PORTVERSION=	2.66.0
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome2
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Some useful routines of C programming (current stable version)
@@ -22,24 +21,21 @@ PORTSCOUT=	limitw:1,even
 LIB_DEPENDS+=	libpcre.so:devel/pcre \
 		libffi.so:devel/libffi
 
-GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
 # iconv:wchar_t - our iconv in base doesn't support utf-8 -> wchar_t (boooo)
 # (wchar_t is used by glibmm, rawtherapee triggered this)
-USES+=		compiler:c11 gettext gmake gnome iconv:wchar_t libtool \
-		localbase pathfix perl5 pkgconfig python shebangfix
+USES+=		compiler:c11 gettext gnome iconv:wchar_t \
+		localbase:ldflags meson perl5 pkgconfig python:3.5+
 USE_PYTHON=	py3kplist
 USE_PERL5=	build
-CONFIGURE_ARGS=	--disable-gtk-doc --with-html-dir=${PREFIX}/share/doc \
-		--enable-static=yes \
-		--with-pcre=system \
-		--disable-fam
-CONFIGURE_ENV=	ac_cv_header_sys_inotify_h=
-INSTALL_TARGET=	install-strip
+USE_LDCONFIG=	yes
+MESON_ARGS=	-Db_lundef=false \
+		-Dlibmount=disabled \
+		-Dselinux=disabled \
+		-Dinstalled_tests=false \
+		-Dxattr=false
+BINARY_ALIAS=	python3=${PYTHON_VERSION}
 
-SHEBANG_FILES=	*/*.pl
-
-LIBVERSION=	0.5600.3
+LIBVERSION=	0.6600.0
 PLIST_SUB+=	LIBVERSION=${LIBVERSION}
 
 glib_MAN=	gtester.1 gtester-report.1 glib-gettextize.1
@@ -52,63 +48,60 @@ OPTIONS_DEFINE=	DEBUG MANPAGES NLS
 OPTIONS_DEFAULT=	MANPAGES
 OPTIONS_SUB=	yes
 
-DEBUG_CONFIGURE_ON=	--enable-debug=yes
-
 MANPAGES_BUILD_DEPENDS=		docbook-xml>4.1.2:textproc/docbook-xml \
 				docbook-xsl>0:textproc/docbook-xsl
 MANPAGES_USE=			GNOME=libxslt:build
-MANPAGES_CONFIGURE_ENABLE=	man
-MANPAGES_CONFIGURE_ON=		--with-xml-catalog=${LOCALBASE}/share/xml/catalog
+MANPAGES_MESON_TRUE=	man
 
 .include <bsd.port.pre.mk>
 
 # doesn't build yet
-CONFIGURE_ARGS+=--disable-dtrace
+MESON_ARGS+=	-Ddtrace=false
 
 .if empty(ICONV_LIB)
-CONFIGURE_ARGS+=	--with-libiconv=no
+MESON_ARGS+=	-Diconv=libc # native?
 .else
-CONFIGURE_ARGS+=	--with-libiconv=gnu
+MESON_ARGS+=	-Diconv=external
 .endif
 
 .if ${ARCH} == powerpc64
 EXTRA_PATCHES+=	${FILESDIR}/extra-arch-powerpc64
 .endif
 
-# Let glib use asm code for implementing atomic ops on i386 and amd64.
-.if ${ARCH} == "i386"
-GLIB_ARCH=	i486
-.elif ${ARCH} == "amd64"
-GLIB_ARCH=	x86_64
-.else
-GLIB_ARCH=	${ARCH}
-.endif
-CONFIGURE_TARGET=${GLIB_ARCH}-portbld-freebsd${OSREL}
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g ; \
 		s|/usr/share/locale/locale|${LOCALBASE}/share/locale/locale|g' \
-			${WRKSRC}/glib/gutils.c
-	@${REINPLACE_CMD} -e 's|inotify_support=yes|inotify_support=no| ; \
-		s|-Werror|| ; \
-		s|#define HAVE_SYS_INOTIFY_H 1||' ${WRKSRC}/configure
+		${WRKSRC}/glib/gutils.c
+	@${REINPLACE_CMD} -e 's|@PYTHON@|${PYTHON_VERSION}|g' \
+		${WRKSRC}/gio/gdbus-2.0/codegen/gdbus-codegen.in \
+		${WRKSRC}/glib/gtester-report.in \
+		${WRKSRC}/gobject/glib-genmarshal.in \
+		${WRKSRC}/gobject/glib-mkenums.in
+	@${REINPLACE_CMD} -e '/inotify_init1/d' \
+		-e '/inotify.h/d' \
+		${WRKSRC}/meson.build
 
-do-build-MANPAGES-on:
-.for m in glib gio gobject
-. for file in ${${m}_MAN}
-	cd ${WRKSRC}/docs/reference/${m} && ${GMAKE} ${file}
-. endfor
-.endfor
+CODEGENDIR=	${PREFIX}/share/glib-2.0/codegen
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/GConf/gsettings
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/gio/modules
-
-post-install-MANPAGES-on:
-.for m in glib gio gobject
-	${INSTALL_MAN} ${${m}_MAN:S|^|${WRKSRC}/docs/reference/${m}/|} \
-		${STAGEDIR}${PREFIX}/man/man1
+# generates .py[co] files for installed modules
+# if that's not done, ${PYTHON_SITELIBDIR}/gps will be polluted
+# with these files when module is imported from root user
+	@${FIND} ${STAGEDIR}${PREFIX} -name \*.pyc -delete
+	(cd ${STAGEDIR}${PREFIX} && \
+	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
+		-d ${CODEGENDIR} -f ${CODEGENDIR:S;${PREFIX}/;;} && \
+	${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py \
+		-d ${CODEGENDIR} -f ${CODEGENDIR:S;${PREFIX}/;;})
+	# install bash completion regardless if bash is present
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/bash-completion/completions
+.for file in gapplication gdbus gio gresource gsettings
+	${INSTALL_DATA} ${WRKSRC}/gio/completion/${file} \
+		${STAGEDIR}${PREFIX}/share/bash-completion/completions/
 .endfor
+	@${RM} -r ${STAGEDIR}${PREFIX}/libexec/installed-tests
 
 .include <bsd.port.post.mk>
 
