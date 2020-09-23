@@ -3,6 +3,7 @@
 
 PORTNAME=	mmix
 PORTVERSION=	20160804
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://mmix.cs.hm.edu/src/
 
