@@ -1,8 +1,5 @@
-`Oleo' has more than one user interface.  The traditional `oleo'
-environment shows a curses based (character mode) user interface.
-A bare bones user interface based on the X Window System exists as of
-version 1.6 which dates back to 1994.  In 1998, development started for
-a `motif' based user interface.  It should be more user friendly than
-the character based UI.
+Oleo is a light-weight spreadsheet that'll work in almost any
+environment.  Oleo features a curses based interface (character mode),
+and also a LessTif (Motif) based graphical user interface.
 
-WWW: http://www.gnu.org/software/oleo/oleo.html
+WWW: https://www.gnu.org/software/oleo/oleo.html
