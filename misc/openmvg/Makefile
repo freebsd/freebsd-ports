@@ -3,7 +3,7 @@
 PORTNAME=	openmvg
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	misc science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,7 +15,6 @@ LICENSE_FILE=	${WRKSRC}/../LICENSE
 ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	need to figure out which TARGET_ARCHITECTURE values correspond to other architectures, plus "generic" is broken
 
-BUILD_DEPENDS=	liblz4>0:archivers/liblz4 # only for the workaround for https://github.com/openMVG/openMVG/issues/1798
 LIB_DEPENDS=	libflann_cpp.so:math/flann \
 		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
@@ -37,7 +36,6 @@ CMAKE_OFF=	OpenMVG_BUILD_EXAMPLES
 
 CXXFLAGS+=	-fPIC \
 		-I${LOCALBASE}/include # because flann is looked for in a wrong directiory: https://github.com/openMVG/openMVG/issues/1284
-LDFLAGS+=	-L${LOCALBASE}/lib -llz4 # the workaround for https://github.com/openMVG/openMVG/issues/1798
 
 OPTIONS_SINGLE=			SIMD_${ARCH:tu}
 OPTIONS_SINGLE_SIMD_AMD64=	K8 CORE MEROM NEHALEM
