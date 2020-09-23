@@ -4,6 +4,7 @@
 PORTNAME=	neovim
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.4
+PORTREVISIO=	1
 CATEGORIES=	editors
 
 MAINTAINER=	adamw@FreeBSD.org
@@ -40,7 +41,6 @@ OPTIONS_DEFAULT=LUAJIT
 OPTIONS_EXCLUDE_aarch64=LUAJIT
 OPTIONS_EXCLUDE_mips64=	LUAJIT
 OPTIONS_EXCLUDE_powerpc=LUAJIT
-OPTIONS_EXCLUDE_powerpc64=	LUAJIT
 OPTIONS_EXCLUDE_riscv=	LUAJIT
 OPTIONS_EXCLUDE_sparc64=LUAJIT
 OPTIONS_SUB=	yes
@@ -60,6 +60,7 @@ PYNVIM_USES=		python:run
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == powerpc64
+LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
 USES+=		compiler:gcc-c++11-lib
 .endif
 
