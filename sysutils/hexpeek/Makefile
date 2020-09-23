@@ -4,7 +4,7 @@
 PORTNAME=	hexpeek
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.20200804
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	https://www.hexpeek.com/releases/${DISTNAME}/
 
@@ -14,13 +14,17 @@ COMMENT=	Hex file editor
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		tar:bzip2 libedit ncurses
+USES=		libedit ncurses tar:bzip2
 USE_CSTD=	c99
 
-CFLAGS+=	-Isrc -D_WITH_GETLINE -L${LOCALBASE}/lib
+CFLAGS+=	-D_WITH_GETLINE -Isrc -L${LOCALBASE}/lib
 
-PLIST_FILES=	bin/hexdiff bin/hexDump bin/hexpack bin/hexpeek bin/hexview
-PLIST_FILES+=	share/man/man1/hexpeek.1.gz
+PLIST_FILES=	bin/hexdiff \
+		bin/hexDump \
+		bin/hexpack \
+		bin/hexpeek \
+		bin/hexview \
+		share/man/man1/hexpeek.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/* ${STAGEDIR}${PREFIX}/bin
