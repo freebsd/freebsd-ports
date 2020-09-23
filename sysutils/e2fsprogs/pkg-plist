@@ -1,3 +1,5 @@
+/sbin/e2fsck
+/sbin/fsck_ext2fs
 bin/chattr
 bin/e2fsprogs-compile_et
 %%FUSEFS%%bin/fuse2fs

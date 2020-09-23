@@ -1,41 +1,44 @@
 #!/bin/sh
-set -e
+set -eu
 
 PKGNAME="$1"
 MODE="$2" # PRE-INSTALL, POST-INSTALL, DEINSTALL, POST-DEINSTALL
 
 case "$MODE" in
 POST-INSTALL)
-	# install fsck tool and wrapper.
-	err=0
-	for i in e2fsck fsck_ext2fs ; do
-		ln -f ${PKG_PREFIX}/sbin/${i} /sbin 2>/dev/null \
-		|| cp -p ${PKG_PREFIX}/sbin/${i} /sbin \
-		|| err=1
-	done
-	if test $err = 1 ; then
-		echo '========================================================================'
-		echo 'Warning: cannot install fsck to /sbin!'
-		echo 'Requesting ext2fs to be checked from /etc/fstab can cause boot failures!'
-		echo '========================================================================'
-		echo ''
+	# try to replace the e2fsck and its wrapper, fsck_ext2fs, 
+	# symbolic links by hard links if possible (pkg ships them as symlinks)
+	d1=${PKG_ROOTDIR}/sbin/ ;              dev1=$(stat -Lf %Xd "$d1")
+	d2=${PKG_ROOTDIR}${PKG_PREFIX}/sbin/ ; dev2=$(stat -Lf %Xd "$d2")
+	if [ "$dev1" = "$dev2" ] && [ "$(realpath "$d1")" != "$(realpath "$d2")"; then
+		for i in e2fsck fsck_ext2fs ; do
+			ln -fhP ${d1}${i} ${d2}${i}
+		done
+		for i in ext2 ext3 ext4 ; do
+			ln -fhP ${d2}e2fsck ${d2}fsck.$i
+		done
 	fi
 	#
-	# install configuration file and update
+	# install configuration file and update config files from
+	# old "ext4dev" to current "ext4" name.
 	#
-	if test -f ${PKG_PREFIX}/etc/mke2fs.conf; then
+	if test -s ${PKG_PREFIX}/etc/mke2fs.conf; then
 		if cmp -s ${PKG_PREFIX}/etc/mke2fs.conf.dist \
-						${PKG_PREFIX}/etc/mke2fs.conf; then
+				${PKG_PREFIX}/etc/mke2fs.conf; then
 			true
 		else
-			if grep -q ext4dev ${PKG_PREFIX}/etc/mke2fs.conf ; then
+			rc=0
+			grep -q ext4dev ${PKG_PREFIX}/etc/mke2fs.conf || rc=$?
+			case $rc in
+			1) # ext4dev not found (old name)
 				cp -f -p ${PKG_PREFIX}/etc/mke2fs.conf.dist \
 					${PKG_PREFIX}/etc/mke2fs.conf.e2fsprogs-new
 				echo "==========================================================================="
 				echo "Warning: installing mke2fs.conf in ${PKG_PREFIX}/etc/mke2fs.conf.e2fsprogs-new"
 				echo "Check to see if you need to update your ${PKG_PREFIX}/etc/mke2fs.conf"
 				echo "==========================================================================="
-			else
+				;;
+			0) # ext4dev found (old name)
 				mv ${PKG_PREFIX}/etc/mke2fs.conf \
 					 ${PKG_PREFIX}/etc/mke2fs.conf.e2fsprogs-old
 				cp -f -p ${PKG_PREFIX}/etc/mke2fs.conf.dist \
@@ -45,17 +48,19 @@ POST-INSTALL)
 				echo "${PKG_PREFIX}/etc/mke2fs.conf.e2fsprogs-old.  Please check to see"
 				echo "if you have any local customizations that you wish to preserve."
 				echo "==========================================================================="
-			fi
-			echo " "
+				;;
+			*) # grep failed
+				exit $rc
+				;;
+			esac
 		fi
 	else
-		cp -f -p ${PKG_PREFIX}/etc/mke2fs.conf.dist \
+		# missing -> install
+		cp -p   ${PKG_PREFIX}/etc/mke2fs.conf.dist \
 			${PKG_PREFIX}/etc/mke2fs.conf
 	fi
 	;;
 DEINSTALL)
-	rm -f /sbin/fsck_ext2fs /sbin/e2fsck \
-	|| echo "Could not remove /sbin/fsck_ext2fs /sbin/e2fsck. Please remove manually."
 	if cmp -s ${PKG_PREFIX}/etc/mke2fs.conf \
 		${PKG_PREFIX}/etc/mke2fs.conf.dist
 	then
@@ -64,13 +69,13 @@ DEINSTALL)
 		echo "If and only if you are deleting e2fsprogs forever,"
 		echo "remember to delete ${PKG_PREFIX}/etc/mke2fs.conf."
 	fi
+	# e2fsck.conf is no longer part of the distribution, but still supported,
+	# => no pkg-list @sample line possible
+	#    and no reference e2fsck.conf.sample or e2fsck.conf.dist is available 
 	if test -f ${PKG_PREFIX}/etc/e2fsck.conf
 	then
 		echo "If and only if you are deleting e2fsprogs forever,"
 		echo "remember to delete ${PKG_PREFIX}/etc/e2fsck.conf."
 	fi
-	;;
-PRE-INSTALL|POST-DEINSTALL)
-	true
 	;;
 esac
