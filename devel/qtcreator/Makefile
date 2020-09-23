@@ -32,6 +32,7 @@ USE_QT=		buildtools concurrent core declarative designer gui help \
 
 CXXFLAGS_powerpc=	-maltivec
 CXXFLAGS_powerpc64=	-maltivec
+CXXFLAGS_powerpc64le=	-maltivec
 
 # be paranoid and do not extract qbs (devel/qbs) copy from source tree
 EXTRACT_AFTER_ARGS+=	--exclude '${DISTNAME}/src/shared/qbs'
