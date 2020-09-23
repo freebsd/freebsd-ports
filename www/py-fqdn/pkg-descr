@@ -1,0 +1,4 @@
+Validates a fully-qualified domain name (FQDN), in full compliance with
+RFC 1035, and the "preferred form" specified in RFC 3696 section 2.
+
+WWW: https://github.com/ypcrts/fqdn

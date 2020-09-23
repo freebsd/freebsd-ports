@@ -1588,6 +1588,7 @@
     SUBDIR += py-folium
     SUBDIR += py-forcediphttpsadapter
     SUBDIR += py-formencode
+    SUBDIR += py-fqdn
     SUBDIR += py-freenit
     SUBDIR += py-frozen-flask
     SUBDIR += py-gandi.cli
