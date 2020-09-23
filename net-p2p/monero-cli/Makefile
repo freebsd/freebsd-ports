@@ -70,7 +70,7 @@ LD_EMULATION=	elf_amd64
 LD_EMULATION=	elf_i386_fbsd
 .elif ${ARCH} == powerpc
 LD_EMULATION=	elf32ppc
-.elif ${ARCH} == powerpc64
+.elif ${ARCH:Mpowerpc64*}
 LD_EMULATION=	elf64ppc
 .endif
 
