@@ -12,6 +12,8 @@ DISTNAME=	Ardour-${PORTVERSION}
 MAINTAINER=	beerml@sigma6audio.de
 COMMENT=	Multichannel digital audio workstation
 
+BROKEN=		Does not build with glib 2.66.0
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 

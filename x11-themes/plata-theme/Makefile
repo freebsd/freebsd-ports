@@ -7,6 +7,8 @@ CATEGORIES=	x11-themes
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Gtk theme based on Material Design Refresh
 
+BROKEN=		fails to build with glib 2.66.0
+
 LICENSE=	GPLv2 CC-BY-SA-4.0
 LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING

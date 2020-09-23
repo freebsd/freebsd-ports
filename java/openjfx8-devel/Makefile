@@ -13,6 +13,8 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	JavaFX SDK overlay for OpenJDK 8
 
+BROKEN=		Does not build with glib 2.66.0
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

@@ -11,6 +11,8 @@ COMMENT=		Modern XMPP Chat Client using GTK+/Vala
 LICENSE=		GPLv3
 LICENSE_FILE=		${WRKSRC}/LICENSE
 
+BROKEN=		Does not build with glib 2.66.0
+
 BUILD_DEPENDS=	vala:lang/vala
 LIB_DEPENDS=	libsqlite3.so:databases/sqlite3 \
 		libgee-0.8.so:devel/libgee \
