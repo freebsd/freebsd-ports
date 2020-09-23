@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	BerkeleyDB
-PORTVERSION=	0.63
+PORTVERSION=	0.64
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,9 +22,9 @@ USE_PERL5=	configure
 SHEBANG_FILES=	mkconsts.pl
 
 post-patch:
-	@${ECHO} "INCLUDE = ${BDB_INCLUDE_DIR}" > ${WRKSRC}/config.in
-	@${ECHO} "LIB = ${LOCALBASE}/lib" >> ${WRKSRC}/config.in
-	@${ECHO} "DBNAME = -l${BDB_LIB_NAME}" >> ${WRKSRC}/config.in
+	@${ECHO_CMD} "INCLUDE = ${BDB_INCLUDE_DIR}" > ${WRKSRC}/config.in
+	@${ECHO_CMD} "LIB = ${LOCALBASE}/lib" >> ${WRKSRC}/config.in
+	@${ECHO_CMD} "DBNAME = -l${BDB_LIB_NAME}" >> ${WRKSRC}/config.in
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/BerkeleyDB/BerkeleyDB.so
