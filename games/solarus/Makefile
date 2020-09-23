@@ -2,6 +2,7 @@
 
 PORTNAME=	solarus
 PORTVERSION=	1.6.4
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 
@@ -34,6 +35,7 @@ OPTIONS_DEFINE=	LUAJIT
 OPTIONS_DEFAULT_amd64=	LUAJIT
 OPTIONS_DEFAULT_i386=	LUAJIT
 OPTIONS_DEFAULT_powerpc=	LUAJIT
+OPTIONS_DEFAULT_powerpc64=	LUAJIT
 
 LUAJIT_CMAKE_BOOL=	SOLARUS_USE_LUAJIT
 LUAJIT_DESC=	Use LuaJIT instead of standard Lua
@@ -41,5 +43,11 @@ LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit
 LUAJIT_USES_OFF=	lua:51
 
 CMAKE_ARGS+=	-DSOLARUS_MANUAL_INSTALL_DESTINATION:STRING="man"
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc64
+LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
+.endif
 
 .include <bsd.port.mk>
