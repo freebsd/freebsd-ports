@@ -1371,6 +1371,7 @@
     SUBDIR += py-sphinx-me
     SUBDIR += py-sphinx-tabs
     SUBDIR += py-sphinx18
+    SUBDIR += py-sphinx_press_theme
     SUBDIR += py-sphinx_rtd_theme
     SUBDIR += py-sphinx_wikipedia
     SUBDIR += py-sphinxcontrib-adadomain

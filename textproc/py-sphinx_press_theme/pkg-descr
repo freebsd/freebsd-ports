@@ -1,0 +1,6 @@
+A modern responsive theme for python's Sphinx documentation generator.
+
+This theme is based on VuePress. It uses Vue.js & Stylus managed by webpack
+(through vue-cli).
+
+WWW: https://schettino72.github.io/sphinx_press_site/
