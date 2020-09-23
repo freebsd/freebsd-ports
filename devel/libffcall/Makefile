@@ -27,8 +27,10 @@ MAKE_JOBS_UNSAFE=	yes
 CFLAGS+=		-fPIC
 
 PATCHES_powerpc64=	${PATCHDIR}/extra-patch-ffcall-abi.h
+PATCHES_powerpc64le=	${PATCHDIR}/extra-patch-ffcall-abi.h
 EXTRA_PATCHES=		${PATCHES_${ARCH}}
 USES_powerpc64=		compiler:gcc-c++11-lib
+USES_powerpc64le=	compiler:gcc-c++11-lib
 USES+=			${USES_${ARCH}}
 
 post-install:
