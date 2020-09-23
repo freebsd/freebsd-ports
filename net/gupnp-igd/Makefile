@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gupnp-igd
-PORTVERSION=	0.2.5
-PORTREVISION=	3
+PORTVERSION=	1.2.0
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -14,17 +13,18 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	gobject-introspection>=0.10:devel/gobject-introspection \
-		gupnp>=0.18:net/gupnp
+		gupnp>=1.2.0:net/gupnp \
+		gssdp>=1.2.0:net/gssdp
 LIB_DEPENDS=	libgssdp-1.2.so:net/gssdp \
 		libgupnp-1.2.so:net/gupnp
-RUN_DEPENDS=	gupnp>=0.18:net/gupnp
+RUN_DEPENDS=	gupnp>=1.2.0:net/gupnp \
+		gssdp>=1.2.0:net/gssdp
 
-USES=		compiler:c11 gmake gnome libtool pathfix pkgconfig tar:xz
+USES=		compiler:c11 gnome meson pathfix pkgconfig tar:xz
 USE_GNOME=	glib20 introspection:build
 
-CONFIGURE_ARGS=	--disable-python --enable-introspection=yes
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
+MESON_ARGS=	-Dgtk_doc=false -Dintrospection=true
+USE_CSTD=	c11
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
