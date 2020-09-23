@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	birdfont
-DISTVERSION=	2.29.0
-PORTREVISION=	1
+DISTVERSION=	2.29.1
 CATEGORIES=	graphics x11-fonts
 MASTER_SITES=	http://birdfont.org/releases/
 
@@ -49,8 +48,7 @@ do-install:
 		--dest="${STAGEDIR}" \
 		--nogzip=1 \
 		--manpages-directory="/share/man/man1")
-.for _file in ${_STRIPPABLE:S|^|${STAGEDIR}${PREFIX}|}
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${_file}
-.endfor
+	@(cd ${STAGEDIR}${PREFIX} && \
+		${STRIP_CMD} ${_STRIPPABLE})
 
 .include <bsd.port.mk>
