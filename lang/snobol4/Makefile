@@ -3,6 +3,7 @@
 
 PORTNAME=	snobol4
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.ultimate.com/snobol/
 
