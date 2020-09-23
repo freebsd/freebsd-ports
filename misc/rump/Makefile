@@ -11,7 +11,7 @@ COMMENT=	Virtualized NetBSD kernel components in userspace
 
 LICENSE=	BSD2CLAUSE
 
-NOT_FOR_ARCHS=		armv6 armv7 mips mips64 powerpc powerpc64 sparc64
+NOT_FOR_ARCHS=		armv6 armv7 mips mips64 powerpc powerpc64 powerpc64le powerpcspe sparc64
 NOT_FOR_ARCHS_REASON=	not yet ported to FreeBSD on this architecture
 
 USE_GITHUB=	yes
