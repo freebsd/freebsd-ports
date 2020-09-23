@@ -12,7 +12,7 @@ COMMENT=	Library and tools to support IPMI-capable hardware
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-ONLY_FOR_ARCHS=	aarch64 amd64 armv7 i386 powerpc64
+ONLY_FOR_ARCHS=	aarch64 amd64 armv7 i386 powerpc64 powerpc64le
 BROKEN_aarch64=		fails to link: libfreeipmi/.libs/libfreeipmi.so: undefined reference to inb (also outb)
 BROKEN_armv7=		fails to link: libfreeipmi/.libs/libfreeipmi.so: undefined reference to inb (also outb)
 
