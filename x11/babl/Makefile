@@ -30,7 +30,7 @@ SIMD_MESON_OFF=	-Denable-mmx=false -Denable-sse=false \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == powerpc64
+.if ${ARCH:Mpowerpc*}
 USE_GCC=	yes
 .endif
 
