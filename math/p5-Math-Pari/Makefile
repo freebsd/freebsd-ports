@@ -29,9 +29,11 @@ USE_PERL5=	configure
 PARI_WRKSRC=	${WRKDIR}/pari-2.3.5
 
 CFLAGS+=	-I${PARI_WRKSRC}/src/headers -I${PARI_WRKSRC}/build
-CFLAGS_aarch64=	-fPIC
-CFLAGS_powerpc=	-fPIC
+CFLAGS_aarch64=		-fPIC
+CFLAGS_powerpc=		-fPIC
 CFLAGS_powerpc64=	-fPIC
+CFLAGS_powerpc64=	-fPIC
+CFLAGS_powerpcspe=	-fPIC
 
 CONFIGURE_ARGS=	parilib="-L${PARI_WRKSRC}/build -lpari" \
 		paridir=${PARI_WRKSRC}
