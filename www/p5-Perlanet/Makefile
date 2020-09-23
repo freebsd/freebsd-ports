@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Perlanet
-PORTVERSION=	1.1.3
+PORTVERSION=	2.0.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
@@ -30,8 +30,9 @@ RUN_DEPENDS=	p5-CHI>=0:devel/p5-CHI \
 		p5-YAML>=0:textproc/p5-YAML \
 		p5-namespace-autoclean>=0:devel/p5-namespace-autoclean
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
