@@ -21,7 +21,7 @@ BUILD_DEPENDS=	${BU_PREFIX}-as:devel/binutils@${TARGETARCH} \
 		objdump:devel/binutils
 RUN_DEPENDS=	${BU_PREFIX}-as:devel/binutils@${TARGETARCH}
 
-FLAVORS=	aarch64 amd64 i386 mips mips64 powerpc powerpc64 powerpc64le riscv64 sparc64
+FLAVORS=	aarch64 amd64 i386 mips mips64 powerpc powerpc64 riscv64 sparc64
 TARGETARCH=	${FLAVOR}
 
 USES=	gmake iconv libtool tar:xz makeinfo compiler:c++11-lang
