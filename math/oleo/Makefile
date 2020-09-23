@@ -3,7 +3,7 @@
 
 PORTNAME=	oleo
 PORTVERSION=	1.99.16
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	math
 MASTER_SITES=	GNU
 
@@ -17,6 +17,7 @@ USES=		bison:alias localbase ncurses perl5
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-x --without-xlt --without-SciPlot
+CONFIGURE_ENV=	CFLAGS=-fwrapv
 MAKE_ARGS+=	DESTDIR="${STAGEDIR}"
 
 BINARY_ALIAS=	makeinfo=false # disable detecting local makeinfo
@@ -39,7 +40,7 @@ NLS_LIBS=		-lintl
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES_OFF=		gettext-tools
 
-post-patch:
+pre-build:
 	@${GREP} -lR "malloc\.h" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's|malloc\.h|stdlib.h|g'
 .for pof in en fr nl
