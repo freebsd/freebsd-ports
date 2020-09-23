@@ -12,12 +12,15 @@ COMMENT=	Dockapp that creates an animated Julia set
 
 LICENSE=	GPLv2
 
-PLIST_FILES=	bin/wmjulia
-WRKSRC=	${WRKDIR}/${PORTNAME}.app/${PORTNAME}
 USES=		gmake xorg
-USE_XORG=	xpm xext
+USE_XORG=	x11 xext xpm
+
+WRKSRC=		${WRKDIR}/${PORTNAME}.app
+PLIST_FILES=	bin/wmjulia
+
+MAKE_ARGS=	-C ${PORTNAME}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
