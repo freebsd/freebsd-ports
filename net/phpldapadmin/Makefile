@@ -2,11 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	phpldapadmin
-PORTVERSION=	1.2.3
-PORTREVISION=	11
-PORTEPOCH=	1
+PORTVERSION=	1.2.6.2
 CATEGORIES=	net www
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-php5/${PORTVERSION}
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	ports@bsdserwis.com
@@ -17,10 +14,20 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cpe php:web,flavors tar:tgz
 USE_PHP=	gettext ldap openssl pcre session xml iconv hash
+USE_GITHUB=	yes
+GH_ACCOUNT=	leenooks
+GH_PROJECT=	phpLDAPadmin
 
 NO_ARCH=	yes
 NO_BUILD=	yes
 CPE_VENDOR=	deon_george
+
+OPTIONS_DEFINE=	MCRYPT
+
+MCRYPT_DESC=	Use pecl-mcrypt for password hashing
+MCRYPT_USE=	PHP=mcrypt
+
+.include <bsd.port.options.mk>
 
 GROUPS?=	${WWWGRP}
 CFGDIR=		config
@@ -35,10 +42,6 @@ SUB_FILES+=	pkg-message
 .SILENT:
 
 .include <bsd.port.pre.mk>
-
-.if (${PHP_VER} == 73)
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-lib__PageRender.php
-.endif
 
 post-patch:
 	cd ${WRKSRC} ;							    \
