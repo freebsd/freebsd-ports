@@ -13,7 +13,7 @@ COMMENT=	High-performance Asterisk voice/video conferencing plugin
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=		amd64 armv6 armv7 i386 powerpc powerpc64
+ONLY_FOR_ARCHS=		amd64 armv6 armv7 i386 powerpc powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	not yet ported to this architecture
 
 BUILD_DEPENDS=	asterisk:net/asterisk13
