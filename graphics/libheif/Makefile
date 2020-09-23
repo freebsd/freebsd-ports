@@ -3,6 +3,7 @@
 PORTNAME=		libheif
 DISTVERSIONPREFIX=	v
 DISTVERSION=		1.6.2
+PORTREVISION=		1
 CATEGORIES=		graphics
 
 MAINTAINER=		freebsd@sebastiansteinmetz.ch
