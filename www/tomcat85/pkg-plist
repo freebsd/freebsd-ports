@@ -149,15 +149,6 @@
 %%DOCS%%%%T%%/webapps/docs/developers.html
 %%DOCS%%%%T%%/webapps/docs/elapi/index.html
 %%DOCS%%%%T%%/webapps/docs/extras.html
-%%DOCS%%%%T%%/webapps/docs/funcspecs/fs-admin-apps.html
-%%DOCS%%%%T%%/webapps/docs/funcspecs/fs-admin-objects.html
-%%DOCS%%%%T%%/webapps/docs/funcspecs/fs-admin-opers.html
-%%DOCS%%%%T%%/webapps/docs/funcspecs/fs-default.html
-%%DOCS%%%%T%%/webapps/docs/funcspecs/fs-jdbc-realm.html
-%%DOCS%%%%T%%/webapps/docs/funcspecs/fs-jndi-realm.html
-%%DOCS%%%%T%%/webapps/docs/funcspecs/fs-memory-realm.html
-%%DOCS%%%%T%%/webapps/docs/funcspecs/index.html
-%%DOCS%%%%T%%/webapps/docs/funcspecs/mbean-names.html
 %%DOCS%%%%T%%/webapps/docs/host-manager-howto.html
 %%DOCS%%%%T%%/webapps/docs/html-host-manager-howto.html
 %%DOCS%%%%T%%/webapps/docs/html-manager-howto.html
@@ -610,8 +601,9 @@
 %%MANAGER%%%%T%%/webapps/manager/WEB-INF/jsp/sessionDetail.jsp
 %%MANAGER%%%%T%%/webapps/manager/WEB-INF/jsp/sessionsList.jsp
 %%MANAGER%%@sample %%T%%/webapps/manager/WEB-INF/web.xml.sample
+%%MANAGER%%%%T%%/webapps/manager/css/manager.css
 %%MANAGER%%%%T%%/webapps/manager/images/asf-logo.svg
-%%MANAGER%%%%T%%/webapps/manager/images/tomcat.gif
+%%MANAGER%%%%T%%/webapps/manager/images/tomcat.svg
 %%MANAGER%%%%T%%/webapps/manager/index.jsp
 %%MANAGER%%%%T%%/webapps/manager/status.xsd
 %%MANAGER%%%%T%%/webapps/manager/xform.xsl
