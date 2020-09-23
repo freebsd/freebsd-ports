@@ -3,6 +3,7 @@
 
 PORTNAME=	glib
 PORTVERSION=	2.66.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
@@ -15,8 +16,6 @@ LICENSE=	LGPL20
 
 USES=		tar:xz
 PORTSCOUT=	limitw:1,even
-
-.if !defined(REFERENCE_PORT)
 
 LIB_DEPENDS+=	libpcre.so:devel/pcre \
 		libffi.so:devel/libffi
@@ -32,8 +31,9 @@ MESON_ARGS=	-Db_lundef=false \
 		-Dlibmount=disabled \
 		-Dselinux=disabled \
 		-Dinstalled_tests=false \
+		-Ddefault_library=both \
 		-Dxattr=false
-BINARY_ALIAS=	python3=${PYTHON_VERSION}
+BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 LIBVERSION=	0.6600.0
 PLIST_SUB+=	LIBVERSION=${LIBVERSION}
@@ -72,7 +72,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g ; \
 		s|/usr/share/locale/locale|${LOCALBASE}/share/locale/locale|g' \
 		${WRKSRC}/glib/gutils.c
-	@${REINPLACE_CMD} -e 's|@PYTHON@|${PYTHON_VERSION}|g' \
+	@${REINPLACE_CMD} -e 's|@PYTHON@|${PYTHON_CMD}|g' \
 		${WRKSRC}/gio/gdbus-2.0/codegen/gdbus-codegen.in \
 		${WRKSRC}/glib/gtester-report.in \
 		${WRKSRC}/gobject/glib-genmarshal.in \
@@ -104,5 +104,3 @@ post-install:
 	@${RM} -r ${STAGEDIR}${PREFIX}/libexec/installed-tests
 
 .include <bsd.port.post.mk>
-
-.endif
