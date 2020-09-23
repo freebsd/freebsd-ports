@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pycharm-pro
-PORTVERSION=	2020.1.4
+PORTVERSION=	2020.2.2
 CATEGORIES=	devel java python
 MASTER_SITES=	https://download.jetbrains.com/python/ \
 		http://download.jetbrains.com/python/
@@ -18,7 +18,6 @@ LICENSE_PERMS=	auto-accept
 RUN_DEPENDS=	intellij-fsnotifier>0:java/intellij-fsnotifier \
 		intellij-pty4j>0:java/intellij-pty4j
 
-RESTRICTED=	No redistribution allowed
 USES=		python:run shebangfix
 
 SHEBANG_FILES=	bin/printenv.py bin/restart.py
