@@ -209,7 +209,7 @@ lib/libxlutil.so.4.14.0
 %%PYTHON_SITELIBDIR%%/xen-3.0-py%%PYTHON_VER%%.egg-info
 %%PYTHON_SITELIBDIR%%/xen/__init__.py
 %%PYTHON_SITELIBDIR%%/xen/__init__.pyc
-%%PYTHON_SITELIBDIR%%/xen/__pycache__/util.cpython-37.pyc
+%%PYTHON_SITELIBDIR%%/xen/__pycache__/util.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/xen/lowlevel/__init__.py
 %%PYTHON_SITELIBDIR%%/xen/lowlevel/__init__.pyc
 %%PYTHON_SITELIBDIR%%/xen/lowlevel/xc.so
