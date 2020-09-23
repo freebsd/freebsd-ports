@@ -3,6 +3,7 @@
 
 PORTNAME=	spamguard
 PORTVERSION=	1.8
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.enderunix.org/spamguard/
 
@@ -10,6 +11,7 @@ MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	MTA spam prevention program for qmail/postfix/sendmail
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 GNU_CONFIGURE=	yes
