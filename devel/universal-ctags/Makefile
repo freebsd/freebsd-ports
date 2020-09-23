@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	universal-ctags
-PORTVERSION=	g20200730
+PORTVERSION=	g20200915
 CATEGORIES=	devel
 
 MAINTAINER=	dereks@lifeofadishwasher.com
@@ -12,46 +12,45 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		autoreconf pkgconfig
-
-GNU_CONFIGURE=	yes
-
 USE_GITHUB=	yes
 GH_PROJECT=	ctags
-GH_TAGNAME=	3f0ea94c
+GH_TAGNAME=	23d50b5d
 
-OPTIONS_DEFINE=			DEBUG ICONV JSON LIBXML2 MANPAGES YAML
-OPTIONS_DEFAULT=		ICONV JSON LIBXML2 MANPAGES YAML
-
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=u
-
-JSON_DESC=			JSON output support
-
-DEBUG_CONFIGURE_ENABLE=		debugging
-
-ICONV_CONFIGURE_ENABLE=		iconv
-ICONV_USES=			iconv
 
 TEST_TARGET=	check
 
+PLIST_FILES=	bin/uctags \
+		bin/ureadtags
+
+OPTIONS_DEFINE=		DEBUG ICONV JSON LIBXML2 MANPAGES YAML
+OPTIONS_DEFAULT=	ICONV JSON LIBXML2 MANPAGES YAML
+
+JSON_DESC=	JSON output support
+
+DEBUG_CONFIGURE_ENABLE=	debugging
+
+ICONV_USES=		iconv
+ICONV_CONFIGURE_ENABLE=	iconv
+
 # Extra support for YAML and XML based languages
-LIBXML2_CONFIGURE_ENABLE=	xml
+JSON_LIB_DEPENDS=	libjansson.so:devel/jansson
+JSON_CONFIGURE_ENABLE=	json
+
 LIBXML2_LIB_DEPENDS=		libxml2.so:textproc/libxml2
+LIBXML2_CONFIGURE_ENABLE=	xml
 
-JSON_CONFIGURE_ENABLE=		json
-JSON_LIB_DEPENDS=		libjansson.so:devel/jansson
+MANPAGES_BUILD_DEPENDS=	rst2man:textproc/py-docutils
+MANPAGES_PLIST_FILES=	man/man1/uctags.1.gz \
+			man/man1/ureadtags.1.gz \
+			man/man5/utags.5.gz \
+			man/man7/uctags-client-tools.7.gz \
+			man/man7/uctags-incompatibilities.7.gz \
+			man/man7/uctags-lang-python.7.gz \
+			man/man7/uctags-optlib.7.gz
 
-MANPAGES_BUILD_DEPENDS=		rst2man:textproc/py-docutils
-MANPAGES_PLIST_FILES=		man/man1/uctags.1.gz \
-				man/man1/ureadtags.1.gz \
-				man/man5/utags.5.gz \
-				man/man7/uctags-client-tools.7.gz \
-				man/man7/uctags-incompatibilities.7.gz \
-				man/man7/uctags-optlib.7.gz
-
-YAML_CONFIGURE_ENABLE=		yaml
-YAML_LIB_DEPENDS=		libyaml.so:textproc/libyaml
-
-PLIST_FILES=			bin/uctags \
-				bin/ureadtags
+YAML_LIB_DEPENDS=	libyaml.so:textproc/libyaml
+YAML_CONFIGURE_ENABLE=	yaml
 
 .include <bsd.port.mk>
