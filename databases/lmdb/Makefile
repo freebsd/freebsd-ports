@@ -3,7 +3,7 @@
 
 PORTNAME=	lmdb
 PORTVERSION=	0.9.24
-PORTREVISION=	2
+PORTREVISION=	3
 DISTVERSIONPREFIX=	${PORTNAME:tu}_
 PORTEPOCH=	1
 CATEGORIES=	databases
@@ -26,8 +26,12 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME:tu}
 
+SUB_FILES+=	lmdb.pc
+SUB_LIST+=	PORTVERSION=${PORTVERSION}
+
 post-install:
 	${LN} -sf liblmdb.so.0 ${STAGEDIR}${PREFIX}/lib/liblmdb.so
+	${INSTALL_DATA} ${WRKDIR}/lmdb.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig
 
 do-test:
 	${MKDIR} ${WRKSRC}/testdb

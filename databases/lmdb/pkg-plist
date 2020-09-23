@@ -6,6 +6,7 @@ include/lmdb.h
 lib/liblmdb.a
 lib/liblmdb.so
 lib/liblmdb.so.0
+libdata/pkgconfig/lmdb.pc
 man/man1/mdb_copy.1.gz
 man/man1/mdb_dump.1.gz
 man/man1/mdb_load.1.gz
