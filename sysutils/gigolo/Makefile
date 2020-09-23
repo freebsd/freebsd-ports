@@ -12,7 +12,7 @@ COMMENT=	Frontend to easily manage filesystem connections
 LICENSE=	GPLv2
 
 ONLY_FOR_ARCHS=         aarch64 amd64 armv6 armv7 i386 powerpc \
-			powerpc64 powerpcspe
+			powerpc64 powerpc64le powerpcspe
 ONLY_FOR_ARCHS_REASON=	Does not compile
 
 BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser
