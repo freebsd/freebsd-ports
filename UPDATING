@@ -15,7 +15,7 @@ you update your ports collection, before attempting any port upgrades.
   Starting in 3.0.21_2, the PYTHON option has been converted to use python 3.x.
 
   Users should verify their python scripts are 3.x compatible and upgrade to
-  3.0.21_2 (or higher) to bring in python 3.x suppoort.
+  3.0.21_2 (or higher) to bring in python 3.x support.
 
 20200921:
   AFFECTS: users of database/postgresql* and other software using PostgreSQL to run
