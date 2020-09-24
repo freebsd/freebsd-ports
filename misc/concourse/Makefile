@@ -154,8 +154,6 @@ GH_TUPLE=	\
 		onsi:ginkgo:v1.12.0:onsi_ginkgo/vendor/github.com/onsi/ginkgo \
 		onsi:gomega:v1.10.0:onsi_gomega/vendor/github.com/onsi/gomega \
 		open-telemetry:opentelemetry-go:v0.2.1:open_telemetry_opentelemetry_go/vendor/go.opentelemetry.io/otel \
-		open-telemetry:opentelemetry-go:v0.2.1:open_telemetry_opentelemetry_go_1/vendor/go.opentelemetry.io/otel/exporter/trace/jaeger \
-		open-telemetry:opentelemetry-go:v0.2.1:open_telemetry_opentelemetry_go_2/vendor/go.opentelemetry.io/otel/exporter/trace/stackdriver \
 		opencontainers:go-digest:v1.0.0-rc1:opencontainers_go_digest/vendor/github.com/opencontainers/go-digest \
 		opencontainers:image-spec:v1.0.1:opencontainers_image_spec/vendor/github.com/opencontainers/image-spec \
 		opencontainers:runc:v0.1.1:opencontainers_runc/vendor/github.com/opencontainers/runc \
