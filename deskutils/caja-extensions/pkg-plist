@@ -17,7 +17,6 @@ libdata/pkgconfig/caja-sendto.pc
 man/man1/caja-sendto.1.gz
 %%DATADIR%%/caja-image-resize.ui
 %%DATADIR%%/caja-image-rotate.ui
-%%DATADIR%%/caja-sendto.ui
 %%DATADIR%%/share-dialog.ui
 share/caja/extensions/libcaja-gksu.caja-extension
 share/caja/extensions/libcaja-image-converter.caja-extension
