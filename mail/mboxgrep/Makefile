@@ -29,10 +29,9 @@ OPTIONS_DEFINE=	DOCS PCRE
 
 PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
 
-pre-build:
+pre-configure:
 	@${REINPLACE_CMD} -e 's,void \*tmpp,FILE \*tmpp,g' ${WRKSRC}/src/main.c
-	@${REINPLACE_CMD} -e 's,$$(prefix),$$(DESTDIR)$$(prefix),g' \
-		-e 's,$$(mandir),$$(DESTDIR)$$(mandir),g' \
+	@${REINPLACE_CMD} -e 's,$$(mandir),$$(DESTDIR)$$(mandir),g' \
 		-e 's,$$(infodir),$$(DESTDIR)$$(infodir),g' \
 		${WRKSRC}/src/Makefile.in ${WRKSRC}/doc/Makefile.in
 
