@@ -15181,7 +15181,6 @@ audio/py-openal||2020-08-15|Has expired: Uses deprecated version of python
 audio/py-py-jack||2020-08-15|Has expired: Uses deprecated version of python
 audio/py-xmms2||2020-08-15|Has expired: Uses deprecated version of python
 audio/triceratops-lv2||2020-08-15|Has expired: Uses deprecated version of python
-biology/py-biom-format||2020-08-15|Has expired: Uses deprecated version of python
 comms/py-bulksms||2020-08-15|Has expired: Uses deprecated version of python
 comms/py-gammu||2020-08-15|Has expired: Uses deprecated version of python
 databases/py-geoalchemy||2020-08-15|Has expired: Uses deprecated version of python
@@ -15534,7 +15533,6 @@ lang/julia11||2020-09-19|Has expired: Uses deprecated version of python
 lang/tinypy||2020-09-19|Has expired: Uses deprecated version of python
 mail/cleanup-maildir||2020-09-19|Has expired: Uses deprecated version of python
 mail/courier-pythonfilter||2020-09-19|Has expired: Uses deprecated version of python
-mail/getmail|mail/getmail6|2020-09-19|Has expired: Uses deprecated version of python
 mail/muttils||2020-09-19|Has expired: Uses deprecated version of python
 mail/nohtml||2020-09-19|Has expired: Uses deprecated version of python
 mail/offlineimap||2020-09-19|Has expired: Uses deprecated version of python
