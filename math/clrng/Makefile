@@ -13,7 +13,7 @@ COMMENT=	Library for uniform random number generation in OpenCL
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=		amd64 i386 powerpc powerpc64
+ONLY_FOR_ARCHS=		amd64 i386 powerpc powerpc64 powerpc64le powerpcspe
 ONLY_FOR_ARCHS_REASON=	this code has only been tested on x86 and powerpc platforms
 
 BUILD_DEPENDS=	opencl>=0:devel/opencl
