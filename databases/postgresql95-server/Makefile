@@ -25,4 +25,4 @@ PG_USER?=	pgsql
 PG_GROUP?=	pgsql
 PG_UID?=	70
  
-.include "${.CURDIR}/../postgresql12-server/Makefile"
+.include "${.CURDIR}/../postgresql13-server/Makefile"

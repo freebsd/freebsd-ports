@@ -2,4 +2,4 @@
 
 WANT_PGSQL_VER=	11
 
-.include "${.CURDIR}/../postgresql12-plpython/Makefile"
+.include "${.CURDIR}/../postgresql13-plpython/Makefile"

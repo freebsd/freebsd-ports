@@ -3,4 +3,4 @@
 
 WANT_PGSQL_VER=11
 
-.include "${.CURDIR}/../postgresql12-docs/Makefile"
+.include "${.CURDIR}/../postgresql13-docs/Makefile"

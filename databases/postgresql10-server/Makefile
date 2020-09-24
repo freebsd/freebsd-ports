@@ -5,7 +5,6 @@ DISTVERSION?=	10.14
 # PORTREVISION must be ?= otherwise, all slave ports get this PORTREVISION and
 # not their own.  Probably best to keep it at ?=0 when reset here too.
 PORTREVISION?=	0
-PKGNAMESUFFIX?=	${DISTVERSION:R:S/.//}${COMPONENT}
 
 MAINTAINER?=	pgsql@FreeBSD.org
 
@@ -24,4 +23,4 @@ PG_USER?=	postgres
 PG_GROUP?=	postgres
 PG_UID?=	770
 
-.include "${.CURDIR}/../postgresql12-server/Makefile"
+.include "${.CURDIR}/../postgresql13-server/Makefile"
