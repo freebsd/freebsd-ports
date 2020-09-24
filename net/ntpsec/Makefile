@@ -24,6 +24,12 @@ MAKE_ENV=	NOSYNC=1 # workaround for the console problem: https://gitlab.com/NTPs
 
 PORTSCOUT=	limit:^\d+\. # prevent alpha-numeric strings
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200000 && ${SSL_DEFAULT} == base
+BROKEN=		Needs OpenSSL with TLSv1.3 support but OpenSSL in base on FreeBSD 11 doesn't support TLSv1.3
+.endif
+
 post-install: # autoplist: plist varies depending on the python version
 	@cd ${STAGEDIR}${PREFIX} && \
 		${FIND} * -type f -or -type l | ${SED} -e 's|^share/man/.*|&.gz|' >> ${TMPPLIST}
