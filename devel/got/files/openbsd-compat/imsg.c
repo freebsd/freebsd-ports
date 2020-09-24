@@ -26,6 +26,8 @@
 #include <string.h>
 #include <unistd.h>
 
+#include <openbsd-compat.h>
+
 #include "imsg.h"
 
 int	 imsg_fd_overhead = 0;

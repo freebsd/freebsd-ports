@@ -27,6 +27,8 @@
 #include <string.h>
 #include <unistd.h>
 
+#include <openbsd-compat.h>
+
 #include "imsg.h"
 
 static int	ibuf_realloc(struct ibuf *, size_t);

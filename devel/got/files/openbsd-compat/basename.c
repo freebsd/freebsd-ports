@@ -21,6 +21,8 @@
 #include <limits.h>
 #include <string.h>
 
+#include <openbsd-compat.h>
+
 char *
 basename(const char *path)
 {

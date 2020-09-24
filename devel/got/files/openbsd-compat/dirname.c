@@ -21,6 +21,8 @@
 #include <limits.h>
 #include <string.h>
 
+#include <openbsd-compat.h>
+
 /* A slightly modified copy of this file exists in libexec/ld.so */
 
 char *

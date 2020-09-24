@@ -1,8 +1,19 @@
-#ifndef _OPENBSD_COMPAT_SYS_QUEUE_H_
-#define _OPENBSD_COMPAT_SYS_QUEUE_H_
+/*
+ * Compatibility mappings for system headers and
+ * prototypes for functions in libopenbsd-compat.
+ */
 
-#include_next <sys/queue.h>
+#ifndef _OPENBSD_COMPAT_H_
+#define _OPENBSD_COMPAT_H_
 
+/*
+ * <sys/cdefs.h>
+ */
+#define __dead __dead2
+
+/*
+ * <sys/queue.h>
+ */
 #define SIMPLEQ_HEAD(name, type) \
 	STAILQ_HEAD(name, type)
 #define SIMPLEQ_HEAD_INITIALIZER(head) \
@@ -36,4 +47,32 @@
 #define SIMPLEQ_CONCAT(head1, head2) \
 	STAILQ_CONCAT(head1, head2)
 
-#endif
+/*
+ * <libgen.h>
+ */
+#undef basename
+#undef dirname
+#define basename(path)	basename_const(path)
+#define dirname(path)	dirname_const(path)
+
+char	*basename(const char *);
+char	*dirname(const char *);
+
+/*
+ * <stdlib.h>
+ */
+void	freezero(void *, size_t);
+void	*recallocarray(void *, size_t, size_t, size_t);
+
+/*
+ * <unistd.h>
+ */
+int	getdtablecount(void);
+
+/* void -> int */
+#define closefrom(fd)			(closefrom(fd), 0)
+
+#define pledge(promises, execpromises)	0
+#define unveil(path, permissions)	0
+
+#endif	/* _OPENBSD_COMPAT_H_ */
