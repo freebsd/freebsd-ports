@@ -29,7 +29,12 @@ do-test:
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64" || ${ARCH} == "i386"
+.if ${ARCH} == "amd64"
+PLIST_SUB+=	X86=""
+CMAKE_ON+=	VIL_CONFIG_ENABLE_SSE2_ROUNDING # the automatic SSE2 test fails on i386: Performing Try-Run Test VXL_HAS_SSE2_HARDWARE_SUPPORT - Test Compilation Failed
+.elif ${ARCH} == "i386"
+CFLAGS+=	-msse2 # sse2 is not enabled on i386 by default as it is enabled on amd64, see https://github.com/vxl/vxl/issues/795
+CXXFLAGS+=	-msse2
 PLIST_SUB+=	X86=""
 CMAKE_ON+=	VIL_CONFIG_ENABLE_SSE2_ROUNDING # the automatic SSE2 test fails on i386: Performing Try-Run Test VXL_HAS_SSE2_HARDWARE_SUPPORT - Test Compilation Failed
 .else
