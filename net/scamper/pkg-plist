@@ -5,6 +5,7 @@ bin/sc_attach
 bin/sc_bdrmap
 bin/sc_erosprober
 bin/sc_filterpolicy
+%%HOIHO%%bin/sc_hoiho
 bin/sc_ipiddump
 bin/sc_pinger
 bin/sc_prefixscan
@@ -15,6 +16,7 @@ bin/sc_tbitblind
 bin/sc_tbitpmtud
 bin/sc_tracediff
 bin/sc_ttlexp
+%%UPTIME%%bin/sc_uptime
 bin/sc_warts2csv
 bin/sc_warts2json
 bin/sc_warts2pcap
@@ -33,6 +35,7 @@ man/man1/sc_attach.1.gz
 man/man1/sc_bdrmap.1.gz
 man/man1/sc_erosprober.1.gz
 man/man1/sc_filterpolicy.1.gz
+%%HOIHO%%man/man1/sc_hoiho.1.gz
 man/man1/sc_ipiddump.1.gz
 man/man1/sc_pinger.1.gz
 man/man1/sc_prefixscan.1.gz
@@ -43,6 +46,7 @@ man/man1/sc_tbitblind.1.gz
 man/man1/sc_tbitpmtud.1.gz
 man/man1/sc_tracediff.1.gz
 man/man1/sc_ttlexp.1.gz
+%%UPTIME%%man/man1/sc_uptime.1.gz
 man/man1/sc_warts2csv.1.gz
 man/man1/sc_warts2json.1.gz
 man/man1/sc_warts2pcap.1.gz
