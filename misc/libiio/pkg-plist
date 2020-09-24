@@ -4,10 +4,10 @@ bin/iio_genxml
 bin/iio_info
 bin/iio_readdev
 bin/iio_reg
+bin/iio_stresstest
 bin/iio_writedev
-etc/avahi/services/iio.service
 include/iio.h
 lib/libiio.so
 lib/libiio.so.0
-lib/libiio.so.0.19
+lib/libiio.so.0.21
 libdata/pkgconfig/libiio.pc
