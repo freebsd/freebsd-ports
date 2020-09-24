@@ -11,7 +11,7 @@ COMMENT=	Persistent DB connection pooling/proxying/load balancing system
 
 LICENSE=	LGPL20
 
-ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64
+ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	For i386 some depends like mysql fail to build
 
 LIB_DEPENDS=	librudiments.so:devel/rudiments \
