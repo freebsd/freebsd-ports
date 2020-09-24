@@ -247,6 +247,7 @@ sbin/upsd
 sbin/upsdrvctl
 sbin/upsmon
 sbin/upssched
+@dir etc/syslog.d
 @dir(%%NUT_USER%%,%%NUT_GROUP%%,750) %%STATEDIR%%
 @dir libexec/nut
 @dir(%%NUT_USER%%,%%NUT_GROUP%%,) /var/log/nut
