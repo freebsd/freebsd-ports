@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	fribidi
-PORTVERSION=	0.19.7
+PORTVERSION=	1.0.10
 CATEGORIES=	converters
-MASTER_SITES=	https://github.com/fribidi/fribidi/releases/download/${PORTVERSION}/
+MASTER_SITES=	https://github.com/fribidi/fribidi/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Free Implementation of the Unicode Bidirectional Algorithm
@@ -12,15 +12,9 @@ COMMENT=	Free Implementation of the Unicode Bidirectional Algorithm
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake libtool pathfix tar:bz2
+USES=		meson tar:xz
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-static --without-glib
-INSTALL_TARGET=	install-strip
-
-.if !defined(WITH_DEBUG)
-CONFIGURE_ARGS+=--disable-debug
-.endif
+MESON_ARGS=	-Dtests=false
 
 post-patch:
 	@${SED} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' < \
