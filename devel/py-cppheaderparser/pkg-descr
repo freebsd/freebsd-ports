@@ -1,0 +1,4 @@
+CppHeaderParser can be used to parse C++ header files and generate a data
+structure representing the class.
+
+WWW: http://senexcanis.com/open-source/cppheaderparser/
