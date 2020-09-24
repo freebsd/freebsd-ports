@@ -1,7 +1,5 @@
-TIMESTAMP = 1583702768
-SHA256 (ailment-8.20.1.7.tar.gz) = 1fc110705f9dd1cfeca66876fbd87fbecea005a1d35554492c45052a2d5aa652
-SIZE (ailment-8.20.1.7.tar.gz) = 10548
-SHA256 (angr-ailment-c696edc9f31ecccaaa36b1e40ca1bed6c9715242_GH0.tar.gz) = bc6b54f62665f715c7d092ec236a4447d9135612331fa5f1d10ab073f12002f8
-SIZE (angr-ailment-c696edc9f31ecccaaa36b1e40ca1bed6c9715242_GH0.tar.gz) = 12549
-SHA256 (angr-binaries-f2de6d7a0474d22130ffadd042327536a6fda114_GH0.tar.gz) = 7bdc710d10db37d3105038eb4efda1b39e9d1149ecfaf35b1157381fe7275a4a
-SIZE (angr-binaries-f2de6d7a0474d22130ffadd042327536a6fda114_GH0.tar.gz) = 56385140
+TIMESTAMP = 1600433830
+SHA256 (angr-ailment-v9.0.4378_GH0.tar.gz) = 6b4c379265510a3b8e1478e63f8e8f6c7e613ea50dd77137949731ac51d6da58
+SIZE (angr-ailment-v9.0.4378_GH0.tar.gz) = 10399
+SHA256 (angr-binaries-9bf9c59002c2fb751ae2357f08fb9f4f8171a4ff_GH0.tar.gz) = 2c6f5130f5ee51e4cd8d891a137a347141cf155a6b2dbb248b02ac7cf11c2631
+SIZE (angr-binaries-9bf9c59002c2fb751ae2357f08fb9f4f8171a4ff_GH0.tar.gz) = 56723730

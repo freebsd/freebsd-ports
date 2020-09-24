@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pyvex
-DISTVERSION=	8.20.1.7
-PORTREVISION=	1
+DISTVERSION=	${ANGR_VERSION}
 CATEGORIES=	security devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -33,8 +32,9 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${PY_FLAVOR} \
 USES=		gmake localbase python:3.5+
 USE_CSTD=	c99
 USE_GITHUB=	nodefault
-GH_TUPLE=	angr:${PORTNAME}:4fa68d58618a7635b281c9d06263c75fb9bf357f:tests \
-		angr:binaries:f2de6d7a0474d22130ffadd042327536a6fda114:binaries
+GH_TUPLE=	angr:${PORTNAME}:v${DISTVERSION}:tests \
+		angr:binaries:9bf9c59002c2fb751ae2357f08fb9f4f8171a4ff:binaries
+USE_LDCONFIG=	${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/lib
 USE_PYTHON=	autoplist distutils
 
 MAKE_ENV=	EXTRA_CFLAGS="${CFLAGS}"
@@ -56,6 +56,7 @@ pre-test:
 	@${LN} -Fs ${WRKSRC_binaries} ${WRKDIR}/binaries
 
 do-test:
-	@(cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} nosetests-${PYTHON_VER} tests/*)
+	@(cd ${WRKSRC} && ${SETENV} ${TEST_ENV} nosetests-${PYTHON_VER} tests/*)
 
+.include "${.CURDIR}/../../security/py-angr/Makefile.version"
 .include <bsd.port.mk>
