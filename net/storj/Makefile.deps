@@ -79,11 +79,11 @@ GH_TUPLE=	\
 		spf13:jwalterweatherman:v1.0.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		spf13:viper:v1.4.0:spf13_viper/vendor/github.com/spf13/viper \
-		storj:common:08513ed10a7d:storj_common/vendor/storj.io/common \
+		storj:common:15a4e772a2f2:storj_common/vendor/storj.io/common \
 		storj:drpc:v0.0.14:storj_drpc/vendor/storj.io/drpc \
 		storj:monkit-jaeger:80778fc3f91b:storj_monkit_jaeger/vendor/storj.io/monkit-jaeger \
-		storj:private:c2963305092f:storj_private/vendor/storj.io/private \
-		storj:uplink:d4d04d4dd802:storj_uplink/vendor/storj.io/uplink \
+		storj:private:9fa0a1f43adf:storj_private/vendor/storj.io/private \
+		storj:uplink:v1.3.0:storj_uplink/vendor/storj.io/uplink \
 		stretchr:testify:v1.5.1:stretchr_testify/vendor/github.com/stretchr/testify \
 		stripe:stripe-go:v70.15.0:stripe_stripe_go/vendor/github.com/stripe/stripe-go \
 		uber-go:atomic:v1.6.0:uber_go_atomic/vendor/go.uber.org/atomic \
