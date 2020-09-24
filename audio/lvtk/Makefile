@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	lvtk
-PORTVERSION=	1.2.0
+DISTVERSION=	2.0.0rc1-14
+DISTVERSIONSUFFIX=	-g1028f69
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,8 +15,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	lv2>0:audio/lv2 \
 		${LOCALBASE}/include/gtkmm-2.4/gtkmm.h:x11-toolkits/gtkmm24
 
-USES=		pkgconfig python:2.7,build waf
+USES=		pkgconfig waf
 USE_GITHUB=	yes
-GH_TAGNAME=	7c0ffdf
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lv2/lvtk.lv2/volume.so
 
 .include <bsd.port.mk>
