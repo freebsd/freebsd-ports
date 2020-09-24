@@ -12,6 +12,9 @@ COMMENT=	Backport of the get_terminal_size function from Python 3.3's shutil
 
 LICENSE=	PSFL
 
+DEPRECATED=		Python 2 is EOL upstream
+EXPIRATION_DATE=	2020-12-31
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}backports>0:devel/py-backports@${PY_FLAVOR}
 
 NO_ARCH=	yes
