@@ -2,10 +2,11 @@
 
 PORTNAME=	pup
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.0-9
-DISTVERSIONSUFFIX=	-g1c3cffd
-PORTREVISION=	1
+DISTVERSION=	0.4.0-10
+DISTVERSIONSUFFIX=	-g681d7bb
 CATEGORIES=	textproc
+PATCH_SITES=	https://github.com/ericchiang/pup/pull/
+PATCHFILES=	142.patch:-p1
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Command-line jq-like HTML parser using CSS selectors
@@ -13,32 +14,38 @@ COMMENT=	Command-line jq-like HTML parser using CSS selectors
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=	go python:2.7,test shebangfix
+TEST_DEPENDS=	gdiff:textproc/diffutils
+
+USES=		go:modules python:test shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	ericchiang
+GH_TUPLE=	fatih:color:v1.0.0:fatih_color/vendor/github.com/fatih/color \
+		golang:net:4d38db76854b:golang_net/vendor/golang.org/x/net \
+		golang:sys:a646d33e2ee3:golang_sys/vendor/golang.org/x/sys \
+		golang:text:0a5a09ee4409:golang_text/vendor/golang.org/x/text \
+		mattn:go-colorable:v0.0.5:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
+		mattn:go-isatty:56b76bdf51f7:mattn_go_isatty/vendor/github.com/mattn/go-isatty
 SHEBANG_FILES=	tests/run.py
+
+TEST_ENV=	PATH="${STAGEDIR}${PREFIX}/bin:${PATH}"
 
 PLIST_FILES=	bin/pup
 PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS
 
-pre-test:
-	@${REINPLACE_CMD} 's|^python |${PYTHON_VERSION} |' ${WRKSRC}/tests/test
-	@${REINPLACE_CMD} "s|pup |${STAGEDIR}/bin/pup |" ${WRKSRC}/tests/run.py
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 
-	# Disable broken tests.
+pre-test:
 	@${REINPLACE_CMD} "/^json{}$$/d" ${WRKSRC}/tests/cmds.txt
 	@${REINPLACE_CMD} "/ json{}$$/d" ${WRKSRC}/tests/expected_output.txt
 	@${REINPLACE_CMD} "/^#toc li + a json{}$$/d" ${WRKSRC}/tests/cmds.txt
 	@${REINPLACE_CMD} "/ #toc li + a json{}$$/d" ${WRKSRC}/tests/expected_output.txt
 
 do-test:
-	cd ${WRKSRC}/tests && ${SH} ./test
-	cd ${GO_WRKSRC} && ${SETENV} ${GO_ENV} ${GO_CMD} test
-
-post-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/tests && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} run.py > test_results.txt
+	cd ${WRKSRC}/tests && ${DIFF} expected_output.txt test_results.txt
 
 .include <bsd.port.mk>
