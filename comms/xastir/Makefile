@@ -47,7 +47,6 @@ OPTIONS_RADIO=		MGG
 OPTIONS_RADIO_MGG=	GMAGICK IMAGICK
 
 DAVIS_DESC=	Include Davis Weatherstation Support
-DBFAWK_DESC=	Include DBFAWK Support
 CURL_DESC=	Include CURL Internet Image support
 GEOTIFF_DESC=	Include GeoTIFF Support
 GPSMAN_DESC=	Include GPSMAN Support
@@ -58,7 +57,7 @@ MGG_DESC=	Image library for raster map processing
 IMAGICK_DESC=	ImageMagick (Version 6)
 GMAGICK_DESC=	GraphicsMagick (Needs GCC to compile)
 
-OPTIONS_DEFAULT=	BDB CURL DBFAWK GMAGICK
+OPTIONS_DEFAULT=	BDB CURL GMAGICK
 
 DAVIS_CONFIGURE_ON=	--enable-davis
 
