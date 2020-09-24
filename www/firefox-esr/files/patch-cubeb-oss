@@ -61,7 +61,7 @@ https://github.com/kinetiknz/cubeb/pull/600
  #endif
 --- /dev/null
 +++ media/libcubeb/src/cubeb_oss.c
-@@ -0,0 +1,1152 @@
+@@ -0,0 +1,1210 @@
 +/*
 + * Copyright © 2019-2020 Nia Alarie <nia@NetBSD.org>
 + * Copyright © 2020 Ka Ho Ng <khng300@gmail.com>
@@ -75,6 +75,7 @@ https://github.com/kinetiknz/cubeb/pull/600
 +#endif
 +#include <assert.h>
 +#include <ctype.h>
++#include <limits.h>
 +#include <errno.h>
 +#include <sys/types.h>
 +#include <sys/soundcard.h>
@@ -99,7 +100,7 @@ https://github.com/kinetiknz/cubeb/pull/600
 +
 +/* Standard acceptable minimum. */
 +#ifndef OSS_LATENCY_MS
-+#define OSS_LATENCY_MS (40)
++#define OSS_LATENCY_MS (8)
 +#endif
 +
 +#ifndef OSS_DEFAULT_DEVICE
@@ -108,10 +109,6 @@ https://github.com/kinetiknz/cubeb/pull/600
 +
 +#ifndef OSS_DEFAULT_MIXER
 +#define OSS_DEFAULT_MIXER "/dev/mixer"
-+#endif
-+
-+#ifndef OSS_DEFAULT_NFRAMES
-+#define OSS_DEFAULT_NFRAMES (32)
 +#endif
 +
 +#define ENV_AUDIO_DEVICE "AUDIO_DEVICE"
@@ -174,8 +171,13 @@ https://github.com/kinetiknz/cubeb/pull/600
 +  struct cubeb * context;
 +  void * user_ptr;
 +  pthread_t thread;
-+  pthread_mutex_t mutex; /* protects running, volume, frames_written */
++  pthread_cond_t doorbell_cv;
++  pthread_cond_t stopped_cv;
++  /* protects doorbell_cv, stopped_cv, running, destroying, volume, frames_written */
++  pthread_mutex_t mtx;
++  bool thread_created;
 +  bool running;
++  bool destroying;
 +  float volume;
 +  struct oss_stream play;
 +  struct oss_stream record;
@@ -260,7 +262,7 @@ https://github.com/kinetiknz/cubeb/pull/600
 +{
 +  (void)context;
 +
-+  *latency_frames = OSS_LATENCY_MS * params.rate / 1000;
++  *latency_frames = (OSS_LATENCY_MS * params.rate) / 1000;
 +  return CUBEB_OK;
 +}
 +
@@ -713,22 +715,30 @@ https://github.com/kinetiknz/cubeb/pull/600
 +static int
 +oss_stream_stop(cubeb_stream * s)
 +{
-+  pthread_mutex_lock(&s->mutex);
-+  if (s->running) {
++  pthread_mutex_lock(&s->mtx);
++  if (s->thread_created && s->running) {
 +    s->running = false;
-+    pthread_mutex_unlock(&s->mutex);
-+    pthread_join(s->thread, NULL);
-+  } else {
-+    pthread_mutex_unlock(&s->mutex);
++    pthread_cond_signal(&s->doorbell_cv);
++    pthread_cond_wait(&s->stopped_cv, &s->mtx);
 +  }
++  pthread_mutex_unlock(&s->mtx);
 +  return CUBEB_OK;
 +}
 +
 +static void
 +oss_stream_destroy(cubeb_stream * s)
 +{
-+  oss_stream_stop(s);
-+  pthread_mutex_destroy(&s->mutex);
++  pthread_mutex_lock(&s->mtx);
++  if (s->thread_created) {
++    s->destroying = true;
++    pthread_cond_signal(&s->doorbell_cv);
++  }
++  pthread_mutex_unlock(&s->mtx);
++  pthread_join(s->thread, NULL);
++
++  pthread_cond_destroy(&s->doorbell_cv);
++  pthread_cond_destroy(&s->stopped_cv);
++  pthread_mutex_destroy(&s->mtx);
 +  if (s->play.fd != -1) {
 +    close(s->play.fd);
 +  }
@@ -780,20 +790,20 @@ https://github.com/kinetiknz/cubeb/pull/600
 +  }
 +}
 +
-+static void *
-+oss_io_routine(void * arg)
++static int
++oss_audio_loop(cubeb_stream * s)
 +{
-+  cubeb_stream *s = arg;
-+  cubeb_state state = CUBEB_STATE_STARTED;
-+  size_t to_read = 0;
-+  size_t to_write = 0;
-+  long cb_nfr = 0;
-+  size_t write_ofs = 0;
-+  size_t read_ofs = 0;
-+  int drain = 0;
++  int state = CUBEB_STATE_STARTED;
++  long nfr = 0;
 +  int trig = 0;
++  int drain = 0;
++  struct pollfd pfds[2];
++  bool cbready = true;
 +
-+  s->state_cb(s, s->user_ptr, CUBEB_STATE_STARTED);
++  pfds[0].fd = s->play.fd;
++  pfds[0].events = POLLOUT;
++  pfds[1].fd = s->record.fd;
++  pfds[1].events = POLLIN;
 +
 +  if (s->record.fd != -1) {
 +    if (ioctl(s->record.fd, SNDCTL_DSP_SETTRIGGER, &trig)) {
@@ -801,16 +811,25 @@ https://github.com/kinetiknz/cubeb/pull/600
 +      state = CUBEB_STATE_ERROR;
 +      goto out;
 +    }
++    trig |= PCM_ENABLE_INPUT;
++    if (ioctl(s->record.fd, SNDCTL_DSP_SETTRIGGER, &trig)) {
++      LOG("Error %d occured when setting trigger on record fd", errno);
++      state = CUBEB_STATE_ERROR;
++      goto out;
++    }
 +  }
 +
-+  while (state == CUBEB_STATE_STARTED) {
-+    pthread_mutex_lock(&s->mutex);
-+    if (!s->running) {
-+      pthread_mutex_unlock(&s->mutex);
++  if (s->record.fd != -1)
++    memset(s->record.buf, 0, s->nfr);
++
++  while (1) {
++    pthread_mutex_lock(&s->mtx);
++    if (!s->running || s->destroying) {
++      pthread_mutex_unlock(&s->mtx);
 +      state = CUBEB_STATE_STOPPED;
 +      break;
 +    }
-+    pthread_mutex_unlock(&s->mutex);
++    pthread_mutex_unlock(&s->mtx);
 +    if (s->play.fd == -1 && s->record.fd == -1) {
 +      /*
 +       * Stop here if the stream is not play & record stream,
@@ -820,31 +839,32 @@ https://github.com/kinetiknz/cubeb/pull/600
 +      state = CUBEB_STATE_STOPPED;
 +      break;
 +    }
++
 +    if (s->record.fd != -1 && s->record.floating) {
-+      oss_linear32_to_float(s->record.buf,
-+                            s->record.info.channels * s->nfr);
++      oss_linear32_to_float(s->record.buf, s->record.info.channels * s->nfr);
 +    }
-+    cb_nfr = s->data_cb(s, s->user_ptr, s->record.buf, s->play.buf, s->nfr);
-+    if (cb_nfr == CUBEB_ERROR) {
-+      state = CUBEB_STATE_ERROR;
-+      break;
++    if (cbready) {
++      nfr = s->data_cb(s, s->user_ptr, s->record.buf, s->play.buf, s->nfr);
++      if (nfr == CUBEB_ERROR) {
++        state = CUBEB_STATE_ERROR;
++        goto out;
++      }
++      cbready = false;
 +    }
 +    if (s->play.fd != -1) {
 +      float vol;
 +
-+      pthread_mutex_lock(&s->mutex);
++      pthread_mutex_lock(&s->mtx);
 +      vol = s->volume;
-+      pthread_mutex_unlock(&s->mutex);
++      pthread_mutex_unlock(&s->mtx);
 +
 +      if (s->play.floating) {
-+        oss_float_to_linear32(s->play.buf,
-+                              s->play.info.channels * cb_nfr, vol);
++        oss_float_to_linear32(s->play.buf, s->play.info.channels * nfr, vol);
 +      } else {
-+        oss_linear16_set_vol(s->play.buf,
-+                             s->play.info.channels * cb_nfr, vol);
++        oss_linear16_set_vol(s->play.buf, s->play.info.channels * nfr, vol);
 +      }
 +    }
-+    if (cb_nfr < (long)s->nfr) {
++    if (nfr < (long)s->nfr) {
 +      if (s->play.fd != -1) {
 +        drain = 1;
 +      } else {
@@ -859,101 +879,127 @@ https://github.com/kinetiknz/cubeb/pull/600
 +      }
 +    }
 +
-+    if (s->record.fd != -1 && !trig) {
-+      trig |= PCM_ENABLE_INPUT;
-+      if (ioctl(s->record.fd, SNDCTL_DSP_SETTRIGGER, &trig)) {
-+        LOG("Error %d occured when setting trigger on record fd", errno);
-+        state = CUBEB_STATE_ERROR;
-+        break;
-+      }
-+    }
-+
-+    to_write = s->play.fd != -1 ? cb_nfr : 0;
-+    to_read = s->record.fd != -1 ? s->nfr : 0;
-+    write_ofs = 0;
-+    read_ofs = 0;
++    size_t to_write = s->play.fd != -1 ? nfr : 0;
++    size_t to_read = s->record.fd != -1 ? s->nfr : 0;
++    size_t write_ofs = 0;
++    size_t read_ofs = 0;
 +    while (to_write > 0 || to_read > 0) {
 +      size_t bytes;
 +      ssize_t n, frames;
-+      struct pollfd pfds[2];
++      int nfds;
 +
-+      pfds[0].fd = s->play.fd;
-+      pfds[0].events = POLLOUT;
 +      pfds[0].revents = 0;
-+      pfds[1].fd = s->record.fd;
-+      pfds[1].events = POLLIN;
 +      pfds[1].revents = 0;
 +
-+      if (to_write > 0 && to_read > 0) {
-+        int nfds;
-+
-+        nfds = poll(pfds, 2, 10000);
-+        if (nfds == -1) {
-+          if (errno == EINTR)
-+            continue;
-+          LOG("Error %d occured when polling playback and record fd", errno);
-+          state = CUBEB_STATE_ERROR;
-+          break;
-+        } else if (nfds == 0)
++      nfds = poll(pfds, 2, 1000);
++      if (nfds == -1) {
++        if (errno == EINTR)
 +          continue;
++        LOG("Error %d occured when polling playback and record fd", errno);
++        state = CUBEB_STATE_ERROR;
++        goto out;
++      } else if (nfds == 0)
++        continue;
 +
-+        if ((pfds[0].revents & (POLLERR|POLLHUP)) ||
-+            (pfds[1].revents & (POLLERR|POLLHUP))) {
-+          LOG("Error %d occured on playback or record fds", errno);
-+          state = CUBEB_STATE_ERROR;
-+          break;
-+        }
-+      } else if (to_write > 0) {
-+        pfds[0].revents = POLLOUT;
-+      } else {
-+        pfds[1].revents = POLLIN;
++      if ((pfds[0].revents & (POLLERR | POLLHUP)) ||
++          (pfds[1].revents & (POLLERR | POLLHUP))) {
++        LOG("Error occured on playback, record fds");
++        state = CUBEB_STATE_ERROR;
++        goto out;
 +      }
 +
 +      if (to_write > 0 && pfds[0].revents) {
 +        bytes = to_write * s->play.frame_size;
 +        if ((n = write(s->play.fd, (uint8_t *)s->play.buf + write_ofs, bytes)) < 0) {
 +          state = CUBEB_STATE_ERROR;
-+          break;
++          goto out;
 +        }
 +        frames = n / s->play.frame_size;
-+        pthread_mutex_lock(&s->mutex);
++        pthread_mutex_lock(&s->mtx);
 +        s->frames_written += frames;
-+        pthread_mutex_unlock(&s->mutex);
++        pthread_mutex_unlock(&s->mtx);
 +        to_write -= frames;
 +        write_ofs += n;
 +      }
 +      if (to_read > 0 && pfds[1].revents) {
 +        bytes = to_read * s->record.frame_size;
-+        if ((n = read(s->record.fd, (uint8_t *)s->record.buf + read_ofs, bytes)) < 0) {
++        if ((n = read(s->record.fd, (uint8_t *)s->record.buf + read_ofs,
++                      bytes)) < 0) {
 +          state = CUBEB_STATE_ERROR;
-+          break;
++          goto out;
 +        }
 +        frames = n / s->record.frame_size;
 +        to_read -= frames;
 +        read_ofs += n;
 +      }
 +    }
-+    if (drain && state != CUBEB_STATE_ERROR) {
++    if (drain) {
 +      state = CUBEB_STATE_DRAINED;
 +      break;
 +    }
++    cbready = true;
 +  }
++
 +out:
-+  if (s->record.fd != -1)
-+    ioctl(s->record.fd, SNDCTL_DSP_HALT_INPUT, NULL);
-+  s->state_cb(s, s->user_ptr, state);
++  return state;
++}
++
++static void *
++oss_io_routine(void *arg)
++{
++  cubeb_stream *s = arg;
++  cubeb_state state = CUBEB_STATE_STARTED;
++
++  do {
++    pthread_mutex_lock(&s->mtx);
++    if (s->destroying) {
++      pthread_mutex_unlock(&s->mtx);
++      break;
++    }
++    pthread_mutex_unlock(&s->mtx);
++
++    s->state_cb(s, s->user_ptr, state);
++
++    state = oss_audio_loop(s);
++    assert(state != CUBEB_STATE_STARTED);
++
++    if (s->record.fd != -1)
++      ioctl(s->record.fd, SNDCTL_DSP_HALT_INPUT, NULL);
++    s->state_cb(s, s->user_ptr, state);
++
++    pthread_mutex_lock(&s->mtx);
++    pthread_cond_signal(&s->stopped_cv);
++    if (s->destroying) {
++      pthread_mutex_unlock(&s->mtx);
++      break;
++    }
++    pthread_mutex_unlock(&s->mtx);
++
++    pthread_mutex_lock(&s->mtx);
++    pthread_cond_wait(&s->doorbell_cv, &s->mtx);
++    pthread_mutex_unlock(&s->mtx);
++  } while (1);
++
++  pthread_mutex_lock(&s->mtx);
++  s->thread_created = false;
++  pthread_mutex_unlock(&s->mtx);
 +  return NULL;
 +}
 +
-+static int
-+oss_calc_frag_params(unsigned int frames, unsigned int frame_size)
++static inline int
++oss_calc_frag_shift(unsigned int frames, unsigned int frame_size)
 +{
 +  int n = 4;
-+  int blksize = OSS_DEFAULT_NFRAMES * frame_size;
-+  int nblks = (frames * frame_size + blksize - 1) / blksize;
++  int blksize = (frames * frame_size + 4 - 1) / 4;
 +  while ((1 << n) < blksize)
 +    n++;
-+  return nblks << 16 | n;
++  return n;
++}
++
++static inline int
++oss_get_frag_params(unsigned int shift)
++{
++  return (8 << 16) | shift;
 +}
 +
 +static int
@@ -964,14 +1010,13 @@ https://github.com/kinetiknz/cubeb/pull/600
 +                cubeb_stream_params * input_stream_params,
 +                cubeb_devid output_device,
 +                cubeb_stream_params * output_stream_params,
-+                unsigned latency_frames,
++                unsigned int latency_frames,
 +                cubeb_data_callback data_callback,
 +                cubeb_state_callback state_callback,
 +                void * user_ptr)
 +{
 +  int ret = CUBEB_OK;
-+  unsigned int playnfr = 1;
-+  unsigned int recnfr = 1;
++  unsigned int playnfr = 0, recnfr = 0;
 +  cubeb_stream *s = NULL;
 +  const char *defdsp;
 +
@@ -983,9 +1028,8 @@ https://github.com/kinetiknz/cubeb/pull/600
 +    ret = CUBEB_ERROR;
 +    goto error;
 +  }
-+  s->record.fd = -1;
-+  s->play.fd = -1;
-+  s->nfr = OSS_DEFAULT_NFRAMES;
++  s->record.fd = s->play.fd = -1;
++  s->nfr = latency_frames;
 +  if (input_device != NULL) {
 +    strlcpy(s->record.name, input_device, sizeof(s->record.name));
 +  } else {
@@ -1024,6 +1068,8 @@ https://github.com/kinetiknz/cubeb/pull/600
 +      goto error;
 +    }
 +    s->record.floating = (input_stream_params->format == CUBEB_SAMPLE_FLOAT32NE);
++    s->record.frame_size = s->record.info.channels * (s->record.info.precision / 8);
++    recnfr = (1 << oss_calc_frag_shift(s->nfr, s->record.frame_size)) / s->record.frame_size;
 +  }
 +  if (output_stream_params != NULL) {
 +    unsigned int nb_channels;
@@ -1053,51 +1099,41 @@ https://github.com/kinetiknz/cubeb/pull/600
 +      goto error;
 +    }
 +    s->play.floating = (output_stream_params->format == CUBEB_SAMPLE_FLOAT32NE);
++    s->play.frame_size = s->play.info.channels * (s->play.info.precision / 8);
++    playnfr = (1 << oss_calc_frag_shift(s->nfr, s->play.frame_size)) / s->play.frame_size;
++  }
++  /* Use the largest nframes among playing and recording streams */
++  s->nfr = (playnfr > recnfr) ? playnfr : recnfr;
++  if (s->play.fd != -1) {
++    int frag = oss_get_frag_params(oss_calc_frag_shift(s->nfr, s->play.frame_size));
++    if (ioctl(s->record.fd, SNDCTL_DSP_SETFRAGMENT, &frag))
++      LOG("Failed to set record fd with SNDCTL_DSP_SETFRAGMENT. frag: 0x%x",
++          frag);
++  }
++  if (s->record.fd != -1) {
++    int frag = oss_get_frag_params(oss_calc_frag_shift(s->nfr, s->record.frame_size));
++    if (ioctl(s->record.fd, SNDCTL_DSP_SETFRAGMENT, &frag))
++      LOG("Failed to set record fd with SNDCTL_DSP_SETFRAGMENT. frag: 0x%x",
++          frag);
 +  }
 +  s->context = context;
 +  s->volume = 1.0;
 +  s->state_cb = state_callback;
 +  s->data_cb = data_callback;
 +  s->user_ptr = user_ptr;
-+  if (pthread_mutex_init(&s->mutex, NULL) != 0) {
++
++  if (pthread_mutex_init(&s->mtx, NULL) != 0) {
 +    LOG("Failed to create mutex");
 +    goto error;
 +  }
-+  s->play.frame_size = s->play.info.channels *
-+                      (s->play.info.precision / 8);
-+  if (s->play.fd != -1) {
-+    audio_buf_info bi;
-+    int frag = oss_calc_frag_params(latency_frames, s->play.frame_size);
-+    if (ioctl(s->play.fd, SNDCTL_DSP_SETFRAGMENT, &frag))
-+      LOG("Failed to set play fd with SNDCTL_DSP_SETFRAGMENT. frag: 0x%x", frag);
-+    if (ioctl(s->play.fd, SNDCTL_DSP_GETOSPACE, &bi) == 0) {
-+      unsigned int nfr = bi.fragsize / s->play.frame_size;
-+      if (playnfr < nfr) {
-+        playnfr = nfr;
-+      }
-+    }
++  if (pthread_cond_init(&s->doorbell_cv, NULL) != 0) {
++    LOG("Failed to create cv");
++    goto error;
 +  }
-+  s->record.frame_size = s->record.info.channels *
-+                        (s->record.info.precision / 8);
-+  if (s->record.fd != -1) {
-+    audio_buf_info bi;
-+    int frag = oss_calc_frag_params(latency_frames, s->record.frame_size);
-+    if (ioctl(s->record.fd, SNDCTL_DSP_SETFRAGMENT, &frag))
-+      LOG("Failed to set record fd with SNDCTL_DSP_SETFRAGMENT. frag: 0x%x",
-+          frag);
-+    if (ioctl(s->record.fd, SNDCTL_DSP_GETISPACE, &bi) == 0) {
-+      unsigned int nfr = bi.fragsize / s->record.frame_size;
-+      if (recnfr < nfr) {
-+        recnfr = nfr;
-+      }
-+    }
++  if (pthread_cond_init(&s->stopped_cv, NULL) != 0) {
++    LOG("Failed to create cv");
++    goto error;
 +  }
-+  if (s->play.fd != -1 && s->record.fd != -1)
-+    s->nfr = (playnfr < recnfr) ? playnfr : recnfr;
-+  else if (s->play.fd != -1)
-+    s->nfr = playnfr;
-+  else if (s->record.fd != -1)
-+    s->nfr = recnfr;
 +
 +  if (s->play.fd != -1) {
 +    if ((s->play.buf = calloc(s->nfr, s->play.frame_size)) == NULL) {
@@ -1122,22 +1158,44 @@ https://github.com/kinetiknz/cubeb/pull/600
 +}
 +
 +static int
-+oss_stream_start(cubeb_stream * s)
++oss_stream_thr_create(cubeb_stream * s)
 +{
-+  s->running = true;
++  if (s->thread_created) {
++    pthread_mutex_lock(&s->mtx);
++    pthread_cond_signal(&s->doorbell_cv);
++    pthread_mutex_unlock(&s->mtx);
++
++    return CUBEB_OK;
++  }
++
 +  if (pthread_create(&s->thread, NULL, oss_io_routine, s) != 0) {
 +    LOG("Couldn't create thread");
 +    return CUBEB_ERROR;
 +  }
++
++  return CUBEB_OK;
++}
++
++static int
++oss_stream_start(cubeb_stream * s)
++{
++  pthread_mutex_lock(&s->mtx);
++  if (!s->running && oss_stream_thr_create(s) != CUBEB_OK) {
++    pthread_mutex_unlock(&s->mtx);
++    return CUBEB_ERROR;
++  }
++  s->thread_created = true;
++  s->running = true;
++  pthread_mutex_unlock(&s->mtx);
 +  return CUBEB_OK;
 +}
 +
 +static int
 +oss_stream_get_position(cubeb_stream * s, uint64_t * position)
 +{
-+  pthread_mutex_lock(&s->mutex);
++  pthread_mutex_lock(&s->mtx);
 +  *position = s->frames_written;
-+  pthread_mutex_unlock(&s->mutex);
++  pthread_mutex_unlock(&s->mtx);
 +  return CUBEB_OK;
 +}
 +
@@ -1162,9 +1220,9 @@ https://github.com/kinetiknz/cubeb/pull/600
 +    volume = 0.0;
 +  else if (volume > 1.0)
 +    volume = 1.0;
-+  pthread_mutex_lock(&stream->mutex);
++  pthread_mutex_lock(&stream->mtx);
 +  stream->volume = volume;
-+  pthread_mutex_unlock(&stream->mutex);
++  pthread_mutex_unlock(&stream->mtx);
 +  return CUBEB_OK;
 +}
 +
