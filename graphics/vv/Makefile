@@ -37,8 +37,8 @@ PLIST_FILES=	bin/vv
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == i386 || ${ARCH} == amd64
-CXXFLAGS+=	-msse2 # workaround for https://github.com/open-vv/vv/issues/83 & https://github.com/InsightSoftwareConsortium/ITK/issues/2011
+.if ${ARCH} == i386
+CXXFLAGS+=	-msse2 # workaround for ITK failing to add -msse2 on i386: https://github.com/open-vv/vv/issues/83 & https://github.com/InsightSoftwareConsortium/ITK/issues/2011
 .endif
 
 post-configure: # workaround for "error: unable to find library -lGTest::GTest", see https://github.com/open-vv/vv/issues/74
