@@ -1,4 +1,8 @@
 sbin/sniffit
-man/man5/sniffit.5.gz
-man/man8/sniffit.8.gz
-%%PORTDOCS%%share/doc/sniffit/README.FIRST
+%%PORTDOCS%%%%DOCSDIR%%/PLUGIN-HOWTO
+%%PORTDOCS%%%%DOCSDIR%%/README.FIRST
+%%PORTDOCS%%%%DOCSDIR%%/UPDATE-CHECK
+%%PORTDOCS%%%%DOCSDIR%%/sniffit-FAQ
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample_config_file
+share/man/man5/sniffit.5.gz
+share/man/man8/sniffit.8.gz

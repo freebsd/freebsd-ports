@@ -1,5 +1,5 @@
---- sn_resolv.c.orig	Thu Jul 16 09:17:10 1998
-+++ sn_resolv.c	Sun Aug 16 23:25:58 1998
+--- src/sn_resolv.c.orig	2020-04-20 01:57:30 UTC
++++ src/sn_resolv.c
 @@ -2,6 +2,8 @@
  /*  - getaddrbyname: Godmar Back / Shudoh Kazuyuki                       */
  
