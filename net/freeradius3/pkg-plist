@@ -226,9 +226,9 @@ include/freeradius/vqp.h
 %%LIBDIR%%/rlm_preprocess.a
 %%LIBDIR%%/rlm_preprocess.la
 %%LIBDIR%%/rlm_preprocess.so
-%%PYTHON%%%%LIBDIR%%/rlm_python.a
-%%PYTHON%%%%LIBDIR%%/rlm_python.la
-%%PYTHON%%%%LIBDIR%%/rlm_python.so
+%%PYTHON%%%%LIBDIR%%/rlm_python3.a
+%%PYTHON%%%%LIBDIR%%/rlm_python3.la
+%%PYTHON%%%%LIBDIR%%/rlm_python3.so
 %%LIBDIR%%/rlm_radutmp.a
 %%LIBDIR%%/rlm_radutmp.la
 %%LIBDIR%%/rlm_radutmp.so
@@ -612,8 +612,8 @@ sbin/radmin
 %%PERL%%%%EXAMPLESDIR%%/raddb/mods-config/perl/example.pl
 %%EXAMPLESDIR%%/raddb/mods-config/preprocess/hints
 %%EXAMPLESDIR%%/raddb/mods-config/preprocess/huntgroups
-%%PYTHON%%%%EXAMPLESDIR%%/raddb/mods-config/python/example.py
-%%PYTHON%%%%EXAMPLESDIR%%/raddb/mods-config/python/radiusd.py
+%%PYTHON%%%%EXAMPLESDIR%%/raddb/mods-config/python3/example.py
+%%PYTHON%%%%EXAMPLESDIR%%/raddb/mods-config/python3/radiusd.py
 %%EXAMPLESDIR%%/raddb/mods-config/sql/counter/mysql/dailycounter.conf
 %%EXAMPLESDIR%%/raddb/mods-config/sql/counter/mysql/expire_on_login.conf
 %%EXAMPLESDIR%%/raddb/mods-config/sql/counter/mysql/monthlycounter.conf

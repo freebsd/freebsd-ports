@@ -3,7 +3,7 @@
 
 PORTNAME=	freeradius
 DISTVERSION=	3.0.21
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/freeradius/%SUBDIR%/ \
 		ftp://ftp.ntua.gr/pub/net/radius/freeradius/%SUBDIR%/ \
@@ -32,6 +32,7 @@ USE_RC_SUBR=	radiusd
 
 SHEBANG_FILES=	src/modules/rlm_counter/rad_counter scripts/sql/radsqlrelay
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--without-rlm_python
 # Prevent /root/.rnd leftover
 MAKE_ARGS+=	HOME=/dev/null
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -102,11 +103,12 @@ PERL_USES=			perl5
 PGSQL_USES=			pgsql
 PGSQL_VARS=			_REQUIRE+=postgresql
 PGSQL_CONFIGURE_WITH=		rlm_sql_postgresql
-PYTHON_CONFIGURE_WITH=		rlm_python
-PYTHON_CONFIGURE_ON=		--with-rlm-python-lib-dir=${PYTHON_LIBDIR} \
-				--with-rlm-python-include-dir=${PYTHON_INCLUDEDIR}
-PYTHON_USES=			python:2.7 gettext-runtime
-PYTHON_VARS=			SHEBANG_FILES+=src/modules/rlm_python/*.py
+PYTHON_CONFIGURE_WITH=		rlm_python3
+PYTHON_CONFIGURE_ON=		--with-rlm-python3-lib-dir=${PYTHON_LIBDIR} \
+				--with-rlm-python3-config-bin=${PYTHON_CMD}-config \
+				--with-rlm-python3-include-dir=${PYTHON_INCLUDEDIR}
+PYTHON_USES=			python gettext-runtime
+PYTHON_VARS=			SHEBANG_FILES+=src/modules/rlm_python3/*.py
 REDIS_CONFIGURE_WITH=		rlm_redis rlm_rediswho
 REDIS_LIB_DEPENDS=		libhiredis.so:databases/hiredis
 REST_CONFIGURE_WITH=		rlm_rest
