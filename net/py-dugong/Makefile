@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	dugong
-PORTVERSION=	3.7.3
+PORTVERSION=	3.7.5
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,10 +14,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 
-NO_ARCH=	yes
-
 USES=		python:3.3+ tar:bzip2
 USE_PYTHON=	autoplist distutils
+
+NO_ARCH=	yes
 
 do-test:
 	${PYTHON_CMD} -m pytest ${WRKSRC}/test
