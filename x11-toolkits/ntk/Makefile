@@ -2,8 +2,8 @@
 
 PORTNAME=	ntk
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.1000
-PORTREVISION=	1
+DISTVERSION=	1.3.1000-2
+DISTVERSIONSUFFIX=	-gdae1771
 CATEGORIES=	x11-toolkits
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,14 +16,14 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libpng.so:graphics/png
 
-USES=		gnome jpeg localbase:ldflags pkgconfig python:2.7,build waf xorg
+USES=		gnome jpeg localbase:ldflags pkgconfig waf xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	original-male
 USE_GNOME=	cairo
 USE_XORG=	x11 xft
 USE_LDCONFIG=	yes
 
-PLIST_SUB=	SHLIB_VER=${DISTVERSION}
+PLIST_SUB=	SHLIB_VER=${PORTVERSION:R}
 
 post-patch:
 	@${REINPLACE_CMD} -e " \
@@ -44,7 +44,7 @@ post-install:
 	@${STRIP_CMD} \
 		${STAGEDIR}${PREFIX}/bin/ntk-chtheme \
 		${STAGEDIR}${PREFIX}/bin/ntk-fluid \
-		${STAGEDIR}${PREFIX}/lib/libntk.so.${PORTVERSION} \
-		${STAGEDIR}${PREFIX}/lib/libntk_images.so.${PORTVERSION}
+		${STAGEDIR}${PREFIX}/lib/libntk.so.${PORTVERSION:R} \
+		${STAGEDIR}${PREFIX}/lib/libntk_images.so.${PORTVERSION:R}
 
 .include <bsd.port.mk>
