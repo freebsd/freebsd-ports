@@ -13,8 +13,9 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_aarch64=		fails to compile: /usr/lib/clang/5.0.0/include/mmintrin.h:47:5: use of undeclared identifier '__builtin_ia32_emms'
-BROKEN_powerpc64=	fails to compile: g++6: error: unrecognized command line option '-mavx2'
-ONLY_FOR_ARCHS=		aarch64 amd64 powerpc powerpc64
+BROKEN_powerpc64=	fails to compile: highwayhash/arch_specific.cc:153:32: error: too few arguments to function sysctlbyname
+BROKEN_powerpc64le=	fails to compile: highwayhash/arch_specific.cc:153:32: error: too few arguments to function sysctlbyname
+ONLY_FOR_ARCHS=		aarch64 amd64 powerpc powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	Assembly is implemented only for specific architectures in highwayhash/tsc_timer.h
 
 USES=		compiler:c++11-lang gmake
