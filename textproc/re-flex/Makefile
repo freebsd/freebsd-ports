@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	re-flex
-PORTVERSION=	2.1.3
+PORTVERSION=	2.1.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
 
@@ -10,9 +10,9 @@ COMMENT=	Regex-centric, fast and flexible scanner generator for C++
 
 LICENSE=	BSD3CLAUSE
 
-CONFLICTS_INSTALL=	reflex
-
 USES=		autoreconf compiler:c++11-lib gmake
+
+CONFLICTS_INSTALL=	reflex
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Genivia
