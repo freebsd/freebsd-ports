@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rust-analyzer
-DISTVERSION=	2020-09-14
+DISTVERSION=	2020-09-21
 CATEGORIES=	devel
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -27,12 +27,12 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		bitflags-1.2.1 \
 		byteorder-1.3.4 \
 		cargo_metadata-0.11.2 \
-		cc-1.0.59 \
+		cc-1.0.60 \
 		cfg-if-0.1.10 \
-		chalk-derive-0.25.0 \
-		chalk-ir-0.25.0 \
-		chalk-recursive-0.25.0 \
-		chalk-solve-0.25.0 \
+		chalk-derive-0.27.0 \
+		chalk-ir-0.27.0 \
+		chalk-recursive-0.27.0 \
+		chalk-solve-0.27.0 \
 		chrono-0.4.15 \
 		cloudabi-0.1.0 \
 		cmake-0.1.44 \
@@ -43,7 +43,7 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		crossbeam-utils-0.7.2 \
 		difference-2.0.0 \
 		drop_bomb-0.1.5 \
-		either-1.6.0 \
+		either-1.6.1 \
 		ena-0.14.0 \
 		env_logger-0.7.1 \
 		expect-test-1.0.1 \
@@ -80,7 +80,7 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		lock_api-0.4.1 \
 		log-0.4.11 \
 		lsp-server-0.3.4 \
-		lsp-types-0.80.0 \
+		lsp-types-0.81.0 \
 		matchers-0.0.1 \
 		matches-0.1.8 \
 		maybe-uninit-2.0.0 \
@@ -113,7 +113,7 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		pulldown-cmark-to-cmark-5.0.0 \
 		quote-1.0.7 \
 		rayon-1.4.0 \
-		rayon-core-1.8.0 \
+		rayon-core-1.8.1 \
 		redox_syscall-0.1.57 \
 		regex-1.3.9 \
 		regex-automata-0.1.9 \
@@ -140,7 +140,7 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		slab-0.4.2 \
 		smallvec-1.4.2 \
 		smol_str-0.1.16 \
-		syn-1.0.40 \
+		syn-1.0.41 \
 		synstructure-0.12.4 \
 		termcolor-1.1.0 \
 		text-size-1.0.0 \
