@@ -2,7 +2,7 @@
 
 PORTNAME=	libdecaf
 PORTVERSION=	1.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	SF/ed448goldilocks/
 
@@ -12,7 +12,7 @@ COMMENT=	Implementation of elliptic curve cryptography
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		cmake compiler:c++11-lang localbase:ldflags python:2.7 tar:tgz
+USES=		cmake compiler:c++11-lang localbase:ldflags python tar:tgz
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
