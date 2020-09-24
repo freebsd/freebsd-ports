@@ -14,6 +14,9 @@ COMMENT=	Standalone JavaScript based from Mozilla 68-esr
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Requires python2 to build and has no consumers
+EXPIRATION_DATE=	2020-12-31
+
 BUILD_DEPENDS=	autoconf-2.13:devel/autoconf213 \
 		${LOCALBASE}/bin/python${PYTHON3_DEFAULT}:lang/python${PYTHON3_DEFAULT:S/.//g} \
 		rust-cbindgen>=0.8.7:devel/rust-cbindgen \
