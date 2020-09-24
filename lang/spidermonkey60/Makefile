@@ -14,6 +14,9 @@ COMMENT=	Standalone JavaScript based from Mozilla 60-esr
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Requires python2 to build
+EXPIRATION_DATE=	2020-12-31
+
 BUILD_DEPENDS=	autoconf-2.13:devel/autoconf213
 LIB_DEPENDS=	libnspr4.so:devel/nspr \
 		libffi.so:devel/libffi \
