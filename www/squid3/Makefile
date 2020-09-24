@@ -186,6 +186,8 @@ VIA_DB_DESC=		Forward/Via database
 WCCPV2_DESC=		Web Cache Coordination Protocol v2
 WCCP_DESC=		Web Cache Coordination Protocol
 
+CFLAGS+=		-Wno-error=deprecated-declarations
+
 change_files=	ChangeLog \
 		contrib/nextstep/makepkg \
 		contrib/nextstep/post_install \
