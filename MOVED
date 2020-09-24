@@ -15624,3 +15624,4 @@ deskutils/logjam||2020-09-19|Abandonware does not work anymore
 mail/squirrelmail-tmda-plugin||2020-09-19|Removed, unmaintained and depends on expired mail/tmda
 mail/tmda||2020-09-19|Has expired: Uses EOL Python 2.7
 devel/storm||2020-09-19|Has expired: Uses deprecated version of python
+dns/dnsmasq-devel|dns/dnsmasq|2020-09-24|Has expired: use dns/dnsmasq instead, which is newer
