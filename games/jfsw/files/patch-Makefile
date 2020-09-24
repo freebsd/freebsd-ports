@@ -1,8 +1,9 @@
-Rename PREFIX to DATADIR as its purpose is only to find data files (avoids
-conflicts with our PREFIX, which has another meaning).
-Do not enforce compilers.
+Rename PREFIX to DATADIR as its only purpose is to access data files
+(and avoid conflict with FreeBSD PREFIX, which has another meaning)
 
---- Makefile.orig	2020-09-03 06:19:21 UTC
+Tune GAMELIBS for FreeBSD platform
+
+--- Makefile.orig	2020-09-22 22:08:35 UTC
 +++ Makefile
 @@ -14,7 +14,7 @@
  RELEASE ?= 1
@@ -11,32 +12,21 @@ Do not enforce compilers.
 -PREFIX ?= /usr/local/share/games/jfsw
 +DATADIR ?= /usr/local/share/games/jfsw
  
- # DirectX SDK location
- DXROOT ?= $(USERPROFILE)/sdks/directx/dx81
-@@ -61,8 +61,8 @@ endif
- 
- include $(AUDIOLIBROOT)/Makefile.shared
- 
--CC=gcc
--CXX=g++
-+CC?=gcc
-+CXX?=g++
- OURCFLAGS=$(debug) -W -Wall -Wimplicit -Wno-unused \
- 	-fno-pic -fno-strict-aliasing -DNO_GCC_BUILTINS \
- 	-I$(INC) -I$(EINC) -I$(MACTROOT) -I$(AUDIOLIBROOT)/include
-@@ -165,6 +165,10 @@ ifeq ($(PLATFORM),LINUX)
+ # Engine source code path
+ EROOT ?= jfbuild
+@@ -168,6 +168,10 @@ ifeq ($(PLATFORM),LINUX)
  	NASMFLAGS+= -f elf
  	GAMELIBS+= $(JFAUDIOLIB_LDFLAGS)
  endif
 +ifeq ($(PLATFORM),BSD)
 +	NASMFLAGS+= -f elf
-+	GAMELIBS+= $(JFAUDIOLIB_LDFLAGS)
++	GAMELIBS+= $(JFAUDIOLIB_LDFLAGS) -pthread
 +endif
  ifeq ($(PLATFORM),WINDOWS)
  	OURCFLAGS+= -I$(DXROOT)/include
  	NASMFLAGS+= -f win32 --prefix _
-@@ -192,7 +196,7 @@ endif
- OURCFLAGS+= $(BUILDCFLAGS)
+@@ -207,7 +211,7 @@ OURCFLAGS+= $(BUILDCFLAGS)
+ LIBS+= $(BUILDLIBS)
  
  ifneq ($(PLATFORM),WINDOWS)
 -	OURCFLAGS+= -DPREFIX=\"$(PREFIX)\"
