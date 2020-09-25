@@ -10,7 +10,7 @@ COMMENT=	The contrib utilities from the PostgreSQL distribution
 
 MASTERDIR=	${.CURDIR}/../postgresql11-server
 
-USES=		bison pgsql:11
+USES=		bison pgsql:${DISTVERSION:C/([0-9]\.?[0-9]).*/\1/g}
 
 BUILD_DIRS=	src/port src/include src/common contrib
 INSTALL_DIRS=	contrib

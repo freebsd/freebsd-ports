@@ -13,7 +13,7 @@ LIB_DEPENDS=	libxslt.so:textproc/libxslt \
 
 MASTERDIR=	${.CURDIR}/../postgresql95-server
 
-USES=		bison pgsql:9.5
+USES=		bison pgsql:${DISTVERSION:C/([0-9]\.?[0-9]).*/\1/g}
 
 BUILD_DIRS=	src/port src/common contrib
 INSTALL_DIRS=	contrib

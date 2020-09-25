@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	postgresql
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	pgsql@FreeBSD.org
@@ -10,7 +10,7 @@ COMMENT=	The contrib utilities from the PostgreSQL distribution
 
 MASTERDIR=	${.CURDIR}/../postgresql13-server
 
-USES=		bison pgsql:12
+USES=		bison pgsql:${DISTVERSION:C/([0-9]\.?[0-9]).*/\1/g}
 
 BUILD_DIRS=	src/port src/include src/common contrib
 INSTALL_DIRS=	contrib
