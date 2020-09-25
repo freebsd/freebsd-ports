@@ -12,6 +12,8 @@ COMMENT=	ASIC physical design tool
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	C++ issue on i386, should be resolved in the next update
+
 BUILD_DEPENDS=	base64:converters/base64 \
 		boost-libs>0:devel/boost-libs \
 		coin-or-lemon>0:math/lemon \
