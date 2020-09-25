@@ -11,7 +11,6 @@
     SUBDIR += coccinella
     SUBDIR += convey
     SUBDIR += cordless
-    SUBDIR += corebird
     SUBDIR += coyim
     SUBDIR += cutegram
     SUBDIR += diligent
