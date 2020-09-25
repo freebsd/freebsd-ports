@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libva-utils
-PORTVERSION=	2.9.0
+PORTVERSION=	2.9.1
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
