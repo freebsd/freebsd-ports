@@ -2,8 +2,7 @@
 
 PORTNAME=	openmvg
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4
-PORTREVISION=	4
+DISTVERSION=	1.6
 CATEGORIES=	misc science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,14 +15,16 @@ ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	need to figure out which TARGET_ARCHITECTURE values correspond to other architectures, plus "generic" is broken
 
 LIB_DEPENDS=	libflann_cpp.so:math/flann \
+		libopenblas.so:math/openblas \
 		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
+LIB_DEPENDS+=	liblz4.so:archivers/liblz4 # workaround for https://github.com/openMVG/openMVG/issues/1798
 
 USES=		cmake eigen:3 jpeg qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	openMVG
 GH_PROJECT=	openMVG
-GH_TUPLE=	openMVG-thirdparty:cereal:37fca60:cereal/dependencies/cereal \
+GH_TUPLE=	openMVG-thirdparty:cereal:ac168fe78ac499be0a745bf4a3253a9660572f8d:cereal/dependencies/cereal \
 		openMVG-thirdparty:osi_clp:a25a980:osi/dependencies/osi_clp
 WRKSRC_SUBDIR=	src
 USE_QT=		core gui opengl svg widgets buildtools_build qmake_build
@@ -36,6 +37,7 @@ CMAKE_OFF=	OpenMVG_BUILD_EXAMPLES
 
 CXXFLAGS+=	-fPIC \
 		-I${LOCALBASE}/include # because flann is looked for in a wrong directiory: https://github.com/openMVG/openMVG/issues/1284
+LDFLAGS+=	-L${LOCALBASE}/lib -llz4 # workaround for https://github.com/openMVG/openMVG/issues/1798
 
 OPTIONS_SINGLE=			SIMD_${ARCH:tu}
 OPTIONS_SINGLE_SIMD_AMD64=	K8 CORE MEROM NEHALEM
