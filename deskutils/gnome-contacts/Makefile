@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-contacts
-PORTVERSION=	3.28.2
+PORTVERSION=	3.32.1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 
@@ -29,7 +29,8 @@ LIB_DEPENDS=	libchamplain-0.12.so:graphics/libchamplain \
 		libnspr4.so:devel/nspr \
 		libsecret-1.so:security/libsecret \
 		libsoup-2.4.so:devel/libsoup \
-		libtelepathy-glib.so:net-im/telepathy-glib
+		libtelepathy-glib.so:net-im/telepathy-glib \
+		libhandy-0.0.so:x11-toolkits/libhandy0
 
 PORTSCOUT=	limitw:1,even
 
@@ -38,8 +39,7 @@ USE_GNOME=	cairo evolutiondataserver3 gdkpixbuf2 gnomedesktop3 gtk30 \
 		intlhack introspection:build
 USE_XORG=	x11 xcomposite xdamage xext xfixes xi xrandr
 USES=		gettext gl gnome localbase meson perl5 pkgconfig \
-		python:3.4+,build shebangfix sqlite tar:xz xorg
-SHEBANG_FILES=	meson_post_install.py
+		python:3.4+,build sqlite tar:xz xorg
 
 GLIB_SCHEMAS=	org.gnome.Contacts.gschema.xml
 
