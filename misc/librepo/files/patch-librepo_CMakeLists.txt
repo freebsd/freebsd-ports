@@ -1,0 +1,19 @@
+--- librepo/CMakeLists.txt.orig	2020-08-22 20:15:59 UTC
++++ librepo/CMakeLists.txt
+@@ -18,7 +18,8 @@ SET (librepo_SRCS
+      url_substitution.c
+      util.c
+      xmlparser.c
+-     yum.c)
++     yum.c
++     xattr.c)
+ 
+ SET(librepo_HEADERS
+     checksum.h
+@@ -73,4 +74,6 @@ INSTALL(TARGETS librepo LIBRARY DESTINATION ${CMAKE_IN
+ INSTALL(FILES "${CMAKE_BINARY_DIR}/librepo.pc"
+ 	DESTINATION "${CMAKE_INSTALL_LIBDIR}/pkgconfig")
+ 
++if (ENABLE_PYTHON)
+ ADD_SUBDIRECTORY(python)
++endif()
