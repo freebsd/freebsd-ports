@@ -3,7 +3,7 @@
 
 PORTNAME=	heretic
 PORTVERSION=	1.2
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	games
 MASTER_SITES=	http://files.kyle-evans.net/freebsd/:source \
 		http://files.kyle-evans.net/freebsd/:wad
@@ -13,6 +13,11 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Unix source-port of the famous Heretic game by id Software
+
+LICENSE=	ACTIVISION
+LICENSE_NAME=	Activision Source License
+LICENSE_FILE=	${WRKSRC}/doc/"End User License Heretic Source Code.txt"
+LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
 USES=		dos2unix gmake
 DOS2UNIX_FILES=	opengl/gl_struct.h
