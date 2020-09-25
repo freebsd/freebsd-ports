@@ -20,7 +20,6 @@ share/zsh/site-functions/_vifm
 %%DATADIR%%/vifm-help.txt
 %%DATADIR%%/vifm-media
 %%DATADIR%%/vifmrc
-%%DATADIR%%/vifmrc-osx
 %%DATADIR%%/vim-doc/doc/tags
 %%DATADIR%%/vim-doc/doc/vifm-app.txt
 %%DATADIR%%/vim/autoload/vifm/edit.vim
@@ -35,6 +34,9 @@ share/zsh/site-functions/_vifm
 %%DATADIR%%/vim/ftplugin/vifm.vim
 %%DATADIR%%/vim/plugin/vifm.vim
 %%DATADIR%%/vim/syntax/vifm.vim
+%%ETCDIR%%/colors/Default-256.vifm
+%%DATADIR%%/vim/autoload/vifm/colorconv.vim
+%%DATADIR%%/vim/autoload/vifm/globals.vim
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
