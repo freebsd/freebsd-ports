@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rinutils
-DISTVERSION=	0.4.1
+DISTVERSION=	0.6.0
 CATEGORIES=	devel
 MASTER_SITES=	https://raw.githubusercontent.com/${GH_ACCOUNT}/shlomif-cmake-modules/master/shlomif-cmake-modules/:cmakemodule
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
