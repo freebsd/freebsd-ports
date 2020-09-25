@@ -1,8 +1,6 @@
 lib/grilo-0.3/libgrlbookmarks.so
 lib/grilo-0.3/libgrlchromaprint.so
-%%DMAP%%lib/grilo-0.3/libgrldaap.so
 lib/grilo-0.3/libgrldleyna.so
-%%DMAP%%lib/grilo-0.3/libgrldpap.so
 lib/grilo-0.3/libgrlfilesystem.so
 lib/grilo-0.3/libgrlflickr.so
 lib/grilo-0.3/libgrlfreebox.so
@@ -18,7 +16,7 @@ lib/grilo-0.3/libgrlraitv.so
 lib/grilo-0.3/libgrlshoutcast.so
 lib/grilo-0.3/libgrlthetvdb.so
 lib/grilo-0.3/libgrltmdb.so
-%%TRACKER%%lib/grilo-0.3/libgrltracker.so
+lib/grilo-0.3/libgrltracker.so
 lib/grilo-0.3/libgrlvimeo.so
 lib/grilo-0.3/libgrlyoutube.so
 libdata/pkgconfig/grilo-plugins-0.3.pc
@@ -28,6 +26,9 @@ share/help/C/grilo-plugins/legal.xml
 share/help/cs/examples/example-tmdb.c
 share/help/cs/grilo-plugins/grilo-plugins.xml
 share/help/cs/grilo-plugins/legal.xml
+share/help/da/examples/example-tmdb.c
+share/help/da/grilo-plugins/grilo-plugins.xml
+share/help/da/grilo-plugins/legal.xml
 share/help/de/examples/example-tmdb.c
 share/help/de/grilo-plugins/grilo-plugins.xml
 share/help/de/grilo-plugins/legal.xml
@@ -43,6 +44,9 @@ share/help/pt_BR/grilo-plugins/legal.xml
 share/help/sv/examples/example-tmdb.c
 share/help/sv/grilo-plugins/grilo-plugins.xml
 share/help/sv/grilo-plugins/legal.xml
+share/help/uk/examples/example-tmdb.c
+share/help/uk/grilo-plugins/grilo-plugins.xml
+share/help/uk/grilo-plugins/legal.xml
 share/locale/as/LC_MESSAGES/grilo-plugins.mo
 share/locale/bg/LC_MESSAGES/grilo-plugins.mo
 share/locale/bs/LC_MESSAGES/grilo-plugins.mo
@@ -70,6 +74,7 @@ share/locale/ko/LC_MESSAGES/grilo-plugins.mo
 share/locale/lt/LC_MESSAGES/grilo-plugins.mo
 share/locale/lv/LC_MESSAGES/grilo-plugins.mo
 share/locale/ml/LC_MESSAGES/grilo-plugins.mo
+share/locale/ms/LC_MESSAGES/grilo-plugins.mo
 share/locale/nb/LC_MESSAGES/grilo-plugins.mo
 share/locale/ne/LC_MESSAGES/grilo-plugins.mo
 share/locale/nl/LC_MESSAGES/grilo-plugins.mo

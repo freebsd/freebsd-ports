@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	grilo
-PORTVERSION=	0.3.7
+PORTVERSION=	0.3.13
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -20,8 +20,10 @@ LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 USES=		gettext gnome localbase meson pathfix pkgconfig \
 		python:3.4+,build tar:xz
 USE_LDCONFIG=	yes
-USE_GNOME=	glib20 intlhack introspection:build libxml2
+USE_GNOME=	glib20 introspection:build libxml2
 BINARY_ALIAS=	python=${PYTHON_VERSION}
+
+MESON_ARGS=	-Denable-gtk-doc=false
 
 OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	UI

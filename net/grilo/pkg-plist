@@ -28,13 +28,13 @@ lib/girepository-1.0/GrlNet-0.3.typelib
 lib/girepository-1.0/GrlPls-0.3.typelib
 lib/libgrilo-0.3.so
 lib/libgrilo-0.3.so.0
-lib/libgrilo-0.3.so.0.307.1
+lib/libgrilo-0.3.so.0.313.1
 lib/libgrlnet-0.3.so
 lib/libgrlnet-0.3.so.0
-lib/libgrlnet-0.3.so.0.307.0
+lib/libgrlnet-0.3.so.0.313.0
 lib/libgrlpls-0.3.so
 lib/libgrlpls-0.3.so.0
-lib/libgrlpls-0.3.so.0.307.0
+lib/libgrlpls-0.3.so.0.313.0
 libdata/pkgconfig/grilo-0.3.pc
 libdata/pkgconfig/grilo-net-0.3.pc
 libdata/pkgconfig/grilo-pls-0.3.pc
@@ -71,6 +71,7 @@ share/locale/ko/LC_MESSAGES/grilo.mo
 share/locale/lt/LC_MESSAGES/grilo.mo
 share/locale/lv/LC_MESSAGES/grilo.mo
 share/locale/ml/LC_MESSAGES/grilo.mo
+share/locale/ms/LC_MESSAGES/grilo.mo
 share/locale/nb/LC_MESSAGES/grilo.mo
 share/locale/ne/LC_MESSAGES/grilo.mo
 share/locale/nl/LC_MESSAGES/grilo.mo
