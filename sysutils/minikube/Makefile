@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	minikube
-PORTVERSION=	1.13.0
+PORTVERSION=	1.13.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -179,7 +179,7 @@ GH_TUPLE=	\
 
 GO_TARGET=	./cmd/${PORTNAME}
 GO_BUILDFLAGS=	-ldflags="-X k8s.io/minikube/pkg/version.version=v${PORTVERSION} \
-		-X k8s.io/minikube/pkg/version.isoVersion=v1.13.0 \
+		-X k8s.io/minikube/pkg/version.isoVersion=v1.13.1 \
 		-X k8s.io/minikube/pkg/version.storageProvisionerVersion=v3 \
 		-X k8s.io/minikube/pkg/version.isoPath=minikube/iso"
 
