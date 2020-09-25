@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libdmapsharing
-PORTVERSION=	2.9.39
+PORTVERSION=	2.9.41
 CATEGORIES=	net gnome
 MASTER_SITES=	https://www.flyn.org/projects/libdmapsharing/
 DIST_SUBDIR=	gnome3
@@ -21,7 +21,8 @@ USES=		gettext gnome gmake libtool pathfix pkgconfig
 USE_GNOME=	cairo gdkpixbuf2 gnomeprefix gtk30 introspection:build
 USE_GSTREAMER1=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--disable-check \
+CONFIGURE_ARGS=	--disable-tests \
+		--disable-gtk-doc \
 		--disable-introspection \
 		--with-mdns=avahi
 GNU_CONFIGURE=	yes
