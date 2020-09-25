@@ -1,5 +1,15 @@
---- facedetect.orig	2017-07-20 10:43:10 UTC
+--- facedetect.orig	2020-09-24 18:01:57 UTC
 +++ facedetect
+@@ -2,8 +2,8 @@
+ # facedetect: a simple face detector for batch processing
+ # Copyright(c) 2013-2016 by wave++ "Yuri D'Elia" <wavexx@thregr.org>
+ # Distributed under GPLv2+ (see COPYING) WITHOUT ANY WARRANTY.
+-from __future__ import print_function, division
+ 
++
+ import argparse
+ import numpy as np
+ import cv2
 @@ -34,7 +34,7 @@ if 'cv' in dir(cv2):
  
  
@@ -9,3 +19,30 @@
  CASCADES = {}
  
  PROFILES = {
+@@ -58,7 +58,7 @@ def fatal(msg):
+ 
+ 
+ def load_cascades(data_dir):
+-    for k, v in PROFILES.iteritems():
++    for k, v in PROFILES.items():
+         v = os.path.join(data_dir, v)
+         try:
+             if not os.path.exists(v):
+@@ -117,7 +117,7 @@ def rank(im, rects):
+         eN = s['eN'] = s['e'] / eMax
+         f = s['f'] = eN * 0.7 + (1 - s['d']) * 0.1 + sN * 0.2
+ 
+-    ranks = range(len(scores))
++    ranks = list(range(len(scores)))
+     ranks = sorted(ranks, reverse=True, key=lambda x: scores[x]['f'])
+     for i in range(len(scores)):
+         scores[ranks[i]]['RANK'] = i
+@@ -258,7 +258,7 @@ def __main__():
+ 
+             if args.debug:
+                 lines = []
+-                for k, v in scores[i].iteritems():
++                for k, v in scores[i].items():
+                     lines.append("{}: {}".format(k, v))
+                 h = rect[1] + rect[3] + fontHeight
+                 for line in lines:
