@@ -1,0 +1,22 @@
+--- meson.build.orig	2020-05-20 19:34:10 UTC
++++ meson.build
+@@ -173,7 +173,7 @@ configure_file(
+ )
+ 
+ subdir('modulemd')
+-subdir('bindings/python')
++#subdir('bindings/python')
+ 
+ if meson.version().version_compare('>=0.53')
+     if magic.found()
+@@ -234,8 +234,8 @@ if meson.version().version_compare('>=0.53')
+              'bindir': get_option('bindir'),
+              'libdir': get_option('libdir'),
+              'datadir': get_option('datadir'),
+-             'Python 2 GObject Overrides': gobject_overrides_dir_py2,
+-             'Python 3 GObject Overrides': gobject_overrides_dir_py3
++             #'Python 2 GObject Overrides': gobject_overrides_dir_py2,
++             #'Python 3 GObject Overrides': gobject_overrides_dir_py3
+             }, section: 'Directories')
+ 
+     summary({'Developer Build': get_option('developer_build'),

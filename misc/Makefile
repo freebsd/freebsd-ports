@@ -213,6 +213,7 @@
     SUBDIR += libkeduvocdocument
     SUBDIR += liblxi
     SUBDIR += libmetalink
+    SUBDIR += libmodulemd
     SUBDIR += libpostal
     SUBDIR += libpredict
     SUBDIR += libpri
