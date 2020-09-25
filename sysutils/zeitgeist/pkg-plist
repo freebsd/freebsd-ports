@@ -1,6 +1,6 @@
 bin/zeitgeist-daemon
-%%DATAHUB%%bin/zeitgeist-datahub
-%%DATAHUB%%etc/xdg/autostart/zeitgeist-datahub.desktop
+bin/zeitgeist-datahub
+etc/xdg/autostart/zeitgeist-datahub.desktop
 include/zeitgeist-2.0/zeitgeist-datamodel.h
 include/zeitgeist-2.0/zeitgeist.h
 lib/girepository-1.0/Zeitgeist-2.0.typelib
@@ -22,17 +22,19 @@ lib/libzeitgeist-2.0.so.0.0.0
 %%PYTHON_SITELIBDIR%%/zeitgeist/mimetypes.py
 %%PYTHON_SITELIBDIR%%/zeitgeist/mimetypes.pyc
 %%PYTHON_SITELIBDIR%%/zeitgeist/mimetypes.pyo
+@comment lib/systemd/user/zeitgeist.service
 libdata/pkgconfig/zeitgeist-2.0.pc
 man/man1/zeitgeist-daemon.1.gz
-%%DATAHUB%%man/man1/zeitgeist-datahub.1.gz
+man/man1/zeitgeist-datahub.1.gz
 share/bash-completion/completions/zeitgeist-daemon
-share/dbus-1/services/org.gnome.zeitgeist.service
+share/dbus-1/services/org.gnome.zeitgeist.Engine.service
 share/gir-1.0/Zeitgeist-2.0.gir
 share/vala/vapi/zeitgeist-2.0.deps
 share/vala/vapi/zeitgeist-2.0.vapi
 share/vala/vapi/zeitgeist-datamodel-2.0.vapi
 %%DATADIR%%/doc/AUTHORS
 %%DATADIR%%/doc/NEWS
+%%DATADIR%%/doc/README.md
 %%DATADIR%%/ontology/nao.trig
 %%DATADIR%%/ontology/ncal.trig
 %%DATADIR%%/ontology/nco.trig
