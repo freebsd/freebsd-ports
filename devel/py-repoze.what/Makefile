@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Authorization for WSGI applications
 
+DEPRECATED=	does not build with python3
+EXPIRATION_DATE=2020-10-25
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Paste>=1.7.2:www/py-paste@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}repoze.who-testutil>=0:devel/py-repoze.who-testutil@${PY_FLAVOR}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
