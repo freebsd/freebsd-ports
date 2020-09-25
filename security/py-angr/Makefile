@@ -5,11 +5,8 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	${ANGR_VERSION}
 CATEGORIES=	security devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-PATCH_SITES=	https://github.com/angr/angr/pull/
-PATCHFILES=	2332.patch:-p1 \
-		2333.patch:-p1 \
-		2334.patch:-p1 \
-		2335.patch:-p1
+PATCH_SITES=	https://github.com/angr/angr/commit/
+PATCHFILES=	44748a8e8a298dafc88c513c8ba5f716b3b90be2.patch:-p1
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Multi-architecture binary analysis toolkit
