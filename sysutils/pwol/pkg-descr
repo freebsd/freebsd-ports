@@ -1,9 +1,11 @@
-This is a port of pwol, Peter's Wake-on-Lan tool
+This is a port of pwol, a Wake-on-LAN packet utility
 
-This is a simple tool to send WoL packets to wake up
-hosts. No more, no less.
+pwol is a command line utility to send Wake-On-LAN (WoL)
+packets to one or many hosts, either locally or via routers,
+in order to wake them up from sleep mode.
+
+It can also be used as a WoL proxy daemon listening to
+incoming WoL packets (possibly authenticated) and then
+forwarding requests to one or many other targets.
 
 WWW: https://github.com/ptrrkssn/pwol
-
-- Peter Eriksson
-pen@lysator.liu.se

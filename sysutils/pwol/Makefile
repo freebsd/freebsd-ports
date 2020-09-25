@@ -2,7 +2,7 @@
 
 PORTNAME=		pwol
 DISTVERSIONPREFIX=	v
-DISTVERSION=		1.5.1
+DISTVERSION=		1.5.2
 CATEGORIES=		sysutils
 
 MAINTAINER=		pen@lysator.liu.se
@@ -15,5 +15,6 @@ USE_GITHUB=		yes
 GH_ACCOUNT=		ptrrkssn
 
 GNU_CONFIGURE=		yes
+INSTALL_TARGET=		install-strip
 
 .include <bsd.port.mk>
