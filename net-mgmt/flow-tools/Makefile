@@ -4,7 +4,7 @@
 PORTNAME=	flow-tools
 PORTVERSION=	0.68.6
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	docbook-to-man:textproc/docbook-to-man
 
-USES=		autoreconf libtool:keepla python:2.7 shebangfix
+USES=		autoreconf libtool:keepla python:patch shebangfix
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	flow_capture flow_fanout
@@ -38,14 +38,25 @@ FLOW_CAPTURE_PIDDIR=	${VARDIR}/run/flow-capture
 
 OPTIONS_DEFINE=	MYSQL OPENSSL PGSQL
 
+PY2TO3_CMD=	${LOCALBASE}/bin/2to3-${PYTHON_VER}
+PY2TO3_ARGS=	--fix=all --no-diffs --nobackups --verbose --write
+
 MYSQL_USES=		mysql
 MYSQL_CONFIGURE_ON=	--with-mysql="${LOCALBASE}"
 OPENSSL_USES=		ssl
 OPENSSL_CONFIGURE_ON=	--with-openssl="${OPENSSLBASE}"
 PGSQL_USES=		pgsql
 PGSQL_CONFIGURE_ON=	--with-postgresql
+PGSQL_CONFIGURE_OFF=	--with-postgresql=no
+
+.include <bsd.port.pre.mk>
+
+post-patch:
+.if ${PYTHON_MAJOR_VER} >= 3
+	${PY2TO3_CMD} ${PY2TO3_ARGS} ${WRKSRC}/bin/flow-*
+.endif
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/lib/libft.so.0.0.0
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
