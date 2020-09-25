@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-chess
-PORTVERSION=	3.28.1
+PORTVERSION=	3.38.0
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -26,7 +26,7 @@ INSTALLS_ICONS=	yes
 USE_GL=		gl egl
 BINARY_ALIAS=	python3=${PYTHON_VERSION}
 
-GLIB_SCHEMAS=	org.gnome.chess.gschema.xml
+GLIB_SCHEMAS=	org.gnome.Chess.gschema.xml
 
 OPTIONS_DEFINE=	GNUCHESS
 OPTIONS_DEFAULT=GNUCHESS
