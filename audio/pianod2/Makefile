@@ -3,7 +3,7 @@
 
 PORTNAME=	pianod2
 PORTVERSION=	329
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://deviousfish.com/Downloads/pianod2/Devel/
 
@@ -31,7 +31,7 @@ RUN_DEPENDS=	mksh>0:shells/mksh
 USES=	autoreconf compiler:c11 gettext gmake gnome pkgconfig shebangfix
 
 USE_GNOME=	glib20
-USE_GSTREAMER=	ffmpeg
+USE_GSTREAMER1=	ffmpeg
 
 USE_RC_SUBR=	pianod
 
