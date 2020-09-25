@@ -3,6 +3,7 @@
 
 PORTNAME=	wmjupiter
 PORTVERSION=	1.21
+PORTREVISION=	1
 CATEGORIES=	astro windowmaker
 
 MAINTAINER=	tkuiper@inxsoft.net
