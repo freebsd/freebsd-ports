@@ -181,12 +181,6 @@ share/help/tr/geary/search.page
 share/help/tr/geary/shortcuts.page
 share/help/tr/geary/star.page
 share/help/tr/geary/write.page
-share/icons/hicolor/16x16/apps/org.gnome.Geary.png
-share/icons/hicolor/24x24/apps/org.gnome.Geary.png
-share/icons/hicolor/256x256/apps/org.gnome.Geary.png
-share/icons/hicolor/32x32/apps/org.gnome.Geary.png
-share/icons/hicolor/48x48/apps/org.gnome.Geary.png
-share/icons/hicolor/512x512/apps/org.gnome.Geary.png
 share/icons/hicolor/scalable/actions/close-symbolic.svg
 share/icons/hicolor/scalable/actions/detach-symbolic.svg
 share/icons/hicolor/scalable/actions/edit-symbolic.svg
@@ -212,6 +206,7 @@ share/icons/hicolor/scalable/actions/marker-symbolic.svg
 share/icons/hicolor/scalable/actions/tag-symbolic-rtl.svg
 share/icons/hicolor/scalable/actions/tag-symbolic.svg
 share/icons/hicolor/scalable/actions/text-x-generic-symbolic.svg
+share/icons/hicolor/scalable/apps/org.gnome.Geary.svg
 share/icons/hicolor/symbolic/apps/org.gnome.Geary-symbolic.svg
 share/locale/ar/LC_MESSAGES/geary.mo
 share/locale/be/LC_MESSAGES/geary.mo
@@ -230,6 +225,7 @@ share/locale/eu/LC_MESSAGES/geary.mo
 share/locale/fa/LC_MESSAGES/geary.mo
 share/locale/fi/LC_MESSAGES/geary.mo
 share/locale/fr/LC_MESSAGES/geary.mo
+share/locale/fur/LC_MESSAGES/geary.mo
 share/locale/gl/LC_MESSAGES/geary.mo
 share/locale/he/LC_MESSAGES/geary.mo
 share/locale/hi/LC_MESSAGES/geary.mo
