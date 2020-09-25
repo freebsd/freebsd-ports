@@ -10,6 +10,8 @@
 
 . /etc/rc.subr
 
+PATH=${PATH}:%%PREFIX%%/sbin:%%PREFIX%%/bin
+
 name="fail2ban"
 rcvar=fail2ban_enable
 
