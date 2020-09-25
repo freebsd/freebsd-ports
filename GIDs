@@ -92,7 +92,7 @@ kdm:*:147:
 ipv6mon:*:148:
 avenger:*:149:
 cbsd:*:150:
-# free: 151
+nixbld:*:151:
 frrvty:*:152:frr
 rbldns:*:153:
 trircd:*:154:

@@ -1,0 +1,29 @@
+[
+{
+	type: install
+	message: <<EOD
+Experimental support
+--------------------
+
+Nix support is very much experimental on FreeBSD. The sysutils/nix port is
+mainly aimed at developers, testers, and curious users. Nix should not be
+considered stable yet on FreeBSD.
+
+Creating Nix build users
+------------------------
+
+Nix build users may be created by executing the "add-nixbld-users" script
+(which is located in "%%DATADIR%%") and specifying
+the desired number of build users as an argument.
+
+For example:
+
+%%DATADIR%%/add-nixbld-users 4
+
+is going to create 4 nixbld users.
+
+See https://nixos.org/nix/manual/#ssec-multi-user for more details about
+build users.
+EOD
+}
+]
