@@ -1,3 +1,3 @@
-TIMESTAMP = 1600576582
-SHA256 (rpm-software-management-libsolv-0.7.4_GH0.tar.gz) = 725b598075c5c44a90cbda5594fd29417144ff8acb9762996162e7b68f94c8c4
-SIZE (rpm-software-management-libsolv-0.7.4_GH0.tar.gz) = 662383
+TIMESTAMP = 1601076252
+SHA256 (openSUSE-libsolv-0.7.15_GH0.tar.gz) = 2a1d6ae1719288ecb368b33893bc2f4d047dbf4426cafa1dc6af4288388e6269
+SIZE (openSUSE-libsolv-0.7.15_GH0.tar.gz) = 717327

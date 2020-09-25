@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libsolv
-DISTVERSION=	0.7.4
-PORTREVISION=	1
+DISTVERSION=	0.7.15
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,14 +10,33 @@ COMMENT=	Package dependency solver using a satisfiability algorithm
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.BSD
 
-USES=		cmake
+USES=		cmake localbase:ldflags
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	rpm-software-management
+GH_ACCOUNT=	openSUSE
 
+OPTIONS_DEFINE=			RPMDB RPMMD RPMPKG
+OPTIONS_DEFAULT=		RPMDB RPMMD RPMPKG
 OPTIONS_GROUP=			COMPRESSION
 OPTIONS_GROUP_COMPRESSION=	BZIP2 LZMA ZCHUNK ZSTD
+OPTIONS_SUB=			yes
+
+# general options
+
+RPMDB_DESC=			Build with rpm database support
+RPMDB_CMAKE_BOOL=		ENABLE_RPMDB
+RPMDB_LIB_DEPENDS=		librpmio.so:archivers/rpm4
+
+RPMMD_DESC=			Build with rpmmd repository support
+RPMMD_CMAKE_BOOL=		ENABLE_RPMMD
+RPMMD_LIB_DEPENDS=		libexpat.so:textproc/expat2
+
+RPMPKG_DESC=			Build with rpm package support
+RPMPKG_CMAKE_BOOL=		ENABLE_RPMPKG
+
+# comnpression options
+
 COMPRESSION_DESC=		Enable compression:
 
 BZIP2_DESC=			BZip2 support
