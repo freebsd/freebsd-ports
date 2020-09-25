@@ -9,8 +9,8 @@ include/libgweather-3.0/libgweather/gweather-weather.h
 include/libgweather-3.0/libgweather/gweather.h
 lib/girepository-1.0/GWeather-3.0.typelib
 lib/libgweather-3.so
-lib/libgweather-3.so.15
-lib/libgweather-3.so.15.0.0
+lib/libgweather-3.so.16
+lib/libgweather-3.so.16.0.0
 libdata/pkgconfig/gweather-3.0.pc
 share/gir-1.0/GWeather-3.0.gir
 %%DATADIR%%/Locations.xml
