@@ -1,0 +1,7 @@
+GenSON's core function is to take JSON objects and generate schemas that
+describe them, but it is unique in its ability to merge schemas. It was
+originally built to describe the common structure of a large number of
+JSON objects, and it uses its merging ability to generate a single
+schema from any number of JSON objects and/or schemas.
+
+WWW: https://pypi.org/project/genson/
