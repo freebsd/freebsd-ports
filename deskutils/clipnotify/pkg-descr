@@ -1,0 +1,6 @@
+clipnotify is a simple program that, using the XFIXES extension to X11,
+waits until a new selection is available and then exits.
+
+It was primarily designed for clipmenu, to avoid polling for new selections.
+
+WWW: https://github.com/cdown/clipnotify
