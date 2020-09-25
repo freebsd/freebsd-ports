@@ -1,4 +1,4 @@
 This is a Python implementation of RFC6570, URI Template, and can expand
 templates up to and including Level 4 in that specification.
 
-WWW: https://github.com/uri-templates/uritemplate-py/
+WWW: https://github.com/python-hyper/uritemplate
