@@ -1,4 +1,4 @@
---- wavegain.c.orig	2016-07-26 16:16:05 UTC
+--- wavegain.c.orig	2020-09-25 07:55:21 UTC
 +++ wavegain.c
 @@ -19,20 +19,8 @@
  #include <string.h>
@@ -21,7 +21,16 @@
  #include "gain_analysis.h"
  #include "i18n.h"
  #include "getopt.h"
-@@ -57,6 +45,9 @@
+@@ -44,6 +32,8 @@
+ 
+ #ifdef _WIN32
+ #include <windows.h>
++#else
++#include <unistd.h>
+ #endif
+ 
+ #ifdef ENABLE_RECURSIVE
+@@ -57,6 +47,9 @@
  #define ROUND64(x)   ( doubletmp = (x) + Dither.Add + (Int64_t)0x001FFFFD80000000L, *(Int64_t*)(&doubletmp) - (Int64_t)0x433FFFFD80000000L )
  #endif
  
@@ -31,7 +40,7 @@
  extern int          write_to_log;
  dither_t            Dither;
  double              doubletmp;
-@@ -639,7 +630,14 @@ int write_gains(const char *filename, do
+@@ -639,7 +632,14 @@ int write_gains(const char *filename, double radio_gai
  				goto exit;
  			}
      
@@ -47,7 +56,7 @@
  				fprintf(stderr, " Error renaming '" TEMP_NAME "' to '%s' (uh-oh)\n", filename);
  				goto exit;
  			}
-@@ -650,4 +648,61 @@ exit:
+@@ -650,4 +650,61 @@ exit:
  	return result;
  }
  
@@ -61,10 +70,10 @@
 +  FILE *in, *out;
 +  char buf[4096];
 +  size_t sz;
-+
+ 
 +  if (strcmp(oldpath, newpath) == 0)
 +    return 0;
- 
++
 +#ifdef __EMX__
 +  if (unlink(newpath) == -1 && errno != ENOENT)
 +    return -1;
