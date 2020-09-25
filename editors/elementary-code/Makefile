@@ -2,6 +2,7 @@
 
 PORTNAME=	elementary-code
 DISTVERSION=	3.4.1
+PORTREVISION=	1
 CATEGORIES=	editors
 
 MAINTAINER=	miguel@gocobachi.dev
@@ -22,7 +23,7 @@ LIB_DEPENDS=	libatk-1.0.so:accessibility/atk \
 		libpeas-1.0.so:devel/libpeas \
 		libpeas-gtk-1.0.so:devel/libpeas \
 		libsoup-2.4.so:devel/libsoup \
-		libvala-0.40.so:lang/vala \
+		libvala-0.48.so:lang/vala \
 		libvte-2.91.so:x11-toolkits/vte3 \
 		libvterm.so:devel/libvterm \
 		libwebkit2gtk-4.0.so:www/webkit2-gtk3 \

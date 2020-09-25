@@ -9,6 +9,8 @@ COMMENT=	Command-line twitter client for SIXEL-supported terminal
 
 LICENSE=	BSD2CLAUSE
 
+BROKEN=		Does not build with recent vala
+
 BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libcurl.so:ftp/curl
 

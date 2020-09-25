@@ -156,7 +156,6 @@ lib/anjuta/anjuta-starter.plugin
 %%SVN%%lib/anjuta/anjuta-subversion.plugin
 %%TERMINAL%%lib/anjuta/anjuta-terminal.plugin
 lib/anjuta/anjuta-tools.plugin
-%%VALA%%lib/anjuta/anjuta-vala.plugin
 lib/anjuta/dir-project.plugin
 lib/anjuta/file-manager.plugin
 lib/anjuta/git.plugin
@@ -179,7 +178,6 @@ lib/anjuta/libanjuta-indentation-python-style.so
 lib/anjuta/libanjuta-jhbuild.so
 lib/anjuta/libanjuta-language-cpp-java.so
 lib/anjuta/libanjuta-language-support-python.so
-%%VALA%%lib/anjuta/libanjuta-language-vala.so
 lib/anjuta/libanjuta-loader.so
 lib/anjuta/libanjuta-message-view.so
 lib/anjuta/libanjuta-parser-cxx.so
@@ -250,7 +248,6 @@ man/man1/anjuta.1.gz
 %%DATADIR%%/glade/anjuta-symbol-db.ui
 %%TERMINAL%%%%DATADIR%%/glade/anjuta-terminal-plugin.ui
 %%DATADIR%%/glade/anjuta-tools.ui
-%%VALA%%%%DATADIR%%/glade/anjuta-vala.ui
 %%DATADIR%%/glade/applogo.png
 %%DATADIR%%/glade/appwizard.png
 %%DATADIR%%/glade/file-manager.ui
@@ -2320,7 +2317,6 @@ share/pixmaps/anjuta/anjuta-symbol-db-plugin.svg
 %%TERMINAL%%share/pixmaps/anjuta/anjuta-terminal-plugin.svg
 share/pixmaps/anjuta/anjuta-tools-plugin-48.png
 share/pixmaps/anjuta/anjuta-tools-plugin.svg
-%%VALA%%share/pixmaps/anjuta/anjuta-vala.png
 share/pixmaps/anjuta/anjuta-watch-16.png
 share/pixmaps/anjuta/anjuta-watch-24.png
 share/pixmaps/anjuta/anjuta-watch.svg
