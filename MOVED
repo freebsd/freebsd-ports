@@ -15625,3 +15625,4 @@ devel/storm||2020-09-19|Has expired: Uses deprecated version of python
 dns/dnsmasq-devel|dns/dnsmasq|2020-09-24|Has expired: use dns/dnsmasq instead, which is newer
 shells/poshinit|shells/switchBashZsh|2020-09-24|Tracking upstream name change
 net-im/corebird||2020-09-25|Stopped working in august 2018
+devel/py-pyqi||2020-09-25|No longer developed, use devel/py-click instead

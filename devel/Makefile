@@ -4856,7 +4856,6 @@
     SUBDIR += py-pyperf
     SUBDIR += py-pyplusplus
     SUBDIR += py-pypugjs
-    SUBDIR += py-pyqi
     SUBDIR += py-pyqtree
     SUBDIR += py-pyral
     SUBDIR += py-pyrepl

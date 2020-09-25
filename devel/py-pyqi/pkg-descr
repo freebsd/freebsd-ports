@@ -1,5 +1,0 @@
-pyqi (canonically pronounced pie chee) is designed to support wrapping
-general commands in multiple types of interfaces, including at the
-command line, HTML, and API levels.
-
-WWW: https://github.com/biocore/pyqi/
