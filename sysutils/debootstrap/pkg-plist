@@ -2,13 +2,17 @@
 man/man8/debootstrap.8.gz
 %%DATADIR%%/functions
 %%DATADIR%%/scripts/aequorea
+%%DATADIR%%/scripts/amber
 %%DATADIR%%/scripts/artful
+%%DATADIR%%/scripts/ascii
 %%DATADIR%%/scripts/bartholomea
+%%DATADIR%%/scripts/beowulf
 %%DATADIR%%/scripts/bionic
 %%DATADIR%%/scripts/bookworm
 %%DATADIR%%/scripts/breezy
 %%DATADIR%%/scripts/bullseye
 %%DATADIR%%/scripts/buster
+%%DATADIR%%/scripts/ceres
 %%DATADIR%%/scripts/chromodoris
 %%DATADIR%%/scripts/cosmic
 %%DATADIR%%/scripts/dapper
@@ -20,6 +24,7 @@ man/man8/debootstrap.8.gz
 %%DATADIR%%/scripts/etch
 %%DATADIR%%/scripts/etch-m68k
 %%DATADIR%%/scripts/feisty
+%%DATADIR%%/scripts/focal
 %%DATADIR%%/scripts/gutsy
 %%DATADIR%%/scripts/hardy
 %%DATADIR%%/scripts/hoary
