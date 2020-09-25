@@ -1,7 +1,7 @@
 # $FreeBSD$
 
-PORTNAME=	poshinit
-PORTVERSION=	2.0
+PORTNAME=	switchBashZsh
+PORTVERSION=	1.0
 CATEGORIES=	shells
 
 MAINTAINER=	bourne.identity@hotmail.com

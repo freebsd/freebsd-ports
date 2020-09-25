@@ -1,0 +1,17 @@
+You want your shell stuff to work the same way even when you use a
+different shell, or even a different box. Right?
+
+If you use switchBashZsh you can attain at least most of what you
+desire, perhaps even all. You can log out of Bash and log in with Zsh
+(or vice versa) - and your aliases/exports/functions will continue to
+work as before.
+
+It gets better - if someday you need to use a different box with a
+different OS, you can get your shell to work your 'normal' way in a
+jiffy. Just save your $HOME/.shell directory on your primary box, and
+paste it over your second box's $HOME/.shell (after running
+switchBashZsh setup script on the second box). The second box need not
+be the same operating system - switchBashZsh works across FreeBSD /
+Linux / Cygwin.
+
+WWW: https://github.com/bourne-again/switchBashZsh

@@ -38,13 +38,13 @@
     SUBDIR += p5-Term-ShellUI
     SUBDIR += pdksh
     SUBDIR += pear-PHP_Shell
-    SUBDIR += poshinit
     SUBDIR += psh
     SUBDIR += rc
     SUBDIR += rush
     SUBDIR += sash
     SUBDIR += scponly
     SUBDIR += starship
+    SUBDIR += switchBashZsh
     SUBDIR += tcsh_nls
     SUBDIR += tcshrc
     SUBDIR += v7sh
