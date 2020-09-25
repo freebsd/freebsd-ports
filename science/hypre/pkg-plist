@@ -24,7 +24,9 @@ include/_hypre_sstruct_ls.h
 include/_hypre_sstruct_mv.h
 include/_hypre_struct_ls.h
 include/_hypre_struct_mv.h
+include/_hypre_struct_mv.hpp
 include/_hypre_utilities.h
+include/_hypre_utilities.hpp
 include/csr_block_matrix.h
 include/csr_matmultivec.h
 include/distributed_matrix.h
@@ -44,4 +46,4 @@ include/seq_mv.h
 include/temp_multivector.h
 lib/libHYPRE.so
 lib/libHYPRE.so.2
-lib/libHYPRE.so.2.19
+lib/libHYPRE.so.2.20
