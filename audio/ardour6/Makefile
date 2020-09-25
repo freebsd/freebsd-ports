@@ -109,7 +109,7 @@ post-install:
 WITH_ARCH_FLAGS=	--arch='-msse -mfpmath=sse' --dist-target=i386
 .elif ${ARCH} == "amd64"
 WITH_ARCH_FLAGS=	--arch='-msse -mfpmath=sse' --dist-target=x86_64
-.elif ${ARCH} == "powerpc64"
+.elif ${ARCH:Mpowerpc*}
 LLD_UNSAFE=	yes
 .endif
 
