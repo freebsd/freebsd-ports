@@ -19,6 +19,6 @@ include/libnitrokey/stick20_commands.h
 include/libnitrokey/version.h
 lib/libnitrokey.so
 lib/libnitrokey.so.3
-lib/libnitrokey.so.3.5.0
+lib/libnitrokey.so.3.6.0
 lib/udev/rules.d/41-nitrokey.rules
 libdata/pkgconfig/libnitrokey-1.pc
