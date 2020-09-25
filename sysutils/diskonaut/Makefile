@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	diskonaut
-PORTVERSION=	0.10.0
+PORTVERSION=	0.11.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -27,6 +27,7 @@ CARGO_CRATES=	addr2line-0.12.1 \
 		cfg-if-0.1.10 \
 		clap-2.33.1 \
 		clicolors-control-1.0.1 \
+		cloudabi-0.0.3 \
 		console-0.10.3 \
 		crossbeam-0.7.3 \
 		crossbeam-channel-0.4.2 \
@@ -34,6 +35,8 @@ CARGO_CRATES=	addr2line-0.12.1 \
 		crossbeam-epoch-0.8.2 \
 		crossbeam-queue-0.2.3 \
 		crossbeam-utils-0.7.2 \
+		crossterm-0.17.7 \
+		crossterm_winapi-0.6.1 \
 		difference-2.0.0 \
 		dtoa-0.4.6 \
 		either-1.5.3 \
@@ -45,19 +48,24 @@ CARGO_CRATES=	addr2line-0.12.1 \
 		heck-0.3.1 \
 		hermit-abi-0.1.14 \
 		insta-0.16.0 \
-		itertools-0.9.0 \
 		itoa-0.4.6 \
 		jwalk-0.5.1 \
 		lazy_static-1.4.0 \
 		libc-0.2.71 \
 		linked-hash-map-0.5.3 \
+		lock_api-0.3.4 \
+		log-0.4.11 \
 		maybe-uninit-2.0.0 \
 		memoffset-0.5.4 \
 		miniz_oxide-0.3.7 \
+		mio-0.7.0 \
+		miow-0.3.5 \
 		nix-0.17.0 \
+		ntapi-0.3.4 \
 		num_cpus-1.13.0 \
-		numtoa-0.1.0 \
 		object-0.20.0 \
+		parking_lot-0.10.2 \
+		parking_lot_core-0.7.2 \
 		proc-macro-error-1.0.2 \
 		proc-macro-error-attr-1.0.2 \
 		proc-macro2-1.0.18 \
@@ -65,7 +73,6 @@ CARGO_CRATES=	addr2line-0.12.1 \
 		rayon-1.3.1 \
 		rayon-core-1.7.1 \
 		redox_syscall-0.1.56 \
-		redox_termios-0.1.1 \
 		rustc-demangle-0.1.16 \
 		ryu-1.0.5 \
 		scopeguard-1.1.0 \
@@ -75,6 +82,8 @@ CARGO_CRATES=	addr2line-0.12.1 \
 		serde_yaml-0.8.13 \
 		signal-hook-0.1.16 \
 		signal-hook-registry-1.2.0 \
+		smallvec-1.4.2 \
+		socket2-0.3.15 \
 		strsim-0.8.0 \
 		structopt-0.3.15 \
 		structopt-derive-0.4.8 \
@@ -82,10 +91,9 @@ CARGO_CRATES=	addr2line-0.12.1 \
 		syn-mid-0.5.0 \
 		synstructure-0.12.4 \
 		terminal_size-0.1.12 \
-		termion-1.5.5 \
 		termios-0.3.2 \
 		textwrap-0.11.0 \
-		tui-0.9.5 \
+		tui-0.11.0 \
 		unicode-segmentation-1.6.0 \
 		unicode-width-0.1.7 \
 		unicode-xid-0.2.0 \
