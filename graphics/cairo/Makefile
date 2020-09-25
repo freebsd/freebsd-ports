@@ -4,6 +4,7 @@
 PORTNAME=	cairo
 PORTVERSION=	1.16.0 # update to 1.17.2 causes problems, see bug#249290
 PORTEPOCH=	3
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://cairographics.org/releases/ \
 		http://cairographics.org/snapshots/
@@ -32,11 +33,12 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-html-dir=${DOCSDIR} \
 		--disable-directfb \
 		--disable-gallium \
-		--disable-glesv2 \
 		--disable-wgl \
 		--enable-tee
 
-OPTIONS_DEFINE=	OPENGL XCB GLIB X11 DOCS
+OPTIONS_SINGLE=	GL
+OPTIONS_SINGLE_GL=	OPENGL GLESV2
+OPTIONS_DEFINE=	XCB GLIB X11 DOCS
 OPTIONS_DEFAULT=OPENGL XCB GLIB X11
 OPTIONS_SLAVE=	${ARCH:tu}
 OPTIONS_SUB=	yes
@@ -49,6 +51,11 @@ X11_CONFIGURE_OFF=--disable-glx
 OPENGL_USES=	gl
 OPENGL_USE=	gl=egl
 OPENGL_CONFIGURE_ENABLE=gl egl
+
+GLESV2_USES=	gl
+GLESV2_USE=	gl=glesv2
+GLESV2_DESC=	Enable GLESv2 rendering
+GLESV2_CONFIGURE_ENABLE=glesv2
 
 GLIB_DESC=	Enable GObject Functions Feature
 GLIB_USES=	gettext-runtime
