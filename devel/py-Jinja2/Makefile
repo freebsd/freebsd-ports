@@ -23,7 +23,7 @@ USES=		python
 USE_PYTHON=	autoplist distutils
 .endif
 .if ${PKGNAMESUFFIX} == -doc
-USES=		gmake python
+USES=		gmake python:3.6+
 USE_PYTHON=	flavors
 .endif
 
