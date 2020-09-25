@@ -41,9 +41,11 @@ share/icons/hicolor/64x64/apps/wesnoth-icon.png
 %%NLS%%man/en_GB/man6/wesnoth.6.gz
 %%NLS%%man/es/man6/wesnoth.6.gz
 %%NLS%%man/fr/man6/wesnoth.6.gz
+%%NLS%%man/hu/man6/wesnoth.6.gz
 %%NLS%%man/it/man6/wesnoth.6.gz
 %%NLS%%man/lt/man6/wesnoth.6.gz
 %%NLS%%man/pt_BR/man6/wesnoth.6.gz
+%%NLS%%man/ru/man6/wesnoth.6.gz
 %%NLS%%man/tr/man6/wesnoth.6.gz
 %%NLS%%man/zh_CN/man6/wesnoth.6.gz
 %%NLS%%man/zh_TW/man6/wesnoth.6.gz
