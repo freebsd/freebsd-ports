@@ -3,6 +3,7 @@
 
 PORTNAME=	slick-greeter
 PORTVERSION=	1.3.0
+PORTRESIVION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	ericbsd@FreeBSD.org
@@ -28,6 +29,12 @@ INSTALLS_ICONS=	yes
 
 GLIB_SCHEMAS=	x.dm.slick-greeter.gschema.xml
 
-OPTIONS_DEFINE=	DOCS
+post-patch:
+	@${REINPLACE_CMD} -e "s#/usr/share#${PREFIX}/share#g" \
+		${WRKSRC}/src/session-list.vala
+
+post-install:
+	@${MV} ${STAGEDIR}/usr/share/${PORTNAME}/badges ${STAGEDIR}${DATADIR}
+	@${RMDIR} ${STAGEDIR}/usr/share/${PORTNAME}/
 
 .include <bsd.port.mk>
