@@ -3,20 +3,22 @@
 
 PORTNAME=	nonpareil
 PORTVERSION=	0.79
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	emulators
 MASTER_SITES=	http://nonpareil.brouhaha.com/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simulator for many HP calculators
 
-LICENSE=	GPLv2 # only
+LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpng.so:graphics/png
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
+		libpng.so:graphics/png
 
 USES=		bison gnome pkgconfig scons:python2 sdl
-USE_GNOME=	gtk20 libxml2
+USE_GNOME=	cairo gdkpixbuf2 gtk20 libxml2
 USE_SDL=	sdl
 
 PORTDOCS=	CREDITS DEBUGGING README TODO
