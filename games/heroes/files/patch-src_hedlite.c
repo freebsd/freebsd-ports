@@ -1,5 +1,5 @@
---- src/hedlite.c.orig	2002-02-06 22:49:44.000000000 +0100
-+++ src/hedlite.c	2007-10-02 16:33:06.000000000 +0200
+--- src/hedlite.c.orig	2002-02-06 21:49:44 UTC
++++ src/hedlite.c
 @@ -45,7 +45,7 @@
  #include "dirname.h"
  
@@ -9,7 +9,7 @@
  
  unsigned short int xdalles = 0;
  unsigned short int ydalles = 0;
-@@ -144,9 +144,9 @@
+@@ -144,9 +144,9 @@ rectangle_copy (int xs, int ys, int xd, int yd,
  static void
  copy_tile (int src_, a_pixel *dest)
  {
@@ -21,7 +21,7 @@
    for (j = 20; j > 0; j--) {
      fastmem4 (src, dest, 24 >> 2);
      src += i;
-@@ -157,9 +157,9 @@
+@@ -157,9 +157,9 @@ copy_tile (int src_, a_pixel *dest)
  static void
  copy_tile_pcx (int src_, a_pixel *dest)
  {
@@ -33,7 +33,7 @@
    for (j = 20; j > 0; j--) {
      fastmem4 (src, dest, 24 >> 2);
      src += i;
-@@ -170,9 +170,9 @@
+@@ -170,9 +170,9 @@ copy_tile_pcx (int src_, a_pixel *dest)
  static void
  copy_tile_transp (int src_, a_pixel *dest)
  {
@@ -45,7 +45,7 @@
    for (j = 20; j > 0; j--) {
      for (k = 24; k > 0; k--) {
        if (*src != 0)
-@@ -188,9 +188,9 @@
+@@ -188,9 +188,9 @@ copy_tile_transp (int src_, a_pixel *dest)
  static void
  copy_tile_transp_pcx (int src_, a_pixel *dest)
  {
@@ -57,7 +57,7 @@
    for (j = 20; j > 0; j--) {
      for (k = 24; k > 0; k--) {
        if (*src != 0)
-@@ -555,7 +555,7 @@
+@@ -555,7 +555,7 @@ anim_mod_bcl (int i, int x, int y)
  static void
  update_middle_panel (void)
  {
@@ -66,7 +66,7 @@
    frame (145 + xdallesdec, ydalles, 23, 19, 15);
    rectangle_copy (0, 64, 30, 6, 290, 64, &heditrsc);
    sprintf (nombre, "%u", (xdalles + xdallesdec) / 24);
-@@ -670,7 +670,7 @@
+@@ -670,7 +670,7 @@ static int
  curdalled (void)
  {
    int i =
@@ -75,7 +75,7 @@
    return i;
  }
  
-@@ -894,7 +894,7 @@
+@@ -894,7 +894,7 @@ save_level_as_pcx (void)
    free (tempc);
    putc (0xC, fpcx);
    for (i1 = 0; i1 < 768; i1++)
@@ -84,7 +84,7 @@
    fclose (fpcx);
  }
  
-@@ -1225,7 +1225,7 @@
+@@ -1225,7 +1225,7 @@ gestclav (a_keycode i, a_keycode mod)
      }
    } else if (i == HK_End) {
      if (mod & HK_MOD_Ctrl) {
@@ -93,7 +93,7 @@
        update_middle_panel ();
      }
    } else if (i == HK_PageDown) {
-@@ -1250,7 +1250,7 @@
+@@ -1250,7 +1250,7 @@ gestclav (a_keycode i, a_keycode mod)
      }
    } else if (i == HK_Right) {
      if (mod & HK_MOD_Ctrl) {
@@ -102,7 +102,7 @@
  	xdalles += 24;
  	update_middle_panel ();
        } else if (xdallesdec < 120) {
-@@ -1337,7 +1337,7 @@
+@@ -1337,7 +1337,7 @@ gestclav (a_keycode i, a_keycode mod)
    } else if (i == HK_Space) {
      j = curdallep ();
      level_map[j].number =
@@ -111,7 +111,7 @@
      level_map[j].type = ddef[curdalled ()].type;
      level_map[j].info = ddef[curdalled ()].info;
      gestclav (HK_i, HK_MOD_None);
-@@ -1351,9 +1351,9 @@
+@@ -1351,9 +1351,9 @@ gestclav (a_keycode i, a_keycode mod)
        level_map[j].collision[3] = 0;
      }
      for (j = hplaninfo.xt * hplaninfo.yt - 1; j >= 0; j--) {
@@ -124,7 +124,7 @@
        level_map[j].type = ddef[k].type;
        if (level_map[j].type != t_tunnel) {
  	if (level_map[j].type == t_anim || i == 0x1749)
-@@ -1404,7 +1404,7 @@
+@@ -1404,7 +1404,7 @@ gestclav (a_keycode i, a_keycode mod)
      if (mod & HK_MOD_Ctrl) {
        for (j = hplaninfo.xt * hplaninfo.yt - 1; j >= 0; j--) {
  	level_map[j].number = xdalles + xdallesdec +
@@ -133,7 +133,7 @@
  	level_map[j].type = ddef[curdalled ()].type;
  	level_map[j].info = ddef[curdalled ()].info;
        }
-@@ -1414,7 +1414,7 @@
+@@ -1414,7 +1414,7 @@ gestclav (a_keycode i, a_keycode mod)
  
  	level_map[j].number =
  	  (((j % hplaninfo.xt) + (j / hplaninfo.xt)) & 1) * 20 *
@@ -142,7 +142,7 @@
        update_left_panel ();
      }
    } else if (i == HK_F3) {
-@@ -1427,7 +1427,7 @@
+@@ -1427,7 +1427,7 @@ gestclav (a_keycode i, a_keycode mod)
      if (level_map[curdallep ()].sprite == 0)
  
        level_map[curdallep ()].sprite =
@@ -151,7 +151,7 @@
      else
        level_map[curdallep ()].sprite = 0;
      update_left_panel ();
-@@ -1707,17 +1707,17 @@
+@@ -1707,17 +1707,17 @@ hmain (const char* lname, const char* tset_name,
  				   hplaninfo.tile_set_name), ".pie");
  
    pcx_load_from_rsc ("editor-img", &heditrsc);
@@ -173,7 +173,7 @@
    rectangle_copy (0, 0, 30, 200, 290, 0, &heditrsc);
    strupr (levelnomshort);
    draw_text (levelnomshort, 305, 29, 8, 1);
-@@ -1767,7 +1767,7 @@
+@@ -1767,7 +1767,7 @@ hmain (const char* lname, const char* tset_name,
      free (ddef);
      free (level_map);
      img_free (&heditrsc);

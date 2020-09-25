@@ -1,6 +1,6 @@
---- configure.orig	Sat Mar 30 19:36:16 2002
-+++ configure	Sat Apr  6 16:11:51 2002
-@@ -13339,7 +13339,7 @@
+--- configure.orig	2002-03-30 17:36:16 UTC
++++ configure
+@@ -13339,7 +13339,7 @@ _ACEOF
          CFLAGS="$CFLAGS -ggdb3"
        else
          if test "${ac_cv_prog_cc_g}" = yes; then
@@ -9,7 +9,7 @@
          fi
        fi
        ;;
-@@ -13347,7 +13347,7 @@
+@@ -13347,7 +13347,7 @@ _ACEOF
        ;;
      *)
        if test "${ac_cv_prog_cc_g}" = yes; then
@@ -18,7 +18,7 @@
        fi
        ;;
    esac
-@@ -13367,7 +13367,7 @@
+@@ -13367,7 +13367,7 @@ else
  int main(int argc, char *argv[]) { return argv[argc-1] == 0; }
  EOF
      cf_save_CFLAGS="$CFLAGS"
