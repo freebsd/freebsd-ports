@@ -32,6 +32,8 @@ CONFIGURE_ENV=	CONFIGFILE="${CONFIGFILE}" \
 		LOCALBASE="${LOCALBASE}"
 MAKE_JOBS_UNSAFE=yes
 
+CFLAGS+=	-fcommon
+
 PORTDOCS=	spice3f3.ps.gz
 PORTEXAMPLES=	bjtnoise.cir bsim1tst.cir bsim2tst.cir diffpair.cir \
 		diodisto.cir ltra_1.cir ltra_2.cir ltra_3.cir \
