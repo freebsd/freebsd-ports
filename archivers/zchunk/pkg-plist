@@ -1,0 +1,11 @@
+bin/unzck
+bin/zck
+bin/zck_delta_size
+bin/zck_gen_zdict
+bin/zck_read_header
+bin/zckdl
+include/zck.h
+lib/libzck.so
+lib/libzck.so.1
+lib/libzck.so.1.1.6
+libdata/pkgconfig/zck.pc

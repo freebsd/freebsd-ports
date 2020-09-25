@@ -1,0 +1,22 @@
+--- meson.build.orig	2020-03-14 23:03:28 UTC
++++ meson.build
+@@ -31,9 +31,18 @@ endif
+ if get_option('with-openssl') == 'disabled'
+     openssl_dep = dependency('', required : false)
+ else
+-    openssl_dep = dependency('openssl', required : get_option('with-openssl') == 'enabled')
++    openssl_dep = dependency('openssl', required: false)
+     if openssl_dep.found()
+         add_project_arguments('-DZCHUNK_OPENSSL', language : 'c')
++    else
++        openssl_dep = [
++            cc.find_library('ssl', required: get_option('with-openssl') == 'enabled'),
++            cc.find_library('crypto', required: get_option('with-openssl') == 'enabled')
++        ]
++	openssl_dep = openssl_dep[0]
++	if openssl_dep.found()
++            add_project_arguments('-DZCHUNK_OPENSSL', language : 'c')
++        endif
+     endif
+ endif
+ 
