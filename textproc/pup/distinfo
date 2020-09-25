@@ -1,4 +1,4 @@
-TIMESTAMP = 1600967195
+TIMESTAMP = 1601022698
 SHA256 (ericchiang-pup-v0.4.0-10-g681d7bb_GH0.tar.gz) = 72a4c6fcf915ae33f9522a649b52cb44a1b83e9e3f18f8702177d0c722b1d2f9
 SIZE (ericchiang-pup-v0.4.0-10-g681d7bb_GH0.tar.gz) = 1514776
 SHA256 (fatih-color-v1.0.0_GH0.tar.gz) = 035f20ae3e9940416433ba4c3d9cb55511608a1ac3927e371be61fe5d6052590
@@ -13,5 +13,7 @@ SHA256 (mattn-go-colorable-v0.0.5_GH0.tar.gz) = 8cd5edba9e942ee564359af89c735743
 SIZE (mattn-go-colorable-v0.0.5_GH0.tar.gz) = 5856
 SHA256 (mattn-go-isatty-56b76bdf51f7_GH0.tar.gz) = 665e8446874f1e8bf32048c5dea7c70350ad2af3ddf9f38587dccb2a7a41330a
 SIZE (mattn-go-isatty-56b76bdf51f7_GH0.tar.gz) = 1958
+SHA256 (107.patch) = 403af0675b6d21d83bc97fa2298b49fab573b2dfb1506bfdf73dac89516b8066
+SIZE (107.patch) = 2653
 SHA256 (142.patch) = c84d18fd1160267371aa47d47f8346c1ceb9210bd28af74df11bd9527185e628
 SIZE (142.patch) = 612

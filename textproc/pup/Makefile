@@ -4,9 +4,11 @@ PORTNAME=	pup
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.0-10
 DISTVERSIONSUFFIX=	-g681d7bb
+PORTREVISION=	1
 CATEGORIES=	textproc
 PATCH_SITES=	https://github.com/ericchiang/pup/pull/
-PATCHFILES=	142.patch:-p1
+PATCHFILES=	107.patch:-p1 \
+		142.patch:-p1
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Command-line jq-like HTML parser using CSS selectors
@@ -37,12 +39,6 @@ OPTIONS_DEFINE=	DOCS
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
-
-pre-test:
-	@${REINPLACE_CMD} "/^json{}$$/d" ${WRKSRC}/tests/cmds.txt
-	@${REINPLACE_CMD} "/ json{}$$/d" ${WRKSRC}/tests/expected_output.txt
-	@${REINPLACE_CMD} "/^#toc li + a json{}$$/d" ${WRKSRC}/tests/cmds.txt
-	@${REINPLACE_CMD} "/ #toc li + a json{}$$/d" ${WRKSRC}/tests/expected_output.txt
 
 do-test:
 	cd ${WRKSRC}/tests && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} run.py > test_results.txt
