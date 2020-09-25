@@ -29,7 +29,7 @@ VTK6_USE=		GL=glu
 # Change this when updating the port
 GDCM_MAJOR=	3
 GDCM_MINOR=	0
-GDCM_PATCH=	7
+GDCM_PATCH=	8
 
 # Change this whenever VTK is updated
 VTK6_VERSION=	6.2
