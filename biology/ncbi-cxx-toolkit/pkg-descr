@@ -21,4 +21,4 @@ It contains:
 * Portable FLTK and OpenGL based GUI and graphic libraries
 * XmlWrapp (XML parsing and handling, XSLT, XPath)
 
-WWW: https://www.ncbi.nlm.nih.gov/IEB/ToolBox/CPP_DOC/
+WWW: https://ncbi.github.io/cxx-toolkit/
