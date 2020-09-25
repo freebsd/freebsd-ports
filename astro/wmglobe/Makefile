@@ -18,8 +18,9 @@ LIB_DEPENDS=	libwraster.so:x11-wm/libwraster
 USES=		xorg
 USE_XORG=	x11 xext xpm
 
+MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
+
 PLIST_FILES=	bin/wmglobe \
 		man/man1/wmglobe.1.gz
-MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
 
 .include <bsd.port.mk>
