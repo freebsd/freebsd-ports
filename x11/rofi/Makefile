@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rofi
-DISTVERSION=	1.5.4
+PORTVERSION=	1.6.0
 CATEGORIES=	x11
 MASTER_SITES=	https://github.com/davatorium/rofi/releases/download/${PORTVERSION}/
 
@@ -29,6 +29,7 @@ CONFIGURE_ENV=	LEX="${LOCALBASE}/bin/flex"
 SHEBANG_FILES=	script/get_git_rev.sh \
 		script/rofi-sensible-terminal
 bash_CMD=	/bin/sh
+TEST_TARGET=	check
 
 post-patch:
 # Fix rofi-theme-selector which assumes we have GNU sed
