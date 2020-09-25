@@ -92,6 +92,8 @@ LIB_DEPENDS+=		libtcmalloc.so:devel/google-perftools
 .endif
 .endif
 
+PORTSCOUT=		limit:^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+-[a-z].*$$
+
 post-patch:
 	@${REINPLACE_CMD} -E -e "s@(-z) (relro|now)@-Wl,\1,\2@g" \
 		${WRKSRC}/configure
