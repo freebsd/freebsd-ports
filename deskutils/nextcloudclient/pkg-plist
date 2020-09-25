@@ -88,6 +88,7 @@ share/nemo-python/extensions/syncstate-Nextcloud.py
 share/nextcloud/i18n/client_TW.qm
 share/nextcloud/i18n/client_af.qm
 share/nextcloud/i18n/client_bg.qm
+share/nextcloud/i18n/client_br.qm
 share/nextcloud/i18n/client_ca.qm
 share/nextcloud/i18n/client_cs.qm
 share/nextcloud/i18n/client_da.qm
