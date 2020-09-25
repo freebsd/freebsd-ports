@@ -1,3 +1,3 @@
-TIMESTAMP = 1600242162
-SHA256 (node-v14.11.0.tar.gz) = c07669ddbd708d0dfc4ccb63a7ced7ad1fd7d1b59ced50cf05f22f0b96e45463
-SIZE (node-v14.11.0.tar.gz) = 63018833
+TIMESTAMP = 1600974048
+SHA256 (node-v14.12.0.tar.gz) = caa31eb22f18b0d26d2867002f65f313b619bc3ebfae409fcefbd6a15372ca7e
+SIZE (node-v14.12.0.tar.gz) = 63041509
