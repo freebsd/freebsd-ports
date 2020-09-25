@@ -26,8 +26,8 @@ include/polybori/common/traits.h
 include/polybori/config.h
 include/polybori/cudd/cudd.h
 include/polybori/cudd/cuddInt.h
-include/polybori/cudd/prefix.h
-include/polybori/cudd/prefix_internal.h
+include/polybori/cuddaux/prefix_internal.h
+include/polybori/cuddaux/prefix.h
 include/polybori/diagram/CApplyNodeFacade.h
 include/polybori/diagram/CCuddDDFacade.h
 include/polybori/diagram/CDDOperations.h
@@ -189,8 +189,8 @@ include/polybori/routines/pbori_routines_order.h
 lib/libbrial.a
 lib/libbrial.so
 lib/libbrial.so.3
-lib/libbrial.so.3.0.4
+lib/libbrial.so.3.0.5
 lib/libbrial_groebner.a
 lib/libbrial_groebner.so
 lib/libbrial_groebner.so.3
-lib/libbrial_groebner.so.3.0.4
+lib/libbrial_groebner.so.3.0.5
