@@ -13,6 +13,9 @@ COMMENT=	Generate a version number from darcs history
 
 LICENSE=	BSD
 
+DEPRECATED=	does not build with python3
+EXPIRATION_DATE=2020-10-25
+
 USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
