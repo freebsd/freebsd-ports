@@ -1,6 +1,6 @@
---- lib/object_create.c.orig	2020-07-25 09:10:27 UTC
+--- lib/object_create.c.orig	2020-09-25 11:58:47 UTC
 +++ lib/object_create.c
-@@ -129,7 +129,7 @@ got_object_blob_create(struct got_object_id **id, cons
+@@ -131,7 +131,7 @@ got_object_blob_file_create(struct got_object_id **id,
  
  	fd = open(ondisk_path, O_RDONLY | O_NOFOLLOW);
  	if (fd == -1) {
@@ -9,7 +9,7 @@
  			return got_error_from_errno2("open", ondisk_path);
  
  		if (lstat(ondisk_path, &sb) == -1) {
-@@ -142,7 +142,7 @@ got_object_blob_create(struct got_object_id **id, cons
+@@ -144,7 +144,7 @@ got_object_blob_file_create(struct got_object_id **id,
  	}
  
  	if (asprintf(&header, "%s %lld", GOT_OBJ_LABEL_BLOB,
@@ -18,7 +18,7 @@
  		err = got_error_from_errno("asprintf");
  		goto done;
  	}
-@@ -417,12 +417,12 @@ got_object_commit_create(struct got_object_id **id,
+@@ -440,12 +440,12 @@ got_object_commit_create(struct got_object_id **id,
  	}
  
  	if (asprintf(&author_str, "%s%s %lld +0000\n",
@@ -33,7 +33,7 @@
  	    == -1) {
  		err = got_error_from_errno("asprintf");
  		goto done;
-@@ -623,7 +623,7 @@ got_object_tag_create(struct got_object_id **id,
+@@ -646,7 +646,7 @@ got_object_tag_create(struct got_object_id **id,
  	}
  
  	if (asprintf(&tagger_str, "%s%s %lld +0000\n",

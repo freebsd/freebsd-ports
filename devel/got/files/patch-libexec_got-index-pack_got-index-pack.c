@@ -1,6 +1,6 @@
---- libexec/got-index-pack/got-index-pack.c.orig	2020-09-11 20:18:20 UTC
+--- libexec/got-index-pack/got-index-pack.c.orig	2020-09-25 11:58:47 UTC
 +++ libexec/got-index-pack/got-index-pack.c
-@@ -244,7 +244,7 @@ read_packed_object(struct got_pack *pack, struct got_i
+@@ -246,7 +246,7 @@ read_packed_object(struct got_pack *pack, struct got_i
  			free(data);
  			break;
  		}

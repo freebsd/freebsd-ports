@@ -1,6 +1,6 @@
---- libexec/got-read-gotconfig/parse.y.orig	2020-09-21 12:09:15 UTC
+--- libexec/got-read-gotconfig/parse.y.orig	2020-09-25 11:58:47 UTC
 +++ libexec/got-read-gotconfig/parse.y
-@@ -61,7 +61,7 @@ int		 igetc(void);
+@@ -63,7 +63,7 @@ int		 igetc(void);
  int		 lgetc(int);
  void		 lungetc(int);
  int		 findeol(void);
@@ -9,7 +9,7 @@
  
  TAILQ_HEAD(symhead, sym)	 symhead = TAILQ_HEAD_INITIALIZER(symhead);
  struct sym {
-@@ -123,7 +123,7 @@ boolean		: STRING {
+@@ -125,7 +125,7 @@ boolean		: STRING {
  		;
  numberstring	: NUMBER				{
  			char	*s;
@@ -18,7 +18,7 @@
  				yyerror("string: asprintf");
  				YYERROR;
  			}
-@@ -385,7 +385,7 @@ getservice(char *n)
+@@ -387,7 +387,7 @@ getservice(char *n)
  }
  
  static int

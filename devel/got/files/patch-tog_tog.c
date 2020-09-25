@@ -1,6 +1,6 @@
---- tog/tog.c.orig	2020-09-14 19:31:57 UTC
+--- tog/tog.c.orig	2020-09-25 11:58:47 UTC
 +++ tog/tog.c
-@@ -5645,7 +5645,7 @@ main(int argc, char *argv[])
+@@ -5654,7 +5654,7 @@ main(int argc, char *argv[])
  
  	argc -= optind;
  	argv += optind;
