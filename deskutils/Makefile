@@ -31,6 +31,7 @@
     SUBDIR += charmtimetracker
     SUBDIR += chart
     SUBDIR += clipit
+    SUBDIR += clipmenu
     SUBDIR += clipnotify
     SUBDIR += conkyforecast
     SUBDIR += copyq
