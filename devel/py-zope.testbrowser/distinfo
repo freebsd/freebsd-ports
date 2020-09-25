@@ -1,2 +1,3 @@
-SHA256 (zope/zope.testbrowser-4.0.4.zip) = 8db02fdde124f1053e0da81cbefa7e8f5f375858f78c12a58afdaa88d6fecb9d
-SIZE (zope/zope.testbrowser-4.0.4.zip) = 102044
+TIMESTAMP = 1601045933
+SHA256 (zope/zope.testbrowser-5.5.1.tar.gz) = acbab12971b8b80bc72fca53f1a6654ba5a5c424949bf74fbca3a193487d5cd3
+SIZE (zope/zope.testbrowser-5.5.1.tar.gz) = 88959
