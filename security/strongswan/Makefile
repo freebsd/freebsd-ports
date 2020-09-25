@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	strongswan
-PORTVERSION=	5.8.4
-PORTREVISION=	1
+PORTVERSION=	5.9.0
 CATEGORIES=	security net-vpn
 MASTER_SITES=	http://download.strongswan.org/ \
 		http://download2.strongswan.org/
@@ -44,8 +43,8 @@ CONFIGURE_ARGS=	--enable-kernel-pfkey \
 
 OPTIONS_DEFINE=	CURL EAPAKA3GPP2 EAPDYNAMIC EAPRADIUS EAPSIMFILE GCM IKEV1 \
 		IPSECKEY KERNELLIBIPSEC LOADTESTER LDAP MEDIATION MYSQL PKI \
-		PKCS11 PYTHON SCEP SMP SQLITE SWANCTL TESTVECTOR TPM UNBOUND UNITY \
-		VICI XAUTH
+		PKCS11 PYTHON SCEP SMP SQLITE SWANCTL TESTVECTOR TPM TSS2 \
+		UNBOUND UNITY VICI XAUTH
 OPTIONS_DEFINE_i386=	VIA
 OPTIONS_DEFAULT=	BUILTIN CURL IKEV1 PKI SWANCTL VICI
 OPTIONS_SINGLE=	PRINTF_HOOKS
@@ -74,6 +73,7 @@ SMP_DESC=	Enable XML-based management protocol (DEPRECATED)
 SWANCTL_DESC=	Install swanctl (requires VICI)
 TESTVECTOR_DESC=	Enable crypto test vectors
 TPM_DESC=	Enable TPM plugin
+TSS2_DESC=	Enable TPM 2.0 TSS2 library
 UNBOUND_DESC=	Enable DNSSEC-enabled resolver
 UNITY_DESC=	Enable Cisco Unity extension plugin
 VIA_DESC=	Enable VIA Padlock support
@@ -115,6 +115,8 @@ SWANCTL_CONFIGURE_ON=	--enable-swanctl
 SWANCTL_IMPLIES=	VICI
 TESTVECTOR_CONFIGURE_ON=--enable-test-vectors
 TPM_CONFIGURE_ON=	--enable-tpm
+TSS2_CONFIGURE_ON=	--enable-tss-tss2
+TSS2_LIB_DEPENDS=	libtss2-sys.so:security/tpm2-tss
 UNBOUND_CONFIGURE_ON=	--enable-unbound
 UNBOUND_LIB_DEPENDS=	libunbound.so:dns/unbound \
 			libldns.so:dns/ldns
