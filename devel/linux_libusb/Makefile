@@ -3,7 +3,7 @@
 
 PORTNAME=	linux_libusb
 PORTVERSION=	13.0r${FSVN_REV}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel linux
 MASTER_SITES=	http://www.selasky.org/hans_petter/distfiles/ \
 		http://home.selasky.org/distfiles/
@@ -31,11 +31,11 @@ CFLAGS:=	${CFLAGS:N-march=*}
 CFLAGS+=	-I${WRKDIR}/${DISTNAME}/include
 SSP_CFLAGS?=	-fstack-protector # XXX -strong isn't supported by GCC < 4.9
 MAKE_ARGS+=	LIBUSB_GLOBAL_INCLUDE_FILE=libusb_global_linux.h
-MAKE_ARGS+=	PTHREAD_LIBS="-lpthread -lrt"
 MAKE_ARGS+=	NO_WERROR=yes
 MAKE_ARGS+=	WITHOUT_PROFILE=yes
 MAKE_ARGS+=	WITHOUT_SSP=yes
 MAKE_ARGS+=	__MAKE_CONF=""
+MAKE_ENV+=	LDADD="-lrt"
 
 # see: sysutils/pc-sysinstall/Makefile
 FSVN_REV=	358841
