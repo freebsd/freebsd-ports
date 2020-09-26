@@ -5,7 +5,7 @@ PORTNAME=	antlr
 PORTVERSION=	2.7.7
 PORTREVISION=	2
 CATEGORIES=	devel java
-MASTER_SITES=	http://www.antlr2.org/download/
+MASTER_SITES=	https://www.antlr2.org/download/
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	ANother Tool for Language Recognition
@@ -35,21 +35,10 @@ PORTDOCS=	ANTLRException.gif closure.gif cpp-runtime.html \
 		stream.splitter.gif streams.html subrule.gif trees.html \
 		vocab.html
 
-OPTIONS_DEFINE=	PYTHON DOCS
-OPTIONS_SUB=	yes
-
-PYTHON_USES=		python:2.7
-PYTHON_PORTDOCS=	python-runtime.html
+OPTIONS_DEFINE=	DOCS
 
 post-extract:
 	(cd ${WRKSRC} && ${CP} antlr.jar antlrall.jar)
-
-post-configure-PYTHON-on:
-	(cd ${WRKSRC}/lib/python && ${PYTHON_CMD} setup.py config)
-
-post-build-PYTHON-on:
-	(cd ${WRKSRC}/lib/python && ${PYTHON_CMD} setup.py build && \
-	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/lib/python)
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}
@@ -63,8 +52,5 @@ do-install:
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
-
-do-install-PYTHON-on:
-	@(cd ${WRKSRC}/lib/python && ${PYTHON_CMD} setup.py install --root=${STAGEDIR})
 
 .include <bsd.port.mk>

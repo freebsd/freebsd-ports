@@ -51,7 +51,3 @@ include/antlr/TreeParserSharedInputState.hpp
 include/antlr/config.hpp
 lib/libantlr.a
 %%JAVAJARDIR%%/antlr.jar
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/antlr/__init__.py
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/antlr/__init__.pyc
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/antlr/antlr.py
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/antlr/antlr.pyc
