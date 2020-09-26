@@ -65,7 +65,6 @@ include/vips/vips-operators.h
 include/vips/vips.h
 include/vips/vips7compat.h
 include/vips/vips8
-lib/girepository-1.0/Vips-8.0.typelib
 lib/libvips-cpp.a
 lib/libvips-cpp.so
 lib/libvips-cpp.so.42
@@ -85,7 +84,6 @@ man/man1/vipsedit.1.gz
 man/man1/vipsheader.1.gz
 man/man1/vipsprofile.1.gz
 man/man1/vipsthumbnail.1.gz
-share/gir-1.0/Vips-8.0.gir
 %%PORTDOCS%%share/gtk-doc/html/libvips/Cite.md.html
 %%PORTDOCS%%share/gtk-doc/html/libvips/Combine.png
 %%PORTDOCS%%share/gtk-doc/html/libvips/Examples.md.html

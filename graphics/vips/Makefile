@@ -3,7 +3,7 @@
 
 PORTNAME=	vips
 PORTVERSION=	8.9.2
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/libvips/libvips/releases/download/v${PORTVERSION}/
 
@@ -14,8 +14,8 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	bash:shells/bash
-LIB_DEPENDS=	libgirepository-1.0.so:devel/gobject-introspection \
-		libfontconfig.so:x11-fonts/fontconfig \
+#LIB_DEPENDS=	libgirepository-1.0.so:devel/gobject-introspection
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libexpat.so:textproc/expat2
 
@@ -28,7 +28,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--without-nifti \
 			--without-openslide \
 			--without-pdfium \
-			--without-imagequant
+			--without-imagequant \
+			--disable-introspection
 
 USE_LDCONFIG=	yes
 
