@@ -709,6 +709,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/gnome-components.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/go-libs.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/handbook.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/haskell-libs.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/index.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/install.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/keeping-up.html
@@ -794,6 +795,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-bdb.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-bison.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-blaslapack.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-cabal.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-cargo.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-charsetfix.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-cmake.html
