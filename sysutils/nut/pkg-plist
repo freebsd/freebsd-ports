@@ -1,22 +1,22 @@
 %%NUT_CGI%%%%CGIDIR%%/upsimage.cgi
 %%NUT_CGI%%%%CGIDIR%%/upsset.cgi
 %%NUT_CGI%%%%CGIDIR%%/upsstats.cgi
-%%NUT_CGI%%@sample(root,uucp,0640) %%CGIETCDIR%%hosts.conf.sample
-%%NUT_CGI%%@sample(root,uucp,0640) %%CGIETCDIR%%upsset.conf.sample
-%%NUT_CGI%%@sample(root,uucp,0640) %%CGIETCDIR%%upsstats.html.sample
-%%NUT_CGI%%@sample(root,uucp,0640) %%CGIETCDIR%%upsstats-single.html.sample
+%%NUT_CGI%%@sample %%CGIETCDIR%%hosts.conf.sample
+%%NUT_CGI%%@sample %%CGIETCDIR%%upsset.conf.sample
+%%NUT_CGI%%@sample %%CGIETCDIR%%upsstats.html.sample
+%%NUT_CGI%%@sample %%CGIETCDIR%%upsstats-single.html.sample
 %%NUT_CGI%%%%WWWDIR%%/bottom.html
 %%NUT_CGI%%%%WWWDIR%%/header.html
 %%NUT_CGI%%%%WWWDIR%%/index.html
 %%NUT_CGI%%%%WWWDIR%%/nut-banner.png
 %%ETCDIR%%/cmdvartab
 %%ETCDIR%%/driver.list
-@sample(root,uucp,0640) %%ETCDIR%%/nut.conf.sample
-@sample(root,uucp,0640) %%ETCDIR%%/ups.conf.sample
-@sample(root,uucp,0640) %%ETCDIR%%/upsd.conf.sample
-@sample(root,uucp,0640) %%ETCDIR%%/upsd.users.sample
-@sample(root,uucp,0640) %%ETCDIR%%/upsmon.conf.sample
-@sample(root,uucp,0640) %%ETCDIR%%/upssched.conf.sample
+@sample %%ETCDIR%%/nut.conf.sample
+@sample %%ETCDIR%%/ups.conf.sample
+@sample %%ETCDIR%%/upsd.conf.sample
+@sample %%ETCDIR%%/upsd.users.sample
+@sample %%ETCDIR%%/upsmon.conf.sample
+@sample %%ETCDIR%%/upssched.conf.sample
 @sample %%EXAMPLESDIR%%/newsyslog.sample etc/newsyslog.conf.d/nut.conf
 @sample %%EXAMPLESDIR%%/syslog.sample etc/syslog.d/nut
 %%NUT_USB%%etc/devd/nut-usb.conf
