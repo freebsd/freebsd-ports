@@ -29,6 +29,7 @@ share/man/man1/smplayer.1.gz
 %%DATADIR%%/translations/smplayer_en_GB.qm
 %%DATADIR%%/translations/smplayer_en_US.qm
 %%DATADIR%%/translations/smplayer_es.qm
+%%DATADIR%%/translations/smplayer_es_ES.qm
 %%DATADIR%%/translations/smplayer_et.qm
 %%DATADIR%%/translations/smplayer_eu.qm
 %%DATADIR%%/translations/smplayer_fa.qm
