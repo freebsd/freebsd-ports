@@ -1,0 +1,5 @@
+taskctl is a concurrent task runner that allows you to design routine
+tasks and development pipelines in a human-readable format (YAML,
+JSON or TOML).
+
+WWW: https://github.com/taskctl/taskctl

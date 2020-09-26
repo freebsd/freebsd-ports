@@ -6667,6 +6667,7 @@
     SUBDIR += ta-lib
     SUBDIR += tablist
     SUBDIR += talloc
+    SUBDIR += taskctl
     SUBDIR += taskflow
     SUBDIR += tass64
     SUBDIR += tbb
