@@ -25,7 +25,7 @@ DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == i386 || ${ARCH} == powerpc
+.if ${ARCH} == i386 || ${ARCH} == powerpc || ${ARCH} == powerpcspe
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-32bit
 .endif
 
