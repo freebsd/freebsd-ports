@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		libtool pathfix pkgconfig python:2.7 shebangfix
+USES=		libtool pathfix pkgconfig python:build shebangfix
 GNU_CONFIGURE=	yes
 SHEBANG_FILES=	src/template-converter src/htmlparser/generate_fsm.py src/htmlparser/fsm_config.py
 USE_LDCONFIG=	yes
