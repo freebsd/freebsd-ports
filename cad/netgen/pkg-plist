@@ -67,6 +67,7 @@ include/general/spbita2d.hpp
 include/general/stack.hpp
 include/general/table.hpp
 include/general/template.hpp
+include/geom2d/csg2d.hpp
 include/geom2d/geometry2d.hpp
 include/geom2d/spline2d.hpp
 include/geom2d/vsgeom2d.hpp
@@ -94,6 +95,7 @@ include/include/meshing.hpp
 include/include/myadt.hpp
 include/include/mydefs.hpp
 include/include/mystdlib.h
+include/include/netgen_config.hpp
 include/include/netgen_version.hpp
 include/include/nginterface_v2_impl.hpp
 include/include/ngsimd.hpp
