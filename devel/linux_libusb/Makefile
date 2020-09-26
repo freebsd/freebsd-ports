@@ -3,7 +3,7 @@
 
 PORTNAME=	linux_libusb
 PORTVERSION=	13.0r${FSVN_REV}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel linux
 MASTER_SITES=	http://www.selasky.org/hans_petter/distfiles/ \
 		http://home.selasky.org/distfiles/
@@ -17,7 +17,7 @@ ONLY_FOR_ARCHS=	amd64 i386
 
 USES=		linux tar:bzip2
 USE_LDCONFIG=	yes
-USE_LINUX=	base devtools:build
+USE_LINUX=	base:build,run devtools:build
 USE_LINUX_PREFIX=	yes
 
 LIBDIR_amd64=	lib64
@@ -26,7 +26,7 @@ PLIST_FILES=	usr/${LIBDIR_${ARCH}}/libusb.so \
 		usr/${LIBDIR_${ARCH}}/libusb.so.3 \
 		usr/${LIBDIR_${ARCH}}/libusb-0.1.so.4
 
-CC=		${LINUXBASE}/usr/bin/gcc
+CC=		${LINUXBASE}/usr/bin/gcc --sysroot=${LINUXBASE}
 CFLAGS:=	${CFLAGS:N-march=*}
 CFLAGS+=	-I${WRKDIR}/${DISTNAME}/include
 SSP_CFLAGS?=	-fstack-protector # XXX -strong isn't supported by GCC < 4.9
@@ -57,9 +57,9 @@ do-build:
 		${MAKE_ARGS:N${DESTDIRNAME}=*}
 .if ${ARCH} == amd64
 	${MKDIR} ${WRKSRC}/lib
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} MAKEOBJDIR=lib \
-		${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} \
-		${MAKE_ARGS:N${DESTDIRNAME}=*} COMPAT_32BIT=yes
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV:NCC=*} CC="${CC} -m32" \
+		MAKEOBJDIR=lib ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} \
+		${_MAKE_JOBS} ${MAKE_ARGS:N${DESTDIRNAME}=*} COMPAT_32BIT=yes
 .endif
 
 do-install:
