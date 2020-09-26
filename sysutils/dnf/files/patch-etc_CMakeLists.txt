@@ -1,0 +1,13 @@
+--- etc/CMakeLists.txt.orig	2020-09-20 04:13:02 UTC
++++ etc/CMakeLists.txt
+@@ -1,6 +1,6 @@
+-INSTALL (FILES "collect_dnf.conf" DESTINATION ${SYSCONFDIR}/libreport/events.d/)
++#INSTALL (FILES "collect_dnf.conf" DESTINATION ${SYSCONFDIR}/libreport/events.d/)
+ ADD_SUBDIRECTORY (bash_completion.d)
+ ADD_SUBDIRECTORY (dnf)
+-ADD_SUBDIRECTORY (logrotate.d)
+-ADD_SUBDIRECTORY (systemd)
+-ADD_SUBDIRECTORY (tmpfiles.d)
++#ADD_SUBDIRECTORY (logrotate.d)
++#ADD_SUBDIRECTORY (systemd)
++#ADD_SUBDIRECTORY (tmpfiles.d)

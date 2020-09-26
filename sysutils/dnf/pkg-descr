@@ -1,0 +1,6 @@
+Dandified YUM (DNF) is the next upcoming major version of YUM. It does package
+management using RPM, libsolv and hawkey libraries. For metadata handling and
+package downloads it utilizes librepo. To process and effectively handle the
+comps data it uses libcomps.
+
+WWW: https://github.com/rpm-software-management/dnf
