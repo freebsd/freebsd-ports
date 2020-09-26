@@ -1,4 +1,4 @@
---- src/VBox/Runtime/r0drv/freebsd/the-freebsd-kernel.h.orig	2018-10-15 14:31:31 UTC
+--- src/VBox/Runtime/r0drv/freebsd/the-freebsd-kernel.h.orig	2020-07-09 16:57:38 UTC
 +++ src/VBox/Runtime/r0drv/freebsd/the-freebsd-kernel.h
 @@ -60,6 +60,7 @@
  #include <sys/smp.h>
@@ -8,7 +8,11 @@
  #include <vm/vm.h>
  #include <vm/pmap.h>            /* for vtophys */
  #include <vm/vm_map.h>
-@@ -70,7 +71,6 @@
+@@ -67,10 +68,10 @@
+ #include <vm/vm_kern.h>
+ #include <vm/vm_param.h>        /* KERN_SUCCESS ++ */
+ #include <vm/vm_page.h>
++#include <vm/vm_pager.h>
  #include <vm/vm_phys.h>         /* vm_phys_alloc_* */
  #include <vm/vm_extern.h>       /* kmem_alloc_attr */
  #include <vm/vm_pageout.h>      /* vm_contig_grow_cache */
@@ -16,7 +20,7 @@
  #include <sys/resourcevar.h>
  #include <machine/cpu.h>
  
-@@ -114,6 +114,24 @@
+@@ -114,6 +115,24 @@
   */
  #if 0 /** @todo Not available yet. */
  # define USE_KMEM_ALLOC_PROT
