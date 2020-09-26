@@ -2,6 +2,7 @@
 #include <sys/types.h>
 #include <sys/extattr.h>
 
+#include <assert.h>
 
 ///
 /// xattr is a Linux kernel API that has to be mapped to the FreeBSD API
