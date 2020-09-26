@@ -17,6 +17,9 @@ RUN_DEPENDS=	bash:shells/bash \
 
 USES=		xorg
 
+NO_ARCH=	yes
+NO_BUILD=	yes
+
 PLIST_FILES=	bin/clipctl bin/clipdel bin/clipfsck bin/clipmenu bin/clipmenud
 
 OPTIONS_DEFAULT=	DMENU
@@ -38,9 +41,6 @@ GH_ACCOUNT=	cdown
 
 post-extract:
 	@${REINPLACE_CMD} -e '3s,dmenu,${SELECTED_OPTIONS:tl},1' ${WRKSRC}/clipmenu
-
-do-build:
-	${DO_NADA}
 
 do-install:
 	@cd ${WRKSRC} && ${INSTALL_SCRIPT} clipctl clipdel clipfsck clipmenu clipmenud \
