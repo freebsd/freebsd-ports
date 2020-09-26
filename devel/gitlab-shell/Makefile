@@ -1,12 +1,13 @@
 # Created by: Torsten Zuehlsdorff <tz@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	gitlab-shell
-PORTVERSION=	13.6.0
+PORTNAME?=	gitlab-shell
+PORTVERSION?=	13.7.0
+PORTREVISION?=	0
 CATEGORIES=	devel
 
-MAINTAINER=	mfechner@FreeBSD.org
-COMMENT=	GitLab Shell handles git commands for GitLab
+MAINTAINER?=	mfechner@FreeBSD.org
+COMMENT?=	GitLab Shell handles git commands for GitLab
 
 LICENSE=	MIT
 
@@ -17,9 +18,9 @@ MAKE_ENV=	GOFLAGS="${GO_BUILDFLAGS}"
 ALL_TARGET=	build
 
 USE_GITLAB=	yes
-GL_ACCOUNT=	gitlab-org
+GL_ACCOUNT?=	gitlab-org
 # Find the commit hash here: https://gitlab.com/gitlab-org/gitlab-shell/tags
-GL_COMMIT=	fa730d2f859671f54c6f88bf2551fc771a1a5e6a
+GL_COMMIT?=	82ec8144fb2a04d78f29ae5d1f4e5a407257309f
 
 USERS=		git
 GROUPS=		git
@@ -63,6 +64,10 @@ GH_TUPLE=	\
 GL_TUPLE=	gitlab-org:gitaly:aa1ff2a76ac14e1ad3eca35cc05ea86ef59fffbb:gitlab_org_gitaly/vendor/gitlab.com/gitlab-org/gitaly \
 		gitlab-org:labkit:0149780c759d60f61fcfe1648fb882ba7ec41f3f:gitlab_org_labkit/vendor/gitlab.com/gitlab-org/labkit
 
+VARLOGDIR?=	/var/log/gitlab-shell
+
+PLIST_FILES+=	"@dir(git,,755) ${VARLOGDIR}"
+
 post-patch:
 	${MV} ${WRKSRC}/config.yml.example ${WRKSRC}/config.yml.sample
 	${CP} ${WRKSRC}/config.yml.sample ${WRKSRC}/config.yml
@@ -89,6 +94,6 @@ do-install:
 	(cd ${WRKSRC}/${x} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/${x})
 .endfor
 
-	@${MKDIR} ${STAGEDIR}/var/log/gitlab-shell
+	@${MKDIR} ${STAGEDIR}${VARLOGDIR}
 
 .include <bsd.port.mk>

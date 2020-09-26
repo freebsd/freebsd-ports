@@ -34,4 +34,3 @@
 %%DATADIR%%/spec/support/http_unix_server.rb
 %%DATADIR%%/support/gitlab_config.rb
 %%DATADIR%%/support/truncate_repositories.sh
-@dir(git,,755) /var/log/gitlab-shell
