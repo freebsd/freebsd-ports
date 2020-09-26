@@ -8,7 +8,7 @@ CATEGORIES=	graphics python
 MASTER_SITES=	https://downloads.sk1project.net/uniconvertor/v1.1.5/ \
 		https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/uniconvertor/
 
-MAINTAINER=	amdmi3@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set of python libraries for sK1 Project
 
 LICENSE=	GPLv2+

@@ -7,7 +7,7 @@ CATEGORIES=	graphics python
 MASTER_SITES=	https://downloads.sk1project.net/uniconvertor/v1.1.5/ \
 		https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/uniconvertor/
 
-MAINTAINER=	amdmi3@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Universal vector graphics translator
 
 LICENSE=	LGPL20+ GPLv2+
