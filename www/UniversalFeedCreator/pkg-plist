@@ -1,4 +1,5 @@
 %%DATADIR%%/README.md
+%%DATADIR%%/LICENSE
 %%DATADIR%%/composer.json
 %%DATADIR%%/lib/Creator/AtomCreator03.php
 %%DATADIR%%/lib/Creator/AtomCreator10.php
@@ -20,6 +21,7 @@
 %%DATADIR%%/lib/Element/FeedItem.php
 %%DATADIR%%/lib/Element/HtmlDescribable.php
 %%DATADIR%%/lib/UniversalFeedCreator.php
+%%DATADIR%%/lib/constants.php
 %%DATADIR%%/phpunit.xml.dist
 %%DATADIR%%/test/Creator/AtomCreator10Test.php
 %%DATADIR%%/test/Creator/RSSCreator10Test.php

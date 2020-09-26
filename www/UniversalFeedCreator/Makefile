@@ -2,13 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	UniversalFeedCreator
-PORTVERSION=	1.8.3.1
+PORTVERSION=	1.8.4
 DISTVERSIONPREFIX=	v
-PORTREVISION=	0
 CATEGORIES=	www
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	RSS and Atom feed generator by Kai Blankenhorn
+
+LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		php
 
