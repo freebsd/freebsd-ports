@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	graphql
-PORTVERSION=	1.10.11
+PORTVERSION=	1.11.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
