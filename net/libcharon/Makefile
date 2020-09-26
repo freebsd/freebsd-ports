@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libCharon
-DISTVERSION=	4.5.0
+DISTVERSION=	4.7.1
 CATEGORIES=	net devel cad
 DIST_SUBDIR=	Ultimaker
 
@@ -16,7 +16,7 @@ STRIP=
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Ultimaker
-GH_TAGNAME=	bfd36d0
+GH_TAGNAME=	c34738dd
 
 NO_ARCH=	yes
 .include <bsd.port.mk>

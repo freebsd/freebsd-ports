@@ -4,5 +4,5 @@
 -#!/usr/bin/env python3
 +#!/usr/bin/env %%PYTHON_CMD%%
  
- # Copyright (c) 2019 Ultimaker B.V.
+ # Copyright (c) 2020 Ultimaker B.V.
  # Cura is released under the terms of the LGPLv3 or higher.

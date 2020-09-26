@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	fdm_materials
-DISTVERSION=	6.3.2
+PORTEPOCH=	1
+DISTVERSION=	4.7.1
 CATEGORIES=	cad
 DIST_SUBDIR=	Ultimaker
 
@@ -15,7 +16,7 @@ USES=		cmake
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Ultimaker
-GH_TAGNAME=	c54199e
+GH_TAGNAME=	c7331d5ea
 NO_ARCH=	yes
 STRIP=
 

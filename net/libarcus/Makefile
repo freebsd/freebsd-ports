@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	libArcus
-PORTVERSION=	15.06.03
-PORTREVISION=	2
+PORTVERSION=	4.7.1
+PORTEPOCH=	1
 CATEGORIES=	net cad
 DIST_SUBDIR=	Ultimaker
 
@@ -19,6 +19,6 @@ USES=		cmake compiler:c++11-lang python:3.4+
 USE_GITHUB=	yes
 GH_ACCOUNT=	Ultimaker
 USE_LDCONFIG=	yes
-GH_TAGNAME=	d0f1ac1
+GH_TAGNAME=	6a68d7e0
 
 .include <bsd.port.mk>

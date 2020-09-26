@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	Uranium
-DISTVERSION=	15.06.03
-PORTREVISION=	1
+DISTVERSION=	4.7.1
+PORTEPOCH=	1
 CATEGORIES=	cad
 DIST_SUBDIR=	Ultimaker
 
@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR} \
 USES=		cmake python:3.4+ gettext
 USE_GITHUB=	yes
 GH_ACCOUNT=	Ultimaker
-GH_TAGNAME=	8d2bada
+GH_TAGNAME=	3ed9c4de
 STRIP=
 NO_ARCH=	yes
 

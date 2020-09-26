@@ -9,6 +9,7 @@
 %%PYTHON_SITELIBDIR%%/UM/Dictionary.py
 %%PYTHON_SITELIBDIR%%/UM/Event.py
 %%PYTHON_SITELIBDIR%%/UM/Extension.py
+%%PYTHON_SITELIBDIR%%/UM/FastConfigParser.py
 %%PYTHON_SITELIBDIR%%/UM/FileHandler/FileHandler.py
 %%PYTHON_SITELIBDIR%%/UM/FileHandler/FileReader.py
 %%PYTHON_SITELIBDIR%%/UM/FileHandler/FileWriter.py
@@ -84,6 +85,7 @@
 %%PYTHON_SITELIBDIR%%/UM/Qt/Bindings/StageModel.py
 %%PYTHON_SITELIBDIR%%/UM/Qt/Bindings/Theme.py
 %%PYTHON_SITELIBDIR%%/UM/Qt/Bindings/ToolModel.py
+%%PYTHON_SITELIBDIR%%/UM/Qt/Bindings/Utilities.py
 %%PYTHON_SITELIBDIR%%/UM/Qt/Bindings/ViewModel.py
 %%PYTHON_SITELIBDIR%%/UM/Qt/Bindings/VisibleMessagesModel.py
 %%PYTHON_SITELIBDIR%%/UM/Qt/Bindings/__init__.py
