@@ -94,6 +94,7 @@
     SUBDIR += courier-authlib-ldap
     SUBDIR += courier-sox
     SUBDIR += cppzmq
+    SUBDIR += croc
     SUBDIR += cryptcat
     SUBDIR += csocks
     SUBDIR += ctrace
