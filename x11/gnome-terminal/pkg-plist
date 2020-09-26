@@ -2,7 +2,6 @@ bin/gnome-terminal
 %%NAUTILUS%%lib/nautilus/extensions-3.0/libterminal-nautilus.a
 %%NAUTILUS%%lib/nautilus/extensions-3.0/libterminal-nautilus.so
 @comment lib/systemd/user/gnome-terminal-server.service
-%%MIGRATION%%libexec/gnome-terminal-migration
 libexec/gnome-terminal-server
 share/applications/org.gnome.Terminal.desktop
 share/dbus-1/services/org.gnome.Terminal.service
@@ -16,6 +15,7 @@ share/help/C/gnome-terminal/app-terminal-sizes.page
 share/help/C/gnome-terminal/app-zoom.page
 share/help/C/gnome-terminal/figures/gnome-terminal-icon.png
 share/help/C/gnome-terminal/figures/gnome-terminal.png
+share/help/C/gnome-terminal/figures/keyboard-key-search.svg
 share/help/C/gnome-terminal/gs-execute-commands.page
 share/help/C/gnome-terminal/gs-tabs.page
 share/help/C/gnome-terminal/index.page
@@ -25,7 +25,6 @@ share/help/C/gnome-terminal/overview.page
 share/help/C/gnome-terminal/pref-bell.page
 share/help/C/gnome-terminal/pref-custom-command.page
 share/help/C/gnome-terminal/pref-custom-exit.page
-share/help/C/gnome-terminal/pref-encoding.page
 share/help/C/gnome-terminal/pref-keyboard-access.page
 share/help/C/gnome-terminal/pref-login-shell.page
 share/help/C/gnome-terminal/pref-menubar.page
@@ -39,7 +38,6 @@ share/help/C/gnome-terminal/pref.page
 share/help/C/gnome-terminal/prob-reset.page
 share/help/C/gnome-terminal/txt-copy-paste.page
 share/help/C/gnome-terminal/txt-links.page
-share/help/C/gnome-terminal/txt-save-text.page
 share/help/C/gnome-terminal/txt-search.page
 share/help/C/gnome-terminal/txt-select-text.page
 share/help/ca/gnome-terminal/adv-keyboard-shortcuts.page
@@ -58,7 +56,6 @@ share/help/ca/gnome-terminal/overview.page
 share/help/ca/gnome-terminal/pref-bell.page
 share/help/ca/gnome-terminal/pref-custom-command.page
 share/help/ca/gnome-terminal/pref-custom-exit.page
-share/help/ca/gnome-terminal/pref-encoding.page
 share/help/ca/gnome-terminal/pref-keyboard-access.page
 share/help/ca/gnome-terminal/pref-login-shell.page
 share/help/ca/gnome-terminal/pref-menubar.page
@@ -72,7 +69,6 @@ share/help/ca/gnome-terminal/pref.page
 share/help/ca/gnome-terminal/prob-reset.page
 share/help/ca/gnome-terminal/txt-copy-paste.page
 share/help/ca/gnome-terminal/txt-links.page
-share/help/ca/gnome-terminal/txt-save-text.page
 share/help/ca/gnome-terminal/txt-search.page
 share/help/ca/gnome-terminal/txt-select-text.page
 share/help/cs/gnome-terminal/adv-keyboard-shortcuts.page
@@ -91,7 +87,6 @@ share/help/cs/gnome-terminal/overview.page
 share/help/cs/gnome-terminal/pref-bell.page
 share/help/cs/gnome-terminal/pref-custom-command.page
 share/help/cs/gnome-terminal/pref-custom-exit.page
-share/help/cs/gnome-terminal/pref-encoding.page
 share/help/cs/gnome-terminal/pref-keyboard-access.page
 share/help/cs/gnome-terminal/pref-login-shell.page
 share/help/cs/gnome-terminal/pref-menubar.page
@@ -105,7 +100,6 @@ share/help/cs/gnome-terminal/pref.page
 share/help/cs/gnome-terminal/prob-reset.page
 share/help/cs/gnome-terminal/txt-copy-paste.page
 share/help/cs/gnome-terminal/txt-links.page
-share/help/cs/gnome-terminal/txt-save-text.page
 share/help/cs/gnome-terminal/txt-search.page
 share/help/cs/gnome-terminal/txt-select-text.page
 share/help/de/gnome-terminal/adv-keyboard-shortcuts.page
@@ -115,7 +109,6 @@ share/help/de/gnome-terminal/app-fonts.page
 share/help/de/gnome-terminal/app-fullscreen.page
 share/help/de/gnome-terminal/app-terminal-sizes.page
 share/help/de/gnome-terminal/app-zoom.page
-share/help/de/gnome-terminal/figures/gnome-terminal.png
 share/help/de/gnome-terminal/gs-execute-commands.page
 share/help/de/gnome-terminal/gs-tabs.page
 share/help/de/gnome-terminal/index.page
@@ -125,7 +118,6 @@ share/help/de/gnome-terminal/overview.page
 share/help/de/gnome-terminal/pref-bell.page
 share/help/de/gnome-terminal/pref-custom-command.page
 share/help/de/gnome-terminal/pref-custom-exit.page
-share/help/de/gnome-terminal/pref-encoding.page
 share/help/de/gnome-terminal/pref-keyboard-access.page
 share/help/de/gnome-terminal/pref-login-shell.page
 share/help/de/gnome-terminal/pref-menubar.page
@@ -139,7 +131,6 @@ share/help/de/gnome-terminal/pref.page
 share/help/de/gnome-terminal/prob-reset.page
 share/help/de/gnome-terminal/txt-copy-paste.page
 share/help/de/gnome-terminal/txt-links.page
-share/help/de/gnome-terminal/txt-save-text.page
 share/help/de/gnome-terminal/txt-search.page
 share/help/de/gnome-terminal/txt-select-text.page
 share/help/el/gnome-terminal/adv-keyboard-shortcuts.page
@@ -149,7 +140,6 @@ share/help/el/gnome-terminal/app-fonts.page
 share/help/el/gnome-terminal/app-fullscreen.page
 share/help/el/gnome-terminal/app-terminal-sizes.page
 share/help/el/gnome-terminal/app-zoom.page
-share/help/el/gnome-terminal/figures/gnome-terminal.png
 share/help/el/gnome-terminal/gs-execute-commands.page
 share/help/el/gnome-terminal/gs-tabs.page
 share/help/el/gnome-terminal/index.page
@@ -159,7 +149,6 @@ share/help/el/gnome-terminal/overview.page
 share/help/el/gnome-terminal/pref-bell.page
 share/help/el/gnome-terminal/pref-custom-command.page
 share/help/el/gnome-terminal/pref-custom-exit.page
-share/help/el/gnome-terminal/pref-encoding.page
 share/help/el/gnome-terminal/pref-keyboard-access.page
 share/help/el/gnome-terminal/pref-login-shell.page
 share/help/el/gnome-terminal/pref-menubar.page
@@ -173,7 +162,6 @@ share/help/el/gnome-terminal/pref.page
 share/help/el/gnome-terminal/prob-reset.page
 share/help/el/gnome-terminal/txt-copy-paste.page
 share/help/el/gnome-terminal/txt-links.page
-share/help/el/gnome-terminal/txt-save-text.page
 share/help/el/gnome-terminal/txt-search.page
 share/help/el/gnome-terminal/txt-select-text.page
 share/help/es/gnome-terminal/adv-keyboard-shortcuts.page
@@ -192,7 +180,6 @@ share/help/es/gnome-terminal/overview.page
 share/help/es/gnome-terminal/pref-bell.page
 share/help/es/gnome-terminal/pref-custom-command.page
 share/help/es/gnome-terminal/pref-custom-exit.page
-share/help/es/gnome-terminal/pref-encoding.page
 share/help/es/gnome-terminal/pref-keyboard-access.page
 share/help/es/gnome-terminal/pref-login-shell.page
 share/help/es/gnome-terminal/pref-menubar.page
@@ -206,7 +193,6 @@ share/help/es/gnome-terminal/pref.page
 share/help/es/gnome-terminal/prob-reset.page
 share/help/es/gnome-terminal/txt-copy-paste.page
 share/help/es/gnome-terminal/txt-links.page
-share/help/es/gnome-terminal/txt-save-text.page
 share/help/es/gnome-terminal/txt-search.page
 share/help/es/gnome-terminal/txt-select-text.page
 share/help/fi/gnome-terminal/adv-keyboard-shortcuts.page
@@ -225,7 +211,6 @@ share/help/fi/gnome-terminal/overview.page
 share/help/fi/gnome-terminal/pref-bell.page
 share/help/fi/gnome-terminal/pref-custom-command.page
 share/help/fi/gnome-terminal/pref-custom-exit.page
-share/help/fi/gnome-terminal/pref-encoding.page
 share/help/fi/gnome-terminal/pref-keyboard-access.page
 share/help/fi/gnome-terminal/pref-login-shell.page
 share/help/fi/gnome-terminal/pref-menubar.page
@@ -239,7 +224,6 @@ share/help/fi/gnome-terminal/pref.page
 share/help/fi/gnome-terminal/prob-reset.page
 share/help/fi/gnome-terminal/txt-copy-paste.page
 share/help/fi/gnome-terminal/txt-links.page
-share/help/fi/gnome-terminal/txt-save-text.page
 share/help/fi/gnome-terminal/txt-search.page
 share/help/fi/gnome-terminal/txt-select-text.page
 share/help/fr/gnome-terminal/adv-keyboard-shortcuts.page
@@ -258,7 +242,6 @@ share/help/fr/gnome-terminal/overview.page
 share/help/fr/gnome-terminal/pref-bell.page
 share/help/fr/gnome-terminal/pref-custom-command.page
 share/help/fr/gnome-terminal/pref-custom-exit.page
-share/help/fr/gnome-terminal/pref-encoding.page
 share/help/fr/gnome-terminal/pref-keyboard-access.page
 share/help/fr/gnome-terminal/pref-login-shell.page
 share/help/fr/gnome-terminal/pref-menubar.page
@@ -272,7 +255,6 @@ share/help/fr/gnome-terminal/pref.page
 share/help/fr/gnome-terminal/prob-reset.page
 share/help/fr/gnome-terminal/txt-copy-paste.page
 share/help/fr/gnome-terminal/txt-links.page
-share/help/fr/gnome-terminal/txt-save-text.page
 share/help/fr/gnome-terminal/txt-search.page
 share/help/fr/gnome-terminal/txt-select-text.page
 share/help/gl/gnome-terminal/adv-keyboard-shortcuts.page
@@ -291,7 +273,6 @@ share/help/gl/gnome-terminal/overview.page
 share/help/gl/gnome-terminal/pref-bell.page
 share/help/gl/gnome-terminal/pref-custom-command.page
 share/help/gl/gnome-terminal/pref-custom-exit.page
-share/help/gl/gnome-terminal/pref-encoding.page
 share/help/gl/gnome-terminal/pref-keyboard-access.page
 share/help/gl/gnome-terminal/pref-login-shell.page
 share/help/gl/gnome-terminal/pref-menubar.page
@@ -305,7 +286,6 @@ share/help/gl/gnome-terminal/pref.page
 share/help/gl/gnome-terminal/prob-reset.page
 share/help/gl/gnome-terminal/txt-copy-paste.page
 share/help/gl/gnome-terminal/txt-links.page
-share/help/gl/gnome-terminal/txt-save-text.page
 share/help/gl/gnome-terminal/txt-search.page
 share/help/gl/gnome-terminal/txt-select-text.page
 share/help/hu/gnome-terminal/adv-keyboard-shortcuts.page
@@ -315,7 +295,6 @@ share/help/hu/gnome-terminal/app-fonts.page
 share/help/hu/gnome-terminal/app-fullscreen.page
 share/help/hu/gnome-terminal/app-terminal-sizes.page
 share/help/hu/gnome-terminal/app-zoom.page
-share/help/hu/gnome-terminal/figures/gnome-terminal.png
 share/help/hu/gnome-terminal/gs-execute-commands.page
 share/help/hu/gnome-terminal/gs-tabs.page
 share/help/hu/gnome-terminal/index.page
@@ -325,7 +304,6 @@ share/help/hu/gnome-terminal/overview.page
 share/help/hu/gnome-terminal/pref-bell.page
 share/help/hu/gnome-terminal/pref-custom-command.page
 share/help/hu/gnome-terminal/pref-custom-exit.page
-share/help/hu/gnome-terminal/pref-encoding.page
 share/help/hu/gnome-terminal/pref-keyboard-access.page
 share/help/hu/gnome-terminal/pref-login-shell.page
 share/help/hu/gnome-terminal/pref-menubar.page
@@ -339,7 +317,6 @@ share/help/hu/gnome-terminal/pref.page
 share/help/hu/gnome-terminal/prob-reset.page
 share/help/hu/gnome-terminal/txt-copy-paste.page
 share/help/hu/gnome-terminal/txt-links.page
-share/help/hu/gnome-terminal/txt-save-text.page
 share/help/hu/gnome-terminal/txt-search.page
 share/help/hu/gnome-terminal/txt-select-text.page
 share/help/ko/gnome-terminal/adv-keyboard-shortcuts.page
@@ -349,7 +326,6 @@ share/help/ko/gnome-terminal/app-fonts.page
 share/help/ko/gnome-terminal/app-fullscreen.page
 share/help/ko/gnome-terminal/app-terminal-sizes.page
 share/help/ko/gnome-terminal/app-zoom.page
-share/help/ko/gnome-terminal/figures/gnome-terminal.png
 share/help/ko/gnome-terminal/gs-execute-commands.page
 share/help/ko/gnome-terminal/gs-tabs.page
 share/help/ko/gnome-terminal/index.page
@@ -359,7 +335,6 @@ share/help/ko/gnome-terminal/overview.page
 share/help/ko/gnome-terminal/pref-bell.page
 share/help/ko/gnome-terminal/pref-custom-command.page
 share/help/ko/gnome-terminal/pref-custom-exit.page
-share/help/ko/gnome-terminal/pref-encoding.page
 share/help/ko/gnome-terminal/pref-keyboard-access.page
 share/help/ko/gnome-terminal/pref-login-shell.page
 share/help/ko/gnome-terminal/pref-menubar.page
@@ -373,7 +348,6 @@ share/help/ko/gnome-terminal/pref.page
 share/help/ko/gnome-terminal/prob-reset.page
 share/help/ko/gnome-terminal/txt-copy-paste.page
 share/help/ko/gnome-terminal/txt-links.page
-share/help/ko/gnome-terminal/txt-save-text.page
 share/help/ko/gnome-terminal/txt-search.page
 share/help/ko/gnome-terminal/txt-select-text.page
 share/help/pl/gnome-terminal/adv-keyboard-shortcuts.page
@@ -383,7 +357,6 @@ share/help/pl/gnome-terminal/app-fonts.page
 share/help/pl/gnome-terminal/app-fullscreen.page
 share/help/pl/gnome-terminal/app-terminal-sizes.page
 share/help/pl/gnome-terminal/app-zoom.page
-share/help/pl/gnome-terminal/figures/gnome-terminal.png
 share/help/pl/gnome-terminal/gs-execute-commands.page
 share/help/pl/gnome-terminal/gs-tabs.page
 share/help/pl/gnome-terminal/index.page
@@ -393,7 +366,6 @@ share/help/pl/gnome-terminal/overview.page
 share/help/pl/gnome-terminal/pref-bell.page
 share/help/pl/gnome-terminal/pref-custom-command.page
 share/help/pl/gnome-terminal/pref-custom-exit.page
-share/help/pl/gnome-terminal/pref-encoding.page
 share/help/pl/gnome-terminal/pref-keyboard-access.page
 share/help/pl/gnome-terminal/pref-login-shell.page
 share/help/pl/gnome-terminal/pref-menubar.page
@@ -407,7 +379,6 @@ share/help/pl/gnome-terminal/pref.page
 share/help/pl/gnome-terminal/prob-reset.page
 share/help/pl/gnome-terminal/txt-copy-paste.page
 share/help/pl/gnome-terminal/txt-links.page
-share/help/pl/gnome-terminal/txt-save-text.page
 share/help/pl/gnome-terminal/txt-search.page
 share/help/pl/gnome-terminal/txt-select-text.page
 share/help/pt_BR/gnome-terminal/adv-keyboard-shortcuts.page
@@ -417,7 +388,6 @@ share/help/pt_BR/gnome-terminal/app-fonts.page
 share/help/pt_BR/gnome-terminal/app-fullscreen.page
 share/help/pt_BR/gnome-terminal/app-terminal-sizes.page
 share/help/pt_BR/gnome-terminal/app-zoom.page
-share/help/pt_BR/gnome-terminal/figures/gnome-terminal.png
 share/help/pt_BR/gnome-terminal/gs-execute-commands.page
 share/help/pt_BR/gnome-terminal/gs-tabs.page
 share/help/pt_BR/gnome-terminal/index.page
@@ -427,7 +397,6 @@ share/help/pt_BR/gnome-terminal/overview.page
 share/help/pt_BR/gnome-terminal/pref-bell.page
 share/help/pt_BR/gnome-terminal/pref-custom-command.page
 share/help/pt_BR/gnome-terminal/pref-custom-exit.page
-share/help/pt_BR/gnome-terminal/pref-encoding.page
 share/help/pt_BR/gnome-terminal/pref-keyboard-access.page
 share/help/pt_BR/gnome-terminal/pref-login-shell.page
 share/help/pt_BR/gnome-terminal/pref-menubar.page
@@ -441,7 +410,6 @@ share/help/pt_BR/gnome-terminal/pref.page
 share/help/pt_BR/gnome-terminal/prob-reset.page
 share/help/pt_BR/gnome-terminal/txt-copy-paste.page
 share/help/pt_BR/gnome-terminal/txt-links.page
-share/help/pt_BR/gnome-terminal/txt-save-text.page
 share/help/pt_BR/gnome-terminal/txt-search.page
 share/help/pt_BR/gnome-terminal/txt-select-text.page
 share/help/ro/gnome-terminal/adv-keyboard-shortcuts.page
@@ -460,7 +428,6 @@ share/help/ro/gnome-terminal/overview.page
 share/help/ro/gnome-terminal/pref-bell.page
 share/help/ro/gnome-terminal/pref-custom-command.page
 share/help/ro/gnome-terminal/pref-custom-exit.page
-share/help/ro/gnome-terminal/pref-encoding.page
 share/help/ro/gnome-terminal/pref-keyboard-access.page
 share/help/ro/gnome-terminal/pref-login-shell.page
 share/help/ro/gnome-terminal/pref-menubar.page
@@ -474,7 +441,6 @@ share/help/ro/gnome-terminal/pref.page
 share/help/ro/gnome-terminal/prob-reset.page
 share/help/ro/gnome-terminal/txt-copy-paste.page
 share/help/ro/gnome-terminal/txt-links.page
-share/help/ro/gnome-terminal/txt-save-text.page
 share/help/ro/gnome-terminal/txt-search.page
 share/help/ro/gnome-terminal/txt-select-text.page
 share/help/ru/gnome-terminal/adv-keyboard-shortcuts.page
@@ -484,7 +450,6 @@ share/help/ru/gnome-terminal/app-fonts.page
 share/help/ru/gnome-terminal/app-fullscreen.page
 share/help/ru/gnome-terminal/app-terminal-sizes.page
 share/help/ru/gnome-terminal/app-zoom.page
-share/help/ru/gnome-terminal/figures/gnome-terminal.png
 share/help/ru/gnome-terminal/gs-execute-commands.page
 share/help/ru/gnome-terminal/gs-tabs.page
 share/help/ru/gnome-terminal/index.page
@@ -494,7 +459,6 @@ share/help/ru/gnome-terminal/overview.page
 share/help/ru/gnome-terminal/pref-bell.page
 share/help/ru/gnome-terminal/pref-custom-command.page
 share/help/ru/gnome-terminal/pref-custom-exit.page
-share/help/ru/gnome-terminal/pref-encoding.page
 share/help/ru/gnome-terminal/pref-keyboard-access.page
 share/help/ru/gnome-terminal/pref-login-shell.page
 share/help/ru/gnome-terminal/pref-menubar.page
@@ -508,7 +472,6 @@ share/help/ru/gnome-terminal/pref.page
 share/help/ru/gnome-terminal/prob-reset.page
 share/help/ru/gnome-terminal/txt-copy-paste.page
 share/help/ru/gnome-terminal/txt-links.page
-share/help/ru/gnome-terminal/txt-save-text.page
 share/help/ru/gnome-terminal/txt-search.page
 share/help/ru/gnome-terminal/txt-select-text.page
 share/help/sv/gnome-terminal/adv-keyboard-shortcuts.page
@@ -527,7 +490,6 @@ share/help/sv/gnome-terminal/overview.page
 share/help/sv/gnome-terminal/pref-bell.page
 share/help/sv/gnome-terminal/pref-custom-command.page
 share/help/sv/gnome-terminal/pref-custom-exit.page
-share/help/sv/gnome-terminal/pref-encoding.page
 share/help/sv/gnome-terminal/pref-keyboard-access.page
 share/help/sv/gnome-terminal/pref-login-shell.page
 share/help/sv/gnome-terminal/pref-menubar.page
@@ -541,9 +503,10 @@ share/help/sv/gnome-terminal/pref.page
 share/help/sv/gnome-terminal/prob-reset.page
 share/help/sv/gnome-terminal/txt-copy-paste.page
 share/help/sv/gnome-terminal/txt-links.page
-share/help/sv/gnome-terminal/txt-save-text.page
 share/help/sv/gnome-terminal/txt-search.page
 share/help/sv/gnome-terminal/txt-select-text.page
+share/icons/hicolor/scalable/apps/org.gnome.Terminal.svg
+share/icons/hicolor/symbolic/apps/org.gnome.Terminal-symbolic.svg
 share/locale/am/LC_MESSAGES/gnome-terminal.mo
 share/locale/an/LC_MESSAGES/gnome-terminal.mo
 share/locale/ar/LC_MESSAGES/gnome-terminal.mo
@@ -599,6 +562,7 @@ share/locale/lt/LC_MESSAGES/gnome-terminal.mo
 share/locale/lv/LC_MESSAGES/gnome-terminal.mo
 share/locale/mai/LC_MESSAGES/gnome-terminal.mo
 share/locale/mg/LC_MESSAGES/gnome-terminal.mo
+share/locale/mjw/LC_MESSAGES/gnome-terminal.mo
 share/locale/mk/LC_MESSAGES/gnome-terminal.mo
 share/locale/ml/LC_MESSAGES/gnome-terminal.mo
 share/locale/mn/LC_MESSAGES/gnome-terminal.mo
@@ -643,9 +607,16 @@ share/locale/zh_TW/LC_MESSAGES/gnome-terminal.mo
 share/metainfo/org.gnome.Terminal.appdata.xml
 @dir share/help/ca/gnome-terminal/figures
 @dir share/help/cs/gnome-terminal/figures
+@dir share/help/de/gnome-terminal/figures
+@dir share/help/el/gnome-terminal/figures
 @dir share/help/es/gnome-terminal/figures
 @dir share/help/fi/gnome-terminal/figures
 @dir share/help/fr/gnome-terminal/figures
 @dir share/help/gl/gnome-terminal/figures
+@dir share/help/hu/gnome-terminal/figures
+@dir share/help/ko/gnome-terminal/figures
+@dir share/help/pl/gnome-terminal/figures
+@dir share/help/pt_BR/gnome-terminal/figures
 @dir share/help/ro/gnome-terminal/figures
+@dir share/help/ru/gnome-terminal/figures
 @dir share/help/sv/gnome-terminal/figures
