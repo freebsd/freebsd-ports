@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	apollo_upload_server
-PORTVERSION=	2.0.0.beta.3
-PORTREVISION=	3
+PORTVERSION=	2.0.3
+PORTREVISION=	0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -13,14 +13,12 @@ COMMENT=	Apollo-upload-server middleware for rails
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-graphql>=1.7:devel/rubygem-graphql \
-		rubygem-rails60>=5.0:www/rubygem-rails60
+RUN_DEPENDS=	rubygem-graphql>=1.8:devel/rubygem-graphql \
+		rubygem-rails60>=4.2:www/rubygem-rails60
 
 USES=		gem
 USE_RUBY=	yes
 
 NO_ARCH=	yes
-
-PLIST_FILES=	bin/console bin/setup
 
 .include <bsd.port.mk>
