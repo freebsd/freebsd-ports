@@ -6744,6 +6744,7 @@
     SUBDIR += urjtag
     SUBDIR += utf8cpp
     SUBDIR += uthash
+    SUBDIR += util-linux
     SUBDIR += valgrind
     SUBDIR += valgrind-devel
     SUBDIR += varconf

@@ -1,0 +1,19 @@
+--- Makefile.am.orig	2020-07-23 09:26:04 UTC
++++ Makefile.am
+@@ -65,7 +65,7 @@ CHECK_LOCALS =
+ EXTRA_DIST =
+ CLEANFILES =
+ 
+-SUBDIRS = po
++SUBDIRS = # po
+ 
+ RCS_FIND_IGNORE = \( -name SCCS -o -name BitKeeper -o -name .svn -o \
+ 		-name CVS -o -name .pc -o -name .hg -o -name .git \) -prune -o
+@@ -76,7 +76,6 @@ EXTRA_DIST += \
+ 	.version \
+ 	autogen.sh \
+ 	Documentation \
+-	po/update-potfiles \
+ 	README.licensing
+ 
+ include tools/Makemodule.am
