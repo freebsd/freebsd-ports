@@ -30,8 +30,9 @@ LIBAO_LIB_DEPENDS=	libao.so:audio/libao
 LIBAO_USES=	localbase:ldflags
 
 MAKE_ENV+=	PREFIX=${LOCALBASE} ${MAKE_ENV_${ARCH}}
-MAKE_ENV_powerpc64=	BYTE_ORDER=2
 MAKE_ENV_powerpc=	BYTE_ORDER=2
+MAKE_ENV_powerpc64=	BYTE_ORDER=2
+MAKE_ENV_powerpc64le=	BYTE_ORDER=1
 MAKE_ENV_powerpcspe=	BYTE_ORDER=2
 
 PLIST_FILES=	bin/vgmplay bin/vgm2pcm bin/vgm2wav man/man1/vgmplay.1.gz ${EXAMPLESDIR}/vgmplay.ini
