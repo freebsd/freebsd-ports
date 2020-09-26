@@ -1,4 +1,4 @@
---- ruby/Gemfile.orig	2020-08-21 11:51:41 UTC
+--- ruby/Gemfile.orig	2020-09-21 16:21:08 UTC
 +++ ruby/Gemfile
 @@ -3,14 +3,14 @@ source 'https://rubygems.org'
  # Require bundler >= 1.16.5 to avoid this bug: https://github.com/bundler/bundler/issues/6537
@@ -14,8 +14,8 @@
  gem 'gitlab-gollum-rugged_adapter', '~> 0.4.4.2', require: false
 -gem 'grpc', '~> 1.30.2'
 +gem 'grpc', '~> 1.24.0'
- gem 'sentry-raven', '~> 2.9.0', require: false
- gem 'faraday', '~> 0.12'
+ gem 'sentry-raven', '~> 3.0', require: false
+ gem 'faraday', '~> 1.0'
  gem 'rbtrace', require: false
 @@ -22,21 +22,5 @@ gem 'gitlab-labkit', '~> 0.12.0'
  # This version needs to be in sync with GitLab CE/EE

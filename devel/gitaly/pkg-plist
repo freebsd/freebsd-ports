@@ -6,6 +6,7 @@
 %%DATADIR%%/ruby/.rubocop_todo.yml
 %%DATADIR%%/ruby/git-hooks/post-receive
 %%DATADIR%%/ruby/git-hooks/pre-receive
+%%DATADIR%%/ruby/git-hooks/reference-transaction
 %%DATADIR%%/ruby/git-hooks/update
 %%DATADIR%%/ruby/gitlab-shell/.codeclimate.yml
 %%DATADIR%%/ruby/gitlab-shell/.gitlab-ci.yml
@@ -238,6 +239,7 @@
 @(,,555) %%DATADIR%%/bin/gitaly
 @(,,555) %%DATADIR%%/bin/gitaly-blackbox
 @(,,555) %%DATADIR%%/bin/gitaly-debug
+@(,,555) %%DATADIR%%/bin/gitaly-git2go
 @(,,555) %%DATADIR%%/bin/gitaly-hooks
 @(,,555) %%DATADIR%%/bin/gitaly-ssh
 @(,,555) %%DATADIR%%/bin/gitaly-wrapper

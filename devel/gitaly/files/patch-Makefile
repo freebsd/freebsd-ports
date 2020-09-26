@@ -1,7 +1,7 @@
---- Makefile.orig	2020-08-21 11:51:41 UTC
+--- Makefile.orig	2020-09-21 16:21:08 UTC
 +++ Makefile
-@@ -44,7 +44,7 @@ PROTOC_GEN_GITALY := ${BUILD_DIR}/bin/protoc-gen-gital
- GO_JUNIT_REPORT   := ${BUILD_DIR}/bin/go-junit-report
+@@ -46,7 +46,7 @@ GO_JUNIT_REPORT   := ${BUILD_DIR}/bin/go-junit-report
+ GOCOVER_COBERTURA := ${BUILD_DIR}/bin/gocover-cobertura
  
  # Build information
 -BUNDLE_FLAGS    ?= $(shell test -f ${SOURCE_DIR}/../.gdk-install-root && echo --no-deployment || echo --deployment)
@@ -9,7 +9,36 @@
  GITALY_PACKAGE  := gitlab.com/gitlab-org/gitaly
  BUILD_TIME      := $(shell date +"%Y%m%d.%H%M%S")
  GITALY_VERSION  := $(shell git describe --match v* 2>/dev/null | sed 's/^v//' || cat ${SOURCE_DIR}/VERSION 2>/dev/null || echo unknown)
-@@ -316,8 +316,7 @@ build-git:
+@@ -147,7 +147,10 @@ export GOPROXY                   ?= https://proxy.gola
+ export PATH                      := ${BUILD_DIR}/bin:${PATH}
+ export PKG_CONFIG_PATH           := ${LIBGIT2_INSTALL_DIR}/lib/pkgconfig
+ export GITALY_TESTING_GIT_BINARY ?= ${GIT_INSTALL_DIR}/bin/git
++# Whiteliste the linker flag -D_THREAD_SAFE as libgit2 is compiled with it
++export CGO_LDFLAGS_ALLOW=-D_THREAD_SAFE
+ 
++
+ .NOTPARALLEL:
+ 
+ .PHONY: all
+@@ -155,7 +158,7 @@ all: INSTALL_DEST_DIR = ${SOURCE_DIR}
+ all: install
+ 
+ .PHONY: build
+-build: ${SOURCE_DIR}/.ruby-bundle libgit2
++build: ${SOURCE_DIR}/.ruby-bundle
+ 	go install ${GO_LDFLAGS} -tags "${GO_BUILD_TAGS}" $(addprefix ${GITALY_PACKAGE}/cmd/, $(call find_commands))
+ 
+ .PHONY: install
+@@ -193,7 +196,7 @@ assemble-ruby:
+ .PHONY: binaries
+ binaries: assemble
+ 	${Q}if [ ${ARCH} != 'x86_64' ]; then echo Incorrect architecture for build: ${ARCH}; exit 1; fi
+-	${Q}cd ${ASSEMBLY_ROOT} && sha256sum bin/* | tee checksums.sha256.txt
++	${Q}cd ${ASSEMBLY_ROOT} && sha256 bin/* | tee checksums.sha256.txt
+ 
+ .PHONY: prepare-tests
+ prepare-tests: git ${GITLAB_SHELL_DIR}/config.yml ${TEST_REPO} ${TEST_REPO_GIT} ${SOURCE_DIR}/.ruby-bundle
+@@ -349,8 +352,7 @@ libgit2: ${LIBGIT2_INSTALL_DIR}/lib/libgit2.a
  # step. Both Omnibus and CNG assume it is in the Gitaly root, not in
  # _build. Hence the '../' in front.
  ${SOURCE_DIR}/.ruby-bundle: ${GITALY_RUBY_DIR}/Gemfile.lock ${GITALY_RUBY_DIR}/Gemfile
@@ -19,3 +48,24 @@
  	${Q}touch $@
  
  ${SOURCE_DIR}/NOTICE: ${BUILD_DIR}/NOTICE
+@@ -380,17 +382,17 @@ ${PROTOC}: ${BUILD_DIR}/protoc.zip | ${BUILD_DIR}
+ # jobs of a CI pipeline, we start depending on its hash. Like this, we only
+ # rebuild if the Makefile actually has changed contents.
+ ${BUILD_DIR}/Makefile.sha256: Makefile | ${BUILD_DIR}
+-	${Q}sha256sum -c $@ >/dev/null 2>&1 || >$@ sha256sum Makefile
++	${Q}sha256 -c $@ >/dev/null 2>&1 || >$@ sha256 Makefile
+ 
+ ${BUILD_DIR}/protoc.zip: ${BUILD_DIR}/Makefile.sha256
+ 	${Q}if [ -z "${PROTOC_URL}" ]; then echo "Cannot generate protos on unsupported platform ${OS}" && exit 1; fi
+ 	curl -o $@.tmp --silent --show-error -L ${PROTOC_URL}
+-	${Q}printf '${PROTOC_HASH}  $@.tmp' | sha256sum -c -
++	${Q}printf '${PROTOC_HASH}  $@.tmp' | sha256 -c -
+ 	${Q}mv $@.tmp $@
+ 
+ ${BUILD_DIR}/git_full_bins.tgz: ${BUILD_DIR}/Makefile.sha256
+ 	curl -o $@.tmp --silent --show-error -L ${GIT_BINARIES_URL}
+-	${Q}printf '${GIT_BINARIES_HASH}  $@.tmp' | sha256sum -c -
++	${Q}printf '${GIT_BINARIES_HASH}  $@.tmp' | sha256 -c -
+ 	${Q}mv $@.tmp $@
+ 
+ ${LIBGIT2_INSTALL_DIR}/lib/libgit2.a: ${BUILD_DIR}/Makefile.sha256

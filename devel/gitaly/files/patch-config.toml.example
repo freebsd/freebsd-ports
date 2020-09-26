@@ -1,4 +1,4 @@
---- config.toml.example.orig	2020-06-19 15:55:37 UTC
+--- config.toml.example.orig	2020-09-21 16:21:08 UTC
 +++ config.toml.example
 @@ -2,10 +2,10 @@
  # Documentation lives at https://docs.gitlab.com/ee/administration/gitaly/ and
@@ -64,6 +64,6 @@
 -url = "http+unix://%2Fhome%2Fgit%2Fgitlab%2Ftmp%2Fsockets%2Fgitlab-workhorse.socket"
 +secret_file = "%%PREFIX%%/share/gitlab-shell/.gitlab_shell_secret"
 +url = "http+unix://%2Fusr%2Flocal%2Fwww%2Fgitlab-ce%2Ftmp%2Fsockets%2Fgitlab-workhorse.socket"
- 
- [gitlab.http-settings]
- # read_timeout = 300
+ # Only needed if a UNIX socket is used in `url` and GitLab is configured to
+ # use a relative path (e.g. /gitlab).
+ # relative_url_root = '/'
