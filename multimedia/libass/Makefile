@@ -1,8 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	libass
-PORTVERSION=	0.14.0
+DISTVERSION=	0.14.0
 CATEGORIES=	multimedia devel
+MASTER_SITES=	https://github.com/libass/libass/releases/download/${DISTVERSION}/
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Portable ASS/SSA subtitle renderer
@@ -14,9 +15,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libfribidi.so:converters/fribidi \
 		libfontconfig.so:x11-fonts/fontconfig
 
-USE_GITHUB=	yes
-
-USES=		autoreconf iconv libtool pathfix pkgconfig
+USES=		autoreconf iconv libtool pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
