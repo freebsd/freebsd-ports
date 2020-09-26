@@ -1,3 +1,3 @@
-TIMESTAMP = 1598654382
-SHA256 (harfbuzz-harfbuzz-2.7.2_GH0.tar.gz) = 8ec112ee108642477478b75fc7906422abed404d7530e47ba0a4875f553f1b59
-SIZE (harfbuzz-harfbuzz-2.7.2_GH0.tar.gz) = 16605557
+TIMESTAMP = 1600671280
+SHA256 (harfbuzz-2.7.2.tar.xz) = b8c048d7c2964a12f2c80deb6634dfc836b603dd12bf0d0a3df1627698e220ce
+SIZE (harfbuzz-2.7.2.tar.xz) = 9290416
