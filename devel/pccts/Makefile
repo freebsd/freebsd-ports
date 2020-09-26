@@ -12,6 +12,9 @@ COMMENT=	Purdue Compiler Construction Tool Set
 
 CONFLICTS=	antlr*
 
+DEPRECATED=	abandonedware, superseded by devel/antlr
+EXPIRATION_DATE=2020-10-31
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		zip
