@@ -3,7 +3,7 @@
 
 PORTNAME=	tuxmath
 PORTVERSION=	2.0.3
-PORTREVISION=	6
+PORTREVISION=	7
 PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	DEBIAN_POOL \
@@ -17,11 +17,11 @@ COMMENT=	Educational arcade game starring Tux
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/doc/COPYING_GPL3
 
-WRKSRC=		${WRKDIR}/${PORTNAME}_w_fonts-${PORTVERSION}
+LIB_DEPENDS=	libpng16.so:graphics/png
 
+USES=		gmake gnome iconv localbase perl5 pkgconfig sdl
 USE_GNOME=	libxml2
 USE_SDL=	image mixer net pango sdl
-USES=		gmake gnome iconv localbase perl5 pkgconfig sdl
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	T4K_COMMON_CFLAGS="-I${T4K_WRKSRC}/src" \
 		T4K_COMMON_LIBS="${T4K_WRKSRC}/src/.libs/libt4k_common.a" \
@@ -30,6 +30,8 @@ CONFIGURE_ENV=	T4K_COMMON_CFLAGS="-I${T4K_WRKSRC}/src" \
 CPPFLAGS+=	$$(pkg-config --cflags SDL_Pango libpng) \
 		-DHAVE_ALPHASORT -DHAVE_SCANDIR -DHAVE_FSYNC -DICONV_CONST=""
 LDFLAGS+=	$$(pkg-config --libs SDL_Pango libpng) ${ICONV_LIB}
+
+WRKSRC=		${WRKDIR}/${PORTNAME}_w_fonts-${PORTVERSION}
 
 T4K_NAME=	t4k_common
 T4K_VERSION=	0.1.1
@@ -40,12 +42,12 @@ OPTIONS_DEFINE=	NLS SVG DOCS
 OPTIONS_DEFAULT=	SVG
 OPTIONS_SUB=	yes
 
-NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=	gettext
+NLS_CONFIGURE_ENABLE=	nls
 NLS_LDFLAGS=	-lintl
 
-SVG_CONFIGURE_WITH=	rsvg
 SVG_USE=	GNOME=librsvg2
+SVG_CONFIGURE_WITH=	rsvg
 
 post-extract:
 	@${LN} -sf ${T4K_WRKSRC} ${WRKDIR}/${T4K_NAME}
