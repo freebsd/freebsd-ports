@@ -6,7 +6,7 @@ DISTVERSION=	5.30.3
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.indexdata.dk/pub/yaz/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	neel@neelc.org
 COMMENT=	Z39.50/SR client and API library
 
 LICENSE=	BSD3CLAUSE
