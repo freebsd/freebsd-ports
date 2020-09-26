@@ -3,7 +3,7 @@
 
 PORTNAME=	netwalk
 PORTVERSION=	0.4.11
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
@@ -12,26 +12,25 @@ COMMENT=	Game where the object is to connect every terminal to the main server
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USES=		gmake gnome iconv sdl xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	blynn
 GH_TAGNAME=	cb6b089
-
-USES=		gmake gnome iconv sdl xorg
+INSTALLS_ICONS=	yes
 USE_SDL=	sdl ttf
 USE_XORG=	x11 xau xdmcp
+
 MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
 ALL_TARGET=
+
+DESKTOP_ENTRIES="NetWalk" "" "${PORTNAME}" "${PORTNAME}" "Game;LogicGame;" ""
 
 PORTDOCS=	README
 OPTIONS_DEFINE=	DOCS
 
-INSTALLS_ICONS=	yes
 ICON_SIZES=	32x32 48x48 64x64 96x96 128x128
 
-DESKTOP_ENTRIES="NetWalk" "" "${PORTNAME}" \
-		"${PORTNAME}" "Game;LogicGame;" ""
-
-post-patch:
+pre-build:
 	@${REINPLACE_CMD} -e \
 	's|CC = gcc|CC = ${CC}|; \
 	 s|CFLAGS=-Wall -O2 -fomit-frame-pointer|CFLAGS+= -fomit-frame-pointer|; \

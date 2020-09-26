@@ -1,6 +1,6 @@
---- ./Makefile.orig	2013-09-24 07:25:27.000000000 +0200
-+++ ./Makefile	2014-05-12 21:10:05.000000000 +0200
-@@ -24,7 +24,7 @@
+--- Makefile.orig	2013-09-24 05:25:27 UTC
++++ Makefile
+@@ -24,7 +24,7 @@ sharedir.h : ./Makefile
  ifeq ("$(OS)", "win32")
  	echo '#define NETWALK_SHARE_DIR "."' > sharedir.h
  else
