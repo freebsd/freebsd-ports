@@ -1,0 +1,4 @@
+Libcomps is alternative for yum.comps library. It's written in pure C as library
+and there's bindings for python.
+
+WWW: https://github.com/rpm-software-management/libcomps

@@ -207,6 +207,7 @@
     SUBDIR += lesspipe
     SUBDIR += lf
     SUBDIR += libad9361-iio
+    SUBDIR += libcomps
     SUBDIR += libeatmydata
     SUBDIR += libemos
     SUBDIR += libiio
