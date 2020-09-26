@@ -573,6 +573,7 @@
     SUBDIR += libcdio-paranoia
     SUBDIR += libchk
     SUBDIR += libcpuid
+    SUBDIR += libdnf
     SUBDIR += libfvde
     SUBDIR += libgksu
     SUBDIR += libieee1284

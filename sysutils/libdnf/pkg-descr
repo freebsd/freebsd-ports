@@ -1,0 +1,5 @@
+libdnf provides a high level package-manager. It's core library of dnf,
+PackageKit and rpm-ostree. It's replacement for deprecated hawkey library which
+it contains inside and uses librepo under the hood.
+
+WWW: https://github.com/rpm-software-management/libdnf
