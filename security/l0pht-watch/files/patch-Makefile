@@ -1,5 +1,5 @@
---- Makefile.orig	Thu Sep 23 10:18:18 1999
-+++ Makefile	Tue Apr 25 00:30:11 2000
+--- Makefile.orig	1999-09-23 17:18:18 UTC
++++ Makefile
 @@ -9,12 +9,13 @@
  # debugging
  # DFLAGS = -DTEST -DDEBUG
@@ -16,7 +16,7 @@
  LD = $(CC) -s   # linker; defaults to stripped executables
  o = o           # object extension
  CKTEMP_OBJS=check_tmp.o daemon.o list_utils.o usage.o
-@@ -60,7 +61,8 @@
+@@ -60,7 +61,8 @@ solaris25:
  
  OpenBSD:
  	make -e $(ALL) $(MFLAGS) \

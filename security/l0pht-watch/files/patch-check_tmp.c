@@ -1,21 +1,39 @@
---- check_tmp.c.orig	Fri Sep 24 15:33:35 1999
-+++ check_tmp.c	Tue Jul 18 16:18:59 2000
-@@ -37,7 +37,13 @@
+--- check_tmp.c.orig	1999-09-24 20:33:35 UTC
++++ check_tmp.c
+@@ -2,6 +2,8 @@
+    directories. Ostensibly to start hammering on how bad people are on
+    tmp droppings following links, etc. etc. .mudge 8.20.98 */
+ 
++#include <string.h>
++
+ #include "check_tmp.h"
+ 
+ void usage(char *progname);
+@@ -14,6 +16,7 @@ int checkdir(char *);
+ void walklist(struct listStruct *);
+ #endif
+ int become_daemon(void);
++int syslogflag;
+ 
+ int main(int argc, char **argv){
+ 
+@@ -37,8 +40,14 @@ int main(int argc, char **argv){
    char error_buffer[256];
  #endif
  #endif
 -  
-+
+ 
 +#if (__FreeBSD_version >= 500011) || (__FreeBSD_version >= 410000 && __FreeBSD_version < 500000)
 +  struct kevent ev;
 +  int fd;
 +  struct timespec ts = { 0, 0 };
 +  int kq = -1;
 +#endif
- 
++
    struct listStruct *list = NULL;
  
-@@ -178,6 +184,21 @@
+   syslogflag=0; /* initialize */
+@@ -178,6 +187,21 @@ int main(int argc, char **argv){
      exit(1);
    }
  
@@ -37,7 +55,7 @@
    /* steup the first element of the list */
    while ((dp = readdir(dirp)) != NULL){
      if (!list) /* first time */
-@@ -266,6 +287,10 @@
+@@ -266,6 +290,10 @@ int main(int argc, char **argv){
    rewinddir(dirp);
  
    while (1){
@@ -48,7 +66,7 @@
      while ((dp = readdir(dirp)) != NULL){
        if (!(checknode(list, watchdir, dp->d_name))){
          if (replacewatchflag){
-@@ -352,11 +377,22 @@
+@@ -352,11 +380,22 @@ int main(int argc, char **argv){
        /* closedir(dirp); */
        }
      }

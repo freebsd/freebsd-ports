@@ -1,6 +1,12 @@
---- list_utils.c.orig	Thu Dec 24 00:00:44 1998
-+++ list_utils.c	Sun Aug 13 23:55:23 2000
-@@ -102,9 +102,11 @@
+--- list_utils.c.orig	1998-12-24 05:00:44 UTC
++++ list_utils.c
+@@ -1,3 +1,5 @@
++#include <string.h>
++
+ #include "check_tmp.h"
+ 
+ static void printnode(struct listStruct *, int);
+@@ -102,9 +104,11 @@ printnode(struct listStruct *list, int action){
    char filemodes[11];
    char outputStr[(MAXNAMLEN * 2) + 256];
    char linkbuf[MAXNAMLEN + 1];
@@ -12,7 +18,7 @@
  
    switch(action){
      case ADDITION:
-@@ -143,11 +145,16 @@
+@@ -143,11 +147,16 @@ printnode(struct listStruct *list, int action){
  
    getfilemodes(&list->statbuf, filemodes);
  
@@ -31,7 +37,7 @@
  
    if (S_ISLNK(list->statbuf.st_mode) ){
      ret = readlink(list->filename, linkbuf, sizeof(linkbuf));
-@@ -168,7 +175,7 @@
+@@ -168,7 +177,7 @@ printnode(struct listStruct *list, int action){
  
    
  

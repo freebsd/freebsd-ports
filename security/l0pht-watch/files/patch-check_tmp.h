@@ -1,5 +1,5 @@
---- check_tmp.h.orig	Thu Dec 24 10:40:13 1998
-+++ check_tmp.h	Sun Aug 13 23:54:21 2000
+--- check_tmp.h.orig	1998-12-24 15:40:13 UTC
++++ check_tmp.h
 @@ -1,16 +1,23 @@
  #ifndef __CHECK_TMP_H
  #define __CHECK_TMP_H
@@ -29,3 +29,12 @@
  
  #if defined (REGEXPR_3G)
  #include <regexpr.h>
+@@ -34,7 +41,7 @@ struct listStruct {
+   struct listStruct *next;
+ };  
+ 
+-int syslogflag; /* grody after thought */
++extern int syslogflag; /* grody after thought */
+ 
+ /* things to shut lint up */
+ char *strrchr(const char *s, int c);
