@@ -2,6 +2,7 @@
 
 PORTNAME=	libsolv
 DISTVERSION=	0.7.15
+PORTREVISION=	1
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,6 +16,8 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	openSUSE
+
+CMAKE_ON=	ENABLE_COMPLEX_DEPS
 
 OPTIONS_DEFINE=			RPMDB RPMMD RPMPKG
 OPTIONS_DEFAULT=		RPMDB RPMMD RPMPKG
@@ -35,7 +38,7 @@ RPMMD_LIB_DEPENDS=		libexpat.so:textproc/expat2
 RPMPKG_DESC=			Build with rpm package support
 RPMPKG_CMAKE_BOOL=		ENABLE_RPMPKG
 
-# comnpression options
+# compression options
 
 COMPRESSION_DESC=		Enable compression:
 
@@ -50,5 +53,11 @@ ZSTD_LIB_DEPENDS=		libzstd.so:archivers/zstd
 ZCHUNK_DESC=			Zchunk support
 ZCHUNK_CMAKE_BOOL=		ENABLE_ZCHUNK_COMPRESSION WITH_SYSTEM_ZCHUNK
 ZCHUNK_LIB_DEPENDS=		libzck.so:archivers/zchunk
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MRPMDB} || ${PORT_OPTIONS:MRPMMD} || ${PORT_OPTIONS:MRPMPKG}
+PLIST_FILES=	include/solv/pool_parserpmrichdep.h
+.endif
 
 .include <bsd.port.mk>
