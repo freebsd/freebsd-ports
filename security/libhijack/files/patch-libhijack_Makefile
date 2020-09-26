@@ -1,0 +1,10 @@
+--- libhijack/Makefile.orig	2018-12-20 16:47:42 UTC
++++ libhijack/Makefile
+@@ -6,7 +6,6 @@ SHLIB=		hijack
+ SHLIB_MAJOR=	2
+ SRCS=	\
+ 	elf.c \
+-	elf.c \
+ 	error.c \
+ 	func.c \
+ 	libhijack.c \
