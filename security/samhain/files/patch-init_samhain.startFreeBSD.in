@@ -1,0 +1,11 @@
+--- init/samhain.startFreeBSD.in.orig	2015-11-01 00:03:11 UTC
++++ init/samhain.startFreeBSD.in
+@@ -37,7 +37,7 @@
+ load_rc_config "$name"
+ 
+ if ! is_set ${rcvar}; then 
+-    eval "${rcvar}=YES"
++    eval "${rcvar}=NO"
+ fi
+ 
+ run_rc_command "$1"

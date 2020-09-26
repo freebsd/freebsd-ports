@@ -3,6 +3,7 @@
 
 PORTNAME=	samhain
 PORTVERSION=	4.4.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://la-samhna.de/archive/
 DISTNAME=	samhain_signed-${PORTVERSION}
@@ -169,12 +170,12 @@ post-extract:
 
 post-install:
 .if !defined(WITH_SERVER)
-	@${CP} ${WRKSRC}/init/samhain.startFreeBSD ${STAGEDIR}${PREFIX}/etc/rc.d/samhain.sh
+	${INSTALL_SCRIPT} ${WRKSRC}/init/samhain.startFreeBSD ${STAGEDIR}${PREFIX}/etc/rc.d/samhain
 	@${CP} ${WRKSRC}/samhainrc ${STAGEDIR}${PREFIX}/etc/samhainrc.sample
 	@${CHGRP} wheel ${STAGEDIR}${PREFIX}/etc/samhainrc.sample
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/samhain
 .else
-	@${CP} ${WRKSRC}/init/samhain.startFreeBSD ${STAGEDIR}${PREFIX}/etc/rc.d/yule.sh
+	${INSTALL_SCRIPT} ${WRKSRC}/init/samhain.startFreeBSD ${STAGEDIR}${PREFIX}/etc/rc.d/yule
 	@${CP} ${WRKSRC}/yulerc ${STAGEDIR}${PREFIX}/etc/yulerc.sample
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/yule
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/yulectl

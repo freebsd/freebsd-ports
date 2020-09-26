@@ -1,3 +1,4 @@
+@dir /var/lib
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
 %%PORTDOCS%%%%DOCSDIR%%/FAQ.html
 %%PORTDOCS%%%%DOCSDIR%%/HOWTO-client+server-troubleshooting.html
@@ -10,10 +11,9 @@
 %%PORTDOCS%%%%DOCSDIR%%/sh_mounts.txt
 %%PORTDOCS%%%%DOCSDIR%%/sh_userfiles.txt
 %%PORTDOCS%%@dir %%DOCSDIR%%
-%%SAMHAIN%%@dir /var/lib
 %%SAMHAIN%%@dir /var/lib/samhain
 %%SAMHAIN%%@sample etc/samhainrc.sample
-%%SAMHAIN%%etc/rc.d/samhain.sh
+%%SAMHAIN%%etc/rc.d/samhain
 %%SAMHAIN%%man/man5/samhainrc.5.gz
 %%SAMHAIN%%man/man8/samhain.8.gz
 %%SAMHAIN%%sbin/samhain
@@ -22,8 +22,8 @@
 %%YULE%%@dir /var/lib/yule
 %%YULE%%@dir /var/log/yule
 %%YULE%%@sample etc/yulerc.sample
-%%YULE%%@unexec echo "To delete the yule user permanently, use 'pw userdel yule'"
-%%YULE%%etc/rc.d/yule.sh
+%%YULE%%@postunexec echo "To delete the yule user permanently, use 'pw userdel yule'"
+%%YULE%%etc/rc.d/yule
 %%YULE%%man/man5/yulerc.5.gz
 %%YULE%%man/man8/yule.8.gz
 %%YULE%%sbin/yule
