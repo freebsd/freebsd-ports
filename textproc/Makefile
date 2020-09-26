@@ -1357,6 +1357,7 @@
     SUBDIR += py-regex
     SUBDIR += py-reno
     SUBDIR += py-reverend
+    SUBDIR += py-rich
     SUBDIR += py-rnc2rng
     SUBDIR += py-rss2gen
     SUBDIR += py-rst2html5
