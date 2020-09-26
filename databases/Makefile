@@ -186,6 +186,7 @@
     SUBDIR += mdbtools
     SUBDIR += mdcached
     SUBDIR += memcached
+    SUBDIR += mongodb-tools
     SUBDIR += mongodb36
     SUBDIR += mongodb36-tools
     SUBDIR += mongodb40
