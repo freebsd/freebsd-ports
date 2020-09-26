@@ -2,17 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	evince
-PORTVERSION=	3.28.5
-PORTREVISION=	18
+PORTVERSION=	3.36.7
 CATEGORIES=	graphics print gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT?=	GNOME 3 multi-format document viewer
+COMMENT=	GNOME 3 multi-format document viewer
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+FLAVOR?=	full
+FLAVORS=	full lite
 
 BUILD_DEPENDS=	itstool:textproc/itstool \
 		adwaita-icon-theme>=0:x11-themes/adwaita-icon-theme \
@@ -27,28 +29,30 @@ RUN_DEPENDS=	adwaita-icon-theme>=0:x11-themes/adwaita-icon-theme \
 PORTSCOUT=	limitw:1,even
 SLAVEPORT?=	no
 
-USES=		compiler:c++11-lib desktop-file-utils gettext gmake \
-		gnome libarchive libtool localbase pathfix pkgconfig tar:xz xorg
-USE_GNOME=	cairo gtk30 intlhack
+USES=		compiler:c++11-lib desktop-file-utils gettext \
+		gnome libarchive localbase meson pkgconfig tar:xz xorg
+USE_GNOME=	cairo gtk30
 USE_GSTREAMER1=	yes
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
 USE_XORG=	ice
 INSTALLS_ICONS=	yes
-CONFIGURE_ARGS=	--enable-compile-warnings=minimum \
-		--enable-ps \
-		--with-systemduserunitdir=no
-INSTALL_TARGET=	install-strip
+MESON_ARGS=	-Dps=enabled \
+		-Dsystemduserunitdir=no \
+		-Dgtk_doc=false
 
-.if ${SLAVEPORT} == lite
-CONFIGURE_ARGS+=--disable-introspection \
-		--disable-libgnome-desktop \
-		--disable-thumbnailer \
-		--disable-previewer
+.if ${FLAVOR} == lite
+MESON_ARGS+=	-Dintrospection=false \
+		-Dthumbnailer=false \
+		-Dpreviewer=false \
+		-Dthumbnail_cache=disabled
 USE_GNOME+=	libxml2
+OPTIONS_EXCLUDE=	NAUTILUS DBUS
+PLIST=		${.CURDIR}/pkg-plist-lite
+PKGNAMESUFFIX=	-lite
+COMMENT+=	without GNOME dependencies
 .else
 USE_GNOME+=	introspection:build
-CONFIGURE_ARGS+=	--enable-introspection
+MESON_ARGS+=	-Dintrospection=true
 .endif
 
 GLIB_SCHEMAS=	org.gnome.Evince.gschema.xml
@@ -56,43 +60,42 @@ GLIB_SCHEMAS=	org.gnome.Evince.gschema.xml
 PLIST_SUB=	VERSION=3.0
 
 OPTIONS_SUB=	yes
-OPTIONS_DEFINE=	COMICS DBUS DJVU DVI KEYRING NAUTILUS T1LIB XPS
-OPTIONS_DEFAULT=COMICS DBUS DJVU KEYRING NAUTILUS XPS
+OPTIONS_DEFINE=	COMICS DBUS DJVU DVI KEYRING NAUTILUS T1LIB XPS SPELL
+OPTIONS_DEFAULT=COMICS DBUS DJVU KEYRING NAUTILUS XPS SPELL
 
 COMICS_DESC=			Comic book archives support
-COMICS_CONFIGURE_ENABLE=	comics
+COMICS_MESON_ENABLED=	comics
 
 DJVU_DESC=		DJVU support
 DJVU_LIB_DEPENDS=	libdjvulibre.so:graphics/djvulibre
-DJVU_CONFIGURE_ENABLE=	djvu
+DJVU_MESON_ENABLED=	djvu
 
-DBUS_CONFIGURE_ENABLE=	dbus
+DBUS_MESON_TRUE=	dbus
 DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
 
 DVI_DESC=		DVI viewer support
 DVI_USE=		tex=latex,kpathsea
-DVI_CONFIGURE_ENABLE=	dvi
+DVI_MESON_ENABLED=	dvi
 
-KEYRING_DESC=			Keyring support
-KEYRING_LIB_DEPENDS=		libsecret-1.so:security/libsecret
-KEYRING_CONFIGURE_WITH=		keyring
+KEYRING_DESC=		Keyring support
+KEYRING_LIB_DEPENDS=	libsecret-1.so:security/libsecret
+KEYRING_MESON_ENABLED=	keyring
 
-NAUTILUS_DESC=			Nautilus plugin
-NAUTILUS_USE=			gnome=nautilus3
-NAUTILUS_CONFIGURE_ENABLE=	nautilus
+NAUTILUS_DESC=		Nautilus plugin
+NAUTILUS_USE=		gnome=nautilus3
+NAUTILUS_MESON_TRUE=	nautilus
+
+SPELL_DESC=		spell checking support
+SPELL_MESON_ENABLED=	gspell
+SPELL_LIB_DEPENDS=	libgspell-1.so:textproc/gspell
 
 T1LIB_DESC=		Support TYPE1 fonts to DVI (Enables DVI)
 T1LIB_LIB_DEPENDS=	libt1.so:devel/t1lib
-T1LIB_CONFIGURE_ENABLE=	t1lib
+T1LIB_MESON_ENABLED=	t1lib
 T1LIB_IMPLIES=		DVI
 
 XPS_DESC=	XPS support
 XPS_LIB_DEPENDS=	libgxps.so:graphics/libgxps
-XPS_CONFIGURE_ENABLE=	xps
-
-post-patch:
-	@${REINPLACE_CMD} -e '/^DOC_MODULE_VERSION/d' \
-		${WRKSRC}/help/reference/libdocument/Makefile.in \
-		${WRKSRC}/help/reference/libview/Makefile.in
+XPS_MESON_ENABLED=	xps
 
 .include <bsd.port.mk>

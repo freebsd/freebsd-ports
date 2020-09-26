@@ -1,3 +1,3 @@
-TIMESTAMP = 1540967593
-SHA256 (gnome3/evince-3.28.5.tar.xz) = 6c79761dbd5e6100548ee3a008ebec8bca0ea45b4dc949c70ed6cd6f1ba9be16
-SIZE (gnome3/evince-3.28.5.tar.xz) = 2196432
+TIMESTAMP = 1601149302
+SHA256 (gnome/evince-3.36.7.tar.xz) = 65d61a423e3fbbe07001f65e87422dfb7d2e42b9edf0ca6a1d427af9a04b8f32
+SIZE (gnome/evince-3.36.7.tar.xz) = 2580208

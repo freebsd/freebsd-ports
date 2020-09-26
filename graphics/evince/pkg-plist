@@ -53,19 +53,12 @@ include/evince/%%VERSION%%/libview/ev-view.h
 %%COMICS%%lib/evince/4/backends/comicsdocument.evince-backend
 %%DJVU%%lib/evince/4/backends/djvudocument.evince-backend
 %%DVI%%lib/evince/4/backends/dvidocument.evince-backend
-%%COMICS%%lib/evince/4/backends/libcomicsdocument.a
 %%COMICS%%lib/evince/4/backends/libcomicsdocument.so
-%%DJVU%%lib/evince/4/backends/libdjvudocument.a
 %%DJVU%%lib/evince/4/backends/libdjvudocument.so
-%%DVI%%lib/evince/4/backends/libdvidocument.a
 %%DVI%%lib/evince/4/backends/libdvidocument.so
-lib/evince/4/backends/libpdfdocument.a
 lib/evince/4/backends/libpdfdocument.so
-lib/evince/4/backends/libpsdocument.a
 lib/evince/4/backends/libpsdocument.so
-lib/evince/4/backends/libtiffdocument.a
 lib/evince/4/backends/libtiffdocument.so
-%%XPS%%lib/evince/4/backends/libxpsdocument.a
 %%XPS%%lib/evince/4/backends/libxpsdocument.so
 lib/evince/4/backends/pdfdocument.evince-backend
 lib/evince/4/backends/psdocument.evince-backend
@@ -73,25 +66,20 @@ lib/evince/4/backends/tiffdocument.evince-backend
 %%XPS%%lib/evince/4/backends/xpsdocument.evince-backend
 lib/girepository-1.0/EvinceDocument-%%VERSION%%.typelib
 lib/girepository-1.0/EvinceView-%%VERSION%%.typelib
-lib/libevdocument3.a
 lib/libevdocument3.so
 lib/libevdocument3.so.4
 lib/libevdocument3.so.4.0.0
-lib/libevview3.a
 lib/libevview3.so
 lib/libevview3.so.3
-lib/libevview3.so.3.0.0
-lib/mozilla/plugins/libevbrowserplugin.a
-lib/mozilla/plugins/libevbrowserplugin.so
-%%NAUTILUS%%lib/nautilus/extensions-%%VERSION%%/libevince-properties-page.a
+lib/libevview3.so.%%GTK3_VERSION%%
 %%NAUTILUS%%lib/nautilus/extensions-%%VERSION%%/libevince-properties-page.so
 libdata/pkgconfig/evince-document-%%VERSION%%.pc
 libdata/pkgconfig/evince-view-%%VERSION%%.pc
-%%DBUS%%libexec/evinced
+libexec/evinced
 man/man1/evince.1.gz
 share/GConf/gsettings/evince.convert
-share/applications/evince-previewer.desktop
-share/applications/evince.desktop
+share/applications/org.gnome.Evince-previewer.desktop
+share/applications/org.gnome.Evince.desktop
 %%DBUS%%share/dbus-1/services/org.gnome.evince.Daemon.service
 %%DATADIR%%/hand-open.png
 %%DATADIR%%/icons/hicolor/16x16/actions/object-rotate-left.png
@@ -102,7 +90,6 @@ share/applications/evince.desktop
 %%DATADIR%%/icons/hicolor/16x16/actions/zoom-fit-width.png
 %%DATADIR%%/icons/hicolor/16x16/actions/zoom.png
 %%DATADIR%%/icons/hicolor/16x16/mimetypes/x-office-presentation.png
-%%DATADIR%%/icons/hicolor/22x22/actions/eye.png
 %%DATADIR%%/icons/hicolor/22x22/actions/object-rotate-left.png
 %%DATADIR%%/icons/hicolor/22x22/actions/object-rotate-right.png
 %%DATADIR%%/icons/hicolor/22x22/actions/view-page-continuous.png
@@ -130,138 +117,17 @@ share/applications/evince.desktop
 %%DATADIR%%/icons/hicolor/48x48/actions/resize-sw.png
 %%DATADIR%%/icons/hicolor/48x48/actions/view-page-continuous.png
 %%DATADIR%%/icons/hicolor/48x48/actions/view-page-facing.png
+%%DATADIR%%/icons/hicolor/scalable/actions/annotations-squiggly-symbolic.svg
+%%DATADIR%%/icons/hicolor/scalable/actions/annotations-text-symbolic.svg
+%%DATADIR%%/icons/hicolor/scalable/actions/find-unsupported-symbolic.svg
 %%DATADIR%%/icons/hicolor/scalable/actions/object-rotate-left.svg
 %%DATADIR%%/icons/hicolor/scalable/actions/object-rotate-right.svg
+%%DATADIR%%/icons/hicolor/scalable/actions/outline-symbolic.svg
+%%DATADIR%%/icons/hicolor/scalable/actions/view-sidebar-symbolic.svg
+%%DATADIR%%/icons/hicolor/scalable/actions/visible-symbolic.svg
 %%DATADIR%%/icons/hicolor/scalable/mimetypes/x-office-presentation.svg
 share/gir-1.0/EvinceDocument-%%VERSION%%.gir
 share/gir-1.0/EvinceView-%%VERSION%%.gir
-share/gtk-doc/html/evince/EvFileMonitor.html
-share/gtk-doc/html/evince/EvHistory.html
-share/gtk-doc/html/evince/EvMessageArea.html
-share/gtk-doc/html/evince/EvPageAction.html
-share/gtk-doc/html/evince/EvPageActionWidget.html
-share/gtk-doc/html/evince/EvPasswordView.html
-share/gtk-doc/html/evince/EvProgressMessageArea.html
-share/gtk-doc/html/evince/EvSidebar.html
-share/gtk-doc/html/evince/EvSidebarAttachments.html
-share/gtk-doc/html/evince/EvSidebarLayers.html
-share/gtk-doc/html/evince/EvSidebarLinks.html
-share/gtk-doc/html/evince/EvSidebarPage.html
-share/gtk-doc/html/evince/EvSidebarThumbnails.html
-share/gtk-doc/html/evince/EvWindow.html
-share/gtk-doc/html/evince/api-index-full.html
-share/gtk-doc/html/evince/evince-ev-application.html
-share/gtk-doc/html/evince/evince-ev-keyring.html
-share/gtk-doc/html/evince/evince-ev-media-player-keys.html
-share/gtk-doc/html/evince/evince-ev-metadata.html
-share/gtk-doc/html/evince/evince-ev-properties-dialog.html
-share/gtk-doc/html/evince/evince-ev-properties-fonts.html
-share/gtk-doc/html/evince/evince-ev-properties-license.html
-share/gtk-doc/html/evince/evince-ev-utils.html
-share/gtk-doc/html/evince/evince-ev-window-title.html
-share/gtk-doc/html/evince/evince-frontend.html
-share/gtk-doc/html/evince/evince.devhelp2
-share/gtk-doc/html/evince/home.png
-share/gtk-doc/html/evince/index.html
-share/gtk-doc/html/evince/left-insensitive.png
-share/gtk-doc/html/evince/left.png
-share/gtk-doc/html/evince/licence.html
-share/gtk-doc/html/evince/object-tree.html
-share/gtk-doc/html/evince/right-insensitive.png
-share/gtk-doc/html/evince/right.png
-share/gtk-doc/html/evince/style.css
-share/gtk-doc/html/evince/up-insensitive.png
-share/gtk-doc/html/evince/up.png
-share/gtk-doc/html/libevdocument/EvAnnotation.html
-share/gtk-doc/html/libevdocument/EvAsyncRenderer.html
-share/gtk-doc/html/libevdocument/EvAttachment.html
-share/gtk-doc/html/libevdocument/EvDocument.html
-share/gtk-doc/html/libevdocument/EvDocumentAnnotations.html
-share/gtk-doc/html/libevdocument/EvDocumentAttachments.html
-share/gtk-doc/html/libevdocument/EvDocumentFind.html
-share/gtk-doc/html/libevdocument/EvDocumentFonts.html
-share/gtk-doc/html/libevdocument/EvDocumentForms.html
-share/gtk-doc/html/libevdocument/EvDocumentImages.html
-share/gtk-doc/html/libevdocument/EvDocumentInfo.html
-share/gtk-doc/html/libevdocument/EvDocumentLayers.html
-share/gtk-doc/html/libevdocument/EvDocumentLinks.html
-share/gtk-doc/html/libevdocument/EvDocumentPrint.html
-share/gtk-doc/html/libevdocument/EvDocumentSecurity.html
-share/gtk-doc/html/libevdocument/EvDocumentText.html
-share/gtk-doc/html/libevdocument/EvDocumentTransition.html
-share/gtk-doc/html/libevdocument/EvFileExporter.html
-share/gtk-doc/html/libevdocument/EvFormField.html
-share/gtk-doc/html/libevdocument/EvImage.html
-share/gtk-doc/html/libevdocument/EvLayer.html
-share/gtk-doc/html/libevdocument/EvPage.html
-share/gtk-doc/html/libevdocument/EvRenderContext.html
-share/gtk-doc/html/libevdocument/EvSelection.html
-share/gtk-doc/html/libevdocument/api-index-3-10.html
-share/gtk-doc/html/libevdocument/api-index-3-12.html
-share/gtk-doc/html/libevdocument/api-index-3-14.html
-share/gtk-doc/html/libevdocument/api-index-3-18.html
-share/gtk-doc/html/libevdocument/api-index-3-4.html
-share/gtk-doc/html/libevdocument/api-index-3-6.html
-share/gtk-doc/html/libevdocument/api-index-3-8.html
-share/gtk-doc/html/libevdocument/api-index-deprecated.html
-share/gtk-doc/html/libevdocument/api-index-full.html
-share/gtk-doc/html/libevdocument/document-data.html
-share/gtk-doc/html/libevdocument/document-helpers.html
-share/gtk-doc/html/libevdocument/document-interfaces.html
-share/gtk-doc/html/libevdocument/home.png
-share/gtk-doc/html/libevdocument/index.html
-share/gtk-doc/html/libevdocument/left-insensitive.png
-share/gtk-doc/html/libevdocument/left.png
-share/gtk-doc/html/libevdocument/libevdocument-EvDocumentMisc.html
-share/gtk-doc/html/libevdocument/libevdocument-Version-checks.html
-share/gtk-doc/html/libevdocument/libevdocument-ev-backends-manager.html
-share/gtk-doc/html/libevdocument/libevdocument-ev-document-factory.html
-share/gtk-doc/html/libevdocument/libevdocument-ev-file-helpers.html
-share/gtk-doc/html/libevdocument/libevdocument-ev-init.html
-share/gtk-doc/html/libevdocument/libevdocument-ev-link-action.html
-share/gtk-doc/html/libevdocument/libevdocument-ev-link-dest.html
-share/gtk-doc/html/libevdocument/libevdocument-ev-link.html
-share/gtk-doc/html/libevdocument/libevdocument-ev-mapping.html
-share/gtk-doc/html/libevdocument/libevdocument-ev-transition-effect.html
-share/gtk-doc/html/libevdocument/libevdocument.devhelp2
-share/gtk-doc/html/libevdocument/licence.html
-share/gtk-doc/html/libevdocument/object-tree.html
-share/gtk-doc/html/libevdocument/right-insensitive.png
-share/gtk-doc/html/libevdocument/right.png
-share/gtk-doc/html/libevdocument/style.css
-share/gtk-doc/html/libevdocument/up-insensitive.png
-share/gtk-doc/html/libevdocument/up.png
-share/gtk-doc/html/libevview/EvJob.html
-share/gtk-doc/html/libevview/api-index-3-10.html
-share/gtk-doc/html/libevview/api-index-3-12.html
-share/gtk-doc/html/libevview/api-index-3-14.html
-share/gtk-doc/html/libevview/api-index-3-30.html
-share/gtk-doc/html/libevview/api-index-3-6.html
-share/gtk-doc/html/libevview/api-index-3-8.html
-share/gtk-doc/html/libevview/api-index-deprecated.html
-share/gtk-doc/html/libevview/api-index-full.html
-share/gtk-doc/html/libevview/home.png
-share/gtk-doc/html/libevview/index.html
-share/gtk-doc/html/libevview/left-insensitive.png
-share/gtk-doc/html/libevview/left.png
-share/gtk-doc/html/libevview/libevview-ev-annotation-window.html
-share/gtk-doc/html/libevview/libevview-ev-document-model.html
-share/gtk-doc/html/libevview/libevview-ev-job-scheduler.html
-share/gtk-doc/html/libevview/libevview-ev-page-cache.html
-share/gtk-doc/html/libevview/libevview-ev-print-operation.html
-share/gtk-doc/html/libevview/libevview-ev-stock-icons.html
-share/gtk-doc/html/libevview/libevview-ev-view-cursor.html
-share/gtk-doc/html/libevview/libevview-ev-view-presentation.html
-share/gtk-doc/html/libevview/libevview-ev-view.html
-share/gtk-doc/html/libevview/libevview.devhelp2
-share/gtk-doc/html/libevview/licence.html
-share/gtk-doc/html/libevview/object-tree.html
-share/gtk-doc/html/libevview/right-insensitive.png
-share/gtk-doc/html/libevview/right.png
-share/gtk-doc/html/libevview/style.css
-share/gtk-doc/html/libevview/up-insensitive.png
-share/gtk-doc/html/libevview/up.png
-share/gtk-doc/html/libevview/view-view.html
 share/help/C/evince/annotation-properties.page
 share/help/C/evince/annotations-delete.page
 share/help/C/evince/annotations-disabled.page
@@ -297,7 +163,6 @@ share/help/C/evince/figures/add-text-annotation.png
 share/help/C/evince/figures/annotations-nav-to-page.png
 share/help/C/evince/figures/evince-trail.png
 share/help/C/evince/figures/evincelogo.png
-share/help/C/evince/figures/list-add-tabs.png
 share/help/C/evince/figures/print-select.png
 share/help/C/evince/figures/reverse-collate.png
 share/help/C/evince/figures/zoom.png
@@ -305,6 +170,7 @@ share/help/C/evince/finding.page
 share/help/C/evince/formats.page
 share/help/C/evince/forms-saving.page
 share/help/C/evince/forms.page
+share/help/C/evince/headerbar.page
 share/help/C/evince/index.page
 share/help/C/evince/introduction.page
 share/help/C/evince/invert-colors.page
@@ -339,7 +205,6 @@ share/help/C/evince/synctex-search.page
 share/help/C/evince/synctex-support.page
 share/help/C/evince/synctex.page
 share/help/C/evince/textselection.page
-share/help/C/evince/titlebar.page
 share/help/C/evince/translate.page
 share/help/bg/evince/annotation-properties.page
 share/help/bg/evince/annotations-delete.page
@@ -376,7 +241,6 @@ share/help/bg/evince/figures/add-text-annotation.png
 share/help/bg/evince/figures/annotations-nav-to-page.png
 share/help/bg/evince/figures/evince-trail.png
 share/help/bg/evince/figures/evincelogo.png
-share/help/bg/evince/figures/list-add-tabs.png
 share/help/bg/evince/figures/print-select.png
 share/help/bg/evince/figures/reverse-collate.png
 share/help/bg/evince/figures/zoom.png
@@ -384,6 +248,7 @@ share/help/bg/evince/finding.page
 share/help/bg/evince/formats.page
 share/help/bg/evince/forms-saving.page
 share/help/bg/evince/forms.page
+share/help/bg/evince/headerbar.page
 share/help/bg/evince/index.page
 share/help/bg/evince/introduction.page
 share/help/bg/evince/invert-colors.page
@@ -418,7 +283,6 @@ share/help/bg/evince/synctex-search.page
 share/help/bg/evince/synctex-support.page
 share/help/bg/evince/synctex.page
 share/help/bg/evince/textselection.page
-share/help/bg/evince/titlebar.page
 share/help/bg/evince/translate.page
 share/help/ca/evince/annotation-properties.page
 share/help/ca/evince/annotations-delete.page
@@ -455,7 +319,6 @@ share/help/ca/evince/figures/add-text-annotation.png
 share/help/ca/evince/figures/annotations-nav-to-page.png
 share/help/ca/evince/figures/evince-trail.png
 share/help/ca/evince/figures/evincelogo.png
-share/help/ca/evince/figures/list-add-tabs.png
 share/help/ca/evince/figures/print-select.png
 share/help/ca/evince/figures/reverse-collate.png
 share/help/ca/evince/figures/zoom.png
@@ -463,6 +326,7 @@ share/help/ca/evince/finding.page
 share/help/ca/evince/formats.page
 share/help/ca/evince/forms-saving.page
 share/help/ca/evince/forms.page
+share/help/ca/evince/headerbar.page
 share/help/ca/evince/index.page
 share/help/ca/evince/introduction.page
 share/help/ca/evince/invert-colors.page
@@ -497,7 +361,6 @@ share/help/ca/evince/synctex-search.page
 share/help/ca/evince/synctex-support.page
 share/help/ca/evince/synctex.page
 share/help/ca/evince/textselection.page
-share/help/ca/evince/titlebar.page
 share/help/ca/evince/translate.page
 share/help/cs/evince/annotation-properties.page
 share/help/cs/evince/annotations-delete.page
@@ -534,7 +397,6 @@ share/help/cs/evince/figures/add-text-annotation.png
 share/help/cs/evince/figures/annotations-nav-to-page.png
 share/help/cs/evince/figures/evince-trail.png
 share/help/cs/evince/figures/evincelogo.png
-share/help/cs/evince/figures/list-add-tabs.png
 share/help/cs/evince/figures/print-select.png
 share/help/cs/evince/figures/reverse-collate.png
 share/help/cs/evince/figures/zoom.png
@@ -542,6 +404,7 @@ share/help/cs/evince/finding.page
 share/help/cs/evince/formats.page
 share/help/cs/evince/forms-saving.page
 share/help/cs/evince/forms.page
+share/help/cs/evince/headerbar.page
 share/help/cs/evince/index.page
 share/help/cs/evince/introduction.page
 share/help/cs/evince/invert-colors.page
@@ -576,7 +439,6 @@ share/help/cs/evince/synctex-search.page
 share/help/cs/evince/synctex-support.page
 share/help/cs/evince/synctex.page
 share/help/cs/evince/textselection.page
-share/help/cs/evince/titlebar.page
 share/help/cs/evince/translate.page
 share/help/da/evince/annotation-properties.page
 share/help/da/evince/annotations-delete.page
@@ -613,7 +475,6 @@ share/help/da/evince/figures/add-text-annotation.png
 share/help/da/evince/figures/annotations-nav-to-page.png
 share/help/da/evince/figures/evince-trail.png
 share/help/da/evince/figures/evincelogo.png
-share/help/da/evince/figures/list-add-tabs.png
 share/help/da/evince/figures/print-select.png
 share/help/da/evince/figures/reverse-collate.png
 share/help/da/evince/figures/zoom.png
@@ -621,6 +482,7 @@ share/help/da/evince/finding.page
 share/help/da/evince/formats.page
 share/help/da/evince/forms-saving.page
 share/help/da/evince/forms.page
+share/help/da/evince/headerbar.page
 share/help/da/evince/index.page
 share/help/da/evince/introduction.page
 share/help/da/evince/invert-colors.page
@@ -655,7 +517,6 @@ share/help/da/evince/synctex-search.page
 share/help/da/evince/synctex-support.page
 share/help/da/evince/synctex.page
 share/help/da/evince/textselection.page
-share/help/da/evince/titlebar.page
 share/help/da/evince/translate.page
 share/help/de/evince/annotation-properties.page
 share/help/de/evince/annotations-delete.page
@@ -692,7 +553,6 @@ share/help/de/evince/figures/add-text-annotation.png
 share/help/de/evince/figures/annotations-nav-to-page.png
 share/help/de/evince/figures/evince-trail.png
 share/help/de/evince/figures/evincelogo.png
-share/help/de/evince/figures/list-add-tabs.png
 share/help/de/evince/figures/print-select.png
 share/help/de/evince/figures/reverse-collate.png
 share/help/de/evince/figures/zoom.png
@@ -700,6 +560,7 @@ share/help/de/evince/finding.page
 share/help/de/evince/formats.page
 share/help/de/evince/forms-saving.page
 share/help/de/evince/forms.page
+share/help/de/evince/headerbar.page
 share/help/de/evince/index.page
 share/help/de/evince/introduction.page
 share/help/de/evince/invert-colors.page
@@ -734,7 +595,6 @@ share/help/de/evince/synctex-search.page
 share/help/de/evince/synctex-support.page
 share/help/de/evince/synctex.page
 share/help/de/evince/textselection.page
-share/help/de/evince/titlebar.page
 share/help/de/evince/translate.page
 share/help/el/evince/annotation-properties.page
 share/help/el/evince/annotations-delete.page
@@ -771,7 +631,6 @@ share/help/el/evince/figures/add-text-annotation.png
 share/help/el/evince/figures/annotations-nav-to-page.png
 share/help/el/evince/figures/evince-trail.png
 share/help/el/evince/figures/evincelogo.png
-share/help/el/evince/figures/list-add-tabs.png
 share/help/el/evince/figures/print-select.png
 share/help/el/evince/figures/reverse-collate.png
 share/help/el/evince/figures/zoom.png
@@ -779,6 +638,7 @@ share/help/el/evince/finding.page
 share/help/el/evince/formats.page
 share/help/el/evince/forms-saving.page
 share/help/el/evince/forms.page
+share/help/el/evince/headerbar.page
 share/help/el/evince/index.page
 share/help/el/evince/introduction.page
 share/help/el/evince/invert-colors.page
@@ -813,7 +673,6 @@ share/help/el/evince/synctex-search.page
 share/help/el/evince/synctex-support.page
 share/help/el/evince/synctex.page
 share/help/el/evince/textselection.page
-share/help/el/evince/titlebar.page
 share/help/el/evince/translate.page
 share/help/en_GB/evince/annotation-properties.page
 share/help/en_GB/evince/annotations-delete.page
@@ -850,7 +709,6 @@ share/help/en_GB/evince/figures/add-text-annotation.png
 share/help/en_GB/evince/figures/annotations-nav-to-page.png
 share/help/en_GB/evince/figures/evince-trail.png
 share/help/en_GB/evince/figures/evincelogo.png
-share/help/en_GB/evince/figures/list-add-tabs.png
 share/help/en_GB/evince/figures/print-select.png
 share/help/en_GB/evince/figures/reverse-collate.png
 share/help/en_GB/evince/figures/zoom.png
@@ -858,6 +716,7 @@ share/help/en_GB/evince/finding.page
 share/help/en_GB/evince/formats.page
 share/help/en_GB/evince/forms-saving.page
 share/help/en_GB/evince/forms.page
+share/help/en_GB/evince/headerbar.page
 share/help/en_GB/evince/index.page
 share/help/en_GB/evince/introduction.page
 share/help/en_GB/evince/invert-colors.page
@@ -892,7 +751,6 @@ share/help/en_GB/evince/synctex-search.page
 share/help/en_GB/evince/synctex-support.page
 share/help/en_GB/evince/synctex.page
 share/help/en_GB/evince/textselection.page
-share/help/en_GB/evince/titlebar.page
 share/help/en_GB/evince/translate.page
 share/help/es/evince/annotation-properties.page
 share/help/es/evince/annotations-delete.page
@@ -929,7 +787,6 @@ share/help/es/evince/figures/add-text-annotation.png
 share/help/es/evince/figures/annotations-nav-to-page.png
 share/help/es/evince/figures/evince-trail.png
 share/help/es/evince/figures/evincelogo.png
-share/help/es/evince/figures/list-add-tabs.png
 share/help/es/evince/figures/print-select.png
 share/help/es/evince/figures/reverse-collate.png
 share/help/es/evince/figures/zoom.png
@@ -937,6 +794,7 @@ share/help/es/evince/finding.page
 share/help/es/evince/formats.page
 share/help/es/evince/forms-saving.page
 share/help/es/evince/forms.page
+share/help/es/evince/headerbar.page
 share/help/es/evince/index.page
 share/help/es/evince/introduction.page
 share/help/es/evince/invert-colors.page
@@ -971,7 +829,6 @@ share/help/es/evince/synctex-search.page
 share/help/es/evince/synctex-support.page
 share/help/es/evince/synctex.page
 share/help/es/evince/textselection.page
-share/help/es/evince/titlebar.page
 share/help/es/evince/translate.page
 share/help/eu/evince/annotation-properties.page
 share/help/eu/evince/annotations-delete.page
@@ -1008,7 +865,6 @@ share/help/eu/evince/figures/add-text-annotation.png
 share/help/eu/evince/figures/annotations-nav-to-page.png
 share/help/eu/evince/figures/evince-trail.png
 share/help/eu/evince/figures/evincelogo.png
-share/help/eu/evince/figures/list-add-tabs.png
 share/help/eu/evince/figures/print-select.png
 share/help/eu/evince/figures/reverse-collate.png
 share/help/eu/evince/figures/zoom.png
@@ -1016,6 +872,7 @@ share/help/eu/evince/finding.page
 share/help/eu/evince/formats.page
 share/help/eu/evince/forms-saving.page
 share/help/eu/evince/forms.page
+share/help/eu/evince/headerbar.page
 share/help/eu/evince/index.page
 share/help/eu/evince/introduction.page
 share/help/eu/evince/invert-colors.page
@@ -1050,7 +907,6 @@ share/help/eu/evince/synctex-search.page
 share/help/eu/evince/synctex-support.page
 share/help/eu/evince/synctex.page
 share/help/eu/evince/textselection.page
-share/help/eu/evince/titlebar.page
 share/help/eu/evince/translate.page
 share/help/fi/evince/annotation-properties.page
 share/help/fi/evince/annotations-delete.page
@@ -1087,7 +943,6 @@ share/help/fi/evince/figures/add-text-annotation.png
 share/help/fi/evince/figures/annotations-nav-to-page.png
 share/help/fi/evince/figures/evince-trail.png
 share/help/fi/evince/figures/evincelogo.png
-share/help/fi/evince/figures/list-add-tabs.png
 share/help/fi/evince/figures/print-select.png
 share/help/fi/evince/figures/reverse-collate.png
 share/help/fi/evince/figures/zoom.png
@@ -1095,6 +950,7 @@ share/help/fi/evince/finding.page
 share/help/fi/evince/formats.page
 share/help/fi/evince/forms-saving.page
 share/help/fi/evince/forms.page
+share/help/fi/evince/headerbar.page
 share/help/fi/evince/index.page
 share/help/fi/evince/introduction.page
 share/help/fi/evince/invert-colors.page
@@ -1129,7 +985,6 @@ share/help/fi/evince/synctex-search.page
 share/help/fi/evince/synctex-support.page
 share/help/fi/evince/synctex.page
 share/help/fi/evince/textselection.page
-share/help/fi/evince/titlebar.page
 share/help/fi/evince/translate.page
 share/help/fr/evince/annotation-properties.page
 share/help/fr/evince/annotations-delete.page
@@ -1166,7 +1021,6 @@ share/help/fr/evince/figures/add-text-annotation.png
 share/help/fr/evince/figures/annotations-nav-to-page.png
 share/help/fr/evince/figures/evince-trail.png
 share/help/fr/evince/figures/evincelogo.png
-share/help/fr/evince/figures/list-add-tabs.png
 share/help/fr/evince/figures/print-select.png
 share/help/fr/evince/figures/reverse-collate.png
 share/help/fr/evince/figures/zoom.png
@@ -1174,6 +1028,7 @@ share/help/fr/evince/finding.page
 share/help/fr/evince/formats.page
 share/help/fr/evince/forms-saving.page
 share/help/fr/evince/forms.page
+share/help/fr/evince/headerbar.page
 share/help/fr/evince/index.page
 share/help/fr/evince/introduction.page
 share/help/fr/evince/invert-colors.page
@@ -1208,7 +1063,6 @@ share/help/fr/evince/synctex-search.page
 share/help/fr/evince/synctex-support.page
 share/help/fr/evince/synctex.page
 share/help/fr/evince/textselection.page
-share/help/fr/evince/titlebar.page
 share/help/fr/evince/translate.page
 share/help/gl/evince/annotation-properties.page
 share/help/gl/evince/annotations-delete.page
@@ -1245,7 +1099,6 @@ share/help/gl/evince/figures/add-text-annotation.png
 share/help/gl/evince/figures/annotations-nav-to-page.png
 share/help/gl/evince/figures/evince-trail.png
 share/help/gl/evince/figures/evincelogo.png
-share/help/gl/evince/figures/list-add-tabs.png
 share/help/gl/evince/figures/print-select.png
 share/help/gl/evince/figures/reverse-collate.png
 share/help/gl/evince/figures/zoom.png
@@ -1253,6 +1106,7 @@ share/help/gl/evince/finding.page
 share/help/gl/evince/formats.page
 share/help/gl/evince/forms-saving.page
 share/help/gl/evince/forms.page
+share/help/gl/evince/headerbar.page
 share/help/gl/evince/index.page
 share/help/gl/evince/introduction.page
 share/help/gl/evince/invert-colors.page
@@ -1287,7 +1141,6 @@ share/help/gl/evince/synctex-search.page
 share/help/gl/evince/synctex-support.page
 share/help/gl/evince/synctex.page
 share/help/gl/evince/textselection.page
-share/help/gl/evince/titlebar.page
 share/help/gl/evince/translate.page
 share/help/hu/evince/annotation-properties.page
 share/help/hu/evince/annotations-delete.page
@@ -1324,7 +1177,6 @@ share/help/hu/evince/figures/add-text-annotation.png
 share/help/hu/evince/figures/annotations-nav-to-page.png
 share/help/hu/evince/figures/evince-trail.png
 share/help/hu/evince/figures/evincelogo.png
-share/help/hu/evince/figures/list-add-tabs.png
 share/help/hu/evince/figures/print-select.png
 share/help/hu/evince/figures/reverse-collate.png
 share/help/hu/evince/figures/zoom.png
@@ -1332,6 +1184,7 @@ share/help/hu/evince/finding.page
 share/help/hu/evince/formats.page
 share/help/hu/evince/forms-saving.page
 share/help/hu/evince/forms.page
+share/help/hu/evince/headerbar.page
 share/help/hu/evince/index.page
 share/help/hu/evince/introduction.page
 share/help/hu/evince/invert-colors.page
@@ -1366,7 +1219,6 @@ share/help/hu/evince/synctex-search.page
 share/help/hu/evince/synctex-support.page
 share/help/hu/evince/synctex.page
 share/help/hu/evince/textselection.page
-share/help/hu/evince/titlebar.page
 share/help/hu/evince/translate.page
 share/help/id/evince/annotation-properties.page
 share/help/id/evince/annotations-delete.page
@@ -1403,7 +1255,6 @@ share/help/id/evince/figures/add-text-annotation.png
 share/help/id/evince/figures/annotations-nav-to-page.png
 share/help/id/evince/figures/evince-trail.png
 share/help/id/evince/figures/evincelogo.png
-share/help/id/evince/figures/list-add-tabs.png
 share/help/id/evince/figures/print-select.png
 share/help/id/evince/figures/reverse-collate.png
 share/help/id/evince/figures/zoom.png
@@ -1411,6 +1262,7 @@ share/help/id/evince/finding.page
 share/help/id/evince/formats.page
 share/help/id/evince/forms-saving.page
 share/help/id/evince/forms.page
+share/help/id/evince/headerbar.page
 share/help/id/evince/index.page
 share/help/id/evince/introduction.page
 share/help/id/evince/invert-colors.page
@@ -1445,7 +1297,6 @@ share/help/id/evince/synctex-search.page
 share/help/id/evince/synctex-support.page
 share/help/id/evince/synctex.page
 share/help/id/evince/textselection.page
-share/help/id/evince/titlebar.page
 share/help/id/evince/translate.page
 share/help/it/evince/annotation-properties.page
 share/help/it/evince/annotations-delete.page
@@ -1482,7 +1333,6 @@ share/help/it/evince/figures/add-text-annotation.png
 share/help/it/evince/figures/annotations-nav-to-page.png
 share/help/it/evince/figures/evince-trail.png
 share/help/it/evince/figures/evincelogo.png
-share/help/it/evince/figures/list-add-tabs.png
 share/help/it/evince/figures/print-select.png
 share/help/it/evince/figures/reverse-collate.png
 share/help/it/evince/figures/zoom.png
@@ -1490,6 +1340,7 @@ share/help/it/evince/finding.page
 share/help/it/evince/formats.page
 share/help/it/evince/forms-saving.page
 share/help/it/evince/forms.page
+share/help/it/evince/headerbar.page
 share/help/it/evince/index.page
 share/help/it/evince/introduction.page
 share/help/it/evince/invert-colors.page
@@ -1524,7 +1375,6 @@ share/help/it/evince/synctex-search.page
 share/help/it/evince/synctex-support.page
 share/help/it/evince/synctex.page
 share/help/it/evince/textselection.page
-share/help/it/evince/titlebar.page
 share/help/it/evince/translate.page
 share/help/ja/evince/annotation-properties.page
 share/help/ja/evince/annotations-delete.page
@@ -1561,7 +1411,6 @@ share/help/ja/evince/figures/add-text-annotation.png
 share/help/ja/evince/figures/annotations-nav-to-page.png
 share/help/ja/evince/figures/evince-trail.png
 share/help/ja/evince/figures/evincelogo.png
-share/help/ja/evince/figures/list-add-tabs.png
 share/help/ja/evince/figures/print-select.png
 share/help/ja/evince/figures/reverse-collate.png
 share/help/ja/evince/figures/zoom.png
@@ -1569,6 +1418,7 @@ share/help/ja/evince/finding.page
 share/help/ja/evince/formats.page
 share/help/ja/evince/forms-saving.page
 share/help/ja/evince/forms.page
+share/help/ja/evince/headerbar.page
 share/help/ja/evince/index.page
 share/help/ja/evince/introduction.page
 share/help/ja/evince/invert-colors.page
@@ -1603,7 +1453,6 @@ share/help/ja/evince/synctex-search.page
 share/help/ja/evince/synctex-support.page
 share/help/ja/evince/synctex.page
 share/help/ja/evince/textselection.page
-share/help/ja/evince/titlebar.page
 share/help/ja/evince/translate.page
 share/help/ko/evince/annotation-properties.page
 share/help/ko/evince/annotations-delete.page
@@ -1640,7 +1489,6 @@ share/help/ko/evince/figures/add-text-annotation.png
 share/help/ko/evince/figures/annotations-nav-to-page.png
 share/help/ko/evince/figures/evince-trail.png
 share/help/ko/evince/figures/evincelogo.png
-share/help/ko/evince/figures/list-add-tabs.png
 share/help/ko/evince/figures/print-select.png
 share/help/ko/evince/figures/reverse-collate.png
 share/help/ko/evince/figures/zoom.png
@@ -1648,6 +1496,7 @@ share/help/ko/evince/finding.page
 share/help/ko/evince/formats.page
 share/help/ko/evince/forms-saving.page
 share/help/ko/evince/forms.page
+share/help/ko/evince/headerbar.page
 share/help/ko/evince/index.page
 share/help/ko/evince/introduction.page
 share/help/ko/evince/invert-colors.page
@@ -1682,7 +1531,6 @@ share/help/ko/evince/synctex-search.page
 share/help/ko/evince/synctex-support.page
 share/help/ko/evince/synctex.page
 share/help/ko/evince/textselection.page
-share/help/ko/evince/titlebar.page
 share/help/ko/evince/translate.page
 share/help/lv/evince/annotation-properties.page
 share/help/lv/evince/annotations-delete.page
@@ -1719,7 +1567,6 @@ share/help/lv/evince/figures/add-text-annotation.png
 share/help/lv/evince/figures/annotations-nav-to-page.png
 share/help/lv/evince/figures/evince-trail.png
 share/help/lv/evince/figures/evincelogo.png
-share/help/lv/evince/figures/list-add-tabs.png
 share/help/lv/evince/figures/print-select.png
 share/help/lv/evince/figures/reverse-collate.png
 share/help/lv/evince/figures/zoom.png
@@ -1727,6 +1574,7 @@ share/help/lv/evince/finding.page
 share/help/lv/evince/formats.page
 share/help/lv/evince/forms-saving.page
 share/help/lv/evince/forms.page
+share/help/lv/evince/headerbar.page
 share/help/lv/evince/index.page
 share/help/lv/evince/introduction.page
 share/help/lv/evince/invert-colors.page
@@ -1761,7 +1609,6 @@ share/help/lv/evince/synctex-search.page
 share/help/lv/evince/synctex-support.page
 share/help/lv/evince/synctex.page
 share/help/lv/evince/textselection.page
-share/help/lv/evince/titlebar.page
 share/help/lv/evince/translate.page
 share/help/nl/evince/annotation-properties.page
 share/help/nl/evince/annotations-delete.page
@@ -1798,7 +1645,6 @@ share/help/nl/evince/figures/add-text-annotation.png
 share/help/nl/evince/figures/annotations-nav-to-page.png
 share/help/nl/evince/figures/evince-trail.png
 share/help/nl/evince/figures/evincelogo.png
-share/help/nl/evince/figures/list-add-tabs.png
 share/help/nl/evince/figures/print-select.png
 share/help/nl/evince/figures/reverse-collate.png
 share/help/nl/evince/figures/zoom.png
@@ -1806,6 +1652,7 @@ share/help/nl/evince/finding.page
 share/help/nl/evince/formats.page
 share/help/nl/evince/forms-saving.page
 share/help/nl/evince/forms.page
+share/help/nl/evince/headerbar.page
 share/help/nl/evince/index.page
 share/help/nl/evince/introduction.page
 share/help/nl/evince/invert-colors.page
@@ -1840,7 +1687,6 @@ share/help/nl/evince/synctex-search.page
 share/help/nl/evince/synctex-support.page
 share/help/nl/evince/synctex.page
 share/help/nl/evince/textselection.page
-share/help/nl/evince/titlebar.page
 share/help/nl/evince/translate.page
 share/help/oc/evince/annotation-properties.page
 share/help/oc/evince/annotations-delete.page
@@ -1877,7 +1723,6 @@ share/help/oc/evince/figures/add-text-annotation.png
 share/help/oc/evince/figures/annotations-nav-to-page.png
 share/help/oc/evince/figures/evince-trail.png
 share/help/oc/evince/figures/evincelogo.png
-share/help/oc/evince/figures/list-add-tabs.png
 share/help/oc/evince/figures/print-select.png
 share/help/oc/evince/figures/reverse-collate.png
 share/help/oc/evince/figures/zoom.png
@@ -1885,6 +1730,7 @@ share/help/oc/evince/finding.page
 share/help/oc/evince/formats.page
 share/help/oc/evince/forms-saving.page
 share/help/oc/evince/forms.page
+share/help/oc/evince/headerbar.page
 share/help/oc/evince/index.page
 share/help/oc/evince/introduction.page
 share/help/oc/evince/invert-colors.page
@@ -1919,7 +1765,6 @@ share/help/oc/evince/synctex-search.page
 share/help/oc/evince/synctex-support.page
 share/help/oc/evince/synctex.page
 share/help/oc/evince/textselection.page
-share/help/oc/evince/titlebar.page
 share/help/oc/evince/translate.page
 share/help/pl/evince/annotation-properties.page
 share/help/pl/evince/annotations-delete.page
@@ -1956,7 +1801,6 @@ share/help/pl/evince/figures/add-text-annotation.png
 share/help/pl/evince/figures/annotations-nav-to-page.png
 share/help/pl/evince/figures/evince-trail.png
 share/help/pl/evince/figures/evincelogo.png
-share/help/pl/evince/figures/list-add-tabs.png
 share/help/pl/evince/figures/print-select.png
 share/help/pl/evince/figures/reverse-collate.png
 share/help/pl/evince/figures/zoom.png
@@ -1964,6 +1808,7 @@ share/help/pl/evince/finding.page
 share/help/pl/evince/formats.page
 share/help/pl/evince/forms-saving.page
 share/help/pl/evince/forms.page
+share/help/pl/evince/headerbar.page
 share/help/pl/evince/index.page
 share/help/pl/evince/introduction.page
 share/help/pl/evince/invert-colors.page
@@ -1998,7 +1843,6 @@ share/help/pl/evince/synctex-search.page
 share/help/pl/evince/synctex-support.page
 share/help/pl/evince/synctex.page
 share/help/pl/evince/textselection.page
-share/help/pl/evince/titlebar.page
 share/help/pl/evince/translate.page
 share/help/pt_BR/evince/annotation-properties.page
 share/help/pt_BR/evince/annotations-delete.page
@@ -2035,7 +1879,6 @@ share/help/pt_BR/evince/figures/add-text-annotation.png
 share/help/pt_BR/evince/figures/annotations-nav-to-page.png
 share/help/pt_BR/evince/figures/evince-trail.png
 share/help/pt_BR/evince/figures/evincelogo.png
-share/help/pt_BR/evince/figures/list-add-tabs.png
 share/help/pt_BR/evince/figures/print-select.png
 share/help/pt_BR/evince/figures/reverse-collate.png
 share/help/pt_BR/evince/figures/zoom.png
@@ -2043,6 +1886,7 @@ share/help/pt_BR/evince/finding.page
 share/help/pt_BR/evince/formats.page
 share/help/pt_BR/evince/forms-saving.page
 share/help/pt_BR/evince/forms.page
+share/help/pt_BR/evince/headerbar.page
 share/help/pt_BR/evince/index.page
 share/help/pt_BR/evince/introduction.page
 share/help/pt_BR/evince/invert-colors.page
@@ -2077,7 +1921,6 @@ share/help/pt_BR/evince/synctex-search.page
 share/help/pt_BR/evince/synctex-support.page
 share/help/pt_BR/evince/synctex.page
 share/help/pt_BR/evince/textselection.page
-share/help/pt_BR/evince/titlebar.page
 share/help/pt_BR/evince/translate.page
 share/help/ro/evince/annotation-properties.page
 share/help/ro/evince/annotations-delete.page
@@ -2114,7 +1957,6 @@ share/help/ro/evince/figures/add-text-annotation.png
 share/help/ro/evince/figures/annotations-nav-to-page.png
 share/help/ro/evince/figures/evince-trail.png
 share/help/ro/evince/figures/evincelogo.png
-share/help/ro/evince/figures/list-add-tabs.png
 share/help/ro/evince/figures/print-select.png
 share/help/ro/evince/figures/reverse-collate.png
 share/help/ro/evince/figures/zoom.png
@@ -2122,6 +1964,7 @@ share/help/ro/evince/finding.page
 share/help/ro/evince/formats.page
 share/help/ro/evince/forms-saving.page
 share/help/ro/evince/forms.page
+share/help/ro/evince/headerbar.page
 share/help/ro/evince/index.page
 share/help/ro/evince/introduction.page
 share/help/ro/evince/invert-colors.page
@@ -2156,7 +1999,6 @@ share/help/ro/evince/synctex-search.page
 share/help/ro/evince/synctex-support.page
 share/help/ro/evince/synctex.page
 share/help/ro/evince/textselection.page
-share/help/ro/evince/titlebar.page
 share/help/ro/evince/translate.page
 share/help/ru/evince/annotation-properties.page
 share/help/ru/evince/annotations-delete.page
@@ -2193,7 +2035,6 @@ share/help/ru/evince/figures/add-text-annotation.png
 share/help/ru/evince/figures/annotations-nav-to-page.png
 share/help/ru/evince/figures/evince-trail.png
 share/help/ru/evince/figures/evincelogo.png
-share/help/ru/evince/figures/list-add-tabs.png
 share/help/ru/evince/figures/print-select.png
 share/help/ru/evince/figures/reverse-collate.png
 share/help/ru/evince/figures/zoom.png
@@ -2201,6 +2042,7 @@ share/help/ru/evince/finding.page
 share/help/ru/evince/formats.page
 share/help/ru/evince/forms-saving.page
 share/help/ru/evince/forms.page
+share/help/ru/evince/headerbar.page
 share/help/ru/evince/index.page
 share/help/ru/evince/introduction.page
 share/help/ru/evince/invert-colors.page
@@ -2235,7 +2077,6 @@ share/help/ru/evince/synctex-search.page
 share/help/ru/evince/synctex-support.page
 share/help/ru/evince/synctex.page
 share/help/ru/evince/textselection.page
-share/help/ru/evince/titlebar.page
 share/help/ru/evince/translate.page
 share/help/sl/evince/annotation-properties.page
 share/help/sl/evince/annotations-delete.page
@@ -2272,7 +2113,6 @@ share/help/sl/evince/figures/add-text-annotation.png
 share/help/sl/evince/figures/annotations-nav-to-page.png
 share/help/sl/evince/figures/evince-trail.png
 share/help/sl/evince/figures/evincelogo.png
-share/help/sl/evince/figures/list-add-tabs.png
 share/help/sl/evince/figures/print-select.png
 share/help/sl/evince/figures/reverse-collate.png
 share/help/sl/evince/figures/zoom.png
@@ -2280,6 +2120,7 @@ share/help/sl/evince/finding.page
 share/help/sl/evince/formats.page
 share/help/sl/evince/forms-saving.page
 share/help/sl/evince/forms.page
+share/help/sl/evince/headerbar.page
 share/help/sl/evince/index.page
 share/help/sl/evince/introduction.page
 share/help/sl/evince/invert-colors.page
@@ -2314,7 +2155,6 @@ share/help/sl/evince/synctex-search.page
 share/help/sl/evince/synctex-support.page
 share/help/sl/evince/synctex.page
 share/help/sl/evince/textselection.page
-share/help/sl/evince/titlebar.page
 share/help/sl/evince/translate.page
 share/help/sr/evince/annotation-properties.page
 share/help/sr/evince/annotations-delete.page
@@ -2351,7 +2191,6 @@ share/help/sr/evince/figures/add-text-annotation.png
 share/help/sr/evince/figures/annotations-nav-to-page.png
 share/help/sr/evince/figures/evince-trail.png
 share/help/sr/evince/figures/evincelogo.png
-share/help/sr/evince/figures/list-add-tabs.png
 share/help/sr/evince/figures/print-select.png
 share/help/sr/evince/figures/reverse-collate.png
 share/help/sr/evince/figures/zoom.png
@@ -2359,6 +2198,7 @@ share/help/sr/evince/finding.page
 share/help/sr/evince/formats.page
 share/help/sr/evince/forms-saving.page
 share/help/sr/evince/forms.page
+share/help/sr/evince/headerbar.page
 share/help/sr/evince/index.page
 share/help/sr/evince/introduction.page
 share/help/sr/evince/invert-colors.page
@@ -2393,7 +2233,6 @@ share/help/sr/evince/synctex-search.page
 share/help/sr/evince/synctex-support.page
 share/help/sr/evince/synctex.page
 share/help/sr/evince/textselection.page
-share/help/sr/evince/titlebar.page
 share/help/sr/evince/translate.page
 share/help/sv/evince/annotation-properties.page
 share/help/sv/evince/annotations-delete.page
@@ -2430,7 +2269,6 @@ share/help/sv/evince/figures/add-text-annotation.png
 share/help/sv/evince/figures/annotations-nav-to-page.png
 share/help/sv/evince/figures/evince-trail.png
 share/help/sv/evince/figures/evincelogo.png
-share/help/sv/evince/figures/list-add-tabs.png
 share/help/sv/evince/figures/print-select.png
 share/help/sv/evince/figures/reverse-collate.png
 share/help/sv/evince/figures/zoom.png
@@ -2438,6 +2276,7 @@ share/help/sv/evince/finding.page
 share/help/sv/evince/formats.page
 share/help/sv/evince/forms-saving.page
 share/help/sv/evince/forms.page
+share/help/sv/evince/headerbar.page
 share/help/sv/evince/index.page
 share/help/sv/evince/introduction.page
 share/help/sv/evince/invert-colors.page
@@ -2472,7 +2311,6 @@ share/help/sv/evince/synctex-search.page
 share/help/sv/evince/synctex-support.page
 share/help/sv/evince/synctex.page
 share/help/sv/evince/textselection.page
-share/help/sv/evince/titlebar.page
 share/help/sv/evince/translate.page
 share/help/te/evince/annotation-properties.page
 share/help/te/evince/annotations-delete.page
@@ -2509,7 +2347,6 @@ share/help/te/evince/figures/add-text-annotation.png
 share/help/te/evince/figures/annotations-nav-to-page.png
 share/help/te/evince/figures/evince-trail.png
 share/help/te/evince/figures/evincelogo.png
-share/help/te/evince/figures/list-add-tabs.png
 share/help/te/evince/figures/print-select.png
 share/help/te/evince/figures/reverse-collate.png
 share/help/te/evince/figures/zoom.png
@@ -2517,6 +2354,7 @@ share/help/te/evince/finding.page
 share/help/te/evince/formats.page
 share/help/te/evince/forms-saving.page
 share/help/te/evince/forms.page
+share/help/te/evince/headerbar.page
 share/help/te/evince/index.page
 share/help/te/evince/introduction.page
 share/help/te/evince/invert-colors.page
@@ -2551,7 +2389,6 @@ share/help/te/evince/synctex-search.page
 share/help/te/evince/synctex-support.page
 share/help/te/evince/synctex.page
 share/help/te/evince/textselection.page
-share/help/te/evince/titlebar.page
 share/help/te/evince/translate.page
 share/help/uk/evince/annotation-properties.page
 share/help/uk/evince/annotations-delete.page
@@ -2588,7 +2425,6 @@ share/help/uk/evince/figures/add-text-annotation.png
 share/help/uk/evince/figures/annotations-nav-to-page.png
 share/help/uk/evince/figures/evince-trail.png
 share/help/uk/evince/figures/evincelogo.png
-share/help/uk/evince/figures/list-add-tabs.png
 share/help/uk/evince/figures/print-select.png
 share/help/uk/evince/figures/reverse-collate.png
 share/help/uk/evince/figures/zoom.png
@@ -2596,6 +2432,7 @@ share/help/uk/evince/finding.page
 share/help/uk/evince/formats.page
 share/help/uk/evince/forms-saving.page
 share/help/uk/evince/forms.page
+share/help/uk/evince/headerbar.page
 share/help/uk/evince/index.page
 share/help/uk/evince/introduction.page
 share/help/uk/evince/invert-colors.page
@@ -2630,7 +2467,6 @@ share/help/uk/evince/synctex-search.page
 share/help/uk/evince/synctex-support.page
 share/help/uk/evince/synctex.page
 share/help/uk/evince/textselection.page
-share/help/uk/evince/titlebar.page
 share/help/uk/evince/translate.page
 share/help/vi/evince/annotation-properties.page
 share/help/vi/evince/annotations-delete.page
@@ -2667,7 +2503,6 @@ share/help/vi/evince/figures/add-text-annotation.png
 share/help/vi/evince/figures/annotations-nav-to-page.png
 share/help/vi/evince/figures/evince-trail.png
 share/help/vi/evince/figures/evincelogo.png
-share/help/vi/evince/figures/list-add-tabs.png
 share/help/vi/evince/figures/print-select.png
 share/help/vi/evince/figures/reverse-collate.png
 share/help/vi/evince/figures/zoom.png
@@ -2675,6 +2510,7 @@ share/help/vi/evince/finding.page
 share/help/vi/evince/formats.page
 share/help/vi/evince/forms-saving.page
 share/help/vi/evince/forms.page
+share/help/vi/evince/headerbar.page
 share/help/vi/evince/index.page
 share/help/vi/evince/introduction.page
 share/help/vi/evince/invert-colors.page
@@ -2709,7 +2545,6 @@ share/help/vi/evince/synctex-search.page
 share/help/vi/evince/synctex-support.page
 share/help/vi/evince/synctex.page
 share/help/vi/evince/textselection.page
-share/help/vi/evince/titlebar.page
 share/help/vi/evince/translate.page
 share/help/zh_CN/evince/annotation-properties.page
 share/help/zh_CN/evince/annotations-delete.page
@@ -2746,7 +2581,6 @@ share/help/zh_CN/evince/figures/add-text-annotation.png
 share/help/zh_CN/evince/figures/annotations-nav-to-page.png
 share/help/zh_CN/evince/figures/evince-trail.png
 share/help/zh_CN/evince/figures/evincelogo.png
-share/help/zh_CN/evince/figures/list-add-tabs.png
 share/help/zh_CN/evince/figures/print-select.png
 share/help/zh_CN/evince/figures/reverse-collate.png
 share/help/zh_CN/evince/figures/zoom.png
@@ -2754,6 +2588,7 @@ share/help/zh_CN/evince/finding.page
 share/help/zh_CN/evince/formats.page
 share/help/zh_CN/evince/forms-saving.page
 share/help/zh_CN/evince/forms.page
+share/help/zh_CN/evince/headerbar.page
 share/help/zh_CN/evince/index.page
 share/help/zh_CN/evince/introduction.page
 share/help/zh_CN/evince/invert-colors.page
@@ -2788,7 +2623,6 @@ share/help/zh_CN/evince/synctex-search.page
 share/help/zh_CN/evince/synctex-support.page
 share/help/zh_CN/evince/synctex.page
 share/help/zh_CN/evince/textselection.page
-share/help/zh_CN/evince/titlebar.page
 share/help/zh_CN/evince/translate.page
 share/help/zh_HK/evince/annotation-properties.page
 share/help/zh_HK/evince/annotations-delete.page
@@ -2825,7 +2659,6 @@ share/help/zh_HK/evince/figures/add-text-annotation.png
 share/help/zh_HK/evince/figures/annotations-nav-to-page.png
 share/help/zh_HK/evince/figures/evince-trail.png
 share/help/zh_HK/evince/figures/evincelogo.png
-share/help/zh_HK/evince/figures/list-add-tabs.png
 share/help/zh_HK/evince/figures/print-select.png
 share/help/zh_HK/evince/figures/reverse-collate.png
 share/help/zh_HK/evince/figures/zoom.png
@@ -2833,6 +2666,7 @@ share/help/zh_HK/evince/finding.page
 share/help/zh_HK/evince/formats.page
 share/help/zh_HK/evince/forms-saving.page
 share/help/zh_HK/evince/forms.page
+share/help/zh_HK/evince/headerbar.page
 share/help/zh_HK/evince/index.page
 share/help/zh_HK/evince/introduction.page
 share/help/zh_HK/evince/invert-colors.page
@@ -2867,7 +2701,6 @@ share/help/zh_HK/evince/synctex-search.page
 share/help/zh_HK/evince/synctex-support.page
 share/help/zh_HK/evince/synctex.page
 share/help/zh_HK/evince/textselection.page
-share/help/zh_HK/evince/titlebar.page
 share/help/zh_HK/evince/translate.page
 share/help/zh_TW/evince/annotation-properties.page
 share/help/zh_TW/evince/annotations-delete.page
@@ -2904,7 +2737,6 @@ share/help/zh_TW/evince/figures/add-text-annotation.png
 share/help/zh_TW/evince/figures/annotations-nav-to-page.png
 share/help/zh_TW/evince/figures/evince-trail.png
 share/help/zh_TW/evince/figures/evincelogo.png
-share/help/zh_TW/evince/figures/list-add-tabs.png
 share/help/zh_TW/evince/figures/print-select.png
 share/help/zh_TW/evince/figures/reverse-collate.png
 share/help/zh_TW/evince/figures/zoom.png
@@ -2912,6 +2744,7 @@ share/help/zh_TW/evince/finding.page
 share/help/zh_TW/evince/formats.page
 share/help/zh_TW/evince/forms-saving.page
 share/help/zh_TW/evince/forms.page
+share/help/zh_TW/evince/headerbar.page
 share/help/zh_TW/evince/index.page
 share/help/zh_TW/evince/introduction.page
 share/help/zh_TW/evince/invert-colors.page
@@ -2946,14 +2779,9 @@ share/help/zh_TW/evince/synctex-search.page
 share/help/zh_TW/evince/synctex-support.page
 share/help/zh_TW/evince/synctex.page
 share/help/zh_TW/evince/textselection.page
-share/help/zh_TW/evince/titlebar.page
 share/help/zh_TW/evince/translate.page
-share/icons/hicolor/16x16/apps/evince.png
-share/icons/hicolor/22x22/apps/evince.png
-share/icons/hicolor/24x24/apps/evince.png
-share/icons/hicolor/256x256/apps/evince.png
-share/icons/hicolor/48x48/apps/evince.png
-share/icons/hicolor/symbolic/apps/evince-symbolic.svg
+share/icons/hicolor/scalable/apps/org.gnome.Evince.svg
+share/icons/hicolor/symbolic/apps/org.gnome.Evince-symbolic.svg
 share/locale/af/LC_MESSAGES/evince.mo
 share/locale/an/LC_MESSAGES/evince.mo
 share/locale/ar/LC_MESSAGES/evince.mo
@@ -3008,6 +2836,7 @@ share/locale/lt/LC_MESSAGES/evince.mo
 share/locale/lv/LC_MESSAGES/evince.mo
 share/locale/mai/LC_MESSAGES/evince.mo
 share/locale/mg/LC_MESSAGES/evince.mo
+share/locale/mjw/LC_MESSAGES/evince.mo
 share/locale/mk/LC_MESSAGES/evince.mo
 share/locale/ml/LC_MESSAGES/evince.mo
 share/locale/mn/LC_MESSAGES/evince.mo
@@ -3056,5 +2885,5 @@ share/metainfo/evince-pdfdocument.metainfo.xml
 share/metainfo/evince-psdocument.metainfo.xml
 share/metainfo/evince-tiffdocument.metainfo.xml
 %%XPS%%share/metainfo/evince-xpsdocument.metainfo.xml
-share/metainfo/evince.appdata.xml
+share/metainfo/org.gnome.Evince.appdata.xml
 share/thumbnailers/evince.thumbnailer

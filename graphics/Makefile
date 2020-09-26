@@ -163,7 +163,6 @@
     SUBDIR += epstool
     SUBDIR += eterm-bg
     SUBDIR += evince
-    SUBDIR += evince-lite
     SUBDIR += evolvotron
     SUBDIR += exif
     SUBDIR += exifprobe
