@@ -14,7 +14,7 @@ COMMENT=	Legendary Open Cubic Player
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-ONLY_FOR_ARCHS=	amd64 i386 powerpc64 powerpc
+ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 powerpc64le
 
 BUILD_DEPENDS=	xa65:devel/xa65
 LIB_DEPENDS=	libid3tag.so:audio/libid3tag \
