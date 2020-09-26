@@ -1,15 +1,15 @@
 --- CMakeLists.txt.orig	2020-06-02 09:41:46 UTC
 +++ CMakeLists.txt
-@@ -65,7 +65,7 @@ pkg_check_modules(REPO REQUIRED librepo>=0.11.0)
- include_directories(${REPO_INCLUDE_DIRS})
- link_directories(${REPO_LIBRARY_DIRS})
- pkg_check_modules(RPM REQUIRED rpm>=4.11.0)
--pkg_check_modules(SMARTCOLS REQUIRED smartcols)
-+#pkg_check_modules(SMARTCOLS REQUIRED smartcols)
- pkg_check_modules(SQLite3 REQUIRED sqlite3)
+@@ -171,15 +171,19 @@ add_subdirectory(po)
  
- # always enable linking with libdnf utils
-@@ -178,8 +178,10 @@ endif()
+ 
+ # build docs
++if (FREEBSD_INSTALL_DOCS)
+ add_subdirectory(docs/libdnf)
+ if(WITH_BINDINGS)
+     add_subdirectory(docs/hawkey)
+ endif()
++endif()
  
  
  # build tests

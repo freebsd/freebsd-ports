@@ -1,0 +1,12 @@
+--- tests/CMakeLists.txt.orig	2020-09-26 05:07:59 UTC
++++ tests/CMakeLists.txt
+@@ -2,7 +2,9 @@ add_subdirectory(libdnf/module/modulemd)
+ add_subdirectory(libdnf/module)
+ add_subdirectory(libdnf/repo)
+ add_subdirectory(libdnf/transaction)
++if (BUILD_TESTING)
+ add_subdirectory(hawkey)
++endif()
+ add_subdirectory(libdnf)
+ 
+ 
