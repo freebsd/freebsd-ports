@@ -1,13 +1,13 @@
 # Created by: Torsten Zuehlsdorff <tz@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	gitlab-workhorse
-PORTVERSION=	8.39.0
-PORTREVISION=	0
+PORTNAME?=	gitlab-workhorse
+PORTVERSION?=	8.46.0
+PORTREVISION?=	0
 CATEGORIES=	www
 
-MAINTAINER=	mfechner@FreeBSD.org
-COMMENT=	Smart reverse proxy for GitLab
+MAINTAINER?=	mfechner@FreeBSD.org
+COMMENT?=	Smart reverse proxy for GitLab
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -19,22 +19,24 @@ USES=		gmake go:modules,no_targets
 MAKE_ENV=	GOFLAGS="${GO_BUILDFLAGS}"
 
 USE_GITLAB=	yes
-GL_ACCOUNT=	gitlab-org
+GL_ACCOUNT?=	gitlab-org
 # Find the commit hash here: https://gitlab.com/gitlab-org/gitlab-workhorse/tags
-GL_COMMIT=	8b819cbd724084ebc490feabcb32b09e605fae56
+GL_COMMIT?=	df805fb1656285e386d4f1209593fff3b178b772
 
 # for go dependencies
 USE_GITHUB=	nodefault
 # generated with: make gomod-vendor
-# 73dd
+# 82dd
 GH_TUPLE=	\
+		Azure:azure-pipeline-go:v0.2.2:azure_azure_pipeline_go/vendor/github.com/Azure/azure-pipeline-go \
+		Azure:azure-storage-blob-go:v0.10.0:azure_azure_storage_blob_go/vendor/github.com/Azure/azure-storage-blob-go \
 		BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/toml \
 		DataDog:dd-trace-go:v1.7.0:datadog_dd_trace_go/vendor/gopkg.in/DataDog/dd-trace-go.v1 \
 		FZambia:sentinel:v1.0.0:fzambia_sentinel/vendor/github.com/FZambia/sentinel \
 		alecthomas:chroma:v0.7.3:alecthomas_chroma/vendor/github.com/alecthomas/chroma \
-		aws:aws-sdk-go:v1.31.7:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
+		aws:aws-sdk-go:v1.31.13:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
 		beorn7:perks:v1.0.0:beorn7_perks/vendor/github.com/beorn7/perks \
-		census-instrumentation:opencensus-go:v0.22.2:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
+		census-instrumentation:opencensus-go:v0.22.3:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
 		certifi:gocertifi:ee1a9a0726d2:certifi_gocertifi/vendor/github.com/certifi/gocertifi \
 		client9:reopen:v1.0.0:client9_reopen/vendor/github.com/client9/reopen \
 		codahale:hdrhistogram:3a0bb77429bd:codahale_hdrhistogram/vendor/github.com/codahale/hdrhistogram \
@@ -42,39 +44,45 @@ GH_TUPLE=	\
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		dgrijalva:jwt-go:v3.2.0:dgrijalva_jwt_go/vendor/github.com/dgrijalva/jwt-go \
 		dlclark:regexp2:v1.2.0:dlclark_regexp2/vendor/github.com/dlclark/regexp2 \
-		dominikh:go-tools:v0.0.1-2019.2.3:dominikh_go_tools/vendor/honnef.co/go/tools \
+		dominikh:go-tools:v0.0.1-2020.1.5:dominikh_go_tools/vendor/honnef.co/go/tools \
 		getsentry:raven-go:v0.1.2:getsentry_raven_go/vendor/github.com/getsentry/raven-go \
 		go-yaml:yaml:v2.2.8:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
-		golang:appengine:v1.6.5:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:87dc89f01550:golang_crypto/vendor/golang.org/x/crypto \
+		golang:appengine:v1.6.6:golang_appengine/vendor/google.golang.org/appengine \
+		golang:crypto:e9b2fee46413:golang_crypto/vendor/golang.org/x/crypto \
 		golang:gddo:af0f2af80721:golang_gddo/vendor/github.com/golang/gddo \
-		golang:groupcache:215e87163ea7:golang_groupcache/vendor/github.com/golang/groupcache \
-		golang:lint:fdd1cda4f05f:golang_lint/vendor/golang.org/x/lint \
-		golang:mod:v0.2.0:golang_mod/vendor/golang.org/x/mod \
-		golang:net:0de0cce0169b:golang_net/vendor/golang.org/x/net \
+		golang:groupcache:8c9f03a8e57e:golang_groupcache/vendor/github.com/golang/groupcache \
+		golang:lint:738671d3881b:golang_lint/vendor/golang.org/x/lint \
+		golang:mod:v0.3.0:golang_mod/vendor/golang.org/x/mod \
+		golang:net:627f9648deb9:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:bf48bf16ab8d:golang_oauth2/vendor/golang.org/x/oauth2 \
-		golang:protobuf:v1.3.2:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:669c56c373c4:golang_sys/vendor/golang.org/x/sys \
+		golang:protobuf:v1.4.2:golang_protobuf/vendor/github.com/golang/protobuf \
+		golang:sys:6fdc65e7d980:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
-		golang:tools:cb1345f3a375:golang_tools/vendor/golang.org/x/tools \
+		golang:tools:1b747fd94509:golang_tools/vendor/golang.org/x/tools \
 		golang:xerrors:9bdfabe68543:golang_xerrors/vendor/golang.org/x/xerrors \
 		gomodule:redigo:v2.0.0:gomodule_redigo/vendor/github.com/gomodule/redigo \
-		google:go-genproto:ca5a22157cba:google_go_genproto/vendor/google.golang.org/genproto \
-		google:pprof:d4f498aebedc:google_pprof/vendor/github.com/google/pprof \
-		googleapis:gax-go:v2.0.5:googleapis_gax_go_v2/vendor/github.com/googleapis/gax-go \
-		googleapis:google-api-go-client:v0.15.0:googleapis_google_api_go_client/vendor/google.golang.org/api \
-		googleapis:google-cloud-go:v0.50.0:googleapis_google_cloud_go/vendor/cloud.google.com/go \
+		google:go-cloud:v0.20.0:google_go_cloud/vendor/gocloud.dev \
+		google:go-cmp:v0.4.1:google_go_cmp/vendor/github.com/google/go-cmp \
+		google:go-genproto:7c474a2e3482:google_go_genproto/vendor/google.golang.org/genproto \
+		google:pprof:427632fa3b1c:google_pprof/vendor/github.com/google/pprof \
+		google:uuid:v1.1.1:google_uuid/vendor/github.com/google/uuid \
+		google:wire:v0.4.0:google_wire/vendor/github.com/google/wire \
+		googleapis:gax-go:v2.0.2:googleapis_gax_go/vendor/github.com/googleapis/gax-go \
+		googleapis:gax-go:v2.0.5:googleapis_gax_go_v2 \
+		googleapis:google-api-go-client:v0.26.0:googleapis_google_api_go_client/vendor/google.golang.org/api \
+		googleapis:google-cloud-go:v0.58.0:googleapis_google_cloud_go/vendor/cloud.google.com/go \
 		gopherjs:gopherjs:0766667cb4d1:gopherjs_gopherjs/vendor/github.com/gopherjs/gopherjs \
 		gorilla:websocket:v1.4.0:gorilla_websocket/vendor/github.com/gorilla/websocket \
 		grpc-ecosystem:go-grpc-middleware:v1.0.0:grpc_ecosystem_go_grpc_middleware/vendor/github.com/grpc-ecosystem/go-grpc-middleware \
 		grpc-ecosystem:go-grpc-prometheus:v1.2.0:grpc_ecosystem_go_grpc_prometheus/vendor/github.com/grpc-ecosystem/go-grpc-prometheus \
-		grpc:grpc-go:v1.24.0:grpc_grpc_go/vendor/google.golang.org/grpc \
+		grpc:grpc-go:v1.29.1:grpc_grpc_go/vendor/google.golang.org/grpc \
 		jmespath:go-jmespath:v0.3.0:jmespath_go_jmespath/vendor/github.com/jmespath/go-jmespath \
 		johannesboyne:gofakes3:02d71f533bec:johannesboyne_gofakes3/vendor/github.com/johannesboyne/gofakes3 \
 		jpillora:backoff:8eab2debe79d:jpillora_backoff/vendor/github.com/jpillora/backoff \
 		jtolds:gls:v4.20.0:jtolds_gls/vendor/github.com/jtolds/gls \
 		konsorten:go-windows-terminal-sequences:v1.0.2:konsorten_go_windows_terminal_sequences/vendor/github.com/konsorten/go-windows-terminal-sequences \
 		lightstep:lightstep-tracer-go:v0.15.6:lightstep_lightstep_tracer_go/vendor/github.com/lightstep/lightstep-tracer-go \
+		mattn:go-ieproxy:v0.0.1:mattn_go_ieproxy/vendor/github.com/mattn/go-ieproxy \
 		matttproud:golang_protobuf_extensions:v1.0.1:matttproud_golang_protobuf_extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
 		mitchellh:copystructure:v1.0.0:mitchellh_copystructure/vendor/github.com/mitchellh/copystructure \
 		mitchellh:reflectwalk:v1.0.0:mitchellh_reflectwalk/vendor/github.com/mitchellh/reflectwalk \
@@ -86,6 +94,7 @@ GH_TUPLE=	\
 		prometheus:client_model:14fe0d1b01d4:prometheus_client_model/vendor/github.com/prometheus/client_model \
 		prometheus:common:v0.4.1:prometheus_common/vendor/github.com/prometheus/common \
 		prometheus:procfs:v0.0.2:prometheus_procfs/vendor/github.com/prometheus/procfs \
+		protocolbuffers:protobuf-go:v1.24.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
 		rafaeljusto:redigomock:257e089e14a1:rafaeljusto_redigomock/vendor/github.com/rafaeljusto/redigomock \
 		ryszard:goskiplist:2dfbae5fcf46:ryszard_goskiplist/vendor/github.com/ryszard/goskiplist \
 		sebest:xff:6c115e0ffa35:sebest_xff/vendor/github.com/sebest/xff \
@@ -106,7 +115,12 @@ PLIST_FILES=	bin/gitlab-workhorse \
 		bin/gitlab-zip-metadata
 PLIST_DIRS=	${WWWDIR}
 
+post-extract:
+	@${RM} -r ${WRKSRC}/vendor/github.com/googleapis/gax-go/v2
+	@${RLN} ${WRKSRC_googleapis_gax_go_v2}/v2 ${WRKSRC}/vendor/github.com/googleapis/gax-go/v2
+
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/www/${PORTNAME}
 
 .include <bsd.port.mk>
+
