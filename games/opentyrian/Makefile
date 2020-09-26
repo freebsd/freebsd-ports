@@ -3,7 +3,7 @@
 
 PORTNAME=	opentyrian
 PORTVERSION=	2.1.20130907
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	https://bitbucket.org/opentyrian/opentyrian/get/ \
 		http://mirror.amdmi3.ru/distfiles/${DIST_SUBDIR}/
@@ -16,15 +16,16 @@ COMMENT=	Arcade-style vertical scrolling shooter
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-77a8715634e3
-
 USES=		gmake sdl tar:bzip2
-MAKE_ENV=	ALL_CFLAGS="${CFLAGS}"
 USE_SDL=	sdl
-SUB_FILES=	pkg-message
-DATADIR=	${PREFIX}/share/tyrian
 
+MAKE_ENV=	ALL_CFLAGS="${CFLAGS}"
+
+DATADIR=	${PREFIX}/share/tyrian
 PORTSCOUT=	skipv:11402-phase-0.8
+SUB_FILES=	pkg-message
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-77a8715634e3
 
 PORTDOCS=	CREDITS NEWS README
 

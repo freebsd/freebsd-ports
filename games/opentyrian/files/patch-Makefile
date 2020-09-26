@@ -9,7 +9,7 @@
  ############################################################
  
  STRIP := strip
-@@ -21,21 +19,11 @@ OBJS := $(SRCS:src/%.c=obj/%.o)
+@@ -21,19 +19,9 @@ OBJS := $(SRCS:src/%.c=obj/%.o)
  
  # FLAGS ####################################################
  
@@ -21,13 +21,11 @@
  EXTRA_CFLAGS += -MMD -pedantic -Wall -Wextra -Wno-missing-field-initializers
  ifeq ($(WITH_NETWORK), true)
      EXTRA_CFLAGS += -DWITH_NETWORK
- endif
- 
+-endif
+-
 -HG_REV := $(shell hg id -ib && touch src/hg_revision.h)
 -ifneq ($(HG_REV), )
 -    EXTRA_CFLAGS += '-DHG_REV="$(HG_REV)"'
--endif
--
- EXTRA_LDLIBS += -lm
+ endif
  
- SDL_CFLAGS := $(shell $(SDL_CONFIG) --cflags)
+ EXTRA_LDLIBS += -lm
