@@ -1,5 +1,5 @@
---- xlators/mount/fuse/utils/mount_glusterfs.in.orig	2017-06-27 22:25:12.392137135 +0700
-+++ xlators/mount/fuse/utils/mount_glusterfs.in	2017-12-19 18:24:21.736142000 +0700
+--- xlators/mount/fuse/utils/mount_glusterfs.in.orig	2017-06-28 05:25:12 UTC
++++ xlators/mount/fuse/utils/mount_glusterfs.in
 @@ -463,50 +463,44 @@ parse_options()
          if [ "$key" = "$value" ]; then
              without_options $pair;

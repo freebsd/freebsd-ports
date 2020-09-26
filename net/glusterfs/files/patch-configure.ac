@@ -37,3 +37,17 @@
          GF_CFLAGS="${GF_CFLAGS} -DO_DSYNC=0"
          GF_CFLAGS="${GF_CFLAGS} -Dxdr_quad_t=xdr_longlong_t"
          GF_CFLAGS="${GF_CFLAGS} -Dxdr_u_quad_t=xdr_u_longlong_t"
+@@ -1508,6 +1514,13 @@ AC_SUBST(AM_LIBTOOLFLAGS)
+ AC_SUBST(GF_NO_UNDEFINED)
+ AC_SUBST(GF_XLATOR_DEFAULT_LDFLAGS)
+ AC_SUBST(GF_XLATOR_LDFLAGS)
++AC_SUBST(GF_XLATOR_MGNT_LIBADD)
++
++case $host_os in
++     *freebsd*)
++        GF_XLATOR_MGNT_LIBADD="-lutil -lprocstat"
++        ;;
++esac
+ 
+ CONTRIBDIR='$(top_srcdir)/contrib'
+ AC_SUBST(CONTRIBDIR)

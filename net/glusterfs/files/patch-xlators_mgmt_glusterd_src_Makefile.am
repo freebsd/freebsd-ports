@@ -1,6 +1,6 @@
 --- xlators/mgmt/glusterd/src/Makefile.am.orig	2020-07-16 17:28:50 UTC
 +++ xlators/mgmt/glusterd/src/Makefile.am
-@@ -25,12 +25,14 @@ glusterd_la_SOURCES = glusterd.c glusterd-handler.c gl
+@@ -25,13 +25,14 @@ glusterd_la_SOURCES = glusterd.c glusterd-handler.c gl
  	glusterd-conn-helper.c glusterd-snapd-svc.c glusterd-snapd-svc-helper.c \
  	glusterd-bitd-svc.c glusterd-scrub-svc.c glusterd-server-quorum.c \
  	glusterd-reset-brick.c glusterd-shd-svc.c glusterd-shd-svc-helper.c \
@@ -12,7 +12,18 @@
  	$(top_builddir)/libglusterd/src/libglusterd.la \
  	$(top_builddir)/rpc/xdr/src/libgfxdr.la \
  	$(top_builddir)/rpc/rpc-lib/src/libgfrpc.la \
-+	$(CONTRIBDIR)/mount/mntent_compat.h \
- 	$(XML_LIBS) -lcrypto $(URCU_LIBS) $(URCU_CDS_LIBS) $(LIB_DL)
+-	$(XML_LIBS) -lcrypto $(URCU_LIBS) $(URCU_CDS_LIBS) $(LIB_DL)
++	$(XML_LIBS) -lcrypto $(URCU_LIBS) $(URCU_CDS_LIBS) $(LIB_DL) $(GF_XLATOR_MGNT_LIBADD)
  
  noinst_HEADERS = glusterd.h glusterd-utils.h glusterd-op-sm.h \
+ 	glusterd-sm.h glusterd-store.h glusterd-mem-types.h \
+@@ -46,7 +47,8 @@ noinst_HEADERS = glusterd.h glusterd-utils.h glusterd-
+ 	glusterd-scrub-svc.h glusterd-server-quorum.h glusterd-errno.h \
+         glusterd-shd-svc.h glusterd-shd-svc-helper.h \
+         glusterd-gfproxyd-svc.h glusterd-gfproxyd-svc-helper.h \
+-	$(CONTRIBDIR)/userspace-rcu/rculist-extra.h
++	$(CONTRIBDIR)/userspace-rcu/rculist-extra.h \
++	$(CONTRIBDIR)/mount/mntent_compat.h
+ 
+ AM_CPPFLAGS = $(GF_CPPFLAGS) -I$(top_srcdir)/libglusterfs/src \
+ 	-I$(top_srcdir)/rpc/xdr/src -I$(top_builddir)/rpc/xdr/src \
