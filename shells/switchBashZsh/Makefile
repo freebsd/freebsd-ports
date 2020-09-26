@@ -7,7 +7,7 @@ CATEGORIES=	shells
 MAINTAINER=	bourne.identity@hotmail.com
 COMMENT=	Portable shell setup for Bash/Zsh across FreeBSD/Linux/Cygwin
 
-LICENSE=	GPLv2
+LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
