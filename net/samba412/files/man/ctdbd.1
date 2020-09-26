@@ -2,12 +2,12 @@
 .\"     Title: ctdbd
 .\"    Author: 
 .\" Generator: DocBook XSL Stylesheets v1.79.1 <http://docbook.sf.net/>
-.\"      Date: 11/18/2018
+.\"      Date: 09/23/2020
 .\"    Manual: CTDB - clustered TDB database
 .\"    Source: ctdb
 .\"  Language: English
 .\"
-.TH "CTDBD" "1" "11/18/2018" "ctdb" "CTDB \- clustered TDB database"
+.TH "CTDBD" "1" "09/23/2020" "ctdb" "CTDB \- clustered TDB database"
 .\" -----------------------------------------------------------------
 .\" * Define some portability stuff
 .\" -----------------------------------------------------------------
@@ -47,7 +47,9 @@ for an overview of CTDB\&.
 .PP
 \-i, \-\-interactive
 .RS 4
-Enable interactive mode\&. This will make ctdbd run in the foreground and not detach from the terminal\&. By default ctdbd will detach itself and run in the background as a daemon\&.
+Enable interactive mode\&. This will make ctdbd run in the foreground and not detach from the terminal\&. In this mode ctdbd will log to stderr\&.
+.sp
+By default ctdbd will detach itself and run in the background as a daemon, logging to the configured destination\&.
 .RE
 .PP
 \-?, \-\-help

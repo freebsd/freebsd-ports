@@ -2,12 +2,12 @@
 .\"     Title: ctdb
 .\"    Author: 
 .\" Generator: DocBook XSL Stylesheets v1.79.1 <http://docbook.sf.net/>
-.\"      Date: 11/18/2018
+.\"      Date: 09/23/2020
 .\"    Manual: CTDB - clustered TDB database
 .\"    Source: ctdb
 .\"  Language: English
 .\"
-.TH "CTDB" "1" "11/18/2018" "ctdb" "CTDB \- clustered TDB database"
+.TH "CTDB" "1" "09/23/2020" "ctdb" "CTDB \- clustered TDB database"
 .\" -----------------------------------------------------------------
 .\" * Define some portability stuff
 .\" -----------------------------------------------------------------
@@ -103,7 +103,7 @@ Print some help text to the screen\&.
 .PP
 \-\-usage
 .RS 4
-Print useage information to the screen\&.
+Print usage information to the screen\&.
 .RE
 .PP
 \-d \-\-debug=\fIDEBUGLEVEL\fR
@@ -120,7 +120,7 @@ This command displays the PNN of the current node\&.
 .PP
 This command shows the current status of all CTDB nodes based on information from the queried node\&.
 .PP
-Note: If the the queried node is INACTIVE then the status might not be current\&.
+Note: If the queried node is INACTIVE then the status might not be current\&.
 .sp
 .it 1 an-trap
 .nr an-no-space-flag 1
@@ -291,7 +291,7 @@ pnn:1 10\&.0\&.0\&.31        OK
 .PP
 This command shows the pnn of the node which is currently the recmaster\&.
 .PP
-Note: If the the queried node is INACTIVE then the status might not be current\&.
+Note: If the queried node is INACTIVE then the status might not be current\&.
 .SS "uptime"
 .PP
 This command shows the uptime for the ctdb daemon\&. When the last recovery or ip\-failover completed and how long it took\&. If the "duration" is shown as a negative number, this indicates that there is a recovery/failover in progress and it started that many seconds ago\&.
@@ -728,7 +728,6 @@ RecoveryDropAllIPs      = 120
 VacuumInterval          = 10
 VacuumMaxRunTime        = 120
 RepackLimit             = 10000
-VacuumLimit             = 5000
 VacuumFastPathCount     = 60
 MaxQueueDropMsg         = 1000000
 AllowUnhealthyDBRead    = 0
@@ -1076,7 +1075,7 @@ NoIPFailback = 1
 This command will shutdown a specific CTDB daemon\&.
 .SS "setlmasterrole on|off"
 .PP
-This command is used ot enable/disable the LMASTER capability for a node at runtime\&. This capability determines whether or not a node can be used as an LMASTER for records in the database\&. A node that does not have the LMASTER capability will not show up in the vnnmap\&.
+This command is used to enable/disable the LMASTER capability for a node at runtime\&. This capability determines whether or not a node can be used as an LMASTER for records in the database\&. A node that does not have the LMASTER capability will not show up in the vnnmap\&.
 .PP
 Nodes will by default have this capability, but it can be stripped off nodes by the setting in the sysconfig file or by using this command\&.
 .PP
@@ -1085,7 +1084,7 @@ Once this setting has been enabled/disabled, you need to perform a recovery for 
 See also "ctdb getcapabilities"
 .SS "setrecmasterrole on|off"
 .PP
-This command is used ot enable/disable the RECMASTER capability for a node at runtime\&. This capability determines whether or not a node can be used as an RECMASTER for the cluster\&. A node that does not have the RECMASTER capability can not win a recmaster election\&. A node that already is the recmaster for the cluster when the capability is stripped off the node will remain the recmaster until the next cluster election\&.
+This command is used to enable/disable the RECMASTER capability for a node at runtime\&. This capability determines whether or not a node can be used as an RECMASTER for the cluster\&. A node that does not have the RECMASTER capability can not win a recmaster election\&. A node that already is the recmaster for the cluster when the capability is stripped off the node will remain the recmaster until the next cluster election\&.
 .PP
 Nodes will by default have this capability, but it can be stripped off nodes by the setting in the sysconfig file or by using this command\&.
 .PP
@@ -1249,7 +1248,7 @@ This command is currently unable to make changes to the netmask or interfaces as
 .PP
 This command lists all clustered TDB databases that the CTDB daemon has attached to\&. Some databases are flagged as PERSISTENT, this means that the database stores data persistently and the data will remain across reboots\&. One example of such a database is secrets\&.tdb where information about how the cluster was joined to the domain is stored\&. Some database are flagged as REPLICATED, this means that the data in that database is replicated across all the nodes\&. But the data will not remain across reboots\&. This type of database is used by CTDB to store it\*(Aqs internal state\&.
 .PP
-If a PERSISTENT database is not in a healthy state the database is flagged as UNHEALTHY\&. If there\*(Aqs at least one completely healthy node running in the cluster, it\*(Aqs possible that the content is restored by a recovery run automaticly\&. Otherwise an administrator needs to analyze the problem\&.
+If a PERSISTENT database is not in a healthy state the database is flagged as UNHEALTHY\&. If there\*(Aqs at least one completely healthy node running in the cluster, it\*(Aqs possible that the content is restored by a recovery run automatically\&. Otherwise an administrator needs to analyze the problem\&.
 .PP
 See also "ctdb getdbstatus", "ctdb backupdb", "ctdb restoredb", "ctdb dumpbackup", "ctdb wipedb", "ctdb setvar AllowUnhealthyDBRead 1" and (if samba or tdb\-utils are installed) "tdbtool check"\&.
 .PP

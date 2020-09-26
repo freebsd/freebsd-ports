@@ -2,12 +2,12 @@
 .\"     Title: ctdb-tunables
 .\"    Author: 
 .\" Generator: DocBook XSL Stylesheets v1.79.1 <http://docbook.sf.net/>
-.\"      Date: 11/18/2018
+.\"      Date: 09/23/2020
 .\"    Manual: CTDB - clustered TDB database
 .\"    Source: ctdb
 .\"  Language: English
 .\"
-.TH "CTDB\-TUNABLES" "7" "11/18/2018" "ctdb" "CTDB \- clustered TDB database"
+.TH "CTDB\-TUNABLES" "7" "09/23/2020" "ctdb" "CTDB \- clustered TDB database"
 .\" -----------------------------------------------------------------
 .\" * Define some portability stuff
 .\" -----------------------------------------------------------------
@@ -81,7 +81,7 @@ Default: 0
 .PP
 CTDB will not allow incompatible versions to co\-exist in a cluster\&. If a version mismatch is found, then losing CTDB will shutdown\&. To disable the incompatible version check, set this tunable to 1\&.
 .PP
-For version checking, CTDB uses major and minor version\&. For example, CTDB 4\&.6\&.1 and CTDB CTDB 4\&.6\&.2 are matching versions; CTDB 4\&.5\&.x and CTDB 4\&.6\&.y do not match\&.
+For version checking, CTDB uses major and minor version\&. For example, CTDB 4\&.6\&.1 and CTDB 4\&.6\&.2 are matching versions; CTDB 4\&.5\&.x and CTDB 4\&.6\&.y do not match\&.
 .PP
 CTDB with version check support will lose to CTDB without version check support\&. Between two different CTDB versions with version check support, one running for less time will lose\&. If the running time for both CTDB versions with version check support is equal (to seconds), then the older version will lose\&. The losing CTDB daemon will shutdown\&.
 .SS "AllowUnhealthyDBRead"
@@ -214,7 +214,7 @@ This is the maximum number of lock helper processes ctdb will create for obtaini
 .PP
 Default: 0
 .PP
-When set to non\-zero, ctdb will log if certains operations take longer than this value, in milliseconds, to complete\&. These operations include "process a record request from client", "take a record or database lock", "update a persistent database record" and "vaccum a database"\&.
+When set to non\-zero, ctdb will log if certains operations take longer than this value, in milliseconds, to complete\&. These operations include "process a record request from client", "take a record or database lock", "update a persistent database record" and "vacuum a database"\&.
 .SS "MaxQueueDropMsg"
 .PP
 Default: 1000000
@@ -265,19 +265,19 @@ This is the limit on the size of the record buffer to be sent in various control
 .PP
 Default: 10
 .PP
-If the recovery daemon has failed to ping the main dameon for this many consecutive intervals, the main daemon will consider the recovery daemon as hung and will try to restart it to recover\&.
+If the recovery daemon has failed to ping the main daemon for this many consecutive intervals, the main daemon will consider the recovery daemon as hung and will try to restart it to recover\&.
 .SS "RecdPingTimeout"
 .PP
 Default: 60
 .PP
-If the main dameon has not heard a "ping" from the recovery dameon for this many seconds, the main dameon will log a message that the recovery daemon is potentially hung\&. This also increments a counter which is checked against
+If the main daemon has not heard a "ping" from the recovery daemon for this many seconds, the main daemon will log a message that the recovery daemon is potentially hung\&. This also increments a counter which is checked against
 \fIRecdFailCount\fR
 for detection of hung recovery daemon\&.
 .SS "RecLockLatencyMs"
 .PP
 Default: 1000
 .PP
-When using a reclock file for split brain prevention, if set to non\-zero this tunable will make the recovery dameon log a message if the fcntl() call to lock/testlock the recovery file takes longer than this number of milliseconds\&.
+When using a reclock file for split brain prevention, if set to non\-zero this tunable will make the recovery daemon log a message if the fcntl() call to lock/testlock the recovery file takes longer than this number of milliseconds\&.
 .SS "RecoverInterval"
 .PP
 Default: 1
@@ -287,7 +287,7 @@ How frequently in seconds should the recovery daemon perform the consistency che
 .PP
 Default: 120
 .PP
-This is the default setting for timeouts for controls when sent from the recovery daemon\&. We allow longer control timeouts from the recovery daemon than from normal use since the recovery dameon often use controls that can take a lot longer than normal controls\&.
+This is the default setting for timeouts for controls when sent from the recovery daemon\&. We allow longer control timeouts from the recovery daemon than from normal use since the recovery daemon often use controls that can take a lot longer than normal controls\&.
 .SS "RecoveryBanPeriod"
 .PP
 Default: 300
@@ -311,12 +311,6 @@ Default: 10000
 .PP
 During vacuuming, if the number of freelist records are more than
 \fIRepackLimit\fR, then the database is repacked to get rid of the freelist records to avoid fragmentation\&.
-.PP
-Databases are repacked only if both
-\fIRepackLimit\fR
-and
-\fIVacuumLimit\fR
-are exceeded\&.
 .SS "RerecoveryTimeout"
 .PP
 Default: 10
@@ -373,18 +367,6 @@ number of fast path vacuuming runs, ctdb will trigger a scan of complete databas
 Default: 10
 .PP
 Periodic interval in seconds when vacuuming is triggered for volatile databases\&.
-.SS "VacuumLimit"
-.PP
-Default: 5000
-.PP
-During vacuuming, if the number of deleted records are more than
-\fIVacuumLimit\fR, then databases are repacked to avoid fragmentation\&.
-.PP
-Databases are repacked only if both
-\fIRepackLimit\fR
-and
-\fIVacuumLimit\fR
-are exceeded\&.
 .SS "VacuumMaxRunTime"
 .PP
 Default: 120

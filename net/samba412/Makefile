@@ -1,7 +1,7 @@
 # Created by: timur@FreeBSD.org
 # $FreeBSD$
 
-PORTNAME=			${SAMBA4_BASENAME}411
+PORTNAME=			${SAMBA4_BASENAME}412
 PORTVERSION=			${SAMBA4_VERSION}
 PORTREVISION=			0
 CATEGORIES?=			net
@@ -15,7 +15,7 @@ LICENSE=			GPLv3+
 LICENSE_FILE=			${WRKSRC}/COPYING
 
 IGNORE_NONTHREAD_PYTHON=	needs port lang/python${PYTHON_SUFFIX} to be build with THREADS support
-CONFLICTS_INSTALL?=		samba4-4.0.* samba4[1-9]-4.* samba410-4.10.* p5-Parse-Pidl-4.*
+CONFLICTS_INSTALL?=		samba4-4.0.* samba4[1-9]-4.* samba41[013-9]-4.1* p5-Parse-Pidl-4.*
 
 USES=				cpe
 
@@ -23,7 +23,7 @@ EXTRA_PATCHES+=			${PATCHDIR}/0001-Zfs-provision-1.patch:-p1
 
 SAMBA4_BASENAME=		samba
 SAMBA4_PORTNAME=		${SAMBA4_BASENAME}4
-SAMBA4_VERSION=			4.11.13
+SAMBA4_VERSION=			4.12.7
 SAMBA4_DISTNAME=		${SAMBA4_BASENAME}-${SAMBA4_VERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
 
 WRKSRC?=			${WRKDIR}/${DISTNAME}
@@ -85,15 +85,13 @@ OPTIONS_DEFINE=			AD_DC ADS CLUSTER CUPS DOCS FAM GPGME \
 OPTIONS_DEFINE+=		DEVELOPER MANDOC
 #OPTIONS_DEFINE+=		MEMORY_DEBUG
 
-OPTIONS_DEFINE_amd64=		AESNI
-OPTIONS_DEFAULT_amd64=		AESNI
-
 OPTIONS_GROUP=			VFS
 OPTIONS_GROUP_VFS=		FRUIT GLUSTERFS
 
 OPTIONS_SINGLE=			GSSAPI ZEROCONF
-# GSSAPI_HEIMDAL
+
 OPTIONS_SINGLE_GSSAPI=		GSSAPI_BUILTIN GSSAPI_MIT
+#GSSAPI_HEIMDAL
 OPTIONS_SINGLE_ZEROCONF=	ZEROCONF_NONE AVAHI MDNSRESPONDER
 
 OPTIONS_RADIO=			DNS
@@ -105,7 +103,6 @@ OPTIONS_DEFAULT=		AD_DC ADS DOCS FAM LDAP \
 ##############################################################################
 AD_DC_DESC=			Active Directory Domain Controller
 ADS_DESC=			Active Directory client(implies LDAP)
-AESNI_DESC=			Accelerated AES crypto functions(amd64 only)
 CLUSTER_DESC=			Clustering support
 DEVELOPER_DESC=			With developer framework(implies NTVFS)
 FAM_DESC=			File Alteration Monitor
@@ -140,6 +137,8 @@ NSUPDATE_DESC=			Use samba NSUPDATE utility for AD DC
 
 # Iconv(picked up unconditionaly)
 LIB_DEPENDS+=			libiconv.so:converters/libiconv
+# unwind
+LIB_DEPENDS+=			libunwind.so:devel/libunwind
 # Readline(sponsored by Python)
 # XXX: USES=readline pollutes CPPFLAGS, so we explicitly put dependency
 LIB_DEPENDS+=			libreadline.so:devel/readline
@@ -156,7 +155,8 @@ LIB_DEPENDS+=			libsunacl.so:sysutils/libsunacl
 BUILD_DEPENDS+=			jansson>=2.10:devel/jansson
 RUN_DEPENDS+=			jansson>=2.10:devel/jansson
 # tasn1
-LIB_DEPENDS+=			libtasn1.so:security/libtasn1
+BUILD_DEPENDS+=			libtasn1>=3.8:security/libtasn1
+RUN_DEPENDS+=			libtasn1>=3.8:security/libtasn1
 # External Samba dependencies
 # Needed for IDL compiler
 BUILD_DEPENDS+=			p5-Parse-Yapp>=0:devel/p5-Parse-Yapp
@@ -180,6 +180,7 @@ SUB_LIST+=			SAMBA4_BUNDLED_CMOCKA=""
 .else
 SAMBA4_BUNDLED_LIBS+=		!cmocka
 BUILD_DEPENDS+=			cmocka>=1.1.3:sysutils/cmocka
+TEST_DEPENDS+=			cmocka>=1.1.3:sysutils/cmocka
 PLIST_SUB+=			SAMBA4_BUNDLED_CMOCKA="@comment "
 SUB_LIST+=			SAMBA4_BUNDLED_CMOCKA="@comment "
 .endif
@@ -191,8 +192,8 @@ PLIST_SUB+=			SAMBA4_BUNDLED_TALLOC=""
 SUB_LIST+=			SAMBA4_BUNDLED_TALLOC=""
 .else
 SAMBA4_BUNDLED_LIBS+=		!talloc
-BUILD_DEPENDS+=			talloc>=2.2.0:devel/talloc
-RUN_DEPENDS+=			talloc>=2.2.0:devel/talloc
+BUILD_DEPENDS+=			talloc>=2.3.1:devel/talloc
+RUN_DEPENDS+=			talloc>=2.3.1:devel/talloc
 PLIST_SUB+=			SAMBA4_BUNDLED_TALLOC="@comment "
 SUB_LIST+=			SAMBA4_BUNDLED_TALLOC="@comment "
 .endif
@@ -204,8 +205,8 @@ PLIST_SUB+=			SAMBA4_BUNDLED_TEVENT=""
 SUB_LIST+=			SAMBA4_BUNDLED_TEVENT=""
 .else
 SAMBA4_BUNDLED_LIBS+=		!tevent
-BUILD_DEPENDS+=			tevent>=0.10.0:devel/tevent
-RUN_DEPENDS+=			tevent>=0.10.0:devel/tevent
+BUILD_DEPENDS+=			tevent>=0.10.2:devel/tevent
+RUN_DEPENDS+=			tevent>=0.10.2:devel/tevent
 PLIST_SUB+=			SAMBA4_BUNDLED_TEVENT="@comment "
 SUB_LIST+=			SAMBA4_BUNDLED_TEVENT="@comment "
 .endif
@@ -217,8 +218,8 @@ PLIST_SUB+=			SAMBA4_BUNDLED_TDB=""
 SUB_LIST+=			SAMBA4_BUNDLED_TDB=""
 .else
 SAMBA4_BUNDLED_LIBS+=		!tdb
-BUILD_DEPENDS+=			tdb>=1.4.2:databases/tdb
-RUN_DEPENDS+=			tdb>=1.4.2:databases/tdb
+BUILD_DEPENDS+=			tdb>=1.4.3:databases/tdb
+RUN_DEPENDS+=			tdb>=1.4.3:databases/tdb
 PLIST_SUB+=			SAMBA4_BUNDLED_TDB="@comment "
 SUB_LIST+=			SAMBA4_BUNDLED_TDB="@comment "
 .endif
@@ -231,8 +232,8 @@ SUB_LIST+=			SAMBA4_BUNDLED_LDB=""
 SAMBA4_MODULEDIR=		${SAMBA4_LIBDIR}/modules
 .else
 SAMBA4_BUNDLED_LIBS+=		!ldb
-BUILD_DEPENDS+=			ldb20>=2.0.8:databases/ldb20
-RUN_DEPENDS+=			ldb20>=2.0.8:databases/ldb20
+BUILD_DEPENDS+=			ldb21>=2.1.2:databases/ldb21
+RUN_DEPENDS+=			ldb21>=2.1.2:databases/ldb21
 PLIST_SUB+=			SAMBA4_BUNDLED_LDB="@comment "
 SUB_LIST+=			SAMBA4_BUNDLED_LDB="@comment "
 SAMBA4_MODULEDIR=		${PREFIX}/lib/shared-modules
@@ -274,8 +275,7 @@ CONFIGURE_ARGS+=		\
 				--with-libarchive \
 				--with-acl-support \
 				--with-sendfile-support \
-				--disable-ctdb-tests \
-
+				--disable-ctdb-tests
 #				${ICONV_CONFIGURE_BASE}
 ##############################################################################
 FRUIT_PREVENTS=			ZEROCONF_NONE
@@ -284,7 +284,7 @@ FRUIT_VARS=			SAMBA4_MODULES+=vfs_fruit
 FRUIT_PLIST_FILES+=		man/man8/vfs_fruit.8.gz
 
 GLUSTERFS_CONFIGURE_ENABLE=	glusterfs
-GLUSTERFS_LIB_DEPENDS=		libglusterfs.so:net/glusterfs7-libs
+GLUSTERFS_LIB_DEPENDS=		libglusterfs.so:net/glusterfs
 GLUSTERFS_VARS=			SAMBA4_MODULES+=vfs_glusterfs
 GLUSTERFS_PLIST_FILES+=		man/man8/vfs_glusterfs.8.gz
 ##############################################################################
@@ -313,6 +313,7 @@ PICKY_DEVELOPER_CONFIGURE_ON=	--picky-developer
 
 DEVELOPER_IMPLIES=		NTVFS
 DEVELOPER_CONFIGURE_ON=		--enable-developer --enable-selftest --abi-check-disable
+DEVELOPER_CONFIGURE_ENV=	WAF_CMD_FORMAT=string
 DEVELOPER_RUN_DEPENDS=		${SAMBA4_LMDB_DEPENDS}
 DEVELOPER_BUILD_DEPENDS=	${GDB_CMD}:devel/gdb \
 				${SAMBA4_LMDB_DEPENDS}
@@ -343,6 +344,8 @@ QUOTAS_CONFIGURE_WITH=		quotas
 SPOTLIGHT_CONFIGURE_ENABLE=	spotlight
 SPOTLIGHT_BUILD_DEPENDS=	tracker>=1.4.1:sysutils/tracker
 SPOTLIGHT_RUN_DEPENDS=		tracker>=1.4.1:sysutils/tracker
+# ICU
+SPOTLIGHT_LIB_DEPENDS+=		libicuuc.so:devel/icu
 SPOTLIGHT_USES=			bison gnome
 SPOTLIGHT_USE=			gnome=glib20
 
@@ -366,6 +369,11 @@ GSSAPI_MIT_CONFIGURE_ON=	--with-system-mitkrb5 ${GSSAPIBASEDIR} \
 				--with-system-mitkdc=${GSSAPIBASEDIR}/sbin/krb5kdc \
 				--with-experimental-mit-ad-dc
 GSSAPI_MIT_USES=		gssapi:mit
+
+GSSAPI_HEIMDAL_CONFIGURE_ON=	--with-system-heimdalkrb5 ${GSSAPIBASEDIR}
+GSSAPI_HEIMDAL_USES=		gssapi:heimdal
+GSSAPI_HEIMDAL_PREVENTS=	AD_DC
+GSSAPI_HEIMDAL_PREVENTS_MSG=	GSSAPI_HEIMDAL and AD_DC enable conflicting options
 
 LIBZFS_CONFIGURE_WITH=		libzfs
 LIBZFS_VARS=			SAMBA4_MODULES+=vfs_zfs_space
@@ -441,11 +449,11 @@ SAMBA4_BUNDLED_LIBS+=		!pyldb !pyldb-util
 .	endif
 # samba-tool requires those for *upgrade
 .	if ${PORT_OPTIONS:MAD_DC}
-BUILD_DEPENDS+=			${PYTHON_PKGNAMEPREFIX}dnspython>=1.15.0:dns/py-dnspython@${PY_FLAVOR}
 RUN_DEPENDS+=			${PYTHON_PKGNAMEPREFIX}dnspython>=1.15.0:dns/py-dnspython@${PY_FLAVOR}
-
-BUILD_DEPENDS+=			${PYTHON_PKGNAMEPREFIX}markdown>=2.6.11:textproc/py-markdown@${PY_FLAVOR}
 RUN_DEPENDS+=			${PYTHON_PKGNAMEPREFIX}markdown>=2.6.11:textproc/py-markdown@${PY_FLAVOR}
+.			if ${PORT_OPTIONS:MGPGME}
+RUN_DEPENDS+=			${PYTHON_PKGNAMEPREFIX}gpgme>=1.14.0:security/py-gpgme@${PY_FLAVOR}
+.			endif
 .	endif
 .endif
 
@@ -475,11 +483,9 @@ DEBUG_FLAGS?=			-g -ggdb3 -O0
 ##############################################################################
 .include <bsd.port.pre.mk>
 ##############################################################################
-
-# Require llvm 4.0 and AMD64
-.if ${PORT_OPTIONS:MAESNI} && ${ARCH} == "amd64"
+# Implemented in the gcrypt on AMD64
+.if ${ARCH} == "amd64"
 CONFIGURE_ARGS+=		--accel-aes=intelaesni
-PLIST_FILES+=			lib/samba4/private/libaesni-intel-samba4.so
 .else
 CONFIGURE_ARGS+=		--accel-aes=none
 .endif
@@ -606,10 +612,9 @@ pre-build-MANDOC-off:
 .endif
 
 post-install-rm-junk:
-.if defined(NO_PYTHON)
-				${RM} -r ${STAGEDIR}${PYTHON_SITELIBDIR}/samba/third_party/dns \
-					 ${STAGEDIR}${PYTHON_SITELIBDIR}/samba/third_party/iso8601
-.endif
+				${RM} -r ${STAGEDIR}${PYTHON_SITELIBDIR}/samba/third_party
+				${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name __pycache__ \
+					-type d -print0 | ${XARGS} -0 -n 1 -t ${RM} -r
 
 post-install-fix-manpages:
 .for f in vfs_aio_linux.8 vfs_btrfs.8 vfs_ceph.8 vfs_gpfs.8

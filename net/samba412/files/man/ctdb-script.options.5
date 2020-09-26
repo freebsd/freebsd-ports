@@ -2,12 +2,12 @@
 .\"     Title: ctdb-script.options
 .\"    Author: 
 .\" Generator: DocBook XSL Stylesheets v1.79.1 <http://docbook.sf.net/>
-.\"      Date: 11/18/2018
+.\"      Date: 09/23/2020
 .\"    Manual: CTDB - clustered TDB database
 .\"    Source: ctdb
 .\"  Language: English
 .\"
-.TH "CTDB\-SCRIPT\&.OPTIO" "5" "11/18/2018" "ctdb" "CTDB \- clustered TDB database"
+.TH "CTDB\-SCRIPT\&.OPTIO" "5" "09/23/2020" "ctdb" "CTDB \- clustered TDB database"
 .\" -----------------------------------------------------------------
 .\" * Define some portability stuff
 .\" -----------------------------------------------------------------
@@ -513,15 +513,6 @@ MEM\-LIMITS takes the form
 indicating that warnings should be logged if memory usage reaches WARN_LIMIT%\&. If usage reaches UNHEALTHY_LIMIT then the node should be flagged unhealthy\&. Either WARN_LIMIT or UNHEALTHY_LIMIT may be left blank, meaning that check will be omitted\&.
 .sp
 Default is 80, so warnings will be logged when memory usage reaches 80%\&.
-.RE
-.PP
-CTDB_MONITOR_SWAP_USAGE=\fISWAP\-LIMITS\fR
-.RS 4
-SWAP\-LIMITS takes the form
-\fIWARN_LIMIT\fR[:\fIUNHEALTHY_LIMIT\fR]
-indicating that warnings should be logged if swap usage reaches WARN_LIMIT%\&. If usage reaches UNHEALTHY_LIMIT then the node should be flagged unhealthy\&. Either WARN_LIMIT or UNHEALTHY_LIMIT may be left blank, meaning that check will be omitted\&.
-.sp
-Default is 25, so warnings will be logged when swap usage reaches 25%\&.
 .RE
 .SH "EVENT SCRIPT DEBUGGING"
 .SS "debug\-hung\-script\&.sh"

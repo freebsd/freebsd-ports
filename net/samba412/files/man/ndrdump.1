@@ -1,13 +1,13 @@
 '\" t
 .\"     Title: ndrdump
 .\"    Author: [see the "AUTHOR" section]
-.\" Generator: DocBook XSL Stylesheets v1.76.1 <http://docbook.sf.net/>
-.\"      Date: 03/21/2017
+.\" Generator: DocBook XSL Stylesheets v1.79.1 <http://docbook.sf.net/>
+.\"      Date: 09/23/2020
 .\"    Manual: System Administration tools
 .\"    Source: Samba 4.0
 .\"  Language: English
 .\"
-.TH "NDRDUMP" "1" "03/21/2017" "Samba 4\&.0" "System Administration tools"
+.TH "NDRDUMP" "1" "09/23/2020" "Samba 4\&.0" "System Administration tools"
 .\" -----------------------------------------------------------------
 .\" * Define some portability stuff
 .\" -----------------------------------------------------------------
@@ -31,7 +31,7 @@
 ndrdump \- DCE/RPC Packet Parser and Dumper
 .SH "SYNOPSIS"
 .HP \w'\fBndrdump\fR\ 'u
-\fBndrdump\fR [\-c\ context] {pipe} {function} {in|out} {filename}
+\fBndrdump\fR [\-c\ context] {pipe} {format} {in|out|struct} {filename}
 .HP \w'\fBndrdump\fR\ 'u
 \fBndrdump\fR [pipe]
 .HP \w'\fBndrdump\fR\ 'u
@@ -40,14 +40,15 @@ ndrdump \- DCE/RPC Packet Parser and Dumper
 .PP
 ndrdump tries to parse the specified
 \fIfilename\fR
-using Samba\*(Aqs parser for the specified pipe and function\&. The third argument should be either
-\fIin\fR
+using Samba\*(Aqs parser for the specified pipe and format\&. The third argument should be either
+\fIin\fR,
+\fIout\fR
 or
-\fIout\fR, depending on whether the data should be parsed as a request or a reply\&.
+\fIstruct\fRdepending on whether the data should be parsed as a request, reply or a public structure\&.
 .PP
 Running ndrdump without arguments will list the pipes for which parsers are available\&.
 .PP
-Running ndrdump with one argument will list the functions that Samba can parse for the specified pipe\&.
+Running ndrdump with one argument will list the functions and public structures that Samba can parse for the specified pipe\&.
 .PP
 The primary function of ndrdump is debugging Samba\*(Aqs internal DCE/RPC parsing functions\&. The file being parsed is usually one exported by wiresharks
 \(lqExport selected packet bytes\(rq

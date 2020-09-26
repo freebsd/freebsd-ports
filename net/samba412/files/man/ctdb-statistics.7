@@ -2,12 +2,12 @@
 .\"     Title: ctdb-statistics
 .\"    Author: 
 .\" Generator: DocBook XSL Stylesheets v1.79.1 <http://docbook.sf.net/>
-.\"      Date: 11/18/2018
+.\"      Date: 09/23/2020
 .\"    Manual: CTDB - clustered TDB database
 .\"    Source: ctdb
 .\"  Language: English
 .\"
-.TH "CTDB\-STATISTICS" "7" "11/18/2018" "ctdb" "CTDB \- clustered TDB database"
+.TH "CTDB\-STATISTICS" "7" "09/23/2020" "ctdb" "CTDB \- clustered TDB database"
 .\" -----------------------------------------------------------------
 .\" * Define some portability stuff
 .\" -----------------------------------------------------------------
@@ -115,7 +115,7 @@ Time when ctdb was started or the last time statistics was reset\&. The output s
 Number of processes currently connected to CTDB\*(Aqs unix socket\&. This includes recovery daemon, ctdb tool and samba processes (smbd, winbindd)\&.
 .SS "frozen"
 .PP
-1 if the the databases are currently frozen, 0 otherwise\&.
+1 if the databases are currently frozen, 0 otherwise\&.
 .SS "recovering"
 .PP
 1 if recovery is active, 0 otherwise\&.
@@ -383,7 +383,7 @@ Number of failed lock calls\&. This includes database locks and record locks\&.
 Number of req_call messages processed from clients\&. This number should be same as client \-\-> req_call\&.
 .SS "pending_calls"
 .PP
-Number of req_call messages which are currenly being processed\&. This number indicates the number of record migrations in flight\&.
+Number of req_call messages which are currently being processed\&. This number indicates the number of record migrations in flight\&.
 .SS "childwrite_calls"
 .PP
 Number of record update calls\&. Record update calls are used to update a record under a transaction\&.
@@ -404,10 +404,10 @@ Number of readonly delegations created\&.
 Number of readonly delegations that were revoked\&. The difference between total_ro_revokes and total_ro_delegations gives the number of currently active readonly delegations\&.
 .SS "hop_count_buckets"
 .PP
-Distribution of migration requests based on hop counts values\&. Buckets are 1, < 4, < 8, < 16, < 32, < 64, < 128, < 256, < 512, ≥ 512\&.
+Distribution of migration requests based on hop counts values\&. Buckets are 0, <\ \&2, <\ \&4, <\ \&8, <\ \&16, <\ \&32, <\ \&64, <\ \&128, <\ \&256, <\ \&512, <\ \&1024, <\ \&2048, <\ \&4096, <\ \&8192, <\ \&16384, ≥\ \&16384\&.
 .SS "lock_buckets"
 .PP
-Distribution of record lock requests based on time required to obtain locks\&. Buckets are < 1ms, < 10ms, < 100ms, < 1s, < 2s, < 4s, < 8s, < 16s, < 32s, < 64s, ≥ 64s\&.
+Distribution of record lock requests based on time required to obtain locks\&. Buckets are <\ \&1ms, <\ \&10ms, <\ \&100ms, <\ \&1s, <\ \&2s, <\ \&4s, <\ \&8s, <\ \&16s, <\ \&32s, <\ \&64s, ≥\ \&64s\&.
 .SS "locks_latency"
 .PP
 The minimum, the average and the maximum time (in seconds) required to obtain record locks\&.
@@ -516,10 +516,10 @@ Number of queued lock calls\&. This includes database locks and record locks\&.
 .RE
 .SS "hop_count_buckets"
 .PP
-Distribution of migration requests based on hop counts values\&. Buckets are 1, < 4, < 8, < 16, < 32, < 64, < 128, < 256, < 512, ≥ 512\&.
+Distribution of migration requests based on hop counts values\&. Buckets are 0, <\ \&2, <\ \&4, <\ \&8, <\ \&16, <\ \&32, <\ \&64, <\ \&128, <\ \&256, <\ \&512, <\ \&1024, <\ \&2048, <\ \&4096, <\ \&8192, <\ \&16384, ≥\ \&16384\&.
 .SS "lock_buckets"
 .PP
-Distribution of record lock requests based on time required to obtain locks\&. Buckets are < 1ms, < 10ms, < 100ms, < 1s, < 2s, < 4s, < 8s, < 16s, < 32s, < 64s, ≥ 64s\&.
+Distribution of record lock requests based on time required to obtain locks\&. Buckets are <\ \&1ms, <\ \&10ms, <\ \&100ms, <\ \&1s, <\ \&2s, <\ \&4s, <\ \&8s, <\ \&16s, <\ \&32s, <\ \&64s, ≥\ \&64s\&.
 .SS "locks_latency"
 .PP
 The minimum, the average and the maximum time (in seconds) required to obtain record locks\&.

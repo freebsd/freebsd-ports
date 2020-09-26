@@ -5,6 +5,7 @@ bin/findsmb
 bin/gentest
 bin/locktest
 bin/masktest
+bin/mdfind
 bin/mvxattr
 bin/ndrdump
 bin/net
@@ -33,7 +34,6 @@ bin/smbtar
 %%SAMBA4_PYTHON%%bin/smbtorture
 bin/smbtree
 bin/testparm
-bin/vfstest
 bin/wbinfo
 sbin/eventlogadm
 sbin/nmbd
@@ -56,6 +56,7 @@ include/samba4/core/werror_gen.h
 include/samba4/core/werror.h
 include/samba4/credentials.h
 include/samba4/dcerpc.h
+include/samba4/dcesrv_core.h
 %%AD_DC%%include/samba4/dcerpc_server.h
 %%LDAP%%include/samba4/smb_ldap.h
 %%LDAP%%include/samba4/smbldap.h
@@ -139,6 +140,8 @@ lib/samba4/libdcerpc-binding.so
 lib/samba4/libdcerpc-binding.so.0
 lib/samba4/libdcerpc-samr.so
 lib/samba4/libdcerpc-samr.so.0
+lib/samba4/libdcerpc-server-core.so
+lib/samba4/libdcerpc-server-core.so.0
 %%AD_DC%%lib/samba4/libdcerpc-server.so
 %%AD_DC%%lib/samba4/libdcerpc-server.so.0
 lib/samba4/libdcerpc.so
@@ -150,7 +153,7 @@ lib/samba4/libndr-nbt.so.0
 lib/samba4/libndr-standard.so
 lib/samba4/libndr-standard.so.0
 lib/samba4/libndr.so
-lib/samba4/libndr.so.0
+lib/samba4/libndr.so.1
 lib/samba4/libnetapi.so
 lib/samba4/libnetapi.so.0
 lib/samba4/libsamba-credentials.so
@@ -285,6 +288,7 @@ lib/samba4/private/libsmbd-shim-samba4.so
 lib/samba4/private/libsmbpasswdparser-samba4.so
 lib/samba4/private/libsocket-blocking-samba4.so
 lib/samba4/private/libsys-rw-samba4.so
+lib/samba4/private/libtalloc-report-printf-samba4.so
 lib/samba4/private/libtalloc-report-samba4.so
 lib/samba4/private/libtdb-wrap-samba4.so
 lib/samba4/private/libtime-basic-samba4.so
@@ -325,7 +329,6 @@ lib/samba4/private/libxattr-tdb-samba4.so
 %%AD_DC%%%%SAMBA4_MODULEDIR%%/ldb/lazy_commit.so
 %%AD_DC%%%%SAMBA4_MODULEDIR%%/ldb/ldbsamba_extensions.so
 %%AD_DC%%%%SAMBA4_MODULEDIR%%/ldb/linked_attributes.so
-%%AD_DC%%%%SAMBA4_MODULEDIR%%/ldb/local_password.so
 %%AD_DC%%%%SAMBA4_MODULEDIR%%/ldb/new_partition.so
 %%AD_DC%%%%SAMBA4_MODULEDIR%%/ldb/objectclass_attrs.so
 %%AD_DC%%%%SAMBA4_MODULEDIR%%/ldb/objectclass.so
@@ -347,8 +350,6 @@ lib/samba4/private/libxattr-tdb-samba4.so
 %%AD_DC%%%%SAMBA4_MODULEDIR%%/ldb/schema_load.so
 %%AD_DC%%%%SAMBA4_MODULEDIR%%/ldb/secrets_tdb_sync.so
 %%AD_DC%%%%SAMBA4_MODULEDIR%%/ldb/show_deleted.so
-%%AD_DC%%%%SAMBA4_MODULEDIR%%/ldb/simple_dn.so
-%%AD_DC%%%%SAMBA4_MODULEDIR%%/ldb/simple_ldap_map.so
 %%AD_DC%%%%SAMBA4_MODULEDIR%%/ldb/subtree_delete.so
 %%AD_DC%%%%SAMBA4_MODULEDIR%%/ldb/subtree_rename.so
 %%AD_DC%%%%SAMBA4_MODULEDIR%%/ldb/tombstone_reanimate.so
@@ -372,7 +373,6 @@ lib/samba4/private/libxattr-tdb-samba4.so
 %%AD_DC%%%%SAMBA4_MODULEDIR%%/service/winbindd.so
 %%AD_DC%%%%SAMBA4_MODULEDIR%%/service/wrepl.so
 %%AD_DC%%%%SAMBA4_MODULEDIR%%/vfs/posix_eadb.so
-%%SAMBA4_MODULEDIR%%/auth/script.so
 %%SAMBA4_MODULEDIR%%/vfs/acl_tdb.so
 %%SAMBA4_MODULEDIR%%/vfs/acl_xattr.so
 %%SAMBA4_MODULEDIR%%/vfs/aio_fork.so
@@ -390,7 +390,6 @@ lib/samba4/private/libxattr-tdb-samba4.so
 %%SAMBA4_MODULEDIR%%/vfs/full_audit.so
 %%SAMBA4_MODULEDIR%%/vfs/linux_xfs_sgid.so
 %%SAMBA4_MODULEDIR%%/vfs/media_harmony.so
-%%SAMBA4_MODULEDIR%%/vfs/netatalk.so
 %%SAMBA4_MODULEDIR%%/vfs/offline.so
 %%SAMBA4_MODULEDIR%%/vfs/preopen.so
 %%SAMBA4_MODULEDIR%%/vfs/readahead.so
@@ -439,6 +438,7 @@ lib/samba4/private/libxattr-tdb-samba4.so
 %%PKGCONFIGDIR%%/smbclient.pc
 %%PKGCONFIGDIR%%/wbclient.pc
 @comment Setup files
+%%SPOTLIGHT%%%%DATADIR%%/samba/mdssvc/elasticsearch_mappings.json
 %%AD_DC%%%%DATADIR%%/setup/ad-schema/AD_DS_Attributes__Windows_Server_2012_R2.ldf
 %%AD_DC%%%%DATADIR%%/setup/ad-schema/AD_DS_Attributes__Windows_Server_2016.ldf
 %%AD_DC%%%%DATADIR%%/setup/ad-schema/AD_DS_Classes__Windows_Server_2012_R2.ldf
@@ -470,17 +470,11 @@ lib/samba4/private/libxattr-tdb-samba4.so
 %%AD_DC%%%%DATADIR%%/setup/display-specifiers/DisplaySpecifiers-Win2k8R2.txt
 %%AD_DC%%%%DATADIR%%/setup/dns_update_list
 %%AD_DC%%%%DATADIR%%/setup/extended-rights.ldif
-%%AD_DC%%%%DATADIR%%/setup/fedora-ds-init.ldif
-%%AD_DC%%%%DATADIR%%/setup/fedorads-dna.ldif
 %%AD_DC%%%%DATADIR%%/setup/fedorads-index.ldif
 %%AD_DC%%%%DATADIR%%/setup/fedorads-linked-attributes.ldif
 %%AD_DC%%%%DATADIR%%/setup/fedorads-pam.ldif
-%%AD_DC%%%%DATADIR%%/setup/fedorads-partitions.ldif
-%%AD_DC%%%%DATADIR%%/setup/fedorads-refint-add.ldif
-%%AD_DC%%%%DATADIR%%/setup/fedorads-refint-delete.ldif
 %%AD_DC%%%%DATADIR%%/setup/fedorads-samba.ldif
 %%AD_DC%%%%DATADIR%%/setup/fedorads-sasl.ldif
-%%AD_DC%%%%DATADIR%%/setup/fedorads.inf
 %%AD_DC%%%%DATADIR%%/setup/idmap_init.ldif
 %%AD_DC%%%%DATADIR%%/setup/krb5.conf
 %%AD_DC%%%%DATADIR%%/setup/memberof.conf
@@ -542,7 +536,6 @@ lib/samba4/private/libxattr-tdb-samba4.so
 %%AD_DC%%%%DATADIR%%/setup/secrets_simple_ldap.ldif
 %%AD_DC%%%%DATADIR%%/setup/secrets.ldif
 %%AD_DC%%%%DATADIR%%/setup/share.ldif
-%%AD_DC%%%%DATADIR%%/setup/slapd.conf
 %%AD_DC%%%%DATADIR%%/setup/spn_update_list
 %%AD_DC%%%%DATADIR%%/setup/ypServ30.ldif
 %%AD_DC%%@dir %%DATADIR%%/setup/display-specifiers
@@ -556,6 +549,7 @@ man/man1/gentest.1.gz
 man/man1/locktest.1.gz
 man/man1/log2pcap.1.gz
 man/man1/masktest.1.gz
+man/man1/mdfind.1.gz
 man/man1/mvxattr.1.gz
 man/man1/ndrdump.1.gz
 man/man1/nmblookup.1.gz
@@ -633,7 +627,6 @@ man/man8/vfs_freebsd.8.gz
 man/man8/vfs_full_audit.8.gz
 man/man8/vfs_linux_xfs_sgid.8.gz
 man/man8/vfs_media_harmony.8.gz
-man/man8/vfs_netatalk.8.gz
 man/man8/vfs_offline.8.gz
 man/man8/vfs_preopen.8.gz
 man/man8/vfs_readahead.8.gz
@@ -743,6 +736,7 @@ man/man8/winbindd.8.gz
 %%PYTHON_SITELIBDIR%%/samba/__init__.py
 %%PYTHON_SITELIBDIR%%/samba/_glue.so
 %%PYTHON_SITELIBDIR%%/samba/_ldb.so
+%%PYTHON_SITELIBDIR%%/samba/auth_util.py
 %%PYTHON_SITELIBDIR%%/samba/auth.so
 %%PYTHON_SITELIBDIR%%/samba/colour.py
 %%PYTHON_SITELIBDIR%%/samba/common.py
@@ -768,6 +762,7 @@ man/man8/winbindd.8.gz
 %%PYTHON_SITELIBDIR%%/samba/dcerpc/irpc.so
 %%PYTHON_SITELIBDIR%%/samba/dcerpc/krb5pac.so
 %%PYTHON_SITELIBDIR%%/samba/dcerpc/lsa.so
+%%PYTHON_SITELIBDIR%%/samba/dcerpc/mdssvc.so
 %%PYTHON_SITELIBDIR%%/samba/dcerpc/messaging.so
 %%PYTHON_SITELIBDIR%%/samba/dcerpc/mgmt.so
 %%PYTHON_SITELIBDIR%%/samba/dcerpc/misc.so
@@ -875,6 +870,7 @@ man/man8/winbindd.8.gz
 %%PYTHON_SITELIBDIR%%/samba/remove_dc.py
 %%PYTHON_SITELIBDIR%%/samba/samba3/__init__.py
 %%PYTHON_SITELIBDIR%%/samba/samba3/libsmb_samba_internal.so
+%%PYTHON_SITELIBDIR%%/samba/samba3/mdscli.so
 %%PYTHON_SITELIBDIR%%/samba/samba3/param.so
 %%PYTHON_SITELIBDIR%%/samba/samba3/passdb.so
 %%PYTHON_SITELIBDIR%%/samba/samba3/smbd.so
@@ -904,6 +900,7 @@ man/man8/winbindd.8.gz
 %%PYTHON_SITELIBDIR%%/samba/tests/blackbox/bug13653.py
 %%PYTHON_SITELIBDIR%%/samba/tests/blackbox/check_output.py
 %%PYTHON_SITELIBDIR%%/samba/tests/blackbox/downgradedatabase.py
+%%PYTHON_SITELIBDIR%%/samba/tests/blackbox/mdfind.py
 %%PYTHON_SITELIBDIR%%/samba/tests/blackbox/ndrdump.py
 %%PYTHON_SITELIBDIR%%/samba/tests/blackbox/netads_json.py
 %%PYTHON_SITELIBDIR%%/samba/tests/blackbox/samba_dnsupdate.py
@@ -921,6 +918,7 @@ man/man8/winbindd.8.gz
 %%PYTHON_SITELIBDIR%%/samba/tests/dcerpc/bare.py
 %%PYTHON_SITELIBDIR%%/samba/tests/dcerpc/dnsserver.py
 %%PYTHON_SITELIBDIR%%/samba/tests/dcerpc/integer.py
+%%PYTHON_SITELIBDIR%%/samba/tests/dcerpc/mdssvc.py
 %%PYTHON_SITELIBDIR%%/samba/tests/dcerpc/misc.py
 %%PYTHON_SITELIBDIR%%/samba/tests/dcerpc/raw_protocol.py
 %%PYTHON_SITELIBDIR%%/samba/tests/dcerpc/raw_testcase.py
@@ -1060,7 +1058,6 @@ man/man8/winbindd.8.gz
 %%PYTHON_SITELIBDIR%%/samba/tests/upgradeprovisionneeddc.py
 %%PYTHON_SITELIBDIR%%/samba/tests/usage.py
 %%PYTHON_SITELIBDIR%%/samba/tests/xattr.py
-%%PYTHON_SITELIBDIR%%/samba/third_party/__init__.py
 %%PYTHON_SITELIBDIR%%/samba/upgrade.py
 %%PYTHON_SITELIBDIR%%/samba/upgradehelpers.py
 %%PYTHON_SITELIBDIR%%/samba/uptodateness.py

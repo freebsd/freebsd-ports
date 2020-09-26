@@ -38,13 +38,3 @@
                        archive
                        ''')
  
-@@ -1284,8 +1284,7 @@ bld.SAMBA3_BINARY('vfstest',
-                       popt_samba3
-                       smbconf
-                       SMBREADLINE
--                      ''',
--                 install=False)
-+                      ''')
- 
- bld.SAMBA3_BINARY('versiontest',
-                  source='lib/version_test.c',

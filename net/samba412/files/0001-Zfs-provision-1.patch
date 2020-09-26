@@ -26,7 +26,7 @@ diff --git a/python/samba/provision/__init__.py b/python/samba/provision/__init_
 index 5de986463a5..cd3b91f41b9 100644
 --- a/python/samba/provision/__init__.py
 +++ b/python/samba/provision/__init__.py
-@@ -1556,19 +1556,24 @@ def setsysvolacl(samdb, netlogon, sysvol, uid, gid, domainsid, dnsdomain,
+@@ -1695,19 +1695,25 @@ def setsysvolacl(samdb, netlogon, sysvol, uid, gid, do
          s3conf = s3param.get_context()
          s3conf.load(lp.configfile)
  
@@ -40,8 +40,8 @@ index 5de986463a5..cd3b91f41b9 100644
 +        file = tempfile.NamedTemporaryFile(dir=sysvol_dir)
          try:
              try:
--                smbd.set_simple_acl(file.name, 0o755, gid)
-+                set_simple_acl(file.name, 0o755, gid)
+-                smbd.set_simple_acl(file.name, 0o755, system_session_unix(), gid)
++                set_simple_acl(file.name, 0o755, system_session_unix(), gid)
              except OSError:
 -                if not smbd.have_posix_acls():
 +                if not smbd.have_posix_acls() and not smbd.have_nfsv4_acls():
@@ -51,13 +51,13 @@ index 5de986463a5..cd3b91f41b9 100644
 -                    raise ProvisioningError("Samba was compiled without the posix ACL support that s3fs requires.  "
 +                    raise ProvisioningError("Samba was compiled without the ACL support that s3fs requires.  "
                                              "Try installing libacl1-dev or libacl-devel, then re-run configure and make.")
--
+ 
 -                raise ProvisioningError("Your filesystem or build does not support posix ACLs, which s3fs requires.  "
 +                raise ProvisioningError("Your filesystem or build does not support ACLs, which s3fs requires.  "
                                          "Try the mounting the filesystem with the 'acl' option.")
              try:
-                 smbd.chown(file.name, uid, gid)
-@@ -1821,6 +1828,9 @@ def provision_fill(samdb, secrets_ldb, logger, names, paths,
+                 smbd.chown(file.name, uid, gid, system_session_unix())
+@@ -1984,6 +1990,9 @@ def provision_fill(samdb, secrets_ldb, logger, names, 
          samdb.transaction_commit()
  
      if serverrole == "active directory domain controller":
@@ -67,16 +67,16 @@ index 5de986463a5..cd3b91f41b9 100644
          # Continue setting up sysvol for GPO. This appears to require being
          # outside a transaction.
          if not skip_sysvolacl:
-@@ -2184,6 +2194,9 @@ def provision(logger, session_info, smbconf=None,
+@@ -2340,6 +2349,9 @@ def provision(logger, session_info, smbconf=None,
+ 
              if not os.path.isdir(paths.netlogon):
                  os.makedirs(paths.netlogon, 0o755)
- 
++
 +            if smbd.have_nfsv4_acls() and smbd.has_nfsv4_acls(paths.sysvol):
 +                smbd.set_nfsv4_defaults()
-+
+ 
          if adminpass is None:
              adminpass = samba.generate_random_password(12, 32)
-             adminpass_generated = True
 diff --git a/source3/lib/sysacls.c b/source3/lib/sysacls.c
 index 0bf3c37edfa..786cd39b5bc 100644
 --- a/source3/lib/sysacls.c
@@ -102,7 +102,23 @@ diff --git a/source3/param/loadparm.c b/source3/param/loadparm.c
 index a2fcc4246c9..4b676897fc1 100644
 --- a/source3/param/loadparm.c
 +++ b/source3/param/loadparm.c
-@@ -2740,6 +2740,13 @@ static void init_locals(void)
+@@ -2801,9 +2801,29 @@ static void init_locals(void)
+ 		} else {
+ 			if (lp_parm_const_string(-1, "xattr_tdb", "file", NULL)) {
+ 				lp_do_parameter(-1, "vfs objects", "dfs_samba4 acl_xattr xattr_tdb");
++			/*
++			 * By default, the samba sysvol is located in the statedir. Provisioning will fail in setntacl
++			 * unless we have zfacl enabled. Unfortunately, at this point the smb.conf has not been generated.
++			 * This workaround is freebsd-specific.
++			 */
++#if defined(_PC_ACL_EXTENDED)
++			} else if (pathconf(lp_state_directory(), _PC_ACL_EXTENDED) == 1) {
++				lp_do_parameter(-1, "vfs objects", "dfs_samba4 freebsd");
++#endif
++#if defined(_PC_ACL_NFS4)
++			} else if (pathconf(lp_state_directory(), _PC_ACL_NFS4) == 1) {
++				lp_do_parameter(-1, "vfs objects", "dfs_samba4 zfsacl");
++#endif
  			} else if (lp_parm_const_string(-1, "posix", "eadb", NULL)) {
  				lp_do_parameter(-1, "vfs objects", "dfs_samba4 acl_xattr posix_eadb");
  			} else {
@@ -120,7 +136,7 @@ diff --git a/source3/smbd/pysmbd.c b/source3/smbd/pysmbd.c
 index 63fc5d68c33..f5a536ee186 100644
 --- a/source3/smbd/pysmbd.c
 +++ b/source3/smbd/pysmbd.c
-@@ -393,6 +393,20 @@ static SMB_ACL_T make_simple_acl(TALLOC_
+@@ -419,6 +419,20 @@ static SMB_ACL_T make_simple_acl(TALLOC_CTX *mem_ctx,
  	return acl;
  }
  
@@ -141,28 +157,55 @@ index 63fc5d68c33..f5a536ee186 100644
  /*
    set a simple ACL on a file, as a test
   */
-@@ -438,6 +452,57 @@ static PyObject *py_smbd_set_simple_acl(
+@@ -491,7 +505,85 @@ static PyObject *py_smbd_set_simple_acl(PyObject *self
  	Py_RETURN_NONE;
  }
  
 +
-+/*
+ /*
 +  set a simple NFSv4 ACL on a file, as a test
 + */
 +static PyObject *py_smbd_set_simple_nfsv4_acl(PyObject *self, PyObject *args, PyObject *kwargs)
 +{
-+	const char * const kwnames[] = { "fname", "mode", "gid", "service", NULL };
++	const char * const kwnames[] = {
++		"fname",
++		"mode",
++		"session_info",
++		"gid",
++		"service",
++		NULL
++	};
 +	char *fname, *service = NULL;
++	PyObject *py_session = Py_None;
++	struct auth_session_info *session_info = NULL;
 +	int ret;
 +	int mode, gid = -1;
 +	SMB_ACL_T acl;
 +	TALLOC_CTX *frame;
 +	connection_struct *conn;
 +
-+	if (!PyArg_ParseTupleAndKeywords(args, kwargs, "si|iz",
++	if (!PyArg_ParseTupleAndKeywords(args, kwargs, "siO|iz",
 +					 discard_const_p(char *, kwnames),
-+					 &fname, &mode, &gid, &service))
++					 &fname,
++					 &mode,
++					 &py_session,
++					 &gid,
++					 &service))
 +		return NULL;
++
++	if (!py_check_dcerpc_type(py_session,
++				  "samba.dcerpc.auth",
++				  "session_info")) {
++		return NULL;
++	}
++	session_info = pytalloc_get_type(py_session,
++					 struct auth_session_info);
++	if (session_info == NULL) {
++		PyErr_Format(PyExc_TypeError,
++			     "Expected auth_session_info for session_info argument got %s",
++			     pytalloc_get_name(py_session));
++		return NULL;
++	}
 +
 +	frame = talloc_stackframe();
 +
@@ -172,7 +215,7 @@ index 63fc5d68c33..f5a536ee186 100644
 +		Py_RETURN_NONE;
 +	}
 +
-+	conn = get_conn_tos(service, NULL);
++	conn = get_conn_tos(service, session_info);
 +	if (!conn) {
 +		TALLOC_FREE(frame);
 +		Py_RETURN_NONE;
@@ -196,10 +239,11 @@ index 63fc5d68c33..f5a536ee186 100644
 +	Py_RETURN_NONE;
 +}
 +
- /*
++/*
    chown a file
   */
-@@ -537,7 +602,7 @@ static PyObject *py_smbd_unlink(PyObject
+ static PyObject *py_smbd_chown(PyObject *self, PyObject *args, PyObject *kwargs)
+@@ -665,7 +757,7 @@ static PyObject *py_smbd_unlink(PyObject *self, PyObje
  }
  
  /*
@@ -208,7 +252,7 @@ index 63fc5d68c33..f5a536ee186 100644
   */
  static PyObject *py_smbd_have_posix_acls(PyObject *self,
  		PyObject *Py_UNUSED(ignored))
-@@ -549,6 +614,86 @@ static PyObject *py_smbd_have_posix_acls
+@@ -677,7 +769,84 @@ static PyObject *py_smbd_have_posix_acls(PyObject *sel
  #endif
  }
  
@@ -240,7 +284,7 @@ index 63fc5d68c33..f5a536ee186 100644
 +	return PyBool_FromLong(ret);
 +}
 +
-+/*
+ /*
 +  check if we have NFSv4 ACL support
 + */
 +static PyObject *py_smbd_have_nfsv4_acls(PyObject *self)
@@ -284,18 +328,16 @@ index 63fc5d68c33..f5a536ee186 100644
 +static PyObject *py_smbd_set_nfsv4_defaults(PyObject *self)
 +{
 +	/*
-+	 * This should really be done in source3/param/loadparm.c
++	 * It is really be done in source3/param/loadparm.c
 +	 */
-+#if defined(HAVE_LIBSUNACL) && defined(FREEBSD)
-+	lp_do_parameter(-1, "vfs objects", "dfs_samba4 zfsacl");
-+#endif
 +	Py_RETURN_NONE;
 +}
 +
- /*
++/*
    set the NT ACL on a file
   */
-@@ -883,10 +1028,28 @@ static PyMethodDef py_smbd_methods[] = {
+ static PyObject *py_smbd_set_nt_acl(PyObject *self, PyObject *args, PyObject *kwargs)
+@@ -1124,8 +1296,26 @@ static PyMethodDef py_smbd_methods[] = {
  	{ "have_posix_acls",
  		(PyCFunction)py_smbd_have_posix_acls, METH_NOARGS,
  		NULL },
@@ -315,15 +357,13 @@ index 63fc5d68c33..f5a536ee186 100644
 +		NULL },
  	{ "set_simple_acl",
  		PY_DISCARD_FUNC_SIG(PyCFunction, py_smbd_set_simple_acl),
- 		METH_VARARGS|METH_KEYWORDS,
- 		NULL },
-+	{ "set_simple_nfsv4_acl",
-+		PY_DISCARD_FUNC_SIG(PyCFunction, py_smbd_set_simple_nfsv4_acl),
 +		METH_VARARGS|METH_KEYWORDS,
 +		NULL },
- 	{ "set_nt_acl",
- 		PY_DISCARD_FUNC_SIG(PyCFunction, py_smbd_set_nt_acl),
++	{ "set_simple_nfsv4_acl",
++		PY_DISCARD_FUNC_SIG(PyCFunction, py_smbd_set_simple_nfsv4_acl),
  		METH_VARARGS|METH_KEYWORDS,
+ 		NULL },
+ 	{ "set_nt_acl",
 -- 
 2.14.2
 

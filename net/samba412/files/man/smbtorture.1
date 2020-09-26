@@ -1,13 +1,13 @@
 '\" t
 .\"     Title: smbtorture
 .\"    Author: [see the "AUTHOR" section]
-.\" Generator: DocBook XSL Stylesheets v1.76.1 <http://docbook.sf.net/>
-.\"      Date: 03/21/2017
+.\" Generator: DocBook XSL Stylesheets v1.79.1 <http://docbook.sf.net/>
+.\"      Date: 09/23/2020
 .\"    Manual: Test Suite
 .\"    Source: Samba 4.0
 .\"  Language: English
 .\"
-.TH "SMBTORTURE" "1" "03/21/2017" "Samba 4\&.0" "Test Suite"
+.TH "SMBTORTURE" "1" "09/23/2020" "Samba 4\&.0" "Test Suite"
 .\" -----------------------------------------------------------------
 .\" * Define some portability stuff
 .\" -----------------------------------------------------------------
@@ -31,7 +31,7 @@
 smbtorture \- Run a series of tests against a SMB server
 .SH "SYNOPSIS"
 .HP \w'\fBsmbtorture\fR\ 'u
-\fBsmbtorture\fR {//server/share} [\-d\ debuglevel] [\-U\ user%pass] [\-k] [\-N\ numprocs] [\-n\ netbios_name] [\-W\ workgroup] [\-o\ num_operations] [\-e\ num\ files(entries)] [\-O\ socket_options] [\-m\ maximum_protocol] [\-L] [\-c\ CLIENT\&.TXT] [\-t\ timelimit] [\-C\ filename] [\-A] [\-p\ port] [\-s\ seed] [\-f\ max_failures] [\-X] {BINDING\-STRING|UNC} {TEST1} [TEST2] [\&.\&.\&.]
+\fBsmbtorture\fR {//server/share} [\-d\ debuglevel] [\-U\ user%pass] [\-k] [\-N\ numprocs] [\-n\ netbios_name] [\-W\ workgroup] [\-e\ num\ files(entries)] [\-O\ socket_options] [\-m\ maximum_protocol] [\-L] [\-c\ CLIENT\&.TXT] [\-t\ timelimit] [\-C\ filename] [\-A] [\-p\ port] [\-s\ seed] [\-f\ max_failures] [\-X] {BINDING\-STRING|UNC} {TEST1} [TEST2] [\&.\&.\&.]
 .SH "DESCRIPTION"
 .PP
 smbtorture is a testsuite that runs several tests against a SMB server\&. All tests are known to succeed against a Windows 2003 server (?)\&. Smbtorture\*(Aqs primary goal is finding differences in implementations of the SMB protocol and testing SMB servers\&.
@@ -322,11 +322,6 @@ Load a list of UNC names from the specified filename\&. Smbtorture instances wil
 \-N numprocs
 .RS 4
 Specify number of smbtorture processes to launch\&.
-.RE
-.PP
-\-o num_operations
-.RS 4
-Number of times some operations should be tried before assuming they\*(Aqre output is consistent (default:100)\&.
 .RE
 .PP
 \-e num_files

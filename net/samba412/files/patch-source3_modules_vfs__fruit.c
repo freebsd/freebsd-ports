@@ -1,7 +1,7 @@
 From d9b748869a8f4018ebee302aae8246bf29f60309 Mon Sep 17 00:00:00 2001
 From: "Timur I. Bakeyev" <timur@iXsystems.com>
 Date: Fri, 1 Jun 2018 01:35:08 +0800
-Subject: [PATCH 1/2] vfs_fruit: allow broken AFP_Signature where the first
+Subject: [PATCH] vfs_fruit: allow broken AFP_Signature where the first
  byte is 0
 
 FreeBSD bug ... caused the first byte of the AFP_AfpInfo xattr to be 0
@@ -12,9 +12,9 @@ FreeBSD Bug: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=228462
 
 Signed-off-by: Ralph Boehme <slow@samba.org>
 
---- source3/modules/vfs_fruit.c.orig	2019-05-07 08:38:21 UTC
-+++ source3/modules/vfs_fruit.c
-@@ -2350,6 +2350,8 @@ static ssize_t afpinfo_pack(const AfpInf
+--- source3/lib/adouble.c.orig	2020-05-08 09:30:43 UTC
++++ source3/lib/adouble.c
+@@ -2662,6 +2662,8 @@ ssize_t afpinfo_pack(const AfpInfo *ai, char *buf)
  	return AFP_INFO_SIZE;
  }
  
@@ -23,9 +23,12 @@ Signed-off-by: Ralph Boehme <slow@samba.org>
  /**
   * Unpack a buffer into a AfpInfo structure
   *
-@@ -2369,10 +2371,20 @@ static AfpInfo *afpinfo_unpack(TALLOC_CT
+@@ -2679,12 +2681,22 @@ AfpInfo *afpinfo_unpack(TALLOC_CTX *ctx, const void *d
+ 	ai->afpi_Version = RIVAL(data, 4);
+ 	ai->afpi_BackupTime = RIVAL(data, 12);
  	memcpy(ai->afpi_FinderInfo, (const char *)data + 16,
- 	       sizeof(ai->afpi_FinderInfo));
+-	       sizeof(ai->afpi_FinderInfo));
++		sizeof(ai->afpi_FinderInfo));
  
 -	if (ai->afpi_Signature != AFP_Signature
 -	    || ai->afpi_Version != AFP_Version) {
@@ -47,7 +50,9 @@ Signed-off-by: Ralph Boehme <slow@samba.org>
  	}
  
  	return ai;
-@@ -4242,9 +4254,20 @@ static ssize_t fruit_pread_meta_stream(v
+--- source3/modules/vfs_fruit.c.orig	2020-05-08 09:37:56 UTC
++++ source3/modules/vfs_fruit.c
+@@ -2191,9 +2191,20 @@ static ssize_t fruit_pread_meta_stream(vfs_handle_stru
  {
  	ssize_t nread;
  	int ret;

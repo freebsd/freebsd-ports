@@ -91,6 +91,6 @@
 +#undef DBGC_CLASS
 +#define DBGC_CLASS DBGC_LOCKING
 +
- static ssize_t dbwrap_record_watchers_key(struct db_context *db,
- 					  struct db_record *rec,
- 					  uint8_t *wkey, size_t wkey_len)
+ struct dbwrap_watcher {
+ 	/*
+ 	 * Process watching this record

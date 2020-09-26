@@ -2,12 +2,12 @@
 .\"     Title: onnode
 .\"    Author: 
 .\" Generator: DocBook XSL Stylesheets v1.79.1 <http://docbook.sf.net/>
-.\"      Date: 11/20/2017
+.\"      Date: 09/23/2020
 .\"    Manual: CTDB - clustered TDB database
 .\"    Source: ctdb
 .\"  Language: English
 .\"
-.TH "ONNODE" "1" "11/20/2017" "ctdb" "CTDB \- clustered TDB database"
+.TH "ONNODE" "1" "09/23/2020" "ctdb" "CTDB \- clustered TDB database"
 .\" -----------------------------------------------------------------
 .\" * Define some portability stuff
 .\" -----------------------------------------------------------------
@@ -52,7 +52,7 @@ Execute COMMAND in the current working directory on the specified nodes\&.
 .PP
 \-f \fIFILENAME\fR
 .RS 4
-Specify an alternative nodes FILENAME to use instead of the default\&. This option overrides the CTDB_NODES_FILE and CTDB_NODES variables\&. See the discussion of
+Specify an alternative nodes FILENAME to use instead of the default\&. See the discussion of
 /usr/local/etc/ctdb/nodes
 in the FILES section for more details\&.
 .RE
@@ -62,7 +62,7 @@ in the FILES section for more details\&.
 Keep standard input open, allowing data to be piped to onnode\&. Normally onnode closes stdin to avoid surprises when scripting\&. Note that this option is ignored when using
 \fB\-p\fR
 or if
-\fBSSH\fR
+\fBONNODE_SSH\fR
 is set to anything other than "ssh"\&.
 .RE
 .PP
@@ -70,11 +70,6 @@ is set to anything other than "ssh"\&.
 .RS 4
 Allow nodes to be specified by name rather than node numbers\&. These nodes don\*(Aqt need to be listed in the nodes file\&. You can avoid the nodes file entirely by combining this with
 \-f /dev/null\&.
-.RE
-.PP
-\-o \fIPREFIX\fR
-.RS 4
-Causes standard output from each node to be saved into a file with name PREFIX\&.\fIIP\fR\&.
 .RE
 .PP
 \-p
@@ -147,7 +142,7 @@ The following command would show the last 5 lines of log on each node, preceded 
 .RS 4
 .\}
 .nf
-      onnode all "hostname; tail \-5 /usr/local/var/log/log\&.ctdb"
+      onnode all "hostname; tail \-5 /var/log/log\&.ctdb"
     
 .fi
 .if n \{\
@@ -179,20 +174,6 @@ The following command would run \&./foo in the current working directory, in par
 .if n \{\
 .RE
 .\}
-.SH "ENVIRONMENT"
-.PP
-\fBCTDB_BASE\fR
-.RS 4
-Directory containing CTDB configuration files\&. The default is
-/usr/local/etc/ctdb\&.
-.RE
-.PP
-\fBCTDB_NODES_FILE\fR
-.RS 4
-Name of alternative nodes file to use instead of the default\&. See the
-FILES
-section for more details\&.
-.RE
 .SH "FILES"
 .PP
 /usr/local/etc/ctdb/nodes
@@ -201,32 +182,17 @@ Default file containing a list of each node\*(Aqs IP address or hostname\&.
 .sp
 As above, a file specified via the
 \fB\-f\fR
-or
-\fBCTDB_NODES_FILE\fR
-is given precedence\&. If a relative path is specified and no corresponding file exists relative to the current directory then the file is also searched for in the
-$CTDB_BASE
-directory\&.
-.sp
-If
-\fBCTDB_NODES_FILE\fR
-is not set and
-\fBCTDB_NODES\fR
-is set in configuration then the file pointed to by
-\fBCTDB_NODES\fR
-is used\&.
+is given precedence\&. If a relative path is specified and no corresponding file exists relative to the current directory then the file is also searched for in the CTDB configuration directory\&.
 .sp
 Otherwise the default is
-$CTDB_BASE/nodes, where
-\fBCTDB_BASE\fR
-defaults to
-/usr/local/etc/ctdb\&.
+/usr/local/etc/ctdb/nodes\&.
 .RE
 .PP
 /usr/local/etc/ctdb/onnode\&.conf
 .RS 4
 If this file exists it is sourced by onnode\&. The main purpose is to allow the administrator to set
-\fBSSH\fR
-to something other than "ssh"\&. In this case the \-t option is ignored\&. For example, the administrator may choose to use use rsh instead of ssh\&.
+\fBONNODE_SSH\fR
+to something other than "ssh"\&. In this case the \-t option is ignored\&.
 .RE
 .SH "SEE ALSO"
 .PP
