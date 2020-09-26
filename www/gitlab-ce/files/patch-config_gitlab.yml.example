@@ -1,6 +1,6 @@
---- config/gitlab.yml.example.orig	2020-08-21 12:16:22 UTC
+--- config/gitlab.yml.example.orig	2020-09-21 16:23:36 UTC
 +++ config/gitlab.yml.example
-@@ -1006,7 +1006,7 @@ production: &base
+@@ -1012,7 +1012,7 @@ production: &base
    # Gitaly settings
    gitaly:
      # Path to the directory containing Gitaly client executables.
@@ -9,18 +9,18 @@
      # Default Gitaly authentication token. Can be overridden per storage. Can
      # be left blank when Gitaly is running locally on a Unix socket, which
      # is the normal way to deploy Gitaly.
-@@ -1024,8 +1024,8 @@ production: &base
+@@ -1030,8 +1030,8 @@ production: &base
      # real path not the symlink.
      storages: # You must have at least a `default` storage path.
        default:
 -        path: /home/git/repositories/
 -        gitaly_address: unix:/home/git/gitlab/tmp/sockets/private/gitaly.socket # TCP connections are supported too (e.g. tcp://host:port). TLS connections are also supported using the system certificate pool (eg: tls://host:port).
-+        path: /usr/local/git/repositories/
++        path: %%PREFIX%%/git/repositories/
 +        gitaly_address: unix:%%PREFIX%%/www/gitlab-ce/tmp/sockets/private/gitaly.socket # TCP connections are supported too (e.g. tcp://host:port)
          # gitaly_token: 'special token' # Optional: override global gitaly.token for this storage.
  
    ## Backup settings
-@@ -1071,12 +1071,12 @@ production: &base
+@@ -1077,12 +1077,12 @@ production: &base
  
    ## GitLab Shell settings
    gitlab_shell:
@@ -32,11 +32,22 @@
      # File that contains the secret key for verifying access for gitlab-shell.
      # Default is '.gitlab_shell_secret' relative to Rails.root (i.e. root of the GitLab app).
 -    # secret_file: /home/git/gitlab/.gitlab_shell_secret
-+    # secret_file: /usr/local/www/gitlab-ce/.gitlab_shell_secret
++    # secret_file: %%PREFIX%%/www/gitlab-ce/.gitlab_shell_secret
  
      # Git over HTTP
      upload_pack: true
-@@ -1095,13 +1095,13 @@ production: &base
+@@ -1097,22 +1097,22 @@ production: &base
+   workhorse:
+     # File that contains the secret key for verifying access for gitlab-workhorse.
+     # Default is '.gitlab_workhorse_secret' relative to Rails.root (i.e. root of the GitLab app).
+-    # secret_file: /home/git/gitlab/.gitlab_workhorse_secret
++    # secret_file: %%PREFIX%%/www/gitlab-ce/.gitlab_workhorse_secret
+ 
+   gitlab_kas:
+     # File that contains the secret key for verifying access for gitlab-kas.
+     # Default is '.gitlab_kas_secret' relative to Rails.root (i.e. root of the GitLab app).
+-    # secret_file: /home/git/gitlab/.gitlab_kas_secret
++    # secret_file: %%PREFIX%%/www/gitlab-ce/.gitlab_kas_secret
  
    ## GitLab Elasticsearch settings
    elasticsearch:
