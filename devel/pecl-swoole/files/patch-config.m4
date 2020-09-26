@@ -1,6 +1,6 @@
---- config.m4.orig	2019-06-14 08:30:12 UTC
+--- config.m4.orig	2020-08-30 04:51:37 UTC
 +++ config.m4
-@@ -296,7 +296,7 @@ if test "$PHP_SWOOLE" != "no"; then
+@@ -268,7 +268,7 @@ if test "$PHP_SWOOLE" != "no"; then
      AC_CHECK_LIB(c, poll, AC_DEFINE(HAVE_POLL, 1, [have poll]))
      AC_CHECK_LIB(c, sendfile, AC_DEFINE(HAVE_SENDFILE, 1, [have sendfile]))
      AC_CHECK_LIB(c, kqueue, AC_DEFINE(HAVE_KQUEUE, 1, [have kqueue]))
