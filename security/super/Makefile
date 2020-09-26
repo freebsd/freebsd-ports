@@ -3,6 +3,7 @@
 
 PORTNAME=	super
 PORTVERSION=	3.30.3
+PORTREVISION=	1
 CATEGORIES=	security sysutils
 MASTER_SITES=	ftp://ftp.ucolick.org/pub/users/will/ \
 		http://www.ucolick.org/~will/RUE/super/
