@@ -18,7 +18,7 @@ you update your ports collection, before attempting any port upgrades.
   3.0.21_2 (or higher) to bring in python 3.x support.
 
 20200921:
-  AFFECTS: users of database/postgresql* and other software using PostgreSQL to run
+  AFFECTS: users of databases/postgresql* and other software using PostgreSQL to run
   AUTHOR: kbowling@FreeBSD.org
 
   The default version of PostgreSQL has been switched from 11 to 12.
@@ -1169,7 +1169,7 @@ leave you without networking.
   https://gitlab.fechner.net/mfechner/Gitlab-docu/blob/master/update/12.0-12.1-freebsd.md
 
 20190829:
-  AFFECTS: users of database/postgresql* and other software using PostgreSQL to run
+  AFFECTS: users of databases/postgresql* and other software using PostgreSQL to run
   AUTHOR: tz@FreeBSD.org
 
   The default version of PostgreSQL has been switched from 9.5 to 11.
@@ -3872,7 +3872,7 @@ leave you without networking.
   they can lead to data corruption due to changes in Erlang 20.
 
 20170622:
-  AFFECTS: users of database/postgresql* and other software using PostgreSQL to run
+  AFFECTS: users of databases/postgresql* and other software using PostgreSQL to run
   AUTHOR: tz@FreeBSD.org
 
   The default version of PostgreSQL has been switched from 9.3 to 9.5.
@@ -4763,7 +4763,7 @@ leave you without networking.
   # chown 0600 /var/heimdal/heimdal.db.new
   # mv /var/heimdal/heimdal.db.new /var/heimdal/heimdal.db
 
-  db_dump and db_load utilitites are installed by database/db5 as
+  db_dump and db_load utilitites are installed by databases/db5 as
   dependency of security/heimdal.
 
   If you want to switch from security/heimdal to Heimdal in the base
@@ -6146,7 +6146,7 @@ leave you without networking.
   AFFECTS: users of net/samba4, net/samba41, net/samba42
   AUTHOR: timur@FreeBSD.org
 
-  Recent versions of devel/talloc, devel/tevent, database/tdb, database/ldb
+  Recent versions of devel/talloc, devel/tevent, databases/tdb, databases/ldb
   contained infinit recursive call to the strtol* set of replacement functions,
   which lead to coredumps. Unofficial patch was added meanwhile, but now
   official version of the fixed libs were released. If your version of
@@ -9092,7 +9092,7 @@ leave you without networking.
       perl5.12-.
 
 20140211:
-  AFFECTS: users of lang/php* database/postgresql* database/mysql* www/apache*
+  AFFECTS: users of lang/php* databases/postgresql* databases/mysql* www/apache*
   AUTHOR: mat@FreeBSD.org
 
   The default versions of lang/php*, databases/postgresql*,
