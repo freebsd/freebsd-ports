@@ -511,6 +511,7 @@
 %%DATADIR%%/plugins/scala/README.md
 %%DATADIR%%/plugins/scala/_scala
 %%DATADIR%%/plugins/scd/README.md
+%%DATADIR%%/plugins/scd/_scd
 %%DATADIR%%/plugins/scd/scd
 %%DATADIR%%/plugins/scd/scd.plugin.zsh
 %%DATADIR%%/plugins/screen/README.md

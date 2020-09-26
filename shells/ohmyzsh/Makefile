@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ohmyzsh
-PORTVERSION=	20200722
+PORTVERSION=	20200926
 CATEGORIES=	shells
 
 MAINTAINER=	skozlov@FreeBSD.org
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	zsh:shells/zsh
 
 USE_GITHUB=	yes
-GH_TAGNAME=	db3d05f
+GH_TAGNAME=	cacf5d0
 
 NO_ARCH=	yes
 NO_BUILD=	yes
