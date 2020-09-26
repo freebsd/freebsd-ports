@@ -15,7 +15,7 @@ COMMENT=	Pager utility that speaks Vietnamese
 LICENSE=	LESSLICENSE
 LICENSE_NAME=	less License
 LICENSE_FILE=	${WRKSRC}/version.c
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
 USES=		ncurses
 ALL_TARGET=	clobber all
