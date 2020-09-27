@@ -3,7 +3,7 @@
 
 PORTNAME=	linux_libusb
 PORTVERSION=	13.0r${FSVN_REV}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel linux
 MASTER_SITES=	http://www.selasky.org/hans_petter/distfiles/ \
 		http://home.selasky.org/distfiles/
@@ -22,9 +22,9 @@ USE_LINUX_PREFIX=	yes
 
 LIBDIR_amd64=	lib64
 LIBDIR_i386=	lib
-PLIST_FILES=	usr/${LIBDIR_${ARCH}}/libusb.so \
-		usr/${LIBDIR_${ARCH}}/libusb.so.3 \
-		usr/${LIBDIR_${ARCH}}/libusb-0.1.so.4
+PLIST_FILES=	usr/${LIBDIR_${ARCH}}/libusb.so.3 \
+		usr/${LIBDIR_${ARCH}}/libusb-0.1.so.4 \
+		usr/${LIBDIR_${ARCH}}/libusb-1.0.so.0
 
 CC=		${LINUXBASE}/usr/bin/gcc --sysroot=${LINUXBASE}
 CFLAGS:=	${CFLAGS:N-march=*}
@@ -45,9 +45,9 @@ FSVNDIR=	lib/libusb
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == amd64
-PLIST_FILES+=	usr/lib/libusb.so \
-		usr/lib/libusb.so.3 \
-		usr/lib/libusb-0.1.so.4
+PLIST_FILES+=	usr/lib/libusb.so.3 \
+		usr/lib/libusb-0.1.so.4 \
+		usr/lib/libusb-1.0.so.0
 .endif
 
 do-build:
@@ -67,17 +67,17 @@ do-install:
 	${INSTALL_LIB} ${WRKSRC}/${LIBDIR_${ARCH}}/libusb.so.3 \
 		${STAGEDIR}${PREFIX}/usr/${LIBDIR_${ARCH}}
 	${LN} -s libusb.so.3 \
-		${STAGEDIR}${PREFIX}/usr/${LIBDIR_${ARCH}}/libusb.so
-	${LN} -s libusb.so.3 \
 		${STAGEDIR}${PREFIX}/usr/${LIBDIR_${ARCH}}/libusb-0.1.so.4
+	${LN} -s libusb.so.3 \
+		${STAGEDIR}${PREFIX}/usr/${LIBDIR_${ARCH}}/libusb-1.0.so.0
 .if ${ARCH} == amd64
 	${MKDIR} ${STAGEDIR}${PREFIX}/usr/lib
 	${INSTALL_LIB} ${WRKSRC}/lib/libusb.so.3 \
 		${STAGEDIR}${PREFIX}/usr/lib
 	${LN} -s libusb.so.3 \
-		${STAGEDIR}${PREFIX}/usr/lib/libusb.so
-	${LN} -s libusb.so.3 \
 		${STAGEDIR}${PREFIX}/usr/lib/libusb-0.1.so.4
+	${LN} -s libusb.so.3 \
+		${STAGEDIR}${PREFIX}/usr/lib/libusb-1.0.so.0
 .endif
 
 .if defined(BOOTSTRAP) || defined(SVN_FETCH)
