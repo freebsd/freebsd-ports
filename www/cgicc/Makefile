@@ -3,6 +3,7 @@
 
 PORTNAME=	cgicc
 PORTVERSION=	3.2.19
+PORTREVISION=	1
 CATEGORIES=	www devel
 MASTER_SITES=	GNU
 
@@ -11,26 +12,19 @@ COMMENT=	C++ class library for writing CGI applications
 
 LICENSE=	LGPL3+
 
-OPTIONS_DEFINE=	DOXYGEN DOCS
-
-USES=		gmake pathfix libtool
-GNU_CONFIGURE=	yes
-MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOHEADER="${TRUE}" \
-		AUTOMAKE="${TRUE}"
+USES=		autoreconf:build compiler:gcc-c++11-lib libtool pathfix
 USE_LDCONFIG=	yes
+
+GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-
-CXXFLAGS+=	-Wno-unknown-pragmas
-
 PORTDOCS=	*
 
+OPTIONS_DEFINE=	DOXYGEN DOCS
 DOXYGEN_IMPLIES=	DOCS
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 DOXYGEN_CONFIGURE_ENV_OFF=	ac_cv_prog_DOXYGEN="${ECHO_CMD}"
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|-lstdc++||' ${WRKSRC}/cgicc/Makefile.in
 	@${REINPLACE_CMD} -e \
 		'/^docdir/s|=.*|= @docdir@|' ${WRKSRC}/doc/Makefile.in
 
