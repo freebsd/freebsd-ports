@@ -1,8 +1,35 @@
 [
 { type: install
   message: <<EOM
-The bokeh.charts interface and various examples depend on the Pandas library.
-If you want to use this functionality - please install math/py-pandas
+Install the following software to enable extra features:
+
+Jupyter
+    Bokeh can display content in classic Jupyter notebooks as well as in
+    JupyterLab. Depending on your setup, there may be additional packages or
+    Jupyter extensions to install.
+
+NodeJS
+    Necessary for Extending Bokeh or for defining CustomJS implementations in
+    TypeScript.
+
+NetworkX
+    Necessary to use the from_networkx function to generate Bokeh graph
+    renderers directly from NetworkX data.
+
+Pandas
+    Necessary for the hexbin function. Additionally, some usage is simplified by
+    using Pandas e.g. Pandas DataFrames will be converted automatically to Bokeh
+    data sources by glyph functions.
+
+psutil
+    Necessary to enable detailed memory logging in the Bokeh server.
+
+Selenium, GeckoDriver, Firefox
+    Necessary for Exporting Plots to PNG and SVG images.
+
+Sphinx
+    Necessary to make use of the bokeh.sphinxext Sphinx extension for including
+    Bokeh plots in Sphinx documentation.
 EOM
 }
 ]
