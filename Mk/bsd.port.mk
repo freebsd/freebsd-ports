@@ -3160,6 +3160,7 @@ do-extract: ${EXTRACT_WRKDIR}
 	@for file in ${EXTRACT_ONLY}; do \
 		if ! (cd ${EXTRACT_WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/$$file ${EXTRACT_AFTER_ARGS});\
 		then \
+			${ECHO_MSG} "===>  Failed to extract \"${_DISTDIR}/$$file\"."; \
 			exit 1; \
 		fi; \
 	done
