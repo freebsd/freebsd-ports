@@ -4,7 +4,7 @@
 PORTNAME=	drive
 PORTVERSION=	0.3.9.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	net
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -28,16 +28,16 @@ GH_TUPLE=	boltdb:bolt:v1.3.1:boltdb_bolt/vendor/github.com/boltdb/bolt \
 		fatih:color:v1.9.0:fatih_color/vendor/github.com/fatih/color \
 		golang:crypto:5c72a88:golang_crypto/vendor/golang.org/x/crypto \
 		golang:groupcache:8c9f03a:golang_groupcache/vendor/github.com/golang/groupcache \
-		golang:net:c890458:golang_net/vendor/golang.org/x/net \
-		golang:oauth2:bf48bf1:golang_oauth2/vendor/golang.org/x/oauth2 \
+		golang:net:05aa5d4:golang_net/vendor/golang.org/x/net \
+		golang:oauth2:5d25da1:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.4.2:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:131dc92:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:d9f96fd:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.3:golang_text/vendor/golang.org/x/text \
-		google:go-genproto:73b5761:google_go_genproto/vendor/google.golang.org/genproto \
-		google:google-api-go-client:v0.30.0:google_googleapigoclient/vendor/google.golang.org/api \
-		googleapis:google-cloud-go:v0.65.0:googleapis_googlecloudgo/vendor/cloud.google.com/go \
+		google:go-genproto:c2d885f:google_go_genproto/vendor/google.golang.org/genproto \
+		google:google-api-go-client:v0.32.0:google_googleapigoclient/vendor/google.golang.org/api \
+		googleapis:google-cloud-go:v0.66.0:googleapis_googlecloudgo/vendor/cloud.google.com/go \
 		googleapis:gax-go:v2.0.5:googleapis_gaxgo/vendor/github.com/googleapis/gax-go \
-		grpc:grpc-go:v1.31.1:grpc_grpc_go/vendor/google.golang.org/grpc \
+		grpc:grpc-go:v1.32.0:grpc_grpc_go/vendor/google.golang.org/grpc \
 		hashicorp:golang-lru:v0.5.4:hashicorp_golang_lru/vendor/github.com/hashicorp/golang-lru \
 		mattn:go-colorable:v0.1.7:mattn_gocolorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-isatty:v0.0.12:mattn_goisatty/vendor/github.com/mattn/go-isatty \
