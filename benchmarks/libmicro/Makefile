@@ -19,7 +19,7 @@ STRIP=		# Do not strip binaries
 PLIST_SUB=	ARCH="${LIBMICRO_ARCH}"
 PKGLIBDIR=	${PREFIX}/lib/${PORTNAME}
 
-LIBMICRO_ARCH=	${ARCH:S/aarch64/arm64/:C/armv.*/arm/:S/powerpc64/powerpc/}
+LIBMICRO_ARCH=	${ARCH:S/aarch64/arm64/:C/armv.*/arm/:C/powerpc64.*/powerpc/}
 
 post-build:
 	${ECHO_CMD} '#!/bin/sh' > ${WRKDIR}/libmicro-bench
