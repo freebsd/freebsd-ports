@@ -1,0 +1,10 @@
+--- tools/poreencode.orig	2020-04-25 10:43:45 UTC
++++ tools/poreencode
+@@ -33,6 +33,6 @@ po_dir=$2
+ 
+ for po_file in `find $po_dir -name "*.po"`
+ do
+-	tmp=`mktemp tmp.XXXXXXXXXX`
++	tmp=`mktemp -t /tmp tmp.XXXXXXXXXX`
+ 	msgconv -o $tmp $po_file && mv $tmp $po_file
+ done

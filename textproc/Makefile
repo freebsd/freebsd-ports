@@ -1773,6 +1773,7 @@
     SUBDIR += tokyodystopia
     SUBDIR += tr-aspell
     SUBDIR += trang
+    SUBDIR += translate-toolkit
     SUBDIR += trdsql
     SUBDIR += ts-hunspell
     SUBDIR += tth

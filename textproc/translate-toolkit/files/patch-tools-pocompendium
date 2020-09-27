@@ -1,0 +1,28 @@
+--- tools/pocompendium.orig	2020-04-25 10:43:45 UTC
++++ tools/pocompendium
+@@ -94,7 +94,7 @@ fi
+ output=$1
+ shift
+ 
+-tmp_dir=`mktemp -d tmp.XXXXXXXXXX`
++tmp_dir=`mktemp -d -t /tmp tmp.XXXXXXXXXX`
+ 
+ if [ $1 == "-d" ]; then
+ 	shift
+@@ -159,14 +159,14 @@ msgcat -o $output `find $tmp_dir -name "*.po"` 2> >(eg
+ 
+ # Extract only errors if requested
+ if [ $option_errors -eq 1 ] ; then
+-	tmp=`mktemp tmp.XXXXXXXXXX`
++	tmp=`mktemp -t /tmp tmp.XXXXXXXXXX`
+ 	msgattrib --only-fuzzy $output > $tmp
+ 	mv $tmp $output
+ fi
+ 
+ # Extract only correct translations if requested
+ if [ $option_correct -eq 1 ] ; then
+-	tmp=`mktemp tmp.XXXXXXXXXX`
++	tmp=`mktemp -t /tmp tmp.XXXXXXXXXX`
+ 	msgattrib --translated --no-fuzzy -o $tmp $output  2> >(egrep -v "warning: internationali.ed messages should not contain the .* escape sequence" >&2) && mv $tmp $output
+ fi
+ 

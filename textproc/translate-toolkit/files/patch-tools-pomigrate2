@@ -1,0 +1,22 @@
+--- tools/pomigrate2.orig	2020-04-25 10:43:45 UTC
++++ tools/pomigrate2
+@@ -125,7 +125,7 @@ done
+ 
+ if [ "$option_use_compendium" != "" ]; then
+ 	echo "** Creating compendium from old files... **"
+-	compendium=`mktemp tmp.compendium.XXXXXXXXXX`
++	compendium=`mktemp -t /tmp tmp.compendium.XXXXXXXXXX`
+ 	# Move and rename to work around inability of mktemp TEMPLATE to end on anything but X's
+         mv $compendium ${compendium}.po
+         compendium=${compendium}.po
+@@ -144,8 +144,8 @@ if [ ! $option_pot2po ]; then
+ 		[ -f $templates/${po}t ] && msgmerge --previous $option_verbose_msgmerge $option_no_fuzzy_matching $option_no_wrap $option_use_compendium $option_use_own_compendium --backup=off --update $new/$po $templates/${po}t
+ 	done
+ else
+-	temp_pot2po_new=`mktemp -d tmp.XXXXXXXXXX`
+-	temp_msgcat_new=`mktemp -d tmp.XXXXXXXXXX`
++	temp_pot2po_new=`mktemp -d -t /tmp tmp.XXXXXXXXXX`
++	temp_msgcat_new=`mktemp -d -t /tmp tmp.XXXXXXXXXX`
+ 	cp -rp $new/* $temp_pot2po_new
+ 	pot2po --errorlevel=traceback --progress=none $option_pot2po_use_compendium $option_pot2po_use_own_compendium -t $temp_pot2po_new $templates $temp_msgcat_new
+ 	for file in `cd $temp_msgcat_new; find . -name "*.po"`
