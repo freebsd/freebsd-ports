@@ -20,9 +20,6 @@ LIB_DEPENDS=	libgssdp-1.2.so:net/gssdp \
 		libsoup-2.4.so:devel/libsoup \
 		libuuid.so:misc/e2fsprogs-libuuid
 
-OPTIONS_DEFINE=	VAPI
-OPTIONS_SUB=	yes
-
 USES=		compiler:c11 gnome meson pathfix pkgconfig python:run shebangfix tar:xz
 USE_GNOME=	glib20 introspection:build libxml2
 
@@ -31,6 +28,9 @@ USE_CSTD=	c11
 USE_LDCONFIG=	yes
 
 SHEBANG_FILES=	tools/gupnp-binding-tool-1.2
+
+OPTIONS_DEFINE=	VAPI
+OPTIONS_SUB=	yes
 
 VAPI_BUILD_DEPENDS=	vala>=0.20:lang/vala
 VAPI_MESON_TRUE=	vapi
