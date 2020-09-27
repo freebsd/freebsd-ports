@@ -63,7 +63,7 @@ CFLAGS+=	-msse
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == powerpc64
+.if ${ARCH:Mpowerpc64*}
 FFMPEG_CONFIG+=	--arch=ppc64
 .endif
 
