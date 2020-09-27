@@ -15,8 +15,10 @@ COMMENT=	Cross-platform subtitle editor
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
-NOT_FOR_ARCHS=		powerpc64
+BROKEN_aarch64=		Fails to compile: no support for this architecture (yet)
+NOT_FOR_ARCHS=		powerpc64 powerpc64le
 NOT_FOR_ARCHS_REASON_powerpc64=		No support for PowerPC 64 bit mode
+NOT_FOR_ARCHS_REASON_powerpc64le=	No support for PowerPC 64 bit mode
 
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libicui18n.so:devel/icu \
@@ -66,8 +68,6 @@ PORTAUDIO_CONFIGURE_OFF=\
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_CONFIGURE_OFF=\
 			--without-libpulse
-
-BROKEN_aarch64=		Fails to compile: no support for this architecture (yet)
 
 # src/audio_display.o: undefined reference to symbol '__atomic_load_8@@LIBATOMIC_1.0'
 .if empty(CFLAGS:M-march=*)
