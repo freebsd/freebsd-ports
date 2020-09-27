@@ -1,0 +1,61 @@
+--- lib/ldb/wscript.orig	2019-07-08 12:47:51 UTC
++++ lib/ldb/wscript
+@@ -207,7 +207,7 @@ def build(bld):
+     if bld.env.standalone_ldb:
+         if not 'PACKAGE_VERSION' in bld.env:
+             bld.env.PACKAGE_VERSION = VERSION
+-        bld.env.PKGCONFIGDIR = '${LIBDIR}/pkgconfig'
++        bld.env.PKGCONFIGDIR = '%%PKGCONFIGDIR%%'
+         private_library = False
+     else:
+         private_library = True
+@@ -284,7 +284,6 @@ def build(bld):
+                           pc_files='ldb.pc',
+                           vnum=VERSION,
+                           private_library=private_library,
+-                          manpages='man/ldb.3',
+                           abi_directory='ABI',
+                           abi_match = abi_match)
+ 
+@@ -437,7 +436,7 @@ def build(bld):
+ 
+         LDB_TOOLS='ldbadd ldbsearch ldbdel ldbmodify ldbedit ldbrename'
+         for t in LDB_TOOLS.split():
+-            bld.SAMBA_BINARY(t, 'tools/%s.c' % t, deps='ldb-cmdline ldb',
++            bld.SAMBA_BINARY('samba-%s' % t, 'tools/%s.c' % t, deps='ldb-cmdline ldb',
+                              manpages='man/%s.1' % t)
+ 
+         # ldbtest doesn't get installed
+@@ -449,10 +448,10 @@ def build(bld):
+         else:
+             lmdb_deps = ''
+         # ldbdump doesn't get installed
+-        bld.SAMBA_BINARY('ldbdump',
++        bld.SAMBA_BINARY('samba-ldbdump',
+                          'tools/ldbdump.c',
+                          deps='ldb-cmdline ldb' + lmdb_deps,
+-                         install=False)
++                         install=True)
+ 
+         bld.SAMBA_LIBRARY('ldb-cmdline',
+                           source='tools/ldbutil.c tools/cmdline.c',
+@@ -497,11 +496,6 @@ def build(bld):
+                          deps='cmocka ldb',
+                          install=False)
+ 
+-        bld.SAMBA_BINARY('ldb_match_test',
+-                         source='tests/ldb_match_test.c',
+-                         deps='cmocka ldb',
+-                         install=False)
+-
+         bld.SAMBA_BINARY('ldb_key_value_test',
+                          source='tests/ldb_key_value_test.c',
+                          deps='cmocka ldb ldb_tdb_err_map',
+@@ -609,7 +603,6 @@ def test(ctx):
+                  'ldb_msg_test',
+                  'ldb_tdb_kv_ops_test',
+                  'ldb_tdb_test',
+-                 'ldb_match_test',
+                  'ldb_key_value_test',
+                  # we currently don't run ldb_key_value_sub_txn_tdb_test as it
+                  # tests the nested/sub transaction handling
