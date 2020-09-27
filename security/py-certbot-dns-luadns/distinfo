@@ -1,3 +1,3 @@
-TIMESTAMP = 1596892230
-SHA256 (certbot-dns-luadns-1.7.0.tar.gz) = e16080201a92a6b231b5e7d2c8797c259ca5e216bee3ade5235ebbefa920b4cb
-SIZE (certbot-dns-luadns-1.7.0.tar.gz) = 12745
+TIMESTAMP = 1599963194
+SHA256 (certbot-dns-luadns-1.8.0.tar.gz) = 83f05ed8137d4fda4d757b790368095ff2ae11940c0a7c10f4e23625fa55b0cf
+SIZE (certbot-dns-luadns-1.8.0.tar.gz) = 12811
