@@ -20,12 +20,4 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-POST_PLIST=	trim-backports-namespace
-
-post-install:
-	@${RM} ${STAGEDIR}${PYTHON_SITELIBDIR}/backports/__init__.py*
-
-trim-backports-namespace:
-	@${REINPLACE_CMD} '/backports\/__init__.py*/d' ${TMPPLIST}
-
 .include <bsd.port.mk>
