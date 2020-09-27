@@ -114,7 +114,8 @@ RUN_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}websocket-client>=0.56.0:www/py-websocket-client@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xmltodict>=0.12:devel/py-xmltodict@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}javaproperties>=0.5.1:devel/py-javaproperties@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}jsondiff>=1.2.0:devel/py-jsondiff@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}jsondiff>=1.2.0:devel/py-jsondiff@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}psutil>0:sysutils/py-psutil@${PY_FLAVOR}
 
 USES=		azurepy python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
