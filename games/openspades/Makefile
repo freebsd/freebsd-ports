@@ -15,7 +15,7 @@ COMMENT=	Compatible client of Ace of Spades
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	amd64 powerpc64
+ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	bundles non-portable AngelScript
 
 BUILD_DEPENDS=	convert:graphics/ImageMagick6 # for building icons
