@@ -31,7 +31,7 @@ BUILD_DEPENDS+=	clang${LLVM_VER}:devel/llvm${LLVM_VER}
 CPP=		clang-cpp${LLVM_VER}
 CC=		clang${LLVM_VER}
 CXX=		clang++${LLVM_VER}
-.if ${ARCH} == powerpc64
+.if ${ARCH:Mpowerpc64*}
 CFLAGS+=	-mabi=elfv2
 .endif
 .endif
