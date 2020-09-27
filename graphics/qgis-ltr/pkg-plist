@@ -746,6 +746,7 @@ include/qgis/qgsogrutils.h
 include/qgis/qgsonlineterraingenerator.h
 include/qgis/qgsopacitywidget.h
 include/qgis/qgsopacitywidgetplugin.h
+include/qgis/qgsopenclutils.h
 include/qgis/qgsoptional.h
 include/qgis/qgsoptionalexpression.h
 include/qgis/qgsoptionsdialogbase.h
@@ -5102,6 +5103,14 @@ share/metainfo/org.qgis.qgis.appdata.xml
 %%DATADIR%%/resources/metadata-ISO/licenses.csv
 %%DATADIR%%/resources/metadata-ISO/md_scope_codes.csv
 %%DATADIR%%/resources/metadata-ISO/mime.csv
+%%DATADIR%%/resources/opencl_programs/aspect.cl
+%%DATADIR%%/resources/opencl_programs/aspect_renderer.cl
+%%DATADIR%%/resources/opencl_programs/calcfirstder.cl
+%%DATADIR%%/resources/opencl_programs/hillshade.cl
+%%DATADIR%%/resources/opencl_programs/hillshade_renderer.cl
+%%DATADIR%%/resources/opencl_programs/ruggedness.cl
+%%DATADIR%%/resources/opencl_programs/slope.cl
+%%DATADIR%%/resources/opencl_programs/slope_renderer.cl
 %%DATADIR%%/resources/palettes/new_layer_colors.gpl
 %%DATADIR%%/resources/qgis.db
 %%DATADIR%%/resources/qgis_global_settings.ini
