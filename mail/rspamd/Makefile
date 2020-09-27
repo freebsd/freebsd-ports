@@ -35,6 +35,7 @@ OPTIONS_DEFAULT_armv7=		LUAJIT
 OPTIONS_DEFAULT_i386=		LUAJIT
 OPTIONS_DEFAULT_powerpc=	LUAJIT
 OPTIONS_DEFAULT_powerpc64=	LUAJIT
+OPTIONS_DEFAULT_powerpc64le=	LUAJIT
 OPTIONS_SUB=	yes
 
 BLAS_DESC=	Use OpenBLAS to accelerate KANN
@@ -79,7 +80,7 @@ CGP_RUN_DEPENDS+=	\
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == powerpc64
+.if ${ARCH:Mpowerpc*}
 LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
 USES+=		compiler:gcc-c++11-lib
 .else
