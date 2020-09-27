@@ -5,7 +5,7 @@ PORTNAME?=	mame
 PORTVERSION=	0.223
 CATEGORIES=	emulators
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	manu@FreeBSD.org
 COMMENT=	Multi Arcade Machine Emulator
 
 LICENSE=	GPLv2
