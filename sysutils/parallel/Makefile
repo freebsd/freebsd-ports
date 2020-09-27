@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	parallel
-PORTVERSION=	20200822
+PORTVERSION=	20200922
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU
 
@@ -14,16 +14,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		perl5 shebangfix tar:bzip2
 
-OPTIONS_DEFINE=	DOCS
-
 CONFIGURE_ARGS=	--docdir="${DOCSDIR}"
 GNU_CONFIGURE=	yes
-
 NO_ARCH=	yes
 
-PORTDOCS=	*
-
 SHEBANG_FILES=	src/env_parallel src/niceload src/parcat src/parsort src/sql
+
+OPTIONS_DEFINE=	DOCS
 
 DOCS_BUILD_DEPENDS=	pod2pdf:textproc/p5-pod2pdf \
 			pod2texi:print/texinfo
