@@ -37,7 +37,7 @@ LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
 RUN_DEPENDS=	gnome-settings-daemon>=3.4.0:sysutils/gnome-settings-daemon \
 		gsettings-desktop-schemas>=3.2.2:devel/gsettings-desktop-schemas \
 		cantarell-fonts>=0:x11-fonts/cantarell-fonts \
-		gcm-calibrate:graphics/gnome-color-manager
+		gcm-import:graphics/gnome-color-manager
 
 PORTSCOUT=	limitw:1,even
 
