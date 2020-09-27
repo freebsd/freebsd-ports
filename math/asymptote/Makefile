@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	asymptote
-PORTVERSION=	2.56
-PORTREVISION=	3
+PORTVERSION=	2.67
+PORTREVISION=	0
 CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -16,13 +16,15 @@ LICENSE_COMB=	dual
 
 ONLY_FOR_ARCHS=	amd64 i386
 
-LIB_DEPENDS=	libsigsegv.so:devel/libsigsegv
-RUN_DEPENDS=	animate:graphics/ImageMagick6 \
-		gv:print/gv \
-		${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter@${PY_FLAVOR} \
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libsigsegv.so:devel/libsigsegv
+RUN_DEPENDS=	rsvg-convert:graphics/librsvg2 \
+		${PYTHON_PKGNAMEPREFIX}cson>=0.8:devel/py-cson@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}qt5-svg>0:graphics/py-qt5-svg@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}qt5-widgets>0:x11-toolkits/py-qt5-widgets@${PY_FLAVOR} \
 		${PY_PILLOW}
 
-USES=		compiler:c++14-lang gettext-runtime ghostscript gl gmake ncurses perl5 python \
+USES=		compiler:c++14-lang gettext-runtime ghostscript gl gmake ncurses perl5 python:3.6+ \
 		shebangfix tar:tgz
 SHEBANG_FILES=	GUI/*.py
 USE_GL=		gl glu glut
@@ -72,15 +74,16 @@ OFFSCREEN_LIB_DEPENDS=	libOSMesa.so:graphics/libosmesa
 READLINE_CONFIGURE_ENABLE=	readline
 READLINE_USES=	readline:port
 
+TEST_TARGET=	test
+TEST_WRKSRC=	${WRKSRC}/tests
+
 post-patch:
 	@${REINPLACE_CMD} 's/-lgc/-lgc-threaded/' ${WRKSRC}/configure
-	@${REINPLACE_CMD} 's,/usr/lib/libgs.so,${LOCALBASE}/lib/libgs.so,' \
-		${WRKSRC}/settings.cc
 	@${REINPLACE_CMD} 's,makeinfo,${LOCALBASE}/bin/makeinfo,' \
 		${WRKSRC}/doc/png/Makefile.in
 
 # Fix the python interpreter in the generated file share/asymptote/GUI/xasyVersion.py:
-	@${REINPLACE_CMD} 's,/usr/bin/env python,${PYTHON_CMD},' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} 's,/usr/bin/env python3,${PYTHON_CMD},' ${WRKSRC}/Makefile.in
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/asy
