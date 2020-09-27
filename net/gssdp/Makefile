@@ -17,15 +17,15 @@ BUILD_DEPENDS=	glib>=2.54:devel/glib20 \
 		libsoup>=2.26.1:devel/libsoup
 LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup
 
-OPTIONS_DEFINE=	SNIFFER VAPI
-OPTIONS_SUB=	yes
-SNIFFER_DESC=	Build graphical SSDP sniffer
-
 USES=		gnome meson pathfix pkgconfig tar:xz
 USE_GNOME=	glib20 introspection:build
 
 MESON_ARGS=	-Dexamples=false -Dgtk_doc=false -Dintrospection=true
 USE_LDCONFIG=	yes
+
+OPTIONS_DEFINE=	SNIFFER VAPI
+OPTIONS_SUB=	yes
+SNIFFER_DESC=	Build graphical SSDP sniffer
 
 SNIFFER_BUILD_DEPENDS=	gtk3>=3.12:x11-toolkits/gtk30
 SNIFFER_MESON_TRUE=	sniffer
