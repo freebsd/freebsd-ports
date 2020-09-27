@@ -1,8 +1,9 @@
-This is a backport of the subprocess standard library module
-from Python 3.2 & 3.3 for use on Python 2.  It includes bugfixes
-and some new features.  On POSIX systems it is guaranteed to
-be reliable when used in threaded applications.  It includes
-timeout support from Python 3.3 but otherwise matches 3.2's API.
-It has not been tested on Windows.
+This is a backport of the Python 3 subprocess module for use on Python 2. This
+code has not been tested on Windows or other non-POSIX platforms.
+
+subprocess32 includes many important reliability bug fixes relevant on POSIX
+platforms. The most important of which is a C extension module used internally
+to handle the code path between fork() and exec(). This module is reliable when
+an application is using threads.
 
 WWW: https://github.com/google/python-subprocess32
