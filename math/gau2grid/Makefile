@@ -12,7 +12,7 @@ COMMENT=	Fast computation of a gaussian and its derivative on a grid
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	amd64 i386 powerpc64
+ONLY_FOR_ARCHS=	amd64 i386 powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	BUG: ValueError: descr is not a valid dtype descriptor: '<f16' (see https://github.com/dgasmith/gau2grid/issues/25)
 
 BUILD_DEPENDS=	${PYNUMPY}
