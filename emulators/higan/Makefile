@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}_v${PORTVERSION}-source
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Nintendo multi-system emulator
 
-ONLY_FOR_ARCHS=	amd64 i386 powerpc64
+ONLY_FOR_ARCHS=	amd64 i386 powerpc64 powerpc64le
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
@@ -39,7 +39,6 @@ XSHM_DESC=		Build XShm video driver
 XV_DESC=		Build Xv video driver
 INPUT_SDL_DESC=		Build SDL input driver
 INPUT_X_DESC=		Build X input driver
-
 
 GLX_USES=	gl
 GLX_USE=	GL=gl
