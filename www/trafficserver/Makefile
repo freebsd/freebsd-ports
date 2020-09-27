@@ -12,7 +12,7 @@ COMMENT=	Fast, scalable and extensible HTTP proxy server
 
 LICENSE=	APACHE20
 
-ONLY_FOR_ARCHS=	amd64 powerpc64
+ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libhwloc.so:devel/hwloc \
@@ -21,7 +21,8 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libbrotlienc.so:archivers/brotli \
 		${LIB_DEPENDS_${ARCH}}
 LIB_DEPENDS_amd64=	libluajit-5.1.so:lang/luajit
-LIB_DEPENDS_powerpc64=	libluajit-5.1.so:lang/luajit-openresty
+LIB_DEPENDS_powerpc64=		libluajit-5.1.so:lang/luajit-openresty
+LIB_DEPENDS_powerpc64le=	libluajit-5.1.so:lang/luajit-openresty
 
 USES=		compiler:c++17-lang cpe gmake libtool localbase ncurses \
 		pathfix perl5 pkgconfig sqlite ssl tar:bzip2 tcl
@@ -52,7 +53,7 @@ CONFIGURE_ARGS=	--with-pcre=${LOCALBASE} \
 
 OPTIONS_DEFINE=	DOCS WCCP MEMCACHED IMAGEMAGICK X11
 OPTIONS_SUB=	yes
-PLIST_SUB+=	ARCH="${ARCH:S/powerpc64/powerpc/}"
+PLIST_SUB+=	ARCH="${ARCH:C/powerpc64.*/powerpc/}"
 
 WCCP_DESC=	Enable WCCPv2 protocol
 WCCP_CONFIGURE_ENABLE=	wccp
@@ -100,6 +101,6 @@ post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}/snapshots
 	(cd ${STAGEDIR}${ETCDIR} && for f in *.config *.yaml; do ${MV} $$f $$f.sample; done)
 	${SED} -i '' -e 's|^${STAGEDIR}||g' \
-		${STAGEDIR}${PREFIX}/lib/perl5/${ARCH:S/powerpc64/powerpc/}-freebsd-thread-multi/auto/Apache/TS/.packlist
+		${STAGEDIR}${PREFIX}/lib/perl5/${ARCH:C/powerpc64.*/powerpc/}-freebsd-thread-multi/auto/Apache/TS/.packlist
 
 .include <bsd.port.post.mk>
