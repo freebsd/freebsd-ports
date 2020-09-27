@@ -5042,6 +5042,7 @@
     SUBDIR += py-sortedcontainers
     SUBDIR += py-sourcemap
     SUBDIR += py-speaklater
+    SUBDIR += py-speg
     SUBDIR += py-spyder
     SUBDIR += py-srsly
     SUBDIR += py-stackexchange
