@@ -22,10 +22,10 @@ EOM
 {
   type: upgrade
   message: <<EOM
-Please compare existing files under %%ETCDIR%%
-with the new *.sample files and if required adjust 
-the line 'version='
+In release 0.7.4 blacklist was renamed to blocklist.
 
+Please compare existing files under %%ETCDIR%%
+with the new *.sample files adjust them if required.
 EOM
 }
 ]
