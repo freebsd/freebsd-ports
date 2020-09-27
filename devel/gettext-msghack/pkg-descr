@@ -1,3 +1,5 @@
-Msghack can be used to alter gettext .po files in ways no sane mind
-would think about. It is a reimplementation of the original msghack
-in Python.
+Msghack can be used to alter gettext .po files in ways no sane mind would think
+about. It is a reimplementation of the original msghack in Python.
+
+WWW: https://src.fedoraproject.org/rpms/gettext/blob/master/f/msghack.py
+WWW: https://src.fedoraproject.org/rpms/gettext/blob/master/f/msghack.1
