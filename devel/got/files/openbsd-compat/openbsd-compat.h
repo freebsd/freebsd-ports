@@ -48,6 +48,15 @@
 	STAILQ_CONCAT(head1, head2)
 
 /*
+ * <fcntl.h>
+ */
+#define open(...)	open_posix(__VA_ARGS__)
+#define openat(...)	openat_posix(__VA_ARGS__)
+
+int	open_posix(const char *path, int flags, ...);
+int	openat_posix(int fd, const char *path, int flags, ...);
+
+/*
  * <libgen.h>
  */
 #undef basename

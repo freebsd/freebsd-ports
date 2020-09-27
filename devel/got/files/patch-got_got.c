@@ -10,24 +10,6 @@
  
  	if (Vflag) {
  		got_version_print_str();
-@@ -4022,7 +4023,7 @@ print_diff(void *arg, unsigned char status, unsigned c
- 		if (dirfd != -1) {
- 			fd = openat(dirfd, de_name, O_RDONLY | O_NOFOLLOW);
- 			if (fd == -1) {
--				if (errno != ELOOP) {
-+				if (errno != ELOOP && errno != EMLINK) {
- 					err = got_error_from_errno2("openat",
- 					    abspath);
- 					goto done;
-@@ -4035,7 +4036,7 @@ print_diff(void *arg, unsigned char status, unsigned c
- 		} else {
- 			fd = open(abspath, O_RDONLY | O_NOFOLLOW);
- 			if (fd == -1) {
--				if (errno != ELOOP) {
-+				if (errno != ELOOP && errno != EMLINK) {
- 					err = got_error_from_errno2("open",
- 					    abspath);
- 					goto done;
 @@ -9421,11 +9422,11 @@ cat_commit(struct got_object_id *id, struct got_reposi
  	}
  	fprintf(outfile, "%s%s %lld +0000\n", GOT_COMMIT_LABEL_AUTHOR,

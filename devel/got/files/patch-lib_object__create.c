@@ -1,14 +1,5 @@
 --- lib/object_create.c.orig	2020-09-25 11:58:47 UTC
 +++ lib/object_create.c
-@@ -131,7 +131,7 @@ got_object_blob_file_create(struct got_object_id **id,
- 
- 	fd = open(ondisk_path, O_RDONLY | O_NOFOLLOW);
- 	if (fd == -1) {
--		if (errno != ELOOP)
-+		if (errno != ELOOP && errno != EMLINK)
- 			return got_error_from_errno2("open", ondisk_path);
- 
- 		if (lstat(ondisk_path, &sb) == -1) {
 @@ -144,7 +144,7 @@ got_object_blob_file_create(struct got_object_id **id,
  	}
  
