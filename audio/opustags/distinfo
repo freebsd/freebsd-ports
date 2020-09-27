@@ -1,3 +1,5 @@
-TIMESTAMP = 1595471933
+TIMESTAMP = 1601183955
 SHA256 (fmang-opustags-1.3.0_GH0.tar.gz) = b55290bdcd67e4da6f17bd30b4956d3efa363b88f25ee12e026e9cb05e2ec70d
 SIZE (fmang-opustags-1.3.0_GH0.tar.gz) = 28304
+SHA256 (0e9c4e2f9d891f738ac2b3bd97a096bfec642ddd.patch) = 2360b49655175b661a33fcbc90da643dbf9e281a41c9f92ef9785dff04d5bcf4
+SIZE (0e9c4e2f9d891f738ac2b3bd97a096bfec642ddd.patch) = 870
