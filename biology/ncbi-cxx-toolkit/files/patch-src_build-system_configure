@@ -1,0 +1,10 @@
+--- src/build-system/configure.orig	2020-09-27 04:51:28 UTC
++++ src/build-system/configure
+@@ -8080,6 +8080,7 @@ case "$compiler:$ncbi_compiler_ver" in
+     ICC:??.?.? | \
+     ICC:??.?.?.* ) ncbi_compiler_sed='s/\([0-9][0-9]\)\.\([0-9]\)\.\([0-9]\).*/\1\2\3/' ;;
+     *:?.?.?)    ncbi_compiler_sed='s/\([0-9]\)\.\([0-9]\)\.\([0-9]\)/\1\2\3/' ;;
++    *:??.?.?)   ncbi_compiler_sed='s/\([1-9][0-9]\)\.\([0-9]\)\.\([0-9]\)/\1\2\3/' ;;
+     *:?.??*)    ncbi_compiler_sed='s/\([0-9]\)\.\([0-9][0-9]\).*/\1\2/' ;;
+     *:?.?)      ncbi_compiler_sed='s/\([0-9]\).\([0-9]\)/\1\20/' ;;
+     *:?)        ncbi_compiler_sed='s/\([0-9]\)/\100/' ;;
