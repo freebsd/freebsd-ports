@@ -37,7 +37,8 @@ LIB_DEPENDS+=	libcurl.so:ftp/curl \
 LIB_DEPENDS_aarch64=	libunwind.so:devel/libunwind
 LIB_DEPENDS_amd64=	libunwind.so:devel/libunwind
 LIB_DEPENDS_i386=	libunwind.so:devel/libunwind
-LIB_DEPENDS_powerpc64=	libunwind.so:devel/libunwind
+LIB_DEPENDS_powerpc64=		libunwind.so:devel/libunwind
+LIB_DEPENDS_powerpc64le=	libunwind.so:devel/libunwind
 
 BUILD_DEPENDS=	liblz4>0:archivers/liblz4 \
 		${BUILD_DEPENDS_${ARCH}}
@@ -45,6 +46,7 @@ BUILD_DEPENDS_aarch64=	libunwind>0:devel/libunwind
 BUILD_DEPENDS_amd64=	libunwind>0:devel/libunwind
 BUILD_DEPENDS_i386=	libunwind>0:devel/libunwind
 BUILD_DEPENDS_powerpc64=	libunwind>0:devel/libunwind
+BUILD_DEPENDS_powerpc64le=	libunwind>0:devel/libunwind
 
 CMAKE_BUILD_TYPE=	Release
 CFLAGS+=		-fPIC
@@ -94,7 +96,7 @@ CMAKE_ARGS+=	-DWITHOUT_MROONGA_STORAGE_ENGINE=1 \
 SHEBANG_FILES=	scripts/*.pl* scripts/*.sh
 
 .ifdef USE_MYSQL
-.error You have `USE_MYSQL' variable defined either in environment or in make(1) arguments. Please undefine and try again.
+IGNORE=		You have `USE_MYSQL' variable defined either in environment or in make(1) arguments. Please undefine and try again.
 .endif
 
 SUB_LIST=	MY_DBDIR=${MY_DBDIR} \
