@@ -14,9 +14,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	gobject-introspection>=0.9.5:devel/gobject-introspection
 
-OPTIONS_DEFINE=	VAPI
-OPTIONS_SUB=	yes
-
 USES=		gmake gnome libtool pathfix pkgconfig tar:xz
 USE_GNOME=	glib20 introspection:build libxml2
 
@@ -24,6 +21,9 @@ CONFIGURE_ARGS=	--enable-introspection=yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
+
+OPTIONS_DEFINE=	VAPI
+OPTIONS_SUB=	yes
 
 VAPI_BUILD_DEPENDS=	vala>=0.22:lang/vala
 VAPI_CONFIGURE_ENV=	ac_cv_path_VAPIGEN=${LOCALBASE}/bin/vapigen
