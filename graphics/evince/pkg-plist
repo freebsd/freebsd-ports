@@ -75,7 +75,7 @@ lib/libevview3.so.%%GTK3_VERSION%%
 %%NAUTILUS%%lib/nautilus/extensions-%%VERSION%%/libevince-properties-page.so
 libdata/pkgconfig/evince-document-%%VERSION%%.pc
 libdata/pkgconfig/evince-view-%%VERSION%%.pc
-libexec/evinced
+%%DBUS%%libexec/evinced
 man/man1/evince.1.gz
 share/GConf/gsettings/evince.convert
 share/applications/org.gnome.Evince-previewer.desktop
