@@ -17,7 +17,7 @@ BUILD_DEPENDS=	bash:shells/bash \
 LIB_DEPENDS=	librpmio.so:archivers/rpm4 \
 		libyaml.so:textproc/libyaml
 
-USES=		gnome meson pkgconfig tar:xz
+USES=		compiler:c11 gnome meson pkgconfig tar:xz
 USE_GNOME=	glib20 introspection:build
 USE_LDCONFIG=	yes
 
