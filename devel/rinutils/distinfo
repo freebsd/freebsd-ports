@@ -1,5 +1,3 @@
-TIMESTAMP = 1601047868
-SHA256 (Shlomif_Common.cmake) = 6c72ff31b361319971bb8eca5d5679bd366b316a5543562e821e585af88cad17
-SIZE (Shlomif_Common.cmake) = 9944
-SHA256 (shlomif-rinutils-0.6.0_GH0.tar.gz) = 81966e7f73a9a8e095dd06c159cfb8dd0da2b78942ba83b323d7ff59f74800cf
-SIZE (shlomif-rinutils-0.6.0_GH0.tar.gz) = 16053
+TIMESTAMP = 1601149529
+SHA256 (rinutils-0.6.0.tar.xz) = 65eed1631707f3cae737dc0da6ee09f7f8a54502cc08e3b8aee3734ce4e30f0d
+SIZE (rinutils-0.6.0.tar.xz) = 16768
