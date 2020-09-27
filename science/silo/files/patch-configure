@@ -1,0 +1,11 @@
+--- configure.orig	2020-09-25 00:15:00 UTC
++++ configure
+@@ -30346,7 +30346,7 @@ $as_echo "$am_cv_python_pyexecdir" >&6; }
+ $as_echo_n "checking for Python include path... " >&6; }
+    if test -z "$PYTHON_CPPFLAGS"; then
+       python_path=`$PYTHON -c "import distutils.sysconfig; \
+-         print distutils.sysconfig.get_python_inc();"`
++			print(distutils.sysconfig.get_python_inc());"`
+       if test -n "${python_path}"; then
+          python_path="-I$python_path"
+       fi

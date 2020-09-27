@@ -1,0 +1,768 @@
+Author: Alastair McKinstry <mckinstry@debian.org>
+Description: Changes needed for Python3 support.
+ TODO: Changes to the C interface still needed.
+Last-Upated: 2014-05-02
+Forwarded: no
+
+Index: tests/test_error.py
+===================================================================
+--- tests/test_error.py
++++ tests/test_error.py
+@@ -47,6 +47,7 @@
+ # reflect those  of the United  States Government or  Lawrence Livermore
+ # National  Security, LLC,  and shall  not  be used  for advertising  or
+ # product endorsement purposes.
++from __future__ import print_function
+ import os
+ import Silo
+ 
+@@ -56,33 +57,33 @@ elif os.access("multi_ucd3d.h5",os.R_OK)
+     file = "multi_ucd3d.h5"
+ 
+ db = Silo.Open(file)
+-print "db = ",db
++print( "db = ",db)
+ 
+ try:
+-    print "Trying to set a bad directory"
++    print ("Trying to set a bad directory")
+     db.SetDir("Magrathea")
+ except:
+-    print "    -- Caught error"
++    print ("    -- Caught error")
+ 
+ try:
+-    print "Trying to read a bad variable"
++    print ("Trying to read a bad variable")
+     db.GetVar("Arkleseizure")
+ except:
+-    print "    -- Caught error"
++    print ("    -- Caught error")
+ 
+-print "Closing...."
++print ("Closing....")
+ db.Close()
+ 
+-print "db = ",db
++print ("db = ",db)
+ 
+ try:
+-    print "Trying to set a directory on a closed file"
++    print ("Trying to set a directory on a closed file")
+     db.SetDir("domain0")
+ except:
+-    print "    -- Caught error"
++    print ("    -- Caught error")
+ 
+ try:
+-    print "Trying to read a variable on a closed file"
++    print ("Trying to read a variable on a closed file")
+     db.SetDir("dtime")
+ except:
+-    print "    -- Caught error"
++    print ("    -- Caught error")
+Index: tests/test_read.py
+===================================================================
+--- tests/test_read.py
++++ tests/test_read.py
+@@ -47,6 +47,7 @@
+ # reflect those  of the United  States Government or  Lawrence Livermore
+ # National  Security, LLC,  and shall  not  be used  for advertising  or
+ # product endorsement purposes.
++from __future__ import print_function
+ import os
+ import Silo
+ 
+@@ -57,31 +58,31 @@ elif os.access("multi_ucd3d.h5",os.R_OK)
+     file = "multi_ucd3d.h5"
+ 
+ db = Silo.Open(file)
+-print "db = ",db
+-print "db.filename = '%s'"%db.filename
++print ("db = ",db)
++print ("db.filename = '%s'"%db.filename)
+ 
+ toc = db.GetToc()
+-print "\n-- TOC --\n",toc
++print ("\n-- TOC --\n",toc)
+ 
+-print "cycle='%d'"%db.GetVar("cycle")
+-print "dtime='%f'"%db.GetVar("dtime")
+-print "_fileinfo='%s'"%db.GetVar("_fileinfo")
+-print "d_vartypes=",db.GetVar("d_vartypes")
+-print "d_varnames=",db.GetVar("d_varnames")
++print ("cycle='%d'"%db.GetVar("cycle"))
++print ("dtime='%f'"%db.GetVar("dtime"))
++print ("_fileinfo='%s'"%db.GetVar("_fileinfo"))
++print ("d_vartypes=",db.GetVar("d_vartypes"))
++print ("d_varnames=",db.GetVar("d_varnames"))
+ 
+ db.SetDir("block0")
+ toc = db.GetToc()
+-print "mesh1_coord0=",db.GetVar("mesh1_coord0")[1:10]
+-print "v_data=",db.GetVar("v_data")[1:10]
++print ("mesh1_coord0=",db.GetVar("mesh1_coord0")[1:10])
++print ("v_data=",db.GetVar("v_data")[1:10])
+ 
+ db.SetDir("../block7")
+ toc = db.GetToc()
+-print "mesh1_coord0=",db.GetVar("mesh1_coord0")[1:10]
+-print "v_data=",db.GetVar("v_data")[1:10]
++print ("mesh1_coord0=",db.GetVar("mesh1_coord0")[1:10])
++print ("v_data=",db.GetVar("v_data")[1:10])
+ 
+ db.Close()
+ 
+-print "\n"
++print ("\n")
+ 
+ # ---- file 2 ----
+ if os.access("multi_rect3d.pdb",os.R_OK):
+@@ -90,23 +91,23 @@ elif os.access("multi_rect3d.h5",os.R_OK
+     file = "multi_rect3d.h5"
+ 
+ db = Silo.Open(file)
+-print "db = ",db
++print ("db = ",db)
+ 
+ toc = db.GetToc()
+-print "\n-- TOC --\n",toc
++print ("i\n-- TOC --\n",toc)
+ 
+-print "cycle='%d'"%db.GetVar("cycle")
+-print "time='%f'"%db.GetVar("time")
+-print "_fileinfo='%s'"%db.GetVar("_fileinfo")
+-print "defvars_defns='%s'"%db.GetVar("defvars_defns")
++print ("cycle='%d'"%db.GetVar("cycle"))
++print ("time='%f'"%db.GetVar("time"))
++print ("_fileinfo='%s'"%db.GetVar("_fileinfo"))
++print ("defvars_defns='%s'"%db.GetVar("defvars_defns"))
+ 
+ db.SetDir("block0")
+ toc = db.GetToc()
+-print "mesh1_coord0=",db.GetVar("mesh1_coord0")
++print ("mesh1_coord0=",db.GetVar("mesh1_coord0"))
+ 
+ db.SetDir("/block7")
+ toc = db.GetToc()
+-print "mesh1_coord0=",db.GetVar("mesh1_coord0")
++print ("mesh1_coord0=",db.GetVar("mesh1_coord0"))
+ 
+ db.SetDir("/")
+ toc = db.GetToc()
+Index: tests/test_write.py
+===================================================================
+--- tests/test_write.py
++++ tests/test_write.py
+@@ -47,6 +47,7 @@
+ # reflect those  of the United  States Government or  Lawrence Livermore
+ # National  Security, LLC,  and shall  not  be used  for advertising  or
+ # product endorsement purposes.
++from __future__ import silo
+ import Silo
+ 
+ db = Silo.Create("foo.silo", "test file")
+Index: tools/python/pydbtoc.cpp
+===================================================================
+--- tools/python/pydbtoc.cpp
++++ tools/python/pydbtoc.cpp
+@@ -48,6 +48,10 @@
+ // National  Security, LLC,  and shall  not  be used  for advertising  or
+ // product endorsement purposes.
+ 
++// #if PY_MAJOR_VERSION >= 3
++#define PyString_FromString(x) PyUnicode_FromString(x)
++// #endif
++
+ #include "pydbtoc.h"
+ 
+ // ****************************************************************************
+@@ -200,7 +204,7 @@ static int DBtoc_print(PyObject *self, F
+ static PyObject *DBtoc_GetN ## nm(PyObject *self, PyObject *args)          \
+ {                                                                          \
+     DBtoc *toc = ((DBtocObject*)self)->toc;                                \
+-    PyObject *retval = PyInt_FromLong(toc->n ## nm);                       \
++    PyObject *retval = PyLong_FromLong(toc->n ## nm);                       \
+     return retval;                                                         \
+ }                                                                          \
+ static PyObject *DBtoc_Get ## nm ## names(PyObject *self, PyObject *args)  \
+@@ -341,46 +345,60 @@ PyTypeObject DBtocType =
+     // Type header
+     //
+     PyObject_HEAD_INIT(&PyType_Type)
+-    0,                                   // ob_size
+-    "DBtoc",                    // tp_name
+-    sizeof(DBtocObject),        // tp_basicsize
+-    0,                                   // tp_itemsize
++#if PY_MAJOR_VERSION < 3
++    ob_size           : 0,
++#endif
++    tp_name           : "DBtoc",
++    tp_basicsize      : sizeof(DBtocObject),
++    tp_itemsize       : 0,
+     //
+     // Standard methods
+     //
+-    (destructor)DBtoc_dealloc,  // tp_dealloc
+-    (printfunc)DBtoc_print,     // tp_print
+-    (getattrfunc)DBtoc_getattr, // tp_getattr
+-    0,//(setattrfunc)DBtoc_setattr, // tp_setattr -- this object is read-only
+-    (cmpfunc)DBtoc_compare,     // tp_compare
+-    (reprfunc)0,                         // tp_repr
++    tp_dealloc        : (destructor)DBtoc_dealloc,
++    tp_print          : (printfunc)DBtoc_print,
++#if PY_MAJOR_VERSION >= 3
++    tp_getattr        : 0,
++#else
++    tp_getattr        : (getattrfunc)DBtoc_getattr,
++#endif    
++    tp_setattr        : 0, // object is read-only
++#if PY_MAJOR_VERSION >= 3
++    tp_as_async       : (PyAsyncMethods*) NULL,
++#else    
++    tp_compare        : (cmpfunc)DBtoc_compare,
++#endif
++    tp_repr           : (reprfunc)0,                 
+     //
+     // Type categories
+     //
+-    0,                                   // tp_as_number
+-    0,                                   // tp_as_sequence
+-    0,                                   // tp_as_mapping
++    tp_as_number      : 0,
++    tp_as_sequence    : 0,
++    tp_as_mapping     : 0,
+     //
+     // More methods
+     //
+-    0,                                   // tp_hash
+-    0,                                   // tp_call
+-    (reprfunc)DBtoc_str,        // tp_str
+-    0,                                   // tp_getattro
+-    0,                                   // tp_setattro
+-    0,                                   // tp_as_buffer
+-    Py_TPFLAGS_CHECKTYPES,               // tp_flags
+-    "This class wraps a Silo DBtoc object.", // tp_doc
+-    0,                                   // tp_traverse
+-    0,                                   // tp_clear
+-    0,                                   // tp_richcompare
+-    0                                    // tp_weaklistoffset
++
++    tp_hash           : 0, 
++    tp_call           :  0,
++    tp_str            : (reprfunc)DBtoc_str,
++    tp_getattro       : 0,
++    tp_setattro       : 0,
++    tp_as_buffer      : 0,
++#if PY_MAJOR_VERSION < 3    
++    tp_flags          : Py_TPFLAGS_CHECKTYPES,
++#else
++    tp_flags          : Py_TPFLAGS_DEFAULT, 
++#endif
++    tp_doc            : "This class wraps a Silo DBtoc object.",
++    tp_traverse       : 0, 
++    tp_clear          : 0,
++    tp_richcompare    : 0,
++    tp_weaklistoffset : 0,                 
+     // PYTHON 2.2 FROM HERE
+-    ,
+     0,
+     0,
+     0,
+-
++    0,
+ };
+ 
+ // ****************************************************************************
+Index: tools/python/pydbfile.cpp
+===================================================================
+--- tools/python/pydbfile.cpp
++++ tools/python/pydbfile.cpp
+@@ -56,6 +56,19 @@
+ 
+ using std::string;
+ 
++#if PY_MAJOR_VERSION >= 3
++#define PyInt_FromLong(x) (PyLong_FromLong(x))
++#define PyInt_Check(x) (PyLong_Check(x))
++#define PyString_Check(x) PyUnicode_Check(x)
++#define PyInt_AS_LONG(x) PyLong_AsLong(x)
++#define PyString_FromStringAndSize(x,y) PyUnicode_FromStringAndSize(x,y)
++#define PyString_FromString(x) PyUnicode_FromString(x)
++#define PyString_AsString(x) PyUnicode_AsUTF8(x)
++
++#else
++#define Py_RETURN_NOTIMPLEMENTED return NULL
++#endif
++
+ // ****************************************************************************
+ //  Method:  DBfile_DBGetToc
+ //
+@@ -75,8 +88,8 @@ static PyObject *DBfile_DBGetToc(PyObjec
+ 
+     if (!obj->db)
+     {
+-        SiloErrorFunc("This file has been closed.");
+-        return NULL;
++      SiloErrorFunc(self, "This file has been closed.");
++      return NULL;
+     }
+ 
+     DBtoc *toc = DBGetToc(obj->db);
+@@ -122,7 +135,7 @@ static PyObject *DBfile_DBGetVar(PyObjec
+ 
+     if (!db)
+     {
+-        SiloErrorFunc("This file has been closed.");
++      SiloErrorFunc(self, "This file has been closed.");
+         return NULL;
+     }
+ 
+@@ -162,7 +175,7 @@ static PyObject *DBfile_DBGetVar(PyObjec
+                 return PyString_FromStringAndSize((char*)var, len);
+             }
+           default:
+-            SiloErrorFunc("Unknown variable type.");
++            SiloErrorFunc(self, "Unknown variable type.");
+             return NULL;
+         }
+     }
+@@ -193,7 +206,7 @@ static PyObject *DBfile_DBGetVar(PyObjec
+                 tmp = PyInt_FromLong(((char*)var)[i]);
+                 break;
+               default:
+-                SiloErrorFunc("Unknown variable type.");
++                SiloErrorFunc(self, "Unknown variable type.");
+                 return NULL;
+             }
+             PyTuple_SET_ITEM(retval, i, tmp);
+@@ -220,7 +233,7 @@ static PyObject *DBfile_DBGetVarInfo(PyO
+ 
+     if (!db)
+     {
+-        SiloErrorFunc("This file has been closed.");
++      SiloErrorFunc(self, "This file has been closed.");
+         return NULL;
+     }
+ 
+@@ -247,7 +260,7 @@ static PyObject *DBfile_DBGetVarInfo(PyO
+     {
+         char msg[256];
+         snprintf(msg, sizeof(msg), "Unable to get object \"%s\"", str);
+-        SiloErrorFunc(msg);
++        SiloErrorFunc(self, msg);
+         return NULL;
+     }
+ 
+@@ -263,7 +276,7 @@ static PyObject *DBfile_DBGetVarInfo(PyO
+         {
+             char msg[256];
+             snprintf(msg, sizeof(msg), "Unable to get component \"%s\" for object \%s\"", compname.c_str(), str);
+-            SiloErrorFunc(msg);
++            SiloErrorFunc(self, msg);
+             continue;
+         }
+         int type = DBGetComponentType(db, str, compname.c_str());
+@@ -371,7 +384,7 @@ static PyObject *DBfile_DBWrite(PyObject
+ 
+     if (!db)
+     {
+-        SiloErrorFunc("This file has been closed.");
++      SiloErrorFunc(self, "This file has been closed.");
+         return NULL;
+     }
+ 
+@@ -495,8 +508,8 @@ static PyObject *DBfile_DBWriteObject(Py
+ 
+     if (!db)
+     {
+-        SiloErrorFunc("This file has been closed.");
+-        return NULL;
++      SiloErrorFunc(self, "This file has been closed.");
++      return NULL;
+     }
+ 
+     char *objname;
+@@ -591,7 +604,7 @@ static PyObject *DBfile_DBMkDir(PyObject
+ 
+     if (!db)
+     {
+-        SiloErrorFunc("This file has been closed.");
++        SiloErrorFunc(self, "This file has been closed.");
+         return NULL;
+     }
+ 
+@@ -601,7 +614,7 @@ static PyObject *DBfile_DBMkDir(PyObject
+ 
+     if (DBMkDir(db, str))
+     {
+-        SiloErrorFunc("Could not make the directory.");
++        SiloErrorFunc(self, "Could not make the directory.");
+         return NULL;
+     }
+     else
+@@ -630,7 +643,7 @@ static PyObject *DBfile_DBSetDir(PyObjec
+ 
+     if (!db)
+     {
+-        SiloErrorFunc("This file has been closed.");
++        SiloErrorFunc(self, "This file has been closed.");
+         return NULL;
+     }
+ 
+@@ -640,7 +653,7 @@ static PyObject *DBfile_DBSetDir(PyObjec
+ 
+     if (DBSetDir(db, str))
+     {
+-        SiloErrorFunc("Could not change directories.");
++        SiloErrorFunc(self, "Could not change directories.");
+         return NULL;
+     }
+     else
+@@ -669,7 +682,7 @@ static PyObject *DBfile_DBClose(PyObject
+ 
+     if (!db)
+     {
+-        SiloErrorFunc("This file has been closed.");
++      SiloErrorFunc(self, "This file has been closed.");
+         return NULL;
+     }
+ 
+@@ -678,7 +691,7 @@ static PyObject *DBfile_DBClose(PyObject
+ 
+     if (DBClose(db))
+     {
+-        SiloErrorFunc("Could not close the file.");
++      SiloErrorFunc(self, "Could not close the file.");
+         return NULL;
+     }
+     else
+@@ -804,13 +817,15 @@ static int DBfile_print(PyObject *self,
+ //  Creation:    July 12, 2005
+ //
+ // ****************************************************************************
++
++#if PY_MAJOR_VERSION < 3
+ static PyObject *DBfile_getattr(PyObject *self, char *name)
+ {
+     DBfileObject *obj = (DBfileObject*)self;
+ 
+     if (!obj->db)
+     {
+-        SiloErrorFunc("This file has been closed.");
++      SiloErrorFunc(self, "This file has been closed.");
+         return NULL;
+     }
+ 
+@@ -828,6 +843,7 @@ static PyObject *DBfile_getattr(PyObject
+ 
+     return Py_FindMethod(DBfile_methods, self, name);
+ }
++#endif
+ 
+ // ****************************************************************************
+ //  Method:  DBfile_compare
+@@ -849,6 +865,17 @@ static int DBfile_compare(PyObject *v, P
+     return (a<b) ? -1 : ((a==b) ? 0 : +1);
+ }
+ 
++// TODO Check this
++static PyObject* DBfile_richcompare(PyObject *v, PyObject *w, int op)
++{
++  switch(op){
++  case Py_EQ:{
++    if(v == w) Py_RETURN_TRUE;
++    Py_RETURN_FALSE;
++  }
++  default: Py_RETURN_NOTIMPLEMENTED;
++  }
++}
+ 
+ // ****************************************************************************
+ //  DBfile Python Type Object
+@@ -859,44 +886,58 @@ static int DBfile_compare(PyObject *v, P
+ // ****************************************************************************
+ PyTypeObject DBfileType =
+ {
+-    //
+-    // Type header
+-    //
+-    PyObject_HEAD_INIT(&PyType_Type)
+-    0,                                   // ob_size
+-    "DBfile",                    // tp_name
+-    sizeof(DBfileObject),        // tp_basicsize
+-    0,                                   // tp_itemsize
+-    //
+-    // Standard methods
+-    //
+-    (destructor)DBfile_dealloc,  // tp_dealloc
+-    (printfunc)DBfile_print,     // tp_print
+-    (getattrfunc)DBfile_getattr, // tp_getattr
+-    0,//(setattrfunc)DBfile_setattr, // tp_setattr -- this object is read-only
+-    (cmpfunc)DBfile_compare,     // tp_compare
+-    (reprfunc)0,                         // tp_repr
+-    //
+-    // Type categories
+-    //
+-    0,                                   // tp_as_number
+-    0,                                   // tp_as_sequence
+-    0,                                   // tp_as_mapping
++  //
++  // Type header
++  //
++  PyObject_HEAD_INIT(&PyType_Type)
++#if PY_MAJOR_VERSION < 3  
++  ob_size        : 0,
++#endif  
++  tp_name        : "DBfil",                  
++  tp_basicsize   : sizeof(DBfileObject), 
++  tp_itemsize    : 0, 
++  //
++  // Standard methods
++  //
++  tp_dealloc     : (destructor)DBfile_dealloc,
++  tp_print       : (printfunc)DBfile_print,
++#if PY_MAJOR_VERSION >= 3
++  tp_getattr     : 0,                   
++#else
++  tp_getattr     : (getattrfunc)DBfile_getattr, 
++#endif
++  tp_setattr     : 0, // object is read-only
++#if PY_MAJOR_VERSION >= 3
++  tp_as_async    : (PyAsyncMethods*) NULL,
++#else    
++  tp_compare     : (cmpfunc)DBfile_compare,
++#endif    
++  tp_repr        : (reprfunc)0,
++  //
++  // Type categories
++  //
++  tp_as_number   : 0,
++  tp_as_sequence : 0,
++  tp_as_mapping  : 0,
+     //
+     // More methods
+     //
+-    0,                                   // tp_hash
+-    0,                                   // tp_call
+-    (reprfunc)DBfile_str,        // tp_str
+-    0,                                   // tp_getattro
+-    0,                                   // tp_setattro
+-    0,                                   // tp_as_buffer
+-    Py_TPFLAGS_CHECKTYPES,               // tp_flags
+-    "This class wraps a Silo DBfile object.", // tp_doc
+-    0,                                   // tp_traverse
+-    0,                                   // tp_clear
+-    0,                                   // tp_richcompare
+-    0                                    // tp_weaklistoffset
++  tp_hash        : 0,
++  tp_call        : 0,
++  tp_str         : (reprfunc)DBfile_str,
++  tp_getattro    : 0,
++  tp_setattro    : 0,
++  tp_as_buffer   : 0,
++#if PY_MAJOR_VERSION >= 3
++  tp_flags       : Py_TPFLAGS_DEFAULT,
++#else    
++  tp_flags       : Py_TPFLAGS_CHECKTYPES,
++#endif    
++  tp_doc         : "This class wraps a Silo DBfile object.",
++  tp_traverse    : 0,
++  tp_clear       : 0,
++  tp_richcompare : (richcmpfunc)DBfile_richcompare,
++  tp_weaklistoffset : 0,
+ };
+ 
+ // ****************************************************************************
+Index: tools/python/pysilo.h
+===================================================================
+--- tools/python/pysilo.h
++++ tools/python/pysilo.h
+@@ -65,6 +65,6 @@
+          ((PY_MAJOR_VERSION==Maj) && (PY_MINOR_VERSION>Min)) || \
+          (PY_MAJOR_VERSION>Maj))
+ 
+-void SiloErrorFunc(const char *errString);
++void SiloErrorFunc(PyObject *self, const char *errString);
+ 
+ #endif
+Index: tools/python/pysilo.cpp
+===================================================================
+--- tools/python/pysilo.cpp
++++ tools/python/pysilo.cpp
+@@ -57,14 +57,16 @@
+ #include <iostream>
+ using namespace std;
+ 
+-static PyObject             *SiloError;
+-static PyObject             *siloModule = 0;
+-
+-//
+-// Method table
+-//
+-
+-std::vector<PyMethodDef> SiloMethods;
++struct silo_state {
++  PyObject *error;
++};
++
++#if PY_MAJOR_VERSION >= 3
++#define GETSTATE(m) ((struct silo_state*)PyModule_GetState(m))
++#else
++#define GETSTATE(m) (&_state)
++static struct silo_state _state;
++#endif
+ 
+ 
+ // ****************************************************************************
+@@ -85,38 +87,10 @@ std::vector<PyMethodDef> SiloMethods;
+ // ****************************************************************************
+ 
+ void
+-SiloErrorFunc(const char *errString)
+-{
+-    PyErr_SetString(SiloError, errString);
+-}
+-
+-// ****************************************************************************
+-// Function: AddMethod
+-//
+-// Purpose:
+-//   This function adds a method to the Silo module's Python method table.
+-//
+-// Arguments:
+-//   methodName : The name of the method.
+-//   cb         : The Python callback function.
+-//   doc        : The documentation string for the method.
+-//
+-// Programmer: Brad Whitlock
+-// Creation:   Tue Sep 4 15:36:47 PST 2001
+-//
+-// Modifications:
+-//   
+-// ****************************************************************************
+-static void
+-AddMethod(const char *methodName, PyObject *(cb)(PyObject *, PyObject *),
+-          const char *doc = NULL)
++SiloErrorFunc(PyObject *self, const char *errString)
+ {
+-    PyMethodDef newMethod;
+-    newMethod.ml_name = (char *)methodName;
+-    newMethod.ml_meth = cb;
+-    newMethod.ml_flags = METH_VARARGS;
+-    newMethod.ml_doc = (char *)doc;
+-    SiloMethods.push_back(newMethod);
++  struct silo_state *st = GETSTATE(self);
++    PyErr_SetString(st->error, errString);
+ }
+ 
+ 
+@@ -208,6 +182,47 @@ PyObject *silo_Create(PyObject *self, Py
+     return DBfile_NEW(db);
+ }
+ 
++static PyMethodDef silo_methods[] = {
++  {"Open", silo_Open, METH_VARARGS, NULL},
++  {"Create", silo_Create, METH_VARARGS, NULL },
++  {NULL, NULL}
++};
++
++
++#if PY_MAJOR_VERSION >= 3
++
++static int silo_Traverse(PyObject *m, visitproc visit, void *arg) {
++  Py_VISIT(GETSTATE(m)->error);
++  return 0;
++}
++
++static int silo_Clear(PyObject *m) {
++  Py_CLEAR(GETSTATE(m)->error);
++  return 0;
++}
++
++static struct PyModuleDef moduledef = {
++ m_base     : PyModuleDef_HEAD_INIT,
++ m_name     : "Silo",
++ m_doc      : NULL,
++ m_size     : sizeof(struct silo_state),
++ m_methods  : silo_methods,
++ m_slots    : NULL,
++ m_traverse : silo_Traverse,
++ m_clear    : silo_Clear,
++ m_free     : NULL
++};
++
++#define ADD_CONSTANT(C)  PyDict_SetItemString(d, #C, PyLong_FromLong(C))
++#define INITERROR        return NULL
++
++#else // Python2.*
++
++#define ADD_CONSTANT(C)  PyDict_SetItemString(d, #C, PyInt_FromLong(C))
++#define INITERROR        return
++
++#endif
++
+ // ****************************************************************************
+ //  Method:  initSilo
+ //
+@@ -226,23 +241,39 @@ PyObject *silo_Create(PyObject *self, Py
+ //    contents returned by GetVarInfo method.
+ //
+ // ****************************************************************************
+-#define ADD_CONSTANT(C)  PyDict_SetItemString(d, #C, PyInt_FromLong(C))
++
++
++
++#if PY_MAJOR_VERSION >= 3
++PyMODINIT_FUNC PyInit_Silo(void)
++#else
+ extern "C" void initSilo()
++#endif
+ {
+-    AddMethod("Open", silo_Open,
+-              "Usage: Open(filename [, DB_READ|DB_APPEND]])");
+-    AddMethod("Create", silo_Create,
+-              "Usage: Create(filename , info [, DB_PDB|DB_HDF5 [, DB_CLOBBER|DB_NOCLOBBER]])");
+-    AddMethod(NULL, NULL);
+ 
+ 
+-    siloModule = Py_InitModule("Silo", &SiloMethods[0]);
+-
+-    PyObject *d;
+-    d = PyModule_GetDict(siloModule);
+-    SiloError = PyErr_NewException("Silo.SiloException", NULL, NULL);
+-    PyDict_SetItemString(d, "SiloException", SiloError);
+ 
++  struct silo_state *st;
++  PyObject *d;
++  
++#if PY_MAJOR_VERSION >= 3
++  PyObject *module = PyModule_Create(&moduledef);
++#else
++  PyObject *module = Py_InitModule("Silo", silo_methods);
++#endif
++	
++    if (module == NULL)
++      INITERROR;
++    
++    st = GETSTATE(module);
++    st->error = PyErr_NewException("Silo.SiloException", NULL, NULL);
++    // PyDict_SetItemString(d, "SiloException", SiloError);
++    if (st->error == NULL) {
++      Py_DECREF(module);
++      INITERROR;
++    }
++    d = PyModule_GetDict(module);
++    
+     // File Drivers
+     ADD_CONSTANT(DB_PDB);
+     ADD_CONSTANT(DB_HDF5);
+@@ -322,4 +353,8 @@ extern "C" void initSilo()
+     ADD_CONSTANT(DB_VARTYPE_MATERIAL);
+     ADD_CONSTANT(DB_VARTYPE_SPECIES);
+     ADD_CONSTANT(DB_VARTYPE_LABEL);
++
++#if PY_MAJOR_VERSION >=3
++    return module;
++#endif    
+ }

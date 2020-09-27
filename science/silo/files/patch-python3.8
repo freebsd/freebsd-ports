@@ -1,0 +1,45 @@
+Description: Fix for API change with python3.8
+Author: Alastair McKinstry <mckinstry@debian.org>
+Last-Updated: 2019-10-25
+Forwarded: no
+
+Index: tools/python/pydbfile.cpp
+===================================================================
+--- tools/python/pydbfile.cpp
++++ tools/python/pydbfile.cpp
+@@ -69,6 +69,7 @@ using std::string;
+ #define Py_RETURN_NOTIMPLEMENTED return NULL
+ #endif
+ 
++
+ // ****************************************************************************
+ //  Method:  DBfile_DBGetToc
+ //
+@@ -900,7 +901,11 @@ PyTypeObject DBfileType =
+   // Standard methods
+   //
+   tp_dealloc     : (destructor)DBfile_dealloc,
++#if (PY_MAJOR_VERSION <= 3)  && (PY_MINOR_VERSION <= 7)
+   tp_print       : (printfunc)DBfile_print,
++#else
++  tp_vectorcall_offset : (printfunc)DBfile_print,
++#endif
+ #if PY_MAJOR_VERSION >= 3
+   tp_getattr     : 0,                   
+ #else
+Index: tools/python/pydbtoc.cpp
+===================================================================
+--- tools/python/pydbtoc.cpp
++++ tools/python/pydbtoc.cpp
+@@ -355,7 +355,11 @@ PyTypeObject DBtocType =
+     // Standard methods
+     //
+     tp_dealloc        : (destructor)DBtoc_dealloc,
++#if (PY_MAJOR_VERSION <= 3)  && (PY_MINOR_VERSION <= 7)
+     tp_print          : (printfunc)DBtoc_print,
++#else
++  tp_vectorcall_offset : (printfunc)DBtoc_print,
++#endif
+ #if PY_MAJOR_VERSION >= 3
+     tp_getattr        : 0,
+ #else
