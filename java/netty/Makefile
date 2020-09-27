@@ -50,7 +50,7 @@ NETTY_ARCH=	arm_32
 NETTY_ARCH=	x86_32
 .elif ${ARCH} == "powerpc"
 NETTY_ARCH=	ppc_32
-.elif ${ARCH} == "powerpc64"
+.elif ${ARCH:Mpowerpc64*}
 NETTY_ARCH=	ppc_64
 .elif ${ARCH} == "sparc64"
 NETTY_ARCH=	sparc_64
