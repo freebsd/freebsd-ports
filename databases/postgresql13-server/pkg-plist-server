@@ -55,7 +55,9 @@ lib/postgresql/utf8_and_win.so
 %%LLVM%%lib/postgresql/bitcode/postgres/access/brin/brin_tuple.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/access/brin/brin_validate.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/access/brin/brin_xlog.bc
+%%LLVM%%lib/postgresql/bitcode/postgres/access/common/attmap.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/access/common/bufmask.bc
+%%LLVM%%lib/postgresql/bitcode/postgres/access/common/detoast.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/access/common/heaptuple.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/access/common/indextuple.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/access/common/printsimple.bc
@@ -64,6 +66,7 @@ lib/postgresql/utf8_and_win.so
 %%LLVM%%lib/postgresql/bitcode/postgres/access/common/reloptions.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/access/common/scankey.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/access/common/session.bc
+%%LLVM%%lib/postgresql/bitcode/postgres/access/common/toast_internals.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/access/common/tupconvert.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/access/common/tupdesc.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/access/gin/ginarrayproc.bc
@@ -105,11 +108,11 @@ lib/postgresql/utf8_and_win.so
 %%LLVM%%lib/postgresql/bitcode/postgres/access/heap/heapam.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/access/heap/heapam_handler.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/access/heap/heapam_visibility.bc
+%%LLVM%%lib/postgresql/bitcode/postgres/access/heap/heaptoast.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/access/heap/hio.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/access/heap/pruneheap.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/access/heap/rewriteheap.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/access/heap/syncscan.bc
-%%LLVM%%lib/postgresql/bitcode/postgres/access/heap/tuptoaster.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/access/heap/vacuumlazy.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/access/heap/visibilitymap.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/access/index/amapi.bc
@@ -117,6 +120,7 @@ lib/postgresql/utf8_and_win.so
 %%LLVM%%lib/postgresql/bitcode/postgres/access/index/genam.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/access/index/indexam.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/access/nbtree/nbtcompare.bc
+%%LLVM%%lib/postgresql/bitcode/postgres/access/nbtree/nbtdedup.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/access/nbtree/nbtinsert.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/access/nbtree/nbtpage.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/access/nbtree/nbtree.bc
@@ -161,6 +165,7 @@ lib/postgresql/utf8_and_win.so
 %%LLVM%%lib/postgresql/bitcode/postgres/access/table/table.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/access/table/tableam.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/access/table/tableamapi.bc
+%%LLVM%%lib/postgresql/bitcode/postgres/access/table/toast_helper.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/access/tablesample/bernoulli.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/access/tablesample/system.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/access/tablesample/tablesample.bc
@@ -197,6 +202,7 @@ lib/postgresql/utf8_and_win.so
 %%LLVM%%lib/postgresql/bitcode/postgres/catalog/objectaddress.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/catalog/partition.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/catalog/pg_aggregate.bc
+%%LLVM%%lib/postgresql/bitcode/postgres/catalog/pg_cast.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/catalog/pg_collation.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/catalog/pg_constraint.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/catalog/pg_conversion.bc
@@ -293,6 +299,7 @@ lib/postgresql/utf8_and_win.so
 %%LLVM%%lib/postgresql/bitcode/postgres/executor/nodeGroup.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/executor/nodeHash.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/executor/nodeHashjoin.bc
+%%LLVM%%lib/postgresql/bitcode/postgres/executor/nodeIncrementalSort.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/executor/nodeIndexonlyscan.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/executor/nodeIndexscan.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/executor/nodeLimit.bc
@@ -333,7 +340,6 @@ lib/postgresql/utf8_and_win.so
 %%LLVM%%lib/postgresql/bitcode/postgres/lib/knapsack.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/lib/pairingheap.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/lib/rbtree.bc
-%%LLVM%%lib/postgresql/bitcode/postgres/lib/stringinfo.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/libpq/auth-scram.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/libpq/auth.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/libpq/be-fsstubs.bc
@@ -446,6 +452,7 @@ lib/postgresql/utf8_and_win.so
 %%LLVM%%lib/postgresql/bitcode/postgres/postmaster/bgwriter.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/postmaster/checkpointer.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/postmaster/fork_process.bc
+%%LLVM%%lib/postgresql/bitcode/postgres/postmaster/interrupt.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/postmaster/pgarch.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/postmaster/pgstat.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/postmaster/postmaster.bc
@@ -458,6 +465,7 @@ lib/postgresql/utf8_and_win.so
 %%LLVM%%lib/postgresql/bitcode/postgres/regex/regexport.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/regex/regfree.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/regex/regprefix.bc
+%%LLVM%%lib/postgresql/bitcode/postgres/replication/backup_manifest.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/replication/basebackup.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/replication/logical/decode.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/replication/logical/launcher.bc
@@ -536,9 +544,10 @@ lib/postgresql/utf8_and_win.so
 %%LLVM%%lib/postgresql/bitcode/postgres/storage/smgr/md.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/storage/smgr/smgr.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/storage/sync/sync.bc
-%%LLVM%%lib/postgresql/bitcode/postgres/tcop/postgres.bc
+%%LLVM%%lib/postgresql/bitcode/postgres/tcop/cmdtag.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/tcop/dest.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/tcop/fastpath.bc
+%%LLVM%%lib/postgresql/bitcode/postgres/tcop/postgres.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/tcop/pquery.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/tcop/utility.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/tsearch/dict.bc
@@ -647,7 +656,6 @@ lib/postgresql/utf8_and_win.so
 %%LLVM%%lib/postgresql/bitcode/postgres/utils/adt/tsvector.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/utils/adt/tsvector_op.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/utils/adt/tsvector_parser.bc
-%%LLVM%%lib/postgresql/bitcode/postgres/utils/adt/txid.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/utils/adt/uuid.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/utils/adt/varbit.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/utils/adt/varchar.bc
@@ -655,6 +663,7 @@ lib/postgresql/utf8_and_win.so
 %%LLVM%%lib/postgresql/bitcode/postgres/utils/adt/version.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/utils/adt/windowfuncs.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/utils/adt/xid.bc
+%%LLVM%%lib/postgresql/bitcode/postgres/utils/adt/xid8funcs.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/utils/adt/xml.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/utils/cache/attoptcache.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/utils/cache/catcache.bc
@@ -677,15 +686,13 @@ lib/postgresql/utf8_and_win.so
 %%LLVM%%lib/postgresql/bitcode/postgres/utils/fmgr/funcapi.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/utils/fmgrtab.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/utils/hash/dynahash.bc
-%%LLVM%%lib/postgresql/bitcode/postgres/utils/hash/hashfn.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/utils/hash/pg_crc.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/utils/init/globals.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/utils/init/miscinit.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/utils/init/postinit.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/utils/mb/conv.bc
-%%LLVM%%lib/postgresql/bitcode/postgres/utils/mb/encnames.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/utils/mb/mbutils.bc
-%%LLVM%%lib/postgresql/bitcode/postgres/utils/mb/wchar.bc
+%%LLVM%%lib/postgresql/bitcode/postgres/utils/mb/stringinfo_mb.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/utils/mb/wstrcmp.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/utils/mb/wstrncmp.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/utils/misc/guc.bc

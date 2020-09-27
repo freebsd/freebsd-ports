@@ -5,7 +5,7 @@ PORTNAME?=	postgresql
 DISTVERSION?=	13.0
 # PORTREVISION must be ?= otherwise, all slave ports get this PORTREVISION and
 # not their own.  Probably best to keep it at ?=0 when reset here too.
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	databases
 MASTER_SITES=	PGSQL/source/v${DISTVERSION}
 PKGNAMESUFFIX?= ${PORTVERSION:R}${COMPONENT}
@@ -75,6 +75,8 @@ GROUPS=	${PG_GROUP}
 SUB_FILES+=	502.pgsql
 .endif
 
+OPTIONS_SUB=	yes
+
 .if defined(CLIENT_ONLY)
 OPTIONS_DEFINE+=LIBEDIT DOCS
 LIBEDIT_DESC=	Use non-GPL libedit instead of readline
@@ -90,11 +92,21 @@ DTRACE_DESC=	Build with DTrace probes
 TZDATA_DESC=	Use internal timezone database
 XML_DESC=	Build with XML data type
 
+DTRACE_CONFIGURE_ENABLE=dtrace
+DTRACE_LDFLAGS=		-lelf
+DTRACE_INSTALL_TARGET=	install
+
 .if ${DISTVERSION:C/([0-9]*).*/\1/} >= 11
 OPTIONS_DEFINE+=	LLVM
+OPTIONS_DEFAULT+=	LLVM
 LLVM_DESC=		Build with support for JIT-compiling expressions
-OPTIONS_DEFAULT+=	${OPTIONS_DEFAULT_${CHOSEN_COMPILER_TYPE}}
-OPTIONS_DEFAULT_clang=	LLVM
+LLVM_CONFIGURE_WITH=	llvm
+LLVM_BUILD_DEPENDS=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT}
+LLVM_BUILD_DEPENDS+=	llvm-config${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
+LLVM_RUN_DEPENDS+=	llvm-config${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
+LLVM_CONFIGURE_ENV+=	LLVM_CONFIG=${LOCALBASE}/bin/llvm-config${LLVM_DEFAULT}
+#OPTIONS_DEFAULT+=	${OPTIONS_DEFAULT_${CHOSEN_COMPILER_TYPE}}
+#OPTIONS_DEFAULT_clang=	LLVM
 .endif
 
 .if ${DISTVERSION:C/([0-9]*).*/\1/} < 10
@@ -133,6 +145,8 @@ OPTIONS_DEFINE+=	SSL
 SSL_DESC=		Build with OpenSSL support
 
 OPTIONS_DEFAULT+=	SSL
+
+GSSAPI_CONFIGURE_WITH=	gssapi
 .endif # !SLAVE_ONLY
 
 .if defined(CLIENT_ONLY)
@@ -181,16 +195,7 @@ USES+=		compiler
 
 .if ${DISTVERSION:C/([0-9]*).*/\1/} >= 11
 .  if defined(SERVER_ONLY) && ${PORT_OPTIONS:MLLVM}
-BUILD_DEPENDS+=		llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT}
-BUILD_DEPENDS+=		llvm-config${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
-RUN_DEPENDS+=		llvm-config${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
-CONFIGURE_ENV+=		LLVM_CONFIG=${LOCALBASE}/bin/llvm-config${LLVM_DEFAULT}
-CONFIGURE_ARGS+=	--with-llvm
-PLIST_SUB+=		LLVM=""
 INSTALL_DIRS+=		src/backend/jit/llvm
-.  else
-PLIST_SUB+=		LLVM="@comment "
-CONFIGURE_ARGS+=	--without-llvm
 .  endif
 .endif
 
@@ -208,14 +213,7 @@ LIB_DEPENDS+=	libicudata.so:devel/icu
 
 PATCH_DIST_STRIP=-p1
 
-.  if ${PORT_OPTIONS:MDTRACE}
-CONFIGURE_ARGS+=--enable-dtrace
-LDFLAGS+=-lelf
-INSTALL_TARGET=	install
-.  endif
-
 .if ${PORT_OPTIONS:MGSSAPI}
-CONFIGURE_ARGS+=--with-gssapi
 .if empty(PORT_OPTIONS:MMIT_KRB5) && empty(PORT_OPTIONS:MHEIMDAL_KRB5)
 # Kerberos libraries will pull the proper GSSAPI library
 # via linker dependencies, but otherwise we must specify
@@ -223,11 +221,7 @@ CONFIGURE_ARGS+=--with-gssapi
 # so configure's -lgssapi_krb5 won't go.
 LDFLAGS+=	-lgssapi
 LDFLAGS_SL+=	-lgssapi
-PLIST_SUB+=	GSSAPI=""
 .endif
-.else
-CONFIGURE_ARGS+=--without-gssapi
-PLIST_SUB+=	GSSAPI="@comment "
 .endif
 
 .  if ${PORT_OPTIONS:MMIT_KRB5}
@@ -246,16 +240,17 @@ LIB_DEPENDS+=	libkrb5.so.3:security/krb5
 CONFIGURE_ARGS+=--with-krb5
 .  endif
 
-.  if ${PORT_OPTIONS:MSSL}
-PLIST_SUB+=	SSL=""
-.  else
-PLIST_SUB+=	SSL="@comment "
-.  endif
-
 .endif # !SLAVE_ONLY
 
 # For testing files in FILESDIR
 .include <bsd.port.pre.mk>
+
+# Fix problems building on FreeBSD 13 by keeping clang and llvm versions in sync
+.if ${CHOSEN_COMPILER_TYPE} == clang && ${OPSYS} == FreeBSD && ${OSVERSION} >= 1300109
+BUILD_DEPENDS+=	clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
+CC=		${LOCALBASE}/bin/clang${LLVM_DEFAULT}
+CXX=		${LOCALBASE}/bin/clang++${LLVM_DEFAULT}
+.endif
 
 .if defined(SERVER_ONLY)
 pre-build:
@@ -276,7 +271,6 @@ PKGMESSAGE=	${WRKSRC}/pkg-message${COMPONENT}
 .  endif
 .  if exists(${FILESDIR}/pkg-install${COMPONENT}.in)
 SUB_FILES+=	pkg-install${COMPONENT}
-PLIST_SUB+=	PG_USER=${PG_USER}
 .  endif
 
 post-patch:
