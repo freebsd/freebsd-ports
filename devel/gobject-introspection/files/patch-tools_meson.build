@@ -1,0 +1,15 @@
+--- tools/meson.build.orig	2020-09-12 17:25:46 UTC
++++ tools/meson.build
+@@ -9,11 +9,7 @@ if with_doctool
+   tools += [['g-ir-doc-tool', 'docmain', 'doc_main']]
+ endif
+ 
+-if cc.get_id() == 'msvc'
+-  python_cmd = '/usr/bin/env ' + python.path()
+-else
+-  python_cmd = '/usr/bin/env python@0@'.format(python.language_version().split('.')[0])
+-endif
++python_cmd = '%%PYTHON_CMD%%'
+ 
+ tool_output = []
+ foreach tool : tools
