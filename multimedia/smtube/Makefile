@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/smtube/SMTube/${PORTVERSION}/
 
-MAINTAINER=	kikadf.01@gmail.com
+MAINTAINER=	vvd@unislabs.com
 COMMENT=	SMPlayer YouTube browser
 
 LICENSE=	GPLv2
