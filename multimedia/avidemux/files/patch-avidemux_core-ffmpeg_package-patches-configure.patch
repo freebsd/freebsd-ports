@@ -1,19 +1,14 @@
---- avidemux_core/ffmpeg_package/patches/configure.patch.orig	2015-06-01 05:59:45 UTC
+--- avidemux_core/ffmpeg_package/patches/configure.patch.orig
 +++ avidemux_core/ffmpeg_package/patches/configure.patch
-@@ -0,0 +1,16 @@
-+--- configure.orig	2015-03-16 20:26:04.000000000 +0100
+@@ -0,0 +1,11 @@
++--- configure.orig
 ++++ configure
-+@@ -2733,12 +2733,7 @@
-+ host_os=$target_os_default
-+ 
-+ # machine
-+-if test "$target_os_default" = aix; then
-+-    arch_default=$(uname -p)
-+-    strip_default="strip -X32_64"
-+-else
-+-    arch_default=$(uname -m)
-+-fi
-++arch_default=$(uname -p)
-+ cpu="generic"
-+ intrinsics="none"
-+ 
++@@ -3671,6 +3671,8 @@
++     arch_default=$(uname -p)
++     strip_default="strip -X32_64"
++     nm_default="nm -g -X32_64"
+++elif test "$target_os_default" = freebsd; then
+++    arch_default=$(uname -p)
++ else
++     arch_default=$(uname -m)
++ fi

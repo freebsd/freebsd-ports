@@ -83,13 +83,13 @@ include/avidemux/2.7/cmake/FindSubversion.cmake
 include/avidemux/2.7/cmake/FindTar.cmake
 include/avidemux/2.7/cmake/FindThreads.cmake
 include/avidemux/2.7/cmake/Po.cmake
-include/avidemux/2.7/cmake/Ts.cmake
 include/avidemux/2.7/cmake/_CMakeParseArguments.cmake
 include/avidemux/2.7/cmake/_GenerateExportHeader.cmake
 include/avidemux/2.7/cmake/ad_plugin.cmake
 include/avidemux/2.7/cmake/admAsNeeded.cmake
 include/avidemux/2.7/cmake/admCPack.cmake
 include/avidemux/2.7/cmake/admCPackRpm.cmake
+include/avidemux/2.7/cmake/admCheckAom.cmake
 include/avidemux/2.7/cmake/admCheckAudioDeviceLibs.cmake
 include/avidemux/2.7/cmake/admCheckAudioEncoderLibs.cmake
 include/avidemux/2.7/cmake/admCheckDca.cmake
@@ -105,7 +105,6 @@ include/avidemux/2.7/cmake/admCheckGtk.cmake
 include/avidemux/2.7/cmake/admCheckLibVA.cmake
 include/avidemux/2.7/cmake/admCheckLibxml2.cmake
 include/avidemux/2.7/cmake/admCheckMiscLibs.cmake
-include/avidemux/2.7/cmake/admCheckMiscLibs.cmake.orig
 include/avidemux/2.7/cmake/admCheckNvEnc.cmake
 include/avidemux/2.7/cmake/admCheckOpenGl.cmake
 include/avidemux/2.7/cmake/admCheckOpencore.cmake
@@ -115,6 +114,7 @@ include/avidemux/2.7/cmake/admCheckQt4.cmake
 include/avidemux/2.7/cmake/admCheckQt5.cmake
 include/avidemux/2.7/cmake/admCheckRequiredLibs.cmake
 include/avidemux/2.7/cmake/admCheckSpiderMonkey.cmake
+include/avidemux/2.7/cmake/admCheckSqlLite.cmake
 include/avidemux/2.7/cmake/admCheckVDPAU.cmake
 include/avidemux/2.7/cmake/admCheckVapourSynth.cmake
 include/avidemux/2.7/cmake/admCheckVideoToolbox.cmake
@@ -148,7 +148,6 @@ include/avidemux/2.7/cmake/admFFmpegVersion.cmake
 include/avidemux/2.7/cmake/admGetRevision.cmake
 include/avidemux/2.7/cmake/admInstallDir.cmake
 include/avidemux/2.7/cmake/admMainChecks.cmake
-include/avidemux/2.7/cmake/admMainChecks.cmake.orig
 include/avidemux/2.7/cmake/admOpenGl.cmake
 include/avidemux/2.7/cmake/admPackager.cmake
 include/avidemux/2.7/cmake/admPluginLocation.cmake
@@ -181,6 +180,9 @@ include/avidemux/2.7/cmake/cmake_compile_check/libva_dummy.cpp
 include/avidemux/2.7/cmake/cmake_compile_check/libva_hevcdec.cpp
 include/avidemux/2.7/cmake/cmake_compile_check/libva_vp9dec.cpp
 include/avidemux/2.7/cmake/cmake_compile_check/os_bsd_check.cpp
+include/avidemux/2.7/cmake/cmake_win32_rc/VersionInfo.in
+include/avidemux/2.7/cmake/cmake_win32_rc/VersionResource.rc
+include/avidemux/2.7/cmake/cmake_win32_rc/generate_product_version.cmake
 include/avidemux/2.7/cmake/commonCmakeApplication.cmake
 include/avidemux/2.7/cmake/config.h.cmake
 include/avidemux/2.7/cmake/debianArch.cmake
@@ -338,7 +340,6 @@ include/avidemux/2.7/ADM_coreJobs/sqlJobs.h
 %%VAAPI%%include/avidemux/2.7/ADM_coreLibVAEnc/ADM_coreLibVA_encodingContext.h
 %%VAAPI%%include/avidemux/2.7/ADM_coreLibVAEnc/ADM_coreLibVA_h264Encoding.h
 %%VAAPI%%include/avidemux/2.7/ADM_coreLibVAEnc/ADM_coreLibVA_hevcEncoding.h
-include/avidemux/2.7/ADM_coreMuxer/.ADM_muxer.h.swp
 include/avidemux/2.7/ADM_coreMuxer/ADM_coreMuxer6_export.h
 include/avidemux/2.7/ADM_coreMuxer/ADM_coreMuxerFfmpeg.h
 include/avidemux/2.7/ADM_coreMuxer/ADM_muxer.h

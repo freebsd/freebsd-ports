@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-AVIDEMUX_VERSION=	2.7.4
+AVIDEMUX_VERSION=	2.7.6
 MASTER_SITES=	\
 		SF/avidemux/avidemux/${PORTVERSION}
 DISTNAME=	avidemux_${PORTVERSION}
@@ -35,13 +35,14 @@ MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 
 OPTIONS_DEFINE=	CLI FREETYPE FONTCONFIG OSS JACK PULSEAUDIO \
 		XVIDEO FAAC FRIBIDI OPUS TWOLAME \
-		FAAD X264 X265 VPX XVID AMR VORBIS NLS LAME VAAPI VDPAU \
+		FAAD X264 X265 VPX AOM XVID AMR VORBIS NLS LAME VAAPI VDPAU \
 		DCA FDK QT5 TINYPY VAPOURSYNTH
 OPTIONS_DEFAULT=	FREETYPE FONTCONFIG OSS XVIDEO VPX XVID \
 			FAAD VDPAU VORBIS DCA FDK QT5 TINYPY VAPOURSYNTH \
 			PULSEAUDIO
 
 OPTIONS_SUB=	yes
+AOM_DESC=	AOM AV1 decoder support
 CLI_DESC=	Build CLI tool
 FDK_DESC=	FDK AAC codec support
 TINYPY_DESC=	Python scripting support via TinyPy
@@ -196,8 +197,18 @@ PLIST_SUB+=	X265="@comment "
 
 .if ${PORT_OPTIONS:MVPX}
 LIB_DEPENDS+=	libvpx.so:multimedia/libvpx
+PLIST_SUB+=	VPX=""
 .else
-CMAKE_ARGS+=	-DVPXDEC:BOOL=OFF
+CMAKE_ARGS+=	-DVPXDEC:BOOL=OFF -DVPXENC:BOOL=OFF
+PLIST_SUB+=	VPX="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MAOM}
+LIB_DEPENDS+=	libaom.so:multimedia/aom
+PLIST_SUB+=	AOM=""
+.else
+CMAKE_ARGS+=	-DAOMDEC:BOOL=OFF
+PLIST_SUB+=	AOM="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MXVID}
@@ -284,6 +295,7 @@ post-patch:
 	@${MKDIR} ${CONFIGURE_WRKSRC}/config
 	@${LN} -s ${LOCALBASE}/include/iconv.h ${CONFIGURE_WRKSRC}/config
 	@${REINPLACE_CMD} 's|-ldl||' ${WRKSRC}/avidemux_core/CMakeLists.txt
+	@${FIND} ${WRKSRC}/cmake -name '*.cmake.orig' -delete
 
 post-configure-common:
 	@${FIND} ${CONFIGURE_WRKSRC} -name link.txt -print0 | \
