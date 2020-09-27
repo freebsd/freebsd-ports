@@ -3,4 +3,4 @@ short reads. The single-processor version is useful for assembling genomes up to
 100 Mbases in size. The parallel version is implemented using MPI and is capable
 of assembling larger genomes.
 
-WWW: http://www.bcgsc.ca/platform/bioinfo/software/abyss
+WWW: https://www.bcgsc.ca/resources/software/abyss
