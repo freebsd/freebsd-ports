@@ -1,9 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	libmodulemd
-DISTVERSIONPREFIX=	${PORTNAME}-
 DISTVERSION=	2.9.4
 CATEGORIES=	misc
+MASTER_SITES=	https://github.com/fedora-modularity/${PORTNAME}/releases/download/${PORTNAME}-${DISTVERSION}/
+DISTNAME=	modulemd-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C Library for manipulating module metadata files
@@ -16,13 +17,10 @@ BUILD_DEPENDS=	bash:shells/bash \
 LIB_DEPENDS=	librpmio.so:archivers/rpm4 \
 		libyaml.so:textproc/libyaml
 
-USES=		gnome meson pkgconfig
+USES=		gnome meson pkgconfig tar:xz
 USE_GNOME=	glib20 introspection:build
 USE_LDCONFIG=	yes
 
 MESON_ARGS=	-Ddeveloper_build=false -Dskip_formatters=true -Dwith_manpages="enabled" -Dwith_docs=false
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	fedora-modularity
 
 .include <bsd.port.mk>
