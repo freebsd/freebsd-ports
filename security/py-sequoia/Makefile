@@ -16,7 +16,7 @@ LIB_DEPENDS=	libsequoia_ffi.so:security/sequoia
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1:devel/py-cffi@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1:devel/py-cffi@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.4+
 USE_PYTHON=	distutils autoplist concurrent
 USE_GITLAB=	yes
 
