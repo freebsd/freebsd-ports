@@ -20,7 +20,8 @@ GH_ACCOUNT=	imageworks
 GH_PROJECT=	OpenColorIO
 
 CMAKE_ON=	USE_EXTERNAL_TINYXML USE_EXTERNAL_YAML
-CMAKE_OFF=	OCIO_BUILD_JNIGLUE OCIO_BUILD_NUKE OCIO_BUILD_STATIC
+CMAKE_OFF=	OCIO_BUILD_JNIGLUE OCIO_BUILD_NUKE OCIO_BUILD_STATIC \
+		OCIO_BUILD_DOCS
 
 CXXFLAGS+=	${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
 CXXFLAGS_gcc=	-Wno-unused-function -Wno-error
@@ -29,10 +30,6 @@ CXXFLAGS_clang=	-Wno-deprecated-register
 SHEBANG_FILES=	share/sphinx/ExtractRstFromSourceCPP.py \
 		share/sphinx/ExtractRstFromSourceSimple.py \
 		src/pyglue/createPyDocH.py
-
-OPTIONS_DEFINE=		DOCS
-
-DOCS_CMAKE_BOOL=	OCIO_BUILD_DOCS
 
 PLIST_SUB+=		LIBVERS=${PORTVERSION}
 
@@ -67,14 +64,9 @@ CMAKE_OFF+=	OCIO_BUILD_APPS OCIO_BUILD_SHARED
 CMAKE_ARGS+=	-DPYTHON:FILEPATH=${PYTHON_CMD}
 PLIST=		${PKGDIR}/pkg-plist-pyglue
 .else # master port
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR}
 LIB_DEPENDS=	libtinyxml.so:textproc/tinyxml \
 		libyaml-cpp03.so:devel/yaml-cpp03
-.if ${PORT_OPTIONS:MDOCS}
-USES+=		python:2.7,build
-.else
 USES+=		python:build
-.endif
 USE_LDCONFIG=	yes
 CMAKE_ON+=	OCIO_BUILD_SHARED OCIO_BUILD_PYGLUE
 CMAKE_OFF+=	OCIO_BUILD_APPS
@@ -83,8 +75,6 @@ CMAKE_ARGS+=	-DPYTHON:FILEPATH=${PYTHON_CMD}
 # available when generating docs, we leave the python header in place
 # but only install the python module with the py-opencolorio port
 # this makes it easier to allow multiple python versions installed
-# doc building fails using python3 - but the py-opencolorio port can still
-# be used to build a python 3 module
 PLIST=		${PKGDIR}/pkg-plist
 EXTRA_PATCHES=	${PATCHDIR}/libs
 .endif
