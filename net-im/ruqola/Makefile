@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ruqola
-DISTVERSION=	1.0.0-1111
-DISTVERSIONSUFFIX=	-g990e1e65
+DISTVERSION=	1.1
 CATEGORIES=	net-im kde
 
 MAINTAINER=	kde@FreeBSD.org
@@ -13,9 +12,12 @@ LIB_DEPENDS=	libqt5keychain.so:security/qtkeychain \
 
 USES=		cmake compiler:c++11-lang gnome kde:5 localbase:ldflags qt:5
 USE_GNOME=	glib20
-USE_KDE=	ecm coreaddons crash i18n kirigami2 notifications syntaxhighlighting
-USE_QT=		core dbus declarative declarative gui network networkauth \
-		websockets widgets \
+USE_KDE=	 auth codecs completion config configwidgets coreaddons crash \
+		dbusaddons ecm i18n iconthemes jobwidgets kio kirigami2 \
+		notifications notifyconfig service sonnet syntaxhighlighting \
+		textwidgets widgetsaddons windowsystem xmlgui
+USE_QT=		concurrent core dbus declarative declarative gui multimedia \
+		network networkauth speech xml 	websockets widgets \
 		buildtools_build qmake_build
 USE_GITHUB=	yes
 GH_ACCOUNT=	KDE
