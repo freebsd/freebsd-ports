@@ -2,6 +2,7 @@
 
 PORTNAME=	dnf
 DISTVERSION=	4.2.23
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -29,5 +30,10 @@ NO_ARCH=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|'/usr/bin'|'${PREFIX}/bin'|" ${WRKSRC}/bin/dnf*.in
+
+post-install:
+	cd ${STAGEDIR}${PREFIX}/bin && \
+		${LN} -s dnf-3 dnf && \
+		${LN} -s dnf-automatic-3 dnf-automatic
 
 .include <bsd.port.mk>
