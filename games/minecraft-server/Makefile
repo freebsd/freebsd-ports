@@ -1,10 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	minecraft-server
-PORTVERSION=	1.16.1
+PORTVERSION=	1.16.3
 CATEGORIES=	games java
-MASTER_SITES=	https://launcher.mojang.com/v1/objects/a412fd69db1f81db3f511c1463fd304675244077/
-DISTFILES=	server.jar
+MASTER_SITES=	https://launcher.mojang.com/v1/objects/f02f4473dbf152c23d7d484952121db0b36698cb/
+DISTNAME=	server
+EXTRACT_SUFX=	.jar
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 EXTRACT_ONLY=
 
@@ -30,28 +31,22 @@ GROUPS=		${USERS}
 
 NO_BUILD=	yes
 USE_JAVA=	yes
-SUB_FILES=	minecraft-server \
-		pkg-message \
-		pkg-deinstall
+SUB_FILES=	minecraft-server pkg-deinstall pkg-message
 SUB_LIST=	VERSION=${PORTVERSION}
 PLIST_SUB=	VERSION=${PORTVERSION}
 
-CONFIG_FILES=	banned-ips.json \
-		banned-players.json \
-		eula.txt \
-		ops.json \
-		server.properties \
-		usercache.json \
-		whitelist.json
+CONFIG_FILES=	banned-ips.json banned-players.json eula.txt ops.json \
+		server.properties usercache.json whitelist.json
 
-DAEMON_VARS=	USE_RC_SUBR=minecraft
+DAEMON_VARS=		USE_RC_SUBR=minecraft
 DAEMON_RUN_DEPENDS=	tmux:sysutils/tmux
 
 NO_ARCH=	yes
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${PORTNAME}
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} ${STAGEDIR}${PREFIX}/${PORTNAME}
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} \
+		${STAGEDIR}${PREFIX}/${PORTNAME}
 	${MKDIR} ${STAGEDIR}${ETCDIR}
 	${MKDIR} ${STAGEDIR}/var/db/minecraft-server
 	${MKDIR} ${STAGEDIR}/var/log/minecraft-server
@@ -63,7 +58,8 @@ do-install:
 	${LN} -sf /var/db/minecraft-server ${STAGEDIR}${PREFIX}/${PORTNAME}/world
 
 post-install-STANDALONE-on:
-	${INSTALL_SCRIPT} ${WRKDIR}/minecraft-server ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/minecraft-server \
+		${STAGEDIR}${PREFIX}/bin
 	${CP} ${FILESDIR}/java-args.txt ${STAGEDIR}${ETCDIR}
 
 .include <bsd.port.mk>
