@@ -1,0 +1,11 @@
+--- meson.build.orig	2020-09-28 10:05:10 UTC
++++ meson.build
+@@ -38,7 +38,7 @@ conf.set('includedir', includedir)
+ pkg = configure_file(configuration: conf,
+                      input: 'gsettings-desktop-schemas.pc.in',
+                      install: true,
+-                     install_dir: join_paths(datadir, 'pkgconfig'),
++                     install_dir: join_paths(prefix, 'libdata/pkgconfig'),
+                      output: 'gsettings-desktop-schemas.pc')
+ 
+ glib_mkenums = find_program('glib-mkenums')
