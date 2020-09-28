@@ -1,3 +1,3 @@
-TIMESTAMP = 1525963189
-SHA256 (gnome3/gnome-keyring-3.28.2.tar.xz) = 81171b7d07211b216b4c9bb79bf2deb3deca18fe8d56d46dda1c4549b4a2646a
-SIZE (gnome3/gnome-keyring-3.28.2.tar.xz) = 1322108
+TIMESTAMP = 1601280003
+SHA256 (gnome/gnome-keyring-3.36.0.tar.xz) = a264b57a8d1a71fdf0d66e8cd6033d013fb828be279c35766545eb9bb3734f87
+SIZE (gnome/gnome-keyring-3.36.0.tar.xz) = 1345360

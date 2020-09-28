@@ -2,14 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-keyring
-PORTVERSION=	3.28.2
-PORTREVISION=	3
+PORTVERSION=	3.36.0
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Program that keeps passwords and other secrets
+
+LICENSE=	GPLv2
+LICENSE_FILES=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	ca_root_nss>=0:security/ca_root_nss \
 		docbook-xsl>=0:textproc/docbook-xsl \
