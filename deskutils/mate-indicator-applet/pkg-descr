@@ -1,0 +1,7 @@
+The indicator applet exposes Ayatana Indicators in the MATE Panel. Ayatana 
+Indicators are an initiative by Canonical to provide crisp and clean system 
+and application status indication. They take the form of an icon and 
+associated menu, displayed (usually) in the desktop panel. Existing indicators
+include the Message Menu, Battery Menu and Sound menu.
+
+WWW: https://mate-desktop.org/
