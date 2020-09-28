@@ -1,0 +1,8 @@
+--- release/CMakeLists.txt.orig	2018-07-16 14:08:55 UTC
++++ release/CMakeLists.txt
+@@ -86,5 +86,3 @@ endif() #UNIX
+ # Common
+ #
+ 
+-install(FILES ${CMAKE_SOURCE_DIR}/LICENCE.TXT DESTINATION ${CMAKE_INSTALL_FULL_DOCDIR})
+-install(FILES ${CMAKE_SOURCE_DIR}/README.rst DESTINATION ${CMAKE_INSTALL_FULL_DOCDIR})

@@ -6,7 +6,7 @@ CATEGORIES=	net
 COMMENT=	TigerVNC Viewer
 
 USES+=		gnome iconv jpeg xorg
-USE_XORG+=	ice sm x11 xcursor xext xfixes xft xinerama xrender
+USE_XORG+=	ice pixman sm x11 xcursor xext xfixes xft xi xinerama xrender
 
 BUILD_DEPENDS+=	convert:graphics/ImageMagick7 # to generate icons during build
 LIB_DEPENDS+=	libfontconfig.so:x11-fonts/fontconfig \
