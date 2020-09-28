@@ -3,7 +3,7 @@
 
 PORTNAME=	openrct2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.0
+DISTVERSION=	0.3.1
 CATEGORIES=	games
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -15,8 +15,8 @@ LICENSE_FILE=	${WRKSRC}/licence.txt
 BROKEN_FreeBSD_12_powerpc64=	fails to build: src/openrct2/util/Endian.h:9:24: error: unused function 'ORCT_Swapu16'
 BROKEN_FreeBSD_13_powerpc64=	fails to build: openrct2/common.h:96:10: error: #error Unknown endianess!
 
+BUILD_DEPENDS=	nlohmann-json>0:devel/nlohmann-json
 LIB_DEPENDS=	libpng.so:graphics/png \
-		libjansson.so:devel/jansson \
 		libzip.so:archivers/libzip \
 		libspeexdsp.so:audio/speexdsp \
 		libfontconfig.so:x11-fonts/fontconfig \
@@ -31,7 +31,7 @@ USES=		cmake compiler:c++17-lang desktop-file-utils gnome gl iconv \
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenRCT2
 GH_PROJECT=	OpenRCT2
-GH_TUPLE=	OpenRCT2:objects:v1.0.16:objects \
+GH_TUPLE=	OpenRCT2:objects:v1.0.17:objects \
 		OpenRCT2:title-sequences:v0.1.2c:title_sequences
 USE_GL=		gl
 USE_LDCONFIG=	yes
