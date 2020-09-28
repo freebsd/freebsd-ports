@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	glib-networking
-PORTVERSION=	2.56.1
-PORTREVISION=	3
+PORTVERSION=	2.66.0
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -28,7 +27,6 @@ PORTSCOUT=	limitw:1,even
 USES=		compiler:c11 gettext gnome localbase meson pkgconfig \
 		python:3.6+,build tar:xz
 USE_GNOME=	glib20
-MESON_ARGS=	-Dca_certificates_path="${LOCALBASE}/share/certs/ca-root-nss.crt"
 
 BINARY_ALIAS=	python3=${PYTHON_VERSION}
 
