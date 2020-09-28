@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	2.3.3
 CATEGORIES=	sysutils
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mouse and keyboard sharing utility
 
 LICENSE=	GPLv2

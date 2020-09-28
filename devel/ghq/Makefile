@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	1.1.4
 CATEGORIES=	devel
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Repository management tool (Git, Hg, SVN, Fossil, Bazaar, Darcs)
 
 LICENSE=	MIT

@@ -4,7 +4,7 @@ PORTNAME=	rust-analyzer
 DISTVERSION=	2020-09-21
 CATEGORIES=	devel
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	rust@FreeBSD.org
 COMMENT=	Experimental Rust compiler front-end for IDEs
 
 LICENSE=	APACHE20 MIT

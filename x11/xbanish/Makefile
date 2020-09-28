@@ -6,7 +6,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	1.7
 CATEGORIES=	x11
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Banish the mouse cursor when typing
 
 LICENSE=	BSD3CLAUSE

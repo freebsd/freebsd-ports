@@ -9,7 +9,7 @@ MASTER_SITES=	LOCAL/tobik \
 		http://tobiasjung.name/downloadfile.php?file=profont-x11.zip?dummy/
 DISTNAME=	${PORTNAME}-x11
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ultimate programming font
 
 LICENSE=	MIT

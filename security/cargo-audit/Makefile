@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.12.1
 CATEGORIES=	security
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Audit Cargo.lock for crates with security vulnerabilities
 
 LICENSE=	APACHE20 MIT

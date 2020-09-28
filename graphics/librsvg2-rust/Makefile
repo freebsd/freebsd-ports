@@ -8,7 +8,7 @@ MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	2-rust
 DIST_SUBDIR=	gnome2
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Library for parsing and rendering SVG vector-graphic files
 
 LICENSE=	LGPL20

@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.fial.com/~scott/tamsyn-font/download/
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Monospaced bitmap font for programming
 
 LICENSE=	TAMSYN

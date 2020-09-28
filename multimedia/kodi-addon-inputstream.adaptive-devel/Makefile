@@ -8,7 +8,7 @@ CATEGORIES=	multimedia
 PKGNAMEPREFIX=	kodi-addon-
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adaptive stream support for Kodi
 
 LICENSE=	GPLv2

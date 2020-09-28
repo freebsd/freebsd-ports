@@ -5,7 +5,7 @@ DISTVERSION=	0.20190823.4
 CATEGORIES=	devel
 MASTER_SITES=	LOCAL/tobik
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C/C++/ObjC language server
 
 LICENSE=	APACHE20

@@ -5,7 +5,7 @@ PORTVERSION=	1.4
 CATEGORIES=	devel
 MASTER_SITES=	https://jdebp.eu/Repository/freebsd/
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Incremental build system
 
 LICENSE=	ISCL

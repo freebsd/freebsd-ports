@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://files.ax86.net/terminus-ttf/files/${PORTVERSION}/
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Terminus Font - a clean fixed width font (TTF version)
 
 LICENSE=	OFL11

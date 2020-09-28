@@ -5,7 +5,7 @@ DISTVERSION=	1.1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/michaelforney/samurai/releases/download/${DISTVERSION}/
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ninja-compatible build tool written in C
 
 LICENSE=	APACHE20 MIT

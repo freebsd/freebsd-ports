@@ -17,7 +17,7 @@ PATCHFILES=	8fc522605a90e670fe76dc1b44669230c121a96e.patch:-p1 \
 		be9ca3a2c26b061d1f22bd4a09009bba7a01f67b.patch:-p1 \
 		a731d8c8c515e7e42a4fb448e0ecb6934d5bf99b.patch:-p1
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of useful libraries for developers
 
 LICENSE=	GPLv3+ LGPL3+

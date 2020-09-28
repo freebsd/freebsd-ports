@@ -6,7 +6,7 @@ PORTVERSION=	20161017
 PORTREVISION=	1
 CATEGORIES=	audio
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Audio visualization for sndio
 
 LICENSE=	ISCL

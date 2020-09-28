@@ -5,7 +5,7 @@ PORTVERSION=	g20190711
 PORTREVISION=	1
 CATEGORIES=	www
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert Bugzilla bugs into Atom feeds
 
 LICENSE=	BSD3CLAUSE

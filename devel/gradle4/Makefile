@@ -8,7 +8,7 @@ MASTER_SITES=	https://downloads.gradle.org/distributions/
 PKGNAMESUFFIX=	4
 EXTRACT_SUFX=	-bin.zip
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Project automation tool
 
 LICENSE=	APACHE20

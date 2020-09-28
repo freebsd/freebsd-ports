@@ -10,7 +10,7 @@ MASTER_SITES=	https://github.com/t6/openjfx/releases/download/release/ \
 		http://hg.openjdk.java.net/openjfx/8u/rt/archive/${DISTVERSION}${EXTRACT_SUFX}?dummy=/
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JavaFX SDK overlay for OpenJDK 8
 
 BROKEN=		Does not build with glib 2.66.0

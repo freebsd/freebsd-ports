@@ -8,7 +8,7 @@ PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	http://lcamtuf.coredump.cx/afl/releases/
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast instrumented fuzzer
 
 LICENSE=	APACHE20

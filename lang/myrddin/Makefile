@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://myrlang.org/releases/
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Myrddin Compiler
 
 LICENSE=	MIT

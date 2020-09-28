@@ -5,7 +5,7 @@ PORTNAME=	libfmt
 DISTVERSION=	7.0.3
 CATEGORIES=	devel
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Formatting library for C++
 
 LICENSE=	MIT

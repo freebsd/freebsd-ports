@@ -6,7 +6,7 @@ PORTVERSION=	0.6.3
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt fluidsynth front-end application
 
 LICENSE=	GPLv2+

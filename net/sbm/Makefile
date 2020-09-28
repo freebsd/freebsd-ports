@@ -6,7 +6,7 @@ PORTVERSION=	0.8
 CATEGORIES=	net
 MASTER_SITES=	http://dl.2f30.org/releases/
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple bandwidth monitor
 
 LICENSE=	ISCL

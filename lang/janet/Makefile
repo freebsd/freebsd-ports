@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	1.12.2
 CATEGORIES=	lang
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Functional embeddable lisp with C interop, & performant data types
 
 LICENSE=	MIT

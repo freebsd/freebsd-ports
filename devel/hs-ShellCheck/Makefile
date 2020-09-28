@@ -5,7 +5,7 @@ DISTVERSION=	0.7.1
 PORTREVISION=	2
 CATEGORIES=	devel haskell
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shell script analysis tool
 
 LICENSE=	GPLv3

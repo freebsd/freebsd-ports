@@ -6,7 +6,7 @@ CATEGORIES=	graphics
 # avoid PKGBASE collision with net-p2p/minder
 PKGNAMESUFFIX=	-app
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mind-mapping application
 
 LICENSE=	GPLv3

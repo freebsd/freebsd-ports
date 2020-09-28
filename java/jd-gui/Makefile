@@ -9,7 +9,7 @@ MASTER_SITES=	https://github.com/java-decompiler/jd-gui/releases/download/v${POR
 DISTFILES=	jd-gui-${PORTVERSION}.jar:jar
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java Decompiler GUI
 
 LICENSE=	GPLv3

@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	3.12.0
 CATEGORIES=	deskutils
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt5 based clipboard manager
 
 LICENSE=	GPLv3+

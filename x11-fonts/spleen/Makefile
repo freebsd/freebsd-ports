@@ -6,7 +6,7 @@ CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/fcambus/spleen/releases/download/${DISTVERSION}/
 PKGNAMESUFFIX=	-font
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Monospaced bitmap fonts for Xorg and vt(4)
 
 LICENSE=	BSD2CLAUSE

@@ -6,7 +6,7 @@ DISTVERSION=	10.91.01
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/t6/netpbm/releases/download/v${DISTVERSION}/
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Toolkit for conversion of images between different formats
 
 LICENSE=	GPLv2 IJG LGPL21 MIT PD

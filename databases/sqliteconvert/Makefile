@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=	VERSION_
 DISTVERSION=	0_1_2
 CATEGORIES=	databases
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools to convert SQLite3 schema files into documentation
 
 LICENSE=	ISCL

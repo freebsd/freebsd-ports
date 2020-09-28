@@ -4,7 +4,7 @@ PORTNAME=	aerc
 DISTVERSION=	0.4.0
 CATEGORIES=	mail
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Email client for your terminal
 
 LICENSE=	MIT

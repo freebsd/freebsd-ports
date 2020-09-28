@@ -8,7 +8,7 @@ MASTER_SITES=	https://github.com/t6/freebsd-runit/releases/download/v${DISTVERSI
 PKGNAMESUFFIX=	-faster
 DISTNAME=	freebsd-runit-${DISTVERSION}
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Runit based init replacement for ${OPSYS}
 
 LICENSE=	BSD3CLAUSE CC0-1.0

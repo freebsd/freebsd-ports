@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/chazomaticus/3omns/releases/download/${DISTVERSION}/
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Old-school bomb-dropping Deathmatch
 
 LICENSE=	GPLv3+

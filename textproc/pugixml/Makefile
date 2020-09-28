@@ -5,7 +5,7 @@ PORTVERSION=	1.10
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/zeux/pugixml/releases/download/v${PORTVERSION}/
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Light-weight, simple and fast XML parser for C++ with XPath support
 
 LICENSE=	MIT

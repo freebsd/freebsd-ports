@@ -6,7 +6,7 @@ PORTVERSION=	1.10.34
 CATEGORIES=	x11
 MASTER_SITES=	https://github.com/rcaelers/workrave/releases/download/v${PORTVERSION:S/./_/g}/
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RSI prevention tool
 
 LICENSE=	GPLv3+

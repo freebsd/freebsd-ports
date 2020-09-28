@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.1
 CATEGORIES=	graphics
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple PNG decoding and encoding library
 
 LICENSE=	BSD2CLAUSE

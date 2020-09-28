@@ -6,7 +6,7 @@ PORTVERSION=	0.9.4
 CATEGORIES=	www
 MASTER_SITES=	https://codemadness.org/releases/stagit/
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Static Git page generator
 
 LICENSE=	MIT

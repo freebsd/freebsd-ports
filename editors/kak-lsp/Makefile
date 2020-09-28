@@ -6,7 +6,7 @@ DISTVERSION=	8.0.0
 PORTREVISION=	7
 CATEGORIES=	editors
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Kakoune Language Server Protocol Client
 
 LICENSE=	UNLICENSE

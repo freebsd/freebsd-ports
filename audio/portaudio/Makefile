@@ -9,7 +9,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.portaudio.com/archives/
 DISTNAME=	pa_stable_v190600_20161030
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Portable cross-platform Audio API
 
 LICENSE=	MIT

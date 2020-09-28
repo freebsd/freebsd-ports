@@ -5,7 +5,7 @@ DISTVERSION=	0.2.5
 PORTREVISION=	2
 CATEGORIES=	textproc
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Explore, test, and check regular expressions in the terminal
 
 LICENSE=	MIT

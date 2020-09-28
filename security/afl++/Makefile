@@ -6,7 +6,7 @@ PORTVERSION=	2.63c
 CATEGORIES=	security
 PKGNAMESUFFIX=	++
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast instrumented fuzzer
 
 LICENSE=	APACHE20

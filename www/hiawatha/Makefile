@@ -6,7 +6,7 @@ PORTVERSION=	10.11
 CATEGORIES=	www
 MASTER_SITES=	https://www.hiawatha-webserver.org/files/
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced and secure webserver for Unix
 
 LICENSE=	GPLv2

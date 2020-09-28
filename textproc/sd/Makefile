@@ -6,7 +6,7 @@ DISTVERSION=	0.7.6
 PORTREVISION=	2
 CATEGORIES=	textproc
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Intuitive find and replace tool
 
 LICENSE=	MIT

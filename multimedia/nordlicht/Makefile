@@ -7,7 +7,7 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	5
 CATEGORIES=	multimedia
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create moodbars from video files
 
 LICENSE=	GPLv2

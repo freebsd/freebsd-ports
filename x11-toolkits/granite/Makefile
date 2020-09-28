@@ -5,7 +5,7 @@ PORTNAME=	granite
 DISTVERSION=	5.5.0
 CATEGORIES=	x11-toolkits
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Extensions of GTK+3 toolkit
 
 LICENSE=	LGPL3

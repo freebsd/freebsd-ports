@@ -5,7 +5,7 @@ PORTNAME=	ipxe
 DISTVERSION=	20200722
 CATEGORIES=	net
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source network boot firmware
 
 LICENSE=	GPLv2

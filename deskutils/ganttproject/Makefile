@@ -7,7 +7,7 @@ DISTVERSIONSUFFIX=	-r2393
 CATEGORIES=	deskutils java
 MASTER_SITES=	https://github.com/bardsoftware/ganttproject/releases/download/ganttproject-${DISTVERSION}/
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gantt chart based project scheduling and management tool
 
 LICENSE=	GPLv3+

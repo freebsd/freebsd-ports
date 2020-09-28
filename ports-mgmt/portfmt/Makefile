@@ -4,7 +4,7 @@ PORTNAME=	portfmt
 PORTVERSION=	g20200712
 CATEGORIES=	ports-mgmt
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Format FreeBSD Ports Makefiles
 
 LICENSE=	BSD2CLAUSE

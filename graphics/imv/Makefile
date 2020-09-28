@@ -7,7 +7,7 @@ DISTVERSION=	4.1.0
 PORTREVISION=	2
 CATEGORIES=	graphics
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple image viewer
 
 LICENSE=	MIT

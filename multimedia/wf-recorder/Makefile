@@ -5,7 +5,7 @@ DISTVERSION=	0.2.1
 CATEGORIES=	multimedia wayland
 MASTER_SITES=	https://github.com/ammen99/wf-recorder/releases/download/v${DISTVERSION}/
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Screen recorder for wlroots-based compositors
 
 LICENSE=	MIT

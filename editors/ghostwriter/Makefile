@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	1.8.1
 CATEGORIES=	editors
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Distraction-free Markdown editor
 
 LICENSE=	GPLv3+

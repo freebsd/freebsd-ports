@@ -10,7 +10,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 PATCH_SITES=	https://github.com/technomancy/leiningen/commit/
 PATCHFILES=	7677dabea40a2d17a42a718ca8c7e450b09e153c.patch:-p1
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automate Clojure projects
 
 LICENSE=	EPL

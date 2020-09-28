@@ -6,7 +6,7 @@ DISTVERSIONPREFIX=	openmw-
 DISTVERSION=	0.46.0
 CATEGORIES=	games
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unofficial open source engine reimplementation of the game Morrowind
 
 LICENSE=	GPLv3

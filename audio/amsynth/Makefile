@@ -5,7 +5,7 @@ DISTVERSION=	1.11.0
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/amsynth/amsynth/releases/download/release-${DISTVERSION}/
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Analog modelling software synth
 
 LICENSE=	GPLv2+

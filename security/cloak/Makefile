@@ -6,7 +6,7 @@ DISTVERSION=	0.2.0
 PORTREVISION=	13
 CATEGORIES=	security
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command line OTP Authenticator application
 
 LICENSE=	MIT

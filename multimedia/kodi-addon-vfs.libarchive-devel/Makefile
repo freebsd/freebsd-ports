@@ -8,7 +8,7 @@ CATEGORIES=	multimedia
 PKGNAMEPREFIX=	kodi-addon-
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	VFS addon for Kodi to access archives directly
 
 LICENSE=	GPLv2+

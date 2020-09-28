@@ -6,7 +6,7 @@ PORTVERSION=	0.0.20160629
 PORTREVISION=	3
 CATEGORIES=	devel
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tiny asymmetric-coroutine library
 
 LICENSE=	ZLIB

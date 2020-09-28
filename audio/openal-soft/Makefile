@@ -6,7 +6,7 @@ PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	https://openal-soft.org/openal-releases/
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Software implementation of the OpenAL specification
 
 LICENSE=	LGPL20+

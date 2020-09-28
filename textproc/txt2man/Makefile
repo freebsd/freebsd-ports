@@ -6,7 +6,7 @@ DISTVERSIONPREFIX=	txt2man-
 DISTVERSION=	1.7.0
 CATEGORIES=	textproc
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts flat ASCII text to man page format
 
 LICENSE=	GPLv2+

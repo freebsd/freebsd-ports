@@ -6,7 +6,7 @@ PORTVERSION=	1.51c
 PORTEPOCH=	1
 CATEGORIES=	games
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Game engine for Return to Castle Wolfenstein
 
 LICENSE=	GPLv3

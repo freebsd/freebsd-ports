@@ -5,7 +5,7 @@ PORTNAME=	pcf2bdf
 PORTVERSION=	1.06
 CATEGORIES=	x11-fonts
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert X font from PCF to BDF
 
 LICENSE=	MIT

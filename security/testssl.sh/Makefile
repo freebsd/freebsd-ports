@@ -4,7 +4,7 @@ PORTNAME=	testssl.sh
 DISTVERSION=	3.0.2
 CATEGORIES=	security
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Test TLS/SSL encryption anywhere on any port
 
 LICENSE=	GPLv2

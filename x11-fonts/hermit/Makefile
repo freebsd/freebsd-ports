@@ -8,7 +8,7 @@ MASTER_SITES=	https://pcaro.es/d/
 PKGNAMESUFFIX=	-font
 DISTNAME=	otf-hermit-${DISTVERSION}
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Monospaced font for programmers by a programmer
 
 LICENSE=	OFL11

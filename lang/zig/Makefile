@@ -5,7 +5,7 @@ DISTVERSION=	0.6.0
 CATEGORIES=	lang
 MASTER_SITES=	https://ziglang.org/download/${DISTVERSION}/
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Language designed for robustness, optimality, and maintainability
 
 LICENSE=	MIT

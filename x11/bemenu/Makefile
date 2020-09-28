@@ -4,7 +4,7 @@ PORTNAME=	bemenu
 DISTVERSION=	0.5.0
 CATEGORIES=	x11 wayland
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dynamic menu library and client program inspired by dmenu
 
 LICENSE=	GPLv3+ LGPL3+

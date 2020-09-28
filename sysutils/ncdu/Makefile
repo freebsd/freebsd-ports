@@ -6,7 +6,7 @@ PORTVERSION=	1.15.1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://dev.yorhel.nl/download/
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ncurses du(1)
 
 LICENSE=	MIT

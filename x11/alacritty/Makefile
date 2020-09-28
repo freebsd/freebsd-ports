@@ -6,7 +6,7 @@ DISTVERSION=	0.5.0
 PORTREVISION=	2
 CATEGORIES=	x11
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GPU-accelerated terminal emulator
 
 LICENSE=	APACHE20

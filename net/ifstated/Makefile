@@ -10,7 +10,7 @@ MASTER_SITES=	LOCAL/tobik \
 		http://pkg.tobik.me/distfiles/ \
 		http://christianserving.org/ports/net/ifstated/
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interface state daemon
 
 LIB_DEPENDS=	libevent.so:devel/libevent

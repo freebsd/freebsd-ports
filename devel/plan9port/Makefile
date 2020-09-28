@@ -7,7 +7,7 @@ CATEGORIES=	devel plan9
 DIST_SUBDIR=	plan9port
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plan 9 from User Space
 
 LICENSE=	LUCENT

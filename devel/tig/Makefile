@@ -6,7 +6,7 @@ PORTVERSION=	2.5.1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/jonas/tig/releases/download/${DISTNAME}/
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text-mode interface for git
 
 LICENSE=	GPLv2

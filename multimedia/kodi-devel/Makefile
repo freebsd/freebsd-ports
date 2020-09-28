@@ -6,7 +6,7 @@ PORTREVISION=	2
 CATEGORIES=	multimedia
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Award winning media center application
 
 LICENSE=	GPLv2+

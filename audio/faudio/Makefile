@@ -4,7 +4,7 @@ PORTNAME=	FAudio
 DISTVERSION=	20.09
 CATEGORIES=	audio
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Accuracy-focused XAudio reimplementation
 
 LICENSE=	ZLIB

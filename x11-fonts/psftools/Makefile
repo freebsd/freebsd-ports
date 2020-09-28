@@ -5,7 +5,7 @@ PORTVERSION=	1.0.13
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.seasip.info/Unix/PSF/
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converters for simple fixed-width bitmap fonts
 
 LICENSE=	GPLv2

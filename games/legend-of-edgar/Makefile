@@ -8,7 +8,7 @@ MASTER_SITES=	https://github.com/riksweeney/edgar/releases/download/${DISTVERSIO
 PKGNAMEPREFIX=	legend-of-
 DISTFILES=	edgar-${DISTVERSION}-1${EXTRACT_SUFX}
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	2D platform game with a persistent world
 
 LICENSE=	GPLv2

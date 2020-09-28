@@ -7,7 +7,7 @@ MASTER_SITES=	https://github.com/t6/openjfx/releases/download/release/ \
 		http://hg.openjdk.java.net/openjfx/8u/rt/archive/${DISTVERSION}${EXTRACT_SUFX}?dummy=/
 PKGNAMESUFFIX=	-scenebuilder
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JavaFX Scene Builder
 
 LICENSE=	BSD3CLAUSE

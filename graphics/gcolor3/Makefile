@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	2.3.1
 CATEGORIES=	graphics
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple color chooser
 
 LICENSE=	GPLv2+

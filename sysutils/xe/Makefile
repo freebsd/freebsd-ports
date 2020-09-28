@@ -6,7 +6,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.11
 CATEGORIES=	sysutils
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple xargs and apply replacement
 
 LICENSE=	CC0-1.0

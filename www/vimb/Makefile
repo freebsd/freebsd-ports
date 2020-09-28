@@ -4,7 +4,7 @@ PORTNAME=	vimb
 DISTVERSION=	3.6.0
 CATEGORIES=	www
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Vim like browser
 
 LICENSE=	GPLv3+

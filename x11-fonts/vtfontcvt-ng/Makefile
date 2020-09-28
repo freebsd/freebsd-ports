@@ -4,7 +4,7 @@ PORTNAME=	vtfontcvt-ng
 DISTVERSION=	g20190823
 CATEGORIES=	x11-fonts
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Improved version of vtfontcvt(8)
 
 LICENSE=	BSD2CLAUSE

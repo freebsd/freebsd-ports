@@ -6,7 +6,7 @@ CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/microsoft/cascadia-code/releases/download/v${DISTVERSION}/
 DISTNAME=	CascadiaCode-${DISTVERSION}
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Monospaced font with programming ligatures
 
 LICENSE=	OFL11

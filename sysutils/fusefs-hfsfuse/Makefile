@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	fusefs-
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FUSE driver for HFS+ filesystems
 
 LICENSE=	MIT

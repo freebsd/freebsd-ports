@@ -6,7 +6,7 @@ DISTVERSION=	0.8.0
 PORTREVISION=	4
 CATEGORIES=	sysutils
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command-line hex viewer
 
 LICENSE=	APACHE20 MIT
