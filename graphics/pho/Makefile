@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pho
-DISTVERSION=	0.9.8
-PORTREVISION=	1
+PORTVERSION=	1.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://shallowsky.com/software/pho/
 
