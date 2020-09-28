@@ -26,9 +26,6 @@ PORTEXAMPLES=	getmailrc-examples
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-post-install:
-	@${CHMOD} -R 644 ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/getmailcore/*
-
 post-install-DOCS-on:
 	@${CP} ${WRKSRC}/README ${WRKSRC}/docs/
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
