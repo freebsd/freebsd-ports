@@ -12,7 +12,7 @@ COMMENT=	Astronomical image processing software
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-BROKEN_i386=	undefined reference to `__atomic_load' and `__atomic_compare_exchange'
+BROKEN_i386=	undefined reference to `__atomic_load' and `__atomic_compare_exchange' #`
 
 LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 		libcfitsio.so:astro/cfitsio \
@@ -32,6 +32,9 @@ USES=		autoreconf compiler:c++11-lang desktop-file-utils gettext \
 		gmake gnome localbase pkgconfig jpeg shared-mime-info tar:bz2
 GNU_CONFIGURE=	yes
 USE_GNOME=	atk cairo gdkpixbuf2 gtk30 intltool pango
+
+CFLAGS+=	-fcommon # https://gitlab.com/free-astro/siril/-/issues/581
+
 INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=			OPENMP
