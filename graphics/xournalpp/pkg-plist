@@ -161,6 +161,7 @@ share/locale/zh_TW/LC_MESSAGES/xournalpp.mo
 %%DATADIR%%/ui/settings.glade
 %%DATADIR%%/ui/settingsButtonConfig.glade
 %%DATADIR%%/ui/settingsDeviceClassConfig.glade
+%%DATADIR%%/ui/settingsLanguageConfig.glade
 %%DATADIR%%/ui/texdialog.glade
 %%DATADIR%%/ui/toolbar.ini
 %%DATADIR%%/ui/toolbarCustomizeDialog.glade
