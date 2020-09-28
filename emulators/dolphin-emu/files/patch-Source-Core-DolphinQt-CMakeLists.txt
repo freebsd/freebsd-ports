@@ -1,8 +1,8 @@
 Add DISABLE_NLS option
 
---- Source/Core/DolphinQt/CMakeLists.txt.orig	2019-10-07 22:20:46.334504000 +0200
-+++ Source/Core/DolphinQt/CMakeLists.txt	2019-10-07 22:22:45.882601000 +0200
-@@ -334,51 +334,54 @@
+--- Source/Core/DolphinQt/CMakeLists.txt.orig	2020-07-04 04:19:59 UTC
++++ Source/Core/DolphinQt/CMakeLists.txt
+@@ -365,51 +365,54 @@ if(WIN32)
  endif()
  
  # Handle localization
