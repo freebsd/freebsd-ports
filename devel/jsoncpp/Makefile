@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jsoncpp
-PORTVERSION=	1.9.3
+PORTVERSION=	1.9.4
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,9 +18,5 @@ MESON_ARGS=	--default-library=both
 USE_LDCONFIG=	yes
 
 TEST_TARGET=	test
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|python3|${PYTHON_VERSION}|g' \
-		${PATCH_WRKSRC}/meson.build
 
 .include <bsd.port.mk>
