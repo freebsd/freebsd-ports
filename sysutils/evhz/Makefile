@@ -2,6 +2,7 @@
 
 PORTNAME=	evhz
 DISTVERSION=	g20170201
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	greg@unrelenting.technology

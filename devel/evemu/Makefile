@@ -3,7 +3,7 @@
 
 PORTNAME=	evemu
 PORTVERSION=	2.6.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.freedesktop.org/software/${PORTNAME}/
 

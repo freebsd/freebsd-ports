@@ -2,7 +2,7 @@
 
 PORTNAME=	jstest-gtk
 PORTVERSION=	20180710
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 
 MAINTAINER=	rozhuk.im@gmail.com

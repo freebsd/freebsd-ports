@@ -3,7 +3,7 @@
 PORTNAME=	vulkan-tools
 DISTVERSIONPREFIX=	sdk-
 DISTVERSION=	1.2.135.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel graphics
 
 MAINTAINER=	greg@unrelenting.technology

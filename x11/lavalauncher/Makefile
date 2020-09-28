@@ -3,6 +3,7 @@
 PORTNAME=	lavalauncher
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	https://git.sr.ht/~leon_plickat/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 

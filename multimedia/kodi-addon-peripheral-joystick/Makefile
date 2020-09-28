@@ -3,6 +3,7 @@
 
 PORTNAME=	kodi-addon-peripheral-joystick
 PORTVERSION=	1.4.9
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-Leia
 CATEGORIES=	multimedia
 

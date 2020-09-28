@@ -3,6 +3,7 @@
 
 PORTNAME=	flightgear
 PORTVERSION=	2020.1.3
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/flightgear/release-${PORTVERSION:R}
 
