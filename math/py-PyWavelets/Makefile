@@ -1,26 +1,24 @@
 # $FreeBSD$
 
 PORTNAME=	PyWavelets
-PORTVERSION=	0.5.2
-PORTREVISION=	4
+PORTVERSION=	1.1.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	math python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	eric@camachat.org
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Discrete Wavelet Transforms in Python
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYNUMPY}
-RUN_DEPENDS=	${PYNUMPY} \
-		${PY_PILLOW}
+RUN_DEPENDS=	${PYNUMPY}
 
 USE_GITHUB=	yes
 GH_PROJECT=	pywt
 
-USES=		cpe python
+USES=		cpe python:3.7+
 USE_PYTHON=	autoplist distutils cython cython_run
 
 PYDISTUTILS_BUILD_TARGET=	build build_ext
