@@ -18,7 +18,7 @@ BROKEN_sparc64=	cannot build: coredump: illegal instruction
 
 USES=		cpe pkgconfig shebangfix tar:tgz terminfo
 
-SNAPSHOT=		20200919
+SNAPSHOT=		20200926
 GNU_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	../configure
 CONFIGURE_ARGS=		--datadir=${PREFIX}/share/misc \
