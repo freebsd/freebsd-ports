@@ -86,6 +86,7 @@
     SUBDIR += minizip
     SUBDIR += mscompress
     SUBDIR += mtf
+    SUBDIR += nfpm
     SUBDIR += nomarch
     SUBDIR += nwreckdum
     SUBDIR += ocaml-bz2
