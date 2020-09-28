@@ -1,8 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	sabnzbdplus
-PORTVERSION=	3.0.1
+DISTVERSION=	3.0.2
 CATEGORIES=	news
+MASTER_SITES=	https://github.com/sabnzbd/sabnzbd/releases/download/${DISTVERSION}/
+DISTNAME=	SABnzbd-${DISTVERSION}-src
 
 MAINTAINER=	james@french.id.au
 COMMENT=	Web-interface based binary newsgrabber in python, with nzb support
@@ -21,10 +23,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheetah3>=0:devel/py-cheetah3@${PY_FLAVOR} \
 		unrar:archivers/unrar
 
 USES=		python:3.5+ shebangfix gettext
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	sabnzbd
-GH_PROJECT=	sabnzbd
+WRKSRC=		${WRKDIR}/SABnzbd-${DISTVERSION}
 
 SHEBANG_FILES=	SABnzbd.py tools/msgfmt.py
 
@@ -33,8 +32,7 @@ SUB_LIST=	PYTHON_CMD=${PYTHON_CMD}
 SUB_FILES=	pkg-message
 USE_RC_SUBR=	sabnzbd
 
-PORTDOCS=	ABOUT.txt \
-		COPYRIGHT.txt \
+PORTDOCS=	COPYRIGHT.txt \
 		INSTALL.txt \
 		ISSUES.txt \
 		README.mkd
