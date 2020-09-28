@@ -1814,6 +1814,7 @@
     SUBDIR += website
     SUBDIR += weka
     SUBDIR += wiggle
+    SUBDIR += wikiman
     SUBDIR += word2x
     SUBDIR += wordnet
     SUBDIR += words

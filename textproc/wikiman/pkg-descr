@@ -1,0 +1,9 @@
+Wikiman is an offline search engine for manual pages, Arch Wiki, Gentoo Wiki and
+other documentation.
+
+Wikiman provides an easy interface for browsing documentation without the need
+to be exact and connected to the internet. This is achieved by utilizing full
+text search for wikis, partial name and description matching for man pages,
+and fuzzy filtering for search results.
+
+WWW: https://github.com/filiparag/wikiman
