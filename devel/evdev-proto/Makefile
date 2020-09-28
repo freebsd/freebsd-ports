@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	evdev-proto
-PORTVERSION=	5.3
+PORTVERSION=	5.8
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/torvalds/linux/raw/v${PORTVERSION}/include/uapi/linux/
 DISTFILES=	input.h input-event-codes.h joystick.h uinput.h
