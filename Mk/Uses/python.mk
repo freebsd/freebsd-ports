@@ -6,7 +6,7 @@
 #
 # Feature:	python
 # Usage:	USES=python[:version-spec][,arg,...]
-# Valid ARGS:	<version-spec>, patch, build, run, test
+# Valid ARGS:	<version-spec>, patch, build, run, test, env
 #
 # version-spec 	Declarative specification for the Python version(s) the
 #		port supports. Subsets and ranges can be specified:
