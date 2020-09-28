@@ -2,7 +2,7 @@
 
 PORTNAME=	sudo-font
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.50
+DISTVERSION=	0.51
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/jenskutilek/sudo-font/raw/${DISTVERSIONFULL}/dist/
 DISTNAME=	sudo
