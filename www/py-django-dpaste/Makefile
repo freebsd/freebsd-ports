@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pygments>=1.6:textproc/py-pygments@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-csp>=3.3:www/py-django-csp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-staticinline>=1.0:www/py-django-staticinline@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}jsx-lexer=0.0.7:textproc/py-jsx-lexer@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jsx-lexer>=0.0.7:textproc/py-jsx-lexer@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}docutils>0:textproc/py-docutils@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}misaka>=2.1.0:textproc/py-misaka@${PY_FLAVOR}
 
