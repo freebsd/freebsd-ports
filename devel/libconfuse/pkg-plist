@@ -8,3 +8,6 @@ share/doc/confuse/AUTHORS
 share/doc/confuse/ChangeLog.md
 share/doc/confuse/LICENSE
 share/doc/confuse/README.md
+%%NLS%%share/locale/de/LC_MESSAGES/confuse.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/confuse.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/confuse.mo
