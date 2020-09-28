@@ -17,6 +17,8 @@ In order to run Zoom you need:
    devfs /compat/linux/dev devfs rw 0 0
 3. Have Linux OpenGL package for your video card is installed.
    It could be one of linux-nvidia-libs*, etc.
+   Enable a port option corresponding to your OpenGL driver, if applicable.
+   Try running with LIBGL_ALWAYS_SOFTWARE=1 if zoom crashes because of OpenGL.
 4. Have multimedia/webcamd installed and running. The usual way to
    start webcamd is to have these two lines in /etc/rc.conf:
    webcamd_enable="YES"

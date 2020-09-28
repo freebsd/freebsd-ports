@@ -2,6 +2,7 @@
 
 PORTNAME=	zoom
 DISTVERSION=	5.3.465578.0920
+PORTREVISION=	1
 CATEGORIES=	net-im net-p2p
 MASTER_SITES=	https://zoom.us/client/${DISTVERSION}/
 PKGNAMESUFFIX=	-video-conferencing-client
@@ -20,6 +21,18 @@ USE_LINUX=	alsalib alsa-plugins-oss atk cairo-gobject dbuslibs fontconfig freety
 NO_BUILD=	yes
 
 PLIST_SUB=	LINUXBASE=${LINUXBASE}
+
+LINUX_NVIDIA_LIBS_AVAILABLE=	linux-nvidia-libs  linux-nvidia-libs-304 linux-nvidia-libs-340 linux-nvidia-libs-390
+
+OPTIONS_RADIO=				PREINSTALL_GL_DRIVER
+OPTIONS_RADIO_PREINSTALL_GL_DRIVER=	${LINUX_NVIDIA_LIBS_AVAILABLE:tu:S/-/_/g}
+
+PREINSTALL_GL_DRIVER_DESC=		Install OpenGL libraries for your system:
+
+.for p in ${LINUX_NVIDIA_LIBS_AVAILABLE}
+${p:tu:S/-/_/g}_DESC=			NVidia libraries x11/${p}
+${p:tu:S/-/_/g}_RUN_DEPENDS=		${p}>0:x11/${p}
+.endfor
 
 do-install:
 	${MKDIR} ${STAGEDIR}${LINUXBASE}
