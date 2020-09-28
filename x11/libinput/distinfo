@@ -1,3 +1,3 @@
-TIMESTAMP = 1593629662
-SHA256 (libinput-1.15.6.tar.xz) = aeedea216a6317ddc6e27c3d54f26b987078780db6a8320cc09e19c25b307f1c
-SIZE (libinput-1.15.6.tar.xz) = 584184
+TIMESTAMP = 1600507648
+SHA256 (libinput-1.16.1.tar.xz) = 7ba7d1aeedd15168bb21d17e9e628aa1c27957963a423a3fea3938a501758539
+SIZE (libinput-1.16.1.tar.xz) = 595548
