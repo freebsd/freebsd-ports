@@ -14,6 +14,9 @@ COMMENT=	Development framework for creating media applications
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Use newer version of gstreamer
+EXPIRATION_DATE=	2020-10-30
+
 PORTSCOUT=	limit:0\.10\..*
 
 CFLAGS:=	${CFLAGS} -O2 -Wno-format
