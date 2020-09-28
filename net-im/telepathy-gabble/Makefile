@@ -28,7 +28,7 @@ RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		alias gmake gnome libtool pathfix pkgconfig python:2.7,build \
+USES=		alias gmake gnome libtool pathfix pkgconfig python:build \
 		shebangfix sqlite ssl
 USE_GNOME=	glib20 gtksourceview3 libxslt:build
 GNU_CONFIGURE=	yes

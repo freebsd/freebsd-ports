@@ -19,7 +19,7 @@ LIB_DEPENDS=	libavahi-glib.so:net/avahi-app \
 		libsoup-2.4.so:devel/libsoup
 
 GNU_CONFIGURE=	yes
-USES=		gmake gnome libtool pathfix pkgconfig python:2.7,build sqlite ssl
+USES=		gmake gnome libtool pathfix pkgconfig python:build sqlite ssl
 USE_GNOME=	glib20 libxslt:build
 CONFIGURE_ARGS=	--disable-Werror --enable-avahi-tests=no
 LDFLAGS+=	-lpthread

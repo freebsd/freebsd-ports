@@ -1,6 +1,6 @@
---- lib/gibber/gibber-unix-transport.c.orig	2010-06-09 16:09:58.000000000 +0000
-+++ lib/gibber/gibber-unix-transport.c	2010-09-18 21:24:44.000000000 +0000
-@@ -375,6 +375,167 @@ gibber_unix_transport_recv_credentials (
+--- lib/gibber/gibber-unix-transport.c.orig	2013-10-04 15:51:47 UTC
++++ lib/gibber/gibber-unix-transport.c
+@@ -374,6 +374,167 @@ gibber_unix_transport_recv_credentials (GibberUnixTran
    return TRUE;
  }
  
@@ -168,7 +168,7 @@
  #else /* OSs where we have no implementation */
  
  gboolean
-@@ -393,9 +554,7 @@ gibber_unix_transport_recv_credentials (
+@@ -392,9 +553,7 @@ gibber_unix_transport_recv_credentials (GibberUnixTran
  }
  
  gboolean

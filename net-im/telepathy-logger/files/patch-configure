@@ -1,6 +1,6 @@
---- configure.orig	2010-08-18 14:48:05.000000000 +0200
-+++ configure	2010-08-18 14:49:13.000000000 +0200
-@@ -13281,8 +13281,8 @@
+--- configure.orig	2015-04-30 11:32:10 UTC
++++ configure
+@@ -14348,8 +14348,8 @@ install-data-am: install-gsettings-schemas
  .SECONDARY: $(gsettings_SCHEMAS)
  
  gsettings__base_list = \

@@ -1,6 +1,6 @@
---- Makefile.in.orig	2010-09-18 17:29:38.000000000 +0000
-+++ Makefile.in	2010-09-18 17:29:53.000000000 +0000
-@@ -267,7 +267,7 @@
+--- Makefile.in.orig	2020-09-24 11:51:08 UTC
++++ Makefile.in
+@@ -349,7 +349,7 @@ top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  ACLOCAL_AMFLAGS = -I m4
