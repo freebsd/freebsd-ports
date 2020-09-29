@@ -4274,8 +4274,8 @@
     SUBDIR += py-cov-core
     SUBDIR += py-coverage
     SUBDIR += py-coverage_enable_subprocess
-    SUBDIR += py-cppy
     SUBDIR += py-cppheaderparser
+    SUBDIR += py-cppy
     SUBDIR += py-crank
     SUBDIR += py-crashtest
     SUBDIR += py-crc32c
