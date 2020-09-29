@@ -6,6 +6,6 @@
        s.add_runtime_dependency(%q<rack>.freeze, [">= 1.4", "< 3"])
 -      s.add_runtime_dependency(%q<rack-protection>.freeze, [">= 1.5.3", "< 2.1.0"])
 +      s.add_runtime_dependency(%q<rack-protection>.freeze, [">= 1.5.3", "< 2.2.0"])
-       s.add_runtime_dependency(%q<flipper>.freeze, ["~> 0.18.0"])
+       s.add_runtime_dependency(%q<flipper>.freeze, ["~> 0.19.0"])
        s.add_runtime_dependency(%q<erubi>.freeze, [">= 1.0.0", "< 2.0.0"])
      else
