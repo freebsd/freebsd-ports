@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20200930:
+  AFFECTS: users of sysutils/syslog-ng32[789]
+  AUTHOR: cy@FreeBSD.org
+
+  rc.conf variables syslog_ng_config and syslog_ng_pid have been replaced
+  by syslog_ng_flags and syslog_ng_pidfile respecively, making them
+  consistent with the rest of the ports tree. syslog_ng_config and
+  syslog_ng_pid will continue to work until syslog-ng331 has been
+  released and imported into ports.
+  
 20200924:
   AFFECTS: users of net/freeradius3, who need python support
   AUTHOR: zi@FreeBSD.org

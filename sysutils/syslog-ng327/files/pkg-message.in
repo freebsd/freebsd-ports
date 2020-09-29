@@ -30,4 +30,12 @@ syslog-ng is now installed!  To replace FreeBSD's standard syslogd
      %%PREFIX%%/etc/rc.d/syslog-ng start
 EOM
 }
+{ type: upgrade
+  maximum_version: "3.27.1_1"
+  message: <<EOM
+When upgrading from before 3.29.1 these variables, if used, should be replaced:
+* syslog_ng_flags replaces syslog_ng_config (syslog_ng_config still works),
+* syslog_ng_pidfile replaces syslog_ng_pid (syslog_ng_pid still works).
+EOM
+}
 ]

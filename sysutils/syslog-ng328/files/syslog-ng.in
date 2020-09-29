@@ -12,35 +12,47 @@
 # to enable this service:
 #
 #syslog_ng_enable="YES"
-#syslog_ng_config="-u daemon"
-#syslog_ng_pid="/var/run/syslog-ng.pid"
+#syslog_ng_flags="-u daemon"
+#syslog_ng_pidfile="/var/run/syslog-ng.pid"
 #
-
-syslog_ng_purgeklog=${syslog_ng_purgeklog-"NO"}
 
 . /etc/rc.subr
 
 name=syslog_ng
 rcvar=syslog_ng_enable
 
-command=%%PREFIX%%/sbin/syslog-ng
-required_files=%%PREFIX%%/etc/syslog-ng.conf
-extra_commands=reload
-
-if checkyesno syslog_ng_purgeklog; then
-	start_precmd="echo \"Purging klog(9)\" && sysctl -w kern.msgbuf_clear=1 $start_precmd";
-fi
-
-stop_postcmd=stop_postcmd
-
 load_rc_config $name
 
 : ${syslog_ng_enable:="NO"}
-pidfile=${syslog_ng_pid:-"/var/run/syslog.pid"}
-command_args="-p ${pidfile} ${syslog_ng_config}"
+: ${syslog_ng_purgeklog:="NO"}
+: ${syslog_ng_config:="%%PREFIX%%/etc/syslog-ng.conf"}
+: ${syslog_ng_pidfile:=/var/run/syslog.pid}
 
-stop_postcmd() {
-  rm -f $pidfile
+# backwards compatibility
+if [ -n "${syslog_ng_pid}" ]; then
+	syslog_ng_pidfile="${syslog_ng_pid}"
+fi
+if [ ! -f "${syslog_ng_config}" ]; then
+	syslog_ng_flags="${syslog_ng_config}"
+	syslog_ng_config="%%PREFIX%%/etc/syslog-ng.conf"
+fi
+
+if checkyesno syslog_ng_purgeklog; then
+	start_precmd="echo \"Purging klog(9)\" && sysctl -w kern.msgbuf_clear=1"
+fi
+
+pidfile="${syslog_ng_pidfile}"
+required_files="${syslog_ng_config}"
+
+command="%%PREFIX%%/sbin/syslog-ng"
+command_args="-f ${syslog_ng_config} -p ${pidfile}"
+
+stop_postcmd="stop_postcmd"
+extra_commands="reload"
+
+stop_postcmd()
+{
+	rm -f "${pidfile}"
 }
 
 run_rc_command "$1"
