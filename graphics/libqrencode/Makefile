@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libqrencode
-DISTVERSION=	4.1.0
+PORTVERSION=	4.1.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics
 
@@ -14,10 +14,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
+USES=		cmake iconv pathfix pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	fukuchi
-
-USES=		cmake iconv pathfix pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
