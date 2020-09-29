@@ -1,3 +1,3 @@
-TIMESTAMP = 1525511676
-SHA256 (gnome3/gedit-plugins-3.28.1.tar.xz) = 222dfd7065d399f7eda48dce011b42cc7185cd058f523be1bbd7143980e01468
-SIZE (gnome3/gedit-plugins-3.28.1.tar.xz) = 1350468
+TIMESTAMP = 1601388684
+SHA256 (gnome/gedit-plugins-3.38.0.tar.xz) = bda2bd5ad7ebdd535d1cc6c8700c295dec64b227c9173c0d2bae0067516259fb
+SIZE (gnome/gedit-plugins-3.38.0.tar.xz) = 972384

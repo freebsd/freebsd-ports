@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gedit
-PORTVERSION=	3.28.1
-PORTREVISION=	2
+PORTVERSION=	3.38.0
 CATEGORIES=	editors gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -21,30 +20,27 @@ BUILD_DEPENDS=	iso-codes>=0:misc/iso-codes \
 LIB_DEPENDS=	libenchant.so:textproc/enchant \
 		libpeas-gtk-1.0.so:devel/libpeas \
 		libgspell-1.so:textproc/gspell \
-		libsoup-2.4.so:devel/libsoup
+		libsoup-2.4.so:devel/libsoup \
+		libtepl-5.so:x11-toolkits/tepl \
+		libamtk-5.so:x11-toolkits/amtk
+
 RUN_DEPENDS=	iso-codes>=0:misc/iso-codes \
 		gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas \
 		${PYTHON_PKGNAMEPREFIX}libpeas>=0:devel/py-libpeas@${PY_FLAVOR}
 
 PORTSCOUT=	limitw:1,even
 
-USES=		compiler:c11 desktop-file-utils gettext gmake gnome libtool \
-		localbase pathfix pkgconfig python:3.4+ shebangfix tar:xz xorg
+USES=		compiler:c11 desktop-file-utils gettext gnome localbase meson \
+		pkgconfig python:3.4+ tar:xz xorg
 USE_CSTD=	c11
-USE_GNOME=	cairo gdkpixbuf2 gtksourceview3 intlhack introspection \
+USE_GNOME=	cairo gdkpixbuf2 gtksourceview4 intlhack introspection \
 		libxml2 pygobject3
-SHEBANG_FILES=	plugins/externaltools/data/send-to-fpaste.tool.in
 USE_XORG=	sm x11
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-updater \
-		--enable-python \
-		--enable-spell
-CPPFLAGS+=	-Wno-error=format-nonliteral
-CFLAGS+=	-Wno-error=format-nonliteral
-LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
-PLIST_SUB=	VERSION="3.14"
+PLIST_SUB=	VERSION="3.38"
 INSTALL_TARGET=	install-strip
+MESON_ARGS+=	--buildtype plain
+BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 GLIB_SCHEMAS=	org.gnome.gedit.enums.xml \
 		org.gnome.gedit.plugins.externaltools.gschema.xml \
@@ -53,10 +49,7 @@ GLIB_SCHEMAS=	org.gnome.gedit.enums.xml \
 		org.gnome.gedit.plugins.filebrowser.gschema.xml \
 		org.gnome.gedit.plugins.pythonconsole.gschema.xml \
 		org.gnome.gedit.plugins.time.enums.xml \
-		org.gnome.gedit.plugins.time.gschema.xml
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|=python|=${PYTHON_CMD}|g' \
-		${WRKSRC}/py-compile
+		org.gnome.gedit.plugins.time.gschema.xml \
+		org.gnome.gedit.plugins.spell.gschema.xml
 
 .include <bsd.port.mk>

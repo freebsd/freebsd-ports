@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	tepl
-PORTVERSION=	4.0.0
-PORTREVISION=	1
+PORTVERSION=	5.0.0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -10,15 +9,15 @@ DIST_SUBDIR=	gnome
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Text editor product line
 
-LICENSE=	LGPL21
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	LGPL3
+LICENSE_FILE=	${WRKSRC}/LICENSES/LGPL-3.0-or-later.txt
 
-LIB_DEPENDS=	libuchardet.so:textproc/uchardet
+LIB_DEPENDS=	libuchardet.so:textproc/uchardet \
+		libamtk-5.so:x11-toolkits/amtk \
+		libicuuc.so:devel/icu
 
-USES=		compiler:c11 gettext gmake gnome libtool pkgconfig tar:xz
+USES=		compiler:c11 gettext gnome meson pkgconfig tar:xz
 USE_GNOME=	cairo gdkpixbuf2 gtksourceview4 libxml2
-GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>
