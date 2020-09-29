@@ -21,9 +21,9 @@ lib/cmake/reproc/reproc-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/reproc/reproc-targets.cmake
 lib/libreproc++.so
 lib/libreproc++.so.14
-lib/libreproc++.so.14.1.0
+lib/libreproc++.so.14.2.0
 lib/libreproc.so
 lib/libreproc.so.14
-lib/libreproc.so.14.1.0
+lib/libreproc.so.14.2.0
 libdata/pkgconfig/reproc++.pc
 libdata/pkgconfig/reproc.pc
