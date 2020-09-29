@@ -33,7 +33,7 @@ RUBY_CMAKE_BOOL=	WITH_RUBY
 RUBY_USE=		ruby=yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g; /$${DOCUMENTATION_FILES}/ s|^|#|' ${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/CMakeLists.txt
 
 post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

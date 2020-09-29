@@ -1,0 +1,21 @@
+--- CMakeLists.txt.orig	2019-04-16 12:18:24 UTC
++++ CMakeLists.txt
+@@ -1277,18 +1277,6 @@ endif()
+ # Install documentation
+ #
+ 
+-set(DOCUMENTATION_FILES
+-        COPYING.txt
+-        FUNDING.txt
+-        LICENSE.txt
+-        NEWS.txt
+-        OLD_NEWS.txt
+-        README.txt
+-        VERSION.txt
+-)
+-
+-install(FILES ${DOCUMENTATION_FILES} DESTINATION ${MISC_PREFIX})
+-
+ ###############################################################################
+ #
+ # Write libsbml.pc
