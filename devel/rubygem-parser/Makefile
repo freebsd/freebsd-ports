@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	parser
-PORTVERSION=	2.7.1.4
+PORTVERSION=	2.7.1.5
 CATEGORIES=	devel ruby
 MASTER_SITES=	RG
 
@@ -18,6 +18,7 @@ USE_RUBY=	yes
 
 NO_ARCH=	yes
 
-PLIST_FILES=	bin/ruby-parse bin/ruby-rewrite
+PLIST_FILES=	bin/ruby-parse \
+		bin/ruby-rewrite
 
 .include <bsd.port.mk>
