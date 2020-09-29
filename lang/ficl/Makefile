@@ -3,21 +3,17 @@
 
 PORTNAME=	ficl
 PORTVERSION=	4.1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-all/${PORTNAME}${PORTVERSION:C/([[:digit:]]+\.[[:digit:]]+)\.0/\1/}
 
 MAINTAINER=	pavelivolkov@gmail.com
 COMMENT=	Forth Inspired Command Language
 
-LICENSE=	unknown
-LICENSE_NAME=	BSD-style
-LICENSE_TEXT=	Description of the license can be obtained from the following URL: http://ficl.sourceforge.net/license.html
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${PATCHDIR}/LICENSE.txt
 
-OPTIONS_DEFINE=	DOCS
-
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	this port is not tested on anything other than i386 and amd64
 
 USE_LDCONFIG=	YES
@@ -29,8 +25,10 @@ PLIST_FILES=	bin/${PORTNAME} include/ficl.h include/ficlcompatibility.h \
 		include/ficltokens.h lib/lib${PORTNAME}.so \
 		lib/lib${PORTNAME}.so.${PORTVERSION} lib/lib${PORTNAME}.a
 
-PORTDOCS=	*
 PORTDATA=	*
+PORTDOCS=	*
+
+OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin

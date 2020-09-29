@@ -1,6 +1,6 @@
 --- vm.c.orig	2010-09-13 18:43:04 UTC
 +++ vm.c
-@@ -280,12 +280,12 @@ void ficlVmInnerLoop(ficlVm *vm, ficlWor
+@@ -280,12 +280,12 @@ void ficlVmInnerLoop(ficlVm *vm, ficlWord *fw)
  	if (once)
  		count = 1;
  
