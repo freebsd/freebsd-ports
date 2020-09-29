@@ -5705,6 +5705,7 @@
     SUBDIR += rubygem-azure_mgmt_appconfiguration
     SUBDIR += rubygem-azure_mgmt_attestation
     SUBDIR += rubygem-azure_mgmt_authorization
+    SUBDIR += rubygem-azure_mgmt_automanage
     SUBDIR += rubygem-azure_mgmt_automation
     SUBDIR += rubygem-azure_mgmt_azurestack
     SUBDIR += rubygem-azure_mgmt_azurestack_hci
