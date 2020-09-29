@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ardour6
-PORTVERSION=	6.2.0
+PORTVERSION=	6.3.0
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/beerml/ardour_releases/raw/master/
 # The original master side points to the latest release only:
@@ -15,7 +15,6 @@ COMMENT=	Multichannel digital audio workstation
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		Does not build with glib 2.66.0
 BROKEN_aarch64=		fails to configure: Could not find the program gas,as,gcc
 
 BUILD_DEPENDS=	lv2>=1.18.0:audio/lv2 \
