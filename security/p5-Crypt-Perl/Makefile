@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Crypt-Perl
-PORTVERSION=	0.29
+PORTVERSION=	0.34
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	p5-Test-Class>=0.4:devel/p5-Test-Class \
 		p5-Crypt-Format>=0.06:security/p5-Crypt-Format \
 		p5-File-Slurp>=0:devel/p5-File-Slurp \
 		p5-File-Which>=0:sysutils/p5-File-Which \
-		p5-Math-Utils>=1.07:math/p5-Math-Utils \
+		p5-Math-GMP>=2.20:math/p5-Math-GMP \
 		p5-Test-Deep>=0:devel/p5-Test-Deep \
 		p5-Test-Exception>=0:devel/p5-Test-Exception \
 		p5-Test-FailWarnings>=0:devel/p5-Test-FailWarnings \
