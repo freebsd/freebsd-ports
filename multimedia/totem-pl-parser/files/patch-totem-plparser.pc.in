@@ -1,11 +1,11 @@
---- totem-plparser.pc.in.orig	2013-07-08 07:28:46.000000000 +0000
-+++ totem-plparser.pc.in	2014-03-11 09:24:22.359591337 +0000
-@@ -7,7 +7,7 @@
+--- totem-plparser.pc.in.orig	2020-02-28 16:16:58 UTC
++++ totem-plparser.pc.in
+@@ -7,7 +7,7 @@ Name: totem-plparser
  Description: Totem Playlist Parser library
  Version: @VERSION@
  Requires: glib-2.0 gobject-2.0 gio-2.0
--Requires.private: gthread-2.0 libxml-2.0 @GMIME@ @ARCHIVE@
-+Requires.private: gthread-2.0 libxml-2.0 @GMIME@
+-Requires.private: gthread-2.0 libxml-2.0 @ARCHIVE@
++Requires.private: gthread-2.0 libxml-2.0
  Libs: -L${libdir} -ltotem-plparser
  Libs.private: @LIBGCRYPT_LIBS@
  Cflags: -I${includedir}/totem-pl-parser/1/plparser @LIBGCRYPT_CFLAGS@

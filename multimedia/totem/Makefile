@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	totem
-PORTVERSION=	3.26.2
-PORTREVISION=	2
+PORTVERSION=	3.38.0
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gstreamer-based video player for the GNOME 3 Desktop

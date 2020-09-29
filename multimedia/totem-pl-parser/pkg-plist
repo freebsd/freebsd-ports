@@ -6,13 +6,13 @@ include/totem-pl-parser/1/plparser/totem-pl-playlist.h
 lib/girepository-1.0/TotemPlParser-1.0.typelib
 lib/libtotem-plparser-mini.so
 lib/libtotem-plparser-mini.so.18
-lib/libtotem-plparser-mini.so.18.1.2
+lib/libtotem-plparser-mini.so.18.3.4
 lib/libtotem-plparser.so
 lib/libtotem-plparser.so.18
-lib/libtotem-plparser.so.18.1.2
+lib/libtotem-plparser.so.18.3.4
 libdata/pkgconfig/totem-plparser-mini.pc
 libdata/pkgconfig/totem-plparser.pc
-%%QUVI%%libexec/totem-pl-parser/99-totem-pl-parser-videosite
+%%QUVI%%libexec/totem-pl-parser/99-totem-pl-parser-videosite-quvi
 share/gir-1.0/TotemPlParser-1.0.gir
 share/locale/af/LC_MESSAGES/totem-pl-parser.mo
 share/locale/am/LC_MESSAGES/totem-pl-parser.mo
@@ -69,6 +69,7 @@ share/locale/lt/LC_MESSAGES/totem-pl-parser.mo
 share/locale/lv/LC_MESSAGES/totem-pl-parser.mo
 share/locale/mai/LC_MESSAGES/totem-pl-parser.mo
 share/locale/mg/LC_MESSAGES/totem-pl-parser.mo
+share/locale/mjw/LC_MESSAGES/totem-pl-parser.mo
 share/locale/mk/LC_MESSAGES/totem-pl-parser.mo
 share/locale/ml/LC_MESSAGES/totem-pl-parser.mo
 share/locale/mn/LC_MESSAGES/totem-pl-parser.mo
