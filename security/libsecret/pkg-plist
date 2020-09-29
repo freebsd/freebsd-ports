@@ -1,16 +1,19 @@
 bin/secret-tool
 include/libsecret-1/libsecret/secret-attributes.h
+include/libsecret-1/libsecret/secret-backend.h
 include/libsecret-1/libsecret/secret-collection.h
 include/libsecret-1/libsecret/secret-enum-types.h
 include/libsecret-1/libsecret/secret-item.h
 include/libsecret-1/libsecret/secret-password.h
 include/libsecret-1/libsecret/secret-paths.h
 include/libsecret-1/libsecret/secret-prompt.h
+include/libsecret-1/libsecret/secret-retrievable.h
 include/libsecret-1/libsecret/secret-schema.h
 include/libsecret-1/libsecret/secret-schemas.h
 include/libsecret-1/libsecret/secret-service.h
 include/libsecret-1/libsecret/secret-types.h
 include/libsecret-1/libsecret/secret-value.h
+include/libsecret-1/libsecret/secret-version.h
 include/libsecret-1/libsecret/secret.h
 lib/girepository-1.0/Secret-1.typelib
 lib/libsecret-1.a
@@ -24,6 +27,7 @@ share/gir-1.0/Secret-1.gir
 share/gtk-doc/html/libsecret-1/SecretCollection.html
 share/gtk-doc/html/libsecret-1/SecretItem.html
 share/gtk-doc/html/libsecret-1/SecretPrompt.html
+share/gtk-doc/html/libsecret-1/SecretRetrievable.html
 share/gtk-doc/html/libsecret-1/SecretService.html
 share/gtk-doc/html/libsecret-1/SecretValue.html
 share/gtk-doc/html/libsecret-1/annotation-glossary.html
@@ -47,6 +51,7 @@ share/gtk-doc/html/libsecret-1/libsecret-Password-storage.html
 share/gtk-doc/html/libsecret-1/libsecret-Secret-Attributes.html
 share/gtk-doc/html/libsecret-1/libsecret-SecretError.html
 share/gtk-doc/html/libsecret-1/libsecret-SecretSchema.html
+share/gtk-doc/html/libsecret-1/libsecret-Version-Information.html
 share/gtk-doc/html/libsecret-1/migrating-api.html
 share/gtk-doc/html/libsecret-1/migrating-introduction.html
 share/gtk-doc/html/libsecret-1/migrating-items.html
@@ -109,6 +114,7 @@ share/locale/ko/LC_MESSAGES/libsecret.mo
 share/locale/lt/LC_MESSAGES/libsecret.mo
 share/locale/lv/LC_MESSAGES/libsecret.mo
 share/locale/ml/LC_MESSAGES/libsecret.mo
+share/locale/ms/LC_MESSAGES/libsecret.mo
 share/locale/nb/LC_MESSAGES/libsecret.mo
 share/locale/ne/LC_MESSAGES/libsecret.mo
 share/locale/nl/LC_MESSAGES/libsecret.mo
