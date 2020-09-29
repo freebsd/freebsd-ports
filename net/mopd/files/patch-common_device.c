@@ -1,6 +1,15 @@
---- common/device.c	1996/09/21 13:49:16	1.1
-+++ common/device.c	2000/02/20 17:45:33	1.4
-@@ -111,7 +113,8 @@
+--- common/device.c.orig	1996-08-08 00:01:54 UTC
++++ common/device.c
+@@ -35,7 +35,7 @@ static char rcsid[] = "$Id: device.c,v 1.21 1996/08/08
+ #include "common/common.h"
+ #include "common/mopdef.h"
+ 
+-struct	if_info *iflist;		/* Interface List		*/
++/*extern*/ struct if_info *iflist;		/* Interface List		*/
+ 
+ void mopReadDL();
+ void mopReadRC();
+@@ -111,7 +111,8 @@ deviceOpen(ifname, proto, trans)
  {
  	struct if_info *p, tmp;
  
@@ -10,7 +19,7 @@
  	tmp.iopen   = pfInit;
  	
  	switch (proto) {
-@@ -138,7 +141,8 @@
+@@ -138,7 +139,8 @@ deviceOpen(ifname, proto, trans)
  		p->next = iflist;
  		iflist = p;
  
@@ -20,7 +29,7 @@
  		p->iopen   = tmp.iopen;
  		p->write   = pfWrite;
  		p->read    = tmp.read;
-@@ -185,12 +199,12 @@
+@@ -185,12 +187,12 @@ deviceInitOne(ifname)
  	if ((strlen(dev) == 2) &&
  	    (dev[0] == 'e') &&
  	    ((dev[1] == 'n') || (dev[1] == 't'))) {

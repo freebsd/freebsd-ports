@@ -1,0 +1,11 @@
+--- mopprobe/Makefile.orig	1996-08-16 22:48:44 UTC
++++ mopprobe/Makefile
+@@ -9,7 +9,7 @@ LDADD=	-lkvm
+ 
+ version.c version.h: ${.CURDIR}/../common/VERSION
+ 	rm -f version.c; \
+-	sed 's/.*/char version[] = "&";/' ${.ALLSRC} > version.c
++	sed 's/.*/static char version[] = "&";/' ${.ALLSRC} > version.c
+ 	set `sed 's/\([0-9]*\)\.\([0-9]*\).*/\1 \2/' ${.ALLSRC}` ; \
+ 		{ echo '#define VERSION_MAJOR' $$1 ; \
+ 		  echo '#define VERSION_MINOR' $$2 ; } > version.h

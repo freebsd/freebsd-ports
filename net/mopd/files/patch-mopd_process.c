@@ -1,6 +1,6 @@
---- mopd/process.c	1996/09/21 19:12:26	1.2
-+++ mopd/process.c	2000/07/04 23:46:23	1.8
-@@ -267,7 +267,7 @@
+--- mopd/process.c.orig	1996-08-22 17:07:38 UTC
++++ mopd/process.c
+@@ -265,7 +265,7 @@ mopStartLoad(dst, src, dl_rpr, trans)
  	dllist[slot].a_lseek   = 0;
  
  	dllist[slot].count     = 0;
@@ -9,7 +9,7 @@
  		dllist[slot].dl_bsz = 1492;
  	if (dllist[slot].dl_bsz == 1030)	/* VS/uVAX 2000 needs this */
  		dllist[slot].dl_bsz = 1000;
-@@ -350,10 +350,10 @@
+@@ -348,10 +348,10 @@ mopNextLoad(dst, src, new_count, trans)
  		close(dllist[slot].ldfd);
  		dllist[slot].ldfd = 0;
  		dllist[slot].status = DL_STATUS_FREE;
@@ -22,7 +22,7 @@
  		return;
  	}
  
-@@ -438,7 +438,7 @@
+@@ -436,7 +436,7 @@ mopProcessDL(fd, ii, pkt, index, dst, src, trans, len)
  {
  	u_char  tmpc;
  	u_short moplen;
@@ -31,7 +31,7 @@
  	char    filename[FILENAME_MAX];
  	char    line[100];
  	int     i,nfd,iindex;
-@@ -487,6 +487,8 @@
+@@ -485,6 +485,8 @@ mopProcessDL(fd, ii, pkt, index, dst, src, trans, len)
  		rpr_pgty = mopGetChar(pkt,index);	/* Program Type */
  		
  		tmpc = mopGetChar(pkt,index);		/* Software ID Len */
@@ -40,7 +40,7 @@
  		for (i = 0; i < tmpc; i++) {
  			pfile[i] = mopGetChar(pkt,index);
  			pfile[i+1] = '\0';
-@@ -513,31 +515,32 @@
+@@ -511,31 +513,32 @@ mopProcessDL(fd, ii, pkt, index, dst, src, trans, len)
  		bcopy((char *)src, (char *)(dl_rpr->eaddr), 6);
  		mopProcessInfo(pkt,index,moplen,dl_rpr,trans);
  

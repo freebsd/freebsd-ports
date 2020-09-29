@@ -1,6 +1,6 @@
---- otherOS/pf-snit.c	1996/09/21 19:12:50	1.2
-+++ otherOS/pf-snit.c	2000/02/20 17:45:34	1.3
-@@ -239,7 +239,8 @@
+--- otherOS/pf-snit.c.orig	1996-08-08 11:48:50 UTC
++++ otherOS/pf-snit.c
+@@ -237,7 +237,8 @@ pfAddMulti(s, interface, addr)
  	struct ifreq ifr;
  	int fd;
  	
@@ -10,7 +10,7 @@
  	
  	ifr.ifr_addr.sa_family = AF_UNSPEC;
  	bcopy(addr, ifr.ifr_addr.sa_data, 6);
-@@ -274,7 +275,8 @@
+@@ -272,7 +273,8 @@ char *interface, *addr;
  	struct ifreq ifr;
  	int fd;
  	

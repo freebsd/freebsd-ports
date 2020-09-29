@@ -1,15 +1,16 @@
---- common/pf.c.orig	Tue Aug  6 07:20:27 1996
-+++ common/pf.c	Wed Oct 15 13:02:19 2003
-@@ -56,7 +56,7 @@
+--- common/pf.c.orig	1996-08-06 14:20:27 UTC
++++ common/pf.c
+@@ -56,8 +56,8 @@ static char rcsid[] = "$Id: pf.c,v 1.16 1996/08/06 14:
  #include <strings.h>
  
  #include <syslog.h>
 -#include <varargs.h>
-+
  
++
  #include "common/mopdef.h"
  
-@@ -174,7 +174,8 @@
+ /*
+@@ -174,7 +174,8 @@ pfAddMulti(s, interface, addr)
  	struct ifreq ifr;
  	int	fd;
  	
@@ -19,7 +20,7 @@
  
  	ifr.ifr_addr.sa_family = AF_UNSPEC;
  	bcopy(addr, ifr.ifr_addr.sa_data, 6);
-@@ -209,7 +210,8 @@
+@@ -209,7 +210,8 @@ pfDelMulti(s, interface, addr)
  	struct ifreq ifr;
  	int	fd;
  	

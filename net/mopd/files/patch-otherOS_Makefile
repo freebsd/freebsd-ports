@@ -1,0 +1,11 @@
+--- otherOS/Makefile.orig	1996-08-13 18:44:15 UTC
++++ otherOS/Makefile
+@@ -164,7 +164,7 @@ VERSION: 
+ 
+ version.o: version.c
+ version.c version.h: VERSION
+-	rm -f version.c ; sed 's/.*/char version[] = "&";/' VERSION > version.c
++	rm -f version.c ; sed 's/.*/static char version[] = "&";/' VERSION > version.c
+ 	set `sed 's/\([0-9]*\)\.\([0-9]*\).*/\1 \2/' VERSION` ; \
+ 		{ echo '#define VERSION_MAJOR' $$1 ; \
+ 		  echo '#define VERSION_MINOR' $$2 ; } > version.h
