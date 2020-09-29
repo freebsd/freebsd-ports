@@ -1,3 +1,3 @@
-TIMESTAMP = 1579684136
-SHA256 (tds-fdw-tds_fdw-v2.0.1_GH0.tar.gz) = 031147a980ed502b3e095fda449e3eed65ef1bb97b2bb445217559d10bc0bdc5
-SIZE (tds-fdw-tds_fdw-v2.0.1_GH0.tar.gz) = 62848
+TIMESTAMP = 1601319666
+SHA256 (tds-fdw-tds_fdw-v2.0.2_GH0.tar.gz) = d34973a919a1b3baefe717e496920af26994adbb9ead0f82f6d2cc20bf9a8cbe
+SIZE (tds-fdw-tds_fdw-v2.0.2_GH0.tar.gz) = 63917
