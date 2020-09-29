@@ -1,3 +1,3 @@
-TIMESTAMP = 1538599603
-SHA256 (gnome3/evolution-3.28.5.tar.xz) = bb282ec7caf32872191c9885f3447adb190a7744b3b3cdb29d84b834d47336e0
-SIZE (gnome3/evolution-3.28.5.tar.xz) = 12151396
+TIMESTAMP = 1601303952
+SHA256 (gnome/evolution-3.38.0.tar.xz) = f81cc40f54aa2d059da4f3a94eb09362e81513306c974a41ca7895b9c8957c5d
+SIZE (gnome/evolution-3.38.0.tar.xz) = 12057496

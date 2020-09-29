@@ -1,3 +1,3 @@
-TIMESTAMP = 1527916911
-SHA256 (gnome3/gnome-control-center-3.28.2.tar.xz) = ff9e3d7c1693c6004c8a337eb84452d517259b52330081b6b226a8ac5793d734
-SIZE (gnome3/gnome-control-center-3.28.2.tar.xz) = 5857128
+TIMESTAMP = 1601230613
+SHA256 (gnome/gnome-control-center-3.36.4.tar.xz) = ac02346bcf3391aa5c86ed857d76689fdb6e43c2b4b20d3ec6eab0ea9fecf754
+SIZE (gnome/gnome-control-center-3.36.4.tar.xz) = 6304992

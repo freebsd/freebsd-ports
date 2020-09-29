@@ -7,9 +7,9 @@ Date: Tue, 11 Jul 2017 16:03:26 +0100
 Subject: [PATCH] wayland: Add zwp_linux_dmabuf_v1 support
 
 Index: src/backends/meta-egl.c
---- src/backends/meta-egl.c.orig
+--- src/backends/meta-egl.c.orig	2020-09-07 19:18:23 UTC
 +++ src/backends/meta-egl.c
-@@ -67,8 +67,6 @@ struct _MetaEgl
+@@ -69,8 +69,6 @@ struct _MetaEgl
    PFNEGLSTREAMCONSUMERACQUIREKHRPROC eglStreamConsumerAcquireKHR;
    PFNEGLSTREAMCONSUMERACQUIREATTRIBNVPROC eglStreamConsumerAcquireAttribNV;
  
@@ -18,7 +18,7 @@ Index: src/backends/meta-egl.c
  };
  
  G_DEFINE_TYPE (MetaEgl, meta_egl, G_TYPE_OBJECT)
-@@ -926,51 +924,6 @@ meta_egl_stream_consumer_acquire (MetaEgl     *egl,
+@@ -1019,51 +1017,6 @@ meta_egl_stream_consumer_acquire (MetaEgl     *egl,
    return TRUE;
  }
  
@@ -70,7 +70,7 @@ Index: src/backends/meta-egl.c
  #define GET_EGL_PROC_ADDR(proc) \
    egl->proc = (void *) eglGetProcAddress (#proc);
  
-@@ -1007,8 +960,6 @@ meta_egl_constructed (GObject *object)
+@@ -1100,8 +1053,6 @@ meta_egl_constructed (GObject *object)
    GET_EGL_PROC_ADDR (eglStreamConsumerAcquireKHR);
    GET_EGL_PROC_ADDR (eglStreamConsumerAcquireAttribNV);
  

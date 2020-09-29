@@ -1,3 +1,3 @@
-TIMESTAMP = 1538670224
-SHA256 (gnome3/mutter-3.28.3.tar.xz) = 8904236269295cd62c24cd1d7b64e1d0688fffe4c7386d620dcb342070cd036f
-SIZE (gnome3/mutter-3.28.3.tar.xz) = 3693812
+TIMESTAMP = 1601307300
+SHA256 (gnome/mutter-3.36.6.tar.xz) = 7fab160eecf4299e445e24aa34b5e903745ffcc256f82b7f267cd106e435e034
+SIZE (gnome/mutter-3.36.6.tar.xz) = 2689156

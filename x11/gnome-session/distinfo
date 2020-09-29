@@ -1,3 +1,3 @@
-TIMESTAMP = 1524855068
-SHA256 (gnome3/gnome-session-3.28.1.tar.xz) = b893f75c8d34dbdbbc5c56429a17b59136ac7402e12f384da856dcfc725cd592
-SIZE (gnome3/gnome-session-3.28.1.tar.xz) = 480196
+TIMESTAMP = 1601309787
+SHA256 (gnome/gnome-session-3.38.0.tar.xz) = 7bcc0eb2cdba4b3f6d1b459b3a30873b7bb65b383c1f6a5f63c3e3b5c7943d67
+SIZE (gnome/gnome-session-3.38.0.tar.xz) = 481300

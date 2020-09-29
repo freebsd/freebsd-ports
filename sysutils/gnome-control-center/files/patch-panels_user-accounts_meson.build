@@ -1,6 +1,6 @@
---- panels/user-accounts/meson.build.orig	2018-04-28 22:01:31.903197000 +0200
-+++ panels/user-accounts/meson.build	2018-04-29 08:50:01.767068000 +0200
-@@ -157,7 +157,8 @@
+--- panels/user-accounts/meson.build.orig	2020-07-03 05:10:57 UTC
++++ panels/user-accounts/meson.build
+@@ -157,7 +157,8 @@ sources = common_sources + files(
  )
  
  # Kerberos support

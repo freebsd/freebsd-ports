@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-session
-PORTVERSION=	3.28.1
-PORTREVISION=	3
+PORTVERSION=	3.38.0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Session component for the GNOME 3 desktop
@@ -30,6 +29,7 @@ USE_XORG=	ice sm x11 xcomposite xtrans
 USE_GL=		egl gl glesv2
 INSTALLS_ICONS=	yes
 MESON_ARGS=	-Dsystemd=false \
+		-Dsystemd_session=disable \
 		-Dsystemd_journal=false \
 		-Dconsolekit=true
 BINARY_ALIAS=	python3=${PYTHON_VERSION}

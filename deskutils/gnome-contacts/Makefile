@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-contacts
-PORTVERSION=	3.32.1
+PORTVERSION=	3.38
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 
@@ -30,7 +30,7 @@ LIB_DEPENDS=	libchamplain-0.12.so:graphics/libchamplain \
 		libsecret-1.so:security/libsecret \
 		libsoup-2.4.so:devel/libsoup \
 		libtelepathy-glib.so:net-im/telepathy-glib \
-		libhandy-0.0.so:x11-toolkits/libhandy0
+		libhandy-1.so:x11-toolkits/libhandy
 
 PORTSCOUT=	limitw:1,even
 

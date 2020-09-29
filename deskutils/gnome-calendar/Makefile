@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-calendar
-PORTVERSION=	3.28.2
-PORTREVISION=	2
+PORTVERSION=	3.38.0
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -21,7 +20,8 @@ LIB_DEPENDS=	libical.so:devel/libical \
 		libgweather-3.so:net/libgweather \
 		libgeoclue-2.so:net/geoclue \
 		libgeocode-glib.so:net/geocode-glib \
-		libgoa-1.0.so:net/gnome-online-accounts
+		libgoa-1.0.so:net/gnome-online-accounts \
+		libhandy-0.0.so:x11-toolkits/libhandy0
 RUN_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
 
 PORTSCOUT=	limitw:1,even

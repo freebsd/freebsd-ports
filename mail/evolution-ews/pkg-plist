@@ -1,11 +1,18 @@
 lib/evolution-data-server/addressbook-backends/libebookbackendews.so
+lib/evolution-data-server/addressbook-backends/libebookbackendmicrosoft365.so
 lib/evolution-data-server/calendar-backends/libecalbackendews.so
+lib/evolution-data-server/calendar-backends/libecalbackendmicrosoft365.so
 lib/evolution-data-server/camel-providers/libcamelews.so
 lib/evolution-data-server/camel-providers/libcamelews.urls
+lib/evolution-data-server/camel-providers/libcamelmicrosoft365.so
+lib/evolution-data-server/camel-providers/libcamelmicrosoft365.urls
 lib/evolution-data-server/registry-modules/module-ews-backend.so
+lib/evolution-data-server/registry-modules/module-microsoft365-backend.so
 lib/evolution-ews/libcamelews-priv.so
 lib/evolution-ews/libevolution-ews.so
+lib/evolution-ews/libevolution-microsoft365.so
 lib/evolution/modules/module-ews-configuration.so
+lib/evolution/modules/module-microsoft365-configuration.so
 share/evolution-data-server/ews/windowsZones.xml
 share/evolution/errors/module-ews-configuration.error
 share/locale/as/LC_MESSAGES/evolution-ews.mo
@@ -23,6 +30,7 @@ share/locale/fr/LC_MESSAGES/evolution-ews.mo
 share/locale/gl/LC_MESSAGES/evolution-ews.mo
 share/locale/gu/LC_MESSAGES/evolution-ews.mo
 share/locale/hi/LC_MESSAGES/evolution-ews.mo
+share/locale/hr/LC_MESSAGES/evolution-ews.mo
 share/locale/hu/LC_MESSAGES/evolution-ews.mo
 share/locale/id/LC_MESSAGES/evolution-ews.mo
 share/locale/ja/LC_MESSAGES/evolution-ews.mo
@@ -31,11 +39,13 @@ share/locale/lt/LC_MESSAGES/evolution-ews.mo
 share/locale/lv/LC_MESSAGES/evolution-ews.mo
 share/locale/mr/LC_MESSAGES/evolution-ews.mo
 share/locale/nb/LC_MESSAGES/evolution-ews.mo
+share/locale/nl/LC_MESSAGES/evolution-ews.mo
 share/locale/oc/LC_MESSAGES/evolution-ews.mo
 share/locale/or/LC_MESSAGES/evolution-ews.mo
 share/locale/pl/LC_MESSAGES/evolution-ews.mo
 share/locale/pt/LC_MESSAGES/evolution-ews.mo
 share/locale/pt_BR/LC_MESSAGES/evolution-ews.mo
+share/locale/ro/LC_MESSAGES/evolution-ews.mo
 share/locale/sk/LC_MESSAGES/evolution-ews.mo
 share/locale/sl/LC_MESSAGES/evolution-ews.mo
 share/locale/sr/LC_MESSAGES/evolution-ews.mo
@@ -44,5 +54,6 @@ share/locale/sv/LC_MESSAGES/evolution-ews.mo
 share/locale/ta/LC_MESSAGES/evolution-ews.mo
 share/locale/te/LC_MESSAGES/evolution-ews.mo
 share/locale/tr/LC_MESSAGES/evolution-ews.mo
+share/locale/uk/LC_MESSAGES/evolution-ews.mo
 share/locale/zh_CN/LC_MESSAGES/evolution-ews.mo
 share/metainfo/org.gnome.Evolution-ews.metainfo.xml

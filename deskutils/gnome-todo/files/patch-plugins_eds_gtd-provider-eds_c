@@ -1,0 +1,36 @@
+$OpenBSD: patch-plugins_eds_gtd-provider-eds_c,v 1.1 2019/11/02 10:04:20 ajacoutot Exp $
+
+Fix for evolution-data-server >= 3.34 (From upstream via Arch Linux).
+
+Index: plugins/eds/gtd-provider-eds.c
+--- plugins/eds/gtd-provider-eds.c.orig
++++ plugins/eds/gtd-provider-eds.c
+@@ -554,6 +554,7 @@ gtd_provider_eds_create_task (GtdProvider *provider,
+ 
+   e_cal_client_create_object (client,
+                               e_cal_component_get_icalcomponent (component),
++                              E_CAL_OPERATION_FLAG_NONE,
+                               NULL,
+                               (GAsyncReadyCallback) on_task_created_cb,
+                               new_task);
+@@ -587,6 +588,7 @@ gtd_provider_eds_update_task (GtdProvider *provider,
+   e_cal_client_modify_object (client,
+                               e_cal_component_get_icalcomponent (component),
+                               E_CAL_OBJ_MOD_THIS,
++                              E_CAL_OPERATION_FLAG_NONE,
+                               NULL,
+                               (GAsyncReadyCallback) on_task_modified_cb,
+                               task);
+@@ -616,9 +618,10 @@ gtd_provider_eds_remove_task (GtdProvider *provider,
+   gtd_object_push_loading (GTD_OBJECT (provider));
+ 
+   e_cal_client_remove_object (client,
+-                              id->uid,
+-                              id->rid,
++                              e_cal_component_id_get_uid (id),
++                              e_cal_component_id_get_rid (id),
+                               E_CAL_OBJ_MOD_THIS,
++                              E_CAL_OPERATION_FLAG_NONE,
+                               NULL,
+                               (GAsyncReadyCallback) on_task_removed_cb,
+                               provider);

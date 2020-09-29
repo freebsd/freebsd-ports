@@ -1,0 +1,19 @@
+$OpenBSD: patch-plugins_eds_meson_build,v 1.1 2019/11/02 10:04:20 ajacoutot Exp $
+
+Fix for evolution-data-server >= 3.34 (From upstream via Arch Linux).
+
+Index: plugins/eds/meson.build
+--- plugins/eds/meson.build.orig
++++ plugins/eds/meson.build
+@@ -8,10 +8,9 @@ plugins_ldflags += ['-Wl,--undefined=gtd_plugin_eds_re
+ ################
+ 
+ eds_plugin_deps = [
+-  dependency('libecal-1.2', version: '>= 3.13.90'),
++  dependency('libecal-2.0', version: '>= 3.33.1'),
+   dependency('libedataserver-1.2', version: '>= 3.17.1'),
+   dependency('libedataserverui-1.2', version: '>= 3.17.1'),
+-  dependency('libical', version: '>= 0.43'),
+ ]
+ 
+ eds_plugin_deps += gnome_todo_deps

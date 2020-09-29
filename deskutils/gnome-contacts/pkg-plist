@@ -5,6 +5,7 @@ share/applications/org.gnome.Contacts.desktop
 share/dbus-1/services/org.gnome.Contacts.SearchProvider.service
 share/dbus-1/services/org.gnome.Contacts.service
 share/gnome-shell/search-providers/org.gnome.Contacts.search-provider.ini
+share/icons/hicolor/scalable/apps/org.gnome.Contacts.Devel.svg
 share/icons/hicolor/scalable/apps/org.gnome.Contacts.svg
 share/icons/hicolor/symbolic/apps/org.gnome.Contacts-symbolic.svg
 share/locale/af/LC_MESSAGES/gnome-contacts.mo
@@ -48,9 +49,11 @@ share/locale/kn/LC_MESSAGES/gnome-contacts.mo
 share/locale/ko/LC_MESSAGES/gnome-contacts.mo
 share/locale/lt/LC_MESSAGES/gnome-contacts.mo
 share/locale/lv/LC_MESSAGES/gnome-contacts.mo
+share/locale/mjw/LC_MESSAGES/gnome-contacts.mo
 share/locale/mk/LC_MESSAGES/gnome-contacts.mo
 share/locale/ml/LC_MESSAGES/gnome-contacts.mo
 share/locale/mr/LC_MESSAGES/gnome-contacts.mo
+share/locale/ms/LC_MESSAGES/gnome-contacts.mo
 share/locale/nb/LC_MESSAGES/gnome-contacts.mo
 share/locale/ne/LC_MESSAGES/gnome-contacts.mo
 share/locale/nl/LC_MESSAGES/gnome-contacts.mo

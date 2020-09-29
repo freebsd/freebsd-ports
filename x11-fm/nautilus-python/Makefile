@@ -2,6 +2,7 @@
 
 PORTNAME=	nautilus-python
 DISTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	x11-fm gnome python
 MASTER_SITES=	GNOME
 

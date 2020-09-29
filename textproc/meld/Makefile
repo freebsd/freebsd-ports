@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	meld
-PORTVERSION=	3.20.1
+PORTVERSION=	3.21.0
 CATEGORIES=	textproc devel python
 MASTER_SITES=	GNOME
 
@@ -18,7 +18,7 @@ RUN_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
 USES=		desktop-file-utils gettext gnome python:3.4+ shared-mime-info \
 		shebangfix tar:xz
 USE_PYTHON=	distutils noflavors
-USE_GNOME=	gtksourceview3 intltool libxml2:build pygobject3
+USE_GNOME=	gtksourceview4 intltool libxml2:build pygobject3
 
 SHEBANG_FILES=	bin/meld
 GLIB_SCHEMAS=	org.gnome.meld.gschema.xml

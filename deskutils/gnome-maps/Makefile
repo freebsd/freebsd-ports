@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-maps
-PORTVERSION=	3.28.2
+PORTVERSION=	3.38.0
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -31,13 +31,12 @@ RUN_DEPENDS=	geoclue>=0:net/geoclue
 
 PORTSCOUT=	limitw:1,even
 
-USES=		desktop-file-utils gettext gl gmake gnome libtool \
-		localbase pathfix pkgconfig tar:xz xorg
+USES=		desktop-file-utils gettext gl gnome meson \
+		pkgconfig tar:xz xorg
 USE_GNOME=	cairo gtk30 intltool libxml2
 USE_GL=		egl
 USE_LDCONFIG=	yes
 USE_XORG=	x11 xcomposite xdamage xext xfixes xi xrandr
-GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 

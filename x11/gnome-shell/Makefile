@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-shell
-PORTVERSION=	3.28.3
-PORTREVISION=	8
+PORTVERSION=	3.36.6
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Next generation GNOME desktop shell
@@ -16,10 +15,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	docbook-xsl>=0:textproc/docbook-xsl \
 		sassc:textproc/sassc \
-		gnome-control-center:sysutils/gnome-control-center
+		gnome-control-center:sysutils/gnome-control-center \
+		a2x:textproc/asciidoc
 LIB_DEPENDS=	libstartup-notification-1.so:x11/startup-notification \
 		libdrm.so:graphics/libdrm \
-		libmutter-2.so:x11-wm/mutter \
+		libmutter-6.so:x11-wm/mutter \
 		libatk-bridge-2.0.so:accessibility/at-spi2-atk \
 		libsoup-2.4.so:devel/libsoup \
 		libjson-glib-1.0.so:devel/json-glib \
@@ -34,8 +34,11 @@ LIB_DEPENDS=	libstartup-notification-1.so:x11/startup-notification \
 		libcanberra.so:audio/libcanberra \
 		libcanberra-gtk3.so:audio/libcanberra-gtk3 \
 		libp11-kit.so:security/p11-kit \
-		libgjs.so:lang/gjs
-RUN_DEPENDS=	gnome-control-center:sysutils/gnome-control-center
+		libgjs.so:lang/gjs \
+		libgraphene-1.0.so:graphics/graphene \
+		libgnome-autoar-0.so:archivers/gnome-autoar
+RUN_DEPENDS=	gnome-control-center:sysutils/gnome-control-center \
+		gdm:x11/gdm
 
 PORTSCOUT=	limitw:1,even
 
@@ -43,7 +46,7 @@ USES=		compiler:c11 cpe gettext gl gnome libtool localbase meson \
 		pathfix perl5 pkgconfig python:3.4+ shebangfix tar:xz \
 		webplugin:native xorg
 USE_GNOME=	cairo evolutiondataserver3 gdkpixbuf2 introspection \
-		libxslt:build libxml2
+		libxslt:build libxml2 gnomedesktop3
 USE_XORG=	x11 xcomposite xdamage xext xfixes xi xrandr xtst
 USE_GL=		egl gbm
 USE_GSTREAMER1=	yes
@@ -51,16 +54,19 @@ USE_PERL5=	build
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	src/gnome-shell-perf-tool.in \
 		src/gnome-shell-extension-tool.in
+BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 WEBPLUGIN_NAME=	libgnome-shell-browser-plugin.so
 WEBPLUGIN_DIR=	${PREFIX}/lib/mozilla/plugins/
 WEBPLUGIN_FILES=libgnome-shell-browser-plugin.so
 
 MESON_ARGS=	-Dsystemd=false \
-		-Dnetworkmanager=false
+		-Dnetworkmanager=false \
+		-Dpython=${PYTHON_CMD}
 CPE_VENDOR=	gnome
 
-GLIB_SCHEMAS=	org.gnome.shell.gschema.xml
+GLIB_SCHEMAS=	org.gnome.shell.gschema.xml \
+		00_org.gnome.shell.gschema.override
 
 .if exists(/usr/bin/ld.lld) && ${/usr/bin/ld:L:tA} != /usr/bin/ld.lld
 # Work around "New rpath must not be longer than the old one."
@@ -68,12 +74,7 @@ LDFLAGS+=	-fuse-ld=lld
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|python3|${PYTHON_VERSION}|g' \
-		${WRKSRC}/meson.build
-	@${REINPLACE_CMD} -e 's|applications.menu|gnome-applications.menu|g' \
-		${WRKSRC}/src/shell-app-system.c
-
-pre-build:
-	@cd ${BUILD_WRKSRC} && ninja src/st/st-scroll-view-fade-generated.c
+	${REINPLACE_CMD} -e "s,%%PYTHON_CMD%%,${PYTHON_CMD},g" \
+		${WRKSRC}/src/meson.build
 
 .include <bsd.port.mk>

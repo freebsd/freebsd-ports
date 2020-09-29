@@ -30,6 +30,7 @@ share/locale/br/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/bs/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/ca/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/ca@valencia/LC_MESSAGES/gnome-session-3.0.mo
+share/locale/ckb/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/crh/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/cs/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/csb/LC_MESSAGES/gnome-session-3.0.mo
@@ -66,6 +67,7 @@ share/locale/is/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/it/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/ja/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/ka/LC_MESSAGES/gnome-session-3.0.mo
+share/locale/kab/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/kk/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/km/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/kn/LC_MESSAGES/gnome-session-3.0.mo
@@ -76,6 +78,7 @@ share/locale/lv/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/mai/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/mg/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/mi/LC_MESSAGES/gnome-session-3.0.mo
+share/locale/mjw/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/mk/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/ml/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/mn/LC_MESSAGES/gnome-session-3.0.mo

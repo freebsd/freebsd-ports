@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bijiben
-PORTVERSION=	3.28.3
-PORTREVISION=	2
+PORTVERSION=	3.38.0
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -20,7 +19,8 @@ LIB_DEPENDS=	libtracker-control-2.0.so:sysutils/tracker \
 		libgoa-1.0.so:net/gnome-online-accounts \
 		libical.so:devel/libical \
 		libzeitgeist-2.0.so:sysutils/zeitgeist \
-		libuuid.so:misc/e2fsprogs-libuuid
+		libuuid.so:misc/e2fsprogs-libuuid \
+		libhandy-0.0.so:x11-toolkits/libhandy0
 
 PORTSCOUT=	limitw:1,even
 
@@ -33,7 +33,6 @@ INSTALLS_ICONS=	yes
 MESON_ARGS=	-Dzeitgeist=true
 SHEBANG_FILES=	${WRKSRC}/build-aux/meson_post_install.py
 
-GLIB_SCHEMAS=	org.gnome.bijiben.gschema.xml \
-		org.gnome.bijiben.enums.xml
+GLIB_SCHEMAS=	org.gnome.Notes.gschema.xml
 
 .include <bsd.port.mk>

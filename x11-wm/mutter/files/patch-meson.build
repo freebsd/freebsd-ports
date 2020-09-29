@@ -1,0 +1,25 @@
+--- meson.build.orig	2020-09-28 15:41:47 UTC
++++ meson.build
+@@ -320,22 +320,6 @@ if buildtype != 'plain'
+     '-Wmissing-include-dirs',
+     '-Wlogical-op',
+     '-Wignored-qualifiers',
+-    '-Werror=redundant-decls',
+-    '-Werror=implicit',
+-    '-Werror=nonnull',
+-    '-Werror=init-self',
+-    '-Werror=main',
+-    '-Werror=missing-braces',
+-    '-Werror=sequence-point',
+-    '-Werror=return-type',
+-    '-Werror=trigraphs',
+-    '-Werror=array-bounds',
+-    '-Werror=write-strings',
+-    '-Werror=address',
+-    '-Werror=int-to-pointer-cast',
+-    '-Werror=pointer-to-int-cast',
+-    '-Werror=empty-body',
+-    '-Werror=write-strings',
+   ]
+   supported_warnings = cc.get_supported_arguments(all_warnings)
+   add_project_arguments(supported_warnings, language: 'c')

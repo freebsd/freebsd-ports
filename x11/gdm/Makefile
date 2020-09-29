@@ -11,6 +11,9 @@ DIST_SUBDIR=	gnome
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME 3 display manager
 
+LICENSE=	GPLv2
+LICENSE_FILES=	${WRKSRC}/COPYING
+
 BUILD_DEPENDS=	zenity>=3.0.0:x11/zenity \
 		itstool:textproc/itstool \
 		iso-codes>=0:misc/iso-codes

@@ -1,6 +1,6 @@
---- panels/keyboard/meson.build.orig	2018-04-29 09:38:45.338206000 +0200
-+++ panels/keyboard/meson.build	2018-04-29 09:40:44.959934000 +0200
-@@ -30,7 +30,7 @@
+--- panels/keyboard/meson.build.orig	2020-07-03 05:10:57 UTC
++++ panels/keyboard/meson.build
+@@ -30,7 +30,7 @@ configure_file(
    input: pc + '.in',
    output: pc,
    install: true,

@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	mutter
-PORTVERSION=	3.28.3
-PORTREVISION=	2
+PORTVERSION=	3.36.6
 CATEGORIES=	x11-wm
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Window and compositing manager based on Clutter
@@ -16,7 +15,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	zenity>=3.0.0:x11/zenity \
 		xkeyboard-config>=0:x11/xkeyboard-config \
-		gsettings-desktop-schemas>=3.4.0:devel/gsettings-desktop-schemas
+		gsettings-desktop-schemas>=3.4.0:devel/gsettings-desktop-schemas \
+		gnome-settings-daemon>0:sysutils/gnome-settings-daemon \
+		evdev-proto>0:devel/evdev-proto
 LIB_DEPENDS=	libstartup-notification-1.so:x11/startup-notification \
 		libfribidi.so:converters/fribidi \
 		libxkbcommon.so:x11/libxkbcommon \
@@ -27,38 +28,41 @@ LIB_DEPENDS=	libstartup-notification-1.so:x11/startup-notification \
 		libxkbfile.so:x11/libxkbfile \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
-		libdrm.so:graphics/libdrm
+		libdrm.so:graphics/libdrm \
+		libpipewire-0.3.so:multimedia/pipewire \
+		libgraphene-1.0.so:graphics/graphene
 RUN_DEPENDS=	zenity>=3.0.0:x11/zenity \
 		xkeyboard-config>=0:x11/xkeyboard-config \
-		gsettings-desktop-schemas>=3.4.0:devel/gsettings-desktop-schemas
+		gsettings-desktop-schemas>=3.4.0:devel/gsettings-desktop-schemas \
+		gnome-settings-daemon>0:sysutils/gnome-settings-daemon
 
 PORTSCOUT=	limitw:1,even
 
-USES=		compiler:c++0x gettext gl gmake gnome libtool localbase pathfix \
+USES=		compiler:c++0x gettext gl gnome localbase meson \
 		pkgconfig tar:xz xorg
 USE_GL=		egl
 USE_GNOME=	cairo gdkpixbuf2 gnomedesktop3 introspection
 USE_XORG=	ice sm x11 xcb xcomposite xcursor xdamage xext xfixes \
 		xi xinerama xrandr xrender xtst
-GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CFLAGS+=	-Wno-unknown-warning-option \
 		-Wno-format-nonliteral
 CPPFLAGS+=	-fno-omit-frame-pointer
-CONFIGURE_ARGS=	--without-libwacom \
-		--disable-wayland
+MESON_ARGS=	-Dlibwacom=false \
+		-Dwayland=false \
+		-Dudev=false \
+		-Dnative_backend=false \
+		-Dprofiler=false \
+		-Dtests=false \
+		-Dsm=true
 
 # Required by embedded cogl/clutter forks.
-CONFIGURE_ARGS+=	--with-x \
-		--with-gl-libname=libGL.so \
-		--with-gles1-libname=libGLESv1_CM \
-		--with-gles2-libname=libGLESv2 \
-		--enable-kms-egl-platform=yes \
-		--enable-xlib-egl-platform=yes \
-		--disable-wayland-egl-server \
-		--enable-compile-warnings=yes
+MESON_ARGS+=	-Dopengl_libname=libGL.so \
+		-Dgles2_libname=libGLESv2
 
-INSTALL_TARGET=	install-strip
+# Disable remote_desktop for now because it requires memfd which only appears current
+MESON_ARGS+=	-Dremote_desktop=false
+
 GLIB_SCHEMAS=	org.gnome.mutter.gschema.xml \
 		org.gnome.mutter.wayland.gschema.xml
 

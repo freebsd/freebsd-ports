@@ -3,6 +3,7 @@
 
 PORTNAME=	gnome-font-viewer
 PORTVERSION=	3.34.0
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome

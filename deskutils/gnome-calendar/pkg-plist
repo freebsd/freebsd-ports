@@ -2,14 +2,10 @@ bin/gnome-calendar
 share/applications/org.gnome.Calendar.desktop
 share/dbus-1/services/org.gnome.Calendar.service
 share/gnome-shell/search-providers/org.gnome.Calendar.search-provider.ini
-share/icons/hicolor/16x16/apps/org.gnome.Calendar.png
-share/icons/hicolor/22x22/apps/org.gnome.Calendar.png
-share/icons/hicolor/24x24/apps/org.gnome.Calendar.png
-share/icons/hicolor/256x256/apps/org.gnome.Calendar.png
-share/icons/hicolor/32x32/apps/org.gnome.Calendar.png
-share/icons/hicolor/48x48/apps/org.gnome.Calendar.png
-share/icons/hicolor/512x512/apps/org.gnome.Calendar.png
+share/icons/hicolor/scalable/apps/org.gnome.Calendar.Devel.svg
+share/icons/hicolor/scalable/apps/org.gnome.Calendar.svg
 share/icons/hicolor/symbolic/apps/org.gnome.Calendar-symbolic.svg
+share/icons/hicolor/symbolic/apps/org.gnome.Calendar.Devel-symbolic.svg
 share/locale/af/LC_MESSAGES/gnome-calendar.mo
 share/locale/an/LC_MESSAGES/gnome-calendar.mo
 share/locale/ar/LC_MESSAGES/gnome-calendar.mo
@@ -17,6 +13,7 @@ share/locale/be/LC_MESSAGES/gnome-calendar.mo
 share/locale/bs/LC_MESSAGES/gnome-calendar.mo
 share/locale/ca/LC_MESSAGES/gnome-calendar.mo
 share/locale/ca@valencia/LC_MESSAGES/gnome-calendar.mo
+share/locale/ckb/LC_MESSAGES/gnome-calendar.mo
 share/locale/cs/LC_MESSAGES/gnome-calendar.mo
 share/locale/da/LC_MESSAGES/gnome-calendar.mo
 share/locale/de/LC_MESSAGES/gnome-calendar.mo
@@ -44,7 +41,9 @@ share/locale/kk/LC_MESSAGES/gnome-calendar.mo
 share/locale/ko/LC_MESSAGES/gnome-calendar.mo
 share/locale/lt/LC_MESSAGES/gnome-calendar.mo
 share/locale/lv/LC_MESSAGES/gnome-calendar.mo
+share/locale/mjw/LC_MESSAGES/gnome-calendar.mo
 share/locale/ml/LC_MESSAGES/gnome-calendar.mo
+share/locale/ms/LC_MESSAGES/gnome-calendar.mo
 share/locale/nb/LC_MESSAGES/gnome-calendar.mo
 share/locale/ne/LC_MESSAGES/gnome-calendar.mo
 share/locale/nl/LC_MESSAGES/gnome-calendar.mo
@@ -60,6 +59,7 @@ share/locale/sl/LC_MESSAGES/gnome-calendar.mo
 share/locale/sr/LC_MESSAGES/gnome-calendar.mo
 share/locale/sr@latin/LC_MESSAGES/gnome-calendar.mo
 share/locale/sv/LC_MESSAGES/gnome-calendar.mo
+share/locale/ta/LC_MESSAGES/gnome-calendar.mo
 share/locale/tg/LC_MESSAGES/gnome-calendar.mo
 share/locale/th/LC_MESSAGES/gnome-calendar.mo
 share/locale/tr/LC_MESSAGES/gnome-calendar.mo
