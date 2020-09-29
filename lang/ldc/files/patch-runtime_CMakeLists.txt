@@ -1,0 +1,11 @@
+--- runtime/CMakeLists.txt.orig	2020-07-13 17:43:03 UTC
++++ runtime/CMakeLists.txt
+@@ -134,6 +134,8 @@ if("${C_SYSTEM_LIBS}" STREQUAL "AUTO")
+         set(C_SYSTEM_LIBS m c)
+     elseif("${TARGET_SYSTEM}" MATCHES "Linux")
+         set(C_SYSTEM_LIBS m pthread rt dl)
++    elseif("${TARGET_SYSTEM}" MATCHES "FreeBSD")
++        set(C_SYSTEM_LIBS m pthread execinfo)
+     else()
+         set(C_SYSTEM_LIBS m pthread)
+     endif()

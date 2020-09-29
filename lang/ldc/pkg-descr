@@ -1,10 +1,10 @@
-The LDC project aims to provide a portable D programming language compiler 
+The LDC project aims to provide a portable D programming language compiler
 with modern optimization and code generation capabilities.
 
-The compiler uses the official DMD frontends to support the latest version of 
+The compiler uses the official DMD frontends to support the latest version of
 D2, and relies on the LLVM Core libraries for code generation.
 
-LDC is fully Open Source; the parts of the code not taken/adapted from other 
+LDC is fully Open Source; the parts of the code not taken/adapted from other
 projects are BSD-licensed (see the LICENSE file for details).
 
 WWW: http://wiki.dlang.org/LDC
