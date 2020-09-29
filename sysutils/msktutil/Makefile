@@ -3,6 +3,7 @@
 
 PORTNAME=	msktutil
 PORTVERSION=	1.1
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -13,6 +14,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libudns.so:dns/udns
+RUN_DEPENDS=	cyrus-sasl-gssapi>0:security/cyrus-sasl2-gssapi
 
 USES=		autoreconf ssl
 USE_GITHUB=	yes
