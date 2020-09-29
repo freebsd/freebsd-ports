@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	azure_sdk
-PORTVERSION=	0.63.0
+PORTVERSION=	0.64.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -48,6 +48,7 @@ RUN_DEPENDS=	rubygem-azure-storage>=0.15.0.preview<0.15:devel/rubygem-azure-stor
 		rubygem-azure_mgmt_appconfiguration>=0.17.4<0.18:devel/rubygem-azure_mgmt_appconfiguration \
 		rubygem-azure_mgmt_attestation>=0.17.1<0.18:devel/rubygem-azure_mgmt_attestation \
 		rubygem-azure_mgmt_authorization>=0.18.5<0.19:devel/rubygem-azure_mgmt_authorization \
+		rubygem-azure_mgmt_automanage>=0.17.0<0.18:devel/rubygem-azure_mgmt_automanage \
 		rubygem-azure_mgmt_automation>=0.17.3<0.18:devel/rubygem-azure_mgmt_automation \
 		rubygem-azure_mgmt_azurestack>=0.17.2<0.18:devel/rubygem-azure_mgmt_azurestack \
 		rubygem-azure_mgmt_azurestack_hci>=0.17.0<0.18:devel/rubygem-azure_mgmt_azurestack_hci \
@@ -75,6 +76,7 @@ RUN_DEPENDS=	rubygem-azure-storage>=0.15.0.preview<0.15:devel/rubygem-azure-stor
 		rubygem-azure_mgmt_deployment_manager>=0.17.1<0.18:devel/rubygem-azure_mgmt_deployment_manager \
 		rubygem-azure_mgmt_dev_spaces>=0.17.3<0.18:devel/rubygem-azure_mgmt_dev_spaces \
 		rubygem-azure_mgmt_devtestlabs>=0.18.1<0.19:devel/rubygem-azure_mgmt_devtestlabs \
+		rubygem-azure_mgmt_digitaltwins>=0.17.0<0.18:devel/rubygem-azure_mgmt_digitaltwins \
 		rubygem-azure_mgmt_dns>=0.17.5<0.18:devel/rubygem-azure_mgmt_dns \
 		rubygem-azure_mgmt_edgegateway>=0.18.1<0.19:devel/rubygem-azure_mgmt_edgegateway \
 		rubygem-azure_mgmt_event_grid>=0.20.2<0.21:devel/rubygem-azure_mgmt_event_grid \
@@ -138,7 +140,7 @@ RUN_DEPENDS=	rubygem-azure-storage>=0.15.0.preview<0.15:devel/rubygem-azure-stor
 		rubygem-azure_mgmt_sql>=0.19.1<0.20:devel/rubygem-azure_mgmt_sql \
 		rubygem-azure_mgmt_sqlvirtualmachine>=0.18.2<0.19:devel/rubygem-azure_mgmt_sqlvirtualmachine \
 		rubygem-azure_mgmt_stor_simple8000_series>=0.17.3<0.18:devel/rubygem-azure_mgmt_stor_simple8000_series \
-		rubygem-azure_mgmt_storage>=0.21.2<0.22:devel/rubygem-azure_mgmt_storage \
+		rubygem-azure_mgmt_storage>=0.22.0<0.23:devel/rubygem-azure_mgmt_storage \
 		rubygem-azure_mgmt_storagecache>=0.18.1<0.19:devel/rubygem-azure_mgmt_storagecache \
 		rubygem-azure_mgmt_storagesync>=0.18.1<0.19:devel/rubygem-azure_mgmt_storagesync \
 		rubygem-azure_mgmt_stream_analytics>=0.17.3<0.18:devel/rubygem-azure_mgmt_stream_analytics \
