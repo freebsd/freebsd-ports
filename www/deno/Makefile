@@ -2,8 +2,7 @@
 
 PORTNAME=	deno
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.1
-PORTREVISION=	1
+DISTVERSION=	1.4.2
 CATEGORIES=	www
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -11,6 +10,8 @@ COMMENT=	Secure JavaScript and TypeScript runtime
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN_i386=	cargo:warning=c/freebsd.c:31:10: error: conflicting types for 'get_cpu_speed'
 
 BUILD_DEPENDS=	binutils>0:devel/binutils \
 		gn:devel/gn \
