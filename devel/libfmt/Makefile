@@ -1,20 +1,20 @@
 # $FreeBSD$
 
-PORTNAME=	libfmt
+PORTNAME=	fmt
 # Make sure to check devel/spdlog consumers too
-DISTVERSION=	7.0.3
+PORTVERSION=	7.0.3
+MASTER_SITES=	https://github.com/fmtlib/fmt/releases/download/${PORTVERSION}/
 CATEGORIES=	devel
+PKGNAMEPREFIX=	lib
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Formatting library for C++
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
-USES=		cmake compiler:c++11-lang
-USE_GITHUB=	yes
-GH_ACCOUNT=	fmtlib
-GH_PROJECT=	fmt
+USES=		cmake compiler:c++11-lang zip
+
 USE_LDCONFIG=	yes
 
 CMAKE_OFF=	FMT_DOC FMT_TEST
