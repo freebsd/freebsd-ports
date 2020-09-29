@@ -12,6 +12,9 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Callback Framework for C++
 
+DEPRECATED=	Use newer version
+EXPIRATION_DATE=	2020-10-30
+
 LICENSE=	LGPL21
 
 GNU_CONFIGURE=	yes
