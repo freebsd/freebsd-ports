@@ -1,8 +1,9 @@
 bin/gnome-terminal
-%%NAUTILUS%%lib/nautilus/extensions-3.0/libterminal-nautilus.a
-%%NAUTILUS%%lib/nautilus/extensions-3.0/libterminal-nautilus.so
-@comment lib/systemd/user/gnome-terminal-server.service
+lib/nautilus/extensions-3.0/libterminal-nautilus.a
+lib/nautilus/extensions-3.0/libterminal-nautilus.so
+lib/systemd/user/gnome-terminal-server.service
 libexec/gnome-terminal-server
+man/man1/gnome-terminal.1.gz
 share/applications/org.gnome.Terminal.desktop
 share/dbus-1/services/org.gnome.Terminal.service
 share/gnome-shell/search-providers/gnome-terminal-search-provider.ini
@@ -505,6 +506,37 @@ share/help/sv/gnome-terminal/txt-copy-paste.page
 share/help/sv/gnome-terminal/txt-links.page
 share/help/sv/gnome-terminal/txt-search.page
 share/help/sv/gnome-terminal/txt-select-text.page
+share/help/uk/gnome-terminal/adv-keyboard-shortcuts.page
+share/help/uk/gnome-terminal/app-colors.page
+share/help/uk/gnome-terminal/app-cursor.page
+share/help/uk/gnome-terminal/app-fonts.page
+share/help/uk/gnome-terminal/app-fullscreen.page
+share/help/uk/gnome-terminal/app-terminal-sizes.page
+share/help/uk/gnome-terminal/app-zoom.page
+share/help/uk/gnome-terminal/gs-execute-commands.page
+share/help/uk/gnome-terminal/gs-tabs.page
+share/help/uk/gnome-terminal/index.page
+share/help/uk/gnome-terminal/introduction.page
+share/help/uk/gnome-terminal/legal.xml
+share/help/uk/gnome-terminal/overview.page
+share/help/uk/gnome-terminal/pref-bell.page
+share/help/uk/gnome-terminal/pref-custom-command.page
+share/help/uk/gnome-terminal/pref-custom-exit.page
+share/help/uk/gnome-terminal/pref-keyboard-access.page
+share/help/uk/gnome-terminal/pref-login-shell.page
+share/help/uk/gnome-terminal/pref-menubar.page
+share/help/uk/gnome-terminal/pref-profile-char-width.page
+share/help/uk/gnome-terminal/pref-profile-encoding.page
+share/help/uk/gnome-terminal/pref-profiles.page
+share/help/uk/gnome-terminal/pref-scrolling.page
+share/help/uk/gnome-terminal/pref-tab-window.page
+share/help/uk/gnome-terminal/pref-user-input.page
+share/help/uk/gnome-terminal/pref.page
+share/help/uk/gnome-terminal/prob-reset.page
+share/help/uk/gnome-terminal/txt-copy-paste.page
+share/help/uk/gnome-terminal/txt-links.page
+share/help/uk/gnome-terminal/txt-search.page
+share/help/uk/gnome-terminal/txt-select-text.page
 share/icons/hicolor/scalable/apps/org.gnome.Terminal.svg
 share/icons/hicolor/symbolic/apps/org.gnome.Terminal-symbolic.svg
 share/locale/am/LC_MESSAGES/gnome-terminal.mo
@@ -620,3 +652,4 @@ share/metainfo/org.gnome.Terminal.appdata.xml
 @dir share/help/ro/gnome-terminal/figures
 @dir share/help/ru/gnome-terminal/figures
 @dir share/help/sv/gnome-terminal/figures
+@dir share/help/uk/gnome-terminal/figures

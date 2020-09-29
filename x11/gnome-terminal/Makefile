@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-terminal
-PORTVERSION=	3.36.2
-PORTREVISION=	1
+PORTVERSION=	3.38.0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Terminal component for the GNOME 3 Desktop
@@ -16,7 +15,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas \
 		itstool:textproc/itstool \
-		vala:lang/vala
+		vala:lang/vala \
+		xsltproc:textproc/libxslt \
+		docbook-xsl>0:textproc/docbook-xsl
 LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid \
 		libgnutls.so:security/gnutls \
 		libfribidi.so:converters/fribidi \
