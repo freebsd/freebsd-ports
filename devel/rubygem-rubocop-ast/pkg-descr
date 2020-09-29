@@ -1,0 +1,8 @@
+RuboCop AST contains the classes needed by RuboCop to deal with Ruby's AST, in
+particular:
+- RuboCop::AST::Node
+- RuboCop::AST::NodePattern (doc)
+
+This gem may be used independently from the main RuboCop gem.
+
+WWW: https://github.com/rubocop-hq/rubocop-ast
