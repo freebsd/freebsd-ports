@@ -2,14 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	metacity
-PORTVERSION=	3.18.3
-PORTREVISION=	2
+PORTVERSION=	3.36.1
 CATEGORIES=	x11-wm
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Window manager for the adult in you
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	zenity>=3.0.0:x11/zenity \
 		itstool:textproc/itstool \
@@ -30,6 +31,8 @@ USE_GNOME=	gnomeprefix gtk30 intlhack libxml2:build
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
-GLIB_SCHEMAS=	org.gnome.metacity.gschema.xml
+GLIB_SCHEMAS=	org.gnome.metacity.gschema.xml \
+		org.gnome.metacity.keybindings.gschema.xml \
+		org.gnome.metacity.theme.gschema.xml
 
 .include <bsd.port.mk>
