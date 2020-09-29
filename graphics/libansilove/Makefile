@@ -3,6 +3,7 @@
 
 PORTNAME=	libansilove
 PORTVERSION=	1.2.5
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -17,6 +18,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	ansilove
 
 USES=		cmake
+USE_LDCONFIG=	yes
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
