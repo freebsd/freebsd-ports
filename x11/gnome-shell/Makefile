@@ -74,7 +74,7 @@ LDFLAGS+=	-fuse-ld=lld
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e "s,%%PYTHON_CMD%%,${PYTHON_CMD},g" \
-		${WRKSRC}/src/meson.build
+	${REINPLACE_CMD} -e "s,python3,${PYTHON_VERSION},g" \
+		${WRKSRC}/meson.build
 
 .include <bsd.port.mk>
