@@ -201,5 +201,6 @@ share/locale/uk/LC_MESSAGES/colord.mo
 share/locale/zh_CN/LC_MESSAGES/colord.mo
 share/locale/zh_TW/LC_MESSAGES/colord.mo
 share/polkit-1/actions/org.freedesktop.color.policy
+%%VALA%%share/vala/vapi/colord.vapi
 @dir(colord,colord,0755) /var/db/colord/icc
 @dir(colord,colord,0755) /var/db/colord

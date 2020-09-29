@@ -3,6 +3,7 @@
 
 PORTNAME=	colord
 PORTVERSION=	1.3.5
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://www.freedesktop.org/software/colord/releases/
 
@@ -40,12 +41,18 @@ INSTALL_TARGET=	install-strip
 GLIB_SCHEMAS=	org.freedesktop.ColorHelper.gschema.xml
 
 OPTIONS_SUB=	yes
-OPTIONS_DEFINE=	MANPAGES PPROFILES
+OPTIONS_DEFINE=	MANPAGES PPROFILES VALA
+OPTIONS_DEFAULT=VALA
 
-MANPAGES_BUILD_DEPENDS=	docbook2html:textproc/docbook-utils \
-			docbook-sgml>0:textproc/docbook-sgml
-PPROFILES_DESC=		Build extra print profiles (long build time)
+PPROFILES_DESC=	Build extra print profiles (long build time)
+VALA_DESC=	Build Vala language bindings
+
+MANPAGES_BUILD_DEPENDS=		docbook2html:textproc/docbook-utils \
+				docbook-sgml>0:textproc/docbook-sgml
 PPROFILES_CONFIGURE_ENABLE=	print-profiles
+VALA_CONFIGURE_ENABLE=		vala
+VALA_BUILD_DEPENDS=		vapigen:lang/vala
+MAKE_ENV=		PYTHONDONTWRITEBYTECODE=1
 
 .include <bsd.port.options.mk>
 
