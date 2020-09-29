@@ -6,7 +6,7 @@ PORTVERSION=	4.1.3
 CATEGORIES=	graphics textproc
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	ANSi / ASCII art to PNG converter
+COMMENT=	ANSI / ASCII art to PNG converter
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
