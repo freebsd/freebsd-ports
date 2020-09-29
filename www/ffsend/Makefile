@@ -2,7 +2,7 @@
 
 PORTNAME=	ffsend
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.66
+DISTVERSION=	0.2.67
 CATEGORIES=	www
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -25,7 +25,7 @@ RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss \
 USES=		cargo localbase:ldflags python:build,3.5+ ssl xorg
 USE_GITLAB=	yes
 GL_ACCOUNT=	timvisee
-GL_COMMIT=	3a90b0b0b1b787c9170afa934f884326c14ca908
+GL_COMMIT=	ed34588184d8ac493edceb7b9f500344ae21148b
 USE_XORG=	xcb
 
 CARGO_CRATES=	addr2line-0.13.0 \
@@ -58,7 +58,7 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		cfg-if-0.1.10 \
 		chbs-0.0.10 \
 		checked_int_cast-1.0.0 \
-		chrono-0.4.15 \
+		chrono-0.4.18 \
 		clap-2.33.3 \
 		clipboard-0.5.0 \
 		clipboard-win-2.2.0 \
@@ -113,7 +113,7 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		gimli-0.22.0 \
 		h2-0.2.6 \
 		hashbrown-0.9.0 \
-		hermit-abi-0.1.15 \
+		hermit-abi-0.1.16 \
 		hkdf-0.8.0 \
 		hmac-0.7.1 \
 		http-0.2.1 \
@@ -175,16 +175,16 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		pbr-1.0.3 \
 		percent-encoding-1.0.1 \
 		percent-encoding-2.1.0 \
-		pin-project-0.4.23 \
-		pin-project-internal-0.4.23 \
-		pin-project-lite-0.1.7 \
+		pin-project-0.4.24 \
+		pin-project-internal-0.4.24 \
+		pin-project-lite-0.1.8 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.18 \
 		ppv-lite86-0.2.9 \
 		prettytable-rs-0.8.0 \
 		proc-macro-hack-0.5.18 \
 		proc-macro-nested-0.1.6 \
-		proc-macro2-1.0.21 \
+		proc-macro2-1.0.23 \
 		qr2term-0.2.1 \
 		qrcode-0.12.0 \
 		quote-1.0.7 \
@@ -246,7 +246,7 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		strsim-0.8.0 \
 		strsim-0.9.3 \
 		subtle-1.0.0 \
-		syn-1.0.41 \
+		syn-1.0.42 \
 		synstructure-0.12.4 \
 		tar-0.4.30 \
 		tempfile-3.1.0 \
@@ -256,7 +256,7 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		thiserror-impl-1.0.20 \
 		thread_local-1.0.1 \
 		time-0.1.44 \
-		time-0.2.21 \
+		time-0.2.22 \
 		time-macros-0.1.0 \
 		time-macros-impl-0.1.1 \
 		tinyvec-0.3.4 \
