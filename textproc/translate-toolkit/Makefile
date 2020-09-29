@@ -56,6 +56,6 @@ post-build-OPTIONAL-on:
 .endfor
 
 post-install:
-	cd ${WRKSRC}/manpages && ${INSTALL_MAN} * ${STAGEDIR}${PREFIX}/man/man1
+	cd ${WRKSRC}/manpages && ${INSTALL_MAN} * ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>
