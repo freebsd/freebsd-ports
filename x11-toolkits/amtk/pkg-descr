@@ -1,0 +1,5 @@
+Amtk is the acronym for "Actions, Menus and Toolbars Kit". It is a basic
+GtkUIManager replacement based on GAction. It is suitable for both a traditional
+UI or a modern UI with a GtkHeaderBar
+
+WWW: https://wiki.gnome.org/Projects/Amtk

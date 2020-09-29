@@ -6,6 +6,7 @@
     SUBDIR += SoXt
     SUBDIR += Xaw3d
     SUBDIR += Xmt
+    SUBDIR += amtk
     SUBDIR += blt
     SUBDIR += bwidget
     SUBDIR += c++-gtk-utils
