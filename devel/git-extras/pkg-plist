@@ -1,7 +1,6 @@
 bin/git-alias
 bin/git-archive-file
 bin/git-authors
-bin/git-back
 bin/git-browse
 bin/git-brv
 bin/git-bulk
@@ -71,7 +70,6 @@ etc/bash_completion.d/git-extras
 man/man1/git-alias.1.gz
 man/man1/git-archive-file.1.gz
 man/man1/git-authors.1.gz
-man/man1/git-back.1.gz
 man/man1/git-browse.1.gz
 man/man1/git-brv.1.gz
 man/man1/git-bulk.1.gz
