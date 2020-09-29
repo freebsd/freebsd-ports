@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rspamd
-PORTVERSION=	2.6.a1.20200402
-PORTREVISION=	3
+PORTVERSION=	2.6.a1.20200929
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-devel
 
@@ -20,7 +19,7 @@ RUN_DEPENDS=	ca_root_nss>=3.*:security/ca_root_nss
 
 USES=		cmake gnome perl5 pkgconfig sqlite ssl
 USE_LDCONFIG=	yes
-#USE_PERL5=	build run
+USE_PERL5=	build run
 USE_GNOME=	glib20
 
 CONFLICTS_INSTALL=	rspamd
@@ -58,13 +57,14 @@ CMAKE_ARGS+=	-DCONFDIR=${PREFIX}/etc/rspamd \
 		-DDEBUG=ON \
 		-DGIT_ID=${GH_TAGNAME}
 USE_GITHUB=	yes
-GH_TAGNAME=	76a1fb0
+GH_TAGNAME=	80b8f0e
 
 DEBUG_FLAGS=	-g -O0
 
 USE_RC_SUBR=	rspamd
 
 BLAS_CMAKE_ON=	-DENABLE_BLAS=ON
+BLAS_LIB_DEPENDS=	libblis.so:math/blis liblapack.so:math/lapack
 BLAS_USES=	blaslapack:openblas
 
 GPERF_CMAKE_ON=	-DENABLE_GPERF_TOOLS=ON
