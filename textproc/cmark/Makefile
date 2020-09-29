@@ -5,7 +5,7 @@ PORTNAME=	cmark
 DISTVERSION=	0.29.0
 CATEGORIES=	textproc
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	CommonMark parsing and rendering library and program in C
 
 LICENSE=	BSD2CLAUSE
