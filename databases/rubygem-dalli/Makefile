@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dalli
-PORTVERSION=	2.7.10
+PORTVERSION=	2.7.11
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
