@@ -21,6 +21,7 @@ lib/snobol4/%%VERSION%%/lib/bq.sno
 lib/snobol4/%%VERSION%%/lib/chars.sno
 lib/snobol4/%%VERSION%%/lib/config.sno
 lib/snobol4/%%VERSION%%/lib/dynamic.sno
+lib/snobol4/%%VERSION%%/lib/ezio.sno
 lib/snobol4/%%VERSION%%/lib/fence.sno
 lib/snobol4/%%VERSION%%/lib/file.sno
 lib/snobol4/%%VERSION%%/lib/ftp.sno
@@ -50,9 +51,13 @@ man/man1/snobol4ext.1.gz
 man/man1/snobol4func.1.gz
 man/man1/snobol4io.1.gz
 man/man1/snobol4key.1.gz
+man/man1/snobol4op.1.gz
 man/man1/snopea.1.gz
+man/man3/snobol4ezio.3.gz
+man/man3/snobol4host.3.gz
 man/man3/snobol4setup.3.gz
 man/man3/snolib.3.gz
 man/man7/snopea.7.gz
 @dir lib/snobol4/%%VERSION%%/lib/shared
-@dir lib/snobol4/local/shared
+@dir lib/snobol4/%%VERSION%%/local/shared
+@dir lib/snobol4/local
