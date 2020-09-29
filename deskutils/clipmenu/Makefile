@@ -3,6 +3,7 @@
 
 PORTNAME=	clipmenu
 DISTVERSION=	6.1.0
+PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -13,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	bash:shells/bash \
 		clipnotify:deskutils/clipnotify \
+		flock:sysutils/flock \
 		xsel:x11/xsel-conrad
 
 USES=		xorg
