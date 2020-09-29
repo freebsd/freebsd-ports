@@ -115,8 +115,10 @@ EXTRAS_IMPLIES=		CLANG
 EXTRAS_PLIST_DIRS=	${LLVM_PREFIX:S|${PREFIX}/||}/include/clang-tidy/plugin
 FLANG_DESC=		Flang FORTRAN compiler
 FLANG_IMPLIES=		MLIR
-FLANG_PORTDOCS=		flang
+#FLANG_PORTDOCS=		flang
 FLANG_PLIST_DIRS=	${LLVM_PREFIX:S|${PREFIX}/||}/include/flang/Config
+# Docs require sphinx-markdown-tables which requires py-markdown > 3.0.1
+FLANG_CMAKE_ON=		-DFLANG_INCLUDE_DOCS=OFF
 # flang is broken with DYLIB linkage
 FLANG_CMAKE_OFF=	-DLLVM_LINK_LLVM_DYLIB=ON
 LIT_DESC=		Install lit and FileCheck test tools
@@ -128,6 +130,7 @@ LLDB_PORTDOCS=		lldb
 LLDB_VARS=		_USES_PYTHON=python:3.6+
 MLIR_DESC=		Multi-Level Intermediate Representation
 OPENMP_DESC=		Install libomp, the LLVM OpenMP runtime library
+OPENMP_PORTDOCS=	openmp
 OPENMP_CONFLICTS_INSTALL=	libiomp5-devel-*
 GOLD_DESC=		Build the LLVM Gold plugin for LTO
 GOLD_CMAKE_ON=		-DLLVM_BINUTILS_INCDIR=${LOCALBASE}/include
@@ -285,6 +288,7 @@ COMMANDS+=	${MLIR_COMMANDS}
 
 .if ${PORT_OPTIONS:MOPENMP}
 LLVM_ENABLE_PROJECTS+=	openmp
+MAN1SRCS+=		llvmopenmp.1
 .endif
 OPENMP_PATTERN=	libarcher|lib[ig]*omp|omp.h|ompt.h|ompt-multiplex.h|omp-tools.h
 
@@ -517,7 +521,7 @@ build-plist:
 	}' ${PLIST}.tmp >> ${PLIST}
 	${ECHO_CMD} '@postexec if type ccache-update-links >/dev/null 2>&1; then ccache-update-links -v; fi' >> ${PLIST}
 	${ECHO_CMD} '@postunexec if type ccache-update-links >/dev/null 2>&1; then ccache-update-links -v; fi' >> ${PLIST}
-	${RM} ${PLIST}.tmp
+	#${RM} ${PLIST}.tmp
 
 check-commands:
 .for command in ${COMMANDS}

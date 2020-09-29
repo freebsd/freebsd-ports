@@ -9,6 +9,7 @@ LLVM_COMMANDS=	\
 		llvm-ar \
 		llvm-as \
 		llvm-bcanalyzer \
+		llvm-bitcode-strip \
 		llvm-cat \
 		llvm-cfi-verify \
 		llvm-config \
