@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-clocks
-PORTVERSION=	3.28.0
-PORTREVISION=	2
+PORTVERSION=	3.38.0
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -12,13 +11,14 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Clocks for GNOME 3
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 BUILD_DEPENDS=	itstool:textproc/itstool \
 		vala:lang/vala
 LIB_DEPENDS=	libgeoclue-2.so:net/geoclue \
 		libgeocode-glib.so:net/geocode-glib \
-		libgweather-3.so:net/libgweather
+		libgweather-3.so:net/libgweather \
+		libhandy-1.so:x11-toolkits/libhandy
 
 PORTSCOUT=	limitw:1,even
 
