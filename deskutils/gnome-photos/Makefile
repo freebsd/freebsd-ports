@@ -2,17 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-photos
-PORTVERSION=	3.28.1
-PORTREVISION=	4
+PORTVERSION=	3.38.0
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Photo application for GNOME 3
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+OPTIONS_DEFINE=	DOCS
 
 BUILD_DEPENDS=	geoclue>=0:net/geoclue \
 		itstool:textproc/itstool
@@ -38,14 +39,12 @@ RUN_DEPENDS=	geoclue>=0:net/geoclue
 
 PORTSCOUT=	limitw:1,even
 
-USES=		compiler:c11 gettext gmake gnome jpeg libtool \
-		localbase pathfix pkgconfig tar:xz
+USES=		compiler:c11 gettext gnome jpeg localbase meson pkgconfig tar:xz
 USE_GNOME=	cairo gnomedesktop3 gtk30 libxml2
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.gnome.photos.gschema.xml
+MESON_ARGS=	--buildtype plain
 
 .include <bsd.port.mk>
