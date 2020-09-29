@@ -1,4 +1,12 @@
-Shfmt is a shell script formatter.  It supports POSIX Shell, Bash,
-and mksh.
+shfmt formats shell programs. It can use tabs or any number of spaces to
+indent.
+
+You can feed it standard input, any number of files or any number of
+directories to recurse into. When recursing, it will operate on .sh and .bash
+files and ignore files starting with a period. It will also operate on files
+with no extension and a shell shebang.
+
+If any EditorConfig files are found, they will be used to apply formatting
+options.
 
 WWW: https://github.com/mvdan/sh
