@@ -3,13 +3,12 @@ any port for the support of TLS/SSL ciphers, protocols as well as some
 cryptographic flaws.  Key features:
 
 - Clear output: you can tell easily whether anything is good or bad
+- Machine readable output (CSV, two JSON formats)
 - Flexibility: You can test any SSL/TLS enabled and STARTTLS service,
   not only webservers at port 443
-- Toolbox: Several command line options help you to run YOUR test and
-  configure YOUR output
+- Toolbox: Several command line options help you to run your test and
+  configure your output
 - Reliability: features are tested thoroughly
-- Verbosity: If a particular check cannot be performed because of a
-  missing capability on your client side, you'll get a warning
 - Privacy: It's only you who sees the result, not a third party
 
 WWW: https://github.com/drwetter/testssl.sh
