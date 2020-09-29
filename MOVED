@@ -15627,3 +15627,4 @@ net-im/corebird||2020-09-25|Stopped working in august 2018
 devel/py-pyqi||2020-09-25|No longer developed, use devel/py-click instead
 net-im/libnice-gst010|net-im/libnice-gst1|2020-09-25|Not depended on, gstream0.10 support has been removed in newer versions
 graphics/evince-lite|graphics/evince@lite|2020-09-26|Has been replaced by a flavor
+x11/gnome3-lite|x11/gnome3@lite|2020-09-29|HAs been replaced by a flavor
