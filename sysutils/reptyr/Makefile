@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	reptyr
-PORTVERSION=	0.6.3a
-PORTREVISION=	2
+PORTVERSION=	0.8.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	andoriyu@gmail.com
@@ -13,7 +12,7 @@ LICENSE=	MIT
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	nelhage
-GH_TAGNAME=	6fb15adb4552e170bcd5e648803da83dba57283b
+GH_TAGNAME=	reptyr-${PORTVERSION}
 
 MAKE_ARGS=	BASHCOMPDIR=${PREFIX}/share/bash-completion/completions \
 		MANDIR=${MANPREFIX}/man
