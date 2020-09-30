@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gdnsd
-PORTVERSION=	3.0.0
-PORTREVISION=	1
+PORTVERSION=	3.3.0
 CATEGORIES=	dns
 MASTER_SITES=	https://github.com/gdnsd/gdnsd/releases/download/v${PORTVERSION}/ \
 		ZI \
@@ -48,6 +47,10 @@ CONFIGURE_ARGS+=--without-hardening
 CFLAGS+=	-fstack-protector-strong -fexceptions -ftrapv
 LDFLAGS+=	-Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack
 .endif
+
+post-configure:
+	@${REINPLACE_CMD} -e 's|-Wall |-Wall -Wno-unused-variable |g' \
+		${WRKSRC}/Makefile
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$${localstatedir}/lib/$${PACKAGE_NAME}|/var/db/${PORTNAME}|g' \
