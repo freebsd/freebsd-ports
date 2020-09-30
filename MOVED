@@ -15630,3 +15630,4 @@ graphics/evince-lite|graphics/evince@lite|2020-09-26|Has been replaced by a flav
 x11/gnome3-lite|x11/gnome3@lite|2020-09-29|Has been replaced by a flavor
 graphics/py-gimp||2020-09-29|Has expired: Uses deprecated version of python
 net/libproxy-gnome2||2020-09-30|Removed gnome2 port not depended on
+sysutils/system-tools-backends||2020-09-30|Abandonware from gnome2 era

@@ -1284,7 +1284,6 @@
     SUBDIR += syslog-ng329
     SUBDIR += syslogger
     SUBDIR += sysrc
-    SUBDIR += system-tools-backends
     SUBDIR += sysvbanner
     SUBDIR += tai64nfrac
     SUBDIR += tarsnap
