@@ -3,7 +3,7 @@
 
 PORTNAME=	lincity
 PORTVERSION=	1.13.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Lincity%20Development%20Source/${PORTVERSION}
 
@@ -23,8 +23,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 OPTIONS_DEFINE=	NLS SVGALIB
 OPTIONS_SUB=	yes
 
-NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=	gettext
+NLS_CONFIGURE_ENABLE=	nls
 
 SVGALIB_LIB_DEPENDS=	libvga.so:graphics/svgalib
 SVGALIB_CONFIGURE_ON=	--without-x
@@ -36,7 +36,7 @@ SVGALIB_CONFIGURE_OFF=	--without-svga
 PLIST_SUB+=	PROG="bin/lincity"
 .else
 USES+=		xorg
-USE_XORG=	sm xext
+USE_XORG=	ice sm x11 xext
 PLIST_SUB+=	PROG="bin/xlincity"
 .endif
 
