@@ -138,7 +138,7 @@ HTTP_NOTICE_VARS=		DSO_EXTMODS+=notice
 
 HTTP_PUSH_GH_TUPLE=		slact:nchan:v1.2.7:push
 HTTP_PUSH_VARS=			DSO_EXTMODS+=push
-HTTP_PUSH_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nchan-store-private.h
+HTTP_PUSH_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nchan-store-redis-redis_lua_commands.h
 
 HTTP_PUSH_STREAM_GH_TUPLE=	wandenberg:nginx-push-stream-module:0.5.4:pushstream
 HTTP_PUSH_STREAM_VARS=		DSO_EXTMODS+=pushstream
