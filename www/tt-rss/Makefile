@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tt-rss
-PORTVERSION=	g20200801
-PORTREVISION=	2
+PORTVERSION=	g20200919
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	https://git.tt-rss.org/fox/tt-rss/archive/
@@ -16,13 +15,13 @@ COMMENT=	Tiny Tiny RSS: web-based news feed (RSS/Atom) aggregator
 LICENSE=	GPLv2
 
 USES=		php:cli,web shebangfix gettext-tools
-USE_PHP=	ctype dom fileinfo iconv intl hash json mbstring pcntl posix session xmlrpc
+USE_PHP=	ctype dom fileinfo filter iconv intl hash json mbstring pcntl posix session xmlrpc
 
 REINPLACE_ARGS=	-i ""
 SHEBANG_FILES=	lib/dojo-src/rebuild-dojo.sh utils/extract-i18n-js.pl update_daemon2.php
 WRKSRC=		${WRKDIR}/tt-rss
 
-GIT_TAGNAME=	2b50aaed6
+GIT_TAGNAME=	05ef9aac2
 
 NO_BUILD=	yes
 NO_ARCH=	yes

@@ -53,6 +53,7 @@
 %%WWWDIR%%/classes/templator.php
 %%WWWDIR%%/errors.php
 %%WWWDIR%%/feed-icons/index.html
+%%WWWDIR%%/gulpfile.js
 %%WWWDIR%%/images/blank_icon.gif
 %%WWWDIR%%/images/favicon-72px.png
 %%WWWDIR%%/images/favicon.png
@@ -1810,8 +1811,9 @@
 %%WWWDIR%%/lib/flat-ttrss/images/progressBarStrips.png
 %%WWWDIR%%/lib/floIcon.php
 %%WWWDIR%%/lib/gettext/README
-%%WWWDIR%%/lib/gettext/gettext.inc
+%%WWWDIR%%/lib/gettext/gettext.inc.php
 %%WWWDIR%%/lib/gettext/gettext.php
+%%WWWDIR%%/lib/gettext/plurals.php
 %%WWWDIR%%/lib/gettext/streams.php
 %%WWWDIR%%/lib/iconfont/MaterialIcons-Regular.eot
 %%WWWDIR%%/lib/iconfont/MaterialIcons-Regular.ijmap
@@ -2314,6 +2316,7 @@
 %%WWWDIR%%/locale/zh_TW/LC_MESSAGES/messages.po
 %%WWWDIR%%/messages.pot
 %%WWWDIR%%/opml.php
+%%WWWDIR%%/package.json
 %%WWWDIR%%/plugins.local/index.html
 %%WWWDIR%%/plugins/af_comics/.gitignore
 %%WWWDIR%%/plugins/af_comics/af_comics_template.php
@@ -2694,14 +2697,11 @@
 %%WWWDIR%%/templates/resetpass_link_template.txt
 %%WWWDIR%%/templates.local/index.html
 %%WWWDIR%%/themes/compact.css
-%%WWWDIR%%/themes/compact.css.map
 %%WWWDIR%%/themes/compact.less
 %%WWWDIR%%/themes/compact_base.less
 %%WWWDIR%%/themes/compact_night.css
-%%WWWDIR%%/themes/compact_night.css.map
 %%WWWDIR%%/themes/compact_night.less
 %%WWWDIR%%/themes/light.css
-%%WWWDIR%%/themes/light.css.map
 %%WWWDIR%%/themes/light.less
 %%WWWDIR%%/themes/light/cdm.less
 %%WWWDIR%%/themes/light/defines.less
@@ -2712,12 +2712,11 @@
 %%WWWDIR%%/themes/light/tt-rss.less
 %%WWWDIR%%/themes/light/utility.less
 %%WWWDIR%%/themes/light/zoom.less
+%%WWWDIR%%/themes/Makefile
 %%WWWDIR%%/themes/night.css
-%%WWWDIR%%/themes/night.css.map
 %%WWWDIR%%/themes/night.less
 %%WWWDIR%%/themes/night_base.less
 %%WWWDIR%%/themes/night_blue.css
-%%WWWDIR%%/themes/night_blue.css.map
 %%WWWDIR%%/themes/night_blue.less
 %%WWWDIR%%/version_static.txt
 @mode ug=rx
@@ -3149,7 +3148,6 @@
 @dir %%WWWDIR%%/classes
 @dir %%WWWDIR%%/api
 @dir %%WWWDIR%%
-
 @owner %%WWWOWN%%
 @mode 0400
 @sample %%WWWDIR%%/config.php.sample
