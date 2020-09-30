@@ -1,0 +1,4 @@
+Hash is a C++14 header-only easy-to-use hash library. It includes SHA-1, SHA-2,
+SHA-3, MD2, MD4, MD5, and many other algorithms.
+
+WWW: https://github.com/Chocobo1/Hash
