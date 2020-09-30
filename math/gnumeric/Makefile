@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	gnumeric
-PORTVERSION=	1.12.46
+PORTVERSION=	1.12.48
 CATEGORIES=	math gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME spreadsheet program
@@ -27,6 +27,7 @@ INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	\
 		--without-paradox \
+		--without-python \
 		--enable-introspection
 INSTALL_TARGET=	install-strip
 
