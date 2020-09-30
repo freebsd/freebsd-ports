@@ -1,0 +1,6 @@
+digestpp is an experimental C++11 header-only message digest library.
+
+Derived from cppcrypto in an attempt to devise a more modern yet flexible and
+universal C++ API for cryptographic hash functions.
+
+WWW: https://github.com/kerukuro/digestpp

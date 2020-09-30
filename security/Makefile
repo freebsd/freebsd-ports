@@ -120,6 +120,7 @@
     SUBDIR += dehydrated
     SUBDIR += denyhosts
     SUBDIR += destroy
+    SUBDIR += digestpp
     SUBDIR += dirbuster
     SUBDIR += dirmngr
     SUBDIR += distcache
