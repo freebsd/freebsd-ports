@@ -2,13 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	adwaita-icon-theme
-PORTVERSION=	3.28.0
+PORTVERSION=	3.38.0
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	GNOME Symbolic Icons
+
+LICENSE=	LGPL3 CC-BY-SA-3.0
+LICENSE_COMB=	dual
 
 NO_ARCH=	yes
 USES=		gettext-tools gmake gnome pathfix pkgconfig tar:xz
