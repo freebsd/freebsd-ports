@@ -18,6 +18,8 @@ LICENSE_NAME=	Creative Commons Sampling Plus 1.0
 LICENSE_FILE=	${WRKDIR}/opensfx-${PORTVERSION}/license.txt
 LICENSE_PERMS=	auto-accept
 
+BROKEN=		unfetchable
+
 USES=		zip
 NO_BUILD=	yes
 NO_ARCH=	yes
