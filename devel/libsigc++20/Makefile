@@ -3,7 +3,7 @@
 #   $MCom: ports/trunk/devel/libsigc++20/Makefile 19952 2014-10-15 08:11:00Z gusi $
 
 PORTNAME=	libsigc++
-PORTVERSION=	2.10.3
+PORTVERSION=	2.10.4
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 
@@ -15,20 +15,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 PORTSCOUT=	limit:^2\.10\.
 
-GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		compiler:c++11-lang gmake libtool pathfix perl5 tar:xz
-USE_PERL5=	build
+USES=		compiler:c++11-lang meson tar:xz
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	API_VERSION="2.0"
 
-OPTIONS_DEFINE=	DOCS
-
-DOCS_CONFIGURE_OFF=	--enable-documentation=no
-
-post-patch:
-	@${REINPLACE_CMD} -e "/^SUBDIRS =/s|tests||; \
-		/^SUBDIRS =/s|examples||" ${WRKSRC}/Makefile.in
+MESON_ARGS=	-Dbuild-documentation=false \
+		-Dbuild-examples=false
 
 .include <bsd.port.mk>
