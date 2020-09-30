@@ -3,9 +3,10 @@
 
 PORTNAME=	x3270
 PORTVERSION=	4.0
+PORTREVISION=	1
 CATEGORIES=	x11 net
 MASTER_SITES=	http://x3270.bgp.nu/download/04.00/
-DISTFILES=	suite3270-${PORTVERSION}ga11-src.tgz
+DISTFILES=	suite3270-${PORTVERSION}ga12-src.tgz
 
 MAINTAINER=	kbowling@FreeBSD.org
 COMMENT=	3270 Terminal emulator
