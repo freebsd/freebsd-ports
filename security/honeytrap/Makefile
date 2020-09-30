@@ -9,6 +9,8 @@ COMMENT=	HoneyTrap Freebsd port
 
 LICENSE=	ART20
 
+BROKEN=		fails to build
+
 USES=		go:modules
 USE_GITHUB=	yes
 GH_TAGNAME=	d8d94c8f
