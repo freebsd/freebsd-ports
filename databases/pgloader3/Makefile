@@ -12,6 +12,8 @@ COMMENT=	Data loading tool for PostgreSQL,using the COPY command
 
 LICENSE=	PostgreSQL
 
+BROKEN=		fails to build
+
 BUILD_DEPENDS=	ccl:lang/ccl
 LIB_DEPENDS=	libsqlite3.so:databases/sqlite3 \
 		libtdsodbc.so:databases/freetds
