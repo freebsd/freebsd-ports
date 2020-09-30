@@ -2,6 +2,7 @@
 
 PORTNAME=	hexer
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://devel.ringlet.net/files/editors/hexer/ \
 		LOCAL/ehaupt
