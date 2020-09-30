@@ -53,6 +53,7 @@ bin/3dAutoTcorrelate
 bin/3dAutobox
 bin/3dAutomask
 bin/3dBRAIN_VOYAGERtoAFNI
+bin/3dBallMatch
 bin/3dBandpass
 bin/3dBlurInMask
 bin/3dBlurToFWHM
