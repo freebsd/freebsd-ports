@@ -3,6 +3,7 @@
 
 PORTNAME=	cheese
 PORTVERSION=	3.38.0
+PORTREVISION=	1
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -22,7 +23,6 @@ LIB_DEPENDS=	libcanberra-gtk3.so:audio/libcanberra-gtk3 \
 		libclutter-1.0.so:graphics/clutter \
 		libcogl.so:graphics/cogl \
 		libjson-glib-1.0.so:devel/json-glib \
-		libhal.so:sysutils/hal \
 		libclutter-gtk-1.0.so:graphics/clutter-gtk3 \
 		libclutter-gst-3.0.so:multimedia/clutter-gst3
 RUN_DEPENDS=	gnome-video-effects>=0:graphics/gnome-video-effects
@@ -30,7 +30,7 @@ RUN_DEPENDS=	gnome-video-effects>=0:graphics/gnome-video-effects
 PORTSCOUT=	limitw:1,even
 
 USES=		gettext gl gnome localbase:ldflags pkgconfig meson tar:xz xorg
-USE_GNOME=	cairo evolutiondataserver3 librsvg2 \
+USE_GNOME=	cairo librsvg2 \
 		gnomedesktop3 libxml2:build introspection:build
 USE_GL=		egl
 USE_XORG=	xi xext xdamage xfixes xcomposite xrandr xxf86vm x11
