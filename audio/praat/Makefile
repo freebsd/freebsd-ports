@@ -2,7 +2,7 @@
 
 PORTNAME=		praat
 DISTVERSIONPREFIX=	v
-DISTVERSION=		6.1.22
+DISTVERSION=		6.1.24
 CATEGORIES=		audio science
 
 MAINTAINER=	adridg@FreeBSD.org
@@ -48,8 +48,6 @@ post-patch:
 			  -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/makefile.defs
 	@${REINPLACE_CMD} -e 's| log2| NUMlog2|g' \
-			  -e 's|feof (f)|feof (f.get_ptr())|g' \
-			  -e 's|ferror (f)|ferror (f.get_ptr())|g' \
 		${WRKSRC}/dwtools/Sound_extensions.cpp
 
 do-install:
