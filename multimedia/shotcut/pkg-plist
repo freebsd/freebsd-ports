@@ -73,6 +73,7 @@ share/mime/packages/org.shotcut.Shotcut.xml
 %%DATADIR%%/qml/filters/bigsh0t_stabilize_360/ui.qml
 %%DATADIR%%/qml/filters/bigsh0t_transform_360/meta.qml
 %%DATADIR%%/qml/filters/bigsh0t_transform_360/ui.qml
+%%DATADIR%%/qml/filters/bigsh0t_transform_360/vui.qml
 %%DATADIR%%/qml/filters/blend_mode/meta.qml
 %%DATADIR%%/qml/filters/blend_mode/ui.qml
 %%DATADIR%%/qml/filters/bluescreen0r/meta.qml
@@ -91,6 +92,8 @@ share/mime/packages/org.shotcut.Shotcut.xml
 %%DATADIR%%/qml/filters/brightness/meta_movit.qml
 %%DATADIR%%/qml/filters/brightness/ui.qml
 %%DATADIR%%/qml/filters/brightness/ui_movit.qml
+%%DATADIR%%/qml/filters/choppy/meta.qml
+%%DATADIR%%/qml/filters/choppy/ui.qml
 %%DATADIR%%/qml/filters/chromahold/meta.qml
 %%DATADIR%%/qml/filters/chromahold/ui.qml
 %%DATADIR%%/qml/filters/color/meta.qml
@@ -107,6 +110,11 @@ share/mime/packages/org.shotcut.Shotcut.xml
 %%DATADIR%%/qml/filters/crop/meta.qml
 %%DATADIR%%/qml/filters/crop/meta_movit.qml
 %%DATADIR%%/qml/filters/crop/ui.qml
+%%DATADIR%%/qml/filters/crop_circle/meta.qml
+%%DATADIR%%/qml/filters/crop_circle/ui.qml
+%%DATADIR%%/qml/filters/crop_rectangle/meta.qml
+%%DATADIR%%/qml/filters/crop_rectangle/ui.qml
+%%DATADIR%%/qml/filters/crop_rectangle/vui.qml
 %%DATADIR%%/qml/filters/dance/meta_dance.qml
 %%DATADIR%%/qml/filters/dance/ui_dance.qml
 %%DATADIR%%/qml/filters/distort/meta.qml
@@ -191,6 +199,9 @@ share/mime/packages/org.shotcut.Shotcut.xml
 %%DATADIR%%/qml/filters/opacity/meta.qml
 %%DATADIR%%/qml/filters/opacity/meta_movit.qml
 %%DATADIR%%/qml/filters/opacity/ui.qml
+%%DATADIR%%/qml/filters/pillar_echo/meta.qml
+%%DATADIR%%/qml/filters/pillar_echo/ui.qml
+%%DATADIR%%/qml/filters/pillar_echo/vui.qml
 %%DATADIR%%/qml/filters/posterize/meta.qml
 %%DATADIR%%/qml/filters/posterize/ui.qml
 %%DATADIR%%/qml/filters/rectangle/meta.qml
@@ -199,6 +210,9 @@ share/mime/packages/org.shotcut.Shotcut.xml
 %%DATADIR%%/qml/filters/rectangle/vui.qml
 %%DATADIR%%/qml/filters/rgbsplit0r/meta.qml
 %%DATADIR%%/qml/filters/rgbsplit0r/ui.qml
+%%DATADIR%%/qml/filters/richtext/meta.qml
+%%DATADIR%%/qml/filters/richtext/ui.qml
+%%DATADIR%%/qml/filters/richtext/vui.qml
 %%DATADIR%%/qml/filters/rotate/meta.qml
 %%DATADIR%%/qml/filters/rotate/ui.qml
 %%DATADIR%%/qml/filters/saturation/meta_frei0r.qml
@@ -312,11 +326,10 @@ share/mime/packages/org.shotcut.Shotcut.xml
 %%DATADIR%%/qml/filters/white/meta_frei0r.qml
 %%DATADIR%%/qml/filters/white/meta_movit.qml
 %%DATADIR%%/qml/filters/white/ui.qml
-%%DATADIR%%/qml/modules/Shotcut/Controls/GradientControl.qml
-%%DATADIR%%/qml/modules/Shotcut/Controls/ToolBarToggle.qml
 %%DATADIR%%/qml/htmleditor/text_outline.qml
 %%DATADIR%%/qml/htmleditor/text_shadow.qml
 %%DATADIR%%/qml/modules/Shotcut/Controls/ColorPicker.qml
+%%DATADIR%%/qml/modules/Shotcut/Controls/GradientControl.qml
 %%DATADIR%%/qml/modules/Shotcut/Controls/KeyframableFilter.qml
 %%DATADIR%%/qml/modules/Shotcut/Controls/KeyframesButton.qml
 %%DATADIR%%/qml/modules/Shotcut/Controls/Preset.qml
@@ -328,6 +341,7 @@ share/mime/packages/org.shotcut.Shotcut.xml
 %%DATADIR%%/qml/modules/Shotcut/Controls/TextFilterVui.qml
 %%DATADIR%%/qml/modules/Shotcut/Controls/TimeSpinner.qml
 %%DATADIR%%/qml/modules/Shotcut/Controls/ToggleButton.qml
+%%DATADIR%%/qml/modules/Shotcut/Controls/ToolBarToggle.qml
 %%DATADIR%%/qml/modules/Shotcut/Controls/ToolTip.qml
 %%DATADIR%%/qml/modules/Shotcut/Controls/UndoButton.qml
 %%DATADIR%%/qml/modules/Shotcut/Controls/VuiBase.qml
