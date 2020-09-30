@@ -1,0 +1,11 @@
+--- src/Version.h.cin.orig	2020-04-18 07:14:02 UTC
++++ src/Version.h.cin
+@@ -2,7 +2,7 @@
+ #ifndef GITVERSION
+ #define GITVERSION "@VERSION@"
+ #endif
+-#if 0@OpenMP_CXX_SPEC_DATE@ > 0201510
++#if @OpenMP_CXX_SPEC_DATE@ > 201510
+ #define HAVE_OPENMP_TASKS 1
+ #define OPENMP_SPEC_DATE "@OpenMP_CXX_SPEC_DATE@"
+ #define HAVE_OMP_HEADER @HAVE_OMP_HEADER@
