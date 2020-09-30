@@ -3,6 +3,7 @@
 
 PORTNAME=	nettoe
 PORTVERSION=	1.5.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.c-s.li/ports/ \
 		SF
@@ -12,10 +13,11 @@ COMMENT=	Tic tac toe game playable over the network
 
 LICENSE=	GPLv2
 
-PLIST_FILES=	bin/nettoe man/man6/nettoe.6.gz
-
 USES=		gmake
 GNU_CONFIGURE=	yes
+
+PLIST_FILES=	bin/nettoe man/man6/nettoe.6.gz
+
 PORTDOCS=	AUTHORS BUGS ChangeLog NEWS README TO-DO
 
 OPTIONS_DEFINE=	DOCS
