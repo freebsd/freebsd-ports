@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	sushi
-PORTVERSION=	3.28.3
-PORTREVISION=	2
+PORTVERSION=	3.34.0
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Tool similar to Gloobus Preview that provides quick file previews
@@ -26,21 +25,20 @@ LIB_DEPENDS=	libgcr-3.so:security/gcr \
 		libjson-glib-1.0.so:devel/json-glib \
 		libcogl.so:graphics/cogl \
 		libsoup-2.4.so:devel/libsoup \
-		libevdocument3.so:graphics/evince
+		libevdocument3.so:graphics/evince \
+		libepoxy.so:graphics/libepoxy
 RUN_DEPENDS=	nautilus:x11-fm/nautilus
 
 PORTSCOUT=	limitw:1,even
 
-USES=		compiler:c11 gettext gl gmake gnome libtool localbase pathfix \
+USES=		compiler:c11 gettext gl gnome localbase meson \
 		pkgconfig tar:xz xorg
 USE_CSTD=	c11
 INSTALLS_ICONS=	yes
-USE_GNOME=	cairo gnomeprefix gtksourceview3 intlhack introspection
+USE_GNOME=	cairo gtksourceview4 intlhack introspection
 USE_GL=		egl
 USE_GSTREAMER1=	yes
 USE_LDCONFIG=	yes
 USE_XORG=	x11 xcomposite xdamage xext xi xfixes xrandr
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>
