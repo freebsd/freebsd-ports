@@ -2,7 +2,9 @@ bin/carla
 bin/carla-control
 bin/carla-database
 bin/carla-jack-multi
+bin/carla-jack-patchbayplugin
 bin/carla-jack-single
+bin/carla-osc-gui
 bin/carla-patchbay
 bin/carla-rack
 bin/carla-settings
@@ -89,6 +91,10 @@ libdata/pkgconfig/carla-native-plugin.pc
 libdata/pkgconfig/carla-standalone.pc
 libdata/pkgconfig/carla-utils.pc
 share/applications/carla-control.desktop
+share/applications/carla-jack-multi.desktop
+share/applications/carla-jack-single.desktop
+share/applications/carla-patchbay.desktop
+share/applications/carla-rack.desktop
 share/applications/carla.desktop
 share/carla/carla
 share/carla/carla-control
@@ -167,6 +173,7 @@ share/carla/resources/ui_carla_settings_driver.py
 share/carla/resources/ui_inputdialog_value.py
 share/carla/resources/ui_midipattern.py
 share/carla/resources/widgets
+share/carla/resources/xycontroller-ui
 share/carla/resources_rc.py
 share/carla/ui_carla_about.py
 share/carla/ui_carla_about_juce.py
@@ -186,6 +193,7 @@ share/carla/ui_carla_settings.py
 share/carla/ui_carla_settings_driver.py
 share/carla/ui_inputdialog_value.py
 share/carla/ui_midipattern.py
+share/carla/ui_xycontroller.py
 share/carla/widgets/__init__.py
 share/carla/widgets/canvaspreviewframe.py
 share/carla/widgets/collapsablewidget.py
@@ -198,6 +206,8 @@ share/carla/widgets/pixmapbutton.py
 share/carla/widgets/pixmapdial.py
 share/carla/widgets/pixmapkeyboard.py
 share/carla/widgets/racklistwidget.py
+share/carla/widgets/scalablebutton.py
+share/carla/widgets/scalabledial.py
 share/icons/hicolor/128x128/apps/carla-control.png
 share/icons/hicolor/128x128/apps/carla.png
 share/icons/hicolor/16x16/apps/carla-control.png
