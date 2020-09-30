@@ -9,6 +9,9 @@ CATEGORIES=	devel
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Geany plugin: ${${GEANY_PLUGIN}_DESC}
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-10-15
+
 LIB_DEPENDS=	libgeany.so:devel/geany@gtk2
 
 FLAVORS=	# intentionally left empty
