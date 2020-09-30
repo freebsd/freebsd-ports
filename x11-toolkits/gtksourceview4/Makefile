@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gtksourceview
-PORTVERSION=	4.0.2
-PORTREVISION=	3
+PORTVERSION=	4.8.0
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	4
@@ -20,11 +19,9 @@ LIB_DEPENDS=	libfribidi.so:converters/fribidi
 
 PORTSCOUT=	limitw:1,even
 
-USES=		compiler:c11 gettext gmake gnome libtool pkgconfig tar:xz
+USES=		compiler:c11 gettext gnome meson pkgconfig tar:xz
 USE_CSTD=	c11
 USE_GNOME=	cairo gdkpixbuf2 gtk30 introspection:build libxml2
-GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>
