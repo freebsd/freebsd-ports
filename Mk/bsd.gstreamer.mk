@@ -132,7 +132,6 @@ _GSTREAMER_PLUGINS+= \
 		mm \
 		mp3 \
 		nas \
-		python \
 		schroedinger \
 		spc \
 		sdl \
@@ -521,17 +520,6 @@ vpx_IMPL=	good
 
 vulkan_DEPENDS=	graphics/gstreamer-plugins-vulkan
 vulkan_IMPL=	bad
-
-# XXX: This is a quick solution for ports with USE_GSTREAMER=python
-#      but without USE_PYTHON.
-PYTHON_PKGNAMEPREFIX?=	py*-
-
-python_DEPENDS=	multimedia/py-gstreamer
-python_NAME=	gstreamer
-python_GST_PREFIX=      ${PYTHON_PKGNAMEPREFIX}
-python_GST_SUFX=        # empty
-python_GST_VERSION=     0.10.4
-python_IMPL=		#
 
 resindvd_DEPENDS=	multimedia/gstreamer-plugins-resindvd
 resindvd_IMPL=		bad
