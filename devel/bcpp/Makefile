@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bcpp
-PORTVERSION=	20180401
+PORTVERSION=	20200922
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.invisible-island.net/${PORTNAME}/ \
 		https://invisible-mirror.net/archives/${PORTNAME}/
