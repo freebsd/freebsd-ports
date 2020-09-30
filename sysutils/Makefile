@@ -276,6 +276,7 @@
     SUBDIR += dtrace-toolkit
     SUBDIR += du2ps
     SUBDIR += dua-cli
+    SUBDIR += duf
     SUBDIR += duff
     SUBDIR += dunst
     SUBDIR += dupd

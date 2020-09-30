@@ -1,0 +1,9 @@
+Simple Disk Usage/Free Utility featuring:
+
+* User-friendly, colorful output
+* Adjusts to your terminal's width
+* Sort the results according to your needs
+* Groups & filters devices
+* Can conveniently output JSON
+
+WWW: https://github.com/muesli/duf

@@ -1,0 +1,17 @@
+TIMESTAMP = 1601429878
+SHA256 (muesli-duf-v0.3.1_GH0.tar.gz) = 98b5cdc4a7b3c5eddc0ec397c65860110b446e85cc4f3cfe3e32f31ce524e90d
+SIZE (muesli-duf-v0.3.1_GH0.tar.gz) = 124337
+SHA256 (golang-crypto-5c72a883971a_GH0.tar.gz) = 2b8df0754ba64c95786bc5fe2071cadf4757f754e774f5985d725c1aaa6cb3d8
+SIZE (golang-crypto-5c72a883971a_GH0.tar.gz) = 1732429
+SHA256 (golang-sys-af09f7315aff_GH0.tar.gz) = 42f744f4f5ce6019a7a52a5cfa417d4422bb054a397b3ca663151d3865b24e80
+SIZE (golang-sys-af09f7315aff_GH0.tar.gz) = 1063254
+SHA256 (jedib0t-go-pretty-v6.0.4_GH0.tar.gz) = cb4910133f59002ca757aeaf1d329425e9d1d7d33b962685241ce62d17fe037a
+SIZE (jedib0t-go-pretty-v6.0.4_GH0.tar.gz) = 398695
+SHA256 (lucasb-eyer-go-colorful-v1.0.3_GH0.tar.gz) = 40c8c7e03a4eeaaabd44273e9b6a992933f554f17225aadd0b225ffc67e1e7db
+SIZE (lucasb-eyer-go-colorful-v1.0.3_GH0.tar.gz) = 430208
+SHA256 (mattn-go-isatty-v0.0.12_GH0.tar.gz) = addbdc341d7685ed4cc8d2d8a8fd2bd9b784bde00d0ea99fb251039fc10c611c
+SIZE (mattn-go-isatty-v0.0.12_GH0.tar.gz) = 4548
+SHA256 (mattn-go-runewidth-v0.0.9_GH0.tar.gz) = 4f20a337ad06e071f29535afe9c5207d3e8840c8c86672bbc5f9837c6229c835
+SIZE (mattn-go-runewidth-v0.0.9_GH0.tar.gz) = 16714
+SHA256 (muesli-termenv-v0.7.2_GH0.tar.gz) = f4f7fbea1149d10eb0559f7edea90876317a710b30474bf6e3ba257fe0cb7a36
+SIZE (muesli-termenv-v0.7.2_GH0.tar.gz) = 405812
