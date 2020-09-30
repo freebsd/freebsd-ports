@@ -25,13 +25,11 @@ DOCSDIR=	${PREFIX}/share/doc/${PYTHON_PKGNAMEPREFIX}${PORTNAME}
 
 OPTIONS_DEFINE=	DOCS
 
-REINPLACE_ARGS=	-i.bak -e 's,%%DOCSDIR%%,${DOCSDIR},'
-
 SHEBANG_FILES=	scripts/urlgrabber-ext-down
 
 USE_PYTHON=	autoplist distutils
 
 post-patch:
-	@${REINPLACE_CMD} ${REINPLACE_ARGS} ${WRKSRC}/${PYSETUP}
+	@${REINPLACE_CMD} -e 's,%%DOCSDIR%%,${DOCSDIR},' ${WRKSRC}/${PYSETUP}
 
 .include <bsd.port.mk>
