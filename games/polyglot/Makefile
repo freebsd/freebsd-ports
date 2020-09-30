@@ -3,7 +3,7 @@
 
 PORTNAME=	polyglot
 DISTVERSION=	1.4.70b
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://hardy.uhasselt.be/Toga/polyglot-release/ \
 		http://nivit.altervista.org/FreeBSD/ports/distfiles/
