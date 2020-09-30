@@ -15629,3 +15629,4 @@ net-im/libnice-gst010|net-im/libnice-gst1|2020-09-25|Not depended on, gstream0.1
 graphics/evince-lite|graphics/evince@lite|2020-09-26|Has been replaced by a flavor
 x11/gnome3-lite|x11/gnome3@lite|2020-09-29|Has been replaced by a flavor
 graphics/py-gimp||2020-09-29|Has expired: Uses deprecated version of python
+net/libproxy-gnome2||2020-09-30|Removed gnome2 port not depended on
