@@ -101,10 +101,10 @@ OPTIONS_DEFINE+=	LLVM
 OPTIONS_DEFAULT+=	LLVM
 LLVM_DESC=		Build with support for JIT-compiling expressions
 LLVM_CONFIGURE_WITH=	llvm
-LLVM_BUILD_DEPENDS=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT}
-LLVM_BUILD_DEPENDS+=	llvm-config${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
-LLVM_RUN_DEPENDS+=	llvm-config${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
-LLVM_CONFIGURE_ENV+=	LLVM_CONFIG=${LOCALBASE}/bin/llvm-config${LLVM_DEFAULT}
+LLVM_BUILD_DEPENDS=	llvm${PG_LLVM_VERSION}>0:devel/llvm${PG_LLVM_VERSION}
+LLVM_BUILD_DEPENDS+=	llvm-config${PG_LLVM_VERSION}:devel/llvm${PG_LLVM_VERSION}
+LLVM_RUN_DEPENDS+=	llvm-config${PG_LLVM_VERSION}:devel/llvm${PG_LLVM_VERSION}
+LLVM_CONFIGURE_ENV+=	LLVM_CONFIG=${LOCALBASE}/bin/llvm-config${PG_LLVM_VERSION}
 #OPTIONS_DEFAULT+=	${OPTIONS_DEFAULT_${CHOSEN_COMPILER_TYPE}}
 #OPTIONS_DEFAULT_clang=	LLVM
 .endif
@@ -193,12 +193,6 @@ USES+=		compiler:gcc-c++11-lib
 USES+=		compiler
 .endif
 
-.if ${DISTVERSION:C/([0-9]*).*/\1/} >= 11
-.  if defined(SERVER_ONLY) && ${PORT_OPTIONS:MLLVM}
-INSTALL_DIRS+=		src/backend/jit/llvm
-.  endif
-.endif
-
 .if ${DISTVERSION:C/([0-9]*).*/\1/} < 10
 .  if ( defined(SERVER_ONLY) && ${PORT_OPTIONS:MICU} ) || make(makesum)
 USES+=		autoreconf
@@ -245,11 +239,29 @@ CONFIGURE_ARGS+=--with-krb5
 # For testing files in FILESDIR
 .include <bsd.port.pre.mk>
 
-# Fix problems building on FreeBSD 13 by keeping clang and llvm versions in sync
-.if ${CHOSEN_COMPILER_TYPE} == clang && ${OPSYS} == FreeBSD && ${OSVERSION} >= 1300109
-BUILD_DEPENDS+=	clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
-CC=		${LOCALBASE}/bin/clang${LLVM_DEFAULT}
-CXX=		${LOCALBASE}/bin/clang++${LLVM_DEFAULT}
+# sync LLVM to the preferred compiler if possible
+# or else use a lower version compiler that is compatible
+.if ${COMPILER_VERSION} > ${LLVM_DEFAULT}
+# Highest LLVM version in ports:
+.  if ${COMPILER_VERSION} <= 11
+PG_LLVM_VERSION=${COMPILER_VERSION}
+PG_COMPILER_VERSION=${COMPILER_VERSION}
+.  else
+PG_LLVM_VERSION=11
+PG_COMPILER_VERSION=11
+.  endif
+.else
+PG_COMPILER_VERSION=${COMPILER_VERSION}
+PG_LLVM_VERSION=${LLVM_DEFAULT}
+.endif
+
+.if ${DISTVERSION:C/([0-9]*).*/\1/} >= 11
+.  if defined(SERVER_ONLY) && ${PORT_OPTIONS:MLLVM}
+INSTALL_DIRS+=		src/backend/jit/llvm
+.    if ${COMPILER_VERSION} != ${PG_COMPILER_VERSION}
+LLVM_CONFIGURE_ARGS?=	CC=${LOCALBASE}/bin/clang${PG_COMPILER_VERSION}
+.    endif
+.  endif
 .endif
 
 .if defined(SERVER_ONLY)
