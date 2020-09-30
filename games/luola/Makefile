@@ -3,7 +3,7 @@
 
 PORTNAME=	luola
 PORTVERSION=	1.3.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/${DIST_SUBDIR}/ # master site gone
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
