@@ -1,5 +1,5 @@
---- Makefile.orig	Tue Apr  1 12:13:32 1997
-+++ Makefile	Tue Jul  2 01:19:28 2002
+--- Makefile.orig	1997-04-01 17:13:32 UTC
++++ Makefile
 @@ -16,11 +16,14 @@
  #	want to remove the -DXFORMS86 declaration in the CCFLAG 
  #	assignment. 
@@ -20,7 +20,7 @@
  ECHO		= echo
  RM		= rm
  RMOPTS		= -f
-@@ -29,9 +32,9 @@
+@@ -29,9 +32,9 @@ CPOPTS		= -i
  INSTALL		= install
  INSTALLOPTS	= -d 
  
@@ -33,7 +33,7 @@
  SRCDIR		:= $$PWD
  USER		:= $$LOGNAME
  
-@@ -115,7 +118,7 @@
+@@ -115,7 +118,7 @@ install:	xldlas
  			so the following commands will probably fail"; fi 
  		@$(ECHO)
  		@$(CP) $(CPOPTS) xldlas $(BINDIR)
