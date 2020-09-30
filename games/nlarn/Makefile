@@ -4,6 +4,7 @@
 PORTNAME=	nlarn
 DISTVERSIONPREFIX=	NLarn-
 DISTVERSION=	0.7.3
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	egypcio@FreeBSD.org
@@ -13,8 +14,8 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gmake gnome lua:53 ncurses pkgconfig
-USE_GNOME=	glib20 introspection:build
 USE_GITHUB=	yes
+USE_GNOME=	glib20 introspection:build
 
 post-configure:
 	${REINPLACE_CMD} 's|/usr/share/nlarn|${DATADIR}|' \
