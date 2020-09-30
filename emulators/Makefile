@@ -118,6 +118,7 @@
     SUBDIR += qemu-utils
     SUBDIR += qemu31
     SUBDIR += qemu41
+    SUBDIR += qemu42
     SUBDIR += qemu50
     SUBDIR += qmc2
     SUBDIR += quasi88
