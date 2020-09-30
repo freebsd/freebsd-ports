@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	zchunk
-DISTVERSION=	1.1.6
+DISTVERSION=	1.1.7
 CATEGORIES=	archivers
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libargp.so:devel/argp-standalone \
 		libcurl.so:ftp/curl
 
-USES=		localbase meson pkgconfig
+USES=		localbase:ldflags meson pkgconfig
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 
