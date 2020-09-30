@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	urlgrabber
-PORTVERSION=	3.10.2
-PORTREVISION=	1
+PORTVERSION=	4.0.0
+PORTREVISION=	0
 CATEGORIES=	www python
 MASTER_SITES=	http://urlgrabber.baseurl.org/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,11 @@ COMMENT=	High-level cross-protocol url-grabber
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycurl>=7.19.0_1:ftp/py-pycurl@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=1.14.0:devel/py-six@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=1.14.0:devel/py-six@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pycurl>=7.19.0_1:ftp/py-pycurl@${PY_FLAVOR}
+
+USES=		python shebangfix
 
 DOCS_MAKE_ENV=	INSTALL_DOCS=yes
 DOCSDIR=	${PREFIX}/share/doc/${PYTHON_PKGNAMEPREFIX}${PORTNAME}
@@ -25,10 +29,9 @@ REINPLACE_ARGS=	-i.bak -e 's,%%DOCSDIR%%,${DOCSDIR},'
 
 SHEBANG_FILES=	scripts/urlgrabber-ext-down
 
-USES=		python:2.7 shebangfix
-USE_PYTHON=	distutils
+USE_PYTHON=	autoplist distutils
 
 post-patch:
-	@${REINPLACE_CMD} ${WRKSRC}/${PYSETUP}
+	@${REINPLACE_CMD} ${REINPLACE_ARGS} ${WRKSRC}/${PYSETUP}
 
 .include <bsd.port.mk>
