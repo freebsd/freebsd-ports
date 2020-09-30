@@ -1,16 +1,15 @@
 The PowerDNS Authoritative Server is the only solution that enables
-authoritative DNS service from all major databases, including but
-not limited to MySQL, PostgreSQL, SQLite3, LDAP and plain text files.
+authoritative DNS service from all major databases, including but not limited
+to MySQL, PostgreSQL, SQLite3, LDAP and plain text files.
 
-DNS answers can also be fully scripted using a variety of (scripting)
-languages such as Lua, Java, Perl, Python, Ruby, C and C++. Such
-scripting can be used for dynamic redirection, (spam) filtering or
-real time intervention.
+DNS answers can also be fully scripted using a variety of (scripting) languages
+such as Lua, Java, Perl, Python, Ruby, C and C++. Such scripting can be used
+for dynamic redirection, (spam) filtering or real time intervention.
 
 In addition, the PowerDNS Authoritative Server is the leading DNSSEC
-implementation, hosting the majority of all DNSSEC domains worldwide.
-The Authoritative Server hosts at least 30% of all domain names in
-Europe, and around 90% of all DNSSEC domains in Europe.
+implementation, hosting the majority of all DNSSEC domains worldwide. The
+Authoritative Server hosts at least 30% of all domain names in Europe, and
+around 90% of all DNSSEC domains in Europe.
 
  * IPv4, UDP/TCP
  * IPv6, UDP/TCP, 100% compliant
@@ -31,4 +30,4 @@ Europe, and around 90% of all DNSSEC domains in Europe.
  * API for direct control (pdns_control, pdnssec)
    - Local and remote access
 
-WWW: https://www.PowerDNS.com/auth.html
+WWW: https://www.powerdns.com/auth.html

@@ -75,6 +75,8 @@ man/man1/zone2sql.1.gz
 %%MYSQL%%%%PORTDOCS%%%%DOCSDIR%%/4.2.0_to_4.3.0_schema.mysql.sql
 %%PGSQL%%%%PORTDOCS%%%%DOCSDIR%%/4.2.0_to_4.3.0_schema.pgsql.sql
 %%SQLITE3%%%%PORTDOCS%%%%DOCSDIR%%/4.2.0_to_4.3.0_schema.sqlite3.sql
+%%SQLITE3%%%%PORTDOCS%%%%DOCSDIR%%/bind-dnssec.4.2.0_to_4.3.0_schema.sqlite3.sql
+%%SQLITE3%%%%PORTDOCS%%%%DOCSDIR%%/bind-dnssec.schema.sqlite3.sql
 %%MYSQL%%%%PORTDOCS%%%%DOCSDIR%%/dnssec-3.x_to_3.4.0_schema.mysql.sql
 %%PGSQL%%%%PORTDOCS%%%%DOCSDIR%%/dnssec-3.x_to_3.4.0_schema.pgsql.sql
 %%SQLITE3%%%%PORTDOCS%%%%DOCSDIR%%/dnssec-3.x_to_3.4.0_schema.sqlite3.sql
