@@ -2,7 +2,7 @@
 
 PORTNAME=	gogs
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.12.1
+DISTVERSION=	0.12.2
 CATEGORIES=	devel www
 
 MAINTAINER=	dmgk@FreeBSD.org
@@ -107,7 +107,7 @@ GH_TUPLE=	\
 		ssor:bom:6386211fdfcf:ssor_bom/vendor/github.com/ssor/bom \
 		stretchr:testify:v1.6.1:stretchr_testify/vendor/github.com/stretchr/testify \
 		t-tiger:gorm-bulk-insert:v1.3.0:t_tiger_gorm_bulk_insert/vendor/github.com/t-tiger/gorm-bulk-insert \
-		unknwon:cae:v1.0.0:unknwon_cae/vendor/github.com/unknwon/cae \
+		unknwon:cae:v1.0.2:unknwon_cae/vendor/github.com/unknwon/cae \
 		unknwon:com:v1.0.1:unknwon_com/vendor/github.com/unknwon/com \
 		unknwon:i18n:5c6446a380b6:unknwon_i18n/vendor/github.com/unknwon/i18n \
 		unknwon:paginater:45e5d631308e:unknwon_paginater/vendor/github.com/unknwon/paginater \
