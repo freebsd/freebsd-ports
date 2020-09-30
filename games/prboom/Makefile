@@ -3,7 +3,7 @@
 
 PORTNAME=	prboom
 PORTVERSION=	2.5.0
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20stable/${PORTVERSION}
 
@@ -12,9 +12,11 @@ COMMENT=	Multiplayer-capable and modified version of ID's classic DOOM game
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libsmpeg.so:multimedia/smpeg
+LIB_DEPENDS=	libsmpeg.so:multimedia/smpeg \
+		libpng16.so:graphics/png
 
 USES=		gmake sdl
+USE_GL=		gl
 USE_SDL=	mixer net sdl
 
 GNU_CONFIGURE=	yes
