@@ -1,5 +1,5 @@
---- Source/WTF/wtf/PlatformCPU.h.orig	2020-03-16 20:02:18.816718000 +0100
-+++ Source/WTF/wtf/PlatformCPU.h	2020-03-16 20:02:49.520094000 +0100
+--- Source/WTF/wtf/PlatformCPU.h.orig	2020-08-12 09:17:54 UTC
++++ Source/WTF/wtf/PlatformCPU.h
 @@ -155,6 +155,7 @@
  #elif defined(__ARM_ARCH_6__) \
      || defined(__ARM_ARCH_6J__) \
