@@ -23,7 +23,9 @@ lib/cmake/embree-%%VERSION%%/embree-targets.cmake
 lib/libembree3.so
 lib/libembree3.so.3
 lib/libembree3.so.%%VERSION%%
+man/man3/RTCBufferType.3embree3.gz
 man/man3/RTCCurveFlags.3embree3.gz
+man/man3/RTCFormat.3embree3.gz
 man/man3/RTCHit.3embree3.gz
 man/man3/RTCHitN.3embree3.gz
 man/man3/RTCQuaternionDecomposition.3embree3.gz
@@ -113,6 +115,7 @@ man/man3/rtcSetGeometryInstancedScene.3embree3.gz
 man/man3/rtcSetGeometryIntersectFilterFunction.3embree3.gz
 man/man3/rtcSetGeometryIntersectFunction.3embree3.gz
 man/man3/rtcSetGeometryMask.3embree3.gz
+man/man3/rtcSetGeometryMaxRadiusScale.3embree3.gz
 man/man3/rtcSetGeometryOccludedFilterFunction.3embree3.gz
 man/man3/rtcSetGeometryOccludedFunction.3embree3.gz
 man/man3/rtcSetGeometryPointQueryFunction.3embree3.gz
@@ -152,6 +155,7 @@ man/man3/rtcUpdateGeometryBuffer.3embree3.gz
 %%ISPC%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/displacement_geometry_ispc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dynamic_scene
 %%ISPC%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dynamic_scene_ispc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/embree_tests
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid_geometry
 %%ISPC%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid_geometry_ispc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hair_geometry
