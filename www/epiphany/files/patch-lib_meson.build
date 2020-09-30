@@ -1,0 +1,10 @@
+--- lib/meson.build.orig	2020-09-11 23:16:40 UTC
++++ lib/meson.build
+@@ -65,7 +65,6 @@ libephymisc_deps = [
+   libsoup_dep,
+   libxml_dep,
+   m_dep,
+-  portal_dep,
+   sqlite3_dep,
+   webkit2gtk_dep
+ ]
