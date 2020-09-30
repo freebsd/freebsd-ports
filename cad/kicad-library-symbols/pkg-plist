@@ -348,6 +348,8 @@
 %%DATADIR%%/library/Sensor_Audio.lib
 %%DATADIR%%/library/Sensor_Current.dcm
 %%DATADIR%%/library/Sensor_Current.lib
+%%DATADIR%%/library/Sensor_Distance.dcm
+%%DATADIR%%/library/Sensor_Distance.lib
 %%DATADIR%%/library/Sensor_Gas.dcm
 %%DATADIR%%/library/Sensor_Gas.lib
 %%DATADIR%%/library/Sensor_Humidity.dcm

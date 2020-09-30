@@ -12,7 +12,6 @@ bin/idf2vrml
 bin/idfcyl
 bin/idfrect
 bin/kicad
-bin/kicad-ogltest
 bin/kicad2step
 bin/pcb_calculator
 bin/pcbnew
