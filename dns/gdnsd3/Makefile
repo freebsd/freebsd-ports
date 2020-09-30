@@ -25,7 +25,7 @@ CONFIGURE_ARGS=	--localstatedir=/var
 USE_LDCONFIG=	yes
 USES=		pkgconfig libtool tar:xz perl5 gmake
 USE_PERL5=	build
-CPPFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-isystem${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFLICTS_INSTALL=	gdnsd-1.[0-9]* gdnsd2-2.[0-9]*
 
@@ -47,10 +47,6 @@ CONFIGURE_ARGS+=--without-hardening
 CFLAGS+=	-fstack-protector-strong -fexceptions -ftrapv
 LDFLAGS+=	-Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack
 .endif
-
-post-configure:
-	@${REINPLACE_CMD} -e 's|-Wall |-Wall -Wno-unused-variable |g' \
-		${WRKSRC}/Makefile
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$${localstatedir}/lib/$${PACKAGE_NAME}|/var/db/${PORTNAME}|g' \
