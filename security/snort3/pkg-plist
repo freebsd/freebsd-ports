@@ -41,6 +41,7 @@ include/snort/file_api/file_module.h
 include/snort/file_api/file_policy.h
 include/snort/file_api/file_segment.h
 include/snort/file_api/file_service.h
+include/snort/flow/deferred_trust.h
 include/snort/flow/expect_cache.h
 include/snort/flow/flow.h
 include/snort/flow/flow_data.h
@@ -81,6 +82,7 @@ include/snort/hash/lru_cache_shared.h
 include/snort/hash/xhash.h
 include/snort/helpers/base64_encoder.h
 include/snort/helpers/boyer_moore_search.h
+include/snort/helpers/json_stream.h
 include/snort/helpers/literal_search.h
 include/snort/helpers/scratch_allocator.h
 include/snort/host_tracker/host_cache.h
@@ -102,6 +104,7 @@ include/snort/main/snort.h
 include/snort/main/snort_config.h
 include/snort/main/snort_debug.h
 include/snort/main/snort_types.h
+include/snort/main/swapper.h
 include/snort/main/thread.h
 include/snort/main/thread_config.h
 include/snort/managers/codec_manager.h
@@ -129,8 +132,10 @@ include/snort/network_inspectors/packet_tracer/packet_tracer.h
 include/snort/network_inspectors/reputation/reputation_common.h
 include/snort/network_inspectors/rna/rna_fingerprint.h
 include/snort/network_inspectors/rna/rna_fingerprint_tcp.h
-include/snort/network_inspectors/rna/rna_fp_reader.h
+include/snort/network_inspectors/rna/rna_fingerprint_ua.h
+include/snort/network_inspectors/rna/rna_inspector.h
 include/snort/network_inspectors/rna/rna_logger.h
+include/snort/network_inspectors/rna/rna_name.h
 include/snort/packet_io/active.h
 include/snort/packet_io/sfdaq.h
 include/snort/packet_io/sfdaq_instance.h
@@ -228,10 +233,10 @@ libdata/pkgconfig/snort.pc
 %%PORTDOCS%%%%DOCSDIR%%/concepts.txt
 %%PORTDOCS%%%%DOCSDIR%%/config_changes.txt
 %%PORTDOCS%%%%DOCSDIR%%/connectors.txt
-%%PORTDOCS%%%%DOCSDIR%%/consolidated_config.txt
 %%PORTDOCS%%%%DOCSDIR%%/daq.txt
 %%PORTDOCS%%%%DOCSDIR%%/dcerpc.txt
 %%PORTDOCS%%%%DOCSDIR%%/differences.txt
+%%PORTDOCS%%%%DOCSDIR%%/dump_config.txt
 %%PORTDOCS%%%%DOCSDIR%%/enviro.txt
 %%PORTDOCS%%%%DOCSDIR%%/errors.txt
 %%PORTDOCS%%%%DOCSDIR%%/extending.txt
