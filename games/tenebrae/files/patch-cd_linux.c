@@ -1,6 +1,6 @@
---- ./cd_linux.c.orig	Sat Jun 10 12:08:13 2006
-+++ ./cd_linux.c	Sat Jun 10 12:08:13 2006
-@@ -31,7 +31,7 @@
+--- cd_linux.c.orig	2020-09-30 11:25:10 UTC
++++ cd_linux.c
+@@ -31,7 +31,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston,
  #include <time.h>
  #include <errno.h>
  
@@ -9,7 +9,7 @@
  
  #include "quakedef.h"
  
-@@ -54,8 +54,8 @@
+@@ -54,8 +54,8 @@ static void CDAudio_Eject(void)
  	if (cdfile == -1 || !enabled)
  		return; // no cd init'd
  
@@ -20,7 +20,7 @@
  }
  
  
-@@ -64,30 +64,30 @@
+@@ -64,30 +64,30 @@ static void CDAudio_CloseDoor(void)
  	if (cdfile == -1 || !enabled)
  		return; // no cd init'd
  
@@ -58,7 +58,7 @@
  
  	return 0;
  }
-@@ -95,8 +95,8 @@
+@@ -95,8 +95,8 @@ static int CDAudio_GetAudioDiskInfo(void)
  
  void CDAudio_Play(byte track, qboolean looping)
  {
@@ -69,7 +69,7 @@
  
  	if (cdfile == -1 || !enabled)
  		return;
-@@ -115,7 +115,7 @@
+@@ -115,7 +115,7 @@ void CDAudio_Play(byte track, qboolean looping)
  		Con_DPrintf("CDAudio: Bad track number %u.\n", track);
  		return;
  	}
@@ -78,7 +78,7 @@
  	// don't try to play a non-audio track
  	entry.cdte_track = track;
  	entry.cdte_format = CDROM_MSF;
-@@ -129,7 +129,7 @@
+@@ -129,7 +129,7 @@ void CDAudio_Play(byte track, qboolean looping)
  		Con_Printf("CDAudio: track %i is not audio\n", track);
  		return;
  	}
@@ -87,7 +87,7 @@
  	if (playing)
  	{
  		if (playTrack == track)
-@@ -137,19 +137,19 @@
+@@ -137,19 +137,19 @@ void CDAudio_Play(byte track, qboolean looping)
  		CDAudio_Stop();
  	}
  
@@ -116,7 +116,7 @@
  
  	playLooping = looping;
  	playTrack = track;
-@@ -168,8 +168,8 @@
+@@ -168,8 +168,8 @@ void CDAudio_Stop(void)
  	if (!playing)
  		return;
  
@@ -127,7 +127,7 @@
  
  	wasPlaying = false;
  	playing = false;
-@@ -183,8 +183,8 @@
+@@ -183,8 +183,8 @@ void CDAudio_Pause(void)
  	if (!playing)
  		return;
  
@@ -138,7 +138,7 @@
  
  	wasPlaying = playing;
  	playing = false;
-@@ -202,8 +202,8 @@
+@@ -202,8 +202,8 @@ void CDAudio_Resume(void)
  	if (!wasPlaying)
  		return;
  	
@@ -149,7 +149,7 @@
  	playing = true;
  }
  
-@@ -327,7 +327,8 @@
+@@ -327,7 +327,8 @@ static void CD_f (void)
  
  void CDAudio_Update(void)
  {
@@ -159,7 +159,7 @@
  	static time_t lastchk;
  
  	if (!enabled)
-@@ -351,14 +352,17 @@
+@@ -351,14 +352,17 @@ void CDAudio_Update(void)
  
  	if (playing && lastchk < time(NULL)) {
  		lastchk = time(NULL) + 2; //two seconds between chks

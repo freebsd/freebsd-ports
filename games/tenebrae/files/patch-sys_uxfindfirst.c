@@ -1,6 +1,6 @@
---- ./sys_uxfindfirst.c.orig	Sat Jun 10 12:08:13 2006
-+++ ./sys_uxfindfirst.c	Sat Jun 10 12:08:13 2006
-@@ -36,7 +36,7 @@
+--- sys_uxfindfirst.c.orig	2020-09-30 11:25:10 UTC
++++ sys_uxfindfirst.c
+@@ -36,7 +36,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston,
  #include "quakedef.h"
  #include <errno.h>
  

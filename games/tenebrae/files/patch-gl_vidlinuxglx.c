@@ -1,6 +1,6 @@
---- ./gl_vidlinuxglx.c.orig	Sat Jun 10 12:08:13 2006
-+++ ./gl_vidlinuxglx.c	Sat Jun 10 12:08:13 2006
-@@ -20,7 +20,6 @@
+--- gl_vidlinuxglx.c.orig	2020-09-30 11:25:10 UTC
++++ gl_vidlinuxglx.c
+@@ -20,7 +20,6 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston,
  #include <termios.h>
  #include <sys/ioctl.h>
  #include <sys/stat.h>
@@ -8,7 +8,7 @@
  #include <stdarg.h>
  #include <stdio.h>
  #include <signal.h>
-@@ -339,8 +338,6 @@
+@@ -339,8 +338,6 @@ static void HandleEvents(void)
  				{
  					mx += ((int)event.xmotion.x - mwx) * 2;
  					my += ((int)event.xmotion.y - mwy) * 2;

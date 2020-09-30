@@ -1,5 +1,5 @@
---- ./sys_dosa.s.orig	Sat Jun 10 12:08:13 2006
-+++ ./sys_dosa.s	Sat Jun 10 12:08:13 2006
+--- sys_dosa.s.orig	2020-09-30 11:25:10 UTC
++++ sys_dosa.s
 @@ -5,6 +5,7 @@
  #include "asm_i386.h"
  #include "quakeasm.h"
@@ -8,7 +8,7 @@
  
  	.data
  
-@@ -93,3 +94,4 @@
+@@ -93,3 +94,4 @@ C(Sys_SetFPCW):
  
  	ret
  

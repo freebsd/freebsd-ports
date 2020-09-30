@@ -1,6 +1,6 @@
---- ./linux/Makefile.i386linux.orig	Sat Jun 10 12:08:13 2006
-+++ ./linux/Makefile.i386linux	Sat Jun 10 12:12:17 2006
-@@ -18,56 +18,60 @@
+--- linux/Makefile.i386linux.orig	2020-09-30 11:25:10 UTC
++++ linux/Makefile.i386linux
+@@ -18,57 +18,61 @@ NOARCH=noarch
  
  MOUNT_DIR     = ../
  
@@ -54,11 +54,11 @@
  
 -TARGETS=$(BUILDDIR)/bin/tenebrae.run
 +TARGETS=$(BUILDDIR)/bin/tenebrae
-+
+ 
 +all: build_release
 +
 +targets: $(TARGETS)
- 
++
  build_debug:
  	@-mkdir -p $(BUILD_DEBUG_DIR) \
  		$(BUILD_DEBUG_DIR)/bin \
@@ -71,15 +71,16 @@
  		$(BUILD_RELEASE_DIR)/bin \
  		$(BUILD_RELEASE_DIR)/glquake
 -	$(MAKE) targets BUILDDIR=$(BUILD_RELEASE_DIR) CFLAGS="$(RELEASE_CFLAGS)"
--
++	$(MAKE) targets BUILDDIR=$(BUILD_RELEASE_DIR) CFLAGS+="$(RELEASE_CFLAGS)"
+ 
 -all: build_debug build_release
 -
 -targets: $(TARGETS)
-+	$(MAKE) targets BUILDDIR=$(BUILD_RELEASE_DIR) CFLAGS+="$(RELEASE_CFLAGS)"
- 
+-
  #############################################################################
  # GLQuake
-@@ -143,7 +147,7 @@
+ #############################################################################
+@@ -143,7 +147,7 @@ GLQUAKE_OBJS= \
  	$(BUILDDIR)/glquake/snd_dma.o \
  	$(BUILDDIR)/glquake/snd_mem.o \
  	$(BUILDDIR)/glquake/snd_mix.o \
@@ -88,7 +89,7 @@
  	$(BUILDDIR)/glquake/gl_vidlinuxglx.o \
  	$(BUILDDIR)/glquake/math.o \
  	$(BUILDDIR)/glquake/worlda.o \
-@@ -154,7 +158,7 @@
+@@ -154,7 +158,7 @@ GLQUAKE_OBJS= \
  	$(BUILDDIR)/glquake/te_scripts.o 
  
  
@@ -97,7 +98,7 @@
  	$(CC) $(CFLAGS) -o $@ $(GLQUAKE_OBJS) $(LDFLAGS)
  
  $(BUILDDIR)/glquake/cl_demo.o :      $(MOUNT_DIR)/cl_demo.c
-@@ -361,7 +365,7 @@
+@@ -361,7 +365,7 @@ $(BUILDDIR)/glquake/snd_mem.o :      $(MOUNT_DIR)/snd_
  $(BUILDDIR)/glquake/snd_mix.o :      $(MOUNT_DIR)/snd_mix.c
  	$(DO_GL_CC)
  

@@ -1,6 +1,6 @@
---- ./common.c.orig	Sat Jun 10 12:08:13 2006
-+++ ./common.c	Sat Jun 10 12:08:13 2006
-@@ -2221,7 +2221,10 @@
+--- common.c.orig	2020-09-30 11:25:10 UTC
++++ common.c
+@@ -2221,7 +2221,10 @@ void COM_InitFilesystem (void)
  		if ((userdir[j-1] == '\\') || (userdir[j-1] == '/'))
  			userdir[j-1] = 0;
  	}

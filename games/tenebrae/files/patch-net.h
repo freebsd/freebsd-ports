@@ -1,6 +1,6 @@
---- ./net.h.orig	Sat Jun 10 12:08:13 2006
-+++ ./net.h	Sat Jun 10 12:08:13 2006
-@@ -239,7 +239,7 @@
+--- net.h.orig	2020-09-30 11:25:10 UTC
++++ net.h
+@@ -239,7 +239,7 @@ typedef struct
  extern int hostCacheCount;
  extern hostcache_t hostcache[HOSTCACHESIZE];
  

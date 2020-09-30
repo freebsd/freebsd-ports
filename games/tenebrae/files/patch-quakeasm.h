@@ -1,6 +1,6 @@
---- ./quakeasm.h.orig	Sat Jun 10 12:08:13 2006
-+++ ./quakeasm.h	Sat Jun 10 12:08:13 2006
-@@ -31,7 +31,7 @@
+--- quakeasm.h.orig	2020-09-30 11:25:10 UTC
++++ quakeasm.h
+@@ -31,7 +31,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston,
  
  #endif
  

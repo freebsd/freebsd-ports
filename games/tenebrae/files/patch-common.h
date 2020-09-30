@@ -1,6 +1,6 @@
---- ./common.h.orig	Sat Jun 10 12:08:13 2006
-+++ ./common.h	Sat Jun 10 12:08:13 2006
-@@ -169,6 +169,10 @@
+--- common.h.orig	2020-09-30 11:25:10 UTC
++++ common.h
+@@ -169,6 +169,10 @@ struct cache_user_s;
  
  extern	char	com_gamedir[MAX_OSPATH];
  

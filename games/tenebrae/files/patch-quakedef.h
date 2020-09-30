@@ -1,6 +1,6 @@
---- ./quakedef.h.orig	Sat Jun 10 12:08:13 2006
-+++ ./quakedef.h	Sat Jun 10 12:08:13 2006
-@@ -74,11 +74,6 @@
+--- quakedef.h.orig	2020-09-30 11:25:10 UTC
++++ quakedef.h
+@@ -74,11 +74,6 @@ void	VID_UnlockBuffer (void);
  
  #endif
  
