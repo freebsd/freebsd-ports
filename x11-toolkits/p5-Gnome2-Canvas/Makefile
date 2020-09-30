@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Gnome2-Canvas
-PORTVERSION=	1.002
-PORTREVISION=	10
+PORTVERSION=	1.003
 CATEGORIES=	x11-toolkits gnome perl5
 MASTER_SITES=	CPAN/Gnome2 \
 		SF/gtk2-perl/Gnome2_Canvas/${PORTVERSION}
@@ -22,9 +21,10 @@ BUILD_DEPENDS=	p5-ExtUtils-Depends>=0:devel/p5-ExtUtils-Depends \
 RUN_DEPENDS=	p5-Glib>=0:devel/p5-Glib \
 		p5-Gtk2>=0:x11-toolkits/p5-Gtk2
 
-USE_GNOME=	libgnomecanvas
 USES=		gnome perl5 pkgconfig
+USE_GNOME=	libgnomecanvas
 USE_PERL5=	configure
+
 MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.mk>
