@@ -12,6 +12,8 @@ COMMENT=	NextCloud Desktop Syncing Client
 
 LICENSE=	GPLv2
 
+BROKEN=		fails to configure
+
 LIB_DEPENDS=	libinotify.so:devel/libinotify \
 		libqt5keychain.so:security/qtkeychain
 
