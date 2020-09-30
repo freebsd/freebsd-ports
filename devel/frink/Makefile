@@ -3,7 +3,7 @@
 
 PORTNAME=	frink
 PORTVERSION=	2.2.2p4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	https://BSDforge.COM/projects/source/devel/frink/
 
@@ -15,9 +15,10 @@ LICENSE_NAME=	The University of Newcastle upon Tyne
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 LICENSE_PERMS=	auto-accept
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-2.2.2
 USES=		uidfix
 MAKEFILE=	${FILESDIR}/Makefile.bsd
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-2.2.2
 
 OPTIONS_DEFINE=	DOCS
 
