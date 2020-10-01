@@ -20,4 +20,6 @@ RUN_DEPENDS=	p5-Pod-Coverage>0:devel/p5-Pod-Coverage \
 USES=		perl5
 USE_PERL5=	configure
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
