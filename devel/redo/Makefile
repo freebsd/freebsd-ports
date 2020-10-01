@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	redo
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	devel
 MASTER_SITES=	https://jdebp.eu/Repository/freebsd/
 
