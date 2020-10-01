@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	File-HomeDir
-PORTVERSION=	1.004
+PORTVERSION=	1.006
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,8 +17,9 @@ LICENSE_FILE_ART10=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-File-Which>=0.05:sysutils/p5-File-Which
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
