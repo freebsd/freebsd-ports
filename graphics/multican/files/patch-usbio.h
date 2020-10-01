@@ -9,3 +9,12 @@
          {0, 0, 0, NULL}
  };
  
+@@ -203,7 +205,7 @@ static struct {
+         {0x00000000, NULL}
+ };
+ 
+-unsigned char usb_packet[0x1400];
++extern unsigned char usb_packet[0x1400];
+ extern unsigned usb_sequence;
+ extern int tolerate_error, retries;
+ 
