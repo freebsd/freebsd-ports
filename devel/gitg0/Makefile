@@ -11,6 +11,9 @@ PKGNAMESUFFIX=	0
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK-based git repository viewer (gtk2 version)
 
+DEPRECATED=	ancient version of gitg not maintained
+EXPIRATION_DATE=	2020-11-01
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
