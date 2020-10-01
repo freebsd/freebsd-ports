@@ -29,13 +29,7 @@ USE_PERL5=	configure
 
 CFLAGS+=	-DBSON_COMPILATION
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 502708
-TEST_DEPENDS+=	p5-JSON-PP>=2.97001:converters/p5-JSON-PP
-.endif
-
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/BSON/XS/XS.so
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
