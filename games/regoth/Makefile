@@ -3,6 +3,7 @@
 PORTNAME=	regoth
 DISTVERSIONPREFIX=	nightly-
 DISTVERSION=	0.4.189
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	greg@unrelenting.technology

@@ -3,6 +3,7 @@
 
 PORTNAME=	libgig
 DISTVERSION=	4.2.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF/qsampler/${PORTNAME}/${PORTVERSION} \
 		http://download.linuxsampler.org/packages/

@@ -3,6 +3,7 @@
 
 PORTNAME=	twolame
 PORTVERSION=	0.4.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF \
 		http://www.ecs.soton.ac.uk/~njh/twolame/

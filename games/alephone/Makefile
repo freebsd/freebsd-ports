@@ -3,6 +3,7 @@
 
 PORTNAME=	alephone
 DISTVERSION=	20190331
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	fiziologus@gmail.com

@@ -3,7 +3,7 @@
 
 PORTNAME=	freeswitch
 PORTVERSION=	1.10.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	https://files.freeswitch.org/releases/freeswitch/ \
 		https://files.freeswitch.org/releases/sounds/:sounds

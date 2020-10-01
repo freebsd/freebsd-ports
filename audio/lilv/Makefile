@@ -3,6 +3,7 @@
 
 PORTNAME=	lilv
 PORTVERSION=	0.24.8
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://download.drobilla.net/
 

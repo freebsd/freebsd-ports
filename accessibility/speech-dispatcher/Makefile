@@ -2,6 +2,7 @@
 
 PORTNAME=	speech-dispatcher
 DISTVERSION=	0.8.8
+PORTREVISION=	1
 CATEGORIES?=	accessibility audio
 MASTER_SITES=	http://devel.freebsoft.org/pub/projects/speechd/
 

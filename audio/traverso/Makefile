@@ -2,7 +2,7 @@
 
 PORTNAME=	traverso
 DISTVERSION=	0.49.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	https://traverso-daw.org/download/12/
 

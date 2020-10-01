@@ -2,6 +2,7 @@
 
 PORTNAME=	liquidsfz
 DISTVERSION=	0.2.0
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org

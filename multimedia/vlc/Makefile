@@ -26,14 +26,14 @@ BUILD_DEPENDS=	gsed:textproc/gsed \
 		yasm:devel/yasm
 RUN_DEPENDS=	ffmpeg>=3.4.1,1:multimedia/ffmpeg
 
-USES=		compiler:c++11-lib desktop-file-utils gettext-tools gmake gnome \
+USES=		compiler:c++17-lang desktop-file-utils gettext-tools gmake gnome \
 		iconv libtool localbase pathfix pkgconfig tar:xz
 
 # VLC git (post 2.2.4) requires C++11 support and passes the appropriate flag
 # to the compiler. Until the port is updated, we explicitly pass -std=c++11 to
 # the compiler because Qt 5.7+ requires C++11 support, and FreeBSD 10's clang
 # does not default to C++11 mode.
-USE_CXXSTD=	c++11
+# USE_CXXSTD=	c++11
 
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
@@ -63,7 +63,7 @@ CONFIGURE_ARGS+=--enable-debug
 CFLAGS_i386=	-fomit-frame-pointer
 
 OPTIONS_DEFINE=	A52 AALIB AOM ASS AVAHI CACA CHROMECAST DAV1D DBUS DCA DOCS DVDREAD \
-		DVDNAV FAAD FLAC FLUID FREERDP FRIBIDI GME GNUTLS \
+		DEBUG DVDNAV FAAD FLAC FLUID FREERDP FRIBIDI GME GNUTLS \
 		GOOM HARFBUZZ JACK JPEG KATE LIBBLURAY LIBPLACEBO LIBRSVG2 LIBSSH2 LIRC \
 		LIVEMEDIA LUA MAD MFX MODPLUG MPEG2 MTP MUSEPACK \
 		NCURSES NFS NLS NOTIFY OGG OGGSPOTS OPTIMIZED_CFLAGS OPUS PNG PULSEAUDIO \
@@ -377,6 +377,13 @@ WITH_DVD_DEVICE?=/dev/cd0
 
 .if ${PORT_OPTIONS:MX11}
 INSTALLS_ICONS=	yes
+.endif
+
+.if ${PORT_OPTIONS:MDEBUG}
+WITH_DEBUG=yes
+CONFIGURE_ARGS+=--enable-debug --disable-optimizations
+CFLAGS+=-g -O0
+CXXFLAGS+=-g -O0
 .endif
 
 post-patch:
