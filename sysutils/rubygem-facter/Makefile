@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	facter
-PORTVERSION=	4.0.40
+PORTVERSION=	4.0.41
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
