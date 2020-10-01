@@ -32,11 +32,4 @@ TEST_DEPENDS=	p5-Test-Exception>=0.42:devel/p5-Test-Exception \
 USES=		perl5
 USE_PERL5=	configure
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 502800
-BUILD_DEPENDS+=	p5-JSON-PP>=2.92:converters/p5-JSON-PP
-RUN_DEPENDS+=	p5-JSON-PP>=2.92:converters/p5-JSON-PP
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
