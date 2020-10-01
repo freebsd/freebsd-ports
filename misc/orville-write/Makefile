@@ -3,6 +3,7 @@
 
 PORTNAME=	orville-write
 PORTVERSION=	2.55
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://unixpapa.com/software/
 

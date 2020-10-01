@@ -1,6 +1,6 @@
---- wrt_him.c.orig	2004-09-28 20:32:13.000000000 -0700
-+++ wrt_him.c	2010-02-02 22:31:08.634155195 -0800
-@@ -116,7 +116,7 @@
+--- wrt_him.c.orig	2004-09-29 03:32:13 UTC
++++ wrt_him.c
+@@ -116,7 +116,7 @@ int rc;
  extern struct wrttmp mywrt;
  
      /* Open utmp file */
@@ -9,7 +9,7 @@
  
      /* Look me up */
      find_me();
-@@ -204,7 +204,7 @@
+@@ -204,7 +204,7 @@ int write_me;
  int perm, hisperm= 0;
  time_t hisatime= 0;
  time_t atime;
@@ -18,7 +18,7 @@
  struct wrttmp tmpwrt;
  long tmppos;
  
-@@ -213,16 +213,14 @@
+@@ -213,16 +213,14 @@ long tmppos;
      {
          /* Check if this is the target user, ignoring X-window lines */
          if (ut->ut_line[0] != ':' &&
@@ -37,7 +37,7 @@
  
  	    /* Is this guy writing me? */
  	    write_me= !strncmp(tmpwrt.wrt_what,myname,UT_NAMESIZE);
-@@ -283,7 +281,7 @@
+@@ -283,7 +281,7 @@ long tmppos;
  
  int find_tty()
  {
@@ -46,7 +46,7 @@
  
      if ((ut= find_utmp(histty)) == NULL)
  	return(1);
-@@ -291,23 +289,23 @@
+@@ -291,23 +289,23 @@ struct utmp *ut;
      if (*hisname != '\0')
      {
  	/* Does the name not match? */
@@ -74,7 +74,7 @@
      return(0);
  }
  
-@@ -321,7 +319,7 @@
+@@ -321,7 +319,7 @@ struct utmp *ut;
  
  void find_answer()
  {
@@ -83,7 +83,7 @@
  int slot;
  
      lseek(wstream,hispos= wrttmp_offset(slot= 0),0);
-@@ -332,9 +330,9 @@
+@@ -332,9 +330,9 @@ int slot;
  	{
  	    /* Found someone writing me - get his name from utmp */
  	    strncpy(histty,hiswrt.wrt_line,UT_LINESIZE);
@@ -95,7 +95,7 @@
  		printf("Replying to %s on %s...",hisname,histty);
  		if (!telegram) putchar('\n');
  		return;
-@@ -363,7 +361,7 @@
+@@ -363,7 +361,7 @@ int nhelpers= 0;	/* Number of helpers on */
  int ahelpers= 0;	/* Number of helpers available */
  int previous;
  int slot= 0;
@@ -104,7 +104,7 @@
  struct wrttmp tmpwrt;
  long tmppos;
  
-@@ -387,7 +385,7 @@
+@@ -387,7 +385,7 @@ long tmppos;
  	
  	/* Find the helper candidate in utmp - if he's not there skip out */
  	if ((ut= find_utmp(tmpwrt.wrt_line)) == NULL ||
@@ -113,7 +113,7 @@
  	    continue;
  	
  	/* Reject helpers with their message permissions off */
-@@ -397,14 +395,14 @@
+@@ -397,14 +395,14 @@ long tmppos;
  	    {
  	    	/* Perms off - but am I in .yeswrite file? */
  	    	if (!f_exceptions || tmpwrt.wrt_except != 'y' ||
@@ -130,7 +130,7 @@
  	    	    	continue;
  	    }
          }
-@@ -422,7 +420,7 @@
+@@ -422,7 +420,7 @@ long tmppos;
  	ahelpers++;
  
  	/* Has he helped us before? */
@@ -139,7 +139,7 @@
  
  	/* So roll the dice to see if we will choose him */
  	if (!previous && (unsigned)RAND() > (unsigned)RAND_MAX / ahelpers)
-@@ -430,7 +428,7 @@
+@@ -430,7 +428,7 @@ long tmppos;
  
  	/* We chose him, so make him our helper candidate so far */
  	strncpy(histty, tmpwrt.wrt_line, UT_LINESIZE);

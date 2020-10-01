@@ -1,5 +1,5 @@
---- mesg.c.orig	2010-02-02 22:54:21.613120678 -0800
-+++ mesg.c	2010-02-02 23:01:31.739763589 -0800
+--- mesg.c.orig	2004-09-29 04:43:14 UTC
++++ mesg.c
 @@ -19,7 +19,7 @@
  char *mytty;			/* my tty name in tty?? format */
  long mypos;			/* offset of my entry in wrttmp file */
@@ -9,7 +9,7 @@
  
  char silent= FALSE;		/* generates no output if true */
  int verbose= FALSE;		/* generate whole table of output if true */
-@@ -335,7 +335,7 @@
+@@ -335,7 +335,7 @@ char flag;
      }
  
      /* Close the utmp file */
@@ -18,7 +18,7 @@
  
     if (f_wrthist != NULL &&
         !wassilent && (new[SMESG] == 'n' || new[SEXCP] == 'y'))
-@@ -549,12 +549,12 @@
+@@ -549,12 +549,12 @@ int code;
  
  void do_disconnect()
  {
@@ -33,7 +33,7 @@
  
      /* For each user who is writing me */
      for (;;)
-@@ -564,16 +564,16 @@
+@@ -564,16 +564,16 @@ int slot= 0;
  	       sizeof(struct wrttmp))
  	   break;
  
@@ -53,7 +53,7 @@
  		{
  		    /* Writer is for real: bonk him one */
  		    kill(hiswrt.wrt_pid, SIGTERM);
-@@ -590,10 +590,10 @@
+@@ -590,10 +590,10 @@ int slot= 0;
  
  int find_me()
  {
@@ -66,7 +66,7 @@
      {
  	printf("%s: Unable to find your tty (%s) in utmp file\n",
  		progname,mytty);
-@@ -602,7 +602,7 @@
+@@ -602,7 +602,7 @@ struct utmp *ut;
      myutmp= *ut;
  
      /* Find the entry in the wrttmp file */
@@ -75,7 +75,7 @@
  }
  
  
-@@ -616,13 +616,13 @@
+@@ -616,13 +616,13 @@ int may_help()
  #define BUFSZ 80
  FILE *hfp;
  char buf[BUFSZ+1];
@@ -92,7 +92,7 @@
  	strcat(myname,"\n");
  	
  	while (fgets(buf,BUFSZ,hfp) != NULL)
-@@ -645,7 +645,7 @@
+@@ -645,7 +645,7 @@ int window_warning(int newmode)
  {
  struct wrthist *hist;
  struct wrttmp w;
@@ -101,7 +101,7 @@
  long writer, writee;
  time_t now;
  int n, foundsome= 0;
-@@ -669,7 +669,7 @@
+@@ -669,7 +669,7 @@ FILE *fp;
  
      for (writee= 0; writee < n; writee++)
      {
@@ -110,7 +110,7 @@
  	    now - hist[writee].tm <= f_answertel)
  	{
  	    /* Fetch "his" wrttmp entry - it may actually belong to a previous
-@@ -688,12 +688,12 @@
+@@ -688,12 +688,12 @@ FILE *fp;
  	    /* Fetch his utmp entry, and confirm that the current user was
  	     * already logged in there when we sent our last telegram there.
  	     */
@@ -126,7 +126,7 @@
  	    	continue;
  
  	    if (!foundsome)
-@@ -703,8 +703,8 @@
+@@ -703,8 +703,8 @@ FILE *fp;
  	        foundsome= 1;
  	    }
  	    printf("  %-*.*s %-*.*s %4.1f more minutes\n",
@@ -137,7 +137,7 @@
  	        (float)(f_answertel - now + hist[writee].tm)/60.0);
  	}
      }
-@@ -717,7 +717,7 @@
+@@ -717,7 +717,7 @@ FILE *fp;
  
  char *myhomedir()
  {
@@ -146,7 +146,7 @@
  struct passwd *pw;
  char *dir, *getenv();
  
-@@ -726,8 +726,8 @@
+@@ -726,8 +726,8 @@ char *dir, *getenv();
  	return dir;
  
      /* If that don't work, try passwd file */

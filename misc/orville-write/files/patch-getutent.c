@@ -1,6 +1,6 @@
---- getutent.c.orig	2000-01-31 22:02:45.000000000 -0800
-+++ getutent.c	2010-02-02 22:53:30.347068707 -0800
-@@ -20,18 +20,8 @@
+--- getutent.c.orig	2000-02-01 06:02:45 UTC
++++ getutent.c
+@@ -20,18 +20,8 @@ static int openut()
  {
      if (utmp.state == 0)
      {
@@ -19,7 +19,7 @@
      }
  }
  
-@@ -42,8 +32,7 @@
+@@ -42,8 +32,7 @@ static int openut()
  void endutent()
  {
      if (utmp.state == 1)
@@ -29,7 +29,7 @@
  }
  
  
-@@ -52,8 +41,7 @@
+@@ -52,8 +41,7 @@ void endutent()
  
  void setutent()
  {
@@ -39,7 +39,7 @@
  }
  
  
-@@ -75,9 +63,9 @@
+@@ -75,9 +63,9 @@ int utmpname(const char *file)
  /* GETUTENT - Read the next entry from the utmp file into static storage.
   */
  
@@ -51,7 +51,7 @@
  
      switch (utmp.state)
      {
-@@ -85,11 +73,11 @@
+@@ -85,11 +73,11 @@ static struct utmp ut;
  	openut();
      	/* Drop through */
      case 1:
@@ -66,7 +66,7 @@
      }
  }
  
-@@ -100,9 +88,9 @@
+@@ -100,9 +88,9 @@ static struct utmp ut;
   * we conform with Linux and Solaris.
   */
  
@@ -78,7 +78,7 @@
  
      switch (utmp.state)
      {
-@@ -110,20 +98,20 @@
+@@ -110,20 +98,20 @@ static struct utmp ut;
  	openut();
      	/* Drop through */
      case 1:

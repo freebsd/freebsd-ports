@@ -1,6 +1,6 @@
---- wrt_me.c.orig	2010-02-02 22:31:42.972816673 -0800
-+++ wrt_me.c	2010-02-02 22:33:09.915329757 -0800
-@@ -14,19 +14,19 @@
+--- wrt_me.c.orig	2003-05-30 15:22:35 UTC
++++ wrt_me.c
+@@ -14,19 +14,19 @@ long mypos= -1;		/* offset of my entry in the wrttmp f
  
  void find_me()
  {
@@ -23,7 +23,7 @@
  
      /* Check if this is our real identity */
  #ifndef SLOWPASSWD
-@@ -48,7 +48,7 @@
+@@ -48,7 +48,7 @@ int myuid;
  
      /* Find my wrt_tmp entry */
  

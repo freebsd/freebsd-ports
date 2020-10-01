@@ -1,5 +1,5 @@
---- wrttmp.h.orig	2010-02-02 22:10:42.237520427 -0800
-+++ wrttmp.h	2010-02-02 22:18:11.802300308 -0800
+--- wrttmp.h.orig	2000-01-26 04:26:03 UTC
++++ wrttmp.h
 @@ -30,7 +30,7 @@
  #define WRTTMP_H
  
@@ -22,7 +22,7 @@
  #endif
  
  #if defined(TTY_GROUP) || defined(TTY_OTHERS)
-@@ -65,9 +65,9 @@
+@@ -65,9 +65,9 @@ struct wrthdr {
  	};
  
  struct wrttmp {

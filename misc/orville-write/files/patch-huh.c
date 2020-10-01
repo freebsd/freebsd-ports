@@ -1,6 +1,6 @@
---- huh.c.orig	2010-02-02 23:11:01.823876514 -0800
-+++ huh.c	2010-02-02 23:11:54.475034412 -0800
-@@ -34,13 +34,13 @@
+--- huh.c.orig	2003-05-30 15:37:40 UTC
++++ huh.c
+@@ -34,13 +34,13 @@ struct passwd *pwd;
  
  int record_on()
  {
@@ -16,7 +16,7 @@
  
      /* Open the wrttmp file */
      if (init_wstream(O_RDONLY)) return 1;
-@@ -50,13 +50,13 @@
+@@ -50,13 +50,13 @@ long pos;
      tty= mydevname+5;
  
      /* Find our entry in the utmp file */

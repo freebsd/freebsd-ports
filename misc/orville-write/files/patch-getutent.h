@@ -1,5 +1,5 @@
---- getutent.h.orig	2000-01-31 22:01:13.000000000 -0800
-+++ getutent.h	2010-02-02 22:49:58.043092643 -0800
+--- getutent.h.orig	2000-02-01 06:01:13 UTC
++++ getutent.h
 @@ -14,8 +14,8 @@
  int utmpname(const char *file);
  void endutent(void);

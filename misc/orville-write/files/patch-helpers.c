@@ -1,5 +1,5 @@
---- helpers.c.orig	2000-02-20 09:28:08.000000000 -0800
-+++ helpers.c	2010-02-02 23:20:25.434811144 -0800
+--- helpers.c.orig	2000-02-20 17:28:08 UTC
++++ helpers.c
 @@ -11,7 +11,7 @@
  
  struct hlp {
@@ -9,7 +9,7 @@
  	int busy;			/* is he busy? */
  	struct hlp *next;		/* next helper */
  	} *list= NULL;
-@@ -27,7 +27,7 @@
+@@ -27,7 +27,7 @@ struct hlp *curr, *prev;
  
      for (curr= list, prev= NULL; curr != NULL; prev= curr,curr= prev->next)
      {
@@ -18,7 +18,7 @@
  	{
  	    if (prev == NULL)
  	    	list= curr->next;
-@@ -47,7 +47,7 @@
+@@ -47,7 +47,7 @@ struct hlp *curr, *prev;
  int perms_on(struct wrttmp *w)
  {
  struct stat st;
@@ -27,7 +27,7 @@
  
  #ifdef TTYPERMS
  #define MASK 022
-@@ -59,7 +59,7 @@
+@@ -59,7 +59,7 @@ char devname[UT_LINESIZE+7];
  
      /* Is his tty physically writable? */
  
@@ -36,7 +36,7 @@
      if (stat(devname,&st))
      	return(0);
  
-@@ -72,7 +72,7 @@
+@@ -72,7 +72,7 @@ main(int argc, char **argv)
  FILE *fp;
  struct wrttmp w;
  struct wrthdr wt_head;
@@ -45,7 +45,7 @@
  struct hlp *tmp;
  int i, j;
  int slot= 0;
-@@ -146,7 +146,7 @@
+@@ -146,7 +146,7 @@ int listthem= 1;
      if (list != NULL)
      {
      	/* Do the scan */
@@ -54,7 +54,7 @@
      	{
  #ifdef USER_PROCESS
  	    if (u->ut_type != USER_PROCESS)
-@@ -155,15 +155,15 @@
+@@ -155,15 +155,15 @@ int listthem= 1;
  	    if ((tmp= findlist(u->ut_line)) != NULL)
  	    {
  	    	/* If the time stamps don't match, this isn't a real helper */
@@ -73,7 +73,7 @@
  			    tmp->busy ? " [busy]" : "");
  
  	    	}
-@@ -172,7 +172,7 @@
+@@ -172,7 +172,7 @@ int listthem= 1;
  	    }
      	}
  

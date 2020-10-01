@@ -1,6 +1,6 @@
---- amin.c.orig	2010-02-02 23:04:35.773467035 -0800
-+++ amin.c	2010-02-02 23:06:45.674814831 -0800
-@@ -194,16 +194,16 @@
+--- amin.c.orig	2004-09-29 04:43:10 UTC
++++ amin.c
+@@ -194,16 +194,16 @@ char *r;
  
  void locate_wrttmp(char *tty, struct wrttmp *wbuf, long *pos)
  {
@@ -20,7 +20,7 @@
  }
  
  
-@@ -230,7 +230,7 @@
+@@ -230,7 +230,7 @@ char *shortcmd;		/* command without full pathname */
      }
  
      /* Close utmp file */
@@ -29,7 +29,7 @@
  
      /* Figure out name of program being exec'ed */
      if ((shortcmd= strrchr(fullcmd,'/')) == NULL)
-@@ -241,7 +241,7 @@
+@@ -241,7 +241,7 @@ char *shortcmd;		/* command without full pathname */
      /* Fix my entry in wrttmp */
      newwrt= mywrt;
      newwrt.wrt_what[0]= '!';
