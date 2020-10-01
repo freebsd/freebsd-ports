@@ -1,0 +1,34 @@
+--- configure.orig	2004-01-12 15:47:18 UTC
++++ configure
+@@ -38,8 +38,7 @@ int main(int, char **) {
+   return 0;
+ }
+ EOF
+-CXX=unknown;
+-for i in "CC" "g++" "cc" "$CC"; do
++for i in "$CXX" "c++"; do
+   if $i -c $tmp_file.C 2>/dev/null; then
+     CXX="$i";
+     break;
+@@ -205,12 +204,19 @@ cat <<EOF >$tmp_file.C;
+ #include <new>
+ #include <vector>
+ using namespace std;
+-void func() { map<string, string> x; }
++int main(void) {
++  map<string, string> x;
++  return 0;
++}
+ EOF
+-if $CXX -c $tmp_file.C 2>/dev/null; then
++if $CXX $tmp_file.C 2>/dev/null; then
+   LIBSTDCXX_INCLUDES="";
+   LIBSTDCXX_LIBS="";
+   $echo 'works; no need to make "./libstd"';
++elif $CXX $tmp_file.C -lstdc++ 2>/dev/null; then
++  LIBSTDCXX_INCLUDES="";
++  LIBSTDCXX_LIBS="-lstdc++";
++  $echo 'works with libstdc++; no need to make "./libstd"';
+ else
+   LIBSTDCXX_INCLUDES='-Ilibstd/include';
+   LIBSTDCXX_LIBS='libstd/libstd.a';

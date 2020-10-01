@@ -11,4 +11,4 @@ accepts also syntactically incorrect input, attempting to interpret it
 "reasonably".  The rendering  is  largely customisable  through an  RC
 file.
 
-WWW: https://github.com/grobian/html2text
+WWW: http://www.mbayer.de/html2text/
