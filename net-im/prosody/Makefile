@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	prosody
-PORTVERSION=	0.11.6
-PORTREVISION=	1
+PORTVERSION=	0.11.7
 CATEGORIES=	net-im
 MASTER_SITES=	https://prosody.im/downloads/source/
 

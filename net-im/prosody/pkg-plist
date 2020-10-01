@@ -147,6 +147,7 @@ bin/prosody-migrator
 %%LUA_LIBDIR%%/prosody/util/dataforms.lua
 %%LUA_LIBDIR%%/prosody/util/datamanager.lua
 %%LUA_LIBDIR%%/prosody/util/datetime.lua
+%%LUA_LIBDIR%%/prosody/util/dbuffer.lua
 %%LUA_LIBDIR%%/prosody/util/debug.lua
 %%LUA_LIBDIR%%/prosody/util/dependencies.lua
 %%LUA_LIBDIR%%/prosody/util/encodings.so
@@ -154,6 +155,7 @@ bin/prosody-migrator
 %%LUA_LIBDIR%%/prosody/util/events.lua
 %%LUA_LIBDIR%%/prosody/util/filters.lua
 %%LUA_LIBDIR%%/prosody/util/format.lua
+%%LUA_LIBDIR%%/prosody/util/gc.lua
 %%LUA_LIBDIR%%/prosody/util/hashes.so
 %%LUA_LIBDIR%%/prosody/util/helpers.lua
 %%LUA_LIBDIR%%/prosody/util/hex.lua
