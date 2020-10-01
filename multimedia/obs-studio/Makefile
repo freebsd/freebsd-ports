@@ -2,6 +2,7 @@
 
 PORTNAME=	obs-studio
 DISTVERSION=	26.0.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -35,6 +36,7 @@ LIB_DEPENDS_amd64=	libluajit-5.1.so:lang/luajit
 LIB_DEPENDS_armv7=	libluajit-5.1.so:lang/luajit
 LIB_DEPENDS_i386=	libluajit-5.1.so:lang/luajit
 LIB_DEPENDS_powerpc=	libluajit-5.1.so:lang/luajit
+LIB_DEPENDS_powerpc64=	libluajit-5.1.so:lang/luajit-openresty
 
 USES=		cmake gl lua pkgconfig python:3.4+ qt:5 xorg
 USE_GITHUB=	yes
@@ -60,7 +62,7 @@ USES+=		compiler:c++11-lib
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != amd64 && ${ARCH} != armv7 && ${ARCH} != i386 && ${ARCH} != powerpc
+.if ${ARCH} != amd64 && ${ARCH} != armv7 && ${ARCH} != i386 && ${ARCH} != powerpc && ${ARCH} != powerpc64
 PLIST_SUB+=	LUAJIT="@comment "
 .else
 PLIST_SUB+=	LUAJIT=""
