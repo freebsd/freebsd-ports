@@ -4,12 +4,15 @@
 PORTNAME=	najitool
 PORTVERSION=	0.8.4
 DISTVERSIONSUFFIX=	.src
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generates, converts, and filters files
+
+LICENSE=	PD
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnaji.a:devel/libnaji
 
