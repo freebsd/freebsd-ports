@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	findomain
-DISTVERSION=	2.1.1
-PORTREVISION=	3
+DISTVERSION=	2.1.4
 CATEGORIES=	net security
 
 MAINTAINER=	vulcan@wired.sh
@@ -13,7 +12,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cargo ssl
 USE_GITHUB=	yes
-GH_ACCOUNT=	Edu4rdSHL
+GH_ACCOUNT=	Findomain
+GH_PROJECT=	${GH_ACCOUNT}
 
 CARGO_CRATES=	aho-corasick-0.7.10 \
 		ansi_term-0.11.0 \
@@ -37,14 +37,14 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		c2-chacha-0.2.3 \
 		cc-1.0.50 \
 		cfg-if-0.1.10 \
-		clap-2.33.1 \
+		clap-2.33.3 \
 		cloudabi-0.1.0 \
 		config-0.10.1 \
 		core-foundation-0.6.4 \
 		core-foundation-sys-0.6.2 \
+		crossbeam-channel-0.4.3 \
 		crossbeam-deque-0.7.2 \
 		crossbeam-epoch-0.8.0 \
-		crossbeam-queue-0.2.1 \
 		crossbeam-utils-0.7.0 \
 		crypto-mac-0.7.0 \
 		digest-0.8.1 \
@@ -88,6 +88,7 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		instant-0.1.6 \
 		iovec-0.1.4 \
 		ipconfig-0.2.1 \
+		ipnet-2.3.0 \
 		itoa-0.4.4 \
 		js-sys-0.3.35 \
 		kernel32-sys-0.2.2 \
@@ -143,13 +144,13 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		rand_chacha-0.2.1 \
 		rand_core-0.5.1 \
 		rand_hc-0.2.0 \
-		rayon-1.3.1 \
-		rayon-core-1.7.1 \
+		rayon-1.4.0 \
+		rayon-core-1.8.0 \
 		redox_syscall-0.1.56 \
 		regex-1.3.9 \
 		regex-syntax-0.6.18 \
 		remove_dir_all-0.5.2 \
-		reqwest-0.10.6 \
+		reqwest-0.10.8 \
 		resolv-conf-0.6.2 \
 		ring-0.16.12 \
 		rust-ini-0.13.0 \
@@ -166,9 +167,9 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		semver-0.10.0 \
 		semver-parser-0.7.0 \
 		serde-0.8.23 \
-		serde-1.0.114 \
+		serde-1.0.115 \
 		serde-hjson-0.9.1 \
-		serde_derive-1.0.114 \
+		serde_derive-1.0.115 \
 		serde_json-1.0.44 \
 		serde_test-0.8.23 \
 		serde_urlencoded-0.6.1 \
