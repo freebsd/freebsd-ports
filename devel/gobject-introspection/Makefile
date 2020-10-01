@@ -34,4 +34,10 @@ INSTALL_TARGET=	install-strip
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PYTHON_CMD%%|${PYTHON_CMD}|' ${WRKSRC}/tools/meson.build
 
+post-stage:
+	@${PYTHON_CMD} -m compileall -d ${PREFIX}/lib/${PORTNAME} \
+		"${STAGEDIR}${PREFIX}/lib/${PORTNAME}"
+	@${PYTHON_CMD} -O -m compileall -d ${PREFIX}/lib/${PORTNAME} \
+		"${STAGEDIR}${PREFIX}/lib/${PORTNAME}"
+
 .include <bsd.port.mk>
