@@ -1,11 +1,11 @@
---- gmetad/conf.c.in.orig	2013-05-07 09:39:40.000000000 -0500
-+++ gmetad/conf.c.in	2014-10-14 15:31:54.000000000 -0500
-@@ -374,7 +374,7 @@
+--- gmetad/conf.c.in.orig	2015-07-01 19:49:35 UTC
++++ gmetad/conf.c.in
+@@ -475,7 +475,7 @@ set_defaults (gmetad_config_t *config)
     config->trusted_hosts = NULL;
     config->debug_level = 0;
     config->should_setuid = 1;
 -   config->setuid_username = "nobody";
 +   config->setuid_username = SETUID_USER;
     config->rrd_rootdir = "@varstatedir@/ganglia/rrds";
-    config->write_rrds = 1;
-    config->scalable_mode = 1;
+    config->rrdcached_addrstr = NULL;
+    memset(&config->rrdcached_address, 0, sizeof (config->rrdcached_address));

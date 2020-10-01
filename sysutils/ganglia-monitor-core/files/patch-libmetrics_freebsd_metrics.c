@@ -1,6 +1,6 @@
---- libmetrics/freebsd/metrics.c.orig	2013-05-07 09:39:40.000000000 -0500
-+++ libmetrics/freebsd/metrics.c	2014-10-14 15:32:43.000000000 -0500
-@@ -461,6 +461,17 @@
+--- libmetrics/freebsd/metrics.c.orig	2015-07-01 19:49:35 UTC
++++ libmetrics/freebsd/metrics.c
+@@ -461,6 +461,17 @@ cpu_sintr_func ( void )
     return val;
  }
  

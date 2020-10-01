@@ -1,6 +1,6 @@
---- gmond/modules/python/Makefile.in.orig	2013-05-07 09:39:40.000000000 -0500
-+++ gmond/modules/python/Makefile.in	2014-10-14 15:31:54.000000000 -0500
-@@ -601,8 +601,8 @@
+--- gmond/modules/python/Makefile.in.orig	2015-07-01 19:49:35 UTC
++++ gmond/modules/python/Makefile.in
+@@ -639,8 +639,8 @@ README:	README.in $(FIXCONFIG)
  # Note that README is listed as a dependency to be generated, but it
  # is not currently installed anywhere
  install-exec-hook:	../conf.d/modpython.conf README

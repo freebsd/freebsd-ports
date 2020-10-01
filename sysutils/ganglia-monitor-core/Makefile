@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	monitor-core
-PORTVERSION=	3.7.1
-PORTREVISION=	2
+PORTVERSION=	3.7.2
 CATEGORIES=	sysutils net
 MASTER_SITES=	SF/ganglia/ganglia%20monitoring%20core/${PORTVERSION}
 PKGNAMEPREFIX=	ganglia-
@@ -22,21 +21,21 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libpcre.so:devel/pcre \
 		libexpat.so:textproc/expat2
 
-OPTIONS_DEFINE=	GMETAD
-OPTIONS_DEFAULT=	GMETAD
-GMETAD_DESC=	include gmetad
-
-USES=		libtool pkgconfig python:2.7
+USES=		libtool pkgconfig
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-setuid=ganglia --enable-setgid=ganglia \
-		--with-python=${PYTHON_CMD}
+		--disable-python
 CONFIGURE_ENV=	GANGLIA_ACK_SYSCONFDIR=1
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 USERS=		ganglia
 GROUPS=		ganglia
+
+OPTIONS_DEFINE=	GMETAD
+OPTIONS_DEFAULT=	GMETAD
+GMETAD_DESC=	include gmetad
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
@@ -71,25 +70,24 @@ MODULES=	modcpu.so \
 		modmulticpu.so \
 		modnet.so \
 		modproc.so \
-		modpython.so \
 		modsys.so
 
 # gmond.conf.5 and gmond.conf.html can be generated from conf.pod, but
 # doing so requires perl installed in the build stage.
-post-patch:
-	${REINPLACE_CMD} \
+pre-configure:
+	@${REINPLACE_CMD} \
 		-e "s|/etc/ganglia/\(gm[a-z]*d.conf\)|${PREFIX}/etc/\1|g" \
 		${WRKSRC}/README \
 		${WRKSRC}/mans/gmetad.1 \
 		${WRKSRC}/mans/gmond.1
-	${REINPLACE_CMD} -e "s|nobody|ganglia|g" \
+	@${REINPLACE_CMD} -e "s|nobody|ganglia|g" \
 		${WRKSRC}/gmetad/gmetad.conf.in \
 		${WRKSRC}/gmond/conf.pod \
 		${WRKSRC}/gmond/gmond.conf.5 \
 		${WRKSRC}/gmond/gmond.conf.html
 
 post-build:
-	${WRKSRC}/gmond/gmond -t > ${WRKDIR}/gmond.conf
+	@${WRKSRC}/gmond/gmond -t > ${WRKDIR}/gmond.conf
 
 post-install:
 	${INSTALL_DATA} ${WRKDIR}/gmond.conf \
@@ -110,6 +108,6 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/gmond/gmond.conf.5 \
 		${STAGEDIR}${MANPREFIX}/man/man5
 	${MKDIR} ${STAGEDIR}/var/db/ganglia/rrds
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib/ganglia/python_modules
+	@${CHMOD} -R a+rX ${STAGEDIR}/var/db/ganglia
 
 .include <bsd.port.mk>

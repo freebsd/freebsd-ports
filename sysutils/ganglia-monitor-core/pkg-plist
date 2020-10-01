@@ -1,7 +1,6 @@
 bin/ganglia-config
 bin/gmetric
 bin/gstat
-etc/gmond.conf.d/modpython.conf
 @sample etc/gmond.conf.sample
 %%GMETAD%%@sample etc/gmetad.conf.sample
 include/ganglia.h
@@ -19,7 +18,6 @@ lib/ganglia/modmem.so
 lib/ganglia/modmulticpu.so
 lib/ganglia/modnet.so
 lib/ganglia/modproc.so
-lib/ganglia/modpython.so
 lib/ganglia/modsys.so
 lib/libganglia.so.0
 lib/libganglia.so.0.0.0
@@ -34,6 +32,5 @@ man/man5/gmond.conf.5.gz
 %%GMETAD%%sbin/gmetad
 %%GMETAD%%sbin/gmetasnap
 sbin/gmond
-@dir lib/ganglia/python_modules
 @dir(ganglia,ganglia,) /var/db/ganglia/rrds
 @dir(ganglia,ganglia,) /var/db/ganglia

@@ -1,6 +1,6 @@
---- gmond/modules/conf.d/modpython.conf.in.orig	2013-05-07 09:39:40.000000000 -0500
-+++ gmond/modules/conf.d/modpython.conf.in	2014-10-14 15:31:54.000000000 -0500
-@@ -9,8 +9,8 @@
+--- gmond/modules/conf.d/modpython.conf.in.orig	2015-07-01 19:49:35 UTC
++++ gmond/modules/conf.d/modpython.conf.in
+@@ -9,8 +9,8 @@ modules {
    module {
      name = "python_module"
      path = "modpython.so"
