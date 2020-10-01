@@ -1,11 +1,11 @@
---- Makefile.am.orig	2020-01-05 16:50:06.000000000 +0100
-+++ Makefile.am	2020-01-10 20:11:11.228348000 +0100
+--- Makefile.am.orig	2020-10-01 18:10:47.137747000 +0200
++++ Makefile.am	2020-10-01 18:13:35.608941000 +0200
 @@ -30,11 +30,11 @@
  # SOFTWARE.
  #--
  
--SUBDIRS = common mft_utils ext_libs $(TOOLS_CRYPTO) tools_layouts ${MTCR_CONF_DIR} mtcr_py $(MAD_IFC) reg_access cmdif $(XZ_UTILS_DIR) dev_mgt tools_res_mgmt mvpd mflash fw_comps_mgr libmfa pldmlib mlxconfig mlxfwops cmdparser $(FW_MGR_TOOLS) flint small_utils mstdump ${ADABE_TOOLS} tracers resourcedump
-+SUBDIRS = mft_utils ext_libs $(TOOLS_CRYPTO) tools_layouts ${MTCR_CONF_DIR} $(MAD_IFC) reg_access cmdif $(XZ_UTILS_DIR) dev_mgt tools_res_mgmt mvpd mflash fw_comps_mgr libmfa pldmlib mlxconfig mlxfwops cmdparser $(FW_MGR_TOOLS) flint ${ADABE_TOOLS}
+-SUBDIRS = common mft_utils mft_utils/hsmclient ext_libs $(TOOLS_CRYPTO) tools_layouts ${MTCR_CONF_DIR} mtcr_py $(MAD_IFC) reg_access cmdif $(XZ_UTILS_DIR) dev_mgt tools_res_mgmt mvpd mflash fw_comps_mgr libmfa pldmlib mlxconfig mlxfwops cmdparser $(FW_MGR_TOOLS) flint small_utils mstdump ${ADABE_TOOLS} tracers resourcedump resourceparse
++SUBDIRS = mft_utils mft_utils/hsmclient ext_libs $(TOOLS_CRYPTO) tools_layouts ${MTCR_CONF_DIR} $(MAD_IFC) reg_access cmdif $(XZ_UTILS_DIR) dev_mgt tools_res_mgmt mvpd mflash fw_comps_mgr libmfa pldmlib mlxconfig mlxfwops cmdparser $(FW_MGR_TOOLS) flint ${ADABE_TOOLS}
  
  DIST_SUBDIRS = tracers
  

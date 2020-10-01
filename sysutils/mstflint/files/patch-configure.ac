@@ -1,51 +1,6 @@
---- configure.ac.orig	2020-01-05 16:50:06.000000000 +0100
-+++ configure.ac	2020-01-09 00:28:38.419054000 +0100
-@@ -100,7 +100,7 @@ fi
- AC_MSG_CHECKING(--enable-fw-mgr argument)
- AC_ARG_ENABLE(fw-mgr,
-              [  --enable-fw-mgr        Enable compiling mstfwmanager tool and features],
--             [enable_fw_mgr="yes"],
-+             [enable_fw_mgr=$enableval],
-              [enable_fw_mgr="no"])
- AC_MSG_RESULT($enable_fw_mgr)
- if test "x$enable_fw_mgr" = "xyes"; then
-@@ -116,7 +116,7 @@ fi
- AC_MSG_CHECKING(--enable-adb-generic-tools argument)
- AC_ARG_ENABLE(adb-generic-tools,
-              [  --enable-adb-generic-tools        Enable compiling the following tools which depends on ADABE: mstreg and mstlink],
--             [enable_adb_generic_tools="yes"],
-+             [enable_adb_generic_tools=$enableval],
-              [enable_adb_generic_tools="no"])
- AC_MSG_RESULT($enable_adb_generic_tools)
- if test "x$enable_adb_generic_tools" = "xyes"; then
-@@ -143,7 +143,7 @@ AC_SUBST(ENABLE_FWMGR)
- AC_MSG_CHECKING(--enable-xml2 argument)
- AC_ARG_ENABLE(xml2,
-             [  --enable-xml2           Enable mstflint libxml2 dependent features],
--            [enable_xml2="yes"],
-+            [enable_xml2=$enableval],
-             [enable_xml2="no"])
- AC_MSG_RESULT($enable_xml2)
- if test [ "x$enable_xml2" = "xyes" ] || [ test "x$enable_fw_mgr" = "xyes" ]; then
-@@ -185,7 +185,7 @@ AM_CONDITIONAL(ENABLE_INBAND, [test  "x$enable_inband"
- AC_MSG_CHECKING(--enable-cs argument)
- AC_ARG_ENABLE(cs,
-             [  --enable-cs             Enable mstflint "checksum" command, dependant of openssl library],
--            [enable_cs="yes"],
-+            [enable_cs=$enableval],
-             [enable_cs="no"])
- AC_MSG_RESULT($enable_cs)
- if test "x$enable_cs" = "xyes"; then
-@@ -211,7 +211,7 @@ fi
- AC_MSG_CHECKING(--enable-all-static argument)
- AC_ARG_ENABLE([all_static],
-     AS_HELP_STRING([--enable-all-static], [Enable creating none dynamic executables]),
--    [enable_all_static="yes"],
-+    [enable_all_static=$enableval],
-     [enable_all_static="no"])
- AC_MSG_RESULT($enable_all_static)
- 
-@@ -237,7 +237,7 @@ AC_ARG_ENABLE([static_libstdcpp],
+--- configure.ac.orig	2020-10-02 01:05:50.612135000 +0200
++++ configure.ac	2020-10-02 01:06:26.890856000 +0200
+@@ -233,7 +233,7 @@
      AS_HELP_STRING([--enable-static-libstdcpp], [Enable link static to libstdc++]))
  
  AS_IF([test "x$enable_static_libstdcpp" = "xyes" -o "x$enable_all_static" = "xyes" ], [
@@ -54,12 +9,3 @@
  ])
  
  AC_ARG_ENABLE([dynamic_ld],
-@@ -267,7 +267,7 @@ AS_IF([test "x$INIPARSER_SYSTEM_AVAILABLE" = "xyes" ],
-     CXXFLAGS="$CXXFLAGS -DHAVE_INI_PARSER"
- ])
- 
--AC_SEARCH_LIBS([json_object_get], [json-c jason], [JSON_SYSTEM_AVAILABLE="yes"],[
-+AC_SEARCH_LIBS([json_object_get], [jsoncpp], [JSON_SYSTEM_AVAILABLE="yes"],[
-     JSON_SYSTEM_AVAILABLE="no"
-     JSON_CFLAGS='-I$(top_srcdir)/ext_libs/json'
-     AC_SUBST(JSON_CFLAGS)
