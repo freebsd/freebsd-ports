@@ -17,14 +17,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	p5-Test2-Suite>=0.000074:devel/p5-Test2-Suite
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
-.include <bsd.port.pre.mk>
+NO_ARCH=	yes
 
-.if ${PERL_LEVEL} < 502705
-TEST_DEPENDS+=	p5-Test-Simple>=1.302095:devel/p5-Test-Simple
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
