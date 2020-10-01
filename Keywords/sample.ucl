@@ -20,42 +20,28 @@
 
 actions: [file(1)]
 arguments: true
-post-install: <<EOD
-  case "%1" in
-  /*) sample_file="%1" ;;
-  *) sample_file="%D/%1" ;;
-  esac
-  target_file="${sample_file%.sample}"
-  set -- %@
-  if [ $# -eq 2 ]; then
-      target_file=${2}
-  fi
-  case "${target_file}" in
-  /*) target_file="${target_file}" ;;
-  *) target_file="%D/${target_file}" ;;
-  esac
-  if ! [ -f "${target_file}" ]; then
-    /bin/cp -p "${sample_file}" "${target_file}"
-  fi
-EOD
-pre-deinstall: <<EOD
-  case "%1" in
-  /*) sample_file="%1" ;;
-  *) sample_file="%D/%1" ;;
-  esac
-  target_file="${sample_file%.sample}"
-  set -- %@
-  if [ $# -eq 2 ]; then
-      set -- %@
-      target_file=${2}
-  fi
-  case "${target_file}" in
-  /*) target_file="${target_file}" ;;
-  *) target_file="%D/${target_file}" ;;
-  esac
-  if cmp -s "${target_file}" "${sample_file}"; then
-    rm -f "${target_file}"
-  elif [ -e "${target_file}" ] ; then
-    echo "You may need to manually remove ${target_file} if it is no longer needed."
-  fi
-EOD
+post-install-lua: <<EOS
+  sample_file = pkg.prefixed_path("%1")
+  if "%#" == 2 then
+    target_file = pkg.prefixed_path("%1")
+  else
+    target_file = string.gsub(sample_file,'%.sample$', "")
+  end
+  if not pkg.stat(target_file) then
+    pkg.copy(sample_file, target_file)
+  end
+EOS
+
+pre-deinstall-lua: <<EOS
+  sample_file = pkg.prefixed_path("%1")
+  if "%#" == 2 then
+    target_file = pkg.prefixed_path("%1")
+  else
+    target_file = string.gsub(sample_file,'%.sample$', "")
+  end
+  if pkg.filecmp(sample_file, target_file) == 0 then
+    os.remove(target_file)
+  else
+    pkg.print_msg("You may need to manually remove " .. target_file .. " if it is no longer needed.")
+  end
+EOS
