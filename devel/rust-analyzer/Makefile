@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rust-analyzer
-DISTVERSION=	2020-09-21
+DISTVERSION=	2020-09-28
 CATEGORIES=	devel
 
 MAINTAINER=	rust@FreeBSD.org
@@ -26,14 +26,14 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		base64-0.12.3 \
 		bitflags-1.2.1 \
 		byteorder-1.3.4 \
-		cargo_metadata-0.11.2 \
+		cargo_metadata-0.11.3 \
 		cc-1.0.60 \
 		cfg-if-0.1.10 \
-		chalk-derive-0.27.0 \
-		chalk-ir-0.27.0 \
-		chalk-recursive-0.27.0 \
-		chalk-solve-0.27.0 \
-		chrono-0.4.15 \
+		chalk-derive-0.29.0 \
+		chalk-ir-0.29.0 \
+		chalk-recursive-0.29.0 \
+		chalk-solve-0.29.0 \
+		chrono-0.4.18 \
 		cloudabi-0.1.0 \
 		cmake-0.1.44 \
 		crc32fast-1.2.0 \
@@ -50,7 +50,7 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		filetime-0.2.12 \
 		fixedbitset-0.2.0 \
 		flate2-1.0.17 \
-		fs-err-2.3.0 \
+		fs-err-2.5.0 \
 		fsevent-2.0.2 \
 		fsevent-sys-3.0.2 \
 		fst-0.4.4 \
@@ -60,13 +60,13 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		goblin-0.2.3 \
 		hashbrown-0.9.0 \
 		heck-0.3.1 \
-		hermit-abi-0.1.15 \
+		hermit-abi-0.1.16 \
 		home-0.5.3 \
 		idna-0.2.0 \
 		indexmap-1.6.0 \
 		inotify-0.8.3 \
 		inotify-sys-0.1.3 \
-		instant-0.1.6 \
+		instant-0.1.7 \
 		iovec-0.1.4 \
 		itertools-0.9.0 \
 		itoa-0.4.6 \
@@ -76,18 +76,18 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		lazycell-1.3.0 \
 		libc-0.2.77 \
 		libloading-0.6.3 \
-		libmimalloc-sys-0.1.16 \
+		libmimalloc-sys-0.1.17 \
 		lock_api-0.4.1 \
 		log-0.4.11 \
 		lsp-server-0.3.4 \
-		lsp-types-0.81.0 \
+		lsp-types-0.82.0 \
 		matchers-0.0.1 \
 		matches-0.1.8 \
 		maybe-uninit-2.0.0 \
 		memchr-2.3.3 \
 		memmap-0.7.0 \
-		memoffset-0.5.5 \
-		mimalloc-0.1.20 \
+		memoffset-0.5.6 \
+		mimalloc-0.1.21 \
 		miniz_oxide-0.4.2 \
 		mio-0.6.22 \
 		mio-extras-2.0.6 \
@@ -108,7 +108,7 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		petgraph-0.5.1 \
 		pico-args-0.3.4 \
 		plain-0.2.3 \
-		proc-macro2-1.0.21 \
+		proc-macro2-1.0.23 \
 		pulldown-cmark-0.7.2 \
 		pulldown-cmark-to-cmark-5.0.0 \
 		quote-1.0.7 \
@@ -139,8 +139,8 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		sharded-slab-0.0.9 \
 		slab-0.4.2 \
 		smallvec-1.4.2 \
-		smol_str-0.1.16 \
-		syn-1.0.41 \
+		smol_str-0.1.17 \
+		syn-1.0.42 \
 		synstructure-0.12.4 \
 		termcolor-1.1.0 \
 		text-size-1.0.0 \
