@@ -2,14 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	Unicode-MapUTF8
-PORTVERSION=	1.11
-PORTREVISION=	1
+PORTVERSION=	1.14
 CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl class that implements conversion between arbitrary charsets
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	ja-p5-Jcode>=0:japanese/p5-Jcode \
@@ -19,5 +21,7 @@ RUN_DEPENDS=	ja-p5-Jcode>=0:japanese/p5-Jcode \
 
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
