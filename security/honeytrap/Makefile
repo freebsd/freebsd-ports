@@ -1,21 +1,19 @@
 # $FreeBSD$
 
 PORTNAME=	honeytrap
-DISTVERSION=	g20200415
+DISTVERSION=	g20200625
 CATEGORIES=	security
 
-MAINTAINER=	remco.verhoef@dutchsec.com
-COMMENT=	HoneyTrap Freebsd port
+MAINTAINER=	ezri.mudde@dutchsec.com
+COMMENT=	Framework for running, monitoring and managing honeypots
 
 LICENSE=	ART20
 
-BROKEN=		fails to build
-
 USES=		go:modules
+GO_BUILDFLAGS=	-ldflags '-X github.com/honeytrap/honeytrap/cmd.Version=2020-07-22T08:34:55 -X github.com/honeytrap/honeytrap/cmd.ReleaseTag=DEVELOPMENT.2020-07-22T08-34-55Z -X github.com/honeytrap/honeytrap/cmd.CommitID=33bbb2db3a3140b0ce4fbda14747bc954e0bcadd -X github.com/honeytrap/honeytrap/cmd.ShortCommitID=33bbb2db3a31 -extldflags "static"'
 USE_GITHUB=	yes
-GH_TAGNAME=	d8d94c8f
-GH_TUPLE=	\
-		AndreasBriese:bbloom:28f7e881ca57:andreasbriese_bbloom/vendor/github.com/AndreasBriese/bbloom \
+GH_TAGNAME=	33bbb2d
+GH_TUPLE=	AndreasBriese:bbloom:28f7e881ca57:andreasbriese_bbloom/vendor/github.com/AndreasBriese/bbloom \
 		BurntSushi:toml:v0.3.0:burntsushi_toml/vendor/github.com/BurntSushi/toml \
 		Logicalis:asn1:c9c836c1a3cd:logicalis_asn1/vendor/github.com/Logicalis/asn1 \
 		Shopify:sarama:v1.16.0:shopify_sarama/vendor/github.com/Shopify/sarama \
@@ -72,22 +70,24 @@ GH_TUPLE=	\
 		yuin:gopher-lua:8bfc7677f583:yuin_gopher_lua/vendor/github.com/yuin/gopher-lua \
 		google:gvisor:3eb302470365:google_gvisor/vendor/gvisor.dev/gvisor
 
-USERS=		honeytrap
-GROUPS=		honeytrap
+HONEYTRAP_USER?=	honeytrap
+HONEYTRAP_GROUP?=	honeytrap
+HONEYTRAP_DBDIR?=	/var/db/${PORTNAME}
+
+USERS=		${HONEYTRAP_USER}
+GROUPS=		${HONEYTRAP_GROUP}
 USE_RC_SUBR=	honeytrap
-PLIST_FILES=	bin/honeytrap \
-		etc/honeytrap.toml \
-		"@dir(honeytrap,honeytrap,4744) /var/log/honeytrap" \
-		"@dir(honeytrap,honeytrap,4744) libdata/honeytrap"
+PLIST_FILES=	"@sample(honeytrap,honeytrap,0600) ${ETCDIR}/honeytrap.toml.sample" \
+		bin/honeytrap
+
+SUB_LIST=	GROUP=${HONEYTRAP_GROUP} \
+		HONEYTRAP_DBDIR=${HONEYTRAP_DBDIR} \
+		USER=${HONEYTRAP_USER}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKDIR}/bin/honeytrap ${STAGEDIR}${PREFIX}/bin/honeytrap
-	${MKDIR} ${STAGEDIR}${PREFIX}/etc/rc.d
-	${INSTALL_DATA} ${FILESDIR}/etc/honeytrap.toml ${STAGEDIR}${PREFIX}/etc
-
-post-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/libdata/honeytrap
-	${MKDIR} ${STAGEDIR}/var/log/honeytrap
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/rc.d ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${FILESDIR}/honeytrap.toml ${STAGEDIR}${ETCDIR}/honeytrap.toml.sample
 
 .include <bsd.port.mk>

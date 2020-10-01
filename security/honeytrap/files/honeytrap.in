@@ -3,18 +3,34 @@
 # $FreeBSD$
 #
 # PROVIDE: honeytrap
-# REQUIRE: LOGIN
+# REQUIRE: NETWORKING SERVERS DAEMON
 # KEYWORD: shutdown
+
+# Add honeytrap_enable="YES" to /etc/rc.conf to enable Honeytrap
+
+# Additional variables you can define are:
+
+# honeytrap_config (path):                Config file path.
+#                                         Set to %%ETCDIR%%/honeytrap.toml by default.
+# honeytrap_datadir (dir):                Set dir to store honeytrap data in.
+#                                         Default is "%%HONEYTRAP_DBDIR%%"
+# honeytrap_logdir (dir):                 Set dir to store honeytrap logs in.
+#                                         Default is "/var/log/honeytrap"
+# honeytrap_user (string):                Set user to run honeytrap.
+#                                         Default is "%%USER%%".
+# honeytrap_group (string):               Set group to run honeytrap.
+#                                         Default is "%%GROUP%%".
+# honeytrap_pidfile (string):             Set full path to pid file
+#                                         Default is "/var/run/honeytrap.pid"
+# honeytrap_syslog_output_enable (bool):  Set to YES to enable syslog output
+#                                         Default is "NO". See daemon(8).
+# honeytrap_syslog_output_tag (str):      Set syslog tag if syslog enabled.
+#                                         Default is "honeytrap". See daemon(8).
+# honeytrap_syslog_output_priority (str): Set syslog priority if syslog enabled.
+#                                         Default is "info". See daemon(8).
+# honeytrap_syslog_output_facility (str): Set syslog facility if syslog enabled.
+#                                         Default is "daemon". See daemon(8).
 #
-# Add these lines to /etc/rc.conf.local or /etc/rc.conf
-# to enable this service:
-#
-# honeytrap_enable (bool):	Set to NO by default.
-#				Set it to YES to enable honeytrap.
-# honeytrap_datadir (path):	Set to %%PREFIX%%/libdata/honeytrap
-#				by default.
-# honeytrap_config (path):	Set to %%PREFIX%%/etc/honeytrap.toml
-#				by default.
 
 . /etc/rc.subr
 
@@ -24,18 +40,49 @@ rcvar=honeytrap_enable
 load_rc_config $name
 
 : ${honeytrap_enable:="NO"}
-: ${honeytrap_datadir="%%PREFIX%%/libdata/honeytrap"}
-: ${honeytrap_config="%%PREFIX%%/etc/honeytrap.toml"}
+: ${honeytrap_config="%%ETCDIR%%/honeytrap.toml"}
+: ${honeytrap_datadir:="%%HONEYTRAP_DBDIR%%"}
+: ${honeytrap_logdir:="/var/log/honeytrap"}
+: ${honeytrap_user:="%%USER%%"}
+: ${honeytrap_group:="%%GROUP%%"}
+: ${honeytrap_pidfile:="/var/run/${name}.pid"}
+: ${honeytrap_syslog_output_enable:="NO"}
 
-start_cmd="${name}_start"
+pidfile=${honeytrap_pidfile}
+procname="%%PREFIX%%/bin/honeytrap"
+command="/usr/sbin/daemon"
 
-honeytrap_program="%%PREFIX%%/bin/honeytrap"
-honeytrap_flags="--data $honeytrap_datadir --config $honeytrap_config"
-pidfile=/var/run/${name}.pid
+start_precmd="honeytrap_start_precmd"
 
-honeytrap_start()
+if checkyesno honeytrap_syslog_output_enable; then
+    if [ -n "${honeytrap_syslog_output_tag}" ]; then
+        honeytrap_syslog_output_flags="-T ${honeytrap_syslog_output_tag}"
+    else
+        honeytrap_syslog_output_flags="-T ${name}"
+    fi
+    if [ -n "${honeytrap_syslog_output_priority}" ]; then
+        honeytrap_syslog_output_flags="${honeytrap_syslog_output_flags} -s ${honeytrap_syslog_output_priority}"
+    fi
+
+    if [ -n "${honeytrap_syslog_output_facility}" ]; then
+        honeytrap_syslog_output_flags="${honeytrap_syslog_output_flags} -l ${honeytrap_syslog_output_facility}"
+    fi
+fi
+
+command_args="-f -t ${name} ${honeytrap_syslog_output_flags} -p ${pidfile} /usr/bin/env ${honeytrap_env} ${procname} --data ${honeytrap_datadir} --config ${honeytrap_config} ${honeytrap_flags}"
+
+honeytrap_start_precmd()
 {
-	daemon -o /var/log/honeytrap/service.log -p $pidfile -u $name $honeytrap_program $honeytrap_flags
-}
+    if [ ! -e ${pidfile} ]; then
+        install -o ${honeytrap_user} -g ${honeytrap_group} /dev/null ${pidfile}
+    fi
 
+    if [ ! -d ${honeytrap_datadir} ]; then
+        install -d -m 0750 -o ${honeytrap_user} -g ${honeytrap_group} ${honeytrap_datadir}
+    fi
+    if [ ! -d ${honeytrap_logdir} ]; then
+        install -d -m 0750 -o ${honeytrap_user} -g ${honeytrap_group} ${honeytrap_logdir}
+    fi
+}
+ 
 run_rc_command "$@"

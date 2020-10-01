@@ -1,6 +1,6 @@
-TIMESTAMP = 1587390791
-SHA256 (honeytrap-honeytrap-g20200415-d8d94c8f_GH0.tar.gz) = f565e52e8f4bbebc3765bd2ead68b7ab141da4ef00073749ae55268290f5d13a
-SIZE (honeytrap-honeytrap-g20200415-d8d94c8f_GH0.tar.gz) = 379014
+TIMESTAMP = 1595352531
+SHA256 (honeytrap-honeytrap-g20200625-33bbb2d_GH0.tar.gz) = a6390179c0ba3282d7523f3633d4a15852f39081fd666f4ac3a4c37f95fef4c4
+SIZE (honeytrap-honeytrap-g20200625-33bbb2d_GH0.tar.gz) = 379053
 SHA256 (AndreasBriese-bbloom-28f7e881ca57_GH0.tar.gz) = c87bf25d12aa9ef597c6a465dd2959d6d7e06d8341030d6d75c8a81ccc388ccd
 SIZE (AndreasBriese-bbloom-28f7e881ca57_GH0.tar.gz) = 7141
 SHA256 (BurntSushi-toml-v0.3.0_GH0.tar.gz) = 2c49390424cfb043f803977bce80b1504495bada54f9e845ff8b30a05fab9a36
