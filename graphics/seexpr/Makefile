@@ -2,18 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	seexpr
-DISTVERSION=	3.4.4.0-alpha.1
+PORTVERSION=	3.4.4.0
 CATEGORIES=	graphics math
-MASTER_SITES=	https://files.kde.org/krita/build/dependencies/
+MASTER_SITES=	https://download.kde.org/stable/${PORTNAME}/
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Embeddable expression evaluation language
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		bison cmake compiler:c++11-lang gl qt:5
+USES=		bison cmake compiler:c++14-lang gl qt:5
 USE_GL=		gl glu
 USE_LDCONFIG=	yes
 USE_QT=		buildtools_build qmake_build core gui opengl widgets
@@ -50,14 +51,9 @@ CMAKE_ARGS+=	-DENABLE_SSE4:BOOL=FALSE
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e '/addError/s/raw\.str()/ErrorCode::Unknown,\
-		{ & }/' ${WRKSRC}/src/SeExpr2/Evaluator.h
 	@${REINPLACE_CMD} -e '/<alloca\.h>/d' ${WRKSRC}/src/SeExpr2/Platform.h
 	@${REINPLACE_CMD} -e '/pkgconfig/s/share/libdata/' \
 		${WRKSRC}/CMakeLists.txt
-.if !defined(WITH_DEBUG)
-	@${REINPLACE_CMD} -e 's/-g //' ${WRKSRC}/CMakeLists.txt
-.endif
 
 post-install:
 	@${RMDIR} ${STAGEDIR}${PREFIX}/include/SeExpr2/generated
