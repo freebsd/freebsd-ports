@@ -47,13 +47,6 @@ NO_ARCH=	yes
 OPTIONS_DEFINE=	BASH
 OPTIONS_SUB=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 502701
-BUILD_DEPENDS+=	p5-Getopt-Long>=2.50:devel/p5-Getopt-Long
-RUN_DEPENDS+=	p5-Getopt-Long>=2.50:devel/p5-Getopt-Long
-.endif
-
 post-install-BASH-off:
 	@${RM} ${STAGEDIR}${PREFIX}/bin/clusterssh_bash_completion.dist
 
@@ -62,4 +55,4 @@ post-install-BASH-on:
 	${MV} ${STAGEDIR}${PREFIX}/bin/clusterssh_bash_completion.dist \
 		${STAGEDIR}${PREFIX}/etc/bash_completion.d/clusterssh
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
