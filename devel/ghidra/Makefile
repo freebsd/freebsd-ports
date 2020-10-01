@@ -1,56 +1,57 @@
 # $FreeBSD$
 
-PORTNAME=		ghidra
+PORTNAME=	ghidra
 DISTVERSIONPREFIX=	Ghidra_
 DISTVERSION=	9.1
 DISTVERSIONSUFFIX=	_build
-CATEGORIES=		devel security java
+CATEGORIES=	devel security java
 MASTER_SITES=	SF/yajsw/yajsw/yajsw-stable-12.12/:yajsw \
-	SF/catacombae/HFSExplorer/0.21/:hfsexplorer \
-	https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/android4me/:axml2printer \
-	https://github.com/pxb1988/dex2jar/releases/download/2.0/:dex2jar
-DISTFILES=		yajsw-stable-12.12.zip:yajsw \
-	hfsexplorer-0_21-bin.zip:hfsexplorer \
-	AXMLPrinter2.jar:axml2printer \
-	dex-tools-2.0.zip:dex2jar
+		SF/catacombae/HFSExplorer/0.21/:hfsexplorer \
+		https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/android4me/:axml2printer \
+		https://github.com/pxb1988/dex2jar/releases/download/2.0/:dex2jar
+DISTFILES=	yajsw-stable-12.12.zip:yajsw \
+		hfsexplorer-0_21-bin.zip:hfsexplorer \
+		AXMLPrinter2.jar:axml2printer \
+		dex-tools-2.0.zip:dex2jar
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	sghctoma@gmail.com
 COMMENT=	Software reverse engineering (SRE) framework
 
-LICENSE=		APACHE20
+LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64
 
 EXTRACT_DEPENDS=	${UNZIP_CMD}:archivers/unzip
-BUILD_DEPENDS=	gradle5>=5.0:devel/gradle5 \
-	bash:shells/bash \
-	flex:textproc/flex \
-	fop:textproc/fop \
-	${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:textproc/docbook-xsl
-RUN_DEPENDS=	bash:shells/bash
+BUILD_DEPENDS=		${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:textproc/docbook-xsl \
+			bash:shells/bash \
+			flex:textproc/flex \
+			fop:textproc/fop \
+			gradle5>=5.0:devel/gradle5
+RUN_DEPENDS=		bash:shells/bash
 
-USES=	bison shebangfix
-
-SHEBANG_FILES=	Ghidra/RuntimeScripts/Linux/* \
-	Ghidra/RuntimeScripts/Linux/support/* \
-	Ghidra/RuntimeScripts/Linux/server/* \
-	Ghidra/RuntimeScripts/Common/server/jaas_external_program.example.sh
+USES=		bison shebangfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	NationalSecurityAgency
 
 USE_JAVA=	yes
+JAVA_VERSION=	11+
 JAVA_BUILD=	yes
 JAVA_RUN=	yes
-JAVA_VERSION=	11+
 
-GRADLE_HOME_BASE=	/tmp	# Gradle cache path must be absolute (see https://github.com/gradle/gradle/issues/1338)
-GRADLE_RUN=	${SETENV} ${MAKE_ENV} gradle5 \
-			--gradle-user-home ${GRADLE_HOME_BASE}/gradle-${PORTNAME} \
-			--no-daemon
+SHEBANG_FILES=	Ghidra/RuntimeScripts/Common/server/jaas_external_program.example.sh \
+		Ghidra/RuntimeScripts/Linux/* \
+		Ghidra/RuntimeScripts/Linux/server/* \
+		Ghidra/RuntimeScripts/Linux/support/*
+
+
+# Gradle cache path must be absolute (see https://github.com/gradle/gradle/issues/1338)
+GRADLE_HOME_BASE=	/tmp
+GRADLE_RUN=		${SETENV} ${MAKE_ENV} gradle5 --gradle-user-home \
+			${GRADLE_HOME_BASE}/gradle-${PORTNAME} --no-daemon
 
 # to rebuild the deps archive:
 #   1. set DEV_UPDATE_MODE=yes
@@ -61,14 +62,9 @@ GRADLE_RUN=	${SETENV} ${MAKE_ENV} gradle5 \
 
 DEV_UPDATE_MODE=	no
 
-.if (${DEV_UPDATE_MODE} == "yes")
-post-build:
-	cd ${GRADLE_HOME_BASE} && ${TAR} czf ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-${DISTVERSION}-deps${EXTRACT_SUFX} gradle-${PORTNAME}
-	@${ECHO} "(!!!) Please upload the Gradle deps archive: ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-${DISTVERSION}-deps${EXTRACT_SUFX}"
-	@${RM} -r ${GRADLE_HOME_BASE}/gradle-${PORTNAME}
-.else
+.if (${DEV_UPDATE_MODE} == "no")
 MASTER_SITES+=	https://github.com/sghctoma/ghidra-deps/raw/master/:gradle
-DISTFILES+=		${PORTNAME}-${DISTVERSION}-deps${EXTRACT_SUFX}:gradle
+DISTFILES+=	${PORTNAME}-${DISTVERSION}-deps${EXTRACT_SUFX}:gradle
 EXTRACT_ONLY+=	${PORTNAME}-${DISTVERSION}-deps${EXTRACT_SUFX}
 GRADLE_RUN+=	--offline
 .endif
@@ -96,6 +92,13 @@ post-patch:
 
 do-build:
 	@cd ${WRKSRC} && ${GRADLE_RUN} yajswDevUnpack buildGhidra
+
+.if (${DEV_UPDATE_MODE} == "yes")
+post-build:
+	cd ${GRADLE_HOME_BASE} && ${TAR} czf ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-${DISTVERSION}-deps${EXTRACT_SUFX} gradle-${PORTNAME}
+	@${ECHO} "(!!!) Please upload the Gradle deps archive: ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-${DISTVERSION}-deps${EXTRACT_SUFX}"
+	@${RM} -r ${GRADLE_HOME_BASE}/gradle-${PORTNAME}
+.endif
 
 do-install:
 	@${UNZIP_CMD} -d ${STAGEDIR} ${WRKSRC}/build/dist/*.zip
