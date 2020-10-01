@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	clion
-PORTVERSION=	2020.2.2
+PORTVERSION=	2020.2.3
 CATEGORIES=	devel java
 MASTER_SITES=	https://download-cf.jetbrains.com/cpp/
 PKGNAMEPREFIX=	jetbrains-
@@ -27,10 +27,9 @@ SHEBANG_FILES=	bin/printenv.py bin/restart.py
 
 NO_ARCH=	yes
 NO_BUILD=	yes
+SUB_FILES=	clion clion.desktop pkg-message
 
 WRKSRC=		${WRKDIR}/clion-${PORTVERSION}
-
-SUB_FILES=	clion clion.desktop pkg-message
 
 do-install:
 # Linux/Windows/OS X only so remove them
