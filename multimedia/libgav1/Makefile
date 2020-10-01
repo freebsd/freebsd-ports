@@ -12,8 +12,6 @@ LICENSE=	APACHE20
 
 LIB_DEPENDS=	libabsl_synchronization.so:devel/abseil
 
-PORTSCOUT=	skipv:n
-
 USES=		cmake compiler:c++11-lib localbase:ldflags
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
