@@ -13,7 +13,6 @@
 %%SITE_ARCH%%/FFI/Platypus/Closure.pm
 %%SITE_ARCH%%/FFI/Platypus/Constant.pm
 %%SITE_ARCH%%/FFI/Platypus/DL.pm
-%%SITE_ARCH%%/FFI/Platypus/Declare.pm
 %%SITE_ARCH%%/FFI/Platypus/Function.pm
 %%SITE_ARCH%%/FFI/Platypus/Internal.pm
 %%SITE_ARCH%%/FFI/Platypus/Lang.pm
@@ -65,7 +64,6 @@
 %%PERL5_MAN3%%/FFI::Platypus::Closure.3.gz
 %%PERL5_MAN3%%/FFI::Platypus::Constant.3.gz
 %%PERL5_MAN3%%/FFI::Platypus::DL.3.gz
-%%PERL5_MAN3%%/FFI::Platypus::Declare.3.gz
 %%PERL5_MAN3%%/FFI::Platypus::Function.3.gz
 %%PERL5_MAN3%%/FFI::Platypus::Internal.3.gz
 %%PERL5_MAN3%%/FFI::Platypus::Lang.3.gz
