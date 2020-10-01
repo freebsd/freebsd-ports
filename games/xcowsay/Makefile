@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xcowsay
-PORTVERSION=	1.5
+PORTVERSION=	1.5.1
 CATEGORIES=	games
 MASTER_SITES=	http://www.nickg.me.uk/files/ \
 		LOCAL/ehaupt
