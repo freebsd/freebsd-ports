@@ -3,7 +3,7 @@
 
 PORTNAME=	crm114
 PORTVERSION=	20100106
-PORTREVISION=	5
+PORTREVISION=	6
 # WARNING change versionname in CRM114RELEASENAME too.
 # portlint didn't like this variable at this place.
 # So I have to put it down in this file.
@@ -37,11 +37,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib -Wl,--as-needed
 
 CFLAGS+=	-DVERSION='\"${PORTVERSION}-${CRM114RELEASENAME}\"'
 CFLAGS+=	-DNO_LOGL
-
-CFLAGS+=		-fcommon
-
-DEPRECATED=	Unmaintained and dead upstream, does not build with -fno-common (llvm 11)
-EXPIRATION_DATE=2021-04-01
 
 INSTALL_TARGET=	install_binary_only
 

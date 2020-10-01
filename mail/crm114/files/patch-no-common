@@ -1,0 +1,302 @@
+--- crm114.h.orig	2010-01-06 10:38:46.000000000 -0800
++++ crm114.h	2020-09-29 11:24:33.568829000 -0700
+@@ -10,25 +10,25 @@
+ //    Global variables
+ 
+ //   The VHT (Variable Hash Table)
+-VHT_CELL **vht;
++extern VHT_CELL **vht;
+ 
+ //   The pointer to the global Current Stack Level (CSL) frame
+-CSL_CELL *csl;
++extern CSL_CELL *csl;
+ 
+ //    the data window
+-CSL_CELL *cdw;
++extern CSL_CELL *cdw;
+ 
+ //    the temporarys data window (where argv, environ, newline etc. live)
+-CSL_CELL *tdw;
++extern CSL_CELL *tdw;
+ 
+ //    the pointer to a CSL that we use during matching.  This is flipped
+ //    to point to the right data window during matching.  It doesn't have
+ //    it's own data, unlike cdw and tdw.
+-CSL_CELL *mdw;
++extern CSL_CELL *mdw;
+ 
+ //    a pointer to the current statement argparse block.  This gets whacked
+ //    on every new statement.
+-ARGPARSE_BLOCK *apb;
++extern ARGPARSE_BLOCK *apb;
+ 
+ //    the microcompiler
+ int crm_microcompiler (CSL_CELL *csl,
+--- crm114_structs.h.orig	2010-01-06 10:38:46.000000000 -0800
++++ crm114_structs.h	2020-09-29 11:25:56.181047000 -0700
+@@ -9,35 +9,31 @@
+ //    These are systemwide globals.  Sure, they should go into a global
+ //     struct, but that realization only occured to me in 2008.  Sorry.
+ 
+-long vht_size;
+-long cstk_limit;
+-long max_pgmlines;
+-long max_pgmsize;
+-long max_pgmsize;
+-long user_trace;
+-long internal_trace;
+-long debug_countdown;
+-long cmdline_break;
+-long cycle_counter;
+-long ignore_environment_vars;
+-long data_window_size;
++extern long vht_size;
++extern long max_pgmsize;
++extern long user_trace;
++extern long internal_trace;
++extern long debug_countdown;
++extern long cmdline_break;
++extern long cycle_counter;
++extern long ignore_environment_vars;
++extern long data_window_size;
+ 
+ // Number of hash table buckets.  Set from command line, read (only)
+ // by classifier learns.
+-long sparse_spectrum_file_length;
++extern long sparse_spectrum_file_length;
+ 
+-long microgroom_chain_length ;
+-long microgroom_stop_after;
++extern long microgroom_chain_length ;
++extern long microgroom_stop_after;
+ 
+-float min_pmax_pmin_ratio;
+-long profile_execution;
++extern float min_pmax_pmin_ratio;
++extern long profile_execution;
+ 
+-int dontcare;
+-void *dontcareptr;
++extern int dontcare;
+ 
+-long prettyprint_listing;  //  0= none, 1 = basic, 2 = expanded, 3 = parsecode
++extern long prettyprint_listing;  //  0= none, 1 = basic, 2 = expanded, 3 = parsecode
+ 
+-long engine_exit_base;  //  All internal errors will use this number or higher;
++extern long engine_exit_base;  //  All internal errors will use this number or higher;
+                        //  the user programs can use lower numbers freely.
+ 
+ 
+@@ -46,7 +42,7 @@
+ //        = 1 no extended (non-EVAL) math, use RPN
+ //        = 2 extended (everywhere) math, use algebraic notation
+ //        = 3 extended (everywhere) math, use RPN
+-long q_expansion_mode;
++extern long q_expansion_mode;
+ 
+ 
+ //   structure of a vht cell
+--- crm_expr_syscall.c.orig	2010-01-06 10:38:46.000000000 -0800
++++ crm_expr_syscall.c	2020-09-29 11:27:01.849003000 -0700
+@@ -331,7 +331,7 @@
+ 		      if (user_trace)
+ 			fprintf (stderr, "Redirecting minion stdin to %s\n",
+ 				 filename);
+-		      dontcareptr = freopen (filename, "rb", stdin);
++		      (void )freopen (filename, "rb", stdin);
+ 		    };
+ 		  if (sys_cmd[vstart] == '>')
+ 		    {
+@@ -343,7 +343,7 @@
+ 			    fprintf (stderr,
+ 				     "Redirecting minion stdout to %s\n",
+ 				     filename);
+-			  dontcareptr = freopen (filename, "wb", stdout);
++			  (void )freopen (filename, "wb", stdout);
+ 			}
+ 		      else
+ 			{
+@@ -353,7 +353,7 @@
+ 			    fprintf (stderr,
+ 				     "Appending minion stdout to %s\n",
+ 				     filename);
+-			  dontcareptr =  freopen (filename, "a+", stdout);
++			  (void )freopen (filename, "a+", stdout);
+ 			}
+ 		    };
+ 		}
+--- crm_main.c.orig	2010-01-06 10:38:46.000000000 -0800
++++ crm_main.c	2020-09-29 11:24:03.412831000 -0700
+@@ -17,6 +17,30 @@
+ //  and include OSBF declarations
+ #include "crm114_osbf.h"
+ 
++//
++//    Global variables
++
++//   The VHT (Variable Hash Table)
++VHT_CELL **vht;
++
++//   The pointer to the global Current Stack Level (CSL) frame
++CSL_CELL *csl;
++
++//    the data window
++CSL_CELL *cdw;
++
++//    the temporarys data window (where argv, environ, newline etc. live)
++CSL_CELL *tdw;
++
++//    the pointer to a CSL that we use during matching.  This is flipped
++//    to point to the right data window during matching.  It doesn't have
++//    it's own data, unlike cdw and tdw.
++CSL_CELL *mdw;
++
++//    a pointer to the current statement argparse block.  This gets whacked
++//    on every new statement.
++ARGPARSE_BLOCK *apb;
++
+ //    the command line argv
+ char **prog_argv;
+ 
+@@ -29,6 +53,21 @@
+ char *outbuf;
+ char *tempbuf;
+ 
++long vht_size;
++long max_pgmsize;
++long data_window_size;
++long sparse_spectrum_file_length;
++float min_pmax_pmin_ratio;
++long ignore_environment_vars;
++long debug_countdown;
++long cycle_counter;
++long cmdline_break;
++long profile_execution;
++long prettyprint_listing;
++long engine_exit_base;
++long q_expansion_mode;
++static long max_pgmlines;
++
+ int main (int argc, char **argv)
+ {
+   int i;    //  some random counters, when we need a loop
+@@ -45,7 +84,6 @@
+   prog_argv = argv;
+ 
+   vht_size = DEFAULT_VHT_SIZE;
+-  cstk_limit = DEFAULT_CSTK_LIMIT;
+   max_pgmlines = DEFAULT_MAX_PGMLINES;
+   max_pgmsize = DEFAULT_MAX_PGMLINES * 128;
+   data_window_size = DEFAULT_DATA_WINDOW;
+--- crm_osbf_maintenance.c.orig	2010-01-06 10:38:46.000000000 -0800
++++ crm_osbf_maintenance.c	2020-09-29 11:11:31.072503000 -0700
+@@ -22,6 +22,9 @@
+ 
+ #include "crm114_osbf.h"
+ 
++long microgroom_chain_length;
++long microgroom_stop_after;
++
+ /* Version names */
+ char *CSS_version_name[] = {
+   "SBPH-Markovian",
+--- crm_pca.c.orig	2010-01-06 10:38:46.000000000 -0800
++++ crm_pca.c	2020-09-29 11:30:23.757205000 -0700
+@@ -14,6 +14,8 @@
+ 
+ #include "crm_pca.h"
+ 
++int PCA_DEBUG_MODE;
++
+ //static function declarations
+ static Vector *convert_document(char *text, long text_len,
+ 				unsigned int *features,
+--- crm_pca_lib_fncts.h.orig	2010-01-06 10:38:46.000000000 -0800
++++ crm_pca_lib_fncts.h	2020-09-29 11:13:30.976438000 -0700
+@@ -25,7 +25,7 @@
+                             //The intermediate DEBUG modes may enable debug printing for the
+                             //matrix operations.  See crm_svm_matrix_util.h for details.
+ 
+-int PCA_DEBUG_MODE;         //The debug mode for the PCA
++extern int PCA_DEBUG_MODE;         //The debug mode for the PCA
+ extern int MATR_DEBUG_MODE; //Debug mode for matrices.  MATR_DEBUG_MODE = PCA_DEBUG_MODE
+                             //Defined in crm_svm_matrix_util.h
+ 
+--- crm_str_funcs.c.orig	2010-01-06 10:38:46.000000000 -0800
++++ crm_str_funcs.c	2020-09-29 11:07:19.848617000 -0700
+@@ -16,6 +16,10 @@
+ //  and include the routine declarations file
+ #include "crm114.h"
+ 
++int dontcare;
++long internal_trace;
++long user_trace;
++
+ //     strnhash - generate the hash of a string of length N
+ //     goals - fast, works well with short vars includng
+ //     letter pairs and palindromes, not crypto strong, generates
+--- crm_svm.c.orig	2010-01-06 10:38:46.000000000 -0800
++++ crm_svm.c	2020-09-29 11:29:52.525272000 -0700
+@@ -13,6 +13,8 @@
+ 
+ #include "crm_svm.h"
+ 
++int SVM_DEBUG_MODE;
++
+ //static function declarations
+ static Vector *convert_document(char *text, long text_len,
+ 				unsigned int *features,
+--- crm_svm_lib_fncts.h.orig	2010-01-06 10:38:46.000000000 -0800
++++ crm_svm_lib_fncts.h	2020-09-29 11:13:06.456437000 -0700
+@@ -47,7 +47,7 @@
+                                 //a feasible setting since the print operations
+                                 //put all the zeros in!
+ 
+-int SVM_DEBUG_MODE;         //There are a number of modes.
++extern int SVM_DEBUG_MODE;         //There are a number of modes.
+                                    //See crm_svm_matrix_util.h for them.
+ //the SVM solution struct
+ typedef struct {
+--- crm_svm_matrix.c.orig	2010-01-06 10:38:46.000000000 -0800
++++ crm_svm_matrix.c	2020-09-29 11:28:36.597637000 -0700
+@@ -14,6 +14,8 @@
+ #include "crm_svm_matrix.h"
+ #include "crm_svm_matrix_util.h"
+ 
++int MATR_DEBUG_MODE;
++
+ /*****************************************************************************
+  *This is a matrix/vector library.
+  *The intent of it is to keep all matrix operations out of the algorithms.
+--- crm_svm_matrix_util.h.orig	2010-01-06 10:38:46.000000000 -0800
++++ crm_svm_matrix_util.h	2020-09-29 11:10:00.228429000 -0700
+@@ -58,7 +58,7 @@
+ #define MY_INLINE static inline
+ #endif
+ 
+-int MATR_DEBUG_MODE;            //the debug value
++extern int MATR_DEBUG_MODE;            //the debug value
+                                //for SVM, if internal trace is on 
+                                //MATR_DEBUG_MODE = SVM_INTERNAL_TRACE_LEVEL
+                                //for PCA, if internal trace is on
+--- crm_svm_quad_prog.c.orig	2010-01-06 10:38:46.000000000 -0800
++++ crm_svm_quad_prog.c	2020-09-29 11:29:28.397123000 -0700
+@@ -13,6 +13,7 @@
+ // Copyright 2009 William S. Yerazunis.
+ // This file is under GPLv3, as described in COPYING.
+ 
++int QP_DEBUG_MODE;
+ 
+ /******************************************************************
+  *We use the active set method outlined in Gill and Murray 1977
+--- crm_svm_quad_prog.h.orig	2010-01-06 10:38:46.000000000 -0800
++++ crm_svm_quad_prog.h	2020-09-29 11:29:04.628919000 -0700
+@@ -20,8 +20,6 @@
+ extern int MATR_DEBUG_MODE;     //debugging mode. see crm_svm_matrix_util.h for
+                                //possible values.
+ 
+-int QP_DEBUG_MODE;
+-
+ #define QP_DEBUG 2              //basic information about the qp solver
+ 
+ #define QP_DEBUG_LOOP 3         //prints some information during each qp loop
