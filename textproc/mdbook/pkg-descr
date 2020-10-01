@@ -1,0 +1,4 @@
+mdBook is a utility to create online books from Markdown (CommonMark) files.
+It's very similar to Gitbook but written in Rust.
+
+WWW: https://rust-lang.github.io/mdBook/

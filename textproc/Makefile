@@ -422,6 +422,7 @@
     SUBDIR += markdown-mode.el
     SUBDIR += markdownfmt
     SUBDIR += mathml-xsd
+    SUBDIR += mdbook
     SUBDIR += mdocml
     SUBDIR += meld
     SUBDIR += metauml

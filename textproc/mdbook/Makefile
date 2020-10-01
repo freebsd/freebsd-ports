@@ -1,0 +1,204 @@
+# $FreeBSD$
+
+PORTNAME=	mdbook
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.4.3
+CATEGORIES=	textproc
+
+MAINTAINER=	0mp@FreeBSD.org
+COMMENT=	Create book from markdown files (like Gitbook but implemented in Rust)
+
+LICENSE=	MPL20
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		cargo
+USE_GITHUB=	yes
+GH_ACCOUNT=	rust-lang
+GH_PROJECT=	mdBook
+
+PLIST_FILES=	bin/mdbook
+
+CARGO_CRATES=	aho-corasick-0.7.10 \
+		ammonia-3.1.0 \
+		ansi_term-0.11.0 \
+		anyhow-1.0.28 \
+		atty-0.2.14 \
+		autocfg-1.0.0 \
+		base64-0.11.0 \
+		base64-0.12.0 \
+		bit-set-0.5.1 \
+		bit-vec-0.5.1 \
+		bitflags-1.2.1 \
+		block-buffer-0.7.3 \
+		block-padding-0.1.5 \
+		byte-tools-0.3.1 \
+		byteorder-1.3.4 \
+		bytes-0.5.4 \
+		cfg-if-0.1.10 \
+		chrono-0.4.11 \
+		clap-2.33.0 \
+		ctor-0.1.13 \
+		difference-2.0.0 \
+		digest-0.8.1 \
+		dtoa-0.4.5 \
+		elasticlunr-rs-2.3.8 \
+		env_logger-0.7.1 \
+		fake-simd-0.1.2 \
+		filetime-0.2.9 \
+		fnv-1.0.6 \
+		fsevent-0.4.0 \
+		fsevent-sys-2.0.1 \
+		fuchsia-zircon-0.3.3 \
+		fuchsia-zircon-sys-0.3.3 \
+		futf-0.1.4 \
+		futures-0.3.4 \
+		futures-channel-0.3.4 \
+		futures-core-0.3.4 \
+		futures-executor-0.3.4 \
+		futures-io-0.3.4 \
+		futures-macro-0.3.4 \
+		futures-sink-0.3.4 \
+		futures-task-0.3.4 \
+		futures-util-0.3.4 \
+		generic-array-0.12.3 \
+		getopts-0.2.21 \
+		getrandom-0.1.14 \
+		gitignore-1.0.6 \
+		glob-0.2.11 \
+		h2-0.2.4 \
+		handlebars-3.0.1 \
+		headers-0.3.2 \
+		headers-core-0.2.0 \
+		heck-0.3.1 \
+		hermit-abi-0.1.11 \
+		html5ever-0.25.1 \
+		http-0.2.1 \
+		http-body-0.3.1 \
+		httparse-1.3.4 \
+		humantime-1.3.0 \
+		hyper-0.13.5 \
+		idna-0.2.0 \
+		indexmap-1.3.2 \
+		inotify-0.7.0 \
+		inotify-sys-0.1.3 \
+		input_buffer-0.3.1 \
+		iovec-0.1.4 \
+		itoa-0.4.5 \
+		kernel32-sys-0.2.2 \
+		lazy_static-1.4.0 \
+		lazycell-1.2.1 \
+		libc-0.2.69 \
+		log-0.4.8 \
+		mac-0.1.1 \
+		maplit-1.0.2 \
+		markup5ever-0.10.0 \
+		markup5ever_rcdom-0.1.0 \
+		matches-0.1.8 \
+		memchr-2.3.3 \
+		mime-0.3.16 \
+		mime_guess-2.0.3 \
+		mio-0.6.21 \
+		mio-extras-2.0.6 \
+		miow-0.2.1 \
+		net2-0.2.33 \
+		new_debug_unreachable-1.0.4 \
+		notify-4.0.15 \
+		num-integer-0.1.42 \
+		num-traits-0.2.11 \
+		opaque-debug-0.2.3 \
+		open-1.4.0 \
+		output_vt100-0.1.2 \
+		percent-encoding-2.1.0 \
+		pest-2.1.3 \
+		pest_derive-2.1.0 \
+		pest_generator-2.1.3 \
+		pest_meta-2.1.3 \
+		phf-0.8.0 \
+		phf_codegen-0.8.0 \
+		phf_generator-0.8.0 \
+		phf_shared-0.8.0 \
+		pin-project-0.4.9 \
+		pin-project-internal-0.4.9 \
+		pin-project-lite-0.1.4 \
+		pin-utils-0.1.0-alpha.4 \
+		ppv-lite86-0.2.6 \
+		precomputed-hash-0.1.1 \
+		pretty_assertions-0.6.1 \
+		proc-macro-hack-0.5.15 \
+		proc-macro-nested-0.1.4 \
+		proc-macro2-1.0.10 \
+		pulldown-cmark-0.7.0 \
+		quick-error-1.2.3 \
+		quote-1.0.3 \
+		rand-0.7.3 \
+		rand_chacha-0.2.2 \
+		rand_core-0.5.1 \
+		rand_hc-0.2.0 \
+		rand_pcg-0.2.1 \
+		redox_syscall-0.1.56 \
+		regex-1.3.7 \
+		regex-syntax-0.6.17 \
+		remove_dir_all-0.5.2 \
+		ryu-1.0.3 \
+		same-file-1.0.6 \
+		scoped-tls-1.0.0 \
+		select-0.5.0 \
+		serde-1.0.106 \
+		serde_derive-1.0.106 \
+		serde_json-1.0.52 \
+		serde_urlencoded-0.6.1 \
+		sha-1-0.8.2 \
+		shlex-0.1.1 \
+		siphasher-0.3.2 \
+		slab-0.4.2 \
+		smallvec-1.3.0 \
+		string_cache-0.8.0 \
+		string_cache_codegen-0.5.1 \
+		strsim-0.8.0 \
+		strum-0.16.0 \
+		strum_macros-0.16.0 \
+		syn-1.0.17 \
+		tempfile-3.1.0 \
+		tendril-0.4.1 \
+		termcolor-1.1.0 \
+		textwrap-0.11.0 \
+		thread_local-1.0.1 \
+		time-0.1.43 \
+		tokio-0.2.18 \
+		tokio-macros-0.2.5 \
+		tokio-tungstenite-0.10.1 \
+		tokio-util-0.3.1 \
+		toml-0.5.6 \
+		tower-service-0.3.0 \
+		try-lock-0.2.2 \
+		tungstenite-0.10.1 \
+		typenum-1.12.0 \
+		ucd-trie-0.1.3 \
+		unicase-2.6.0 \
+		unicode-bidi-0.3.4 \
+		unicode-normalization-0.1.12 \
+		unicode-segmentation-1.6.0 \
+		unicode-width-0.1.7 \
+		unicode-xid-0.2.0 \
+		url-2.1.1 \
+		urlencoding-1.0.0 \
+		utf-8-0.7.5 \
+		vec_map-0.8.1 \
+		version_check-0.9.1 \
+		walkdir-2.3.1 \
+		want-0.3.0 \
+		warp-0.2.2 \
+		wasi-0.9.0+wasi-snapshot-preview1 \
+		winapi-0.2.8 \
+		winapi-0.3.8 \
+		winapi-build-0.1.1 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.5 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		ws2_32-sys-0.2.1 \
+		xml5ever-0.16.1
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/mdbook
+
+.include <bsd.port.mk>
