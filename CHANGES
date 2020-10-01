@@ -10,6 +10,19 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20201001:
+AUTHOR: bapt@FreeBSD.org
+
+  packages scripts and keywords can both be written in lua (versoin 5.3), see
+  pkg-lua-script(5) for the API.
+
+  Note that all scripts written in lua will:
+
+  - run inside a capsicum sandbox,
+  - be rootdir compatible (see pkg -r option)
+  - be cross installation compatible example: installing packages in an arm64
+    rootdir on and amd64 host.
+
 20200531:
 AUTHOR: kde@FreeBSD.org
 
