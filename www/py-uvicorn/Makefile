@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	uvicorn
-PORTVERSION=	0.11.8
+PORTVERSION=	0.12.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,6 +16,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=7<8:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}h11>=0.8<0.11:net/py-h11@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httptools>=0.1<0.2:www/py-httptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}python-dotenv>=0.13.0:www/py-python-dotenv@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}yaml>=5.1:devel/py-yaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}uvloop>=0.14.0:devel/py-uvloop@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}websockets>=8<9:devel/py-websockets@${PY_FLAVOR}
 
@@ -29,4 +31,10 @@ WATCHGODRELOAD_DESC=	Reload automatically with watchgod
 
 WATCHGODRELOAD_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}watchgod>=0.6<0.7:devel/py-watchgod@${PY_FLAVOR}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_VER} < 3800
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typing-extensions>=0:devel/py-typing-extensions@${PY_FLAVOR}
+.endif
+
+.include <bsd.port.post.mk>
