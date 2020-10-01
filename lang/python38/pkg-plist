@@ -2166,8 +2166,8 @@ lib/python%%XYDOT%%/ensurepip/__pycache__/__main__.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/ensurepip/__pycache__/_uninstall.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/ensurepip/__pycache__/_uninstall.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/ensurepip/__pycache__/_uninstall.cpython-%%XY%%.pyc
-lib/python%%XYDOT%%/ensurepip/_bundled/pip-20.1.1-py2.py3-none-any.whl
-lib/python%%XYDOT%%/ensurepip/_bundled/setuptools-47.1.0-py3-none-any.whl
+lib/python%%XYDOT%%/ensurepip/_bundled/pip-20.2.1-py2.py3-none-any.whl
+lib/python%%XYDOT%%/ensurepip/_bundled/setuptools-49.2.1-py3-none-any.whl
 lib/python%%XYDOT%%/ensurepip/_uninstall.py
 lib/python%%XYDOT%%/enum.py
 lib/python%%XYDOT%%/filecmp.py
