@@ -2,6 +2,7 @@ bin/virsh
 bin/virt-admin
 bin/virt-host-validate
 bin/virt-pki-validate
+bin/virt-ssh-helper
 %%QEMU%%bin/virt-qemu-run
 bin/virt-xml-validate
 %%BHYVE%%sbin/virtbhyved
