@@ -10,6 +10,7 @@ bin/perlanet
 %%SITE_PERL%%/Perlanet/Trait/TemplateToolkit.pm
 %%SITE_PERL%%/Perlanet/Trait/Tidy.pm
 %%SITE_PERL%%/Perlanet/Trait/YAMLConfig.pm
+%%SITE_PERL%%/Perlanet/Types.pm
 %%PERL5_MAN1%%/perlanet.1.gz
 %%PERL5_MAN3%%/Perlanet.3.gz
 %%PERL5_MAN3%%/Perlanet::Entry.3.gz
@@ -22,3 +23,4 @@ bin/perlanet
 %%PERL5_MAN3%%/Perlanet::Trait::TemplateToolkit.3.gz
 %%PERL5_MAN3%%/Perlanet::Trait::Tidy.3.gz
 %%PERL5_MAN3%%/Perlanet::Trait::YAMLConfig.3.gz
+%%PERL5_MAN3%%/Perlanet::Types.3.gz
