@@ -1722,7 +1722,6 @@
 %%SOURCE%%%%KMODSRC%%/drivers/gpu/drm/i915/oa/i915_oa_sklgt4.h
 %%SOURCE%%%%KMODSRC%%/drivers/gpu/drm/linux_fb.c
 %%SOURCE%%%%KMODSRC%%/drivers/gpu/drm/linux_hdmi.c
-%%SOURCE%%%%KMODSRC%%/drivers/gpu/drm/radeon/Makefile
 %%SOURCE%%%%KMODSRC%%/drivers/gpu/drm/radeon/ObjectID.h
 %%SOURCE%%%%KMODSRC%%/drivers/gpu/drm/radeon/atom-bits.h
 %%SOURCE%%%%KMODSRC%%/drivers/gpu/drm/radeon/atom-names.h
