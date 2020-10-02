@@ -15,9 +15,11 @@
 %%WWWDIR%%/backend/identity/methode/local.php
 %%WWWDIR%%/backend/ipdiscover/ipdiscover.php
 %%WWWDIR%%/backend/ipdiscover/methode/local.php
+%%WWWDIR%%/backend/require/auth.manager.php
 @sample %%WWWDIR%%/backend/require/cas.config.php.sample
 %%WWWDIR%%/backend/require/connexion.php
 %%WWWDIR%%/composer.json
+%%WWWDIR%%/composer.lock
 %%WWWDIR%%/config/computer/menu.xml
 %%WWWDIR%%/config/computer/plugins.xml
 %%WWWDIR%%/config/js.xml
@@ -28,7 +30,6 @@
 %%WWWDIR%%/config/profiles/read-only.xml
 %%WWWDIR%%/config/profiles/sadmin.xml
 %%WWWDIR%%/config/urls.xml
-%%WWWDIR%%/crontab/cron_clean_cve.php
 %%WWWDIR%%/crontab/cron_cve.php
 %%WWWDIR%%/crontab/cron_wol.php
 %%WWWDIR%%/css/bootstrap-datetimepicker.css
@@ -45,6 +46,7 @@
 @sample %%WWWDIR%%/dbconfig.inc.php.sample
 %%WWWDIR%%/extensions/Readme.md
 %%WWWDIR%%/favicon.ico
+%%WWWDIR%%/files/cve/csv_example.csv
 %%WWWDIR%%/files/ocsbase.sql
 %%WWWDIR%%/files/ocsbase_new.sql
 %%WWWDIR%%/files/oui.txt
@@ -70,6 +72,15 @@
 %%WWWDIR%%/files/update/7026.sql
 %%WWWDIR%%/files/update/7027.sql
 %%WWWDIR%%/files/update/7028.sql
+%%WWWDIR%%/files/update/7029.sql
+%%WWWDIR%%/files/update/7030.sql
+%%WWWDIR%%/files/update/7031.sql
+%%WWWDIR%%/files/update/7032.sql
+%%WWWDIR%%/files/update/7033.sql
+%%WWWDIR%%/files/update/7034.sql
+%%WWWDIR%%/files/update/7035.sql
+%%WWWDIR%%/files/update/7036.sql
+%%WWWDIR%%/files/update/7037.sql
 %%WWWDIR%%/image/bootstrap-formhelpers-countries.flags.png
 %%WWWDIR%%/image/cadena_ferme.png
 %%WWWDIR%%/image/cadena_ouvert.png
@@ -277,6 +288,8 @@
 %%WWWDIR%%/plugins/language/ug_UY/ug_UY.txt
 %%WWWDIR%%/plugins/language/uk_UA/uk_UA.txt
 %%WWWDIR%%/plugins/language/uk_UA/ukrainian.png
+%%WWWDIR%%/plugins/language/zh_CN/chinese.png
+%%WWWDIR%%/plugins/language/zh_CN/zh_CN.txt
 %%WWWDIR%%/plugins/main_sections/img/ms_admininfo.png
 %%WWWDIR%%/plugins/main_sections/img/ms_admininfo_a.png
 %%WWWDIR%%/plugins/main_sections/img/ms_all_computers.png
@@ -344,6 +357,8 @@
 %%WWWDIR%%/plugins/main_sections/ms_config/ms_snmp_config.php
 %%WWWDIR%%/plugins/main_sections/ms_config/require/function_blacklist.php
 %%WWWDIR%%/plugins/main_sections/ms_console/ms_console.php
+%%WWWDIR%%/plugins/main_sections/ms_cve_correspondance/ms_cve_correspondance.php
+%%WWWDIR%%/plugins/main_sections/ms_cve_history/ms_cve_history.php
 %%WWWDIR%%/plugins/main_sections/ms_cve_search/ms_cve_search.php
 %%WWWDIR%%/plugins/main_sections/ms_debug/ms_debug.php
 %%WWWDIR%%/plugins/main_sections/ms_dict/ms_dict.php
@@ -384,6 +399,7 @@
 %%WWWDIR%%/plugins/main_sections/ms_snmp/ms_snmp.php
 %%WWWDIR%%/plugins/main_sections/ms_snmp/ms_snmp_detail.php
 %%WWWDIR%%/plugins/main_sections/ms_snmp/require/function_snmp.php
+%%WWWDIR%%/plugins/main_sections/ms_snmp_inventory/ms_snmp_inventory.php
 %%WWWDIR%%/plugins/main_sections/ms_soft_cat/ms_options_soft_cat.php
 %%WWWDIR%%/plugins/main_sections/ms_soft_cat/ms_soft_cat.php
 %%WWWDIR%%/plugins/main_sections/ms_stats/files/ms_stats_top_soft.txt
@@ -400,7 +416,6 @@
 %%WWWDIR%%/plugins/main_sections/ms_teledeploy/ms_tele_compress.php
 %%WWWDIR%%/plugins/main_sections/ms_teledeploy/ms_tele_modify.php
 %%WWWDIR%%/plugins/main_sections/ms_teledeploy/ms_tele_package.php
-%%WWWDIR%%/plugins/main_sections/ms_teledeploy/ms_tele_package_new.php
 %%WWWDIR%%/plugins/main_sections/ms_teledeploy/ms_tele_popup_active.php
 %%WWWDIR%%/plugins/main_sections/ms_teledeploy/ms_tele_stats.php
 %%WWWDIR%%/plugins/main_sections/ms_teledeploy/views/activate_form_view.php
@@ -447,6 +462,7 @@
 %%WWWDIR%%/plugins/snmp_detail/sd_virtualmachines/sd_virtualmachines.php
 %%WWWDIR%%/plugins/snmp_detail/snmp_config.txt
 %%WWWDIR%%/require/aide_developpement.php
+%%WWWDIR%%/require/archive/ArchiveComputer.php
 %%WWWDIR%%/require/assets/AssetsCategory.php
 %%WWWDIR%%/require/charts/StatsChartsRenderer.php
 %%WWWDIR%%/require/commandLine/CommandLine.php
@@ -491,6 +507,7 @@
 %%WWWDIR%%/require/function_wol.php
 %%WWWDIR%%/require/header.php
 %%WWWDIR%%/require/html_header.php
+%%WWWDIR%%/require/ipdiscover/Ipdiscover.php
 %%WWWDIR%%/require/mail/NotificationMail.php
 %%WWWDIR%%/require/menu/ComputerMenuRenderer.php
 %%WWWDIR%%/require/menu/MainMenuRenderer.php
@@ -512,6 +529,7 @@
 %%WWWDIR%%/require/search/LegacySearch.php
 %%WWWDIR%%/require/search/SQLCache.php
 %%WWWDIR%%/require/search/Search.php
+%%WWWDIR%%/require/search/SoftwareSearch.php
 %%WWWDIR%%/require/search/TranslationSearch.php
 %%WWWDIR%%/require/snmp/Snmp.php
 %%WWWDIR%%/require/softwares/SoftwareCategory.php
@@ -614,7 +632,6 @@
 %%WWWDIR%%/vendor/phpmailer/phpmailer/composer.json
 %%WWWDIR%%/vendor/phpmailer/phpmailer/get_oauth_token.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-af.php
-%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-am.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-ar.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-az.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-ba.php
@@ -638,6 +655,7 @@
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-hi.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-hr.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-hu.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-hy.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-id.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-it.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-ja.php

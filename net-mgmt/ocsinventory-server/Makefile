@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ocsinventory-server
-PORTVERSION=	2.7
+PORTVERSION=	2.8
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	dgeo@centrale-marseille.fr

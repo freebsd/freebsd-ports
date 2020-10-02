@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ocsinventory-ocsreports
-PORTVERSION=	2.7
+PORTVERSION=	2.8
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/${PORTVERSION}/
 DISTNAME=	OCSNG_UNIX_SERVER_${PORTVERSION}
@@ -32,7 +32,7 @@ do-extract:
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR} ${STAGEDIR}${ETCDIR}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR} "! -name dbconfig.inc.php ! -name cas.config.php")
-	${INSTALL_DATA} ${WRKSRC}/dbconfig.inc.php ${STAGEDIR}${WWWDIR}/dbconfig.inc.php.sample
+	${INSTALL_DATA} ${FILESDIR}/dbconfig.inc.php.sample ${STAGEDIR}${WWWDIR}/dbconfig.inc.php.sample
 	${INSTALL_DATA} ${WRKSRC}/backend/require/cas.config.php ${STAGEDIR}${WWWDIR}/backend/require/cas.config.php.sample
 	${INSTALL_DATA} ${WRKDIR}/apache.conf ${STAGEDIR}${ETCDIR}/ocsreports.inc.sample
 	${MKDIR} ${STAGEDIR}${DATADIR}/packages
