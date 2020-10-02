@@ -4,6 +4,7 @@
 PORTNAME=	luajit
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.1-20201002
+PORTREVISION=	1
 CATEGORIES=	lang
 PKGNAMESUFFIX=	-openresty
 
@@ -38,9 +39,15 @@ PLIST_SUB+=	VERSION=${LUAJIT_VERSION} SOVERSION=${LUAJIT_SOVERSION}
 USE_GCC=yes
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200000
+MAKE_ARGS+=	XCFLAGS=-DLJ_TARGET_HAS_GETENTROPY=0 Q=
+.endif
+
 post-install:
 	${LN} -sf ${PORTNAME}-${LUAJIT_VERSION} \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${INSTALL_MAN} ${WRKSRC}/etc/luajit.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
