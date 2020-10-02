@@ -21,6 +21,31 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
+OPTIONS_DEFINE=	CLI DATEUTIL DJANGO DPCONTRACTS GHOSTWRITER LARK NUMPY PANDAS PYTEST PYTZ
+CLI_DESC=	Command-line interface support
+DATEUTIL_DESC=	Datesupport
+DJANGO_DESC=	Django support
+DPCONTRACTS_DESC=	Contracts support
+GHOSTWRITER_DESC=	Ghostwriter support
+LARK_DESC=	Lark parser support
+NUMPY_DESC=	NumPy support
+PANDAS_DESC=	Pandas support
+PYTEST_DESC=	pytest support
+PYTZ_DESC=	Timezone support
+
+CLI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}black>=19.10b0:devel/py-black@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}click>=7.0:devel/py-click@${PY_FLAVOR}
+DATEUTIL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=1.4:devel/py-dateutil@${PY_FLAVOR}
+DJANGO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django22>=2.2:www/py-django22@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}pytz>=2014.1:devel/py-pytz@${PY_FLAVOR}
+DPCONTRACTS_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}dpcontracts>=0.4:devel/py-dpcontracts@${PY_FLAVOR}
+GHOSTWRITER_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}black>=19.10b0:devel/py-black@${PY_FLAVOR}
+LARK_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lark-parser>=0.6.5:devel/py-lark-parser@${PY_FLAVOR}
+NUMPY_RUN_DEPENDS=	${PYNUMPY}
+PANDAS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pandas>=0.19:math/py-pandas@${PY_FLAVOR}
+PYTEST_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=4.3:devel/py-pytest@${PY_FLAVOR}
+PYTZ_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytz>=2014.1:devel/py-pytz@${PY_FLAVOR}
+
 do-test:
 	@(cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test)
 
