@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aws-ses
-PORTVERSION=	0.7.0
+PORTVERSION=	0.7.1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
