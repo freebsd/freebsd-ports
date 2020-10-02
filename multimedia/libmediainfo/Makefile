@@ -39,13 +39,6 @@ MMS_LIB_DEPENDS=	libmms.so:net/libmms
 TINYXML2_CONFIGURE_ON=	--with-libtinyxml2=yes
 TINYXML2_LIB_DEPENDS=	libtinyxml2.so:textproc/tinyxml2
 
-post-patch:
-	@${REINPLACE_CMD} \
-		-e 's|lib/pkgconfig/|libdata/pkgconfig/|g' \
-		-e 's|-DMEDIAINFO_LIBMMS_FROMSOURCE||g' \
-		-e 's|with_libmms/pkgconfig/|with_libmms/libdata/pkgconfig/|' \
-		-e 's|src/.libs|lib|g' ${WRKSRC}/configure
-
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/libmediainfo.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig/libmediainfo.pc
 	${RM} -r ${STAGEDIR}${PREFIX}/include/MediaInfoDLL/

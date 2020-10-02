@@ -1,0 +1,36 @@
+--- configure.orig	2020-08-10 23:41:20 UTC
++++ configure
+@@ -17656,8 +17656,8 @@ if test -d $with_libcurl; then
+ 	if test -f $with_libcurl/libcurl.pc; then
+ 		libcurlpcfile="$with_libcurl/libcurl.pc"
+ 	else
+-		if test -f "$with_libcurl/lib/pkgconfig/libcurl.pc"; then
+-			libcurlpcfile="$with_libcurl/lib/pkgconfig/libcurl.pc"
++		if test -f "$with_libcurl/libdata/pkgconfig/libcurl.pc"; then
++			libcurlpcfile="$with_libcurl/libdata/pkgconfig/libcurl.pc"
+ 		else
+ 			as_fn_error $? "Problem while configuring builtin curl (libcurl.pc not found)" "$LINENO" 5
+ 		fi
+@@ -17739,16 +17739,16 @@ else
+ fi
+ 
+ if test -d $with_libmms; then
+-	CXXFLAGS="$CXXFLAGS -DMEDIAINFO_LIBMMS_FROMSOURCE -I$with_libmms/src $(pkg-config --cflags $with_libmms/pkgconfig/libmms.pc)"
+-	MediaInfoLib_CXXFLAGS="$MediaInfoLib_CXXFLAGS -I$with_libmms $(pkg-config --cflags $with_libmms/pkgconfig/libmms.pc)"
++	CXXFLAGS="$CXXFLAGS  -I$with_libmms/src $(pkg-config --cflags $with_libmms/libdata/pkgconfig/libmms.pc)"
++	MediaInfoLib_CXXFLAGS="$MediaInfoLib_CXXFLAGS -I$with_libmms $(pkg-config --cflags $with_libmms/libdata/pkgconfig/libmms.pc)"
+ 	if test "$enable_staticlibs" = "yes"; then
+ 		using_libmms="custom (static)"
+-		LIBS="$LIBS -L$with_libmms/src/.libs $(pkg-config --libs --static $with_libmms/pkgconfig/libmms.pc)"
+-		MediaInfoLib_LIBS_Static="$MediaInfoLib_LIBS_Static -L$with_libmms/src/.libs $(pkg-config --libs --static $with_libmms/pkgconfig/libmms.pc)"
++		LIBS="$LIBS -L$with_libmms/lib $(pkg-config --libs --static $with_libmms/libdata/pkgconfig/libmms.pc)"
++		MediaInfoLib_LIBS_Static="$MediaInfoLib_LIBS_Static -L$with_libmms/lib $(pkg-config --libs --static $with_libmms/libdata/pkgconfig/libmms.pc)"
+ 	else
+ 		using_libmms="custom"
+-		LIBS="$LIBS -L$with_libmms/src/.libs $(pkg-config --libs $with_libmms/pkgconfig/libmms.pc)"
+-		MediaInfoLib_LIBS="$MediaInfoLib_LIBS -L$with_libmms/src/.libs $(pkg-config --libs $with_libmms/pkgconfig/libmms.pc)"
++		LIBS="$LIBS -L$with_libmms/lib $(pkg-config --libs $with_libmms/libdata/pkgconfig/libmms.pc)"
++		MediaInfoLib_LIBS="$MediaInfoLib_LIBS -L$with_libmms/lib $(pkg-config --libs $with_libmms/libdata/pkgconfig/libmms.pc)"
+ 	fi
+ elif test "$with_libmms" = "no"; then
+ 	CXXFLAGS="$CXXFLAGS -DMEDIAINFO_LIBMMS_NO"
