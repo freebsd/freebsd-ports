@@ -42,7 +42,10 @@ OPTIONAL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aeidon>=1.7.0:textproc/py-aeidon@${
 			${PYTHON_PKGNAMEPREFIX}pyparsing>=2.4.7:devel/py-pyparsing@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}python-Levenshtein>=0.12:devel/py-python-Levenshtein@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}vobject>=0.9.6.1:deskutils/py-vobject@${PY_FLAVOR}
+#			${PYTHON_PKGNAMEPREFIX}cheroot>=8.4.5:www/py-cheroot@${PY_FLAVOR}
+#			${PYTHON_PKGNAMEPREFIX}ruamel.yaml>=0.16.12:devel/py-ruamel.yaml@${PY_FLAVOR}
 OPTIONAL_MANPAGES=	ical2po ini2po php2po po2ical po2ini po2php po2rc rc2po
+#OPTIONAL_MANPAGES=	ical2po ini2po php2po po2ical po2ini po2php po2rc po2yaml rc2po yaml2po
 
 post-build:
 	@${MKDIR} ${WRKSRC}/manpages
