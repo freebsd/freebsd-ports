@@ -18,6 +18,7 @@ share/metainfo/io.photoflare.photoflare.appdata.xml
 %%DATADIR%%/languages/nl.qm
 %%DATADIR%%/languages/pt_BR.qm
 %%DATADIR%%/languages/pt_PT.qm
+%%DATADIR%%/languages/sv.qm
 %%DATADIR%%/languages/zh_CN.qm
 %%DATADIR%%/languages/zh_TW.qm
 share/pixmaps/photoflare.png
