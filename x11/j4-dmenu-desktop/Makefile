@@ -2,8 +2,7 @@
 
 PORTNAME=	j4-dmenu-desktop
 DISTVERSIONPREFIX=	r
-DISTVERSION=	2.17
-PORTREVISION=	1
+DISTVERSION=	2.18
 CATEGORIES=	x11
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -19,13 +18,13 @@ GH_ACCOUNT=	enkore
 CMAKE_OFF=	WITH_TESTS
 
 PLIST_FILES=	bin/j4-dmenu-desktop \
-		man/man1/j4-dmenu-desktop.1.gz
+		share/man/man1/j4-dmenu-desktop.1.gz
 PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/j4-dmenu-desktop.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/j4-dmenu-desktop.1 ${STAGEDIR}${MAN1PREFIX}/share/man/man1/
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
