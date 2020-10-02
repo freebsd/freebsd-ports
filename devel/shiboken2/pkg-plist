@@ -37,6 +37,7 @@ lib/libshiboken2%%PYVERSTR%%.so.%%DISTVERSION%%
 %%PYTHON_SITELIBDIR%%/shiboken2/__init__.py
 %%PYTHON_SITELIBDIR%%/shiboken2/_config.py
 %%PYTHON_SITELIBDIR%%/shiboken2/_git_shiboken_module_version.py
+%%PYTHON_SITELIBDIR%%/shiboken2/files.dir/shibokensupport/__feature__.py
 %%PYTHON_SITELIBDIR%%/shiboken2/files.dir/shibokensupport/__init__.py
 %%PYTHON_SITELIBDIR%%/shiboken2/files.dir/shibokensupport/signature/__init__.py
 %%PYTHON_SITELIBDIR%%/shiboken2/files.dir/shibokensupport/signature/errorhandler.py

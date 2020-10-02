@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pyside2-tools
-DISTVERSION=	5.15.0
+DISTVERSION=	5.15.1
 CATEGORIES=	devel
 MASTER_SITES=	QT/official_releases/QtForPython/shiboken2/PySide2-${DISTVERSION}-src
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

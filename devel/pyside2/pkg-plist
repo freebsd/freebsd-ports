@@ -44,6 +44,8 @@ include/PySide2/QtX11Extras/pyside2_qtx11extras_python.h
 include/PySide2/QtXml/pyside2_qtxml_python.h
 include/PySide2/QtXmlPatterns/pyside2_qtxmlpatterns_python.h
 include/PySide2/dynamicqmetaobject.h
+include/PySide2/feature_select.h
+include/PySide2/pysideqenum.h
 include/PySide2/pyside.h
 include/PySide2/pyside2_global.h
 include/PySide2/pysideclassinfo.h
