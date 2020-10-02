@@ -2,29 +2,33 @@
 # $FreeBSD$
 
 PORTNAME=	modules
-PORTVERSION=	3.2.10
-PORTREVISION=	1
+PORTVERSION=	4.6.0
 CATEGORIES=	sysutils tcl
-MASTER_SITES=	SF/${PORTNAME}/Modules/${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	https://github.com/cea-hpc/modules/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dynamic modification of a user environment
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING.GPLv2
 
-USES=		tcl
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--without-x \
-		--with-version-path=${PREFIX}/Modules/versions \
-		--mandir=${MANPREFIX}/man \
-		--with-tcl-ver=${TCL_VER:S/.//} \
-		--with-tcl-inc=${TCL_INCLUDEDIR} \
-		--with-tcl-lib=${LOCALBASE}/lib \
-		--with-tclx-ver=${TCL_VER:S/.//}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0:textproc/py-sphinx@${PY_FLAVOR} \
+		bash:shells/bash
+
+USES=			gmake python:env shebangfix tar:bzip2 tcl
+GNU_CONFIGURE=		yes
+GNU_CONFIGURE_PREFIX=	${PREFIX}/Modules
+CONFIGURE_SHELL=	${LOCALBASE}/bin/bash
+CONFIGURE_ARGS=		--disable-compat-version \
+			--enable-versioning \
+			--with-python="${PYTHON_CMD}"
 
 PLIST_SUB=	MODULES_VERSION=${PORTVERSION}
 
 post-extract:
-	${MV} ${WRKSRC}/doc/modulefile.4.in ${WRKSRC}/doc/modulefile.5.in
+	${MV} ${WRKSRC}/doc/build/modulefile.4 ${WRKSRC}/doc/build/modulefile.5
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${GNU_CONFIGURE_PREFIX}/${PORTVERSION}/lib/libtclenvmodules.so
 
 .include <bsd.port.mk>

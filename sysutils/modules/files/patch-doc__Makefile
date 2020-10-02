@@ -1,0 +1,66 @@
+--- doc/Makefile.orig	2020-09-30 09:23:59 UTC
++++ doc/Makefile
+@@ -22,9 +22,9 @@ ifeq ($(builddoc),n)
+   $(error No 'sphinx-build' command defined, cannot build documentation)
+ endif
+ 
+-man: $(BUILD_DIR)/module.1 $(BUILD_DIR)/ml.1 $(BUILD_DIR)/modulefile.4
++man: $(BUILD_DIR)/module.1 $(BUILD_DIR)/ml.1 $(BUILD_DIR)/modulefile.5
+ ifeq ($(compatversion),y)
+-man: $(COMPAT_MAN_DIR)/module.1 $(COMPAT_MAN_DIR)/modulefile.4
++man: $(COMPAT_MAN_DIR)/module.1 $(COMPAT_MAN_DIR)/modulefile.5
+ endif
+ 
+ txt: $(BUILD_DIR)/diff_v3_v4.txt $(BUILD_DIR)/MIGRATING.txt \
+@@ -70,7 +70,7 @@ $(BUILD_DIR)/%.html: $(SOURCE_DIR)/%.rst $(SOURCE_DIR)
+ $(BUILD_DIR)/%.txt: $(SOURCE_DIR)/%.rst $(SOURCE_DIR)/version.py
+ 	$(SPHINXBUILD) $(SPHINXOPTS) -b text "$(SOURCE_DIR)" "$(BUILD_DIR)"
+ 
+-$(BUILD_DIR)/%.4 $(BUILD_DIR)/%.1: $(SOURCE_DIR)/%.rst $(SOURCE_DIR)/version.py
++$(BUILD_DIR)/%.5 $(BUILD_DIR)/%.1: $(SOURCE_DIR)/%.rst $(SOURCE_DIR)/version.py
+ 	$(SPHINXBUILD) $(SPHINXOPTS) -t pathsubs -b man "$(SOURCE_DIR)" "$(BUILD_DIR)"
+ 
+ $(BUILD_DIR)/module.1.in: $(SOURCE_DIR)/module.rst $(SOURCE_DIR)/version.py
+@@ -82,11 +82,11 @@ $(BUILD_DIR)/module.1: $(BUILD_DIR)/module.1.in
+ 	$(translate-in-script)
+ 
+ # compatibility version-related rules
+-$(COMPAT_MAN_DIR)/module.1 $(COMPAT_MAN_DIR)/modulefile.4:
++$(COMPAT_MAN_DIR)/module.1 $(COMPAT_MAN_DIR)/modulefile.5:
+ 	$(MAKE) -C $(COMPAT_MAN_DIR) $(@F)
+ 
+ install: man txt
+-	mkdir -p $(DESTDIR)$(mandir)/man1 $(DESTDIR)$(mandir)/man4
++	mkdir -p $(DESTDIR)$(mandir)/man1 $(DESTDIR)$(mandir)/man5
+ ifeq ($(docinstall),y)
+ 	mkdir -p $(DESTDIR)$(docdir)
+ 	cp $(BUILD_DIR)/diff_v3_v4.txt $(DESTDIR)$(docdir)/
+@@ -99,10 +99,10 @@ ifeq ($(docinstall),y)
+ endif
+ 	cp $(BUILD_DIR)/module.1 $(DESTDIR)$(mandir)/man1/
+ 	cp $(BUILD_DIR)/ml.1 $(DESTDIR)$(mandir)/man1/
+-	cp $(BUILD_DIR)/modulefile.4 $(DESTDIR)$(mandir)/man4/
++	cp $(BUILD_DIR)/modulefile.5 $(DESTDIR)$(mandir)/man5/
+ ifeq ($(compatversion),y)
+ 	cp $(COMPAT_MAN_DIR)/module.1 $(DESTDIR)$(mandir)/man1/module-compat.1
+-	cp $(COMPAT_MAN_DIR)/modulefile.4 $(DESTDIR)$(mandir)/man4/modulefile-compat.4
++	cp $(COMPAT_MAN_DIR)/modulefile.5 $(DESTDIR)$(mandir)/man5/modulefile-compat.5
+ endif
+ 
+ uninstall:
+@@ -118,12 +118,12 @@ ifeq ($(docinstall),y)
+ endif
+ 	rm -f $(DESTDIR)$(mandir)/man1/module.1
+ 	rm -f $(DESTDIR)$(mandir)/man1/ml.1
+-	rm -f $(DESTDIR)$(mandir)/man4/modulefile.4
++	rm -f $(DESTDIR)$(mandir)/man5/modulefile.5
+ ifeq ($(compatversion),y)
+ 	rm -f $(DESTDIR)$(mandir)/man1/module-compat.1
+-	rm -f $(DESTDIR)$(mandir)/man4/modulefile-compat.4
++	rm -f $(DESTDIR)$(mandir)/man5/modulefile-compat.5
+ endif
+-	rmdir $(DESTDIR)$(mandir)/man1 $(DESTDIR)$(mandir)/man4
++	rmdir $(DESTDIR)$(mandir)/man1 $(DESTDIR)$(mandir)/man5
+ 	rmdir $(DESTDIR)$(mandir)
+ 
+ clean:

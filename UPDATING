@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20201002:
+  AFFECTS: users of sysutils/modules
+  AUTHOR: 0mp@FreeBSD.org
+
+  The upstream developers of the Modules port encourage users to consult
+  the MIGRATING document, which describes the major changes occurring between
+  versions of Modules. It provides an overview of the new features and changed
+  behaviors that will be encountered when upgrading:
+
+  https://modules.readthedocs.io/en/v4.6.0/MIGRATING.html
+
 20200930:
   AFFECTS: users of sysutils/syslog-ng32[789]
   AUTHOR: cy@FreeBSD.org
