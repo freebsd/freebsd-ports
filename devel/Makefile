@@ -4908,6 +4908,7 @@
     SUBDIR += py-pytest-tornado
     SUBDIR += py-pytest-translations
     SUBDIR += py-pytest-trio
+    SUBDIR += py-pytest-twisted
     SUBDIR += py-pytest-verbose-parametrize
     SUBDIR += py-pytest-virtualenv
     SUBDIR += py-pytest-xdist

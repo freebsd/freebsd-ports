@@ -1,0 +1,5 @@
+pytest-twisted is a plugin for pytest, which allows to test code, which uses the
+twisted framework. test functions can return Deferred objects and pytest will
+wait for their completion with this plugin.
+
+WWW: https://github.com/pytest-dev/pytest-twisted
