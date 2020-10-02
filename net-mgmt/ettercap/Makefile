@@ -15,14 +15,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libnet.so:net/libnet
 
-OPTIONS_DEFINE=	DESKTOP DOCS GTK3 IPV6 NCURSES PCRE PLUGINS SSL UTF8
-OPTIONS_DEFAULT=GTK3 NCURSES PCRE PLUGINS SSL UTF8
-OPTIONS_SUB=	yes
-DESKTOP_DESC=	Install ettercap.desktop
-NCURSES_DESC=	Ncurses interface
-PCRE_DESC=	Use PCRE in filters
-SSL_DESC=	SSH1 and SSL decryption support
-
 USES=		bison cmake cpe iconv localbase:ldflags pkgconfig
 
 CMAKE_ARGS=	-DHAVE_PCAP=${LIBDIR} \
@@ -40,6 +32,14 @@ DOCS=		AUTHORS CHANGELOG README README.BINARIES README.BUGS \
 		doc/capture doc/decoders doc/dissectors doc/plugins doc/threads
 
 CPE_VENDOR=	ettercap_project
+
+OPTIONS_DEFINE=	DESKTOP DOCS GTK3 IPV6 NCURSES PCRE PLUGINS SSL UTF8
+OPTIONS_DEFAULT=GTK3 NCURSES PCRE PLUGINS SSL UTF8
+OPTIONS_SUB=	yes
+DESKTOP_DESC=	Install ettercap.desktop
+NCURSES_DESC=	Ncurses interface
+PCRE_DESC=	Use PCRE in filters
+SSL_DESC=	SSH1 and SSL decryption support
 
 DESKTOP_CMAKE_BOOL=	INSTALL_DESKTOP
 DESKTOP_USES=		desktop-file-utils
