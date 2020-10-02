@@ -3,7 +3,7 @@
 
 PORTNAME=	termbox
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.2
+DISTVERSION=	1.1.3
 CATEGORIES=	devel
 
 MAINTAINER=	as@php.net
@@ -12,9 +12,9 @@ COMMENT=	Legacy-free alternative to ncurses
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		python:2.7,build waf
+USES=	gmake
 USE_GITHUB=	yes
-GH_ACCOUNT=	nsf
+GH_ACCOUNT=	termbox
 USE_LDCONFIG=	yes
 
 PLIST_FILES=	include/termbox.h \
