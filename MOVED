@@ -15633,3 +15633,5 @@ net/libproxy-gnome2||2020-09-30|Removed gnome2 port not depended on
 sysutils/system-tools-backends||2020-09-30|Abandonware from gnome2 era
 multimedia/py-gstreamer|multimedia/py-gstreamer1|2020-09-30|Has expired: Uses deprecated version of python
 lang/spidermonkey68|lang/spidermonkey78|2020-10-01|Replaced by a more recent version
+audio/zinf||2020-10-02|Has expired: Does not build, no upstream
+emulators/qemu-sbruno|emulators/qemu|2020-10-02|Has expired: Port will be removed in favor of emulators/qemu
