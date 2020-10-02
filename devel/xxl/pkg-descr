@@ -8,4 +8,4 @@ By allowing XXL to track assets and using its exception handling features,
 the programmer no longer has to check error conditions on every function
 call and cleanup the assets on failure because XXL does the work.
 
-WWW: http://www.zork.org/xxl/
+WWW: https://web.archive.org/web/20120106082715/http://www.zork.org/xxl/
