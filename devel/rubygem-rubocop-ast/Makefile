@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rubocop-ast
-PORTVERSION=	0.6.0
+PORTVERSION=	0.7.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,8 @@ COMMENT=	RuboCop Node and NodePattern classes
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-parser>=2.7.1.5:devel/rubygem-parser
+RUN_DEPENDS=	rubygem-parser>=2.7.1.5:devel/rubygem-parser \
+		rubygem-strscan>=1.0.0:devel/rubygem-strscan
 
 USES=		gem
 USE_RUBY=	yes
