@@ -2,7 +2,7 @@
 
 PORTNAME=	deno
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.2
+DISTVERSION=	1.4.3
 CATEGORIES=	www
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -90,15 +90,15 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		darling_core-0.10.2 \
 		darling_macro-0.10.2 \
 		dashmap-3.11.10 \
-		deno_doc-0.1.9 \
-		deno_lint-0.2.0 \
+		deno_doc-0.1.10 \
+		deno_lint-0.2.2 \
 		digest-0.8.1 \
 		digest-0.9.0 \
 		dissimilar-1.0.2 \
 		dlopen-0.1.8 \
 		dlopen_derive-0.1.4 \
-		dprint-core-0.28.0 \
-		dprint-plugin-typescript-0.31.3 \
+		dprint-core-0.31.0 \
+		dprint-plugin-typescript-0.32.2 \
 		dtoa-0.4.6 \
 		either-1.6.0 \
 		encoding_rs-0.8.24 \
@@ -152,7 +152,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		is-macro-0.1.8 \
 		itoa-0.4.6 \
 		js-sys-0.3.45 \
-		jsdoc-0.5.1 \
+		jsdoc-0.6.0 \
 		jsonc-parser-0.14.0 \
 		kernel32-sys-0.2.2 \
 		lazy_static-1.4.0 \
@@ -235,6 +235,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		rustls-0.18.1 \
 		rusty_v8-0.10.0 \
 		rustyline-6.3.0 \
+		rustyline-derive-0.3.1 \
 		ryu-1.0.5 \
 		safemem-0.3.3 \
 		same-file-1.0.6 \
@@ -264,19 +265,19 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		string_enum-0.3.0 \
 		strsim-0.8.0 \
 		strsim-0.9.3 \
-		swc_atoms-0.2.2 \
-		swc_common-0.10.2 \
-		swc_ecma_ast-0.31.0 \
-		swc_ecma_codegen-0.35.2 \
+		swc_atoms-0.2.4 \
+		swc_common-0.10.3 \
+		swc_ecma_ast-0.32.0 \
+		swc_ecma_codegen-0.36.0 \
 		swc_ecma_codegen_macros-0.5.0 \
-		swc_ecma_dep_graph-0.3.0 \
-		swc_ecma_parser-0.37.2 \
+		swc_ecma_dep_graph-0.4.0 \
+		swc_ecma_parser-0.38.0 \
 		swc_ecma_parser_macros-0.4.1 \
-		swc_ecma_transforms-0.23.12 \
+		swc_ecma_transforms-0.24.3 \
 		swc_ecma_transforms_macros-0.1.1 \
-		swc_ecma_utils-0.21.0 \
-		swc_ecma_visit-0.17.2 \
-		swc_ecmascript-0.7.7 \
+		swc_ecma_utils-0.22.0 \
+		swc_ecma_visit-0.18.0 \
+		swc_ecmascript-0.8.3 \
 		swc_macros_common-0.3.1 \
 		swc_visit-0.2.0 \
 		swc_visit_macros-0.2.0 \
