@@ -23,7 +23,7 @@ arguments: true
 post-install-lua: <<EOS
   sample_file = pkg.prefixed_path("%1")
   if "%#" == 2 then
-    target_file = pkg.prefixed_path("%1")
+    target_file = pkg.prefixed_path("%2")
   else
     target_file = string.gsub(sample_file,'%.sample$', "")
   end
@@ -35,7 +35,7 @@ EOS
 pre-deinstall-lua: <<EOS
   sample_file = pkg.prefixed_path("%1")
   if "%#" == 2 then
-    target_file = pkg.prefixed_path("%1")
+    target_file = pkg.prefixed_path("%2")
   else
     target_file = string.gsub(sample_file,'%.sample$', "")
   end
