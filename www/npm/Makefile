@@ -15,7 +15,6 @@ LICENSE_FILE=	${WRKSRC}/lib/node_modules/npm/LICENSE
 RUN_DEPENDS=	gmake:devel/gmake
 
 USES=		cpe python:3.5+ shebangfix tar:xz
-USE_PYTHON=	noflavors
 
 NO_ARCH=	yes
 NO_BUILD=	yes
