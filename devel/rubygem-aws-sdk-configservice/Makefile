@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aws-sdk-configservice
-PORTVERSION=	1.52.0
+PORTVERSION=	1.53.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ COMMENT=	Official AWS Ruby gem for AWS Config (Config Service)
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	rubygem-aws-sdk-core>=3.99.0<4:devel/rubygem-aws-sdk-core \
+RUN_DEPENDS=	rubygem-aws-sdk-core>=3.109.0<4:devel/rubygem-aws-sdk-core \
 		rubygem-aws-sigv4>=1.1<2:devel/rubygem-aws-sigv4
 
 USES=		gem
