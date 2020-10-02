@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libgnutls.so:security/gnutls \
 		libgsasl.so:security/libgsasl
 
-USES=		cmake:noninja compiler:c++11-lib iconv pkgconfig
+USES=		cmake:noninja compiler:c++11-lib pkgconfig
 
 CMAKE_ARGS=	-DLIB_SUFFIX=""
 CMAKE_OFF=	VMIME_BUILD_SAMPLES VMIME_SHARED_PTR_USE_BOOST
@@ -26,5 +26,11 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	kisli
 GH_PROJECT=	vmime
+
+OPTIONS_DEFINE=	ICU
+ICU_DESC=	Use icu instead of iconv for charset conversion
+
+ICU_LIB_DEPENDS=	libicuuc.so:devel/icu
+ICU_USES_OFF=		iconv
 
 .include <bsd.port.mk>
