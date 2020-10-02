@@ -7,7 +7,6 @@ include/spdlog/cfg/argv.h
 include/spdlog/cfg/env.h
 include/spdlog/cfg/helpers-inl.h
 include/spdlog/cfg/helpers.h
-include/spdlog/cfg/log_levels.h
 include/spdlog/details/backtracer-inl.h
 include/spdlog/details/backtracer.h
 include/spdlog/details/circular_q.h
@@ -82,5 +81,5 @@ lib/cmake/spdlog/spdlogConfigTargets.cmake
 lib/cmake/spdlog/spdlogConfigVersion.cmake
 lib/libspdlog.so
 lib/libspdlog.so.1
-lib/libspdlog.so.1.8.0
+lib/libspdlog.so.1.8.1
 libdata/pkgconfig/spdlog.pc
