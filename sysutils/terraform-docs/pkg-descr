@@ -1,0 +1,20 @@
+A utility to generate documentation from Terraform modules in various output
+formats.
+
+  terraform-docs asciidoc ./my-terraform-module          # asciidoc table
+  terraform-docs asciidoc table ./my-terraform-module    # asciidoc table
+  terraform-docs asciidoc document ./my-terraform-module # asciidoc document
+  terraform-docs json ./my-terraform-module              # json
+  terraform-docs markdown ./my-terraform-module          # markdown table
+  terraform-docs markdown table ./my-terraform-module    # markdown table
+  terraform-docs markdown document ./my-terraform-module # markdown document
+  terraform-docs pretty ./my-terraform-module            # colorized pretty
+  terraform-docs tfvars hcl ./my-terraform-module        # hcl format of
+                                                           terraform.tfvars
+  terraform-docs tfvars json ./my-terraform-module       # json format of
+                                                           terraform.tfvars
+  terraform-docs toml ./my-terraform-module              # toml
+  terraform-docs xml ./my-terraform-module               # xml
+  terraform-docs yaml ./my-terraform-module              # yaml
+
+WWW: https://github.com/terraform-docs/terraform-docs

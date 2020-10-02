@@ -1298,6 +1298,7 @@
     SUBDIR += tealdeer
     SUBDIR += tenshi
     SUBDIR += terraform
+    SUBDIR += terraform-docs
     SUBDIR += terraform-provider-gridscale
     SUBDIR += terraform-provider-vultr
     SUBDIR += terragrunt
