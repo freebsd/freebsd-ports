@@ -21,11 +21,15 @@
 actions: [file(1)]
 arguments: true
 post-install-lua: <<EOS
-  sample_file = pkg.prefixed_path("%1")
-  if "%#" == 2 then
-    target_file = pkg.prefixed_path("%2")
-  else
+  args = {}
+  for arg in string.gmatch("%@", "%S+") do
+    table.insert(args, arg)
+  end
+  sample_file = pkg.prefixed_path(args[1])
+  if args[2] == nil then
     target_file = string.gsub(sample_file,'%.sample$', "")
+  else
+    target_file = pkg.prefixed_path(args[2])
   end
   if not pkg.stat(target_file) then
     pkg.copy(sample_file, target_file)
@@ -33,11 +37,15 @@ post-install-lua: <<EOS
 EOS
 
 pre-deinstall-lua: <<EOS
-  sample_file = pkg.prefixed_path("%1")
-  if "%#" == 2 then
-    target_file = pkg.prefixed_path("%2")
-  else
+  args = {}
+  for arg in string.gmatch("%@", "%S+") do
+    table.insert(args, arg)
+  end
+  sample_file = pkg.prefixed_path(args[1])
+  if args[2] == nil then
     target_file = string.gsub(sample_file,'%.sample$', "")
+  else
+    target_file = pkg.prefixed_path(args[2])
   end
   if pkg.filecmp(sample_file, target_file) == 0 then
     os.remove(target_file)
