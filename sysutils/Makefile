@@ -1008,6 +1008,7 @@
     SUBDIR += py-ptyprocess
     SUBDIR += py-py-cpuinfo
     SUBDIR += py-python-consul
+    SUBDIR += py-python-consul2
     SUBDIR += py-python-crontab
     SUBDIR += py-python-nomad
     SUBDIR += py-pytsk
