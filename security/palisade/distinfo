@@ -1,9 +1,9 @@
-TIMESTAMP = 1598543730
+TIMESTAMP = 1601668549
 SHA256 (JerryRyan-cereal-a384b101_GH0.tar.gz) = 0fba03b7e2e1a150a112fc90e18bfb9274e3830393af99d0c91f9abef62e9ff3
 SIZE (JerryRyan-cereal-a384b101_GH0.tar.gz) = 345431
 SHA256 (google-benchmark-d3ad0b9d_GH0.tar.gz) = eb8bf051e4ded9601d51ea0836732346a9cfb9ade0733ab0ad2795e829f14b22
 SIZE (google-benchmark-d3ad0b9d_GH0.tar.gz) = 157820
 SHA256 (google-googletest-8b4817e3_GH0.tar.gz) = c632dd39ef6729cd198bb7c3f0b20e2efa36475cf3a082883f4809a2b26e9556
 SIZE (google-googletest-8b4817e3_GH0.tar.gz) = 873457
-SHA256 (palisade-palisade-development-70472b1e473a3f804ec155333c1a18e5b05ec202_GL0.tar.gz) = 67a92c85091cb349591acf7ae25f2527c26424dba537ab9530d51edbde4436eb
-SIZE (palisade-palisade-development-70472b1e473a3f804ec155333c1a18e5b05ec202_GL0.tar.gz) = 4558699
+SHA256 (palisade-palisade-release-967a49d6825248f9f5366c8760b218a1cefb509c_GL0.tar.gz) = faad83a3fddf08c47b5f30666453732cea189869f7c242914d3eb45acd199cfd
+SIZE (palisade-palisade-release-967a49d6825248f9f5366c8760b218a1cefb509c_GL0.tar.gz) = 4560346
