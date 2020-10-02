@@ -2,8 +2,7 @@
 
 PORTNAME=	deal.II
 DISTVERSIONPREFIX=	v
-DISTVERSION=	9.1.1
-PORTREVISION=	11
+DISTVERSION=	9.2.0.20201001 # 9.2.0 breaks with invalid linker flag -l-pthread
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,7 +12,8 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/config.hpp:devel/boost-libs
-LIB_DEPENDS=	libhdf5.so:science/hdf5 \
+LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs \
+		libhdf5.so:science/hdf5 \
 		libmetis.so:math/metis \
 		libtbb.so:devel/tbb
 
@@ -21,6 +21,7 @@ USES=		blaslapack:gotoblas cmake compiler:c++17-lang localbase:ldflags
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME:tl:S/.//}
 GH_PROJECT=	${PORTNAME:tl:S/.//}
+GH_TAGNAME=	803d21ff957e349b3799cd3ef2c840bc78734305
 USE_LDCONFIG=	yes
 
 CMAKE_OFF=	DEAL_II_ALLOW_BUNDLED DEAL_II_COMPONENT_EXAMPLES \
@@ -29,7 +30,7 @@ CMAKE_OFF=	DEAL_II_ALLOW_BUNDLED DEAL_II_COMPONENT_EXAMPLES \
 		DEAL_II_WITH_HDF5
 
 OPTIONS_DEFINE=		ADOLC ARPACK GSL LAPACK MPI NETCDF OPENCASCADE PETSC SCALAPACK SLEPC SUNDIALS
-OPTIONS_DEFAULT=	GSL LAPACK SUNDIALS
+OPTIONS_DEFAULT=	GSL LAPACK # SUNDIALS
 
 ADOLC_DESC=		Compile with ADOL-C
 ADOLC_CMAKE_BOOL=	DEAL_II_WITH_ADOLC
@@ -78,6 +79,7 @@ PETSC_BROKEN=		see https://github.com/dealii/dealii/issues/7260
 SCALAPACK_DESC=		Compile with ScaLAPACK (only with MPI)
 SCALAPACK_CMAKE_BOOL=	DEAL_II_WITH_SCALAPACK
 SCALAPACK_IMPLIES=	MPI LAPACK
+SCALAPACK_LIB_DEPENDS=	libscalapack.so:math/scalapack
 
 SLEPC_DESC=		Compile with SLEPC (only with PETSC)
 SLEPC_CMAKE_BOOL=	DEAL_II_WITH_SLEPC
@@ -87,6 +89,10 @@ SLEPC_IMPLIES=		PETSC
 SUNDIALS_DESC=		Compile with SUNDIALS
 SUNDIALS_CMAKE_BOOL=	DEAL_II_WITH_SUNDIALS
 SUNDIALS_LIB_DEPENDS=	libsundials_arkode.so:math/sundials
+SUNDIALS_BROKEN=	Build fails with: Required variable "SUNDIALS_LIB_PAR" set to NOTFOUND
+
+post-patch: # unbundle boost
+	@${RM} -r ${WRKSRC}/dealii/bundled/boost-*
 
 post-stage:
 	@${RM} ${STAGEDIR}${PREFIX}/*.log
