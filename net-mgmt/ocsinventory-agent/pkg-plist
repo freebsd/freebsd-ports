@@ -46,6 +46,7 @@ bin/ocsinventory-agent
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Generic/Dmidecode/Bios.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Generic/Dmidecode/Memory.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Generic/Dmidecode/Ports.pm
+%%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Generic/Dmidecode/Psu.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Generic/Dmidecode/Slots.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Generic/Dmidecode/UUID.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Generic/Hostname.pm
@@ -58,12 +59,15 @@ bin/ocsinventory-agent
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Generic/Lsusb.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Generic/Lsusb/Usb.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Generic/Packaging.pm
+%%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Generic/Packaging/AppImage.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Generic/Packaging/BSDpkg.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Generic/Packaging/ByHand.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Generic/Packaging/Deb.pm
+%%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Generic/Packaging/Flatpak.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Generic/Packaging/Gentoo.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Generic/Packaging/Pacman.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Generic/Packaging/RPM.pm
+%%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Generic/Packaging/Snap.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Generic/Printers/Cups.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Generic/Repository.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Generic/Repository/BSD.pm
@@ -121,6 +125,7 @@ bin/ocsinventory-agent
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Linux/Distro/NonLSB/Trustix.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Linux/Distro/NonLSB/Ubuntu.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Linux/Distro/NonLSB/VmWare.pm
+%%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Linux/Distro/OSRelease.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Linux/Domains.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Linux/Drives.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Linux/Inputs.pm
@@ -128,7 +133,6 @@ bin/ocsinventory-agent
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Linux/Mem.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Linux/Network/IP.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Linux/Network/Networks.pm
-%%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Linux/Sounds.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Linux/Storages.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Linux/Storages/3ware.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Linux/Storages/Adaptec.pm
@@ -139,6 +143,7 @@ bin/ocsinventory-agent
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Linux/Storages/ServeRaid.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Linux/Sys.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Linux/Uptime.pm
+%%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Linux/Videos.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/MacOS.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/MacOS/Bios.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/MacOS/CPU.pm
@@ -155,8 +160,8 @@ bin/ocsinventory-agent
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/MacOS/Slots.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/MacOS/Sound.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/MacOS/Storages.pm
-%%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/MacOS/Uptime.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/MacOS/UUID.pm
+%%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/MacOS/Uptime.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/MacOS/Video.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Solaris.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Solaris/Bios.pm
@@ -192,6 +197,7 @@ bin/ocsinventory-agent
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/Virtualization/XenCitrixServer.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Common.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Config.pm
+%%SITE_PERL%%/Ocsinventory/Agent/Encrypt.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Hooks.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Modules/Apache/Vhosts/Common.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Modules/Apache/VhostsEL.pm
@@ -217,6 +223,7 @@ bin/ocsinventory-agent
 %%SITE_PERL%%/Ocsinventory/Agent/Modules/Snmp/Host_Resources_Mib.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Modules/Snmp/If_Mib.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Modules/Snmp/Printer_Mib.pm
+%%SITE_PERL%%/Ocsinventory/Agent/Modules/SnmpScan.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Network.pm
 %%SITE_PERL%%/Ocsinventory/Agent/XML/Inventory.pm
 %%SITE_PERL%%/Ocsinventory/Agent/XML/Prolog.pm
@@ -231,7 +238,10 @@ bin/ocsinventory-agent
 %%SITE_PERL%%/Ocsinventory/LoggerBackend/Syslog.pm
 %%SITE_PERL%%/Ocsinventory/Unix/postinst.pl
 %%PERL5_MAN1%%/ocsinventory-agent.1.gz
+%%PERL5_MAN3%%/Ocsinventory::Agent::Backend::OS::BSD::Networks.3.gz
+%%PERL5_MAN3%%/Ocsinventory::Agent::Backend::OS::Linux::Network::Networks.3.gz
 %%PERL5_MAN3%%/Ocsinventory::Agent::Common.3.gz
 %%PERL5_MAN3%%/Ocsinventory::Agent::Modules::Apache::Vhosts::Common.3.gz
 %%PERL5_MAN3%%/Ocsinventory::Agent::Modules::Databases::Oracle::Instances.3.gz
 %%PERL5_MAN3%%/Ocsinventory::Agent::XML::Inventory.3.gz
+@dir %%SITE_ARCH%%/auto/Ocsinventory/Unix/Agent
