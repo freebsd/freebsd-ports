@@ -3,7 +3,7 @@
 
 PORTNAME=	mailx
 PORTVERSION=	0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	PORTS_JP
 DISTFILES=	mail-2.2.8.tar.gz mailx-memo-2.2.8R
@@ -14,6 +14,8 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mail command with mailx extensions
+
+LICENSE=	BSD4CLAUSE
 
 CONFLICTS=	heirloom-mailx-[0-9]*
 
@@ -29,9 +31,9 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mail ${STAGEDIR}${PREFIX}/bin/mailx
 	${INSTALL_MAN} ${WRKSRC}/mail.1.gz \
-		${STAGEDIR}${PREFIX}/man/man1/mailx.1.gz
+		${STAGEDIR}${MAN1PREFIX}/share/man/man1/mailx.1.gz
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/mailx
 	${INSTALL_DATA} ${DISTDIR}/mailx-memo-2.2.8R \
-		${STAGEDIR}${PREFIX}/share/doc/mailx
+		${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
