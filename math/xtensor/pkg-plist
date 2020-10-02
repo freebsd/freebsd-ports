@@ -1,3 +1,4 @@
+include/xtensor.hpp
 include/xtensor/xaccessible.hpp
 include/xtensor/xaccumulator.hpp
 include/xtensor/xadapt.hpp
@@ -48,6 +49,7 @@ include/xtensor/xreducer.hpp
 include/xtensor/xrepeat.hpp
 include/xtensor/xscalar.hpp
 include/xtensor/xsemantic.hpp
+include/xtensor/xset_operation.hpp
 include/xtensor/xshape.hpp
 include/xtensor/xslice.hpp
 include/xtensor/xsort.hpp
@@ -63,6 +65,11 @@ include/xtensor/xutils.hpp
 include/xtensor/xvectorize.hpp
 include/xtensor/xview.hpp
 include/xtensor/xview_utils.hpp
+include/xtensor/zarray.hpp
+include/xtensor/zarray_impl.hpp
+include/xtensor/zdispatcher.hpp
+include/xtensor/zfunction.hpp
+include/xtensor/zmath.hpp
 lib/cmake/xtensor/xtensorConfig.cmake
 lib/cmake/xtensor/xtensorConfigVersion.cmake
 lib/cmake/xtensor/xtensorTargets.cmake
