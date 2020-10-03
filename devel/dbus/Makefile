@@ -3,7 +3,7 @@
 
 PORTNAME=	dbus
 DISTVERSION=	1.12.20
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel gnome
 MASTER_SITES=	http://dbus.freedesktop.org/releases/dbus/
 
@@ -52,8 +52,8 @@ X11_USE=			XORG=ice,sm,x11
 X11_CONFIGURE_WITH=		x
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
-		${WRKSRC}/dbus/dbus-sysdeps-unix.c
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		${WRKSRC}/dbus/dbus-sysdeps-util-unix.c
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
