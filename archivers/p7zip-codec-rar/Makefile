@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PKGNAMESUFFIX=	-codec-rar
-PORTREVISION=	1
+PORTREVISION=	2
 
 COMMENT=	RAR decoder codec for p7zip
 
