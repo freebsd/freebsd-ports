@@ -1,0 +1,14 @@
+--- src/tools/imagery/imagery_opencv/Makefile.am.orig	2020-09-28 15:32:31 UTC
++++ src/tools/imagery/imagery_opencv/Makefile.am
+@@ -7,9 +7,9 @@ endif
+ 
+ if HAVE_CV
+ DEF_SAGA           = -D_SAGA_LINUX -D_TYPEDEF_BYTE -D_TYPEDEF_WORD
+-CXX_INCS           = -I$(top_srcdir)/src/saga_core `pkg-config opencv4 --cflags`
++CXX_INCS           = -I$(top_srcdir)/src/saga_core `pkg-config opencv --cflags`
+ AM_CXXFLAGS        = -fPIC $(CXX_INCS) $(DEF_SAGA) $(DBGFLAGS) $(GOMPFLAGS)
+-AM_LDFLAGS         = -fPIC -shared -avoid-version `pkg-config opencv4 --libs`
++AM_LDFLAGS         = -fPIC -shared -avoid-version `pkg-config opencv --libs`
+ pkglib_LTLIBRARIES = libimagery_opencv.la
+ libimagery_opencv_la_SOURCES =\
+ MLB_Interface.cpp\
