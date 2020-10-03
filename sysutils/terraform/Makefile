@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	terraform
-PORTVERSION=	0.12.18
+PORTVERSION=	0.13.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -11,12 +11,12 @@ COMMENT=	Provides a common configuration to launch infrastructure
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USES=		go:modules
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	hashicorp
 
 PLIST_FILES=	bin/${PORTNAME}
-
-USES=	go:modules
 
 post-patch:
 	${REINPLACE_CMD} 's|Prerelease = "dev"|Prerelease = ""|' \
