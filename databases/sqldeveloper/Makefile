@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	sqldeveloper
-DISTVERSION=	19.1.0.094.2042
+DISTVERSION=	20.2.0.175.1842
 DISTVERSIONSUFFIX=	-no-jre
 CATEGORIES=	databases java
 #http://www.oracle.com/technetwork/developer-tools/sql-developer/overview/index.html
 MASTER_SITES=
 DIST_SUBDIR=	oracle
 
-MAINTAINER=	mizhka@gmail.com
+MAINTAINER=	vvd@unislabs.com
 COMMENT=	Graphical tool for database development
 
 RUN_DEPENDS=	bash:shells/bash \
@@ -21,8 +21,9 @@ USES=		gnome zip
 LICENSE_NAME=	OTN
 LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror
 
-DEPRECATED=	depends on expiring java/openjfx8-devel
-EXPIRATION_DATE=	2020-11-30
+#DEPRECATED=	depends on expiring java/openjfx8-devel
+#EXPIRATION_DATE=	2020-11-30
+# it can work without java/openjfx8-devel with some limitations
 
 USE_JAVA=	yes
 INSTALLS_ICONS=	yes
@@ -55,9 +56,9 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${STAGEDIR}/${PREFIX}/bin/${PORTNAME}
 	${ECHO_MSG} " [ DONE ]"
 
-.for d in configuration dataminer dropins dvt equinox \
+.for d in configuration dataminer dropins equinox \
     external ide javavm jdbc jdev jlib jviews module modules \
-    netbeans ords rdbms sleepycat sqldeveloper sqlj svnkit
+    netbeans orakafka rdbms sleepycat sqldeveloper sqlj svnkit
 	${ECHO_MSG} -n ">> Installing data directory '${d}'..."
 	cd ${WRKSRC} && ${FIND} ${d} -type d \
 		-exec ${MKDIR} ${STAGEDIR}/${DATADIR}/\{} \;
