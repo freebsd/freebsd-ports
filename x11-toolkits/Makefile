@@ -153,6 +153,7 @@
     SUBDIR += p5-Tk-ToolBar
     SUBDIR += p5-Tk-WaitBox
     SUBDIR += pango
+    SUBDIR += pangolin
     SUBDIR += pangomm
     SUBDIR += pangox-compat
     SUBDIR += pangoxsl
