@@ -56,10 +56,16 @@ load_rc_config $name
 : ${virtual_oss_dsp:="$virtual_oss_default_args"}
 : ${virtual_oss_delay:=1}
 
-command="%%PREFIX%%/sbin/${name}"
+command=virtual_oss
 command_args="-B"
 
 pidpath="/var/run/${name}"
+
+virtual_oss()
+{
+  # When running early we need to pre-load some libraries
+  env LD_PRELOAD=%%LIBFFTW3%%%%LIBSAMPLERATE%% %%PREFIX%%/sbin/virtual_oss $*
+}
 
 virtual_oss_precmd()
 {
