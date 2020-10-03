@@ -3,7 +3,7 @@
 
 PORTNAME=	dbus
 DISTVERSION=	1.12.20
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel gnome
 MASTER_SITES=	http://dbus.freedesktop.org/releases/dbus/
 
@@ -26,6 +26,7 @@ CONFIGURE_ARGS=	--disable-apparmor \
 		--disable-doxygen-docs \
 		--disable-selinux \
 		--disable-systemd \
+		--with-session-socket-dir=/tmp \
 		--with-test-socket-dir=${WRKDIR}
 
 INSTALL_TARGET=	install-strip
