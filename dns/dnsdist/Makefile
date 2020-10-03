@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dnsdist
-DISTVERSION=	1.5.0
-PORTREVISION=	1
+DISTVERSION=	1.5.1
 CATEGORIES=	dns net
 MASTER_SITES=	https://downloads.powerdns.com/releases/
 

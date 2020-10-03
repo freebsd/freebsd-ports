@@ -3,7 +3,8 @@
 # $FreeBSD$
 #
 # PROVIDE: dnsdist
-# REQUIRE: DAEMON NETWORKING
+# REQUIRE: FILESYSTEMS defaultroute netwait resolv
+# BEFORE: NETWORKING
 # KEYWORD: shutdown
 #
 # Add the following line to /etc/rc.conf to enable dnsdist:
