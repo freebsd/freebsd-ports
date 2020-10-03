@@ -43,7 +43,7 @@ GROUPS=		gdm video
 
 PORTSCOUT=	limitw:1,even
 
-USES=		cpe gettext gmake gnome libtool pathfix pkgconfig tar:xz xorg
+USES=		cpe gettext gmake gnome libtool localbase:ldflags pathfix pkgconfig tar:xz xorg
 CPE_VENDOR=	gnome
 CPE_PRODUCT=	gnome_display_manager
 USE_GNOME=	cairo dconf gtk30 intltool introspection
@@ -82,8 +82,7 @@ CONFIGURE_ARGS=	--disable-static \
 
 # this is a hack until we can get our own pam dir and dir in order.
 CONFIGURE_ARGS+=--with-default-pam-config=redhat
-CPPFLAGS+=	-I${LOCALBASE}/include -DHAS_SA_LEN
-LDFLAGS+=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-DHAS_SA_LEN
 INSTALL_TARGET=	install-strip
 
 SUB_FILES+=	gdm-launch-environment \
