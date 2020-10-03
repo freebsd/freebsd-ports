@@ -3,7 +3,7 @@
 
 PORTNAME=	upnp
 DISTVERSIONPREFIX=	release-
-DISTVERSION=	1.12.1
+DISTVERSION=	1.14.0
 PORTEPOCH=	1
 CATEGORIES=	devel
 
@@ -68,7 +68,7 @@ UNSPECIFIED_SERVER_CONFIGURE_ENABLE=	unspecified_server
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/upnp/doc/UPnP_Programming_Guide.pdf \
+	${INSTALL_MAN} ${WRKSRC}/docs/UPnP_Programming_Guide.pdf \
 		${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
