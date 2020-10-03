@@ -1,5 +1,14 @@
---- metricbeat/metricbeat.yml.orig	2020-08-11 15:19:45 UTC
+--- metricbeat/metricbeat.yml.orig	2020-09-17 22:28:49 UTC
 +++ metricbeat/metricbeat.yml
+@@ -11,7 +11,7 @@
+ 
+ metricbeat.config.modules:
+   # Glob pattern for configuration loading
+-  path: ${path.config}/modules.d/*.yml
++  path: ${path.config}/metricbeat.modules.d/*.yml
+ 
+   # Set to true to enable config reloading
+   reload.enabled: false
 @@ -123,8 +123,8 @@ output.elasticsearch:
  processors:
    - add_host_metadata: ~

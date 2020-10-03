@@ -1,0 +1,11 @@
+--- metricbeat/metricbeat.reference.yml.orig	2020-09-25 20:07:52 UTC
++++ metricbeat/metricbeat.reference.yml
+@@ -14,7 +14,7 @@
+ metricbeat.config.modules:
+ 
+   # Glob pattern for configuration reloading
+-  path: ${path.config}/modules.d/*.yml
++  path: ${path.config}/metricbeat.modules.d/*.yml
+ 
+   # Period on which files under path should be checked for changes
+   reload.period: 10s

@@ -11,8 +11,11 @@
 # packetbeat_enable (bool):	Set to YES to enable packetbeat
 # 				Default: NO
 # packetbeat_flags (str):	Extra flags passed to packetbeat
-# packetbeat_conf (str):	packetbeat configuration file
-#				Default: ${PREFIX}/etc/packetbeat.yml
+# packetbeat_config (str):	packetbeat configuration directory
+#				Default: ${PREFIX}/etc/beats
+# packetbeat_conffile (str):	packetbeat configuration file
+#				relative to ${packetbeat_conf}
+#				Default: packetbeat.yml
 
 . /etc/rc.subr
 
@@ -22,6 +25,7 @@ load_rc_config $name
 
 : ${packetbeat_enable:="NO"}
 : ${packetbeat_config:="%%ETCDIR%%"}
+: ${packetbeat_conffile:="packetbeat.yml"}
 : ${packetbeat_home:="%%DATADIR%%/packetbeat"}
 : ${packetbeat_logs:="/var/log/beats"}
 : ${packetbeat_data:="/var/db/beats/packetbeat"}
@@ -30,7 +34,7 @@ load_rc_config $name
 start_precmd=packetbeat_prestart
 command=/usr/sbin/daemon
 pidfile="/var/run/${name}"
-command_args="-frP ${pidfile} %%PREFIX%%/sbin/${name} ${packetbeat_flags} -path.config ${packetbeat_config} --path.home ${packetbeat_home} --path.data ${packetbeat_data} --path.logs ${packetbeat_logs}"
+command_args="-frP ${pidfile} %%PREFIX%%/sbin/${name} ${packetbeat_flags} --path.config ${packetbeat_config} --path.home ${packetbeat_home} --path.data ${packetbeat_data} --path.logs ${packetbeat_logs} -c ${packetbeat_conffile}"
 
 packetbeat_prestart() {
 # Have to empty rc_flags so they don't get passed to daemon(8)

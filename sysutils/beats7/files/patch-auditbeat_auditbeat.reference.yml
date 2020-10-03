@@ -1,0 +1,11 @@
+--- auditbeat/auditbeat.reference.yml.orig	2020-09-25 20:02:33 UTC
++++ auditbeat/auditbeat.reference.yml
+@@ -14,7 +14,7 @@
+ auditbeat.config.modules:
+ 
+   # Glob pattern for configuration reloading
+-  path: ${path.config}/modules.d/*.yml
++  path: ${path.config}/auditbeat.modules.d/*.yml
+ 
+   # Period on which files under path should be checked for changes
+   reload.period: 10s

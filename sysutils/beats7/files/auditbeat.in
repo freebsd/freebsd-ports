@@ -11,8 +11,11 @@
 # auditbeat_enable (bool):	Set to YES to enable auditbeat
 # 				Default: NO
 # auditbeat_flags (str):	Extra flags passed to auditbeat
-# auditbeat_conf (str):	auditbeat configuration metric
-#				Default: ${PREFIX}/etc/auditbeat.yml
+# auditbeat_config (str):	auditbeat configuration directory
+#				Default: ${PREFIX}/etc/beats
+# auditbeat_conffile (str):	auditbeat configuration file
+#				relative to ${auditbeat_conf}
+#				Default: auditbeat.yml
 
 . /etc/rc.subr
 
@@ -22,15 +25,16 @@ load_rc_config $name
 
 : ${auditbeat_enable:="NO"}
 : ${auditbeat_config:="%%ETCDIR%%"}
+: ${auditbeat_conffile:="auditbeat.yml"}
 : ${auditbeat_home:="%%DATADIR%%/auditbeat"}
 : ${auditbeat_logs:="/var/log/beats"}
-: ${auditbeat_data:="/var/db/beats/auditbeat"
+: ${auditbeat_data:="/var/db/beats/auditbeat"}
 
 # daemon
 start_precmd=auditbeat_prestart
 command=/usr/sbin/daemon
 pidfile="/var/run/${name}"
-command_args="-frP ${pidfile} %%PREFIX%%/sbin/${name} ${auditbeat_flags} -path.config ${auditbeat_config} --path.home ${auditbeat_home} --path.data ${auditbeat_data} --path.logs ${auditbeat_logs}"
+command_args="-frP ${pidfile} %%PREFIX%%/sbin/${name} ${auditbeat_flags} --path.config ${auditbeat_config} --path.home ${auditbeat_home} --path.data ${auditbeat_data} --path.logs ${auditbeat_logs} -c ${auditbeat_conffile}"
 auditbeat_prestart() {
 # Have to empty rc_flags so they don't get passed to daemon(8)
 	rc_flags=""

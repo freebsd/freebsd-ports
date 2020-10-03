@@ -11,8 +11,11 @@
 # heartbeat_enable (bool):	Set to YES to enable heartbeat
 # 				Default: NO
 # heartbeat_flags (str):	Extra flags passed to heartbeat
-# heartbeat_conf (str):		heartbeat configuration file
-#				Default: ${PREFIX}/etc/heartbeat.yml
+# heartbeat_config (str):	heartbeat configuration directory
+#				Default: ${PREFIX}/etc/beats
+# heartbeat_conffile (str):	heartbeat configuration file
+#				relative to ${heartbeat_conf}
+#				Default: heartbeat.yml
 
 . /etc/rc.subr
 
@@ -22,6 +25,7 @@ load_rc_config $name
 
 : ${heartbeat_enable:="NO"}
 : ${heartbeat_config:="%%ETCDIR%%"}
+: ${heartbeat_conffile:="heartbeat.yml"}
 : ${heartbeat_home:="%%DATADIR%%/heartbeat"}
 : ${heartbeat_logs:="/var/log/beats"}
 : ${heartbeat_data:="/var/db/beats/heartbeat"}
@@ -31,7 +35,7 @@ load_rc_config $name
 start_precmd=heartbeat_prestart
 command=/usr/sbin/daemon
 pidfile="/var/run/${name}"
-command_args="-frP ${pidfile} %%PREFIX%%/sbin/${name} ${heartbeat_flags} -path.config ${heartbeat_config} --path.home ${heartbeat_home} --path.data ${heartbeat_data} --path.logs ${heartbeat_logs}"
+command_args="-frP ${pidfile} %%PREFIX%%/sbin/${name} ${heartbeat_flags} --path.config ${heartbeat_config} --path.home ${heartbeat_home} --path.data ${heartbeat_data} --path.logs ${heartbeat_logs} -c ${heartbeat_conffile}"
 
 heartbeat_prestart() {
 # Have to empty rc_flags so they don't get passed to daemon(8)

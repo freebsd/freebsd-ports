@@ -1,0 +1,11 @@
+--- filebeat/filebeat.reference.yml.orig	2020-09-25 20:03:46 UTC
++++ filebeat/filebeat.reference.yml
+@@ -840,7 +840,7 @@ filebeat.inputs:
+     #reload.period: 10s
+   #modules:
+     #enabled: false
+-    #path: modules.d/*.yml
++    #path: filebeat.modules.d/*.yml
+     #reload.enabled: true
+     #reload.period: 10s
+ 
