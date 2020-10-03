@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fog-internet-archive
-PORTVERSION=	0.0.1
+PORTVERSION=	0.0.2
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
