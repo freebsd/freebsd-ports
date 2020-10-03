@@ -247,7 +247,7 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/lib/streamex-0.7.2.jar
 %%DATADIR%%/lib/swingx-core-1.6.2-2.jar
 %%DATADIR%%/lib/testFramework.jar
-%%DATADIR%%/lib/tips-phpstorm-202.13.jar
+%%DATADIR%%/lib/tips-phpstorm-202.15.jar
 %%DATADIR%%/lib/tls-channel-0.3.2.jar
 %%DATADIR%%/lib/trang-core.jar
 %%DATADIR%%/lib/trove4j.jar
@@ -445,6 +445,7 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/browser.d.ts
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/cancellationToken.js
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/es2019decorators.d.ts
+%%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/esnext.weakref.d.ts
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/flow.utilities.d.ts
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.d.ts
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts
