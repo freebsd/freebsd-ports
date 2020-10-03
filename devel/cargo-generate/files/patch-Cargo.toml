@@ -1,8 +1,8 @@
---- Cargo.toml.orig	2020-09-04 12:25:25 UTC
+--- Cargo.toml.orig	2020-10-02 19:35:38 UTC
 +++ Cargo.toml
-@@ -37,9 +37,6 @@ predicates = "0.5.0"
- assert_cmd = "0.4"
- tempfile = "3.0.2"
+@@ -37,9 +37,6 @@ toml = "0.5.6"
+ predicates = "1.0"
+ assert_cmd = "1.0"
  
 -[features]
 -vendored-openssl = ['openssl/vendored']
