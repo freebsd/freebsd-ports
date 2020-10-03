@@ -9,6 +9,7 @@ include/helib/EvalMap.h
 include/helib/FHE.h
 include/helib/IndexMap.h
 include/helib/IndexSet.h
+include/helib/Matrix.h
 include/helib/NumbTh.h
 include/helib/PAlgebra.h
 include/helib/PGFFT.h
@@ -32,10 +33,12 @@ include/helib/hypercube.h
 include/helib/intraSlot.h
 include/helib/keySwitching.h
 include/helib/keys.h
+include/helib/log.h
 include/helib/matching.h
 include/helib/matmul.h
 include/helib/multicore.h
 include/helib/norms.h
+include/helib/partialMatch.h
 include/helib/permutations.h
 include/helib/polyEval.h
 include/helib/powerful.h
@@ -45,11 +48,14 @@ include/helib/range.h
 include/helib/recryption.h
 include/helib/replicate.h
 include/helib/sample.h
+include/helib/set.h
 include/helib/tableLookup.h
 include/helib/timing.h
+include/helib/version.h
+include/helib/zeroValue.h
 include/helib/zzX.h
 lib/libhelib.so
-lib/libhelib.so.1.0.0
+lib/libhelib.so.1.1.0
 share/cmake/helib/helibConfig.cmake
 share/cmake/helib/helibConfigVersion.cmake
 share/cmake/helib/helibTargets-%%CMAKE_BUILD_TYPE%%.cmake
