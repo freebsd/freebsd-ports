@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sord
-PORTVERSION=	0.16.4
+PORTVERSION=	0.16.6
 CATEGORIES=	devel
 MASTER_SITES=	http://download.drobilla.net/
 
