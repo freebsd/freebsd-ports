@@ -165,6 +165,7 @@
     SUBDIR += cfengine315
     SUBDIR += checkrestart
     SUBDIR += chgrep
+    SUBDIR += choria
     SUBDIR += chyves
     SUBDIR += cinnamon-control-center
     SUBDIR += cinnamon-settings-daemon
