@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	virt-manager
-PORTVERSION=	3.0.0
+PORTVERSION=	3.1.0
 CATEGORIES=	deskutils net-mgmt
 MASTER_SITES=	https://virt-manager.org/download/sources/${PORTNAME}/
 
