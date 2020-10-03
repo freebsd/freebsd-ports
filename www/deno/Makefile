@@ -20,9 +20,8 @@ BUILD_DEPENDS=	binutils>0:devel/binutils \
 .include <bsd.port.options.mk>
 
 # clang10+ is required, this conditional can be dropped when
-# 11.3 and 12.1 are EOL
-.if (${OSVERSION} >= 1100000 && ${OSVERSION} < 1103511) || \
-    (${OSVERSION} >= 1200000 && ${OSVERSION} < 1201515)
+# 12.1 is EOL
+.if (${OSVERSION} >= 1200000 && ${OSVERSION} < 1201515)
 BUILD_DEPENDS+=	llvm10>0:devel/llvm10
 .endif
 
@@ -351,9 +350,8 @@ post-patch:
 		${WRKSRC}/cargo-crates/rusty_v8-${RUSTY_VERS}/build/toolchain/gcc_toolchain.gni \
 		${WRKSRC}/cargo-crates/rusty_v8-${RUSTY_VERS}/buildtools/third_party/libc++/BUILD.gn
 # clang10+ is required, this conditional can be dropped when
-# 11.3 and 12.1 are EOL
-.if (${OSVERSION} >= 1100000 && ${OSVERSION} < 1103511) || \
-    (${OSVERSION} >= 1200000 && ${OSVERSION} < 1201515)
+# 12.1 is EOL
+.if (${OSVERSION} >= 1200000 && ${OSVERSION} < 1201515)
 	@${PATCH} -d ${PATCH_WRKSRC} ${PATCH_ARGS} < ${FILESDIR}/extrapatch-clang10
 .endif
 
