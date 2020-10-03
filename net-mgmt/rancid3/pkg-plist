@@ -8,6 +8,7 @@ lib/rancid/acos.pm
 lib/rancid/aeos.pm
 lib/rancid/arbor.pm
 lib/rancid/arcos.pm
+lib/rancid/avocent.pm
 lib/rancid/bigip.pm
 lib/rancid/ciscowlc.pm
 %%COMWARE%%lib/rancid/cmw.pm
@@ -19,6 +20,7 @@ lib/rancid/edgerouter.pm
 lib/rancid/exos.pm
 lib/rancid/fortigate.pm
 lib/rancid/foundry.pm
+lib/rancid/frr.pm
 lib/rancid/fss2.pm
 lib/rancid/fxos.pm
 lib/rancid/ios.pm
@@ -31,6 +33,7 @@ lib/rancid/nxos.pm
 lib/rancid/panos.pm
 lib/rancid/rancid.pm
 lib/rancid/rbt.pm
+lib/rancid/routeros.pm
 lib/rancid/smc.pm
 lib/rancid/sros.pm
 lib/rancid/vrp.pm
@@ -41,7 +44,6 @@ libexec/rancid/alogin
 libexec/rancid/anlogin
 libexec/rancid/arancid
 libexec/rancid/avologin
-libexec/rancid/avorancid
 libexec/rancid/blogin
 libexec/rancid/brancid
 libexec/rancid/brlogin
@@ -70,7 +72,6 @@ libexec/rancid/lgform.cgi
 libexec/rancid/mrancid
 libexec/rancid/mrvlogin
 libexec/rancid/mtlogin
-libexec/rancid/mtrancid
 libexec/rancid/nlogin
 libexec/rancid/noklogin
 libexec/rancid/nrancid
@@ -95,15 +96,15 @@ libexec/rancid/wlogin
 libexec/rancid/xilogin
 libexec/rancid/xirancid
 libexec/rancid/xlogin
-libexec/rancid/zrancid
+man/man1/a10login.1.gz
 man/man1/agmrancid.1.gz
 man/man1/alogin.1.gz
 man/man1/anlogin.1.gz
 man/man1/arancid.1.gz
 man/man1/avologin.1.gz
-man/man1/avorancid.1.gz
 man/man1/blogin.1.gz
 man/man1/brancid.1.gz
+man/man1/brlogin.1.gz
 man/man1/cat5rancid.1.gz
 man/man1/clogin.1.gz
 man/man1/control_rancid.1.gz
@@ -115,17 +116,16 @@ man/man1/erancid.1.gz
 man/man1/f5rancid.1.gz
 man/man1/flogin.1.gz
 man/man1/fnlogin.1.gz
+man/man1/fxlogin.1.gz
 man/man1/hlogin.1.gz
 man/man1/hrancid.1.gz
 man/man1/htlogin.1.gz
 man/man1/htrancid.1.gz
 man/man1/jerancid.1.gz
 man/man1/jlogin.1.gz
-man/man1/lg_intro.1.gz
 man/man1/mrancid.1.gz
 man/man1/mrvlogin.1.gz
 man/man1/mtlogin.1.gz
-man/man1/mtrancid.1.gz
 man/man1/nlogin.1.gz
 man/man1/noklogin.1.gz
 man/man1/nrancid.1.gz
@@ -137,7 +137,7 @@ man/man1/rancid-cvs.1.gz
 man/man1/rancid-par.1.gz
 man/man1/rancid-run.1.gz
 man/man1/rancid.1.gz
-man/man1/rancid_intro.1.gz
+man/man1/rblogin.1.gz
 man/man1/rivlogin.1.gz
 man/man1/rivrancid.1.gz
 man/man1/rrancid.1.gz
@@ -148,7 +148,6 @@ man/man1/wlogin.1.gz
 man/man1/xilogin.1.gz
 man/man1/xirancid.1.gz
 man/man1/xlogin.1.gz
-man/man1/zrancid.1.gz
 man/man3/rancid.3.gz
 man/man5/cloginrc.5.gz
 man/man5/lg.conf.5.gz
@@ -156,6 +155,8 @@ man/man5/rancid.conf.5.gz
 man/man5/rancid.types.base.5.gz
 man/man5/rancid.types.conf.5.gz
 man/man5/router.db.5.gz
+man/man7/lg_intro.7.gz
+man/man7/rancid_intro.7.gz
 %%DATADIR%%/CHANGES
 %%DATADIR%%/COPYING
 %%DATADIR%%/FAQ
