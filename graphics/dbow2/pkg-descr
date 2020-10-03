@@ -1,0 +1,8 @@
+DBoW2 is an improved version of the DBow library, an open source C++ library for
+indexing and converting images into a bag-of-word representation. It implements
+a hierarchical tree for approximating nearest neighbours in the image feature
+space and creating a visual vocabulary. DBoW2 also implements an image database
+with inverted and direct files to index images and enabling quick queries and
+feature comparisons.
+
+WWW: https://github.com/dorian3d/DBoW2
