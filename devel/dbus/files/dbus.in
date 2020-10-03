@@ -32,9 +32,6 @@ dbus_prestart()
 dbus_poststop()
 {
     rm -f $pidfile
-# The following two lines may be removed after 2018-01-01
-    rm -f /var/db/dbus/machine-id
-    [ ! -d /var/db/dbus ] || rmdir /var/db/dbus
 }
 
 load_rc_config ${name}
