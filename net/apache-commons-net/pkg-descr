@@ -4,10 +4,12 @@ access.
 
 Supported protocols are:
 
-    * FTP
+    * FTP/FTPS
+    * FTP over HTTP (experimental)
     * NNTP
-    * SMTP
-    * POP3
+    * SMTP(S)
+    * POP3(S)
+    * IMAP(S)
     * Telnet
     * TFTP
     * Finger
