@@ -8,6 +8,5 @@ sbin/snoopy-enable
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/FAQ.md
 %%PORTDOCS%%%%DOCSDIR%%/FILTER_exclude_spawns_of.md
-%%PORTDOCS%%%%DOCSDIR%%/HACKING.md
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.md
 %%PORTDOCS%%%%DOCSDIR%%/README.md
