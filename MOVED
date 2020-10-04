@@ -15635,3 +15635,4 @@ multimedia/py-gstreamer|multimedia/py-gstreamer1|2020-09-30|Has expired: Uses de
 lang/spidermonkey68|lang/spidermonkey78|2020-10-01|Replaced by a more recent version
 audio/zinf||2020-10-02|Has expired: Does not build, no upstream
 emulators/qemu-sbruno|emulators/qemu|2020-10-02|Has expired: Port will be removed in favor of emulators/qemu
+dns/knot2-lib|dns/knot3-lib|2020-10-04|Replaced by a more recent version
