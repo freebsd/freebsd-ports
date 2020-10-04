@@ -1,2 +1,5 @@
+TIMESTAMP = 1601793495
 SHA256 (shntool-3.0.10.tar.gz) = 74302eac477ca08fb2b42b9f154cc870593aec8beab308676e4373a5e4ca2102
 SIZE (shntool-3.0.10.tar.gz) = 216061
+SHA256 (cfd06e4ed.patch) = 3ba026ed6c669d8ca25994e25fa0eea4b5dd9f7d2bd15ddcbfbdf62c66f4689f
+SIZE (cfd06e4ed.patch) = 1569

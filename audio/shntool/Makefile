@@ -3,9 +3,12 @@
 
 PORTNAME=	shntool
 DISTVERSION=	3.0.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://shnutils.freeshell.org/shntool/dist/src/
+
+PATCH_SITES=	https://github.com/max619/shntool/commit/
+PATCHFILES=	cfd06e4ed.patch:-p1
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Multi-purpose WAVE data processing and reporting utility
