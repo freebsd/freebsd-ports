@@ -2,7 +2,7 @@
 
 PORTNAME=	concourse
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.5.1
+DISTVERSION=	6.6.0
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -37,8 +37,8 @@ GH_TUPLE=	\
 		cenkalti:backoff:v2.1.1:cenkalti_backoff/vendor/github.com/cenkalti/backoff \
 		census-instrumentation:opencensus-go:v0.22.2:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
 		charlievieth:fs:7dc373669fa1:charlievieth_fs/vendor/github.com/charlievieth/fs \
+		cloudfoundry-incubator:credhub-cli:e3951663d25c:cloudfoundry_incubator_credhub_cli/vendor/code.cloudfoundry.org/credhub-cli \
 		cloudfoundry:clock:02e53af36e6c:cloudfoundry_clock/vendor/code.cloudfoundry.org/clock \
-		cloudfoundry-incubator:credhub-cli:e3951663d25c:cloudfoundry_credhub_cli/vendor/code.cloudfoundry.org/credhub-cli \
 		cloudfoundry:garden:62470dc86365:cloudfoundry_garden/vendor/code.cloudfoundry.org/garden \
 		cloudfoundry:go-socks5:54f73bdb8a8e:cloudfoundry_go_socks5/vendor/github.com/cloudfoundry/go-socks5 \
 		cloudfoundry:lager:v2.0.0:cloudfoundry_lager/vendor/code.cloudfoundry.org/lager \
