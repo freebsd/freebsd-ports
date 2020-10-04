@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	check-manifest
-PORTVERSION=	0.43
+PORTVERSION=	0.44
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,14 +21,6 @@ USES=		python:3.5+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
-
-OPTIONS_DEFINE=	DOCS
-
-PORTDOCS=	CHANGES.rst README.rst
-
-post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
