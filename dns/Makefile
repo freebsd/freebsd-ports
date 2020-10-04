@@ -90,6 +90,7 @@
     SUBDIR += knot2
     SUBDIR += knot2-lib
     SUBDIR += knot3
+    SUBDIR += knot3-lib
     SUBDIR += ldapdns
     SUBDIR += ldns
     SUBDIR += libasr
