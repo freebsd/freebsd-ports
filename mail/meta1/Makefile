@@ -2,6 +2,7 @@
 
 PORTNAME=	meta1
 PORTVERSION=	1.1.0a.15.2
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.MeTA1.org/download/.alpha/3rdt/
 DISTNAME=	${PORTNAME}-1.1.Alpha15.2
