@@ -202,6 +202,7 @@
     SUBDIR += fldiff
     SUBDIR += flex
     SUBDIR += flip
+    SUBDIR += fmtlatex
     SUBDIR += fo-aspell
     SUBDIR += foiltex
     SUBDIR += fop

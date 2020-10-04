@@ -1,0 +1,5 @@
+fmtlatex is able to put a LaTeX document into a canonical formatting form,
+which is then suitable for comparing genuine content differences between
+various revisions of the same document rather than just formatting differences.
+
+WWW: https://github.com/loopspace/fmtlatex
