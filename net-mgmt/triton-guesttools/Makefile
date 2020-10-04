@@ -7,9 +7,6 @@ CATEGORIES=	net-mgmt
 MAINTAINER=	juraj@lutter.sk
 COMMENT=	FreeBSD guest tools for use with SmartOS
 
-DEPRECATED=	Depends on expired net-mgmt/mdata-client
-EXPIRATION_DATE=2020-09-30
-
 RUN_DEPENDS=	bash:shells/bash \
 		mdata-client>0:net-mgmt/mdata-client
 
