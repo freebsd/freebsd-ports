@@ -28,6 +28,8 @@ DOCSDIR=		${PREFIX}/share/doc/husky
 INFO=			htick
 MAKE_ARGS=		INFODIR=${PREFIX}/${INFO_PATH}
 
+CFLAGS+=		-fcommon # fix build failure with clang-11 on 13-CURRENT
+
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
