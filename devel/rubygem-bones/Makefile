@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bones
-PORTVERSION=	3.8.4
+PORTVERSION=	3.8.5
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
