@@ -3,7 +3,7 @@
 
 PORTNAME=	gdm
 PORTVERSION=	3.28.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -93,7 +93,6 @@ SUB_FILES+=	gdm-launch-environment \
 		locale.conf
 
 GDMDIR?=	${PREFIX}/etc/gdm
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
 GNOME_LOCALSTATEDIR=	/var
 
@@ -163,8 +162,5 @@ post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/lib/udev/rules.d/61-gdm.rules
 	@${RMDIR} ${STAGEDIR}${PREFIX}/lib/udev/rules.d
 	@${RMDIR} ${STAGEDIR}${PREFIX}/lib/udev
-
-	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' < ${PKGDIR}/pkg-message \
-		| /usr/bin/fmt 75 79 > ${PKGMESSAGE}
 
 .include <bsd.port.mk>
