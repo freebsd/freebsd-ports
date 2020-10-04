@@ -20,6 +20,8 @@ MASTERDIR=	${.CURDIR}/../husky
 COMPONENT_SUBDIR=hpt
 MAKE_ARGS=	INFODIR=${PREFIX}/${INFO_PATH}
 
+CFLAGS+=	-fcommon # fix build failure with clang-11 on 13-CURRENT
+
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
