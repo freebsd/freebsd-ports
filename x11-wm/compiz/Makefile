@@ -2,7 +2,7 @@
 
 PORTNAME=	compiz
 PORTVERSION=	0.8.8
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://BSDforge.com/projects/source/x11-wm/compiz/
 
