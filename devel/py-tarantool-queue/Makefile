@@ -21,7 +21,4 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|msgpack-python|msgpack|; s|tarantool<0.4|tarantool|' ${WRKSRC}/setup.py
-
 .include <bsd.port.mk>
