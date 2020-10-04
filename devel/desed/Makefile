@@ -12,6 +12,8 @@ COMMENT=	Demystify and debug sed scripts from the comfort of your terminal
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	Build of the kqueue crate fails: https://gitlab.com/worr/rust-kqueue/-/issues/4
+
 RUN_DEPENDS=	gsed:textproc/gsed
 
 USES=		cargo
