@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	FAudio
-DISTVERSION=	20.09
+DISTVERSION=	20.10
 CATEGORIES=	audio
 
 MAINTAINER=	multimedia@FreeBSD.org
