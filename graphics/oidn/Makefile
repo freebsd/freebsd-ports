@@ -2,7 +2,7 @@
 
 PORTNAME=	oidn
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.3
+DISTVERSION=	1.2.4
 CATEGORIES=	graphics
 MASTER_SITES=	http://freebsd.org/:weights # bogus URL to make the framework happy, the fetch uses Git URL below
 DISTFILES=	${PORTNAME}-weights-${WEIGHTS_GIT_HASH}${EXTRACT_SUFX}:weights
@@ -41,16 +41,21 @@ WEIGHTS_GIT_HASH=	08092e46a1961b13b70e48ad80fa19b452bd4c01
 
 pre-fetch:
 	@if [ "${FORCE_FETCH_ALL}" = "true" ] || ! [ -f "${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-weights-${WEIGHTS_GIT_HASH}${EXTRACT_SUFX}" ]; then \
-	  ${MKDIR} ${DISTDIR}/${DIST_SUBDIR} && \
-	  cd ${DISTDIR}/${DIST_SUBDIR} && \
-	    ${ECHO} "==> Fetching the oidn/weights subproject with large LFS files" && \
-	    git config --global filter.lfs.smudge "git-lfs smudge -- %f" && \
-	    git clone -q ${WEIGHTS_GIT_URL} ${PORTNAME}-weights-${WEIGHTS_GIT_HASH} && \
-	    (cd ${PORTNAME}-weights-${WEIGHTS_GIT_HASH} && git reset -q --hard ${WEIGHTS_GIT_HASH} && ${RM} -r .git) && \
-	    ${FIND} ${PORTNAME}-weights-${WEIGHTS_GIT_HASH} -and -exec ${TOUCH} -h -d 1970-01-01T00:00:00Z {} \; && \
-	    ${FIND} ${PORTNAME}-weights-${WEIGHTS_GIT_HASH} -print0 | LC_ALL=C ${SORT} -z | \
-	        ${TAR} czf ${PORTNAME}-weights-${WEIGHTS_GIT_HASH}${EXTRACT_SUFX} --format=bsdtar --gid 0 --uid 0 --options gzip:!timestamp --no-recursion --null -T - && \
-	    ${RM} -r ${PORTNAME}-weights-${WEIGHTS_GIT_HASH}; \
+		${MKDIR} ${DISTDIR}/${DIST_SUBDIR} && \
+		cd ${DISTDIR}/${DIST_SUBDIR} && \
+		${ECHO} "==> Fetching the oidn/weights subproject with large LFS files" && \
+		( \
+			${MKDIR} ${WRKDIR}; \
+			HOME=${WRKDIR}; \
+			git config --global filter.lfs.smudge "git-lfs smudge -- %f" && \
+			git clone -q ${WEIGHTS_GIT_URL} ${PORTNAME}-weights-${WEIGHTS_GIT_HASH} && \
+			(cd ${PORTNAME}-weights-${WEIGHTS_GIT_HASH} && git reset -q --hard ${WEIGHTS_GIT_HASH} && ${RM} -r .git) && \
+			${RM} -r ${WRKDIR} \
+		) && \
+		${FIND} ${PORTNAME}-weights-${WEIGHTS_GIT_HASH} -and -exec ${TOUCH} -h -d 1970-01-01T00:00:00Z {} \; && \
+		${FIND} ${PORTNAME}-weights-${WEIGHTS_GIT_HASH} -print0 | LC_ALL=C ${SORT} -z | \
+		${TAR} czf ${PORTNAME}-weights-${WEIGHTS_GIT_HASH}${EXTRACT_SUFX} --format=bsdtar --gid 0 --uid 0 --options gzip:!timestamp --no-recursion --null -T - && \
+		${RM} -r ${PORTNAME}-weights-${WEIGHTS_GIT_HASH}; \
 	fi
 
 post-extract:
