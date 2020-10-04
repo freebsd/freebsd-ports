@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Curses
-PORTVERSION=	1.36
+PORTVERSION=	1.37
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -28,8 +28,7 @@ NCURSESW_CONFIGURE_ENV=		CURSES_LDFLAGS="-L/usr/lib/ -lncursesw" \
 NCURSESW_CONFIGURE_ENV_OFF=	CURSES_LDFLAGS="-L/usr/lib/ -lncurses"
 
 pre-configure:
-	@${LN} -sf ${WRKSRC}/hints/c-freebsd.ncurses.h \
-		${WRKSRC}/c-config.h
+	@${LN} -fs ${WRKSRC}/hints/c-freebsd.ncurses.h ${WRKSRC}/c-config.h
 	@${MKDIR} ${WRKSRC}/usr/include/ncurses
 .for i in form.h ncurses.h menu.h panel.h
 	@${LN} -fs /usr/include/${i} ${WRKSRC}/usr/include/ncurses/${i}
