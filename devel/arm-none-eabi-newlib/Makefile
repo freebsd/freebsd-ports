@@ -11,8 +11,6 @@ PKGNAMEPREFIX=	${NEWLIB_TARGET}-
 MAINTAINER=	kevans@FreeBSD.org
 COMMENT=	Newlib distribution for ${NEWLIB_TARGET} targets
 
-BROKEN=		arm-none-eabi-ar: ../stdlib/lib.a: No such file or directory
-
 BUILD_DEPENDS+=	${NEWLIB_TARGET}-ar:devel/binutils@${NEWLIB_TARGET:C/-/_/g} \
 		${NEWLIB_TARGET}-as:devel/binutils@${NEWLIB_TARGET:C/-/_/g} \
 		${NEWLIB_TARGET}-ld:devel/binutils@${NEWLIB_TARGET:C/-/_/g} \
