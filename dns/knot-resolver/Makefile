@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	knot-resolver
-DISTVERSION=	5.1.2
-PORTREVISION=	1
+DISTVERSION=	5.1.3
 CATEGORIES=	dns
 MASTER_SITES=	https://secure.nic.cz/files/knot-resolver/ \
 		https://dns.company/downloads/knot-resolver/
@@ -19,9 +18,9 @@ BUILD_DEPENDS=	bash:shells/bash \
 		lua51-cqueues>=20200603_1:devel/lua-cqueues@lua51 \
 		luacheck:devel/lua-luacheck \
 		cmake:devel/cmake
-LIB_DEPENDS=	libknot.so:dns/knot2-lib \
-		libdnssec.so:dns/knot2-lib \
-		libzscanner.so:dns/knot2-lib \
+LIB_DEPENDS=	libknot.so:dns/knot3-lib \
+		libdnssec.so:dns/knot3-lib \
+		libzscanner.so:dns/knot3-lib \
 		libgnutls.so:security/gnutls \
 		liblmdb.so:databases/lmdb \
 		libluajit-5.1.so:lang/luajit-openresty \
