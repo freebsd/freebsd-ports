@@ -3,4 +3,4 @@ GD.pm is a Perl interface to Thomas Boutell's gd graphics library
 using a large number of graphics primitives, and emit the drawings
 as PNG files.
 
-WWW: http://stein.cshl.org/WWW/software/GD/
+WWW: https://metacpan.org/release/GD
