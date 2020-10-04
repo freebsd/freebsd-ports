@@ -5,7 +5,7 @@
  extras_require = \
  {'memcached': ['python-memcached>=1.59,<2.0'],
 - 'msgpack': ['msgpack-python>=0.5,<0.6'],
-+ 'msgpack': ['msgpack>=0.5,<1'],
++ 'msgpack': ['msgpack>=0.5'],
   'redis': ['redis>=3.3.6,<4.0.0']}
  
  setup_kwargs = {
