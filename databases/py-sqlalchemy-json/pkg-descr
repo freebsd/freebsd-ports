@@ -1,0 +1,3 @@
+SQLAlchemy-JSON provides mutation-tracked JSON types to SQLAlchemy.
+
+WWW: https://github.com/edelooff/sqlalchemy-json

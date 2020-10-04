@@ -803,6 +803,7 @@
     SUBDIR += py-redis2
     SUBDIR += py-sispy
     SUBDIR += py-south
+    SUBDIR += py-sqlalchemy-json
     SUBDIR += py-sqlalchemy-migrate
     SUBDIR += py-sqlalchemy-utils
     SUBDIR += py-sqlalchemy10
