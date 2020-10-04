@@ -342,9 +342,9 @@ sbin/safe_asterisk
 %%DATADIR%%/agi-bin/eagi-sphinx-test
 %%DATADIR%%/agi-bin/eagi-test
 %%DATADIR%%/agi-bin/jukebox.agi
-%%DATADIR%%/documentation/appdocsxml.dtd
-%%DATADIR%%/documentation/appdocsxml.xslt
-%%DATADIR%%/documentation/core-en_US.xml
+%%XMLDOC%%%%DATADIR%%/documentation/appdocsxml.dtd
+%%XMLDOC%%%%DATADIR%%/documentation/appdocsxml.xslt
+%%XMLDOC%%%%DATADIR%%/documentation/core-en_US.xml
 %%DATADIR%%/phoneprov/000000000000-directory.xml
 %%DATADIR%%/phoneprov/000000000000-phone.cfg
 %%DATADIR%%/phoneprov/000000000000.cfg
@@ -366,11 +366,11 @@ sbin/safe_asterisk
 %%DATADIR%%/scripts/ast_coredumper
 %%DATADIR%%/scripts/ast_logescalator
 %%DATADIR%%/scripts/ast_loggrabber
-%%DATADIR%%/static-http/appdocsxml.xslt
+%%XMLDOC%%%%DATADIR%%/static-http/appdocsxml.xslt
 %%DATADIR%%/static-http/ajamdemo.html
 %%DATADIR%%/static-http/astman.css
 %%DATADIR%%/static-http/astman.js
-%%DATADIR%%/static-http/core-en_US.xml
+%%XMLDOC%%%%DATADIR%%/static-http/core-en_US.xml
 %%DATADIR%%/static-http/prototype.js
 %%DATADIR%%/static-http/mantest.html
 %%DOCSDIR%%/images/asterisk-intro.jpg
