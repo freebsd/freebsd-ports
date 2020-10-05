@@ -1896,6 +1896,7 @@
     SUBDIR += p5-Color-Theme-Role
     SUBDIR += p5-ColorThemeBase-Static
     SUBDIR += p5-ColorThemeUtil-ANSI
+    SUBDIR += p5-ColorThemes-Standard
     SUBDIR += p5-Commandable
     SUBDIR += p5-Commands-Guarded
     SUBDIR += p5-CommitBit
