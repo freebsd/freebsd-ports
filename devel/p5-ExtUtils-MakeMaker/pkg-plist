@@ -12,6 +12,7 @@
 %%SITE_PERL%%/ExtUtils/MM_MacOS.pm
 %%SITE_PERL%%/ExtUtils/MM_NW5.pm
 %%SITE_PERL%%/ExtUtils/MM_OS2.pm
+%%SITE_PERL%%/ExtUtils/MM_OS390.pm
 %%SITE_PERL%%/ExtUtils/MM_QNX.pm
 %%SITE_PERL%%/ExtUtils/MM_UWIN.pm
 %%SITE_PERL%%/ExtUtils/MM_Unix.pm
@@ -44,6 +45,7 @@
 %%PERL5_MAN3%%/ExtUtils::MM_MacOS.3.gz
 %%PERL5_MAN3%%/ExtUtils::MM_NW5.3.gz
 %%PERL5_MAN3%%/ExtUtils::MM_OS2.3.gz
+%%PERL5_MAN3%%/ExtUtils::MM_OS390.3.gz
 %%PERL5_MAN3%%/ExtUtils::MM_QNX.3.gz
 %%PERL5_MAN3%%/ExtUtils::MM_UWIN.3.gz
 %%PERL5_MAN3%%/ExtUtils::MM_Unix.3.gz
