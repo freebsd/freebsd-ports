@@ -1,0 +1,4 @@
+resolve-march-native is a small command line tool to resolve -march=native into
+explicit GCC flags.
+
+WWW: https://github.com/hartwork/resolve-march-native
