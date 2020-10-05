@@ -1732,6 +1732,7 @@
     SUBDIR += p5-Best
     SUBDIR += p5-Border-Style
     SUBDIR += p5-BorderStyleBase
+    SUBDIR += p5-BorderStyles-Standard
     SUBDIR += p5-Brannigan
     SUBDIR += p5-Bread-Board
     SUBDIR += p5-Bread-Board-Declare
