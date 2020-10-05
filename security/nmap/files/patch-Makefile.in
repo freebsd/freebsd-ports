@@ -1,6 +1,6 @@
---- Makefile.in.orig	2017-07-31 20:56:53 UTC
+--- Makefile.in.orig	2020-08-27 19:13:31 UTC
 +++ Makefile.in
-@@ -13,7 +13,7 @@ mandir = @mandir@
+@@ -10,7 +10,7 @@ mandir = @mandir@
  top_srcdir = @top_srcdir@
  srcdir = @srcdir@
  nmapdatadir = @datadir@/nmap

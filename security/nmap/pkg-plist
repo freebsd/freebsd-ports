@@ -100,6 +100,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/nselib/datetime.lua
 %%DATADIR%%/nselib/dhcp.lua
 %%DATADIR%%/nselib/dhcp6.lua
+%%DATADIR%%/nselib/dicom.lua
 %%DATADIR%%/nselib/dns.lua
 %%DATADIR%%/nselib/dnsbl.lua
 %%DATADIR%%/nselib/dnssd.lua
@@ -158,6 +159,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/nselib/oops.lua
 %%DATADIR%%/nselib/openssl.luadoc
 %%DATADIR%%/nselib/ospf.lua
+%%DATADIR%%/nselib/outlib.lua
 %%DATADIR%%/nselib/packet.lua
 %%DATADIR%%/nselib/pcre.luadoc
 %%DATADIR%%/nselib/pgsql.lua
@@ -301,6 +303,8 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/db2-das-info.nse
 %%DATADIR%%/scripts/deluge-rpc-brute.nse
 %%DATADIR%%/scripts/dhcp-discover.nse
+%%DATADIR%%/scripts/dicom-brute.nse
+%%DATADIR%%/scripts/dicom-ping.nse
 %%DATADIR%%/scripts/dict-info.nse
 %%DATADIR%%/scripts/distcc-cve2004-2687.nse
 %%DATADIR%%/scripts/dns-blacklist.nse
@@ -791,6 +795,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/unittest.nse
 %%DATADIR%%/scripts/unusual-port.nse
 %%DATADIR%%/scripts/upnp-info.nse
+%%DATADIR%%/scripts/uptime-agent-info.nse
 %%DATADIR%%/scripts/url-snarf.nse
 %%DATADIR%%/scripts/ventrilo-info.nse
 %%DATADIR%%/scripts/versant-info.nse

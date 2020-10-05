@@ -1,6 +1,6 @@
---- libdnet-stripped/configure.orig	2017-02-13 19:46:23 UTC
+--- libdnet-stripped/configure.orig	2017-08-02 18:48:27 UTC
 +++ libdnet-stripped/configure
-@@ -733,6 +733,9 @@ ac_includes_default="\
+@@ -764,6 +764,9 @@ ac_includes_default="\
  #ifdef HAVE_STDINT_H
  # include <stdint.h>
  #endif
@@ -10,8 +10,8 @@
  #ifdef HAVE_UNISTD_H
  # include <unistd.h>
  #endif"
-@@ -11716,11 +11719,8 @@ $as_echo_n "checking for Berkeley Packet
-     if test "${ac_cv_dnet_bsd_bpf+set}" = set; then :
+@@ -11828,11 +11831,8 @@ $as_echo_n "checking for Berkeley Packet Filter... " >
+     if ${ac_cv_dnet_bsd_bpf+:} false; then :
    $as_echo_n "(cached) " >&6
  else
 -  if test -c /dev/bpf0 ; then

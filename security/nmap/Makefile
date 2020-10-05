@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nmap
-DISTVERSION=	7.80
+DISTVERSION=	7.90
 PORTREVISION=	0
 CATEGORIES=	security
 MASTER_SITES=	https://nmap.org/dist/ \
@@ -15,8 +15,10 @@ COMMENT?=	Port scanning utility for large networks
 # https://nmap.org/book/man-legal.html
 # Install the nmap modified license because of
 # http://insecure.org/news/download-com-fiasco.html
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	NPSL
+LICENSE_NAME=	Nmap Public Source License
+LICENSE_PERMS=	auto-accept dist-mirror pkg-mirror pkg-sell
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 .if !defined(MASTERDIR)
 

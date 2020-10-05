@@ -1,6 +1,6 @@
---- nping/EchoServer.cc.orig	2018-01-28 21:18:17 UTC
+--- nping/EchoServer.cc.orig	2020-10-02 16:12:22 UTC
 +++ nping/EchoServer.cc
-@@ -281,12 +281,12 @@ int EchoServer::nep_listen_socket(){
+@@ -213,12 +213,12 @@ int EchoServer::nep_listen_socket(){
          server_addr6.sin6_len = sizeof(struct sockaddr_in6);
      #endif
      /* Bind to local address and the specified port */
@@ -15,7 +15,7 @@
                  nping_fatal(QT_3, "Could not bind to port %d (%s).", port, strerror(errno));
              }else{ 
                  nping_print(VB_1, "Server bound to port %d", port);
-@@ -319,12 +319,12 @@ int EchoServer::nep_listen_socket(){
+@@ -251,12 +251,12 @@ int EchoServer::nep_listen_socket(){
  #endif
  
      /* Bind to local address and the specified port */

@@ -1,6 +1,6 @@
---- tcpip.cc.orig	2017-06-07 12:32:38 UTC
+--- tcpip.cc.orig	2020-10-02 16:12:22 UTC
 +++ tcpip.cc
-@@ -151,6 +151,8 @@
+@@ -83,6 +83,8 @@
  #endif /* NETINET_IF_ETHER_H */
  #endif /* HAVE_NETINET_IF_ETHER_H */
  
