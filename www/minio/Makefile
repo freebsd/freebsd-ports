@@ -13,8 +13,8 @@ LICENSE=	APACHE20
 USES=		compiler go:modules
 
 USE_GITHUB=	yes
-GHTAG=		RELEASE.2020-09-26T03-44-56Z
-COMMIT_ID=	bebcf4f004ca054ded2de665e23bd59e8ce7e2d4
+GHTAG=		RELEASE.2020-10-03T02-19-42Z
+COMMIT_ID=	806625cbffcf7850720a45ff13aa25390ac757af
 
 GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		Azure:azure-pipeline-go:v0.2.2:azure_azure_pipeline_go/vendor/github.com/Azure/azure-pipeline-go \
@@ -65,8 +65,8 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		golang:sys:288bc346aa39:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.3:golang_text/vendor/golang.org/x/text \
 		golang:time:9d24e82272b4:golang_time/vendor/golang.org/x/time \
-		golang:tools:c4923e618c08:golang_tools/vendor/golang.org/x/tools \
-		golang:xerrors:9bdfabe68543:golang_xerrors/vendor/golang.org/x/xerrors \
+		golang:tools:bf155c11ec6f:golang_tools/vendor/golang.org/x/tools \
+		golang:xerrors:5ec99f83aff1:golang_xerrors/vendor/golang.org/x/xerrors \
 		gomodule:redigo:v2.0.0:gomodule_redigo/vendor/github.com/gomodule/redigo \
 		google:go-genproto:24fa4b261c55:google_go_genproto/vendor/google.golang.org/genproto \
 		google:uuid:v1.1.1:google_uuid/vendor/github.com/google/uuid \
