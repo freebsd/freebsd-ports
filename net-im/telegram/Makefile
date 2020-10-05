@@ -6,7 +6,7 @@ PORTVERSION=	1.4.1.g20161227
 PORTREVISION=	6
 CATEGORIES=	net-im
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Command-line interface for Telegram
 
 LICENSE=	GPLv2
