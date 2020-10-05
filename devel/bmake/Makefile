@@ -17,6 +17,10 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAKE_ENV+=	CONFIG_SITE=${CONFIG_SITE}
 
+.if defined(BATCH)
+EXTRA_PATCHES=	${FILESDIR}/extrapatch-unit-tests_Makefile
+.endif
+
 post-patch:	.SILENT
 	${REINPLACE_CMD} 's/^\.Nx/NetBSD/' ${WRKDIR}/bmake/bmake.1
 
