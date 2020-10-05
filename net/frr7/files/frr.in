@@ -11,9 +11,13 @@
 #  frr_enable="YES"
 #
 # You may also wish to use the following variables to fine-tune startup:
-#  frr_flags=""
-#  frr_daemons="zebra babeld bfdd bgpd eigrpd fabricd isisd ospfd ospf6d ripd ripngd staticd"
+# Enable Integrated configuration mode (using the single configuration file
+# frr.conf in place of one file for each dameon)
 #  frr_vtysh_boot="YES"
+# Selecting limited set of daemons to run
+#  frr_daemons="zebra babeld bfdd bgpd eigrpd fabricd isisd ospfd ospf6d ripd ripngd staticd"
+# Global tuning
+#  frr_flags=""
 # Per daemon tuning may be done with daemon_name_flags
 #  zebra_flags="-P 0"
 #  bgpd_flags="-nrP 0" and so on
@@ -109,7 +113,7 @@ do_cmd()
 				continue
 			fi
 		fi
-	    if [ ${frr_cmd} = "stop" ] && [ -z $(check_process ${command}) ]; then
+	    if [ ${frr_cmd} = "stop" ] && [ -z "$(check_process ${command})" ]; then
 			continue
 	    fi
 	    eval flags=\$\{${daemon}_flags:-\"${frr_flags}\"\}
