@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	CGI
-PORTVERSION=	4.50
+PORTVERSION=	4.51
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,9 +22,9 @@ TEST_DEPENDS=	p5-Test-Deep>=0:devel/p5-Test-Deep \
 USES=		perl5
 USE_PERL5=	configure
 
-PORTSCOUT=	limit:^[0-9\.]*$$
-
 NO_ARCH=	yes
+
+PORTSCOUT=	limit:^[0-9\.]*$$
 
 OPTIONS_DEFINE=	EXAMPLES
 
