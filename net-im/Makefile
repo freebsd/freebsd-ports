@@ -150,6 +150,7 @@
     SUBDIR += talkatu
     SUBDIR += teamwords
     SUBDIR += telegram
+    SUBDIR += telegram-cli
     SUBDIR += telegram-desktop
     SUBDIR += telegram-purple
     SUBDIR += telegramqml
