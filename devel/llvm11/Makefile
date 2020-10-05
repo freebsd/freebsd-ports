@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	llvm
-DISTVERSION=	11.0.0rc4
+DISTVERSION=	11.0.0rc5
 PORTREVISION=	0
 CATEGORIES=	devel lang
 MASTER_SITES=	https://github.com/llvm/llvm-project/releases/download/llvmorg-${DISTVERSION:S/rc/-rc/}/ \
@@ -316,12 +316,13 @@ NATIVE_BACKENDS=	${_NATIVE_BACKENDS}
 FREEBSD_BACKENDS+=	AMDGPU
 NATIVE_BACKENDS+=	AMDGPU
 .endif
-STANDARD_BACKENDS=	${_FREEBSD_BACKENDS} AMDGPU BPF Hexagon Lanai MSP430 \
-			NVPTX SystemZ WebAssembly XCore
+STANDARD_BACKENDS=	${_FREEBSD_BACKENDS} AMDGPU AVR BPF Hexagon Lanai \
+			MSP430 NVPTX SystemZ WebAssembly XCore
 _BE_LIBS_COMMON=	CodeGen Desc Info
 _BE_LIBS_AArch64=	AsmParser Disassembler Utils
 _BE_LIBS_AMDGPU=	AsmParser Disassembler Utils
 _BE_LIBS_ARM=		AsmParser Disassembler Utils
+_BE_LIBS_AVR=		AsmParser Disassembler
 _BE_LIBS_BPF=		AsmParser Disassembler 
 _BE_LIBS_Hexagon=	AsmParser Disassembler
 _BE_LIBS_Lanai=		AsmParser Disassembler
