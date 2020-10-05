@@ -15,7 +15,7 @@ include/libexif/exif-utils.h
 lib/libexif.a
 lib/libexif.so
 lib/libexif.so.12
-lib/libexif.so.12.3.3
+lib/libexif.so.12.3.4
 libdata/pkgconfig/libexif.pc
 %%NLS%%share/locale/be/LC_MESSAGES/libexif-12.mo
 %%NLS%%share/locale/bs/LC_MESSAGES/libexif-12.mo
@@ -29,6 +29,7 @@ libdata/pkgconfig/libexif.pc
 %%NLS%%share/locale/fr/LC_MESSAGES/libexif-12.mo
 %%NLS%%share/locale/it/LC_MESSAGES/libexif-12.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/libexif-12.mo
+%%NLS%%share/locale/ms/LC_MESSAGES/libexif-12.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/libexif-12.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/libexif-12.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/libexif-12.mo
