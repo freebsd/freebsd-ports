@@ -1,29 +1,36 @@
 # Created by: Oliver Eikemeier
 # $FreeBSD$
 
-PORTNAME=		tenshi
-PORTVERSION=		0.15
-CATEGORIES=		sysutils
-MASTER_SITES=		http://dev.inversepath.com/tenshi/
+PORTNAME=	tenshi
+PORTVERSION=	0.15
+PORTREVISION=	1
+CATEGORIES=	sysutils
+MASTER_SITES=	http://dev.inversepath.com/tenshi/
 
-MAINTAINER=		ports@FreeBSD.org
-COMMENT=		Tenshi is a log monitoring program, designed to watch multiple logs
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Log monitoring program, designed to watch multiple logs
 
-RUN_DEPENDS=		${LOCALBASE}/bin/gtail:sysutils/coreutils \
-			p5-IO-BufferedSelect>=0:devel/p5-IO-BufferedSelect
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=			perl5
-USE_PERL5=		run build patch
-NO_BUILD=		yes
-NO_ARCH=		yes
-USE_RC_SUBR=		tenshi
-SUB_LIST=		PERL=${PERL}
+RUN_DEPENDS=	${LOCALBASE}/bin/gtail:sysutils/coreutils \
+		p5-IO-BufferedSelect>=0:devel/p5-IO-BufferedSelect
 
-OPTIONS_DEFINE=		DOCS
+USES=		perl5
+USE_PERL5=	build patch run
+USE_RC_SUBR=	tenshi
 
-PLIST_FILES=		bin/tenshi etc/tenshi.conf.sample man/man8/tenshi.8.gz
+NO_ARCH=	yes
+NO_BUILD=	yes
+SUB_LIST=	PERL=${PERL}
 
-PORTDOCS=		README Changelog
+PLIST_FILES=	bin/tenshi \
+		etc/tenshi.conf.sample \
+		share/man/man8/tenshi.8.gz
+
+PORTDOCS=	Changelog README
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${PERL5} -pi.bak -e ' \
@@ -35,7 +42,7 @@ post-patch:
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/tenshi ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/tenshi.conf ${STAGEDIR}${PREFIX}/etc/tenshi.conf.sample
-	${INSTALL_MAN} ${WRKSRC}/tenshi.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/tenshi.8 ${STAGEDIR}${MAN8PREFIX}/share/man/man8
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
