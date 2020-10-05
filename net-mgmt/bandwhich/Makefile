@@ -15,6 +15,7 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	imsnif
 
+GH_TUPLE=	tailhook:resolv-conf:83c0f25ebcb0615550488692c5213ca1ae4acd8f:resolvconf
 CARGO_CRATES=	adler-0.2.3 \
 		adler32-1.2.0 \
 		aho-corasick-0.7.6 \
@@ -184,7 +185,6 @@ CARGO_CRATES=	adler-0.2.3 \
 		regex-1.3.1 \
 		regex-syntax-0.6.12 \
 		remove_dir_all-0.5.3 \
-		resolv-conf-0.6.3 \
 		rle-decode-fast-1.0.1 \
 		rustc-demangle-0.1.16 \
 		rustc-serialize-0.3.24 \
@@ -259,6 +259,7 @@ CARGO_CRATES=	adler-0.2.3 \
 		ws2_32-sys-0.2.1 \
 		yaml-rust-0.4.3 \
 		zip-0.5.6
+CARGO_USE_GITHUB=	yes
 
 PLIST_FILES=	bin/bandwhich \
 		man/man1/bandwhich.1.gz
