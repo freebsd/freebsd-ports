@@ -1,12 +1,15 @@
 # $FreeBSD$
 
 PORTNAME=		crystal
-DISTVERSION=		0.34.0
+DISTVERSION=		0.35.1
 CATEGORIES=		lang
 MASTER_SITES=		https://unrelentingtech.s3.dualstack.eu-west-1.amazonaws.com/crystal/:bootstrap
 DISTFILES=		${BOOTSTRAP_PATH}:bootstrap
 DIST_SUBDIR=		${PORTNAME}
 EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/pull/
+PATCHFILES+=	9401.patch:-p1 # https://github.com/crystal-lang/crystal/pull/9401
 
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	Language with Ruby-like syntax and static type checking
@@ -20,17 +23,18 @@ ONLY_FOR_ARCHS_REASON=		requires prebuilt bootstrap compiler
 LIB_DEPENDS=	libgc-threaded.so:devel/boehm-gc-threaded \
 		libevent.so:devel/libevent \
 		libpcre.so:devel/pcre \
-		libLLVM-${LLVM_VERSION:C/([1-9])([0-9])/\1/}.so:devel/llvm${LLVM_VERSION}
-BUILD_DEPENDS=	${LOCALBASE}/bin/llvm-config${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
+		libLLVM-${LLVM_VERSION:C/^([6-9])0/\1/:S/-devel/11/}.so:devel/llvm${LLVM_VERSION}
+BUILD_DEPENDS=	${LOCALBASE}/bin/llvm-config${LLVM_VERSION}:devel/llvm${LLVM_VERSION} \
+		git:devel/git
 
 USES=		compiler gmake pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	crystal-lang
 
-LLVM_VERSION=	90
-BOOTSTRAP_PATH=	crystal-${BOOTSTRAP_VER}-freebsd12-${ARCH}
-BOOTSTRAP_VER?=	0.32.1
+LLVM_VERSION=	10
+BOOTSTRAP_PATH=	crystal-${BOOTSTRAP_VER}-freebsd12-${ARCH}-llvm10
+BOOTSTRAP_VER?=	0.35.1
 
 MAKE_ARGS=	SHELL=sh \
 		LLVM_CONFIG="${LOCALBASE}/bin/llvm-config${LLVM_VERSION}" \
