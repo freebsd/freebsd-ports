@@ -3,12 +3,15 @@
 
 PORTNAME=	c-lightning
 # To build from an arbitrary git commit comment PORTVERSION and PORTREVISION (if present)
-PORTVERSION=	0.8.2.1
+PORTVERSION=	0.9.1
 DISTVERSIONPREFIX=	v
 # and uncomment the following two lines (use for example -git-HEAD or -git-f8d8348c)
 #PORTVERSION=	0
 #PKGNAMESUFFIX=	-git-f8d8348c
 CATEGORIES=	net-p2p finance
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	4b4fe2f4f.patch:-p1
 
 MAINTAINER=	vd@FreeBSD.org
 COMMENT=	Lightning Network implementation in C
@@ -52,9 +55,10 @@ GIT_COMMIT=	${PKGNAMESUFFIX:C/-git-//}
 GIT_COMMIT=	${DISTVERSIONPREFIX}${PORTVERSION}
 .endif
 GH_TUPLE=	ElementsProject:lightning:${GIT_COMMIT} \
-		ElementsProject:libwally-core:release_0.7.5:ext1/external/libwally-core \
+		ElementsProject:libwally-core:b8d7ea91049c3:ext1/external/libwally-core \
 		ianlancetaylor:libbacktrace:5a99ff7fed66b8e:ext2/external/libbacktrace \
-		zserge:jsmn:v1.0.0:ext3/external/jsmn
+		zserge:jsmn:v1.0.0:ext3/external/jsmn \
+		valyala:gheap:67fc83bc953324f4759e52951921d:ext4/external/gheap
 
 USERS=		c-lightning
 GROUPS=		c-lightning
@@ -64,6 +68,9 @@ USE_RC_SUBR=	lightningd
 SUB_FILES=	lightningd-bitcoin.conf.sample pkg-message
 SUB_LIST=	U="${USERS}" G="${GROUPS}" LIGHTNINGD_BASE_DIR="${DESTDIR}/var/db/c-lightning"
 PLIST_SUB=	U="${USERS}" G="${GROUPS}"
+
+post-patch:
+	${REINPLACE_CMD} 's/sha256sum/sha256 -r/' ${WRKSRC}/Makefile
 
 post-install:
 	${INSTALL_DATA} \
