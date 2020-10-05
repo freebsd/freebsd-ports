@@ -76,6 +76,7 @@ CMAKE_ARGS+=	-DDOCDIR="${DOCSDIR}" \
 CMAKE_ARGS+=	-DPROC_TARGET_NUMBER="1"
 .endif
 
+# XXX FIXME - check this every few months, cmake might be fixed one day
 .if "${WITH_CCACHE_BUILD}" == "yes" && !defined(NO_CCACHE)
 CMAKE_ARGS+=	-DCMAKE_C_COMPILER_LAUNCHER=${CCACHE_BIN} \
 		-DCMAKE_CXX_COMPILER_LAUNCHER=${CCACHE_BIN}
@@ -99,7 +100,7 @@ TCMALLOC_LIB_DEPENDS=	libtcmalloc.so:devel/google-perftools
 # -------------------------------------------------------------------
 
 .if (${OPSYS} == FreeBSD) && (${OSVERSION} <  1200000)
-# can't save 16-bit TIFF on FreeBSD 11.3 i386:
+# can't save 16-bit TIFF on FreeBSD 11.3 and 11.4 i386
 # "TIFFWriteDirectoryTagIfdIfd8Array: Attempt to write value
 # larger than 0xFFFFFFFF in Classic TIFF file"
 #
@@ -108,7 +109,7 @@ TCMALLOC_LIB_DEPENDS=	libtcmalloc.so:devel/google-perftools
 #
 # Tier-2 only supported on the latest stable FreeBSD release.
 ONLY_FOR_ARCHS=	amd64
-ONLY_FOR_ARCHS_REASON= i386 malfunctions on 11.x - upgrade to 12.x
+ONLY_FOR_ARCHS_REASON= On i386, rawtherapee malfunctions under FreeBSD 11.x - upgrade to 12.x
 .endif
 
 .if (${OPSYS} == FreeBSD) && (${OSVERSION} >= 1300000)
@@ -136,14 +137,13 @@ _OPT_FLAGS=	-ggdb3 -Og	# -Og is GCC-specific, use -O1 for clang
 _OPT_FLAGS=	-O3 -funroll-loops
 .endif
 
-# GCC >= 5.4 includes -fexpensive-optimizations in -O2 already.
 # x86_64/amd64 includes -msse2 by default
 .if ${ARCH} == i386
-# and SSE2 has been around since the years 2000...2003 latest
+# and SSE2 has been around since the years 2003 latest
 _OPT_FLAGS+=	-msse2
 .endif
 
-# workaround for values on the stack that cause SIGBUS on SSE2:
+# workaround for values passed on the stack that cause SIGBUS on SSE2
 .if ${ARCH} == i386
 _OPT_FLAGS+=	-mstackrealign
 .endif
