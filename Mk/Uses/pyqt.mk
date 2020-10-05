@@ -29,61 +29,88 @@ _INCLUDE_USES_PYQT_MK=	yes
 # option is for internal use by the py-sip ports.
 _PYQT_SUPPORTED=        5 sip
 
-.if empty(pyqt_ARGS)
+.  if empty(pyqt_ARGS)
 IGNORE=	pyqt needs a qt-version (${_PYQT_SUPPORTED})
-.endif
+.  endif
 
 # At the moment we support PyQt bindings versions 5
-.for ver in ${_PYQT_SUPPORTED:O:u}
-.  if ${pyqt_ARGS:M${ver}}
-.    if empty(_PYQT_VERSION)
+.  for ver in ${_PYQT_SUPPORTED:O:u}
+.    if ${pyqt_ARGS:M${ver}}
+.      if empty(_PYQT_VERSION)
 _PYQT_VERSION=  ${ver}
-.    else
+.      else
 IGNORE?=        cannot be installed: different PYQT versions specified via pyqt:[${_PYQT_SUPPORTED:S/ //g}]
+.      endif
 .    endif
-.  endif
-.endfor
+.  endfor
 
-.if empty(_PYQT_VERSION)
+.  if empty(_PYQT_VERSION)
 IGNORE?=        USES=pyqt needs a version number (valid values: ${_PYQT_SUPPORTED})
 _PYQT_VERSION=	0
-.endif
+.  endif
 
 PYQT_MAINTAINER=	kde@FreeBSD.org
 
 MASTER_SITE_RIVERBANK=	https://www.riverbankcomputing.com/static/Downloads/%SUBDIR%/
 
+#MASTER_SITES_SIP=	https://pypi.python.org/packages/source/s/sip/
 # https://www.riverbankcomputing.com/static/Downloads/sip/4.19.15/sip-4.19.15.tar.gz
-MASTER_SITES_SIP=	RIVERBANK/sip/${PORTVERSION} \
-			SF/pyqt/sip/sip-${PORTVERSION} \
-			GENTOO
-MASTER_SITES_PYQT5=	RIVERBANK/PyQt5/${PORTVERSION} \
-			SF/pyqt/PyQt5/PyQt-${PORTVERSION} \
-			GENTOO
+MASTER_SITES_SIP=       RIVERBANK/sip/${PORTVERSION} \
+                        SF/pyqt/sip/sip-${PORTVERSION} \
+                        GENTOO
+MASTER_SITES_PYQT5=	https://pypi.python.org/packages/source/P/PyQt5/
+MASTER_SITES_PYQTSIP=	https://pypi.python.org/packages/source/P/PyQt5-sip/
+MASTER_SITES_PYQTCHART=	https://pypi.python.org/packages/source/P/PyQtChart/
 #https://www.riverbankcomputing.com/static/Downloads/QScintilla/2.11.4/QScintilla-2.11.4.tar.gz
 MASTER_SITES_QSCI2=	RIVERBANK/QScintilla/${PORTVERSION} \
 			SF/pyqt/QScintilla2/QScintilla-${PORTVERSION} \
 			GENTOO
 
-SIP_VERSION=		4.19.21
-QSCI2_VERSION=		2.11.4
-PYQT5_VERSION=		5.13.1
+SIP_VERSION=		4.19.24
+QSCI2_VERSION=		2.11.5
+PYQT5_VERSION=		5.15.0
+PYQTSIP_VERSION=	12.8.0
 
 SIP_DISTNAME=		sip-${SIP_VERSION}
-PYQT5_DISTNAME=		PyQt5_gpl-${PYQT5_VERSION}
+PYQT5_DISTNAME=		PyQt5-${PYQT5_VERSION}
+PYQTSIP_DISTNAME=	PyQt5_sip-${PYQTSIP_VERSION}
+PYQTCHART_DISTNAME=	PyQtChart-${PYQT_VERSION}
 PYQT5_DISTINFO_FILE=	${.CURDIR:H:H}/devel/${PYQT_RELNAME}/distinfo
 QSCI2_DISTNAME=		QScintilla-${QSCI2_VERSION}
 PYQT5_LICENSE=		GPLv3
 
+_USE_PYQT_COMMS=	sensors serialport
+_USE_PYQT_DATABASES=	sql
+_USE_PYQT_DEVEL=	core dbus dbussupport help location \
+			designer designerplugin remoteobjects test 
+_USE_PYQT_GRAPHICS=	svg
+_USE_PYQT_LANG=		qml
+_USE_PYQT_MISC=		demo
+_USE_PYQT_MULTIMEDIA=	multimedia multimediawidgets
+_USE_PYQT_NET=		network networkauth
+_USE_PYQT_PRINT=	printsupport
+_USE_PYQT_TEXTPROC=	xml xmlpatterns
+_USE_PYQT_WWW=		webchannel webengine webkit webkitwidgets websockets
+_USE_PYQT_X11=		opengl
+_USE_PYQT_X11-TOOLKITS=	chart gui widgets quick quick3d quickwidgets
+
 # Keep these synchronized with OPTIONS_DEFINE in devel/py-qt5
 # PyQt components split up into pyqt5/...
-_USE_PYQT_ALL=		core dbus dbussupport demo designer designerplugin \
-			gui help multimedia network opengl qscintilla2 \
-			sql svg test webkit xml xmlpatterns sip
-# List of components only in pyqt5
-_USE_PYQT5_ONLY=	multimediawidgets printsupport qml quickwidgets \
-			serialport webchannel webengine webkitwidgets \
-			websockets widgets
+_USE_PYQT_ALL=		${_USE_PYQT_COMMS} \
+			${_USE_PYQT_DATABASES} \
+			${_USE_PYQT_DEVEL} \
+			${_USE_PYQT_GRAPHICS} \
+			${_USE_PYQT_LANG} \
+			${_USE_PYQT_MISC} \
+			${_USE_PYQT_MULTIMEDIA} \
+			${_USE_PYQT_NET} \
+			${_USE_PYQT_PRINT} \
+			${_USE_PYQT_TEXTPROC} \
+			${_USE_PYQT_WWW} \
+			${_USE_PYQT_X11} \
+			${_USE_PYQT_X11-TOOLKITS}
+_USE_SIP_ALL=		sip # pysip
+_USE_QSCINTILLA=	qscintilla2
 
 # Unversioned variables for the rest of the file
 PYQT_VERSION=		${PYQT${_PYQT_VERSION}_VERSION}
@@ -94,117 +121,62 @@ PYQT_DISTNAME=		${PYQT${_PYQT_VERSION}_DISTNAME}
 PYQT_DISTINFO_FILE=	${PYQT${_PYQT_VERSION}_DISTINFO_FILE}
 PYQT_LICENSE=		${PYQT${_PYQT_VERSION}_LICENSE}
 
+# PATH
 py-sip_PATH=			${PYTHON_PKGNAMEPREFIX}sip>=${SIP_VERSION}
-
-py-assistant_PATH=		${PYQT_PY_RELNAME}-assistant>=${PYQT_VERSION}
-py-core_PATH=			${PYQT_PY_RELNAME}-core>=${PYQT_VERSION}
-py-dbus_PATH=			${PYQT_PY_RELNAME}-dbus>=${PYQT_VERSION}
-py-dbussupport_PATH=		${PYQT_PY_RELNAME}-dbussupport>=${PYQT_VERSION}
-py-declarative_PATH=		${PYQT_PY_RELNAME}-declarative>=${PYQT_VERSION}
-py-demo_PATH=			${PYQT_PY_RELNAME}-demo>=${PYQT_VERSION}
-py-designer_PATH=		${PYQT_PY_RELNAME}-designer>=${PYQT_VERSION}
-py-designerplugin_PATH=		${PYQT_PY_RELNAME}-designerplugin>=${PYQT_VERSION}
-py-doc_PATH=			${PYQT_PY_RELNAME}-doc>=${PYQT_VERSION}
-py-gui_PATH=			${PYQT_PY_RELNAME}-gui>=${PYQT_VERSION}
-py-help_PATH=			${PYQT_PY_RELNAME}-help>=${PYQT_VERSION}
-py-multimedia_PATH=		${PYQT_PY_RELNAME}-multimedia>=${PYQT_VERSION}
-py-network_PATH=		${PYQT_PY_RELNAME}-network>=${PYQT_VERSION}
-py-opengl_PATH=			${PYQT_PY_RELNAME}-opengl>=${PYQT_VERSION}
-py-phonon_PATH=			${PYQT_PY_RELNAME}-phonon>=${PYQT_VERSION}
+# py-pysip_PATH=			${PYQT_PY_RELNAME}-sip>=${PYQTSIP_VERSION}
 py-qscintilla2_PATH=		${PYQT_PY_RELNAME}-qscintilla2>=${QSCI2_VERSION}
-py-script_PATH=			${PYQT_PY_RELNAME}-script>=${PYQT_VERSION}
-py-scripttools_PATH=		${PYQT_PY_RELNAME}-scripttools>=${PYQT_VERSION}
-py-sql_PATH=			${PYQT_PY_RELNAME}-sql>=${PYQT_VERSION}
-py-svg_PATH=			${PYQT_PY_RELNAME}-svg>=${PYQT_VERSION}
-py-test_PATH=			${PYQT_PY_RELNAME}-test>=${PYQT_VERSION}
-py-webchannel_PATH=		${PYQT_PY_RELNAME}-webchannel>=${PYQT_VERSION}
-py-webengine_PATH=		${PYQT_PY_RELNAME}-webengine>=5.12.1
-py-webkit_PATH=			${PYQT_PY_RELNAME}-webkit>=${PYQT_VERSION}
-py-websockets_PATH=		${PYQT_PY_RELNAME}-websockets>=${PYQT_VERSION}
-py-xml_PATH=			${PYQT_PY_RELNAME}-xml>=${PYQT_VERSION}
-py-xmlpatterns_PATH=		${PYQT_PY_RELNAME}-xmlpatterns>=${PYQT_VERSION}
 
-py-multimediawidgets_PATH=	${PYQT_PY_RELNAME}-multimediawidgets>=${PYQT_VERSION}
-py-qml_PATH=			${PYQT_PY_RELNAME}-qml>=${PYQT_VERSION}
-py-quickwidgets_PATH=		${PYQT_PY_RELNAME}-quickwidgets>=${PYQT_VERSION}
-py-printsupport_PATH=		${PYQT_PY_RELNAME}-printsupport>=${PYQT_VERSION}
-py-serialport_PATH=		${PYQT_PY_RELNAME}-serialport>=${PYQT_VERSION}
-py-webkitwidgets_PATH=		${PYQT_PY_RELNAME}-webkitwidgets>=${PYQT_VERSION}
-py-widgets_PATH=		${PYQT_PY_RELNAME}-widgets>=${PYQT_VERSION}
+.  for _component in ${_USE_PYQT_ALL}
+py-${_component}_PATH?=${PYQT_PY_RELNAME}-${_component}>=${PYQT_VERSION}
+.  endfor
 
+# PORT
 py-sip_PORT=			devel/py-sip
-
-py-assistant_PORT=		devel/${PYQT_RELNAME}-assistant
-py-core_PORT=			devel/${PYQT_RELNAME}-core
-py-dbus_PORT=			devel/${PYQT_RELNAME}-dbus
-py-dbussupport_PORT=		devel/${PYQT_RELNAME}-dbussupport
-py-declarative_PORT=		devel/${PYQT_RELNAME}-declarative
-py-demo_PORT=			misc/${PYQT_RELNAME}-demo
-py-designer_PORT=		devel/${PYQT_RELNAME}-designer
-py-designerplugin_PORT=		devel/${PYQT_RELNAME}-designerplugin
-py-doc_PORT=			misc/${PYQT_RELNAME}-doc
-py-gui_PORT=			x11-toolkits/${PYQT_RELNAME}-gui
-py-help_PORT=			devel/${PYQT_RELNAME}-help
-py-multimedia_PORT=		multimedia/${PYQT_RELNAME}-multimedia
-py-network_PORT=		net/${PYQT_RELNAME}-network
-py-opengl_PORT=			x11/${PYQT_RELNAME}-opengl
-py-phonon_PORT=			multimedia/${PYQT_RELNAME}-phonon
+# py-pysip_PORT=			devel/${PYQT_RELNAME}-sip
 py-qscintilla2_PORT=		devel/${PYQT_RELNAME}-qscintilla2
-py-script_PORT=			devel/${PYQT_RELNAME}-script
-py-scripttools_PORT=		devel/${PYQT_RELNAME}-scripttools
-py-sql_PORT=			databases/${PYQT_RELNAME}-sql
-py-svg_PORT=			graphics/${PYQT_RELNAME}-svg
-py-test_PORT=			devel/${PYQT_RELNAME}-test
-py-webchannel_PORT=		www/${PYQT_RELNAME}-webchannel
-py-webengine_PORT=		www/${PYQT_RELNAME}-webengine
-py-webkit_PORT=			www/${PYQT_RELNAME}-webkit
-py-websockets_PORT=		www/${PYQT_RELNAME}-websockets
-py-xml_PORT=			textproc/${PYQT_RELNAME}-xml
-py-xmlpatterns_PORT=		textproc/${PYQT_RELNAME}-xmlpatterns
 
-py-multimediawidgets_PORT=	multimedia/py-qt5-multimediawidgets
-py-qml_PORT=			lang/py-qt5-qml
-py-quickwidgets_PORT=		x11-toolkits/py-qt5-quickwidgets
-py-printsupport_PORT=		print/py-qt5-printsupport
-py-serialport_PORT=		comms/py-qt5-serialport
-py-webkitwidgets_PORT=		www/py-qt5-webkitwidgets
-py-widgets_PORT=		x11-toolkits/py-qt5-widgets
+.  for _categorie in comms databases devel graphics lang misc multimedia net print textproc www x11 x11-toolkits
+_PYQT_CATEGORIE=	_USE_PYQT_${_categorie:tu}
+.    for _component in ${${_PYQT_CATEGORIE}}
+py-${_component}_PORT?=${_categorie}/${PYQT_RELNAME}-${_component}
+.    endfor
+.  endfor
 
-py-assistant_DESC=		Python bindings for QtAssistant module
 py-core_DESC=			Python bindings for QtCore module
+py-chart_DESC=			Python bindings for QtChart module
 py-dbus_DESC=			Python bindings for QtDBus module
 py-dbussupport_DESC=		Qt event loop support for dbus-python
-py-declarative_DESC=		Python bindings for QtDeclarative module
 py-demo_DESC=			PyQt demo and examples
 py-designer_DESC=		Python bindings for QtDesigner module
 py-designerplugin_DESC=		Python bindings for QtDesigner plugin
-py-doc_DESC=			PyQt documentation
 py-gui_DESC=			Python bindings for QtGui module
 py-help_DESC=			Python bindings for QtHelp module
+py-location_DESC=		Python bindings for Location module
 py-multimedia_DESC=		Python bindings for Multimedia module
+py-multimediawidgets_DESC=	Python bindings for QtMultimediaWidgets module
 py-network_DESC=		Python bindings for QtNetwork module
+py-networkauth_DESC=		Python bindings for QtNetworkAuth module
 py-opengl_DESC=			Python bindings for QtOpenGL module
-py-phonon_DESC=			Python bindings for Phonon module
+py-printsupport_DESC=		Python bindings for Printsupport module
+py-qml_DESC=			Python bindings for Qml module
 py-qscintilla2_DESC=		Python bindings for QScintilla2
-py-script_DESC=			Python bindings for QtScript module
-py-scripttools_DESC=		Python bindings for QtScriptTools module
+py-quick_DESC=			Python bindings for QtQuick module
+py-quick3d_DESC=		Python bindings for QtQuick3D module
+py-quickwidgets_DESC=		Python bindings for QtQuickWidgets module
+py-remoteobjects_DESC=		Python bindings for QtRemoteObjects module
 py-sip_DESC=			Python bindings generator for C and C++ libraries
+py-sensors_DESC=		Python bindings for QtSensors
+py-serialport_DESC=		Python bindings for QtSerialPort
 py-sql_DESC=			Python bindings for QtSql module
 py-svg_DESC=			Python bindings for QtSvg module
 py-test_DESC=			Python bindings for QtTest module
 py-webchannel_DESC=		Python bindings for QtWebChannel module
 py-webengine_DESC=		Python bindings for QtWebEngine module
 py-webkit_DESC=			Python bindings for QtWebKit module
-py-xml_DESC=			Python bindings for QtXml module
-py-xmlpatterns_DESC=		Python bindings for QtXmlPatterns module
-
-py-multimediawidgets_DESC=	Python bindings for QtMultimediaWidgets module
-py-qml_DESC=			Python bindings for Qml module
-py-quickwidgets_DESC=		Python bindings for QtQuickWidgets module
-py-printsupport_DESC=		Python bindings for Printsupport module
-py-serialport_DESC=		Python bindings for QtSerialPort
 py-webkitwidgets_DESC=		Python bindings for QtWebKitWidgets module
 py-widgets_DESC=		Python bindings for QTWidgets module
+py-xml_DESC=			Python bindings for QtXml module
+py-xmlpatterns_DESC=		Python bindings for QtXmlPatterns module
 
 # The versionned executable of sip
 SIP=		${LOCALBASE}/bin/sip-${PYTHON_VER}
@@ -236,7 +208,7 @@ PLIST_SUB+=	PYQT_APIDIR=${_APIDIR_REL} \
 		PYQT_QSCIVERSION=${QSCI2_VERSION} \
 		PYQT_PYQTVERSION=${PYQT_VERSION}
 
-.if defined(PYQT_DIST)
+.  if defined(PYQT_DIST)
 PORTVERSION=	${PYQT_VERSION}
 MASTER_SITES=	${PYQT_MASTERSITES}
 PKGNAMEPREFIX=	${PYQT_PY_RELNAME}-
@@ -245,13 +217,13 @@ DISTINFO_FILE=	${PYQT_DISTINFO_FILE}
 LICENSE?=	${PYQT_LICENSE}
 HAS_CONFIGURE=	yes
 
-.if ${_PYQT_VERSION} > 4
+.    if ${_PYQT_VERSION} > 4
 # PyQt5's configure.py generates .pro files and calls qmake to generate the
 # Makefiles. qmake's Makefiles use INSTALL_ROOT instead of DESTDIR.
 DESTDIRNAME=	INSTALL_ROOT
 # Limit PyQt5's version to the Qt5 version in ports
 PORTSCOUT?=	limit:^${_QT_VERSION:R}
-.endif
+.    endif
 
 PATCHDIR=	${.CURDIR}/../../devel/${PYQT_RELNAME}-core/files
 CONFIGURE_ARGS+=-b ${PREFIX}/bin \
@@ -260,31 +232,32 @@ CONFIGURE_ARGS+=-b ${PREFIX}/bin \
 		--confirm-license \
 		--sip ${SIP} \
 		--sipdir ${PYQT_SIPDIR}
-.if ${_PYQT_VERSION:M5}
+.    if ${_PYQT_VERSION:M5}
 # Move the designer plugin and qml libraries to versioned folders.
 CONFIGURE_ARGS+=--qml-plugindir ${PYQT_QMLDIR} \
 		--designer-plugindir ${PYQT_DESIGNERDIR}
 # Further do not gernate the dinstinfo files.
 CONFIGURE_ARGS+=--no-dist-info
-.endif
+.    endif
 # One of the things PyQt looks for to determine whether to build the Qt DBus
 # main loop module (${PYQT_RELNAME}-dbussupport) is whether the dbus/ directory is
 # present. Only extract it for that port then.
-.if ${PORTNAME} != "dbussupport"
+.    if ${PORTNAME} != "dbussupport"
 EXTRACT_AFTER_ARGS+=	--exclude "${DISTNAME}/dbus"
-.endif  # ${PORTNAME} != "dbussupport"
+.    endif  # ${PORTNAME} != "dbussupport"
 
-.if !target(do-configure)
+.    if !target(do-configure)
 do-configure:
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
 		${PYTHON_CMD} configure.py ${CONFIGURE_ARGS}
-.endif  # !target(do-configure)
-.endif  # defined(PYQT_DIST)
+.    endif  # !target(do-configure)
+.  endif  # defined(PYQT_DIST)
 
 # Set build, run and test depends -- we need to prefix them internally with "py-"
 # else we conflict with the ones defined in bsd.qt.mk with the same name
-_USE_PYQT_ALL+=			${_USE_PYQT${_PYQT_VERSION}_ONLY}
-.for comp in ${_USE_PYQT_ALL:O:u}
+_USE_PYQT_ALL+=				${_USE_SIP_ALL} \
+					${_USE_QSCINTILLA}
+.  for comp in ${_USE_PYQT_ALL:O:u}
 _USE_PYQT_ALL_SUFFIXED+=		py-${comp} py-${comp}_build py-${comp}_run py-${comp}_test
 py-${comp}_BUILD_DEPENDS?=		${py-${comp}_PATH}:${py-${comp}_PORT}@${PY_FLAVOR}
 py-${comp}_RUN_DEPENDS?=		${py-${comp}_PATH}:${py-${comp}_PORT}@${PY_FLAVOR}
@@ -292,17 +265,17 @@ py-${comp}_TEST_DEPENDS?=		${py-${comp}_PATH}:${py-${comp}_PORT}@${PY_FLAVOR}
 py-${comp}_build_BUILD_DEPENDS?=	${py-${comp}_BUILD_DEPENDS}
 py-${comp}_run_RUN_DEPENDS?=		${py-${comp}_RUN_DEPENDS}
 py-${comp}_test_TEST_DEPENDS?=		${py-${comp}_TEST_DEPENDS}
-.endfor
+.  endfor
 
 _USE_PYQT=      ${USE_PYQT:O:u}
-.for comp in ${_USE_PYQT}
-.  if ${_USE_PYQT_ALL_SUFFIXED:Mpy-${comp}}
+.  for comp in ${_USE_PYQT}
+.    if ${_USE_PYQT_ALL_SUFFIXED:Mpy-${comp}}
 BUILD_DEPENDS+=		${py-${comp}_BUILD_DEPENDS}
 RUN_DEPENDS+=		${py-${comp}_RUN_DEPENDS}
 TEST_DEPENDS+=		${py-${comp}_TEST_DEPENDS}
-.  else
+.    else
 IGNORE?=	cannot be installed: unknown USE_PYQT component ${comp} #'
-.  endif
-.endfor
+.    endif
+.  endfor
 
 .endif # defined(_INCLUDE_USES_PYQT_MK)

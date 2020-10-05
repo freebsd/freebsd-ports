@@ -1,7 +1,6 @@
 # $FreeBSD$
 
 PORTNAME=	printsupport
-PORTREVISION=	1
 CATEGORIES=	print python
 
 MAINTAINER=	kde@FreeBSD.org
@@ -29,4 +28,6 @@ API_CONFIGURE_OFF=	--no-qsci-api
 API_LIB_DEPENDS=	libqscintilla2_qt5.so:devel/qscintilla2-qt5
 DEBUG_CONFIGURE_ON=	--debug --trace
 
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/PyQt5/QtPrintSupport.so
 .include <bsd.port.mk>

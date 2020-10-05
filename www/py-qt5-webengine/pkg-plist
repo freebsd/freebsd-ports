@@ -13,8 +13,11 @@
 %%PYQT_SIPDIR%%/QtWebEngine/qquickwebenginescript.sip
 %%PYQT_SIPDIR%%/QtWebEngine/qtwebengineglobal.sip
 %%PYQT_SIPDIR%%/QtWebEngineCore/QtWebEngineCoremod.sip
+%%PYQT_SIPDIR%%/QtWebEngineCore/qwebengineclientcertificatestore.sip
 %%PYQT_SIPDIR%%/QtWebEngineCore/qwebenginecookiestore.sip
+%%PYQT_SIPDIR%%/QtWebEngineCore/qwebenginefindtextresult.sip
 %%PYQT_SIPDIR%%/QtWebEngineCore/qwebenginehttprequest.sip
+%%PYQT_SIPDIR%%/QtWebEngineCore/qwebenginenotification.sip
 %%PYQT_SIPDIR%%/QtWebEngineCore/qwebenginequotarequest.sip
 %%PYQT_SIPDIR%%/QtWebEngineCore/qwebengineregisterprotocolhandlerrequest.sip
 %%PYQT_SIPDIR%%/QtWebEngineCore/qwebengineurlrequestinfo.sip

@@ -4,4 +4,5 @@
 %%PYQT_SIPDIR%%/QtMultimediaWidgets/qcameraviewfinder.sip
 %%PYQT_SIPDIR%%/QtMultimediaWidgets/qgraphicsvideoitem.sip
 %%PYQT_SIPDIR%%/QtMultimediaWidgets/qvideowidget.sip
+%%PYQT_SIPDIR%%/QtMultimediaWidgets/qvideowidgetcontrol.sip
 %%API%%%%PYQT_APIDIR%%/api/python/QtMultimediaWidgets.api

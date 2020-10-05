@@ -3,9 +3,9 @@
 PORTNAME=	chart
 PORTVERSION=	${PYQT5_VERSION}
 CATEGORIES=	x11-toolkits devel python
-MASTER_SITES=	RIVERBANK/PyQtChart/${PYQT5_VERSION}/
+MASTER_SITES=	${MASTER_SITES_PYQTCHART}
 PKGNAMEPREFIX=	${PYQT_PY_RELNAME}-
-DISTNAME=	PyQtChart-${PYQT5_VERSION}
+DISTNAME=	${PYQTCHART_DISTNAME}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python bindings for the Qt5 toolkit, QtChart module
@@ -45,5 +45,8 @@ do-configure:
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
 		${PYTHON_CMD} configure.py ${CONFIGURE_ARGS}
 .endif  # !target(do-configure)
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/PyQt5/QtChart.so
 
 .include <bsd.port.mk>

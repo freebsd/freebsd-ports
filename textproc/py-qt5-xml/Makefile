@@ -1,7 +1,6 @@
 # $FreeBSD$
 
 PORTNAME=	xml
-PORTREVISION=	1
 CATEGORIES=	textproc devel python
 
 MAINTAINER=	kde@FreeBSD.org
@@ -14,7 +13,7 @@ CONFIGURE_ARGS=	--enable QtXml
 PYQT_DIST=	yes
 
 USES=		python pyqt:5 qt:5
-USE_PYQT=	sip_build core_run
+USE_PYQT=	sip_build core_run 
 USE_PYTHON=	concurrent flavors py3kplist
 USE_QT=		core xml buildtools_build qmake_build
 
@@ -35,5 +34,8 @@ post-install:
 	${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py \
 		-f -d ${PYTHONPREFIX_SITELIBDIR}/PyQt5 \
 		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/PyQt5
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/PyQt5/QtXml.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/PyQt5/pyrcc.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/PyQt5/pylupdate.so
 
 .include <bsd.port.mk>

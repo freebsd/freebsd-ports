@@ -7,7 +7,9 @@
 %%PYQT_SIPDIR%%/QtHelp/qhelpenginecore.sip
 %%PYQT_SIPDIR%%/QtHelp/qhelpfilterdata.sip
 %%PYQT_SIPDIR%%/QtHelp/qhelpfilterengine.sip
+%%PYQT_SIPDIR%%/QtHelp/qhelpfiltersettingswidget.sip
 %%PYQT_SIPDIR%%/QtHelp/qhelpindexwidget.sip
+%%PYQT_SIPDIR%%/QtHelp/qhelplink.sip
 %%PYQT_SIPDIR%%/QtHelp/qhelpsearchengine.sip
 %%PYQT_SIPDIR%%/QtHelp/qhelpsearchquerywidget.sip
 %%PYQT_SIPDIR%%/QtHelp/qhelpsearchresultwidget.sip

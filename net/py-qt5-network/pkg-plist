@@ -8,6 +8,7 @@
 %%PYQT_SIPDIR%%/QtNetwork/qhostaddress.sip
 %%PYQT_SIPDIR%%/QtNetwork/qhostinfo.sip
 %%PYQT_SIPDIR%%/QtNetwork/qhstspolicy.sip
+%%PYQT_SIPDIR%%/QtNetwork/qhttp2configuration.sip
 %%PYQT_SIPDIR%%/QtNetwork/qhttpmultipart.sip
 %%PYQT_SIPDIR%%/QtNetwork/qlocalserver.sip
 %%PYQT_SIPDIR%%/QtNetwork/qlocalsocket.sip

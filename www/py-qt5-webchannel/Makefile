@@ -1,7 +1,6 @@
 # $FreeBSD$
 
 PORTNAME=	webchannel
-PORTREVISION=	1
 CATEGORIES=	www devel python
 
 MAINTAINER=	kde@FreeBSD.org
@@ -13,7 +12,7 @@ BUILD_DEPENDS=	${PY_ENUM34}
 RUN_DEPENDS=	${PY_ENUM34}
 
 USES=		python pyqt:5 qt:5
-USE_PYQT=	sip_build core_run gui_run network_run qml_run widgets_run
+USE_PYQT=	sip_build core_run gui_run qml_run network_run widgets_run
 USE_PYTHON=	concurrent flavors py3kplist
 USE_QT=		core declarative qmake_build gui network webchannel widgets
 

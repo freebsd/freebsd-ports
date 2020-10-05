@@ -3,6 +3,7 @@
 
 PKGNAMESUFFIX=	-qt5-${FLAVOR:U:S/_/-/}
 DISTNAME=	${PORTNAME}-nolang-${DISTVERSION}
+PORTREVISION=	1
 CATEGORIES=	devel python
 
 # Note to MAINTAINER: this should be converted to USES=pyqt, USE_PYQT=[...]

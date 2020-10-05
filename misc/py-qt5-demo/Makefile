@@ -2,7 +2,6 @@
 
 PORTNAME=	demo
 PORTVERSION=	${PYQT5_VERSION}
-PORTREVISION=	1
 CATEGORIES=	misc devel python
 MASTER_SITES=	${MASTER_SITES_PYQT5}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}qt5-
@@ -19,10 +18,11 @@ PORTSCOUT=	limit:^${PYQT5_VERSION}
 USES=		python pyqt:5
 USE_PYQT=	core_run dbus_run designer_run \
 		designerplugin_run gui_run multimedia_run \
-		multimediawidgets_run network_run opengl_run qscintilla2_run \
-		sql_run svg_run test_run webkit_run xml_run \
-		xmlpatterns_run sip_run qscintilla2_run \
-		printsupport_run serialport_run webkitwidgets_run widgets_run
+		multimediawidgets_run network_run opengl_run \
+		printsupport_run qscintilla2_run serialport_run sql_run \
+		sip_run svg_run test_run webkit_run webkitwidgets_run \
+		widgets_run xml_run xmlpatterns_run
+		
 USE_PYTHON=	concurrent flavors py3kplist
 NO_ARCH=	yes
 

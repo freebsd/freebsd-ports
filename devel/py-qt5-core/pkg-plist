@@ -112,6 +112,7 @@ bin/pyuic5
 %%PYQT_SIPDIR%%/QtCore/qbuffer.sip
 %%PYQT_SIPDIR%%/QtCore/qbytearray.sip
 %%PYQT_SIPDIR%%/QtCore/qbytearraymatcher.sip
+%%PYQT_SIPDIR%%/QtCore/qcalendar.sip
 %%PYQT_SIPDIR%%/QtCore/qcborcommon.sip
 %%PYQT_SIPDIR%%/QtCore/qcborstream.sip
 %%PYQT_SIPDIR%%/QtCore/qchar.sip
@@ -173,7 +174,6 @@ bin/pyuic5
 %%PYQT_SIPDIR%%/QtCore/qpoint.sip
 %%PYQT_SIPDIR%%/QtCore/qprocess.sip
 %%PYQT_SIPDIR%%/QtCore/qpropertyanimation.sip
-%%PYQT_SIPDIR%%/QtCore/qpycore_onexit.sip
 %%PYQT_SIPDIR%%/QtCore/qpycore_qhash.sip
 %%PYQT_SIPDIR%%/QtCore/qpycore_qlist.sip
 %%PYQT_SIPDIR%%/QtCore/qpycore_qmap.sip

@@ -8,6 +8,8 @@
 %%PYQT_SIPDIR%%/QtGui/qbrush.sip
 %%PYQT_SIPDIR%%/QtGui/qclipboard.sip
 %%PYQT_SIPDIR%%/QtGui/qcolor.sip
+%%PYQT_SIPDIR%%/QtGui/qcolorspace.sip
+%%PYQT_SIPDIR%%/QtGui/qcolortransform.sip
 %%PYQT_SIPDIR%%/QtGui/qcursor.sip
 %%PYQT_SIPDIR%%/QtGui/qdesktopservices.sip
 %%PYQT_SIPDIR%%/QtGui/qdrag.sip

@@ -14,9 +14,10 @@
 %%PYQT_SIPDIR%%/QtQuick/qsgengine.sip
 %%PYQT_SIPDIR%%/QtQuick/qsgflatcolormaterial.sip
 %%PYQT_SIPDIR%%/QtQuick/qsggeometry.sip
-%%PYQT_SIPDIR%%/QtQuick/qsgmaterial.sip
-%%PYQT_SIPDIR%%/QtQuick/qsgnode.sip
 %%PYQT_SIPDIR%%/QtQuick/qsgimagenode.sip
+%%PYQT_SIPDIR%%/QtQuick/qsgmaterial.sip
+%%PYQT_SIPDIR%%/QtQuick/qsgmaterialrhishader.sip
+%%PYQT_SIPDIR%%/QtQuick/qsgnode.sip
 %%PYQT_SIPDIR%%/QtQuick/qsgrectanglenode.sip
 %%PYQT_SIPDIR%%/QtQuick/qsgrendererinterface.sip
 %%PYQT_SIPDIR%%/QtQuick/qsgrendernode.sip

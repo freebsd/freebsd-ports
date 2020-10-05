@@ -1,12 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	webengine
-DISTVERSION=	5.12.1
-PORTREVISION=	1
+DISTVERSION=	${PYQT_VERSION}
 CATEGORIES=	www devel python
-MASTER_SITES=	RIVERBANK/PyQtWebEngine/${DISTVERSION}
+MASTER_SITES=	https://pypi.python.org/packages/source/P/PyQtWebEngine/
 PKGNAMEPREFIX=	${PYQT_PY_RELNAME}-
-DISTNAME=	PyQtWebEngine_gpl-${DISTVERSION}
+DISTNAME=	PyQtWebEngine-${DISTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python bindings for the Qt5 toolkit, QtWebEngine module
