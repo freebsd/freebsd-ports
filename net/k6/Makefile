@@ -2,7 +2,7 @@
 
 PORTNAME=	k6
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.27.0
+DISTVERSION=	0.28.0
 CATEGORIES=	net
 
 MAINTAINER=	vulcan@wired.sh
@@ -16,7 +16,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	loadimpact
 
 _BUILD_DATE=	$$(date -u +"%FT%T%z")
-_BUILD_HASH=	6fa889d
+_BUILD_HASH=	dee9c4c
 
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
 GO_BUILDFLAGS=	-ldflags "\
