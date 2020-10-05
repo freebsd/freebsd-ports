@@ -1,9 +1,9 @@
-TIMESTAMP = 1578243427
-SHA256 (yj/sclevine-yj-v4.0.0_GH0.tar.gz) = 8423486cdc0f6bd912bdcb9f61ef89427a70b094352c45e62b1343c9b2ea92f4
-SIZE (yj/sclevine-yj-v4.0.0_GH0.tar.gz) = 12885
-SHA256 (yj/BurntSushi-toml-v0.3.1_GH0.tar.gz) = 6593da894578ba510a470735ffbdc88ce88033094dc5a8f4d3957ab87e18803f
-SIZE (yj/BurntSushi-toml-v0.3.1_GH0.tar.gz) = 42077
-SHA256 (yj/go-yaml-yaml-v2.2.7_GH0.tar.gz) = 74afe4be0fa4482de73cfaf952dc6c8d41088b687c3f9de4a7ced86d2bbe0cb4
-SIZE (yj/go-yaml-yaml-v2.2.7_GH0.tar.gz) = 72651
+TIMESTAMP = 1601900820
+SHA256 (yj/sclevine-yj-v5.0.0_GH0.tar.gz) = df9a4f5b6d067842ea3da68ff92c374b98560dce1086337d39963a1346120574
+SIZE (yj/sclevine-yj-v5.0.0_GH0.tar.gz) = 17668
+SHA256 (yj/go-yaml-yaml-eeeca48fe776_GH0.tar.gz) = 77e421545f853bf0b0431ed5026f10ebeeadd436334ac156169b78f82e86bdf5
+SIZE (yj/go-yaml-yaml-eeeca48fe776_GH0.tar.gz) = 88787
 SHA256 (yj/hashicorp-hcl-v1.0.0_GH0.tar.gz) = 50632428210503070fd2fde748c88b7414bf84a6a0eadebf9d8e596a033bead2
 SIZE (yj/hashicorp-hcl-v1.0.0_GH0.tar.gz) = 70658
+SHA256 (yj/sclevine-go-toml-ed50a274ac56_GH0.tar.gz) = 8318e8c5008e0c65129a77c7a9a108c5400dbdc584404bbecc0395ed06822c5f
+SIZE (yj/sclevine-go-toml-ed50a274ac56_GH0.tar.gz) = 98507

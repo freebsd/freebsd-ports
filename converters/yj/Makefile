@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	yj
-PORTVERSION=	4.0.0
+PORTVERSION=	5.0.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	converters
 DIST_SUBDIR=	yj
@@ -19,8 +19,8 @@ GH_ACCOUNT=	sclevine
 
 PLIST_FILES=	bin/yj
 
-GH_TUPLE=	BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/toml \
-		go-yaml:yaml:v2.2.7:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
-		hashicorp:hcl:v1.0.0:hashicorp_hcl/vendor/github.com/hashicorp/hcl
+GH_TUPLE=	go-yaml:yaml:eeeca48fe776:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
+		hashicorp:hcl:v1.0.0:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
+		sclevine:go-toml:ed50a274ac56:sclevine_go_toml/vendor/github.com/pelletier/go-toml
 
 .include <bsd.port.mk>
