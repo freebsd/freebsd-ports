@@ -6,6 +6,22 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20201002:
+  AFFECTS: users of mail/fetchmail beginning with 6.4.12_1
+  AUTHOR:  mandree@FreeBSD.org
+
+  Note that if you are using fetchmail in a multi-user setup, i. e. with the
+  fetchmail_users (mind the -s!) variable set, the $fetchmail_home_prefix +
+  user second-guess work has been replaced by a real lookup of the user's home
+  directory. In the majority of configurations, this should not make a
+  difference, in some setups, it may open up some flexibility.
+
+  The fetchmail_home_prefix variable is ignored from 6.4.12_1 onwards.
+
+  Also, the rc script redirects its input from /dev/null so that passwords
+  will not be interactively queried from an rcfile.  Put passwords into
+  the [.]fetchmailrc or into a .netrc file.
+
+20201002:
   AFFECTS: users of sysutils/modules
   AUTHOR: 0mp@FreeBSD.org
 
