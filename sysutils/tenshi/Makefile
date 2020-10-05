@@ -6,7 +6,7 @@ PORTVERSION=		0.15
 CATEGORIES=		sysutils
 MASTER_SITES=		http://dev.inversepath.com/tenshi/
 
-MAINTAINER=		jadawin@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Tenshi is a log monitoring program, designed to watch multiple logs
 
 RUN_DEPENDS=		${LOCALBASE}/bin/gtail:sysutils/coreutils \

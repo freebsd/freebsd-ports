@@ -7,7 +7,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	jadawin@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl script to convert text files to PDF files
 
 LICENSE=	ART10 GPLv1+

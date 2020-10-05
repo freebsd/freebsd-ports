@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	textproc perl5
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	jadawin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert raw text to something with a little HTML formatting
 
 BUILD_DEPENDS=	p5-Getopt-ArgvFile>=0:devel/p5-Getopt-ArgvFile \

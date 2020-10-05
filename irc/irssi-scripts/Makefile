@@ -7,7 +7,7 @@ CATEGORIES=	irc
 MASTER_SITES=	DEBIAN
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	jadawin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of useful scripts for the irssi IRC-client
 
 RUN_DEPENDS=	irssi:irc/irssi

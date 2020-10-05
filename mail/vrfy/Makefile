@@ -7,7 +7,7 @@ DISTVERSIONPREFIX=v
 PORTREVISION=	2
 CATEGORIES=	mail
 
-MAINTAINER=	jadawin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Verify mail address
 
 USE_GITHUB=	yes

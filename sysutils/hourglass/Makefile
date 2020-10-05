@@ -6,7 +6,7 @@ DISTVERSIONSUFFIX=	b
 CATEGORIES=	sysutils parallel
 MASTER_SITES=	http://www.cs.utah.edu/~regehr/hourglass/
 
-MAINTAINER=	jadawin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Real-time application to learn how CPU scheduling works
 
 RUN_DEPENDS=	jgraph:graphics/jgraph

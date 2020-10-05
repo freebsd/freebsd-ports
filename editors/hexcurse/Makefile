@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	https://BSDforge.com/projects/source/editors/hexcurse/
 
-MAINTAINER=	jadawin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Versatile ncurses-based hex editor
 
 LICENSE=	GPLv2

@@ -7,7 +7,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	http://cdn.megastep.org/makeself/
 EXTRACT_SUFX=	.run
 
-MAINTAINER=	jadawin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Neat script to make self-extracting archives
 
 LICENSE=	GPLv2

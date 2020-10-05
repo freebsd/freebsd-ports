@@ -7,7 +7,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.vanheusden.com/banihstypos/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jadawin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple game to teach you typing, fast
 
 USES=		ncurses

@@ -7,7 +7,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	https://dianne.skoll.ca/projects/remind/download/
 DISTNAME=	${PORTNAME}-03.01.16
 
-MAINTAINER=	jadawin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sophisticated calendar and alarm program
 
 LICENSE=	GPLv2
