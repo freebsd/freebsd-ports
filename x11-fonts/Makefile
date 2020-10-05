@@ -100,6 +100,7 @@
     SUBDIR += font-xfree86-type1
     SUBDIR += fontconfig
     SUBDIR += fontmatrix
+    SUBDIR += fontobene
     SUBDIR += fontpreview
     SUBDIR += fonts-indic
     SUBDIR += fonttosfnt

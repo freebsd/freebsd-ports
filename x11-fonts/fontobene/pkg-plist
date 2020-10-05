@@ -1,0 +1,9 @@
+include/fontobene-qt5/exception.h
+include/fontobene-qt5/font.h
+include/fontobene-qt5/fontobene.h
+include/fontobene-qt5/glyph.h
+include/fontobene-qt5/glyphlist.h
+include/fontobene-qt5/glyphlistaccessor.h
+include/fontobene-qt5/glyphlistcache.h
+include/fontobene-qt5/header.h
+include/fontobene-qt5/helpers.h
