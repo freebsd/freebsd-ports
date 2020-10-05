@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	net net-vpn security
 MASTER_SITES=	ftp://ftp.infradead.org/pub/ocserv/
 
-MAINTAINER=	cpm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Server implementing the AnyConnect SSL VPN protocol
 
 LICENSE=	GPLv2+

@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	audio python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	cpm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SoundCloud downloader in python
 
 LICENSE=	MIT

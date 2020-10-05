@@ -10,7 +10,7 @@ CATEGORIES=	multimedia audio
 MASTER_SITES=	https://waf.io/:waf
 DISTFILES=	${WAF_RELEASE}${EXTRACT_SUFX}:waf
 
-MAINTAINER=	cpm@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Free and open-source general-purpose video player
 
 LICENSE=	GPLv2+ LGPL21+

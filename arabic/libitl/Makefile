@@ -6,7 +6,7 @@ PORTVERSION=	0.8.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	arabic
 
-MAINTAINER=	cpm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	API abstraction to common Islamic calculations
 
 LICENSE=	LGPL21

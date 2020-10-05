@@ -8,7 +8,7 @@ PORTREVISION=	3
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	cpm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Version control system built on top of Git
 
 LICENSE=	MIT

@@ -7,7 +7,7 @@ PORTEPOCH=	1
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	cpm@FreeBSD.org
+MAINTAINER=	chromium@FreeBSD.org
 COMMENT=	Python library for accessing Chromium CodeSearch
 
 LICENSE=	BSD3CLAUSE

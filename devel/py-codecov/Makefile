@@ -8,7 +8,7 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	cpm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hosted coverage reports for Github, Bitbucket and Gitlab
 
 LICENSE=	APACHE20

@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	GNU
 
-MAINTAINER=	cpm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program for statistical analysis of sampled data
 
 LICENSE=	GPLv3

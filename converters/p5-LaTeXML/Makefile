@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN \
 		http://dlmf.nist.gov/LaTeXML/releases/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	cpm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LaTeX to XML/HTML/MathML converter in Perl
 
 LICENSE=	PD CC0-1.0

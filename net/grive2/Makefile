@@ -7,7 +7,7 @@ DISTVERSION=	0.5.1-dev
 PORTREVISION=	6
 CATEGORIES=	net
 
-MAINTAINER=	cpm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source client for Google Drive
 
 LICENSE=	GPLv2

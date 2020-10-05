@@ -7,7 +7,7 @@ PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
-MAINTAINER=	cpm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ Debugging Support Library
 
 LICENSE=	QPL10

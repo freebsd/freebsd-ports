@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	http://www.coin-or.org/download/source/CoinMP/
 
-MAINTAINER=	cpm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Optimization library with support for COIN-OR CLP, CBC, and CGL
 
 LICENSE=	CPL

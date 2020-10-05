@@ -7,7 +7,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	cpm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sphinx extension to include program output
 
 LICENSE=	BSD2CLAUSE

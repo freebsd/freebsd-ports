@@ -8,7 +8,7 @@ MASTER_SITES=	LOCAL/cpm
 PKGNAMESUFFIX=	-kmod
 DISTNAME=	${FWNAME}
 
-MAINTAINER=	cpm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Marvell Libertas 88W8335 IEEE 802.11b/g Firmware Kernel Module
 
 ONLY_FOR_ARCHS=		amd64 i386 powerpc64

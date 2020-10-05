@@ -6,7 +6,7 @@ PORTVERSION=	0.3
 CATEGORIES=	devel
 MASTER_SITES=	GNU_ALPHA/ssw
 
-MAINTAINER=	cpm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for Gtk+ which provides a widget for tabular data
 
 LICENSE=	GPLv3+

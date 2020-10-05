@@ -7,7 +7,7 @@ CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	cpm@FreeBSD.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	Sphinx extension to support docstrings in Numpy format
 
 LICENSE=	BSD2CLAUSE

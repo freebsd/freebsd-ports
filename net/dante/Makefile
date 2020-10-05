@@ -8,7 +8,7 @@ CATEGORIES=	net security
 MASTER_SITES=	http://www.inet.no/dante/files/ \
 		ftp://ftp.inet.no/pub/socks/
 
-MAINTAINER=	cpm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Circuit-level firewall/proxy
 
 LICENSE=	BSD4CLAUSE

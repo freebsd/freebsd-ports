@@ -7,7 +7,7 @@ CATEGORIES=	security
 MASTER_SITES=	#
 DISTFILES=	#
 
-MAINTAINER=	cpm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Devd hotplug rules for Universal 2nd Factor (U2F) tokens
 
 LICENSE=	BSD2CLAUSE
