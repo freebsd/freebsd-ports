@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Text-ANSITable
-PORTVERSION=	0.600
+PORTVERSION=	0.601
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,9 +14,11 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Color-RGB-Util>=0.600:devel/p5-Color-RGB-Util \
+RUN_DEPENDS=	p5-BorderStyles-Standard>=0:devel/p5-BorderStyles-Standard \
+		p5-Color-RGB-Util>=0.600:devel/p5-Color-RGB-Util \
 		p5-ColorThemeBase-Static>=0.006:devel/p5-ColorThemeBase-Static \
 		p5-ColorThemeUtil-ANSI>=0:devel/p5-ColorThemeUtil-ANSI \
+		p5-ColorThemes-Standard>=0:devel/p5-ColorThemes-Standard \
 		p5-Function-Fallback-CoreOrPP>=0:devel/p5-Function-Fallback-CoreOrPP \
 		p5-JSON-MaybeXS>=0:converters/p5-JSON-MaybeXS \
 		p5-Log-ger>=0.037:devel/p5-Log-ger \
