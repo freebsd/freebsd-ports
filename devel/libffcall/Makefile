@@ -19,6 +19,7 @@ BROKEN_mips64=		fails to build: gmake[2]: No rule to make target 'avcall-mips64-
 
 GNU_CONFIGURE=	yes
 USES=		gmake libtool
+USE_GCC=	yes
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS=		--enable-shared
@@ -29,9 +30,6 @@ CFLAGS+=		-fPIC
 PATCHES_powerpc64=	${PATCHDIR}/extra-patch-ffcall-abi.h
 PATCHES_powerpc64le=	${PATCHDIR}/extra-patch-ffcall-abi.h
 EXTRA_PATCHES=		${PATCHES_${ARCH}}
-USES_powerpc64=		compiler:gcc-c++11-lib
-USES_powerpc64le=	compiler:gcc-c++11-lib
-USES+=			${USES_${ARCH}}
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libavcall.so \
