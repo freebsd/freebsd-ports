@@ -1,4 +1,4 @@
-TIMESTAMP = 1601609735
+TIMESTAMP = 1601851676
 SHA256 (rust/crates/desed-1.2.0.tar.gz) = c5eda26b6f770c9198d0b049e24b549dab2559c19cf69d6adaf685499bde1a14
 SIZE (rust/crates/desed-1.2.0.tar.gz) = 1434762
 SHA256 (rust/crates/ansi_term-0.11.0.tar.gz) = ee49baf6cb617b853aa8d93bf420db2383fab46d314482ca2803b40d5fde979b
@@ -45,8 +45,8 @@ SHA256 (rust/crates/itertools-0.9.0.tar.gz) = 284f18f85651fe11e8a991b2adb42cb078
 SIZE (rust/crates/itertools-0.9.0.tar.gz) = 96429
 SHA256 (rust/crates/kernel32-sys-0.2.2.tar.gz) = 7507624b29483431c0ba2d82aece8ca6cdba9382bff4ddd0f7490560c056098d
 SIZE (rust/crates/kernel32-sys-0.2.2.tar.gz) = 24537
-SHA256 (rust/crates/kqueue-1.0.1.tar.gz) = a3f91411b697eb9c5f5c8636eed766c6c8a4073e865bc2f877b08a5af39237d7
-SIZE (rust/crates/kqueue-1.0.1.tar.gz) = 10771
+SHA256 (rust/crates/kqueue-1.0.2.tar.gz) = 2c0e6b8030328adf14f23759fb6bb5d2feb9b89e6c5c6d7864439955f4b321bd
+SIZE (rust/crates/kqueue-1.0.2.tar.gz) = 11293
 SHA256 (rust/crates/kqueue-sys-1.0.1.tar.gz) = 874649ab543b52e9b5810bf2e7a5d9b67fd0c7252cc27fc9745a2a0e0eb1026c
 SIZE (rust/crates/kqueue-sys-1.0.1.tar.gz) = 6728
 SHA256 (rust/crates/lazy_static-1.4.0.tar.gz) = e2abad23fbc42b3700f2f279844dc832adb2b2eb069b2df918f455c4e18cc646

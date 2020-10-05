@@ -2,6 +2,7 @@
 
 PORTNAME=	desed
 DISTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	CRATESIO
 DISTFILES=	${CARGO_DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX}
@@ -11,8 +12,6 @@ COMMENT=	Demystify and debug sed scripts from the comfort of your terminal
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN_i386=	Build of the kqueue crate fails: https://gitlab.com/worr/rust-kqueue/-/issues/4
 
 RUN_DEPENDS=	gsed:textproc/gsed
 
@@ -42,7 +41,7 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		iovec-0.1.4 \
 		itertools-0.9.0 \
 		kernel32-sys-0.2.2 \
-		kqueue-1.0.1 \
+		kqueue-1.0.2 \
 		kqueue-sys-1.0.1 \
 		lazy_static-1.4.0 \
 		libc-0.2.78 \
