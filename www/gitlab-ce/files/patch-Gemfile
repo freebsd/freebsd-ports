@@ -1,4 +1,4 @@
---- Gemfile.orig	2020-09-21 16:23:36 UTC
+--- Gemfile.orig	2020-10-01 12:48:52 UTC
 +++ Gemfile
 @@ -18,7 +18,7 @@ gem 'default_value_for', '~> 3.3.0'
  # Supported DBs
@@ -17,6 +17,15 @@
  
  # Disable strong_params so that Mash does not respond to :permitted?
  gem 'hashie-forbidden_attributes'
+@@ -148,7 +147,7 @@ gem 'github-markup', '~> 1.7.0', require: 'github/mark
+ gem 'commonmarker', '~> 0.20'
+ gem 'kramdown', '~> 2.3.0'
+ gem 'RedCloth', '~> 4.3.2'
+-gem 'rdoc', '~> 6.1.2'
++gem 'rdoc', '~> 6.1'
+ gem 'org-ruby', '~> 0.9.12'
+ gem 'creole', '~> 0.5.0'
+ gem 'wikicloth', '0.8.1'
 @@ -234,7 +233,7 @@ gem 'redis-rails', '~> 5.0.2'
  gem 'discordrb-webhooks-blackst0ne', '~> 3.3', require: false
  
