@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	slack-messenger
-PORTVERSION=	2.3.3
+PORTVERSION=	2.3.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
