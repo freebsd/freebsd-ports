@@ -5,7 +5,7 @@ PORTVERSION=	1.8.6
 CATEGORIES=	security
 MASTER_SITES=	GNUPG
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cy@FreeBSD.org
 COMMENT=	General purpose cryptographic library based on the code from GnuPG
 
 LICENSE=	GPLv2+ LGPL21+
