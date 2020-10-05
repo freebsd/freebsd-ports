@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	croc
-PORTVERSION=	8.3.2
+PORTVERSION=	8.4.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -32,6 +32,7 @@ GH_TUPLE=	cespare:xxhash:v1.1.0:cespare_xxhash/vendor/github.com/cespare/xxhash 
 		mitchellh:colorstring:d06e56a500db:mitchellh_colorstring/vendor/github.com/mitchellh/colorstring \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
 		russross:blackfriday:v2.0.1:russross_blackfriday_v2/vendor/github.com/russross/blackfriday/v2 \
+		schollz:cli:v2.2.1:schollz_cli_v2/vendor/github.com/schollz/cli/v2 \
 		schollz:logger:v1.2.0:schollz_logger/vendor/github.com/schollz/logger \
 		schollz:mnemonicode:v1.0.1:schollz_mnemonicode/vendor/github.com/schollz/mnemonicode \
 		schollz:pake:v2.0.4:schollz_pake_v2/vendor/github.com/schollz/pake/v2 \
@@ -41,8 +42,7 @@ GH_TUPLE=	cespare:xxhash:v1.1.0:cespare_xxhash/vendor/github.com/cespare/xxhash 
 		shurcooL:sanitized_anchor_name:v1.0.0:shurcool_sanitized_anchor_name/vendor/github.com/shurcooL/sanitized_anchor_name \
 		spaolacci:murmur3:v1.1.0:spaolacci_murmur3/vendor/github.com/spaolacci/murmur3 \
 		stretchr:testify:v1.4.0:stretchr_testify/vendor/github.com/stretchr/testify \
-		tscholl2:siec:8da93652b094:tscholl2_siec/vendor/github.com/tscholl2/siec \
-		urfave:cli:v2.2.0:urfave_cli_v2/vendor/github.com/urfave/cli/v2
+		tscholl2:siec:8da93652b094:tscholl2_siec/vendor/github.com/tscholl2/siec
 
 PLIST_FILES=	bin/croc
 
