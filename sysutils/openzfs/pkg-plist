@@ -503,6 +503,7 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/test-runner/include/stf.shlib
 %%TESTS%%share/zfs/zfs-helpers.sh
 %%TESTS%%share/zfs/zfs-tests.sh
+%%TESTS%%share/zfs/zfs-tests/bin/badsend
 %%TESTS%%share/zfs/zfs-tests/bin/btree_test
 %%TESTS%%share/zfs/zfs-tests/bin/chg_usr_exec
 %%TESTS%%share/zfs/zfs-tests/bin/dir_rd_update
@@ -2138,6 +2139,7 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send_freeobjects.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send_holds.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send_hole_birth.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send_invalid.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send_mixed_raw.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send_partial_dataset.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send_realloc_dnode_size.ksh
