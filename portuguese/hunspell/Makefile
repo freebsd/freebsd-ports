@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	hunspell
-PORTVERSION=	20190329
+PORTVERSION=	20201003
 CATEGORIES=	portuguese textproc
-MASTER_SITES=	http://natura.di.uminho.pt/download/sources/Dictionaries/hunspell/:PT \
+MASTER_SITES=	https://natura.di.uminho.pt/download/sources/Dictionaries/hunspell/:PT \
 		https://pt-br.libreoffice.org/assets/Uploads/PT-BR-Documents/VERO/:BR \
 		LOCAL/sunpoet/${PORTNAME}:PT,BR
 DISTFILES=	hunspell-pt_PT-${PORTVERSION}.tar.gz:PT \
