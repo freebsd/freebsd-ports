@@ -1,14 +1,14 @@
 Do not statically link with Curl and OpenSSL.  This also removes
 the openssl-src dependency.
 
---- Cargo.toml.orig	2020-04-04 06:39:20 UTC
+--- Cargo.toml.orig	2020-09-29 22:58:31 UTC
 +++ Cargo.toml
 @@ -15,7 +15,7 @@ chardet = "0.2.4"
  chrono = { version = "0.4.11", features = ["serde"] }
- clap = { version = "2.33.0", default-features = false, features = ["suggestions", "wrap_help"] }
- console = "0.10.0"
--curl = { version = "0.4.28", features = ["static-curl", "static-ssl"] }
-+curl = { version = "0.4.28" }
+ clap = { version = "2.33.1", default-features = false, features = ["suggestions", "wrap_help"] }
+ console = "0.11.3"
+-curl = { version = "0.4.30", features = ["static-curl", "static-ssl"] }
++curl = { version = "0.4.30" }
  dirs = "2.0.2"
  dotenv = "0.15.0"
  elementtree = "0.5.0"
