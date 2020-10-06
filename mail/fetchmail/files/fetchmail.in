@@ -126,8 +126,7 @@ fetchmail_dump_config()
 
 # if this is the global or 'umbrella' run
 if [ -z "$2" ] ; then
-	uid=$(id -u)
-	if [ "x${fetchmail_users}" != "x" -a "x$1" != "x" -a "$uid" = "0" ]; then
+	if [ "x${fetchmail_users}" != "x" -a "x$1" != "x" -a "$(id -u)" = "0" ]; then
 		# root mode: multiple user profiles are handled by recursive
 		# calls of this script
 		for user in ${fetchmail_users}; do
@@ -138,66 +137,53 @@ if [ -z "$2" ] ; then
 				failed="${user} (${retcode}) ${failed:-}"
 			fi
 		done
-	else
-		if [ "x${fetchmail_users}" = "x" ]; then
-			# There is only one global configuration file
-			globalconfig=GLOBALCONFIG
+
+		# if we had any failures, exit with an error
+		if [ -n "${failed}" ] ; then
+			exit 1
 		fi
-		$fetchmail_script "$1" "$(id -u -n)" $globalconfig
-		retcode="$?"
-		if [ "0${retcode}" -ne 0 ]; then
-			failed="${name} (${retcode}) ${failed:-}"
-		fi
+
+		# otherwise, exit success
+                exit 0
         fi
-
-	# if we had any failures, exit witn an error
-	if [ -n "${failed}" ] ; then
-		exit 1
-	fi
-
-	# otherwise, exit success
-	exit 0
+else
+	fetchmail_user="$2"
 fi
 
 # perform action for an instance of fetchmail daemon
-fetchmail_user="$2"
-if [ "x${fetchmail_users}" != "x" -o "x$3" = "xGLOBALCONFIG" ]; then
-	if [ "x${fetchmail_users}" != "x" ]; then
-		# multiuser setup:  determine user specific config and pid file
-		fetchmail_home="$(getent passwd ${fetchmail_user} | cut -f6 -d:)"
-		fetchmail_home="${fetchmail_home%/}"
-		fetchmail_config="${fetchmail_home}/${fetchmail_config_name}"
-		pidfile="${fetchmail_home}/.fetchmail.pid"
-		# PULLVARS - pull user specific variables into scope if existing
-		# else use global defaults
-		for i in chdir chroot env env_file fib flags nice \
-			limits login_class oomprotect program user group groups prepend \
-			logging_facility polling_interval
-		do
-			uvarname=fetchmail_${fetchmail_user}_${i}
-	 		eval fetchmail_${i}="\${${uvarname}-\${fetchmail_${i}}}"
-		done
-	else
-		pidfile=/var/run/fetchmail/fetchmail.pid
-	fi
-	required_files=${fetchmail_config}
-
-	# add early command line arguments
-	# if logfile set in config file, do not override with rc.conf default (note logfile overrides syslog)
-	_logfile="$(fetchmail_dump_config logfile)"
-	if [ _"${_logfile}" != _"None," ] ; then
-		fetchmail_logging_facility=""
-	fi
-
-	fetchmail_flags="${fetchmail_flags} -f ${fetchmail_config} --pidfile ${pidfile} ${fetchmail_logging_facility}"
-
-	# add late command line arguments
-	# if no polling interval in config file, use value from rc.conf
-	if [ "$(fetchmail_dump_config poll_interval)" = "0," ] ; then
-		fetchmail_flags="${fetchmail_flags} -d ${fetchmail_polling_interval}"
-	fi
+if [ "x${fetchmail_users}" != "x" ]; then
+	# multiuser setup:  determine user specific config and pid file
+	fetchmail_home="$(getent passwd ${fetchmail_user} | cut -f6 -d:)"
+	fetchmail_home="${fetchmail_home%/}"
+	fetchmail_config="${fetchmail_home}/${fetchmail_config_name}"
+	pidfile="${fetchmail_home}/.fetchmail.pid"
+	# PULLVARS - pull user specific variables into scope if existing
+	# else use global defaults
+	for i in chdir chroot env env_file fib flags nice \
+		limits login_class oomprotect program user group groups prepend \
+		logging_facility polling_interval
+	do
+		uvarname=fetchmail_${fetchmail_user}_${i}
+ 		eval fetchmail_${i}="\${${uvarname}-\${fetchmail_${i}}}"
+	done
 else
-	echo "$0: extra argument ignored"
+	pidfile=/var/run/fetchmail/fetchmail.pid
+fi
+required_files=${fetchmail_config}
+
+# add early command line arguments
+# if logfile set in config file, do not override with rc.conf default (note logfile overrides syslog)
+_logfile="$(fetchmail_dump_config logfile)"
+if [ _"${_logfile}" != _"None," ] ; then
+	fetchmail_logging_facility=""
+fi
+
+fetchmail_flags="${fetchmail_flags} -f ${fetchmail_config} --pidfile ${pidfile} ${fetchmail_logging_facility}"
+
+# add late command line arguments
+# if no polling interval in config file, use value from rc.conf
+if [ "$(fetchmail_dump_config poll_interval)" = "0," ] ; then
+	fetchmail_flags="${fetchmail_flags} -d ${fetchmail_polling_interval}"
 fi
 
 # actually execute the fetchmail program
