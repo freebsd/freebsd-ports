@@ -1,0 +1,16 @@
+Versatile Video Coding (VVC) is the most recent international video coding
+standard, developed by the Joint Video Experts Team (JVET) of the ITU-T Video
+Coding Experts Group (VCEG) and the ISO/IEC Moving Picture Experts Group (MPEG).
+VVC is the successor of the High Efficiency Video Coding (HEVC) standard and
+will be released by ITU-T as H.266 and by ISO/IEC as MPEG-I Part 3
+(ISO/IEC 23090-3). The new standard targets a 50% bit-rate reduction over HEVC
+at the same visual quality. In addition, VVC proves to be truly versatile by
+including tools for efficient coding of video content in emerging applications,
+e.g. high dynamic range (HDR), adaptive streaming, computer generated content as
+well as immersive applications like 360 degree video and augmented reality (AR).
+
+The Fraunhofer Versatile Video Decoder (VVdeC) is a fast VVC x86 software
+decoder implementation. The decoder supports most standard features available in
+the Main10 profile, with support for some high-level features still pending.
+
+WWW: https://github.com/fraunhoferhhi/vvdec

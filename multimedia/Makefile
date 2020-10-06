@@ -441,6 +441,7 @@
     SUBDIR += vlc
     SUBDIR += vmaf
     SUBDIR += vtkmpeg2encode
+    SUBDIR += vvdec
     SUBDIR += w_scan2
     SUBDIR += webcamd
     SUBDIR += webcamoid
