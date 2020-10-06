@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	duplicity
-PORTVERSION=	0.8.15
+PORTVERSION=	0.8.16
 CATEGORIES=	sysutils
 MASTER_SITES=	https://code.launchpad.net/duplicity/0.8-series/${PORTVERSION}/+download/
 
@@ -26,11 +26,9 @@ USES=		localbase python shebangfix
 USE_PYTHON=	autoplist distutils noflavors
 USE_LDCONFIG=	yes
 
-CONFLICTS_INSTALL=	duplicity07 duplicity-devel
-
 SHEBANG_FILES=	bin/duplicity bin/rdiffdir
 
-PORTDOCS=	CHANGELOG COPYING README README-REPO README-LOG
+PORTDOCS=	CHANGELOG COPYING README.md README-REPO.md README-LOG.md
 
 POST_PLIST=	trim-duplicity-testing
 
