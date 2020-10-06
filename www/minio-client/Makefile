@@ -26,8 +26,8 @@ MC=	${PORTNAME}
 .endif
 
 USE_GITHUB=	yes
-GHTAG=		RELEASE.2020-09-23T20-02-13Z
-COMMIT_ID=	db1b508d8b418ef67617a9770b0d0020de427f88
+GHTAG=		RELEASE.2020-10-03T02-54-56Z
+COMMIT_ID=	f11ae85566fea61b998cd7c168d5a4dbefe831ba
 GH_TUPLE=	minio:mc:${GHTAG}:DEFAULT \
 		StackExchange:wmi:cbe66965904d:stackexchange_wmi/vendor/github.com/StackExchange/wmi \
 		cheggaaa:pb:v1.0.28:cheggaaa_pb/vendor/github.com/cheggaaa/pb \
@@ -65,8 +65,8 @@ GH_TUPLE=	minio:mc:${GHTAG}:DEFAULT \
 		mattn:go-runewidth:v0.0.9:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
 		minio:cli:v1.22.0:minio_cli/vendor/github.com/minio/cli \
 		minio:md5-simd:v1.1.0:minio_md5_simd/vendor/github.com/minio/md5-simd \
-		minio:minio-go:9cefc0929b69:minio_minio_go_v7/vendor/github.com/minio/minio-go/v7 \
-		minio:minio:ac82f416a49c:minio_minio/vendor/github.com/minio/minio \
+		minio:minio-go:bc846cb9b089:minio_minio_go_v7/vendor/github.com/minio/minio-go/v7 \
+		minio:minio:27d9bd04e544:minio_minio/vendor/github.com/minio/minio \
 		minio:sha256-simd:v0.1.1:minio_sha256_simd/vendor/github.com/minio/sha256-simd \
 		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
 		modern-go:concurrent:bacd9c7ef1dd:modern_go_concurrent/vendor/github.com/modern-go/concurrent \
