@@ -3,7 +3,7 @@
 
 PORTNAME=	sage
 PORTVERSION=	9.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	math
 MASTER_SITES=	https://mirrors.xmission.com/sage/src/		\
 		http://mirrors.xmission.com/sage/src/		\
@@ -164,7 +164,7 @@ LIB_DEPENDS=	libarb.so:math/arb		\
 		libgiac.so:math/giacxcas	\
 		liblinbox.so:math/linbox	\
 		liblrcalc.so:math/lrcalc	\
-		liblrsgmp.so:math/lrslib	\
+		liblrs.so:math/lrslib		\
 		libm4ri.so:math/m4ri		\
 		libm4rie.so:math/m4rie		\
 		libmpc.so:math/mpc		\
