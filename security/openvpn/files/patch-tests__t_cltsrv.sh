@@ -40,7 +40,7 @@
 +    add='proto udp6 '
 +fi
 +for i in server client ; do
-+    sed -e "s/localhost/$2/" -e "/^remote /a\\
++    sed -e "s|localhost|${2%/*}|" -e "/^remote /a\\
 +$add" ${root}/sample-config-files/loopback-$i \
 +    >${root}/sample-config-files/loopback-$i.test
 +done
