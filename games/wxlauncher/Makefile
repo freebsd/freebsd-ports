@@ -3,8 +3,8 @@
 
 PORTNAME=	wxlauncher
 PORTVERSION=	0.10.0
-PORTREVISION=	5
 DISTVERSIONPREFIX=	release-
+PORTREVISION=	6
 CATEGORIES=	games
 
 MAINTAINER=	lightside@gmx.com
@@ -16,12 +16,12 @@ LICENSE_FILE=	${WRKSRC}/GPLv2.txt
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}markdown>0:textproc/py-markdown@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 
+USES=		cmake openal pkgconfig python:build sdl
+USE_SDL=	sdl2
 USE_GITHUB=	yes
 GH_ACCOUNT=	scp-fs2open
 GH_PROJECT=	wxLauncher
 
-USES=		cmake openal pkgconfig python:2.7,build sdl
-USE_SDL=	sdl2
 CMAKE_ARGS+=	-DRESOURCES_PATH:STRING="${DATADIR}"
 
 PORTDATA=	*
