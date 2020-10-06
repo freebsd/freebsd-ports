@@ -3,7 +3,7 @@
 PORTNAME=	varnish
 PORTVERSION=	4.1.11
 DISTVERSIONPREFIX=	varnish-
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www
 PKGNAMESUFFIX=	4
 
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libpcre.so:devel/pcre
 CONFLICTS=	varnish-2.* varnish-3.*
 
 USES=		autoreconf cpe gmake libedit libtool ncurses pathfix \
-		pkgconfig python:2.7,build readline shebangfix
+		pkgconfig python:build readline shebangfix
 SHEBANG_FILES=	lib/libvcc/vmodtool.py
 CPE_VENDOR=	varnish-cache
 CFLAGS+=	-I${LOCALBASE}/include -Wno-error
