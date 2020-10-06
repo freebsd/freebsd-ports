@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	plexmediaserver
-PORTVERSION?=	1.20.1.3252
-DISTVERSIONSUFFIX?=a78fef9a9
+PORTVERSION?=	1.20.2.3402
+DISTVERSIONSUFFIX?=0fec14d92
 PORTREVISION?=	0
 CATEGORIES=	multimedia
 MASTER_SITES?=	https://downloads.plex.tv/plex-media-server-new/${DISTVERSION}-${DISTVERSIONSUFFIX}/freebsd/
