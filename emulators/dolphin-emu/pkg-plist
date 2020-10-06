@@ -16,6 +16,7 @@ share/applications/dolphin-emu.desktop
 %%DATADIR%%/sys/GameSettings/D43J01.ini
 %%DATADIR%%/sys/GameSettings/D85.ini
 %%DATADIR%%/sys/GameSettings/D86.ini
+%%DATADIR%%/sys/GameSettings/D93U01.ini
 %%DATADIR%%/sys/GameSettings/D95.ini
 %%DATADIR%%/sys/GameSettings/DAX.ini
 %%DATADIR%%/sys/GameSettings/DD2.ini
@@ -205,10 +206,14 @@ share/applications/dolphin-emu.desktop
 %%DATADIR%%/sys/GameSettings/GBZP08.ini
 %%DATADIR%%/sys/GameSettings/GC2.ini
 %%DATADIR%%/sys/GameSettings/GC6.ini
+%%DATADIR%%/sys/GameSettings/GC6E01.ini
+%%DATADIR%%/sys/GameSettings/GC6J01.ini
+%%DATADIR%%/sys/GameSettings/GC6P01.ini
 %%DATADIR%%/sys/GameSettings/GC9.ini
 %%DATADIR%%/sys/GameSettings/GCC.ini
 %%DATADIR%%/sys/GameSettings/GCCE01.ini
 %%DATADIR%%/sys/GameSettings/GCD.ini
+%%DATADIR%%/sys/GameSettings/GCDP08.ini
 %%DATADIR%%/sys/GameSettings/GCE.ini
 %%DATADIR%%/sys/GameSettings/GCI.ini
 %%DATADIR%%/sys/GameSettings/GCN.ini
@@ -293,6 +298,7 @@ share/applications/dolphin-emu.desktop
 %%DATADIR%%/sys/GameSettings/GIZ.ini
 %%DATADIR%%/sys/GameSettings/GJB.ini
 %%DATADIR%%/sys/GameSettings/GJCE8P.ini
+%%DATADIR%%/sys/GameSettings/GJD.ini
 %%DATADIR%%/sys/GameSettings/GJK.ini
 %%DATADIR%%/sys/GameSettings/GJN.ini
 %%DATADIR%%/sys/GameSettings/GJUE78.ini
@@ -393,6 +399,7 @@ share/applications/dolphin-emu.desktop
 %%DATADIR%%/sys/GameSettings/GR6.ini
 %%DATADIR%%/sys/GameSettings/GRB.ini
 %%DATADIR%%/sys/GameSettings/GREE08.ini
+%%DATADIR%%/sys/GameSettings/GREJ08.ini
 %%DATADIR%%/sys/GameSettings/GRH.ini
 %%DATADIR%%/sys/GameSettings/GRJ.ini
 %%DATADIR%%/sys/GameSettings/GRK.ini
@@ -439,10 +446,12 @@ share/applications/dolphin-emu.desktop
 %%DATADIR%%/sys/GameSettings/GUP.ini
 %%DATADIR%%/sys/GameSettings/GUT.ini
 %%DATADIR%%/sys/GameSettings/GUZ.ini
+%%DATADIR%%/sys/GameSettings/GV4E69.ini
 %%DATADIR%%/sys/GameSettings/GVC.ini
 %%DATADIR%%/sys/GameSettings/GVJ.ini
 %%DATADIR%%/sys/GameSettings/GVL.ini
 %%DATADIR%%/sys/GameSettings/GVO.ini
+%%DATADIR%%/sys/GameSettings/GVPE69.ini
 %%DATADIR%%/sys/GameSettings/GVS.ini
 %%DATADIR%%/sys/GameSettings/GVS46E.ini
 %%DATADIR%%/sys/GameSettings/GVS46J.ini
@@ -468,6 +477,9 @@ share/applications/dolphin-emu.desktop
 %%DATADIR%%/sys/GameSettings/GXSP8P.ini
 %%DATADIR%%/sys/GameSettings/GXU.ini
 %%DATADIR%%/sys/GameSettings/GXX.ini
+%%DATADIR%%/sys/GameSettings/GXXE01.ini
+%%DATADIR%%/sys/GameSettings/GXXJ01.ini
+%%DATADIR%%/sys/GameSettings/GXXP01.ini
 %%DATADIR%%/sys/GameSettings/GYA.ini
 %%DATADIR%%/sys/GameSettings/GYQ.ini
 %%DATADIR%%/sys/GameSettings/GYT.ini
@@ -488,6 +500,7 @@ share/applications/dolphin-emu.desktop
 %%DATADIR%%/sys/GameSettings/HA9.ini
 %%DATADIR%%/sys/GameSettings/HAB.ini
 %%DATADIR%%/sys/GameSettings/HAC.ini
+%%DATADIR%%/sys/GameSettings/HAG.ini
 %%DATADIR%%/sys/GameSettings/HAT.ini
 %%DATADIR%%/sys/GameSettings/HBA.ini
 %%DATADIR%%/sys/GameSettings/HBB.ini
@@ -497,6 +510,7 @@ share/applications/dolphin-emu.desktop
 %%DATADIR%%/sys/GameSettings/HBG.ini
 %%DATADIR%%/sys/GameSettings/HBI.ini
 %%DATADIR%%/sys/GameSettings/HBK.ini
+%%DATADIR%%/sys/GameSettings/HC2.ini
 %%DATADIR%%/sys/GameSettings/HC4.ini
 %%DATADIR%%/sys/GameSettings/HCL.ini
 %%DATADIR%%/sys/GameSettings/HCS.ini
@@ -581,6 +595,7 @@ share/applications/dolphin-emu.desktop
 %%DATADIR%%/sys/GameSettings/R3N.ini
 %%DATADIR%%/sys/GameSettings/R3O.ini
 %%DATADIR%%/sys/GameSettings/R3R.ini
+%%DATADIR%%/sys/GameSettings/R3S.ini
 %%DATADIR%%/sys/GameSettings/R44.ini
 %%DATADIR%%/sys/GameSettings/R46.ini
 %%DATADIR%%/sys/GameSettings/R4C.ini
@@ -688,6 +703,7 @@ share/applications/dolphin-emu.desktop
 %%DATADIR%%/sys/GameSettings/RCS.ini
 %%DATADIR%%/sys/GameSettings/RCT.ini
 %%DATADIR%%/sys/GameSettings/RCU.ini
+%%DATADIR%%/sys/GameSettings/RCV.ini
 %%DATADIR%%/sys/GameSettings/RCY.ini
 %%DATADIR%%/sys/GameSettings/RD8.ini
 %%DATADIR%%/sys/GameSettings/RD9.ini
@@ -934,6 +950,7 @@ share/applications/dolphin-emu.desktop
 %%DATADIR%%/sys/GameSettings/RSY.ini
 %%DATADIR%%/sys/GameSettings/RT3.ini
 %%DATADIR%%/sys/GameSettings/RT4.ini
+%%DATADIR%%/sys/GameSettings/RT7.ini
 %%DATADIR%%/sys/GameSettings/RT8.ini
 %%DATADIR%%/sys/GameSettings/RTB.ini
 %%DATADIR%%/sys/GameSettings/RTG.ini
@@ -1049,6 +1066,7 @@ share/applications/dolphin-emu.desktop
 %%DATADIR%%/sys/GameSettings/SBD.ini
 %%DATADIR%%/sys/GameSettings/SBE.ini
 %%DATADIR%%/sys/GameSettings/SBF.ini
+%%DATADIR%%/sys/GameSettings/SBK.ini
 %%DATADIR%%/sys/GameSettings/SBQ.ini
 %%DATADIR%%/sys/GameSettings/SBR.ini
 %%DATADIR%%/sys/GameSettings/SBV.ini
@@ -1074,6 +1092,7 @@ share/applications/dolphin-emu.desktop
 %%DATADIR%%/sys/GameSettings/SDM.ini
 %%DATADIR%%/sys/GameSettings/SDN.ini
 %%DATADIR%%/sys/GameSettings/SDO.ini
+%%DATADIR%%/sys/GameSettings/SDV.ini
 %%DATADIR%%/sys/GameSettings/SDW.ini
 %%DATADIR%%/sys/GameSettings/SE2.ini
 %%DATADIR%%/sys/GameSettings/SEA.ini
@@ -1081,6 +1100,8 @@ share/applications/dolphin-emu.desktop
 %%DATADIR%%/sys/GameSettings/SEG.ini
 %%DATADIR%%/sys/GameSettings/SEM.ini
 %%DATADIR%%/sys/GameSettings/SER.ini
+%%DATADIR%%/sys/GameSettings/SEU.ini
+%%DATADIR%%/sys/GameSettings/SEV.ini
 %%DATADIR%%/sys/GameSettings/SF7.ini
 %%DATADIR%%/sys/GameSettings/SF8.ini
 %%DATADIR%%/sys/GameSettings/SFI.ini
@@ -1097,6 +1118,7 @@ share/applications/dolphin-emu.desktop
 %%DATADIR%%/sys/GameSettings/SH9.ini
 %%DATADIR%%/sys/GameSettings/SHL.ini
 %%DATADIR%%/sys/GameSettings/SHO.ini
+%%DATADIR%%/sys/GameSettings/SHP.ini
 %%DATADIR%%/sys/GameSettings/SHW.ini
 %%DATADIR%%/sys/GameSettings/SIL.ini
 %%DATADIR%%/sys/GameSettings/SIS.ini
@@ -1126,6 +1148,7 @@ share/applications/dolphin-emu.desktop
 %%DATADIR%%/sys/GameSettings/SLP.ini
 %%DATADIR%%/sys/GameSettings/SLS.ini
 %%DATADIR%%/sys/GameSettings/SLW.ini
+%%DATADIR%%/sys/GameSettings/SM2.ini
 %%DATADIR%%/sys/GameSettings/SM6.ini
 %%DATADIR%%/sys/GameSettings/SMB.ini
 %%DATADIR%%/sys/GameSettings/SMF.ini
@@ -1153,6 +1176,7 @@ share/applications/dolphin-emu.desktop
 %%DATADIR%%/sys/GameSettings/SOS.ini
 %%DATADIR%%/sys/GameSettings/SOU.ini
 %%DATADIR%%/sys/GameSettings/SP3.ini
+%%DATADIR%%/sys/GameSettings/SP7.ini
 %%DATADIR%%/sys/GameSettings/SP8.ini
 %%DATADIR%%/sys/GameSettings/SP9.ini
 %%DATADIR%%/sys/GameSettings/SPA.ini
@@ -1192,6 +1216,7 @@ share/applications/dolphin-emu.desktop
 %%DATADIR%%/sys/GameSettings/STS.ini
 %%DATADIR%%/sys/GameSettings/STV.ini
 %%DATADIR%%/sys/GameSettings/SU3.ini
+%%DATADIR%%/sys/GameSettings/SU4.ini
 %%DATADIR%%/sys/GameSettings/SU7.ini
 %%DATADIR%%/sys/GameSettings/SUK.ini
 %%DATADIR%%/sys/GameSettings/SUKE01.ini
@@ -1395,6 +1420,21 @@ share/applications/dolphin-emu.desktop
 %%DATADIR%%/sys/GameSettings/WZG.ini
 %%DATADIR%%/sys/GameSettings/WZI.ini
 %%DATADIR%%/sys/GameSettings/WZM.ini
+%%DATADIR%%/sys/GameSettings/XAA.ini
+%%DATADIR%%/sys/GameSettings/XAB.ini
+%%DATADIR%%/sys/GameSettings/XAD.ini
+%%DATADIR%%/sys/GameSettings/XAE.ini
+%%DATADIR%%/sys/GameSettings/XAF.ini
+%%DATADIR%%/sys/GameSettings/XAG.ini
+%%DATADIR%%/sys/GameSettings/XAH.ini
+%%DATADIR%%/sys/GameSettings/XAI.ini
+%%DATADIR%%/sys/GameSettings/XAK.ini
+%%DATADIR%%/sys/GameSettings/XAL.ini
+%%DATADIR%%/sys/GameSettings/XAM.ini
+%%DATADIR%%/sys/GameSettings/XAN.ini
+%%DATADIR%%/sys/GameSettings/XAO.ini
+%%DATADIR%%/sys/GameSettings/XAP.ini
+%%DATADIR%%/sys/GameSettings/XAQ.ini
 %%DATADIR%%/sys/GameSettings/XH2.ini
 %%DATADIR%%/sys/GameSettings/XH7.ini
 %%DATADIR%%/sys/GameSettings/XH9.ini
@@ -1405,6 +1445,7 @@ share/applications/dolphin-emu.desktop
 %%DATADIR%%/sys/GameSettings/XIV.ini
 %%DATADIR%%/sys/Maps/GFZE01.map
 %%DATADIR%%/sys/Maps/GMBE8P.map
+%%DATADIR%%/sys/Profiles/Wiimote/Wii Remote with MotionPlus Pointing.ini
 %%DATADIR%%/sys/Resources/Dolphin.png
 %%DATADIR%%/sys/Resources/Flag_Australia.png
 %%DATADIR%%/sys/Resources/Flag_Australia@2x.png

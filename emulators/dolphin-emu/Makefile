@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dolphin-emu
-PORTVERSION=	5.0.12247
+PORTVERSION=	5.0.12716
 CATEGORIES=	emulators
 
 MAINTAINER=	martymac@FreeBSD.org
@@ -10,8 +10,6 @@ COMMENT=	Gamecube and Wii Emulator
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/license.txt
-
-BROKEN_aarch64=	fails to build: Source/Core/Common/ArmCPUDetect.cpp:5:10: fatal error: 'asm/hwcap.h' file not found
 
 # Notes on dependencies:
 # - alsa support has been disabled (not optimal)
@@ -51,7 +49,7 @@ USES=		cmake compiler:c++17-lang desktop-file-utils gl iconv \
 # for latest beta version and associated commit
 USE_GITHUB=	yes
 GH_PROJECT=	dolphin
-GH_TAGNAME=	9c12a84
+GH_TAGNAME=	3152428
 
 USE_GL=		gl glew glu
 USE_SDL=	sdl2
