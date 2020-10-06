@@ -95,7 +95,7 @@ stop_instance()
   if [ -z "${instance_args}" ]; then
     echo "No such config ${config}"
   elif [ -e "${pidpath}/${config}.pid" ]; then
-    pid=`check_pidfile ${pidpath}/${config}.pid ${command}`
+    pid=`check_pidfile ${pidpath}/${config}.pid %%PREFIX%%/sbin/virtual_oss`
     if [ ! -z "${pid}" ]; then
       echo -n "Stopping Virtual OSS config ${config} ... "
       kill $pid
