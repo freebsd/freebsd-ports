@@ -3,6 +3,7 @@ bin/varnishhist
 bin/varnishlog
 bin/varnishncsa
 bin/varnishstat
+bin/varnishstat_help_gen
 bin/varnishtest
 bin/varnishtop
 include/varnish/cache/cache_backend.h
@@ -32,6 +33,7 @@ include/varnish/tbl/htc.h
 include/varnish/tbl/http_headers.h
 include/varnish/tbl/http_response.h
 include/varnish/tbl/locks.h
+include/varnish/tbl/mgt_vcc.h
 include/varnish/tbl/obj_attr.h
 include/varnish/tbl/oc_exp_flags.h
 include/varnish/tbl/oc_flags.h
@@ -41,7 +43,6 @@ include/varnish/tbl/sess_attr.h
 include/varnish/tbl/sess_close.h
 include/varnish/tbl/steps.h
 include/varnish/tbl/symbol_kind.h
-include/varnish/tbl/vcc_types.h
 include/varnish/tbl/vcl_returns.h
 include/varnish/tbl/vcl_states.h
 include/varnish/tbl/vhd_fsm_funcs.h
@@ -64,6 +65,7 @@ include/varnish/vapi/vsl.h
 include/varnish/vapi/vsm.h
 include/varnish/vas.h
 include/varnish/vav.h
+include/varnish/vbh.h
 include/varnish/vbm.h
 include/varnish/vcl.h
 include/varnish/vcli.h
