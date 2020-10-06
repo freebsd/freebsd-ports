@@ -2,7 +2,7 @@
 
 PORTNAME=	gitaly
 DISTVERSION=	13.4.2
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -56,7 +56,7 @@ GH_TUPLE=	\
 		census-instrumentation:opencensus-go:v0.22.2:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
 		client9:reopen:v1.0.0:client9_reopen/vendor/github.com/client9/reopen \
 		cloudflare:tableflip:4baec9811f2b:cloudflare_tableflip/vendor/github.com/cloudflare/tableflip \
-		codahale:hdrhistogram:3a0bb77429bd:codahale_hdrhistogram/vendor/github.com/codahale/hdrhistogram \
+		HdrHistogram:hdrhistogram-go:3a0bb77429bd:codahale_hdrhistogram_go/vendor/github.com/codahale/hdrhistogram \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		getsentry:sentry-go:v0.5.1:getsentry_sentry_go/vendor/github.com/getsentry/sentry-go \
 		go-gorp:gorp:v1.7.2:go_gorp_gorp/vendor/gopkg.in/gorp.v1 \
