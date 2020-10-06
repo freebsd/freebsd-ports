@@ -3,6 +3,7 @@
 
 PORTNAME=	tenshi
 PORTVERSION=	0.17
+PORTREVISION=	1
 CATEGORIES=	sysutils
 PATCH_SITES=	https://github.com/f-secure-foundry/tenshi/commit/
 PATCHFILES=	1c9c887.patch:-p1 \

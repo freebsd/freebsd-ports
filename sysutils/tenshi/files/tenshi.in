@@ -21,11 +21,11 @@ tenshi_enable="${tenshi_enable:-NO}"
 
 extra_commands='reload'
 
-command='%%PREFIX%%/bin/tenshi'
+command='%%PREFIX%%/sbin/tenshi'
 command_interpreter='%%PERL%%'
 
 pidfile='/var/run/tenshi.pid'
 
-required_files='%%PREFIX%%/etc/tenshi.conf'
+required_files='%%ETCDIR%%/tenshi.conf'
 
 run_rc_command "$1"
