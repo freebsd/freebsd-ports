@@ -389,6 +389,7 @@
     SUBDIR += xcb-util-wm
     SUBDIR += xcb-util-xrm
     SUBDIR += xcbautolock
+    SUBDIR += xclickroot
     SUBDIR += xclip
     SUBDIR += xclipboard
     SUBDIR += xcm
