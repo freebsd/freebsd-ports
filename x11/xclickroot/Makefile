@@ -2,10 +2,8 @@
 
 PORTNAME=	xclickroot
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1
+DISTVERSION=	1.2
 CATEGORIES=	x11
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/pull/
-PATCHFILES=	1.patch:-p1
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Run a command every time a given mouse button is pressed on the root window
