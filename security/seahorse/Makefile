@@ -30,6 +30,7 @@ USE_XORG=	sm
 USE_LDCONFIG=	yes
 USES=		gettext gnome localbase:ldflags meson pkgconfig \
 		python:3.5+,build tar:xz xorg
+USE_CSTD=	c99
 USE_GNOME=	gtk30
 INSTALLS_ICONS=	yes
 
