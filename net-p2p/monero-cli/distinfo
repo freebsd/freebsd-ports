@@ -1,7 +1,9 @@
-TIMESTAMP = 1600078985
-SHA256 (monero-project-monero-v0.16.0.3_GH0.tar.gz) = df15660f877b75d340214847be1648cac47b2fcdb4011cf8f5aa4517f3af48cb
-SIZE (monero-project-monero-v0.16.0.3_GH0.tar.gz) = 10519009
-SHA256 (tevador-RandomX-7567cef4c6192fb5356bbdd7_GH0.tar.gz) = 5f0a363aa693b85bf7f99968d56ffd4ffca32bb919f9d8b713a9a3ad50a319b7
-SIZE (tevador-RandomX-7567cef4c6192fb5356bbdd7_GH0.tar.gz) = 1708380
+TIMESTAMP = 1601989003
+SHA256 (monero-project-monero-v0.17.0.1_GH0.tar.gz) = 490f59c669992fc9bc74103dc2c82c968d07fecb6e2831d2d356575dc78862fb
+SIZE (monero-project-monero-v0.17.0.1_GH0.tar.gz) = 10584287
+SHA256 (monero-project-supercop-633500ad8c875999_GH0.tar.gz) = 19861f74bfc2cc0b61a49bf0ff2da5c793432d31e8677b23455a4229dcb6435b
+SIZE (monero-project-supercop-633500ad8c875999_GH0.tar.gz) = 346190
+SHA256 (tevador-RandomX-5ce5f4906c1eb166be980f6d_GH0.tar.gz) = 3b27cec69d1a26bd0ee8d52c1e3119c97f5b12bcf589080d4583e319b9fa740c
+SIZE (tevador-RandomX-5ce5f4906c1eb166be980f6d_GH0.tar.gz) = 163548
 SHA256 (trezor-trezor-common-bff7fdfe436c727982c_GH0.tar.gz) = 298338e9924437677be76546929c64cda2bd8b04dbd2c3b533cdcf1291f903a0
 SIZE (trezor-trezor-common-bff7fdfe436c727982c_GH0.tar.gz) = 1327776
