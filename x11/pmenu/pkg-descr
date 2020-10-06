@@ -1,0 +1,15 @@
+Pmenu is a pie menu utility for X. Pmenu receives a menu specification
+in stdin, shows a menu for the user to select one of the options,
+and outputs the option selected to stdout.
+
+Pmenu comes with the following features:
+
+- Pmenu reads something in and prints something out, the UNIX way.
+- Submenus (some pie-menu slices can spawn another menu).
+- Icons (pie-menu slices can contain icon image).
+- X resources support (you don't need to recompile pmenu for configuring it).
+
+Check out my other project, xclickroot for an application that can spawn pmenu
+by right clicking on the root window (i.e. on the desktop).
+
+WWW: https://github.com/phillbush/pmenu

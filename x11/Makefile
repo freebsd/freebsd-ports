@@ -262,6 +262,7 @@
     SUBDIR += plasma5-plasma-desktop
     SUBDIR += plasma5-plasma-integration
     SUBDIR += plasma5-plasma-workspace
+    SUBDIR += pmenu
     SUBDIR += polybar
     SUBDIR += printscreen
     SUBDIR += py-caffeine-ng

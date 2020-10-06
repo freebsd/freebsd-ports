@@ -1,0 +1,41 @@
+# $FreeBSD$
+
+PORTNAME=	pmenu
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2.1.2
+CATEGORIES=	x11
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	91d52b3dbe197681c3252703ae57594dfd755f5a.patch:-p1
+
+MAINTAINER=	0mp@FreeBSD.org
+COMMENT=	Pie menu for X
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+		libImlib2.so:graphics/imlib2
+
+USES=		localbase xorg
+USE_GITHUB=	yes
+GH_ACCOUNT=	phillbush
+USE_XORG=	x11 xext xft xinerama
+
+MAKE_ARGS=	FREETYPEINC="${LOCALBASE}/include/freetype2" \
+		PREFIX="${PREFIX}"
+
+PLIST_FILES=	bin/${PORTNAME} \
+		share/man/man1/${PORTNAME}.1.gz
+
+PORTEXAMPLES=	${PORTNAME}.sh
+
+OPTIONS_DEFINE=	EXAMPLES
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+post-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
+
+.include <bsd.port.mk>
