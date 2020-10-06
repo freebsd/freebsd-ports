@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20201006:
+  AFFECTS: users of sysutils/tenshi
+  AUTHOR: 0mp@FreeBSD.org
+
+  The default location for tenshi's configuration file has changed.  It was
+  moved to /usr/local/etc/tenshi/tenshi.conf from /usr/local/etc/tenshi.conf
+  in order to follow upstream defaults.
+
 20201002:
   AFFECTS: users of mail/fetchmail beginning with 6.4.12_1
   AUTHOR:  mandree@FreeBSD.org

@@ -1,2 +1,7 @@
-SHA256 (tenshi-0.15.tar.gz) = 4f875db168ca53249c521ac0b5a1e2b7498613bc3ac2a23de85638e44d0006a7
-SIZE (tenshi-0.15.tar.gz) = 28405
+TIMESTAMP = 1601974143
+SHA256 (f-secure-foundry-tenshi-0.17_GH0.tar.gz) = 9b7e72b6496e2f6abd77d1dd3c4c6b77bdce61ca5531f9f1c62376b020904db7
+SIZE (f-secure-foundry-tenshi-0.17_GH0.tar.gz) = 24597
+SHA256 (1c9c887.patch) = 1787a7a45244c2c725e53022138bacc7fc304026a7060aa4c6d32fe088d5f4a3
+SIZE (1c9c887.patch) = 1187
+SHA256 (50f7660.patch) = fcd3a1f476f65a4e4b595b5330aed8aeec9e437ba82ed8edbbdcc6ee72f4a169
+SIZE (50f7660.patch) = 1457

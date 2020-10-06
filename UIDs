@@ -213,7 +213,7 @@ meta1:*:264:264::0:0:MeTA1 other:/nonexistent:/usr/sbin/nologin
 sshout:*:265:265::0:0:Secure Shout Host Oriented Unified Talk:/var/db/sshout:/usr/local/libexec/sshoutd
 step:*:266:266::0:0:Step CA:/nonexistent:/usr/sbin/nologin
 odoo:*:267:267::0:0:Odoo ERP:/nonexistent:/usr/sbin/nologin
-# free: 268
+tenshi:*:268:268::0:0:Tenshi user:/var/lib/tenshi:/usr/sbin/nologin
 # free: 269
 _rpki-client:*:270:270::0:0:rpki-client user:/nonexistent:/usr/sbin/nologin
 # free: 271

@@ -2,50 +2,55 @@
 # $FreeBSD$
 
 PORTNAME=	tenshi
-PORTVERSION=	0.15
-PORTREVISION=	1
+PORTVERSION=	0.17
 CATEGORIES=	sysutils
-MASTER_SITES=	http://dev.inversepath.com/tenshi/
+PATCH_SITES=	https://github.com/f-secure-foundry/tenshi/commit/
+PATCHFILES=	1c9c887.patch:-p1 \
+		50f7660.patch:-p1
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Log monitoring program, designed to watch multiple logs
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${LOCALBASE}/bin/gtail:sysutils/coreutils \
-		p5-IO-BufferedSelect>=0:devel/p5-IO-BufferedSelect
+RUN_DEPENDS=	p5-IO-BufferedSelect>=0:devel/p5-IO-BufferedSelect
 
-USES=		perl5
-USE_PERL5=	build patch run
+USES=		perl5 shebangfix
+USE_GITHUB=	yes
+GH_ACCOUNT=	f-secure-foundry
+USE_PERL5=	run
 USE_RC_SUBR=	tenshi
+SHEBANG_FILES=	tenshi
+
+MAKE_ARGS=	bindir="${PREFIX}/sbin" \
+		docdir="${DOCSDIR}" \
+		mandir="${MAN8PREFIX}/share/man" \
+		sysconfdir="${PREFIX}/etc"
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-SUB_LIST=	PERL=${PERL}
+SUB_LIST=	PERL="${PERL}"
 
-PLIST_FILES=	bin/tenshi \
-		etc/tenshi.conf.sample \
+USERS=		tenshi
+GROUPS=		tenshi
+
+PLIST_FILES=	'@dir /var/lib' \
+		'@dir(tenshi,tenshi,755) /var/lib/tenshi' \
+		'@sample ${ETCDIR}/tenshi.conf.sample' \
+		sbin/tenshi \
 		share/man/man8/tenshi.8.gz
 
-PORTDOCS=	Changelog README
+PORTDOCS=	Changelog README.md
 
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	@${PERL5} -pi.bak -e ' \
-		s"/usr/bin/perl"${PERL}" if $$. == 1; \
-		s"/etc/tenshi/tenshi\.conf"${PREFIX}/etc/tenshi.conf"; \
-		s"/usr/bin/tail"${LOCALBASE}/bin/gtail"; \
-		' ${WRKSRC}/tenshi
+	@${REINPLACE_CMD} -e "s|/etc/tenshi/tenshi.conf|${ETCDIR}/tenshi.conf|" \
+		${WRKSRC}/tenshi
 
-do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/tenshi ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/tenshi.conf ${STAGEDIR}${PREFIX}/etc/tenshi.conf.sample
-	${INSTALL_MAN} ${WRKSRC}/tenshi.8 ${STAGEDIR}${MAN8PREFIX}/share/man/man8
-
-do-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
+post-install:
+	@${RM} ${STAGEDIR}${DOCSDIR}/LICENSE
+	@(cd ${STAGEDIR}${ETCDIR} && ${MV} tenshi.conf tenshi.conf.sample)
 
 .include <bsd.port.mk>
