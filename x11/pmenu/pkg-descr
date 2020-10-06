@@ -9,7 +9,7 @@ Pmenu comes with the following features:
 - Icons (pie-menu slices can contain icon image).
 - X resources support (you don't need to recompile pmenu for configuring it).
 
-Check out my other project, xclickroot for an application that can spawn pmenu
-by right clicking on the root window (i.e. on the desktop).
+Check out the other project, xclickroot for an application that can spawn pmenu
+by right clicking on the root window (i.e., on the desktop).
 
 WWW: https://github.com/phillbush/pmenu
