@@ -467,6 +467,7 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/docs/html/colortables/etopo2.png
 %%GRASS_INST_DIR%%/docs/html/colortables/evi.png
 %%GRASS_INST_DIR%%/docs/html/colortables/fahrenheit.png
+%%GRASS_INST_DIR%%/docs/html/colortables/forest_cover.png
 %%GRASS_INST_DIR%%/docs/html/colortables/gdd.png
 %%GRASS_INST_DIR%%/docs/html/colortables/grass.png
 %%GRASS_INST_DIR%%/docs/html/colortables/greens.png
@@ -482,6 +483,7 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/docs/html/colortables/magma.png
 %%GRASS_INST_DIR%%/docs/html/colortables/ndvi.png
 %%GRASS_INST_DIR%%/docs/html/colortables/ndwi.png
+%%GRASS_INST_DIR%%/docs/html/colortables/nlcd.png
 %%GRASS_INST_DIR%%/docs/html/colortables/oranges.png
 %%GRASS_INST_DIR%%/docs/html/colortables/plasma.png
 %%GRASS_INST_DIR%%/docs/html/colortables/population_dens.png
@@ -1039,6 +1041,8 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/docs/html/r_carve_dem_orig_accum.png
 %%GRASS_INST_DIR%%/docs/html/r_carve_dem_orig_shaded.png
 %%GRASS_INST_DIR%%/docs/html/r_carve_dem_orig.png
+%%GRASS_INST_DIR%%/docs/html/r_clump_lakes.png
+%%GRASS_INST_DIR%%/docs/html/r_clump_lsat.png
 %%GRASS_INST_DIR%%/docs/html/r_contour_using_levels.png
 %%GRASS_INST_DIR%%/docs/html/r_drain_with_r_watershed_direction.png
 %%GRASS_INST_DIR%%/docs/html/r_drain.png
@@ -1079,6 +1083,7 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/docs/html/r_path_with_bitmask.png
 %%GRASS_INST_DIR%%/docs/html/r_path_with_r_watershed_direction.png
 %%GRASS_INST_DIR%%/docs/html/r_path.png
+%%GRASS_INST_DIR%%/docs/html/r_plane_3d.png
 %%GRASS_INST_DIR%%/docs/html/r_random_cells.png
 %%GRASS_INST_DIR%%/docs/html/r_relief.png
 %%GRASS_INST_DIR%%/docs/html/r_resamp_interp_new_250m.png
@@ -1106,6 +1111,7 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/docs/html/r_thin_network.png
 %%GRASS_INST_DIR%%/docs/html/r_thin_vectorized.png
 %%GRASS_INST_DIR%%/docs/html/r_topidx.png
+%%GRASS_INST_DIR%%/docs/html/r_volume_lake.png
 %%GRASS_INST_DIR%%/docs/html/r_water_outlet.png
 %%GRASS_INST_DIR%%/docs/html/r_watershed_drainage.png
 %%GRASS_INST_DIR%%/docs/html/r.basins.fill.html
@@ -1399,7 +1405,6 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/docs/html/timeline_2D.jpg
 %%GRASS_INST_DIR%%/docs/html/topic_ACCA.html
 %%GRASS_INST_DIR%%/docs/html/topic_accumulation.html
-%%GRASS_INST_DIR%%/docs/html/topic_aerial.html
 %%GRASS_INST_DIR%%/docs/html/topic_aggregation.html
 %%GRASS_INST_DIR%%/docs/html/topic_albedo.html
 %%GRASS_INST_DIR%%/docs/html/topic_algebra.html
@@ -2234,7 +2239,6 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/docs/man/man1/test.raster3d.lib.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/topic_ACCA.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/topic_accumulation.1.gz
-%%GRASS_INST_DIR%%/docs/man/man1/topic_aerial.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/topic_aggregation.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/topic_albedo.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/topic_algebra.1.gz
@@ -2517,6 +2521,7 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/etc/colors/etopo2
 %%GRASS_INST_DIR%%/etc/colors/evi
 %%GRASS_INST_DIR%%/etc/colors/fahrenheit
+%%GRASS_INST_DIR%%/etc/colors/forest_cover
 %%GRASS_INST_DIR%%/etc/colors/gdd
 %%GRASS_INST_DIR%%/etc/colors/grass
 %%GRASS_INST_DIR%%/etc/colors/greens
@@ -2530,6 +2535,7 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/etc/colors/magma
 %%GRASS_INST_DIR%%/etc/colors/ndvi
 %%GRASS_INST_DIR%%/etc/colors/ndwi
+%%GRASS_INST_DIR%%/etc/colors/nlcd
 %%GRASS_INST_DIR%%/etc/colors/oranges
 %%GRASS_INST_DIR%%/etc/colors/plasma
 %%GRASS_INST_DIR%%/etc/colors/population
@@ -3291,6 +3297,7 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/gui/wxpython/iscatt/iscatt_core.py
 %%GRASS_INST_DIR%%/gui/wxpython/iscatt/plots.py
 %%GRASS_INST_DIR%%/gui/wxpython/iscatt/toolbars.py
+%%GRASS_INST_DIR%%/gui/wxpython/iscatt/utils.py
 %%GRASS_INST_DIR%%/gui/wxpython/lmgr/__init__.py
 %%GRASS_INST_DIR%%/gui/wxpython/lmgr/frame.py
 %%GRASS_INST_DIR%%/gui/wxpython/lmgr/giface.py
@@ -4198,6 +4205,7 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/gui/wxpython/iscatt/__pycache__/iscatt_core.cpython-%%PYTHON_SUFFIX%%.pyc
 %%GRASS_INST_DIR%%/gui/wxpython/iscatt/__pycache__/plots.cpython-%%PYTHON_SUFFIX%%.pyc
 %%GRASS_INST_DIR%%/gui/wxpython/iscatt/__pycache__/toolbars.cpython-%%PYTHON_SUFFIX%%.pyc
+%%GRASS_INST_DIR%%/gui/wxpython/iscatt/__pycache__/utils.cpython-%%PYTHON_SUFFIX%%.pyc
 %%GRASS_INST_DIR%%/gui/wxpython/lmgr/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
 %%GRASS_INST_DIR%%/gui/wxpython/lmgr/__pycache__/frame.cpython-%%PYTHON_SUFFIX%%.pyc
 %%GRASS_INST_DIR%%/gui/wxpython/lmgr/__pycache__/giface.cpython-%%PYTHON_SUFFIX%%.pyc
