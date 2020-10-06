@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	prettytable
-PORTVERSION=	0.7.2
-PORTREVISION=	2
+PORTVERSION=	1.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP/source/P/PrettyTable
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,6 +12,8 @@ COMMENT=	Library for displaying tabular data in an ASCII table format
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=0:devel/py-setuptools_scm@${PY_FLAVOR}
 
 NO_ARCH=	yes
 USES=		python
