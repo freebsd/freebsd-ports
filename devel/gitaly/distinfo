@@ -1,4 +1,4 @@
-TIMESTAMP = 1601623964
+TIMESTAMP = 1601965152
 SHA256 (BurntSushi-toml-v0.3.1_GH0.tar.gz) = 6593da894578ba510a470735ffbdc88ce88033094dc5a8f4d3957ab87e18803f
 SIZE (BurntSushi-toml-v0.3.1_GH0.tar.gz) = 42077
 SHA256 (DataDog-dd-trace-go-v1.7.0_GH0.tar.gz) = d81bd47683ef9cbd228691b077373d3e15ca5fa5b9e7919099c4e87779040e84
@@ -11,8 +11,8 @@ SHA256 (client9-reopen-v1.0.0_GH0.tar.gz) = 64829db9b9fd0dd94b2444c45a2cb6e926b7
 SIZE (client9-reopen-v1.0.0_GH0.tar.gz) = 6283
 SHA256 (cloudflare-tableflip-4baec9811f2b_GH0.tar.gz) = d9437a27968b8d30e3923c1da75f3fd5b4fca4ea537073a22a089ab35c2106cd
 SIZE (cloudflare-tableflip-4baec9811f2b_GH0.tar.gz) = 16376
-SHA256 (codahale-hdrhistogram-3a0bb77429bd_GH0.tar.gz) = 3ef6b86658bc370e027304e55a8685767f7fd8a94199f4bea08c9388bf84a1b0
-SIZE (codahale-hdrhistogram-3a0bb77429bd_GH0.tar.gz) = 7738
+SHA256 (HdrHistogram-hdrhistogram-go-3a0bb77429bd_GH0.tar.gz) = bf9c0b3bc04b0d4ed31e2019240a2854f650b87a383f47824f8af222e58a4001
+SIZE (HdrHistogram-hdrhistogram-go-3a0bb77429bd_GH0.tar.gz) = 7738
 SHA256 (davecgh-go-spew-v1.1.1_GH0.tar.gz) = 7d82b9bb7291adbe7498fe946920ab3e7fc9e6cbfc3b2294693fad00bf0dd17e
 SIZE (davecgh-go-spew-v1.1.1_GH0.tar.gz) = 42152
 SHA256 (getsentry-sentry-go-v0.5.1_GH0.tar.gz) = d2f980bebe15ef7685aa15bb788c67ce3a7b82220050871321d82cf9a90d2231

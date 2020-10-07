@@ -3,7 +3,7 @@
 
 PORTNAME?=	gitlab-workhorse
 PORTVERSION?=	8.46.0
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	www
 
 MAINTAINER?=	mfechner@FreeBSD.org
@@ -39,7 +39,7 @@ GH_TUPLE=	\
 		census-instrumentation:opencensus-go:v0.22.3:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
 		certifi:gocertifi:ee1a9a0726d2:certifi_gocertifi/vendor/github.com/certifi/gocertifi \
 		client9:reopen:v1.0.0:client9_reopen/vendor/github.com/client9/reopen \
-		codahale:hdrhistogram:3a0bb77429bd:codahale_hdrhistogram/vendor/github.com/codahale/hdrhistogram \
+		HdrHistogram:hdrhistogram-go:3a0bb77429bd:codahale_hdrhistogram_go/vendor/github.com/codahale/hdrhistogram \
 		danwakefield:fnmatch:cbb64ac3d964:danwakefield_fnmatch/vendor/github.com/danwakefield/fnmatch \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		dgrijalva:jwt-go:v3.2.0:dgrijalva_jwt_go/vendor/github.com/dgrijalva/jwt-go \

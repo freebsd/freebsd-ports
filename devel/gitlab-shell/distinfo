@@ -1,10 +1,10 @@
-TIMESTAMP = 1600805905
+TIMESTAMP = 1602062288
 SHA256 (DataDog-dd-trace-go-v1.7.0_GH0.tar.gz) = d81bd47683ef9cbd228691b077373d3e15ca5fa5b9e7919099c4e87779040e84
 SIZE (DataDog-dd-trace-go-v1.7.0_GH0.tar.gz) = 3321111
 SHA256 (client9-reopen-v1.0.0_GH0.tar.gz) = 64829db9b9fd0dd94b2444c45a2cb6e926b79c3a2e589a75a5edc2ba488a7875
 SIZE (client9-reopen-v1.0.0_GH0.tar.gz) = 6283
-SHA256 (codahale-hdrhistogram-3a0bb77429bd_GH0.tar.gz) = 3ef6b86658bc370e027304e55a8685767f7fd8a94199f4bea08c9388bf84a1b0
-SIZE (codahale-hdrhistogram-3a0bb77429bd_GH0.tar.gz) = 7738
+SHA256 (HdrHistogram-hdrhistogram-go-3a0bb77429bd_GH0.tar.gz) = bf9c0b3bc04b0d4ed31e2019240a2854f650b87a383f47824f8af222e58a4001
+SIZE (HdrHistogram-hdrhistogram-go-3a0bb77429bd_GH0.tar.gz) = 7738
 SHA256 (davecgh-go-spew-v1.1.1_GH0.tar.gz) = 7d82b9bb7291adbe7498fe946920ab3e7fc9e6cbfc3b2294693fad00bf0dd17e
 SIZE (davecgh-go-spew-v1.1.1_GH0.tar.gz) = 42152
 SHA256 (go-yaml-yaml-v2.2.4_GH0.tar.gz) = 9004c9709200d52ef6e5c69af3f71f3adb1a2b7e884ea7597f306bf54b1f007c
