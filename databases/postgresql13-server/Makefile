@@ -99,11 +99,6 @@ DTRACE_INSTALL_TARGET=	install
 .if ${DISTVERSION:C/([0-9]*).*/\1/} >= 11
 OPTIONS_DEFINE+=	LLVM
 LLVM_DESC=		Build with support for JIT-compiling expressions
-LLVM_CONFIGURE_WITH=	llvm
-LLVM_BUILD_DEPENDS=	llvm${PG_LLVM_VERSION}>0:devel/llvm${PG_LLVM_VERSION}
-LLVM_BUILD_DEPENDS+=	llvm-config${PG_LLVM_VERSION}:devel/llvm${PG_LLVM_VERSION}
-LLVM_RUN_DEPENDS+=	llvm-config${PG_LLVM_VERSION}:devel/llvm${PG_LLVM_VERSION}
-LLVM_CONFIGURE_ENV+=	LLVM_CONFIG=${LOCALBASE}/bin/llvm-config${PG_LLVM_VERSION}
 OPTIONS_DEFAULT+=	${OPTIONS_DEFAULT_${CHOSEN_COMPILER_TYPE}}
 OPTIONS_DEFAULT_clang=	LLVM
 .endif
@@ -237,6 +232,14 @@ CONFIGURE_ARGS+=--with-krb5
 
 # For testing files in FILESDIR
 .include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MLLVM}
+CONFIGURE_ARGS+=	--with-llvm
+BUILD_DEPENDS+=		llvm${PG_LLVM_VERSION}>0:devel/llvm${PG_LLVM_VERSION}
+BUILD_DEPENDS+=		llvm-config${PG_LLVM_VERSION}:devel/llvm${PG_LLVM_VERSION}
+RUN_DEPENDS+=		llvm-config${PG_LLVM_VERSION}:devel/llvm${PG_LLVM_VERSION}
+CONFIGURE_ENV+=		LLVM_CONFIG=${LOCALBASE}/bin/llvm-config${PG_LLVM_VERSION}
+.endif
 
 # sync LLVM to the preferred compiler if possible
 # or else use a lower version compiler that is compatible
