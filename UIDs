@@ -315,7 +315,7 @@ httptunnel:*:361:361::0:0:httptunnel Daemon:/nonexistent:/usr/sbin/nologin
 # free: 367
 # free: 368
 # free: 369
-# free: 370
+_wsdd:*:370:370::0:0:Web Service Discovery Daemon:/nonexistent:/usr/sbin/nologin
 # free: 371
 # free: 372
 # free: 373
