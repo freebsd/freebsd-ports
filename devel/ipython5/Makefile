@@ -3,6 +3,7 @@
 
 PORTNAME=	ipython
 PORTVERSION=	5.10.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pexpect>=0:misc/py-pexpect@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}decorator>=0:devel/py-decorator@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pickleshare>=0:databases/py-pickleshare@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}prompt_toolkit1>=1.0.4<2.0.0:devel/py-prompt_toolkit1@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pygments-25<2.6:textproc/py-pygments-25@${PY_FLAVOR} \
+		${PY_PYGMENTS} \
 		${PYTHON_PKGNAMEPREFIX}simplegeneric>0.8:devel/py-simplegeneric@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}traitlets>=4.2:devel/py-traitlets@${PY_FLAVOR}
 
@@ -35,15 +36,6 @@ OPTIONS_DEFINE=	EXAMPLES
 
 PORTSCOUT=	limit:^5\.
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 3000
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}backports.shutil_get_terminal_size>=0:devel/py-backports.shutil_get_terminal_size@${PY_FLAVOR}
-.endif
-.if ${PYTHON_REL} < 3400
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pathlib2>=0:devel/py-pathlib2@${PY_FLAVOR}
-.endif
-
 post-install:
 	@${ECHO_CMD} "/EASY-INSTALL"	> ${WRKDIR}/ex.script
 	@${ECHO_CMD} "a"		>> ${WRKDIR}/ex.script
@@ -58,4 +50,4 @@ post-install:
 post-install-EXAMPLES-on:
 	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
