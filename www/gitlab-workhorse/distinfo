@@ -1,4 +1,4 @@
-TIMESTAMP = 1600806226
+TIMESTAMP = 1602062223
 SHA256 (Azure-azure-pipeline-go-v0.2.2_GH0.tar.gz) = dc0d15949088e17e74da35c3ae2730f52240ad73e25cf795f532b7282de68e2f
 SIZE (Azure-azure-pipeline-go-v0.2.2_GH0.tar.gz) = 16443
 SHA256 (Azure-azure-storage-blob-go-v0.10.0_GH0.tar.gz) = e3d4304b9fcb7dc5911d648a236fa69c06cb3b33ffb05ac4be6bf3d69125f71e
@@ -21,8 +21,8 @@ SHA256 (certifi-gocertifi-ee1a9a0726d2_GH0.tar.gz) = b0b9ac422d6378c82be85f71f20
 SIZE (certifi-gocertifi-ee1a9a0726d2_GH0.tar.gz) = 143846
 SHA256 (client9-reopen-v1.0.0_GH0.tar.gz) = 64829db9b9fd0dd94b2444c45a2cb6e926b79c3a2e589a75a5edc2ba488a7875
 SIZE (client9-reopen-v1.0.0_GH0.tar.gz) = 6283
-SHA256 (codahale-hdrhistogram-3a0bb77429bd_GH0.tar.gz) = 3ef6b86658bc370e027304e55a8685767f7fd8a94199f4bea08c9388bf84a1b0
-SIZE (codahale-hdrhistogram-3a0bb77429bd_GH0.tar.gz) = 7738
+SHA256 (HdrHistogram-hdrhistogram-go-3a0bb77429bd_GH0.tar.gz) = bf9c0b3bc04b0d4ed31e2019240a2854f650b87a383f47824f8af222e58a4001
+SIZE (HdrHistogram-hdrhistogram-go-3a0bb77429bd_GH0.tar.gz) = 7738
 SHA256 (danwakefield-fnmatch-cbb64ac3d964_GH0.tar.gz) = 7ebff38d382142f9220d2cfcb4731d0ae90cdef71238c94a15c35f8aa746007f
 SIZE (danwakefield-fnmatch-cbb64ac3d964_GH0.tar.gz) = 4955
 SHA256 (davecgh-go-spew-v1.1.1_GH0.tar.gz) = 7d82b9bb7291adbe7498fe946920ab3e7fc9e6cbfc3b2294693fad00bf0dd17e

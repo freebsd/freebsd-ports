@@ -3,7 +3,7 @@
 
 PORTNAME?=	gitlab-shell
 PORTVERSION?=	13.7.0
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	devel
 
 MAINTAINER?=	mfechner@FreeBSD.org
@@ -35,7 +35,7 @@ USE_GITHUB=	nodefault
 GH_TUPLE=	\
 		DataDog:dd-trace-go:v1.7.0:datadog_dd_trace_go/vendor/gopkg.in/DataDog/dd-trace-go.v1 \
 		client9:reopen:v1.0.0:client9_reopen/vendor/github.com/client9/reopen \
-		codahale:hdrhistogram:3a0bb77429bd:codahale_hdrhistogram/vendor/github.com/codahale/hdrhistogram \
+		HdrHistogram:hdrhistogram-go:3a0bb77429bd:codahale_hdrhistogram_go/vendor/github.com/codahale/hdrhistogram \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		go-yaml:yaml:v2.2.4:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		golang:crypto:87dc89f01550:golang_crypto/vendor/golang.org/x/crypto \
