@@ -4,12 +4,18 @@
 
 PORTNAME=	rarian
 PORTVERSION=	0.8.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	textproc gnome
 MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	OMF help system based on the Freedesktop specification
+
+LICENSE=	GPLv2+ LGPL21+ ZLIB
+LICENSE_COMB=	multi
+LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING.UTILS
+LICENSE_FILE_LGPL21+ =	${WRKSRC}/COPYING.LIB
+LICENSE_FILE_ZLIB=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl:textproc/docbook-xsl \
 		bash:shells/bash \
@@ -27,8 +33,6 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-convert-dir=${LOCALBASE}/share/omf
 
 INSTALL_TARGET=	install-strip
-
-CONFLICTS=	scrollkeeper-[0-9]*
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/lib/rarian|/db/rarian|' \
