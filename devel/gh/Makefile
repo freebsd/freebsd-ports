@@ -2,7 +2,7 @@
 
 PORTNAME=	gh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.0
+DISTVERSION=	1.1.0
 CATEGORIES=	devel
 
 MAINTAINER=	vulcan@wired.sh
@@ -17,7 +17,7 @@ USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	cli
 GH_PROJECT=	${GH_ACCOUNT}
-GH_TUPLE=	AlecAivazis:survey:v2.1.1:survey_v2/vendor/github.com/AlecAivazis/survey/v2 \
+GH_TUPLE=	AlecAivazis:survey:v2.1.1:alecaivazis_survey_v2/vendor/github.com/AlecAivazis/survey/v2 \
 		MakeNowJust:heredoc:v1.0.0:makenowjust_heredoc/vendor/github.com/MakeNowJust/heredoc \
 		alecthomas:chroma:v0.7.3:alecthomas_chroma/vendor/github.com/alecthomas/chroma \
 		briandowns:spinner:v1.11.1:briandowns_spinner/vendor/github.com/briandowns/spinner \
@@ -25,7 +25,9 @@ GH_TUPLE=	AlecAivazis:survey:v2.1.1:survey_v2/vendor/github.com/AlecAivazis/surv
 		cli:shurcooL-graphql:0f7232a2bf7e:cli_shurcool_graphql/vendor/github.com/shurcooL/graphql \
 		cpuguy83:go-md2man:v2.0.0:cpuguy83_go_md2man_v2/vendor/github.com/cpuguy83/go-md2man/v2 \
 		danwakefield:fnmatch:cbb64ac3d964:danwakefield_fnmatch/vendor/github.com/danwakefield/fnmatch \
+		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		dlclark:regexp2:v1.2.0:dlclark_regexp2/vendor/github.com/dlclark/regexp2 \
+		enescakir:emoji:v1.0.0:enescakir_emoji/vendor/github.com/enescakir/emoji \
 		fatih:color:v1.7.0:fatih_color/vendor/github.com/fatih/color \
 		go-yaml:yaml:eeeca48fe776:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
 		go-yaml:yaml:v2.2.8:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
@@ -33,10 +35,11 @@ GH_TUPLE=	AlecAivazis:survey:v2.1.1:survey_v2/vendor/github.com/AlecAivazis/surv
 		golang:net:ab3426394381:golang_net/vendor/golang.org/x/net \
 		golang:sys:669c56c373c4:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.3:golang_text/vendor/golang.org/x/text \
-		google:goterm:555d40f:google_goterm/vendor/github.com/google/goterm \
+		google:go-cmp:v0.5.2:google_go_cmp/vendor/github.com/google/go-cmp \
 		google:shlex:e7afc7fbc510:google_shlex/vendor/github.com/google/shlex \
 		hashicorp:go-version:v1.2.1:hashicorp_go_version/vendor/github.com/hashicorp/go-version \
 		henvic:httpretty:v0.0.6:henvic_httpretty/vendor/github.com/henvic/httpretty \
+		inconshreveable:mousetrap:v1.0.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
 		kballard:go-shellquote:95032a82bc51:kballard_go_shellquote/vendor/github.com/kballard/go-shellquote \
 		lucasb-eyer:go-colorful:v1.0.3:lucasb_eyer_go_colorful/vendor/github.com/lucasb-eyer/go-colorful \
 		mattn:go-colorable:v0.1.7:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
@@ -46,14 +49,16 @@ GH_TUPLE=	AlecAivazis:survey:v2.1.1:survey_v2/vendor/github.com/AlecAivazis/surv
 		microcosm-cc:bluemonday:v1.0.2:microcosm_cc_bluemonday/vendor/github.com/microcosm-cc/bluemonday \
 		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
 		muesli:reflow:v0.1.0:muesli_reflow/vendor/github.com/muesli/reflow \
-		muesli:termenv:v0.6.0:muesli_termenv/vendor/github.com/muesli/termenv \
+		muesli:termenv:v0.7.2:muesli_termenv/vendor/github.com/muesli/termenv \
 		olekukonko:tablewriter:v0.0.4:olekukonko_tablewriter/vendor/github.com/olekukonko/tablewriter \
+		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
 		rivo:uniseg:v0.1.0:rivo_uniseg/vendor/github.com/rivo/uniseg \
 		russross:blackfriday:v2.0.1:russross_blackfriday_v2/vendor/github.com/russross/blackfriday/v2 \
 		shurcooL:githubv4:f27d2ca7f6d5:shurcool_githubv4/vendor/github.com/shurcooL/githubv4 \
 		shurcooL:sanitized_anchor_name:v1.0.0:shurcool_sanitized_anchor_name/vendor/github.com/shurcooL/sanitized_anchor_name \
 		spf13:cobra:v1.0.0:spf13_cobra/vendor/github.com/spf13/cobra \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
+		stretchr:testify:v1.6.1:stretchr_testify/vendor/github.com/stretchr/testify \
 		yuin:goldmark:v1.2.0:yuin_goldmark/vendor/github.com/yuin/goldmark
 
 _BUILD_VERSION=	${DISTVERSION}
@@ -75,9 +80,6 @@ OPTIONS_SUB=		yes
 
 COMPLETIONS_DESC=	Build and install shell completions for bash, fish and zsh
 MANPAGES_DESC=		Build and install auto-generated manpages
-
-pre-build:
-	${LN} -sf ${WRKSRC_muesli_termenv}/termenv_linux.go ${WRKSRC_muesli_termenv}/termenv_freebsd.go
 
 do-build-COMPLETIONS-on:
 .for SHELL in bash fish zsh
