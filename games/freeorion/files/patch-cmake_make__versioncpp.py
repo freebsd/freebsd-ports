@@ -1,6 +1,6 @@
---- cmake/make_versioncpp.py.orig	2020-07-10 08:49:11 UTC
+--- cmake/make_versioncpp.py.orig	2020-09-25 11:06:39 UTC
 +++ cmake/make_versioncpp.py
-@@ -127,18 +127,6 @@ version = "0.4.10"
+@@ -127,18 +127,6 @@ version = "0.4.10.1"
  branch = ""
  build_no = INVALID_BUILD_NO
  
@@ -13,7 +13,7 @@
 -    commit = check_output(["git", "show", "--no-show-signature", "-s", "--format=%h", "--abbrev=7", "HEAD"], universal_newlines=True).strip()
 -    timestamp = float(check_output(["git", "show", "--no-show-signature", "-s", "--format=%ct", "HEAD"], universal_newlines=True).strip())
 -    build_no = ".".join([datetime.utcfromtimestamp(timestamp).strftime("%Y-%m-%d"), commit])
--except IOError:
+-except (IOError, CalledProcessError):
 -    print("WARNING: git not installed or not setup correctly")
 -
  for generator in generators:

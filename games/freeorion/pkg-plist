@@ -5,10 +5,53 @@ bin/freeoriond
 lib/freeorion/libfreeorioncommon.so
 lib/freeorion/libfreeorionparse.so
 %%NO_HEADLESS%%share/applications/org.freeorion.FreeOrion.desktop
-share/icons/hicolor/128x128/apps/freeorion.png
-share/icons/hicolor/16x16/apps/freeorion.png
-share/icons/hicolor/24x24/apps/freeorion.png
-share/icons/hicolor/256x256/apps/freeorion.png
-share/icons/hicolor/32x32/apps/freeorion.png
-share/icons/hicolor/64x64/apps/freeorion.png
+%%NO_HEADLESS%%share/icons/hicolor/128x128/apps/freeorion.png
+%%NO_HEADLESS%%share/icons/hicolor/16x16/apps/freeorion.png
+%%NO_HEADLESS%%share/icons/hicolor/24x24/apps/freeorion.png
+%%NO_HEADLESS%%share/icons/hicolor/256x256/apps/freeorion.png
+%%NO_HEADLESS%%share/icons/hicolor/32x32/apps/freeorion.png
+%%NO_HEADLESS%%share/icons/hicolor/64x64/apps/freeorion.png
 %%NO_HEADLESS%%share/metainfo/org.freeorion.FreeOrion.metainfo.xml
+@dir %%DATADIR%%/default/data/sound/combat
+@dir %%DATADIR%%/default/data/art/stars_sidepanel
+@dir %%DATADIR%%/default/data/art/stars/old_stars
+@dir %%DATADIR%%/default/data/art/species/preview
+@dir %%DATADIR%%/default/data/art/planets/rings
+@dir %%DATADIR%%/default/data/art/planets/overlays
+@dir %%DATADIR%%/default/data/art/planets/damage
+@dir %%DATADIR%%/default/data/art/planets/clouds
+@dir %%DATADIR%%/default/data/art/planets/citylights
+@dir %%DATADIR%%/default/data/art/planets/atmospheres
+@dir %%DATADIR%%/default/data/art/planets/asteroids
+@dir %%DATADIR%%/default/data/art/nebulae
+@dir %%DATADIR%%/default/data/art/misc/system_selection_tiny
+@dir %%DATADIR%%/default/data/art/misc/system_selection
+@dir %%DATADIR%%/default/data/art/icons/tech/unused
+@dir %%DATADIR%%/default/data/art/icons/tech/controls
+@dir %%DATADIR%%/default/data/art/icons/tech/categories
+@dir %%DATADIR%%/default/data/art/icons/species
+@dir %%DATADIR%%/default/data/art/icons/specials_tiny
+@dir %%DATADIR%%/default/data/art/icons/specials_large
+@dir %%DATADIR%%/default/data/art/icons/specials_huge
+@dir %%DATADIR%%/default/data/art/icons/sitrep
+@dir %%DATADIR%%/default/data/art/icons/ship_parts
+@dir %%DATADIR%%/default/data/art/icons/ship_hulls
+@dir %%DATADIR%%/default/data/art/icons/planet
+@dir %%DATADIR%%/default/data/art/icons/monsters
+@dir %%DATADIR%%/default/data/art/icons/meter
+@dir %%DATADIR%%/default/data/art/icons/focus
+@dir %%DATADIR%%/default/data/art/icons/fleet
+@dir %%DATADIR%%/default/data/art/icons/flags/field
+@dir %%DATADIR%%/default/data/art/icons/flags/emblem
+@dir %%DATADIR%%/default/data/art/icons/buttons
+@dir %%DATADIR%%/default/data/art/icons/building
+@dir %%DATADIR%%/default/data/art/hulls_design
+@dir %%DATADIR%%/default/data/art/galaxy_decoration/rust_set
+@dir %%DATADIR%%/default/data/art/galaxy_decoration/red_set
+@dir %%DATADIR%%/default/data/art/galaxy_decoration/obsidian_set
+@dir %%DATADIR%%/default/data/art/galaxy_decoration/haze_set
+@dir %%DATADIR%%/default/data/art/galaxy_decoration/grey_set
+@dir %%DATADIR%%/default/data/art/galaxy_decoration/blue_set
+@dir %%DATADIR%%/default/data/art/fields
+@dir %%DATADIR%%/default/data/art/encyclopedia/planet_environments
+@dir %%DATADIR%%/default/data/art/cursors

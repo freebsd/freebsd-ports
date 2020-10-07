@@ -3,7 +3,7 @@
 
 PORTNAME=	freeorion
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.10
+DISTVERSION=	0.4.10.1
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -41,7 +41,6 @@ HEADLESS_LIB_DEPENDS_OFF= \
 			libogg.so:audio/libogg \
 			libvorbis.so:audio/libvorbis \
 			libpng.so:graphics/png
-HEADLESS_BROKEN=	does not build
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
