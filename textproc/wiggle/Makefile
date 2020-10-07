@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wiggle
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	textproc
 MASTER_SITES=	http://neil.brown.name/wiggle/
 
@@ -13,7 +13,9 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	bash:shells/bash
 
-USES=		gmake groff ncurses
+USES=		gmake groff
+USE_GITHUB=	yes
+GH_TUPLE=	neilbrown:${PORTNAME}:v${PORTVERSION}
 
 MAKE_ARGS+=	CFLAGS="${CFLAGS} -I. -Wall -Wstrict-prototypes -Wextra -Wno-unused-parameter"
 
