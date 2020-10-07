@@ -1,6 +1,30 @@
---- src/UPnPBase.cpp.orig	2016-09-16 07:55:07 UTC
-+++ src/UPnPBase.cpp
-@@ -1127,7 +1127,11 @@ bool CUPnPControlPoint::PrivateDeletePortMapping(
+--- src/UPnPBase.cpp.orig	2016-09-16 09:55:07.000000000 +0200
++++ src/UPnPBase.cpp	2020-10-07 09:01:15.821714000 +0200
+@@ -823,14 +823,18 @@
+ 	s_CtrlPoint = this;
+ 	// Null string at first
+ 	std::ostringstream msg;
+-
++	
++	// Declare those here to avoid 
++	// "jump to label ‘error’ [-fpermissive] crosses initialization
++	// of ‘char* ipAddress’"
++	unsigned short port;
++	char *ipAddress;
++	
+ 	// Start UPnP
+ 	int ret;
+-	char *ipAddress = NULL;
+-	unsigned short port = 0;
+-	ret = UpnpInit(ipAddress, udpPort);
++	ret = UpnpInit2(0, udpPort);
+ 	if (ret != UPNP_E_SUCCESS) {
+-		msg << "error(UpnpInit): Error code ";
++		msg << "error(UpnpInit2): Error code ";
+ 		goto error;
+ 	}
+ 	port = UpnpGetServerPort();
+@@ -1127,7 +1131,11 @@
  
  
  // This function is static
@@ -12,7 +36,7 @@
  {
  	std::ostringstream msg;
  	std::ostringstream msg2;
-@@ -1149,24 +1153,47 @@ int CUPnPControlPoint::Callback(Upnp_EventType EventTy
+@@ -1149,24 +1157,47 @@
  		msg2<< "UPNP_DISCOVERY_SEARCH_RESULT: ";
  		// UPnP Discovery
  upnpDiscovery:
@@ -60,7 +84,7 @@
  			AddDebugLogLineN(logUPnP, msg2);
  		}
  		if (doc) {
-@@ -1194,8 +1221,14 @@ upnpDiscovery:
+@@ -1194,8 +1225,14 @@
  					AddDebugLogLineC(logUPnP, msg);
  				}
  				// Add the root device to our list
@@ -75,7 +99,7 @@
  			}
  			// Free the XML doc tree
  			IXML::Document::Free(doc);
-@@ -1216,28 +1249,60 @@ upnpDiscovery:
+@@ -1216,28 +1253,60 @@
  	case UPNP_DISCOVERY_ADVERTISEMENT_BYEBYE: {
  		//fprintf(stderr, "Callback: UPNP_DISCOVERY_ADVERTISEMENT_BYEBYE\n");
  		// UPnP Device Removed
@@ -136,7 +160,7 @@
  		break;
  	}
  	case UPNP_EVENT_SUBSCRIBE_COMPLETE:
-@@ -1252,19 +1317,39 @@ upnpDiscovery:
+@@ -1252,19 +1321,39 @@
  		//fprintf(stderr, "Callback: UPNP_EVENT_RENEWAL_COMPLETE\n");
  		msg << "error(UPNP_EVENT_RENEWAL_COMPLETE): ";
  upnpEventRenewalComplete:
@@ -176,7 +200,7 @@
  		}
  
  		break;
-@@ -1280,29 +1365,56 @@ upnpEventRenewalComplete:
+@@ -1280,29 +1369,56 @@
  		msg << "error(UPNP_EVENT_SUBSCRIPTION_EXPIRED): ";
  		msg2 << "UPNP_EVENT_SUBSCRIPTION_EXPIRED: ";
  upnpEventSubscriptionExpired:
@@ -233,7 +257,7 @@
  					"' with SID == '" <<
  					newSID << "'.";
  				AddDebugLogLineC(logUPnP, msg2);
-@@ -1321,17 +1433,34 @@ upnpEventSubscriptionExpired:
+@@ -1321,17 +1437,34 @@
  	case UPNP_CONTROL_ACTION_COMPLETE: {
  		//fprintf(stderr, "Callback: UPNP_CONTROL_ACTION_COMPLETE\n");
  		// This is here if we choose to do this asynchronously
@@ -268,7 +292,7 @@
  				"<UpnpSendActionAsync>");
  		}
  		/* No need for any processing here, just print out results.
-@@ -1342,21 +1471,37 @@ upnpEventSubscriptionExpired:
+@@ -1342,21 +1475,37 @@
  	case UPNP_CONTROL_GET_VAR_COMPLETE: {
  		//fprintf(stderr, "Callback: UPNP_CONTROL_GET_VAR_COMPLETE\n");
  		msg << "error(UPNP_CONTROL_GET_VAR_COMPLETE): ";
