@@ -9,12 +9,3 @@
    add_cxx_compiler_flag(-Wthread-safety)
    if (HAVE_CXX_FLAG_WTHREAD_SAFETY)
      cxx_feature_check(THREAD_SAFETY_ATTRIBUTES)
-@@ -260,7 +260,7 @@ endif()
- cxx_feature_check(STEADY_CLOCK)
- # Ensure we have pthreads
- set(THREADS_PREFER_PTHREAD_FLAG ON)
--find_package(Threads REQUIRED)
-+find_package(Threads)
- 
- # Set up directories
- include_directories(${PROJECT_SOURCE_DIR}/include)
