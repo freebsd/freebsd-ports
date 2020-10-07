@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cppcheck
-PORTVERSION=	2.1
+PORTVERSION=	2.2
 PORTREVISION?=	0	# devel/cppcheck-gui
 CATEGORIES=	devel
 
@@ -23,7 +23,7 @@ RUN_DEPENDS=		cppcheck:devel/cppcheck
 
 CMAKE_ARGS=		-DBUILD_GUI=TRUE
 USES+=			qt:5
-USE_QT=			core gui widgets printsupport qmake_build buildtools_build linguisttools_build
+USE_QT=			core gui widgets printsupport help qmake_build buildtools_build linguisttools_build
 
 BUILD_WRKSRC=		${WRKSRC}/gui
 INSTALL_WRKSRC=		${WRKSRC}/gui
@@ -76,7 +76,7 @@ post-install-MANPAGES-on:
 	${INSTALL_MAN} ${WRKSRC}/man/cppcheck.1 ${STAGEDIR}${PREFIX}/man/man1
 
 do-test-TEST-on:
-	cd ${WRKSRC} && ctest
+	cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ctest
 .endif
 
 .include <bsd.port.mk>
