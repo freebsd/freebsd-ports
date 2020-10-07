@@ -1,0 +1,193 @@
+--- zfs-stats.orig	2020-10-07 13:06:33 UTC
++++ zfs-stats
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env -iS perl
+ #
+ # $Id$
+ #
+@@ -46,7 +46,7 @@ use warnings;
+ use Getopt::Long;
+ Getopt::Long::Configure ("bundling");
+ 
+-my $version = '1.3.0';
++my $version = '1.3.0_1';
+ 
+ my $usetunable = 1;			# Change to 0 to disable sysctl MIB spill.
+ my $show_sysctl_descriptions = 0;	# Change to 1 (or use the -d flag) to show sysctl descriptions.
+@@ -201,6 +201,14 @@ sub fPerc {
+ 	} else { return sprintf('%0.' . $Decimal . 'f', 100) . "%"; }
+ }
+ 
++sub fRatio {
++	my $lVal = $_[0] // 0;
++	my $rVal = $_[1] // 1;
++	my $Decimal = $_[2] // 2;
++
++	return sprintf('%0.' . $Decimal . 'f', ($lVal / $rVal));
++}
++
+ my @Kstats = qw(
+ 	hw.machine
+ 	hw.machine_arch
+@@ -215,12 +223,28 @@ my @Kstats = qw(
+ 	vm.kmem_size_min
+ 	vm.kmem_size_scale
+ 	vm.stats
+-	kstat.zfs
++	kstat.zfs.misc.abdstats
++	kstat.zfs.misc.arcstats
++	kstat.zfs.misc.dbufstats
++	kstat.zfs.misc.dmu_tx
++	kstat.zfs.misc.dnodestats
++	kstat.zfs.misc.fletcher_4_bench
++	kstat.zfs.misc.fm
++	kstat.zfs.misc.vdev_cache_stats
++	kstat.zfs.misc.vdev_mirror_stats
++	kstat.zfs.misc.vdev_raidz_bench
++	kstat.zfs.misc.xuio_stats
++	kstat.zfs.misc.zfetchstats
++	kstat.zfs.misc.zil
++	kstat.zfs.misc.zstd
+ 	vfs.zfs
+ );
+ 
++my $IsOpenZFS = 1;
++
+ sub _start {
+ 	my $daydate = localtime; chomp $daydate;
++	$IsOpenZFS = defined($Kstat->{"vfs.zfs.vdev.cache_size"});
+ 	div1;
+ 	printf("ZFS Subsystem Report\t\t\t\t%s", $daydate);
+ 	div2;
+@@ -330,17 +354,16 @@ sub _arc_summary {
+ 	my $deleted = $Kstat->{"kstat.zfs.misc.arcstats.deleted"};
+ 	my $evict_skip = $Kstat->{"kstat.zfs.misc.arcstats.evict_skip"};
+ 	my $mutex_miss = $Kstat->{"kstat.zfs.misc.arcstats.mutex_miss"};
+-	my $recycle_miss = $Kstat->{"kstat.zfs.misc.arcstats.recycle_miss"};
+ 
+ 	print "ARC Misc:\n";
+ 	printf("\tDeleted:\t\t\t\t%s\n", fHits($deleted));
+-	printf("\tRecycle Misses:\t\t\t\t%s\n", fHits($recycle_miss));
+ 	printf("\tMutex Misses:\t\t\t\t%s\n", fHits($mutex_miss));
+ 	printf("\tEvict Skips:\t\t\t\t%s\n", fHits($evict_skip));
+ 	print "\n";
+ 
+ 	### ARC Sizing ###
+ 	my $arc_size = $Kstat->{"kstat.zfs.misc.arcstats.size"};
++	my $arc_uncompressed_size = $Kstat->{"kstat.zfs.misc.arcstats.uncompressed_size"};
+ 	my $mru_size = $Kstat->{"kstat.zfs.misc.arcstats.p"};
+ 	my $target_max_size = $Kstat->{"kstat.zfs.misc.arcstats.c_max"};
+ 	my $target_min_size = $Kstat->{"kstat.zfs.misc.arcstats.c_min"};
+@@ -356,7 +379,12 @@ sub _arc_summary {
+ 		fPerc($target_min_size, $target_max_size), fBytes($target_min_size));
+ 	printf("\tMax Size (High Water):\t\t%d:1\t%s\n",
+ 		$target_size_ratio, fBytes($target_max_size));
++	printf("\tDecompressed Data Size:\t\t\t%s\n",
++		fBytes($arc_uncompressed_size));
++	printf("\tCompression Factor:\t\t\t%s\n",
++		fRatio($arc_uncompressed_size, $arc_size));
+ 
++
+ 	print "\nARC Size Breakdown:\n";
+ 	if ($arc_size > $target_size) {
+ 		my $mfu_size = ($arc_size - $mru_size);
+@@ -424,7 +452,7 @@ sub _arc_efficiency {
+ 	printf("\tData Demand Efficiency:\t\t%s\t%s\n",
+ 		fPerc($demand_data_hits, $demand_data_total), fHits($demand_data_total));
+ 
+-	if ($prefetch_data_total > 0){ 
++	if ($prefetch_data_total > 0){
+ 		printf("\tData Prefetch Efficiency:\t%s\t%s\n",
+ 			fPerc($prefetch_data_hits, $prefetch_data_total), fHits($prefetch_data_total));
+ 	}
+@@ -474,6 +502,7 @@ sub _l2arc_summary {
+ 		return;
+ 	}
+ 
++	my $l2_asize = $Kstat->{"kstat.zfs.misc.arcstats.l2_asize"};
+ 	my $l2_abort_lowmem = $Kstat->{"kstat.zfs.misc.arcstats.l2_abort_lowmem"};
+ 	my $l2_cksum_bad = $Kstat->{"kstat.zfs.misc.arcstats.l2_cksum_bad"};
+ 	my $l2_evict_lock_retry = $Kstat->{"kstat.zfs.misc.arcstats.l2_evict_lock_retry"};
+@@ -493,14 +522,13 @@ sub _l2arc_summary {
+ 	my $l2_write_full = $Kstat->{"kstat.zfs.misc.arcstats.l2_write_full"};
+ 	my $l2_write_in_l2 = $Kstat->{"kstat.zfs.misc.arcstats.l2_write_in_l2"};
+ 	my $l2_write_io_in_progress = $Kstat->{"kstat.zfs.misc.arcstats.l2_write_io_in_progress"};
+-	my $l2_write_not_cacheable = $Kstat->{"kstat.zfs.misc.arcstats.l2_write_not_cacheable"};
++	#my $l2_write_not_cacheable = $Kstat->{"kstat.zfs.misc.arcstats.l2_write_not_cacheable"};
+ 	my $l2_write_passed_headroom = $Kstat->{"kstat.zfs.misc.arcstats.l2_write_passed_headroom"};
+-	my $l2_write_pios = $Kstat->{"kstat.zfs.misc.arcstats.l2_write_pios"};
++	#my $l2_write_pios = $Kstat->{"kstat.zfs.misc.arcstats.l2_write_pios"};
+ 	my $l2_write_spa_mismatch = $Kstat->{"kstat.zfs.misc.arcstats.l2_write_spa_mismatch"};
+ 	my $l2_write_trylock_fail = $Kstat->{"kstat.zfs.misc.arcstats.l2_write_trylock_fail"};
+ 	my $l2_writes_done = $Kstat->{"kstat.zfs.misc.arcstats.l2_writes_done"};
+ 	my $l2_writes_error = $Kstat->{"kstat.zfs.misc.arcstats.l2_writes_error"};
+-	my $l2_writes_hdr_miss = $Kstat->{"kstat.zfs.misc.arcstats.l2_writes_hdr_miss"};
+ 	my $l2_writes_sent = $Kstat->{"kstat.zfs.misc.arcstats.l2_writes_sent"};
+ 
+ 	my $l2_access_total = ($l2_hits + $l2_misses);
+@@ -510,19 +538,28 @@ sub _l2arc_summary {
+ 	if ($l2_health_count > 0) {
+ 		print "(DEGRADED)\n";
+ 	} else { print "(HEALTHY)\n"; }
+-	printf("\tPassed Headroom:\t\t\t%s\n", fHits($l2_write_passed_headroom));
+-	printf("\tTried Lock Failures:\t\t\t%s\n", fHits($l2_write_trylock_fail));
+-	printf("\tIO In Progress:\t\t\t\t%s\n", fHits($l2_write_io_in_progress));
++
++	if (not $IsOpenZFS) {
++		printf("\tPassed Headroom:\t\t\t%s\n", fHits($l2_write_passed_headroom));
++		printf("\tTried Lock Failures:\t\t\t%s\n", fHits($l2_write_trylock_fail));
++		printf("\tIO In Progress:\t\t\t\t%s\n", fHits($l2_write_io_in_progress));
++	}
+ 	printf("\tLow Memory Aborts:\t\t\t%s\n", fHits($l2_abort_lowmem));
+ 	printf("\tFree on Write:\t\t\t\t%s\n", fHits($l2_free_on_write));
+-	printf("\tWrites While Full:\t\t\t%s\n", fHits($l2_write_full));
++	if (not $IsOpenZFS) {
++		printf("\tWrites While Full:\t\t\t%s\n", fHits($l2_write_full));
++	}
+ 	printf("\tR/W Clashes:\t\t\t\t%s\n", fHits($l2_rw_clash));
+ 	printf("\tBad Checksums:\t\t\t\t%s\n", fHits($l2_cksum_bad));
+ 	printf("\tIO Errors:\t\t\t\t%s\n", fHits($l2_io_error));
+-	printf("\tSPA Mismatch:\t\t\t\t%s\n", fHits($l2_write_spa_mismatch));
++	if (not $IsOpenZFS) {
++		printf("\tSPA Mismatch:\t\t\t\t%s\n", fHits($l2_write_spa_mismatch));
++	}
+ 	print "\n";
+ 
+-	printf("L2 ARC Size: (Adaptive)\t\t\t\t%s\n", fBytes($l2_size));
++	printf("L2 ARC Size: (Adaptive)\t\t\t\t%s\n", fBytes($l2_asize));
++	printf("\tDecompressed Data Size:\t\t\t%s\n", fBytes($l2_size));
++	printf("\tCompression Factor:\t\t\t%s\n", fRatio($l2_size, $l2_asize));
+ 	printf("\tHeader Size:\t\t\t%s\t%s\n",
+ 		fPerc($l2_hdr_size, $l2_size), fBytes($l2_hdr_size));
+ 	print "\n";
+@@ -541,12 +578,14 @@ sub _l2arc_summary {
+ 	printf("\tFeeds:\t\t\t\t\t%s\n", fHits($l2_feeds));
+ 	print "\n";
+ 
+-	print "L2 ARC Buffer:\n";
+-	printf("\tBytes Scanned:\t\t\t\t%s\n", fBytes($l2_write_buffer_bytes_scanned));
+-	printf("\tBuffer Iterations:\t\t\t%s\n", fHits($l2_write_buffer_iter));
+-	printf("\tList Iterations:\t\t\t%s\n", fHits($l2_write_buffer_list_iter));
+-	printf("\tNULL List Iterations:\t\t\t%s\n", fHits($l2_write_buffer_list_null_iter));
+-	print "\n";
++	if (not $IsOpenZFS) {
++		print "L2 ARC Buffer:\n";
++		printf("\tBytes Scanned:\t\t\t\t%s\n", fBytes($l2_write_buffer_bytes_scanned));
++		printf("\tBuffer Iterations:\t\t\t%s\n", fHits($l2_write_buffer_iter));
++		printf("\tList Iterations:\t\t\t%s\n", fHits($l2_write_buffer_list_iter));
++		printf("\tNULL List Iterations:\t\t\t%s\n", fHits($l2_write_buffer_list_null_iter));
++		print "\n";
++	}
+ 
+ 	print "L2 ARC Writes:\n";
+ 	if ($l2_writes_done != $l2_writes_sent) {
+@@ -582,7 +621,7 @@ sub _vdev_summary {
+ 	my $vdev_cache_hits = $Kstat->{"kstat.zfs.misc.vdev_cache_stats.hits"};
+ 	my $vdev_cache_total = ($vdev_cache_misses + $vdev_cache_hits + $vdev_cache_delegations);
+ 
+-	if ($Kstat->{"vfs.zfs.vdev.cache.size"} == 0) {
++	if (($IsOpenZFS ? $Kstat->{"vfs.zfs.vdev.cache_size"} : $Kstat->{"vfs.zfs.vdev.cache.size"}) == 0) {
+ 		printf "VDEV cache is disabled\n";
+ 	} elsif ($vdev_cache_total > 0) {
+ 		printf("VDEV Cache Summary:\t\t\t\t%s\n", fHits($vdev_cache_total));
