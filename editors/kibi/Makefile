@@ -2,7 +2,7 @@
 
 PORTNAME=	kibi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.0
+DISTVERSION=	0.2.1
 CATEGORIES=	editors
 
 MAINTAINER=	vulcan@wired.sh
@@ -14,21 +14,19 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	ilai-deutel
-CARGO_CRATES=	arc-swap-0.4.6 \
-		bitflags-1.2.1 \
-		cc-1.0.52 \
+
+CARGO_CRATES=	bitflags-1.2.1 \
 		cfg-if-0.1.10 \
 		cloudabi-0.0.3 \
 		getrandom-0.1.14 \
 		lazy_static-1.4.0 \
-		libc-0.2.69 \
+		libc-0.2.79 \
 		lock_api-0.3.4 \
-		nix-0.17.0 \
 		parking_lot-0.10.2 \
 		parking_lot_core-0.7.2 \
 		ppv-lite86-0.2.6 \
-		proc-macro2-1.0.10 \
-		quote-1.0.3 \
+		proc-macro2-1.0.12 \
+		quote-1.0.4 \
 		rand-0.7.3 \
 		rand_chacha-0.2.2 \
 		rand_core-0.5.1 \
@@ -36,18 +34,15 @@ CARGO_CRATES=	arc-swap-0.4.6 \
 		redox_syscall-0.1.56 \
 		remove_dir_all-0.5.2 \
 		scopeguard-1.1.0 \
-		serial_test-0.4.0 \
-		serial_test_derive-0.4.0 \
-		signal-hook-0.1.13 \
-		signal-hook-registry-1.2.0 \
+		serial_test-0.5.0 \
+		serial_test_derive-0.5.0 \
 		smallvec-1.4.0 \
 		syn-1.0.18 \
 		tempfile-3.1.0 \
-		unicode-width-0.1.7 \
+		unicode-width-0.1.8 \
 		unicode-xid-0.2.0 \
-		void-1.0.2 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
-		winapi-0.3.8 \
+		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0

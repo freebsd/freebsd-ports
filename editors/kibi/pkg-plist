@@ -2,6 +2,7 @@ bin/kibi
 %%SYNTAX%%%%DATADIR%%/syntax.d/bash.ini
 %%SYNTAX%%%%DATADIR%%/syntax.d/gitignore.ini
 %%SYNTAX%%%%DATADIR%%/syntax.d/ini.ini
+%%SYNTAX%%%%DATADIR%%/syntax.d/json.ini
 %%SYNTAX%%%%DATADIR%%/syntax.d/python.ini
 %%SYNTAX%%%%DATADIR%%/syntax.d/rust.ini
 %%SYNTAX%%%%DATADIR%%/syntax.d/toml.ini
