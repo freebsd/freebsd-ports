@@ -34,6 +34,8 @@ rcvar=${name}_enable
 start_precmd="${name}_precmd"
 start_cmd="${name}_start"
 stop_cmd="${name}_stop"
+status_cmd="${name}_status"
+
 # required_modules="cuse"
 virtual_oss_default_args="\
   -T /dev/sndstat \
@@ -65,6 +67,13 @@ virtual_oss()
 {
   # When running early we need to pre-load some libraries
   env LD_PRELOAD=%%LIBFFTW3%%%%LIBSAMPLERATE%% %%PREFIX%%/sbin/virtual_oss $*
+}
+
+virtual_oss_pids()
+{
+  pids=$(pgrep -d ' ' $name)
+  pids=${pids% }
+  printf "${pids}"
 }
 
 virtual_oss_precmd()
@@ -123,6 +132,18 @@ virtual_oss_stop()
     stop_instance ${config}
     sleep ${virtual_oss_delay}
   done
+}
+
+virtual_oss_status()
+{
+  pids=$(virtual_oss_pids)
+
+  if [ "${pids}" ]; then
+    echo "${name} is running as pid ${pids}."
+  else
+    echo "${name} is not running."
+    return 1
+  fi
 }
 
 run_rc_command $*
