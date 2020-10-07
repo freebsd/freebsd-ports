@@ -1,8 +1,8 @@
-This port of SCO / USL's 'cscope' lets one easily navigate large C programs.
-It's designed to answer questions like where symbols are defined and used,
-where variables are assigned, and much more.
-
-The Santa Cruz Operation (SCO) has made this available under a very friendly,
-BSD-style Open Source License.
+cscope is a screen-oriented software development tool that allows the user to
+browse through C source files for specified code elements. It can find symbols,
+global definitions, functions called by a function, functions calling a
+function, arbitrary regexp patterns and much more. cscope can be used for
+projects of all sizes. Vim and Emacs integration is available.
 
 WWW: http://cscope.sourceforge.net/
+https://sourceforge.net/projects/cscope/
