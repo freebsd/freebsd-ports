@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	micro
-PORTVERSION=	2.0.7
+PORTVERSION=	2.0.8
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
 
@@ -41,11 +41,11 @@ GH_TUPLE=	blang:semver:v3.5.1:blang_semver/vendor/github.com/blang/semver \
 		zyedidia:json5:2da050b1a98d:zyedidia_json5/vendor/github.com/zyedidia/json5 \
 		zyedidia:poller:v1.0.1:zyedidia_poller/vendor/github.com/zyedidia/poller \
 		zyedidia:pty:v2.0.0:zyedidia_pty/vendor/github.com/zyedidia/pty \
-		zyedidia:tcell:v2.0.2:zyedidia_tcell_v2/vendor/github.com/zyedidia/tcell/v2 \
+		zyedidia:tcell:v2.0.6:zyedidia_tcell_v2/vendor/github.com/zyedidia/tcell/v2 \
 		zyedidia:terminal:533c623e2415:zyedidia_terminal/vendor/github.com/zyedidia/terminal
 
 _BUILD_VERSION=	${DISTVERSION}
-_BUILD_HASH=	5044ccf
+_BUILD_HASH=	cfcb2e4
 _BUILD_DATE=	$$(date '+%B %d, %Y')
 _BUILD_DEBUG=	OFF
 
