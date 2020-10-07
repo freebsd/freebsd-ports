@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	emby-server
-PORTVERSION=	4.4.3.0
-PORTREVISION=	2
+PORTVERSION=	4.5.1.0
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/MediaBrowser/Emby.Releases/releases/download/${PORTVERSION}/ \
 		https://mediabrowser.github.io/embytools/
@@ -50,23 +49,6 @@ LIB_DEPENDS=	libass.so:multimedia/libass \
 USES=		compiler:c11 gmake iconv localbase:ldflags mono pkgconfig sqlite
 USE_RC_SUBR=	${PORTNAME}
 
-FFVERSION=	2020_02_24
-
-SUB_FILES=	ImageMagickSharp.dll.config \
-		SQLitePCLRaw.provider.sqlite3.dll.config
-SUB_LIST=	GROUP=${GROUPS} \
-		PORTNAME=${PORTNAME} \
-		RC_NAME=emby_server \
-		USER=${USERS}
-
-USERS=		emby
-GROUPS=		emby
-
-WRKSRC=		${WRKDIR}/ffmpeg-${FFVERSION}_public
-
-MAKE_ENV=	V=1
-NOPRECIOUSMAKEVARS=	yes
-
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--cc="${CC}" \
 		--disable-alsa \
@@ -102,19 +84,36 @@ CONFIGURE_ARGS=	--cc="${CC}" \
 		--enable-vaapi \
 		--enable-version3
 
+MAKE_ENV=	V=1
+
+NOPRECIOUSMAKEVARS=	yes
+SUB_FILES=	ImageMagickSharp.dll.config \
+		SQLitePCLRaw.provider.sqlite3.dll.config
+SUB_LIST=	GROUP=${GROUPS} \
+		PORTNAME=${PORTNAME} \
+		RC_NAME=emby_server \
+		USER=${USERS}
+
+WRKSRC=		${WRKDIR}/ffmpeg-${FFVERSION}_public
+
+USERS=		emby
+GROUPS=		emby
+
 OPTIONS_DEFINE=		LAME SMB X11
 OPTIONS_DEFAULT=	SMB X11
 
-LAME_CONFIGURE_ENABLE=	libmp3lame
 LAME_LIB_DEPENDS=	libmp3lame.so:audio/lame
+LAME_CONFIGURE_ENABLE=	libmp3lame
 
-SMB_CONFIGURE_ENABLE=	libsmbclient
 SMB_USES=		samba:lib
+SMB_CONFIGURE_ENABLE=	libsmbclient
 
-X11_USES=		xorg
-X11_USE=		xorg=x11
 X11_LIB_DEPENDS=	libMagickWand-6.so:graphics/ImageMagick6
 X11_LIB_DEPENDS_OFF=	libMagickWand-6.so:graphics/ImageMagick6-nox11
+X11_USES=		xorg
+X11_USE=		xorg=x11
+
+FFVERSION=	2020_05_23
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/emby-server/system
