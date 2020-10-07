@@ -21,4 +21,6 @@ RUN_DEPENDS=	p5-Class-Adapter>=1.05:devel/p5-Class-Adapter \
 USES=		perl5
 USE_PERL5=	configure
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
