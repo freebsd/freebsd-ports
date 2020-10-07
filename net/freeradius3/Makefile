@@ -151,6 +151,11 @@ GROUPS=		${RADIUS_GROUP}
 EXPM=		yes
 .endif
 
+# python3 module is still experimental
+.if ${PORT_OPTIONS:MPYTHON} && empty(PORT_OPTIONS:MEXPERIMENTAL)
+EXPM=		yes
+.endif
+
 # rlm_ruby module is still experimental
 .if ${PORT_OPTIONS:MRUBY} && empty(PORT_OPTIONS:MEXPERIMENTAL)
 EXPM=		yes
