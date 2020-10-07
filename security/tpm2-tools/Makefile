@@ -14,7 +14,7 @@ LIB_DEPENDS=	libtss2-esys.so:security/tpm2-tss \
 		libcurl.so:ftp/curl \
 		libuuid.so:misc/e2fsprogs-libuuid
 
-USES=	gmake libtool pkgconfig ssl
+USES=		compiler:c11 gmake libtool pkgconfig ssl
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CRYPTO_CFLAGS="-I${OPENSSLINC}" CRYPTO_LIBS="-L${OPENSSLLIB} -lcrypto"
