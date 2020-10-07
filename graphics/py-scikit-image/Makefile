@@ -24,7 +24,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}PyWavelets>=0.4:math/py-PyWavelets@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cloudpickle>=0.2.1:devel/py-cloudpickle@${PY_FLAVOR}
 
-USES=		cpe python:3.7+
+USES=		compiler:c++11-lang cpe python:3.7+
 USE_GITHUB=	yes
 USE_PYTHON=	autoplist concurrent distutils cython cython_run
 
