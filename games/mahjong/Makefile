@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	mahjong
-PORTVERSION=	1.15
+PORTVERSION=	1.16
 CATEGORIES=	games net
 MASTER_SITES=	http://mahjong.julianbradfield.org/Source/%SUBDIR%/
-MASTER_SITE_SUBDIR=	. Old
 DISTNAME=	mj-${PORTVERSION}-src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Networked Mah Jong program, together with a computer player
 
 LICENSE=	GPLv2+
