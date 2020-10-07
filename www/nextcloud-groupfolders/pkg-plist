@@ -230,6 +230,7 @@
 %%WWWDIR%%/lib/Command/Quota.php
 %%WWWDIR%%/lib/Command/Rename.php
 %%WWWDIR%%/lib/Command/Scan.php
+%%WWWDIR%%/lib/Command/Trashbin/Cleanup.php
 %%WWWDIR%%/lib/Controller/FolderController.php
 %%WWWDIR%%/lib/Controller/PageController.php
 %%WWWDIR%%/lib/DAV/ACLPlugin.php
