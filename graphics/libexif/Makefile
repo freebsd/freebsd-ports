@@ -6,7 +6,7 @@ PORTVERSION=	0.6.22
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/libexif/libexif/releases/download/libexif-${PORTVERSION:S|.|_|g}-release/
 
-MAINTAINER=	dbaio@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library to read digital camera file meta-data
 
 LICENSE=	LGPL21
