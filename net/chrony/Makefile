@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chrony
-PORTVERSION=	3.5.1
+DISTVERSION=	4.0
 CATEGORIES=	net
 MASTER_SITES=	https://download.tuxfamily.org/chrony/ \
 		LOCAL/mandree
@@ -20,46 +20,56 @@ CPE_VENDOR=	tuxfamily
 USE_RC_SUBR=	chronyd
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		--chronyvardir=/var/db/${PORTNAME} \
-		--sysconfdir=${PREFIX}/etc --mandir=${MANPREFIX}/man \
-		--datarootdir=${DATADIR} --docdir=${DOCSDIR} \
-		--with-readline-library=${LOCALBASE}/lib \
+CONFIGURE_ARGS=	--chronyvardir=/var/db/${PORTNAME} \
+		--datarootdir=${DATADIR} \
+		--docdir=${DOCSDIR} \
+		--mandir=${MANPREFIX}/man \
+		--prefix=${PREFIX} \
+		--sysconfdir=${PREFIX}/etc \
 		--without-tomcrypt
 
 ALL_TARGET=	all
 INSTALL_TARGET=	install
 PORTDOCS=	FAQ NEWS README
-PORTEXAMPLES=	chrony.conf.example1 chrony.conf.example2 \
-		chrony.conf.example3 chrony.keys.example
+
+LDFLAGS+=	-L${LOCALBASE}/lib
+
+PORTEXAMPLES=	chrony.conf.example1 chrony.conf.example2 chrony.conf.example3 \
+		chrony.keys.example
 
 # XXX: there are also other potentially useful options worth looking into:
 #  --disable-pps        Disable PPS API support
-OPTIONS_DEFINE=		DOCS HTMLDOCS EXAMPLES IPV6 USER
-OPTIONS_DEFAULT=	NETTLE USER
-OPTIONS_RADIO=		CRYPTLIB
-OPTIONS_RADIO_CRYPTLIB=	NETTLE NSS
+OPTIONS_DEFINE=		DOCS EXAMPLES HTMLDOCS NTS USER
+OPTIONS_DEFAULT=	NETTLE NTS USER
+OPTIONS_GROUP=		SECHASH
+OPTIONS_GROUP_SECHASH=	NETTLE NSS
 OPTIONS_SUB=		yes
+NTS_IMPLIES=		NETTLE
+NETTLE_PREVENTS=	NSS
 
-HTMLDOCS_DESC=		Build HTML docs (IMPLIES DOCS, needs ruby, asciidoctor)
-NETTLE_DESC=		Nettle crypto library support
-NSS_DESC=		NSS-based support for more hashing algorithms
-USER_DESC=		Run as user/group chronyd (unset: user/group ntpd)
+HTMLDOCS_DESC=	Build HTML docs (IMPLIES DOCS, needs ruby, asciidoctor)
+NETTLE_DESC=	Nettle crypto library support for secure hash and NTS
+NSS_DESC=	NSS-based support for more hashing algorithms
+NTS_DESC=	Support Network Time Security (NTS, uses GnuTLS & Nettle)
+SECHASH_DESC=	Support for secure hash functions
+USER_DESC=	Run as user/group chronyd (unset: user/group ntpd)
 
 HTMLDOCS_IMPLIES=	DOCS
 
-HTMLDOCS_BUILD_DEPENDS+=asciidoctor:textproc/rubygem-asciidoctor
-HTMLDOCS_ALL_TARGET=	docs
-HTMLDOCS_INSTALL_TARGET=docs
-IPV6_CONFIGURE_OFF=	--disable-ipv6
-NETTLE_LIB_DEPENDS=	libnettle.so:security/nettle
-NETTLE_CONFIGURE_OFF=	--without-nettle
-NSS_LIB_DEPENDS=	libfreebl3.so:security/nss
-NSS_CONFIGURE_OFF=	--without-nss
-USER_CONFIGURE_ON=	--with-user=chronyd
-USER_CONFIGURE_OFF=	--with-user=ntpd
+HTMLDOCS_BUILD_DEPENDS+=	asciidoctor:textproc/rubygem-asciidoctor
+HTMLDOCS_ALL_TARGET=		docs
+HTMLDOCS_INSTALL_TARGET=	docs
+NETTLE_LIB_DEPENDS=		libnettle.so:security/nettle
+NETTLE_CONFIGURE_OFF=		--without-nettle
+NSS_LIB_DEPENDS=		libfreebl3.so:security/nss
+NSS_CONFIGURE_OFF=		--without-nss
+NTS_LIB_DEPENDS=		libgnutls.so:security/gnutls
+NTS_CONFIGURE_OFF=		--without-gnutls
+USER_CONFIGURE_ON=		--with-user=chronyd
+USER_CONFIGURE_OFF=		--with-user=ntpd
 
-USER_VARS=		USERS=chronyd GROUPS=chronyd
+USER_VARS=	GROUPS=chronyd \
+		USERS=chronyd
 
 .include <bsd.port.pre.mk>
 
@@ -68,12 +78,14 @@ CONFIGURE_ARGS+=	--enable-debug
 .endif
 
 .if ${PORT_OPTIONS:MHTMLDOCS}
-PORTDOCS+=		doc/*.html
+PORTDOCS+=	doc/*.html
 .endif
 
 post-patch:
 	cd ${WRKSRC}/examples && \
-		${REINPLACE_CMD} -e 's!%%PREFIX%%!${PREFIX}!g' ${PORTEXAMPLES}
+		${REINPLACE_CMD} -e 's!%%PREFIX%%!${PREFIX}!g' \
+		                 -e 's!/var/lib!/var/db!g' \
+				 ${PORTEXAMPLES:M*.conf.example*}
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/chronyc

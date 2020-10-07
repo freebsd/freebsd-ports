@@ -1,13 +1,9 @@
---- examples/chrony.conf.example1.orig	2017-01-31 10:22:11 UTC
+--- examples/chrony.conf.example1.orig	2020-09-16 10:09:52 UTC
 +++ examples/chrony.conf.example1
-@@ -1,8 +1,8 @@
+@@ -1,5 +1,5 @@
  # Use public NTP servers from the pool.ntp.org project.
 -pool pool.ntp.org iburst
 +pool 0.freebsd.pool.ntp.org iburst
  
  # Record the rate at which the system clock gains/losses time.
--driftfile /var/lib/chrony/drift
-+driftfile /var/db/chrony/drift
- 
- # Allow the system clock to be stepped in the first three updates
- # if its offset is larger than 1 second.
+ driftfile /var/lib/chrony/drift

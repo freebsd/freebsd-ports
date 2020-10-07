@@ -1,4 +1,4 @@
---- examples/chrony.conf.example3.orig	2017-01-31 10:22:11 UTC
+--- examples/chrony.conf.example3.orig	2020-09-16 10:09:52 UTC
 +++ examples/chrony.conf.example3
 @@ -1,7 +1,7 @@
  #######################################################################
@@ -20,31 +20,16 @@
   
  #######################################################################
  ### AVOIDING POTENTIALLY BOGUS CHANGES TO YOUR CLOCK
-@@ -65,12 +67,12 @@
- # immediately so that it doesn't gain or lose any more time.  You
- # generally want this, so it is uncommented.
- 
--driftfile /var/lib/chrony/drift
-+driftfile /var/db/chrony/drift
- 
+@@ -84,7 +86,7 @@ driftfile /var/lib/chrony/drift
  # If you want to enable NTP authentication with symmetric keys, you will need
  # to uncomment the following line and edit the file to set up the keys.
  
 -! keyfile /etc/chrony.keys
 +! keyfile %%PREFIX%%/etc/chrony.keys
  
- # chronyd can save the measurement history for the servers to files when
- # it it exits.  This is useful in 2 situations:
-@@ -88,7 +90,7 @@ driftfile /var/lib/chrony/drift
- # Enable these two options to use this.
- 
- ! dumponexit
--! dumpdir /var/lib/chrony
-+! dumpdir /var/db/chrony
- 
- # chronyd writes its process ID to a file.  If you try to start a second
- # copy of chronyd, it will detect that the process named in the file is
-@@ -117,6 +119,10 @@ driftfile /var/lib/chrony/drift
+ # If you specify an NTP server with the nts option to enable authentication
+ # with the Network Time Security (NTS) mechanism, or enable server NTS with
+@@ -164,6 +166,10 @@ ntsdumpdir /var/lib/chrony
  # only need this if you really enjoy looking at the logs, you want to
  # produce some graphs of your system's timekeeping performance, or you
  # need help in debugging a problem.
@@ -55,12 +40,3 @@
  
  ! logdir /var/log/chrony
  ! log measurements statistics tracking
-@@ -253,7 +259,7 @@ driftfile /var/lib/chrony/drift
- # You need to have 'enhanced RTC support' compiled into your Linux
- # kernel.  (Note, these options apply only to Linux.)
- 
--! rtcfile /var/lib/chrony/rtc
-+! rtcfile /var/db/chrony/rtc
- 
- # Your RTC can be set to keep Universal Coordinated Time (UTC) or local
- # time.  (Local time means UTC +/- the effect of your timezone.)  If you
