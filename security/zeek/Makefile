@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zeek
-PORTVERSION=	3.0.10
+PORTVERSION=	3.0.11
 CATEGORIES=	security
 MASTER_SITES=	https://old.zeek.org/downloads/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
