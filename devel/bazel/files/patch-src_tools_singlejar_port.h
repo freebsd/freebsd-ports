@@ -1,5 +1,5 @@
---- src/tools/singlejar/port.h.orig	2018-09-18 16:02:23.430634000 +0200
-+++ src/tools/singlejar/port.h	2018-09-18 16:03:58.961047000 +0200
+--- src/tools/singlejar/port.h.orig	1979-12-31 23:00:00 UTC
++++ src/tools/singlejar/port.h
 @@ -28,6 +28,11 @@
  #include <sys/types.h>
  #include <time.h>

@@ -1,6 +1,6 @@
---- src/main/java/com/google/devtools/build/lib/bazel/rules/python/python_stub_template.txt.orig	2019-11-13 08:37:00 UTC
+--- src/main/java/com/google/devtools/build/lib/bazel/rules/python/python_stub_template.txt.orig	2020-10-07 21:26:37 UTC
 +++ src/main/java/com/google/devtools/build/lib/bazel/rules/python/python_stub_template.txt
-@@ -52,7 +52,7 @@
+@@ -58,7 +58,7 @@ if IsWindows() and not HasWindowsExecuta
  
  def SearchPath(name):
    """Finds a file in a given search path."""

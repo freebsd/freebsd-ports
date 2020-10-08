@@ -1,6 +1,6 @@
---- tools/jdk/default_java_toolchain.bzl.orig	2020-02-14 20:56:31.911758000 +0100
-+++ tools/jdk/default_java_toolchain.bzl	2020-02-14 20:57:09.531875000 +0100
-@@ -21,25 +21,6 @@
+--- tools/jdk/default_java_toolchain.bzl.orig	1979-12-31 23:00:00 UTC
++++ tools/jdk/default_java_toolchain.bzl
+@@ -21,25 +21,6 @@ JDK8_JVM_OPTS = [
  ]
  
  JDK9_JVM_OPTS = [
@@ -26,7 +26,7 @@
  ]
  
  DEFAULT_JAVACOPTS = [
-@@ -63,7 +44,7 @@
+@@ -63,7 +44,7 @@ DEFAULT_TOOLCHAIN_CONFIGURATION = {
      "javac_supports_workers": 1,
      "jvm_opts": select({
          "@bazel_tools//src/conditions:openbsd": JDK8_JVM_OPTS,
