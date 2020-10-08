@@ -68,7 +68,7 @@
 +wsdd_start()
 +{
 +	echo -n "Starting ${name}."
-+	/usr/sbin/daemon -u daemon -S -p ${pidfile} ${command} ${wsdd_opts}
++	/usr/sbin/daemon -u _wsdd -S -p ${pidfile} ${command} ${wsdd_opts}
 +}
 +
  run_rc_command "$1"
