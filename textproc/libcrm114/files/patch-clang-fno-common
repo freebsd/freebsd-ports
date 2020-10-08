@@ -1,0 +1,101 @@
+--- crm114_hyperspace.c.orig	2020-10-07 23:50:11.708416808 +0200
++++ crm114_hyperspace.c	2020-10-07 23:47:47.539756629 +0200
+@@ -66,7 +66,7 @@
+ 	     (*db)->cb.block[whichclass].size_used,
+ 	     featurecount * sizeof (HYPERSPACE_FEATUREBUCKET));
+ 
+-    if (db == NULL || features == NULL)
++  if (db == NULL || features == NULL)
+     return CRM114_BADARG;
+ 
+   if (whichclass < 0 || whichclass > (*db)->cb.how_many_classes - 1)
+--- crm114_lib.h.orig	2020-10-07 23:50:11.708416808 +0200
++++ crm114_lib.h	2020-10-07 23:47:47.531756592 +0200
+@@ -25,8 +25,8 @@
+ 
+ 
+ // GROT GROT GROT global vars we have to do something about
+-int crm114__user_trace;
+-int crm114__internal_trace;
++#define crm114__user_trace 0
++#define crm114__internal_trace 0
+ 
+ 
+ //    Structure of a library callable classifier:
+--- crm114_matrix_util.c.orig	2020-10-07 23:50:11.712416826 +0200
++++ crm114_matrix_util.c	2020-10-07 23:47:47.539756629 +0200
+@@ -28,6 +28,8 @@
+ 
+ #include "crm114_matrix_util.h"
+ 
++int CRM114__MATR_DEBUG_MODE;            //the debug value
++
+ /************************************************************************
+  *Expanding array and linked list functions.  Mostly for use with the
+  *matrix library, but possibly more general.
+--- crm114_matrix_util.h.orig	2020-10-07 23:50:11.712416826 +0200
++++ crm114_matrix_util.h	2020-10-07 23:47:47.531756592 +0200
+@@ -68,7 +68,7 @@
+ #define MY_INLINE static inline
+ #endif
+ 
+-int CRM114__MATR_DEBUG_MODE;            //the debug value
++extern int CRM114__MATR_DEBUG_MODE;            //the debug value
+                                //for SVM, if internal trace is on
+                                //CRM114__MATR_DEBUG_MODE = SVM_INTERNAL_TRACE_LEVEL
+                                //for PCA, if internal trace is on
+--- crm114_pca_lib_fncts.c.orig	2020-10-07 23:50:11.712416826 +0200
++++ crm114_pca_lib_fncts.c	2020-10-07 23:47:47.543756648 +0200
+@@ -28,6 +28,8 @@
+ #include "crm114_matrix.h"
+ #include "crm114_pca_lib_fncts.h"
+ 
++int CRM114__PCA_DEBUG_MODE;         //The debug mode for the PCA
++
+ /*******************************************************************************************
+  *This is a variation of the VonMises power algorithm for sparse matrices.  Let us have
+  *x_1, x_2,.., x_n examples with column means xbar.  Then the VonMises update is:
+--- crm114_pca_lib_fncts.h.orig	2020-10-07 23:50:11.716416844 +0200
++++ crm114_pca_lib_fncts.h	2020-10-07 23:47:47.531756592 +0200
+@@ -39,7 +39,7 @@
+                             //The intermediate DEBUG modes may enable debug printing for the
+                             //matrix operations.  See crm114_matrix_util.h for details.
+ 
+-int CRM114__PCA_DEBUG_MODE;         //The debug mode for the PCA
++extern int CRM114__PCA_DEBUG_MODE;         //The debug mode for the PCA
+ extern int CRM114__MATR_DEBUG_MODE; //Debug mode for matrices.  CRM114__MATR_DEBUG_MODE = CRM114__PCA_DEBUG_MODE
+                             //Defined in crm114_matrix_util.h
+ 
+--- crm114_svm_lib_fncts.c.orig	2020-10-07 23:50:11.716416844 +0200
++++ crm114_svm_lib_fncts.c	2020-10-07 23:47:47.543756648 +0200
+@@ -38,6 +38,8 @@
+ 					double weight, int max_train_val);
+ static ExpandingArray *svm_preprocess(Matrix *X, Vector *old_theta);
+ 
++int CRM114__SVM_DEBUG_MODE;
++
+ /**********************************************************************
+  *This method is taken from:
+  * Training SVMs in Linear Time
+--- crm114_svm_lib_fncts.h.orig	2020-10-07 23:50:11.716416844 +0200
++++ crm114_svm_lib_fncts.h	2020-10-07 23:47:47.531756592 +0200
+@@ -60,7 +60,7 @@
+                                 //a feasible setting since the print operations
+                                 //put all the zeros in!
+ 
+-int CRM114__SVM_DEBUG_MODE;         //There are a number of modes.
++extern int CRM114__SVM_DEBUG_MODE;         //There are a number of modes.
+                                    //See crm114_matrix_util.h for them.
+ //the SVM solution struct
+ typedef struct {
+--- crm114_svm_quad_prog.c.orig	2020-10-07 23:50:11.720416862 +0200
++++ crm114_svm_quad_prog.c	2020-10-07 23:47:47.543756648 +0200
+@@ -45,7 +45,7 @@
+ 		      Vector *x);
+ #endif
+ 
+-static int QP_DEBUG_MODE;
++#define QP_DEBUG_MODE 0
+ 
+ 
+ /******************************************************************

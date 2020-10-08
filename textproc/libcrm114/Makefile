@@ -9,16 +9,19 @@ MASTER_SITES=	http://crm114.sourceforge.net/tarballs/
 MAINTAINER=	info@mschuette.name
 COMMENT=	CRM114 C-callable Library
 
-LIB_DEPENDS=	libtre.so:textproc/libtre
-
 LICENSE=	LGPL3
+
+DEPRECATED=	No known users, dead upstream
+EXPIRATION_DATE=2021-04-01
+
+LIB_DEPENDS=	libtre.so:textproc/libtre
 
 USES=		gmake
 USE_LDCONFIG=	yes
 
 # pass stuff to gmake
 CFLAGS+=	-I${LOCALBASE}/include
-CFLAGS+=	-DNO_LOGL -DDO_INLINES
+CFLAGS+=	-DDO_INLINES
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_JOBS_UNSAFE=yes
 
