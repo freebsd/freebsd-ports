@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	GNU/indent
 DISTNAME=	indent-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	moritz@schmi.tt
 COMMENT=	GNU indent
 
 LICENSE=	GPLv3+
