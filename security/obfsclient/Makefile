@@ -32,6 +32,7 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
 
+BROKEN=		fails to build
 .if ${SSL_DEFAULT} == base
 BROKEN_FreeBSD_12=	field has incomplete type 'HMAC_CTX' (aka 'hmac_ctx_st')
 BROKEN_FreeBSD_13=	field has incomplete type 'HMAC_CTX' (aka 'hmac_ctx_st')
