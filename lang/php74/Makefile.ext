@@ -392,6 +392,8 @@ CONFIGURE_ARGS+=--enable-xmlreader \
 		--with-libxml-dir=${LOCALBASE}
 
 USE_GNOME=	libxml2
+
+USE_PHP=	dom:build
 .endif
 
 .if ${PHP_MODNAME} == "xmlrpc"
