@@ -12,6 +12,7 @@ COMMENT=	EXtensible Open Router Platform
 
 LICENSE=	GPLv2
 
+BROKEN=		fails to build
 DEPRECATED=	Uses deprecated version of python
 EXPIRATION_DATE=	2020-09-15
 
