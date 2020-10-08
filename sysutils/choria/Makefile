@@ -11,6 +11,8 @@ COMMENT=	Server to host Choria agents, networks, federations and discovery
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+ONLY_FOR_ARCHS=	amd64
+
 USES=		go:modules
 
 USE_GITHUB=	yes
