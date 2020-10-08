@@ -13,6 +13,7 @@ COMMENT=	Ultimate host for embedded domain-specific languages
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		fails to build
 BROKEN_FreeBSD_12=	invalid target: self
 BROKEN_FreeBSD_13=	invalid target: self
 
