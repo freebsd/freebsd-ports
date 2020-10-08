@@ -1884,6 +1884,8 @@ bin/cdogs-sdl-editor
 %%DATADIR%%/missions/doom.cdogscpn/graphics/candelabra_16x24.png
 %%DATADIR%%/missions/doom.cdogscpn/graphics/candle.txt
 %%DATADIR%%/missions/doom.cdogscpn/graphics/candle_9x14.png
+%%DATADIR%%/missions/doom.cdogscpn/graphics/computer_map.txt
+%%DATADIR%%/missions/doom.cdogscpn/graphics/computer_map_13x13.png
 %%DATADIR%%/missions/doom.cdogscpn/graphics/fireball.txt
 %%DATADIR%%/missions/doom.cdogscpn/graphics/fireball_16x16.png
 %%DATADIR%%/missions/doom.cdogscpn/graphics/fireball_green.txt
@@ -2294,6 +2296,8 @@ bin/cdogs-sdl-editor
 %%DATADIR%%/sounds/victory.txt
 %%DATADIR%%/sounds/whistle.ogg
 %%DATADIR%%/sounds/whistle.txt
+%%DATADIR%%/sounds/show_map.ogg
+%%DATADIR%%/sounds/show_map.txt
 share/metainfo/io.github.cxong.cdogs-sdl.appdata.xml
 share/applications/io.github.cxong.cdogs-sdl.desktop
 share/icons/hicolor/128x128/apps/io.github.cxong.cdogs-sdl.png

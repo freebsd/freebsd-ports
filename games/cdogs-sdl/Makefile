@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cdogs-sdl
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.1
 CATEGORIES=	games
 
 MAINTAINER=	swills@FreeBSD.org
