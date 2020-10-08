@@ -3,6 +3,7 @@
 
 PORTNAME=	power9-functional-sim
 PORTVERSION=	1.1
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-0.el7
 CATEGORIES=	emulators linux
 MASTER_SITES=	http://public.dhe.ibm.com/software/server/powerfuncsim/p9/packages/v1.1-0/
@@ -17,7 +18,9 @@ LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 ONLY_FOR_ARCHS=	amd64
 
-USES=		linux:c7
+USES=		linux:c7 perl5 shebangfix
+SHEBANG_FILES=	opt/ibm/systemsim-p9/bin/systemsim
+SHEBANG_GLOB=	*.sh *.pl
 USE_LDCONFIG=	yes
 USE_LINUX=	tcl85
 USE_LINUX_RPM=	nolib
