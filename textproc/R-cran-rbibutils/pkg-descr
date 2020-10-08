@@ -1,0 +1,7 @@
+Converts between a number of bibliography formats, including 'BibTeX',
+'BibLaTeX' and 'Bibentry'. Includes a port of the 'bibutils' utilities
+by Chris Putnam <https://sourceforge.net/projects/bibutils/>.
+Supports all bibliography formats and character encodings implemented
+in 'bibutils'.
+
+WWW: https://cran.r-project.org/web/packages/rbibutils/

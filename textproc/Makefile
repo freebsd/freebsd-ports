@@ -18,6 +18,7 @@
     SUBDIR += R-cran-markdown
     SUBDIR += R-cran-openxlsx
     SUBDIR += R-cran-pystr
+    SUBDIR += R-cran-rbibutils
     SUBDIR += R-cran-readr
     SUBDIR += R-cran-readxl
     SUBDIR += R-cran-rematch
