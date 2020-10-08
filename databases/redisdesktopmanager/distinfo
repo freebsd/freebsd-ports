@@ -1,6 +1,6 @@
-TIMESTAMP = 1599939190
-SHA256 (uglide-RedisDesktopManager-2020.3_GH0.tar.gz) = bc6b63f6c5dd6044d76c69b012d114da5af74437ecd64d58d1b715c92d202e0a
-SIZE (uglide-RedisDesktopManager-2020.3_GH0.tar.gz) = 2827041
+TIMESTAMP = 1602096894
+SHA256 (uglide-RedisDesktopManager-2020.4_GH0.tar.gz) = 9993275581ee27fb57b51d5933ab4954c986dbe00d16e2f8cacf543cccd03acd
+SIZE (uglide-RedisDesktopManager-2020.4_GH0.tar.gz) = 2828629
 SHA256 (benlau-asyncfuture-4579d53_GH0.tar.gz) = ce5a3a4bc61f22f182eb8f932a3736289fc541e7487244fd57c93a141a038fe4
 SIZE (benlau-asyncfuture-4579d53_GH0.tar.gz) = 31928
 SHA256 (RedisDesktop-CrashReporter-0202f9b_GH0.tar.gz) = 4b0745dd12449716279a618eab0c8706422a0f67af680d0bf71471f9dbd371cb
