@@ -28,6 +28,9 @@ CONFIGURE_ENV+=	bashcompdir=${STAGEDIR}${PREFIX}/etc/bash_completion.d
 
 PLIST_FILES=	bin/jp2a man/man1/jp2a.1.gz etc/bash_completion.d/jp2a
 
+# version has too many flaws
+PORTSCOUT=	skipv:1.1.0
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/jp2a ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/man/jp2a.1 ${STAGEDIR}${MANPREFIX}/man/man1
