@@ -11,7 +11,7 @@ COMMENT=	Decodes binary EDID information from monitors
 
 LICENSE=	MIT
 
-USES=		gmake tar:xz
+USES=		compiler:c++11-lang gmake tar:xz
 
 PLIST_FILES=	bin/edid-decode \
 		man/man1/edid-decode.1.gz
