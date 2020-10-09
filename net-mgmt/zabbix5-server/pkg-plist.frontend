@@ -566,6 +566,7 @@
 %%WWWDIR%%/include/classes/html/CSup.php
 %%WWWDIR%%/include/classes/html/CTabView.php
 %%WWWDIR%%/include/classes/html/CTable.php
+%%WWWDIR%%/include/classes/html/CTableColumn.php
 %%WWWDIR%%/include/classes/html/CTableInfo.php
 %%WWWDIR%%/include/classes/html/CTag.php
 %%WWWDIR%%/include/classes/html/CTextArea.php
