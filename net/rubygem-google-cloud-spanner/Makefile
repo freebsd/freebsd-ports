@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	google-cloud-spanner
-PORTVERSION=	1.16.2
+PORTVERSION=	2.2.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -13,11 +13,10 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-concurrent-ruby>=1.0<2:devel/rubygem-concurrent-ruby \
-		rubygem-google-cloud-core>=1.2<2:net/rubygem-google-cloud-core \
-		rubygem-google-gax>=1.7<2:devel/rubygem-google-gax \
-		rubygem-googleapis-common-protos-types>=1.0.4<2.0:devel/rubygem-googleapis-common-protos-types \
-		rubygem-googleapis-common-protos>=1.3.9<2.0:devel/rubygem-googleapis-common-protos \
-		rubygem-grpc-google-iam-v1>=0.6.9<0.7:devel/rubygem-grpc-google-iam-v1
+		rubygem-google-cloud-core>=1.5<2:net/rubygem-google-cloud-core \
+		rubygem-google-cloud-spanner-admin-database-v1>=0.1<1:net/rubygem-google-cloud-spanner-admin-database-v1 \
+		rubygem-google-cloud-spanner-admin-instance-v1>=0.1<1:net/rubygem-google-cloud-spanner-admin-instance-v1 \
+		rubygem-google-cloud-spanner-v1>=0.2<1:net/rubygem-google-cloud-spanner-v1
 
 USES=		gem
 USE_RUBY=	yes
