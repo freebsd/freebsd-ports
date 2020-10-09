@@ -3,8 +3,7 @@
 
 PORTNAME=	gdm
 PORTVERSION=	3.28.4
-PORTREVISION=	2
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -44,7 +43,7 @@ GROUPS=		gdm video
 
 PORTSCOUT=	limitw:1,even
 
-USES=		cpe gettext gmake gnome libtool pathfix pkgconfig tar:xz xorg
+USES=		cpe gettext gmake gnome libtool localbase:ldflags pathfix pkgconfig tar:xz xorg
 CPE_VENDOR=	gnome
 CPE_PRODUCT=	gnome_display_manager
 USE_GNOME=	cairo dconf gconf2 gtk30 intltool introspection
@@ -83,8 +82,7 @@ CONFIGURE_ARGS=	--disable-static \
 
 # this is a hack until we can get our own pam dir and dir in order.
 CONFIGURE_ARGS+=--with-default-pam-config=redhat
-CPPFLAGS+=	-I${LOCALBASE}/include -DHAS_SA_LEN
-LDFLAGS+=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-DHAS_SA_LEN
 INSTALL_TARGET=	install-strip
 
 SUB_FILES+=	gdm-launch-environment \
@@ -139,6 +137,12 @@ post-install:
 		${STAGEDIR}${PREFIX}/etc/gdm/PostSession/Default.sample
 	${MV} ${STAGEDIR}${PREFIX}/etc/gdm/PreSession/Default \
 		${STAGEDIR}${PREFIX}/etc/gdm/PreSession/Default.sample
+	${MV} ${STAGEDIR}${PREFIX}/etc/gdm/Init/Default \
+		${STAGEDIR}${PREFIX}/etc/gdm/Init/Default.sample
+	${MV} ${STAGEDIR}${PREFIX}/etc/gdm/Xsession \
+		${STAGEDIR}${PREFIX}/etc/gdm/Xsession.sample
+	${MV} ${STAGEDIR}${PREFIX}/etc/dbus-1/system.d/gdm.conf \
+		${STAGEDIR}${PREFIX}/etc/dbus-1/system.d/gdm.conf.sample
 
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/xsessions
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/gdm/Sessions
@@ -148,11 +152,11 @@ post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/gdm/home/.pulse/
 
 	${INSTALL_DATA} ${WRKDIR}/gdm-autologin \
-		${STAGEDIR}${PREFIX}/etc/pam.d/gdm-autologin
+		${STAGEDIR}${PREFIX}/etc/pam.d/gdm-autologin.sample
 	${INSTALL_DATA} ${WRKDIR}/gdm-launch-environment \
-		${STAGEDIR}${PREFIX}/etc/pam.d/gdm-launch-environment
+		${STAGEDIR}${PREFIX}/etc/pam.d/gdm-launch-environment.sample
 	${INSTALL_DATA} ${WRKDIR}/gdm-password \
-		${STAGEDIR}${PREFIX}/etc/pam.d/gdm-password
+		${STAGEDIR}${PREFIX}/etc/pam.d/gdm-password.sample
 
 	${INSTALL_DATA} ${WRKDIR}/client.conf \
 		${STAGEDIR}${PREFIX}/etc/gdm/home/.pulse/client.conf.sample

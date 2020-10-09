@@ -1,0 +1,11 @@
+<!-- $OpenBSD: org.freedesktop.ConsoleKit.Session.xml,v 1.1 2019/01/17 19:00:46 ajacoutot Exp $ -->
+
+<node>
+  <interface name="org.freedesktop.ConsoleKit.Session">
+    <signal name="Lock" />
+    <signal name="Unlock" />
+      <method name="SetLockedHint">                                               
+        <arg type="b" direction="in"/>                                            
+      </method>
+    </interface>
+</node>

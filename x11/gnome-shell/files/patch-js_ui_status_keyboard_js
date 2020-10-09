@@ -1,0 +1,27 @@
+$OpenBSD: patch-js_ui_status_keyboard_js,v 1.6 2020/05/14 15:28:46 jasper Exp $
+
+https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=235009
+
+Index: js/ui/status/keyboard.js
+--- js/ui/status/keyboard.js.orig
++++ js/ui/status/keyboard.js
+@@ -242,6 +242,19 @@ var InputSourceSystemSettings = class extends InputSou
+                 id += '+%s'.format(variants[i]);
+             sourcesList.push({ type: INPUT_SOURCE_TYPE_XKB, id });
+         }
++
++        // fallback: retrieve input source from current locale if we don't
++        // support the org.freedesktop.locale1 interface
++        if (sourcesList.length == 0) {
++            let _keyboardManagerLayout = KeyboardManager.getKeyboardManager()._getLocaleLayout();
++            if (_keyboardManagerLayout) {
++                let _kMLid = _keyboardManagerLayout.layout;
++                if (!!_keyboardManagerLayout.variant)
++                    _kMLid = _kMLid + '+' + _keyboardManagerLayout.variant;
++                sourcesList.push({ type: INPUT_SOURCE_TYPE_XKB, id: _kMLid });
++            }
++        }
++
+         return sourcesList;
+     }
+ 

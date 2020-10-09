@@ -1,0 +1,25 @@
+<!-- $OpenBSD: org.freedesktop.ConsoleKit.Manager.xml,v 1.1 2019/01/17 19:00:46 ajacoutot Exp $ -->
+
+<node>
+  <interface name="org.freedesktop.ConsoleKit.Manager">
+    <method name="Suspend">                                                     
+      <arg type="b" direction="in"/>                                            
+    </method>                                                                   
+    <method name="CanSuspend">                                                  
+      <arg type="s" direction="out"/>                                           
+    </method>                                                                   
+    <method name="Inhibit">                                                     
+      <arg type="s" direction="in"/>                                            
+      <arg type="s" direction="in"/>                                            
+      <arg type="s" direction="in"/>                                            
+      <arg type="s" direction="in"/>                                            
+      <arg type="h" direction="out"/>                                           
+    </method>                                                                   
+    <signal name="PrepareForSleep">                                             
+      <arg type="b" direction="out"/>                                           
+    </signal>                                                                   
+    <method name="GetCurrentSession">
+      <arg type="o" direction="out"/>
+    </method>
+  </interface>                                                                  
+</node>

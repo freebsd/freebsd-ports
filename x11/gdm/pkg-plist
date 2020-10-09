@@ -1,17 +1,17 @@
 bin/gdm-screenshot
 bin/gdmflexiserver
-etc/dbus-1/system.d/gdm.conf
-%%ETCDIR%%/Init/Default
+@sample etc/dbus-1/system.d/gdm.conf.sample
+@sample %%ETCDIR%%/Init/Default.sample
 @sample %%ETCDIR%%/PostLogin/Default.sample
 @sample %%ETCDIR%%/PostSession/Default.sample
 @sample %%ETCDIR%%/PreSession/Default.sample
-%%ETCDIR%%/Xsession
+@sample %%ETCDIR%%/Xsession.sample
 @sample %%ETCDIR%%/custom.conf.sample
 @sample %%ETCDIR%%/home/.pulse/client.conf.sample
 @sample %%ETCDIR%%/locale.conf.sample
-etc/pam.d/gdm-autologin
-etc/pam.d/gdm-launch-environment
-etc/pam.d/gdm-password
+@sample etc/pam.d/gdm-autologin.sample
+@sample etc/pam.d/gdm-launch-environment.sample
+@sample etc/pam.d/gdm-password.sample
 include/gdm/gdm-client-glue.h
 include/gdm/gdm-client.h
 include/gdm/gdm-sessions.h

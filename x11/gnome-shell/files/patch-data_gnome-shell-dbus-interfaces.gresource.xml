@@ -1,0 +1,11 @@
+--- data/gnome-shell-dbus-interfaces.gresource.xml.orig	2020-09-07 20:29:58 UTC
++++ data/gnome-shell-dbus-interfaces.gresource.xml
+@@ -12,6 +12,8 @@
+     <file preprocess="xml-stripblanks">org.freedesktop.impl.portal.Access.xml</file>
+     <file preprocess="xml-stripblanks">org.freedesktop.impl.portal.PermissionStore.xml</file>
+     <file preprocess="xml-stripblanks">org.freedesktop.impl.portal.Request.xml</file>
++    <file preprocess="xml-stripblanks">org.freedesktop.ConsoleKit.Manager.xml</file>
++    <file preprocess="xml-stripblanks">org.freedesktop.ConsoleKit.Session.xml</file>
+     <file preprocess="xml-stripblanks">org.freedesktop.login1.Manager.xml</file>
+     <file preprocess="xml-stripblanks">org.freedesktop.login1.Session.xml</file>
+     <file preprocess="xml-stripblanks">org.freedesktop.login1.User.xml</file>
