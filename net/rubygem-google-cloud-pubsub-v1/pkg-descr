@@ -1,0 +1,7 @@
+API Client library for the Cloud Pub/Sub V1 API
+
+Cloud Pub/Sub is a fully-managed real-time messaging service that allows you to
+send and receive messages between independent applications.
+
+WWW: https://github.com/googleapis/google-cloud-ruby
+WWW: https://github.com/googleapis/google-cloud-ruby/tree/master/google-cloud-pubsub-v1
