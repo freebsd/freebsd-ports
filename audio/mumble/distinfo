@@ -1,6 +1,6 @@
-TIMESTAMP = 1592417992
-SHA256 (mumble-voip-mumble-1.3.1_GH0.tar.gz) = ea37f16b1336024db26efb14060f6eddb703f5c1d83d63b6c0a088e94079cd46
-SIZE (mumble-voip-mumble-1.3.1_GH0.tar.gz) = 4894243
+TIMESTAMP = 1602265872
+SHA256 (mumble-voip-mumble-1.3.3_GH0.tar.gz) = 53a555092a03af2e6025c641bb748f013e1cfa8f61899a686bed8690439f36c7
+SIZE (mumble-voip-mumble-1.3.3_GH0.tar.gz) = 4895708
 SHA256 (mumble-voip-celt-0.7.0-5a16cda_GH0.tar.gz) = fbfdbb0767d9d67ea29270eb3e5e999eec6f7f3720a870e74776be426b10b53a
 SIZE (mumble-voip-celt-0.7.0-5a16cda_GH0.tar.gz) = 182631
 SHA256 (mumble-voip-celt-0.11.0-e18de77_GH0.tar.gz) = b522482222c40c1f05ce9b6c4d19a05e8419a7850398dbbdea5854b78eadfd4a
