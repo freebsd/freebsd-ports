@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME?=	gitlab-ce
-PORTVERSION?=	13.4.2
-PORTREVISION?=	1
+PORTVERSION?=	13.4.3
+PORTREVISION?=	0
 CATEGORIES=	www devel
 
 MAINTAINER?=	mfechner@FreeBSD.org
@@ -95,7 +95,7 @@ MY_DEPENDS=	git>=2.26:devel/git \
 	rubygem-fog-openstack>=1.0<2.0:net/rubygem-fog-openstack \
 	rubygem-fog-rackspace>=0.1.1<1.2.0:net/rubygem-fog-rackspace \
 	rubygem-fog-aliyun>=0.3<1.0:net/rubygem-fog-aliyun \
-	rubygem-gitlab-fog-azure-rm>=0.9<1:net/rubygem-gitlab-fog-azure-rm \
+	rubygem-gitlab-fog-azure-rm>=1.0<2:net/rubygem-gitlab-fog-azure-rm \
 	rubygem-google-api-client>=0.33<1:devel/rubygem-google-api-client \
 	rubygem-unf>=0.1.4<0.2.0:textproc/rubygem-unf \
 	rubygem-seed-fu>=2.3.7<2.4.0:databases/rubygem-seed-fu \
@@ -218,8 +218,8 @@ MY_DEPENDS=	git>=2.26:devel/git \
 	rubygem-ed25519>=1.2<2.0:security/rubygem-ed25519 \
 	rubygem-bcrypt_pbkdf>=1.0<2.0:security/rubygem-bcrypt_pbkdf \
 	rubygem-gitaly>=13.3.0.p.r1<13.4.0:net/rubygem-gitaly \
-	rubygem-grpc124>=1.24.0:net/rubygem-grpc124 \
-	rubygem-google-protobuf38>=3.8.:devel/rubygem-google-protobuf38 \
+	rubygem-grpc>=1.30.2<1.31:net/rubygem-grpc \
+	rubygem-google-protobuf>=3.12<4:devel/rubygem-google-protobuf \
 	rubygem-toml-rb10>=1.0.0<1.1.0:www/rubygem-toml-rb10 \
 	rubygem-flipper017>=0.17.1<0.18.0:devel/rubygem-flipper017 \
 	rubygem-flipper-active_record017>=0.17.1<0.18.0:databases/rubygem-flipper-active_record017 \
@@ -262,7 +262,7 @@ USE_GITLAB=	yes
 GL_ACCOUNT?=	gitlab-org
 GL_PROJECT?=	gitlab-foss
 # Find the here: https://gitlab.com/gitlab-org/gitlab-foss/-/tags
-GL_COMMIT?=	b08b36dccc3857641fe4e170b11c30cfb47c49e1
+GL_COMMIT?=	6689552c4793623a9d47986328a0379ab215f9bc
 
 USERS=	git
 GROUPS=	git

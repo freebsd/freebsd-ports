@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-fog-azure-rm
-PORTVERSION=	0.9.0
+PORTVERSION=	1.0.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 

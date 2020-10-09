@@ -35,10 +35,12 @@
  
  # Jira integration
  gem 'jira-ruby', '~> 2.0.0'
-@@ -334,94 +333,6 @@ group :metrics do
+@@ -332,94 +331,6 @@ group :metrics do
+   # Prometheus
+   gem 'prometheus-client-mmap', '~> 0.11.0'
    gem 'raindrops', '~> 0.18'
- end
- 
+-end
+-
 -group :development do
 -  gem 'brakeman', '~> 4.2', require: false
 -  gem 'danger', '~> 8.0', require: false
@@ -125,20 +127,6 @@
 -
 -  # Moved in `test` because https://gitlab.com/gitlab-org/gitlab/-/issues/217527
 -  gem 'derailed_benchmarks', require: false
--end
--
+ end
+ 
  gem 'octokit', '~> 4.15'
- 
- # https://gitlab.com/gitlab-org/gitlab/issues/207207
-@@ -463,9 +374,9 @@ end
- # Gitaly GRPC protocol definitions
- gem 'gitaly', '~> 13.3.0-rc1'
- 
--gem 'grpc', '~> 1.30.2'
-+gem 'grpc', '~> 1.24.0'
- 
--gem 'google-protobuf', '~> 3.12'
-+gem 'google-protobuf', '~> 3.8'
- 
- gem 'toml-rb', '~> 1.0.0'
- 

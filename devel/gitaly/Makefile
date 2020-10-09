@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	gitaly
-DISTVERSION=	13.4.2
-PORTREVISION=	1
+DISTVERSION=	13.4.3
+PORTREVISION=	0
 CATEGORIES=	devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -21,13 +21,13 @@ MY_DEPENDS=	git>=2.28:devel/git \
 		rubygem-rdoc>=6.1<7.0:devel/rubygem-rdoc \
 		rubygem-gitlab-gollum-lib>=4.2.7.9<4.2.8:www/rubygem-gitlab-gollum-lib \
 		rubygem-gitlab-gollum-rugged_adapter>=0.4.4.2<0.4.5.0:www/rubygem-gitlab-gollum-rugged_adapter \
-		rubygem-grpc124>=1.24.0:net/rubygem-grpc124 \
+		rubygem-grpc>=1.30.2<1.31:net/rubygem-grpc \
 		rubygem-sentry-raven>=3.0<4:devel/rubygem-sentry-raven \
 		rubygem-faraday>=1.0.1<2:www/rubygem-faraday \
 		rubygem-rbtrace>=0.4.14:devel/rubygem-rbtrace \
 		rubygem-gitlab-labkit>=0.12.1<0.13:devel/rubygem-gitlab-labkit \
 		rubygem-licensee8>=8.9.0<8.10.0:devel/rubygem-licensee8 \
-		rubygem-google-protobuf38>=3.8.0<3.9.0:devel/rubygem-google-protobuf38
+		rubygem-google-protobuf>=3.12.0<4:devel/rubygem-google-protobuf
 BUILD_DEPENDS=	gem:devel/ruby-gems \
 		bash>0:shells/bash \
 		${MY_DEPENDS}
@@ -43,7 +43,7 @@ MAKE_ENV=	GOFLAGS="${GO_BUILDFLAGS}"
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find this here: https://gitlab.com/gitlab-org/gitaly/-/tags
-GL_COMMIT=	60a08d8121b1019ee7868a9d8e22e6f3d98233ad
+GL_COMMIT=	1719d651e68fb4ed5ac6836dc5410f621f4465c1
 
 # for go dependencies
 USE_GITHUB=	nodefault
