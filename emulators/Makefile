@@ -65,8 +65,8 @@
     SUBDIR += libretro-ppsspp
     SUBDIR += libspectrum
     SUBDIR += linux-c7
-    SUBDIR += linux-power9-functional-sim
     SUBDIR += linux-power10-functional-sim
+    SUBDIR += linux-power9-functional-sim
     SUBDIR += linux_base-c7
     SUBDIR += lisaem
     SUBDIR += mame
