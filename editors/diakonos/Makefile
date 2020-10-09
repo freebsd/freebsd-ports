@@ -4,6 +4,7 @@
 PORTNAME=	diakonos
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.7
+PORTREVISION=	1
 CATEGORIES=	editors ruby
 
 MAINTAINER=	ports@FreeBSD.org
@@ -12,7 +13,7 @@ COMMENT=	Console editor for the masses
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
-RUN_DEPENDS=	rubygem-curses>0:devel/rubygem-curses
+RUN_DEPENDS=	rubygem-curses>=1.3.1:devel/rubygem-curses
 
 USES=		shebangfix
 USE_GITHUB=	yes
