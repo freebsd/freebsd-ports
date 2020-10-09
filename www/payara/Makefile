@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	payara
-PORTVERSION=	5.183
+PORTVERSION=	5.2020.4
 CATEGORIES=	www java
-MASTER_SITES=	http://central.maven.org/maven2/fish/payara/distributions/${PORTNAME}/${PORTVERSION}/
+MASTER_SITES=	https://repo1.maven.org/maven2/fish/payara/distributions/${PORTNAME}/${PORTVERSION}/
 MAINTAINER=	dmytro@posteo.net
-COMMENT=	Java EE application server derived from GlassFish Server Open Source Edition
+COMMENT=	Jakarta EE application server derived from GlassFish Server Open Source Edition
 
 LICENSE=	GPLv2 CDDL
 LICENSE_COMB=	dual
@@ -29,7 +29,7 @@ PLIST_SUB+=	VARMAIN=${VARMAIN}
 SUB_LIST=	PAYARAVERSION=${PORTVERSION} \
 		JAVA_HOME=${JAVA_HOME}
 
-DOWNLOAD_URL=	http://central.maven.org/maven2/fish/payara/distributions/${PORTNAME}/${PORTVERSION}/
+DOWNLOAD_URL=	https://repo1.maven.org/maven2/fish/payara/distributions/${PORTNAME}/${PORTVERSION}/
 
 USE_RC_SUBR=	payara
 
@@ -46,11 +46,11 @@ do-install:
 	@${RM} ${WRKSRC}/bin/letsencrypt.py
 	@${FIND} ${WRKSRC} -name '*.bat' -delete
 	@${FIND} ${WRKSRC} -name '*.exe' -delete
+	@${FIND} ${WRKSRC} -name '*.dll' -delete
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR})
+	@${FIND} ${STAGEDIR}${DATADIR}/glassfish/domains -path "*/config/*" -type f -exec ${MV} {} {}.sample \;
 	@${MV} ${STAGEDIR}${DATADIR}/glassfish/domains ${STAGEDIR}${VARDIR}/domains
 	@${RLN} ${STAGEDIR}${VARDIR}/domains ${STAGEDIR}${DATADIR}/glassfish/domains
-	@${MV} ${STAGEDIR}${DATADIR}/glassfish/lib/registration ${STAGEDIR}${VARDIR}/registration
-	@${RLN}  ${STAGEDIR}${VARDIR}/registration ${STAGEDIR}${DATADIR}/glassfish/lib/registration
 	@${CHMOD} ${BINMODE} ${STAGEDIR}${DATADIR}/bin/*
 	@${CHMOD} ${BINMODE} ${STAGEDIR}${DATADIR}/mq/bin/*
 .for x in ${GLASSFISH_BIN_FILES}
