@@ -227,6 +227,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_LIBDIR%%/irb/cmd/chws.rb
 %%RUBY_LIBDIR%%/irb/cmd/fork.rb
 %%RUBY_LIBDIR%%/irb/cmd/help.rb
+%%RUBY_LIBDIR%%/irb/cmd/info.rb
 %%RUBY_LIBDIR%%/irb/cmd/load.rb
 %%RUBY_LIBDIR%%/irb/cmd/nop.rb
 %%RUBY_LIBDIR%%/irb/cmd/pushws.rb
@@ -12529,6 +12530,7 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Specification/post_install_message-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Specification/rdoc_options%3d-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Specification/rdoc_options-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/Specification/removed_method_calls-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Specification/require_path%3d-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Specification/require_path-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Specification/require_paths%3d-i.ri
@@ -12544,7 +12546,6 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Specification/reset_nil_attributes_to_default-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Specification/ri_dir-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Specification/ruby_code-i.ri
-%%RDOC%%%%RUBY_RIDIR%%/Gem/Specification/rubyforge_project-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Specification/rubygems_version-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Specification/runtime_dependencies-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Specification/same_attributes%3f-i.ri
@@ -12726,6 +12727,7 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Gem/TestCase/wait_for_child_process_to_exit-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/TestCase/win_platform%3f-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/TestCase/win_platform%3f-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/TestCase/with_clean_path_to_ruby-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/TestCase/write_file-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Text/cdesc-Text.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Text/clean_text-i.ri
@@ -12900,6 +12902,7 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Gem/rubygems_version-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/searcher%3d-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/source_date_epoch-c.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/source_date_epoch_string-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/sources%3d-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/sources-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/spec_cache_dir-c.ri
@@ -13300,6 +13303,8 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/IRB/Context/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/Context/newline_before_multiline_output%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/Context/newline_before_multiline_output-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/IRB/Context/omit_on_assignment%3f-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/IRB/Context/omit_on_assignment-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/Context/pop_workspace-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/Context/prompt_c-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/Context/prompt_i-i.ri
@@ -13346,6 +13351,7 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/IRB/ExtendCommand/Foreground/cdesc-Foreground.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/ExtendCommand/Fork/cdesc-Fork.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/ExtendCommand/Help/cdesc-Help.ri
+%%RDOC%%%%RUBY_RIDIR%%/IRB/ExtendCommand/Info/cdesc-Info.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/ExtendCommand/IrbCommand/cdesc-IrbCommand.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/ExtendCommand/Jobs/cdesc-Jobs.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/ExtendCommand/Kill/cdesc-Kill.ri
@@ -13371,6 +13377,7 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/IRB/FileInputMethod/eof%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/FileInputMethod/file_name-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/FileInputMethod/gets-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/IRB/FileInputMethod/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/FileInputMethod/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/Frame/FrameOverflow/cdesc-FrameOverflow.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/Frame/FrameOverflow/new-c.ri
@@ -13391,9 +13398,11 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/IRB/InputMethod/cdesc-InputMethod.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/InputMethod/file_name-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/InputMethod/gets-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/IRB/InputMethod/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/InputMethod/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/InputMethod/prompt-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/InputMethod/readable_after_eof%3f-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/IRB/InputMethod/winsize-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/Inspector/cdesc-Inspector.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/Inspector/def_inspector-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/Inspector/init-i.ri
@@ -13512,6 +13521,8 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/IRB/ReadlineInputMethod/encoding-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/ReadlineInputMethod/eof%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/ReadlineInputMethod/gets-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/IRB/ReadlineInputMethod/initialize_readline-c.ri
+%%RDOC%%%%RUBY_RIDIR%%/IRB/ReadlineInputMethod/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/ReadlineInputMethod/line-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/ReadlineInputMethod/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/ReadlineInputMethod/readable_after_eof%3f-i.ri
@@ -13522,6 +13533,7 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/IRB/ReidlineInputMethod/encoding-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/ReidlineInputMethod/eof%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/ReidlineInputMethod/gets-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/IRB/ReidlineInputMethod/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/ReidlineInputMethod/line-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/ReidlineInputMethod/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/ReidlineInputMethod/readable_after_eof%3f-i.ri
@@ -13533,6 +13545,7 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/IRB/StdioInputMethod/encoding-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/StdioInputMethod/eof%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/StdioInputMethod/gets-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/IRB/StdioInputMethod/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/StdioInputMethod/line-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/StdioInputMethod/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/StdioInputMethod/readable_after_eof%3f-i.ri
