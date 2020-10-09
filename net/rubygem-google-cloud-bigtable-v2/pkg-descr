@@ -1,0 +1,7 @@
+API Client library for the Cloud Bigtable V2 API
+
+Cloud Bigtable is a fully managed, scalable NoSQL database service for large
+analytical and operational workloads.
+
+WWW: https://github.com/googleapis/google-cloud-ruby
+WWW: https://github.com/googleapis/google-cloud-ruby/tree/master/google-cloud-bigtable-v2
