@@ -1,3 +1,3 @@
-TIMESTAMP = 1600951550
-SHA256 (gnome/vte-0.62.0.tar.xz) = 4d2d246ed47f08cc73f6471aa8e9f378998b7d0f7dcb0c433f29da5839dbb016
-SIZE (gnome/vte-0.62.0.tar.xz) = 444192
+TIMESTAMP = 1602278158
+SHA256 (gnome/vte-0.62.1.tar.xz) = c369e87c0c8284e09109d0a9aac821f543558f51c0cb9c7acfff3df64153308d
+SIZE (gnome/vte-0.62.1.tar.xz) = 444672
