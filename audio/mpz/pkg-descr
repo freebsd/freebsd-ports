@@ -1,0 +1,18 @@
+Music player for big local collections.
+
+Features 3 columns UI: directory tree (aka library), playlists and tracks
+from selected playlist.  Middle-click on folder or track in the directory
+view and it will become a playlist an its content will be loaded into
+tracks view.  Create multiple playlists from folders in your library and
+switch between them quickly.  Similar to "Album list" in Foobar2000.
+
+Built with C++ and Qt framework -- lightweight and fast.  Open Source and
+cross-platform.  Uses audio codecs installed on your system (GStreamer
+though QtMultimedia).  Follows you desktop theme.
+
+Supports radio streams in .pls and .m3u playlsts.  Supports CUE.  Has a
+playback log which is helpful for radio stream -- never miss a track you
+liked.  Supports MPRIS -- ability to control playback remotely, for
+example, via KDE Connect.
+
+WWW: https://olegantonyan.github.io/mpz/
