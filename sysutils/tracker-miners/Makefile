@@ -3,6 +3,7 @@
 
 PORTNAME=	tracker-miners
 PORTVERSION=	2.3.5
+PÖRTREVISION=	1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 
@@ -36,7 +37,6 @@ PORTSCOUT=	limitw:1,even
 USES=		gettext gnome jpeg localbase:ldflags meson \
 		pathfix pkgconfig python:3.4+,build sqlite tar:xz
 USE_GNOME=	cairo intltool libgsf libxml2
-USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 
 MESON_ARGS=	-Dsystemd_user_services=no \
@@ -58,6 +58,11 @@ RSS_MESON_TRUE=		miner_rss
 RSS_LIB_DEPENDS=	libgrss.so:net/libgrss
 
 PLIST_SUB=	LIBVER=0.2.0
+
+GLIB_SCHEMAS=	org.freedesktop.Tracker.Extract.gschema.xml \
+		org.freedesktop.Tracker.Miner.Files.gschema.xml \
+		org.freedesktop.Tracker.Writeback.gschema.xml \
+		org.freedesktop.TrackerMiners.enums.xml
 
 #post-install:
 #	${RM} -rf ${STAGEDIR}/${PREFIX}/lib/systemd

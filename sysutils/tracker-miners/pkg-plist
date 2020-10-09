@@ -39,10 +39,6 @@ share/dbus-1/services/org.freedesktop.Tracker1.Miner.Extract.service
 share/dbus-1/services/org.freedesktop.Tracker1.Miner.Files.service
 share/dbus-1/services/org.freedesktop.Tracker1.Miner.RSS.service
 share/dbus-1/services/org.freedesktop.Tracker1.Writeback.service
-share/glib-2.0/schemas/org.freedesktop.Tracker.Extract.gschema.xml
-share/glib-2.0/schemas/org.freedesktop.Tracker.Miner.Files.gschema.xml
-share/glib-2.0/schemas/org.freedesktop.Tracker.Writeback.gschema.xml
-share/glib-2.0/schemas/org.freedesktop.TrackerMiners.enums.xml
 share/locale/ar/LC_MESSAGES/tracker-miners.mo
 share/locale/as/LC_MESSAGES/tracker-miners.mo
 share/locale/be/LC_MESSAGES/tracker-miners.mo
