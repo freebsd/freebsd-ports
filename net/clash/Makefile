@@ -2,7 +2,7 @@
 
 PORTNAME=	clash
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.0
+DISTVERSION=	1.2.0
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,7 +15,7 @@ USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	Dreamacro
 GH_TUPLE=	\
-		Dreamacro:go-shadowsocks2:8e5c7db4f96a:dreamacro_go_shadowsocks2/vendor/github.com/Dreamacro/go-shadowsocks2 \
+		Dreamacro:go-shadowsocks2:v0.1.6:dreamacro_go_shadowsocks2/vendor/github.com/Dreamacro/go-shadowsocks2 \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		eapache:channels:v1.1.0:eapache_channels/vendor/gopkg.in/eapache/channels.v1 \
 		eapache:queue:v1.1.0:eapache_queue/vendor/github.com/eapache/queue \
@@ -25,13 +25,14 @@ GH_TUPLE=	\
 		go-yaml:yaml:9f266ea9e77c:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
 		go-yaml:yaml:v2.3.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		gofrs:uuid:v3.3.0:gofrs_uuid/vendor/github.com/gofrs/uuid \
-		golang:crypto:70a84ac30bf9:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:627f9648deb9:golang_net/vendor/golang.org/x/net \
-		golang:sync:43a5402ce75a:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:85ca7c5b95cd:golang_sys/vendor/golang.org/x/sys \
+		golang:crypto:123391ffb6de:golang_crypto/vendor/golang.org/x/crypto \
+		golang:net:3edf25e44fcc:golang_net/vendor/golang.org/x/net \
+		golang:sync:6e8e738ad208:golang_sync/vendor/golang.org/x/sync \
+		golang:sys:3d37ad5750ed:golang_sys/vendor/golang.org/x/sys \
+		golang:text:v0.3.0:golang_text/vendor/golang.org/x/text \
 		gorilla:websocket:v1.4.2:gorilla_websocket/vendor/github.com/gorilla/websocket \
 		konsorten:go-windows-terminal-sequences:v1.0.3:konsorten_go_windows_terminal_sequences/vendor/github.com/konsorten/go-windows-terminal-sequences \
-		miekg:dns:v1.1.29:miekg_dns/vendor/github.com/miekg/dns \
+		miekg:dns:v1.1.31:miekg_dns/vendor/github.com/miekg/dns \
 		oschwald:geoip2-golang:v1.4.0:oschwald_geoip2_golang/vendor/github.com/oschwald/geoip2-golang \
 		oschwald:maxminddb-golang:v1.6.0:oschwald_maxminddb_golang/vendor/github.com/oschwald/maxminddb-golang \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
