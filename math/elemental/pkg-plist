@@ -265,7 +265,9 @@ include/hydrogen/blas/GPU_BLAS.hpp
 include/hydrogen/blas/GPU_BLAS_decl.hpp
 include/hydrogen/blas/GPU_BLAS_impl.hpp
 include/hydrogen/blas/gpu/Axpy.hpp
+include/hydrogen/blas/gpu/CombineImpl.hpp
 include/hydrogen/blas/gpu/Copy.hpp
+include/hydrogen/blas/gpu/EntrywiseMapImpl.hpp
 include/hydrogen/blas/gpu/Fill.hpp
 include/hydrogen/blas/gpu/Hadamard.hpp
 include/hydrogen/blas/gpu/Scale.hpp
@@ -275,6 +277,7 @@ include/hydrogen/device/gpu/BasicCopy.hpp
 include/hydrogen/device/gpu/CUB.hpp
 include/hydrogen/device/gpu/CUDA.hpp
 include/hydrogen/device/gpu/GPUError.hpp
+include/hydrogen/device/gpu/GPURuntime.hpp
 include/hydrogen/device/gpu/ROCm.hpp
 include/hydrogen/device/gpu/SyncInfo.hpp
 include/hydrogen/device/gpu/cuda/CUDACopy.hpp
@@ -288,6 +291,12 @@ include/hydrogen/device/gpu/cuda/cuBLASManagement.hpp
 include/hydrogen/device/gpu/cuda/cuBLASMeta.hpp
 include/hydrogen/device/gpu/cuda/cuBLASUtil.hpp
 include/hydrogen/device/gpu/cuda/cuBLAS_API.hpp
+include/hydrogen/device/gpu/cuda/cuSOLVER.hpp
+include/hydrogen/device/gpu/cuda/cuSOLVERError.hpp
+include/hydrogen/device/gpu/cuda/cuSOLVERManagement.hpp
+include/hydrogen/device/gpu/cuda/cuSOLVERMeta.hpp
+include/hydrogen/device/gpu/cuda/cuSOLVERUtil.hpp
+include/hydrogen/device/gpu/cuda/cuSOLVER_API.hpp
 include/hydrogen/device/gpu/rocm/ROCmCopy.hpp
 include/hydrogen/device/gpu/rocm/ROCmError.hpp
 include/hydrogen/device/gpu/rocm/ROCmLaunchKernel.hpp
@@ -299,6 +308,12 @@ include/hydrogen/device/gpu/rocm/rocBLASManagement.hpp
 include/hydrogen/device/gpu/rocm/rocBLASMeta.hpp
 include/hydrogen/device/gpu/rocm/rocBLASUtil.hpp
 include/hydrogen/device/gpu/rocm/rocBLAS_API.hpp
+include/hydrogen/device/gpu/rocm/rocSOLVER.hpp
+include/hydrogen/device/gpu/rocm/rocSOLVERError.hpp
+include/hydrogen/device/gpu/rocm/rocSOLVERManagement.hpp
+include/hydrogen/device/gpu/rocm/rocSOLVERMeta.hpp
+include/hydrogen/device/gpu/rocm/rocSOLVERUtil.hpp
+include/hydrogen/device/gpu/rocm/rocSOLVER_API.hpp
 include/hydrogen/meta/IndexSequence.hpp
 include/hydrogen/meta/MetaUtilities.hpp
 include/hydrogen/meta/TypeList.hpp
