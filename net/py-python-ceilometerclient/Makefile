@@ -3,7 +3,7 @@
 
 PORTNAME=	python-ceilometerclient
 PORTVERSION=	2.9.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=1.8:devel/py-pbr@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}iso8601>=0.1.11:devel/py-iso8601@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pbr>=1.6:devel/py-pbr@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}prettytable>=0.7<0.8:devel/py-prettytable@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}prettytable0>=0.7<0.8:devel/py-prettytable0@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.8.1:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.9.0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}stevedore>=1.10.0:devel/py-stevedore@${PY_FLAVOR}
