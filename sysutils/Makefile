@@ -975,6 +975,7 @@
     SUBDIR += py-borgmatic
     SUBDIR += py-cron-descriptor
     SUBDIR += py-croniter
+    SUBDIR += py-dict-toolbox
     SUBDIR += py-diffoscope
     SUBDIR += py-dirsync
     SUBDIR += py-distro
