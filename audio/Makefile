@@ -539,6 +539,7 @@
     SUBDIR += mpz
     SUBDIR += mumble
     SUBDIR += murmur
+    SUBDIR += murmur-cli
     SUBDIR += muse-sequencer
     SUBDIR += musepack
     SUBDIR += musescore
