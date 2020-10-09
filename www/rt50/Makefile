@@ -2,6 +2,7 @@
 
 PORTNAME=	rt
 DISTVERSION=	5.0.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://download.bestpractical.com/pub/rt/release/
 PKGNAMESUFFIX=	50
@@ -168,6 +169,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's!/path/to/your/etc!${RT_ETC_PATH}!g' ${WRKSRC}/etc/RT_SiteConfig.pm
 	@${REINPLACE_CMD} -e 's!/bin:/usr/bin!/bin:/usr/bin:${LOCALBASE}/bin!' ${WRKSRC}/lib/RT/Interface/CLI.pm && \
 	    ${RM} ${WRKSRC}/lib/RT/Interface/CLI.pm.bak
+	@${REINPLACE_CMD} -e 's!RT_ETC_DIR!${RT_ETC_DIR}!' ${WRKSRC}/sbin/rt-test-dependencies.in
 
 pre-install:
 	@${RM} ${WRKSRC}/lib/RT.pm.in
