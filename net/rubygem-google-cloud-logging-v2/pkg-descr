@@ -1,0 +1,7 @@
+API Client library for the Cloud Logging V2 API
+
+The Cloud Logging API lets you programmatically read and write log entries, set
+up exclusions, create logs-based metrics, and manage export sinks.
+
+WWW: https://github.com/googleapis/google-cloud-ruby
+WWW: https://github.com/googleapis/google-cloud-ruby/tree/master/google-cloud-logging-v2
