@@ -11,7 +11,7 @@ COMMENT=	Library to parse Blackbox-created PCAPng files
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Netflix
