@@ -10,15 +10,12 @@ name="yggdrasil"
 rcvar="yggdrasil_enable"
 
 start_cmd="${name}_start"
-start_precmd="${name}_prestart"
-stop_cmd="${name}_stop"
-stop_postcmd="${name}_poststop"
 
 pidfile="/var/run/yggdrasil/${name}.pid"
 command="/usr/sbin/daemon"
-command_args="-P ${pidfile} -r -f ${yggdrasil_command}"
+command_args="-P ${pidfile} -r"
 
-yggdrasil_prestart()
+yggdrasil_start()
 {
 	test ! -x %%PREFIX%%/bin/yggdrasil && (
 		logger -s -t yggdrasil "Warning: %%PREFIX%%/bin/yggdrasil is missing or not executable"
@@ -31,45 +28,11 @@ yggdrasil_prestart()
 		%%PREFIX%%/bin/yggdrasil -genconf > %%PREFIX%%/etc/yggdrasil.conf
 	)
 
-	tap_path="$(cat %%PREFIX%%/etc/yggdrasil.conf | egrep -o '/dev/tap[0-9]{1,2}$')"
-	tap_name="$(echo -n ${tap_path} | tr -d '/dev/')"
-
-	/sbin/ifconfig ${tap_name} >/dev/null 2>&1 || (
-		logger -s -t yggdrasil "Creating ${tap_name} adapter"
-		/sbin/ifconfig ${tap_name} create || logger -s -t yggdrasil "Failed to create ${tap_name} adapter"
-	)
-
 	mkdir -p /var/run/yggdrasil
-}
-
-yggdrasil_start()
-{
-	/sbin/ifconfig ${tap_name} >/dev/null 2>&1 || (
-		logger -s -t yggdrasil "Creating ${tap_name} adapter"
-		/sbin/ifconfig ${tap_name} create || logger -s -t yggdrasil "Failed to create ${tap_name} adapter"
-	)
 
 	logger -s -t yggdrasil "Starting yggdrasil"
 	${command} ${command_args} %%PREFIX%%/bin/yggdrasil -useconffile %%PREFIX%%/etc/yggdrasil.conf \
-		1>/var/log/yggdrasil.stdout.log \
-		2>/var/log/yggdrasil.stderr.log &
-}
-
-yggdrasil_stop()
-{
-	logger -s -t yggdrasil "Stopping yggdrasil"
-	test -f /var/run/yggdrasil/${name}.pid && kill -TERM $(cat /var/run/yggdrasil/${name}.pid)
-}
-
-yggdrasil_poststop()
-{
-	tap_path="$(cat %%PREFIX%%/etc/yggdrasil.conf | grep /dev/tap | egrep -o '/dev/.*$')"
-        tap_name="$(echo -n ${tap_path} | tr -d '/dev/')"
-
-	/sbin/ifconfig ${tap_name} >/dev/null 2>&1 && (
-		logger -s -t yggdrasil "Destroying ${tap_name} adapter"
-		/sbin/ifconfig ${tap_name} destroy || logger -s -t yggdrasil "Failed to destroy ${tap_name} adapter"
-	)
+		-logto /var/log/yggdrasil.log
 }
 
 load_rc_config $name

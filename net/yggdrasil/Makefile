@@ -2,7 +2,7 @@
 
 PORTNAME=	yggdrasil
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.14
+DISTVERSION=	0.3.15
 CATEGORIES=	net
 
 MAINTAINER=	freebsd@neilalexander.dev
@@ -26,7 +26,7 @@ GH_TUPLE=	\
 		golang:text:929e72ca90de:golang_text/vendor/golang.org/x/text \
 		gologme:log:4e5d8ccb38e8:gologme_log/vendor/github.com/gologme/log \
 		hashicorp:go-syslog:v1.0.0:hashicorp_go_syslog/vendor/github.com/hashicorp/go-syslog \
-		hjson:hjson-go:9147687966d9:hjson_hjson_go/vendor/github.com/hjson/hjson-go \
+		hjson:hjson-go:d5d0e8b0617d:hjson_hjson_go/vendor/github.com/hjson/hjson-go \
 		kardianos:minwinsvc:cad6b2b879b0:kardianos_minwinsvc/vendor/github.com/kardianos/minwinsvc \
 		mattn:go-colorable:v0.1.2:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-isatty:v0.0.10:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
@@ -34,7 +34,8 @@ GH_TUPLE=	\
 		mitchellh:mapstructure:v1.1.2:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
 		vishvananda:netlink:v1.0.0:vishvananda_netlink/vendor/github.com/vishvananda/netlink \
 		vishvananda:netns:7109fa855b0f:vishvananda_netns/vendor/github.com/vishvananda/netns \
-		wireguard:wireguard-go:v0.0.20200320:wireguard_wireguard_go/vendor/golang.zx2c4.com/wireguard
+		wireguard:wireguard-go:v0.0.20200320:wireguard_wireguard_go/vendor/golang.zx2c4.com/wireguard \
+		WireGuard:wireguard-windows:v0.1.0:wireguard_wireguard_windows/vendor/golang.zx2c4.com/wireguard/windows
 
 GO_TARGET=	./cmd/yggdrasil \
 		./cmd/yggdrasilctl
