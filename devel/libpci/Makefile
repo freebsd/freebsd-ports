@@ -3,6 +3,7 @@
 
 PORTNAME=	libpci
 PORTVERSION=	3.7.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	KERNEL_ORG/software/utils/pciutils \
 		LOCAL/sunpoet
