@@ -1,0 +1,9 @@
+inputplug is a very simple daemon which monitors XInput events and runs
+arbitrary scripts on hierarchy change events (such as a device being attached,
+removed, enabled or disabled).
+
+For example, inputplug can be used in shell scripts which monitor attachments
+of keyboards in order to run change keyboard mappings with commands like
+"setxkbmap -option ctrl:nocaps".
+
+WWW: https://github.com/andrewshadura/inputplug

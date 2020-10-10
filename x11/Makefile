@@ -107,6 +107,7 @@
     SUBDIR += idesk
     SUBDIR += imwheel
     SUBDIR += innerspace
+    SUBDIR += inputplug
     SUBDIR += j4-dmenu-desktop
     SUBDIR += jgmenu
     SUBDIR += kanshi
