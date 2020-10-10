@@ -138,6 +138,7 @@ CORE_DEPS=	p5-Apache-Session>=1.53:www/p5-Apache-Session				\
 		p5-Net-CIDR>0:net-mgmt/p5-Net-CIDR					\
 		p5-Net-IP>=0:net-mgmt/p5-Net-IP						\
 		p5-Plack>=1.0002:www/p5-Plack						\
+		p5-Pod-Parser>0:textproc/p5-Pod-Parser					\
 		p5-Starlet>0:www/p5-Starlet						\
 		p5-Regexp-Common-net-CIDR>0:textproc/p5-Regexp-Common-net-CIDR		\
 		p5-Regexp-Common>0:textproc/p5-Regexp-Common				\
