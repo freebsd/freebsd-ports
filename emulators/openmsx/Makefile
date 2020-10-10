@@ -11,6 +11,8 @@ COMMENT=	Open source MSX emulator
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/GPL.txt
 
+BROKEN=		fails to build
+
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libogg.so:audio/libogg \
 		libvorbis.so:audio/libvorbis \
