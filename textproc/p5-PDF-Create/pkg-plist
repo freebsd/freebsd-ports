@@ -1,10 +1,10 @@
 bin/verify-char-width
-%%SITE_PERL%%/PDF/Create/Page.pm
-%%SITE_PERL%%/PDF/Create/Outline.pm
 %%SITE_PERL%%/PDF/Create.pm
+%%SITE_PERL%%/PDF/Create/Outline.pm
+%%SITE_PERL%%/PDF/Create/Page.pm
+%%SITE_PERL%%/PDF/Font.pm
 %%SITE_PERL%%/PDF/Image/GIF.pm
 %%SITE_PERL%%/PDF/Image/JPEG.pm
-%%SITE_PERL%%/PDF/Font.pm
 %%SITE_PERL%%/auto/share/dist/PDF-Create/courier-bold.json
 %%SITE_PERL%%/auto/share/dist/PDF-Create/courier-boldoblique.json
 %%SITE_PERL%%/auto/share/dist/PDF-Create/courier-oblique.json
