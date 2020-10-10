@@ -1,0 +1,6 @@
+Poetry Core is a PEP 517 build backend implementation developed for Poetry. This
+project is intended to be a light weight, fully compliant, self-contained
+package allowing PEP 517 compatible build frontends to build Poetry managed
+projects.
+
+WWW: https://github.com/python-poetry/poetry-core
