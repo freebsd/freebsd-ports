@@ -38,7 +38,7 @@ USE_XORG=	x11 xcb xcursor xcomposite xdamage xext xfixes xi xinerama \
 		xrandr xrender xtst xscrnsaver
 USE_LDCONFIG=	yes
 
-MESON_ARGS=	-Dsystemd=false -Deeze=false
+MESON_ARGS=		-Dsystemd=false -Deeze=false
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -59,7 +59,6 @@ OPTIONS_SINGLE_ENGINE=	OPENGL OPENGLES NONE
 OPTIONS_SINGLE_LUAL=	LUAJIT LUALANG
 OPTIONS_DEFAULT=	FRIBIDI HARFBUZZ PHYSICS PULSEAUDIO EFLONE EXAMPLES GSTREAMER V4L SCIM XIM \
 			OPENSSL OPENJPEG PDF PS RAW SVG WEBP XCF OPENGL LUAJIT CXX
-OPTIONS_EXCLUDE_i386=	EXAMPLES
 OPTIONS_DEFAULT_aarch64=	LUALANG
 OPTIONS_DEFAULT_powerpc64=	LUALANG
 OPTIONS_DEFAULT_powerpc64le=	LUALANG
@@ -287,6 +286,11 @@ EVAS-LOADERS-DISABLER:=		"${EVAS-LOADERS-DISABLER-BASE}xcf"
 .endif
 
 MESON_ARGS+=			${EVAS-LOADERS-DISABLER}
+
+# Work-around build failure, which is caused by subtle problem in lld and -as-needed flag
+.if ${ARCH} == i386
+MESON_ARGS+=	-Db_asneeded=false
+.endif
 
 .if ${PORT_OPTIONS:MLUA} && ${PORT_OPTIONS:MCXX}
 EFL_BINDINGS=	-Dbindings=luajit,cxx
