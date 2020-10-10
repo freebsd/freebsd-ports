@@ -876,6 +876,7 @@
     SUBDIR += py-svg.path
     SUBDIR += py-svgwrite
     SUBDIR += py-termtosvg
+    SUBDIR += py-tifffile
     SUBDIR += py-toyplot
     SUBDIR += py-traitsui
     SUBDIR += py-vecrec
