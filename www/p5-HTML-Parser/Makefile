@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	HTML-Parser
-PORTVERSION=	3.72
+PORTVERSION=	3.75
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,9 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-HTML-Tagset>=3:www/p5-HTML-Tagset
+RUN_DEPENDS=	p5-HTML-Tagset>=0:www/p5-HTML-Tagset \
+		p5-HTTP-Message>=0:www/p5-HTTP-Message \
+		p5-URI>=0:net/p5-URI
 
 USES=		perl5
 USE_PERL5=	configure
