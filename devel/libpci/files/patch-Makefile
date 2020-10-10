@@ -11,7 +11,7 @@
  
  VERSION=3.7.0
  DATE=2020-05-31
-@@ -32,7 +32,7 @@ HWDB=
+@@ -32,10 +32,10 @@ HWDB=
  ABI_VERSION=.3
  
  # Installation directories
@@ -19,7 +19,11 @@
 +# PREFIX=/usr/local
  SBINDIR=$(PREFIX)/sbin
  SHAREDIR=$(PREFIX)/share
- IDSDIR=$(SHAREDIR)
+-IDSDIR=$(SHAREDIR)
++IDSDIR=$(SHAREDIR)/pciids
+ MANDIR:=$(shell if [ -d $(PREFIX)/share/man ] ; then echo $(PREFIX)/share/man ; else echo $(PREFIX)/man ; fi)
+ INCDIR=$(PREFIX)/include
+ LIBDIR=$(PREFIX)/lib
 @@ -45,7 +45,7 @@ PKGCFDIR=$(LIBDIR)/pkgconfig
  INSTALL=install
  DIRINSTALL=install -d
