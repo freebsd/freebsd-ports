@@ -38,7 +38,7 @@ USE_XORG=	x11 xcb xcursor xcomposite xdamage xext xfixes xi xinerama \
 		xrandr xrender xtst xscrnsaver
 USE_LDCONFIG=	yes
 
-MESON_ARGS=		-Dsystemd=false -Deeze=false
+MESON_ARGS=	-Dsystemd=false -Deeze=false
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
