@@ -1,6 +1,6 @@
-TIMESTAMP = 1602228732
-SHA256 (nakabonne-ali-v0.3.4_GH0.tar.gz) = 2c1105092cdd3d9123f7aa17c551792b01f25a40fc73b0a57e4c12478bb552be
-SIZE (nakabonne-ali-v0.3.4_GH0.tar.gz) = 4971885
+TIMESTAMP = 1602317645
+SHA256 (nakabonne-ali-v0.4.0_GH0.tar.gz) = ce6d0e941b1b1207bc214ff44793b01bad269e85c4c3befeaa0f8df4983d1afb
+SIZE (nakabonne-ali-v0.4.0_GH0.tar.gz) = 5791574
 SHA256 (davecgh-go-spew-v1.1.0_GH0.tar.gz) = 1f7e0bd2db0341925b5f2ee5834e99380f4c2b1bd36cf0fa62d7717899d39d62
 SIZE (davecgh-go-spew-v1.1.0_GH0.tar.gz) = 42337
 SHA256 (go-yaml-yaml-9f266ea9e77c_GH0.tar.gz) = 63efc9aabcbb56b2c9469927784fd67ecb3a79720c4fa754c511335a04156d04
