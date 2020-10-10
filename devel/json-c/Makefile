@@ -23,11 +23,6 @@ USE_LDCONFIG=	yes
 
 CPE_VENDOR=	json-c_project
 
-# Avoid use of newlocale(3) that results in increasing memory usage
-post-configure:
-	${REINPLACE_CMD} -e 's|.*HAVE_USELOCALE|// &|' \
-	    ${CONFIGURE_WRKSRC}/config.h
-
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/json_object_private.h ${STAGEDIR}${PREFIX}/include/json-c/
 

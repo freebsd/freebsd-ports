@@ -1,0 +1,13 @@
+Avoid use of newlocale(3) that results in increasing memory usage
+
+--- CMakeLists.txt.orig	2020-07-26 15:08:19 UTC
++++ CMakeLists.txt
+@@ -177,7 +177,7 @@ if (HAVE_STDLIB_H)
+ endif()
+ if (HAVE_LOCALE_H)
+     check_symbol_exists(setlocale   "locale.h" HAVE_SETLOCALE)
+-    check_symbol_exists(uselocale   "locale.h" HAVE_USELOCALE)
++    # check_symbol_exists(uselocale   "locale.h" HAVE_USELOCALE)
+ endif()
+ if (HAVE_STRINGS_H)
+     check_symbol_exists(strcasecmp  "strings.h" HAVE_STRCASECMP)
