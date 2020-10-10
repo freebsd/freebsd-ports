@@ -1,0 +1,5 @@
+Flanker is an open source parsing library written in Python by the Mailgun Team.
+Flanker currently consists of an address parsing library (flanker.addresslib) as
+well as a MIME parsing library (flanker.mime).
+
+WWW: https://github.com/mailgun/flanker
