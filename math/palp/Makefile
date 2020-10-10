@@ -3,6 +3,7 @@
 
 PORTNAME=	palp
 PORTVERSION=	2.12
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://hep.itp.tuwien.ac.at/~kreuzer/CY/palp/
 
@@ -11,6 +12,7 @@ COMMENT=	Package for Analyzing Lattice Polytopes
 
 LICENSE=	GPLv3
 
+USES=		gmake
 MAKEFILE=	GNUmakefile
 
 DIMENSIONS=	4 5 6 11
