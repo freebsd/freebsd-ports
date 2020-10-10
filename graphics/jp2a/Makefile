@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jp2a
-PORTVERSION=	1.0.9
+PORTVERSION=	1.1.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics
 
@@ -12,24 +12,27 @@ COMMENT=	Converts JPG images to ASCII
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libcurl.so:ftp/curl
+BUILD_DEPENDS=	autoconf-archive>0:devel/autoconf-archive
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libpng16.so:graphics/png
 
 USES=		autoreconf jpeg ncurses pkgconfig
-GNU_CONFIGURE=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Talinx
 
-CONFIGURE_ARGS=	--with-jpeg-prefix=${LOCALBASE} \
-		--with-curl-config=${LOCALBASE}/bin/curl-config
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-curl-config=${LOCALBASE}/bin/curl-config \
+		--with-jpeg-prefix=${LOCALBASE}
 
-MAKE_ENV+=	bashcompdir=${STAGEDIR}${PREFIX}/etc/bash_completion.d
 CONFIGURE_ENV+=	bashcompdir=${STAGEDIR}${PREFIX}/etc/bash_completion.d
+MAKE_ENV+=	bashcompdir=${STAGEDIR}${PREFIX}/etc/bash_completion.d
 
-PLIST_FILES=	bin/jp2a man/man1/jp2a.1.gz etc/bash_completion.d/jp2a
+LDFLAGS+=	-lm
 
-# version has too many flaws
-PORTSCOUT=	skipv:1.1.0
+PLIST_FILES=	bin/jp2a \
+		etc/bash_completion.d/jp2a \
+		man/man1/jp2a.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/jp2a ${STAGEDIR}${PREFIX}/bin
