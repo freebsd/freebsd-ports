@@ -1,0 +1,11 @@
+--- sbin/rt-test-dependencies.in.orig	2020-10-08 10:56:59 UTC
++++ sbin/rt-test-dependencies.in
+@@ -237,7 +237,7 @@ sub read_deps {
+     };
+ 
+     my ($vol, $dir, $path) = File::Spec->splitpath( $script_path );
+-    my $ret = do "$dir/../etc/cpanfile";
++    my $ret = do "$dir/../RT_ETC_DIR/cpanfile";
+     die "Failed to load cpanfile: @{[$@ || $!]}" if not defined $ret and ($@ or $!);
+ 
+     return %deps;
