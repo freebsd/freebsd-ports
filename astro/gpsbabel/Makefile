@@ -3,8 +3,7 @@
 
 PORTNAME=	gpsbabel
 DISTVERSIONPREFIX=	${PORTNAME}_
-DISTVERSION=	1_6_0
-PORTREVISION=	1
+DISTVERSION=	1_7_0
 CATEGORIES=	astro geography
 
 MAINTAINER=	dev2@heesakkers.info
@@ -20,7 +19,6 @@ CONFLICTS=	gpsbabel14-[0-9]*
 
 USE_GITHUB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-zlib=system
 
 OPTIONS_DEFINE=	GUI
 OPTIONS_SUB=	yes
@@ -36,7 +34,7 @@ CONFIGURE_ENV=	CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
 MAKE_ENV=	CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
 
 do-build:
-	(cd ${WRKSRC}; ${CONFIGURE_ENV} ${CONFIGURE_CMD} --with-zlib-system; ${MAKE_ENV} ${GMAKE})
+	(cd ${WRKSRC}; ${CONFIGURE_ENV} ${CONFIGURE_CMD}; ${MAKE_ENV} ${GMAKE})
 do-build-GUI-on:
 	(cd ${WRKSRC}/gui; ${QMAKE} USE_GUI=qt5; ${LRELEASE} *.ts; ${GMAKE})
 

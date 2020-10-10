@@ -1,0 +1,28 @@
+--- configure.orig	2020-09-12 23:44:42 UTC
++++ configure
+@@ -6278,13 +6278,13 @@ fi
+ else
+
+     # Die if libusb-1.0 not found. This prevents link failures later.
+-		{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for libusb_init in -lusb-1.0" >&5
+-$as_echo_n "checking for libusb_init in -lusb-1.0... " >&6; }
++		{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for libusb_init in -lusb" >&5
++$as_echo_n "checking for libusb_init in -lusb... " >&6; }
+ if ${ac_cv_lib_usb_1_0_libusb_init+:} false; then :
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lusb-1.0  $LIBS"
++LIBS="-lusb  $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+
+@@ -6319,7 +6319,7 @@ if test "x$ac_cv_lib_usb_1_0_libusb_init" = xyes; then
+ #define HAVE_LIBUSB_1_0 1
+ _ACEOF
+
+-  LIBS="-lusb-1.0 $LIBS"
++  LIBS="-lusb $LIBS"
+
+ else
+   { { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
