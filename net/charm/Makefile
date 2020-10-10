@@ -16,7 +16,7 @@ LICENSE_NAME=	Charm++/Converse License
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	none # No redistribution is allowed, no commercial use: commercial use requires a commercial license
 
-ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS=	amd64 i386 powerpc64
 ONLY_FOR_ARCHS_REASON=	Not clear if it can be built on other architectures
 
 FETCH_DEPENDS=	git:devel/git
@@ -27,7 +27,7 @@ SHEBANG_GLOB=	*.sh
 SHEBANG_FILES=	src/scripts/*
 USE_LDCONFIG=	yes
 
-#ARCH_STR=	linux${ARCH:S/amd64/64/:S/i386/32/}
+#ARCH_STR=	linux${ARCH:S/amd64/64/:S/i386/32/:C/powerpc.*/ppc/}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-v${DISTVERSION}
 INSTALL_WRKSRC=	${WRKSRC}/${VERSION}-${ARCH_STR}-gfortran-clang/tmp
@@ -41,12 +41,12 @@ MULTIPROCESSING_DESC=	Multiprocessing
 OPTIONS_SUB=		yes
 
 MULTICORE_DESC=		Single-node multicore version
-MULTICORE_VARS=		VERSION=multicore ARCH_STR=linux${ARCH:S/amd64/64/:S/i386/32/}
+MULTICORE_VARS=		VERSION=multicore ARCH_STR=linux${ARCH:S/amd64/64/:S/i386/32/:C/powerpc.*/-ppc/}
 
 ETHERNET_DESC=		Ethernet version
-ETHERNET_VARS=		VERSION=netlrts ARCH_STR=linux${ARCH:S/amd64/-x86_64/:S/i386//}
+ETHERNET_VARS=		VERSION=netlrts ARCH_STR=linux${ARCH:S/amd64/-x86_64/:S/i386//:C/powerpc.*/-ppc/}
 
-MPI_VARS=		VERSION=mpi ARCH_STR=linux${ARCH:S/amd64/-x86_64/:S/i386//}
+MPI_VARS=		VERSION=mpi ARCH_STR=linux${ARCH:S/amd64/-x86_64/:S/i386//:C/powerpc.*/-ppc/}
 MPI_LDFLAGS=		-lmpich
 MPI_LIB_DEPENDS=	libmpich.so:net/mpich
 
