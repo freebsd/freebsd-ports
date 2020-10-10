@@ -731,9 +731,12 @@ share/locale/pt_BR/LC_MESSAGES/pimeventsplugin.mo
 share/locale/pt_BR/LC_MESSAGES/sieveeditor_plugins.mo
 share/locale/pt_BR/LC_MESSAGES/webengineurlinterceptor.mo
 share/locale/ro/LC_MESSAGES/cryptopageplugin.mo
+share/locale/ro/LC_MESSAGES/customtoolsplugin.mo
+share/locale/ro/LC_MESSAGES/importwizard_plugins.mo
 share/locale/ro/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/ro/LC_MESSAGES/korganizer_plugins.mo
 share/locale/ro/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
+share/locale/ro/LC_MESSAGES/messageviewer_bodypartformatter_pkpass.mo
 share/locale/ro/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
 share/locale/ro/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/ru/LC_MESSAGES/cryptopageplugin.mo

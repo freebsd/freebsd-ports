@@ -208,6 +208,7 @@ share/locale/el/LC_MESSAGES/kio5_fish.mo
 share/locale/el/LC_MESSAGES/kio5_info.mo
 share/locale/el/LC_MESSAGES/kio5_man.mo
 share/locale/el/LC_MESSAGES/kio5_mtp.mo
+share/locale/el/LC_MESSAGES/kio5_network.mo
 share/locale/el/LC_MESSAGES/kio5_nfs.mo
 share/locale/el/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/el/LC_MESSAGES/kio5_sftp.mo

@@ -1,9 +1,5 @@
 bin/kdenlive
 bin/kdenlive_render
-etc/xdg/kdenlive_keyboardschemes.knsrc
-etc/xdg/kdenlive_renderprofiles.knsrc
-etc/xdg/kdenlive_titles.knsrc
-etc/xdg/kdenlive_wipes.knsrc
 %%QT_PLUGINDIR%%/mltpreview.so
 man/man1/kdenlive.1.gz
 man/man1/kdenlive_render.1.gz
@@ -225,6 +221,7 @@ share/icons/hicolor/scalable/mimetypes/video-mlt-playlist.svgz
 %%DATADIR%%/effects/oldfilm.xml
 %%DATADIR%%/effects/pan_zoom.xml
 %%DATADIR%%/effects/qtblend.xml
+%%DATADIR%%/effects/qtcrop.xml
 %%DATADIR%%/effects/region.xml
 %%DATADIR%%/effects/rotation.xml
 %%DATADIR%%/effects/rotation_keyframable.xml
@@ -336,6 +333,10 @@ share/icons/hicolor/scalable/mimetypes/video-mlt-playlist.svgz
 %%DATADIR%%/transitions/slide.xml
 %%DATADIR%%/transitions/wipe.xml
 share/knotifications5/kdenlive.notifyrc
+share/knsrcfiles/kdenlive_keyboardschemes.knsrc
+share/knsrcfiles/kdenlive_renderprofiles.knsrc
+share/knsrcfiles/kdenlive_titles.knsrc
+share/knsrcfiles/kdenlive_wipes.knsrc
 share/kservices5/mltpreview.desktop
 share/kxmlgui5/kdenlive/kdenliveui.rc
 share/locale/ar/LC_MESSAGES/kdenlive.mo
