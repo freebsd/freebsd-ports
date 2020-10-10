@@ -61,7 +61,7 @@ https://github.com/kinetiknz/cubeb/pull/600
  #endif
 --- /dev/null
 +++ media/libcubeb/src/cubeb_oss.c
-@@ -0,0 +1,1262 @@
+@@ -0,0 +1,1263 @@
 +/*
 + * Copyright © 2019-2020 Nia Alarie <nia@NetBSD.org>
 + * Copyright © 2020 Ka Ho Ng <khng300@gmail.com>
@@ -186,7 +186,7 @@ https://github.com/kinetiknz/cubeb/pull/600
 +  bool thread_created; /* (m) */
 +  bool running; /* (m) */
 +  bool destroying; /* (m) */
-+  cubeb_state state;
++  cubeb_state state; /* (m) */
 +  float volume /* (m) */;
 +  struct oss_stream play;
 +  struct oss_stream record;
@@ -1074,6 +1074,7 @@ https://github.com/kinetiknz/cubeb/pull/600
 +    ret = CUBEB_ERROR;
 +    goto error;
 +  }
++  s->state = CUBEB_STATE_STOPPED;
 +  s->record.fd = s->play.fd = -1;
 +  s->nfr = latency_frames;
 +  if (input_device != NULL) {
