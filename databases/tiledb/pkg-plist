@@ -1,5 +1,7 @@
 include/tiledb/array.h
 include/tiledb/array_schema.h
+include/tiledb/arrow_io_impl.h
+include/tiledb/arrowio
 include/tiledb/attribute.h
 include/tiledb/config.h
 include/tiledb/context.h
