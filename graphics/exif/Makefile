@@ -24,8 +24,9 @@ CPE_VENDOR=	curtis_galloway
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
-NLS_CONFIGURE_ON=	--enable-nls ${ICONV_CONFIGURE_ARG}
-NLS_CONFIGURE_OFF=	--disable-nls --without-libiconv-prefix
+NLS_CONFIGURE_ENABLE=	nls
+NLS_CONFIGURE_OFF=	--without-libiconv-prefix
+NLS_CONFIGURE_ON=	${ICONV_CONFIGURE_ARG}
 NLS_USES=		gettext iconv
 
 .include <bsd.port.mk>
