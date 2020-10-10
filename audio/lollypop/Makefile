@@ -22,7 +22,7 @@ LIB_DEPENDS=	libnotify.so:devel/libnotify \
 		libappstream-glib.so:devel/appstream-glib \
 		libtotem-plparser.so:multimedia/totem-pl-parser
 
-USES=		python:3.5+ pkgconfig gnome gettext meson shebangfix sqlite desktop-file-utils
+USES=		python:3.6+ pkgconfig gnome gettext meson shebangfix sqlite desktop-file-utils
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.gnome.org
 GL_ACCOUNT=	World
