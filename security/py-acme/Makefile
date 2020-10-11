@@ -23,7 +23,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>=1.2.3:security/py-cryptography
 		${PYTHON_PKGNAMEPREFIX}requests-toolbelt>=0.3.0:www/py-requests-toolbelt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.9.0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils
@@ -31,7 +31,7 @@ USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
 do-test:
-	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
+	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest
 
 .include "version.mk"
 .include <bsd.port.mk>
