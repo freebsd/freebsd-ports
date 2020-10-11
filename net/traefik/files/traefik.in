@@ -39,7 +39,7 @@ load_rc_config $name
 pidfile=/var/run/traefik.pid
 procname="%%PREFIX%%/bin/traefik"
 command="/usr/sbin/daemon"
-command_args="-f -p ${pidfile} /usr/bin/env ${traefik_env} ${procname} --configFile=${traefik_conf} ${traefik_args}"
+command_args="-f -p ${pidfile} /usr/bin/env ${traefik_env} ${procname} --configfile=${traefik_conf} ${traefik_args}"
 
 start_precmd=traefik_startprecmd
 

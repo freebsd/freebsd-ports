@@ -15,4 +15,17 @@ are options to achieve this:
   to bind to privileged ports.
 EOM
 }
+{ type: upgrade
+  maximum_version: "2.0"
+  message: <<EOM
+The version 2 of Traefik requires manual configuration changes
+when migrating from a legacy v1 version to v2.
+Please consult the Traefik migration guide at
+https://doc.traefik.io/traefik/migration/v1-to-v2/
+for details on how to adapt existing configuration files.
+Note that there is a tool that can automate migration and
+rewrite existing configuration files (at least partially):
+https://github.com/traefik/traefik-migration-tool
+EOM
+}
 ]
