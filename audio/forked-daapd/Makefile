@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	forked-daapd
-PORTVERSION=	24.1
-PORTREVISION=	10
+DISTVERSION=	27.2
 CATEGORIES=	audio
+MASTER_SITES=	https://github.com/ejurgensen/forked-daapd/releases/download/${DISTVERSION}/
 
 MAINTAINER=	takumiiinn@gmail.com
 COMMENT=	DAAP (iTunes), MPD (Music Player Daemon) and RSP (Roku) media server
@@ -12,26 +12,28 @@ COMMENT=	DAAP (iTunes), MPD (Music Player Daemon) and RSP (Roku) media server
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	antlr3:devel/antlr3
 LIB_DEPENDS=	libantlr3c.so:devel/libantlr3c \
 		libavahi-client.so:net/avahi-app \
 		libavcodec.so:multimedia/ffmpeg \
 		libconfuse.so:devel/libconfuse \
-		libevent.so:devel/libevent \
+		libcurl.so:ftp/curl \
+		libevent_pthreads.so:devel/libevent \
+		libgcrypt.so:security/libgcrypt \
+		libgpg-error.so:security/libgpg-error \
+		libjson-c.so:devel/json-c \
 		libgcrypt.so:security/libgcrypt \
 		libinotify.so:devel/libinotify \
 		libmxml.so:textproc/mxml \
-		libunistring.so:devel/libunistring
+		libplist.so:devel/libplist \
+		libsodium.so:security/libsodium \
+		libunistring.so:devel/libunistring \
+		libwebsockets.so:net/libwebsockets
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	ejurgensen
-
-USES=		autoreconf gettext gmake gperf iconv libtool localbase pathfix pkgconfig sqlite
+USES=		gnome gmake gperf iconv:wchar_t libtool localbase pathfix \
+		pkgconfig sqlite tar:xz
+USE_GNOME=	libxml2
 
 GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
-USE_LDCONFIG=	${LOCALBASE}/lib/forked-daapd
-CONFIGURE_ARGS+=--localstatedir=/var
 
 USE_RC_SUBR=	${PORTNAME}
 SUB_FILES=	pkg-message
@@ -39,21 +41,25 @@ SUB_FILES=	pkg-message
 USERS=		daapd
 GROUPS=		daapd
 
-OPTIONS_DEFINE=	ALSA ITUNES LASTFM MPD
-OPTIONS_DEFAULT=ITUNES LASTFM MPD
+OPTIONS_DEFINE=		ALSA ITUNES MPD PULSEAUDIO
+OPTIONS_DEFAULT=	ITUNES MPD
 
-ITUNES_DESC=	iTunes XML support
-MPD_DESC=	Music Player Daemon protocol support
+ITUNES_DESC=		iTunes XML support
+MPD_DESC=		Music Player Daemon protocol support
 
-ALSA_CONFIGURE_WITH=	alsa
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
-ITUNES_CONFIGURE_ENABLE=itunes
-ITUNES_LIB_DEPENDS=	libplist.so:devel/libplist
-LASTFM_CONFIGURE_ENABLE=lastfm
-LASTFM_LIB_DEPENDS=	libcurl.so:ftp/curl
-MPD_CONFIGURE_ENABLE=	mpd
+ALSA_CONFIGURE_WITH=	alsa
+
+ITUNES_CONFIGURE_ENABLE=	itunes
+
+MPD_CONFIGURE_ENABLE=		mpd
+
+PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio
+PULSEAUDIO_CONFIGURE_WITH=	pulseaudio
 
 post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/forked-daapd/forked-daapd-sqlext.so
+	@${RM} -r ${STAGEDIR}${PREFIX}/share/doc/forked-daapd
 	@${MV} ${STAGEDIR}${PREFIX}/etc/forked-daapd.conf ${STAGEDIR}${PREFIX}/etc/forked-daapd.conf.sample
 
 .include <bsd.port.mk>
