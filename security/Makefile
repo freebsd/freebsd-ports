@@ -151,6 +151,7 @@
     SUBDIR += fbopenssl
     SUBDIR += fcheck
     SUBDIR += fcrackzip
+    SUBDIR += ffuf
     SUBDIR += fiked
     SUBDIR += find-zlib
     SUBDIR += fizz
