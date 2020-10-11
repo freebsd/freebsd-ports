@@ -1,5 +1,5 @@
-TIMESTAMP = 1591564840
-SHA256 (crystal-lang-shards-v0.11.0_GH0.tar.gz) = d1b58ec81c6acc2bf7ecad4e2868e05f74a57647318a167c7324f706b568bfff
-SIZE (crystal-lang-shards-v0.11.0_GH0.tar.gz) = 45819
+TIMESTAMP = 1599230667
+SHA256 (crystal-lang-shards-v0.12.0_GH0.tar.gz) = f6803ffb58b9dd5e78c3c3ec273941c0f6278d75427937aeb77e37244cd5cad9
+SIZE (crystal-lang-shards-v0.12.0_GH0.tar.gz) = 52205
 SHA256 (crystal-lang-crystal-molinillo-e61b200edb735d5676e11cbe56e8353c8b2ced0b_GH0.tar.gz) = fd9e4f66eaf00b1aa05f6c762de9379e8a9573bfd52ba6af978dd4d69b5edbaf
 SIZE (crystal-lang-crystal-molinillo-e61b200edb735d5676e11cbe56e8353c8b2ced0b_GH0.tar.gz) = 23955

@@ -2,7 +2,7 @@
 
 PORTNAME=		shards
 DISTVERSIONPREFIX=	v
-DISTVERSION=		0.11.0
+DISTVERSION=		0.12.0
 CATEGORIES=		devel
 
 MAINTAINER=	greg@unrelenting.technology
@@ -17,11 +17,13 @@ LIB_DEPENDS=	libyaml.so:textproc/libyaml \
 		libevent.so:devel/libevent
 RUN_DEPENDS=	git:devel/git
 
+USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	crystal-lang
 GH_TUPLE=	crystal-lang:crystal-molinillo:e61b200edb735d5676e11cbe56e8353c8b2ced0b:molinillo/lib/molinillo
 
-MAKE_ARGS+=	CRFLAGS="--release --no-debug" \
+MAKE_ARGS+=	CRYSTAL="${LOCALBASE}/bin/crystal" \
+		FLAGS="--release --no-debug" \
 		MANDIR="${STAGEDIR}${PREFIX}/man"
 
 PLIST_FILES=	bin/shards \
