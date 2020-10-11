@@ -1,15 +1,15 @@
---- configure.ac.orig	2020-04-09 21:07:12 UTC
+--- configure.ac.orig	2020-10-09 11:32:59 UTC
 +++ configure.ac
 @@ -15,7 +15,7 @@ AM_PROG_AR
  AM_PROG_CC_C_O
  AC_PROG_SED
- if [ test "$GCC" = "yes" ];then
+ if test "$GCC" = "yes" && ! expr "$CC" : clang >/dev/null 2>&1;then
 -	CFLAGS="$CFLAGS -Wall -Wno-strict-aliasing -Wextra -Wno-unused-parameter -Wno-sign-compare -Wno-missing-field-initializers -Wno-implicit-fallthrough -Wno-stringop-truncation"
 +	CFLAGS="$CFLAGS -Wall -Wno-strict-aliasing -Wextra -Wno-unused-parameter -Wno-sign-compare -Wno-missing-field-initializers"
  fi
+ 
  AC_PATH_PROG(CTAGS, ctags, [:])
- AC_PATH_PROG(CSCOPE, cscope, [:])
-@@ -199,7 +199,7 @@ if test "$test_for_geoip" = yes && test "$have_maxmind
+@@ -222,7 +222,7 @@ if test "$test_for_geoip" = yes && test "$have_maxmind
  fi
  
  have_readline=no

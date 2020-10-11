@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ocserv
-PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTVERSION=	1.1.1
 CATEGORIES=	net net-vpn security
 MASTER_SITES=	ftp://ftp.infradead.org/pub/ocserv/
 
@@ -32,7 +31,8 @@ USES=		autoreconf cpe gperf libtool localbase ncurses \
 CPE_VENDOR=	infradead
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-geoip \
-		--without-http-parser
+		--without-http-parser \
+		--disable-namespaces
 
 USERS=		_ocserv
 GROUPS=		_ocserv
@@ -41,7 +41,7 @@ USE_RC_SUBR=	ocserv
 
 PLIST_SUB=	USERS="${USERS}" GROUPS="${GROUPS}"
 
-OPTIONS_DEFINE=		DOCS EXAMPLES GSSAPI RADIUS
+OPTIONS_DEFINE=		DOCS EXAMPLES GSSAPI MAXMIND RADIUS
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
 PORTEXAMPLES=	profile.xml sample.config sample.passwd
@@ -52,6 +52,10 @@ GSSAPI_CONFIGURE_OFF=	--without-gssapi
 
 RADIUS_LIB_DEPENDS=	libradcli.so:net/radcli
 RADIUS_CONFIGURE_OFF=	--without-radius
+
+MAXMIND_DESC=		Use Maxmind GeoIP library
+MAXMIND_LIB_DEPENDS=	libmaxminddb.so:net/libmaxminddb
+MAXMIND_CONFIGURE_OFF=	--without-maxmind
 
 .include <bsd.port.pre.mk>
 
