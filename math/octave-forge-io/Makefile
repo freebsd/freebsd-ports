@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	octave-forge-io
-PORTVERSION=	2.6.1
+PORTVERSION=	2.6.2
 PORTEPOCH=	1
 CATEGORIES=	math
 
@@ -17,7 +17,6 @@ LICENSE_FILE=	${WRKDIR}/${OCTSRC}/COPYING
 OCTSRC=		${DISTNAME}
 
 WRKSRC=		${WRKDIR}/${OCTSRC}/src
-GNU_CONFIGURE=	yes
 
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 
