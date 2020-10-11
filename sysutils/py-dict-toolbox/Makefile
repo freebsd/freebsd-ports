@@ -3,6 +3,7 @@
 
 PORTNAME=	dict-toolbox
 PORTVERSION=	1.9
+PORTREVISION=	1
 CATEGORIES=	sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,7 +12,7 @@ COMMENT=	Collection of python dictionary management tools
 
 LICENSE=	APACHE20
 
-USES=		python shebangfix
+USES=		python:3.6+ shebangfix
 USE_PYTHON=	autoplist distutils
 
 USE_GITLAB=	yes
