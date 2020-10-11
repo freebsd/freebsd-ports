@@ -25,6 +25,7 @@ share/applications/evolution-calendar.desktop
 share/applications/org.gnome.Extensions.desktop
 share/applications/org.gnome.Shell.Extensions.desktop
 share/applications/org.gnome.Shell.desktop
+share/bash-completion/completions/gnome-extensions
 share/dbus-1/interfaces/org.gnome.Shell.Extensions.xml
 share/dbus-1/interfaces/org.gnome.Shell.Introspect.xml
 share/dbus-1/interfaces/org.gnome.Shell.PadOsd.xml
