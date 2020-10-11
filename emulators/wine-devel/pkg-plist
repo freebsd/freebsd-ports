@@ -242,6 +242,8 @@ include/wine/windows/d3d11sdklayers.idl
 include/wine/windows/d3d11shader.h
 include/wine/windows/d3d12.h
 include/wine/windows/d3d12.idl
+include/wine/windows/d3d12sdklayers.h
+include/wine/windows/d3d12sdklayers.idl
 include/wine/windows/d3d12shader.h
 include/wine/windows/d3d12shader.idl
 include/wine/windows/d3d8.h
@@ -675,6 +677,8 @@ include/wine/windows/objectarray.h
 include/wine/windows/objectarray.idl
 include/wine/windows/objidl.h
 include/wine/windows/objidl.idl
+include/wine/windows/objidlbase.h
+include/wine/windows/objidlbase.idl
 include/wine/windows/objsafe.h
 include/wine/windows/objsafe.idl
 include/wine/windows/objsel.h
@@ -1319,6 +1323,7 @@ lib/wine/avifil32.dll.so
 %%WINE32%%lib/wine/avifile.dll16.so
 lib/wine/avrt.dll.so
 lib/wine/bcrypt.dll.so
+lib/wine/bcrypt.so
 lib/wine/bluetoothapis.dll.so
 lib/wine/browseui.dll.so
 lib/wine/bthprops.cpl.so
@@ -2394,6 +2399,7 @@ lib/wine/fakedlls/wdscore.dll
 lib/wine/fakedlls/webservices.dll
 lib/wine/fakedlls/wer.dll
 lib/wine/fakedlls/wevtapi.dll
+lib/wine/fakedlls/wevtsvc.dll
 lib/wine/fakedlls/wevtutil.exe
 lib/wine/fakedlls/where.exe
 lib/wine/fakedlls/whoami.exe
@@ -2935,6 +2941,7 @@ lib/wine/ntprint.dll.so
 %%WINE64%%%%STAGING%%lib/wine/nvencodeapi64.dll.so
 lib/wine/objsel.dll.so
 lib/wine/odbc32.dll.so
+lib/wine/odbc32.so
 lib/wine/odbcbcp.dll.so
 lib/wine/odbccp32.dll.so
 lib/wine/odbccu32.dll.so
@@ -3091,6 +3098,7 @@ lib/wine/urlmon.dll.so
 lib/wine/usbd.sys.so
 %%WINE32%%lib/wine/user.exe16.so
 lib/wine/user32.dll.so
+lib/wine/user32.so
 lib/wine/userenv.dll.so
 lib/wine/usp10.dll.so
 lib/wine/utildll.dll.so
@@ -3126,6 +3134,7 @@ lib/wine/wdscore.dll.so
 lib/wine/webservices.dll.so
 lib/wine/wer.dll.so
 lib/wine/wevtapi.dll.so
+lib/wine/wevtsvc.dll.so
 lib/wine/wevtutil.exe.so
 lib/wine/where.exe.so
 lib/wine/whoami.exe.so
@@ -3325,6 +3334,7 @@ share/applications/wine.desktop
 %%DATADIR%%/nls/c_28605.nls
 %%DATADIR%%/nls/c_437.nls
 %%DATADIR%%/nls/c_500.nls
+%%DATADIR%%/nls/c_708.nls
 %%DATADIR%%/nls/c_737.nls
 %%DATADIR%%/nls/c_775.nls
 %%DATADIR%%/nls/c_850.nls
