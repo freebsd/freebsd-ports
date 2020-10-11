@@ -33,8 +33,4 @@ VTK_CMAKE_BOOL=		WITH_VTK
 VTK_LIB_DEPENDS=	libvtkCommonCore-9.0.so:math/vtk9 \
 			libexpat.so:textproc/expat2
 
-xpost-stage: # https://github.com/BioMedIA/MIRTK/issues/674
-	@${RM} ${STAGEDIR}${PREFIX}/bin/uninstall-mirtk
-	#@${REINPLACE_CMD} -i '' 's|${STAGEDIR}||' ${STAGEDIR}${PREFIX}/lib/cmake/mirtk/MIRTKInstallManifest.txt
-
 .include <bsd.port.mk>
