@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	minizinc
-DISTVERSION=	2.4.3.20200807 # from the develop branch because it contains fixes for the latest bison
-PORTREVISION=	1
+DISTVERSION=	2.5.0
 CATEGORIES=	math lang
 
 MAINTAINER=	yuri@FreeBSD.org
