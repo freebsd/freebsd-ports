@@ -32,5 +32,6 @@ GIST_DESC=	Enable gist, graphical and interactive search tool
 GIST_CMAKE_BOOL=	ENABLE_GIST
 GIST_USES=	qt:5
 GIST_USE=	qt=core,gui,printsupport,widgets,qmake_build,buildtools_build
+GIST_BROKEN=	Fails to build with GIST, see https://github.com/Gecode/gecode/issues/96
 
 .include <bsd.port.mk>
