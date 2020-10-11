@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nmap
-DISTVERSION=	7.90
+DISTVERSION=	7.91
 PORTREVISION=	0
 CATEGORIES=	security
 MASTER_SITES=	https://nmap.org/dist/ \
