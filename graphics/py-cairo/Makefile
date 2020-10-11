@@ -4,6 +4,7 @@
 PORTNAME=	cairo
 PORTVERSION=	1.18.1
 PORTREVISION=	1
+PORTEPOCH=	1
 CATEGORIES=	graphics python
 MASTER_SITES=	https://github.com/pygobject/pycairo/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
