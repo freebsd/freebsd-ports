@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	obs-streamfx
-DISTVERSION=	0.8.3
+DISTVERSION=	0.9.0
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,7 +13,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 NOT_FOR_ARCHS=		i386
 NOT_FOR_ARCHS_REASON=	plugin requires a lot of memory for many of the filters to even run, physical or virtual memory can exceed 4GB
 
-LIB_DEPENDS=	libobs.so:multimedia/obs-studio
+BUILD_DEPENDS=	${LOCALBASE}/include/nlohmann/json.hpp:devel/nlohmann-json
+LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
+		libcurl.so:ftp/curl \
+		libobs.so:multimedia/obs-studio
 
 USES=		cmake
 USE_GITHUB=	yes

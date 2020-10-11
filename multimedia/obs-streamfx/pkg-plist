@@ -25,6 +25,10 @@ share/obs/obs-plugins/StreamFX/examples/shaders/source/shadertoy-3l23Rh.effect
 share/obs/obs-plugins/StreamFX/examples/shaders/source/shadertoy-3tlXWS.effect
 share/obs/obs-plugins/StreamFX/examples/shaders/source/shadertoy-MslGRn.effect
 share/obs/obs-plugins/StreamFX/examples/shaders/source/shadertoy-MslfRn.effect
+share/obs/obs-plugins/StreamFX/examples/shaders/source/shadertoy-MtcGD7.effect
+share/obs/obs-plugins/StreamFX/examples/shaders/source/shadertoy-XljBW3.effect
+share/obs/obs-plugins/StreamFX/examples/shaders/source/shadertoy-Xsl3RX.effect
+share/obs/obs-plugins/StreamFX/examples/shaders/source/shadertoy-template.effect
 share/obs/obs-plugins/StreamFX/examples/shaders/transition/color-shift.effect
 share/obs/obs-plugins/StreamFX/examples/shaders/transition/luma-burn.effect
 share/obs/obs-plugins/StreamFX/examples/shaders/transition/pixelator.effect
@@ -64,6 +68,7 @@ share/obs/obs-plugins/StreamFX/locale/nl-NL.ini
 share/obs/obs-plugins/StreamFX/locale/no-NO.ini
 share/obs/obs-plugins/StreamFX/locale/pa-IN.ini
 share/obs/obs-plugins/StreamFX/locale/pl-PL.ini
+share/obs/obs-plugins/StreamFX/locale/pt-BR.ini
 share/obs/obs-plugins/StreamFX/locale/pt-PT.ini
 share/obs/obs-plugins/StreamFX/locale/ro-RO.ini
 share/obs/obs-plugins/StreamFX/locale/ru-RU.ini

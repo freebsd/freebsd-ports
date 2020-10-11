@@ -1,27 +1,6 @@
---- CMakeLists.txt.orig	2020-04-24 03:39:40 UTC
+--- CMakeLists.txt.orig	2020-09-25 19:33:09 UTC
 +++ CMakeLists.txt
-@@ -92,13 +92,13 @@ else()
- endif()
- 
- # Detect Architecture
--math(EXPR BITS "8*${CMAKE_SIZEOF_VOID_P}")
--if("${BITS}" STREQUAL "32")
--	set(ARCH "x86")
--	message(STATUS "StreamFX no longer supports 32-bit builds, you are on your own if you continue.")
--else()
--	set(ARCH "x64")
--endif()
-+#math(EXPR BITS "8*${CMAKE_SIZEOF_VOID_P}")
-+#if("${BITS}" STREQUAL "32")
-+#	set(ARCH "x86")
-+#	message(STATUS "StreamFX no longer supports 32-bit builds, you are on your own if you continue.")
-+#else()
-+#	set(ARCH "x64")
-+#endif()
- 
- # All Warnings, Extra Warnings, Pedantic
- if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
-@@ -183,7 +183,7 @@ else()
+@@ -184,7 +184,7 @@ else()
  	set(CMAKE_PACKAGE_SUFFIX_OVERRIDE "" CACHE STRING "Override for the suffix.")
  
  	if(UNIX)
@@ -30,7 +9,7 @@
  	endif()
  
  	if(NOT ${PropertyPrefix}OBS_DOWNLOAD)
-@@ -502,9 +502,9 @@ if((CMAKE_C_COMPILER_ID STREQUAL "GNU")
+@@ -636,9 +636,9 @@ if((CMAKE_C_COMPILER_ID STREQUAL "GNU")
  	OR (CMAKE_C_COMPILER_ID STREQUAL "Clang")
  	OR (CMAKE_CXX_COMPILER_ID STREQUAL "Clang"))
  	if(CMAKE_CXX_COMPILER_VERSION VERSION_LESS 9.0)
@@ -43,7 +22,7 @@
  	endif()
  endif()
  
-@@ -1031,8 +1031,8 @@ else()
+@@ -1226,8 +1226,8 @@ else()
  	else()
  		install(
  			TARGETS ${PROJECT_NAME}
@@ -54,7 +33,7 @@
  		)
  		if(MSVC)
  			install(
-@@ -1044,7 +1044,7 @@ else()
+@@ -1239,7 +1239,7 @@ else()
  	
  		install(
  			DIRECTORY "data/"
