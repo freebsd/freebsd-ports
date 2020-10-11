@@ -14,4 +14,4 @@ ocr ./image.png
 ocr ./image1.jpg ./image2.jpg > ./alltext.txt
 ocr ./image*jpg
 
-WWW: https://metacpan.org/release/LEOCHARRE/Image-OCR-Tesseract-1.24
+WWW: https://metacpan.org/release/LEOCHARRE/Image-OCR-Tesseract-1.26
