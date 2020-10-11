@@ -2,6 +2,7 @@
 
 PORTNAME=		crystal
 DISTVERSION=		0.35.1
+PORTREVISION=		1
 CATEGORIES=		lang
 MASTER_SITES=		https://unrelentingtech.s3.dualstack.eu-west-1.amazonaws.com/crystal/:bootstrap
 DISTFILES=		${BOOTSTRAP_PATH}:bootstrap
@@ -26,6 +27,7 @@ LIB_DEPENDS=	libgc-threaded.so:devel/boehm-gc-threaded \
 		libLLVM-${LLVM_VERSION:C/^([6-9])0/\1/:S/-devel/12/}.so:devel/llvm${LLVM_VERSION}
 BUILD_DEPENDS=	${LOCALBASE}/bin/llvm-config${LLVM_VERSION}:devel/llvm${LLVM_VERSION} \
 		git:devel/git
+RUN_DEPENDS=	pkg-config:devel/pkgconf
 
 USES=		compiler gmake pkgconfig
 
