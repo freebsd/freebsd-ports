@@ -3,7 +3,7 @@
 
 PORTNAME=	pot
 PORTVERSION=	0.11.4
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	pizzamig@FreeBSD.org
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	potnet:sysutils/potnet \
 	ncat:security/nmap \
-	${LOCALBASE}/share/freebsd/MANIFESTS/amd64-amd64-12.1-RELEASE:misc/freebsd-release-manifests
+	freebsd-release-manifests>0:misc/freebsd-release-manifests
 
 USE_RC_SUBR=	pot pot_early
 
