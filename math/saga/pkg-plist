@@ -23,10 +23,12 @@ include/saga/saga_core/saga_api/tool_library.h
 include/saga/saga_core/saga_gdi/3d_view.h
 include/saga/saga_core/saga_gdi/3d_view_tools.h
 include/saga/saga_core/saga_gdi/saga_gdi.h
+include/saga/saga_core/saga_gdi/sgdi_controls.h
 include/saga/saga_core/saga_gdi/sgdi_core.h
 include/saga/saga_core/saga_gdi/sgdi_diagram.h
 include/saga/saga_core/saga_gdi/sgdi_dialog.h
 include/saga/saga_core/saga_gdi/sgdi_helper.h
+include/saga/saga_core/saga_gdi/sgdi_layout_items.h
 lib/libsaga_api-%%PORTVERSION%%.so
 lib/libsaga_api.so
 lib/libsaga_gdi-%%PORTVERSION%%.so
@@ -135,9 +137,13 @@ share/pixmaps/saga.png
 @mode 0777
 @dir %%DATADIR%%
 @mode 0666
+%%DATADIR%%/docs/saga_on_mac.odt
+%%DATADIR%%/docs/saga_toolchains_cheat_sheet.xml
+%%DATADIR%%/docs/saga_toolchains_manual.odt
 %%DATADIR%%/helper/make_arcsaga_toolboxes.bat
 %%DATADIR%%/helper/make_python_api.bat
 %%DATADIR%%/helper/make_python_api_all.bat
+%%DATADIR%%/helper/make_saga4qgis_toolboxes.bat
 %%DATADIR%%/helper/make_saga_release.bat
 %%DATADIR%%/helper/make_saga_snapshot.bat
 %%DATADIR%%/helper/make_tools_interface.bat
