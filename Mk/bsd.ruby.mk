@@ -184,7 +184,6 @@ _INVALID_RUBY_VER=	1
 
 .if !defined(_INVALID_RUBY_VER)
 
-RUBY24?=		"@comment "
 RUBY25?=		"@comment "
 RUBY26?=		"@comment "
 RUBY27?=		"@comment "
@@ -297,7 +296,6 @@ PLIST_SUB+=		${PLIST_RUBY_DIRS:C,DIR="(${LOCALBASE}|${PREFIX})/,DIR=",} \
 			RUBY_SUFFIX="${RUBY_SUFFIX}" \
 			RUBY_NAME="${RUBY_NAME}" \
 			RUBY_DEFAULT_SUFFIX="${RUBY_DEFAULT_SUFFIX}" \
-			RUBY24=${RUBY24} \
 			RUBY25=${RUBY25} \
 			RUBY26=${RUBY26} \
 			RUBY27=${RUBY27}
