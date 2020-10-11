@@ -221,6 +221,8 @@ include/mirtk/Matrix3x3.h
 include/mirtk/MaxStepLineSearch.h
 include/mirtk/MeanSquaredDisplacementError.h
 include/mirtk/Memory.h
+include/mirtk/MetaImageReader.h
+include/mirtk/MetaImageWriter.h
 include/mirtk/MirrorExtrapolateImageFunction.h
 include/mirtk/MultiLevelFreeFormTransformation.h
 include/mirtk/MultiLevelStationaryVelocityTransformation.h
@@ -364,7 +366,6 @@ lib/cmake/mirtk/MIRTKIOConfig.cmake
 lib/cmake/mirtk/MIRTKIOUse.cmake
 lib/cmake/mirtk/MIRTKImageConfig.cmake
 lib/cmake/mirtk/MIRTKImageUse.cmake
-lib/cmake/mirtk/MIRTKInstallManifest.txt
 lib/cmake/mirtk/MIRTKNumericsConfig.cmake
 lib/cmake/mirtk/MIRTKNumericsUse.cmake
 lib/cmake/mirtk/MIRTKRegistrationConfig.cmake
@@ -373,7 +374,6 @@ lib/cmake/mirtk/MIRTKTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/mirtk/MIRTKTargets.cmake
 lib/cmake/mirtk/MIRTKTransformationConfig.cmake
 lib/cmake/mirtk/MIRTKTransformationUse.cmake
-lib/cmake/mirtk/MIRTKUninstall.cmake
 lib/cmake/mirtk/MIRTKUse.cmake
 lib/mirtk/libMIRTKCommon.so
 lib/mirtk/libMIRTKCommon.so.0
@@ -402,6 +402,7 @@ lib/mirtk/python/mirtk/batch/slurm.py
 lib/mirtk/python/mirtk/subprocess.py
 lib/mirtk/python/mirtk/utils.py
 lib/mirtk/tools/aggregate-images
+lib/mirtk/tools/auto-contrast
 lib/mirtk/tools/average-dofs
 lib/mirtk/tools/average-images
 lib/mirtk/tools/average-measure
@@ -419,6 +420,7 @@ lib/mirtk/tools/construct-atlas
 lib/mirtk/tools/convert-dof
 lib/mirtk/tools/convert-image
 lib/mirtk/tools/cut-brain
+lib/mirtk/tools/detect-cardiac-phases
 lib/mirtk/tools/detect-edges
 lib/mirtk/tools/dilate-image
 lib/mirtk/tools/downsample-image
@@ -428,6 +430,7 @@ lib/mirtk/tools/erode-image
 lib/mirtk/tools/evaluate-atlas
 lib/mirtk/tools/evaluate-dof
 lib/mirtk/tools/evaluate-jacobian
+lib/mirtk/tools/evaluate-label-overlap
 lib/mirtk/tools/evaluate-overlap
 lib/mirtk/tools/evaluate-similarity
 lib/mirtk/tools/extract-connected-components
@@ -441,6 +444,7 @@ lib/mirtk/tools/init-dof
 lib/mirtk/tools/invert-dof
 lib/mirtk/tools/match-histogram
 lib/mirtk/tools/open-image
+lib/mirtk/tools/random-dof
 lib/mirtk/tools/reflect-image
 lib/mirtk/tools/register
 lib/mirtk/tools/resample-image
