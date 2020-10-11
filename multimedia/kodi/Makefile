@@ -5,6 +5,9 @@ DISTVERSION=	18.7.1
 PORTREVISION=	3
 CATEGORIES=	multimedia java
 
+PATCH_SITES=	https://github.com/xbmc/xbmc/commit/
+PATCHFILES=	920cc74da069216d19f724ecf5246cf997861bc6.patch:-p1
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Award winning media center application
 
