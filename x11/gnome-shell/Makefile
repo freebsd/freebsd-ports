@@ -17,7 +17,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	docbook-xsl>=0:textproc/docbook-xsl \
 		sassc:textproc/sassc \
 		gnome-control-center:sysutils/gnome-control-center \
-		a2x:textproc/asciidoc
+		a2x:textproc/asciidoc \
+		${LOCALBASE}/share/bash-completion/bash_completion.sh:shells/bash-completion
 LIB_DEPENDS=	libstartup-notification-1.so:x11/startup-notification \
 		libdrm.so:graphics/libdrm \
 		libmutter-6.so:x11-wm/mutter \
