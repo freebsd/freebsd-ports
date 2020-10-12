@@ -1,7 +1,8 @@
+# Created by: Gabriel M. Dutra <0xdutra@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	terragrunt
-PORTVERSION=	0.25.2
+PORTVERSION=	0.25.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
