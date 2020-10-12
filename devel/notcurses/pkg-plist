@@ -1,8 +1,6 @@
 bin/ncneofetch
 bin/notcurses-demo
 bin/notcurses-input
-bin/notcurses-ncreel
-%%DOCS%%bin/notcurses-tester
 bin/notcurses-tetris
 bin/notcurses-view
 include/ncpp/Cell.hh
@@ -28,6 +26,7 @@ include/ncpp/Tablet.hh
 include/ncpp/TabletCallback.hh
 include/ncpp/Utilities.hh
 include/ncpp/Visual.hh
+include/ncpp/Widget.hh
 include/ncpp/_exceptions.hh
 include/ncpp/_flag_enum_operator_helpers.hh
 include/ncpp/_helpers.hh
@@ -51,7 +50,6 @@ libdata/pkgconfig/notcurses.pc
 %%DOCS%%share/man/man1/ncneofetch.1.gz
 %%DOCS%%share/man/man1/notcurses-demo.1.gz
 %%DOCS%%share/man/man1/notcurses-input.1.gz
-%%DOCS%%share/man/man1/notcurses-ncreel.1.gz
 %%DOCS%%share/man/man1/notcurses-tester.1.gz
 %%DOCS%%share/man/man1/notcurses-tetris.1.gz
 %%DOCS%%share/man/man1/notcurses-view.1.gz
