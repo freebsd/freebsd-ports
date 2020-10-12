@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pg_repack
-PORTVERSION=	1.4.5
+PORTVERSION=	1.4.6
 DISTVERSIONPREFIX=	ver_
 CATEGORIES=	databases
 PKGNAMEPREFIX=	postgresql${PGSQL_VER:S/.//}-
@@ -12,7 +12,7 @@ COMMENT=	Reorganize tables in PostgreSQL databases with minimal locks
 
 LICENSE=	BSD3CLAUSE
 
-USES=		gettext-runtime gmake pgsql:9.2+
+USES=		gettext-runtime gmake pgsql:9.4+
 LLD_UNSAFE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	reorg
