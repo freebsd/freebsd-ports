@@ -28,7 +28,7 @@ default_CONFLICTS_INSTALL=	git-gui git-lite
 gui_CONFLICTS_INSTALL=		git git-lite
 gui_DESCR=			${.CURDIR}/pkg-descr-gui
 gui_PKGNAMESUFFIX=		-gui
-lite_CONFLISTS_INSTALL=		git git-gui
+lite_CONFLICTS_INSTALL=		git git-gui
 lite_DESCR=			${.CURDIR}/pkg-descr-lite
 lite_PKGNAMESUFFIX=		-lite
 
