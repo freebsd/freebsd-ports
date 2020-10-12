@@ -12,7 +12,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}-manpages-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	garga@FreeBSD.org
-.if ${FLAVOR:U} == default
+.if ${FLAVOR:Udefault} == default
 COMMENT=	Distributed source code management tool
 .elif ${FLAVOR:U} == gui
 COMMENT=	Distributed source code management tool (GUI enabled flavor)
