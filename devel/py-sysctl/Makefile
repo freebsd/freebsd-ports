@@ -12,6 +12,7 @@ COMMENT=	Wrapper for the sysctl system functions
 LICENSE=	BSD2CLAUSE
 
 USES=		python
+USE_CSTD=	c99
 USE_PYTHON=	distutils autoplist
 
 USE_GITHUB=	yes
