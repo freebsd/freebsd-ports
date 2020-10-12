@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	unbound
-PORTVERSION=	1.11.0
+PORTVERSION=	1.12.0
 CATEGORIES=	dns
 MASTER_SITES=	https://www.nlnetlabs.nl/downloads/unbound/ \
 		https://distfiles.crux.guru/
@@ -35,7 +35,7 @@ PORTDOCS=	CREDITS Changelog FEATURES LICENSE README README.svn \
 OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	THREADS PYTHON GOST ECDSA MUNIN_PLUGIN DOCS LIBEVENT \
 		FILTER_AAAA DNSTAP DNSCRYPT SUBNET EVAPI TFOCL TFOSE \
-		HIREDIS
+		HIREDIS DOH
 OPTIONS_DEFAULT=THREADS ECDSA LIBEVENT GOST
 
 LIBEVENT_DESC=	Build against libevent
@@ -50,6 +50,7 @@ EVAPI_DESC=	(Experimental) pluggable event based libunbound API support
 TFOCL_DESC=	Enable TCP Fast Open for client mode
 TFOSE_DESC=	Enable TCP Fast Open for server mode
 HIREDIS_DESC=	Enable hiredis support for the cachedb module
+DOH_DESC=	Enable DNS-over-HTTPS supports
 
 STRIP_FILES=	.libs/libunbound.so unbound-checkconf unbound \
 		unbound-control .libs/unbound-host .libs/unbound-anchor
@@ -81,6 +82,8 @@ PYTHON_VARS=		STRIP_FILES+=.libs/_unbound.so
 THREADS_CONFIGURE_WITH=	pthreads
 HIREDIS_CONFIGURE_ON=	--enable-cachedb --with-libhiredis
 HIREDIS_LIB_DEPENDS=	libhiredis.so:databases/hiredis
+DOH_CONFIGURE_ON=	--with-libnghttp2
+DOH_LIB_DEPENDS=	libnghttp2.so:www/libnghttp2
 
 post-patch:
 	@${RM} ${WRKSRC}/util/configlexer.c
