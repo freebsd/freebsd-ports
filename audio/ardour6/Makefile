@@ -3,7 +3,7 @@
 
 PORTNAME=	ardour6
 PORTVERSION=	6.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/beerml/ardour_releases/raw/master/
 # The original master side points to the latest release only:
@@ -41,6 +41,7 @@ LIB_DEPENDS=	libserd-0.so:devel/serd \
 		libcurl.so:ftp/curl \
 		libogg.so:audio/libogg \
 		libFLAC.so:audio/flac \
+		libSoundTouch.so:audio/soundtouch \
 		libwebsockets.so:net/libwebsockets
 
 USES=		compiler:c++11-lang desktop-file-utils gettext gnome \
@@ -105,9 +106,10 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
-WITH_ARCH_FLAGS=	--arch='-msse -mfpmath=sse' --dist-target=i386
+# only support for i686 or better
+WITH_ARCH_FLAGS=	--arch='-msse -mfpmath=sse -march=i686 -DARCH_X86' --dist-target=i686
 .elif ${ARCH} == "amd64"
-WITH_ARCH_FLAGS=	--arch='-msse -mfpmath=sse' --dist-target=x86_64
+WITH_ARCH_FLAGS=	--arch='-msse -mfpmath=sse -DARCH_X86' --dist-target=x86_64
 .elif ${ARCH:Mpowerpc*}
 LLD_UNSAFE=	yes
 .endif
