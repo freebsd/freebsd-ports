@@ -19,9 +19,9 @@
 #		Examples:
 #
 #			USES=python:2.7		# Supports Python 2.7 Only
-#			USES=python:3.5+	# Supports Python 3.5 or later
-#			USES=python:3.5-3.8	# Supports Python 3.5 to 3.8
-#			USES=python:-3.6	# Supports Python up to 3.6
+#			USES=python:3.6+	# Supports Python 3.6 or later
+#			USES=python:3.6-3.9	# Supports Python 3.6 to 3.9
+#			USES=python:-3.8	# Supports Python up to 3.8
 #			USES=python		# Supports any/all Python versions
 #
 # NOTE:	<version-spec> should be as specific as possible, matching the versions
@@ -250,7 +250,7 @@ _INCLUDE_USES_PYTHON_MK=	yes
 # What Python version and what Python interpreters are currently supported?
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
-_PYTHON_VERSIONS=		2.7 3.7 3.8 3.6 # preferred first
+_PYTHON_VERSIONS=		2.7 3.7 3.8 3.9 3.6 # preferred first
 _PYTHON_PORTBRANCH=		2.7		# ${_PYTHON_VERSIONS:[1]}
 _PYTHON_BASECMD=		${LOCALBASE}/bin/python
 _PYTHON_RELPORTDIR=		lang/python

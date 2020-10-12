@@ -283,6 +283,7 @@
     SUBDIR += python36
     SUBDIR += python37
     SUBDIR += python38
+    SUBDIR += python39
     SUBDIR += qmasm
     SUBDIR += qscheme
     SUBDIR += quickjs
