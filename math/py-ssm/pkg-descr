@@ -1,0 +1,21 @@
+This package has fast and flexible code for simulating, learning, and performing
+inference in a variety of state space models. Currently, it supports:
+* Hidden Markov Models (HMM)
+* Auto-regressive HMMs (ARHMM)
+* Input-output HMMs (IOHMM)
+* Hidden Semi-Markov Models (HSMM)
+* Linear Dynamical Systems (LDS)
+* Switching Linear Dynamical Systems (SLDS)
+* Recurrent SLDS (rSLDS)
+* Hierarchical extensions of the above
+* Partial observations and missing data
+
+It supports the following observation models:
+* Gaussian
+* Student's
+* Bernoulli
+* Poisson
+* Categorical
+* Von Mises
+
+WWW: https://github.com/lindermanlab/ssm
