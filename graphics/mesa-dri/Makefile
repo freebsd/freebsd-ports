@@ -3,34 +3,28 @@
 
 PORTNAME=	mesa-dri
 PORTVERSION=	${MESAVERSION}
-PORTREVISION=	9
 CATEGORIES=	graphics
 
 COMMENT=	OpenGL hardware acceleration drivers for DRI2+
 
 OPTIONS_GROUP=			PLATFORM
-OPTIONS_GROUP_PLATFORM=		PLATFORM_X11 PLATFORM_WAYLAND PLATFORM_DRM PLATFORM_SURFACELESS
+OPTIONS_GROUP_PLATFORM=		PLATFORM_X11 PLATFORM_WAYLAND
 PLATFORM_X11_DESC=		Enable X11 support for GBM/EGL
 PLATFORM_WAYLAND_DESC=		Enable Wayland support for GBM/EGL
-PLATFORM_DRM_DESC=		Enable DRM support for GBM/EGL
-PLATFORM_SURFACELESS_DESC=	Enable Surfaceless support for GBM/EGL
 PLATFORM_WAYLAND_IMPLIES=	WAYLAND
 
-OPTIONS_DEFINE=	VAAPI VDPAU WAYLAND
-OPTIONS_DEFAULT=WAYLAND PLATFORM_X11 PLATFORM_WAYLAND PLATFORM_DRM PLATFORM_SURFACELESS
-OPTIONS_SUB=	yes
-
-VAAPI_MESON_ON=		-Dgallium-va=true
-VAAPI_LIB_DEPENDS=	libva.so:multimedia/libva
-VAAPI_USE=		XORG=xcb
-
-VDPAU_MESON_ON=		-Dgallium-vdpau=true
-VDPAU_LIB_DEPENDS=	libvdpau.so:multimedia/libvdpau
+OPTIONS_DEFINE=		WAYLAND ZSTD
+OPTIONS_DEFAULT=	WAYLAND PLATFORM_X11 PLATFORM_WAYLAND ZSTD
+OPTIONS_SUB=		yes
 
 WAYLAND_DESC=		Enable support for the Wayland platform in Vulkan drivers
 WAYLAND_BUILD_DEPENDS=	wayland-protocols>=1.8:graphics/wayland-protocols
 WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland
 WAYLAND_IMPLIES=	PLATFORM_WAYLAND
+
+ZSTD_DESC=		Use ZSTD for shader cache
+ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
+ZSTD_MESON_ENABLED=	zstd
 
 .include <bsd.port.options.mk>
 .include "${.CURDIR:H:H}/graphics/mesa-dri/Makefile.common"
@@ -51,16 +45,13 @@ DRI_DRIVERS+=		R100 R200
 GALLIUM_DRIVERS+=	R300 R600 RADEONSI
 VULKAN_DRIVERS+=	AMD
 . if ${PORT_OPTIONS:MPLATFORM_X11}
-MESON_ARGS+=		-Dgallium-xvmc=true
-USE_XORG+=		xvmc
+USE_XORG+=		xv xvmc
+MESON_ARGS+=		-Dgallium-xvmc=enabled
 . endif
 .endif
 .if ${ARCH} == amd64 || ${ARCH} == i386
 DRI_DRIVERS+=		I915 I965
 GALLIUM_DRIVERS+=	SVGA
-. if ${OPSYS} == FreeBSD
-EXTRA_PATCHES+=	${PATCHDIR}/extra-src_mesa_drivers_dri_i965_intel__screen.c
-. endif
 VULKAN_DRIVERS+=	INTEL
 .endif
 
@@ -74,14 +65,6 @@ USE_XORG+=		xcb xrandr
 .endif
 .endif
 
-.if ${PORT_OPTIONS:MPLATFORM_DRM}
-MESA_PLATFORMS+=	drm
-.endif
-
-.if ${PORT_OPTIONS:MPLATFORM_SURFACELESS}
-MESA_PLATFORMS+=	surfaceless
-.endif
-
 .if ${PORT_OPTIONS:MPLATFORM_WAYLAND}
 MESA_PLATFORMS+=	wayland
 .endif
@@ -92,11 +75,11 @@ MESON_ARGS+=	-Ddri-drivers="${DRI_DRIVERS:ts,:tl}" \
 			-Dplatforms="${MESA_PLATFORMS:ts,:tl}"
 
 # Disable some options
-MESON_ARGS+=	-Dgallium-xa=false \
-		-Dgles1=false \
-		-Dgles2=false \
+MESON_ARGS+=	-Dgallium-xa=disabled \
+		-Dgles1=disabled \
+		-Dgles2=disabled \
 		-Dglx=disabled \
-		-Degl=false \
+		-Degl=disabled \
 		-Dosmesa=none \
 		-Dtools=""
 

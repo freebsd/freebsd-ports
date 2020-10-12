@@ -1,0 +1,13 @@
+lib/vdpau/libvdpau_r300.so
+lib/vdpau/libvdpau_r300.so.1
+lib/vdpau/libvdpau_r300.so.1.0
+lib/vdpau/libvdpau_r300.so.1.0.0
+lib/vdpau/libvdpau_r600.so
+lib/vdpau/libvdpau_r600.so.1
+lib/vdpau/libvdpau_r600.so.1.0
+lib/vdpau/libvdpau_r600.so.1.0.0
+lib/vdpau/libvdpau_radeonsi.so
+lib/vdpau/libvdpau_radeonsi.so.1
+lib/vdpau/libvdpau_radeonsi.so.1.0
+lib/vdpau/libvdpau_radeonsi.so.1.0.0
+@comment share/drirc.d/00-mesa-defaults.conf

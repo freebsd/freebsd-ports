@@ -1,0 +1,9 @@
+[
+{ type: install
+  message: <<EOM
+mesa-dri was just installed.
+If you want VAAPI or VDPAU from mesa project please install
+mesa-gallium-va or mesa-gallium-vdpau
+EOM
+}
+]

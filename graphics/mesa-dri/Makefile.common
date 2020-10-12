@@ -14,7 +14,7 @@
 MESAVERSION=	${MESABASEVERSION}${MESASUBVERSION:C/^(.)/.\1/}
 MESADISTVERSION=${MESABASEVERSION}${MESASUBVERSION:C/^(.)/-\1/}
 
-MESABASEVERSION=	19.0.8
+MESABASEVERSION=	20.2.0
 # if there is a subversion, don't include the '-' between 7.11-rc2.
 MESASUBVERSION=
 
@@ -74,7 +74,6 @@ python_OLD_CMD=	/usr/bin/env[[:space:]]python2 /usr/bin/python2 /bin/env[[:space
 SHEBANG_FILES=	src/gallium/*/*/*.py src/gallium/tools/trace/*.py \
 		src/gallium/drivers/svga/svgadump/svga_dump.py \
 		src/mapi/glapi/gen/*.py src/mapi/mapi_abi.py \
-		src/util/xmlpool/gen_xmlpool.py \
 		src/mesa/main/get_*.py src/util/format_srgb.py \
 		src/amd/*/*.py src/intel/genxml/gen_pack_header.py
 
@@ -86,23 +85,34 @@ PLIST=		${.CURDIR}/pkg-plist
 PKGHELP=	${.CURDIR}/pkg-help
 PKGINSTALL=	${.CURDIR}/pkg-install
 PKGDEINSTALL=	${.CURDIR}/pkg-deinstall
-INSTALL_TARGET=	install-strip
+
+.if ${OSVERSION} < 1200000
+EXTRA_PATCHES+= ${PATCHDIR}/extra-src_util_build__id.c
+.endif
+
+.if ${COMPONENT} == clover
+EXTRA_PATCHES+= ${PATCHDIR}/extra-src_gallium_auxiliary_meson.build \
+		${PATCHDIR}/extra-src_gallium_auxiliary_vl_vl__stubs.c
+.endif
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == powerpc64
-LLVM_DEFAULT=	90
-.elif ${LLVM_DEFAULT:C/[1-5]./&0/:S,-devel,990,} >= 90
-LLVM_DEFAULT=	80
-.endif
-
 BINARY_ALIAS+=	python3=${PYTHON_VERSION}
 
-BUILD_DEPENDS+=	llvm${LLVM_DEFAULT}>=3.9.0_4:devel/llvm${LLVM_DEFAULT}
+.if ${ARCH} == powerpc64
+LLVM_DEFAULT=	90
+BUILD_DEPENDS+=	llvm${LLVM_DEFAULT}>=9.0.1_2:devel/llvm${LLVM_DEFAULT}
 .if ${COMPONENT} != libs
-RUN_DEPENDS+=	llvm${LLVM_DEFAULT}>=3.9.0_4:devel/llvm${LLVM_DEFAULT}
+RUN_DEPENDS+=	llvm${LLVM_DEFAULT}>=9.0.1_2:devel/llvm${LLVM_DEFAULT}
 .endif
+.else
+LLVM_DEFAULT=	10
+BUILD_DEPENDS+=	llvm${LLVM_DEFAULT}>=10.0.1_1:devel/llvm${LLVM_DEFAULT}
+.if ${COMPONENT} != libs
+RUN_DEPENDS+=	llvm${LLVM_DEFAULT}>=10.0.1_1:devel/llvm${LLVM_DEFAULT}
+.endif
+.endif
+
 MESON_ARGS+=	--native-file="${WRKSRC}/llvm.ini"
 LDFLAGS+=	-Wl,-rpath=${LOCALBASE}/llvm${LLVM_DEFAULT}/lib
-MESON_ARGS+=	-Dllvm=true
-
+MESON_ARGS+=	-Dllvm=enabled

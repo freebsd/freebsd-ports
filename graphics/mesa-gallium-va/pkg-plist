@@ -1,0 +1,3 @@
+lib/dri/r600_drv_video.so
+lib/dri/radeonsi_drv_video.so
+@comment share/drirc.d/00-mesa-defaults.conf

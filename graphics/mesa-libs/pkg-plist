@@ -4,11 +4,9 @@ include/EGL/eglextchromium.h
 include/EGL/eglmesaext.h
 include/EGL/eglplatform.h
 include/GL/gl.h
-include/GL/gl_mangle.h
 include/GL/glcorearb.h
 include/GL/glext.h
 %%GLX%%include/GL/glx.h
-%%GLX%%include/GL/glx_mangle.h
 %%GLX%%include/GL/glxext.h
 @comment include/GL/internal/dri_interface.h
 include/GLES/egl.h

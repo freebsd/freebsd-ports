@@ -534,6 +534,8 @@
     SUBDIR += mesa-demos
     SUBDIR += mesa-devel
     SUBDIR += mesa-dri
+    SUBDIR += mesa-gallium-va
+    SUBDIR += mesa-gallium-vdpau
     SUBDIR += mesa-gallium-xa
     SUBDIR += mesa-libs
     SUBDIR += metacam

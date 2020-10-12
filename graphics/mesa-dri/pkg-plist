@@ -12,10 +12,8 @@ include/GL/internal/dri_interface.h
 %%R200_DRIVER%%lib/dri/r200_dri.so
 %%R300_GDRIVER%%lib/dri/r300_dri.so
 %%R600_GDRIVER%%lib/dri/r600_dri.so
-%%VAAPI%%%%R600_GDRIVER%%lib/dri/r600_drv_video.so
 %%R100_DRIVER%%lib/dri/radeon_dri.so
 %%RADEONSI_GDRIVER%%lib/dri/radeonsi_dri.so
-%%VAAPI%%%%RADEONSI_GDRIVER%%lib/dri/radeonsi_drv_video.so
 %%SWRAST_DRIVER%%lib/dri/swrast_dri.so
 %%SWRAST_GDRIVER%%lib/dri/swrast_dri.so
 %%SVGA_GDRIVER%%lib/dri/vmwgfx_dri.so
@@ -29,18 +27,6 @@ include/GL/internal/dri_interface.h
 @comment lib/libglapi.so
 @comment lib/libglapi.so.0
 @comment lib/libglapi.so.0.0.0
-%%VDPAU%%%%R300_GDRIVER%%lib/vdpau/libvdpau_r300.so
-%%VDPAU%%%%R300_GDRIVER%%lib/vdpau/libvdpau_r300.so.1
-%%VDPAU%%%%R300_GDRIVER%%lib/vdpau/libvdpau_r300.so.1.0
-%%VDPAU%%%%R300_GDRIVER%%lib/vdpau/libvdpau_r300.so.1.0.0
-%%VDPAU%%%%R600_GDRIVER%%lib/vdpau/libvdpau_r600.so
-%%VDPAU%%%%R600_GDRIVER%%lib/vdpau/libvdpau_r600.so.1
-%%VDPAU%%%%R600_GDRIVER%%lib/vdpau/libvdpau_r600.so.1.0
-%%VDPAU%%%%R600_GDRIVER%%lib/vdpau/libvdpau_r600.so.1.0.0
-%%VDPAU%%%%RADEONSI_GDRIVER%%lib/vdpau/libvdpau_radeonsi.so
-%%VDPAU%%%%RADEONSI_GDRIVER%%lib/vdpau/libvdpau_radeonsi.so.1
-%%VDPAU%%%%RADEONSI_GDRIVER%%lib/vdpau/libvdpau_radeonsi.so.1.0
-%%VDPAU%%%%RADEONSI_GDRIVER%%lib/vdpau/libvdpau_radeonsi.so.1.0.0
 %%INTEL_VDRIVER%%lib/libvulkan_intel.so
 %%AMD_VDRIVER%%lib/libvulkan_radeon.so
 libdata/pkgconfig/dri.pc

@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20201012:
+  AFFECTS: Users of mesa-dri with VAAPI or VDPAU options
+  AUTHOR: manu@FreeBSD.org
+
+  The nondefault options VAAPI and VDPAU were removed from the mesa-dri
+  port and two new ports, mesa-gallium-va and mesa-gallium-vdpau now contain
+  the necessary libraries for using VAAPI or VDPAU on AMD hardware.
+
 20201006:
   AFFECTS: users of sysutils/tenshi
   AUTHOR: 0mp@FreeBSD.org
