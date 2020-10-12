@@ -1,3 +1,3 @@
-TIMESTAMP = 1526113308
-SHA256 (gnome/gvfs-1.30.4.tar.xz) = 981e0aca7f4e2e99860137f9fd99c335fa72a764156d253caf1069380a8e3afa
-SIZE (gnome/gvfs-1.30.4.tar.xz) = 1895304
+TIMESTAMP = 1602487319
+SHA256 (gnome/gvfs-1.46.1.tar.xz) = 621ea6c1b9a60b7ed2893938620d3190725a3d9dc65ce5af0fb6c186ee342503
+SIZE (gnome/gvfs-1.46.1.tar.xz) = 1220416
