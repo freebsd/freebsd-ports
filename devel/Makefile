@@ -5107,6 +5107,7 @@
     SUBDIR += py-threema-msgapi
     SUBDIR += py-thrift
     SUBDIR += py-thriftpy
+    SUBDIR += py-tiamat
     SUBDIR += py-timelib
     SUBDIR += py-tinyarray
     SUBDIR += py-tinyrpc
