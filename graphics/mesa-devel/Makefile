@@ -86,6 +86,7 @@ r600_DESC=		R600, R700, Evergreen, Northern Islands
 radeonsi_DESC=		Southern Islands and newer
 
 COINST_DESC=		Allow co-installation with another Mesa port
+COINST_VARS=		LLVM_DEFAULT=10 # chase mesa-dri
 COINST_MESON_ON=	-Degl-lib-suffix=${PKGNAMESUFFIX}
 COINST_PLIST_SUB=	SUFFIX=${PKGNAMESUFFIX}
 COINST_SUB_FILES=	libmap.conf
