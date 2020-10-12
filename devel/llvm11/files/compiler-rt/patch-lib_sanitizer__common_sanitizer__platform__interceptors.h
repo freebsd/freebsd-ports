@@ -1,5 +1,5 @@
---- ../compiler-rt-11.0.0rc5.src/lib/sanitizer_common/sanitizer_platform_interceptors.h.orig
-+++ ../compiler-rt-11.0.0rc5.src/lib/sanitizer_common/sanitizer_platform_interceptors.h
+--- ../compiler-rt-11.0.0.src/lib/sanitizer_common/sanitizer_platform_interceptors.h.orig
++++ ../compiler-rt-11.0.0.src/lib/sanitizer_common/sanitizer_platform_interceptors.h
 @@ -597,7 +597,7 @@
  #define SANITIZER_INTERCEPT_PTHREAD_ATFORK SI_NETBSD
  #define SANITIZER_INTERCEPT_GETENTROPY SI_FREEBSD
