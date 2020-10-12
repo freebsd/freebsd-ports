@@ -1,0 +1,23 @@
+Pop-config is the official tool to allow for creating and app-merging
+configuration options for pop projects. Plugin Oriented Programming
+presents a means to merge multiple applications together dynamically.
+This capabilities requires that the startup of these applications needs
+to be managed from within the programming paradigm. Since this is the case
+pop-config becomes a critical and hard requirement of pop.
+
+Pop-config is not just about being able to work with pop projects
+to facilitate app-merging, it has also been designed to make the startup
+of an application much simpler, and to make the expensive boiler plate
+of startup and configuration as transparent as possible. When making
+pop projects the idea is that projects are developed in very small
+chunks and are then dynamically merged together. So the creation of
+these mergeable apps needs to be quick and easy!
+
+Pop-config also solves a problem with configuration of applications,
+when making a new application, if you want robust configuration
+loading, you need to be able to take options from the command line,
+environment variables, and configuration files. Pop-config does all
+of this for you, and loads them in the correct order, all behind the
+scenes, making your life easier.
+
+WWW: https://gitlab.com/saltstack/pop/pop-config
