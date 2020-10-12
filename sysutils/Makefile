@@ -435,7 +435,6 @@
     SUBDIR += glogg
     SUBDIR += glow
     SUBDIR += gnome-control-center
-    SUBDIR += gnome-mount
     SUBDIR += gnome-power-manager
     SUBDIR += gnome-settings-daemon
     SUBDIR += gnome-system-monitor
