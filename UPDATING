@@ -13,6 +13,15 @@ you update your ports collection, before attempting any port upgrades.
   port and two new ports, mesa-gallium-va and mesa-gallium-vdpau now contain
   the necessary libraries for using VAAPI or VDPAU on AMD hardware.
 
+20201012:
+  AFFECTS: users of devel/libsoup-gnome
+  AUTHOR: bapt@FreeBSD.org
+
+  libsoup-gnome has been merged back into libsoup for people building locally:
+  first delete libsoup-gnome before installing the new libsoup
+
+  $ pkg delete -f libsoup-gnome
+
 20201006:
   AFFECTS: users of sysutils/tenshi
   AUTHOR: 0mp@FreeBSD.org
