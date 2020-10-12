@@ -1,0 +1,15 @@
+Pop is used to express the Plugin Oriented Programming Paradigm. The Plugin
+Oriented Programming Paradigm has been designed to make pluggable software
+easy to write and easy to extend.
+
+Plugin Oriented Programming presents a new way to scale development teams
+and deliver complex software. This is done by making the applications entirely
+out of plugins, and also making the applications themselves natively pluggable
+with each other.
+
+Using Plugin Oriented Programming it then becomes easy to have the best of both
+worlds, software can be build in small pieces, making development easier to
+maintain. But the small pieces can then be merged and deployed in a single
+binary, making code deployment easy as well.
+
+WWW: https://pop.readthedocs.io
