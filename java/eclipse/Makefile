@@ -51,7 +51,7 @@ LICENSE=	EPL
 
 ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le
 
-BUILD_DEPENDS=	git:devel/git-lite \
+BUILD_DEPENDS=	git:devel/git@lite \
 		${LOCALBASE}/share/java/maven/bin/mvn:devel/maven \
 		zip:archivers/zip
 LIB_DEPENDS=	libsecret-1.so:security/libsecret \
