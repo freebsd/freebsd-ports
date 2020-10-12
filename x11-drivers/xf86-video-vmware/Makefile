@@ -17,7 +17,7 @@ ONLY_FOR_ARCHS_REASON=	The vmware gfx protocol is only supported on x86-compatib
 USES=		xorg-cat:driver
 
 LIB_DEPENDS+=	libdrm.so:graphics/libdrm \
-		libxatracker.so:graphics/libxatracker
+		libxatracker.so:graphics/mesa-gallium-xa
 
 CONFIGURE_ARGS= --without-libudev
 
