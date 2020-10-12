@@ -1275,10 +1275,6 @@
     SUBDIR += sysinfo
     SUBDIR += syslinux
     SUBDIR += syslog-ng
-    SUBDIR += syslog-ng320
-    SUBDIR += syslog-ng321
-    SUBDIR += syslog-ng322
-    SUBDIR += syslog-ng323
     SUBDIR += syslog-ng324
     SUBDIR += syslog-ng325
     SUBDIR += syslog-ng326

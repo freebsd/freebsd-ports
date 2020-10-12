@@ -1,5 +1,0 @@
-OpenDNSSEC was created as an open-source turn-key solution for
-DNSSEC. It secures zone data just before it is published in an
-authoritative name server.
-
-WWW: http://www.opendnssec.org

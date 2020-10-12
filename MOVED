@@ -15642,3 +15642,8 @@ emulators/qemu-sbruno|emulators/qemu|2020-10-02|Has expired: Port will be remove
 dns/knot2-lib|dns/knot3-lib|2020-10-04|Replaced by a more recent version
 graphics/libxatracker|graphics/mesa-gallium-xa|2020-10-12|Rename to have all gallium driver properly named
 sysutils/gnome-mount||2020-10-12|Replaced by gio/gvfs
+sysutils/syslog-ng322|sysutils/syslog-ng|2020-10-12|Has expired: Agreed upon upstream one year deprecation policy
+sysutils/syslog-ng321|sysutils/syslog-ng|2020-10-12|Has expired: Agreed upon upstream one year deprecation policy
+sysutils/syslog-ng320|sysutils/syslog-ng|2020-10-12|Has expired: Agreed upon upstream one year deprecation policy
+dns/opendnssec|dns/opendnssec2|2020-10-12|Has expired: EOLed by upstream
+sysutils/syslog-ng323|sysutils/syslog-ng|2020-10-12|Has expired: Agreed upon upstream one year deprecation policy
