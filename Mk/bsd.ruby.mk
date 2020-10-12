@@ -171,22 +171,42 @@ RUBY_PORTREVISION=	0
 RUBY_PORTEPOCH=		1
 RUBY27=			""	# PLIST_SUB helpers
 
+. elif ${RUBY_VER} == 3.0
+#
+# Ruby 3.0
+#
+RUBY_DISTVERSION=	3.0.0-preview1
+RUBY_PORTREVISION=	0
+RUBY_PORTEPOCH=		1
+RUBY30=			""	# PLIST_SUB helpers
+
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
 . else
 #
 # Other versions
 #
-IGNORE=	Only ruby 2.5, 2.6 and 2.7 are supported
+IGNORE=	Only ruby 2.5, 2.6, 2.7 and 3.0 are supported
 _INVALID_RUBY_VER=	1
 . endif
 .endif # defined(RUBY_VER)
+
+.if defined(RUBY_DISTVERSION)
+.if !defined(RUBY_VERSION)
+RUBY_VERSION=	${RUBY_DISTVERSION:tl:C/([a-z])[a-z]+/\1/g:C/([0-9])([a-z])/\1.\2/g:C/:(.)/\1/g:C/[^a-z0-9+]+/./g}
+.else
+DEV_ERROR+=     "Defining both RUBY_VERSION and RUBY_DISTVERSION is wrong, only set one"
+.endif
+.else
+RUBY_DISTVERSION=	${RUBY_VERSION}
+.endif
 
 .if !defined(_INVALID_RUBY_VER)
 
 RUBY25?=		"@comment "
 RUBY26?=		"@comment "
 RUBY27?=		"@comment "
+RUBY30?=		"@comment "
 
 .if defined(BROKEN_RUBY${RUBY_VER:R}${RUBY_VER:E})
 .if ${BROKEN_RUBY${RUBY_VER:R}${RUBY_VER:E}} == "yes"
@@ -196,7 +216,7 @@ BROKEN=			${BROKEN_RUBY${RUBY_VER:R}${RUBY_VER:E}}
 .endif
 .endif
 
-RUBY_WRKSRC=		${WRKDIR}/ruby-${RUBY_VERSION}
+RUBY_WRKSRC=		${WRKDIR}/ruby-${RUBY_DISTVERSION}
 
 RUBY_CONFIGURE_ARGS+=	--with-rubyhdrdir="${PREFIX}/include/ruby-${RUBY_VER}/" \
 			--with-rubylibprefix="${PREFIX}/lib/ruby" \
@@ -221,7 +241,7 @@ RUBY_DEFAULT_SUFFIX?=	${RUBY_DEFAULT_VER:S/.//}
 
 RUBY_PORTVERSION?=	${RUBY_VERSION}
 MASTER_SITE_SUBDIR_RUBY?=	${RUBY_VER}
-RUBY_DISTNAME?=		ruby-${RUBY_VERSION}
+RUBY_DISTNAME?=		ruby-${RUBY_DISTVERSION}
 
 RUBY_WRKSRC?=		${WRKDIR}/${RUBY_DISTNAME}
 
@@ -298,7 +318,8 @@ PLIST_SUB+=		${PLIST_RUBY_DIRS:C,DIR="(${LOCALBASE}|${PREFIX})/,DIR=",} \
 			RUBY_DEFAULT_SUFFIX="${RUBY_DEFAULT_SUFFIX}" \
 			RUBY25=${RUBY25} \
 			RUBY26=${RUBY26} \
-			RUBY27=${RUBY27}
+			RUBY27=${RUBY27} \
+			RUBY30=${RUBY30}
 
 .if defined(USE_RUBY_RDOC)
 MAKE_ENV+=	RUBY_RDOC=${RUBY_RDOC}

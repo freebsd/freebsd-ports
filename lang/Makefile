@@ -299,6 +299,7 @@
     SUBDIR += ruby25
     SUBDIR += ruby26
     SUBDIR += ruby27
+    SUBDIR += ruby30
     SUBDIR += runawk
     SUBDIR += rust
     SUBDIR += rust-bootstrap
