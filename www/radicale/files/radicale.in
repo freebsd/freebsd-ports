@@ -30,7 +30,7 @@ load_rc_config $name
 
 pidfile=/var/run/radicale/radicale.pid
 command=/usr/sbin/daemon
-command_args="-P ${pidfile} %%PREFIX%%/bin/radicale -C ${radicale_config}"
+command_args="-P ${pidfile} -f -ST ${name} %%PREFIX%%/bin/radicale -C ${radicale_config}"
 required_files=${radicale_config}
 start_precmd=do_precmd
 
