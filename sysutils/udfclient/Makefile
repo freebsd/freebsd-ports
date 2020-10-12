@@ -1,4 +1,3 @@
-# Created by: Andriy Gapon <avg@icyb.net.ua>
 # $FreeBSD$
 
 PORTNAME=	udfclient
@@ -7,7 +6,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.13thmonkey.org/udfclient/releases/
 DISTFILES=	UDFclient.${PORTVERSION}.tgz
 
-MAINTAINER=	avg@icyb.net.ua
+MAINTAINER=	avg@FreeBSD.org
 COMMENT=	Tools for UDF filesystem
 
 LICENSE=	ClArtistic

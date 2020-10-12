@@ -1,4 +1,3 @@
-# Created by: Andriy Gapon <avg@icyb.net.ua>
 # $FreeBSD$
 
 PORTNAME=		oolite

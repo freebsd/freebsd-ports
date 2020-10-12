@@ -1,4 +1,3 @@
-# Created by: Andriy Gapon <avg@icyb.net.ua>
 # $FreeBSD$
 
 PORTNAME=	gxmessage
@@ -8,7 +7,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	GNU \
 		LOCAL/martymac
 
-MAINTAINER=	avg@icyb.net.ua
+MAINTAINER=	avg@FreeBSD.org
 COMMENT=	GTK3 substitute for xmessage
 
 USE_GNOME=	gtk30 gnomeprefix intltool

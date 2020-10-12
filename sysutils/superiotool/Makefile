@@ -1,4 +1,3 @@
-# Created by: Andriy Gapon <avg@icyb.net.ua>
 # $FreeBSD$
 
 PORTNAME=	superiotool
@@ -8,7 +7,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL/avg \
 		http://www.icyb.net.ua/~avg/distfiles/
 
-MAINTAINER=	avg@icyb.net.ua
+MAINTAINER=	avg@FreeBSD.org
 COMMENT=	Helper tool for Super I/O chip detection and analysis
 
 LIB_DEPENDS=	libpci.so:devel/libpci
