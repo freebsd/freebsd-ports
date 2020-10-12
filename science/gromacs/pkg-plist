@@ -22,6 +22,11 @@ include/gmxapi/session/resources.h
 include/gmxapi/status.h
 include/gmxapi/system.h
 include/gmxapi/version.h
+include/gromacs/math/do_fit.h
+include/gromacs/math/functions.h
+include/gromacs/math/units.h
+include/gromacs/math/utilities.h
+include/gromacs/math/vec.h
 include/gromacs/math/vectypes.h
 include/gromacs/restraint/restraintpotential.h
 include/gromacs/utility/basedefinitions.h
@@ -57,11 +62,6 @@ share/cmake/gromacs%%SUFFIX_MPI%%%%SUFFIX_D%%/libgromacs.cmake
 %%OPENCL%%%%DATADIR%%/opencl/nbnxn_ocl_kernels_fastgen.clh
 %%OPENCL%%%%DATADIR%%/opencl/nbnxn_ocl_kernels_fastgen_add_twincut.clh
 %%OPENCL%%%%DATADIR%%/opencl/vectype_ops.clh
-%%DATADIR%%/template/CMakeLists.txt
-%%DATADIR%%/template/Makefile.pkg
-%%DATADIR%%/template/README
-%%DATADIR%%/template/cmake/FindGROMACS.cmake
-%%DATADIR%%/template/template.cpp
 %%DATADIR%%/top/README
 %%DATADIR%%/top/amber03.ff/aminoacids.arn
 %%DATADIR%%/top/amber03.ff/aminoacids.c.tdb
