@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libgdata
-PORTVERSION=	0.17.9
-PORTREVISION=	1
+PORTVERSION=	0.17.13
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 
@@ -22,10 +21,8 @@ LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 		libgcr-3.so:security/gcr \
 		liboauth.so:net/liboauth
 
-USES=		gettext gmake gnome libtool localbase pathfix pkgconfig tar:xz
-USE_GNOME=	glib20 gnomeprefix intltool introspection:build libxml2
+USES=		gettext gnome localbase meson pkgconfig tar:xz
+USE_GNOME=	glib20 introspection:build libxml2
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>
