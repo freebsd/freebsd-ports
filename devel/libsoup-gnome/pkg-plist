@@ -1,9 +1,0 @@
-include/libsoup-gnome-%%VERSION%%/libsoup/soup-cookie-jar-sqlite.h
-include/libsoup-gnome-%%VERSION%%/libsoup/soup-gnome-features.h
-include/libsoup-gnome-%%VERSION%%/libsoup/soup-gnome.h
-lib/girepository-1.0/SoupGNOME-%%VERSION%%.typelib
-lib/libsoup-gnome-%%VERSION%%.so
-lib/libsoup-gnome-%%VERSION%%.so.1
-lib/libsoup-gnome-%%VERSION%%.so.%%LIBVERSION%%
-libdata/pkgconfig/libsoup-gnome-%%VERSION%%.pc
-share/gir-1.0/SoupGNOME-%%VERSION%%.gir

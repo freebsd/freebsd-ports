@@ -3,6 +3,7 @@
 
 PORTNAME=	rest
 PORTVERSION=	0.7.93
+PORTREVISION=	1
 CATEGORIES=	devel www
 MASTER_SITES=	GNOME
 
@@ -24,12 +25,9 @@ TEST_TARGET=	check
 
 PORTEXAMPLES=	*.c
 
-OPTIONS_DEFINE=	GNOME EXAMPLES
-OPTIONS_DEFAULT=	GNOME
+OPTIONS_DEFINE=	EXAMPLES
 
-GNOME_LIB_DEPENDS=	libsoup-gnome-2.4.so:devel/libsoup-gnome
-GNOME_CONFIGURE_OFF=	--without-gnome
-GNOME_LIB_DEPENDS_OFF=	libsoup-2.4.so:devel/libsoup
+LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/librest-0.7.so.0

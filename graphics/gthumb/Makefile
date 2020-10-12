@@ -4,6 +4,7 @@
 
 PORTNAME=	gthumb
 PORTVERSION=	3.10.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -96,7 +97,6 @@ WEBP_MESON_TRUE=	libwebp
 WEBSERVICES_DESC=	Web services
 WEBSERVICES_LIB_DEPENDS=\
 			libjson-glib-1.0.so:devel/json-glib \
-			libsoup-gnome-2.4.so:devel/libsoup-gnome \
 			libwebkit2gtk-4.0.so:www/webkit2-gtk3
 WEBSERVICES_MESON_TRUE=	webservices
 YELP_DESC=		Viewer for built-in help system

@@ -15647,3 +15647,4 @@ sysutils/syslog-ng321|sysutils/syslog-ng|2020-10-12|Has expired: Agreed upon ups
 sysutils/syslog-ng320|sysutils/syslog-ng|2020-10-12|Has expired: Agreed upon upstream one year deprecation policy
 dns/opendnssec|dns/opendnssec2|2020-10-12|Has expired: EOLed by upstream
 sysutils/syslog-ng323|sysutils/syslog-ng|2020-10-12|Has expired: Agreed upon upstream one year deprecation policy
+devel/libsoup-gnome|devel/libsoup|2020-10-12|Reunited into on package they have the same dependencies
