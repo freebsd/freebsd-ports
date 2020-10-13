@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kid3
-PORTVERSION=	3.8.3
+PORTVERSION=	3.8.4
 PORTREVISION?=	0
 CATEGORIES=	audio kde
 MASTER_SITES=	SF
@@ -38,8 +38,9 @@ KID3_APPS+=	QT
 .else
 # KF5
 USES+=		kde:5
-USE_KDE+=	auth codecs config configwidgets coreaddons \
-		widgetsaddons xmlgui doctools_build ecm_build
+USE_KDE+=	auth codecs config configwidgets coreaddons kio \
+		service widgetsaddons xmlgui doctools_build ecm_build
+USE_QT+=	concurrent
 PLIST_SUB+=	KF5="" QT="@comment " QT_SUFX=""
 KID3_APPS+=	KDE
 .endif
