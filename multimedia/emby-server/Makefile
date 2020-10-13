@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	emby-server
-PORTVERSION=	4.5.1.0
+PORTVERSION=	4.5.2.0
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/MediaBrowser/Emby.Releases/releases/download/${PORTVERSION}/ \
 		https://mediabrowser.github.io/embytools/
