@@ -1,0 +1,9 @@
+Behave is behavior-driven development in Python style.
+
+Behavior-driven development (or BDD) is an agile software development technique
+that encourages collaboration between developers, QA and non-technical or
+business participants in a software project.
+
+behave uses tests written in a natural language style, backed up by Python code.
+
+WWW: https://github.com/behave/behave
