@@ -1,8 +1,7 @@
-# Created by: Hideyuki KURASHINA <rushani@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	bmpp
-DISTVERSION=	4.30.1
+DISTVERSION=	4.30.3
 CATEGORIES=	graphics perl5
 MASTER_SITES=	SF/dktools/dktools/dktools-${PORTVERSION}
 DISTNAME=	dktools-${PORTVERSION}
