@@ -2,7 +2,7 @@
 
 PORTNAME=	libgridxc
 DISTVERSION=	0.8.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science
 MASTER_SITES=	https://launchpad.net/${PORTNAME}/trunk/${DISTVERSION:R}/+download/
 
@@ -11,8 +11,6 @@ COMMENT=	Library to compute the exchange and correlation energy and potentials
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/../BSD_LICENSE
-
-BROKEN=		fails to build
 
 USES=		fortran gmake tar:tgz
 USE_LDCONFIG=	yes
@@ -29,7 +27,7 @@ MAKE_ENV=	INSTALL_DIR=${TMP_STAGEDIR}${PREFIX} FREEBSD_LOCALBASE=${LOCALBASE} LI
 BINARY_ALIAS=	make=${GMAKE}
 
 OPTIONS_DEFINE=		MPI LIBXC
-OPTIONS_DEFAULT=	MPI LIBXC
+OPTIONS_DEFAULT=	MPI # LIBXC
 
 MPI_MAKE_ENV=		WITH_MPI=1
 MPI_LIB_DEPENDS=	libmpich.so:net/mpich
@@ -37,6 +35,7 @@ MPI_LIB_DEPENDS=	libmpich.so:net/mpich
 LIBXC_DESC=		Use libxc for exchange-correlation functionals for DFT
 LIBXC_MAKE_ENV=		WITH_LIBXC=1
 LIBXC_LIB_DEPENDS=	libxc.so:science/libxc
+LIBXC_BROKEN=		Fails to build with libxc-5.0.0: https://bugs.launchpad.net/libgridxc/+bug/1899578
 
 post-patch:
 	@${MKDIR} ${BUILD_WRKSRC}
@@ -55,5 +54,6 @@ do-build:
 do-install:
 	cd ${TMP_STAGEDIR} && ${COPYTREE_SHARE} . ${STAGEDIR}
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/mk && ${MV} ${STAGEDIR}${PREFIX}/*.mk ${STAGEDIR}${PREFIX}/share/mk
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libGridXC.so
 
 .include <bsd.port.mk>
