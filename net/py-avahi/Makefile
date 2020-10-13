@@ -11,7 +11,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Python interface to the Avahi mDNS system
 
 DEPRECATED=	Uses deprecated version of python
-EXPIRATION_DATE=	2020-09-15
+EXPIRATION_DATE=	2020-11-15
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gdbm>0:databases/py-gdbm@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/dbus/_dbus.py:devel/py-dbus@${PY_FLAVOR}
