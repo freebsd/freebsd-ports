@@ -3,7 +3,7 @@
 
 PORTNAME=	libfsntfs
 # If/When moving from experimental to alpha, switch to DISTVERSIONPREFIX to prevent PORTEPOCH
-DISTVERSION=	experimental-20200627
+DISTVERSION=	experimental-20200921
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libfsntfs/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine
@@ -20,7 +20,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-python \
 		--with-libfwnt=${LOCALBASE}
 CONFIGURE_ENV=	PYTHON_CONFIG=${PYTHON_CMD}-config
-USES=		libtool fuse pathfix python:3.5+
+USES=		libtool fuse pathfix pkgconfig python:3.5+
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:E}
