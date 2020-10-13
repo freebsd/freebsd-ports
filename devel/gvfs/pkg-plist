@@ -38,8 +38,8 @@ libexec/gvfsd-trash
 man/man1/gvfsd-metadata.1.gz
 man/man1/gvfsd.1.gz
 man/man7/gvfs.7.gz
-share/GConf/gsettings/gvfs-dns-sd.convert
-share/GConf/gsettings/gvfs-smb.convert
+%%AVAHI%%share/GConf/gsettings/gvfs-dns-sd.convert
+%%SAMBA%%share/GConf/gsettings/gvfs-smb.convert
 share/dbus-1/services/org.gtk.vfs.Daemon.service
 %%AFC%%share/dbus-1/services/org.gtk.vfs.AfcVolumeMonitor.service
 %%GPHOTO2%%share/dbus-1/services/org.gtk.vfs.GPhoto2VolumeMonitor.service
