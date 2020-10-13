@@ -1,0 +1,17 @@
+bin/fsextinfo
+include/libfsext.h
+include/libfsext/codepage.h
+include/libfsext/definitions.h
+include/libfsext/error.h
+include/libfsext/extern.h
+include/libfsext/features.h
+include/libfsext/types.h
+lib/libfsext.a
+lib/libfsext.so
+lib/libfsext.so.1
+lib/libfsext.so.1.0.0
+%%PYTHON_SITELIBDIR%%/pyfsext.a
+%%PYTHON_SITELIBDIR%%/pyfsext.so
+libdata/pkgconfig/libfsext.pc
+man/man1/fsextinfo.1.gz
+man/man3/libfsext.3.gz
