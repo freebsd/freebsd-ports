@@ -3,6 +3,7 @@
 
 PORTNAME=	fs-uae
 PORTVERSION=	3.0.5
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://fs-uae.net/stable/${PORTVERSION}/
 
@@ -49,5 +50,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|= bind|= ::bind|' \
 		${WRKSRC}/src/od-fs/bsdsocket_posix.cpp \
 		${WRKSRC}/src/support/socket.cpp
+	@${REINPLACE_CMD} -e 's|return NULL|return 0|' \
+		${WRKSRC}/src/memory.cpp
 
 .include <bsd.port.post.mk>
