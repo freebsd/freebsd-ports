@@ -1,1 +1,1 @@
-char *path={"/usr/local/share/predict/vocalizer/"};
+char *path={"%%PREFIX%%/share/predict/vocalizer/"};

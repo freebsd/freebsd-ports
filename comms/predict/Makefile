@@ -1,8 +1,8 @@
 # $FreeBSD$
 
-PORTNAME=		predict
+PORTNAME=	predict
 PORTVERSION=	2.2.7
-CATEGORIES=		comms astro hamradio
+CATEGORIES=	comms astro hamradio
 MASTER_SITES=	https://www.qsl.net/kd2bd/ \
 		LOCAL/db
 
