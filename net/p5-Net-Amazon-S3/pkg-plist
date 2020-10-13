@@ -132,6 +132,7 @@ bin/s3cl
 %%SITE_PERL%%/Net/Amazon/S3/Signature/V2.pm
 %%SITE_PERL%%/Net/Amazon/S3/Signature/V4.pm
 %%SITE_PERL%%/Net/Amazon/S3/Signature/V4Implementation.pm
+%%SITE_PERL%%/Net/Amazon/S3/Utils.pm
 %%SITE_PERL%%/Net/Amazon/S3/Vendor.pm
 %%SITE_PERL%%/Net/Amazon/S3/Vendor/Amazon.pm
 %%SITE_PERL%%/Net/Amazon/S3/Vendor/Generic.pm
@@ -296,6 +297,7 @@ bin/s3cl
 %%PERL5_MAN3%%/Net::Amazon::S3::Signature::V2.3.gz
 %%PERL5_MAN3%%/Net::Amazon::S3::Signature::V4.3.gz
 %%PERL5_MAN3%%/Net::Amazon::S3::Signature::V4Implementation.3.gz
+%%PERL5_MAN3%%/Net::Amazon::S3::Utils.3.gz
 %%PERL5_MAN3%%/Net::Amazon::S3::Vendor.3.gz
 %%PERL5_MAN3%%/Net::Amazon::S3::Vendor::Amazon.3.gz
 %%PERL5_MAN3%%/Net::Amazon::S3::Vendor::Generic.3.gz
