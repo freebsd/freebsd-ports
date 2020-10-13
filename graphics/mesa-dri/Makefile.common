@@ -46,7 +46,7 @@ LIB_DEPENDS+=	libdrm.so:graphics/libdrm
 .if ${COMPONENT} != libs
 LIB_DEPENDS+=	libglapi.so:graphics/mesa-libs
 .endif
-.if ${ARCH} == amd64 || ${ARCH} == i386
+.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == i386 || ${ARCH} == powerpc64 || ${ARCH} == powerpc64le
 LIB_DEPENDS+=	libunwind.so:devel/libunwind
 .endif
 .if ${OPSYS} == DragonFly

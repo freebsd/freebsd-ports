@@ -3,6 +3,7 @@
 
 PORTNAME=	mesa-dri
 PORTVERSION=	${MESAVERSION}
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 COMMENT=	OpenGL hardware acceleration drivers for DRI2+
@@ -30,7 +31,7 @@ ZSTD_MESON_ENABLED=	zstd
 .include "${.CURDIR:H:H}/graphics/mesa-dri/Makefile.common"
 
 ALL_DRI_DRIVERS=	I915 I965 R100 R200 SWRAST
-ALL_GALLIUM_DRIVERS=	R300 R600 RADEONSI SVGA SWRAST
+ALL_GALLIUM_DRIVERS=	IRIS R300 R600 RADEONSI SVGA SWRAST
 ALL_VULKAN_DRIVERS=	INTEL AMD
 
 .if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == i386 || ${ARCH} == powerpc64
@@ -51,7 +52,7 @@ MESON_ARGS+=		-Dgallium-xvmc=enabled
 .endif
 .if ${ARCH} == amd64 || ${ARCH} == i386
 DRI_DRIVERS+=		I915 I965
-GALLIUM_DRIVERS+=	SVGA
+GALLIUM_DRIVERS+=	IRIS SVGA
 VULKAN_DRIVERS+=	INTEL
 .endif
 
