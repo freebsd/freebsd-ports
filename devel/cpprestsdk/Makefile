@@ -11,8 +11,6 @@ COMMENT=	Microsoft C++ REST SDK
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/../license.txt
 
-BROKEN_powerpc64=	fails to compile: threadpool.h:59:25: conversion to 'int' from 'size_t {aka long unsigned int}' may alter its value
-
 BUILD_DEPENDS=	${LOCALBASE}/include/websocketpp/client.hpp:devel/websocketpp
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 
