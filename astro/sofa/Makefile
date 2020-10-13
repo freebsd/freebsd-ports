@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sofa
-DISTVERSION=	20190722
+DISTVERSION=	20200721 # also called Release 16
 CATEGORIES=	astro devel
 MASTER_SITES=	http://www.iausofa.org/${DISTVERSION:C/(....)(....)/\\1_\\2/}_C/
 DISTNAME=	${PORTNAME}_c-${DISTVERSION}
@@ -11,7 +11,7 @@ COMMENT=	Set of algorithms and procedures used in fundamental astronomy
 
 LICENSE=	SOFA
 LICENSE_NAME=	SOFA Software License
-LICENSE_FILE=	${WRKDIR}/sofa/20190722/c/doc/copyr.lis
+LICENSE_FILE=	${WRKDIR}/sofa/${DISTVERSION}/c/doc/copyr.lis
 LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
 MAKEFILE=	makefile
