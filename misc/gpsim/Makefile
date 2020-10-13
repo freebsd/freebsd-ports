@@ -59,10 +59,4 @@ post-install-EXAMPLES-on:
 		${STAGEDIR}${EXAMPLESDIR}/projects/${i})
 .endfor
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "i386" && ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 90
-BROKEN=		Clang crashes https://bugs.llvm.org/show_bug.cgi?id=44396
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
