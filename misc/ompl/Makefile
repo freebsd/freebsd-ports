@@ -1,11 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	ompl
-DISTVERSION=	1.4.2
-DISTVERSIONSUFFIX=	-Source
-PORTREVISION=	3
+DISTVERSION=	1.5.0
 CATEGORIES=	misc comms
-MASTER_SITES=	http://cdn.bitbucket.org/${PORTNAME}/${PORTNAME}/downloads/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Open Motion Planning Library
@@ -15,10 +12,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 
-USES=		cmake compiler:c++11-lang eigen:3 pkgconfig zip
+USES=		cmake compiler:c++11-lang eigen:3 pkgconfig
+USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 
-CMAKE_OFF=	OMPL_REGISTRATION OMPL_BUILD_TESTS OMPL_BUILD_DEMOS
+CMAKE_OFF=	OMPL_REGISTRATION OMPL_BUILD_TESTS OMPL_BUILD_DEMOS OMPL_VERSIONED_INSTALL
 
 OPTIONS_DEFINE=		FLANN MORSE OPENDE SPOT TRIANGLE PLANNERARENA
 OPTIONS_DEFAULT=	FLANN MORSE OPENDE TRIANGLE
@@ -52,9 +50,6 @@ post-patch-${o}-off:
 
 post-patch-PLANNERARENA-off:
 	@${REINPLACE_CMD} 's|find_program(R_EXEC|#&|' ${WRKSRC}/CMakeLists.txt
-
-post-patch-SPOT-on:
-	@${REINPLACE_CMD} 's|-std=c++11|-std=c++14|' ${WRKSRC}/CMakeModules/CompilerSettings.cmake
 
 post-configure:
 	@${REINPLACE_CMD} 's|/usr/bin/morse|${LOCALBASE}/bin/morse|' ${BUILD_WRKSRC}/CMakeCache.txt

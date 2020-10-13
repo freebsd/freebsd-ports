@@ -1,25 +1,8 @@
---- CMakeLists.txt.orig	2018-06-24 21:58:25 UTC
+--- CMakeLists.txt.orig	2020-06-02 18:39:48 UTC
 +++ CMakeLists.txt
-@@ -97,8 +97,8 @@ enable_testing()
- set_package_properties(Python PROPERTIES
-     URL "http://python.org"
-     PURPOSE "Used for python bindings.")
--find_package(Python QUIET)
--find_boost_python()
-+find_package(Python QUIET)
-+find_boost_python()
- 
- if(PYTHON_FOUND)
-     set_package_properties(pypy PROPERTIES
-@@ -171,12 +171,12 @@ if(PYTHON_FOUND AND NOT Boost_VERSION VE
- endif()
- 
- # R is needed for running Planner Arena locally
--find_program(R_EXEC R)
-+find_program(R_EXEC R)
- 
- add_subdirectory(py-bindings)
+@@ -179,7 +179,7 @@ find_program(R_EXEC R)
  add_subdirectory(src)
+ add_subdirectory(py-bindings)
  add_subdirectory(tests)
 -add_subdirectory(demos)
 +#add_subdirectory(demos)
