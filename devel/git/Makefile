@@ -12,12 +12,11 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}-manpages-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	garga@FreeBSD.org
-.if ${FLAVOR:Udefault} == default
 COMMENT=	Distributed source code management tool
-.elif ${FLAVOR:U} == gui
-COMMENT=	Distributed source code management tool (GUI enabled flavor)
+.if ${FLAVOR:U} == gui
+COMMENT+=	(GUI enabled flavor)
 .elif ${FLAVOR:U} == lite
-COMMENT=	Distributed source code management tool (lite flavor)
+COMMENT+=	(lite flavor)
 .endif
 
 LICENSE=	GPLv2
