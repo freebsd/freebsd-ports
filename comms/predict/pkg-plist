@@ -4,7 +4,6 @@ man/man1/predict.1.gz
 %%DATADIR%%/default/predict.db
 %%DATADIR%%/default/predict.qth
 %%DATADIR%%/default/predict.tle
-%%DATADIR%%/vocalizer/alarm.wav
 %%DATADIR%%/vocalizer/approaching.wav
 %%DATADIR%%/vocalizer/azimuth.wav
 %%DATADIR%%/vocalizer/eclipse.wav

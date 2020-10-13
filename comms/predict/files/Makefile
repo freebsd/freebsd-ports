@@ -2,16 +2,8 @@
 
 PREFIX=		%%PREFIX%%
 STAGEDIR=	%%STAGEDIR%%
-
-.ifndef	CC
-CC	= 	-cc
-.endif
-.ifndef CPPFLAGS
-CPPFLAGS =
-.endif
-.ifndef	CFLAGS
-CFLAGS	=	-O2
-.endif
+CC=			%%CC%%
+CFLAGS=		%%CFLAGS%%
 
 default:	all
 all:		predict vocalizer/vocalizer
@@ -21,7 +13,7 @@ predict:	predict.c predict.h
 		${CC} ${CFLAGS} -o predict predict.c ${LIBS}
 
 vocalizer/vocalizer:	vocalizer/vocalizer.c vocalizer/vocalizer.h
-		${CC} ${CFLAGS} -o vocalizer/vocalizer vocalizer/vocalizer.c ${LIBS}
+		${CC} ${CFLAGS} -I${LOCALBASE}/include -o vocalizer/vocalizer vocalizer/vocalizer.c -L${LOCALBASE}/lib ${LIBS} -lasound
 
 clean:
 	rm -f *.o predict *core *~ \#* *.txt vocalizer/vocalizer
@@ -30,14 +22,16 @@ install:
 	mkdir -p ${STAGEDIR}${PREFIX}/share/predict/
 	mkdir ${STAGEDIR}${PREFIX}/share/predict/default
 	mkdir ${STAGEDIR}${PREFIX}/share/predict/vocalizer
-	cp default/predict.db ${STAGEDIR}${PREFIX}/share/predict/default
-	cp default/predict.qth ${STAGEDIR}${PREFIX}/share/predict/default
-	cp default/predict.tle ${STAGEDIR}${PREFIX}/share/predict/default
-	cp vocalizer/*.wav ${STAGEDIR}${PREFIX}/share/predict/vocalizer
-	cp predict ${STAGEDIR}${PREFIX}/bin
-	cp vocalizer/vocalizer ${STAGEDIR}${PREFIX}/bin
+	install -m 0644 default/predict.db ${STAGEDIR}${PREFIX}/share/predict/default
+	install -m 0644 default/predict.qth ${STAGEDIR}${PREFIX}/share/predict/default
+	install -m 0644 default/predict.tle ${STAGEDIR}${PREFIX}/share/predict/default
+	install -m 0644 vocalizer/*.wav ${STAGEDIR}${PREFIX}/share/predict/vocalizer
+	install predict ${STAGEDIR}${PREFIX}/bin
+	strip ${STAGEDIR}${PREFIX}/bin/predict
+	install vocalizer/vocalizer ${STAGEDIR}${PREFIX}/bin
+	strip ${STAGEDIR}${PREFIX}/bin/vocalizer
 
 install.man:
-	install docs/man/predict.1 ${STAGEDIR}${PREFIX}/man/man1
+	install -m 0644  docs/man/predict.1 ${STAGEDIR}${PREFIX}/man/man1
 
 .PHONY:	clean build
