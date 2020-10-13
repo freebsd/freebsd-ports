@@ -2,7 +2,7 @@
 
 PORTNAME=	broot
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.2
+DISTVERSION=	1.0.3
 CATEGORIES=	misc
 
 MAINTAINER=	vulcan@wired.sh
@@ -172,7 +172,7 @@ CARGO_CRATES=	adler-0.2.3 \
 		syn-1.0.42 \
 		syntect-4.4.0 \
 		term-0.6.1 \
-		termimad-0.8.26 \
+		termimad-0.8.27 \
 		terminal-clipboard-0.1.1 \
 		textwrap-0.11.0 \
 		thiserror-1.0.20 \
