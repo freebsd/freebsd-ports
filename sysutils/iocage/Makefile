@@ -50,9 +50,9 @@ OPTIONS_RADIO=	GIT_PACKAGE
 OPTIONS_RADIO_GIT_PACKAGE=	GIT GIT_LITE
 
 GIT_DESC=	depend on devel/git
-GIT_LITE_DESC=	depend on devel/git-lite (bare minimum git experience)
+GIT_LITE_DESC=	depend on lite flavor of devel/git (bare minimum git experience)
 
 GIT_RUN_DEPENDS=git:devel/git
-GIT_LITE_RUN_DEPENDS=git:devel/git-lite
+GIT_LITE_RUN_DEPENDS=git:devel/git@lite
 
 .include <bsd.port.mk>
