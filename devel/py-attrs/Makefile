@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	attrs
-PORTVERSION=	19.3.0
+PORTVERSION=	20.2.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	axel.rau@chaos1.de
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python attributes without boilerplate
 
 LICENSE=	MIT

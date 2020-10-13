@@ -21,4 +21,4 @@ You just specify the attributes to work with and attrs gives you:
 
 without writing dull boilerplate code again and again.
 
-WWW: https://github.com/hynek/attrs
+WWW: https://github.com/python-attrs/attrs
