@@ -1,6 +1,6 @@
---- apps/GNUmakefile.orig	2018-05-04 16:05:45 UTC
+--- apps/GNUmakefile.orig	2020-09-01 08:36:31 UTC
 +++ apps/GNUmakefile
-@@ -215,7 +215,7 @@ gdal-config-inst:	gdal-config.in ../GDAL
+@@ -232,7 +232,7 @@ gdal-config-inst:	gdal-config.in ../GDALmake.opt ./GNU
  
  
  install: default
