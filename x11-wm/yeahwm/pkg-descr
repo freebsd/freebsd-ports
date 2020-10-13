@@ -1,0 +1,18 @@
+YeahWM is a minimalist window manager for X11 based on evilwm and aewm.
+It features:
+
+  * Sloppy focus
+  * BeOS-like tabbed titles, which can be repositioned
+  * Support for Xinerama
+  * Simple appearance
+  * Good keyboard control
+  * Creative usage of the mouse
+  * Respects aspect size hints
+  * Solid resize and move operations
+  * Virtual desktops
+  * "Magic" screen edges for desktop switching
+  * Snapping to other windows and screen borders when moving windows
+  * Small binary size (ca. 23KB)
+  * Little resource usage
+
+WWW: http://phrat.de/
