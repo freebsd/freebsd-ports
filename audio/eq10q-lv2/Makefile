@@ -13,8 +13,6 @@ COMMENT=	Parametric equalizer LV2 audio plugin
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		midside_ui.cpp:40:50: error: unknown type name '_LV2UI_Descriptor'; did you mean 'LV2UI_Descriptor'?
-
 BUILD_DEPENDS=	lv2>0:audio/lv2
 LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 		libfontconfig.so:x11-fonts/fontconfig \
@@ -35,5 +33,9 @@ SSE_CMAKE_ON=	-DPORT_SIMD_FLAGS:STRING="-msse -mfpmath=sse"
 post-patch:
 	@${REINPLACE_CMD} -e 's/pow10(/pow(10,/g' \
 		${WRKSRC}/gui/widgets/*.cpp
+	# fix for audio/lv2 1.18.0 based on: https://sourceforge.net/p/eq10q/bugs/23/
+.for f in gui/eq10q_ui.cpp gui/dyn_ui.cpp gui/bassup_ui.cpp gui/midside_ui.cpp
+	cd ${WRKSRC} && ${REINPLACE_CMD} -e 's/const _LV2UI_Descriptor/const LV2UI_Descriptor/' ${f}
+.endfor
 
 .include <bsd.port.mk>
