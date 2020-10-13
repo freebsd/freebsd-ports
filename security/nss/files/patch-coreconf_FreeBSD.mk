@@ -24,7 +24,7 @@
 +CPU_ARCH		= ppc
 +endif
  
-+ifneq (,$(filter %64, $(OS_TEST)))
++ifneq (,$(findstring 64,$(OS_TEST)))
 +USE_64			= 1
 +endif
 +
