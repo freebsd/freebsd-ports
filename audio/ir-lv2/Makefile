@@ -7,13 +7,14 @@ PORTREVISION=	2
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	001904135bafa8931e4cf67402e0fa332feb857d.patch:-p1 # Fixing build for lv2 >= 1.18.0: https://github.com/tomszilagyi/ir.lv2/pull/20/
+
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	LV2 impulse response plugin for reverb and cabinet simulation
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-BROKEN=		ir_gui.cc:1681:14: error: cannot initialize a member subobject of type 'LV2UI_Handle'
 
 BUILD_DEPENDS=	lv2>0:audio/lv2 \
 		${LOCALBASE}/include/fftw3.h:math/fftw3
@@ -33,5 +34,8 @@ MAKE_ENV=	INSTDIR=${STAGEDIR}${PREFIX}/lib/lv2
 
 PLIST_FILES=	lib/lv2/ir.lv2/ir.so lib/lv2/ir.lv2/ir.ttl \
 		lib/lv2/ir.lv2/ir_gui.so lib/lv2/ir.lv2/manifest.ttl
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lv2/ir.lv2/ir*.so
 
 .include <bsd.port.mk>
