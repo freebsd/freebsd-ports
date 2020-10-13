@@ -18,7 +18,7 @@ LICENSE_PERMS_SFI-SCLA=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell \
 			auto-accept
 
 # Ignore this if you feel adventurous
-ONLY_FOR_ARCHS=		aarch64 amd64 arm armv6 armv7 i386
+ONLY_FOR_ARCHS=		aarch64 amd64 arm armv6 armv7 i386 powerpc64le
 ONLY_FOR_ARCHS_REASON=	Needs a little endian environment
 
 BUILD_DEPENDS=	string_theory>=3.3:devel/string_theory
