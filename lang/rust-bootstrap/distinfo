@@ -17,3 +17,5 @@ SHA256 (FreeBSD-12.1-RELEASE-powerpc64-elfv1-gcc9-9.2.0.tar.xz) = fe208feb93a75e
 SIZE (FreeBSD-12.1-RELEASE-powerpc64-elfv1-gcc9-9.2.0.tar.xz) = 38150240
 SHA256 (FreeBSD-13.0-CURRENT-powerpc64-elfv2-r356261.tar.xz) = db762f136e41dd3c6676d6dc104282be6d6d6684afb348506fc44ceccd43ce17
 SIZE (FreeBSD-13.0-CURRENT-powerpc64-elfv2-r356261.tar.xz) = 150455928
+SHA256 (FreeBSD-13.0-CURRENT-powerpc64le-r366300.tar.xz) = a828a3a968c9911655148fa080587ecd7673aa3d58588ed3dafa55a5c2e12dd3
+SIZE (FreeBSD-13.0-CURRENT-powerpc64le-r366300.tar.xz) = 167748612

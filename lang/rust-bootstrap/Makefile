@@ -6,6 +6,7 @@ CATEGORIES=	lang
 MASTER_SITES=	https://static.rust-lang.org/dist/:rust \
 		LOCAL/tobik:armbase \
 		LOCAL/tobik:base \
+		LOCAL/bdragon:ppc64lebase \
 		https://download.freebsd.org/ftp/${_RUST_FBSD_SUBDIR_${FLAVOR}}/:base \
 		LOCAL/tobik:powerpc64_gcc
 #		http://pkg.freebsd.org/FreeBSD:12:powerpc64/quarterly/All/gcc9-9.2.0.txz?dummy=/:powerpc64_gcc
@@ -29,7 +30,7 @@ BUILD_DEPENDS=	cmake:devel/cmake \
 		gmake:devel/gmake \
 		rust>=${PORTVERSION}:lang/rust
 
-FLAVORS=	aarch64 amd64 armv6 armv7 i386 powerpc64_elfv1 powerpc64_elfv2
+FLAVORS=	aarch64 amd64 armv6 armv7 i386 powerpc64_elfv1 powerpc64_elfv2 powerpc64le
 FLAVOR?=	${FLAVORS:[1]}
 
 aarch64_PKGNAMEPREFIX=		aarch64-
@@ -40,6 +41,7 @@ i386_PKGNAMEPREFIX=		i386-
 powerpc64_elfv1_PKGNAMEPREFIX=	powerpc64-elfv1-
 powerpc64_elfv1_BUILD_DEPENDS=	powerpc64-gcc9>0:devel/freebsd-gcc9@powerpc64
 powerpc64_elfv2_PKGNAMEPREFIX=	powerpc64-elfv2-
+powerpc64le_PKGNAMEPREFIX=	powerpc64le-
 
 USES=		perl5 python:3.3+,build tar:xz
 .if ${FLAVOR} == powerpc64_elfv1
@@ -61,21 +63,25 @@ _RUST_FBSD_DIST_i386=			FreeBSD-${_RUST_FBSD_VER}-i386${EXTRACT_SUFX}:base
 _RUST_FBSD_DIST_powerpc64_elfv1=	FreeBSD-${_RUST_FBSD_VER}-powerpc64-elfv1${EXTRACT_SUFX}:base \
 					FreeBSD-${_RUST_FBSD_VER}-powerpc64-elfv1-gcc9-9.2.0${EXTRACT_SUFX}:powerpc64_gcc
 _RUST_FBSD_DIST_powerpc64_elfv2=	FreeBSD-${_RUST_FBSD_VER}-powerpc64-elfv2-r356261${EXTRACT_SUFX}:base
+_RUST_FBSD_DIST_powerpc64le=		FreeBSD-${_RUST_FBSD_VER}-powerpc64le-r366300${EXTRACT_SUFX}:ppc64lebase
 _RUST_FBSD_VER=				${_RUST_FBSD_VER_${FLAVOR}:U11.3-RELEASE}
 _RUST_FBSD_VER_armv7=			12.1-RELEASE
 _RUST_FBSD_VER_powerpc64_elfv1=		12.1-RELEASE
 _RUST_FBSD_VER_powerpc64_elfv2=		13.0-CURRENT
+_RUST_FBSD_VER_powerpc64le=		13.0-CURRENT
 _RUST_FBSD_SUBDIR_aarch64=		releases/arm64/${_RUST_FBSD_VER}/base.txz?dummy=
 _RUST_FBSD_SUBDIR_amd64=		releases/amd64/${_RUST_FBSD_VER}/base.txz?dummy=
 _RUST_FBSD_SUBDIR_i386=			releases/i386/${_RUST_FBSD_VER}/base.txz?dummy=
 _RUST_FBSD_SUBDIR_powerpc64_elfv1=	releases/powerpc/powerpc64/${_RUST_FBSD_VER}/base.txz?dummy=
 _RUST_FBSD_SUBDIR_powerpc64_elfv2=	snapshots/powerpc/powerpc64/${_RUST_FBSD_VER}/base.txz?dummy=
+_RUST_FBSD_SUBDIR_powerpc64le=		snapshots/powerpc/powerpc64le/${_RUST_FBSD_VER}/base.txz?dummy=
 
 _CARGO_VENDOR_DIR=			${WRKSRC}/vendor
 _RUST_ARCH_amd64=			x86_64
 _RUST_ARCH_i386=			i686
 _RUST_ARCH_powerpc64_elfv1=		powerpc64
 _RUST_ARCH_powerpc64_elfv2=		powerpc64
+_RUST_ARCH_powerpc64le=			powerpc64le
 _RUST_HOST=				${_RUST_ARCH_${ARCH}:U${ARCH}}-unknown-${OPSYS:tl}
 _RUST_TARGET=				${_RUST_ARCH_${FLAVOR}:U${FLAVOR}}-unknown-${OPSYS:tl}
 _RUST_LLVM_TARGET=			${_RUST_LLVM_TARGET_${FLAVOR}}
@@ -86,6 +92,7 @@ _RUST_LLVM_TARGET_armv7=		ARM
 _RUST_LLVM_TARGET_i386=			X86
 _RUST_LLVM_TARGET_powerpc64_elfv1=	PowerPC
 _RUST_LLVM_TARGET_powerpc64_elfv2=	PowerPC
+_RUST_LLVM_TARGET_powerpc64le=		PowerPC
 _RUST_LLVM_TRIPLE=			${_RUST_LLVM_TRIPLE_${FLAVOR}:U${_RUST_TARGET}}
 _RUST_LLVM_TRIPLE_armv6=		armv6-gnueabihf-freebsd
 _RUST_LLVM_TRIPLE_armv7=		armv7-gnueabihf-freebsd

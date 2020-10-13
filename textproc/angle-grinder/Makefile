@@ -3,6 +3,7 @@
 PORTNAME=	angle-grinder
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.15.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	vulcan@wired.sh

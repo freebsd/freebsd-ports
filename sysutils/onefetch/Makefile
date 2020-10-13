@@ -3,6 +3,7 @@
 PORTNAME=	onefetch
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.4.0
+PORTREVISION=	1
 CATEGORIES=	sysutils devel
 
 MAINTAINER=	vulcan@wired.sh

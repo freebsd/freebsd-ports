@@ -13,18 +13,6 @@ to *use* those LLVM files.
 
 --- src/bootstrap/native.rs.orig	2020-08-24 15:00:49 UTC
 +++ src/bootstrap/native.rs
-@@ -347,6 +347,11 @@ fn configure_cmake(
-     // LLVM and LLD builds can produce a lot of those and hit CI limits on log size.
-     cfg.define("CMAKE_INSTALL_MESSAGE", "LAZY");
- 
-+    // Do not allow the user's value of DESTDIR to influence where
-+    // LLVM will install itself. LLVM must always be installed in our
-+    // own build directories.
-+    cfg.env("DESTDIR", "");
-+
-     if builder.config.ninja {
-         cfg.generator("Ninja");
-     }
 @@ -517,26 +522,9 @@ impl Step for Lld {
          let mut cfg = cmake::Config::new(builder.src.join("src/llvm-project/lld"));
          configure_cmake(builder, target, &mut cfg, true);
