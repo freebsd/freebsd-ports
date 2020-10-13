@@ -11,7 +11,7 @@ MASTER_SITES=	ftp://ftp.idaemons.org/pub/distfiles/ruby/ \
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby interface to Oracle Berkeley DB revision 2 or later
 
 LICENSE=	RUBY
