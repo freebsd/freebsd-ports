@@ -27,6 +27,7 @@ etc/bash_completion.d/dnf
 %%PYTHON_SITELIBDIR%%/dnf/cli/commands/distrosync.py
 %%PYTHON_SITELIBDIR%%/dnf/cli/commands/downgrade.py
 %%PYTHON_SITELIBDIR%%/dnf/cli/commands/group.py
+%%PYTHON_SITELIBDIR%%/dnf/cli/commands/history.py
 %%PYTHON_SITELIBDIR%%/dnf/cli/commands/install.py
 %%PYTHON_SITELIBDIR%%/dnf/cli/commands/makecache.py
 %%PYTHON_SITELIBDIR%%/dnf/cli/commands/mark.py
@@ -88,6 +89,7 @@ etc/bash_completion.d/dnf
 %%PYTHON_SITELIBDIR%%/dnf/selector.py
 %%PYTHON_SITELIBDIR%%/dnf/subject.py
 %%PYTHON_SITELIBDIR%%/dnf/transaction.py
+%%PYTHON_SITELIBDIR%%/dnf/transaction_sr.py
 %%PYTHON_SITELIBDIR%%/dnf/util.py
 %%PYTHON_SITELIBDIR%%/dnf/yum/__init__.py
 %%PYTHON_SITELIBDIR%%/dnf/yum/misc.py
@@ -142,5 +144,6 @@ share/locale/th/LC_MESSAGES/dnf.mo
 share/locale/tr/LC_MESSAGES/dnf.mo
 share/locale/uk/LC_MESSAGES/dnf.mo
 share/locale/ur/LC_MESSAGES/dnf.mo
+share/locale/vi/LC_MESSAGES/dnf.mo
 share/locale/zh_CN/LC_MESSAGES/dnf.mo
 share/locale/zh_TW/LC_MESSAGES/dnf.mo
