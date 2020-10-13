@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zoneinfo
-DISTVERSION=	2020a
+DISTVERSION=	2020b
 CATEGORIES=	misc
 MASTER_SITES=	https://data.iana.org/time-zones/releases/ \
 		ftp://ftp.iana.org/tz/releases/
@@ -25,7 +25,7 @@ BACKWARD_DESC=	Include backwards compatible zones
 BACKWARD_VARS=	tzfiles+=backward
 
 TZFILES=	africa antarctica asia australasia etcetera europe \
-		factory northamerica southamerica systemv
+		factory northamerica southamerica
 POSIXRULES=	America/New_York
 
 # Run both of:
