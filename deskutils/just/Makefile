@@ -2,7 +2,7 @@
 
 PORTNAME=	just
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.3
+DISTVERSION=	0.8.0
 CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,7 +23,7 @@ CARGO_CRATES=	aho-corasick-0.7.13 \
 		cc-1.0.60 \
 		cfg-if-0.1.10 \
 		clap-2.33.3 \
-		ctor-0.1.15 \
+		ctor-0.1.16 \
 		ctrlc-3.1.6 \
 		derivative-2.1.1 \
 		difference-2.0.0 \
@@ -33,17 +33,17 @@ CARGO_CRATES=	aho-corasick-0.7.13 \
 		env_logger-0.7.1 \
 		executable-path-1.0.0 \
 		getrandom-0.1.15 \
-		hermit-abi-0.1.15 \
+		hermit-abi-0.1.16 \
 		humantime-1.3.0 \
 		lazy_static-1.4.0 \
-		libc-0.2.77 \
+		libc-0.2.78 \
 		log-0.4.11 \
 		memchr-2.3.3 \
 		nix-0.17.0 \
 		output_vt100-0.1.2 \
 		ppv-lite86-0.2.9 \
 		pretty_assertions-0.6.1 \
-		proc-macro2-1.0.21 \
+		proc-macro2-1.0.24 \
 		quick-error-1.2.3 \
 		quote-1.0.7 \
 		rand-0.7.3 \
@@ -54,10 +54,10 @@ CARGO_CRATES=	aho-corasick-0.7.13 \
 		regex-1.3.9 \
 		regex-syntax-0.6.18 \
 		remove_dir_all-0.5.3 \
-		snafu-0.6.8 \
-		snafu-derive-0.6.8 \
+		snafu-0.6.9 \
+		snafu-derive-0.6.9 \
 		strsim-0.8.0 \
-		syn-1.0.41 \
+		syn-1.0.42 \
 		target-1.0.0 \
 		tempfile-3.1.0 \
 		termcolor-1.1.0 \
