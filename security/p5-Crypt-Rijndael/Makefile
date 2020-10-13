@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Crypt-Rijndael
-PORTVERSION=	1.11
-PORTREVISION=	1
+PORTVERSION=	1.15
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Perl module that implements the Rijndael cipher
 
-LICENSE=	GPLv3
+LICENSE=	LGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	p5-Test-Manifest>1.14:devel/p5-Test-Manifest
