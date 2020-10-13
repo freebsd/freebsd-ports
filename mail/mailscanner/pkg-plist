@@ -551,3 +551,4 @@ lib/MailScanner/systemd/ms-milter
 lib/MailScanner/systemd/ms-systemd
 lib/MailScanner/wrapper/sophos-autoupdate
 lib/MailScanner/wrapper/sophos-wrapper
+@postunexec [ -L %D/etc/mail/spamassassin/mailscanner.cf ] && rm %D/etc/mail/spamassassin/mailscanner.cf || true

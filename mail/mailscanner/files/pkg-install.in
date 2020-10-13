@@ -103,10 +103,16 @@ initial_config()
 
 case $2 in
 POST-INSTALL)
-	[ "x${WITHOUT_SPAMASSASSIN_SYMLINK}" = "xno" ] \
-	    && [ ! -r ${PKG_PREFIX}/etc/mail/spamassassin/mailscanner.cf ] \
-	    && ${LN} -s ${PKG_PREFIX}/etc/MailScanner/spam.assassin.prefs.conf \
-		${PKG_PREFIX}/etc/mail/spamassassin/mailscanner.cf
+	if [ "${WITHOUT_SPAMASSASSIN_SYMLINK}" = "no" ] && \
+	  [ ! -r ${PKG_PREFIX}/etc/mail/spamassassin/mailscanner.cf ]; then
+	    if [ -r ${PKG_PREFIX}/etc/MailScanner/spam.assassin.prefs.conf ]; then
+		${LN} -s ${PKG_PREFIX}/etc/MailScanner/spam.assassin.prefs.conf \
+			${PKG_PREFIX}/etc/mail/spamassassin/mailscanner.cf
+	    else
+		${LN} -s ${PKG_PREFIX}/etc/MailScanner/spamassassin.conf \
+			${PKG_PREFIX}/etc/mail/spamassassin/mailscanner.cf
+	    fi
+	fi
 	upgrade_lang_conf
 	[ -f ${PKG_PREFIX}/etc/MailScanner/MailScanner.conf ] \
 		&& upgrade_mailscanner_conf
