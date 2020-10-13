@@ -1,0 +1,8 @@
+# $FreeBSD$
+
+XCC=%%PREFIX%%/llvm%%LLVM_SUFFIX%%/bin/clang
+XCXX=%%PREFIX%%/llvm%%LLVM_SUFFIX%%/bin/clang++
+XCPP=%%PREFIX%%/llvm%%LLVM_SUFFIX%%/bin/clang-cpp
+XLD=%%PREFIX%%/llvm%%LLVM_SUFFIX%%/bin/ld.lld
+CROSS_BINUTILS_PREFIX=/var/empty
+X_COMPILER_TYPE=clang

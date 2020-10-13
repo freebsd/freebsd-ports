@@ -1385,6 +1385,7 @@
     SUBDIR += llbuild
     SUBDIR += llnextgen
     SUBDIR += llvm
+    SUBDIR += llvm-cheri
     SUBDIR += llvm-devel
     SUBDIR += llvm10
     SUBDIR += llvm11
