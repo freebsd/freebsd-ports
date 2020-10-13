@@ -1495,7 +1495,6 @@ lib/postgresql/utf8_and_win.so
 %%TZDATA%%%%DATADIR%%/timezone/W-SU
 %%TZDATA%%%%DATADIR%%/timezone/WET
 %%TZDATA%%%%DATADIR%%/timezone/Zulu
-%%TZDATA%%%%DATADIR%%/timezone/posixrules
 %%DATADIR%%/timezonesets/Africa.txt
 %%DATADIR%%/timezonesets/America.txt
 %%DATADIR%%/timezonesets/Antarctica.txt
