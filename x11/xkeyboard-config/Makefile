@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xkeyboard-config
-PORTVERSION=	2.30
+PORTVERSION=	2.31
 CATEGORIES=	x11
 MASTER_SITES=	XORG/individual/data/${PORTNAME}
 

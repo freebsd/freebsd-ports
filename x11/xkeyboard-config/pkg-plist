@@ -164,6 +164,7 @@ share/X11/xkb/symbols/kz
 share/X11/xkb/symbols/la
 share/X11/xkb/symbols/latam
 share/X11/xkb/symbols/latin
+share/X11/xkb/symbols/level2
 share/X11/xkb/symbols/level3
 share/X11/xkb/symbols/level5
 share/X11/xkb/symbols/lk
