@@ -30,7 +30,7 @@ share/man/man1/signal-cli.1.gz
 %%DATADIR%%/lib/okhttp-4.6.0.jar
 %%DATADIR%%/lib/okio-2.6.0.jar
 %%DATADIR%%/lib/protobuf-javalite-3.10.0.jar
-%%DATADIR%%/lib/signal-cli-0.6.10.jar
+%%DATADIR%%/lib/signal-cli-%%VERSION%%.jar
 %%DATADIR%%/lib/signal-metadata-java-0.1.2.jar
 %%DATADIR%%/lib/signal-protocol-java-2.8.1.jar
 %%DATADIR%%/lib/signal-service-java-2.15.3_unofficial_14.jar
