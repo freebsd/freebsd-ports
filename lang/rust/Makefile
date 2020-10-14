@@ -176,7 +176,6 @@ do-configure:
 	@${ECHO_CMD} 'missing-tools=true' >> ${WRKSRC}/config.toml
 .endif
 	@${REINPLACE_CMD} 's,%CC%,${CC},g' \
-		${WRKSRC}/src/librustc_llvm/build.rs \
 		${WRKSRC}/src/bootstrap/native.rs
 
 do-build:
