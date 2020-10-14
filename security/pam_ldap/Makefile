@@ -3,33 +3,35 @@
 
 PORTNAME=	pam_ldap
 PORTVERSION=	1.8.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security net
 MASTER_SITES=	http://www.padl.com/download/ \
 		ftp://ftp.padl.com/pub/
 DISTNAME=	pam_ldap-${PORTVERSION:S/.//g}
 
 MAINTAINER=	marcus@FreeBSD.org
-COMMENT=	Pam module for authenticating with LDAP
+COMMENT=	PAM module for authenticating with LDAP
 
-GNU_CONFIGURE=	yes
+LICENSE=	GPLv2+ LGPL20+
+LICENSE_COMB=	multi
+LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING
+LICENSE_FILE_LGPL20+ =	${WRKSRC}/COPYING.LIB
+
+USES=		gmake perl5 shebangfix
 USE_OPENLDAP=	yes
-USES=		perl5 gmake
 USE_PERL5=	build
-WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.//g}
-PAM_LDAP_CONF?=	ldap.conf
-CONFIGURE_ARGS=	--with-ldap-lib=openldap \
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-ldap-conf-file=${PREFIX}/etc/${PAM_LDAP_CONF} \
 		--with-ldap-dir=${LOCALBASE} \
-		--with-ldap-conf-file=${PREFIX}/etc/${PAM_LDAP_CONF} \
+		--with-ldap-lib=openldap \
 		--with-ldap-secret-file=${PREFIX}/etc/ldap.secret
-
-PORTDATA=	*.schema
+SHEBANG_FILES=	vers_string
 
 SUB_FILES=	pkg-message
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${LOCALBASE}/bin/perl|' \
-		${WRKSRC}/vers_string
+PORTDATA=	*.schema
+
+PAM_LDAP_CONF?=	ldap.conf
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
