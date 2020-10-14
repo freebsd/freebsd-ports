@@ -48,7 +48,7 @@ CONFIGURE_ENV=	LSOF_CC="${CC}" FREEBSD_SYS="${SRC_BASE}/sys"
 # PPC64 needs -lzpool for reasons unknown.  If someone can
 # figure out why, I (ler) am all ears.
 .if ${ARCH} == powerpc64 || ${ARCH} == powerpc
-CONFIGURE_ENV+=	LSOF_CFGL="-lzpool"
+CONFIGURE_ENV+=	LSOF_CFGL="-lzfs -lzpool"
 . endif
 
 .if !exists(${SRC_BASE}/sys/kern/kern_lockf.c)
