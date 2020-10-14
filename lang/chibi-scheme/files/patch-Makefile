@@ -1,0 +1,11 @@
+--- Makefile.orig	2020-10-14 09:49:18.314212000 +0000
++++ Makefile	2020-10-14 09:51:06.922727000 +0000
+@@ -11,7 +11,7 @@
+ CHIBI_FFI_DEPENDENCIES ?= $(CHIBI_DEPENDENCIES) tools/chibi-ffi
+ 
+ CHIBI_DOC ?= $(CHIBI) tools/chibi-doc
+-CHIBI_DOC_DEPENDENCIES ?= $(CHIBI_DEPENDENCIES) tools/chibi-doc
++CHIBI_DOC_DEPENDENCIES ?= $(CHIBI_DEPENDENCIES) tools/chibi-doc $(COMPILED_LIBS)
+ 
+ GENSTATIC ?= ./tools/chibi-genstatic
+ 
