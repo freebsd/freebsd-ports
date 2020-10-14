@@ -3,8 +3,7 @@
 
 PORTNAME=	libmesh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.1
-PORTREVISION=	3
+DISTVERSION=	1.6.0-rc3
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,10 +14,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 
-USES=		autoreconf compiler:c++11-lang eigen:3 gmake libtool
+USES=		compiler:c++11-lang eigen:3 gmake libtool perl5
 GNU_CONFIGURE=	yes
-USE_GITHUB=	yes
-GH_ACCOUNT=	libMesh
 CONFIGURE_ARGS=	--disable-static \
 		--with-methods=opt \
 		--with-thread-model=pthread \
@@ -30,8 +27,17 @@ CONFIGURE_ARGS=	--disable-static \
 		--with-boost=${LOCALBASE} \
 		--with-eigen-include=${LOCALBASE}/include/eigen3 \
 		--disable-netcdf --disable-netcdf-4 # https://github.com/libMesh/libmesh/issues/1542
+CONFIGURE_ARGS+=	--disable-metaphysicl # enabling this causes libmesh to install a bundled metaphysicl that would conflict with the metaphysicl package
 MAKE_ARGS=	LDFLAGS="-pthread -lexecinfo"
 USE_LDCONFIG=	yes
+
+INSTALL_TARGET=	install-strip
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	libMesh
+GH_TUPLE=	\
+		libMesh:TIMPI:7fbe63d:TIMPI/contrib/timpi \
+		libMesh:autoconf-submodule:9bb972f:autoconf_submodule/m4/autoconf-submodule
 
 OPTIONS_DEFINE=			GLPK HDF5 MPI EXAMPLES
 OPTIONS_DEFAULT=		MPI
