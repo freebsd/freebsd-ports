@@ -3,7 +3,7 @@
 
 PORTNAME=	pam_ldap
 PORTVERSION=	1.8.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security net
 MASTER_SITES=	http://www.padl.com/download/ \
 		ftp://ftp.padl.com/pub/
@@ -23,8 +23,9 @@ CONFIGURE_ARGS=	--with-ldap-lib=openldap \
 		--with-ldap-conf-file=${PREFIX}/etc/${PAM_LDAP_CONF} \
 		--with-ldap-secret-file=${PREFIX}/etc/ldap.secret
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
 PORTDATA=	*.schema
+
+SUB_FILES=	pkg-message
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${LOCALBASE}/bin/perl|' \
@@ -33,8 +34,5 @@ post-patch:
 post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/*.schema ${STAGEDIR}${DATADIR}
-	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' \
-		-e 's|%%DATADIR%%|${DATADIR}|' < ${PKGDIR}/pkg-message \
-		| /usr/bin/fmt 75 79 > ${PKGMESSAGE}
 
 .include <bsd.port.mk>
