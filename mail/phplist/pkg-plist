@@ -5358,6 +5358,7 @@ bin/phplist
 %%WWWDIR%%/lists/base/vendor/phplist/rest-api/tests/Unit/PhpListRestBundleTest.php
 %%WWWDIR%%/lists/base/vendor/phpoption/phpoption/composer.json
 %%WWWDIR%%/lists/base/vendor/phpoption/phpoption/LICENSE
+%%WWWDIR%%/lists/base/vendor/phpoption/phpoption/Makefile
 %%WWWDIR%%/lists/base/vendor/phpoption/phpoption/src/PhpOption/LazyOption.php
 %%WWWDIR%%/lists/base/vendor/phpoption/phpoption/src/PhpOption/None.php
 %%WWWDIR%%/lists/base/vendor/phpoption/phpoption/src/PhpOption/Option.php
@@ -6049,7 +6050,7 @@ bin/phplist
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/LICENSE
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/phpunit.xml.dist
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/README.md
-%%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/bin/check-unused-tags-whitelist.php
+%%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/bin/check-unused-known-tags.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/config/annotations.xml
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/config/assets.xml
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/config/cache_debug.xml
@@ -8243,6 +8244,7 @@ bin/phplist
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Tests/Fixtures/includes/ProjectWithXsdExtension.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Tests/Fixtures/includes/ProjectWithXsdExtensionInPhar.phar
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Tests/Fixtures/includes/schema/project-1.0.xsd
+%%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Tests/Fixtures/includes/uniontype_classes.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Tests/Fixtures/ini/almostvalid.ini
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Tests/Fixtures/ini/ini_with_wrong_ext.xml
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Tests/Fixtures/ini/nonvalid.ini
@@ -9062,6 +9064,7 @@ bin/phplist
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Form/Tests/Fixtures/RecursiveFormTypeFoo.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Form/Tests/Fixtures/TestExtension.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Form/Tests/Fixtures/Type.php
+%%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Form/Tests/Fixtures/TypehintedPropertiesCar.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Form/Tests/FormBuilderTest.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Form/Tests/FormConfigTest.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Form/Tests/FormErrorIteratorTest.php
@@ -9172,6 +9175,7 @@ bin/phplist
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/HttpFoundation/Tests/File/Fixtures/directory/.empty
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/HttpFoundation/Tests/File/Fixtures/other-file.example
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/HttpFoundation/Tests/File/Fixtures/test
+%%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/HttpFoundation/Tests/File/Fixtures/test.docx
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/HttpFoundation/Tests/File/Fixtures/test.gif
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/HttpFoundation/Tests/File/MimeType/MimeTypeTest.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/HttpFoundation/Tests/File/UploadedFileTest.php
@@ -10986,6 +10990,7 @@ bin/phplist
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/PropertyInfo/Tests/Fixtures/ParentDummy.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/PropertyInfo/Tests/Fixtures/Php71Dummy.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/PropertyInfo/Tests/Fixtures/Php7Dummy.php
+%%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/PropertyInfo/Tests/Fixtures/Php80Dummy.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/PropertyInfo/Tests/PropertyInfoCacheExtractorTest.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/PropertyInfo/Tests/PropertyInfoExtractorTest.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/PropertyInfo/Tests/TypeTest.php
@@ -12186,6 +12191,8 @@ bin/phplist
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Validator/Tests/Fixtures/ConstraintA.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Validator/Tests/Fixtures/ConstraintB.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Validator/Tests/Fixtures/ConstraintC.php
+%%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Validator/Tests/Fixtures/ConstraintWithStaticProperty.php
+%%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Validator/Tests/Fixtures/ConstraintWithTypedProperty.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Validator/Tests/Fixtures/ConstraintWithValue.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Validator/Tests/Fixtures/ConstraintWithValueAsDefault.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Validator/Tests/Fixtures/Countable.php
