@@ -62,6 +62,7 @@
     SUBDIR += caldavzap
     SUBDIR += carbonapi
     SUBDIR += castget
+    SUBDIR += castor
     SUBDIR += cgi-lib
     SUBDIR += cgi-lib.pl
     SUBDIR += cgicc

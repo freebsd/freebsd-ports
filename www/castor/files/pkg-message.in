@@ -1,0 +1,8 @@
+[
+{ type: install
+  message: <<EOM
+Castor is configurable via ~/.config/castor/settings.toml. Refer to
+%%PREFIX%%/share/examples/castor/castor_settings.toml.example for hints.
+EOM
+}
+]
