@@ -4,7 +4,7 @@ PORTNAME=	dlpoly
 PORTVERSION=	1.8
 PORTREVISION=	19
 CATEGORIES=	science java
-MASTER_SITES=	http://ccpforge.cse.rl.ac.uk/gf/download/frsrelease/238/2028/
+MASTER_SITES=	# gone as of 20201014: http://ccpforge.cse.rl.ac.uk/gf/download/frsrelease/238/2028/
 PKGNAMESUFFIX=	classic
 DISTNAME=	dl_class_${PORTVERSION}
 
@@ -14,6 +14,9 @@ COMMENT=	Molecular dynamics simulation package
 # Later versions use 2 clause
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENCE.pdf
+
+DEPRECATED=	MASTERSITE gone; possibly replaced by https://gitlab.com/DL_POLY_Classic/dl_poly?
+EXPIRATION_DATE=	2021-01-14
 
 LIB_DEPENDS=	libmpi.so:net/openmpi3
 
