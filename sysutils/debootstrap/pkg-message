@@ -1,7 +1,7 @@
 [
 { type: install
   message: <<EOM
-To successfully create an installation of Debian GNU/kFreeBSD
+To successfully create an installation of Debian or Ubuntu
 debootstrap requires the following kernel modules loaded:
 
 fdescfs linprocfs linsysfs tmpfs
