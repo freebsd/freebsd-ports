@@ -1,8 +1,10 @@
---- Makefile.orig	Wed May  2 20:41:22 2001
-+++ Makefile	Wed Feb 25 17:43:00 2004
-@@ -5,7 +5,7 @@
+--- Makefile.orig	2001-05-02 18:41:22 UTC
++++ Makefile
+@@ -4,8 +4,9 @@ MAN8	=	nifmon.8
+ BINDIR	=	/usr/local/bin
  MANDIR	=	/usr/local/man/man
  
++CFLAGS	+=	-fcommon
  # compile debug support
 -COPTS	+=	-DDEBUG -g -Wall
 +#COPTS	+=	-DDEBUG -g -Wall
