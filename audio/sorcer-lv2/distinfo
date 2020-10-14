@@ -1,3 +1,5 @@
-TIMESTAMP = 1511729258
+TIMESTAMP = 1602649574
 SHA256 (openAVproductions-openAV-Sorcer-release-1.1.3_GH0.tar.gz) = a055c9d1cb1371e32acdd69fd58af9577611ea1a09e19c15611d548e84c43e1e
 SIZE (openAVproductions-openAV-Sorcer-release-1.1.3_GH0.tar.gz) = 158961
+SHA256 (0c06a2f89a44a8e275f0a592c3ac946eff7b7020.patch) = 341aac728f0793eeb3ffa11c42bc8d5dc20c551b0623ece7a145276db68cc791
+SIZE (0c06a2f89a44a8e275f0a592c3ac946eff7b7020.patch) = 931

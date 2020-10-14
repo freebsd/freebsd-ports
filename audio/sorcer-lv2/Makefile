@@ -7,13 +7,14 @@ PORTREVISION=	8
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	0c06a2f89a44a8e275f0a592c3ac946eff7b7020.patch:-p1 # Fixing build with lv2 >= 1.18.0: https://github.com/openAVproductions/openAV-Sorcer/pull/26
+
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Wavetable LV2 plugin synth targeted at the electronic/dubstep genre
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN=		sorcer_ui.cxx:265:21: error: cannot initialize a member subobject of type 'LV2UI_Handle'
 
 BUILD_DEPENDS=	lv2>0:audio/lv2 \
 		${LOCALBASE}/include/boost/circular_buffer.hpp:devel/boost-libs
