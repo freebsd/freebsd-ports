@@ -3,7 +3,7 @@
 
 PORTNAME=	gnome3
 PORTVERSION=	3.36
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES?=	x11 gnome
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -72,7 +72,6 @@ RUN_DEPENDS+=	epiphany>=3.0.0:www/epiphany \
 		gnome-color-manager>=0:graphics/gnome-color-manager \
 		evolution>=3.0.0:mail/evolution \
 		cheese>=3.0.0:multimedia/cheese \
-		ekiga:net-im/ekiga
 
 .endif # !gnome3-lite section
 
