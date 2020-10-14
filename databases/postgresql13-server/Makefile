@@ -5,7 +5,7 @@ PORTNAME?=	postgresql
 DISTVERSION?=	13.0
 # PORTREVISION must be ?= otherwise, all slave ports get this PORTREVISION and
 # not their own.  Probably best to keep it at ?=0 when reset here too.
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES?=	databases
 MASTER_SITES=	PGSQL/source/v${DISTVERSION}
 PKGNAMESUFFIX?= ${PORTVERSION:R}${COMPONENT}
@@ -100,7 +100,7 @@ DTRACE_INSTALL_TARGET=	install
 OPTIONS_DEFINE+=	LLVM
 OPTIONS_DEFAULT+=	LLVM
 LLVM_DESC=		Build with support for JIT-compiling expressions
-OPTIONS_EXCLUDE+=	${OPTIONS_EXCLUDE_powerpc64_${OSREL:R}}
+OPTIONS_EXCLUDE+=	${OPTIONS_EXCLUDE_${ARCH}_${OSREL:R}}
 OPTIONS_EXCLUDE_powerpc64_12=	LLVM
 .endif
 
