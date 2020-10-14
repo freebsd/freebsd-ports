@@ -1,12 +1,12 @@
-TIMESTAMP = 1601466805
+TIMESTAMP = 1602593812
 SHA256 (xorm-builder-v0.3.6_GITEA0.tar.gz) = 7d79669bf66fab9d3219f5fd31432ec27cdd8f267538fe7d4d18aed2b5b24736
 SIZE (xorm-builder-v0.3.6_GITEA0.tar.gz) = 22658
 SHA256 (xorm-core-v0.7.2_GITEA0.tar.gz) = edc97bac98ba01e544c6ed07d764b3a626695b18f616ca2e32acce3c215bea89
 SIZE (xorm-core-v0.7.2_GITEA0.tar.gz) = 21217
 SHA256 (xorm-xorm-v0.8.0_GITEA0.tar.gz) = e30d450b667df964c84e33da2ac263110611cd4da15551cb0a39b8b28802db2e
 SIZE (xorm-xorm-v0.8.0_GITEA0.tar.gz) = 408996
-SHA256 (gogs-gogs-v0.12.2_GH0.tar.gz) = 6563285696f6726dff4bf562933637d49ea3dcc16d8a4956655ecc4a35a3d03f
-SIZE (gogs-gogs-v0.12.2_GH0.tar.gz) = 22244698
+SHA256 (gogs-gogs-v0.12.3_GH0.tar.gz) = 6a0e1e369d2e097a73fe99fb78046db0b022ce0c229d3977068e7b21e2e364c8
+SIZE (gogs-gogs-v0.12.3_GH0.tar.gz) = 22245046
 SHA256 (Masterminds-semver-v3.1.0_GH0.tar.gz) = a91e6fe3121bb0c158bbd89721be3f44cd84e1f76a6d89840e244c1f5524ee28
 SIZE (Masterminds-semver-v3.1.0_GH0.tar.gz) = 24481
 SHA256 (alexcesaro-quotedprintable-2caba252f4dc_GH0.tar.gz) = 1a314d172f499342a97996e30ae1731b2e923e17031734d7350927458f544efb
