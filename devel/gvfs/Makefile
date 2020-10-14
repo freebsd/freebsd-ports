@@ -3,6 +3,7 @@
 
 PORTNAME=	gvfs
 PORTVERSION=	1.46.1
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -20,8 +21,8 @@ LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libsoup-2.4.so:devel/libsoup \
 		libgudev-1.0.so:devel/libgudev \
 		libudisks2.so:sysutils/libudisks \
-		libsecret-1.so:security/libsecret \
-		libbluray.so:multimedia/libbluray
+		libsecret-1.so:security/libsecret
+		
 RUN_DEPENDS=	bsdisks>0:sysutils/bsdisks
 PORTSCOUT=	limitw:1,even
 
@@ -40,8 +41,9 @@ USE_LDCONFIG=	yes
 GLIB_SCHEMAS=	org.gnome.system.gvfs.enums.xml
 
 OPTIONS_SUB=	yes
-OPTIONS_DEFINE=	AVAHI FUSE AFC GOA SAMBA CDDA GOOGLE GPHOTO2 MTP NFS
-OPTIONS_DEFAULT=AVAHI FUSE GOA SAMBA CDDA GOOGLE GPHOTO2 MTP NFS
+OPTIONS_DEFINE=	AVAHI FUSE AFC GOA SMB CDDA GOOGLE GPHOTO MTP NFS BLURAY
+OPTIONS_DEFAULT=AVAHI FUSE GOA SMB CDDA GOOGLE GPHOTO MTP NFS BLURAY
+
 AFC_DESC=	Apple device support
 GOA_DESC=	GNOME Online Accounts volume monitor support
 GOOGLE_DESC=	Google backend
@@ -49,6 +51,10 @@ GOOGLE_DESC=	Google backend
 AVAHI_LIB_DEPENDS=	libavahi-client.so:net/avahi-app
 AVAHI_MESON_TRUE=	dnssd
 AVAHI_VARS=		GLIB_SCHEMAS+=org.gnome.system.dns_sd.gschema.xml
+
+BLURAY_LIB_DEPENDS=	libbluray.so:multimedia/libbluray
+BLURAY_MESON_TRUE=	bluray
+BLURAY_DESC=		Blu-ray metadata support
 
 FUSE_USES=		fuse:3
 FUSE_MESON_TRUE=	fuse
@@ -60,9 +66,9 @@ AFC_MESON_TRUE=		afc
 GOA_LIB_DEPENDS=	libgoa-1.0.so:net/gnome-online-accounts
 GOA_MESON_TRUE=		goa
 
-SAMBA_USES=		samba:lib
-SAMBA_MESON_TRUE=		smb
-SAMBA_VARS=		GLIB_SCHEMAS+=org.gnome.system.smb.gschema.xml
+SMB_USES=		samba:lib
+SMB_MESON_TRUE=	smb
+SMB_VARS=		GLIB_SCHEMAS+=org.gnome.system.smb.gschema.xml
 
 CDDA_LIB_DEPENDS=	libcdio_paranoia.so:sysutils/libcdio-paranoia \
 			libcdio.so:sysutils/libcdio
@@ -72,8 +78,8 @@ GOOGLE_IMPLIES=		GOA
 GOOGLE_LIB_DEPENDS=	libgdata.so:devel/libgdata
 GOOGLE_MESON_TRUE=	google
 
-GPHOTO2_LIB_DEPENDS=	libgphoto2.so:graphics/libgphoto2
-GPHOTO2_MESON_TRUE=	gphoto2
+GPHOTO_LIB_DEPENDS=	libgphoto2.so:graphics/libgphoto2
+GPHOTO_MESON_TRUE=	gphoto2
 
 MTP_LIB_DEPENDS=	libmtp.so:multimedia/libmtp
 MTP_MESON_TRUE=		mtp
