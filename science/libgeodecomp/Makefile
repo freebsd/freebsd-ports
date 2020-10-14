@@ -3,7 +3,7 @@
 
 PORTNAME=		libgeodecomp
 PORTVERSION=		0.4.0
-PORTREVISION=		19
+PORTREVISION=		20
 CATEGORIES=		science devel
 MASTER_SITES=		http://www.libgeodecomp.org/archive/
 
@@ -27,7 +27,7 @@ CMAKE_ARGS=		-DWITH_CUDA:BOOL=FALSE -DWITH_VISIT:BOOL=FALSE \
 OPTIONS_DEFINE=		MPI SILO SCOTCH
 OPTIONS_DEFAULT=	MPI SILO SCOTCH
 
-MPI_LIB_DEPENDS=	libmpich.so:net/mpich2
+MPI_LIB_DEPENDS=	libmpich.so:net/mpich
 MPI_CMAKE_BOOL=		WITH_MPI
 
 SILO_DESC=		Enable Silo dependend output
