@@ -177,6 +177,12 @@ do-configure:
 .endif
 	@${REINPLACE_CMD} 's,%CC%,${CC},g' \
 		${WRKSRC}/src/bootstrap/native.rs
+# src/librustc_llvm has moved to compiler/rustc_llvm in nightly
+# this reinplace_cmd is used for ppc64-elfv1
+.if !defined(NIGHTLY_DATE)
+	@${REINPLACE_CMD} 's,%CC%,${CC},g' \
+		${WRKSRC}/src/librustc_llvm/build.rs
+.endif
 
 do-build:
 	@cd ${WRKSRC} && \
