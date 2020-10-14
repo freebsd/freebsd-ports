@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mpz
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	audio
 
 MAINTAINER=	danfe@FreeBSD.org
