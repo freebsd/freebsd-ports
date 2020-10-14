@@ -3,6 +3,7 @@
 PORTNAME=	gscloud
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	net devel
 
 MAINTAINER=	egypcio@FreeBSD.org
@@ -33,14 +34,13 @@ GH_TUPLE=	cpuguy83:go-md2man:v2.0.0:cpuguy83_go_md2man_v2/vendor/github.com/cpug
 		golang:time:9d24e82272b4:golang_time/vendor/golang.org/x/time \
 		google:gofuzz:v1.0.0:google_gofuzz/vendor/github.com/google/gofuzz \
 		google:uuid:v1.1.1:google_uuid/vendor/github.com/google/uuid \
-		gridscale:gsclient-go:v3.2.0:gridscale_gsclient_go_v3/vendor/github.com/gridscale/gsclient-go/v3 \
+		gridscale:gsclient-go:v3.2.1:gridscale_gsclient_go_v3/vendor/github.com/gridscale/gsclient-go/v3 \
 		hashicorp:hcl:v1.0.0:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
-		imdario:mergo:v0.3.9:imdario_mergo/vendor/github.com/imdario/mergo \
+		imdario:mergo:v0.3.11:imdario_mergo/vendor/github.com/imdario/mergo \
 		inconshreveable:mousetrap:v1.0.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
-		json-iterator:go:v1.1.9:json_iterator_go/vendor/github.com/json-iterator/go \
+		json-iterator:go:v1.1.10:json_iterator_go/vendor/github.com/json-iterator/go \
 		kardianos:osext:2bc1f35cddc0:kardianos_osext/vendor/github.com/kardianos/osext \
 		kirsle:configdir:e45d2f54772f:kirsle_configdir/vendor/github.com/kirsle/configdir \
-		konsorten:go-windows-terminal-sequences:v1.0.1:konsorten_go_windows_terminal_sequences/vendor/github.com/konsorten/go-windows-terminal-sequences \
 		kubernetes-sigs:yaml:v1.1.0:kubernetes_sigs_yaml/vendor/sigs.k8s.io/yaml \
 		kubernetes:apimachinery:62598f38f24e:kubernetes_apimachinery/vendor/k8s.io/apimachinery \
 		kubernetes:client-go:fdb3fbe99e1d:kubernetes_client_go/vendor/k8s.io/client-go \
@@ -55,13 +55,13 @@ GH_TUPLE=	cpuguy83:go-md2man:v2.0.0:cpuguy83_go_md2man_v2/vendor/github.com/cpug
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
 		russross:blackfriday:v2.0.1:russross_blackfriday_v2/vendor/github.com/russross/blackfriday/v2 \
 		shurcooL:sanitized_anchor_name:v1.0.0:shurcool_sanitized_anchor_name/vendor/github.com/shurcooL/sanitized_anchor_name \
-		sirupsen:logrus:v1.4.2:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
+		sirupsen:logrus:v1.7.0:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		spf13:afero:v1.2.2:spf13_afero/vendor/github.com/spf13/afero \
 		spf13:cast:v1.3.0:spf13_cast/vendor/github.com/spf13/cast \
 		spf13:cobra:v1.0.0:spf13_cobra/vendor/github.com/spf13/cobra \
 		spf13:jwalterweatherman:v1.0.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.3:spf13_pflag/vendor/github.com/spf13/pflag \
-		spf13:viper:v1.7.0:spf13_viper/vendor/github.com/spf13/viper \
+		spf13:viper:v1.7.1:spf13_viper/vendor/github.com/spf13/viper \
 		stretchr:testify:v1.6.1:stretchr_testify/vendor/github.com/stretchr/testify \
 		subosito:gotenv:v1.2.0:subosito_gotenv/vendor/github.com/subosito/gotenv
 
