@@ -71,7 +71,7 @@ RUN_DEPENDS+=	epiphany>=3.0.0:www/epiphany \
 		gconf-editor>=3.0.0:sysutils/gconf-editor \
 		gnome-color-manager>=0:graphics/gnome-color-manager \
 		evolution>=3.0.0:mail/evolution \
-		cheese>=3.0.0:multimedia/cheese \
+		cheese>=3.0.0:multimedia/cheese
 
 .endif # !gnome3-lite section
 
