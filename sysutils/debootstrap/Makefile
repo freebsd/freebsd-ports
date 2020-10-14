@@ -7,7 +7,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	DEBIAN/pool/main/d/${PORTNAME}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	lifanov@FreeBSD.org
+MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	Install Debian base system into a directory
 
 LICENSE=	MIT
