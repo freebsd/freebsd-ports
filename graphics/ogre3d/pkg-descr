@@ -5,4 +5,4 @@ abstracts all the details of using the underlying system libraries like
 Direct3D and OpenGL and provides an interface based on world objects and other
 intuitive classes.
 
-WWW: http://www.ogre3d.org/
+WWW: https://www.ogre3d.org/
