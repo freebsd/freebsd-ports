@@ -14,6 +14,7 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_FreeBSD_13=	fails to build
+BROKEN_i386=	fails to build
 
 BUILD_DEPENDS=	a2x:textproc/asciidoc \
 		spdlog>=1.4.2:devel/spdlog
