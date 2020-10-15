@@ -3,7 +3,7 @@
 PORTNAME=	signal-cli
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im java
 MASTER_SITES=	https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.9.0/:_jackson_annotations \
 		https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.9.9/:_jackson_core \
@@ -81,6 +81,8 @@ DISTFILES=	annotations-13.0.jar:_annotations \
 # the future (the DISTFILES assignment above is generated semi-automatically).
 DISTFILES+=	jffi-1.2.23-native.jar:_jffi
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+PATCH_SITES=	https://github.com/AsamK/signal-cli/commit/
+PATCHFILES=	a54fc92c05c5c8b532e029e82eedd73f9440e138.patch:-p1
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Command-line and D-Bus interface for Signal and libsignal-service-java
