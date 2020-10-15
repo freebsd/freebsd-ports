@@ -57,7 +57,7 @@ _INCLUDE_USES_LUA_MK=	yes
 
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
-_LUA_VALID_VERSIONS:=	53 52 51
+_LUA_VALID_VERSIONS:=	54 53 52 51
 .if defined(_LUA_EXTRA_VER)
 _LUA_VALID_VERSIONS+= ${_LUA_EXTRA_VER}
 .endif
