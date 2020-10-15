@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	netdata
-PORTVERSION=	1.24.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+DISTVERSION=	1.26.0
 CATEGORIES=	net-mgmt
-MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${PORTVERSION}/
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Scalable distributed realtime performance and health monitoring
