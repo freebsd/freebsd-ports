@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tibble
-PORTVERSION=	3.0.3
+PORTVERSION=	3.0.4
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -20,7 +20,7 @@ CRAN_DEPENDS=	R-cran-cli>0:devel/R-cran-cli \
 		R-cran-pillar>=1.4.3:devel/R-cran-pillar \
 		R-cran-pkgconfig>0:devel/R-cran-pkgconfig \
 		R-cran-rlang>=0.4.3:devel/R-cran-rlang \
-		R-cran-vctrs>=0.2.4:devel/R-cran-vctrs
+		R-cran-vctrs>=0.3.2:devel/R-cran-vctrs
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
