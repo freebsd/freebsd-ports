@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	smoldyn
-DISTVERSION=	2.61
+DISTVERSION=	2.62
 CATEGORIES=	science
 MASTER_SITES=	http://www.smoldyn.org/
 
@@ -17,6 +17,11 @@ USES=		cmake gl tar:tgz xorg
 USE_GL=		gl glu glut
 USE_XORG=	xi xmu
 
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} \
+		include/libsmoldyn.h \
+		include/smoldyn.h \
+		include/smoldynconfigure.h \
+		lib/libsmoldyn_shared.so \
+		lib/libsmoldyn_static.a
 
 .include <bsd.port.mk>
