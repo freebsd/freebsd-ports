@@ -2,12 +2,10 @@
 
 PORTNAME=	libavif
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.1
-PORTREVISION=	1
+DISTVERSION=	0.8.2
 CATEGORIES=	graphics
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	274766b5e5a4.patch:-p1 # https://github.com/AOMediaCodec/libavif/pull/270
 PATCHFILES+=	2340cdb5f0c2.patch:-p1 # https://github.com/AOMediaCodec/libavif/pull/296
 
 MAINTAINER=	jbeich@FreeBSD.org
