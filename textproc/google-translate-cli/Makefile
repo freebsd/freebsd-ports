@@ -23,6 +23,7 @@ GH_PROJECT=	translate-shell
 
 ALL_TARGET=	build
 TEST_TARGET=	test
+NO_ARCH=	yes
 PLIST_FILES=	bin/trans \
 		man/man1/trans.1.gz
 
