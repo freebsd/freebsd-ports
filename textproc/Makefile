@@ -1414,6 +1414,7 @@
     SUBDIR += py-transifex-client
     SUBDIR += py-translationstring
     SUBDIR += py-transpopy
+    SUBDIR += py-ttp
     SUBDIR += py-ucl
     SUBDIR += py-ufal.udpipe
     SUBDIR += py-whoosh

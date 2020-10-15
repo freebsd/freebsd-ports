@@ -1,0 +1,11 @@
+TTP is a Python library for semi-structured text parsing using templates.
+
+In essence, TTP can help to:
+- Prepare, sort and load text data for parsing
+- Parse text using regexes dynamically derived out of templates
+- Process matches on the fly using broad set of built-in or custom functions
+- Combine match results in a structure with arbitrary hierarchy
+- Transform results in desired format to ease consumption by humans or machines
+- Return results to various destinations for storage or further processing
+
+WWW: https://github.com/dmulyalin/ttp
