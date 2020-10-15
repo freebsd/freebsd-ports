@@ -2,7 +2,7 @@
 
 PORTNAME=	qt-avif-image-plugin
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.2
+DISTVERSION=	0.4.0
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
