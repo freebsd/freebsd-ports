@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME?=	alpine
-DISTVERSION=	2.23.2
+DISTVERSION=	2.24
 CATEGORIES?=	mail news
 MASTER_SITES=	https://repo.or.cz/alpine.git/snapshot/${GIT_COMMIT}${EXTRACT_SUFX}?dummy=/
 
@@ -30,7 +30,7 @@ CONFIGURE_ARGS+=	--with-debug-level=2 \
 MAKE_ARGS+=		CC="${CC}" CXX="${CXX}" GCCCFLAGS="${CFLAGS}"
 # When you update please double check that the commit corresponds to
 # the actual version you've set in PORTVERSION.
-GIT_COMMIT=		7b8875f8bb237a156a1250629e8c684706bd202f
+GIT_COMMIT=		3165f59b344fb4d56d161541f294754d56bcb372
 GIT_COMMIT_SHORT=	${GIT_COMMIT:C/^(.......).*/\1/}
 WRKSRC=			${WRKDIR}/alpine-${GIT_COMMIT_SHORT}
 
@@ -64,7 +64,7 @@ LDAP_CFLAGS=			-I${LOCALBASE}/include
 LDAP_LDFLAGS=			-L${LOCALBASE}/lib
 
 # Option MAILDIR
-MAILDIR_PATCH_SITES=		http://alpine.x10host.com/alpine/patches/alpine-2.23/
+MAILDIR_PATCH_SITES=		http://alpine.x10host.com/alpine/patches/alpine-2.24/
 MAILDIR_PATCHFILES+=		maildir.patch.gz:-p1
 
 # Option MOUSE
