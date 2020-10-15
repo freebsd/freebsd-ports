@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 GEANY_VER=		1.36
-GEANY_PLUGINS_GTK2=	geanypy \
-			multiterm
+GEANY_PLUGINS_GTK2=	multiterm
 
 GEANY_PLUGINS_GTK3=	markdown
 
@@ -55,7 +54,6 @@ ctags_DESC=		generate and query ctags files
 debugger_DESC=		debugging support (via GDB currently)
 defineformat_DESC=	on-the-fly \#define formatter
 doc_DESC=		execute command on the word at cursor position
-geanypy_DESC=		support for Python plugins
 extrasel_DESC=		additional selection tools
 gendoc_DESC=		generate documentation from the sources comments
 geniuspaste_DESC=	pastebins support
