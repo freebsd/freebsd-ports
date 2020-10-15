@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MarkupSafe>=0.15:textproc/py-MarkupSafe@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Paste>=1.7.5.1:www/py-paste@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}PasteDeploy>=1.5.0:www/py-pastedeploy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pastedeploy>=1.5.0:www/py-pastedeploy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}PasteScript>=1.7.4.2:www/py-pastescript@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Tempita>=0.5.1:textproc/py-Tempita@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}WebError>=0.10.3:www/py-WebError@${PY_FLAVOR} \

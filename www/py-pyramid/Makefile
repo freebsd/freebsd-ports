@@ -15,7 +15,7 @@ LICENSE_NAME=	Repoze License
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}PasteDeploy>=1.5.0:www/py-pastedeploy@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pastedeploy>=1.5.0:www/py-pastedeploy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}repoze.lru>=0.4:devel/py-repoze.lru@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}translationstring>=0.4:textproc/py-translationstring@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}venusian>=1.0,1:devel/py-venusian@${PY_FLAVOR} \
