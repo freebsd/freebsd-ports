@@ -5,6 +5,7 @@ include/curl/curlver.h
 include/curl/easy.h
 include/curl/mprintf.h
 include/curl/multi.h
+include/curl/options.h
 include/curl/stdcheaders.h
 include/curl/system.h
 include/curl/typecheck-gcc.h
@@ -12,7 +13,7 @@ include/curl/urlapi.h
 lib/libcurl.a
 lib/libcurl.so
 lib/libcurl.so.4
-lib/libcurl.so.4.6.0
+lib/libcurl.so.4.7.0
 libdata/pkgconfig/libcurl.pc
 man/man1/curl-config.1.gz
 man/man1/curl.1.gz
@@ -52,6 +53,7 @@ man/man3/CURLINFO_PRIMARY_PORT.3.gz
 man/man3/CURLINFO_PRIVATE.3.gz
 man/man3/CURLINFO_PROTOCOL.3.gz
 man/man3/CURLINFO_PROXYAUTH_AVAIL.3.gz
+man/man3/CURLINFO_PROXY_ERROR.3.gz
 man/man3/CURLINFO_PROXY_SSL_VERIFYRESULT.3.gz
 man/man3/CURLINFO_REDIRECT_COUNT.3.gz
 man/man3/CURLINFO_REDIRECT_TIME.3.gz
@@ -324,6 +326,7 @@ man/man3/CURLOPT_SSLVERSION.3.gz
 man/man3/CURLOPT_SSL_CIPHER_LIST.3.gz
 man/man3/CURLOPT_SSL_CTX_DATA.3.gz
 man/man3/CURLOPT_SSL_CTX_FUNCTION.3.gz
+man/man3/CURLOPT_SSL_EC_CURVES.3.gz
 man/man3/CURLOPT_SSL_ENABLE_ALPN.3.gz
 man/man3/CURLOPT_SSL_ENABLE_NPN.3.gz
 man/man3/CURLOPT_SSL_FALSESTART.3.gz
@@ -380,6 +383,9 @@ man/man3/curl_easy_duphandle.3.gz
 man/man3/curl_easy_escape.3.gz
 man/man3/curl_easy_getinfo.3.gz
 man/man3/curl_easy_init.3.gz
+man/man3/curl_easy_option_by_id.3.gz
+man/man3/curl_easy_option_by_name.3.gz
+man/man3/curl_easy_option_next.3.gz
 man/man3/curl_easy_pause.3.gz
 man/man3/curl_easy_perform.3.gz
 man/man3/curl_easy_recv.3.gz
@@ -461,7 +467,7 @@ share/aclocal/libcurl.m4
 %%PORTDOCS%%%%DOCSDIR%%/ALTSVC.md
 %%PORTDOCS%%%%DOCSDIR%%/BINDINGS.md
 %%PORTDOCS%%%%DOCSDIR%%/BUG-BOUNTY.md
-%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/BUGS.md
 %%PORTDOCS%%%%DOCSDIR%%/CHECKSRC.md
 %%PORTDOCS%%%%DOCSDIR%%/CIPHERS.md
 %%PORTDOCS%%%%DOCSDIR%%/CODE_OF_CONDUCT.md
@@ -471,7 +477,7 @@ share/aclocal/libcurl.m4
 %%PORTDOCS%%%%DOCSDIR%%/CURL-DISABLE.md
 %%PORTDOCS%%%%DOCSDIR%%/DEPRECATE.md
 %%PORTDOCS%%%%DOCSDIR%%/DYNBUF.md
-%%PORTDOCS%%%%DOCSDIR%%/ESNI.md
+%%PORTDOCS%%%%DOCSDIR%%/ECH.md
 %%PORTDOCS%%%%DOCSDIR%%/EXPERIMENTAL.md
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
 %%PORTDOCS%%%%DOCSDIR%%/FEATURES
@@ -485,20 +491,18 @@ share/aclocal/libcurl.m4
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.md
 %%PORTDOCS%%%%DOCSDIR%%/INTERNALS.md
 %%PORTDOCS%%%%DOCSDIR%%/KNOWN_BUGS
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE-MIXING.md
 %%PORTDOCS%%%%DOCSDIR%%/MAIL-ETIQUETTE
 %%PORTDOCS%%%%DOCSDIR%%/MQTT.md
 %%PORTDOCS%%%%DOCSDIR%%/PARALLEL-TRANSFERS.md
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/RELEASE-PROCEDURE.md
-%%PORTDOCS%%%%DOCSDIR%%/RESOURCES
 %%PORTDOCS%%%%DOCSDIR%%/ROADMAP.md
 %%PORTDOCS%%%%DOCSDIR%%/SECURITY-PROCESS.md
 %%PORTDOCS%%%%DOCSDIR%%/SSL-PROBLEMS.md
 %%PORTDOCS%%%%DOCSDIR%%/SSLCERTS.md
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/TheArtOfHttpScripting
+%%PORTDOCS%%%%DOCSDIR%%/TheArtOfHttpScripting.md
 %%PORTDOCS%%%%DOCSDIR%%/VERSIONS.md
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/ABI.md
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/libcurl.m4
@@ -508,7 +512,7 @@ share/aclocal/libcurl.m4
 %%PORTDOCS%%%%DOCSDIR%%/options-in-versions
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/10-at-a-time.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile.example
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README.md
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/altsvc.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/anyauthput.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cacertinmem.c
