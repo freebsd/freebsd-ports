@@ -1,4 +1,4 @@
---- deps/openssl/openssl-cl_no_asm.gypi.orig	2019-08-06 20:46:23 UTC
+--- deps/openssl/openssl-cl_no_asm.gypi.orig	2020-10-06 18:05:13 UTC
 +++ deps/openssl/openssl-cl_no_asm.gypi
 @@ -1,4 +1,5 @@
  {
@@ -6,7 +6,7 @@
    'conditions': [
      ['target_arch=="ppc" and OS=="aix"', {
        'includes': ['config/archs/aix-gcc/no-asm/openssl-cl.gypi'],
-@@ -45,7 +46,7 @@
+@@ -47,7 +48,7 @@
        'includes': ['config/archs/linux64-mips64/no-asm/openssl-cl.gypi'],
      }, {
        # Other architectures don't use assembly
