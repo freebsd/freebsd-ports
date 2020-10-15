@@ -1,27 +1,21 @@
---- Makefile.orig	2015-09-03 06:03:19 UTC
+--- Makefile.orig	2020-10-14 12:51:11 UTC
 +++ Makefile
-@@ -12,8 +12,8 @@
+@@ -12,7 +12,7 @@
  #   (at your option) any later version.
  #
  
--CC      = gcc
--CFLAGS  = -W -Wall -Wshadow -Wstrict-prototypes -Wpointer-arith -Wcast-qual \
-+#CC      = gcc
-+CFLAGS+= -W -Wall -Wshadow -Wstrict-prototypes -Wpointer-arith -Wcast-qual \
-           -Wcast-align -Wwrite-strings -Wmissing-prototypes -Winline -Wundef
- 
- # Let lseek and mmap support 64-bit wide offsets
-@@ -23,23 +23,23 @@ CFLAGS += -D_FILE_OFFSET_BITS=64
+-CC     ?= gcc
++#CC     ?= gcc
+ # Base CFLAGS can be overridden by environment
+ CFLAGS ?= -O2
+ # When debugging, disable -O2 and enable -g
+@@ -28,19 +28,20 @@ CFLAGS += -D_FILE_OFFSET_BITS=64
  #CFLAGS += -DALIGNMENT_WORKAROUND
  
- # When debugging, disable -O2 and enable -g.
--CFLAGS += -O2
-+#CFLAGS += -O2
- #CFLAGS += -g
- 
- # Pass linker flags here
--LDFLAGS =
-+LDFLAGS+= $(CFLAGS)
+ # Pass linker flags here (can be set from environment too)
+-LDFLAGS ?=
++#LDFLAGS ?=
++LDFLAGS += $(CFLAGS)
  
  DESTDIR =
 -prefix  = /usr/local
@@ -30,8 +24,7 @@
 -mandir  = $(prefix)/share/man
 +mandir  = $(MANPREFIX)/man
  man8dir = $(mandir)/man8
--docdir  = $(prefix)/share/doc/dmidecode
-+docdir  = $(DOCSDIR)
+ docdir  = $(prefix)/share/doc/dmidecode
  
  INSTALL         := install
 -INSTALL_DATA    := $(INSTALL) -m 644
