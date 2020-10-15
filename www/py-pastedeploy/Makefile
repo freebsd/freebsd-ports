@@ -1,11 +1,13 @@
 # Created by: Dryice Liu	<dryice@dryice.name>
 # $FreeBSD$
 
-PORTNAME=	PasteDeploy
+PORTNAME=	pastedeploy
 PORTVERSION=	2.1.0
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	PasteDeploy-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Load, configure, and compose WSGI applications and servers
