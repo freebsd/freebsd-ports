@@ -17,31 +17,27 @@ RUN_DEPENDS=	bash:shells/bash \
 		gawk:lang/gawk
 TEST_DEPENDS=	gawk:lang/gawk
 
-ALL_TARGET=	build
-
-FRIBIDI_RUN_DEPENDS=	fribidi:converters/fribidi
-
+USE_GITHUB=	yes
 GH_ACCOUNT=	soimort
 GH_PROJECT=	translate-shell
 
+ALL_TARGET=	build
+TEST_TARGET=	test
+PLIST_FILES=	bin/trans \
+		man/man1/trans.1.gz
+
 OPTIONS_DEFINE=	DOCS FRIBIDI READLINE TEXT2SPEECH
 
-PLIST_FILES=	bin/trans man/man1/trans.1.gz
+TEXT2SPEECH_DESC=	Enable Text-to-Speech functionality via espeak
+
+FRIBIDI_RUN_DEPENDS=	fribidi:converters/fribidi
 
 READLINE_RUN_DEPENDS=	rlwrap:devel/rlwrap
 
-TEXT2SPEECH_DESC=	Enable Text-to-Speech functionality via espeak
 TEXT2SPEECH_RUN_DEPENDS=	espeak:audio/espeak
-
-USE_GITHUB=	yes
-
-.include <bsd.port.options.mk>
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/build/trans ${STAGEDIR}${PREFIX}/bin/trans
 	${INSTALL_MAN} ${WRKSRC}/man/trans.1 ${STAGEDIR}${MANPREFIX}/man/man1/trans.1
-
-regression-test test: build
-	@(cd ${WRKSRC} && ${MAKE} test)
 
 .include <bsd.port.mk>
