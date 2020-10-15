@@ -973,16 +973,7 @@ MASTER_SITE_PGSQL+= \
 
 .if !defined(IGNORE_MASTER_SITE_PHP)
 MASTER_SITE_PHP+= \
-	http://de.php.net/%SUBDIR%/ \
-	http://es.php.net/%SUBDIR%/ \
-	http://fr.php.net/%SUBDIR%/ \
-	http://it.php.net/%SUBDIR%/ \
-	http://jp.php.net/%SUBDIR%/ \
-	http://se.php.net/%SUBDIR%/ \
-	http://uk3.php.net/%SUBDIR%/ \
-	http://us2.php.net/%SUBDIR%/ \
-	http://br.php.net/%SUBDIR%/ \
-	http://cn.php.net/%SUBDIR%/
+	https://www.php.net/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_PYTHON)
