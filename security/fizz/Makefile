@@ -2,7 +2,7 @@
 
 PORTNAME=	fizz
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2020.09.14.00
+DISTVERSION=	2020.10.12.00
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -27,5 +27,8 @@ WRKSRC_SUBDIR=	${PORTNAME}
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	BUILD_TESTS BUILD_EXAMPLES
+
+post-install: # https://github.com/facebookincubator/fizz/issues/55
+	cd ${STAGEDIR}${PREFIX} && ${RMDIR} include/fizz/tool/test include/fizz/util/test
 
 .include <bsd.port.mk>
