@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	azure-cli
-PORTVERSION=	2.12.1
+PORTVERSION=	2.13.0
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}antlr4-python3-runtime>=4.7.2:devel/py-antlr4-python3-runtime@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}azure-appconfiguration>=1.1.0:devel/py-azure-appconfiguration@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}azure-appconfiguration>=1.1.1:devel/py-azure-appconfiguration@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-batch>=9.0:devel/py-azure-batch@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-cli-core>=${PORTVERSION}:sysutils/py-azure-cli-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-cli-telemetry>=1.0.2<2.0:sysutils/py-azure-cli-telemetry@${PY_FLAVOR} \
@@ -39,7 +39,7 @@ RUN_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-compute>=13.0:devel/py-azure-mgmt-compute@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-consumption>=2.0:devel/py-azure-mgmt-consumption@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-containerinstance>=1.4:devel/py-azure-mgmt-containerinstance@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}azure-mgmt-containerregistry>=3.0.0.r14:devel/py-azure-mgmt-containerregistry@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}azure-mgmt-containerregistry>=3.0.0.r15:devel/py-azure-mgmt-containerregistry@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-containerservice>=9.4.0:devel/py-azure-mgmt-containerservice@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-core>=0:devel/py-azure-mgmt-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-cosmosdb>=1.0.0:devel/py-azure-mgmt-cosmosdb@${PY_FLAVOR} \
