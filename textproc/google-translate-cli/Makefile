@@ -2,18 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	google-translate-cli
-PORTVERSION=	0.9.6.10
 DISTVERSIONPREFIX=	v
-#PORTREVISION=	0
+DISTVERSION=	0.9.6.12
 CATEGORIES=	textproc
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Google Translate to serve as a command line tool
 
-LICENSE=	BW
-LICENSE_NAME=	Beerware
-LICENSE_TEXT=	http://www.sax.de/~joerg/beerware-license.txt
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE=	UNLICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	gawk:lang/gawk
 RUN_DEPENDS=	bash:shells/bash \
