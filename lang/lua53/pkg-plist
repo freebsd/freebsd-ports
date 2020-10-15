@@ -1,14 +1,14 @@
-bin/lua53
-bin/luac53
-include/lua53/lauxlib.h
-include/lua53/lua.h
-include/lua53/lua.hpp
-include/lua53/luaconf.h
-include/lua53/lualib.h
-lib/liblua-5.3.a
-lib/liblua-5.3.so
-libdata/pkgconfig/lua-5.3.pc
-man/man1/lua53.1.gz
-man/man1/luac53.1.gz
-@dir lib/lua/5.3
-@dir %%DATADIR%%/5.3
+bin/lua%%LUA_VER_STR%%
+bin/luac%%LUA_VER_STR%%
+%%LUA_INCDIR%%/lauxlib.h
+%%LUA_INCDIR%%/lua.h
+%%LUA_INCDIR%%/lua.hpp
+%%LUA_INCDIR%%/luaconf.h
+%%LUA_INCDIR%%/lualib.h
+%%LUA_LIBDIR%%/liblua-%%LUA_VER%%.a
+%%LUA_LIBDIR%%/liblua-%%LUA_VER%%.so
+libdata/pkgconfig/lua-%%LUA_VER%%.pc
+man/man1/lua%%LUA_VER_STR%%.1.gz
+man/man1/luac%%LUA_VER_STR%%.1.gz
+@dir %%LUA_MODLIBDIR%%
+@dir %%LUA_MODSHAREDIR%%

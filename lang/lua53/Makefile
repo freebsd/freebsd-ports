@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	lua
-DISTVERSION=	5.3.5
-PORTREVISION=	3
+DISTVERSION=	5.3.6
 CATEGORIES=	lang
 MASTER_SITES=	https://www.lua.org/ftp/
-PKGNAMESUFFIX=	53
+PKGNAMESUFFIX=	${LUA_VER_STR}
 
 MAINTAINER=	russ.haley@gmail.com
 COMMENT=	Powerful, efficient, lightweight, embeddable scripting language
@@ -24,80 +23,20 @@ USE_LDCONFIG=	yes
 # See http://wiki.freebsd.org/MatthiasAndree/LuaLessonsLearnt
 MAKE_ARGS=	__MAKE_CONF=${NONEXISTENT}
 
-BUILD_WRKSRC=	${WRKSRC}/src
-
-# Source, destination, and filenames to copy for the DOCS option
-# (automatically added to pkg-plist if DOCS is set)
-# We override DOCSDIR to get a per-version subdir.
-# We put the docs for Lua proper in a lua/ subdir of the version subdir
-# so that ports for Lua modules can use the version subdir too without
-# making a mess.
-DOCSDIR=	${LUA_DOCSDIR}
-PORTDOCS=	*
-BUILD_WRKDOC=	${WRKSRC}/doc
-
-LUA_LIB_STATIC=	liblua-${LUA_VER}.a
-LUA_LIB_SHARED=	liblua-${LUA_VER}.so
-LUA_PC_FILE=	lua-${LUA_VER}.pc
-
 # using the "bsd" target rather than "freebsd" saves patching out the
 # assumption of using base libedit in order to make it configurable. "bsd"
 # is "generic" plus the POSIX and DLOPEN options, plus -Wl,-E at link time;
 # it doesn't set CC either, which makes it easier for us to control that too.
 ALL_TARGET=bsd
 
-# Options
-
-OPTIONS_DEFAULT=LIBEDIT_DL
-
-OPTIONS_GROUP=	DOCSGRP DEBUGGRP
-OPTIONS_SINGLE=	EDITGRP
-
-OPTIONS_GROUP_DOCSGRP=	DOCS
-OPTIONS_GROUP_DEBUGGRP=	ASSERT APICHECK
-
-OPTIONS_SINGLE_EDITGRP=	EDITNONE LIBEDIT_DL LIBEDIT READLINE
-
-# Option descriptions
-
-DEBUGGRP_DESC=	Debugging options
-ASSERT_DESC=	Enable interpreter assertions
-APICHECK_DESC=	Enable API checks
-
-DOCSGRP_DESC=	Documentation options
-DOCS_DESC=	Install language and API reference (HTML, ~400kB)
-
-EDITGRP_DESC=	Interactive command-line editing
-EDITNONE_DESC=	No command-line editing
-LIBEDIT_DL_DESC=Use dynamically loaded libedit (recommended)
-LIBEDIT_DESC=	Use libedit (breaks lcurses)
-READLINE_DESC=	Use GNU Readline (breaks lcurses)
-
-# Option implementations
-
-ASSERT_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-assert
-
-APICHECK_CPPFLAGS=	-DLUA_USE_APICHECK
-
-# EDITNONE currently requires no settings
-
-LIBEDIT_DL_USES=	libedit
-LIBEDIT_DL_CPPFLAGS=	-DLUA_USE_READLINE_DL
-
-LIBEDIT_USES=		libedit
-LIBEDIT_CPPFLAGS=	-DLUA_USE_READLINE
-LIBEDIT_LIBS=		-ledit
-
-READLINE_USES=		readline
-READLINE_CPPFLAGS=	-DLUA_USE_READLINE
-READLINE_LIBS=		-lreadline
-
-# end of option vars
+LUA_LIB_STATIC=	liblua-${LUA_VER}.a
+LUA_LIB_SHARED=	liblua-${LUA_VER}.so
+LUA_PC_FILE=	lua-${LUA_VER}.pc
 
 CFLAGS+=	-fPIC
 # 2019-01-25: -pthread in LIBS is a work around for the following bug:
 # https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=235211
-LIBS+= 	-pthread
+LIBS+=		-pthread
 
 WITHOUT_NO_STRICT_ALIASING=yes
 
@@ -116,11 +55,70 @@ MAKE_ARGS+=	CC="${CC}" \
 		INSTALL_INC=${STAGEDIR}${LUA_INCDIR} \
 		INSTALL_EXEC="${INSTALL_PROGRAM}"
 
+# Source, destination, and filenames to copy for the DOCS option
+# (automatically added to pkg-plist if DOCS is set)
+# We override DOCSDIR to get a per-version subdir.
+# We put the docs for Lua proper in a lua/ subdir of the version subdir
+# so that ports for Lua modules can use the version subdir too without
+# making a mess.
+DOCSDIR=	${LUA_DOCSDIR}
+BUILD_WRKDOC=	${WRKSRC}/doc
+
 SUB_FILES=	${LUA_PC_FILE}
 SUB_LIST=	version=${PORTVERSION} \
 		includedir=${LUA_INCDIR} \
 		libdir=${LUA_LIBDIR} \
 		soname=lua-${LUA_VER}
+
+BUILD_WRKSRC=	${WRKSRC}/src
+
+PORTDOCS=	*
+
+# Options
+
+OPTIONS_DEFAULT=	LIBEDIT_DL
+
+OPTIONS_GROUP=		DOCSGRP DEBUGGRP
+OPTIONS_GROUP_DEBUGGRP=	ASSERT APICHECK
+OPTIONS_GROUP_DOCSGRP=	DOCS
+
+OPTIONS_SINGLE=		EDITGRP
+OPTIONS_SINGLE_EDITGRP=	EDITNONE LIBEDIT_DL LIBEDIT READLINE
+
+# Option descriptions
+
+APICHECK_DESC=	Enable API checks
+ASSERT_DESC=	Enable interpreter assertions
+DEBUGGRP_DESC=	Debugging options
+
+DOCSGRP_DESC=	Documentation options
+DOCS_DESC=	Install language and API reference (HTML, ~400kB)
+
+EDITGRP_DESC=	Interactive command-line editing
+EDITNONE_DESC=	No command-line editing
+LIBEDIT_DESC=	Use libedit (breaks lcurses)
+LIBEDIT_DL_DESC=Use dynamically loaded libedit (recommended)
+READLINE_DESC=	Use GNU Readline (breaks lcurses)
+
+# Option implementations
+
+APICHECK_CPPFLAGS=	-DLUA_USE_APICHECK
+ASSERT_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-assert
+
+# EDITNONE currently requires no settings
+
+LIBEDIT_USES=		libedit
+LIBEDIT_CPPFLAGS=	-DLUA_USE_READLINE
+LIBEDIT_LIBS=		-ledit
+
+LIBEDIT_DL_USES=	libedit
+LIBEDIT_DL_CPPFLAGS=	-DLUA_USE_READLINE_DL
+
+READLINE_USES=		readline
+READLINE_CPPFLAGS=	-DLUA_USE_READLINE
+READLINE_LIBS=		-lreadline
+
+# end of option vars
 
 post-patch:
 	@${REINPLACE_CMD} -e "/LUA_ROOT/s,/usr/local,${LUA_PREFIX}," \
