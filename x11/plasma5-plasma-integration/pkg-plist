@@ -8,6 +8,7 @@ share/kconf_update/fonts_kate.pl
 share/kconf_update/fonts_kate.upd
 share/locale/ar/LC_MESSAGES/plasmaintegration5.mo
 share/locale/ast/LC_MESSAGES/plasmaintegration5.mo
+share/locale/az/LC_MESSAGES/plasmaintegration5.mo
 share/locale/ca/LC_MESSAGES/plasmaintegration5.mo
 share/locale/ca@valencia/LC_MESSAGES/plasmaintegration5.mo
 share/locale/cs/LC_MESSAGES/plasmaintegration5.mo
@@ -36,6 +37,7 @@ share/locale/pa/LC_MESSAGES/plasmaintegration5.mo
 share/locale/pl/LC_MESSAGES/plasmaintegration5.mo
 share/locale/pt/LC_MESSAGES/plasmaintegration5.mo
 share/locale/pt_BR/LC_MESSAGES/plasmaintegration5.mo
+share/locale/ro/LC_MESSAGES/plasmaintegration5.mo
 share/locale/ru/LC_MESSAGES/plasmaintegration5.mo
 share/locale/sk/LC_MESSAGES/plasmaintegration5.mo
 share/locale/sl/LC_MESSAGES/plasmaintegration5.mo
@@ -43,7 +45,6 @@ share/locale/sr/LC_MESSAGES/plasmaintegration5.mo
 share/locale/sr@ijekavian/LC_MESSAGES/plasmaintegration5.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/plasmaintegration5.mo
 share/locale/sr@latin/LC_MESSAGES/plasmaintegration5.mo
-share/locale/sv/LC_MESSAGES/plasmaintegration5.mo
 share/locale/tr/LC_MESSAGES/plasmaintegration5.mo
 share/locale/uk/LC_MESSAGES/plasmaintegration5.mo
 share/locale/zh_CN/LC_MESSAGES/plasmaintegration5.mo

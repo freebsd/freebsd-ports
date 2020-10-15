@@ -23,6 +23,9 @@ share/locale/ar/LC_MESSAGES/plasma-discover-notifier.mo
 share/locale/ar/LC_MESSAGES/plasma-discover.mo
 share/locale/ast/LC_MESSAGES/plasma-discover-notifier.mo
 share/locale/ast/LC_MESSAGES/plasma-discover.mo
+share/locale/az/LC_MESSAGES/libdiscover.mo
+share/locale/az/LC_MESSAGES/plasma-discover-notifier.mo
+share/locale/az/LC_MESSAGES/plasma-discover.mo
 share/locale/bg/LC_MESSAGES/libdiscover.mo
 share/locale/bs/LC_MESSAGES/libdiscover.mo
 share/locale/bs/LC_MESSAGES/plasma-discover.mo
@@ -145,9 +148,6 @@ share/locale/sr@ijekavianlatin/LC_MESSAGES/plasma-discover.mo
 share/locale/sr@latin/LC_MESSAGES/libdiscover.mo
 share/locale/sr@latin/LC_MESSAGES/plasma-discover-notifier.mo
 share/locale/sr@latin/LC_MESSAGES/plasma-discover.mo
-share/locale/sv/LC_MESSAGES/libdiscover.mo
-share/locale/sv/LC_MESSAGES/plasma-discover-notifier.mo
-share/locale/sv/LC_MESSAGES/plasma-discover.mo
 share/locale/tg/LC_MESSAGES/libdiscover.mo
 share/locale/tg/LC_MESSAGES/plasma-discover-notifier.mo
 share/locale/tg/LC_MESSAGES/plasma-discover.mo

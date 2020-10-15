@@ -4,16 +4,16 @@ lib/libkhotkeysprivate.so.%%KDE_PLASMA_VERSION%%
 %%QT_PLUGINDIR%%/kcm_hotkeys.so
 %%QT_PLUGINDIR%%/kf5/kded/khotkeys.so
 share/dbus-1/interfaces/org.kde.khotkeys.xml
-share/doc/HTML/ca/kcontrol/khotkeys/shortcuts-action-command.png
-share/doc/HTML/ca/kcontrol/khotkeys/shortcuts-action-dbus.png
-share/doc/HTML/ca/kcontrol/khotkeys/shortcuts-action-keyboard.png
-share/doc/HTML/ca/kcontrol/khotkeys/shortcuts-trigger-keyboard.png
-share/doc/HTML/ca/kcontrol/khotkeys/shortcuts-trigger-mouse.png
 share/doc/HTML/ca/kcontrol/khotkeys/groups-comment.png
 share/doc/HTML/ca/kcontrol/khotkeys/index.cache.bz2
 share/doc/HTML/ca/kcontrol/khotkeys/index.docbook
 share/doc/HTML/ca/kcontrol/khotkeys/manage-export.png
 share/doc/HTML/ca/kcontrol/khotkeys/settings.png
+share/doc/HTML/ca/kcontrol/khotkeys/shortcuts-action-command.png
+share/doc/HTML/ca/kcontrol/khotkeys/shortcuts-action-dbus.png
+share/doc/HTML/ca/kcontrol/khotkeys/shortcuts-action-keyboard.png
+share/doc/HTML/ca/kcontrol/khotkeys/shortcuts-trigger-keyboard.png
+share/doc/HTML/ca/kcontrol/khotkeys/shortcuts-trigger-mouse.png
 share/doc/HTML/de/kcontrol/khotkeys/index.cache.bz2
 share/doc/HTML/de/kcontrol/khotkeys/index.docbook
 share/doc/HTML/en/kcontrol/khotkeys/document-open.png
@@ -28,6 +28,8 @@ share/doc/HTML/en/kcontrol/khotkeys/shortcuts-action-dbus.png
 share/doc/HTML/en/kcontrol/khotkeys/shortcuts-action-keyboard.png
 share/doc/HTML/en/kcontrol/khotkeys/shortcuts-trigger-keyboard.png
 share/doc/HTML/en/kcontrol/khotkeys/shortcuts-trigger-mouse.png
+share/doc/HTML/fr/kcontrol/khotkeys/index.cache.bz2
+share/doc/HTML/fr/kcontrol/khotkeys/index.docbook
 share/doc/HTML/id/kcontrol/khotkeys/index.cache.bz2
 share/doc/HTML/id/kcontrol/khotkeys/index.docbook
 share/doc/HTML/it/kcontrol/khotkeys/index.cache.bz2
@@ -48,8 +50,6 @@ share/doc/HTML/ru/kcontrol/khotkeys/shortcuts-action-dbus.png
 share/doc/HTML/ru/kcontrol/khotkeys/shortcuts-action-keyboard.png
 share/doc/HTML/ru/kcontrol/khotkeys/shortcuts-trigger-keyboard.png
 share/doc/HTML/ru/kcontrol/khotkeys/shortcuts-trigger-mouse.png
-share/doc/HTML/sv/kcontrol/khotkeys/index.cache.bz2
-share/doc/HTML/sv/kcontrol/khotkeys/index.docbook
 share/doc/HTML/uk/kcontrol/khotkeys/groups-comment.png
 share/doc/HTML/uk/kcontrol/khotkeys/index.cache.bz2
 share/doc/HTML/uk/kcontrol/khotkeys/index.docbook
@@ -134,7 +134,6 @@ share/locale/sr/LC_MESSAGES/khotkeys.mo
 share/locale/sr@ijekavian/LC_MESSAGES/khotkeys.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/khotkeys.mo
 share/locale/sr@latin/LC_MESSAGES/khotkeys.mo
-share/locale/sv/LC_MESSAGES/khotkeys.mo
 share/locale/ta/LC_MESSAGES/khotkeys.mo
 share/locale/te/LC_MESSAGES/khotkeys.mo
 share/locale/tg/LC_MESSAGES/khotkeys.mo

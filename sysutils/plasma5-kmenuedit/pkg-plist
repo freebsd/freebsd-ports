@@ -47,8 +47,6 @@ share/doc/HTML/ru/kmenuedit/itemname.png
 share/doc/HTML/ru/kmenuedit/new.png
 share/doc/HTML/ru/kmenuedit/selecticon.png
 share/doc/HTML/ru/kmenuedit/selectinternet.png
-share/doc/HTML/sv/kmenuedit/index.cache.bz2
-share/doc/HTML/sv/kmenuedit/index.docbook
 share/doc/HTML/uk/kmenuedit/done.png
 share/doc/HTML/uk/kmenuedit/index.cache.bz2
 share/doc/HTML/uk/kmenuedit/index.docbook
@@ -137,7 +135,6 @@ share/locale/sr/LC_MESSAGES/kmenuedit.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kmenuedit.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kmenuedit.mo
 share/locale/sr@latin/LC_MESSAGES/kmenuedit.mo
-share/locale/sv/LC_MESSAGES/kmenuedit.mo
 share/locale/ta/LC_MESSAGES/kmenuedit.mo
 share/locale/te/LC_MESSAGES/kmenuedit.mo
 share/locale/tg/LC_MESSAGES/kmenuedit.mo

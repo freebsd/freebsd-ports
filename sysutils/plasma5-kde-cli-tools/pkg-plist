@@ -1,5 +1,6 @@
 bin/kbroadcastnotification
 bin/kcmshell5
+bin/kde-inhibit
 bin/kde-open5
 bin/kdecp5
 bin/kdemv5
@@ -27,7 +28,6 @@ man/pt_BR/man1/kdesu.1.gz
 man/ru/man1/kdesu.1.gz
 man/sr/man1/kdesu.1.gz
 man/sr@latin/man1/kdesu.1.gz
-man/sv/man1/kdesu.1.gz
 man/uk/man1/kdesu.1.gz
 share/applications/org.kde.keditfiletype.desktop
 share/doc/HTML/ca/kcontrol5/filetypes/index.cache.bz2
@@ -82,10 +82,6 @@ share/doc/HTML/sr@latin/kcontrol5/filetypes/index.cache.bz2
 share/doc/HTML/sr@latin/kcontrol5/filetypes/index.docbook
 share/doc/HTML/sr@latin/kdesu/index.cache.bz2
 share/doc/HTML/sr@latin/kdesu/index.docbook
-share/doc/HTML/sv/kcontrol5/filetypes/index.cache.bz2
-share/doc/HTML/sv/kcontrol5/filetypes/index.docbook
-share/doc/HTML/sv/kdesu/index.cache.bz2
-share/doc/HTML/sv/kdesu/index.docbook
 share/doc/HTML/uk/kcontrol5/filetypes/index.cache.bz2
 share/doc/HTML/uk/kcontrol5/filetypes/index.docbook
 share/doc/HTML/uk/kdesu/index.cache.bz2
@@ -104,6 +100,14 @@ share/locale/ar/LC_MESSAGES/kstart5.mo
 share/locale/ar/LC_MESSAGES/ktraderclient5.mo
 share/locale/ast/LC_MESSAGES/kcm5_filetypes.mo
 share/locale/ast/LC_MESSAGES/kdesu5.mo
+share/locale/az/LC_MESSAGES/kbroadcastnotification.mo
+share/locale/az/LC_MESSAGES/kcm5_filetypes.mo
+share/locale/az/LC_MESSAGES/kcmshell5.mo
+share/locale/az/LC_MESSAGES/kdesu5.mo
+share/locale/az/LC_MESSAGES/kioclient5.mo
+share/locale/az/LC_MESSAGES/kmimetypefinder5.mo
+share/locale/az/LC_MESSAGES/kstart5.mo
+share/locale/az/LC_MESSAGES/ktraderclient5.mo
 share/locale/be/LC_MESSAGES/kcm5_filetypes.mo
 share/locale/be/LC_MESSAGES/kcmshell5.mo
 share/locale/be/LC_MESSAGES/kdesu5.mo
@@ -194,6 +198,7 @@ share/locale/de/LC_MESSAGES/kioclient5.mo
 share/locale/de/LC_MESSAGES/kmimetypefinder5.mo
 share/locale/de/LC_MESSAGES/kstart5.mo
 share/locale/de/LC_MESSAGES/ktraderclient5.mo
+share/locale/el/LC_MESSAGES/kbroadcastnotification.mo
 share/locale/el/LC_MESSAGES/kcm5_filetypes.mo
 share/locale/el/LC_MESSAGES/kcmshell5.mo
 share/locale/el/LC_MESSAGES/kdesu5.mo
@@ -441,8 +446,8 @@ share/locale/mk/LC_MESSAGES/kioclient5.mo
 share/locale/mk/LC_MESSAGES/kmimetypefinder5.mo
 share/locale/mk/LC_MESSAGES/kstart5.mo
 share/locale/mk/LC_MESSAGES/ktraderclient5.mo
-share/locale/ml/LC_MESSAGES/kcm5_filetypes.mo
 share/locale/ml/LC_MESSAGES/kbroadcastnotification.mo
+share/locale/ml/LC_MESSAGES/kcm5_filetypes.mo
 share/locale/ml/LC_MESSAGES/kcmshell5.mo
 share/locale/ml/LC_MESSAGES/kdesu5.mo
 share/locale/ml/LC_MESSAGES/kioclient5.mo
@@ -622,14 +627,6 @@ share/locale/sr@latin/LC_MESSAGES/kioclient5.mo
 share/locale/sr@latin/LC_MESSAGES/kmimetypefinder5.mo
 share/locale/sr@latin/LC_MESSAGES/kstart5.mo
 share/locale/sr@latin/LC_MESSAGES/ktraderclient5.mo
-share/locale/sv/LC_MESSAGES/kbroadcastnotification.mo
-share/locale/sv/LC_MESSAGES/kcm5_filetypes.mo
-share/locale/sv/LC_MESSAGES/kcmshell5.mo
-share/locale/sv/LC_MESSAGES/kdesu5.mo
-share/locale/sv/LC_MESSAGES/kioclient5.mo
-share/locale/sv/LC_MESSAGES/kmimetypefinder5.mo
-share/locale/sv/LC_MESSAGES/kstart5.mo
-share/locale/sv/LC_MESSAGES/ktraderclient5.mo
 share/locale/ta/LC_MESSAGES/kcm5_filetypes.mo
 share/locale/ta/LC_MESSAGES/kcmshell5.mo
 share/locale/ta/LC_MESSAGES/kdesu5.mo

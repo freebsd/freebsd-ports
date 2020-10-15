@@ -11,6 +11,8 @@ share/doc/HTML/es/kcontrol/kgamma5/index.cache.bz2
 share/doc/HTML/es/kcontrol/kgamma5/index.docbook
 share/doc/HTML/et/kcontrol/kgamma5/index.cache.bz2
 share/doc/HTML/et/kcontrol/kgamma5/index.docbook
+share/doc/HTML/fr/kcontrol/kgamma5/index.cache.bz2
+share/doc/HTML/fr/kcontrol/kgamma5/index.docbook
 share/doc/HTML/id/kcontrol/kgamma5/index.cache.bz2
 share/doc/HTML/id/kcontrol/kgamma5/index.docbook
 share/doc/HTML/it/kcontrol/kgamma5/index.cache.bz2
@@ -23,8 +25,6 @@ share/doc/HTML/pt_BR/kcontrol/kgamma5/index.cache.bz2
 share/doc/HTML/pt_BR/kcontrol/kgamma5/index.docbook
 share/doc/HTML/ru/kcontrol/kgamma5/index.cache.bz2
 share/doc/HTML/ru/kcontrol/kgamma5/index.docbook
-share/doc/HTML/sv/kcontrol/kgamma5/index.cache.bz2
-share/doc/HTML/sv/kcontrol/kgamma5/index.docbook
 share/doc/HTML/uk/kcontrol/kgamma5/index.cache.bz2
 share/doc/HTML/uk/kcontrol/kgamma5/index.docbook
 share/kgamma/pics/background.png
@@ -37,6 +37,7 @@ share/kgamma/pics/rgbscale.png
 share/kservices5/kgamma.desktop
 share/locale/ar/LC_MESSAGES/kcmkgamma.mo
 share/locale/ast/LC_MESSAGES/kcmkgamma.mo
+share/locale/az/LC_MESSAGES/kcmkgamma.mo
 share/locale/be/LC_MESSAGES/kcmkgamma.mo
 share/locale/bg/LC_MESSAGES/kcmkgamma.mo
 share/locale/br/LC_MESSAGES/kcmkgamma.mo
@@ -98,7 +99,6 @@ share/locale/sr/LC_MESSAGES/kcmkgamma.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kcmkgamma.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kcmkgamma.mo
 share/locale/sr@latin/LC_MESSAGES/kcmkgamma.mo
-share/locale/sv/LC_MESSAGES/kcmkgamma.mo
 share/locale/ta/LC_MESSAGES/kcmkgamma.mo
 share/locale/tg/LC_MESSAGES/kcmkgamma.mo
 share/locale/th/LC_MESSAGES/kcmkgamma.mo

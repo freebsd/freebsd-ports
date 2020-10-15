@@ -30,6 +30,7 @@ lib/libkdecorations2.so.%%KDE_PLASMA_VERSION%%
 lib/libkdecorations2private.so
 lib/libkdecorations2private.so.%%KDE_PLASMA_VERSION%%
 lib/libkdecorations2private.so.7
+share/locale/az/LC_MESSAGES/kdecoration.mo
 share/locale/ca/LC_MESSAGES/kdecoration.mo
 share/locale/ca@valencia/LC_MESSAGES/kdecoration.mo
 share/locale/cs/LC_MESSAGES/kdecoration.mo
@@ -56,7 +57,9 @@ share/locale/pt/LC_MESSAGES/kdecoration.mo
 share/locale/pt_BR/LC_MESSAGES/kdecoration.mo
 share/locale/ru/LC_MESSAGES/kdecoration.mo
 share/locale/sk/LC_MESSAGES/kdecoration.mo
-share/locale/sv/LC_MESSAGES/kdecoration.mo
+share/locale/sl/LC_MESSAGES/kdecoration.mo
 share/locale/uk/LC_MESSAGES/kdecoration.mo
+share/locale/el/LC_MESSAGES/kdecoration.mo
+share/locale/ro/LC_MESSAGES/kdecoration.mo
 share/locale/zh_CN/LC_MESSAGES/kdecoration.mo
 share/locale/zh_TW/LC_MESSAGES/kdecoration.mo

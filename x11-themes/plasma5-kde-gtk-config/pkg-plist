@@ -1,8 +1,7 @@
 lib/gtk-3.0/modules/libcolorreload-gtk-module.so
+lib/gtk-3.0/modules/libwindow-decorations-gtk-module.so
 lib/kconf_update_bin/gtk_theme
 lib/libexec/gtk3_preview
-lib/libexec/gtk_preview
-lib/libexec/reload_gtk_apps
 %%QT_PLUGINDIR%%/kf5/kded/gtkconfig.so
-share/kcm-gtk-module/preview.ui
 share/kconf_update/gtkconfig.upd
+share/themes/Breeze/window_decorations.css

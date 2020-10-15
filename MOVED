@@ -15649,3 +15649,4 @@ sysutils/syslog-ng320|sysutils/syslog-ng|2020-10-12|Has expired: Agreed upon ups
 dns/opendnssec|dns/opendnssec2|2020-10-12|Has expired: EOLed by upstream
 sysutils/syslog-ng323|sysutils/syslog-ng|2020-10-12|Has expired: Agreed upon upstream one year deprecation policy
 devel/libsoup-gnome|devel/libsoup|2020-10-12|Reunited into on package they have the same dependencies
+sysutils/plasma5-user-manager|x11/plasma5-plasma-desktop|2020-10-13|Reintegrated into other plasma5 components

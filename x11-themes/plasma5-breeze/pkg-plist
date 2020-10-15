@@ -249,6 +249,8 @@ share/kservices5/breezestyleconfig.desktop
 share/kstyle/themes/breeze.themerc
 share/locale/ar/LC_MESSAGES/breeze_kwin_deco.mo
 share/locale/ar/LC_MESSAGES/breeze_style_config.mo
+share/locale/az/LC_MESSAGES/breeze_kwin_deco.mo
+share/locale/az/LC_MESSAGES/breeze_style_config.mo
 share/locale/bs/LC_MESSAGES/breeze_kwin_deco.mo
 share/locale/bs/LC_MESSAGES/breeze_style_config.mo
 share/locale/ca/LC_MESSAGES/breeze_kwin_deco.mo
@@ -326,8 +328,6 @@ share/locale/sr@ijekavianlatin/LC_MESSAGES/breeze_kwin_deco.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/breeze_style_config.mo
 share/locale/sr@latin/LC_MESSAGES/breeze_kwin_deco.mo
 share/locale/sr@latin/LC_MESSAGES/breeze_style_config.mo
-share/locale/sv/LC_MESSAGES/breeze_kwin_deco.mo
-share/locale/sv/LC_MESSAGES/breeze_style_config.mo
 share/locale/tg/LC_MESSAGES/breeze_kwin_deco.mo
 share/locale/tg/LC_MESSAGES/breeze_style_config.mo
 share/locale/tr/LC_MESSAGES/breeze_kwin_deco.mo
@@ -345,6 +345,7 @@ share/plasma/look-and-feel/org.kde.breezedark.desktop/contents/previews/preview.
 share/plasma/look-and-feel/org.kde.breezedark.desktop/metadata.desktop
 share/plasma/look-and-feel/org.kde.breezedark.desktop/metadata.json
 share/wallpapers/Next/contents/images/1024x768.jpg
+share/wallpapers/Next/contents/images/1080x1920.jpg
 share/wallpapers/Next/contents/images/1280x1024.jpg
 share/wallpapers/Next/contents/images/1280x800.jpg
 share/wallpapers/Next/contents/images/1366x768.jpg
@@ -361,5 +362,7 @@ share/wallpapers/Next/contents/images/360x720.jpg
 share/wallpapers/Next/contents/images/3840x2160.jpg
 share/wallpapers/Next/contents/images/5120x2880.jpg
 share/wallpapers/Next/contents/images/720x1440.jpg
+share/wallpapers/Next/contents/images/base_size.jpg
+share/wallpapers/Next/contents/images/vertical_base_size.jpg
 share/wallpapers/Next/contents/screenshot.png
 share/wallpapers/Next/metadata.desktop

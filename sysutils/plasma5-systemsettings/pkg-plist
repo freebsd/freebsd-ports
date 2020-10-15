@@ -32,13 +32,12 @@ share/doc/HTML/pt_BR/systemsettings/index.cache.bz2
 share/doc/HTML/pt_BR/systemsettings/index.docbook
 share/doc/HTML/ru/systemsettings/index.cache.bz2
 share/doc/HTML/ru/systemsettings/index.docbook
-share/doc/HTML/sv/systemsettings/index.cache.bz2
-share/doc/HTML/sv/systemsettings/index.docbook
 share/doc/HTML/uk/systemsettings/index.cache.bz2
 share/doc/HTML/uk/systemsettings/index.docbook
 share/kglobalaccel/systemsettings.desktop
 share/kpackage/genericqml/org.kde.systemsettings.sidebar/contents/images/plasma-logo.svg
 share/kpackage/genericqml/org.kde.systemsettings.sidebar/contents/ui/CategoriesPage.qml
+share/kpackage/genericqml/org.kde.systemsettings.sidebar/contents/ui/CategoryItem.qml
 share/kpackage/genericqml/org.kde.systemsettings.sidebar/contents/ui/IntroIcon.qml
 share/kpackage/genericqml/org.kde.systemsettings.sidebar/contents/ui/SubCategoryPage.qml
 share/kpackage/genericqml/org.kde.systemsettings.sidebar/contents/ui/introPage.qml
@@ -80,6 +79,7 @@ share/kservicetypes5/systemsettingsexternalapp.desktop
 share/kservicetypes5/systemsettingsview.desktop
 share/kxmlgui5/systemsettings/systemsettingsui.rc
 share/locale/ar/LC_MESSAGES/systemsettings.mo
+share/locale/az/LC_MESSAGES/systemsettings.mo
 share/locale/be/LC_MESSAGES/systemsettings.mo
 share/locale/be@latin/LC_MESSAGES/systemsettings.mo
 share/locale/bg/LC_MESSAGES/systemsettings.mo
@@ -147,7 +147,6 @@ share/locale/sr/LC_MESSAGES/systemsettings.mo
 share/locale/sr@ijekavian/LC_MESSAGES/systemsettings.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/systemsettings.mo
 share/locale/sr@latin/LC_MESSAGES/systemsettings.mo
-share/locale/sv/LC_MESSAGES/systemsettings.mo
 share/locale/ta/LC_MESSAGES/systemsettings.mo
 share/locale/te/LC_MESSAGES/systemsettings.mo
 share/locale/tg/LC_MESSAGES/systemsettings.mo

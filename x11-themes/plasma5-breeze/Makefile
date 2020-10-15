@@ -8,7 +8,6 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 artwork, styles and assets for the Breeze visual style
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libfftw3_threads.so:math/fftw3
 

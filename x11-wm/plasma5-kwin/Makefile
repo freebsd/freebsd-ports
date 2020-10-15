@@ -2,14 +2,12 @@
 
 PORTNAME=	kwin
 DISTVERSION=	${KDE_PLASMA_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11-wm kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 window manager
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libXcursor.so:x11/libXcursor \
 		libdrm.so:graphics/libdrm \

@@ -110,6 +110,7 @@ share/locale/pt_BR/LC_MESSAGES/kscreen.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_applet_org.kde.kscreen.mo
 share/locale/ro/LC_MESSAGES/kcm_kscreen.mo
 share/locale/ro/LC_MESSAGES/kscreen.mo
+share/locale/ro/LC_MESSAGES/plasma_applet_org.kde.kscreen.mo
 share/locale/ru/LC_MESSAGES/kcm_kscreen.mo
 share/locale/ru/LC_MESSAGES/kscreen.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_org.kde.kscreen.mo
@@ -118,6 +119,7 @@ share/locale/sk/LC_MESSAGES/kscreen.mo
 share/locale/sk/LC_MESSAGES/plasma_applet_org.kde.kscreen.mo
 share/locale/sl/LC_MESSAGES/kcm_kscreen.mo
 share/locale/sl/LC_MESSAGES/kscreen.mo
+share/locale/sl/LC_MESSAGES/plasma_applet_org.kde.kscreen.mo
 share/locale/sr/LC_MESSAGES/kcm_kscreen.mo
 share/locale/sr/LC_MESSAGES/kscreen.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kcm_kscreen.mo
@@ -126,9 +128,6 @@ share/locale/sr@ijekavianlatin/LC_MESSAGES/kcm_kscreen.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kscreen.mo
 share/locale/sr@latin/LC_MESSAGES/kcm_kscreen.mo
 share/locale/sr@latin/LC_MESSAGES/kscreen.mo
-share/locale/sv/LC_MESSAGES/kcm_kscreen.mo
-share/locale/sv/LC_MESSAGES/kscreen.mo
-share/locale/sv/LC_MESSAGES/plasma_applet_org.kde.kscreen.mo
 share/locale/tg/LC_MESSAGES/kcm_kscreen.mo
 share/locale/tg/LC_MESSAGES/kscreen.mo
 share/locale/tg/LC_MESSAGES/plasma_applet_org.kde.kscreen.mo

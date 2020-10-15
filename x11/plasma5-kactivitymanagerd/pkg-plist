@@ -11,6 +11,7 @@ share/dbus-1/services/org.kde.activitymanager.service
 %%QT_PLUGINDIR%%/kactivitymanagerd/1/kactivitymanagerd_plugin_virtualdesktopswitch.so
 share/kservices5/kactivitymanagerd.desktop
 share/kservicetypes5/kactivitymanagerd-plugin.desktop
+share/locale/az/LC_MESSAGES/kactivities5.mo
 share/locale/bs/LC_MESSAGES/kactivities5.mo
 share/locale/ca/LC_MESSAGES/kactivities5.mo
 share/locale/ca@valencia/LC_MESSAGES/kactivities5.mo
@@ -56,7 +57,6 @@ share/locale/sr/LC_MESSAGES/kactivities5.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kactivities5.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kactivities5.mo
 share/locale/sr@latin/LC_MESSAGES/kactivities5.mo
-share/locale/sv/LC_MESSAGES/kactivities5.mo
 share/locale/tg/LC_MESSAGES/kactivities5.mo
 share/locale/tr/LC_MESSAGES/kactivities5.mo
 share/locale/ug/LC_MESSAGES/kactivities5.mo

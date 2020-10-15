@@ -1,5 +1,6 @@
 etc/xdg/autostart/powerdevil.desktop
 lib/libexec/kauth/backlighthelper
+lib/libexec/kauth/chargethresholdhelper
 lib/libexec/kauth/discretegpuhelper
 lib/libexec/org_kde_powerdevil
 lib/libpowerdevilconfigcommonprivate.so
@@ -24,8 +25,10 @@ lib/libpowerdevilui.so.%%KDE_PLASMA_VERSION%%
 %%QT_PLUGINDIR%%/powerdevilrunscriptaction_config.so
 %%QT_PLUGINDIR%%/powerdevilsuspendsessionaction_config.so
 share/dbus-1/system-services/org.kde.powerdevil.backlighthelper.service
+share/dbus-1/system-services/org.kde.powerdevil.chargethresholdhelper.service
 share/dbus-1/system-services/org.kde.powerdevil.discretegpuhelper.service
 share/dbus-1/system.d/org.kde.powerdevil.backlighthelper.conf
+share/dbus-1/system.d/org.kde.powerdevil.chargethresholdhelper.conf
 share/dbus-1/system.d/org.kde.powerdevil.discretegpuhelper.conf
 share/doc/HTML/ca/kcontrol/powerdevil/index.cache.bz2
 share/doc/HTML/ca/kcontrol/powerdevil/index.docbook
@@ -38,6 +41,8 @@ share/doc/HTML/en/kcontrol/powerdevil/index.cache.bz2
 share/doc/HTML/en/kcontrol/powerdevil/index.docbook
 share/doc/HTML/et/kcontrol/powerdevil/index.cache.bz2
 share/doc/HTML/et/kcontrol/powerdevil/index.docbook
+share/doc/HTML/fr/kcontrol/powerdevil/index.cache.bz2
+share/doc/HTML/fr/kcontrol/powerdevil/index.docbook
 share/doc/HTML/id/kcontrol/powerdevil/index.cache.bz2
 share/doc/HTML/id/kcontrol/powerdevil/index.docbook
 share/doc/HTML/it/kcontrol/powerdevil/index.cache.bz2
@@ -53,8 +58,6 @@ share/doc/HTML/ru/kcontrol/powerdevil/advanced.png
 share/doc/HTML/ru/kcontrol/powerdevil/energy.png
 share/doc/HTML/ru/kcontrol/powerdevil/index.cache.bz2
 share/doc/HTML/ru/kcontrol/powerdevil/index.docbook
-share/doc/HTML/sv/kcontrol/powerdevil/index.cache.bz2
-share/doc/HTML/sv/kcontrol/powerdevil/index.docbook
 share/doc/HTML/uk/kcontrol/powerdevil/activity.png
 share/doc/HTML/uk/kcontrol/powerdevil/advanced.png
 share/doc/HTML/uk/kcontrol/powerdevil/energy.png
@@ -320,11 +323,6 @@ share/locale/sr@latin/LC_MESSAGES/powerdevil.mo
 share/locale/sr@latin/LC_MESSAGES/powerdevilactivitiesconfig.mo
 share/locale/sr@latin/LC_MESSAGES/powerdevilglobalconfig.mo
 share/locale/sr@latin/LC_MESSAGES/powerdevilprofilesconfig.mo
-share/locale/sv/LC_MESSAGES/libpowerdevilcommonconfig.mo
-share/locale/sv/LC_MESSAGES/powerdevil.mo
-share/locale/sv/LC_MESSAGES/powerdevilactivitiesconfig.mo
-share/locale/sv/LC_MESSAGES/powerdevilglobalconfig.mo
-share/locale/sv/LC_MESSAGES/powerdevilprofilesconfig.mo
 share/locale/te/LC_MESSAGES/powerdevil.mo
 share/locale/tg/LC_MESSAGES/libpowerdevilcommonconfig.mo
 share/locale/tg/LC_MESSAGES/powerdevil.mo
@@ -363,4 +361,6 @@ share/locale/zh_TW/LC_MESSAGES/powerdevilactivitiesconfig.mo
 share/locale/zh_TW/LC_MESSAGES/powerdevilglobalconfig.mo
 share/locale/zh_TW/LC_MESSAGES/powerdevilprofilesconfig.mo
 share/polkit-1/actions/org.kde.powerdevil.backlighthelper.policy
+share/polkit-1/actions/org.kde.powerdevil.chargethresholdhelper.policy
 share/polkit-1/actions/org.kde.powerdevil.discretegpuhelper.policy
+share/qlogging-categories5/powerdevil.categories
