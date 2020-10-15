@@ -5,4 +5,4 @@ accessing uninitialized variables, unreachable code and more.
 Luacheck supports checking Lua files using syntax of Lua 5.1, Lua 5.2, Lua 5.3
 and LuaJIT.
 
-WWW: https://github.com/mpeterv/luacheck
+WWW: https://github.com/luarocks/luacheck

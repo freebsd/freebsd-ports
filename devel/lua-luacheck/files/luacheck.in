@@ -1,0 +1,2 @@
+#!/bin/sh
+exec "%%LUA_CMD%%" -e "package.path=[[%%INSTALL_DIR%%/src/?.lua;%%INSTALL_DIR%%/src/?/init.lua;]]..package.path" "%%INSTALL_DIR%%/bin/luacheck.lua" "$@"

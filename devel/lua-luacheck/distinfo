@@ -1,3 +1,3 @@
-TIMESTAMP = 1519274161
-SHA256 (mpeterv-luacheck-0.21.2_GH0.tar.gz) = b1528bd73dc0da2c36dc3f93110a83362553546c2f5a354be0c0162149eb1abc
-SIZE (mpeterv-luacheck-0.21.2_GH0.tar.gz) = 137086
+TIMESTAMP = 1602514106
+SHA256 (luarocks-luacheck-0.25.g20200825-4e5774169fa_GH0.tar.gz) = 1b9b487f18e00e5329536dc04d91e3fac785ea0217a9fa0f866e6822d5a8ef82
+SIZE (luarocks-luacheck-0.25.g20200825-4e5774169fa_GH0.tar.gz) = 162593
