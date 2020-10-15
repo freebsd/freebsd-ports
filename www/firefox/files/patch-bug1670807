@@ -1,0 +1,15 @@
+Look for gm4 in addition to m4
+
+diff --git build/moz.configure/old.configure build/moz.configure/old.configure
+index 8c807c0794fab..5132228960f3d 100644
+--- build/moz.configure/old.configure
++++ build/moz.configure/old.configure
+@@ -5,7 +5,7 @@
+ # file, You can obtain one at http://mozilla.org/MPL/2.0/.
+ 
+ 
+-m4 = check_prog('M4', ('m4',))
++m4 = check_prog('M4', ('gm4', 'm4',))
+ 
+ 
+ @depends(mozconfig)

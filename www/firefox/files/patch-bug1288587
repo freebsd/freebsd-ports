@@ -2,15 +2,15 @@ diff --git a/build/moz.configure/init.configure b/build/moz.configure/init.confi
 index 855214a..1e91d51 100644
 --- build/moz.configure/init.configure
 +++ build/moz.configure/init.configure
-@@ -251,6 +251,7 @@ option(env='PYTHON3', nargs=1, help='Python 3 interpre
+@@ -240,6 +240,7 @@ option(env='VIRTUALENV_NAME', nargs=1, default='init_p
  @imports(_from='mozbuild.pythonutil', _import='find_python3_executable')
  @imports(_from='mozbuild.pythonutil', _import='python_executable_version')
  @imports(_from='six', _import='ensure_text')
 +@imports(_from='__builtin__', _import='KeyError')
- def virtualenv_python3(env_python, build_env, mozconfig, help):
+ def virtualenv_python3(env_python, virtualenv_name, build_env, mozconfig, help):
      # Avoid re-executing python when running configure --help.
      if help:
-@@ -283,6 +284,12 @@ def virtualenv_python3(env_python, build_env, mozconfi
+@@ -273,6 +274,12 @@ def virtualenv_python3(env_python, virtualenv_name, bu
              python = mozconfig['vars']['added']['PYTHON3']
          elif 'PYTHON3' in mozconfig['vars']['modified']:
              python = mozconfig['vars']['modified']['PYTHON3'][1]
@@ -23,7 +23,7 @@ index 855214a..1e91d51 100644
  
      log.debug("python3: executable from configuration: %r" % python)
  
-@@ -365,7 +372,10 @@ def virtualenv_python3(env_python, build_env, mozconfi
+@@ -358,7 +365,10 @@ def virtualenv_python3(env_python, virtualenv_name, bu
              sys.executable, manager.python_path))
          log.info('Re-executing in the virtualenv')
          if env_python:
