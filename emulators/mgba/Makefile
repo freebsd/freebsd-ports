@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mgba
-DISTVERSION=	0.8.1
+DISTVERSION=	0.8.3
 CATEGORIES=	emulators
 
 MAINTAINER=	greg@unrelenting.technology

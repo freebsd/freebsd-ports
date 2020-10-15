@@ -61,6 +61,7 @@ include/mgba/core/tile-cache.h
 include/mgba/core/timing.h
 include/mgba/core/version.h
 include/mgba/debugger/debugger.h
+include/mgba/dllexports.h
 include/mgba/feature/commandline.h
 include/mgba/feature/thread-proxy.h
 include/mgba/feature/video-logger.h
@@ -143,7 +144,7 @@ include/mgba/internal/sm83/isa-sm83.h
 include/mgba/internal/sm83/sm83.h
 lib/libmgba.so
 lib/libmgba.so.0.8
-lib/libmgba.so.0.8.1
+lib/libmgba.so.0.8.3
 %%LIBRETRO%%lib/libretro/mgba_libretro.so
 %%QT5%%man/man6/mgba-qt.6.gz
 man/man6/mgba.6.gz
