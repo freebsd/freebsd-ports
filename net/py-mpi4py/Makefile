@@ -2,6 +2,7 @@
 
 PORTNAME=	mpi4py
 DISTVERSION=	3.0.3
+PORTREVISION=	1
 CATEGORIES=	net parallel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,7 +26,7 @@ MPICH2_USES=		fortran
 MPICH2_LIB_DEPENDS=	libmpich.so:net/mpich2
 MPICH2_LDFLAGS=		${LOCALBASE}/lib/gcc${GCC_DEFAULT}/libgcc_s.so
 
-OPENMPI_LIB_DEPENDS=	libmpi.so:net/openmpi3
+OPENMPI_LIB_DEPENDS=	libmpi.so:net/openmpi
 
 PORTDOCS=		*
 
