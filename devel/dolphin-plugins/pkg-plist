@@ -40,6 +40,7 @@ share/locale/de/LC_MESSAGES/fileviewbazaarplugin.mo
 share/locale/de/LC_MESSAGES/fileviewgitplugin.mo
 share/locale/de/LC_MESSAGES/fileviewhgplugin.mo
 share/locale/de/LC_MESSAGES/fileviewsvnplugin.mo
+share/locale/de/LC_MESSAGES/mountisoaction.mo
 share/locale/el/LC_MESSAGES/fileviewbazaarplugin.mo
 share/locale/el/LC_MESSAGES/fileviewgitplugin.mo
 share/locale/el/LC_MESSAGES/fileviewhgplugin.mo
@@ -151,6 +152,7 @@ share/locale/pt_BR/LC_MESSAGES/fileviewhgplugin.mo
 share/locale/pt_BR/LC_MESSAGES/fileviewsvnplugin.mo
 share/locale/pt_BR/LC_MESSAGES/mountisoaction.mo
 share/locale/ro/LC_MESSAGES/fileviewgitplugin.mo
+share/locale/ro/LC_MESSAGES/fileviewsvnplugin.mo
 share/locale/ro/LC_MESSAGES/mountisoaction.mo
 share/locale/ru/LC_MESSAGES/fileviewbazaarplugin.mo
 share/locale/ru/LC_MESSAGES/fileviewgitplugin.mo

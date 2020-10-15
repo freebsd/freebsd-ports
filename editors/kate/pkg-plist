@@ -1006,7 +1006,9 @@ share/locale/ro/LC_MESSAGES/katesnippetsplugin.mo
 share/locale/ro/LC_MESSAGES/katesql.mo
 share/locale/ro/LC_MESSAGES/katesymbolviewer.mo
 share/locale/ro/LC_MESSAGES/katetextfilter.mo
+share/locale/ro/LC_MESSAGES/katexmlcheck.mo
 share/locale/ro/LC_MESSAGES/katexmltools.mo
+share/locale/ro/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/ro/LC_MESSAGES/kwrite.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_org.kde.plasma.katesessions.mo
 share/locale/ro/LC_MESSAGES/tabswitcherplugin.mo

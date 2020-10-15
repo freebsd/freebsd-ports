@@ -1,10 +1,10 @@
---- core/backends/lan/lanlinkprovider.cpp.cve   2020-10-04 08:10:12.704397000 +0200
-+++ core/backends/lan/lanlinkprovider.cpp       2020-10-04 08:12:38.587533000 +0200
-@@ -229,6 +229,17 @@
-             continue;
-         }
-
-+        // convert IPv6 addresses of type "v4-mapped" to IPv4
+--- core/backends/lan/lanlinkprovider.cpp.orig	2018-05-30 21:41:03 UTC
++++ core/backends/lan/lanlinkprovider.cpp
+@@ -196,6 +196,17 @@ void LanLinkProvider::newUdpConnection() //udpBroadcas
+ 
+         int tcpPort = receivedPacket->get<int>(QStringLiteral("tcpPort"));
+ 
++        // convert IPv6 addresses of type "v4-mapped" to IPv4 
 +        QHostAddress addr = sender;
 +        if (addr.protocol() == QAbstractSocket::IPv6Protocol) {
 +            bool success;
@@ -16,5 +16,5 @@
 +        }
 +
          //qCDebug(KDECONNECT_CORE) << "Received Udp identity packet from" << sender << " asking for a tcp connection on port " << tcpPort;
-
-         if (m_receivedIdentityPackets.size() > MAX_REMEMBERED_IDENTITY_PACKETS) {
+ 
+         QSslSocket* socket = new QSslSocket(this);

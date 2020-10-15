@@ -123,7 +123,7 @@ lib/libk3bdevice.so.7.0.0
 lib/libk3blib.so
 lib/libk3blib.so.7
 lib/libk3blib.so.7.0.0
-lib/libexec/k3bhelper
+lib/libexec/kauth/k3bhelper
 %%QT_PLUGINDIR%%/k3baudiometainforenamerplugin.so
 %%QT_PLUGINDIR%%/k3baudioprojectcddbplugin.so
 %%QT_PLUGINDIR%%/k3bexternalencoder.so

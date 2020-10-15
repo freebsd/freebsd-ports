@@ -1,5 +1,4 @@
 bin/kmplot
-%%QT_PLUGINDIR%%/kmplotpart.so
 man/ca/man1/kmplot.1.gz
 man/de/man1/kmplot.1.gz
 man/es/man1/kmplot.1.gz
@@ -15,6 +14,7 @@ man/pt_BR/man1/kmplot.1.gz
 man/ru/man1/kmplot.1.gz
 man/sv/man1/kmplot.1.gz
 man/uk/man1/kmplot.1.gz
+%%QT_PLUGINDIR%%/kmplotpart.so
 share/applications/org.kde.kmplot.desktop
 share/config.kcfg/kmplot.kcfg
 share/dbus-1/interfaces/org.kde.kmplot.KmPlot.xml

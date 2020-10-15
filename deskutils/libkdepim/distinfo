@@ -1,3 +1,3 @@
-TIMESTAMP = 1598945377
-SHA256 (KDE/release-service/20.08.1/libkdepim-20.08.1.tar.xz) = a2fb769239283e7f536d4779089ad8664d1498cf7520f057589bf0285630fb4b
-SIZE (KDE/release-service/20.08.1/libkdepim-20.08.1.tar.xz) = 249728
+TIMESTAMP = 1602011095
+SHA256 (KDE/release-service/20.08.2/libkdepim-20.08.2.tar.xz) = 3558c9af95c22bb4ce0ceeec483fada9e8e9f27de4ac34ffe44a4eb3b6d21101
+SIZE (KDE/release-service/20.08.2/libkdepim-20.08.2.tar.xz) = 249668

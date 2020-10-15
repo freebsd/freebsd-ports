@@ -148,8 +148,11 @@ share/locale/de/LC_MESSAGES/kmail-refresh-settings.mo
 share/locale/de/LC_MESSAGES/kmail.mo
 share/locale/de/LC_MESSAGES/ktnef.mo
 share/locale/el/LC_MESSAGES/akonadi_archivemail_agent.mo
+share/locale/el/LC_MESSAGES/akonadi_followupreminder_agent.mo
 share/locale/el/LC_MESSAGES/akonadi_mailfilter_agent.mo
 share/locale/el/LC_MESSAGES/akonadi_sendlater_agent.mo
+share/locale/el/LC_MESSAGES/akonadi_unifiedmailbox_agent.mo
+share/locale/el/LC_MESSAGES/kmail-refresh-settings.mo
 share/locale/el/LC_MESSAGES/kmail.mo
 share/locale/el/LC_MESSAGES/ktnef.mo
 share/locale/en_GB/LC_MESSAGES/akonadi_archivemail_agent.mo
@@ -178,7 +181,6 @@ share/locale/et/LC_MESSAGES/kmail-refresh-settings.mo
 share/locale/et/LC_MESSAGES/kmail.mo
 share/locale/et/LC_MESSAGES/ktnef.mo
 share/locale/eu/LC_MESSAGES/kmail.mo
-share/locale/lt/LC_MESSAGES/kmail-refresh-settings.mo
 share/locale/fa/LC_MESSAGES/kmail.mo
 share/locale/fi/LC_MESSAGES/akonadi_archivemail_agent.mo
 share/locale/fi/LC_MESSAGES/akonadi_followupreminder_agent.mo
@@ -263,6 +265,7 @@ share/locale/lt/LC_MESSAGES/akonadi_followupreminder_agent.mo
 share/locale/lt/LC_MESSAGES/akonadi_mailfilter_agent.mo
 share/locale/lt/LC_MESSAGES/akonadi_sendlater_agent.mo
 share/locale/lt/LC_MESSAGES/akonadi_unifiedmailbox_agent.mo
+share/locale/lt/LC_MESSAGES/kmail-refresh-settings.mo
 share/locale/lt/LC_MESSAGES/kmail.mo
 share/locale/lt/LC_MESSAGES/ktnef.mo
 share/locale/lv/LC_MESSAGES/akonadi_archivemail_agent.mo
