@@ -6,7 +6,7 @@ lib/libpwquality.a
 lib/libpwquality.so
 lib/libpwquality.so.1
 lib/libpwquality.so.1.0.2
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/pwquality-1.4.2-py%%PYTHON_VER%%.egg-info
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pwquality-1.4.4-py%%PYTHON_VER%%.egg-info
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pwquality.so
 libdata/pkgconfig/pwquality.pc
 man/man1/pwmake.1.gz
@@ -15,6 +15,7 @@ man/man3/pwquality.3.gz
 man/man5/pwquality.conf.5.gz
 %%NLS%%share/locale/ar/LC_MESSAGES/libpwquality.mo
 %%NLS%%share/locale/as/LC_MESSAGES/libpwquality.mo
+%%NLS%%share/locale/az/LC_MESSAGES/libpwquality.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/libpwquality.mo
 %%NLS%%share/locale/bn_IN/LC_MESSAGES/libpwquality.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/libpwquality.mo
@@ -23,6 +24,7 @@ man/man5/pwquality.conf.5.gz
 %%NLS%%share/locale/de/LC_MESSAGES/libpwquality.mo
 %%NLS%%share/locale/es/LC_MESSAGES/libpwquality.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/libpwquality.mo
+%%NLS%%share/locale/fa/LC_MESSAGES/libpwquality.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/libpwquality.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/libpwquality.mo
 %%NLS%%share/locale/fur/LC_MESSAGES/libpwquality.mo
