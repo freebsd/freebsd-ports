@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Pod-Usage
-PORTVERSION=	1.70
+PORTVERSION=	2.0
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,9 +21,15 @@ USE_PERL5=	configure
 
 NO_ARCH=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 503200
+BUILD_DEPENDS+=	p5-Pod-Simple>=3.40:textproc/p5-Pod-Simple
+RUN_DEPENDS+=	p5-Pod-Simple>=3.40:textproc/p5-Pod-Simple
+.endif
+
 post-patch:
 # Do not conflict with lang/perl5.*
-	@${REINPLACE_CMD} -e 's| pod2usage||' ${WRKSRC}/Makefile.PL
-	@${RM} ${WRKSRC}/scripts/pod2usage.PL
+	@${RM} ${WRKSRC}/scripts/pod2usage.PL ${WRKSRC}/t/pod/pod2usage.t
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
