@@ -314,10 +314,10 @@ man/pt_BR/man1/plasmapkg2.1.gz
 man/sv/man1/plasmapkg2.1.gz
 man/uk/man1/plasmapkg2.1.gz
 share/kdevappwizard/templates/cpp-plasmoid.tar.bz2
-share/kdevappwizard/templates/plasma-wallpaper.tar.bz2
 share/kdevappwizard/templates/plasma-wallpaper-with-qml-extension.tar.bz2
-share/kdevappwizard/templates/qml-plasmoid.tar.bz2
+share/kdevappwizard/templates/plasma-wallpaper.tar.bz2
 share/kdevappwizard/templates/qml-plasmoid-with-qml-extension.tar.bz2
+share/kdevappwizard/templates/qml-plasmoid.tar.bz2
 share/kservices5/plasma-scriptengine-applet-declarative.desktop
 share/kservicetypes5/plasma-applet.desktop
 share/kservicetypes5/plasma-containment.desktop
@@ -382,6 +382,7 @@ share/locale/tg/LC_MESSAGES/libplasma5.mo
 share/locale/tr/LC_MESSAGES/libplasma5.mo
 share/locale/ug/LC_MESSAGES/libplasma5.mo
 share/locale/uk/LC_MESSAGES/libplasma5.mo
+share/locale/vi/LC_MESSAGES/libplasma5.mo
 share/locale/zh_CN/LC_MESSAGES/libplasma5.mo
 share/locale/zh_TW/LC_MESSAGES/libplasma5.mo
 share/plasma/desktoptheme/air/colors
@@ -473,10 +474,10 @@ share/plasma/desktoptheme/air/widgets/translucentbackground.svgz
 share/plasma/desktoptheme/air/widgets/viewitem.svgz
 share/plasma/desktoptheme/breeze-dark/colors
 share/plasma/desktoptheme/breeze-dark/metadata.desktop
-share/plasma/desktoptheme/breeze-dark/plasmoidheading.svgz
+share/plasma/desktoptheme/breeze-dark/widgets/plasmoidheading.svgz
 share/plasma/desktoptheme/breeze-light/colors
 share/plasma/desktoptheme/breeze-light/metadata.desktop
-share/plasma/desktoptheme/breeze-light/plasmoidheading.svgz
+share/plasma/desktoptheme/breeze-light/widgets/plasmoidheading.svgz
 share/plasma/desktoptheme/default/dialogs/background.svgz
 share/plasma/desktoptheme/default/icons/akonadi.svgz
 share/plasma/desktoptheme/default/icons/akregator.svgz

@@ -10,15 +10,17 @@ COMMENT=	Breeze icon theme for KDE
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING-ICONS
 
-BUILD_DEPENDS=	bash:shells/bash
+BUILD_DEPENDS=	bash:shells/bash \
+		${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR}
 
-USES=		compiler:c++11-lang cmake kde:5 qt:5 shebangfix tar:xz
+USES=		compiler:c++11-lang cmake kde:5 python:3.5+,build qt:5 shebangfix tar:xz
 USE_KDE=	ecm
 USE_QT=		buildtools_build core qmake_build testlib
 
-SHEBANG_FILES=	generate-24px-versions.sh
+SHEBANG_FILES=	 svg-xml-script-template.py generate-24px-versions.py
 
 NO_ARCH=	yes
 CMAKE_ARGS=	-DXMLLINT_EXE:PATH=''
+CMAKE_ON=	WITH_ICON_GENERATION
 
 .include <bsd.port.mk>

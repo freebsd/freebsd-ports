@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kio
-DISTVERSION=	5.74.1 # Respin
+DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
 CATEGORIES=	devel kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org

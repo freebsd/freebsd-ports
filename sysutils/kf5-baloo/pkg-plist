@@ -402,7 +402,11 @@ share/locale/pt_BR/LC_MESSAGES/kio5_baloosearch.mo
 share/locale/pt_BR/LC_MESSAGES/kio5_tags.mo
 share/locale/pt_BR/LC_MESSAGES/kio5_timeline.mo
 share/locale/ro/LC_MESSAGES/baloo_file5.mo
+share/locale/ro/LC_MESSAGES/baloo_file_extractor5.mo
 share/locale/ro/LC_MESSAGES/balooctl5.mo
+share/locale/ro/LC_MESSAGES/baloodb5.mo
+share/locale/ro/LC_MESSAGES/balooengine5.mo
+share/locale/ro/LC_MESSAGES/baloomonitorplugin.mo
 share/locale/ro/LC_MESSAGES/baloosearch5.mo
 share/locale/ro/LC_MESSAGES/balooshow5.mo
 share/locale/ro/LC_MESSAGES/kio5_baloosearch.mo

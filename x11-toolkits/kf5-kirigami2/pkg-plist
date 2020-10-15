@@ -112,6 +112,7 @@ lib/libKF5Kirigami2.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/InlineMessage.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/OverlayDrawer.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/OverlaySheet.qml
+%%QT_QMLDIR%%/org/kde/kirigami.2/templates/SingletonHeaderSizeGroup.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/SwipeListItem.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/private/BackButton.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/private/BorderPropertiesGroup.qml
@@ -153,6 +154,7 @@ share/locale/nn/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/pl/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/pt/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/pt_BR/LC_MESSAGES/libkirigami2plugin_qt.qm
+share/locale/ro/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/ru/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/sk/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/sl/LC_MESSAGES/libkirigami2plugin_qt.qm
