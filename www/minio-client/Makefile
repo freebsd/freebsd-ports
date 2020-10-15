@@ -9,6 +9,8 @@ COMMENT=	Replacement for ls, cp, mkdir, diff and rsync commands for filesystems
 
 LICENSE=	APACHE20
 
+BROKEN_i386=	fails to build
+
 BUILD_DEPENDS=	bash:shells/bash
 
 USES=		go:modules
