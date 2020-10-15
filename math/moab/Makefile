@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	moab
-DISTVERSION=	5.1.1
-PORTREVISION=	2
+DISTVERSION=	5.2.1
 CATEGORIES=	math
 MASTER_SITES=	https://bitbucket.org/${BB_ACCOUNT}/${BB_PROJECT}/get/${BB_COMMIT}.tar.gz?dummy=/
 
