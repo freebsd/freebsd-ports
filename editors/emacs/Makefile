@@ -15,12 +15,9 @@ PATCH_DIST_STRIP=	-p1
 .endif
 
 MAINTAINER=	emacs@FreeBSD.org
-COMMENT=	GNU editing macros
-.if ${FLAVOR:U} == nox
-COMMENT+=	(No X flavor)
-.elif ${FLAVOR:U} == canna
-COMMENT+=	(Canna Japanese input flavor)
-.endif
+COMMENT=	GNU editing macros ${COMMENT_${FLAVOR}}
+COMMENT_nox=	(No X flavor)
+COMMENT_canna=	(Canna Japanese input flavor)
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
