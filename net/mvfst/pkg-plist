@@ -2,6 +2,7 @@ include/quic/QuicConstants.h
 include/quic/QuicException.h
 include/quic/api/IoBufQuicBatch.h
 include/quic/api/LoopDetectorCallback.h
+include/quic/api/Observer.h
 include/quic/api/QuicBatchWriter.h
 include/quic/api/QuicPacketScheduler-inl.h
 include/quic/api/QuicPacketScheduler.h
@@ -10,6 +11,7 @@ include/quic/api/QuicStreamAsyncTransport.h
 include/quic/api/QuicTransportBase.h
 include/quic/api/QuicTransportFunctions.h
 include/quic/api/test/MockQuicSocket.h
+include/quic/api/test/Mocks.h
 include/quic/client/QuicClientTransport.h
 include/quic/client/handshake/CachedServerTransportParameters.h
 include/quic/client/handshake/ClientHandshake.h
@@ -40,6 +42,7 @@ include/quic/common/SocketUtil.h
 include/quic/common/TimeUtil.h
 include/quic/common/Timers.h
 include/quic/common/Variant.h
+include/quic/common/WindowedCounter.h
 include/quic/congestion_control/Bandwidth.h
 include/quic/congestion_control/Bbr.h
 include/quic/congestion_control/BbrBandwidthSampler.h
@@ -52,8 +55,14 @@ include/quic/congestion_control/Pacer.h
 include/quic/congestion_control/QuicCCP.h
 include/quic/congestion_control/QuicCubic.h
 include/quic/congestion_control/ServerCongestionControllerFactory.h
+include/quic/congestion_control/TokenlessPacer.h
 include/quic/congestion_control/third_party/ccp/libstartccp.h
 include/quic/congestion_control/third_party/windowed_filter.h
+include/quic/d6d/BinarySearchProbeSizeRaiser.h
+include/quic/d6d/ConstantStepProbeSizeRaiser.h
+include/quic/d6d/ProbeSizeRaiser.h
+include/quic/d6d/QuicD6DStateFunctions.h
+include/quic/d6d/Types.h
 include/quic/fizz/client/handshake/FizzClientExtensions.h
 include/quic/fizz/client/handshake/FizzClientHandshake.h
 include/quic/fizz/client/handshake/FizzClientQuicHandshakeContext.h
@@ -90,13 +99,16 @@ include/quic/server/RateLimiter.h
 include/quic/server/SlidingWindowRateLimiter.h
 include/quic/server/handshake/AppToken.h
 include/quic/server/handshake/DefaultAppTokenValidator.h
+include/quic/server/handshake/RetryTokenGenerator.h
 include/quic/server/handshake/ServerHandshake.h
+include/quic/server/handshake/ServerHandshakeFactory.h
 include/quic/server/handshake/ServerTransportParametersExtension.h
 include/quic/server/handshake/StatelessResetGenerator.h
 include/quic/server/state/ServerConnectionIdRejector.h
 include/quic/server/state/ServerStateMachine.h
 include/quic/state/AckHandlers.h
 include/quic/state/AckStates.h
+include/quic/state/OutstandingPacket.h
 include/quic/state/PacketEvent.h
 include/quic/state/PendingPathRateLimiter.h
 include/quic/state/QPRFunctions.h
@@ -129,6 +141,8 @@ lib/libmvfst_codec_pktbuilder.a
 lib/libmvfst_codec_pktrebuilder.a
 lib/libmvfst_codec_types.a
 lib/libmvfst_constants.so
+lib/libmvfst_d6d_state_functions.a
+lib/libmvfst_d6d_types.a
 lib/libmvfst_exception.so
 lib/libmvfst_fizz_client.a
 lib/libmvfst_fizz_handshake.a
