@@ -282,6 +282,7 @@ include/folly/experimental/coro/Filter-inl.h
 include/folly/experimental/coro/Filter.h
 include/folly/experimental/coro/FutureUtil.h
 include/folly/experimental/coro/Generator.h
+include/folly/experimental/coro/GtestHelpers.h
 include/folly/experimental/coro/GmockHelpers.h
 include/folly/experimental/coro/Invoke.h
 include/folly/experimental/coro/Materialize-inl.h
@@ -319,6 +320,11 @@ include/folly/experimental/crypto/Blake2xb.h
 include/folly/experimental/crypto/LtHash-inl.h
 include/folly/experimental/crypto/LtHash.h
 include/folly/experimental/crypto/detail/LtHashInternal.h
+include/folly/experimental/exception_tracer/ExceptionAbi.h
+include/folly/experimental/exception_tracer/ExceptionCounterLib.h
+include/folly/experimental/exception_tracer/ExceptionTracer.h
+include/folly/experimental/exception_tracer/ExceptionTracerLib.h
+include/folly/experimental/exception_tracer/StackTrace.h
 include/folly/experimental/flat_combining/FlatCombining.h
 include/folly/experimental/io/FsUtil.h
 include/folly/experimental/io/HugePages.h
@@ -329,6 +335,8 @@ include/folly/experimental/observer/Observer-pre.h
 include/folly/experimental/observer/Observer.h
 include/folly/experimental/observer/SimpleObservable-inl.h
 include/folly/experimental/observer/SimpleObservable.h
+include/folly/experimental/observer/WithJitter-inl.h
+include/folly/experimental/observer/WithJitter.h
 include/folly/experimental/observer/detail/Core.h
 include/folly/experimental/observer/detail/GraphCycleDetector.h
 include/folly/experimental/observer/detail/ObserverManager.h
@@ -345,6 +353,7 @@ include/folly/experimental/symbolizer/StackTrace.h
 include/folly/experimental/symbolizer/SymbolizePrinter.h
 include/folly/experimental/symbolizer/SymbolizedFrame.h
 include/folly/experimental/symbolizer/Symbolizer.h
+include/folly/experimental/symbolizer/detail/Debug.h
 include/folly/external/farmhash/farmhash.h
 include/folly/fibers/AddTasks-inl.h
 include/folly/fibers/AddTasks.h
@@ -459,6 +468,7 @@ include/folly/io/async/AsyncTransport.h
 include/folly/io/async/AsyncTransportCertificate.h
 include/folly/io/async/AsyncUDPServerSocket.h
 include/folly/io/async/AsyncUDPSocket.h
+include/folly/io/async/CertificateIdentityVerifier.h
 include/folly/io/async/DecoratedAsyncTransportWrapper.h
 include/folly/io/async/DelayedDestruction.h
 include/folly/io/async/DelayedDestructionBase.h
@@ -569,6 +579,8 @@ include/folly/memory/SanitizeLeak.h
 include/folly/memory/ThreadCachedArena.h
 include/folly/memory/UninitializedMemoryHacks.h
 include/folly/memory/detail/MallocImpl.h
+include/folly/memory/not_null-inl.h
+include/folly/memory/not_null.h
 include/folly/net/NetOps.h
 include/folly/net/NetworkSocket.h
 include/folly/net/detail/SocketFileDescriptorMap.h
@@ -614,7 +626,6 @@ include/folly/portability/Windows.h
 include/folly/python/AsyncioExecutor.h
 include/folly/python/async_generator.h
 include/folly/python/coro.h
-include/folly/python/executor.h
 include/folly/python/futures.h
 include/folly/python/iobuf.h
 include/folly/small_vector.h
@@ -707,6 +718,8 @@ include/folly/system/ThreadName.h
 include/folly/test/DeterministicSchedule.h
 include/folly/test/JsonTestUtil.h
 include/folly/test/TestUtils.h
+include/folly/tracing/AsyncStack-inl.h
+include/folly/tracing/AsyncStack.h
 include/folly/tracing/ScopedTraceSection.h
 include/folly/tracing/StaticTracepoint-ELFx86.h
 include/folly/tracing/StaticTracepoint.h
@@ -714,6 +727,9 @@ lib/cmake/folly/folly-config.cmake
 lib/cmake/folly/folly-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/folly/folly-targets.cmake
 lib/libfolly.so
+lib/libfolly_exception_counter.so
+lib/libfolly_exception_tracer.so
+lib/libfolly_exception_tracer_base.so
 lib/libfolly_test_util.so
 lib/libfollybenchmark.so
 libdata/pkgconfig/libfolly.pc
