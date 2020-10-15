@@ -19,7 +19,7 @@ USE_GNOME=	gdkpixbuf2
 USE_KDE=	breeze ecm
 USE_QT=		core buildtools_build qmake_build
 
-BINARY_ALIAS=	python3=${PYTHON_VERSION}
 NO_ARCH=	yes
+CMAKE_ARGS=	-DPython3_EXECUTABLE:PATH=${PYTHON_CMD}
 
 .include <bsd.port.mk>
