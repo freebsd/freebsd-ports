@@ -2,7 +2,7 @@
 
 PORTNAME=	fidogate
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.7
+DISTVERSION=	5.9
 CATEGORIES=	news mail
 
 MAINTAINER=	admin@5034.ru
@@ -44,14 +44,14 @@ PLIST_SUB+=	SPOOLDIR=${SPOOLDIR} \
 		VARDIR=${VARDIR} \
 		PREFIX=${PREFIX}
 
-OPTIONS_DEFINE=	INN DESCDIR ALIASES DBC DNT_NETMAIL FMSGID AVAIL BEST_AKA DOCS EXAMPLES
+OPTIONS_DEFINE=	INN DESCDIR ALIASES DBC DNT_NETMAIL FMSGID AVAIL BEST_AKA DOCS EXAMPLES FIX_QUOTE_RFC2FTN
 SPOOLDIR?=	/var/spool/fido/gate
 BTBASEDIR?=	/var/spool/fido/bt
 LOCKDIR?=	/var/run/fidogate
 LOGDIR?=	/var/log/fido/gate
 VARDIR?=	/var/db/fidogate
 
-OPTIONS_DEFAULT=	INN DESCDIR FMSGID AVAIL BEST_AKA
+OPTIONS_DEFAULT=	INN DESCDIR FMSGID AVAIL BEST_AKA FIX_QUOTE_RFC2FTN
 NO_OPTIONS_SORT=yes
 
 INN_BUILD_DEPENDS=	${PREFIX}/news/bin/innconfval:news/inn
@@ -64,6 +64,7 @@ DNT_NETMAIL_CONFIGURE_ON=	--enable-dnt-netmail
 FMSGID_CONFIGURE_OFF=	--disable-fs-msgid
 AVAIL_CONFIGURE_OFF=	--disable-af-avail
 BEST_AKA_CONFIGURE_ON=	--enable-best-aka
+FIX_QUOTE_RFC2FTN_CONFIGURE_ON=	--enable-xct
 
 INN_DESC=	INN news server support
 DESCDIR_DESC=	Put file descriptions into files.bbs
@@ -71,8 +72,9 @@ ALIASES_DESC=	Rewrite addresses found in ALIASES
 DBC_DESC=	Use msgid correspond data base
 DNT_NETMAIL_DESC=	Do not toss netmail
 FMSGID_DESC=	Set gate msgid into outgoing messages
-AVAIL_DESC=	Change behavior of "%list" and "%avail" commands
+AVAIL_DESC=	Change behaviour of areafix command "%list" and "%avail"
 BEST_AKA_DESC=	Best AKA select
+FIX_QUOTE_RFC2FTN_DESC=	Fix quoting rfc2ftn
 
 post-install:
 	${MKDIR} ${STAGEDIR}${LOGDIR}
@@ -104,4 +106,11 @@ post-install-DOCS-on:
 
 post-install-EXAMPLES-on:
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.if ${PORT_OPTIONS:MFIX_QUOTE_RFC2FTN}
+PLIST_SUB+=	FIX_QUOTE_RFC2FTN=""
+.else
+PLIST_SUB+=	FIX_QUOTE_RFC2FTN="@comment "
+.endif
+
+.include <bsd.port.post.mk>

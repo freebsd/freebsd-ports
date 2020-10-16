@@ -76,6 +76,7 @@ libexec/fidogate/ftntoss
 libexec/fidogate/report_traffic
 libexec/fidogate/rfc2ftn
 libexec/fidogate/send-fidogate
+%%FIX_QUOTE_RFC2FTN%%libexec/fidogate/xct
 @dir %%BTBASEDIR%%
 @dir %%BTBASEDIR%%/fbox
 @dir %%BTBASEDIR%%/in
