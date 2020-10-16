@@ -12,6 +12,9 @@ COMMENT=	Text progressbar library for python
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-11-15
+
 USE_PYTHON=	autoplist distutils
 USES=		python:2.7
 

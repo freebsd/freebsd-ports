@@ -10,6 +10,9 @@ COMMENT=	Library for iCalendar/vCard data
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-11-15
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	apple
 GH_PROJECT=	ccs-pycalendar

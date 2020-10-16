@@ -13,6 +13,9 @@ COMMENT=	Open-source Chinese and Japanese handwriting recognition
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-11-15
+
 LIB_DEPENDS=	libzinnia.so:japanese/zinnia
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/zinnia.py:japanese/py-zinnia@${PY_FLAVOR}
 

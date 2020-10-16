@@ -15,6 +15,9 @@ COMMENT=	Comprehensive Python interface to the mcrypt library
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-11-15
+
 LIB_DEPENDS=	libmcrypt.so:security/libmcrypt
 
 USES=		python:2.7

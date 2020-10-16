@@ -14,6 +14,9 @@ COMMENT=	Provide fast loading of revision control data into bzr
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-11-15
+
 BUILD_DEPENDS=	bzr:devel/bzr
 RUN_DEPENDS=	bzr:devel/bzr \
 		${PYTHON_SITELIBDIR}/fastimport/__init__.py:devel/py-fastimport@${PY_FLAVOR}

@@ -13,6 +13,9 @@ COMMENT=	Python framework for building reusable web components
 
 LICENSE=	MIT
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-11-15
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}webob>=0:www/py-webob@${PY_FLAVOR}
 
 USES=		python:2.7

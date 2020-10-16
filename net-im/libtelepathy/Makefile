@@ -11,6 +11,9 @@ MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Flexible Communications Framework
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-11-15
+
 LIB_DEPENDS=	libtelepathy-glib.so:net-im/telepathy-glib \
 		libdbus-glib-1.so:devel/dbus-glib
 

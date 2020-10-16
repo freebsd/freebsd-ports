@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	fbsd@opal.com
 COMMENT=	Kaa Media Repository - imlib2 wrapper for python
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-11-15
+
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/kaa/__init__.py:multimedia/py-kaa-base@${PY_FLAVOR}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 LIB_DEPENDS=	libImlib2.so:graphics/imlib2

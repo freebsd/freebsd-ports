@@ -12,6 +12,9 @@ COMMENT=	RCS file parsing library
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-11-15
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	corecode
 GH_TAGNAME=	206bca

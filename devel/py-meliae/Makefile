@@ -14,6 +14,9 @@ COMMENT=	Python Memory Usage Analyzer
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-11-15
+
 USES=		python:2.7
 USE_PYTHON=	distutils autoplist cython
 TEST_TARGET=	check  # test fails

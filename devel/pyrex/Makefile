@@ -15,6 +15,9 @@ COMMENT=	Programming Language for writing Python extension modules
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-11-15
+
 USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 
