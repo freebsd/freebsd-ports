@@ -81,7 +81,7 @@ _USE_GNOME_ALL+= atk cairo \
 		libgnomecanvas libgnomekbd \
 		libgnomeui libgsf libgtkhtml libidl librsvg2 libwnck \
 		libxml2 libxslt \
-		orbit2 pango pangox-compat pygobject pygtk2 \
+		orbit2 pango pangox-compat pygobject \
 		vte
 
 # GNOME 3 components
@@ -302,10 +302,6 @@ pygobject_USE_GNOME_IMPL=	glib20
 pygobject3_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gobject3>=0:devel/py-gobject3@${PY_FLAVOR}
 pygobject3_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}gobject3>=0:devel/py-gobject3@${PY_FLAVOR}
 pygobject3_USE_GNOME_IMPL=	glib20
-
-pygtk2_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pygtk-2.0.pc:x11-toolkits/py-gtk2
-pygtk2_RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pygtk-2.0.pc:x11-toolkits/py-gtk2
-pygtk2_USE_GNOME_IMPL=	libglade2 pygobject
 
 intltool_BUILD_DEPENDS=	${LOCALBASE}/bin/intltool-extract:textproc/intltool
 
