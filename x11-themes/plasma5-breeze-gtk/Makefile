@@ -18,8 +18,9 @@ USES=		cmake compiler:c++11-lang cpe gnome kde:5 pkgconfig \
 USE_GNOME=	gdkpixbuf2
 USE_KDE=	breeze ecm
 USE_QT=		core buildtools_build qmake_build
-
-NO_ARCH=	yes
 CMAKE_ARGS=	-DPython3_EXECUTABLE:PATH=${PYTHON_CMD}
+
+BINARY_ALIAS=	python3=${PYTHON_CMD}
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
