@@ -39,8 +39,13 @@ DRIZZLE_VARS=		DSO_EXTMODS+=drizzle
 
 DYNAMIC_TLS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-dynamic_tls_records
 
-DYNAMIC_UPSTREAM_GH_TUPLE=	cubicdaiya:ngx_dynamic_upstream:cc5dac3:dynamic_upstream
+DYNAMIC_UPSTREAM_GH_TUPLE=	ZigzagAK:ngx_dynamic_upstream:960eef2:dynamic_upstream
 DYNAMIC_UPSTREAM_VARS=		DSO_EXTMODS+=dynamic_upstream
+
+DYNAMIC_HC_GH_TUPLE=	ZigzagAK:ngx_dynamic_healthcheck:61acf02:dynamic_hc
+DYNAMIC_HC_VARS=		DSO_EXTMODS+=dynamic_hc
+DYNAMIC_HC_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_dynamic_healthcheck-config
+DYNAMIC_HC_IMPLIES=	DYNAMIC_UPSTREAM
 
 DEVEL_KIT_GH_TUPLE=		simpl:ngx_devel_kit:v0.3.1:devel_kit
 DEVEL_KIT_VARS=			FIRST_DSO_EXTMODS+=devel_kit

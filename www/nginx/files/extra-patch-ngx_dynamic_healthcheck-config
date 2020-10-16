@@ -1,0 +1,11 @@
+--- ../ngx_dynamic_healthcheck-61acf02/config.orig	2020-08-22 16:35:36.127913000 -0400
++++ ../ngx_dynamic_healthcheck-61acf02/config	2020-08-22 16:39:36.187267000 -0400
+@@ -31,7 +31,7 @@
+     match($0, /([^ ]*\/stream-lua-nginx-module\/src)/, arr)
+     print arr[1]
+ }')"
+-CORE_INCS="$CORE_INCS $stream_lua_nginx_module_incs"
++CORE_INCS="$CORE_INCS src/stream $stream_lua_nginx_module_incs"
+ 
+ 
+ if test -n "$ngx_module_link"; then

@@ -16,7 +16,8 @@
 %%DSO%%%%CT%%libexec/nginx/ngx_ssl_ct_module.so
 %%DSO%%%%CT%%libexec/nginx/ngx_http_ssl_ct_module.so
 %%DSO%%%%ECHO%%libexec/nginx/ngx_http_echo_module.so
-%%DSO%%%%DYNAMIC_UPSTREAM%%libexec/nginx/ngx_dynamic_upstream_module.so
+%%DSO%%%%DYNAMIC_HC%%libexec/nginx/ngx_http_dynamic_healthcheck_module.so
+%%DSO%%%%DYNAMIC_UPSTREAM%%libexec/nginx/ngx_http_dynamic_upstream_module.so
 %%DSO%%%%DEVEL_KIT%%libexec/nginx/ndk_http_module.so
 %%DSO%%%%DRIZZLE%%libexec/nginx/ngx_http_drizzle_module.so
 %%DSO%%%%ENCRYPTSESSION%%libexec/nginx/ngx_http_encrypted_session_module.so
