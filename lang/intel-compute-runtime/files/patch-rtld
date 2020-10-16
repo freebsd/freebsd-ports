@@ -12,7 +12,7 @@ core/os_interface/linux/os_library_linux.cpp:35:49: error: 'RTLD_DEEPBIND' was n
          this->handle = dlopen(0, RTLD_LAZY);
      } else {
 -#ifdef SANITIZER_BUILD
-+#if defined(SANITIZER_BUILD) || !defined(__linux__)
++#if defined(SANITIZER_BUILD) || !defined(RTLD_DEEPBIND)
          constexpr auto dlopenFlag = RTLD_LAZY;
  #else
          constexpr auto dlopenFlag = RTLD_LAZY | RTLD_DEEPBIND;
