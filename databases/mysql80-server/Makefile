@@ -3,7 +3,7 @@
 
 PORTNAME?=		mysql
 PORTVERSION=		8.0.21
-PORTREVISION?=		2
+PORTREVISION?=		3
 CATEGORIES=		databases
 MASTER_SITES=		MYSQL/MySQL-8.0
 PKGNAMESUFFIX?=		80-server
@@ -120,7 +120,7 @@ CONFLICTS_INSTALL=	mysql8[1-9]-server-* \
 
 USE_RC_SUBR=	mysql-server
 
-SUB_FILES=	my.cnf.sample
+SUB_FILES=	my.cnf.sample pkg-message
 
 USERS=		mysql
 GROUPS=		mysql
