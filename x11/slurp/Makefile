@@ -2,8 +2,7 @@
 
 PORTNAME=	slurp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.0
-PORTREVISION=	2
+DISTVERSION=	1.3.0
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -14,7 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		wayland-protocols>=1.14:graphics/wayland-protocols
-LIB_DEPENDS=	libwayland-client.so:graphics/wayland
+LIB_DEPENDS=	libwayland-client.so:graphics/wayland \
+		libxkbcommon.so:x11/libxkbcommon
 
 USES=		compiler:c11 gnome meson pkgconfig
 USE_GITHUB=	yes
