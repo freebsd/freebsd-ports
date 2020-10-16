@@ -1,6 +1,6 @@
---- Makefile.orig	2020-10-14 09:49:18.314212000 +0000
-+++ Makefile	2020-10-14 09:51:06.922727000 +0000
-@@ -11,7 +11,7 @@
+--- Makefile.orig	2020-08-13 02:03:03 UTC
++++ Makefile
+@@ -11,7 +11,7 @@ CHIBI_FFI ?= $(CHIBI) -q tools/chibi-ffi
  CHIBI_FFI_DEPENDENCIES ?= $(CHIBI_DEPENDENCIES) tools/chibi-ffi
  
  CHIBI_DOC ?= $(CHIBI) tools/chibi-doc
