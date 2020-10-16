@@ -8,7 +8,6 @@ include/aws/common/atomics_fallback.inl
 include/aws/common/atomics_gnu.inl
 include/aws/common/atomics_gnu_old.inl
 include/aws/common/atomics_msvc.inl
-include/aws/common/bigint.h
 include/aws/common/byte_buf.h
 include/aws/common/byte_order.h
 include/aws/common/byte_order.inl
@@ -19,6 +18,7 @@ include/aws/common/command_line_parser.h
 include/aws/common/common.h
 include/aws/common/condition_variable.h
 include/aws/common/config.h
+include/aws/common/cpuid.h
 include/aws/common/date_time.h
 include/aws/common/device_random.h
 include/aws/common/encoding.h
@@ -41,6 +41,8 @@ include/aws/common/lru_cache.h
 include/aws/common/macros.h
 include/aws/common/math.cbmc.inl
 include/aws/common/math.fallback.inl
+include/aws/common/math.gcc_arm64_asm.inl
+include/aws/common/math.gcc_builtin.inl
 include/aws/common/math.gcc_overflow.inl
 include/aws/common/math.gcc_x64_asm.inl
 include/aws/common/math.h
@@ -48,10 +50,12 @@ include/aws/common/math.inl
 include/aws/common/math.msvc.inl
 include/aws/common/mutex.h
 include/aws/common/package.h
+include/aws/common/platform.h
 include/aws/common/posix/common.inl
 include/aws/common/predicates.h
 include/aws/common/priority_queue.h
 include/aws/common/process.h
+include/aws/common/ref_count.h
 include/aws/common/resource_name.h
 include/aws/common/ring_buffer.h
 include/aws/common/ring_buffer.inl
@@ -66,15 +70,17 @@ include/aws/common/task_scheduler.h
 include/aws/common/thread.h
 include/aws/common/time.h
 include/aws/common/uuid.h
+include/aws/common/xml_parser.h
 include/aws/common/zero.h
 include/aws/common/zero.inl
 include/aws/testing/aws_test_allocators.h
 include/aws/testing/aws_test_harness.h
 lib/aws-c-common/cmake/aws-c-common-config.cmake
-lib/aws-c-common/cmake/shared/aws-c-common-targets-release.cmake
+lib/aws-c-common/cmake/shared/aws-c-common-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/aws-c-common/cmake/shared/aws-c-common-targets.cmake
 lib/cmake/AwsCFlags.cmake
 lib/cmake/AwsCheckHeaders.cmake
+lib/cmake/AwsFeatureTests.cmake
 lib/cmake/AwsFindPackage.cmake
 lib/cmake/AwsLibFuzzer.cmake
 lib/cmake/AwsSIMD.cmake
@@ -82,5 +88,5 @@ lib/cmake/AwsSanitizers.cmake
 lib/cmake/AwsSharedLibSetup.cmake
 lib/cmake/AwsTestHarness.cmake
 lib/libaws-c-common.so
-lib/libaws-c-common.so.0unstable
+lib/libaws-c-common.so.1
 lib/libaws-c-common.so.1.0.0
