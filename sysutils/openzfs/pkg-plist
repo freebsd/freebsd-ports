@@ -2,6 +2,7 @@
 %%PYTHON%%bin/arcstat
 %%PYTHON%%bin/dbufstat
 %%TESTS%%bin/raidz_test
+bin/zpool_influxdb
 etc/sudoers.d/zfs
 etc/zfs/vdev_id.conf.alias.example
 etc/zfs/vdev_id.conf.multipath.example
@@ -475,6 +476,7 @@ man/man8/zpool-trim.8.gz
 man/man8/zpool-upgrade.8.gz
 man/man8/zpool-wait.8.gz
 man/man8/zpool.8.gz
+man/man8/zpool_influxdb.8.gz
 man/man8/zpoolconcepts.8.gz
 man/man8/zpoolprops.8.gz
 man/man8/zstream.8.gz
@@ -540,10 +542,17 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/include/zpool_script.shlib
 %%TESTS%%share/zfs/zfs-tests/tests/functional/acl/acl.cfg
 %%TESTS%%share/zfs/zfs-tests/tests/functional/acl/acl_common.kshlib
+%%TESTS%%share/zfs/zfs-tests/tests/functional/acl/posix-sa/cleanup.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/acl/posix-sa/posix_001_pos.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/acl/posix-sa/posix_002_pos.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/acl/posix-sa/posix_003_pos.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/acl/posix-sa/posix_004_pos.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/acl/posix-sa/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/acl/posix/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/acl/posix/posix_001_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/acl/posix/posix_002_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/acl/posix/posix_003_pos.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/acl/posix/posix_004_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/acl/posix/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/alloc_class/alloc_class.cfg
 %%TESTS%%share/zfs/zfs-tests/tests/functional/alloc_class/alloc_class.kshlib
@@ -2305,6 +2314,9 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/tests/functional/xattr/xattr_012_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/xattr/xattr_013_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/xattr/xattr_common.kshlib
+%%TESTS%%share/zfs/zfs-tests/tests/functional/zpool_influxdb/cleanup.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/zpool_influxdb/setup.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/zpool_influxdb/zpool_influxdb.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/zvol/zvol.cfg
 %%TESTS%%share/zfs/zfs-tests/tests/functional/zvol/zvol_ENOSPC/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/zvol/zvol_ENOSPC/setup.ksh
