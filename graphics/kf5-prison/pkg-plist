@@ -12,5 +12,7 @@ lib/libKF5Prison.so
 lib/libKF5Prison.so.5
 lib/libKF5Prison.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_MKSPECDIR%%/modules/qt_Prison.pri
+%%QT_QMLDIR%%/org/kde/prison/libprisonquickplugin.so
+%%QT_QMLDIR%%/org/kde/prison/qmldir
 share/qlogging-categories5/prison.categories
 share/qlogging-categories5/prison.renamecategories
