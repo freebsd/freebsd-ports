@@ -2597,7 +2597,6 @@
 %%WWWDIR%%/app/assets/javascripts/diffs/components/tree_list.vue
 %%WWWDIR%%/app/assets/javascripts/diffs/constants.js
 %%WWWDIR%%/app/assets/javascripts/diffs/diff_file.js
-%%WWWDIR%%/app/assets/javascripts/diffs/i18n.js
 %%WWWDIR%%/app/assets/javascripts/diffs/index.js
 %%WWWDIR%%/app/assets/javascripts/diffs/mixins/draft_comments.js
 %%WWWDIR%%/app/assets/javascripts/diffs/mixins/image_diff.js
