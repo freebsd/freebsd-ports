@@ -2,6 +2,7 @@
 
 PORTNAME=	kwin
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11-wm kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -12,6 +13,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libXcursor.so:x11/libXcursor \
 		libdrm.so:graphics/libdrm \
 		libepoxy.so:graphics/libepoxy \
+		libepoll-shim.so:devel/libepoll-shim \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libinput.so:x11/libinput \
@@ -26,9 +28,10 @@ BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto \
 		Xwayland:x11-servers/xwayland
 RUN_DEPENDS=	Xwayland:x11-servers/xwayland
 
-USES=		cmake compiler:c++11-lib cpe gettext gl kde:5 pkgconfig python:3.5+,run \
+USES=		cmake compiler:c++11-lib cpe gettext gl gnome kde:5 pkgconfig python:3.5+,run \
 		qt:5 shebangfix tar:xz xorg
 USE_GL=		egl
+USE_GNOME=	glib20
 USE_KDE=	activities activities attica auth breeze codecs \
 		completion config configwidgets coreaddons crash decoration \
 		doctools doctools globalaccel i18n iconthemes idletime init \
