@@ -2,8 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	mrboom
-PORTVERSION=	4.9
+PORTVERSION=	5.0
 CATEGORIES=	games
+MASTER_SITES=	https://github.com/Javanaise/mrboom-libretro/releases/download/${PORTVERSION}/
+DISTNAME=	MrBoom-src-${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	8 players Bomberman clone
@@ -15,21 +17,18 @@ LIB_DEPENDS=	libminizip.so:archivers/minizip \
 		libmodplug.so:audio/libmodplug
 
 USES=		compiler:c++11-lang gmake sdl
-USE_GITHUB=	yes
-USE_SDL=	sdl2 mixer2
+USE_SDL=	mixer2 sdl2
 
-GH_ACCOUNT=	Javanaise
-GH_PROJECT=	mrboom-libretro
-
+MAKE_ENV+=	LIBSDL2=1
 ALL_TARGET=	mrboom
 
 CFLAGS+=	`sdl2-config --cflags`
 LDFLAGS+=	`sdl2-config --libs`
 
-MAKE_ENV+=	LIBSDL2=1
-
-PLIST_FILES=	bin/mrboom man/man6/mrboom.6.gz \
-		share/applications/mrboom.desktop share/pixmaps/mrboom.png
+PLIST_FILES=	bin/mrboom \
+		man/man6/mrboom.6.gz \
+		share/applications/mrboom.desktop \
+		share/pixmaps/mrboom.png
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/Assets/${PORTNAME}.png \

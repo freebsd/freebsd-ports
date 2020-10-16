@@ -1,4 +1,4 @@
---- Makefile.orig	2020-01-04 15:37:33 UTC
+--- Makefile.orig	2020-10-16 16:38:11 UTC
 +++ Makefile
 @@ -4,7 +4,6 @@ AR             := ar
  INSTALL        := install
@@ -8,17 +8,12 @@
  BINDIR	       ?= bin
  LIBDIR         ?= lib
  DATADIR        ?= share
-@@ -500,11 +499,11 @@ clean:
- 	rm -f *.d */*.d */*/*.d */*/*/*.d */*/*/*/*.d */*/*/*/*/*.d
+@@ -397,7 +396,7 @@ endif
+ endif
+ endif
  
- strip:
--	$(STRIP) $(TARGET_NAME).out
-+	$(STRIP) $(TARGET_NAME)
+-CFLAGS += -DMRBOOM -DHAVE_IBXM -D_FORTIFY_SOURCE=0 -DPLATFORM=\"$(platform)\" -DGIT_VERSION=\"$(GIT_VERSION)\"
++CFLAGS += -DMRBOOM -DHAVE_IBXM -D_FORTIFY_SOURCE=0 -DPLATFORM=\"$(platform)\"
  
- install: strip
- 	$(INSTALL) -m 0755 -d $(DESTDIR)$(PREFIX)/$(BINDIR)
--	$(INSTALL) -m 555 $(TARGET_NAME).out $(DESTDIR)$(PREFIX)/$(BINDIR)/$(TARGET_NAME)
-+	$(INSTALL) -m 555 $(TARGET_NAME) $(DESTDIR)$(PREFIX)/$(BINDIR)/$(TARGET_NAME)
- 	$(INSTALL) -m 0755 -d $(DESTDIR)$(PREFIX)/$(MANDIR)
- 	$(INSTALL) -m 644 Assets/$(TARGET_NAME).6 $(DESTDIR)$(PREFIX)/$(MANDIR) 
- 
+ SDL2LIBS :=  -lSDL2  -lSDL2_mixer -lminizip -lmodplug
+ ifneq ($(FALCON),)
