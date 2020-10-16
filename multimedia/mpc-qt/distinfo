@@ -1,5 +1,3 @@
-TIMESTAMP = 1533383379
-SHA256 (cmdrkotori-mpc-qt-origin-v18.08_GH0.tar.gz) = 3ae25d03072841e3104e27bab70816d74c554070be46e58c86d37ea4fd0a0abf
-SIZE (cmdrkotori-mpc-qt-origin-v18.08_GH0.tar.gz) = 219284
-SHA256 (Argon--mpv-stats-1.1-28-gf42aa68_GH0.tar.gz) = ef5651ec085a16276960a74c6da809b804dd0213b1676787f6bd125f076237e2
-SIZE (Argon--mpv-stats-1.1-28-gf42aa68_GH0.tar.gz) = 15168
+TIMESTAMP = 1602824540
+SHA256 (cmdrkotori-mpc-qt-origin-v20.10_GH0.tar.gz) = 325f3845e4ead9c6935c089c6321c8d0ea5097023de07ed2799e85a1f382d647
+SIZE (cmdrkotori-mpc-qt-origin-v20.10_GH0.tar.gz) = 280896
