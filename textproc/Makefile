@@ -1251,6 +1251,7 @@
     SUBDIR += py-elasticsearch-dsl
     SUBDIR += py-elasticsearch5
     SUBDIR += py-elasticsearch6
+    SUBDIR += py-elementpath
     SUBDIR += py-empy
     SUBDIR += py-enchant
     SUBDIR += py-et_xmlfile
