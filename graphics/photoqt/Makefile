@@ -9,7 +9,8 @@ CATEGORIES=	graphics
 MAINTAINER=	melanhit@gmail.com
 COMMENT=	Simple, powerful and good looking QT5 image viewer
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cmake compiler:c++11-lib desktop-file-utils \
 		localbase:ldflags qt:5
