@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	openfire
-PORTVERSION=	4.5.3
+PORTVERSION=	4.5.4
 PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	net-im java
 MASTER_SITES=	https://github.com/igniterealtime/${PORTNAME}/releases/download/v${PORTVERSION}/ \
-		LOCAL/yuri:maven
+		LOCAL/pi:maven
 DISTFILES=	${PORTNAME}_src_${PORTVERSION:S/./_/g}.tar.gz \
 		FreeBSD-${PORTNAME}-${PORTVERSION}-maven-repository.tar.gz:maven
 

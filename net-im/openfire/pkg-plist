@@ -44,7 +44,7 @@
 %%DATADIR%%/lib/hsqldb-2.4.1.jar
 %%DATADIR%%/lib/httpclient-4.5.8.jar
 %%DATADIR%%/lib/httpcore-4.4.11.jar
-%%DATADIR%%/lib/i18n-4.5.3.jar
+%%DATADIR%%/lib/i18n-4.5.4.jar
 %%DATADIR%%/lib/j2objc-annotations-1.1.jar
 %%DATADIR%%/lib/javassist-3.24.1-GA.jar
 %%DATADIR%%/lib/javax.activation-api-1.2.0.jar
@@ -91,7 +91,7 @@
 %%DATADIR%%/lib/mssql-jdbc-7.2.2.jre8.jar
 %%DATADIR%%/lib/mysql-connector-java-8.0.17.jar
 %%DATADIR%%/lib/ognl-3.2.10.jar
-%%DATADIR%%/lib/postgresql-42.2.8.jar
+%%DATADIR%%/lib/postgresql-42.2.14.jar
 %%DATADIR%%/lib/protobuf-java-3.6.1.jar
 %%DATADIR%%/lib/rome-1.12.0.jar
 %%DATADIR%%/lib/rome-utils-1.12.0.jar
@@ -107,7 +107,7 @@
 %%DATADIR%%/lib/websocket-common-9.4.28.v20200408.jar
 %%DATADIR%%/lib/websocket-server-9.4.28.v20200408.jar
 %%DATADIR%%/lib/websocket-servlet-9.4.28.v20200408.jar
-%%DATADIR%%/lib/xmppserver-4.5.3.jar
+%%DATADIR%%/lib/xmppserver-4.5.4.jar
 %%DATADIR%%/lib/xpp3-1.1.4c.jar
 %%DATADIR%%/logs
 %%DATADIR%%/plugins/admin/plugin.xml
