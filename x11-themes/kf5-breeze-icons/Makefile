@@ -20,7 +20,8 @@ USE_QT=		buildtools_build core qmake_build testlib
 SHEBANG_FILES=	 svg-xml-script-template.py generate-24px-versions.py
 
 NO_ARCH=	yes
-CMAKE_ARGS=	-DXMLLINT_EXE:PATH=''
+CMAKE_ARGS=	-DXMLLINT_EXE:PATH='' \
+		-DPython3_EXECUTABLE:PATH=${PYTHON_CMD}
 CMAKE_ON=	WITH_ICON_GENERATION
 
 .include <bsd.port.mk>
