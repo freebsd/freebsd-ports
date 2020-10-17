@@ -212,6 +212,7 @@
     SUBDIR += libquvi-scripts09
     SUBDIR += libquvi09
     SUBDIR += librav1e
+    SUBDIR += librespot
     SUBDIR += librtmp
     SUBDIR += libtheora
     SUBDIR += libtuner
