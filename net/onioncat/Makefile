@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	onioncat
-DISTVERSION=	0.2.8
+DISTVERSION=	0.3.8
 CATEGORIES=	net security
-MASTER_SITES=	https://www.cypherpunk.at/ocat/download/Source/stable/
+MASTER_SITES=	https://www.cypherpunk.at/ocat/download/Source/current/
 
 MAINTAINER=	cs@FreeBSD.org
 COMMENT=	IP-transparent Tor Hidden Service connector
