@@ -4,12 +4,10 @@
 PORTNAME=	rsync
 DISTVERSION=	3.2.3
 CATEGORIES=	net
-MASTER_SITES=	https://rsync.samba.org/ftp/rsync/ \
-		https://rsync.samba.org/ftp/rsync/src/ \
-		https://www.mirrorservice.org/sites/rsync.samba.org/ \
-		http://rsync.samba.org/ftp/rsync/ \
-		ftp://ftp.fu-berlin.de/pub/unix/network/rsync/ \
-		http://www.mirrorservice.org/sites/rsync.samba.org/
+MASTER_SITES=	https://www.mirrorservice.org/sites/rsync.samba.org/src/ \
+				http://rsync.mirror.garr.it/src/ \
+				http://www.mirrorservice.org/sites/rsync.samba.org/src/ \
+				https://download.samba.org/pub/rsync/src/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	rodrigo@FreeBSD.org
