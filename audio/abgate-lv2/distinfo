@@ -1,5 +1,3 @@
-TIMESTAMP = 1602610354
-SHA256 (antanasbruzas-abGate-v1.1.9_GH0.tar.gz) = 898b50cce44dffedd82ec0e6d6d043a9d26534fbf07898d099575ea4c1057721
-SIZE (antanasbruzas-abGate-v1.1.9_GH0.tar.gz) = 814739
-SHA256 (fbe77164cf58807807b8c6ec496430f34f88d780.patch) = 49083350aa198a16645576a5c4d20a3ee3ffef42fa7c4d705276373d0beba933
-SIZE (fbe77164cf58807807b8c6ec496430f34f88d780.patch) = 841
+TIMESTAMP = 1602897670
+SHA256 (antanasbruzas-abGate-v1.2.0_GH0.tar.gz) = ebee1cc545b088bf6e5989c114e7e34fa9f21ac7fdb1eee3fd067bcf98703b86
+SIZE (antanasbruzas-abGate-v1.2.0_GH0.tar.gz) = 813421

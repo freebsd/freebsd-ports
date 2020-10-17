@@ -2,13 +2,9 @@
 
 PORTNAME=	abGate
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.9
-PORTREVISION=	3
+DISTVERSION=	1.2.0
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	fbe77164cf58807807b8c6ec496430f34f88d780.patch:-p1 # Fix build against latest LV2: https://github.com/antanasbruzas/abGate/pull/3
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Noise gate LV2 plugin
