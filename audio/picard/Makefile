@@ -3,7 +3,7 @@
 
 PORTNAME=	picard
 PORTVERSION=	2.4.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio python
 MASTER_SITES=	http://ftp.musicbrainz.org/pub/musicbrainz/picard/ \
 		ftp://ftp.musicbrainz.org/pub/musicbrainz/picard/ \
@@ -16,7 +16,8 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}discid>=0.5.2:audio/py-discid@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}mutagen>=1.23:audio/py-mutagen@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}mutagen>=1.23:audio/py-mutagen@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dateutil>=2.7.3:devel/py-dateutil@${PY_FLAVOR}
 
 USES=		gettext pyqt:5 python:3.5+ desktop-file-utils
 USE_LOCALE=	en_US.UTF-8
