@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	graylog
-DISTVERSION=	3.3.7
+DISTVERSION=	3.3.8
 CATEGORIES=	sysutils java
 MASTER_SITES=	https://downloads.graylog.org/releases/
 DISTFILES=	graylog/${DISTNAME}${EXTRACT_SUFX} \

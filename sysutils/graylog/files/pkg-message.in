@@ -11,8 +11,8 @@ When running graylog in a jail, you need to set enforce_statfs for the jail.
 
 For a single-node installation, install:
 
-- databases/mongodb36
-- textproc/elasticsearch5
+- databases/mongodb40 or higher
+- textproc/elasticsearch5 or higher
 
 And ensure that the elasticsearch cluster name matches that used by graylog.
 
