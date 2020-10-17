@@ -78,6 +78,7 @@ include/nss/p12.h
 include/nss/p12plcy.h
 include/nss/p12t.h
 include/nss/pk11func.h
+include/nss/pk11hpke.h
 include/nss/pk11pqg.h
 include/nss/pk11priv.h
 include/nss/pk11pub.h
