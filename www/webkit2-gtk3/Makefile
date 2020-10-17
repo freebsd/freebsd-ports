@@ -73,9 +73,6 @@ OPTIONS_SUB=		yes
 # Building WebKit with debugging symbols requires ar and ld with
 # support for thin archives.  Also see
 # https://bugs.webkit.org/show_bug.cgi?id=140384
-# binutils can be removed when 12.0-R and 11.2 and 11.3 are EOL
-# https://svnweb.freebsd.org/base?view=revision&revision=346079
-DEBUG_BUILD_DEPENDS=	binutils>=0:devel/binutils
 DEBUG_CMAKE_ON=		-DCMAKE_AR=${LOCALBASE}/bin/ar \
 			-DCMAKE_RANLIB=${LOCALBASE}/bin/ranlib \
 			-DCMAKE_LINKER=${LOCALBASE}/bin/ld
