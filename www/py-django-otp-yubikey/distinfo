@@ -1,3 +1,3 @@
-TIMESTAMP = 1587311426
-SHA256 (django-otp-yubikey-0.5.2.tar.gz) = f0b1881562fb42ee9f12c28d284cbdb90d1f0383f2d53a595373b080a19bc261
-SIZE (django-otp-yubikey-0.5.2.tar.gz) = 13097
+TIMESTAMP = 1602936051
+SHA256 (django-otp-yubikey-1.0.0.tar.gz) = fbd409277892229b7e3578faa4f63ea766e242659456939164c8f71b845287b6
+SIZE (django-otp-yubikey-1.0.0.tar.gz) = 13260
