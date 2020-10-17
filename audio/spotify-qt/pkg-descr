@@ -1,0 +1,7 @@
+A Spotify client using Qt as a simpler, lighter alternative to the official
+client, inspired by spotify-tui. Much like spotify-tui, you need an actual
+Spotify client running, for example spotifyd, which can be configured from
+within the app. Also like other clients, controlling music playback requires
+Spotify Premium.
+
+WWW: https://github.com/kraxarn/spotify-qt
