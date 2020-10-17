@@ -3,7 +3,7 @@
 # $FreeBSD$
 #
 # PROVIDE: zookeeper
-# REQUIRE: LOGIN
+# REQUIRE: NETWORKING SERVERS DAEMON
 # KEYWORD: shutdown
 #
 # Add the following line to /etc/rc.conf to enable zookeeper:
