@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	openmsx
-PORTVERSION=	0.15.0
-PORTREVISION=	2
+PORTVERSION=	16.0
 CATEGORIES=	emulators
 
 MAINTAINER=	menelkir@itroll.org
@@ -10,8 +9,6 @@ COMMENT=	Open source MSX emulator
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/GPL.txt
-
-BROKEN=		fails to build
 
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libogg.so:audio/libogg \
@@ -29,7 +26,7 @@ USE_SDL=	sdl2 ttf2
 USE_GITHUB=	yes
 GH_ACCOUNT=	openMSX
 GH_PROJECT=	openMSX
-GH_TAGNAME=	0f2b558
+GH_TAGNAME=	a46a814
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
