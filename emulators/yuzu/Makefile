@@ -45,7 +45,7 @@ GH_TUPLE=	yuzu-emu:unicorn:1.0.1-153-g73f45735:unicorn/externals/unicorn \
 		arsenm:sanitizers-cmake:aab6948:sanitizers_cmake/externals/cubeb/cmake/sanitizers-cmake \
 		citra-emu:ext-soundtouch:060181e:soundtouch/externals/soundtouch \
 		herumi:xbyak:v5.96:xbyak/externals/xbyak \
-		kinetiknz:cubeb:cubeb-0.2-1252-g40865a6:cubeb/externals/cubeb \
+		kinetiknz:cubeb:cubeb-0.2-1251-ga7e83aa:cubeb/externals/cubeb \
 		svn2github:inih:603729d:inih/externals/inih/inih
 
 USES=		cmake compiler:c++17-lang localbase:ldflags python:build sdl ssl
