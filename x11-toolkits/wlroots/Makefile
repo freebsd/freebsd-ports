@@ -34,12 +34,6 @@ USE_LDCONFIG=	yes
 GH_ACCOUNT=	swaywm
 MESON_ARGS=	-Dexamples=false
 
-# XXX Drop after FreeBSD 11.3 EOL (aarch64)
-.if exists(/usr/lib/clang/8.0.0)
-# https://github.com/swaywm/wlroots/issues/1450
-LLD_UNSAFE=	yes
-.endif
-
 OPTIONS_DEFINE=	CONSOLEKIT LIBSEAT X11
 OPTIONS_DEFAULT=X11
 OPTIONS_SUB=	yes
