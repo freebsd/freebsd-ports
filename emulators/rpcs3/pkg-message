@@ -5,7 +5,7 @@ Known issues:
 - Vulkan renderer may crash on Intel GPUs. Consider explicitly disabling
   anti-aliasing in Configuration -> GPU.
 - OpenGL renderer may glitch on Intel GPUs when using i965 Mesa driver.
-  Consider switching to iris driver e.g., from graphics/mesa-devel.
+  Consider defining `MESA_LOADER_DRIVER_OVERRIDE=iris` via environ(7).
 EOM
 }
 ]
