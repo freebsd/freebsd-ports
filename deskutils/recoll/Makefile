@@ -3,7 +3,7 @@
 
 PORTNAME=	recoll
 PORTVERSION=	1.27.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	deskutils
 MASTER_SITES=	https://www.lesbonscomptes.com/recoll/
 
@@ -34,6 +34,7 @@ SHEBANG_FILES=	filters/*.py filters/rcl7z filters/rclaudio \
 		filters/rclrar filters/rcltar filters/rclwar \
 		filters/rclzip desktop/hotrecoll.py
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-recollq --enable-xadump
 MAKE_ENV=	PYTHON_CMD=${PYTHON_CMD}
 
 PYDISTUTILS_PKGNAME=	Recoll
@@ -94,6 +95,8 @@ pre-build-QT5-on:
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/recoll/*.so \
-		${STAGEDIR}${PREFIX}/lib/recoll/*.so
+		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/recollchm/*.so \
+		${STAGEDIR}${PREFIX}/lib/recoll/*.so \
+		${STAGEDIR}${PREFIX}/bin/recoll
 
 .include <bsd.port.mk>

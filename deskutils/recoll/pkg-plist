@@ -1,5 +1,7 @@
 %%QT5%%bin/recoll
 bin/recollindex
+bin/recollq
+bin/xadump
 %%PYTHON_SITELIBDIR%%/%%PYDISTUTILS_EGGINFO%%/PKG-INFO
 %%PYTHON_SITELIBDIR%%/%%PYDISTUTILS_EGGINFO%%/SOURCES.txt
 %%PYTHON_SITELIBDIR%%/%%PYDISTUTILS_EGGINFO%%/dependency_links.txt
