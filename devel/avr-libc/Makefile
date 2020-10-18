@@ -3,7 +3,7 @@
 
 PORTNAME=	avr-libc
 PORTVERSION=	2.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	SAVANNAH
@@ -32,7 +32,7 @@ OPTIONS_DEFINE=	DOXYGEN
 .if ${PORT_OPTIONS:MDOXYGEN}
 USE_TEX=	latex:build
 BUILD_DEPENDS+=	doxygen:devel/doxygen \
-		fig2dev:print/transfig \
+		fig2dev:print/fig2dev \
 		jpegtopnm:graphics/netpbm \
 		dvips:print/tex-dvipsk
 .endif
