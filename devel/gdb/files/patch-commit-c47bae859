@@ -1,0 +1,99 @@
+commit c47bae859a5af0d95224d90000df0e529f7c5aa0
+Author: Kevin Buettner <kevinb@redhat.com>
+Date:   Wed May 27 20:05:40 2020 -0700
+
+diff --git a/gdb/python/python.c b/gdb/python/python.c
+index 67f362b852..4bdd2201ab 100644
+--- gdb/python/python.c
++++ gdb/python/python.c
+@@ -238,6 +238,30 @@ gdbpy_enter::~gdbpy_enter ()
+   PyGILState_Release (m_state);
+ }
+ 
++/* A helper class to save and restore the GIL, but without touching
++   the other globals that are handled by gdbpy_enter.  */
++
++class gdbpy_gil
++{
++public:
++
++  gdbpy_gil ()
++    : m_state (PyGILState_Ensure ())
++  {
++  }
++
++  ~gdbpy_gil ()
++  {
++    PyGILState_Release (m_state);
++  }
++
++  DISABLE_COPY_AND_ASSIGN (gdbpy_gil);
++
++private:
++
++  PyGILState_STATE m_state;
++};
++
+ /* Set the quit flag.  */
+ 
+ static void
+@@ -251,6 +275,10 @@ gdbpy_set_quit_flag (const struct extension_language_defn *extlang)
+ static int
+ gdbpy_check_quit_flag (const struct extension_language_defn *extlang)
+ {
++  if (!gdb_python_initialized)
++    return 0;
++
++  gdbpy_gil gil;
+   return PyOS_InterruptOccurred ();
+ }
+ 
+@@ -943,30 +971,6 @@ gdbpy_source_script (const struct extension_language_defn *extlang,
+ 
+ /* Posting and handling events.  */
+ 
+-/* A helper class to save and restore the GIL, but without touching
+-   the other globals that are handled by gdbpy_enter.  */
+-
+-class gdbpy_gil
+-{
+-public:
+-
+-  gdbpy_gil ()
+-    : m_state (PyGILState_Ensure ())
+-  {
+-  }
+-
+-  ~gdbpy_gil ()
+-  {
+-    PyGILState_Release (m_state);
+-  }
+-
+-  DISABLE_COPY_AND_ASSIGN (gdbpy_gil);
+-
+-private:
+-
+-  PyGILState_STATE m_state;
+-};
+-
+ /* A single event.  */
+ struct gdbpy_event
+ {
+@@ -1616,6 +1620,7 @@ finalize_python (void *ignore)
+ 
+   Py_Finalize ();
+ 
++  gdb_python_initialized = false;
+   restore_active_ext_lang (previous_active);
+ }
+ 
+@@ -1785,8 +1790,7 @@ do_start_initialization ()
+     return false;
+ 
+   /* Release the GIL while gdb runs.  */
+-  PyThreadState_Swap (NULL);
+-  PyEval_ReleaseLock ();
++  PyEval_SaveThread ();
+ 
+   make_final_cleanup (finalize_python, NULL);
+ 
