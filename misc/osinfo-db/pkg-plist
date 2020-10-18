@@ -671,6 +671,8 @@ share/osinfo/os/scientificlinux.org/scientificlinux-7.3.xml
 share/osinfo/os/scientificlinux.org/scientificlinux-7.4.xml
 share/osinfo/os/scientificlinux.org/scientificlinux-7.5.xml
 share/osinfo/os/scientificlinux.org/scientificlinux-7.6.xml
+share/osinfo/os/slackware.com/slackware-14.2.xml
+share/osinfo/os/slackware.com/slackware-current.xml
 share/osinfo/os/sun.com/opensolaris-2009.06.xml
 share/osinfo/os/sun.com/solaris-10.xml
 share/osinfo/os/sun.com/solaris-9.xml
@@ -746,6 +748,7 @@ share/osinfo/os/ubuntu.com/ubuntu-18.10.xml
 share/osinfo/os/ubuntu.com/ubuntu-19.04.xml
 share/osinfo/os/ubuntu.com/ubuntu-19.10.xml
 share/osinfo/os/ubuntu.com/ubuntu-20.04.xml
+share/osinfo/os/ubuntu.com/ubuntu-20.10.xml
 share/osinfo/os/ubuntu.com/ubuntu-4.10.xml
 share/osinfo/os/ubuntu.com/ubuntu-5.04.xml
 share/osinfo/os/ubuntu.com/ubuntu-5.10.xml
