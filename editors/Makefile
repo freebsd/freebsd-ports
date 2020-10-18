@@ -227,6 +227,7 @@
     SUBDIR += scite
     SUBDIR += se
     SUBDIR += semi
+    SUBDIR += setzer
     SUBDIR += shed
     SUBDIR += slime
     SUBDIR += ssed
