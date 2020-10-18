@@ -1,0 +1,15 @@
+[
+{ type: install
+  message: <<EOM
+This game requires MPQ datafiles from the original Diablo 2(tm) and
+Lord Destruction(tm) expantion CDs or digital downloads.
+
+Run OpenDiablo2  once to get configuration file to be created in
+~/.config/OpenDiablo2/config.json and set "MpqPath" to path where
+MPQ files are.
+
+If you have any issues with this game, please file a bug report on the GitHub page:
+https://github.com/OpenDiablo2/OpenDiablo2/issues
+EOM
+}
+]

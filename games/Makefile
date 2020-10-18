@@ -17,6 +17,7 @@
     SUBDIR += HeroesOfMightAndMagic
     SUBDIR += KnightCap
     SUBDIR += NBlood
+    SUBDIR += OpenDiablo2
     SUBDIR += OpenTomb
     SUBDIR += abbayedesmorts
     SUBDIR += abe
