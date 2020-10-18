@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libjwt
-PORTVERSION=	1.12.0
+PORTVERSION=	1.12.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -10,7 +10,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	JSON Web Token implementation in C
 
 LICENSE=	MPL20
-LICENSE_FILE=	${WRKSRC}/MPL-2.0
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	jansson>=2.0:devel/jansson
 LIB_DEPENDS=	libjansson.so:devel/jansson
