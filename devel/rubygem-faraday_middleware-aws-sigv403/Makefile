@@ -1,0 +1,26 @@
+# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
+# $FreeBSD$
+
+PORTNAME=	faraday_middleware-aws-sigv4
+PORTVERSION=	0.3.0
+CATEGORIES=	devel rubygems
+MASTER_SITES=	RG
+PKGNAMESUFFIX=	03
+
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Faraday middleware for AWS Signature Version 4
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+RUN_DEPENDS=	rubygem-aws-sigv4>=1.0<2:devel/rubygem-aws-sigv4 \
+		rubygem-faraday>=0.15:www/rubygem-faraday
+
+USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
+
+PORTSCOUT=	limit:^0\.3\.
+
+.include <bsd.port.mk>

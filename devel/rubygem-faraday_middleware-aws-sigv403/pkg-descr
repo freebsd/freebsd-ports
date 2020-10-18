@@ -1,0 +1,4 @@
+FaradayMiddleware::AwsSigV4 is a faraday middleware for AWS Signature Version 4
+using aws-sigv4.
+
+WWW: https://github.com/winebarrel/faraday_middleware-aws-sigv4
