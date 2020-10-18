@@ -3,7 +3,7 @@
 
 PORTNAME=	chemtool
 DISTVERSION=	1.6.14
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science
 MASTER_SITES=	http://ruby.chemie.uni-freiburg.de/~martin/chemtool/
 
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libEMF.so:graphics/libemf \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
-RUN_DEPENDS=	transfig:print/transfig
+RUN_DEPENDS=	fig2dev:print/fig2dev
 
 USES=		compiler:c++11-lang gmake gnome pkgconfig xorg
 GNU_CONFIGURE=	yes
