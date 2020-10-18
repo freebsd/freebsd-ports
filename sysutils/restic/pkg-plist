@@ -4,6 +4,7 @@ man/man1/%%PORTNAME%%-backup.1.gz
 man/man1/%%PORTNAME%%-cache.1.gz
 man/man1/%%PORTNAME%%-cat.1.gz
 man/man1/%%PORTNAME%%-check.1.gz
+man/man1/%%PORTNAME%%-copy.1.gz
 man/man1/%%PORTNAME%%-diff.1.gz
 man/man1/%%PORTNAME%%-dump.1.gz
 man/man1/%%PORTNAME%%-find.1.gz
