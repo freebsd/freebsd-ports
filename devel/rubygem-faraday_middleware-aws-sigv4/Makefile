@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	faraday_middleware-aws-sigv4
-PORTVERSION=	0.3.0
-PORTREVISION=	2
+PORTVERSION=	0.4.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
