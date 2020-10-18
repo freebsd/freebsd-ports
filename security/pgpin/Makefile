@@ -20,7 +20,7 @@ BROKEN_mips64=		Does not build
 USES=		tar:tgz
 WRKSRC=		${WRKDIR}/pgp263in/src
 MAKEFILE=	makefile
-ALL_TARGET=	freebsd-${ARCH} OS_CFLAGS="${CFLAGS}"
+ALL_TARGET=	freebsd-${ARCH:S/powerpc64le/powerpc64/} OS_CFLAGS="${CFLAGS}"
 PGPLIB=		${STAGEDIR}${PREFIX}/lib/pgpin
 OPTIONS_DEFINE=	DOCS
 
