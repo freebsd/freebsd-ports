@@ -15,3 +15,4 @@ URIs can refer to Python Eggs for INI-style configuration files. Paste Script
 provides commands to serve applications based on this configuration file.
 
 WWW: https://pylonsproject.org/
+WWW: https://github.com/Pylons/pastedeploy
