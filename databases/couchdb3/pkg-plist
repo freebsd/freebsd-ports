@@ -698,19 +698,12 @@ man/man1/apachecouchdb.1.gz
 %%PORTDOCS%%%%WWWDIR%%/docs/_sources/whatsnew/3.0.rst.txt
 %%PORTDOCS%%%%WWWDIR%%/docs/_sources/whatsnew/3.1.rst.txt
 %%PORTDOCS%%%%WWWDIR%%/docs/_sources/whatsnew/index.rst.txt
-%%PORTDOCS%%%%WWWDIR%%/docs/_static/ajax-loader.gif
 %%PORTDOCS%%%%WWWDIR%%/docs/_static/basic.css
-%%PORTDOCS%%%%WWWDIR%%/docs/_static/comment-bright.png
-%%PORTDOCS%%%%WWWDIR%%/docs/_static/comment-close.png
-%%PORTDOCS%%%%WWWDIR%%/docs/_static/comment.png
 %%PORTDOCS%%%%WWWDIR%%/docs/_static/css/badge_only.css
 %%PORTDOCS%%%%WWWDIR%%/docs/_static/css/rtd_theme.css
 %%PORTDOCS%%%%WWWDIR%%/docs/_static/css/theme.css
 %%PORTDOCS%%%%WWWDIR%%/docs/_static/doctools.js
 %%PORTDOCS%%%%WWWDIR%%/docs/_static/documentation_options.js
-%%PORTDOCS%%%%WWWDIR%%/docs/_static/down-pressed.png
-%%PORTDOCS%%%%WWWDIR%%/docs/_static/down.png
-%%PORTDOCS%%%%WWWDIR%%/docs/_static/favicon.ico
 %%PORTDOCS%%%%WWWDIR%%/docs/_static/file.png
 %%PORTDOCS%%%%WWWDIR%%/docs/_static/fonts/Inconsolata-Bold.ttf
 %%PORTDOCS%%%%WWWDIR%%/docs/_static/fonts/Inconsolata-Regular.ttf
@@ -758,9 +751,6 @@ man/man1/apachecouchdb.1.gz
 %%PORTDOCS%%%%WWWDIR%%/docs/_static/pygments.css
 %%PORTDOCS%%%%WWWDIR%%/docs/_static/searchtools.js
 %%PORTDOCS%%%%WWWDIR%%/docs/_static/underscore.js
-%%PORTDOCS%%%%WWWDIR%%/docs/_static/up-pressed.png
-%%PORTDOCS%%%%WWWDIR%%/docs/_static/up.png
-%%PORTDOCS%%%%WWWDIR%%/docs/_static/websupport.js
 %%PORTDOCS%%%%WWWDIR%%/docs/about.html
 %%PORTDOCS%%%%WWWDIR%%/docs/api/basics.html
 %%PORTDOCS%%%%WWWDIR%%/docs/api/database/bulk-api.html
@@ -906,7 +896,6 @@ man/man1/apachecouchdb.1.gz
 %%PORTDOCS%%%%WWWDIR%%/docs/whatsnew/3.1.html
 %%PORTDOCS%%%%WWWDIR%%/docs/whatsnew/index.html
 @comment fauxton core UI
-%%WWWDIR%%/dashboard.assets/css/styles.cba9030469264f5dd736.css
 %%WWWDIR%%/dashboard.assets/fonts/fauxtonicon5.eot
 %%WWWDIR%%/dashboard.assets/fonts/fauxtonicon5.ttf
 %%WWWDIR%%/dashboard.assets/fonts/fauxtonicon5.woff
@@ -924,8 +913,5 @@ man/man1/apachecouchdb.1.gz
 %%WWWDIR%%/dashboard.assets/img/linkedin.png
 %%WWWDIR%%/dashboard.assets/img/loader.gif
 %%WWWDIR%%/dashboard.assets/img/twitter.png
-%%WWWDIR%%/dashboard.assets/js/bundle.cba9030469264f5dd736.js
-%%WWWDIR%%/dashboard.assets/js/manifest.583577db79221d5ae84e.js
-%%WWWDIR%%/dashboard.assets/js/vendor.ab7fba521cb7c6902c58.js
 %%WWWDIR%%/favicon.ico
 %%WWWDIR%%/index.html
