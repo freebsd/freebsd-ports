@@ -3,7 +3,7 @@
 
 PORTNAME=	inkscape
 PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics gnome
 MASTER_SITES=	https://media.inkscape.org/dl/resources/file/
 
@@ -43,7 +43,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scour>0:textproc/py-scour@${PY_FLAVOR} \
 		ps2pdf:print/ghostscript9-agpl-base \
-		fig2dev:print/transfig
+		fig2dev:print/fig2dev
 
 USES=		compiler:c++11-lib cmake cpe desktop-file-utils gnome \
 		iconv:wchar_t jpeg pathfix pkgconfig python:3.6+ \
