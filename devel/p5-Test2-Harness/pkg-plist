@@ -11,6 +11,7 @@ bin/yath
 %%SITE_PERL%%/App/Yath/Command/replay.pm
 %%SITE_PERL%%/App/Yath/Command/run.pm
 %%SITE_PERL%%/App/Yath/Command/runner.pm
+%%SITE_PERL%%/App/Yath/Command/spawn.pm
 %%SITE_PERL%%/App/Yath/Command/speedtag.pm
 %%SITE_PERL%%/App/Yath/Command/start.pm
 %%SITE_PERL%%/App/Yath/Command/stop.pm
@@ -68,6 +69,7 @@ bin/yath
 %%SITE_PERL%%/Test2/Harness/Runner/Preloader/Stage.pm
 %%SITE_PERL%%/Test2/Harness/Runner/Resource.pm
 %%SITE_PERL%%/Test2/Harness/Runner/Run.pm
+%%SITE_PERL%%/Test2/Harness/Runner/Spawn.pm
 %%SITE_PERL%%/Test2/Harness/Runner/State.pm
 %%SITE_PERL%%/Test2/Harness/Settings.pm
 %%SITE_PERL%%/Test2/Harness/Settings/Prefix.pm
@@ -98,6 +100,7 @@ bin/yath
 %%PERL5_MAN3%%/App::Yath::Command::replay.3.gz
 %%PERL5_MAN3%%/App::Yath::Command::run.3.gz
 %%PERL5_MAN3%%/App::Yath::Command::runner.3.gz
+%%PERL5_MAN3%%/App::Yath::Command::spawn.3.gz
 %%PERL5_MAN3%%/App::Yath::Command::speedtag.3.gz
 %%PERL5_MAN3%%/App::Yath::Command::start.3.gz
 %%PERL5_MAN3%%/App::Yath::Command::stop.3.gz
@@ -155,6 +158,7 @@ bin/yath
 %%PERL5_MAN3%%/Test2::Harness::Runner::Preloader::Stage.3.gz
 %%PERL5_MAN3%%/Test2::Harness::Runner::Resource.3.gz
 %%PERL5_MAN3%%/Test2::Harness::Runner::Run.3.gz
+%%PERL5_MAN3%%/Test2::Harness::Runner::Spawn.3.gz
 %%PERL5_MAN3%%/Test2::Harness::Runner::State.3.gz
 %%PERL5_MAN3%%/Test2::Harness::Settings.3.gz
 %%PERL5_MAN3%%/Test2::Harness::Settings::Prefix.3.gz
