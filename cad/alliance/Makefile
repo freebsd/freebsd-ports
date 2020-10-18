@@ -3,7 +3,7 @@
 
 PORTNAME=	alliance
 DISTVERSION=	5.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	cad
 MASTER_SITES=	ftp://asim.lip6.fr/pub/alliance/distribution/5.0/ \
 		ftp://ftp.lyx.org/lip6/softs/alliance/distribution/5.0/ \
@@ -20,7 +20,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 BROKEN_aarch64=		fails to link: collect2: error: ld returned 1 exit status
 
 BUILD_DEPENDS=	convert:graphics/ImageMagick7 \
-		fig2dev:print/transfig
+		fig2dev:print/fig2dev
 
 USES=		autoreconf:build gmake libtool motif tar:bz2 xorg
 USE_GCC=	yes
