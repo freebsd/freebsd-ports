@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	minitube
-DISTVERSION=	3.5
+DISTVERSION=	3.6.3
 CATEGORIES=	multimedia www
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	TV-like client for YouTube
 
 LICENSE=	GPLv3+
@@ -15,9 +15,12 @@ LIB_DEPENDS=	libmpv.so:multimedia/mpv
 USES=		compiler:c++11-lang gl qmake qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	flaviotordini
-GH_TUPLE=	flaviotordini:http:92fd16a:http/lib/http \
-		flaviotordini:idle:6aa092d:idle/lib/idle \
-		flaviotordini:media:0d07cad:media/lib/media
+GH_TUPLE=	\
+		flaviotordini:idle:6aa092da64a011e445bf31cf31c0cd8dda4c64ff:flaviotordini_idle/lib/idle \
+		flaviotordini:media:0d07cadaf0b773186ec712185d177d9bc8e1c8ea:flaviotordini_media/lib/media \
+		flaviotordini:http:86a5cb0a31158325cdd27bf5405d93909acc6a60:flaviotordini_http/lib/http \
+		flaviotordini:updater:a563aaa783e8cdd85df3d1cedd037ed9307d2f1c:flaviotordini_updater/lib/updater
+
 USE_GL=		gl
 USE_QT=		core dbus declarative gui network script sql widgets \
 		buildtools_build imageformats_run sql-sqlite3_run \
@@ -28,7 +31,6 @@ QMAKE_ARGS=	QMAKE_LRELEASE=${LRELEASE} \
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
-NLS_USES=	qt:5
 NLS_USE=	QT=linguisttools_build
 
 post-patch:
