@@ -3,8 +3,7 @@
 
 PORTNAME=	bambootracker
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.3-11
-DISTVERSIONSUFFIX=	-g5e0e6ef
+DISTVERSION=	0.4.4
 CATEGORIES=	audio
 MASTER_SITES=	LOCAL/ehaupt:extras
 DISTFILES=	${PORTNAME}-extras-${EXTRASVERSION}${EXTRACT_SUFX}:extras
@@ -72,7 +71,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/BambooTracker.fr.1 \
 		${STAGEDIR}${MANPREFIX}/man/fr.UTF-8/man1
 	${INSTALL_DATA} ${WRKSRC}/BambooTracker.desktop ${STAGEDIR}${DESKTOPDIR}
-	${INSTALL_DATA} ${WRKSRC}/BambooTracker/res/icon/icon_256x256.png \
+	${INSTALL_DATA} ${WRKSRC}/img/icon.png \
 		${STAGEDIR}${PREFIX}/share/icons/BambooTracker.png
 
 do-install-EXAMPLES-on:
