@@ -1,4 +1,8 @@
-This Apache module supports the "h2" (HTTP2 over TLS) and "h2c" (HTTP2
-over plain HTTP connections via Upgrade). You can enable it for the
-whole server or for specific virtual hosts only. More on this below on
-"Configuration".
+This port delivers advance bug- and security fixes for the Apache HTTP/2
+Module. For most users, the www/apache24 bundled module is sufficient.
+
+This Apache module implements the "h2" (HTTP2 over TLS) and "h2c" (HTTP2
+over plain HTTP connections via Upgrade) for Apache httpd. You can enable
+it for the whole server or for specific virtual hosts only.
+
+WWW: https://github.com/icing/mod_h2
