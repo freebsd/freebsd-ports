@@ -27,7 +27,7 @@ NO_ARCH=	yes
 PLIST_FILES=	bin/trans \
 		man/man1/trans.1.gz
 
-OPTIONS_DEFINE=	DOCS FRIBIDI READLINE TEXT2SPEECH
+OPTIONS_DEFINE=	FRIBIDI READLINE TEXT2SPEECH
 
 TEXT2SPEECH_DESC=	Enable Text-to-Speech functionality via espeak
 
