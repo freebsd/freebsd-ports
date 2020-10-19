@@ -15,31 +15,47 @@
 #
 # There are two variants:
 #
+#  Note that there are two variables with only very slightly
+#  different names, fetchmail_user and fetchmail_users
+#  (mind the trailing plural-'s').
+#
 #  * Single system-wide fetchmail daemon:
+#    - This mode applies if the 'fetchmail_users' variable
+#      is unset or empty.
 #    - It is run as user `fetchmail_user' (default: fetchmail)
 #      Note: The directory /var/run/fetchmail must be writable for
 #            'fetchmail_user'.
 #    - All configuration is contained in one global file
 #      'fetchmail_config' (default: %%PREFIX%%/etc/fetchmailrc)
-#      that must be owned by 'fetchmail_user' (mode 700)
+#      that must be owned by 'fetchmail_user' and access mode
+#      may not be more than 700.
 #    - The fetchmail daemon awakes to fetch mail every 
 #      'fetchmail_polling_interval' seconds (default: 900).
+#        Note that a "set daemon 123" in the file $fetchmail_config
+#      takes precedence. The rc.conf value is only a fall-back.
+#    - The fetchmail logs will go to the syslog by default, but
+#      you can override it to a file by setting 
+#      'fetchmail_logging_facility=--logfile=/path/to/logfile'
+#      in the rcfile or set logfile /path/to/logfile in the $fetchmail_config
+#      file.  The log-file must pre-exist and be writable by the
+#      'fetchmail_user'.
 #
 #  * Per-user daemon
 #    - Users for which a fetchmail daemon is to be started must be
 #      listed in 'fetchmail_users', e.g. fetchmail_users="user1 user2"
 #      The 'fetchmail_user' (sic!) variable is ignored in this
 #      configuration variant.
-#    - The config files for the individual users must be located at
-#      ${fetchmail_home_prefix}/${user}/${fetchmail_config_name}. The
-#      default for 'fetchmail_home_prefix' is "/home", and that for
-#      'fetchmail_config_name' is ".fetchmailrc".
-#    - Note that "${fetchmail_home_prefix}/${user}" must be writable
-#      for ${user} since it is used to store the per-user PID files!
-#    - There are user-specific versions of 'fetchmail_config' and
-#      'fetchmail_polling_interval' that can be used to override the
-#      defaults, i.e. for the user 'user1' there are variables
-#      'fetchmail_user1_config' and 'fetchmail_user1_polling_interval'
+#    - The config files for the individual users must be located in
+#      the fetchmail_user's home directory as ${fetchmail_config_name}. The
+#      default for 'fetchmail_config_name' is ".fetchmailrc".
+#    - There are user-specific versions of 'fetchmail_config',
+#      'fetchmail_logging_facility' and 'fetchmail_polling_interval' as well as
+#      the usual rc.subr variables that can be used to override the defaults,
+#      i.e. for the user 'user1' there are variables 'fetchmail_user1_config'
+#      and 'fetchmail_user1_polling_interval', or fetchmail_user1_env to
+#      set user-daemon specific environment variables.
+#        Note that a "set daemon 123" in the config file (.fetchmailrc
+#      by default) takes precedence. The rc.conf value is only a fall-back.
 #    - All commands (e.g. start, stop, awaken (see below)) can be either
 #      passed to all instances of the daemon (if %%PREFIX%%/etc/rc.d/fetchmail)
 #      is run as root), or just to the instance belonging to the respective
@@ -54,11 +70,17 @@
 #
 # In any case, you will need a working fetchmailrc file. Please consult
 # the man page fetchmail(1), the documentation in %%PREFIX%%/share/doc/fetchmail/
-# and/or the material found at <http://www.fetchmail.info/>.
+# and/or the material found at <https://www.fetchmail.info/> or
+# <https://fetchmail.sourceforge.io/>.
 
 . /etc/rc.subr
 
+# prevent reading passwords from the boot console
+exec < /dev/null
+
 name=fetchmail
+# note we do not override name for instances, because we want to have a fallback
+# to global defaults.  Check for PULLVARS below.
 rcvar=fetchmail_enable
 
 command=%%PREFIX%%/bin/${name}
@@ -71,11 +93,11 @@ fetchmail_script=%%PREFIX%%/etc/rc.d/$name
 # read settings, set default values
 load_rc_config "$name"
 : ${fetchmail_enable="NO"}
+: ${fetchmail_flags=""}
 : ${fetchmail_user="fetchmail"}
 : ${fetchmail_config="%%PREFIX%%/etc/fetchmailrc"}
 : ${fetchmail_polling_interval="900"}
 : ${fetchmail_logging_facility="--syslog"}
-: ${fetchmail_home_prefix="/home"}
 : ${fetchmail_config_name=".fetchmailrc"}
 
 # send signal to fetchmail process(es) to check for new mail immediately
@@ -91,58 +113,77 @@ fetchmail_awaken()
 	return
 }
 
-if [ -n "$2" ]; then
-	# perform action for an instance of fetchmail daemon
-        user="$2"
-        if [ "x${fetchmail_users}" != "x" -o "x$3" = "xGLOBALCONFIG"  ]; then
-		if [ "x${fetchmail_users}" != "x" ]; then
-			# multiuser setup:  determine user specific config and pid file
-			eval fetchmail_config="\${fetchmail_${user}_config:-${fetchmail_home_prefix}/${user}}/${fetchmail_config_name}"
-			eval pidfile="${fetchmail_home_prefix}/${user}/.fetchmail.pid"
-			eval fetchmail_user=$user
-		else
-			eval pidfile=/var/run/fetchmail/fetchmail.pid
-		fi
-		required_files=${fetchmail_config}
-		eval fetchmail_polling_interval="\${fetchmail_${user}_polling_interval:-${fetchmail_polling_interval}}"
-		fetchmail_flags="-f ${fetchmail_config} \
-				--pidfile ${pidfile} \
-				-d ${fetchmail_polling_interval} \
-				${fetchmail_logging_facility}"
-        else
-                echo "$0: extra argument ignored"
-        fi
-else
-	uid=`id -u`
-        if [ "x${fetchmail_users}" != "x" -a "x$1" != "x" -a "$uid" = "0" ]; then
+# query a value from the fetchmail config file, value specified in first argument
+fetchmail_dump_config()
+{
+	su -m ${fetchmail_user} -c sh -c "fetchmail -f ${fetchmail_config} --configdump" | fgrep $1 | cut -d: -f2
+}
+
+# arguments:
+# ACTION - perform ACTION for the one global daemon
+# ACTION USER GLOBALCONFIG - ditto, inside the recursive call
+# ACTION USER - perform ACTION for the USER-specific daemon, inside recursive call
+
+# if this is the global or 'umbrella' run
+if [ -z "$2" ] ; then
+	if [ "x${fetchmail_users}" != "x" -a "x$1" != "x" -a "$(id -u)" = "0" ]; then
 		# root mode: multiple user profiles are handled by recursive
 		# calls of this script
 		for user in ${fetchmail_users}; do
 			echo "===> fetchmail user: ${user}"
-			$fetchmail_script $1 ${user}
+			$fetchmail_script "$1" "${user}"
 			retcode="$?"
 			if [ "0${retcode}" -ne 0 ]; then
 				failed="${user} (${retcode}) ${failed:-}"
-			else
-				success="${user} ${success:-}"
 			fi
 		done
-		exit 0
-	else
-		if [ "x${fetchmail_users}" = "x" ]; then
-			# There is only one global configuration file
-			globalconfig=GLOBALCONFIG
-		fi
-		$fetchmail_script $1 `id -u -n` $globalconfig
-		retcode="$?"
-		if [ "0${retcode}" -ne 0 ]; then
-			failed="${user} (${retcode}) ${failed:-}"
+
+		# if we had any failures, exit with an error
+		if [ -n "${failed}" ] ; then
 			exit 1
-		else
-			success="${user} ${success:-}"
 		fi
-		exit 0
+
+		# otherwise, exit success
+                exit 0
         fi
+else
+	fetchmail_user="$2"
+fi
+
+# perform action for an instance of fetchmail daemon
+if [ "x${fetchmail_users}" != "x" ]; then
+	# multiuser setup:  determine user specific config and pid file
+	fetchmail_home="$(getent passwd ${fetchmail_user} | cut -f6 -d:)"
+	fetchmail_home="${fetchmail_home%/}"
+	fetchmail_config="${fetchmail_home}/${fetchmail_config_name}"
+	pidfile="${fetchmail_home}/.fetchmail.pid"
+	# PULLVARS - pull user specific variables into scope if existing
+	# else use global defaults
+	for i in chdir chroot env env_file fib flags nice \
+		limits login_class oomprotect program user group groups prepend \
+		logging_facility polling_interval
+	do
+		uvarname=fetchmail_${fetchmail_user}_${i}
+ 		eval fetchmail_${i}="\${${uvarname}-\${fetchmail_${i}}}"
+	done
+else
+	pidfile=/var/run/fetchmail/fetchmail.pid
+fi
+required_files=${fetchmail_config}
+
+# add early command line arguments
+# if logfile set in config file, do not override with rc.conf default (note logfile overrides syslog)
+_logfile="$(fetchmail_dump_config logfile)"
+if [ _"${_logfile}" != _"None," ] ; then
+	fetchmail_logging_facility=""
+fi
+
+fetchmail_flags="${fetchmail_flags} -f ${fetchmail_config} --pidfile ${pidfile} ${fetchmail_logging_facility}"
+
+# add late command line arguments
+# if no polling interval in config file, use value from rc.conf
+if [ "$(fetchmail_dump_config poll_interval)" = "0," ] ; then
+	fetchmail_flags="${fetchmail_flags} -d ${fetchmail_polling_interval}"
 fi
 
 # actually execute the fetchmail program
