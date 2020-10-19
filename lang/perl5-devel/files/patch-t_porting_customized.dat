@@ -1,19 +1,19 @@
 Fix tests for modified files.
 
---- t/porting/customized.dat.orig	2020-09-14 03:48:27 UTC
+--- t/porting/customized.dat.orig	2020-10-18 21:18:11 UTC
 +++ t/porting/customized.dat
-@@ -9,6 +9,7 @@ Digest::MD5 cpan/Digest-MD5/MD5.pm df5f0663f0f755be7ed
- Digest::MD5 cpan/Digest-MD5/MD5.xs 249bed648232192ce018f7f894ad127c3a639831
- Digest::MD5 cpan/Digest-MD5/t/files.t e987329d2411ff60ad9a2bdf93fdf5f6943467e8
+@@ -4,6 +4,7 @@
+ Config::Perl::V cpan/Config-Perl-V/V.pm 0a0f7207e6505b78ee345a933acb0246a13579f5
+ Devel::PPPort dist/Devel-PPPort/Makefile.PL c939c8d33d11994c06f546869df63d4518ece797
  ExtUtils::Constant cpan/ExtUtils-Constant/t/Constant.t d5c75c41d6736a0c5897130f534af0896a7d6f4d
 +ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_Any.pm ac29a8dc1c7d6f0aca4abff0730c05bde1dab3ad
+ ExtUtils::PL2Bat cpan/ExtUtils-PL2Bat/t/make_executable.t 2f58339b567d943712488812f06d99f907af46ab
  Filter::Util::Call pod/perlfilter.pod 9b4aec0d8518274ddb0dd37e3b770fe13a44dd1f
  Locale::Maketext::Simple cpan/Locale-Maketext-Simple/lib/Locale/Maketext/Simple.pm 57ed38905791a17c150210cd6f42ead22a7707b6
- Math::Complex cpan/Math-Complex/lib/Math/Complex.pm 66f28a17647e2de166909ca66e4ced26f8a0a62e
-@@ -27,7 +28,7 @@ Pod::Checker cpan/Pod-Checker/t/pod/contains_bad_pod.x
- Pod::Checker cpan/Pod-Checker/t/pod/selfcheck.t 8ce3cfd38e4b9bcf5bc7fe7f2a14195e49aed7d8
- Pod::Checker cpan/Pod-Checker/t/pod/testcmp.pl a0cd5c8eca775c7753f4464eee96fa916e3d8a16
- Pod::Checker cpan/Pod-Checker/t/pod/testpchk.pl b2072c7f4379fd050e15424175d7cac5facf5b3b
+@@ -22,7 +23,7 @@ Net::Ping dist/Net-Ping/t/010_pingecho.t 218d7a9ee5b6d
+ Net::Ping dist/Net-Ping/t/450_service.t f6578680f2872d7fc9f24dd75388d55654761875
+ Net::Ping dist/Net-Ping/t/500_ping_icmp.t 3eeb60181c01b85f876bd6658644548fdf2e24d4
+ Net::Ping dist/Net-Ping/t/501_ping_icmpv6.t 54373de5858f8fb7e078e4998a4b3b8dbca91783
 -Pod::Perldoc cpan/Pod-Perldoc/lib/Pod/Perldoc.pm 582be34c077c9ff44d99914724a0cc2140bcd48c
 +Pod::Perldoc cpan/Pod-Perldoc/lib/Pod/Perldoc.pm 8b35c5a137791b0cfedcffd2937cb3b5fb984cac
  Win32API::File cpan/Win32API-File/File.pm 8fd212857f821cb26648878b96e57f13bf21b99e

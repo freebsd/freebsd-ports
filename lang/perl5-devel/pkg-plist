@@ -168,6 +168,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/ExtUtils/MM_MacOS.pm
 %%PRIV_LIB%%/ExtUtils/MM_NW5.pm
 %%PRIV_LIB%%/ExtUtils/MM_OS2.pm
+%%PRIV_LIB%%/ExtUtils/MM_OS390.pm
 %%PRIV_LIB%%/ExtUtils/MM_QNX.pm
 %%PRIV_LIB%%/ExtUtils/MM_UWIN.pm
 %%PRIV_LIB%%/ExtUtils/MM_Unix.pm
@@ -444,6 +445,11 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/Test2/API/Breakage.pm
 %%PRIV_LIB%%/Test2/API/Context.pm
 %%PRIV_LIB%%/Test2/API/Instance.pm
+%%PRIV_LIB%%/Test2/API/InterceptResult.pm
+%%PRIV_LIB%%/Test2/API/InterceptResult/Event.pm
+%%PRIV_LIB%%/Test2/API/InterceptResult/Facet.pm
+%%PRIV_LIB%%/Test2/API/InterceptResult/Hub.pm
+%%PRIV_LIB%%/Test2/API/InterceptResult/Squasher.pm
 %%PRIV_LIB%%/Test2/API/Stack.pm
 %%PRIV_LIB%%/Test2/Event.pm
 %%PRIV_LIB%%/Test2/Event/Bail.pm
@@ -964,6 +970,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN1%%/perl5330delta.1.gz
 %%MAN1%%/perl5331delta.1.gz
 %%MAN1%%/perl5332delta.1.gz
+%%MAN1%%/perl5333delta.1.gz
 %%MAN1%%/perl561delta.1.gz
 %%MAN1%%/perl56delta.1.gz
 %%MAN1%%/perl581delta.1.gz
@@ -1266,6 +1273,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN3%%/ExtUtils::MM_MacOS.3.gz
 %%MAN3%%/ExtUtils::MM_NW5.3.gz
 %%MAN3%%/ExtUtils::MM_OS2.3.gz
+%%MAN3%%/ExtUtils::MM_OS390.3.gz
 %%MAN3%%/ExtUtils::MM_QNX.3.gz
 %%MAN3%%/ExtUtils::MM_UWIN.3.gz
 %%MAN3%%/ExtUtils::MM_Unix.3.gz
@@ -1545,6 +1553,10 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN3%%/Test2::API::Breakage.3.gz
 %%MAN3%%/Test2::API::Context.3.gz
 %%MAN3%%/Test2::API::Instance.3.gz
+%%MAN3%%/Test2::API::InterceptResult.3.gz
+%%MAN3%%/Test2::API::InterceptResult::Event.3.gz
+%%MAN3%%/Test2::API::InterceptResult::Hub.3.gz
+%%MAN3%%/Test2::API::InterceptResult::Squasher.3.gz
 %%MAN3%%/Test2::API::Stack.3.gz
 %%MAN3%%/Test2::Event.3.gz
 %%MAN3%%/Test2::Event::Bail.3.gz
@@ -1755,6 +1767,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/pod/perl5330delta.pod
 %%PRIV_LIB%%/pod/perl5331delta.pod
 %%PRIV_LIB%%/pod/perl5332delta.pod
+%%PRIV_LIB%%/pod/perl5333delta.pod
 %%PRIV_LIB%%/pod/perl561delta.pod
 %%PRIV_LIB%%/pod/perl56delta.pod
 %%PRIV_LIB%%/pod/perl581delta.pod
