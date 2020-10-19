@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	ncmpc
-PORTVERSION=	0.38
+PORTVERSION=	0.41
 CATEGORIES=	audio
-MASTER_SITES=	http://www.musicpd.org/download/ncmpc/0/
+MASTER_SITES=	https://www.musicpd.org/download/ncmpc/0/
 
 MAINTAINER=	laurent@nilio.ca
 COMMENT=	Ncurses client for the musicpd

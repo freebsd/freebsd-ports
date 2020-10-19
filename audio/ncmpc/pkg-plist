@@ -1,6 +1,5 @@
 bin/ncmpc
 %%LYRICS%%lib/ncmpc/lyrics/10-hd.sh
-%%LYRICS%%lib/ncmpc/lyrics/20-lyricwiki.rb
 %%MANPAGES%%man/man1/ncmpc.1.gz
 %%NLS%%share/locale/cs/LC_MESSAGES/ncmpc.mo
 %%NLS%%share/locale/da/LC_MESSAGES/ncmpc.mo
