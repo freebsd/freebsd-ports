@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	heimer
-DISTVERSION=	1.20.0
+DISTVERSION=	1.21.0
 CATEGORIES=	graphics
 
 MAINTAINER=	ports@FreeBSD.org
