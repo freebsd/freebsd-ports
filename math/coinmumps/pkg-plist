@@ -1,0 +1,8 @@
+include/coin/ThirdParty/dmumps_c.h
+include/coin/ThirdParty/mumps_c_types.h
+include/coin/ThirdParty/mumps_compat.h
+include/coin/ThirdParty/mumps_mpi.h
+lib/libcoinmumps.so
+lib/libcoinmumps.so.1
+lib/libcoinmumps.so.1.6.2
+libdata/pkgconfig/coinmumps.pc
