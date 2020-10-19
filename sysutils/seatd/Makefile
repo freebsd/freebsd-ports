@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	seatd
-DISTVERSION=	0.3.0
+DISTVERSION=	0.4.0
 CATEGORIES=	sysutils
 MASTER_SITES=	https://git.sr.ht/~kennylevinsen/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -27,16 +27,5 @@ OPTIONS_DEFAULT=MANPAGES
 MANPAGES_BUILD_DEPENDS=	scdoc:textproc/scdoc
 MANPAGES_MESON_ENABLED=	man-pages
 MANPAGES_PLIST_FILES=	man/man1/${PORTNAME}.1.gz
-
-post-patch:
-# hier(7) doesn't define /run, so use /var/run
-	@${REINPLACE_CMD} -e 's,/run,/var&,' \
-		${WRKSRC}/libseat/backend/seatd.c \
-		${WRKSRC}/man/seatd.1.scd \
-		${WRKSRC}/seatd/seatd.c
-# realpath(3) expands /dev/dri/ to /dev/drm/
-	@${REINPLACE_CMD} -e 's,/dev/dri,/dev/drm,' \
-		-e '/prefix/ { s/card//; s/renderD//; }' \
-		${WRKSRC}/common/drm.c
 
 .include <bsd.port.mk>
