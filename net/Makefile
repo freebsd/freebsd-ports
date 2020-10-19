@@ -426,6 +426,7 @@
     SUBDIR += measurement-kit
     SUBDIR += mediastreamer
     SUBDIR += mediatomb
+    SUBDIR += megacmd
     SUBDIR += megatools
     SUBDIR += messagelib
     SUBDIR += mgen

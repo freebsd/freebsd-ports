@@ -1,0 +1,7 @@
+MEGAcmd is a command line interactive and scriptable application.
+MEGAcmd provides non UI access to MEGA services. It intends to offer
+all the functionality with your MEGA account via commands.
+It features synchronization, backup of local folders into your MEG
+account and a webdav/streaming server.
+
+WWW: https://mega.nz/cm
