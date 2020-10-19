@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	rundeck
-DISTVERSION=	3.3.3
-DISTVERSIONSUFFIX=	20200910
+DISTVERSION=	3.3.4
+DISTVERSIONSUFFIX=	20201007
 CATEGORIES=	sysutils java
 MASTER_SITES=	https://download.rundeck.org/war/
 PKGNAMESUFFIX=	3
@@ -15,7 +15,7 @@ COMMENT=	Web-console for dispatching commands and scripts to your nodes
 LICENSE=	APACHE20
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.8+
+JAVA_VERSION=	1.8
 
 CONFLICTS_INSTALL=	rundeck2
 

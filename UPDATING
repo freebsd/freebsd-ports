@@ -22,6 +22,16 @@ you update your ports collection, before attempting any port upgrades.
 
   $ pkg delete -f libsoup-gnome
 
+20201011:
+  AFFECTS: users of sysutils/rundeck3 who use MySQL as database
+  AUTHOR: daniel.tihanyi@tetragir.com
+
+  Please note that the MySQL JDBC driver is no longer bundled with Rundeck.
+  Please make sure that you migrate to the MariaDB Connector or copy the
+  driver yourself. More instructions:
+
+  https://docs.rundeck.com/docs/upgrading/upgrading-to-rundeck-3.3.4.html
+
 20201006:
   AFFECTS: users of sysutils/tenshi
   AUTHOR: 0mp@FreeBSD.org
