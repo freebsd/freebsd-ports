@@ -2,12 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	pam_ldap
-PORTVERSION=	1.8.6
-PORTREVISION=	5
+PORTVERSION=	186
 CATEGORIES=	security net
 MASTER_SITES=	http://www.padl.com/download/ \
 		ftp://ftp.padl.com/pub/
-DISTNAME=	pam_ldap-${PORTVERSION:S/.//g}
 
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	PAM module for authenticating with LDAP
