@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ali
-PORTVERSION=	0.4.1
+PORTVERSION=	0.5.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	benchmarks
 
@@ -15,7 +15,7 @@ USES=		go:modules
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	nakabonne
-GH_TUPLE=	davecgh:go-spew:v1.1.0:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
+GH_TUPLE=	davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		gdamore:encoding:v1.0.0:gdamore_encoding/vendor/github.com/gdamore/encoding \
 		gdamore:tcell:v1.3.0:gdamore_tcell/vendor/github.com/gdamore/tcell \
 		go-yaml:yaml:9f266ea9e77c:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
@@ -39,6 +39,7 @@ GH_TUPLE=	davecgh:go-spew:v1.1.0:davecgh_go_spew/vendor/github.com/davecgh/go-sp
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		stretchr:testify:v1.6.1:stretchr_testify/vendor/github.com/stretchr/testify \
 		tsenart:vegeta:v12.8.3:tsenart_vegeta_v12/vendor/github.com/tsenart/vegeta/v12 \
+		uber-go:atomic:v1.7.0:uber_go_atomic/vendor/go.uber.org/atomic \
 		uber-go:goleak:v1.1.10:uber_go_goleak/vendor/go.uber.org/goleak
 
 PLIST_FILES=	bin/ali
