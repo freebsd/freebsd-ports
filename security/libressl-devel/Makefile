@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libressl
-PORTVERSION=	3.2.1
+PORTVERSION=	3.2.2
 CATEGORIES=	security devel
 MASTER_SITES=	OPENBSD/LibreSSL
 PKGNAMESUFFIX=	-devel
@@ -19,7 +19,6 @@ OPTIONS_DEFINE=	MAN3 NC
 OPTIONS_DEFAULT=	MAN3 NC
 MAN3_DESC=	Install API manpages (section 3)
 NC_DESC=	Install TLS-enabled netcat
-TLS1_3_DESC=	TLSv1.3 support (experimental)
 
 CONFLICTS_INSTALL=	libressl-[0-9]* \
 			openssl-[0-9]* \
