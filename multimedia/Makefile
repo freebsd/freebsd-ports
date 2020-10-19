@@ -354,6 +354,7 @@
     SUBDIR += qmmp-qt5
     SUBDIR += qt-faststart
     SUBDIR += qt5-multimedia
+    SUBDIR += quodlibet
     SUBDIR += quvi
     SUBDIR += quvi09
     SUBDIR += rage

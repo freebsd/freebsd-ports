@@ -1,0 +1,22 @@
+[
+{ type: install
+  message: <<EOM
+Consider to install the following ports to support additional audio formats:
+
+* multimedia/gstreamer1-plugins-faad : AAC audio support
+* multimedia/gstreamer1-plugins-flac : FLAC audio support
+* multimedia/gstreamer1-plugins-mpg123 : MP3 audio support
+* multimedia/gstreamer1-plugins-ogg : Ogg audio support
+* multimedia/gstreamer1-plugins-speex : Speex audio support
+* multimedia/gstreamer1-plugins-vorbis : Vorbis audio support
+* multimedia/gstreamer1-plugins-wavpack : WAV audio support
+* multimedia/gstreamer1-libav : Many more audio (e.g., WMA) support
+
+Some Quodlibet plugins require additional ports to be installed:
+
+* audio/py-musicbrainzngs : for Musicbrainz plugin
+* devel/py-pyinotify : for audio library update plugin
+* www/webkit2-gtk3 : for lyrics window plugin
+EOM
+}
+]
