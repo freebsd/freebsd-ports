@@ -1,8 +1,8 @@
 The LLVM Project is a collection of modular and reusable compiler and
-toolchain technologies.
+toolchain technologies.  This version adds support for CHERI on RISC-V
+and MIPS64.
 
 This port includes Clang (a C/C++/Objective-C compiler), LLD (a linker),
-LLDB (a debugger), an OpenMP runtime library, and the LLVM infrastructure
-these are built on.
+and the LLVM infrastructure these are built on.
 
-WWW: http://llvm.org/
+WWW: http://cheri-cpu.org
