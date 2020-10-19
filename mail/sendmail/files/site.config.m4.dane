@@ -1,0 +1,1 @@
+APPENDDEF(`conf_sendmail_ENVDEF', `-DDANE')
