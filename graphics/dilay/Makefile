@@ -3,7 +3,7 @@
 
 PORTNAME=	dilay
 DISTVERSION=	1.9.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,8 +21,6 @@ USE_CXXSTD=	c++14
 USE_GL=		gl
 USE_QT=		core gui opengl widgets xml buildtools_build
 
-CXXFLAGS+=	${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
-CXXFLAGS_gcc=	-Wno-narrowing
 MAKE_JOBS_UNSAFE=	yes  # Workaround for: https://github.com/abau/dilay/issues/19 parallel build fails (still a problem despite having been closed)
 
 PLIST_FILES=	bin/dilay \
