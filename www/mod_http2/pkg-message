@@ -1,6 +1,9 @@
 [
 { type: install
   message: <<EOM
+NOTE: The default www/apache24 package already contains mod_h2.
+This port exists for advance bug- and security fix delivery.
+
 The module shlib file has been renamed from mod_http2 to mod_h2 to
 allow the www/apache24 bundled and this (usually newer) module to
 coexist. Change the LoadModule line in your Apache config from
