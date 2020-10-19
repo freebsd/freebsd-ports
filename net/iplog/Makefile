@@ -11,7 +11,7 @@ MAINTAINER=	udo@schweigert-muc.de
 COMMENT=	TCP/IP traffic logging tool
 
 DEPRECATED=	Unmaintained and dead upstream. Does not build with modern compilers.
-EXPIRATION_DATE=2021-12-18
+EXPIRATION_DATE=2020-12-18
 
 USES=		gmake
 GNU_CONFIGURE=	yes
