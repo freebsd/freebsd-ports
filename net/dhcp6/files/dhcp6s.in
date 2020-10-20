@@ -4,7 +4,8 @@
 #
 
 # PROVIDE: dhcp6s
-# BEFORE: NETWORKING
+# REQUIRE: dhcp6c DAEMON
+# BEFORE: LOGIN
 # KEYWORD: shutdown
 
 # Add the following lines to

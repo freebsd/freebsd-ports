@@ -4,6 +4,7 @@
 #
 
 # PROVIDE: dhcp6c
+# REQUIRE: netif
 # BEFORE: NETWORKING
 # KEYWORD: shutdown
 
