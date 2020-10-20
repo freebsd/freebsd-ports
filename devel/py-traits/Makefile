@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	traits
-PORTVERSION=	5.1.2
+PORTVERSION=	6.1.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	${PYNUMPY}
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>
