@@ -11,6 +11,9 @@ COMMENT=	shutil.which for those not using Python 3.3
 
 LICENSE=	PSFL
 
+DEPRECATED=	Python 2 only, backport of Python 3
+EXPIRATION_DATE=	2020-12-31
+
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 
 USES=		python:2.7

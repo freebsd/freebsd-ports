@@ -11,6 +11,9 @@ COMMENT=	Backport of the functools module from Python 3.2.3 for use on 2.7
 
 LICENSE=	PSFL
 
+DEPRECATED=	Python 2 only, backport of Python 3
+EXPIRATION_DATE=	2020-12-31
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	MiCHiLU
 GH_PROJECT=	python-functools32
