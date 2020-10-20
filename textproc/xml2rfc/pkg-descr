@@ -1,5 +1,6 @@
 This is a port of xml2rfc, a tool for producing documents formatted
 according to the requirements of the RFC editor from XML, as described
-in RFCs 7749 and 7991.
+in RFCs 7749 and 7991 (as well as the v3 syntax currently described in
+https://tools.ietf.org/html/draft-iab-rfc7991bis).
 
 WWW: https://xml2rfc.tools.ietf.org/
