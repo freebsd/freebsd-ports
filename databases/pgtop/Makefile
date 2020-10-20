@@ -2,14 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	pgtop
-PORTVERSION=	0.05
-PORTREVISION=	5
+PORTVERSION=	0.11
 CATEGORIES=	databases
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:COSIMO
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Display PostgreSQL performance info like top(1)
+
+LICENSE=	GPLv2
 
 RUN_DEPENDS=	p5-Term-ReadKey>=2.10:devel/p5-Term-ReadKey \
 		p5-DBD-Pg>=1.22:databases/p5-DBD-Pg \

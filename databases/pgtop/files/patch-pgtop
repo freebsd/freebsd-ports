@@ -1,11 +1,11 @@
---- pgtop.orig	2009-12-12 22:59:39.014936884 +0900
-+++ pgtop	2009-12-12 22:59:47.966070360 +0900
-@@ -149,7 +149,7 @@
+--- pgtop.orig	2020-09-26 07:51:50 UTC
++++ pgtop
+@@ -131,7 +131,7 @@ GetOptions(
      "idle|i"              => \$config{idle},
      "resolve|r"           => \$config{resolve},
      "prompt!"             => \$config{prompt},
 -    "long|!"              => \$config{long_nums},
 +    "long!"               => \$config{long_nums},
+     "slow_threshold=i"    => \$config{slow_threshold},
+     "slack_webhook=s"     => \$config{slack_webhook},
  );
- 
- ## User may have put the port with the host.
