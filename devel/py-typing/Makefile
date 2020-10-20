@@ -12,6 +12,9 @@ COMMENT=	Type Hints for Python
 LICENSE=	PSFL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Python 2 only, backport of Python 3
+EXPIRATION_DATE=	2020-12-31
+
 USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 
