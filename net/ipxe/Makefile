@@ -2,10 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	ipxe
-DISTVERSION=	20200722
+DISTVERSION=	g20201020
+PORTEPOCH=	1
 CATEGORIES=	net
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Open source network boot firmware
 
 LICENSE=	GPLv2
@@ -17,7 +18,7 @@ USES=		gmake perl5 shebangfix
 USE_BINUTILS=	yes
 USE_GCC=	yes
 USE_GITHUB=	yes
-GH_TAGNAME=	b76052335788d0ad2c4b0bded116c3b02dd4bbc2
+GH_TAGNAME=	e6f9054
 USE_PERL5=	build
 SHEBANG_FILES=	util/geniso util/gensdsk
 MAKE_ARGS=	AR=${AR} \
