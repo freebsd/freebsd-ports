@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gtranslator
-PORTVERSION=	3.36.0
+PORTVERSION=	3.38.0
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 
