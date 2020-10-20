@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	croc
-PORTVERSION=	8.5.1
+PORTVERSION=	8.5.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -21,9 +21,9 @@ GH_TUPLE=	cespare:xxhash:v1.1.0:cespare_xxhash/vendor/github.com/cespare/xxhash 
 		denisbrodbeck:machineid:v1.0.1:denisbrodbeck_machineid/vendor/github.com/denisbrodbeck/machineid \
 		fatih:color:v1.9.0:fatih_color/vendor/github.com/fatih/color \
 		go-yaml:yaml:v2.2.7:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
-		golang:crypto:84dcc777aaee:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:4f7140c49acb:golang_net/vendor/golang.org/x/net \
-		golang:sys:2da7054afaeb:golang_sys/vendor/golang.org/x/sys \
+		golang:crypto:9e8e0b390897:golang_crypto/vendor/golang.org/x/crypto \
+		golang:net:7b1cca2348c0:golang_net/vendor/golang.org/x/net \
+		golang:sys:eeed37f84f13:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.3:golang_text/vendor/golang.org/x/text \
 		kalafut:imohash:v1.0.0:kalafut_imohash/vendor/github.com/kalafut/imohash \
 		mattn:go-colorable:v0.1.8:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
@@ -37,7 +37,7 @@ GH_TUPLE=	cespare:xxhash:v1.1.0:cespare_xxhash/vendor/github.com/cespare/xxhash 
 		schollz:mnemonicode:v1.0.1:schollz_mnemonicode/vendor/github.com/schollz/mnemonicode \
 		schollz:pake:v2.0.4:schollz_pake_v2/vendor/github.com/schollz/pake/v2 \
 		schollz:peerdiscovery:v1.6.0:schollz_peerdiscovery/vendor/github.com/schollz/peerdiscovery \
-		schollz:progressbar:v3.6.0:schollz_progressbar_v3/vendor/github.com/schollz/progressbar/v3 \
+		schollz:progressbar:v3.6.1:schollz_progressbar_v3/vendor/github.com/schollz/progressbar/v3 \
 		schollz:spinner:6bbc5f7804f9:schollz_spinner/vendor/github.com/schollz/spinner \
 		shurcooL:sanitized_anchor_name:v1.0.0:shurcool_sanitized_anchor_name/vendor/github.com/shurcooL/sanitized_anchor_name \
 		spaolacci:murmur3:v1.1.0:spaolacci_murmur3/vendor/github.com/spaolacci/murmur3 \
