@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-runner
-PORTVERSION=	13.4.1
+PORTVERSION=	13.5.0
 CATEGORIES=	devel
 MASTER_SITES=	https://gitlab-runner-downloads.s3.amazonaws.com/master/docker/:dockerx64 \
 		https://gitlab-runner-downloads.s3.amazonaws.com/master/docker/:dockerarm
@@ -29,10 +29,10 @@ USE_GITHUB=	nodefault
 # Find tags here:
 # https://gitlab.com/gitlab-org/gitlab-runner/tags
 GL_ACCOUNT=	gitlab-org
-GL_COMMIT=	e95f89a0ebf4256aaff814f64d0cef2ba1e7046e
-GITBRANCH=	13-4-stable
+GL_COMMIT=	ece8634382223b250b259534ed398d2c125b9911
+GITBRANCH=	13-5-stable
 # https://gitlab-runner-downloads.s3.amazonaws.com/latest/binaries/gitlab-runner-freebsd-amd64
-BUILT=		2020-09-25T20:04:42+0000
+BUILT=		2020-10-20T12:05:24+0000
 
 GH_TUPLE=	\
 		Azure:azure-pipeline-go:v0.2.2:azure_azure_pipeline_go/vendor/github.com/Azure/azure-pipeline-go \
@@ -67,6 +67,7 @@ GH_TUPLE=	\
 		getsentry:raven-go:dffeb57df75d:getsentry_raven_go/vendor/github.com/getsentry/raven-go \
 		go-inf:inf:v0.9.0:go_inf_inf/vendor/gopkg.in/inf.v0 \
 		go-ini:ini:v1.52.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
+		go-yaml:yaml:eeeca48fe776:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
 		go-yaml:yaml:v2.2.8:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		gogo:protobuf:v1.1.1:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang:appengine:v1.6.1:golang_appengine/vendor/google.golang.org/appengine \
@@ -148,8 +149,8 @@ GH_TUPLE=	\
 		sirupsen:logrus:v1.4.2:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		spf13:pflag:4c012f6dcd95:spf13_pflag/vendor/github.com/spf13/pflag \
 		square:go-jose:v2.3.1:square_go_jose/vendor/gopkg.in/square/go-jose.v2 \
-		stretchr:objx:v0.2.0:stretchr_objx/vendor/github.com/stretchr/objx \
-		stretchr:testify:v1.4.0:stretchr_testify/vendor/github.com/stretchr/testify \
+		stretchr:objx:v0.3.0:stretchr_objx/vendor/github.com/stretchr/objx \
+		stretchr:testify:v1.6.1:stretchr_testify/vendor/github.com/stretchr/testify \
 		tevino:abool:3c25f2fe7cd0:tevino_abool/vendor/github.com/tevino/abool \
 		urfave:cli:v1.20.0:urfave_cli/vendor/github.com/urfave/cli
 
