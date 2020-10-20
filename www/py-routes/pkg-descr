@@ -6,4 +6,4 @@ Speedy and dynamic URL generation means you get a URL with minimal cruft
 (no big dangling query args). Shortcut features like Named Routes cut down
 on repetitive typing.
 
-WWW: http://routes.groovie.org/
+WWW: https://routes.readthedocs.io/
