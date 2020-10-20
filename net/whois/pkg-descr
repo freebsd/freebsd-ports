@@ -1,4 +1,4 @@
 Why another whois client? Because the RIPE client is a mess of hacks and
 #ifdefs and more complex programs lack features or are bloated.
 
-WWW: http://www.linux.it/~md/software/
+WWW: https://github.com/rfc1036/whois

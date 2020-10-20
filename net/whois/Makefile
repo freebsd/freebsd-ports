@@ -3,7 +3,7 @@
 
 PORTNAME=	whois
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.5.6
+DISTVERSION=	5.5.7
 CATEGORIES=	net
 
 MAINTAINER=	coco@executive-computing.de
@@ -11,6 +11,8 @@ COMMENT=	Marco d'Itri whois client
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+LIB_DEPENDS=	libidn2.so:dns/libidn2
 
 USES=		iconv gmake perl5 pkgconfig
 USE_PERL5=	build

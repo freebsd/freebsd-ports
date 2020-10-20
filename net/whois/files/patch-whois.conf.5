@@ -2,15 +2,15 @@
 +++ whois.conf.5
 @@ -1,10 +1,10 @@
 -.TH "WHOIS.CONF" "5" "2019-12-30" "Petr Písař" "Debian GNU/Linux"
-+.TH "MWHOIS.CONF" "5" "2019-12-30" "Petr Písař" "Debian GNU/Linux"
++.TH "%%MWHOIST%%.CONF" "5" "2019-12-30" "Petr Písař" "Debian GNU/Linux"
  
  .SH NAME
 -whois.conf \- alternative WHOIS servers list for whois client
-+mwhois.conf \- alternative WHOIS servers list for mwhois client
++%%MWHOIS%%.conf \- alternative WHOIS servers list for %%MWHOIS%% client
  
  .SH SYNOPSIS
 -.B /etc/whois.conf
-+.B /usr/local/etc/mwhois.conf
++.B %%MWHOISCONF%%
  
  .SH DESCRIPTION
  This file contains a list of WHOIS servers which can augment or override
@@ -19,7 +19,7 @@
  considered.
  
 -The pattern is case-insensitive extended regular expression if whois client
-+The pattern is case-insensitive extended regular expression if mwhois client
++The pattern is case-insensitive extended regular expression if %%MWHOIS%% client
  has been compiled with POSIX regular expressions support. Otherwise, simple
  case-insensitive suffix comparison against WHOIS object identifier is used.
  
@@ -28,11 +28,11 @@
  
  .SH FILES
 -/etc/whois.conf
-+/usr/local/etc/mwhois.conf
++%%MWHOISCONF%%
  
  .SH "SEE ALSO"
 -.IR whois (1)
-+.IR mwhois (1)
++.IR %%MWHOIS%% (1)
  
  .SH AUTHOR
  This manual page was written by Petr Písař

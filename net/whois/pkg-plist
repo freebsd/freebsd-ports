@@ -13,7 +13,6 @@ man/man5/mwhois.conf.5.gz
 %%NLS%%share/locale/fr/LC_MESSAGES/mwhois.mo
 %%NLS%%share/locale/it/LC_MESSAGES/mwhois.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/mwhois.mo
-%%NLS%%share/locale/nb/LC_MESSAGES/mwhois.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/mwhois.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/mwhois.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/mwhois.mo

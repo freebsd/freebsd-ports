@@ -1,4 +1,4 @@
---- po/Makefile.orig	2019-12-31 02:05:47 UTC
+--- po/Makefile.orig	2020-10-03 15:43:15 UTC
 +++ po/Makefile
 @@ -1,4 +1,7 @@
  prefix = /usr
@@ -15,11 +15,11 @@
 -PACKAGE = whois
 +PACKAGE = %%MWHOIS%%
  
- CATALOGS = cs.mo da.mo de.mo el.mo es.mo eu.mo fi.mo fr.mo it.mo ja.mo nb.mo pl.mo pt_BR.mo ru.mo zh_CN.mo
+ CATALOGS = cs.mo da.mo de.mo el.mo es.mo eu.mo fi.mo fr.mo it.mo ja.mo pl.mo pt_BR.mo ru.mo zh_CN.mo
  
  POTFILES=../whois.c ../mkpasswd.c
  
-+.SUFFIXES:	.po .mo
++.SUFFIXES:     .po .mo
 +
  all: $(PACKAGE).pot $(CATALOGS)
  
