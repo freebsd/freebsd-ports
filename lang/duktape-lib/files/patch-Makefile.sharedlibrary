@@ -1,0 +1,47 @@
+--- Makefile.sharedlibrary.orig	2020-10-12 22:23:10 UTC
++++ Makefile.sharedlibrary
+@@ -52,22 +52,20 @@ INSTALL_PREFIX = /usr/local
+ DUKTAPE_SRCDIR = ./src
+ #DUKTAPE_SRCDIR = ./src-noline
+ 
+-CC = gcc
+-
+ .PHONY: all
+-all: libduktape.$(SO_REALNAME_SUFFIX) libduktaped.$(SO_REALNAME_SUFFIX)
++all: libduktape.$(SO_REALNAME_SUFFIX)
+ 
+ # If the default duk_config.h is not suitable for the distribution, modify it
+ # before compiling the shared library and copy the same, edited duk_config.h
+ # to $INSTALL_PREFIX/include on installation.
+ 
+ libduktape.$(SO_REALNAME_SUFFIX):
+-	$(CC) -shared -fPIC -Wall -Wextra -Os -Wl,$(LD_SONAME_ARG),libduktape.$(SO_SONAME_SUFFIX) \
++	$(CC) -shared -fPIC -Wall -Wextra ${CFLAGS} -Wl,$(LD_SONAME_ARG),libduktape.$(SO_SONAME_SUFFIX) \
+ 		-o $@ $(DUKTAPE_SRCDIR)/duktape.c
+ 
+-libduktaped.$(SO_REALNAME_SUFFIX):
+-	$(CC) -shared -fPIC -g -Wall -Wextra -Os -Wl,$(LD_SONAME_ARG),libduktaped.$(SO_SONAME_SUFFIX) \
+-		-o $@ $(DUKTAPE_SRCDIR)/duktape.c
++#libduktaped.$(SO_REALNAME_SUFFIX):
++#	$(CC) -shared -fPIC -g -Wall -Wextra -Os -Wl,$(LD_SONAME_ARG),libduktaped.$(SO_SONAME_SUFFIX) \
++#		-o $@ $(DUKTAPE_SRCDIR)/duktape.c
+ 
+ # Symlinks depend on platform conventions.
+ .PHONY: install
+@@ -77,12 +75,12 @@ install: libduktape.$(SO_REALNAME_SUFFIX) libduktaped.
+ 	rm -f $(INSTALL_PREFIX)/lib/libduktape.so $(INSTALL_PREFIX)/lib/libduktape.$(SO_SONAME_SUFFIX)
+ 	ln -s libduktape.$(SO_REALNAME_SUFFIX) $(INSTALL_PREFIX)/lib/libduktape.so
+ 	ln -s libduktape.$(SO_REALNAME_SUFFIX) $(INSTALL_PREFIX)/lib/libduktape.$(SO_SONAME_SUFFIX)
+-	rm -f $(INSTALL_PREFIX)/lib/libduktaped.so $(INSTALL_PREFIX)/lib/libduktaped.$(SO_SONAME_SUFFIX)
+-	ln -s libduktaped.$(SO_REALNAME_SUFFIX) $(INSTALL_PREFIX)/lib/libduktaped.so
+-	ln -s libduktaped.$(SO_REALNAME_SUFFIX) $(INSTALL_PREFIX)/lib/libduktaped.$(SO_SONAME_SUFFIX)
++#	rm -f $(INSTALL_PREFIX)/lib/libduktaped.so $(INSTALL_PREFIX)/lib/libduktaped.$(SO_SONAME_SUFFIX)
++#	ln -s libduktaped.$(SO_REALNAME_SUFFIX) $(INSTALL_PREFIX)/lib/libduktaped.so
++#	ln -s libduktaped.$(SO_REALNAME_SUFFIX) $(INSTALL_PREFIX)/lib/libduktaped.$(SO_SONAME_SUFFIX)
+ 	mkdir -p $(INSTALL_PREFIX)/include/
+ 	cp $(DUKTAPE_SRCDIR)/duktape.h $(DUKTAPE_SRCDIR)/duk_config.h $(INSTALL_PREFIX)/include/
+ 
+ CCOPTS = -I./examples/cmdline
+ duk:
+-	$(CC) $(CCOPTS) -I$(INSTALL_PREFIX)/include -L$(INSTALL_PREFIX)/lib -Wall -Wextra -Os -o $@ ./examples/cmdline/duk_cmdline.c -lduktape -lm
++	$(CC) $(CCOPTS) -I$(INSTALL_PREFIX)/include -L$(INSTALL_PREFIX)/lib -Wall -Wextra ${CFLAGS} -o $@ ./examples/cmdline/duk_cmdline.c -lduktape -lm
