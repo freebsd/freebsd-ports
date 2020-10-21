@@ -26,7 +26,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-wmakerdataprefix="${LOCALBASE}/share" \
 		--with-wmakeretcprefix="${LOCALBASE}/share"
 USE_XORG=	x11
-LIBS=		-L${LOCALBASE}/lib -lX11 -lWUtil
+LIBS=		-L${LOCALBASE}/lib -lintl -lX11 -lWUtil
 
 post-extract:
 	@${FIND} ${WRKSRC} -name "*.gmo" -delete
