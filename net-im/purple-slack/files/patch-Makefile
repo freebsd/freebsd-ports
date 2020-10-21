@@ -1,0 +1,11 @@
+--- Makefile.orig	2020-10-21 09:52:44 UTC
++++ Makefile
+@@ -57,7 +57,7 @@ PKGS=$(PURPLE_MOD) glib-2.0 gobject-2.0
+ CFLAGS = \
+     -g \
+     -O2 \
+-    -Wall -Werror \
++    -Wall \
+     -Wno-error=strict-aliasing \
+     -fPIC \
+     -D_DEFAULT_SOURCE=1 \
