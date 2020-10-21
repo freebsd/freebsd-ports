@@ -465,6 +465,7 @@
     SUBDIR += libkexiv2
     SUBDIR += libkipi
     SUBDIR += libksane
+    SUBDIR += libliftoff
     SUBDIR += liblqr-1
     SUBDIR += liblug
     SUBDIR += libmng
