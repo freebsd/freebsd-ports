@@ -1,9 +1,7 @@
 LIB=	openbsd-compat
 INTERNALLIB=
 
-SRCS=	basename.c \
-	dirname.c \
-	freezero.c \
+SRCS=	freezero.c \
 	getdtablecount.c \
 	imsg.c \
 	imsg-buffer.c \

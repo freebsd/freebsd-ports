@@ -57,17 +57,6 @@ int	open_posix(const char *path, int flags, ...);
 int	openat_posix(int fd, const char *path, int flags, ...);
 
 /*
- * <libgen.h>
- */
-#undef basename
-#undef dirname
-#define basename(path)	basename_const(path)
-#define dirname(path)	dirname_const(path)
-
-char	*basename(const char *);
-char	*dirname(const char *);
-
-/*
  * <stdlib.h>
  */
 void	freezero(void *, size_t);
