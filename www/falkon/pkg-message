@@ -1,11 +1,6 @@
 [
 { type: install
   message: <<EOM
-On FreeBSD < 11.3 Web Content process may frequently crash due to bug 181741.
-If you cannot upgrade try applying the following workaround:
-
-# sysctl net.local.stream.recvspace=16384
-
 If you get wrong colors when watching videos, this is probably because your
 system does not support hardware acceleration (see bug 237277): you can
 disable it by starting the browser from command line with the --disable-gpu
