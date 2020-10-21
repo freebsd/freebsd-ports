@@ -16,6 +16,7 @@ LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate \
 CONFLICTS_INSTALL=	chocolate-doom
 
 USES=		autoreconf pkgconfig python:build sdl shebangfix
+USE_CSTD=	c99
 USE_SDL=	mixer2 net2 sdl2
 GNU_CONFIGURE=	yes
 SHEBANG_FILES=	man/docgen man/simplecpp
