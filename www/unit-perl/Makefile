@@ -1,11 +1,14 @@
 # Created by: Sergey Osokin <osa@FreeBSD.org>
 # $FreeBSD$
 
+PORTREVISION=	1
 PKGNAMESUFFIX=	-perl${PERL_VER}
 
 COMMENT=	Perl module for NGINX Unit
 
 PLIST_FILES=	libexec/unit/modules/perl${PERL_VER}.unit.so
+
+RUN_DEPENDS=	unitd:www/unit
 
 USES=		perl5
 

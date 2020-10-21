@@ -1,6 +1,7 @@
 # Created by: Li-Wen Hsu <lwhsu@FreeBSD.org>
 # $FreeBSD$
 
+PORTREVISION=	1
 PKGNAMESUFFIX=	-python${PYTHON_SUFFIX}
 
 COMMENT=	Python module for NGINX Unit
@@ -9,6 +10,8 @@ USES=		python gettext-runtime
 USE_PYTHON=	flavors
 
 PLIST_FILES=	libexec/unit/modules/python${PYTHON_SUFFIX}.unit.so
+
+RUN_DEPENDS=	unitd:www/unit
 
 USE_RC_SUBR?=	# reset to empty
 

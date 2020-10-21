@@ -1,11 +1,14 @@
 # Created by: Li-Wen Hsu <lwhsu@FreeBSD.org>
 # $FreeBSD$
 
+PORTREVISION=	1
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 COMMENT=	PHP module for NGINX Unit
 
 PLIST_FILES=	libexec/unit/modules/php${PHP_VER}.unit.so
+
+RUN_DEPENDS=	unitd:www/unit
 
 USES=		php:build,embed,flavors
 
