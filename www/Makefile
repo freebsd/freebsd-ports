@@ -2257,6 +2257,7 @@
     SUBDIR += unit
     SUBDIR += unit-perl
     SUBDIR += unit-php
+    SUBDIR += unit-ruby
     SUBDIR += uwebsockets
     SUBDIR += uwsgi
     SUBDIR += uwsgitop
