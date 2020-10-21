@@ -22,7 +22,7 @@ PLIST_FILES=	etc/rc.d/dev_aws_disk		\
 
 .include <bsd.port.pre.mk>
 
-.if (${OSVERSION} < 1103501) || (${OSVERSION} >= 1200000 && ${OSVERSION} < 1200516) || (${OSVERSION} >= 1300000 && ${OSVERSION} < 1300039)
+.if ${OSVERSION} >= 1300000 && ${OSVERSION} < 1300039
 IGNORE= needs NVME_GET_NSID ioctl
 .endif
 
