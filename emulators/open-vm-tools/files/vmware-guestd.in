@@ -4,7 +4,7 @@
 #
 
 # PROVIDE: vmware-guestd
-# REQUIRE: FILESYSTEMS
+# REQUIRE: FILESYSTEMS ldconfig
 # BEFORE: LOGIN
 
 # Add these lines to /etc/rc.conf.local or /etc/rc.conf
