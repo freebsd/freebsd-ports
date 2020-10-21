@@ -47,7 +47,7 @@ CFLAGS+=	-Wno-error=zero-as-null-pointer-constant
 .endif
 
 # Fixes build failure for Clang 8.0.0
-.if ${OPSYS} == FreeBSD && && ${CHOSEN_COMPILER_TYPE} == clang
+.if ${OPSYS} == FreeBSD && ${CHOSEN_COMPILER_TYPE} == clang
 CFLAGS+=	-Wno-error=extra-semi-stmt
 .endif
 
