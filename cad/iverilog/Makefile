@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	iverilog
-PORTVERSION=	10.3
+PORTVERSION=	11.0
 CATEGORIES=	cad
-MASTER_SITES=	ftp://icarus.com/pub/eda/verilog/v10/
+MASTER_SITES=	ftp://icarus.com/pub/eda/verilog/v11/
 DISTNAME=	verilog-${PORTVERSION}
 
 MAINTAINER=	zeising@FreeBSD.org
