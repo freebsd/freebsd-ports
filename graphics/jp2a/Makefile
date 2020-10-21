@@ -17,6 +17,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libpng16.so:graphics/png
 
 USES=		jpeg localbase ncurses pkgconfig tar:bz2
+USE_CSTD=	c99
 
 GNU_CONFIGURE=	yes
 
