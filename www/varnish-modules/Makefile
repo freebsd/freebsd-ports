@@ -27,6 +27,8 @@ MAKE_JOBS_UNSAFE=	yes
 OPTIONS_DEFINE=	DOCS
 PORTDOCS=	*
 
+CFLAGS+=	-Wno-error=deprecated-declarations
+
 pre-configure:
 	cd ${WRKSRC} && ./bootstrap
 
