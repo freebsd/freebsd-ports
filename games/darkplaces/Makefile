@@ -14,7 +14,7 @@ COMMENT=	Quake engine modification
 # Loads libraries at run-time, thus RUN_DEPENDS.
 RUN_DEPENDS=	${LOCALBASE}/lib/libvorbis.so:audio/libvorbis
 
-USES=		gmake jpeg xorg zip:infozip
+USES=		compiler:c11 gmake jpeg xorg zip:infozip
 USE_XORG=	xxf86dga xpm
 MAKE_ENV=	DP_FS_BASEDIR="${Q1DIR}" DP_LINK_JPEG=dlopen
 WRKSRC=		${WRKDIR}/${PORTNAME}
