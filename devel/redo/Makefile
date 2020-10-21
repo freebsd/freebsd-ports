@@ -11,6 +11,8 @@ COMMENT=	Incremental build system
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/source/COPYING
 
+USES=		compiler:c++11-lang
+
 NO_WRKSUBDIR=	yes
 
 OPTIONS_DEFINE=	MANPAGES
