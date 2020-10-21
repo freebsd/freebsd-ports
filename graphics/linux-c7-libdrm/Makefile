@@ -19,8 +19,8 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && (${OSVERSION} < 1103501 \
- || (${OSVERSION} >= 1200000 && ${OSVERSION} < 1201501) \
+.if ${OPSYS} == FreeBSD && \
+   ((${OSVERSION} >= 1200000 && ${OSVERSION} < 1201501) \
  || (${OSVERSION} >= 1300000 && ${OSVERSION} < 1300048))
 PORTVERSION=	2.4.91
 DISTVERSIONSUFFIX=	-3.el7
