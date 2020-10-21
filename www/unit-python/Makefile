@@ -1,7 +1,7 @@
 # Created by: Li-Wen Hsu <lwhsu@FreeBSD.org>
 # $FreeBSD$
 
-PORTREVISION=	1
+PORTREVISION=	2
 PKGNAMESUFFIX=	-python${PYTHON_SUFFIX}
 
 COMMENT=	Python module for NGINX Unit
@@ -21,6 +21,10 @@ post-configure:
 	cd ${CONFIGURE_WRKSRC} && \
 	./configure python --module=python${PYTHON_SUFFIX} \
 			--config=${PYTHON_CMD}-config
+
+do-build:
+	cd ${CONFIGURE_WRKSRC} && ${MAKE} python${PYTHON_SUFFIX}
+
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/unit/modules/
 	${INSTALL_LIB} ${WRKSRC}/build/python${PYTHON_SUFFIX}.unit.so \

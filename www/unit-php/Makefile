@@ -1,7 +1,7 @@
 # Created by: Li-Wen Hsu <lwhsu@FreeBSD.org>
 # $FreeBSD$
 
-PORTREVISION=	1
+PORTREVISION=	2
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 COMMENT=	PHP module for NGINX Unit
@@ -20,6 +20,9 @@ post-configure:
 	cd ${CONFIGURE_WRKSRC} && \
 	./configure php --lib-path=${LOCALBASE}/lib \
 			--module=php${PHP_VER}
+
+do-build:
+	cd ${CONFIGURE_WRKSRC} && ${MAKE} php${PHP_VER}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/unit/modules/
