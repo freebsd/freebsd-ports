@@ -2,14 +2,16 @@
 # $FreeBSD$
 
 PORTREVISION=	3
-PKGNAMESUFFIX=	-ruby${RUBY_VER}
+PKGNAMESUFFIX=	-${UNIT_MODNAME}
+
+UNIT_MODNAME=	ruby${RUBY_VER}
 
 COMMENT=	Ruby module for NGINX Unit
 
 RUN_DEPENDS=	rackup:www/rubygem-rack \
 		unitd:www/unit
 
-PLIST_FILES=	libexec/unit/modules/ruby${RUBY_VER}.unit.so
+PLIST_FILES=	libexec/unit/modules/${UNIT_MODNAME}.unit.so
 
 USE_RUBY=	yes
 
@@ -19,14 +21,14 @@ MASTERDIR=	${.CURDIR}/../unit
 
 post-configure:
 	cd ${CONFIGURE_WRKSRC} && \
-	./configure ruby --module=ruby${RUBY_VER}
+	./configure ruby --module=${UNIT_MODNAME}
 
 do-build:
-	cd ${CONFIGURE_WRKSRC} && ${MAKE} ruby${RUBY_VER}
+	cd ${CONFIGURE_WRKSRC} && ${MAKE} ${UNIT_MODNAME}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/unit/modules/
-	${INSTALL_LIB} ${WRKSRC}/build/ruby${RUBY_VER}.unit.so \
+	${INSTALL_LIB} ${WRKSRC}/build/${UNIT_MODNAME}.unit.so \
 		${STAGEDIR}${PREFIX}/libexec/unit/modules/
 
 .include "${MASTERDIR}/Makefile"
