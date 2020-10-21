@@ -110,7 +110,7 @@ DIST_SUBDIR=	PECL
 
 PHPBASE?=	${LOCALBASE}
 
-_ALL_PHP_VERSIONS=	72 73 74
+_ALL_PHP_VERSIONS=	72 73 74 80
 
 # Make the already installed PHP the default one.
 .  if exists(${PHPBASE}/etc/php.conf)
@@ -178,7 +178,10 @@ PHP_VER=	${FLAVOR:S/^php//}
 	(${FLAVOR:Mphp[0-9][0-9]} && ${FLAVOR} != ${FLAVORS:[1]})
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
-.    if ${PHP_VER} == 74
+.    if ${PHP_VER} == 80
+PHP_EXT_DIR=   20200930
+PHP_EXT_INC=    hash pcre spl
+.    elif ${PHP_VER} == 74
 PHP_EXT_DIR=   20190902
 PHP_EXT_INC=    hash pcre spl
 .    elif ${PHP_VER} == 73
@@ -377,11 +380,12 @@ _USE_PHP_ALL=	bcmath bitset bz2 calendar ctype curl dba dom \
 		pdo_odbc pdo_pgsql pdo_sqlite phar pgsql posix \
 		pspell radius readline redis session shmop simplexml snmp soap\
 		sockets spl sqlite3 sysvmsg sysvsem sysvshm \
-		tidy tokenizer xml xmlreader xmlrpc xmlwriter xsl zip zlib
+		tidy tokenizer xml xmlreader xmlwriter xsl zip zlib
 # version specific components
-_USE_PHP_VER72=	${_USE_PHP_ALL} interbase recode sodium wddx
-_USE_PHP_VER73=	${_USE_PHP_ALL} interbase recode sodium wddx
-_USE_PHP_VER74=	${_USE_PHP_ALL} ffi sodium
+_USE_PHP_VER72=	${_USE_PHP_ALL} interbase recode sodium xmlrpc wddx
+_USE_PHP_VER73=	${_USE_PHP_ALL} interbase recode sodium xmlrpc wddx
+_USE_PHP_VER74=	${_USE_PHP_ALL} ffi sodium xmlrpc
+_USE_PHP_VER80=	${_USE_PHP_ALL} ffi sodium
 
 bcmath_DEPENDS=	math/php${PHP_VER}-bcmath
 bitset_DEPENDS=	math/pecl-bitset@${PHP_FLAVOR}
