@@ -15651,3 +15651,4 @@ sysutils/plasma5-user-manager|x11/plasma5-plasma-desktop|2020-10-13|Reintegrated
 devel/geany-plugin-geanypy||2020-10-15|Has expired: Uses deprecated version of python
 comms/chirp||2020-10-16|Use deprecated version of python
 x11-toolkits/py-gtk2||2020-10-16|Remove deprecated binding replace by py-gobject
+www/py-unit|www/unit-python|2020-10-21|Rename to be more consistent with the naming convention

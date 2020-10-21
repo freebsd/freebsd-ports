@@ -5,6 +5,12 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20201021:
+  AFFECTS: users of www/py-unit
+  AUTHOR: osa@FreeBSD.org
+
+  The www/py-unit port has been renamed to www/unit-python.
+
 20201012:
   AFFECTS: Users of mesa-dri with VAAPI or VDPAU options
   AUTHOR: manu@FreeBSD.org
