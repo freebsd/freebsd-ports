@@ -16,10 +16,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libxml2.so:textproc/libxml2
 
-USES=		gmake libtool
+USES=		gmake libtool localbase:ldflags
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
+LDFLAGS+=	-lpthread
 USE_LDCONFIG=	yes
 PLIST_SUB=	MACHINE_ARCH=${MACHINE_ARCH}
 INSTALL_TARGET=	install-strip
