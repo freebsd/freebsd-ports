@@ -16,6 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	${LOCALBASE}/include/uthash.h:devel/uthash
 
 USES=		charsetfix shebangfix tar:xz
+USE_CSTD=	c99
 SHEBANG_FILES=	contrib/snmptest.pl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-dhcpd-conf=${LOCALBASE}/etc/dhcpd.conf \
