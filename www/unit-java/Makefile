@@ -49,22 +49,22 @@ TOMCAT_VERSION=	9.0.13
 UNIT_VERSION=	1.20.0
 
 PLIST_FILES=	libexec/unit/modules/${UNIT_MODNAME}.unit.so \
-		%%JAVAJARDIR%%/classgraph-4.4.11.jar \
-		%%JAVAJARDIR%%/ecj-3.13.102.jar \
-		%%JAVAJARDIR%%/jetty-http-9.4.12.v20180830.jar \
-		%%JAVAJARDIR%%/jetty-server-9.4.12.v20180830.jar \
-		%%JAVAJARDIR%%/jetty-util-9.4.12.v20180830.jar \
-		%%JAVAJARDIR%%/nginx-unit-jsc-java${JAVA_PORT_VERSION}-1.20.0.jar \
-		%%JAVAJARDIR%%/tomcat-api-9.0.13.jar \
-		%%JAVAJARDIR%%/tomcat-el-api-9.0.13.jar \
-		%%JAVAJARDIR%%/tomcat-jasper-9.0.13.jar \
-		%%JAVAJARDIR%%/tomcat-jasper-el-9.0.13.jar \
-		%%JAVAJARDIR%%/tomcat-jsp-api-9.0.13.jar \
-		%%JAVAJARDIR%%/tomcat-juli-9.0.13.jar \
-		%%JAVAJARDIR%%/tomcat-servlet-api-9.0.13.jar \
-		%%JAVAJARDIR%%/tomcat-util-scan-9.0.13.jar \
-		%%JAVAJARDIR%%/tomcat-util-9.0.13.jar \
-		%%JAVAJARDIR%%/websocket-api-java${JAVA_PORT_VERSION}-1.20.0.jar
+		%%JAVAJARDIR%%/classgraph-${CLASSGRAPH_VERSION}.jar \
+		%%JAVAJARDIR%%/ecj-${ECJ_VERSION}.jar \
+		%%JAVAJARDIR%%/jetty-http-${JETTY_VERSION}.jar \
+		%%JAVAJARDIR%%/jetty-server-${JETTY_VERSION}.jar \
+		%%JAVAJARDIR%%/jetty-util-${JETTY_VERSION}.jar \
+		%%JAVAJARDIR%%/nginx-unit-jsc-java${JAVA_PORT_VERSION}-${UNIT_VERSION}.jar \
+		%%JAVAJARDIR%%/tomcat-api-${TOMCAT_VERSION}.jar \
+		%%JAVAJARDIR%%/tomcat-el-api-${TOMCAT_VERSION}.jar \
+		%%JAVAJARDIR%%/tomcat-jasper-${TOMCAT_VERSION}.jar \
+		%%JAVAJARDIR%%/tomcat-jasper-el-${TOMCAT_VERSION}.jar \
+		%%JAVAJARDIR%%/tomcat-jsp-api-${TOMCAT_VERSION}.jar \
+		%%JAVAJARDIR%%/tomcat-juli-${TOMCAT_VERSION}.jar \
+		%%JAVAJARDIR%%/tomcat-servlet-api-${TOMCAT_VERSION}.jar \
+		%%JAVAJARDIR%%/tomcat-util-scan-${TOMCAT_VERSION}.jar \
+		%%JAVAJARDIR%%/tomcat-util-${TOMCAT_VERSION}.jar \
+		%%JAVAJARDIR%%/websocket-api-java${JAVA_PORT_VERSION}-${UNIT_VERSION}.jar
 
 USE_JAVA=	yes
 JAVA_VERSION=	8+
