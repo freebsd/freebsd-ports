@@ -1,8 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-Install %%PYTHON_PKGNAMEPREFIX%%pandas (Ports directory: math/py-pandas) if you want to make use
-of the Pandas Dataframe structure.
-EOM
-}
-]
