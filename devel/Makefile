@@ -6160,6 +6160,7 @@
     SUBDIR += rubygem-json_pure1
     SUBDIR += rubygem-json_schemer
     SUBDIR += rubygem-jsonapi-renderer
+    SUBDIR += rubygem-jsonpath
     SUBDIR += rubygem-kafo
     SUBDIR += rubygem-kafo_parsers
     SUBDIR += rubygem-kafo_wizards
@@ -6518,6 +6519,7 @@
     SUBDIR += rubygem-timers
     SUBDIR += rubygem-tins
     SUBDIR += rubygem-titlecase
+    SUBDIR += rubygem-to_regexp
     SUBDIR += rubygem-tool
     SUBDIR += rubygem-transaction-simple
     SUBDIR += rubygem-travis
