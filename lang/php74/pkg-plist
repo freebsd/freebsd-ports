@@ -220,7 +220,7 @@ include/php/ext/standard/url.h
 include/php/ext/standard/url_scanner_ex.h
 include/php/ext/standard/winver.h
 @postexec touch %D/include/php/ext/php_config.h
-@postunexec [ -s %D/include/php/ext/php_config.h ] || rm %D/include/php/ext/php_config.h
+@rmempty include/php/ext/php_config.h
 include/php/main/SAPI.h
 include/php/main/build-defs.h
 include/php/main/fastcgi.h
