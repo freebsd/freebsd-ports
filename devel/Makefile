@@ -804,6 +804,7 @@
     SUBDIR += gitolite2
     SUBDIR += gittrac
     SUBDIR += gitui
+    SUBDIR += glab
     SUBDIR += glade
     SUBDIR += glademm
     SUBDIR += glib20
