@@ -1,4 +1,4 @@
-@postunexec if [ ! -s %D/%%ETCDIR%%/proxy.pac ]; then rm -f %D/%%ETCDIR%%/proxy.pac; fi
+@rmempty %%ETCDIR%%/proxy.pac
 bin/traffic_cache_tool
 bin/traffic_crashlog
 bin/traffic_ctl
