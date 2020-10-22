@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	cheroot
-PORTVERSION=	8.3.0
+PORTVERSION=	8.4.5
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	k@stereochro.me
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Highly-optimized, pure-python HTTP server
 
 LICENSE=	BSD3CLAUSE
@@ -29,7 +29,8 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}backports.functools_lru_cache>0:devel/py-ba
 .endif
 
 .if ${PYTHON_REL} < 3400
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}more-itertools5>=2.6:devel/py-more-itertools5@${PY_FLAVOR}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}more-itertools5>=2.6:devel/py-more-itertools5@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}selectors2>=0:devel/py-selectors2@${PY_FLAVOR}
 .else
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}more-itertools>=2.6:devel/py-more-itertools@${PY_FLAVOR}
 .endif
