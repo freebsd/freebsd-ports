@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mixertui
-DISTVERSION=	1.2
+DISTVERSION=	1.3
 CATEGORIES=	audio
 
 MAINTAINER=	alfix86@gmail.com
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libsysctlmibinfo2.so:devel/libsysctlmibinfo2
 USE_GITLAB=	yes
 
 GL_ACCOUNT=	alfix
-GL_COMMIT=	5a07331c1f3d8b3631b9b48366472ffba51b8eab
+GL_COMMIT=	9671034fa71e0096afcfd48974ed1e4acbc7c6fe
 
 PLIST_FILES=	share/man/man8/${PORTNAME}.8.gz \
 		sbin/${PORTNAME}
