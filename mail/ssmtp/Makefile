@@ -3,7 +3,7 @@
 
 PORTNAME=	ssmtp
 PORTVERSION=	2.64
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	mail
 MASTER_SITES=	DEBIAN_POOL
 DISTFILES=	${PORTNAME}_${PORTVERSION}.orig${EXTRACT_SUFX}
@@ -17,11 +17,9 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 USES=		gmake tar:bzip2
 GNU_CONFIGURE=	yes
 
-MAKE_ENV+=	TARGET_ARCH=
-CFLAGS+=	-I${OPENSSLINC}
-LDFLAGS+=	-L${OPENSSLLIB}
+MAKE_ENV=	TARGET_ARCH=
 
-SUB_FILES+=	pkg-message
+SUB_FILES=	pkg-message
 
 GROUPS=		ssmtp
 
@@ -30,26 +28,20 @@ OPTIONS_DEFAULT=	CRAMMD5 OPENSSL XORIGIP
 
 CRAMMD5_DESC=	CRAM-MD5 authentication support
 LOGFILE_DESC=	Log file
-USERPREFS_DESC=	User-defined revaliases
+USERPREFS_DESC=	User-defined revaliases in ~/.ssmtprc
 XORIGIP_DESC=	X-Originating-IP header for REMOTE_ADDR envvar
 
-CRAMMD5_CONFIGURE_ON=	--enable-md5auth
-IPV6_CONFIGURE_ON=	--enable-inet6
-LOGFILE_CONFIGURE_ON=	--enable-logfile
-OPENSSL_USES=		ssl
-OPENSSL_CONFIGURE_ON=	--enable-ssl
-XORIGIP_EXTRA_PATCHES=	${FILESDIR}/remote-addr.patch
+CRAMMD5_CONFIGURE_ENABLE=	md5auth
+IPV6_CONFIGURE_ENABLE=		inet6
+LOGFILE_CONFIGURE_ENABLE=	logfile
+OPENSSL_USES=			ssl
+OPENSSL_CONFIGURE_ENABLE=	ssl
+OPENSSL_CFLAGS=			-I${OPENSSLINC}
+OPENSSL_LDFLAGS=		-L${OPENSSLLIB}
+USERPREFS_CFLAGS=		-DUSERPREFS
+XORIGIP_EXTRA_PATCHES=		${FILESDIR}/remote-addr.patch
 
 _MAILERCONF=	/etc/mail/mailer.conf
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MUSERPREFS}
-CFLAGS+=	-DUSERPREFS
-pre-everything::
-	@${ECHO_CMD} "If you don't want to let your users set their own revalias address"
-	@${ECHO_CMD} "(in ~/.ssmtprc), please define WITHOUT_USERPREFS."
-.endif
 
 post-configure:
 	@${REINPLACE_CMD} -e "s,/etc/ssl/certs/ssmtp.pem,${PREFIX}/etc/ssmtp/ssmtp.pem,g" \
@@ -58,14 +50,14 @@ post-configure:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ssmtp ${STAGEDIR}${PREFIX}/sbin/ssmtp
-	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/ssmtp
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/revaliases \
-		${STAGEDIR}${PREFIX}/etc/ssmtp/revaliases.sample
+		${STAGEDIR}${ETCDIR}/revaliases.sample
 	${INSTALL_DATA} ${WRKSRC}/ssmtp.conf \
-		${STAGEDIR}${PREFIX}/etc/ssmtp/ssmtp.conf.sample
-	${INSTALL_MAN} ${WRKSRC}/ssmtp.8 ${STAGEDIR}${MANPREFIX}/man/man8/ssmtp.8
+		${STAGEDIR}${ETCDIR}/ssmtp.conf.sample
+	${INSTALL_MAN} ${WRKSRC}/ssmtp.8 ${STAGEDIR}${MAN8PREFIX}/share/man/man8
 	${INSTALL_MAN} ${WRKSRC}/ssmtp.conf.5 \
-		${STAGEDIR}${MANPREFIX}/man/man5/ssmtp.conf.5
+		${STAGEDIR}${MAN5PREFIX}/share/man/man5
 
 replace:
 	@${REINPLACE_CMD} -e 's,^[^#],#&,g' ${_MAILERCONF}

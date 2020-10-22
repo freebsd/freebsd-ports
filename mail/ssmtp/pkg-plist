@@ -1,6 +1,6 @@
 @(,ssmtp,2555) sbin/ssmtp
-@(,ssmtp,640) etc/ssmtp/revaliases.sample
-@(,ssmtp,640) etc/ssmtp/ssmtp.conf.sample
-man/man5/ssmtp.conf.5.gz
-man/man8/ssmtp.8.gz
+@sample(,ssmtp,640) etc/ssmtp/revaliases.sample
+@sample(,ssmtp,640) etc/ssmtp/ssmtp.conf.sample
+share/man/man5/ssmtp.conf.5.gz
+share/man/man8/ssmtp.8.gz
 @dir(,ssmtp,750) etc/ssmtp

@@ -3,8 +3,7 @@
   message: <<EOM
 sSMTP has been installed successfully.
 
-To replace sendmail with ssmtp type "make replace" or change
-your /etc/mail/mailer.conf to:
+Firstly, edit /etc/mail/mailer.conf to replace sendmail with ssmtp:
 
 sendmail	%%PREFIX%%/sbin/ssmtp
 send-mail	%%PREFIX%%/sbin/ssmtp
@@ -13,11 +12,15 @@ newaliases	%%PREFIX%%/sbin/ssmtp
 hoststat	/usr/bin/true
 purgestat	/usr/bin/true
 
+Hint: in case sSMPT is being installed directly from ports,
+editing /etc/mail/mailer.conf can be done by running "make replace".
 
-However, before you can use the program, you should copy the files
-"revaliases.sample" and "ssmtp.conf.sample" in %%PREFIX%%/etc/ssmtp
-to "revaliases" and "ssmtp.conf" respectively and edit them to suit
-your needs.
+Secondly, edit the following files to configure sSMTP:
+
+- %%ETCDIR%%/revaliases
+- %%ETCDIR%%/ssmtp.conf
+
+At this point sSMTP should be ready to go.
 EOM
 }
 ]
