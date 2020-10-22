@@ -1,4 +1,5 @@
 bin/lxtask
+man/man1/lxtask.1.gz
 share/applications/lxtask.desktop
 %%NLS%%share/locale/af/LC_MESSAGES/lxtask.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/lxtask.mo
@@ -47,3 +48,21 @@ share/applications/lxtask.desktop
 %%NLS%%share/locale/vi/LC_MESSAGES/lxtask.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/lxtask.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/lxtask.mo
+%%NLS%%share/locale/ast/LC_MESSAGES/lxtask.mo
+%%NLS%%share/locale/be/LC_MESSAGES/lxtask.mo
+%%NLS%%share/locale/bn/LC_MESSAGES/lxtask.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/lxtask.mo
+%%NLS%%share/locale/fo/LC_MESSAGES/lxtask.mo
+%%NLS%%share/locale/is/LC_MESSAGES/lxtask.mo
+%%NLS%%share/locale/kk/LC_MESSAGES/lxtask.mo
+%%NLS%%share/locale/lg/LC_MESSAGES/lxtask.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/lxtask.mo
+%%NLS%%share/locale/pa/LC_MESSAGES/lxtask.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/lxtask.mo
+%%NLS%%share/locale/sq/LC_MESSAGES/lxtask.mo
+%%NLS%%share/locale/sr@latin/LC_MESSAGES/lxtask.mo
+%%NLS%%share/locale/te/LC_MESSAGES/lxtask.mo
+%%NLS%%share/locale/th/LC_MESSAGES/lxtask.mo
+%%NLS%%share/locale/tt_RU/LC_MESSAGES/lxtask.mo
+%%NLS%%share/locale/ug/LC_MESSAGES/lxtask.mo
+

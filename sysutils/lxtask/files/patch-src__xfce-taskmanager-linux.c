@@ -1,87 +1,56 @@
---- src/xfce-taskmanager-linux.c.orig	2011-06-21 21:50:00 UTC
-+++ src/xfce-taskmanager-linux.c
-@@ -29,6 +29,7 @@
- #include <glib/gprintf.h>
+--- src/xfce-taskmanager-linux.c.orig	2019-01-13 13:25:38.000000000 -0800
++++ src/xfce-taskmanager-linux.c	2020-10-21 12:58:00.556146000 -0700
+@@ -30,6 +30,8 @@
  #include "xfce-taskmanager-linux.h"
+ /* #include <sys/sysinfo.h> */
  
-+#define PAGE_SIZE ( sysconf(_SC_PAGESIZE) )
- 
- #if 1
- void get_task_details(gint pid,struct task *task)
-@@ -40,7 +41,7 @@ void get_task_details(gint pid,struct ta
++#define page_size ( sysconf(_SC_PAGESIZE) )
++
+ void get_task_details(pid_t pid,struct task *task)
+ {
+ 	int fd;
+@@ -41,7 +43,7 @@
  	task->checked=FALSE;
-         task->size=0;
+ 	task->size=0;
  
--	sprintf(line,"/proc/%d/statm",pid);
-+	sprintf(line,"/compat/linux/proc/%d/statm",pid);
+-	sprintf(line,"/proc/%d/statm",(int)pid);
++	sprintf(line,"/compat/linux/proc/%d/statm",(int)pid);
          fd=open(line,O_RDONLY);
          if(fd==-1) return;
-         read(fd,line,256);
-@@ -50,7 +51,7 @@ void get_task_details(gint pid,struct ta
- 	task->size*=PAGE_SIZE;
- 	task->rss*=PAGE_SIZE;
+         ret = read(fd,line,255);
+@@ -57,7 +59,7 @@
+ 	task->size = t_size * page_size;
+ 	task->rss = t_rss * page_size;
  
--	sprintf(line,"/proc/%d/stat",pid);
-+	sprintf(line,"/compat/linux/proc/%d/stat",pid);
+-	sprintf(line,"/proc/%d/stat",(gint)pid);
++	sprintf(line,"/compat/linux/proc/%d/stat",(gint)pid);
  	fd=open(line,O_RDONLY);
  	if(fd!=-1)
  	{
-@@ -136,8 +137,8 @@ struct task get_task_details(gint pid)
-     gchar filename[255];
-     gchar cmdline_filename[255];
+@@ -98,7 +100,7 @@
+ 		if(show_full_path)
+ 		{
+ 			FILE *fp;
+-			sprintf(line,"/proc/%d/cmdline",(int)pid);
++			sprintf(line,"/compat/linux/proc/%d/cmdline",(int)pid);
+ 			fp=fopen(line,"r");
+ 			if(fp)
+ 			{
+@@ -124,7 +126,7 @@
+ 		else if(len>=15)
+ 		{
+ 			FILE *fp;
+-			sprintf(line,"/proc/%d/cmdline",(int)pid);
++			sprintf(line,"/compat/linux/proc/%d/cmdline",(int)pid);
+ 			fp=fopen(line,"r");
+ 			if(fp)
+ 			{
+@@ -169,7 +171,7 @@
+ 		task->time_percentage = 0;
+ 		task->ppid = ppid;
  
--    sprintf(filename, "/proc/%i/stat", pid);
--    sprintf(cmdline_filename, "/proc/%i/cmdline", pid);
-+    sprintf(filename, "/compat/linux/proc/%i/stat", pid);
-+    sprintf(cmdline_filename, "/compat/linux/proc/%i/cmdline", pid);
- 
-     stat(filename, &status);
- 
-@@ -253,9 +254,9 @@ GArray *get_task_list(void)
-     GArray *task_list;
-     int count=0;
- 
--    if((dir = opendir("/proc/")) == NULL)
-+    if((dir = opendir("/compat/linux/proc/")) == NULL)
-     {
--        fprintf(stderr, "Error: couldn't load the /proc directory\n");
-+        fprintf(stderr, "Error: couldn't load the /compat/linux/proc directory\n");
-         return NULL;
-     }
- 
-@@ -295,7 +296,7 @@ GArray *get_task_list(void)
- 
- 
-     task_list = g_array_new(FALSE, FALSE, sizeof (struct task));
--    n=scandir("/proc",&namelist,proc_filter,0);
-+    n=scandir("/compat/linux/proc",&namelist,proc_filter,0);
-     if(n<0) return task_list;
- 
-     g_array_set_size(task_list,n);
-@@ -318,7 +319,7 @@ GArray *get_task_list(void)
- 
- gboolean get_cpu_usage_from_proc(system_status *sys_stat)
- {
--    const gchar *file_name = "/proc/stat";
-+    const gchar *file_name = "/compat/linux/proc/stat";
-     FILE *file;
- 
-     if ( sys_stat->valid_proc_reading == TRUE ) {
-@@ -359,7 +360,7 @@ gboolean get_system_status (system_statu
-     int reach;
-     static int cpu_count;
- 
--    file = fopen ("/proc/meminfo", "r");
-+    file = fopen ("/compat/linux/proc/meminfo", "r");
-     if(!file) return FALSE;
-     reach=0;
-     while (fgets (buffer, 100, file) != NULL)
-@@ -378,7 +379,7 @@ gboolean get_system_status (system_statu
- 
-     if(!cpu_count)
-     {
--        file = fopen ("/proc/cpuinfo", "r");
-+        file = fopen ("/compat/linux/proc/cpuinfo", "r");
-         if(!file) return FALSE;
-         while (fgets (buffer, 100, file) != NULL)
-         {
+-		sprintf(line,"/proc/%d/task",(int)pid);
++		sprintf(line,"/compat/linux/proc/%d/task",(int)pid);
+ 		/* SF bug #843: /proc/%d/stat owned by UID instead of EUID */
+ 		if (stat(line,&st) < 0)
+ 			fstat(fd,&st);
