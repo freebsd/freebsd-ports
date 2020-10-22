@@ -3,6 +3,7 @@
 
 PORTNAME=	translate-toolkit
 PORTVERSION=	3.1.1
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	CHEESESHOP
 
@@ -27,8 +28,8 @@ SHEBANG_FILES=	tools/*
 
 MANPAGES=	csv2po csv2tbx dtd2po flatxml2po html2po idml2po json2po moz2po mozlang2po odf2xliff oo2po oo2xliff po2csv po2dtd po2flatxml po2html po2idml po2json po2moz po2mozlang po2oo po2prop po2resx po2sub po2symb po2tiki po2tmx po2ts po2txt po2web2py po2wordfast po2xliff pot2po prop2po resx2po sub2po symb2po tbx2po tiki2po ts2po txt2po web2py2po xliff2odf xliff2oo
 
-OPTIONS_DEFINE=	ENCODING ICAL INI LANGUAGES LEVENSHTEIN PHP RC SPELLCHECK SUBTITLES TRADOS #TMSERVER YAML
-OPTIONS_DEFAULT=ENCODING ICAL INI LANGUAGES LEVENSHTEIN PHP RC SPELLCHECK SUBTITLES TRADOS #TMSERVER YAML
+OPTIONS_DEFINE=	ENCODING ICAL INI LANGUAGES LEVENSHTEIN PHP RC SPELLCHECK SUBTITLES TMSERVER TRADOS YAML
+OPTIONS_DEFAULT=ENCODING ICAL INI LANGUAGES LEVENSHTEIN PHP RC SPELLCHECK SUBTITLES TMSERVER TRADOS YAML
 OPTIONS_SUB=	yes
 ENCODING_DESC=	Encoding detection
 ICAL_DESC=	iCal format support
@@ -39,9 +40,9 @@ PHP_DESC=	PHP format support
 RC_DESC=	Windows Resource (.rc) format support
 SPELLCHECK_DESC=Enchant spellchecking system
 SUBTITLES_DESC=	Subtitles format support
-#TMSERVER_DESC=	Tmserver backend support
+TMSERVER_DESC=	Tmserver backend support
 TRADOS_DESC=	Trados format support
-#YAML_DESC=	YAML format support
+YAML_DESC=	YAML format support
 
 ENCODING_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}chardet>=3.0.4:textproc/py-chardet@${PY_FLAVOR}
 ICAL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}vobject>=0.9.6.1:deskutils/py-vobject@${PY_FLAVOR}
@@ -56,10 +57,10 @@ RC_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}pyparsing>=2.4.7:devel/py-pyparsing@${PY
 RC_VARS=		MANPAGES+="po2rc rc2po"
 SPELLCHECK_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}enchant>=3.1.1:textproc/py-enchant@${PY_FLAVOR}
 SUBTITLES_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aeidon>=1.7.0:textproc/py-aeidon@${PY_FLAVOR}
-#TMSERVER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheroot>=8.4.5:www/py-cheroot@${PY_FLAVOR}
+TMSERVER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheroot>=8.4.5:www/py-cheroot@${PY_FLAVOR}
 TRADOS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.3:www/py-beautifulsoup@${PY_FLAVOR}
-#YAML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ruamel.yaml>=0.16.12:devel/py-ruamel.yaml@${PY_FLAVOR}
-#YAML_VARS=		MANPAGES+="po2yaml yaml2po"
+YAML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ruamel.yaml>=0.16.12:devel/py-ruamel.yaml@${PY_FLAVOR}
+YAML_VARS=		MANPAGES+="po2yaml yaml2po"
 
 .include <bsd.port.options.mk>
 
