@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	google-auth
-PORTVERSION=	1.21.3
+PORTVERSION=	1.22.0
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -29,6 +29,10 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}cachetools3>=2.0.0<5.0:devel/py-cachetools3
 .else
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}cachetools>=2.0.0<5.0:devel/py-cachetools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rsa>=3.1.4<5:security/py-rsa@${PY_FLAVOR}
+.endif
+
+.if ${PYTHON_REL} >= 3500
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}aiohttp>=3.6.2<4.0.0:www/py-aiohttp@${PY_FLAVOR}
 .endif
 
 .include <bsd.port.post.mk>
