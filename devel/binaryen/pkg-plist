@@ -1,4 +1,3 @@
-bin/asm2wasm
 bin/wasm-as
 bin/wasm-ctor-eval
 bin/wasm-dis

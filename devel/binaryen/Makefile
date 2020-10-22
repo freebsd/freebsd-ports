@@ -2,7 +2,7 @@
 
 PORTNAME=	binaryen
 DISTVERSIONPREFIX=	version_
-DISTVERSION=	93
+DISTVERSION=	98
 CATEGORIES=	devel
 
 MAINTAINER=	greg@unrelenting.technology
@@ -17,6 +17,7 @@ GH_ACCOUNT=	WebAssembly
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DBINARYEN_VERSION_INFO=${DISTVERSION}
+LDFLAGS+=	-Wno-unused-command-line-argument
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
