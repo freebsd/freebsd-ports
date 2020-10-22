@@ -1,17 +1,6 @@
---- configure.orig	Fri Sep 27 14:47:52 2002
-+++ configure	Wed Oct  1 16:42:07 2003
-@@ -1340,7 +1340,7 @@
- #define HAVE_SSL 1
- EOF
- 
--	LIBS="$LIBS -lssl"
-+	LIBS="$LIBS $LDFLAGS -lssl -lcrypto"
- fi
- enableval=""
- 
---- configure.orig	2009-11-01 23:52:55.000000000 +0200
-+++ configure	2009-11-01 23:53:42.000000000 +0200
-@@ -1591,7 +1591,8 @@
+--- configure.orig	2020-10-22 09:36:35 UTC
++++ configure
+@@ -1591,7 +1591,8 @@ if test x$enableval = xyes ; then
  #define MD5AUTH 1
  EOF
  
@@ -21,4 +10,3 @@
  fi
  enableval=""
  
-

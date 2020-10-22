@@ -1,0 +1,23 @@
+--- ssmtp.8.orig	2008-02-29 02:50:15 UTC
++++ ssmtp.8
+@@ -5,7 +5,7 @@ ssmtp, sendmail \- send a message using smtp
+ .B ssmtp
+ .RI "[ " flags " ] [ " address " "  ... " ]"
+ .br
+-.B /usr/lib/sendmail
++.B /usr/libexec/sendmail/sendmail
+ .RI "[ " flags " ] [ " address " "  ... " ]"
+ .br
+ .SH DESCRIPTION
+@@ -268,9 +268,9 @@ Messages root sends will be identified as from jdoe@is
+ through mail.isp.com.
+ 
+ .SH FILES
+- /etc/ssmtp/ssmtp.conf - configuration file
++ %%ETCDIR%%/ssmtp.conf - configuration file
+ .br
+- /etc/ssmtp/revaliases - reverse aliases file
++ %%ETCDIR%%/revaliases - reverse aliases file
+ 
+ .SH SEE ALSO
+ RFC821, RFC822, ssmtp.conf(5).

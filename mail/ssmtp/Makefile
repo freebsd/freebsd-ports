@@ -3,7 +3,7 @@
 
 PORTNAME=	ssmtp
 PORTVERSION=	2.64
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	mail
 MASTER_SITES=	DEBIAN_POOL
 DISTFILES=	${PORTNAME}_${PORTVERSION}.orig${EXTRACT_SUFX}
@@ -37,16 +37,18 @@ LOGFILE_CONFIGURE_ENABLE=	logfile
 OPENSSL_USES=			ssl
 OPENSSL_CONFIGURE_ENABLE=	ssl
 OPENSSL_CFLAGS=			-I${OPENSSLINC}
-OPENSSL_LDFLAGS=		-L${OPENSSLLIB}
+OPENSSL_LIBS=			-L${OPENSSLLIB} -lcrypto
 USERPREFS_CFLAGS=		-DUSERPREFS
 XORIGIP_EXTRA_PATCHES=		${FILESDIR}/remote-addr.patch
 
 _MAILERCONF=	/etc/mail/mailer.conf
 
 post-configure:
-	@${REINPLACE_CMD} -e "s,/etc/ssl/certs/ssmtp.pem,${PREFIX}/etc/ssmtp/ssmtp.pem,g" \
-		${WRKSRC}/ssmtp.c ${WRKSRC}/ssmtp.conf
-	@${REINPLACE_CMD} -e "s, /etc, ${PREFIX}/etc,g" ${WRKSRC}/ssmtp.8
+	@${REINPLACE_CMD} "s|%%ETCDIR%%|${ETCDIR}|" \
+		${WRKSRC}/ssmtp.8 \
+		${WRKSRC}/ssmtp.c \
+		${WRKSRC}/ssmtp.conf \
+		${WRKSRC}/ssmtp.conf.5
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ssmtp ${STAGEDIR}${PREFIX}/sbin/ssmtp

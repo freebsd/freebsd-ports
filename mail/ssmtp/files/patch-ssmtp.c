@@ -1,5 +1,5 @@
---- ssmtp.c.orig    2009-11-23 11:55:11.000000000 +0200
-+++ ssmtp.c 2011-02-21 02:56:10.000000000 +0200
+--- ssmtp.c.orig	2020-10-22 09:36:35 UTC
++++ ssmtp.c
 @@ -25,6 +25,7 @@
  #include <string.h>
  #include <ctype.h>
@@ -8,7 +8,7 @@
  #ifdef HAVE_SSL
  #include <openssl/crypto.h>
  #include <openssl/x509.h>
-@@ -55,21 +56,21 @@
+@@ -55,21 +56,21 @@ bool_t use_oldauth = False;		/* use old AUTH LOGIN use
  
  #define ARPADATE_LENGTH 32		/* Current date in RFC format */
  char arpadate[ARPADATE_LENGTH];
@@ -41,32 +41,7 @@
  
  headers_t headers, *ht;
  
-@@ -239,6 +240,24 @@
- }
- #endif /* _GNU_SOURCE */
- 
-+#if defined(__FreeBSD_version) && __FreeBSD_version < 701101
-+char *
-+strndup(const char *str, size_t n)
-+{
-+	size_t len;
-+	char *copy;
-+
-+	for (len = 0; len < n && str[len]; len++)
-+		continue;
-+
-+	if ((copy = malloc(len + 1)) == NULL)
-+		return (NULL);
-+	memcpy(copy, str, len);
-+	copy[len] = '\0';
-+	return (copy);
-+}
-+#endif
-+
- /*
- strip_pre_ws() -- Return pointer to first non-whitespace character
- */
-@@ -261,7 +280,7 @@
+@@ -261,7 +262,7 @@ char *strip_post_ws(char *str)
  
  	p = (str + strlen(str));
  	while(isspace(*--p)) {
@@ -75,7 +50,7 @@
  	}
  
  	return(p);
-@@ -279,7 +298,7 @@
+@@ -279,7 +280,7 @@ char *addr_parse(char *str)
  #endif
  
  	/* Simple case with email address enclosed in <> */
@@ -84,7 +59,7 @@
  		die("addr_parse(): strdup()");
  	}
  
-@@ -287,7 +306,7 @@
+@@ -287,7 +288,7 @@ char *addr_parse(char *str)
  		q++;
  
  		if((p = strchr(q, '>'))) {
@@ -93,7 +68,7 @@
  		}
  
  #if 0
-@@ -310,7 +329,7 @@
+@@ -310,7 +311,7 @@ char *addr_parse(char *str)
  	q = strip_post_ws(p);
  	if(*q == ')') {
  		while((*--q != '('));
@@ -102,7 +77,7 @@
  	}
  	(void)strip_post_ws(p);
  
-@@ -363,7 +382,7 @@
+@@ -363,7 +364,7 @@ bool_t standardise(char *str, bool_t *linestart)
  	*linestart = False;
  
  	if((p = strchr(str, '\n'))) {
@@ -111,7 +86,7 @@
  		*linestart = True;
  	}
  	return(leadingdot);
-@@ -384,7 +403,7 @@
+@@ -384,7 +385,7 @@ void revaliases(struct passwd *pw)
  		while(fgets(buf, sizeof(buf), fp)) {
  			/* Make comments invisible */
  			if((p = strchr(buf, '#'))) {
@@ -120,7 +95,7 @@
  			}
  
  			/* Ignore malformed lines and comments */
-@@ -519,11 +538,11 @@
+@@ -519,11 +520,11 @@ void rcpt_save(char *str)
  #endif
  
  	/* Ignore missing usernames */
@@ -134,7 +109,7 @@
  		die("rcpt_save() -- strdup() failed");
  	}
  
-@@ -548,7 +567,7 @@
+@@ -548,7 +549,7 @@ void rcpt_parse(char *str)
  	(void)fprintf(stderr, "*** rcpt_parse(): str = [%s]\n", str);
  #endif
  
@@ -143,7 +118,7 @@
  		die("rcpt_parse(): strdup() failed");
  	}
  	q = p;
-@@ -576,7 +595,7 @@
+@@ -576,7 +577,7 @@ void rcpt_parse(char *str)
  		}
  
  		/* End of string? */
@@ -152,7 +127,7 @@
  			got_addr = True;
  		}
  
-@@ -584,7 +603,7 @@
+@@ -584,7 +585,7 @@ void rcpt_parse(char *str)
  		if((*q == ',') && (in_quotes == False)) {
  			got_addr = True;
  
@@ -161,7 +136,7 @@
  		}
  
  		if(got_addr) {
-@@ -668,7 +687,7 @@
+@@ -668,7 +669,7 @@ void header_save(char *str)
  	(void)fprintf(stderr, "header_save(): str = [%s]\n", str);
  #endif
  
@@ -170,7 +145,7 @@
  		die("header_save() -- strdup() failed");
  	}
  	ht->string = p;
-@@ -676,7 +695,7 @@
+@@ -676,7 +677,7 @@ void header_save(char *str)
  	if(strncasecmp(ht->string, "From:", 5) == 0) {
  #if 1
  		/* Hack check for NULL From: line */
@@ -179,7 +154,7 @@
  			return;
  		}
  #endif
-@@ -739,19 +758,19 @@
+@@ -739,19 +740,19 @@ header_parse() -- Break headers into seperate entries
  void header_parse(FILE *stream)
  {
  	size_t size = BUF_SZ, len = 0;
@@ -203,7 +178,7 @@
  				die("header_parse() -- realloc() failed");
  			}
  			q = (p + len);
-@@ -776,9 +795,9 @@
+@@ -776,9 +777,9 @@ void header_parse(FILE *stream)
  						in_header = False;
  
  				default:
@@ -215,7 +190,7 @@
  						}
  						header_save(p);
  
-@@ -809,9 +828,9 @@
+@@ -809,9 +810,9 @@ void header_parse(FILE *stream)
  						in_header = False;
  
  				default:
@@ -227,7 +202,7 @@
  						}
  						header_save(p);
  
-@@ -876,21 +895,27 @@
+@@ -876,21 +877,27 @@ bool_t read_config()
  		char *rightside;
  		/* Make comments invisible */
  		if((p = strchr(buf, '#'))) {
@@ -259,7 +234,7 @@
  					die("parse_config() -- strdup() failed");
  				}
  
-@@ -904,7 +929,7 @@
+@@ -904,7 +911,7 @@ bool_t read_config()
  					port = atoi(r);
  				}
  
@@ -268,7 +243,7 @@
  					die("parse_config() -- strdup() failed");
  				}
  
-@@ -949,7 +974,7 @@
+@@ -949,7 +956,7 @@ bool_t read_config()
  					mail_domain = strdup(q);
  				}
  
@@ -277,7 +252,7 @@
  					die("parse_config() -- strdup() failed");
  				}
  				rewrite_domain = True;
-@@ -1025,7 +1050,7 @@
+@@ -1025,7 +1032,7 @@ bool_t read_config()
  				}
  			}
  			else if(strcasecmp(p, "TLSCert") == 0) {
@@ -286,7 +261,7 @@
  					die("parse_config() -- strdup() failed");
  				}
  
-@@ -1036,7 +1061,7 @@
+@@ -1036,7 +1043,7 @@ bool_t read_config()
  #endif
  			/* Command-line overrides these */
  			else if(strcasecmp(p, "AuthUser") == 0 && !auth_user) {
@@ -295,7 +270,7 @@
  					die("parse_config() -- strdup() failed");
  				}
  
-@@ -1045,7 +1070,7 @@
+@@ -1045,7 +1052,7 @@ bool_t read_config()
  				}
  			}
  			else if(strcasecmp(p, "AuthPass") == 0 && !auth_pass) {
@@ -304,7 +279,7 @@
  					die("parse_config() -- strdup() failed");
  				}
  
-@@ -1054,7 +1079,7 @@
+@@ -1054,7 +1061,7 @@ bool_t read_config()
  				}
  			}
  			else if(strcasecmp(p, "AuthMethod") == 0 && !auth_method) {
@@ -313,7 +288,7 @@
  					die("parse_config() -- strdup() failed");
  				}
  
-@@ -1107,11 +1132,11 @@
+@@ -1107,11 +1114,11 @@ int smtp_open(char *host, int port)
  #ifdef INET6
  	struct addrinfo hints, *ai0, *ai;
  	char servname[NI_MAXSERV];
@@ -327,7 +302,7 @@
  #endif
  
  #ifdef HAVE_SSL
-@@ -1310,7 +1335,7 @@
+@@ -1310,7 +1317,7 @@ char *fd_gets(char *buf, int size, int fd)
  			buf[i++] = c;
  		}
  	}
@@ -336,7 +311,7 @@
  
  	return(buf);
  }
-@@ -1435,14 +1460,14 @@
+@@ -1435,14 +1442,14 @@ int ssmtp(char *argv[])
  	}
  
  	if((p = strtok(pw->pw_gecos, ";,"))) {
@@ -353,7 +328,7 @@
  		uad = append_domain(pw->pw_name);
  	}
  
-@@ -1490,7 +1515,7 @@
+@@ -1490,7 +1497,7 @@ int ssmtp(char *argv[])
  	/* Try to log in if username was supplied */
  	if(auth_user) {
  #ifdef MD5AUTH
@@ -362,7 +337,7 @@
  			auth_pass = strdup("");
  		}
  
-@@ -1742,7 +1767,7 @@
+@@ -1742,7 +1749,7 @@ char **parse_options(int argc, char *argv[])
  		j = 0;
  
  		add = 1;
@@ -371,7 +346,7 @@
  			switch(argv[i][j]) {
  #ifdef INET6
  			case '6':
-@@ -1760,14 +1785,14 @@
+@@ -1760,14 +1767,14 @@ char **parse_options(int argc, char *argv[])
  					if((!argv[i][(j + 1)])
  						&& argv[(i + 1)]) {
  						auth_user = strdup(argv[i+1]);
@@ -388,7 +363,7 @@
  							die("parse_options() -- strdup() failed");
  						}
  					}
-@@ -1777,14 +1802,14 @@
+@@ -1777,14 +1784,14 @@ char **parse_options(int argc, char *argv[])
  					if((!argv[i][(j + 1)])
  						&& argv[(i + 1)]) {
  						auth_pass = strdup(argv[i+1]);
@@ -405,7 +380,7 @@
  							die("parse_options() -- strdup() failed");
  						}
  					}
-@@ -1875,14 +1900,14 @@
+@@ -1875,14 +1882,14 @@ char **parse_options(int argc, char *argv[])
  			case 'F':
  				if((!argv[i][(j + 1)]) && argv[(i + 1)]) {
  					minus_F = strdup(argv[(i + 1)]);
@@ -422,7 +397,7 @@
  						die("parse_options() -- strdup() failed");
  					}
  				}
-@@ -1894,14 +1919,14 @@
+@@ -1894,14 +1901,14 @@ char **parse_options(int argc, char *argv[])
  			case 'r':
  				if((!argv[i][(j + 1)]) && argv[(i + 1)]) {
  					minus_f = strdup(argv[(i + 1)]);
