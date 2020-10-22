@@ -1,5 +1,5 @@
-TIMESTAMP = 1601054231
-SHA256 (unifi6-6.0.23/unifi_sysvinit_all.deb) = b7fb345049340a09c07b276d2d64e0a598e7009aa7c9fc8448d3557b57793c7a
-SIZE (unifi6-6.0.23/unifi_sysvinit_all.deb) = 160563238
-SHA256 (unifi6-6.0.23/javax.activation-api-1.2.0.jar) = 43fdef0b5b6ceb31b0424b208b930c74ab58fac2ceeb7b3f6fd3aeb8b5ca4393
-SIZE (unifi6-6.0.23/javax.activation-api-1.2.0.jar) = 56674
+TIMESTAMP = 1603206877
+SHA256 (unifi6-6.0.28/unifi_sysvinit_all.deb) = f824b723690d73060423b9e00044b1f8eb3818230ff38fa01e1b74cc2ac90893
+SIZE (unifi6-6.0.28/unifi_sysvinit_all.deb) = 203862810
+SHA256 (unifi6-6.0.28/javax.activation-api-1.2.0.jar) = 43fdef0b5b6ceb31b0424b208b930c74ab58fac2ceeb7b3f6fd3aeb8b5ca4393
+SIZE (unifi6-6.0.28/javax.activation-api-1.2.0.jar) = 56674
