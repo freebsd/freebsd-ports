@@ -2,16 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	salt
-PORTVERSION=	3001.1
+PORTVERSION=	3002
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-
-# Unbreak the sysctl state.
-# https://github.com/saltstack/salt/issues/57826
-# https://github.com/saltstack/salt/pull/57839
-PATCH_SITES=	https://github.com/saltstack/salt/commit/
-PATCHFILES+=	1fa77bc846856d3a9a9d80e7643fb2f46febf827.patch:-p1
 
 MAINTAINER=	christer.edwards@gmail.com
 COMMENT=	Distributed remote execution and configuration management system
@@ -67,11 +61,10 @@ SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD}
 
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=	AWS RAET TCP ZEROMQ
+OPTIONS_DEFINE=	AWS TCP ZEROMQ
 OPTIONS_DEFAULT=ZEROMQ
 
 AWS_DESC=	Install dependencies required for Amazon Web Services
-RAET_DESC=	Install dependencies required for RAET transport
 TCP_DESC=	Install dependencies required for TCP transport
 ZEROMQ_DESC=	Install dependencies required for ZeroMQ transport
 
@@ -79,8 +72,6 @@ ZEROMQ_DESC=	Install dependencies required for ZeroMQ transport
 AWS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto3>0:www/py-boto3@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}boto>=2.32.1:devel/py-boto@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}botocore>0:devel/py-botocore@${PY_FLAVOR}
-
-RAET_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libnacl>=1.0.0:security/py-libnacl@${PY_FLAVOR}
 
 TCP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycryptodomex>=3.9.7:security/py-pycryptodomex@${PY_FLAVOR}
 
