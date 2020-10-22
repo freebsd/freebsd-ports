@@ -8,21 +8,40 @@
 #
 
 actions: [file]
-post-install: <<EOD
-  case "%@" in
-  /*) file="%@" ;;
-  *) file="%D/%@" ;;
-  esac
-        cp ${PKG_ROOTDIR}/etc/shells ${PKG_ROOTDIR}/etc/shells.bak
-        (grep -v "^${file}$" ${PKG_ROOTDIR}/etc/shells.bak; echo ${file}) > ${PKG_ROOTDIR}/etc/shells
-        rm -f ${PKG_ROOTDIR}/etc/shells.bak
+post-install-lua: <<EOD
+  shell_path = pkg.prefixed_path("%@")
+  shell = io.open("/etc/shells", "r+")
+  while true do
+    line = shell:read()
+    if line == nil then break end
+    if line == shell_path then
+      -- the shell path is already in the shell file
+      shell:close()
+      return
+    end
+  end
+  shell:write(shell_path .. "\n")
+  shell:close()
 EOD
-pre-deinstall: <<EOD
-  case "%@" in
-  /*) file="%@" ;;
-  *) file="%D/%@" ;;
-  esac
-        cp ${PKG_ROOTDIR}/etc/shells ${PKG_ROOTDIR}/etc/shells.bak
-        grep -v "^${file}$" ${PKG_ROOTDIR}/etc/shells.bak > ${PKG_ROOTDIR}/etc/shells
-        rm -f ${PKG_ROOTDIR}/etc/shells.bak
+pre-deinstall-lua: <<EOD
+  shell_path = pkg.prefixed_path("%@")
+  shellsbuf = ""
+  shells_path = "/etc/shells"
+  shell = io.open(shells_path, "r+")
+  found = false
+  while true do
+    line = shell:read()
+    if line == nil then break end
+    if line == shell_path then
+      found = true
+    else
+      shellsbuf = shellsbuf .. line .. "\n"
+    end
+  end
+  shell:close()
+  if found then
+    shell = io.open(shells_path, "w+")
+    shell:write(shellsbuf)
+    shell:close()
+  end
 EOD
