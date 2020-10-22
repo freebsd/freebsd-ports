@@ -21,6 +21,3 @@ bin/qsheff
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/qq-patch.diff
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/qq-custom-error-patch.diff
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/qsheff-patch.diff
-@unexec echo ""
-@unexec echo "Type '%%PREFIX%%/etc/uninstall-wrapper.sh' to uninstall qSheff completely."
-@unexec echo ""

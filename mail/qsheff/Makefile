@@ -3,7 +3,7 @@
 
 PORTNAME=	qsheff-II
 DISTVERSION=	2.1-r3
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	mail
 MASTER_SITES=	http://www.enderunix.org/qsheff/ \
 		SF/qsheff/qsheff/II-${DISTVERSION}
