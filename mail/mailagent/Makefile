@@ -3,12 +3,15 @@
 
 PORTNAME=		mailagent
 PORTVERSION=		3.1.78
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		mail
 MASTER_SITES=		http://eron.info/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sophisticated automatic mail-processing tool
+
+LICENSE=	ART10
+LICENSE_FILES=	${WRKSRC}/Artistic
 
 USES=		perl5 tar:bzip2
 

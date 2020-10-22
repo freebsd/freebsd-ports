@@ -1,8 +1,6 @@
 [
-{ type: install
+{ type: upgrade, maximum_version: 3.1.78_1,
   message: <<EOM
-** Upgrade note from a previous version to mailagent-3.1.78_1 or later **
-
 In order to make building of this port non-interactive, the build-time
 manual configuration of FQDN and the organization name had been removed.
 

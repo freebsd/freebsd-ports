@@ -34,8 +34,8 @@ man/man1/edusers.1.gz
 man/man1/mailagent.1.gz
 man/man1/mailhelp.1.gz
 man/man1/package.1.gz
-@exec [ -f %%ORGFILE%% ] || touch %%ORGFILE%% || true
-@unexec [ -s %%ORGFILE%% ] || rm -f %%ORGFILE%% || true
+@postexec [ -f %%ORGFILE%% ] || touch %%ORGFILE%% || true
+@rmempty %%ORGFILE%%
 %%EXAMPLESDIR%%/agent/README
 %%EXAMPLESDIR%%/agent/daemon
 %%EXAMPLESDIR%%/agent/mailfolders
