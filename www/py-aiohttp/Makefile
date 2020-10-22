@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}attrs>=17.3.0:devel/py-attrs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}chardet>=2.0<4.0:textproc/py-chardet@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}multidict>=4.5<5.0:www/py-multidict@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}multidict>=4.5:www/py-multidict@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}async_timeout>=3.0<4.0:devel/py-async_timeout@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yarl>=1.0<2.0:www/py-yarl@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=3.8.2:devel/py-pytest@${PY_FLAVOR} \
