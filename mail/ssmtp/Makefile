@@ -3,12 +3,12 @@
 
 PORTNAME=	ssmtp
 PORTVERSION=	2.64
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail
 MASTER_SITES=	DEBIAN_POOL
 DISTFILES=	${PORTNAME}_${PORTVERSION}.orig${EXTRACT_SUFX}
 
-MAINTAINER=	aragon@phat.za.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extremely simple MTA to get mail off the system to a mail hub
 
 LICENSE=	GPLv2+
