@@ -4189,6 +4189,7 @@
     SUBDIR += py-bcdoc
     SUBDIR += py-beautifultable
     SUBDIR += py-behave
+    SUBDIR += py-beniget
     SUBDIR += py-bidict
     SUBDIR += py-billiard
     SUBDIR += py-binaryornot
