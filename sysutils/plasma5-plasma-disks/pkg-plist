@@ -13,8 +13,10 @@ share/locale/ca@valencia/LC_MESSAGES/plasma_disks.mo
 share/locale/cs/LC_MESSAGES/plasma_disks.mo
 share/locale/da/LC_MESSAGES/plasma_disks.mo
 share/locale/de/LC_MESSAGES/plasma_disks.mo
+share/locale/el/LC_MESSAGES/plasma_disks.mo
 share/locale/en_GB/LC_MESSAGES/plasma_disks.mo
 share/locale/es/LC_MESSAGES/plasma_disks.mo
+share/locale/et/LC_MESSAGES/plasma_disks.mo
 share/locale/eu/LC_MESSAGES/plasma_disks.mo
 share/locale/fi/LC_MESSAGES/plasma_disks.mo
 share/locale/fr/LC_MESSAGES/plasma_disks.mo
@@ -22,6 +24,7 @@ share/locale/it/LC_MESSAGES/plasma_disks.mo
 share/locale/ko/LC_MESSAGES/plasma_disks.mo
 share/locale/nl/LC_MESSAGES/plasma_disks.mo
 share/locale/nn/LC_MESSAGES/plasma_disks.mo
+share/locale/pl/LC_MESSAGES/plasma_disks.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_disks.mo
 share/locale/ro/LC_MESSAGES/plasma_disks.mo
 share/locale/sk/LC_MESSAGES/plasma_disks.mo
