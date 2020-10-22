@@ -25,4 +25,10 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
+OPTIONS_DEFINE=	ASYNC
+OPTIONS_DEFAULT=ASYNC
+ASYNC_DESC=	Asynchronous support
+
+ASYNC_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>=3.6:www/py-aiohttp@${PY_FLAVOR}
+
 .include <bsd.port.mk>
