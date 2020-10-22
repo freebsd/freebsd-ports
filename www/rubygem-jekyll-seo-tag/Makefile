@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jekyll-seo-tag
-PORTVERSION=	2.6.1
+PORTVERSION=	2.7.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,7 @@ COMMENT=	Add metadata tags for search engines and social networks
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-jekyll>=3.3<5.0:www/rubygem-jekyll
+RUN_DEPENDS=	rubygem-jekyll>=3.8<5.0:www/rubygem-jekyll
 
 USES=		gem
 USE_RUBY=	yes
