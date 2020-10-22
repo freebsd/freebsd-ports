@@ -84,6 +84,8 @@ man/man1/mutool.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/coding-overview.html
 %%PORTDOCS%%%%DOCSDIR%%/coding-progressive.html
 %%PORTDOCS%%%%DOCSDIR%%/coding-style.html
+%%PORTDOCS%%%%DOCSDIR%%/ecosystem.html
+%%PORTDOCS%%%%DOCSDIR%%/ecosystem.png
 %%PORTDOCS%%%%DOCSDIR%%/examples/bbox-device.js
 %%PORTDOCS%%%%DOCSDIR%%/examples/create-thumbnail.js
 %%PORTDOCS%%%%DOCSDIR%%/examples/draw-device.js
@@ -95,8 +97,10 @@ man/man1/mutool.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/examples/pdf-create-lowlevel.js
 %%PORTDOCS%%%%DOCSDIR%%/examples/pdf-create.js
 %%PORTDOCS%%%%DOCSDIR%%/examples/pdf-dejpx.js
+%%PORTDOCS%%%%DOCSDIR%%/examples/pdf-extract-rich-media.js
 %%PORTDOCS%%%%DOCSDIR%%/examples/pdf-merge.js
 %%PORTDOCS%%%%DOCSDIR%%/examples/pdf-portfolio.js
+%%PORTDOCS%%%%DOCSDIR%%/examples/pdf-trace.js
 %%PORTDOCS%%%%DOCSDIR%%/examples/trace-device.js
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/manual-mupdf-gl.html

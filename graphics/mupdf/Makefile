@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mupdf
-DISTVERSION=	1.17.0
+DISTVERSION=	1.18.0
 DISTVERSIONSUFFIX=	-source
 PORTEPOCH=	1
 CATEGORIES=	graphics
@@ -51,10 +51,7 @@ SCROLL_EXTRA_PATCHES=	${FILESDIR}/scroll_hack-platform__x11__pdfapp.c
 PLIST_SUB=	SOVERSION=${PORTVERSION}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/-pipe -O2 //' \
-		${WRKSRC}/Makerules
-	@${REINPLACE_CMD} -e 's/-ldl //' ${WRKSRC}/Makerules \
-		${WRKSRC}/Makethird
+	@${REINPLACE_CMD} -e 's/-pipe -O2//' -e 's/-ldl//' ${WRKSRC}/Makerules
 
 post-install:
 	${MV} ${STAGEDIR}${PREFIX}/bin/mupdf-x11 \
