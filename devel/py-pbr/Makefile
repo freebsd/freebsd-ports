@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pbr
-PORTVERSION=	3.1.1
-PORTREVISION=	1
+PORTVERSION=	5.5.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,10 +15,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pip>0:devel/py-pip@${PY_FLAVOR}
 
-NO_ARCH=	yes
-
 USES=		python shebangfix
 USE_PYTHON=	autoplist concurrent distutils
 SHEBANG_FILES=	pbr/tests/testpackage/setup.py
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
