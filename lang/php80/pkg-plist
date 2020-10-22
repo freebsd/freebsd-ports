@@ -31,7 +31,7 @@ include/php/Zend/zend_config.w32.h
 include/php/Zend/zend_constants.h
 include/php/Zend/zend_cpuinfo.h
 include/php/Zend/zend_dtrace.h
-include/php/Zend/zend_dtrace_gen.h
+%%DTRACE%%include/php/Zend/zend_dtrace_gen.h
 include/php/Zend/zend_errors.h
 include/php/Zend/zend_exceptions.h
 include/php/Zend/zend_exceptions_arginfo.h
