@@ -2259,6 +2259,7 @@
     SUBDIR += uchiwa
     SUBDIR += ufdbguard
     SUBDIR += unit
+    SUBDIR += unit-java
     SUBDIR += unit-perl
     SUBDIR += unit-php
     SUBDIR += unit-python

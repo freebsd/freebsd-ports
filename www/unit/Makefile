@@ -4,7 +4,7 @@
 PORTNAME=	unit
 PORTVERSION=	1.20.0
 CATEGORIES=	www
-MASTER_SITES=	https://unit.nginx.org/download/
+MASTER_SITES?=	https://unit.nginx.org/download/
 
 MAINTAINER=	osa@FreeBSD.org
 COMMENT?=	Dynamic web application server

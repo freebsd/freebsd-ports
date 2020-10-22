@@ -1,0 +1,100 @@
+# Created by: Sergey Osokin <osa@FreeBSD.org>
+# $FreeBSD$
+
+MASTER_SITES=	https://unit.nginx.org/download/:unit \
+	https://repo1.maven.org/maven2/io/github/classgraph/classgraph/${CLASSGRAPH_VERSION}/:classgraph \
+	https://repo1.maven.org/maven2/org/apache/tomcat/tomcat-api/${TOMCAT_VERSION}/:api \
+	https://repo1.maven.org/maven2/org/apache/tomcat/tomcat-el-api/${TOMCAT_VERSION}/:elapi \
+	https://repo1.maven.org/maven2/org/apache/tomcat/tomcat-jasper/${TOMCAT_VERSION}/:jasper \
+	https://repo1.maven.org/maven2/org/apache/tomcat/tomcat-jasper-el/${TOMCAT_VERSION}/:jasperel \
+	https://repo1.maven.org/maven2/org/apache/tomcat/tomcat-jsp-api/${TOMCAT_VERSION}/:jsp \
+	https://repo1.maven.org/maven2/org/apache/tomcat/tomcat-juli/${TOMCAT_VERSION}/:juli \
+	https://repo1.maven.org/maven2/org/apache/tomcat/tomcat-servlet-api/${TOMCAT_VERSION}/:servlet \
+	https://repo1.maven.org/maven2/org/apache/tomcat/tomcat-util/${TOMCAT_VERSION}/:tutil \
+	https://repo1.maven.org/maven2/org/apache/tomcat/tomcat-util-scan/${TOMCAT_VERSION}/:utilscan \
+	https://repo1.maven.org/maven2/org/eclipse/jdt/ecj/${ECJ_VERSION}/:ecj \
+	https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-http/${JETTY_VERSION}/:http \
+	https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-server/${JETTY_VERSION}/:server \
+	https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-util/${JETTY_VERSION}/:jutil
+PKGNAMESUFFIX=	-${UNIT_MODNAME}
+DISTFILES=	unit-${UNIT_VERSION}.tar.gz:unit \
+	classgraph-${CLASSGRAPH_VERSION}.jar:classgraph \
+	ecj-${ECJ_VERSION}.jar:ecj \
+	jetty-http-${JETTY_VERSION}.jar:http \
+	jetty-server-${JETTY_VERSION}.jar:server \
+	jetty-util-${JETTY_VERSION}.jar:jutil \
+	tomcat-api-${TOMCAT_VERSION}.jar:api \
+	tomcat-el-api-${TOMCAT_VERSION}.jar:elapi \
+	tomcat-jsp-api-${TOMCAT_VERSION}.jar:jsp \
+	tomcat-jasper-${TOMCAT_VERSION}.jar:jasper \
+	tomcat-jasper-el-${TOMCAT_VERSION}.jar:jasperel \
+	tomcat-juli-${TOMCAT_VERSION}.jar:juli \
+	tomcat-servlet-api-${TOMCAT_VERSION}.jar:servlet \
+	tomcat-util-${TOMCAT_VERSION}.jar:tutil \
+	tomcat-util-scan-${TOMCAT_VERSION}.jar:utilscan
+EXTRACT_ONLY=	unit-${UNIT_VERSION}.tar.gz
+
+DISTINFO_FILE=	${.CURDIR}/distinfo	
+PATCHDIR=	${.CURDIR}/files
+
+COMMENT=	Java module for NGINX Unit
+
+RUN_DEPENDS=	unitd:www/unit
+
+UNIT_MODNAME=	java${JAVA_PORT_VERSION}
+CLASSGRAPH_VERSION=	4.4.11
+ECJ_VERSION=	3.13.102
+JETTY_VERSION=	9.4.12.v20180830
+TOMCAT_VERSION=	9.0.13
+UNIT_VERSION=	1.20.0
+
+PLIST_FILES=	libexec/unit/modules/${UNIT_MODNAME}.unit.so \
+		%%JAVAJARDIR%%/classgraph-4.4.11.jar \
+		%%JAVAJARDIR%%/ecj-3.13.102.jar \
+		%%JAVAJARDIR%%/jetty-http-9.4.12.v20180830.jar \
+		%%JAVAJARDIR%%/jetty-server-9.4.12.v20180830.jar \
+		%%JAVAJARDIR%%/jetty-util-9.4.12.v20180830.jar \
+		%%JAVAJARDIR%%/nginx-unit-jsc-java${JAVA_PORT_VERSION}-1.20.0.jar \
+		%%JAVAJARDIR%%/tomcat-api-9.0.13.jar \
+		%%JAVAJARDIR%%/tomcat-el-api-9.0.13.jar \
+		%%JAVAJARDIR%%/tomcat-jasper-9.0.13.jar \
+		%%JAVAJARDIR%%/tomcat-jasper-el-9.0.13.jar \
+		%%JAVAJARDIR%%/tomcat-jsp-api-9.0.13.jar \
+		%%JAVAJARDIR%%/tomcat-juli-9.0.13.jar \
+		%%JAVAJARDIR%%/tomcat-servlet-api-9.0.13.jar \
+		%%JAVAJARDIR%%/tomcat-util-scan-9.0.13.jar \
+		%%JAVAJARDIR%%/tomcat-util-9.0.13.jar \
+		%%JAVAJARDIR%%/websocket-api-java${JAVA_PORT_VERSION}-1.20.0.jar
+
+USE_JAVA=	yes
+JAVA_VERSION=	8+
+
+USE_RC_SUBR?=	# reset to empty
+
+MASTERDIR=	${.CURDIR}/../unit
+
+# Do not run the sha512 checker because:
+# - it tries to create a checksum file in ${DISTDIR} and in case
+#   of failure build also fails;
+# - the checker can be useful when the NGINX Unit Java module
+#   downloads those jars by itself.
+post-extract:
+	${CP} /dev/null ${WRKSRC}/auto/modules/java_chk_sha512
+
+post-configure:
+	cd ${CONFIGURE_WRKSRC} && \
+	${CONFIGURE_CMD} java --module=${UNIT_MODNAME} \
+		--local-repo=${DISTDIR} \
+		--jars=${JAVAJARDIR}
+
+do-build:
+	cd ${CONFIGURE_WRKSRC} && ${MAKE} ${UNIT_MODNAME}
+
+do-install:
+	cd ${CONFIGURE_WRKSRC} && ${MAKE} ${UNIT_MODNAME}-install DESTDIR=${STAGEDIR}
+
+# Overwrite the target in the ${MASTERDIR}/Makefile
+post-install:
+	@${DO_NADA}
+
+.include "${MASTERDIR}/Makefile"
