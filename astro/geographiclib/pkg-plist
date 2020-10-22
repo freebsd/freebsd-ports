@@ -142,6 +142,8 @@ sbin/geographiclib-get-magnetic
 %%MAGNETIC_IGRF11%%%%DATADIR%%/magnetic/igrf11.wmm.cof
 %%MAGNETIC_IGRF12%%%%DATADIR%%/magnetic/igrf12.wmm
 %%MAGNETIC_IGRF12%%%%DATADIR%%/magnetic/igrf12.wmm.cof
+%%MAGNETIC_IGRF13%%%%DATADIR%%/magnetic/igrf13.wmm
+%%MAGNETIC_IGRF13%%%%DATADIR%%/magnetic/igrf13.wmm.cof
 %%MAGNETIC_WMM2010%%%%DATADIR%%/magnetic/wmm2010.wmm
 %%MAGNETIC_WMM2010%%%%DATADIR%%/magnetic/wmm2010.wmm.cof
 %%MAGNETIC_WMM2015%%%%DATADIR%%/magnetic/wmm2015.wmm
