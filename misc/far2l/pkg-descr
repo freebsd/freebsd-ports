@@ -1,8 +1,9 @@
-Linux port of the FAR Manager v2 (http://farmanager.com/); also work on macOS
-and *BSD systems.  ALPHA VERSION.  Currently interesting only for enthusiasts!
+Linux port of the FAR Manager v2 (http://farmanager.com/); also works on
+macOS and *BSD systems.  ALPHA VERSION.  Currently interesting only for
+enthusiasts!
 
 Plugins that currently work: NetRocks (SFTP/SCP/FTP/FTPS/SMB/NFS/WebDAV),
-colorer, multiarc, tmppanel, align, autowrap, drawline, editcase, SimpleIndent,
-Python (optional scripting support).
+colorer, multiarc, tmppanel, align, autowrap, drawline, editcase,
+SimpleIndent, Python (optional scripting support).
 
 WWW: https://github.com/elfmz/far2l

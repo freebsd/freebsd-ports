@@ -2,19 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	far2l
-PORTVERSION=	g20200622
+PORTVERSION=	g20201021
 CATEGORIES=	misc
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Port of FAR v2 to Unix-like systems
 
-BUILD_DEPENDS=	gawk:lang/gawk gm4:devel/m4
-LIB_DEPENDS=	libpcre.so:devel/pcre
+BUILD_DEPENDS=	gawk:lang/gawk gm4:devel/m4 \
+		${LOCALBASE}/include/spdlog/spdlog.h:devel/spdlog
+LIB_DEPENDS=	libfmt.so:devel/libfmt \
+		libpcre.so:devel/pcre \
+		libuchardet.so:textproc/uchardet \
+		libxerces-c.so:textproc/xerces-c3
 RUN_DEPENDS=	bash:shells/bash
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	elfmz
-GH_TAGNAME=	43057bd
+GH_TAGNAME=	aee26c9
 
 USES=		cmake compiler:c++11-lang libarchive pkgconfig shebangfix ssl
 SHEBANG_FILES=	far2l/bootstrap/roots.sh
@@ -34,6 +38,10 @@ WEBDAV_DESC=	WebDav protocol support via libneon
 WEBDAV_LIB_DEPENDS=	libneon.so:www/neon
 
 WXGTK_CMAKE_OFF=	-DUSEWX:BOOL=OFF
-WXGTK_USE=	WX=3.0
+WXGTK_USE=	WX=3.0+
+
+post-patch:
+	@${GREP} -Rl --null --include=\*.cpp /bin/bash ${WRKSRC} | ${XARGS} \
+		-0 ${REINPLACE_CMD} -e 's,/bin/bash,${LOCALBASE}&,'
 
 .include <bsd.port.mk>

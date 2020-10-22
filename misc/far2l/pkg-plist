@@ -54,6 +54,7 @@ share/applications/far2l.desktop
 %%DATADIR%%/Plugins/colorer/base/hrc/base/fsharp.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/base/gen/perl-brackets.ent.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/base/go.hrc
+%%DATADIR%%/Plugins/colorer/base/hrc/base/groovy.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/base/haxe.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/base/idl.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/base/java.hrc
@@ -109,6 +110,7 @@ share/applications/far2l.desktop
 %%DATADIR%%/Plugins/colorer/base/hrc/inet/gen/xhtml-frameset.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/inet/gen/xhtml-strict.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/inet/gen/xhtml-trans.hrc
+%%DATADIR%%/Plugins/colorer/base/hrc/inet/gsp.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/inet/haml.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/inet/html-css.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/inet/html.hrc
@@ -278,6 +280,9 @@ share/applications/far2l.desktop
 %%DATADIR%%/Plugins/colorer/base/hrc/scripts/avisynth.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/scripts/awk.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/scripts/batch.hrc
+%%DATADIR%%/Plugins/colorer/base/hrc/scripts/cmake/cmake-auto.ent.hrc
+%%DATADIR%%/Plugins/colorer/base/hrc/scripts/cmake/cmake.ent.hrc
+%%DATADIR%%/Plugins/colorer/base/hrc/scripts/cmake/cmake.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/scripts/colorer/bkt.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/scripts/colorer/colorer5catalog.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/scripts/colorer/ent.hrc.hrc
@@ -370,6 +375,7 @@ share/applications/far2l.desktop
 %%DATADIR%%/Plugins/colorer/base/hrd/catalog-console.xml
 %%DATADIR%%/Plugins/colorer/base/hrd/catalog-rgb.xml
 %%DATADIR%%/Plugins/colorer/base/hrd/catalog-text.xml
+%%DATADIR%%/Plugins/colorer/base/hrd/catalog-user.xml
 %%DATADIR%%/Plugins/colorer/base/hrd/console/black.hrd
 %%DATADIR%%/Plugins/colorer/base/hrd/console/blue.hrd
 %%DATADIR%%/Plugins/colorer/base/hrd/console/contrib/black_ay.hrd
@@ -423,7 +429,6 @@ share/applications/far2l.desktop
 %%DATADIR%%/Plugins/colorer/base/hrd/rgb/white.hrd
 %%DATADIR%%/Plugins/colorer/base/hrd/text/htmlcss.hrd
 %%DATADIR%%/Plugins/colorer/base/hrd/text/tags.hrd
-%%DATADIR%%/Plugins/colorer/plug/Plugin.Colorer.lua
 %%DATADIR%%/Plugins/colorer/plug/colorere.hlf
 %%DATADIR%%/Plugins/colorer/plug/colorere.lng
 %%DATADIR%%/Plugins/colorer/plug/colorerr.hlf
@@ -464,6 +469,7 @@ share/applications/far2l.desktop
 %%DATADIR%%/Plugins/tmppanel/plug/TmpRus.lng
 %%DATADIR%%/notify.sh
 %%DATADIR%%/open.sh
+%%DATADIR%%/ps.sh
 %%DATADIR%%/roots.sh
 %%DATADIR%%/trash.sh
 share/icons/far2l.svg
