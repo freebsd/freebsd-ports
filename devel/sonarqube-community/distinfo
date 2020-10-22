@@ -1,4 +1,4 @@
-TIMESTAMP = 1602588107
+TIMESTAMP = 1603351640
 SHA256 (sonarqube-8.5.0.37579.zip) = a01118ee3fc5ea2337c7178581ecae88353cb64f2d193586bb42460792d74731
 SIZE (sonarqube-8.5.0.37579.zip) = 237852965
 SHA256 (sonar-csharp-plugin-8.14.0.22654.jar) = f6172d36e7149481d64e4ca707a61e58bc5fff1da802d0f7322679d5574dd388
@@ -7,8 +7,8 @@ SHA256 (sonar-java-plugin-6.9.0.23563.jar) = a65da8e1c2d9e78b2e11b406beb53cf054f
 SIZE (sonar-java-plugin-6.9.0.23563.jar) = 18717478
 SHA256 (sonar-javascript-plugin-6.5.0.13383.jar) = a3ce20b9861b922ebcd4a51a39d50c304c9ad94decd8ac32b29718c635e478a0
 SIZE (sonar-javascript-plugin-6.5.0.13383.jar) = 19876541
-SHA256 (sonar-php-plugin-3.10.0.6474.jar) = 762eed610089e6c824e914fde7ab8a527dfded2cecff3b5694ce6c5598bc8538
-SIZE (sonar-php-plugin-3.10.0.6474.jar) = 5510658
+SHA256 (sonar-php-plugin-3.11.0.6645.jar) = ecfc5db1b155642944d1476c81646ec2dd69a5b88e66527920d2a88f4a2e984b
+SIZE (sonar-php-plugin-3.11.0.6645.jar) = 5540461
 SHA256 (sonar-python-plugin-3.1.0.7619.jar) = 0c18b6f28e1d48d0012ae57896aac5dd6012b33eb86f1fc9e24d5800abd9e64f
 SIZE (sonar-python-plugin-3.1.0.7619.jar) = 4527459
 SHA256 (sonar-vbnet-plugin-8.14.0.22654.jar) = c5397922057fe3e81836e49843705888e51f746efbab07dc87f53f8759f3fb2b
