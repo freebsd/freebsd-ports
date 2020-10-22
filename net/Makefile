@@ -1005,6 +1005,7 @@
     SUBDIR += py-dpkt
     SUBDIR += py-dugong
     SUBDIR += py-ec2-cli-tools
+    SUBDIR += py-errbot
     SUBDIR += py-eventlet
     SUBDIR += py-flask-xml-rpc
     SUBDIR += py-gntp
