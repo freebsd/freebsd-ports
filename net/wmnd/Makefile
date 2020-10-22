@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wmnd
-PORTVERSION=	0.4.17
+PORTVERSION=	0.4.18
 CATEGORIES=	net
 MASTER_SITES=	http://www.thregr.org/~wavexx/software/wmnd/releases/
 
@@ -11,9 +11,10 @@ COMMENT=	Improved network monitoring dock app (with tons of features)
 
 LICENSE=	GPLv2
 
+USES=		gmake xorg
+
 OPTIONS_DEFINE=	EXAMPLES
 
-USES=		gmake xorg
 USE_XORG=	ice sm x11 xext xpm
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-dummy-driver
