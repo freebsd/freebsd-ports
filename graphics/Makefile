@@ -744,7 +744,7 @@
     SUBDIR += php74-exif
     SUBDIR += php74-gd
     SUBDIR += php80-exif
-    SUBDIR += php80x-gd
+    SUBDIR += php80-gd
     SUBDIR += phplot
     SUBDIR += picpuz
     SUBDIR += piddle
