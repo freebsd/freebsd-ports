@@ -1,0 +1,4 @@
+vcver is an approach for versioning that heavily relies on the version control
+system of choice for determining version strings.
+
+WWW: https://github.com/toumorokoshi/vcver-python
