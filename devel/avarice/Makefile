@@ -11,7 +11,7 @@ COMMENT=	Atmel AVR JTAG programmer and debugging interface for avr-gdb
 
 LICENSE=	GPLv2
 
-USES=		perl5 tar:bzip2
+USES=		compiler:c11 perl5 tar:bzip2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_pathperl=${PERL}
