@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tt-rss
-PORTVERSION=	g20200919
+PORTVERSION=	g20201015
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	https://git.tt-rss.org/fox/tt-rss/archive/
@@ -21,7 +21,7 @@ REINPLACE_ARGS=	-i ""
 SHEBANG_FILES=	lib/dojo-src/rebuild-dojo.sh utils/extract-i18n-js.pl update_daemon2.php
 WRKSRC=		${WRKDIR}/tt-rss
 
-GIT_TAGNAME=	05ef9aac2
+GIT_TAGNAME=	fffccbd2f
 
 NO_BUILD=	yes
 NO_ARCH=	yes
@@ -71,6 +71,7 @@ do-install:
 	${RM} -r ${STAGEDIR}${WWWDIR}/debian
 	${INSTALL_DATA} ${WRKDIR}/httpd-tt-rss.conf ${STAGEDIR}${DATADIR}
 	${ECHO} "${OPSYS}:${PORTVERSION}:${GIT_TAGNAME}" > "${STAGEDIR}${WWWDIR}/version_static.txt"
-	${RLN} ${STAGEDIR}${WWWDIR}/config.php-dist ${STAGEDIR}${WWWDIR}/config.php.sample
+	${MV} ${STAGEDIR}${WWWDIR}/config.php-dist ${STAGEDIR}${WWWDIR}/config.php.sample
+	${RLN} ${STAGEDIR}${WWWDIR}/config.php.sample ${STAGEDIR}${WWWDIR}/config.php-dist
 
 .include <bsd.port.mk>

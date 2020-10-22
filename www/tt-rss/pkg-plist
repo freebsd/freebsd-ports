@@ -50,7 +50,11 @@
 %%WWWDIR%%/classes/pref/users.php
 %%WWWDIR%%/classes/rpc.php
 %%WWWDIR%%/classes/rssutils.php
+%%WWWDIR%%/classes/sanitizer.php
 %%WWWDIR%%/classes/templator.php
+%%WWWDIR%%/classes/timehelper.php
+%%WWWDIR%%/classes/urlhelper.php
+%%WWWDIR%%/classes/userhelper.php
 %%WWWDIR%%/errors.php
 %%WWWDIR%%/feed-icons/index.html
 %%WWWDIR%%/gulpfile.js
@@ -2277,6 +2281,8 @@
 %%WWWDIR%%/locale/es_ES/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/es_LA/LC_MESSAGES/messages.mo
 %%WWWDIR%%/locale/es_LA/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/fa/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/fa/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/fi_FI/LC_MESSAGES/messages.mo
 %%WWWDIR%%/locale/fi_FI/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/fr_FR/LC_MESSAGES/messages.mo
@@ -2550,6 +2556,7 @@
 %%WWWDIR%%/schema/versions/mysql/137.sql
 %%WWWDIR%%/schema/versions/mysql/138.sql
 %%WWWDIR%%/schema/versions/mysql/139.sql
+%%WWWDIR%%/schema/versions/mysql/140.sql
 %%WWWDIR%%/schema/versions/pgsql/3.sql
 %%WWWDIR%%/schema/versions/pgsql/4.sql
 %%WWWDIR%%/schema/versions/pgsql/5.sql
@@ -2687,6 +2694,7 @@
 %%WWWDIR%%/schema/versions/pgsql/137.sql
 %%WWWDIR%%/schema/versions/pgsql/138.sql
 %%WWWDIR%%/schema/versions/pgsql/139.sql
+%%WWWDIR%%/schema/versions/pgsql/140.sql
 %%WWWDIR%%/templates/digest_template.txt
 %%WWWDIR%%/templates/digest_template_html.txt
 %%WWWDIR%%/templates/email_article_template.txt
