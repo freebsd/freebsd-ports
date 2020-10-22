@@ -10,6 +10,12 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20201022:
+AUTHOR: bapt@FreeBSD.org
+  @shell has been rewritten in lua
+  It provide the exact same feature as the previous version but it is now
+  sandboxed ans is rootdir compliant (see pkg -r option)
+
 20201001:
 AUTHOR: manu@FreeBSD.org
 
