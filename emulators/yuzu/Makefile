@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	yuzu
-PORTVERSION=	s20201020
+PORTVERSION=	s20201021
 PORTREVISION?=	0
 CATEGORIES=	emulators
 
@@ -35,7 +35,7 @@ LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yuzu-emu
-GH_TAGNAME=	1fc61d09d
+GH_TAGNAME=	ea20b5c97
 GH_TUPLE=	yuzu-emu:unicorn:1.0.1-153-g73f45735:unicorn/externals/unicorn \
 		DarkLordZach:mbedtls:a280e60:mbedtls/externals/mbedtls \
 		KhronosGroup:SPIRV-Headers:2c51218:SPIRV_Headers/externals/sirit/externals/SPIRV-Headers \
@@ -93,8 +93,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/@GIT_BRANCH@/master/' \
 		-e 's/@GIT_DESC@/${GH_TAGNAME}/' \
 		${WRKSRC}/src/common/scm_rev.cpp.in
-# https://github.com/yuzu-emu/yuzu/issues/4795
-	@${REINPLACE_CMD} '/-Werror/d' ${WRKSRC}/src/*/CMakeLists.txt
 
 .include <bsd.port.pre.mk>
 
