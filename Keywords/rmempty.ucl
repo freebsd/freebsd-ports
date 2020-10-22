@@ -2,7 +2,7 @@
 #
 # MAINTAINER:	portmgr@FreeBSD.org
 actions: []
-pre-deinstall-lua: <<EOD
+post-deinstall-lua: <<EOD
 	file = pkg.prefixed_path("%@")
 	local st = pkg.stat(file)
 	if st and st.type == "reg" and st.size == 0 then
