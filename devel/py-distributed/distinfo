@@ -1,3 +1,3 @@
-TIMESTAMP = 1589002623
-SHA256 (distributed-2.16.0.tar.gz) = 28eb0faea4783f424956b073afa2677b9a13a0cc83ffcc1b1d424fabd98f17e9
-SIZE (distributed-2.16.0.tar.gz) = 642843
+TIMESTAMP = 1598175824
+SHA256 (distributed-2.20.0.tar.gz) = 76cb6c32597a8bf42f070033ff587603954285310b1b60d99b2fcd77bddfc23a
+SIZE (distributed-2.20.0.tar.gz) = 655318
