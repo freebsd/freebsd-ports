@@ -1,6 +1,6 @@
-TIMESTAMP = 1601122584
-SHA256 (caddyserver-caddy-v2.2.0_GH0.tar.gz) = 82dde471af56db86f96a2dffc0631c4e0a9eea19debe966605a73b89fbb945b4
-SIZE (caddyserver-caddy-v2.2.0_GH0.tar.gz) = 387511
+TIMESTAMP = 1602689026
+SHA256 (caddyserver-caddy-v2.2.1_GH0.tar.gz) = dd1f313968a54c3e6be9b5d007b8b2ed88c46fbefc1eed49dcac35c08fbef1e2
+SIZE (caddyserver-caddy-v2.2.1_GH0.tar.gz) = 390153
 SHA256 (AndreasBriese-bbloom-e2d15f34fcf9_GH0.tar.gz) = e88bd873a2251d70b5d2cbf9dceff24fa25ca5652ac1f99165c303e98df494a1
 SIZE (AndreasBriese-bbloom-e2d15f34fcf9_GH0.tar.gz) = 7704
 SHA256 (DataDog-zstd-v1.4.1_GH0.tar.gz) = 48c0ad82d9bc66d77ca95aa47374bed6b6466510da66a2b2f9215cb239cb8137

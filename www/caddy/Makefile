@@ -3,7 +3,7 @@
 
 PORTNAME=	caddy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.0
+DISTVERSION=	2.2.1
 CATEGORIES=	www
 
 MAINTAINER=	daniel.tihanyi@tetragir.com
