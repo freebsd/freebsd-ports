@@ -958,6 +958,9 @@
     SUBDIR += php74-soap
     SUBDIR += php74-sockets
     SUBDIR += php74-xmlrpc
+    SUBDIR += php80-ldap
+    SUBDIR += php80-soap
+    SUBDIR += php80-sockets
     SUBDIR += phpldapadmin
     SUBDIR += pichi
     SUBDIR += pimcommon

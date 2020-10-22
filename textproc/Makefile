@@ -1199,6 +1199,15 @@
     SUBDIR += php74-xmlreader
     SUBDIR += php74-xmlwriter
     SUBDIR += php74-xsl
+    SUBDIR += php80-ctype
+    SUBDIR += php80-dom
+    SUBDIR += php80-enchant
+    SUBDIR += php80-pspell
+    SUBDIR += php80-simplexml
+    SUBDIR += php80-xml
+    SUBDIR += php80-xmlreader
+    SUBDIR += php80-xmlwriter
+    SUBDIR += php80-xsl
     SUBDIR += pict
     SUBDIR += po4a
     SUBDIR += pod2mdoc
