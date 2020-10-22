@@ -181,12 +181,7 @@ ocaml-ldconfig:
 .endif
 
 .if defined(USE_OCAML_WASH)
-. if !target(ocaml-wash)
-_USES_install+=	745:ocaml-wash
-ocaml-wash:
-#	If ld.conf is empty
-	@${ECHO_CMD} "@postunexec if [ ! -s %D/${OCAML_LDCONF} ]; then ${RM} %D/${OCAML_LDCONF}; fi || true" >> ${TMPPLIST}
-. endif
+PLIST_FILES+=	"@rmempty ${OCAML_LDCONF}"
 .endif
 
 .endif #!defined(OCAML_include)
