@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	recursive-open-struct
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,8 +11,9 @@ COMMENT=	Allows nested hashes to be treated in a recursive fashion
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
