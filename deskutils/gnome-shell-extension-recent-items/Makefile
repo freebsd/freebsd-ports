@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-shell-extension-recent-items
-PORTVERSION=	15
+PORTVERSION=	18
 CATEGORIES=	deskutils gnome
 DIST_SUBDIR=	gnome3
 
