@@ -1,3 +1,3 @@
-TIMESTAMP = 1580546970
-SHA256 (rubygem/kubeclient-4.6.0.gem) = 862f1d173befab10c73958617ec289797102ca4e9393c7cfe6992a41e9274eb6
-SIZE (rubygem/kubeclient-4.6.0.gem) = 74752
+TIMESTAMP = 1603351020
+SHA256 (rubygem/kubeclient-4.9.1.gem) = 87020b95c2d647907b93d8b434e1653de41af9cb1a9e3724de15c396dbe6cf1f
+SIZE (rubygem/kubeclient-4.9.1.gem) = 78848
