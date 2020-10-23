@@ -1,6 +1,6 @@
---- weblayer/browser/content_browser_client_impl.cc.orig	2020-07-07 21:58:19 UTC
+--- weblayer/browser/content_browser_client_impl.cc.orig	2020-09-08 19:14:28 UTC
 +++ weblayer/browser/content_browser_client_impl.cc
-@@ -102,7 +102,7 @@
+@@ -120,7 +120,7 @@
  #include "weblayer/browser/safe_browsing/safe_browsing_service.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "content/public/common/content_descriptors.h"
  #endif
  
-@@ -339,7 +339,7 @@ void ContentBrowserClientImpl::ConfigureNetworkContext
+@@ -355,7 +355,7 @@ void ContentBrowserClientImpl::ConfigureNetworkContext
  
  void ContentBrowserClientImpl::OnNetworkServiceCreated(
      network::mojom::NetworkService* network_service) {
@@ -18,7 +18,7 @@
    network::mojom::CryptConfigPtr config = network::mojom::CryptConfig::New();
    content::GetNetworkService()->SetCryptConfig(std::move(config));
  #endif
-@@ -608,7 +608,7 @@ SafeBrowsingService* ContentBrowserClientImpl::GetSafe
+@@ -712,7 +712,7 @@ SafeBrowsingService* ContentBrowserClientImpl::GetSafe
  }
  #endif
  
@@ -27,7 +27,7 @@
  void ContentBrowserClientImpl::GetAdditionalMappedFilesForChildProcess(
      const base::CommandLine& command_line,
      int child_process_id,
-@@ -642,7 +642,7 @@ void ContentBrowserClientImpl::GetAdditionalMappedFile
+@@ -746,7 +746,7 @@ void ContentBrowserClientImpl::GetAdditionalMappedFile
      mappings->Share(service_manager::kCrashDumpSignal, crash_signal_fd);
  #endif  // defined(OS_ANDROID)
  }

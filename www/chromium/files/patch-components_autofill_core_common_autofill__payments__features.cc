@@ -1,6 +1,6 @@
---- components/autofill/core/common/autofill_payments_features.cc.orig	2020-07-07 21:58:14 UTC
+--- components/autofill/core/common/autofill_payments_features.cc.orig	2020-09-08 19:14:03 UTC
 +++ components/autofill/core/common/autofill_payments_features.cc
-@@ -115,7 +115,7 @@ const base::Feature kAutofillUpstreamEditableExpiratio
+@@ -124,7 +124,7 @@ const base::Feature kAutofillUpstreamAllowAllEmailDoma
  
  bool ShouldShowImprovedUserConsentForCreditCardSave() {
  #if defined(OS_WIN) || defined(OS_MACOSX) || \

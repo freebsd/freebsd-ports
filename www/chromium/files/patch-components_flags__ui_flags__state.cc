@@ -1,6 +1,6 @@
---- components/flags_ui/flags_state.cc.orig	2020-02-03 21:53:30 UTC
+--- components/flags_ui/flags_state.cc.orig	2020-09-08 19:14:03 UTC
 +++ components/flags_ui/flags_state.cc
-@@ -693,7 +693,7 @@ int FlagsState::GetCurrentPlatform() {
+@@ -684,7 +684,7 @@ int FlagsState::GetCurrentPlatform() {
    return kOsWin;
  #elif defined(OS_CHROMEOS)  // Needs to be before the OS_LINUX check.
    return kOsCrOS;

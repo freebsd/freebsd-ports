@@ -1,32 +1,32 @@
---- gpu/vulkan/vulkan_function_pointers.h.orig	2020-07-07 21:58:16 UTC
+--- gpu/vulkan/vulkan_function_pointers.h.orig	2020-09-08 19:14:06 UTC
 +++ gpu/vulkan/vulkan_function_pointers.h
-@@ -235,10 +235,10 @@ struct COMPONENT_EXPORT(VULKAN) VulkanFunctionPointers
-       vkGetAndroidHardwareBufferPropertiesANDROIDFn;
+@@ -234,10 +234,10 @@ struct COMPONENT_EXPORT(VULKAN) VulkanFunctionPointers
+       vkGetAndroidHardwareBufferPropertiesANDROID;
  #endif  // defined(OS_ANDROID)
  
 -#if defined(OS_LINUX) || defined(OS_ANDROID)
 +#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
-   VulkanFunction<PFN_vkGetSemaphoreFdKHR> vkGetSemaphoreFdKHRFn;
-   VulkanFunction<PFN_vkImportSemaphoreFdKHR> vkImportSemaphoreFdKHRFn;
+   VulkanFunction<PFN_vkGetSemaphoreFdKHR> vkGetSemaphoreFdKHR;
+   VulkanFunction<PFN_vkImportSemaphoreFdKHR> vkImportSemaphoreFdKHR;
 -#endif  // defined(OS_LINUX) || defined(OS_ANDROID)
 +#endif  // defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
  
  #if defined(OS_WIN)
-   VulkanFunction<PFN_vkGetSemaphoreWin32HandleKHR>
-@@ -247,10 +247,10 @@ struct COMPONENT_EXPORT(VULKAN) VulkanFunctionPointers
-       vkImportSemaphoreWin32HandleKHRFn;
+   VulkanFunction<PFN_vkGetSemaphoreWin32HandleKHR> vkGetSemaphoreWin32HandleKHR;
+@@ -245,10 +245,10 @@ struct COMPONENT_EXPORT(VULKAN) VulkanFunctionPointers
+       vkImportSemaphoreWin32HandleKHR;
  #endif  // defined(OS_WIN)
  
 -#if defined(OS_LINUX) || defined(OS_ANDROID)
 +#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
-   VulkanFunction<PFN_vkGetMemoryFdKHR> vkGetMemoryFdKHRFn;
-   VulkanFunction<PFN_vkGetMemoryFdPropertiesKHR> vkGetMemoryFdPropertiesKHRFn;
+   VulkanFunction<PFN_vkGetMemoryFdKHR> vkGetMemoryFdKHR;
+   VulkanFunction<PFN_vkGetMemoryFdPropertiesKHR> vkGetMemoryFdPropertiesKHR;
 -#endif  // defined(OS_LINUX) || defined(OS_ANDROID)
 +#endif  // defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
  
  #if defined(OS_WIN)
-   VulkanFunction<PFN_vkGetMemoryWin32HandleKHR> vkGetMemoryWin32HandleKHRFn;
-@@ -950,7 +950,7 @@ ALWAYS_INLINE VkResult vkGetAndroidHardwareBufferPrope
+   VulkanFunction<PFN_vkGetMemoryWin32HandleKHR> vkGetMemoryWin32HandleKHR;
+@@ -953,7 +953,7 @@ ALWAYS_INLINE VkResult vkGetAndroidHardwareBufferPrope
  }
  #endif  // defined(OS_ANDROID)
  
@@ -35,8 +35,8 @@
  ALWAYS_INLINE VkResult
  vkGetSemaphoreFdKHR(VkDevice device,
                      const VkSemaphoreGetFdInfoKHR* pGetFdInfo,
-@@ -964,7 +964,7 @@ ALWAYS_INLINE VkResult vkImportSemaphoreFdKHR(
-   return gpu::GetVulkanFunctionPointers()->vkImportSemaphoreFdKHRFn(
+@@ -967,7 +967,7 @@ ALWAYS_INLINE VkResult vkImportSemaphoreFdKHR(
+   return gpu::GetVulkanFunctionPointers()->vkImportSemaphoreFdKHR(
        device, pImportSemaphoreFdInfo);
  }
 -#endif  // defined(OS_LINUX) || defined(OS_ANDROID)
@@ -44,7 +44,7 @@
  
  #if defined(OS_WIN)
  ALWAYS_INLINE VkResult vkGetSemaphoreWin32HandleKHR(
-@@ -983,7 +983,7 @@ vkImportSemaphoreWin32HandleKHR(VkDevice device,
+@@ -986,7 +986,7 @@ vkImportSemaphoreWin32HandleKHR(VkDevice device,
  }
  #endif  // defined(OS_WIN)
  
@@ -53,8 +53,8 @@
  ALWAYS_INLINE VkResult vkGetMemoryFdKHR(VkDevice device,
                                          const VkMemoryGetFdInfoKHR* pGetFdInfo,
                                          int* pFd) {
-@@ -998,7 +998,7 @@ vkGetMemoryFdPropertiesKHR(VkDevice device,
-   return gpu::GetVulkanFunctionPointers()->vkGetMemoryFdPropertiesKHRFn(
+@@ -1001,7 +1001,7 @@ vkGetMemoryFdPropertiesKHR(VkDevice device,
+   return gpu::GetVulkanFunctionPointers()->vkGetMemoryFdPropertiesKHR(
        device, handleType, fd, pMemoryFdProperties);
  }
 -#endif  // defined(OS_LINUX) || defined(OS_ANDROID)
@@ -62,8 +62,8 @@
  
  #if defined(OS_WIN)
  ALWAYS_INLINE VkResult vkGetMemoryWin32HandleKHR(
-@@ -1079,4 +1079,4 @@ ALWAYS_INLINE VkResult vkQueuePresentKHR(VkQueue queue
-                                                                pPresentInfo);
+@@ -1081,4 +1081,4 @@ ALWAYS_INLINE VkResult vkQueuePresentKHR(VkQueue queue
+                                                              pPresentInfo);
  }
  
 -#endif  // GPU_VULKAN_VULKAN_FUNCTION_POINTERS_H_

@@ -1,4 +1,4 @@
---- third_party/blink/renderer/controller/blink_initializer.cc.orig	2020-07-07 21:58:17 UTC
+--- third_party/blink/renderer/controller/blink_initializer.cc.orig	2020-09-08 19:14:10 UTC
 +++ third_party/blink/renderer/controller/blink_initializer.cc
 @@ -66,11 +66,11 @@
  #include "third_party/blink/renderer/controller/oom_intervention_impl.h"
@@ -14,7 +14,7 @@
      defined(OS_WIN)
  #include "third_party/blink/renderer/controller/highest_pmf_reporter.h"
  #include "third_party/blink/renderer/controller/user_level_memory_pressure_signal_generator.h"
-@@ -147,7 +147,7 @@ void InitializeCommon(Platform* platform, mojo::Binder
+@@ -142,7 +142,7 @@ void InitializeCommon(Platform* platform, mojo::Binder
    CrashMemoryMetricsReporterImpl::Instance();
  #endif
  

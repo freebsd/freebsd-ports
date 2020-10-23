@@ -1,8 +1,8 @@
---- services/service_manager/zygote/zygote_host_linux.h.orig	2019-03-11 22:01:02 UTC
-+++ services/service_manager/zygote/zygote_host_linux.h
+--- content/public/browser/zygote_host/zygote_host_linux.h.orig	2020-09-16 15:24:35 UTC
++++ content/public/browser/zygote_host/zygote_host_linux.h
 @@ -30,11 +30,13 @@ class ZygoteHost {
    // after the first render has been forked.
-   virtual int GetRendererSandboxStatus() const = 0;
+   virtual int GetRendererSandboxStatus() = 0;
  
 +#if !defined(OS_BSD)
    // Adjust the OOM score of the given renderer's PID.  The allowed
@@ -13,4 +13,4 @@
 +#endif
  };
  
- }  // namespace service_manager
+ }  // namespace content

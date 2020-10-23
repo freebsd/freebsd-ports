@@ -1,4 +1,4 @@
---- base/base_switches.cc.orig	2019-10-21 19:06:18 UTC
+--- base/base_switches.cc.orig	2020-09-08 19:13:57 UTC
 +++ base/base_switches.cc
 @@ -117,7 +117,7 @@ const char kDisableHighResTimer[] = "disable-highres-t
  const char kDisableUsbKeyboardDetect[]      = "disable-usb-keyboard-detect";
@@ -9,8 +9,8 @@
  // The /dev/shm partition is too small in certain VM environments, causing
  // Chrome to fail or crash (see http://crbug.com/715363). Use this flag to
  // work-around this issue (a temporary directory will always be used to create
-@@ -138,7 +138,7 @@ const char kEnableCrashReporterForTesting[] =
- const char kEnableReachedCodeProfiler[] = "enable-reached-code-profiler";
+@@ -142,7 +142,7 @@ const char kReachedCodeSamplingIntervalUs[] =
+     "reached-code-sampling-interval-us";
  #endif
  
 -#if defined(OS_LINUX)

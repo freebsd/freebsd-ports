@@ -1,6 +1,6 @@
---- chrome/browser/ui/webui/about_ui.cc.orig	2020-07-07 21:58:14 UTC
+--- chrome/browser/ui/webui/about_ui.cc.orig	2020-09-08 19:14:01 UTC
 +++ chrome/browser/ui/webui/about_ui.cc
-@@ -563,7 +563,7 @@ std::string ChromeURLs() {
+@@ -564,7 +564,7 @@ std::string ChromeURLs() {
    return html;
  }
  
@@ -9,7 +9,7 @@
  std::string AboutLinuxProxyConfig() {
    std::string data;
    AppendHeader(&data, 0,
-@@ -619,7 +619,7 @@ void AboutUIHTMLSource::StartDataRequest(
+@@ -620,7 +620,7 @@ void AboutUIHTMLSource::StartDataRequest(
        response =
            ui::ResourceBundle::GetSharedInstance().LoadDataResourceString(idr);
      }

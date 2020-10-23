@@ -1,4 +1,4 @@
---- build/config/BUILDCONFIG.gn.orig	2019-06-04 18:55:15 UTC
+--- build/config/BUILDCONFIG.gn.orig	2020-09-21 18:39:01 UTC
 +++ build/config/BUILDCONFIG.gn
 @@ -131,10 +131,10 @@ declare_args() {
    is_official_build = false
@@ -33,8 +33,13 @@
    # See comments in build/toolchain/cros/BUILD.gn about board compiles.
    if (is_clang) {
      _default_toolchain = "//build/toolchain/linux:clang_$target_cpu"
-@@ -288,10 +288,11 @@ is_android = current_os == "android"
+@@ -285,10 +285,12 @@ if (custom_toolchain != "") {
+ # current_os value directly.
+ 
+ is_android = current_os == "android"
++is_bsd = current_os == "freebsd" || current_os == "netbsd" || current_os == "openbsd"
  is_chromeos = current_os == "chromeos"
++is_freebsd = current_os == "freebsd"
  is_fuchsia = current_os == "fuchsia"
  is_ios = current_os == "ios"
 -is_linux = current_os == "chromeos" || current_os == "linux"
@@ -42,7 +47,3 @@
  is_mac = current_os == "mac"
  is_nacl = current_os == "nacl"
  is_win = current_os == "win" || current_os == "winuwp"
-+is_bsd = current_os == "freebsd"
- 
- is_posix = !is_win && !is_fuchsia
- 

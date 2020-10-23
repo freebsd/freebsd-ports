@@ -1,4 +1,4 @@
---- ui/base/ui_base_features.cc.orig	2020-07-07 21:58:19 UTC
+--- ui/base/ui_base_features.cc.orig	2020-09-08 19:14:28 UTC
 +++ ui/base/ui_base_features.cc
 @@ -98,7 +98,7 @@ const base::Feature kCompositorThreadedScrollbarScroll
  // native apps on Windows.
@@ -27,7 +27,7 @@
  
  // Enables forced colors mode for web content.
  const base::Feature kForcedColors{"ForcedColors",
-@@ -166,7 +166,7 @@ bool IsEyeDropperEnabled() {
+@@ -178,7 +178,7 @@ bool IsCSSColorSchemeUARenderingEnabled() {
  // crbug.com/1012106 for the Windows launch bug, and crbug.com/1012108 for the
  // Mac launch bug.
  const base::Feature kFormControlsRefresh = {"FormControlsRefresh",

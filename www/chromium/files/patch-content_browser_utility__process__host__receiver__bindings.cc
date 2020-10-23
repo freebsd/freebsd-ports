@@ -1,15 +1,15 @@
---- content/browser/utility_process_host_receiver_bindings.cc.orig	2020-02-26 13:18:37 UTC
+--- content/browser/utility_process_host_receiver_bindings.cc.orig	2020-09-08 19:14:05 UTC
 +++ content/browser/utility_process_host_receiver_bindings.cc
-@@ -8,7 +8,7 @@
- 
- #include "build/build_config.h"
+@@ -10,7 +10,7 @@
+ #include "content/public/browser/content_browser_client.h"
+ #include "content/public/common/content_client.h"
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
  #include "components/services/font/public/mojom/font_service.mojom.h"  // nogncheck
  #include "content/browser/font_service.h"  // nogncheck
  #endif
-@@ -17,7 +17,7 @@ namespace content {
+@@ -19,7 +19,7 @@ namespace content {
  
  void UtilityProcessHost::BindHostReceiver(
      mojo::GenericPendingReceiver receiver) {

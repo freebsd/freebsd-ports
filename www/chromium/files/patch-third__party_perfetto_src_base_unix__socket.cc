@@ -1,4 +1,4 @@
---- third_party/perfetto/src/base/unix_socket.cc.orig	2020-03-16 18:42:11 UTC
+--- third_party/perfetto/src/base/unix_socket.cc.orig	2020-09-08 19:20:00 UTC
 +++ third_party/perfetto/src/base/unix_socket.cc
 @@ -37,7 +37,7 @@
  #include "perfetto/ext/base/string_utils.h"
@@ -9,7 +9,7 @@
  #include <sys/ucred.h>
  #endif
  
-@@ -601,7 +601,7 @@ void UnixSocket::ReadPeerCredentials() {
+@@ -606,7 +606,7 @@ void UnixSocket::ReadPeerCredentials() {
    if (sock_raw_.family() != SockFamily::kUnix)
      return;
  

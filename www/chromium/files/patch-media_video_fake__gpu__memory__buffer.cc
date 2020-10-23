@@ -1,15 +1,15 @@
---- media/video/fake_gpu_memory_buffer.cc.orig	2019-12-17 19:43:52 UTC
+--- media/video/fake_gpu_memory_buffer.cc.orig	2020-09-08 19:14:07 UTC
 +++ media/video/fake_gpu_memory_buffer.cc
-@@ -6,7 +6,7 @@
- 
- #include "build/build_config.h"
+@@ -10,7 +10,7 @@
+ #include "media/base/format_utils.h"
+ #include "media/base/video_frame.h"
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
  #include <fcntl.h>
  #include <sys/stat.h>
  #include <sys/types.h>
-@@ -44,7 +44,7 @@ class FakeGpuMemoryBufferImpl : public gpu::GpuMemoryB
+@@ -48,7 +48,7 @@ class FakeGpuMemoryBufferImpl : public gpu::GpuMemoryB
  
  }  // namespace
  
@@ -18,25 +18,25 @@
  base::ScopedFD GetDummyFD() {
    base::ScopedFD fd(open("/dev/zero", O_RDWR));
    DCHECK(fd.is_valid());
-@@ -67,7 +67,7 @@ FakeGpuMemoryBuffer::FakeGpuMemoryBuffer(const gfx::Si
-   // Set a dummy id since this is for testing only.
-   handle_.id = gfx::GpuMemoryBufferId(0);
+@@ -73,7 +73,7 @@ FakeGpuMemoryBuffer::FakeGpuMemoryBuffer(const gfx::Si
+   static base::NoDestructor<base::AtomicSequenceNumber> buffer_id_generator;
+   handle_.id = gfx::GpuMemoryBufferId(buffer_id_generator->GetNext());
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
-   // Set a dummy fd since this is for testing only.
-   handle_.native_pixmap_handle.planes.push_back(
-       gfx::NativePixmapPlane(size_.width(), 0, y_plane_size, GetDummyFD()));
-@@ -76,7 +76,7 @@ FakeGpuMemoryBuffer::FakeGpuMemoryBuffer(const gfx::Si
-         size_.width(), handle_.native_pixmap_handle.planes[0].size,
-         uv_plane_size, GetDummyFD()));
+   for (size_t i = 0; i < VideoFrame::NumPlanes(video_pixel_format_); i++) {
+     const gfx::Size plane_size_in_bytes =
+         VideoFrame::PlaneSize(video_pixel_format_, i, size_);
+@@ -81,7 +81,7 @@ FakeGpuMemoryBuffer::FakeGpuMemoryBuffer(const gfx::Si
+         plane_size_in_bytes.width(), 0, plane_size_in_bytes.GetArea(),
+         GetDummyFD());
    }
 -#endif  // defined(OS_LINUX)
 +#endif  // defined(OS_LINUX) || defined(OS_BSD)
  }
  
  FakeGpuMemoryBuffer::~FakeGpuMemoryBuffer() = default;
-@@ -135,7 +135,7 @@ gfx::GpuMemoryBufferHandle FakeGpuMemoryBuffer::CloneH
+@@ -129,7 +129,7 @@ gfx::GpuMemoryBufferHandle FakeGpuMemoryBuffer::CloneH
    gfx::GpuMemoryBufferHandle handle;
    handle.type = gfx::NATIVE_PIXMAP;
    handle.id = handle_.id;

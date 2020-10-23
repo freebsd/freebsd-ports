@@ -1,6 +1,6 @@
---- content/shell/BUILD.gn.orig	2020-07-07 21:58:16 UTC
+--- content/shell/BUILD.gn.orig	2020-09-08 19:14:05 UTC
 +++ content/shell/BUILD.gn
-@@ -227,7 +227,7 @@ static_library("content_shell_app") {
+@@ -226,7 +226,7 @@ static_library("content_shell_app") {
      "//content/public/app",
      "//v8",
    ]
@@ -9,7 +9,7 @@
      deps += [
        "//components/crash/core/app",
        "//components/crash/core/app:test_support",
-@@ -495,6 +495,13 @@ static_library("content_shell_lib") {
+@@ -489,6 +489,13 @@ static_library("content_shell_lib") {
      ]
      deps += [ "//third_party/fuchsia-sdk/sdk/fidl/fuchsia.ui.policy" ]
    }
@@ -23,7 +23,7 @@
  
    if (enable_plugins) {
      deps += [
-@@ -1070,7 +1077,7 @@ group("content_shell_crash_test") {
+@@ -1066,7 +1073,7 @@ group("content_shell_crash_test") {
    if (is_win) {
      data_deps += [ "//build/win:copy_cdb_to_output" ]
    }

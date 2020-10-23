@@ -1,4 +1,4 @@
---- base/base_switches.h.orig	2019-10-21 19:06:18 UTC
+--- base/base_switches.h.orig	2020-09-08 19:13:57 UTC
 +++ base/base_switches.h
 @@ -38,7 +38,7 @@ extern const char kDisableHighResTimer[];
  extern const char kDisableUsbKeyboardDetect[];
@@ -9,7 +9,7 @@
  extern const char kDisableDevShmUsage[];
  #endif
  
-@@ -51,7 +51,7 @@ extern const char kEnableReachedCodeProfiler[];
+@@ -52,7 +52,7 @@ extern const char kReachedCodeSamplingIntervalUs[];
  extern const char kOrderfileMemoryOptimization[];
  #endif
  

@@ -1,6 +1,6 @@
---- services/service_manager/zygote/host/zygote_host_impl_linux.h.orig	2019-03-11 22:01:02 UTC
-+++ services/service_manager/zygote/host/zygote_host_impl_linux.h
-@@ -44,8 +44,10 @@ class COMPONENT_EXPORT(SERVICE_MANAGER_ZYGOTE) ZygoteH
+--- content/browser/zygote_host/zygote_host_impl_linux.h.orig	2020-09-16 15:22:06 UTC
++++ content/browser/zygote_host/zygote_host_impl_linux.h
+@@ -42,8 +42,10 @@ class CONTENT_EXPORT ZygoteHostImpl : public ZygoteHos
                       base::ScopedFD* control_fd,
                       base::FileHandleMappingVector additional_remapped_fds);
  

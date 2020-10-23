@@ -1,6 +1,6 @@
---- net/socket/udp_socket_posix.h.orig	2019-06-07 19:57:25 UTC
+--- net/socket/udp_socket_posix.h.orig	2020-09-08 19:14:08 UTC
 +++ net/socket/udp_socket_posix.h
-@@ -33,7 +33,7 @@
+@@ -34,7 +34,7 @@
  
  #if defined(__ANDROID__) && defined(__aarch64__)
  #define HAVE_SENDMMSG 1

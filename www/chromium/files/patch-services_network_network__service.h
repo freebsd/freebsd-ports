@@ -1,6 +1,6 @@
---- services/network/network_service.h.orig	2020-05-13 18:40:33 UTC
+--- services/network/network_service.h.orig	2020-09-08 19:14:09 UTC
 +++ services/network/network_service.h
-@@ -156,7 +156,7 @@ class COMPONENT_EXPORT(NETWORK_SERVICE) NetworkService
+@@ -192,7 +192,7 @@ class COMPONENT_EXPORT(NETWORK_SERVICE) NetworkService
        base::span<const uint8_t> config,
        mojom::NetworkService::UpdateLegacyTLSConfigCallback callback) override;
    void OnCertDBChanged() override;

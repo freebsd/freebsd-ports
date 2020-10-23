@@ -1,4 +1,4 @@
---- services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics.h.orig	2019-07-24 18:58:35 UTC
+--- services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics.h.orig	2020-09-08 19:14:09 UTC
 +++ services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics.h
 @@ -28,9 +28,9 @@ class COMPONENT_EXPORT(
                                      mojom::RawOSMemDump*);
@@ -18,10 +18,10 @@
  
 -#if defined(OS_LINUX) || defined(OS_ANDROID)
 +#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
-   // Provides information on the dump state of resident pages.
-   enum class MappedAndResidentPagesDumpState {
-     // Access to /proc/<pid>/pagemap can be denied for android devices running
-@@ -68,7 +68,7 @@ class COMPONENT_EXPORT(
+   // Provides information on the dump state of resident pages. These values are
+   // written to logs. New enum values can be added, but existing enums must
+   // never be renumbered or deleted and reused.
+@@ -79,7 +79,7 @@ class COMPONENT_EXPORT(
    // TODO(chiniforooshan): move to /base/process/process_metrics_linux.cc after
    // making sure that peak RSS is useful.
    static size_t GetPeakResidentSetSize(base::ProcessId pid);

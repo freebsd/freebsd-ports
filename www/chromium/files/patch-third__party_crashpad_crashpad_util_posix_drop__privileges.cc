@@ -1,6 +1,6 @@
---- third_party/crashpad/crashpad/util/posix/drop_privileges.cc.orig	2019-03-11 22:01:15 UTC
+--- third_party/crashpad/crashpad/util/posix/drop_privileges.cc.orig	2020-09-08 19:14:24 UTC
 +++ third_party/crashpad/crashpad/util/posix/drop_privileges.cc
-@@ -23,7 +23,7 @@ void DropPrivileges() {
+@@ -25,7 +25,7 @@ void DropPrivileges() {
    gid_t gid = getgid();
    uid_t uid = getuid();
  

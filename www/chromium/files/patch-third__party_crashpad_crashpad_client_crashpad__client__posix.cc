@@ -1,6 +1,6 @@
---- third_party/crashpad/crashpad/client/crashpad_client_posix.cc.orig	2019-03-17 01:47:14 UTC
+--- third_party/crashpad/crashpad/client/crashpad_client_posix.cc.orig	2020-09-16 19:36:07 UTC
 +++ third_party/crashpad/crashpad/client/crashpad_client_posix.cc
-@@ -0,0 +1,38 @@
+@@ -0,0 +1,39 @@
 +// Copyright 2017 The Crashpad Authors. All rights reserved.
 +//
 +// Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,6 +18,7 @@
 +#include "client/crashpad_client.h"
 +
 +#include "base/logging.h"
++#include "base/notreached.h"
 +
 +namespace crashpad {
 +

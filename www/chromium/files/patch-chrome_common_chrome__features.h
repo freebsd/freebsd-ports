@@ -1,6 +1,6 @@
---- chrome/common/chrome_features.h.orig	2020-07-07 21:58:14 UTC
+--- chrome/common/chrome_features.h.orig	2020-09-08 19:14:01 UTC
 +++ chrome/common/chrome_features.h
-@@ -61,10 +61,10 @@ extern const base::Feature kAppServiceIntentHandling;
+@@ -63,10 +63,10 @@ extern const base::Feature kAppServiceAdaptiveIcon;
  
  COMPONENT_EXPORT(CHROME_FEATURES) extern const base::Feature kAsyncDns;
  

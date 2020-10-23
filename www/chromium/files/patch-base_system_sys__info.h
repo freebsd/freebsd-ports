@@ -1,6 +1,6 @@
---- base/system/sys_info.h.orig	2020-05-13 18:39:35 UTC
+--- base/system/sys_info.h.orig	2020-09-08 19:13:57 UTC
 +++ base/system/sys_info.h
-@@ -197,6 +197,8 @@ class BASE_EXPORT SysInfo {
+@@ -201,6 +201,8 @@ class BASE_EXPORT SysInfo {
    // On Desktop this returns true when memory <= 512MB.
    static bool IsLowEndDevice();
  
@@ -9,7 +9,7 @@
   private:
    FRIEND_TEST_ALL_PREFIXES(SysInfoTest, AmountOfAvailablePhysicalMemory);
    FRIEND_TEST_ALL_PREFIXES(debug::SystemMetricsTest, ParseMeminfo);
-@@ -206,7 +208,7 @@ class BASE_EXPORT SysInfo {
+@@ -210,7 +212,7 @@ class BASE_EXPORT SysInfo {
    static bool IsLowEndDeviceImpl();
    static HardwareInfo GetHardwareInfoSync();
  

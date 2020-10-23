@@ -1,6 +1,6 @@
---- gpu/command_buffer/service/external_vk_image_backing.h.orig	2020-05-13 18:40:32 UTC
+--- gpu/command_buffer/service/external_vk_image_backing.h.orig	2020-09-08 19:14:06 UTC
 +++ gpu/command_buffer/service/external_vk_image_backing.h
-@@ -151,7 +151,7 @@ class ExternalVkImageBacking final : public ClearTrack
+@@ -154,7 +154,7 @@ class ExternalVkImageBacking final : public ClearTrack
  
   private:
  

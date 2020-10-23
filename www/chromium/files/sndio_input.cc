@@ -5,7 +5,6 @@
 #include "base/bind.h"
 #include "base/logging.h"
 #include "base/macros.h"
-#include "base/message_loop/message_loop.h"
 #include "media/base/audio_timestamp_helper.h"
 #include "media/audio/openbsd/audio_manager_openbsd.h"
 #include "media/audio/audio_manager.h"

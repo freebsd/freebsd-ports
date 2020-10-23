@@ -1,6 +1,6 @@
---- ui/compositor/compositor.cc.orig	2020-07-07 21:58:19 UTC
+--- ui/compositor/compositor.cc.orig	2020-09-08 19:14:28 UTC
 +++ ui/compositor/compositor.cc
-@@ -740,7 +740,7 @@ void Compositor::CancelThroughtputTracker(TrackerId tr
+@@ -731,7 +731,7 @@ void Compositor::CancelThroughtputTracker(TrackerId tr
    throughput_tracker_map_.erase(tracker_id);
  }
  

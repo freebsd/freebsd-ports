@@ -1,4 +1,4 @@
---- chrome/browser/media/router/discovery/discovery_network_list_posix.cc.orig	2019-03-11 22:00:53 UTC
+--- chrome/browser/media/router/discovery/discovery_network_list_posix.cc.orig	2020-09-08 19:14:00 UTC
 +++ chrome/browser/media/router/discovery/discovery_network_list_posix.cc
 @@ -10,6 +10,7 @@
  #include <netinet/in.h>
@@ -8,7 +8,7 @@
  
  #include <algorithm>
  
-@@ -19,7 +20,7 @@
+@@ -18,7 +19,7 @@
  #include "chrome/browser/media/router/discovery/discovery_network_list_wifi.h"
  #include "net/base/net_errors.h"
  
@@ -17,7 +17,7 @@
  #include <netpacket/packet.h>
  #else
  #include <net/if_dl.h>
-@@ -28,7 +29,7 @@
+@@ -27,7 +28,7 @@
  namespace media_router {
  namespace {
  

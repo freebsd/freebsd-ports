@@ -1,4 +1,4 @@
---- content/renderer/render_thread_impl.cc.orig	2020-07-07 21:58:16 UTC
+--- content/renderer/render_thread_impl.cc.orig	2020-09-08 19:14:05 UTC
 +++ content/renderer/render_thread_impl.cc
 @@ -177,7 +177,7 @@
  
@@ -9,7 +9,7 @@
  #include <malloc.h>
  #endif
  
-@@ -744,7 +744,7 @@ void RenderThreadImpl::Init() {
+@@ -752,7 +752,7 @@ void RenderThreadImpl::Init() {
    DCHECK(parsed_num_raster_threads) << string_value;
    DCHECK_GT(num_raster_threads, 0);
  
@@ -18,7 +18,7 @@
    categorized_worker_pool_->SetBackgroundingCallback(
        main_thread_scheduler_->DefaultTaskRunner(),
        base::BindOnce(
-@@ -767,7 +767,7 @@ void RenderThreadImpl::Init() {
+@@ -775,7 +775,7 @@ void RenderThreadImpl::Init() {
    base::DiscardableMemoryAllocator::SetInstance(
        discardable_memory_allocator_.get());
  
@@ -27,7 +27,7 @@
    if (base::FeatureList::IsEnabled(
            blink::features::kBlinkCompositorUseDisplayThreadPriority)) {
      render_message_filter()->SetThreadPriority(
-@@ -1151,7 +1151,7 @@ media::GpuVideoAcceleratorFactories* RenderThreadImpl:
+@@ -1161,7 +1161,7 @@ media::GpuVideoAcceleratorFactories* RenderThreadImpl:
        !cmd_line->HasSwitch(switches::kDisableGpuMemoryBufferVideoFrames);
  #else
        cmd_line->HasSwitch(switches::kEnableGpuMemoryBufferVideoFrames);

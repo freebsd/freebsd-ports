@@ -1,6 +1,6 @@
---- headless/lib/headless_content_main_delegate.cc.orig	2020-07-07 21:58:16 UTC
+--- headless/lib/headless_content_main_delegate.cc.orig	2020-09-08 19:14:06 UTC
 +++ headless/lib/headless_content_main_delegate.cc
-@@ -317,7 +317,7 @@ void HeadlessContentMainDelegate::InitCrashReporter(
+@@ -324,7 +324,7 @@ void HeadlessContentMainDelegate::InitCrashReporter(
      const base::CommandLine& command_line) {
    if (command_line.HasSwitch(::switches::kDisableBreakpad))
      return;
@@ -9,7 +9,7 @@
    // TODO(fuchsia): Implement this when crash reporting/Breakpad are available
    // in Fuchsia. (crbug.com/753619)
    NOTIMPLEMENTED();
-@@ -346,7 +346,7 @@ void HeadlessContentMainDelegate::InitCrashReporter(
+@@ -353,7 +353,7 @@ void HeadlessContentMainDelegate::InitCrashReporter(
    crash_reporter::InitializeCrashpadWithEmbeddedHandler(
        process_type.empty(), process_type, "", base::FilePath());
  #endif  // defined(HEADLESS_USE_BREAKPAD)
@@ -18,7 +18,7 @@
  }
  
  
-@@ -398,7 +398,7 @@ int HeadlessContentMainDelegate::RunProcess(
+@@ -405,7 +405,7 @@ int HeadlessContentMainDelegate::RunProcess(
    return 0;
  }
  
@@ -27,7 +27,7 @@
  void SIGTERMProfilingShutdown(int signal) {
    content::Profiling::Stop();
    struct sigaction sigact;
-@@ -433,7 +433,7 @@ void HeadlessContentMainDelegate::ZygoteForked() {
+@@ -440,7 +440,7 @@ void HeadlessContentMainDelegate::ZygoteForked() {
    breakpad::InitCrashReporter(process_type);
  #endif
  }

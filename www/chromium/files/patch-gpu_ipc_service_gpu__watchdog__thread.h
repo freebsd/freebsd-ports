@@ -1,6 +1,6 @@
---- gpu/ipc/service/gpu_watchdog_thread.h.orig	2020-07-07 21:58:16 UTC
+--- gpu/ipc/service/gpu_watchdog_thread.h.orig	2020-09-08 19:14:06 UTC
 +++ gpu/ipc/service/gpu_watchdog_thread.h
-@@ -216,7 +216,7 @@ class GPU_IPC_SERVICE_EXPORT GpuWatchdogThreadImplV1
+@@ -213,7 +213,7 @@ class GPU_IPC_SERVICE_EXPORT GpuWatchdogThreadImplV1
    base::ThreadTicks GetWatchedThreadTime();
  #endif
  
@@ -9,9 +9,9 @@
    void UpdateActiveTTY();
  #endif
  
-@@ -274,7 +274,7 @@ class GPU_IPC_SERVICE_EXPORT GpuWatchdogThreadImplV1
-   // whether GpuWatchdogThreadEvent::kGpuWatchdogStart has been recorded.
-   bool is_watchdog_start_histogram_recorded = false;
+@@ -261,7 +261,7 @@ class GPU_IPC_SERVICE_EXPORT GpuWatchdogThreadImplV1
+   base::Time check_time_;
+   base::TimeTicks check_timeticks_;
  
 -#if defined(USE_X11)
 +#if defined(USE_X11) && !defined(OS_BSD)

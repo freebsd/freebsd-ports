@@ -1,6 +1,6 @@
---- components/BUILD.gn.orig	2020-07-07 21:58:14 UTC
+--- components/BUILD.gn.orig	2020-09-08 19:14:03 UTC
 +++ components/BUILD.gn
-@@ -290,9 +290,14 @@ test("components_unittests") {
+@@ -294,9 +294,14 @@ test("components_unittests") {
      ]
  
      if (!is_fuchsia) {

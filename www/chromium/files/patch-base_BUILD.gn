@@ -1,4 +1,4 @@
---- base/BUILD.gn.orig	2020-07-07 21:58:11 UTC
+--- base/BUILD.gn.orig	2020-09-08 19:13:57 UTC
 +++ base/BUILD.gn
 @@ -60,7 +60,7 @@ declare_args() {
    # replacement base::Location::Current(). On by default in non-official builds
@@ -9,7 +9,7 @@
  
    # Unsafe developer build. Has developer-friendly features that may weaken or
    # disable security measures like sandboxing or ASLR.
-@@ -936,7 +936,7 @@ jumbo_component("base") {
+@@ -887,7 +887,7 @@ jumbo_component("base") {
        "timer/hi_res_timer_manager_posix.cc",
      ]
  
@@ -18,12 +18,12 @@
        sources += [
          "profiler/stack_copier_signal.cc",
          "profiler/stack_copier_signal.h",
-@@ -945,6 +945,12 @@ jumbo_component("base") {
+@@ -896,6 +896,12 @@ jumbo_component("base") {
          "profiler/thread_delegate_posix.h",
        ]
      }
 +
-+    if (is_bsd) {
++    if (is_freebsd) {
 +      sources += [
 +        "profiler/stack_sampler_posix.cc",
 +      ]
@@ -31,7 +31,7 @@
    }
  
    if (is_win) {
-@@ -1329,7 +1335,7 @@ jumbo_component("base") {
+@@ -1287,7 +1293,7 @@ jumbo_component("base") {
    # Needed for <atomic> if using newer C++ library than sysroot, except if
    # building inside the cros_sdk environment - use host_toolchain as a
    # more robust check for this.
@@ -40,20 +40,20 @@
        host_toolchain != "//build/toolchain/cros:host") {
      libs += [ "atomic" ]
    }
-@@ -1355,7 +1361,7 @@ jumbo_component("base") {
+@@ -1313,7 +1319,7 @@ jumbo_component("base") {
          "allocator/allocator_shim_override_glibc_weak_symbols.h",
        ]
        deps += [ "//base/allocator:tcmalloc" ]
 -    } else if (is_linux && use_allocator == "none") {
 +    } else if ((is_linux && !is_bsd) && use_allocator == "none") {
        sources += [ "allocator/allocator_shim_default_dispatch_to_glibc.cc" ]
-     } else if (is_android && use_allocator == "none") {
-       sources += [
-@@ -1952,6 +1958,33 @@ jumbo_component("base") {
+     } else if ((is_linux || is_android) && use_allocator == "partition") {
+       # Cannot use the same dispatching for host-side binaries.
+@@ -1925,6 +1931,33 @@ jumbo_component("base") {
      }
    }
  
-+  if (is_bsd) {
++  if (is_freebsd) {
 +    sources -= [
 +      "files/file_path_watcher_linux.cc",
 +      "files/file_util_linux.cc",
@@ -83,7 +83,7 @@
    # iOS
    if (is_ios) {
      sources -= [
-@@ -2946,7 +2979,7 @@ test("base_unittests") {
+@@ -3026,7 +3059,7 @@ test("base_unittests") {
        "posix/unix_domain_socket_unittest.cc",
        "task/thread_pool/task_tracker_posix_unittest.cc",
      ]
@@ -92,7 +92,7 @@
        sources += [ "profiler/stack_copier_signal_unittest.cc" ]
      }
    }
-@@ -3154,6 +3187,12 @@ test("base_unittests") {
+@@ -3240,6 +3273,12 @@ test("base_unittests") {
  
      manifest = "//build/config/fuchsia/tests.cmx"
    }

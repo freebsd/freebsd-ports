@@ -1,4 +1,4 @@
---- components/feature_engagement/public/event_constants.cc.orig	2020-02-03 21:52:44 UTC
+--- components/feature_engagement/public/event_constants.cc.orig	2020-09-08 19:14:03 UTC
 +++ components/feature_engagement/public/event_constants.cc
 @@ -12,12 +12,12 @@ namespace feature_engagement {
  namespace events {
@@ -14,9 +14,9 @@
 -#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
 +#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD) || \
      defined(OS_CHROMEOS)
- const char kReopenTabConditionsMet[] = "reopen_tab_conditions_met";
- const char kTabReopened[] = "tab_reopened";
-@@ -42,7 +42,7 @@ const char kIncognitoWindowOpened[] = "incognito_windo
+ const char kSixthTabOpened[] = "sixth_tab_opened";
+ const char kTabGroupCreated[] = "tab_group_created";
+@@ -45,7 +45,7 @@ const char kIncognitoWindowOpened[] = "incognito_windo
  const char kIncognitoWindowSessionTimeMet[] =
      "incognito_window_session_time_met";
  #endif  // BUILDFLAG(ENABLE_LEGACY_DESKTOP_IN_PRODUCT_HELP)

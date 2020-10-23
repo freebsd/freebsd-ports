@@ -1,15 +1,15 @@
---- ui/base/ime/init/input_method_initializer.cc.orig	2020-07-07 21:58:19 UTC
+--- ui/base/ime/init/input_method_initializer.cc.orig	2020-09-08 19:14:28 UTC
 +++ ui/base/ime/init/input_method_initializer.cc
 @@ -10,7 +10,7 @@
  
  #if defined(OS_CHROMEOS)
- #include "ui/base/ime/ime_bridge.h"
+ #include "ui/base/ime/chromeos/ime_bridge.h"
 -#elif defined(USE_AURA) && defined(OS_LINUX)
 +#elif defined(USE_AURA) && (defined(OS_LINUX) || defined(OS_BSD))
  #include "base/check.h"
- #include "ui/base/ime/linux/fake_input_method_context_factory.h"
- #elif defined(OS_WIN)
-@@ -20,7 +20,7 @@
+ // TODO(crbug.com/1085700): Remove nogncheck when we can build both Ozone
+ // Wayland and X11 on Linux codesearch-gen bots.
+@@ -22,7 +22,7 @@
  
  namespace {
  
@@ -18,7 +18,7 @@
  const ui::LinuxInputMethodContextFactory*
      g_linux_input_method_context_factory_for_testing;
  #endif
-@@ -48,7 +48,7 @@ void ShutdownInputMethod() {
+@@ -50,7 +50,7 @@ void ShutdownInputMethod() {
  void InitializeInputMethodForTesting() {
  #if defined(OS_CHROMEOS)
    IMEBridge::Initialize();
@@ -27,7 +27,7 @@
    if (!g_linux_input_method_context_factory_for_testing)
      g_linux_input_method_context_factory_for_testing =
          new FakeInputMethodContextFactory();
-@@ -67,7 +67,7 @@ void InitializeInputMethodForTesting() {
+@@ -69,7 +69,7 @@ void InitializeInputMethodForTesting() {
  void ShutdownInputMethodForTesting() {
  #if defined(OS_CHROMEOS)
    IMEBridge::Shutdown();

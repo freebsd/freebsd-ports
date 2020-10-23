@@ -1,6 +1,6 @@
---- base/allocator/partition_allocator/page_allocator_internals_posix.h.orig	2020-05-13 18:39:35 UTC
+--- base/allocator/partition_allocator/page_allocator_internals_posix.h.orig	2020-09-08 19:13:57 UTC
 +++ base/allocator/partition_allocator/page_allocator_internals_posix.h
-@@ -22,7 +22,7 @@
+@@ -24,7 +24,7 @@
  #if defined(OS_ANDROID)
  #include <sys/prctl.h>
  #endif

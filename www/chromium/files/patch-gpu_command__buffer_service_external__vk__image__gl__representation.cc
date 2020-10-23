@@ -1,6 +1,6 @@
---- gpu/command_buffer/service/external_vk_image_gl_representation.cc.orig	2020-07-07 21:58:16 UTC
+--- gpu/command_buffer/service/external_vk_image_gl_representation.cc.orig	2020-09-08 19:14:06 UTC
 +++ gpu/command_buffer/service/external_vk_image_gl_representation.cc
-@@ -178,7 +178,7 @@ GLuint ExternalVkImageGLRepresentationShared::ImportVk
+@@ -179,7 +179,7 @@ GLuint ExternalVkImageGLRepresentationShared::ImportVk
      SemaphoreHandle handle) {
    if (!handle.is_valid())
      return 0;

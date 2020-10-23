@@ -1,4 +1,4 @@
---- ui/views/controls/textfield/textfield.cc.orig	2020-07-07 21:58:19 UTC
+--- ui/views/controls/textfield/textfield.cc.orig	2020-09-08 19:14:28 UTC
 +++ ui/views/controls/textfield/textfield.cc
 @@ -64,7 +64,7 @@
  #include "base/win/win_util.h"
@@ -6,8 +6,8 @@
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
 +#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
- #include "ui/base/ime/linux/text_edit_command_auralinux.h"
- #include "ui/base/ime/linux/text_edit_key_bindings_delegate_auralinux.h"
+ #include "ui/base/ime/linux/text_edit_command_auralinux.h"  // nogncheck
+ #include "ui/base/ime/linux/text_edit_key_bindings_delegate_auralinux.h"  // nogncheck
  #endif
 @@ -185,14 +185,14 @@ ui::TextEditCommand GetCommandForKeyEvent(const ui::Ke
  #endif
@@ -35,7 +35,7 @@
    return flags & ui::EF_CONTROL_DOWN;
  #else
    return false;
-@@ -709,7 +709,7 @@ bool Textfield::OnMousePressed(const ui::MouseEvent& e
+@@ -717,7 +717,7 @@ bool Textfield::OnMousePressed(const ui::MouseEvent& e
  #endif
    }
  
@@ -44,7 +44,7 @@
    if (!handled && !had_focus && event.IsOnlyMiddleMouseButton())
      RequestFocusWithPointer(ui::EventPointerType::kMouse);
  #endif
-@@ -755,7 +755,7 @@ bool Textfield::OnKeyPressed(const ui::KeyEvent& event
+@@ -763,7 +763,7 @@ bool Textfield::OnKeyPressed(const ui::KeyEvent& event
    if (!textfield)
      return handled;
  
@@ -53,7 +53,7 @@
    ui::TextEditKeyBindingsDelegateAuraLinux* delegate =
        ui::GetTextEditKeyBindingsDelegate();
    std::vector<ui::TextEditCommandAuraLinux> commands;
-@@ -907,7 +907,7 @@ void Textfield::AboutToRequestFocusFromTabTraversal(bo
+@@ -915,7 +915,7 @@ void Textfield::AboutToRequestFocusFromTabTraversal(bo
  }
  
  bool Textfield::SkipDefaultKeyEventProcessing(const ui::KeyEvent& event) {
@@ -62,7 +62,7 @@
    // Skip any accelerator handling that conflicts with custom keybindings.
    ui::TextEditKeyBindingsDelegateAuraLinux* delegate =
        ui::GetTextEditKeyBindingsDelegate();
-@@ -2182,7 +2182,7 @@ bool Textfield::PasteSelectionClipboard() {
+@@ -2202,7 +2202,7 @@ bool Textfield::PasteSelectionClipboard() {
  }
  
  void Textfield::UpdateSelectionClipboard() {

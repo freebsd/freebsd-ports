@@ -1,6 +1,6 @@
---- ui/views/bubble/bubble_dialog_delegate_view.cc.orig	2020-07-07 21:58:19 UTC
+--- ui/views/bubble/bubble_dialog_delegate_view.cc.orig	2020-09-08 19:14:28 UTC
 +++ ui/views/bubble/bubble_dialog_delegate_view.cc
-@@ -170,7 +170,7 @@ Widget* BubbleDialogDelegateView::CreateBubble(
+@@ -283,7 +283,7 @@ Widget* BubbleDialogDelegate::CreateBubble(
    bubble_delegate->SetAnchorView(bubble_delegate->GetAnchorView());
    Widget* bubble_widget = CreateBubbleWidget(bubble_delegate);
  

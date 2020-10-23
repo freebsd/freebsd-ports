@@ -1,6 +1,6 @@
---- chrome/browser/pdf/pdf_extension_test.cc.orig	2020-07-13 09:21:17 UTC
+--- chrome/browser/pdf/pdf_extension_test.cc.orig	2020-09-08 19:14:00 UTC
 +++ chrome/browser/pdf/pdf_extension_test.cc
-@@ -1796,7 +1796,7 @@ class PDFExtensionClipboardTest : public PDFExtensionT
+@@ -1926,7 +1926,7 @@ class PDFExtensionClipboardTest : public PDFExtensionT
  
    // Checks the Linux selection clipboard by polling.
    void CheckSelectionClipboard(const std::string& expected) {

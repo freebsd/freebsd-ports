@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/accelerator_table.cc.orig	2019-09-09 21:55:11 UTC
+--- chrome/browser/ui/views/accelerator_table.cc.orig	2020-09-08 19:14:01 UTC
 +++ chrome/browser/ui/views/accelerator_table.cc
-@@ -51,7 +51,7 @@ const AcceleratorMapping kAcceleratorMap[] = {
+@@ -52,7 +52,7 @@ const AcceleratorMapping kAcceleratorMap[] = {
      {ui::VKEY_S, ui::EF_PLATFORM_ACCELERATOR, IDC_SAVE_PAGE},
      {ui::VKEY_9, ui::EF_PLATFORM_ACCELERATOR, IDC_SELECT_LAST_TAB},
      {ui::VKEY_NUMPAD9, ui::EF_PLATFORM_ACCELERATOR, IDC_SELECT_LAST_TAB},
@@ -9,7 +9,7 @@
      {ui::VKEY_9, ui::EF_ALT_DOWN, IDC_SELECT_LAST_TAB},
      {ui::VKEY_NUMPAD9, ui::EF_ALT_DOWN, IDC_SELECT_LAST_TAB},
      {ui::VKEY_NEXT, ui::EF_CONTROL_DOWN | ui::EF_SHIFT_DOWN, IDC_MOVE_TAB_NEXT},
-@@ -81,7 +81,7 @@ const AcceleratorMapping kAcceleratorMap[] = {
+@@ -82,7 +82,7 @@ const AcceleratorMapping kAcceleratorMap[] = {
      {ui::VKEY_NUMPAD7, ui::EF_PLATFORM_ACCELERATOR, IDC_SELECT_TAB_6},
      {ui::VKEY_8, ui::EF_PLATFORM_ACCELERATOR, IDC_SELECT_TAB_7},
      {ui::VKEY_NUMPAD8, ui::EF_PLATFORM_ACCELERATOR, IDC_SELECT_TAB_7},
@@ -18,7 +18,7 @@
      {ui::VKEY_1, ui::EF_ALT_DOWN, IDC_SELECT_TAB_0},
      {ui::VKEY_NUMPAD1, ui::EF_ALT_DOWN, IDC_SELECT_TAB_0},
      {ui::VKEY_2, ui::EF_ALT_DOWN, IDC_SELECT_TAB_1},
-@@ -99,7 +99,7 @@ const AcceleratorMapping kAcceleratorMap[] = {
+@@ -100,7 +100,7 @@ const AcceleratorMapping kAcceleratorMap[] = {
      {ui::VKEY_8, ui::EF_ALT_DOWN, IDC_SELECT_TAB_7},
      {ui::VKEY_NUMPAD8, ui::EF_ALT_DOWN, IDC_SELECT_TAB_7},
      {ui::VKEY_BROWSER_FAVORITES, ui::EF_NONE, IDC_SHOW_BOOKMARK_BAR},
@@ -27,7 +27,7 @@
      {ui::VKEY_B, ui::EF_SHIFT_DOWN | ui::EF_PLATFORM_ACCELERATOR,
       IDC_SHOW_BOOKMARK_BAR},
      {ui::VKEY_OEM_MINUS, ui::EF_PLATFORM_ACCELERATOR, IDC_ZOOM_MINUS},
-@@ -125,14 +125,14 @@ const AcceleratorMapping kAcceleratorMap[] = {
+@@ -126,14 +126,14 @@ const AcceleratorMapping kAcceleratorMap[] = {
       IDC_SHOW_AVATAR_MENU},
  
    // Platform-specific key maps.

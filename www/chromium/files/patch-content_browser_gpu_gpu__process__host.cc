@@ -1,6 +1,6 @@
---- content/browser/gpu/gpu_process_host.cc.orig	2020-07-07 21:58:15 UTC
+--- content/browser/gpu/gpu_process_host.cc.orig	2020-09-08 19:14:05 UTC
 +++ content/browser/gpu/gpu_process_host.cc
-@@ -215,7 +215,7 @@ static const char* const kSwitchNames[] = {
+@@ -220,7 +220,7 @@ static const char* const kSwitchNames[] = {
      service_manager::switches::kGpuSandboxFailuresFatal,
      service_manager::switches::kDisableGpuSandbox,
      service_manager::switches::kNoSandbox,
@@ -9,7 +9,7 @@
      switches::kDisableDevShmUsage,
  #endif
  #if defined(OS_WIN)
-@@ -1094,7 +1094,7 @@ bool GpuProcessHost::LaunchGpuProcess() {
+@@ -1117,7 +1117,7 @@ bool GpuProcessHost::LaunchGpuProcess() {
    std::unique_ptr<base::CommandLine> cmd_line =
        std::make_unique<base::CommandLine>(base::CommandLine::NO_PROGRAM);
  #else

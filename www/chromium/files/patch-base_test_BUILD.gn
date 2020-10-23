@@ -1,6 +1,6 @@
---- base/test/BUILD.gn.orig	2020-07-13 15:42:25 UTC
+--- base/test/BUILD.gn.orig	2020-09-08 19:13:57 UTC
 +++ base/test/BUILD.gn
-@@ -408,7 +408,11 @@ if (is_linux) {
+@@ -418,7 +418,11 @@ if (is_linux) {
  
    copy("fonts_conf") {
      sources = [ "fonts.conf" ]
