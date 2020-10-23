@@ -2,11 +2,8 @@
 
 PORTNAME=	level-zero
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.13
+DISTVERSION=	1.0.16
 CATEGORIES=	devel
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	cacdcf19e005.patch:-p1 # https://github.com/oneapi-src/level-zero/issues/37
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	oneAPI Level Zero Specification Headers and Loader

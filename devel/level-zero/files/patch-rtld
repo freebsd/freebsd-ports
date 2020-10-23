@@ -1,0 +1,22 @@
+RTLD_DEEPBIND isn't available on non-Linux
+
+source/lib/ze_lib.cpp:32:18: error: use of undeclared identifier 'RTLD_DEEPBIND'
+        loader = LOAD_DRIVER_LIBRARY( MAKE_LIBRARY_NAME( "ze_loader", L0_LOADER_VERSION) );
+                 ^
+source/inc/ze_util.h:28:71: note: expanded from macro 'LOAD_DRIVER_LIBRARY'
+#  define LOAD_DRIVER_LIBRARY(NAME) dlopen(NAME, RTLD_LAZY|RTLD_LOCAL|RTLD_DEEPBIND)
+                                                                      ^
+--- source/inc/ze_util.h.orig	2020-10-12 11:47:09 UTC
++++ source/inc/ze_util.h
+@@ -25,7 +25,11 @@
+ #  define HMODULE void*
+ #  define MAKE_LIBRARY_NAME(NAME, VERSION)    "lib" NAME ".so." VERSION
+ #  define MAKE_VALIDATION_LAYER_NAME(NAME)    "lib" NAME ".so." L0_VALIDATION_LAYER_SUPPORTED_VERSION
++#  ifdef RTLD_DEEPBIND
+ #  define LOAD_DRIVER_LIBRARY(NAME) dlopen(NAME, RTLD_LAZY|RTLD_LOCAL|RTLD_DEEPBIND)
++#  else
++#  define LOAD_DRIVER_LIBRARY(NAME) dlopen(NAME, RTLD_LAZY|RTLD_LOCAL)
++#  endif
+ #  define FREE_DRIVER_LIBRARY(LIB)  if(LIB) dlclose(LIB)
+ #  define GET_FUNCTION_PTR(LIB, FUNC_NAME) dlsym(LIB, FUNC_NAME)
+ #endif
