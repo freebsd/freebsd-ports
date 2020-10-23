@@ -241,6 +241,7 @@
 @(,,555) %%DATADIR%%/bin/gitaly-debug
 @(,,555) %%DATADIR%%/bin/gitaly-git2go
 @(,,555) %%DATADIR%%/bin/gitaly-hooks
+@(,,555) %%DATADIR%%/bin/gitaly-lfs-smudge
 @(,,555) %%DATADIR%%/bin/gitaly-ssh
 @(,,555) %%DATADIR%%/bin/gitaly-wrapper
 @(,,555) %%DATADIR%%/bin/praefect

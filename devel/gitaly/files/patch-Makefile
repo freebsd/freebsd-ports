@@ -1,4 +1,4 @@
---- Makefile.orig	2020-09-21 16:21:08 UTC
+--- Makefile.orig	2020-10-21 18:08:19 UTC
 +++ Makefile
 @@ -46,7 +46,7 @@ GO_JUNIT_REPORT   := ${BUILD_DIR}/bin/go-junit-report
  GOCOVER_COBERTURA := ${BUILD_DIR}/bin/gocover-cobertura
@@ -9,18 +9,7 @@
  GITALY_PACKAGE  := gitlab.com/gitlab-org/gitaly
  BUILD_TIME      := $(shell date +"%Y%m%d.%H%M%S")
  GITALY_VERSION  := $(shell git describe --match v* 2>/dev/null | sed 's/^v//' || cat ${SOURCE_DIR}/VERSION 2>/dev/null || echo unknown)
-@@ -147,7 +147,10 @@ export GOPROXY                   ?= https://proxy.gola
- export PATH                      := ${BUILD_DIR}/bin:${PATH}
- export PKG_CONFIG_PATH           := ${LIBGIT2_INSTALL_DIR}/lib/pkgconfig
- export GITALY_TESTING_GIT_BINARY ?= ${GIT_INSTALL_DIR}/bin/git
-+# Whiteliste the linker flag -D_THREAD_SAFE as libgit2 is compiled with it
-+export CGO_LDFLAGS_ALLOW=-D_THREAD_SAFE
- 
-+
- .NOTPARALLEL:
- 
- .PHONY: all
-@@ -155,7 +158,7 @@ all: INSTALL_DEST_DIR = ${SOURCE_DIR}
+@@ -157,7 +157,7 @@ all: INSTALL_DEST_DIR = ${SOURCE_DIR}
  all: install
  
  .PHONY: build
@@ -29,7 +18,7 @@
  	go install ${GO_LDFLAGS} -tags "${GO_BUILD_TAGS}" $(addprefix ${GITALY_PACKAGE}/cmd/, $(call find_commands))
  
  .PHONY: install
-@@ -193,7 +196,7 @@ assemble-ruby:
+@@ -195,7 +195,7 @@ assemble-ruby:
  .PHONY: binaries
  binaries: assemble
  	${Q}if [ ${ARCH} != 'x86_64' ]; then echo Incorrect architecture for build: ${ARCH}; exit 1; fi
@@ -38,7 +27,7 @@
  
  .PHONY: prepare-tests
  prepare-tests: git ${GITLAB_SHELL_DIR}/config.yml ${TEST_REPO} ${TEST_REPO_GIT} ${SOURCE_DIR}/.ruby-bundle
-@@ -349,8 +352,7 @@ libgit2: ${LIBGIT2_INSTALL_DIR}/lib/libgit2.a
+@@ -354,8 +354,7 @@ libgit2: ${LIBGIT2_INSTALL_DIR}/lib/libgit2.a
  # step. Both Omnibus and CNG assume it is in the Gitaly root, not in
  # _build. Hence the '../' in front.
  ${SOURCE_DIR}/.ruby-bundle: ${GITALY_RUBY_DIR}/Gemfile.lock ${GITALY_RUBY_DIR}/Gemfile
@@ -48,7 +37,7 @@
  	${Q}touch $@
  
  ${SOURCE_DIR}/NOTICE: ${BUILD_DIR}/NOTICE
-@@ -380,17 +382,17 @@ ${PROTOC}: ${BUILD_DIR}/protoc.zip | ${BUILD_DIR}
+@@ -385,17 +384,17 @@ ${PROTOC}: ${BUILD_DIR}/protoc.zip | ${BUILD_DIR}
  # jobs of a CI pipeline, we start depending on its hash. Like this, we only
  # rebuild if the Makefile actually has changed contents.
  ${BUILD_DIR}/Makefile.sha256: Makefile | ${BUILD_DIR}
