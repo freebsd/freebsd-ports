@@ -18,9 +18,6 @@
 @(,,555) %%DATADIR%%/bin/gitlab-shell-authorized-principals-check
 @(,,555) %%DATADIR%%/bin/install
 @sample %%DATADIR%%/config.yml.sample
-@(,,555) %%DATADIR%%/hooks/post-receive
-@(,,555) %%DATADIR%%/hooks/pre-receive
-@(,,555) %%DATADIR%%/hooks/update
 %%DATADIR%%/spec/gitlab_shell_authorized_keys_check_spec.rb
 %%DATADIR%%/spec/gitlab_shell_authorized_principals_check_spec.rb
 %%DATADIR%%/spec/gitlab_shell_custom_git_receive_pack_spec.rb
