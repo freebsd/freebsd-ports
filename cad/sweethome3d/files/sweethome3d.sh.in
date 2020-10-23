@@ -1,8 +1,6 @@
 #!/bin/sh
-#
-# $FreeBSD$
 
 JAVA="%%LOCALBASE%%/bin/java"
-JARPATH="%%JAVALIBDIR%%"
+SH3D_JAR="%%JAVALIBDIR%%/%%JARNAME%%"
 
-exec "${JAVA}" -Xmx1024m -jar "${JARPATH}/%%JARNAME%%" "$@"
+JAVA_VERSION=%%JAVA_VERSION%% exec "${JAVA}" -Xmx1024m -jar "${SH3D_JAR}" "$@"
