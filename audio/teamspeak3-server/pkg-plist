@@ -325,6 +325,7 @@ share/teamspeak/server/sql/update_sqlite_32.sql
 share/teamspeak/server/sql/update_sqlite_33.sql
 share/teamspeak/server/sql/updates_and_fixes/convert_mysql_to_mariadb.sql
 share/teamspeak/server/sql/updates_and_fixes/mariadb_fix_latin_utf8.sql
+%%DBDIR%%/serverquerydocs
 @dir(teamspeak,teamspeak,) %%ETCDIR%%
 @dir(teamspeak,teamspeak,) %%DBDIR%%
 @dir(teamspeak,wheel,) %%LOGDIR%%

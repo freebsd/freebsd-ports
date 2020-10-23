@@ -3,6 +3,7 @@
 
 PORTNAME=	teamspeak3-server
 PORTVERSION=	3.12.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	audio net
 MASTER_SITES=	https://files.teamspeak-services.com/releases/server/${PORTVERSION}/
@@ -91,5 +92,9 @@ do-install:
 	${INSTALL} -d ${STAGEDIR}${DBDIR}
 	${INSTALL} -d ${STAGEDIR}${LOGDIR}
 	${INSTALL} -d ${STAGEDIR}${ETCDIR}
+
+# Add link to serverquerydocs, this needs to be in the
+# same directory as chdir or help commands will fail.
+	${RLN} ${STAGEDIR}${SHAREDIR}/serverquerydocs ${STAGEDIR}${DBDIR}
 
 .include <bsd.port.mk>
