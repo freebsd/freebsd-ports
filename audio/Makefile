@@ -843,6 +843,7 @@
     SUBDIR += wavpack
     SUBDIR += wavplay
     SUBDIR += webrtc-audio-processing
+    SUBDIR += welle.io
     SUBDIR += whysynth
     SUBDIR += wildmidi
     SUBDIR += wmix

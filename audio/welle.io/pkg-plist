@@ -1,0 +1,8 @@
+share/applications/welle-io.desktop
+share/icons/hicolor/16x16/apps/welle-io.png
+share/icons/hicolor/24x24/apps/welle-io.png
+share/icons/hicolor/32x32/apps/welle-io.png
+share/icons/hicolor/48x48/apps/welle-io.png
+share/icons/hicolor/128x128/apps/welle-io.png
+share/icons/hicolor/256x256/apps/welle-io.png
+bin/welle-io
