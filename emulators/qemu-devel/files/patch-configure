@@ -1,6 +1,6 @@
---- configure.orig	2020-09-08 20:21:13 UTC
+--- configure.orig	2020-10-19 09:52:57 UTC
 +++ configure
-@@ -1640,7 +1647,7 @@ if test "$mingw32" = "yes" ; then
+@@ -1534,7 +1534,7 @@ if test "$mingw32" = "yes" ; then
      sysconfdir="$prefix"
      local_statedir=
  else
@@ -9,7 +9,7 @@
      datadir="${datadir:-$prefix/share}"
      docdir="${docdir:-$prefix/share/doc}"
      bindir="${bindir:-$prefix/bin}"
-@@ -3279,6 +3286,14 @@ if check_include "sys/signal.h" ; then
+@@ -3112,6 +3112,14 @@ if check_include "sys/signal.h" ; then
  fi
  
  ##########################################
@@ -24,22 +24,7 @@
  # VTE probe
  
  if test "$vte" != "no"; then
-@@ -4870,14 +4885,6 @@ if test "$docs" != "no" ; then
-   fi
-   if has makeinfo && has pod2man && test "$sphinx_ok" = "yes"; then
-     docs=yes
--  else
--    if test "$docs" = "yes" ; then
--      if has $sphinx_build && test "$sphinx_ok" != "yes"; then
--        echo "Warning: $sphinx_build exists but it is either too old or uses too old a Python version" >&2
--      fi
--      feature_not_found "docs" "Install texinfo, Perl/perl-podlators and a Python 3 version of python-sphinx"
--    fi
--    docs=no
-   fi
- fi
- 
-@@ -4993,7 +5000,7 @@ fi
+@@ -4522,7 +4530,7 @@ fi
  
  # check for libusb
  if test "$libusb" != "no" ; then
@@ -48,7 +33,7 @@
          libusb="yes"
          libusb_cflags=$($pkg_config --cflags libusb-1.0)
          libusb_libs=$($pkg_config --libs libusb-1.0)
-@@ -6864,6 +6927,9 @@ fi
+@@ -6226,6 +6234,9 @@ fi
  # if this macro is set.
  if test "$have_fsxattr" = "yes" ; then
      echo "HAVE_FSXATTR=y" >> $config_host_mak

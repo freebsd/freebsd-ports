@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qemu
-DISTVERSION=	5.1.0.20200909
+DISTVERSION=	5.1.0.20201019
 CATEGORIES=	emulators
 PKGNAMESUFFIX=	-devel
 DIST_SUBDIR=	qemu/${PORTVERSION}
@@ -15,23 +15,25 @@ LICENSE=	GPLv2
 ONLY_FOR_ARCHS=	amd64 powerpc powerpc64
 IGNORE_FreeBSD_11=	Unable to produce Position Independent Code
 
+BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
 LIB_DEPENDS=	libnettle.so:security/nettle \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libepoxy.so:graphics/libepoxy \
 		libpcre2-8.so:devel/pcre2
 
-USES=		bison compiler:c11 cpe gmake gnome iconv:wchar_t perl5 \
+USES=		bison compiler:c11 cpe gmake gnome iconv:wchar_t ninja perl5 \
 		pkgconfig python:build tar:xz xorg
 USE_GITHUB=	yes
 USE_GNOME=	cairo glib20 libxml2
 USE_PERL5=	build
+USE_PYTHON=	distutils noflavors
 USE_XORG=	pixman
 
-GH_TUPLE=	qemu:qemu:9435a8b \
+GH_TUPLE=	qemu:qemu:22d30b3 \
 		qemu:keycodemapdb:6b3d716:keycodemapdb/ui/keycodemapdb \
 		qemu:dtc:85e5d83:dtc/dtc \
-		mesonbuild:meson:68ed748:meson/meson \
+		mesonbuild:meson:776acd2:meson/meson \
 		cota:berkeley-softfloat-3:b64af41:berkeleysoftfloat3/tests/fp/berkeley-softfloat-3 \
 		cota:berkeley-testfloat-3:5a59dce:berkeleytestfloat3/tests/fp/berkeley-testfloat-3
 #BROKEN_powerpc64=	fails to compile: In function aio_bh_poll: internal compiler error: Segmentation fault
@@ -67,8 +69,6 @@ CAPSTONE_CONFIGURE_OFF=	--disable-capstone
 CAPSTONE_LIB_DEPENDS=	libcapstone.so:devel/capstone4
 CURL_CONFIGURE_OFF=	--disable-curl
 CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
-DOCS_BUILD_DEPENDS=	texi2html:textproc/texi2html \
-			sphinx-build:textproc/py-sphinx
 DOCS_CONFIGURE_ENABLE=	docs
 DOCS_USES=		makeinfo
 GNUTLS_CONFIGURE_OFF=	--disable-gnutls
@@ -111,7 +111,7 @@ WITHOUT_CPU_CFLAGS=yes	#to avoid problems with register allocation
 CFLAGS:=	${CFLAGS:C/-fno-tree-vrp//}
 CONFIGURE_ARGS=	--localstatedir=/var --extra-ldflags=-L\"/usr/lib\" \
 		--extra-ldflags=-L\"${LOCALBASE}/lib\" --enable-debug \
-		--prefix=${PREFIX} --cc=${CC} --enable-netmap --enable-docs --disable-kvm \
+		--prefix=${PREFIX} --cc=${CC} --enable-netmap --disable-kvm \
 		--disable-linux-user --disable-linux-aio --disable-xen \
 		--enable-debug-info --python=${PYTHON_CMD} \
 		--extra-cflags=-I${WRKSRC}\ -I${LOCALBASE}/include\ -DPREFIX=\\\"\"${PREFIX}\\\"\"
@@ -140,11 +140,6 @@ CONFIGURE_ARGS+=	--sparc_cpu=v9
 .endif
 
 PLIST_SUB+=	LINUXBOOT_DMA=""
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|/etc/qemu-ifup|${PREFIX}/etc/qemu-ifup|' \
-		-e 's|/etc/qemu-ifdown|${PREFIX}/etc/qemu-ifdown|' \
-		${WRKSRC}/include/net/net.h
 
 post-patch-CDROM_DMA-off:
 	@${REINPLACE_CMD} -e '/USE_DMA_CDROM/d' ${WRKSRC}/include/hw/ide/internal.h

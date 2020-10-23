@@ -1,0 +1,79 @@
+--- docs/meson.build.orig	2020-10-19 13:41:20 UTC
++++ docs/meson.build
+@@ -1,9 +1,9 @@
+ if get_option('sphinx_build') == ''
+   sphinx_build = find_program(['sphinx-build-3', 'sphinx-build'],
+-                              required: get_option('docs'))
++                              required: true)
+ else
+   sphinx_build = find_program(get_option('sphinx_build'),
+-                              required: get_option('docs'))
++                              required: true)
+ endif
+ 
+ # Check if tools are available to build documentation.
+@@ -26,12 +26,6 @@ if sphinx_build.found()
+     tmpdir / 'sphinx/out'])
+   build_docs = (sphinx_build_test_out.returncode() == 0)
+ 
+-  if not build_docs
+-    warning('@0@ exists but it is either too old or uses too old a Python version'.format(get_option('sphinx_build')))
+-    if get_option('docs').enabled()
+-      error('Install a Python 3 version of python-sphinx')
+-    endif
+-  endif
+ endif
+ 
+ if build_docs
+@@ -111,5 +105,51 @@ if build_docs
+   endforeach
+   alias_target('sphinxdocs', sphinxdocs)
+   alias_target('html', sphinxdocs)
++  alias_target('man', sphinxmans)
++else
++  manuals = [ 'interop', 'tools', 'system' ]
++  man_pages = {
++    'interop' : {
++        'qemu-ga.8': (have_tools ? 'man8' : ''),
++        'qemu-ga-ref.7': 'man7',
++        'qemu-qmp-ref.7': 'man7',
++    },
++    'tools': {
++        'qemu-img.1': (have_tools ? 'man1' : ''),
++        'qemu-nbd.8': (have_tools ? 'man8' : ''),
++        'qemu-trace-stap.1': (config_host.has_key('CONFIG_TRACE_SYSTEMTAP') ? 'man1' : ''),
++        'virtfs-proxy-helper.1': (have_virtfs_proxy_helper ? 'man1' : ''),
++        'virtiofsd.1': (have_virtiofsd ? 'man1' : ''),
++    },
++    'system': {
++        'qemu.1': 'man1',
++        'qemu-block-drivers.7': 'man7',
++        'qemu-cpu-models.7': 'man7'
++    },
++  }
++
++  sphinxmans = []
++  foreach manual : manuals
++    private_dir = meson.current_build_dir() / (manual + '.p')
++    output_dir = meson.current_build_dir() / manual
++    input_dir = meson.current_source_dir() / manual
++
++    these_man_pages = []
++    install_dirs = []
++    foreach page, section : man_pages.get(manual, {})
++      these_man_pages += page
++      install_dirs += section == '' ? false : get_option('mandir') / section
++    endforeach
++    if these_man_pages.length() > 0
++      sphinxmans += custom_target(manual + ' man pages',
++                         build_by_default: build_docs,
++                         output: these_man_pages,
++                         input: this_manual,
++                         install: build_docs,
++                         install_dir: install_dirs,
++                         command: [SPHINX_ARGS, '-b', 'man', '-d', private_dir,
++                                   input_dir, meson.current_build_dir()])
++    endif
++  endforeach
+   alias_target('man', sphinxmans)
+ endif
