@@ -1,13 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	asterisk
-PORTVERSION=	13.37.0
+PORTVERSION=	18.0.0
 CATEGORIES=	net
 MASTER_SITES=	https://downloads.asterisk.org/pub/telephony/%SUBDIR%/:DEFAULT,g729
 MASTER_SITE_SUBDIR=	asterisk/ \
 			asterisk/old-releases/ \
 			sounds/releases/:g729
-PKGNAMESUFFIX=	13
+PKGNAMESUFFIX=	18
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	${PORTNAME}
 
@@ -57,14 +57,14 @@ MAKE_ARGS+=	NOISY_BUILD=yes \
 
 CONFLICTS=		ossp-uuid-[0-9]*
 CONFLICTS_BUILD=	linuxthreads-*
-CONFLICTS_INSTALL=	asterisk16 asterisk18
+CONFLICTS_INSTALL=	asterisk13 asterisk16
 
-OPTIONS_DEFINE=			ASTVERSION BACKTRACE CURL EXCHANGE FREETDS G729 LDAP LUA \
+OPTIONS_DEFINE=			ASTVERSION BACKTRACE CURL EXCHANGE FREETDS G729 LDAP LUA MACRO \
 				MP3PLAYER OOH323 OPTIMIZED_CFLAGS PJSIP PORTAUDIO RADIUS SNMP \
 				SPANDSP SRTP SYSINFO URIPARSER XMLDOC XMPP
-OPTIONS_DEFAULT=		CURL FREETDS GSM LUA MP3PLAYER NEWT ODBC OPUS MYSQL PGSQL PJSIP \
-				PORTAUDIO RADIUS SNMP SPANDSP SPEEX SRTP URIPARSER \
-				VORBIS XMLDOC
+OPTIONS_DEFAULT=		CURL FREETDS GSM LUA MACRO MP3PLAYER NEWT ODBC OPUS MYSQL PGSQL \
+				PJSIP PORTAUDIO RADIUS SNMP SPANDSP SPEEX SRTP URIPARSER \
+				VORBIS XMLDOC 
 
 OPTIONS_DEFINE_i386=		DAHDI
 OPTIONS_DEFINE_amd64=		DAHDI
@@ -97,7 +97,8 @@ ASTVERSION_DESC?= Install astversion (requires bash)
 BACKTRACE_DESC?= Stack backtrace support via (lib)execinfo
 DAHDI_DESC?=	DAHDI support
 EXCHANGE_DESC?=	Exchange calendar support
-G729_DESC=	Install G.729 format sounds for Music-on-Hold (MoH)
+G729_DESC?=	Install G.729 format sounds for Music-on-Hold (MoH)
+MACRO_DESC?=	Enable app_macro (deprecated)
 MP3PLAYER_DESC=	Install MP3 Player for Music-On-Hold (mpg123)
 NEWG711_DESC?=	New G711 Codec
 OOH323_DESC?=	ooh323 support
@@ -164,6 +165,7 @@ PGSQL_CONFIGURE_WITH=	postgres
 PGSQL_USES=		pgsql
 
 PJSIP_CONFIGURE_WITH=	pjproject pjproject-bundled
+PJSIP_USES=		pkgconfig
 PJSIP_LIB_DEPENDS=	libsrtp2.so:net/libsrtp2 \
 			libspeex.so:audio/speex \
 			libspeexdsp.so:audio/speexdsp
@@ -258,6 +260,9 @@ post-configure:
 	@cd ${WRKSRC} && ./menuselect/menuselect --disable res_timing_kqueue menuselect.makeopts
 	@cd ${WRKSRC} && ./menuselect/menuselect --enable chan_mgcp menuselect.makeopts
 	@cd ${WRKSRC} && ./menuselect/menuselect --enable res_pktccops menuselect.makeopts
+
+post-configure-MACRO-on:
+	@cd ${WRKSRC} && ./menuselect/menuselect --enable app_macro menuselect.makeopts
 
 post-configure-MYSQL-on:
 	@cd ${WRKSRC} && ./menuselect/menuselect --enable res_config_mysql menuselect.makeopts

@@ -1,0 +1,28 @@
+--- third-party/pjproject/Makefile.orig	2020-09-09 15:43:27 UTC
++++ third-party/pjproject/Makefile
+@@ -98,14 +98,10 @@ _all: $(TARGETS)
+ 
+ .DELETE_ON_ERROR:
+ 
+-$(DOWNLOAD_DIR)/$(TARBALL_FILE): ../versions.mak
+-	$(CMD_PREFIX) ($(TARBALL_EXISTS) && $(TARBALL_VERIFY) && touch $@) || (rm -rf $@ ;\
+-	$(TARBALL_DOWNLOAD)) || (rm -rf $@ ;\
+-	$(SHELL_ECHO_PREFIX) Retrying download ; $(TARBALL_DOWNLOAD))
++$(DOWNLOAD_DIR)/$(TARBALL_FILE):
++	@true
+ 
+ source/.unpacked: $(DOWNLOAD_DIR)/$(TARBALL_FILE)
+-	$(CMD_PREFIX) $(TARBALL_VERIFY) || (rm -rf $@ ;\
+-	$(SHELL_ECHO_PREFIX) Retrying download ; $(TARBALL_DOWNLOAD))
+ 	$(ECHO_PREFIX) Unpacking $<
+ 	-@rm -rf source pjproject-*/ >/dev/null 2>&1
+ 	$(CMD_PREFIX) $(TAR) -xjf $<
+@@ -165,7 +161,7 @@ $(PJSIP_LIB_FILES): $(PJLIB_UTIL_LIB_FILES)
+ 
+ pjproject.symbols: $(ALL_LIB_FILES)
+ 	$(ECHO_PREFIX) Generating symbols
+-	$(CMD_PREFIX) $(NM) -Pog $(ALL_LIB_FILES) | $(SED) -n -E -e "s/.+: ([_]?[pP][jJ][^ ]+) .+/\1/gp" | sort -u > pjproject.symbols
++	$(CMD_PREFIX) $(NM) -Pog $(ALL_LIB_FILES) | $(SED) -n -r -e "s/^([pP][jJ][^ ]+) .+/\1/gp" | sort -u > pjproject.symbols
+ 
+ source/pjsip-apps/src/asterisk_malloc_debug.c: patches/asterisk_malloc_debug.c
+ 	$(ECHO_PREFIX) Copying $< to $@

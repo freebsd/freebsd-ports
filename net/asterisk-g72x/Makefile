@@ -12,11 +12,11 @@ COMMENT=	G.729 codec for Asterisk PBX
 
 LIB_DEPENDS=	libbcg729.so:audio/bcg729
 
-FLAVORS=			asterisk16 asterisk13
+FLAVORS=			asterisk16 asterisk18 asterisk13
 FLAVOR?=			${FLAVORS:[1]}
 
 asterisk13_PKGNAMEPREFIX=	asterisk13-
-asterisk13_CONFLICTS_INSTALL=	asterisk16-g72x
+asterisk13_CONFLICTS_INSTALL=	asterisk16-g72x asterisk18-g72x
 asterisk13_BUILD_DEPENDS=	asterisk:net/asterisk13
 asterisk13_RUN_DEPENDS=		asterisk:net/asterisk13
 .if ${FLAVOR} == asterisk13
@@ -24,10 +24,18 @@ CONFIGURE_ARGS+=		--with-asterisk130
 .endif
 
 asterisk16_PKGNAMEPREFIX=	asterisk16-
-asterisk16_CONFLICTS_INSTALL=	asterisk13-g72x
+asterisk16_CONFLICTS_INSTALL=	asterisk13-g72x asterisk18-g72x
 asterisk16_BUILD_DEPENDS=	asterisk:net/asterisk16
 asterisk16_RUN_DEPENDS=		asterisk:net/asterisk16
 .if ${FLAVOR} == asterisk16
+CONFIGURE_ARGS+=		--with-asterisk160
+.endif
+
+asterisk18_PKGNAMEPREFIX=	asterisk18-
+asterisk18_CONFLICTS_INSTALL=	asterisk13-g72x asterisk16-g72x
+asterisk18_BUILD_DEPENDS=	asterisk:net/asterisk18
+asterisk18_RUN_DEPENDS=		asterisk:net/asterisk18
+.if ${FLAVOR} == asterisk18
 CONFIGURE_ARGS+=		--with-asterisk160
 .endif
 
