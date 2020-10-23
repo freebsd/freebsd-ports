@@ -1,6 +1,6 @@
-TIMESTAMP = 1603352454
-SHA256 (schollz-croc-v8.6.2_GH0.tar.gz) = 6d43fa18d258e85cd97e290e6183d5901a67b18eda9e9f3af67a30253e5346ca
-SIZE (schollz-croc-v8.6.2_GH0.tar.gz) = 498362
+TIMESTAMP = 1603438114
+SHA256 (schollz-croc-v8.6.4_GH0.tar.gz) = 66606c43fdf1dda24da1ec9d6160eeaf8ba7729dcfb071363450fb0b6a3bc4b8
+SIZE (schollz-croc-v8.6.4_GH0.tar.gz) = 498693
 SHA256 (cespare-xxhash-v1.1.0_GH0.tar.gz) = 9418be390574092f0ca989b9ae2f5450270ead8125a635a100850b28c8c9c495
 SIZE (cespare-xxhash-v1.1.0_GH0.tar.gz) = 8200
 SHA256 (cpuguy83-go-md2man-v2.0.0_GH0.tar.gz) = 50537880d42fc28b9c2e9aaa36b137349d43cc73d46436a499f8c928cd2fc576
