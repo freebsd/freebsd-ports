@@ -21,7 +21,7 @@ MASTERDIR=	${.CURDIR}/../unit
 
 post-configure:
 	cd ${CONFIGURE_WRKSRC} && \
-	./configure ruby --module=${UNIT_MODNAME}
+	${CONFIGURE_CMD} ruby --module=${UNIT_MODNAME}
 
 do-build:
 	cd ${CONFIGURE_WRKSRC} && ${MAKE} ${UNIT_MODNAME}

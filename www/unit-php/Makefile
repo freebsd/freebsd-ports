@@ -20,7 +20,7 @@ MASTERDIR=	${.CURDIR}/../unit
 
 post-configure:
 	cd ${CONFIGURE_WRKSRC} && \
-	./configure php --lib-path=${LOCALBASE}/lib \
+	${CONFIGURE_CMD} php --lib-path=${LOCALBASE}/lib \
 			--module=${UNIT_MODNAME}
 
 do-build:

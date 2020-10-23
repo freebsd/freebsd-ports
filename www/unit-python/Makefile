@@ -21,7 +21,7 @@ MASTERDIR=	${.CURDIR}/../unit
 
 post-configure:
 	cd ${CONFIGURE_WRKSRC} && \
-	./configure python --module=${UNIT_MODNAME} \
+	${CONFIGURE_CMD} python --module=${UNIT_MODNAME} \
 			--config=${PYTHON_CMD}-config
 
 do-build:
