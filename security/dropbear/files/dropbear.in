@@ -35,12 +35,12 @@ dropbear_keygen()
 		%%PREFIX%%/bin/dropbearkey -t rsa -f ${etcdir}/dropbear_rsa_host_key
 	fi
 
-	if [ -f ${etcdir}/dropbear_dss_host_key ]; then
-		echo "You already have an DSS host key" \
-		    "in ${etcdir}/dropbear_dss_host_key"
-		echo "Skipping protocol version 2 DSS Key Generation"
+	if [ -f ${etcdir}/dropbear_ed25519_host_key ]; then
+		echo "You already have an ed25519 host key" \
+		    "in ${etcdir}/dropbear_ed25519_host_key"
+		echo "Skipping protocol version 2 ed25519 Key Generation"
 	else
-		%%PREFIX%%/bin/dropbearkey -t dss -f ${etcdir}/dropbear_dss_host_key
+		%%PREFIX%%/bin/dropbearkey -t ed25519 -f ${etcdir}/dropbear_ed25519_host_key
 	fi
 	)
 }
@@ -48,7 +48,7 @@ dropbear_keygen()
 dropbear_precmd()
 {
 	if [ ! -f ${etcdir}/dropbear_rsa_host_key -o \
-		! -f ${etcdir}/dropbear_dss_host_key ]; then
+		! -f ${etcdir}/dropbear_ed25519_host_key ]; then
 		run_rc_command keygen
 	fi
 }

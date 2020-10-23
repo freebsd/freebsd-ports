@@ -3,7 +3,7 @@
 
 PORTNAME=	dropbear
 PORTVERSION=	2020.80
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	https://matt.ucc.asn.au/dropbear/releases/
 
@@ -27,7 +27,7 @@ OPTIONS_DEFAULT=	AES128 AES256 CURVE25519 ED25519 GCM GROUP14_SHA256 \
 OPTIONS_MULTI=		ENC KEY KEX MAC MODE
 OPTIONS_MULTI_ENC=	3DES AES128 AES256 CHACHA20POLY1305 TWOFISH128 \
 			TWOFISH256
-OPTIONS_MULTI_KEY=	ECDSA ED25519 DSA RSA
+OPTIONS_MULTI_KEY=	ECDSA ED25519 RSA
 OPTIONS_MULTI_KEX=	CURVE25519 ECDH GROUP1 GROUP14_SHA1 GROUP14_SHA256 \
 			GROUP16
 OPTIONS_MULTI_MAC=	MD5 SHA1 SHA1_96 SHA2_256 SHA2_512
@@ -40,7 +40,6 @@ CBC_DESC=		Use CBC mode for ciphers (less secure)
 CHACHA20POLY1305_DESC=	Enable chacha20poly1305-based encryption
 CTR_DESC=		Use CTR mode for ciphers
 CURVE25519_DESC=	Enable Curve25519
-DSA_DESC=		Enable DSA public key support
 ECDH_DESC=		Enable ECDH (insecure)
 ECDSA_DESC=		Enable ECDSA public key support
 ED25519_DESC=		Enable ED25519 public key support
@@ -116,9 +115,6 @@ post-patch-GROUP14_SHA256-off:
 
 post-patch-GROUP16-on:
 	@${ECHO} "#define DROPBEAR_DH_GROUP16 1" >> ${WRKSRC}/localoptions.h
-
-post-patch-DSA-off:
-	@${ECHO} "#define DROPBEAR_DSS 0" >> ${WRKSRC}/localoptions.h
 
 post-patch-RSA-off:
 	@${ECHO} "#define DROPBEAR_RSA 0" >> ${WRKSRC}/localoptions.h
