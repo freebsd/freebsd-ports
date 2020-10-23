@@ -78,12 +78,13 @@
 %%PORTDOCS%%%%DOCSDIR%%/scripts/prettify.css
 %%PORTDOCS%%%%DOCSDIR%%/scripts/prettify.js
 %%PORTDOCS%%%%DOCSDIR%%/styles.css
+%%PORTDOCS%%%%DOCSDIR%%/webmin/.gitignore
 %%PORTDOCS%%%%DOCSDIR%%/webmin/README.md
 %%PORTDOCS%%%%DOCSDIR%%/webmin/awstats-2.0.wbm
-@(,,755) %%WWWDIR%%/cgi-bin/awdownloadcsv.pl
-@(,,755) %%WWWDIR%%/cgi-bin/awredir.pl
+%%WWWDIR%%/cgi-bin/awdownloadcsv.pl
+%%WWWDIR%%/cgi-bin/awredir.pl
 %%WWWDIR%%/cgi-bin/awstats.model.conf
-@(,,755) %%WWWDIR%%/cgi-bin/awstats.pl
+%%WWWDIR%%/cgi-bin/awstats.pl
 %%WWWDIR%%/cgi-bin/lang/awstats-al.txt
 %%WWWDIR%%/cgi-bin/lang/awstats-ar.txt
 %%WWWDIR%%/cgi-bin/lang/awstats-ba.txt
@@ -113,6 +114,7 @@
 %%WWWDIR%%/cgi-bin/lang/awstats-it.txt
 %%WWWDIR%%/cgi-bin/lang/awstats-jp.txt
 %%WWWDIR%%/cgi-bin/lang/awstats-ko.txt
+%%WWWDIR%%/cgi-bin/lang/awstats-lt.txt
 %%WWWDIR%%/cgi-bin/lang/awstats-lv.txt
 %%WWWDIR%%/cgi-bin/lang/awstats-mk.txt
 %%WWWDIR%%/cgi-bin/lang/awstats-nb.txt
@@ -130,7 +132,6 @@
 %%WWWDIR%%/cgi-bin/lang/awstats-tr.txt
 %%WWWDIR%%/cgi-bin/lang/awstats-tw.txt
 %%WWWDIR%%/cgi-bin/lang/awstats-ua.txt
-%%WWWDIR%%/cgi-bin/lang/awstats-lt.txt
 %%WWWDIR%%/cgi-bin/lang/tooltips_f/awstats-tt-br.txt
 %%WWWDIR%%/cgi-bin/lang/tooltips_f/awstats-tt-cz.txt
 %%WWWDIR%%/cgi-bin/lang/tooltips_f/awstats-tt-en.txt
@@ -197,6 +198,8 @@
 %%WWWDIR%%/cgi-bin/plugins/example/example.pm
 %%WWWDIR%%/cgi-bin/plugins/export_to_csv.pm
 %%WWWDIR%%/cgi-bin/plugins/geoip.pm
+%%WWWDIR%%/cgi-bin/plugins/geoip2_city.pm
+%%WWWDIR%%/cgi-bin/plugins/geoip2_country.pm
 %%WWWDIR%%/cgi-bin/plugins/geoip6.pm
 %%WWWDIR%%/cgi-bin/plugins/geoip_asn_maxmind.pm
 %%WWWDIR%%/cgi-bin/plugins/geoip_city_maxmind.pm
@@ -249,8 +252,8 @@
 %%WWWDIR%%/icon/browser/flashget.png
 %%WWWDIR%%/icon/browser/flock.png
 %%WWWDIR%%/icon/browser/fpexpress.png
-%%WWWDIR%%/icon/browser/freshdownload.png
 %%WWWDIR%%/icon/browser/fresco.png
+%%WWWDIR%%/icon/browser/freshdownload.png
 %%WWWDIR%%/icon/browser/frontpage.png
 %%WWWDIR%%/icon/browser/galeon.png
 %%WWWDIR%%/icon/browser/getright.png
@@ -273,8 +276,8 @@
 %%WWWDIR%%/icon/browser/lynx.png
 %%WWWDIR%%/icon/browser/macweb.png
 %%WWWDIR%%/icon/browser/mediaplayer.png
-%%WWWDIR%%/icon/browser/mozilla.png
 %%WWWDIR%%/icon/browser/motorola.png
+%%WWWDIR%%/icon/browser/mozilla.png
 %%WWWDIR%%/icon/browser/mplayer.png
 %%WWWDIR%%/icon/browser/msie.png
 %%WWWDIR%%/icon/browser/msie_large.png
@@ -302,9 +305,9 @@
 %%WWWDIR%%/icon/browser/real.png
 %%WWWDIR%%/icon/browser/rss.png
 %%WWWDIR%%/icon/browser/rssbandit.png
-%%WWWDIR%%/icon/browser/rssxpress.png
 %%WWWDIR%%/icon/browser/rssowl.png
 %%WWWDIR%%/icon/browser/rssreader.png
+%%WWWDIR%%/icon/browser/rssxpress.png
 %%WWWDIR%%/icon/browser/safari.png
 %%WWWDIR%%/icon/browser/sagem.png
 %%WWWDIR%%/icon/browser/samsung.png
@@ -347,7 +350,6 @@
 %%WWWDIR%%/icon/cpu/motorola.png
 %%WWWDIR%%/icon/cpu/sun.png
 %%WWWDIR%%/icon/cpu/unknown.png
-%%WWWDIR%%/icon/flags/ax.png
 %%WWWDIR%%/icon/flags/a2.png
 %%WWWDIR%%/icon/flags/ac.png
 %%WWWDIR%%/icon/flags/ad.png
@@ -367,6 +369,7 @@
 %%WWWDIR%%/icon/flags/at.png
 %%WWWDIR%%/icon/flags/au.png
 %%WWWDIR%%/icon/flags/aw.png
+%%WWWDIR%%/icon/flags/ax.png
 %%WWWDIR%%/icon/flags/az.png
 %%WWWDIR%%/icon/flags/ba.png
 %%WWWDIR%%/icon/flags/bb.png
@@ -505,6 +508,7 @@
 %%WWWDIR%%/icon/flags/mc.png
 %%WWWDIR%%/icon/flags/md.png
 %%WWWDIR%%/icon/flags/me.png
+%%WWWDIR%%/icon/flags/mf.png
 %%WWWDIR%%/icon/flags/mg.png
 %%WWWDIR%%/icon/flags/mil.png
 %%WWWDIR%%/icon/flags/mk.png
@@ -576,6 +580,7 @@
 %%WWWDIR%%/icon/flags/st.png
 %%WWWDIR%%/icon/flags/su.png
 %%WWWDIR%%/icon/flags/sv.png
+%%WWWDIR%%/icon/flags/sx.png
 %%WWWDIR%%/icon/flags/sy.png
 %%WWWDIR%%/icon/flags/sz.png
 %%WWWDIR%%/icon/flags/tc.png
@@ -629,8 +634,8 @@
 %%WWWDIR%%/icon/mime/encrypt.png
 %%WWWDIR%%/icon/mime/flash.png
 %%WWWDIR%%/icon/mime/fon.png
-%%WWWDIR%%/icon/mime/gpx.png
 %%WWWDIR%%/icon/mime/glasses.png
+%%WWWDIR%%/icon/mime/gpx.png
 %%WWWDIR%%/icon/mime/html.png
 %%WWWDIR%%/icon/mime/image.png
 %%WWWDIR%%/icon/mime/jnlp.png
@@ -666,6 +671,22 @@
 %%WWWDIR%%/icon/mime/xsl.png
 %%WWWDIR%%/icon/os/aix.png
 %%WWWDIR%%/icon/os/amigaos.png
+%%WWWDIR%%/icon/os/android.png
+%%WWWDIR%%/icon/os/android10.png
+%%WWWDIR%%/icon/os/androidcupcake.png
+%%WWWDIR%%/icon/os/androiddonut.png
+%%WWWDIR%%/icon/os/androideclair.png
+%%WWWDIR%%/icon/os/androidfroyo.png
+%%WWWDIR%%/icon/os/androidgingerbread.png
+%%WWWDIR%%/icon/os/androidhoneycomb.png
+%%WWWDIR%%/icon/os/androidics.png
+%%WWWDIR%%/icon/os/androidjellybean.png
+%%WWWDIR%%/icon/os/androidkitkat.png
+%%WWWDIR%%/icon/os/androidlollipop.png
+%%WWWDIR%%/icon/os/androidmarshmallow.png
+%%WWWDIR%%/icon/os/androidnougat.png
+%%WWWDIR%%/icon/os/androidoreo.png
+%%WWWDIR%%/icon/os/androidpie.png
 %%WWWDIR%%/icon/os/apple.png
 %%WWWDIR%%/icon/os/atari.png
 %%WWWDIR%%/icon/os/beos.png
@@ -713,16 +734,19 @@
 %%WWWDIR%%/icon/os/linuxzenwalk.png
 %%WWWDIR%%/icon/os/mac.png
 %%WWWDIR%%/icon/os/macintosh.png
+%%WWWDIR%%/icon/os/macosx.png
 %%WWWDIR%%/icon/os/macosx10.png
 %%WWWDIR%%/icon/os/macosx11.png
 %%WWWDIR%%/icon/os/macosx12.png
+%%WWWDIR%%/icon/os/macosx13.png
+%%WWWDIR%%/icon/os/macosx14.png
+%%WWWDIR%%/icon/os/macosx15.png
 %%WWWDIR%%/icon/os/macosx4.png
 %%WWWDIR%%/icon/os/macosx5.png
 %%WWWDIR%%/icon/os/macosx6.png
 %%WWWDIR%%/icon/os/macosx7.png
 %%WWWDIR%%/icon/os/macosx8.png
 %%WWWDIR%%/icon/os/macosx9.png
-%%WWWDIR%%/icon/os/macosx.png
 %%WWWDIR%%/icon/os/netbsd.png
 %%WWWDIR%%/icon/os/netware.png
 %%WWWDIR%%/icon/os/next.png
@@ -743,16 +767,16 @@
 %%WWWDIR%%/icon/os/webtv.png
 %%WWWDIR%%/icon/os/wii.png
 %%WWWDIR%%/icon/os/win.png
-%%WWWDIR%%/icon/os/win7.png
-%%WWWDIR%%/icon/os/win8.1.png
-%%WWWDIR%%/icon/os/win8.png
-%%WWWDIR%%/icon/os/win80.png
-%%WWWDIR%%/icon/os/win81.png
 %%WWWDIR%%/icon/os/win10.png
 %%WWWDIR%%/icon/os/win16.png
 %%WWWDIR%%/icon/os/win2000.png
 %%WWWDIR%%/icon/os/win2003.png
 %%WWWDIR%%/icon/os/win2008.png
+%%WWWDIR%%/icon/os/win7.png
+%%WWWDIR%%/icon/os/win8.1.png
+%%WWWDIR%%/icon/os/win8.png
+%%WWWDIR%%/icon/os/win80.png
+%%WWWDIR%%/icon/os/win81.png
 %%WWWDIR%%/icon/os/win95.png
 %%WWWDIR%%/icon/os/win98.png
 %%WWWDIR%%/icon/os/wince.png
@@ -762,8 +786,8 @@
 %%WWWDIR%%/icon/os/winphone.png
 %%WWWDIR%%/icon/os/winunknown.png
 %%WWWDIR%%/icon/os/winvista.png
-%%WWWDIR%%/icon/os/winxp.png
 %%WWWDIR%%/icon/os/winxbox.png
+%%WWWDIR%%/icon/os/winxp.png
 %%WWWDIR%%/icon/other/awstats_logo1.png
 %%WWWDIR%%/icon/other/awstats_logo5.png
 %%WWWDIR%%/icon/other/awstats_logo6.png
