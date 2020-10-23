@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-pages
-PORTVERSION=	1.25.0
+PORTVERSION=	1.28.0
 CATEGORIES=	www
 
 MAINTAINER=	swills@FreeBSD.org
@@ -17,11 +17,12 @@ USE_GITHUB=	nodefault
 
 GL_ACCOUNT=	gitlab-org
 # Find the here: https://gitlab.com/gitlab-org/gitlab-pages/tags
-GL_COMMIT=	61e1298127dbb3d1553777c66f9cb60780fb4add
+GL_COMMIT=	509da90294ab30a71baa4d6c47bf99c8ac6151dd
 
 # Build with: make gomod-vendor
-# 58dd
+# 60dd
 GH_TUPLE=	\
+		andybalholm:brotli:v1.0.1:andybalholm_brotli/vendor/github.com/andybalholm/brotli \
 		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 		cenkalti:backoff:v4.0.2:cenkalti_backoff_v4/vendor/github.com/cenkalti/backoff/v4 \
 		census-instrumentation:opencensus-go:v0.22.2:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
@@ -56,6 +57,7 @@ GH_TUPLE=	\
 		gorilla:sessions:v1.2.0:gorilla_sessions/vendor/github.com/gorilla/sessions \
 		grpc:grpc-go:v1.24.0:grpc_grpc_go/vendor/google.golang.org/grpc \
 		kardianos:osext:2bc1f35cddc0:kardianos_osext/vendor/github.com/kardianos/osext \
+		karlseguin:ccache:v2.0.6:karlseguin_ccache_v2/vendor/github.com/karlseguin/ccache/v2 \
 		karrick:godirwalk:v1.10.12:karrick_godirwalk/vendor/github.com/karrick/godirwalk \
 		konsorten:go-windows-terminal-sequences:v1.0.2:konsorten_go_windows_terminal_sequences/vendor/github.com/konsorten/go-windows-terminal-sequences \
 		matttproud:golang_protobuf_extensions:v1.0.1:matttproud_golang_protobuf_extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
@@ -77,7 +79,7 @@ GH_TUPLE=	\
 		tomasen:realip:f0c99a92ddce:tomasen_realip/vendor/github.com/tomasen/realip \
 		wadey:gocovmerge:b5bfa59ec0ad:wadey_gocovmerge/vendor/github.com/wadey/gocovmerge
 
-GL_TUPLE=	gitlab-org:labkit:96e583c57891010df9b5b65d62bbae04e76c341e:gitlab_org_labkit/vendor/gitlab.com/gitlab-org/labkit \
+GL_TUPLE=	gitlab-org:labkit:eb1fe6499318c774424df80f76fc8b0a420f731b:gitlab_org_labkit/vendor/gitlab.com/gitlab-org/labkit \
 		lupine:go-mimedb:e8af1d65987739a7ab277dedd9772c7398154ff3:lupine_go_mimedb/vendor/gitlab.com/lupine/go-mimedb
 
 GO_BUILDFLAGS=	-ldflags="-X main.VERSION=${PORTVERSION} -X main.REVISION=${GITHASH}"
