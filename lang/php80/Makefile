@@ -2,7 +2,7 @@
 
 PORTNAME=	php80
 DISTVERSION=	8.0.0RC2
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	lang devel www
 MASTER_SITES=   https://downloads.php.net/~pollita/
 DISTNAME=	php-${DISTVERSION}
@@ -166,7 +166,7 @@ post-build:
 	@${ECHO_CMD} "PHP_VER=80" > ${WRKDIR}/php.conf
 	@${ECHO_CMD} "PHP_VERSION=${PORTVERSION}" >> ${WRKDIR}/php.conf
 	@${ECHO_CMD} "PHP_SAPI=${PHP_SAPI}" >> ${WRKDIR}/php.conf
-	@${ECHO_CMD} "PHP_EXT_INC=hash pcre spl" >> ${WRKDIR}/php.conf
+	@${ECHO_CMD} "PHP_EXT_INC=hash json pcre spl" >> ${WRKDIR}/php.conf
 	@${ECHO_CMD} -n "PHP_EXT_DIR=" >> ${WRKDIR}/php.conf
 	@${SH} ${WRKSRC}/scripts/php-config --extension-dir | ${SED} -ne 's,^${PREFIX}/lib/php/,,p' >> ${WRKDIR}/php.conf
 
