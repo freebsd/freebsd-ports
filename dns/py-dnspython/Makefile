@@ -24,9 +24,15 @@ PYCRYPTODOME_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycryptodome>=0:security/py-pyc
 PORTEXAMPLES=	ddns.py e164.py mx.py name.py reverse.py reverse_name.py \
 		xfr.py zonediff.py
 
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_MAJOR_VER} == 3
+PORTVERSION=	2.1.0
+.endif
+
 post-install-EXAMPLES-on:
 # examples
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${PORTEXAMPLES:S,^,${WRKSRC}/examples/,} ${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
