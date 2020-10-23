@@ -2,5 +2,5 @@ include/readosm.h
 lib/libreadosm.a
 lib/libreadosm.so
 lib/libreadosm.so.1
-lib/libreadosm.so.1.0.0
+lib/libreadosm.so.1.0.1
 libdata/pkgconfig/readosm.pc
