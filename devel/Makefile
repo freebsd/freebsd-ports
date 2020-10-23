@@ -1276,6 +1276,7 @@
     SUBDIR += librevisa-vish
     SUBDIR += librevisa-vxi
     SUBDIR += librolegen
+    SUBDIR += librttopo
     SUBDIR += libruin
     SUBDIR += libs11n
     SUBDIR += libsavitar

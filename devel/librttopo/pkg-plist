@@ -1,0 +1,7 @@
+include/librttopo.h
+include/librttopo_geom.h
+lib/librttopo.a
+lib/librttopo.so
+lib/librttopo.so.%%SHL1%%
+lib/librttopo.so.%%SHL3%%
+libdata/pkgconfig/rttopo.pc
