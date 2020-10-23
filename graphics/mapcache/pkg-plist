@@ -1,6 +1,7 @@
 bin/mapcache.fcgi
 bin/mapcache_seed
+bin/mapcache_detail
 lib/libmapcache.so
 lib/libmapcache.so.1
-lib/libmapcache.so.1.5dev
+lib/libmapcache.so.1.10.0
 %%APACHE%%%%APACHEMODDIR%%/mod_%%AP_MODULE%%
