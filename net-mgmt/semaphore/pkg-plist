@@ -1,5 +1,5 @@
 bin/semaphore
-@sample %%ETCDIR%%/semaphore_config.json.sample
+@sample %%ETCDIR%%/config.json.sample
 %%DATADIR%%/v0.0.0.sql
 %%DATADIR%%/v0.1.0.sql
 %%DATADIR%%/v1.0.0.sql
@@ -18,3 +18,4 @@ bin/semaphore
 %%DATADIR%%/v2.3.2.sql
 %%DATADIR%%/v2.4.0.sql
 %%DATADIR%%/v2.5.0.sql
+%%DATADIR%%/v2.5.2.sql
