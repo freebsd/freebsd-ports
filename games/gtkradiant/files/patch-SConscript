@@ -1,5 +1,11 @@
 --- SConscript.orig	2006-02-10 22:01:20 UTC
 +++ SConscript
+@@ -1,4 +1,4 @@
+-import os, sys, commands, string
++import os, sys, subprocess as commands, string
+ from makeversion import get_version
+ # OS Detection:
+ OS = commands.getoutput('uname')
 @@ -23,7 +23,7 @@ md5lib_lib = g_env.StaticLibrary(target='libs/md5lib',
  
  ddslib_lib = g_env.StaticLibrary(target='libs/ddslib', source='libs/ddslib/ddslib.c')
@@ -189,3 +195,44 @@
  if ( OS == 'Darwin' ):
    radiant_env['CXXFLAGS'] += '-fno-common '
    radiant_env['CCFLAGS'] += '-fno-common '
+@@ -597,11 +595,11 @@ class setup_builder:
+   
+   def system(self, cmd):
+     if (self.g_dryrun):
+-      print cmd
++      print(cmd)
+     else:
+       sys.stdout.write(cmd)
+       ret = commands.getstatusoutput(cmd)
+-      print ret[1]
++      print(ret[1])
+       if (ret[0] != 0):
+         raise 'command failed'
+ 
+@@ -807,7 +805,7 @@ class setup_builder:
+     self.system('setup/linux/makeself/makeself.sh ' + self.SETUP_DIR + ' ' + self.SETUP_TARGET + ' "GtkRadiant ' + self.line + ' setup" ./setup.sh')
+     if (self.g_darwin):
+       def build_fink_deb(self):
+-        print "Building installer .deb\n"
++        print("Building installer .deb\n")
+         self.F_REV = '1'
+         self.FINKINFO_DIR = '/sw/fink/10.2/unstable/main/finkinfo/games'
+         self.TARBALL_DIR='radiant-' + self.F_REV + '.' + self.major 
+@@ -833,7 +831,7 @@ class setup_builder:
+     else:
+       self.g_darwin = 0
+     (self.line, self.major, self.minor) = get_version()
+-    print 'Setup: GtkRadiant %s' % self.line  
++    print('Setup: GtkRadiant %s' % self.line)
+     if ( self.g_darwin ):
+       self.SETUP_IMAGE_OS = '../loki_setup/image'
+     else:
+@@ -860,7 +858,7 @@ class setup_builder:
+       self.DO_GAME_ET=0
+       self.DO_GAME_HER2=0
+     # verbose a bit
+-    print 'version: %s major: %s minor: %s\neditor core: %d\nq3: %d\nwolf: %d\net: %d\ndoom3: %d\nq2: %d\nher2: %d' % (self.line, self.major, self.minor, self.DO_CORE, self.DO_GAME_Q3, self.DO_GAME_WOLF, self.DO_GAME_ET, self.DO_GAME_DOOM3, self.DO_GAME_Q2, self.DO_GAME_HER2)
++    print('version: %s major: %s minor: %s\neditor core: %d\nq3: %d\nwolf: %d\net: %d\ndoom3: %d\nq2: %d\nher2: %d' % (self.line, self.major, self.minor, self.DO_CORE, self.DO_GAME_Q3, self.DO_GAME_WOLF, self.DO_GAME_ET, self.DO_GAME_DOOM3, self.DO_GAME_Q2, self.DO_GAME_HER2))
+     if (self.DO_CORE):
+       self.copy_core()
+     if (self.DO_GAME_Q3):

@@ -1,17 +1,24 @@
---- ./makeversion.py.orig	Sun Feb 12 16:47:01 2006
-+++ ./makeversion.py	Thu Mar 16 16:09:46 2006
-@@ -37,9 +37,7 @@
+--- makeversion.py.orig	2006-02-12 19:47:01 UTC
++++ makeversion.py
+@@ -37,15 +37,13 @@
  # ouput:
  #   include/aboutmsg.h
  
 -import sys, re, string, os
--
--import svn
 +import sys, re, string, os, platform
  
+-import svn
+-
  def get_version():
    # version
-@@ -68,9 +66,6 @@ def radiant_makeversion(append_about):
+   f = open('include/version.default', 'r')
+   buffer = f.read()
+-  line = string.split(buffer, '\n')[0]
++  line = buffer.split('\n')[0]
+   f.close()
+   sys.stdout.write("version: %s\n" % line)
+   exp = re.compile('^1\\.([^\\.]*)\\.([0-9]*)')
+@@ -68,12 +66,9 @@ def radiant_makeversion(append_about):
    f = open('include/RADIANT_MAJOR', 'w')
    f.write(major)
    f.close()
@@ -20,8 +27,12 @@
 -  f.close()
    # aboutmsg
    aboutfile = 'include/aboutmsg.default'
-   if ( os.environ.has_key('RADIANT_ABOUTMSG') ):
-@@ -82,7 +80,7 @@
+-  if ( os.environ.has_key('RADIANT_ABOUTMSG') ):
++  if ( 'RADIANT_ABOUTMSG' in os.environ ):
+     aboutfile = os.environ['RADIANT_ABOUTMSG']
+   line = None
+   if os.path.isfile(aboutfile):
+@@ -82,7 +77,7 @@ def radiant_makeversion(append_about):
      line = f.readline()
      f.close()
    else:

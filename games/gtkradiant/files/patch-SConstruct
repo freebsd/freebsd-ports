@@ -1,8 +1,11 @@
 --- SConstruct.orig	2006-02-10 22:01:20 UTC
 +++ SConstruct
-@@ -3,7 +3,6 @@
+@@ -1,9 +1,8 @@
+ # scons build script
+ # http://scons.sourceforge.net
  
- import commands, re, sys, os, pickle, string, popen2
+-import commands, re, sys, os, pickle, string, popen2
++import subprocess as commands, re, sys, os, pickle, string
  from makeversion import radiant_makeversion, get_version
 -from osx_setup import do_osx_setup
  
@@ -17,7 +20,16 @@
  
  # help -------------------------------------------
  
-@@ -64,14 +63,7 @@ print 'SCons ' + SCons.__version__
+@@ -55,7 +54,7 @@ SETUP
+ #EnsurePythonVersion(2,1)
+ # above 0.90
+ EnsureSConsVersion( 0, 96 )
+-print 'SCons ' + SCons.__version__
++print('SCons ' + SCons.__version__)
+ 
+ # end sanity -------------------------------------
+ 
+@@ -64,18 +63,11 @@ print 'SCons ' + SCons.__version__
  # TODO: detect Darwin / OSX
  
  # CPU type
@@ -33,16 +45,83 @@
  
  # OS
  OS = commands.getoutput('uname')
-@@ -140,7 +132,7 @@ def GetGCCVersion(name):
+-print "OS=\"" + OS + "\""
++print("OS=\"" + OS + "\"")
+ 
+ if (OS == 'Linux'):
+   # libc .. do the little magic!
+@@ -99,13 +91,15 @@ g_build_root = 'build'
+ 
+ site_dict = {}
+ if (os.path.exists(conf_filename)):
+-	site_file = open(conf_filename, 'r')
++	print( conf_filename )
++	site_file = open(conf_filename, 'rb')
+ 	p = pickle.Unpickler(site_file)
+-	site_dict = p.load()
+-	print 'Loading build configuration from ' + conf_filename
++	try: site_dict = p.load()
++	except EOFError: site_dict = {}
++	print('Loading build configuration from ' + conf_filename)
+ 	for k, v in site_dict.items():
+ 		exec_cmd = k + '=\"' + v + '\"'
+-		print exec_cmd
++		print(exec_cmd)
+ 		exec(exec_cmd)
+ 
+ # end site settings ------------------------------
+@@ -113,9 +107,9 @@ if (os.path.exists(conf_filename)):
+ # command line settings --------------------------
+ 
+ for k in serialized:
+-	if (ARGUMENTS.has_key(k)):
++	if (k in ARGUMENTS):
+ 		exec_cmd = k + '=\"' + ARGUMENTS[k] + '\"'
+-		print 'Command line: ' + exec_cmd
++		print('Command line: ' + exec_cmd)
+ 		exec(exec_cmd)
+ 
+ # end command line settings ----------------------
+@@ -123,14 +117,14 @@ for k in serialized:
+ # sanity check -----------------------------------
+ 
+ if (SETUP == '1' and BUILD != 'release' and BUILD != 'info'):
+-  print 'Forcing release build for setup'
++  print('Forcing release build for setup')
+   BUILD = 'release'
+ 
+ def GetGCCVersion(name):
+   ret = commands.getstatusoutput('%s -dumpversion' % name)
+   if ( ret[0] != 0 ):
+     return None
+-  vers = string.split(ret[1], '.')
++  vers = ret[1].split('.')
+   if ( len(vers) == 2 ):
+     return [ vers[0], vers[1], 0 ]
+   elif ( len(vers) == 3 ):
+@@ -140,9 +134,9 @@ def GetGCCVersion(name):
  ver_cc = GetGCCVersion(CC)
  ver_cxx = GetGCCVersion(CXX)
  
 -if ( ver_cc is None or ver_cxx is None or ver_cc[0] < '3' or ver_cxx[0] < '3' or ver_cc != ver_cxx ):
-+if ( ver_cc is None or ver_cxx is None or ver_cc[0] < 3 or ver_cxx[0] < 3 or ver_cc != ver_cxx ):
-   print 'Compiler version check failed - need gcc 3.x or later:'
-   print 'CC: %s %s\nCXX: %s %s' % ( CC, repr(ver_cc), CXX, repr(ver_cxx) )
+-  print 'Compiler version check failed - need gcc 3.x or later:'
+-  print 'CC: %s %s\nCXX: %s %s' % ( CC, repr(ver_cc), CXX, repr(ver_cxx) )
++if ( ver_cc is None or ver_cxx is None or int(ver_cc[0]) < 3 or int(ver_cxx[0]) < 3 or ver_cc != ver_cxx ):
++  print('Compiler version check failed - need gcc 3.x or later:')
++  print('CC: %s %s\nCXX: %s %s' % ( CC, repr(ver_cc), CXX, repr(ver_cxx) ))
    Exit(1)
-@@ -172,8 +164,8 @@ LINK = CXX
+ 
+ # end sanity check -------------------------------
+@@ -153,7 +147,7 @@ for k in serialized:
+ 	exec_cmd = 'site_dict[\'' + k + '\'] = ' + k
+ 	exec(exec_cmd)
+ 
+-site_file = open(conf_filename, 'w')
++site_file = open(conf_filename, 'wb')
+ p = pickle.Pickler(site_file)
+ p.dump(site_dict)
+ site_file.close()
+@@ -172,8 +166,8 @@ LINK = CXX
  # common flags
  warningFlags = '-W -Wall -Wcast-align -Wcast-qual -Wno-unused-parameter '
  warningFlagsCXX = '-Wno-non-virtual-dtor -Wreorder ' # -Wold-style-cast
@@ -53,15 +132,25 @@
  CPPPATH = []
  if (BUILD == 'debug'):
  	CXXFLAGS += '-g -D_DEBUG '
-@@ -190,7 +182,6 @@ else:
- 	print 'Unknown build configuration ' + BUILD
+@@ -182,15 +176,14 @@ elif (BUILD == 'release'):
+ 	CXXFLAGS += '-O2 '
+ 	CCFLAGS += '-O2 '
+ elif ( BUILD == 'info' ):
+-	print 'Preparing OSX release'
++	print('Preparing OSX release')
+ 	( line, major, minor ) = get_version()
+ 	do_osx_setup( major, minor, 'osx-radiant-%s.run' % line )
+ 	sys.exit( 0 )
+ else:
+-	print 'Unknown build configuration ' + BUILD
++	print('Unknown build configuration ' + BUILD)
  	sys.exit( 0 )
  
 -LINKFLAGS = ''
  if ( OS == 'Linux' ):
  
    # static
-@@ -218,6 +209,11 @@ if ( OS == 'Darwin' ):
+@@ -218,6 +211,11 @@ if ( OS == 'Darwin' ):
    CPPPATH.append('/sw/include')
    CPPPATH.append('/usr/X11R6/include')
    LINKFLAGS += '-L/sw/lib -L/usr/lib -L/usr/X11R6/lib '
@@ -73,7 +162,7 @@
  
  CPPPATH.append('libs')
  
-@@ -248,7 +244,7 @@ class idEnvironment(Environment):
+@@ -248,7 +246,7 @@ class idEnvironment(Environment):
    def useGtk2(self):
      self['CXXFLAGS'] += '`pkg-config gtk+-2.0 --cflags` '
      self['CCFLAGS'] += '`pkg-config gtk+-2.0 --cflags` '
@@ -82,16 +171,45 @@
     
    def useGtkGLExt(self):
      self['CXXFLAGS'] += '`pkg-config gtkglext-1.0 --cflags` '
-@@ -278,7 +274,7 @@ class idEnvironment(Environment):
+@@ -278,18 +276,18 @@ class idEnvironment(Environment):
          print('ERROR: CheckLDD: target %s not found\n' % target[0])
          Exit(1)
      # not using os.popen3 as I want to check the return code
 -    ldd = popen2.Popen3('`which ldd` -r %s' % target[0], 1)
-+    ldd = popen2.Popen3('`which ldd` %s' % target[0], 1)
-     stdout_lines = ldd.fromchild.readlines()
-     stderr_lines = ldd.childerr.readlines()
+-    stdout_lines = ldd.fromchild.readlines()
+-    stderr_lines = ldd.childerr.readlines()
++    ldd = commands.Popen(['ldd', str(file)], 1, stdout=commands.PIPE, stderr=commands.PIPE)
++    stdout_lines = ldd.stdout.readlines()
++    stderr_lines = ldd.stderr.readlines()
      ldd_ret = ldd.wait()
-@@ -317,8 +313,14 @@ g_env = idEnvironment()
+     del ldd
+     have_undef = 0
+     if ( ldd_ret != 0 ):
+-        print "ERROR: ldd command returned with exit code %d" % ldd_ret
++        print("ERROR: ldd command returned with exit code %d" % ldd_ret)
+         os.system('rm %s' % target[0])
+         Exit()
+     for i_line in stderr_lines:
+-        print repr(i_line)
++        print(repr(i_line))
+         regex = re.compile('undefined symbol: (.*)\t\\((.*)\\)\n')
+         if ( regex.match(i_line) ):
+             symbol = regex.sub('\\1', i_line)
+@@ -298,11 +296,11 @@ class idEnvironment(Environment):
+             except:
+                 have_undef = 1
+         else:
+-            print "ERROR: failed to parse ldd stderr line: %s" % i_line
++            print("ERROR: failed to parse ldd stderr line: %s" % i_line)
+             os.system('rm %s' % target[0])
+             Exit(1)
+     if ( have_undef ):
+-        print "ERROR: undefined symbols"
++        print("ERROR: undefined symbols")
+         os.system('rm %s' % target[0])
+         Exit(1)
+   
+@@ -317,8 +315,14 @@ g_env = idEnvironment()
  # export the globals
  GLOBALS = 'g_env INSTALL SETUP g_cpu'
  
@@ -107,7 +225,7 @@
  # end general configuration ----------------------
  
  # targets ----------------------------------------
-@@ -326,7 +328,7 @@ radiant_makeversion('\\ngcc version: %s.%s.%s' % ( ver
+@@ -326,7 +330,7 @@ radiant_makeversion('\\ngcc version: %s.%s.%s' % ( ver
  Default('.')
  
  Export('GLOBALS ' + GLOBALS)
