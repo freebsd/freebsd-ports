@@ -2,7 +2,12 @@ bin/xfce4-dict
 lib/xfce4/panel/plugins/libxfce4dict.so
 man/man1/xfce4-dict.1.gz
 share/applications/xfce4-dict.desktop
-share/icons/hicolor/scalable/apps/xfce4-dict.svg
+share/icons/hicolor/128x128/apps/org.xfce.Dictionary.png
+share/icons/hicolor/16x16/apps/org.xfce.Dictionary.png
+share/icons/hicolor/24x24/apps/org.xfce.Dictionary.png
+share/icons/hicolor/32x32/apps/org.xfce.Dictionary.png
+share/icons/hicolor/48x48/apps/org.xfce.Dictionary.png
+share/icons/hicolor/scalable/apps/org.xfce.Dictionary.svg
 %%NLS%%share/locale/ar/LC_MESSAGES/xfce4-dict.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/xfce4-dict.mo
 %%NLS%%share/locale/be/LC_MESSAGES/xfce4-dict.mo
@@ -15,6 +20,7 @@ share/icons/hicolor/scalable/apps/xfce4-dict.svg
 %%NLS%%share/locale/en_AU/LC_MESSAGES/xfce4-dict.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/xfce4-dict.mo
 %%NLS%%share/locale/es/LC_MESSAGES/xfce4-dict.mo
+%%NLS%%share/locale/et/LC_MESSAGES/xfce4-dict.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/xfce4-dict.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/xfce4-dict.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/xfce4-dict.mo
@@ -23,6 +29,7 @@ share/icons/hicolor/scalable/apps/xfce4-dict.svg
 %%NLS%%share/locale/hr/LC_MESSAGES/xfce4-dict.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/xfce4-dict.mo
 %%NLS%%share/locale/hy_AM/LC_MESSAGES/xfce4-dict.mo
+%%NLS%%share/locale/hye/LC_MESSAGES/xfce4-dict.mo
 %%NLS%%share/locale/id/LC_MESSAGES/xfce4-dict.mo
 %%NLS%%share/locale/is/LC_MESSAGES/xfce4-dict.mo
 %%NLS%%share/locale/it/LC_MESSAGES/xfce4-dict.mo

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-dict
-PORTVERSION=	0.8.3
+PORTVERSION=	0.8.4
 CATEGORIES=	textproc xfce
 MASTER_SITES=	XFCE/apps
 PKGNAMESUFFIX=	-plugin
