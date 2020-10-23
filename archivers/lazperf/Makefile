@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lazperf
-DISTVERSION=	1.4.4
+DISTVERSION=	1.5.0
 CATEGORIES=	archivers databases geography
 
 MAINTAINER=	lbartoletti@FreeBSD.org
