@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mpz
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.7
 CATEGORIES=	audio
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -20,9 +20,6 @@ USES=		compiler:c++11-lang qmake qt:5
 USE_GSTREAMER1=	flac libav mpg123 ogg opus vorbis
 USE_QT=		buildtools_build concurrent core dbus gui multimedia \
 		network widgets x11extras
-
-PLIST_FILES=	bin/mpz share/applications/mpz.desktop \
-		share/icons/hicolor/512x512/apps/mpz.png
 
 post-extract:
 	@${RM} -r ${WRKSRC}/libs/taglib ${WRKSRC}/libs/yaml-cpp
