@@ -1,0 +1,13 @@
+--- src/Makefile.in.orig	2020-10-23 14:15:44 UTC
++++ src/Makefile.in
+@@ -467,8 +467,8 @@ mod_spatialite_la_LIBADD = ./gaiaaux/gaiaaux.la ./gaia
+ mod_spatialite_la_CPPFLAGS = @CFLAGS@ @CPPFLAGS@ \
+ 	-I$(top_srcdir)/src/headers -I. -DLOADABLE_EXTENSION
+ mod_spatialite_la_LIBTOOLFLAGS = --tag=disable-static
+-@ANDROID_FALSE@@MINGW_FALSE@mod_spatialite_la_LDFLAGS = -module -version-info 8:0:1
+-@ANDROID_TRUE@@MINGW_FALSE@mod_spatialite_la_LDFLAGS = -module -version-info 8:0:1
++@ANDROID_FALSE@@MINGW_FALSE@mod_spatialite_la_LDFLAGS = -module -version-info 8:1:1
++@ANDROID_TRUE@@MINGW_FALSE@mod_spatialite_la_LDFLAGS = -module -version-info 8:1:1
+ @MINGW_TRUE@mod_spatialite_la_LDFLAGS = -module -avoid-version -no-undefined
+ MOSTLYCLEANFILES = *.gcna *.gcno *.gcda
+ all: all-recursive
