@@ -3,7 +3,6 @@
 PORTNAME=	welle.io
 DISTVERSION=	2.2
 CATEGORIES=	audio hamradio
-MASTER_SITES=	https://github.com/albrechtl/welle.io/
 
 MAINTAINER=	nsonack@outlook.com
 COMMENT=	SDR DAB/DAB+ Receiver
