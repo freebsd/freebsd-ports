@@ -1,5 +1,3 @@
-TIMESTAMP = 1602411556
-SHA256 (wine-5.19.tar.xz) = 0020482b9eeae84ea1a1281323a4bcd1b17dbd45ea2e8beb3a10073787e697c7
-SIZE (wine-5.19.tar.xz) = 24201860
-SHA256 (v5.19.tar.gz) = 9a0e0e1a7a21ffcb7ffadbd84d45875ef6ece86967b2815bca80792dffd48b78
-SIZE (v5.19.tar.gz) = 10348478
+TIMESTAMP = 1603488676
+SHA256 (wine-5.20.tar.xz) = 8f5522f8cebebdbaa12f58e1ba671a11f66372e0aedf74fb932cf5a89390861c
+SIZE (wine-5.20.tar.xz) = 24177960

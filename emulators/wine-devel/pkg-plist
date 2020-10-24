@@ -1450,6 +1450,7 @@ lib/wine/dmusic.dll.so
 lib/wine/dmusic32.dll.so
 lib/wine/dnsapi.dll.so
 lib/wine/dplay.dll.so
+lib/wine/dplaysvr.exe.so
 lib/wine/dplayx.dll.so
 lib/wine/dpnaddr.dll.so
 lib/wine/dpnet.dll.so
@@ -1457,6 +1458,7 @@ lib/wine/dpnhpast.dll.so
 lib/wine/dpnlobby.dll.so
 lib/wine/dpnsvr.exe.so
 lib/wine/dpvoice.dll.so
+lib/wine/dpvsetup.exe.so
 lib/wine/dpwsockx.dll.so
 lib/wine/drmclien.dll.so
 lib/wine/dsdmo.dll.so
@@ -1915,6 +1917,7 @@ lib/wine/fakedlls/dmusic.dll
 lib/wine/fakedlls/dmusic32.dll
 lib/wine/fakedlls/dnsapi.dll
 lib/wine/fakedlls/dplay.dll
+lib/wine/fakedlls/dplaysvr.exe
 lib/wine/fakedlls/dplayx.dll
 lib/wine/fakedlls/dpnaddr.dll
 lib/wine/fakedlls/dpnet.dll
@@ -1922,6 +1925,7 @@ lib/wine/fakedlls/dpnhpast.dll
 lib/wine/fakedlls/dpnlobby.dll
 lib/wine/fakedlls/dpnsvr.exe
 lib/wine/fakedlls/dpvoice.dll
+lib/wine/fakedlls/dpvsetup.exe
 lib/wine/fakedlls/dpwsockx.dll
 lib/wine/fakedlls/drmclien.dll
 lib/wine/fakedlls/dsdmo.dll
@@ -3147,6 +3151,7 @@ lib/wine/wimgapi.dll.so
 %%WINE32%%lib/wine/windebug.dll16.so
 %%STAGING%%lib/wine/windows.gaming.input.dll.so
 lib/wine/windowscodecs.dll.so
+lib/wine/windowscodecs.so
 lib/wine/windowscodecsext.dll.so
 lib/wine/wineboot.exe.so
 lib/wine/winebrowser.exe.so
