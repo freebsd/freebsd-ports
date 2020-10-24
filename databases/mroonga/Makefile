@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mroonga
-PORTVERSION=	10.06
+PORTVERSION=	10.07
 CATEGORIES=	databases textproc
 MASTER_SITES=	http://packages.groonga.org/source/mroonga/
 
