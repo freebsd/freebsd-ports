@@ -1,9 +1,9 @@
 -	/bin/rm -f libndpi.a $(OBJECTS)
 new file mode 100644
---- src/lib/Makefile.in.orig	2019-10-21 13:36:38 UTC
+--- src/lib/Makefile.in.orig	2020-10-19 14:18:25 UTC
 +++ src/lib/Makefile.in
-@@ -17,24 +17,15 @@ CC         = @CC@
- CFLAGS     += -fPIC -DPIC -I../include -Ithird_party/include -DNDPI_LIB_COMPILATION -O2 -g -Wall
+@@ -18,30 +18,17 @@ CFLAGS     += -fPIC -DPIC -I../include -Ithird_party/i
+ LDFLAGS    = @LDFLAGS@ @ADDITIONAL_LIBS@ @LIBS@
  RANLIB     = ranlib
  
 -OBJECTS   = $(patsubst protocols/%.c, protocols/%.o, $(wildcard protocols/*.c)) $(patsubst third_party/src/%.c, third_party/src/%.o, $(wildcard third_party/src/*.c)) $(patsubst ./%.c, ./%.o, $(wildcard ./*.c))
@@ -19,12 +19,18 @@ new file mode 100644
 -ifneq ($(OS),Windows_NT)
 -OS := $(shell uname)
 -endif
--
+ BUILD_MINGW    		 = @BUILD_MINGW@
+ 
 -ifeq ($(OS),Darwin)
 -CC=clang
 -SONAME_FLAG=
 -else
+-ifneq ($(BUILD_MINGW),)
+-NDPI_LIB_SHARED_BASE = libndpi
+-NDPI_LIB_SHARED      = $(NDPI_LIB_SHARED_BASE)-@NDPI_VERSION_SHORT@.dll
+-else
  SONAME_FLAG=-Wl,-soname,$(NDPI_LIB_SHARED_BASE).$(NDPI_VERSION_MAJOR)
+-endif
 -endif
  
  all: $(NDPI_LIBS)

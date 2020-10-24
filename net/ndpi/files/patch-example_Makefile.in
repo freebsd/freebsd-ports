@@ -1,22 +1,28 @@
---- example/Makefile.in.orig	2020-03-24 12:39:12 UTC
+--- example/Makefile.in.orig	2020-10-19 14:18:25 UTC
 +++ example/Makefile.in
-@@ -8,11 +8,12 @@ HEADERS=intrusion_detection.h reader_util.h $(SRCHOME)
+@@ -9,17 +9,12 @@ HEADERS=intrusion_detection.h reader_util.h $(SRCHOME)
          $(SRCHOME)/include/ndpi_typedefs.h $(SRCHOME)/include/ndpi_protocol_ids.h
  OBJS=ndpiReader.o reader_util.o intrusion_detection.o
  PREFIX?=@prefix@
 +EXAMPLESDIR?=share/examples/ndpi
  
+-ifneq ($(BUILD_MINGW),)
+-all:
+-	@echo 'Examples disabled due to mingw build.'
+-
+-else
+-
  all: ndpiReader @DPDK_TARGET@
  
- EXECUTABLE_SOURCES := ndpiReader.c
+ EXECUTABLE_SOURCES := ndpiReader.c ndpiSimpleIntegration.c
 -COMMON_SOURCES := $(filter-out $(EXECUTABLE_SOURCES),$(wildcard *.c ))
 +COMMON_SOURCES=intrusion_detection.c reader_util.c
  
  libndpiReader.a: $(COMMON_SOURCES:%.c=%.o) $(LIBNDPI)
  	ar rsv libndpiReader.a $(COMMON_SOURCES:%.c=%.o)
-@@ -25,10 +26,10 @@ ndpiReader: libndpiReader.a $(LIBNDPI) $(EXECUTABLE_SO
+@@ -35,10 +30,10 @@ ndpiSimpleIntegration: ndpiSimpleIntegration.o
  
- install:
+ install: ndpiReader
  	mkdir -p $(DESTDIR)$(PREFIX)/bin/
 -	mkdir -p $(DESTDIR)$(PREFIX)/share/ndpi
 +	mkdir -p $(DESTDIR)$(PREFIX)/$(EXAMPLESDIR)/
@@ -28,3 +34,9 @@
  	[ -f build/app/ndpiReader.dpdk ] && cp build/app/ndpiReader.dpdk $(DESTDIR)$(PREFIX)/bin/ || true
  	[ -f ndpiReader.dpdk ] && cp ndpiReader.dpdk $(DESTDIR)$(PREFIX)/bin/ || true
  
+@@ -61,5 +56,3 @@ distdir:
+ distclean: clean
+ 	/bin/rm -f Makefile.dpdk
+ 	/bin/rm -f Makefile
+-
+-endif
