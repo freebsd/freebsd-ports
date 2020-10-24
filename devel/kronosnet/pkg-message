@@ -10,6 +10,16 @@ To preserve this setting across reboots, append the following
 to /etc/sysctl.conf :
 
 kern.ipc.maxsockbuf=18874368
+
+Currently, knet will fail to work with SCTP if you do not change
+the following sysctl :
+
+# sysctl net.inet.sctp.blackhole=1
+
+To preserve this setting across reboots if you want to use knet with SCTP,
+append the following to /etc/sysctl.conf :
+
+net.inet.sctp.blackhole=1
 EOM
 }
 ]
