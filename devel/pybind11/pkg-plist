@@ -23,7 +23,9 @@ include/pybind11/pytypes.h
 include/pybind11/stl.h
 include/pybind11/stl_bind.h
 share/cmake/pybind11/FindPythonLibsNew.cmake
+share/cmake/pybind11/pybind11Common.cmake
 share/cmake/pybind11/pybind11Config.cmake
 share/cmake/pybind11/pybind11ConfigVersion.cmake
+share/cmake/pybind11/pybind11NewTools.cmake
 share/cmake/pybind11/pybind11Targets.cmake
 share/cmake/pybind11/pybind11Tools.cmake
