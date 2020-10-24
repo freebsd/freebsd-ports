@@ -2,7 +2,7 @@
 
 PORTNAME=	uhd
 PORTVERSION=	4.0.0.0
-#PORTREVISION=	1
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 DIST_SUBDIR=	${PORTNAME}
 
@@ -43,7 +43,7 @@ BROKEN_FreeBSD_13_armv7=	fails to configure: Could not find standard set_new_han
 USE_LDCONFIG=		yes
 CMAKE_SOURCE_PATH=	${WRKSRC}/host
 #CXXFLAGS_amd64=	-msse2 -std=c++11
-#CXXFLAGS_i386=	-msse2 -std=c++98
+CXXFLAGS_i386=	-msse2
 
 SHEBANG_GLOB=	*.py *.py.in
 
