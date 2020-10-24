@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	minitube
-DISTVERSION=	3.6.3
+DISTVERSION=	3.6.4
 CATEGORIES=	multimedia www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,7 +17,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	flaviotordini
 GH_TUPLE=	\
 		flaviotordini:idle:6aa092da64a011e445bf31cf31c0cd8dda4c64ff:flaviotordini_idle/lib/idle \
-		flaviotordini:media:0d07cadaf0b773186ec712185d177d9bc8e1c8ea:flaviotordini_media/lib/media \
+		flaviotordini:media:4d55516ac821fe4d019733ccc70e984220b970d1:flaviotordini_media/lib/media \
 		flaviotordini:http:86a5cb0a31158325cdd27bf5405d93909acc6a60:flaviotordini_http/lib/http \
 		flaviotordini:updater:a563aaa783e8cdd85df3d1cedd037ed9307d2f1c:flaviotordini_updater/lib/updater
 
