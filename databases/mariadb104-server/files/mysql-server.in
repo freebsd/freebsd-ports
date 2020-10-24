@@ -125,7 +125,7 @@ mysql_prestart()
 	fi
 	[ "${mysql_socket}" = "" ] && mysql_rundir="%%MARIADB_RUNDIR%%" || mysql_rundir="`/usr/bin/dirname ${mysql_socket}`"
 	if [ ! -d "${mysql_rundir}" ]; then
-		install -d -o ${mysql_user} -g %%MARIADB_GROUP%% "${mysql_rundir}"
+		install -d -o ${mysql_user} -g $(id -gn $mysql_user) "${mysql_rundir}"
 
 	fi
 %%LEGACY_LIMITS%%	if checkyesno mysql_limits; then
