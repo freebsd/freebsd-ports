@@ -18,7 +18,7 @@ IGNORE=		not supported on anything but FreeBSD (missing linuxkpi functionality)
 .if ${ARCH} != "amd64"
 .if ${OSVERSION} >= 1200080
 RUN_DEPENDS=	${KMODDIR}/drm.ko:graphics/drm-legacy-kmod
-.elif ${OSVERSION} < 1200080
+.else
 IGNORE=		legacy kmod not required on less than 12.0
 .endif
 .else
