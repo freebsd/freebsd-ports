@@ -12,7 +12,7 @@ COMMENT=	Reading and writing files containing sampled sound (like WAV or AIFF)
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake cpe dos2unix localbase pkgconfig python:build,test shebangfix \
+USES=		cmake cpe localbase pkgconfig python:build,test shebangfix \
 		tar:bz2
 SHEBANG_FILES=	programs/test-sndfile-metadata-set.py \
 		src/binheader_writef_check.py \
