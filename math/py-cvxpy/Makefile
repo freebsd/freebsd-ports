@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cvxpy
-DISTVERSION=	1.1.6
+DISTVERSION=	1.1.7
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,5 +21,8 @@ RUN_DEPENDS=	${PYNUMPY} \
 
 USES=		python
 USE_PYTHON=	distutils autoplist
+
+post-install:
+		${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/_cvxcore.so
 
 .include <bsd.port.mk>
