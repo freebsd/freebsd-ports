@@ -15,7 +15,7 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libmp3lame.so:audio/lame \
 		libmpg123.so:audio/mpg123
 
-USES=		cmake pkgconfig qt:5
+USES=		cmake compiler:c++11-lang pkgconfig qt:5
 USE_QT=		charts core declarative gui multimedia network quickcontrols2 \
 		widgets buildtools_build qmake_build
 
