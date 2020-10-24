@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	goland
-PORTVERSION=	2020.1.4
+PORTVERSION=	2020.2.3
 CATEGORIES=	devel java
 MASTER_SITES=	https://download-cf.jetbrains.com/go/
 PKGNAMEPREFIX=	jetbrains-
@@ -45,6 +45,7 @@ do-install:
 		${WRKSRC}/bin/fsnotifier-arm \
 		${WRKSRC}/bin/fsnotifier64 \
 		${WRKSRC}/lib/pty4j-native \
+		${WRKSRC}/plugins/go/lib/dlv \
 		${WRKSRC}/plugins/performanceTesting/bin
 # Remove bundled linux JetBrains Runtime and OpenJDK
 	@${RM} -r ${WRKSRC}/jbr ${WRKSRC}/jre64
@@ -62,6 +63,6 @@ do-install:
 	${ECHO} "-Dsun.java2d.xrender=false" >> ${STAGEDIR}${DATADIR}/bin/goland64.vmoptions
 
 do-install-DELVE-on:
-	@${LN} -sf ${PREFIX}/bin/dlv ${STAGEDIR}${DATADIR}/plugins/go/lib/dlv/linux/dlv
+	${ECHO} "dlv.path=${PREFIX}/bin/dlv" >> ${STAGEDIR}${DATADIR}/bin/idea.properties
 
 .include <bsd.port.mk>
