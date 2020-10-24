@@ -22,6 +22,7 @@
 #			Default to "%%MARIADB_USER%%" created by the port
 # mysql_(instance_)?optfile (str): Server-specific option file.
 #			Default to "${mysql_dbdir}/my.cnf".
+# mysql_(instance)?rundir (str):	Default to "%%MARIADB_RUNDIR%%"
 # mysql_instances (str): Set to "" by default. 
 #			If defined, list of instances to enable
 
@@ -36,8 +37,9 @@ load_rc_config $name
 %%LEGACY_LIMITS%%: ${mysql_limits="NO"}
 : ${mysql_user="%%MARIADB_USER%%"}
 %%LEGACY_LIMITS%%mysql_limits_args="-e -U ${mysql_user}"
-: ${mysql_dbdir="/var/db/mysql"}
+: ${mysql_dbdir="%%MARIADB_DBDIR%%"}
 : ${mysql_optfile="%%ETCDIR%%/my.cnf"}
+: ${mysql_rundir="%%MARIADB_RUNDIR%%"}
 
 command="/usr/sbin/daemon"
 procname="%%PREFIX%%/libexec/mariadbd"
@@ -125,6 +127,9 @@ mysql_prestart()
 %%LEGACY_LIMITS%%		return 0
 %%LEGACY_LIMITS%%	fi
 %%MODERN_LIMITS%%	return 0
+	if [ ! -d "${mysql_rundir}" ]; then
+		install -d -u${mysql_user} -g$(id -gn $mysql_user) -m755 ${mysql_rundir}
+	fi
 }
 
 mysql_poststart()
