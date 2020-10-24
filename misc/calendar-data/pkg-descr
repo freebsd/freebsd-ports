@@ -1,0 +1,10 @@
+Calendar files extracted from FreeBSD SVN rev. 366901
+
+The purpose of this port is to decouple the calendars from the calendar
+program sources, to allow updates outside of the release cycle, and to
+make their installation optional.
+
+Files installed by this port will take precedence over similarily named
+calendars in the base system.
+
+WWW: http://www.freebsd.org
