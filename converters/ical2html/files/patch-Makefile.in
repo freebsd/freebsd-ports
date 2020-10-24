@@ -1,6 +1,6 @@
---- Makefile.in.orig	2010-09-24 09:06:46.749411950 +0200
-+++ Makefile.in	2010-09-24 09:07:34.047574887 +0200
-@@ -145,7 +145,7 @@
+--- Makefile.in.orig	2010-03-18 00:29:14 UTC
++++ Makefile.in
+@@ -163,7 +163,7 @@ am__untar = @am__untar@
  bindir = @bindir@
  build_alias = @build_alias@
  builddir = @builddir@
