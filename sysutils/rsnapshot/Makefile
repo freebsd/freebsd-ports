@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rsnapshot
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsnapshot.org/downloads/
 
@@ -16,13 +16,14 @@ BUILD_DEPENDS=	rsync:net/rsync
 RUN_DEPENDS=	rsync:net/rsync \
 		p5-Lchown>=0:sysutils/p5-Lchown
 
-OPTIONS_DEFINE=	DOCS
-
 USES=		perl5
+
 GNU_CONFIGURE=	yes
 NO_ARCH=	yes
 
 PORTDOCS=	AUTHORS ChangeLog README.md
+
+OPTIONS_DEFINE=	DOCS
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

@@ -4,6 +4,6 @@ and remote machines over ssh. The code makes extensive use of hard links
 whenever possible, to greatly reduce the disk space required.
 
 It is written entirely in perl with no module dependencies, and has been
-tested with versions 5.004 through 5.8.1.
+tested with versions 5.004 through 5.16.3.
 
 WWW: http://www.rsnapshot.org
