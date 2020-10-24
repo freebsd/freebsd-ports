@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Crypt/Argon2.pm
+%%SITE_ARCH%%/auto/Crypt/Argon2/Argon2.so
+%%PERL5_MAN3%%/Crypt::Argon2.3.gz
