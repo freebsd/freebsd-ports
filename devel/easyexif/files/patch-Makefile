@@ -1,0 +1,15 @@
+--- Makefile.orig	2015-11-14 20:31:28 UTC
++++ Makefile
+@@ -1,5 +1,4 @@
+-CXX=g++
+-CXXFLAGS=-O2 -pedantic -Wall -Wextra -ansi -std=c++11
++#CXXFLAGS+=-O2 -pedantic -Wall -Wextra -ansi -std=c++11
+ 
+ all: demo
+ 
+@@ -10,4 +9,4 @@ demo: exif.o demo.cpp
+ 	$(CXX) $(CXXFLAGS) -o demo exif.o demo.cpp
+ 
+ clean:
+-	rm -f *.o demo demo.exe
++	rm -f *.o demo

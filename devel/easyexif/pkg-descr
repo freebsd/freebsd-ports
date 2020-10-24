@@ -1,0 +1,8 @@
+EasyEXIF is a tiny, lightweight C++ library that parses basic information out of
+JPEG files. It uses only the std::string library and is otherwise pure C++. You
+pass it the binary contents of a JPEG file, and it parses several of the most
+important EXIF fields for you.
+
+Why use this library? Include one .h file, compile one .cc file, and that's it.
+
+WWW: https://github.com/mayanklahiri/easyexif

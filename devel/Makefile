@@ -504,6 +504,7 @@
     SUBDIR += e00compr
     SUBDIR += e2fsprogs-libss
     SUBDIR += eastl
+    SUBDIR += easyefix
     SUBDIR += easygit
     SUBDIR += easyloggingpp
     SUBDIR += ebnf2yacc
