@@ -141,6 +141,10 @@ post-patch:
 	    ${WRKSRC}/src/VBox/Additions/x11/VBoxClient/Makefile.kmk
 	@${ECHO_CMD} 'VBOX_ICONV_DEFS = LIBICONV_PLUG' >> ${WRKSRC}/LocalConfig.kmk
 .endif
+	@${REINPLACE_CMD} \
+	    -e 's|#define GLX_EXTRAS 1||g' \
+	    ${WRKSRC}/src/VBox/Additions/common/crOpenGL/dri_glx.h \
+	    ${WRKSRC}/src/VBox/Additions/common/crOpenGL/glx_proto.h
 
 post-patch-OPENGL-on:
 	@${ECHO_CMD} 'VBOX_USE_SYSTEM_GL_HEADERS = 1' >> ${WRKSRC}/LocalConfig.kmk
