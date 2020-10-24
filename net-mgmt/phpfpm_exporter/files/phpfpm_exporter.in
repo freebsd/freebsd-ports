@@ -1,0 +1,62 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: phpfpm_exporter
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# phpfpm_exporter_enable   (bool):        Set to NO by default.
+#               Set it to YES to enable phpfpm_exporter.
+# phpfpm_exporter_user     (string):      Set user that phpfpm_exporter will run under
+#               Default is "prometheus".
+# phpfpm_exporter_group    (string):      Set group that phpfpm_exporter will run under
+#               Default is "prometheus".
+# phpfpm_exporter_endpoint (string):      Set status endpoint
+#               Default is "http://127.0.0.1:9000/status".
+# phpfpm_exporter_fastcgi  (string):      Set fastcgi url
+#               Default is "", If this is set, fastcgi will be used instead of HTTP.
+# phpfpm_exporter_listen_address (string): Set ip:port that phpfpm_exporter will listen on
+#               Default is "127.0.0.1:8080".
+
+. /etc/rc.subr
+
+name=phpfpm_exporter
+rcvar=phpfpm_exporter_enable
+desc="PHP-FPM prometheus exporter"
+
+load_rc_config $name
+
+: ${phpfpm_exporter_enable:=NO}
+: ${phpfpm_exporter_user:=prometheus}
+: ${phpfpm_exporter_group:=prometheus}
+: ${phpfpm_exporter_endpoint=http://127.0.0.1:9000/status}
+: ${phpfpm_exporter_listen_address:=127.0.0.1:8080}
+
+
+pidfile=/var/run/phpfpm_exporter.pid
+command=/usr/sbin/daemon
+procname=%%PREFIX%%/bin/phpfpm_exporter
+command_args="-p ${pidfile} /usr/bin/env ${procname} \
+    --addr ${phpfpm_exporter_listen_address} \
+    --endpoint ${phpfpm_exporter_endpoint}"
+
+start_precmd=phpfpm_exporter_startprecmd
+
+phpfpm_exporter_startprecmd()
+{
+	if [ -n "$phpfpm_exporter_fastcgi" ]; then
+		command_args="$command_args --fastcgi $phpfpm_exporter_fastcgi"
+	fi
+
+	if [ -e ${pidfile} ]; then
+		chown ${phpfpm_exporter_user}:${phpfpm_exporter_group} ${pidfile};
+	else
+		install -o ${phpfpm_exporter_user} -g ${phpfpm_exporter_group} /dev/null ${pidfile};
+	fi
+}
+
+run_rc_command "$1"
