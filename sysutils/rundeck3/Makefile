@@ -1,10 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	rundeck
-DISTVERSION=	3.3.4
-DISTVERSIONSUFFIX=	20201007
+DISTVERSION=	3.3.5
+DISTVERSIONSUFFIX=	20201019
 CATEGORIES=	sysutils java
-MASTER_SITES=	https://download.rundeck.org/war/
+MASTER_SITES=	https://dl.bintray.com/rundeck/rundeck-maven/org/rundeck/rundeck/ \
+		https://download.rundeck.org/war/
 PKGNAMESUFFIX=	3
 DISTNAME=	${PORTNAME}-${DISTVERSION}-${DISTVERSIONSUFFIX}
 EXTRACT_SUFX=	.war
@@ -15,7 +16,7 @@ COMMENT=	Web-console for dispatching commands and scripts to your nodes
 LICENSE=	APACHE20
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.8
+JAVA_VERSION=	8 11
 
 CONFLICTS_INSTALL=	rundeck2
 
@@ -36,6 +37,10 @@ USERS=	rundeck
 .if ${RUNDECK_GROUP} == "rundeck"
 GROUPS=	rundeck
 .endif
+
+PLIST_FILES=	${DATADIR}/rundeck.war
+PLIST_DIRS=	${RUNDECK_HOME}/server/lib \
+		${RUNDECK_HOME}/server
 
 SUB_LIST+=	RUNDECK_HOME=${RUNDECK_HOME} RUNDECK_USER=${RUNDECK_USER} \
 		RUNDECK_GROUP=${RUNDECK_GROUP} JAVA_HOME=${JAVA_HOME} \
