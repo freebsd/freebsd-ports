@@ -18,6 +18,7 @@
 %%WWWDIR%%/img/app.svg
 %%WWWDIR%%/img/clone.svg
 %%WWWDIR%%/img/contacts.svg
+%%WWWDIR%%/img/diaspora.svg
 %%WWWDIR%%/img/eye.svg
 %%WWWDIR%%/img/facebook.svg
 %%WWWDIR%%/img/group.svg
@@ -34,6 +35,8 @@
 %%WWWDIR%%/img/tumblr.svg
 %%WWWDIR%%/img/twitter.svg
 %%WWWDIR%%/img/up.svg
+%%WWWDIR%%/js/contacts-admin-settings.js
+%%WWWDIR%%/js/contacts-admin-settings.js.map
 %%WWWDIR%%/js/contacts-files-action.js
 %%WWWDIR%%/js/contacts-files-action.js.map
 %%WWWDIR%%/js/contacts-main.js
@@ -495,6 +498,7 @@
 %%WWWDIR%%/lib/Dav/PatchPlugin.php
 %%WWWDIR%%/lib/Listener/LoadContactsFilesActions.php
 %%WWWDIR%%/lib/Service/Social/CompositeSocialProvider.php
+%%WWWDIR%%/lib/Service/Social/DiasporaProvider.php
 %%WWWDIR%%/lib/Service/Social/FacebookProvider.php
 %%WWWDIR%%/lib/Service/Social/ISocialProvider.php
 %%WWWDIR%%/lib/Service/Social/InstagramProvider.php
