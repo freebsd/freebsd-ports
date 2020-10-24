@@ -2,39 +2,38 @@
 # $FreeBSD$
 
 PORTNAME=	makeself
-PORTVERSION=	2.2.0
+PORTVERSION=	2.4.2
+DISTVERSIONPREFIX=	release-
 CATEGORIES=	archivers
-MASTER_SITES=	http://cdn.megastep.org/makeself/
-EXTRACT_SUFX=	.run
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ed.arrakis@gmail.com
 COMMENT=	Neat script to make self-extracting archives
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	bash:shells/bash
+USE_GITHUB=	yes
+GH_ACCOUNT=	megastep
 
-EXTRACT_CMD=	${SH}
-EXTRACT_BEFORE_ARGS=
-EXTRACT_AFTER_ARGS=	--nox11 --target ${WRKSRC}
-
-NO_BUILD=	yes
 NO_ARCH=	yes
+NO_BUILD=	yes
 
 PLIST_FILES=	bin/makeself bin/makeself-header \
-		bin/makeself-header.sh bin/makeself.sh
+		bin/makeself-header.sh bin/makeself.sh \
+		man/man1/makeself.1.gz
+PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS
-
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's|#!/bin/sh|#!${LOCALBASE}/bin/bash|g' ${WRKSRC}/makeself.sh
 
 do-install:
 .for i in makeself makeself-header
 	${INSTALL_SCRIPT} ${WRKSRC}/${i}.sh ${STAGEDIR}${PREFIX}/bin
 	@${LN} -sf ${i}.sh ${STAGEDIR}${PREFIX}/bin/${i}
 .endfor
+	${INSTALL_MAN} ${WRKSRC}/makeself.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
