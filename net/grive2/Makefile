@@ -3,11 +3,10 @@
 
 PORTNAME=	grive2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.1-dev
-PORTREVISION=	6
+DISTVERSION=	0.5.2-dev
 CATEGORIES=	net
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	samuel@andersentech.net
 COMMENT=	Open source client for Google Drive
 
 LICENSE=	GPLv2
@@ -26,7 +25,7 @@ CXXFLAGS_clang=	-Wno-c++11-narrowing
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	vitalif
-GH_TAGNAME=	ad9b66a
+GH_TAGNAME=	ffb744a
 
 PLIST_FILES=	bin/grive \
 		man/man1/grive.1.gz
