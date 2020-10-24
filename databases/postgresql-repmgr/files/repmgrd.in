@@ -28,7 +28,9 @@ load_rc_config $name
 command=%%PREFIX%%/bin/${name}
 pidfile=/var/run/${name}.pid
 
+touch $pidfile
+chown $repmgrd_user $pidfile
+
 command_args="-m -d -p $pidfile -f $repmgrd_config"
 
 run_rc_command "$1"
-

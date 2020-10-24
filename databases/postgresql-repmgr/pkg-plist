@@ -14,7 +14,10 @@ share/postgresql/extension/repmgr--4.4--5.0.sql
 share/postgresql/extension/repmgr--5.0.sql
 share/postgresql/extension/repmgr--5.0--5.1.sql
 share/postgresql/extension/repmgr--5.1.sql
+share/postgresql/extension/repmgr--5.1--5.2.sql
+share/postgresql/extension/repmgr--5.2.sql
 share/postgresql/extension/repmgr--unpackaged--4.0.sql
 share/postgresql/extension/repmgr--unpackaged--5.1.sql
+share/postgresql/extension/repmgr--unpackaged--5.2.sql
 share/postgresql/extension/repmgr.control
 @sample etc/repmgr.conf.sample
