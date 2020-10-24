@@ -1,6 +1,6 @@
-TIMESTAMP = 1602651092
-SHA256 (libMesh-libmesh-v1.6.0-rc3_GH0.tar.gz) = 3e62b8c676ae3ffa72a48790446dc9617b135d9b14347c47c768e51d2012acff
-SIZE (libMesh-libmesh-v1.6.0-rc3_GH0.tar.gz) = 32267256
+TIMESTAMP = 1603565276
+SHA256 (libMesh-libmesh-v1.6.0_GH0.tar.gz) = 68a51d79304e302619759c51a85280be2bca5a1df5e6e23120c71abdf8cb213b
+SIZE (libMesh-libmesh-v1.6.0_GH0.tar.gz) = 32266729
 SHA256 (libMesh-TIMPI-7fbe63d_GH0.tar.gz) = 5e24d2ba25944a2b8402b37b4e7f92c5e75d426e249e9a00bb223b69bd075927
 SIZE (libMesh-TIMPI-7fbe63d_GH0.tar.gz) = 502232
 SHA256 (libMesh-autoconf-submodule-9bb972f_GH0.tar.gz) = abaa9c68f3838d8739328741a94743ba4954a5d61505aae3c77d937f93428083
