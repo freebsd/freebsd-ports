@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openxpki
-PORTVERSION=	3.2.0
+PORTVERSION=	3.8.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security perl5
 PKGNAMEPREFIX=	p5-
@@ -13,6 +13,8 @@ COMMENT=	Perl based trustcenter software for PKI: i18n tools
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/../../LICENSE
+
+PORTSCOUT=	limitw:1,even # stay with stable versions only
 
 ### We can not go without NLS. Internationalization is needed even for English
 USES=		gettext-runtime gettext-tools gmake perl5

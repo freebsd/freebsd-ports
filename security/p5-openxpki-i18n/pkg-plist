@@ -2,4 +2,6 @@ share/locale/de_DE/LC_MESSAGES/openxpki.mo
 share/locale/en_GB/LC_MESSAGES/openxpki.mo
 share/locale/en_US/LC_MESSAGES/openxpki.mo
 share/locale/it_IT/LC_MESSAGES/openxpki.mo
+share/locale/ja_JP/LC_MESSAGES/openxpki.mo
 share/locale/ru_RU/LC_MESSAGES/openxpki.mo
+share/locale/zh_CN/LC_MESSAGES/openxpki.mo
