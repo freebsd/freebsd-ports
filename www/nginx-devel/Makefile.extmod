@@ -226,7 +226,7 @@ MODSECURITY3_LIB_DEPENDS=	libmodsecurity.so:security/modsecurity3
 MODSECURITY3_GH_TUPLE=		SpiderLabs:ModSecurity-nginx:v1.0.1:modsecurity3
 MODSECURITY3_VARS=		DSO_EXTMODS+=modsecurity3
 
-NAXSI_NGINX_VER=	0.56
+NAXSI_NGINX_VER=	1.1a
 NAXSI_GH_TUPLE=		nbs-system:naxsi:${NAXSI_NGINX_VER}:naxsi
 NAXSI_VARS=		DSO_EXTMODS+=naxsi NAXSI_SUBDIR=/naxsi_src
 
