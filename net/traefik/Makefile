@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	traefik
-PORTVERSION=	2.3.1
+PORTVERSION=	2.3.2
 CATEGORIES=	net
 MASTER_SITES=	LOCAL/riggs/${PORTNAME}
 
@@ -28,23 +28,19 @@ USERS=		traefik
 GROUPS=		traefik
 
 PLIST_FILES=	bin/traefik \
-		"@sample etc/traefik.toml.sample"
+		"@sample etc/traefik.toml.sample" \
+		"@sample etc/traefik.yml.sample"
 
 # Preparing the vendor dir for a self-contained tarball now works by just
-# executing 'make gomod-vendor' and bundling the resulting ${WRKSRC}/vendor.
+# running 'go mod vendor' as a user and bundling the resulting
+# ${WRKSRC}/vendor directory.
 # Building the UI with node + yarn is no longer necessary.
-
-post-patch:
-	# Install a sample configuration file which at least allows the daemon
-	# to start without manual tweaking.
-	${REINPLACE_CMD} -e 's|:80|:8088|' \
-			 -e 's|:443|:8433|' \
-			 -e 's|\[providers.docker|# \[providers.docker|' ${WRKSRC}/traefik.sample.toml
 
 pre-build:
 	cd ${GO_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GO_ENV} ${GO_CMD} generate
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/traefik.sample.toml ${STAGEDIR}${PREFIX}/etc/traefik.toml.sample
+	${INSTALL_DATA} ${WRKSRC}/traefik.sample.yml ${STAGEDIR}${PREFIX}/etc/traefik.yml.sample
 
 .include <bsd.port.mk>
