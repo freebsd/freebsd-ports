@@ -11,7 +11,7 @@ COMMENT=	Feature-rich command line parser for Lua
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=	lua
+USES=	lua:module
 NO_ARCH=	yes
 NO_BUILD=	yes
 
