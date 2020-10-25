@@ -25,6 +25,7 @@ SHEBANG_FILES=	configure.py src/python/botan2.py src/scripts/install.py
 HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	configure.py
 CONFIGURE_ARGS=		--cc=${COMPILER_TYPE} \
+			--prefix=${PREFIX:Q} \
 			--with-boost \
 			--with-bzip2 \
 			--with-external-includedir=${LOCALBASE}/include \
