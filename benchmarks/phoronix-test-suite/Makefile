@@ -3,7 +3,7 @@
 
 PORTNAME=	phoronix-test-suite
 DISTVERSIONPREFIX=	v
-DISTVERSION=	9.8.0
+DISTVERSION=	10.0.1
 CATEGORIES=	benchmarks
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
@@ -18,7 +18,7 @@ RUN_DEPENDS=	sudo:security/sudo \
 
 USES=		php:cli,build,flavors python shebangfix
 USE_GITHUB=	yes
-USE_PHP=	curl dom gd json openssl pcntl posix simplexml zip zlib
+USE_PHP=	curl dom gd openssl pcntl posix simplexml zip zlib
 NO_BUILD=	yes
 
 PORTDATA=	*
@@ -35,7 +35,8 @@ SHEBANG_FILES=	ob-cache/test-profiles/pts/shadowofthetombraider-1.0.0/install.sh
 				ob-cache/test-profiles/pts/shadowofthetombraider-1.0.1/post.sh \
 				ob-cache/test-profiles/pts/csgo-1.5.1/pre_linux.sh \
 				ob-cache/test-profiles/pts/dota2-1.2.2/pre_linux.sh \
-				ob-cache/test-profiles/pts/portal-1.1.1/pre_linux.sh
+				ob-cache/test-profiles/pts/portal-1.1.1/pre_linux.sh \
+				deploy/docker/ubuntu-pts-docker-build.sh
 
 OPTIONS_DEFINE=	BASH_COMPLETIONS DOCS X11
 OPTIONS_DEFAULT=	X11
@@ -46,6 +47,12 @@ BASH_COMPLETIONS_CONFIGURE_ON=	WITH_BASH_COMPLETIONS=yes
 X11_DESC=	Install X11 icons and mimetypes
 X11_USES=	desktop-file-utils shared-mime-info
 X11_CONFIGURE_OFF=	WITHOUT_X11=yes
+
+.include <bsd.port.pre.mk>
+
+.if ${FLAVOR} != php80
+USE_PHP+=	json
+.endif
 
 post-patch:
 	@${SED} -i '' -e "s|/usr/local|${LOCALBASE}|g" \
@@ -65,4 +72,4 @@ post-patch:
 do-install:
 	(cd ${WRKSRC} && ${CONFIGURE_ARGS} DESTDIR="${STAGEDIR}" ./install-sh ${PREFIX})
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
