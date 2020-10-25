@@ -35,6 +35,7 @@ include/ncpp/ncpp.hh
 include/notcurses/direct.h
 include/notcurses/nckeys.h
 include/notcurses/notcurses.h
+include/notcurses/version.h
 lib/cmake/Notcurses/NotcursesConfig.cmake
 lib/cmake/Notcurses/NotcursesConfigVersion.cmake
 lib/libnotcurses++.a
@@ -142,7 +143,7 @@ libdata/pkgconfig/notcurses.pc
 %%DATADIR%%/lamepatents.jpg
 %%DATADIR%%/megaman2.bmp
 %%DATADIR%%/normal.png
-%%DATADIR%%/notcursesI.avi
+%%DATADIR%%/notcursesII.mkv
 %%DATADIR%%/samoa.avi
 %%DATADIR%%/tetris-background.jpg
 %%DATADIR%%/warmech.bmp
