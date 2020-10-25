@@ -57,10 +57,6 @@ QMAKE_ARGS+=	CONFIG+="use_jack" \
 QMAKE_ARGS+=	CONFIG+="use_pulse"
 .endif
 
-.if (${OSVERSION} >= 1300096)
-EXTRA_PATCHES=	${PATCHDIR}/extrapatch-BambooTracker_BambooTracker.pro
-.endif
-
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons \
 		${STAGEDIR}${MANPREFIX}/man/fr.UTF-8/man1
