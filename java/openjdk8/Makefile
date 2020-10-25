@@ -2,6 +2,7 @@
 
 PORTNAME=	openjdk
 PORTVERSION=	${JDK_MAJOR_VERSION}.${JDK_UPDATE_VERSION}.${JDK_BUILD_NUMBER}.${BSD_JDK_VERSION}
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	LOCAL/jkim:jtreg
 PKGNAMESUFFIX?=	${JDK_MAJOR_VERSION}
@@ -187,6 +188,7 @@ MAKE_ENV+=	JAVADOC_CMD_MEM="-Xmx768m"
 .endif
 
 .if ${ARCH} == i386
+CONFIGURE_ARGS+=	--disable-jfr
 # Fix the build for i386 when WITH_LLD_IS_LD is set
 # https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=225741
 MAKE_ENV+=	LFLAGS="-Wl,-z,notext"
