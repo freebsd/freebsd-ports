@@ -3,8 +3,13 @@
 
 PORTNAME=	imagick
 PORTVERSION=	3.4.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
+
+PATCH_SITES=	https://github.com/Imagick/imagick/commit/
+PATCHFILES+=	e1a8d8a99f8eeab13574fcba20c85660a210e350.diff:-p1 \
+		ef46023bfba719183a8dcf880c1aa14cf77c006c.diff:-p1 \
+		6160bd9617f6c4fc59b7db4ab77460ec085d3169.diff:-p1
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT?=	PHP wrapper to the ImageMagick/GraphicsMagick library version 6
