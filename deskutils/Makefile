@@ -25,6 +25,7 @@
     SUBDIR += caja-extensions
     SUBDIR += cal
     SUBDIR += calcurse
+    SUBDIR += calendar
     SUBDIR += calendar-data
     SUBDIR += calibre
     SUBDIR += cartotheque
