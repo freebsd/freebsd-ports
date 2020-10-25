@@ -1,0 +1,5 @@
+The appmenu-gtk-module is a GTK Module that strips menus from all GTK
+programs, converts to them MenuModel and send to them AppMenu
+(sometimes called a global menu bar) of a desktop environment like
+Plasma or Gnome. This module was originally used in Ubuntu's Unity
+Desktop Environment, but it lives on as part of the Vala project.
