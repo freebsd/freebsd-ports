@@ -149,6 +149,7 @@ include/snort/profiler/rule_profiler_defs.h
 include/snort/profiler/time_profiler_defs.h
 include/snort/protocols/arp.h
 include/snort/protocols/bpdu.h
+include/snort/protocols/cdp.h
 include/snort/protocols/cisco_meta_data.h
 include/snort/protocols/eapol.h
 include/snort/protocols/eth.h
