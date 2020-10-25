@@ -1,3 +1,3 @@
-TIMESTAMP = 1546701052
-SHA256 (libfuse-libfuse-fuse-2.9.9_GH0.tar.gz) = e57a24721177c3b3dd71cb9239ca46b4dee283db9388d48f7ccd256184982194
-SIZE (libfuse-libfuse-fuse-2.9.9_GH0.tar.gz) = 212017
+TIMESTAMP = 1601617112
+SHA256 (fuse-2.9.9.tar.gz) = d0e69d5d608cc22ff4843791ad097f554dd32540ddc9bed7638cc6fea7c1b4b5
+SIZE (fuse-2.9.9.tar.gz) = 1813177
