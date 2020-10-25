@@ -1,5 +1,5 @@
-TIMESTAMP = 1602392912
-SHA256 (MiniZinc-MiniZincIDE-2.5.0_GH0.tar.gz) = 335b8e07bfd0a0d9d9a37424771f81475bcd3c1b3cf2e07a8fb4d8954008d035
-SIZE (MiniZinc-MiniZincIDE-2.5.0_GH0.tar.gz) = 791011
+TIMESTAMP = 1603648688
+SHA256 (MiniZinc-MiniZincIDE-2.5.1_GH0.tar.gz) = 5ef9122cd7b31b65c26a5e55c40dfddd5fcbb835453f5e8eaf8897de35609bd0
+SIZE (MiniZinc-MiniZincIDE-2.5.1_GH0.tar.gz) = 795362
 SHA256 (minizinc-cp-profiler-integration-f16b3132df33b3f258971f36dbe5e909983381c9_GL0.tar.gz) = 48593394ab4365445982378dd92b8db98fa917228d7fbe85b60ae04d6f22d57c
 SIZE (minizinc-cp-profiler-integration-f16b3132df33b3f258971f36dbe5e909983381c9_GL0.tar.gz) = 5296
