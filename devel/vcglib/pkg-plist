@@ -1,4 +1,6 @@
 include/vcglib/apps/CMakeLists.txt
+include/vcglib/apps/sample/trimesh_align_pair/trimesh_align_pair.cpp
+include/vcglib/apps/sample/trimesh_align_pair/trimesh_align_pair.pro
 include/vcglib/apps/QT/img_filters/img_filters.cpp
 include/vcglib/apps/QT/img_filters/img_filters.pro
 include/vcglib/apps/QT/trimesh_QT/glarea.cpp
@@ -78,7 +80,6 @@ include/vcglib/apps/sample/polygonmesh_zonohedra/input.txt
 include/vcglib/apps/sample/polygonmesh_zonohedra/polygonmesh_zonohedra.cpp
 include/vcglib/apps/sample/polygonmesh_zonohedra/polygonmesh_zonohedra.pro
 include/vcglib/apps/sample/sample.pro
-include/vcglib/apps/sample/sample_poly.pro
 include/vcglib/apps/sample/space_index_2d/space_index_2d.cpp
 include/vcglib/apps/sample/space_index_2d/space_index_2d.pro
 include/vcglib/apps/sample/space_minimal/space_minimal.cpp
@@ -575,6 +576,7 @@ include/vcglib/img/img_image.h
 include/vcglib/img/img_info.h
 include/vcglib/img/img_io.h
 include/vcglib/img/img_scalar.h
+include/vcglib/vcg/complex/algorithms/align_pair.h
 include/vcglib/vcg/complex/algorithms/attribute_seam.h
 include/vcglib/vcg/complex/algorithms/autoalign_4pcs.h
 include/vcglib/vcg/complex/algorithms/bitquad_creation.h
@@ -634,6 +636,7 @@ include/vcglib/vcg/complex/algorithms/parametrization/poisson_solver.h
 include/vcglib/vcg/complex/algorithms/parametrization/tangent_field_operators.h
 include/vcglib/vcg/complex/algorithms/parametrization/uv_utils.h
 include/vcglib/vcg/complex/algorithms/parametrization/voronoi_atlas.h
+include/vcglib/vcg/complex/algorithms/point_matching_scale.h
 include/vcglib/vcg/complex/algorithms/point_outlier.h
 include/vcglib/vcg/complex/algorithms/point_sampling.h
 include/vcglib/vcg/complex/algorithms/pointcloud_normal.h
@@ -914,6 +917,7 @@ include/vcglib/wrap/io_tetramesh/import_ts.h
 include/vcglib/wrap/io_tetramesh/io_mask.h
 include/vcglib/wrap/io_tetramesh/io_ply.h
 include/vcglib/wrap/io_trimesh/additionalinfo.h
+include/vcglib/wrap/io_trimesh/alnParser.h
 include/vcglib/wrap/io_trimesh/export.h
 include/vcglib/wrap/io_trimesh/export_3ds.h
 include/vcglib/wrap/io_trimesh/export_ctm.h
@@ -967,6 +971,7 @@ include/vcglib/wrap/nanoply/nanoply_demo/main.cpp
 include/vcglib/wrap/nanoply/nanoply_demo/nanoply_demo.pro
 include/vcglib/wrap/nanoply/nanoply_vcg/main.cpp
 include/vcglib/wrap/nanoply/nanoply_vcg/nanoply_vcg.pro
+include/vcglib/wrap/newuoa/include/newuoa.h
 include/vcglib/wrap/openfbx/.clang-format
 include/vcglib/wrap/openfbx/.gitignore
 include/vcglib/wrap/openfbx/LICENSE
