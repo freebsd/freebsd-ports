@@ -3,7 +3,7 @@
 PORTNAME=	calendar-data
 DISTVERSION=	2020.10
 DISTVERSIONPREFIX=	v
-CATEGORIES=	misc
+CATEGORIES=	deskutils
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Calendar files for the BSD calendar program
