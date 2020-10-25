@@ -1,0 +1,6 @@
+This is the calendar program from FreeBSD converted into a port.
+
+The purpose of this port is to make upgrades to the calendar program
+available independently of the FreeBSD release cycle.
+
+WWW: http://freebsd.org
