@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ansifilter
-PORTVERSION=	2.16
+PORTVERSION=	2.17
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.andre-simon.de/zip/
 
