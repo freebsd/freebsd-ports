@@ -1,13 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	retro12
-DISTVERSION=	2020.7
+DISTVERSION=	2020.10
 CATEGORIES=	lang
 MASTER_SITES=	http://forthworks.com/retro/r/ \
 		https://forthworks.com/retro/r/
 DISTNAME=	${PORTNAME:tu}-${DISTVERSION}
 
-MAINTAINER=	0mp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clean, elegant, and pragmatic dialect of Forth
 
 LICENSE=	ISCL
