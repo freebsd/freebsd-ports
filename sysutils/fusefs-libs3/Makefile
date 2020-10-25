@@ -2,9 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	fusefs-libs3
-DISTVERSIONPREFIX=	fuse-
 DISTVERSION=	3.10.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
+MASTER_SITES=	https://github.com/libfuse/libfuse/releases/download/fuse-${DISTVERSION}/
+DISTNAME=	fuse-${DISTVERSION}
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	FUSE library version 3 for filesystems implemented in userspace
@@ -13,13 +15,12 @@ LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		compiler meson
+USES=		compiler iconv meson tar:xz
 USE_LDCONFIG=	yes
-PLIST_SUB=	VERSION=${PORTVERSION}
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	libfuse
-GH_PROJECT=	libfuse
+LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
+
+PLIST_SUB=	VERSION=${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
