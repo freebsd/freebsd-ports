@@ -3,6 +3,7 @@
 PORTNAME=	xob
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	vulcan@wired.sh
@@ -22,8 +23,8 @@ PORTDOCS=	CHANGELOG.md CONTRIBUTING.md README.md
 
 OPTIONS_DEFINE=	DOCS
 
-PLIST_FILES=	${ETCDIR}/styles.cfg \
-		bin/xob \
+PLIST_FILES=	bin/xob \
+		"@sample ${ETCDIR}/styles.cfg.sample" \
 		share/man/man1/xob.1.gz
 
 post-install-DOCS-on:
