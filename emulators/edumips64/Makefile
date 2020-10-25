@@ -1,10 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	edumips64
-DISTVERSION=	1.2.7.1
+DISTVERSION=	1.2.8
 CATEGORIES=	emulators java
 MASTER_SITES=	https://github.com/lupino3/${PORTNAME}/releases/download/v${DISTVERSION}/
-DISTFILES=	${DISTNAME}.jar
+EXTRACT_SUFX=	.jar
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Free, cross-platform, educational, visual MIPS64 CPU simulator
@@ -12,6 +13,7 @@ COMMENT=	Free, cross-platform, educational, visual MIPS64 CPU simulator
 LICENSE=	GPLv2
 
 USE_JAVA=	yes
+JAVA_VERSION=	11+
 
 DESKTOP_ENTRIES=	"EduMIPS64" \
 			"${COMMENT}" \
