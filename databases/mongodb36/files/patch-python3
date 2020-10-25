@@ -1,0 +1,1977 @@
+From cbfdc41e1d05aa1bfc298b8bd1a2fae9b3477e87 Mon Sep 17 00:00:00 2001
+From: MikaelUrankar <mikael.urankar@gmail.com>
+Date: Sat, 3 Oct 2020 17:26:21 +0200
+Subject: [PATCH 01/24] Backport SConstruct patch
+
+---
+ SConstruct | 61 ++++++++++++++++++++++++++++--------------------------
+ 1 file changed, 32 insertions(+), 29 deletions(-)
+
+diff --git a/SConstruct b/SConstruct
+index cd4100e9..63f22862 100644
+--- SConstruct
++++ SConstruct
+@@ -28,8 +28,8 @@ import mongo.platform as mongo_platform
+ import mongo.toolchain as mongo_toolchain
+ import mongo.generators as mongo_generators
+ 
+-EnsurePythonVersion(2, 7)
+-EnsureSConsVersion(2, 5)
++EnsurePythonVersion(3, 5)
++EnsureSConsVersion(3, 0, 4)
+ 
+ from buildscripts import utils
+ from buildscripts import moduleconfig
+@@ -389,7 +389,7 @@ win_version_min_choices = {
+ }
+ 
+ add_option('win-version-min',
+-    choices=win_version_min_choices.keys(),
++    choices=list(win_version_min_choices.keys()),
+     default=None,
+     help='minimum Windows version to support',
+     type='choice',
+@@ -482,7 +482,7 @@ try:
+ except IOError as e:
+     # If the file error wasn't because the file is missing, error out
+     if e.errno != errno.ENOENT:
+-        print("Error opening version.json: {0}".format(e.strerror))
++        print(("Error opening version.json: {0}".format(e.strerror)))
+         Exit(1)
+ 
+     version_data = {
+@@ -491,14 +491,14 @@ except IOError as e:
+     }
+ 
+ except ValueError as e:
+-    print("Error decoding version.json: {0}".format(e))
++    print(("Error decoding version.json: {0}".format(e)))
+     Exit(1)
+ 
+ # Setup the command-line variables
+ def variable_shlex_converter(val):
+     # If the argument is something other than a string, propogate
+     # it literally.
+-    if not isinstance(val, basestring):
++    if not isinstance(val, str):
+         return val
+     parse_mode = get_option('variable-parse-mode')
+     if parse_mode == 'auto':
+@@ -563,7 +563,7 @@ def variable_distsrc_converter(val):
+ 
+ variables_files = variable_shlex_converter(get_option('variables-files'))
+ for file in variables_files:
+-    print("Using variable customization file %s" % file)
++    print(("Using variable customization file %s" % file))
+ 
+ env_vars = Variables(
+     files=variables_files,
+@@ -572,7 +572,7 @@ env_vars = Variables(
+ 
+ sconsflags = os.environ.get('SCONSFLAGS', None)
+ if sconsflags:
+-    print("Using SCONSFLAGS environment variable arguments: %s" % sconsflags)
++    print(("Using SCONSFLAGS environment variable arguments: %s" % sconsflags))
+ 
+ env_vars.Add('ABIDW',
+     help="Configures the path to the 'abidw' (a libabigail) utility")
+@@ -691,7 +691,7 @@ env_vars.Add('MONGO_DISTNAME',
+ def validate_mongo_version(key, val, env):
+     regex = r'^(\d+)\.(\d+)\.(\d+)-?((?:(rc)(\d+))?.*)?'
+     if not re.match(regex, val):
+-        print("Invalid MONGO_VERSION '{}', or could not derive from version.json or git metadata. Please add a conforming MONGO_VERSION=x.y.z[-extra] as an argument to SCons".format(val))
++        print(("Invalid MONGO_VERSION '{}', or could not derive from version.json or git metadata. Please add a conforming MONGO_VERSION=x.y.z[-extra] as an argument to SCons".format(val)))
+         Exit(1)
+ 
+ env_vars.Add('MONGO_VERSION',
+@@ -822,12 +822,12 @@ if installDir[0] not in ['$', '#']:
+         Exit(1)
+ 
+ sconsDataDir = Dir(buildDir).Dir('scons')
+-SConsignFile(str(sconsDataDir.File('sconsign')))
++SConsignFile(str(sconsDataDir.File('sconsign.py3')))
+ 
+ def printLocalInfo():
+     import sys, SCons
+-    print( "scons version: " + SCons.__version__ )
+-    print( "python version: " + " ".join( [ `i` for i in sys.version_info ] ) )
++    print(( "scons version: " + SCons.__version__ ))
++    print(( "python version: " + " ".join( [ repr(i) for i in sys.version_info ] ) ))
+ 
+ printLocalInfo()
+ 
+@@ -904,12 +904,12 @@ env.AddMethod(mongo_platform.env_os_is_wrapper, 'TargetOSIs')
+ env.AddMethod(mongo_platform.env_get_os_name_wrapper, 'GetTargetOSName')
+ 
+ def fatal_error(env, msg, *args):
+-    print(msg.format(*args))
++    print((msg.format(*args)))
+     Exit(1)
+ 
+ def conf_error(env, msg, *args):
+-    print(msg.format(*args))
+-    print("See {0} for details".format(env.File('$CONFIGURELOG').abspath))
++    print((msg.format(*args)))
++    print(("See {0} for details".format(env.File('$CONFIGURELOG').abspath)))
+     Exit(1)
+ 
+ env.AddMethod(fatal_error, 'FatalError')
+@@ -928,12 +928,12 @@ else:
+ env.AddMethod(lambda env: env['VERBOSE'], 'Verbose')
+ 
+ if has_option('variables-help'):
+-    print(env_vars.GenerateHelpText(env))
++    print((env_vars.GenerateHelpText(env)))
+     Exit(0)
+ 
+ #unknown_vars = env_vars.UnknownVariables()
+ #if unknown_vars:
+-#    env.FatalError("Unknown variables specified: {0}", ", ".join(unknown_vars.keys()))
++#    env.FatalError("Unknown variables specified: {0}", ", ".join(list(unknown_vars.keys())))
+ 
+ def set_config_header_define(env, varname, varval = 1):
+     env['CONFIG_HEADER_DEFINES'][varname] = varval
+@@ -1018,7 +1018,7 @@ def CheckForProcessor(context, which_arch):
+         context.Result(ret)
+         return ret;
+ 
+-    for k in processor_macros.keys():
++    for k in list(processor_macros.keys()):
+         ret = run_compile_check(k)
+         if ret:
+             context.Result('Detected a %s processor' % k)
+@@ -1136,7 +1136,7 @@ else:
+     env['TARGET_ARCH'] = detected_processor
+ 
+ if env['TARGET_OS'] not in os_macros:
+-    print("No special config for [{0}] which probably means it won't work".format(env['TARGET_OS']))
++    print(("No special config for [{0}] which probably means it won't work".format(env['TARGET_OS'])))
+ elif not detectConf.CheckForOS(env['TARGET_OS']):
+     env.ConfError("TARGET_OS ({0}) is not supported by compiler", env['TARGET_OS'])
+ 
+@@ -1922,7 +1922,7 @@ def doConfigure(myenv):
+             # form -Wno-xxx (but not -Wno-error=xxx), we also add -Wxxx to the flags. GCC does
+             # warn on unknown -Wxxx style flags, so this lets us probe for availablity of
+             # -Wno-xxx.
+-            for kw in test_mutation.keys():
++            for kw in list(test_mutation.keys()):
+                 test_flags = test_mutation[kw]
+                 for test_flag in test_flags:
+                     if test_flag.startswith("-Wno-") and not test_flag.startswith("-Wno-error="):
+@@ -1936,7 +1936,7 @@ def doConfigure(myenv):
+         # to make them real errors.
+         cloned.Append(CCFLAGS=['-Werror'])
+         conf = Configure(cloned, help=False, custom_tests = {
+-                'CheckFlag' : lambda(ctx) : CheckFlagTest(ctx, tool, extension, flag)
++                'CheckFlag' : lambda ctx : CheckFlagTest(ctx, tool, extension, flag)
+         })
+         available = conf.CheckFlag()
+         conf.Finish()
+@@ -2408,7 +2408,7 @@ def doConfigure(myenv):
+             "undefined" : myenv.File("#etc/ubsan.blacklist"),
+         }
+ 
+-        blackfiles = set([v for (k, v) in blackfiles_map.iteritems() if k in sanitizer_list])
++        blackfiles = {v for (k, v) in blackfiles_map.items() if k in sanitizer_list}
+         blacklist_options=["-fsanitize-blacklist=%s" % blackfile
+                            for blackfile in blackfiles
+                            if os.stat(blackfile.path).st_size != 0]
+@@ -2420,7 +2420,7 @@ def doConfigure(myenv):
+         llvm_symbolizer = get_option('llvm-symbolizer')
+         if os.path.isabs(llvm_symbolizer):
+             if not myenv.File(llvm_symbolizer).exists():
+-                print("WARNING: Specified symbolizer '%s' not found" % llvm_symbolizer)
++                print(("WARNING: Specified symbolizer '%s' not found" % llvm_symbolizer))
+                 llvm_symbolizer = None
+         else:
+             llvm_symbolizer = myenv.WhereIs(llvm_symbolizer)
+@@ -2710,7 +2710,7 @@ def doConfigure(myenv):
+             files = ['ssleay32.dll', 'libeay32.dll']
+             for extra_file in files:
+                 if not addOpenSslLibraryToDistArchive(extra_file):
+-                    print("WARNING: Cannot find SSL library '%s'" % extra_file)
++                    print(("WARNING: Cannot find SSL library '%s'" % extra_file))
+ 
+         # Used to import system certificate keychains
+         if conf.env.TargetOSIs('darwin'):
+@@ -2738,7 +2738,7 @@ def doConfigure(myenv):
+                         # TODO: If we could programmatically extract the paths from the info output
+                         # we could give a better message here, but brew info's machine readable output
+                         # doesn't seem to include the whole 'caveats' section.
+-                        message = subprocess.check_output([brew, "info", "openssl"])
++                        message = subprocess.check_output([brew, "info", "openssl"]).decode('utf-8')
+                         advice = textwrap.dedent(
+                             """\
+                             NOTE: HomeBrew installed to {0} appears to have OpenSSL installed.
+@@ -3114,7 +3114,7 @@ def doConfigure(myenv):
+ 
+         outputIndex = next((idx for idx in [0,1] if conf.CheckAltivecVbpermqOutput(idx)), None)
+         if outputIndex is not None:
+-	    conf.env.SetConfigHeaderDefine("MONGO_CONFIG_ALTIVEC_VEC_VBPERMQ_OUTPUT_INDEX", outputIndex)
++            conf.env.SetConfigHeaderDefine("MONGO_CONFIG_ALTIVEC_VEC_VBPERMQ_OUTPUT_INDEX", outputIndex)
+         else:
+             myenv.ConfError("Running on ppc64le, but can't find a correct vec_vbpermq output index.  Compiler or platform not supported")
+ 
+@@ -3176,9 +3176,12 @@ def doLint( env , target , source ):
+     import buildscripts.pylinters
+     buildscripts.pylinters.lint_all(None, {}, [])
+ 
+-    import buildscripts.lint
+-    if not buildscripts.lint.run_lint( [ "src/mongo/" ] ):
+-        raise Exception( "lint errors" )
++    env.Command(
++        target="#run_lint",
++        source=["buildscripts/lint.py", "src/mongo"],
++        action="$PYTHON $SOURCES[0] $SOURCES[1]",
++    )
++
+ 
+ env.Alias( "lint" , [] , [ doLint ] )
+ env.AlwaysBuild( "lint" )
+-- 
+2.28.0
+
+
+From 81abd3f9ba48ffb27919e574c8d518f4a1d8fbf3 Mon Sep 17 00:00:00 2001
+From: MikaelUrankar <mikael.urankar@gmail.com>
+Date: Sat, 3 Oct 2020 17:27:46 +0200
+Subject: [PATCH 02/24] Backport buildscripts/aggregate_tracefiles.py
+
+---
+ buildscripts/aggregate_tracefiles.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/buildscripts/aggregate_tracefiles.py b/buildscripts/aggregate_tracefiles.py
+index 8f1db785..0b4bfd24 100644
+--- buildscripts/aggregate_tracefiles.py
++++ buildscripts/aggregate_tracefiles.py
+@@ -16,7 +16,7 @@ def aggregate(inputs, output):
+ 
+     args += ['-o', output]
+ 
+-    print ' '.join(args)
++    print(' '.join(args))
+     
+     return subprocess.call(args)  
+ 
+-- 
+2.28.0
+
+
+From 035a04745cb159c2a971180d1d76bca51de9245c Mon Sep 17 00:00:00 2001
+From: MikaelUrankar <mikael.urankar@gmail.com>
+Date: Sat, 3 Oct 2020 17:32:28 +0200
+Subject: [PATCH 03/24] Backport buildscripts/aws_ec2.py
+
+---
+ buildscripts/aws_ec2.py | 83 ++++++++++++++++++-----------------------
+ 1 file changed, 37 insertions(+), 46 deletions(-)
+
+diff --git a/buildscripts/aws_ec2.py b/buildscripts/aws_ec2.py
+index bc467d6e..f2e033a4 100755
+--- buildscripts/aws_ec2.py
++++ buildscripts/aws_ec2.py
+@@ -2,7 +2,7 @@
+ 
+ """AWS EC2 instance launcher and controller."""
+ 
+-from __future__ import print_function
++
+ 
+ import base64
+ import collections
+@@ -94,12 +94,13 @@ class AwsEc2(object):
+             if reached_state:
+                 print(" Instance {}!".format(instance.state["Name"]), file=sys.stdout)
+             else:
+-                print(" Instance in state '{}', failed to reach state '{}'{}!".format(
+-                    instance.state["Name"], state, client_error), file=sys.stdout)
++                print(
++                    " Instance in state '{}', failed to reach state '{}'{}!".format(
++                        instance.state["Name"], state, client_error), file=sys.stdout)
+             sys.stdout.flush()
+         return 0 if reached_state else 1
+ 
+-    def control_instance(  #pylint: disable=too-many-arguments,too-many-branches
++    def control_instance(  #pylint: disable=too-many-arguments,too-many-branches,too-many-locals
+             self, mode, image_id, wait_time_secs=0, show_progress=False, console_output_file=None,
+             console_screenshot_file=None):
+         """Control an AMI instance. Returns 0 & status information, if successful."""
+@@ -257,40 +258,34 @@ def main():
+     create_options = optparse.OptionGroup(parser, "Create options")
+     status_options = optparse.OptionGroup(parser, "Status options")
+ 
+-    parser.add_option("--mode",
+-                      dest="mode",
+-                      choices=_MODES,
+-                      default="status",
+-                      help="Operations to perform on an EC2 instance, choose one of"
+-                           " '{}', defaults to '%default'.".format(", ".join(_MODES)))
++    parser.add_option(
++        "--mode", dest="mode", choices=_MODES, default="status",
++        help=("Operations to perform on an EC2 instance, choose one of"
++              " '{}', defaults to '%default'.".format(", ".join(_MODES))))
+ 
+     control_options.add_option("--imageId",
+                                dest="image_id",
+                                default=None,
+                                help="EC2 image_id to perform operation on [REQUIRED for control].")
+ 
+-    control_options.add_option("--waitTimeSecs",
+-                               dest="wait_time_secs",
+-                               type=int,
+-                               default=5 * 60,
+-                               help="Time to wait for EC2 instance to reach it's new state,"
+-                                    " defaults to '%default'.")
++    control_options.add_option(
++        "--waitTimeSecs", dest="wait_time_secs", type=int, default=5 * 60,
++        help=("Time to wait for EC2 instance to reach it's new state,"
++              " defaults to '%default'."))
++
+ 
+     create_options.add_option("--ami",
+                               dest="ami",
+                               default=None,
+                               help="EC2 AMI to launch [REQUIRED for create].")
+ 
+-    create_options.add_option("--blockDevice",
+-                              dest="block_devices",
+-                              metavar="DEVICE-NAME DEVICE-SIZE-GB",
+-                              action="append",
+-                              default=[],
+-                              nargs=2,
+-                              help="EBS device name and volume size in GiB."
+-                                   " More than one device can be attached, by specifying"
+-                                   " this option more than once."
+-                                   " The device will be deleted on termination of the instance.")
++    create_options.add_option(
++        "--blockDevice", dest="block_devices", metavar="DEVICE-NAME DEVICE-SIZE-GB",
++        action="append", default=[], nargs=2,
++        help=("EBS device name and volume size in GiB."
++              " More than one device can be attached, by specifying"
++              " this option more than once."
++              " The device will be deleted on termination of the instance."))
+ 
+     create_options.add_option("--instanceType",
+                               dest="instance_type",
+@@ -302,19 +297,15 @@ def main():
+                               default=None,
+                               help="EC2 key name [REQUIRED for create].")
+ 
+-    create_options.add_option("--securityGroupIds",
+-                              dest="security_group_ids",
+-                              action="append",
+-                              default=[],
+-                              help="EC2 security group ids. More than one security group id can be"
+-                                   " added, by specifying this option more than once.")
++    create_options.add_option(
++        "--securityGroupIds", dest="security_group_ids", action="append", default=[],
++        help=("EC2 security group ids. More than one security group id can be"
++              " added, by specifying this option more than once."))
+ 
+-    create_options.add_option("--securityGroup",
+-                              dest="security_groups",
+-                              action="append",
+-                              default=[],
+-                              help="EC2 security group. More than one security group can be added,"
+-                                   " by specifying this option more than once.")
++    create_options.add_option(
++        "--securityGroup", dest="security_groups", action="append", default=[],
++        help=("EC2 security group. More than one security group can be added,"
++              " by specifying this option more than once."))
+ 
+     create_options.add_option("--subnetId",
+                               dest="subnet_id",
+@@ -350,14 +341,15 @@ def main():
+                               default=None,
+                               help="Save the status into the specified YAML file.")
+ 
+-    status_options.add_option("--consoleOutputFile", dest="console_output_file", default=None,
+-                              help="Save the console output into the specified file, if"
+-                              " available.")
++    status_options.add_option(
++        "--consoleOutputFile", dest="console_output_file", default=None,
++        help="Save the console output into the specified file, if"
++        " available.")
+ 
+-    status_options.add_option("--consoleScreenshotFile", dest="console_screenshot_file",
+-                              default=None,
+-                              help="Save the console screenshot (JPG format) into the specified"
+-                              " file, if available.")
++    status_options.add_option(
++        "--consoleScreenshotFile", dest="console_screenshot_file", default=None,
++        help="Save the console screenshot (JPG format) into the specified"
++        " file, if available.")
+ 
+     parser.add_option_group(control_options)
+     parser.add_option_group(create_options)
+@@ -382,7 +374,6 @@ def main():
+                 parser.error("Block size must be an integer")
+             block_devices[device_name] = device_size
+ 
+-        # The 'expire-on' key is a UTC time.
+         expire_dt = datetime.datetime.utcnow() + datetime.timedelta(hours=options.tag_expire_hours)
+         tags = [{"Key": "expire-on", "Value": expire_dt.strftime("%Y-%m-%d %H:%M:%S")},
+                 {"Key": "Name", "Value": options.tag_name},
+-- 
+2.28.0
+
+
+From b6f97aeb89868c62c3c01f7f2e6f47ecda846d94 Mon Sep 17 00:00:00 2001
+From: MikaelUrankar <mikael.urankar@gmail.com>
+Date: Sat, 3 Oct 2020 17:33:44 +0200
+Subject: [PATCH 04/24] backport site_scons/mongo/__init__.py
+
+---
+ site_scons/mongo/__init__.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/site_scons/mongo/__init__.py b/site_scons/mongo/__init__.py
+index 510bd7bc..f7747809 100644
+--- site_scons/mongo/__init__.py
++++ site_scons/mongo/__init__.py
+@@ -5,4 +5,4 @@
+ def print_build_failures():
+     from SCons.Script import GetBuildFailures
+     for bf in GetBuildFailures():
+-        print "%s failed: %s" % (bf.node, bf.errstr)
++        print("%s failed: %s" % (bf.node, bf.errstr))
+-- 
+2.28.0
+
+
+From 054ba812f02c54663a76b7092aa0c1eeeaf9925e Mon Sep 17 00:00:00 2001
+From: MikaelUrankar <mikael.urankar@gmail.com>
+Date: Sat, 3 Oct 2020 17:35:06 +0200
+Subject: [PATCH 05/24] backport site_scons/mongo/generators.py
+
+---
+ site_scons/mongo/generators.py | 75 +++++++++++++++++++++++++++-------
+ 1 file changed, 61 insertions(+), 14 deletions(-)
+
+diff --git a/site_scons/mongo/generators.py b/site_scons/mongo/generators.py
+index c07e86a4..052f18d3 100644
+--- site_scons/mongo/generators.py
++++ site_scons/mongo/generators.py
+@@ -1,6 +1,6 @@
+ # -*- mode: python; -*-
+ 
+-import md5
++import hashlib
+ 
+ # Default and alternative generator definitions go here.
+ 
+@@ -15,22 +15,69 @@ import md5
+ # want to define them.
+ def default_buildinfo_environment_data():
+     return (
+-        ('distmod', '$MONGO_DISTMOD', True, True,),
+-        ('distarch', '$MONGO_DISTARCH', True, True,),
+-        ('cc', '$CC_VERSION', True, False,),
+-        ('ccflags', '$CCFLAGS', True, False,),
+-        ('cxx', '$CXX_VERSION', True, False,),
+-        ('cxxflags', '$CXXFLAGS', True, False,),
+-        ('linkflags', '$LINKFLAGS', True, False,),
+-        ('target_arch', '$TARGET_ARCH', True, True,),
+-        ('target_os', '$TARGET_OS', True, False,),
++        (
++            'distmod',
++            '$MONGO_DISTMOD',
++            True,
++            True,
++        ),
++        (
++            'distarch',
++            '$MONGO_DISTARCH',
++            True,
++            True,
++        ),
++        (
++            'cc',
++            '$CC_VERSION',
++            True,
++            False,
++        ),
++        (
++            'ccflags',
++            '$CCFLAGS',
++            True,
++            False,
++        ),
++        (
++            'cxx',
++            '$CXX_VERSION',
++            True,
++            False,
++        ),
++        (
++            'cxxflags',
++            '$CXXFLAGS',
++            True,
++            False,
++        ),
++        (
++            'linkflags',
++            '$LINKFLAGS',
++            True,
++            False,
++        ),
++        (
++            'target_arch',
++            '$TARGET_ARCH',
++            True,
++            True,
++        ),
++        (
++            'target_os',
++            '$TARGET_OS',
++            True,
++            False,
++        ),
+     )
+ 
++
+ # If you want buildInfo and --version to be relatively empty, set
+ # MONGO_BUILDINFO_ENVIRONMENT_DATA = empty_buildinfo_environment_data()
+ def empty_buildinfo_environment_data():
+     return ()
+ 
++
+ def default_variant_dir_generator(target, source, env, for_signature):
+ 
+     if env.GetOption('cache') != None:
+@@ -44,11 +91,11 @@ def default_variant_dir_generator(target, source, env, for_signature):
+ 
+     # Hash the named options and their values, and take the first 8 characters of the hash as
+     # the variant name
+-    hasher = md5.md5()
++    hasher = hashlib.md5()
+     for option in variant_options:
+-        hasher.update(option)
+-        hasher.update(str(env.GetOption(option)))
+-    variant_dir = hasher.hexdigest()[0:8]
++        hasher.update(option.encode('utf-8'))
++        hasher.update(str(env.GetOption(option)).encode('utf-8'))
++    variant_dir = str(hasher.hexdigest()[0:8])
+ 
+     # If our option hash yields a well known hash, replace it with its name.
+     known_variant_hashes = {
+-- 
+2.28.0
+
+
+From 83a4ac06adfa2d7adfb6dedeb6fb258130ab3015 Mon Sep 17 00:00:00 2001
+From: MikaelUrankar <mikael.urankar@gmail.com>
+Date: Sat, 3 Oct 2020 17:36:14 +0200
+Subject: [PATCH 06/24] backport buildscripts/utils.py
+
+---
+ buildscripts/utils.py | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/buildscripts/utils.py b/buildscripts/utils.py
+index 69a78921..1c08bdf8 100644
+--- buildscripts/utils.py
++++ buildscripts/utils.py
+@@ -107,7 +107,7 @@ def getGitDescribe():
+             stderr=devnull,
+             stdin=devnull,
+             shell=True)
+-        return proc.communicate()[0].strip()
++        return proc.communicate()[0].strip().decode('utf-8')
+ 
+ def execsys( args ):
+     import subprocess
+@@ -122,7 +122,7 @@ def getprocesslist():
+     raw = ""
+     try:
+         raw = execsys( "/bin/ps axww" )[0]
+-    except Exception,e:
++    except Exception as e:
+         print( "can't get processlist: " + str( e ) )
+ 
+     r = re.compile( "[\r\n]+" )
+@@ -176,7 +176,7 @@ def didMongodStart( port=27017 , timeout=20 ):
+         try:
+             checkMongoPort( port )
+             return True
+-        except Exception,e:
++        except Exception as e:
+             print( e )
+             timeout = timeout - 1
+     return False
+-- 
+2.28.0
+
+
+From f38206bde5a4e7cf14a7e17b67ccf074b222c9a6 Mon Sep 17 00:00:00 2001
+From: MikaelUrankar <mikael.urankar@gmail.com>
+Date: Sat, 3 Oct 2020 17:48:44 +0200
+Subject: [PATCH 07/24] backport site_scons/libdeps.py
+
+---
+ site_scons/libdeps.py | 46 ++++++++++++++++++++++++++-----------------
+ 1 file changed, 28 insertions(+), 18 deletions(-)
+
+diff --git a/site_scons/libdeps.py b/site_scons/libdeps.py
+index 632ed29b..62272052 100644
+--- site_scons/libdeps.py
++++ site_scons/libdeps.py
+@@ -61,7 +61,7 @@ syslibdeps_env_var = 'SYSLIBDEPS'
+ missing_syslibdep = 'MISSING_LIBDEP_'
+ 
+ class dependency(object):
+-    Public, Private, Interface = range(3)
++    Public, Private, Interface = list(range(3))
+ 
+     def __init__(self, value, dynamic, deptype):
+         self.target_node = value
+@@ -74,7 +74,7 @@ class dependency(object):
+ class DependencyCycleError(SCons.Errors.UserError):
+     """Exception representing a cycle discovered in library dependencies."""
+ 
+-    def __init__(self, first_node ):
++    def __init__(self, first_node):
+         super(DependencyCycleError, self).__init__()
+         self.cycle_nodes = [first_node]
+ 
+@@ -89,8 +89,8 @@ def __get_sorted_direct_libdeps(node):
+         setattr(node.attributes, "libdeps_direct_sorted", direct_sorted)
+     return direct_sorted
+ 
+-def __get_libdeps(node):
+ 
++def __get_libdeps(node):
+     """Given a SCons Node, return its library dependencies, topologically sorted.
+ 
+     Computes the dependencies if they're not already cached.
+@@ -122,7 +122,7 @@ def __get_libdeps(node):
+                 marked.add(n.target_node)
+                 tsorted.append(n.target_node)
+ 
+-            except DependencyCycleError, e:
++            except DependencyCycleError as e:
+                 if len(e.cycle_nodes) == 1 or e.cycle_nodes[0] != e.cycle_nodes[-1]:
+                     e.cycle_nodes.insert(0, n.target_node)
+                 raise
+@@ -139,6 +139,7 @@ def __get_libdeps(node):
+ 
+     return tsorted
+ 
++
+ def __get_syslibdeps(node):
+     """ Given a SCons Node, return its system library dependencies.
+ 
+@@ -150,11 +151,11 @@ def __get_syslibdeps(node):
+         for lib in __get_libdeps(node):
+             for syslib in node.get_env().Flatten(lib.get_env().get(syslibdeps_env_var, [])):
+                 if syslib:
+-                    if type(syslib) in (str, unicode) and syslib.startswith(missing_syslibdep):
+-                        print("Target '%s' depends on the availability of a "
++                    if type(syslib) is str and syslib.startswith(missing_syslibdep):
++                        print(("Target '%s' depends on the availability of a "
+                               "system provided library for '%s', "
+                               "but no suitable library was found during configuration." %
+-                              (str(node), syslib[len(missing_syslibdep):]))
++                              (str(node), syslib[len(missing_syslibdep):])))
+                         node.get_env().Exit(1)
+                     syslibdeps.append(syslib)
+         setattr(node.attributes, cached_var_name, syslibdeps)
+@@ -170,17 +171,20 @@ def update_scanner(builder):
+ 
+     if old_scanner:
+         path_function = old_scanner.path_function
++
+         def new_scanner(node, env, path=()):
+             result = old_scanner.function(node, env, path)
+             result.extend(__get_libdeps(node))
+             return result
+     else:
+         path_function = None
++
+         def new_scanner(node, env, path=()):
+             return __get_libdeps(node)
+ 
+     builder.target_scanner = SCons.Scanner.Scanner(function=new_scanner,
+-                                                    path_function=path_function)
++                                                   path_function=path_function)
++
+ 
+ def get_libdeps(source, target, env, for_signature):
+     """Implementation of the special _LIBDEPS environment variable.
+@@ -191,6 +195,7 @@ def get_libdeps(source, target, env, for_signature):
+     target = env.Flatten([target])
+     return __get_libdeps(target[0])
+ 
++
+ def get_libdeps_objs(source, target, env, for_signature):
+     objs = []
+     for lib in get_libdeps(source, target, env, for_signature):
+@@ -198,6 +203,7 @@ def get_libdeps_objs(source, target, env, for_signature):
+         objs.extend(lib.sources)
+     return objs
+ 
++
+ def get_syslibdeps(source, target, env, for_signature):
+     deps = __get_syslibdeps(target[0])
+     lib_link_prefix = env.subst('$LIBLINKPREFIX')
+@@ -209,7 +215,7 @@ def get_syslibdeps(source, target, env, for_signature):
+         # they're believed to represent library short names, that should be prefixed with -l
+         # or the compiler-specific equivalent.  I.e., 'm' becomes '-lm', but 'File("m.a") is passed
+         # through whole cloth.
+-        if type(d) in (str, unicode):
++        if type(d) is str:
+             result.append('%s%s%s' % (lib_link_prefix, d, lib_link_suffix))
+         else:
+             result.append(d)
+@@ -252,8 +258,8 @@ def libdeps_emitter(target, source, env):
+     prereqs.extend(dependency(l, False, dependency.Private) for l in env.get(libdeps_env_var + '_PRIVATE', []) if l)
+ 
+     for prereq in prereqs:
+-        prereqWithIxes = SCons.Util.adjustixes(
+-            prereq.target_node, lib_builder.get_prefix(env), lib_builder.get_suffix(env))
++        prereqWithIxes = SCons.Util.adjustixes(prereq.target_node, lib_builder.get_prefix(env),
++                                               lib_builder.get_suffix(env))
+         prereq.target_node = lib_node_factory(prereqWithIxes)
+ 
+     for t in target:
+@@ -264,16 +270,16 @@ def libdeps_emitter(target, source, env):
+     for dependent in env.get('LIBDEPS_DEPENDENTS', []):
+         if dependent is None:
+             continue
+-        dependentWithIxes = SCons.Util.adjustixes(
+-            dependent, lib_builder.get_prefix(env), lib_builder.get_suffix(env))
++        dependentWithIxes = SCons.Util.adjustixes(dependent, lib_builder.get_prefix(env),
++                                                  lib_builder.get_suffix(env))
+         dependentNode = lib_node_factory(dependentWithIxes)
+         __append_direct_libdeps(dependentNode, [dependency(target[0], False, dependency.Public)])
+ 
+     for dependent in env.get('PROGDEPS_DEPENDENTS', []):
+         if dependent is None:
+             continue
+-        dependentWithIxes = SCons.Util.adjustixes(
+-            dependent, prog_builder.get_prefix(env), prog_builder.get_suffix(env))
++        dependentWithIxes = SCons.Util.adjustixes(dependent, prog_builder.get_prefix(env),
++                                                  prog_builder.get_suffix(env))
+         dependentNode = prog_node_factory(dependentWithIxes)
+         __append_direct_libdeps(dependentNode, [dependency(target[0], False, dependency.Public)])
+ 
+@@ -372,9 +378,11 @@ def setup_environment(env, emitting_shared=False):
+                 if 'init-no-global-side-effects' in env.Entry(lib).get_env().get('LIBDEPS_TAGS', []):
+                     result.append(str(lib))
+                 else:
+-                    result.extend(env.subst('$LINK_WHOLE_ARCHIVE_LIB_START'
+-                                            '$TARGET'
+-                                            '$LINK_WHOLE_ARCHIVE_LIB_END', target=lib).split())
++                    result.extend(
++                        env.subst(
++                            '$LINK_WHOLE_ARCHIVE_LIB_START'
++                            '$TARGET'
++                            '$LINK_WHOLE_ARCHIVE_LIB_END', target=lib).split())
+             return result
+ 
+         env['_LIBDEPS_LIBS_WITH_TAGS'] = expand_libdeps_with_extraction_flags
+@@ -394,6 +402,7 @@ def setup_environment(env, emitting_shared=False):
+         except KeyError:
+             pass
+ 
++
+ def setup_conftests(conf):
+     def FindSysLibDep(context, name, libs, **kwargs):
+         var = "LIBDEPS_" + name.upper() + "_SYSLIBDEP"
+@@ -406,4 +415,5 @@ def setup_conftests(conf):
+                 return context.Result(result)
+         context.env[var] = __missing_syslib(name)
+         return context.Result(result)
++
+     conf.AddTest('FindSysLibDep', FindSysLibDep)
+-- 
+2.28.0
+
+
+From 2bc91392ab7dba6a09aa4100a9e8666a82dd7941 Mon Sep 17 00:00:00 2001
+From: MikaelUrankar <mikael.urankar@gmail.com>
+Date: Sat, 3 Oct 2020 17:49:45 +0200
+Subject: [PATCH 08/24] backport site_scons/site_tools/distsrc.py
+
+---
+ site_scons/site_tools/distsrc.py | 25 ++++++++++++++-----------
+ 1 file changed, 14 insertions(+), 11 deletions(-)
+
+diff --git a/site_scons/site_tools/distsrc.py b/site_scons/site_tools/distsrc.py
+index 861f5d9e..cc72c065 100644
+--- site_scons/site_tools/distsrc.py
++++ site_scons/site_tools/distsrc.py
+@@ -20,7 +20,7 @@ import shutil
+ import tarfile
+ import time
+ import zipfile
+-import StringIO
++import io
+ 
+ from distutils.spawn import find_executable
+ 
+@@ -28,7 +28,7 @@ __distsrc_callbacks = []
+ 
+ class DistSrcFile:
+     def __init__(self, **kwargs):
+-        [ setattr(self, key, val) for (key, val) in kwargs.items() ]
++        [ setattr(self, key, val) for (key, val) in list(kwargs.items()) ]
+ 
+     def __str__(self):
+         return self.name
+@@ -60,6 +60,7 @@ class DistSrcArchive:
+     def close(self):
+         self.archive_file.close()
+ 
++
+ class DistSrcTarArchive(DistSrcArchive):
+     def __iter__(self):
+         file_list = self.archive_file.getnames()
+@@ -82,7 +83,7 @@ class DistSrcTarArchive(DistSrcArchive):
+ 
+     def append_file_contents(self, filename, file_contents,
+             mtime=time.time(),
+-            mode=0644,
++            mode=0o644,
+             uname="root",
+             gname="root"):
+         file_metadata = tarfile.TarInfo(name=filename)
+@@ -91,7 +92,7 @@ class DistSrcTarArchive(DistSrcArchive):
+         file_metadata.uname = uname
+         file_metadata.gname = gname
+         file_metadata.size = len(file_contents)
+-        file_buf = StringIO.StringIO(file_contents)
++        file_buf = io.BytesIO(file_contents.encode('utf-8'))
+         if self.archive_mode == 'r':
+             self.archive_file.close()
+             self.archive_file = tarfile.open(
+@@ -105,6 +106,7 @@ class DistSrcTarArchive(DistSrcArchive):
+     def append_file(self, filename, localfile):
+         self.archive_file.add(localfile, arcname=filename)
+ 
++
+ class DistSrcZipArchive(DistSrcArchive):
+     def __iter__(self):
+         file_list = self.archive_file.namelist()
+@@ -119,7 +121,7 @@ class DistSrcZipArchive(DistSrcArchive):
+             name=key,
+             size=item_data.file_size,
+             mtime=time.mktime(fixed_time),
+-            mode=0775 if is_dir else 0664,
++            mode=0o775 if is_dir else 0o664,
+             type=tarfile.DIRTYPE if is_dir else tarfile.REGTYPE,
+             uid=0,
+             gid=0,
+@@ -129,7 +131,7 @@ class DistSrcZipArchive(DistSrcArchive):
+ 
+     def append_file_contents(self, filename, file_contents,
+             mtime=time.time(),
+-            mode=0644,
++            mode=0o644,
+             uname="root",
+             gname="root"):
+         self.archive_file.writestr(filename, file_contents)
+@@ -139,7 +141,7 @@ class DistSrcZipArchive(DistSrcArchive):
+ 
+ def build_error_action(msg):
+     def error_stub(target=None, source=None, env=None):
+-        print msg
++        print(msg)
+         env.Exit(1)
+     return [ error_stub ]
+ 
+@@ -162,7 +164,7 @@ def distsrc_action_generator(source, target, env, for_signature):
+ 
+     target_ext = str(target[0])[-3:]
+     if not target_ext in [ 'zip', 'tar' ]:
+-        print "Invalid file format for distsrc. Must be tar or zip file"
++        print("Invalid file format for distsrc. Must be tar or zip file")
+         env.Exit(1)
+ 
+     git_cmd = "\"%s\" archive --format %s --output %s --prefix ${MONGO_DIST_SRC_PREFIX} HEAD" % (
+@@ -173,14 +175,14 @@ def distsrc_action_generator(source, target, env, for_signature):
+         SCons.Action.Action(run_distsrc_callbacks, "Running distsrc callbacks for $TARGET")
+     ]
+ 
++
+ def add_callback(env, fn):
+     __distsrc_callbacks.append(fn)
+ 
++
+ def generate(env, **kwargs):
+     env.AddMethod(add_callback, 'AddDistSrcCallback')
+-    env['BUILDERS']['__DISTSRC'] = SCons.Builder.Builder(
+-        generator=distsrc_action_generator,
+-    )
++    env['BUILDERS']['__DISTSRC'] = SCons.Builder.Builder(generator=distsrc_action_generator, )
+ 
+     def DistSrc(env, target):
+         result = env.__DISTSRC(target=target, source=[])
+@@ -190,5 +192,6 @@ def generate(env, **kwargs):
+ 
+     env.AddMethod(DistSrc, 'DistSrc')
+ 
++
+ def exists(env):
+     return True
+-- 
+2.28.0
+
+
+From b27a4fc533e5290495f3b2d2bc78ea208d607bf5 Mon Sep 17 00:00:00 2001
+From: MikaelUrankar <mikael.urankar@gmail.com>
+Date: Sat, 3 Oct 2020 17:50:41 +0200
+Subject: [PATCH 09/24] backport site_scons/site_tools/mongo_benchmark.py
+
+---
+ site_scons/site_tools/mongo_benchmark.py | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+
+diff --git a/site_scons/site_tools/mongo_benchmark.py b/site_scons/site_tools/mongo_benchmark.py
+index 7c12627b..f3f84d73 100644
+--- site_scons/site_tools/mongo_benchmark.py
++++ site_scons/site_tools/mongo_benchmark.py
+@@ -11,10 +11,10 @@ def register_benchmark(env, test):
+     env.Alias('$BENCHMARK_ALIAS', test)
+ 
+ def benchmark_list_builder_action(env, target, source):
+-    ofile = open(str(target[0]), 'wb')
++    ofile = open(str(target[0]), 'w')
+     try:
+         for s in _benchmarks:
+-            print '\t' + str(s)
++            print('\t' + str(s))
+             ofile.write('%s\n' % s)
+     finally:
+         ofile.close()
+@@ -37,9 +37,10 @@ def build_benchmark(env, target, source, **kwargs):
+     bmEnv.Install("#/build/benchmark/", result[0])
+     return result
+ 
++
+ def generate(env):
+     env.Command('$BENCHMARK_LIST', env.Value(_benchmarks),
+-            Action(benchmark_list_builder_action, "Generating $TARGET"))
++                Action(benchmark_list_builder_action, "Generating $TARGET"))
+     env.AddMethod(register_benchmark, 'RegisterBenchmark')
+     env.AddMethod(build_benchmark, 'Benchmark')
+     env.Alias('$BENCHMARK_ALIAS', '$BENCHMARK_LIST')
+-- 
+2.28.0
+
+
+From 2059bb295d0d440a615241a834094dba3c840d6f Mon Sep 17 00:00:00 2001
+From: MikaelUrankar <mikael.urankar@gmail.com>
+Date: Sat, 3 Oct 2020 17:51:30 +0200
+Subject: [PATCH 10/24] backport site_scons/site_tools/mongo_integrationtest.py
+
+---
+ site_scons/site_tools/mongo_integrationtest.py | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+
+diff --git a/site_scons/site_tools/mongo_integrationtest.py b/site_scons/site_tools/mongo_integrationtest.py
+index ff9a5f45..324cac63 100644
+--- site_scons/site_tools/mongo_integrationtest.py
++++ site_scons/site_tools/mongo_integrationtest.py
+@@ -12,10 +12,10 @@ def register_integration_test(env, test):
+     env.Alias('$INTEGRATION_TEST_ALIAS', installed_test)
+ 
+ def integration_test_list_builder_action(env, target, source):
+-    ofile = open(str(target[0]), 'wb')
++    ofile = open(str(target[0]), 'w')
+     try:
+         for s in _integration_tests:
+-            print '\t' + str(s)
++            print('\t' + str(s))
+             ofile.write('%s\n' % s)
+     finally:
+         ofile.close()
+@@ -30,9 +30,10 @@ def build_cpp_integration_test(env, target, source, **kwargs):
+     env.RegisterIntegrationTest(result[0])
+     return result
+ 
++
+ def generate(env):
+     env.Command('$INTEGRATION_TEST_LIST', env.Value(_integration_tests),
+-            Action(integration_test_list_builder_action, "Generating $TARGET"))
++                Action(integration_test_list_builder_action, "Generating $TARGET"))
+     env.AddMethod(register_integration_test, 'RegisterIntegrationTest')
+     env.AddMethod(build_cpp_integration_test, 'CppIntegrationTest')
+     env.Alias('$INTEGRATION_TEST_ALIAS', '$INTEGRATION_TEST_LIST')
+-- 
+2.28.0
+
+
+From 747ce174e66d87aa71d6a3943457228ecd1d6aa2 Mon Sep 17 00:00:00 2001
+From: MikaelUrankar <mikael.urankar@gmail.com>
+Date: Sat, 3 Oct 2020 17:54:25 +0200
+Subject: [PATCH 11/24] backport site_scons/site_tools/mongo_unittest.py
+
+---
+ site_scons/site_tools/mongo_unittest.py | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+
+diff --git a/site_scons/site_tools/mongo_unittest.py b/site_scons/site_tools/mongo_unittest.py
+index ec99ab2d..28504767 100644
+--- site_scons/site_tools/mongo_unittest.py
++++ site_scons/site_tools/mongo_unittest.py
+@@ -11,10 +11,10 @@ def register_unit_test(env, test):
+     env.Alias('$UNITTEST_ALIAS', test)
+ 
+ def unit_test_list_builder_action(env, target, source):
+-    ofile = open(str(target[0]), 'wb')
++    ofile = open(str(target[0]), 'w')
+     try:
+         for s in _unittests:
+-            print '\t' + str(s)
++            print('\t' + str(s))
+             ofile.write('%s\n' % s)
+     finally:
+         ofile.close()
+@@ -30,9 +30,10 @@ def build_cpp_unit_test(env, target, source, **kwargs):
+     env.Install("#/build/unittests/", result[0])
+     return result
+ 
++
+ def generate(env):
+     env.Command('$UNITTEST_LIST', env.Value(_unittests),
+-            Action(unit_test_list_builder_action, "Generating $TARGET"))
++                Action(unit_test_list_builder_action, "Generating $TARGET"))
+     env.AddMethod(register_unit_test, 'RegisterUnitTest')
+     env.AddMethod(build_cpp_unit_test, 'CppUnitTest')
+     env.Alias('$UNITTEST_ALIAS', '$UNITTEST_LIST')
+-- 
+2.28.0
+
+
+From 72af34f1fbb1341dbb4f91147346eba24ad3bba1 Mon Sep 17 00:00:00 2001
+From: MikaelUrankar <mikael.urankar@gmail.com>
+Date: Sat, 3 Oct 2020 17:54:44 +0200
+Subject: [PATCH 12/24] backport site_scons/site_tools/split_dwarf.py
+
+---
+ site_scons/site_tools/split_dwarf.py | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+diff --git a/site_scons/site_tools/split_dwarf.py b/site_scons/site_tools/split_dwarf.py
+index 95130c9e..c57b9e96 100644
+--- site_scons/site_tools/split_dwarf.py
++++ site_scons/site_tools/split_dwarf.py
+@@ -26,6 +26,7 @@ _CXXSuffixes = ['.cpp', '.cc', '.cxx', '.c++', '.C++']
+ if SCons.Util.case_sensitive_suffixes('.c', '.C'):
+     _CXXSuffixes.append('.C')
+ 
++
+ def _dwo_emitter(target, source, env):
+     new_targets = []
+     for t in target:
+@@ -40,6 +41,7 @@ def _dwo_emitter(target, source, env):
+     targets = target + new_targets
+     return (targets, source)
+ 
++
+ def generate(env):
+     suffixes = []
+     if _splitDwarfFlag in env['CCFLAGS']:
+@@ -52,7 +54,7 @@ def generate(env):
+ 
+     for object_builder in SCons.Tool.createObjBuilders(env):
+         emitterdict = object_builder.builder.emitter
+-        for suffix in emitterdict.iterkeys():
++        for suffix in emitterdict.keys():
+             if not suffix in suffixes:
+                 continue
+             base = emitterdict[suffix]
+@@ -61,5 +63,6 @@ def generate(env):
+                 _dwo_emitter,
+             ])
+ 
++
+ def exists(env):
+     return any(_splitDwarfFlag in env[f] for f in ['CCFLAGS', 'CFLAGS', 'CXXFLAGS'])
+-- 
+2.28.0
+
+
+From 1e6b16c197766c1f9b19d32cacb658dff44b52b5 Mon Sep 17 00:00:00 2001
+From: MikaelUrankar <mikael.urankar@gmail.com>
+Date: Sat, 3 Oct 2020 17:56:46 +0200
+Subject: [PATCH 13/24] backport site_scons/site_tools/thin_archive.py
+
+---
+ site_scons/site_tools/thin_archive.py | 18 +++++++++++-------
+ 1 file changed, 11 insertions(+), 7 deletions(-)
+
+diff --git a/site_scons/site_tools/thin_archive.py b/site_scons/site_tools/thin_archive.py
+index 511c0ef6..500c3355 100644
+--- site_scons/site_tools/thin_archive.py
++++ site_scons/site_tools/thin_archive.py
+@@ -17,6 +17,7 @@ import SCons
+ import re
+ import subprocess
+ 
++
+ def exists(env):
+     if not 'AR' in env:
+         return False
+@@ -30,10 +31,9 @@ def exists(env):
+     if not "rc" in env['ARFLAGS']:
+         return False
+ 
+-    pipe = SCons.Action._subproc(env, SCons.Util.CLVar(ar) + ['--version'],
+-                                 stdin = 'devnull',
+-                                 stderr = 'devnull',
+-                                 stdout = subprocess.PIPE)
++    pipe = SCons.Action._subproc(env,
++                                 SCons.Util.CLVar(ar) + ['--version'], stdin='devnull',
++                                 stderr='devnull', stdout=subprocess.PIPE)
+     if pipe.wait() != 0:
+         return False
+ 
+@@ -41,7 +41,7 @@ def exists(env):
+     for line in pipe.stdout:
+         if isgnu:
+             continue  # consume all data
+-        isgnu = re.search(r'^GNU ar', line)
++        isgnu = re.search(r'^GNU ar', line.decode('utf-8'))
+ 
+     return bool(isgnu)
+ 
+@@ -56,6 +56,7 @@ def _add_emitter(builder):
+     new_emitter = SCons.Builder.ListEmitter([base_emitter, new_emitter])
+     builder.emitter = new_emitter
+ 
++
+ def _add_scanner(builder):
+     old_scanner = builder.target_scanner
+     path_function = old_scanner.path_function
+@@ -69,13 +70,16 @@ def _add_scanner(builder):
+                 new_results.extend(base.children())
+         return new_results
+ 
+-    builder.target_scanner = SCons.Scanner.Scanner(function=new_scanner, path_function=path_function)
++    builder.target_scanner = SCons.Scanner.Scanner(function=new_scanner,
++                                                   path_function=path_function)
++
+ 
+ def generate(env):
+     if not exists(env):
+         return
+ 
+-    env['ARFLAGS'] = SCons.Util.CLVar([arflag if arflag != "rc" else "rcsTD" for arflag in env['ARFLAGS']])
++    env['ARFLAGS'] = SCons.Util.CLVar(
++        [arflag if arflag != "rc" else "rcsTD" for arflag in env['ARFLAGS']])
+ 
+     def noop_action(env, target, source):
+         pass
+-- 
+2.28.0
+
+
+From 5c0d6355043aa07402eea9e85100f7cfc19897ce Mon Sep 17 00:00:00 2001
+From: MikaelUrankar <mikael.urankar@gmail.com>
+Date: Sat, 3 Oct 2020 18:07:05 +0200
+Subject: [PATCH 14/24] python3 buildscripts/errorcodes.py
+
+---
+ buildscripts/errorcodes.py | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+diff --git a/buildscripts/errorcodes.py b/buildscripts/errorcodes.py
+index cc467899..7d83b11e 100755
+--- buildscripts/errorcodes.py
++++ buildscripts/errorcodes.py
+@@ -9,7 +9,7 @@ Optionally replaces zero codes in source code with new distinct values.
+ import bisect
+ import os
+ import sys
+-import utils
++from . import utils
+ from collections import defaultdict, namedtuple
+ from optparse import OptionParser
+ 
+@@ -66,7 +66,7 @@ def parseSourceFiles( callback ):
+ 
+     for sourceFile in utils.getAllSourceFiles(prefix='src/mongo/'):
+         if list_files:
+-            print 'scanning file: ' + sourceFile
++            print ('scanning file: ' + sourceFile)
+ 
+         with open(sourceFile) as f:
+             text = f.read()
+@@ -159,7 +159,7 @@ def readErrorCodes():
+ 
+     parseSourceFiles( checkDups )
+ 
+-    if seen.has_key("0"):
++    if "0" in seen:
+         code = "0"
+         bad = seen[code]
+         errors.append( bad )
+@@ -196,12 +196,12 @@ def replaceBadCodes( errors, nextCode ):
+     for assertLoc in reversed(sorted(set(zero_errors))):
+         (sourceFile, byteOffset, lines, code) = assertLoc
+         lineNum, _ = getLineAndColumnForPosition(assertLoc)
+-        print "UPDATING_FILE: %s:%s" % (sourceFile, lineNum)
++        print ("UPDATING_FILE: %s:%s" % (sourceFile, lineNum))
+ 
+         ln = lineNum - 1
+ 
+         with open(sourceFile, 'r+') as f:
+-            print "LINE_%d_BEFORE:%s" % (lineNum, f.readlines()[ln].rstrip())
++            print ("LINE_%d_BEFORE:%s" % (lineNum, f.readlines()[ln].rstrip()))
+ 
+             f.seek(0)
+             text = f.read()
+@@ -212,7 +212,7 @@ def replaceBadCodes( errors, nextCode ):
+             f.write(text[byteOffset+1:])
+             f.seek(0)
+ 
+-            print "LINE_%d_AFTER :%s" % (lineNum, f.readlines()[ln].rstrip())
++            print ("LINE_%d_AFTER :%s" % (lineNum, f.readlines()[ln].rstrip()))
+         nextCode += 1
+ 
+ 
+@@ -281,7 +281,7 @@ def main():
+     elif options.replace:
+         replaceBadCodes(errors, next)
+     else:
+-        print ERROR_HELP
++        print (ERROR_HELP)
+         sys.exit(1)
+ 
+ 
+-- 
+2.28.0
+
+
+From 6aec2eae836c40b8c3a3f0663ada65a85d593a4e Mon Sep 17 00:00:00 2001
+From: MikaelUrankar <mikael.urankar@gmail.com>
+Date: Sat, 3 Oct 2020 18:22:46 +0200
+Subject: [PATCH 15/24] backport src/mongo/SConscript
+
+---
+ src/mongo/SConscript | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/src/mongo/SConscript b/src/mongo/SConscript
+index d93eb08f..aa4f6123 100644
+--- src/mongo/SConscript
++++ src/mongo/SConscript
+@@ -157,9 +157,9 @@ js_engine_ver = get_option("js-engine") if get_option("server-js") == "on" else
+ 
+ # On windows, we need to escape the backslashes in the command-line
+ # so that windows paths look okay.
+-cmd_line = " ".join(sys.argv).encode('string-escape')
++cmd_line = " ".join(sys.argv).encode('unicode_escape')
+ if env.TargetOSIs('windows'):
+-    cmd_line = cmd_line.replace('\\', r'\\')
++    cmd_line = cmd_line.replace(b'\\', b'\\')
+ 
+ module_list = '{ %s }' % ', '.join([ '"{0}"'.format(x) for x in env['MONGO_MODULES'] ])
+ 
+@@ -613,7 +613,7 @@ env.Append(MODULE_BANNERS = [distsrc.File('README'),
+                              distsrc.File('MPL-2')])
+ 
+ # If no module has introduced a file named LICENSE.txt, then inject the license.
+-if sum(itertools.imap(lambda x: x.name == "LICENSE.txt", env['MODULE_BANNERS'])) == 0:
++if sum(map(lambda x: x.name == "LICENSE.txt", env['MODULE_BANNERS'])) == 0:
+     env.Append(MODULE_BANNERS = [distsrc.File('LICENSE-Community.txt')])
+ 
+ # All module banners get staged to the top level of the tarfile, so we
+@@ -632,7 +632,7 @@ module_banner_transforms = ["--transform %s=$SERVER_DIST_BASENAME" % d for d in
+ # Allow modules to map original file name directories to subdirectories
+ # within the archive (e.g. { "src/mongo/db/modules/enterprise/docs": "snmp"})
+ archive_addition_transforms = []
+-for full_dir, archive_dir in env["ARCHIVE_ADDITION_DIR_MAP"].items():
++for full_dir, archive_dir in list(env["ARCHIVE_ADDITION_DIR_MAP"].items()):
+   archive_addition_transforms.append("--transform \"%s=$SERVER_DIST_BASENAME/%s\"" %
+                                      (full_dir, archive_dir))
+ 
+-- 
+2.28.0
+
+
+From 0ef150e257dedb2fbe3512020ce9583b604b836d Mon Sep 17 00:00:00 2001
+From: MikaelUrankar <mikael.urankar@gmail.com>
+Date: Sat, 3 Oct 2020 18:25:00 +0200
+Subject: [PATCH 16/24] backport buildscripts/idl/idlc.py
+
+---
+ buildscripts/idl/idlc.py | 2 --
+ 1 file changed, 2 deletions(-)
+
+diff --git a/buildscripts/idl/idlc.py b/buildscripts/idl/idlc.py
+index c6bf5056..90cb9ac1 100644
+--- buildscripts/idl/idlc.py
++++ buildscripts/idl/idlc.py
+@@ -29,8 +29,6 @@
+ #
+ """IDL Compiler Driver Main Entry point."""
+ 
+-from __future__ import absolute_import, print_function
+-
+ import argparse
+ import logging
+ import sys
+-- 
+2.28.0
+
+
+From 18d0c5440d9c6f6b6d2a38d600347c92eb47e4d8 Mon Sep 17 00:00:00 2001
+From: MikaelUrankar <mikael.urankar@gmail.com>
+Date: Sat, 3 Oct 2020 18:25:52 +0200
+Subject: [PATCH 17/24] backport src/mongo/db/auth/generate_action_types.py
+
+---
+ src/mongo/db/auth/generate_action_types.py | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+
+diff --git a/src/mongo/db/auth/generate_action_types.py b/src/mongo/db/auth/generate_action_types.py
+index 3d3a36c0..618669fd 100755
+--- src/mongo/db/auth/generate_action_types.py
++++ src/mongo/db/auth/generate_action_types.py
+@@ -26,7 +26,6 @@
+ # delete this exception statement from your version. If you delete this
+ # exception statement from all source files in the program, then also delete
+ # it in the license file.
+-
+ """Generate action_type.{h,cpp}
+ 
+ Usage:
+@@ -35,7 +34,6 @@ Usage:
+ 
+ import sys
+ 
+-
+ headerFileTemplate = """// AUTO-GENERATED FILE DO NOT EDIT
+ // See src/mongo/db/auth/generate_action_types.py
+ /**
+@@ -194,14 +192,14 @@ namespace mongo {
+ } // namespace mongo
+ """
+ 
++
+ def writeSourceFile(actionTypes, sourceOutputFile):
+     actionTypeConstants = ""
+     fromStringIfStatements = ""
+     toStringCaseStatements = ""
+     for actionType in actionTypes:
+         actionTypeConstants += ("    const ActionType ActionType::%(actionType)s"
+-                                "(%(actionType)sValue);\n" %
+-                                dict(actionType=actionType))
++                                "(%(actionType)sValue);\n" % dict(actionType=actionType))
+         fromStringIfStatements += """        if (action == "%(actionType)s") {
+             *result = %(actionType)s;
+             return Status::OK();
+@@ -215,6 +213,7 @@ def writeSourceFile(actionTypes, sourceOutputFile):
+ 
+     pass
+ 
++
+ def writeHeaderFile(actionTypes, headerOutputFile):
+     actionTypeConstants = ""
+     actionTypeIdentifiers = ""
+@@ -225,6 +224,7 @@ def writeHeaderFile(actionTypes, headerOutputFile):
+                                                     actionTypeIdentifiers=actionTypeIdentifiers)
+     headerOutputFile.write(formattedHeaderFile)
+ 
++
+ def hasDuplicateActionTypes(actionTypes):
+     sortedActionTypes = sorted(actionTypes)
+ 
+@@ -232,7 +232,7 @@ def hasDuplicateActionTypes(actionTypes):
+     prevActionType = sortedActionTypes[0]
+     for actionType in sortedActionTypes[1:]:
+         if actionType == prevActionType:
+-            print 'Duplicate actionType %s\n' % actionType
++            print('Duplicate actionType %s\n' % actionType)
+             didFail = True
+         prevActionType = actionType
+ 
+@@ -245,7 +245,7 @@ def parseActionTypesFromFile(actionTypesFilename):
+ 
+ if __name__ == "__main__":
+     if len(sys.argv) != 4:
+-        print "Usage: generate_action_types.py <path to action_types.txt> <header file path> <source file path>"
++        print("Usage: generate_action_types.py <path to action_types.txt> <header file path> <source file path>")
+         sys.exit(-1)
+ 
+     actionTypes = parseActionTypesFromFile(sys.argv[1])
+-- 
+2.28.0
+
+
+From 6df9773b207f90692bda010f2778f57f957944ff Mon Sep 17 00:00:00 2001
+From: MikaelUrankar <mikael.urankar@gmail.com>
+Date: Sat, 3 Oct 2020 18:29:19 +0200
+Subject: [PATCH 18/24] backport buildscripts/idl/idl/compiler.py
+
+---
+ buildscripts/idl/idl/compiler.py | 10 ++++------
+ 1 file changed, 4 insertions(+), 6 deletions(-)
+
+diff --git a/buildscripts/idl/idl/compiler.py b/buildscripts/idl/idl/compiler.py
+index 0905a18e..19aaf436 100644
+--- buildscripts/idl/idl/compiler.py
++++ buildscripts/idl/idl/compiler.py
+@@ -31,8 +31,6 @@ IDL compiler driver.
+ Orchestrates the 3 passes (parser, binder, and generator) together.
+ """
+ 
+-from __future__ import absolute_import, print_function, unicode_literals
+-
+ import io
+ import logging
+ import os
+@@ -66,14 +64,14 @@ class CompilerImportResolver(parser.ImportResolverBase):
+     """Class for the IDL compiler to resolve imported files."""
+ 
+     def __init__(self, import_directories):
+-        # type: (List[unicode]) -> None
++        # type: (List[str]) -> None
+         """Construct a ImportResolver."""
+         self._import_directories = import_directories
+ 
+         super(CompilerImportResolver, self).__init__()
+ 
+     def resolve(self, base_file, imported_file_name):
+-        # type: (unicode, unicode) -> unicode
++        # type: (str, str) -> str
+         """Return the complete path to an imported file name."""
+ 
+         logging.debug("Resolving imported file '%s' for file '%s'", imported_file_name, base_file)
+@@ -104,7 +102,7 @@ class CompilerImportResolver(parser.ImportResolverBase):
+         raise errors.IDLError(msg)
+ 
+     def open(self, resolved_file_name):
+-        # type: (unicode) -> Any
++        # type: (str) -> Any
+         """Return an io.Stream for the requested file."""
+         return io.open(resolved_file_name, encoding='utf-8')
+ 
+@@ -121,7 +119,7 @@ def _write_dependencies(spec):
+ 
+ 
+ def _update_import_includes(args, spec, header_file_name):
+-    # type: (CompilerArgs, syntax.IDLSpec, unicode) -> None
++    # type: (CompilerArgs, syntax.IDLSpec, str) -> None
+     """Update the list of imports with a list of include files for each import with structs."""
+     # This function is fragile:
+     # In order to try to generate headers with an "include what you use" set of headers, the IDL
+-- 
+2.28.0
+
+
+From 8e28ce9f7b396b16ad9d574a754b5e40fd063ed4 Mon Sep 17 00:00:00 2001
+From: MikaelUrankar <mikael.urankar@gmail.com>
+Date: Sat, 3 Oct 2020 18:31:51 +0200
+Subject: [PATCH 19/24] backport buildscripts/idl/idl/syntax.py
+
+---
+ buildscripts/idl/idl/syntax.py | 83 ++++++++++++++++------------------
+ 1 file changed, 40 insertions(+), 43 deletions(-)
+
+diff --git a/buildscripts/idl/idl/syntax.py b/buildscripts/idl/idl/syntax.py
+index 492a7b99..96ac5090 100644
+--- buildscripts/idl/idl/syntax.py
++++ buildscripts/idl/idl/syntax.py
+@@ -33,8 +33,6 @@ It maps 1-1 to the YAML file, and has not been checked if
+ it follows the rules of the IDL, etc.
+ """
+ 
+-from __future__ import absolute_import, print_function, unicode_literals
+-
+ import itertools
+ from typing import Any, Dict, Iterator, List, Optional, Tuple, Union
+ 
+@@ -70,7 +68,7 @@ class IDLSpec(object):
+ 
+ 
+ def parse_array_type(name):
+-    # type: (unicode) -> unicode
++    # type: (str) -> str
+     """Parse a type name of the form 'array<type>' and extract type."""
+     if not name.startswith("array<") and not name.endswith(">"):
+         return None
+@@ -94,8 +92,7 @@ def _zip_scalar(items, obj):
+ def _item_and_type(dic):
+     # type: (Dict[Any, List[Any]]) -> Iterator[Tuple[Any, Any]]
+     """Return an Iterator of (key, value) pairs from a dictionary."""
+-    return itertools.chain.from_iterable((_zip_scalar(value, key)
+-                                          for (key, value) in dic.viewitems()))
++    return itertools.chain.from_iterable((_zip_scalar(value, key) for (key, value) in dic.items()))
+ 
+ 
+ class SymbolTable(object):
+@@ -115,7 +112,7 @@ class SymbolTable(object):
+         self.types = []  # type: List[Type]
+ 
+     def _is_duplicate(self, ctxt, location, name, duplicate_class_name):
+-        # type: (errors.ParserContext, common.SourceLocation, unicode, unicode) -> bool
++        # type: (errors.ParserContext, common.SourceLocation, str, str) -> bool
+         """Return true if the given item already exist in the symbol table."""
+         for (item, entity_type) in _item_and_type({
+                 "command": self.commands,
+@@ -179,12 +176,12 @@ class SymbolTable(object):
+             self.add_type(ctxt, idltype)
+ 
+     def resolve_field_type(self, ctxt, location, field_name, type_name):
+-        # type: (errors.ParserContext, common.SourceLocation, unicode, unicode) -> Optional[Union[Command, Enum, Struct, Type]]
++        # type: (errors.ParserContext, common.SourceLocation, str, str) -> Optional[Union[Command, Enum, Struct, Type]]
+         """Find the type or struct a field refers to or log an error."""
+         return self._resolve_field_type(ctxt, location, field_name, type_name)
+ 
+     def _resolve_field_type(self, ctxt, location, field_name, type_name):
+-        # type: (errors.ParserContext, common.SourceLocation, unicode, unicode) -> Optional[Union[Command, Enum, Struct, Type]]
++        # type: (errors.ParserContext, common.SourceLocation, str, str) -> Optional[Union[Command, Enum, Struct, Type]]
+         """Find the type or struct a field refers to or log an error."""
+         # pylint: disable=too-many-return-statements
+ 
+@@ -237,15 +234,15 @@ class Import(common.SourceLocation):
+     """IDL imports object."""
+ 
+     def __init__(self, file_name, line, column):
+-        # type: (unicode, int, int) -> None
++        # type: (str, int, int) -> None
+         """Construct an Imports section."""
+-        self.imports = []  # type: List[unicode]
++        self.imports = []  # type: List[str]
+ 
+         # These are not part of the IDL syntax but are produced by the parser.
+         # List of imports with structs.
+-        self.resolved_imports = []  # type: List[unicode]
++        self.resolved_imports = []  # type: List[str]
+         # All imports directly or indirectly included
+-        self.dependencies = []  # type: List[unicode]
++        self.dependencies = []  # type: List[str]
+ 
+         super(Import, self).__init__(file_name, line, column)
+ 
+@@ -262,16 +259,16 @@ class Type(common.SourceLocation):
+     # pylint: disable=too-many-instance-attributes
+ 
+     def __init__(self, file_name, line, column):
+-        # type: (unicode, int, int) -> None
++        # type: (str, int, int) -> None
+         """Construct a Type."""
+-        self.name = None  # type: unicode
+-        self.description = None  # type: unicode
+-        self.cpp_type = None  # type: unicode
+-        self.bson_serialization_type = None  # type: List[unicode]
+-        self.bindata_subtype = None  # type: unicode
+-        self.serializer = None  # type: unicode
+-        self.deserializer = None  # type: unicode
+-        self.default = None  # type: unicode
++        self.name = None  # type: str
++        self.description = None  # type: str
++        self.cpp_type = None  # type: str
++        self.bson_serialization_type = None  # type: List[str]
++        self.bindata_subtype = None  # type: str
++        self.serializer = None  # type: str
++        self.deserializer = None  # type: str
++        self.default = None  # type: str
+ 
+         super(Type, self).__init__(file_name, line, column)
+ 
+@@ -288,15 +285,15 @@ class Field(common.SourceLocation):
+     # pylint: disable=too-many-instance-attributes
+ 
+     def __init__(self, file_name, line, column):
+-        # type: (unicode, int, int) -> None
++        # type: (str, int, int) -> None
+         """Construct a Field."""
+-        self.name = None  # type: unicode
+-        self.cpp_name = None  # type: unicode
+-        self.description = None  # type: unicode
+-        self.type = None  # type: unicode
++        self.name = None  # type: str
++        self.cpp_name = None  # type: str
++        self.description = None  # type: str
++        self.type = None  # type: str
+         self.ignore = False  # type: bool
+         self.optional = False  # type: bool
+-        self.default = None  # type: unicode
++        self.default = None  # type: str
+         self.supports_doc_sequence = False  # type: bool
+ 
+         # Internal fields - not generated by parser
+@@ -314,10 +311,10 @@ class ChainedStruct(common.SourceLocation):
+     """
+ 
+     def __init__(self, file_name, line, column):
+-        # type: (unicode, int, int) -> None
++        # type: (str, int, int) -> None
+         """Construct a Type."""
+-        self.name = None  # type: unicode
+-        self.cpp_name = None  # type: unicode
++        self.name = None  # type: str
++        self.cpp_name = None  # type: str
+ 
+         super(ChainedStruct, self).__init__(file_name, line, column)
+ 
+@@ -330,10 +327,10 @@ class ChainedType(common.SourceLocation):
+     """
+ 
+     def __init__(self, file_name, line, column):
+-        # type: (unicode, int, int) -> None
++        # type: (str, int, int) -> None
+         """Construct a Type."""
+-        self.name = None  # type: unicode
+-        self.cpp_name = None  # type: unicode
++        self.name = None  # type: str
++        self.cpp_name = None  # type: str
+ 
+         super(ChainedType, self).__init__(file_name, line, column)
+ 
+@@ -348,10 +345,10 @@ class Struct(common.SourceLocation):
+     # pylint: disable=too-many-instance-attributes
+ 
+     def __init__(self, file_name, line, column):
+-        # type: (unicode, int, int) -> None
++        # type: (str, int, int) -> None
+         """Construct a Struct."""
+-        self.name = None  # type: unicode
+-        self.description = None  # type: unicode
++        self.name = None  # type: str
++        self.description = None  # type: str
+         self.strict = True  # type: bool
+         self.immutable = False  # type: bool
+         self.inline_chained_structs = False  # type: bool
+@@ -389,10 +386,10 @@ class EnumValue(common.SourceLocation):
+     """
+ 
+     def __init__(self, file_name, line, column):
+-        # type: (unicode, int, int) -> None
++        # type: (str, int, int) -> None
+         """Construct an Enum."""
+-        self.name = None  # type: unicode
+-        self.value = None  # type: unicode
++        self.name = None  # type: str
++        self.value = None  # type: str
+ 
+         super(EnumValue, self).__init__(file_name, line, column)
+ 
+@@ -405,11 +402,11 @@ class Enum(common.SourceLocation):
+     """
+ 
+     def __init__(self, file_name, line, column):
+-        # type: (unicode, int, int) -> None
++        # type: (str, int, int) -> None
+         """Construct an Enum."""
+-        self.name = None  # type: unicode
+-        self.description = None  # type: unicode
+-        self.type = None  # type: unicode
++        self.name = None  # type: str
++        self.description = None  # type: str
++        self.type = None  # type: str
+         self.values = None  # type: List[EnumValue]
+ 
+         # Internal property that is not represented as syntax. An imported enum is read from an
+-- 
+2.28.0
+
+
+From 90f2a9fb3ebe659b3d884e3a94bb5fc0a8ef5f69 Mon Sep 17 00:00:00 2001
+From: MikaelUrankar <mikael.urankar@gmail.com>
+Date: Sat, 3 Oct 2020 18:35:50 +0200
+Subject: [PATCH 20/24] backport src/mongo/base/generate_error_codes.py
+
+---
+ src/mongo/base/generate_error_codes.py | 24 ++++++++++++++----------
+ 1 file changed, 14 insertions(+), 10 deletions(-)
+
+diff --git a/src/mongo/base/generate_error_codes.py b/src/mongo/base/generate_error_codes.py
+index 5de9e524..6538b6b5 100644
+--- src/mongo/base/generate_error_codes.py
++++ src/mongo/base/generate_error_codes.py
+@@ -26,7 +26,6 @@
+ # delete this exception statement from your version. If you delete this
+ # exception statement from all source files in the program, then also delete
+ # it in the license file.
+-
+ """Generate error_codes.{h,cpp} from error_codes.err.
+ 
+ Format of error_codes.err:
+@@ -51,10 +50,9 @@ def render_template(template_path, **kw):
+        returns the result as a string'''
+ 
+     template = Template.compile(
+-            file=template_path,
+-            compilerSettings=dict(directiveStartToken="//#",directiveEndToken="//#"),
+-            baseclass=dict,
+-            useCache=False)
++         file=template_path,
++         compilerSettings=dict(directiveStartToken="//#", directiveEndToken="//#",
++                               commentStartToken="//##"), baseclass=dict, useCache=False)
+     return str(template(**kw))
+ 
+ class ErrorCode:
+@@ -63,11 +61,13 @@ class ErrorCode:
+         self.code = code
+         self.categories = []
+ 
++
+ class ErrorClass:
+     def __init__(self, name, codes):
+         self.name = name
+         self.codes = codes
+ 
++
+ def main(argv):
+     # Parse and validate argv.
+     if len(sys.argv) < 2:
+@@ -94,7 +94,7 @@ def main(argv):
+                 categories=error_classes,
+                 )
+ 
+-        with open(output, 'wb') as outfile:
++        with open(output, 'w') as outfile:
+             outfile.write(text)
+ 
+ def die(message=None):
+@@ -126,6 +126,7 @@ def check_for_conflicts(error_codes, error_classes):
+     if failed:
+         die()
+ 
++
+ def has_duplicate_error_codes(error_codes):
+     sorted_by_name = sorted(error_codes, key=lambda x: x.name)
+     sorted_by_code = sorted(error_codes, key=lambda x: x.code)
+@@ -134,21 +135,22 @@ def has_duplicate_error_codes(error_codes):
+     prev = sorted_by_name[0]
+     for curr in sorted_by_name[1:]:
+         if curr.name == prev.name:
+-            sys.stdout.write('Duplicate name %s with codes %s and %s\n'
+-                    % (curr.name, curr.code, prev.code))
++            sys.stdout.write(
++                'Duplicate name %s with codes %s and %s\n' % (curr.name, curr.code, prev.code))
+             failed = True
+         prev = curr
+ 
+     prev = sorted_by_code[0]
+     for curr in sorted_by_code[1:]:
+         if curr.code == prev.code:
+-            sys.stdout.write('Duplicate code %s with names %s and %s\n'
+-                    % (curr.code, curr.name, prev.name))
++            sys.stdout.write(
++                'Duplicate code %s with names %s and %s\n' % (curr.code, curr.name, prev.name))
+             failed = True
+         prev = curr
+ 
+     return failed
+ 
++
+ def has_duplicate_error_classes(error_classes):
+     names = sorted(ec.name for ec in error_classes)
+ 
+@@ -161,6 +163,7 @@ def has_duplicate_error_classes(error_classes):
+         prev_name = name
+     return failed
+ 
++
+ def has_missing_error_codes(error_codes, error_classes):
+     code_names = dict((ec.name, ec) for ec in error_codes)
+     failed = False
+@@ -174,5 +177,6 @@ def has_missing_error_codes(error_codes, error_classes):
+ 
+     return failed
+ 
++
+ if __name__ == '__main__':
+     main(sys.argv)
+-- 
+2.28.0
+
+
+From 4418d8f8c9e432e380a4e611f5475ba3a4d76699 Mon Sep 17 00:00:00 2001
+From: MikaelUrankar <mikael.urankar@gmail.com>
+Date: Sat, 3 Oct 2020 19:34:19 +0200
+Subject: [PATCH 21/24] backport site_scons/site_tools/idl_tool.py
+
+---
+ site_scons/site_tools/idl_tool.py | 14 +++++---------
+ 1 file changed, 5 insertions(+), 9 deletions(-)
+
+diff --git a/site_scons/site_tools/idl_tool.py b/site_scons/site_tools/idl_tool.py
+index 78bedfaa..fc53b3ae 100755
+--- site_scons/site_tools/idl_tool.py
++++ site_scons/site_tools/idl_tool.py
+@@ -21,6 +21,7 @@ import sys
+ 
+ import SCons
+ 
++
+ def idlc_emitter(target, source, env):
+     """For each input IDL file, the tool produces a .cpp and .h file."""
+     first_source = str(source[0])
+@@ -43,7 +44,7 @@ IDLCAction = SCons.Action.Action('$IDLCCOM', '$IDLCCOMSTR')
+ def idl_scanner(node, env, path):
+     # Use the import scanner mode of the IDL compiler to file imported files
+     cmd = [sys.executable, "buildscripts/idl/idlc.py",  '--include','src', str(node), '--write-dependencies']
+-    deps_str = subprocess.check_output(cmd)
++    deps_str = subprocess.check_output(cmd).decode('utf-8')
+ 
+     deps_list = deps_str.splitlines()
+ 
+@@ -57,19 +58,14 @@ def idl_scanner(node, env, path):
+ idl_scanner = SCons.Scanner.Scanner(function=idl_scanner, skeys=['.idl'])
+ 
+ # TODO: create a scanner for imports when imports are implemented
+-IDLCBuilder = SCons.Builder.Builder(
+-    action=IDLCAction,
+-    emitter=idlc_emitter,
+-    srcsuffx=".idl",
+-    suffix=".cpp",
+-    source_scanner = idl_scanner
+-    )
++IDLCBuilder = SCons.Builder.Builder(action=IDLCAction, emitter=idlc_emitter, srcsuffx=".idl",
++                                    suffix=".cpp", source_scanner=idl_scanner)
+ 
+ 
+ def generate(env):
+     bld = IDLCBuilder
+ 
+-    env.Append(SCANNERS = idl_scanner)
++    env.Append(SCANNERS=idl_scanner)
+ 
+     env['BUILDERS']['Idlc'] = bld
+ 
+-- 
+2.28.0
+
+
+From 185809c361b8c495002ed26485237164d31de367 Mon Sep 17 00:00:00 2001
+From: MikaelUrankar <mikael.urankar@gmail.com>
+Date: Sat, 3 Oct 2020 19:53:37 +0200
+Subject: [PATCH 22/24] backport
+ src/mongo/db/query/collation/generate_icu_init_cpp.py
+
+---
+ src/mongo/db/query/collation/generate_icu_init_cpp.py | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+diff --git a/src/mongo/db/query/collation/generate_icu_init_cpp.py b/src/mongo/db/query/collation/generate_icu_init_cpp.py
+index a95740b8..2a550a0c 100755
+--- src/mongo/db/query/collation/generate_icu_init_cpp.py
++++ src/mongo/db/query/collation/generate_icu_init_cpp.py
+@@ -31,6 +31,7 @@ import optparse
+ import os
+ import sys
+ 
++
+ def main(argv):
+     parser = optparse.OptionParser()
+     parser.add_option('-o', '--output', action='store', dest='output_cpp_file',
+@@ -46,6 +47,7 @@ def main(argv):
+         parser.error("input ICU data file unspecified")
+     generate_cpp_file(options.input_data_file, options.output_cpp_file)
+ 
++
+ def generate_cpp_file(data_file_path, cpp_file_path):
+     source_template = '''// AUTO-GENERATED FILE DO NOT EDIT
+ // See generate_icu_init_cpp.py.
+@@ -112,8 +114,8 @@ MONGO_INITIALIZER(LoadICUData)(InitializerContext* context) {
+ '''
+     decimal_encoded_data = ''
+     with open(data_file_path, 'rb') as data_file:
+-        decimal_encoded_data = ','.join([str(ord(byte)) for byte in data_file.read()])
+-    with open(cpp_file_path, 'wb') as cpp_file:
++        decimal_encoded_data = ','.join([str(byte) for byte in data_file.read()])
++    with open(cpp_file_path, 'w') as cpp_file:
+         cpp_file.write(source_template % dict(decimal_encoded_data=decimal_encoded_data))
+ 
+ if __name__ == '__main__':
+-- 
+2.28.0
+
+
+From 636d99fde6ba86fb3d4ae959e5ea9433e94f2390 Mon Sep 17 00:00:00 2001
+From: MikaelUrankar <mikael.urankar@gmail.com>
+Date: Sat, 3 Oct 2020 20:02:29 +0200
+Subject: [PATCH 23/24] backport site_scons/site_tools/jstoh.py
+
+---
+ site_scons/site_tools/jstoh.py | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/site_scons/site_tools/jstoh.py b/site_scons/site_tools/jstoh.py
+index dc90b324..d8998179 100644
+--- site_scons/site_tools/jstoh.py
++++ site_scons/site_tools/jstoh.py
+@@ -39,8 +39,8 @@ def jsToHeader(target, source):
+ 
+     text = '\n'.join(h)
+ 
+-    print "writing: %s" % outFile
+-    with open(outFile, 'wb') as out:
++    print ("writing: %s" % outFile)
++    with open(outFile, 'w') as out:
+         try:
+             out.write(text)
+         finally:
+@@ -49,7 +49,7 @@ def jsToHeader(target, source):
+ 
+ if __name__ == "__main__":
+     if len(sys.argv) < 3:
+-        print "Must specify [target] [source] "
++        print("Must specify [target] [source] ")
+         sys.exit(1)
+ 
+     jsToHeader(sys.argv[1], sys.argv[2:])
+-- 
+2.28.0
+
+
+From 7edbc7b873c0dc04fb96b125a8749fa29f7b8baf Mon Sep 17 00:00:00 2001
+From: MikaelUrankar <mikael.urankar@gmail.com>
+Date: Sat, 3 Oct 2020 20:08:21 +0200
+Subject: [PATCH 24/24] backport src/mongo/db/fts/generate_stop_words.py
+
+---
+ src/mongo/db/fts/generate_stop_words.py | 9 +++++----
+ 1 file changed, 5 insertions(+), 4 deletions(-)
+
+diff --git a/src/mongo/db/fts/generate_stop_words.py b/src/mongo/db/fts/generate_stop_words.py
+index e0dc801c..6893ba91 100644
+--- src/mongo/db/fts/generate_stop_words.py
++++ src/mongo/db/fts/generate_stop_words.py
+@@ -7,7 +7,7 @@ def generate( header, source, language_files ):
+     for x in language_files:
+         print( "\t%s" % x )
+ 
+-    out = open( header, "wb" )
++    out = open( header, "w" )
+     out.write( """
+ #pragma once
+ #include <set>
+@@ -24,8 +24,8 @@ namespace fts {
+ 
+ 
+ 
+-    out = open( source, "wb" )
+-    out.write( '#include "%s"' % header.rpartition( "/" )[2].rpartition( "\\" )[2] )
++    out = open( source, "w", encoding='utf-8')
++    out.write( '#include "{}"'.format(header.rpartition( "/" )[2].rpartition( "\\" )[2]) )
+     out.write( """
+ namespace mongo {
+ namespace fts {
+@@ -41,12 +41,13 @@ namespace fts {
+         out.write( '  {\n' )
+         out.write( '   const char* const words[] = {\n' )
+         for word in open( l_file, "rb" ):
+-            out.write( '       "%s",\n' % word.strip() )
++            out.write( '       "%s",\n' % word.decode('utf-8').strip() )
+         out.write( '   };\n' )
+         out.write( '   const size_t wordcnt = sizeof(words) / sizeof(words[0]);\n' )
+         out.write( '   std::set< std::string >& l = (*m)["%s"];\n' % l )
+         out.write( '   l.insert(&words[0], &words[wordcnt]);\n' )
+         out.write( '  }\n' )
++
+     out.write( """
+   }
+ } // namespace fts
+-- 
+2.28.0
+
