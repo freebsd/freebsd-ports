@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Gnome2-Canvas
-PORTVERSION=	1.003
+PORTVERSION=	1.004
 CATEGORIES=	x11-toolkits gnome perl5
 MASTER_SITES=	CPAN/Gnome2 \
 		SF/gtk2-perl/Gnome2_Canvas/${PORTVERSION}
