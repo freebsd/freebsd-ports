@@ -11,7 +11,7 @@ COMMENT=	Linter and static analyzer for lua files
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${LUA_MODSHAREDIR}/argparse.lua:devel/lua-argparse \
+RUN_DEPENDS=	${LUA_REFMODSHAREDIR}/argparse.lua:devel/lua-argparse@${LUA_FLAVOR} \
 		${LUA_REFMODLIBDIR}/lfs.so:devel/luafilesystem@${LUA_FLAVOR}
 
 USES=		lua
