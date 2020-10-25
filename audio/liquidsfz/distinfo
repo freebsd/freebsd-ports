@@ -1,3 +1,7 @@
-TIMESTAMP = 1587350862
-SHA256 (swesterfeld-liquidsfz-0.2.0_GH0.tar.gz) = 976fbf414fe4889e887f7c6b754ee7f918022bc2f20c896ce85d0bbafcfe2875
-SIZE (swesterfeld-liquidsfz-0.2.0_GH0.tar.gz) = 79367
+TIMESTAMP = 1603604859
+SHA256 (swesterfeld-liquidsfz-0.2.1_GH0.tar.gz) = 7504f3a9d0aa0adba94d46fd1e43064e1b82e05ed1f03c5c00bb105d3581ac70
+SIZE (swesterfeld-liquidsfz-0.2.1_GH0.tar.gz) = 167867
+SHA256 (18e59d6784f32e4d9c25c0f8ccbc9e7d9cd4c865.patch) = f31e4dea2629ecb437032b7260c211492f6c8b4f710ef1269b8922fa00f8dc99
+SIZE (18e59d6784f32e4d9c25c0f8ccbc9e7d9cd4c865.patch) = 1104
+SHA256 (217b71d4d8e931e8dd4954a3b1e1e58d8cb5f585.patch) = 2327a969a48c1ad46447081da37a6886c555b69e09aa02fee9b455cf261cb8e8
+SIZE (217b71d4d8e931e8dd4954a3b1e1e58d8cb5f585.patch) = 533
