@@ -3,7 +3,7 @@
 
 PORTNAME=	facedetect
 PORTVERSION=	1.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	graphics
 PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libopencv_objdetect.so:graphics/opencv
 USE_GITHUB=	yes
 GH_ACCOUNT=	infusion
 GH_PROJECT=	PHP-Facedetect
-GH_TAGNAME=	4b1dfe1
+GH_TAGNAME=	2a8974b
 
 LIBS+=		-lopencv_core
 
