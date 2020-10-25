@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	reportlab
-PORTVERSION=	3.5.21
-PORTREVISION=	1
+PORTVERSION=	3.5.53
 CATEGORIES=	print python
 MASTER_SITES=	CHEESESHOP \
 		https://www.reportlab.com/ftp/
@@ -26,7 +25,7 @@ CONFLICTS=	py*-reportlab[^3]-[^3].* \
 		py*-reportlab-[^3].*
 
 PFBFER_VERSION=	20180109
-PFBFER=	pfbfer-${PFBFER_VERSION}.zip
+PFBFER=		pfbfer-${PFBFER_VERSION}.zip
 
 MAKE_ENV=	PACKAGE_PATH="${REPORTLABDIR}"
 
@@ -35,7 +34,7 @@ DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 PORTDOCS=	reportlab-userguide.pdf
 
 OPTIONS_DEFINE=	CJK FREETYPE DOCS
-OPTIONS_DEFAULT=	CJK FREETYPE
+OPTIONS_DEFAULT=CJK FREETYPE
 # XXX disable this 20190809 while linimon investigates why having it
 # enabled consumes all memory and swap during poudriere builds.
 OPTIONS_EXCLUDE_powerpc64=       DOCS
@@ -64,5 +63,8 @@ post-install-DOCS-on:
 .for i in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/docs/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
+
+do-test:
+	@(cd ${WRKSRC}/tests && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} ./runAll.py)
 
 .include <bsd.port.mk>
