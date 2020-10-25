@@ -3,6 +3,7 @@
 
 PORTNAME=	nftables
 DISTVERSION=	2008-09-29
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	https://pari.math.u-bordeaux.fr/pub/pari/packages/
 PKGNAMEPREFIX=	pari-

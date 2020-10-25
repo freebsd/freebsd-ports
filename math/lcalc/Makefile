@@ -3,7 +3,7 @@
 
 PORTNAME=	lcalc
 PORTVERSION=	1.23
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.fu-berlin.de/unix/misc/sage/spkg/upstream/lcalc/
 

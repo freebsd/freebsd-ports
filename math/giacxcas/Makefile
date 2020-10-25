@@ -3,6 +3,7 @@
 
 PORTNAME=	giacxcas
 DISTVERSION=	1.6.0-7
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www-fourier.ujf-grenoble.fr/~parisse/debian/dists/stable/main/source/:giac \
 		http://cocoa.dima.unige.it/cocoalib/tgz/:cocoa \
