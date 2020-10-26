@@ -2,8 +2,7 @@
 
 PORTNAME=	miniserve
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.0
-PORTREVISION=	1
+DISTVERSION=	0.10.0
 CATEGORIES=	www
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -12,9 +11,6 @@ COMMENT=	Ad-hoc HTTP server for file sharing
 LICENSE=	APACHE20 BSD3CLAUSE CC0-1.0 ISCL MIT MPL20 UNLICENSE
 LICENSE_COMB=	multi
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE
-
-ONLY_FOR_ARCHS=	amd64 i386
-ONLY_FOR_ARCHS_REASON=	ring crate not ported to other architectures
 
 USES=		cargo ssl:build
 USE_GITHUB=	yes
@@ -29,9 +25,9 @@ CARGO_CRATES=	actix-codec-0.2.0 \
 		actix-http-2.0.0 \
 		actix-macros-0.1.2 \
 		actix-multipart-0.3.0 \
-		actix-router-0.2.4 \
+		actix-router-0.2.5 \
 		actix-rt-1.1.1 \
-		actix-server-1.0.3 \
+		actix-server-1.0.4 \
 		actix-service-1.0.6 \
 		actix-testing-1.0.1 \
 		actix-threadpool-0.3.3 \
@@ -47,6 +43,7 @@ CARGO_CRATES=	actix-codec-0.2.0 \
 		addr2line-0.13.0 \
 		adler-0.2.3 \
 		adler32-1.2.0 \
+		ahash-0.3.8 \
 		aho-corasick-0.7.13 \
 		alphanumeric-sort-1.4.0 \
 		ansi_term-0.11.0 \
@@ -63,6 +60,7 @@ CARGO_CRATES=	actix-codec-0.2.0 \
 		base-x-0.2.6 \
 		base64-0.11.0 \
 		base64-0.12.3 \
+		beef-0.4.4 \
 		bit-set-0.5.2 \
 		bit-vec-0.6.2 \
 		bitflags-1.2.1 \
@@ -78,27 +76,28 @@ CARGO_CRATES=	actix-codec-0.2.0 \
 		bytestring-0.1.5 \
 		bzip2-0.3.3 \
 		bzip2-sys-0.1.9+1.0.8 \
-		cc-1.0.59 \
+		cc-1.0.60 \
 		cfg-if-0.1.10 \
-		chrono-0.4.15 \
+		chrono-0.4.19 \
 		chrono-humanize-0.1.1 \
 		clap-2.33.3 \
 		cloudabi-0.0.3 \
 		cloudabi-0.1.0 \
+		codemap-0.1.3 \
 		const_fn-0.4.2 \
 		cookie-0.14.2 \
 		copyless-0.1.5 \
 		cpuid-bool-0.1.2 \
 		crc32fast-1.2.0 \
 		crossbeam-utils-0.7.2 \
-		ctor-0.1.15 \
+		ctor-0.1.16 \
 		derive_more-0.99.10 \
 		difference-2.0.0 \
 		digest-0.9.0 \
 		discard-1.0.4 \
 		doc-comment-0.3.3 \
 		dtoa-0.4.6 \
-		either-1.6.0 \
+		either-1.6.1 \
 		encoding_rs-0.8.24 \
 		enum-as-inner-0.3.3 \
 		failure-0.1.8 \
@@ -126,22 +125,25 @@ CARGO_CRATES=	actix-codec-0.2.0 \
 		gimli-0.22.0 \
 		globset-0.4.5 \
 		globwalk-0.7.3 \
+		grass-0.10.3 \
 		h2-0.2.6 \
+		hashbrown-0.8.2 \
 		hashbrown-0.9.0 \
 		heck-0.3.1 \
-		hermit-abi-0.1.15 \
+		hermit-abi-0.1.16 \
 		hex-0.4.2 \
 		hostname-0.3.1 \
 		html5ever-0.25.1 \
 		http-0.2.1 \
 		http-body-0.3.1 \
 		httparse-1.3.4 \
-		hyper-0.13.7 \
+		httpdate-0.3.2 \
+		hyper-0.13.8 \
 		hyper-rustls-0.21.0 \
 		idna-0.2.0 \
 		ignore-0.4.16 \
 		indexmap-1.6.0 \
-		instant-0.1.6 \
+		instant-0.1.7 \
 		iovec-0.1.4 \
 		ipconfig-0.2.2 \
 		ipnet-2.3.0 \
@@ -149,6 +151,7 @@ CARGO_CRATES=	actix-codec-0.2.0 \
 		js-sys-0.3.45 \
 		kernel32-sys-0.2.2 \
 		language-tags-0.2.2 \
+		lasso-0.3.1 \
 		lazy_static-1.4.0 \
 		libc-0.2.77 \
 		libflate-1.0.2 \
@@ -169,7 +172,7 @@ CARGO_CRATES=	actix-codec-0.2.0 \
 		mime-0.3.16 \
 		mime_guess-2.0.3 \
 		miniz_oxide-0.3.7 \
-		miniz_oxide-0.4.1 \
+		miniz_oxide-0.4.2 \
 		mio-0.6.22 \
 		mio-uds-0.6.8 \
 		miow-0.2.1 \
@@ -178,7 +181,9 @@ CARGO_CRATES=	actix-codec-0.2.0 \
 		new_debug_unreachable-1.0.4 \
 		nom-4.2.3 \
 		normalize-line-endings-0.3.0 \
+		num-bigint-0.3.0 \
 		num-integer-0.1.43 \
+		num-rational-0.3.0 \
 		num-traits-0.2.12 \
 		num_cpus-1.13.0 \
 		object-0.20.0 \
@@ -187,10 +192,12 @@ CARGO_CRATES=	actix-codec-0.2.0 \
 		output_vt100-0.1.2 \
 		parking_lot-0.11.0 \
 		parking_lot_core-0.8.0 \
+		peekmore-0.5.4 \
 		percent-encoding-2.1.0 \
 		phf-0.8.0 \
 		phf_codegen-0.8.0 \
 		phf_generator-0.8.0 \
+		phf_macros-0.8.0 \
 		phf_shared-0.8.0 \
 		pin-project-0.4.23 \
 		pin-project-internal-0.4.23 \
@@ -269,11 +276,11 @@ CARGO_CRATES=	actix-codec-0.2.0 \
 		string_cache-0.8.0 \
 		string_cache_codegen-0.5.1 \
 		strsim-0.8.0 \
-		structopt-0.3.17 \
-		structopt-derive-0.4.10 \
+		structopt-0.3.18 \
+		structopt-derive-0.4.11 \
 		strum-0.19.2 \
 		strum_macros-0.19.2 \
-		syn-1.0.40 \
+		syn-1.0.41 \
 		synstructure-0.12.4 \
 		tar-0.4.30 \
 		tempfile-3.1.0 \
@@ -285,7 +292,7 @@ CARGO_CRATES=	actix-codec-0.2.0 \
 		thread_local-1.0.1 \
 		threadpool-1.8.1 \
 		time-0.1.44 \
-		time-0.2.18 \
+		time-0.2.21 \
 		time-macros-0.1.0 \
 		time-macros-impl-0.1.1 \
 		tinyvec-0.3.4 \
@@ -314,9 +321,9 @@ CARGO_CRATES=	actix-codec-0.2.0 \
 		untrusted-0.7.1 \
 		url-2.1.1 \
 		utf-8-0.7.5 \
-		v_escape-0.12.1 \
-		v_escape_derive-0.8.1 \
-		v_htmlescape-0.10.0 \
+		v_escape-0.13.0 \
+		v_escape_derive-0.8.2 \
+		v_htmlescape-0.10.2 \
 		vec_map-0.8.2 \
 		version_check-0.1.5 \
 		version_check-0.9.2 \
@@ -348,6 +355,7 @@ CARGO_CRATES=	actix-codec-0.2.0 \
 		xml5ever-0.16.1 \
 		yansi-0.5.0 \
 		zip-0.5.8
+
 # maud_macros uses feature(proc_macro)
 MAKE_ENV=	RUSTC_BOOTSTRAP=1
 
