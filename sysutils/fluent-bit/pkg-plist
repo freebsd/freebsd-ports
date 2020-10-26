@@ -20,6 +20,7 @@ include/fluent-bit/flb_env.h
 include/fluent-bit/flb_error.h
 include/fluent-bit/flb_filter.h
 include/fluent-bit/flb_filter_plugin.h
+include/fluent-bit/flb_fstore.h
 include/fluent-bit/flb_gzip.h
 include/fluent-bit/flb_hash.h
 include/fluent-bit/flb_http_client.h
@@ -29,6 +30,7 @@ include/fluent-bit/flb_info.h
 include/fluent-bit/flb_input.h
 include/fluent-bit/flb_input_chunk.h
 include/fluent-bit/flb_input_plugin.h
+include/fluent-bit/flb_intermediate_metric.h
 include/fluent-bit/flb_io.h
 include/fluent-bit/flb_io_tls.h
 include/fluent-bit/flb_io_tls_rw.h
@@ -55,9 +57,11 @@ include/fluent-bit/flb_pipe.h
 include/fluent-bit/flb_plugin.h
 include/fluent-bit/flb_plugin_proxy.h
 include/fluent-bit/flb_ra_key.h
+include/fluent-bit/flb_random.h
 include/fluent-bit/flb_record_accessor.h
 include/fluent-bit/flb_regex.h
 include/fluent-bit/flb_router.h
+include/fluent-bit/flb_s3_local_buffer.h
 include/fluent-bit/flb_scheduler.h
 include/fluent-bit/flb_sds.h
 include/fluent-bit/flb_sha512.h
