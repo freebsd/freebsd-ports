@@ -1,3 +1,0 @@
-%%DATADIR%%/rundeck.war
-@dir(%%RUNDECK_USER%%,%%RUNDECK_GROUP%%) rundeck/server/lib
-@dir(%%RUNDECK_USER%%,%%RUNDECK_GROUP%%) rundeck/server
