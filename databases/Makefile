@@ -50,6 +50,7 @@
     SUBDIR += courier-authlib-usergdbm
     SUBDIR += cppdb
     SUBDIR += credis
+    SUBDIR += cutelyst-asql
     SUBDIR += dalmp
     SUBDIR += datamodeler
     SUBDIR += db

@@ -1,0 +1,12 @@
+Qt Async Sql library
+
+* Thread local Connection pool
+* Scoped transactions objects
+* Navigate on your data with iterators
+* Prepared queries
+* Cancellable queries
+* Notifications
+
+Supports database migrations and queries both as JSON and QVariantHash.
+
+WWW: https://github.com/cutelyst/asql
