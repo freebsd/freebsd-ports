@@ -1,10 +1,11 @@
---- CMakeLists.txt.orig	2020-10-21 21:45:38 UTC
+--- CMakeLists.txt.orig	2020-10-25 16:40:08 UTC
 +++ CMakeLists.txt
-@@ -22,7 +22,6 @@ find_path(GD_INCLUDE_DIRS gd.h)
- find_library(GD_LIBRARIES NAMES gd REQUIRED)
- include_directories(${GD_INCLUDE_DIRS})
+@@ -33,7 +33,7 @@ if(NOT HAVE_REALLOCARRAY)
+   set (SRC ${SRC} compat/reallocarray.c)
+ endif()
  
--set(CMAKE_BUILD_TYPE Release)
- set(SRC src/clean.c src/drawchar.c src/fonts.c src/error.c src/loadfile.c src/init.c src/output.c src/savefile.c)
- set(LOADERS src/loaders/ansi.c src/loaders/artworx.c src/loaders/binary.c src/loaders/icedraw.c src/loaders/pcboard.c src/loaders/tundra.c src/loaders/xbin.c)
+-set(CMAKE_C_FLAGS_RELEASE "-D_FORTIFY_SOURCE=2")
++set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -D_FORTIFY_SOURCE=2")
+ add_definitions(-D_GNU_SOURCE -Wall -Wextra -std=c99 -pedantic)
+ add_library(ansilove SHARED ${SRC} ${LOADERS})
  
