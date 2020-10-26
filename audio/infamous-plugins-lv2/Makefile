@@ -19,7 +19,7 @@ LIB_DEPENDS=	libfftw3f.so:math/fftw3-float \
 		libntk.so:x11-toolkits/ntk \
 		libzita-resampler.so:audio/zita-resampler
 
-USES=		cmake compiler gnome localbase pkgconfig
+USES=		cmake compiler:c11 gnome localbase pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	ssj71
 GH_PROJECT=	infamousPlugins
