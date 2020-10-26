@@ -13,6 +13,9 @@ COMMENT=	Unofficial Python API for Google Play Music
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Google Play Music is going away: https://github.com/simon-weber/gmusicapi/issues/673
+EXPIRATION_DATE=2020-12-30
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}appdirs>=1.3.0:devel/py-appdirs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=2.2:devel/py-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}decorator>=3.4.0:devel/py-decorator@${PY_FLAVOR} \
