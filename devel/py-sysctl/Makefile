@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	sysctl
-PORTVERSION=	0.3.20201005
+PORTVERSION=	0.3.1.20201026
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	wg@FreeBSD.org
+MAINTAINER=	freqlabs@FreeBSD.org
 COMMENT=	Wrapper for the sysctl system functions
 
 LICENSE=	BSD2CLAUSE
@@ -18,6 +18,6 @@ USE_PYTHON=	distutils autoplist
 USE_GITHUB=	yes
 GH_ACCOUNT=	william-gr
 GH_PROJECT=	py-sysctl
-GH_TAGNAME=	eeb46ce2
+GH_TAGNAME=	0aa82623
 
 .include <bsd.port.mk>
