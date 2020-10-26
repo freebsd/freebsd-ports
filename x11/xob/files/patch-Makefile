@@ -15,7 +15,7 @@
 +	mkdir -p "$(DESTDIR)$(man1dir)"
 +	$(BSD_INSTALL_DATA) "$(MANPAGE)" "$(DESTDIR)$(man1dir)"
 +	mkdir -p "$(DESTDIR)$(sysconfdir)/$(PROGRAM)"
-+	$(BSD_INSTALL_DATA) "$(SYSCONF)" "$(DESTDIR)$(sysconfdir)/$(PROGRAM)"
++	$(BSD_INSTALL_DATA) "$(SYSCONF)" "$(DESTDIR)$(sysconfdir)/$(PROGRAM)/$(SYSCONF).sample"
  
  uninstall:
  	rm -f "$(DESTDIR)$(bindir)/$(PROGRAM)"
