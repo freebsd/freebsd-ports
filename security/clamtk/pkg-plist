@@ -5,6 +5,7 @@ man/man1/clamtk.1.gz
 %%SITE_PERL%%/ClamTk/Assistant.pm
 %%SITE_PERL%%/ClamTk/GUI.pm
 %%SITE_PERL%%/ClamTk/History.pm
+%%SITE_PERL%%/ClamTk/Icons.pm
 %%SITE_PERL%%/ClamTk/Network.pm
 %%SITE_PERL%%/ClamTk/Prefs.pm
 %%SITE_PERL%%/ClamTk/Quarantine.pm

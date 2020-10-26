@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	clamtk
-PORTVERSION=	5.25
+PORTVERSION=	6.06
 DISTVERSIONPREFIX=v
 CATEGORIES=	security
 
@@ -12,18 +12,13 @@ COMMENT=	GTK front-end for Clam Antivirus
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	p5-Config-Tiny>=2.12:devel/p5-Config-Tiny \
-		p5-Date-Calc>=5.5.1:devel/p5-Date-Calc \
-		p5-File-Find-Rule>=0.30:devel/p5-File-Find-Rule \
-		p5-Locale-gettext>=1.05:devel/p5-Locale-gettext \
-		p5-Net-DNS>=0.65:dns/p5-Net-DNS \
+RUN_DEPENDS=	p5-Locale-gettext>=1.05:devel/p5-Locale-gettext \
 		p5-Text-CSV>=0:textproc/p5-Text-CSV \
 		p5-LWP-Protocol-https>=0:www/p5-LWP-Protocol-https \
 		p5-JSON>=0:converters/p5-JSON \
 		clamscan:security/clamav \
 		p5-libwww>=5.822:www/p5-libwww \
-		zenity:x11/zenity \
-		p5-Gtk2>=1.144:x11-toolkits/p5-Gtk2 \
+		p5-Gtk3>=0:x11-toolkits/p5-Gtk3 \
 		gnome-icon-theme>=0:misc/gnome-icon-theme \
 		icons-tango>0:x11-themes/icons-tango
 
@@ -32,7 +27,7 @@ USES=		gettext-runtime:run perl5 shebangfix
 USE_PERL5=	run
 USE_GITHUB=	yes
 GH_ACCOUNT=	dave-theunsub
-GH_TAGNAME=	4c1839a
+GH_TAGNAME=	1f026f0
 SHEBANG_FILES=	clamtk
 
 LINGUAS=	`${LS} ${WRKSRC}/po/*.mo | ${XARGS} ${BASENAME} -s .mo`
