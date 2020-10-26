@@ -18,7 +18,7 @@ DEPRECATED=			yes
 EXPIRATION_DATE=		2020-11-08
 
 IGNORE_NONTHREAD_PYTHON=	needs port lang/python${PYTHON_SUFFIX} to be build with THREADS support
-CONFLICTS_INSTALL?=		samba4-4.0.* samba4[1-9]-4.* p5-Parse-Pidl-4.*
+CONFLICTS_INSTALL?=		samba4-4.0.* samba4[1-9]-4.* samba41[1-9]-4.1* p5-Parse-Pidl-4.*
 
 USES=				cpe
 
