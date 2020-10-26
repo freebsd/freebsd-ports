@@ -3,7 +3,7 @@
 
 PORTNAME=	clisp
 PORTVERSION=	2.49.93+
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang lisp
 
 MAINTAINER=	kiri@TrueFC.org
@@ -15,8 +15,8 @@ LICENSE_FILE=	${WRKSRC}/GNU-GPL
 BROKEN_powerpc=	Does not compile
 BROKEN_sparc64=	Does not compile
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libavcall.a:devel/libffcall
-LIB_DEPENDS=	libreadline.so:devel/readline \
+LIB_DEPENDS=	libffcall.so:devel/libffcall \
+		libreadline.so:devel/readline \
 		libsigsegv.so:devel/libsigsegv
 
 USES=		compiler gettext ghostscript gnome iconv localbase:ldflags
