@@ -8,7 +8,7 @@ PKGNAMESUFFIX=	1
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	Tool that manages gem dependencies for ruby applications
+COMMENT=	Tool that manages gem dependencies for Ruby applications
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
