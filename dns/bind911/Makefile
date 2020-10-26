@@ -3,7 +3,7 @@
 
 PORTNAME=	bind
 PORTVERSION=	${ISCVERSION:S/-P/P/:S/b/.b/:S/a/.a/:S/rc/.rc/}
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	dns net
 MASTER_SITES=	ISC/bind9/${ISCVERSION}
 PKGNAMESUFFIX=	911
@@ -24,7 +24,7 @@ RUN_DEPENDS=	bind-tools>0:dns/bind-tools
 USES=	cpe libedit pkgconfig
 
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.11.23
+ISCVERSION=	9.11.24
 
 CPE_VENDOR=	isc
 CPE_VERSION=	${ISCVERSION:C/-.*//}
