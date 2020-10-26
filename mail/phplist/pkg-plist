@@ -9019,6 +9019,7 @@ bin/phplist
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Form/Tests/Extension/Validator/Util/ServerParamsTest.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Form/Tests/Extension/Validator/ValidatorExtensionTest.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Form/Tests/Extension/Validator/ValidatorTypeGuesserTest.php
+%%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Form/Tests/Extension/Validator/ViolationMapper/Fixtures/Issue.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Form/Tests/Extension/Validator/ViolationMapper/ViolationMapperTest.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Form/Tests/Extension/Validator/ViolationMapper/ViolationPathTest.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Form/Tests/Fixtures/AbstractAuthor.php
@@ -12059,6 +12060,7 @@ bin/phplist
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.az.xlf
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.be.xlf
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.bg.xlf
+%%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.bs.xlf
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.ca.xlf
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.cs.xlf
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.cy.xlf
