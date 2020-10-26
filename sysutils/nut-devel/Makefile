@@ -15,8 +15,8 @@ COMMENT=	Network UPS Tools
 
 USE_GITHUB=	yes
 GH_ACCOUNT=     networkupstools 
-GH_TAGNAME=     de1b32ce
-NUT_COMMIT_DATE=	2020.10.23
+GH_TAGNAME=     82ba1704
+NUT_COMMIT_DATE=	2020.10.25
 
 BROKEN_powerpc64=	Poudriere builds fail.
 BROKEN_powerpc=		Poudriere builds fail.
