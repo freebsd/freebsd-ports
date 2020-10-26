@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	pipemeter
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.4
 CATEGORIES=	sysutils
-MASTER_SITES=	http://launchpadlibrarian.net/57215122/ \
-		http://spamaps.org/files/pipemeter/
+MASTER_SITES=	http://launchpadlibrarian.net/503464991/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Tool for displaying pipe status information
