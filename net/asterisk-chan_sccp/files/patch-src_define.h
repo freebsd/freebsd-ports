@@ -1,17 +1,17 @@
---- src/define.h.orig	2020-02-04 11:13:32 UTC
+--- src/define.h.orig	2020-10-24 14:42:40 UTC
 +++ src/define.h
-@@ -103,10 +103,10 @@ SCCP_LINE unsigned long long __bswap_64(unsigned long 
- #define htolel(x) (x)
- #define htoles(x) (x)
- #else
--#define letohs(x) __bswap_16(x)
--#define htoles(x) __bswap_16(x)
--#define letohl(x) __bswap_32(x)
--#define htolel(x) __bswap_32(x)
-+#define letohs(x) bswap16(x)
-+#define htoles(x) bswap16(x)
-+#define letohl(x) bswap32(x)
-+#define htolel(x) bswap32(x)
+@@ -98,10 +98,10 @@ SCCP_LINE unsigned long long ___bswap_64(unsigned long
+ #    define htolel(x) (uint16_t)(x)
+ #    define htoles(x) (uint16_t)(x)
+ #  else
+-#    define letohs(x) ___bswap_16(x)
+-#    define htoles(x) ___bswap_16(x)
+-#    define letohl(x) ___bswap_32(x)
+-#    define htolel(x) ___bswap_32(x)
++#    define letohs(x) bswap16(x)
++#    define htoles(x) bswap16(x)
++#    define letohl(x) bswap32(x)
++#    define htolel(x) bswap32(x)
+ #  endif
  #endif
  
- #define SCCP_TECHTYPE_STR "SCCP"

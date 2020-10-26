@@ -4,8 +4,8 @@
 PORTNAME=	chan_sccp
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.3.2
-DISTVERSIONSUFFIX=	-epsilon
-PORTREVISION=	3
+DISTVERSIONSUFFIX=	-zeta
+PORTREVISION=	4
 CATEGORIES=	net
 PKGNAMEPREFIX=	asterisk-
 
@@ -15,10 +15,10 @@ COMMENT=	Replacement for the SCCP channel driver in Asterisk
 LICENSE=	GPLv1
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-FLAVORS=	asterisk16 asterisk13
+FLAVORS=	asterisk16 asterisk18 asterisk13
 FLAVOR?=	${FLAVORS:[1]}
 
-USES=		autoreconf compiler:c11 gettext-tools iconv libtool localbase
+USES=           autoreconf compiler:c11 gettext-tools iconv libtool localbase
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	chan-sccp
@@ -40,14 +40,19 @@ PLIST_FILES=	etc/asterisk/sccp.conf.annotated \
 		share/asterisk/documentation/thirdparty/chan_sccp-en_US.xml
 
 asterisk13_PKGNAMEPREFIX=	asterisk13-
-asterisk13_CONFLICTS_INSTALL=	asterisk16-chan_sccp
+asterisk13_CONFLICTS_INSTALL=	asterisk16-chan_sccp asterisk18-chan_sccp
 asterisk13_BUILD_DEPENDS=	asterisk:net/asterisk13
 asterisk13_RUN_DEPENDS=		asterisk:net/asterisk13
 
 asterisk16_PKGNAMEPREFIX=	asterisk16-
-asterisk16_CONFLICTS_INSTALL=	asterisk13-chan_sccp
+asterisk16_CONFLICTS_INSTALL=	asterisk13-chan_sccp asterisk18-chan_sccp
 asterisk16_BUILD_DEPENDS=	asterisk:net/asterisk16
 asterisk16_RUN_DEPENDS=		asterisk:net/asterisk16
+
+asterisk18_PKGNAMEPREFIX=	asterisk18-
+asterisk18_CONFLICTS_INSTALL=	asterisk13-chan_sccp asterisk16-chan_sccp
+asterisk18_BUILD_DEPENDS=	asterisk:net/asterisk18
+asterisk18_RUN_DEPENDS=		asterisk:net/asterisk18
 
 OPTIONS_DEFINE=			CONFERENCE VIDEO
 OPTIONS_DEFAULT=		CONFERENCE VIDEO
