@@ -1,19 +1,6 @@
---- include/qemu/atomic.h.orig	2020-06-25 18:12:17 UTC
+--- include/qemu/atomic.h.orig	2020-04-28 16:49:24 UTC
 +++ include/qemu/atomic.h
-@@ -208,10 +208,12 @@
- /* Provide shorter names for GCC atomic builtins, return old value */
- #define atomic_fetch_inc(ptr)  __atomic_fetch_add(ptr, 1, __ATOMIC_SEQ_CST)
- #define atomic_fetch_dec(ptr)  __atomic_fetch_sub(ptr, 1, __ATOMIC_SEQ_CST)
-+#ifndef __cplusplus
- #define atomic_fetch_add(ptr, n) __atomic_fetch_add(ptr, n, __ATOMIC_SEQ_CST)
- #define atomic_fetch_sub(ptr, n) __atomic_fetch_sub(ptr, n, __ATOMIC_SEQ_CST)
- #define atomic_fetch_and(ptr, n) __atomic_fetch_and(ptr, n, __ATOMIC_SEQ_CST)
- #define atomic_fetch_or(ptr, n)  __atomic_fetch_or(ptr, n, __ATOMIC_SEQ_CST)
-+#endif
- #define atomic_fetch_xor(ptr, n) __atomic_fetch_xor(ptr, n, __ATOMIC_SEQ_CST)
- 
- #define atomic_inc_fetch(ptr)    __atomic_add_fetch(ptr, 1, __ATOMIC_SEQ_CST)
-@@ -225,10 +227,12 @@
+@@ -228,10 +228,12 @@
  /* And even shorter names that return void.  */
  #define atomic_inc(ptr)    ((void) __atomic_fetch_add(ptr, 1, __ATOMIC_SEQ_CST))
  #define atomic_dec(ptr)    ((void) __atomic_fetch_sub(ptr, 1, __ATOMIC_SEQ_CST))
@@ -26,7 +13,7 @@
  #define atomic_xor(ptr, n) ((void) __atomic_fetch_xor(ptr, n, __ATOMIC_SEQ_CST))
  
  #else /* __ATOMIC_RELAXED */
-@@ -400,10 +404,12 @@
+@@ -406,10 +408,12 @@
  
  #define atomic_inc_fetch(ptr)  __sync_add_and_fetch(ptr, 1)
  #define atomic_dec_fetch(ptr)  __sync_add_and_fetch(ptr, -1)
@@ -39,7 +26,7 @@
  #define atomic_xor_fetch(ptr, n) __sync_xor_and_fetch(ptr, n)
  
  #define atomic_cmpxchg(ptr, old, new) __sync_val_compare_and_swap(ptr, old, new)
-@@ -412,10 +418,12 @@
+@@ -418,10 +422,12 @@
  /* And even shorter names that return void.  */
  #define atomic_inc(ptr)        ((void) __sync_fetch_and_add(ptr, 1))
  #define atomic_dec(ptr)        ((void) __sync_fetch_and_add(ptr, -1))

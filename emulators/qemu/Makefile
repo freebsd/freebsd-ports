@@ -2,10 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	qemu
-PORTVERSION=	4.2.1
+PORTVERSION=	5.0.1
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.qemu.org/
 DIST_SUBDIR=	qemu/${PORTVERSION}
+
+PATCH_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/commit/
 
 MAINTAINER?=	bofh@FreeBSD.org
 COMMENT?=	QEMU CPU Emulator
@@ -17,7 +19,11 @@ LIB_DEPENDS?=	libnettle.so:security/nettle \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libepoxy.so:graphics/libepoxy \
-		libpcre2-8.so:devel/pcre2
+		libpcre2-8.so:devel/pcre2 \
+		libzstd.so:archivers/zstd
+
+PATCHFILES+=	55765822804f.patch:-p1
+PATCHFILES+=	aa4d30f6618d.patch:-p1
 
 .if !defined(PKGNAMESUFFIX) || (${PKGNAMESUFFIX} != "-utils" && ${PKGNAMESUFFIX} != "-guest-agent")
 ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64
@@ -29,14 +35,14 @@ USE_GNOME=	cairo glib20 libxml2
 
 USE_PERL5=	build
 
-PORTSCOUT=	limit:^4\.2\.
+PORTSCOUT=	limit:^5\.0\.
 
 HAS_CONFIGURE=	yes
 MAKE_ENV+=	BSD_MAKE="${MAKE}" V=1
 
 OPTIONS_DEFINE=	SAMBA X11 GTK3 OPENGL GNUTLS SASL JPEG PNG CURL \
 		VDE CDROM_DMA PCAP USBREDIR X86_TARGETS \
-		STATIC_LINK DOCS ISCSI CAPSTONE
+		STATIC_LINK DOCS ISCSI CAPSTONE DEBUG
 OPTIONS_SINGLE=	NCURSES
 OPTIONS_SINGLE_NCURSES=	NCURSES_DEFAULT NCURSES_BASE NCURSES_PORT
 CDROM_DMA_DESC=		IDE CDROM DMA
@@ -62,7 +68,9 @@ CAPSTONE_CONFIGURE_OFF=	--disable-capstone
 CAPSTONE_LIB_DEPENDS=	libcapstone.so:devel/capstone4
 CURL_CONFIGURE_OFF=	--disable-curl
 CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
-DOCS_BUILD_DEPENDS=	texi2html:textproc/texi2html
+DEBUG_CONFIGURE_ON=	--enable-debug
+DOCS_BUILD_DEPENDS=	texi2html:textproc/texi2html \
+			sphinx-build:textproc/py-sphinx
 DOCS_MAKE_ARGS_OFF=	NOPORTDOCS=1
 DOCS_USES=		makeinfo
 GNUTLS_CONFIGURE_OFF=	--disable-gnutls
@@ -107,16 +115,18 @@ X86_TARGETS_USES_OFF=	xorg
 INSTALLS_ICONS=		yes
 .endif
 
-PORTDOCS?=	docs interop/.buildinfo interop/* qemu-doc.html qemu-doc.txt qemu-ga-ref.html qemu-ga-ref.txt \
-	       	qemu-qmp-ref.html qemu-qmp-ref.txt specs/.buildinfo specs/*
+PORTDOCS?=	docs index.html interop/.buildinfo interop/* qemu-ga-ref.html qemu-ga-ref.txt \
+	       	qemu-qmp-ref.html qemu-qmp-ref.txt specs/.buildinfo specs/* system/.buildinfo \
+		system/* tools/.buildinfo tools/* user/.buildinfo user/*
 
 WITHOUT_CPU_CFLAGS=yes	#to avoid problems with register allocation
 CFLAGS:=	${CFLAGS:C/-fno-tree-vrp//}
-CONFIGURE_ARGS?=	--localstatedir=/var --extra-ldflags=-L\"/usr/lib\" \
-		--extra-ldflags=-L\"${LOCALBASE}/lib\" --disable-libssh --enable-debug \
-		--prefix=${PREFIX} --cc=${CC} --enable-netmap --enable-docs --disable-kvm \
+CFLAGS_amd64+=	-fPIC
+CONFIGURE_ARGS?=--localstatedir=/var --extra-ldflags=-L\"/usr/lib\" \
+		--extra-ldflags=-L\"${LOCALBASE}/lib\" --disable-libssh \
+		--prefix=${PREFIX} --cc=${CC} --enable-netmap --disable-kvm \
 		--disable-linux-user --disable-linux-aio --disable-xen \
-		--enable-debug-info --python=${PYTHON_CMD} \
+		--python=${PYTHON_CMD} \
 		--extra-cflags=-I${WRKSRC}\ -I${LOCALBASE}/include\ -DPREFIX=\\\"\"${PREFIX}\\\"\"
 
 .include <bsd.port.options.mk>

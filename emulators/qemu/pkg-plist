@@ -6,6 +6,7 @@ bin/qemu-img
 bin/qemu-io
 %%GTK3%%bin/qemu-keymap
 bin/qemu-nbd
+bin/qemu-storage-daemon
 %%NO_X86_TARGETS%%bin/qemu-sparc
 %%NO_X86_TARGETS%%bin/qemu-sparc64
 %%NO_X86_TARGETS%%bin/qemu-system-aarch64
@@ -29,6 +30,7 @@ bin/qemu-system-i386
 %%NO_X86_TARGETS%%bin/qemu-system-ppc64
 %%NO_X86_TARGETS%%bin/qemu-system-riscv32
 %%NO_X86_TARGETS%%bin/qemu-system-riscv64
+bin/qemu-system-rx
 %%NO_X86_TARGETS%%bin/qemu-system-s390x
 %%NO_X86_TARGETS%%bin/qemu-system-sh4
 %%NO_X86_TARGETS%%bin/qemu-system-sh4eb
@@ -86,12 +88,12 @@ man/man8/qemu-nbd.8.gz
 %%DATADIR%%/openbios-ppc
 %%DATADIR%%/openbios-sparc32
 %%DATADIR%%/openbios-sparc64
+%%DATADIR%%/opensbi-riscv32-sifive_u-fw_jump.bin
 %%DATADIR%%/opensbi-riscv32-virt-fw_jump.bin
 %%DATADIR%%/opensbi-riscv64-sifive_u-fw_jump.bin
 %%DATADIR%%/opensbi-riscv64-virt-fw_jump.bin
 %%DATADIR%%/palcode-clipper
 %%DATADIR%%/petalogix-ml605.dtb
-%%DATADIR%%/ppc_rom.bin
 %%DATADIR%%/pxe-e1000.rom
 %%DATADIR%%/pxe-eepro100.rom
 %%DATADIR%%/pxe-ne2k_pci.rom
