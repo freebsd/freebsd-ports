@@ -33,7 +33,6 @@ include/dns/clientinfo.h
 include/dns/compress.h
 include/dns/db.h
 include/dns/dbiterator.h
-include/dns/dbtable.h
 include/dns/diff.h
 include/dns/dispatch.h
 include/dns/dlz.h
@@ -77,7 +76,6 @@ include/dns/nta.h
 include/dns/opcode.h
 include/dns/order.h
 include/dns/peer.h
-include/dns/portlist.h
 include/dns/private.h
 include/dns/rbt.h
 include/dns/rcode.h
@@ -135,7 +133,6 @@ include/isc/base32.h
 include/isc/base64.h
 include/isc/bind9.h
 include/isc/buffer.h
-include/isc/bufferlist.h
 include/isc/cmocka.h
 include/isc/commandline.h
 include/isc/condition.h
@@ -269,23 +266,23 @@ lib/libbind9.so
 lib/libbind9.so.1701
 lib/libbind9.so.1701.0.2
 lib/libdns.so
-lib/libdns.so.1705
-lib/libdns.so.1705.0.0
+lib/libdns.so.1706
+lib/libdns.so.1706.0.0
 lib/libirs.so
 lib/libirs.so.1701
 lib/libirs.so.1701.0.0
 lib/libisc.so
-lib/libisc.so.1704
-lib/libisc.so.1704.0.1
+lib/libisc.so.1705
+lib/libisc.so.1705.0.0
 lib/libisccc.so
 lib/libisccc.so.1702
-lib/libisccc.so.1702.0.0
+lib/libisccc.so.1702.0.1
 lib/libisccfg.so
 lib/libisccfg.so.1702
-lib/libisccfg.so.1702.0.0
+lib/libisccfg.so.1702.0.1
 lib/libns.so
-lib/libns.so.1703
-lib/libns.so.1703.0.1
+lib/libns.so.1704
+lib/libns.so.1704.0.0
 @comment lib/named/filter-aaaa.so
 @comment man/man1/arpaname.1.gz
 @comment man/man1/delv.1.gz
