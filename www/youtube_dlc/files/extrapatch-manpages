@@ -1,0 +1,34 @@
+--- Makefile.orig	2020-10-25 01:01:48 UTC
++++ Makefile
+@@ -1,4 +1,4 @@
+-all: youtube-dlc youtube-dlc.bash-completion youtube-dlc.zsh youtube-dlc.fish supportedsites
++all: youtube-dlc youtube-dlc.1 youtube-dlc.bash-completion youtube-dlc.zsh youtube-dlc.fish supportedsites
+ 
+ clean:
+ 	rm -rf youtube-dlc.1.temp.md youtube-dlc.1 youtube-dlc.bash-completion README.txt MANIFEST build/ dist/ .coverage cover/ youtube-dlc.tar.gz youtube-dlc.zsh youtube-dlc.fish youtube_dlc/extractor/lazy_extractors.py *.dump *.part* *.ytdl *.info.json *.mp4 *.m4a *.flv *.mp3 *.avi *.mkv *.webm *.3gp *.wav *.ape *.swf *.jpg *.png CONTRIBUTING.md.tmp youtube-dlc youtube-dlc.exe
+@@ -20,8 +20,8 @@ MARKDOWN = $(shell if [ `pandoc -v | head -n1 | cut -d
+ install: youtube-dlc youtube-dlc.bash-completion youtube-dlc.zsh youtube-dlc.fish
+ 	install -d $(DESTDIR)$(BINDIR)
+ 	install -m 755 youtube-dlc $(DESTDIR)$(BINDIR)
+-#	install -d $(DESTDIR)$(MANDIR)/man1
+-#	install -m 644 youtube-dlc.1 $(DESTDIR)$(MANDIR)/man1
++	install -d $(DESTDIR)$(MANDIR)/man1
++	install -m 644 youtube-dlc.1 $(DESTDIR)$(MANDIR)/man1
+ 	install -d $(DESTDIR)$(SYSCONFDIR)/bash_completion.d
+ 	install -m 644 youtube-dlc.bash-completion $(DESTDIR)$(SYSCONFDIR)/bash_completion.d/youtube-dlc.sh
+ 	install -d $(DESTDIR)$(SHAREDIR)/zsh/site-functions
+@@ -91,10 +91,10 @@ supportedsites:
+ #README.txt: README.md
+ #	pandoc -f $(MARKDOWN) -t plain README.md -o README.txt
+ 
+-#youtube-dlc.1: README.md
+-#	$(PYTHON) devscripts/prepare_manpage.py youtube-dlc.1.temp.md
+-#	pandoc -s -f $(MARKDOWN) -t man youtube-dlc.1.temp.md -o youtube-dlc.1
+-#	rm -f youtube-dlc.1.temp.md
++youtube-dlc.1: README.md
++	$(PYTHON) devscripts/prepare_manpage.py youtube-dlc.1.temp.md
++	pandoc -s -f $(MARKDOWN) -t man youtube-dlc.1.temp.md -o youtube-dlc.1
++	rm -f youtube-dlc.1.temp.md
+ 
+ youtube-dlc.bash-completion: youtube_dlc/*.py youtube_dlc/*/*.py devscripts/bash-completion.in
+ 	$(PYTHON) devscripts/bash-completion.py

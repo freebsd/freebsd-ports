@@ -1,0 +1,6 @@
+%%SYMLINK%%bin/youtube-dl
+bin/youtube-dlc
+etc/bash_completion.d/youtube-dlc.sh
+%%MANPAGES%%man/man1/youtube-dlc.1.gz
+share/fish/vendor_completions.d/youtube-dlc.fish
+share/zsh/site-functions/_youtube-dlc

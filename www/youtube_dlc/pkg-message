@@ -1,0 +1,8 @@
+[
+{ type: install
+  message: <<EOM
+If you want to use mp3 audio conversion please make sure multimedia/ffmpeg is
+built with the "LAME" option enabled.
+EOM
+}
+]
