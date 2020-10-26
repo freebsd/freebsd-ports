@@ -17,6 +17,8 @@ MAINTAINER=	portmgr@FreeBSD.org
 COMMENT=	IJG's jpeg compression utilities
 
 CONFLICTS_INSTALL=	jpeg-turbo-[0-9]*
+DEPRECATED=	Outdated and vulnerable, new version breaks API and ABI
+EXPIRATION_DATE=	2020-11-27
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION2}
 DISTVERSION2=	8d
