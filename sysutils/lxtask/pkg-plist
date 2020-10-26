@@ -11,7 +11,6 @@ share/applications/lxtask.desktop
 %%NLS%%share/locale/de/LC_MESSAGES/lxtask.mo
 %%NLS%%share/locale/el/LC_MESSAGES/lxtask.mo
 %%NLS%%share/locale/es/LC_MESSAGES/lxtask.mo
-%%NLS%%share/locale/es_VE/LC_MESSAGES/lxtask.mo
 %%NLS%%share/locale/et/LC_MESSAGES/lxtask.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/lxtask.mo
 %%NLS%%share/locale/fa/LC_MESSAGES/lxtask.mo
