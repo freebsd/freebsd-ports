@@ -323,6 +323,7 @@
     SUBDIR += gxmms2
     SUBDIR += gxplugins-lv2
     SUBDIR += harp
+    SUBDIR += headsetcontrol
     SUBDIR += herrie
     SUBDIR += hexter
     SUBDIR += hts_engine-API
