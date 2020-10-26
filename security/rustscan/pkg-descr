@@ -1,0 +1,6 @@
+Faster Nmap Scanning with Rust
+
+Turns a 17 minutes Nmap scan into 19 seconds.
+Find all open ports fast with RustScan, automatically pipe them into Nmap.
+
+WWW: https://rustscan.github.io/RustScan/

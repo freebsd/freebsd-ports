@@ -1151,6 +1151,7 @@
     SUBDIR += rubygem-twitter_oauth
     SUBDIR += rubygem-webauthn
     SUBDIR += rubygem-webpush
+    SUBDIR += rustscan
     SUBDIR += s2n
     SUBDIR += safesh
     SUBDIR += samhain

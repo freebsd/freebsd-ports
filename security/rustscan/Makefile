@@ -1,0 +1,197 @@
+# $FreeBSD$
+
+PORTNAME=	rustscan
+PORTVERSION=	1.10.1
+CATEGORIES=	security
+
+MAINTAINER=	mikael@FreeBSD.org
+COMMENT=	Faster Nmap Scanning with Rust
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+RUN_DEPENDS=	nmap>0:security/nmap
+
+USES=		cargo
+USE_GITHUB=	yes
+GH_ACCOUNT=	RustScan
+GH_PROJECT=	RustScan
+
+CARGO_CRATES=	addr2line-0.13.0 \
+		adler-0.2.3 \
+		aho-corasick-0.7.13 \
+		ansi_term-0.11.0 \
+		ansi_term-0.12.1 \
+		arrayref-0.3.6 \
+		arrayvec-0.5.1 \
+		async-channel-1.4.2 \
+		async-executor-1.3.0 \
+		async-global-executor-1.3.0 \
+		async-io-1.1.4 \
+		async-mutex-1.4.0 \
+		async-std-1.6.5 \
+		async-task-4.0.2 \
+		async-trait-0.1.40 \
+		atomic-waker-1.0.0 \
+		atty-0.2.14 \
+		autocfg-1.0.1 \
+		backtrace-0.3.50 \
+		base64-0.11.0 \
+		base64-0.12.3 \
+		bitflags-1.2.1 \
+		blake2b_simd-0.5.10 \
+		blocking-1.0.0 \
+		bumpalo-3.4.0 \
+		bytes-0.5.6 \
+		cache-padded-1.1.1 \
+		cc-1.0.60 \
+		cfg-if-0.1.10 \
+		cidr-utils-0.5.0 \
+		clap-2.33.3 \
+		colored-2.0.0 \
+		colorful-0.2.1 \
+		concurrent-queue-1.2.2 \
+		constant_time_eq-0.1.5 \
+		crossbeam-utils-0.7.2 \
+		debug-helper-0.3.10 \
+		dirs-3.0.1 \
+		dirs-sys-0.3.5 \
+		either-1.6.1 \
+		enum-as-inner-0.3.3 \
+		env_logger-0.7.1 \
+		event-listener-2.5.1 \
+		fastrand-1.3.5 \
+		fuchsia-zircon-0.3.3 \
+		fuchsia-zircon-sys-0.3.3 \
+		futures-0.3.5 \
+		futures-channel-0.3.5 \
+		futures-core-0.3.5 \
+		futures-executor-0.3.5 \
+		futures-io-0.3.5 \
+		futures-lite-1.8.0 \
+		futures-macro-0.3.5 \
+		futures-sink-0.3.5 \
+		futures-task-0.3.5 \
+		futures-util-0.3.5 \
+		gcd-2.0.1 \
+		getrandom-0.1.15 \
+		gimli-0.22.0 \
+		gloo-timers-0.2.1 \
+		heck-0.3.1 \
+		hermit-abi-0.1.16 \
+		hostname-0.3.1 \
+		humantime-1.3.0 \
+		idna-0.2.0 \
+		iovec-0.1.4 \
+		ipconfig-0.2.2 \
+		itertools-0.9.0 \
+		js-sys-0.3.45 \
+		kernel32-sys-0.2.2 \
+		kv-log-macro-1.0.7 \
+		lazy_static-1.4.0 \
+		libc-0.2.77 \
+		linked-hash-map-0.5.3 \
+		log-0.4.11 \
+		lru-cache-0.1.2 \
+		match_cfg-0.1.0 \
+		matches-0.1.8 \
+		memchr-2.3.3 \
+		miniz_oxide-0.4.2 \
+		mio-0.6.22 \
+		miow-0.2.1 \
+		nb-connect-1.0.0 \
+		net2-0.2.35 \
+		num-bigint-0.3.0 \
+		num-integer-0.1.43 \
+		num-traits-0.2.12 \
+		num_cpus-1.13.0 \
+		object-0.20.0 \
+		once_cell-1.4.1 \
+		parking-2.0.0 \
+		percent-encoding-2.1.0 \
+		pin-project-0.4.24 \
+		pin-project-internal-0.4.24 \
+		pin-project-lite-0.1.9 \
+		pin-utils-0.1.0 \
+		polling-1.1.0 \
+		ppv-lite86-0.2.9 \
+		proc-macro-error-1.0.4 \
+		proc-macro-error-attr-1.0.4 \
+		proc-macro-hack-0.5.18 \
+		proc-macro-nested-0.1.6 \
+		proc-macro2-1.0.23 \
+		quick-error-1.2.3 \
+		quote-1.0.7 \
+		rand-0.7.3 \
+		rand_chacha-0.2.2 \
+		rand_core-0.5.1 \
+		rand_hc-0.2.0 \
+		redox_syscall-0.1.57 \
+		redox_users-0.3.5 \
+		regex-1.3.9 \
+		regex-syntax-0.6.18 \
+		resolv-conf-0.6.3 \
+		ring-0.16.15 \
+		rlimit-0.4.0 \
+		rust-argon2-0.8.2 \
+		rustc-demangle-0.1.16 \
+		rustls-0.17.0 \
+		sct-0.6.0 \
+		serde-1.0.116 \
+		serde_derive-1.0.116 \
+		shell-words-1.0.0 \
+		slab-0.4.2 \
+		smallvec-1.4.2 \
+		socket2-0.3.15 \
+		spin-0.5.2 \
+		strsim-0.8.0 \
+		structopt-0.3.18 \
+		structopt-derive-0.4.11 \
+		syn-1.0.42 \
+		termcolor-1.1.0 \
+		textwrap-0.11.0 \
+		thiserror-1.0.20 \
+		thiserror-impl-1.0.20 \
+		thread_local-1.0.1 \
+		tinyvec-0.3.4 \
+		tokio-0.2.22 \
+		tokio-rustls-0.13.1 \
+		toml-0.5.6 \
+		trust-dns-proto-0.19.5 \
+		trust-dns-resolver-0.19.5 \
+		trust-dns-rustls-0.19.5 \
+		unicode-bidi-0.3.4 \
+		unicode-normalization-0.1.13 \
+		unicode-segmentation-1.6.0 \
+		unicode-width-0.1.8 \
+		unicode-xid-0.2.1 \
+		untrusted-0.7.1 \
+		url-2.1.1 \
+		vec-arena-1.0.0 \
+		vec_map-0.8.2 \
+		version_check-0.9.2 \
+		waker-fn-1.1.0 \
+		wasi-0.9.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.68 \
+		wasm-bindgen-backend-0.2.68 \
+		wasm-bindgen-futures-0.4.18 \
+		wasm-bindgen-macro-0.2.68 \
+		wasm-bindgen-macro-support-0.2.68 \
+		wasm-bindgen-shared-0.2.68 \
+		web-sys-0.3.45 \
+		webpki-0.21.3 \
+		webpki-roots-0.19.0 \
+		wepoll-sys-stjepang-1.0.8 \
+		widestring-0.4.2 \
+		winapi-0.2.8 \
+		winapi-0.3.9 \
+		winapi-build-0.1.1 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.5 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		winreg-0.6.2 \
+		ws2_32-sys-0.2.1
+
+PLIST_FILES=	bin/rustscan
+
+.include <bsd.port.mk>
