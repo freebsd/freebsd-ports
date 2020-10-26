@@ -1,16 +1,16 @@
 Fix tests for modified files.
 
---- t/porting/customized.dat.orig	2020-10-18 21:18:11 UTC
+--- t/porting/customized.dat.orig	2020-10-23 14:06:38 UTC
 +++ t/porting/customized.dat
-@@ -4,6 +4,7 @@
+@@ -3,6 +3,7 @@
+ #     ./perl -I../lib porting/customized.t --regen
  Config::Perl::V cpan/Config-Perl-V/V.pm 0a0f7207e6505b78ee345a933acb0246a13579f5
- Devel::PPPort dist/Devel-PPPort/Makefile.PL c939c8d33d11994c06f546869df63d4518ece797
  ExtUtils::Constant cpan/ExtUtils-Constant/t/Constant.t d5c75c41d6736a0c5897130f534af0896a7d6f4d
 +ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_Any.pm ac29a8dc1c7d6f0aca4abff0730c05bde1dab3ad
  ExtUtils::PL2Bat cpan/ExtUtils-PL2Bat/t/make_executable.t 2f58339b567d943712488812f06d99f907af46ab
  Filter::Util::Call pod/perlfilter.pod 9b4aec0d8518274ddb0dd37e3b770fe13a44dd1f
  Locale::Maketext::Simple cpan/Locale-Maketext-Simple/lib/Locale/Maketext/Simple.pm 57ed38905791a17c150210cd6f42ead22a7707b6
-@@ -22,7 +23,7 @@ Net::Ping dist/Net-Ping/t/010_pingecho.t 218d7a9ee5b6d
+@@ -21,7 +22,7 @@ Net::Ping dist/Net-Ping/t/010_pingecho.t 218d7a9ee5b6d
  Net::Ping dist/Net-Ping/t/450_service.t f6578680f2872d7fc9f24dd75388d55654761875
  Net::Ping dist/Net-Ping/t/500_ping_icmp.t 3eeb60181c01b85f876bd6658644548fdf2e24d4
  Net::Ping dist/Net-Ping/t/501_ping_icmpv6.t 54373de5858f8fb7e078e4998a4b3b8dbca91783
