@@ -1,0 +1,6 @@
+wlrctl is a command line utility for miscellaneous wlroots Wayland extensions.
+
+At this time, wlrctl supports the foreign-toplevel-mangement (window/toplevel command),
+virtual-keyboard (keyboard command), and virtual-pointer (pointer command) protocols.
+
+WWW: https://git.sr.ht/~brocellous/wlrctl

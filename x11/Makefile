@@ -346,6 +346,7 @@
     SUBDIR += wf-shell
     SUBDIR += wl-clipboard
     SUBDIR += wlogout
+    SUBDIR += wlrctl
     SUBDIR += wmappl
     SUBDIR += wmblob
     SUBDIR += wmbutton
