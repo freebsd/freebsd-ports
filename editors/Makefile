@@ -203,7 +203,6 @@
     SUBDIR += nedit
     SUBDIR += neovim
     SUBDIR += neovim-qt
-    SUBDIR += nvi-devel
     SUBDIR += nvi-m17n
     SUBDIR += nvi2
     SUBDIR += o

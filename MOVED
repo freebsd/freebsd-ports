@@ -15655,3 +15655,6 @@ www/py-unit|www/unit-python|2020-10-21|Rename to be more consistent with the nam
 sysutils/phpfpm_exporter|net-mgmt/phpfpm_exporter|2020-10-24|Move to net-mgmt category
 www/rubygem-uglifier27|www/rubygem-uglifier|2020-10-25|Obsolete, please use www/rubygem-uglifier instead
 www/rubygem-webpack-rails-rails60|devel/rubygem-webpacker-rails60|2020-10-25|Has expired: Upstream no longer maintained, use devel/rubygem-webpacker-rails* instead
+converters/zbase32||2020-10-26|Has expired: does not build with python3
+devel/py-PEAK-Rules||2020-10-26|Has expired: does not build with python3
+editors/nvi-devel|editors/nvi2|2020-10-26|Has expired: Unsupported upstream since 2015, please switch to editors/nvi2

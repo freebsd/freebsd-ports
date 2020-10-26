@@ -181,6 +181,5 @@
     SUBDIR += xml2c
     SUBDIR += yj
     SUBDIR += ytnef
-    SUBDIR += zbase32
 
 .include <bsd.port.subdir.mk>
