@@ -58,9 +58,9 @@ include/rpm/rpmver.h
 %%LUA_LIBDIR%%/%%LUA_LIBDIR%%rpmsign.so
 %%LUA_LIBDIR%%/%%LUA_LIBDIR%%rpmsign.so.9
 %%LUA_LIBDIR%%/%%LUA_LIBDIR%%rpmsign.so.9.1.0
-%%PYTHON_SITELIBDIR%%/rpm/__init__.py
-%%PYTHON_SITELIBDIR%%/rpm/_rpm.so
-%%PYTHON_SITELIBDIR%%/rpm/transaction.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/rpm/__init__.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/rpm/_rpm.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/rpm/transaction.py
 %%LUA_LIBDIR%%/rpm/brp-compress
 %%LUA_LIBDIR%%/rpm/brp-java-gcjcompile
 %%LUA_LIBDIR%%/rpm/brp-python-bytecompile
@@ -164,7 +164,7 @@ include/rpm/rpmver.h
 %%LUA_LIBDIR%%/rpm/platform/sparcv9-%%OPSYS%%/macros
 %%LUA_LIBDIR%%/rpm/platform/sparcv9v-%%OPSYS%%/macros
 %%LUA_LIBDIR%%/rpm/platform/x86_64-%%OPSYS%%/macros
-%%LUA_LIBDIR%%/rpm/pythondistdeps.py
+%%PYTHON%%%%LUA_LIBDIR%%/rpm/pythondistdeps.py
 %%LUA_LIBDIR%%/rpm/rpm.daily
 %%LUA_LIBDIR%%/rpm/rpm.log
 %%LUA_LIBDIR%%/rpm/rpm.supp
