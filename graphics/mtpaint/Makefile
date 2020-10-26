@@ -25,6 +25,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${MAN1PREFIX}/man/man1 \
 		--localedir=${PREFIX}/share/locale \
 		gtk2 cflags asneeded ft jpeg tiff man GIF
 
+CFLAGS+=	-fcommon
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 
 OPTIONS_DEFINE=	LCMS2 OPENJPEG NLS
