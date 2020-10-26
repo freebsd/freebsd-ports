@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	flowgger
-DISTVERSION=	0.2.9
-PORTREVISION=	10
+DISTVERSION=	0.2.10
 CATEGORIES=	sysutils
 MASTER_SITES=	CRATESIO
 DISTFILES=	${CARGO_DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX}
@@ -21,6 +20,7 @@ CARGO_CRATES=	adler32-1.0.4 \
 		ascii-0.9.3 \
 		atty-0.2.13 \
 		autocfg-0.1.6 \
+		autocfg-1.0.0 \
 		backtrace-0.3.38 \
 		backtrace-sys-0.1.31 \
 		bitflags-1.2.0 \
@@ -34,18 +34,19 @@ CARGO_CRATES=	adler32-1.0.4 \
 		cc-1.0.45 \
 		cfg-if-0.1.10 \
 		chrono-0.4.9 \
+		chrono-tz-0.5.1 \
 		clap-2.33.0 \
 		cloudabi-0.0.3 \
 		combine-3.8.1 \
 		crc-1.8.1 \
 		crc32fast-1.2.0 \
 		crossbeam-0.7.3 \
-		crossbeam-channel-0.4.0 \
-		crossbeam-deque-0.7.2 \
-		crossbeam-epoch-0.8.0 \
+		crossbeam-channel-0.4.2 \
+		crossbeam-deque-0.7.3 \
+		crossbeam-epoch-0.8.2 \
 		crossbeam-queue-0.2.1 \
 		crossbeam-utils-0.6.6 \
-		crossbeam-utils-0.7.0 \
+		crossbeam-utils-0.7.2 \
 		dtoa-0.2.2 \
 		either-1.5.3 \
 		error-chain-0.10.0 \
@@ -61,7 +62,7 @@ CARGO_CRATES=	adler32-1.0.4 \
 		fuchsia-zircon-0.3.3 \
 		fuchsia-zircon-sys-0.3.3 \
 		futures-0.1.29 \
-		generator-0.6.19 \
+		generator-0.6.20 \
 		getrandom-0.1.12 \
 		glob-0.3.0 \
 		idna-0.1.5 \
@@ -78,10 +79,11 @@ CARGO_CRATES=	adler32-1.0.4 \
 		log-0.3.9 \
 		log-0.4.8 \
 		matches-0.1.8 \
-		may-0.3.14 \
+		may-0.3.17 \
 		may_queue-0.1.7 \
+		maybe-uninit-2.0.0 \
 		memchr-2.2.1 \
-		memoffset-0.5.3 \
+		memoffset-0.5.4 \
 		miniz-sys-0.1.12 \
 		miniz_oxide-0.3.2 \
 		mio-0.6.19 \
@@ -89,17 +91,18 @@ CARGO_CRATES=	adler32-1.0.4 \
 		miow-0.2.1 \
 		miow-0.3.3 \
 		net2-0.2.33 \
-		nix-0.15.0 \
+		nix-0.17.0 \
 		notify-4.0.13 \
 		num-integer-0.1.41 \
 		num-traits-0.1.43 \
 		num-traits-0.2.8 \
 		num_cpus-1.10.1 \
-		openssl-0.10.24 \
-		openssl-sys-0.9.49 \
+		openssl-0.10.28 \
+		openssl-sys-0.9.54 \
 		owning_ref-0.4.0 \
 		parking_lot-0.7.1 \
 		parking_lot_core-0.4.0 \
+		parse-zoneinfo-0.2.1 \
 		percent-encoding-1.0.1 \
 		pkg-config-0.3.16 \
 		ppv-lite86-0.2.5 \
@@ -123,12 +126,14 @@ CARGO_CRATES=	adler32-1.0.4 \
 		redis-0.10.0 \
 		redox_syscall-0.1.56 \
 		ref_slice-1.2.0 \
+		regex-1.3.6 \
+		regex-syntax-0.6.17 \
 		remove_dir_all-0.5.2 \
 		rustc-demangle-0.1.16 \
 		rustc_version-0.2.3 \
 		same-file-1.0.5 \
 		scopeguard-0.3.3 \
-		scopeguard-1.0.0 \
+		scopeguard-1.1.0 \
 		semver-0.9.0 \
 		semver-parser-0.7.0 \
 		serde-0.8.23 \
@@ -137,6 +142,7 @@ CARGO_CRATES=	adler32-1.0.4 \
 		sha1-0.6.0 \
 		slab-0.4.2 \
 		smallvec-0.6.10 \
+		smallvec-1.2.0 \
 		snap-0.2.5 \
 		socket2-0.3.11 \
 		stable_deref_trait-1.1.1 \
