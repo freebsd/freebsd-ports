@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	nbformat
-PORTVERSION=	5.0.7
+PORTVERSION=	5.0.8
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,6 +24,11 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR} \
 NO_ARCH=	yes
 USES=		python:3.5+
 USE_PYTHON=	autoplist concurrent distutils
+
+OPTIONS_DEFINE=	FASTJSON
+
+FASTJSON_DESC=		Fast validation with fastjsonschema
+FASTJSON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fastjsonschema>=0:devel/py-fastjsonschema@${PY_FLAVOR}
 
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -v -rs -o addopts=
