@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	konversation
-DISTVERSION=	1.7.6
+DISTVERSION=	1.7.7
 CATEGORIES=	irc kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}/src
 
