@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	rpm
-PORTVERSION=	4.15.1
-PORTREVISION=	2
+PORTVERSION=	4.16.0
 CATEGORIES=	archivers
-MASTER_SITES=	http://ftp.rpm.org/releases/rpm-4.15.x/
+MASTER_SITES=	http://ftp.rpm.org/releases/rpm-4.16.x/
 PKGNAMESUFFIX=	4
 
 MAINTAINER=	rodrigo@FreeBSD.org
@@ -17,24 +16,23 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	gsed:textproc/gsed
 LIB_DEPENDS=	libpopt.so:devel/popt \
 		libnss3.so:security/nss \
-		libzstd.so:archivers/zstd
+		libzstd.so:archivers/zstd \
+		libgcrypt.so:security/libgcrypt
 RUN_DEPENDS=	bash:shells/bash \
 		gxargs:misc/findutils
 
-USES=		alias bdb compiler:openmp gmake iconv libarchive libtool \
+USES=		alias bdb sqlite compiler:openmp gmake iconv libarchive libtool \
 		lua:52+ pathfix pkgconfig shebangfix tar:bzip2
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 BINARY_ALIAS=	sed=${LOCALBASE}/bin/gsed
 SHEBANG_FILES=	scripts/brp-python-bytecompile scripts/check-prereqs \
-		scripts/check-rpaths-worker scripts/pythondeps.sh \
-		scripts/pkgconfigdeps.sh scripts/fontconfig.prov \
-		scripts/rpmdb_loadcvt scripts/perl.prov scripts/perl.req  \
-		scripts/pythondistdeps.py scripts/find-lang.sh \
-		python/rpm/transaction.py
-CONFIGURE_ARGS=	--with-external-db \
-		--without-db \
+		scripts/check-rpaths-worker scripts/pkgconfigdeps.sh \
+		scripts/fontconfig.prov scripts/perl.prov scripts/perl.req  \
+		scripts/pythondistdeps.py scripts/find-lang.sh scripts/ocamldeps.sh \
+		scripts/find-debuginfo.sh
+CONFIGURE_ARGS=	--enable-sqlite=yes\
 		--with-popt-prefix="${LOCALBASE}" \
 		--sysconfdir=${PREFIX}/etc \
 		--localstatedir=/var \
