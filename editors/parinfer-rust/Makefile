@@ -6,7 +6,7 @@ DISTVERSION=	0.4.3
 PORTREVISION=	8
 CATEGORIES=	editors
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	Infer parentheses for Clojure, Lisp, and Scheme
 
 LICENSE=	ISCL

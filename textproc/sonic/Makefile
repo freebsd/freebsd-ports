@@ -6,7 +6,7 @@ DISTVERSION=	1.3.0
 PORTREVISION=	5
 CATEGORIES=	textproc
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	Fast, lightweight, and schema-less search backend
 
 LICENSE=	MPL20

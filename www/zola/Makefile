@@ -6,7 +6,7 @@ DISTVERSION=	0.12.2
 PORTREVISION=	1
 CATEGORIES=	www
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	Fast static site generator
 
 LICENSE=	MIT

@@ -6,7 +6,7 @@ DISTVERSION=	0.12.1
 PORTREVISION=	1
 CATEGORIES=	security
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	Audit Cargo.lock for crates with security vulnerabilities
 
 LICENSE=	APACHE20 MIT

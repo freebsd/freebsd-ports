@@ -6,7 +6,7 @@ DISTVERSION=	0.2.3
 PORTREVISION=	1
 CATEGORIES=	audio
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	Ncurses Spotify client
 
 LICENSE=	BSD2CLAUSE

@@ -7,7 +7,7 @@ PORTREVISION=	6
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	fusefs-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	Virtual file system for sandboxing
 
 LICENSE=	APACHE20

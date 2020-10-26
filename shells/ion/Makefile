@@ -6,7 +6,7 @@ PORTREVISION=	15
 CATEGORIES=	shells
 PKGNAMESUFFIX=	-shell
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	Modern system shell written in Rust
 
 LICENSE=	MIT

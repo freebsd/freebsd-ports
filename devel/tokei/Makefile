@@ -6,7 +6,7 @@ DISTVERSION=	12.0.4
 PORTREVISION=	5
 CATEGORIES=	devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	Display statistics about your code
 
 LICENSE=	APACHE20 MIT

@@ -6,7 +6,7 @@ DISTVERSION=	0.9.0
 PORTREVISION=	16
 CATEGORIES=	sysutils
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	Modern replacement for ls
 
 LICENSE=	MIT
