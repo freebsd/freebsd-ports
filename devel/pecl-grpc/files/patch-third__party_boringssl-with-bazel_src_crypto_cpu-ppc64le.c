@@ -7,7 +7,7 @@
 +#if defined(__linux__)
    OPENSSL_ppc64le_hwcap2 = getauxval(AT_HWCAP2);
 +#elif defined(__FreeBSD__)
-+  elf_aux_info(AT_HWCAP, &OPENSSL_ppc64le_hwcap2, sizeof(OPENSSL_ppc64le_hwcap2));
++  elf_aux_info(AT_HWCAP2, &OPENSSL_ppc64le_hwcap2, sizeof(OPENSSL_ppc64le_hwcap2));
 +#endif
  }
  
