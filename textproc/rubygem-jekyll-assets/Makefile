@@ -8,7 +8,7 @@ CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	Create javascript/CSS assets for Jekyll sites
+COMMENT=	Create JavaScript/CSS assets for Jekyll sites
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
