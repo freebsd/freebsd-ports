@@ -17,7 +17,7 @@ OPTIONS_DEFINE=	EXAMPLES
 
 USE_XORG=	ice sm x11 xext xpm
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-dummy-driver
+CONFIGURE_ARGS=	--disable-dummy-driver --enable-drivers=freebsd_sysctl
 
 PORTEXAMPLES=	wmndrc
 PLIST_FILES=	bin/wmnd \
