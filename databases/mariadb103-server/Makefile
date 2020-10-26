@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	mariadb
-PORTVERSION=	10.3.24
+PORTVERSION=	10.3.25
 PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	http://mirrors.supportex.net/${SITESDIR}/ \
