@@ -1,5 +1,5 @@
-TIMESTAMP = 1563442910
-SHA256 (locationtech-jts-jts-1.16.1_GH0.tar.gz) = 899b58b18e3dc5756ffe94202a36a409a5a22f68b58295406155ace3eb5952c6
-SIZE (locationtech-jts-jts-1.16.1_GH0.tar.gz) = 13702015
-SHA256 (mfechner-freebsd-math-jts-deps-1.16.1_GH0.tar.gz) = f23ae4a882f78ecb37e3e5da49f467e62d3d92f552dd53d4146d4c4f4170193b
-SIZE (mfechner-freebsd-math-jts-deps-1.16.1_GH0.tar.gz) = 49315156
+TIMESTAMP = 1603692576
+SHA256 (locationtech-jts-jts-1.17.1_GH0.tar.gz) = 0a7cb59fe25ab57cc84231ec0b7ed80de60ad1d733ac72b8496f9b73fd98d5c2
+SIZE (locationtech-jts-jts-1.17.1_GH0.tar.gz) = 13802380
+SHA256 (mfechner-freebsd-math-jts-deps-1.17.1_GH0.tar.gz) = b2a754704ff91f575c5f80c1a06e4c1db4afcdd78500d96c19010f3a5cc2296c
+SIZE (mfechner-freebsd-math-jts-deps-1.17.1_GH0.tar.gz) = 54999185

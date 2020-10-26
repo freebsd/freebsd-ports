@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jts
-DISTVERSION=	1.16.1
+DISTVERSION=	1.17.1
 DISTVERSIONPREFIX=	jts-
 CATEGORIES=	math databases java
 
