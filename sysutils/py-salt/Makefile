@@ -60,6 +60,9 @@ SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD}
 
 SUB_FILES=	pkg-message
 
+# Upstream archive contains files with UTF-8 names
+EXTRACT_CMD=	${SETENV} LC_ALL=en_US.UTF-8 /usr/bin/bsdtar
+
 OPTIONS_DEFINE=	AWS TCP ZEROMQ
 OPTIONS_DEFAULT=ZEROMQ
 
