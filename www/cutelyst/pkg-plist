@@ -95,6 +95,7 @@ include/cutelyst2-qt5/Cutelyst/View
 include/cutelyst2-qt5/Cutelyst/WSGI/wsgi.h
 include/cutelyst2-qt5/Cutelyst/action.h
 include/cutelyst2-qt5/Cutelyst/application.h
+include/cutelyst2-qt5/Cutelyst/async.h
 include/cutelyst2-qt5/Cutelyst/component.h
 include/cutelyst2-qt5/Cutelyst/componentfactory.h
 include/cutelyst2-qt5/Cutelyst/context.h
