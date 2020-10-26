@@ -19,6 +19,7 @@ include/geany/plugindata.h
 include/geany/pluginutils.h
 include/geany/prefs.h
 include/geany/project.h
+include/geany/scintilla/Compat.h
 include/geany/scintilla/SciLexer.h
 include/geany/scintilla/Sci_Position.h
 include/geany/scintilla/Scintilla.h
@@ -104,6 +105,7 @@ share/applications/geany.desktop
 %%DATADIR%%/filedefs/filetypes.asciidoc
 %%DATADIR%%/filedefs/filetypes.asm
 %%DATADIR%%/filedefs/filetypes.batch
+%%DATADIR%%/filedefs/filetypes.bibtex
 %%DATADIR%%/filedefs/filetypes.c
 %%DATADIR%%/filedefs/filetypes.caml
 %%DATADIR%%/filedefs/filetypes.cmake
@@ -149,6 +151,7 @@ share/applications/geany.desktop
 %%DATADIR%%/filedefs/filetypes.ruby
 %%DATADIR%%/filedefs/filetypes.rust
 %%DATADIR%%/filedefs/filetypes.sh
+%%DATADIR%%/filedefs/filetypes.smalltalk
 %%DATADIR%%/filedefs/filetypes.sql
 %%DATADIR%%/filedefs/filetypes.tcl
 %%DATADIR%%/filedefs/filetypes.txt2tags
@@ -241,6 +244,7 @@ share/icons/hicolor/scalable/apps/geany.svg
 %%NLS%%share/locale/hi/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/id/LC_MESSAGES/geany.mo
+%%NLS%%share/locale/ie/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/it/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/kk/LC_MESSAGES/geany.mo

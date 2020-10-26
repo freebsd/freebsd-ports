@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-GEANY_VER=		1.36
+GEANY_VER=		1.37
 GEANY_PLUGINS_GTK2=	multiterm
 
 GEANY_PLUGINS_GTK3=	markdown
