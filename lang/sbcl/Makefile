@@ -5,9 +5,8 @@
 # pinned to exact versions of everything used to build them.
 
 PORTNAME=	sbcl
-DISTVERSION=	2.0.9
+DISTVERSION=	2.0.10
 DISTVERSIONSUFFIX=	-source
-PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	lang lisp
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION} \
@@ -98,8 +97,8 @@ SAFEPOINT_IMPLIES=	THREADS
 SBCL_VARS=		XC_HOST="${BOOT_WRKSRC}/src/runtime/sbcl --core ${BOOT_WRKSRC}/output/${CORE} --noinform --disable-debugger --no-sysinit --no-userinit"
 SBCL_DISTFILES=		${PORTNAME}-${SBCL_BOOT_LIST:M${ARCHOS_PATTERN}}-binary${EXTRACT_SUFX}:binaries
 
-THREADS_VARS=		MAKE_SH_ARGS+="--with-sb-thread --with-restore-fs-segment-register-from-tls"
-THREADS_VARS_OFF=	MAKE_SH_ARGS+="--without-sb-thread --without-restore-fs-segment-register-from-tls"
+THREADS_VARS=		MAKE_SH_ARGS+="--with-sb-thread"
+THREADS_VARS_OFF=	MAKE_SH_ARGS+="--without-sb-thread"
 
 UNICODE_VARS=		MAKE_SH_ARGS+="--with-sb-unicode"
 UNICODE_VARS_OFF=	MAKE_SH_ARGS+="--without-sb-unicode"
