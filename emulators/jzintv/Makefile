@@ -13,7 +13,7 @@ COMMENT=	Portable Intellivision(TM) Emulator
 
 LICENSE=	GPLv2
 
-USES=		alias dos2unix gmake sdl xorg zip
+USES=		alias compiler:c++11-lang dos2unix gmake sdl xorg zip
 USE_XORG=	x11 xau xdmcp
 USE_SDL=	sdl2
 
