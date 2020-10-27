@@ -1300,6 +1300,7 @@
     SUBDIR += terraform-docs
     SUBDIR += terraform-provider-gridscale
     SUBDIR += terraform-provider-vultr
+    SUBDIR += terraform-switcher
     SUBDIR += terragrunt
     SUBDIR += testdisk
     SUBDIR += thefish
