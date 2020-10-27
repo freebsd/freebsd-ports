@@ -1,0 +1,30 @@
+@dir %%DOCSDIR%%
+@dir %%EXAMPLESDIR%%
+@dir etc/fido/rntrack/tbl
+@dir etc/fido/rntrack/tpl
+@dir etc/fido/rntrack
+etc/fido/rntrack/rntrack.cfg-dist
+etc/fido/rntrack/tpl/audit.tpl
+etc/fido/rntrack/tpl/badfrom.tpl
+etc/fido/rntrack/tpl/badto.tpl
+etc/fido/rntrack/tpl/loop.tpl
+%%DOCSDIR%%/FAQ_en
+%%DOCSDIR%%/FAQ_ru
+%%DOCSDIR%%/report.err
+%%DOCSDIR%%/report.err.ru
+%%EXAMPLESDIR%%/bignode.zip
+%%EXAMPLESDIR%%/bignode2.zip
+%%EXAMPLESDIR%%/node1042.zip
+%%EXAMPLESDIR%%/node1157.zip
+%%EXAMPLESDIR%%/node.cfg
+%%EXAMPLESDIR%%/node2.cfg
+%%EXAMPLESDIR%%/node3.cfg
+%%EXAMPLESDIR%%/perl-test.cfg
+%%EXAMPLESDIR%%/point.cfg
+%%EXAMPLESDIR%%/point2.cfg
+%%EXAMPLESDIR%%/traflog.tpl
+etc/fido/rntrack/test.pl
+etc/fido/rntrack/tbl/alt2koi.tbl
+etc/fido/rntrack/tbl/koi2alt.tbl
+sbin/rntrack
+man/man1/rntrack.1.gz
