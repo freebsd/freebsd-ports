@@ -1,6 +1,6 @@
---- src/main.c.orig	2019-01-13 11:41:23.000000000 -0800
-+++ src/main.c	2020-10-21 12:50:26.931353000 -0700
-@@ -57,8 +57,6 @@
+--- src/main.c.orig	2019-01-13 19:41:23 UTC
++++ src/main.c
+@@ -57,8 +57,6 @@ gint win_height;
  gint refresh_interval;
  guint rID;
  
@@ -9,7 +9,7 @@
  int main (int argc, char *argv[])
  {
  
-@@ -73,7 +71,6 @@
+@@ -73,7 +71,6 @@ int main (int argc, char *argv[])
  #endif
      gtk_init (&argc, &argv);
  

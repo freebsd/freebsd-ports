@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lxtask
-PORTVERSION=	0.1.9
+PORTVERSION=	0.1.10
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	SF/lxde/LXTask%20%28task%20manager%29/LXTask%200.1.x/
 
@@ -12,12 +12,14 @@ COMMENT=	Lightweight desktop-independent task manager
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake gnome iconv pkgconfig tar:xz
-USE_GNOME=	gtk20 intlhack
-GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
 
-CFLAGS=		-fcommon
+USES=		gmake gnome iconv pkgconfig tar:xz
+USE_GNOME=	cairo gdkpixbuf2 gtk20 intlhack
+GNU_CONFIGURE=	yes
+
+CFLAGS+=	-fcommon
 
 PORTDOCS=	AUTHORS README
 
@@ -26,9 +28,6 @@ OPTIONS_SUB=	yes
 
 NLS_USES=	gettext localbase
 NLS_USES_OFF=	gettext-tools
-
-# post-patch-NLS-off:
-# 	@${REINPLACE_CMD} -e 's|po src|src|' ${WRKSRC}/Makefile.in
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

@@ -1,8 +1,8 @@
---- src/types.h.orig	2019-01-13 11:41:23.000000000 -0800
-+++ src/types.h	2020-10-21 12:52:03.313788000 -0700
-@@ -80,6 +80,4 @@
- const gchar *custom_signal_0;
- const gchar *custom_signal_1;
+--- src/types.h.orig	2020-10-26 22:55:04 UTC
++++ src/types.h
+@@ -77,6 +77,4 @@ extern gboolean full_view;
+ extern gint win_width;
+ extern gint win_height;
  
 -extern int page_size;
 -

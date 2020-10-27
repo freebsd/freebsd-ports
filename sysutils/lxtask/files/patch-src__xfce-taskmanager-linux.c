@@ -1,5 +1,5 @@
---- src/xfce-taskmanager-linux.c.orig	2019-01-13 13:25:38.000000000 -0800
-+++ src/xfce-taskmanager-linux.c	2020-10-21 12:58:00.556146000 -0700
+--- src/xfce-taskmanager-linux.c.orig	2019-01-13 21:25:38 UTC
++++ src/xfce-taskmanager-linux.c
 @@ -30,6 +30,8 @@
  #include "xfce-taskmanager-linux.h"
  /* #include <sys/sysinfo.h> */
@@ -9,7 +9,7 @@
  void get_task_details(pid_t pid,struct task *task)
  {
  	int fd;
-@@ -41,7 +43,7 @@
+@@ -41,7 +43,7 @@ void get_task_details(pid_t pid,struct task *task)
  	task->checked=FALSE;
  	task->size=0;
  
@@ -18,7 +18,7 @@
          fd=open(line,O_RDONLY);
          if(fd==-1) return;
          ret = read(fd,line,255);
-@@ -57,7 +59,7 @@
+@@ -57,7 +59,7 @@ void get_task_details(pid_t pid,struct task *task)
  	task->size = t_size * page_size;
  	task->rss = t_rss * page_size;
  
@@ -27,7 +27,7 @@
  	fd=open(line,O_RDONLY);
  	if(fd!=-1)
  	{
-@@ -98,7 +100,7 @@
+@@ -98,7 +100,7 @@ void get_task_details(pid_t pid,struct task *task)
  		if(show_full_path)
  		{
  			FILE *fp;
@@ -36,7 +36,7 @@
  			fp=fopen(line,"r");
  			if(fp)
  			{
-@@ -124,7 +126,7 @@
+@@ -124,7 +126,7 @@ void get_task_details(pid_t pid,struct task *task)
  		else if(len>=15)
  		{
  			FILE *fp;
@@ -45,7 +45,7 @@
  			fp=fopen(line,"r");
  			if(fp)
  			{
-@@ -169,7 +171,7 @@
+@@ -169,7 +171,7 @@ void get_task_details(pid_t pid,struct task *task)
  		task->time_percentage = 0;
  		task->ppid = ppid;
  
