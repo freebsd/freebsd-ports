@@ -1,7 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	OpenDiablo2
-DISTVERSION=	g20201011
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.1
+DISTVERSIONSUFFIX=	-pre-alpha
 CATEGORIES=	games
 
 MAINTAINER=	ed.arrakis@gmail.com
@@ -16,7 +18,6 @@ USES=		gl go:modules openal pkgconfig xorg
 USE_GL=		gl
 USE_XORG=	x11 xcursor xi xinerama xrandr xxf86vm
 USE_GITHUB=	yes
-GH_TAGNAME=	7fb57a2
 GH_TUPLE=	\
 		JoshVarga:blast:681c804fb9f0:joshvarga_blast/vendor/github.com/JoshVarga/blast \
 		alecthomas:kingpin:v2.2.6:alecthomas_kingpin/vendor/gopkg.in/alecthomas/kingpin.v2 \
