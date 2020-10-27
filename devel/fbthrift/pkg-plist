@@ -210,6 +210,7 @@ include/thrift/lib/cpp2/protocol/ProtocolReaderWithRefill.h
 include/thrift/lib/cpp2/protocol/Serializer.h
 include/thrift/lib/cpp2/protocol/SimpleJSONProtocol-inl.h
 include/thrift/lib/cpp2/protocol/SimpleJSONProtocol.h
+include/thrift/lib/cpp2/protocol/TableBasedForwardTypes.h
 include/thrift/lib/cpp2/protocol/TableBasedSerializer.h
 include/thrift/lib/cpp2/protocol/VirtualProtocol.h
 include/thrift/lib/cpp2/protocol/detail/protocol_methods.h
