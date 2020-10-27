@@ -32,3 +32,12 @@
  
  # rabit
  set(RABIT_BUILD_DMLC OFF)
+@@ -202,7 +202,7 @@
+ 
+ #-- Hide all C++ symbols
+ if (HIDE_CXX_SYMBOLS)
+-  foreach(target objxgboost xgboost dmlc rabit rabit_mock_static)
++  foreach(target objxgboost xgboost rabit rabit_mock_static)
+     set_target_properties(${target} PROPERTIES CXX_VISIBILITY_PRESET hidden)
+   endforeach()
+ endif (HIDE_CXX_SYMBOLS)
