@@ -3,7 +3,7 @@
 
 PORTNAME=	facedetect
 PORTVERSION=	1.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	graphics
 PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
@@ -21,7 +21,7 @@ GH_TAGNAME=	2a8974b
 
 LIBS+=		-lopencv_core
 
-USES=		localbase php:ext
+USES=		localbase php:ext pkgconfig
 
 CONFIGURE_ARGS+=	--with-facedetect
 
