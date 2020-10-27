@@ -752,7 +752,7 @@ clickhouse:*:800:800::0:0:ClickHouse Daemon:/var/db/clickhouse:/usr/sbin/nologin
 # free: 804
 # free: 805
 # free: 806
-# free: 807
+bosun:*:807:807::0:0:Bosun Daemon:/nonexistent:/usr/sbin/nologin
 clixon:*:808:808::0:0:Clixon Daemon:/nonexistent:/usr/sbin/nologin
 # free: 809
 # free: 810

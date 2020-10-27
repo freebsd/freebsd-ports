@@ -1,0 +1,4 @@
+bin/bosun
+@dir(%%USERS%%,%%GROUPS%%,0750) %%BOSUN_LOGDIR%%
+@dir(%%USERS%%,%%GROUPS%%,0750) %%ETCDIR%%
+@sample etc/bosun/bosun.conf.sample

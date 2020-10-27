@@ -21,6 +21,7 @@
     SUBDIR += bgpq4
     SUBDIR += bgpuma
     SUBDIR += blackbox_exporter
+    SUBDIR += bosun
     SUBDIR += bpft
     SUBDIR += braa
     SUBDIR += bsnmp-regex

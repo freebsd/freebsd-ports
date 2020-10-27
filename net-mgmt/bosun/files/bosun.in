@@ -1,0 +1,69 @@
+#!/bin/sh
+# $FreeBSD: head/net-mgmt/bosun/files/bosun.in 528773 2020-03-20 11:58:01Z girgen $
+
+# PROVIDE: bosun
+# REQUIRE: DAEMON NETWORKING
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable bosunb:
+# bosun_enable="YES"
+#
+# bosun_enable (bool):       Set to YES to enable bosun
+#                               Default: NO
+# bosun_conf (str):          bosun configuration file
+#                               Default: %%ETCDIR%%/${name}.conf
+# bosun_user (str):          bosun daemon user
+#                               Default: %%USERS%%
+# bosun_group (str):         bosun daemon group
+#                               Default: %%GROUPS%%
+# bosun_flags (str):         Extra flags passed to bosun
+#                               Default: empty
+
+. /etc/rc.subr
+
+PATH=${PATH}:%%LOCALBASE%%/sbin:%%LOCALBASE%%/bin
+
+name="bosun"
+rcvar=bosun_enable
+load_rc_config $name
+
+: ${bosun_enable:="NO"}
+: ${bosun_user:="%%USERS%%"}
+: ${bosun_group:="%%GROUPS%%"}
+: ${bosun_conf:="%%ETCDIR%%/${name}.conf"}
+: ${bosun_flags}:=""
+: ${bosun_options:="${bosun_flags} -c ${bosun_conf}"}
+
+logfile="%%BOSUN_LOGDIR%%/${name}.log"
+pidfile="/var/run/${name}.pid"
+command=/usr/sbin/daemon
+start_precmd="bosun_prestart"
+start_cmd="bosun_start"
+stop_cmd="bosun_stop"
+
+bosun_prestart()
+{
+    install -d -o ${bosun_user} -g ${bosun_group} -m750 %%BOSUN_LOGDIR%%
+}
+
+bosun_start()
+{
+    echo "Starting ${name}"
+    /usr/sbin/daemon -fcr -P ${pidfile} -u ${bosun_user} -o ${logfile} \
+        %%PREFIX%%/bin/${name} ${bosun_options}
+}
+
+bosun_stop()
+{
+    pid=$(check_pidfile $pidfile $command)
+    if [ -n "${pid}" ]; then
+        echo "Stopping ${name} (pid=${pid})"
+        kill -- -${pid}
+        wait_for_pids ${pid}
+    else
+        echo "${name} isn't running"
+    fi
+}
+
+run_rc_command "$1"
