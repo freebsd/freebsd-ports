@@ -20,4 +20,6 @@ RUN_DEPENDS=	p5-Date-Manip>=0:devel/p5-Date-Manip \
 USES=		perl5
 USE_PERL5=	configure
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
