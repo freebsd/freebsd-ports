@@ -1,0 +1,65 @@
+--- makefile.orig	2020-09-21 21:11:53 UTC
++++ makefile
+@@ -1,6 +1,6 @@
+ # Version checking
+ MSBUILD := msbuild
+-MIN_MONO_VERSION:= "5.18.0"
++MIN_MONO_VERSION:= "5.10.0"
+ MONO_VERSION:= $(shell mono --version | awk '/version/ { print $$5 }')
+ MIN_NUGET_VERSION:= "2.16.0"
+ NUGET_VERSION:= $(shell nuget help 2> /dev/null | awk '/Version:/ { print $$3; exit 0}')
+@@ -55,7 +55,7 @@ reset:=$(shell tput sgr0)
+ .PHONY: prequisite-check
+ 
+ restore:
+-	nuget restore OpenBVE.sln
++	-nuget restore OpenBVE.sln
+ 
+ debug: openbve-debug
+ release: openbve-release
+@@ -104,45 +104,6 @@ endif
+ 
+ debian: $(DEBIAN_BUILD_RESULT)
+ 
+-prequisite-check:
+- #Very basic prequisite check function
+- $(info Checking for prequisite system libraries.)
+- $(info Checking for Mono....)
+- ifeq (, $(shell which mono))
+- $(info Mono does not appear to be installed on this system.)
+- $(info Please install the $(green)mono-complete$(reset) package provided by your distribution, or the latest version of Mono from $(blue)https://www.mono-project.com/$(reset))
+- $(error )
+- endif
+- $(info Mono Version $(MONO_VERSION) found.)
+- ifeq "$(call GreaterVersion, $(MONO_VERSION), $(MIN_MONO_VERSION))" "$(MONO_VERSION)"
+- #Nothing
+- else
+- $(info OpenBVE requires a minimum Mono version of 5.20)
+- $(info Please install the latest version of Mono from $(blue)https://www.mono-project.com/$(reset))
+- $(error )
+- endif
+- $(info Checking for MSBuild....)
+- ifeq (, $(shell which msbuild))
+- $(info msbuild does not appear to be installed on this system.)
+- $(info Please either install the $(green)mono-xbuild$(reset) package provided by your distribution, or the latest version of Mono from $(blue)https://www.mono-project.com/$(reset))
+- $(error )
+- endif
+- $(info Checking for nuget....)
+- ifeq (, $(shell which nuget))
+- $(info nuget does not appear to be installed on this system.)
+- $(info Please either install the $(green)nuget$(reset) package provided by your distribution, or the latest version of Mono from $(blue)https://www.mono-project.com/$(reset))
+- $(error )
+- endif
+- $(info nuget Version $(NUGET_VERSION) found.)
+- ifeq "$(call GreaterVersion, $(NUGET_VERSION), $(MIN_NUGET_VERSION))" "$(NUGET_VERSION)"
+- #Nothing
+- else
+- $(info OpenBVE requires a minimum nuget version of 2.16)
+- $(info Please run $(red)nuget update -self$(reset) with administrative priveledges.)
+- $(error )
+- endif
+- $(info Attempting to restore nuget packages (This may take a while)....)
+-	
+ $(MAC_BUILD_RESULT): all-release
+ 	@rm -rf bin_release/DevTools/
+ 	@echo $(COLOR_RED)Decompressing $(COLOR_CYAN)installers/mac/MacBundle.tgz$(COLOR_END)
