@@ -1,6 +1,6 @@
-TIMESTAMP = 1601026623
-SHA256 (elastic-beats-v7.9.2_GH0.tar.gz) = ff64a41619b5070f8d6bebedf05d00cc7ea173b158730d34996cd0e0b27e2230
-SIZE (elastic-beats-v7.9.2_GH0.tar.gz) = 82861097
+TIMESTAMP = 1603573529
+SHA256 (elastic-beats-v7.9.3_GH0.tar.gz) = 80279b759d8c63df46a46805c92a7f4d949ea59bb4848a1e80cd8664ad76c2dd
+SIZE (elastic-beats-v7.9.3_GH0.tar.gz) = 82872010
 SHA256 (Azure-azure-amqp-common-go-v3.0.0_GH0.tar.gz) = f498d230bba298dbd42d3d904a7d174ad5a5ec2794bdcb2d26467137235dfb9a
 SIZE (Azure-azure-amqp-common-go-v3.0.0_GH0.tar.gz) = 17018
 SHA256 (Azure-azure-event-hubs-go-v3.1.2_GH0.tar.gz) = 3235c3f8c097f4e63d0e051bdf939ac33231d651faa5822632b8a8594adb5ddd
