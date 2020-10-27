@@ -13,8 +13,6 @@ COMMENT=	Standalone JavaScript interpreter from the Mozilla project
 
 LIB_DEPENDS=	libnspr4.so:devel/nspr
 
-CONFLICTS=	njs-[0-9]*
-
 MAKE_ARGS+=	JS_THREADSAFE=YES \
 		PROG_LIBS="-lreadline -lncurses -lm -lpthread" \
 		LDFLAGS="-L${LOCALBASE}/lib"

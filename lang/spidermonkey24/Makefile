@@ -15,8 +15,6 @@ COMMENT=		Standalone JavaScript based from Mozilla 24-esr
 BUILD_DEPENDS=		zip:archivers/zip
 LIB_DEPENDS=		libnspr4.so:devel/nspr
 
-CONFLICTS=		njs-[0-9]*
-
 GNU_CONFIGURE=		yes
 USES=			compiler:c++11-lib gmake pathfix perl5 python:2.7,build \
 			readline tar:bzip2

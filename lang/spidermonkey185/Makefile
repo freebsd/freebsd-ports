@@ -15,8 +15,6 @@ BUILD_DEPENDS=		zip:archivers/zip \
 			autoconf-2.13:devel/autoconf213
 LIB_DEPENDS=		libnspr4.so:devel/nspr
 
-CONFLICTS=		njs-[0-9]*
-
 USES=			gmake pathfix perl5 pkgconfig python:2.7,build
 GNU_CONFIGURE=		yes
 USE_LDCONFIG=		yes
