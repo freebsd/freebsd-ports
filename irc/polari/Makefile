@@ -3,6 +3,7 @@
 
 PORTNAME=	polari
 PORTVERSION=	3.38.0
+PORTREVISION=	1
 CATEGORIES=	irc gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -20,7 +21,8 @@ LIB_DEPENDS=	libtelepathy-glib.so:net-im/telepathy-glib \
 		libsecret-1.so:security/libsecret \
 		libtelepathy-logger.so:net-im/telepathy-logger
 RUN_DEPENDS=	gjs-console:lang/gjs \
-		telepathy-idle>0:net-im/telepathy-idle
+		telepathy-idle>0:net-im/telepathy-idle \
+		gspell>0:textproc/gspell
 
 PORTSCOUT=	limitw:1,even
 
