@@ -29,7 +29,7 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--with-rundir=/var/run/sudo
 
 OPTIONS_DEFINE=	LDAP INSULTS DISABLE_ROOT_SUDO DISABLE_AUTH NOARGS_SHELL \
-		AUDIT OPIE PAM PYTHON NLS SSSD DOCS EXAMPLES
+		AUDIT OPIE PAM PYTHON NLS DOCS EXAMPLES
 OPTIONS_RADIO=	KERBEROS
 OPTIONS_DEFAULT=	AUDIT PAM
 OPTIONS_SUB=	yes
@@ -42,7 +42,6 @@ AUDIT_DESC=	Enable BSM audit support
 KERBEROS_DESC=	Enable Kerberos 5 authentication (no PAM support)
 OPIE_DESC=	Enable one-time passwords (no PAM support)
 PYTHON_DESC=	Enable python plugin support
-SSSD_DESC=	Enable SSSD backend support.
 
 PAM_PREVENTS=	OPIE GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT
 PAM_PREVENTS_MSG=	PAM cannot be combined with any other authentication plugin
@@ -78,8 +77,6 @@ PAM_CONFIGURE_ON=	--with-pam
 OPIE_CONFIGURE_ON=	--with-opie
 PYTHON_USES=	python
 PYTHON_CONFIGURE_ENABLE=	python
-SSSD_CONFIGURE_ON=	--with-sssd
-SSSD_RUN_DEPENDS=	sssd:security/sssd
 
 OPTIONS_RADIO_KERBEROS=	GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT
 GSSAPI_BASE_USES=	gssapi
