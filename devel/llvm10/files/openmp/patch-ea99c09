@@ -14,8 +14,8 @@ Date:   Mon Jan 20 18:52:10 2020 +0000
 
 diff --git a/openmp/runtime/src/kmp_affinity.h b/openmp/runtime/src/kmp_affinity.h
 index f270bb6dbb8..664a4239319 100644
---- a/openmp/runtime/src/kmp_affinity.h
-+++ b/openmp/runtime/src/kmp_affinity.h
+--- projects/openmp/runtime/src/kmp_affinity.h
++++ projects/openmp/runtime/src/kmp_affinity.h
 @@ -303,8 +303,9 @@ class KMPNativeAffinity : public KMPAffinity {
        int retval =
            syscall(__NR_sched_getaffinity, 0, __kmp_affin_mask_size, mask);
@@ -40,8 +40,8 @@ index f270bb6dbb8..664a4239319 100644
          return 0;
 diff --git a/openmp/runtime/src/z_Linux_util.cpp b/openmp/runtime/src/z_Linux_util.cpp
 index 1daa3d31047..5e2d1bd4a2f 100644
---- a/openmp/runtime/src/z_Linux_util.cpp
-+++ b/openmp/runtime/src/z_Linux_util.cpp
+--- projects/openmp/runtime/src/z_Linux_util.cpp
++++ projects/openmp/runtime/src/z_Linux_util.cpp
 @@ -164,7 +164,7 @@ void __kmp_affinity_determine_capable(const char *env_var) {
    if (gCode > 0) { // Linux* OS only
      // The optimal situation: the OS returns the size of the buffer it expects.

@@ -141,7 +141,7 @@ LLDB_PORTDOCS=		lldb
 LLDB_VARS=		_USES_PYTHON=python:3.6+
 OPENMP_DESC=		Install libomp, the LLVM OpenMP runtime library
 OPENMP_DISTFILES=	openmp-${DISTVERSION}.src${EXTRACT_SUFX}
-OPENMP_EXTRA_PATCHES=	openmp
+OPENMP_EXTRA_PATCHES=	${PATCHDIR}/openmp
 PYCLANG_DESC=	Install python bindings to libclang
 PYCLANG_IMPLIES=	CLANG
 PYCLANG_VARS=	_USES_PYTHON=python:3.6+
