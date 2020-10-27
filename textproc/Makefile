@@ -1566,6 +1566,7 @@
     SUBDIR += rubygem-iso-639
     SUBDIR += rubygem-itextomml
     SUBDIR += rubygem-jekyll-assets
+    SUBDIR += rubygem-jekyll-email-protect
     SUBDIR += rubygem-jekyll-feed
     SUBDIR += rubygem-jekyll-gist
     SUBDIR += rubygem-jekyll-mentions
