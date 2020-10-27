@@ -3,7 +3,7 @@
 
 PORTNAME=	ddclient
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.9.0
+DISTVERSION=	3.9.1
 CATEGORIES=	dns
 
 MAINTAINER=	mjl@luckie.org.nz
@@ -23,17 +23,18 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 SUB_FILES=	pkg-message ddclient_force
 
+PLIST_FILES=	"@sample(,,600) etc/ddclient.conf.sample" \
+		etc/periodic/daily/ddclient_force \
+		sbin/ddclient
+PORTDOCS=	COPYRIGHT ChangeLog README.cisco README.ssl README.md \
+		sample-etc_cron.d_ddclient sample-etc_dhclient-exit-hooks \
+		sample-etc_dhcpc_dhcpcd-eth0.exe sample-etc_ppp_ip-up.local
+
 OPTIONS_DEFINE=	SSL DOCS
 OPTIONS_DEFAULT=SSL
 
 SSL_RUN_DEPENDS=ca_root_nss>0:security/ca_root_nss \
 		p5-IO-Socket-SSL>0:security/p5-IO-Socket-SSL
-
-PORTDOCS=	COPYRIGHT ChangeLog README.cisco README.ssl README.md \
-		sample-etc_cron.d_ddclient sample-etc_dhclient-exit-hooks \
-		sample-etc_dhcpc_dhcpcd-eth0.exe sample-etc_ppp_ip-up.local
-PLIST_FILES=	"@sample(,,600) etc/ddclient.conf.sample" etc/periodic/daily/ddclient_force \
-		sbin/ddclient
 
 post-patch:
 	@${GREP} -lR '/usr' ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
