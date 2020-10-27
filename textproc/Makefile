@@ -1565,6 +1565,7 @@
     SUBDIR += rubygem-inifile
     SUBDIR += rubygem-iso-639
     SUBDIR += rubygem-itextomml
+    SUBDIR += rubygem-jekyll-archives
     SUBDIR += rubygem-jekyll-assets
     SUBDIR += rubygem-jekyll-email-protect
     SUBDIR += rubygem-jekyll-feed
