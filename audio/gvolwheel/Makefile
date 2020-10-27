@@ -2,24 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	gvolwheel
-PORTVERSION=	1.0
-PORTREVISION=	2
+PORTVERSION=	1.0.2
 CATEGORIES=	audio
-MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Volume mixer
+COMMENT=	Control volume by scrolling over tray icon
 
 LICENSE=	GPLv3
 
-CONFIGURE_ARGS+=--enable-oss
+USES=		autoreconf libtool gmake gnome pkgconfig
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
-USES=		gmake gnome iconv pkgconfig
-USE_GNOME=	gtk30 intltool
+CONFIGURE_ARGS=	--enable-oss
+USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool
+USE_GITHUB=	yes
+GH_ACCOUNT=	Junker
 
-PORTDOCS=	AUTHORS ChangeLog README
+PORTDOCS=	AUTHORS ChangeLog README.md
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
@@ -27,14 +25,11 @@ OPTIONS_SUB=	yes
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=	gettext
 
-SUB_FILES=	pkg-message
-
 DESKTOP_ENTRIES="GVolWheel" "${COMMENT}" "${PORTNAME}" \
 		"${PORTNAME}" "GTK;AudioVideo;Audio;Mixer;" true
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
-	${LN} -sf gvolwheel/audio-volume-high.png ${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
+	${LN} -sf gvolwheel/audio-volume-high.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
 
 .include <bsd.port.mk>

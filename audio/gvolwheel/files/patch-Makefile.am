@@ -1,18 +1,20 @@
---- Makefile.in.orig	2012-04-07 22:37:17 UTC
-+++ Makefile.in
-@@ -315,14 +315,8 @@ top_build_prefix = @top_build_prefix@
- top_builddir = @top_builddir@
- top_srcdir = @top_srcdir@
- SUBDIRS = src po 
+--- Makefile.am.orig	2020-08-01 09:32:59 UTC
++++ Makefile.am
+@@ -3,14 +3,11 @@
+ 
+ SUBDIRS = src po
+ 
 -gvolwheeldocdir = ${prefix}/doc/gvolwheel
 +gvolwheeldocdir = ${prefix}/share/doc/gvolwheel
  gvolwheeldoc_DATA = \
 -	README\
 -	COPYING\
--	AUTHORS\
++	README.md\
+ 	AUTHORS\
 -	ChangeLog\
 -	INSTALL\
--	NEWS 
+-	NEWS
++	ChangeLog
  
  EXTRA_DIST = $(gvolwheeldoc_DATA) \
  	$(intltool_DATA)\
