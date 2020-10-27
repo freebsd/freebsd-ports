@@ -468,6 +468,7 @@ include/folly/io/async/AsyncTransport.h
 include/folly/io/async/AsyncTransportCertificate.h
 include/folly/io/async/AsyncUDPServerSocket.h
 include/folly/io/async/AsyncUDPSocket.h
+include/folly/io/async/AtomicNotificationQueue.h
 include/folly/io/async/CertificateIdentityVerifier.h
 include/folly/io/async/DecoratedAsyncTransportWrapper.h
 include/folly/io/async/DelayedDestruction.h
@@ -727,9 +728,15 @@ lib/cmake/folly/folly-config.cmake
 lib/cmake/folly/folly-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/folly/folly-targets.cmake
 lib/libfolly.so
+lib/libfolly.so.0.58.0-dev
 lib/libfolly_exception_counter.so
+lib/libfolly_exception_counter.so.0.58.0-dev
 lib/libfolly_exception_tracer.so
+lib/libfolly_exception_tracer.so.0.58.0-dev
 lib/libfolly_exception_tracer_base.so
+lib/libfolly_exception_tracer_base.so.0.58.0-dev
 lib/libfolly_test_util.so
+lib/libfolly_test_util.so.0.58.0-dev
 lib/libfollybenchmark.so
+lib/libfollybenchmark.so.0.58.0-dev
 libdata/pkgconfig/libfolly.pc
