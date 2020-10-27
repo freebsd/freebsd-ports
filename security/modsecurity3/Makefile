@@ -3,7 +3,7 @@
 PORTNAME=	modsecurity
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security www
 MASTER_SITES=	https://github.com/SpiderLabs/ModSecurity/releases/download/v${PORTVERSION}/
 PKGNAMESUFFIX=	3
@@ -40,5 +40,7 @@ post-install:
 	@${MKDIR}	${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA}	${WRKSRC}/modsecurity.conf-recommended \
 		${STAGEDIR}${ETCDIR}/modsecurity.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/unicode.mapping \
+		${STAGEDIR}${ETCDIR}/unicode.mapping
 
 .include <bsd.port.mk>
