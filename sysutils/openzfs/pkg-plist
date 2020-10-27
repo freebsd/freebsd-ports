@@ -265,6 +265,7 @@ include/libzfs/sys/zfs_sa.h
 include/libzfs/sys/zfs_stat.h
 include/libzfs/sys/zfs_sysfs.h
 include/libzfs/sys/zfs_vfsops.h
+include/libzfs/sys/zfs_vnops.h
 include/libzfs/sys/zfs_znode.h
 include/libzfs/sys/zil.h
 include/libzfs/sys/zil_impl.h
@@ -1775,6 +1776,7 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/tests/functional/l2arc/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/l2arc/l2arc.cfg
 %%TESTS%%share/zfs/zfs-tests/tests/functional/l2arc/l2arc_arcstats_pos.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/l2arc/l2arc_l2miss_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/l2arc/l2arc_mfuonly_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/l2arc/persist_l2arc_001_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/l2arc/persist_l2arc_002_pos.ksh
