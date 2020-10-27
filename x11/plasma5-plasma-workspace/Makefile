@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	plasma-workspace
-DISTVERSION=	${KDE_PLASMA_VERSION}.1
+DISTVERSION=	${KDE_PLASMA_VERSION}
 CATEGORIES=	x11 kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
