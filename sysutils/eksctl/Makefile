@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	eksctl
-PORTVERSION=	0.26.0
+PORTVERSION=	0.30.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	danilo@FreeBSD.org
@@ -32,7 +32,7 @@ GH_TUPLE=	\
 		PuerkitoBio:purell:v1.1.1:puerkitobio_purell/vendor/github.com/PuerkitoBio/purell \
 		PuerkitoBio:urlesc:de5bf2ad4578:puerkitobio_urlesc/vendor/github.com/PuerkitoBio/urlesc \
 		apex:log:v1.1.4:apex_log/vendor/github.com/apex/log \
-		aws:aws-sdk-go:v1.30.11:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
+		aws:aws-sdk-go:v1.35.4:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
 		bazelbuild:bazel-gazelle:70208cbdc798:bazelbuild_bazel_gazelle/vendor/github.com/bazelbuild/bazel-gazelle \
 		bazelbuild:buildtools:69366ca98f89:bazelbuild_buildtools/vendor/github.com/bazelbuild/buildtools \
 		benjamintf1:unmarshalledmatchers:bb1c1f34eaea:benjamintf1_unmarshalledmatchers/vendor/github.com/benjamintf1/unmarshalledmatchers \
@@ -63,6 +63,7 @@ GH_TUPLE=	\
 		evanphx:json-patch:v4.5.0:evanphx_json_patch/vendor/github.com/evanphx/json-patch \
 		fatih:color:v1.9.0:fatih_color/vendor/github.com/fatih/color \
 		fluxcd:flux:873fb9300996:fluxcd_flux_install/vendor/github.com/fluxcd/flux \
+		fluxcd:go-git-providers:v0.0.2:fluxcd_go_git_providers/vendor/github.com/fluxcd/go-git-providers \
 		fluxcd:helm-operator:8d71b0072a3e:fluxcd_helm_operator_install/vendor/github.com/fluxcd/helm-operator \
 		fsnotify:fsnotify:v1.4.9:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		ghodss:yaml:v1.0.0:ghodss_yaml/vendor/github.com/ghodss/yaml \
@@ -125,7 +126,7 @@ GH_TUPLE=	\
 		google:go-cmp:v0.4.0:google_go_cmp/vendor/github.com/google/go-cmp \
 		google:go-genproto:fa694d86fc64:google_go_genproto/vendor/google.golang.org/genproto \
 		google:go-github:v28.1.1:google_go_github_v28/vendor/github.com/google/go-github/v28 \
-		google:go-github:v31.0.0:google_go_github_v31/vendor/github.com/google/go-github/v31 \
+		google:go-github:v32.1.0:google_go_github_v32/vendor/github.com/google/go-github/v32 \
 		google:go-querystring:v1.0.0:google_go_querystring/vendor/github.com/google/go-querystring \
 		google:gofuzz:v1.0.0:google_gofuzz/vendor/github.com/google/gofuzz \
 		google:rpmpack:aa36bfddb3a0:google_rpmpack/vendor/github.com/google/rpmpack \
@@ -133,13 +134,14 @@ GH_TUPLE=	\
 		google:wire:v0.3.0:google_wire/vendor/github.com/google/wire \
 		googleapis:gax-go:v2.0.2:googleapis_gax_go/vendor/github.com/googleapis/gax-go \
 		googleapis:gax-go:v2.0.5:googleapis_gax_go_v2 \
-		googleapis:gnostic:v0.3.1:googleapis_gnostic_1/vendor/github.com/googleapis/gnostic \
+		googleapis:gnostic:v0.3.1:googleapis_gnostic/vendor/github.com/googleapis/gnostic \
 		googleapis:google-api-go-client:v0.9.0:googleapis_google_api_go_client/vendor/google.golang.org/api \
 		googleapis:google-cloud-go:v0.44.3:googleapis_google_cloud_go/vendor/cloud.google.com/go \
 		gophercloud:gophercloud:v0.1.0:gophercloud_gophercloud/vendor/github.com/gophercloud/gophercloud \
 		goreleaser:goreleaser:v0.136.0:goreleaser_goreleaser/vendor/github.com/goreleaser/goreleaser \
 		goreleaser:nfpm:v1.2.1:goreleaser_nfpm/vendor/github.com/goreleaser/nfpm \
 		gostaticanalysis:analysisutil:v0.0.3:gostaticanalysis_analysisutil/vendor/github.com/gostaticanalysis/analysisutil \
+		gregjones:httpcache:901d90724c79:gregjones_httpcache/vendor/github.com/gregjones/httpcache \
 		grpc:grpc-go:v1.23.0:grpc_grpc_go/vendor/google.golang.org/grpc \
 		hashicorp:errwrap:d6c0cd880357:hashicorp_errwrap/vendor/github.com/hashicorp/errwrap \
 		hashicorp:go-cleanhttp:v0.5.1:hashicorp_go_cleanhttp/vendor/github.com/hashicorp/go-cleanhttp \
@@ -154,7 +156,7 @@ GH_TUPLE=	\
 		instrumenta:kubeval:8d013ec9fc56:instrumenta_kubeval/vendor/github.com/instrumenta/kubeval \
 		jingyugao:rowserrcheck:72ab7603b68a:jingyugao_rowserrcheck/vendor/github.com/jingyugao/rowserrcheck \
 		jirfag:go-printf-func-name:45db9963cdd3:jirfag_go_printf_func_name/vendor/github.com/jirfag/go-printf-func-name \
-		jmespath:go-jmespath:v0.3.0:jmespath_go_jmespath/vendor/github.com/jmespath/go-jmespath \
+		jmespath:go-jmespath:v0.4.0:jmespath_go_jmespath/vendor/github.com/jmespath/go-jmespath \
 		json-iterator:go:v1.1.7:json_iterator_go/vendor/github.com/json-iterator/go \
 		jteeuwen:go-bindata:a0ff2567cfb7:jteeuwen_go_bindata/vendor/github.com/jteeuwen/go-bindata \
 		justinbarrick:go-k8s-portforward:v1.0.3:justinbarrick_go_k8s_portforward/vendor/github.com/justinbarrick/go-k8s-portforward \
@@ -171,16 +173,16 @@ GH_TUPLE=	\
 		kubernetes-sigs:yaml:v1.2.0:kubernetes_sigs_yaml/vendor/sigs.k8s.io/yaml \
 		kubernetes:api:v0.16.8:kubernetes_api/vendor/k8s.io/api \
 		kubernetes:apiextensions-apiserver:v0.16.8:kubernetes_apiextensions_apiserver_1/vendor/k8s.io/apiextensions-apiserver \
-		kubernetes:apimachinery:v0.16.8:kubernetes_apimachinery_1/vendor/k8s.io/apimachinery \
+		kubernetes:apimachinery:v0.16.8:kubernetes_apimachinery/vendor/k8s.io/apimachinery \
 		kubernetes:apiserver:v0.16.8:kubernetes_apiserver/vendor/k8s.io/apiserver \
 		kubernetes:cli-runtime:v0.16.8:kubernetes_cli_runtime_1/vendor/k8s.io/cli-runtime \
-		kubernetes:client-go:v0.16.8:kubernetes_client_go/vendor/k8s.io/client-go \
+		kubernetes:client-go:v0.16.8:kubernetes_client_go_1/vendor/k8s.io/client-go \
 		kubernetes:cloud-provider:v0.16.8:kubernetes_cloud_provider/vendor/k8s.io/cloud-provider \
 		kubernetes:cluster-bootstrap:v0.16.8:kubernetes_cluster_bootstrap/vendor/k8s.io/cluster-bootstrap \
-		kubernetes:code-generator:v0.16.8:kubernetes_code_generator/vendor/k8s.io/code-generator \
-		kubernetes:component-base:v0.16.8:kubernetes_component_base/vendor/k8s.io/component-base \
+		kubernetes:code-generator:v0.16.8:kubernetes_code_generator_1/vendor/k8s.io/code-generator \
+		kubernetes:component-base:v0.16.8:kubernetes_component_base_1/vendor/k8s.io/component-base \
 		kubernetes:cri-api:v0.16.8:kubernetes_cri_api/vendor/k8s.io/cri-api \
-		kubernetes:csi-translation-lib:v0.16.8:kubernetes_csi_translation_lib_1/vendor/k8s.io/csi-translation-lib \
+		kubernetes:csi-translation-lib:v0.16.8:kubernetes_csi_translation_lib/vendor/k8s.io/csi-translation-lib \
 		kubernetes:gengo:26a664648505:kubernetes_gengo/vendor/k8s.io/gengo \
 		kubernetes:klog:v1.0.0:kubernetes_klog/vendor/k8s.io/klog \
 		kubernetes:kops:v1.15.2:kubernetes_kops/vendor/k8s.io/kops \
@@ -190,8 +192,8 @@ GH_TUPLE=	\
 		kubernetes:kube-proxy:v0.16.8:kubernetes_kube_proxy/vendor/k8s.io/kube-proxy \
 		kubernetes:kube-scheduler:v0.16.8:kubernetes_kube_scheduler/vendor/k8s.io/kube-scheduler \
 		kubernetes:kubectl:v0.16.8:kubernetes_kubectl/vendor/k8s.io/kubectl \
-		kubernetes:kubelet:v0.16.8:kubernetes_kubelet/vendor/k8s.io/kubelet \
-		kubernetes:kubernetes:v1.16.8:kubernetes_kubernetes/vendor/k8s.io/kubernetes \
+		kubernetes:kubelet:v0.16.8:kubernetes_kubelet_1/vendor/k8s.io/kubelet \
+		kubernetes:kubernetes:v1.16.8:kubernetes_kubernetes_1/vendor/k8s.io/kubernetes \
 		kubernetes:legacy-cloud-providers:v0.16.8:kubernetes_legacy_cloud_providers_1/vendor/k8s.io/legacy-cloud-providers \
 		kubernetes:metrics:v0.16.8:kubernetes_metrics/vendor/k8s.io/metrics \
 		kubernetes:sample-apiserver:v0.16.8:kubernetes_sample_apiserver/vendor/k8s.io/sample-apiserver \
@@ -221,7 +223,7 @@ GH_TUPLE=	\
 		nakabonne:nestif:v0.3.0:nakabonne_nestif/vendor/github.com/nakabonne/nestif \
 		nbutton23:zxcvbn-go:ae427f1e4c1d:nbutton23_zxcvbn_go/vendor/github.com/nbutton23/zxcvbn-go \
 		nxadm:tail:v1.4.4:nxadm_tail/vendor/github.com/nxadm/tail \
-		onsi:ginkgo:v1.12.3:onsi_ginkgo/vendor/github.com/onsi/ginkgo \
+		onsi:ginkgo:v1.14.0:onsi_ginkgo/vendor/github.com/onsi/ginkgo \
 		onsi:gomega:v1.10.1:onsi_gomega/vendor/github.com/onsi/gomega \
 		pelletier:go-toml:v1.6.0:pelletier_go_toml/vendor/github.com/pelletier/go-toml \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
@@ -269,11 +271,10 @@ GH_TUPLE=	\
 		vektra:mockery:e78b021dcbb5:vektra_mockery/vendor/github.com/vektra/mockery \
 		vmware:govmomi:v0.20.1:vmware_govmomi/vendor/github.com/vmware/govmomi \
 		voxelbrain:goptions:58cddc247ea2:voxelbrain_goptions/vendor/github.com/voxelbrain/goptions \
-		weaveworks:go-git-providers:v0.1.2:weaveworks_go_git_providers/vendor/github.com/weaveworks/go-git-providers \
-		weaveworks:goformation:9ad99f6e397d:weaveworks_goformation_v4/vendor/github.com/weaveworks/goformation/v4 \
+		weaveworks:goformation:943d7e97b454:weaveworks_goformation_v4/vendor/github.com/weaveworks/goformation/v4 \
 		weaveworks:launcher:1ca323f1de15:weaveworks_launcher/vendor/github.com/weaveworks/launcher \
 		whilp:git-urls:6db9661140c0:whilp_git_urls/vendor/github.com/whilp/git-urls \
-		xanzy:go-gitlab:v0.31.0:xanzy_go_gitlab/vendor/github.com/xanzy/go-gitlab \
+		xanzy:go-gitlab:v0.33.0:xanzy_go_gitlab/vendor/github.com/xanzy/go-gitlab \
 		xeipuuv:gojsonpointer:02993c407bfb:xeipuuv_gojsonpointer/vendor/github.com/xeipuuv/gojsonpointer \
 		xeipuuv:gojsonreference:bd5ef7bd5415:xeipuuv_gojsonreference/vendor/github.com/xeipuuv/gojsonreference \
 		xeipuuv:gojsonschema:ac52e6811b56:xeipuuv_gojsonschema/vendor/github.com/xeipuuv/gojsonschema
