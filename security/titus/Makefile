@@ -3,7 +3,7 @@
 
 PORTNAME=	titus
 PORTVERSION=	0.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	security
 
 MAINTAINER=	feld@FreeBSD.org
@@ -25,11 +25,6 @@ CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
 
 .include <bsd.port.pre.mk>
-
-.if ${SSL_DEFAULT} == base
-BROKEN_FreeBSD_12=	member access into incomplete type 'dh_st'
-BROKEN_FreeBSD_13=	member access into incomplete type 'dh_st'
-.endif
 
 post-patch:
 	${REINPLACE_CMD} 's|/var/lib/titus/empty|/var/empty|' ${WRKSRC}/titus.conf.example
