@@ -2,8 +2,7 @@
 
 PORTNAME=	geonkick
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.8
-PORTREVISION=	1
+DISTVERSION=	2.4.0
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 
@@ -26,6 +25,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	iurie-sw
 USE_GNOME=	cairo
 USE_XORG=	x11
+
+INSTALLS_ICONS=	yes
 
 .include <bsd.port.pre.mk>
 
