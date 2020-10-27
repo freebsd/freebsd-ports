@@ -1,6 +1,0 @@
-Reposado is a set of tools written in Python that replicate the
-key functionality of Mac OS X Server's Software Update Service.
-This enables you to host a local Apple Software Update Server
-on any hardware and OS of your choice.
-
-WWW: https://github.com/wdas/reposado

@@ -1,9 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-You'll need to perform some steps to make reposado work.
-See file named getting_started.txt in %%DOCSDIR%%
-for details.
-EOM
-}
-]

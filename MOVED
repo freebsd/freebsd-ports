@@ -15658,3 +15658,8 @@ www/rubygem-webpack-rails-rails60|devel/rubygem-webpacker-rails60|2020-10-25|Has
 converters/zbase32||2020-10-26|Has expired: does not build with python3
 devel/py-PEAK-Rules||2020-10-26|Has expired: does not build with python3
 editors/nvi-devel|editors/nvi2|2020-10-26|Has expired: Unsupported upstream since 2015, please switch to editors/nvi2
+devel/py-repoze.what||2020-10-27|Has expired: does not build with python3
+net/reposado||2020-10-27|Has expired: Uses deprecated version of python
+devel/py-setuptools_darcs||2020-10-27|Has expired: Uses Python 2.7 which is EOLed upstream
+devel/py-darcsver||2020-10-27|Has expired: does not build with python3
+devel/py-gdata|www/py-google-api-python-client|2020-10-27|Has expired: Unmaintained upstream, superseded by www/py-google-api-python-client
