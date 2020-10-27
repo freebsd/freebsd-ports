@@ -13,8 +13,10 @@ include/redkite/RkFont.h
 include/redkite/RkImage.h
 include/redkite/RkLabel.h
 include/redkite/RkLineEdit.h
+include/redkite/RkList.h
 include/redkite/RkLog.h
 include/redkite/RkMain.h
+include/redkite/RkModel.h
 include/redkite/RkObject.h
 include/redkite/RkObserver.h
 include/redkite/RkPainter.h
@@ -27,6 +29,7 @@ include/redkite/RkRect.h
 include/redkite/RkSize.h
 include/redkite/RkTimer.h
 include/redkite/RkTransition.h
+include/redkite/RkVariant.h
 include/redkite/RkWidget.h
 lib/libredkite.a
 share/man/man1/rkpng2c.1.gz
