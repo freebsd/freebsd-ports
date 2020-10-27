@@ -376,15 +376,15 @@ _USE_PHP_ALL=	bcmath bitset bz2 calendar ctype curl dba dom \
 		enchant exif fileinfo filter ftp gd gettext gmp \
 		hash iconv igbinary imap intl json ldap mbstring mcrypt \
 		memcache memcached mysqli odbc opcache \
-		openssl pcntl pcre pdf pdo pdo_dblib pdo_firebird pdo_mysql \
+		openssl pcntl pcre pdo pdo_dblib pdo_firebird pdo_mysql \
 		pdo_odbc pdo_pgsql pdo_sqlite phar pgsql posix \
 		pspell radius readline redis session shmop simplexml snmp soap\
 		sockets spl sqlite3 sysvmsg sysvsem sysvshm \
 		tidy tokenizer xml xmlreader xmlwriter xsl zip zlib
 # version specific components
-_USE_PHP_VER72=	${_USE_PHP_ALL} interbase recode sodium xmlrpc wddx
-_USE_PHP_VER73=	${_USE_PHP_ALL} interbase recode sodium xmlrpc wddx
-_USE_PHP_VER74=	${_USE_PHP_ALL} ffi sodium xmlrpc
+_USE_PHP_VER72=	${_USE_PHP_ALL} interbase pdf recode sodium xmlrpc wddx
+_USE_PHP_VER73=	${_USE_PHP_ALL} interbase pdf recode sodium xmlrpc wddx
+_USE_PHP_VER74=	${_USE_PHP_ALL} ffi pdf sodium xmlrpc
 _USE_PHP_VER80=	${_USE_PHP_ALL} ffi sodium
 
 bcmath_DEPENDS=	math/php${PHP_VER}-bcmath
