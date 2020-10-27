@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aws-iam-authenticator
-PORTVERSION=	0.5.1
+PORTVERSION=	0.5.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 

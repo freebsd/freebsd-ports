@@ -1,6 +1,6 @@
-TIMESTAMP = 1596456863
-SHA256 (kubernetes-sigs-aws-iam-authenticator-v0.5.1_GH0.tar.gz) = fe11224b2ccfb71aaf28645086f11b0b44ca7d362d2986e22f6fb12abb9020b9
-SIZE (kubernetes-sigs-aws-iam-authenticator-v0.5.1_GH0.tar.gz) = 6069485
+TIMESTAMP = 1603825355
+SHA256 (kubernetes-sigs-aws-iam-authenticator-v0.5.2_GH0.tar.gz) = 0351fd8d0b5f3b5eaf11fd3edcaf2e8718b8eda60ab036f8c5f0b3039b630f16
+SIZE (kubernetes-sigs-aws-iam-authenticator-v0.5.2_GH0.tar.gz) = 6072090
 SHA256 (PuerkitoBio-purell-v1.1.1_GH0.tar.gz) = 93e2ae2b12fc656ecc7ca28336009d24431247d2af59949c59fdef26ecc9a971
 SIZE (PuerkitoBio-purell-v1.1.1_GH0.tar.gz) = 11604
 SHA256 (PuerkitoBio-urlesc-de5bf2ad4578_GH0.tar.gz) = e1d470b13efcab6d4dea96a3cdb986b8a29a06c05d1b80399f0e58caef5ca932
