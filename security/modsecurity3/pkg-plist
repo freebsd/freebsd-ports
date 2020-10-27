@@ -22,4 +22,5 @@ lib/libmodsecurity.so
 lib/libmodsecurity.so.3
 lib/libmodsecurity.so.%%SHLIBVER%%
 libdata/pkgconfig/modsecurity.pc
+%%ETCDIR%%/unicode.mapping
 @sample %%ETCDIR%%/modsecurity.conf.sample
