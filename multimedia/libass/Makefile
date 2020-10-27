@@ -16,7 +16,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libfribidi.so:converters/fribidi \
 		libfontconfig.so:x11-fonts/fontconfig
 
-USES=		autoreconf iconv libtool pathfix pkgconfig tar:xz
+USES=		autoreconf compiler:c11 iconv libtool pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
