@@ -4,8 +4,8 @@ PORTNAME=	rust
 PORTVERSION=	1.47.0
 CATEGORIES=	lang
 MASTER_SITES=	https://static.rust-lang.org/dist/:rust \
-		LOCAL/tobik:armbase \
-		LOCAL/tobik:base \
+		LOCAL/mikael:armbase \
+		LOCAL/mikael:base \
 		LOCAL/bdragon:ppc64lebase \
 		https://download.freebsd.org/ftp/${_RUST_FBSD_SUBDIR_${FLAVOR}}/:base \
 		LOCAL/tobik:powerpc64_gcc
@@ -62,9 +62,9 @@ _RUST_FBSD_DIST_armv7=			FreeBSD-${_RUST_FBSD_VER}-arm-armv7${EXTRACT_SUFX}:armb
 _RUST_FBSD_DIST_i386=			FreeBSD-${_RUST_FBSD_VER}-i386${EXTRACT_SUFX}:base
 _RUST_FBSD_DIST_powerpc64_elfv1=	FreeBSD-${_RUST_FBSD_VER}-powerpc64-elfv1${EXTRACT_SUFX}:base \
 					FreeBSD-${_RUST_FBSD_VER}-powerpc64-elfv1-gcc9-9.2.0${EXTRACT_SUFX}:powerpc64_gcc
-_RUST_FBSD_DIST_powerpc64_elfv2=	FreeBSD-${_RUST_FBSD_VER}-powerpc64-elfv2-r356261${EXTRACT_SUFX}:base
+_RUST_FBSD_DIST_powerpc64_elfv2=	FreeBSD-${_RUST_FBSD_VER}-powerpc64-elfv2-v1300123${EXTRACT_SUFX}:base
 _RUST_FBSD_DIST_powerpc64le=		FreeBSD-${_RUST_FBSD_VER}-powerpc64le-r366300${EXTRACT_SUFX}:ppc64lebase
-_RUST_FBSD_VER=				${_RUST_FBSD_VER_${FLAVOR}:U11.3-RELEASE}
+_RUST_FBSD_VER=				${_RUST_FBSD_VER_${FLAVOR}:U11.4-RELEASE}
 _RUST_FBSD_VER_armv7=			12.1-RELEASE
 _RUST_FBSD_VER_powerpc64_elfv1=		12.1-RELEASE
 _RUST_FBSD_VER_powerpc64_elfv2=		13.0-CURRENT
