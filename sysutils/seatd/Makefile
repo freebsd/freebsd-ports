@@ -2,6 +2,7 @@
 
 PORTNAME=	seatd
 DISTVERSION=	0.4.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://git.sr.ht/~kennylevinsen/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -14,15 +15,18 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		compiler:c11 meson pkgconfig
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	${PORTNAME}
-MESON_ARGS=	-Dbuiltin=enabled # SUID fallback
 PLIST_FILES=	bin/${PORTNAME} \
 		include/libseat.h \
 		lib/libseat.so \
 		lib/libseat.so.1 \
 		libdata/pkgconfig/libseat.pc
 
-OPTIONS_DEFINE=	MANPAGES
+OPTIONS_DEFINE=	MANPAGES SUID
+# XXX enable SUID after wlroots removes direct session
 OPTIONS_DEFAULT=MANPAGES
+
+SUID_DESC=		Fall back to builtin server when running as root
+SUID_MESON_ENABLED=	builtin
 
 MANPAGES_BUILD_DEPENDS=	scdoc:textproc/scdoc
 MANPAGES_MESON_ENABLED=	man-pages
