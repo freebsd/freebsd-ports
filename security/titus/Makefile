@@ -2,14 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	titus
-PORTVERSION=	0.3
-PORTREVISION=	6
+PORTVERSION=	0.4
+PORTREVISION=	0
 CATEGORIES=	security
 
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	TLS/SSL proxy server
 
 LICENSE=	MIT
+
+DEPRECATED=	Development has officially ceased
+EXPIRATION_DATE=	2021-02-01
 
 USES=		compiler:c++11-lang ssl
 USE_RC_SUBR=	titus
