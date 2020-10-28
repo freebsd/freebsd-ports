@@ -13,14 +13,14 @@ COMMENT=	Model to synchronize multiple instances over DBus
 
 LICENSE=	GPLv3
 
-EXTRA_PATCHES=	\
-		${FILESDIR}/dee-1.2.7-deprecated-g_type_class_add_private.patch:-p1 \
+EXTRA_PATCHES=	${FILESDIR}/dee-1.2.7-deprecated-g_type_class_add_private.patch:-p1 \
 		${FILESDIR}/vapi-skip-properties.patch:-p1
 
 BUILD_DEPENDS=	vapigen:lang/vala
 LIB_DEPENDS=	libicutu.so:devel/icu
 
-USES=		gmake gnome libtool localbase pathfix pkgconfig python:3.5+
+USES=		compiler:c11 gmake gnome libtool localbase pathfix pkgconfig \
+		python:3.5+
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 introspection:build pygobject3
 USE_LDCONFIG=	yes
