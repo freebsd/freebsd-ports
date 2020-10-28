@@ -44,6 +44,8 @@ CONSOLEKIT_PATCHFILES=	b59460944208.patch:-p1:ck2 # https://github.com/swaywm/wl
 CONSOLEKIT_LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 			libconsolekit.so:sysutils/consolekit2
 CONSOLEKIT_MESON_ENABLED=	consolekit2
+CONSOLEKIT_PREVENTS=	LIBSEAT
+CONSOLEKIT_PREVENTS_MSG=CONSOLEKIT and LIBSEAT patches cannot be applied together
 .if make(makesum)
 .MAKEFLAGS:		WITH+=CONSOLEKIT
 .endif
