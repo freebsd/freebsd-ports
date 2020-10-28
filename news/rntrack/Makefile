@@ -16,15 +16,14 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		tar:bzip2
 
-MAKEFILE=	${WRKSRC}/MakeFiles/FreeBSD/Makefile
 MAKE_ENV=	CONFIG=${ETCDIR}/rntrack.cfg
-ALL_TARGET=	${PORTNAME}
 
 ETCDIR=		${PREFIX}/etc/fido
 
 NO_WRKSUBDIR=	yes
+BUILD_WRKSRC=	${WRKSRC}/MakeFiles/FreeBSD
 
-_DOCS=	FAQ_en FAQ_ru report.err report.err.ru
+_DOCS=		FAQ_en FAQ_ru report.err report.err.ru
 
 OPTIONS_DEFINE=	DOCS EXAMPLES LOG_PID SCRIPTS SYSLOG_FORMAT
 
@@ -37,16 +36,9 @@ SCRIPTS_USES=			perl5
 SCRIPTS_MAKE_ARGS=		ENABLE_SCRIPTS=1
 SYSLOG_FORMAT_MAKE_ARGS=	ENABLE_SYSLOG_LOG_FORMAT=1
 
-pre-patch:
-	${REINPLACE_CMD} -e "s@\.\./\.\./@@g" ${WRKSRC}/MakeFiles/FreeBSD/Makefile
-
-pre-configure:
-	${CP} ${WRKSRC}/MakeFiles/FreeBSD/Makefile ${WRKSRC}
-
 do-install:
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/rntrack ${STAGEDIR}${PREFIX}/sbin
 	${MKDIR} ${STAGEDIR}${ETCDIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/rntrack ${STAGEDIR}${PREFIX}/sbin
 	${MKDIR} ${STAGEDIR}${ETCDIR}/tpl
 	${INSTALL_DATA} ${WRKSRC}/samples/node.cfg ${STAGEDIR}${ETCDIR}/rntrack.cfg-dist
 	${INSTALL_DATA} ${WRKSRC}/samples/test.pl ${STAGEDIR}${ETCDIR}
@@ -56,11 +48,17 @@ do-install:
 .for f in alt2koi.tbl koi2alt.tbl
 	${INSTALL_DATA} ${WRKSRC}/samples/${f} ${STAGEDIR}${ETCDIR}/tbl
 .endfor
-.for f in bignode.zip bignode2.zip node1042.zip node1157.zip node.cfg node2.cfg node3.cfg perl-test.cfg point.cfg point2.cfg traflog.tpl
-	${INSTALL_DATA} ${WRKSRC}/samples/${f} ${STAGEDIR}${EXAMPLESDIR}
-.endfor
+
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${_DOCS}
 	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
+
+post-install-EXAMPLES-on:
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+.for f in bignode.zip bignode2.zip node1042.zip node1157.zip node.cfg node2.cfg node3.cfg perl-test.cfg point.cfg point2.cfg traflog.tpl
+	${INSTALL_DATA} ${WRKSRC}/samples/${f} ${STAGEDIR}${EXAMPLESDIR}
+.endfor
+
 .include <bsd.port.mk>
