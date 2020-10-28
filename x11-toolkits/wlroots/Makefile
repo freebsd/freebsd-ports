@@ -59,10 +59,10 @@ LIBSEAT_MESON_ENABLED=	libseat
 .MAKEFLAGS:		WITH+=LIBSEAT
 .endif
 
-X11_LIB_DEPENDS=libxcb-errors.so:x11/xcb-util-errors \
-		libxcb-icccm.so:x11/xcb-util-wm
-X11_RUN_DEPENDS=xwayland-devel>0:x11-servers/xwayland-devel
-X11_USE=	XORG=x11,xcb
-X11_MESON_ENABLED=x11-backend xcb-icccm xwayland
+X11_LIB_DEPENDS=	libxcb-errors.so:x11/xcb-util-errors \
+			libxcb-icccm.so:x11/xcb-util-wm
+X11_RUN_DEPENDS=	xwayland-devel>0:x11-servers/xwayland-devel
+X11_USE=		XORG=x11,xcb
+X11_MESON_ENABLED=	x11-backend xcb-icccm xwayland
 
 .include <bsd.port.mk>
