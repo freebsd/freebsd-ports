@@ -1,0 +1,15 @@
+TIMESTAMP = 1600515648
+SHA256 (lucene-core-7.7.1.jar) = 4a96eba551129bc7eebdff5586aeb8729da0889bd05d9ac2dab0ff4924548d27
+SIZE (lucene-core-7.7.1.jar) = 3088010
+SHA256 (lucene-grouping-7.7.1.jar) = c031e6dfc3f9c744fc2747228245a294e1276f1fca5003b11639de18162d61eb
+SIZE (lucene-grouping-7.7.1.jar) = 87267
+SHA256 (lucene-queries-7.7.1.jar) = b7f29a9874010697c83443091005301707899176f0873b41708fed3c47e58d78
+SIZE (lucene-queries-7.7.1.jar) = 265080
+SHA256 (lucene-queryparser-7.7.1.jar) = 7e1d509aa3fffd19ed0d89c8bb1fcd91bea37462955a9862fbc2d4600c4bb2a3
+SIZE (lucene-queryparser-7.7.1.jar) = 381910
+SHA256 (lucene-sandbox-7.7.1.jar) = 865f472ed473bd78ec8309306b6d9484a3fe26cffef1a895d8873927eebad5d1
+SIZE (lucene-sandbox-7.7.1.jar) = 279651
+SHA256 (antlr4-4.7.2-complete.jar) = 6852386d7975eff29171dae002cc223251510d35f291ae277948f381a7b380b4
+SIZE (antlr4-4.7.2-complete.jar) = 2079769
+SHA256 (openjdk-jfx-14.0.2.1+1_GH0.tar.gz) = 08830d79dbdaadf66a1feae356caed6d70636dfdbf47598dd48a59f407d05ef1
+SIZE (openjdk-jfx-14.0.2.1+1_GH0.tar.gz) = 67975108
