@@ -25,7 +25,7 @@ LIB_DEPENDS=	libexiv2.so:graphics/exiv2 \
 		libpugixml.so:textproc/pugixml \
 		libvips.so:graphics/vips
 
-USES=		cmake desktop-file-utils gettext gnome jpeg pkgconfig # compiler:c++11-lang
+USES=		cmake compiler desktop-file-utils gettext gnome jpeg pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	aferrero2707
 GH_PROJECT=	PhotoFlow
@@ -52,11 +52,17 @@ OCIO_LIB_DEPENDS=	libOpenColorIO.so:graphics/opencolorio
 OCIO_VARS=		GH_TUPLE+=sobotka:filmic-blender:1.1.1:fb/../.build/data/filmic-blender \
 			GH_TUPLE+=imageworks:OpenColorIO-Configs:0bb079c08be410030669cbf5f19ff869b88af953:c/../.build/data/ocio-configs
 
+.include <bsd.port.pre.mk>
+
+.if ${CHOSEN_COMPILER_TYPE} == gcc
+USE_GCC=	yes
+.else
 # clang-10 fails to compile photoflow because it bundles an old version of GMIC that clang-10 doesn't like: https://github.com/aferrero2707/PhotoFlow/issues/220
 LLVM_VERSION=	90
-BUILD_DEPENDS=	clang${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
+BUILD_DEPENDS+=	clang${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
 CC=		clang${LLVM_VERSION}
 CXX=		clang++${LLVM_VERSION}
 CPP=		clang-cpp${LLVM_VERSION}
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
