@@ -36,7 +36,7 @@ GH_TUPLE=	WayfireWM:wf-utils:f9b5eba:wfutils/subprojects/wf-utils
 OPTIONS_DEFINE=	SUID X11
 OPTIONS_DEFAULT=SUID X11
 
-SUID_DESC=		setuid bit on "${PORTNAME}" binary (required for DRM session)
+SUID_DESC=		setuid bit on "${PORTNAME}" binary (to claim DRM without seatd/console-kit-daemon)
 SUID_PLIST_SUB=		MAYBE_SUID="@(,,4755) "
 SUID_PLIST_SUB_OFF=	MAYBE_SUID=""
 

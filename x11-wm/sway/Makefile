@@ -44,7 +44,7 @@ MANPAGES_MESON_ENABLED=	man-pages
 PIXBUF_USE=		GNOME=gdkpixbuf2
 PIXBUF_MESON_ENABLED=	gdk-pixbuf
 
-SUID_DESC=		setuid bit on "sway" binary (required for DRM session)
+SUID_DESC=		setuid bit on "sway" binary (to claim DRM without seatd/console-kit-daemon)
 SUID_PLIST_SUB=		MAYBE_SUID="@(,,4755) "
 SUID_PLIST_SUB_OFF=	MAYBE_SUID=""
 
