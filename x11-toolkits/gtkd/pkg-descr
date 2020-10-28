@@ -1,0 +1,6 @@
+GtkD is a D binding and OO wrapper of GTK+ and is released on the LGPL license.
+
+GTK+ is a highly usable, feature rich toolkit for creating graphical user
+interfaces which boasts cross platform compatibility and an easy to use API.
+
+WWW: https://gtkd.org/index.html
