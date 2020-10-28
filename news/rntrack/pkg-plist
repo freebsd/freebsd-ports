@@ -1,30 +1,25 @@
-@dir %%DOCSDIR%%
-@dir %%EXAMPLESDIR%%
-@dir etc/fido/rntrack/tbl
-@dir etc/fido/rntrack/tpl
-@dir etc/fido/rntrack
-etc/fido/rntrack/rntrack.cfg-dist
-etc/fido/rntrack/tpl/audit.tpl
-etc/fido/rntrack/tpl/badfrom.tpl
-etc/fido/rntrack/tpl/badto.tpl
-etc/fido/rntrack/tpl/loop.tpl
-%%DOCSDIR%%/FAQ_en
-%%DOCSDIR%%/FAQ_ru
-%%DOCSDIR%%/report.err
-%%DOCSDIR%%/report.err.ru
-%%EXAMPLESDIR%%/bignode.zip
-%%EXAMPLESDIR%%/bignode2.zip
-%%EXAMPLESDIR%%/node1042.zip
-%%EXAMPLESDIR%%/node1157.zip
-%%EXAMPLESDIR%%/node.cfg
-%%EXAMPLESDIR%%/node2.cfg
-%%EXAMPLESDIR%%/node3.cfg
-%%EXAMPLESDIR%%/perl-test.cfg
-%%EXAMPLESDIR%%/point.cfg
-%%EXAMPLESDIR%%/point2.cfg
-%%EXAMPLESDIR%%/traflog.tpl
-etc/fido/rntrack/test.pl
-etc/fido/rntrack/tbl/alt2koi.tbl
-etc/fido/rntrack/tbl/koi2alt.tbl
+%%ETCDIR%%/rntrack.cfg-dist
+%%ETCDIR%%/tbl/alt2koi.tbl
+%%ETCDIR%%/tbl/koi2alt.tbl
+%%ETCDIR%%/test.pl
+%%ETCDIR%%/tpl/audit.tpl
+%%ETCDIR%%/tpl/badfrom.tpl
+%%ETCDIR%%/tpl/badto.tpl
+%%ETCDIR%%/tpl/loop.tpl
+share/man/man1/rntrack.1.gz
 sbin/rntrack
-man/man1/rntrack.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/FAQ_en
+%%PORTDOCS%%%%DOCSDIR%%/FAQ_ru
+%%PORTDOCS%%%%DOCSDIR%%/report.err
+%%PORTDOCS%%%%DOCSDIR%%/report.err.ru
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bignode.zip
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bignode2.zip
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/node.cfg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/node1042.zip
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/node1157.zip
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/node2.cfg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/node3.cfg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl-test.cfg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/point.cfg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/point2.cfg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/traflog.tpl

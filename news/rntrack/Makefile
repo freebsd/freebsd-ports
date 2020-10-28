@@ -2,6 +2,7 @@
 
 PORTNAME=	rntrack
 PORTVERSION=	2.1.10
+PORTREVISION=	1
 CATEGORIES=	news mail
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	ftrack-as/RNtrack/${PORTVERSION}
@@ -13,63 +14,53 @@ COMMENT=	FTN Messages tracker
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=	tar:bzip2
+USES=		tar:bzip2
 
-WRKSRC=	${WRKDIR}/${DISTNAME}
+MAKEFILE=	${WRKSRC}/MakeFiles/FreeBSD/Makefile
+MAKE_ENV=	CONFIG=${ETCDIR}/rntrack.cfg
+ALL_TARGET=	${PORTNAME}
+
+ETCDIR=		${PREFIX}/etc/fido
+
 NO_WRKSUBDIR=	yes
 
-USE_REINPLACE=	yes
-ALL_TARGET=	${PORTNAME}
-MAKEFILE=	${WRKSRC}/MakeFiles/FreeBSD/Makefile
-MAKE_ENV=	CONFIG=${PREFIX}/etc/fido/rntrack/rntrack.cfg
+_DOCS=	FAQ_en FAQ_ru report.err report.err.ru
 
-DOCS=	FAQ_en FAQ_ru report.err report.err.ru
+OPTIONS_DEFINE=	DOCS EXAMPLES LOG_PID SCRIPTS SYSLOG_FORMAT
 
-OPTIONS_DEFINE=	LOG_PID SCRIPTS SYSLOG_FORMAT
-
-SCRIPTS_DESC=	Enable Perl scripts support
-LOG_PID_DESC=	Enable pid logging
+LOG_PID_DESC=		Enable PID logging
+SCRIPTS_DESC=		Enable Perl scripts support
 SYSLOG_FORMAT_DESC=	Use syslog-like log style
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MSYSLOG_FORMAT}
-MAKE_ARGS+=	ENABLE_SYSLOG_LOG_FORMAT=1
-.endif
-
-.if ${PORT_OPTIONS:MLOG_PID}
-MAKE_ARGS+=	ENABLE_LOG_PID=1
-.endif
-
-.if ${PORT_OPTIONS:MSCRIPTS}
-USES+=	perl5
-MAKE_ARGS+=	ENABLE_SCRIPTS=1
-.endif
-
-pre-configure:
-	${CP} ${WRKSRC}/MakeFiles/FreeBSD/Makefile ${WRKSRC}
+LOG_PID_MAKE_ARGS=		ENABLE_LOG_PID=1
+SCRIPTS_USES=			perl5
+SCRIPTS_MAKE_ARGS=		ENABLE_SCRIPTS=1
+SYSLOG_FORMAT_MAKE_ARGS=	ENABLE_SYSLOG_LOG_FORMAT=1
 
 pre-patch:
 	${REINPLACE_CMD} -e "s@\.\./\.\./@@g" ${WRKSRC}/MakeFiles/FreeBSD/Makefile
 
+pre-configure:
+	${CP} ${WRKSRC}/MakeFiles/FreeBSD/Makefile ${WRKSRC}
+
 do-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${MKDIR} ${STAGEDIR}${PREFIX}/etc/fido/rntrack
+	${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/rntrack ${STAGEDIR}${PREFIX}/sbin
-	${MKDIR} ${STAGEDIR}${PREFIX}/etc/fido/rntrack/tpl
-	${INSTALL_DATA} ${WRKSRC}/samples/node.cfg ${STAGEDIR}${PREFIX}/etc/fido/rntrack/rntrack.cfg-dist
-	${INSTALL_DATA} ${WRKSRC}/samples/test.pl ${STAGEDIR}${PREFIX}/etc/fido/rntrack
-	${INSTALL_DATA} ${WRKSRC}/samples/tpl/* ${STAGEDIR}${PREFIX}/etc/fido/rntrack/tpl
-	${INSTALL_DATA} ${WRKSRC}/doc/rntrack.1 ${STAGEDIR}${PREFIX}/man/man1
-	${MKDIR} ${STAGEDIR}${PREFIX}/etc/fido/rntrack/tbl
+	${MKDIR} ${STAGEDIR}${ETCDIR}/tpl
+	${INSTALL_DATA} ${WRKSRC}/samples/node.cfg ${STAGEDIR}${ETCDIR}/rntrack.cfg-dist
+	${INSTALL_DATA} ${WRKSRC}/samples/test.pl ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${WRKSRC}/samples/tpl/* ${STAGEDIR}${ETCDIR}/tpl
+	${INSTALL_DATA} ${WRKSRC}/doc/rntrack.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${MKDIR} ${STAGEDIR}${ETCDIR}/tbl
 .for f in alt2koi.tbl koi2alt.tbl
-	${INSTALL_DATA} ${WRKSRC}/samples/${f} ${STAGEDIR}${PREFIX}/etc/fido/rntrack/tbl
+	${INSTALL_DATA} ${WRKSRC}/samples/${f} ${STAGEDIR}${ETCDIR}/tbl
 .endfor
 .for f in bignode.zip bignode2.zip node1042.zip node1157.zip node.cfg node2.cfg node3.cfg perl-test.cfg point.cfg point2.cfg traflog.tpl
 	${INSTALL_DATA} ${WRKSRC}/samples/${f} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for f in ${DOCS}
+.for f in ${_DOCS}
 	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 .include <bsd.port.mk>
