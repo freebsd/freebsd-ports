@@ -326,6 +326,7 @@
     SUBDIR += thinglaunch
     SUBDIR += thingylaunch
     SUBDIR += tilda
+    SUBDIR += tilix
     SUBDIR += tint
     SUBDIR += trayer
     SUBDIR += tycoon
