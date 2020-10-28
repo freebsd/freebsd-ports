@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	inlets
-DISTVERSION=	2.7.6
+DISTVERSION=	2.7.10
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -36,7 +36,7 @@ GH_TUPLE=	\
 		prometheus:client_model:v0.2.0:prometheus_client_model/vendor/github.com/prometheus/client_model \
 		prometheus:common:v0.9.1:prometheus_common/vendor/github.com/prometheus/common \
 		prometheus:procfs:v0.0.10:prometheus_procfs/vendor/github.com/prometheus/procfs \
-		rancher:remotedialer:v0.2.5:rancher_remotedialer/vendor/github.com/rancher/remotedialer \
+		rancher:remotedialer:8b1b7bb7d05f:rancher_remotedialer/vendor/github.com/rancher/remotedialer \
 		sirupsen:logrus:v1.4.2:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		spf13:cobra:v0.0.6:spf13_cobra/vendor/github.com/spf13/cobra \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
