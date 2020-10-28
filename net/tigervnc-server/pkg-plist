@@ -1,4 +1,5 @@
 bin/Xvnc
+bin/vncserver
 bin/vncconfig
 bin/vncpasswd
 bin/x0vncserver
