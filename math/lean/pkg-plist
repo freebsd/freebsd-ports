@@ -305,7 +305,6 @@ include/lean_ext/library/vm/vm_string.h
 include/lean_ext/library/vm/vm_task.h
 include/lean_ext/shell/emscripten.h
 include/lean_ext/shell/lean_js.h
-include/lean_ext/shell/leandoc.h
 include/lean_ext/shell/server.h
 include/lean_ext/shell/simple_pos_info_provider.h
 include/lean_ext/util/ascii.h
