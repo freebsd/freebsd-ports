@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	optipng:graphics/optipng
 
-USES=		gnome pkgconfig
+USES=		compiler:c11 gnome pkgconfig
 USE_GNOME=	gdkpixbuf2:build gtk30:build
 
 HAS_CONFIGURE=	yes
