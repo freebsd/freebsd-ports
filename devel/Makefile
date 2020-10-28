@@ -6614,6 +6614,7 @@
     SUBDIR += scandoc
     SUBDIR += sccache
     SUBDIR += scons
+    SUBDIR += sd-mux
     SUBDIR += sdl12
     SUBDIR += sdl20
     SUBDIR += sdl2pp
