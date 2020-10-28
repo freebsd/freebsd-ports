@@ -2,8 +2,7 @@
 
 PORTNAME=	deno
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.6
-PORTREVISION=	1
+DISTVERSION=	1.5.0
 CATEGORIES=	www
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -32,7 +31,7 @@ GH_ACCOUNT=	denoland
 USE_GNOME=	glib20
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-RUSTY_VERS=	0.11.0
+RUSTY_VERS=	0.12.0
 
 CARGO_ENV+=	CLANG_BASE_PATH=/usr \
 		GN=${PREFIX}/bin/gn \
@@ -69,6 +68,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		brotli-3.3.0 \
 		brotli-decompressor-2.3.1 \
 		buf_redux-0.8.4 \
+		build_const-0.2.1 \
 		bumpalo-3.4.0 \
 		byte-tools-0.3.1 \
 		byteorder-1.3.4 \
@@ -82,6 +82,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		const-random-0.1.8 \
 		const-random-macro-0.1.8 \
 		cpuid-bool-0.1.2 \
+		crc-1.8.1 \
 		crc32fast-1.2.0 \
 		crossbeam-channel-0.4.4 \
 		crossbeam-utils-0.7.2 \
@@ -89,15 +90,15 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		darling_core-0.10.2 \
 		darling_macro-0.10.2 \
 		dashmap-3.11.10 \
-		deno_doc-0.1.11 \
-		deno_lint-0.2.3 \
+		deno_doc-0.1.13 \
+		deno_lint-0.2.5 \
 		digest-0.8.1 \
 		digest-0.9.0 \
 		dissimilar-1.0.2 \
 		dlopen-0.1.8 \
 		dlopen_derive-0.1.4 \
 		dprint-core-0.31.0 \
-		dprint-plugin-typescript-0.32.4 \
+		dprint-plugin-typescript-0.32.6 \
 		dtoa-0.4.6 \
 		either-1.6.0 \
 		encoding_rs-0.8.24 \
@@ -106,6 +107,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		errno-0.1.8 \
 		fake-simd-0.1.2 \
 		filetime-0.2.12 \
+		fixedbitset-0.2.0 \
 		flate2-1.0.17 \
 		fnv-1.0.7 \
 		from_variant-0.1.2 \
@@ -151,7 +153,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		is-macro-0.1.8 \
 		itoa-0.4.6 \
 		js-sys-0.3.45 \
-		jsdoc-0.6.0 \
+		jsdoc-0.8.0 \
 		jsonc-parser-0.14.0 \
 		kernel32-sys-0.2.2 \
 		lazy_static-1.4.0 \
@@ -188,6 +190,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		os_pipe-0.9.2 \
 		owning_ref-0.4.1 \
 		percent-encoding-2.1.0 \
+		petgraph-0.5.1 \
 		phf-0.8.0 \
 		phf_generator-0.8.0 \
 		phf_macros-0.8.0 \
@@ -207,6 +210,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		quick-error-1.2.3 \
 		quote-0.6.13 \
 		quote-1.0.7 \
+		radix_fmt-1.0.0 \
 		rand-0.6.5 \
 		rand-0.7.3 \
 		rand_chacha-0.1.1 \
@@ -226,13 +230,14 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		redox_syscall-0.1.57 \
 		regex-1.3.9 \
 		regex-syntax-0.6.18 \
+		relative-path-1.3.2 \
 		remove_dir_all-0.5.3 \
 		reqwest-0.10.8 \
 		retain_mut-0.1.1 \
 		ring-0.16.15 \
 		rustc_version-0.2.3 \
 		rustls-0.18.1 \
-		rusty_v8-0.11.0 \
+		rusty_v8-0.12.0 \
 		rustyline-6.3.0 \
 		rustyline-derive-0.3.1 \
 		ryu-1.0.5 \
@@ -265,21 +270,22 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		strsim-0.8.0 \
 		strsim-0.9.3 \
 		swc_atoms-0.2.4 \
-		swc_common-0.10.3 \
-		swc_ecma_ast-0.32.0 \
-		swc_ecma_codegen-0.36.0 \
+		swc_bundler-0.12.0 \
+		swc_common-0.10.4 \
+		swc_ecma_ast-0.33.1 \
+		swc_ecma_codegen-0.38.0 \
 		swc_ecma_codegen_macros-0.5.0 \
-		swc_ecma_dep_graph-0.4.0 \
-		swc_ecma_parser-0.38.0 \
+		swc_ecma_dep_graph-0.6.0 \
+		swc_ecma_parser-0.40.0 \
 		swc_ecma_parser_macros-0.4.1 \
-		swc_ecma_transforms-0.25.2 \
+		swc_ecma_transforms-0.27.0 \
 		swc_ecma_transforms_macros-0.1.1 \
-		swc_ecma_utils-0.22.0 \
-		swc_ecma_visit-0.18.0 \
-		swc_ecmascript-0.9.1 \
+		swc_ecma_utils-0.23.0 \
+		swc_ecma_visit-0.19.1 \
+		swc_ecmascript-0.11.1 \
 		swc_macros_common-0.3.1 \
-		swc_visit-0.2.0 \
-		swc_visit_macros-0.2.0 \
+		swc_visit-0.2.2 \
+		swc_visit_macros-0.2.1 \
 		syn-0.15.44 \
 		syn-1.0.41 \
 		sys-info-0.7.0 \

@@ -1,5 +1,5 @@
---- cargo-crates/rusty_v8-0.11.0/build/linux/unbundle/replace_gn_files.py.orig	2020-06-26 16:27:54 UTC
-+++ cargo-crates/rusty_v8-0.11.0/build/linux/unbundle/replace_gn_files.py
+--- cargo-crates/rusty_v8-0.12.0/build/linux/unbundle/replace_gn_files.py.orig	2020-06-26 16:27:54 UTC
++++ cargo-crates/rusty_v8-0.12.0/build/linux/unbundle/replace_gn_files.py
 @@ -27,6 +27,7 @@ REPLACEMENTS = {
    'libevent': 'base/third_party/libevent/BUILD.gn',
    'libjpeg': 'third_party/libjpeg.gni',
