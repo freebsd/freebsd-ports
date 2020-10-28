@@ -66,7 +66,7 @@ post-patch:
 		${WRKSRC}/Makefile.OCaml
 
 post-build:
-	( cd ${WRKSRC} && ./unison -selftest -ui text -batch )
+	d=$$(mktemp -d) && trap "rm -rf $$d" 0 && ( cd ${WRKSRC} && HOME=$$d ./unison -selftest -ui text -batch )
 .if ${FLAVOR} == x11
 	@${ECHO} Building text-only version in ${WRKSRC}
 	${SETENV} ${MAKE_ENV} ${MAKE_CMD} -C ${WRKSRC} CFLAGS="" UISTYLE=text NAME=${PORTNAME}-text
