@@ -2,7 +2,7 @@
 
 PORTNAME=	mackerel-agent
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.69.2
+DISTVERSION=	0.69.3
 CATEGORIES=	sysutils
 
 MAINTAINER=	meta@FreeBSD.org
@@ -46,7 +46,7 @@ GH_TUPLE=	\
 		nwaples:rardecode:v1.0.0:nwaples_rardecode/vendor/github.com/nwaples/rardecode \
 		pierrec:lz4:v2.4.0:pierrec_lz4/vendor/github.com/pierrec/lz4 \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
-		shirou:gopsutil:v2.20.8:shirou_gopsutil/vendor/github.com/shirou/gopsutil \
+		shirou:gopsutil:v2.20.9:shirou_gopsutil/vendor/github.com/shirou/gopsutil \
 		stretchr:testify:v1.4.0:stretchr_testify/vendor/github.com/stretchr/testify \
 		ulikunitz:xz:v0.5.6:ulikunitz_xz/vendor/github.com/ulikunitz/xz \
 		xi2:xz:48954b6210f8:xi2_xz/vendor/github.com/xi2/xz
