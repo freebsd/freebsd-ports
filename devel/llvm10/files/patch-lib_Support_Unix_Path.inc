@@ -7,7 +7,7 @@
 -  for (;;) {
 -    switch (*(uintptr_t *)p++) {
 -    case AT_EXECPATH:
-+  for (; (uintptr_t *)p != AT_NULL; p++) {
++  for (; *(uintptr_t *)p != AT_NULL; p++) {
 +    if (*(uintptr_t *)p++ == AT_EXECPATH)
        return *p;
 -    case AT_NULL:
