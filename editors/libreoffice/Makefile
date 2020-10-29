@@ -1,5 +1,5 @@
 # $FreeBSD$
-PORTREVISION=	2
+PORTREVISION=	0
 
 .include "${.CURDIR}/Makefile.common"
 
@@ -95,7 +95,7 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 
 DISTFILES+=	884ed41809687c3e168fc7c19b16585149ff058eca79acbf3ee784f6630704cc-opens___.ttf:ext
 DISTFILES+=	dtoa-20180411.tgz:src
-DISTFILES+=	skia-m84-c1baf6e1c2a5454148adb516f0f833483b5a0353.tar.xz:src
+DISTFILES+=	skia-m85-e684c6daef6bfb774a325a069eda1f76ca6ac26c.tar.xz:src
 
 NOT_FOR_ARCHS=		armv6 armv7
 NOT_FOR_ARCHS_REASON=	Unsupported host_cpu
