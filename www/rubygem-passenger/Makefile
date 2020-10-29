@@ -3,6 +3,7 @@
 
 PORTNAME=	passenger
 PORTVERSION=	6.0.6
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMEPREFIX=	rubygem-
@@ -45,17 +46,16 @@ LIB_DEPENDS+=	libuv.so:devel/libuv \
 		libapr-1.so:devel/apr1
 
 BUILD_DEPENDS+=	rubygem-rack>=0:www/rubygem-rack
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS} \
+		rubygem-etc>=0:devel/rubygem-etc
 
 SUB_LIST+=	GEM_LIB_DIR=${GEM_LIB_DIR} RUBY=${RUBY}
 SUB_FILES=	pkg-message-${FLAVOR}
 
 PLIST_FILES=	bin/passenger \
 		bin/passenger-config \
-		bin/passenger-install-apache2-module \
 		bin/passenger-memory-stats \
-		bin/passenger-status \
-		bin/passenger-install-nginx-module
+		bin/passenger-status
 
 SYMLINK_PLIST_FILES=	${GEMS_DIR}/${PORTNAME}
 SYMLINK_SUB_LIST=	PASSENGER_INSTALL_DIR="${PREFIX}/${GEMS_DIR}/${PORTNAME}"
@@ -103,6 +103,8 @@ post-install:
 	${LN} -sf ../../${GEM_LIB_DIR}/buildout/apache2/mod_passenger.so ${STAGEDIR}${PREFIX}/${APACHEMODDIR}/mod_passenger.so
 	@${ECHO} "${APACHEMODDIR}/mod_passenger.so" >> ${TMPPLIST}
 .endif
+	@${RM} ${STAGEDIR}${PREFIX}/${GEM_LIB_DIR}/bin/passenger-install-apache2-module \
+		${STAGEDIR}${PREFIX}/${GEM_LIB_DIR}/bin/passenger-install-nginx-module
 
 post-install-SYMLINK-on:
 	${LN} -s ${GEM_NAME} ${STAGEDIR}${PREFIX}/${GEMS_DIR}/${PORTNAME}
