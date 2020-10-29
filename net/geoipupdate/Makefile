@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	geoipupdate
-PORTVERSION=	4.4.0
+PORTVERSION=	4.5.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net geography
 
@@ -26,8 +26,7 @@ MAKE_ENV+=	GOPATH=${WRKSRC} \
 		VERSION=${DISTVERSIONFULL}
 
 GH_SUBDIR=	src/github.com/maxmind/geoipupdate/v4
-GH_TUPLE=	cenkalti:backoff:v4.1.0:backoff/src/github.com/cenkalti/backoff/v4 \
-		gofrs:flock:v0.8.0:flock/src/github.com/gofrs/flock \
+GH_TUPLE=	gofrs:flock:v0.8.0:flock/src/github.com/gofrs/flock \
 		pkg:errors:v0.9.1:pkg/src/github.com/pkg/errors \
 		spf13:pflag:v1.0.5:pflag/src/github.com/spf13/pflag
 
