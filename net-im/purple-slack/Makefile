@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	purple-slack
-PORTVERSION=	20180508
+PORTVERSION=	20201027
 CATEGORIES=	net-im
 
 MAINTAINER=	aou@eecs.berkeley.edu
@@ -20,7 +20,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	dylex
 GH_PROJECT=	slack-libpurple
-GH_TAGNAME=	0179b2c
+GH_TAGNAME=	ec85f89
 
 PLIST_FILES=	lib/purple-2/libslack.so \
 		share/pixmaps/pidgin/protocols/16/slack.png \
