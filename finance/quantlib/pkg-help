@@ -7,10 +7,6 @@
                           If enabled, indexed coupons (see the documentation)
                           are used in floating legs. If disabled (the
                           default), par coupons are used.
-  --enable-negative-rates If enabled (the default), negative yield rates are
-                          allowed. If disabled, some features (notably, curve
-                          bootstrapping) will throw when negative rates are
-                          found.
   --enable-extra-safety-checks
                           If enabled, extra run-time checks are added to a few
                           functions. This can prevent their inlining and
