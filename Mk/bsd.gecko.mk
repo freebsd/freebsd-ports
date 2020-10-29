@@ -89,7 +89,7 @@ MOZ_OPTIONS+=	--prefix="${PREFIX}"
 MOZ_MK_OPTIONS+=MOZ_OBJDIR="${BUILD_WRKSRC}"
 
 MOZ_OPTIONS+=	--with-libclang-path="${LOCALBASE}/llvm${LLVM_DEFAULT}/lib"
-.if !exists(/usr/bin/llvm-objdump) # WITHOUT_CLANG_EXTRAS
+.if !exists(/usr/bin/llvm-objdump)
 MOZ_EXPORT+=	LLVM_OBJDUMP="${LOCALBASE}/bin/llvm-objdump${LLVM_DEFAULT}"
 .endif
 # Require newer Clang than what's in base system unless user opted out
