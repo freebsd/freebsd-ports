@@ -55,7 +55,7 @@ lib/libwcs-%%VERSION%%.a
 lib/libwcs.a
 lib/libwcs.so
 lib/libwcs.so.7
-lib/libwcs.so.7.3
+lib/libwcs.so.7.3.1
 libdata/pkgconfig/wcslib.pc
 %%CFITSIO%%man/man1/HPXcvt.1.gz
 man/man1/fitshdr.1.gz
@@ -80,7 +80,7 @@ man/man1/fitshdr.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/dis_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/html/doc.png
 %%PORTDOCS%%%%DOCSDIR%%/html/doxygen.css
-%%PORTDOCS%%%%DOCSDIR%%/html/doxygen.png
+%%PORTDOCS%%%%DOCSDIR%%/html/doxygen.svg
 %%PORTDOCS%%%%DOCSDIR%%/html/dynsections.js
 %%PORTDOCS%%%%DOCSDIR%%/html/files.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fitshdr_8h.html
