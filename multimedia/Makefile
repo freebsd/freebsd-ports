@@ -204,6 +204,7 @@
     SUBDIR += libmpeg2
     SUBDIR += libmpeg3
     SUBDIR += libmtp
+    SUBDIR += libndi
     SUBDIR += libopenshot
     SUBDIR += libquicktime
     SUBDIR += libquicktime-lame

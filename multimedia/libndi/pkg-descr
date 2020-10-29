@@ -1,0 +1,13 @@
+libNDI is a new NDI cross-platform, open-source library done to interact with
+NDI streams.
+
+NDI is a royalty-free but proprietary standard for high quality video delivery
+in a low-latency manner. The official NDI SDK is offered for multiple platforms
+including Linux but is closed-source. NDI is already very widely used as an IP
+video standard while VideoLAN's libndi library aims to offer a free software
+solution for decoding NDI video streams.
+
+Libndi is cross-platform and aims to provide a means of interacting with NDI
+video streams without relying upon any closed-source components.
+
+WWW: https://code.videolan.org/jbk/libndi
