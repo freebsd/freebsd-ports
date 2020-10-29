@@ -14,7 +14,7 @@ COMMENT=	Compiler for Writing C Extensions for the Python Language
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		python
+USES=		compiler:c11 python
 USE_PYTHON=	allflavors autoplist concurrent distutils
 
 post-install:
