@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	freetds
-PORTVERSION=	1.2.61
+PORTVERSION=	1.2.67
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://www.freetds.org/files/current/ \
