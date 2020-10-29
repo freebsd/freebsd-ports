@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pycharm-pro
-PORTVERSION=	2020.2.2
+PORTVERSION=	2020.2.3
 CATEGORIES=	devel java python
 MASTER_SITES=	https://download.jetbrains.com/python/ \
 		http://download.jetbrains.com/python/
@@ -13,7 +13,7 @@ COMMENT=	JetBrains PyCharm Professional Edition IDE
 LICENSE=	PyCharm-Professional
 LICENSE_NAME=	Subscription license agreement for business and organizations
 LICENSE_TEXT=	See: https://www.jetbrains.com/store/license.html
-LICENSE_PERMS=	auto-accept
+LICENSE_PERMS=	no-dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
 RUN_DEPENDS=	intellij-fsnotifier>0:java/intellij-fsnotifier \
 		intellij-pty4j>0:java/intellij-pty4j
