@@ -1,6 +1,6 @@
---- build/make/install.orig	2020-05-08 20:50:01 UTC
+--- build/make/install.orig	2020-10-27 19:12:31 UTC
 +++ build/make/install
-@@ -28,7 +28,9 @@ if [ -z "${SAGE_ORIG_PATH_SET}" ]; then
+@@ -31,7 +31,9 @@ if [ -z "${SAGE_ORIG_PATH_SET}" ]; then
  fi
  export PATH="$SAGE_ROOT/build/bin:$SAGE_SRC/bin:$SAGE_LOCAL/bin:$PATH"
  
