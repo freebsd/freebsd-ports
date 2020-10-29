@@ -34,6 +34,8 @@ GFLAGS_LIB_DEPENDS=	libgflags.so:devel/gflags
 GLOG_CMAKE_BOOL=	WITH_GLOG
 GLOG_LIB_DEPENDS=	libglog.so:devel/glog
 
+CXXFLAGS_powerpc64=	-mcpu=power7
+
 post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/examples/point_index ${INSTALL_WRKSRC}/examples/term_index ${STAGEDIR}${EXAMPLESDIR}
