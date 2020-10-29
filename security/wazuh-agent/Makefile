@@ -2,10 +2,9 @@
 
 PORTNAME=	wazuh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.13.1
-PORTREVISION=	1
+DISTVERSION=	4.0.0
 CATEGORIES=	security
-MASTER_SITES=	https://packages.wazuh.com/deps/3.13/
+MASTER_SITES=	https://packages.wazuh.com/deps/4.0/
 PKGNAMESUFFIX=	-agent
 DISTFILES=	cJSON.tar.gz src_cpython.tar.gz curl.tar.gz libdb.tar.gz libffi.tar.gz \
 		libyaml.tar.gz openssl.tar.gz procps.tar.gz sqlite.tar.gz  zlib.tar.gz \
@@ -22,10 +21,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BROKEN_i386=	Fails to build external OpenSSL dependency
 
 USES=		gmake perl5 readline shebangfix uidfix
-
 USE_GITHUB=	yes
-
-CONFLICTS_INSTALL=	ossec-*
+USE_RC_SUBR=	${PORTNAME}-agent
 
 SHEBANG_FILES=	${WRKSRC}/contrib/util.sh \
 		${WRKSRC}/src/external/openssl/Configurations/unix-checker.pm \
@@ -33,7 +30,7 @@ SHEBANG_FILES=	${WRKSRC}/contrib/util.sh \
 		${WRKSRC}/wodles/oscap/oscap.py \
 		${WRKSRC}/active-response/*.sh
 
-USE_RC_SUBR=	${PORTNAME}-agent
+CONFLICTS_INSTALL=	ossec-*
 
 USERS=		ossec ossecm ossecr
 GROUPS=		ossec
@@ -41,14 +38,14 @@ GROUPS=		ossec
 OSSEC_GROUP=	ossec
 OSSEC_USER=	ossec
 
-WAZUHPREFIX=	/var/ossec
-
 WAZUHMOD750=	/ /logs/ossec /bin /lib /queue /queue/diff /ruleset /ruleset/sca /wodles \
 		/active-response /active-response/bin /agentless /var /backup /queue/rids \
 		/wodles/oscap /wodles/oscap/content
 
-WAZUHMOD770=	/logs /queue/alerts /queue/ossec /etc /etc/shared /.ssh /var/run /var/upgrade \
-		/var/wodles /var/incoming
+WAZUHMOD770=	/logs /queue/alerts /queue/fim /queue/fim/db /queue/ossec /etc /etc/shared \
+		/.ssh /var/run /var/upgrade /var/wodles /var/incoming
+
+WAZUHPREFIX=	/var/ossec
 
 # extract all extra distfiles in src/external
 post-extract:
