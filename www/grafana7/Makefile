@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	grafana
-PORTVERSION=	7.2.0
+PORTVERSION=	7.3.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES+=	https://dl.grafana.com/oss/release/:public \
@@ -53,13 +53,14 @@ GH_TUPLE=	\
 		crewjam:saml:v0.4.1:crewjam_saml/vendor/github.com/crewjam/saml \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		deepmap:oapi-codegen:v1.3.11:deepmap_oapi_codegen/vendor/github.com/deepmap/oapi-codegen \
-		denisenkom:go-mssqldb:b91950f658ec:denisenkom_go_mssqldb/vendor/github.com/denisenkom/go-mssqldb \
+		denisenkom:go-mssqldb:b91950f658ec:denisenkom_go_mssqldb_1/vendor/github.com/denisenkom/go-mssqldb \
 		facebookgo:ensure:b4ab57deab51:facebookgo_ensure/vendor/github.com/facebookgo/ensure \
 		facebookgo:inject:f23751cae28b:facebookgo_inject/vendor/github.com/facebookgo/inject \
 		facebookgo:stack:751773369052:facebookgo_stack/vendor/github.com/facebookgo/stack \
 		facebookgo:structtag:217e25fb9691:facebookgo_structtag/vendor/github.com/facebookgo/structtag \
 		facebookgo:subset:8dac2c3c4870:facebookgo_subset/vendor/github.com/facebookgo/subset \
 		fatih:color:v1.9.0:fatih_color/vendor/github.com/fatih/color \
+		gchaincl:sqlhooks:v1.3.0:gchaincl_sqlhooks/vendor/github.com/gchaincl/sqlhooks \
 		go-asn1-ber:asn1-ber:f715ec2f112d:go_asn1_ber_asn1_ber/vendor/gopkg.in/asn1-ber.v1 \
 		go-ini:ini:v1.51.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
 		go-ldap:ldap:v3.0.2:go_ldap_ldap/vendor/gopkg.in/ldap.v3 \
@@ -81,7 +82,6 @@ GH_TUPLE=	\
 		golang:crypto:5c72a883971a:golang_crypto/vendor/golang.org/x/crypto \
 		golang:groupcache:8c9f03a8e57e:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:lint:738671d3881b:golang_lint/vendor/golang.org/x/lint \
-		golang:mock:v1.4.3:golang_mock/vendor/github.com/golang/mock \
 		golang:mod:v0.3.0:golang_mod/vendor/golang.org/x/mod \
 		golang:net:3edf25e44fcc:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:bf48bf16ab8d:golang_oauth2/vendor/golang.org/x/oauth2 \
@@ -105,7 +105,7 @@ GH_TUPLE=	\
 		gorilla:websocket:v1.4.2:gorilla_websocket/vendor/github.com/gorilla/websocket \
 		gosimple:slug:v1.4.2:gosimple_slug/vendor/github.com/gosimple/slug \
 		grafana:grafana-plugin-model:1fc953a61fb4:grafana_grafana_plugin_model/vendor/github.com/grafana/grafana-plugin-model \
-		grafana:grafana-plugin-sdk-go:v0.77.0:grafana_grafana_plugin_sdk_go/vendor/github.com/grafana/grafana-plugin-sdk-go \
+		grafana:grafana-plugin-sdk-go:v0.78.0:grafana_grafana_plugin_sdk_go/vendor/github.com/grafana/grafana-plugin-sdk-go \
 		grafana:loki:v1.6.0:grafana_loki/vendor/github.com/grafana/loki \
 		grpc-ecosystem:go-grpc-middleware:v1.2.1:grpc_ecosystem_go_grpc_middleware/vendor/github.com/grpc-ecosystem/go-grpc-middleware \
 		grpc-ecosystem:go-grpc-prometheus:6af20e3a5340:grpc_ecosystem_go_grpc_prometheus/vendor/github.com/grpc-ecosystem/go-grpc-prometheus \
