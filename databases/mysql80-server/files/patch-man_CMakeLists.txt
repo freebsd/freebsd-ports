@@ -1,6 +1,6 @@
---- man/CMakeLists.txt.orig	2019-09-20 08:30:51 UTC
-+++ man/CMakeLists.txt
-@@ -23,29 +23,14 @@
+--- man/CMakeLists.txt.orig	2020-10-20 11:47:42.675974000 +0200
++++ man/CMakeLists.txt	2020-10-20 13:53:03.993879000 +0200
+@@ -23,21 +23,10 @@
  # Copy man pages
  SET(MAN1
    comp_err.1
@@ -13,7 +13,6 @@
 -  myisamlog.1
 -  myisampack.1
    mysql.1
--  mysql.server.1
    mysql_config.1
    mysql_config_editor.1
 -  mysql_secure_installation.1
@@ -23,17 +22,15 @@
    mysqladmin.1
    mysqlbinlog.1
    mysqlcheck.1
--  mysqld_multi.1
--  mysqld_safe.1
-   mysqldump.1
--  mysqldumpslow.1
-   mysqlimport.1
-   mysqlman.1
-   mysqlpump.1
-@@ -54,6 +39,23 @@ SET(MAN1
-   perror.1
+@@ -52,13 +41,23 @@ SET(MAN1
    zlib_decompress.1
    )
+ 
+-IF(NOT WITH_SYSTEMD)
+-  LIST(APPEND MAN1
+-    mysql.server.1
+-    mysqld_multi.1
+-    mysqld_safe.1
 +SET(MAN1_TOOLS
 +  ibd2sdi.1
 +  innochecksum.1
@@ -50,11 +47,12 @@
 +  mysqldumpslow.1
 +  mysqld_multi.1
 +  mysqld_safe.1
-+  )
+   )
+-ENDIF()
+ 
  SET(MAN1_NDB
    ndb-common-options.1
-   ndb_blob_tool.1
-@@ -99,8 +101,15 @@ SET(MAN8_NDB
+@@ -105,8 +104,14 @@ SET(MAN8_NDB
    ndbmtd.8
  )
  
@@ -63,7 +61,6 @@
 +IF(NOT WITHOUT_CLIENTLIBS)
 +    INSTALL(FILES ${MAN1} DESTINATION ${INSTALL_MANDIR}/man1 COMPONENT ManPages)
 +ENDIF()
-+
 +
 +IF(NOT WITHOUT_SERVER)
 +    INSTALL(FILES ${MAN1_TOOLS} DESTINATION ${INSTALL_MANDIR}/man1 COMPONENT ManPages)

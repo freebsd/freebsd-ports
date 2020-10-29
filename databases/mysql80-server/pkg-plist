@@ -21,8 +21,11 @@ bin/mysqlrouter_plugin_info
 bin/mysqltest
 bin/mysqltest_safe_process
 bin/mysqlxtest
+etc/logrotate.d/mysqlrouter
 lib/mysql/libmysqlharness.so
 lib/mysql/libmysqlharness.so.1
+lib/mysql/libmysqlharness_stdx.so
+lib/mysql/libmysqlharness_stdx.so.1
 lib/mysql/libmysqlrouter.so
 lib/mysql/libmysqlrouter.so.1
 lib/mysql/libmysqlrouter_http.so
@@ -31,9 +34,12 @@ lib/mysql/libmysqlrouter_http_auth_backend.so
 lib/mysql/libmysqlrouter_http_auth_backend.so.1
 lib/mysql/libmysqlrouter_http_auth_realm.so
 lib/mysql/libmysqlrouter_http_auth_realm.so.1
+lib/mysql/libmysqlrouter_io_component.so
+lib/mysql/libmysqlrouter_io_component.so.1
 lib/mysql/mysqlrouter/http_auth_backend.so
 lib/mysql/mysqlrouter/http_auth_realm.so
 lib/mysql/mysqlrouter/http_server.so
+lib/mysql/mysqlrouter/io.so
 lib/mysql/mysqlrouter/keepalive.so
 lib/mysql/mysqlrouter/metadata_cache.so
 lib/mysql/mysqlrouter/mysql_protocol.so
@@ -202,7 +208,6 @@ man/man8/mysqld.8.gz
 %%DATADIR%%/german/errmsg.sys
 %%DATADIR%%/greek/errmsg.sys
 %%DATADIR%%/hungarian/errmsg.sys
-%%DATADIR%%/innodb_memcached_config.sql
 %%DATADIR%%/install_rewriter.sql
 %%DATADIR%%/italian/errmsg.sys
 %%DATADIR%%/japanese/errmsg.sys
@@ -224,7 +229,9 @@ man/man8/mysqld.8.gz
 %%DATADIR%%/swedish/errmsg.sys
 %%DATADIR%%/ukrainian/errmsg.sys
 %%DATADIR%%/uninstall_rewriter.sql
+%%DATADIR%%router/docs/sample_mysqlrouter.conf
 @dir lib/mysql/plugin/debug
+@dir %%DATADIR%%router/docs
 @sample(root,wheel,0644) %%ETCDIR%%/my.cnf.sample
 @dir(mysql,mysql,0750) %%ETCDIR%%/keyring
 @dir(mysql,mysql,0750) %%MY_SECDIR%%
