@@ -1,0 +1,15 @@
+[
+{ type: install
+  message: <<EOM
+Use the qjail utility to deploy small or large numbers of jails quickly.
+
+First issue "rehash" command to enable the qjail command (if using csh).
+Then issue
+"man qjail-intro" To read the qjail introduction.
+"man qjail"       For qjail usage details.
+"man qjail-howto" For example of driving public traffic to non-vnet jails.
+"man qjail-vnet-howto"   For example of creating vnet jails.
+"man qjail-ipv6-testing" For example of testing jails with ipv6 addresses.
+EOM
+}
+]
