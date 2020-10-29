@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	armadillo
-PORTVERSION=	9.900.2
+PORTVERSION=	10.1.1
 CATEGORIES=	math
 MASTER_SITES=	SF/arma
 
@@ -13,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs \
 		libarpack.so:math/arpack-ng \
+		liblapack.so:math/lapack \
 		libhdf5.so:science/hdf5 \
 		libsuperlu.so:math/superlu \
 		libsz.so:science/szip
