@@ -1,6 +1,6 @@
-TIMESTAMP = 1603820310
-SHA256 (kubernetes-minikube-v1.14.1_GH0.tar.gz) = ffd1196bc9a5020be8a17920a69ec82ff68bb5e98903172b52d0c0d8533b7224
-SIZE (kubernetes-minikube-v1.14.1_GH0.tar.gz) = 85801638
+TIMESTAMP = 1603991651
+SHA256 (kubernetes-minikube-v1.14.2_GH0.tar.gz) = 7f7d3acfa8135dd9489afeaa8ffbff8f146f4c8ce0379bd32dc0491ae2040779
+SIZE (kubernetes-minikube-v1.14.2_GH0.tar.gz) = 85801155
 SHA256 (Azure-azure-sdk-for-go-v42.3.0_GH0.tar.gz) = 49956ca614c6bc8fdde6ffe4cf6cc34b7925e70fdb3bd776a4d1309e59276449
 SIZE (Azure-azure-sdk-for-go-v42.3.0_GH0.tar.gz) = 23955572
 SHA256 (Azure-go-ansiterm-d6e3b3328b78_GH0.tar.gz) = ee1ebe2efef498be1c558bf71e143289db2d21e2d42592503ad2d4a989006821
