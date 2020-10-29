@@ -17,18 +17,18 @@ meson.build:134:0: ERROR: Dependency "libnm" not found, tried pkgconfig
  upower_glib_dep = dependency('upower-glib', version: '>=0.99.1')
  wayland_client_dep = dependency('wayland-client', version: '>=1.14')
  wayland_protos_dep = dependency('wayland-protocols', version: '>=1.12')
---- src/meson.build.orig	2020-08-03 08:10:28 UTC
+--- src/meson.build.orig	2020-10-28 08:27:41 UTC
 +++ src/meson.build
-@@ -50,8 +50,6 @@ libphosh_tool_sources = [
+@@ -52,8 +52,6 @@ libphosh_tool_sources = [
    'app-list-model.h',
    'background.c',
    'background.h',
 -  'connectivity-info.c',
 -  'connectivity-info.h',
-   'favorite-list-model.c',
-   'favorite-list-model.h',
-   'feedback-manager.c',
-@@ -92,8 +90,6 @@ libphosh_sources = [
+   'docked-info.c',
+   'docked-info.h',
+   'docked-manager.c',
+@@ -102,8 +100,6 @@ libphosh_sources = [
    'bt-info.h',
    'bt-manager.c',
    'bt-manager.h',
@@ -37,7 +37,7 @@ meson.build:134:0: ERROR: Dependency "libnm" not found, tried pkgconfig
    'fader.c',
    'fader.h',
    'feedbackinfo.c',
-@@ -110,8 +106,6 @@ libphosh_sources = [
+@@ -120,8 +116,6 @@ libphosh_sources = [
    'lockscreen.h',
    'monitor-manager.c',
    'monitor-manager.h',
@@ -46,8 +46,8 @@ meson.build:134:0: ERROR: Dependency "libnm" not found, tried pkgconfig
    'osk-manager.c',
    'osk-manager.h',
    'panel.c',
-@@ -144,10 +138,6 @@ libphosh_sources = [
-   'toplevel-thumbnail.h',
+@@ -158,10 +152,6 @@ libphosh_sources = [
+   'torch-manager.h',
    'toplevel.c',
    'toplevel.h',
 -  'wifiinfo.c',
@@ -57,24 +57,24 @@ meson.build:134:0: ERROR: Dependency "libnm" not found, tried pkgconfig
    'wwaninfo.c',
    'wwaninfo.h',
    phosh_settings_sources,
---- src/panel.c.orig	2020-08-03 08:10:28 UTC
+--- src/panel.c.orig	2020-10-28 08:27:41 UTC
 +++ src/panel.c
-@@ -13,7 +13,6 @@
+@@ -15,7 +15,6 @@
  #include "config.h"
  
  #include "bt-info.h"
 -#include "connectivity-info.h"
+ #include "docked-info.h"
  #include "panel.h"
  #include "shell.h"
- #include "session.h"
-@@ -371,7 +370,6 @@ phosh_panel_class_init (PhoshPanelClass *klass)
+@@ -379,7 +378,6 @@ phosh_panel_class_init (PhoshPanelClass *klass)
        NULL, G_TYPE_NONE, 0);
  
    g_type_ensure (PHOSH_TYPE_BT_INFO);
 -  g_type_ensure (PHOSH_TYPE_CONNECTIVITY_INFO);
+   g_type_ensure (PHOSH_TYPE_DOCKED_INFO);
    g_type_ensure (PHOSH_TYPE_SETTINGS);
  
-   gtk_widget_class_set_template_from_resource (widget_class,
 --- src/shell.c.orig	2020-09-18 11:42:34 UTC
 +++ src/shell.c
 @@ -48,7 +48,6 @@
