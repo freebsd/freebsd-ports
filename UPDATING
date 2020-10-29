@@ -5,6 +5,21 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20201029:
+  AFFECTS: users of www/node
+  AUTHOR: bhughes@FreeBSD.org
+
+  The www/node port has been updated to Node.js v15.0.0, the latest
+  upstream release. A new port, www/node14, has been created for the
+  v14.x LTS branch. Users wanting to stay on v14.x can replace www/node
+  with www/node14 with one of the following commands:
+
+  # pkg install www/node14
+    or
+  # portmaster -o www/node14 www/node
+    or
+  # portupgrade -o www/node14 www/node
+
 20201026:
   AFFECTS: users of emulators/qemu
   AUTHOR: bofh@FreeBSD.org
