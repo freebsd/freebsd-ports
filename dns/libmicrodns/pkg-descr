@@ -1,0 +1,4 @@
+microdns is an mDNS resolver (and announcer) library focused on being simple
+and cross-platform.
+
+WWW: https://github.com/videolabs/libmicrodns
