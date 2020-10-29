@@ -81,6 +81,8 @@
 @dir(ossec,ossec,0770) /var/ossec/logs
 @dir(ossec,ossec,0770) /var/ossec/queue/alerts
 @dir(ossec,ossec,0750) /var/ossec/queue/diff
+@dir(ossec,ossec,0770) /var/ossec/queue/fim/db
+@dir(ossec,ossec,0770) /var/ossec/queue/fim
 @dir(ossec,ossec,0770) /var/ossec/queue/ossec
 @dir(ossec,ossec,0750) /var/ossec/queue/rids
 @dir(root,ossec,0750) /var/ossec/queue
