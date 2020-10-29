@@ -1,4 +1,4 @@
---- utilities/CMakeLists.txt.orig	2019-09-20 08:30:51 UTC
+--- utilities/CMakeLists.txt.orig	2020-09-23 12:37:48 UTC
 +++ utilities/CMakeLists.txt
 @@ -23,13 +23,19 @@
  ADD_WSHADOW_WARNING()
@@ -22,9 +22,9 @@
  
  MYSQL_ADD_EXECUTABLE(comp_client_err
    comp_client_err.cc
-@@ -120,10 +126,30 @@ IF(LINUX_INSTALL_RPATH_ORIGIN)
-   ADD_DEPENDENCIES(comp_err copy_openssl_dlls)
- ENDIF()
+@@ -112,10 +118,30 @@ MYSQL_ADD_EXECUTABLE(static_thread_local_test
+   EXCLUDE_FROM_ALL
+   )
  
 +IF(WITHOUT_CLIENTLIBS)
  MYSQL_ADD_EXECUTABLE(my_print_defaults
@@ -53,28 +53,26 @@
    )
  MYSQL_ADD_EXECUTABLE(perror
    perror.cc
-@@ -138,14 +164,25 @@ IF(BUILD_BUNDLED_LZ4)
+@@ -130,12 +156,23 @@ IF(BUILD_BUNDLED_LZ4)
      LINK_LIBRARIES ${LZ4_LIBRARY} mysys
      )
  ENDIF()
 +ENDIF(WITHOUT_CLIENTLIBS)
  
 +IF(WITHOUT_CLIENTLIBS)
- IF(BUILD_BUNDLED_ZLIB OR NOT OPENSSL_EXECUTABLE_HAS_ZLIB)
-   MYSQL_ADD_EXECUTABLE(zlib_decompress
-     zlib_decompress.cc
-     COMPONENT Server
-     LINK_LIBRARIES ${ZLIB_LIBRARY} mysys
+ MYSQL_ADD_EXECUTABLE(zlib_decompress
+   zlib_decompress.cc
+   COMPONENT Server
+   LINK_LIBRARIES ${ZLIB_LIBRARY} mysys
 +    SKIP_INSTALL )
-+ENDIF()
 +ELSE(WITHOUT_CLIENTLIBS)
 +IF(BUILD_BUNDLED_ZLIB OR NOT OPENSSL_EXECUTABLE_HAS_ZLIB)
 +  MYSQL_ADD_EXECUTABLE(zlib_decompress
 +    zlib_decompress.cc
 +    COMPONENT Server
 +    LINK_LIBRARIES ${ZLIB_LIBRARY} mysys
-     )
- ENDIF()
+   )
++ENDIF()
 +ENDIF(WITHOUT_CLIENTLIBS)
  
  # All targets below belong to COMPONENT Server and depend on InnoDB.

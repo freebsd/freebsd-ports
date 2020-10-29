@@ -1,4 +1,4 @@
---- support-files/CMakeLists.txt.orig	2019-09-20 08:30:51 UTC
+--- support-files/CMakeLists.txt.orig	2020-09-23 12:37:48 UTC
 +++ support-files/CMakeLists.txt
 @@ -24,8 +24,9 @@ IF(NOT UNIX)
    RETURN()
@@ -12,16 +12,28 @@
  
  SET(localstatedir "${MYSQL_DATADIR}")
  
-@@ -45,6 +46,7 @@ CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/mysql.serve
+@@ -43,7 +44,7 @@ ENDIF()
  CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/mysql-log-rotate.in
    ${CMAKE_CURRENT_BINARY_DIR}/mysql-log-rotate @ONLY)
  
+-IF(NOT WITH_SYSTEMD)
 +IF(NOT WITHOUT_SERVER)
- INSTALL_SCRIPT(${CMAKE_CURRENT_BINARY_DIR}/mysql.server
+   CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/mysql.server.sh
+     ${CMAKE_CURRENT_BINARY_DIR}/mysql.server @ONLY
+   )
+@@ -59,6 +60,7 @@ IF(NOT WITH_SYSTEMD)
+   )
+ ENDIF()
+ 
++IF(NOT WITHOUT_SERVER)
+ INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/mysql-log-rotate
    COMPONENT Server_Scripts
    DESTINATION ${INSTALL_SUPPORTFILESDIR}
-@@ -62,3 +64,4 @@ INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/mysql-log-ro
+@@ -66,6 +68,7 @@ INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/mysql-log-ro
    OWNER_READ OWNER_WRITE
    GROUP_READ WORLD_READ
    )
 +ENDIF()
+ 
+ IF(WITH_ROUTER)
+   CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/mysqlrouter-log-rotate.in

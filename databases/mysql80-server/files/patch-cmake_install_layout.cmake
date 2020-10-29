@@ -29,7 +29,7 @@
    LIST(FIND VALID_INSTALL_LAYOUTS "${INSTALL_LAYOUT}" ind)
    IF(ind EQUAL -1)
      MESSAGE(FATAL_ERROR "Invalid INSTALL_LAYOUT parameter:${INSTALL_LAYOUT}."
-@@ -171,6 +175,32 @@ SET(INSTALL_MYSQLKEYRINGDIR_STANDALONE  "keyring")
+@@ -167,6 +171,32 @@ SET(INSTALL_MYSQLKEYRINGDIR_STANDALONE  "keyring")
  SET(INSTALL_SECURE_FILE_PRIVDIR_STANDALONE ${secure_file_priv_path})
  
  #
@@ -62,7 +62,7 @@
  # TARGZ layout
  #
  SET(INSTALL_BINDIR_TARGZ           "bin")
-@@ -369,7 +399,7 @@ ENDIF()
+@@ -361,7 +391,7 @@ ENDIF()
  SET(ROUTER_INSTALL_LAYOUT "${DEFAULT_ROUTER_INSTALL_LAYOUT}"
    CACHE
    STRING
@@ -71,7 +71,7 @@
  
  # If we are shared STANDALONE with the the server, we shouldn't write
  # into the server's data/ as that would create a "schemadir" in
-@@ -408,6 +438,18 @@ FOREACH(var
+@@ -405,6 +435,21 @@ FOREACH(var
      )
    SET(ROUTER_INSTALL_${var}DIR_TARGZ ${ROUTER_INSTALL_${var}DIR_STANDALONE})
  ENDFOREACH()
@@ -87,6 +87,9 @@
 +SET(ROUTER_INSTALL_BINDIR_FREEBSD     "bin")
 +SET(ROUTER_INSTALL_LIBDIR_FREEBSD     "lib/mysql")
 +SET(ROUTER_INSTALL_PLUGINDIR_FREEBSD  "lib/mysql/mysqlrouter")
++SET(ROUTER_INSTALL_LOGROTATEDIR_FREEBSD "etc/logrotate.d")
++SET(ROUTER_INSTALL_LOGROTATEFILE_FREEBSD "mysqlrouter")
++SET(ROUTER_INSTALL_DOCDIR_FREEBSD     "share/mysqlrouter/docs")
  
- #
- # RPM layout
+ FOREACH(var
+     LOGROTATE
