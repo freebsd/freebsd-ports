@@ -2,3 +2,9 @@
 lib/mysql/plugin/auth_pam.so
 lib/mysql/plugin/auth_pam_compat.so
 lib/mysql/plugin/dialog.so
+%%DATADIR%%/tests/suite/percona-pam-for-mysql/auth_pam-master.opt
+%%DATADIR%%/tests/suite/percona-pam-for-mysql/auth_pam.result
+%%DATADIR%%/tests/suite/percona-pam-for-mysql/auth_pam.test
+%%DATADIR%%/tests/suite/percona-pam-for-mysql/auth_pam_compat-master.opt
+%%DATADIR%%/tests/suite/percona-pam-for-mysql/auth_pam_compat.result
+%%DATADIR%%/tests/suite/percona-pam-for-mysql/auth_pam_compat.test

@@ -22,6 +22,9 @@ DESCR=		${.CURDIR}/pkg-descr
 
 CMAKE_ARGS+=	-DWITH_PAM=1
 
+# Workaround to clang11/gcc10 with -fno-common by default
+CFLAGS+=        -fcommon
+
 PLUGIN_ONLY=	yes
 
 do-install:
