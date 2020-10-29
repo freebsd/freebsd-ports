@@ -1,0 +1,10 @@
+The purpose of this module is to give you a fine-grained control over a URL's
+query-string in Varnish Cache. It's possible to remove the query-string,
+clean it, sort its parameters or filter it to only keep a subset of them.
+
+This can greatly improve your hit ratio and efficiency with Varnish, because
+by default two URLs with the same path but different query-strings are also
+different. This is what the RFCs mandate but probably not what you usually
+want for your web site or application.
+
+WWW: https://github.com/Dridi/libvmod-querystring

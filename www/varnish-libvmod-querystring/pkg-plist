@@ -1,0 +1,5 @@
+lib/varnish/vmods/libvmod_querystring.so
+man/man3/vmod_querystring.3.gz
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
+%%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTORS
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE

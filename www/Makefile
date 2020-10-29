@@ -2272,6 +2272,7 @@
     SUBDIR += varnish-libvmod-digest
     SUBDIR += varnish-libvmod-dynamic
     SUBDIR += varnish-libvmod-maxminddb
+    SUBDIR += varnish-libvmod-querystring
     SUBDIR += varnish-modules
     SUBDIR += varnish-nagios
     SUBDIR += varnish4
