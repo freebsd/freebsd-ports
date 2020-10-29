@@ -128,7 +128,7 @@ man/man1/suricata.1.gz
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/util.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/version.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/version.pyc
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata_update-1.1.1-py%%PYTHON_VER%%.egg-info
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata_update-1.1.3-py%%PYTHON_VER%%.egg-info
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricatasc/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricatasc/__init__.pyc
 %%DATADIR%%/rules/app-layer-events.rules
