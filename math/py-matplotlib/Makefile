@@ -36,6 +36,8 @@ RUN_DEPENDS=	${PYNUMPY} \
 USES=		compiler:c++11-lib gettext gnome localbase pkgconfig python:3.6+ shebangfix uniquefiles:dirs
 USE_PYTHON=	distutils
 
+LDFLAGS+=	-fuse-ld=lld
+
 OPTIONS_DEFINE=		EXAMPLES \
 			QT5AGGBACKEND TKAGGBACKEND
 OPTIONS_DEFAULT=	TKAGGBACKEND
