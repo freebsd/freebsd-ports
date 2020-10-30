@@ -12,6 +12,9 @@ COMMENT=	Backport of new features in Python's os module
 LICENSE=	PSFL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Python 2 is EOL upstream
+EXPIRATION_DATE=	2020-12-31
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=0:devel/py-setuptools_scm@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}backports>=0:devel/py-backports@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}future>=0:devel/py-future@${PY_FLAVOR}
