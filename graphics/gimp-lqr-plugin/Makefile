@@ -22,6 +22,8 @@ USES=		compiler:c++11-lang gettext gmake gnome localbase pkgconfig \
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 intltool
 
+CFLAGS+=	-fcommon
+
 PLUGIN_DIR?=	libexec/gimp/2.2/plug-ins
 PLIST_SUB=	PLUGIN_DIR=${PLUGIN_DIR}
 
