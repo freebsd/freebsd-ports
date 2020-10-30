@@ -1,0 +1,39 @@
+--- gtk/makefile.orig	2020-09-11 10:44:28 UTC
++++ gtk/makefile
+@@ -16,8 +16,6 @@ basedir = $(srcdir)/..
+ 
+ WARNINGS = -Wpedantic -Wall
+ ifdef CLANG
+-CXX = clang++
+-CC = clang
+ WARNINGS += -Wno-deprecated-register
+ ifdef windir
+ # Turn off some warnings that occur when Clang is being used on Windows where it
+@@ -35,7 +33,7 @@ endif
+ # thread also need to create Position Independent Executable -> search online documentation
+ SANITIZE = address
+ #SANITIZE = undefined
+-BASE_FLAGS += -fsanitize=$(SANITIZE)
++#BASE_FLAGS += -fsanitize=$(SANITIZE)
+ endif
+ ARFLAGS = rc
+ RANLIB ?= ranlib
+@@ -69,7 +67,8 @@ DEL = rm -f
+ LEXILLA = liblexilla.so
+ endif
+ COMPLIB=$(basedir)/bin/scintilla.a
+-COMPONENT=$(basedir)/bin/libscintilla.$(SHAREDEXTENSION)
++SONAME=libscintilla.$(SHAREDEXTENSION)
++COMPONENT=$(basedir)/bin/$(SONAME)
+ 
+ vpath %.h $(srcdir) $(basedir)/src $(basedir)/include $(basedir)/lexlib
+ vpath %.c $(srcdir)
+@@ -185,7 +184,7 @@ $(COMPLIB): $(SRC_OBJS) $(LEXLIBL_OBJS) $(GTK_OBJS) $(
+ 	$(RANLIB) $@
+ 
+ $(COMPONENT): $(SRC_OBJS) $(LEXLIBS_OBJS) $(GTK_OBJS) $(MARSHALLER)
+-	$(CXX) $(CXX_ALL_FLAGS) $(CXXFLAGS) $(LDFLAGS) $^ -o $@ $(CONFIGLIB)
++	$(CXX) $(CXX_ALL_FLAGS) $(CXXFLAGS) $(LDFLAGS) $^ -Wl,-soname,$(SONAME) -o $@ $(CONFIGLIB)
+ 
+ Catalogue.o: Catalogue.cxx
+ 	$(CXX) $(CXX_ALL_FLAGS) $(CXXFLAGS) -D SCI_LEXER -D SCI_EMPTYCATALOGUE -c $< -o $@
