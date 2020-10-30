@@ -74,6 +74,9 @@ post-patch:
 		${WRKSRC}/node/sbin/munin-node \
 		${WRKSRC}/node/sbin/munin-node-configure \
 		${WRKSRC}/node/sbin/munin-run
+	@${RM}  ${WRKSRC}/node/sbin/munin-node.bak \
+		${WRKSRC}/node/sbin/munin-node-configure.bak \
+		${WRKSRC}/node/sbin/munin-run.bak
 	@${REINPLACE_CMD} \
 		-e 's|^\(BASH[[:space:]]*:=\).*|\1 ${bash_CMD}|' \
 		-e 's|^\(JAVARUN[[:space:]]*:=\).*|\1 ${java_CMD}|' \
