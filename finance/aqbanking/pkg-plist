@@ -50,7 +50,7 @@ lib/cmake/aqbanking-%%AQB_MAJ_MIN_VER%%/aqbanking-config-version.cmake
 lib/cmake/aqbanking-%%AQB_MAJ_MIN_VER%%/aqbanking-config.cmake
 lib/libaqbanking.so
 lib/libaqbanking.so.%%AQB_SHLIB_VER%%
-lib/libaqbanking.so.%%AQB_SHLIB_VER%%.2.1
+lib/libaqbanking.so.%%AQB_SHLIB_VER%%.2.5
 libdata/pkgconfig/aqbanking.pc
 share/aclocal/aqbanking.m4
 %%DATADIR%%/aqbanking/typemaker2/c/ab_account.tm2
@@ -204,6 +204,8 @@ share/aclocal/aqbanking.m4
 %%DATADIR%%/typemaker2/c/ab_security.tm2
 %%DATADIR%%/typemaker2/c/ab_security_list.tm2
 %%DATADIR%%/typemaker2/c/ab_security_list2.tm2
+%%DATADIR%%/typemaker2/c/ab_swift_descr.tm2
+%%DATADIR%%/typemaker2/c/ab_swift_descr_list.tm2
 %%DATADIR%%/typemaker2/c/ab_transaction.tm2
 %%DATADIR%%/typemaker2/c/ab_transaction_limits.tm2
 %%DATADIR%%/typemaker2/c/ab_transaction_limits_list.tm2
