@@ -2,8 +2,7 @@
 
 PORTNAME=	liteide
 DISTVERSIONPREFIX=	x
-DISTVERSION=	37.1
-PORTREVISION=	1
+DISTVERSION=	37.3
 CATEGORIES=	devel editors
 
 MAINTAINER=	dmgk@FreeBSD.org
@@ -16,8 +15,8 @@ USES=		dos2unix gl go:modules,no_targets,run qmake qt:5
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	visualfc
-GH_TUPLE=	visualfc:gocode:159fff9b218:visualfc_gocode \
-		visualfc:gotools:102fdcc65de:visualfc_gotools
+GH_TUPLE=	visualfc:gocode:8cbede95a186:visualfc_gocode \
+		visualfc:gotools:e6bcd0577ece:visualfc_gotools
 
 USE_GL=		gl
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}

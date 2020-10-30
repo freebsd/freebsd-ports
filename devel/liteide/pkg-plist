@@ -83,6 +83,7 @@ share/icons/hicolor/64x64/apps/liteide.png
 %%DATADIR%%/litebuild/build.md
 %%DATADIR%%/litebuild/command/go.api
 %%DATADIR%%/litebuild/gomod.xml
+%%DATADIR%%/litebuild/goplus.xml
 %%DATADIR%%/litebuild/gosrc.xml
 %%DATADIR%%/litebuild/lua.xml
 %%DATADIR%%/litebuild/python.xml
@@ -95,6 +96,7 @@ share/icons/hicolor/64x64/apps/liteide.png
 %%DATADIR%%/liteeditor/color/cobalt blue.xml
 %%DATADIR%%/liteeditor/color/colorhelp.md
 %%DATADIR%%/liteeditor/color/dark.xml
+%%DATADIR%%/liteeditor/color/dark-gray.xml
 %%DATADIR%%/liteeditor/color/darktango.xml
 %%DATADIR%%/liteeditor/color/darkvim.xml
 %%DATADIR%%/liteeditor/color/default-func.xml
@@ -120,6 +122,7 @@ share/icons/hicolor/64x64/apps/liteide.png
 %%DATADIR%%/liteeditor/kate/go.xml
 %%DATADIR%%/liteeditor/kate/gohtml.xml
 %%DATADIR%%/liteeditor/kate/gomod.xml
+%%DATADIR%%/liteeditor/kate/goplus.xml
 %%DATADIR%%/liteeditor/kate/gopresent.xml
 %%DATADIR%%/liteeditor/kate/html.xml
 %%DATADIR%%/liteeditor/kate/java.xml
