@@ -1,0 +1,4 @@
+HTTP client mocking tool for Python.  Provides a full fake TCP socket
+module.  Inspired by FakeWeb.
+
+WWW: https://pypi.org/project/httpretty/
