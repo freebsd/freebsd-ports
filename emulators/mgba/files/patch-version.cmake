@@ -1,0 +1,11 @@
+--- version.cmake.orig	2020-10-30 06:22:22 UTC
++++ version.cmake
+@@ -3,7 +3,7 @@ if(NOT PROJECT_NAME)
+ endif()
+ set(LIB_VERSION_MAJOR 0)
+ set(LIB_VERSION_MINOR 8)
+-set(LIB_VERSION_PATCH 3)
++set(LIB_VERSION_PATCH 4)
+ set(LIB_VERSION_ABI 0.8)
+ set(LIB_VERSION_STRING ${LIB_VERSION_MAJOR}.${LIB_VERSION_MINOR}.${LIB_VERSION_PATCH})
+ set(SUMMARY "${PROJECT_NAME} Game Boy Advance Emulator")

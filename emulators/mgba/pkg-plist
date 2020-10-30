@@ -144,7 +144,7 @@ include/mgba/internal/sm83/isa-sm83.h
 include/mgba/internal/sm83/sm83.h
 lib/libmgba.so
 lib/libmgba.so.0.8
-lib/libmgba.so.0.8.3
+lib/libmgba.so.0.8.4
 %%LIBRETRO%%lib/libretro/mgba_libretro.so
 %%QT5%%man/man6/mgba-qt.6.gz
 man/man6/mgba.6.gz
