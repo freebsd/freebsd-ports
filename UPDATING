@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20201030:
+  AFFECTS: users of security/openvpn
+  AUTHOR: mandree@FreeBSD.org
+
+  The security/openvpn port has been updated to v2.5.0, which brings a
+  change to the default ciphersuite, which no longer contains BF-CBC.
+
+  Some options have been removed. Also, if you need to support very old (v2.3)
+  and unsupported clients or servers, you will need to adjust the
+  configuration. For details, see:
+  https://github.com/OpenVPN/openvpn/blob/release/2.5/Changes.rst#overview-of-changes-in-25
+
 20201029:
   AFFECTS: users of www/node
   AUTHOR: bhughes@FreeBSD.org

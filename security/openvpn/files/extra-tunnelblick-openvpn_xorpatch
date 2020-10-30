@@ -10,47 +10,47 @@ detail on the following wiki page:
 
 https://tunnelblick.net/cOpenvpn_xorpatch.html
 
-The patch was ported to OpenVPN 2.4 by OPNsense.
-
---- src/openvpn/forward.c.orig	2016-12-22 07:25:18 UTC
-+++ src/openvpn/forward.c
-@@ -730,7 +730,10 @@ read_incoming_link(struct context *c)
+diff -u -r -x .DS_Store openvpn-2.5_beta1.old/src/openvpn/forward.c openvpn-2.5_beta1.new/src/openvpn/forward.c
+--- openvpn-2.5_beta1.old/src/openvpn/forward.c	2020-08-16 11:57:15.000000000 -0400
++++ openvpn-2.5_beta1.new/src/openvpn/forward.c	2020-08-16 11:57:15.000000000 -0400
+@@ -811,7 +811,10 @@
  
      status = link_socket_read(c->c2.link_socket,
                                &c->c2.buf,
 -                              &c->c2.from);
-+                              &c->c2.from,
-+                              c->options.ce.xormethod,
-+                              c->options.ce.xormask,
-+                              c->options.ce.xormasklen);
++			                  &c->c2.from,
++			                  c->options.ce.xormethod,
++			                  c->options.ce.xormask,
++			                  c->options.ce.xormasklen);
  
      if (socket_connection_reset(c->c2.link_socket, status))
      {
-@@ -1368,7 +1371,10 @@ process_outgoing_link(struct context *c)
+@@ -1621,7 +1624,10 @@
                  /* Send packet */
                  size = link_socket_write(c->c2.link_socket,
                                           &c->c2.to_link,
 -                                         to_addr);
 +                                         to_addr,
-+                                         c->options.ce.xormethod,
-+                                         c->options.ce.xormask,
-+                                         c->options.ce.xormasklen);
++				                         c->options.ce.xormethod,
++				                         c->options.ce.xormask,
++				                         c->options.ce.xormasklen);
  
                  /* Undo effect of prepend */
                  link_socket_write_post_size_adjust(&size, size_delta, &c->c2.to_link);
---- src/openvpn/options.c.orig	2016-12-22 07:25:18 UTC
-+++ src/openvpn/options.c
-@@ -811,6 +811,9 @@ init_options(struct options *o, const bo
+diff -u -r -x .DS_Store openvpn-2.5_rc3.old/src/openvpn/options.c openvpn-2.5_rc3.new/src/openvpn/options.c
+--- openvpn-2.5_rc3.old/src/openvpn/options.c	2020-10-19 13:38:17.000000000 -0400
++++ openvpn-2.5_rc3.new/src/openvpn/options.c	2020-10-19 13:38:17.000000000 -0400
+@@ -821,6 +821,9 @@
      o->resolve_retry_seconds = RESOLV_RETRY_INFINITE;
      o->resolve_in_advance = false;
      o->proto_force = -1;
 +    o->ce.xormethod = 0;
 +    o->ce.xormask = "\0";
 +    o->ce.xormasklen = 0;
- #ifdef ENABLE_OCC
      o->occ = true;
- #endif
-@@ -972,6 +975,9 @@ setenv_connection_entry(struct env_set *
+ #ifdef ENABLE_MANAGEMENT
+     o->management_log_history_cache = 250;
+@@ -973,6 +976,9 @@
      setenv_str_i(es, "local_port", e->local_port, i);
      setenv_str_i(es, "remote", e->remote, i);
      setenv_str_i(es, "remote_port", e->remote_port, i);
@@ -60,17 +60,17 @@ The patch was ported to OpenVPN 2.4 by OPNsense.
  
      if (e->http_proxy_options)
      {
-@@ -1474,6 +1480,9 @@ show_connection_entry(const struct conne
+@@ -1452,6 +1458,9 @@
      SHOW_BOOL(bind_ipv6_only);
      SHOW_INT(connect_retry_seconds);
      SHOW_INT(connect_timeout);
-+    SHOW_INT(xormethod);
-+    SHOW_STR(xormask);
-+    SHOW_INT(xormasklen);
++    SHOW_INT (xormethod);
++    SHOW_STR (xormask);
++    SHOW_INT (xormasklen);
  
      if (o->http_proxy_options)
      {
-@@ -5915,6 +5924,46 @@ add_option(struct options *options,
+@@ -6260,6 +6269,46 @@
          }
          options->proto_force = proto_force;
      }
@@ -103,23 +103,24 @@ The patch was ported to OpenVPN 2.4 by OPNsense.
 +        }
 +        else if (!p[2])
 +        {
-+            msg(M_WARN, "WARNING: No recognized 'scramble' method specified; using 'scramble xormask \"%s\"'", p[1]);
++            msg (M_WARN, "WARNING: No recognized 'scramble' method specified; using 'scramble xormask \"%s\"'", p[1]);
 +            options->ce.xormethod = 1;
 +            options->ce.xormask = p[1];
 +            options->ce.xormasklen = strlen(options->ce.xormask);
 +        }
 +        else
 +        {
-+            msg(msglevel, "No recognized 'scramble' method specified or extra parameters for 'scramble'");
++            msg (msglevel, "No recognized 'scramble' method specified or extra parameters for 'scramble'");
 +            goto err;
 +        }
 +    }
      else if (streq(p[0], "http-proxy") && p[1] && !p[5])
      {
          struct http_proxy_options *ho;
---- src/openvpn/options.h.orig	2016-12-22 07:25:18 UTC
-+++ src/openvpn/options.h
-@@ -98,6 +98,9 @@ struct connection_entry
+diff -u -r -x .DS_Store openvpn-2.5_git_57d6f10.old/src/openvpn/options.h openvpn-2.5_git_57d6f10.new/src/openvpn/options.h
+--- openvpn-2.5_git_57d6f10.old/src/openvpn/options.h	2018-07-28 06:02:27.000000000 -0400
++++ openvpn-2.5_git_57d6f10.new/src/openvpn/options.h	2018-07-28 06:02:27.000000000 -0400
+@@ -99,6 +99,9 @@
      int connect_retry_seconds;
      int connect_retry_seconds_max;
      int connect_timeout;
@@ -129,33 +130,36 @@ The patch was ported to OpenVPN 2.4 by OPNsense.
      struct http_proxy_options *http_proxy_options;
      const char *socks_proxy_server;
      const char *socks_proxy_port;
---- src/openvpn/socket.c.orig	2016-12-22 07:25:18 UTC
-+++ src/openvpn/socket.c
-@@ -55,6 +55,53 @@ const int proto_overhead[] = { /* indexe
+--- openvpn-2.5_git_974513e/src/openvpn/socket.c	2017-08-17 11:27:23.000000000 -0400
++++ openvpn-2.5_git_974513e_patched/src/openvpn/socket.c	2017-08-18 18:37:11.000000000 -0400
+@@ -54,6 +54,56 @@
      IPv6_TCP_HEADER_SIZE,
  };
- 
-+int buffer_mask (struct buffer *buf, const char *mask, int xormasklen) {
-+	int i;
-+	uint8_t *b;
-+	if (  xormasklen > 0  ) {
-+		for (i = 0, b = BPTR (buf); i < BLEN(buf); i++, b++) {
-+			*b = *b ^ mask[i % xormasklen];
-+		}
-+	}
-+	return BLEN (buf);
+
++int buffer_mask(struct buffer *buf, const char *mask, int xormasklen)
++{
++    int i;
++    uint8_t *b;
++    if (  xormasklen > 0  ) {
++        for (i = 0, b = BPTR (buf); i < BLEN(buf); i++, b++) {
++            *b = *b ^ mask[i % xormasklen];
++        }
++    }
++    return BLEN (buf);
 +}
 +
-+int buffer_xorptrpos (struct buffer *buf) {
-+	int i;
-+	uint8_t *b;
-+	for (i = 0, b = BPTR (buf); i < BLEN(buf); i++, b++) {
-+		*b = *b ^ i+1;
-+	}
-+	return BLEN (buf);
++int buffer_xorptrpos(struct buffer *buf)
++{
++    int i;
++    uint8_t *b;
++    for (i = 0, b = BPTR (buf); i < BLEN(buf); i++, b++) {
++        *b = *b ^ i+1;
++    }
++    return BLEN (buf);
 +}
 +
-+int buffer_reverse (struct buffer *buf) {
++int buffer_reverse(struct buffer *buf)
++{
 +/* This function has been rewritten for Tunnelblick. The buffer_reverse function at
 + * https://github.com/clayface/openvpn_xorpatch
 + * makes a copy of the buffer and it writes to the byte **after** the
@@ -167,38 +171,39 @@ The patch was ported to OpenVPN 2.4 by OPNsense.
 + * actually reverse the contents of the buffer. Instead, it changes 'abcde' to 'aedcb'.
 + * (Of course, the actual buffer contents are bytes, and not necessarily characters.)
 + */
-+  int len = BLEN(buf);
-+  if (  len > 2  ) {                           /* Leave '', 'a', and 'ab' alone */
-+    int i;
-+    uint8_t *b_start = BPTR (buf) + 1;	        /* point to first byte to swap */
-+    uint8_t *b_end   = BPTR (buf) + (len - 1); /* point to last byte to swap */
-+    uint8_t tmp;
-+    for (i = 0; i < (len-1)/2; i++, b_start++, b_end--) {
-+      tmp = *b_start;
-+      *b_start = *b_end;
-+      *b_end = tmp;
++    int len = BLEN(buf);
++    if (  len > 2  ) {                           /* Leave '', 'a', and 'ab' alone */
++        int i;
++        uint8_t *b_start = BPTR (buf) + 1;            /* point to first byte to swap */
++        uint8_t *b_end   = BPTR (buf) + (len - 1); /* point to last byte to swap */
++        uint8_t tmp;
++        for (i = 0; i < (len-1)/2; i++, b_start++, b_end--) {
++            tmp = *b_start;
++            *b_start = *b_end;
++            *b_end = tmp;
++        }
 +    }
-+  }
-+  return len;
++    return len;
 +}
 +
  /*
   * Convert sockflags/getaddr_flags into getaddr_flags
   */
---- src/openvpn/socket.h.orig	2016-12-22 07:25:18 UTC
-+++ src/openvpn/socket.h
-@@ -249,6 +249,10 @@ struct link_socket
+diff -u -r -x .DS_Store openvpn-2.5_beta1.old/src/openvpn/socket.h openvpn-2.5_beta1.new/src/openvpn/socket.h
+--- openvpn-2.5_beta1.old/src/openvpn/socket.h	2020-08-16 11:57:17.000000000 -0400
++++ openvpn-2.5_beta1.new/src/openvpn/socket.h	2020-08-16 11:57:17.000000000 -0400
+@@ -249,6 +249,10 @@
  #endif
  };
  
-+int buffer_mask (struct buffer *buf, const char *xormask, int xormasklen);
-+int buffer_xorptrpos (struct buffer *buf);
-+int buffer_reverse (struct buffer *buf);
++int buffer_mask(struct buffer *buf, const char *xormask, int xormasklen);
++int buffer_xorptrpos(struct buffer *buf);
++int buffer_reverse(struct buffer *buf);
 +
  /*
   * Some Posix/Win32 differences.
   */
-@@ -1046,30 +1050,55 @@ int link_socket_read_udp_posix(struct li
+@@ -1049,30 +1053,56 @@
  static inline int
  link_socket_read(struct link_socket *sock,
                   struct buffer *buf,
@@ -209,11 +214,10 @@ The patch was ported to OpenVPN 2.4 by OPNsense.
 +                 int xormasklen)
  {
 +    int res;
-+
      if (proto_is_udp(sock->info.proto)) /* unified UDPv4 and UDPv6 */
      {
 -        int res;
--
+ 
  #ifdef _WIN32
          res = link_socket_read_udp_win32(sock, buf, from);
  #else
@@ -233,33 +237,34 @@ The patch was ported to OpenVPN 2.4 by OPNsense.
          ASSERT(0);
          return -1; /* NOTREACHED */
      }
-+    switch (xormethod) {
-+    case 0:
-+        break;
-+    case 1:
-+        buffer_mask(buf,xormask,xormasklen);
-+        break;
-+    case 2:
-+        buffer_xorptrpos(buf);
-+        break;
-+    case 3:
-+        buffer_reverse(buf);
-+        break;
-+    case 4:
-+        buffer_mask(buf,xormask,xormasklen);
-+        buffer_xorptrpos(buf);
-+        buffer_reverse(buf);
-+        buffer_xorptrpos(buf);
-+        break;
-+    default:
-+        ASSERT (0);
-+        return -1; /* NOTREACHED */
++    switch(xormethod)
++    {
++        case 0:
++            break;
++        case 1:
++            buffer_mask(buf,xormask,xormasklen);
++            break;
++        case 2:
++            buffer_xorptrpos(buf);
++            break;
++        case 3:
++            buffer_reverse(buf);
++            break;
++        case 4:
++            buffer_mask(buf,xormask,xormasklen);
++            buffer_xorptrpos(buf);
++            buffer_reverse(buf);
++            buffer_xorptrpos(buf);
++            break;
++        default:
++            ASSERT (0);
++            return -1; /* NOTREACHED */
 +    }
 +    return res;
  }
  
  /*
-@@ -1159,8 +1188,33 @@ link_socket_write_udp(struct link_socket
+@@ -1163,8 +1193,34 @@
  static inline int
  link_socket_write(struct link_socket *sock,
                    struct buffer *buf,
@@ -269,27 +274,28 @@ The patch was ported to OpenVPN 2.4 by OPNsense.
 +                  const char *xormask,
 +                  int xormasklen)
  {
-+    switch (xormethod) {
-+    case 0:
-+        break;
-+    case 1:
-+        buffer_mask(buf,xormask,xormasklen);
-+        break;
-+    case 2:
-+        buffer_xorptrpos(buf);
-+        break;
-+    case 3:
-+        buffer_reverse(buf);
-+        break;
-+    case 4:
-+        buffer_xorptrpos(buf);
-+        buffer_reverse(buf);
-+        buffer_xorptrpos(buf);
-+        buffer_mask(buf,xormask,xormasklen);
-+        break;
-+    default:
-+        ASSERT (0);
-+        return -1; /* NOTREACHED */
++    switch(xormethod)
++    {
++        case 0:
++            break;
++        case 1:
++            buffer_mask(buf,xormask,xormasklen);
++            break;
++        case 2:
++            buffer_xorptrpos(buf);
++            break;
++        case 3:
++            buffer_reverse(buf);
++            break;
++        case 4:
++            buffer_xorptrpos(buf);
++            buffer_reverse(buf);
++            buffer_xorptrpos(buf);
++            buffer_mask(buf,xormask,xormasklen);
++            break;
++        default:
++            ASSERT (0);
++            return -1; /* NOTREACHED */
 +    }
      if (proto_is_udp(sock->info.proto)) /* unified UDPv4 and UDPv6 */
      {
