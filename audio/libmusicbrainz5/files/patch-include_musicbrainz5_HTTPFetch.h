@@ -1,5 +1,10 @@
---- include/musicbrainz5/HTTPFetch.h.orig	2016-08-06 17:10:23.956575000 +0200
-+++ include/musicbrainz5/HTTPFetch.h	2016-08-06 17:26:10.934640000 +0200
+Add visibility to C++ exceptions to prevent crashes with applications
+using libkcddb.
+
+PR:	211630
+
+--- include/musicbrainz5/HTTPFetch.h.orig	2015-07-06 20:45:19 UTC
++++ include/musicbrainz5/HTTPFetch.h
 @@ -29,11 +29,23 @@
  #include <string>
  #include <vector>
@@ -25,7 +30,7 @@
  	{
  	public:
  		CExceptionBase(const std::string& ErrorMessage, const std::string& Exception)
-@@ -60,7 +72,7 @@
+@@ -60,7 +72,7 @@ namespace MusicBrainz5
  	 * Exception thrown when an error occurs connecting to web service
  	 */
  
@@ -34,7 +39,7 @@
  	{
  	public:
  			CConnectionError(const std::string& ErrorMessage)
-@@ -73,7 +85,7 @@
+@@ -73,7 +85,7 @@ namespace MusicBrainz5
  	 * Exception thrown when a connection to the web service times out
  	 */
  
@@ -43,7 +48,7 @@
  	{
  	public:
  			CTimeoutError(const std::string& ErrorMessage)
-@@ -86,7 +98,7 @@
+@@ -86,7 +98,7 @@ namespace MusicBrainz5
  	 * Exception thrown when an authentication error occurs
  	 */
  
@@ -52,7 +57,7 @@
  	{
  	public:
  			CAuthenticationError(const std::string& ErrorMessage)
-@@ -99,7 +111,7 @@
+@@ -99,7 +111,7 @@ namespace MusicBrainz5
  	 * Exception thrown when an error occurs fetching data
  	 */
  
@@ -61,7 +66,7 @@
  	{
  	public:
  			CFetchError(const std::string& ErrorMessage)
-@@ -112,7 +124,7 @@
+@@ -112,7 +124,7 @@ namespace MusicBrainz5
  	 * Exception thrown when an invalid request is made
  	 */
  
@@ -70,7 +75,7 @@
  	{
  	public:
  			CRequestError(const std::string& ErrorMessage)
-@@ -125,7 +137,7 @@
+@@ -125,7 +137,7 @@ namespace MusicBrainz5
  	 * Exception thrown when the requested resource is not found
  	 */
  

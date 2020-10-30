@@ -1,20 +1,21 @@
 # $FreeBSD$
 
 PORTNAME=	libmusicbrainz
-PORTVERSION=	5.1.0
-PORTREVISION=	3
 DISTVERSIONPREFIX=	release-
+DISTVERSION=	5.1.0-19
+DISTVERSIONSUFFIX=	-ge29cc9a
 CATEGORIES=	audio
 PKGNAMESUFFIX=	5
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	MusicBrainz client library for audio metadata lookup
 
-LICENSE=	LGPL21
+LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 LIB_DEPENDS=	libneon.so:www/neon
 
-USES=		cmake:insource compiler:c++11-lang gnome iconv:build pathfix
+USES=		cmake compiler:c++11-lang gnome iconv:build pathfix
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 
