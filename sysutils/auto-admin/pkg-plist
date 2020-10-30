@@ -68,6 +68,7 @@ sbin/auto-ldap-adduser
 sbin/auto-ldap-client-setup
 sbin/auto-lock-local-pw
 sbin/auto-lock-user
+sbin/auto-mark-package-critical
 sbin/auto-media-format
 sbin/auto-mount-any
 sbin/auto-network-restart
