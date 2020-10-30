@@ -5,10 +5,8 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7.0
 PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	https://veloren.net/icons/favicon/:icon \
-		LOCAL/jbeich:assets
-DISTFILES=	android-icon-192x192.png:icon \
-		${PORTNAME}-assets-${DISTVERSIONFULL}.tar.xz:assets
+MASTER_SITES=	https://veloren.net/icons/favicon/:icon
+DISTFILES=	android-icon-192x192.png:icon
 EXTRACT_ONLY=	${DISTFILES:N*\:icon:C/:.*//}
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -539,12 +537,6 @@ CARGO_GIT_SUBDIR=	authcommon:authc:authc \
 CARGO_ENV=		RUSTC_BOOTSTRAP=1
 # XXX https://github.com/rust-lang/cargo/issues/4101
 CARGO_INSTALL_PATH=	chat-cli server-cli voxygen
-
-post-extract:
-# XXX https://gitlab.com/gitlab-org/gitlab/issues/15079
-# Replace LFS placeholders with data from a LOCAL snapshot
-	@${RM} -r ${WRKSRC}/assets
-	@${MV} ${WRKDIR}/assets ${WRKSRC}
 
 post-patch:
 # .git/ directory is missing, so don't abort if git binary is also missing
