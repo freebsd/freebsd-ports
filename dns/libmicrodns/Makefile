@@ -10,7 +10,7 @@ COMMENT=	DNS library focused on being simple and cross-platform
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		meson
+USES=		compiler:c11 meson
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 
