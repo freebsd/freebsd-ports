@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		openvpn
-DISTVERSION=		202035
+DISTVERSION=		202043
 CATEGORIES=		security net net-vpn
 MASTER_SITES=		https://secure-computing.net/files/openvpn/
 PKGNAMESUFFIX=		-devel
