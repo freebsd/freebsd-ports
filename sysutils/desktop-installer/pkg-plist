@@ -3,6 +3,7 @@ sbin/battery_shutdown.sh
 sbin/desktop-installer
 %%DATADIR%%/20-swcursor.conf
 %%DATADIR%%/90-vboxguest.fdi
+%%DATADIR%%/CDE/cde.desktop
 %%DATADIR%%/CDE/xinitrc
 %%DATADIR%%/CINNAMON/xinitrc
 %%DATADIR%%/FLUXBOX/xinitrc
