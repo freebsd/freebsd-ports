@@ -4,8 +4,6 @@
 PORTNAME=	xorg-fonts-miscbitmaps
 PORTVERSION=	7.7
 CATEGORIES=	x11-fonts
-MASTER_SITES=	# none
-DISTFILES=	# none
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org miscellaneous bitmap fonts
@@ -24,11 +22,8 @@ RUN_DEPENDS=	${FONTDIR}/misc/arabic24.pcf.gz:x11-fonts/font-arabic-misc \
 		${FONTDIR}/misc/olcursor.pcf.gz:x11-fonts/font-sun-misc \
 		${FONTDIR}/encodings/encodings.dir:x11-fonts/encodings
 
-CONFLICTS=	XFree86-fontDefaultBitmaps-*
+USES=		metaport
 
-NO_BUILD=	# none
-NO_INSTALL=	yes
-NO_MTREE=	yes
 FONTDIR=	${LOCALBASE}/share/fonts
 
 .include <bsd.port.mk>
