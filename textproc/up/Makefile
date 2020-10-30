@@ -2,8 +2,7 @@
 
 PORTNAME=	up
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.2
-PORTREVISION=	1
+DISTVERSION=	0.4
 CATEGORIES=	textproc
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -16,13 +15,14 @@ USES=		go:modules
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	akavel
-GH_TUPLE=	gdamore:encoding:b23993cbb635:encoding/vendor/github.com/gdamore/encoding \
-		gdamore:tcell:493f3b46b3c2:tcell/vendor/github.com/gdamore/tcell \
-		lucasb-eyer:go-colorful:231272389856:gocolorful/vendor/github.com/lucasb-eyer/go-colorful \
-		mattn:go-isatty:v0.0.3:goisatty/vendor/github.com/mattn/go-isatty \
-		mattn:go-runewidth:v0.0.2:gorunewidth/vendor/github.com/mattn/go-runewidth \
-		spf13:pflag:v1.0.3:pflag/vendor/github.com/spf13/pflag \
-		golang:text:f21a4dfb5e38:text/vendor/golang.org/x/text
+GH_TUPLE=	gdamore:encoding:v1.0.0:gdamore_encoding/vendor/github.com/gdamore/encoding \
+		gdamore:tcell:v1.4.0:gdamore_tcell/vendor/github.com/gdamore/tcell \
+		golang:sys:201ba4db2418:golang_sys/vendor/golang.org/x/sys \
+		golang:text:v0.3.4:golang_text/vendor/golang.org/x/text \
+		lucasb-eyer:go-colorful:v1.0.3:lucasb_eyer_go_colorful/vendor/github.com/lucasb-eyer/go-colorful \
+		mattn:go-isatty:v0.0.3:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
+		mattn:go-runewidth:v0.0.9:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
+		spf13:pflag:v1.0.3:spf13_pflag/vendor/github.com/spf13/pflag
 
 PLIST_FILES=	bin/up
 PORTDOCS=	README.md
