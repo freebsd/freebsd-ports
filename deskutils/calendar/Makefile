@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	calendar
-DISTVERSION=	0.3
+DISTVERSION=	0.5
 CATEGORIES=	deskutils
 
 MAINTAINER=	se@FreeBSD.org
@@ -15,7 +15,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	bsdimp
 GH_TAGNAME=	fcc5d31
 
-CFLAGS+=	-DLOCALBASE=${LOCALBASE}
+CFLAGS+=	-D_PATH_LOCALBASE=\"${LOCALBASE}\" -g -O0 # -DDEBUG
 LDFLAGS+=	-lm -lutil
 
 PLIST_FILES=	bin/calendar \

@@ -1,16 +1,7 @@
---- pathnames.h.orig	2020-10-18 03:01:26 UTC
+--- pathnames.h.orig	2020-10-30 14:47:55 UTC
 +++ pathnames.h
-@@ -29,9 +29,12 @@
-  * SUCH DAMAGE.
-  *
-  *	@(#)pathnames.h	8.1 (Berkeley) 6/6/93
-- * $FreeBSD$
-+ * $FreeBSD: head/usr.bin/calendar/pathnames.h 366962 2020-10-23 09:22:23Z se $
-  */
- 
+@@ -35,3 +35,4 @@
  #include <paths.h>
  
-+#define s1(s)	#s
-+#define s2(s)	s1(s)
  #define	_PATH_INCLUDE	"/usr/share/calendar"
-+#define	_PATH_INCLUDE_LOCAL	s2(LOCALBASE) "/share/calendar"
++#define	_PATH_INCLUDE_LOCAL	_PATH_LOCALBASE "/share/calendar"
