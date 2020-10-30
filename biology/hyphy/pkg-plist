@@ -177,11 +177,11 @@ bin/hyphy
 %%DATADIR%%/TemplateBatchFiles/SelectionAnalyses/BranchSiteREL.bf
 %%DATADIR%%/TemplateBatchFiles/SelectionAnalyses/FADE.bf
 %%DATADIR%%/TemplateBatchFiles/SelectionAnalyses/FEL.bf
+%%DATADIR%%/TemplateBatchFiles/SelectionAnalyses/FitMultiModel.bf
 %%DATADIR%%/TemplateBatchFiles/SelectionAnalyses/FUBAR.bf
 %%DATADIR%%/TemplateBatchFiles/SelectionAnalyses/MEME.bf
 %%DATADIR%%/TemplateBatchFiles/SelectionAnalyses/PRIME.bf
 %%DATADIR%%/TemplateBatchFiles/SelectionAnalyses/RELAX-Groups.bf
-%%DATADIR%%/TemplateBatchFiles/SelectionAnalyses/RELAX-SRV.bf
 %%DATADIR%%/TemplateBatchFiles/SelectionAnalyses/RELAX.bf
 %%DATADIR%%/TemplateBatchFiles/SelectionAnalyses/SLAC.bf
 %%DATADIR%%/TemplateBatchFiles/SelectionAnalyses/SingleOmega.bf
