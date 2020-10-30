@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	picard
-PORTVERSION=	2.4.4
-PORTREVISION=	2
+PORTVERSION=	2.5.1
 CATEGORIES=	audio python
 MASTER_SITES=	http://ftp.musicbrainz.org/pub/musicbrainz/picard/ \
 		ftp://ftp.musicbrainz.org/pub/musicbrainz/picard/ \
@@ -16,7 +15,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}discid>=0.5.2:audio/py-discid@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}mutagen>=1.23:audio/py-mutagen@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mutagen>=1.37:audio/py-mutagen@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=2.7.3:devel/py-dateutil@${PY_FLAVOR}
 
 USES=		gettext pyqt:5 python:3.5+ desktop-file-utils
@@ -24,7 +23,7 @@ USE_LOCALE=	en_US.UTF-8
 USE_PYQT=	core_run dbus_run gui_run network_run widgets_run sip
 USE_PYTHON=	autoplist distutils noflavors
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-release-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-release-${DISTVERSION}
 
 OPTIONS_DEFINE=		ACOUSTID PLAYER PLUGINS
 OPTIONS_DEFAULT=	PLAYER PLUGINS
