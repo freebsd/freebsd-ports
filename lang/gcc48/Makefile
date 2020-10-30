@@ -3,7 +3,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.8.5
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	lang
 MASTER_SITES=	GCC
 PKGNAMESUFFIX=	${SUFFIX}
@@ -38,27 +38,19 @@ SSP_UNSAFE=	yes
 CFLAGS:=	${CFLAGS:N-march=ivybridge:N-march=westmere:N-mretpoline}
 CXXFLAGS:=	${CXXFLAGS:N-march=ivybridge:N-march=westmere:N-mretpoline}
 
-OPTIONS_DEFINE=		BOOTSTRAP
-OPTIONS_DEFAULT=	BOOTSTRAP
-BOOTSTRAP_DESC=		Build using a full bootstrap
-
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == amd64
 CONFIGURE_TARGET=	x86_64-portbld-${OPSYS:tl}${OSREL}
 .endif
 
-LANGUAGES:=	c,c++,objc,fortran
+LANGUAGES:=	c,c++
 TARGLIB=	${PREFIX}/lib/gcc${SUFFIX}
 LIBEXEC=	${PREFIX}/libexec/gcc${SUFFIX}
 GNU_CONFIGURE=	yes
 CONFIGURE_OUTSOURCE=	yes
-.if empty(PORT_OPTIONS:MBOOTSTRAP)
-CONFIGURE_ARGS+=--disable-bootstrap
-.else
 CONFIGURE_ARGS+=--with-build-config=bootstrap-debug
 ALL_TARGET=	bootstrap-lean
-.endif
 INSTALL_TARGET=	install-strip
 .if ${UID} != 0
 BINMODE=	755
@@ -115,7 +107,8 @@ full-regression-test: build
 
 post-stage:
 	${RM} ${STAGEDIR}${PREFIX}/man/man7/*
-	${RM} -r ${STAGEDIR}${TARGLIB}/gcc/*/${GCC_VERSION}/include-fixed/
+	${RM} -r ${STAGEDIR}${TARGLIB}/gcc/*/${GCC_VERSION}/include-fixed/ \
+	         ${STAGEDIR}${TARGLIB}/gcc/*/${GCC_VERSION}/finclude
 	# Add target libraries and include files to packaging list.
 	${RM} ${WRKDIR}/PLIST.lib
 .for d in ${TARGLIB:S/^${PREFIX}\///} ${LIBEXEC:S/^${PREFIX}\///}
