@@ -1,6 +1,6 @@
-TIMESTAMP = 1599397613
-SHA256 (gobuffalo-buffalo-v0.16.15_GH0.tar.gz) = 2dd4b74f0f94a58e275a96051a3aaf2bd166c42fd7fa675dc364c8331c4d2763
-SIZE (gobuffalo-buffalo-v0.16.15_GH0.tar.gz) = 546510
+TIMESTAMP = 1603926072
+SHA256 (gobuffalo-buffalo-v0.16.16_GH0.tar.gz) = 190bd62a2a8f8405137e2a5214d87db25909739d300f4d5cc316932cc19fa852
+SIZE (gobuffalo-buffalo-v0.16.16_GH0.tar.gz) = 548873
 SHA256 (BurntSushi-toml-v0.3.1_GH0.tar.gz) = 6593da894578ba510a470735ffbdc88ce88033094dc5a8f4d3957ab87e18803f
 SIZE (BurntSushi-toml-v0.3.1_GH0.tar.gz) = 42077
 SHA256 (Masterminds-semver-v1.5.0_GH0.tar.gz) = c9140eddfb03dc862f826e7761561260b9a840afa7519cc0919e89a43b5be5ba
