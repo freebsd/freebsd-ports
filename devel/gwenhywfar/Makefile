@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	gwenhywfar
-PORTVERSION=	5.3.0
+PORTVERSION=	5.4.1
 PORTREVISION?=	0
 CATEGORIES=	devel net security
-MASTER_SITES=	https://www.aquamaniac.de/rdm/attachments/download/319/
+MASTER_SITES=	https://www.aquamaniac.de/rdm/attachments/download/344/
 
 MAINTAINER?=	jhale@FreeBSD.org
 COMMENT?=	Multi-platform helper library for networking and security applications
@@ -16,13 +16,12 @@ LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libgnutls.so:security/gnutls \
 		libgpg-error.so:security/libgpg-error
 
-USES=		gettext gmake iconv:translit libtool pathfix pkgconfig ssl
+USES=		gettext gmake iconv:translit libtool localbase:ldflags \
+		pathfix pkgconfig
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-release="yes" \
 		--with-guis="${SLAVEPORT}"
-CPPFLAGS+=	-isystem ${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
@@ -31,14 +30,26 @@ PLIST_SUB=	GWEN_SHLIB_VER="${GWEN_SHLIB_VER}" \
 		GWEN_MAJ_MIN_VER="${PORTVERSION:R}"
 
 .if !defined(SLAVEPORT)
-OPTIONS_DEFINE=			DOXYGEN MEMDEBUG
+OPTIONS_DEFINE=			DOXYGEN LIBXML2 MEMDEBUG OPENSSL
+OPTIONS_DEFAULT=		OPENSSL
+OPTIONS_SUB=			yes
 
 DOXYGEN_BUILD_DEPENDS=		doxygen:devel/doxygen \
 				dot:graphics/graphviz
 DOXYGEN_CONFIGURE_ENABLE=	full-doc
 
+LIBXML2_USES=			gnome
+LIBXML2_USE=			gnome=libxml2
+LIBXML2_CONFIGURE_ON=		--with-libxml2-code=yes
+
 MEMDEBUG_DESC=			Enable memory debugger statistic
 MEMDEBUG_CONFIGURE_ENABLE=	memtrace
+
+OPENSSL_USES=			ssl
+OPENSSL_CONFIGURE_ENV=		OPENSSL_CFLAGS="-I${OPENSSLINC}" \
+				OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto -lssl"
+OPENSSL_CONFIGURE_ENV_OFF=	OPENSSL_CFLAGS="" \
+				OPENSSL_LIBS=""
 .endif
 
 .include <bsd.port.options.mk>
@@ -72,6 +83,10 @@ CONFIGURE_ARGS+=--with-qt5-qmake=${QMAKE} \
 .endif
 
 post-patch:
+	${REINPLACE_CMD} -e '/^LIBS/s|$$| @i18n_libs@|' \
+		${WRKSRC}/tools/gcttool/Makefile.in \
+		${WRKSRC}/tools/typemaker/Makefile.in \
+		${WRKSRC}/tools/xmlmerge/Makefile.in
 .if defined(SLAVEPORT)
 	@${FIND} ${BUILD_WRKSRC} -name "Makefile.in" -type f | ${XARGS} \
 	${REINPLACE_CMD} -e 's|[$$][(]top_builddir[)]/src/[$$][(]gwenhywfar_internal_libname[)]|$$(gwenhywfar_libs)|g' \

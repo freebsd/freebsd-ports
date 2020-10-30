@@ -1,9 +1,9 @@
 Fix dectection of fox libs
 Prevent linking to unneeded Qt5 libraries
 
---- configure.orig	2019-11-11 00:25:41 UTC
+--- configure.orig	2020-10-11 12:07:56 UTC
 +++ configure
-@@ -21664,7 +21664,7 @@ $as_echo_n "checking for fox libraries... " >&6; }
+@@ -21622,7 +21622,7 @@ $as_echo_n "checking for fox libraries... " >&6; }
  
  # Check whether --with-fox-libs was given.
  if test "${with_fox_libs+set}" = set; then :
@@ -12,42 +12,7 @@ Prevent linking to unneeded Qt5 libraries
  else
  
        ac_ext=cpp
-@@ -23122,43 +23122,16 @@ win32 {
-     CONFIG -= debug_and_release
-     CONFIG += release
- }
--qtHaveModule(axcontainer):       QT += axcontainer
--qtHaveModule(axserver):          QT += axserver
--qtHaveModule(concurrent):        QT += concurrent
- qtHaveModule(core):              QT += core
--qtHaveModule(dbus):              QT += dbus
--qtHaveModule(declarative):       QT += declarative
--qtHaveModule(designer):          QT += designer
- qtHaveModule(gui):               QT += gui
--qtHaveModule(help):              QT += help
--qtHaveModule(multimedia):        QT += multimedia
--qtHaveModule(multimediawidgets): QT += multimediawidgets
--qtHaveModule(network):           QT += network
--qtHaveModule(opengl):            QT += opengl
--qtHaveModule(printsupport):      QT += printsupport
--qtHaveModule(qml):               QT += qml
--qtHaveModule(qmltest):           QT += qmltest
--qtHaveModule(x11extras):         QT += x11extras
--qtHaveModule(script):            QT += script
--qtHaveModule(scripttools):       QT += scripttools
--qtHaveModule(sensors):           QT += sensors
--qtHaveModule(serialport):        QT += serialport
--qtHaveModule(sql):               QT += sql
--qtHaveModule(svg):               QT += svg
--qtHaveModule(testlib):           QT += testlib
--qtHaveModule(uitools):           QT += uitools
--qtHaveModule(webkit):            QT += webkit
--qtHaveModule(webkitwidgets):     QT += webkitwidgets
--qtHaveModule(xml):               QT += xml
--qtHaveModule(xmlpatterns):       QT += xmlpatterns
- qtHaveModule(widgets):           QT += widgets
- percent.target = %
- percent.commands = @echo -n "\$(\$(@))\ "
+@@ -23218,8 +23218,8 @@ percent.commands = @echo -n "\$(\$(@))\ "
  QMAKE_EXTRA_TARGETS += percent
  EOF
      $QT_QMAKE $am_have_qt_pro -o $am_have_qt_makefile
@@ -58,7 +23,7 @@ Prevent linking to unneeded Qt5 libraries
      rm $am_have_qt_pro $am_have_qt_makefile
  
      # Look for specific tools in $PATH
-@@ -23182,8 +23155,8 @@ else
+@@ -23243,8 +23243,8 @@ else
  fi
  
  
@@ -69,3 +34,12 @@ Prevent linking to unneeded Qt5 libraries
  
      # Get Qt version from qmake
      QT_DIR=`$QT_QMAKE --version | grep -o -E /.+`
+@@ -27214,7 +27214,7 @@ echo "Data Search Folder            : $gwenhywfar_data
+ echo "Locale Search Folder          : $gwenhywfar_locale_searchdir"
+ echo "Config Search Folder          : $gwenhywfar_cfg_searchdir"
+ echo "Buffer Default Hard Limit     : $gwenhywfar_buffer_hardlimit"
+-echo "Symbol Visibility             : $visibility_supported"
++echo "Symbol Visibility             : $ac_cv_hidden_visibility_attribute"
+ echo "OpenSSL Support for gct-tool  : $ssl_available"
+ echo "GUI Support                   : $gwenhywfar_guis"
+ echo "Use system-wide certificates  : $enable_system_certs"

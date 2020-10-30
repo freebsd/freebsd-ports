@@ -127,6 +127,12 @@ include/gwenhywfar5/gwenhywfar/version.h
 include/gwenhywfar5/gwenhywfar/widget_be.h
 include/gwenhywfar5/gwenhywfar/xml.h
 include/gwenhywfar5/gwenhywfar/xml2db.h
+include/gwenhywfar5/gwenhywfar/xmlcmd.h
+include/gwenhywfar5/gwenhywfar/xmlcmd_gxml.h
+include/gwenhywfar5/gwenhywfar/xmlcmd_gxml_fromdb.h
+include/gwenhywfar5/gwenhywfar/xmlcmd_gxml_todb.h
+%%LIBXML2%%include/gwenhywfar5/gwenhywfar/xmlcmd_lxml.h
+%%LIBXML2%%include/gwenhywfar5/gwenhywfar/xmlcmd_lxml_todb.h
 include/gwenhywfar5/gwenhywfar/xmlctx.h
 include/gwenhywfar5/gwenhywfar/xsdnode.h
 lib/cmake/gwengui-cpp-%%GWEN_MAJ_MIN_VER%%/gwengui-cpp-config-version.cmake
@@ -151,10 +157,10 @@ lib/gwenhywfar/plugins/%%GWEN_SHLIB_VER%%/dbio/xmldb.so.0.0.1
 lib/gwenhywfar/plugins/%%GWEN_SHLIB_VER%%/dbio/xmldb.xml
 lib/libgwengui-cpp.so
 lib/libgwengui-cpp.so.%%GWEN_SHLIB_VER%%
-lib/libgwengui-cpp.so.%%GWEN_SHLIB_VER%%.3.0
+lib/libgwengui-cpp.so.%%GWEN_SHLIB_VER%%.4.1
 lib/libgwenhywfar.so
 lib/libgwenhywfar.so.%%GWEN_SHLIB_VER%%
-lib/libgwenhywfar.so.%%GWEN_SHLIB_VER%%.3.0
+lib/libgwenhywfar.so.%%GWEN_SHLIB_VER%%.4.1
 libdata/pkgconfig/gwenhywfar.pc
 share/aclocal/gwenhywfar.m4
 %%DATADIR%%/dialogs/dlg_input.dlg
