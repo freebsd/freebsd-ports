@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libhandy
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
