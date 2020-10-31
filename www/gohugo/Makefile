@@ -2,7 +2,7 @@
 
 PORTNAME=	hugo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.76.5
+DISTVERSION=	0.77.0
 CATEGORIES=	www
 PKGNAMEPREFIX=	go
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
@@ -37,9 +37,9 @@ GH_TUPLE=	\
 		dlclark:regexp2:v1.2.0:dlclark_regexp2/vendor/github.com/dlclark/regexp2 \
 		dominikh:go-tools:v0.0.1-2019.2.3:dominikh_go_tools/vendor/honnef.co/go/tools \
 		dustin:go-humanize:v1.0.0:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
-		evanw:esbuild:v0.7.9:evanw_esbuild/vendor/github.com/evanw/esbuild \
+		evanw:esbuild:v0.7.18:evanw_esbuild/vendor/github.com/evanw/esbuild \
 		fortytw2:leaktest:v1.3.0:fortytw2_leaktest/vendor/github.com/fortytw2/leaktest \
-		frankban:quicktest:v1.11.0:frankban_quicktest/vendor/github.com/frankban/quicktest \
+		frankban:quicktest:v1.11.1:frankban_quicktest/vendor/github.com/frankban/quicktest \
 		fsnotify:fsnotify:v1.4.9:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		getkin:kin-openapi:v0.22.1:getkin_kin_openapi/vendor/github.com/getkin/kin-openapi \
 		ghodss:yaml:v1.0.0:ghodss_yaml/vendor/github.com/ghodss/yaml \
@@ -79,6 +79,7 @@ GH_TUPLE=	\
 		jstemmer:go-junit-report:af01ea7f8024:jstemmer_go_junit_report/vendor/github.com/jstemmer/go-junit-report \
 		kr:pretty:v0.2.1:kr_pretty/vendor/github.com/kr/pretty \
 		kr:text:v0.1.0:kr_text/vendor/github.com/kr/text \
+		kylelemons:godebug:v1.1.0:kylelemons_godebug/vendor/github.com/kylelemons/godebug \
 		kyokomi:emoji:v2.2.4:kyokomi_emoji/vendor/github.com/kyokomi/emoji \
 		magefile:mage:v1.10.0:magefile_mage/vendor/github.com/magefile/mage \
 		magiconair:properties:v1.8.1:magiconair_properties/vendor/github.com/magiconair/properties \
@@ -100,9 +101,9 @@ GH_TUPLE=	\
 		rwcarlsen:goexif:9e8deecbddbd:rwcarlsen_goexif/vendor/github.com/rwcarlsen/goexif \
 		sanity-io:litter:v1.3.0:sanity_io_litter/vendor/github.com/sanity-io/litter \
 		shurcooL:sanitized_anchor_name:v1.0.0:shurcool_sanitized_anchor_name/vendor/github.com/shurcooL/sanitized_anchor_name \
-		spf13:afero:v1.4.0:spf13_afero/vendor/github.com/spf13/afero \
+		spf13:afero:v1.4.1:spf13_afero/vendor/github.com/spf13/afero \
 		spf13:cast:v1.3.1:spf13_cast/vendor/github.com/spf13/cast \
-		spf13:cobra:v0.0.7:spf13_cobra/vendor/github.com/spf13/cobra \
+		spf13:cobra:v1.1.1:spf13_cobra/vendor/github.com/spf13/cobra \
 		spf13:fsync:v0.9.0:spf13_fsync/vendor/github.com/spf13/fsync \
 		spf13:jwalterweatherman:v1.1.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
@@ -147,7 +148,7 @@ PORTMANS=	hugo-config.1 hugo-convert-toJSON.1 hugo-convert-toTOML.1 \
 .include <bsd.port.pre.mk>
 
 SOURCE_DATE_EPOCH_CMD=	date -r $$(grep TIMESTAMP ${DISTINFO_FILE} | ${SED} -e 's/[^0-9]//g') '+%FT%TZ%z'
-COMMIT_ID=		60f0725b
+COMMIT_ID=		ef290125
 
 do-build-MANPAGES-on:
 	@cd ${GO_WRKSRC} && ${GO_WRKDIR_BIN}/${PORTNAME} gen man --dir man/man1/
