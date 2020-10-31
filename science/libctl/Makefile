@@ -2,28 +2,29 @@
 # $FreeBSD$
 
 PORTNAME=	libctl
-PORTVERSION=	3.2.2
-PORTREVISION=	9
+DISTVERSION=	4.5.0
 CATEGORIES=	science math
-MASTER_SITES=	http://ab-initio.mit.edu/libctl/
+MASTER_SITES=	https://github.com/NanoComp/libctl/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	devel@stasyan.com
 COMMENT=	Control Language Library
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libguile-2.2.so:lang/guile2
+BROKEN_sparc64=	does not build
 
+LIB_DEPENDS=	libgc-threaded.so:devel/boehm-gc-threaded \
+		libguile-2.2.so:lang/guile2
+
+USES=		fortran libtool pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared
-USES=		fortran libtool pkgconfig
 USE_LDCONFIG=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib -lm
 
-BROKEN_sparc64=	does not build
-
-OPTIONS_DEFINE=	NLOPT DOCS EXAMPLES
-NLOPT_DESC=	Use NLopt, an external NonLinear OPTimizer
+OPTIONS_DEFINE=		NLOPT DOCS EXAMPLES
+OPTIONS_DEFAULT=	NLOPT
+NLOPT_DESC=		Use NLopt, an external NonLinear OPTimizer
 
 NLOPT_LIB_DEPENDS=	libnlopt.so:math/nlopt
 
@@ -32,8 +33,8 @@ post-install:
 	${CP} -R ${WRKSRC}/doc/ ${STAGEDIR}${DOCSDIR}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${CP} -R ${WRKSRC}/examples/ ${STAGEDIR}${EXAMPLESDIR}
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libctl.so.5.0.2
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libctlgeom.so.5.0.2
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libctl.so.7.3.0
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libctlgeom.so.7.3.0
 	@${STRIP_CMD} ${STAGEDIR}${EXAMPLESDIR}/.libs/example
 
 .include <bsd.port.mk>
