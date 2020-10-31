@@ -2,7 +2,6 @@ bin/SvtVp9EncApp
 include/svt-vp9/EbApiVersion.h
 include/svt-vp9/EbSvtVp9Enc.h
 include/svt-vp9/EbSvtVp9ErrorCodes.h
-include/svt-vp9/EbSvtVp9Time.h
 lib/libSvtVp9Enc.so
 lib/libSvtVp9Enc.so.1
 libdata/pkgconfig/SvtVp9Enc.pc
