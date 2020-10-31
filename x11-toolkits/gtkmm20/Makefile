@@ -17,12 +17,10 @@ USES+=		compiler:c++11-lang tar:bzip2
 
 PORTSCOUT=	ignore:1
 
-LIB_DEPENDS=	libsigc-1.2.so:devel/libsigc++12
-
 USES+=		autoreconf gmake gnome libtool:keepla pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 libsigc++20
 CONFIGURE_ARGS=	--enable-static=yes \
 		--with-sigc-prefix=${LOCALBASE}
 INSTALL_TARGET=	install-strip
