@@ -2,6 +2,7 @@
 
 PORTNAME=	nsysctl
 DISTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	alfix86@gmail.com
