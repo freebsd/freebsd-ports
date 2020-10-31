@@ -1,0 +1,45 @@
+Revert https://gitlab.freedesktop.org/mesa/mesa/-/commit/13859c769f0e
+due to https://gitlab.freedesktop.org/mesa/mesa/-/issues/3713
+
+--- src/gallium/frontends/dri/dri2.c.orig	2020-10-31 00:18:11 UTC
++++ src/gallium/frontends/dri/dri2.c
+@@ -1379,28 +1379,18 @@ static __DRIimage *
+ dri2_from_planar(__DRIimage *image, int plane, void *loaderPrivate)
+ {
+    __DRIimage *img;
+-   struct pipe_resource *tex = image->texture;
+-   int i;
+ 
+    if (plane < 0) {
+       return NULL;
+    } else if (plane > 0) {
+       uint64_t planes;
+-      if (dri2_resource_get_param(image, PIPE_RESOURCE_PARAM_NPLANES, 0,
+-                                  &planes) &&
++      if (!dri2_resource_get_param(image, PIPE_RESOURCE_PARAM_NPLANES, 0,
++                                   &planes) ||
+           plane >= planes) {
+          return NULL;
+       }
+    }
+ 
+-   if (tex->next) {
+-      for (i = 0; i < plane; i++) {
+-         tex = tex->next;
+-         if (!tex)
+-            return NULL;
+-      }
+-   }
+-
+    if (image->dri_components == 0) {
+       uint64_t modifier;
+       if (!dri2_resource_get_param(image, PIPE_RESOURCE_PARAM_MODIFIER, 0,
+@@ -1413,8 +1403,6 @@ dri2_from_planar(__DRIimage *image, int plane, void *l
+    img = dri2_dup_image(image, loaderPrivate);
+    if (img == NULL)
+       return NULL;
+-
+-   pipe_resource_reference(&img->texture, tex);
+ 
+    if (img->texture->screen->resource_changed)
+       img->texture->screen->resource_changed(img->texture->screen,
