@@ -3,34 +3,35 @@
 
 PORTNAME=	sqldeveloper
 DISTVERSION=	20.2.0.175.1842
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-no-jre
 CATEGORIES=	databases java
-#http://www.oracle.com/technetwork/developer-tools/sql-developer/overview/index.html
+# https://www.oracle.com/tools/downloads/sqldev-downloads.html
 MASTER_SITES=
 DIST_SUBDIR=	oracle
 
 MAINTAINER=	vvd@unislabs.com
 COMMENT=	Graphical tool for database development
 
-RUN_DEPENDS=	bash:shells/bash \
-		openjfx8-devel>0:java/openjfx8-devel
+RUN_DEPENDS=	bash:shells/bash
 
 USES=		gnome zip
 
-# http://www.oracle.com/technetwork/licenses/sqldev-license-152021.html
+# https://www.oracle.com/downloads/licenses/sqldev-license.html
 LICENSE_NAME=	OTN
 LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror
-
-#DEPRECATED=	depends on expiring java/openjfx8-devel
-#EXPIRATION_DATE=	2020-11-30
-# it can work without java/openjfx8-devel with some limitations
 
 USE_JAVA=	yes
 INSTALLS_ICONS=	yes
 
-JAVA_VERSION=	1.8+
+JAVA_VERSION=	11+
 
 NO_BUILD=	yes
+
+OPTIONS_DEFINE=		OPENJFX14
+OPTIONS_DEFAULT=	OPENJFX14
+OPENJFX14_DESC=		Use JavaFX 14 (can work without it with some limitations)
+OPENJFX14_RUN_DEPENDS=	openjfx14>=0:java/openjfx14
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -38,12 +39,20 @@ SUB_FILES=	${PORTNAME}.desktop ${PORTNAME}.sh
 SUB_LIST=	JAVA_HOME=${JAVA_HOME} \
 		PORTNAME=${PORTNAME}
 
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MOPENJFX14}
+OPENJFX14_JVM_OPTIONS=	-J--module-path=${LOCALBASE}/openjfx14/lib \
+			-J--add-modules=javafx.swing,javafx.web
+.endif
+SUB_LIST+=	OPENJFX14_JVM_OPTIONS="${OPENJFX14_JVM_OPTIONS}"
+
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX})
 IGNORE=	due to Oracle license restrictions, you must fetch the source \
 distribution manually. Please access \
-http://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html \
+https://www.oracle.com/tools/downloads/sqldev-downloads.html \
 with a web browser and follow the link for the ${DISTFILES}. You will be \
 required to register and log in, but you can create an account on that \
 page. After registration and accepting the Oracle License, download the \

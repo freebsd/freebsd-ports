@@ -4,4 +4,4 @@
 #
 
 cd %%DATADIR%%/%%PORTNAME%%/bin
-JAVA_HOME="%%JAVA_HOME%%" exec %%LOCALBASE%%/bin/bash %%PORTNAME%% $*
+JAVA_HOME="%%JAVA_HOME%%" exec %%LOCALBASE%%/bin/bash %%PORTNAME%% %%OPENJFX14_JVM_OPTIONS%% $*
