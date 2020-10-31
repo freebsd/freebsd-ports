@@ -7,7 +7,7 @@ include/evemu.h
 lib/libevemu.a
 lib/libevemu.so
 lib/libevemu.so.3
-lib/libevemu.so.3.0.3
+lib/libevemu.so.3.0.4
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/evemu/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/evemu/__init__.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/evemu/__init__.pyo

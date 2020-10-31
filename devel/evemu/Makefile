@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	evemu
-PORTVERSION=	2.6.0
-PORTREVISION=	4
+PORTVERSION=	2.7.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.freedesktop.org/software/${PORTNAME}/
 
@@ -26,12 +25,13 @@ MANPAGES_BUILD_DEPENDS=		minixmlto:textproc/minixmlto \
 MANPAGES_CONFIGURE_ENV=		XMLTO=${LOCALBASE}/bin/minixmlto
 MANPAGES_CONFIGURE_ENV_OFF=	ac_cv_path_XMLTO="" \
 				ac_cv_path_ASCIIDOC=""
-PYTHON_USES=			python:2.7
-PYTHON_USES_OFF=		python:2.7,build
+PYTHON_USES=			python
+PYTHON_USES_OFF=		python:build
 PYTHON_CONFIGURE_ENABLE=	python-bindings
+PYTHON_USE=			PYTHON=py3kplist
 
 GNU_CONFIGURE=  yes
-CFLAGS+=	-D_WITH_DPRINTF -include stdlib.h
+CFLAGS+=	-D_WITH_DPRINTF -include stdlib.h -include limits.h
 USE_LDCONFIG=   yes
 INSTALL_TARGET=	install-strip
 REINPLACE_ARGS=	-i ''
