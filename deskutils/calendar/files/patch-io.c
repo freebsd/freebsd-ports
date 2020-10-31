@@ -1,6 +1,6 @@
 --- io.c.orig	2020-10-18 03:01:26 UTC
 +++ io.c
-@@ -71,7 +71,7 @@ enum {
+@@ -71,10 +71,14 @@ enum {
  };
  
  const char *calendarFile = "calendar";	/* default calendar file */
@@ -9,19 +9,66 @@
  static const char *calendarNoMail = "nomail";/* don't sent mail if file exist */
  
  static char path[MAXPATHLEN];
-@@ -134,18 +134,66 @@ cal_fopen(const char *file)
++static const char *cal_home;
++static const char *cal_dir;
++static const char *cal_file;
++static int cal_line;
+ 
+ struct fixs neaster, npaskha, ncny, nfullmoon, nnewmoon;
+ struct fixs nmarequinox, nsepequinox, njunsolstice, ndecsolstice;
+@@ -116,7 +120,7 @@ cal_fopen(const char *file)
+ 	}
+ 
+ 	if (chdir(home) != 0) {
+-		warnx("Cannot enter home directory");
++		warnx("Cannot enter home directory \"%s\"", home);
+ 		return (NULL);
+ 	}
+ 
+@@ -124,8 +128,12 @@ cal_fopen(const char *file)
+ 		if (chdir(calendarHomes[i]) != 0)
+ 			continue;
+ 
+-		if ((fp = fopen(file, "r")) != NULL)
++		if ((fp = fopen(file, "r")) != NULL) {
++			cal_home = home;
++			cal_dir = calendarHomes[i];
++			cal_file = file;
+ 			return (fp);
++		}
+ 	}
+ 
+ 	warnx("can't open calendar file \"%s\"", file);
+@@ -133,60 +141,130 @@ cal_fopen(const char *file)
+ 	return (NULL);
  }
  
++#define	WARN0(format)		   \
++	warnx(format " in %s/%s/%s line %d", cal_home, cal_dir, cal_file, cal_line)
++#define	WARN1(format, arg1)		   \
++	warnx(format " in %s/%s/%s line %d", arg1, cal_home, cal_dir, cal_file, cal_line)
++
  static int
 -token(char *line, FILE *out, bool *skip)
-+token(char *line, FILE *out, int *skip)
++token(char *line, FILE *out, int *skip, int *unskip)
  {
  	char *walk, c, a;
++	const char *this_cal_home;
++	const char *this_cal_dir;
++	const char *this_cal_file;
++	int this_cal_line;
  
  	if (strncmp(line, "endif", 5) == 0) {
 -		*skip = false;
 +		if (*skip > 0)
 +			--*skip;
++		else if (*unskip > 0)
++			--*unskip;
++		else {
++			WARN0("#endif without prior #ifdef or #ifndef");
++			return (T_ERR);
++		}
++
  		return (T_OK);
  	}
  
@@ -31,13 +78,15 @@
 +		trimlr(&walk);
 +
 +		if (*walk == '\0') {
-+			warnx("Expecting arguments after #ifdef");
++			WARN0("Expecting arguments after #ifdef");
 +			return (T_ERR);
 +		}
 +
 +		if (*skip != 0 || definitions == NULL || sl_find(definitions, walk) == NULL)
 +			++*skip;
-+
++		else
++			++*unskip;
++		
  		return (T_OK);
 +	}
  
@@ -46,12 +95,14 @@
 +		trimlr(&walk);
 +
 +		if (*walk == '\0') {
-+			warnx("Expecting arguments after #ifndef");
++			WARN0("Expecting arguments after #ifndef");
 +			return (T_ERR);
 +		}
 +
 +		if (*skip != 0 || (definitions != NULL && sl_find(definitions, walk) != NULL))
 +			++*skip;
++		else
++			++*unskip;
 +
 +		return (T_OK);
 +	}
@@ -61,14 +112,22 @@
 +		trimlr(&walk);
 +
 +		if (*walk != '\0') {
-+			warnx("Expecting no arguments after #else");
++			WARN0("Expecting no arguments after #else");
 +			return (T_ERR);
 +		}
 +
-+		if (*skip == 0)
++		if (*unskip == 0) {
++			if (*skip == 0) {
++				WARN0("#else without prior #ifdef or #ifndef");
++				return (T_ERR);
++			} else if (*skip == 1) {
++				*skip = 0;
++				*unskip = 1;
++			}
++		} else if (*unskip == 1) {
 +			*skip = 1;
-+		else if (*skip == 1)
-+			*skip = 0;
++			*unskip = 0;
++		}
 +
 +		return (T_OK);
 +	}
@@ -79,7 +138,17 @@
  	if (strncmp(line, "include", 7) == 0) {
  		walk = line + 7;
  
-@@ -161,26 +209,12 @@ token(char *line, FILE *out, bool *skip)
+ 		trimlr(&walk);
+ 
+ 		if (*walk == '\0') {
+-			warnx("Expecting arguments after #include");
++			WARN0("Expecting arguments after #include");
+ 			return (T_ERR);
+ 		}
+ 
+ 		if (*walk != '<' && *walk != '\"') {
+-			warnx("Excecting '<' or '\"' after #include");
++			WARN0("Excecting '<' or '\"' after #include");
  			return (T_ERR);
  		}
  
@@ -105,38 +174,73 @@
 -			warnx("Unterminated include expecting '%c'",
 -			    a == '<' ? '>' : '\"' );
 +		if (a != c) {
-+			warnx("Unterminated include expecting '%c'", a);
++			WARN1("Unterminated include expecting '%c'", a);
  			return (T_ERR);
  		}
  		walk[strlen(walk) - 1] = '\0';
-@@ -206,21 +240,6 @@ token(char *line, FILE *out, bool *skip)
+ 
++		this_cal_home = cal_home;
++		this_cal_dir = cal_dir;
++		this_cal_file = cal_file;
++		this_cal_line = cal_line;
+ 		if (cal_parse(cal_fopen(walk), out))
+ 			return (T_ERR);
++		cal_home = this_cal_home;
++		cal_dir = this_cal_dir;
++		cal_file = this_cal_file;
++		cal_line = this_cal_line;
+ 
+ 		return (T_OK);
+ 	}
+@@ -198,26 +276,29 @@ token(char *line, FILE *out, bool *skip)
+ 		trimlr(&walk);
+ 
+ 		if (*walk == '\0') {
+-			warnx("Expecting arguments after #define");
++			WARN0("Expecting arguments after #define");
+ 			return (T_ERR);
+ 		}
+ 
+-		sl_add(definitions, strdup(walk));
++		if (sl_find(definitions, walk) == NULL)
++			sl_add(definitions, strdup(walk));
  		return (T_OK);
  	}
  
 -	if (strncmp(line, "ifndef", 6) == 0) {
 -		walk = line + 6;
 -		trimlr(&walk);
--
++	if (strncmp(line, "undef", 5) == 0) {
++		if (definitions != NULL) {
++			walk = line + 5;
++			trimlr(&walk);
+ 
 -		if (*walk == '\0') {
 -			warnx("Expecting arguments after #ifndef");
 -			return (T_ERR);
 -		}
--
++			if (*walk == '\0') {
++				WARN0("Expecting arguments after #undef");
++				return (T_ERR);
++			}
+ 
 -		if (definitions != NULL && sl_find(definitions, walk) != NULL)
 -			*skip = true;
 -
--		return (T_OK);
--	}
--
- 	return (T_PROCESS);
++			walk = sl_find(definitions, walk);
++			if (walk != NULL)
++				walk[0] = '\0';
++		}
+ 		return (T_OK);
+ 	}
  
- }
-@@ -248,11 +267,13 @@ cal_parse(FILE *in, FILE *out)
+@@ -248,11 +329,14 @@ cal_parse(FILE *in, FILE *out)
  	int month[MAXCOUNT];
  	int day[MAXCOUNT];
  	int year[MAXCOUNT];
 -	bool skip = false;
 +	int skip = 0;
++	int unskip = 0;
  	char dbuf[80];
  	char *pp, p;
  	struct tm tm;
@@ -146,12 +250,15 @@
  
  	/* Unused */
  	tm.tm_sec = 0;
-@@ -264,8 +285,58 @@ cal_parse(FILE *in, FILE *out)
+@@ -263,9 +347,61 @@ cal_parse(FILE *in, FILE *out)
+ 	if (in == NULL)
  		return (1);
  
++	cal_line = 0;
  	while ((linelen = getline(&line, &linecap, in)) > 0) {
 -		if (*line == '#') {
 -			switch (token(line+1, out, &skip)) {
++		cal_line++;
 +		buf = line;
 +		if (buf[linelen - 1] == '\n')
 +			buf[--linelen] = '\0';
@@ -203,17 +310,18 @@
 +			continue;
 +
 +		if (buf == line && *buf == '#') {
-+			switch (token(buf+1, out, &skip)) {
++			switch (token(buf+1, out, &skip, &unskip)) {
  			case T_ERR:
  				free(line);
  				return (1);
-@@ -278,16 +349,7 @@ cal_parse(FILE *in, FILE *out)
+@@ -278,18 +414,9 @@ cal_parse(FILE *in, FILE *out)
  			}
  		}
  
 -		if (skip)
--			continue;
--
++		if (skip != 0)
+ 			continue;
+ 
 -		buf = line;
 -		for (l = linelen;
 -		     l > 0 && isspace((unsigned char)buf[l - 1]);
@@ -221,7 +329,34 @@
 -			;
 -		buf[l] = '\0';
 -		if (buf[0] == '\0')
-+		if (skip != 0)
- 			continue;
- 
+-			continue;
+-
  		/*
+ 		 * Setting LANG in user's calendar was an old workaround
+ 		 * for 'calendar -a' being run with C locale to properly
+@@ -353,7 +480,7 @@ cal_parse(FILE *in, FILE *out)
+ 		if (count < 0) {
+ 			/* Show error status based on return value */
+ 			if (debug)
+-				fprintf(stderr, "Ignored: %s\n", buf);
++				WARN1("Ignored: \"%s\"", buf);
+ 			if (count == -1)
+ 				continue;
+ 			count = -count + 1;
+@@ -373,11 +500,15 @@ cal_parse(FILE *in, FILE *out)
+ 			(void)strftime(dbuf, sizeof(dbuf),
+ 			    d_first ? "%e %b" : "%b %e", &tm);
+ 			if (debug)
+-				fprintf(stderr, "got %s\n", pp);
++				WARN1("got \"%s\"", pp);
+ 			events[i] = event_add(year[i], month[i], day[i], dbuf,
+ 			    ((flags &= F_VARIABLE) != 0) ? 1 : 0, pp,
+ 			    extradata[i]);
+ 		}
++	}
++	while (skip-- > 0 || unskip-- > 0) {
++		cal_line++;
++		WARN0("Missing #endif assumed");
+ 	}
+ 
+ 	free(line);
