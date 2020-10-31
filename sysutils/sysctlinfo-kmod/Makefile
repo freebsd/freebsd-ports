@@ -2,6 +2,7 @@
 
 PORTNAME=	sysctlinfo-kmod
 DISTVERSION=	20191005
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	alfix86@gmail.com
