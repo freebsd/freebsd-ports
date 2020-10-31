@@ -2,6 +2,7 @@
 
 PORTNAME=	sysctlbyname-improved-kmod
 DISTVERSION=	20191124
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	alfix86@gmail.com
