@@ -140,10 +140,13 @@ share/pixmaps/saga.png
 %%DATADIR%%/docs/saga_on_mac.odt
 %%DATADIR%%/docs/saga_toolchains_cheat_sheet.xml
 %%DATADIR%%/docs/saga_toolchains_manual.odt
+%%DATADIR%%/helper/doxygen_saga_api_chm
+%%DATADIR%%/helper/doxygen_saga_api_html
 %%DATADIR%%/helper/make_arcsaga_toolboxes.bat
 %%DATADIR%%/helper/make_python_api.bat
 %%DATADIR%%/helper/make_python_api_all.bat
 %%DATADIR%%/helper/make_saga4qgis_toolboxes.bat
+%%DATADIR%%/helper/make_saga_api_doc.bat
 %%DATADIR%%/helper/make_saga_release.bat
 %%DATADIR%%/helper/make_saga_snapshot.bat
 %%DATADIR%%/helper/make_tools_interface.bat

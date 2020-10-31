@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	saga
-PORTVERSION=	7.8.0
+PORTVERSION=	7.8.1
 CATEGORIES=	math
 MASTER_SITES=	SF/saga-gis/SAGA%20-%20${PORTVERSION:C/\.[[:digit:]]\.[[:digit:]]*$//}/SAGA%20-%20${PORTVERSION}
 
