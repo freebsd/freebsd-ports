@@ -1,11 +1,11 @@
---- Makefile.orig	2020-08-06 20:40:55 UTC
+--- Makefile.orig	2020-10-29 19:37:56 UTC
 +++ Makefile
-@@ -657,7 +657,7 @@ endif
+@@ -718,7 +718,7 @@ endif
  LIBS_ALL = $(LIBS_COMMON) gtkmm-3.0 epoxy cairomm-pdf-1.0 librsvg-2.0 libzmq libgit2 libcurl glm
  
  OPTIMIZE = -fdata-sections -ffunction-sections
 -DEBUGFLAGS = -g3
 +#DEBUGFLAGS = -g3
- CXXFLAGS += $(DEBUGFLAGS) $(DEFINES) $(OPTIMIZE) $(shell $(PKG_CONFIG) --cflags $(LIBS_ALL)) -MP -MMD -pthread -Wall -Wshadow -std=c++17 -O3
- CFLAGS = $(filter-out -std=%,$(CXXFLAGS)) -std=c99
+ CXXFLAGS += $(DEBUGFLAGS) $(DEFINES) $(OPTIMIZE) $(shell $(PKG_CONFIG) --cflags $(LIBS_ALL)) -MP -MMD -pthread -Wall -Wshadow -Wsuggest-override -std=c++17 -O3
+ CFLAGS = $(filter-out -Wsuggest-override, $(filter-out -std=%,$(CXXFLAGS))) -std=c99
  LDFLAGS += -lm -lpthread

@@ -2,11 +2,8 @@
 
 PORTNAME=	horizon-eda
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.1
+DISTVERSION=	1.3.0
 CATEGORIES=	cad
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	b40e3ed3f92c4b28af307135223ecf05eacecc82.patch:-p1 # backport the build failure fix
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	EDA package for printed circuit board design
