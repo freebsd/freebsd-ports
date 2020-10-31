@@ -13,6 +13,8 @@ PATCHFILES=	428b331d8efe.patch:-p1
 MAINTAINER=	peter@netkey.at
 COMMENT=	Private and secure decentralised communication platform
 
+BROKEN=		Doesn't build with libmicrohttpd 0.9.71 - PR: 250100
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 

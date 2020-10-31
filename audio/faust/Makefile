@@ -9,6 +9,8 @@ CATEGORIES=	audio devel
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Functional programming language for realtime audio signal processing
 
+BROKEN=		Doesn't build with libmicrohttpd 0.9.71 - PR: 250101
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 

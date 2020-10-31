@@ -9,6 +9,8 @@ CATEGORIES=		net www devel
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	C++ framework for JSON-RPC 1.0 and 2.0
 
+BROKEN=		Doesn't build with libmicrohttpd 0.9.71 - PR: 250083
+
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
