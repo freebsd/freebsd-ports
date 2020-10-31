@@ -3,6 +3,7 @@
 
 PORTNAME=	sushi
 PORTVERSION=	3.34.0
+PORTREVISION=	1
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -13,7 +14,7 @@ COMMENT=	Tool similar to Gloobus Preview that provides quick file previews
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libgcr-3.so:security/gcr \
+LIB_DEPENDS=	libgcr-base-3.so:security/gcr \
 		libgjs.so:lang/gjs \
 		libclutter-gtk-1.0.so:graphics/clutter-gtk3 \
 		libclutter-gst-3.0.so:multimedia/clutter-gst3 \

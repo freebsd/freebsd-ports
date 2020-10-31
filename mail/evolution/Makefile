@@ -3,6 +3,7 @@
 
 PORTNAME=	evolution
 PORTVERSION=	3.38.0
+PORTREVISION=	1
 CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -20,7 +21,7 @@ BUILD_DEPENDS=	itstool:textproc/itstool \
 		iso-codes>=0:misc/iso-codes \
 		highlight:textproc/highlight
 LIB_DEPENDS=	libnss3.so:security/nss \
-		libgcr-3.so:security/gcr \
+		libgcr-base-3.so:security/gcr \
 		libgtkspell3-3.so:textproc/gtkspell3 \
 		libgnome-autoar-gtk-0.so:archivers/gnome-autoar \
 		libsoup-2.4.so:devel/libsoup \

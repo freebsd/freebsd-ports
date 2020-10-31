@@ -4,7 +4,7 @@
 
 PORTNAME=	ekiga
 PORTVERSION=	4.0.1
-PORTREVISION=	29
+PORTREVISION=	30
 CATEGORIES=	net-im
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -122,7 +122,7 @@ PLIST_SUB+=	GCONF=""
 
 .if ${PORT_OPTIONS:MEVOLUTION}
 USE_GNOME+=	evolutiondataserver3
-LIB_DEPENDS+=	libgcr-3.so:security/gcr
+LIB_DEPENDS+=	libgcr-base-3.so:security/gcr
 CONFIGURE_ARGS+=--enable-eds
 PLIST_SUB+=	EVOLUTION=""
 WITH_PLUGINS=	1

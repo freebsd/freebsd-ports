@@ -3,6 +3,7 @@
 
 PORTNAME=	seahorse
 PORTVERSION=	3.36.2
+PORTREVISION=	1
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -17,7 +18,7 @@ BUILD_DEPENDS=	gnupg>=2.1.4:security/gnupg \
 		valac:lang/vala \
 		itstool:textproc/itstool
 LIB_DEPENDS=	libgpgme.so:security/gpgme \
-		libgcr-3.so:security/gcr \
+		libgcr-base-3.so:security/gcr \
 		libsecret-1.so:security/libsecret \
 		libsoup-2.4.so:devel/libsoup \
 		libpwquality.so:security/libpwquality \

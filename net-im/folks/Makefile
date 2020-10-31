@@ -3,6 +3,7 @@
 
 PORTNAME=	folks
 PORTVERSION=	0.14.0
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	GNOME
 
@@ -14,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	vapigen:lang/vala
 LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
-		libgcr-3.so:security/gcr \
+		libgcr-base-3.so:security/gcr \
 		libzeitgeist-2.0.so:sysutils/zeitgeist \
 		libtelepathy-glib.so:net-im/telepathy-glib \
 		libnspr4.so:devel/nspr \
