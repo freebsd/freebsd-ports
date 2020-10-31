@@ -2,7 +2,7 @@
 
 PORTNAME=	libsysctlmibinfo2
 DISTVERSION=	2.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	alfix86@gmail.com
