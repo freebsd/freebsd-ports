@@ -1288,7 +1288,6 @@
     SUBDIR += libshbuf
     SUBDIR += libshhmsg
     SUBDIR += libshhopt
-    SUBDIR += libsigc++12
     SUBDIR += libsigc++20
     SUBDIR += libsigrok
     SUBDIR += libsigrokdecode
