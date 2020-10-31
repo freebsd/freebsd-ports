@@ -1,4 +1,4 @@
-TIMESTAMP = 1603829168
+TIMESTAMP = 1604129268
 SHA256 (rust/crates/aho-corasick-0.7.14.tar.gz) = b476ce7103678b0c6d3d395dbbae31d48ff910bd28be979ba5d48c6351131d0d
 SIZE (rust/crates/aho-corasick-0.7.14.tar.gz) = 113042
 SHA256 (rust/crates/ansi_term-0.11.0.tar.gz) = ee49baf6cb617b853aa8d93bf420db2383fab46d314482ca2803b40d5fde979b
@@ -123,5 +123,5 @@ SHA256 (rust/crates/winapi-util-0.1.5.tar.gz) = 70ec6ce85bb158151cae5e5c87f95a8e
 SIZE (rust/crates/winapi-util-0.1.5.tar.gz) = 10164
 SHA256 (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = 712e227841d057c1ee1cd2fb22fa7e5a5461ae8e48fa2ca79ec42cfc1931183f
 SIZE (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = 2947998
-SHA256 (casey-just-v0.8.2_GH0.tar.gz) = a137dc2633487a87d3d97cc40a359a84f96b3be2ff7153fe453c45728618523f
-SIZE (casey-just-v0.8.2_GH0.tar.gz) = 177099
+SHA256 (casey-just-v0.8.3_GH0.tar.gz) = 31c837cb028a9e32e98c3d7071d80dbbaba7e6f35b3a33496aa39d5d8370d9ba
+SIZE (casey-just-v0.8.3_GH0.tar.gz) = 178365
