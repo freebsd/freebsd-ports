@@ -1,6 +1,6 @@
 --- source3/torture/cmd_vfs.c.orig	2019-01-15 10:07:00 UTC
 +++ source3/torture/cmd_vfs.c
-@@ -141,6 +141,82 @@ static NTSTATUS cmd_disk_free(struct vfs
+@@ -145,7 +145,84 @@ static NTSTATUS cmd_disk_free(struct vfs_state *vfs, T
  	return NT_STATUS_OK;
  }
  
@@ -12,7 +12,7 @@
 +	SMB_DISK_QUOTA D;
 +	unid_t id;
 +	int r;
-+
+ 
 +	if (argc != 4) {
 +		printf("Usage: get_quota <path> [user|group] id\n");
 +		return NT_STATUS_OK;
@@ -22,6 +22,7 @@
 +					argv[1],
 +					NULL,
 +					NULL,
++					0,
 +					ssf_flags());
 +	if (smb_fname == NULL) {
 +		return NT_STATUS_NO_MEMORY;
@@ -80,10 +81,11 @@
 +	return NT_STATUS_OK;
 +}
 +
- 
++
  static NTSTATUS cmd_opendir(struct vfs_state *vfs, TALLOC_CTX *mem_ctx, int argc, const char **argv)
  {
-@@ -1947,6 +2023,7 @@ struct cmd_set vfs_commands[] = {
+ 	struct smb_filename *smb_fname = NULL;
+@@ -2028,6 +2105,7 @@ struct cmd_set vfs_commands[] = {
  	{ "connect",   cmd_connect,   "VFS connect()",    "connect" },
  	{ "disconnect",   cmd_disconnect,   "VFS disconnect()",    "disconnect" },
  	{ "disk_free",   cmd_disk_free,   "VFS disk_free()",    "disk_free <path>" },
@@ -91,7 +93,7 @@
  	{ "opendir",   cmd_opendir,   "VFS opendir()",    "opendir <fname>" },
  	{ "readdir",   cmd_readdir,   "VFS readdir()",    "readdir" },
  	{ "mkdir",   cmd_mkdir,   "VFS mkdir()",    "mkdir <path>" },
-@@ -1977,33 +2054,22 @@ struct cmd_set vfs_commands[] = {
+@@ -2057,33 +2135,22 @@ struct cmd_set vfs_commands[] = {
  	{ "link",   cmd_link,   "VFS link()",    "link <oldpath> <newpath>" },
  	{ "mknod",   cmd_mknod,   "VFS mknod()",    "mknod <path> <mode> <dev>" },
  	{ "realpath",   cmd_realpath,   "VFS realpath()",    "realpath <path>" },
@@ -134,5 +136,5 @@
 -	  "test_chain" },
 +	{ "test_chain", cmd_test_chain, "test chain code", "test_chain" },
  	{ "translate_name", cmd_translate_name, "VFS translate_name()", "translate_name unix_filename" },
- 	{ NULL }
+ 	{0}
  };

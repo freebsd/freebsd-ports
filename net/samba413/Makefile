@@ -23,7 +23,7 @@ EXTRA_PATCHES+=			${PATCHDIR}/0001-Zfs-provision-1.patch:-p1
 
 SAMBA4_BASENAME=		samba
 SAMBA4_PORTNAME=		${SAMBA4_BASENAME}4
-SAMBA4_VERSION=			4.13.0
+SAMBA4_VERSION=			4.13.1
 SAMBA4_DISTNAME=		${SAMBA4_BASENAME}-${SAMBA4_VERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
 
 WRKSRC?=			${WRKDIR}/${DISTNAME}
@@ -417,7 +417,7 @@ CONFIGURE_ARGS+=		--disable-python
 PLIST_SUB+=			SAMBA4_PYTHON="@comment "
 SUB_LIST+=			SAMBA4_PYTHON="@comment "
 .else
-USES+=				python:3.4+
+USES+=				python:3.6+
 PLIST_SUB+=			SAMBA4_PYTHON=""
 SUB_LIST+=			SAMBA4_PYTHON=""
 # Don't cache Python modules

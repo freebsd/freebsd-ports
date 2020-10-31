@@ -34,6 +34,7 @@ bin/smbtar
 %%SAMBA4_PYTHON%%bin/smbtorture
 bin/smbtree
 bin/testparm
+bin/vfstest
 bin/wbinfo
 sbin/eventlogadm
 sbin/nmbd
@@ -463,7 +464,6 @@ lib/samba4/private/libxattr-tdb-samba4.so
 %%AD_DC%%%%DATADIR%%/setup/adprep/WindowsServerDocs/Sch59.ldf.diff
 %%AD_DC%%%%DATADIR%%/setup/adprep/WindowsServerDocs/Schema-Updates.md
 %%AD_DC%%%%DATADIR%%/setup/aggregate_schema.ldif
-
 %%AD_DC%%%%DATADIR%%/setup/display-specifiers/DisplaySpecifiers-Win2k0.txt
 %%AD_DC%%%%DATADIR%%/setup/display-specifiers/DisplaySpecifiers-Win2k3.txt
 %%AD_DC%%%%DATADIR%%/setup/display-specifiers/DisplaySpecifiers-Win2k3R2.txt

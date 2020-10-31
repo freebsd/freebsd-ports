@@ -1,6 +1,6 @@
---- source3/wscript_build.orig	2019-05-07 08:38:21 UTC
+--- source3/wscript_build.orig	2020-07-09 13:33:56 UTC
 +++ source3/wscript_build
-@@ -236,11 +236,9 @@ bld.SAMBA3_SUBSYSTEM('SMBREGISTRY',
+@@ -233,11 +233,9 @@ bld.SAMBA3_SUBSYSTEM('SMBREGISTRY',
                          talloc
                          replace
                          util_reg
@@ -13,7 +13,7 @@
                          ''')
  
  # Do not link against this use 'smbconf'
-@@ -514,7 +512,7 @@ bld.SAMBA3_LIBRARY('secrets3',
+@@ -495,7 +493,7 @@ bld.SAMBA3_LIBRARY('secrets3',
  
  bld.SAMBA3_LIBRARY('smbldap',
                      source='lib/smbldap.c',
@@ -22,7 +22,7 @@
                      enabled=bld.CONFIG_SET("HAVE_LDAP"),
                      private_library=False,
                      abi_directory='lib/ABI',
-@@ -739,6 +737,7 @@ bld.SAMBA3_LIBRARY('smbd_base',
+@@ -721,6 +719,7 @@ bld.SAMBA3_LIBRARY('smbd_base',
                          smbd_conn
                          param_service
                          AVAHI
@@ -30,7 +30,7 @@
                          PRINTBASE
                          PROFILE
                          LOCKING
-@@ -1116,6 +1115,7 @@ bld.SAMBA3_BINARY('client/smbclient',
+@@ -1129,6 +1128,7 @@ bld.SAMBA3_BINARY('client/smbclient',
                        msrpc3
                        RPC_NDR_SRVSVC
                        cli_smb_common
@@ -38,3 +38,23 @@
                        archive
                        ''')
  
+@@ -1153,8 +1153,8 @@ bld.SAMBA3_BINARY('smbspool_krb5_wrapper',
+                  enabled=bld.CONFIG_SET('HAVE_CUPS'))
+ 
+ bld.SAMBA3_BINARY('smbspool_argv_wrapper',
+-		  source='script/tests/smbspool_argv_wrapper.c',
+-		  for_selftest=True)
++                  source='script/tests/smbspool_argv_wrapper.c',
++                  for_selftest=True)
+ 
+ bld.SAMBA3_BINARY('locktest2',
+                  source='torture/locktest2.c',
+@@ -1303,7 +1303,7 @@ bld.SAMBA3_BINARY('vfstest',
+                       smbconf
+                       SMBREADLINE
+                       ''',
+-                 for_selftest=True)
++                 install=True)
+ 
+ bld.SAMBA3_BINARY('versiontest',
+                  source='lib/version_test.c',
