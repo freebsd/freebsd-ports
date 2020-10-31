@@ -1,3 +1,3 @@
-TIMESTAMP = 1600374465
-SHA256 (check_logfiles-3.12.tar.gz) = bcbd4047ec306a168d78596da559e5f5a912073720c1272d07551f4a3115b0dd
-SIZE (check_logfiles-3.12.tar.gz) = 241538
+TIMESTAMP = 1604186006
+SHA256 (check_logfiles-3.13.tar.gz) = c89abbc3b1c064e07a333a9e9e5a30e07016be096d4aff6650e6bf64168e2774
+SIZE (check_logfiles-3.13.tar.gz) = 241728
