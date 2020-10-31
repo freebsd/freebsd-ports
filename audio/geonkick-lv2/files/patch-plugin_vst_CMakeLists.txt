@@ -1,0 +1,11 @@
+--- plugin/vst/CMakeLists.txt.orig	2020-10-31 00:36:35 UTC
++++ plugin/vst/CMakeLists.txt
+@@ -33,7 +33,7 @@ set_target_properties(${target} PROPERTIES OUTPUT_NAME
+ set_target_properties(${target} PROPERTIES SUFFIX ".so")
+ 
+ target_link_libraries(${target} PRIVATE geonkick_common api_plugin)
+-target_link_libraries(${target} PRIVATE "-lstdc++fs")
++#target_link_libraries(${target} PRIVATE "-lstdc++fs")
+ target_link_libraries(${target} PRIVATE base sdk pluginterfaces)
+ target_link_libraries(${target} PRIVATE "-lredkite -lX11 -lsndfile -lrt -lm -ldl -lpthread -lcairo")
+ target_link_libraries(${target} PRIVATE "-Wl,--no-undefined")
