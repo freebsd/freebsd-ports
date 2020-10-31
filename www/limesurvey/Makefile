@@ -2,17 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	limesurvey
-PORTVERSION=	3.22.14
+PORTVERSION=	3.24.3
 CATEGORIES=	www
 MASTER_SITES=	http://download.limesurvey.org/lts-releases/
-DISTNAME=	${PORTNAME}${PORTVERSION}+200423
+DISTNAME=	${PORTNAME}${PORTVERSION}+201027
 
 MAINTAINER=	flo@FreeBSD.org
 COMMENT=	PHP-based survey building and runing system
 
 LICENSE=	GPLv2
 
-USES=		cpe php:web tar:bz2
+USES=		cpe php:web zip
 
 OPTIONS_DEFINE=		GD LDAP PGSQL
 OPTIONS_DEFAULT=	GD
