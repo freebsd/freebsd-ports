@@ -3,6 +3,7 @@
 
 PORTNAME=	iagno
 PORTVERSION=	3.38.1
+PORTREVISION=	1
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -27,5 +28,7 @@ USES=		gettext gmake gnome localbase meson \
 USE_GNOME=	cairo gsound gtk30 intlhack librsvg2 libxml2:build
 USE_XORG=	x11
 INSTALLS_ICONS=	yes
+
+GLIB_SCHEMAS=	org.gnome.Reversi.gschema.xml
 
 .include <bsd.port.mk>

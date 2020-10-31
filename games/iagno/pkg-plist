@@ -2,7 +2,6 @@ bin/iagno
 man/man6/iagno.6.gz
 share/applications/org.gnome.Reversi.desktop
 share/dbus-1/services/org.gnome.Reversi.service
-share/glib-2.0/schemas/org.gnome.Reversi.gschema.xml
 share/help/C/iagno/2player.page
 share/help/C/iagno/ai-game.page
 share/help/C/iagno/ai-level.page
