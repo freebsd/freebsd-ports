@@ -56,7 +56,7 @@ include/ibus-1.0/ibusxml.h
 %%GTK3%%lib/gtk-3.0/3.0.0/immodules/im-ibus.so
 lib/libibus-1.0.so
 lib/libibus-1.0.so.5
-lib/libibus-1.0.so.5.0.522
+lib/libibus-1.0.so.5.0.523
 libdata/pkgconfig/ibus-1.0.pc
 %%GTK3%%libexec/ibus-extension-gtk3
 %%GTK3%%libexec/ibus-ui-gtk3
@@ -160,6 +160,7 @@ share/dbus-1/services/org.freedesktop.portal.IBus.service
 %%EMOJI%%%%DATADIR%%/dicts/emoji-nn.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-or.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-pa.dict
+%%EMOJI%%%%DATADIR%%/dicts/emoji-pcm.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-pl.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-ps.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-pt.dict
@@ -192,6 +193,7 @@ share/dbus-1/services/org.freedesktop.portal.IBus.service
 %%EMOJI%%%%DATADIR%%/dicts/emoji-ur.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-uz.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-vi.dict
+%%EMOJI%%%%DATADIR%%/dicts/emoji-yo.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-yue.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-yue_Hans.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-zh.dict
