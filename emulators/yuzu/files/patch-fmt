@@ -1,0 +1,15 @@
+Allow building against devel/libfmt until it's upgraded
+
+-- Packages fmt/7.1.0 not found!
+
+--- CMakeLists.txt.orig	2020-10-30 07:35:40 UTC
++++ CMakeLists.txt
+@@ -161,7 +161,7 @@ macro(yuzu_find_packages)
+     #    Cmake Pkg Prefix  Version     Conan Pkg
+         "Boost             1.72        boost/1.72.0"
+         "Catch2            2.13        catch2/2.13.0"
+-        "fmt               7.1         fmt/7.1.0"
++        "fmt               7.0         fmt/7.0.3"
+     # can't use until https://github.com/bincrafters/community/issues/1173
+         #"libzip            1.5         libzip/1.5.2@bincrafters/stable"
+         "lz4               1.8         lz4/1.9.2"

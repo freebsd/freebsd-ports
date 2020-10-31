@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	yuzu
-PORTVERSION=	s20201025
+PORTVERSION=	s20201030
 PORTREVISION?=	0
 CATEGORIES=	emulators
 
@@ -31,11 +31,12 @@ LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
 		libzstd.so:archivers/zstd \
 		libopus.so:audio/opus \
 		libboost_context.so:devel/boost-libs \
-		libfmt.so:devel/libfmt
+		libfmt.so:devel/libfmt \
+		libavcodec.so:multimedia/ffmpeg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yuzu-emu
-GH_TAGNAME=	2f6ba5448
+GH_TAGNAME=	6db0c0d8d
 GH_TUPLE=	yuzu-emu:unicorn:1.0.1-153-g73f45735:unicorn/externals/unicorn \
 		DarkLordZach:mbedtls:a280e60:mbedtls/externals/mbedtls \
 		KhronosGroup:SPIRV-Headers:2c51218:SPIRV_Headers/externals/sirit/externals/SPIRV-Headers \
@@ -46,7 +47,7 @@ GH_TUPLE=	yuzu-emu:unicorn:1.0.1-153-g73f45735:unicorn/externals/unicorn \
 		citra-emu:ext-soundtouch:060181e:soundtouch/externals/soundtouch \
 		herumi:xbyak:v5.96:xbyak/externals/xbyak \
 		kinetiknz:cubeb:cubeb-0.2-1251-ga7e83aa:cubeb/externals/cubeb \
-		svn2github:inih:603729d:inih/externals/inih/inih
+		benhoyt:inih:r52:inih/externals/inih/inih
 
 USES=		cmake compiler:c++17-lang localbase:ldflags python:build sdl ssl
 USE_SDL=	sdl2
