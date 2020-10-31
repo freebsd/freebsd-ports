@@ -13,8 +13,8 @@ LICENSE=	AGPLv3
 
 USES=		cpe gettext-runtime php:flavors,web tar:bzip2
 USE_PHP=	bcmath bz2 ctype curl dom fileinfo filter gd gmp hash iconv \
-		json mbstring pdo posix session simplexml xml xmlreader \
-		xmlwriter xsl zip zlib
+		mbstring pdo posix session simplexml xml xmlreader xmlwriter \
+		xsl zip zlib
 
 NEXTCLOUD_USERNAME?=	${WWWOWN}
 NEXTCLOUD_GROUPNAME?=	${WWWGRP}
@@ -61,6 +61,10 @@ SSL_USE=	PHP=openssl
 
 .if ${PORT_OPTIONS:MAPCU}
 RUN_DEPENDS+=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/apcu.so:devel/pecl-APCu@${PHP_FLAVOR}
+.endif
+
+.if ${FLAVOR} != php80
+USE_PHP+=       json
 .endif
 
 post-extract:
