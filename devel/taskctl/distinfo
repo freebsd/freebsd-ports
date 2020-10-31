@@ -1,6 +1,6 @@
-TIMESTAMP = 1601118538
-SHA256 (taskctl-taskctl-v1.2.2_GH0.tar.gz) = b9cceca4e63f0a580270f9c8af863b4d96e9de7f99e00e1ea28db1ac5ec1ad8b
-SIZE (taskctl-taskctl-v1.2.2_GH0.tar.gz) = 322564
+TIMESTAMP = 1604138887
+SHA256 (taskctl-taskctl-v1.2.3_GH0.tar.gz) = 0d35f193e0dc2768d1452c7340019d0339ee5c1dbc1f6a1d2192c0f540830a15
+SIZE (taskctl-taskctl-v1.2.3_GH0.tar.gz) = 322792
 SHA256 (bmatcuk-doublestar-v1.1.5_GH0.tar.gz) = a5634b115c6d1f119df62fd8a0db985188a31647a6690ce449c6449d5458681b
 SIZE (bmatcuk-doublestar-v1.1.5_GH0.tar.gz) = 8719
 SHA256 (briandowns-spinner-6dc224009eae_GH0.tar.gz) = 80e61db3bd4a26c7a1cbc983945c60e02b5890dd58422ffc364018bb15db8f14
