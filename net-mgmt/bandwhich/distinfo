@@ -1,4 +1,4 @@
-TIMESTAMP = 1601837588
+TIMESTAMP = 1603971610
 SHA256 (rust/crates/adler-0.2.3.tar.gz) = ee2a4ec343196209d6594e19543ae87a39f96d5534d7174822a3ad825dd6ed7e
 SIZE (rust/crates/adler-0.2.3.tar.gz) = 12168
 SHA256 (rust/crates/adler32-1.2.0.tar.gz) = aae1277d39aeec15cb388266ecc24b11c80469deae6067e17a1a7aa9e5c1f234
@@ -485,7 +485,7 @@ SHA256 (rust/crates/yaml-rust-0.4.3.tar.gz) = 65923dd1784f44da1d2c3dbbc5e8220456
 SIZE (rust/crates/yaml-rust-0.4.3.tar.gz) = 45768
 SHA256 (rust/crates/zip-0.5.6.tar.gz) = 58287c28d78507f5f91f2a4cf1e8310e2c76fd4c6932f93ac60fd1ceb402db7d
 SIZE (rust/crates/zip-0.5.6.tar.gz) = 33064
-SHA256 (imsnif-bandwhich-0.19.0_GH0.tar.gz) = 82ad604e2b80d4434633860dd81a1d73cd59d54bde7241f4e86c95900912befc
-SIZE (imsnif-bandwhich-0.19.0_GH0.tar.gz) = 3004646
+SHA256 (imsnif-bandwhich-0.20.0_GH0.tar.gz) = 4bbf05be32439049edd50bd1e4d5a2a95b0be8d36782e4100732f0cc9f19ba12
+SIZE (imsnif-bandwhich-0.20.0_GH0.tar.gz) = 3005075
 SHA256 (tailhook-resolv-conf-83c0f25ebcb0615550488692c5213ca1ae4acd8f_GH0.tar.gz) = 1b191b0be0f648e31c212db7c29fdced81ffc6e1e89b2580aaf5d623d44bbbc9
 SIZE (tailhook-resolv-conf-83c0f25ebcb0615550488692c5213ca1ae4acd8f_GH0.tar.gz) = 17205
