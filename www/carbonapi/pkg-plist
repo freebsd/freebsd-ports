@@ -1,7 +1,11 @@
 bin/carbonapi
-%%ETCDIR%%/carbonapi.example.toml
-%%ETCDIR%%/carbonapi.example.yaml
-%%ETCDIR%%/graphTemplates.example.toml
-%%ETCDIR%%/graphTemplates.example.yaml
-%%ETCDIR%%/graphiteWeb.example.yaml
+bin/carbonzipper
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/carbonapi.example.clickhouse.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/carbonapi.example.prometheus.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/carbonapi.example.toml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/carbonapi.example.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphTemplates.example.toml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphTemplates.example.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphiteWeb.example.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/carbonzipper.example.conf
 @dir(carbon,carbon,0750) /var/log/carbonapi

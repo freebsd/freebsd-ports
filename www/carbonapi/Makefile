@@ -1,45 +1,44 @@
 # $FreeBSD$
 
-PORTNAME=		carbonapi
-DISTVERSION=		0.11.0
-CATEGORIES=		www
+PORTNAME=	carbonapi
+DISTVERSION=	0.14.1
+CATEGORIES=	www
 
-MAINTAINER=		a.andersson.thn@gmail.com
-COMMENT=		Go implementation of carbonapi
+MAINTAINER=	a.andersson.thn@gmail.com
+COMMENT=	Go implementation of carbonapi
 
-LICENSE=		BSD2CLAUSE
-LICENSE_FILE=		${WRKSRC}/LICENSE
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=			gmake go
+USES=		go:modules
 
-USE_GITHUB=		yes
-GH_ACCOUNT=		go-graphite
-GH_SUBDIR=		src/github.com/${GH_ACCOUNT}/${PORTNAME}
-USE_RC_SUBR=		${PORTNAME}
+USE_GITHUB=	yes
+GH_ACCOUNT=	go-graphite
 
-USERS=			carbon
-GROUPS=			carbon
+USE_RC_SUBR=	${PORTNAME}
 
-OPTIONS_DEFINE=		CAIRO
+GO_TARGET=	./cmd/carbonapi \
+		./cmd/carbonzipper
+GO_BUILDFLAGS=	-v \
+		${CARBON_ARGS} \
+		-ldflags="-X main.BuildVersion=${DISTVERSION}"
 
-CAIRO_USES=		pkgconfig
-CAIRO_VARS=		CARBON_API_ARGS=${PORTNAME}
-CAIRO_VARS_OFF=		CARBON_API_ARGS=nocairo
+USERS=		carbon
+GROUPS=		carbon
+
+OPTIONS_DEFINE=	CAIRO EXAMPLES
+
 CAIRO_LIB_DEPENDS=	libcairo.so:graphics/cairo
+CAIRO_USES=	pkgconfig
+CAIRO_VARS=	CARBON_ARGS="-tags cairo"
 
-do-build:
-	@cd ${WRKSRC}/${GH_SUBDIR} && \
-		${SETENV} ${MAKE_ENV} GOPATH=${WRKSRC} VERSION=${DISTVERSION} \
-		${MAKE_CMD} ${CARBON_API_ARGS}
-
-do-install:
-	@${MKDIR} ${STAGEDIR}/${PREFIX}/etc/carbonapi
+post-install:
 	@${MKDIR} ${STAGEDIR}/var/log/carbonapi
-	${INSTALL_PROGRAM} ${WRKSRC}/carbonapi ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/carbonapi.example.toml ${STAGEDIR}${PREFIX}/etc/carbonapi
-	${INSTALL_DATA} ${WRKSRC}/carbonapi.example.yaml ${STAGEDIR}${PREFIX}/etc/carbonapi
-	${INSTALL_DATA} ${WRKSRC}/graphiteWeb.example.yaml ${STAGEDIR}${PREFIX}/etc/carbonapi
-	${INSTALL_DATA} ${WRKSRC}/graphTemplates.example.toml ${STAGEDIR}${PREFIX}/etc/carbonapi
-	${INSTALL_DATA} ${WRKSRC}/graphTemplates.example.yaml ${STAGEDIR}${PREFIX}/etc/carbonapi
+
+post-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/cmd/carbonapi/*.toml ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/cmd/carbonapi/*.yaml ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/cmd/carbonzipper/example.conf ${STAGEDIR}${EXAMPLESDIR}/carbonzipper.example.conf
 
 .include <bsd.port.mk>
