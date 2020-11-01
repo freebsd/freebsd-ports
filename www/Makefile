@@ -1767,7 +1767,6 @@
     SUBDIR += quark
     SUBDIR += qutebrowser
     SUBDIR += radicale
-    SUBDIR += radicale2
     SUBDIR += redmine4
     SUBDIR += rejik
     SUBDIR += reportmagic

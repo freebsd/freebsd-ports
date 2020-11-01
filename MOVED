@@ -15666,3 +15666,5 @@ devel/libsigc++12|devel/libsigc++20|2020-10-31|Has expired: Use newer version
 x11/decurs||2020-11-01|Depends on removed x11-toolkits/gtkmm20
 x11/fluxbg||2020-11-01|Depends on removed x11-toolkits/gtkmm20
 x11-toolkits/gtkmm20|x11-toolkits/gtkmm24|2020-11-01|Broken after libsigc++12 removal
+www/radicale2|www/radicale|2020-11-01|Has expired: Please migrate to Radicale 3.x which you can find at www/radicale
+devel/pccts|devel/antlr|2020-11-01|Has expired: abandonedware, superseded by devel/antlr
