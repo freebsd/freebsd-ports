@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	recursor
-DISTVERSION=	4.3.5
+DISTVERSION=	4.4.0
 CATEGORIES=	dns
 MASTER_SITES=	http://downloads.powerdns.com/releases/
 PKGNAMEPREFIX=	powerdns-
@@ -39,13 +39,18 @@ SUB_FILES=	pkg-message
 USERS=		pdns_recursor
 GROUPS=		pdns
 
+OPTIONS_DEFINE=		DNSTAP
 OPTIONS_DEFAULT=	LUA
 OPTIONS_SINGLE=		EXTLUA
 OPTIONS_SINGLE_EXTLUA=	LUA LUAJIT LUAJITOR
 
+DNSTAP_DESC=	dnstap support (see dnstap.info)
 LUAJITOR_DESC=	Use lang/luajit-openresty
 LUAJIT_DESC=	Use lang/luajit
 LUA_DESC=	Use lang/lua
+
+DNSTAP_LIB_DEPENDS=		libfstrm.so:devel/fstrm
+DNSTAP_CONFIGURE_ENABLE=	dnstap
 
 LUAJITOR_LIB_DEPENDS=	libluajit-5.1.so.2:lang/luajit-openresty
 LUAJITOR_CONFIGURE_ON=	--with-lua=luajit
