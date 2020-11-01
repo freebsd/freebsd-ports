@@ -32,7 +32,7 @@ DOCS=		FAQ FEATURES INSTALL KNOWN_BUGS MAIL-ETIQUETTE THANKS TODO options-in-ver
 
 SHEBANG_FILES=	*/*.pl
 
-OPTIONS_DEFINE=	ALTSVC BROTLI CA_BUNDLE COOKIES CURL_DEBUG DEBUG DOCS EXAMPLES IDN IPV6 METALINK NTLM PROXY PSL TLS_SRP
+OPTIONS_DEFINE=	ALTSVC BROTLI CA_BUNDLE COOKIES CURL_DEBUG DEBUG DOCS EXAMPLES IDN IPV6 METALINK NTLM PROXY PSL TLS_SRP ZSTD
 OPTIONS_GROUP=	PROTOCOL
 OPTIONS_RADIO=	SSL
 OPTIONS_SINGLE=	GSSAPI RESOLV
@@ -136,6 +136,8 @@ THREADED_RESOLVER_CONFIGURE_ENABLE=	pthreads threaded-resolver
 TLS_SRP_CONFIGURE_ENABLE=	tls-srp
 WOLFSSL_CONFIGURE_WITH=	wolfssl
 WOLFSSL_LIB_DEPENDS=	libwolfssl.so:security/wolfssl
+ZSTD_CONFIGURE_WITH=	zstd
+ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 .include <bsd.port.pre.mk>
 
@@ -149,6 +151,12 @@ IGNORE=		only supports TLS-SRP with either OpenSSL or GnuTLS
 
 .if ${PORT_OPTIONS:MLDAPS} && !${PORT_OPTIONS:MGNUTLS} && !${PORT_OPTIONS:MNSS} && !${PORT_OPTIONS:MOPENSSL} && !${PORT_OPTIONS:MWOLFSSL}
 IGNORE=		only supports LDAPS with SSL
+.endif
+
+.if ${PORT_OPTIONS:MGSSAPI_BASE} && exists(${LOCALBASE}/lib/libkrb5support.so)
+BROKEN=		The GSSAPI_BASE option is selected, but you have krb5 installed. \
+		This is incompatible. In order to build, either select GSSAPI_MIT, \
+		or temporarily deinstall krb5 to build curl, or build in poudriere
 .endif
 
 post-patch:
