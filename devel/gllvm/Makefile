@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2.9
 CATEGORIES=	devel
 
-MAINTAINER=	dmgk@FreeBSD.org
+MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	Whole Program LLVM: wllvm ported to Go
 
 LICENSE=	BSD3CLAUSE
