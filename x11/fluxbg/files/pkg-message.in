@@ -1,8 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-Execution of %%PREFIX%%/bin/%%PORTNAME%%_conf is a prerequisite of running
-%%PORTNAME%%!
-EOM
-}
-]

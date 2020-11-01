@@ -1,4 +1,0 @@
-#!/bin/sh
-
-cd %%PREFIX%%/share/decurs
-exec %%PREFIX%%/bin/decurs.bin "$@"
