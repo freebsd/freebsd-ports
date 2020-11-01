@@ -47,6 +47,7 @@
     SUBDIR += beehive
     SUBDIR += bkmrkconv
     SUBDIR += blastbeat
+    SUBDIR += bluefish
     SUBDIR += bolt
     SUBDIR += bozohttpd
     SUBDIR += browsh
