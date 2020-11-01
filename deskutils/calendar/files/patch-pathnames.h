@@ -1,7 +1,6 @@
 --- pathnames.h.orig	2020-10-18 03:01:26 UTC
 +++ pathnames.h
-@@ -34,4 +34,5 @@
- 
+@@ -35,3 +35,4 @@
  #include <paths.h>
  
  #define	_PATH_INCLUDE	"/usr/share/calendar"

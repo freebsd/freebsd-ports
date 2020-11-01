@@ -39,14 +39,26 @@
  	}
  
  	warnx("can't open calendar file \"%s\"", file);
-@@ -133,60 +141,130 @@ cal_fopen(const char *file)
+@@ -133,60 +141,142 @@ cal_fopen(const char *file)
  	return (NULL);
  }
  
++static char*
++cal_path(void)
++{
++	static char buffer[MAXPATHLEN + 10];
++
++	if (cal_dir[0] == '/')
++		snprintf(buffer, sizeof(buffer), "%s/%s", cal_dir, cal_file);
++	else
++		snprintf(buffer, sizeof(buffer), "%s/%s/%s", cal_home, cal_dir, cal_file);
++	return (buffer);
++}
++
 +#define	WARN0(format)		   \
-+	warnx(format " in %s/%s/%s line %d", cal_home, cal_dir, cal_file, cal_line)
++	warnx(format " in %s line %d", cal_path(), cal_line)
 +#define	WARN1(format, arg1)		   \
-+	warnx(format " in %s/%s/%s line %d", arg1, cal_home, cal_dir, cal_file, cal_line)
++	warnx(format " in %s line %d", arg1, cal_path(), cal_line)
 +
  static int
 -token(char *line, FILE *out, bool *skip)
@@ -192,7 +204,7 @@
  
  		return (T_OK);
  	}
-@@ -198,26 +276,29 @@ token(char *line, FILE *out, bool *skip)
+@@ -198,26 +288,29 @@ token(char *line, FILE *out, bool *skip)
  		trimlr(&walk);
  
  		if (*walk == '\0') {
@@ -234,7 +246,7 @@
  		return (T_OK);
  	}
  
-@@ -248,11 +329,14 @@ cal_parse(FILE *in, FILE *out)
+@@ -248,11 +341,14 @@ cal_parse(FILE *in, FILE *out)
  	int month[MAXCOUNT];
  	int day[MAXCOUNT];
  	int year[MAXCOUNT];
@@ -250,7 +262,7 @@
  
  	/* Unused */
  	tm.tm_sec = 0;
-@@ -263,9 +347,61 @@ cal_parse(FILE *in, FILE *out)
+@@ -263,9 +359,61 @@ cal_parse(FILE *in, FILE *out)
  	if (in == NULL)
  		return (1);
  
@@ -314,7 +326,7 @@
  			case T_ERR:
  				free(line);
  				return (1);
-@@ -278,18 +414,9 @@ cal_parse(FILE *in, FILE *out)
+@@ -278,18 +426,9 @@ cal_parse(FILE *in, FILE *out)
  			}
  		}
  
@@ -334,7 +346,7 @@
  		/*
  		 * Setting LANG in user's calendar was an old workaround
  		 * for 'calendar -a' being run with C locale to properly
-@@ -353,7 +480,7 @@ cal_parse(FILE *in, FILE *out)
+@@ -353,7 +492,7 @@ cal_parse(FILE *in, FILE *out)
  		if (count < 0) {
  			/* Show error status based on return value */
  			if (debug)
@@ -343,7 +355,7 @@
  			if (count == -1)
  				continue;
  			count = -count + 1;
-@@ -373,11 +500,15 @@ cal_parse(FILE *in, FILE *out)
+@@ -373,11 +512,15 @@ cal_parse(FILE *in, FILE *out)
  			(void)strftime(dbuf, sizeof(dbuf),
  			    d_first ? "%e %b" : "%b %e", &tm);
  			if (debug)

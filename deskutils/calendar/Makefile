@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	calendar
-DISTVERSION=	0.7.1
+DISTVERSION=	0.7.2
 CATEGORIES=	deskutils
 
 MAINTAINER=	se@FreeBSD.org
