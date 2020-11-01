@@ -15,6 +15,8 @@ COMMENT=	SDL/OpenGL space shoot'em up game
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		fails to build
+
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtinyxml.so:textproc/tinyxml
 
