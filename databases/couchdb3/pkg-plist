@@ -896,6 +896,8 @@ man/man1/apachecouchdb.1.gz
 %%PORTDOCS%%%%WWWDIR%%/docs/whatsnew/3.1.html
 %%PORTDOCS%%%%WWWDIR%%/docs/whatsnew/index.html
 @comment fauxton core UI
+%%WWWDIR%%/dashboard.assets/css/styles.2ca2557452a177700f4c.css
+%%WWWDIR%%/dashboard.assets/css/styles.bdfacd9ba862d16e41b9.css
 %%WWWDIR%%/dashboard.assets/fonts/fauxtonicon5.eot
 %%WWWDIR%%/dashboard.assets/fonts/fauxtonicon5.ttf
 %%WWWDIR%%/dashboard.assets/fonts/fauxtonicon5.woff
@@ -913,5 +915,8 @@ man/man1/apachecouchdb.1.gz
 %%WWWDIR%%/dashboard.assets/img/linkedin.png
 %%WWWDIR%%/dashboard.assets/img/loader.gif
 %%WWWDIR%%/dashboard.assets/img/twitter.png
+%%WWWDIR%%/dashboard.assets/js/bundle.bdfacd9ba862d16e41b9.js
+%%WWWDIR%%/dashboard.assets/js/manifest.583577db79221d5ae84e.js
+%%WWWDIR%%/dashboard.assets/js/vendor.2ca2557452a177700f4c.js
 %%WWWDIR%%/favicon.ico
 %%WWWDIR%%/index.html
