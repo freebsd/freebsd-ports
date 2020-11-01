@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xcaplib
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	devel python
 MASTER_SITES=	http://download.ag-projects.com/XCAP/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
