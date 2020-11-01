@@ -1,7 +1,9 @@
+@comment %%WWWDIR%%/.editorconfig
 %%WWWDIR%%/blame.php
 %%WWWDIR%%/browse.php
 %%WWWDIR%%/cache/tmp
 %%WWWDIR%%/comp.php
+@comment %%WWWDIR%%/composer.json
 %%WWWDIR%%/diff.php
 %%WWWDIR%%/dl.php
 %%WWWDIR%%/filedetails.php
@@ -20,9 +22,10 @@
 %%WWWDIR%%/include/version.php
 %%WWWDIR%%/index.php
 %%WWWDIR%%/javascript/blame-popup.js
+%%WWWDIR%%/javascript/collapsible.js
 %%WWWDIR%%/javascript/compare-checkboxes.js
-%%WWWDIR%%/javascript/group-collapse.js
 %%WWWDIR%%/javascript/ie-png-transparency.js
+%%WWWDIR%%/javascript/jquery.min.1.9.1.js
 %%WWWDIR%%/languages/catalan.php
 %%WWWDIR%%/languages/chinese-simplified.php
 %%WWWDIR%%/languages/chinese-traditional.php
@@ -61,6 +64,7 @@
 %%WWWDIR%%/multiviews.php
 %%WWWDIR%%/revision.php
 %%WWWDIR%%/rss.php
+%%WWWDIR%%/search.php
 %%WWWDIR%%/templates/BlueGrey/blame.tmpl
 %%WWWDIR%%/templates/BlueGrey/compare.tmpl
 %%WWWDIR%%/templates/BlueGrey/diff.tmpl
@@ -203,8 +207,8 @@
 %%WWWDIR%%/templates/calm/images/submitbg.png
 %%WWWDIR%%/templates/calm/images/t-node.png
 %%WWWDIR%%/templates/calm/images/textbg.png
-%%WWWDIR%%/templates/calm/images/toggledown.png
-%%WWWDIR%%/templates/calm/images/toggleup.png
+%%WWWDIR%%/templates/calm/images/toggle-down.png
+%%WWWDIR%%/templates/calm/images/toggle-up.png
 %%WWWDIR%%/templates/calm/images/up.png
 %%WWWDIR%%/templates/calm/images/xml.gif
 %%WWWDIR%%/templates/calm/index.tmpl
