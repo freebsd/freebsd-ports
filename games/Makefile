@@ -626,6 +626,7 @@
     SUBDIR += narcissu2
     SUBDIR += nazghul
     SUBDIR += nehquake
+    SUBDIR += neo-cowsay
     SUBDIR += nethack32
     SUBDIR += nethack33
     SUBDIR += nethack33-nox11
