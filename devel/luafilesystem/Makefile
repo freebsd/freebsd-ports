@@ -13,7 +13,7 @@ COMMENT=	Library to access directory structure and file attributes
 
 LICENSE=	MIT
 
-USES=		lua:module
+USES=		lua:-53,module
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	keplerproject
