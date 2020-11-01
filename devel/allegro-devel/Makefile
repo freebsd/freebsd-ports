@@ -17,6 +17,8 @@ COMMENT=	Cross-platform library for games and multimedia programming
 LICENSE=	ZLIB BSD3CLAUSE
 LICENSE_COMB=	dual
 
+BROKEN=		fails to build
+
 LIB_DEPENDS=	libjack.so:audio/jack \
 		libpng.so:graphics/png \
 		libvorbis.so:audio/libvorbis \
