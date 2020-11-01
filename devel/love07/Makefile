@@ -13,6 +13,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-linux-src
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Open-source 2D game engine
 
+BROKEN=		fails to build
+
 LIB_DEPENDS=	libIL.so:graphics/devil \
 		libmodplug.so:audio/libmodplug \
 		libmpg123.so:audio/mpg123 \
