@@ -10,6 +10,8 @@ COMMENT=	Colour Management System (CMS)
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN=		fails to build
+
 RUN_DEPENDS=	${LOCALBASE}/share/color/icc/OpenICC/sRGB.icc:graphics/icc-profiles-openicc \
 		${LOCALBASE}/share/color/icc/basICColor/ISOcoated_v2_300_bas.ICC:graphics/icc-profiles-basiccolor \
 		xcalib:x11/xcalib
