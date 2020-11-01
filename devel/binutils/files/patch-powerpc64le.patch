@@ -1,0 +1,12 @@
+--- ld/configure.tgt.orig	2020-11-01 20:44:08.795082000 +0100
++++ ld/configure.tgt	2020-11-01 20:44:27.006893000 +0100
+@@ -550,7 +550,8 @@
+ powerpc*-*-elf* | powerpc*-*-eabi* | powerpc*-*-sysv* \
+   | powerpc*-*-linux* | powerpc*-*-netbsd* | powerpc*-*-openbsd* \
+   | powerpc*-*-rtems* \
+-  | powerpc*-*-solaris* | powerpc*-*-kaos* | powerpc*-*-vxworks*)
++  | powerpc*-*-solaris* | powerpc*-*-kaos* | powerpc*-*-vxworks* \
++  | powerpc64*-*-freebsd*)
+ 			case "${targ}" in
+ 			powerpc64*)
+ 			    targ_emul=elf64ppc
