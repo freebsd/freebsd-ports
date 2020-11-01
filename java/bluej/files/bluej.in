@@ -1,4 +1,7 @@
 #!/bin/sh
 APPBASE="%%DATADIR%%"
+JAVAPATH="%%JAVA_HOME%%"
+JAVAFXPATH="%%PREFIX%%/openjfx14/"
 CP="$APPBASE/lib/bluej.jar"
-java -Dawt.useSystemAAFontSettings=on -cp "$CP" bluej.Boot  "$@"
+JAVAFX_CP="$JAVAFXPATH/lib/javafx.base.jar:$JAVAFXPATH/lib/javafx.controls.jar:$JAVAFXPATH/lib/javafx.fxml.jar:$JAVAFXPATH/lib/javafx.graphics.jar:$JAVAFXPATH/lib/javafx.media.jar:$JAVAFXPATH/lib/javafx.properties.jar:$JAVAFXPATH/lib/javafx.swing.jar:$JAVAFXPATH/lib/javafx.web.jar"
+"$JAVAPATH/bin/java" -Djavafx.embed.singleThread=true -Dawt.useSystemAAFontSettings=on -cp "$CP:$JAVAFX_CP" bluej.Boot -javafxpath="$JAVAFXPATH" "$@"
