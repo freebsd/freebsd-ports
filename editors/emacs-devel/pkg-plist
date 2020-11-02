@@ -2406,6 +2406,8 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/ZOZY.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/arabic.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/arabic.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/compose.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/compose.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/croatian.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/croatian.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/cyril-jis.el.gz
