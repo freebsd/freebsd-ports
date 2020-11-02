@@ -6809,6 +6809,9 @@
     SUBDIR += vxlog
     SUBDIR += wand-libconfig
     SUBDIR += wandio
+    SUBDIR += wasi-compiler-rt11
+    SUBDIR += wasi-libc
+    SUBDIR += wasi-libcxx
     SUBDIR += websocketpp
     SUBDIR += websvn
     SUBDIR += wf-config
