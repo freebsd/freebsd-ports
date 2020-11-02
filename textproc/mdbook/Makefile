@@ -2,8 +2,7 @@
 
 PORTNAME=	mdbook
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.3
-PORTREVISION=	1
+DISTVERSION=	0.4.4
 CATEGORIES=	textproc
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -16,8 +15,6 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	rust-lang
 GH_PROJECT=	mdBook
-
-PLIST_FILES=	bin/mdbook
 
 CARGO_CRATES=	aho-corasick-0.7.10 \
 		ammonia-3.1.0 \
@@ -198,6 +195,8 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		ws2_32-sys-0.2.1 \
 		xml5ever-0.16.1
+
+PLIST_FILES=	bin/mdbook
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/mdbook

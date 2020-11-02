@@ -1,4 +1,4 @@
-TIMESTAMP = 1601551289
+TIMESTAMP = 1604320592
 SHA256 (rust/crates/aho-corasick-0.7.10.tar.gz) = 8716408b8bc624ed7f65d223ddb9ac2d044c0547b6fa4b0d554f3a9540496ada
 SIZE (rust/crates/aho-corasick-0.7.10.tar.gz) = 111039
 SHA256 (rust/crates/ammonia-3.1.0.tar.gz) = 89eac85170f4b3fb3dc5e442c1cfb036cb8eecf9dbbd431a161ffad15d90ea3b
@@ -357,5 +357,5 @@ SHA256 (rust/crates/ws2_32-sys-0.2.1.tar.gz) = d59cefebd0c892fa2dd6de581e937301d
 SIZE (rust/crates/ws2_32-sys-0.2.1.tar.gz) = 4697
 SHA256 (rust/crates/xml5ever-0.16.1.tar.gz) = 0b1b52e6e8614d4a58b8e70cf51ec0cc21b256ad8206708bcff8139b5bbd6a59
 SIZE (rust/crates/xml5ever-0.16.1.tar.gz) = 41282
-SHA256 (rust-lang-mdBook-v0.4.3_GH0.tar.gz) = 3a3c4da76ff47943dbd5d490567a3d283cf85889f16d4d96ae04328371c1a817
-SIZE (rust-lang-mdBook-v0.4.3_GH0.tar.gz) = 1474041
+SHA256 (rust-lang-mdBook-v0.4.4_GH0.tar.gz) = eaf01085bd25e2efa07b561148afa5e3da3386e5f2c35b245961dc485562c154
+SIZE (rust-lang-mdBook-v0.4.4_GH0.tar.gz) = 1474967
