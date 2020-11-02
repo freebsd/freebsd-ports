@@ -162,6 +162,7 @@ share/augeas/lenses/virtvboxd.aug
 %%DATADIR%%/cpu_map/x86_Cooperlake.xml
 %%DATADIR%%/cpu_map/x86_Dhyana.xml
 %%DATADIR%%/cpu_map/x86_EPYC-IBPB.xml
+%%DATADIR%%/cpu_map/x86_EPYC-Rome.xml
 %%DATADIR%%/cpu_map/x86_EPYC.xml
 %%DATADIR%%/cpu_map/x86_Haswell-IBRS.xml
 %%DATADIR%%/cpu_map/x86_Haswell-noTSX-IBRS.xml
@@ -210,6 +211,7 @@ share/augeas/lenses/virtvboxd.aug
 %%DATADIR%%/cpu_map/x86_vendors.xml
 %%DATADIR%%/schemas/basictypes.rng
 %%DATADIR%%/schemas/capability.rng
+%%DATADIR%%/schemas/cpu.rng
 %%DATADIR%%/schemas/cputypes.rng
 %%DATADIR%%/schemas/domain.rng
 %%DATADIR%%/schemas/domainbackup.rng
