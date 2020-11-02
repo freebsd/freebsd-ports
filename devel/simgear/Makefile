@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	simgear
-PORTVERSION=	2020.1.3
+PORTVERSION=	2020.3.1
 CATEGORIES=	devel games
 MASTER_SITES=	SF/flightgear/release-${PORTVERSION:R}
 
@@ -31,11 +31,5 @@ LDFLAGS+=	${LDFLAGS_${CHOSEN_COMPILER_TYPE}}
 
 CMAKE_ARGS+=	-DSYSTEM_EXPAT:BOOL=ON \
 		-DENABLE_TESTS:BOOL=OFF
-
-post-patch:
-# Avoid conflict with C++20 <version> by adding .txt suffix
-	@${MV} ${WRKSRC}/version ${WRKSRC}/version.txt
-	@${REINPLACE_CMD} -Ei .c++20 '/file|set_prop/s/version[[:>:]]/&.txt/' \
-		${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>
