@@ -181,6 +181,7 @@
     SUBDIR += py-dns
     SUBDIR += py-dns-lexicon
     SUBDIR += py-dnspython
+    SUBDIR += py-dnspython2
     SUBDIR += py-easyzone
     SUBDIR += py-idna
     SUBDIR += py-idna_ssl
