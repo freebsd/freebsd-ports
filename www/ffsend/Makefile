@@ -2,8 +2,7 @@
 
 PORTNAME=	ffsend
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.67
-PORTREVISION=	1
+DISTVERSION=	0.2.68
 CATEGORIES=	www
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -26,12 +25,12 @@ RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss \
 USES=		cargo localbase:ldflags python:build,3.5+ ssl xorg
 USE_GITLAB=	yes
 GL_ACCOUNT=	timvisee
-GL_COMMIT=	ed34588184d8ac493edceb7b9f500344ae21148b
+GL_COMMIT=	1664c48d7df4a87e7f0846274573d5c40789f64b
 USE_XORG=	xcb
 
 CARGO_CRATES=	addr2line-0.13.0 \
 		adler-0.2.3 \
-		aho-corasick-0.7.13 \
+		aho-corasick-0.7.14 \
 		ansi_term-0.11.0 \
 		arc-swap-0.4.7 \
 		arrayref-0.3.6 \
@@ -39,7 +38,7 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		atty-0.2.14 \
 		autocfg-0.1.7 \
 		autocfg-1.0.1 \
-		backtrace-0.3.50 \
+		backtrace-0.3.53 \
 		base-x-0.2.6 \
 		base64-0.9.3 \
 		base64-0.10.1 \
@@ -55,11 +54,12 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		byteorder-1.3.4 \
 		bytes-0.4.12 \
 		bytes-0.5.6 \
-		cc-1.0.60 \
+		cc-1.0.61 \
 		cfg-if-0.1.10 \
+		cfg-if-1.0.0 \
 		chbs-0.0.10 \
 		checked_int_cast-1.0.0 \
-		chrono-0.4.18 \
+		chrono-0.4.19 \
 		clap-2.33.3 \
 		clipboard-0.5.0 \
 		clipboard-win-2.2.0 \
@@ -92,7 +92,7 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		failure-0.1.8 \
 		failure_derive-0.1.8 \
 		fake-simd-0.1.2 \
-		ffsend-api-0.6.2 \
+		ffsend-api-0.6.3 \
 		filetime-0.2.12 \
 		fnv-1.0.7 \
 		foreign-types-0.3.2 \
@@ -101,20 +101,20 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		fuchsia-cprng-0.1.1 \
 		fuchsia-zircon-0.3.3 \
 		fuchsia-zircon-sys-0.3.3 \
-		futures-0.1.29 \
-		futures-channel-0.3.5 \
-		futures-core-0.3.5 \
-		futures-io-0.3.5 \
-		futures-macro-0.3.5 \
-		futures-sink-0.3.5 \
-		futures-task-0.3.5 \
-		futures-util-0.3.5 \
+		futures-0.1.30 \
+		futures-channel-0.3.6 \
+		futures-core-0.3.6 \
+		futures-io-0.3.6 \
+		futures-macro-0.3.6 \
+		futures-sink-0.3.6 \
+		futures-task-0.3.6 \
+		futures-util-0.3.6 \
 		generic-array-0.12.3 \
 		getrandom-0.1.15 \
 		gimli-0.22.0 \
 		h2-0.2.6 \
-		hashbrown-0.9.0 \
-		hermit-abi-0.1.16 \
+		hashbrown-0.9.1 \
+		hermit-abi-0.1.17 \
 		hkdf-0.8.0 \
 		hmac-0.7.1 \
 		http-0.2.1 \
@@ -136,7 +136,7 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		kernel32-sys-0.2.2 \
 		language-tags-0.2.2 \
 		lazy_static-1.4.0 \
-		libc-0.2.77 \
+		libc-0.2.79 \
 		lock_api-0.3.4 \
 		log-0.3.9 \
 		log-0.4.11 \
@@ -147,9 +147,9 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		mime-0.2.6 \
 		mime-0.3.16 \
 		mime_guess-2.0.3 \
-		miniz_oxide-0.4.2 \
+		miniz_oxide-0.4.3 \
 		mio-0.6.22 \
-		mio-0.7.0 \
+		mio-0.7.3 \
 		miow-0.2.1 \
 		miow-0.3.5 \
 		native-tls-0.2.4 \
@@ -161,7 +161,7 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		objc-0.2.7 \
 		objc-foundation-0.1.1 \
 		objc_id-0.1.1 \
-		object-0.20.0 \
+		object-0.21.1 \
 		once_cell-1.4.1 \
 		opaque-debug-0.2.3 \
 		open-1.4.0 \
@@ -176,16 +176,16 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		pbr-1.0.3 \
 		percent-encoding-1.0.1 \
 		percent-encoding-2.1.0 \
-		pin-project-0.4.24 \
-		pin-project-internal-0.4.24 \
-		pin-project-lite-0.1.8 \
+		pin-project-0.4.27 \
+		pin-project-internal-0.4.27 \
+		pin-project-lite-0.1.10 \
 		pin-utils-0.1.0 \
-		pkg-config-0.3.18 \
+		pkg-config-0.3.19 \
 		ppv-lite86-0.2.9 \
 		prettytable-rs-0.8.0 \
 		proc-macro-hack-0.5.18 \
 		proc-macro-nested-0.1.6 \
-		proc-macro2-1.0.23 \
+		proc-macro2-1.0.24 \
 		qr2term-0.2.1 \
 		qrcode-0.12.0 \
 		quote-1.0.7 \
@@ -206,15 +206,15 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		rdrand-0.4.0 \
 		redox_syscall-0.1.57 \
 		redox_users-0.3.5 \
-		regex-1.3.9 \
+		regex-1.4.1 \
 		regex-automata-0.1.9 \
-		regex-syntax-0.6.18 \
+		regex-syntax-0.6.20 \
 		remove_dir_all-0.5.3 \
 		reqwest-0.10.8 \
 		ring-0.16.15 \
 		rpassword-5.0.0 \
 		rust-argon2-0.8.2 \
-		rustc-demangle-0.1.16 \
+		rustc-demangle-0.1.17 \
 		rustc_version-0.2.3 \
 		rustls-0.18.1 \
 		ryu-1.0.5 \
@@ -226,9 +226,9 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		security-framework-sys-0.4.3 \
 		semver-0.9.0 \
 		semver-parser-0.7.0 \
-		serde-1.0.116 \
-		serde_derive-1.0.116 \
-		serde_json-1.0.57 \
+		serde-1.0.117 \
+		serde_derive-1.0.117 \
+		serde_json-1.0.59 \
 		serde_urlencoded-0.6.1 \
 		sha1-0.6.0 \
 		sha2-0.8.2 \
@@ -239,7 +239,7 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		smallvec-1.4.2 \
 		socket2-0.3.15 \
 		spin-0.5.2 \
-		standback-0.2.10 \
+		standback-0.2.11 \
 		stdweb-0.4.20 \
 		stdweb-derive-0.5.3 \
 		stdweb-internal-macros-0.2.9 \
@@ -247,18 +247,18 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		strsim-0.8.0 \
 		strsim-0.9.3 \
 		subtle-1.0.0 \
-		syn-1.0.42 \
+		syn-1.0.44 \
 		synstructure-0.12.4 \
 		tar-0.4.30 \
 		tempfile-3.1.0 \
 		term-0.5.2 \
 		textwrap-0.11.0 \
-		thiserror-1.0.20 \
-		thiserror-impl-1.0.20 \
+		thiserror-1.0.21 \
+		thiserror-impl-1.0.21 \
 		thread_local-1.0.1 \
 		time-0.1.44 \
 		time-0.2.22 \
-		time-macros-0.1.0 \
+		time-macros-0.1.1 \
 		time-macros-impl-0.1.1 \
 		tinyvec-0.3.4 \
 		tokio-0.2.22 \
@@ -272,10 +272,10 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		tokio-tls-0.2.1 \
 		tokio-tls-0.3.1 \
 		tokio-util-0.3.1 \
-		toml-0.5.6 \
+		toml-0.5.7 \
 		tower-service-0.3.0 \
-		tracing-0.1.19 \
-		tracing-core-0.1.16 \
+		tracing-0.1.21 \
+		tracing-core-0.1.17 \
 		traitobject-0.1.0 \
 		try-lock-0.2.3 \
 		typeable-0.1.2 \
