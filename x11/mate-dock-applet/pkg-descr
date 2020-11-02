@@ -1,0 +1,19 @@
+The applet works with both GTK2 and GTK3 versions of MATE and allows you to:
+  * Place a dock on any MATE panel, of any size, on any side of the desktop
+    you desire.
+  * Pin and unpin apps to the dock. Pinned apps can be shown in the dock on
+    all workspaces or only the workspace where they were pinned (allowing the
+    dock to be customised for each particular workspace).
+  * Rearrange application icons on the dock
+  * Launch apps by clicking on their icons in the dock
+  * Minimize/unminimize running app windows by clicking the app's dock icon
+  * Detect changes in the current icon theme and update the dock accordingly
+  * Use an indicator by each app to show when it is running
+  * Optionally, use multiple indicators for each window an app has open
+  * Use different styles of indicators, or turn indicators off altogether
+  * Change the colour of MATE panels to the dominant colour (i.e. the most
+    common colour) of the desktop wallpaper. The colour can be applied to all
+    panels or just the panel containing the dock.
+
+
+WWW: https://github.com/ubuntu-mate/mate-dock-applet
