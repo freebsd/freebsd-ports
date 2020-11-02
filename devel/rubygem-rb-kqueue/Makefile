@@ -3,8 +3,11 @@
 
 PORTNAME=	rb-kqueue
 PORTVERSION=	0.2.5
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
+PATCH_SITES=	https://github.com/mat813/rb-kqueue/commit/
+PATCHFILES=	144ee7bb7963c77fc219ba736df7ee952d50ab19.patch:-p1
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby wrapper for BSD kqueue, using FFI
