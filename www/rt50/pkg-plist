@@ -862,7 +862,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Admin/Tools/Shredder/Elements/DumpFileLink
 %%DATADIR%%/html/Admin/Tools/Shredder/Elements/Error/NoRights
 %%DATADIR%%/html/Admin/Tools/Shredder/Elements/Error/NoStorage
-%%DATADIR%%/html/Admin/Tools/Shredder/Elements/Object/RT-%%AP_MOD_EN%%ttachment
+%%DATADIR%%/html/Admin/Tools/Shredder/Elements/Object/RT--Attachment
 %%DATADIR%%/html/Admin/Tools/Shredder/Elements/Object/RT--Ticket
 %%DATADIR%%/html/Admin/Tools/Shredder/Elements/Object/RT--User
 %%DATADIR%%/html/Admin/Tools/Shredder/Elements/ObjectCheckBox
