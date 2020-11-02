@@ -9,14 +9,12 @@ CATEGORIES=	x11-fonts
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org TrueType fonts
 
-RUN_DEPENDS=	${FONTDIR}/TTF/luximb.ttf:x11-fonts/font-bh-ttf \
-		${FONTDIR}/OTF/SyrCOMAdiabene.otf:x11-fonts/font-misc-meltho \
-		${FONTDIR}/TTF/GohaTibebZemen.ttf:x11-fonts/font-misc-ethiopic \
-		${FONTDIR}/encodings/encodings.dir:x11-fonts/encodings \
-		${FONTDIR}/dejavu/DejaVuSans.ttf:x11-fonts/dejavu
+RUN_DEPENDS=	font-bh-ttf>0:x11-fonts/font-bh-ttf \
+		font-misc-meltho>0:x11-fonts/font-misc-meltho \
+		font-misc-ethiopic>0:x11-fonts/font-misc-ethiopic \
+		encodings>0:x11-fonts/encodings \
+		dejavu>0:x11-fonts/dejavu
 
 USES=		metaport
-
-FONTDIR=	${LOCALBASE}/share/fonts
 
 .include <bsd.port.mk>
