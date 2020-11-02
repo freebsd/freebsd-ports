@@ -1,0 +1,4 @@
+sbin/jail_exporter
+man/man8/jail_exporter.8.gz
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.md
+%%PORTDOCS%%%%DOCSDIR%%/README.md

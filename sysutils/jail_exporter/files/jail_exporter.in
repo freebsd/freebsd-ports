@@ -1,0 +1,57 @@
+#!/bin/sh
+
+# PROVIDE: jail_exporter
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# jail_exporter_enable (bool)
+#     Set to NO by default
+#     Set it to YES to enable jail_exporter
+# jail_exporter_telemetry_path (string)
+#     Set to /metrics by default
+#     Set to path to export metrics on
+# jail_exporter_listen_address (string)
+#     Set to 127.0.0.1:9452 by default
+#     Set to address to listen on
+# jail_exporter_args (string)
+#     Set additional command line arguments
+#     Default is ""
+
+. /etc/rc.subr
+
+name=jail_exporter
+rcvar=jail_exporter_enable
+
+load_rc_config $name
+
+: ${jail_exporter_enable:="NO"}
+: ${jail_exporter_telemetry_path:="/metrics"}
+: ${jail_exporter_listen_address:="127.0.0.1:9452"}
+: ${jail_exporter_args:=""}
+
+pidfile="/var/run/${name}.pid"
+command="/usr/sbin/daemon"
+procname="%%PREFIX%%/sbin/${name}"
+command_args="-p ${pidfile} -m 3 -T ${name} \
+              /usr/bin/env ${procname} \
+              --web.listen-address='${jail_exporter_listen_address}' \
+              --web.telemetry-path='${jail_exporter_telemetry_path}' \
+              ${jail_exporter_args}"
+
+start_precmd=jail_exporter_start_precmd
+
+jail_exporter_start_precmd() {
+    if [ ! -e ${pidfile} ]; then
+        install \
+            -o 'root' \
+            -g 'wheel' \
+            -m 0600 \
+            /dev/null ${pidfile};
+    fi
+}
+
+load_rc_config $name
+run_rc_command "$1"

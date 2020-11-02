@@ -1,0 +1,4 @@
+Jail Exporter is a Prometheus exporter for FreeBSD jail metrics as reported by
+rctl(8).
+
+WWW: https://github.com/phyber/jail_exporter
