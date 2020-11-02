@@ -8,7 +8,7 @@ MASTER_SITES=	http://download.github.com/ \
 		ftp://ftp.iDaemons.org/pub/distfiles/
 DISTNAME=	knu-stow-utils-885c88a
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Script to unstow packages much faster than stow -D
 
 NO_BUILD=	yes

@@ -6,7 +6,7 @@ PORTVERSION=	0.12.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	EditorConfig core library and executable written in C
 
 LICENSE=	BSD2CLAUSE

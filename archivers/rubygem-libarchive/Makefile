@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	archivers rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby bindings for libarchive
 
 LICENSE=	BSD3CLAUSE

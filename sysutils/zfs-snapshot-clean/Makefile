@@ -6,7 +6,7 @@ PORTVERSION=	0.2.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to sieve ZFS snapshots as per given spec a la 'pdumpfs-clean'
 
 LICENSE=	BSD2CLAUSE

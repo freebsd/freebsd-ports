@@ -6,7 +6,7 @@ PORTVERSION=	2.1.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Pure ruby library to support locales
 
 LICENSE=	RUBY LGPL3

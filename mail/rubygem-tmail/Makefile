@@ -6,7 +6,7 @@ PORTVERSION=	1.2.7.1
 CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	RFC2822/MIME compliant mail manipulating library for Ruby
 
 USE_RUBY=	yes

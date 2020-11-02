@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	mingw32-
 DISTNAME=	yaml-${PORTVERSION}
 DIST_SUBDIR=	repacked
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The libyaml library cross-compiled for MinGW32
 
 BUILD_DEPENDS=	${PKGNAMEPREFIX}gcc:devel/${PKGNAMEPREFIX}gcc \

@@ -8,7 +8,7 @@ PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	LOCAL/knu
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simplistic interactive filtering tool
 
 LICENSE=	MIT

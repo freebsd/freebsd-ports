@@ -9,7 +9,7 @@ MASTER_SITES=	http://zlib.net/ \
 		SF/libpng/${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	mingw32-
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The zlib library cross-compiled for MinGW32
 
 BUILD_DEPENDS=	${PKGNAMEPREFIX}gcc:devel/${PKGNAMEPREFIX}gcc \

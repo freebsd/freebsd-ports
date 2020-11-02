@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.openssl.org/source/ \
 PKGNAMEPREFIX=	mingw32-
 DIST_SUBDIR=	${DISTNAME}
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The OpenSSL library cross-compiled for MinGW32
 
 BUILD_DEPENDS=	makedepend:devel/makedepend \
