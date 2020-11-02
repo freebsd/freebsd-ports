@@ -4,6 +4,7 @@
 PORTNAME=	google-translate-cli
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.6.12
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -14,14 +15,18 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	gawk:lang/gawk
 RUN_DEPENDS=	bash:shells/bash \
-		gawk:lang/gawk
-TEST_DEPENDS=	gawk:lang/gawk
+		gawk:lang/gawk \
+		gbase64:sysutils/coreutils
+TEST_DEPENDS=	curl:ftp/curl \
+		emacs:editors/emacs@nox \
+		rlwrap:devel/rlwrap
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	soimort
 GH_PROJECT=	translate-shell
 
 ALL_TARGET=	build
+TEST_ENV=	LC_ALL=C.UTF-8
 TEST_TARGET=	test
 NO_ARCH=	yes
 PLIST_FILES=	bin/trans \
