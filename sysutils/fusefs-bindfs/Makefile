@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bindfs
-DISTVERSION=	1.14.7
+DISTVERSION=	1.14.8
 CATEGORIES=	sysutils
 MASTER_SITES=	https://bindfs.org/downloads/
 PKGNAMEPREFIX=	fusefs-
