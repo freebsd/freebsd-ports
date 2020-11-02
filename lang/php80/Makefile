@@ -135,7 +135,7 @@ CONFIGURE_ARGS+=--enable-debug
 .endif
 
 .if ${PORT_OPTIONS:MZTS}
-CONFIGURE_ARGS+=--enable-maintainer-zts
+CONFIGURE_ARGS+=--enable-zts
 CONFIGURE_ENV+=	pthreads_working="yes"
 .endif
 
