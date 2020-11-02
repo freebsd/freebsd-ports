@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aiopg
-PORTVERSION=	0.16.0
-PORTREVISION=	1
+PORTVERSION=	1.0.0
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,11 +19,12 @@ OPTIONS_DEFINE=	DOCS
 
 USES=		pgsql:9.2+ python:3.4+
 USE_PYTHON=	autoplist concurrent distutils
+NO_ARCH=	yes
 
 PORTDOCS=	PKG-INFO README.rst CHANGES.txt
 
 post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}/
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>

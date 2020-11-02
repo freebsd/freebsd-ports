@@ -1,3 +1,3 @@
-TIMESTAMP = 1555230354
-SHA256 (aiopg-0.16.0.tar.gz) = b2812b582a5b9b4a8dc070f0abf08766f0f20dabc7ceaebdaad03b1bf5a1a3c5
-SIZE (aiopg-0.16.0.tar.gz) = 28027
+TIMESTAMP = 1603126186
+SHA256 (aiopg-1.0.0.tar.gz) = 32da3c9c73c248c715883fbb0876d66015d9fb6b4946058eb9fd40e86cfff9b4
+SIZE (aiopg-1.0.0.tar.gz) = 31894
