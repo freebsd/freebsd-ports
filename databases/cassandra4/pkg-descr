@@ -11,6 +11,6 @@ Apache project.
 The CQL query language offers SQL-like data access and management.
 Drivers are available for a number of languages.
 
-This is an ALPHA version! It is not intended for production use.
+This is a BETA version!
 
 WWW: https://cassandra.apache.org/

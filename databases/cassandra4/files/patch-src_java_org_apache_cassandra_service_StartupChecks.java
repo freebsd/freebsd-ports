@@ -1,6 +1,6 @@
---- src/java/org/apache/cassandra/service/StartupChecks.java.orig	2020-07-17 21:24:30 UTC
+--- src/java/org/apache/cassandra/service/StartupChecks.java.orig	2020-08-28 13:55:56 UTC
 +++ src/java/org/apache/cassandra/service/StartupChecks.java
-@@ -276,7 +276,14 @@ public class StartupChecks
+@@ -281,7 +281,14 @@ public class StartupChecks
      {
          public void execute()
          {
