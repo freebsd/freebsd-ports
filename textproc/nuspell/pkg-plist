@@ -10,5 +10,5 @@ lib/cmake/nuspell/NuspellTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/nuspell/NuspellTargets.cmake
 lib/libnuspell.so
 lib/libnuspell.so.4
-lib/libnuspell.so.4.0.0
+lib/libnuspell.so.4.0.1
 libdata/pkgconfig/nuspell.pc
