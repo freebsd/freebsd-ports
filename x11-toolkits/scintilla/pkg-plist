@@ -5,9 +5,5 @@ include/scintilla/Sci_Position.h
 include/scintilla/SciLexer.h
 include/scintilla/Scintilla.h
 include/scintilla/ScintillaWidget.h
+lib/liblexilla.so
 lib/libscintilla.so
-lib/libscintilla.so.%%MAJOR%%
-lib/libscintilla.so.%%MAJOR%%.%%AGE%%.%%REVISION%%
-lib/libscintilla_lexers.so
-lib/libscintilla_lexers.so.%%MAJOR%%
-lib/libscintilla_lexers.so.%%MAJOR%%.%%AGE%%.%%REVISION%%

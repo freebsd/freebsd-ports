@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	scintilla
-DISTVERSION=	4.3.2
+DISTVERSION=	4.4.5
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/scintilla/SciTE/${PORTVERSION}
 DISTNAME=	scite${PORTVERSION:S/.//g}
@@ -17,18 +17,18 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		compiler:c++17-lang gmake gnome iconv pkgconfig tar:tgz
 
+PATCH_WRKSRC=	${WRKDIR}/${PORTNAME}
 WRKSRC=		${WRKDIR}/${PORTNAME}/gtk
 MAKEFILE=	makefile
 USE_LDCONFIG=	yes
-USE_GNOME=	gtk30
+USE_GNOME=	cairo gdkpixbuf2 gtk30
 MAKE_ENV=	LDFLAGS="${LDFLAGS}"
 CFLAGS+=	-DPIC ${PICFLAG}
 
-MAJOR=		3
-AGE=		0
-REVISION=	0
-MAKE_ARGS=	MAJOR="${MAJOR}" AGE="${AGE}" REVISION="${REVISION}" GTK3=1
-PLIST_SUB=	MAJOR="${MAJOR}" AGE="${AGE}" REVISION="${REVISION}"
+MAKE_ARGS=	GTK3=1
+.if defined(WITH_DEBUG)
+MAKE_ARGS+=	DEBUG=1
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -42,18 +42,10 @@ PICFLAG?=	-fPIC
 PICFLAG?=	-fpic
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e 's| -Os||g' ${WRKSRC}/makefile
-
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/include/scintilla
-	${INSTALL_DATA} ${WRKSRC}/../include/*.h ${STAGEDIR}${PREFIX}/include/scintilla
-.for f in libscintilla.so libscintilla_lexers.so
-	${INSTALL_LIB} ${WRKSRC}/${f}.${MAJOR}.${AGE}.${REVISION} \
-		${STAGEDIR}${PREFIX}/lib
-	(cd ${STAGEDIR}${PREFIX}/lib && \
-		${LN} -sf ${f}.${MAJOR}.${AGE}.${REVISION} ${f}.${MAJOR} && \
-		${LN} -sf ${f}.${MAJOR} ${f})
-.endfor
+	${INSTALL_DATA} ${WRKSRC}/../include/*.h \
+		${STAGEDIR}${PREFIX}/include/scintilla
+	${INSTALL_LIB} ${WRKSRC}/../bin/*.so ${STAGEDIR}${PREFIX}/lib
 
 .include <bsd.port.post.mk>
