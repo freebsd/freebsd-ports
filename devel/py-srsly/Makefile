@@ -1,12 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	srsly
-DISTVERSION=	2.1.0
+DISTVERSION=	2.3.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modern high-performance serialization utilities for Python
 
 LICENSE=	MIT
