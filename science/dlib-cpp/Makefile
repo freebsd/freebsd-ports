@@ -2,6 +2,7 @@
 
 PORTNAME=	dlib
 DISTVERSION=	19.21
+PORTREVISION=	1
 CATEGORIES=	science devel math
 MASTER_SITES=	http://dlib.net/files/
 PKGNAMESUFFIX=	-cpp
@@ -15,14 +16,17 @@ LICENSE_FILE=	${WRKSRC}/dlib/LICENSE.txt
 USES=			cmake compiler:c++11-lang pkgconfig tar:bzip2
 USE_LDCONFIG=		yes
 
+CMAKE_ON=		BUILD_SHARED_LIBS
+
 OPTIONS_DEFINE=		X11 JPEG PNG GIF SQLITE BLASLAPACK PYTHON AVX
 OPTIONS_DEFAULT=	X11 JPEG PNG GIF SQLITE
 
 BLASLAPACK_DESC=	Use Blas and Lapack libraries from ports
 AVX_DESC=		Use AVX instructions if supported by CPU
+PYTHON_DESC=		Add dependency on science/py-dlib
 
 X11_USES=		xorg
-X11_USE=		xorg=x11
+X11_USE=		xorg=ice,sm,x11,xext
 X11_CMAKE_OFF=		-DDLIB_NO_GUI_SUPPORT=1
 
 JPEG_USES=		jpeg

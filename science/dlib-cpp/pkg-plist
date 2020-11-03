@@ -1028,7 +1028,8 @@ lib/cmake/dlib/dlib-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/dlib/dlib.cmake
 lib/cmake/dlib/dlibConfig.cmake
 lib/cmake/dlib/dlibConfigVersion.cmake
-lib/libdlib.a
+lib/libdlib.so
+lib/libdlib.so.19.21.0
 libdata/pkgconfig/dlib-1.pc
 @dir include/dlib/all
 @dir include/dlib/appveyor
