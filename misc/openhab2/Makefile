@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openhab2
-PORTVERSION=	2.5.9
+PORTVERSION=	2.5.10
 #PORTREVISION=	1
 CATEGORIES=	misc java
 MASTER_SITES=	https://bintray.com/openhab/mvn/download_file?file_path=org%2Fopenhab%2Fdistro%2Fopenhab%2F${PORTVERSION}/
