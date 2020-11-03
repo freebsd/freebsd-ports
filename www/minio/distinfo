@@ -1,6 +1,6 @@
-TIMESTAMP = 1603162665
-SHA256 (minio/minio-minio-2020.10.18.21.54.12-RELEASE.2020-10-18T21-54-12Z_GH0.tar.gz) = dd31015a733b85e60965cb8171d25fdd436483604bd76767139a3bac3ff9ef44
-SIZE (minio/minio-minio-2020.10.18.21.54.12-RELEASE.2020-10-18T21-54-12Z_GH0.tar.gz) = 10260493
+TIMESTAMP = 1604415326
+SHA256 (minio/minio-minio-2020.10.28.08.16.50-RELEASE.2020-10-28T08-16-50Z_GH0.tar.gz) = 3586eede2e20d871e5581dfc13eb9274bfba7bca4d29bb953f31203b8ff5766b
+SIZE (minio/minio-minio-2020.10.28.08.16.50-RELEASE.2020-10-28T08-16-50Z_GH0.tar.gz) = 10263477
 SHA256 (minio/Azure-azure-pipeline-go-v0.2.2_GH0.tar.gz) = dc0d15949088e17e74da35c3ae2730f52240ad73e25cf795f532b7282de68e2f
 SIZE (minio/Azure-azure-pipeline-go-v0.2.2_GH0.tar.gz) = 16443
 SHA256 (minio/Azure-azure-storage-blob-go-v0.10.0_GH0.tar.gz) = e3d4304b9fcb7dc5911d648a236fa69c06cb3b33ffb05ac4be6bf3d69125f71e

@@ -13,8 +13,8 @@ LICENSE=	APACHE20
 USES=		compiler go:modules
 
 USE_GITHUB=	yes
-GHTAG=		RELEASE.2020-10-18T21-54-12Z
-COMMIT_ID=	4eb45c9a0f7bbff564dcfc811cc1c78655c5e5bf
+GHTAG=		RELEASE.2020-10-28T08-16-50Z
+COMMIT_ID=	f53c5a020ea0be454983bad3fda5c51ddc1f06f4
 
 GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		Azure:azure-pipeline-go:v0.2.2:azure_azure_pipeline_go/vendor/github.com/Azure/azure-pipeline-go \
