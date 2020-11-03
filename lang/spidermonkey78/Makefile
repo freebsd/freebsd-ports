@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	spidermonkey
-DISTVERSION=	78.3.1
-PORTREVISION=	2
+DISTVERSION=	78.4.0
 CATEGORIES=	lang
 MASTER_SITES=	MOZILLA/firefox/releases/${DISTVERSION}esr/source
 PKGNAMESUFFIX=	${SP_VER}
@@ -14,7 +13,7 @@ COMMENT=	Standalone JavaScript based from Mozilla 78-esr
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/clang++90:devel/llvm90 \
+BUILD_DEPENDS=	${LOCALBASE}/bin/clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT} \
 		${LOCALBASE}/bin/python${PYTHON3_DEFAULT}:lang/python${PYTHON3_DEFAULT:S/.//g} \
 		${RUST_DEFAULT}>=1.35:lang/${RUST_DEFAULT} \
 		autoconf-2.13:devel/autoconf213 \
@@ -52,8 +51,8 @@ CONFIGURE_ARGS=	--disable-debug \
 CONFIGURE_ENV=	HOST_CC=${CC} \
 		HOST_CXX=${CXX}
 
-CONFIGURE_ENV+=	LLVM_CONFIG=llvm-config90 \
-		LLVM_OBJDUMP=llvm-objdump90
+CONFIGURE_ENV+=	LLVM_CONFIG=llvm-config${LLVM_DEFAULT} \
+		LLVM_OBJDUMP=llvm-objdump${LLVM_DEFAULT}
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 PLIST_SUB=	SP_VER=${SP_VER}
@@ -68,10 +67,13 @@ CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
 .if ${CHOSEN_COMPILER_TYPE} == gcc
 USE_GCC=	yes
 .elif ${CC} == cc && ${CXX} == c++ && exists(/usr/lib/libc++.so)
-CPP=		${LOCALBASE}/bin/clang-cpp90
-CC=		${LOCALBASE}/bin/clang90
-CXX=		${LOCALBASE}/bin/clang++90
-BUILD_DEPENDS+=	${LOCALBASE}/bin/clang90:devel/llvm90
+CPP=		${LOCALBASE}/bin/clang-cpp${LLVM_DEFAULT}
+CC=		${LOCALBASE}/bin/clang${LLVM_DEFAULT}
+CXX=		${LOCALBASE}/bin/clang++${LLVM_DEFAULT}
+BUILD_DEPENDS+=	${LOCALBASE}/bin/clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
+.if ${LLVM_DEFAULT} < 90
+BROKEN=		LLVM 9.0 or higher required
+.endif
 .endif
 
 post-patch:
