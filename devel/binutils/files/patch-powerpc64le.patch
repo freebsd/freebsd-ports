@@ -1,12 +1,139 @@
---- ld/configure.tgt.orig	2020-11-01 20:44:08.795082000 +0100
-+++ ld/configure.tgt	2020-11-01 20:44:27.006893000 +0100
-@@ -550,7 +550,8 @@
- powerpc*-*-elf* | powerpc*-*-eabi* | powerpc*-*-sysv* \
-   | powerpc*-*-linux* | powerpc*-*-netbsd* | powerpc*-*-openbsd* \
-   | powerpc*-*-rtems* \
--  | powerpc*-*-solaris* | powerpc*-*-kaos* | powerpc*-*-vxworks*)
-+  | powerpc*-*-solaris* | powerpc*-*-kaos* | powerpc*-*-vxworks* \
-+  | powerpc64*-*-freebsd*)
- 			case "${targ}" in
- 			powerpc64*)
- 			    targ_emul=elf64ppc
+--- bfd/configure.orig	2019-10-12 13:58:20 UTC
++++ bfd/configure
+@@ -14860,6 +14860,7 @@ do
+     powerpc_elf64_vec)		 tb="$tb elf64-ppc.lo elf64-gen.lo elf64.lo $elf"; target_size=64 ;;
+     powerpc_elf64_le_vec)	 tb="$tb elf64-ppc.lo elf64-gen.lo elf64.lo $elf" target_size=64 ;;
+     powerpc_elf64_fbsd_vec)	 tb="$tb elf64-ppc.lo elf64-gen.lo elf64.lo $elf" target_size=64 ;;
++    powerpc_elf64_fbsd_le_vec)   tb="$tb elf64-ppc.lo elf64-gen.lo elf64.lo $elf" target_size=64 ;;
+     powerpc_pe_vec)		 tb="$tb pe-ppc.lo peigen.lo $coff" ;;
+     powerpc_pe_le_vec)		 tb="$tb pe-ppc.lo peigen.lo $coff" ;;
+     powerpc_pei_vec)		 tb="$tb pei-ppc.lo peigen.lo $coff" ;;
+--- bfd/configure.ac.orig	2019-09-09 13:19:43 UTC
++++ bfd/configure.ac
+@@ -596,6 +596,7 @@ do
+     powerpc_elf64_vec)		 tb="$tb elf64-ppc.lo elf64-gen.lo elf64.lo $elf"; target_size=64 ;;
+     powerpc_elf64_le_vec)	 tb="$tb elf64-ppc.lo elf64-gen.lo elf64.lo $elf" target_size=64 ;;
+     powerpc_elf64_fbsd_vec)	 tb="$tb elf64-ppc.lo elf64-gen.lo elf64.lo $elf" target_size=64 ;;
++    powerpc_elf64_fbsd_le_vec)	 tb="$tb elf64-ppc.lo elf64-gen.lo elf64.lo $elf" target_size=64 ;;
+     powerpc_pe_vec)		 tb="$tb pe-ppc.lo peigen.lo $coff" ;;
+     powerpc_pe_le_vec)		 tb="$tb pe-ppc.lo peigen.lo $coff" ;;
+     powerpc_pei_vec)		 tb="$tb pei-ppc.lo peigen.lo $coff" ;;
+--- bfd/elf64-ppc.c.orig	2019-10-09 07:16:05 UTC
++++ bfd/elf64-ppc.c
+@@ -16979,7 +16979,9 @@ ppc64_elf_finish_dynamic_sections (bfd *output_bfd,
+ /* FreeBSD support */
+ 
+ #undef  TARGET_LITTLE_SYM
++#define TARGET_LITTLE_SYM powerpc_elf64_fbsd_le_vec
+ #undef  TARGET_LITTLE_NAME
++#define TARGET_LITTLE_NAME "elf64-powerpcle-freebsd"
+ 
+ #undef  TARGET_BIG_SYM
+ #define TARGET_BIG_SYM	powerpc_elf64_fbsd_vec
+--- bfd/targets.c.orig	2019-09-09 13:19:43 UTC
++++ bfd/targets.c
+@@ -764,6 +764,7 @@ extern const bfd_target powerpc_elf32_vxworks_vec;
+ extern const bfd_target powerpc_elf64_vec;
+ extern const bfd_target powerpc_elf64_le_vec;
+ extern const bfd_target powerpc_elf64_fbsd_vec;
++extern const bfd_target powerpc_elf64_fbsd_le_vec;
+ extern const bfd_target powerpc_pe_vec;
+ extern const bfd_target powerpc_pe_le_vec;
+ extern const bfd_target powerpc_pei_vec;
+@@ -1158,6 +1159,7 @@ static const bfd_target * const _bfd_target_vector[] =
+ 	&powerpc_elf64_vec,
+ 	&powerpc_elf64_le_vec,
+ 	&powerpc_elf64_fbsd_vec,
++	&powerpc_elf64_fbsd_le_vec,
+ #endif
+ 	&powerpc_pe_vec,
+ 	&powerpc_pe_le_vec,
+--- ld/Makefile.am.orig	2019-09-09 13:19:44 UTC
++++ ld/Makefile.am
+@@ -439,6 +439,7 @@ ALL_64_EMULATION_SOURCES = \
+ 	eelf64btsmip_fbsd.c \
+ 	eelf64hppa.c \
+ 	eelf64lppc.c \
++	eelf64lppc_fbsd.c \
+ 	eelf64lriscv.c \
+ 	eelf64lriscv_lp64f.c \
+ 	eelf64lriscv_lp64.c \
+@@ -924,6 +925,7 @@ $(ALL_EMULATION_SOURCES) $(ALL_64_EMULATION_SOURCES): 
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/eelf64btsmip_fbsd.Pc@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/eelf64hppa.Pc@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/eelf64lppc.Pc@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/eelf64lppc_fbsd.Pc@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/eelf64lriscv.Pc@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/eelf64lriscv_lp64f.Pc@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/eelf64lriscv_lp64.Pc@am__quote@
+--- ld/Makefile.in.orig	2019-10-12 13:59:42 UTC
++++ ld/Makefile.in
+@@ -925,6 +925,7 @@ ALL_64_EMULATION_SOURCES = \
+ 	eelf64btsmip_fbsd.c \
+ 	eelf64hppa.c \
+ 	eelf64lppc.c \
++	eelf64lppc_fbsd.c \
+ 	eelf64lriscv.c \
+ 	eelf64lriscv_lp64f.c \
+ 	eelf64lriscv_lp64.c \
+@@ -1365,6 +1366,7 @@ distclean-compile:
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/eelf64btsmip_fbsd.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/eelf64hppa.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/eelf64lppc.Po@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/eelf64lppc_fbsd.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/eelf64lriscv.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/eelf64lriscv_lp64.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/eelf64lriscv_lp64f.Po@am__quote@
+@@ -2525,6 +2527,7 @@ $(ALL_EMULATION_SOURCES) $(ALL_64_EMULATION_SOURCES): 
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/eelf64btsmip_fbsd.Pc@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/eelf64hppa.Pc@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/eelf64lppc.Pc@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/eelf64lppc_fbsd.Pc@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/eelf64lriscv.Pc@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/eelf64lriscv_lp64f.Pc@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/eelf64lriscv_lp64.Pc@am__quote@
+--- ld/emulparams/elf64lppc_fbsd.sh.orig	2020-11-02 22:40:06 UTC
++++ ld/emulparams/elf64lppc_fbsd.sh
+@@ -0,0 +1,6 @@
++source_sh ${srcdir}/emulparams/elf64lppc.sh
++source_sh ${srcdir}/emulparams/elf_fbsd.sh
++
++OUTPUT_FORMAT="elf64-powerpcle-freebsd"
++DEFAULT_PLT_STATIC_CHAIN=1
++
+--- ld/po/BLD-POTFILES.in.orig	2019-10-12 14:01:44 UTC
++++ ld/po/BLD-POTFILES.in
+@@ -179,6 +179,7 @@ eelf64btsmip.c
+ eelf64btsmip_fbsd.c
+ eelf64hppa.c
+ eelf64lppc.c
++eelf64lppc_fbsd.c
+ eelf64lriscv.c
+ eelf64lriscv_lp64.c
+ eelf64lriscv_lp64f.c
+--- ld/configure.tgt.orig	2020-11-02 23:58:35.109766000 +0100
++++ ld/configure.tgt	2020-11-02 23:59:34.659606000 +0100
+@@ -544,6 +544,10 @@
+ 			tdir_elf32ppc=`echo "${targ_alias}" | sed -e 's/64//'`
+ 			tdir_elf32ppc_fbsd=$tdir_elf32ppc
+ 			;;
++powerpc64le-*-freebsd*)
++			targ_emul=elf64lppc_fbsd
++			targ_extra_emuls="elf64ppc"
++			;;
+ powerpc-*-vxworks*)
+ 			targ_emul=elf32ppcvxworks
+ 			targ_extra_emuls="elf32ppc elf32ppclinux elf32ppcsim" ;;
+--- gas/config/tc-ppc.c.orig	2020-11-03 12:21:04.587127000 +0100
++++ gas/config/tc-ppc.c	2020-11-03 12:21:33.039193000 +0100
+@@ -1554,7 +1554,9 @@
+ #endif
+ #ifdef OBJ_ELF
+ # ifdef TE_FreeBSD
+-  return (ppc_obj64 ? "elf64-powerpc-freebsd" : "elf32-powerpc-freebsd");
++  return (target_big_endian
++	  ? (ppc_obj64 ? "elf64-powerpc-freebsd" : "elf32-powerpc-freebsd")
++	  : (ppc_obj64 ? "elf64-powerpcle-freebsd" : "elf32-powerpcle-freebsd"));
+ # elif defined (TE_VXWORKS)
+   return "elf32-powerpc-vxworks";
+ # else
