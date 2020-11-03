@@ -21653,6 +21653,7 @@
 %%WWWDIR%%/spec/features/file_uploads/graphql_add_design_spec.rb
 %%WWWDIR%%/spec/features/file_uploads/group_import_spec.rb
 %%WWWDIR%%/spec/features/file_uploads/maven_package_spec.rb
+%%WWWDIR%%/spec/features/file_uploads/multipart_invalid_uploads_spec.rb
 %%WWWDIR%%/spec/features/file_uploads/nuget_package_spec.rb
 %%WWWDIR%%/spec/features/file_uploads/project_import_spec.rb
 %%WWWDIR%%/spec/features/file_uploads/user_avatar_spec.rb
