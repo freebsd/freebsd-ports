@@ -1,15 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	generics
-PORTVERSION=	0.0.2
-PORTREVISION=	2
+PORTVERSION=	0.1.0
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Common S3 Generics not Provided by Base R Methods
 
-LICENSE=	GPLv2
+LICENSE=	MIT
 
 USES=		cran:auto-plist
 
