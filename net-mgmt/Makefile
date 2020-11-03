@@ -403,5 +403,10 @@
     SUBDIR += zabbix5-java
     SUBDIR += zabbix5-proxy
     SUBDIR += zabbix5-server
+    SUBDIR += zabbix52-agent
+    SUBDIR += zabbix52-frontend
+    SUBDIR += zabbix52-java
+    SUBDIR += zabbix52-proxy
+    SUBDIR += zabbix52-server
 
 .include <bsd.port.subdir.mk>
