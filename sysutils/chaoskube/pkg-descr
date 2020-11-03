@@ -1,0 +1,18 @@
+chaoskube periodically kills random pods in your Kubernetes cluster.
+Running it will kill a pod in any namespace every 10 minutes by default.
+
+$ chaoskube
+INFO[0000] starting up            dryRun=true interval=10m0s version=v0.21.0
+INFO[0000] connecting to cluster  master="https://kube.you.me" serverVersion=v1
+INFO[0000] setting pod filter     annotations= labels= minimumAge=0s namespaces=
+INFO[0000] setting quiet times    daysOfYear="[]" timesOfDay="[]" weekdays="[]"
+INFO[0000] setting timezone       location=UTC name=UTC offset=0
+INFO[0001] terminating pod        name=kube-dns-v20-6ikos namespace=kube-system
+INFO[0601] terminating pod        name=nginx-701339712-u4fr3 namespace=chaoskube
+[...]
+
+chaoskube allows to filter target pods by namespaces, labels, annotations and
+age as well as exclude certain weekdays, times of day and days of a year from
+chaos.
+
+WWW: https://github.com/linki/chaoskube

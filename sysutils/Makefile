@@ -163,6 +163,7 @@
     SUBDIR += cfengine313
     SUBDIR += cfengine314
     SUBDIR += cfengine315
+    SUBDIR += chaoskube
     SUBDIR += checkrestart
     SUBDIR += chgrep
     SUBDIR += choria
