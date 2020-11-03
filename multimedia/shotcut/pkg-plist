@@ -37,6 +37,7 @@ share/mime/packages/org.shotcut.Shotcut.xml
 %%DATADIR%%/qml/filters/audio_gain/ui.qml
 %%DATADIR%%/qml/filters/audio_highpass/meta.qml
 %%DATADIR%%/qml/filters/audio_highpass/ui.qml
+%%DATADIR%%/qml/filters/audio_invert/meta.qml
 %%DATADIR%%/qml/filters/audio_limiter/meta.qml
 %%DATADIR%%/qml/filters/audio_limiter/ui.qml
 %%DATADIR%%/qml/filters/audio_lowpass/meta.qml
@@ -275,20 +276,6 @@ share/mime/packages/org.shotcut.Shotcut.xml
 %%DATADIR%%/qml/filters/waveform/meta.qml
 %%DATADIR%%/qml/filters/waveform/ui.qml
 %%DATADIR%%/qml/filters/waveform/vui.qml
-%%DATADIR%%/qml/filters/webvfx/meta.qml
-%%DATADIR%%/qml/filters/webvfx/templates/plain/Basic/Blank HTML/blank.html
-%%DATADIR%%/qml/filters/webvfx/templates/plain/OpenShot/Blue Middle Bar/blue_middle_bar.html
-%%DATADIR%%/qml/filters/webvfx/templates/plain/OpenShot/Blue Middle Bar/blue_middle_bar.svg
-%%DATADIR%%/qml/filters/webvfx/templates/plain/OpenShot/Creative Commons Music 1/creative_commons_music_1.html
-%%DATADIR%%/qml/filters/webvfx/templates/plain/OpenShot/Creative Commons Music 1/creative_commons_music_1.svg
-%%DATADIR%%/qml/filters/webvfx/templates/plain/OpenShot/Creative Commons Music 2/creative_commons_music_2.html
-%%DATADIR%%/qml/filters/webvfx/templates/plain/OpenShot/Creative Commons Music 2/creative_commons_music_2.svg
-%%DATADIR%%/qml/filters/webvfx/templates/webvfx/Basic/Blank with Web Animations/web-animations.html
-%%DATADIR%%/qml/filters/webvfx/templates/webvfx/Basic/Simple Scroll/simple_scroll.html
-%%DATADIR%%/qml/filters/webvfx/templates/webvfx/Basic/Simple Scroll/simple_scroll_ui.qml
-%%DATADIR%%/qml/filters/webvfx/templates/webvfx/Basic/Two Column Scroll/two_column_scroll.html
-%%DATADIR%%/qml/filters/webvfx/templates/webvfx/Basic/Two Column Scroll/two_column_scroll_ui.qml
-%%DATADIR%%/qml/filters/webvfx/ui.qml
 %%DATADIR%%/qml/filters/webvfx_choppy/choppy.html
 %%DATADIR%%/qml/filters/webvfx_choppy/meta.qml
 %%DATADIR%%/qml/filters/webvfx_choppy/ui.qml
@@ -326,8 +313,6 @@ share/mime/packages/org.shotcut.Shotcut.xml
 %%DATADIR%%/qml/filters/white/meta_frei0r.qml
 %%DATADIR%%/qml/filters/white/meta_movit.qml
 %%DATADIR%%/qml/filters/white/ui.qml
-%%DATADIR%%/qml/htmleditor/text_outline.qml
-%%DATADIR%%/qml/htmleditor/text_shadow.qml
 %%DATADIR%%/qml/modules/Shotcut/Controls/ColorPicker.qml
 %%DATADIR%%/qml/modules/Shotcut/Controls/GradientControl.qml
 %%DATADIR%%/qml/modules/Shotcut/Controls/KeyframableFilter.qml
