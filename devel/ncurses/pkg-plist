@@ -706,6 +706,7 @@ libdata/pkgconfig/tinfow.pc
 %%MANPAGES%%man/man3/refresh.3x.gz
 %%MANPAGES%%man/man3/replace_panel.3x.gz
 %%MANPAGES%%man/man3/reset_color_pairs.3x.gz
+%%MANPAGES%%man/man3/reset_color_pairs_sp.3x.gz
 %%MANPAGES%%man/man3/reset_prog_mode.3x.gz
 %%MANPAGES%%man/man3/reset_prog_mode_sp.3x.gz
 %%MANPAGES%%man/man3/reset_shell_mode.3x.gz
@@ -853,6 +854,7 @@ libdata/pkgconfig/tinfow.pc
 %%MANPAGES%%man/man3/tgetstr.3x.gz
 %%MANPAGES%%man/man3/tgetstr_sp.3x.gz
 %%MANPAGES%%man/man3/tgoto.3x.gz
+%%MANPAGES%%man/man3/tgoto_sp.3x.gz
 %%MANPAGES%%man/man3/tigetflag.3x.gz
 %%MANPAGES%%man/man3/tigetflag_sp.3x.gz
 %%MANPAGES%%man/man3/tigetnum.3x.gz
@@ -861,11 +863,13 @@ libdata/pkgconfig/tinfow.pc
 %%MANPAGES%%man/man3/tigetstr_sp.3x.gz
 %%MANPAGES%%man/man3/timeout.3x.gz
 %%MANPAGES%%man/man3/tiparm.3x.gz
+%%MANPAGES%%man/man3/tiparm_sp.3x.gz
 %%MANPAGES%%man/man3/top_panel.3x.gz
 %%MANPAGES%%man/man3/top_row.3x.gz
 %%MANPAGES%%man/man3/touchline.3x.gz
 %%MANPAGES%%man/man3/touchwin.3x.gz
 %%MANPAGES%%man/man3/tparm.3x.gz
+%%MANPAGES%%man/man3/tparm_sp.3x.gz
 %%MANPAGES%%man/man3/tputs.3x.gz
 %%MANPAGES%%man/man3/tputs_sp.3x.gz
 %%MANPAGES%%man/man3/trace.3x.gz
@@ -1599,6 +1603,7 @@ libdata/pkgconfig/tinfow.pc
 %%MANPAGES%%share/man/man3/refresh.3x.gz
 %%MANPAGES%%share/man/man3/replace_panel.3x.gz
 %%MANPAGES%%share/man/man3/reset_color_pairs.3x.gz
+%%MANPAGES%%share/man/man3/reset_color_pairs_sp.3x.gz
 %%MANPAGES%%share/man/man3/reset_prog_mode.3x.gz
 %%MANPAGES%%share/man/man3/reset_prog_mode_sp.3x.gz
 %%MANPAGES%%share/man/man3/reset_shell_mode.3x.gz
@@ -1746,6 +1751,7 @@ libdata/pkgconfig/tinfow.pc
 %%MANPAGES%%share/man/man3/tgetstr.3x.gz
 %%MANPAGES%%share/man/man3/tgetstr_sp.3x.gz
 %%MANPAGES%%share/man/man3/tgoto.3x.gz
+%%MANPAGES%%share/man/man3/tgoto_sp.3x.gz
 %%MANPAGES%%share/man/man3/tigetflag.3x.gz
 %%MANPAGES%%share/man/man3/tigetflag_sp.3x.gz
 %%MANPAGES%%share/man/man3/tigetnum.3x.gz
@@ -1754,11 +1760,13 @@ libdata/pkgconfig/tinfow.pc
 %%MANPAGES%%share/man/man3/tigetstr_sp.3x.gz
 %%MANPAGES%%share/man/man3/timeout.3x.gz
 %%MANPAGES%%share/man/man3/tiparm.3x.gz
+%%MANPAGES%%share/man/man3/tiparm_sp.3x.gz
 %%MANPAGES%%share/man/man3/top_panel.3x.gz
 %%MANPAGES%%share/man/man3/top_row.3x.gz
 %%MANPAGES%%share/man/man3/touchline.3x.gz
 %%MANPAGES%%share/man/man3/touchwin.3x.gz
 %%MANPAGES%%share/man/man3/tparm.3x.gz
+%%MANPAGES%%share/man/man3/tparm_sp.3x.gz
 %%MANPAGES%%share/man/man3/tputs.3x.gz
 %%MANPAGES%%share/man/man3/tputs_sp.3x.gz
 %%MANPAGES%%share/man/man3/trace.3x.gz
