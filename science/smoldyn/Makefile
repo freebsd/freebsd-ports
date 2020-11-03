@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/License.txt
 
 LIB_DEPENDS=	libtiff.so:graphics/tiff
 
-USES=		cmake gl tar:tgz xorg
+USES=		cmake compiler:c++11-lang gl tar:tgz xorg
 USE_GL=		gl glu glut
 USE_XORG=	xi xmu
 
