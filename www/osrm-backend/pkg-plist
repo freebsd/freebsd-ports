@@ -5,6 +5,20 @@ bin/osrm-datastore
 bin/osrm-extract
 bin/osrm-partition
 bin/osrm-routed
+include/flatbuffers/base.h
+include/flatbuffers/code_generators.h
+include/flatbuffers/flatbuffers.h
+include/flatbuffers/flatc.h
+include/flatbuffers/flexbuffers.h
+include/flatbuffers/grpc.h
+include/flatbuffers/hash.h
+include/flatbuffers/idl.h
+include/flatbuffers/minireflect.h
+include/flatbuffers/reflection.h
+include/flatbuffers/reflection_generated.h
+include/flatbuffers/registry.h
+include/flatbuffers/stl_emulation.h
+include/flatbuffers/util.h
 include/mapbox/optional.hpp
 include/mapbox/recursive_wrapper.hpp
 include/mapbox/variant.hpp
@@ -20,6 +34,7 @@ include/osrm/coordinate.hpp
 include/osrm/customizer.hpp
 include/osrm/customizer_config.hpp
 include/osrm/engine/api/base_parameters.hpp
+include/osrm/engine/api/base_result.hpp
 include/osrm/engine/api/match_parameters.hpp
 include/osrm/engine/api/nearest_parameters.hpp
 include/osrm/engine/api/route_parameters.hpp
@@ -69,6 +84,7 @@ include/osrm/util/typedefs.hpp
 %%LUA_LIBDIR%%/%%LUA_LIBDIR%%osrm_contract.a
 %%LUA_LIBDIR%%/%%LUA_LIBDIR%%osrm_customize.a
 %%LUA_LIBDIR%%/%%LUA_LIBDIR%%osrm_extract.a
+%%LUA_LIBDIR%%/%%LUA_LIBDIR%%osrm_guidance.a
 %%LUA_LIBDIR%%/%%LUA_LIBDIR%%osrm_partition.a
 %%LUA_LIBDIR%%/%%LUA_LIBDIR%%osrm_store.a
 %%LUA_LIBDIR%%/%%LUA_LIBDIR%%osrm_update.a
