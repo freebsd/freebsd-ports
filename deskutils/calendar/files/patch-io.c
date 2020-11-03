@@ -16,7 +16,41 @@
  
  struct fixs neaster, npaskha, ncny, nfullmoon, nnewmoon;
  struct fixs nmarequinox, nsepequinox, njunsolstice, ndecsolstice;
-@@ -116,7 +120,7 @@ cal_fopen(const char *file)
+@@ -85,22 +89,29 @@ static StringList *definitions = NULL;
+ static struct event *events[MAXCOUNT];
+ static char *extradata[MAXCOUNT];
+ 
+-static void
++static char *
+ trimlr(char **buf)
+ {
+ 	char *walk = *buf;
++	char *sep;
+ 	char *last;
+ 
+ 	while (isspace(*walk))
+ 		walk++;
+-	if (*walk != '\0') {
+-		last = walk + strlen(walk) - 1;
++	*buf = walk;
++
++	sep = walk;
++	while (*sep != '\0' && !isspace(*sep))
++		sep++;
++
++	if (*sep != '\0') {
++		last = sep + strlen(sep) - 1;
+ 		while (last > walk && isspace(*last))
+ 			last--;
+ 		*(last+1) = 0;
+ 	}
+ 
+-	*buf = walk;
++	return (sep);
+ }
+ 
+ static FILE *
+@@ -116,7 +127,7 @@ cal_fopen(const char *file)
  	}
  
  	if (chdir(home) != 0) {
@@ -25,7 +59,7 @@
  		return (NULL);
  	}
  
-@@ -124,8 +128,12 @@ cal_fopen(const char *file)
+@@ -124,8 +135,12 @@ cal_fopen(const char *file)
  		if (chdir(calendarHomes[i]) != 0)
  			continue;
  
@@ -39,7 +73,7 @@
  	}
  
  	warnx("can't open calendar file \"%s\"", file);
-@@ -133,60 +141,142 @@ cal_fopen(const char *file)
+@@ -133,60 +148,154 @@ cal_fopen(const char *file)
  	return (NULL);
  }
  
@@ -64,7 +98,8 @@
 -token(char *line, FILE *out, bool *skip)
 +token(char *line, FILE *out, int *skip, int *unskip)
  {
- 	char *walk, c, a;
+-	char *walk, c, a;
++	char *walk, *sep, a, c;
 +	const char *this_cal_home;
 +	const char *this_cal_dir;
 +	const char *this_cal_file;
@@ -87,14 +122,20 @@
 -	if (*skip)
 +	if (strncmp(line, "ifdef", 5) == 0) {
 +		walk = line + 5;
-+		trimlr(&walk);
++		sep = trimlr(&walk);
 +
 +		if (*walk == '\0') {
 +			WARN0("Expecting arguments after #ifdef");
 +			return (T_ERR);
 +		}
++		if (*sep != '\0') {
++			WARN1("Expecting a single word after #ifdef "
++			    "but got \"%s\"", walk);
++			return (T_ERR);
++		}
 +
-+		if (*skip != 0 || definitions == NULL || sl_find(definitions, walk) == NULL)
++		if (*skip != 0 ||
++		    definitions == NULL || sl_find(definitions, walk) == NULL)
 +			++*skip;
 +		else
 +			++*unskip;
@@ -104,14 +145,20 @@
  
 +	if (strncmp(line, "ifndef", 6) == 0) {
 +		walk = line + 6;
-+		trimlr(&walk);
++		sep = trimlr(&walk);
 +
 +		if (*walk == '\0') {
 +			WARN0("Expecting arguments after #ifndef");
 +			return (T_ERR);
 +		}
++		if (*sep != '\0') {
++			WARN1("Expecting a single word after #ifndef "
++			    "but got \"%s\"", walk);
++			return (T_ERR);
++		}
 +
-+		if (*skip != 0 || (definitions != NULL && sl_find(definitions, walk) != NULL))
++		if (*skip != 0 ||
++		    (definitions != NULL && sl_find(definitions, walk) != NULL))
 +			++*skip;
 +		else
 +			++*unskip;
@@ -121,7 +168,7 @@
 +
 +	if (strncmp(line, "else", 4) == 0) {
 +		walk = line + 4;
-+		trimlr(&walk);
++		(void)trimlr(&walk);
 +
 +		if (*walk != '\0') {
 +			WARN0("Expecting no arguments after #else");
@@ -150,7 +197,8 @@
  	if (strncmp(line, "include", 7) == 0) {
  		walk = line + 7;
  
- 		trimlr(&walk);
+-		trimlr(&walk);
++		(void)trimlr(&walk);
  
  		if (*walk == '\0') {
 -			warnx("Expecting arguments after #include");
@@ -204,8 +252,13 @@
  
  		return (T_OK);
  	}
-@@ -198,26 +288,29 @@ token(char *line, FILE *out, bool *skip)
- 		trimlr(&walk);
+@@ -195,29 +304,38 @@ token(char *line, FILE *out, bool *skip)
+ 		if (definitions == NULL)
+ 			definitions = sl_init();
+ 		walk = line + 6;
+-		trimlr(&walk);
++		sep = trimlr(&walk);
++		*sep = '\0';
  
  		if (*walk == '\0') {
 -			warnx("Expecting arguments after #define");
@@ -225,7 +278,7 @@
 +	if (strncmp(line, "undef", 5) == 0) {
 +		if (definitions != NULL) {
 +			walk = line + 5;
-+			trimlr(&walk);
++			sep = trimlr(&walk);
  
 -		if (*walk == '\0') {
 -			warnx("Expecting arguments after #ifndef");
@@ -233,6 +286,11 @@
 -		}
 +			if (*walk == '\0') {
 +				WARN0("Expecting arguments after #undef");
++				return (T_ERR);
++			}
++			if (*sep != '\0') {
++				WARN1("Expecting a single word after #undef "
++				    "but got \"%s\"", walk);
 +				return (T_ERR);
 +			}
  
@@ -246,7 +304,7 @@
  		return (T_OK);
  	}
  
-@@ -248,11 +341,14 @@ cal_parse(FILE *in, FILE *out)
+@@ -248,11 +366,14 @@ cal_parse(FILE *in, FILE *out)
  	int month[MAXCOUNT];
  	int day[MAXCOUNT];
  	int year[MAXCOUNT];
@@ -262,7 +320,7 @@
  
  	/* Unused */
  	tm.tm_sec = 0;
-@@ -263,9 +359,61 @@ cal_parse(FILE *in, FILE *out)
+@@ -263,9 +384,61 @@ cal_parse(FILE *in, FILE *out)
  	if (in == NULL)
  		return (1);
  
@@ -326,7 +384,7 @@
  			case T_ERR:
  				free(line);
  				return (1);
-@@ -278,18 +426,9 @@ cal_parse(FILE *in, FILE *out)
+@@ -278,18 +451,9 @@ cal_parse(FILE *in, FILE *out)
  			}
  		}
  
@@ -346,7 +404,17 @@
  		/*
  		 * Setting LANG in user's calendar was an old workaround
  		 * for 'calendar -a' being run with C locale to properly
-@@ -353,7 +492,7 @@ cal_parse(FILE *in, FILE *out)
+@@ -298,8 +462,7 @@ cal_parse(FILE *in, FILE *out)
+ 		 * and does not run iconv(), this variable has little use.
+ 		 */
+ 		if (strncmp(buf, "LANG=", 5) == 0) {
+-			(void)setlocale(LC_ALL, buf + 5);
+-			d_first = (*nl_langinfo(D_MD_ORDER) == 'd');
++			(void)setlocale(LC_CTYPE, buf + 5);
+ #ifdef WITH_ICONV
+ 			if (!doall)
+ 				set_new_encoding();
+@@ -353,7 +516,7 @@ cal_parse(FILE *in, FILE *out)
  		if (count < 0) {
  			/* Show error status based on return value */
  			if (debug)
@@ -355,7 +423,7 @@
  			if (count == -1)
  				continue;
  			count = -count + 1;
-@@ -373,11 +512,15 @@ cal_parse(FILE *in, FILE *out)
+@@ -373,11 +536,15 @@ cal_parse(FILE *in, FILE *out)
  			(void)strftime(dbuf, sizeof(dbuf),
  			    d_first ? "%e %b" : "%b %e", &tm);
  			if (debug)
