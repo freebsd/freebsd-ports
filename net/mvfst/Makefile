@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mvfst
-DISTVERSION=	g20201014
+DISTVERSION=	g20201102
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 USES=		cmake compiler:c++17-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	facebookincubator
-GH_TAGNAME=	66455cb5cc6afd119723ea3b0df5683ca95363db
+GH_TAGNAME=	df1811b3b8b669539c107210082c01ae3e850d0b
 USE_LDCONFIG=	yes
 
 CMAKE_ON=	BUILD_SHARED_LIBS

@@ -41,6 +41,7 @@ include/quic/common/SmallVec.h
 include/quic/common/SocketUtil.h
 include/quic/common/TimeUtil.h
 include/quic/common/Timers.h
+include/quic/common/TransportKnobs.h
 include/quic/common/Variant.h
 include/quic/common/WindowedCounter.h
 include/quic/congestion_control/Bandwidth.h
@@ -70,12 +71,14 @@ include/quic/fizz/client/handshake/QuicPskCache.h
 include/quic/fizz/handshake/FizzBridge.h
 include/quic/fizz/handshake/FizzCryptoFactory.h
 include/quic/fizz/handshake/FizzPacketNumberCipher.h
+include/quic/fizz/handshake/FizzRetryIntegrityTagGenerator.h
 include/quic/fizz/handshake/FizzTransportParameters.h
 include/quic/fizz/handshake/QuicFizzFactory.h
 include/quic/flowcontrol/QuicFlowController.h
 include/quic/handshake/Aead.h
 include/quic/handshake/CryptoFactory.h
 include/quic/handshake/HandshakeLayer.h
+include/quic/handshake/RetryIntegrityTagGenerator.h
 include/quic/handshake/TransportParameters.h
 include/quic/happyeyeballs/QuicHappyEyeballsFunctions.h
 include/quic/logging/BaseQLogger.h
@@ -112,6 +115,7 @@ include/quic/state/OutstandingPacket.h
 include/quic/state/PacketEvent.h
 include/quic/state/PendingPathRateLimiter.h
 include/quic/state/QPRFunctions.h
+include/quic/state/QuicConnectionStats.h
 include/quic/state/QuicPacingFunctions.h
 include/quic/state/QuicStateFunctions.h
 include/quic/state/QuicStreamFunctions.h
@@ -163,3 +167,4 @@ lib/libmvfst_state_simple_frame_functions.so
 lib/libmvfst_state_stream.a
 lib/libmvfst_state_stream_functions.so
 lib/libmvfst_transport.a
+lib/libmvfst_transport_knobs.a
