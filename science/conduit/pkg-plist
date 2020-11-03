@@ -15,6 +15,11 @@ include/conduit/conduit_blueprint_mcarray_examples.hpp
 include/conduit/conduit_blueprint_mesh.h
 include/conduit/conduit_blueprint_mesh.hpp
 include/conduit/conduit_blueprint_mesh_examples.hpp
+include/conduit/conduit_blueprint_mesh_examples_julia.hpp
+include/conduit/conduit_blueprint_mesh_examples_venn.hpp
+include/conduit/conduit_blueprint_o2mrelation.hpp
+include/conduit/conduit_blueprint_o2mrelation_examples.hpp
+include/conduit/conduit_blueprint_o2mrelation_iterator.hpp
 include/conduit/conduit_blueprint_zfparray.hpp
 include/conduit/conduit_config.h
 include/conduit/conduit_core.hpp
@@ -38,9 +43,10 @@ include/conduit/conduit_relay_exports.h
 include/conduit/conduit_relay_io.h
 include/conduit/conduit_relay_io.hpp
 include/conduit/conduit_relay_io_blueprint.hpp
-include/conduit/conduit_relay_io_blueprint_api.hpp
 include/conduit/conduit_relay_io_handle.hpp
 include/conduit/conduit_relay_io_handle_api.hpp
+include/conduit/conduit_relay_io_handle_sidre.hpp
+include/conduit/conduit_relay_io_handle_sidre_api.hpp
 include/conduit/conduit_relay_io_identify_protocol.hpp
 include/conduit/conduit_relay_io_identify_protocol_api.hpp
 include/conduit/conduit_relay_web.hpp
