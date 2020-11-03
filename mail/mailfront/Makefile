@@ -7,7 +7,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/ \
 		http://untroubled.org/${PORTNAME}/archive/
 
-MAINTAINER=	araujo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mail server network protocol front-ends
 
 LICENSE=	GPLv2

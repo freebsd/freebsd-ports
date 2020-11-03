@@ -6,7 +6,7 @@ PORTVERSION=	1.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://untroubled.org/ucspi-proxy/
 
-MAINTAINER=	araujo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Proxy program for UCSPI servers and clients
 
 LICENSE=	GPLv2

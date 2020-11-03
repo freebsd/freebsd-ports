@@ -6,7 +6,7 @@ PORTVERSION=	8.13.23
 DISTVERSIONPREFIX=	v
 CATEGORIES=	print audio
 
-MAINTAINER=	araujo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts ABC to music sheet in PostScript format
 
 LICENSE=	GPLv2

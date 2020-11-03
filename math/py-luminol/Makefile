@@ -7,7 +7,7 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=	math python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	araujo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Light weight python library for time series data analysis
 
 LICENSE=	APACHE20

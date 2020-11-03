@@ -6,7 +6,7 @@ PORTVERSION=	1.4.0
 CATEGORIES=	print graphics
 MASTER_SITES=	http://www.geuz.org/gl2ps/src/
 
-MAINTAINER=	araujo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C library providing vector output for OpenGL applications
 
 LICENSE=	LGPL20+

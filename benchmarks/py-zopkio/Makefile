@@ -6,7 +6,7 @@ PORTREVISION=	5
 CATEGORIES=	benchmarks python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	araujo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Functional and Performance Test Framework
 
 LICENSE=	APACHE20

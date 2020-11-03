@@ -7,7 +7,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/ \
 		http://untroubled.org/${PORTNAME}/archive/
 
-MAINTAINER=	araujo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Credential Validation Modules
 
 LICENSE=	GPLv2

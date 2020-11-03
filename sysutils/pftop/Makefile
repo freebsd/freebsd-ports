@@ -6,7 +6,7 @@ PORTVERSION=	0.7
 PORTREVISION=	9
 CATEGORIES=	sysutils net
 
-MAINTAINER=	araujo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility for real-time display of statistics for pf
 
 LICENSE=	BSD2CLAUSE

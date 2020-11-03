@@ -7,7 +7,7 @@ PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 
-MAINTAINER=	araujo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	UEFI-EDK2 firmware for bhyve
 
 LICENSE=	BSD2CLAUSE

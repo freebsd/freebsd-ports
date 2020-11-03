@@ -9,7 +9,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/archive/ \
 		http://untroubled.org/${PORTNAME}/
 
-MAINTAINER=	araujo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	One stop library package by Bruce Guenter
 
 LICENSE=	LGPL21+

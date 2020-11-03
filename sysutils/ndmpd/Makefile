@@ -5,7 +5,7 @@ PORTVERSION=	1.2
 PORTREVISION=	1
 CATEGORIES=	sysutils
 
-MAINTAINER=	araujo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network Data Management Protocol daemon
 
 LICENSE=	BSD3CLAUSE

@@ -7,7 +7,7 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=	benchmarks python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	araujo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Framework for performance analysis
 
 LICENSE=	APACHE20

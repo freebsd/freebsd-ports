@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/archive/
 
-MAINTAINER=	araujo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple, secure, efficient FTP server
 
 LICENSE=	GPLv2+
