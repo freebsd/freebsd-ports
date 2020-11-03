@@ -14,7 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libgetdns.so:dns/getdns
 BUILD_DEPENDS=	rst2man:textproc/py-docutils@${PY_FLAVOR}
 
-USES=		autoreconf gmake libtool pkgconfig python:3.5+,build varnish:6
+USES=		autoreconf compiler:c11 gmake libtool pkgconfig \
+		python:3.5+,build varnish:6
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
