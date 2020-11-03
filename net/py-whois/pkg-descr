@@ -1,0 +1,14 @@
+A Python package for retrieving WHOIS information of domains.
+
+Features
+ - Python wrapper for Linux "whois" command
+ - simple interface to access parsed WHOIS data for a given domain
+ - able to extract data for all the popular TLDs (com, org, net, biz, info, pl,
+   jp, uk, nz, ...)
+ - query a WHOIS server directly instead of going through an intermediate web
+   service like many others do
+ - works with Python 2.4+ and Python 3.x
+ - all dates as datetime objects
+ - possibility to cache results
+
+WWW: https://pypi.org/project/whois/
