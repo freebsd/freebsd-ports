@@ -20,7 +20,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 MAKE_JOBS_UNSAFE=	yes
 
-USES=		autoreconf iconv ncurses shebangfix tar:xz
+USES=		autoreconf iconv localbase:ldflags ncurses shebangfix tar:xz
 
 SHEBANG_LANG=	zsh
 zsh_OLD_CMD=	zsh	# shebang appears as /bin/zsh and just zsh
@@ -42,8 +42,8 @@ CONFIGURE_ENV+=	zsh_cv_sys_path_dev_fd=no \
 		ac_cv_header_sys_capability_h=no
 
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include -DBOOL_DEFINED
-LDFLAGS+=	-L${LOCALBASE}/lib -Wl,--as-needed
+CPPFLAGS+=	-DBOOL_DEFINED
+LDFLAGS+=	-Wl,--as-needed
 TEST_TARGET=	test
 
 OPTIONS_DEFINE=	DEBUG ETCDIR GDBM MEM PCRE STATIC \
