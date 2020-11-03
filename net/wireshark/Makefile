@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	wireshark
-PORTVERSION=	3.2.7
+PORTVERSION=	3.4.0
 PORTREVISION?=	0
 CATEGORIES=	net
 MASTER_SITES=	http://www.wireshark.org/download/src/ \
@@ -59,7 +59,7 @@ PLIST_SUB+=		${x:tu}=bin/$x \
 .endif
 .endfor
 
-OPTIONS_DEFINE=		GUI RTP SNMP MAXMIND LUA DECRYPT ANDROIDDUMP CARES SSHDUMP CISCODUMP
+OPTIONS_DEFINE=		GUI RTP SNMP MAXMIND LUA DECRYPT ANDROIDDUMP CARES SSHDUMP CISCODUMP OPUS
 
 OPTIONS_SINGLE=		GSSAPI
 
@@ -80,6 +80,7 @@ GSSAPI_MIT_DESC=		Kerberos support via security/krb5
 GSSAPI_NONE_DESC=		Disable Kerberos support
 SSHDUMP_DESC=		Build sshdump extcap tool
 CISCODUMP_DESC=		Build ciscodump extcap tool
+OPUS_DESC=		Build opus decoder plugin
 
 GUI_USES=		qt:5
 GUI_USE=	qt=core,gui,multimedia,widgets,printsupport,svg,buildtools_build,linguisttools_build,qmake_build
@@ -98,6 +99,8 @@ DECRYPT_LIB_DEPENDS=	libgnutls.so:security/gnutls \
 			libgcrypt.so:security/libgcrypt
 SSHDUMP_LIB_DEPENDS=	libssh.so:security/libssh
 CISCODUMP_LIB_DEPENDS=	libssh.so:security/libssh
+OPUS_LIB_DEPENDS=	libopus.so:audio/opus
+OPUS_CPPFLAGS=		-I${LOCALBASE}/include
 
 GSSAPI_NONE_CMAKE_ON=	-DENABLE_KERBEROS=OFF
 GSSAPI_NONE_CMAKE_OFF=	-DENABLE_KERBEROS=ON
@@ -119,6 +122,8 @@ SSHDUMP_CMAKE_ON=-DBUILD_sshdump=ON
 SSHDUMP_CMAKE_OFF=-DBUILD_sshdump=OFF
 CISCODUMP_CMAKE_ON=-DBUILD_ciscodump=ON
 CISCODUMP_CMAKE_OFF=-DBUILD_ciscodump=OFF
+OPUS_CMAKE_ON=	-DENABLE_OPUS=ON
+OPUS_CMAKE_OFF=	-DENABLE_OPUS=OFF
 
 LUA_CPPFLAGS=		-I${LUA_INCDIR}
 
@@ -130,13 +135,15 @@ OPTIONS_SUB=		yes
 .if defined(LITE)
 CMAKE_ARGS+=	-DBUILD_androiddump=OFF \
 		-DBUILD_sshdump=OFF \
-		-DBUILD_ciscodump=OFF
+		-DBUILD_ciscodump=OFF \
+		-DENABLE_OPUS=OFF
 PLIST_SUB+=	ANDROIDDUMP_LIB="@comment " \
 		ANDROIDDUMP_MAN="@comment " \
 		SSHDUMP_LIB="@comment " \
 		SSHDUMP_MAN="@comment " \
 		CISCODUMP_LIB="@comment " \
-		CISCODUMP_MAN="@comment "
+		CISCODUMP_MAN="@comment " \
+		OPUS="@comment "
 .endif
 
 .include <bsd.port.options.mk>
@@ -177,6 +184,11 @@ PLIST_SUB+=	CISCODUMP_LIB="" \
 .else
 PLIST_SUB+=	CISCODUMP_LIB="@comment " \
 		CISCODUMP_MAN="@comment "
+.endif
+.if ${PORT_OPTIONS:MOPUS}
+PLIST_SUB+=	OPUS=""
+.else
+PLIST_SUB+=	OPUS="@comment "
 .endif
 .endif
 
