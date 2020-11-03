@@ -2,7 +2,7 @@
 
 PORTNAME=	fbthrift
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2020.10.26.00
+DISTVERSION=	2020.11.02.00
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -27,6 +27,8 @@ GH_ACCOUNT=	facebook
 USE_LDCONFIG=	yes
 
 CMAKE_ON=	BUILD_SHARED_LIBS
+
+CXXFLAGS+=	-fPIC # https://github.com/facebook/fbthrift/issues/399
 
 post-install: # https://github.com/facebook/fbthrift/issues/393
 	${FIND} ${STAGEDIR}${PREFIX}/include -type d -empty -delete
