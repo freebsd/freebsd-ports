@@ -168,6 +168,8 @@
 %%DATADIR%%/library/MCU_AnalogDevices.lib
 %%DATADIR%%/library/MCU_Cypress.dcm
 %%DATADIR%%/library/MCU_Cypress.lib
+%%DATADIR%%/library/MCU_Dialog.dcm
+%%DATADIR%%/library/MCU_Dialog.lib
 %%DATADIR%%/library/MCU_Espressif.dcm
 %%DATADIR%%/library/MCU_Espressif.lib
 %%DATADIR%%/library/MCU_Intel.dcm
@@ -200,6 +202,8 @@
 %%DATADIR%%/library/MCU_Microchip_SAME.lib
 %%DATADIR%%/library/MCU_Microchip_SAML.dcm
 %%DATADIR%%/library/MCU_Microchip_SAML.lib
+%%DATADIR%%/library/MCU_Microchip_SAMV.dcm
+%%DATADIR%%/library/MCU_Microchip_SAMV.lib
 %%DATADIR%%/library/MCU_Module.dcm
 %%DATADIR%%/library/MCU_Module.lib
 %%DATADIR%%/library/MCU_NXP_ColdFire.dcm
@@ -242,6 +246,8 @@
 %%DATADIR%%/library/MCU_ST_STM32F4.lib
 %%DATADIR%%/library/MCU_ST_STM32F7.dcm
 %%DATADIR%%/library/MCU_ST_STM32F7.lib
+%%DATADIR%%/library/MCU_ST_STM32G0.dcm
+%%DATADIR%%/library/MCU_ST_STM32G0.lib
 %%DATADIR%%/library/MCU_ST_STM32H7.dcm
 %%DATADIR%%/library/MCU_ST_STM32H7.lib
 %%DATADIR%%/library/MCU_ST_STM32L0.dcm
@@ -266,8 +272,6 @@
 %%DATADIR%%/library/MCU_Texas_SimpleLink.lib
 %%DATADIR%%/library/Mechanical.dcm
 %%DATADIR%%/library/Mechanical.lib
-%%DATADIR%%/library/Memory_Controller.dcm
-%%DATADIR%%/library/Memory_Controller.lib
 %%DATADIR%%/library/Memory_EEPROM.dcm
 %%DATADIR%%/library/Memory_EEPROM.lib
 %%DATADIR%%/library/Memory_EPROM.dcm
@@ -312,6 +316,8 @@
 %%DATADIR%%/library/RF_Mixer.lib
 %%DATADIR%%/library/RF_Module.dcm
 %%DATADIR%%/library/RF_Module.lib
+%%DATADIR%%/library/RF_NFC.dcm
+%%DATADIR%%/library/RF_NFC.lib
 %%DATADIR%%/library/RF_RFID.dcm
 %%DATADIR%%/library/RF_RFID.lib
 %%DATADIR%%/library/RF_Switch.dcm
