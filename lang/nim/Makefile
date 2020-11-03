@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nim
-PORTVERSION=	1.2.6
-PORTREVISION=	1
+PORTVERSION=	1.4.0
 CATEGORIES=	lang
 MASTER_SITES=	https://nim-lang.org/download/
 
@@ -13,8 +12,9 @@ COMMENT=	Nim programming language
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/copying.txt
 
-BROKEN_mips64=		fails to build: build.sh: clang: not found
 BROKEN_sparc64=		fails to build: build.sh: clang: not found
+
+LIB_DEPENDS=	libpcre.so:devel/pcre
 
 TEST_DEPENDS=	node>=0:www/node
 
@@ -61,11 +61,19 @@ do-build:
 		-d:release --nimcache=${WRKDIR}/nimcache --app:lib \
 		-d:createNimRtl lib/nimrtl.nim
 
+do-build-DOCS-on:
+	cd ${WRKSRC} && ./koch --localdocs docs \
+		-d:release --nimcache=${WRKDIR}/nimcache --docCmd=skip
+
 do-build-TOOLS-on:
 	cd ${WRKSRC} && ./koch toolsNoNimble --parallelBuild=${MAKE_JOBS_NUMBER} \
-		-d:release --nimcache=${WRKDIR}/nimcache
+		-d:release --nimcache=${WRKSRC}/nimcache
+
 
 do-install:
+	# Revert hack to build docs
+	@${REINPLACE_CMD} -e '/%%NIMCACHE%%/d' \
+		${WRKSRC}/config/nim.cfg
 	# Install nim compiler
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/nim ${STAGEDIR}${PREFIX}/bin
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/nim
@@ -83,6 +91,7 @@ do-install:
 .endfor
 
 do-install-DOCS-on:
+	${FIND} ${WRKSRC}/doc -name "*.idx" -delete
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
