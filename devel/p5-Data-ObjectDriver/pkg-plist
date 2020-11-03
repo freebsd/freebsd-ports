@@ -9,6 +9,7 @@
 %%SITE_PERL%%/Data/ObjectDriver/Driver/DBD.pm
 %%SITE_PERL%%/Data/ObjectDriver/Driver/DBD/Oracle.pm
 %%SITE_PERL%%/Data/ObjectDriver/Driver/DBD/Pg.pm
+%%SITE_PERL%%/Data/ObjectDriver/Driver/DBD/MariaDB.pm
 %%SITE_PERL%%/Data/ObjectDriver/Driver/DBD/SQLite.pm
 %%SITE_PERL%%/Data/ObjectDriver/Driver/DBD/mysql.pm
 %%SITE_PERL%%/Data/ObjectDriver/Driver/DBI.pm
@@ -34,6 +35,7 @@
 %%PERL5_MAN3%%/Data::ObjectDriver::Driver::DBD.3.gz
 %%PERL5_MAN3%%/Data::ObjectDriver::Driver::DBD::Oracle.3.gz
 %%PERL5_MAN3%%/Data::ObjectDriver::Driver::DBD::Pg.3.gz
+%%PERL5_MAN3%%/Data::ObjectDriver::Driver::DBD::MariaDB.3.gz
 %%PERL5_MAN3%%/Data::ObjectDriver::Driver::DBD::SQLite.3.gz
 %%PERL5_MAN3%%/Data::ObjectDriver::Driver::DBD::mysql.3.gz
 %%PERL5_MAN3%%/Data::ObjectDriver::Driver::DBI.3.gz
