@@ -3,6 +3,7 @@
 PORTNAME=	setzer
 DISTVERSIONPREFIX=v
 DISTVERSION=	0.3.4
+PORTREVISION=	1
 CATEGORIES=	editors
 
 MAINTAINER=	greg@unrelenting.technology
