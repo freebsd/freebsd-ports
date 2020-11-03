@@ -7,7 +7,7 @@ CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	cs@FreeBSD.org
+MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Utilities for implementing Modified Preorder Tree Traversal in Django
 
 LICENSE=	MIT
