@@ -1,0 +1,185 @@
+Regressed by https://github.com/unicode-org/icu/commit/c3fe7e09d844
+
+GSICUString.m:71:18: error: use of undeclared identifier 'TRUE'
+          return TRUE;
+                 ^
+GSICUString.m:80:18: error: use of undeclared identifier 'FALSE'
+          return FALSE;
+                 ^
+GSICUString.m:104:18: error: use of undeclared identifier 'TRUE'
+          return TRUE;
+                 ^
+GSICUString.m:113:18: error: use of undeclared identifier 'FALSE'
+          return FALSE;
+                 ^
+GSICUString.m:135:10: error: use of undeclared identifier 'TRUE'
+  return TRUE;
+         ^
+GSICUString.m:170:66: error: use of undeclared identifier 'TRUE'
+  UTextNSStringAccess(ut, r.location + [replacement length] + 1, TRUE);
+                                                                 ^
+NSRegularExpression.m:185:29: error: use of undeclared identifier 'FALSE'
+  utext_clone(&str->txt, t, FALSE, TRUE, &s);
+                            ^
+NSRegularExpression.m:185:36: error: use of undeclared identifier 'TRUE'
+  utext_clone(&str->txt, t, FALSE, TRUE, &s);
+                                   ^
+NSRegularExpression.m:842:34: error: use of undeclared identifier 'TRUE'
+  utext_clone(&ret->txt, output, TRUE, TRUE, &s);
+                                 ^
+NSRegularExpression.m:842:40: error: use of undeclared identifier 'TRUE'
+  utext_clone(&ret->txt, output, TRUE, TRUE, &s);
+                                       ^
+NSRegularExpression.m:876:34: error: use of undeclared identifier 'TRUE'
+  utext_clone(&ret->txt, output, TRUE, TRUE, &s);
+                                 ^
+NSRegularExpression.m:876:40: error: use of undeclared identifier 'TRUE'
+  utext_clone(&ret->txt, output, TRUE, TRUE, &s);
+                                       ^
+NSRegularExpression.m:914:34: error: use of undeclared identifier 'TRUE'
+  utext_clone(&ret->txt, output, TRUE, TRUE, &s);
+                                 ^
+NSRegularExpression.m:914:40: error: use of undeclared identifier 'TRUE'
+  utext_clone(&ret->txt, output, TRUE, TRUE, &s);
+                                       ^
+NSRegularExpression.m:291:14: error: use of undeclared identifier 'FALSE'
+      return FALSE;
+             ^
+NSRegularExpression.m:368:36: error: use of undeclared identifier 'FALSE'
+      uregex_useAnchoringBounds(r, FALSE, &s);
+                                   ^
+NSRegularExpression.m:372:38: error: use of undeclared identifier 'TRUE'
+      uregex_useTransparentBounds(r, TRUE, &s);
+                                     ^
+
+--- Source/GSICUString.m.orig	2019-01-06 22:33:45 UTC
++++ Source/GSICUString.m
+@@ -68,7 +68,7 @@ UTextNSStringAccess(UText *ut, int64_t nativeIndex, UB
+            * to match it.
+            */
+           ut->chunkOffset = nativeIndex - nativeStart;
+-          return TRUE;
++          return true;
+         }
+ 
+       if (nativeIndex >= length && nativeLimit >= length)
+@@ -77,7 +77,7 @@ UTextNSStringAccess(UText *ut, int64_t nativeIndex, UB
+            * Limit it to point just after the last character.
+            */
+           ut->chunkOffset = ut->chunkLength;
+-          return FALSE;
++          return false;
+         }
+ 
+       /* Set up to fill the chunk with characters from the string
+@@ -101,7 +101,7 @@ UTextNSStringAccess(UText *ut, int64_t nativeIndex, UB
+            * to match it.
+            */
+           ut->chunkOffset = nativeIndex - nativeStart;
+-          return TRUE;
++          return true;
+         }
+ 
+       if (nativeIndex <= 0 && nativeStart <= 0)
+@@ -110,7 +110,7 @@ UTextNSStringAccess(UText *ut, int64_t nativeIndex, UB
+            * Limit it to position of the first character.
+            */
+           ut->chunkOffset = 0;
+-          return FALSE;
++          return false;
+         }
+ 
+       nativeLimit = nativeIndex;
+@@ -132,7 +132,7 @@ UTextNSStringAccess(UText *ut, int64_t nativeIndex, UB
+   ut->chunkNativeStart = nativeStart;
+   ut->nativeIndexingLimit = r.length;
+   ut->chunkLength = r.length;
+-  return TRUE;
++  return true;
+ }
+ 
+ /**
+@@ -167,7 +167,7 @@ UTextNSMutableStringReplace(UText *ut,
+   // Setting the chunk length to 0 here forces UTextNSStringAccess to fetch
+   // the data from the string object.
+   ut->chunkLength = 0;
+-  UTextNSStringAccess(ut, r.location + [replacement length] + 1, TRUE);
++  UTextNSStringAccess(ut, r.location + [replacement length] + 1, true);
+   ut->chunkOffset++;
+   
+   [replacement release];
+--- Source/NSRegularExpression.m.orig	2019-01-06 22:33:45 UTC
++++ Source/NSRegularExpression.m
+@@ -182,7 +182,7 @@ NSRegularExpressionOptionsToURegexpFlags(NSRegularExpr
+       return nil;
+     }
+   str = [GSUTextString new];
+-  utext_clone(&str->txt, t, FALSE, TRUE, &s);
++  utext_clone(&str->txt, t, false, true, &s);
+   return [str autorelease];
+ }
+ #else
+@@ -288,7 +288,7 @@ callback(const void *context, int32_t steps)
+ 
+   if (NULL == context)
+     {
+-      return FALSE;
++      return false;
+     }
+   CALL_BLOCK(block, nil, NSMatchingProgress, &stop);
+   return stop;
+@@ -365,11 +365,11 @@ setupRegex(URegularExpression *regex,
+   uregex_setRegion(r, range.location, range.location+range.length, &s);
+   if (options & NSMatchingWithoutAnchoringBounds)
+     {
+-      uregex_useAnchoringBounds(r, FALSE, &s);
++      uregex_useAnchoringBounds(r, false, &s);
+     }
+   if (options & NSMatchingWithTransparentBounds)
+     {
+-      uregex_useTransparentBounds(r, TRUE, &s);
++      uregex_useTransparentBounds(r, true, &s);
+     }
+   uregex_setTimeLimit(r, _workLimit, &s);
+   if (U_FAILURE(s))
+@@ -401,11 +401,11 @@ setupRegex(URegularExpression *regex,
+   uregex_setRegion(r, range.location, range.location+range.length, &s);
+   if (options & NSMatchingWithoutAnchoringBounds)
+     {
+-      uregex_useAnchoringBounds(r, FALSE, &s);
++      uregex_useAnchoringBounds(r, false, &s);
+     }
+   if (options & NSMatchingWithTransparentBounds)
+     {
+-      uregex_useTransparentBounds(r, TRUE, &s);
++      uregex_useTransparentBounds(r, true, &s);
+     }
+   uregex_setTimeLimit(r, _workLimit, &s);
+   if (U_FAILURE(s))
+@@ -839,7 +839,7 @@ prepareResult(NSRegularExpression *regex,
+       DESTROY(ret);
+       return 0;
+     }
+-  utext_clone(&ret->txt, output, TRUE, TRUE, &s);
++  utext_clone(&ret->txt, output, true, true, &s);
+   [string setString: ret];
+   [ret release];
+   uregex_close(r);
+@@ -873,7 +873,7 @@ prepareResult(NSRegularExpression *regex,
+       DESTROY(ret);
+       return nil;
+     }
+-  utext_clone(&ret->txt, output, TRUE, TRUE, &s);
++  utext_clone(&ret->txt, output, true, true, &s);
+   uregex_close(r);
+ 
+   utext_close(&txt);
+@@ -911,7 +911,7 @@ prepareResult(NSRegularExpression *regex,
+       DESTROY(ret);
+       return nil;
+     }
+-  utext_clone(&ret->txt, output, TRUE, TRUE, &s);
++  utext_clone(&ret->txt, output, true, true, &s);
+   uregex_close(r);
+ 
+   utext_close(&txt);

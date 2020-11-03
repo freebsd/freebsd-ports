@@ -1,0 +1,97 @@
+Regressed by https://github.com/unicode-org/icu/commit/0101e2632c34
+Fixed by https://github.com/ovalhub/pyicu/commit/b42d6a754729
+
+measureunit.cpp:466:5: error: unknown type name 'NoUnit'
+    NoUnit *object;
+    ^
+measureunit.cpp:480:45: error: unexpected namespace name 'NoUnit': expected expression
+DECLARE_TYPE(NoUnit, t_nounit, MeasureUnit, NoUnit,
+                                            ^
+measureunit.cpp:480:1: error: use of undeclared identifier 'object'
+DECLARE_TYPE(NoUnit, t_nounit, MeasureUnit, NoUnit,
+^
+./macros.h:199:33: note: expanded from macro 'DECLARE_TYPE'
+PyObject *wrap_##name(icuClass *object, int flags)                        \
+                                ^
+measureunit.cpp:480:1: error: expected '(' for function-style cast or type construction
+DECLARE_TYPE(NoUnit, t_nounit, MeasureUnit, NoUnit,
+^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./macros.h:199:45: note: expanded from macro 'DECLARE_TYPE'
+PyObject *wrap_##name(icuClass *object, int flags)                        \
+                                        ~~~ ^
+measureunit.cpp:480:1: error: expected ';' after top level declarator
+./macros.h:199:75: note: expanded from macro 'DECLARE_TYPE'
+PyObject *wrap_##name(icuClass *object, int flags)                        \
+                                                                          ^
+measureunit.cpp:956:23: error: unexpected namespace name 'NoUnit': expected expression
+  return wrap_NoUnit((NoUnit *) NoUnit::base().clone(), T_OWNED);
+                      ^
+measureunit.cpp:956:31: error: expected expression
+  return wrap_NoUnit((NoUnit *) NoUnit::base().clone(), T_OWNED);
+                              ^
+measureunit.cpp:961:25: error: unexpected namespace name 'NoUnit': expected expression
+    return wrap_NoUnit((NoUnit *) NoUnit::percent().clone(), T_OWNED);
+                        ^
+measureunit.cpp:961:33: error: expected expression
+    return wrap_NoUnit((NoUnit *) NoUnit::percent().clone(), T_OWNED);
+                                ^
+measureunit.cpp:966:25: error: unexpected namespace name 'NoUnit': expected expression
+    return wrap_NoUnit((NoUnit *) NoUnit::permille().clone(), T_OWNED);
+                        ^
+measureunit.cpp:966:33: error: expected expression
+    return wrap_NoUnit((NoUnit *) NoUnit::permille().clone(), T_OWNED);
+                                ^
+measureunit.cpp:1193:19: error: unexpected namespace name 'NoUnit': expected expression
+    REGISTER_TYPE(NoUnit, m);
+                  ^
+
+--- measureunit.cpp.orig	2019-10-03 17:11:03 UTC
++++ measureunit.cpp
+@@ -463,7 +463,7 @@ DECLARE_TYPE(Measure, t_measure, UObject, Measure, abs
+ 
+ class t_nounit : public _wrapper {
+ public:
+-    NoUnit *object;
++    MeasureUnit *object;
+ };
+ 
+ static PyObject *t_nounit_base(PyTypeObject *type);
+@@ -477,7 +477,7 @@ static PyMethodDef t_nounit_methods[] = {
+     { NULL, NULL, 0, NULL }
+ };
+ 
+-DECLARE_TYPE(NoUnit, t_nounit, MeasureUnit, NoUnit,
++DECLARE_TYPE(NoUnit, t_nounit, MeasureUnit, MeasureUnit,
+              abstract_init, NULL);
+ 
+ #endif
+@@ -953,17 +953,17 @@ DEFINE_RICHCMP(Measure, t_measure);
+ 
+ static PyObject *t_nounit_base(PyTypeObject *type)
+ {
+-  return wrap_NoUnit((NoUnit *) NoUnit::base().clone(), T_OWNED);
++  return wrap_NoUnit((MeasureUnit *) NoUnit::base().clone(), T_OWNED);
+ }
+ 
+ static PyObject *t_nounit_percent(PyTypeObject *type)
+ {
+-    return wrap_NoUnit((NoUnit *) NoUnit::percent().clone(), T_OWNED);
++    return wrap_NoUnit((MeasureUnit *) NoUnit::percent().clone(), T_OWNED);
+ }
+ 
+ static PyObject *t_nounit_permille(PyTypeObject *type)
+ {
+-    return wrap_NoUnit((NoUnit *) NoUnit::permille().clone(), T_OWNED);
++    return wrap_NoUnit((MeasureUnit *) NoUnit::permille().clone(), T_OWNED);
+ }
+ 
+ #endif
+@@ -1190,7 +1190,7 @@ void _init_measureunit(PyObject *m)
+     INSTALL_TYPE(MeasureUnit, m);
+     INSTALL_TYPE(Measure, m);
+ #if U_ICU_VERSION_HEX >= VERSION_HEX(60, 0, 0)
+-    REGISTER_TYPE(NoUnit, m);
++    INSTALL_STRUCT(NoUnit, m);
+ #endif
+     REGISTER_TYPE(CurrencyUnit, m);
+     REGISTER_TYPE(CurrencyAmount, m);

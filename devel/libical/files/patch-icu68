@@ -1,0 +1,29 @@
+Regressed by https://github.com/unicode-org/icu/commit/c3fe7e09d844
+
+src/libical/icalrecur.c:1021:59: error: use of undeclared identifier 'FALSE'
+    en = ucal_getKeywordValuesForLocale("calendar", NULL, FALSE, &status);
+                                                          ^
+src/libical/icalrecur.c:1414:63: error: use of undeclared identifier 'FALSE'
+        en = ucal_getKeywordValuesForLocale("calendar", NULL, FALSE, &status);
+                                                              ^
+
+--- src/libical/icalrecur.c.orig	2020-03-07 14:42:42 UTC
++++ src/libical/icalrecur.c
+@@ -1018,7 +1018,7 @@ icalarray *icalrecurrencetype_rscale_supported_calenda
+ 
+     calendars = icalarray_new(sizeof(const char **), 20);
+ 
+-    en = ucal_getKeywordValuesForLocale("calendar", NULL, FALSE, &status);
++    en = ucal_getKeywordValuesForLocale("calendar", NULL, false, &status);
+     while ((cal = uenum_next(en, NULL, &status))) {
+         cal = icalmemory_tmp_copy(cal);
+         icalarray_append(calendars, &cal);
+@@ -1411,7 +1411,7 @@ static int initialize_rscale(icalrecur_iterator *impl)
+         }
+ 
+         /* Check if specified calendar is supported */
+-        en = ucal_getKeywordValuesForLocale("calendar", NULL, FALSE, &status);
++        en = ucal_getKeywordValuesForLocale("calendar", NULL, false, &status);
+         while ((cal = uenum_next(en, NULL, &status))) {
+             if (!strcmp(cal, rule.rscale)) {
+                 is_hebrew = !strcmp(rule.rscale, "hebrew");

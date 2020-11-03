@@ -1,0 +1,29 @@
+Regressed by https://github.com/unicode-org/icu/commit/c3fe7e09d844
+
+GSCharacterPanel.m:81:10: error: use of undeclared identifier 'TRUE'
+  return TRUE;
+         ^
+GSCharacterPanel.m:106:10: error: use of undeclared identifier 'TRUE'
+  return TRUE;
+         ^
+
+--- Source/GSCharacterPanel.m.orig	2019-01-06 22:00:38 UTC
++++ Source/GSCharacterPanel.m
+@@ -78,7 +78,7 @@
+ static UBool enumCharNamesFn(void *context, UChar32 code, UCharNameChoice nameChoice, const char *name, int32_t length)
+ {
+   [(NSMutableIndexSet*)context addIndex: (NSUInteger)code];
+-  return TRUE;
++  return true;
+ }
+ 
+ static NSIndexSet *AssignedCodepoints()
+@@ -103,7 +103,7 @@ static UBool searchCharNamesFn(void *context, UChar32 
+     {
+       [ctx->set addIndex: (NSUInteger)code];
+     }
+-  return TRUE;
++  return true;
+ }
+ 
+ static NSIndexSet *CodepointsWithNameContainingSubstring(NSString *str)

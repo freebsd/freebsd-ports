@@ -2,6 +2,7 @@
 
 PORTNAME=	pandoc-citeproc
 PORTVERSION=	0.17.0.1
+PORTREVISION=	1
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -26,6 +27,7 @@ UNICODE_COLLATION_DESC=		Use bindings to the Internationl Components for Unicode
 UNICODE_COLLATION_CABAL_FLAGS=	unicode_collation
 UNICODE_COLLATION_USE_CABAL=	text-icu-0.7.0.1
 UNICODE_COLLATION_LIB_DEPENDS=	libicui18n.so:devel/icu
+UNICODE_COLLATION_EXTRA_PATCHES=${PATCHDIR}/extra-patch-icu68
 
 USE_CABAL=	Glob-0.10.0_1 \
 		HTTP-4000.3.14_1 \

@@ -1,0 +1,21 @@
+Regressed by https://github.com/unicode-org/icu/commit/c3fe7e09d844
+
+cbits/text_icu.c:308:43: error:
+     error: use of undeclared identifier 'TRUE'
+        return u_strCompareIter(iter1, iter2, TRUE);
+                                              ^
+    |
+308 |     return u_strCompareIter(iter1, iter2, TRUE);
+    |                                           ^
+
+--- text-icu-0.7.0.1/cbits/text_icu.c.orig	2015-01-09 04:58:03 UTC
++++ text-icu-0.7.0.1/cbits/text_icu.c
+@@ -305,7 +305,7 @@ int32_t __hs_u_strFoldCase(UChar *dest, int32_t destCa
+ 
+ int32_t __hs_u_strCompareIter(UCharIterator *iter1, UCharIterator *iter2)
+ {
+-    return u_strCompareIter(iter1, iter2, TRUE);
++    return u_strCompareIter(iter1, iter2, true);
+ }
+ 
+ UBlockCode __hs_ublock_getCode(UChar32 c)

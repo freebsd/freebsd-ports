@@ -3,6 +3,7 @@
 
 PORTNAME=	xalan-c
 PORTVERSION=	1.12
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	APACHE/xalan/xalan-c/sources
 DISTNAME=	xalan_c-${PORTVERSION}

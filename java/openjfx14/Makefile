@@ -2,6 +2,7 @@
 
 PORTNAME=	openjfx
 DISTVERSION=	14.0.2.1+1
+PORTREVISION=	1
 CATEGORIES=	java x11-toolkits devel
 MASTER_SITES=	https://repo.maven.apache.org/maven2/org/apache/lucene/lucene-core/7.7.1/:core \
 		https://repo.maven.apache.org/maven2/org/apache/lucene/lucene-grouping/7.7.1/:grouping \

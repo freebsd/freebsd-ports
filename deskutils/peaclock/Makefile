@@ -2,6 +2,7 @@
 
 PORTNAME=	peaclock
 DISTVERSION=	0.4.3
+PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org

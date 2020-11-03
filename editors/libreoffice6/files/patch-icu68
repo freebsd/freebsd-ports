@@ -1,0 +1,31 @@
+Regressed by https://github.com/unicode-org/icu/commit/c3fe7e09d844
+
+i18npool/source/calendar/calendar_gregorian.cxx:350:40: error: use of undeclared identifier 'TRUE'
+    body->getTimeZone().getOffset( fR, TRUE, nZoneOffset, nDSTOffset, status );
+                                       ^
+svx/source/dialog/fntctrl.cxx:1017:24: error: use of undeclared identifier 'TRUE'
+        bTransparent = TRUE;
+                       ^
+
+--- i18npool/source/calendar/calendar_gregorian.cxx.orig	2020-09-30 15:54:35 UTC
++++ i18npool/source/calendar/calendar_gregorian.cxx
+@@ -347,7 +347,7 @@ Calendar_gregorian::setLocalDateTime( double fTimeInDa
+             "Calendar_gregorian::setLocalDateTime: " << std::fixed << fM << " rounded to " << fR);
+     int32_t nZoneOffset, nDSTOffset;
+     UErrorCode status = U_ZERO_ERROR;
+-    body->getTimeZone().getOffset( fR, TRUE, nZoneOffset, nDSTOffset, status );
++    body->getTimeZone().getOffset( fR, true, nZoneOffset, nDSTOffset, status );
+     if ( !U_SUCCESS(status) ) throw ERROR;
+     status = U_ZERO_ERROR;
+     body->setTime( fR - (nZoneOffset + nDSTOffset), status );
+--- svx/source/dialog/fntctrl.cxx.orig	2020-10-07 12:23:42 UTC
++++ svx/source/dialog/fntctrl.cxx
+@@ -1014,7 +1014,7 @@ void SvxFontPrevWindow::SetFromItemSet(const SfxItemSe
+          rCTLFont.SetFillColor( rColor );
+     }
+     else
+-        bTransparent = TRUE;
++        bTransparent = true;
+ 
+     rFont.SetTransparent( bTransparent );
+     rCJKFont.SetTransparent( bTransparent );

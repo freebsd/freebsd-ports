@@ -1,0 +1,254 @@
+Regressed by https://github.com/unicode-org/icu/commit/c3fe7e09d844
+
+pg_collation.c:47:1: error: conflicting types for 'CollationCreate'
+CollationCreate(const char *collname, Oid collnamespace,
+^
+../../../src/include/catalog/pg_collation_fn.h:17:12: note: previous declaration is here
+extern Oid CollationCreate(const char *collname, Oid collnamespace,
+           ^
+collationcmds.c:52:1: error: conflicting types for 'DefineCollation'
+DefineCollation(ParseState *pstate, List *names, List *parameters, bool if_not_exists)
+^
+../../../src/include/commands/collationcmds.h:21:22: note: previous declaration is here
+extern ObjectAddress DefineCollation(ParseState *pstate, List *names, List *parameters, bool if_not_exists);
+                     ^
+dbcommands.c:780:1: error: conflicting types for 'dropdb'
+dropdb(const char *dbname, bool missing_ok)
+^
+../../../src/include/commands/dbcommands.h:23:13: note: previous declaration is here
+extern void dropdb(const char *dbname, bool missing_ok);
+            ^
+dbcommands.c:1397:1: error: conflicting types for 'AlterDatabase'
+AlterDatabase(ParseState *pstate, AlterDatabaseStmt *stmt, bool isTopLevel)
+^
+../../../src/include/commands/dbcommands.h:25:12: note: previous declaration is here
+extern Oid      AlterDatabase(ParseState *pstate, AlterDatabaseStmt *stmt, bool isTopLevel);
+                ^
+dbcommands.c:2009:1: error: conflicting types for 'get_database_oid'
+get_database_oid(const char *dbname, bool missing_ok)
+^
+../../../src/include/commands/dbcommands.h:29:12: note: previous declaration is here
+extern Oid      get_database_oid(const char *dbname, bool missingok);
+                ^
+indxpath.c:3003:1: error: conflicting types for 'relation_has_unique_index_for'
+relation_has_unique_index_for(PlannerInfo *root, RelOptInfo *rel,
+^
+../../../../src/include/optimizer/paths.h:71:13: note: previous declaration is here
+extern bool relation_has_unique_index_for(PlannerInfo *root, RelOptInfo *rel,
+            ^
+indxpath.c:3174:1: error: conflicting types for 'indexcol_is_bool_constant_for_query'
+indexcol_is_bool_constant_for_query(IndexOptInfo *index, int indexcol)
+^
+../../../../src/include/optimizer/paths.h:74:13: note: previous declaration is here
+extern bool indexcol_is_bool_constant_for_query(IndexOptInfo *index,
+            ^
+indxpath.c:3223:1: error: conflicting types for 'match_index_to_operand'
+match_index_to_operand(Node *operand,
+^
+../../../../src/include/optimizer/paths.h:76:13: note: previous declaration is here
+extern bool match_index_to_operand(Node *operand, int indexcol,
+            ^
+indxpath.c:3867:1: error: conflicting types for 'adjust_rowcompare_for_index'
+adjust_rowcompare_for_index(RowCompareExpr *clause,
+^
+../../../../src/include/optimizer/paths.h:82:14: note: previous declaration is here
+extern Expr *adjust_rowcompare_for_index(RowCompareExpr *clause,
+             ^
+regis.c:31:1: error: conflicting types for 'RS_isRegis'
+RS_isRegis(const char *str)
+^
+../../../src/include/tsearch/dicts/regis.h:41:7: note: previous declaration is here
+bool            RS_isRegis(const char *str);
+                ^
+regis.c:85:1: error: conflicting types for 'RS_compile'
+RS_compile(Regis *r, bool issuffix, const char *str)
+^
+../../../src/include/tsearch/dicts/regis.h:43:7: note: previous declaration is here
+void            RS_compile(Regis *r, bool issuffix, const char *str);
+                ^
+regis.c:218:1: error: conflicting types for 'RS_execute'
+RS_execute(Regis *r, char *str)
+^
+../../../src/include/tsearch/dicts/regis.h:47:7: note: previous declaration is here
+bool            RS_execute(Regis *r, char *str);
+                ^
+guc.c:433:7: error: redefinition of 'log_duration' with a different type: 'bool' vs 'bool' (aka 'char')
+bool            log_duration = false;
+                ^
+../../../../src/include/utils/guc.h:233:13: note: previous declaration is here
+extern bool log_duration;
+            ^
+guc.c:434:7: error: redefinition of 'Debug_print_plan' with a different type: 'bool' vs 'bool' (aka 'char')
+bool            Debug_print_plan = false;
+                ^
+../../../../src/include/utils/guc.h:234:13: note: previous declaration is here
+extern bool Debug_print_plan;
+            ^
+guc.c:435:7: error: redefinition of 'Debug_print_parse' with a different type: 'bool' vs 'bool' (aka 'char')
+bool            Debug_print_parse = false;
+                ^
+../../../../src/include/utils/guc.h:235:13: note: previous declaration is here
+extern bool Debug_print_parse;
+            ^
+guc.c:436:7: error: redefinition of 'Debug_print_rewritten' with a different type: 'bool' vs 'bool' (aka 'char')
+bool            Debug_print_rewritten = false;
+                ^
+../../../../src/include/utils/guc.h:236:13: note: previous declaration is here
+extern bool Debug_print_rewritten;
+            ^
+guc.c:437:7: error: redefinition of 'Debug_pretty_print' with a different type: 'bool' vs 'bool' (aka 'char')
+bool            Debug_pretty_print = true;
+                ^
+../../../../src/include/utils/guc.h:237:13: note: previous declaration is here
+extern bool Debug_pretty_print;
+            ^
+guc.c:439:7: error: redefinition of 'log_parser_stats' with a different type: 'bool' vs 'bool' (aka 'char')
+bool            log_parser_stats = false;
+                ^
+../../../../src/include/utils/guc.h:239:13: note: previous declaration is here
+extern bool log_parser_stats;
+            ^
+guc.c:440:7: error: redefinition of 'log_planner_stats' with a different type: 'bool' vs 'bool' (aka 'char')
+bool            log_planner_stats = false;
+                ^
+../../../../src/include/utils/guc.h:240:13: note: previous declaration is here
+extern bool log_planner_stats;
+            ^
+guc.c:441:7: error: redefinition of 'log_executor_stats' with a different type: 'bool' vs 'bool' (aka 'char')
+bool            log_executor_stats = false;
+                ^
+../../../../src/include/utils/guc.h:241:13: note: previous declaration is here
+extern bool log_executor_stats;
+            ^
+guc.c:442:7: error: redefinition of 'log_statement_stats' with a different type: 'bool' vs 'bool' (aka 'char')
+bool            log_statement_stats = false;    /* this is sort of all three above
+                ^
+../../../../src/include/utils/guc.h:242:13: note: previous declaration is here
+extern bool log_statement_stats;
+            ^
+guc.c:444:7: error: redefinition of 'log_btree_build_stats' with a different type: 'bool' vs 'bool' (aka 'char')
+bool            log_btree_build_stats = false;
+                ^
+../../../../src/include/utils/guc.h:243:13: note: previous declaration is here
+extern bool log_btree_build_stats;
+            ^
+guc.c:448:7: error: redefinition of 'check_function_bodies' with a different type: 'bool' vs 'bool' (aka 'char')
+bool            check_function_bodies = true;
+                ^
+../../../../src/include/utils/guc.h:245:25: note: previous declaration is here
+extern PGDLLIMPORT bool check_function_bodies;
+                        ^
+guc.c:449:7: error: redefinition of 'default_with_oids' with a different type: 'bool' vs 'bool' (aka 'char')
+bool            default_with_oids = false;
+                ^
+../../../../src/include/utils/guc.h:246:13: note: previous declaration is here
+extern bool default_with_oids;
+            ^
+guc.c:450:7: error: redefinition of 'session_auth_is_superuser' with a different type: 'bool' vs 'bool' (aka 'char')
+bool            session_auth_is_superuser;
+                ^
+../../../../src/include/utils/guc.h:247:13: note: previous declaration is here
+extern bool     session_auth_is_superuser;
+                ^
+guc.c:4707:1: error: conflicting types for 'SelectConfigFiles'
+SelectConfigFiles(const char *userDoption, const char *progname)
+^
+../../../../src/include/utils/guc.h:354:13: note: previous declaration is here
+extern bool SelectConfigFiles(const char *userDoption, const char *progname);
+            ^
+guc.c:5097:1: error: conflicting types for 'AtEOXact_GUC'
+AtEOXact_GUC(bool isCommit, int nestLevel)
+^
+../../../../src/include/utils/guc.h:358:13: note: previous declaration is here
+extern void AtEOXact_GUC(bool isCommit, int nestLevel);
+            ^
+guc.c:5515:1: error: conflicting types for 'parse_int'
+parse_int(const char *value, int *result, int flags, const char **hintmsg)
+^
+../../../../src/include/utils/guc.h:361:13: note: previous declaration is here
+extern bool parse_int(const char *value, int *result, int flags,
+            ^
+guc.c:5601:1: error: conflicting types for 'parse_real'
+parse_real(const char *value, double *result)
+^
+../../../../src/include/utils/guc.h:363:13: note: previous declaration is here
+extern bool parse_real(const char *value, double *result);
+            ^
+guc.c:5662:1: error: conflicting types for 'config_enum_lookup_by_name'
+config_enum_lookup_by_name(struct config_enum *record, const char *value,
+^
+../../../../src/include/utils/guc_tables.h:265:13: note: previous declaration is here
+extern bool config_enum_lookup_by_name(struct config_enum *record,
+            ^
+guc.c:5930:1: error: conflicting types for 'set_config_option'
+set_config_option(const char *name, const char *value,
+^
+../../../../src/include/utils/guc.h:364:12: note: previous declaration is here
+extern int set_config_option(const char *name, const char *value,
+           ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+
+--- src/backend/catalog/pg_collation.c.orig	2020-08-10 21:19:16 UTC
++++ src/backend/catalog/pg_collation.c
+@@ -14,6 +14,8 @@
+  */
+ #include "postgres.h"
+ 
++#include <stdbool.h>
++
+ #include "access/genam.h"
+ #include "access/heapam.h"
+ #include "access/htup_details.h"
+--- src/backend/commands/collationcmds.c.orig	2020-08-10 21:19:16 UTC
++++ src/backend/commands/collationcmds.c
+@@ -14,6 +14,8 @@
+  */
+ #include "postgres.h"
+ 
++#include <stdbool.h>
++
+ #include "access/heapam.h"
+ #include "access/htup_details.h"
+ #include "access/xact.h"
+--- src/backend/commands/dbcommands.c.orig	2020-08-10 21:19:16 UTC
++++ src/backend/commands/dbcommands.c
+@@ -19,6 +19,7 @@
+  */
+ #include "postgres.h"
+ 
++#include <stdbool.h>
+ #include <fcntl.h>
+ #include <unistd.h>
+ #include <sys/stat.h>
+--- src/backend/optimizer/path/indxpath.c.orig	2020-08-10 21:19:16 UTC
++++ src/backend/optimizer/path/indxpath.c
+@@ -15,6 +15,7 @@
+  */
+ #include "postgres.h"
+ 
++#include <stdbool.h>
+ #include <math.h>
+ 
+ #include "access/stratnum.h"
+--- src/backend/tsearch/regis.c.orig	2020-08-10 21:19:16 UTC
++++ src/backend/tsearch/regis.c
+@@ -14,6 +14,8 @@
+ 
+ #include "postgres.h"
+ 
++#include <stdbool.h>
++
+ #include "tsearch/dicts/regis.h"
+ #include "tsearch/ts_locale.h"
+ 
+--- src/backend/utils/misc/guc.c.orig	2020-08-10 21:19:16 UTC
++++ src/backend/utils/misc/guc.c
+@@ -16,6 +16,8 @@
+  */
+ #include "postgres.h"
+ 
++#include <stdbool.h>
++
+ #include <ctype.h>
+ #include <float.h>
+ #include <math.h>

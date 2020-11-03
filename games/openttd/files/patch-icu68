@@ -1,0 +1,17 @@
+Regressed by https://github.com/unicode-org/icu/commit/c3fe7e09d844
+
+src/gfx_layout.cpp:119:9: error: use of undeclared identifier 'FALSE'
+        return FALSE;
+               ^
+
+--- src/gfx_layout.cpp.orig	2020-08-09 17:56:38 UTC
++++ src/gfx_layout.cpp
+@@ -116,7 +116,7 @@ void Font::getGlyphAdvance(LEGlyphID glyph, LEPoint &a
+ 
+ le_bool Font::getGlyphPoint(LEGlyphID glyph, le_int32 pointNumber, LEPoint &point) const
+ {
+-	return FALSE;
++	return false;
+ }
+ 
+ /**

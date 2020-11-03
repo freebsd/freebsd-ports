@@ -1,0 +1,53 @@
+Regressed by https://github.com/unicode-org/icu/commit/c3fe7e09d844
+
+LEFontInstance.cpp:82:39: error: use of undeclared identifier 'TRUE'
+    return mapCharToGlyph(ch, mapper, TRUE);
+                                      ^
+LEGlyphStorage.cpp:662:12: error: use of undeclared identifier 'FALSE'
+    return FALSE;
+           ^
+LEInsertionList.cpp:89:20: error: use of undeclared identifier 'TRUE'
+            return TRUE;
+                   ^
+LEInsertionList.cpp:93:12: error: use of undeclared identifier 'FALSE'
+    return FALSE;
+           ^
+
+--- src/LEFontInstance.cpp.orig	2016-11-13 06:15:24 UTC
++++ src/LEFontInstance.cpp
+@@ -79,7 +79,7 @@ void LEFontInstance::mapCharsToGlyphs(const LEUnicode 
+ 
+ LEGlyphID LEFontInstance::mapCharToGlyph(LEUnicode32 ch, const LECharMapper *mapper) const
+ {
+-    return mapCharToGlyph(ch, mapper, TRUE);
++    return mapCharToGlyph(ch, mapper, true);
+ }
+ 
+ LEGlyphID LEFontInstance::mapCharToGlyph(LEUnicode32 ch, const LECharMapper *mapper, le_bool filterZeroWidth) const
+--- src/LEGlyphStorage.cpp.orig	2016-11-13 06:15:24 UTC
++++ src/LEGlyphStorage.cpp
+@@ -659,7 +659,7 @@ le_bool LEGlyphStorage::applyInsertion(le_int32 atPosi
+     // just got replaced by the insertion
+     fSrcIndex -= 1;
+ 
+-    return FALSE;
++    return false;
+ }
+ 
+ U_NAMESPACE_END
+--- src/LEInsertionList.cpp.orig	2016-11-13 06:15:24 UTC
++++ src/LEInsertionList.cpp
+@@ -86,11 +86,11 @@ le_bool LEInsertionList::applyInsertions(LEInsertionCa
+ {
+     for (InsertionRecord *rec = head; rec != NULL; rec = rec->next) {
+         if (callback->applyInsertion(rec->position, rec->count, rec->glyphs)) {
+-            return TRUE;
++            return true;
+         }
+     }
+ 
+-    return FALSE;
++    return false;
+ }
+ 
+ U_NAMESPACE_END

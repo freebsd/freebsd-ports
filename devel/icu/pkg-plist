@@ -190,6 +190,7 @@ include/unicode/unorm.h
 include/unicode/unorm2.h
 include/unicode/unum.h
 include/unicode/unumberformatter.h
+include/unicode/unumberrangeformatter.h
 include/unicode/unumsys.h
 include/unicode/uobject.h
 include/unicode/upluralrules.h

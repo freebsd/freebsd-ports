@@ -3,6 +3,7 @@
 
 PORTNAME=	sage
 PORTVERSION=	9.2
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	https://mirrors.xmission.com/sage/src/		\
 		http://mirrors.xmission.com/sage/src/		\

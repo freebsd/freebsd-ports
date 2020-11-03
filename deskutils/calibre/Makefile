@@ -3,7 +3,7 @@
 
 PORTNAME=	calibre
 PORTVERSION=	4.23.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils python
 MASTER_SITES=	http://download.calibre-ebook.com/${PORTVERSION}/
 

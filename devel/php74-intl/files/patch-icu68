@@ -1,0 +1,213 @@
+Regressed by https://github.com/unicode-org/icu/commit/c3fe7e09d844
+
+ext/intl/breakiterator/codepointiterator_internal.cpp:60:53: error: use of undeclared identifier 'FALSE'
+        this->fText = utext_clone(this->fText, that.fText, FALSE, TRUE, &uec);
+                                                           ^
+ext/intl/breakiterator/codepointiterator_internal.cpp:60:60: error: use of undeclared identifier 'TRUE'
+        this->fText = utext_clone(this->fText, that.fText, FALSE, TRUE, &uec);
+                                                                  ^
+ext/intl/breakiterator/codepointiterator_internal.cpp:80:10: error: use of undeclared identifier 'FALSE'
+                return FALSE;
+                       ^
+ext/intl/breakiterator/codepointiterator_internal.cpp:87:10: error: use of undeclared identifier 'FALSE'
+                return FALSE;
+                       ^
+ext/intl/breakiterator/codepointiterator_internal.cpp:90:9: error: use of undeclared identifier 'TRUE'
+        return TRUE;
+               ^
+ext/intl/breakiterator/codepointiterator_internal.cpp:111:42: error: use of undeclared identifier 'FALSE'
+        return utext_clone(fillIn, this->fText, FALSE, TRUE, &status);
+                                                ^
+ext/intl/breakiterator/codepointiterator_internal.cpp:111:49: error: use of undeclared identifier 'TRUE'
+        return utext_clone(fillIn, this->fText, FALSE, TRUE, &status);
+                                                       ^
+ext/intl/breakiterator/codepointiterator_internal.cpp:130:47: error: use of undeclared identifier 'FALSE'
+        this->fText = utext_clone(this->fText, text, FALSE, TRUE, &status);
+                                                     ^
+ext/intl/breakiterator/codepointiterator_internal.cpp:130:54: error: use of undeclared identifier 'TRUE'
+        this->fText = utext_clone(this->fText, text, FALSE, TRUE, &status);
+                                                            ^
+ext/intl/breakiterator/codepointiterator_internal.cpp:282:48: error: use of undeclared identifier 'FALSE'
+        this->fText = utext_clone(this->fText, input, FALSE, TRUE, &status);
+                                                      ^
+ext/intl/breakiterator/codepointiterator_internal.cpp:282:55: error: use of undeclared identifier 'TRUE'
+        this->fText = utext_clone(this->fText, input, FALSE, TRUE, &status);
+                                                             ^
+ext/intl/collator/collator_sort.c:349:26: error: use of undeclared identifier 'TRUE'
+        collator_sort_internal( TRUE, INTERNAL_FUNCTION_PARAM_PASSTHRU );
+                                ^
+ext/intl/collator/collator_sort.c:543:26: error: use of undeclared identifier 'FALSE'
+        collator_sort_internal( FALSE, INTERNAL_FUNCTION_PARAM_PASSTHRU );
+                                ^
+ext/intl/dateformat/dateformat_attr.c:91:36: error: use of undeclared identifier 'FALSE'
+        zend_bool   is_pattern_localized =FALSE;
+                                          ^
+ext/intl/dateformat/dateformat_attr.c:134:36: error: use of undeclared identifier 'FALSE'
+        zend_bool   is_pattern_localized =FALSE;
+                                          ^
+ext/intl/dateformat/dateformat_attr.c:230:25: error: use of undeclared identifier 'FALSE'
+        zend_bool isLenient  = FALSE;
+                               ^
+ext/intl/normalizer/normalizer_normalize.c:95:10: error: use of undeclared identifier 'FALSE'
+                return FALSE;
+                       ^
+ext/intl/normalizer/normalizer_normalize.c:181:16: error: use of undeclared identifier 'FALSE'
+        UBool           uret = FALSE;
+                               ^
+ext/intl/timezone/timezone_class.cpp:324:21: error: use of undeclared identifier 'FALSE'
+        tz->getOffset(now, FALSE, rawOffset, dstOffset, uec);
+                           ^
+ext/intl/timezone/timezone_methods.cpp:94:57: error: use of undeclared identifier 'FALSE'
+        tz = timezone_convert_datetimezone(tzobj->type, tzobj, FALSE, NULL,
+                                                               ^
+
+--- breakiterator/codepointiterator_internal.cpp.orig	2020-09-29 10:17:14 UTC
++++ breakiterator/codepointiterator_internal.cpp
+@@ -58,7 +58,7 @@ CodePointBreakIterator& CodePointBreakIterator::operat
+ 		return *this;
+ 	}
+ 
+-	this->fText = utext_clone(this->fText, that.fText, FALSE, TRUE, &uec);
++	this->fText = utext_clone(this->fText, that.fText, false, true, &uec);
+ 
+ 	//don't bother copying the character iterator, getText() is deprecated
+ 	clearCurrentCharIter();
+@@ -78,17 +78,17 @@ CodePointBreakIterator::~CodePointBreakIterator()
+ UBool CodePointBreakIterator::operator==(const BreakIterator& that) const
+ {
+ 	if (typeid(*this) != typeid(that)) {
+-		return FALSE;
++		return false;
+ 	}
+ 
+ 	const CodePointBreakIterator& that2 =
+ 		static_cast<const CodePointBreakIterator&>(that);
+ 
+ 	if (!utext_equals(this->fText, that2.fText)) {
+-		return FALSE;
++		return false;
+ 	}
+ 
+-	return TRUE;
++	return true;
+ }
+ 
+ CodePointBreakIterator* CodePointBreakIterator::clone(void) const
+@@ -109,7 +109,7 @@ CharacterIterator& CodePointBreakIterator::getText(voi
+ 
+ UText *CodePointBreakIterator::getUText(UText *fillIn, UErrorCode &status) const
+ {
+-	return utext_clone(fillIn, this->fText, FALSE, TRUE, &status);
++	return utext_clone(fillIn, this->fText, false, true, &status);
+ }
+ 
+ void CodePointBreakIterator::setText(const UnicodeString &text)
+@@ -128,7 +128,7 @@ void CodePointBreakIterator::setText(UText *text, UErr
+ 		return;
+ 	}
+ 
+-	this->fText = utext_clone(this->fText, text, FALSE, TRUE, &status);
++	this->fText = utext_clone(this->fText, text, false, true, &status);
+ 
+ 	clearCurrentCharIter();
+ }
+@@ -280,7 +280,7 @@ CodePointBreakIterator &CodePointBreakIterator::refres
+ 	}
+ 
+ 	int64_t pos = utext_getNativeIndex(this->fText);
+-	this->fText = utext_clone(this->fText, input, FALSE, TRUE, &status);
++	this->fText = utext_clone(this->fText, input, false, true, &status);
+ 	if (U_FAILURE(status)) {
+ 		return *this;
+ 	}
+--- collator/collator_sort.c.orig	2020-09-29 10:17:14 UTC
++++ collator/collator_sort.c
+@@ -346,7 +346,7 @@ static void collator_sort_internal( int renumber, INTE
+  */
+ PHP_FUNCTION( collator_sort )
+ {
+-	collator_sort_internal( TRUE, INTERNAL_FUNCTION_PARAM_PASSTHRU );
++	collator_sort_internal( true, INTERNAL_FUNCTION_PARAM_PASSTHRU );
+ }
+ /* }}} */
+ 
+@@ -540,7 +540,7 @@ PHP_FUNCTION( collator_sort_with_sort_keys )
+  */
+ PHP_FUNCTION( collator_asort )
+ {
+-	collator_sort_internal( FALSE, INTERNAL_FUNCTION_PARAM_PASSTHRU );
++	collator_sort_internal( false, INTERNAL_FUNCTION_PARAM_PASSTHRU );
+ }
+ /* }}} */
+ 
+--- dateformat/dateformat_attr.c.orig	2020-09-29 10:17:13 UTC
++++ dateformat/dateformat_attr.c
+@@ -88,7 +88,7 @@ PHP_FUNCTION( datefmt_get_pattern )
+ 	UChar  value_buf[64];
+ 	uint32_t    length = USIZE( value_buf );
+ 	UChar* value  = value_buf;
+-	zend_bool   is_pattern_localized =FALSE;
++	zend_bool   is_pattern_localized = false;
+ 
+ 	DATE_FORMAT_METHOD_INIT_VARS;
+ 
+@@ -131,7 +131,7 @@ PHP_FUNCTION( datefmt_set_pattern )
+ 	size_t      value_len = 0;
+ 	int32_t     slength = 0;
+ 	UChar*	    svalue  = NULL;
+-	zend_bool   is_pattern_localized =FALSE;
++	zend_bool   is_pattern_localized = false;
+ 
+ 
+ 	DATE_FORMAT_METHOD_INIT_VARS;
+@@ -227,7 +227,7 @@ PHP_FUNCTION( datefmt_is_lenient )
+  */
+ PHP_FUNCTION( datefmt_set_lenient )
+ {
+-	zend_bool isLenient  = FALSE;
++	zend_bool isLenient  = false;
+ 
+ 	DATE_FORMAT_METHOD_INIT_VARS;
+ 
+--- normalizer/normalizer_normalize.c.orig	2020-09-29 10:17:14 UTC
++++ normalizer/normalizer_normalize.c
+@@ -90,7 +90,7 @@ static UBool intl_is_normalized(zend_long form, const 
+ 	const UNormalizer2 *norm = intl_get_normalizer(form, err);
+ 
+ 	if(U_FAILURE(*err)) {
+-		return FALSE;
++		return false;
+ 	}
+ 
+ 	return unorm2_isNormalized(norm, uinput, uinput_len, err);
+@@ -261,7 +261,7 @@ PHP_FUNCTION( normalizer_is_normalized )
+ 	int		uinput_len = 0;
+ 	UErrorCode	status = U_ZERO_ERROR;
+ 
+-	UBool		uret = FALSE;
++	UBool		uret = false;
+ 
+ 	intl_error_reset( NULL );
+ 
+--- timezone/timezone_class.cpp.orig	2020-09-29 10:17:14 UTC
++++ timezone/timezone_class.cpp
+@@ -325,7 +325,7 @@ static HashTable *TimeZone_get_debug_info(zval *object
+ 
+ 	int32_t rawOffset, dstOffset;
+ 	UDate now = Calendar::getNow();
+-	tz->getOffset(now, FALSE, rawOffset, dstOffset, uec);
++	tz->getOffset(now, false, rawOffset, dstOffset, uec);
+ 	if (U_FAILURE(uec)) {
+ 		return debug_info;
+ 	}
+--- timezone/timezone_methods.cpp.orig	2020-09-29 10:17:14 UTC
++++ timezone/timezone_methods.cpp
+@@ -95,7 +95,7 @@ U_CFUNC PHP_FUNCTION(intltz_from_date_time_zone)
+ 		RETURN_NULL();
+ 	}
+ 
+-	tz = timezone_convert_datetimezone(tzobj->type, tzobj, FALSE, NULL,
++	tz = timezone_convert_datetimezone(tzobj->type, tzobj, false, NULL,
+ 		"intltz_from_date_time_zone");
+ 	if (tz == NULL) {
+ 		RETURN_NULL();
