@@ -13,7 +13,7 @@ To configure hardware acceleration, follow the following steps.
     # sysrc kld_list="/boot/modules/amdgpu.ko"
     # sysrc kld_list="/boot/modules/radeonkms.ko"
 
-3. Ensure users who login via xrdp are member of the "video" group
+3. Ensure users who login via xrdp are members of the "video" group
     # pw groupmod video -m username|| pw groupmod wheel -m username
 
 4. Edit /etc/X11/xrdp/xorg.conf to fit your environment
@@ -22,7 +22,7 @@ To configure hardware acceleration, follow the following steps.
    Find the following line and change it to the actual path.
     Option "DRMDevice" "/dev/dri/renderD128"
 
-   Chenge "0" to "1" of the following line.
+   Change "0" to "1" of the following line.
     Option "DRI3" "0"
 
 5. Restart your system and login via xrdp
