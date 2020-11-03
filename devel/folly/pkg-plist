@@ -469,6 +469,7 @@ include/folly/io/async/AsyncTransportCertificate.h
 include/folly/io/async/AsyncUDPServerSocket.h
 include/folly/io/async/AsyncUDPSocket.h
 include/folly/io/async/AtomicNotificationQueue.h
+include/folly/io/async/AtomicNotificationQueue-inl.h
 include/folly/io/async/CertificateIdentityVerifier.h
 include/folly/io/async/DecoratedAsyncTransportWrapper.h
 include/folly/io/async/DelayedDestruction.h
