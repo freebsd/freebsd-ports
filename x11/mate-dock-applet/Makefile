@@ -31,7 +31,7 @@ AUTOMAKE_ARGS= --add-missing
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gtk3
 INSTALLS_ICONS=	yes
-# INSTALL_TARGET=	install-strip
+INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.mate.panel.applet.dock.gschema.xml
 
