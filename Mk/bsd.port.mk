@@ -2040,7 +2040,7 @@ STAGE_COOKIE?=		${WRKDIR}/.stage_done.${PORTNAME}.${PREFIX:S/\//_/g}
 
 # How to do nothing.  Override if you, for some strange reason, would rather
 # do something.
-# In general, however, DO_NADA is a relict of the past in the ports
+# In general, however, DO_NADA is a relic of the past in the ports
 # infrastructure, and most of its usage has been removed. If you need to define
 # a target with DO_NADA, then there is a high chance that the ports
 # infrastructure should be fixed instead.
