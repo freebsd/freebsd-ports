@@ -8,4 +8,4 @@ obtained and taken advantage of whenever data locality is important. The
 primary target architectures for which GA was developed are massively-parallel
 distributed-memory and scalable shared-memory systems.
 
-WWW: http://hpc.pnl.gov/globalarrays/
+WWW: https://hpc.pnl.gov//globalarrays/

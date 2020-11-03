@@ -12,7 +12,6 @@ include/dra.h
 include/eaf.fh
 include/eaf.h
 include/elio.h
-include/error.h
 include/farg.h
 include/ga-mpi.fh
 include/ga-mpi.h
@@ -30,11 +29,8 @@ include/message.h
 include/msgtypesc.h
 include/msgtypesf.h
 include/parmci.h
-include/scope.h
 include/sf.fh
 include/sf.h
-include/string-util.h
-include/table.h
 include/tcgmsg.fh
 include/tcgmsg.h
 include/typesf2c.h
