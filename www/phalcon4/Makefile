@@ -2,7 +2,7 @@
 
 PORTNAME=	phalcon
 DISTVERSIONPREFIX=v
-DISTVERSION=	4.0.6
+DISTVERSION=	4.1.0
 CATEGORIES=	www
 PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	4
@@ -20,6 +20,7 @@ RUN_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/psr.so:devel/pecl-psr@${PHP_FLAVO
 
 USES=		localbase php:ext
 USE_PHP=	hash:build json:build pdo:build session
+IGNORE_WITH_PHP=80
 PHP_MOD_PRIO=	30
 
 USE_GITHUB=	yes
