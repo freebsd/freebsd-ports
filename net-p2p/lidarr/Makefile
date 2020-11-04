@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	lidarr
-PORTVERSION=	0.7.1.1381
+PORTVERSION=	0.7.2.1878
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/lidarr/Lidarr/releases/download/v${PORTVERSION}/
 DISTNAME=	Lidarr.master.${PORTVERSION}.linux
