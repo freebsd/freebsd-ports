@@ -2,7 +2,7 @@
 
 PORTNAME=	gh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.0
+DISTVERSION=	1.2.0
 CATEGORIES=	devel
 
 MAINTAINER=	vulcan@wired.sh
@@ -56,7 +56,7 @@ GH_TUPLE=	AlecAivazis:survey:v2.1.1:alecaivazis_survey_v2/vendor/github.com/Alec
 		russross:blackfriday:v2.0.1:russross_blackfriday_v2/vendor/github.com/russross/blackfriday/v2 \
 		shurcooL:githubv4:f27d2ca7f6d5:shurcool_githubv4/vendor/github.com/shurcooL/githubv4 \
 		shurcooL:sanitized_anchor_name:v1.0.0:shurcool_sanitized_anchor_name/vendor/github.com/shurcooL/sanitized_anchor_name \
-		spf13:cobra:v1.0.0:spf13_cobra/vendor/github.com/spf13/cobra \
+		spf13:cobra:v1.1.1:spf13_cobra/vendor/github.com/spf13/cobra \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		stretchr:testify:v1.6.1:stretchr_testify/vendor/github.com/stretchr/testify \
 		yuin:goldmark:v1.2.0:yuin_goldmark/vendor/github.com/yuin/goldmark
@@ -67,8 +67,8 @@ _BUILD_DATE=	$$(date +%Y-%m-%d)
 GO_TARGET=	./cmd/${PORTNAME}
 GO_BUILDFLAGS=	-ldflags "\
 		-s -w \
-		-X github.com/${GH_ACCOUNT}/${GH_PROJECT}/command.Version=${_BUILD_VERSION} \
-		-X github.com/${GH_ACCOUNT}/${GH_PROJECT}/command.BuildDate=${_BUILD_DATE}"
+		-X github.com/${GH_ACCOUNT}/${GH_PROJECT}/internal/build.Version=${_BUILD_VERSION} \
+		-X github.com/${GH_ACCOUNT}/${GH_PROJECT}/internal/build.Date=${_BUILD_DATE}"
 
 _DOCS=		README.md docs/gh-vs-hub.md docs/releasing.md \
 		docs/command-line-syntax.md docs/source.md
