@@ -18,14 +18,6 @@ include/libdrm/i915_drm.h
 include/libdrm/mach64_drm.h
 include/libdrm/mga_drm.h
 include/libdrm/msm_drm.h
-%%NOUVEAU_DRIVER%%include/libdrm/nouveau/nouveau.h
-%%NOUVEAU_DRIVER%%include/libdrm/nouveau/nvif/cl0080.h
-%%NOUVEAU_DRIVER%%include/libdrm/nouveau/nvif/cl9097.h
-%%NOUVEAU_DRIVER%%include/libdrm/nouveau/nvif/class.h
-%%NOUVEAU_DRIVER%%include/libdrm/nouveau/nvif/if0002.h
-%%NOUVEAU_DRIVER%%include/libdrm/nouveau/nvif/if0003.h
-%%NOUVEAU_DRIVER%%include/libdrm/nouveau/nvif/ioctl.h
-%%NOUVEAU_DRIVER%%include/libdrm/nouveau/nvif/unpack.h
 include/libdrm/nouveau_drm.h
 include/libdrm/qxl_drm.h
 include/libdrm/r128_drm.h
@@ -58,9 +50,6 @@ lib/libdrm.so.2.4.0
 %%INTEL_DRIVER%%lib/libdrm_intel.so
 %%INTEL_DRIVER%%lib/libdrm_intel.so.1
 %%INTEL_DRIVER%%lib/libdrm_intel.so.1.0.0
-%%NOUVEAU_DRIVER%%lib/libdrm_nouveau.so
-%%NOUVEAU_DRIVER%%lib/libdrm_nouveau.so.2
-%%NOUVEAU_DRIVER%%lib/libdrm_nouveau.so.2.0.0
 %%RADEON_DRIVERS%%lib/libdrm_radeon.so
 %%RADEON_DRIVERS%%lib/libdrm_radeon.so.1
 %%RADEON_DRIVERS%%lib/libdrm_radeon.so.1.0.1
@@ -70,7 +59,6 @@ lib/libkms.so.1.0.0
 libdata/pkgconfig/libdrm.pc
 %%RADEON_DRIVERS%%libdata/pkgconfig/libdrm_amdgpu.pc
 %%INTEL_DRIVER%%libdata/pkgconfig/libdrm_intel.pc
-%%NOUVEAU_DRIVER%%libdata/pkgconfig/libdrm_nouveau.pc
 %%RADEON_DRIVERS%%libdata/pkgconfig/libdrm_radeon.pc
 libdata/pkgconfig/libkms.pc
 %%MANPAGES%%man/man3/drmAvailable.3.gz

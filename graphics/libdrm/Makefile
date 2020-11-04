@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libdrm
-PORTVERSION=	2.4.102
+PORTVERSION=	2.4.103
 PORTEPOCH=	1
 CATEGORIES=	graphics x11
 MASTER_SITES=	https://dri.freedesktop.org/libdrm/
@@ -11,7 +11,8 @@ MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Userspace interface to kernel Direct Rendering Module services
 
 PATCH_SITES=	https://gitlab.freedesktop.org/manu/drm/-/commit/
-PATCHFILES+=	e41ca0a00f88ef8.diff:-p1
+PATCHFILES+=	e41ca0a00f88ef8.diff:-p1 \
+		329297f9c450d7b.diff:-p1
 
 LICENSE=	MIT
 
@@ -45,7 +46,8 @@ MESON_ARGS+=	-Domap=false \
 		-Dfreedreno=false \
 		-Dfreedreno-kgsl=false \
 		-Dvc4=false \
-		-Detnaviv=false
+		-Detnaviv=false \
+		-Dnouveau=false
 
 .include <bsd.port.options.mk>
 
