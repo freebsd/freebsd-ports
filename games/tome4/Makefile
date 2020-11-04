@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	tome4
-DISTVERSION?=	1.6.5
+DISTVERSION?=	1.7.0
 PORTREVISION?=	0
 CATEGORIES=	games
 MASTER_SITES=	https://te4.org/dl/t-engine/ \
@@ -10,7 +10,7 @@ DISTFILES=	t-engine4-src-${DISTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}.png:icons
 EXTRACT_ONLY=	t-engine4-src-${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	lifanov@FreeBSD.org
+MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Epic tactical turn-based roguelike adventure
 
 LICENSE=	GPLv3+

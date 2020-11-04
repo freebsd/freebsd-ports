@@ -82,6 +82,7 @@ share/pixmaps/tome4.png
 %%DATADIR%%/game/thirdparty/algorithms/sorting/shellsort.lua
 %%DATADIR%%/game/thirdparty/algorithms/tries/rwaytries.lua
 %%DATADIR%%/game/thirdparty/algorithms/unionfind.lua
+%%DATADIR%%/game/thirdparty/binpack.lua
 %%DATADIR%%/game/thirdparty/cef3/cef.pak
 %%DATADIR%%/game/thirdparty/cef3/locales/am.pak
 %%DATADIR%%/game/thirdparty/cef3/locales/ar.pak
