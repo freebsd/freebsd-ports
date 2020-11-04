@@ -3,9 +3,11 @@
 
 PORTNAME=	terminator
 PORTVERSION=	2.0.1
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	x11 python
-MASTER_SITES=	https://github.com/gnome-terminator/terminator/releases/download/v${PORTVERSION}/
+MASTER_SITES=	https://github.com/gnome-terminator/terminator/archive/
+DISTNAME=	v${PORTVERSION}
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	Multiple GNOME terminals in one window
@@ -19,33 +21,19 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libkeybinder-3.0.so:x11/keybinder-gtk3 \
 		${PYTHON_PKGNAMEPREFIX}psutil>0:sysutils/py-psutil@${PY_FLAVOR} \
 		gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
 
-USES=		gnome python:3.5+ shebangfix
+USES=		gnome python:3.5+ shebangfix gettext
 USE_GNOME=	intltool pygobject3 vte3
 USE_PYTHON=	autoplist distutils
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PYDISTUTILS_PKGNAME=	Terminator
 
 INSTALLS_ICONS=	yes
 
-OPTIONS_DEFINE=	NLS
-OPTIONS_SUB=	yes
-NLS_USES=	gettext
-
 NO_ARCH=	yes
 
 .include <bsd.port.pre.mk>
-
-.if !${PORT_OPTIONS:MNLS}
-PYDISTUTILS_SETUP+=	--without-gettext
-post-patch:
-	${CP} ${WRKSRC}/data/terminator.desktop.in ${WRKSRC}/data/terminator.desktop
-	${REINPLACE_CMD} -e 's/^_//' ${WRKSRC}/data/terminator.desktop
-	${CP} ${WRKSRC}/data/terminator.appdata.xml.in ${WRKSRC}/data/terminator.appdata.xml
-	${REINPLACE_CMD} \
-		-e 's|<_|<|' \
-		-e 's|</_|</|' \
-		${WRKSRC}/data/terminator.appdata.xml
-.endif
 
 PYDISTUTILS_SETUP+=	--without-icon-cache
 
