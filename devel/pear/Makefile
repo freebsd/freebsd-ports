@@ -2,19 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	pear
-PORTVERSION=	1.10.6
+PORTVERSION=	1.10.12
 PORTREVISION=	0
 CATEGORIES=	devel
-MASTER_SITES=	http://mirror.bsdproject.de/ \
-	LOCAL/joneum
+MASTER_SITES=	http://build.dimapanov.com/~fluffy/distfiles/ \
+		LOCAL/fluffy \
+		LOCAL/joneum
 PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	PEAR framework for PHP
 
 LICENSE=	PHP301
 
-USES=		cpe php:cli,flavors tar:bzip2
+USES=		cpe php:cli,flavors tar:xz
 CPE_VENDOR=	php
 NO_BUILD=	yes
 NO_ARCH=	yes

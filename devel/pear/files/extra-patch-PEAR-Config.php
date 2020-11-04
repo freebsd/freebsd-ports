@@ -1,6 +1,6 @@
---- PEAR/Config.php.orig	2011-11-15 10:23:32.384650640 +0100
-+++ PEAR/Config.php	2011-11-15 10:23:35.145650207 +0100
-@@ -29,7 +29,7 @@
+--- PEAR/Config.php.orig	2020-04-19 18:02:46 UTC
++++ PEAR/Config.php
+@@ -28,7 +28,7 @@ require_once 'System.php';
   */
  $GLOBALS['_PEAR_Config_instance'] = null;
  if (!defined('PEAR_INSTALL_DIR') || !PEAR_INSTALL_DIR) {
@@ -9,7 +9,7 @@
  } else {
      $PEAR_INSTALL_DIR = PEAR_INSTALL_DIR;
  }
-@@ -108,7 +108,7 @@
+@@ -114,7 +114,7 @@ if (getenv('PHP_PEAR_DOC_DIR')) {
      define('PEAR_CONFIG_DEFAULT_DOC_DIR', getenv('PHP_PEAR_DOC_DIR'));
  } else {
      define('PEAR_CONFIG_DEFAULT_DOC_DIR',
@@ -18,7 +18,7 @@
  }
  
  // Default for bin_dir
-@@ -131,7 +131,7 @@
+@@ -137,7 +137,7 @@ if (getenv('PHP_PEAR_CFG_DIR')) {
      define('PEAR_CONFIG_DEFAULT_CFG_DIR', getenv('PHP_PEAR_CFG_DIR'));
  } else {
      define('PEAR_CONFIG_DEFAULT_CFG_DIR',
@@ -27,7 +27,7 @@
  }
  
  // Default for www_dir
-@@ -139,7 +139,7 @@
+@@ -145,7 +145,7 @@ if (getenv('PHP_PEAR_WWW_DIR')) {
      define('PEAR_CONFIG_DEFAULT_WWW_DIR', getenv('PHP_PEAR_WWW_DIR'));
  } else {
      define('PEAR_CONFIG_DEFAULT_WWW_DIR',
@@ -35,4 +35,4 @@
 +           PHP_PREFIX.DIRECTORY_SEPARATOR.'www');
  }
  
- // Default for test_dir
+ // Default for man_dir
