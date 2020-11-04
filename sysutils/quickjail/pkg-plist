@@ -1,0 +1,4 @@
+bin/quickjail
+bin/quickshell
+share/man/man1/quickjail.1.gz
+share/man/man1/quickshell.1.gz
