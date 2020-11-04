@@ -2,4 +2,4 @@
 #
 # $FreeBSD$
 
-exec "%%LOCALBASE%%/bin/java" -DsuppressSwingDropSupport=true -Xmx256m -jar "%%DATADIR%%/proguardgui.jar" "$@"
+exec "%%LOCALBASE%%/bin/java" -DsuppressSwingDropSupport=true -jar "%%DATADIR%%/proguardgui.jar" "$@"
