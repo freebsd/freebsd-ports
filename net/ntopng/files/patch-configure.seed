@@ -1,6 +1,6 @@
---- configure.seed.orig	2020-04-14 13:42:12 UTC
+--- configure.seed.orig	2020-11-02 21:27:19 UTC
 +++ configure.seed
-@@ -67,33 +67,8 @@ fi
+@@ -77,33 +77,8 @@ fi
  # On CentOS 6 `git rev-list HEAD --count` does not work
  #
  #
@@ -35,19 +35,7 @@
  SHORT_MACHINE=`uname -m | cut -b1-3`
  
  GIT_RELEASE="@GIT_RELEASE@"
-@@ -201,6 +176,11 @@ else
-     AC_DEFINE_UNQUOTED(NO_SSL_DL, 1, [has openssl])
-     SSL_INC="-I/usr/local/opt/openssl/include"
-     SSL_LIB="-L/usr/local/opt/openssl/lib -lssl"
-+  dnl Workaround for FreeBSD
-+  elif test -f "/usr/lib/libssl.so"; then
-+    AC_DEFINE_UNQUOTED(NO_SSL_DL, 1, [has openssl])
-+    SSL_INC="-I/usr/include"
-+    SSL_LIB="-L/usr/lib -lssl -lcrypto"
-   else
-     echo "Please install openssl-dev(el) package prerequisite"
-     exit -1
-@@ -602,16 +582,6 @@ AC_DEFINE_UNQUOTED(_CRT_SECURE_NO_WARNINGS, 1, [Disabl
+@@ -678,16 +653,6 @@ AC_DEFINE_UNQUOTED(_CRT_SECURE_NO_WARNINGS, 1, [Disabl
  GMAKE=`which gmake`
  if test x$GMAKE = x; then
    GMAKE="make"
