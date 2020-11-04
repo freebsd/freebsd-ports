@@ -12,6 +12,7 @@ COMMENT=	Multiple GNOME terminals in one window
 
 LICENSE=	GPLv2
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-runner>0:devel/py-pytest-runner@${PY_FLAVOR}
 RUN_DEPENDS=	${LOCALBASE}/lib/libkeybinder-3.0.so:x11/keybinder-gtk3 \
 		${LOCALBASE}/lib/libnotify.so:devel/libnotify \
 		${PYTHON_PKGNAMEPREFIX}configobj>0:devel/py-configobj@${PY_FLAVOR} \
