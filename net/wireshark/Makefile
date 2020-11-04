@@ -3,7 +3,7 @@
 
 PORTNAME?=	wireshark
 PORTVERSION=	3.4.0
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.wireshark.org/download/src/ \
 		http://ftp.uni-kl.de/pub/wireshark/src/ \
@@ -37,7 +37,8 @@ LIB_DEPENDS+=	libgpg-error.so:security/libgpg-error \
 		libgcrypt.so:security/libgcrypt \
 		liblz4.so:archivers/liblz4 \
 		libnghttp2.so:www/libnghttp2 \
-		libsnappy.so:archivers/snappy
+		libsnappy.so:archivers/snappy \
+		libcares.so:dns/c-ares
 
 #CFLAGS+=	-funit-at-a-time
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
@@ -51,7 +52,7 @@ PLIST_SUB+=		${x:tu}="@comment $x not installed" \
 			${x:tu}_MAN="@comment $x not installed "
 CMAKE_ARGS+=		-DBUILD_$x=OFF
 EXTRA_PATCHES=		${FILESDIR}/extra-patch-doc_CMakeLists.txt
-OPTIONS_EXCLUDE+=	RTP SNMP LUA CARES ANDROIDDUMP CISCODUMP SSHDUMP
+OPTIONS_EXCLUDE+=	RTP SNMP LUA ANDROIDDUMP CISCODUMP SSHDUMP
 .else
 PLIST_SUB+=		${x:tu}=bin/$x \
 			${x:tu}_MAN="" \
@@ -59,7 +60,7 @@ PLIST_SUB+=		${x:tu}=bin/$x \
 .endif
 .endfor
 
-OPTIONS_DEFINE=		GUI RTP SNMP MAXMIND LUA DECRYPT ANDROIDDUMP CARES SSHDUMP CISCODUMP OPUS
+OPTIONS_DEFINE=		GUI RTP SNMP MAXMIND LUA DECRYPT ANDROIDDUMP SSHDUMP CISCODUMP OPUS
 
 OPTIONS_SINGLE=		GSSAPI
 
@@ -72,7 +73,6 @@ RTP_DESC=		Enable support for playing back RTP streams
 DECRYPT_DESC=		Decryption support for SSL and IPSec
 ANDROIDDUMP_DESC=	Build androiddump extcap tool
 MAXMIND_DESC=		Enable MaxMindDB-based GeoIP geolocation support
-CARES_DESC=		Enable support for asynchronous DNS via c-ares
 GSSAPI_DESC=		Kerberos dissection support
 GSSAPI_BASE_DESC=		Kerberos support via base system
 GSSAPI_HEIMDAL_DESC=	Kerberos support via security/heimdal
@@ -94,7 +94,6 @@ RTP_LIB_DEPENDS=	libspandsp.so:comms/spandsp
 RTP_CPPFLAGS=		-I${LOCALBASE}/include
 MAXMIND_LIB_DEPENDS=	libmaxminddb.so:net/libmaxminddb
 SNMP_LIB_DEPENDS=	libsmi.so:net-mgmt/libsmi
-CARES_LIB_DEPENDS=	libcares.so:dns/c-ares
 DECRYPT_LIB_DEPENDS=	libgnutls.so:security/gnutls \
 			libgcrypt.so:security/libgcrypt
 SSHDUMP_LIB_DEPENDS=	libssh.so:security/libssh
@@ -112,8 +111,6 @@ RTP_CMAKE_ON=	-DENABLE_SPANDSP=ON
 RTP_CMAKE_OFF=	-DENABLE_SPANDSP=OFF
 SNMP_CMAKE_ON=	-DENABLE_SMI=ON
 SNMP_CMAKE_OFF=	-DENABLE_SMI=OFF
-CARES_CMAKE_ON=	-DENABLE_CARES=ON
-CARES_CMAKE_OFF=	-DENABLE_CARES=OFF
 DECRYPT_CMAKE_ON=	-DENABLE_GNUTLS=ON
 DECRYPT_CMAKE_OFF=	-DENABLE_GNUTLS=OFF
 ANDROIDDUMP_CMAKE_ON=-DBUILD_androiddump=ON
