@@ -71,7 +71,7 @@ CPP=		${LOCALBASE}/bin/clang-cpp${LLVM_DEFAULT}
 CC=		${LOCALBASE}/bin/clang${LLVM_DEFAULT}
 CXX=		${LOCALBASE}/bin/clang++${LLVM_DEFAULT}
 BUILD_DEPENDS+=	${LOCALBASE}/bin/clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
-.if ${LLVM_DEFAULT} < 90
+.if ${LLVM_DEFAULT:M[678]0}
 BROKEN=		LLVM 9.0 or higher required
 .endif
 .endif
