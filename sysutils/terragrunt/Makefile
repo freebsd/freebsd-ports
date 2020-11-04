@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	terragrunt
-PORTVERSION=	0.25.5
+PORTVERSION=	0.26.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -37,6 +37,7 @@ GH_TUPLE=	\
 		bgentry:go-netrc:9fd32a8b3d3d:bgentry_go_netrc/vendor/github.com/bgentry/go-netrc \
 		blang:semver:v3.5.1:blang_semver/vendor/github.com/blang/semver \
 		bmatcuk:doublestar:v1.1.5:bmatcuk_doublestar/vendor/github.com/bmatcuk/doublestar \
+		boombuler:barcode:6c824513bacc:boombuler_barcode/vendor/github.com/boombuler/barcode \
 		census-instrumentation:opencensus-go:v0.22.3:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
 		cpuguy83:go-md2man:v2.0.0:cpuguy83_go_md2man_v2/vendor/github.com/cpuguy83/go-md2man/v2 \
 		creack:pty:v1.1.9:creack_pty/vendor/github.com/creack/pty \
@@ -48,6 +49,7 @@ GH_TUPLE=	\
 		fatih:structs:v1.1.0:fatih_structs/vendor/github.com/fatih/structs \
 		go-errors:errors:d98b870cc4e0:go_errors_errors/vendor/github.com/go-errors/errors \
 		go-ini:ini:v1.44.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
+		go-sql-driver:mysql:v1.5.0:go_sql_driver_mysql/vendor/github.com/go-sql-driver/mysql \
 		go-yaml:yaml:v2.2.4:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		golang:appengine:v1.6.5:golang_appengine/vendor/google.golang.org/appengine \
 		golang:crypto:0ec3e9974c59:golang_crypto/vendor/golang.org/x/crypto \
@@ -102,6 +104,7 @@ GH_TUPLE=	\
 		mozilla:sops:v3.5.0:mozilla_sops/vendor/go.mozilla.org/sops/v3 \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
+		pquerna:otp:v1.2.0:pquerna_otp/vendor/github.com/pquerna/otp \
 		russross:blackfriday:v2.0.1:russross_blackfriday_v2/vendor/github.com/russross/blackfriday/v2 \
 		shurcooL:sanitized_anchor_name:v1.0.0:shurcool_sanitized_anchor_name/vendor/github.com/shurcooL/sanitized_anchor_name \
 		sirupsen:logrus:v1.4.2:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
