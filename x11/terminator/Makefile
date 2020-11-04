@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	terminator
-PORTVERSION=	1.92
-PORTREVISION=	3
+PORTVERSION=	2.0.1
+#PORTREVISION=	0
 CATEGORIES=	x11 python
 MASTER_SITES=	https://github.com/gnome-terminator/terminator/releases/download/v${PORTVERSION}/
 
@@ -26,12 +26,9 @@ PYDISTUTILS_PKGNAME=	Terminator
 
 INSTALLS_ICONS=	yes
 
-SHEBANG_FILES=	terminator.wrapper
-bash_CMD=	${SH}
-
-OPTIONS_DEFINE=		NLS
-OPTIONS_SUB=		yes
-NLS_USES=		gettext
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
+NLS_USES=	gettext
 
 NO_ARCH=	yes
 
