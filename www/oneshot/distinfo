@@ -1,6 +1,6 @@
-TIMESTAMP = 1598019507
-SHA256 (raphaelreyna-oneshot-v1.2.0_GH0.tar.gz) = 54f8a9ac0f15d1543c68618bd2e2e6c058bfc10a80d4f18b7d7d117b3fc91a11
-SIZE (raphaelreyna-oneshot-v1.2.0_GH0.tar.gz) = 262293
+TIMESTAMP = 1604445594
+SHA256 (raphaelreyna-oneshot-v1.3.1_GH0.tar.gz) = 22133668996f14e638b4ba8007b95568c034731c6e9a0b5f999c101631f71d22
+SIZE (raphaelreyna-oneshot-v1.3.1_GH0.tar.gz) = 268098
 SHA256 (cenkalti-backoff-v2.2.1_GH0.tar.gz) = a2c29d0184e7afc415975cf2689723028d2686ffbb67fe0999ab1d691e6d16db
 SIZE (cenkalti-backoff-v2.2.1_GH0.tar.gz) = 8623
 SHA256 (cpuguy83-go-md2man-v2.0.0_GH0.tar.gz) = 50537880d42fc28b9c2e9aaa36b137349d43cc73d46436a499f8c928cd2fc576

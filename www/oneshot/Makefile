@@ -2,7 +2,7 @@
 
 PORTNAME=	oneshot
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.0
+DISTVERSION=	1.3.1
 CATEGORIES=	www
 
 MAINTAINER=	vulcan@wired.sh
@@ -59,3 +59,4 @@ post-install-MANPAGES-on:
 	${INSTALL_MAN} ${GO_WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
 .include <bsd.port.mk>
+
