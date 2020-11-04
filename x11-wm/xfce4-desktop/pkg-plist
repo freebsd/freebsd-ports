@@ -15,6 +15,7 @@ share/icons/hicolor/scalable/apps/xfce4-menueditor.svg
 %%NLS%%share/locale/ar/LC_MESSAGES/xfdesktop.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/xfdesktop.mo
 %%NLS%%share/locale/be/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/be@tarask/LC_MESSAGES/xfdesktop.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/xfdesktop.mo
 %%NLS%%share/locale/bn/LC_MESSAGES/xfdesktop.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/xfdesktop.mo
@@ -36,6 +37,7 @@ share/icons/hicolor/scalable/apps/xfce4-menueditor.svg
 %%NLS%%share/locale/he/LC_MESSAGES/xfdesktop.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/xfdesktop.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/hye/LC_MESSAGES/xfdesktop.mo
 %%NLS%%share/locale/hy_AM/LC_MESSAGES/xfdesktop.mo
 %%NLS%%share/locale/id/LC_MESSAGES/xfdesktop.mo
 %%NLS%%share/locale/ie/LC_MESSAGES/xfdesktop.mo
