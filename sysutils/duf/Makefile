@@ -2,7 +2,7 @@
 
 PORTNAME=	duf
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.0
+DISTVERSION=	0.5.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	vulcan@wired.sh
@@ -23,7 +23,7 @@ GH_TUPLE=	golang:crypto:5c72a883971a:golang_crypto/vendor/golang.org/x/crypto \
 		muesli:termenv:v0.7.4:muesli_termenv/vendor/github.com/muesli/termenv
 
 _BUILD_VERSION=	${DISTVERSION}
-_BUILD_SHA=	0c4c730
+_BUILD_SHA=	4c15e83
 
 GO_BUILDFLAGS=	-ldflags "\
 		-s -w \

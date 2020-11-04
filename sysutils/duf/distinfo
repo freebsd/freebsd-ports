@@ -1,6 +1,6 @@
-TIMESTAMP = 1602494279
-SHA256 (muesli-duf-v0.4.0_GH0.tar.gz) = da6b0bb601d7b9a92cfd41005eae7a66573d28e77625f4e747b285207980784b
-SIZE (muesli-duf-v0.4.0_GH0.tar.gz) = 129032
+TIMESTAMP = 1604442181
+SHA256 (muesli-duf-v0.5.0_GH0.tar.gz) = d8879fbf091cd6f6a3b95102fdeb7d21b7fc8200df1a9864b89d8e87057fc9c6
+SIZE (muesli-duf-v0.5.0_GH0.tar.gz) = 131111
 SHA256 (golang-crypto-5c72a883971a_GH0.tar.gz) = 2b8df0754ba64c95786bc5fe2071cadf4757f754e774f5985d725c1aaa6cb3d8
 SIZE (golang-crypto-5c72a883971a_GH0.tar.gz) = 1732429
 SHA256 (golang-sys-af09f7315aff_GH0.tar.gz) = 42f744f4f5ce6019a7a52a5cfa417d4422bb054a397b3ca663151d3865b24e80
