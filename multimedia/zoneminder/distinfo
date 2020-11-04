@@ -1,6 +1,6 @@
-TIMESTAMP = 1586081021
-SHA256 (zoneminder-zoneminder-1.34.9_GH0.tar.gz) = 446cd622d5168bdae21ae108b380825cd9591064bf6b4e0679a7acb8eb5caa92
-SIZE (zoneminder-zoneminder-1.34.9_GH0.tar.gz) = 10386489
+TIMESTAMP = 1602237427
+SHA256 (zoneminder-zoneminder-1.34.21_GH0.tar.gz) = 3abb0b92ffd4bf109f6a8f60e2e7196f304e8b7caf8e24c3fe4d2041696c5310
+SIZE (zoneminder-zoneminder-1.34.21_GH0.tar.gz) = 10406006
 SHA256 (zoneminder-crud-0bd63fb_GH0.tar.gz) = d4c82d714ea74606726d11be973b17d3f9b57ad6c6559e1a29affa60c6f3a579
 SIZE (zoneminder-crud-0bd63fb_GH0.tar.gz) = 73129
 SHA256 (zoneminder-CakePHP-Enum-Behavior-ea90c0c_GH0.tar.gz) = 3a9006c7c59f2b864ce628df4725b241fc23cfd9abc56e746acbd22d850f5ab1

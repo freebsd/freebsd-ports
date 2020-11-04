@@ -1,11 +1,6 @@
-
-ZoneMinder is a free, open source Closed-circuit television software 
-application developed for Unix-like operating systems which supports 
-IP, USB and Analog cameras. 
-
-New installs
-============
-
+[
+{ type: install
+  message: <<EOM
 ZoneMinder requires a MySQL (or MySQL forks) database backend and 
 a http server, capable to execute PHP and CGI scripts.
 
@@ -162,10 +157,12 @@ the same server.
 	Enable and start ZoneMinder
 		sysrc zoneminder_enable="YES"
 		service zoneminder start
-
-Upgrades
-========
-
+EOM
+}
+{ type: upgrade
+  message: <<EOM
+To perform an upgrade from any version:
+ 
 1. Stop ZoneMinder
 	service zoneminder stop
 
@@ -174,11 +171,6 @@ Upgrades
 	
 3. Start ZoneMinder
 	service zoneminder start
-
-Upgrading from www/zoneminder 1.32.x
-=====================================================
-
-Before proceeding to upgrade sequence listed above,
-
-1. Connect to mysql server with root and issue
-	set global log_bin_trust_function_creators=1;
+EOM
+}
+]
