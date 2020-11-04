@@ -23,6 +23,8 @@ USE_PERL5=	configure run
 USE_GITHUB=	yes
 GH_ACCOUNT=	dag-erling
 
+NO_ARCH=	yes
+
 PLIST_FILES=	bin/${PORTNAME} ${SITE_MAN1_REL}/${PORTNAME}.1.gz
 
 .include <bsd.port.mk>
