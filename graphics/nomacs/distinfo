@@ -1,5 +1,5 @@
-TIMESTAMP = 1585235191
-SHA256 (nomacs-nomacs-3.14.2_GH0.tar.gz) = 0e9e59fac5e369c1141692b723c2139ca28d59a9b0a909f0685bc437d3aa183f
-SIZE (nomacs-nomacs-3.14.2_GH0.tar.gz) = 2169504
-SHA256 (nomacs-nomacs-plugins-3.14_GH0.tar.gz) = df752bc57c0136a367553457452ee5b44b35524536e5fea1b51083d4ac09b76a
-SIZE (nomacs-nomacs-plugins-3.14_GH0.tar.gz) = 514472
+TIMESTAMP = 1603554304
+SHA256 (nomacs-nomacs-3.16.224_GH0.tar.gz) = bbc7e9048026ef9e0d2b64902c88050f17a679ef3d3c009de2c3b7de5d1d217c
+SIZE (nomacs-nomacs-3.16.224_GH0.tar.gz) = 1932366
+SHA256 (nomacs-nomacs-plugins-3.16_GH0.tar.gz) = ab6a91c582d48f4a4697d80ce549886921888cfbb32ea8b8c3b172fb7139225a
+SIZE (nomacs-nomacs-plugins-3.16_GH0.tar.gz) = 561522

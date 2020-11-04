@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	nomacs
-PORTVERSION=	3.14.2
-PORTREVISION=	1
+PORTVERSION=	3.16
+DISTVERSIONSUFFIX=	.224
 CATEGORIES=	graphics
 
 MAINTAINER=	vidar@karlsen.tech
@@ -43,7 +43,7 @@ TIFF_CMAKE_BOOL=	ENABLE_TIFF
 TRANSLATIONS_CMAKE_BOOL=	ENABLE_TRANSLATIONS
 TRANSLATIONS_DESC=		Install translations
 
-PLUGINS_GH_TUPLE=	nomacs:nomacs-plugins:3.14:plugins/ImageLounge/plugins
+PLUGINS_GH_TUPLE=	nomacs:nomacs-plugins:3.16:plugins/ImageLounge/plugins
 PLUGINS_CMAKE_ON=	ENABLE_PLUGINS
 
 .include <bsd.port.mk>
