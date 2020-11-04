@@ -17,7 +17,7 @@ DISTFILES=	Ardoise_no_shadow_75.tar.gz:n75 Ardoise_no_shadow_87.tar.gz:n87 \
 		Ardoise_shadow_87.tar.gz:s87 Ardoise_shadow_100.tar.gz:s100
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}/${PORTVERSION}
 
-MAINTAINER=	lightside@gmx.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ardoise X cursor theme
 
 LICENSE=	GPLv3

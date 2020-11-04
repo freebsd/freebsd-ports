@@ -14,7 +14,7 @@ DISTFILES=	Diaspora_R1_Linux.tar.lzma:sectorgame1,DEFAULT \
 		Diaspora_R1_Patch_1.1.tar.lzma:sectorgame,intfiles,twfiles,DEFAULT \
 		Diaspora_R1_Patch_1.1.1.tar.lzma
 
-MAINTAINER=	lightside@gmx.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Single and multiplayer space fighter combat game
 
 LICENSE=	CC-BY-NC-SA-3.0 VOLITION GPLv2

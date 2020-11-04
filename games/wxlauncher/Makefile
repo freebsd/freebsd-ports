@@ -7,7 +7,7 @@ DISTVERSIONPREFIX=	release-
 PORTREVISION=	6
 CATEGORIES=	games
 
-MAINTAINER=	lightside@gmx.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-platform launcher for the Freespace 2 Source Code Project
 
 LICENSE=	GPLv2
