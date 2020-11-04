@@ -10,6 +10,8 @@ COMMENT=	PHP bindings for ZeroMQ
 
 LICENSE=	BSD3CLAUSE
 
+IGNORE_WITH_PHP=	80
+
 LIB_DEPENDS=	libzmq.so:net/libzmq4
 
 USES=		php:pecl pkgconfig
