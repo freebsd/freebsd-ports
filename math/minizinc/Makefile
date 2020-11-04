@@ -30,7 +30,6 @@ OPTIONS_DEFINE=		WITH_SCIP
 WITH_SCIP_DESC=		Build with the SCIP optimizer
 WITH_SCIP_CMAKE_BOOL=	USE_SCIP
 WITH_SCIP_LIB_DEPENDS=	libscip.so:math/SCIP/
-WITH_SCIP_BROKEN=	Build failure: https://github.com/MiniZinc/libminizinc/issues/402
 
 post-patch:
 	${REINPLACE_CMD} -e 's|string std_lib_dir;|string std_lib_dir = "${DATADIR}";|' ${WRKSRC}/mzn2doc.cpp
