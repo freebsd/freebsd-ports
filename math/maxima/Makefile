@@ -87,7 +87,6 @@ SBCL_PLIST_SUB=		BINDIR=binary-sbcl BINNAME=maxima_core
 TEST_TARGET=		check
 TEST_BUILD_DEPENDS=	gnuplot:math/gnuplot \
 			rlwrap:devel/rlwrap
-TEST_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-Makefile.am
 TEST_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-OFF-Makefile.am
 
 XMAXIMA_DESC=		Install xmaxima (implies DOCS and TEST)
