@@ -835,7 +835,7 @@ you update your ports collection, before attempting any port upgrades.
     pkill -F /usr/local/var/lib/prosody/prosody.pid
 
     # copy the data directory
-    cp -a /usr/local/var/lib/prosody /var/db/prosody
+    cp -a /usr/local/var/lib/prosody /var/db/
     rm -f /var/db/prosody/prosody.pid
 
   Make sure your prosody config has the following option set:
