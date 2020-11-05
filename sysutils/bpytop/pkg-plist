@@ -1,11 +1,13 @@
 bin/bpytop
 %%DATADIR%%/themes/default_black.theme
 %%DATADIR%%/themes/dracula.theme
+%%DATADIR%%/themes/dusklight.theme
 %%DATADIR%%/themes/flat-remix-light.theme
 %%DATADIR%%/themes/flat-remix.theme
 %%DATADIR%%/themes/greyscale.theme
 %%DATADIR%%/themes/gruvbox_dark.theme
 %%DATADIR%%/themes/kyli0x.theme
+%%DATADIR%%/themes/matcha-dark-sea.theme
 %%DATADIR%%/themes/monokai.theme
 %%DATADIR%%/themes/nord.theme
 %%DATADIR%%/themes/solarized_dark.theme
