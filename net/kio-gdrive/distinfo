@@ -1,3 +1,3 @@
-TIMESTAMP = 1602197915
-SHA256 (KDE/release-service/20.08.2/kio-gdrive-20.08.2.tar.xz) = 71047e9f8e5ad9317cc3dbf1de2d121f322b5d968d3685351ef0d2aabe2f46ca
-SIZE (KDE/release-service/20.08.2/kio-gdrive-20.08.2.tar.xz) = 57900
+TIMESTAMP = 1604420005
+SHA256 (KDE/release-service/20.08.3/kio-gdrive-20.08.3.tar.xz) = dea97644341debb20838811352a5a6f629c2949398a4c0a7dea83667f5b6e05e
+SIZE (KDE/release-service/20.08.3/kio-gdrive-20.08.3.tar.xz) = 57968

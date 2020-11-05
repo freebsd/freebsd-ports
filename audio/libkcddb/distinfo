@@ -1,3 +1,3 @@
-TIMESTAMP = 1602011076
-SHA256 (KDE/release-service/20.08.2/libkcddb-20.08.2.tar.xz) = 545cf54ac454845c524ba7cd7ec289ac952fa1ce2bbae01411ba71c66a5ed08a
-SIZE (KDE/release-service/20.08.2/libkcddb-20.08.2.tar.xz) = 425296
+TIMESTAMP = 1604419867
+SHA256 (KDE/release-service/20.08.3/libkcddb-20.08.3.tar.xz) = 2fc7ccc64a9937177eb07e1a839aa0463b772425a001ddb4fd0057988e866664
+SIZE (KDE/release-service/20.08.3/libkcddb-20.08.3.tar.xz) = 425284

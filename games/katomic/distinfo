@@ -1,3 +1,3 @@
-TIMESTAMP = 1602011113
-SHA256 (KDE/release-service/20.08.2/katomic-20.08.2.tar.xz) = bb94e81cb1122b57d2601f701bc51ff8fa27ac07a5de34e5c49928d50d46ed85
-SIZE (KDE/release-service/20.08.2/katomic-20.08.2.tar.xz) = 1429480
+TIMESTAMP = 1604419903
+SHA256 (KDE/release-service/20.08.3/katomic-20.08.3.tar.xz) = d336fdaa10d5d1deb66d6764e07a1288dc79692b789b63d8662ce57086e961ec
+SIZE (KDE/release-service/20.08.3/katomic-20.08.3.tar.xz) = 1429312
