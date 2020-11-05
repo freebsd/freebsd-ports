@@ -4,6 +4,7 @@
 # MAINTAINER: portmgr@FreeBSD.org
 
 set -e
+set pipefail
 
 . ${dp_SCRIPTSDIR}/functions.sh
 
