@@ -2,7 +2,7 @@
 
 PORTNAME=	nfpm
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.8.0
+DISTVERSION=	1.9.0
 CATEGORIES=	archivers
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -97,7 +97,7 @@ GH_TUPLE=	\
 		matoous:godox:5d6d842e92eb:matoous_godox/vendor/github.com/matoous/godox \
 		mattn:go-colorable:v0.1.7:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-isatty:v0.0.12:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
-		mattn:go-zglob:v0.0.3:mattn_go_zglob/vendor/github.com/mattn/go-zglob \
+		mattn:go-zglob:602f75124917:mattn_go_zglob/vendor/github.com/mattn/go-zglob \
 		mitchellh:copystructure:v1.0.0:mitchellh_copystructure/vendor/github.com/mitchellh/copystructure \
 		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
 		mitchellh:mapstructure:v1.3.2:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
