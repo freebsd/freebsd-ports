@@ -41,6 +41,7 @@ PORTSCOUT=	limitw:1,even
 USES=		compiler:c++11-lib cpe desktop-file-utils gettext gnome \
 		localbase:ldflags meson pkgconfig python:3.4+ shebangfix \
 		sqlite tar:xz xorg
+
 CPE_VENDOR=	gnome
 USE_GNOME=	cairo gnomedesktop3 intlhack libwnck3 libxml2 libxslt
 USE_XORG=	x11
@@ -55,4 +56,10 @@ SHEBANG_FILES=	post_install.py
 
 PLIST_SUB+=	EPHY_VERSION=${PORTVERSION:R}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200000
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-lib_ephy-sync-utils.c
+.endif
+
+.include <bsd.port.post.mk>
