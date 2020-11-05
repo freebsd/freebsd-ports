@@ -149,7 +149,6 @@ libexec/git-core/git-remote-fd
 %%CURL%%libexec/git-core/git-remote-ftps
 %%CURL%%libexec/git-core/git-remote-http
 %%CURL%%libexec/git-core/git-remote-https
-libexec/git-core/git-remote-testsvn
 libexec/git-core/git-repack
 libexec/git-core/git-replace
 libexec/git-core/git-request-pull
@@ -200,7 +199,6 @@ libexec/git-core/git-worktree
 libexec/git-core/git-write-tree
 libexec/git-core/mergetools/araxis
 libexec/git-core/mergetools/bc
-libexec/git-core/mergetools/bc3
 libexec/git-core/mergetools/codecompare
 libexec/git-core/mergetools/deltawalker
 libexec/git-core/mergetools/diffmerge
@@ -210,19 +208,16 @@ libexec/git-core/mergetools/emerge
 libexec/git-core/mergetools/examdiff
 libexec/git-core/mergetools/guiffy
 libexec/git-core/mergetools/gvimdiff
-libexec/git-core/mergetools/gvimdiff2
-libexec/git-core/mergetools/gvimdiff3
 libexec/git-core/mergetools/kdiff3
 libexec/git-core/mergetools/kompare
 libexec/git-core/mergetools/meld
+libexec/git-core/mergetools/nvimdiff
 libexec/git-core/mergetools/opendiff
 libexec/git-core/mergetools/p4merge
 libexec/git-core/mergetools/smerge
 libexec/git-core/mergetools/tkdiff
 libexec/git-core/mergetools/tortoisemerge
 libexec/git-core/mergetools/vimdiff
-libexec/git-core/mergetools/vimdiff2
-libexec/git-core/mergetools/vimdiff3
 libexec/git-core/mergetools/winmerge
 libexec/git-core/mergetools/xxdiff
 man/man1/git-add.1.gz
@@ -299,6 +294,7 @@ man/man1/git-ls-remote.1.gz
 man/man1/git-ls-tree.1.gz
 man/man1/git-mailinfo.1.gz
 man/man1/git-mailsplit.1.gz
+man/man1/git-maintenance.1.gz
 man/man1/git-merge-base.1.gz
 man/man1/git-merge-file.1.gz
 man/man1/git-merge-index.1.gz
@@ -710,6 +706,9 @@ man/man7/gitworkflows.7.gz
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.26.2.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.27.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.28.0.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.29.0.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.29.1.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.29.2.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.2.txt
@@ -1200,6 +1199,7 @@ share/emacs/site-lisp/git/git.el
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/static/gitweb.css
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/static/gitweb.js
 %%CONTRIB%%share/git-core/contrib/README
+%%CONTRIB%%share/git-core/contrib/buildsystems/CMakeLists.txt
 %%CONTRIB%%share/git-core/contrib/buildsystems/Generators.pm
 %%CONTRIB%%share/git-core/contrib/buildsystems/Generators/QMake.pm
 %%CONTRIB%%share/git-core/contrib/buildsystems/Generators/Vcproj.pm
@@ -1300,9 +1300,6 @@ share/emacs/site-lisp/git/git.el
 %%CONTRIB%%share/git-core/contrib/mw-to-git/t/Makefile
 %%CONTRIB%%share/git-core/contrib/mw-to-git/t/README
 %%CONTRIB%%share/git-core/contrib/mw-to-git/t/install-wiki.sh
-%%CONTRIB%%share/git-core/contrib/mw-to-git/t/install-wiki/.gitignore
-%%CONTRIB%%share/git-core/contrib/mw-to-git/t/install-wiki/LocalSettings.php
-%%CONTRIB%%share/git-core/contrib/mw-to-git/t/install-wiki/db_install.php
 %%CONTRIB%%share/git-core/contrib/mw-to-git/t/push-pull-tests.sh
 %%CONTRIB%%share/git-core/contrib/mw-to-git/t/t9360-mw-to-git-clone.sh
 %%CONTRIB%%share/git-core/contrib/mw-to-git/t/t9361-mw-to-git-push-pull.sh
@@ -1338,11 +1335,6 @@ share/emacs/site-lisp/git/git.el
 %%CONTRIB%%share/git-core/contrib/subtree/t/Makefile
 %%CONTRIB%%share/git-core/contrib/subtree/t/t7900-subtree.sh
 %%CONTRIB%%share/git-core/contrib/subtree/todo
-%%CONTRIB%%share/git-core/contrib/svn-fe/.gitignore
-%%CONTRIB%%share/git-core/contrib/svn-fe/Makefile
-%%CONTRIB%%share/git-core/contrib/svn-fe/svn-fe.c
-%%CONTRIB%%share/git-core/contrib/svn-fe/svn-fe.txt
-%%CONTRIB%%share/git-core/contrib/svn-fe/svnrdump_sim.py
 %%CONTRIB%%share/git-core/contrib/thunderbird-patch-inline/README
 %%CONTRIB%%share/git-core/contrib/thunderbird-patch-inline/appp.sh
 %%CONTRIB%%share/git-core/contrib/update-unicode/README
