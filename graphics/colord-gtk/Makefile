@@ -10,7 +10,7 @@ MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Manage color profiles to accurately color input/output devices
 
 LICENSE=	LGPL3
-LICENSE_FILES=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	xsltproc:textproc/libxslt \
 		docbook-xsl-ns>0:textproc/docbook-xsl-ns
