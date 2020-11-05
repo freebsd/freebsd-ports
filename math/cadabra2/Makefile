@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cadabra2
-DISTVERSION=	2.3.0
-PORTREVISION=	1
+DISTVERSION=	2.3.2
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -27,7 +26,6 @@ GH_ACCOUNT=	kpeeters
 DOS2UNIX_FILES=	cmake/version.cmake
 USE_GNOME=	glib20 glibmm libsigc++20
 USE_TEX=	base texmf texhash
-USE_LDCONFIG=	yes
 OPTIONS_SUB=	yes
 
 CMAKE_ON=	ENABLE_SYSTEM_JSONCPP USE_PYTHON_3 # OFF doesn't work, still links to python3: https://github.com/kpeeters/cadabra2/issues/76

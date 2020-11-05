@@ -13,11 +13,3 @@
  
  	# Install shared libraries on Windows. 
  	# https://stackoverflow.com/questions/32662215/how-do-you-install-gtk-3-0-on-windows
-@@ -196,6 +196,6 @@ if(NOT MSVC)
- 	 FILES
- 	 ../../man/man1/cadabra2-gtk.1
- 	 DESTINATION
--	 share/man/man1
-+	 man/man1
- 	 )
- endif()
