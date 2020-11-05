@@ -22,7 +22,7 @@ lib/cmake/mkldnn/mkldnn-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/mkldnn/mkldnn-targets.cmake
 lib/libdnnl.so
 lib/libdnnl.so.1
-lib/libdnnl.so.1.6
+lib/libdnnl.so.1.7
 lib/libmkldnn.so
 lib/libmkldnn.so.1
-lib/libmkldnn.so.1.6
+lib/libmkldnn.so.1.7
