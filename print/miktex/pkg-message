@@ -1,0 +1,8 @@
+[
+{ type: install
+  message: <<EOM
+Before using MiKTeX, follow post-installation instructions for non-shared (user)
+setup at https://miktex.org/howto/install-miktex-unx
+EOM
+}
+]
