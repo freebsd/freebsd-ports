@@ -1,0 +1,5 @@
+tiramisu is a notification daemon based on dunst that outputs
+notifications to STDOUT in order to allow the user to process
+notifications any way they prefer.
+
+WWW: https://github.com/Sweets/tiramisu

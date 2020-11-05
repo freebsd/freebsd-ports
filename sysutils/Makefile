@@ -1309,6 +1309,7 @@
     SUBDIR += thefish
     SUBDIR += timelimit
     SUBDIR += timemon
+    SUBDIR += tiramisu
     SUBDIR += titlefix
     SUBDIR += tkdvd
     SUBDIR += tlsdate
