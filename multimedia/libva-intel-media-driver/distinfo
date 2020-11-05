@@ -1,6 +1,6 @@
-TIMESTAMP = 1600844387
-SHA256 (intel-media-driver-intel-media-20.3.0_GH0.tar.gz) = 491411d6ccdf812e4fe30b870f0623431fe9f14db16fc6b987578769925c8be0
-SIZE (intel-media-driver-intel-media-20.3.0_GH0.tar.gz) = 22478010
+TIMESTAMP = 1603684809
+SHA256 (intel-media-driver-intel-media-20.4.0_GH0.tar.gz) = 18ad494f46e226aff6b3aee17515c458d0f9331c49dd1712ab4ab3236d8455c5
+SIZE (intel-media-driver-intel-media-20.4.0_GH0.tar.gz) = 22396279
 SHA256 (2bd42cddbe7c.patch) = 8ddca9a1e793dcbc6876aa53d6e93b900a2a32bc5183f92af66158d7fe16479f
 SIZE (2bd42cddbe7c.patch) = 1241
 SHA256 (0ef9d7bd97ac.patch) = 1c159b93f2832b825811d8ca5386facfd430ba02f90b73877b5737292d9d881f
