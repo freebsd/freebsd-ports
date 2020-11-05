@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	htslib
-DISTVERSION=	1.10.2
+DISTVERSION=	1.11.0
 CATEGORIES=	biology devel
 
 MAINTAINER=	jwb@FreeBSD.org

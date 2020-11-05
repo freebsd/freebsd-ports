@@ -16,6 +16,7 @@ include/htslib/khash.h
 include/htslib/khash_str2int.h
 include/htslib/klist.h
 include/htslib/knetfile.h
+include/htslib/kroundup.h
 include/htslib/kseq.h
 include/htslib/ksort.h
 include/htslib/kstring.h
@@ -29,7 +30,7 @@ include/htslib/vcf_sweep.h
 include/htslib/vcfutils.h
 lib/libhts.a
 lib/libhts.so
-lib/libhts.so.%%PORTVERSION%%
+lib/libhts.so.1.11
 lib/libhts.so.3
 libdata/pkgconfig/htslib.pc
 man/man1/bgzip.1.gz
