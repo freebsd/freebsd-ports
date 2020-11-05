@@ -58,8 +58,7 @@ CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_PythonLibs
 post-patch:
 	${REINPLACE_CMD} -e '/FIND_PROGRAM(_GFORTRAN_EXECUTABLE/s,gfortran,${FC},' \
 		${WRKSRC}/cmake/FindR.cmake
-	${REINPLACE_CMD} -e '/find_library(PYTHONLIBS3_LIBRARY/s,python3.5m,python3.5m python3.6m,' \
-			 -e '/pkg_check_modules/s,python3,python-${PYTHON_VER},' \
+	${REINPLACE_CMD} -e 's|%%PYTHON_VER%%|${PYTHON_VER}|g' \
 		${WRKSRC}/cmake/FindPythonLibs3.cmake
 
 .include <bsd.port.mk>
