@@ -3,8 +3,6 @@
 # MAINTAINER: portmgr@FreeBSD.org
 # $FreeBSD$
 
-set pipefail
-
 if [ -z "${SCRIPTSDIR}" ]; then
 	echo "Must set SCRIPTSDIR" >&2
 	exit 1

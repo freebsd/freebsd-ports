@@ -12,7 +12,6 @@
 #  c. Files in plist which are owned by dependencies/MTREEs
 
 set -e
-set pipefail
 
 . ${SCRIPTSDIR}/functions.sh
 

@@ -2,8 +2,6 @@
 # MAINTAINER: portmgr@FreeBSD.org
 # $FreeBSD$
 
-set pipefail
-
 if [ -z "${STAGEDIR}" -o -z "${PREFIX}" -o -z "${LOCALBASE}" ]; then
 	echo "STAGEDIR, PREFIX, LOCALBASE required in environment." >&2
 	exit 1

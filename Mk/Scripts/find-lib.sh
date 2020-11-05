@@ -2,8 +2,6 @@
 # MAINTAINER: portmgr@FreeBSD.org
 # $FreeBSD$
 
-set pipefail
-
 [ -n "${DEBUG_MK_SCRIPTS}" -o -n "${DEBUG_MK_SCRIPTS_FIND_LIB}" ] && set -x
 
 if [ -z "${LIB_DIRS}" -o -z "${LOCALBASE}" ]; then

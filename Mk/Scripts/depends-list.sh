@@ -3,7 +3,6 @@
 # $FreeBSD$
 
 set -e
-set pipefail
 
 . ${dp_SCRIPTSDIR}/functions.sh
 
