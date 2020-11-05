@@ -1,25 +1,7 @@
---- Makefile.orig	2019-12-06 16:40:42 UTC
+--- Makefile.orig	2020-10-18 00:55:50 UTC
 +++ Makefile
-@@ -21,12 +21,12 @@
- # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
- # DEALINGS IN THE SOFTWARE.
- 
--CC       = gcc
--AR       = ar
--CPPFLAGS =
-+CC       ?= gcc
-+AR       ?= ar
-+# CPPFLAGS =
- #CFLAGS   = -g -Wall -O2 -pedantic -std=c99 -D_XOPEN_SOURCE=600
--CFLAGS   = -g -Wall -O2
--LDFLAGS  =
-+CFLAGS   ?= -g -Wall -O2
-+# LDFLAGS  =
- LIBS     =
- 
- LZ4DIR   = ./lz4
-@@ -47,23 +47,24 @@ AOBJS=      bam_index.o bam_plcmd.o sam_view.o bam_fas
-             bam_quickcheck.o bam_addrprg.o bam_markdup.o tmp_file.o
+@@ -49,7 +49,8 @@ AOBJS=      bam_index.o bam_plcmd.o sam_view.o bam_fas
+ 	    bam_ampliconclip.o amplicon_stats.o
  LZ4OBJS  =  $(LZ4DIR)/lz4.o
  
 -prefix      = /usr/local
@@ -28,27 +10,26 @@
  exec_prefix = $(prefix)
  bindir      = $(exec_prefix)/bin
  datarootdir = $(prefix)/share
--mandir      = $(datarootdir)/man
-+mandir      = $(prefix)/man
- man1dir     = $(mandir)/man1
- 
+@@ -59,14 +60,14 @@ man1dir     = $(mandir)/man1
  # Installation location for $(MISC_PROGRAMS) and $(MISC_SCRIPTS)
--misc_bindir = $(bindir)
-+misc_bindir = $(bindir)/samtools_misc
+ misc_bindir = $(bindir)
  
-+# Use BSD_INSTALL_PROGRAM to strip when WITH_DEBUG not set
- MKDIR_P = mkdir -p
+-MKDIR_P = mkdir -p
 -INSTALL = install -p
 -INSTALL_DATA    = $(INSTALL) -m 644
 -INSTALL_DIR     = $(MKDIR_P) -m 755
 -INSTALL_MAN     = $(INSTALL_DATA)
 -INSTALL_PROGRAM = $(INSTALL)
 -INSTALL_SCRIPT  = $(INSTALL_PROGRAM)
+-
++# Use BSD_INSTALL_PROGRAM to strip when WITH_DEBUG not set
++MKDIR_P 	= mkdir -p
++INSTALL 	= install -p
 +INSTALL_DATA    = ${BSD_INSTALL_DATA}
 +INSTALL_DIR     = $(MKDIR_P)
 +INSTALL_MAN     = ${BSD_INSTALL_MAN}
 +INSTALL_PROGRAM = ${BSD_INSTALL_PROGRAM}
 +INSTALL_SCRIPT  = ${BSD_INSTALL_SCRIPT}
  
- 
  PROGRAMS = samtools
+ 

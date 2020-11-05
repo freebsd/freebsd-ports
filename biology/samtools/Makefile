@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	samtools
-DISTVERSION=	1.10
+DISTVERSION=	1.11
 CATEGORIES=	biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -20,7 +20,6 @@ USE_GITHUB=	yes
 
 USE_PERL5=	test
 GNU_CONFIGURE=	yes
-SUB_FILES=	pkg-message
 SHEBANG_FILES=	misc/*.pl misc/plot-bamstats test/test.pl
 
 TEST_TARGET=	test
