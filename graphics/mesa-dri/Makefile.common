@@ -86,10 +86,6 @@ PKGHELP=	${.CURDIR}/pkg-help
 PKGINSTALL=	${.CURDIR}/pkg-install
 PKGDEINSTALL=	${.CURDIR}/pkg-deinstall
 
-.if ${OSVERSION} < 1200000
-EXTRA_PATCHES+= ${PATCHDIR}/extra-src_util_build__id.c
-.endif
-
 .if ${COMPONENT} == clover
 EXTRA_PATCHES+= ${PATCHDIR}/extra-src_gallium_auxiliary_meson.build \
 		${PATCHDIR}/extra-src_gallium_auxiliary_vl_vl__stubs.c
