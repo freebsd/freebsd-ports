@@ -2,9 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	kicad
-PORTVERSION=	5.1.7
+PORTVERSION=	5.1.8
 CATEGORIES=	cad
+MASTER_SITES=	https://gitlab.com/kicad/libraries/${PORTNAME}-footprints/-/archive/${DISTVERSION}/
 PKGNAMESUFFIX=	-library-footprints
+DISTNAME=	${PORTNAME}-footprints-${DISTVERSION}
 
 MAINTAINER=	cmt@FreeBSD.org
 COMMENT=	Official KiCad Footprint Libraries
@@ -13,14 +15,9 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	kicad:cad/kicad
 
+USES=		cmake tar:bz2
+
 CONFLICTS=	kicad-devel-r2*
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	KiCad
-GH_PROJECT=	kicad-footprints
-GH_TAGNAME=	${GIT_FP_HASH}
-
-USES=		cmake
 
 CMAKE_ARGS=	-DLOCALBASE="${LOCALBASE}" \
 		-DCMAKE_BUILD_TYPE="Release" \

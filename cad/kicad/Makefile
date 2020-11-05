@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	kicad
-PORTVERSION=	5.1.7
+PORTVERSION=	5.1.8
 PORTEPOCH=	2
 CATEGORIES=	cad
+MASTER_SITES=	https://gitlab.com/${PORTNAME}/code/${PORTNAME}/-/archive/${DISTVERSION}/
 
 MAINTAINER=	cmt@FreeBSD.org
 COMMENT=	Schematic and PCB editing software
@@ -22,13 +23,9 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs	\
 
 CONFLICTS=	kicad-devel-r201*
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	KiCad
-GH_PROJECT=	kicad-source-mirror
-
 USES=		cmake:noninja compiler:c++11-lib desktop-file-utils gl \
 		gnome pkgconfig python:3.5+ shared-mime-info shebangfix ssl \
-		tar:xz xorg
+		tar:bz2 xorg
 SHEBANG_FILES=	pcbnew/python/plugins/touch_slider_wizard.py
 
 USE_XORG=	ice x11 xext
