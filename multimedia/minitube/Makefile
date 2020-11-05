@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	minitube
-DISTVERSION=	3.6.4
+DISTVERSION=	3.6.5
 CATEGORIES=	multimedia www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,8 +18,9 @@ GH_ACCOUNT=	flaviotordini
 GH_TUPLE=	\
 		flaviotordini:idle:6aa092da64a011e445bf31cf31c0cd8dda4c64ff:flaviotordini_idle/lib/idle \
 		flaviotordini:media:4d55516ac821fe4d019733ccc70e984220b970d1:flaviotordini_media/lib/media \
-		flaviotordini:http:86a5cb0a31158325cdd27bf5405d93909acc6a60:flaviotordini_http/lib/http \
-		flaviotordini:updater:a563aaa783e8cdd85df3d1cedd037ed9307d2f1c:flaviotordini_updater/lib/updater
+		flaviotordini:http:79450c8bb7511ad5a05c6e2aec256b7be136c985:flaviotordini_http/lib/http \
+		flaviotordini:updater:f78ad7a665b1bb905ae0baff48512c2d88bcaa7d:flaviotordini_updater/lib/updater \
+		flaviotordini:js:d8d7cca7b646263a140a48b8596d55f467d13a94:flaviotordini_js/lib/js
 
 USE_GL=		gl
 USE_QT=		core dbus declarative gui network script sql widgets \
