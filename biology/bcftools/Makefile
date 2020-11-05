@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bcftools
-PORTVERSION=	1.10.2
+PORTVERSION=	1.11
 CATEGORIES=	biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -13,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libhts.so.3:biology/htslib
 TEST_DEPENDS=	bash:shells/bash
+RUN_DEPENDS=	bash:shells/bash
 
 USES=		autoreconf gmake localbase perl5 python:env shebangfix
 

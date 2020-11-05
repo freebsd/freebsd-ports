@@ -1,5 +1,6 @@
 bin/bcftools
 bin/color-chrs
+bin/gff2gff.py
 bin/guess-ploidy
 bin/plot-roh
 bin/plot-vcfstats
@@ -33,6 +34,7 @@ libexec/bcftools/missing2ref.so
 libexec/bcftools/parental-origin.so
 libexec/bcftools/prune.so
 libexec/bcftools/remove-overlaps.so
+libexec/bcftools/scatter.so
 libexec/bcftools/setGT.so
 libexec/bcftools/smpl-stats.so
 libexec/bcftools/split-vep.so

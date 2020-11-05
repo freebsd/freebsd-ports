@@ -1,26 +1,6 @@
---- Makefile.orig	2019-12-19 09:57:32 UTC
+--- Makefile.orig	2020-10-18 13:31:52 UTC
 +++ Makefile
-@@ -22,13 +22,12 @@
- # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
- # DEALINGS IN THE SOFTWARE.
- 
--CC       = gcc
--AR       = ar
--RANLIB   = ranlib
--CPPFLAGS =
--CFLAGS   = -g -Wall -O2
--LDFLAGS  =
--LIBS     =
-+CC       ?= gcc
-+AR       ?= ar
-+RANLIB   ?= ranlib
-+CPPFLAGS ?=
-+CFLAGS   ?= -g -Wall -O2
-+LDFLAGS  ?=
- 
- DYNAMIC_FLAGS = -rdynamic
- PLUGINS_ENABLED = yes
-@@ -45,7 +44,8 @@ OBJS     = main.o vcfindex.o tabix.o \
+@@ -45,7 +45,8 @@ OBJS     = main.o vcfindex.o tabix.o \
             ccall.o em.o prob1.o kmin.o # the original samtools calling
  PLUGIN_OBJS = vcfplugin.o
  
@@ -30,18 +10,20 @@
  exec_prefix = $(prefix)
  bindir      = $(exec_prefix)/bin
  libdir      = $(exec_prefix)/lib
-@@ -58,13 +58,13 @@ pluginpath  = $(plugindir)
+@@ -58,13 +59,14 @@ pluginpath  = $(plugindir)
  # Installation location for $(MISC_PROGRAMS) and $(MISC_SCRIPTS)
  misc_bindir = $(bindir)
  
-+# Use BSD_INSTALL_PROGRAM to strip when WITH_DEBUG not set
- MKDIR_P = mkdir -p
+-MKDIR_P = mkdir -p
 -INSTALL = install -p
 -INSTALL_DATA    = $(INSTALL) -m 644
 -INSTALL_DIR     = $(MKDIR_P) -m 755
 -INSTALL_MAN     = $(INSTALL_DATA)
 -INSTALL_PROGRAM = $(INSTALL)
 -INSTALL_SCRIPT  = $(INSTALL_PROGRAM)
++# Use BSD_INSTALL_PROGRAM to strip when WITH_DEBUG not set
++MKDIR_P 	= mkdir -p
++INSTALL 	= install -p
 +INSTALL_DATA    = ${BSD_INSTALL_DATA}
 +INSTALL_DIR     = $(MKDIR_P)
 +INSTALL_MAN     = ${BSD_INSTALL_MAN}
@@ -50,7 +32,7 @@
  
  PROGRAMS = bcftools
  MISC_SCRIPTS = \
-@@ -141,7 +141,7 @@ print-version:
+@@ -142,7 +144,7 @@ print-version:
  ifdef USE_GPL
      main.o : EXTRA_CPPFLAGS += -DUSE_GPL
      OBJS += polysomy.o peakfit.o
@@ -59,12 +41,3 @@
  endif
  
  print-%:
-@@ -320,7 +320,7 @@ docs: doc/bcftools.1 doc/bcftools.html
- # Since there is no make dependency, bcftools.1 can be out-of-date and
- # make docs can be run to update if asciidoc is available
- install: $(PROGRAMS) $(PLUGINS)
--	$(INSTALL_DIR) $(DESTDIR)$(bindir) $(DESTDIR)$(man1dir) $(DESTDIR)$(plugindir)
-+	$(INSTALL_DIR) $(DESTDIR)$(bindir) $(DESTDIR)$(misc_bindir) $(DESTDIR)$(man1dir) $(DESTDIR)$(plugindir)
- 	$(INSTALL_PROGRAM) $(PROGRAMS) $(DESTDIR)$(bindir)
- 	$(INSTALL_SCRIPT) $(MISC_SCRIPTS) $(DESTDIR)$(misc_bindir)
- 	$(INSTALL_MAN) doc/bcftools.1 $(DESTDIR)$(man1dir)
