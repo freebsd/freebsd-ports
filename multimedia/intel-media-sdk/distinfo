@@ -1,5 +1,3 @@
-TIMESTAMP = 1603814609
-SHA256 (Intel-Media-SDK-MediaSDK-intel-mediasdk-20.3.1_GH0.tar.gz) = 8ed7ca8c638504b5f80ff289518fdd2a1bd8a2d33fad949c30ee893f599c9952
-SIZE (Intel-Media-SDK-MediaSDK-intel-mediasdk-20.3.1_GH0.tar.gz) = 10811339
-SHA256 (84c8e6473e96.patch) = d221d9c88b433832f10a51e3b423dad39fd8b135f460e11c77bacfceb6b4a6bb
-SIZE (84c8e6473e96.patch) = 781
+TIMESTAMP = 1603205199
+SHA256 (Intel-Media-SDK-MediaSDK-intel-mediasdk-20.4.0_GH0.tar.gz) = 33067e9ffb3d8d0824438ee630a9fb692d2bfb8861c4d01251af7e06526f105d
+SIZE (Intel-Media-SDK-MediaSDK-intel-mediasdk-20.4.0_GH0.tar.gz) = 10811802
