@@ -468,6 +468,7 @@
     SUBDIR += xmsg
     SUBDIR += xmx
     SUBDIR += xnee
+    SUBDIR += xnotify
     SUBDIR += xob
     SUBDIR += xorg
     SUBDIR += xorg-apps

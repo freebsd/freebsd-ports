@@ -1,0 +1,5 @@
+XNotify displays a notification on the screen. XNotify receives a
+notification specification in stdin and shows a notification for the
+user on the screen.
+
+WWW: https://github.com/phillbush/xnotify
