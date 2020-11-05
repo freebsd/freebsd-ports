@@ -13,7 +13,6 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${NONEXISTENT}:devel/git:configure
 RUN_DEPENDS=	git:devel/git
-py27_RUN_DEPENDS=	${PY_MERCURIAL} # XXX bug 242463
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	glandium
