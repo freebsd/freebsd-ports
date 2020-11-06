@@ -130,6 +130,9 @@ share/locale/es/LC_MESSAGES/kcm_akonadicontact_actions.mo
 share/locale/et/LC_MESSAGES/akonadicontact5-serializer.mo
 share/locale/et/LC_MESSAGES/akonadicontact5.mo
 share/locale/et/LC_MESSAGES/kcm_akonadicontact_actions.mo
+share/locale/eu/LC_MESSAGES/akonadicontact5-serializer.mo
+share/locale/eu/LC_MESSAGES/akonadicontact5.mo
+share/locale/eu/LC_MESSAGES/kcm_akonadicontact_actions.mo
 share/locale/fi/LC_MESSAGES/akonadicontact5-serializer.mo
 share/locale/fi/LC_MESSAGES/akonadicontact5.mo
 share/locale/fi/LC_MESSAGES/kcm_akonadicontact_actions.mo

@@ -1,3 +1,3 @@
-TIMESTAMP = 1602011251
-SHA256 (KDE/release-service/20.08.2/kbackup-20.08.2.tar.xz) = bb97dd10a64c42ae80c9c87442d3a06d3c18f4f5997bd3b6d1460dec655b3e0a
-SIZE (KDE/release-service/20.08.2/kbackup-20.08.2.tar.xz) = 371100
+TIMESTAMP = 1604420030
+SHA256 (KDE/release-service/20.08.3/kbackup-20.08.3.tar.xz) = cfe6d9376b6473770b65b580570b94ebb49aeb37119ffb7eb1703243e4fe5ee9
+SIZE (KDE/release-service/20.08.3/kbackup-20.08.3.tar.xz) = 375188
