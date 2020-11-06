@@ -13,10 +13,11 @@ COMMENT=	Extension for inclusive/exclusive canonicalization of XML
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-MAKE_JOBS_UNSAFE=	yes
+USES=		gnome perl5
 USE_GNOME=	libxml2
 USE_PERL5=	configure
-USES=		gnome perl5
+
+MAKE_JOBS_UNSAFE=	yes
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/XML/CanonicalizeXML/CanonicalizeXML.so
