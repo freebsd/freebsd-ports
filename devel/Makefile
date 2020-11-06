@@ -4636,6 +4636,7 @@
     SUBDIR += py-monty
     SUBDIR += py-more-itertools
     SUBDIR += py-more-itertools5
+    SUBDIR += py-moto
     SUBDIR += py-mox
     SUBDIR += py-mox3
     SUBDIR += py-msal
