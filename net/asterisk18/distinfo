@@ -1,6 +1,6 @@
-TIMESTAMP = 1603197429
-SHA256 (asterisk/asterisk-18.0.0.tar.gz) = 9b780297c6620d057ef83ada1a0ea13ca9bc2e617c93ef847f2a9f86ba569f9c
-SIZE (asterisk/asterisk-18.0.0.tar.gz) = 27920458
+TIMESTAMP = 1604616149
+SHA256 (asterisk/asterisk-18.0.1.tar.gz) = e826db42c4faf1aebbb83e89b66992d695742e5a7bc93a1e76779d7941f0d4cf
+SIZE (asterisk/asterisk-18.0.1.tar.gz) = 27848496
 SHA256 (asterisk/traud-asterisk-opus-83e1b458c77e0e287adeca494eeb79edb077b0ff_GH0.tar.gz) = 572a3c956371ed62b44a4bcd973db10eb4c84f3040cf7156e3acfad3b6bf3ded
 SIZE (asterisk/traud-asterisk-opus-83e1b458c77e0e287adeca494eeb79edb077b0ff_GH0.tar.gz) = 24044
 SHA256 (asterisk/pjsip-pjproject-2.10_GH0.tar.gz) = 936a4c5b98601b52325463a397ddf11ab4106c6a7b04f8dc7cdd377efbb597de
