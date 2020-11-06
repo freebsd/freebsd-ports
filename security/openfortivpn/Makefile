@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	openfortivpn
-PORTVERSION=	1.14.1
+PORTVERSION=	1.15.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security net-vpn
 
