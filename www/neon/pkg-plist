@@ -26,7 +26,7 @@ include/neon/ne_xmlreq.h
 lib/libneon.a
 lib/libneon.so
 lib/libneon.so.27
-lib/libneon.so.27.3.2
+lib/libneon.so.27.4.2
 libdata/pkgconfig/neon.pc
 man/man1/neon-config.1.gz
 man/man3/ne_add_request_header.3.gz
