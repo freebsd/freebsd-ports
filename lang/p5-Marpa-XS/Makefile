@@ -22,8 +22,8 @@ RUN_DEPENDS=	p5-ExtUtils-PkgConfig>=0:devel/p5-ExtUtils-PkgConfig \
 		p5-Task-Weaken>=0:devel/p5-Task-Weaken
 TEST_DEPENDS=	p5-Test-Weaken>=3.004000:devel/p5-Test-Weaken
 
-USE_PERL5=	modbuild
 USES=		perl5
+USE_PERL5=	modbuild
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Marpa/XS/XS.so
