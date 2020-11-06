@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	vagrant-vbguest
-PORTVERSION=	0.16.0
+PORTVERSION=	0.26.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -13,10 +13,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-i18n>=0:devel/rubygem-i18n \
 		rubygem-log4r>=0:sysutils/rubygem-log4r \
-		rubygem-micromachine2>=2.0.0:devel/rubygem-micromachine2
+		rubygem-micromachine>=2<4:devel/rubygem-micromachine
+
+USES=		gem
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-USE_RUBY=	yes
-USES=		gem
 
 .include <bsd.port.mk>
