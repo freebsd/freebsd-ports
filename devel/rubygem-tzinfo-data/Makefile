@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tzinfo-data
-PORTVERSION=	1.2020.3
+PORTVERSION=	1.2020.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
