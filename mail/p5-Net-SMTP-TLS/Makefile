@@ -19,8 +19,9 @@ RUN_DEPENDS=	p5-Digest-HMAC>=0:security/p5-Digest-HMAC \
 		p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL \
 		p5-Net-SSLeay>=0:security/p5-Net-SSLeay
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
