@@ -1,3 +1,3 @@
-TIMESTAMP = 1590926989
-SHA256 (marshmallow-sqlalchemy-0.23.1.tar.gz) = 0ef59c8da8da2e18e808e3880158049e9d72f3031c84cc804b6c533a0eb668a9
-SIZE (marshmallow-sqlalchemy-0.23.1.tar.gz) = 53653
+TIMESTAMP = 1604480730
+SHA256 (marshmallow-sqlalchemy-0.24.0.tar.gz) = cf0c7fead0b30ad66892a0cefcb39151591842ab16ca48ffa5bd816719b2491e
+SIZE (marshmallow-sqlalchemy-0.24.0.tar.gz) = 53273
