@@ -1,6 +1,20 @@
 --- php_zookeeper.c.orig	2019-12-11 01:31:04 UTC
 +++ php_zookeeper.c
-@@ -772,7 +772,6 @@ static PHP_METHOD(Zookeeper, dispatch)
+@@ -51,6 +51,13 @@
+ #include "php_zookeeper_callback.h"
+ #include "php_zookeeper_log.h"
+ 
++#if PHP_MAJOR_VERSION >= 8
++#define TSRMLS_C
++#define TSRMLS_CC
++#define TSRMLS_DC
++#define TSRMLS_FETCH()
++#endif
++
+ /****************************************
+   Helper macros
+ ****************************************/
+@@ -772,7 +779,6 @@ static PHP_METHOD(Zookeeper, dispatch)
  }
  /* }}} */
  
@@ -8,7 +22,7 @@
  /* {{{ Zookeeper::getConfig( .. )
     */
  static PHP_METHOD(Zookeeper, getConfig)
-@@ -788,7 +787,6 @@ static PHP_METHOD(Zookeeper, getConfig)
+@@ -788,7 +794,6 @@ static PHP_METHOD(Zookeeper, getConfig)
  	RETURN_OBJ(php_zk_config_new_from_zk(php_zk_config_ce, i_obj));
  }
  /* }}} */
@@ -16,7 +30,7 @@
  
  PHP_FUNCTION(zookeeper_dispatch)
  {
-@@ -1250,10 +1248,8 @@ ZEND_END_ARG_INFO()
+@@ -1250,10 +1255,8 @@ ZEND_END_ARG_INFO()
  ZEND_BEGIN_ARG_INFO(arginfo_dispatch, 0)
  ZEND_END_ARG_INFO()
  
@@ -27,7 +41,7 @@
  /* }}} */
  
  /* {{{ zookeeper_class_methods */
-@@ -1290,9 +1286,7 @@ static zend_function_entry zookeeper_class_methods[] =
+@@ -1290,9 +1293,7 @@ static zend_function_entry zookeeper_class_methods[] =
  
  	ZK_ME_STATIC(dispatch,    arginfo_dispatch)
  
@@ -37,7 +51,7 @@
  
  	PHP_FE_END
  };
-@@ -1381,10 +1375,8 @@ static void php_zk_register_constants(INIT_FUNC_ARGS)
+@@ -1381,10 +1382,8 @@ static void php_zk_register_constants(INIT_FUNC_ARGS)
  	ZK_CLASS_CONST_LONG2(OPERATIONTIMEOUT);
  	ZK_CLASS_CONST_LONG2(BADARGUMENTS);
  	ZK_CLASS_CONST_LONG2(INVALIDSTATE);
@@ -48,7 +62,7 @@
  
  	ZK_CLASS_CONST_LONG2(OK);
  	ZK_CLASS_CONST_LONG2(APIERROR);
-@@ -1463,9 +1455,7 @@ PHP_MINIT_FUNCTION(zookeeper)
+@@ -1463,9 +1462,7 @@ PHP_MINIT_FUNCTION(zookeeper)
  
  	php_zk_register_exceptions(TSRMLS_C);
  
@@ -58,7 +72,7 @@
  
  #if PHP_MAJOR_VERSION >= 7 && PHP_MINOR_VERSION >= 1
  	orig_interrupt_function = zend_interrupt_function;
-@@ -1537,7 +1527,11 @@ PHP_MINFO_FUNCTION(zookeeper)
+@@ -1537,7 +1534,11 @@ PHP_MINFO_FUNCTION(zookeeper)
  	php_info_print_table_header(2, "zookeeper support", "enabled");
  	php_info_print_table_row(2, "version", PHP_ZOOKEEPER_VERSION);
  
