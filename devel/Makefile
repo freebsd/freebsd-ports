@@ -1527,7 +1527,6 @@
     SUBDIR += newtonsoft-json
     SUBDIR += nextpnr
     SUBDIR += nexus2-oss
-    SUBDIR += nimble
     SUBDIR += nini
     SUBDIR += ninja
     SUBDIR += nlohmann-json

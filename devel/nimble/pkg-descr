@@ -1,5 +1,0 @@
-Nimble is Nim's package manager and build system. It's used to
-install and build libraries that you can use within your own Nim
-projects
-
-WWW: https://github.com/nim-lang/nimble

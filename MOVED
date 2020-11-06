@@ -15671,3 +15671,4 @@ devel/pccts|devel/antlr|2020-11-01|Has expired: abandonedware, superseded by dev
 devel/gitg0|devel/gitg|2020-11-01|Has expired: ancient version of gitg not maintained
 devel/py-twext||2020-11-03|Has expired: Uses deprecated version of python
 databases/py-sqlparse020|databases/py-sqlparse|2020-11-03|Dependency of removed www/calendarserver
+devel/nimble|lang/nim|2020-11-06|Integrated in lang/nim
