@@ -3,6 +3,7 @@
 PORTNAME=	onednn
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.7
+PORTREVISION=	1
 CATEGORIES=	math # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -30,6 +31,8 @@ OPENMP_BROKEN_OFF=	still requires omp.h, see https://github.com/intel/mkl-dnn/is
 
 CXXFLAGS_amd64=	-msse4.1
 CXXFLAGS_i386=	-msse4.1
+
+CXXFLAGS:=	${CXXFLAGS:S/-O2/-O3/} # clang writes wrong binary code when -O2 optimization is used and one testcase is failing, see https://github.com/oneapi-src/oneDNN/issues/873#issuecomment-722778910
 
 .include <bsd.port.options.mk>
 
