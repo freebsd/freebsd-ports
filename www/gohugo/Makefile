@@ -2,7 +2,7 @@
 
 PORTNAME=	hugo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.77.0
+DISTVERSION=	0.78.1
 CATEGORIES=	www
 PKGNAMEPREFIX=	go
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
@@ -37,7 +37,7 @@ GH_TUPLE=	\
 		dlclark:regexp2:v1.2.0:dlclark_regexp2/vendor/github.com/dlclark/regexp2 \
 		dominikh:go-tools:v0.0.1-2019.2.3:dominikh_go_tools/vendor/honnef.co/go/tools \
 		dustin:go-humanize:v1.0.0:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
-		evanw:esbuild:v0.7.18:evanw_esbuild/vendor/github.com/evanw/esbuild \
+		evanw:esbuild:v0.8.3:evanw_esbuild/vendor/github.com/evanw/esbuild \
 		fortytw2:leaktest:v1.3.0:fortytw2_leaktest/vendor/github.com/fortytw2/leaktest \
 		frankban:quicktest:v1.11.1:frankban_quicktest/vendor/github.com/frankban/quicktest \
 		fsnotify:fsnotify:v1.4.9:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
@@ -148,7 +148,7 @@ PORTMANS=	hugo-config.1 hugo-convert-toJSON.1 hugo-convert-toTOML.1 \
 .include <bsd.port.pre.mk>
 
 SOURCE_DATE_EPOCH_CMD=	date -r $$(grep TIMESTAMP ${DISTINFO_FILE} | ${SED} -e 's/[^0-9]//g') '+%FT%TZ%z'
-COMMIT_ID=		ef290125
+COMMIT_ID=		347f2de6
 
 do-build-MANPAGES-on:
 	@cd ${GO_WRKSRC} && ${GO_WRKDIR_BIN}/${PORTNAME} gen man --dir man/man1/
