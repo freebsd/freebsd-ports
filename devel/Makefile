@@ -4390,6 +4390,7 @@
     SUBDIR += py-fastprogress
     SUBDIR += py-fbprophet
     SUBDIR += py-filebytes
+    SUBDIR += py-filedepot
     SUBDIR += py-filemagic
     SUBDIR += py-first
     SUBDIR += py-five.globalrequest
