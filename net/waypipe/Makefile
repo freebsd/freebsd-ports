@@ -2,7 +2,7 @@
 
 PORTNAME=	waypipe
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.0
+DISTVERSION=	0.7.1
 CATEGORIES=	net
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -11,14 +11,11 @@ COMMENT=	Network transparency with Wayland
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	wayland-protocols>=1.12:graphics/wayland-protocols \
-		wayland>=1.15:graphics/wayland
-
 USES=		compiler:c11 localbase:ldflags meson pkgconfig
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	mstoeckl
-GL_COMMIT=	5eef66b997400d7beecc2ef914f59b27e5505b2c
+GL_COMMIT=	d42475f215871595133e81c0e17b60f7163990b6
 PLIST_FILES=	bin/${PORTNAME}
 
 OPTIONS_DEFINE=	FFMPEG LZ4 MANPAGES OPENGL VAAPI ZSTD
