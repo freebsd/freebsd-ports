@@ -13,6 +13,9 @@ COMMENT=	Abstract syntax tree for Python with inference support
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
+DEPRECATED=	Use devel/py-astroid instead
+EXPIRATION_DATE=2020-11-30
+
 RUN_DEPENDS=	${PY_ENUM34} \
 		${PYTHON_PKGNAMEPREFIX}lazy-object-proxy>=0:devel/py-lazy-object-proxy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${PY_FLAVOR} \
