@@ -19,8 +19,9 @@ RUN_DEPENDS=	p5-Dancer>=0:www/p5-Dancer \
 		p5-File-Type>=0:devel/p5-File-Type \
 		p5-MIME-Tools>=0:mail/p5-MIME-Tools
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
