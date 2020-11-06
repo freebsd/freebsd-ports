@@ -1,0 +1,4 @@
+aioitertools provides implementation of itertools, builtins, and more for
+AsyncIO and mixed-type iterables.
+
+WWW: https://github.com/omnilib/aioitertools
