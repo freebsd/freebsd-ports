@@ -1,0 +1,14 @@
+[
+{ type: install
+  message: <<EOM
+In order for cyanrip to rip as accurate as possible,
+be sure to set the drive offset.
+
+You can determine the offset by visiting  https://www.daefeatures.co.uk/ ,
+http://www.accuraterip.com/driveoffsets.htm , by or using a disc that's in
+the AccurateRip database.
+
+Please refer to https://github.com/cyanreg/cyanrip for more information.
+EOM
+}
+]

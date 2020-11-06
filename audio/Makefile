@@ -97,6 +97,7 @@
     SUBDIR += cue2toc
     SUBDIR += cuetools
     SUBDIR += cutmp3
+    SUBDIR += cyanrip
     SUBDIR += dagrab
     SUBDIR += darkice
     SUBDIR += dcd
