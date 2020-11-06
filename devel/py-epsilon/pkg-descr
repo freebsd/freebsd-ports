@@ -12,5 +12,4 @@ Currently included:
 - A featureful Version class.
 - A formal system for application of monkey-patches.
 
-WWW: https://pypi.org/project/Epsilon/
 WWW: https://github.com/twisted/epsilon

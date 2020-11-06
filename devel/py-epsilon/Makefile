@@ -2,12 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	epsilon
-PORTVERSION=	0.7.3
-PORTREVISION=	1
+PORTVERSION=	0.8.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	Epsilon-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Set of Python utility modules used by DivMod projects
@@ -15,7 +13,8 @@ COMMENT=	Set of Python utility modules used by DivMod projects
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openssl>=0.13:security/py-openssl@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=3.4:devel/py-setuptools_scm@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=1.12.0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}twisted>=13.2.0:devel/py-twisted@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zope.interface>=0:devel/py-zope.interface@${PY_FLAVOR}
 
@@ -26,5 +25,8 @@ NO_ARCH=	yes
 
 # bin/benchmark
 CONFLICTS_INSTALL=	brlcad
+
+post-patch:
+	@${ECHO_CMD} 'setuptools.setup()' > ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
