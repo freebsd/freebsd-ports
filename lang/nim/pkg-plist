@@ -1,4 +1,5 @@
 bin/nim
+%%TOOLS%%bin/nimble
 %%TOOLS%%bin/nimfind
 %%TOOLS%%bin/nimgrep
 %%TOOLS%%bin/nimpretty
@@ -176,6 +177,13 @@ lib/nim/deprecated/pure/parseopt2.nim
 lib/nim/deprecated/pure/securehash.nim
 lib/nim/deprecated/pure/sharedstrings.nim
 lib/nim/experimental/diff.nim
+lib/nim/fusion/btreetables.nim
+lib/nim/fusion/compat.nim
+lib/nim/fusion/filepermissions.nim
+lib/nim/fusion/htmlparser.nim
+lib/nim/fusion/htmlparser/parsexml.nim
+lib/nim/fusion/htmlparser/xmltree.nim
+lib/nim/fusion/pools.nim
 lib/nim/genode/alloc.nim
 lib/nim/genode/env.nim
 lib/nim/genode_cpp/syslocks.h
@@ -497,11 +505,13 @@ lib/nim/wrappers/tinyc.nim
 %%PORTDOCS%%%%DOCSDIR%%/html/base64.html
 %%PORTDOCS%%%%DOCSDIR%%/html/bitops.html
 %%PORTDOCS%%%%DOCSDIR%%/html/browsers.html
+%%PORTDOCS%%%%DOCSDIR%%/html/btreetables.html
 %%PORTDOCS%%%%DOCSDIR%%/html/cgi.html
 %%PORTDOCS%%%%DOCSDIR%%/html/chains.html
 %%PORTDOCS%%%%DOCSDIR%%/html/channels.html
 %%PORTDOCS%%%%DOCSDIR%%/html/codeowners.html
 %%PORTDOCS%%%%DOCSDIR%%/html/colors.html
+%%PORTDOCS%%%%DOCSDIR%%/html/compat.html
 %%PORTDOCS%%%%DOCSDIR%%/html/compiler/aliases.html
 %%PORTDOCS%%%%DOCSDIR%%/html/compiler/asciitables.html
 %%PORTDOCS%%%%DOCSDIR%%/html/compiler/ast.html
@@ -655,6 +665,7 @@ lib/nim/wrappers/tinyc.nim
 %%PORTDOCS%%%%DOCSDIR%%/html/estp.html
 %%PORTDOCS%%%%DOCSDIR%%/html/exitprocs.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fenv.html
+%%PORTDOCS%%%%DOCSDIR%%/html/filepermissions.html
 %%PORTDOCS%%%%DOCSDIR%%/html/filters.html
 %%PORTDOCS%%%%DOCSDIR%%/html/gc.html
 %%PORTDOCS%%%%DOCSDIR%%/html/globs.html
@@ -740,6 +751,7 @@ lib/nim/wrappers/tinyc.nim
 %%PORTDOCS%%%%DOCSDIR%%/html/pathnorm.html
 %%PORTDOCS%%%%DOCSDIR%%/html/pcre.html
 %%PORTDOCS%%%%DOCSDIR%%/html/pegs.html
+%%PORTDOCS%%%%DOCSDIR%%/html/pools.html
 %%PORTDOCS%%%%DOCSDIR%%/html/posix.html
 %%PORTDOCS%%%%DOCSDIR%%/html/posix_utils.html
 %%PORTDOCS%%%%DOCSDIR%%/html/postgres.html
