@@ -388,6 +388,7 @@ man/man1/tsget.1.gz
 %%MAN3%%man/man3/EVP_PKEY_new.3.gz
 %%MAN3%%man/man3/EVP_PKEY_print_private.3.gz
 %%MAN3%%man/man3/EVP_PKEY_set1_RSA.3.gz
+%%MAN3%%man/man3/EVP_PKEY_set1_encoded_public_key.3.gz
 %%MAN3%%man/man3/EVP_PKEY_set_type.3.gz
 %%MAN3%%man/man3/EVP_PKEY_sign.3.gz
 %%MAN3%%man/man3/EVP_PKEY_size.3.gz
