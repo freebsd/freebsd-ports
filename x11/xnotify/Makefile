@@ -18,6 +18,7 @@ USE_GITHUB=	yes
 USE_XORG=	x11 xft xinerama
 GH_ACCOUNT=	phillbush
 MAKE_ARGS=	CC="${CC}" CPPFLAGS="${CPPFLAGS} ${CFLAGS}" \
+		LDFLAGS="${LDFLAGS} \$${LIBS}" \
 		PREFIX="${PREFIX}" \
 		LOCALINC="${LOCALBASE}/include" \
 		LOCALLIB="${LOCALBASE}/lib" \
