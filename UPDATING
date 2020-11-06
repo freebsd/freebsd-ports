@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20201106:
+  AFFECTS: users of www/samdruckerserver
+  AUTHOR: dvl@FreeBSD.org
+
+  If upgrading from < 0.2.4, the database schema has changed.
+
+  Run these scripts to update your database:
+
+  * PostgreSQL/updates-2020.08.28.sql
+  * PostgreSQL/procedures.sql
+
+  These scripts are in /usr/local/share/samdrucker/PostgreSQL
+
 20201030:
   AFFECTS: users of security/openvpn
   AUTHOR: mandree@FreeBSD.org

@@ -1,3 +1,10 @@
 @sample(root,www,640) %%ETCDIR%%/samdruckerserver.conf.sample
 %%APACHEETCDIR%%/Includes/samdruckerserver.conf.sample
+%%DATADIR%%/PostgreSQL/README.md
+%%DATADIR%%/PostgreSQL/check_%%AP_NAME%%_host_checkins
+%%DATADIR%%/PostgreSQL/database-postgresql-permissions.sql
+%%DATADIR%%/PostgreSQL/database-postgresql.sql
+%%DATADIR%%/PostgreSQL/procedures.sql
+%%DATADIR%%/PostgreSQL/updates-2020.08.28.sql
 %%WWWDIR%%/samdrucker.php
+
