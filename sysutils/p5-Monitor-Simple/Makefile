@@ -23,8 +23,9 @@ RUN_DEPENDS=	p5-IO-CaptureOutput>=0:devel/p5-IO-CaptureOutput \
 TEST_DEPENDS=	p5-File-Slurp>=0:devel/p5-File-Slurp \
 		p5-File-Which>=0:sysutils/p5-File-Which
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
