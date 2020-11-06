@@ -42,10 +42,6 @@ MESON_ARGS=	-Dcheck-compatible-gpg=false \
 		-Dpgp-support=true \
 		-Dpkcs11-support=true
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200000
-LDFLAGS+=	-fuse-ld=lld
-.endif
-
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 PORTSCOUT=	limitw:1,even
 
@@ -60,5 +56,11 @@ AVAHI_LIB_DEPENDS=	libavahi-client.so:net/avahi-app
 AVAHI_MESON_TRUE=	key-sharing
 LDAP_USE=		OPENLDAP=yes
 LDAP_MESON_TRUE=	ldap-support
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200000
+LDFLAGS+=	-fuse-ld=lld
+.endif
 
 .include <bsd.port.mk>
