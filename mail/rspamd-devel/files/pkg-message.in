@@ -5,6 +5,9 @@
 
      rspamd_enable="YES"
 
+ - Optionally you can adjust the user which runs Rspamd workers with the
+   variables rspamd_worker_user and rspamd_worker_group (default rspamd:rspamd).
+
  - A symbolic link to %%ETCDIR%%/rspamd.newsyslog.conf
    has been created in the /usr/local/etc/newsyslog.conf.d directory.
    You can edit %%ETCDIR%%/rspamd.newsyslog.conf

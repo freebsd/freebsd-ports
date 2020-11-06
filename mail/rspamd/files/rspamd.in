@@ -12,9 +12,9 @@
 # rspamd_enable (bool):		Set to "NO" by default.
 #				Set it to "YES" to enable rspamd.
 #
-# rspamd_user (str):		Default to "rspamd".
+# rspamd_worker_user (str):	Default to "rspamd".
 #
-# rspamd_group (str):		Default to "rspamd".
+# rspamd_worker_group (str):	Default to "rspamd".
 #
 # rspamd_flags (str):		Default to "-c %%PREFIX%%/etc/rspamd.conf".
 
@@ -26,8 +26,8 @@ rcvar=rspamd_enable
 load_rc_config $name
 
 : ${rspamd_enable:="NO"}
-: ${rspamd_user="rspamd"}
-: ${rspamd_group="rspamd"}
+: ${rspamd_worker_user="rspamd"}
+: ${rspamd_worker_group="rspamd"}
 : ${rspamd_flags="-c %%PREFIX%%/etc/rspamd/rspamd.conf"}
 
 pidfile=${rspamd_pidfile:-"/var/run/rspamd/rspamd.pid"}
@@ -40,7 +40,7 @@ configtest_cmd="rspamd_checkconfig"
 reopenlog_cmd="reopenlog_cmd"
 
 required_files=%%PREFIX%%/etc/rspamd/rspamd.conf
-command_args="-u ${rspamd_user} -g ${rspamd_group}"
+command_args="-u ${rspamd_worker_user} -g ${rspamd_worker_group}"
 extra_commands="reload configtest reopenlog"
 stop_postcmd="rm -f $pidfile"
 sig_reload="HUP"
