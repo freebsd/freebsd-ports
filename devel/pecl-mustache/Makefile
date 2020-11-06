@@ -15,6 +15,7 @@ LIB_DEPENDS=	libmustache.so:devel/libmustache
 
 USES=		compiler:c++11-lang php:pecl
 
+IGNORE_WITH_PHP=80
 USE_CXXSTD=	c++11
 
 post-patch:
