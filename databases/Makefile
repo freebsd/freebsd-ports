@@ -1033,6 +1033,7 @@
     SUBDIR += xapian-core12
     SUBDIR += xrootd
     SUBDIR += xtrabackup
+    SUBDIR += xtrabackup8
     SUBDIR += zabbix3-libzbxpgsql
 
 .include <bsd.port.subdir.mk>
