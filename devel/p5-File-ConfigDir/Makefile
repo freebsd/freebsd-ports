@@ -20,8 +20,9 @@ RUN_DEPENDS=	p5-File-HomeDir>=0.50:devel/p5-File-HomeDir \
 		p5-local-lib>=1.008008:devel/p5-local-lib
 TEST_DEPENDS=	p5-Test-Without-Module>=0:devel/p5-Test-Without-Module
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
